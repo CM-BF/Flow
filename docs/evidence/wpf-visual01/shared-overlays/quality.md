@@ -15,3 +15,7 @@
 ## 2026-10-07T19:16:22.642Z 浏览器准备安全复核
 
 复用本地find-skills/webapp-testing/clean-code方法（已读本地版本、不重新安装）。限定真实消费者/现有生命周期，保持命名任务化、只复用既有父/worker、顺序关闭fixture/context，修正新trace默认状态并保原异常捕获，避免诊断写失败跳过清理。六固定源没有改动；没有新store/authority/通用runner。分列Picker可审与Recovery输入HOLD，不把类型或静态包冒browser PASS。未解决：native/source集中审、Recovery链接/完整运行闭包与实际两消费者图。
+
+## 2026-10-07T19:44:42.223Z 只读依赖供给/入口质量复核
+
+复用既读find-skills、webapp-testing、clean-code：只物化授权38精确链接，source/installed包/SQL/native分别固定，payload复制0。复用原passive capture，保parent单一DB/Chrome/HTTP/清理权，visual phase字段与own输出对齐，原MSG默认不改；未增加通用runner/状态库。固定614保守own输入与406package全17868文件，避免把仅manifest当完整JS/CSS绑定。计入parent9MiB证据cap之外outer/终态1MiB规划、13连接。未解决仅集中source/native接受与未来实际fresh准入/运行/视觉，未将静态解析当runtime证明。

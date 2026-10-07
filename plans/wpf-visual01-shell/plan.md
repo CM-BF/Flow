@@ -39,3 +39,7 @@
 ### 2026-10-07 浏览器准备分阶段
 
 类型与窄guard已root517678接受；Picker固定候选先审/后准入，Recovery只读链接与运行闭包另闭合，二者不互相阻塞。见[准备说明](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/README.md)。原TODO06/07保持未完成，未授actual。
+
+### Recovery准备闭合（source-only）
+
+38个private readonly links已exclusive供给，现固定614own与406installed roots完整字节；33SQL齐全。原TODO06仍等实际Picker/Recovery与目视，TODO07仍等最终独审/main；不以准备审完成任务。见[当前入口](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/README.md)。

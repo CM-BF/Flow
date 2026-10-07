@@ -3,7 +3,7 @@
 | 字段 | 记录 |
 | --- | --- |
 | 任务ID | WPF-VISUAL01 |
-| 最近更新 | 2026-10-07T19:16:22.642Z |
+| 最近更新 | 2026-10-07T19:44:42.223Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra |
@@ -15,8 +15,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 1 |
-| 当前产出 | 受影响类型与窄修已独审；Picker完整调用候选已固定待集中审，Recovery只读38链接/闭包尚未物化；两者browser NOT_RUN |
-| 下一可用交付 | Picker候选先集中源/native审；Recovery补精确只读链接与运行闭包后独立准入，不等待两者同时ready |
+| 当前产出 | 受影响类型与窄修已独审；Picker源准备已f3b8批准，Recovery入口/38只读链接/614本树输入与installed闭包已固定待审；两者browser NOT_RUN |
+| 下一可用交付 | Recovery集中source/native审，Picker待native绑定与经理实际窗口；两个consumer独立排程 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 任务开工时间 | UNKNOWN |
@@ -48,12 +48,14 @@
 
 ## 当前安全停点
 
-2026-10-07T18:59:24.092616Z 恢复一个20分钟、8MiB上界的source-only准备段。原六源4ca逐hash不变；仅own记录/TMP改动，无依赖复制、链接物化、import、types、HTTP、PG或Chrome。当前自然seal后exact8 STOP，claim保留。
+本次2026-10-07T19:29:16Z开始新20分钟/8MiB source-only准备段；原六源4ca逐hash不变。38只读依赖链接在own ignored位置exclusive物化，8目录身份已封存，0dependency payload复制/安装。无工程import/types/PG/HTTP/Chrome，未采资源。metadata自然提交后exact8 STOP，claim保留。
 
-[类型独审原件](../../docs/evidence/wpf-visual01/shared-overlays/types-actual/root-review.json)限定接受HTMLElement guard、声明别名与两次类型实际；5765/30000ms CLOSED，首FAIL和未用24235ms保留，不重绿。f29a的worker与63949逐字结论只针对2d73，4ca guard另由517678审查，不倒改历史。
+[517678类型审](../../docs/evidence/wpf-visual01/shared-overlays/types-actual/root-review.json)接受4ca guard与affected类型实际；原5765/30000ms CLOSED/首红保持，未用24235不转credit。f29a的worker63949逐字结论仅适用于2d73，4ca guard另审。
 
 ## 当前浏览器准备
 
-[本次准备报告](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/report.json)及[说明](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/README.md)。Picker私有候选复用既有parent/native边界与六组输入观察，顺序两fixture/context，6行为+2展示组、原2图+新5图，90s含15s清理仅提案；source/native approval为空、无gate/无runtime grant。需独立实际目视，图片数量不等于视觉PASS。
+**Picker：SOURCE_PREPARATION_APPROVED / browser NOT_RUN。** [f3b8独审](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/root-picker-source-review.json)已原样归档；原parent/worker字节未改，sourceReview例行绑定，native仍需明确绑定与实际grant。6原行为+2展示组、原2PNG+新5PNG，90s含15cleanup仅提案；保持第一批5318原件。
 
-Recovery可信appearance preset保留，当前38个包链接仅exact目标/身份计划，未物化；33个storage SQL输入实际已存在，不列缺件。运行JS/CSS闭包、链接创建/清理身份及独立PG/native输入仍需闭合；browser/2图NOT_RUN。旧提案为历史来源，不将types绿替代浏览器。不宣称两个OS滚动条模式均已验。
+**Recovery：SOURCE_PREPARED / source-native集中审待完成 / browser NOT_RUN。** [当前报告](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/report.json)、[入口/边界](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/README.md)。38链接已物化、33SQL全在；614own输入与HEAD blob相符，28直接源，406installed roots/17868文件全字节绑定，required unresolved[]。既有可信visual preset仍只appearance/cookieRead/themes390；capture窄适配纠正visualAppearancePhase字段并限制私有outer输出，原父/worker/产品不改。
+
+Recovery单次60s/30cleanup仅提案：1markedDB/13配置连接、1Chrome、2owned HTTP，64MiBscratch+128MiB DB/WAL+10MiB retained（parent9与outer/terminal1）+1MiBmetadata=203MiB。没有gate/admin/actual许可；latest完整floor由经理fresh组合，不能因静态包自行启动。准备链接KEEP不等于运行resourceholder；真实cleanup/actual退出/两图目视待实际。滚动条仅报告观测模式，不能冒两个OS模式均通过。

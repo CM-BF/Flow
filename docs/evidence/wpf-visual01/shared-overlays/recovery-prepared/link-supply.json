@@ -1,0 +1,918 @@
+{
+  "state": "MATERIALIZED_READONLY_LINKS_KEEP",
+  "at": "2026-10-07T19:31:49.867139+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/assistant-ui.css",
+      "apps/web/src/components/ui/dialog.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/execution-profiles.css",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/message-settings.browser.ts",
+      "docs/evidence/wpf-visual01",
+      "plans/wpf-visual01-shell"
+    ],
+    "state": "active",
+    "branch": "codex/web-shared-overlays",
+    "origin": "new",
+    "taskId": "WPF-VISUAL01",
+    "worker": "w01_owner",
+    "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+    "createdAt": "2026-10-07T15:54:19.236Z",
+    "updatedAt": "2026-10-07T15:54:19.236Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "links": [
+    {
+      "package": "@assistant-ui/react",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@assistant-ui/react",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121739524,
+        "uid": 501
+      },
+      "packageManifestSha256": "1d0c3747b6ce89f3e4f6c5a7b780d192b3780df1bc8cbd1092934ff4fb66eca0",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439111,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react"
+    },
+    {
+      "package": "@assistant-ui/react-markdown",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@assistant-ui/react-markdown",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+react-markdown@0.14.18_@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@ty_t2hi6cc4fu2igto7fzqbznqjey/node_modules/@assistant-ui/react-markdown",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121736038,
+        "uid": 501
+      },
+      "packageManifestSha256": "b8bc2d5b903eaa3316242785aa207b25f0d8618a1b4100ab6236d483aca527c1",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439112,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+react-markdown@0.14.18_@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@ty_t2hi6cc4fu2igto7fzqbznqjey/node_modules/@assistant-ui/react-markdown"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+react-markdown@0.14.18_@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@ty_t2hi6cc4fu2igto7fzqbznqjey/node_modules/@assistant-ui/react-markdown"
+    },
+    {
+      "package": "@fastify/cors",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@fastify/cors",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121724365,
+        "uid": 501
+      },
+      "packageManifestSha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439114,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors"
+    },
+    {
+      "package": "@flow/client",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@flow/client",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/packages/client",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 124277369,
+        "uid": 501
+      },
+      "packageManifestSha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439116,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/packages/client"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/packages/client"
+    },
+    {
+      "package": "@flow/contracts",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@flow/contracts",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/packages/contracts",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 124277434,
+        "uid": 501
+      },
+      "packageManifestSha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439117,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/packages/contracts"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/packages/contracts"
+    },
+    {
+      "package": "@flow/interaction",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@flow/interaction",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/packages/interaction",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 124277508,
+        "uid": 501
+      },
+      "packageManifestSha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439118,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/packages/interaction"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/packages/interaction"
+    },
+    {
+      "package": "@flow/plugin-runtime",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@flow/plugin-runtime",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/packages/plugin-runtime",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 124277554,
+        "uid": 501
+      },
+      "packageManifestSha256": "342852a97b2682285ae98035f8e1852a1e616b5de071e60a7454ce8848cb16ae",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439119,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/packages/plugin-runtime"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/packages/plugin-runtime"
+    },
+    {
+      "package": "@playwright/test",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@playwright/test",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121721065,
+        "uid": 501
+      },
+      "packageManifestSha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439121,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test"
+    },
+    {
+      "package": "@radix-ui/react-avatar",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@radix-ui/react-avatar",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-avatar@1.2.7_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_mj6654ekvi7ktl3to63fvkbm2q/node_modules/@radix-ui/react-avatar",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121733493,
+        "uid": 501
+      },
+      "packageManifestSha256": "77ffe6fd634ca0512a26ecdf8448babbc80060512154acfc6136a4b94c9ed1ed",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439123,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-avatar@1.2.7_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_mj6654ekvi7ktl3to63fvkbm2q/node_modules/@radix-ui/react-avatar"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-avatar@1.2.7_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_mj6654ekvi7ktl3to63fvkbm2q/node_modules/@radix-ui/react-avatar"
+    },
+    {
+      "package": "@radix-ui/react-collapsible",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@radix-ui/react-collapsible",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-collapsible@1.1.21_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@_naquxvtbmxxhunvy2f77cme4ty/node_modules/@radix-ui/react-collapsible",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121732179,
+        "uid": 501
+      },
+      "packageManifestSha256": "e940fef57c0cf4e2ba1fdaa42a45a6eaf161de71221c6f3d4176c3af862b41df",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439124,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-collapsible@1.1.21_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@_naquxvtbmxxhunvy2f77cme4ty/node_modules/@radix-ui/react-collapsible"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-collapsible@1.1.21_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@_naquxvtbmxxhunvy2f77cme4ty/node_modules/@radix-ui/react-collapsible"
+    },
+    {
+      "package": "@radix-ui/react-dialog",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@radix-ui/react-dialog",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121732654,
+        "uid": 501
+      },
+      "packageManifestSha256": "9f7cc1487d93a25d543e96beb00204a59d1b11d3e36b4161ae1c8c10c1e47bde",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439125,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog"
+    },
+    {
+      "package": "@radix-ui/react-slot",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@radix-ui/react-slot",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-slot@1.4.0_@types+react@19.3.0_react@19.3.0/node_modules/@radix-ui/react-slot",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121731676,
+        "uid": 501
+      },
+      "packageManifestSha256": "1e65d7220c8a7939cdcb81514ae55104ba1763543c4a315abbea3fd3f370846b",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439126,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-slot@1.4.0_@types+react@19.3.0_react@19.3.0/node_modules/@radix-ui/react-slot"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-slot@1.4.0_@types+react@19.3.0_react@19.3.0/node_modules/@radix-ui/react-slot"
+    },
+    {
+      "package": "@radix-ui/react-tooltip",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@radix-ui/react-tooltip",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-tooltip@1.3.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3._vkqim5iyzo54pyjokxbazpnhuq/node_modules/@radix-ui/react-tooltip",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121735365,
+        "uid": 501
+      },
+      "packageManifestSha256": "8feaf95e6f255e34a689aa63d9822ade38d81f22d83bf736cc346de8655f9a42",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439127,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-tooltip@1.3.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3._vkqim5iyzo54pyjokxbazpnhuq/node_modules/@radix-ui/react-tooltip"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-tooltip@1.3.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3._vkqim5iyzo54pyjokxbazpnhuq/node_modules/@radix-ui/react-tooltip"
+    },
+    {
+      "package": "@tailwindcss/vite",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@tailwindcss/vite",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121738267,
+        "uid": 501
+      },
+      "packageManifestSha256": "cba2bb8613106ca608bbd757998b2cf56a464584e3848310338fe3fe3b4761aa",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439129,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite"
+    },
+    {
+      "package": "@vitejs/plugin-react",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@vitejs/plugin-react",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121738746,
+        "uid": 501
+      },
+      "packageManifestSha256": "b40248af3bd75adf396d903d042c09ca4f585dcdd9460d51eeeeb83c01a48643",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439131,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react"
+    },
+    {
+      "package": "ansi-to-react",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/ansi-to-react",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/ansi-to-react@6.2.6_react-dom@19.3.0_react@19.3.0__react@19.3.0/node_modules/ansi-to-react",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121737409,
+        "uid": 501
+      },
+      "packageManifestSha256": "6669789531a5fb393815b54aaa6ee853be53a60e00054c9de436dfc11a90c6ae",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439132,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/ansi-to-react@6.2.6_react-dom@19.3.0_react@19.3.0__react@19.3.0/node_modules/ansi-to-react"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/ansi-to-react@6.2.6_react-dom@19.3.0_react@19.3.0__react@19.3.0/node_modules/ansi-to-react"
+    },
+    {
+      "package": "class-variance-authority",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/class-variance-authority",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/class-variance-authority@0.7.1/node_modules/class-variance-authority",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121737845,
+        "uid": 501
+      },
+      "packageManifestSha256": "f487885eb010b36aec829ab8fb5fc845918006c4633e3c88c750e73bd35c6381",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439133,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/class-variance-authority@0.7.1/node_modules/class-variance-authority"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/class-variance-authority@0.7.1/node_modules/class-variance-authority"
+    },
+    {
+      "package": "clsx",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/clsx",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/clsx@2.1.1/node_modules/clsx",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121737715,
+        "uid": 501
+      },
+      "packageManifestSha256": "a5e616b9883177fb47c1fca22b6a4ab42be1c3ed6ffae8595a5c7d88630eeec2",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439134,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/clsx@2.1.1/node_modules/clsx"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/clsx@2.1.1/node_modules/clsx"
+    },
+    {
+      "package": "esbuild",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/esbuild",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121721759,
+        "uid": 501
+      },
+      "packageManifestSha256": "9d0bc453f4e791553c4cc2298ba023b409241fd9801e494741666eb0f6051490",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439135,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild"
+    },
+    {
+      "package": "fastify",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/fastify",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121726628,
+        "uid": 501
+      },
+      "packageManifestSha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439136,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify"
+    },
+    {
+      "package": "lucide-react",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/lucide-react",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/lucide-react@1.52.0_@types+react@19.3.0_react@19.3.0/node_modules/lucide-react",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121739910,
+        "uid": 501
+      },
+      "packageManifestSha256": "3a8e3206b904805cd7856e9b59fba3590e6702dfe019a2c843a683f3fc25fc26",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439137,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/lucide-react@1.52.0_@types+react@19.3.0_react@19.3.0/node_modules/lucide-react"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/lucide-react@1.52.0_@types+react@19.3.0_react@19.3.0/node_modules/lucide-react"
+    },
+    {
+      "package": "npm-package-arg",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/npm-package-arg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121726061,
+        "uid": 501
+      },
+      "packageManifestSha256": "1a12d6b689df3628a831b61c29b55fe4ba667b37f37d5317eb306929eeb80bad",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439138,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg"
+    },
+    {
+      "package": "pacote",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/pacote",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121726272,
+        "uid": 501
+      },
+      "packageManifestSha256": "17aaee65ad940680ff9073f0b6f144994270283f55824056377c7f2e8590c90f",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439139,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote"
+    },
+    {
+      "package": "pg",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/pg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121721311,
+        "uid": 501
+      },
+      "packageManifestSha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439140,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg"
+    },
+    {
+      "package": "pg-boss",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/pg-boss",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121721479,
+        "uid": 501
+      },
+      "packageManifestSha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439141,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss"
+    },
+    {
+      "package": "radix-ui",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/radix-ui",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/radix-ui@1.7.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_react-dom@19._rujyxztpbyqe2txzjmvvwojbie/node_modules/radix-ui",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121735376,
+        "uid": 501
+      },
+      "packageManifestSha256": "3d57ced22eace53290e0fc7bda9c0beb131819e15fdd8f0b9e983075cb4976b5",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439142,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/radix-ui@1.7.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_react-dom@19._rujyxztpbyqe2txzjmvvwojbie/node_modules/radix-ui"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/radix-ui@1.7.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_react-dom@19._rujyxztpbyqe2txzjmvvwojbie/node_modules/radix-ui"
+    },
+    {
+      "package": "react",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/react",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/react@19.3.0/node_modules/react",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121730246,
+        "uid": 501
+      },
+      "packageManifestSha256": "6e003e4e9ed25afa7fdd55613f8aa877cefa9b359d9c13f81ee704030248e24e",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439143,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/react@19.3.0/node_modules/react"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/react@19.3.0/node_modules/react"
+    },
+    {
+      "package": "react-dom",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/react-dom",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121732457,
+        "uid": 501
+      },
+      "packageManifestSha256": "136d4af63de473392ea79d6a21932b0ed9eb37fe518ce70f4621250f3d79e9bb",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439144,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom"
+    },
+    {
+      "package": "remark-gfm",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/remark-gfm",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/remark-gfm@4.0.1/node_modules/remark-gfm",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121737562,
+        "uid": 501
+      },
+      "packageManifestSha256": "c199482a69355b610bd1ff225b097776d4a990445b11e5f4c618930dacc8c79d",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439145,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/remark-gfm@4.0.1/node_modules/remark-gfm"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/remark-gfm@4.0.1/node_modules/remark-gfm"
+    },
+    {
+      "package": "ssri",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/ssri",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121728039,
+        "uid": 501
+      },
+      "packageManifestSha256": "568ffddd852f2bf78cccddc099f443a6fa1af56f1d21de9bea51b3b9a61d9151",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439146,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri"
+    },
+    {
+      "package": "tailwind-merge",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/tailwind-merge",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tailwind-merge@3.7.0/node_modules/tailwind-merge",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121738445,
+        "uid": 501
+      },
+      "packageManifestSha256": "048ace99e7a0c877d540e21fd3991795bfca07efe409aacd54465dfc51845939",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439147,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tailwind-merge@3.7.0/node_modules/tailwind-merge"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tailwind-merge@3.7.0/node_modules/tailwind-merge"
+    },
+    {
+      "package": "tailwindcss",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/tailwindcss",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121738757,
+        "uid": 501
+      },
+      "packageManifestSha256": "3dc86b46c511947ca00838aa3f1776243abe923ac347c092e60a0cbc7ae68559",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439148,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss"
+    },
+    {
+      "package": "tar",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/tar",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 119118064,
+        "uid": 501
+      },
+      "packageManifestSha256": "31b18f4fb83ba7183f54fa9e2cdca610897108c37ba80570c2c6fa7ccf112d97",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439149,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar"
+    },
+    {
+      "package": "tsx",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/tsx",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121721756,
+        "uid": 501
+      },
+      "packageManifestSha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439150,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx"
+    },
+    {
+      "package": "tw-animate-css",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/tw-animate-css",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tw-animate-css@1.4.0/node_modules/tw-animate-css",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121738133,
+        "uid": 501
+      },
+      "packageManifestSha256": "66849c41b809ccca55c6484bf102044c73847b21a7d3bc3fd95df133c0a578e1",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439151,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tw-animate-css@1.4.0/node_modules/tw-animate-css"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tw-animate-css@1.4.0/node_modules/tw-animate-css"
+    },
+    {
+      "package": "vite",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/vite",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121738875,
+        "uid": 501
+      },
+      "packageManifestSha256": "2b906339263f24e9be4219f93d966b4bcf0d4141adc05939a537c3a8fd6f760a",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439152,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite"
+    },
+    {
+      "package": "zod",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/zod",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121730301,
+        "uid": 501
+      },
+      "packageManifestSha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439153,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod"
+    },
+    {
+      "package": "zustand",
+      "link": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/zustand",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zustand@5.0.15_@types+react@19.3.0_react@19.3.0/node_modules/zustand",
+      "targetIdentity": {
+        "dev": 16777234,
+        "ino": 121735783,
+        "uid": 501
+      },
+      "packageManifestSha256": "b53b4d5e7f6baeb1e832792390354f8af54edaefbd6fe23b490a4d2d2e37dff1",
+      "destinationAbsent": true,
+      "writePolicy": "future exclusive symlink; exact dev/ino/target reverse cleanup; shared target readonly",
+      "createdIdentity": {
+        "dev": 16777234,
+        "ino": 124439154,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zustand@5.0.15_@types+react@19.3.0_react@19.3.0/node_modules/zustand"
+      },
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zustand@5.0.15_@types+react@19.3.0_react@19.3.0/node_modules/zustand"
+    }
+  ],
+  "createdDirectories": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules",
+      "identity": {
+        "dev": 16777234,
+        "ino": 124439109,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": null
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@assistant-ui",
+      "identity": {
+        "dev": 16777234,
+        "ino": 124439110,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": null
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@fastify",
+      "identity": {
+        "dev": 16777234,
+        "ino": 124439113,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": null
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@flow",
+      "identity": {
+        "dev": 16777234,
+        "ino": 124439115,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": null
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@playwright",
+      "identity": {
+        "dev": 16777234,
+        "ino": 124439120,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": null
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@radix-ui",
+      "identity": {
+        "dev": 16777234,
+        "ino": 124439122,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": null
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@tailwindcss",
+      "identity": {
+        "dev": 16777234,
+        "ino": 124439128,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": null
+      }
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/node_modules/@vitejs",
+      "identity": {
+        "dev": 16777234,
+        "ino": 124439130,
+        "uid": 501,
+        "mode": 493,
+        "linkTarget": null
+      }
+    }
+  ],
+  "targetTextBytes": 6189,
+  "dependencyPayloadCopiedBytes": 0,
+  "runtimeImports": 0,
+  "retention": "Prepared private dependency links KEEP. Exact identity reverse removal at later authorized source/operator cleanup, not inferred as runtime scratch."
+}

@@ -1,0 +1,63 @@
+{
+  "task": "WPF-VISUAL01",
+  "preparedAt": "2026-10-07T19:42:15.885932+00:00",
+  "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "headBeforeSeal": "5318e540f4efe014a7be9d03716ee36f0a1b21d0",
+  "recovery": {
+    "state": "SOURCE_PREPARED_AWAITING_CONCENTRATED_REVIEW",
+    "binding": "/private/tmp/vis-recovery-b1/binding.json",
+    "bindingSha256": "90ffb778a35f27c94e556ddf034e1d3f0b23efa09d4c9a1f6e433c3bd11d5546",
+    "manifestSha256": "f2c400c8b86bb1fa6091cafef5094d0f409208efd1ca254ed1254804379857bf",
+    "captureSha256": "34dd9de2c1a6c9ca0d2d337fc94161eb001e6cac7c150dc8165943efd4f9eccf",
+    "runtime": "NOT_RUN",
+    "inputs": {
+      "ownSourceCount": 614,
+      "sqlCount": 33,
+      "runtimePackageRoots": 406,
+      "runtimePackageFiles": 17868,
+      "runtimeDependencyBytesReadOnly": 184275294,
+      "requiredUnresolved": [],
+      "linkCount": 38,
+      "payloadCopiedBytes": 0,
+      "ambientDotEnvFilesAbsent": true
+    },
+    "proposal": {
+      "totalMs": 60000,
+      "cleanupMs": 30000,
+      "spentMs": 0,
+      "scratchBytes": 67108864,
+      "outerCaptureBytesIncluded": 262144,
+      "metadataBytes": 1048576,
+      "dbWalPlanningBytes": 134217728,
+      "incrementalPlanningEnvelopeBytes": 212860928,
+      "minimumFreeAtLeast": 18490851328,
+      "chrome": 1,
+      "nodeParent": 1,
+      "nodeWorker": 1,
+      "pythonOuter": 1,
+      "markedDatabases": 1,
+      "configuredPgConnectionsMaximum": 13,
+      "connectionBreakdown": "8 application +3 PgBoss +1 fixture +1 retained admin; temporary marker/cleanup pool only before/after app; installed PgBoss useListenNotify defaults false",
+      "dynamicHTTP": 2,
+      "provider": 0,
+      "install": 0,
+      "personalEndpoint": 0,
+      "parentEvidenceCapBytes": 9437184,
+      "retainedPlanningBytesIncludingOuter": 10485760,
+      "outerAndTerminalReserveBytesWithinRetained": 1048576
+    }
+  },
+  "picker": {
+    "state": "SOURCE_REVIEW_APPROVED_NATIVE_NOT_YET_BOUND",
+    "sourceReviewSha256": "f3b8b1079ba37d04e747289eb7938dd328b1c765009fdb28766cbb8222e80aa7",
+    "bindingSha256": "0786685d60b537c95e8c52b86a5e6d43a4c7afaea55c9e9541f8ef92fdbd7bfc",
+    "manifestSha256": "d854683738c32dbabb7f92a9657289ed57764d2e300547479eaeb329f4a3f615",
+    "runtime": "NOT_RUN"
+  },
+  "requiredBeforeActual": [
+    "Concentrated Recovery source/native acceptance; no new implementation/fixture semantics proposed",
+    "Manager actual grant and latest complete resource sum",
+    "Fresh exact source/dependency/link identities and unique private gate/admin/run namespace; actual cleanup evidence"
+  ],
+  "newProductChanges": []
+}
