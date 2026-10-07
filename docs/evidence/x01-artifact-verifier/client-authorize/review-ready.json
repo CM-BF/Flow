@@ -1,0 +1,133 @@
+{
+  "at": "2026-10-07T23:19:20.320Z",
+  "state": "SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING",
+  "source": "90c23219b88357497c04a9ac3a0297863e66fb60",
+  "runtimeProductSource": "b65c765d021dc7f59f9523b720f9b3d062b14206",
+  "result": "3ab36ca3f6c3bc4566b7401201fcbd55f07bf515",
+  "bindings": [
+    {
+      "path": "packages/client/src/plugin-runner.ts",
+      "sourceCommit": "b65c765d021dc7f59f9523b720f9b3d062b14206",
+      "bytes": 3922,
+      "sha256": "04291e846a3fe402ba26c21804b12b020e83ffedb112245bb4b5092aa665032b"
+    },
+    {
+      "path": "packages/client/src/plugin-runner.test.ts",
+      "sourceCommit": "90c23219b88357497c04a9ac3a0297863e66fb60",
+      "bytes": 14007,
+      "sha256": "99d70797bf6c3bab5914cf9ad4c14ac61dbcf89fe2947008ca681921c459f328"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/local.py",
+      "sourceCommit": "414bee1aa83203f1702f9fa34e7329fb7f7b6e77",
+      "bytes": 5232,
+      "sha256": "e47bcdda2b4f49dcde5e30fe0f65b4fca77d9b3ee2b1f336879dcf3d45cf8c9a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/start.json",
+      "sourceCommit": "414bee1aa83203f1702f9fa34e7329fb7f7b6e77",
+      "bytes": 596,
+      "sha256": "39e04626acb0e99a8c079c6f8f66636421ca5ec3fa072d52886c5a51a51c7410"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/vitest.config.mjs",
+      "sourceCommit": "414bee1aa83203f1702f9fa34e7329fb7f7b6e77",
+      "bytes": 441,
+      "sha256": "b32de57164cd17cb63f2bed62d309346418e64af8b8e2be93f14df1078b47d4d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/tsconfig.json",
+      "sourceCommit": "414bee1aa83203f1702f9fa34e7329fb7f7b6e77",
+      "bytes": 574,
+      "sha256": "a54da2d0f8f1d2384412781d4f2caa3b1375ac53133cd88403e67b3b52353aa7"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/inputs/packages/client/src/plugin-runner.ts",
+      "sourceCommit": "414bee1aa83203f1702f9fa34e7329fb7f7b6e77",
+      "bytes": 3922,
+      "sha256": "04291e846a3fe402ba26c21804b12b020e83ffedb112245bb4b5092aa665032b"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/inputs/packages/client/src/index.ts",
+      "sourceCommit": "414bee1aa83203f1702f9fa34e7329fb7f7b6e77",
+      "bytes": 69246,
+      "sha256": "67ef6ca5902fa5fd4363b5b38db13ddb0e3ca664905cab6c4b1267c52a5850f1"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/inputs/packages/client/src/plugin-runner.test.ts",
+      "sourceCommit": "444cd14f45ab321000827f8818e33e5f9640720b",
+      "bytes": 14007,
+      "sha256": "99d70797bf6c3bab5914cf9ad4c14ac61dbcf89fe2947008ca681921c459f328"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/supply.json",
+      "sourceCommit": "444cd14f45ab321000827f8818e33e5f9640720b",
+      "bytes": 142167,
+      "sha256": "c19ccf10b0a7e399ddd990a61515e2ea54debfe4534ab6272e1d5546356eaa7f"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/local.json",
+      "sourceCommit": "3ab36ca3f6c3bc4566b7401201fcbd55f07bf515",
+      "bytes": 7185,
+      "sha256": "42d1be175509addde193f95efe450d8d07f4d71dc938d273cd479dea2327e39a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/runtime-pins.json",
+      "sourceCommit": "3ab36ca3f6c3bc4566b7401201fcbd55f07bf515",
+      "bytes": 2879,
+      "sha256": "1b5b704320c59a3ad78b15081034181554baf6ae3ef190c323c2017d7c7b0e96"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/result-summary.json",
+      "sourceCommit": "3ab36ca3f6c3bc4566b7401201fcbd55f07bf515",
+      "bytes": 1995,
+      "sha256": "eee52f5987070b9d7f0dabb507e47f7019cd59e090560a6071423e63da070056"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/behavior/output.log",
+      "sourceCommit": "3ab36ca3f6c3bc4566b7401201fcbd55f07bf515",
+      "bytes": 5817,
+      "sha256": "bfdbe107e8cf0acb76422782cfe65cf77924c8c3711eb70ec439dd6f609f7c7a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/behavior/reservation.json",
+      "sourceCommit": "3ab36ca3f6c3bc4566b7401201fcbd55f07bf515",
+      "bytes": 4031,
+      "sha256": "e392ca3680f6bf7907c4f2982a2639187d8c9455e03a633b52545fb62a00ceda"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/types/output.log",
+      "sourceCommit": "3ab36ca3f6c3bc4566b7401201fcbd55f07bf515",
+      "bytes": 690,
+      "sha256": "e255726ca35e82ffac33d7b806a56ba0d3b76b6ac58f2a2469b8b3d36da11c05"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/types/reservation.json",
+      "sourceCommit": "3ab36ca3f6c3bc4566b7401201fcbd55f07bf515",
+      "bytes": 3860,
+      "sha256": "ac24c23ca05d1329776b8901ba62625d9fabc1126ddab246ec34689dc240d129"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/types-fix/output.log",
+      "sourceCommit": "3ab36ca3f6c3bc4566b7401201fcbd55f07bf515",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/client-authorize/types-fix/reservation.json",
+      "sourceCommit": "3ab36ca3f6c3bc4566b7401201fcbd55f07bf515",
+      "bytes": 3864,
+      "sha256": "fba1925df2a531c52b0276ac00f3af4eb44d90bb8017fb3d8d7909371e6f653b"
+    }
+  ],
+  "bindingBytes": 284435,
+  "supply": "supply.json (223 files:3regular220links, fixed Git/WT verified; no old supply was copied wholesale)",
+  "checks": "11 selected/11 passed/8 unselected; strict2\u2192type-only callback annotations\u2192strict0. Final test annotation behavior not re-executed.",
+  "sourceScope": [
+    "packages/client/src/plugin-runner.ts",
+    "packages/client/src/plugin-runner.test.ts"
+  ],
+  "interface": "authorizeVerifier(PluginGrantRequest,key,signal?) returns validated PluginGrantReceipt; authorize uses unchangedtool endpoint via same private phase helper. Stable64hex key,65,536 bytes,5 identity checks; no retry/fallback/new authority.",
+  "notProven": "No PG/network/factory/runtime/main/worker evidence. No AV R3 or VAR inputs modified.",
+  "resources": "3 knownclosedchildren/3029ms/6507B/no furtherlaunch; ownTMP empty sameinode rmdir/lstatENOENT. Originalnonzero/EPERM observed history kept; wholewall/peakUNKNOWN."
+}

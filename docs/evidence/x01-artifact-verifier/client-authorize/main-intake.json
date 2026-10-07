@@ -1,0 +1,36 @@
+{
+  "state": "REVIEW_PENDING_NOT_INTEGRATION_READY",
+  "source": "90c23219b88357497c04a9ac3a0297863e66fb60",
+  "rows": [
+    {
+      "path": "packages/client/src/plugin-runner.ts",
+      "requiredPreimage": {
+        "commit": "ea3c4599b00505c950cc34ada8a350082fe76747",
+        "bytes": 3585,
+        "sha256": "151f1d9e908db78b07f177844ad4e5cb13e3d1ea3ed203f1822db2c049d7c035"
+      },
+      "after": {
+        "commit": "90c23219b88357497c04a9ac3a0297863e66fb60",
+        "bytes": 3922,
+        "sha256": "04291e846a3fe402ba26c21804b12b020e83ffedb112245bb4b5092aa665032b"
+      }
+    },
+    {
+      "path": "packages/client/src/plugin-runner.test.ts",
+      "requiredPreimage": {
+        "commit": "ea3c4599b00505c950cc34ada8a350082fe76747",
+        "bytes": 8335,
+        "sha256": "3e968cdbdd2500d7f306784fd69946521b6d9295d1a42896c66077eed558e67b"
+      },
+      "after": {
+        "commit": "90c23219b88357497c04a9ac3a0297863e66fb60",
+        "bytes": 14007,
+        "sha256": "99d70797bf6c3bab5914cf9ad4c14ac61dbcf89fe2947008ca681921c459f328"
+      }
+    }
+  ],
+  "dependsOn": "Prior AV center ea3/ead8 controlled intake first or samebatch; current mainreceipt not received. Do not overwrite existing ea3/ead8 intake or use whole branch.",
+  "review": "review-ready.json pending",
+  "tests": "Exact11 phaseclient +focused strict0; oldR3 actual not reused as proof for newmethod",
+  "scope": "Only these two newly changed product/test leaves. Any main preimage drift requires current owner coordination, no wholeblob oldrestore."
+}

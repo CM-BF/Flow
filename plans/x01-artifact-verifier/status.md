@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
-| 工作树dirty状态 | 仅AV client两叶与own evidence/metadata实施中；旧R3封件和VAR295输入冻结 |
+| 工作树dirty状态 | 新client两叶与结果固定，工程STOP；本次packet提交push后clean待独审 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED ead8db7e6ac4a47e02790afb3b8551ebee9188ba：R3真实五例5/5、suite成功；R1/R2原失败独立保留 |
+| 检查状态 | PASSED 90c23219b88357497c04a9ac3a0297863e66fb60：authorizeVerifier新10+旧phase1实际11/11、8未选；strict2→仅类型标注→0；behavior实际b65，末类型改动未重跑 |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
-| 实现目标 | 新增authorizeVerifier客户端增量，尚未执行局部检查；原ea3/ead8交付固定 |
+| 实现目标 | 90c23219b88357497c04a9ac3a0297863e66fb60：客户端verifier phase薄接口，局部已验待独审；原ea3/ead8接收不改 |
 | 实现范围 | apps/server/src/index.ts,apps/server/src/plugin-runtime/claim.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/runner-claim-receipts.ts,apps/server/src/runner-claim-routes.test.ts,apps/server/src/runner-claim-routes.ts,apps/server/src/runners.ts,packages/client/src/plugin-runner.test.ts,packages/client/src/plugin-runner.ts,packages/contracts/src/plugin-verification-binding.ts,packages/contracts/src/verifier-runner-claim.test.ts,packages/contracts/src/verifier-runner-claim.ts,packages/storage/migrations/036-plugin-verification-bindings.sql |
 | 阶段 | M2 |
 | 优先级 | 5 |
 | 本片段交付阶段 | implementation |
-| 当前产出 | 中心领取与迁移已验；正在补验证器复用现有授权传输的客户端入口 |
-| 下一可用交付 | 交付验证器phase授权薄接口及工具兼容、取消与坏回执直接验证 |
+| 当前产出 | 验证器可复用现有请求入口申请执行授权，客户端兼容与坏回执门禁局部已验 |
+| 下一可用交付 | 客户端薄接口待独审；已审中心领取片仍等待主线接收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | R3实际结果22:29:10独审APPROVED；22:16:41源/local/准备APPROVED；R1/R2失败忠实性批准保留 |
+| Review | 新client SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING；旧R3实际结果与source批准独立保留 |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25；actual前fresh全账本核身份/无重叠；已移出leaf继续STOP |
 | 架构影响 | 同一claim/receipt显式v4与036来源引用；R3已证明有限动态SQL矩阵，完整运行时与公开产物验证仍OPEN；主线图待接收 |
 
@@ -209,3 +209,5 @@ R2独立namespace av03-verifier-claim-pg-run-r2；仅candidate，NOT_OPEN/NOT_RU
 ## AV client verifier授权连续段
 
 2026-10-07T23:14:20.000Z起，截止23:29:20.000Z；首写23:15:07.527Z。fresh a67v6/25无冲突，产品仅plugin-runner.ts/.test.ts；以private authorizePhase复用旧工具的parse/key/65,536B/五项ACK身份校验，仅固定endpoint选择。FlowClient单一request不变，0新增fetch/retry/fallback；无runtime/server/VAR295/R3输入改动。4MiB含index副本/供给/TMP/raw，至多3child各20s（含5s清理）累计45s；原source/index入口字节以独立供给固定，不复制旧闭包。当前未运行局部检查。
+
+2026-10-07T23:19:20.320Z：client运行source b65c765d/最终纯类型test90c23219，11实际selected全过（新10+旧直接phase1）、8未选；首strict2四隐式any原raw保留，仅显式回调类型后strict0。三个child末absent/MERGED EOF，3TMP同inode空rmdir/exactENOENT；监督3029ms/raw6507B，23:17:23.051Z FULL_RETURN。3次都紧读canonical完整sum11702763520且free足够，本4MiB只计一次。0PG/监听/provider/待launch，旧R3封件/VAR输入不写，独立[client review-ready](../../docs/evidence/x01-artifact-verifier/client-authorize/review-ready.json)。clean-code核单一小Interface/固定endpoint/错误与取消/no retry及直接消费者；保留原ACK五身份，不复制领域授权。
