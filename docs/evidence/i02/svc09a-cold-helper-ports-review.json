@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-07T21:05:35.456Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_FIXED_COLD_HELPER_PORTS",
+  "source": "4c0cbcd6ee085c3e7a02e884f9360034c772747a",
+  "delivery": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+  "scope": [
+    "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-import.mjs",
+    "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local.py",
+    "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports.test.mjs",
+    "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports.test.py",
+    "docs/evidence/svc09/message-settings-activation/host-integration/default-host.mjs",
+    "docs/evidence/svc09/message-settings-activation/host-integration/default-host.test.mjs",
+    "docs/evidence/svc09/message-settings-activation/host-integration/host-consumer.mjs",
+    "docs/evidence/svc09/message-settings-activation/host-integration/host-entry.mjs",
+    "docs/evidence/svc09/message-settings-activation/host-integration/host-fixture.mjs",
+    "docs/evidence/svc09/message-settings-activation/host-integration/host-run.py",
+    "docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py"
+  ],
+  "blockingFindings": [],
+  "inputEvidence": {
+    "sourceCommit": "9c900a9a9a4a4c2129694b1d30bf5466bac57b6b",
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-local-01/reservation.json",
+    "pinsVerified": 18,
+    "pinBytes": 207626,
+    "allCurrentAndRealpathMatch": true
+  },
+  "checks": {
+    "node": 7,
+    "new": 5,
+    "affectedOld": 2,
+    "pythonPure": 3,
+    "actualImports": 4,
+    "elapsedMs": 193,
+    "rawBytes": 1349,
+    "groups": "3 absent / dual EOF",
+    "scratch": "one exact empty removed"
+  },
+  "review": [
+    "Trusted in-process ports preserve original CLI mappings and consumed namespaces. Caller must bind exact source/artifact, legacy configuration, initialization and closure policy.",
+    "Actual artifact controller and mutable onSpawn state are passed into existing sequence; old default slots path stays default. New caller has no shadow-controller or settings module requirement.",
+    "Host work/cleanup and outer remain original OPS14 supervision with 215+.5+2 deadline and independent detached ownership. Pinned new caller and namespace are mandatory, unknown does not authorize DROP.",
+    "No new scheduler/fixture fork; local clean-code/codebase-design review checked bounded interface, defaults and direct consumers."
+  ],
+  "limits": [
+    "Port preparation only. Caller-specific exact binding, initialization/cleanup assertions and actual cold startup are separately required.",
+    "Zero PG/service/provider/personal operation; prior host failures and KEEP unchanged.",
+    "Fixed source objects remain available in canonical pushed Git; no duplicate full helper snapshots or historical raw are imported."
+  ],
+  "evidenceRoot": "docs/evidence/svc09/message-settings-activation/host-integration/",
+  "reviewerTests": "NOT_RUN_EXISTING_DIRECT_CHECKS_REUSED"
+}

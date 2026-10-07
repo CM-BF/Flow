@@ -522,3 +522,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-07T20:59:25.042Z：同op维护目标与精确04da消费者获限定独审；见[唯一接收原件](../../docs/evidence/i02/svc09a-held-target-review.json)。30绑定127597B、22不同直接例、真实无I/O导入与旧失败均核对，未重跑工程测试。新产物/四页兼容/默认冷启动仍未运行，个人三角色停止与维护23保持。恢复组0重holder/0 pending launch；准备未READY不再限其他组60秒空档，已直接交Web/Mika按原完整Q01预算协调。
 
 2026-10-07T21:02:33.516Z：固定[恢复组合](../../docs/evidence/i02/svc06b-recovery-source-composition.json)由04da与七个已审后像生成tree de843e0fda82600b4d7600c76614c9794c17e3af / source f37a3612068c7215994750574a7451ede841bcce并推独立ref；临时index移除，现有checkout不变。构建caller与冷启动caller分别由原owner准备，未READY不占实际窗口；Q01按原140秒与fresh隔离自行准入。无工程重测/provider/个人动作。
+
+2026-10-07T21:05:35.456Z：冷启动既有helper受限端口独审通过，[单份记录](../../docs/evidence/i02/svc09a-cold-helper-ports-review.json)绑定source4c0cbc/delivery9c900与18执行输入；7Node/3Python/4真实导入、193ms与精确收尾复用，不重复工程检查。薄caller和实际固定产物尚待，个人恢复未执行。
