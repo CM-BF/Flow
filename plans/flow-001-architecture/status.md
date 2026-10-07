@@ -15,8 +15,8 @@
 | 已集成main状态 / HEAD | main c3ba1adf已接同af51中心恢复/独立保留核对与X01供给协调；个人af51/accepting v18、Web d629 v3按既有回执保留，本轮未重新采样。准备候选尚缺的运行验证不改绿。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 已补高并发时插件下载/安装与聊天控制共用连接的组合验收条件；目前仅规划，原候选与恢复证据保持。 |
-| 下一可用交付 | 先完成SVC07已审HTTP直接消费者，再按原依赖推进Codex普通会话C02及恢复/快捷设置/TUI；每项保留原packet、预算、独审与实际清理回执。 |
+| 当前产出 | 事务断连保护与终端Claude逐消息设置已审并进入主线；原资源门槛保持，必要局部验证已恢复。个人运行版本不因main前进自动更新。 |
+| 下一可用交付 | 继续Codex普通会话C02、连接恢复/快捷设置的必要验证；并行恢复固定后台产物接线，保留完整双端与真实native验收。每项沿原packet和资源边界。 |
 | 当前阻塞 | ACTIVE: 远程CI原用户选择仍PENDING；本轮空间观察已越过SVC07原线，本地候选改为逐项fresh准入与串行共享窗口，不再按旧余量整体HOLD。 |
 | 需用户决定 | REQUIRED: OPS-CI01唯一启用选择已由Goal Owner提出，当前PENDING；不重复提问。 |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
@@ -175,3 +175,5 @@ SVC06依赖选择纯模块87dc已经main，完整固定运行产物仍需2.5GiB�
 GO报告空间实质回升后，Lead一次fresh df观察Data Available 26,448,428 KiB（27,083,190,272 B）；本轮没有清理，变化原因未知，不作归因或未来准入保证。只读容量诊断已结束，不生成容量证据文件。原资源门槛、CI唯一PENDING问题和所有历史FAIL/UNKNOWN/NOT_RUN保留；每个operator仍在自己的入口fresh核原条件。
 
 fresh canonical SVC07 HEAD1b3e166 clean/pushed，产品e28/HTTP35f原批准输入不变；本队无PG/Chrome运行。已与Mika和Web直接协调单次 SVC07-HTTP-RESOURCE-RECOVERED-20261007：原60s封套/40s工作/15s清理、floor1,207,959,552B和67,108,864B局部预算；须Web确认无实际holder及owner fresh claim/固定inputs/依赖/输出后才launch。Mika复用原worker，准备不符即交回而非预占。SVC07→C02关键路径优先，随后按ready状态共享窗口；0新增provider、不重测旧PG/fake/无关全集，不操作个人服务。当前仅安排恢复，未声称HTTP已运行或通过。02:06:39账本确认本管理claim3cb8/v3 ACTIVE，现时范围一致。
+
+2026-10-07：SVC07固定e28及实际HTTP结果3a94已获独审、main6b531d46接收；TUI01G固定215及局部结果335f已获独审、main8631cafb接收。TUI为51不同用例分轮通过，不含HTTP/真实PTY/browser/provider；全目标未关闭。OPS有限并行规则7a7c不减原门槛。SVC06原03/04由assignment_review恢复正式parser/builder接线，仍需完整自有产物与脱离开发目录的运行证据；个人服务保持原已封存af51/accepting v18/Web d629 v3，未在本轮更新。

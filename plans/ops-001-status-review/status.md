@@ -12,13 +12,13 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | 本次5份已审管理文件已窄接main/origin 62daa860；个人af51/accepting v18、Web d629 v3仍按既有回执保留，本轮未采样或操作。收尾候选全KEEP，产品未验范围不改绿。 |
+| 已集成main状态 / HEAD | 本次并行规则已窄接main7a7c3f4b；SVC07产品6b531d46、TUI01G产品8631cafb已受控接收；个人af51/accepting v18、Web d629 v3仍按既有回执保留，本轮未采样或操作。收尾候选全KEEP，产品未验范围不改绿。 |
 | Review | [review.md](review.md)：本次收尾准备a60614fe限定APPROVED_DOCS；历史规则与全计划review不被扩大 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 三树退役准备已交付且全部KEEP；SVC07实际HTTP及独审已完成，产品已接收main6b531d46。恢复一个重旅程与一个有界局部检查的隔离并行，原门槛和清理不变。 |
+| 当前产出 | 三树收尾准备全部KEEP；SVC07与TUI01G均已审并进入主线，原固定后台产物恢复实施。一个重旅程与一个隔离局部项的准入规则已发布，原门槛不变。 |
 | 下一可用交付 | SVC07原owner收主线回执；按原依赖推进Codex普通会话C02及恢复/快捷设置/TUI，局部槽归还后由Mika安排X01。每项保留原packet、预算、独审与实际清理回执。 |
 | 当前阻塞 | ACTIVE: 远程CI原用户选择仍PENDING；本轮空间观察已越过SVC07原线，本地候选改为逐项fresh准入与串行共享窗口，不再按旧余量整体HOLD。 |
 | 需用户决定 | REQUIRED: Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。 |
@@ -402,3 +402,9 @@ fresh canonical SVC07 HEAD1b3e166 clean/pushed，产品e28/HTTP35f原批准输�
 TUI01G原owner已接回30s/8MiB的小检查，0PG/HTTP/PTY/provider；原11pass/1Ink失败保留，确认双React依赖身份后只修本树精确ignored link到同hash I02 payload，0安装/复制/donor变化，仅失败1例补跑。X01 Stage A明确为11个tar子进程、32MiB own tmp/cache及原raw界限，由Mika在局部槽空闲后核packet，不称纯fake。SVC07固定e28/3a94结果已获Mika分层独审，Lead仅核集成输入/当前前像，不重复15fake/2PG/HTTP。
 
 有限并行规则943ffe55获assignment_review限定APPROVED_DOCS（4文件/2链接、0工程重测）。SVC07已窄接main/origin `6b531d4632b60e1a70a8183c68a98dc561e5f79c`：69文件403460B固定同delivery4a85569b，原owner接回状态/release；没有等待本规则发布或重复旧检查。TUI01G原owner固定335f402a返回12新+39直接消费者51不同分轮通过/types0、3个旧Ink失败保留，产品215未改；所有自有组/缓存已清理、局部槽归还，结果独审尚在进行，不冒main-ready。Mika已直接接X01下一局部槽、Web接重旅程协调；无个人服务/模型操作。
+
+## 2026-10-07 本轮验证与接收收口
+
+OPS规则7a7c已main；TUI01G结果335f完成限定独审，作者转录66ac后窄接main/origin `8631cafb2f2a66f3e02ef873484a7ddfa551e1b7`，12源+43自有记录525389B逐字相同，原51不同用例分轮/3失败与focused types事实保留。首intake按旧54文件数断言在写入前停止；核新增独审转录后按55固定输入完成，不改产品/原raw。原owner接回主线回执与release，完整PTY/HTTP/双端仍开放，个人服务未操作。
+
+X01实际Git预检出现unreaped阶段EPERM后工程17项未启动；不反复跑同包。原OPS14 owner已接≤10s/≤64KiB自有child三阶段与活descendant对照的准备，先固定范围并核局部槽归还，保真实权限/不可观察unknown与历史失败。SVC06原owner回backend-release：fresh原claim v5仅增根manifest/lock两精确路径，先将已审私有selector接正式builder/惰性YAML parser，完整产物与独立运行仍未完成；安装/小检查和完整2.5GiB构建分别准入，不抢个人服务。
