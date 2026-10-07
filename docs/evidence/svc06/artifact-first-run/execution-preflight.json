@@ -1,0 +1,19 @@
+{
+  "kind": "svc06-fixed-artifact-execution-preflight",
+  "decision": "FRESH_GATES_PASSED_FOR_ONE_AUTHORIZED_RUN",
+  "windowHandoff": "/private/tmp/root-web-heavy-handoff-svc06.json",
+  "claimResult": {
+    "chunk_id": "283d98",
+    "wall_time_seconds": 0.000014209,
+    "exit_code": 0,
+    "original_token_count": 222,
+    "output": "{\"state\":\"available\",\"observedAt\":\"2026-10-07T03:34:22.396Z\",\"claims\":[{\"lead\":\"astra_ultra_execution_lead\",\"next\":null,\"role\":\"writer\",\"scope\":[\"docs/evidence/svc06\",\"package.json\",\"plans/svc06-backend-release\",\"pnpm-lock.yaml\",\"tools/personal-preview/README.md\",\"tools/personal-preview/backend-release\",\"tools/personal-preview/cli.mjs\",\"tools/personal-preview/maintenance-host.mjs\",\"tools/personal-preview/maintenance.test.mjs\",\"tools/personal-preview/preview.mjs\",\"tools/personal-preview/preview.test.mjs\"],\"state\":\"active\",\"branch\":\"codex/backend-release\",\"origin\":\"new\",\"taskId\":\"SVC06\",\"worker\":\"assignment_review\",\"claimId\":\"3346a60d-0b50-4c73-bf22-9b258f8b1381\",\"version\":5,\"worktree\":\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release\",\"createdAt\":\"2026-10-06T12:42:47.489Z\",\"updatedAt\":\"2026-10-07T02:23:27.795Z\",\"observedAt\":null,\"needsVerification\":false}]}\n"
+  },
+  "sourceSpaceResult": {
+    "chunk_id": "1c9b23",
+    "wall_time_seconds": 0.13251875,
+    "exit_code": 0,
+    "original_token_count": 410,
+    "output": "f181ad3b7d22ba98067d08f7c7842a7a65d3cef3\n{\n  \"at\": \"2026-10-07T03:31:34.693082+00:00\",\n  \"state\": \"WEB_HEAVY_RETURNED_AND_OFFERED_TO_LEAD_SVC06\",\n  \"currentWebHeavyHolder\": null,\n  \"currentWebLocalHolder\": null,\n  \"ACCESS\": \"Two actual runs ended; second parent/group/scratch/EOF and exact PID/CDP postchecks clear. No third run or reservation.\",\n  \"actualCleanupReceipt\": \"/private/tmp/access01-browser-followup-jn35famf/post-cleanup.json\",\n  \"offer\": {\n    \"owner\": \"Original Execution Lead SVC06\",\n    \"entry\": \"4de459\",\n    \"fixedArtifactInput\": \"3230\",\n    \"workMs\": 420000,\n    \"cleanupMs\": 2500,\n    \"newTemporaryBudget\": \"2.32GB\",\n    \"retainedFreeFloor\": \"1GiB\",\n    \"leadStatedFreshThreshold\": \"3.39GB\",\n    \"PG\": 0,\n    \"Chrome\": 0,\n    \"provider\": 0,\n    \"state\": \"READY_FOR_LEAD_FRESH_GATE_NOT_STARTED_BY_WEB\"\n  },\n  \"webPreparedSuccessors\": [\n    \"ACCESS fixedccd885, remaining41272ms including15000cleanup; no run/hold.\",\n    \"Timing fixed72a/156b, browser runner preparation only,0native spent.\"\n  ],\n  \"rules\": \"No overlapping Web heavy starts until Lead actual SVC06 handback. Main, service operations and publication remain original Lead.\",\n  \"communication\": \"Direct app input from this co-lead to original Lead is unavailable; canonical Web resource/status is the handoff source, not a claim of successful message delivery.\"\n}\n{\"at\": \"2026-10-07T03:34:22.616192+00:00\", \"head\": \"f181ad3b7d22ba98067d08f7c7842a7a65d3cef3\", \"clean\": true, \"entryFourFilesFixed\": true, \"artifactTarget\": \"3230becf07b804479ec4dc7ef02fcaff58cc3858\", \"freeBytes\": 26326294528, \"gateBytes\": 3391094784, \"outerAbsent\": true, \"runAbsent\": true}\n"
+  }
+}

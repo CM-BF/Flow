@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:30:05 UTC；rootpg已main，首次完整产物入口独审通过，实际运行待窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 03:36:37 UTC；首次完整artifact实际通过，结果待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -11,20 +11,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；本入口source 4de45996435dd86c3409910dad787e99efc9cd63 |
-| 工作树dirty状态 | 产品及执行入口固定；本轮仅批准转录，实际构建尚未运行 |
+| 工作树dirty状态 | 产品与entry未改；仅实际raw/结果metadata封存 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 实现目标 | 4de45996435dd86c3409910dad787e99efc9cd63 |
 | 实现范围 | docs/evidence/svc06/artifact-first-run/entry.mjs, docs/evidence/svc06/artifact-first-run/runtime-proof.mjs, docs/evidence/svc06/artifact-first-run/supervise.py, docs/evidence/svc06/artifact-first-run/inputs.json |
-| 检查状态 | NOT_RUN 完整artifact；仅Node语法检查/纯Python语法解析和readonly输入核验；原局部检查保持 |
+| 检查状态 | PASSED 4de45996435dd86c3409910dad787e99efc9cd63；一次完整artifact+verify+30SQL/import exit0，0PG/host生命周期 |
 | 已集成main状态 / HEAD | rootpg893324三源已main/origin 3230becf07b804479ec4dc7ef02fcaff58cc3858逐字同；[回执](../../docs/evidence/svc06/root-pg-main-receipt.json)。本完整产物执行入口尚待审/未运行 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 固定宿主依赖闭包已接收；完整产物的离线构建、校验和内部解析入口已准备，独立审查已通过，等待实际运行。 |
-| 下一可用交付 | 在协调好的运行窗口执行一次真实离线构建，验证产物内依赖与SQL资源可用。 |
-| 当前阻塞 | ACTIVE: 等待共享重运行窗口；入口已获限定独审，未启动完整安装或产物运行 |
+| 当前产出 | 固定后台产物已完成一次真实离线构建，内部依赖和SQL资源校验通过；原始结果等待独立核验。 |
+| 下一可用交付 | 独审本次产物结果后，用保留产物准备真实宿主启动和开发目录隔离验收。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED_FIXED_ARTIFACT_ENTRY 4de45996435dd86c3409910dad787e99efc9cd63；Execution Lead唯一独审；rootpg893324 APPROVED_LIMITED_ROOT_PG_CLOSURE已main；不扩大完整artifact批准 |
+| Review | APPROVED_FIXED_ARTIFACT_ENTRY 4de459；本次实际结果PENDING Execution Lead，完整host生命周期仍open |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v5，11 literal scopes；[parser范围追加](../../docs/evidence/svc06/parser-amend-receipt.json) |
 | 架构影响 | 执行入口只复用原prepare/verify与OPS14；server/runner/host根tsx/pg/Vite已固定，0PG导入验证与真正host生命周期/开发树不可用验收分开。 |
 
@@ -101,3 +101,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 [唯一入口/预算](../../docs/evidence/svc06/artifact-first-run/README.md) / [manifest](../../docs/evidence/svc06/artifact-first-run/manifest.json)。source `4de45996435dd86c3409910dad787e99efc9cd63`，artifact固定main `3230becf07b804479ec4dc7ef02fcaff58cc3858`；420s工作+.5TERM/2reap，原clone/install180s不增。新增空间预算2,317,352,960B与1GiB收尾对应fresh3,391,094,784B，比原2.5GiB更严格；不计clone节省、不称硬预留。原cache3mode观察红不重跑；SDK实际metadata/路径只读确认。完整build/import/PG/host仍NOT_RUN，03/04/05不勾。产品/entry全停写供唯一审查。
 
 2026-10-07 03:30:32 UTC：已归档[唯一执行入口批准](../../docs/evidence/svc06/artifact-first-run/independent-review.json)，17运行/58固定source/14entry独立核同，无P1/P2。限定准备，实际build/install/import仍NOT_RUN；entry与输入全停写，等待Lead协调共享窗口，执行时重新按固定fresh/独占原件准入。
+
+实际首次artifact entry开始：2026-10-07T03:34:34.540Z，来源exclusive actual-first/reservation.json；03:34:22 fresh claim v5/source与26,326,294,528B余量通过3,391,094,784B门槛。仅fixed3230一次执行，0PG/Chrome/provider/个人操作；输出与结果待原始Report，不预判成功。
+
+实际结果：entry 2026-10-07T03:34:34.540Z→2026-10-07T03:34:59.865Z；outer25,390ms/exit0/完整EOF/整个组absent。重窗口已归还，[完整原件与范围](../../docs/evidence/svc06/artifact-first-run/RESULT.md)；真正host生命周期和开发checkout不可用验收仍后继，原03/04/05保持open。

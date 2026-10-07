@@ -1,3 +1,7 @@
+# 当前实际artifact结果：PENDING
+
+一次真实运行，entry4de/source3230；[原始结果](../../docs/evidence/svc06/artifact-first-run/RESULT.md)。结果独审待Lead；此前entry准备批准不代替本结果或未来host。
+
 # 当前完整artifact执行入口：APPROVED_FIXED_ARTIFACT_ENTRY
 
 Source `4de45996435dd86c3409910dad787e99efc9cd63` / artifact固定main `3230becf07b804479ec4dc7ef02fcaff58cc3858`；[manifest](../../docs/evidence/svc06/artifact-first-run/manifest.json)绑定原始cache失败、固定源码/实际构建工具和新入口。Execution Lead唯一只读批准：[原回执](../../docs/evidence/svc06/artifact-first-run/independent-review.json)。无P1/P2、0重跑；仅执行准备，尚无实际完整构建/安装/import/PG。

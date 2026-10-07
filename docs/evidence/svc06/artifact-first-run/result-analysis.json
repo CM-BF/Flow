@@ -1,0 +1,152 @@
+{
+  "at": "2026-10-07T03:36:37.667554+00:00",
+  "decision": "AUTHOR_PASSED_PENDING_INDEPENDENT_RESULT_REVIEW",
+  "entrySource": "4de45996435dd86c3409910dad787e99efc9cd63",
+  "artifactSource": "3230becf07b804479ec4dc7ef02fcaff58cc3858",
+  "entryStartedAt": "2026-10-07T03:34:34.540Z",
+  "entryFinishedAt": "2026-10-07T03:34:59.865Z",
+  "entryMs": 25324,
+  "supervisorMs": 25390,
+  "supervisorEndUtc": "NOT_SEPARATELY_RECORDED",
+  "outerExit": 0,
+  "childPid": 30697,
+  "ownedState": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "firstFailure": null,
+  "secondaryFailures": [],
+  "signals": [],
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+    "manifestDigest": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+    "sourceHead": "3230becf07b804479ec4dc7ef02fcaff58cc3858"
+  },
+  "retainedRoot": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6",
+  "rootIdentityMatched": true,
+  "rootMode": "0o700",
+  "storeNames": [
+    "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+    "stage-6bed7ebe-15c4-4580-8b12-18a7dd5cbb7c.json"
+  ],
+  "stageCleanup": "complete",
+  "installation": {
+    "offline": true,
+    "frozen": true,
+    "scripts": false,
+    "importMethod": "copy",
+    "cacheFiles": 10648,
+    "cacheLogicalBytes": 354552778,
+    "sourceBytesRestored": true,
+    "installedProjectionVerified": true
+  },
+  "pnpm": "9.15.4; original stdout: 271 reused/0 downloaded/271 added,7 of12 workspaces,2.3s",
+  "inventory": {
+    "logicalBytes": 362951694,
+    "entries": 15531,
+    "manifestBytesIncluded": 366131114,
+    "nodeImages": 20
+  },
+  "sqlFilesVerified": 30,
+  "importExit": 0,
+  "imports": {
+    "importsOnly": true,
+    "factoryCalls": 0,
+    "runnerCalls": 0,
+    "providerCalls": 0,
+    "sdkVersion": "0.3.290",
+    "nativeBinaryExecuted": false,
+    "nativeBinaryBytes": 233260816,
+    "resolved": {
+      "pgEntry": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/backend-artifacts/e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "sdkEntry": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/backend-artifacts/e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2/root/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "nativeMetadata": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/backend-artifacts/e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2/root/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/package.json",
+      "nativeBinary": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/backend-artifacts/e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2/root/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "viteEntry": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/backend-artifacts/e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2/root/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "tsxEntry": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/backend-artifacts/e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2/root/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs"
+    },
+    "delayedImports": [
+      "apps/server/src/index.ts",
+      "apps/runner/src/runtime.ts",
+      "tools/personal-preview/backend-release/host.mjs",
+      "tools/personal-preview/preview.mjs",
+      "tools/personal-preview/maintenance-host.mjs"
+    ],
+    "developmentCheckoutIsolation": "NO mutation or removal; internal resolution/inventory proof only"
+  },
+  "resources": {
+    "initialFree": 26324484096,
+    "minimumFree": 25882656768,
+    "samples": 51,
+    "artifactFileAndManifestLimit": 1073741824,
+    "selectedSeedLogicalBytes": 354552778,
+    "sourceArchiveAllowance": 33554432,
+    "pnpmHomeCacheAllowance": 134217728,
+    "metadataAllowance": 536870912,
+    "rawBytes": 2097152,
+    "liveReserveBytes": 1073741824,
+    "additionalBudgetBytes": 2317352960,
+    "minimumFreeBytes": 3391094784,
+    "selectedSeedAllowance": 536870912,
+    "physicalPeak": "NOT_MEASURED; sampled filesystem availability includes other writers",
+    "rawLimit": "1MiB outer capture plus bounded copied build-record and import bytes; original producer record can exceed observation threshold and remains preserved on refusal"
+  },
+  "canonicalRawFiles": [
+    {
+      "path": "docs/evidence/svc06/artifact-first-run/execution-preflight.json",
+      "bytes": 3249,
+      "sha256": "6cdf7b3c8c90efd7345cf3022789ddde26e5a5b2cf2b05e172f8bd71858caa7b"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-first-run/outer-report.json",
+      "bytes": 4617,
+      "sha256": "7260852e429910137a0427bf1f4811180fd453e6cd06cbd655d1628cbdd83efc"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-first-run/actual-first/build-record.json",
+      "bytes": 806,
+      "sha256": "aaf603ef4264f25b4a419649628bbad9db363e8c651668f64527151e0dbf06c2"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-first-run/actual-first/imports.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-first-run/actual-first/imports.stdout",
+      "bytes": 2080,
+      "sha256": "848adea9006df64c240a2d43bb48c27129dc9e346aca6bded615bdbb467ec2f0"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-first-run/actual-first/owned-root.json",
+      "bytes": 162,
+      "sha256": "06e906908cc90e4230678614ac156cda609936533dc31a28ae216bdf971d5db0"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-first-run/actual-first/reservation.json",
+      "bytes": 187,
+      "sha256": "03266f9bd170a59c6d55846378e0427f6e6468f71bbc370b3b53938fed418588"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-first-run/actual-first/result.json",
+      "bytes": 4413,
+      "sha256": "730330b648f0f1eacc2ce525a98b7ee79eb36aa036100b7311a4e2f6727c5dce"
+    }
+  ],
+  "canonicalRawBytes": 15514,
+  "retainedOriginalBuildRecordBytes": 806,
+  "artifactManifest": {
+    "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/backend-artifacts/e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2/manifest.json",
+    "bytes": 3179420,
+    "sha256": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+    "role": "artifact metadata included in366131114B,not duplicated as raw evidence"
+  },
+  "limits": [
+    "No PG/factory/runRunner/Vite.preview/SDK.query/native executable invocation",
+    "Development checkout not hidden or changed; actual absent-checkout/host lifecycle remains open",
+    "Availability samples include other writers; not physical peak, reservation, or reclaimable bytes",
+    "Original cache metadata exit1 and all older build failures preserved; one authorized build only"
+  ]
+}
