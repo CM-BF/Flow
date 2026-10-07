@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 更新时间 | 2026-10-07 07:52:15 UTC |
+| 更新时间 | 2026-10-07 08:01:48 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T07:02:57.381Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -16,17 +16,17 @@
 | HEAD | f73534fb8f5d4af9def063863b9551a7217280dc；测试构造/诊断窄修固定，证据封存后停写 |
 | 工作树dirty状态 | 仅末次自有证据/status封存；产品/入口已停写 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 测试材料标识已按现有协议修正，最早错误与收尾错误分别保留；定向检查通过 |
-| 下一可用交付 | 独审修正后再运行两项真实组合检查，确认公开正文链路 |
-| 当前阻塞 | ACTIVE: 定向修正待独审及新的共享数据库窗口；本轮资源已归还 |
+| 当前产出 | 两项真实组合复验仍失败，已定位测试流收尾与会话身份接缝；自有资源已清理 |
+| 下一可用交付 | 修正这两处测试接缝后定向验证，保留两轮原失败 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | f73534fb8f5d4af9def063863b9551a7217280dc |
 | 实现范围 | packages/contracts/src/native-activity-body.ts, packages/contracts/src/index.ts, packages/client/src/native-activity-body.ts, packages/client/src/native-activity-body.test.ts, packages/client/src/index.ts, apps/server/src/native-activity-body/index.ts, apps/server/src/native-activity-body/fixture.ts, apps/server/src/native-activity-body/production.test.ts, apps/server/src/index.ts, apps/runner/src/runtime.ts, apps/runner/src/native-activity-body/host.ts, apps/runner/src/native-activity-body/host.test.ts, apps/runner/src/native-activity-body/host-production.test.ts |
-| 检查状态 | 原41不同局部已绿保持；PG01 0/2/suite1、caller UNKNOWN_RETAIN/cleanup CONFIRMED；新增2不同纯例/2轮affectedtypes0，PG02 NOT_RUN |
-| Review | 原1bb/4b/4142 APPROVED_PREPARATION；f735测试/诊断与新PG02入口待增量独审，原PG失败未改 |
+| 检查状态 | 原41及新增2纯例通过保持；PG01和PG02均0/2，caller UNKNOWN_RETAIN与cleanup CONFIRMED分记；下一PG未运行 |
+| Review | f735/aea6测试修复和PG02准备APPROVED；实际PG02失败已保留，不是产品通过 |
 | 已集成main状态 / HEAD | 本片未集成；P01领域已在f39并包含于本base |
 | claim | f51cc458-ced9-48ff-a033-97f42483dcf4 v4，15literal；13产品+2自有metadata，三共享出口和fixture均正式amend后写入 |
 | 架构影响 | 共享reader/专用中心确认/显式单attempt host开通及033真实factory挂载；固定target待独审/main后由Lead登记架构 |
@@ -60,3 +60,7 @@
 2026-10-07T07:42:01.684056Z：原PG01结束exit1/0of2/9110ms；组33832 absent且双EOF，专库marker/OID核对后零连接→普通DROP、remaining[]、listener关闭、同inode目录正常移除。132B Vitest缓存KEEP。已立即归还共享窗口；不重试原namespace。最早活动ID构造不符合同，第二项500/257请求的先前因果未观测；仅源码定位与后继局部修复，不改原raw。
 
 2026-10-07T07:50:46.948253Z：定向local段结束，2不同纯例+2次受影响types均通过，5606ms/raw1121B；四组absent/双EOF、四tmp正常移除。local05验证ID与实际mapper相同，local06注入work/cleanup两错误保primary。原41不重跑，PG02仅准备等待独审/实际窗口。
+
+2026-10-07T07:59:34.818988Z：Mika revision994实际交接/Lead授PG02；fresh286输入/21aliases/30delta绑定同，claimv4 active，namespace absent，free24181829632B>=1287651328B。SVC09停在只读准备、未建树/take/运行。即将原run.py repair-02；开始以exclusive reservation为准，0provider/个人操作。
+
+2026-10-07T07:59:45.501260Z→07:59:48.421609Z：PG02原2例0/2/exit1/2897ms/raw3055B；组39994 absent/双EOF，OID1253417+marker核→零连接→正常DROP/remaining[]，listener59019 closed、同devino tmp移除、cleanupErrors[]。139B缓存KEEP，已即时归还窗口。case1仅test fetch finally二次取消已消费锁流；case2注入fixture harness不满足现Claude session契约，32请求未撞256。见pg02-result-manifest，原事实/源不回改。
