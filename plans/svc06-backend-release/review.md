@@ -1,3 +1,7 @@
+## 首次采用实际结果：APPROVED_LIMITED_FIRST_ADOPTION_ACTUAL
+
+2026-10-07T11:30:09.205740+00:00，Execution Lead唯一独审[source/result](../../docs/evidence/svc06/legacy-first-bootstrap/result-independent-review.json) ff445/5963/5be。无finding，0重跑；仅5断言首次入口/maintenance组合及独立cleanup。真实App/个人更新不在批准范围，旧unknown全部保留。
+
 ## 2026-10-07 11:27:03 UTC：首次采用实际结果 PENDING_RESULT_REVIEW
 
 source ff445/185ab原准备批准不变；本次[RESULT](../../docs/evidence/svc06/legacy-first-bootstrap/RESULT.md)单例passed/5checks，35086ms+373ms、normalDROP与3idle组stopped。只审原件真实性/限定消费者，不批准真实App或个人更新；作者不自审。产品与入口停写，原unknown和历史失败均保留。
