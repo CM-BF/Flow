@@ -2,23 +2,23 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T02:59:58.580Z / main18144593；本次接收SVC06固定局部片 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T03:37:43.712900+00:00 / mainc0217f46；本次管理增量窄接收 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main18144593；SVC06已审parser/builder与原证据窄接收，不整合旧feature分支 |
+| 工作基线 / HEAD | mainc0217f46；固定领域与管理source分别窄接收，不整合旧feature分支 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | SVC06固定42文件/7产品源逐字相同、11直接输入保持；原7 distinct与独审复用，0新增工程检查/PG/provider。 |
-| 已集成main状态 / HEAD | main18144593已含OPS14、个人Web同版本恢复和时间规则；SVC06七源已main/origin a2e78031精确接收。个人仍af51/accepting v18、Web d629/v3。 |
+| 检查状态 | 已审SVC08/根pg/REQ15产品逐字绑定原target；本次5管理文件精确匹配400ee5e8，复用native独立docs review，0新增工程检查。 |
+| 已集成main状态 / HEAD | mainc0217f46已含SVC08、SVC06根pg、REQ15与185来源登记。个人仍af51/accepting v18、Web d629/v3；artifact实跑结果待限定独审接收，host/部署仍未验。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 页面连接释放修复与后台宿主依赖选择已进入主线；完整产物安装待验，登录入口和任务时间展示分别推进。 |
+| 当前产出 | 会话批量读取与连接释放修复已进入主线；固定后台产物已实际离线安装与内部加载，独立运行后继正在准备。 |
 | 下一可用交付 | 固定后台产物的实际安装、启动和隔离验证；登录入口与任务时间展示由Web组并行实现。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -299,3 +299,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T03:16:24.975763+00:00：SVC08上游截断最小修复及专测/证据受控接收，40绑定与红绿原件唯一独审通过；[接收](../../docs/evidence/i02/svc08-controlled-intake.json)/[独审](../../docs/evidence/i02/svc08-independent-review.json)。不是个人复发根因或长期稳定性证明，未更新个人服务。OPS/FLOW仅同步已发生主线/规则和当前验证顺序；0新测试/PG/provider。
 
 2026-10-07T03:26:16.305465+00:00：SVC06 rootpg已审3源已main3230；TIMING185登记与CHAT05失效空间阻塞修正随本批接收。SVC08固定086已main158但个人未部署；实际个人仍af51/v18、Web d629/v3。新增来源随ACCESS受控部署加载，未单独重启4320；无产品重测。
+
+2026-10-07T03:37:43.712900+00:00：隔离artifact与0PG浏览器调度规则按独审固定target受控接收，[五文件对照](../../docs/evidence/i02/isolated-artifact-browser-intake.json)。SVC06实跑原始结果未因管理发布直接获整体批准，个人服务未操作。

@@ -1,5 +1,14 @@
 # OPS-001 独立审查记录
 
+## 当前增量：隔离构建与浏览器调度
+
+- 结论：APPROVED_DOCS；native_center_owner / gpt-6-astra，回执记录时间 2026-10-07T03:37:24.401318+00:00。
+- 固定target：`e18be25a900ab2a7b4c1778524e7fdf6487aab12`，四文件完整delta；一并核原`2ef1d62e`两status事实。
+- 无P1/P2；1离线artifact+1隔离0PG浏览器、合计预算、旧packet安全点及真实PG/共享服务/unknown排他边界保持。
+- 实读SVC06 result/status的实际结束、exit0/owned组absent/双EOF，与管理摘要一致；没有把import-only当实际host启动/开发checkout不可用或个人部署。0工程检查/资源采样/服务动作。
+- 以下历史review边界原样保留，不覆盖未完成的OPS整体目标。
+
+
 **状态：SCOPED_REVIEW_COMPLETE — 仅模板与plans规则范围完成只读审查，不代表应用approval。**
 
 ## Target 与 scope

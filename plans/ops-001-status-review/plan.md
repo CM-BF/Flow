@@ -54,7 +54,7 @@ co-lead→GO每个大task仅允许 **独立blocker数 + Done(1)**。blocker须�
 
 - [x] **OPS-001-12** 将真实运行入口的动态资源/浏览器定位预检收进既有[局部验证方法](../../docs/quality/local-validation.md)，避免准备遗漏消耗独占窗口；不新增工具框架或重复通过检查，原失败、独审和累计预算保留。
 
-资源恢复后沿同一方法允许一个实际PG/Chrome重旅程，加三队各最多一段无共享端点的普通有界局部检查；co-leads自治，不逐命令审批。owner先核原固定包是否需最小修订、真实隔离和全部并行段相加的新增预算，原门槛/选中数/清理保持；安装/完整build/PG/Chrome/个人服务不算普通局部段，共享资源/可写源/性能基准仍串行。TUI与X01真实tar分别计量，不以0PG抹掉进程开销。全局agent仍本次heartbeat10与工具cap，不增槽；既有成果接收不等待本管理改动。
+资源恢复后沿同一方法允许一个实际PG重旅程，加三队各最多一段无共享端点的普通有界局部检查；另允许经隔离与合计预算核对的一个离线artifact构建和一个0PG浏览器段并行，详见唯一[局部验证方法](../../docs/quality/local-validation.md)。真实PG、共享服务/源冻结、性能测量及unknown仍排他，旧packet在安全点最小修订后才采用；co-leads自治，不逐命令审批。owner先核原固定包是否需最小修订、真实隔离和全部并行段相加的新增预算，原门槛/选中数/清理保持；安装/完整build/PG/Chrome/个人服务不算普通局部段，共享资源/可写源/性能基准仍串行。TUI与X01真实tar分别计量，不以0PG抹掉进程开销。全局agent仍本次heartbeat10与工具cap，不增槽；既有成果接收不等待本管理改动。
 
 - [ ] **OPS-001-13** 提取最小test-only有限连接观察：先核TUI既有observeConnections，再以两个真实消费者验证zero/busy/unknown，不拥有DB删除或资源归属；沿[局部验证后继](../../docs/quality/local-validation.md)。
 - [ ] **OPS-001-14** ready（当前发布/F04短片收口后下一工程改进）：消除重复的operator/测试进程期限实现。先比较O16与SVC05H的两个真实消费者，结合SVC07的EPERM收尾覆盖原失败事实，固定受监督PID/自有组、独立期限、输出上限及primary failure/cleanup unknown接口；detached个人服务永不由其停止。独立scope与至少两个实际消费者验证，不合并DB删除、资源归属、源码绑定或连接观察职责；当前已固定恢复/F04候选不为迁移重开或重跑。
