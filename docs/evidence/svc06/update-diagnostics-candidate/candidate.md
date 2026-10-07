@@ -1,3 +1,5 @@
+> 当前续接（2026-10-07）：R2 的7d1迁入、Web-only宿主替换、三真实报告导入与205B策略已实际完成并限定独审，后台仍af51。本文原六步为历史准备，已完成四阶段不可重放。后续唯一固定调用与新namespace见[剩余维护入口](maintenance-continuation.md)，实际bootstrap/refresh/checkpoint/resume仍NOT_RUN。
+
 # SVC06 固定诊断产物的个人受控更新候选
 
 唯一新 runtime source：`6c0fdcda8858aac33489c48c1948e902dd6a3d7e`（Lead 固定 `codex/svc06-diagnostics-runtime`）。父为 b2b；仅已独审 source3cb 的 preview/直接专测/new diagnostics/专测四文件变化，其余 Git blob 均相同。不是 moving main。旧 c2c 与 b2b r1 失败/清理及所有原始证据不变。

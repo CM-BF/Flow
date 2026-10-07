@@ -1,0 +1,33 @@
+{
+  "pid": 74353,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 487,
+  "stdout": "{\"outcome\":\"entrypoints-and-guards-available\",\"rootMaintenanceCallable\":true,\"artifactMaintenanceCallable\":true,\"factsCallable\":true,\"runtime\":{\"outcome\":\"runtime-and-query-construction-available\",\"pgEntry\":\"/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js\",\"databaseConnections\":0,\"personalReads\":0,\"personalWrites\":0},\"privateInstallationRead\":false,\"sourceArtifactOnly\":true,\"publicMaintenanceCalled\":false}\n",
+  "stderr": "",
+  "observed_bytes": 462,
+  "retained_bytes": 462,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

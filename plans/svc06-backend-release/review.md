@@ -1,3 +1,7 @@
+## 2026-10-07 12:47:40 UTC：R2限定独审接收与剩余调用待审
+
+[原样R2review](../../docs/evidence/svc06/update-diagnostics-candidate/partial-actual-independent-review.json)限定批准结果真实性、非后台更新；本次[剩余调用](../../docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.md)单独待审，0个人/PG重跑，原失败不改。
+
 ## 2026-10-07 12:37 UTC：个人 R2 部分完成结果待独审
 
 [唯一结果](../../docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/RESULT.md) / [manifest](../../docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/result-manifest.json)。固定 source5c29 不改；迁入、Web-only replace、三报告与策略实际完成，后续观察静态链接失败，maintenance 未执行。作者不自审；原 R1 与所有原件 KEEP，完成阶段不得重放。

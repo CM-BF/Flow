@@ -1,0 +1,22 @@
+{
+  "startedAt": "2026-10-07T12:39:33.516478+00:00",
+  "endedAt": "2026-10-07T12:39:33.606047+00:00",
+  "passed": true,
+  "elapsedMs": 89,
+  "runtimeResult": {
+    "outcome": "runtime-and-query-construction-available",
+    "pgEntry": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+    "databaseConnections": 0,
+    "personalReads": 0,
+    "personalWrites": 0
+  },
+  "ownedState": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "firstFailure": null,
+  "tmpCreated": false,
+  "rawBytes": 228,
+  "scope": "Only module loading, empty Pool construction/end without connect/query, SQL construction/rejection; no actual history snapshot or personal inspection"
+}

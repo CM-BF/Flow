@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 12:37:38 UTC；main 7524 固定运行闭包；本次迁入/Web宿主/报告/策略完成，维护前观察入口失败停止 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 12:47:40 UTC；R2部分实际限定独审已归档；剩余维护调用组装与零I/O消费者固定待审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -23,11 +23,11 @@
 | 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人本次迁入/Web-host/报告/策略已发生，后台更新未执行；本轮结果尚待独审/接收。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新产物和三份兼容报告已迁入，网页宿主已切到新产物；后台保持原版本，维护前数据留存检查失败，更新暂停。 |
-| 下一可用交付 | 修正只读历史摘要入口后，核既有完成阶段并继续后台维护和保留核验。 |
-| 当前阻塞 | ACTIVE: 维护前数据留存检查的模块导入错误；已停止后续并归还窗口，正在修正观察入口。 |
+| 当前产出 | 新产物、网页宿主、兼容报告和策略已安装，后台仍保持原版本；维护前观察入口已修正并通过零连接加载检查。 |
+| 下一可用交付 | 审查固定剩余调用后，核既有完成阶段并继续后台维护和保留核验。 |
+| 当前阻塞 | ACTIVE: 剩余维护调用待独审与新实际窗口；已完成阶段保留，后台维护尚未开始。 |
 | 需用户决定 | NONE |
-| Review | 迁入 source 5c29 准备独审 APPROVED；本次部分完成及静态链接失败的原始结果待独审，不扩大隔离/C3批准。 |
+| Review | R2 APPROVED_PARTIAL_ACTUAL_FIDELITY_NOT_BACKEND_UPDATE 已归档；旧失败保持。剩余调用/旧列摘要修复待独审，实际维护未执行。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -362,3 +362,7 @@ Web正式actual独审随后收到并核SHA69e9f809…；原报告等待结束取
 - 本次新产物迁入、Web-only 宿主替换、三份真实兼容报告导入与 205B 私有浏览器策略写入已完成。
 - 维护前只读历史检查在模块链接阶段因 CommonJS `pg/lib/index.js` 的命名导入失败；本检查 0 SQL，尚未调用 bootstrap / refresh / resume，后台仍为此前已观测的 af51。
 - 原始失败与所有已成功阶段保留；不重放迁入、替换、导入或策略创建，不自动回滚。调用者组 absent / 双 EOF，现场后续步骤停止并归还共享窗口。证据：`docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/stop.json`。
+
+## 2026-10-07 12:47:40 UTC：R2结果已审，剩余维护入口固定
+
+[唯一差量说明](../../docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.md)绑定小helper与结构化参数；最终0个人I/O的实际Node/tsx导入/参数检查31+487ms，先前CJS构造89ms，3组absent/双EOF，无tmp、PG或维护调用。原R2四阶段不可重放；新namespace只续接bootstrap/refresh/checkpoint/resume，仍待独审/真实窗口。任务总开工UNKNOWN不改。
