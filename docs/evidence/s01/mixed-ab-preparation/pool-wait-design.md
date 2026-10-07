@@ -54,7 +54,7 @@
 
 活动期间每100ms轮换 GET conversation详情与 `turns?after=0&limit=20`，总最多2个在途；同一固定聊天作为轻读基准，不只是读空列表。此项覆盖真实chat投影HTTP在共享池压力下的响应，不覆盖持续native正文/UI渲染。请求3s硬deadline、响应256KiB界限、每侧全程轻读≤200；超时、未发/取消/错误分母分列，不只保成功样本。原task详情/事件读仅作为直接下层参考，不能替代conversation读。
 
-稳定活动采样6秒结束后继续相同背景最多5秒，在固定四个仍活动fixture task上并发发既有cancel命令（各稳定key，只发一次）。记录发送→确定ACK和各attempt收到heartbeat cancel→adapter停止→持久完成的同进程时长/最终身份；中心当前任务取消API即聊天任务使用的取消接缝，但此处不声称浏览器点击或native工具中断。四个取消后不再要求128持续；6秒与取消阶段的分母严格分开。请求未知保原key和资源，不拿新请求/新attempt代替。
+稳定活动采样6秒结束后继续相同背景最多5秒。旧child在began+caseMs停止循环并返回，新recipe必须把measurement6s与adapter活动寿命6+≤5s分开，不能在6s自然completed后靠sleep冒充取消。driver发四cancel前再核固定四个task仍为同一活动attempt/ownerVersion；不成立则本项无效，不另挑任务补样。四命令各稳定key、只发一次。分别记录driver同钟send→确定ACK、runner同钟control.signal实际abort/cancelObserved→adapterEnd，以及driver同钟send→观察到最终持久状态；ACK与runner signal之间不跨进程相减。零新adapter副作用从runner实际取消观测时刻起验证；ACK到signal传播期间仍合法产生的emit如实列为传播阶段事件，不静默剔除。固定main的AttemptControl heartbeat cancel与runtime outbox排空/terminal是不同步骤，不能把ACK当已停止。中心当前任务取消API即聊天任务使用的取消接缝，但此处不声称浏览器点击或native工具中断。四个取消后不再要求128持续；6秒与取消阶段的分母严格分开。请求未知保原key和资源，不拿新请求/新attempt代替。
 
 候选诊断目标：分别报告轻读p50/p95/max/超时率、取消ACK与停止延迟，列出大于1s轻读或取消ACK的实际样本；1s仅本实验关注阈值，不冒称用户已批准SLO。硬正确性是身份/游标/响应内容一致、ACK与持久事件一致、取消之后不再有新的adapter副作用（已在途报送按原协议排空）、无重复attempt/恢复丢失。不得只因p95好看而忽略超时/unknown。完整ACK丢失/browser/native验收仍属原开放TODO。
 
