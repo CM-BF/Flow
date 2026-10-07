@@ -2,15 +2,18 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 13:03 UTC / main 280289008a5a3779e4e5e6453181b96062ed9514 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:23:55.000Z / main0e09c5d9；ENG01I原六范围正式恢复实施 |
 | Plan | [plan.md](plan.md) |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 父任务首次实际开工无已核明确事件；保留历史未知，不从claim或提交猜测。 |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-delivery |
 | Branch | codex/engineering-delivery |
 | 工作基线 / HEAD | 3418fe682944145494463dca9e09f89c8b9c2295 / 首计划5ad85748f213a80d4be0cb6753319914a7683142；后续metadata由Git记录 |
-| 工作树dirty状态 | 本次仅父计划与实际子片状态对齐，提交后clean |
+| 工作树dirty状态 | 本次仅父计划/状态真实续接事实，提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | ENG01H中心61不同原检查与F01薄HTTP2独审复用，集成28源逐字同/root types0；父metadata不重测 |
@@ -19,9 +22,9 @@
 | 实现范围 | plans/eng01-engineering-delivery, docs/evidence/eng01 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 原生工程的独立用途、固定执行配置和检查收据关联已进入主线；终端可读取目标交付历史。 |
-| 下一可用交付 | 取得真实写权限与模型资格后接通受信宿主编排；已完成的工程合同和检查模块继续复用。 |
-| 当前阻塞 | ACTIVE: 真实工程执行仍缺固定宿主权限与模型资格证据，原负责人继续核验；没有要求用户追加决定。 |
+| 当前产出 | 工程执行用途、配置和检查收据关联已进入主线；受信写入、完整检查及公开收据的宿主组合已恢复实施，实际模型写改尚未验收。 |
+| 下一可用交付 | 用现有原生writer、检查器和中心收据完成零模型宿主纵向旅程与未知恢复；真实模型资格核验并行推进。 |
+| 当前阻塞 | ACTIVE: 真实模型工程验收仍缺合格模型、具体权限与全部writer停止依据；该限制仅阻真实执行，不再阻宿主零模型组合实施。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
 | Claim | 2c8bf375-8247-458b-8891-2dc2b4a289cd v1，仅plan/evidence |
@@ -32,7 +35,7 @@
 | ENG001-01 | completed | Execution Lead | plan / research / source-observation / claim receipt |
 | ENG001-02 | completed | native_center_owner | ENG01A工作区/检查合同已main；[ENG01B执行配置](../../../engineering-execution-profile/plans/eng01b-engineering-profile/status.md)补用途/pin/恢复门禁 |
 | ENG001-03 | completed | native_center_owner / 独立runner_owner review | ENG01A E0+E1固定040已mainc5；真实Git/checker/PG、unknown重启/丢ACK恢复；fixture非native |
-| ENG001-04 | in-progress | native_center_owner | ENG01H已审main280289；ENG01I仅合同准备已固定66fc4068且释放写权，等待Mika唯一原生资格事实后重新领取实施，不重复probe |
+| ENG001-04 | in-progress | native_center_owner | H已main；ENG01I于2026-10-07T04:18:16.925Z fresh claim0497正式恢复，固定422输入与5953首源码，正做原六范围局部验证；后续仅消费已审C02，不等真实模型资格才实现组合。 |
 | ENG001-05 | pending | 独立operator/reviewer | 无新provider许可或执行 |
 | ENG001-06 | pending | Web/TUI owner | 交付读取与接受待公开合同 |
 | ENG001-07 | pending | adapter owner | 第二harness扩展未实现 |
@@ -63,3 +66,5 @@
 2026-10-06 12:59 UTC：H13源码对916e/main280289一致；中心验证的是可信宿主声明与固定产物关联，不证明OS停止。下一I模块组合真实G通信与F检查，不新增默认authority，不把注入peer验证写成真实模型通过。
 
 2026-10-06 13:03 UTC 安全停点：ENG01I仅六份计划/接口文件、零产品修改，原claim v2已释放；不是实现交付。执行位暂用于MATURE06的可恢复中心连接，SVC06另位并行。工程目标与05/06真实验收保持开放；资格到位后沿唯一ENG01I计划重新fresh take，不把等待写成模型能力已经通过。
+
+2026-10-07T04:23:55.000Z：Connection核心及SVC08限定片已交付、SVC06首未知资源已受控收尾，原worker恢复[ENG01I唯一源](../../../engineering-native-host/plans/eng01i-native-engineering-host/status.md)。G writer→F完整capture/check→H公开收据与unknown恢复沿原接口，0provider，不触C02 pump/runtime/contracts或个人服务。局部结果与专库旅程由子片唯一status记录；父任务05真实>=Sol模型写改、全部writer停止和独立语义接受仍未完成，未新增调用预算。

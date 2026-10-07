@@ -8,3 +8,7 @@ Conclusion: NOT_STARTED
 后继独审需绑定每片完整commit、真实scope、base/dirty与原始证据。重点核工作区/权限/secret及session归属，未知副作用恢复，不能被模型修改的验收基线，host监督退出与产物digest的同版本绑定，以及通过/失败/未验/未知/业务接受分别记录。需说明模块Interface、依赖方向、扩展一个harness改哪些位置及实际性能/资源边界。
 
 真实native调用另绑定具体预算，不由此模板授权；reviewer只读，不重复无变化全库检查。完整大taskDone必须有真实工程交付，不以模型文本或fixture结果代替。
+
+## 2026-10-07 ENG01I恢复派工状态限定复核
+
+native_center_owner / gpt-6-astra只读target254bf8530e5a8bc8fdf7c562bf98d96f56b558cf相对fbab7b9c的两文件完整delta：APPROVED_DOCS，无P1/P2。暂停明确为历史，0provider宿主组合恢复与05真实模型/权限门槛分开；未运行工程检查。仅父计划/状态事实，不批准ENG01I实现、真实资格或完整工程交付。
