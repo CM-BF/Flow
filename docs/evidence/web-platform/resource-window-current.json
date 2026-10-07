@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T04:45:21.778593+00:00",
-  "state": "X01_R1_HEAVY_RETURNED_RETAINED_EVIDENCE_KEEP_WEB_NO_GRANT",
-  "groupWindowOwnership": "X01 heavy handback supported by04:40:34 independent original-evidence read; all owned processes/DB/listeners closed. Original R1 FAILED/UNKNOWN and exact TMP/outer KEEP remain. Web0holder/gate/reservation; Quickb2 exact static preparation accepted; fresh runtime admission still not created.",
+  "recordedAt": "2026-10-07T05:00:09.075191+00:00",
+  "state": "X01_R2_ACTUAL_RETURNED_RECOVERY_ADMITTED_NOT_STARTED",
+  "groupWindowOwnership": "X01 R2 actual cleanup ended04:57:04.132561Z and explicitly handed PG to Recovery. Fresh Recovery gate ready for originalowner; no Web process started, no other PG/Chrome holder reported. This is a short execution handoff, not actualRUN.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T04:45:21.778593+00:00",
-    "kind": "X01_R1_ACTUAL_HEAVY_RETURN_KEEP_ORIGINAL_FAILURE",
-    "source": "x01-r1-return-20261007/incoming.json",
-    "summary": "X01重窗口已归还，原失败/UNKNOWN和精确TMP/outer KEEP；Web无holder/gate/预约。Quickb2静态及精确native边界已接受，仅封绑定，未采容量或建gate。新有限并行规则以同一reserve合计预算执行。 原Lead ENG01I若先ready可直接接下一PG，不等X01新准备；当前尚无其actualRUN。"
+    "at": "2026-10-07T05:00:09.075191+00:00",
+    "kind": "X01_R2_ACTUAL_RETURN_RECOVERY_FRESH_ADMISSION_OWNER_HANDOFF",
+    "source": "quick-b2-return-20261007/incoming.json",
+    "summary": "X01R2 26pass/1fail with complete owned process/DB/listener/TMP cleanup handed PG to Recovery. Original claim/head/pins and onefresh combinedfloor passed; gate expires05:05:12Z. Originalowner launch pending; manager does not launch product. Quickb3 TMP only."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -550,7 +550,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "quick-b1-actual-20261007/return.json",
+  "currentWindowReturn": "quick-b2-return-20261007/incoming.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1009,6 +1009,12 @@
         "newSourceTask": "dashboard-local-access-intake/registration-request.json: first canonical a6fb present; READY_FOR_LEAD_INTAKE, not actually aggregated"
       },
       "source": "Prior specific scheduling, superseded by root-relayed actual chain/heavy return and new SVC06 local holder"
+    },
+    {
+      "recordedAt": "2026-10-07T04:45:21.778593+00:00",
+      "state": "X01_R1_HEAVY_RETURNED_RETAINED_EVIDENCE_KEEP_WEB_NO_GRANT",
+      "historicalFields": "quick-b2-return-20261007/previous-current-fields.json",
+      "supersededBy": "quick-b2-return-20261007/incoming.json"
     }
   ],
   "dperf05Pure": {
@@ -1115,24 +1121,48 @@
       }
     },
     "quick": {
-      "ownerHead": "3a4dd6dee89a3ea456f31870dd0a126a6efad1c5",
+      "ownerHead": "b44fce2889ab2b9622c45fc7a92ce2237e8507bf",
       "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
       "packet": "/private/tmp/msgquick-b2",
       "bindingSha256": "790668eca675eaa43cf0d4a43d761e28413270ce52e2c572e13525d1c4c7d1e4",
       "manifestSha256": "8c1ecf8a5f265721a4c0b1d89cb8feeba85c0b9ef3858f165f4f3ca3accff537",
-      "state": "B2_REVIEWED_STATIC_NOT_RUN_FRESH_ADMISSION_REQUIRED",
-      "admission": "quick-b1-actual-20261007/admission.json",
-      "browserSpentMs": 12326,
+      "state": "B2_CONSUMED_FAILED_CLEANUP_ACCEPTED_B3_TMP_PREPARATION_ONLY",
+      "admission": "/private/tmp/msgquick-b2-admission-rijzrvzi/gate.json (historical consumed)",
+      "browserSpentMs": 18468,
       "totalMs": 60000,
       "cleanupMs": 15000,
-      "meaning": "ActualFAILED0/6/0PNG, exactcleanup accepted; firstpacket consumed. NewTMP diagnostics prepare only, no runtime or reservation.",
-      "actualReceipt": "quick-b1-actual-20261007/return.json",
-      "remainingMs": 47674,
-      "failure": "First native keyboard model selection remained empty; originalowner static cause investigation, no outcome assumption.",
-      "review": "d06-main-closeout-20261007/quick-b1-failed-review.json",
-      "next": "Originalowner next slot may execute only after immediatefresh claim/head/pins/prior/resource/combinedfloor and newoneusegate; no launch or reservation now.",
+      "meaning": "b2 actual FAILED/0report/0trace/0PNG; group/scratch absence accepted, fixtureClosed/contextClosed NOT_CAPTURED. c2 strict+26 PASS and c1/b1 failures preserved.",
+      "actualReceipt": "quick-b2-return-20261007/incoming.json",
+      "remainingMs": 41532,
+      "failure": "Parent retained evidence sampling limit; static non-atomic BASE minus scratch overcount defect. Actual transient is consistent, not exact causal proof.",
+      "review": "quick-b2-return-20261007/quick-b2-failed-review.json",
+      "next": "Originalowner prepares TMP b3 accounting correction only, no product mutation, retry, gate or reservation. Preserve accumulated18468 and remaining41532 incl15000cleanup.",
       "preparationReview": "x01-r1-return-20261007/quick-b2-native-review.json",
-      "admissionPreparation": "x01-r1-return-20261007/quick-b2-ready.json"
+      "admissionPreparation": "quick-b2-return-20261007/incoming.json"
+    },
+    "recovery": {
+      "ownerHead": "4c0852e6295e64216c8f3b34cfc626db08f06beb",
+      "source": "9835e7488dd9b0b44b3afbc285336defdd739e98",
+      "packet": "/private/tmp/recovery-browser-fourth9835-m6k6wgf0",
+      "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+      "budget": {
+        "cumulativeMs": 38364.050667,
+        "nextIntegerTotalMs": 51635,
+        "cleanupIncludedMs": 15000
+      },
+      "runtime": "Original PG+HTTP+Chrome, not independent0PG. No adminenv/gate/reservation or launch created.",
+      "next": "Original panels owner executes once before gate expiry with original command; actual terminal/owned cleanup first, then manager removes exact adminenv and returns window. No automatic retry.",
+      "review": "quick-b2-return-20261007/recovery-fourth-preparation-review.json",
+      "admission": {
+        "handoff": "recovery-admission-handoff.json",
+        "observation": "recovery-admission-observation.json",
+        "gate": "/private/tmp/recovery-fourth-admission-c7oo_y3a/gate.json",
+        "gateSha256": "01ed9074f83fe9c127695d9ae5a13821adb9659eedfd810f6c23ee1a6711f7ea",
+        "expiresAt": "2026-10-07T05:05:12.543262+00:00",
+        "run": "rec9835-20261007-045912-724895",
+        "adminEnv": "/private/tmp/recovery-fourth-admission-c7oo_y3a/admin.env",
+        "actualStart": "NOT_STARTED"
+      }
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1235,13 +1265,13 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/browser-first-20261007/index.json",
+  "currentWindowEvidence": "quick-b2-return-20261007/quick-b2-failed-review.json",
   "webActualHolder": null,
-  "webGate": null,
+  "webGate": "/private/tmp/recovery-fourth-admission-c7oo_y3a/gate.json",
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": "544c limited source/preparation approved, final929b HEAD and newboundary/pins verified; PREPARED NOTRUN, no gate/holder/reservation",
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": false,
+  "webReservation": true,
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -1508,7 +1538,7 @@
     "managerResourceSample": false,
     "noFurtherCandidateAuthorized": true
   },
-  "currentCoordinationAudit": "dashboard-task-time-intake/incoming.json",
+  "currentCoordinationAudit": "quick-b2-return-20261007/recovery-admission-observation.json",
   "latestLeadResourceIntake": {
     "evidence": "resource-restored-svc07-handoff.json",
     "source": "Lead incoming through root",
@@ -1568,13 +1598,10 @@
   },
   "externalCurrentAdmission": {
     "owner": null,
-    "state": "HEAVY_RETURNED_RETAINED_EVIDENCE_KEEP",
-    "terminalAt": "2026-10-07T04:37:58.269Z",
-    "handoffEvidenceReadAt": "2026-10-07T04:40:34Z",
-    "source": "x01-r1-return-20261007/incoming.json",
-    "retainedTmp": "flow-x01-pg-38ywpnw_ dev16777234/ino123467679 +outer KEEP",
-    "retainedSizeAndPeak": "UNKNOWN",
-    "noNewOpen": true
+    "state": "X01_R2_ACTUAL_RETURNED",
+    "actualEnd": "2026-10-07T04:57:04.132561Z",
+    "source": "quick-b2-return-20261007/incoming.json",
+    "noAutomaticRetry": true
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1583,15 +1610,8 @@
     "pureGit": "NOT_RUN",
     "newRuntimeGrant": false
   },
-  "nextExternalQueue": [
-    {
-      "owner": "Original Lead ENG01I",
-      "state": "NEXT_PG_IF_FIRST_READY_PENDING_OWN_FRESH_NOT_RUN",
-      "source": "x01-r1-return-20261007/incoming.json",
-      "reason": "X01 new repair not fixed/reviewed/open; C02 source-only0PG"
-    }
-  ],
-  "currentIntake": "x01-r1-return-20261007/incoming.json",
+  "nextExternalQueue": [],
+  "currentIntake": "quick-b2-return-20261007/incoming.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",

@@ -1,0 +1,57 @@
+{
+  "recordedAt": "2026-10-07T04:45:21.778593+00:00",
+  "state": "X01_R1_HEAVY_RETURNED_RETAINED_EVIDENCE_KEEP_WEB_NO_GRANT",
+  "groupWindowOwnership": "X01 heavy handback supported by04:40:34 independent original-evidence read; all owned processes/DB/listeners closed. Original R1 FAILED/UNKNOWN and exact TMP/outer KEEP remain. Web0holder/gate/reservation; Quickb2 exact static preparation accepted; fresh runtime admission still not created.",
+  "latestCoordination": {
+    "at": "2026-10-07T04:45:21.778593+00:00",
+    "kind": "X01_R1_ACTUAL_HEAVY_RETURN_KEEP_ORIGINAL_FAILURE",
+    "source": "x01-r1-return-20261007/incoming.json",
+    "summary": "X01重窗口已归还，原失败/UNKNOWN和精确TMP/outer KEEP；Web无holder/gate/预约。Quickb2静态及精确native边界已接受，仅封绑定，未采容量或建gate。新有限并行规则以同一reserve合计预算执行。 原Lead ENG01I若先ready可直接接下一PG，不等X01新准备；当前尚无其actualRUN。"
+  },
+  "currentWindowReturn": "quick-b1-actual-20261007/return.json",
+  "currentWindowEvidence": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/browser-first-20261007/index.json",
+  "currentCoordinationAudit": "dashboard-task-time-intake/incoming.json",
+  "webActualHolder": null,
+  "webGate": null,
+  "webReservation": false,
+  "externalCurrentAdmission": {
+    "owner": null,
+    "state": "HEAVY_RETURNED_RETAINED_EVIDENCE_KEEP",
+    "terminalAt": "2026-10-07T04:37:58.269Z",
+    "handoffEvidenceReadAt": "2026-10-07T04:40:34Z",
+    "source": "x01-r1-return-20261007/incoming.json",
+    "retainedTmp": "flow-x01-pg-38ywpnw_ dev16777234/ino123467679 +outer KEEP",
+    "retainedSizeAndPeak": "UNKNOWN",
+    "noNewOpen": true
+  },
+  "nextExternalQueue": [
+    {
+      "owner": "Original Lead ENG01I",
+      "state": "NEXT_PG_IF_FIRST_READY_PENDING_OWN_FRESH_NOT_RUN",
+      "source": "x01-r1-return-20261007/incoming.json",
+      "reason": "X01 new repair not fixed/reviewed/open; C02 source-only0PG"
+    }
+  ],
+  "currentIntake": "x01-r1-return-20261007/incoming.json",
+  "quick": {
+    "ownerHead": "3a4dd6dee89a3ea456f31870dd0a126a6efad1c5",
+    "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+    "packet": "/private/tmp/msgquick-b2",
+    "bindingSha256": "790668eca675eaa43cf0d4a43d761e28413270ce52e2c572e13525d1c4c7d1e4",
+    "manifestSha256": "8c1ecf8a5f265721a4c0b1d89cb8feeba85c0b9ef3858f165f4f3ca3accff537",
+    "state": "B2_REVIEWED_STATIC_NOT_RUN_FRESH_ADMISSION_REQUIRED",
+    "admission": "quick-b1-actual-20261007/admission.json",
+    "browserSpentMs": 12326,
+    "totalMs": 60000,
+    "cleanupMs": 15000,
+    "meaning": "ActualFAILED0/6/0PNG, exactcleanup accepted; firstpacket consumed. NewTMP diagnostics prepare only, no runtime or reservation.",
+    "actualReceipt": "quick-b1-actual-20261007/return.json",
+    "remainingMs": 47674,
+    "failure": "First native keyboard model selection remained empty; originalowner static cause investigation, no outcome assumption.",
+    "review": "d06-main-closeout-20261007/quick-b1-failed-review.json",
+    "next": "Originalowner next slot may execute only after immediatefresh claim/head/pins/prior/resource/combinedfloor and newoneusegate; no launch or reservation now.",
+    "preparationReview": "x01-r1-return-20261007/quick-b2-native-review.json",
+    "admissionPreparation": "x01-r1-return-20261007/quick-b2-ready.json"
+  },
+  "meaning": "Historical current fields immediately before this actual-result update; not current scheduling authority."
+}

@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:42:56.979042+00:00；X01重窗口实际归还与保留证据边界入站；仅管理事实更新，未采服务 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:56:55.072389+00:00；快速设置第二次页面验证终态、ENG归还与SVC08后继交接入站；仅管理事实更新，未采服务 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,10 +21,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；架构图固定快照和连线显示修复已接入主线并提供新资产；几何与键盘验收通过，窄屏默认阅读体验留作后继。 |
-| 下一可用交付 | 本机打开Flow与凭据入口已发布，并完成主动加载、复制和关闭观察；本机入口剩一项说明文档增量待接收；快速设置首次页面检查未通过，原owner仅准备有界事件观察以定位键盘选择问题。窄屏图文可读性作为后继改进保留。时间展示易读性沿独立有界后继排队。 |
+| 下一可用交付 | 本机打开Flow与凭据入口已发布，剩说明文档增量待接收；快速设置的类型和组合行为已验证，页面验证被临时文件计量中断，原owner正修验证工具以继续定位键盘选择问题。草稿恢复的下一页面旅程准备已审，即将交由原owner执行已准入的恢复旅程。窄屏图文与时间展示易读性作为后继保留。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：X01重窗口已归还，原失败与保留证据不改；本组无holder/gate/预约，Quick后继准备已独审，实际准入未打开 |
+| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：本组、ENG、SVC08及X01窗口已实际归还；恢复旅程fresh准入已交原owner，尚未启动。本组暂无实际holder，短时gate与交接见当前窗口。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -74,7 +74,7 @@
 
 已审设计输入：[快速设置双重生命周期门禁](../../docs/evidence/web-platform/message-settings-ownership-interface/root-review.json)已收敛；[新组件唯一source](../../docs/evidence/web-platform/message-settings-quick-controls-provision/registration-request.json)已六scope领取；[固定源码与179来源实际登记](../../docs/evidence/web-platform/message-settings02-35-source-intake/report.md)已接收，[fe6源码与c1静态准备已审](../../docs/evidence/web-platform/message-settings02-c1-prepared/report.md)由原owner负责，真实host接线仍需后继交权。
 
-[远程 CI 消费边界](../../docs/evidence/web-platform/ops-ci01-web-consumer-intake/report.md)已归原 TODO11：没有触发 CI 或新增 writer，QuickControls旧类型失败保留；该记录时c2类型与26direct已通过、浏览器尚未运行是历史；当前b1首次浏览器已FAILED并清理、b2仅审定准备，见页首及原owner唯一status。
+[远程 CI 消费边界](../../docs/evidence/web-platform/ops-ci01-web-consumer-intake/report.md)已归原 TODO11：没有触发 CI 或新增 writer，QuickControls旧类型失败保留；该记录时c2类型与26direct已通过、浏览器尚未运行是历史；当前b1/b2均实际FAILED并归还，b2计量中断及未捕获字段见[本次来源](../../docs/evidence/web-platform/quick-b2-return-20261007/incoming.json)与原owner唯一status。
 
 [portable候选交付](../../docs/evidence/web-platform/message-settings02-portable-prepared/report.md)与[REQ17/CHAT06测量接口](../../docs/evidence/web-platform/req17-chat06-measurement-interface/report.md)沿现有验收推进，未新增运行或claim；性能全部未测量。
 

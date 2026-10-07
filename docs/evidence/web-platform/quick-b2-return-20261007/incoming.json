@@ -1,0 +1,204 @@
+{
+  "recordedAt": "2026-10-07T05:00:09.075191+00:00",
+  "authority": "Manager coordination index only; feature progress remains each owner status and ownership remains D04 ledger.",
+  "source": "Root bounded incoming actual receipts and independent reviews; no manager resampling of services, resources or product execution.",
+  "quick": {
+    "ownerHead": "b44fce2889ab2b9622c45fc7a92ce2237e8507bf",
+    "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+    "ownerSeal": "Root confirms normalpush/local=remote/clean; manager read HEAD and clean. 20 raw files/172219B, archive48f7210e (incoming short identifier).",
+    "status": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+    "packet": "/private/tmp/msgquick-b2",
+    "outer": "/private/tmp/msgquick-b2-outer-017_g6hn",
+    "start": "2026-10-07T04:48:04.105492Z",
+    "end": "2026-10-07T04:48:10.247247Z",
+    "actualExit": 1,
+    "wallMs": 6141.6885,
+    "outcome": "FAILED_PARENT_RETAINED_SAMPLE_LIMIT",
+    "workerExit": 143,
+    "chromeExit": 0,
+    "browserGroupsCompleted": 0,
+    "pngCount": 0,
+    "workerReport": "NOT_CAPTURED",
+    "selectTrace": "NOT_CAPTURED",
+    "fixtureClosed": "NOT_CAPTURED",
+    "contextClosed": "NOT_CAPTURED",
+    "observedCleanup": {
+      "groups": [
+        88739,
+        88871,
+        88743
+      ],
+      "allAbsent": true,
+      "scratchAbsent": true,
+      "eof": true,
+      "droppedBytes": 0,
+      "normalAsyncFixtureCloseNotProved": true
+    },
+    "review": {
+      "path": "quick-b2-failed-review.json",
+      "sha256": "eea3ef6a637b878ce89a7b30e4b9d6775446332398d39db5ffc34b96e97750be"
+    },
+    "budget": {
+      "priorConservativeMs": 12326,
+      "thisConservativeMs": 6142,
+      "cumulativeMs": 18468,
+      "remainingMs": 41532,
+      "cleanupIncludedMs": 15000,
+      "originalParentCumulativeMs": 18428,
+      "originalRecordsUnchanged": true
+    },
+    "diagnosis": "Static defect: BASE and scratch are traversed separately while mutable; subtracting the earlier scratch size can overcount retained evidence. Samples are consistent with this defect, not exact per-file proof of the transient.",
+    "next": "W01 only TMP b3 disjoint retained accounting fix and synthetic plan preparation. No product change, retry, gate, reservation or reset of accumulated budget; original keyboard failure remains unobserved."
+  },
+  "eng01i": {
+    "source": "OriginalLead actual receipt relayed by root, not a manager process/DB probe.",
+    "window": "ENG01I-PG-20261007-R1",
+    "state": "ACTUAL_RETURNED",
+    "actualStart": "UNKNOWN",
+    "selected": 2,
+    "passed": 2,
+    "unselected": 18,
+    "providerCalls": 0,
+    "cleanupAt": "2026-10-07T04:50:47.025Z",
+    "cleanup": "Marked owned DB ordinary DROP and absence/errors[]; owned group absent and double EOF.",
+    "tmpRemovedAt": "2026-10-07T04:50:47.092Z"
+  },
+  "svc08": {
+    "source": "OriginalLead explicit next artifact handoff relayed by root.",
+    "window": "SVC08-FLOW422-BUILD-R1",
+    "state": "ACTUAL_RETURNED",
+    "sourceShort": "20ed",
+    "manifestShort": "4576",
+    "seconds": "420 + 0.5 + 2",
+    "freshBaseBytes": 3391094784,
+    "separateBrowserLocalAllowanceBytes": 536870912,
+    "pg": 0,
+    "chrome": 0,
+    "service": 0,
+    "provider": 0,
+    "actualStart": "2026-10-07T04:54:19.375Z",
+    "actualHolderNotInferred": true,
+    "restriction": "Historical artifact+PG exclusivity observed. Actual artifact return now received; next PG handed to earlier-ready X01R2.",
+    "actualEnd": "2026-10-07T04:54:50.037Z",
+    "outerMs": 30732,
+    "actualExit": 0,
+    "cleanup": "Double EOF and final owned group absent;0PG/Chrome/provider/personal action. Artifact retained, not deployment approval. OriginalLead only local types/archive next, no heavy reservation."
+  },
+  "recovery": {
+    "ownerHead": "4c0852e6295e64216c8f3b34cfc626db08f06beb",
+    "source": "9835e7488dd9b0b44b3afbc285336defdd739e98",
+    "status": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+    "ownerFacts": "Normalpush/localremote/clean; root apps/packages vs7440 zero diff. Own timing UNKNOWN/NOT_COMPLETED and C02 consumer seams saved.",
+    "packet": "/private/tmp/recovery-browser-fourth9835-m6k6wgf0",
+    "report": {
+      "file": "report.md",
+      "bytes": 6982,
+      "sha256": "4fff4925e87db691543c04517af346b8300517e286ff5464ad2bc215531e283b"
+    },
+    "manifest": {
+      "file": "manifest.json",
+      "bytes": 52186,
+      "sha256": "861a173116eb2bf84cadc8556ed4c72fadfc363fafa6011211a454f51b91623c"
+    },
+    "review": {
+      "path": "recovery-fourth-preparation-review.json",
+      "sha256": "f7f875768d4224ba87f2dd01a8381b818daa19d39929860fd6ec2f0a4cc58928"
+    },
+    "reviewScope": "Root fixed input review: 19 sources,9public,11package,11runtime,43prior/83339B,3budgets,5root origins,Node/Chrome. issues[]; preparation only.",
+    "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+    "budget": {
+      "cumulativeMs": 38364.050667,
+      "nextIntegerTotalMs": 51635,
+      "cleanupIncludedMs": 15000
+    },
+    "runtime": "Original PG+HTTP+Chrome, not independent0PG. No adminenv/gate/reservation or launch created.",
+    "next": "Original panels owner executes once before gate expiry with original command; actual terminal/owned cleanup first, then manager removes exact adminenv and returns window. No automatic retry.",
+    "admission": {
+      "handoff": "recovery-admission-handoff.json",
+      "observation": "recovery-admission-observation.json",
+      "gate": "/private/tmp/recovery-fourth-admission-c7oo_y3a/gate.json",
+      "gateSha256": "01ed9074f83fe9c127695d9ae5a13821adb9659eedfd810f6c23ee1a6711f7ea",
+      "expiresAt": "2026-10-07T05:05:12.543262+00:00",
+      "run": "rec9835-20261007-045912-724895",
+      "adminEnv": "/private/tmp/recovery-fourth-admission-c7oo_y3a/admin.env",
+      "actualStart": "NOT_STARTED"
+    }
+  },
+  "c02": {
+    "source": "Root incoming and bounded fixed projection diff read; not full C02 review or PG validation.",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity",
+    "fixedSource": "5219ec25d6c52b54f7e46eac16766095c693c337",
+    "packet": "4ecfea09698a42b2e59a684462e8891923a96c15",
+    "entry": "docs/evidence/mature02c02/public-stream-next.md and review-ready in unique owner worktree",
+    "state": "SOURCE_INDEPENDENT_REVIEW_PENDING_PG_NOT_VERIFIED",
+    "reportedLocal": "Host6/6 and strict exit0; actual local cleanup closed.",
+    "rootSeamObservation": "projection adds AssistantStreamProtocol; protocolChanged pauses, clears metadata/patches/final and refreshes; v1 metadata permits claude.sdk.stream only. This closes the two observed contract seams in source, not full25-source/93actual/PG approval.",
+    "webBoundary": "No Web implementation or scope amendment. Recovery host/messages and stream-test successor ownership still needs exact coordinated handoff after fixed public contract review."
+  },
+  "x01Local": {
+    "source": "Root relay of actual local receipt; separate from earlier retained R1 evidence.",
+    "start": "2026-10-07T04:46:13.939118Z",
+    "end": "2026-10-07T04:46:14.713357Z",
+    "result": "Two directed processes exit0/owned absent/EOF; two own TMP same-inode removed; raw1113B/result4829B; zero pending launch; local returned to C02.",
+    "r1RetainedUnchanged": "flow-x01-pg-38ywpnw_ dev16777234/ino123467679 + oldouter KEEP; prior caller UNKNOWN and size/peakUNKNOWN preserved. This local return does not prove old R1 TMP removed.",
+    "r2": "Following SVC08 actual return, newer X01R2 actualRUN reported; see x01R2, not the previous unlaunched ready state."
+  },
+  "web": {
+    "actualPgHolder": null,
+    "actualBrowserHolder": null,
+    "actualLocalHolder": null,
+    "gate": "/private/tmp/recovery-fourth-admission-c7oo_y3a/gate.json",
+    "reservation": true,
+    "state": "RECOVERY_ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+    "newRuntimeByThisBatch": false
+  },
+  "x01R2": {
+    "source": "Mika originalowner actualRUN receipt relayed by root; manager did not resample.",
+    "state": "ACTUAL_RETURNED",
+    "ownerHeadShort": "2f018b27",
+    "window": "cf9d3c58d2074ad6bae7161b42c7298c",
+    "freshClaimAt": "2026-10-07T04:56:45.416265Z",
+    "claimVersion": 8,
+    "actualStart": "2026-10-07T04:56:55.394874Z",
+    "startNote": "Later actual terminal receipt supplied exact start/end; original freshclaim time remains distinct.",
+    "freshAvailableBytes": 25194610688,
+    "requiredBytes": 1260658688,
+    "bounds": {
+      "totalMs": 180000,
+      "selectedCases": 27,
+      "serialDatabases": 2,
+      "maxHttp": 416,
+      "tmpBytes": 33554432,
+      "rawBytes": 1048576,
+      "dbWalBytes": 134217728,
+      "sharedReserveBytes": 1073741824,
+      "c02LocalAllowanceBytes": 18087936
+    },
+    "cleanup": {
+      "ownedPids": [
+        99553,
+        99579
+      ],
+      "groupsAbsent": true,
+      "mergedEof": true,
+      "signals": 0,
+      "databaseOids": [
+        1216577,
+        1218597
+      ],
+      "database": "Marker and app/boss/pool/admin closed,0conn ordinaryDROP and absence",
+      "listenersClosed": 4,
+      "tmp": "Same inode removed and exact lstat absent",
+      "pendingLaunch": 0
+    },
+    "web": "Recovery remains ready/HOLD until actual cleanup; Web0PG/Chrome/gate/reservation.",
+    "actualEnd": "2026-10-07T04:57:04.132561Z",
+    "realSeconds": 8.8,
+    "toolExit": 1,
+    "selected": 27,
+    "passed": 26,
+    "failed": 1,
+    "failure": "Existing maintenance_operation constraint fixture UPDATE; no unknown.",
+    "next": "No automatic R3. Mika explicitly handed PG window to ready Web Recovery."
+  }
+}
