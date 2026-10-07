@@ -121,3 +121,7 @@ AV03分支交付 2026-10-07T16:06:54.016Z：source e746029f6daa5751f59813f5c1801
 ## AV03 center 固定独审收口
 
 2026-10-07T16:37:14.753Z：db_transaction_owner于16:35:53独审APPROVED/0P1P2，绑定ea3/e978/34f，见[av03-center-independent-approval.json](../../docs/evidence/x01-artifact-verifier/av03-center-independent-approval.json)。批准限源码与局部结果；NOT_INTEGRATION_READY_PG_REQUIRED保持。当前source和结果已冻结，所有写入在本次metadata提交后STOP，a67v4/30保留。0ordinary/PG/Chrome/provider/待launch。下一有价值片是合法owned verification-pg.test与现有fixture的最小真实SQL资格/迁移/回放矩阵准备，不新增第二调度或公开半套producer；本段不自动开下一source/actual窗口。
+
+## AV03 真实PG准备新段
+
+2026-10-07T16:53:29.000Z–17:08:29.000Z，a67v4/30 fresh有效，source75f88 clean起点。仅已claim新verification-pg.test及own证据/计划；8MiB含物化/TMP4MiB/raw512KiB，最多3serial各30s累计60s。ordinary先K01，未RETURN不launch。当前0PG/HTTP/Chrome/provider/install/build；准备5组真实迁移/资格/receipt/授权事务，原14源冻结。加载在建库之前；两factory+listen由fixture.start覆盖，阶段收据持久化；timeout只代表未settled，不冒实际close。

@@ -1,6 +1,6 @@
 # X01-ARTIFACT-VERIFIER01：安装式 JSON 产物验证
 
-创建/最近更新：2026-10-07；状态：in-progress（仅设计，产品未实现）。
+创建/最近更新：2026-10-07；状态：in-progress（AV02局部能力与journal已main；center局部已审，真实PG与完整链开放）。
 所属大task：[X01 插件管理 / X01-07](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)，co-lead：Mika；唯一 owner：architecture_read / gpt-6-astra。
 
 ## 用户结果与边界
@@ -26,7 +26,7 @@
 ## 分片与 TODO（只在证据满足时完成）
 
 - [x] AV-01：固定当前 main/owner 事实，给出有限算法、完整旅程、权责/安全/恢复设计。仅文档产出，独审另列。
-- [ ] AV-02：合同、纯算法、安装 manifest kind 与真实受信 host 局部能力；显式 v4 资格/journal 不降级方案。完成需真实 A/B 包材料和直接消费者反例，不能只 helper/mock。
+- [x] AV-02：合同、纯算法、安装 manifest kind 与真实受信 host 局部能力；显式 v4 资格/journal 不降级方案。完成需真实 A/B 包材料和直接消费者反例，不能只 helper/mock。
 - [ ] AV-03：center→公开 admission→明确 verifier runner→真实包→中心独立重算→只属于验证任务的 typed result，一次有限 PG 纵向验收。新 migration 编号另领取；真实 PG 另 window。
 - [ ] AV-04：实际启动配置与 CLI/现产品读取接线、精确材料与当前信任策略实证；PROCESS 只复用已批准的真实制品/释放能力，不重造隔离框架。全 X01-07 验收回父计划，不以局部通过代替。
 
@@ -34,17 +34,17 @@
 
 | ID | 必须证明的触发 → 预期 | 验证层/本轮状态 |
 | --- | --- | --- |
-| AV-A | 合法对象/缺字段/数组/null/语法错误/自有键区别 → 明确 bounded verdict | 纯算法+真实 host；NOT_RUN |
-| AV-B | {"id":1}，规则 v1→v2；包 A→B；artifact/version/algorithm 改变 → 旧通过不复用 | digest 单元+真实两材料+PG；NOT_RUN |
+| AV-A | 合法对象/缺字段/数组/null/语法错误/自有键区别 → 明确 bounded verdict | 纯算法+真实受信host AV02局部已验/main；中心端独立重算仍未验 |
+| AV-B | {"id":1}，规则 v1→v2；包 A→B；artifact/version/algorithm 改变 → 旧通过不复用 | 本地两材料/规则局部已验；中心PG换版仍NOT_RUN |
 | AV-C | 恶意包报告假 passed / 错 source/version/inputDigest / 错 phase owner → reportEvents 整批回滚，ACK 前缀不前进 | 真 PG/HTTP，不能仅 SQL fake；NOT_RUN |
 | AV-D | 不支持 verifier 的 v1/v2/v3 runner，队列前部 verifier 后部普通任务 → SQL LIMIT 前跳过，旧任务仍可领取；显式 v4 才领匹配算法/store/runner | 真 PG mixed queue + journal 完整 ACK；NOT_RUN |
-| AV-E | 同 key 更换协议/资格/规则/来源 → conflict；ACK 未知 → 原 key/body/assignment 保留，重启只重报 durable 终态，不重 invoke | journal/outbox 实际 FS + PG；NOT_RUN |
+| AV-E | 同 key 更换协议/资格/规则/来源 → conflict；ACK 未知 → 原 key/body/assignment 保留，重启只重报 durable 终态，不重 invoke | journal实际FS局部已验/main；v4中心PG/完整verifier恢复NOT_RUN |
 | AV-F | 撤 verifier grant/runner revoke/旧 owner/取消 → 下一 phase 拒绝；load前已知拒绝可无verdict failed，确认资源闭合取消可无verdict cancelled且保持未验证，unknown不得completed；disable不改旧pin，迟到事件fenced/exact replay幂等 | 真 PG/受控 host；NOT_RUN |
 | AV-G | 超长正文/规则/序列化输入 → 413/400 无 task/binding/audit 残余；失败 verdict不改源任务/旧产物 | codec + PG 事务；NOT_RUN |
 | AV-H | 实际 CLI/启动选择显式 verifier 能力，旧 session/journal 不重置；用户能区分中心确认的失败结果、未验证的执行失败/取消与UNKNOWN，不伪造failed verdict；成功不能省略verification | 实际入口/有限产品消费，Web writer另协调；NOT_RUN |
 
 ## 实施解除条件与非目标
 
-本轮没有产品写权。后继须按当前版本部分 handback/take，先处理 PROCESS 正在持有的 runtime/execution 以及 X01 父合同/center 叶，迁移槽另协调。文档 reviewer 可以要求设计窄修，不因此启动实现或工程检查。不能声称第三方包 sandbox、host release、物理卸载、任意未知副作用恢复、个人部署或完整 X01 已完成。
+当前a67v4已领取明确产品与准备范围；AV02九叶已main e271、journal四叶已main b791；center14源局部独审通过但036/真实PG未运行。后继跨owner路径仍须按当前版本部分 handback/take，先处理 PROCESS 正在持有的 runtime/execution 以及 X01 父合同/center 叶，迁移槽另协调。文档 reviewer 可以要求设计窄修，不因此启动实现或工程检查。不能声称第三方包 sandbox、host release、物理卸载、任意未知副作用恢复、个人部署或完整 X01 已完成。
 
 2026-10-07设计窄修：按14:42:49独审P2补完成矩阵；同时要求独立正向持久kind及project_task_bindings/适用conversation来源授权，缺失/冲突拒绝。新migration编号/FK仍待合法领取，产品全部NOT_RUN。
