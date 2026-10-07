@@ -88,10 +88,10 @@
     "caseFixture": "db67221:30:22 with onlyP2; db57b18821:31:21 closed literal P2, finaldelta NOT_RUN",
     "operator": "b01672 thin caller with rootP2; parent1d85 pureFS approval21:36:02; exactowncopy227 and2row/invocation approval21:41:41",
     "binding": "Owner21:32 fixedGit/WT all295 and streamed191external/16links errors[]; b0121:41 independently hashed295 and checked2row data delta. Inherited runtime rows unchanged; no new PG interpretation.",
-    "scope": "Owner assembled closed candidate from separate limited reviews; no reviewer is attributed a broader standalone whole-preparation approval."
+    "scope": "Historical limited reviews inherited from d407; current 5-row/caller literal delta awaits independent review. No old approval is enlarged."
   },
   "manifestStateSnapshot": "Pinned manifest retains pre-review label; separate approvals/candidate provide current state without rewriting that reviewed manifest.",
-  "reviewCoverageConfirmation": "coverage-approval.json, db2026-10-07T21:44:05Z, fixeda2630f3c; no new source gap, prerequisite unmet",
+  "reviewCoverageConfirmation": "Historical ../coverage-approval.json, db 2026-10-07T21:44:05Z at a2630f3c; new v2 metadata delta is pending.",
   "migrationSource": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
   "invocation": {
     "path": "../invocation-v2.json",
@@ -108,5 +108,10 @@
     "candidate": "../candidate.json",
     "fixedGit": "d407eff55811813df912771a43f8cfb6149db2f5",
     "immutable": true
+  },
+  "newReviewInputs": {
+    "routeApproval": "../../route-validation/approval.json",
+    "migration": "AV source ead8db7e with R3 actual 5/5 and independent result approval; main receipt NOT_RECEIVED",
+    "sourceReview": "No product changes or new business checks; two exact approved mirrors supplied"
   }
 }

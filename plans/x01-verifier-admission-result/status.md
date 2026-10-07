@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T22:42:38.624Z |
+| 最近更新时间 | 2026-10-07T22:47:06.663Z |
 | 任务开工时间 | 2026-10-07T20:31:27.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner本段首次实际clock；25min截止20:56:27Z，包含等待 |
@@ -14,8 +14,8 @@
 | Branch | codex/plugin-verifier-admission-result |
 | 工作基线 / HEAD | 57abdb93b73c697d865cfea5daf52d4f3342e542 / implementation 87fb3d5f301d9aef2865a7cad04fbd98b6234274 |
 | Claim | cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE24；[receipt](../../docs/evidence/x01-verifier-admission-result/route-validation/claim-receipt.json) |
-| 工作树 dirty 状态 | 源码/工程均STOP；公开输入增量已独审通过，本归档提交push后clean |
-| 工作分支状态 | in-progress（公开输入边界待独审；领域PG待前置main与窗口） |
+| 工作树 dirty 状态 | 产品/工程均STOP；仅新版PG输入准备metadata，固定提交push后clean |
+| 工作分支状态 | in-progress（公开输入边界已审；新PG准备绑定待窄审） |
 | 实现目标 | 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd（公开schema400增量；核心53d保留） |
 | 实现范围 | apps/runner/src/plugins/execution.ts,apps/server/src/events.ts,apps/server/src/plugin-runtime/artifact.ts,apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/verification-admission.test.ts,apps/server/src/plugin-runtime/verification-admission.ts,apps/server/src/plugin-runtime/verification-result.test.ts,apps/server/src/plugin-runtime/verification-result.ts,apps/server/src/plugin-runtime/verification-routes.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/plugin-verification-configuration.test.ts,apps/server/src/plugin-verification-configuration.ts,packages/contracts/src/plugin-verification-admission.ts,packages/contracts/src/plugin-verification-event.ts,packages/contracts/src/runner.ts,packages/plugin-runtime/src/verification-input.test.ts,packages/plugin-runtime/src/verification-input.ts |
 | 检查状态 | PASSED 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd：11/11 inject、focusedtypes0；0PG/listener，旧15与5domain未重跑 |
@@ -24,7 +24,7 @@
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 非法验证请求的客户端错误与鉴权边界已通过独立审查 |
+| 当前产出 | 非法验证请求边界已审通过；数据库验收已更新到修复后的迁移和输入合同 |
 | 下一可用交付 | 前置主线接收并更新准入绑定后，在独立窗口验证真实受理和事件整批回滚 |
 | 当前阻塞 | ACTIVE: 等待AV R3主线前置接收及VAR独立数据库窗口 |
 | 需用户决定 | NONE |
@@ -34,7 +34,7 @@
 | VAR-01 | completed | architecture_read | 新合同与共享序列化 |
 | VAR-02 | in-progress | architecture_read | 依赖已审AV036/center，真实PG未通过 |
 | VAR-03 | in-progress | architecture_read | 与受理同片，不能先暴露producer |
-| VAR-04 | in-progress | architecture_read | 类型检查和收集5例完成（0业务执行），两P2分别关闭；历史d407候选保持CLOSED，当前等AV R3 main及claimv2必要metadata rebind |
+| VAR-04 | in-progress | architecture_read | 类型检查和收集5例完成（0业务执行），两P2分别关闭；历史d407候选保持CLOSED；v2已绑定修复后的036、schema400和claimv2，待窄审及AV R3 main |
 
 架构影响：新增verifier admission/result领域Module，唯一事务/事件权威不变；基线图待本片受控main后由集成owner更新。
 
@@ -49,7 +49,7 @@
 | VAR-W01 | 2026-10-07T20:51:17.000Z | 2026-10-07T20:56:31.000Z | 审查 | 已发现工具错误码兼容P2，交原owner修复 | 原审结 |
 | VAR-W02 | 2026-10-07T21:11:09.000Z | 2026-10-07T21:12:11.000Z | 审查 | 修复两叶/3例已获独立批准 | repair/approval.json |
 
-聚合登记：root已提交新增任务登记请求，当前只确认本status可被权威parser读取，不冒实际dashboard已reload。
+聚合登记：D05已实证2026-10-07T22:01:36.229Z live211，本sourceCurrent=true/issues[]/stale=false；不重探dashboard。
 
 本次窄修段：2026-10-07T21:07:19.000Z–21:17:19.000Z，4MiB已计入经理组合；只恢复工具权限错误码合同、追加直接调用回归。原PG/公开装配仍未验，旧证据/gate不改。
 
@@ -91,3 +91,7 @@ D05已确认22:01:36.229Z live211/sourceCurrenttrue/issues[]/stalefalse（dashbo
 ## 公开schema400独审批准与STOP
 
 2026-10-07T22:42:38.624Z：chatui 22:41:46 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0P1P2，source8ebedd04/result44dcbc75/packetbf4f1a05；21bindings233883B和280旧链接+2新镜像均固定核符，11/11+strict0认可仅本路由边界，非完整factory/PG/worker。归档[approval.json](../../docs/evidence/x01-verifier-admission-result/route-validation/approval.json)。当前源码、工程、metadata在本提交push后STOP；保留claimv2/24供后继，任务完成时间仍NOT_COMPLETED。
+
+## VAR PG准备v2（未执行）
+
+2026-10-07T22:47:06.663Z：新独立段22:43:26.475Z→22:53:26.475Z，首写22:43:56.326Z，4MiB内仅own evidence供给/metadata，0工程child/PG/HTTP。产品source8ebedd冻结；原d407六份候选/输入/caller/manifest/claim/invocation逐字保留，原raw不改。新[候选](../../docs/evidence/x01-verifier-admission-result/transaction-pg/v2/candidate.json)将295输入的5row重绑（036采用AV R3 ead8，route采用8eb，另claim/input/caller各自v2路径），290原row及191external/16links不变。原五case不改且NOT_RUN；新namespace未创建，180s/17PG只是CLOSED候选。当前等待独立metadata窄审、AV前置main receipt及未来唯一窗口，不能称公开factory或worker已验。
