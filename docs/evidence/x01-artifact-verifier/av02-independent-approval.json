@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-07T15:49:31.000Z",
+  "reviewer": "db_transaction_owner",
+  "model": "gpt-6-astra",
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "source": "9895181dfd90f18014d80589799f76169e6bd5b2",
+  "result": "e662b028b9d1b633701ad08a68c79c2b76415f94",
+  "packet": "b77a80739992752f76712505a00e355986758e66",
+  "bindings": 34,
+  "bindingBytes": 190429,
+  "external": 10,
+  "executionInputs": 73,
+  "executionBytes": 322356,
+  "validation": "10 pass/69 unselected; types0; 2child2895ms/raw21863;2TMP/6fixture/tar closed",
+  "scope": "Local installed verifier only; not center/v4/PG/main",
+  "receivedVia": "Mika root direct review relay; exact original target retained"
+}

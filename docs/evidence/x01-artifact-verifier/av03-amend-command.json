@@ -1,0 +1,27 @@
+{
+  "requestId": "av03-journal-scope-20261007-155444",
+  "actor": {
+    "lead": "mika",
+    "worker": "architecture_read"
+  },
+  "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+  "version": 2,
+  "scope": [
+    "apps/runner/src/plugins/execution.test.ts",
+    "apps/runner/src/plugins/execution.ts",
+    "apps/runner/src/plugins/host.ts",
+    "apps/runner/src/plugins/verifier.test.ts",
+    "docs/evidence/x01-artifact-verifier",
+    "packages/contracts/src/plugin-verification.test.ts",
+    "packages/contracts/src/plugin-verification.ts",
+    "packages/plugin-runtime/src/json-object-verifier.test.ts",
+    "packages/plugin-runtime/src/json-object-verifier.ts",
+    "packages/plugin-runtime/src/package-store.test.ts",
+    "packages/plugin-runtime/src/package-store.ts",
+    "plans/x01-artifact-verifier",
+    "packages/contracts/src/verifier-runner-claim.ts",
+    "packages/contracts/src/verifier-runner-claim.test.ts",
+    "apps/runner/src/admission-verifier-claim.test.ts",
+    "apps/runner/src/admission-journal.ts"
+  ]
+}

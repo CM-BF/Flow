@@ -1,0 +1,172 @@
+{
+  "at": "2026-10-07T15:57:40.781Z",
+  "state": "APPROVED_READY",
+  "source": "9895181dfd90f18014d80589799f76169e6bd5b2",
+  "result": "e662b028b9d1b633701ad08a68c79c2b76415f94",
+  "packet": "b77a80739992752f76712505a00e355986758e66",
+  "review": "docs/evidence/x01-artifact-verifier/av02-independent-approval.json",
+  "mainObserved": {
+    "head": "7aa9a6b08635db5d004b9d7115780b64ae9a93ae",
+    "at": "2026-10-07T15:57:40.781Z",
+    "meaning": "Preimage observation only; not integration receipt"
+  },
+  "rows": [
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "source": "9895181dfd90f18014d80589799f76169e6bd5b2",
+      "bytes": 9275,
+      "sha256": "b47289187b7f4f27824c48b289a7031270f4a0d9209c0043d217a2bdd7760698",
+      "preimage": {
+        "commit": "96b424777cd2c66e603157649e5a859ca1b914f6",
+        "bytes": 5029,
+        "sha256": "3b853b14f0168cbc2b5b9ff17fb1a88e76842d30f2a1d599fca2cc5ef6fb90d5",
+        "absent": false
+      },
+      "mainObservation": "matches-preimage"
+    },
+    {
+      "path": "apps/runner/src/plugins/host.ts",
+      "source": "9895181dfd90f18014d80589799f76169e6bd5b2",
+      "bytes": 6687,
+      "sha256": "85ead88b8ded0cfe08697d88a9fe64a217bff1f74f64b658d40cfac9bbca9c36",
+      "preimage": {
+        "commit": "96b424777cd2c66e603157649e5a859ca1b914f6",
+        "bytes": 6177,
+        "sha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f",
+        "absent": false
+      },
+      "mainObservation": "matches-preimage"
+    },
+    {
+      "path": "apps/runner/src/plugins/verifier.test.ts",
+      "source": "9895181dfd90f18014d80589799f76169e6bd5b2",
+      "bytes": 7639,
+      "sha256": "42da423afdfa5b0c27da6789f6e9929f6a538371f4efb66dcf8a3b45497bf1b4",
+      "preimage": {
+        "commit": "96b424777cd2c66e603157649e5a859ca1b914f6",
+        "bytes": 0,
+        "sha256": null,
+        "absent": true
+      },
+      "mainObservation": "matches-preimage"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification.test.ts",
+      "source": "9895181dfd90f18014d80589799f76169e6bd5b2",
+      "bytes": 1769,
+      "sha256": "2270400eabc54281c5cc0832bd96e8aedf08a8d79c73c7380edbdf770b3c0e3f",
+      "preimage": {
+        "commit": "96b424777cd2c66e603157649e5a859ca1b914f6",
+        "bytes": 0,
+        "sha256": null,
+        "absent": true
+      },
+      "mainObservation": "matches-preimage"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification.ts",
+      "source": "9895181dfd90f18014d80589799f76169e6bd5b2",
+      "bytes": 3044,
+      "sha256": "385dd464730493447bd9f3d5520d835ff0ae393fdaca5e2d22c2de239c4c35bc",
+      "preimage": {
+        "commit": "96b424777cd2c66e603157649e5a859ca1b914f6",
+        "bytes": 0,
+        "sha256": null,
+        "absent": true
+      },
+      "mainObservation": "matches-preimage"
+    },
+    {
+      "path": "packages/plugin-runtime/src/json-object-verifier.test.ts",
+      "source": "9895181dfd90f18014d80589799f76169e6bd5b2",
+      "bytes": 1355,
+      "sha256": "e7de43b74d9f0ff5782d2b47d2378ffdb4a5c559e6eb8ccf8ad6ce4a2a09a6c9",
+      "preimage": {
+        "commit": "96b424777cd2c66e603157649e5a859ca1b914f6",
+        "bytes": 0,
+        "sha256": null,
+        "absent": true
+      },
+      "mainObservation": "matches-preimage"
+    },
+    {
+      "path": "packages/plugin-runtime/src/json-object-verifier.ts",
+      "source": "9895181dfd90f18014d80589799f76169e6bd5b2",
+      "bytes": 1293,
+      "sha256": "feaa7f97e031b046a0b0f81d1a4287f02f19eb07a7ef6fd17a33f42e885d8be3",
+      "preimage": {
+        "commit": "96b424777cd2c66e603157649e5a859ca1b914f6",
+        "bytes": 0,
+        "sha256": null,
+        "absent": true
+      },
+      "mainObservation": "matches-preimage"
+    },
+    {
+      "path": "packages/plugin-runtime/src/package-store.test.ts",
+      "source": "9895181dfd90f18014d80589799f76169e6bd5b2",
+      "bytes": 17710,
+      "sha256": "3d5c6f73710f936203aae4670f45f08c6ed79abfdabf8f7a25b9ae7ea3ae4a60",
+      "preimage": {
+        "commit": "96b424777cd2c66e603157649e5a859ca1b914f6",
+        "bytes": 16963,
+        "sha256": "6a8f4f7d72a336a8681f05a819eddca339c1cc93932b7547498018daf4303cc5",
+        "absent": false
+      },
+      "mainObservation": "matches-preimage"
+    },
+    {
+      "path": "packages/plugin-runtime/src/package-store.ts",
+      "source": "9895181dfd90f18014d80589799f76169e6bd5b2",
+      "bytes": 17609,
+      "sha256": "15e1b9554d625db5beb74a582ba513f548421c48e705c4865175105fabdf89aa",
+      "preimage": {
+        "commit": "96b424777cd2c66e603157649e5a859ca1b914f6",
+        "bytes": 17555,
+        "sha256": "d2bb866b09611025fb82ec80c77503ef864901c7da09288cb84991120b4a1b88",
+        "absent": false
+      },
+      "mainObservation": "matches-preimage"
+    }
+  ],
+  "requiredSupport": [
+    {
+      "path": "fixtures/plugins/text-tool/package.json",
+      "mode": "required-existing",
+      "source": "96b424777cd2c66e603157649e5a859ca1b914f6",
+      "bytes": 102,
+      "sha256": "34649d8a24179513bb7b9b3992562ac3e1d0958426142f2ad98f3495c2cb40f7"
+    },
+    {
+      "path": "fixtures/plugins/text-tool/flow-plugin.json",
+      "mode": "required-existing",
+      "source": "96b424777cd2c66e603157649e5a859ca1b914f6",
+      "bytes": 93,
+      "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1"
+    },
+    {
+      "path": "fixtures/plugins/text-tool/index.mjs",
+      "mode": "required-existing",
+      "source": "96b424777cd2c66e603157649e5a859ca1b914f6",
+      "bytes": 155,
+      "sha256": "7d3cac72c2f052d10d9cdedc67552ff3603fad536dc91fdb785dd4762052f698"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.test.ts",
+      "mode": "required-existing",
+      "source": "96b424777cd2c66e603157649e5a859ca1b914f6",
+      "bytes": 16551,
+      "sha256": "85badf82637f3e4e5342cb19cf746ee6622f3e92ec6095cb25bc6e0279d094fe"
+    }
+  ],
+  "closure": "docs/evidence/x01-artifact-verifier/av02-execution-inputs.json",
+  "validation": {
+    "types": 0,
+    "selected": 10,
+    "passed": 10,
+    "unselected": 69,
+    "PG": 0
+  },
+  "intake": "Apply only nine fixed product/test deltas; four support paths already match fixed main. Do not overlay this WT or any later AV03 dirty source. Canonical tests import no task evidence helper. Integration checks determined by actual main delta.",
+  "boundary": "Installed verifier local capability; no center/v4/public runtime/process verifier/PG/whole X01."
+}

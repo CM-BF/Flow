@@ -21,20 +21,20 @@
 | 实现范围 | packages/contracts/src/plugin-verification.ts,packages/contracts/src/plugin-verification.test.ts,packages/plugin-runtime/src/json-object-verifier.ts,packages/plugin-runtime/src/json-object-verifier.test.ts,packages/plugin-runtime/src/package-store.ts,packages/plugin-runtime/src/package-store.test.ts,apps/runner/src/plugins/host.ts,apps/runner/src/plugins/execution.ts,apps/runner/src/plugins/verifier.test.ts |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 本片段交付阶段 | review |
-| 当前产出 | 已接入真实材料的有限 JSON 验证能力，规则或材料变化产生不同身份，伪造通过结果被拒绝；局部验证通过待独审 |
-| 下一可用交付 | 独审后接收本地安装式验证器片段；中心验证任务与显式领取资格仍待实现 |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 已接入真实材料的有限 JSON 验证能力，规则或材料变化产生不同身份，伪造通过结果被拒绝；局部验证通过且已独审；正在补显式验证器资格的持久恢复接缝 |
+| 下一可用交付 | 已审AV02可独立接收；下一交付是v4完整资格的journal接缝，中心领取与验证任务仍待实现 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | AV02 source/result PENDING；设计bc5b于14:49:38 APPROVED/0P1P2不覆盖新源码 |
-| Claim | a67ba659-d859-40d6-82c6-2b7333087639 v2 ACTIVE12，15:30:49.127Z原子amend，exact10产品+2docscope |
+| Review | AV02 source/local于15:49:31 APPROVED0P1P2；AV03 source/local尚未运行/审查 |
+| Claim | a67ba659-d859-40d6-82c6-2b7333087639 v3 ACTIVE16，15:57:01.967Z原子追加AV03四leaf；原AV02九改源冻结 |
 | 架构影响 | AV02 branch d6e0248：共享安装/host增加显式verifier kind和有限JSON算法消费者；显式领取协议、中心不可变引用与重算仍PLANNED，main图不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | AV-01 | completed | architecture_read | bc5b68a0e4e93e50f9258dd617262263d8db3c1f设计增量于14:49:38独审批准，P2已关闭；非产品完成 |
-| AV-02 | in-progress | architecture_read，a67 v2/12 | 9895181合同/真实host局部实现；types0与10/10，通过后一次独审待结论 |
-| AV-03 | pending | 待合法产品scope与资源window | center/runner纵向及真实PG未实现/未运行 |
+| AV-02 | completed | architecture_read | 9895181/e662于15:49:31独审批准；AV02 main待接收，完整父功能未完成 |
+| AV-03 | in-progress | architecture_read，a67v3 | 本段仅四leaf资格+journal接缝；center/runner纵向与PG仍未实现/未运行 |
 | AV-04 | pending | 待入口与现consumer协调 | 启动/CLI/产品验收未实现/未运行 |
 
 ## 本轮工作段与时间
@@ -89,3 +89,7 @@ AV02源码已形成：strict JSON规则/请求/结果、有限纯算法、明确
 2026-10-07T15:44:21.123Z固定结果：source 9895181dfd90f18014d80589799f76169e6bd5b2；执行HEAD bf81e01f7073cdb3d52086c83bbe28900fce1518。类型0，10选10过、69未选，八个新例加两个直接旧工具/材料consumer。两child合计监督2895ms，原raw21863B，实际child37568/46916均finalabsent/MERGED EOF、无secondary/signals；初始EPERM观测保留。两ownTMP及6fixture已关闭删除、tar47844 close0/null，15:42:55.342Z RETURN后不再launch。末样本非峰值，whole external wall UNKNOWN。0PG/provider/PROCESS worker/个人服务。source/result已固定待一次独审，不能把本地重算当中心独立校验或公开v4链通过。证据[av02-result-summary.json](../../docs/evidence/x01-artifact-verifier/av02-result-summary.json)。
 
 AV02分支交付 2026-10-07T15:45:36.515Z：source9895181dfd90f18014d80589799f76169e6bd5b2 / result e662b028b9d1b633701ad08a68c79c2b76415f94 / packet5b516827a72d0c4e27c87e39a0e2e41140966992，已push。一次followup独审因threadlimit未启动，不重试；当前SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING，root会在本槽释放后接审。所有写入STOP，保留a67v2/12以备独审修复，0资源holder/0待launch。原段15:53:22截止未延长，AV03/04与完整X01仍OPEN。
+
+## AV03 本轮工作段
+
+实际开始2026-10-07T15:54:44.000Z，截止16:19:44.000Z。AV02独审与窄main输入独立冻结于[av02-main-intake.json](../../docs/evidence/x01-artifact-verifier/av02-main-intake.json)，后继不得覆盖九叶/原raw。父journal已明确STOP并v30移出；本任务v3于15:57:01.967Z成功领取新合同/新测试/真实AdmissionJournal四leaf。仅显式v4资格持久化接缝，不改变v2/v3默认，不写migration/SQL/runtime/claim route。普通段≤5serial×30s/累计90s、TMP4MiB/raw256KiB/newlogical16MiB、freshfloor≥16,175,529,984B或更高完整sum，0PG/Chrome/provider/install/fullbuild。当前0child，先source。

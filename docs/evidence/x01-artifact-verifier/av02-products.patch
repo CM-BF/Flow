@@ -1,0 +1,349 @@
+diff --git a/apps/runner/src/plugins/execution.ts b/apps/runner/src/plugins/execution.ts
+index c460ff5c4..80d6c41cd 100644
+--- a/apps/runner/src/plugins/execution.ts
++++ b/apps/runner/src/plugins/execution.ts
+@@ -1,7 +1,10 @@
++import { pluginVerificationRequestSchema, pluginVerificationOutputSchema, JSON_OBJECT_ALGORITHM,
++  PLUGIN_VERIFICATION_LIMITS, type PluginVerificationRequest, type PluginVerificationOutput } from '../../../../packages/contracts/src/plugin-verification.js';
++import { verifyJsonObject } from '../../../../packages/plugin-runtime/src/json-object-verifier.js';
+ import type { TrustedPackageStore } from '@flow/plugin-runtime';
+ import type { Ownership, TaskSubmission, RunnerEventData } from '@flow/contracts';
+ import { isPersistablePluginText, pluginToolBindingSchema, pluginGrantReceiptSchema, type PluginToolBinding, type PluginGrantRequest, type PluginGrantReceipt } from '../../../../packages/contracts/src/plugin-runtime.js';
+-import { invokeInstalledTool, PluginToolError, type PluginToolResult, type PluginToolInput } from './host.js';
++import { invokeInstalledTool, invokeInstalledVerifier, PluginToolError, type PluginToolResult, type PluginToolInput } from './host.js';
+ import { textDigest, verifyText } from '../verifier.js';
+ 
+ /** Transport supplies this only when an authorization request may have committed without an ACK. */
+@@ -66,3 +69,56 @@ export async function executePluginTool(input: PluginExecutionInput): Promise<Pl
+     throw error;
+   }
+ }
++
++export interface TrustedVerifierAlgorithm {
++  artifactSha256: string; treeDigest: string; hostApiMajor: 1;
++  algorithmId: typeof JSON_OBJECT_ALGORITHM.id; algorithmVersion: 1;
++}
++export interface PluginVerifierExecutionInput extends Omit<PluginToolInput, 'input'> {
++  verification: PluginVerificationRequest;
++  /** Operator-owned exact material association; never supplied by a task or package. */
++  trustedAlgorithms: readonly TrustedVerifierAlgorithm[];
++}
++export interface PluginVerifierExecutionResult {
++  output: PluginVerificationOutput;
++  provenance: PluginToolResult['provenance'];
++}
++/** Direct installed-package capability. Public admission/claim and center approval remain separate. */
++export async function executePluginVerifier(input: PluginVerifierExecutionInput): Promise<PluginVerifierExecutionResult> {
++  const verification = pluginVerificationRequestSchema.parse(input.verification);
++  const binding = structuredClone(input.binding);
++  const store = { ...input.store, allowedDigests: [...input.store.allowedDigests] };
++  const trusted = input.trustedAlgorithms;
++  if (!Array.isArray(trusted) || trusted.length > 1024 || !trusted.some(item => item.artifactSha256 === binding.material.artifact.sha256
++    && item.treeDigest === binding.material.treeDigest && item.hostApiMajor === 1
++    && item.algorithmId === verification.rule.algorithmId && item.algorithmVersion === verification.rule.algorithmVersion)) {
++    throw new PluginToolError('VERIFIER_ALGORITHM_UNTRUSTED');
++  }
++  if (textDigest(verification.source.content) !== verification.source.version) throw new PluginToolError('SOURCE_VERSION_MISMATCH');
++  const identity = { domain: 'flow.plugin-verification.input.v1', source: verification.source, rule: verification.rule,
++    invocation: { bindingId: binding.bindingId, invocationId: binding.invocationId, taskId: binding.taskId, attemptId: binding.attemptId, ownerVersion: binding.ownerVersion },
++    material: { installationId: binding.material.installationId, storeId: binding.material.storeId, treeDigest: binding.material.treeDigest,
++      artifact: { artifactId: binding.material.artifact.artifactId, name: binding.material.artifact.name, version: binding.material.artifact.version,
++        bytes: binding.material.artifact.bytes, sha256: binding.material.artifact.sha256, integrity: binding.material.artifact.integrity } },
++    configuration: Object.fromEntries(Object.entries(binding.configuration).sort(([left], [right]) => left < right ? -1 : left > right ? 1 : 0)) };
++  const inputDigest = textDigest(JSON.stringify(identity));
++  const serialized = JSON.stringify({ schemaVersion: 1, ...verification, inputDigest });
++  if (serialized.length > PLUGIN_VERIFICATION_LIMITS.inputCodeUnits || Buffer.byteLength(serialized) > PLUGIN_VERIFICATION_LIMITS.inputBytes) {
++    throw new PluginToolError('VERIFICATION_INPUT_TOO_LARGE');
++  }
++  try {
++    const result = await invokeInstalledVerifier({ ...input, store, binding, input: serialized });
++    let parsed: unknown;
++    try { parsed = JSON.parse(result.content); } catch { throw new PluginToolError('VERIFIER_OUTPUT_REJECTED'); }
++    const decoded = pluginVerificationOutputSchema.safeParse(parsed);
++    if (!decoded.success || decoded.data.inputDigest !== inputDigest) throw new PluginToolError('VERIFIER_OUTPUT_REJECTED');
++    const expected = verifyJsonObject(verification.source.content, verification.rule);
++    if (JSON.stringify(decoded.data.verdict) !== JSON.stringify(expected)) throw new PluginToolError('VERIFIER_VERDICT_MISMATCH');
++    return { output: decoded.data, provenance: result.provenance };
++  } catch (error) {
++    if (error instanceof PluginAuthorizationUnknown || error instanceof PluginToolError && error.code === 'OUTCOME_UNKNOWN') {
++      throw new PluginExecutionUnsettled(binding.bindingId, binding.invocationId, { cause: error });
++    }
++    throw error;
++  }
++}
+diff --git a/apps/runner/src/plugins/host.ts b/apps/runner/src/plugins/host.ts
+index 8ba8a98a7..37b25cf42 100644
+--- a/apps/runner/src/plugins/host.ts
++++ b/apps/runner/src/plugins/host.ts
+@@ -61,12 +61,20 @@ function pending<T>(operation: () => T | Promise<T>, signal: AbortSignal): Promi
+     catch { finish(false, new PluginToolError('PACKAGE_FAILED')); }
+   });
+ }
+-export async function invokeInstalledTool(input: PluginToolInput): Promise<PluginToolResult> {
++export function invokeInstalledTool(input: PluginToolInput): Promise<PluginToolResult> {
++  return invokeInstalledPackage(input, 'tool');
++}
++/** Explicit local verifier consumer; an installed verifier can never enter the legacy tool path. */
++export function invokeInstalledVerifier(input: PluginToolInput): Promise<PluginToolResult> {
++  return invokeInstalledPackage(input, 'verifier');
++}
++async function invokeInstalledPackage(input: PluginToolInput, kind: 'tool' | 'verifier'): Promise<PluginToolResult> {
+   checkAbort(input.signal);
+   const binding = frozenInvocation(input); const text = input.input;
+   const installed = await readInstalledPackage({ artifact: binding.material.artifact, store: input.store, signal: input.signal });
+   if (installed.receipt.installationId !== binding.material.installationId || installed.receipt.storeId !== binding.material.storeId
+     || installed.receipt.treeDigest !== binding.material.treeDigest) throw new PluginToolError('MATERIAL_MISMATCH');
++  if (installed.receipt.manifest.kind !== kind) throw new PluginToolError('PACKAGE_KIND_MISMATCH');
+   checkAbort(input.signal); await input.assertOwnership();
+   // An ES module's top level is executable, so loading needs its own current grant.
+   await input.authorize(binding, 'load'); checkAbort(input.signal); await input.assertOwnership(); checkAbort(input.signal);
+diff --git a/apps/runner/src/plugins/verifier.test.ts b/apps/runner/src/plugins/verifier.test.ts
+new file mode 100644
+index 000000000..10cc076a8
+--- /dev/null
++++ b/apps/runner/src/plugins/verifier.test.ts
+@@ -0,0 +1,79 @@
++import fs from 'node:fs/promises';
++import { tmpdir } from 'node:os';
++import { join } from 'node:path';
++import { createHash, randomUUID } from 'node:crypto';
++import { create } from 'tar';
++import { expect, test, afterAll } from 'vitest';
++import { prepareInstalledPackage } from '@flow/plugin-runtime';
++import { executePluginVerifier, PluginExecutionUnsettled, PluginAuthorizationUnknown, type PluginVerifierExecutionInput } from './execution.js';
++import { invokeInstalledTool } from './host.js';
++const digest = (value: string | Buffer) => createHash('sha256').update(value).digest('hex');
++const roots: { path: string; dev: number; ino: number; removed: boolean }[] = [];
++afterAll(async () => {
++  expect(roots.every(root => root.removed)).toBe(true);
++  if (process.env.FLOW_AV02_FIXTURE_REPORT) await fs.writeFile(process.env.FLOW_AV02_FIXTURE_REPORT, JSON.stringify({ roots }));
++});
++const moduleSource = (fake = false) => `export const hostApiMajor=1;
++export function invoke({input}) {
++ const value=JSON.parse(input); let parsed, verdict;
++ try { parsed=JSON.parse(value.source.content); } catch { verdict={result:'failed',reason:'invalid-json',missingKeys:[]}; }
++ if(!verdict) { if(parsed===null||typeof parsed!=='object'||Array.isArray(parsed)) verdict={result:'failed',reason:'not-object',missingKeys:[]};
++ else { const missingKeys=value.rule.requiredKeys.filter(key=>!Object.hasOwn(parsed,key)); verdict=missingKeys.length?{result:'failed',reason:'missing-required-keys',missingKeys}:{result:'passed',reason:'passed',missingKeys:[]}; } }
++ ${fake ? "verdict={result:'passed',reason:'passed',missingKeys:[]};" : ''}
++ return JSON.stringify({schemaVersion:1,algorithmId:value.rule.algorithmId,algorithmVersion:1,inputDigest:value.inputDigest,verdict});
++}`;
++async function withPackages(run: (a: PluginVerifierExecutionInput, b: PluginVerifierExecutionInput, bad: PluginVerifierExecutionInput) => Promise<void>) {
++  const path = await fs.mkdtemp(join(tmpdir(), 'flow-av02-')); const stat = await fs.lstat(path); const owned = { path, dev: stat.dev, ino: stat.ino, removed: false }; roots.push(owned);
++  try {
++    const root = await fs.realpath(path); const storeRoot = join(root, 'store'); await fs.mkdir(storeRoot, { mode: 0o700 });
++    const inputs: PluginVerifierExecutionInput[] = [];
++    for (const [index, version] of ['1.0.0', '1.0.1', '1.0.2'].entries()) {
++      const dir = join(root, 'source-' + index); await fs.mkdir(join(dir, 'package'), { recursive: true });
++      await fs.writeFile(join(dir, 'package/package.json'), JSON.stringify({ name: 'flow-owned-json-verifier', version, type: 'module' }));
++      await fs.writeFile(join(dir, 'package/flow-plugin.json'), JSON.stringify({ schemaVersion: 1, hostApiMajor: 1, kind: 'verifier', entrypoint: 'index.mjs' }));
++      await fs.writeFile(join(dir, 'package/index.mjs'), moduleSource(index === 2));
++      const tarballPath = join(root, index + '.tgz'); await create({ cwd: dir, file: tarballPath, gzip: true, portable: true, noMtime: true }, ['package']);
++      const bytes = await fs.readFile(tarballPath); const artifact = { artifactId: randomUUID(), name: 'flow-owned-json-verifier', version, bytes: bytes.length, sha256: digest(bytes), integrity: 'sha512-' + createHash('sha512').update(bytes).digest('base64') };
++      const store = { root: storeRoot, storeId: 'av02-owned', allowedDigests: [artifact.sha256] }; const installed = await prepareInstalledPackage({ store, artifact, tarballPath });
++      expect(installed.receipt.manifest.kind).toBe('verifier');
++      inputs.push({ store, binding: { bindingId: randomUUID(), invocationId: randomUUID(), taskId: randomUUID(), attemptId: randomUUID(), ownerVersion: 1,
++        material: { installationId: installed.receipt.installationId, storeId: store.storeId, treeDigest: installed.receipt.treeDigest, artifact }, configuration: {} },
++        verification: { source: { taskId: 'source-task', attemptId: 'source-attempt', artifactId: 'source-artifact', content: '{"id":1}', version: digest('{"id":1}') }, rule: { schemaVersion: 1, algorithmId: 'flow.json-object.required-keys', algorithmVersion: 1, requiredKeys: ['id'] } },
++        trustedAlgorithms: [{ artifactSha256: artifact.sha256, treeDigest: installed.receipt.treeDigest, hostApiMajor: 1, algorithmId: 'flow.json-object.required-keys', algorithmVersion: 1 }],
++        signal: new AbortController().signal, assertOwnership: () => {}, authorize: async () => {} });
++    }
++    await run(inputs[0]!, inputs[1]!, inputs[2]!);
++  } finally {
++    const current = await fs.lstat(path); if (current.dev !== owned.dev || current.ino !== owned.ino || current.isSymbolicLink()) throw new Error('FIXTURE_IDENTITY_CHANGED');
++    await fs.rm(path, { recursive: true }); await expect(fs.lstat(path)).rejects.toMatchObject({ code: 'ENOENT' }); owned.removed = true;
++  }
++}
++test('AV02 real verifier A/B materials keep exact provenance and changed rules cannot reuse passed identity', async () => {
++  await withPackages(async (a, b) => {
++    const phases: string[] = []; a.authorize = async (_, phase) => { phases.push(phase); };
++    const first = await executePluginVerifier(a); expect(first.output.verdict.result).toBe('passed'); expect(phases).toEqual(['load', 'invoke']);
++    expect(first.provenance.artifactSha256).toBe(a.binding.material.artifact.sha256);
++    const upgraded = await executePluginVerifier(b); expect(upgraded.provenance.artifactSha256).toBe(b.binding.material.artifact.sha256); expect(upgraded.output.inputDigest).not.toBe(first.output.inputDigest);
++    const second = await executePluginVerifier({ ...a, verification: { ...a.verification, rule: { ...a.verification.rule, requiredKeys: ['email', 'id'] } } });
++    expect(second.output.verdict).toEqual({ result: 'failed', reason: 'missing-required-keys', missingKeys: ['email'] }); expect(second.output.inputDigest).not.toBe(first.output.inputDigest);
++  });
++});
++test('AV02 fake passed and verifier-as-tool are rejected through real installed consumers', async () => {
++  await withPackages(async (a, _b, bad) => {
++    await expect(executePluginVerifier({ ...bad, verification: { ...bad.verification, rule: { ...bad.verification.rule, requiredKeys: ['missing'] } } })).rejects.toMatchObject({ code: 'VERIFIER_VERDICT_MISMATCH' });
++    let phases = 0; a.authorize = async () => { phases++; };
++    await expect(invokeInstalledTool({ ...a, input: '{}' })).rejects.toMatchObject({ code: 'PACKAGE_KIND_MISMATCH' }); expect(phases).toBe(0);
++  });
++});
++test('AV02 untrusted material/source and unknown phase preserve explicit failure boundaries', async () => {
++  await withPackages(async a => {
++    let phases = 0; a.authorize = async () => { phases++; };
++    await expect(executePluginVerifier({ ...a, trustedAlgorithms: [] })).rejects.toMatchObject({ code: 'VERIFIER_ALGORITHM_UNTRUSTED' });
++    await expect(executePluginVerifier({ ...a, verification: { ...a.verification, source: { ...a.verification.source, version: 'a'.repeat(64) } } })).rejects.toMatchObject({ code: 'SOURCE_VERSION_MISMATCH' }); expect(phases).toBe(0);
++    const escaped = '\u0001'.repeat(3000);
++    await expect(executePluginVerifier({ ...a, verification: { ...a.verification, source: { ...a.verification.source, content: escaped, version: digest(escaped) } } })).rejects.toMatchObject({ code: 'VERIFICATION_INPUT_TOO_LARGE' }); expect(phases).toBe(0);
++    a.authorize = async () => { throw new PluginAuthorizationUnknown(); };
++    await expect(executePluginVerifier(a)).rejects.toBeInstanceOf(PluginExecutionUnsettled);
++    await expect(executePluginVerifier({ ...a, signal: AbortSignal.abort() })).rejects.toMatchObject({ code: 'CANCELLED' });
++  });
++});
+diff --git a/packages/contracts/src/plugin-verification.test.ts b/packages/contracts/src/plugin-verification.test.ts
+new file mode 100644
+index 000000000..3cf9361b2
+--- /dev/null
++++ b/packages/contracts/src/plugin-verification.test.ts
+@@ -0,0 +1,19 @@
++import { expect, test } from 'vitest';
++import { jsonObjectRuleSchema, pluginVerificationOutputSchema, pluginVerificationRequestSchema } from './plugin-verification.js';
++const rule = { schemaVersion: 1, algorithmId: 'flow.json-object.required-keys', algorithmVersion: 1, requiredKeys: ['id'] } as const;
++test('AV02 strict bounded rule detaches, canonicalizes keys and rejects unsupported algorithms', () => {
++  const keys = ['z', 'a']; const parsed = jsonObjectRuleSchema.parse({ ...rule, requiredKeys: keys }); keys.push('later');
++  expect(parsed.requiredKeys).toEqual(['a', 'z']);
++  for (const value of [{ ...rule, requiredKeys: ['id', 'id'] }, { ...rule, requiredKeys: Array(33).fill('x') },
++    { ...rule, requiredKeys: ['\ud800'] }, { ...rule, requiredKeys: ['😀'.repeat(17)] }, { ...rule, algorithmVersion: 2 }, { ...rule, script: 'no' }]) {
++    expect(() => jsonObjectRuleSchema.parse(value)).toThrow();
++  }
++});
++test('AV02 source and result codecs reject excess bytes, undeclared fields and forged verdict shapes', () => {
++  const source = { taskId: 'task', attemptId: 'attempt', artifactId: 'artifact', version: 'a'.repeat(64), content: '{}' };
++  expect(pluginVerificationRequestSchema.parse({ source, rule }).source.content).toBe('{}');
++  expect(() => pluginVerificationRequestSchema.parse({ source: { ...source, content: 'a'.repeat(8193) }, rule })).toThrow();
++  const output = { schemaVersion: 1, algorithmId: rule.algorithmId, algorithmVersion: 1, inputDigest: 'a'.repeat(64), verdict: { result: 'passed', reason: 'passed', missingKeys: [] } };
++  expect(pluginVerificationOutputSchema.parse(output)).toEqual(output);
++  expect(() => pluginVerificationOutputSchema.parse({ ...output, verdict: { ...output.verdict, reason: 'invalid-json' } })).toThrow();
++});
+diff --git a/packages/contracts/src/plugin-verification.ts b/packages/contracts/src/plugin-verification.ts
+new file mode 100644
+index 000000000..4c689ae05
+--- /dev/null
++++ b/packages/contracts/src/plugin-verification.ts
+@@ -0,0 +1,44 @@
++import { z } from 'zod';
++import { isPersistablePluginText } from './plugin-runtime.js';
++
++export const JSON_OBJECT_ALGORITHM = { id: 'flow.json-object.required-keys', version: 1 } as const;
++export const PLUGIN_VERIFICATION_LIMITS = { sourceBytes: 8192, inputBytes: 16384, inputCodeUnits: 16000, keys: 32, keyBytes: 64 } as const;
++const bytes = (text: string) => new TextEncoder().encode(text).length;
++const key = z.string().min(1).max(64).refine(value => value.length <= 64 && isPersistablePluginText(value) && bytes(value) <= 64);
++const identity = z.string().min(1).max(128).refine(isPersistablePluginText);
++const digest = z.string().regex(/^[a-f0-9]{64}$/);
++function compareCodepoints(left: string, right: string): number {
++  const a = [...left]; const b = [...right];
++  for (let i = 0; i < Math.min(a.length, b.length); i++) {
++    const difference = a[i]!.codePointAt(0)! - b[i]!.codePointAt(0)!;
++    if (difference) return difference;
++  }
++  return a.length - b.length;
++}
++export const jsonObjectRuleSchema = z.strictObject({
++  schemaVersion: z.literal(1), algorithmId: z.literal(JSON_OBJECT_ALGORITHM.id), algorithmVersion: z.literal(1),
++  requiredKeys: z.array(key).max(PLUGIN_VERIFICATION_LIMITS.keys)
++    .refine(keys => new Set(keys).size === keys.length).transform(keys => [...keys].sort(compareCodepoints)),
++});
++export type JsonObjectRule = z.infer<typeof jsonObjectRuleSchema>;
++export const pluginVerificationRequestSchema = z.strictObject({
++  source: z.strictObject({ taskId: identity, attemptId: identity, artifactId: identity, version: digest,
++    content: z.string().refine(value => value.length <= PLUGIN_VERIFICATION_LIMITS.sourceBytes && isPersistablePluginText(value) && bytes(value) <= PLUGIN_VERIFICATION_LIMITS.sourceBytes) }),
++  rule: jsonObjectRuleSchema,
++});
++export type PluginVerificationRequest = z.infer<typeof pluginVerificationRequestSchema>;
++export const jsonObjectVerdictSchema = z.strictObject({
++  result: z.enum(['passed', 'failed']), reason: z.enum(['passed', 'invalid-json', 'not-object', 'missing-required-keys']),
++  missingKeys: z.array(key).max(PLUGIN_VERIFICATION_LIMITS.keys).refine(keys => new Set(keys).size === keys.length),
++}).superRefine((value, context) => {
++  const valid = value.reason === 'passed' ? value.result === 'passed' && value.missingKeys.length === 0
++    : value.result === 'failed' && (value.reason === 'missing-required-keys' ? value.missingKeys.length > 0 : value.missingKeys.length === 0);
++  if (!valid) context.addIssue({ code: 'custom', message: 'Inconsistent verification verdict.' });
++});
++export type JsonObjectVerdict = z.infer<typeof jsonObjectVerdictSchema>;
++/** Local package result only. This is not yet a RunnerEvent or a center-approved result. */
++export const pluginVerificationOutputSchema = z.strictObject({
++  schemaVersion: z.literal(1), algorithmId: z.literal(JSON_OBJECT_ALGORITHM.id), algorithmVersion: z.literal(1),
++  inputDigest: digest, verdict: jsonObjectVerdictSchema,
++});
++export type PluginVerificationOutput = z.infer<typeof pluginVerificationOutputSchema>;
+diff --git a/packages/plugin-runtime/src/json-object-verifier.test.ts b/packages/plugin-runtime/src/json-object-verifier.test.ts
+new file mode 100644
+index 000000000..b033b5681
+--- /dev/null
++++ b/packages/plugin-runtime/src/json-object-verifier.test.ts
+@@ -0,0 +1,14 @@
++import { expect, test } from 'vitest';
++import { verifyJsonObject } from './json-object-verifier.js';
++const rule = { schemaVersion: 1, algorithmId: 'flow.json-object.required-keys', algorithmVersion: 1, requiredKeys: ['id'] } as const;
++test('AV02 JSON object rule distinguishes parsing, object shape and own required keys', () => {
++  expect(verifyJsonObject('{"id":null,"extra":true}', { ...rule, requiredKeys: ['id'] })).toMatchObject({ result: 'passed' });
++  expect(verifyJsonObject('{bad', { ...rule, requiredKeys: [] })).toMatchObject({ reason: 'invalid-json' });
++  for (const content of ['null', '[]', '1', '"object"']) expect(verifyJsonObject(content, { ...rule, requiredKeys: [] })).toMatchObject({ reason: 'not-object' });
++  expect(verifyJsonObject('{}', { ...rule, requiredKeys: ['toString'] })).toMatchObject({ missingKeys: ['toString'] });
++  expect(verifyJsonObject('{"__proto__":1}', { ...rule, requiredKeys: ['__proto__'] })).toMatchObject({ result: 'passed' });
++});
++test('AV02 rule v2 requires a new field and never reuses the old passed verdict', () => {
++  expect(verifyJsonObject('{"id":1}', { ...rule, requiredKeys: ['id'] })).toMatchObject({ result: 'passed' });
++  expect(verifyJsonObject('{"id":1}', { ...rule, requiredKeys: ['id', 'email'] })).toEqual({ result: 'failed', reason: 'missing-required-keys', missingKeys: ['email'] });
++});
+diff --git a/packages/plugin-runtime/src/json-object-verifier.ts b/packages/plugin-runtime/src/json-object-verifier.ts
+new file mode 100644
+index 000000000..139a233e2
+--- /dev/null
++++ b/packages/plugin-runtime/src/json-object-verifier.ts
+@@ -0,0 +1,16 @@
++import { jsonObjectRuleSchema, PLUGIN_VERIFICATION_LIMITS, type JsonObjectRule, type JsonObjectVerdict } from '../../contracts/src/plugin-verification.js';
++import { isPersistablePluginText } from '../../contracts/src/plugin-runtime.js';
++
++/** Fixed trusted algorithm. No package import, I/O, recursive schema language or verdict cache. */
++export function verifyJsonObject(content: string, input: JsonObjectRule): JsonObjectVerdict {
++  const rule = jsonObjectRuleSchema.parse(input);
++  if (typeof content !== 'string' || content.length > PLUGIN_VERIFICATION_LIMITS.sourceBytes || !isPersistablePluginText(content)
++    || new TextEncoder().encode(content).length > PLUGIN_VERIFICATION_LIMITS.sourceBytes) throw new Error('VERIFICATION_INPUT_TOO_LARGE_OR_INVALID');
++  let value: unknown;
++  try { value = JSON.parse(content); }
++  catch { return { result: 'failed', reason: 'invalid-json', missingKeys: [] }; }
++  if (value === null || typeof value !== 'object' || Array.isArray(value)) return { result: 'failed', reason: 'not-object', missingKeys: [] };
++  const missingKeys = rule.requiredKeys.filter(key => !Object.hasOwn(value, key));
++  return missingKeys.length ? { result: 'failed', reason: 'missing-required-keys', missingKeys }
++    : { result: 'passed', reason: 'passed', missingKeys: [] };
++}
+diff --git a/packages/plugin-runtime/src/package-store.test.ts b/packages/plugin-runtime/src/package-store.test.ts
+index 87ed6362d..4d6402fdb 100644
+--- a/packages/plugin-runtime/src/package-store.test.ts
++++ b/packages/plugin-runtime/src/package-store.test.ts
+@@ -246,3 +246,16 @@ test.each(zeroMetadataCases)('rejects zero-length metadata $type $position regul
+     expect(await readdir(f.input.store.root)).toEqual([]);
+   } finally { await rm(f.root, { recursive: true, force: true }); }
+ });
++
++
++test('AV02 static verifier kind is retained and unknown manifest kinds remain rejected', async () => {
++  const f = await fixture();
++  try {
++    for (const kind of ['verifier', 'unknown']) {
++      const entries = await fixtureEntries(); const manifest = JSON.parse(entries[1]!.body!.toString()); manifest.kind = kind;
++      entries[1]!.body = Buffer.from(JSON.stringify(manifest)); await replaceArchive(f, gzipSync(tarBytes(entries)));
++      if (kind === 'verifier') expect((await prepareInstalledPackage(f.input)).receipt.manifest.kind).toBe('verifier');
++      else await expect(prepareInstalledPackage(f.input)).rejects.toMatchObject({ code: 'MANIFEST_REJECTED' });
++    }
++  } finally { await rm(f.root, { recursive: true, force: true }); }
++});
+diff --git a/packages/plugin-runtime/src/package-store.ts b/packages/plugin-runtime/src/package-store.ts
+index 2519f6730..fb0b18d2d 100644
+--- a/packages/plugin-runtime/src/package-store.ts
++++ b/packages/plugin-runtime/src/package-store.ts
+@@ -27,7 +27,7 @@ export interface InstalledPackageReceipt {
+   installationId: string;
+   storeId: string;
+   artifact: PackageArtifactIdentity;
+-  manifest: { schemaVersion: 1; hostApiMajor: 1; kind: 'tool'; entrypoint: string };
++  manifest: { schemaVersion: 1; hostApiMajor: 1; kind: 'tool' | 'verifier'; entrypoint: string };
+   files: readonly { path: string; bytes: number; sha256: string }[];
+   treeDigest: string;
+ }
+@@ -178,11 +178,11 @@ function contents(files: Map<string, Buffer>, artifact: PackageArtifactIdentity)
+   const forbidden = ['scripts', 'dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies', 'bundledDependencies', 'bundleDependencies'];
+   if (pkg.name !== artifact.name || pkg.version !== artifact.version || pkg.type !== 'module' || forbidden.some(key => key in pkg)) fail('MANIFEST_REJECTED');
+   if (Object.keys(manifest).sort().join(',') !== 'entrypoint,hostApiMajor,kind,schemaVersion' || manifest.schemaVersion !== 1 || manifest.hostApiMajor !== 1
+-    || manifest.kind !== 'tool' || typeof manifest.entrypoint !== 'string' || !manifest.entrypoint.endsWith('.mjs')) fail('MANIFEST_REJECTED');
++    || (manifest.kind !== 'tool' && manifest.kind !== 'verifier') || typeof manifest.entrypoint !== 'string' || !manifest.entrypoint.endsWith('.mjs')) fail('MANIFEST_REJECTED');
+   packagePath('package/' + manifest.entrypoint);
+   if (!files.has(manifest.entrypoint)) fail('MANIFEST_REJECTED');
+   for (const path of files.keys()) for (const other of files.keys()) if (other.startsWith(path + '/')) fail('ARCHIVE_REJECTED');
+-  return { files, manifest: { schemaVersion: 1, hostApiMajor: 1, kind: 'tool', entrypoint: manifest.entrypoint } };
++  return { files, manifest: { schemaVersion: 1, hostApiMajor: 1, kind: manifest.kind, entrypoint: manifest.entrypoint } };
+ }
+ function receipt(c: Context, material: Contents): InstalledPackageReceipt {
+   const files = [...material.files].map(([path, data]) => ({ path, bytes: data.length, sha256: hash(data) })).sort((a, b) => a.path < b.path ? -1 : a.path > b.path ? 1 : 0);
