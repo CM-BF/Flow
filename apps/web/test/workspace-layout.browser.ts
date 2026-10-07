@@ -153,6 +153,22 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       result.observations.material = { key: sent.key, frozen: request, nextDraft: saved.data, probe: observed };
     });
     await run("refresh-theme", async () => {
+      const closeFromPlugin = async () => {
+        const owner = page.locator('.flow-tab').filter({ has: tab(4) });
+        await owner.getByRole("button", { name: "More actions", exact: true }).click();
+        await owner.getByRole("menuitem", { name: "Close this chat", exact: true }).click();
+        return page.getByRole("dialog", { name: "Leave attachment drafts?", exact: true });
+      };
+      const retained = (await draftRecord(page, "conversation:chat-4"))!.data;
+      await expect(await closeFromPlugin()).toBeVisible();
+      await page.getByRole("button", { name: "Keep this page", exact: true }).click();
+      await expect(input(4)).toHaveValue("Independent B while A prepares");
+      await expect(await closeFromPlugin()).toBeVisible();
+      await page.getByRole("button", { name: "Leave view and retain saved records", exact: true }).click();
+      await expect(tab(4)).toHaveCount(0);
+      expect((await draftRecord(page, "conversation:chat-4"))!.data).toEqual(retained);
+      await chooseChat(4); await expect(input(4)).toHaveValue("Independent B while A prepares");
+      result.observations.protectedClose = "Public plugin close: cancel kept view; fresh confirmed close retained complete saved B; reopen kept text. Revoked confirmations are tested separately through actual host/port.";
       const workspace2 = page.getByRole("tab", { name: "Workspace 2", exact: true });
       await page.getByRole("tab", { name: "Workspace 1", exact: true }).click(); await workspace2.focus(); await workspace2.press("Space"); await expect(workspace2).toHaveAttribute("aria-selected", "true");
       // Empty workspace close has a deterministic adjacent focus, no nested button or reordered draft owner.
