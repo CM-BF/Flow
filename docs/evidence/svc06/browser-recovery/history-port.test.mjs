@@ -27,7 +27,7 @@ test('history port uses explicit config marker and Pool for the same bounded rea
     const value = JSON.parse(await readFile(output));
     assert.deepEqual(value.tables[0], { name: 'tasks', columns: ['id'], count: 1, digest: 'a'.repeat(32) });
     assert.equal(calls[3][1], 'BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY');
-    assert.ok(calls.some(row => row[1]?.includes('FROM flow."tasks" LIMIT 10001')));
+    assert.ok(calls.some(row => row[0] === 'query' && row[1].includes('FROM flow."tasks" LIMIT 10001')));
     assert.deepEqual(calls.slice(-2), [['release'], ['end']]);
     const prior = calls.length;
     await assert.rejects(snapshot(output, undefined, dependencies), /OUTPUT_ALREADY_EXISTS/);

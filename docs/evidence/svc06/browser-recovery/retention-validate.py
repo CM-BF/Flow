@@ -23,6 +23,7 @@ def main(argv):
         'current-migration-loader': ('^current migration (input|loader) ', str(HERE / 'current-migration.test.mjs')),
         'admission-port': ('^admission port ', 'docs/evidence/svc05-history-compatibility/release-operation/admission-preservation.test.mjs'),
         'history-port': ('^history port ', str(HERE / 'history-port.test.mjs')),
+        'history-port-projection': ('^history port uses ', str(HERE / 'history-port.test.mjs')),
     }
     if mode not in selections:
         raise ValueError('EXACT_LOCAL_SELECTION_REQUIRED')
