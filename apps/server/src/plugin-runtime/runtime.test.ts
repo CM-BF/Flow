@@ -186,7 +186,11 @@ test('phase replay rechecks grant/fence and changing key cannot authorize a seco
 test('disable preserves accepted pin permission, maintenance drains, and cancellation/expired/stale/revoked fences reject', async () => {
   const f = await enabled(); const { binding } = await bound(f); const identity = await active(f, binding); const path = '/api/runner/plugin-tool/authorize';
   expect((await request(`/api/plugins/${f.registrationId}/runtime/commands`, { expectedRevision: 4, reason: 'No new binding', change: { kind: 'disable' } })).status).toBe(200);
-  await pool.query("UPDATE flow.runners SET maintenance_state='draining' WHERE id=$1", [f.runnerId]);
+  const maintenanceOperationId = randomUUID();
+  const drained = await request(`/api/runners/${f.runnerId}/maintenance/drain`, {
+    version: 0, operationId: maintenanceOperationId, reason: 'Drain the existing plugin attempt' });
+  expect(drained.status).toBe(200);
+  expect(drained.body.state).toEqual({ runnerId: f.runnerId, state: 'draining', version: 1, operationId: maintenanceOperationId });
   expect((await request(path, { ...identity, phase: 'load' }, randomUUID(), f.token)).status).toBe(200);
   expect((await request(path, { ...identity, phase: 'invoke', ownerVersion: 2 }, randomUUID(), f.token)).status).toBe(409);
   await pool.query("UPDATE flow.tasks SET status='cancel_requested' WHERE id=$1", [binding.taskId]);
