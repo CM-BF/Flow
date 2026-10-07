@@ -1,0 +1,566 @@
+{
+  "observedAt": "2026-10-07T15:18:52.839709+00:00",
+  "readOnly": true,
+  "summary": {
+    "generatedAt": "2026-10-07T15:18:52.868Z",
+    "registryFingerprint": "4cb7e31e45a7287ad5dbda575bd1aafde6d5e71f59d720b19abcb3251ca93fbc",
+    "tasks": [
+      {
+        "id": "WPF-RELEASE01",
+        "title": "真实网页发布兼容验证",
+        "role": "技术验证",
+        "sourceKey": "f31bac1b16122703280da6a7403b126c96650a9f9931f6e0bd3d9c18f3d95487",
+        "sourceCurrent": true,
+        "source": {
+          "mode": "live",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md",
+          "digest": "a20f2bda70b4563a8b25b13ba8ad6601f0886c052c5369c27e1b88b6761c559f",
+          "modifiedAt": "2026-10-07T14:47:33.476Z",
+          "readAt": "2026-10-07T15:18:52.868Z",
+          "declaredUpdatedAt": "2026-10-07T14:47:33.469Z",
+          "stale": false,
+          "ageHours": 0.5220552777777778,
+          "issues": [],
+          "error": null,
+          "frozenCommit": null
+        },
+        "declarations": {
+          "owner": "w01_owner / gpt-6-astra / ultra",
+          "branch": "codex/web-release-compatibility",
+          "branchState": "in-progress",
+          "declaredHead": "固定后继基线 41276e2ecd154087f66958339d9abfce4d44964c；不 reset/rebase",
+          "declaredDirty": "8964dc1两harness保持冻结；本批仅own metadata，正常push后clean并全四scope STOP",
+          "updatedRecord": "2026-10-07T14:47:33.469Z",
+          "checks": {
+            "state": "passed",
+            "target": "8964dc1185f62ed8934c15416e9798929359ab89",
+            "record": "PASSED 8964dc1185f62ed8934c15416e9798929359ab89 仅两harness strict/noEmit；新Cookie实际与浏览器NOT_RUN"
+          },
+          "reviewRecord": "[review.md](review.md)：APPROVED 8964dc1185f62ed8934c15416e9798929359ab89，仅源码+必要strict；browser NOT_RUN",
+          "mainRecord": "NOT_INTEGRATED 当前新App后继；历史9658/c3已main e0295747200d7f0616779a712fdfd06691c3708f",
+          "human": {
+            "delivery": {
+              "state": "implementation",
+              "source": "explicit"
+            },
+            "phase": "M2",
+            "priority": 1,
+            "output": "修正后台产物已供给并获限定独审；新版网页验收源码与两文件静态移植准备已批准，真实新组合兼容尚未执行",
+            "next": "原唯一网页产物负责人供给新网页后，与已到修正后台组成精确兼容输入",
+            "blocker": {
+              "state": "active",
+              "text": "仅新网页不可变产物尚缺；唯一生产者已派工，等待接受与供给回执。旧网页消费者执行及新组合兼容仍未验证"
+            },
+            "decision": {
+              "state": "none",
+              "text": ""
+            },
+            "missing": [],
+            "complete": true
+          },
+          "timing": {
+            "started": {
+              "state": "unknown",
+              "at": null,
+              "record": "UNKNOWN"
+            },
+            "completed": {
+              "state": "not_completed",
+              "at": null,
+              "record": "NOT_COMPLETED"
+            },
+            "source": {
+              "state": "declared",
+              "record": "整体开工UNKNOWN；历史片段完成12:17:59.709Z保前状态；后继领取13:09:33.224Z仅为领取事实，编辑固定来源8964dc1；不以领取或编辑时刻倒填全任务开工"
+            },
+            "issues": [
+              "任务开工时间未记录"
+            ]
+          },
+          "truncatedFields": []
+        },
+        "progress": {
+          "completed": 7,
+          "total": 8
+        },
+        "links": {
+          "kind": "subtask",
+          "coLead": {
+            "state": "known",
+            "record": "Web /root（执行管理 d01_owner）",
+            "value": "Web /root（执行管理 d01_owner）"
+          },
+          "parent": {
+            "state": "known",
+            "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+            "reason": "",
+            "targetId": "WPF-MATURE-01",
+            "title": "成熟双主题视觉"
+          },
+          "basis": "status-source"
+        },
+        "verification": {
+          "state": "not_loaded"
+        },
+        "assignment": {
+          "state": "pending"
+        }
+      },
+      {
+        "id": "WPF-I01",
+        "title": "Web 插件集成",
+        "role": "工作线",
+        "sourceKey": "91ec2ad3d8b25e579b8a661c65bdb6e5ff20c180162808a0c0b5bb094a73aeec",
+        "sourceCurrent": false,
+        "source": {
+          "mode": "live",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/plans/wpf-i01-plugin-integration/status.md",
+          "digest": "a55bdbb447d4d8df259646833845023cb2da5a2fd9b6f9dbd8f4b04c3eb1c73a",
+          "modifiedAt": "2026-10-06T06:45:27.512Z",
+          "readAt": "2026-10-07T15:18:52.868Z",
+          "declaredUpdatedAt": "2026-10-06T06:45:27.000Z",
+          "stale": true,
+          "ageHours": 32.557185555555556,
+          "issues": [
+            "status 未同步或超过 24 小时，当前进度待核实。"
+          ],
+          "error": null,
+          "frozenCommit": null
+        },
+        "declarations": {
+          "owner": "workspace_panels_owner / gpt-6-astra ultra",
+          "branch": "codex/web-plugin-integration",
+          "branchState": "COMPLETED；本片段已独审并历史集成main，后继未完成TODO保留",
+          "declaredHead": "c526c1c889437ee39155d669921577995195c74e / 实际完整输入 merge 1002f2688c2b4d2e3a5723d94bdbe965a2a88626；实际 metadata HEAD 由 Git 聚合，不作为实现 target",
+          "declaredDirty": "实现已冻结；正式 review metadata 提交后 Git 聚合实际 clean 状态，rootlock 已恢复",
+          "updatedRecord": "2026-10-06T06:45:27Z / 固定main a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8；target祖先，当前保留生产范围零diff",
+          "checks": {
+            "state": "passed",
+            "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+            "record": "PASSED 92a786abb9f7ef16e15482ac00b98ff860ecc47f; 9 bridge + 15 host direct tests, 9 HTTP fixture browser groups, 3 real PG/public runner journey groups, typecheck, build, production smoke；范围与限定见 validation"
+          },
+          "reviewRecord": "[review.md](review.md)，APPROVED，target 92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+          "mainRecord": "INTEGRATED a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8；target为祖先，当前claim保留的8个生产/测试paths零diff；历史完整scope含已转交后继变更，不冒称全scope仍相同",
+          "human": {
+            "delivery": {
+              "state": "delivered",
+              "source": "explicit"
+            },
+            "phase": "M2",
+            "priority": 2,
+            "output": "可信扩展已接入聊天工作区并完成主线集成",
+            "next": "本片段已交付；后继需求按独立任务继续",
+            "blocker": {
+              "state": "none",
+              "text": ""
+            },
+            "decision": {
+              "state": "none",
+              "text": ""
+            },
+            "missing": [],
+            "complete": true
+          },
+          "timing": {
+            "started": {
+              "state": "unknown",
+              "at": null,
+              "record": ""
+            },
+            "completed": {
+              "state": "unknown",
+              "at": null,
+              "record": ""
+            },
+            "source": {
+              "state": "unknown",
+              "record": ""
+            },
+            "issues": [
+              "任务开工时间未记录",
+              "任务完成时间未记录",
+              "任务时间来源未知"
+            ]
+          },
+          "truncatedFields": []
+        },
+        "progress": {
+          "completed": 4,
+          "total": 4
+        },
+        "links": {
+          "kind": "unknown",
+          "coLead": {
+            "state": "unknown",
+            "record": "",
+            "reason": "status 陈旧或时钟待核实"
+          },
+          "parent": {
+            "state": "unknown",
+            "record": "",
+            "reason": "status 陈旧或时钟待核实"
+          },
+          "basis": "status-source"
+        },
+        "verification": {
+          "state": "not_loaded"
+        },
+        "assignment": {
+          "state": "pending"
+        }
+      }
+    ]
+  },
+  "assignments": {
+    "readAt": "2026-10-07T15:19:07.818786+00:00",
+    "registryFingerprint": "4cb7e31e45a7287ad5dbda575bd1aafde6d5e71f59d720b19abcb3251ca93fbc",
+    "readId": "8452c002-8996-49c3-99a5-829b39c974be",
+    "state": "available",
+    "observedAt": "2026-10-07T15:19:07.810Z",
+    "byTask": {
+      "WPF-RELEASE01": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/test/web-release-compatibility.browser.ts",
+            "apps/web/test/web-release-compatibility.fixture.ts",
+            "docs/evidence/wpf-release01",
+            "plans/wpf-release01-product-compatibility"
+          ],
+          "state": "active",
+          "branch": "codex/web-release-recovery",
+          "origin": "new",
+          "taskId": "WPF-RELEASE01",
+          "worker": "w01_owner",
+          "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
+          "version": 2,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+          "createdAt": "2026-10-07T14:52:41.385Z",
+          "updatedAt": "2026-10-07T15:10:52.444Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": false
+        }
+      ],
+      "WPF-I01": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/plugin-integration/react.tsx",
+            "apps/web/src/plugin-integration/session.ts",
+            "apps/web/test/plugin-integration.test.ts",
+            "apps/web/test/plugin-management-integration.browser.ts",
+            "apps/web/test/plugin-management-integration.fixture.ts",
+            "docs/evidence/wpf-i01",
+            "plans/wpf-i01-plugin-integration"
+          ],
+          "state": "active",
+          "branch": "codex/web-plugin-runtime-app",
+          "origin": "new",
+          "taskId": "WPF-I01",
+          "worker": "workspace_panels_owner",
+          "claimId": "61abce36-a4d1-4531-9b04-dedaae86108b",
+          "version": 1,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+          "createdAt": "2026-10-07T15:12:21.486Z",
+          "updatedAt": "2026-10-07T15:12:21.486Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": false
+        }
+      ]
+    },
+    "unregisteredAssignments": [
+      {
+        "lead": "mika",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "docs/evidence/x01-artifact-verifier",
+          "plans/x01-artifact-verifier"
+        ],
+        "state": "active",
+        "branch": "codex/plugin-artifact-verifier",
+        "origin": "new",
+        "taskId": "X01-ARTIFACT-VERIFIER01",
+        "worker": "architecture_read",
+        "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+        "createdAt": "2026-10-07T14:30:38.019Z",
+        "updatedAt": "2026-10-07T14:30:38.019Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      {
+        "lead": "mika",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/runner/src/configuration.test.ts",
+          "apps/runner/src/configuration.ts",
+          "apps/runner/src/main-concurrency.test.ts",
+          "apps/runner/src/plugins/execution.test.ts",
+          "apps/runner/src/plugins/execution.ts",
+          "apps/runner/src/plugins/process-host.test.ts",
+          "apps/runner/src/plugins/process-host.ts",
+          "apps/runner/src/plugins/process-protocol.ts",
+          "apps/runner/src/plugins/process-resources.ts",
+          "apps/runner/src/plugins/process-worker.ts",
+          "apps/runner/src/plugins/runtime.test.ts",
+          "apps/runner/src/runtime.ts",
+          "docs/evidence/x01-trusted-process-host",
+          "plans/x01-trusted-process-host"
+        ],
+        "state": "active",
+        "branch": "codex/plugin-trusted-process-host",
+        "origin": "new",
+        "taskId": "X01-TRUSTED-PROCESS-HOST01",
+        "worker": "db_transaction_owner",
+        "claimId": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host",
+        "createdAt": "2026-10-07T12:39:21.479Z",
+        "updatedAt": "2026-10-07T12:58:06.882Z",
+        "observedAt": null,
+        "needsVerification": false
+      }
+    ],
+    "claims": [
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/TaskThread.tsx",
+          "apps/web/src/components/workspace/WorkspacePanels.tsx",
+          "apps/web/src/plugin-integration/slot-fixture.tsx",
+          "apps/web/src/plugin-integration/task-actions.ts",
+          "apps/web/src/themes.ts",
+          "apps/web/test/plugin-integration.browser.ts",
+          "apps/web/test/plugin-integration.config.ts",
+          "apps/web/test/plugin-integration.test.ts",
+          "docs/evidence/wpf-i01",
+          "plans/wpf-i01-plugin-integration"
+        ],
+        "state": "released",
+        "branch": "codex/web-plugin-integration",
+        "origin": "new",
+        "taskId": "WPF-I01",
+        "worker": "workspace_panels_owner",
+        "claimId": "b6666c29-ebc5-47b2-b754-55b62687fd00",
+        "version": 4,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration",
+        "createdAt": "2026-10-06T02:58:06.016Z",
+        "updatedAt": "2026-10-06T06:45:37.847Z",
+        "observedAt": null,
+        "needsVerification": true
+      },
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/plugin-integration/react.tsx",
+          "apps/web/src/plugin-integration/session.ts",
+          "apps/web/test/plugin-integration.test.ts",
+          "apps/web/test/plugin-management-integration.browser.ts",
+          "apps/web/test/plugin-management-integration.fixture.ts",
+          "docs/evidence/wpf-i01",
+          "plans/wpf-i01-plugin-integration"
+        ],
+        "state": "active",
+        "branch": "codex/web-plugin-runtime-app",
+        "origin": "new",
+        "taskId": "WPF-I01",
+        "worker": "workspace_panels_owner",
+        "claimId": "61abce36-a4d1-4531-9b04-dedaae86108b",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+        "createdAt": "2026-10-07T15:12:21.486Z",
+        "updatedAt": "2026-10-07T15:12:21.486Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/test/web-release-compatibility.browser.ts",
+          "apps/web/test/web-release-compatibility.fixture.ts",
+          "docs/evidence/wpf-release01",
+          "plans/wpf-release01-product-compatibility"
+        ],
+        "state": "released",
+        "branch": "codex/web-release-compatibility",
+        "origin": "new",
+        "taskId": "WPF-RELEASE01",
+        "worker": "w01_owner",
+        "claimId": "20a6529a-1b34-4d1c-9d26-cab0bda82b37",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+        "createdAt": "2026-10-06T10:26:38.042Z",
+        "updatedAt": "2026-10-06T10:59:06.085Z",
+        "observedAt": null,
+        "needsVerification": true
+      },
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/test/web-release-compatibility.browser.ts",
+          "apps/web/test/web-release-compatibility.fixture.ts",
+          "docs/evidence/wpf-release01",
+          "plans/wpf-release01-product-compatibility"
+        ],
+        "state": "released",
+        "branch": "codex/web-release-compatibility",
+        "origin": "new",
+        "taskId": "WPF-RELEASE01",
+        "worker": "w01_owner",
+        "claimId": "38b9a7ff-c9be-4b56-af50-e076afb603bc",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+        "createdAt": "2026-10-07T10:00:08.645Z",
+        "updatedAt": "2026-10-07T12:18:30.761Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/test/web-release-compatibility.browser.ts",
+          "apps/web/test/web-release-compatibility.fixture.ts",
+          "docs/evidence/wpf-release01",
+          "plans/wpf-release01-product-compatibility"
+        ],
+        "state": "released",
+        "branch": "codex/web-release-compatibility",
+        "origin": "new",
+        "taskId": "WPF-RELEASE01",
+        "worker": "w01_owner",
+        "claimId": "27c36b97-162d-45e0-9150-25269d3d3f34",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+        "createdAt": "2026-10-07T13:09:33.224Z",
+        "updatedAt": "2026-10-07T14:50:26.083Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      {
+        "lead": "external_web_d01_owner",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/web/test/web-release-compatibility.browser.ts",
+          "apps/web/test/web-release-compatibility.fixture.ts",
+          "docs/evidence/wpf-release01",
+          "plans/wpf-release01-product-compatibility"
+        ],
+        "state": "active",
+        "branch": "codex/web-release-recovery",
+        "origin": "new",
+        "taskId": "WPF-RELEASE01",
+        "worker": "w01_owner",
+        "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+        "createdAt": "2026-10-07T14:52:41.385Z",
+        "updatedAt": "2026-10-07T15:10:52.444Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      {
+        "lead": "mika",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "docs/evidence/x01-artifact-verifier",
+          "plans/x01-artifact-verifier"
+        ],
+        "state": "active",
+        "branch": "codex/plugin-artifact-verifier",
+        "origin": "new",
+        "taskId": "X01-ARTIFACT-VERIFIER01",
+        "worker": "architecture_read",
+        "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+        "createdAt": "2026-10-07T14:30:38.019Z",
+        "updatedAt": "2026-10-07T14:30:38.019Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      {
+        "lead": "mika",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/cli/src/index.ts",
+          "apps/cli/src/plugin-removal-references.test.ts",
+          "docs/evidence/x01-removal-references-client",
+          "packages/client/src/index.ts",
+          "packages/client/src/plugin-management.ts",
+          "packages/client/src/plugin-removal-references.test.ts",
+          "plans/x01-removal-references-client"
+        ],
+        "state": "released",
+        "branch": "codex/plugin-removal-references-client",
+        "origin": "new",
+        "taskId": "X01-REMOVAL-REFERENCES-CLIENT",
+        "worker": "db_transaction_owner",
+        "claimId": "79284ebe-b7dc-4340-a9bb-ed939cb15ade",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client",
+        "createdAt": "2026-10-07T12:17:32.883Z",
+        "updatedAt": "2026-10-07T13:28:54.369Z",
+        "observedAt": null,
+        "needsVerification": false
+      },
+      {
+        "lead": "mika",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/runner/src/configuration.test.ts",
+          "apps/runner/src/configuration.ts",
+          "apps/runner/src/main-concurrency.test.ts",
+          "apps/runner/src/plugins/execution.test.ts",
+          "apps/runner/src/plugins/execution.ts",
+          "apps/runner/src/plugins/process-host.test.ts",
+          "apps/runner/src/plugins/process-host.ts",
+          "apps/runner/src/plugins/process-protocol.ts",
+          "apps/runner/src/plugins/process-resources.ts",
+          "apps/runner/src/plugins/process-worker.ts",
+          "apps/runner/src/plugins/runtime.test.ts",
+          "apps/runner/src/runtime.ts",
+          "docs/evidence/x01-trusted-process-host",
+          "plans/x01-trusted-process-host"
+        ],
+        "state": "active",
+        "branch": "codex/plugin-trusted-process-host",
+        "origin": "new",
+        "taskId": "X01-TRUSTED-PROCESS-HOST01",
+        "worker": "db_transaction_owner",
+        "claimId": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+        "version": 2,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host",
+        "createdAt": "2026-10-07T12:39:21.479Z",
+        "updatedAt": "2026-10-07T12:58:06.882Z",
+        "observedAt": null,
+        "needsVerification": false
+      }
+    ]
+  },
+  "readerCorrection": "v1 root reader selected byTask/unregisteredAssignments from nested assignments by mistake. They are top-level, corrected via separate readAt here; summary snapshot unchanged. v1 empty lists are not absence evidence."
+}

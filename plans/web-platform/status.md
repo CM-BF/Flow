@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:10:37.840Z；MSG830bbf7/main3c已收口release20；Release d736/1cea与旧consumer6165ms已获e0a28限定批准，cd074clean后两产品15:10:52正式移出，7d60v2保四scope。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T15:20:48.243Z；SVC09A与S01均实际RETURN；最小Web产物准备与Plugin真实App源码继续，来源迁移由Original D05处理。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -26,7 +26,7 @@
 | 下一可用交付 | W01完成最小新Web artifact准备及固定pair兼容，沿Original发布链应用用户网页；两产品已精确交回，panels61abce36v1合法接续Plugin真实App。共享浮层在下一独立执行位实施，不扩研究。 |
 | 当前阻塞 | ACTIVE: 最小新Web immutable artifact与新pair真实兼容尚待；后端cd27已审、旧消费者source/local已限定批准。个人网页发布与真实设置目录仍未完成。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：SVC09A唯一NEXT RESERVED/尚未START，沿原420s及精确收尾；S01 final32796520 READY_WAITING排后NOT_OPEN。未来完整floor至少14,069,989,376B，全部KEEP/单reserve/个人自然服务保留。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：S01已15:18:44.466Z完整RETURN，无heavy holder/NEXT；Mika恢复K01普通段，actualSTART尚未报告，Web排他构建待其实际RETURN与自身READY。未来floor至少14,338,424,832B，全部KEEP/单reserve保留。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

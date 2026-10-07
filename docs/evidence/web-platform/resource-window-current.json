@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T15:13:15.465Z",
-  "state": "SVC09A_UNIQUE_NEXT_RESERVED_NOT_STARTED",
-  "groupWindowOwnership": "SVC09A Original/native_center_owner has sole NEXT, no actualSTART yet. S01 final32796520 READY_WAITING/NOT_OPEN after this build; Web artifact notREADY, source/local approved; K01child paused. No other engineering child/performance/fullbuild/PG/Chrome starts until explicit completeRETURN. Source-only preparation allowed.",
+  "recordedAt": "2026-10-07T15:20:21.982Z",
+  "state": "NO_HEAVY_HOLDER_S01_FULL_RETURN_K01_ORDINARY_AUTHORIZED",
+  "groupWindowOwnership": "S01 exactFULLRETURN15:18:44.466Z;noheavyholder/NEXT. Mika K01 fixed8c5fa9682/30965v2 existing90sordinary authorized,resumed byownlead;actualSTART notyetreported. W01WebbuildNOT_READY/no grant. Sourcepreparation continues, exclusivebuild waits actualK01 completeRETURN andownfixedreadiness.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -1638,10 +1638,10 @@
     "newTaskClaimGateOrReservation": false
   },
   "latestSourceOnlyProgress": {
-    "state": "HISTORICAL_FIELD_RETIRED",
-    "historyKey": "historicalSourceOnlyProgress024613",
-    "currentEvidence": "current-product-checkpoint-20261007/local-results-review.json",
-    "note": "D04 five pureGit and Quick c2 strict+26 are actually passed; original NOT_RUN entries above are historical."
+    "at": "2026-10-07T15:22:17.005Z",
+    "PROCESS": "main/origin96b424777cd2c66e603157649e5a859ca1b914f6actualmatch,notT7/deployment",
+    "I01": "61abv1active8/sourceimplementation0engineeringchild",
+    "Release": "7d60v2active4/fixed11filebuildpreparationunderrootreview0runtime"
   },
   "dperf04CurrentClaim": {
     "freshReceipt": "main-deployment-route-fix-20261007/dperf-timing-release-receipt.json",
@@ -1710,26 +1710,49 @@
     }
   },
   "externalCurrentAdmission": {
-    "state": "NEXT_RESERVED_NOT_STARTED",
-    "task": "SVC09A",
-    "owner": "Original / native_center_owner",
-    "preparation": "b3eece74",
-    "artifactSource": "098b",
-    "review": "Original preparation APPROVED2026-10-07T15:06:38Z;49runtime/raw+81source+33SQL match as relayed by root",
-    "workSeconds": 420,
-    "cleanup": "Exact already-approved b3ee cleanup/TERM/reap limits unchanged",
-    "additionalPlanningBytes": 2317352960,
-    "minimumFreshFloorBytes": 14069989376,
-    "grantSource": "Root explicit unique handoff relayed2026-10-07T15:09;managercanonical",
-    "condition": "One fresh fixedclaim/source/allpins/ownedidentity/newnamespace/noactualholder/fullsum check; actualfree >= larger completefloor. Exactly one original approved build; no startup inferred from reservation. Operator reports exactSTART/completeRETURN.",
-    "exclusions": "Other engineering child/performance/fullbuild/PG/Chrome held until actualRETURN; source-only preparation may continue; personal naturalservices/tasks untouched",
-    "actualStart": null,
-    "actualReturn": null,
-    "PG": 0,
-    "Chrome": 0,
-    "provider": 0,
-    "personal": 0,
-    "floorUpdate": "New8MiB bounded I01 source supply counted once; preserve consumed gate if already launched and report true historical gate."
+    "state": "ACTUAL_CLOSED_COMPLETE_RETURN_RESULT_FIDELITY_PENDING",
+    "task": "S01 delivery replay",
+    "owner": "Mika / status_read",
+    "claim": "508f9c85 v3 ACTIVE exact6 STOP",
+    "executionHead": "32796520b07d4eed9f34c7c1db757740b7e20452",
+    "source": "d28166e81bcdbb9fb537b40144f7be07a2539130",
+    "reviewPacket": "dbada7cc04cf152124ffc108760828d4d2c83a88",
+    "canonical": "runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/delivery-replay-local-ready.md",
+    "totalMs": 60000,
+    "workMs": 45000,
+    "termMs": 2000,
+    "reapMs": 3000,
+    "planningBytes": 33554432,
+    "minimumFreshFloorBytes": 14338424832,
+    "grantSource": "Root explicituniqueNEXT15:18 relayed toMika;managercanonical",
+    "condition": "One already-approved invocation only;freshfullclaim/fixedHEAD/inputbf912/compiledcf4/originalbindings/5outputsabsent/ownedidentity/noholder/fullsum. Latestfree >= largerfullfloor. Firstarmfailure/unknown STOP/KEEP. Report actualSTART and exactRETURN;reservation isnotRUNNING.",
+    "boundary": "Actualclosed/no retry;semanticresultnot performancegain or SLO. Fullresultfidelity independentreview pending;allpriorKEEP/potential unchanged.",
+    "actualStart": "2026-10-07T15:18:36.341Z",
+    "actualReturn": "2026-10-07T15:18:44.466Z",
+    "coordinator": 16786,
+    "serialWorkers": [
+      16847,
+      16948
+    ],
+    "outerExit": 0,
+    "workerExit": [
+      0,
+      0
+    ],
+    "semanticKnown": true,
+    "dropped": 0,
+    "timePSeconds": 0.91,
+    "operatorElapsedMs": 671.476,
+    "ownedClose": "OPS14groupabsent/MERGED EOF;bothserialworkers dualEOF;nosignals-secondary",
+    "rawBytes": 2655,
+    "scratch": "/tmp/flow-s01-delivery-replay-6qq5l7ia",
+    "scratchIdentity": {
+      "dev": 16777234,
+      "ino": 124268234
+    },
+    "scratchDisposition": "ExactENOENT15:18:44.466Z",
+    "freeBeforeBytes": 20381409280,
+    "consumedFloorBytes": 14338424832
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1740,38 +1763,19 @@
   },
   "nextExternalQueue": {
     "S01": {
-      "state": "READY_WAITING_AFTER_SVC09A_NOT_OPEN",
-      "executionHead": "32796520b07d4eed9f34c7c1db757740b7e20452",
-      "readyReportedAt": "2026-10-07T15:02:30Z",
-      "claim": "508fv3 ACTIVE exact6 STOP",
-      "review": "dbada source/local independently approved; metadata-only final3paths",
-      "outputs": "Five expected output paths absent at2026-10-07T15:00:40.512Z",
-      "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/delivery-replay-local-ready.md",
-      "futureMs": 60000,
-      "planningBytes": 33554432,
-      "actualHolder": false,
-      "nextGranted": false
+      "state": "ACTUAL_CLOSED_COMPLETE_RETURN",
+      "at": "2026-10-07T15:18:44.466Z"
+    },
+    "newWebArtifact": {
+      "state": "PREPARED_DRAFT_NOT_READY_NO_GRANT",
+      "owner": "w01_owner",
+      "source": "d736/1cea",
+      "candidateBytes": 268435456,
+      "boundary": "fixeddependencylink supply/callerboundaryunsealed;no buildgrant"
     },
     "SVC09A": {
-      "state": "NEXT_RESERVED_NOT_STARTED",
-      "task": "SVC09A",
-      "owner": "Original / native_center_owner",
-      "preparation": "b3eece74",
-      "artifactSource": "098b",
-      "review": "Original preparation APPROVED2026-10-07T15:06:38Z;49runtime/raw+81source+33SQL match as relayed by root",
-      "workSeconds": 420,
-      "cleanup": "Exact already-approved b3ee cleanup/TERM/reap limits unchanged",
-      "additionalPlanningBytes": 2317352960,
-      "minimumFreshFloorBytes": 14061600768,
-      "grantSource": "Root explicit unique handoff relayed2026-10-07T15:09;managercanonical",
-      "condition": "One fresh fixedclaim/source/allpins/ownedidentity/newnamespace/noactualholder/fullsum check; actualfree >= larger completefloor. Exactly one original approved build; no startup inferred from reservation. Operator reports exactSTART/completeRETURN.",
-      "exclusions": "Other engineering child/performance/fullbuild/PG/Chrome held until actualRETURN; source-only preparation may continue; personal naturalservices/tasks untouched",
-      "actualStart": null,
-      "actualReturn": null,
-      "PG": 0,
-      "Chrome": 0,
-      "provider": 0,
-      "personal": 0
+      "state": "ACTUAL_RETURNED_KEEP",
+      "at": "2026-10-07T15:14:38.558644Z"
     }
   },
   "currentIntake": "Release7d60v2exact4/product2returned;panels sameI01 successor61abce36v1exact8 COMMITTED15:12:21.486Z, fixed3csource-only. W01metadata localc2311/remoteoldcd074 due2GitHub500; actualclaimhandoff valid. SVC09A soleNEXT unchanged, noSTART reported.",
@@ -1819,39 +1823,44 @@
     "boundary": "Old-base controlled consumer only; no browser/new artifact/PG/Chrome. Root single source/local review in progress; owner natural seal pending."
   },
   "externalPreviousReturn": {
-    "task": "SVC06 exactheld continuation",
-    "window": "svc06-personal-7d1-held-20261007-1347",
-    "state": "RETURNED_UPDATED_ACCEPTING_ACTUAL_CLAIM_ACK_UNKNOWN",
-    "operator": "assignment_review",
-    "source": "ec9c775462de61487836665973e792b4b15d616d",
-    "coreSource": "0f5891da0c413ef0d19b74ae894d7bc11ecf2fa0",
-    "manifest": "5373429039d5d87ddaf5e7c652be7cb6d97fdde3eb22fdaecfcac12384add0c7",
-    "wholeSeconds": 900,
-    "reapSeconds": 2,
-    "configuredConnectionsMaximum": 15,
-    "operatorQuery": 0,
-    "actualStart": "2026-10-07T13:47:33.200098Z",
-    "actualReturn": "2026-10-07T13:48:49.163Z",
-    "reservation": false,
-    "record": "svc-held1347-core-ready-20261007/svc-held-return.json",
-    "wrapperPid": 24253,
-    "deadline": "2026-10-07T14:02:33.200098Z",
-    "freeBeforeBytes": 21645111296,
-    "gateFloorBytes": 7515275264,
-    "sourcePins": 71,
-    "baselineBindings": 4,
-    "mainFrozen": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
-    "operatorElapsedMs": 75906,
-    "cleanup": "Outer24324 andsevenphase directPIDs absent/dualEOF/no signals; detachednewpersonalservices preserved. Not generalized process-group evidence.",
-    "result": "Fixed7d1/source6c backendacceptingv21; oldthreegroupsabsent; old64tables/queuepausedpreservation verified; Webd629v3 unchanged",
-    "personalServices": "Three newrealservice roles continue; queueduser tasknaturallyrunning/newattempt, mustnotinterrupt",
-    "actualClaimRecovery": "UNKNOWN: fullrequestId→receipt→localassignment notcaptured",
-    "toolFreeze": "RELEASED",
-    "newServicePids": {
-      "center": 46474,
-      "runner": 55337,
-      "web": 55432
-    }
+    "state": "ACTUAL_BUILD_RETURNED_ARTIFACT_KEEP_RESULT_REVIEW_PENDING",
+    "task": "SVC09A",
+    "owner": "Original / native_center_owner",
+    "preparation": "b3eece74",
+    "artifactSource": "098b",
+    "review": "Original preparation APPROVED2026-10-07T15:06:38Z;49runtime/raw+81source+33SQL match as relayed by root",
+    "workSeconds": 420,
+    "cleanup": "Exact already-approved b3ee cleanup/TERM/reap limits unchanged",
+    "additionalPlanningBytes": 2317352960,
+    "minimumFreshFloorBytes": 14069989376,
+    "grantSource": "Root explicit unique handoff relayed2026-10-07T15:09;managercanonical",
+    "condition": "Closed;not a reusable runtime grant. Buildresultreview pending;not host or personaldeployment.",
+    "exclusions": "Other engineering child/performance/fullbuild/PG/Chrome held until actualRETURN; source-only preparation may continue; personal naturalservices/tasks untouched",
+    "actualStart": "2026-10-07T15:14:01.726Z",
+    "actualReturn": "2026-10-07T15:14:38.558644Z",
+    "PG": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "personal": 0,
+    "floorUpdate": "New8MiB bounded I01 source supply counted once; preserve consumed gate if already launched and report true historical gate.",
+    "producerEnd": "2026-10-07T15:14:34.219Z",
+    "supervisorFreshScheduledAt": "2026-10-07T15:13:51.789364Z",
+    "outerExit": 0,
+    "ops14ElapsedMs": 32570,
+    "ownedGroup": 42341,
+    "ownedClose": "twiceabsent/dualEOF/no signals or firstfailure",
+    "artifactIdReportedPrefix": "2515a906",
+    "artifactRoot": "/private/tmp/flow-svc09a-artifact-Nf2RTw",
+    "rootIdentity": {
+      "dev": 16777234,
+      "ino": 124240699
+    },
+    "artifactDisposition": "KEEP",
+    "minFreeBytesReported": 20357427200,
+    "host": 0,
+    "runner": 0,
+    "native": 0,
+    "source": "Original exactactual report relayed by root;no independent managerprocessprobe"
   },
   "retiredNextWebReadySnapshot": "release-caller-recovery-main-20261007/historical-next-web-ready-58ef.json (historical owner/packet/budget snapshots only; no permission/currentstatus)",
   "quickAppSourceProvision": {
@@ -2027,28 +2036,28 @@
     "wholeFeaturePass": false,
     "businessReview": "release-backend-route-20261007/settings-business-peer-review.json"
   },
-  "futureCompleteFreshFloorBytes": 14069989376,
+  "futureCompleteFreshFloorBytes": 14338424832,
   "futureFloorEvidence": "msg03-main-release-source-handoff-20261007/current.json#floorComponents",
   "externalOrdinaryCurrent": {
-    "state": "S01_ACTUAL_RETURNED_FULL_ORDINARY_SEGMENT",
-    "reportedReturn": "2026-10-07T14:55:01Z",
-    "source": "Mika via root; exact raw pending owner fidelity review",
-    "childGroups": [
-      91136,
-      98295,
-      3046
-    ],
-    "exit": 0,
-    "ownedGroupsAbsent": true,
-    "mergedEOF": true,
-    "faults": [],
-    "scratch": "3 exact owned TMP ENOENT",
-    "retained": "6JS+manifest retained;16MiB planning term not refunded",
-    "currentHolder": false,
-    "performanceReplay": "NOT_OPEN"
+    "task": "K01",
+    "state": "AUTHORIZED_EXISTING_ORDINARY_SEGMENT_NOT_ACTUAL_START_REPORTED",
+    "source": "8c5fa9682",
+    "claim": "30965v2exact3",
+    "totalMs": 90000,
+    "perChildMs": 30000,
+    "maxSerialChildren": 5,
+    "deadlineReported": "2026-10-07T15:21:34Z",
+    "planningBytes": 33554432,
+    "planningAlreadyCounted": true,
+    "PG": 0,
+    "HTTP": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "fullbuild": 0,
+    "condition": "Source/sharedwindowboundsunchanged;actualstart/terminal/return reportedbyowner, elapseddeadlinenotreturn"
   },
   "externalPreparedCandidate": {
-    "state": "READY_WAITING_AFTER_SVC09A_NOT_OPEN",
+    "state": "UNIQUE_NEXT_RESERVED_NOT_STARTED",
     "executionHead": "32796520b07d4eed9f34c7c1db757740b7e20452",
     "readyReportedAt": "2026-10-07T15:02:30Z",
     "claim": "508fv3 ACTIVE exact6 STOP",
@@ -2061,17 +2070,20 @@
     "nextGranted": false
   },
   "currentActual": {
-    "state": "NO_REPORTED_ACTIVE_HOLDER_SVC09A_RESERVED_AWAITING_START",
-    "at": "2026-10-07T15:09:22.418Z"
+    "state": "NO_REPORTED_HEAVY_HOLDER",
+    "at": "2026-10-07T15:20:21.982Z"
   },
   "releaseCandidateCurrent": {
-    "state": "SOURCE_LOCAL_APPROVED_ARTIFACT_PREPARATION_NOT_READY",
+    "state": "PREPARED_NOT_RUN_UNDER_FOCUSED_BOUNDARY_REVIEW",
     "source": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
     "product": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
     "metadata": "cd074992b106ed909ba49eaec4d1bf32b2365361",
     "review": "/private/tmp/root-release01-1cea-source-local-review-20261007.json",
     "buildGranted": false,
     "descriptor": null,
-    "claim": "7d60v2 ACTIVE exact4, two product paths removed15:10:52.444Z"
+    "claim": "7d60v2 ACTIVE exact4, two product paths removed15:10:52.444Z",
+    "preparedPath": "/private/tmp/release01-web-artifact-prepared-20261007",
+    "preparedManifest": "039bf4de2ba98ac83b694f89564fb6c93664aee17ec364f4659780f822bbd052",
+    "newAllocatedCapBytes": 268435456
   }
 }

@@ -1,0 +1,29 @@
+{
+  "taskId": "WPF-I01",
+  "parentTask": "WPF-001",
+  "existingResponsibility": [
+    "X01-06",
+    "WPF001-05"
+  ],
+  "requestedAt": "2026-10-07T15:13:54.134Z",
+  "newSource": {
+    "owner": "workspace_panels_owner",
+    "lead": "external_web_d01_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+    "branch": "codex/web-plugin-runtime-app",
+    "statusPath": "plans/wpf-i01-plugin-integration/status.md",
+    "base": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+    "claimId": "61abce36-a4d1-4531-9b04-dedaae86108b",
+    "claimVersion": 1,
+    "phaseActualStart": "2026-10-07T15:11:58.585Z"
+  },
+  "oldSource": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration",
+    "head": "f4335af151bc41ebed8886ea113ae6f854f579e0",
+    "claimId": "b6666c29-ebc5-47b2-b754-55b62687fd00",
+    "state": "RELEASED",
+    "unchanged": true
+  },
+  "state": "READY_FOR_ORIGINAL_D05_SOURCE_SWITCH_NOT_YET_REGISTERED",
+  "notNewTask": true
+}

@@ -107,3 +107,6 @@ root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0
 
 
 [本批源交权与最小网页检查](../../docs/evidence/web-platform/msg03-main-release-source-handoff-20261007/current.json)接收MSG实际main/release、Release同任务独立7272新取权。root [e0a28限定审](../../docs/evidence/web-platform/msg03-main-release-source-handoff-20261007/release-source-local-root-review.json)核d736/产品1cea、35raw和三attempt：types通过、alias首红保留、单一旧消费者通过，6165/90k CLOSED。未继承为artifact、HTTP/browser、main或个人部署。manager只核自己的scope/parser/链接/hash，不重跑产品；SVC09A预约与真正运行分列，S01READY不等holder。
+
+
+[本次实际归还与来源切换](../../docs/evidence/web-platform/release-source-switch-svc09a-return-20261007/current.json)分别记录SVC09A和S01的真实START/完整RETURN、KEEP和结果审边界；没有根据预约/预计期限放窗。固定localmain13d与实际originfbad分列，root双APIv2确认live仍旧来源；Original唯一D05writer接两任务迁移及现有登记，不改parser/生成状态。MATURE05只纠正已完成MSG依赖为现有I01写权窗口，不新增研究或任务。

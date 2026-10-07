@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-07T15:20:21.982Z",
+  "state": "S01_FULL_RETURN_K01_ORDINARY_AUTHORIZED_NO_HEAVY_NEXT",
+  "resourceAuthority": "../resource-window-current.json",
+  "svc09a": "svc09a-actual-return.json",
+  "s01": "s01-actual-return.json",
+  "futureFloorBytes": 14338424832,
+  "floorChanges": [
+    {
+      "base": 14061600768
+    },
+    {
+      "I01SourceSupplyBoundOnce": 8388608
+    },
+    {
+      "newWebArtifactPotentialOnce": 268435456
+    }
+  ],
+  "budgetBoundary": "AllpriorKEEP/personalservices retained;singlecleanupreserve;no retroactive edits to consumedgates. NewWebpotential isnotbuildauthorization.",
+  "newWeb": "W01explicitPREPARED_DRAFT_NOT_READY;fixeddeps/callerboundary needs seal. One localstageclosed6165ms. Exactprivateignoredlinks allowed undercontrolledsource-supply,noinstall/sharedconfig/import/build beforewindow.",
+  "I01": "Actual61abce36v1take8/fixed3c/sourceimplementation;首canonical391416 local,remoteabsent500; engineeringchildnotstarted.",
+  "mainObservation": {
+    "localMain": "13d4327b1a8579cd7e24ca50eff5b9f95e96388d",
+    "actualOriginMainRead": "fbad68a68676ad4c74304662192733feeeb17b53",
+    "observedAt": "2026-10-07T15:19:51.219Z",
+    "command": "Read-onlygit revparse/show/ls-remote;no fetch/mainwrite",
+    "claim": "PROCESSsource/localregistration present, not remotelypublished or deployed"
+  },
+  "managerPush": {
+    "local": "187345b4494bcc84787a2f0696e426b40f3ecd5a",
+    "remoteAsObserved": "c4e8a5f0a4dcc94d5420d041cadd4e1d108f84bc",
+    "normalPushFailures": [
+      "15:13:38Z GitHub500",
+      "15:13:46Z GitHub500"
+    ],
+    "noForce": true,
+    "noStorm": true
+  },
+  "skillsMethod": "Existingfind-skills/clean-code; ownmetadata identities/runtimefacts separated;source-operator rule reread for exactprivateignoredlinks,no dependencyinstallation or runtime authorized.",
+  "k01": "k01-ordinary-resume.json",
+  "dashboard": "dashboard-source-switch-observation-v2.json",
+  "liveSourceBoundary": "15:18:52summary/15:19:07assignments still4cb7:Release/I01oldsource matchesSourcefalse,PROCESS/VERIFIERunregistered,CLIENTsummarymissing. Fixedv2correctstop-levelread;v1emptyarraysarenotmissingproof. Atomicclaimsremainvalid.",
+  "mainRemoteAfterRecovery": {
+    "at": "2026-10-07T15:22:17.005Z",
+    "localMain": "96b424777cd2c66e603157649e5a859ca1b914f6",
+    "actualLsRemoteMain": "96b424777cd2c66e603157649e5a859ca1b914f6",
+    "localWorktreeClean": true,
+    "source": "Read-onlygit revparse/ls-remote/status after Originalnormalpushsuccess",
+    "boundary": "PROCESSsource remoteaccepted,notT7/deployment. Earlier13dlocal/fbadorigin snapshotretained. Live D05 remainingmigrations require actualreloadreceipt."
+  },
+  "newWebPrepared": {
+    "state": "PREPARED_NOT_RUN_UNDER_ROOT_FOCUSED_REVIEW",
+    "path": "/private/tmp/release01-web-artifact-prepared-20261007",
+    "files": 11,
+    "logicalBytes": 1698708,
+    "manifest": "039bf4de2ba98ac83b694f89564fb6c93664aee17ec364f4659780f822bbd052",
+    "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+    "reviewedProduct": "1cea/d736",
+    "totalMs": 150000,
+    "cleanupMs": 30000,
+    "allocatedNewCapBytes": 268435456,
+    "floorBytes": 14338424832,
+    "sourceBindings": "219ownsource/252externalpackages/13700files/6native/29exactlinks",
+    "grant": null,
+    "actual": null
+  }
+}

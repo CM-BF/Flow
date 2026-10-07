@@ -1,0 +1,21 @@
+{
+  "state": "NEXT_RESERVED_NOT_STARTED",
+  "task": "S01 delivery replay",
+  "owner": "Mika / status_read",
+  "claim": "508f9c85 v3 ACTIVE exact6 STOP",
+  "executionHead": "32796520b07d4eed9f34c7c1db757740b7e20452",
+  "source": "d28166e81bcdbb9fb537b40144f7be07a2539130",
+  "reviewPacket": "dbada7cc04cf152124ffc108760828d4d2c83a88",
+  "canonical": "runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/delivery-replay-local-ready.md",
+  "totalMs": 60000,
+  "workMs": 45000,
+  "termMs": 2000,
+  "reapMs": 3000,
+  "planningBytes": 33554432,
+  "minimumFreshFloorBytes": 14338424832,
+  "grantSource": "Root explicituniqueNEXT15:18 relayed toMika;managercanonical",
+  "condition": "One already-approved invocation only;freshfullclaim/fixedHEAD/inputbf912/compiledcf4/originalbindings/5outputsabsent/ownedidentity/noholder/fullsum. Latestfree >= largerfullfloor. Firstarmfailure/unknown STOP/KEEP. Report actualSTART and exactRETURN;reservation isnotRUNNING.",
+  "boundary": "Performance window exclusivefrom other engineeringchildren/build/PG/Chrome;3Node coordinator and2serialcompiledworkers/0PGHTTPChromeproviderinstallbuild/private. No replayofpriorS01PG/unusedcredit. Personalnaturalservices/task untouched.",
+  "actualStart": null,
+  "actualReturn": null
+}

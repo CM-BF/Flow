@@ -1,12 +1,14 @@
 # Web 当前交接与唯一来源
 
-**即时调度 2026-10-07T15:09:22.418Z：唯一 NEXT 已交 Original/native_center_owner 的 SVC09A 离线构建（b3eece74/098b，15:06:38正式准备审通过），RESERVED / 尚未 actualSTART。沿原批准420s及精确收尾，一次 fresh 完整floor至少14,069,989,376B或更高；不得将预约写RUNNING。S01固定32796520确已READY，但排此build实际RETURN之后且NOT_OPEN；Web源码/局部已通过，artifact准备尚未READY。其他工程child/性能/fullbuild/PG/Chrome等待明确RETURN，K01child暂停，独立源码准备可继续。个人自然服务/用户任务与全部KEEP保留。**
+**即时调度 2026-10-07T15:20:21.982Z：S01已15:18:44.466Z精确完整RETURN，实际15:18:36.341 START、outer0、两worker0/EOF、owned组和scratch闭合；结果忠实性独审待，不冒性能收益。当前无heavy holder/NEXT。Mika已恢复原K01普通90s段（0PG/HTTP/Chrome/构建，既有32MiB已计），尚未报告实际START；Web构建包仍未READY，后续排他构建等其实际RETURN及固定准备齐。完整floor至少14,338,424,832B或更高，所有KEEP/单reserve保留。**
 
 **新Web由本组W01沿原Release任务承接生产，Original原作者不再并行制作同一候选。** Original已明确确认我组继续生产，已[记录执行顺序](msg03-main-release-source-handoff-20261007/web-producer-handoff.json)：固定7272+已审最小patch77bc，不混完整MSG/main3c9345。原MSG20已7e3fv4于14:51:24.457Z释放、旧Release4已27cv2释放；W01在独立web-release-recovery/7272已[7d60v1 exact6正式领取](msg03-main-release-source-handoff-20261007/release-successor-take-receipt.json)，只实施已审最小patch和必要普通消费者检查。新source已获限定独审，两产品于15:10:52.444Z正式CAS移出，Release7d60v2只保四scope；panels已在原I01新树fixed3c完成[61abce36v1 exact8正式领取](msg03-main-release-source-handoff-20261007/plugin-app-successor-take-receipt.json)，15:12:21.486Z生效，当前source-only初始化后实施。backend cd27/04da已审；最小Websource已固定1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804，两输出等已审77bc；旧consumer必要local已6165ms封账并获root e0a28限定批准，新Webartifact未生成，当前无构建或兼容runtime授权。
 
-**Original下一正常源码接收：** [PROCESS唯一main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/main-intake.json)固定672cca/source4dc已审，交Original既有intake owner窄接收；不等待T7、不混cd27、不阻最小Web。14:50:22 [实际双API](msg03-main-release-source-handoff-20261007/dashboard-source-observation.json)仍缺PROCESS/CLIENT summary，PROCESS claim显示未登记；现随Release同task新WT实际take及正式VERIFIER新source一并交Original原D05 writer，不能据泛述matchesSource冒已切source。
+**Original D05 可直接接收的固定迁移请求：** [唯一request](release-source-switch-svc09a-return-20261007/d05-current-source-switches.json)，SHA `c4897d7157e84c47c172cb99301b2d51f1007e96ffc3623d1eb701bfd2dafc34`。现有Release与I01各切一个新owner状态来源，PROCESS/CLIENT/VERIFIER沿同一正常登记/重载批处理；经理和workers不重启看板、不创建第二registry。
 
-**当前资源：Original SVC06B已14:30:45.534Z实际归还，无新heavy/NEXT。** [完整事件记录](release-backend-route-20261007/svc06b-build-actual.json)保14:30:01.227Z START与outer exit0/33158ms、45951组absent/双EOF；新backend cd27/source04da及root IhwFGS保留KEEP，结果独审已正式接受，不冒宿主/兼容/部署通过。MSG两旅程已全归还，旧KEEP和个人自然服务/任务保留。
+**唯一任务来源映射与主线事实：** [本次D05具体请求](release-source-switch-svc09a-return-20261007/d05-current-source-switches.json)给Original原writer切既有Release到web-release-recovery、既有I01到web-plugin-runtime-app；二者均实际新claim，固定本地canonical可读，GitHub500不等未领取。PROCESS 11源与登记先进入localmain13d，现已实读localmain与实际origin/main同 `96b424777cd2c66e603157649e5a859ca1b914f6`，旧fbad未同步快照保持历史；正式远端接收已成立，但T7/个人部署及live迁移各另计。原owner产品交权以其fresh回执为准，不由main接收自动释放。CLIENT/VERIFIER沿已有唯一登记请求，不加registry writer。[root实际live双API](release-source-switch-svc09a-return-20261007/dashboard-source-switch-observation-v2.json)15:18:52/15:19:07仍旧4cb7：Release/I01读取旧来源、PROCESS/VERIFIER未登记、CLIENT缺汇总；原子领取有效，需Original完成真实live来源切换，不能由localmain登记冒已生效。
+
+**历史SVC06B资源回执（当前占用只看页首）：** [完整事件记录](release-backend-route-20261007/svc06b-build-actual.json)保14:30:01.227Z START与outer exit0/33158ms、45951组absent/双EOF；新backend cd27/source04da及root IhwFGS保留KEEP，结果独审已正式接受，不冒宿主/兼容/部署通过。MSG两旅程已全归还，旧KEEP和个人自然服务/任务保留。
 
 **Arc后继只读输入已归原计划：** [固定12源报告与六约束/八验收](arc-msg03-ownership-intake-20261007/intake.json)已纳MATURE05-01/02/03/05；保持唯一composer父级、view/draft身份与材料准备状态，可见性统一撤销旧CAS/opening，布局不复制权限。仅未实现设计，不新增task/take或公共接口、不占MSG03十九scope。MSG03最新6a258错误观察差量已[限定批准](arc-msg03-ownership-intake-20261007/msg03-6a258-root-review.json)，原第三缺证及余额不变，仍无NEXT。
 
@@ -24,7 +26,7 @@
 
 **历史 CORE待接收入口（现main677a、claim已释放见下方实际观察）：** 原owner最终ae6a2f2ce7505d0eccb6b0d8ee29654013127545 STOP/651cv1保留，已审5/5与完整归还后的[唯一main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-intake.json)可由Original受控接收；不重复PG、不搬mirror，不冒main/个人激活。D05同task唯一source切换仍须实际确认。
 
-**D05 唯一来源映射：** [root14:22:44实际观察](release-backend-route-20261007/dashboard-owner-observation.json)已确认 CORE 切新 WT、10/10/main677a 与释放；PROCESS 仍为 unregistered，CLIENT summary 缺席且已release，不能用无active行推已登记。剩余两项交 Original 原D05 writer 正常登记；经理/W01不另take或重启4320。
+**历史D05来源观察（实际变更按后到receipt/当前请求核，不据此推仍未登记）：** [root14:22:44实际观察](release-backend-route-20261007/dashboard-owner-observation.json)已确认 CORE 切新 WT、10/10/main677a 与释放；PROCESS 仍为 unregistered，CLIENT summary 缺席且已release，不能用无active行推已登记。剩余两项交 Original 原D05 writer 正常登记；经理/W01不另take或重启4320。
 
 **原CORE后继已实际交权领取：** [13:11:33.942Z fresh ledger](msg03-mounted-browser-admission-20261007/fresh-claims.json)确认X01于13:07:40.252Z STOP→v29移出runners.ts，architecture在claude-settings-claim-eligibility于13:07:54.544Z正式take651c4eb4 v1 exact4。原CORE task保持同ID，D05由Original切唯一source到新WT，旧树保历史；不是新的activation大task。SVC09两槽仍Original原owner后继，原parent08/11已落b4c。
 
@@ -38,7 +40,7 @@
 
 **Recovery 主线合同已对齐：** [原19源主线接收](release-caller-recovery-main-20261007/recovery-main-intake.json)保持c130/2f8；[lateLogout中心main与既有consumer限定接收](x01-version-return-20261007/recovery-late-logout-main-consumer-intake.json)确认原06交接满足。原owner287947已完成原01–06，6ff v6两metadata已[正式释放](release-c3-actual-admission-20261007/recovery-final-release-receipt.json)，19源码此前已移出；不冒新cookiejar运行或个人部署，固定6c/7d1未含中心fix。types scratch旧KEEP保留。
 
-**外组唯一source登记请求：** 当前两项及合法D05 writer见[精确请求](mounted-app-and-personal-maintenance-next-20261007/d05-registration-request.json)。旧8c2f v1两metadata是历史；当前TRUSTED-PROCESS-HOST已由原owner扩v2进入产品实施，实际claim仍需登记作者当时fresh核。没有manager新writer。
+**历史外组source登记请求：** 当前两项及合法D05 writer见[精确请求](mounted-app-and-personal-maintenance-next-20261007/d05-registration-request.json)。旧8c2f v1两metadata是历史；当前TRUSTED-PROCESS-HOST已由原owner扩v2进入产品实施，实际claim仍需登记作者当时fresh核。没有manager新writer。
 
 **原MATURE02 TODO08/11个人实际交付：** parent@b4c3aff4已将两槽兼容、旧session、新目录readiness、全维护纳管和LIMIT前资格写入唯一计划。MSG03与新backend仍不等个人已具可用model/thinking/fast目录；原SVC09/CORE具体分工及未到take回执见[协调记录](mounted-app-and-personal-maintenance-next-20261007/activation-assignment-request.json)。
 
@@ -60,7 +62,7 @@
 
 **插件共享候选与ACK已main：** [de547正式接收](x01-version-return-20261007/x01-candidates-main-intake.json)解除共享合同等待，不代表模块UI或真实App已采用；模块后继由W01原scope继续，Release已收口。
 
-**插件来源已登记：** [root11:39:58 API观察](x01-version-return-20261007/dashboard-registry-update.json)确认WPF-PLUGIN-RUNTIME01唯一live/sourceCurrent、0a9v1 matchesSource；此前11:25:50 claim-only入口与登记pending为历史。Mika正式确认唯一父X01/原06，原owner已正常落地；不扩parser或重复登记。
+**历史插件来源登记回执：** [root11:39:58 API观察](x01-version-return-20261007/dashboard-registry-update.json)确认WPF-PLUGIN-RUNTIME01唯一live/sourceCurrent、0a9v1 matchesSource；此前11:25:50 claim-only入口与登记pending为历史。Mika正式确认唯一父X01/原06，原owner已正常落地；不扩parser或重复登记。
 
 新的[MSG03唯一owner/status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md)由panels维护，`web-message-settings-app / codex/web-message-settings-app`；当前7e3f v2 exact19，唯一来源已登记。此页仅保来源与写权指针，不复制第二验收矩阵。
 

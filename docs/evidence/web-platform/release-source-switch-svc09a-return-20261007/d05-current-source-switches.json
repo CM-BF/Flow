@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-07T15:19:51.219Z",
+  "writer": "Original D05 sole registrywriter",
+  "action": "Switch the two existing task authorities below; no new task and no manager registry edits. PROCESS localregistration exists, do not duplicate its entry; publication/liveobserve remain separate.",
+  "sourceSwitches": [
+    {
+      "task": "WPF-RELEASE01",
+      "owner": "w01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+      "branch": "codex/web-release-recovery",
+      "status": "plans/wpf-release01-product-compatibility/status.md",
+      "claim": "7d60cb91-7537-4052-8ba7-0c0aac8eb722 v2 ACTIVE exact4",
+      "canonicalLocal": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+      "remoteAsLastObserved": "cd074992b106ed909ba49eaec4d1bf32b2365361",
+      "intake": "../msg03-main-release-source-handoff-20261007/release-source-switch-intake.json",
+      "pushBoundary": "Two normal pushes500; localfixedauthority is readable. Old27cv2released, no writes.",
+      "lead": "external_web_d01_owner",
+      "absoluteStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/plans/wpf-release01-product-compatibility/status.md",
+      "sourceSwitchAbsolute": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/source-switch/source-switch-intake.json"
+    },
+    {
+      "task": "WPF-I01",
+      "owner": "workspace_panels_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+      "branch": "codex/web-plugin-runtime-app",
+      "status": "plans/wpf-i01-plugin-integration/status.md",
+      "claim": "61abce36-a4d1-4531-9b04-dedaae86108b v1 ACTIVE exact8",
+      "canonicalLocal": "391416dddd7c70fb379e5e01dd31dc5cefcda7df",
+      "remote": "Branch absent after two normal500 pushes; no remotecompletion claim",
+      "intake": "i01-source-switch-intake.json",
+      "notNewTask": true,
+      "lead": "external_web_d01_owner",
+      "absoluteStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/plans/wpf-i01-plugin-integration/status.md",
+      "sourceSwitchAbsolute": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/source-switch-intake.json"
+    }
+  ],
+  "otherSources": {
+    "PROCESS": "Localmain13d4327registrationat15:10:45.604,liveNOT_RELOADED/originmainfbad; exactreceipt separate",
+    "CLIENT": "Previousactualsummarymissing; no newer registrationreceipt received, remains Original existingrequest",
+    "VERIFIER": "9710377/a67v1 exact2docSTOP; explicitintake supplied previousbatch; no new writer/runtime"
+  },
+  "processHandback": "8c2fv2/14STOP retained until actualoriginmain receipt; branch90289185normalpush success != mainpublished or scope released.",
+  "latestLiveObservation": "dashboard-source-switch-observation-v2.json",
+  "liveAt": "summary15:18:52 / assignments15:19:07",
+  "liveState": "4cb7samefingerprint;Release/I01stilloldsource/matchesSourcefalse;PROCESS/VERIFIERunregistered;CLIENTsummarymissing;atomicclaimsvalid",
+  "fixedAt": "2026-10-07T15:21:11.235Z",
+  "state": "FIXED_READY_FOR_ORIGINAL_D05_SAME_BATCH_REGISTRY_AND_NORMAL_RELOAD",
+  "originalAcknowledgement": "Originalconfirmed205sourcesonlylocalmain13d,registryreloadnotexecuted;requestedtheseexact2migrationsforoneexistingD05batch.",
+  "otherSourceIntakes": [
+    {
+      "task": "X01-TRUSTED-PROCESS-HOST01",
+      "status": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/plans/x01-trusted-process-host/status.md",
+      "state": "localmain13dregistered;pendingnormalreload,notduplicateentry"
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "status": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/plans/x01-removal-references-client/status.md",
+      "state": "existingpendingrequest;claimreleaseddoesnotremoveneedforprogresssource"
+    },
+    {
+      "task": "X01-ARTIFACT-VERIFIER01",
+      "status": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/plans/x01-artifact-verifier/status.md",
+      "state": "existingdesignonlytask9710377/a67v1;noimplementationornewgrant"
+    }
+  ]
+}

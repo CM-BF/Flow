@@ -1,0 +1,63 @@
+{
+  "kind": "X01_TRUSTED_PROCESS_HOST_CONTROLLED_INTAKE",
+  "at": "2026-10-07T15:10:04.671Z",
+  "operator": "astra_ultra_execution_lead",
+  "mainBefore": "fbad68a68676ad4c74304662192733feeeb17b53",
+  "source": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+  "supportSource": "52e1862e5c5df7e3b4a5d1c317725d282e875470",
+  "canonicalHead": "672cca6fe2c4ccb7136f281b1fc277ef9dfc20cb",
+  "claim": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15 v2 active fresh 2026-10-07T15:09:14.866Z",
+  "review": {
+    "reviewedAt": "2026-10-07T13:23:25Z",
+    "reviewer": "chatui01_owner",
+    "verdict": "SOURCE_AND_DELTA_RESULT_REVIEW_APPROVED",
+    "receipt": "docs/evidence/x01-trusted-process-host/implementation-review-approval.json"
+  },
+  "productPaths": [
+    "apps/runner/src/configuration.test.ts",
+    "apps/runner/src/configuration.ts",
+    "apps/runner/src/plugins/execution.test.ts",
+    "apps/runner/src/plugins/execution.ts",
+    "apps/runner/src/plugins/process-host.test.ts",
+    "apps/runner/src/plugins/process-host.ts",
+    "apps/runner/src/plugins/process-protocol.ts",
+    "apps/runner/src/plugins/process-resources.ts",
+    "apps/runner/src/plugins/process-worker.ts",
+    "apps/runner/src/plugins/runtime.test.ts",
+    "apps/runner/src/runtime.ts"
+  ],
+  "validation": {
+    "exactSourceMatches": 11,
+    "mainPreimageMatches": 11,
+    "supportHashes": 55,
+    "directDependencyDelta": [],
+    "directDependencyScope": [
+      "apps/runner/src/plugins/host.ts",
+      "apps/runner/src/verifier.ts",
+      "packages/plugin-runtime",
+      "packages/contracts/src/plugin-runtime.ts",
+      "packages/contracts/src/plugin-runner-claim.ts",
+      "packages/client/src/plugin-runner.ts",
+      "apps/runner/package.json",
+      "package.json",
+      "pnpm-lock.yaml"
+    ],
+    "existingChecks": "Original14distinct;delta2selected contains1newregression;focusedtypes0;scopedindependentreviewaccepted",
+    "newTests": 0,
+    "PG": 0,
+    "browser": 0,
+    "provider": 0,
+    "rawWhitespace": "Full staged diff check reports original blank EOF in3raw logs and3whitespace context lines in archivedpatch. Original bytes/hash retained; product/current module/doc checks separate."
+  },
+  "boundary": [
+    "Keep private executionMode opt-in and default in-process behavior",
+    "Do not copy borrowed147 source closure or dependency links as product deltas",
+    "No changes to host.ts/journal/outbox/main.ts/release builder/server/client/contracts",
+    "T7 exact released artifact invocation is a necessary separate release check, assigned to Original release owner",
+    "No true server authorization/PG/latest-main/parent hard crash/arbitrary descendant isolation claim",
+    "All actual result/log first-failure bytes and historical manifests remain immutable"
+  ],
+  "frozenReleaseCandidates": "cd27/04da and098b remain fixed; this source is not inserted into either artifact.",
+  "handoff": "Original owner records actual main receipt and atomically returns product scopes; future release consumer remains open.",
+  "delay": "Approved2026-10-07T13:23:25Z to actual intake recorded here. No continuously recorded cause interval; do not attribute all wall time to resources or approvals."
+}

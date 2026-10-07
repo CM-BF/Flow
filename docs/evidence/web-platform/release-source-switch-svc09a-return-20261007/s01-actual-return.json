@@ -1,0 +1,45 @@
+{
+  "state": "ACTUAL_CLOSED_COMPLETE_RETURN_RESULT_FIDELITY_PENDING",
+  "task": "S01 delivery replay",
+  "owner": "Mika / status_read",
+  "claim": "508f9c85 v3 ACTIVE exact6 STOP",
+  "executionHead": "32796520b07d4eed9f34c7c1db757740b7e20452",
+  "source": "d28166e81bcdbb9fb537b40144f7be07a2539130",
+  "reviewPacket": "dbada7cc04cf152124ffc108760828d4d2c83a88",
+  "canonical": "runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/delivery-replay-local-ready.md",
+  "totalMs": 60000,
+  "workMs": 45000,
+  "termMs": 2000,
+  "reapMs": 3000,
+  "planningBytes": 33554432,
+  "minimumFreshFloorBytes": 14338424832,
+  "grantSource": "Root explicituniqueNEXT15:18 relayed toMika;managercanonical",
+  "condition": "One already-approved invocation only;freshfullclaim/fixedHEAD/inputbf912/compiledcf4/originalbindings/5outputsabsent/ownedidentity/noholder/fullsum. Latestfree >= largerfullfloor. Firstarmfailure/unknown STOP/KEEP. Report actualSTART and exactRETURN;reservation isnotRUNNING.",
+  "boundary": "Actualclosed/no retry;semanticresultnot performancegain or SLO. Fullresultfidelity independentreview pending;allpriorKEEP/potential unchanged.",
+  "actualStart": "2026-10-07T15:18:36.341Z",
+  "actualReturn": "2026-10-07T15:18:44.466Z",
+  "coordinator": 16786,
+  "serialWorkers": [
+    16847,
+    16948
+  ],
+  "outerExit": 0,
+  "workerExit": [
+    0,
+    0
+  ],
+  "semanticKnown": true,
+  "dropped": 0,
+  "timePSeconds": 0.91,
+  "operatorElapsedMs": 671.476,
+  "ownedClose": "OPS14groupabsent/MERGED EOF;bothserialworkers dualEOF;nosignals-secondary",
+  "rawBytes": 2655,
+  "scratch": "/tmp/flow-s01-delivery-replay-6qq5l7ia",
+  "scratchIdentity": {
+    "dev": 16777234,
+    "ino": 124268234
+  },
+  "scratchDisposition": "ExactENOENT15:18:44.466Z",
+  "freeBeforeBytes": 20381409280,
+  "consumedFloorBytes": 14338424832
+}
