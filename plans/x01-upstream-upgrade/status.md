@@ -6,13 +6,13 @@
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
-| 工作分支状态 | review |
+| 工作分支状态 | ready |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 本片段交付阶段 | review |
-| 当前产出 | 本地已验证真实上游升级会改变范围判断，回滚恢复原结果。 |
-| 下一可用交付 | 中心升级回滚单例准备包待独审，实际运行另待窗口。 |
-| 当前阻塞 | NONE |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 真实上游本地升级回滚已验证，中心验收准备也已独审通过。 |
+| 下一可用交付 | 已审中心升级回滚单例等待独立资源窗口；本地材料片可先接收主线。 |
+| 当前阻塞 | ACTIVE: 中心验收等待共享资源窗口，当前无运行占用。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-upstream-upgrade |
 | Branch | codex/plugin-upstream-upgrade |
@@ -21,10 +21,10 @@
 | 工作树dirty状态 | own metadata implementation |
 | 实现目标 | 9617bda0f25e11214a3f5893337d3bab733173c8 |
 | 实现范围 | experiments/plugins/semver-range-upgrade,apps/runner/src/plugins/semver-upstream-upgrade.test.ts,apps/server/src/plugin-runtime/upstream-version-pg.test.ts,docs/evidence/x01-upstream-upgrade/execute-pg-once.py,docs/evidence/x01-upstream-upgrade/run-pg-preparation.py,docs/evidence/x01-upstream-upgrade/pg-input.json,docs/evidence/x01-upstream-upgrade/pg-tsconfig.json,docs/evidence/x01-upstream-upgrade/pg-vitest.config.mjs |
-| 检查状态 | PASSED 5beb0bb95b77bd20c4d9bcf05297cbdee21abfa9；types0、3/3；首suite失败保留 |
-| Review | 本地source5beb独审APPROVED 11:47:56Z；中心准备PENDING |
+| 检查状态 | NOT_RUN 9617bda0f25e11214a3f5893337d3bab733173c8 真实PG；准备same-tree types0/list1；历史5beb本地3/3独立批准 |
+| Review | APPROVED 11:47:56Z本地片+11:54:10Z中心准备，0P1/P2 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 最近更新时间 | 2026-10-07T11:51:02.563633+00:00 |
+| 最近更新时间 | 2026-10-07T11:55:05.375Z |
 | 任务开工时间 | 2026-10-07T11:38:39Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | owner clock11:38:39实际开工，claim-take11:41:12随后提交 |
@@ -48,3 +48,5 @@
 | X01UP-05 | in-progress | db_transaction_owner | pg-window.md，中心准备待审/actual未执行 |
 
 中心准备固定target 9617bda0f25e11214a3f5893337d3bab733173c8，pg-review-ready.json唯一入口；独立源审未完成，不把5beb本地approval覆盖新fixture；没有PG预约。
+
+2026-10-07T11:55:05.375Z READY：本地source5beb与中心准备source9617均独审0P1/P2，main-intake.json明确只将原local材料/host归为已验，准备后继不混入3/3。7children共8104ms/raw3014B全部closed，0PG/port/provider/待launch；本段停止工程运行，实际须新窗口。未完成X01UP-04主线接收/X01UP-05新中心实际，不能勾whole X01。

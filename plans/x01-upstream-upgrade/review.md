@@ -1,9 +1,13 @@
-状态：APPROVED（仅本地上游材料/host片；新中心准备尚待审）
+状态：APPROVED（本地材料/host与中心准备；真实PG未运行）
 
-Review target commit: 5beb0bb95b77bd20c4d9bcf05297cbdee21abfa9
+Review target commit: 9617bda0f25e11214a3f5893337d3bab733173c8
 
 2026-10-07T11:47:56Z chatui01_owner/gpt-6-astra，SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2。固定packet79bf6667e7fcf986924d34e74519138b04283b8d，214bindings754987B/manifest6e44bf3e93a165eacaf78a30f817a5431ea5a600400859484c758d9cd2565d01。
 
 独核官方metadata/SRI/tar全部53文件及ISC；每个19个静态闭包input/无externalRuntimeImports。上游真实range.js的includePrerelease tilde下界-0改变，与同输入false→true吻合，adapter不按版本伪造。生产prepare/read/import/invoke，旧pin与授权前trust/material反例通过；授权/ownership为注入，不是中心/OS runner证明。四child完整raw2851B、1682ms监督、closed/EOF/同inodeTMP，LICENSE失败与修后3/3保留。原构建来源txt与最终仅license名差异，bundle未重build。0审者工程/import/PG/写/旧TMP。
 
 新PG fixture与recipe不是本approval覆盖；原lifecycle201674语义复用仅继承，新增range差异仍需独审与新窗口。
+
+2026-10-07T11:54:10Z chatui01_owner/gpt-6-astra，DELTA_SOURCE_AND_LOCAL_RESULT_AND_PG_PREPARATION_REVIEW_APPROVED，0P1/P2。target9617bda0f25e11214a3f5893337d3bab733173c8 / packet83b53c5ad6952eef27bbc0735b097b2f8e018f2c；manifest5830f4f27735223a112bea9ca5a6b6805a3c31f20b2631c1223d386d006ad734的510输入2292591B/35external/20links均fixedGit=WT/hash，pg-run-r1 absent。367 apps/packages实际生产镜像与base62e9逐字吻合（不代替完整374闭包口径）。
+
+与lifecycle201674仅材料/registry/来源/false,true,false差异；保真实capacity2/runRunner、A running/load ACK后import前gate、生产6元组key撤权403/no invoke/no artifact、B先完成、原A attempt/pin与新C回滚/events。两bundle内容未变。caller仅路径/claimv2/stage/selection/minimumfloor6190268416，原身份/unknownKEEP/180=110+60+10/publictraffic/持久化期限继承。新3child首types因旧别名明确排除；改same-tree types0/list1，0hooksPG；raw163B闭合/TMP原件支持。0reviewer工程/import/PG/写/旧root访问。批准准备不是OPEN，真实PG/OS runner/provider仍未验。
