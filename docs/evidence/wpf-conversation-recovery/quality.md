@@ -213,3 +213,7 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 按既有find-skills/codebase-design/clean-code/webapp-testing，保单一原run操作与fixture、有限enum映射和相同业务断言；只在真实独立状态前置处显式seed，不拷贝controller/插入IDB记录/第二runner。错误仍原fail-fast，selected与full证据分开，parent不信worker缩required；初始化/每组单调计量有最多7条上限。
 
 复核实际变化：18其他源/全部历史raw不变，noEmit两次0（timing增量后必要再核）与最终119受控assertions已过，累计12.462s在30s内。全程sandbox禁网络/项目deps写，无emit/install/cache/PG/HTTP/Chrome/free，owned Node全reaped。计时port使用stub，不能说浏览器更快；初始化含worker但不含parentDB准备也明确。未解决：真实独立UI前置/页面授权失效/离线/图像需后续实际一次运行与review；完整feature不批准。
+
+## 2026-10-07 05:43:10 UTC — 合法过期fixture/有限runtime段
+
+沿本地find-skills优先复用clean-code与webapp-testing（无安装），源码核验028明确CHECK后在测试fault边界修复；不引入通用clock/store抽象。单statement稳定时间避免两次clock差异，created=-2s/expires=-1s给出合法顺序和8h内间隔；现有pool仅ownedDB，未动生产、selection或断言。parent防御ceiling注释与独立segment预算分清，历史计费原件不可写。diffcheck0，17未变hash核同；未跑产品检查，实际query/完整恢复旅程待常规fresh入场。性能无新主张；完整feature未知及其余未验保持。

@@ -177,3 +177,7 @@ Root固定 `1bc4f20b9257b294adcadd6b68b1b9e015e04e86` 的[独立报告](../../do
 ## 2026-10-07 05:42:08 UTC — dd664限定源/local接受与第五实际失败
 
 [dd664 root审](../../docs/evidence/wpf-conversation-recovery/dd664-journey-root-review.json)接受选择映射/计量源码与119/types0，未冒browser通过。[第五root审](../../docs/evidence/wpf-conversation-recovery/browser-fifth-root-review.json)接受cookieRead PASS/pageOnlyAuthLoss fixture约束FAIL与实际ownedcleanup；P2回owner修过期时间对。新有限段授权不是实证，完整feature审仍NOT_STARTED/targetUNKNOWN。
+
+## 2026-10-07 05:43:10 UTC — 第五fixture P2源码已修，待实际复验
+
+固定 `0141cf4f23032ce206b7eaf0a19729c966ca4751`，两harness4+/2-，17其他源逐hash同dd664。仅在owned测试DB用statement_timestamp构造合法且过期的时间对，生产migration/store不改；现有auth/noPOST/稿文断言不改。原parent TOTAL_MS240000只作为旧90k+新150k防御ceil，新段独立实际150k约束由[段记录](../../docs/evidence/wpf-conversation-recovery/continuous-segment.json)与freshgate执行。0新runtime/0旧50、119、types或serialization重跑。本源码不是页面通过，fullfeature仍NOT_STARTED/targetUNKNOWN。

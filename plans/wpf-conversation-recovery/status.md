@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 05:42:08 UTC |
+| 最近更新 | 2026-10-07 05:43:10 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -12,17 +12,17 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段browser checkpoint dd6645b7f3ea84d758705684190c094ad3c87460；其他18源=1bc/9835；metadata HEAD以Git为准 |
-| 工作树dirty状态 | 19源固定dd6645；本批仅原browser有限journey选择/计量与own记录，normalpush后核clean |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段harness checkpoint 0141cf4f23032ce206b7eaf0a19729c966ca4751；17其他源=dd664；metadata HEAD以Git为准 |
+| 工作树dirty状态 | 源固定0141cf4f；当前仅本批own证据/status记录，normalpush后核clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已分离恢复场景并定位过期会话测试前提错误 |
-| 下一可用交付 | 修正过期会话前提后，继续原完整页面恢复验证 |
-| 当前阻塞 | ACTIVE: 页面恢复验收尚未完成，当前共享验证窗口未归还 |
+| 当前产出 | 已修正测试会话过期前提，保留五次失败证据 |
+| 下一可用交付 | 运行原完整页面恢复旅程，核对保稿与重新连接 |
+| 当前阻塞 | ACTIVE: 页面恢复验收仍未闭合，过期测试前提修复待实际复验 |
 | 需用户决定 | NONE |
-| 检查状态 | 第五page-auth FAILED：cookieRead通过，过期fixture约束失败；其余NOT_SELECTED。旧五FAIL晚累计64134.08675ms封套保留；新150000ms有限段当前0使用。原50/119/types/serialization10证据不变 |
+| 检查状态 | 第五page-auth FAILED：cookieRead通过/过期fixture约束失败，其他NOT_SELECTED；本段仅query与budget常量源码修复，未重跑。旧五FAIL晚累计64134.08675ms封套关闭；新150000ms有限段当前0使用，下一full最多60000含15000cleanup |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
@@ -286,3 +286,7 @@ DB marked正常清零DROP、fixture关闭、双ownedgroup ESRCH/scratch移除；
 ## 2026-10-07 05:42:08 UTC — 第五失败与新有限连续段
 
 [第五原证据](../../docs/evidence/wpf-conversation-recovery/browser-fifth-validation.md)与[root独审](../../docs/evidence/wpf-conversation-recovery/browser-fifth-root-review.json)已原样归档。旧90k封套actual64134.08675ms保持并关闭新launch；新段独立150000ms/每次最多60000含15000cleanup。当前0新运行，无gate/预约；原五FAIL、旧50/119/serialization10保留。fixture时间对及parent防御ceiling源码修复进行中，完整feature仍NOT_STARTED/targetUNKNOWN。
+
+## 2026-10-07 05:43:10 UTC — fixture合法过期前提源码安全点
+
+固定 `0141cf4f23032ce206b7eaf0a19729c966ca4751`，仅两harness4+/2-；[两pin及原diff](../../docs/evidence/wpf-conversation-recovery/expiry-fixture-checkpoint.json)。fixture同statement将created设为过去2秒、expires过去1秒，满足028两个约束且保持公开auth/noPOST/原稿断言；parent240k仅防御ceil。新段runtime0/150000，每次≤60000含15000cleanup，旧封套剩余不转信用。[唯一段记录](../../docs/evidence/wpf-conversation-recovery/continuous-segment.json)供连续修复/相关复验累计。共享PG已由root报C02实际归还，但尚无本次freshgate/adminenv，不自行launch。

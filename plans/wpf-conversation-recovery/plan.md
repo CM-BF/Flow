@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 连接、草稿和未决发送恢复
 
-状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 05:15:09 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 05:43:10 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
 
 目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
 
@@ -154,3 +154,5 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ### 2026-10-07 05:42:08 UTC — 过期fixture修正与新有限段
 
 原五次失败晚累计64134.08675ms不回填、不重置；旧90k剩余不作新运行额度。[新有限段授权](../../docs/evidence/wpf-conversation-recovery/continuous-segment-authorization.json)允许原21内定位→窄修→相关复测，实际新runtime累计≤150000ms，每次≤60000含15000cleanup。原parent防御总ceiling改240000只对应旧90k+新150k，不代替新段150k独立约束。[唯一segment记录](../../docs/evidence/wpf-conversation-recovery/continuous-segment.json)保存各实际attempt/晚计时/剩余额度。下一优先full7原断言；等待真实PG/Chrome交接和常规fresh输入，当前无新运行。
+
+当前有限段源码固定 `0141cf4f23032ce206b7eaf0a19729c966ca4751`，[精确diff/pins](../../docs/evidence/wpf-conversation-recovery/expiry-fixture-checkpoint.json)。先full7，相关问题在同段有限剩额内连续定位/修复/定向复验，不重复已过无影响检查；实际PG/Chrome仍需原共享窗口明确归还与常规fresh输入。
