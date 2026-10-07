@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-07T20:12:32.091Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_FIVE_LEAF_OPTIONAL_OBSERVER",
+  "target": "233ef91d369e7d7f58bdec8a34f523ed27017639",
+  "delivery": "1631c17c32ef3820e54e47163351858de05a1313",
+  "blockingFindings": [],
+  "canonical": "personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-manifest.json",
+  "manifestSha256": "90b1c9263d1007ca7295c1fd6f531bb8e50140c557082309b27e78303d2525fb",
+  "fixedBindingsChecked": 26,
+  "scope": [
+    "apps/server/src/startup-progress.ts",
+    "apps/server/src/startup-progress.test.ts",
+    "apps/server/src/startup-progress-consumer.test.ts",
+    "tools/personal-preview/environment.mjs",
+    "tools/personal-preview/environment.test.mjs"
+  ],
+  "review": [
+    "Read complete five source leaves, interface, bounded local runner/result and all three actual outer/stdout records; verified manifest fixed Git bytes/hash.",
+    "Safe fixed phase names, allowlisted bounded structural error fields, frame/byte limits with incomplete state and no lifecycle authority. Original thrown value and independent cleanup unknown preserved.",
+    "Environment opt-in exact v1 and center-only; absent/unrecognized behavior stays unchanged. Current main environment preimages equal reviewed source parent."
+  ],
+  "evidence": {
+    "differentPassed": 14,
+    "focusedTypesExit": 0,
+    "elapsedMs": 1193,
+    "rawBytes": 3042,
+    "threeGroups": "final twice absent, dual EOF, no signals; initial EPERM preserved",
+    "reviewerTests": "NOT_RUN_UNCHANGED_DIRECT_CHECKS_REUSED"
+  },
+  "limits": [
+    "main/index not wired; no actual server/startup cause/artifact proof.",
+    "No PG, service, provider, build, install or personal operation.",
+    "Future startup wiring preserves pending AV index delta separately; it is not silently accepted here.",
+    "Original FAIL/KEEP unchanged; complete stream is not health/claim readiness."
+  ]
+}
