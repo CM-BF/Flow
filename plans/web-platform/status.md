@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:38:52.445Z；MSG03第三轮实际失败已物理归还、fixture正常关闭缺证保未知，当前静态修复；Plugin已main并释放；CORE正式owner-switch入口已齐。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:43:47.053Z；MSG03 chooser观察差量6a258获限定批准、仍无NEXT；Arc×MSG03六约束与八验收已归原MATURE05，未新增实现或运行。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |

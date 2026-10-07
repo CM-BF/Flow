@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-07T13:44:17.029852+00:00",
+  "scope": "Only current changed manager paths, added Markdown links, JSON and indexed archive hashes",
+  "paths": [
+    "docs/evidence/web-platform/arc-msg03-ownership-intake-20261007/arc-msg03-peer.json",
+    "docs/evidence/web-platform/arc-msg03-ownership-intake-20261007/archive-index.json",
+    "docs/evidence/web-platform/arc-msg03-ownership-intake-20261007/intake.json",
+    "docs/evidence/web-platform/arc-msg03-ownership-intake-20261007/manager-fresh-claim.json",
+    "docs/evidence/web-platform/arc-msg03-ownership-intake-20261007/msg03-6a258-root-review.json",
+    "docs/evidence/web-platform/arc-msg03-ownership-intake-20261007/quality.json",
+    "docs/evidence/web-platform/arc-msg03-ownership-intake-20261007/status-validation.json",
+    "docs/evidence/web-platform/mature-task-handoff.md",
+    "docs/evidence/web-platform/resource-window-current.json",
+    "plans/web-platform/status.md",
+    "plans/wpf-mature-05-workspace/plan.md",
+    "plans/wpf-mature-05-workspace/review.md",
+    "plans/wpf-mature-05-workspace/status.md"
+  ],
+  "links": [
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "arc-msg03-ownership-intake-20261007/intake.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "arc-msg03-ownership-intake-20261007/msg03-6a258-root-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-05-workspace/plan.md",
+      "target": "../../docs/evidence/web-platform/arc-msg03-ownership-intake-20261007/arc-msg03-peer.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-05-workspace/review.md",
+      "target": "../../docs/evidence/web-platform/arc-msg03-ownership-intake-20261007/intake.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-05-workspace/status.md",
+      "target": "plan.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-05-workspace/status.md",
+      "target": "plan.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-05-workspace/status.md",
+      "target": "plan.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-05-workspace/status.md",
+      "target": "../../docs/evidence/web-platform/activity-cache-total-bound/report.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-05-workspace/status.md",
+      "target": "plan.md",
+      "exists": true
+    }
+  ],
+  "archiveHashes": [
+    {
+      "file": "arc-msg03-peer.json",
+      "match": true
+    },
+    {
+      "file": "msg03-6a258-root-review.json",
+      "match": true
+    }
+  ],
+  "errors": []
+}

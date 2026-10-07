@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T13:41:15.160774+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "decision": "APPROVED_SCOPED_ERROR_OBSERVATION_FIX_NOT_RUNTIME_PASS",
+  "findings": [],
+  "sourceCommit": "6a258a3886f0491b8487738c19c09dc631b98f2c",
+  "fixedFile": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/apps/web/test/conversation-recovery.browser.ts",
+    "bytes": 138805,
+    "sha256": "63e1630420cbaac5cd7f083292e3d8ac93050c7db286d978f8a4b63735bfa0e8"
+  },
+  "delta": "browser upload helper4+/2- only: assert actual Add Attachment enabled, then immediately await Promise.all(filechooser event, actual click), then setFiles on the actual returned chooser. Other16 implementation paths unchanged by this commit.",
+  "review": [
+    "Before: chooser promise could reject while awaiting click and before handler attachment, terminating Node worker outside run catch/finally.",
+    "After: both event and click rejections are observed in the same synchronous Promise.all call; errors propagate into existing run catch/worker finally. Precondition failure starts no chooser promise.",
+    "Default timeout, selectors, real UI click/chooser, file contents and all material behavior assertions unchanged. No direct DOM injection, alternate uploader, added supervisor, weakened assertion or retry loop.",
+    "Read official Thread source: composer class is aui-composer-root and ComposerAddAttachment is gated by thread.capabilities.attachments. Installed public primitive creates a native file input on click. Neither proves the actual button existed or why it failed in third run. New observed error path is necessary; do not claim root cause of missing chooser resolved."
+  ],
+  "thirdActual": {
+    "run": "msg03-material-20261007-133614-91f42f",
+    "accounting": "/private/tmp/msg03-material-retry-a_0cljps/accounting.json",
+    "postCleanup": "/private/tmp/msg03-material-retry-a_0cljps/post-cleanup.json",
+    "rootRead": "Both actual artifacts read independently.",
+    "outcome": "FAIL_WORKER_UNHANDLED_FILECHOOSER_TIMEOUT_NO_RESULT",
+    "collectorExit": 1,
+    "chargeMs": 14804,
+    "phaseSpentMs": 33766,
+    "phaseRemainingMs": 56234,
+    "physicalReturn": "Exact13:37:25.274760Z four ownedPIDPGID ESRCH, parent markedDBnormalDROP/0connections, scratch/env absent, outer dualEOF/drop0. No independent port sample invented.",
+    "fixtureGracefulCleanup": "UNKNOWN; browser.json and fixture-cleanup.json absent. No cookieRead/material PASS inferred from missing child report."
+  },
+  "executionDisposition": "No launch by this review. Original personal intent recovery has next safe slot priority when its fixed caller is ready. MSG remains NO_NEXT until manager fresh handoff; retain90s shared phase33766spent/56234remaining and every failure. Current floor at least7515275264 or newer complete sum.",
+  "remaining": [
+    "Actual6a258 behavior and complete fixture graceful close",
+    "Why the Add Attachment interaction did not produce a chooser",
+    "Material failure/cancel/late completion scenarios",
+    "Second settings App journey and two theme screenshots"
+  ],
+  "cleanCode": "Single promise ownership and existing cleanup path retained; source correction proportionate. No unrelated checks or old green local tests rerun by root."
+}

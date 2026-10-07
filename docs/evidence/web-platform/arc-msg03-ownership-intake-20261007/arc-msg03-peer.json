@@ -1,0 +1,280 @@
+{
+  "kind": "READ_ONLY_INCREMENTAL_DESIGN_NOT_IMPLEMENTED_NOT_RUN",
+  "recordedAt": "2026-10-07T13:41:04.034541+00:00",
+  "owner": "w01_owner; report for /root and /root/d01_owner",
+  "task": "Existing WPF-MATURE-05-01/02/03/05 Arc proposal × MSG03 draft/settings ownership; no new task or claim",
+  "fixedSource": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+    "commit": "c4bee7707a273e98ba7b07dc061ec13e78094c2f",
+    "sourcePathCount": 12,
+    "laterFixtureCommit": "424c6466bd28a838b91cc490a7b52021202b4d17",
+    "laterDelta": "git name-only comparison shows only apps/web/test/conversation-recovery.fixture.ts under product/test paths plus owner records; the 12 production sources below are pinned solely to c4bee, not moving HEAD."
+  },
+  "conclusion": "旧 Arc 单一布局引用/稳定 view.key/单 App owner 方案可沿用。新增必须保存 MSG03 的 draft Symbol 与 composer 准备 capture 的生命周期，并把 pane 可见性接入现有同步 CAS/插件 opening 撤销；布局变化本身不能成为新 draft 或新 session。当前硬限两 group，不等 full Arc 或 3+ 已实现。",
+  "existingInputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/workspace-arc-readonly-proposal.json",
+      "bytes": 5003,
+      "sha256": "fa7c5a3682460044c78124ce5a8feeb86fc21cb4f04d131d2c5139be17ca3e49"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/workspace-arc-recovery-2498-interface.json",
+      "bytes": 6650,
+      "sha256": "97ddcb27332ae7fa56697093e763858dc70e3a99e261cf9b3307839bda3ca6b3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md",
+      "bytes": 20684,
+      "sha256": "29adb90e73a8e9e91c0721f7851fb5b252f26b7674369143bbae6ef95e29078b"
+    }
+  ],
+  "identityTable": [
+    {
+      "identity": "[baseUrl, centerId, ownerPrincipalId] + authority generation",
+      "owner": "ConnectionSession/Recovery namespace；Workspace 按 namespace key 挂载",
+      "layoutRule": "跨授权代次或 namespace 不复用旧 commit/capture/restore 权限；普通 split/move 不制造 connection generation。",
+      "basis": "connection/session.ts:39–61; App.tsx:1282–1321; recovery/journal.ts:48–55"
+    },
+    {
+      "identity": "view.key (stable UUID) vs current route viewId",
+      "owner": "App.views owns View; App.drafts uses current route key; session bindings indexed by view.key",
+      "layoutRule": "pane/tab/group 只引用此 view；同一 view 最多一个实际 composer；route alias 转换复用原 App 路径，不以 pane index 或 activeTaskId 替代。",
+      "basis": "App.tsx:204–211,399–403,435–467,615–632; plugin-integration/session.ts:241–254"
+    },
+    {
+      "identity": "MessageSettingsDraft.ownership Symbol + immutable applied value C",
+      "owner": "App View.settings；private read/replace port",
+      "layoutRule": "纯移动/比例/交换保同对象与 Symbol；提交 detach、显式设置替换、profile/intent 改变或恢复按现有路径旋转。不能序列化 Symbol 或在 layout store 克隆 C。",
+      "basis": "message-settings.tsx:15–34,117–129; App.tsx:764–780,1132–1134"
+    },
+    {
+      "identity": "opening token / plugin lifetime signal / local pending candidate Y",
+      "owner": "session ConversationMessageSettings + mounted controlled Picker",
+      "layoutRule": "只属一次编辑生命周期；与保存的 C、已冻结命令不是同一状态。隐藏/撤权/关闭/新 opening 后旧 Apply/omit/details 回调不得复活。",
+      "basis": "message-settings.tsx:36–109,144–165; ExecutionProfilePicker.tsx:145–175,202–245,302–305"
+    }
+  ],
+  "incrementalConstraints": [
+    {
+      "id": "ARC-MSG-1",
+      "proposal": "沿旧方案的稳定平铺 ChatPane 父级，同一 view.key 保留原 runtime、pending ref、知识/附件/settings bindings；split/merge/move 只变布局引用和位置。明确禁止“先 close/release 再 reopen”实现 move，也不能只靠跨父节点的相同 key 许诺保活。若替换原 hidden 为会清 effect 的宿主机制，必须重新证明准备 watcher 不被释放。",
+      "basis": [
+        "App.tsx:1056–1059,1116–1134 现 group 内嵌 keyed tabpanel",
+        "ConversationThread.tsx:77–87,111–168,201–206 准备 capture/return watcher 在 mounted owner 内",
+        "attachments.tsx:201–228 release 将 preparing 标 failed"
+      ],
+      "whyNew": "App 的 C 和 session binding 保留不足以保留完整准备状态；pending text/profile/material/settings/nextOwnership 仍在 Thread ref。这是未来布局约束，不是宣称本轮已复现布局 bug。"
+    },
+    {
+      "id": "ARC-MSG-2",
+      "proposal": "把当前“groups.some(activeId===route)”改造为 layout owner 的真实可见聊天 view 集合时，所有消费者用同一 committed 集合：projection 可见性、ChatPane visible、MessageSettingsPort.read.editable 与 binding.configure。不得用全局 focused pane 授权别 pane，不能只 CSS 隐藏；文件/产物 pane 不自动获得 composer context。布局 reducer 仅验证引用合法/唯一，不复制权限。",
+      "basis": [
+        "App.tsx:535–543,764–772,1127",
+        "message-settings.tsx:64–75,144–149",
+        "plugin-integration/react.tsx:25–32,120–122"
+      ],
+      "minimalChoice": "最小安全策略是结构 move/merge 或 tab deactivate 前经现有 session.closeMessageSettings() 撤销临时候选，再提交布局；C 原值/ownership 保留。仅 resize 且目标仍可见可保编辑 opening。不要为保存未应用 Y 引入第二 store。"
+    },
+    {
+      "id": "ARC-MSG-3",
+      "proposal": "保留双重写入保护：Picker opening reconcile/revoke 与 host commit 当场 read+CAS。active tab/pane 切换、同 tuple 新草稿、插件 disable/re-enable、namespace A→B→A均不能令旧 token 回调写入。pane 结构版本不是 draft ownership 或 auth generation。关闭浮层的回焦只到同授权代次、仍存在且可见的原 pane 控件；禁止在布局完成后抢回隐藏 pane。",
+      "basis": [
+        "ExecutionProfilePicker.tsx:106–114,145–175,219–268",
+        "message-settings.tsx:48–56,70–109",
+        "session.ts:141–155,240–244; App.tsx:774–780"
+      ],
+      "limit": "现 read+commit 是同步单线程路径；本报告未新增跨异步提交语义或公共 plugin write port。"
+    },
+    {
+      "id": "ARC-MSG-4",
+      "proposal": "A已发送/B已排队/C当前稿各用原 frozen tuple；材料准备 detach 后的新 C 即使数值相同也拥有新 Symbol。pane 移动不重建 pending/ref、不重新 capture、不改原 key/body；材料失败或取消仍保持新稿，只有显式完整恢复把 held draft 写入符合条件的当前目标。移动/隐去不等 cancel/send/retry。",
+      "basis": [
+        "ConversationThread.tsx:114–153,169–191,207–238",
+        "message-settings.tsx:117–129,169–239",
+        "attachments.tsx:174–182,247–267"
+      ],
+      "limit": "准备阶段覆盖必须延迟/拒绝真实 adapter material await；仅暂停最终 HTTP ACK 测不到 pending-composer 生命周期。隐藏可触发既有授权限制，不能为“无感移动”放宽其 guards；至少保持 C 与 held material 并如实提示。"
+    },
+    {
+      "id": "ARC-MSG-5",
+      "proposal": "Recovery CompleteDraft 已包含 messageSettings（旧 Arc 研究之后的新事实），保存和恢复继续走原 journal/viewKey/owner/CAS。持久布局只存有界结构/view 引用，不存 Symbol/catalog/opening/候选 Y/frozen requests。reload 恢复 C 时生成新的 ownership，保旧 tuple 即使暂不可用而阻提交直到合法目录重验；不得自动 omit/default/nearest。关闭 settings-only 草稿应被视为 protected，不因文本空释放 view。",
+      "basis": [
+        "recovery/binding.tsx:35–39,71–83,192–227,322–381",
+        "App.tsx:574–609,670–735",
+        "journal.ts:194–200; message-settings.tsx:111–127"
+      ],
+      "limit": "close、hidden、closed-protected、final release四者沿原owner分开；group close逐个收集真实 protection，不能复制新的恢复 outbox。"
+    },
+    {
+      "id": "ARC-MSG-6",
+      "proposal": "3+ 支持仍须原 MATURE05 读取预算/公平性证明，同时核 settings catalog 仅在显式授权 opening读取；不为每个新 pane eager refresh 或复制全目录。保一 session/host/budget，至多一个 composer 对应一个 view。不要以把 group 上限2改大证明完整 Arc。",
+      "basis": [
+        "workspace-state.ts:27–51",
+        "conversation-stream/host.ts:32–41,134–151",
+        "message-settings.tsx:48–57,78–86; session.ts:61–75,141–146"
+      ],
+      "limit": "本次只核固定 stream lease 上限2，沿用旧提案对 reply/queue 整体并发的待验要求，未重新证明其公平性或性能。"
+    }
+  ],
+  "necessaryBehaviorAcceptance": [
+    "真实 App 同 tab 的 A/B（以及未来声明最大数内的第三 pane）分别设置不同合法 tuple/omit、profile、intent、文本与有序材料；swap/split/merge/move/resize 后身份与当前 C 完整保留、不会串 pane，也无新增业务 POST。记录实际 composer DOM/selection/scroll 与准备 owner 是否保活，纯 reducer 不够。",
+    "同一 stable view 在 draft-route→conversation-route 接受时再移动：保 view.key、原 receipt/key/body/tuple 和新 C，不生成第二 alias/composer/binding；禁止两个布局引用同时调用 configure(true/false)争同一 binding。",
+    "设置弹窗中暂选 Y 后切 tab/移动至隐藏组，保 applied C；捕获的旧 Apply、omit、details callback失效；重新显示/启用插件只新 opening 可写，focus不跳回隐藏 pane。若最小策略关闭弹窗，明确期望关闭而非无声保Y。",
+    "A真实材料准备未完成时编辑 C（包含 settings-only、same-tuple 新 ownership），再做结构移动；adapter迟到成功、失败、公开cancel分别验证旧 A 不覆盖 C/别 pane，原命令冻结不变；显式恢复 A 遵守完整稿目标/CAS且有序材料不重复。只等HTTP ACK不是替代。",
+    "本 pane settings/profile/intent/C 变化与恢复 await 交错、同 view 双 restore、身份 A→B→A：现 Recovery lease 拒迟到写、当前 draft/journal CAS不丢、无自动 send/retry；新 opening重新读授权目录。布局回放不能恢复旧 Symbol或authority。",
+    "仅有 messageSettings、空文本/无文件时 close/close group：closed-protected仍保值，重开同原 view；真正可回收才由 App release 一次，bindings/read subscriptions按原owner释放，不靠layout删Map跳过保护。",
+    "390及双主题实际挂载：当前 pane/设置按钮/主操作可发现；键盘 move/resize、手动tabactivate、close邻居 focus；局部回焦不得窃取另一pane正在输入的选择。图片数量或stable key本身不证明此项。",
+    "显式3+范围才验持续 backlog 的 stream/回复/queue 前进与隐藏释放、目录请求计数有界；保max2则报告max2和未完成3+，不得以现MSG/Recovery旧通过充当新Arc运行证据。"
+  ],
+  "minimalFutureOwnershipSeams": [
+    {
+      "paths": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/workspace-state.ts"
+      ],
+      "change": "先沿原Arc合法hand-off实现唯一有界layout引用和可见集合；稳定ChatPane父级/route解析/保护与release仍App。当前只候选，无claim。"
+    },
+    {
+      "paths": [
+        "apps/web/src/plugin-integration/message-settings.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/src/plugin-integration/react.tsx"
+      ],
+      "change": "默认复用现有binding/configure/close/session方法；仅接口确需适配时再精确交权，不预设新公共capability/context schema。"
+    },
+    {
+      "paths": [
+        "apps/web/src/conversations/ConversationThread.tsx",
+        "apps/web/src/plugin-integration/attachments.tsx",
+        "apps/web/src/recovery/binding.tsx"
+      ],
+      "change": "这些是必须保护并以真实mounted验收覆盖的owner，不因布局任务默认重写。若稳定挂载方案足够，可保持字节不变。"
+    },
+    {
+      "paths": [
+        "original Arc/workspace fixture and browser acceptance paths"
+      ],
+      "change": "已有MATURE05-01/02/03/05追加上述行为验收；具体test literal由实施前最新main和scope查重确定，不创建新task/新runner。"
+    }
+  ],
+  "sourcePins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "gitBlob": "1cc0057ec2188beacd5632bd358271ed38a3422f",
+      "bytes": 74182,
+      "sha256": "882feae39d2a3dd95c1a45010e1502b6d0e4c1bdd8c2b5275b2d4eb6e1163f6d"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "gitBlob": "5bf5e329c4b8c726622e998271857aad0ac828ce",
+      "bytes": 15566,
+      "sha256": "08605b6e7541f50941dcecae8bac4e5707dcb74b5094b0567777062f9b68a395"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "gitBlob": "59609085c43531ababd0c745d2efca91ea506376",
+      "bytes": 25852,
+      "sha256": "53083daacf06c9da16d9f7388215e847d5dc5293390a37fd2d36e92ad65e8eab"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "gitBlob": "cc15de4054c82c8f33218635b64a412a50c0bf92",
+      "bytes": 29561,
+      "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a"
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "gitBlob": "863d33df7ac5b8a434102fbbadabe096b4233db9",
+      "bytes": 33552,
+      "sha256": "ef7ee9d631a82ae9e2b491d94d5780421166bda5aadf6b586cea24109401c21a"
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "gitBlob": "3d7586e5b20f1164bb0336590c1fbcaeffabded5",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca"
+    },
+    {
+      "path": "apps/web/src/workspace-state.ts",
+      "gitBlob": "12faa5fcd571d9d8bb53a866de318b2485d56965",
+      "bytes": 1784,
+      "sha256": "0ed02e547395893672a4b5f4f16fc4eac759d9841366e62805b030b7cf68a66b"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "gitBlob": "cac888ff5efd7da63749ee8358cbf8aba88fab37",
+      "bytes": 27546,
+      "sha256": "4b18dd562496fa4de82e99afe7659e8262969dbae9db6200a643f5c8e1389d1b"
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "gitBlob": "81f5315a4307dae7def466187495404ad72b15d3",
+      "bytes": 21485,
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "gitBlob": "6a430efb4c2d48dfffad3a3a50cf69a288d4cc5e",
+      "bytes": 24400,
+      "sha256": "9462307df41ad9910a5fbc846003f20e8c378350e6f8e4cbdd601c7b3b96d0e7"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "gitBlob": "da8f9555adce58301ea4ce961a2319ddf3a3ab53",
+      "bytes": 22929,
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/host.ts",
+      "gitBlob": "c040dfcccc0dd69e8af31201670647bc9df553e5",
+      "bytes": 14766,
+      "sha256": "506efd942fb3f47831db7e1c381616132c1e2ffd6798f2c6c3bc5e22f10b6848"
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "application": "按本地目录发现并复用已装技能；无需安装、联网升级或无关技能。"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "sha256": "20bd24ab58c8d281b329e1df34655c8a6dc0cd56d8a087aff252b37025c6937c",
+      "application": "只采用本地 architecture 的 runtime/provider/adapter 分层与作用域词汇；以固定项目 external-store/composer 实际接线为准，不推断最新版 API，不修改官方 Thread。",
+      "localReference": {
+        "path": "/Users/citrine/.agents/skills/assistant-ui/references/architecture.md",
+        "sha256": "00cee1aff4625b7865384ede0fc064e9915f640dfc3df70f2916c1677382a56c"
+      }
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "application": "将 namespace/view/draft/opening 四种身份与可见性、提交、释放顺序作为现有私有 Interface 合同；复用 session/Recovery owner，不加 registry/outbox/store。"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "application": "区分 move/hide/close/release 命名和职责；检查同步 CAS、异步迟到、失败保稿与重复挂载；本段只读发现生命周期约束，不宣称已修或已测。"
+    }
+  ],
+  "cleanCodeConclusion": "职责/命名明确区分 layout reference、route alias、draft value、draft ownership、opening、connection authority；最重要静态风险是跨父 remount 与重复configure影响原 preparing capture。建议在现owner接缝验收，未制造第二state/registry/通用adapter，无修改需声称修复。",
+  "boundaries": {
+    "projectWrites": 0,
+    "claims": 0,
+    "productImports": 0,
+    "checksOrRuntime": 0,
+    "HTTP": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "installs": 0,
+    "newTask": false,
+    "output": "One /private/tmp report only",
+    "notProven": [
+      "No browser reproduction of future layout race",
+      "No 3+ pane/fairness/performance guarantee",
+      "No claim on moving MSG03 material tests or root latest actual review",
+      "No public sharedcontract or officialThread change proposed",
+      "No new implementation authority"
+    ]
+  }
+}

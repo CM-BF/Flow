@@ -93,6 +93,35 @@ Arc后继当前只读18literal方案已集中到[现有研究入口](../../docs/
 
 原05-03插件菜单验收补充（fixed main22a，仅研究）：[九源报告](../../docs/evidence/web-platform/workspace-native-tab-seam-22a/report.md)与[root限定核验](../../docs/evidence/web-platform/workspace-native-tab-seam-22a/root-review.json)确认外层workspace.tabs、header/actions及active artifact.actions已接P01，剩余一项是右侧Task workspace逐内置tab动作位，尤其inactive detail B。后继必须在A激活时准确绑定B原task/tab身份；仅显示/展开菜单零正文GET，显式读取才沿原reference.load；禁用/卸载/撤权、换连接和B关闭后旧callback受tab lifetime限制，不能借全局active A或第二tab状态源；390浅深与键盘核动作发现、tab焦点/激活和关闭回交，不在role=tab内嵌button。04内容/窄屏与05真实App验收沿用。具体接缝由原P01接口owner协调，不在此新建slot/公共契约/任务或领取写权；原Close/Delete和私有布局owner保持，Recovery P1优先。全部为源码覆盖和候选验收，不是运行通过。
 
+
+<a id="arc-msg03"></a>
+
+## Arc × MSG03 草稿与材料生命周期（仅原01/02/03/05）
+
+[固定c4bee的12源增量研究](../../docs/evidence/web-platform/arc-msg03-ownership-intake-20261007/arc-msg03-peer.json)复用原Arc与Recovery提案；root已核固定源与准备期间卸载会标记失败的行为路径。以下是未实现的设计约束与验收补充，不是已复现的布局故障或运行通过。当前两group上限不等完整Arc；不新建task、公共接口、draft store或outbox，也不领取MSG03当前19scope。
+
+六项约束沿原TODO分配：
+
+| 原TODO | 约束 |
+| --- | --- |
+| 01/02/03 | 一个稳定父级持有每个view唯一composer。移动只改布局引用，保留view.key、已应用设置C、ownership Symbol、Thread pending与材料准备回填观察；禁止先close/release再reopen实现move，也不能用跨父节点的相同key代替保活证明。 |
+| 01/02/03 | 同一个已提交的真实可见view集合同时驱动pane可见性、projection、私有read.editable与configure。隐藏、tab停用或结构移动按既有close/revoke撤销未应用opening，已应用C不变；不以CSS或全局focused pane授予另一个pane权限。 |
+| 02/03 | 保留opening撤销和提交当场read+CAS双guard。pane结构版本不替代draft ownership或connection generation；旧Apply/omit、插件重新启用、A→B→A不得恢复旧权限，回焦只到仍合法可见的原控件。 |
+| 02/03/05 | 已发送A、已排队B和当前稿C各保原冻结tuple/key/body。材料等待时移动不重建capture、不自动cancel/retry/send；失败、取消与迟到结果仍保护新稿，held稿只经原完整恢复与当前目标CAS写入。 |
+| 01/03/05 | Recovery CompleteDraft已包含messageSettings，布局持久化仅存有界结构和view引用，不复制Symbol/catalog/opening/候选/请求。reload生成新ownership，旧设置暂不可用须保值并阻提交，不能自动omit/nearest；settings-only空正文仍按protected稿处理。 |
+| 01/02/05 | 一个session/host/read budget，目录仅在合法opening按需读取。声明3+前须证明stream/reply/queue公平前进、隐藏释放与请求计数有界；修改上限2本身不能证明完整Arc或性能收益。 |
+
+原05实际App验收补充八项（01/02/03对应实现也须满足）：
+
+1. 同一顶层tab的A/B，以及未来声明范围内的第三pane，分别持有不同设置/profile/intent/正文/有序材料；swap/split/merge/move/resize保身份与C，且不新增业务POST。观察真实composer DOM、选择、scroll与准备owner，纯reducer不够。
+2. draft-route接受为conversation-route时再移动，保view.key、原receipt/key/body与新稿；不出现第二alias/composer/binding或两布局引用争用configure。
+3. 设置弹窗暂选Y后切tab或隐藏，保已应用C、撤销旧Apply/omit/details；重新显示只新opening可写，关闭回焦不抢隐藏pane。
+4. 真正adapter材料await期间编辑settings-only或同值新ownership稿并移动；迟到成功、失败、公开cancel均不覆盖新稿/其他pane；显式完整恢复保材料顺序且不重复，仅延迟HTTP ACK不能替代。
+5. 当前settings/profile/intent改变与恢复await、同view双restore、授权A→B→A交错，原lease/CAS拒迟到写，journal不丢，无自动send/retry；布局回放不复活旧authority。
+6. 仅settings、无正文/文件的close或close group仍closed-protected并可重开原view；可回收时App只release一次，不由layout直接删Map绕过保护。
+7. 390与双主题真实挂载验证当前pane/设置入口/主操作、键盘move/resize、手动tab激活及关闭邻居焦点；局部回焦不窃取另一pane的输入选择。
+8. 仅在明确声明3+时验证持续backlog下stream/回复/queue公平前进、隐藏释放和目录请求上限。若首片保max2，就报告max2与3+未完，不引用旧MSG/Recovery绿色结果冒新Arc实证。
+
 ### 日用会话导航后继
 
 来源是GO经root准确转述（管理U17），不是用户逐字。固定ee98的[11源研究](../../docs/evidence/web-platform/quick-b3-return-navigation-20261007/navigation-root-research.json)发现当前随机UUID创建、ID升序分页、Catalog每页50，列表只在已加载items上按title过滤；这是日用能力缺口，不是已测性能回归。updated_at目前随turn admission变化，不能标成最近浏览或所有后台活动。
