@@ -1,6 +1,6 @@
 # S01 确定性 Runner 容量验证
 
-创建/更新：2026-10-06 19:54:21 UTC。状态 in-progress；owner status_read / gpt-6-astra（co-lead Mika）。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；初始已审基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
+创建/更新：2026-10-07T05:46:42Z。状态 in-progress；owner status_read / gpt-6-astra（co-lead Mika）。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；初始已审基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
 
 目标：在真实中心、PostgreSQL、独立 runner 进程及持久 outbox 上，区分持久会话数、中心声明容量、实际执行并发与本次确定性工具负载。先找出最小容量缺口，不把观察者、数据库行数或模拟模型当真实 provider 容量。父要求见 [FLOW-001](../flow-001-architecture/plan.md) 与 [FLOW-002](../flow-002-provider-harness/plan.md)。
 
@@ -29,7 +29,7 @@ S01-01/02 是文档片段，不代表压测已运行。实验交付须包含固�
 
 2026-10-06 W1已独审并集成main30b；Goal Owner确定下一最小对照为1进程声明capacity4/12任务，capacity1/16暂缓，ACK/browser各2保留。只准备新入口/预算检查，独审后申请≤30秒独立窗口，仍base115b与原总预算。
 
-以下各带时间的阶段记录是当时的历史判断；当前 idle 已交付、A/B 未运行及 S01P07 尚未实施的事实见末节与唯一 status。历史 pending 不覆盖当前结果。
+以下各带时间的阶段记录是当时的历史判断；当前 idle 已交付、A/B 未运行及 S01P07 已main接收的事实见末节与唯一 status。历史 pending 不覆盖当前结果。
 
 ## S01-06 最小 slot 调度建议（2026-10-06 07:46 UTC，只读提案）
 
@@ -117,6 +117,6 @@ GO批准唯一 `s01-128-after-light-reads-once`，先准备后独审再由Mika�
 
 15秒/2MiB约束已按实际外壳时间和保守计量核验。API调用次数与异步elapsed不等于物理I/O、功耗或SSD寿命；采样间峰值UNKNOWN。100agents不等于100runner，本片没有100runner/模型/SLO结论。测量没有改poll、durability、fsync、claim intent或恢复语义。旧17:21候选及18:31准备过程保留在Git e61ba2c3，不再作为当前未运行状态。
 
-S01-06继续开放：已选S01P07“稳定领取机会”作为独立产品候选，空响应复用已durable key且不新增本地journal/中心永久empty receipt，保留500ms轮询；首次非空分配与compact receipt同事务，durable accept绑定原key和同attempt，历史receipt不当当前执行授权。v1未知请求、已持久assignment及过期/uncertain保持保守，不删journal或复活旧租约。具体接口和直接验证由后继独立owner负责；当前仅设计，待Lead provision独立runner-claim-recovery worktree/branch、fresh claim后实施，本树无产品写权。
+S01-06继续开放：已选S01P07“稳定领取机会”作为独立产品候选，空响应复用已durable key且不新增本地journal/中心永久empty receipt，保留500ms轮询；首次非空分配与compact receipt同事务，durable accept绑定原key和同attempt，历史receipt不当当前执行授权。v1未知请求、已持久assignment及过期/uncertain保持保守，不删journal或复活旧租约。上述为19:54时设计；现S01P07已由独立runner-claim-recovery树交付main0aa1d033，85非PG/8中心PG/4capacity分轮证据和主线组合核对见其权威status。该子任务claim已release，本树无其产品写权；不把功能验收当idle或A/B优化测量。
 
-A/B是此前另一准备片，仍NOT_RUN/NOT_OPEN，须独立资源和运行条件，不为本次空领取样本扩大矩阵。原6TODO、ACK/browser/真实provider等完整验收不因此勾完。架构影响仅实验观察；产品后继实施后由其owner按固定target登记。
+A/B是此前另一准备片，仍NOT_RUN/NOT_OPEN，须独立资源和运行条件，不为本次空领取样本扩大矩阵。原6TODO、ACK/browser/真实provider等完整验收不因此勾完。本S01架构影响仍仅实验观察；S01P07已将main0aa1d033架构target交Execution Lead更新，关联见本status。

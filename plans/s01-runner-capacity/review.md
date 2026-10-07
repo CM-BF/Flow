@@ -18,6 +18,8 @@ Review target commit: `e4ed2cd8fa80159839a07ba8a2f7f212732f2b2a`
 
 可复制只读复核：先核权威WT/branch/head/dirty；对上述固定target和result-manifest核hash/bytes及source=fd24，核CLI/external-exit最终状态，不以case中间快照覆盖终态；不运行新探针、不触旧未知journal。发现交原owner，不直接改实现。旧准备过程与finding关闭记录可从Git e61ba2c3及已链接回执追溯。
 
+2026-10-07T05:46:42Z owner管理核对（不是新独审）：S01P07固定main0aa1d033的24接收bindings重新匹配，权威树dcf12c72 clean且claim已release；原85/8/4证据边界不变。idle在本次main bf8b5f1d尚无结果目录/对应I02接收回执，仍不标main。A/B d3ba准备输入当前可复用，实际NOT_RUN/NOT_OPEN，详见[当前准备核对](../../docs/evidence/s01/mixed-ab-preparation/current-readiness.md)。不重复64项或增加approval。
+
 以下为按日期保留的历史审查，不作为当前target或新运行许可；A/B只有准备APPROVED，实际仍未运行。
 
 ## 历史 A/B 准备批准
