@@ -1,0 +1,51 @@
+{
+  "recordedAt": "2026-10-07T19:13:10.034Z",
+  "task": "SVC06B",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_FIXED_WEB_TRANSFER_AND_PUBLICATION_SOURCE",
+  "blockingFindings": [],
+  "source": "520d3cb7bdb352a1462d83c214e63c8a47c218f4",
+  "canonical": "backend-browser-recovery/docs/evidence/svc06/browser-recovery",
+  "sourceScope": "current-operator.py, current-update-template.json, managed-update-inputs.json, current-web-transfer.mjs, current-web-actions.mjs, current-web-transfer.test.mjs, current-web-operator.test.py, current-web-load.mjs",
+  "fixedTestedCurrent": "All8 source bytes and SHA256 match fixed commit and the3 actual local records; no copied source archive.",
+  "reviewed": [
+    "Reuse migrateOnce ordering, installation lock/marker, verified source and destination bytes, exclusive rename and fsync. Imported Web leaves current release pointer unchanged. Identity/source/symlink/conflict/unknown preserve existing content and refuse replay.",
+    "Backend phase retains exactly3 reviewed old-Web reports. New Web779 is separate public report import and expectedVersion3 publication to4 after resumed-confirmed backendcd27/source04da and fresh exact installation/pointer evidence. Four retained pages and private config/credential/maintenance identities remain checked.",
+    "Explicit argv selects the proper old/new installed backend loader. Existing backend-import capture corrected from unsupported2MiB to valid1MiB; total raw2MiB and all existing ownership/unknown bounds unchanged. Actual OPS14 validation negative preserves old-invalid case.",
+    "Existing fixed source04da public publisher changes only release and webReleaseOperation; original public APIs retain CAS, runtime policy, compatibility and serving-identity gates. No new scheduler or supervision layer."
+  ],
+  "actualLocal": {
+    "nodeCases": 9,
+    "passed": 9,
+    "argvCases": 5,
+    "policyCases": 3,
+    "restrictedImportExports": 5,
+    "operationalCallsDuringImport": 0,
+    "elapsedMs": 619,
+    "rawBytes": 1251,
+    "start": "2026-10-07T19:02:32.909378Z",
+    "return": "2026-10-07T19:02:33.531905Z",
+    "groups": 3,
+    "ownedState": "absent",
+    "dualEOF": true,
+    "signals": [],
+    "cleanup": "3 exact empty scratch directories removed",
+    "PG": 0,
+    "HTTP": 0,
+    "services": 0,
+    "provider": 0,
+    "personalIO": 0
+  },
+  "evidence": [
+    "current-web-transfer-local-01.json",
+    "current-web-operator-local-01.json",
+    "current-web-import-local-01.json"
+  ],
+  "admission": "Source/local approval only. Actual current installation snapshots, marker/runner/CAS, complete runtime pins, exclusive fresh namespace and existing controlled personal update window still required. No personal action performed or permission expanded by this record.",
+  "limitations": [
+    "No new artifact build or rerun of four-App compatibility.",
+    "No actual backend maintenance, Web import/publication or new-page use demonstrated here.",
+    "Old failures/KEEP and model budgets unchanged.",
+    "Reviewer ran0 tests/PG/services/providers/personal operations."
+  ]
+}

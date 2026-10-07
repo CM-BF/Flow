@@ -492,3 +492,7 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 ### 2026-10-07T18:44:52.319Z SVC09A最小启动准备独审
 
 [单份限定审查](../../docs/evidence/i02/svc09a-default-host-preparation-review.json)批准固定62373492/delivery42f0的默认三角色caller；12不同局部检查/15选择均通过，原artifact与旧失败不变。真实宿主尚未启动，需最新共享窗口与fresh资源核验。SVC06B固定Web导入/显式发布仍由原owner实施，不以本准备代替个人交付。
+
+### 2026-10-07T19:13:10.034Z SVC06B固定Web导入与发布入口独审
+
+[限定源码/局部证据审查](../../docs/evidence/i02/svc06b-web-publication-source-review.json)批准520d3cb7b八源；真实局部9例、argv/Policy和受限import通过，619ms/1251B，三组及空目录完整归还。复用现锁/迁入顺序与公开CAS，后台三旧页报告与后继新Web发布保持分离。当前个人安装快照和唯一现场窗口仍需fresh绑定；尚无个人副作用。
