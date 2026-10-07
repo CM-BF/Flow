@@ -1,0 +1,201 @@
+{
+  "kind": "SVC06_FIRST_LEGACY_BOOTSTRAP_ACTUAL_RESULT",
+  "createdAt": "2026-10-07T11:29:17.430384+00:00",
+  "sourceTarget": "ff445959425128876d5dd6abdb719196cc2867e6",
+  "resultTarget": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+  "verdict": "PASSED_LIMITED_FIRST_ENTRY_CONSUMER_PENDING_INDEPENDENT_REVIEW",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/entry.mjs",
+      "ref": "ff445959425128876d5dd6abdb719196cc2867e6",
+      "bytes": 19531,
+      "sha256": "61b0a87d6fc8640eb539a048749b4c06a49a74a7aa7f0f6acc6144e1f3d541b1"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/journey.mjs",
+      "ref": "ff445959425128876d5dd6abdb719196cc2867e6",
+      "bytes": 11511,
+      "sha256": "4e4fd7629bef1b2d35878f13aae14c0c743b906568ebbd2f04699f75bb397377"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/legacy-state.mjs",
+      "ref": "ff445959425128876d5dd6abdb719196cc2867e6",
+      "bytes": 657,
+      "sha256": "c78b3c63004d0a8d8a131c7bd92c88888963833a1093eef06737fdcdb0ac60aa"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/legacy-state.test.mjs",
+      "ref": "ff445959425128876d5dd6abdb719196cc2867e6",
+      "bytes": 1202,
+      "sha256": "943aa4535fbecd8cc9767a6d72b854f756045549d57c1400edabf5e5ffc7e888"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/supervise.py",
+      "ref": "ff445959425128876d5dd6abdb719196cc2867e6",
+      "bytes": 4568,
+      "sha256": "7f2abe7f6b6b832be03de94ffceeab7e962868ddf85950fc97b64d4b40882875"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/inputs.json",
+      "ref": "ff445959425128876d5dd6abdb719196cc2867e6",
+      "bytes": 30574,
+      "sha256": "a47f51cb38be0576a3aef2b1f336e517314bbcce3f84dd688793c648ad450f3c"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/Interface.md",
+      "ref": "ff445959425128876d5dd6abdb719196cc2867e6",
+      "bytes": 5595,
+      "sha256": "46a56d456797e52d005b7c064b68c41e0e8ca08ee636d87c0963ad640b69357a"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/entry-manifest.json",
+      "ref": "185ab067ef610df9976e38b877aab72755125705",
+      "bytes": 4917,
+      "sha256": "60ae81fb7d49176e8ade6be1ae582db8ee99d5e3251922c06c78b2b8ea756cef"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/independent-review.json",
+      "ref": "10ba847d79206493d01943ddc9b73d035a0ff289",
+      "bytes": 2436,
+      "sha256": "23e4cca7439248e0cf5a02e2738b2a68ddabbd9099df360ebcfe8fe4d5701925"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/RESULT.md",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 2779,
+      "sha256": "633b95c34617bedb0721a83a6c66c6a969ed1c5f96538df8792a56d0369fe073"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/actual-completion.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 12802,
+      "sha256": "8404167bf77cad48790f4042d4bba4910af9d4440041d487e86e0cddc68a5bd8"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/execution-preflight.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 1105,
+      "sha256": "4c98d1c5aa3f8abc8f3e16366c23ee8e30743484a6f99311333b52cdddb25bb0"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/execution-start.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 212,
+      "sha256": "8f163acbdb2dd8c74f54f26458d35ca1d15a0661831ac565c03a0f0e4120b25d"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/host-policy-outer.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 6381,
+      "sha256": "24a2f2da218e218af0990178b30beec0435b6df998d1b9918bc23c452dc8bf59"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/result-status-parse.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 193,
+      "sha256": "224762f7e40ddf7b915880210f65bed6163e5cacfc89d9603cdfb2adaa10e708"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/cleanup-checkpoint.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 2473,
+      "sha256": "15393c61311dd083db73cf47be19d56aae398aa06ec0d5270f1008c0bd72ea32"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/cleanup-result.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 2528,
+      "sha256": "97bcfb8ab0fbdc158417b6fa25bdaca89c0482e1fe2a520005669d35cfbd7a4b"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/cleanup-startup-observation.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 1338,
+      "sha256": "817405875cb5ff7bedcc9397906bf35428cf5361b7923523643d38e196fb9a6e"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/clone-result.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 419,
+      "sha256": "e6e272aaa5918369ad06e3980ca696106f55a383b01e986ed9ee89ac54fbec78"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/clone-verified.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 387,
+      "sha256": "adce96acc78dc67f38209044675fd3ac1a66eb6278e56dd517bd22ac11495612"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/generation-1.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 1113,
+      "sha256": "8faa3e1ef7037ee4145c842d8f821d3e352235fb3320acad493263313b4cbcdd"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/reservation.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 565,
+      "sha256": "94534379abbb29164a5b2df31161a96f04cf0dd89a317840903b237c6d44e670"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/work-checkpoint.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 2184,
+      "sha256": "bc296795e74aaff9cb51ab858e58dd8410f1b43026245c98867ca8725312320b"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/work-result.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 4244,
+      "sha256": "e2f55002ab9f22cd794332fb89acbff5836f73bdf5620e895724b9af1fa5d846"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/work-startup-observation.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 1338,
+      "sha256": "bff5d63fda02ba750af3a5e27c40c87e23514161a3abb2d6cfdd2df256ba5f00"
+    },
+    {
+      "path": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/work-terminal.json",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 372,
+      "sha256": "275571bd702bc5b72299ea2e347e2b5dd28bbad181b3613a38a62b5358567553"
+    },
+    {
+      "path": "plans/svc06-backend-release/status.md",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 43066,
+      "sha256": "f7280acfad0eb99c782388f640807b4d551dde0b1315795c087a6a8852b4d00a"
+    },
+    {
+      "path": "plans/svc06-backend-release/review.md",
+      "ref": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+      "bytes": 21804,
+      "sha256": "86f77a1a5d2713df8d0d644bb6c5bf8693b0d0cd21e04e39b897d0ab5ae78269"
+    }
+  ],
+  "privateOriginalsSource": "actual-completion.json",
+  "privateOriginalCount": 23,
+  "retainedDirectoryCount": 2,
+  "exactCopies": 11,
+  "rawBytes": 23342,
+  "checks": 5,
+  "selectedCases": 1,
+  "workElapsedMs": 35086,
+  "cleanupElapsedMs": 373,
+  "startedAt": "2026-10-07T11:26:28.127Z",
+  "returnedAt": "2026-10-07T11:27:03.659Z",
+  "resources": "All owned groups stopped; normal DB DROP remaining []; artifact/private records retained",
+  "unknownPreserved": [
+    "initial supervisor EPERM/unknown observations",
+    "idle role startup diagnostics partial-unknown and numeric exits NOT_OBSERVED",
+    "historical task start UNKNOWN",
+    "all prior failed runs and older unknown resources"
+  ],
+  "limitations": [
+    "3 owned idle roles; not actual server/runner/Web",
+    "Only first bootstrap and same-operation continuation; no refresh/resume/cookie rerun",
+    "Synthetic loader report not real App compatibility",
+    "0 provider, personal operation, Chrome, rebuild/import rerun"
+  ]
+}

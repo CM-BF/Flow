@@ -1,3 +1,7 @@
+## 2026-10-07 11:27:03 UTC：首次采用实际结果 PENDING_RESULT_REVIEW
+
+source ff445/185ab原准备批准不变；本次[RESULT](../../docs/evidence/svc06/legacy-first-bootstrap/RESULT.md)单例passed/5checks，35086ms+373ms、normalDROP与3idle组stopped。只审原件真实性/限定消费者，不批准真实App或个人更新；作者不自审。产品与入口停写，原unknown和历史失败均保留。
+
 ## r1结果限定事实批准；新启动诊断实现中
 
 [唯一独审原件](../../docs/evidence/svc06/b2b-host-policy/result-independent-review.json)绑定c408，22+17+8全核；APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE，无P1/P2、0重跑。原hostFAIL保持。新启动诊断尚未审，不扩大旧准备/结果批准。
@@ -165,3 +169,7 @@ Lead原件[APPROVED_LIMITED_PREPARATION](../../docs/evidence/svc06/diagnostics-h
 ## 首次legacy采用入口待审
 
 Target `ff445959425128876d5dd6abdb719196cc2867e6`，范围仅 [legacy-first-bootstrap](../../docs/evidence/svc06/legacy-first-bootstrap/Interface.md)。独立review NOT_STARTED；3/3 cleanup guard+语法/status有限局部已过，真实PG未运行。审查应核negative不drain/state不变、root真实生成op、artifact同op/audit1、legacy cleanup reservation/终态身份；不扩真实App/个人批准。原r2批准与失败原件保持。
+
+### 首次采用准备独审接收
+
+2026-10-07T11:18:46.472543+00:00，Lead独立`APPROVED_PREPARATION_AND_LOCAL_ONLY`，target ff445959425128876d5dd6abdb719196cc2867e6 / delivery185ab067ef610df9976e38b877aab72755125705，无P1/P2。[原样review](../../docs/evidence/svc06/legacy-first-bootstrap/independent-review.json)；3owned idle限定、原2.5GiB/4连接与unknown KEEP不变。PG NOT_RUN，真实App与个人仍未验，不扩大原r2或产品批准。

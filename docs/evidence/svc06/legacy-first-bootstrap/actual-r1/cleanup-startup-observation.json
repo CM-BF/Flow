@@ -1,0 +1,59 @@
+{
+  "state": "partial-unknown",
+  "at": "2026-10-07T11:27:03.465Z",
+  "primary": null,
+  "roles": [
+    {
+      "role": "center",
+      "nonce": "6857f4d4-710c-4f82-843e-3be0d91dff11",
+      "pid": 98306,
+      "phase": null,
+      "errorCode": null,
+      "exit": "NOT_OBSERVED",
+      "stderr": null,
+      "observation": {
+        "state": "not-observed",
+        "code": "ENOENT"
+      }
+    },
+    {
+      "role": "runner",
+      "nonce": "b867844a-c591-42b3-b72d-58cd6255a219",
+      "pid": 98313,
+      "phase": null,
+      "errorCode": null,
+      "exit": "NOT_OBSERVED",
+      "stderr": null,
+      "observation": {
+        "state": "not-observed",
+        "code": "ENOENT"
+      }
+    },
+    {
+      "role": "web",
+      "nonce": "e7f9c1f0-4ee6-4fd9-bc57-c9ed1e365213",
+      "pid": 98320,
+      "phase": null,
+      "errorCode": null,
+      "exit": "NOT_OBSERVED",
+      "stderr": null,
+      "observation": {
+        "state": "not-observed",
+        "code": "ENOENT"
+      }
+    }
+  ],
+  "observations": [
+    {
+      "source": "generation-before-refresh.json",
+      "state": "not-observed",
+      "code": "ENOENT"
+    },
+    {
+      "source": "generation-2.json",
+      "state": "not-observed",
+      "code": "ENOENT"
+    }
+  ],
+  "stderrPolicy": "Private original retained; public metadata only; at most 64KiB per nonce"
+}

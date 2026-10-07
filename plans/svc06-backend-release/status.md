@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 11:08:47 UTC；main/origin c38fa3a1已接3b68候选（Lead回执）；本段fresh claim v8后实施首次legacy入口直接消费者 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 11:27:03 UTC；原准备review已main f68dbb71（Lead回执）；首次采用单例已实际通过并归还，结果待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,21 +13,21 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 基线3b68f31aef36481620ff1d43d37d9d95d2d7714d；产品/runtime6c与7d1、r2结果固定；只新增自有首次bootstrap fixture |
-| 工作树dirty状态 | 新fixture源码停写待独审；仅本次结果/manifest与status封定，原件保持 |
+| 工作基线 / HEAD | 基线10ba847d79206493d01943ddc9b73d035a0ff289；首次采用source ff445/185ab不变；本次只封实际结果与metadata |
+| 工作树dirty状态 | 产品与运行入口停写；本次实际结果/状态封存待提交 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | 检查状态 | r2 passed：27→35/两项pre-drain拒绝/三role refresh-resume/历史与pointer-config-profile保留/cookie-CSRF-logout；work155073ms+cleanup540ms，六组stopped/normalDROP；真实App/个人未验 |
-| 已集成main状态 / HEAD | main657105已收r2结果；main/origin c38fa3a1已收3b68个人候选。首次legacy入口fixture尚未验证/独审/集成。 |
+| 已集成main状态 / HEAD | main657105已收r2结果、c38fa3a1已收个人候选；main f68dbb71已收首次采用准备review。首次采用实际单例通过，结果尚待独审/接收；不宣称个人更新已发生。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 隔离升级与浏览器策略旅程已通过；正在补首次从开发入口采用后台产物的直接验证。 |
-| 下一可用交付 | 首次采用用例已固定待独审，随后在独立数据库核身份拒绝、合法创建和同一操作接续。 |
-| 当前阻塞 | ACTIVE: 首次采用用例已过有限局部检查，待独审及数据库窗口；个人更新仍等三个保留版本的真实App报告及现场核验。 |
+| 当前产出 | 首次从开发入口采用后台产物并接续同一维护操作已在隔离环境验证；证据待独立审查。 |
+| 下一可用交付 | 完成本次结果独立审查；随后与真实App兼容报告汇合，准备个人受控更新。 |
+| 当前阻塞 | ACTIVE: 本次实际结果等待独立审查；个人更新仍等三个保留版本的真实App报告及现场核验。 |
 | 需用户决定 | NONE |
-| Review | 原r2 APPROVED_LIMITED_ISOLATED_HOST_RESULT/main657105保持；首次legacy fixture源ff445待独审；3/3+两syntax+status通过，实际PG NOT_RUN。 |
+| Review | 首次采用准备ff445/185ab已限定批准；实际单例passed/5checks与独立normalDROP结果PENDING_RESULT_REVIEW；原r2独审/main657105保持。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v8，原own两scope加6个启动诊断精确产品literal；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -309,3 +309,15 @@ Lead于10:49:17.625668Z完成[原件review](../../docs/evidence/svc06/diagnostic
 ## 2026-10-07 11:15:46 UTC：首次采用局部收尾
 
 [局部结果](../../docs/evidence/svc06/legacy-first-bootstrap/CHECKS.md)：3个新清理边界例、entry/journey syntax与唯一status parse通过；累计202ms/raw467B、四组absent/双EOF和四scratch正常removed。source ff445固定，不重跑r2/build/import。实际PG仍NOT_RUN，等待独审/窗口；个人与App等待均未解除。
+
+## 2026-10-07 11:19:24 UTC：首次采用入口获限定准备独审
+
+Lead于2026-10-07T11:18:46.472543+00:00独审 [唯一原件](../../docs/evidence/svc06/legacy-first-bootstrap/independent-review.json)，source ff445/delivery185ab，7源/10局部记录/44追加只读/22alias及原inventory引用全符，0P1/P2。批准仅准备与局部；实际PG未启动。等待现共享holder明确归还后fresh原输入/claim/空间与新namespace，沿原180+30/4连接/2.5GiB/KEEP；不提前复制或创建库。
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| SVC06-WAIT-FIRST-BOOTSTRAP-PG | 2026-10-07T11:19:24Z | 2026-10-07T11:26:28.127Z | 资源 | Lead实际交权后fresh通过，一次实际启动结束等待；11:27:03.659Z窗口归还。 | legacy-first-bootstrap/execution-start.json及actual-completion.json；任务初次开工仍UNKNOWN |
+
+## 2026-10-07 11:27:03 UTC：首次采用实际通过并归还
+
+[唯一结果](../../docs/evidence/svc06/legacy-first-bootstrap/RESULT.md)：11:26:28.127Z启动→11:27:03.659Z外层0，work35086ms/cleanup373ms；5checks成立、audit恰1、state无backendArtifact且受保护bytes未变。两监督组absent/双EOF、三idle nonce组stopped、专库OID1299961正常DROP remaining[]。只是首次入口/真实维护FSM组合，不冒三实际服务/App兼容/个人更新；原partial-unknown诊断与所有历史失败保持。共享窗口已实际归还，产品/入口不变，结果待独审；任务总完成NOT_COMPLETED及03/04/05开放不改。

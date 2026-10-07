@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T11:32:50.555840+00:00",
+  "baseMain": "c13042ba",
+  "accepted": [
+    {
+      "task": "SVC06",
+      "delivery": "5be3154a097451b30ffabb233133a47d546982b5",
+      "review": "svc06-first-adoption-result-review.json",
+      "scope": "legacy-first-bootstrap actual and canonical status/review only",
+      "limits": "idle-role direct first-entry, no personal/realApp claim"
+    },
+    {
+      "task": "O16",
+      "delivery": "f85a54bd46f9879fb500cbc38e07bb4046759a7f",
+      "review": "o16-same-runtime-auth-review.json",
+      "scope": "same-runtime auth candidate/result and ownstatus/review only",
+      "limits": "partial original loss preserved;0query, no fourth; no account logout/entitlement proof"
+    },
+    {
+      "task": "FLOW-001/OPS-001",
+      "delivery": "3a0c873c",
+      "scope": "two canonical current summaries",
+      "checks": "parseStatus errors/humanMissing empty; historical start unknown retained"
+    }
+  ],
+  "productChanges": 0,
+  "newPGChromeProvider": 0,
+  "protectedUntracked": "Existing tools/*/__pycache__ excluded"
+}

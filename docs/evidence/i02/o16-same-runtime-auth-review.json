@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-07T11:32:30.280843+00:00",
+  "reviewer": "assignment_review / gpt-6-astra; independent author",
+  "receivedBy": "Execution Lead",
+  "decision": "APPROVED_LIMITED_REMAINING_AUTH_STATUS_EVIDENCE_WITH_RECORD_LOSS",
+  "source": "dff8e1f89a24280c3b591944e8010ad7baa515bc",
+  "result": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+  "disposition": "190e2c1af4d014d05fafaf22b6e88bac9992f89f",
+  "delivery": "f85a54bd46f9879fb500cbc38e07bb4046759a7f",
+  "manifest": {
+    "path": "docs/evidence/o16/same-runtime-auth-once/manifest.json",
+    "bytes": 7316,
+    "sha256": "fb07927438c1902505a7d266d58a36021d35fef5e05de1d02549a6dd55a7ff33"
+  },
+  "reviewed": {
+    "fixedCurrent": 16,
+    "inherited": 4,
+    "bytes": 87189,
+    "installedModuleHashes": 2,
+    "callerPrepareAndSafeStatus": "Full read; public auth-status branch, four-field whitelist and unknown enums dropped, rawstdout/stderr memory only, sameR3 recipe411 and SDK3 public variables."
+  },
+  "acceptedFacts": "Public status in private fixed-runtime recipe did not recognize login: loggedIn false/authMethod none/apiProvider firstParty. No subscriptionType inferred. 0query and cumulative SDK3/no fourth remain.",
+  "fidelity": "preparation787ms/absent+EOF has full original; native174ms,total1085ms,exit1/false-none-firstParty and native absent are tool-receipt/derived-summary sourced. Native observations/secondary failures original overwritten by case-insensitive RESULT.json collision and unavailable. No audit reconstruction or full native transcript approval.",
+  "cleanup": "Surviving cleanup proves KEEP/sameRoot/time;427B comes from saved summary. Original and new unknown resources retained; no private body or credential read.",
+  "notProved": [
+    "User account logout or authentication success",
+    "Keychain failure cause",
+    "SDK query authorization/model qualification",
+    "Universal future caller total deadline guarantee"
+  ],
+  "newRuntimeByReviewer": 0,
+  "findings": []
+}

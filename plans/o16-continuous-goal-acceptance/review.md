@@ -1,6 +1,6 @@
 # O16 独立审查
 
-状态：诊断49d已main fb647700、R3候选1dc/58fd已独审。R3实际1query失败、累计3/费用UNKNOWN/KEEP，结果待限定独审；没有成功proposal、无第四次授权。
+状态：R3失败结果已APPROVED_LIMITED_FAILED_RESULT_FIDELITY并main f68dbb71；唯一审查在main docs/evidence/i02/o16-native-r3-result-review.json。当前同runtime公开状态一次结果待限定独审；实验source49d不变，SDK累计3/费用UNKNOWN/KEEP。
 
 当前 Review target commit：49d35d97e2d5d529d34dc29458ed2d95f2474909（诊断5源/测试），固定证据见private-error-diagnostics/delta-manifest。
 
@@ -67,3 +67,7 @@ Lead10:37:40Z独审ff266/9e15/2841，APPROVED_LIMITED_ZERO_MODEL_DELTA，无P1/P
 2026-10-07T11:10:14.122Z：原样归档[唯一诊断审查](../../docs/evidence/o16/private-error-diagnostics/independent-review.json)（assignment_review独立审查，Execution Lead记录，时间2026-10-07T11:05:58.578682Z）；5源36530B/21记录/5只读pin和7不同例三轮14选择已核，reviewer0重跑。main fb647700受控接收；本次仅候选metadata，未扩展诊断批准为真实SDK通过。[R3候选](../../docs/evidence/o16/native-plan-r3-candidate/candidate.json)沿新条件预算绑定source/env/SDK/目标，等待实际窗口；不重跑原检查或复用已消费许可。
 
 2026-10-07T11:16:00.396Z：R3实际结果[待限定独审](../../docs/evidence/o16/native-plan-20261007-r3/RESULT.md)。原SDK结构authentication_failed、success/isError组合及私有647B/hash公开引用分别保存；runtime收尾通过不把规划失败改绿。原candidate独审[原件](../../docs/evidence/o16/native-plan-20261007-r3/independent-review.json)仅准备，不代替本结果审查；未重复旧检查。
+
+2026-10-07T11:25:52.629Z：同runtime[auth status结果](../../docs/evidence/o16/same-runtime-auth-once/RESULT.md)待只读独审，caller dff8e1f8，3新纯白名单例+syntax0；一次native状态false/exit1，0query/两组absent，原raw不外发。请区分状态观察与真实query认证，不从false推账户退出；新scratch非空KEEP和旧资源不改。
+
+同runtime auth封存补注：result477e是大小写碰撞后派生摘要；原native完整结构未保留。独立审查只能按fidelity-gap/disposition列出的剩余原件与工具回执限定，不能将摘要升级为原始supervisor记录；无重跑。
