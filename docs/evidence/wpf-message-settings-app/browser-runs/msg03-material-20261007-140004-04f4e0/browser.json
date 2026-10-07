@@ -1,0 +1,462 @@
+{
+  "journey": "message-settings-material-return",
+  "requiredGroups": [
+    "cookieRead",
+    "messageSettingsMaterialReturn"
+  ],
+  "completedGroups": [
+    "cookieRead"
+  ],
+  "checks": [
+    "actual browser stores HttpOnly cookie; public cookie-only session read opens original center"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 8441.695334,
+    "elapsedMs": 8441.695334
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 8441.768084000001,
+      "endedOffsetMs": 9451.717084,
+      "elapsedMs": 1009.9489999999987,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "messageSettingsMaterialReturn",
+      "startedOffsetMs": 9451.735709,
+      "endedOffsetMs": 16137.500167,
+      "elapsedMs": 6685.764458,
+      "outcome": "FAILED"
+    }
+  ],
+  "materialPreparation": [
+    {
+      "mode": "failure",
+      "restoredCompleteDraft": true,
+      "businessPostCount": 0,
+      "observation": {
+        "armed": null,
+        "pending": false,
+        "disposed": false,
+        "rows": [
+          {
+            "label": "failure",
+            "outcome": "failed",
+            "originalValidated": true,
+            "abortObserved": false,
+            "returned": false
+          }
+        ],
+        "ready": [
+          {
+            "id": "e8f0d325-d020-41e2-a263-fe74d420565d",
+            "name": "held-1.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "415f55f8-2bdf-474b-8df9-7a2c673912fa",
+              "resourceId": "7855ae6e-bbfb-427e-aac9-25e9bbfbbcfd",
+              "version": 1,
+              "contentDigest": "ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20"
+            }
+          },
+          {
+            "id": "6eb3dbff-5155-43c5-805b-fa60191b8ae3",
+            "name": "held-2.txt",
+            "reference": {
+              "kind": "upload",
+              "projectId": "415f55f8-2bdf-474b-8df9-7a2c673912fa",
+              "resourceId": "1ebcfb1a-8b19-4f25-b4c0-bd21744c59ed",
+              "version": 1,
+              "contentDigest": "5a2be505564f7ab1fdfff5307714b5ec73cbeb72373d26c207978fd8ea490398"
+            }
+          }
+        ]
+      }
+    }
+  ],
+  "pageErrors": [],
+  "failure": "expect(received).toEqual(expected) // deep equality\n\n- Expected  -  0\n+ Received  + 22\n\n@@ -1,7 +1,29 @@\n  Array [\n    Object {\n+     \"id\": \"9f678b77-b095-441b-a345-7a6642ed1bcd\",\n+     \"name\": \"held-1.txt\",\n+     \"reference\": Object {\n+       \"contentDigest\": \"ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20\",\n+       \"kind\": \"upload\",\n+       \"projectId\": \"415f55f8-2bdf-474b-8df9-7a2c673912fa\",\n+       \"resourceId\": \"265f79ed-3f9e-4f81-8081-81382a340c62\",\n+       \"version\": 1,\n+     },\n+   },\n+   Object {\n+     \"id\": \"9e9f94e4-3ff5-4731-b238-7b68c9d620c2\",\n+     \"name\": \"held-2.txt\",\n+     \"reference\": Object {\n+       \"contentDigest\": \"5a2be505564f7ab1fdfff5307714b5ec73cbeb72373d26c207978fd8ea490398\",\n+       \"kind\": \"upload\",\n+       \"projectId\": \"415f55f8-2bdf-474b-8df9-7a2c673912fa\",\n+       \"resourceId\": \"db9f6442-b5af-44c6-92bf-8d85fa154ec1\",\n+       \"version\": 1,\n+     },\n+   },\n+   Object {\n      \"id\": \"80f48b57-29b5-456a-81e4-1e7592deeb0c\",\n      \"name\": \"held-b.txt\",\n      \"reference\": Object {\n        \"contentDigest\": \"caeef5a80958b1641bb5da321fe7f763e000667a3517497bde69117d01943b00\",\n        \"kind\": \"upload\",\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+  "cleanupErrors": [],
+  "wire": [
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": false,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/browser-session/connect",
+      "key": null,
+      "body": "{}",
+      "status": 200,
+      "cookie": false,
+      "bearer": true,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/1ba4c7b7-38b0-4ece-8cdb-0f3ab65cc33a",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/1ba4c7b7-38b0-4ece-8cdb-0f3ab65cc33a/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/1ba4c7b7-38b0-4ece-8cdb-0f3ab65cc33a/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/c7854562-5e96-4ef2-8405-7eecacc85b49/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/c7854562-5e96-4ef2-8405-7eecacc85b49",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/c7854562-5e96-4ef2-8405-7eecacc85b49/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/415f55f8-2bdf-474b-8df9-7a2c673912fa/attachments/capabilities",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/415f55f8-2bdf-474b-8df9-7a2c673912fa/attachments",
+      "key": "b6b7aa7e-f552-442a-921c-cdae580fd334",
+      "body": "{\"recoveryScopeId\":\"9daf5dc2-085c-41d4-be46-f3fd36690b9a\",\"name\":\"held-1.txt\",\"mediaType\":\"text/plain\",\"text\":\"Fixture file held-1.txt\",\"byteLength\":23,\"contentDigest\":\"ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20\"}",
+      "status": 201,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/415f55f8-2bdf-474b-8df9-7a2c673912fa/attachments",
+      "key": "a8a506d6-5808-4525-b4cc-1187fdfd35b8",
+      "body": "{\"recoveryScopeId\":\"9daf5dc2-085c-41d4-be46-f3fd36690b9a\",\"name\":\"held-2.txt\",\"mediaType\":\"text/plain\",\"text\":\"Fixture file held-2.txt\",\"byteLength\":23,\"contentDigest\":\"5a2be505564f7ab1fdfff5307714b5ec73cbeb72373d26c207978fd8ea490398\"}",
+      "status": 201,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/415f55f8-2bdf-474b-8df9-7a2c673912fa/attachments",
+      "key": "a8c483d2-345c-43d7-a1f7-c0abeb9c7401",
+      "body": "{\"recoveryScopeId\":\"9daf5dc2-085c-41d4-be46-f3fd36690b9a\",\"name\":\"held-1.txt\",\"mediaType\":\"text/plain\",\"text\":\"Fixture file held-1.txt\",\"byteLength\":23,\"contentDigest\":\"ffed15d5db1d6e82a25a214469c1aec88da7e050801fc562354a960702dc7c20\"}",
+      "status": 201,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/415f55f8-2bdf-474b-8df9-7a2c673912fa/attachments",
+      "key": "fabe5910-caa2-4f09-b956-220272198c79",
+      "body": "{\"recoveryScopeId\":\"9daf5dc2-085c-41d4-be46-f3fd36690b9a\",\"name\":\"held-2.txt\",\"mediaType\":\"text/plain\",\"text\":\"Fixture file held-2.txt\",\"byteLength\":23,\"contentDigest\":\"5a2be505564f7ab1fdfff5307714b5ec73cbeb72373d26c207978fd8ea490398\"}",
+      "status": 201,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/projects/415f55f8-2bdf-474b-8df9-7a2c673912fa/attachments",
+      "key": "75e04855-18ff-46d7-a077-ed6572ae5793",
+      "body": "{\"recoveryScopeId\":\"9daf5dc2-085c-41d4-be46-f3fd36690b9a\",\"name\":\"held-b.txt\",\"mediaType\":\"text/plain\",\"text\":\"Fixture file held-b.txt\",\"byteLength\":23,\"contentDigest\":\"caeef5a80958b1641bb5da321fe7f763e000667a3517497bde69117d01943b00\"}",
+      "status": 201,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/c7854562-5e96-4ef2-8405-7eecacc85b49",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/c7854562-5e96-4ef2-8405-7eecacc85b49/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=0",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/c7854562-5e96-4ef2-8405-7eecacc85b49/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/c7854562-5e96-4ef2-8405-7eecacc85b49",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=0",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/c7854562-5e96-4ef2-8405-7eecacc85b49/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/c7854562-5e96-4ef2-8405-7eecacc85b49",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    }
+  ],
+  "coverage": {
+    "cookieRead": "PASSED",
+    "cookieSseHandshake": "NOT_SELECTED",
+    "cookieSseDelivery": "PENDING: only handshake is asserted",
+    "textIntentDraft": "NOT_SELECTED",
+    "materialDraft": "NOT_SELECTED",
+    "sameKeyTurn": "NOT_SELECTED",
+    "crossTabCas": "NOT_SELECTED",
+    "pageOnlyAuthLoss": "NOT_SELECTED",
+    "csrfOffline": "NOT_SELECTED",
+    "themes390": "NOT_SELECTED",
+    "connectionChoice": "NOT_SELECTED",
+    "createAckLoss": "NOT_SELECTED",
+    "createdTurnAckLoss": "NOT_SELECTED",
+    "queueAckLoss": "NOT_SELECTED",
+    "sseDelivery": "NOT_SELECTED",
+    "completeDraft": "NOT_SELECTED",
+    "steeringRecovery": "NOT_SELECTED",
+    "secondCenterCycle": "NOT_SELECTED",
+    "messageSettingsApp": "NOT_SELECTED",
+    "messageSettingsMaterialReturn": "FAILED",
+    "createTwoStage": "PENDING: the two CREATE fault points are independent selected journeys",
+    "queueSteerRecovery": "PENDING: enqueue selection does not validate promotion or steering",
+    "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+    "secondCenter": "NOT_RUN: real A/B cycle is a separate selected journey; principal-only is controlled"
+  },
+  "bodyLoss": [],
+  "sseDelivery": {
+    "baselineCursor": null,
+    "deliveredCursor": null,
+    "cancelledTaskId": null,
+    "externalCancel": null,
+    "readRequests": [],
+    "trace": null
+  },
+  "completeDraft": {
+    "profile": null,
+    "knowledge": null,
+    "savedRecordId": null,
+    "conversationId": null,
+    "preparedPostCount": null,
+    "restoredPostCount": null,
+    "verificationOrder": [],
+    "turnId": null,
+    "taskId": null
+  },
+  "steeringRecovery": {
+    "profile": null,
+    "conversationId": null,
+    "turnId": null,
+    "sameDocumentNavigation": null,
+    "originalTurnReceiptId": null,
+    "actor": null,
+    "draftId": null,
+    "receiptId": null,
+    "commandId": null,
+    "browserPostCounts": [],
+    "draftFailureObservation": null
+  },
+  "secondCenter": {
+    "identities": [],
+    "baseUrl": null,
+    "draftA": null,
+    "draftB": null,
+    "receiptA": null,
+    "lateRead": null
+  }
+}

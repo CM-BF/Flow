@@ -2,7 +2,7 @@
 
 当前实现 **61185e5fa8a0a55e83c2196355249e6f4359a19e**；base `c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50`。WT `web-message-settings-app` / `codex/web-message-settings-app`；claim7e3f v2 exact19（14产品+3test+2metadata）。原MATURE02 TODO11子片，不是新大task。
 
-固定9c46的 [root集中审](source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings；随后c4bee只修worker参数白名单，独立假sentinel通过、caller边界已获root475e限定准备批准。完整feature **IN_PROGRESS / material-return 三次FAIL / message-settings-app NOT_RUN / 6a修复未复验 / NOT_INTEGRATED**。[17源码manifest](source-manifest.json)、[浏览器准备](browser-preparation.md) 和 [独立阶段记录](browser-phase.json) 固定当前范围。最终metadata HEAD不反套过去执行头。
+固定9c46的 [root集中审](source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings；随后c4bee只修worker参数白名单，独立假sentinel通过、caller边界已获root475e限定准备批准。完整feature **IN_PROGRESS / material-return 四次FAIL / message-settings-app NOT_RUN / cancel持久B隔离FAIL / NOT_INTEGRATED**。[17源码manifest](source-manifest.json)、[浏览器准备](browser-preparation.md) 和 [独立阶段记录](browser-phase.json) 固定当前范围。最终metadata HEAD不反套过去执行头。
 
 App每view唯一C与opaque ownership；P01现action/context私有port复用Picker同步CAS。发送前冻结A并同步换新稿ownership，官方text通知不抹C；原key/body的Send与Queue收据、历史turn和Queueitem各自显示frozen requested。Recovery完整draft含可选设置、兼容旧缺省、非法值拒绝，沿原revision/CAS和namespace/lifetime。材料await期间同正文/settings-only B独立，旧opening不写新B。
 
@@ -24,7 +24,7 @@ App每view唯一C与opaque ownership；P01现action/context私有port复用Picke
 
 两个selector各独立markedDB/Chrome/public syntheticpublisher，**共享唯一90000ms**新phase，每attempt≤60000含30000cleanup、remaining<45000停。源内parent只准这两selector；旧Recovery选择保留参考却不可在新入口运行。每次保守ceil(max outer/late/serialized)扣账；不重置/不借Recovery/local。probe只fixture启动可达，≤3hold、每hold10s、≤8身份，每项≤1024chars，dispose/pagehide清timer/listener。B观测只读，不能造IDB或业务响应。
 
-配置连接保守14（8center+3boss+1fixture+1admin+1cleanupmarker），非实测峰值；一DB/Chrome，64MiB scratch，9MiB retained、启动<4/run reserve5，1GiBreserve只计一份；最新已报组合floor至少7515275264且实际更高值优先。真实启动仍需要经理共享资源交接/freshinputs/env/uniquegate。当前没有gate/adminenv/PG/Chrome预约。
+配置连接保守14（8center+3boss+1fixture+1admin+1cleanupmarker），非实测峰值；一DB/Chrome，64MiB scratch，9MiB retained、启动<4/run reserve5，1GiBreserve只计一份；第四actual组合floor7686258688且实际更高值优先。真实启动仍需要经理共享资源交接/freshinputs/env/uniquegate。当前没有gate/adminenv/PG/Chrome预约。
 
 ## 未完成交付与质量
 
@@ -44,14 +44,20 @@ App每view唯一C与opaque ownership；P01现action/context私有port复用Picke
 
 424c一行差量已获root dfe8限定源码批准/0finding，原件保存在own source-research；并非related actual已通过。
 
-## 当前chooser错误观察差量与第三红
+## 历史chooser错误观察差量与第三红
 
 当前target 6a258a3886f0491b8487738c19c09dc631b98f2c 只browser4+/2-：真实Add Attachment enabled前置+同时await选择事件/click。第三actual worker因选择事件unhandled rejection提前exit1，缺browser/fixture结果；不把partial log当组通过。原父DB/groups/EOF/scratch/env清理有证，fixture优雅关闭UNKNOWN；phase33766/余56234，actual HOLD；本差量已审，下一资源交接未提供。旧各source批准/FAIL原件保原归因。
 
 [6a258 root审](source-research/root-msg03-6a258-chooser-error-review-20261007.json)已接受此错误观察差量；三次actual仅绑定各自executionHead。当前17源码manifest绑定6a；phase33766/56234，NO_NEXT。fixture graceful close UNKNOWN、材料恢复/第二消息设置旅程及双主题截图尚未通过；物理DB/process/scratch/env收尾与此区分。
 
-## 当前公开Files前置差量
+## 历史公开Files前置差量
 
 目标 61185e5fa8a0a55e83c2196355249e6f4359a19e：fresh goto后公开Files→精确对话框可见→Escape→隐藏/回焦点，原material循环前仅5行。16其余源码逐字不变，6a错误观察审仍属历史固定目标；本差量已获root09907限定源码APPROVED，actual NOT_RUN。无产品自动激活或绕官方chooser。phase33766/56234/三FAIL原件保持，当前NO_NEXT。
 
 61185审查原件：[root](source-research/root-msg03-61185-files-precondition-review-20261007.json)；decision APPROVED_PUBLIC_FILES_ACTIVATION_PRECONDITION_FIX_NOT_BROWSER_PASS。没有继承原浏览器PASS，旧第三缺报告保持。
+
+## 第四次实际：取消后持久B附件隔离失败
+
+执行head35dcec / source61185，2026-10-07T14:03:13.343425+00:00封存。第四次[24原件](browser-attempts/material-fourth/manifest.json)保outer/parent1、worker/Chrome0、双EOF/drop0、无signals；cookieRead PASS，材料组FAIL。真实Files公开激活与官方chooser已进入，failure子分支记录完整A显式恢复和0turn/queue POST；cancel子分支可见B正文/设置/单个B附件断言已过，但持久B附件精确比对出现A两文件+B，尚未放行迟到adapter。不能将该子分支、后续cancel恢复/success/navigation或全旅程写PASS；无PNG。
+
+父budget complete、markedDB0conn正常DROP/remaining[]、fixturecomplete/errors[]、scratch与0600env exact清理；14:01:00.037466Z outer10474/parent10544/worker10862/Chrome13878 PID+PGID均ESRCH。首post-cleanup误复用pid键丢数值，原件保留，独立exact-process-identity-observation补充了真实新观察；不补造端口探针。ceil(max含outer终态写入17343.143917ms)=17344；本90秒段累计51110/余38890<45000，**CLOSED / NO_NEXT**。前三FAIL及第三fixture graceful UNKNOWN不改。源码保持61185，仅静态归因，未运行新检查。

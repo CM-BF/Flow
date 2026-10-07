@@ -1,9 +1,9 @@
 {
-  "state": "THIRD_FAILED_WORKER_REPORT_MISSING_NO_AUTO_RETRY",
+  "state": "CLOSED_FOURTH_FAILED_REMAINING_BELOW_45000",
   "id": "MSG03-BROWSER-20261007",
   "budgetMs": 90000,
-  "spentMs": 33766,
-  "remainingMs": 56234,
+  "spentMs": 51110,
+  "remainingMs": 38890,
   "perAttemptMaxMs": 60000,
   "perAttemptMinMs": 45000,
   "cleanupMs": 30000,
@@ -50,12 +50,20 @@
       "chargeMs": 14804,
       "manifest": "browser-attempts/material-third/manifest.json",
       "fixtureReceiptMissing": true
+    },
+    {
+      "run": "msg03-material-20261007-140004-04f4e0",
+      "journey": "message-settings-material-return",
+      "state": "FAIL_CANCEL_DURABLE_B_CONTAINS_HELD_A",
+      "chargeMs": 17344,
+      "manifest": "browser-attempts/material-fourth/manifest.json",
+      "fixtureCleanupConfirmed": true
     }
   ],
   "sourceFixReview": {
-    "source": "6a258a3886f0491b8487738c19c09dc631b98f2c",
-    "path": "source-research/root-msg03-6a258-chooser-error-review-20261007.json",
-    "sha256": "f3d883bc6bfe7c89285b217585f6741cc06c0e014b7752e51f3cab9042bef449"
+    "source": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+    "path": "source-research/root-msg03-61185-files-precondition-review-20261007.json",
+    "sha256": "09907e84354cc26451605fc5c0f45823209e9a9ae3420da353e7d639717ab554"
   },
-  "executionDisposition": "NO_NEXT; no launch from source approval. Original personal intent recovery has next safe slot priority. Future selected actual requires explicit manager handoff and fresh inputs; fixture graceful cleanup from third remains UNKNOWN."
+  "executionDisposition": "CLOSED; remaining38890<45000. No automatic fifth run or message-settings-app launch; no credit transfer. Fourth actual FULL RETURN; third fixture graceful UNKNOWN remains unchanged."
 }

@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:56:53.836Z；固定base c130，未追moving main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:03:13.343425+00:00；固定base c130，未追moving main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T12:11:30.621Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,28 +13,28 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app |
 | Branch | codex/web-message-settings-app |
 | 工作基线 / HEAD | c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；61185e5fa8a0a55e83c2196355249e6f4359a19e（实现固定；metadata HEAD见Git） |
-| 工作树dirty状态 | 本次公开Files前置已固定；仅own metadata待收口，normal push后核clean并停写 |
+| 工作树dirty状态 | 仅第四actual原件和own metadata收口；17源码仍61185，normal push后clean/STOP |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | 历史局部绿不重跑；前轮cookieRead PASS保留；本轮worker错误退出缺结果/fixture回执，未推任何组通过 |
+| 检查状态 | 第四actual cookieRead PASS；材料failure子分支显式恢复成立，cancel持久B附件身份断言FAIL；0PNG；旧局部原件不重跑 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；base c130已有Recovery和受控Picker，尚无本片真实App接线 |
 | 实现目标 | 61185e5fa8a0a55e83c2196355249e6f4359a19e |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/projection.ts, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/queue/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/conversation-context/receipts.ts, apps/web/src/recovery/binding.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/react.tsx, apps/web/src/plugin-integration/message-settings.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.test.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/src/conversations/queue/ConversationQueue.tsx |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已补齐材料验收的公开Files入口前置；保留三次失败，源码修复已审、实际复验待运行窗口 |
-| 下一可用交付 | 在后续验证窗口复验材料恢复，再验消息设置页面；原文件选择器和所有业务断言保留 |
-| 当前阻塞 | ACTIVE: 材料恢复页面验证尚未通过，下一独占验证窗口未交接 |
+| 当前产出 | 材料失败后已能恢复完整草稿；取消准备时界面保留新稿，但持久草稿混入旧稿文件，已保存失败证据并清理资源 |
+| 下一可用交付 | 修复取消准备后的完整草稿隔离，再安排相关页面验证；当前运行段已封闭 |
+| 当前阻塞 | ACTIVE: 取消准备后的持久草稿附件隔离失败，需先修复并验证 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，IN_PROGRESS；6a错误收尾和61185公开Files前置均已限定源码APPROVED；actual NOT_RUN |
-| Claim | 7e3fbcf1-befe-4579-9d6c-ee74df6e8c51 v2 ACTIVE；exact19；fresh 2026-10-07T13:54:50.429Z/nooverlap |
+| Review | [review.md](review.md)，IN_PROGRESS；61185源码批准保留，第四actual材料FAIL，根实际审查进行中 |
+| Claim | 7e3fbcf1-befe-4579-9d6c-ee74df6e8c51 v2 ACTIVE；exact19；fresh 2026-10-07T14:00:04.099Z/nooverlap |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | MSGAPP-01 | completed | workspace_panels_owner | [provision](../../docs/evidence/wpf-message-settings-app/provision.json)、[take](../../docs/evidence/wpf-message-settings-app/receipt.json) |
 | MSGAPP-02 | completed | workspace_panels_owner | 固定源码私有port/P01；[源码manifest](../../docs/evidence/wpf-message-settings-app/source-manifest.json)，浏览器未验 |
 | MSGAPP-03 | completed | workspace_panels_owner | freeze/原key重试/官方core return保护与历史/Queue requested源码，11定向通过 |
-| MSGAPP-04 | completed | workspace_panels_owner | CompleteDraft/CAS真实Journal/Projection定向通过；native IDB新设置恢复仍待 |
+| MSGAPP-04 | in-progress | workspace_panels_owner | 第四mounted持久B含held A；旧受控证据保留，按真实缺陷重新修复 |
 | MSGAPP-05 | in-progress | workspace_panels_owner | [local53579/60000](../../docs/evidence/wpf-message-settings-app/mounted-local-summary.json)；probe6PASS/9c46全部17源noEmit0；c4bee参数独立验证；历史11PASS/57未选；两browser场景均未完成 |
 | MSGAPP-06 | in-progress | workspace_panels_owner | 37166/9fc历史保留；9c46限定source/local集中审通过，browser/main未完成 |
 
@@ -78,8 +78,14 @@
 
 6a258 已获 [root聚焦源码审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-6a258-chooser-error-review-20261007.json) APPROVED/0finding；仅确认两个Promise进入原run/finally，实际按钮状态/未产生chooser原因未证。前三次FAIL与fixture gracefulclose UNKNOWN不回写；当前NO_NEXT/无holder，原90s账33766/56234不变，下一窗口由经理交接。
 
-## 公开Files激活前置（源码阶段）
+## 历史公开Files激活前置（源码阶段）
 
 当前61185在fresh goto后经真实Files命令打开Project text files，关闭并确认回焦点，再走原官方上传chooser。只browser5行，未改产品自动激活/原timeout/probe或业务断言。可达的fixture前置遗漏不等第三次唯一根因已实证；该轮fixture gracefulclose UNKNOWN仍保留。0runtime/无gate-env，phase33766/56234不变。见[差量](../../docs/evidence/wpf-message-settings-app/files-activation-precondition.json)。
 
 61185已获[root限定审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-61185-files-precondition-review-20261007.json)，0finding；W01固定源码/安装包研究作为来源原样保留。源批准不授运行，下一窗口仍由经理单一交接；第三fixture UNKNOWN/三FAIL与33766/56234不变。
+
+## 第四次实际：取消后持久B附件隔离失败
+
+执行head35dcec / source61185，2026-10-07T14:03:13.343425+00:00封存。第四次[24原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/material-fourth/manifest.json)保outer/parent1、worker/Chrome0、双EOF/drop0、无signals；cookieRead PASS，材料组FAIL。真实Files公开激活与官方chooser已进入，failure子分支记录完整A显式恢复和0turn/queue POST；cancel子分支可见B正文/设置/单个B附件断言已过，但持久B附件精确比对出现A两文件+B，尚未放行迟到adapter。不能将该子分支、后续cancel恢复/success/navigation或全旅程写PASS；无PNG。
+
+父budget complete、markedDB0conn正常DROP/remaining[]、fixturecomplete/errors[]、scratch与0600env exact清理；14:01:00.037466Z outer10474/parent10544/worker10862/Chrome13878 PID+PGID均ESRCH。首post-cleanup误复用pid键丢数值，原件保留，独立exact-process-identity-observation补充了真实新观察；不补造端口探针。ceil(max含outer终态写入17343.143917ms)=17344；本90秒段累计51110/余38890<45000，**CLOSED / NO_NEXT**。前三FAIL及第三fixture graceful UNKNOWN不改。源码保持61185，仅静态归因，未运行新检查。

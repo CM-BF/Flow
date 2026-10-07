@@ -1,0 +1,32 @@
+{
+  "run": "msg03-material-20261007-140004-04f4e0",
+  "startedAt": "2026-10-07T14:00:09.820892+00:00",
+  "endedAt": "2026-10-07T14:00:27.163441+00:00",
+  "outerPid": 10474,
+  "parentPid": 10544,
+  "exitCode": 1,
+  "elapsedMs": 17342.747375019826,
+  "signals": [],
+  "streams": {
+    "stdout": {
+      "file": "parent.stdout.jsonl",
+      "bytes": 2027,
+      "retainedBytes": 2027,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "151421b86ad9b70be489da8e38a53c36f1a974a19b82cb3cf74e1a37c1d1f1ec"
+    },
+    "stderr": {
+      "file": "parent.stderr.log",
+      "bytes": 0,
+      "retainedBytes": 0,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "errors": [
+    "actual parent exit 1"
+  ],
+  "cleanupAuthority": "Only parent supervisor owns DB/worker/Chrome/scratch. Separate exact post-cleanup observation required; absent not inferred here."
+}

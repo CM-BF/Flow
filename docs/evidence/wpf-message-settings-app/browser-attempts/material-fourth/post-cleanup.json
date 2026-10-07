@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-07T14:00:52.013526+00:00",
+  "run": "msg03-material-20261007-140004-04f4e0",
+  "processes": [
+    {
+      "pid": "ESRCH",
+      "group": "ESRCH"
+    },
+    {
+      "pid": "ESRCH",
+      "group": "ESRCH"
+    },
+    {
+      "pid": "ESRCH",
+      "group": "ESRCH"
+    },
+    {
+      "pid": "ESRCH",
+      "group": "ESRCH"
+    }
+  ],
+  "scratch": "/private/tmp/flow-recovery-browser-BPnhDZ",
+  "scratchAbsent": true,
+  "database": {
+    "database": "flow_recovery_9159269b887b41e19fdde474253076a3",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.3163749999985157,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 0.6425420000014128,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "fixture": {
+    "complete": true,
+    "errors": [],
+    "elapsedMs": 19,
+    "wireBytes": 6191,
+    "providerQueries": 0
+  },
+  "adminEnvDeletion": "admin-env-deletion-receipt.json",
+  "outerActualExit": 1,
+  "collectorExecExit": 1,
+  "dualEOF": true,
+  "droppedBytes": 0,
+  "measurements": {
+    "outerElapsedMs": 17342.747375019826,
+    "outerPostWriteElapsedMs": 17343.143917038105,
+    "parentPostWriteElapsedMs": 16743.564708,
+    "parentBudgetElapsedMs": 16740.399791
+  },
+  "chargeMs": 17344,
+  "phasePreviousSpentMs": 33766,
+  "phaseSpentMs": 51110,
+  "phaseRemainingMs": 38890,
+  "outcome": "FAILED",
+  "completedGroups": [
+    "cookieRead"
+  ],
+  "screenshots": [],
+  "fullReturn": true,
+  "limitations": "No independent port probe; fixture close and owned process/group absence recorded. No full material group pass."
+}

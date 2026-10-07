@@ -1,0 +1,22 @@
+{
+  "run": "msg03-material-20261007-140004-04f4e0",
+  "actualCollectorExit": 1,
+  "toolSession": 9448,
+  "outerElapsedMs": 17342.747375019826,
+  "outerPostWriteElapsedMs": 17343.143917038105,
+  "parentPostWriteElapsedMs": 16743.564708,
+  "parentBudgetElapsedMs": 16740.399791,
+  "chargeMs": 17344,
+  "phaseSpentMs": 51110,
+  "phaseRemainingMs": 38890,
+  "state": "FAIL_CANCEL_DURABLE_B_CONTAINS_HELD_A",
+  "parentCleanupConfirmed": true,
+  "fixtureCleanupConfirmed": true,
+  "completedGroups": [
+    "cookieRead"
+  ],
+  "materialFailureBranch": "restoredCompleteDraft true; 0 turn/queue POST at recorded checkpoint",
+  "cancelBranch": "visible B text/settings and one chip asserted; persisted B attachments have held A1/A2 before B; failure at pre-late-settlement identity assertion",
+  "laterBranches": "late settlement/explicit cancel A restoration/success/navigation NOT_REACHED",
+  "screenshots": []
+}

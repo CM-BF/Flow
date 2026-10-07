@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS03 · 真实聊天消息设置
 
-状态：in-progress；开工 2026-10-07T12:11:30.621Z；最近更新 2026-10-07T13:56:05.753Z。
+状态：in-progress；开工 2026-10-07T12:11:30.621Z；最近更新 2026-10-07T14:03:13.343425+00:00。
 所属大task：[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)，既有 TODO11 实施子片；co-lead Web/root，执行管理 d01_owner。唯一owner workspace_panels_owner / gpt-6-astra；本树 codex/web-message-settings-app，固定base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50。
 
 目标：用户在真实聊天入口选择完整模型/思考/速度设置，Send、Queue、已发送记录及草稿恢复保留各自快照。已审组件六组通过不等本片真实App通过。
@@ -14,7 +14,7 @@
 - [x] **MSGAPP-01** 固定供给、原18scope领取（后续合法amend为19）和canonical；[原件](../../docs/evidence/wpf-message-settings-app/receipt.json)。
 - [x] **MSGAPP-02** App ownership/P01宿主接线与紧凑消息设置入口。
 - [x] **MSGAPP-03** Send/Queue材料await前完整freeze、同正文异设置保留、原key重试及历史requested显示。
-- [x] **MSGAPP-04** CompleteDraft/Recovery全链、同步CAS与失效边界。
+- [ ] **MSGAPP-04** CompleteDraft/Recovery全链、同步CAS与失效边界；第四mounted暴露持久B混held A，重新进入修复。
 - [ ] **MSGAPP-05** 有界受影响direct/types与真实App浏览器验收；证据/失败/cleanup保真。
 - [ ] **MSGAPP-06** 独立review与合法main接收；本分支通过不冒主线/部署。
 
@@ -50,3 +50,5 @@ MSGAPP-05第三actual：worker未处理filechooser超时提前exit1，缺场景/
 MSGAPP-05同scope前置修复：仅实际Files命令初始化后再用official Add Attachment；源61185尚未actual，原3FAIL/33766/56234不变，非产品自动激活改动。
 
 61185源码聚焦审通过（root09907），仍原MSGAPP-05真实材料/消息设置验收未完成；无本批工程检查或运行。
+
+MSGAPP-05第四actual已进入真实材料failure/cancel：failure完整显式恢复有原件，cancel可见B保留但持久B附件混入held A，组FAIL。当前实现61185未变；90s实际51110、余38890低于min45s封闭，不启动下一旅程。后继须修持久完整草稿隔离，不能用可见chip数量代持久身份。原MSGAPP-03/04勾选为源码交付，不表示该实际缺陷已解决。
