@@ -1,0 +1,95 @@
+{
+  "state": "PASSED",
+  "workerPid": 90156,
+  "chromePid": 90208,
+  "chromeExit": {
+    "code": 0,
+    "signal": null
+  },
+  "interrupts": [],
+  "cleanupErrors": [],
+  "result": {
+    "passed": true,
+    "checks": [
+      {
+        "name": "real BrowserWorkspace cookie connection and complete current draft",
+        "startedAt": 5796.16675,
+        "elapsedMs": 1332.1298339999994
+      },
+      {
+        "name": "UNKNOWN survives collapse and close; explicit retry keeps original HTTP key/body and current draft",
+        "startedAt": 7128.29925,
+        "elapsedMs": 403.49566700000014
+      },
+      {
+        "name": "active workspace loss revokes held command, reconnect keeps drafts but does not reuse old command authority",
+        "startedAt": 7531.798834,
+        "elapsedMs": 541.5298750000002
+      },
+      {
+        "name": "real theme controls and narrow Settings preserve focus and layout",
+        "startedAt": 8073.334042,
+        "elapsedMs": 382.8680829999994
+      }
+    ],
+    "pageErrors": [],
+    "screenshots": [
+      {
+        "path": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/raw/runtime-app-light-390.png",
+        "bytes": 65807,
+        "sha256": "4f7f0b845d15b42a4b993bf2a92fb9269ab0fba03059f33956b539caee060b5e"
+      },
+      {
+        "path": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/raw/runtime-app-dark-390.png",
+        "bytes": 64687,
+        "sha256": "9c8132d7bc1461a2bef84e72afb37a5abb547e5c0c60d0ed0b180c0964546fcd"
+      }
+    ],
+    "cleanup": {
+      "contextClosed": true,
+      "httpClosed": true,
+      "errors": []
+    },
+    "runtimeWrites": [
+      {
+        "key": "f3c36e42-37f1-472d-8066-fc025cff710e",
+        "body": "{\"expectedRevision\":3,\"reason\":\"Controlled stop of new tool bindings\",\"change\":{\"kind\":\"disable\"}}",
+        "replayed": false,
+        "cookie": true,
+        "csrf": true,
+        "outcome": "accepted-socket-closed"
+      },
+      {
+        "key": "f3c36e42-37f1-472d-8066-fc025cff710e",
+        "body": "{\"expectedRevision\":3,\"reason\":\"Controlled stop of new tool bindings\",\"change\":{\"kind\":\"disable\"}}",
+        "replayed": true,
+        "cookie": true,
+        "csrf": true,
+        "outcome": "accepted-response"
+      },
+      {
+        "key": "fd77e8f4-0ba1-4649-8661-c5e0613067b5",
+        "body": "{\"expectedRevision\":4,\"reason\":\"Controlled re-enable request\",\"change\":{\"kind\":\"enable\",\"materialInstallOperationId\":\"00000000-0000-4000-8000-000000000301\",\"targetRunnerId\":\"00000000-0000-4000-8000-000000000401\",\"storeId\":\"fixture-store\"}}",
+        "replayed": false,
+        "cookie": true,
+        "csrf": true,
+        "outcome": "accepted-response-held"
+      }
+    ],
+    "scope": "Real App/BrowserWorkspace and public FlowClient against controlled Cookie/registry HTTP fixture; no real center/PG/runner/package loading/provider, no server-session security attestation."
+  },
+  "cdpPort": 60089,
+  "contextAdmission": {
+    "chromePid": 90208,
+    "profile": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/scratch/chrome",
+    "ownership": "fresh PID/exclusive profile; scenario creates and closes one own context; no user browser"
+  },
+  "chromeStdoutEOF": true,
+  "chromeStderrEOF": true,
+  "chromeLog": {
+    "observedBytes": 608,
+    "retainedBytes": 608,
+    "truncatedBytes": 0,
+    "finalAfterEOF": true
+  }
+}

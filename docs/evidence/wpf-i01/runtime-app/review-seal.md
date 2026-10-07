@@ -26,3 +26,9 @@ Actual ownership/cleanup/error paths rechecked from exact originals: first two c
 ## 2026-10-07T16:34:45.149Z 公开离开确认安全点
 
 复用已安装find-skills/clean-code与现Playwright方法：只在既有第三组加入命名清楚的leaving locator及公开确认，四行无新抽象/条件跳过/内部权限穿透。先核claim61abv1 exact8/overlap[]及cf13 clean；root3bcc独审通过。命名/单责/接口/错误处理检查无新增问题，未捕获异常改绿；原5s/全部下游断言和3caller不变。静态218 fixedGit/disk对应完成；不运行types/direct/Node/browser。当前真实问题仍后两组未actual，不从源码批准推PASS。新候选仅数据/sourcepin/provenance变化，两个失败阶段封闭且不转未用额度。
+
+## 2026-10-07T17:00:45.077627+00:00 third actual / clean-code安全点
+
+复用find-skills/clean-code/codebase-design/assistant-ui方法：无产品或caller改动，检查真实四组命名、authority与完整draft单一所有者、unknown/error保真及finally清理。公开Files与离开确认均走原用户UI，不删保护或放宽断言。四组/两PNG已actual通过；两旧FAIL与原件保持，独立实际审待收。资源账按ceil最大实测8814封闭，不把未用额度留作重试。初次只读递归pin核误把historical before当current而先停，未建gate/launch；后按fixedpriorGit核before、当前执行pins全核通过，此准备观察保在preflight。静态archive18项逐hash等原件；原图片已肉眼核双主题/390，未扩大为全面视觉或真实中心安全验收。当前六source仍5438，不重跑direct/types，下一仅metadata/合法main接收。
+
+2026-10-07T17:01:29.394778Z：root第三actual/视觉独审9019已收到并按8819B/hash原样归档，0blocking；作者未自行main。精确six-source base/target blob与SHA清单已生成，保shared App/session任何后续main漂移需合法组合。当前技能复核未新增问题，产品/source/caller未改；待main接收后再完成07。

@@ -1,0 +1,30 @@
+{
+  "run": "i01-leave-20261007-165756-53bb61",
+  "startedAt": "2026-10-07T16:58:02.535880+00:00",
+  "endedAt": "2026-10-07T16:58:11.349458+00:00",
+  "outerPid": 90137,
+  "parentPid": 90144,
+  "exitCode": 0,
+  "elapsedMs": 8813.523874967359,
+  "signals": [],
+  "streams": {
+    "stdout": {
+      "file": "parent.stdout.jsonl",
+      "bytes": 2379,
+      "retainedBytes": 2379,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "53a83a284d5e29e71918123c4760d7cca5dc2e1df2e9305d8fec0beb681a4a98"
+    },
+    "stderr": {
+      "file": "parent.stderr.log",
+      "bytes": 0,
+      "retainedBytes": 0,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "errors": [],
+  "cleanupAuthority": "Only I01 parent owns worker/Chrome/cache links/scratch; fixture owns two HTTP listeners; PG is absent. Separate exact post-cleanup observation required; absent not inferred here."
+}

@@ -1,0 +1,72 @@
+{
+  "state": "PASSED",
+  "startedAtApprox": "2026-10-07T16:58:02.569685+00:00",
+  "actualExit": 0,
+  "elapsedMs": 8774.173500016332,
+  "ownedGroupAbsent": true,
+  "scratchRemoved": true,
+  "stdoutEOF": true,
+  "stderrEOF": true,
+  "peakSampledLogicalBytes": {
+    "scratch": 30433457,
+    "raw": 288995
+  },
+  "terminalFreeBytes": 20003708928,
+  "errors": [],
+  "cleanupErrors": [],
+  "discardedOutputBytes": 0,
+  "interrupts": [],
+  "workerState": "PASSED",
+  "chromeExit": {
+    "code": 0,
+    "signal": null
+  },
+  "checks": [
+    {
+      "name": "real BrowserWorkspace cookie connection and complete current draft",
+      "startedAt": 5796.16675,
+      "elapsedMs": 1332.1298339999994
+    },
+    {
+      "name": "UNKNOWN survives collapse and close; explicit retry keeps original HTTP key/body and current draft",
+      "startedAt": 7128.29925,
+      "elapsedMs": 403.49566700000014
+    },
+    {
+      "name": "active workspace loss revokes held command, reconnect keeps drafts but does not reuse old command authority",
+      "startedAt": 7531.798834,
+      "elapsedMs": 541.5298750000002
+    },
+    {
+      "name": "real theme controls and narrow Settings preserve focus and layout",
+      "startedAt": 8073.334042,
+      "elapsedMs": 382.8680829999994
+    }
+  ],
+  "limits": {
+    "totalMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608
+  },
+  "source": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+  "executionHead": "b447e357eeac82aef19be488d806e898b0c30439",
+  "grantSha256": "c750ac443eceaf3786662286afce549b1fe0298bc24db2bad5bb96b912ea0123",
+  "cacheLinks": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules/.vite",
+      "target": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/scratch/.vite",
+      "dev": 16777234,
+      "inode": 124353904
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules/.vite-temp",
+      "target": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/scratch/.vite-temp",
+      "dev": 16777234,
+      "inode": 124353906
+    }
+  ],
+  "chargeMs": 8775,
+  "independentPortProbe": false,
+  "PG": false
+}

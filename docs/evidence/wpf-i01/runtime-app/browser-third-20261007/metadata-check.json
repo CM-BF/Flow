@@ -1,0 +1,28 @@
+{
+  "observedAt": "2026-10-07T17:01:54.689510+00:00",
+  "scope": "own metadata only; no product test rerun",
+  "statusParser": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/status.mjs",
+    "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+    "actualExit": 0,
+    "errors": [],
+    "humanMissing": [],
+    "timingIssues": [
+      "任务开工时间未记录"
+    ],
+    "timingExplanation": "Original task start UNKNOWN retained; continuation timestamp is separately evidenced, not substituted.",
+    "taskLinks": {
+      "parent": "WPF-001",
+      "coLead": "Web/root；执行管理d01_owner",
+      "ownId": "unknown 未声明 (not an errors[] finding)"
+    }
+  },
+  "planLinksChecked": 48,
+  "brokenLinks": [],
+  "archivePairs": 18,
+  "archiveBytes": 158781,
+  "sourcePinsMatchingFixedGit": 6,
+  "source": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+  "main": "NOT_INTEGRATED",
+  "cleanCode": "Same owner safety checkpoint in review-seal.md; no product/caller mutation."
+}

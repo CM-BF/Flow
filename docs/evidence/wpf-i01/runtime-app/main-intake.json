@@ -1,0 +1,133 @@
+{
+  "task": "WPF-I01",
+  "state": "APPROVED_READY_FOR_CONTROLLED_MAIN_INTAKE_NOT_INTEGRATED",
+  "preparedAt": "2026-10-07T17:01:29.394778Z",
+  "owner": "workspace_panels_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+  "branch": "codex/web-plugin-runtime-app",
+  "base": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "implementationTarget": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+  "actualExecutionHead": "b447e357eeac82aef19be488d806e898b0c30439",
+  "metadataHead": "read final clean Git HEAD; not a replacement source target",
+  "exactSourceScope": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "base": {
+        "commit": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+        "blob": "1cc0057ec2188beacd5632bd358271ed38a3422f",
+        "bytes": 74182,
+        "sha256": "882feae39d2a3dd95c1a45010e1502b6d0e4c1bdd8c2b5275b2d4eb6e1163f6d"
+      },
+      "target": {
+        "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+        "blob": "b8906afb0dec8fcadcf1adb0a9638e9abfa671ff",
+        "bytes": 74808,
+        "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e"
+      }
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "base": {
+        "commit": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+        "blob": "fea4381f15dd9e7a7e74511efe9dd306a2590087",
+        "bytes": 25841,
+        "sha256": "ee591334bfa1d89aa5047a75b896c7f7b263fdc2053d99c12ab7fb709515b3c2"
+      },
+      "target": {
+        "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+        "blob": "06b6b64edb5ef30e0ab9e6141b0ea1028579621f",
+        "bytes": 28667,
+        "sha256": "ebfa3f33860ee478f24808ca47fb6f7e7205fe613411608f0ef0bac58680e85d"
+      }
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "base": {
+        "commit": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+        "blob": "6a430efb4c2d48dfffad3a3a50cf69a288d4cc5e",
+        "bytes": 24400,
+        "sha256": "9462307df41ad9910a5fbc846003f20e8c378350e6f8e4cbdd601c7b3b96d0e7"
+      },
+      "target": {
+        "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+        "blob": "478f8f2130cfa43bb192ca1574dd385c7eb1740c",
+        "bytes": 25086,
+        "sha256": "d47002c00baad69c4cff0f205c76f89a4598b7bb7e817e7bb605b96e0d7eb907"
+      }
+    },
+    {
+      "path": "apps/web/test/plugin-integration.test.ts",
+      "base": {
+        "commit": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+        "blob": "809444943268cb37cd9c17b45427d88892ca4304",
+        "bytes": 10072,
+        "sha256": "a79d701195b93254026a42432c866eeffe4072cf3ec6d9dcdb3ab37dd8ace5f9"
+      },
+      "target": {
+        "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+        "blob": "d9afe2b8853600544724091f158c1bbdfe3f27cc",
+        "bytes": 17691,
+        "sha256": "2c1ed449df97f6294c2b5b552b0fe760bfa99613516bb06e201a27aa2b1f3631"
+      }
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.browser.ts",
+      "base": {
+        "commit": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+        "blob": "054b7bd5a4f4f5d16d6387dad9d46b8a67a21acc",
+        "bytes": 14073,
+        "sha256": "cd4e067ae9238c39348c0ae262e65e54df40637b18d51aa478cb166de86f9c98"
+      },
+      "target": {
+        "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+        "blob": "37146d539ce126321292418061869c6cba6244d2",
+        "bytes": 26157,
+        "sha256": "32e8699619cff57c112eb0767b54dee782bdbc001a7e17ad554eaa71d858d136"
+      }
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.fixture.ts",
+      "base": {
+        "commit": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+        "blob": "c3f6fb56de13033ef7650726c94feecfcd4ccd1f",
+        "bytes": 6161,
+        "sha256": "9fa4706fb26e639aed55413ff07d5ff0dbd05dee6a30d14221f2b909b313c692"
+      },
+      "target": {
+        "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+        "blob": "34408d434242fb3e6263740678e519c26ab00008",
+        "bytes": 19746,
+        "sha256": "6578782e1a787f769d92f18bf53cf46d5b5f5e35b128962344880202dfaf137d"
+      }
+    }
+  ],
+  "ownerRecords": [
+    "plans/wpf-i01-plugin-integration",
+    "docs/evidence/wpf-i01/runtime-app"
+  ],
+  "acceptance": "Fresh current main preimages must match listed base before exact six-path application. Any changed shared App/session/react needs explicit composition review; never blindly overwrite. No dependency/package/lock or other owner source included. Main/production deployment performed only by authorized integrator.",
+  "sourceLocalReview": "root-i01-runtime-app-source-local-review-20261007.json",
+  "testFixReviews": [
+    "root-i01-first-failure-locator-fix-review-20261007.json",
+    "root-i01-protected-leave-source-review-20261007.json"
+  ],
+  "actualReview": {
+    "path": "root-i01-third-browser-result-review-20261007.json",
+    "bytes": 8819,
+    "sha256": "90195130a59c63a6bc3fdb2afe827708bc1c5f580ec53269b6f70d285e59c086"
+  },
+  "checks": {
+    "direct": "4 passed/10 not selected, fixed49d71",
+    "types": "affected source closure; initial exit2 preserved, narrow import fix then0",
+    "browser": "third5438 four complete groups, two390x844 themes, actualouterexit0/dualEOF/exact owned RETURN; root-approved scoped",
+    "priorFailures": "first0/4 charge8540 andsecond2/4 charge13436 preserved; no rewrites",
+    "thirdBudget": "8814/60000 CLOSED; unused51186 not transferred"
+  },
+  "evidence": "browser-third-20261007/manifest.json",
+  "limitations": [
+    "Controlled Cookie/registry HTTP with real App and public client, not real center session security",
+    "No PG, runner/package execution, provider, personal deployment or main capability evidence",
+    "No independent HTTP port probe; closed fixtures/context plus owned groups exact absence recorded"
+  ],
+  "claim": "61abce36-a4d1-4531-9b04-dedaae86108b v1 exact8 ACTIVE; owner will STOP all8 after normal seal, retain pending controlled handoff"
+}

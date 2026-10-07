@@ -15,14 +15,14 @@
 - [x] **WPF-I01-03** 原局部/浏览器/真实协议验证完成，旧结论不继承。
 - [x] **WPF-I01-04** 原固定target独审/main收口完成，f4335历史保留。
 - [x] **WPF-I01-05** 既有centerRuntime接入App/session/Settings，live epoch失效与完整草稿保护；fixed49d71源码与相关局部独审通过，mounted证明归06。
-- [ ] **WPF-I01-06** 直接消费者回归及真实Conversation/Cookie mounted验收，受控故障/完整清理分别记录。
+- [x] **WPF-I01-06** 4direct/affected types与真实App/Cookie受控HTTP四组实际通过；[第三实际](../../docs/evidence/wpf-i01/runtime-app/browser-third-20261007/README.md)，真实中心安全/provider不在此证明内。
 - [ ] **WPF-I01-07** 新固定组合独立review与合法main接收，原发布组合不暗换。
 
 ## 当前运行边界
 
 原30s普通检查段CLOSED：4新增direct PASS/10旧未选，affected noEmit首红与fix0保留；10834ms/未用19166不转用。首独立browser60s已实际FAILED（Files全页locator歧义），0/4完整组/0PNG，outerexit1与完整ownedRETURN见[原件](../../docs/evidence/wpf-i01/runtime-app/browser-first-20261007/README.md)。保守charge8540、未用51460封闭，无自动第二次。0PG/1Chrome/2自有HTTP、256MiB scratch/8MiB retained边界保持。ee9bd已仅在原browser中收窄活跃Conversation composer的Files定位，保原四组/对话框/回焦点/timeout；actual需另一次经理交接，不沿余量自行启动。
 
-修后第二次ee9bd/d779独立60s已实际FAILED/2of4，charge13436/未用46564封闭。root3bfd接收原件与完整RETURN。5438已补公开附件保护确认前置并独审通过，保原四组/完整稿与旧authority隔离；[第三actual独立60s候选](../../docs/evidence/wpf-i01/runtime-app/browser-protected-leave-prepared-20261007/phase.json)仅准备，不借旧额度、不重跑已绿局部检查。
+修后第二次ee9bd/d779独立60s已实际FAILED/2of4，charge13436/未用46564封闭。root3bfd接收原件与完整RETURN。5438已补公开附件保护确认前置并独审通过，保原四组/完整稿与旧authority隔离；[第三actual独立60s候选](../../docs/evidence/wpf-i01/runtime-app/browser-protected-leave-prepared-20261007/phase.json)已在第三独立60s实际通过4/4、双390PNG与完整ownedRETURN，计费8814/未用51186 CLOSED；不借旧额度、不重跑已绿局部检查。
 
 ## 历史材料
 

@@ -1,0 +1,6 @@
+9:58:10 AM [vite] http proxy error: /api/plugins/00000000-0000-4000-8000-000000000001/runtime/commands
+Error: socket hang up
+    at Socket.socketOnEnd (node:_http_client:790:25)
+    at Socket.emit (node:events:526:24)
+    at endReadableNT (node:internal/streams/readable:1757:12)
+    at process.processTicksAndRejections (node:internal/process/task_queues:90:21)

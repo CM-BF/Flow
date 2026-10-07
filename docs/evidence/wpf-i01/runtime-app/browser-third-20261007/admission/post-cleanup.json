@@ -1,0 +1,73 @@
+{
+  "observedAt": "2026-10-07T16:58:52.399044+00:00",
+  "run": "i01-leave-20261007-165756-53bb61",
+  "processes": [
+    {
+      "kind": "pid",
+      "id": 90137,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 90144,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 90156,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 90208,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 90144,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 90156,
+      "state": "ESRCH"
+    }
+  ],
+  "paths": [
+    {
+      "path": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/scratch",
+      "state": "ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules/.vite",
+      "state": "ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules/.vite-temp",
+      "state": "ENOENT"
+    }
+  ],
+  "scenarioCleanup": {
+    "contextClosed": true,
+    "httpClosed": true,
+    "errors": []
+  },
+  "workerGroupAbsent": true,
+  "chromeExit": {
+    "code": 0,
+    "signal": null
+  },
+  "chromeStdoutEOF": true,
+  "chromeStderrEOF": true,
+  "chromeLog": {
+    "observedBytes": 608,
+    "retainedBytes": 608,
+    "truncatedBytes": 0,
+    "finalAfterEOF": true
+  },
+  "PG": false,
+  "adminEnv": false,
+  "independentPortProbe": false,
+  "errors": [],
+  "fullReturn": true
+}

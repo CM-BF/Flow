@@ -1,0 +1,193 @@
+{
+  "observedAt": "2026-10-07T16:57:56.683061+00:00",
+  "source": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+  "executionHead": "b447e357eeac82aef19be488d806e898b0c30439",
+  "actualRemote": "b447e357eeac82aef19be488d806e898b0c30439",
+  "branch": "codex/web-plugin-runtime-app",
+  "dirty": "",
+  "claimObservedAt": "2026-10-07T16:56:23.600Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/plugin-integration/react.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/test/plugin-integration.test.ts",
+      "apps/web/test/plugin-management-integration.browser.ts",
+      "apps/web/test/plugin-management-integration.fixture.ts",
+      "docs/evidence/wpf-i01",
+      "plans/wpf-i01-plugin-integration"
+    ],
+    "state": "active",
+    "branch": "codex/web-plugin-runtime-app",
+    "origin": "new",
+    "taskId": "WPF-I01",
+    "worker": "workspace_panels_owner",
+    "claimId": "61abce36-a4d1-4531-9b04-dedaae86108b",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+    "createdAt": "2026-10-07T15:12:21.486Z",
+    "updatedAt": "2026-10-07T15:12:21.486Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlap": [],
+  "pins": {
+    "source": 218,
+    "external": 42,
+    "packet": 11,
+    "totalIncludingPrior": 317
+  },
+  "roots": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+      "dev": 16777234,
+      "ino": 124239683,
+      "uid": 501,
+      "mode": "0o755",
+      "symlink": false
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k",
+      "realpath": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k",
+      "dev": 16777234,
+      "ino": 124347840,
+      "uid": 501,
+      "mode": "0o700",
+      "symlink": false
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web",
+      "dev": 16777234,
+      "ino": 124239698,
+      "uid": 501,
+      "mode": "0o755",
+      "symlink": false
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules",
+      "dev": 16777234,
+      "ino": 124300671,
+      "uid": 501,
+      "mode": "0o755",
+      "symlink": false
+    }
+  ],
+  "absences": [
+    {
+      "path": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/raw",
+      "absent": true
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/outer",
+      "absent": true
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-leave-confirmation-uzfb8r6k/scratch",
+      "absent": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules/.vite",
+      "absent": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules/.vite-temp",
+      "absent": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/.env",
+      "absent": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/.env.local",
+      "absent": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/.env.development",
+      "absent": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/.env.development.local",
+      "absent": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/.env",
+      "absent": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/.env.local",
+      "absent": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/.env.development",
+      "absent": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/.env.development.local",
+      "absent": true
+    }
+  ],
+  "nativeIdentityDisplay": [
+    "Identifier=com.google.Chrome",
+    "Authority=Developer ID Application: Google LLC (EQHXZ8M8AV)",
+    "Authority=Developer ID Certification Authority",
+    "Authority=Apple Root CA",
+    "TeamIdentifier=EQHXZ8M8AV"
+  ],
+  "freeBytes": 20051828736,
+  "minimumFreeBytes": 18119655424,
+  "managerMinimumFreeBytes": 14950858752,
+  "frozenBindingMinimumFreeBytes": 18119655424,
+  "preparedBytes": 149964,
+  "priorPhases": [
+    {
+      "state": "CLOSED",
+      "run": "i01-browser-20261007-160438-84ee0c",
+      "actual": "FAILED",
+      "chargeMs": 8540,
+      "unusedMs": 51460,
+      "transferCreditMs": 0,
+      "accounting": {
+        "path": "/private/tmp/i01-browser-admission-cridfl87/accounting.json",
+        "realpath": "/private/tmp/i01-browser-admission-cridfl87/accounting.json",
+        "bytes": 2415,
+        "sha256": "1a5582945d3ce9e4a1c489fa83ba0929cfe96c3595ea7341de342db759215023"
+      },
+      "manifest": {
+        "path": "/private/tmp/i01-browser-admission-cridfl87/raw-manifest.json",
+        "realpath": "/private/tmp/i01-browser-admission-cridfl87/raw-manifest.json",
+        "bytes": 3277,
+        "sha256": "cffbd4f6b778f767c0676c46501820507b418001751903b382a9118aac905713"
+      }
+    },
+    {
+      "state": "CLOSED",
+      "run": "i01-files-20261007-162618-5fbf4e",
+      "actual": "FAILED",
+      "chargeMs": 13436,
+      "unusedMs": 46564,
+      "transferCreditMs": 0,
+      "accounting": {
+        "path": "/private/tmp/i01-scoped-files-admission-1mrplt7y/accounting.json",
+        "realpath": "/private/tmp/i01-scoped-files-admission-1mrplt7y/accounting.json",
+        "bytes": 2786,
+        "sha256": "25c92c841b80eb707f4c8b9fa237d41ea23ca187df6796cef1135ac52148c6b5"
+      },
+      "manifest": {
+        "path": "/private/tmp/i01-scoped-files-admission-1mrplt7y/raw-manifest.json",
+        "realpath": "/private/tmp/i01-scoped-files-admission-1mrplt7y/raw-manifest.json",
+        "bytes": 3508,
+        "sha256": "64795de8b2a9e09ba94a35737437e6c7b12c1c1d71bd5ed5d232ee1c0ac72df1"
+      }
+    }
+  ],
+  "localPhase": "CLOSED_NO_TRANSFER",
+  "runtimeHandoff": "d01 sole NEXT after K01 independent recovery; immutable KEEP;0PG/2ownedHTTP/1Chrome",
+  "preparationObservation": "Initial recursive provenance checker incorrectly compared historical before-pin with current disk and stopped before creating any grant or runtime. Historical before now verified against fixed prior Git; execution pins remained unchanged.",
+  "errors": []
+}

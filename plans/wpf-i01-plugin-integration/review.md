@@ -1,14 +1,18 @@
 # WPF-I01 当前后继独立 review
 
-状态：APPROVED（限定固定源码与相关局部证据；新公开确认前置SOURCE_ONLY通过，修后browser NOT_RUN）。
+状态：APPROVED（精确六source组合5438；原source/local与第三mounted actual限定通过，待合法main接收）。
 
 Target: `5438e375a92f47c1a68d81aeed172a1bfdf05962`；Base: `3c9345df4aec85a37e8a2a155e079db260d515b1`。
 
-当前唯一[六source manifest](../../docs/evidence/wpf-i01/runtime-app/source-manifest.json)。49d71源码/local由[root20d2](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json)批准（4PASS/10未选、affected noEmit首2/fix0）；ee9bd scoped Files由[root5b002](../../docs/evidence/wpf-i01/runtime-app/root-i01-first-failure-locator-fix-review-20261007.json)批准。5438仅增加四行真实公开附件离开确认，获[root3bcc](../../docs/evidence/wpf-i01/runtime-app/root-i01-protected-leave-source-review-20261007.json)APPROVED/0finding；产品、四组、原held ACK/reconnect/完整draft及timeout不变，无新工程运行。
+当前唯一[六source manifest](../../docs/evidence/wpf-i01/runtime-app/source-manifest.json)。49d71源码/local由[root20d2](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json)批准（4PASS/10未选、affected noEmit首2/fix0）；ee9bd scoped Files由[root5b002](../../docs/evidence/wpf-i01/runtime-app/root-i01-first-failure-locator-fix-review-20261007.json)批准。5438仅增加四行真实公开附件离开确认，获[root3bcc](../../docs/evidence/wpf-i01/runtime-app/root-i01-protected-leave-source-review-20261007.json)APPROVED/0finding；产品、四组、原held ACK/reconnect/完整draft及timeout不变。第三实际4/4已通过，见下方当前证据。
 
 实际范围：第一49d/13ddb FAILED0/4/0PNG；第二ee9bd/d779 FAILED2/4/0PNG，完整草稿及UNKNOWN原key/body重试为已过两组，第三等待Connect超时，后续断开撤权/重连/双主题未完成。[root3bfd实际审](../../docs/evidence/wpf-i01/runtime-app/root-i01-second-failure-return-review-20261007.json)接收失败与完整ownedRETURN。源码链指出缺公开保护确认；无失败DOM不冒直接观察。旧原件与closed预算不改（8540与13436计费，未用51460与46564不转）。
 
-[第三准备](../../docs/evidence/wpf-i01/runtime-app/browser-preparation.json)仅独立60s=45work+15cleanup候选，无grant。三caller逐字不变，218source仅browser换pin、42external同；plan/status/review仅历史provenance，未来绑定fresh clean execution HEAD。预备与原P2修复[626](../../docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-review-20261007.json)/[739](../../docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-approved-20261007.json)历史保留。实际验收必须outerexit与finalstdout终态/精确四组/完整ownedcleanup，早期raw不够；fixture.close与groupabsence不冒独立portprobe。真实App/受控Cookie HTTP不等真实中心安全、provider或部署。
+[第三准备](../../docs/evidence/wpf-i01/runtime-app/browser-preparation.json)已消费独立60s=45work+15cleanup，b447执行/5438源码，实际outerexit0、四组PASS、双PNG与exactRETURN。三caller逐字不变，218source仅browser换pin、42external同；plan/status/review仅历史provenance，实际绑定fresh clean execution HEAD b447。预备与原P2修复[626](../../docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-review-20261007.json)/[739](../../docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-approved-20261007.json)历史保留。实际验收必须outerexit与finalstdout终态/精确四组/完整ownedcleanup，早期raw不够；fixture.close与groupabsence不冒独立portprobe。真实App/受控Cookie HTTP不等真实中心安全、provider或部署。
+
+## 当前第三actual
+
+[18原件及限定](../../docs/evidence/wpf-i01/runtime-app/browser-third-20261007/README.md)：8814/60000已计、余51186封闭。原两次FAIL保留。root[第三actual独审](../../docs/evidence/wpf-i01/runtime-app/root-i01-third-browser-result-review-20261007.json)APPROVED/0blocking；四组、原key/body、截图与清理已独核。main尚未接收；[精确接收清单](../../docs/evidence/wpf-i01/runtime-app/main-intake.json)。
 
 ## 原始review历史（不作当前批准）
 
