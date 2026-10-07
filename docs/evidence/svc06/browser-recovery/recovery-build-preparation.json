@@ -40,8 +40,8 @@
   "evidenceBindings": [
     {
       "path": "docs/evidence/svc06/browser-recovery/recovery-build-proposal.md",
-      "bytes": 2936,
-      "sha256": "f32fb363b85464561be0dac63592753aa6810e13c435b66301ea010b9efc243b"
+      "bytes": 3122,
+      "sha256": "13d81af0cabbad8685c27577e0b298cbbf17929e4933f05a06237fa2c6d81699"
     },
     {
       "path": "docs/evidence/svc06/browser-recovery/recovery-build-local-01-reservation.json",
@@ -98,7 +98,7 @@
     "rawBytes": 698,
     "groups": "2 absent/dualEOF",
     "tmp": "2 exactempty removed",
-    "firstCallerFailure": "Original unpersisted child reports UNKNOWN; charge maximum25s, no pass/cleanup claim"
+    "firstCallerFailure": "Original unpersisted child reports UNKNOWN; charge maximum25s and preserve forward8MiB scratch+128KiB raw cap, no pass/cleanup claim"
   },
   "limits": {
     "workSeconds": 420,
@@ -115,5 +115,13 @@
   "actualBuild": "NOT_RUN",
   "coldStartup": "NOT_RUN_SEPARATE_GATE",
   "fourAppNewTuple": "NOT_RUN_SEPARATE_GATE",
-  "personal": "NO_AUTHORIZATION_CONSUMED"
+  "personal": "NO_AUTHORIZATION_CONSUMED",
+  "unresolvedFirstLocalAllocation": {
+    "scratchBytes": 8388608,
+    "rawBytes": 131072,
+    "totalBytes": 8519680,
+    "disposition": "UNKNOWN_RETAIN_FORWARD_CAP_NOT_RELEASED",
+    "evidence": "recovery-build-local-01-failure.json",
+    "rule": "Next build complete fresh floor must explicitly include this cap once. Second-round cleanup is separate; no resource scan/deletion or child closure is inferred."
+  }
 }

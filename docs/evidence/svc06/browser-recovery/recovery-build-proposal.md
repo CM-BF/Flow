@@ -20,6 +20,6 @@ Node薄入口核原40316B输入和已有04da差量，再按path替换七个准�
 
 `recovery-build-local-02.json`：真实Node加载固定派生输入与严格参数2例；真实Python旧/新入口导入、默认路径、专用parent→wx输出顺序与重复拒绝2例。Python生命周期用自有微型OPS依赖，未启动builder；161ms/698B，两组absent/双EOF，两exact空scratch删除。
 
-首轮检查后的汇总脚本误引用 `stdout_bytes`，子报告尚未持久化；原reservation及调用错误保留于 `recovery-build-local-01-failure.json`，该轮测试/清理证据UNKNOWN不计通过，并按最大25s扣普通预算。只重取这两个直接入口证据，未重跑旧25例、构建或服务。旧实际失败/KEEP完全不动。
+首轮检查后的汇总脚本误引用 `stdout_bytes`，子报告尚未持久化；原reservation及调用错误保留于 `recovery-build-local-01-failure.json`，该轮测试/清理证据UNKNOWN不计通过，并按最大25s扣普通预算；其原8MiB scratch＋128KiB未持久raw上限共8,519,680B仍作为未释放分配保守计入下次完整fresh floor，不能由第二轮RETURN抵消。不扫描或删除未知资源。只重取这两个直接入口证据，未重跑旧25例、构建或服务。旧实际失败/KEEP完全不动。
 
 源码与入口独审后才申请唯一构建窗口。构建成功仍不是冷启动或恢复批准：还需新artifact真实默认三角色/初始化正证据/闭合自有资源，以及新source/context四App兼容。随后才按受审held-target接口、原同operation23有限续接，不重放bootstrap/原迁入；无自然领取证据时actualClaim仍NO_ASSIGNMENT_OBSERVED。
