@@ -1,0 +1,83 @@
+{
+  "startedAt": "2026-10-07T13:38:19.447Z",
+  "source": "f471c30c7939eac89158d3e68130b1b971a28eac",
+  "bindings": [
+    {
+      "path": "pg-once.py",
+      "bytes": 17794,
+      "sha256": "fa9478b153ca01cc417aec61477df826bda2d2487d3730e1268fe2a9a92bdfc7"
+    },
+    {
+      "path": "pg-environment.test.py",
+      "bytes": 2761,
+      "sha256": "31746049997b057a63ac6c505d5fc46fece3ab8e3b757d5b79e5d48cdbad57e4"
+    }
+  ],
+  "claimObservedAt": "2026-10-07T13:38:19.321Z",
+  "freeBytes": 21623533568,
+  "floorBytes": 7600000000,
+  "budgetSource": "Mika/d01 13:36 sentinel grant min7515275264; conservative7600000000 preserves MSG03 PG+Chrome and existing KEEP/potential declarations, reserve once",
+  "limits": {
+    "totalSeconds": 10,
+    "cleanupReservedSeconds": 3,
+    "childMax": 1,
+    "temporaryBytes": 2097152,
+    "rawBytes": 131072
+  },
+  "temporary": {
+    "path": "/private/tmp/flow-m02-env-tv0sp8wv",
+    "dev": 16777234,
+    "ino": 124168881,
+    "removed": true,
+    "endSample": {
+      "bytes": 0,
+      "entries": 1,
+      "peak": "UNKNOWN"
+    },
+    "exactAbsent": true
+  },
+  "PG": 0,
+  "HTTP": 0,
+  "Chrome": 0,
+  "provider": 0,
+  "privateEnvironmentValuesRead": false,
+  "wholeExternalWall": null,
+  "process": {
+    "pid": 71942,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 58,
+    "observed_bytes": 97,
+    "retained_bytes": 97,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "label": "environment-sentinel",
+    "rawComplete": true
+  },
+  "unknown": false,
+  "raw": "1/1 environment sentinel passed; pure actual-function extraction + two Launch/exec wiring checks\n",
+  "rawBytes": 97,
+  "rawSha256": "28c26806cbfad75fcef0014877050341b4557dbc3316b5b06429b0309b2cfb15",
+  "endedBeforePersistenceAt": "2026-10-07T13:38:19.507Z",
+  "elapsedBeforePersistence": 0.05970491690095514
+}
