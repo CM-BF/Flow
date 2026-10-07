@@ -1,0 +1,97 @@
+{
+  "task": "WPF-PLUGIN-RUNTIME01",
+  "parent": "X01 / X01-06",
+  "recordedAt": "2026-10-07T12:53:47.863Z",
+  "state": "READY_FOR_SCOPED_MAIN_INTAKE_NOT_INTEGRATED",
+  "owner": "w01_owner / gpt-6-astra Ultra",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+  "branch": "codex/web-plugin-runtime-management",
+  "claim": {
+    "id": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+    "version": 1,
+    "state": "active; all seven scopes STOP after normal metadata seal"
+  },
+  "base": "b67530bb025162629895d11482b5505d4a885c91",
+  "implementation": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "executionHead": "756fde2afffc8131f485857e8a65300145b11be3",
+  "implementationCommits": [
+    "f0ed0b3e208d84dd0aa420f5ae944cbee0c5dcc9",
+    "20ac1158c5b52093c5fab849886e9578b86eb6e2",
+    "6544b66b9b711ba861c67547417c3eb5c5bca074",
+    "1ed0636b501ed63c23ac13e5a3d8407071529b0f",
+    "0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+    "a952ae81fefd3a82c9dfe42067048bcf2702d1c3"
+  ],
+  "exactProductFiles": [
+    {
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "bytes": 21512,
+      "sha256": "e3a9392e50a140d2f628c144000382360882355b5dc4b4d16aaafaa1cf109400"
+    },
+    {
+      "path": "apps/web/src/plugin-management/runtime-command.ts",
+      "bytes": 6251,
+      "sha256": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a"
+    },
+    {
+      "path": "apps/web/test/plugin-management/browser.ts",
+      "bytes": 39142,
+      "sha256": "93f0152e8a01ae28806bf2e78390d8f81815a25d3a0a3a4194e4c9c372742a3a"
+    },
+    {
+      "path": "apps/web/test/plugin-management/fixture/main.tsx",
+      "bytes": 7258,
+      "sha256": "544d11ffba2031d60c020d649fbce1e1a3f145b3b7b2e9408bf2c914076ce2c2"
+    },
+    {
+      "path": "apps/web/test/plugin-runtime-command.test.ts",
+      "bytes": 11066,
+      "sha256": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab"
+    }
+  ],
+  "preferredIntegration": "Apply only the reviewed five literal final blobs or review the listed product commits; resolve current-main conflicts explicitly. Owner does not merge main. Evidence archives are separate supporting inputs.",
+  "review": "browser-b2-actual/root-actual-visual-review.json",
+  "checks": [
+    {
+      "kind": "strict",
+      "source": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+      "result": "exit0; historical exact input scope",
+      "evidence": "direct-only-r4/root-prior-local-review.json"
+    },
+    {
+      "kind": "direct",
+      "source": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+      "result": "15 exact cases/one file, actual parent+child0, full EOF",
+      "evidence": "direct-only-r4-actual/README.md"
+    },
+    {
+      "kind": "browser",
+      "source": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+      "result": "actual outer0/unique PASS; original six checks/two390 PNG; scoped independent approval",
+      "evidence": "browser-b2-actual/README.md"
+    }
+  ],
+  "fixtureStartup": {
+    "entry": "apps/web/test/plugin-management/browser.ts::runPluginRuntimeManagementChecks",
+    "mode": "runtime DTO fixture with real React/Tailwind/CSS/PluginHost/PluginManagement/runtime-command/FlowClient",
+    "privateVite": "configFile:false/envDir:false; dynamic loopback; no site proxy/environment",
+    "runtime": "owned native Chrome sibling and sandboxed Node, two owned dynamic HTTP servers, zero PG/provider",
+    "legacyEntry": "not invoked",
+    "caller": "/private/tmp/prm-b2/supervisor.py (consumed; not a new-run instruction)",
+    "rawManifest": "browser-b2-actual/index.json"
+  },
+  "cleanup": "browser-b2-actual/outer/return-receipt.json",
+  "main": "NOT_INTEGRATED",
+  "deployment": "NOT_DEPLOYED",
+  "followups": [
+    "production App/session controller injection is outside this claim",
+    "readable authorized runner candidates; current exact UUID is an advanced temporary interface",
+    "config/grants remain read-only",
+    "removal references are NOT_TAKEN future work",
+    "Browser extensions remain independent"
+  ],
+  "historicalFailuresPreserved": [
+    "original30082ms/30000ms parent FAILED with15JSONpartial",
+    "browser b1 FAILED12385ms/reported0checks0PNG"
+  ]
+}

@@ -1,6 +1,6 @@
 # WPF-PLUGIN-RUNTIME01：中心插件启停模块
 
-状态：in-progress；创建/更新：2026-10-07T10:51:19.274Z。这是 [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) 原 X01-06 的有界模块子片（Mika正式确认，root核canonical），WPF-001-05仅保管理追溯，co-lead Web/root，唯一 owner w01_owner / Astra Ultra。
+状态：in-progress（已审待主线接收）；创建：2026-10-07T10:51:19.274Z；更新：2026-10-07T12:54:44.662Z。这是 [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) 原 X01-06 的有界模块子片（Mika正式确认，root核canonical），WPF-001-05仅保管理追溯，co-lead Web/root，唯一 owner w01_owner / Astra Ultra。
 
 ## 目标与范围
 
@@ -19,14 +19,14 @@ fixture 在 lazy view 之外真实持有 controller，原 readonly 旅程保留�
 ## TODO
 
 - [x] WPF-PLUGIN-RUNTIME01-01：公共读取与 session command controller；明确错误/冻结/失效。
-- [ ] WPF-PLUGIN-RUNTIME01-02：管理组件启停与只读身份/可用性展示；fixture 持有实际生命周期。
-- [ ] WPF-PLUGIN-RUNTIME01-03：受影响直接测试、类型与浏览器入口准备/实际验证，失败保真。
+- [x] WPF-PLUGIN-RUNTIME01-02：管理组件启停与只读身份/可用性展示；fixture 持有实际生命周期。
+- [x] WPF-PLUGIN-RUNTIME01-03：受影响直接测试、类型与浏览器入口准备/实际验证，失败保真。
 - [ ] WPF-PLUGIN-RUNTIME01-04：固定源码独审与限定主线接收。
 - [ ] WPF-PLUGIN-RUNTIME01-05：后继只读任务引用视图（NOT_TAKEN）；固定client与契约集成后另行确定scope，不是当前七范围实现或b1验收条件。
 
 ## 验收与边界
 
-覆盖首次 enable/disable ACK、preflight、initial409、unknown→retry409→GET仍unknown→原ACK、重复点击、close/collapse重挂、晚session、exact输入不变。浏览器仅模块 fixture，可读性/键盘/390双主题，未获实际窗口前 NOT_RUN。单文件 direct/noEmit 提案先给准确依赖/预算，0PG/Chrome 本源码段。不执行现历史浏览器自动 DB 入口。
+覆盖首次 enable/disable ACK、preflight、initial409、unknown→retry409→GET仍unknown→原ACK、重复点击、close/collapse重挂、晚session、exact输入不变。浏览器仅模块fixture；a952实际原六组/两390主题图已独立批准，精确覆盖与未验状态见当前review。历史strict0/direct15保持原源范围；未重复工程检查。不执行历史浏览器自动DB入口。
 
 固定 base b67530bb025162629895d11482b5505d4a885c91，已含 shared client 9f5d。当前6544 strict0与新r4 direct15完整实际已独审接受；原30秒段direct JSON仅部分证据/父FAILED仍保留，旧失败不改判。技能见 evidence/skills.json；clean-code 检查命名、单一 authority、错误/取消、重复和必要场景，记录实际发现。
 
@@ -42,11 +42,11 @@ fixture 在 lazy view 之外真实持有 controller，原 readonly 旅程保留�
 
 沿[已接受设计](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4/caller-repair-peer.md)修复启动raw余量、互斥分区及清理异常后继续收尾。原产品不动，新direct-only候选20s含5cleanup未运行；完整输入/命令/保留上限见[r4准备](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4/preparation-summary.json)。不重跑strict、不接后继HOST/ACK新界面。源码准备待独审后由manager安排一次有限段；旧30s封账不继承信用。
 
-## 当前 direct-only 实际结果
+## 历史：direct-only 实际结果
 
 复用源6544，独立r4真实父/子exit0及15例完整结果通过，882/20000ms新段关闭，全部owned清理和原件见[actual](../../docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/README.md)。原30秒失败未改；既有strict不重跑。本次直接回归与完整归还已获root独立接受；下一步是管理组件浏览器交互，生产App接线及HOST新合同消费仍分别后继。全部七scope在本次封存后STOP，claim保留。
 
-## 模块浏览器准备（当前 source-only）
+## 历史：模块浏览器source-only准备
 
 [固定入口与验收提案](../../docs/evidence/wpf-plugin-runtime-management/browser-preparation/README.md)沿原六组/两390图，不调用legacy双PG、不引入production App session或新HOST DTO。当前只准备，旧strict/direct15不能当浏览器通过。后继日用候选资料以root固定de547公共接口研究为输入：绑定snapshot revision/version，空页可next/cursor409显式重启，同名按exact runner/store/API消歧；读取失败不造writeUNKNOWN、候选刷新不改冻结key/body。尚未在本slice实现。
 
@@ -58,12 +58,18 @@ fixture 在 lazy view 之外真实持有 controller，原 readonly 旅程保留�
 
 [root固定研究](../../docs/evidence/wpf-plugin-runtime-management/browser-review/removal-reference-future-research.json)只作后继输入：client676ed590须连同contract81a064cb集成基线后才能消费。单页最多40条/64KiB，empty仍可next，registration-only与independent snapshot不推总量或全局安全移除；hostRelease为unknown、physicalRemoval未授权。复用既有宿主管理扩展点，窄identity-bound读展示保留typed cursor409并显式restart；session/material/installation operation变更使旧响应失效，旧物料数据不能显示为当前物料。不得新增生命周期store，不得改UNKNOWN命令的冻结key/body。本后继尚未领取或实现，不扩大本次七scope/六browser验收。
 
-## 当前首次browser实际
+## 历史：首次browser实际
 
 [b1失败与清理](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/README.md)完整封存：原6组旅程到第六组read refresh自然焦点断言失败，reported0/6/0PNG，outer1；不得补签前五通过。保守12,385ms已用/47,615ms未用，不自动再跑。后继只在原scope处理focus保留并等待真实decoded read settlement，保原UNKNOWN/写次数/会话/六组断言，禁止末尾手动focus掩盖。当前原source不变，source/native接受与实际失败分层。
 
-## 当前焦点修复固定安全点
+## 历史：焦点修复固定安全点
 
 [a952焦点修复与同caller后继](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/README.md)只复用现有guarded read控件模式，保实际读完成后的自然focus验收。首失败获独立接受但不算PASS；新source/后继runtime尚未通过。不动原六组其他行为，旧packet完全冻结；当前仅SOURCE/PREPARED，正常封存后STOP，待manager正式资源安排。
 
 本自然封存已收到[a952/b2限定独审](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-source-review.json)：0finding、同native边界接受，实际仍未复验。正常metadata HEAD重绑不触发递归source review；下一运行继续manager唯一资源协调。
+
+## 当前固定交付与后继
+
+[a952五源/六组/双图独立接受](../../docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/README.md)，真实outer0、唯一PASS和完整cleanup；原b1焦点失败保留，不能补签旧五组。60s浏览器段以19951ms已用/40049ms未用安全关闭，不追加运行。截图为synthetic DTO真实HTTP模块的折叠B状态，未冒真实App和全平台验收。
+
+[主线接收包](../../docs/evidence/wpf-plugin-runtime-management/main-intake.json)列base、六个产品commit、五个最终literal/hash、fixture启动说明及各固定检查。下一步由原集成owner接收；本owner正常封存后全七scope STOP、claim保留，main/部署仍未发生。真实App/session、日用可读后端候选与removal引用按既定独立后继，不把整个X01-06标Done。

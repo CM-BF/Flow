@@ -1,0 +1,54 @@
+{
+  "recordedAt": "2026-10-07T12:53:47.863Z",
+  "decision": "APPROVED_SCOPED_BROWSER_VISUAL_AND_COMPLETE_RETURN",
+  "source": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "actualHead": "756fde2afffc8131f485857e8a65300145b11be3",
+  "actualExit": 0,
+  "terminal": "PASS",
+  "checks": [
+    "initial typed409 preserves the command draft",
+    "UNKNOWN survives lazy close/collapse, successful read and rejected original retry",
+    "later same-revision HTTP observation overrides historical ready ACK without another write",
+    "only original accepted replay resolves UNKNOWN; explicit disable uses a new identity",
+    "decoded old-session ACK cannot replace the new center state",
+    "bounded fixture keyboard refresh and two 390px themes; not production Settings"
+  ],
+  "PNGs": 2,
+  "visualScope": "Center B advanced identity collapsed; light focus ring, dark after theme toggle; not expanded UUID or production App",
+  "phase": {
+    "totalMs": 60000,
+    "priorFailedMs": 12385,
+    "currentActualOuterMs": 7565.776166971773,
+    "currentConservativeChargeMs": 7566,
+    "cumulativeMs": 19951,
+    "unusedMs": 40049,
+    "state": "CLOSED",
+    "parentHistoricalCumulativeMs": 19864,
+    "terminalCurrentLateMs": 7480,
+    "unusedNotRuntimePermission": true
+  },
+  "completeReturnAt": "2026-10-07T12:50:25.968903+00:00",
+  "cleanup": {
+    "exactPidPgidAbsent": true,
+    "allThreePortsRefused": true,
+    "fixtureContextClosed": true,
+    "profileScratchAbsent": true,
+    "innerEOF": 3,
+    "outerEOF": 2,
+    "droppedBytes": 0,
+    "errors": []
+  },
+  "originalReturnVisualPendingPreserved": true,
+  "laterIndependentVisualReview": "root-actual-visual-review.json",
+  "history": "b1 FAILED reported0/6 and zero PNG preserved; no retroactive five-group PASS",
+  "notCovered": [
+    "production App/session",
+    "actual backend runtime loading",
+    "real two-center/principal isolation",
+    "host candidate UI",
+    "config/grants writes",
+    "removal-reference UI",
+    "main integration",
+    "deployment"
+  ]
+}

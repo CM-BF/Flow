@@ -1,14 +1,22 @@
-# 当前焦点窄修复审查入口
+# WPF-PLUGIN-RUNTIME01 当前独立审查
 
-状态：APPROVED（限定a952/b2源码准备；未复验）
+状态：APPROVED
 
 Review target commit：a952ae81fefd3a82c9dfe42067048bcf2702d1c3
 
-Scope：原五产品literal；实际只组件与browser两源8+/3-，其余三源未变。[固定manifest与接口边界](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/README.md)。pending期间以aria-disabled+guard替原生disabled，避免自动失焦且不重复读；真实decoded read+settlement后保原toBeFocused，不末尾focus/延长timeout/删除断言。
+Base：b67530bb025162629895d11482b5505d4a885c91；实际执行 metadata HEAD：756fde2afffc8131f485857e8a65300145b11be3。
 
-旧0bc的[source/native限定接受](../../docs/evidence/wpf-plugin-runtime-management/browser-review/README.md)和本次[失败/完整return接受](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/root-failure-review.json)各保固定目标，不迁移为a952实际通过。后继b2只最小priorcarry，worker未改，parent已获同boundary精确接受。
+Scope：apps/web/src/plugin-management/PluginManagement.tsx, apps/web/src/plugin-management/runtime-command.ts, apps/web/test/plugin-management/browser.ts, apps/web/test/plugin-management/fixture/main.tsx, apps/web/test/plugin-runtime-command.test.ts。
 
-[a952/b2源码独审](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-source-review.json)为APPROVED_SOURCE_PREPARATION/0finding；[native边界](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-native-boundary.json)接受精确parent4c599/worker2b4b，不能冒browser/visual通过。
+[root集中实际/双图独审](../../docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/root-actual-visual-review.json)：APPROVED_SCOPED_BROWSER_VISUAL_AND_COMPLETE_RETURN，0 findings。原六组、两个390×844 PNG、真实outer0/唯一PASS/四sealed与五runtime文件匹配；完整owned RETURN与内外EOF/drop0已核。复审接续[a952源码](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-source-review.json)及[同native边界](../../docs/evidence/wpf-plugin-runtime-management/browser-focus-fix/root-native-boundary.json)，不是作者自批。
+
+焦点修复沿既有aria-disabled+pending guard保留控件焦点，真实HTTP解码并结束pending后原toBeFocused通过；未添加末尾focus、扩大timeout或删除断言。UNKNOWN原key/body、同revision较新GET、原ACK、显式新disable及晚session均在实际六组中接受。历史6544 strict/direct15只覆盖其固定输入，不称a952又跑strict。
+
+两图只证明Center B高级身份折叠态浅深主题可读且无横溢；浅色有自然focusring，深色在切主题后取得，不冒独立dark键盘测试、展开长UUID或完整App。受控公开DTO+owned HTTP，真实组件/codec/controller，0PG/provider；生产App/session、真实后台加载、HOST日用候选、config/grants写入、removal仍未实施。
+
+[原件与保守账](../../docs/evidence/wpf-plugin-runtime-management/browser-b2-actual/README.md)：b1首红12385ms原样保留且不能补签五组；b2计费7566ms、总19951/60000，40049ms未用并关闭。原parent19864与terminal7480不改。当前检查PASSED、review APPROVED；main NOT_INTEGRATED、deployment NOT_DEPLOYED。[主线接收清单](../../docs/evidence/wpf-plugin-runtime-management/main-intake.json)限定五源，正常元数据收口不追改固定审查目标。
+
+独立复核步骤：先核worktree/base/固定五hash，再核实际exit、唯一terminal与seal、六exact名称/两PNG、精确cleanup和历史原件。归档与源同target，不用文件名或非空图片冒视觉结论；无需为本记录重跑工程检查。
 
 ## 历史：首次 browser actual（失败/归还已独审）
 

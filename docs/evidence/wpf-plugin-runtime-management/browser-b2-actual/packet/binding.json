@@ -1,0 +1,1073 @@
+{
+  "state": "REVIEWED_SOURCE_BOUND",
+  "task": "WPF-PLUGIN-RUNTIME01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+  "branch": "codex/web-plugin-runtime-management",
+  "head": "756fde2afffc8131f485857e8a65300145b11be3",
+  "implementation": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "claim": {
+    "claimId": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+    "version": 1,
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "scope": [
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/src/plugin-management/runtime-command.ts",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-runtime-command.test.ts",
+      "docs/evidence/wpf-plugin-runtime-management",
+      "plans/wpf-plugin-runtime-management"
+    ]
+  },
+  "sources": {
+    "apps/web/src/plugin-management/PluginManagement.tsx": "e3a9392e50a140d2f628c144000382360882355b5dc4b4d16aaafaa1cf109400",
+    "apps/web/src/plugin-management/runtime-command.ts": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a",
+    "apps/web/test/plugin-management/browser.ts": "93f0152e8a01ae28806bf2e78390d8f81815a25d3a0a3a4194e4c9c372742a3a",
+    "apps/web/test/plugin-management/fixture/main.tsx": "544d11ffba2031d60c020d649fbce1e1a3f145b3b7b2e9408bf2c914076ce2c2",
+    "apps/web/test/plugin-runtime-command.test.ts": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab"
+  },
+  "readOnlyDependencies": {
+    "packages/contracts/src/engineering.ts": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9",
+    "packages/client/src/conversation-acknowledgement.ts": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6",
+    "apps/web/src/plugins/validation.ts": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831",
+    "apps/web/src/plugin-management/runtime-command.ts": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a",
+    "apps/web/src/components/workspace/types.ts": "2d154e26cde9b2d21a02df35ba558fb097c76d4a77e287d71457254b92a1db85",
+    "packages/contracts/src/reconciliation.ts": "00ede24b0b2d2f2612fd674e802903562b33f7be1b90dc5ed0a858824faae3a5",
+    "packages/contracts/src/knowledge.ts": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43",
+    "packages/contracts/src/goal-graph-proposals.ts": "73fc485a2d06eb4600ae65be4bef96acbdbc373131ef642a4f6c2fcd6b4d7b97",
+    "packages/contracts/src/assistant-stream.ts": "499aa71e3f8890c292328781c60536f3d2446ac8177116c87670c14310181f67",
+    "packages/contracts/src/assistant.ts": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997",
+    "packages/contracts/src/tasks.ts": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087",
+    "apps/web/src/assistant-ui.css": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab",
+    "packages/contracts/src/claude-turn-settings.ts": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+    "packages/contracts/src/runner-claim.ts": "67d8dbfa2991426e86b93e74d6443b012e6e1ccee514f8956567dd3c23364a00",
+    "apps/web/src/plugin-management/PluginManagement.tsx": "e3a9392e50a140d2f628c144000382360882355b5dc4b4d16aaafaa1cf109400",
+    "packages/contracts/src/plugins.ts": "656075884d36145ce73c84283bdd26161c4ea65369f326456ffef1e414e6359f",
+    "packages/contracts/src/projects.ts": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0",
+    "packages/contracts/src/goal-plan-confirmation.ts": "018da357868d1b5fddc3f0c8a6fd2cc6432ff21caa45b7e60db98bdc9407c23e",
+    "packages/contracts/src/fixtures.ts": "a88d494b659c413ce6a39e6c342380540e4d97381263434d25235d360cd674c3",
+    "packages/contracts/src/plugin-installations.ts": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394",
+    "packages/contracts/src/goal-delivery.ts": "ed2ae445be57919427ab265e9c19b56a17e28ba50aa619b2484a8b2e7db9067f",
+    "packages/contracts/src/protocol-dispatch.ts": "59a23113e3ba16dc278ca3e16d3612812fb33db21de79a9764b596ff769337ea",
+    "packages/contracts/src/goal-native-executions.ts": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d",
+    "packages/contracts/src/protocol-task.ts": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20",
+    "apps/web/src/styles.css": "52a733934b498c8940c710898f34576c035b37a810bc0b8857600cebe8f8e3c4",
+    "packages/contracts/src/context-observation-history.ts": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126",
+    "packages/client/src/native-activity-body.ts": "0b0260a88c92a83cb43f906150e930fe7444e98e1521695605d9f9d3bc04a418",
+    "packages/contracts/src/native-activity-body.ts": "bade51d2df5537299b818176b5738cc8ef8438bbd315d06292f078e87a9ee8b9",
+    "packages/client/src/plugin-runner.ts": "f74365446f988caaec4e1a287608ab48b1a858d488640eafbf17f9606fb8ead9",
+    "packages/contracts/src/conversation-queue.ts": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b",
+    "packages/contracts/src/native-activity.ts": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a",
+    "packages/client/src/plugin-management.ts": "ab6f2eccaf3460a3829b8abff767da378bb0bfbcf853414c2e7fac452a9e2ead",
+    "packages/client/src/response-json.ts": "c51b90db6be12132df0236aabccfce496dab8b835267a23158ff86361784f459",
+    "packages/contracts/src/plugin-runtime.ts": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0",
+    "packages/contracts/src/goal-graph-runs.ts": "1cfc6108a53c34d3b7864170cf6a0393f61d0487c2dc76305502b9a61643d524",
+    "packages/contracts/src/goal-tool-runs.ts": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db",
+    "packages/contracts/src/runner.ts": "4221ce35157cf4ee91e9c391965ffd224b15c03973b67841525276cfc83887a5",
+    "packages/client/src/index.ts": "c89b0fabeb461a338d27878086c675bcf9d88479b821718695ba9745d819abe6",
+    "packages/contracts/src/goal-context.ts": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b",
+    "packages/contracts/src/usage-readout.ts": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5",
+    "packages/contracts/src/package-artifacts.ts": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056",
+    "packages/contracts/src/execution-profiles.ts": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7",
+    "packages/contracts/src/plugin-artifact.ts": "7993d31c1ffe4f47365b2a5d641c0efbf2b9b7afa21c335fb5e0c1d2a28053df",
+    "apps/web/src/themes.ts": "f25f0264cb00c798a477b1f7e52fe55c77fbaa7e65c1e0f4d86c8ab728037f1f",
+    "apps/web/src/plugins/host.ts": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca",
+    "packages/contracts/src/plugin-runner-claim.ts": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824",
+    "packages/contracts/src/harnesses.ts": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1",
+    "packages/contracts/src/runner-maintenance.ts": "fa94507e8951b4ee1d8b0d84f20cd9b3302ef7019a853e2883d2d15ea669b52e",
+    "apps/web/src/plugin-management/management.css": "c1aadb7d3dc944b98c41f2b7ba48aa66fbee8442af6da31771bd807f2a0ab51c",
+    "apps/web/test/plugin-management/fixture/style.css": "32995333f829e688ef2c7447c963450aefcbc1e0e1cf36ec4f8e791e780f6010",
+    "packages/contracts/src/index.ts": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440",
+    "packages/contracts/src/engineering-profile.ts": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836",
+    "packages/contracts/src/context-transparency.ts": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577",
+    "packages/contracts/src/engineering-native.ts": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5",
+    "packages/contracts/src/active-steering.ts": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311",
+    "packages/contracts/src/conversation-context.ts": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67",
+    "packages/contracts/src/plugin-package-fetches.ts": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166",
+    "packages/contracts/src/context-observation-event.ts": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020",
+    "apps/web/src/plugin-management/use-read.ts": "0f32db860d45717394ceed7576bc06051d8c082271269261b705aadf82c3fbba",
+    "packages/contracts/src/goals.ts": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930",
+    "apps/web/test/plugin-management/fixture/main.tsx": "544d11ffba2031d60c020d649fbce1e1a3f145b3b7b2e9408bf2c914076ce2c2",
+    "apps/web/src/plugins/types.ts": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+    "packages/contracts/src/workspace.ts": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7",
+    "packages/contracts/src/attachments.ts": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93",
+    "packages/contracts/src/conversation-harness.ts": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574",
+    "packages/contracts/src/browser-session.ts": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30",
+    "packages/contracts/src/conversations.ts": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a",
+    "packages/contracts/src/goal-progression.ts": "82d23e7e1da0c8a6d89f779478c113aee497e0563f4f8df6e0e790ed6a78ec10",
+    "apps/web/test/plugin-management/fixture/index.html": "600e659f551a0ca3a675d41ec78bc78599fabb5adf013ef846fd8dc7b63f9f8f",
+    "apps/web/package.json": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+    "packages/client/package.json": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a",
+    "packages/contracts/package.json": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+    "package.json": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+    "pnpm-lock.yaml": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b",
+    "pnpm-workspace.yaml": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65"
+  },
+  "externalPins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/index.js",
+      "bytes": 186,
+      "sha256": "60caffdecbdc5db3bc4ec4e83df9488345ccb271d07533b9210bf5750918d97e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/jsx-runtime.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/jsx-runtime.js",
+      "bytes": 210,
+      "sha256": "b392951a77d0a2e6a6bd017e49d768481ae5b63c4109c6c31f622cf7b2433edc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/jsx-dev-runtime.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/jsx-dev-runtime.js",
+      "bytes": 218,
+      "sha256": "486589120a962721c8281b5acec2f6d49e60ce5f9d908cc814ddfe71c6163ace"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom/index.js",
+      "bytes": 1359,
+      "sha256": "ba1a3e33489f868371561777607e3ee5091df0f7ea3f1a10f789d6b86e4c1505"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom/client.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom/client.js",
+      "bytes": 1373,
+      "sha256": "00e348ab3d6bc2eef908345d0bc4e008c95bcfecec060dfda5c4967953761396"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js",
+      "bytes": 422,
+      "sha256": "32e7efd49a94a765f6d10a1a0a3c02c50c246def17c80c6f0225f85525d98505"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss/index.css",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss/index.css",
+      "bytes": 29786,
+      "sha256": "175f88737ecb7e033059eac4a3b22a3b5f971d5a05d9fd50811610a0714633b2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tw-animate-css@1.4.0/node_modules/tw-animate-css/dist/tw-animate.css",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tw-animate-css@1.4.0/node_modules/tw-animate-css/dist/tw-animate.css",
+      "bytes": 14880,
+      "sha256": "6035b41301945cd65eb233b4653965e3c235338faae51b0f55676d591daaef23"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "bytes": 2670,
+      "sha256": "f109fff88512ed5cf39503b7a4b2a1de1c95bff333cb1d3635454558e3bfefc7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react/dist/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react/dist/index.js",
+      "bytes": 9936,
+      "sha256": "ef1c54fcb1f85f26688a807f32099ff7cd49027791f0d9d8b9b4baebf0fb87c2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite/dist/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite/dist/index.mjs",
+      "bytes": 8351,
+      "sha256": "f80662823db60a7d2060ae37bedb98ab3a5039a32f9ab88a2a0c9c39e79f4d28"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+      "bytes": 679,
+      "sha256": "ec8997c2e5cea26befc76e7bf990750e96babb16977673a9ff3b5c0575d01e48"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "bytes": 367696,
+      "sha256": "764f5f6ee523e6d52caf6e56ce7501e932c4f6e52d06d267887cb7ea70350102"
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "realpath": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "bytes": 18856,
+      "sha256": "9f98b0da3cced7d981b77b8560e80947f36b81fd263bae538b83829990598f0a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/web/node_modules/react/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/package.json",
+      "bytes": 1242,
+      "sha256": "6e003e4e9ed25afa7fdd55613f8aa877cefa9b359d9c13f81ee704030248e24e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/web/node_modules/react-dom/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom/package.json",
+      "bytes": 3054,
+      "sha256": "136d4af63de473392ea79d6a21932b0ed9eb37fe518ce70f4621250f3d79e9bb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/contracts/node_modules/zod/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/web/node_modules/tailwindcss/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss/package.json",
+      "bytes": 2493,
+      "sha256": "3dc86b46c511947ca00838aa3f1776243abe923ac347c092e60a0cbc7ae68559"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/web/node_modules/tw-animate-css/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tw-animate-css@1.4.0/node_modules/tw-animate-css/package.json",
+      "bytes": 1941,
+      "sha256": "66849c41b809ccca55c6484bf102044c73847b21a7d3bc3fd95df133c0a578e1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+      "bytes": 5081,
+      "sha256": "2b906339263f24e9be4219f93d966b4bcf0d4141adc05939a537c3a8fd6f760a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react/package.json",
+      "bytes": 2218,
+      "sha256": "b40248af3bd75adf396d903d042c09ca4f585dcdd9460d51eeeeb83c01a48643"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite/package.json",
+      "bytes": 992,
+      "sha256": "cba2bb8613106ca608bbd757998b2cf56a464584e3848310338fe3fe3b4761aa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+      "bytes": 754,
+      "sha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "bytes": 1663,
+      "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c"
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/Current/Google Chrome Framework",
+      "realpath": "/Applications/Google Chrome.app/Contents/Frameworks/Google Chrome Framework.framework/Versions/154.0.8037.99/Google Chrome Framework",
+      "bytes": 517043520,
+      "sha256": "7c2c82aa54bf5fa7a14d42b0fb0062faaf018d4ace78e413a326f4d7f7b84633"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/cjs/react.production.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/cjs/react.production.js",
+      "bytes": 18040,
+      "sha256": "6b28feb9dbe9781ab1e1b64dea7b29a7c70f03d2dc10eaa966363053d8a9b4e5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/cjs/react.development.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/cjs/react.development.js",
+      "bytes": 49165,
+      "sha256": "97bef56f30daa05320514ea220d7d03eb765635519ff2d5650c4887772aa5767"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom/cjs/react-dom-client.production.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom/cjs/react-dom-client.production.js",
+      "bytes": 625168,
+      "sha256": "8a8147c1cebdb19d82fd11bdb76391be9b20d00edf67cc8e8b30f44e850ce693"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom/cjs/react-dom-client.development.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom/cjs/react-dom-client.development.js",
+      "bytes": 1182785,
+      "sha256": "c10b5e5ad37ca22c88b58bf4ada9a3b655ab79934c0b5cc6bad26f42c774584f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/cjs/react-jsx-dev-runtime.production.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/cjs/react-jsx-dev-runtime.production.js",
+      "bytes": 387,
+      "sha256": "ba9b367119971ed746925a600256d342eb4cc3f2389de013f61e36ff1f3594a5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/cjs/react-jsx-dev-runtime.development.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/cjs/react-jsx-dev-runtime.development.js",
+      "bytes": 12420,
+      "sha256": "e2a2cafea5a317645d75aaad7ca10ac2ed07c178a162a7a675f17b38c6915dd8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/cjs/react-jsx-runtime.production.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/cjs/react-jsx-runtime.production.js",
+      "bytes": 976,
+      "sha256": "1e46f15002696985e80c61d47aaa30dabb03c954270a690f5f7dfbbacfa9002b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/cjs/react-jsx-runtime.development.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/cjs/react-jsx-runtime.development.js",
+      "bytes": 13032,
+      "sha256": "706e324b21fcd94fb728da71b374694d0727d0baee4126011cea583f54e09106"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss/theme.css",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss/theme.css",
+      "bytes": 19586,
+      "sha256": "443d7af364200f8ec8352dc78e39485a118a1840d498c97967bf0ae402b39167"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss/preflight.css",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss/preflight.css",
+      "bytes": 8489,
+      "sha256": "ace8310eed6dc5568a56fc16e1d695cf58da7528d81d66d81649e93cce644df6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss/utilities.css",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tailwindcss@4.3.3/node_modules/tailwindcss/utilities.css",
+      "bytes": 21,
+      "sha256": "0e5844ec75de2fb4a76097b26bb624bf8f9d9cf59f6d947855b743dd25f920fb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/playwright/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "bytes": 1359,
+      "sha256": "8bc2ddebe8d9b051b9ecb87d62c6c63877e59d08617f32c3215681ca8bb70998"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright-core/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "bytes": 876,
+      "sha256": "f061c58427e47e843e26d201f0a57076c734e57c734ecbbd87d4a23b7a20db9b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.mjs",
+      "bytes": 704,
+      "sha256": "a0f5715ea22354f922791a9c53dc012d5d5c067ff9cc4cd35ffb7cd272071a9f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.js",
+      "bytes": 648,
+      "sha256": "4e98f65f0a9d9bcab8cffc0c5cfdd87fd3f5b0be74fc494ff166a466b204cd44"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.mjs",
+      "bytes": 1400,
+      "sha256": "1deb265617d0e87b6d05bf8b3d5bf73cd4b788665c249c609a01b94ceff2eea1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/index.js",
+      "bytes": 36487,
+      "sha256": "54bf5935cf339938408c656bde958047a1217bf77434acdf75a0c717cddaaeae"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.js",
+      "bytes": 697,
+      "sha256": "a58fb2cec4293e7dcf73c58a179898a4f3986666451a19da4e731fa3af63265b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "bytes": 3477183,
+      "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/utilsBundle.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/utilsBundle.js",
+      "bytes": 3048692,
+      "sha256": "2d1ccc01d21b7d54ca99a6305991d7fb6e072ea4e725d7fec5eb6184188c52c9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/package-Dj0mHsMt.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/package-Dj0mHsMt.mjs",
+      "bytes": 32,
+      "sha256": "20f38ff0210e4f838032714d0590012e4fb82ad4095c8930652a13b37420cd80"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/temporary-directory-Du7LpLp9.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/temporary-directory-Du7LpLp9.mjs",
+      "bytes": 782,
+      "sha256": "cb94c0a5d95542df12c0393e2bb5221ab0977bb80df2d031498cda3dbfdfcef7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs",
+      "bytes": 21001,
+      "sha256": "45628eebec60ddb365201377158bbace219ffd8cf5edab1bcde6b8f7f14b0574"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/repl.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/repl.mjs",
+      "bytes": 738,
+      "sha256": "dad3f9708f4eceb99a5885f9c41b03b01bf30db1418514d7b1dc0637f45cdc21"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-DE3OBZuV.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-DE3OBZuV.mjs",
+      "bytes": 55651,
+      "sha256": "2e0d42c5a8b65e752ce2fc27d95d382f463e419e12a5ad397b481c705c65fbf2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-Bqjv9TxC.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-Bqjv9TxC.mjs",
+      "bytes": 1272,
+      "sha256": "180e6425aa9ba5716e9141cc049a7ee5367c7127b03b81aea22612ef04d425ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CBjy4Foe.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CBjy4Foe.mjs",
+      "bytes": 39218,
+      "sha256": "b1156f2ecff29ef55801df8f4e1d9b34a5eae32e04dfcf3b8c2557fe191264c2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CanA6ArK.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CanA6ArK.mjs",
+      "bytes": 13462,
+      "sha256": "e12988f68fd477e488d99c23aae1a9f5be78719e8c0b055642340b25a76e621a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cli.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cli.mjs",
+      "bytes": 124418,
+      "sha256": "8690135061bc49d187143493b82d26a09b7fb71d6dd817d2242cc9dc52506de9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/client-XItNFmsq.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/client-XItNFmsq.cjs",
+      "bytes": 834,
+      "sha256": "cc72bed2d57324f12318efdc804772a2de18a3deb836ab1d63bdc493ad542113"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-B1c7OH6V.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-B1c7OH6V.cjs",
+      "bytes": 94753,
+      "sha256": "dcda008e1b6774abe04d6e7f0c783804e88046691c44615510b628167e5e5179"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/patch-repl.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/patch-repl.cjs",
+      "bytes": 506,
+      "sha256": "33f5f6755270054783f4c568d0d48d4a79fecde965ec6f91ca27f0f949ba6da6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs",
+      "bytes": 1061,
+      "sha256": "853ed9c14711bb11333f3a53803965149509bac4bc515492707f73c83ed9193d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/suppress-warnings.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/suppress-warnings.cjs",
+      "bytes": 497,
+      "sha256": "028063d20bd49083f03a0b1ed4f7a3d55fac1f64f5aca0e58e1ec61601f20ee7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CVaYn9z3.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CVaYn9z3.cjs",
+      "bytes": 474,
+      "sha256": "a29a3db7a21cfd665df96d4cb800b527139903df6e6c52c206f944e854ab59d0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CGfpMDSb.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CGfpMDSb.cjs",
+      "bytes": 13515,
+      "sha256": "e35faacc23082bc2ad2e1d47896932d804914edee932642558fa55098124ac12"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/esbuild/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/package.json",
+      "bytes": 3980,
+      "sha256": "9d0bc453f4e791553c4cc2298ba023b409241fd9801e494741666eb0f6051490"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js",
+      "bytes": 97463,
+      "sha256": "61ec0ba144ff93f4bf0e96ad6fab6f430ede0aa13e27ace8063ed63ba416b3cd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/esbuild@0.28.2/node_modules/@esbuild/darwin-arm64/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/package.json",
+      "bytes": 382,
+      "sha256": "4e652c9e4410daf03da852a664940153601fac397233cdcf276b4b1a312454b9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "bytes": 10590882,
+      "sha256": "10b6243df618d374bb2d5c9cfbe7052e1405f6aa4e53a6164f11a91b9f2e1384"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/postcss-import.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/postcss-import.js",
+      "bytes": 18320,
+      "sha256": "597a8902985a42d0085c1594ebd1255e27f9db7df7d2a78dfdfbd9703f04a482"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/build.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/build.js",
+      "bytes": 205735,
+      "sha256": "8f70232beacfd7089c982b8e0e264b8eeb4bacde0a41d3e9789a6cda63c07ae8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/lib.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/lib.js",
+      "bytes": 11704,
+      "sha256": "5cc4a65cc1147399f73ff4e5b2056179d67b25a3b94c28337004ee8f901def2d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js",
+      "bytes": 1383675,
+      "sha256": "21d5c6b4fb1013b98b1436e9e2a3bb416c8932343ad42ec293bbf760f51a0131"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/dist.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/dist.js",
+      "bytes": 246659,
+      "sha256": "b9e97ef3e94225d562fcd8c6ca4935e69b687fc6291dc3a5bb4bbc700a3de5d6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/client/client.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/client/client.mjs",
+      "bytes": 41953,
+      "sha256": "e34ce742dc7035bd7776221ecc01c6b43d714030d10698f38236f98476ac2042"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/client/env.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/client/env.mjs",
+      "bytes": 612,
+      "sha256": "599a7191be77f077087cde291f7906fa751a794617f42d914f54991fe7bf434f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/rolldown/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/package.json",
+      "bytes": 6101,
+      "sha256": "6cbb247d5ff8ae3d45cba6af71ab424aa887835d917573ad1bb54ef6b2ff3b0f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/@rolldown/binding-darwin-arm64/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@rolldown+binding-darwin-arm64@1.2.12/node_modules/@rolldown/binding-darwin-arm64/package.json",
+      "bytes": 855,
+      "sha256": "f6810bbd99d8d43c6e2e7fcfd647a8fa37b571f4aa9905c40f9d4ac96ea66165"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/parse-D5aRkQ8y.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/parse-D5aRkQ8y.mjs",
+      "bytes": 2628,
+      "sha256": "750da23fd90d2d25559f410704c0129646381809b66f8e7b9b0d4fb1127b08e6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/error-Bj1xBdEY.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/error-Bj1xBdEY.mjs",
+      "bytes": 2956,
+      "sha256": "d668c9b65fa5dac37c2b85dbd96f22e705a94f293c0795d07563c81b16ad93df"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/logs-D6uA606S.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/logs-D6uA606S.mjs",
+      "bytes": 6414,
+      "sha256": "7edfdf44f30af715dbac404c6a6b9909510e82bc9ca6762c127e2ef474dac3da"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/rolldown-jmAeXo_f.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/rolldown-jmAeXo_f.mjs",
+      "bytes": 5393,
+      "sha256": "5d9f6687a36efb9153a47b8780bba27a0ccb56e8882d9600354c25cb538f8f41"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/dist-DKbukT1H.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/dist-DKbukT1H.mjs",
+      "bytes": 7739,
+      "sha256": "f7fdbc4f6653f54996d0044435488bbec4adb6420f796f76b3af68a1264bda18"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/define-config-Demdg3_4.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/define-config-Demdg3_4.mjs",
+      "bytes": 130,
+      "sha256": "e887326cc80caa4248166a9ce863134fc4f7e1314ad9a3d7e380bd1a43f746ab"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/create-bundler-option-DLv8UpsD.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/create-bundler-option-DLv8UpsD.mjs",
+      "bytes": 158627,
+      "sha256": "680d84cb262ba97c2a1db62f04088c25dc2e9ecdbf1fdbcd069cb740a8174107"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/prompt-CH6TK0bC.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/prompt-CH6TK0bC.mjs",
+      "bytes": 49939,
+      "sha256": "f29111163870f5b1f7b184b65454ad6fc31869579b9c88c120ff0c01a7e1fa29"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/normalize-string-or-regex-xyy0kCQR.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/normalize-string-or-regex-xyy0kCQR.mjs",
+      "bytes": 2131,
+      "sha256": "2ea5f29b2a9f5fb509e7f65a9b48a88cd2f179d51adeeeaad7504a84a4ca2886"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/bindingify-input-options-DCTviPFW.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/bindingify-input-options-DCTviPFW.mjs",
+      "bytes": 104089,
+      "sha256": "24440a76827541433b1d3eae25d2f60ba725587f366b055720504e6591018927"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/binding-B4m_2rFW.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/binding-B4m_2rFW.mjs",
+      "bytes": 35039,
+      "sha256": "13e921ba3a7c2addfa2fac691237322ca99dcc1c8e59e082fde357ab95efaadb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/load-config-B55tUA4L.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/load-config-B55tUA4L.mjs",
+      "bytes": 5241,
+      "sha256": "c37bd1a625b99d139c8d5f59bd74428254e5dc58c34c144727759a8670dc6193"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/resolve-tsconfig-DRWFAQ3v.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/resolve-tsconfig-DRWFAQ3v.mjs",
+      "bytes": 5024,
+      "sha256": "785652f9d6dd7bf8a18c51e0eec17478e95f8bce487be854d8a7b19d03ee8c57"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/misc-DOSKtd97.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/misc-DOSKtd97.mjs",
+      "bytes": 1108,
+      "sha256": "a6b94bac1329695387fcaf0d0dbd583165e962a2de13c719e819fc68e4bcb04a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/watch-DPhTjCBr.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/watch-DPhTjCBr.mjs",
+      "bytes": 12019,
+      "sha256": "ffbbff11916071d02c3c9d283aff9d467166ccff6ebe20d1efb54eea2f80269e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/constructors-DDRbtWM1.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/rolldown@1.2.12/node_modules/rolldown/dist/shared/constructors-DDRbtWM1.mjs",
+      "bytes": 2910,
+      "sha256": "be2a1bc055e8fd212361b46b28345d65fdbee552c5e4f514dc9bdadc15e64aac"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@rolldown+binding-darwin-arm64@1.2.12/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@rolldown+binding-darwin-arm64@1.2.12/node_modules/@rolldown/binding-darwin-arm64/rolldown-binding.darwin-arm64.node",
+      "bytes": 16703408,
+      "sha256": "3d3a04898915d7dcd6809ca15c0f02d20fd07ab28b58863a3889e5f61d6620de"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/node/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+node@4.3.3/node_modules/@tailwindcss/node/package.json",
+      "bytes": 1247,
+      "sha256": "2afa932dc85e4edc27126e83f8b31df2d5ec5b15f86b5033182d6a82466ed43f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/oxide/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+oxide@4.3.3/node_modules/@tailwindcss/oxide/package.json",
+      "bytes": 2221,
+      "sha256": "d57385a0a2f680b35a488f9a9816490a6580cc7a989a430e3e426b4c24af212e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+oxide@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+oxide-darwin-arm64@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64/package.json",
+      "bytes": 523,
+      "sha256": "d680d9e2413b5a649c1f61afe62f40dde9ae09c048d977f6f51230ee0751516a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+node@4.3.3/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+node@4.3.3/node_modules/@tailwindcss/node/dist/esm-cache.loader.mjs",
+      "bytes": 409,
+      "sha256": "3791462cdca4c22ba09fa6ffbd540e91c718e97c5951d04e75d3cddc7f77e377"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+node@4.3.3/node_modules/@tailwindcss/node/dist/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+node@4.3.3/node_modules/@tailwindcss/node/dist/index.mjs",
+      "bytes": 54924,
+      "sha256": "2c3666a12e69db8678d9bba492c0f7b2b75abb6800690e31582bf6cc73b7540f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+oxide@4.3.3/node_modules/@tailwindcss/oxide/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+oxide@4.3.3/node_modules/@tailwindcss/oxide/index.js",
+      "bytes": 25046,
+      "sha256": "311f226094e81c0e8d85c6ec02b453b1c0e1239999ae65e78a0d5e02bc005db5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+oxide-darwin-arm64@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64/tailwindcss-oxide.darwin-arm64.node",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+oxide-darwin-arm64@4.3.3/node_modules/@tailwindcss/oxide-darwin-arm64/tailwindcss-oxide.darwin-arm64.node",
+      "bytes": 2926752,
+      "sha256": "dbb1ced076c313dde5f967c1299ea725c866daec610ee510c9fac85dbb147470"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+node@4.3.3/node_modules/lightningcss/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/lightningcss@1.32.0/node_modules/lightningcss/package.json",
+      "bytes": 3835,
+      "sha256": "1b7fbd47a660ecb37d1fa8304a14b726aa44a31bb3d3338f417593f6276b762f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/lightningcss@1.32.0/node_modules/lightningcss/node/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/lightningcss@1.32.0/node_modules/lightningcss/node/index.js",
+      "bytes": 1665,
+      "sha256": "8b7f10ff14d65a382bd7041a747df4a0d4b7c4e22b2842bcaca2588cd86bb045"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/lightningcss@1.32.0/node_modules/lightningcss-darwin-arm64/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/lightningcss-darwin-arm64@1.32.0/node_modules/lightningcss-darwin-arm64/package.json",
+      "bytes": 716,
+      "sha256": "339b80a4fdb2b8d9dc8e85ceda4b43bebdb45c50bdbd10704095131cbd88d0bd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/lightningcss-darwin-arm64@1.32.0/node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/lightningcss-darwin-arm64@1.32.0/node_modules/lightningcss-darwin-arm64/lightningcss.darwin-arm64.node",
+      "bytes": 8516384,
+      "sha256": "6ac4ba1cce8aca75dbcafafa1951955dd30d99ca9953fa81020d0c5246cbd317"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+      "bytes": 67359104,
+      "sha256": "a39670a770c581be982f65dee2ed21729c316660d22e4df1c406142aff7282c8"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/INSTALL_RECEIPT.json",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/INSTALL_RECEIPT.json",
+      "bytes": 4261,
+      "sha256": "ba3a11e50915fe2104fe445e026a572f3d119dc83973756c7cd5a5f038d7540d"
+    }
+  ],
+  "node": {
+    "path": "/opt/homebrew/opt/node@24/bin/node",
+    "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "bytes": 50320,
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "chromeVersion": "154.0.8037.99",
+  "playwrightModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+  "tsxLoader": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+  "fixtureModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/test/plugin-management/browser.ts",
+  "preparedFiles": {
+    "supervisor.py": "4c599b49dd20e874d9a33d2c821638166e524d185d65e3fef2212790815dfc8b",
+    "worker.mjs": "2b4b94857ca7ebe0d52fb0ea5513273f2ffa30d89b285d0b9f31a5bc4fed93f4",
+    "runtime-tsconfig.json": "cc2400a057aa3f216355028e93acae81409266b787af96a9994f6d6925051c9e",
+    "aliases.json": "8532bbf7583c1c8e372b16ad1784758b6e5a3775748e536a736364f1a6088d50",
+    "measure.py": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+  },
+  "expectedChecks": [
+    "initial typed409 preserves the command draft",
+    "UNKNOWN survives lazy close/collapse, successful read and rejected original retry",
+    "later same-revision HTTP observation overrides historical ready ACK without another write",
+    "only original accepted replay resolves UNKNOWN; explicit disable uses a new identity",
+    "decoded old-session ACK cannot replace the new center state",
+    "bounded fixture keyboard refresh and two 390px themes; not production Settings"
+  ],
+  "expectedScreenshots": [
+    "plugin-runtime-light-390.png",
+    "plugin-runtime-dark-390.png"
+  ],
+  "previousRuntimeMs": 12385,
+  "previousEvidenceBytes": 525259,
+  "outerEvidenceReserveBytes": 262144,
+  "sourceReview": {
+    "path": "/private/tmp/root-plugin-browser-b2-source-review-20261007.json",
+    "sha256": "b31da9fb58ddff4f1331a8752fcfbc847f37c6a54c911f8c1bd4dc97f602a779"
+  },
+  "nativeChromeBoundaryApproval": {
+    "path": "/private/tmp/root-plugin-browser-b2-native-boundary-20261007.json",
+    "sha256": "b5353625a2998549ff7038b3cdd0d8d80e98040a36695e9e38bb15a696d9ee38"
+  },
+  "priorLocalEvidence": {
+    "sourceTarget": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+    "reviews": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/root-actual-review.json",
+        "sha256": "767f527ea1af59bb310eb495d0ecc86ad315271cf7f177946b1a8fcc75ed80b5"
+      },
+      {
+        "path": "/private/tmp/root-plugin-runtime-6544-local-result-review-20261007.json",
+        "sha256": "9a48b14fb8c7d990486ae5f37c08f221393501bc98850acb5f4d314399ebf6ce"
+      }
+    ],
+    "unchangedSources": {
+      "apps/web/src/plugin-management/runtime-command.ts": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a",
+      "apps/web/test/plugin-runtime-command.test.ts": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab"
+    },
+    "changedBrowserSourcesNotRevalidated": true,
+    "changedComponentSourceNotRevalidated": true
+  },
+  "measurementHelper": {
+    "path": "/private/tmp/prm-b2/measure.py",
+    "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08",
+    "sourceCommit": "1e12eaf13a02b45a99dfe126bc182c2ea45a8390",
+    "sourcePath": "tools/owned-resource-measurement/measure.py",
+    "adoption": "PARTIAL_RETAINED_ADOPTION"
+  },
+  "measurementRoot": {
+    "device": 16777234,
+    "inode": 124145303
+  },
+  "terminalAcceptance": {
+    "contract": "plugin-runtime-browser-v1-external-exit-required",
+    "requirements": [
+      "actual outer exit 0",
+      "exact unique terminal-seal stdout, declared exit0 and matching result/budget/manifest hashes",
+      "worker exit0/6 exact checks/2 named PNG/full fixture and context cleanup",
+      "owned Node/Chrome groups absent/all captured EOF/drop0/scratch exact identity removal",
+      "resource and runtime caps observed; images separately reviewed"
+    ],
+    "boundary": "Cooperative handlers restored after final cleanup/file seal. Terminal declaredExit is not the actual OS exit; external original exit receipt is required."
+  },
+  "proposal": {
+    "totalMs": 47615,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "pg": 0,
+    "chrome": 1,
+    "nodeWorker": 1,
+    "ownedHTTP": 2,
+    "floorBytes": 6895435776,
+    "floorMeaning": "Last admitted combined lower bound only; actual future complete fresh combination may be higher. No gate or allocation for this prepared follow-up.",
+    "previousRuntimeMs": 12385,
+    "originalLimitMs": 60000,
+    "workMs": 32615
+  },
+  "priorBrowserEvidence": {
+    "packetPath": "/private/tmp/prm-b1",
+    "resultPath": "/private/tmp/prm-b1/result.json",
+    "outerExitPath": "/private/tmp/prm-b1-actual-d5uxxivt/outer-exit.json",
+    "stdoutPath": "/private/tmp/prm-b1-actual-d5uxxivt/outer-stdout.txt",
+    "returnPath": "/private/tmp/prm-b1-actual-d5uxxivt/return-receipt.json",
+    "conservativeChargeMs": 12385,
+    "rootReview": {
+      "path": "/private/tmp/prm-b2/prior-root-review.json",
+      "sha256": "10c3076961302622e4b757871b073b22c448345f5f1e3c57d2bd297e3bc5d246"
+    },
+    "files": [
+      {
+        "path": "/private/tmp/prm-b1/README.md",
+        "realpath": "/private/tmp/prm-b1/README.md",
+        "bytes": 4167,
+        "sha256": "915dc37d3cadf0026d637fb74fccc64a9b77f8ce5e9fa585d34eb42bee10d5c8"
+      },
+      {
+        "path": "/private/tmp/prm-b1/README.md.before-review-seal",
+        "realpath": "/private/tmp/prm-b1/README.md.before-review-seal",
+        "bytes": 3579,
+        "sha256": "876fce48690db1a774c3042ce6f1fe2508c332447c12c7584ae23db099424f3c"
+      },
+      {
+        "path": "/private/tmp/prm-b1/aliases.json",
+        "realpath": "/private/tmp/prm-b1/aliases.json",
+        "bytes": 2318,
+        "sha256": "8532bbf7583c1c8e372b16ad1784758b6e5a3775748e536a736364f1a6088d50"
+      },
+      {
+        "path": "/private/tmp/prm-b1/binding.json",
+        "realpath": "/private/tmp/prm-b1/binding.json",
+        "bytes": 63797,
+        "sha256": "321f49c31b8e4dbc3de11c6e224d8e1c5ea04dd4a4b784205ecc0e7fbac67ab7"
+      },
+      {
+        "path": "/private/tmp/prm-b1/binding.json.before-metadata",
+        "realpath": "/private/tmp/prm-b1/binding.json.before-metadata",
+        "bytes": 63408,
+        "sha256": "a638f641f7a687fb59e36a547944d8e079683495b092156c50786e9ac710d8d5"
+      },
+      {
+        "path": "/private/tmp/prm-b1/binding.json.before-review-seal",
+        "realpath": "/private/tmp/prm-b1/binding.json.before-review-seal",
+        "bytes": 63408,
+        "sha256": "f1cc130e88866448887f7e6b9eb52891836bde6743fd3e62a18a2eb2ead4f765"
+      },
+      {
+        "path": "/private/tmp/prm-b1/browser-budget.json",
+        "realpath": "/private/tmp/prm-b1/browser-budget.json",
+        "bytes": 311,
+        "sha256": "fdd206134b0d2ca0da8e062424302c3d2f0aef563cad2a978dd47ce958eef61f"
+      },
+      {
+        "path": "/private/tmp/prm-b1/child-gate.json",
+        "realpath": "/private/tmp/prm-b1/child-gate.json",
+        "bytes": 3726,
+        "sha256": "c8e207463c26a939ec0ded830a0451e75d3048c987e48d8875012627d7187a80"
+      },
+      {
+        "path": "/private/tmp/prm-b1/consumed-gate.json",
+        "realpath": "/private/tmp/prm-b1/consumed-gate.json",
+        "bytes": 3022,
+        "sha256": "2febfaf3c5667ead46ba288a9915d261174df0f2caed2431f2874855275aef17"
+      },
+      {
+        "path": "/private/tmp/prm-b1/final-handoff.json",
+        "realpath": "/private/tmp/prm-b1/final-handoff.json",
+        "bytes": 3221,
+        "sha256": "9965bff3a77dc0adccb1265a4d1b6eb270397405d90ee6a486e5ac487ca50390"
+      },
+      {
+        "path": "/private/tmp/prm-b1/final-handoff.json.before-review-seal",
+        "realpath": "/private/tmp/prm-b1/final-handoff.json.before-review-seal",
+        "bytes": 1630,
+        "sha256": "1236f9bcee443bc593de8893734e693e9d6b1dc12243e2254cba77a794c39572"
+      },
+      {
+        "path": "/private/tmp/prm-b1/input-draft.json",
+        "realpath": "/private/tmp/prm-b1/input-draft.json",
+        "bytes": 62926,
+        "sha256": "ff89f6183b320aaa87191a595df7e6513502fcc7b667c86ba15c27d6e65af9c7"
+      },
+      {
+        "path": "/private/tmp/prm-b1/manifest.json",
+        "realpath": "/private/tmp/prm-b1/manifest.json",
+        "bytes": 1894,
+        "sha256": "449db36f4faa8fae38ecbd87ad34714d9a502a10f4c3709eceb5c536856d7702"
+      },
+      {
+        "path": "/private/tmp/prm-b1/manifest.json.before-metadata",
+        "realpath": "/private/tmp/prm-b1/manifest.json.before-metadata",
+        "bytes": 1827,
+        "sha256": "d988c790573444f7dd9ef48f1d85a41732fc013f1657af41292eba5a64640e13"
+      },
+      {
+        "path": "/private/tmp/prm-b1/manifest.json.before-review-seal",
+        "realpath": "/private/tmp/prm-b1/manifest.json.before-review-seal",
+        "bytes": 1889,
+        "sha256": "91a6bb61b4ad8a89af59ea29b67d8a01bd4e2cc2c9c1d98c2155b032b51310ef"
+      },
+      {
+        "path": "/private/tmp/prm-b1/measure.py",
+        "realpath": "/private/tmp/prm-b1/measure.py",
+        "bytes": 8979,
+        "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+      },
+      {
+        "path": "/private/tmp/prm-b1/parent.diff",
+        "realpath": "/private/tmp/prm-b1/parent.diff",
+        "bytes": 14630,
+        "sha256": "3aa7009cd8923a0ce7c4725f89da0686e3e3980e8e1f685db2ac65addc7df8f1"
+      },
+      {
+        "path": "/private/tmp/prm-b1/raw/plugin-b1-20261007-124015-207ac8/browser-results.json",
+        "realpath": "/private/tmp/prm-b1/raw/plugin-b1-20261007-124015-207ac8/browser-results.json",
+        "bytes": 3225,
+        "sha256": "aa85c1c3e3aaa4caea4a8d8847e7f9426a83e665c4bea8085cdaf20cb364977a"
+      },
+      {
+        "path": "/private/tmp/prm-b1/raw/plugin-b1-20261007-124015-207ac8/chrome.log",
+        "realpath": "/private/tmp/prm-b1/raw/plugin-b1-20261007-124015-207ac8/chrome.log",
+        "bytes": 6335,
+        "sha256": "d4566dceb760c7fed7ea6229f073205daecb2f8d3ad939f52fbd01db3b83dc56"
+      },
+      {
+        "path": "/private/tmp/prm-b1/raw/plugin-b1-20261007-124015-207ac8/owned-chrome.json",
+        "realpath": "/private/tmp/prm-b1/raw/plugin-b1-20261007-124015-207ac8/owned-chrome.json",
+        "bytes": 2234,
+        "sha256": "82e96218108d39c89cb7fc83c84c8bbfff84cf8d89a7baa7bd4fd4e48be8e35f"
+      },
+      {
+        "path": "/private/tmp/prm-b1/resolver-audit.json",
+        "realpath": "/private/tmp/prm-b1/resolver-audit.json",
+        "bytes": 7963,
+        "sha256": "4f2ae1b56e541cdc84f33b14c04ea207d918148b58ad493c8ee95d078223f7b2"
+      },
+      {
+        "path": "/private/tmp/prm-b1/result.json",
+        "realpath": "/private/tmp/prm-b1/result.json",
+        "bytes": 72419,
+        "sha256": "62567c3b8e2e977b1dfc4c260b9f28451515a1d34d334178a59a1479d03ba966"
+      },
+      {
+        "path": "/private/tmp/prm-b1/review-binding.diff",
+        "realpath": "/private/tmp/prm-b1/review-binding.diff",
+        "bytes": 1835,
+        "sha256": "ed2a147303002909ac29dd853c11adcd441cfb14d31cecdb2176ca329b788efb"
+      },
+      {
+        "path": "/private/tmp/prm-b1/review-manifest.diff",
+        "realpath": "/private/tmp/prm-b1/review-manifest.diff",
+        "bytes": 960,
+        "sha256": "98158c2b352855d89e8e8d5a415030e43541879a25bae30d8c9bd3d4a8f33fc6"
+      },
+      {
+        "path": "/private/tmp/prm-b1/runtime-tsconfig.json",
+        "realpath": "/private/tmp/prm-b1/runtime-tsconfig.json",
+        "bytes": 1608,
+        "sha256": "cc2400a057aa3f216355028e93acae81409266b787af96a9994f6d6925051c9e"
+      },
+      {
+        "path": "/private/tmp/prm-b1/sandbox.sb",
+        "realpath": "/private/tmp/prm-b1/sandbox.sb",
+        "bytes": 360,
+        "sha256": "90b4fe05367770f7784522296749f2d4700c9466813980237b64d2479498b648"
+      },
+      {
+        "path": "/private/tmp/prm-b1/supervisor.py",
+        "realpath": "/private/tmp/prm-b1/supervisor.py",
+        "bytes": 27052,
+        "sha256": "671b19b8b884ea76ad25dfb2eb6bd67a5fb32c7904a54d48cd46d2e371bf123b"
+      },
+      {
+        "path": "/private/tmp/prm-b1/worker.diff",
+        "realpath": "/private/tmp/prm-b1/worker.diff",
+        "bytes": 4393,
+        "sha256": "0152fa9dbb49f69f16717f0d8236a625433bec0b92342dfa13db94cb629dcc5b"
+      },
+      {
+        "path": "/private/tmp/prm-b1/worker.log",
+        "realpath": "/private/tmp/prm-b1/worker.log",
+        "bytes": 52,
+        "sha256": "b5aff1399470c4d26e32116587ddda544ff821a16a636d49da65d1b8fe8fb5eb"
+      },
+      {
+        "path": "/private/tmp/prm-b1/worker.mjs",
+        "realpath": "/private/tmp/prm-b1/worker.mjs",
+        "bytes": 7615,
+        "sha256": "2b4b94857ca7ebe0d52fb0ea5513273f2ffa30d89b285d0b9f31a5bc4fed93f4"
+      },
+      {
+        "path": "/private/tmp/prm-b1-actual-d5uxxivt/admission.json",
+        "realpath": "/private/tmp/prm-b1-actual-d5uxxivt/admission.json",
+        "bytes": 77065,
+        "sha256": "8377951217bb116984f63408d677e935303fa38e585dce098f6ac9e2d657b82d"
+      },
+      {
+        "path": "/private/tmp/prm-b1-actual-d5uxxivt/gate.json",
+        "realpath": "/private/tmp/prm-b1-actual-d5uxxivt/gate.json",
+        "bytes": 3297,
+        "sha256": "6697c1ea07fabd40a567e1a9bbe5fec1fe9a8ff49a1809b017fbc03506a21cf5"
+      },
+      {
+        "path": "/private/tmp/prm-b1-actual-d5uxxivt/outer-exit.json",
+        "realpath": "/private/tmp/prm-b1-actual-d5uxxivt/outer-exit.json",
+        "bytes": 962,
+        "sha256": "f94801f67e1a341bb0818e5cf1afbac553837c8223fa52d47a6e2d8057554c0b"
+      },
+      {
+        "path": "/private/tmp/prm-b1-actual-d5uxxivt/outer-start.json",
+        "realpath": "/private/tmp/prm-b1-actual-d5uxxivt/outer-start.json",
+        "bytes": 290,
+        "sha256": "331f8e0e71361c42122dd461b2548d3a41d7a6953dc1b31370d13b914cb10501"
+      },
+      {
+        "path": "/private/tmp/prm-b1-actual-d5uxxivt/outer-stderr.txt",
+        "realpath": "/private/tmp/prm-b1-actual-d5uxxivt/outer-stderr.txt",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "path": "/private/tmp/prm-b1-actual-d5uxxivt/outer-stdout.txt",
+        "realpath": "/private/tmp/prm-b1-actual-d5uxxivt/outer-stdout.txt",
+        "bytes": 655,
+        "sha256": "88530c4bc4ed36cf4273610461e8f053bdeda3d7a8ee77649d4687156181f7f3"
+      },
+      {
+        "path": "/private/tmp/prm-b1-actual-d5uxxivt/return-receipt.json",
+        "realpath": "/private/tmp/prm-b1-actual-d5uxxivt/return-receipt.json",
+        "bytes": 2207,
+        "sha256": "fee2d74e5cfe244e8d887c210d0b01a3c736efa00aa4041788b151cb130a71c8"
+      }
+    ]
+  }
+}

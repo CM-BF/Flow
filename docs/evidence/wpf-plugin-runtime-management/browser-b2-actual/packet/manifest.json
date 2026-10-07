@@ -1,0 +1,65 @@
+{
+  "state": "REVIEWED_SOURCE_BOUND",
+  "source": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "metadataHead": "756fde2afffc8131f485857e8a65300145b11be3",
+  "files": {
+    "supervisor.py": {
+      "bytes": 29464,
+      "sha256": "4c599b49dd20e874d9a33d2c821638166e524d185d65e3fef2212790815dfc8b"
+    },
+    "worker.mjs": {
+      "bytes": 7615,
+      "sha256": "2b4b94857ca7ebe0d52fb0ea5513273f2ffa30d89b285d0b9f31a5bc4fed93f4"
+    },
+    "runtime-tsconfig.json": {
+      "bytes": 1608,
+      "sha256": "cc2400a057aa3f216355028e93acae81409266b787af96a9994f6d6925051c9e"
+    },
+    "aliases.json": {
+      "bytes": 2318,
+      "sha256": "8532bbf7583c1c8e372b16ad1784758b6e5a3775748e536a736364f1a6088d50"
+    },
+    "measure.py": {
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    "binding.json": {
+      "bytes": 73769,
+      "sha256": "da9be6fccf52d199cd37d2f1a0f35aa1e978c83bc7aa8b595baf517fc9b32e68"
+    },
+    "resolver-audit.json": {
+      "bytes": 8077,
+      "sha256": "5aefdf17276e7869d20d0bbb86ea4da4d71179d3e6243bc96a16ed576b5f24eb"
+    },
+    "prior-files.json": {
+      "bytes": 9054,
+      "sha256": "6207239d5ea1bb4db412a77b9729329ce1e1e95456491e44686aa50db9617b4b"
+    },
+    "parent.diff": {
+      "bytes": 3979,
+      "sha256": "ef61c2bae1b7d9197c2d21daf12712468f0cef3cc51094a4158008a9de03ffc0"
+    },
+    "worker.diff": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "source.diff": {
+      "bytes": 3801,
+      "sha256": "c3f99e3bc237247882f518d9fdd691335d90a45348df082483bb49d7df5e294f"
+    },
+    "prior-root-review.json": {
+      "bytes": 4673,
+      "sha256": "10c3076961302622e4b757871b073b22c448345f5f1e3c57d2bd297e3bc5d246"
+    }
+  },
+  "expectedChecks": [
+    "initial typed409 preserves the command draft",
+    "UNKNOWN survives lazy close/collapse, successful read and rejected original retry",
+    "later same-revision HTTP observation overrides historical ready ACK without another write",
+    "only original accepted replay resolves UNKNOWN; explicit disable uses a new identity",
+    "decoded old-session ACK cannot replace the new center state",
+    "bounded fixture keyboard refresh and two 390px themes; not production Settings"
+  ],
+  "previousRuntimeMs": 12385,
+  "totalMs": 47615
+}

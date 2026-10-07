@@ -1,0 +1,45 @@
+{
+  "files": [
+    {
+      "path": "/private/tmp/prm-b2/raw/plugin-b2-20261007-124936-c6dcf5/browser-results.json",
+      "bytes": 4366,
+      "sha256": "201beac865954927fb7a5c334a352682820a34d5ccc8cf637a1af86c4c2a0c5c"
+    },
+    {
+      "path": "/private/tmp/prm-b2/raw/plugin-b2-20261007-124936-c6dcf5/owned-chrome.json",
+      "bytes": 2236,
+      "sha256": "33a89c689c44315784b78a163d84972bc30705413f0719b243df0049d1527343"
+    },
+    {
+      "path": "/private/tmp/prm-b2/raw/plugin-b2-20261007-124936-c6dcf5/chrome.log",
+      "bytes": 5924,
+      "sha256": "a304acc7ed9dc40a15e5460666f21ad5bc23d81125c97bcef1d9a9de849d3375"
+    },
+    {
+      "path": "/private/tmp/prm-b2/raw/plugin-b2-20261007-124936-c6dcf5/plugin-runtime-light-390.png",
+      "bytes": 62250,
+      "sha256": "427b8d527ce0cb3f1091350371619eb841ef6dd5a50014ed6fe5d100d1715bbc"
+    },
+    {
+      "path": "/private/tmp/prm-b2/raw/plugin-b2-20261007-124936-c6dcf5/plugin-runtime-dark-390.png",
+      "bytes": 61806,
+      "sha256": "37119c6da7ea4700dea1a0031dce9d10aea0cde5e52c276796a85b12a0fbfe10"
+    }
+  ],
+  "expectedChecks": [
+    "initial typed409 preserves the command draft",
+    "UNKNOWN survives lazy close/collapse, successful read and rejected original retry",
+    "later same-revision HTTP observation overrides historical ready ACK without another write",
+    "only original accepted replay resolves UNKNOWN; explicit disable uses a new identity",
+    "decoded old-session ACK cannot replace the new center state",
+    "bounded fixture keyboard refresh and two 390px themes; not production Settings"
+  ],
+  "sourceHashes": {
+    "apps/web/src/plugin-management/PluginManagement.tsx": "e3a9392e50a140d2f628c144000382360882355b5dc4b4d16aaafaa1cf109400",
+    "apps/web/src/plugin-management/runtime-command.ts": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a",
+    "apps/web/test/plugin-management/browser.ts": "93f0152e8a01ae28806bf2e78390d8f81815a25d3a0a3a4194e4c9c372742a3a",
+    "apps/web/test/plugin-management/fixture/main.tsx": "544d11ffba2031d60c020d649fbce1e1a3f145b3b7b2e9408bf2c914076ce2c2",
+    "apps/web/test/plugin-runtime-command.test.ts": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab"
+  },
+  "sourceHead": "756fde2afffc8131f485857e8a65300145b11be3"
+}

@@ -1,0 +1,134 @@
+{
+  "at": "2026-10-07T12:50:25.968903+00:00",
+  "actualExit": 0,
+  "terminalState": "PASS",
+  "terminalCount": 1,
+  "terminalHashesMatch": true,
+  "runtimeManifestMatches": true,
+  "chargeMs": 7566,
+  "previousRuntimeMs": 12385,
+  "cumulativeMs": 19951,
+  "remainingMs": 40049,
+  "parentBudgetHistoricalMs": 19864,
+  "terminalLateMs": 7480,
+  "outerActualMs": 7565.776166971773,
+  "identities": [
+    {
+      "kind": "PID",
+      "id": 16402,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 16402,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 20372,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 20372,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 16951,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 16951,
+      "state": "ABSENT_ESRCH"
+    }
+  ],
+  "ports": [
+    {
+      "host": "127.0.0.1",
+      "port": 52022,
+      "connectEx": 61,
+      "state": "REFUSED"
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 52030,
+      "connectEx": 61,
+      "state": "REFUSED"
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 52032,
+      "connectEx": 61,
+      "state": "REFUSED"
+    }
+  ],
+  "scratchAbsent": true,
+  "profileAbsent": true,
+  "workerFixtureClosed": true,
+  "workerContextClosed": true,
+  "innerStreams": {
+    "chrome.stdout": {
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "chrome.stderr": {
+      "receivedBytes": 5924,
+      "keptBytes": 5924,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "worker": {
+      "receivedBytes": 504,
+      "keptBytes": 504,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    }
+  },
+  "outerStreams": {
+    "stdout": {
+      "received": 714,
+      "kept": 714,
+      "dropped": 0,
+      "eof": true
+    },
+    "stderr": {
+      "received": 0,
+      "kept": 0,
+      "dropped": 0,
+      "eof": true
+    }
+  },
+  "cleanupErrors": [],
+  "checks": [
+    "initial typed409 preserves the command draft",
+    "UNKNOWN survives lazy close/collapse, successful read and rejected original retry",
+    "later same-revision HTTP observation overrides historical ready ACK without another write",
+    "only original accepted replay resolves UNKNOWN; explicit disable uses a new identity",
+    "decoded old-session ACK cannot replace the new center state",
+    "bounded fixture keyboard refresh and two 390px themes; not production Settings"
+  ],
+  "PNGs": [
+    {
+      "path": "/private/tmp/prm-b2/raw/plugin-b2-20261007-124936-c6dcf5/plugin-runtime-light-390.png",
+      "bytes": 62250,
+      "sha256": "427b8d527ce0cb3f1091350371619eb841ef6dd5a50014ed6fe5d100d1715bbc"
+    },
+    {
+      "path": "/private/tmp/prm-b2/raw/plugin-b2-20261007-124936-c6dcf5/plugin-runtime-dark-390.png",
+      "bytes": 61806,
+      "sha256": "37119c6da7ea4700dea1a0031dce9d10aea0cde5e52c276796a85b12a0fbfe10"
+    }
+  ],
+  "pageErrors": [],
+  "visualReview": "PENDING_ROOT",
+  "rawPacket": "/private/tmp/prm-b2",
+  "rawOuter": "/private/tmp/prm-b2-actual-5uwo692b",
+  "completeReturn": true
+}

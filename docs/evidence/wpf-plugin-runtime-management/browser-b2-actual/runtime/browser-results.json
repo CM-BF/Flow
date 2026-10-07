@@ -1,0 +1,81 @@
+{
+  "sourceHead": "756fde2afffc8131f485857e8a65300145b11be3",
+  "sourceHashes": {
+    "apps/web/src/plugin-management/PluginManagement.tsx": "e3a9392e50a140d2f628c144000382360882355b5dc4b4d16aaafaa1cf109400",
+    "apps/web/src/plugin-management/runtime-command.ts": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a",
+    "apps/web/test/plugin-management/browser.ts": "93f0152e8a01ae28806bf2e78390d8f81815a25d3a0a3a4194e4c9c372742a3a",
+    "apps/web/test/plugin-management/fixture/main.tsx": "544d11ffba2031d60c020d649fbce1e1a3f145b3b7b2e9408bf2c914076ce2c2",
+    "apps/web/test/plugin-runtime-command.test.ts": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab"
+  },
+  "implementation": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "startedAt": "2026-10-07T12:49:52.627Z",
+  "workerPid": 20372,
+  "parentPid": 16402,
+  "chromePid": 16951,
+  "chromeProcessGroup": "separate-parent-owned-session",
+  "chromeCleanupOwner": "external-parent-native-sibling",
+  "checks": [
+    "initial typed409 preserves the command draft",
+    "UNKNOWN survives lazy close/collapse, successful read and rejected original retry",
+    "later same-revision HTTP observation overrides historical ready ACK without another write",
+    "only original accepted replay resolves UNKNOWN; explicit disable uses a new identity",
+    "decoded old-session ACK cannot replace the new center state",
+    "bounded fixture keyboard refresh and two 390px themes; not production Settings"
+  ],
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "outcome": "passed",
+  "pg": 0,
+  "budgetOwner": "external-parent",
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cdpConnectedAt": "2026-10-07T12:49:58.077Z",
+  "ownedHttp": {
+    "web": "http://127.0.0.1:52030/test/plugin-management/fixture/index.html",
+    "apiCenters": [
+      "http://127.0.0.1:52032/A",
+      "http://127.0.0.1:52032/B"
+    ],
+    "closeOwner": "fixture.close closes both API and Vite listeners"
+  },
+  "writes": [
+    {
+      "center": "A",
+      "key": "bd4dba92-d145-4fa0-a18f-44be901055b3",
+      "body": "{\"expectedRevision\":1,\"reason\":\"Fixture explicit enable\",\"change\":{\"kind\":\"enable\",\"materialInstallOperationId\":\"00000000-0000-4000-8000-000000000003\",\"targetRunnerId\":\"00000000-0000-4000-8000-000000000004\",\"storeId\":\"fixture-store\"}}"
+    },
+    {
+      "center": "A",
+      "key": "5b07b3e2-a227-4e45-b976-aad6c12dee60",
+      "body": "{\"expectedRevision\":1,\"reason\":\"Fixture explicit enable\",\"change\":{\"kind\":\"enable\",\"materialInstallOperationId\":\"00000000-0000-4000-8000-000000000003\",\"targetRunnerId\":\"00000000-0000-4000-8000-000000000004\",\"storeId\":\"fixture-store\"}}"
+    },
+    {
+      "center": "A",
+      "key": "5b07b3e2-a227-4e45-b976-aad6c12dee60",
+      "body": "{\"expectedRevision\":1,\"reason\":\"Fixture explicit enable\",\"change\":{\"kind\":\"enable\",\"materialInstallOperationId\":\"00000000-0000-4000-8000-000000000003\",\"targetRunnerId\":\"00000000-0000-4000-8000-000000000004\",\"storeId\":\"fixture-store\"}}"
+    },
+    {
+      "center": "A",
+      "key": "5b07b3e2-a227-4e45-b976-aad6c12dee60",
+      "body": "{\"expectedRevision\":1,\"reason\":\"Fixture explicit enable\",\"change\":{\"kind\":\"enable\",\"materialInstallOperationId\":\"00000000-0000-4000-8000-000000000003\",\"targetRunnerId\":\"00000000-0000-4000-8000-000000000004\",\"storeId\":\"fixture-store\"}}"
+    },
+    {
+      "center": "A",
+      "key": "ceb85318-a3f7-40e5-adbe-1dee9b889792",
+      "body": "{\"expectedRevision\":2,\"reason\":\"Fixture explicit disable\",\"change\":{\"kind\":\"disable\"}}"
+    },
+    {
+      "center": "A",
+      "key": "fa5ba2fe-8073-4e0e-9add-9f6016239487",
+      "body": "{\"expectedRevision\":3,\"reason\":\"Fixture explicit disable\",\"change\":{\"kind\":\"enable\",\"materialInstallOperationId\":\"00000000-0000-4000-8000-000000000003\",\"targetRunnerId\":\"00000000-0000-4000-8000-000000000004\",\"storeId\":\"fixture-store\"}}"
+    }
+  ],
+  "boundary": "Synthetic public DTOs over actual owned HTTP and real FlowClient codecs; no PG/runtime/production App proof.",
+  "screenshots": [
+    "plugin-runtime-light-390.png",
+    "plugin-runtime-dark-390.png"
+  ],
+  "finishedAt": "2026-10-07T12:50:00.006Z",
+  "observedElapsedMs": 7379,
+  "profileCleanupOwner": "external-parent-after-both-process-groups-absent"
+}
