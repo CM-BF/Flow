@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T12:12:44.421Z |
+| 最近更新时间 | 2026-10-07T12:33:16.547Z |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
@@ -27,7 +27,7 @@
 | 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Claim | e81d88b7-8fdb-42b5-b9a1-364ad0fd9bdb v2 ACTIVE/4literal |
+| Claim | e81d88b7-8fdb-42b5-b9a1-364ad0fd9bdb v2 ACTIVE/4literal，2026-10-07T12:32:47.841Z观察；本次固定后STOP并释放，最终以ledger为准 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -59,3 +59,5 @@
 2026-10-07T10:58:16.712Z 明确STOP并原子amend交回后继候选consumer所需产品路径，见host-consumer-stop.json与host-consumer-amend.json；旧固定产品/原件/intake不变。本树不再修改已移出路径，保留本task元数据与测试scope处理原主线接收，实际占用以当前ledger为准。
 
 2026-10-07T11:52:41.728Z 本次只读核 main de5475039d73caec631ba2ee64556208dbb1751d 与canonical I02接收：产品按ACK→HOST→CONSUMER顺序组合，当前最终consumer bytes逐SHA相符；ACK两叶后续受审扩展不误报回退。root noEmit0 +3selected3pass/33未选的原主线检查范围继承，未重跑本分支旧组或PG。原历史尚未main/登记文字仅当时记录；当前本片原plan验收已满足。部署/registry页面暂无新证据，仍不声称最新实际UI刷新；架构后继由Mika协调D06。
+
+2026-10-07T12:33:16.547Z 最终ownership收口：本task原验收/独审/main de547接收均完成；本次重新核原canonical SHA及5产品最终行，保原完成时间11:52:41.728Z。fresh ledger v2/4剩余仅两test及本plan/evidence，归属/分支/WT均符。无实现修复/验证待办，本次metadata clean push后全部scope含metadata明确STOP并原子release；回执只存外部，释放后不回填status。无local/PG/资源holder，0工程检查，原source/raw不动。详见ownership-close.json。
