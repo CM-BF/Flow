@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-10-07T07:33:53.628Z",
+  "main": "d556780129897582f09945c0621aa2ed64fb52f7",
+  "source": "42905d011ffc6d8e6d3cb41d912ac65a157c20cc",
+  "bindings": [
+    {
+      "path": "apps/runner/src/engineering/native-tool-policy.test.ts",
+      "bytes": 6448,
+      "sha256": "f17afae6a193b8897a8f192b99613da4b99aad38a9e64a2b05020e328aac8314"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-tool-policy.ts",
+      "bytes": 5703,
+      "sha256": "fe0648ca18c8593259069af33108f66f2695baa5f6b561a137c5f8ff823b84b7"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-tool-writer.test.ts",
+      "bytes": 9655,
+      "sha256": "0ba68da111368333959775b7459578ad18ad54c08a88e2cb21320b8717bb30dd"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-tool-writer.ts",
+      "bytes": 9970,
+      "sha256": "70a0c8ca2ab8044a1673a0ebc43dabe133b281a0e6ef7ecd843495f0cd7d909b"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.test.ts",
+      "bytes": 16827,
+      "sha256": "6dffda5ebf0f6664486f6083e6e76ab9c71992d317e119ad727064807b708349"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "bytes": 8686,
+      "sha256": "b98319adecafb5a3f8653df0f14844f44d8a40714060a624e3316a264f77f98a"
+    }
+  ],
+  "authority": "Execution Lead MAIN_RECEIPT; main/origin clean/pushed",
+  "integrationCheck": {
+    "rootNoEmit": 0,
+    "durationMs": 9018,
+    "old23Rerun": false
+  },
+  "scope": "Limited trusted gate/recipe and async same-pump; no provider/stock/OS launch/grant claim"
+}
