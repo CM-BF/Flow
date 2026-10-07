@@ -1,0 +1,32 @@
+{
+  "startedAt": "2026-10-07T03:02:39.590690+00:00",
+  "authority": "GO/Lead latest explicit ordinary co-lead source-only provisioning rule, candidate e65628aa; original one-path ACCESS delegation is not reused",
+  "base": "18144593a0f210e8d5b9b2c08f4ff62259c07cf5",
+  "branch": "codex/dashboard-task-timing",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing",
+  "requestSha256": "a3d84b2bbdd51044d915776540a039b107cc4a2854cea336d991a0608c65f27f",
+  "sharedConfigBefore": "97fdd6ef1482269a99f57d8191c7bbed59929715e4a77cda97dc6d066d6d038d",
+  "mainBefore": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+  "mainDirtyBefore": false,
+  "operations": [
+    "git worktree add --no-checkout exact branch/base",
+    "new-worktree-local sparse config and exact 37-path patterns",
+    "git read-tree materialize exact sparse inputs"
+  ],
+  "state": "PROVISIONED_SOURCE_ONLY",
+  "sourceFiles": 37,
+  "sourceBytes": 572960,
+  "head": "18144593a0f210e8d5b9b2c08f4ff62259c07cf5",
+  "actualBranch": "codex/dashboard-task-timing",
+  "dirty": false,
+  "gitDir": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/dashboard-task-timing",
+  "worktreeConfig": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/dashboard-task-timing/config.worktree",
+  "sparseFile": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/dashboard-task-timing/info/sparse-checkout",
+  "sharedConfigAfter": "97fdd6ef1482269a99f57d8191c7bbed59929715e4a77cda97dc6d066d6d038d",
+  "mainAfter": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+  "mainDirtyAfter": false,
+  "dependenciesInstalled": false,
+  "applicationImportsOrRuns": false,
+  "otherWorktreesModified": false,
+  "finishedAt": "2026-10-07T03:02:40.236481+00:00"
+}

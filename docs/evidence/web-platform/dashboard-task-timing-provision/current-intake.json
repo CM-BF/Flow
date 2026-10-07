@@ -1,0 +1,31 @@
+{
+  "state": "SOURCE_PROVISIONED_AND_TAKEN_WAITING_OWNER_SLOT",
+  "at": "2026-10-07T03:06:20.388297+00:00",
+  "taskId": "WPF-DASHBOARD-TIMING01",
+  "parentTask": "D01",
+  "owner": "w01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing",
+  "branch": "codex/dashboard-task-timing",
+  "base": "18144593a0f210e8d5b9b2c08f4ff62259c07cf5",
+  "sourceFiles": 37,
+  "sourceBytes": 572960,
+  "claim": {
+    "id": "9a677471-191a-4cd8-ae03-b588524cbf1e",
+    "version": 1,
+    "scope": [
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/src/status.mjs",
+      "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "docs/evidence/wpf-dashboard-task-timing",
+      "plans/wpf-dashboard-task-timing"
+    ],
+    "committedAt": "2026-10-07T03:04:19.087Z"
+  },
+  "sourceProvision": "provision-actual.json",
+  "take": "take-receipt.json",
+  "authority": "Latest explicit GO/Lead ordinary source-only provisioning policy; old per-operation exclusive request retained as history, not a current blocker.",
+  "dispatch": "Root wakes W01 after manager becomes idle to retain global cap10. First initialize sole canonical trio then implement exact six scopes from fixed main and timing rules. No DPERF source carry. Local tests after ACCESS segment actual cleanup; no PG/Chrome grant.",
+  "startTime": "Owner will record first actual work using UTC clock; claim timestamp is not task start.",
+  "registry": "Original Lead registers unique status after first canonical trio. No actual loaded claim yet."
+}

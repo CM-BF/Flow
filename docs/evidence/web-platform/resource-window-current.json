@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T02:59:28.346225+00:00",
-  "state": "WEB_LOCAL_SEGMENT_AUTHORIZED_NOT_STARTED",
-  "groupWindowOwnership": "Lead confirms same-version 61228 Web recovery completed and exclusive window returned; Web has no actual holder, gate or reservation.",
+  "recordedAt": "2026-10-07T03:06:47.197471+00:00",
+  "state": "WEB_LOCAL_SEGMENTS_COMPLETED_NO_HOLDER",
+  "groupWindowOwnership": "Web initial Quick→Recovery→D04 segment and subsequent ACCESS synthetic35 local segment both completed with owned cleanup. Web holder/gate/reservation null/null/false; no heavy/Chrome grant.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,17 +407,12 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "state": "WEB_LOCAL_SEGMENT_AUTHORIZED_NOT_STARTED",
-    "source": "Latest Lead/Mika actual incoming relayed by root; no manager process/resource observation",
-    "localChain": "Mika X01/C02/REQ15 all actual terminal cleanup completed per incoming",
-    "heavyReturn": "S01P07 failure16a938 independently reviewed and heavy returned; no DB cleanup query performed, old TMP KEEP",
-    "currentLocalHolder": "SVC06 ended per new Lead incoming; Web segment not yet started",
-    "webHolder": null,
-    "newWebGrant": false,
-    "webFollowingRequest": "Authorized one original ≤90s team segment; budgets preserved, no current execution/gate yet.",
-    "newSourceTask": "ACCESS claim57735ff7v1 ten scopes/firsta6fb ready for Lead registry intake; timing six-scope exact provision request not performed",
-    "evidence": "dashboard-task-timing-provision/coordination-intake.json",
-    "next": "New GO/Lead rule: ordinary isolated local checks autonomous max1 segment/team and max3 globally, cap10/runtimecap unchanged. Manager will start original ≤90s Quick→Recovery→D04 after one fresh onsite admission; no external per-command permission. No PG/Chrome/install/fullbuild/personal service."
+    "at": "2026-10-07T03:06:20.388297+00:00",
+    "kind": "ACTUAL_WEB_LOCAL_SEGMENT_RETURNED_AND_TIMING_TAKEN",
+    "summary": "Quick strict+26direct、Recovery旧反例/新10断言、D04pureGit5均实际通过并清理；Timing37输入已供给与9a677 v1六scope已take，等待manager idle换W01。ACCESS源1e4/e7ca固定，原Lead回执03:04:03 snapshot183已实际登记live/current，仅implementation，按钮尚未发布。",
+    "source": "local-segment-20261007/segment.json",
+    "timing": "dashboard-task-timing-provision/current-intake.json",
+    "accessActual": "dashboard-local-access-intake/direct-owner-receipt.json"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -557,7 +552,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "message-settings02-c1-actual/window.json",
+  "currentWindowReturn": "local-segment-20261007/segment.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1063,8 +1058,8 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "READY_FIRST_PENDING_ACTUAL_WEB_ADMISSION_NO_RESERVATION",
-    "priority": "Quick c2 static approved after supplied missing input; Recovery9835 source and serialization preparation approved; DPERF source only. Existing budgets and actual failures preserved, no new Web grant.",
+    "state": "LOCAL_CHECKS_COMPLETE_BROWSER_VALIDATION_PENDING",
+    "priority": "Quick c2 and Recovery serialization actual results awaiting independent receipt. Browser b1 requires its own current evidence/boundary and heavy admission; Recovery remaining same-origin browser keeps old failures and remaining <=51635ms incl15s cleanup. D04 pureGit5 passed, PG/CLI not rerun. ACCESS synthetic35 local segment also passed/cleaned; actual installation/Chrome/publish remain pending.",
     "gate": null
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1167,7 +1162,7 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "recovery01-8ed-actual/window.json",
+  "currentWindowEvidence": "local-segment-20261007/verified-results.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
@@ -1280,7 +1275,7 @@
   "latestMikaQueueIntake": {
     "source": "Root relay of latest Lead/Mika coordination, no Web resample",
     "previousActualReturns": "SVC07 PASS cleanup; C02 heavy returned per root; Quick c1 FAILED cleanup; immutable receipts remain under existing history",
-    "current": "Mika local chain and S01P07 heavy returned as scoped above; Lead SVC06 local running; Web not OPEN.",
+    "current": "Prior Mika local/heavy and Lead SVC06 ended per Root/Lead incoming. Latest ordinary-local rule is max1/team,max3 globally; old sole-local wait superseded. No inferred heavy grant.",
     "webReservation": false
   },
   "opsWorkspaceCacheDependencies": {
@@ -1301,16 +1296,16 @@
     "runtimeOrDomainApproval": false
   },
   "quickControlsPreparation": {
-    "state": "C1_FAILED_CLEANED_C2_STATIC_APPROVED_NOT_RUN",
+    "state": "C2_TYPES_DIRECT_PASSED_RESULT_REVIEW_PENDING",
     "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
     "currentOwnerHead": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2",
-    "actualEvidence": "message-settings02-c1-actual/report.md",
+    "actualEvidence": "local-segment-20261007/report.md",
     "sourceSupplyReceipt": "message-settings02-c1-actual/lead-source-provision-receipt.json",
     "nextPreparationReview": "message-settings02-c1-actual/root-c2-static-preparation-review.json",
-    "cumulativeMs": 1875,
-    "remainingMs": 28125,
+    "cumulativeMs": 5119,
+    "remainingMs": 24881,
     "cleanupMs": 5000,
-    "direct": "NOT_RUN",
+    "direct": "26/26 PASS actual outer0; root evidence review pending",
     "grant": false,
     "gate": null,
     "reservation": false

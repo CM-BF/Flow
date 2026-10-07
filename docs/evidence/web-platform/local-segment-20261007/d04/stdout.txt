@@ -1,0 +1,13 @@
+✔ five owned trees use a tiny synthetic repository and leave no owned registration or branch (1372.281459ms)
+✔ an owned symlink tmp alias and spaces resolve to the same exact registered identity (377.388667ms)
+✔ a real post-checkout failure after Git registration is recovered from the creation intent (822.541709ms)
+✔ a locked owned tree retains its root and reports failure while later owned trees are removed (758.903417ms)
+✔ non-owned worktree, branch and root sentinel survive and block recursive root removal (602.215583ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 3992.898125

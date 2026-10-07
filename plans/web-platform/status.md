@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 02:48 UTC；依据原operator恢复终态与管理输入，不复采服务/main |
+| 最近更新 / 最近main同步核验 | 2026-10-07 03:05 UTC；依据本队局部检查终态与Lead183来源登记回执，不复采服务/main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,8 +21,8 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；原五图的新主线快照已完成源码更新和限定独审，等待必要验证。 |
-| 下一可用交付 | 61228同版本恢复已完成并归还窗口；接续4320本机打开Flow/按需掩码凭据入口（独立树已供给/十scope领取，panels实施中）。既有Recovery脚本修复与Quick已补输入后的必要验证按ready及有界工作段协调；任务开工/完成/历时展示合同已记录，Lead规则已入main，显示片待合法独立供给与范围。 |
-| 当前阻塞 | ACTIVE: 新入口已供给且panels在十scope内实施，尚无实际功能验收。Recovery剩余旅程、Quick direct/browser、D04 pureGit、D06验证未完成；Quick c1类型失败已清理且缺件已补。Web无holder/gate/预约，Mika局部链与S01P07 heavy已按各自结果实际归还，SVC06 local也已结束；按新每队一段/全队三段规则，Web原≤90s获授权，尚未现场准入启动。远程CI不替代Web验收，workspace-cache依赖不可直接运行。 |
+| 下一可用交付 | 4320本机打开Flow/按需掩码凭据入口已固定源码并实际登记，正在必要验证；任务时间展示已独立供给和六scope领取，待换槽实施。Quick严格类型/26direct、Recovery序列化和D04pureGit5本段实过；接续真实浏览器验收按原预算与隔离协调。 |
+| 当前阻塞 | ACTIVE: ACCESS真实功能/个人安装验收与发布未完成；Timing产品待实施。Recovery剩余页面旅程、Quick浏览器、D04 PG/CLI必要后继与D06验证仍开放。本队局部段已结束并完整清理，未自动取得PG/Chrome窗口；远程CI不替代Web验收，workspace-cache依赖不可直接运行。 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -73,7 +73,7 @@
 
 已审设计输入：[快速设置双重生命周期门禁](../../docs/evidence/web-platform/message-settings-ownership-interface/root-review.json)已收敛；[新组件唯一source](../../docs/evidence/web-platform/message-settings-quick-controls-provision/registration-request.json)已六scope领取；[固定源码与179来源实际登记](../../docs/evidence/web-platform/message-settings02-35-source-intake/report.md)已接收，[fe6源码与c1静态准备已审](../../docs/evidence/web-platform/message-settings02-c1-prepared/report.md)由原owner负责，真实host接线仍需后继交权。
 
-[远程 CI 消费边界](../../docs/evidence/web-platform/ops-ci01-web-consumer-intake/report.md)已归原 TODO11：没有触发 CI 或新增 writer，QuickControls本次类型检查失败、direct/浏览器仍未运行，原 owner status 保持唯一功能事实源。
+[远程 CI 消费边界](../../docs/evidence/web-platform/ops-ci01-web-consumer-intake/report.md)已归原 TODO11：没有触发 CI 或新增 writer，QuickControls旧类型失败保留；本次c2类型与26direct实际通过，浏览器仍未运行，原 owner status 保持唯一功能事实源。
 
 [portable候选交付](../../docs/evidence/web-platform/message-settings02-portable-prepared/report.md)与[REQ17/CHAT06测量接口](../../docs/evidence/web-platform/req17-chat06-measurement-interface/report.md)沿现有验收推进，未新增运行或claim；性能全部未测量。
 

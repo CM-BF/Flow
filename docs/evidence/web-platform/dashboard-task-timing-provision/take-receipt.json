@@ -1,0 +1,29 @@
+{
+  "requestId": "ce4f3d79-bf07-4ae9-afc3-fb932609991a",
+  "action": "take",
+  "committedAt": "2026-10-07T03:04:19.087Z",
+  "claim": {
+    "claimId": "9a677471-191a-4cd8-ae03-b588524cbf1e",
+    "version": 1,
+    "taskId": "WPF-DASHBOARD-TIMING01",
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing",
+    "branch": "codex/dashboard-task-timing",
+    "scope": [
+      "apps/execution-dashboard/public/app.js",
+      "apps/execution-dashboard/src/status.mjs",
+      "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "docs/evidence/wpf-dashboard-task-timing",
+      "plans/wpf-dashboard-task-timing"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-07T03:04:19.087Z",
+    "createdAt": "2026-10-07T03:04:19.087Z"
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "name": "d04",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "apps/execution-dashboard/test/owned-worktrees.test.mjs"
+  ],
+  "startedAt": "2026-10-07T03:03:10.127590+00:00",
+  "endedAt": "2026-10-07T03:03:14.159509+00:00",
+  "pid": 39969,
+  "pgid": 39969,
+  "actualExit": 0,
+  "wallMs": 4032.013582997024,
+  "groupAbsent": true,
+  "bothEOF": true,
+  "capturedBytes": {
+    "stdout": 656,
+    "stderr": 0
+  },
+  "droppedBytes": 0,
+  "outerInterrupted": false,
+  "stdoutSha256": "767ccc440ff2510145c3577ab7a1a100f54ba920ae2917d706d12bec2d4e60ac",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "ownedTmpRemaining": []
+}

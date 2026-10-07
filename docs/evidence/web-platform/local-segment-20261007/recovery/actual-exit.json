@@ -1,0 +1,25 @@
+{
+  "name": "recovery",
+  "command": [
+    "python3",
+    "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/run.py",
+    "--gate",
+    "/private/tmp/web-local-segment-tvp1bssw/recovery-gate.json"
+  ],
+  "startedAt": "2026-10-07T03:03:09.803532+00:00",
+  "endedAt": "2026-10-07T03:03:10.126732+00:00",
+  "pid": 39784,
+  "pgid": 39784,
+  "actualExit": 0,
+  "wallMs": 323.2180839404464,
+  "groupAbsent": true,
+  "bothEOF": true,
+  "capturedBytes": {
+    "stdout": 394,
+    "stderr": 0
+  },
+  "droppedBytes": 0,
+  "outerInterrupted": false,
+  "stdoutSha256": "e5258347efc5539f776c0634ab889d4315a99455e3ae24ed7ac7f5603eec516e",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
