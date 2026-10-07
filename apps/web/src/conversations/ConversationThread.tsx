@@ -185,6 +185,9 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
           return createExistingAttachment(capture.binding.input, id);
         },
       });
+      // The complete A is now owned by the visible composer. Retire its failed hold,
+      // so a second Restore cannot duplicate IDs and later file removal remains real.
+      capture.binding?.discardFailedSubmission();
       pending.current = null; setSendError(null); onDraftChange();
     } catch (error) { setSendError(String(error)); }
   };

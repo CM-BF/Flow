@@ -12,7 +12,7 @@ const root = fileURLToPath(new URL("../../../", import.meta.url));
 // This worktree owns only MSG03 output; historical Recovery evidence remains immutable.
 const evidence = join(root, "docs/evidence/wpf-message-settings-app");
 // MSG03-only defensive ceiling, not a runtime grant. No Recovery phase or credit transfers.
-const TOTAL_MS = 60_000, CLEANUP_MS = 15_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
+const TOTAL_MS = 90_000, CLEANUP_MS = 30_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
 const RUN_RETAIN_RESERVE = 5 * 1024 ** 2; // 1MiB logs + <=2MiB report + two <=512KiB images + bounded owner/budget records.
 const START_FREE = 1024 ** 3 + 128 * 1024 ** 2, STOP_FREE = 1024 ** 3 + 64 * 1024 ** 2;
 const sleep = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
@@ -51,16 +51,18 @@ const journeyGroups = {
   "steering-recovery": ["cookieRead", "steeringRecovery"],
   "second-center-cycle": ["cookieRead", "secondCenterCycle"],
   "message-settings-app": ["cookieRead", "messageSettingsApp"],
+  "message-settings-material-return": ["cookieRead", "messageSettingsMaterialReturn"],
 } as const;
 type Journey = keyof typeof journeyGroups;
 type Group = (typeof journeyGroups)[Journey][number];
-const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss", "sseDelivery", "completeDraft", "steeringRecovery", "secondCenterCycle", "messageSettingsApp"];
+const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss", "sseDelivery", "completeDraft", "steeringRecovery", "secondCenterCycle", "messageSettingsApp", "messageSettingsMaterialReturn"];
 function selectedGroups(journey: unknown): readonly Group[] {
   requireThat(typeof journey === "string" && Object.hasOwn(journeyGroups, journey), "An explicit supported journey is required");
   return journeyGroups[journey as Journey];
 }
 type FailureReconciliation = { run: string; budgetSha256: string; reviewFile: string; reviewSha256: string };
 type Gate = { reconciledFailures?: FailureReconciliation[]; allowRun: true; run: string; journey: Journey; sourceCommit: string; sourceHashes: Record<string, string>; expiresAt: string;
+  messageSettingsPhase: { id: "MSG03-BROWSER-20261007"; budgetMs: 90000; spentMs: number; cleanupMs: 30000 };
   totalMs: number; minimumFreeBytes: number; scratchParent: string; maxScratchBytes: number;
   twoCenterPhase?: { id: "RECOVERY-TWO-CENTER-20261007"; budgetMs: 90000; spentMs: number; cleanupMs: 30000; databases: 2 } };
 type Init = { kind: "start"; journey: Journey; directory: string; scratch: string; databaseUrl: string; secondDatabaseUrl?: string; workDeadline: number };
@@ -74,6 +76,7 @@ type SecondCenterResult = { identities: { target: "A" | "B"; centerId: string; o
   lateRead: { outcome: "abortedWithoutDelivery" | "deliveredRejected"; proxy: unknown; browserFinished: boolean; browserFailed: boolean } | null };
 type WorkerResult = { journey: Journey; requiredGroups: readonly Group[]; completedGroups: Group[]; checks: string[];
   initialization: InitializationTiming; groupTimings: GroupTiming[]; secondCenter: SecondCenterResult;
+  materialPreparation: unknown[];
   pageErrors: string[]; failure: string | null; cleanupErrors: string[]; wire: RecoveryWire[]; coverage: Record<string, string>; bodyLoss: BodyLossObservation[];
   sseDelivery: { baselineCursor: number | null; deliveredCursor: number | null; cancelledTaskId: string | null;
     externalCancel: { taskId: string; key: string; status: string } | null; readRequests: string[]; trace: RecoverySseTrace | null };
@@ -131,7 +134,11 @@ async function supervisor() {
   const gatePath = process.env.FLOW_RECOVERY_GATE, adminUrl = process.env.FLOW_RECOVERY_TEST_ADMIN;
   requireThat(gatePath && adminUrl, "Fresh explicit gate and isolated PG admin endpoint are required; no discovery/default");
   const gate = JSON.parse(await readFile(gatePath, "utf8")) as Gate;
-  requireThat(String(gate.journey) === "message-settings-app", "MSG03 owner entry cannot replay historical Recovery journeys");
+  requireThat(["message-settings-app", "message-settings-material-return"].includes(gate.journey), "MSG03 owner entry cannot replay historical Recovery journeys");
+  const phase = gate.messageSettingsPhase;
+  requireThat(phase?.id === "MSG03-BROWSER-20261007" && phase.budgetMs === TOTAL_MS && phase.cleanupMs === CLEANUP_MS
+    && Number.isSafeInteger(phase.spentMs) && phase.spentMs >= 0 && gate.totalMs <= TOTAL_MS - phase.spentMs,
+    "Independent MSG03 phase with conservative actual outer/late/parent accounting required");
   const requiredGroups = selectedGroups(gate.journey);
   const twoCenter = gate.journey === "second-center-cycle", cleanupMs = twoCenter ? 30_000 : CLEANUP_MS;
   const evidenceLimit = twoCenter ? 13 * 1024 ** 2 : EVIDENCE_BYTES;
@@ -145,7 +152,7 @@ async function supervisor() {
   } else requireThat(gate.twoCenterPhase === undefined, "Two-center admission cannot authorize another journey");
   requireThat(gate.allowRun === true && /^[a-z0-9-]{1,48}$/.test(gate.run), "Invalid one-run gate");
   requireThat(Date.parse(gate.expiresAt) > Date.now(), "Admission expired");
-  requireThat(Number.isFinite(gate.totalMs) && gate.totalMs >= 30_000 && gate.totalMs <= TOTAL_MS, "Invalid admitted time budget");
+  requireThat(Number.isFinite(gate.totalMs) && gate.totalMs >= 45_000 && gate.totalMs <= 60_000, "Invalid admitted time budget");
   if (gate.journey === "steering-recovery") requireThat(gate.totalMs <= 60_000, "Steering phase requires a <=60s attempt including cleanup");
   requireThat(gate.minimumFreeBytes >= START_FREE + extraResourceBytes && Number.isFinite(gate.minimumFreeBytes), "Browser start margin must be explicitly admitted");
   requireThat(Number.isSafeInteger(gate.maxScratchBytes) && gate.maxScratchBytes > 0 && gate.maxScratchBytes <= 64 * 1024 ** 2, "Scratch requires an explicit <=64MiB bound");
@@ -180,6 +187,8 @@ async function supervisor() {
     requireThat(previous.endedAt && Number.isFinite(previous.elapsedMs) && previous.cleanupErrors?.length === 0, "Legacy attempt lacks settled cleanup");
     priorMs += previous.elapsedMs;
   }
+  requireThat(phase.spentMs >= Math.ceil(priorMs), "Phase accounting cannot undercharge retained attempts");
+  priorMs = phase.spentMs; // Includes the independently captured outer terminal; no local/Recovery credit transfers.
   requireThat(priorMs + gate.totalMs <= TOTAL_MS, "Cumulative browser/HTTP budget exhausted");
   requireThat(await freeBytes() >= gate.minimumFreeBytes, "Fresh free space below admitted start threshold");
   requireThat(await treeBytes(evidence) < evidenceLimit - retainedReserve, "Insufficient retained evidence headroom");
@@ -379,7 +388,7 @@ async function supervisor() {
         journey: gate.journey, requiredGroups, completedGroups: result?.completedGroups ?? [],
         initialization: result?.initialization ?? null, groupTimings: result?.groupTimings ?? null,
         acceptanceScope: gate.journey === "full" ? "original seven-group subset; not full feature approval" : "selected journey only; full journey remains unverified",
-        errors, cleanupErrors, databaseCleanup, ...(twoCenter ? { databaseCleanups, twoCenterPhase: gate.twoCenterPhase } : {}), processIds: children.map(child => ({ pid: child.pid, exitCode: child.exitCode, signalCode: child.signalCode })),
+        errors, cleanupErrors, databaseCleanup, messageSettingsPhase: phase, ...(twoCenter ? { databaseCleanups, twoCenterPhase: gate.twoCenterPhase } : {}), processIds: children.map(child => ({ pid: child.pid, exitCode: child.exitCode, signalCode: child.signalCode })),
         stopReason, interruptionRequested, allOwnedGroupsAbsent, minimumFreeBytes, peakScratchBytes, logBytes, scratchRemoved, terminal,
         attribution: "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation", providerQueries: 0 });
       await json(join(directory, "budget.json"), budget);
@@ -419,6 +428,7 @@ async function worker(init: Init) {
   const { conversationCreationSchema, conversationTurnSchema, conversationQueueEnqueueSchema, steeringCommandSchema } = await import("@flow/contracts");
   const { parseRecoveryRecord } = await import("../src/recovery/journal");
   const { assertQueueItem } = await import("../src/conversations/queue/commands");
+  const materialPreparation: unknown[] = [];
   const checks: string[] = [], pageErrors: string[] = [], cleanupErrors: string[] = [];
   const bodyLoss: BodyLossObservation[] = [], stopObservers: (() => void)[] = [];
   const sseDelivery: WorkerResult["sseDelivery"] = { baselineCursor: null, deliveredCursor: null, cancelledTaskId: null, externalCancel: null, readRequests: [], trace: null };
@@ -438,7 +448,7 @@ async function worker(init: Init) {
   };
   const coverage: Record<string, string> = {
     cookieRead: "NOT_RUN", cookieSseHandshake: "NOT_RUN", cookieSseDelivery: "PENDING: only handshake is asserted", textIntentDraft: "NOT_RUN", materialDraft: "NOT_RUN", sameKeyTurn: "NOT_RUN", crossTabCas: "NOT_RUN",
-    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN", createAckLoss: "NOT_RUN", createdTurnAckLoss: "NOT_RUN", queueAckLoss: "NOT_RUN", sseDelivery: "NOT_RUN", completeDraft: "NOT_RUN", steeringRecovery: "NOT_RUN", secondCenterCycle: "NOT_RUN", messageSettingsApp: "NOT_RUN",
+    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN", createAckLoss: "NOT_RUN", createdTurnAckLoss: "NOT_RUN", queueAckLoss: "NOT_RUN", sseDelivery: "NOT_RUN", completeDraft: "NOT_RUN", steeringRecovery: "NOT_RUN", secondCenterCycle: "NOT_RUN", messageSettingsApp: "NOT_RUN", messageSettingsMaterialReturn: "NOT_RUN",
     createTwoStage: "PENDING: the two CREATE fault points are independent selected journeys", queueSteerRecovery: "PENDING: enqueue selection does not validate promotion or steering",
     profileKnowledgeSteeringDraft: "PENDING: direct/source only", secondCenter: "NOT_RUN: real A/B cycle is a separate selected journey; principal-only is controlled",
   };
@@ -513,7 +523,7 @@ async function worker(init: Init) {
   };
   try {
     requireThat((init.journey === "second-center-cycle") === (typeof init.secondDatabaseUrl === "string"), "Selected journey and two-database input must agree");
-    fixture = await startRecoveryFixture({ databaseUrl: init.databaseUrl, ...(init.secondDatabaseUrl ? { secondDatabaseUrl: init.secondDatabaseUrl } : {}), directory: init.directory, cacheDirectory: join(init.scratch, "vite-cache"), checkpoint,
+    fixture = await startRecoveryFixture({ databaseUrl: init.databaseUrl, ...(init.secondDatabaseUrl ? { secondDatabaseUrl: init.secondDatabaseUrl } : {}), directory: init.directory, messageSettings: init.journey.startsWith("message-settings-"), cacheDirectory: join(init.scratch, "vite-cache"), checkpoint,
       ...(init.journey === "steering-recovery" ? { steering: { workDeadline: init.workDeadline } } : {}) }, lifetime.signal);
     await checkpoint();
     const endpoint = await new Promise<string>((resolve, reject) => {
@@ -1120,23 +1130,118 @@ async function worker(init: Init) {
       expect(postRows()).toHaveLength(baseline.length + 1); expect(bodyReads()).toBe(readsBefore);
       coverage.profileKnowledgeSteeringDraft = "PARTIAL: prepared profile/project, knowledge and two files; steering draft is not covered";
     });
+    const settingsUi = () => {
+      const action = () => page.locator("[data-composer-view]").filter({ visible: true }).getByRole("button", { name: "消息设置", exact: true });
+      const dialog = page.getByRole("dialog", { name: "下一条消息设置", exact: true });
+      const applied = () => page.locator(".ep-settings-summary").filter({ visible: true }).filter({ hasText: "下一条消息设置" });
+      const open = async () => { await action().focus(); await action().press("Enter"); await expect(dialog).toBeVisible(); };
+      const choose = async (value: { requested: { model: string } }) => {
+        const option = dialog.locator(".ep-option").filter({ hasText: value.requested.model });
+        await expect(option).toHaveCount(1); await option.getByRole("radio").check();
+      };
+      const apply = async (value: { requested: { model: string } }) => {
+        await open(); await choose(value); await dialog.getByRole("button", { name: "应用", exact: true }).click();
+        await expect(dialog).not.toBeVisible(); await expect(action()).toBeFocused(); await expect(applied()).toContainText(value.requested.model);
+      };
+      const omit = async () => {
+        await open(); await dialog.getByRole("radio", { name: /不附加消息设置/ }).check();
+        await dialog.getByRole("button", { name: "应用", exact: true }).click(); await expect(dialog).not.toBeVisible();
+      };
+      return { action, dialog, applied, open, choose, apply, omit };
+    };
+    await run("mounted App official material failure/cancel preserve B and explicitly restore complete A", "messageSettingsMaterialReturn", async () => {
+      const seed = await fixture!.seedMessageSettings(), [a, b, c] = seed.choices;
+      requireThat(a && b && c, "Three declared choices required");
+      const { action, dialog, applied, open, choose, apply, omit } = settingsUi();
+      const original = "MSG03 held material A 中文🙂", path = `/api/conversations/${seed.conversationId}`;
+      const business = () => postRows().filter(row => row.path === path + "/turns" || row.path === path + "/queue");
+      const composer = () => page.locator(".aui-composer-root").filter({ visible: true });
+      const upload = async (name: string) => {
+        const choosing = page.waitForEvent("filechooser"); await composer().getByRole("button", { name: "Add Attachment", exact: true }).click();
+        await (await choosing).setFiles({ name, mimeType: "text/plain", buffer: Buffer.from(`Fixture file ${name}`) });
+        await expect(composer().getByRole("button", { name: "File attachment", exact: true })).toHaveCount(name === "held-b.txt" ? 1 : name === "held-2.txt" ? 2 : 1);
+      };
+      const probe = async (operation: "arm" | "settle" | "snapshot" | "dispose", value?: string) => page.evaluate(async ({ operation, value }) => {
+        const url = "/@id/__x00__virtual:msg03-material-probe", module = await import(url);
+        if (operation === "snapshot") return module.snapshot();
+        module[operation](value); return module.snapshot();
+      }, { operation, value });
+      await page.goto(fixture!.url + `#conversation=${seed.conversationId}`); await expect(input()).toBeVisible();
+      try {
+        for (const mode of ["failure", "cancel"] as const) {
+          await apply(a); await input().fill(original); await upload("held-1.txt"); await upload("held-2.txt");
+          const savedA = async () => (await records(page)).find(record => record.kind === "draft" && record.owner.routeId === `conversation:${seed.conversationId}`
+            && object(record.data).text === original && JSON.stringify(object(record.data).messageSettings) === JSON.stringify(a)
+            && Array.isArray(object(record.data).attachments) && (object(record.data).attachments as unknown[]).length === 2);
+          await expect.poll(async () => Boolean(await savedA())).toBe(true);
+          const savedAttachments = object((await savedA())!.data).attachments;
+          await expect(composer().getByRole("button", { name: "Send message", exact: true })).toBeEnabled();
+          await probe("arm", mode); const posts = business().length; await input().press("Enter");
+          await expect.poll(async () => (await probe("snapshot")).pending).toBe(true);
+          await expect(input()).toHaveValue(""); await expect(composer().locator(".aui-composer-attachments > *")).toHaveCount(0);
+          await apply(b); const nextText = mode === "failure" ? "" : original; await input().fill(nextText);
+          if (mode === "cancel") await upload("held-b.txt");
+          if (mode === "failure") await probe("settle", "failed");
+          else await page.getByRole("button", { name: "Cancel material preparation", exact: true }).click();
+          const held = page.getByRole("region", { name: "Unsent material recovery", exact: true });
+          await expect(held).toBeVisible(); await expect(held).toContainText(original);
+          await expect(input()).toHaveValue(nextText); await expect(applied()).toContainText(b.requested.model);
+          const nextFiles = mode === "failure" ? 0 : 1;
+          await expect(composer().getByRole("button", { name: "File attachment", exact: true })).toHaveCount(nextFiles);
+          expect(business()).toHaveLength(posts);
+          if (mode === "cancel") {
+            // Core cancellation returned A already. The adapter deliberately ignores abort until this late real settlement.
+            expect((await probe("snapshot")).rows.at(-1).abortObserved).toBe(true);
+            await probe("settle", "released"); await expect.poll(async () => (await probe("snapshot")).rows.at(-1).returned).toBe(true);
+            await expect(input()).toHaveValue(nextText); await expect(applied()).toContainText(b.requested.model);
+            await expect(composer().getByRole("button", { name: "File attachment", exact: true })).toHaveCount(1); expect(business()).toHaveLength(posts);
+          }
+          // The production restore button must reject both settings-only B and same-text/file B.
+          await held.getByRole("button", { name: "Restore into an empty draft", exact: true }).click();
+          await expect(input()).toHaveValue(nextText); await expect(applied()).toContainText(b.requested.model); await expect(held).toBeVisible();
+          await input().fill("");
+          if (nextFiles) await composer().getByRole("button", { name: "Remove file", exact: true }).click();
+          await omit(); await held.getByRole("button", { name: "Restore into an empty draft", exact: true }).click();
+          await expect(held).not.toBeVisible(); await expect(input()).toHaveValue(original); await expect(applied()).toContainText(a.requested.model);
+          await expect(composer().getByRole("button", { name: "File attachment", exact: true })).toHaveCount(2);
+          await expect.poll(async () => (await records(page)).filter(record => record.kind === "draft" && record.owner.routeId === `conversation:${seed.conversationId}`
+            && object(record.data).text === original && JSON.stringify(object(record.data).messageSettings) === JSON.stringify(a)
+            && JSON.stringify(object(record.data).attachments) === JSON.stringify(savedAttachments)).length).toBe(1);
+          expect(business()).toHaveLength(posts);
+          const observation = await probe("snapshot"); expect(observation.pending).toBe(false);
+          expect(observation.rows.at(-1)).toMatchObject({ label: mode, outcome: mode === "failure" ? "failed" : "released", originalValidated: true, returned: mode === "cancel" });
+          materialPreparation.push({ mode, restoredCompleteDraft: true, businessPostCount: posts, observation });
+          await input().fill("");
+          for (let index = 0; index < 2; index++) {
+            await expect(composer().getByRole("button", { name: "Remove file", exact: true })).toHaveCount(2 - index);
+            await composer().getByRole("button", { name: "Remove file", exact: true }).first().click();
+          }
+          await expect.poll(async () => (await records(page)).some(record => record.kind === "draft" && record.owner.routeId === `conversation:${seed.conversationId}`
+            && object(record.data).text === "" && JSON.stringify(object(record.data).attachments) === "[]")).toBe(true);
+          expect(fixture!.wire.filter(row => row.method === "DELETE")).toHaveLength(0);
+        }
+        // Success also waits in the actual adapter, before onNew: B is independent before any HTTP turn.
+        await apply(a); await input().fill(original); await upload("held-1.txt"); await probe("arm", "success");
+        await input().press("Enter"); await expect.poll(async () => (await probe("snapshot")).pending).toBe(true);
+        expect(business()).toHaveLength(0); await apply(b); await input().fill(original); await probe("settle", "released");
+        await expect.poll(() => business().length).toBe(1); expect(conversationTurnSchema.parse(JSON.parse(business()[0]!.body)).messageSettings).toEqual(a);
+        await expect(input()).toHaveValue(original); await expect(applied()).toContainText(b.requested.model);
+        const observation = await probe("snapshot"); expect(observation.rows.at(-1)).toMatchObject({ label: "success", outcome: "released", originalValidated: true, returned: true });
+        materialPreparation.push({ mode: "success", businessPostCount: 1, observation });
+        // A pending opening cannot apply after real same-document navigation hides its owner.
+        const origin = await page.evaluate(() => performance.timeOrigin); await open(); await choose(c);
+        await page.evaluate(id => { location.hash = `conversation=${id}`; }, fixture!.conversationId);
+        await expect(dialog).not.toBeVisible(); await page.evaluate(id => { location.hash = `conversation=${id}`; }, seed.conversationId);
+        await expect(applied()).toContainText(b.requested.model); expect(await page.evaluate(() => performance.timeOrigin)).toBe(origin);
+        expect(business()).toHaveLength(1); await expect(action()).toBeVisible();
+      } finally { try { await probe("dispose"); } catch (error) { cleanupErrors.push("material probe: " + text(error)); } }
+    });
     await run("real App message settings bind frozen Send/Queue requests, complete Recovery and native P01 keyboard", "messageSettingsApp", async () => {
       const seed = await fixture!.seedMessageSettings(), [a, b, c] = seed.choices;
       requireThat(a && b && c, "Three declared choices required");
       const original = "MSG03 same text 中文🙂", path = `/api/conversations/${seed.conversationId}`;
       const rows = (suffix: string) => postRows().filter(row => row.path === path + suffix);
-      const action = () => page.locator("[data-composer-view]").filter({ visible: true }).getByRole("button", { name: "消息设置", exact: true });
-      const dialog = page.getByRole("dialog", { name: "下一条消息设置", exact: true });
-      const applied = () => page.locator(".ep-settings-summary").filter({ visible: true }).filter({ hasText: "下一条消息设置" });
-      const open = async () => { await action().focus(); await action().press("Enter"); await expect(dialog).toBeVisible(); };
-      const choose = async (value: typeof a) => {
-        const option = dialog.locator(".ep-option").filter({ hasText: value.requested.model });
-        await expect(option).toHaveCount(1); await option.getByRole("radio").check();
-      };
-      const apply = async (value: typeof a) => {
-        await open(); await choose(value); await dialog.getByRole("button", { name: "应用", exact: true }).click();
-        await expect(dialog).not.toBeVisible(); await expect(action()).toBeFocused(); await expect(applied()).toContainText(value.requested.model);
-      };
+      const { action, dialog, applied, open, choose, apply } = settingsUi();
       const draft = async (value: typeof a, text: string) => {
         const matching = (await records(page)).filter(record => record.kind === "draft" && record.owner.routeId === `conversation:${seed.conversationId}`
           && record.data?.text === text && JSON.stringify(object(record.data).messageSettings) === JSON.stringify(value));
@@ -1399,7 +1504,7 @@ async function worker(init: Init) {
     try { await fixture?.close(); } catch (error) { cleanupErrors.push("fixture: " + text(error)); }
     if (coverage.materialDraft === "NOT_RUN" && coverage.textIntentDraft === "FAILED") coverage.materialDraft = "NOT_COMPLETED";
     sseDelivery.trace = fixture?.sseTrace() ?? null;
-    const result: WorkerResult = { journey: init.journey, requiredGroups, completedGroups, checks, initialization, groupTimings, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage, bodyLoss, sseDelivery, completeDraft, steeringRecovery, secondCenter };
+    const result: WorkerResult = { journey: init.journey, requiredGroups, completedGroups, checks, initialization, groupTimings, materialPreparation, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage, bodyLoss, sseDelivery, completeDraft, steeringRecovery, secondCenter };
     const raw = JSON.stringify(result, null, 2); requireThat(Buffer.byteLength(raw) <= 2 * 1024 ** 2, "Browser report exceeds reserved bound");
     await writeFile(join(init.directory, "browser.json"), raw, { mode: 0o600 });
     process.send?.({ kind: "result", result }, () => { process.disconnect(); });

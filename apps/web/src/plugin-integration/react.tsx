@@ -265,6 +265,7 @@ export { ConversationSteering } from "./steering";
 export function AttachmentComposer({ binding, runtime, onAttached, recovery, children }: { binding: ConversationAttachments | null; runtime: AssistantRuntime; onAttached?(): void; recovery?: { restore(): void | Promise<void>; discard(): void }; children: React.ReactNode }) {
   const session = useContext(SessionContext)!;
   const state = useSyncExternalStore(binding?.subscribe ?? (() => () => {}), binding?.getSnapshot ?? (() => null));
+  const hasSubmission = useSyncExternalStore(listener => runtime.thread.composer.subscribe(listener), () => runtime.thread.composer.getState().submission !== undefined);
   const active = useSyncExternalStore(session.host.subscribe, () => session.host.list().find(plugin => plugin.id === ATTACHMENT_OWNER)?.state === "active");
   if (!binding) return <>{children}</>;
   const add = async (id: string) => { if (!binding.input) throw Error("Attachment input is unavailable."); await runtime.thread.composer.addAttachment(createExistingAttachment(binding.input, id)); onAttached?.(); };
@@ -281,6 +282,8 @@ export function AttachmentComposer({ binding, runtime, onAttached, recovery, chi
   };
   return <AttachmentSurfaceProvider value={{ binding, onAttach: add, onRemove: remove }}>{children}
     {state?.error && <p role="alert">{state.error}</p>}
+    {recovery && state?.submission?.state === "preparing" && hasSubmission && <button className="flow-link" type="button"
+      onClick={() => { if (binding.getSnapshot().submission?.state === "preparing" && runtime.thread.composer.getState().submission) runtime.thread.composer.cancel(); }}>Cancel material preparation</button>}
     {state?.submission?.state === "failed" && <section className="flow-conversation-receipt" aria-label="Unsent material recovery"><strong>Materials were not handed to a message receipt</strong><p>{state.submission.error}</p><pre>{state.submission.value.capture.text}</pre>
       <button className="flow-link" type="button" onClick={() => void restore()}>Restore into an empty draft</button>{" "}
       <button className="flow-link" type="button" onClick={() => { if (recovery) recovery.discard(); else binding.discardFailedSubmission(); }}>Discard held submission (keep draft files)</button>

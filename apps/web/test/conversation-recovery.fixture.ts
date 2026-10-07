@@ -59,6 +59,41 @@ export function observeRecoveryRecords(options: { name: string; version: number;
   });
 }
 
+/** Fixture-only fault at the public AttachmentAdapter.send boundary. No business HTTP or draft injection.
+ * This module exists only on the isolated test server and retains at most three small observation rows. */
+const materialProbeId = "\0virtual:msg03-material-probe";
+const materialProbeSource = String.raw`
+let armed = null, pending = null, disposed = false;
+const rows = [];
+export function arm(label) {
+  if (disposed || armed || pending || rows.length >= 3 || !["failure", "cancel", "success"].includes(label)) throw Error("Invalid material probe arm");
+  armed = label;
+}
+export function snapshot() { return { armed, pending: pending !== null, disposed, rows: rows.map(row => ({ ...row })) }; }
+export function settle(outcome) {
+  if (!pending || !["released", "failed"].includes(outcome)) throw Error("No active material preparation");
+  pending(outcome);
+}
+export async function holdValidated(signal) {
+  if (!armed) return;
+  if (disposed || pending) throw Error("Material probe lifetime invalid");
+  const row = { label: armed, outcome: "waiting", originalValidated: true, abortObserved: false, returned: false }; armed = null; rows.push(row);
+  await new Promise((resolve, reject) => {
+    let done = false;
+    const finish = outcome => {
+      if (done) return; done = true; clearTimeout(timer); signal?.removeEventListener("abort", abort); pending = null; row.outcome = outcome;
+      if (outcome === "released") resolve(); else reject(Error("Fixture material preparation " + outcome));
+    };
+    const abort = () => { row.abortObserved = true; if (row.label !== "cancel") finish("aborted"); };
+    const timer = setTimeout(() => finish("timeout"), 10000);
+    pending = finish; signal?.addEventListener("abort", abort, { once: true }); if (signal?.aborted) abort();
+  });
+  row.returned = true;
+}
+export function dispose() { disposed = true; armed = null; pending?.("disposed"); removeEventListener("pagehide", dispose); }
+addEventListener("pagehide", dispose, { once: true });
+`;
+
 export interface RecoveryWire {
   method: string; path: string; key: string | null; body: string; status: number; cookie: boolean; bearer: boolean; csrf: boolean;
   responseBody?: string; responseSha256?: string;
@@ -214,6 +249,7 @@ type ConnectionObservation = { phase: "before-marker" | "after-marker"; attempt:
 
 export interface RecoveryFixtureOptions {
   databaseUrl: string;
+  messageSettings?: boolean;
   secondDatabaseUrl?: string;
   directory: string;
   cacheDirectory: string;
@@ -316,7 +352,7 @@ export class RecoveryDatabaseLease {
 /** Real center/auth/HTTP/SSE and actual App, inside the parent's owned worker group.
  * Imports and each startup await are behind the parent's admitted resource/deadline gate. */
 export async function startRecoveryFixture(options: RecoveryFixtureOptions, signal: AbortSignal) {
-  if (process.env.FLOW_RECOVERY_BROWSER !== "1") throw Error("Separate resource admission is required.");
+  if (process.env.FLOW_MSG03_BROWSER !== "1") throw Error("Separate resource admission is required.");
   const checkpoint = async () => { signal.throwIfAborted(); await options.checkpoint(); signal.throwIfAborted(); };
   await checkpoint();
   const [{ Pool }, { createServer: viteServer }, { createServer }, { FlowClient }] = await Promise.all([
@@ -538,7 +574,25 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
     const secondText = "Second ordered material";
     const secondResource = await client.uploadAttachment(project.snapshot.project.id, { recoveryScopeId: capabilities.recoveryScopeId, name: "later.txt", mediaType: "text/plain", text: secondText, byteLength: Buffer.byteLength(secondText), contentDigest: createHash("sha256").update(secondText).digest("hex") }, randomUUID());
     await checkpoint();
-    vite = await viteServer({ root: root + "apps/web", configFile: root + "apps/web/vite.config.ts", configLoader: "native", cacheDir: options.cacheDirectory, define: { "import.meta.env.VITE_FLOW_FIXTURE": JSON.stringify("true") }, server: { middlewareMode: true, proxy: {}, hmr: { server: publicServer } }, logLevel: "error" });
+    const materialProbe = options.messageSettings ? [{ name: "msg03-material-preparation", enforce: "pre" as const,
+      resolveId(id: string) { if (id === "virtual:msg03-material-probe") return materialProbeId; },
+      load(id: string) { if (id === materialProbeId) return materialProbeSource; },
+      transform(code: string, id: string) {
+        if (id.split("?")[0] !== root + "apps/web/src/attachments/adapter.ts") return;
+        const declaration = "export function createAttachmentAdapter(";
+        assert.equal(code.split(declaration).length, 2, "Original adapter declaration must match the pinned fixture seam");
+        return { code: `import { holdValidated } from "virtual:msg03-material-probe";\n`
+          + code.replace(declaration, "function originalCreateAttachmentAdapter(")
+          + `\nexport function createAttachmentAdapter(input: AttachmentInput): AttachmentAdapter {
+            const original = originalCreateAttachmentAdapter(input);
+            return { ...original, async send(attachment, options) {
+              const result = await original.send(attachment, options);
+              await holdValidated(options?.signal); return result;
+            } };
+          }`, map: null };
+      },
+    }] : [];
+    vite = await viteServer({ plugins: materialProbe, root: root + "apps/web", configFile: root + "apps/web/vite.config.ts", configLoader: "native", cacheDir: options.cacheDirectory, define: { "import.meta.env.VITE_FLOW_FIXTURE": JSON.stringify("true") }, server: { middlewareMode: true, proxy: {}, hmr: { server: publicServer } }, logLevel: "error" });
     await checkpoint();
     return { url: url + "/?recovery=1", token, wire, resource: resource.resource, secondResource: secondResource.resource, conversationId: conversation.conversation.id, projectId: project.snapshot.project.id, close,
       dropNext(kind: typeof lost) { lost = kind; },
