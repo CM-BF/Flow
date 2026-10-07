@@ -12,7 +12,7 @@
 
 目标：每页最多50轮在同一个只读REPEATABLE READ事务内批量读取，使数据库往返次数有明确上界，同时保持分页和每轮回复的现有语义。减少往返不等于消除PostgreSQL TOAST读取或全文hash成本，不沿用历史252条SQL作为当前测量。
 
-范围由10 literal claim约束：5个既有读模块、3个新模块/测试、自己的计划和证据。不得修改tasks、contracts、client、migration或context写入路径；沿既有contextReferences。真实PG/HTTP和字节/roundtrip测量另排共享窗口，本片先做公开Interface的非PG证据。
+初始范围由10 literal claim约束：5个既有读模块、3个新模块/测试、自己的计划和证据。不得修改tasks、contracts、client、migration或context写入路径；沿既有contextReferences。真实PG/HTTP和字节/roundtrip测量另排共享窗口，本片先做公开Interface的非PG证据。
 
 ## Module 与 Interface
 
@@ -34,3 +34,5 @@
 遵守[根模块化规则](../../AGENTS.md#modular-design)。plan/status/review分别记录实现、检查、独审及main事实；索引/架构基线由Lead协调，不越scope更新。
 
 2026-10-06 21:49:49 UTC：局部source/fake/strict复审已通过；REQ15-04按[最小真实PG准备](../../docs/evidence/req15-turn-page-batch/pg-acceptance-plan.md)继续。产品冻结；当前仅精确两SQL请求和可审方案，非执行入口批准。
+
+2026-10-07 03:47:30 UTC：main7b6已接收批量产品；真实2PG与测量已验，REQ15-04仅余最窄HTTP直接消费者。按[HTTP固定准备](../../docs/evidence/req15-turn-page-batch/http-window.md)保留现有单case所有断言，固定main含SVC07事务，专库与动态port0；types0/collect1仅说明准备可加载，实际HTTP待独审与新heavy窗口。state/replies在安全点原子amend交回，当前owner只保留其余8scope。

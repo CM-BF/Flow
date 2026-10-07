@@ -1,8 +1,8 @@
 # REQ15 独立审查
 
-状态：APPROVED（ae899312主线Pool mock小增量与局部结果；HTTP/main仍开放）
+状态：PENDING（当前HTTP准备source与局部types/collect结果待独审；旧批准保留）
 
-Review target commit: ae899312a2942c112dfca6cdf5b1cb472daf3488
+Review target commit: bc4cdf5d9b4daa9bd6f1a95433e823fd33c0d148
 
 历史说明：局部产品与fake/strict在d209已获独立APPROVED；新真实PG source packet **PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN**。以下按时间保留初始模板及各次固定审查，早期NOT_STARTED不是当前产品结论。
 
@@ -97,3 +97,7 @@ Target `ae899312a2942c112dfca6cdf5b1cb472daf3488`，source9e6cc60bcd1cbdef538cbc
 architecture_read / gpt-6-astra，2026-10-07T03:18:33Z，source `9e6cc60bcd1cbdef538cbce9300f09aace6c8a26` / target `ae899312a2942c112dfca6cdf5b1cb472daf3488`：**SOURCE_AND_RESULT_REVIEW_APPROVED /0 P1/P2**。只按fixedGit审查；现场dirty仅owner三份收口metadata。唯一test delta EventEmitter+callback/Promise connect未删断言，六产品及productiondatabase相对25be无diff。donor7789B/SHA277ab…5653逐字=main8c80=已审SVCe28；窄resolve与transform LOADED marker证明本轮加载，14bindings全Git=WT/hash/bytes，validation SHAb966…4933。
 
 单文件11/11 exit0/raw1908B完整、observed=retained/最终group absent、无signals/secondary，TMP当前精确lstat absent。审者0tests/import/PG/write。批准仅mock兼容与本局部消费者，不重发旧26/PG2批准或扩大到真实HTTP/main。作者接受，无修复；恢复integration队列，不再运行检查。
+
+## 公开HTTP直接消费者准备与局部段统一审查
+
+Target `bc4cdf5d9b4daa9bd6f1a95433e823fd33c0d148`，2026-10-07 03:47:30 UTC，SOURCE_REVIEW_PENDING。入口[http-window](../../docs/evidence/req15-turn-page-batch/http-window.md)；227输入1098267B/manifest SHA5616e4c61111a87e6586cf513ad41fd16dc77aa7626531ff24725a5f46789a5e。请status_read只读核固定main7b6 snapshot的实际source/30SQL、原单例断言与page401/403、专库/port0/池关闭和OID-marker普通DROP/unknown保留、旧supervisor公共接口和有限资源；再核两个local child实际types0/collect1（非pass）、4原件7454B/raw271B及资源闭合。0 reviewer import/type/test/PG/browser/write。产品原6源及旧26/PG2/11原件不变，旧批准不重发；main已接收，但本次实际HTTP仍NOT_OPEN。
