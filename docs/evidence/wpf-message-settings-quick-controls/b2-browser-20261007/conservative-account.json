@@ -1,0 +1,35 @@
+{
+  "rule": "ceil(max(actual outer wallMs, late terminal, parent elapsedMs)); earlier raw unchanged",
+  "run": "msgquick-b2-20261007-044744",
+  "original": {
+    "outerWallMs": 6141.688499948941,
+    "terminalElapsedMs": 6103,
+    "parentElapsedMs": 6102,
+    "parentCumulativeMs": 18428,
+    "parentRemainingMs": 41572
+  },
+  "previousBrowserRuntimeMs": 12326,
+  "accountedThisRuntimeMs": 6142,
+  "cumulativeBrowserRuntimeMs": 18468,
+  "remainingBrowserMs": 41532,
+  "cleanupReservedWithinRemainingMs": 15000,
+  "limitMs": 60000,
+  "futureRunAuthorized": false,
+  "directBudgetUnchanged": {
+    "cumulativeMs": 5119,
+    "remainingMs": 24881
+  },
+  "completedBrowserGroupEvidence": 0,
+  "pngs": 0,
+  "workerReport": "NOT_CAPTURED",
+  "httpFixtureClosed": "NOT_CAPTURED",
+  "contextClosed": "NOT_CAPTURED",
+  "selectTrace": "NOT_CAPTURED",
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "workerGroupAbsent": true,
+    "chromeGroupAbsent": true,
+    "scratchAbsent": true
+  }
+}

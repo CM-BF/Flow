@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-10-07T04:48:04.105492+00:00",
+  "pid": 88739,
+  "pgid": 88739,
+  "command": [
+    "python3",
+    "/private/tmp/msgquick-b2/supervisor.py",
+    "--gate",
+    "/private/tmp/msgquick-b2-admission-rijzrvzi/gate.json"
+  ],
+  "output": "/private/tmp/msgquick-b2-outer-017_g6hn",
+  "endedAt": "2026-10-07T04:48:10.247247+00:00",
+  "actualExit": 1,
+  "wallMs": 6141.688499948941,
+  "groupAbsent": true,
+  "bothEOF": true,
+  "capturedBytes": {
+    "stdout": 713,
+    "stderr": 0
+  },
+  "droppedBytes": 0,
+  "outerInterrupted": false,
+  "stdoutSha256": "2d9261bd034a3c3757986a12a81056adb8db8c200ae7dd69d23195740e685c2e",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

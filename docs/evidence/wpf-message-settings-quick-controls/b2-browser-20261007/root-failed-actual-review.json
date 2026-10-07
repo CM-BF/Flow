@@ -1,0 +1,138 @@
+{
+  "at": "2026-10-07T04:50:00.682072+00:00",
+  "decision": "ACCEPTED_FAILED_ACTUAL_AND_OWNED_CLEANUP_NOT_FEATURE_PASS",
+  "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "head": "3a4dd6dee89a3ea456f31870dd0a126a6efad1c5",
+  "packet": "/private/tmp/msgquick-b2",
+  "outer": "/private/tmp/msgquick-b2-outer-017_g6hn",
+  "actualExit": {
+    "startedAt": "2026-10-07T04:48:04.105492+00:00",
+    "pid": 88739,
+    "pgid": 88739,
+    "command": [
+      "python3",
+      "/private/tmp/msgquick-b2/supervisor.py",
+      "--gate",
+      "/private/tmp/msgquick-b2-admission-rijzrvzi/gate.json"
+    ],
+    "output": "/private/tmp/msgquick-b2-outer-017_g6hn",
+    "endedAt": "2026-10-07T04:48:10.247247+00:00",
+    "actualExit": 1,
+    "wallMs": 6141.688499948941,
+    "groupAbsent": true,
+    "bothEOF": true,
+    "capturedBytes": {
+      "stdout": 713,
+      "stderr": 0
+    },
+    "droppedBytes": 0,
+    "outerInterrupted": false,
+    "stdoutSha256": "2d9261bd034a3c3757986a12a81056adb8db8c200ae7dd69d23195740e685c2e",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "terminal": {
+    "type": "terminal-seal",
+    "terminalContract": "msgquick-browser-v1-external-exit-required",
+    "state": "FAILED",
+    "declaredExitCode": 1,
+    "sealedFiles": {
+      "binding.json": "790668eca675eaa43cf0d4a43d761e28413270ce52e2c572e13525d1c4c7d1e4",
+      "result.json": "5e6c774854099b9fb11971f136b508afbb715403f7a1e654698fb51951b079db",
+      "browser-budget.json": "dae668e8b6e2e293a8c78e6733f8fb43eca60df87500ceeb8ef640258f94ed1f",
+      "runtime-evidence-manifest.json": null,
+      "raw/msgquick-b2-20261007-044744/select-diagnostics.json": null
+    },
+    "cleanup": {
+      "errors": [],
+      "groupAbsent": true,
+      "workerGroupAbsent": true,
+      "chromeGroupAbsent": true,
+      "scratchAbsent": true
+    },
+    "stopping": false,
+    "stopSignal": null,
+    "afterFinalWritesElapsedMs": 6103
+  },
+  "lateOwnedGroupObservation": {
+    "88739": "ABSENT",
+    "88871": "ABSENT",
+    "88743": "ABSENT"
+  },
+  "sourceAndPrior": "Original b1 41 hashes unchanged; b2 scripts and product untouched. No retry.",
+  "browserCoverage": {
+    "completedGroups": 0,
+    "screenshots": 0,
+    "diagnosticState": "NOT_CAPTURED",
+    "browserResults": "ABSENT",
+    "fixtureClosedField": "NOT_CAPTURED",
+    "contextClosedField": "NOT_CAPTURED",
+    "meaning": "No worker report; normal fixture/context close cannot be asserted. Parent owned groups and scratch absent independently observed."
+  },
+  "budget": {
+    "previousConservativeMs": 12326,
+    "thisConservativeMs": 6142,
+    "conservativeCumulativeMs": 18468,
+    "remainingMs": 41532,
+    "originalParentBudgetSpentMs": 18428,
+    "originalBudgetPreserved": true
+  },
+  "failure": {
+    "errors": [
+      "RuntimeError: Retained evidence reserve exhausted",
+      "Browser report: ",
+      "Select diagnostic evidence: ",
+      "Expected runtime evidence: browser-results.json"
+    ],
+    "workerExit": 143,
+    "chromeExit": {
+      "code": 0,
+      "signal": null,
+      "observedAt": "2026-10-07T04:48:10.174468+00:00",
+      "beforeCdpPort": false
+    },
+    "sampleCount": 333,
+    "exceeded": [
+      [
+        329,
+        {
+          "phase": "work",
+          "seconds": 5.997,
+          "freeBytes": 25619533824,
+          "scratchLogical": 8625438,
+          "scratchAllocated": 2953216,
+          "retainedBytes": 9549873
+        }
+      ]
+    ],
+    "preceding": {
+      "phase": "work",
+      "seconds": 5.736,
+      "freeBytes": 25619677184,
+      "scratchLogical": 8536174,
+      "scratchAllocated": 2830336,
+      "retainedBytes": 2862545
+    },
+    "afterOwnedGroupsReaped": {
+      "phase": "after-both-groups-reaped-before-scratch-removal",
+      "seconds": 6.065,
+      "freeBytes": 25603641344,
+      "scratchLogical": 18565918,
+      "scratchAllocated": 18911232,
+      "retainedBytes": 2863935
+    },
+    "finalRetainedBytes": 2930666
+  },
+  "sourceFinding": {
+    "path": "/private/tmp/msgquick-b2/supervisor.py",
+    "line": 145,
+    "finding": "observe_resources scans scratch, then scans BASE which includes scratch and subtracts the earlier scratch value. The two mutable-tree scans are not a disjoint retained measurement; scratch growth between scans can inflate retained bytes. This static correctness issue exists in inherited lifecycle logic.",
+    "confidence": "Source defect confirmed; the observed transient is consistent with it, but samples alone do not prove exact per-file allocation history or rule out every transient retained write.",
+    "next": "Owner to prepare a minimal exclusive retained traversal that prunes the exact owned scratch subtree, preserving actual scratch limits and all stop/cleanup semantics; targeted synthetic accounting validation only. Do not raise cap, reset budget, replace prior failure or change product assertions."
+  },
+  "postrunSummary": {
+    "path": "/private/tmp/msgquick-b2-outer-017_g6hn/postrun-summary.json",
+    "sha256": "272a324431bdf3387b2a3fb6083d6f473e541c7f3fdc304977f43da8d10e4a34"
+  },
+  "cleanCode": "Identified hidden coupling between two mutable scans. Prefer direct measurement of disjoint roots over non-atomic subtraction; preserve errors and resource ownership.",
+  "runtimeByReviewer": "No product execution; bounded file/hash verification and signal0 observations of exactly the three recorded owned groups."
+}

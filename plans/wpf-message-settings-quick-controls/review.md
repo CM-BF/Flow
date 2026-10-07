@@ -1,10 +1,10 @@
 # WPF-MESSAGESETTINGS02 独立审查
 
-状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 04:31:38 UTC。
+状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 04:52:57 UTC。
 
 - 当前 Target：fe6ece131c489c79cf531a184e4cf51209f9c4a0；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。root 已完成限定源码复审：APPROVED_SCOPED_SOURCE_ONLY；完整行为不由此通过。
 - 历史已审 Target：35bbe76faa2128d5c1d00711fb2be3b23d54fc4f，root/peer 结论 REQUEST_CHANGES_SCOPED_VALIDATION_GAP。唯一 MSGQUICK-R3 / P2 是验收覆盖缺口，不是已证明产品错误。
-- Scope：Picker 与三项 test/fixture/browser；catalog/selection/public/旧 Picker 行为保护。c1历史strict FAILED保留；当前c2 strict/26direct PASS；b1首次browser FAILED，0完成组/0PNG，完整行为未通过。
+- Scope：Picker 与三项 test/fixture/browser；catalog/selection/public/旧 Picker 行为保护。c1历史strict FAILED保留；当前c2 strict/26direct PASS；b1/b2实际browser FAILED，当前无完成组/PNG/trace证据，完整行为未通过。
 
 ## 历史源码与准备审查（以下 NOT_RUN 按当时事实保留）
 
@@ -60,10 +60,16 @@ Portable review：**APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN / 0 blocking**�
 
 仅Quick事实应用本片；同段Recovery/D04不继承。旧c1 FAILED及原供给缺口完整保留。当时browser未运行；现b1首组失败见下。App/Send/Queue/Recovery、main/部署均未验；因此顶层仍UNKNOWN，不冒完整feature批准。portable准备仍NOT_RUN，未启用远程。
 
-## 当前 browser FAILED · 2026-10-07 04:26:38 UTC
+## 历史b1 browser FAILED · 2026-10-07 04:26:38 UTC
 
 [完整原件](../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/README.md)，产品仍fe6、执行metadata545769。root对[b1精确native/准备](../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/root-native-preparation-review.json)的ACCEPTED只为执行前边界，不是本次行为批准。实际outerexit1+完整FAILED seal/三hash成立，首组模型native select值断言失败；checks=[]、0PNG，缺runtime-evidence-manifest不补造。
 
 清理实际完成：fixture/context关闭，双child group/parent group/scratch absent，日志EOF/0drop。保守累计12326/剩47674，原计时不修改。错误仅以原worker.failure及静态范围归因，尚未证明唯一产品/按键序列原因。未重跑或更改源码；完整browser验收保持未通过，不由作者自行批准。
 
 [root本次实际独审原件](../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/root-failed-actual-review.json)：ACCEPTED_FAILED_ACTUAL_AND_CLEANUP_NOT_FEATURE_PASS；8200B / d2593abf4d6ee2be0929da5493ab0c678c094e49b2f095b4c53bb47ddc9ed4b4。接受FAILED+完整清理事实，0/6与0PNG/缺manifest原样成立，保守12326/余47674；非feature PASS、无续跑授权。
+
+## 当前b2 actual · 2026-10-07 04:48:10 UTC
+
+[root原件](../../docs/evidence/wpf-message-settings-quick-controls/b2-browser-20261007/root-failed-actual-review.json)：ACCEPTED_FAILED_ACTUAL_AND_OWNED_CLEANUP_NOT_FEATURE_PASS；SHAeea3ef6a637b878ce89a7b30e4b9d6775446332398d39db5ffc34b96e97750be。actualouterexit1，FAILED seal完整/presenthash匹配/null诚实，所有333samples与EOF0drop已核。精确3PGID absent、scratch已清理；worker没有正常HTTP/context关闭报告，保持NOT_CAPTURED。
+
+父scratch-before-BASE差分计量缺陷为源码确认；本次样本只支持一致性，不证明精确原因分配。b2累计保守18468/余41532，旧parent18428保留。观测未到模型选框事件，无产品修复/第三次运行；本片完整feature仍UNKNOWN，TMP后继计量准备需独审。
