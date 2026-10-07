@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-07T21:29:58.937Z",
+  "source": "e6582fcf1",
+  "base": "f37a3612068c7215994750574a7451ede841bcce",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-default-resolver.patch",
+      "bytes": 521,
+      "sha256": "0fa91ba2e00438f5fb2c7363efe0e5b1b913ff3565dc85f8cbf5d5b1027c0877"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-default-resolver.json",
+      "bytes": 935,
+      "sha256": "069b5cd36ae54a42b9ffe4ad0373fad1333297e1ede950ee37e026be16a2e3e0"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-default-resolver.test.mjs",
+      "bytes": 6781,
+      "sha256": "f0e233fe32c7a2162d582abd1c4501edd1208ecfd635bc9dced7c1fd748a94ea"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-default-resolver-local-reservation.json",
+      "bytes": 1678,
+      "sha256": "2517591c69099e396a2d0bb2931ac4a0ea01660cdeb195174891b92f1908fd1b"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-default-resolver-local-outer.json",
+      "bytes": 1187,
+      "sha256": "17149add92701f797b67f4bfe6055b78c8c55e957df074533401218ae2ae101f"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-default-resolver-local-result.json",
+      "bytes": 383,
+      "sha256": "bd2d40ba1a8e0dd9c74ebfa979e24d1ea1dfcebdf47cb32a8c4fe1246fc168b0"
+    }
+  ],
+  "result": {
+    "selected": 5,
+    "passed": 5,
+    "elapsedMs": 159,
+    "rawBytes": 589,
+    "actualReturn": "2026-10-07T21:29:30.860Z"
+  },
+  "scope": "Real fixed preview public export and fixed host identity code, filesystem synthetic fixture; only full inventory verifier and unused services injected. No installed artifact/PG/service/personal read. Not cold proof.",
+  "change": "one default parameter in fixed f37 composition only; reviewed main already correct and immutable b692 unchanged",
+  "originalActualFailure": "34c610a0237b217fed8828f5e85936e13e066fff remains TypeError/code:null, without original message or stack",
+  "next": "Lead independently reviews patch then fixed new source/artifact; old once namespaces never reused",
+  "quality": "clean-code/codebase-design: preserve existing default Interface, one producer correction; no new runtime abstraction or caller bypass"
+}

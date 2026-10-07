@@ -1,0 +1,33 @@
+{
+  "pid": 9273,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 159,
+  "stdout": "\u2714 fixed f37 public default load reproduces TypeError before the verifier (8.88625ms)\n\u2714 corrected public default load authenticates artifact through the original host resolver (6.0055ms)\n\u2714 corrected public load preserves an explicit launch resolver and its descriptor (4.504375ms)\n\u2714 corrected public default load still rejects an artifact from a different source (4.74375ms)\n\u2714 corrected public legacy load retains the original repository identity path (3.111042ms)\n\u2139 tests 5\n\u2139 suites 0\n\u2139 pass 5\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 114.368958\n",
+  "stderr": "",
+  "observed_bytes": 589,
+  "retained_bytes": 589,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}
