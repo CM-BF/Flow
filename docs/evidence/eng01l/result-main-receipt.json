@@ -1,0 +1,21 @@
+{
+  "kind": "ENG01L_RESULT_MAIN_RECEIPT",
+  "recordedAt": "2026-10-07T08:20:11.203Z",
+  "main": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "resultDelivery": "a4a4784572302e3edc71c1915f1317117adf5a66",
+  "approvalMetadata": "35e7c0126bd8fb3c87fe1c610718f898d963c8e5",
+  "productSource": "574a2e31b8eb583a0d44a1a3eafd739784963681",
+  "productPathsVerified": [
+    "apps/runner/src/engineering/native-authority.ts",
+    "apps/runner/src/engineering/native-authority.test.ts",
+    "apps/runner/src/engineering/native-authority-darwin.ts",
+    "apps/runner/src/engineering/native-authority-darwin.test.ts",
+    "apps/runner/src/engineering/native-tool-host.ts",
+    "apps/runner/src/engineering/native-tool-host.test.ts"
+  ],
+  "provenance": "Parent confirmed main/origin clean controlled intake; six product bytes additionally compared here.",
+  "scope": "One initialize/close and separate exact cleanup; original FAIL/1MiB overage/unknown preserved. No native write qualification or all-writer revocation.",
+  "checksRerun": 0,
+  "stoppedWritingProducts": true,
+  "claimRelease": "All eight scopes will be released after this metadata commit/push; authoritative post-COMMIT receipt is separate."
+}
