@@ -105,7 +105,7 @@ afterAll(async () => {
   const settled = await fixture.settleStartup();
   const closed = settled && await fixture.close('server-close', closeApp);
   let counts: Record<string, number> | undefined;
-  if (closed) counts = (await pool.query(`SELECT (SELECT count(*)::int FROM flow.tasks) tasks,(SELECT count(*)::int FROM flow.attempts) attempts,(SELECT count(*)::int FROM flow.runners) runners,(SELECT count(*)::int FROM flow.plugin_installations) registrations`)).rows[0];
+  try { if (closed) counts = (await pool.query(`SELECT (SELECT count(*)::int FROM flow.tasks) tasks,(SELECT count(*)::int FROM flow.attempts) attempts,(SELECT count(*)::int FROM flow.runners) runners,(SELECT count(*)::int FROM flow.plugin_installations) registrations`)).rows[0]; } catch { facts.push({ kind: 'count-query-failed' }); }
   facts.push({ kind: 'bounded-counts', counts, http, bytes });
   const result = await fixture.finish({ startup: settled && startup, server: closed }, facts);
   expect(counts).toBeDefined(); expect(counts!.tasks).toBeLessThanOrEqual(32); expect(counts!.attempts).toBeLessThanOrEqual(20); expect(counts!.runners).toBeLessThanOrEqual(10); expect(counts!.registrations).toBeLessThanOrEqual(6);
