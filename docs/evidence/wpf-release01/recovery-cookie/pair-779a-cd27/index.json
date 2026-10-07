@@ -10,13 +10,13 @@
       "path": "/private/tmp/rel01-recovery-c1/README.md",
       "realpath": "/private/tmp/rel01-recovery-c1/README.md",
       "bytes": 3641,
-      "sha256": "36a080f13dee9c7952b04fe45abe6a88dcf2986960e0ac33c2baad280ca598cc"
+      "sha256": "4aea018a65836ac829677fda77f74df7d2c07b55e11504bb970b7a38959b0b94"
     },
     {
       "path": "/private/tmp/rel01-recovery-c1/binding.json",
       "realpath": "/private/tmp/rel01-recovery-c1/binding.json",
-      "bytes": 40379,
-      "sha256": "8da7d8e93579da8dcadce65b8a381dcb323b1098e610162e0feaafb899429520"
+      "bytes": 40852,
+      "sha256": "b079f5f20fbe8b24d5cbc57a2ddf0fa7a5ecaf7254ffd44a420dfb15bf0fa06b"
     },
     {
       "path": "/private/tmp/rel01-recovery-c1/claim-observation.json",
@@ -45,8 +45,8 @@
     {
       "path": "/private/tmp/rel01-recovery-c1/review-request.json",
       "realpath": "/private/tmp/rel01-recovery-c1/review-request.json",
-      "bytes": 2025,
-      "sha256": "f80ec55f23b66eb26b8db0468b8b9793d45f1e35538fe77b459c2d93505f695e"
+      "bytes": 2498,
+      "sha256": "e3e23bc2564f589e27105a66848f7e59a517d67f451293283cbd27343e703a8d"
     },
     {
       "path": "/private/tmp/rel01-recovery-c1/static-audit.json",
@@ -85,5 +85,5 @@
       "sha256": "28b6d22259a8ad8b49e430f84e2dd880c9884e27067ff04a3f2096e1f476f01e"
     }
   ],
-  "note": "Fixed TMP originals retained; current packet metadata HEAD will be bound once after this normal metadata commit. No recursive project commit required."
+  "note": "Consistent prepared snapshot before final metadata HEAD routine binding. Canonical run preparation stays in TMP; its before files are preserved and final hashes sent to reviewers. Archived JSON is historical preparation, never a current runtime gate."
 }
