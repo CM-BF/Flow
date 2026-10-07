@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 16:44 UTC |
+| 最近更新 | 2026-10-07 16:48 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -17,8 +17,8 @@
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
 | 工作树dirty状态 | actual准备起点c659bc204=origin clean；新permit/准入/status提交后运行，旧源/raw/KEEP不改 |
-| 工作分支状态 | review（源码与局部结果已审；候选就绪，真实PG窗口NOT_OPEN） |
-| 检查状态 | PASSED a82e44be17a7a31b051bf98400d9553513600542；定向owned遍历3+URL1（3未选）、focused noEmit0；全部可执行源与运行时一致，PG NOT_OPEN |
+| 工作分支状态 | review（源码及纯结果已审；真实PG首次FAILED/HOLD，待窄审） |
+| 检查状态 | FAILED a82e44be17a7a31b051bf98400d9553513600542；首次PG时限失败/HOLD；历史纯3+1/noEmit仍仅其原范围 |
 | 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本段入口准备未集成；仅纯检查已运行，PG未运行 |
 | 实现目标 | a82e44be17a7a31b051bf98400d9553513600542 |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
@@ -28,11 +28,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 检索诊断已获唯一隔离窗口，正在进行固定输入与资源准入 |
-| 下一可用交付 | 一次真实检索诊断与完整清理证据 |
-| 当前阻塞 | NONE |
+| 当前产出 | 首次真实检索诊断未在时限内完成；原始失败与新数据库身份已保留 |
+| 下一可用交付 | 定位本次未完成阶段并在明确授权后归还保留数据库 |
+| 当前阻塞 | ACTIVE: 本次数据库清理结果未知，必须保留；Mika协调原身份恢复与后继验证 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；a82e44be17a7a31b051bf98400d9553513600542 APPROVED；PG NOT_OPEN |
+| Review | [review.md](review.md)；a82e44be17a7a31b051bf98400d9553513600542 源/纯结果APPROVED；真实PG失败证据待独审 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -124,3 +124,5 @@
 2026-10-07T16:30:15.342251+00:00：fresh claim30965v2三scope及db7=origin clean后，顺序metadata-only归档db_transaction_owner 16:22:26独审批准/0P1P2；当前target a82及已执行字节不变。预算归档增量按原P2≤1MiB剩余额度核算，未重物化source或访问旧KEEP；结果见独审回执。runtime候选reviewed=true但permit仍CLOSED/expired、requiredFreeBytes=null、无namespace/预约。候选120s=70work+40cleanup+10receipt、max configured18、DB128MiB末sample/local8MiB/raw2MiB，实际floor由未来manager fresh供给，不据历史free准入。0工程child/PG/HTTP/资源探针。提交push后全部K01 STOP，原开放TODO不关闭。
 
 2026-10-07T16:44:52.237894+00:00: actual候选获Mika/d01唯一NEXT；R3 FULLRETURN16:36:44.486680，本组ordinary全drain。freshclaim30965v2/17source/27runtime/245fixedsource/20alias、input SHAfe3db093均一致；freshfree20096720896B≥18129092608B。授权单admin probe16:44:19.265684–.361814闭合，PG max100/占用9/保留3/可用88≥18+16；0建库。首次配置来源路径读取失败在supervise前，0child/0PG，改从固定Git取同已审来源。新permit仅一次120s主体、70work40cleanup10receipt；actual START由entry单ledger记录，不把本次准入壁钟算入或延长主体。旧closed permit/KEEP均不改。
+
+2026-10-07T16:48:09.283948+00:00: 首次PG实际终态FAILED/HOLD，16:44:58.670157→16:46:51.872606Z/113081ms；PID82159 exit-15/finalabsent、work deadline+SIGTERM、resourceConfirmed=false，不能FULLRETURN。自有DB flow_k01_query_2d8516c466264673bb3417de0c349ec1 OID1336476有CREATE ACK/marker身份但无cleanup/result，strict KEEP；无第二探针/删除/重跑。原raw0B/ledger保留，inputafter matched/source未变。W01 ordinary actual重叠事实已记录，不称CPU排他。唯一[失败证据](../../docs/evidence/k01/query-entry-pg-first/manifest.json)；实际金样本/plan/latency/DBsize均UNKNOWN，K01-06继续开放。主体窗口已消费，提交后仅等Mika原身份处理，队列任务仍STOP。

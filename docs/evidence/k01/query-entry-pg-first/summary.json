@@ -1,0 +1,141 @@
+{
+  "decision": "FAILED_HOLD",
+  "executionHead": "969b25b49b646d1f09c6059621dbc9b88aa8a9a3",
+  "implementationTarget": "a82e44be17a7a31b051bf98400d9553513600542",
+  "fixedProduct": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "runtimeInputSha256": "fe3db09342fe10dae55b5d95a86e7fd4af8a2a3b364d0e35ea005a1d1acec8bf",
+  "startAnnouncementAt": "2026-10-07T16:44:58.670157Z",
+  "startedAt": "2026-10-07T16:44:58.763656+00:00",
+  "terminalAt": "2026-10-07T16:46:51.872606+00:00",
+  "operatorElapsedMs": 113081,
+  "supervisorElapsedMs": 112936,
+  "pid": 82159,
+  "processFacts": {
+    "exit_code": -15,
+    "owned_state": "absent",
+    "capture": "merged",
+    "eof": {
+      "stdout": true
+    },
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "first_failure": {
+      "phase": "work",
+      "code": "DEADLINE_EXCEEDED",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "deadline exceeded"
+    },
+    "secondary_failures": [
+      {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      }
+    ],
+    "signals": [
+      {
+        "signal": "SIGTERM",
+        "state": "sent",
+        "errno": null
+      }
+    ],
+    "observations": [
+      {
+        "state": "present",
+        "errno": null
+      },
+      {
+        "state": "present",
+        "errno": null
+      },
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "resourceConfirmed": false,
+  "fullReturn": false,
+  "database": "flow_k01_query_2d8516c466264673bb3417de0c349ec1",
+  "databaseIdentity": {
+    "oid": "1336476",
+    "owner": "flow",
+    "marker": "2691d8d0-a4ea-4efd-81ec-b6959557c67b"
+  },
+  "databaseState": "KEEP_UNKNOWN_CLEANUP",
+  "scratch": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-81a75f3943f2416587db8a21c01f9b6c",
+    "identity": {
+      "dev": 16777234,
+      "ino": 124351036,
+      "marker": "3bb654bb311645fa9249a7b0da67c3be",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-81a75f3943f2416587db8a21c01f9b6c"
+    },
+    "state": "KEEP_PG_RECEIPTS",
+    "absent": false
+  },
+  "storageMeasurement": "UNKNOWN",
+  "storageWithinBudget": false,
+  "measurement": {
+    "resultFile": "ABSENT at terminal evidence read",
+    "goldAssertions": "UNKNOWN; no durable measurement result",
+    "explainPlansRetained": 0,
+    "selectSamplesRetained": 0,
+    "httpCounts": "UNKNOWN",
+    "databaseLogicalBytes": "UNKNOWN; no final size sample",
+    "attempts": 0,
+    "runners": 0,
+    "providerModelCalls": 0
+  },
+  "concurrentHostWork": {
+    "source": "Mika manager relay, 2026-10-07",
+    "W01StrictStart": "2026-10-07T16:45:35.498477Z",
+    "W01StrictEnd": "2026-10-07T16:45:37.148418Z",
+    "W01FullReturn": "2026-10-07T16:45:54.467272Z",
+    "compilerPid": 6181,
+    "outerPid": 5981,
+    "exit": 0,
+    "elapsedMs": 1650,
+    "interpretation": "actual overlap with K01; not an exclusive CPU or clean latency benchmark; no measurement phase timestamp retained"
+  },
+  "diagnosis": "No result/cleanup receipt; do not infer whether factory, listen, measurement, or cleanup stalled. Fixed CREATE ACK and marked identity are retained. No second PG probe/signals/cleanup/rerun authorized by result.",
+  "next": "Mika coordinates bounded read-only failure review and any separately authorized exact-owner recovery; current window consumed.",
+  "receiptCopies": [
+    {
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-81a75f3943f2416587db8a21c01f9b6c/.owner.json",
+      "path": "docs/evidence/k01/query-entry-pg-first/namespace-owner.json",
+      "bytes": 253,
+      "sha256": "ce0103f89dbf191916b4f46113bc5e5e76fe78fe47edd4ed52dd9dae34c658f4"
+    },
+    {
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-81a75f3943f2416587db8a21c01f9b6c/owned.database-reservation.json",
+      "path": "docs/evidence/k01/query-entry-pg-first/owned.database-reservation.json",
+      "bytes": 182,
+      "sha256": "b831075b48527e82726325e8bcc3c37bf8255d96f5fd43ae1cbcf7ad611fb704"
+    },
+    {
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-81a75f3943f2416587db8a21c01f9b6c/owned.create-ack.json",
+      "path": "docs/evidence/k01/query-entry-pg-first/owned.create-ack.json",
+      "bytes": 100,
+      "sha256": "a9294205224ca3db38b749c09ec65138441307e51a96082879a8836062fd7674"
+    },
+    {
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-81a75f3943f2416587db8a21c01f9b6c/owned.database-identity.json",
+      "path": "docs/evidence/k01/query-entry-pg-first/owned.database-identity.json",
+      "bytes": 185,
+      "sha256": "9f5cc6fa047d02e47373b281d638a1acee73e0f7e717d637b04eb4b748636737"
+    }
+  ],
+  "recordedAt": "2026-10-07T16:48:09.283948+00:00"
+}

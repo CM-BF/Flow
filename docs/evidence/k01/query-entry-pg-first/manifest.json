@@ -1,0 +1,139 @@
+{
+  "recordedAt": "2026-10-07T16:48:09.283948+00:00",
+  "implementationTarget": "a82e44be17a7a31b051bf98400d9553513600542",
+  "executionHead": "969b25b49b646d1f09c6059621dbc9b88aa8a9a3",
+  "sourceFiles": [
+    {
+      "path": "experiments/knowledge-search/.gitignore",
+      "bytes": 41,
+      "sha256": "ccc5ecbc791e88118155b803c40b672cfe11611f2eed99125aacc3e8f5639301"
+    },
+    {
+      "path": "experiments/knowledge-search/README.md",
+      "bytes": 13337,
+      "sha256": "bfaee9aea44ff3c5eea0587f536444f49454629fd93fcce7e6af960bedba657e"
+    },
+    {
+      "path": "experiments/knowledge-search/budget.test.ts",
+      "bytes": 3294,
+      "sha256": "9f99d62b6cd31885d1d296bc8c6618c0aecc76379aab189f83e476b2eff67134"
+    },
+    {
+      "path": "experiments/knowledge-search/budget.ts",
+      "bytes": 2582,
+      "sha256": "2877ab676c9612706b0df5d02789bc67dc012747fdc316d6710c5dee8389d266"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.test.ts",
+      "bytes": 2390,
+      "sha256": "2a92684c8660fd966369ede94aa1661d6af3b53d987033d5a2031c6c3b0d0d84"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.ts",
+      "bytes": 2816,
+      "sha256": "74784cec7db73db507ca3e37b1820d883a56a9ff07cbada22defd81176f9cd4a"
+    },
+    {
+      "path": "experiments/knowledge-search/dependencies.json",
+      "bytes": 5171,
+      "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.py",
+      "bytes": 18404,
+      "sha256": "3537f2d14a0a01e499363900a20c332a840cc47671f6d61b5891421f50986f99"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.test.py",
+      "bytes": 8726,
+      "sha256": "61970b1519ee5cae42015ec43aefd3a0c82f903d7e7f473a2b19bb398f1b5b97"
+    },
+    {
+      "path": "experiments/knowledge-search/listen.test.ts",
+      "bytes": 1431,
+      "sha256": "dd70ffdb2026e9f4c7a38427a509bd14478e3134fd0cf623015ddbce5dd26b22"
+    },
+    {
+      "path": "experiments/knowledge-search/materialize.py",
+      "bytes": 3314,
+      "sha256": "92045f38b3113b06a9bd388d1fba4b2ebf50c3d170fdb9e6db47736d0075ff09"
+    },
+    {
+      "path": "experiments/knowledge-search/measurement.ts",
+      "bytes": 13394,
+      "sha256": "856530a4bc25f011f87126425fc4c1aedaa7ecd8e2ca270ed5872f98d75d3002"
+    },
+    {
+      "path": "experiments/knowledge-search/owned-database.ts",
+      "bytes": 10630,
+      "sha256": "c72865e6c02db8677d6a75fb0a344307e0f3d5e16a0b1cff35bc6ec2572e8b49"
+    },
+    {
+      "path": "experiments/knowledge-search/run.ts",
+      "bytes": 3161,
+      "sha256": "a906c5b8587ffe2cd3fe1a849e349102435f365c9c5aaea0881b29234ecb597c"
+    },
+    {
+      "path": "experiments/knowledge-search/source-inputs.json",
+      "bytes": 49602,
+      "sha256": "daab2f8e8a2c0cfeb06994e09ea75f164dfd11d22faefbb6561e07f7b9ad195c"
+    },
+    {
+      "path": "experiments/knowledge-search/types.tsconfig.json",
+      "bytes": 413,
+      "sha256": "379b404f451e0bb9a22af79573fbf2c61ff60106146817bf0ea6a5efacedc80e"
+    },
+    {
+      "path": "experiments/knowledge-search/vitest.config.mjs",
+      "bytes": 209,
+      "sha256": "5441423d9317d0fa66633b5b341ee29f2cc518cf3d2cebc32c0f7238847d45b8"
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/k01/query-entry-pg-first/check-01.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-first/iterations.jsonl",
+      "bytes": 4519,
+      "sha256": "13a9999bc3bbd797e86ef3d1f0236913a300a4a964af64f400adce8e59b06cee"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-first/namespace-owner.json",
+      "bytes": 253,
+      "sha256": "ce0103f89dbf191916b4f46113bc5e5e76fe78fe47edd4ed52dd9dae34c658f4"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-first/owned.create-ack.json",
+      "bytes": 100,
+      "sha256": "a9294205224ca3db38b749c09ec65138441307e51a96082879a8836062fd7674"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-first/owned.database-identity.json",
+      "bytes": 185,
+      "sha256": "9f5cc6fa047d02e47373b281d638a1acee73e0f7e717d637b04eb4b748636737"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-first/owned.database-reservation.json",
+      "bytes": 182,
+      "sha256": "b831075b48527e82726325e8bcc3c37bf8255d96f5fd43ae1cbcf7ad611fb704"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-first/results.md",
+      "bytes": 1968,
+      "sha256": "b35d03fc35596c6b5690abef86e63167a8c68b0697ee604a6317332199787055"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-first/summary.json",
+      "bytes": 5337,
+      "sha256": "dc15b008004561a0ffc58e2f1faf43f4d3b77e7c589e409e671120e4d16271e0"
+    }
+  ],
+  "rawCount": 8,
+  "rawBytes": 12544,
+  "runtimeInputSha256": "fe3db09342fe10dae55b5d95a86e7fd4af8a2a3b364d0e35ea005a1d1acec8bf",
+  "outcome": "FAILED_HOLD",
+  "nextReview": "Independent read-only result fidelity and bounded failure localization; not an approval of PG results or cleanup"
+}
