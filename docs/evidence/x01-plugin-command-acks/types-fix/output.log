@@ -1,0 +1,4 @@
+packages/client/src/plugin-command-ack.test.ts(82,129): error TS2322: Type '{ enabled: string; count: number; mode?: undefined; extra?: undefined; } | { enabled: boolean; count: number; mode?: undefined; extra?: undefined; } | { enabled: boolean; count: number; mode: string; extra?: undefined; } | { ...; } | { ...; }' is not assignable to type 'Record<string, string | number | boolean>'.
+  Type '{ enabled: string; count: number; mode?: undefined; extra?: undefined; }' is not assignable to type 'Record<string, string | number | boolean>'.
+    Property 'mode' is incompatible with index signature.
+      Type 'undefined' is not assignable to type 'string | number | boolean'.
