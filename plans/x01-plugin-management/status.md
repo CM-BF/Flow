@@ -17,7 +17,7 @@
 | 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
 | 工作树 dirty 状态 | 封存中心新片源码/local结果；提交push后clean停写供review |
 | 工作分支状态 | in-progress |
-| 检查状态 | 中心片types0/10定向通过（SQL边界fake+真实inject，0PG）；前片11和旧27不重跑 |
+| 检查状态 | 新PG准备types0/collect6（0hooks/PG）及配方2纯例通过；原10/11/27未重跑 |
 | Review | product0224/support436 于2026-10-07T06:17:38Z由db_transaction_owner独审APPROVED，真实PG_PENDING；[回执](../../docs/evidence/x01/center-claim-independent-review.json) |
 | 已集成 main 状态 / HEAD | 领域16源/162785B已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a，root/Web组合0、不重跑27；[接收核验](../../docs/evidence/x01/enable-binding-main-receipt.json)。默认mount/v3 claim/runtime仍后继 |
 | 实现目标 | 436ab4b87a9847b9ef9a05ad100a62dff9cf931d |
@@ -27,7 +27,7 @@
 | 优先级 | 1 |
 | 当前产出 | 中心插件领取的源码与局部行为已通过独审，正在补真实数据库与认证入口验证 |
 | 下一可用交付 | 完成独立专库的新领取/恢复/锁等待用例，再接真实runner执行与现成npm能力 |
-| 当前阻塞 | NONE: 新六组真实PG测试及单suite入口实施中；本段0实际PG，没有PG预占 |
+| 当前阻塞 | NONE: 六组真实PG测试与单suite入口已固定，types0/collect6/纯资格2过；待新增资源接线独审，PG未OPEN |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -51,7 +51,7 @@
 
 ## Handoff 与看板
 
-计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。原同claim v8已accept到plugin-enable-binding；当前v10为30scope，新增5个claim/journal及8个中心literal，旧15已main源停止写入，host两源此前已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。原同claim v8已accept到plugin-enable-binding；当前v11为31scope，新增5个claim/journal及8个中心literal，旧15已main源停止写入，host两源此前已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
 
 2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
 
@@ -259,3 +259,5 @@ source `0224e94d1133a72478fdf50380f726bd2ba5922f`，新7源/原同一claim v10�
 2026-10-07T06:22:16.726246+00:00：fresh v10 ACTIVE30/04cee clean后接收中心源码及local独审0P1/P2，固定[下一PG输入](../../docs/evidence/x01/center-claim-pg-preparation.json)与[六组验收](../../docs/evidence/x01/center-claim-pg-plan.md)：1专库/现有17连接上界/真实认证claim、不重跑旧27。旧236输入234不变、2已审中心源变化、31SQL缺项0；本段0工程检查/import/PG/供给。新PG test/窄recipe尚未写，NOT_EXECUTABLE/NOT_OPEN，source及原raw冻结。C02 P2增量7070/d2ae已只读批准，未知TMP与全部启动尝试口径保留；client/index与contracts/index仍C02 ACTIVE，未交回不写。
 
 2026-10-07T06:24:42.608Z：v10→v11原子amend新增唯一claim-pg.test.ts；六组已批设计开始实施，复用原fixture/31SQL/OPS14；本段≤20min、最多4普通child各60s、TMP8MiB/raw256KiB/source-meta1MiB，实际PG未开。
+
+2026-10-07T06:30:10Z：真实claim-PG准备source74e187/support24c668；06:29:15.856至06:29:41.936三local子进程全部closed/TMP同inode清理，raw387B，types0/collect6（未执行hooks）/纯资格2过，whole外部时长UNKNOWN。实际PG仍NOT_OPEN。中心片真实PG/独审/main receipt后，server/index.ts出口明确停写并amend交回CHAT05P01，不以fullruntime/semver未完成长期占出口。C02两共享出口仍待其本片main后交回。
