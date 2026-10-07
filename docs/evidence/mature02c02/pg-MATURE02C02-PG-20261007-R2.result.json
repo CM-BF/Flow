@@ -1,0 +1,86 @@
+{
+  "window": "MATURE02C02-PG-20261007-R2",
+  "sourceHead": "e3a722d1327f6709cf576706775027369beb7a6b",
+  "inputManifest": {
+    "name": "pg-cwd-source-manifest.json",
+    "sha256": "883aca1f7019788f487431159504001475f2346a7844e7adb4c4f650195e548e"
+  },
+  "startedAt": "2026-10-07T03:12:20.368503+00:00",
+  "freeBefore": 26524504064,
+  "errors": [],
+  "actualCodex": 0,
+  "provider": 0,
+  "tempRoot": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-pg-window-o1gg1igb",
+  "tempIdentity": [
+    16777234,
+    123365986
+  ],
+  "pid": 58362,
+  "exitCode": 0,
+  "processGroup": {
+    "state": "absent",
+    "signals": [],
+    "observations": [
+      "absent"
+    ]
+  },
+  "stdioEof": [
+    "stderr",
+    "stdout"
+  ],
+  "observedRawBytes": 173,
+  "rawComplete": true,
+  "fixtureBinding": {
+    "bytes": 1735,
+    "sha256": "986de9754049ff24a33526074c5de0604d00d0941c7f11cb7373fa405db273e2",
+    "dev": 16777234,
+    "ino": 123366283
+  },
+  "vitestBinding": {
+    "bytes": 2610,
+    "sha256": "138839d84684315795b2d52ff89c129a6c62909fe3e171f54134b8eb765f2e9f",
+    "dev": 16777234,
+    "ino": 123366288
+  },
+  "databaseReservationBinding": {
+    "bytes": 166,
+    "sha256": "69bbd0b216bb86aee57e70f4525b038101605e14e96bea80d19cef5fe0431181",
+    "dev": 16777234,
+    "ino": 123366225
+  },
+  "databaseIdentityBinding": {
+    "bytes": 190,
+    "sha256": "0d77b08baddc6122e90818d0cb0c44c617750e158306fe34649eeac9d63be3a5",
+    "dev": 16777234,
+    "ino": 123366227
+  },
+  "selection": {
+    "selected": 6,
+    "passed": 6
+  },
+  "fixtureReceiptConfirmed": true,
+  "captures": {
+    "stdout": {
+      "bytes": 173,
+      "sha256": "4ccc421c4deb02d7f2a35385dac47eb322461c363e822eec30a9df2033e0928a",
+      "dev": 16777234,
+      "ino": 123365988
+    },
+    "stderr": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dev": 16777234,
+      "ino": 123365989
+    }
+  },
+  "retainedTempRoot": null,
+  "tempFinalSample": {
+    "entries": 4,
+    "logicalBytes": 118,
+    "activePeak": "unknown"
+  },
+  "finishedAt": "2026-10-07T03:12:24.729329+00:00",
+  "elapsedSeconds": 4.3609357079999995,
+  "phase": "before-final-receipt",
+  "checksPassed": true
+}

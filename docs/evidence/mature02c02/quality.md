@@ -35,3 +35,5 @@ post-terminal独立只读review裁定：仅测试预取真实port的terminal后�
 2026-10-07 02:50:51 UTC：本段沿已安装技能复核职责与证据：fixture只校验既有factory cwd，持久root保持独立；1例验证通过，7旧例未选。首轮选错Python及后续ANSI摘要解析错误均保留原件，用离线核对纠正，不增加执行/重跑；之后用固定runtime/结构化report避免该类重复。流程仅一个local段，未建立新审批链或改业务断言。持久化后内部时间、外部tool最终exit、wait口径分开；未捕获紧邻外部开始UTC，wholewall保持unknown。旧PG KEEP根未触碰，当前产品/源无新delta。
 
 2026-10-07 03:00:32 UTC：下一原6组PG只做最小输入更新：旧manifest/raw保持，原operator增加有限两文件名选择并记录输入SHA，未知name前置拒绝；执行/清理/预算规则未改，无第二监督器。302源逐Git绑定，4变化与已审fixture/有限诊断和小选择入口一致；2external/20links静态匹配，不执行import或工程检查。C02-04/05后继scope继续未领取。
+
+2026-10-07 03:13:36 UTC：结果安全点沿既有clean-code/codebase-design核职责与证据口径：6/6仅真实中心+注入transport，目录/配置/factory后继独立；原失败不覆盖，内部/外部clock、DB末样本/配置连接上限/活动峰值unknown分开。一次原operator，无新wrapper/重跑/安装，metadata范围收束。
