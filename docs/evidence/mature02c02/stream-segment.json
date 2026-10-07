@@ -1258,5 +1258,12 @@
   "localReturnedTo": "architecture_read",
   "elapsedAtFinalRuntimeCloseout": 897.286482,
   "additionalAuthorization": "Mika later authorized5min fix segment if originalexpired; not consumed. Both delta checks fit original6process/15min.",
-  "finalStatus": "106 distinct in separated rounds; pending-sink source delta validation complete, independent review pending"
+  "finalStatus": "106 distinct in separated rounds; pending-sink source delta validation complete, independent review pending",
+  "finalToolObservation": {
+    "observedAt": "2026-10-07T04:19:36Z",
+    "toolChunk": "254042",
+    "exitCode": 0,
+    "wholeExternalWallSeconds": null,
+    "note": "All6 supervised processes/cleanup ended04:18:37;897.29s was before final record persistence/Git. Final exit observed907s after segment origin; no proof whole metadata/commit envelope fits900s. Keep this accounting limitation; no additional launch."
+  }
 }

@@ -22,8 +22,8 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | 仅本次stream6源、配置/单段记录和own metadata；提交后clean。旧PG/raw不改。 |
-| HEAD（最近观察） | 153a759697e32f3f48f5148e0bb2e5e0a4ae6aa6；本次stream子片随本提交固定。 |
+| 工作树dirty状态 | source/全部结果已提交；只补末工具时钟与本状态，提交后clean。 |
+| HEAD（最近观察） | 5cb079374fc9fa1ba5c5e65f56166d48a807f33f（源码de0f3dc0/结果已固定，本次只补末工具观测metadata） |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v5 ACTIVE，30 literal，amend COMMITTED 2026-10-07T04:03:08.200Z |
 | 实现目标 | 413420a1c0abc76850ab61f8bf67c9d9ac81a494 |
 | 实现范围 | packages/contracts/src/execution-profiles.ts, packages/contracts/src/tasks.ts, packages/contracts/src/native-harness.ts, apps/server/src/execution-profiles/store.ts, apps/runner/src/native-harness/descriptor.ts, apps/runner/src/native-harness/codex/adapter.ts, apps/runner/src/native-harness/codex/exchange.ts, apps/runner/src/native-harness/codex/turn.ts, apps/runner/src/native-harness/codex/wire.ts, apps/runner/src/native-harness/codex/index.ts, apps/runner/src/native-harness/codex/session-storage.ts |
@@ -67,3 +67,5 @@ Stream唯一[段记录](../../docs/evidence/mature02c02/stream-segment.json)：4
 C02-05下一ready接线：[public-stream-next](../../docs/evidence/mature02c02/public-stream-next.md)。保持既有编号；公开Codex source/channel、中心锁/patch读、shared projection与Web/TUI是完整用户终点。现known共享owner已逐literal登记，未擅取写权。
 
 取消P2修复源de0f3dc0：接收器获得合并signal，取消停止等待且结果unknown，不声明任意sink副作用完成。原段6进程已用尽并归还X01，新增2例/strict0；单记录保原始4进程与后2进程，不称一次106/106。
+
+时钟限制：6个进程及清理在04:18:37完成；897.29s记录早于最终持久化/Git，末tool退出到04:19:36才观察（907s包围），不宣称完整metadata封存也在900s内。无额外运行。
