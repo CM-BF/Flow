@@ -14,9 +14,9 @@
 | 工作树dirty状态 | 本metadata提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 实现目标 | b0581d2e6d82c31a7180a22e450d06c3fc266ac5 |
+| 实现目标 | c3d29e4a36af74380565922fbb838ebec1bf7afc |
 | 实现范围 | apps/runner/src/engineering/native-adapter.ts, apps/runner/src/engineering/native-adapter.test.ts, apps/runner/src/engineering/calculator-receipt.ts, apps/runner/src/engineering/calculator-receipt.test.ts |
-| 检查状态 | 27different局部通过；C02直接3重叠通过；focused types最终0；factory/runtime仅import成功；PG2例NOT_RUN，见local/README |
+| 检查状态 | 28different分轮局部通过；C02直接3重叠通过；focused types最终0；factory/runtime仅import成功；PG2例NOT_RUN，见local/README |
 | 已集成main状态 / HEAD | 本片未集成；固定base 280289008a5a3779e4e5e6453181b96062ed9514 |
 | 任务开工时间 | 2026-10-06T12:57:59.124Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -27,7 +27,7 @@
 | 下一可用交付 | 验证成功收据读回和确认丢失后的重启保护，再交独立审查 |
 | 当前阻塞 | ACTIVE: 两个真实中心旅程等待共享数据库验证窗口；本地组合检查已完成 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，源码/PG入口独审进行中，尚无最终批准 |
 | Claim | 0497baa2-ea98-46c7-a7fd-5522aec563ab v1 active，6 literal；2026-10-07T04:18:16.925Z新take成功；原73bbb9e0 v2已released |
 | 架构影响 | 新native编排consumer，F消费公开wire；无启动入口/新loop，交Lead同步固定架构 |
 
@@ -53,3 +53,5 @@ Execution Lead 2026-10-06 12:59 优先级指派：暂停ENG01I产品编排，下
 | ENG01I-W02 | 2026-10-07T04:33:52.806000Z | OPEN | 资源 | 局部完成；真实PG两例待明确共享窗口 | [候选](../../docs/evidence/eng01i/pg/window-request.md) |
 
 等待区间是实际排程事实，不等于工作耗时。固定C02 main c0e0263d受控输入已核G默认thread/start，局部直接3例绿；本产品仍未独审/main。原两次wrapper缓存收尾exit1、一次测试类型红保持；所有自有进程/目录已确认收尾，真实PG尚未创建。
+
+2026-10-07T04:38:15.843894Z 自查修复：acquire部分成功后异常改unknown，新增真实lease1/1及focusedtypes0；原27/3重叠不重跑。assignment独审指出PG外层准备耗时未计入child预算与轮询query_timeout未按remaining的问题，dead2c4f准备source已窄修；PG仍NOT_RUN，完整fixed manifest另存final-preparation-manifest.json，旧manifest/raw保持。源码冻结待有限复审。
