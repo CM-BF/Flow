@@ -1,3 +1,11 @@
+状态：PENDING（新六组真实PG准备；旧中心源码/local批准保持）
+
+Review target commit: 24c66822e09a90754604d70a877b89aa1f4febef
+
+[唯一交审入口](../../docs/evidence/x01/center-claim-pg-ready.md)。test74e187/support24c668；types0/list6/纯配方2过，0PG。准备源码/资源接线待独审，不继承旧0224/436a的批准。
+
+---
+
 状态：APPROVED（仅中心领取源码与局部结果；真实PG未运行）
 
 Review target commit: 436ab4b87a9847b9ef9a05ad100a62dff9cf931d
