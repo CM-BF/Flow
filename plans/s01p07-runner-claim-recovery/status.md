@@ -2,15 +2,15 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 22:33:32 UTC |
+| 最近更新 | 2026-10-07 02:49:24 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery |
 | Branch | codex/runner-claim-recovery |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；8产品源83a0799293057f7472f0329c61e566708b2a2381；PG准备ac3b8532fb23a9c8549c0b32e225a31327bc85f9；本次只读核对HEAD 4e171a7b2a2ad15179608f4d9c5ccad765488f9a |
-| 工作树dirty状态 | 本次更新前HEAD 4e171a7b clean；本次仅status与接口交接metadata，产品/PG输入冻结 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；8产品源83a0799293057f7472f0329c61e566708b2a2381；PG准备ac3b8532fb23a9c8549c0b32e225a31327bc85f9；本次只读核对HEAD 31ece087e01c3691aaa883072ea20d7d39805a90 |
+| 工作树dirty状态 | 本次更新前HEAD 31ece087 clean；本次仅恢复准入metadata，产品/PG输入冻结 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | 85 distinct non-PG分批通过；focused strict5 exit0（含最终PG fixture静态类型）；外层3纯fake另列。原CLI/UUID/types失败原样保留；新8组PG NOT_OPEN / NOT_RUN，原4组capacity PG单列NOT_RUN；本次0测试 |
@@ -20,9 +20,9 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 任务层级 | 子task |
-| 当前产出 | 空闲复用持久领取身份、丢响应恢复同一分配已通过公开runner与旧停机/并发直接检查，中心事务专库验证已准备。 |
-| 下一可用交付 | 保持领取及时性与崩溃保护的中心、客户端和 runner 完整接线。 |
-| 当前阻塞 | 实现与依赖供应NONE；中心专库8组准备已审，等待独立运行窗口（NOT_OPEN）；原4组容量直接消费者尚未验证。 |
+| 当前产出 | 空闲复用领取身份与丢响应恢复的非数据库检查已通过；中心事务验证的固定源码、依赖和动态迁移已重新核齐。 |
+| 下一可用交付 | 完成中心事务专库验证，随后补必要容量消费者验收并交独审、推进主线。 |
+| 当前阻塞 | 实现与依赖供应NONE；heavy已归还且无其他预约，仅待本片唯一运行namespace与OPEN、实际local配对预算确认。原4组容量PG仍另列未运行。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，SOURCE_REVIEW APPROVED / VALIDATION_PENDING |
 | 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 / 18 literal |
@@ -44,3 +44,5 @@
 CHAT05P01 的[只读接口对照与交接边界](../../docs/evidence/s01p07/chat05p01-interface-handoff.md)已可用；当前没有 writer 移交、release 或 amend。发布入口仍由 runtime 与既有 AttemptControl/EventOutbox 持有，新增协议能力须显式协商。S01P07 v2/18 literal 占用与固定 PG 输入保持不变；此管理观察不表示产品接线或 main 集成完成。
 
 同一接口记录已补“后继聚合资源验收 / 未实现未测”：聚合预算、历史恢复扫描及清理门禁为后继输入，不扩大本片实现或原计划验收。Lead 22:31:37 UTC 的低空间类型 NOT_RUN / NO_HOLDER 仅作历史来源事实，本轮0采样、0检查、0新负载。
+
+2026-10-07 [PG恢复准入](../../docs/evidence/s01p07/pg-window-resumption.md)：fresh claim v2/18 ACTIVE；65固定绑定、30动态SQL、24依赖与231份既有源码闭包无缺失/漂移。原heavy启动线保持，单个有界local若配对则另计完整新增预算；不以旧串行文案默许并跑。此次仅静态核对与一次空间观察，0工程测试/PG/provider，原85非PG、strict5和3fake不重跑。
