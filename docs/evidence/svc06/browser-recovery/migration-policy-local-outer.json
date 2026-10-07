@@ -1,0 +1,33 @@
+{
+  "pid": 83552,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 111,
+  "stdout": "\u2714 current migration input checks are side-effect-free and require the existing policy and exact fixed artifacts (2.881958ms)\n\u2714 current migration trusted validation runs before IO and JSON cannot replace the strict default (0.372917ms)\n\u2714 current migration trusted fresh observer receives exact modules and input and preserves unknown (0.202375ms)\n\u2714 current migration wrapper observes trusted held policy inside original preview lock before any store or SQL (2.521ms)\n\u2139 tests 4\n\u2139 suites 0\n\u2139 pass 4\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 63.555834\n",
+  "stderr": "",
+  "observed_bytes": 588,
+  "retained_bytes": 588,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

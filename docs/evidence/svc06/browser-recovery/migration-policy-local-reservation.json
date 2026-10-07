@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T21:21:08.994Z",
+  "source": "000490019",
+  "sourceBindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-migration.mjs",
+      "bytes": 14847,
+      "sha256": "6b70bcef97dd4d0d2ac395e3326877c69d0bb7ac0ac68a1e75013088bc3f982a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-migration.test.mjs",
+      "bytes": 12638,
+      "sha256": "8a4b5a24f2d2534f37aa1d92743c8cc6d1174612ee1850f9de74be50310a93dd"
+    }
+  ],
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "--test-reporter=spec",
+    "--test-name-pattern=current migration (input checks|trusted|wrapper)",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-migration.test.mjs"
+  ],
+  "queueAt": "2026-10-07T21:20:46.887Z",
+  "queueSha256": "8c12988bcf991f63246f1f230eae426f40458ff967d71e9176cf1e1c065ea04f",
+  "freeBytes": 18757791744,
+  "minimumFreshBytes": 16653156352,
+  "limits": {
+    "seconds": 10,
+    "scratchBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "scratch": {
+    "path": "/private/tmp/svc06b-migration-ports-dvc70j3j",
+    "dev": 16777234,
+    "ino": 124511748
+  },
+  "pg": 0,
+  "service": 0,
+  "provider": 0,
+  "personal": 0
+}

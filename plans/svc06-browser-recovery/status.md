@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:14:03.021Z；恢复固定产物已构建/内部加载成功并归还，待结果独审与冷启动/新tuple兼容 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:21:46.304Z；恢复产物已构建并获限定独审，cold固定调用待审/窗口；迁入观察策略最小接缝已交审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -158,3 +158,5 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T21:15:31.319Z：新恢复artifact b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d / f37a构建成功；21:14:43.322Z实际RETURN，32675ms/exit0/group11460 absent/双EOF。root KEEP供验收，原首local UNKNOWN8519680B仍保留，不重测。见[唯一结果manifest](../../docs/evidence/svc06/browser-recovery/recovery-build-result-manifest.json)；冷启动/4App新tuple/个人恢复未运行。
 
 2026-10-07T21:19:57.621Z：冷启动薄caller source32f8、实际b692参数72fb26fc6fec7c5f528ac5851bed9b22034b286f已固定交独审；5 Node+3 Python=8 distinct，231ms/raw826B，3groupabsent双EOF/3空tmpremoved。两次未launch资源前置断言原件保留，0PG/个人；当前准备齐，等唯一冷启动窗口及Web新tuple报告，非产品阻塞。build5938已获native限定结果批准，待Lead正常main接收。
+
+2026-10-07T21:21:46.304Z：原currentMigration两受信策略port source0004900193a83bdcdf1815d20cf5857fc8d1cdcb固定；4/4（3新1旧受影响），111ms588B/组83552absent双EOF/空tmpremoved，0PG/provider/个人。默认旧validator/observer保持，新held23策略由native固定caller独立负责；[Interface](../../docs/evidence/svc06/browser-recovery/migration-policy-interface.md)。cold4da参数包不受此差量影响。
