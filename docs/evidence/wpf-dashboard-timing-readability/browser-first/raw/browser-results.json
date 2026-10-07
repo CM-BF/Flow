@@ -1,0 +1,44 @@
+{
+  "sourceHead": "9503272922a38f2cd7d163332a83b8139187451f",
+  "sourceHashes": {
+    "apps/execution-dashboard/public/app.js": "40e56b5c3418f5fae4d2bab65d35fe2ecad36c01847609c4113535ed76ee2044",
+    "apps/execution-dashboard/public/styles.css": "01adbaa9736c995e53802251ea04125c01c33a1dc76ab357924a4971cd0db72c",
+    "apps/execution-dashboard/src/human.mjs": "c410473af6c288b7e51b30715db0af6c323e05f0e461fe503f01c237f85295b4",
+    "apps/execution-dashboard/src/status.mjs": "2dd0977326017518b4482aee0e56a7f035d14b41628ed483526a829f10b9708a",
+    "apps/execution-dashboard/test/human-summary.test.mjs": "ba1e0180dca1fc23a393203c74d0f491ac89c5a8252fb8da90a45ad7979cefb0",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs": "2d5c5353ae7e7e7810922e0906daa48c7491b7442aa489306d568afd247b6620",
+    "apps/execution-dashboard/test/task-timing.browser.mjs": "a932b1bc01436247f30cc9dc3dc9a1e4b3f56ac905b0cda8d59c6e34f1880163"
+  },
+  "implementation": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+  "startedAt": "2026-10-07T21:35:02.786Z",
+  "workerPid": 27767,
+  "parentPid": 27747,
+  "chromePid": 27754,
+  "chromeProcessGroup": "separate-parent-owned-session",
+  "chromeCleanupOwner": "external-parent-native-sibling",
+  "checks": [
+    "Explicit task start/end and inclusive elapsed; branch completion never ends the task",
+    "Unknown, missing provenance, future, reverse, stale and frozen observations do not advance",
+    "Read failure marks open timing historical without replacing the dialog or stealing focus",
+    "New snapshot updates cards; an open detail retains its original observation until explicitly reopened",
+    "Both 390px themes preserve UTC/source/wait text, keyboard access and bounded layout",
+    "Priority signal groups retain both owners and literal text; unknown target relations remain separate"
+  ],
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "outcome": "passed",
+  "pg": 0,
+  "budgetOwner": "external-parent",
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cdpConnectedAt": "2026-10-07T21:35:07.758Z",
+  "fixtureUrl": "http://127.0.0.1:63621",
+  "screenshots": [
+    "task-timing-light-390.png",
+    "task-timing-dark-390.png"
+  ],
+  "observation": "fixture-only parser/UI; no PG, registry, main proof or deployment validation",
+  "finishedAt": "2026-10-07T21:35:09.058Z",
+  "observedElapsedMs": 6272,
+  "profileCleanupOwner": "external-parent-after-both-process-groups-absent"
+}

@@ -1,0 +1,62 @@
+{
+  "allowRun": true,
+  "singleUse": true,
+  "mode": "timing02-browser",
+  "taskId": "WPF-DASHBOARD-TIMING02",
+  "bindingSha256": "5bdd9d304cf1febe19791c899684f8d60af7a70f3ed22f4195d2b49294190bd9",
+  "runnerSha256": "b52befed314a62a599891d5e1aff690003c0bf254711ff0ee61302f455785cab",
+  "claim": {
+    "claimId": "d26ac1d8-edf1-413d-ae67-68ce807e9fca",
+    "version": 1,
+    "worker": "w01_owner"
+  },
+  "overlaps": [],
+  "expiresAt": "2026-10-07T21:37:49.462Z",
+  "entry": "task-timing",
+  "run": "timing02-20261007-213502",
+  "sourceHead": "9503272922a38f2cd7d163332a83b8139187451f",
+  "sourceHashes": {
+    "apps/execution-dashboard/public/app.js": "40e56b5c3418f5fae4d2bab65d35fe2ecad36c01847609c4113535ed76ee2044",
+    "apps/execution-dashboard/public/styles.css": "01adbaa9736c995e53802251ea04125c01c33a1dc76ab357924a4971cd0db72c",
+    "apps/execution-dashboard/src/human.mjs": "c410473af6c288b7e51b30715db0af6c323e05f0e461fe503f01c237f85295b4",
+    "apps/execution-dashboard/src/status.mjs": "2dd0977326017518b4482aee0e56a7f035d14b41628ed483526a829f10b9708a",
+    "apps/execution-dashboard/test/human-summary.test.mjs": "ba1e0180dca1fc23a393203c74d0f491ac89c5a8252fb8da90a45ad7979cefb0",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs": "2d5c5353ae7e7e7810922e0906daa48c7491b7442aa489306d568afd247b6620",
+    "apps/execution-dashboard/test/task-timing.browser.mjs": "a932b1bc01436247f30cc9dc3dc9a1e4b3f56ac905b0cda8d59c6e34f1880163"
+  },
+  "previousRuntimeMs": 0,
+  "totalMs": 60000,
+  "cleanupReserveMs": 15000,
+  "startFreeBytes": 16850223104,
+  "stopFreeBytes": 1140850688,
+  "nativeChromeBoundaryApproval": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-native-acceptance-20261007.json",
+    "sha256": "7bf2a6007ceae2329e8f9e9bfbc1d0a7f0d61eaa520dc7e34a5dbfb5646c841d"
+  },
+  "priorLocalEvidence": {
+    "sourceTarget": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+    "reviews": [
+      {
+        "path": "/private/tmp/root-timing02-source-local-review-20261007.json",
+        "sha256": "bb05ec07316904e3805b5910e86bc5f59d4b68236739fbee5c61847dc6494019"
+      }
+    ],
+    "unchangedSources": {
+      "apps/execution-dashboard/public/app.js": "40e56b5c3418f5fae4d2bab65d35fe2ecad36c01847609c4113535ed76ee2044",
+      "apps/execution-dashboard/public/styles.css": "01adbaa9736c995e53802251ea04125c01c33a1dc76ab357924a4971cd0db72c",
+      "apps/execution-dashboard/src/human.mjs": "c410473af6c288b7e51b30715db0af6c323e05f0e461fe503f01c237f85295b4",
+      "apps/execution-dashboard/src/status.mjs": "2dd0977326017518b4482aee0e56a7f035d14b41628ed483526a829f10b9708a",
+      "apps/execution-dashboard/test/human-summary.test.mjs": "ba1e0180dca1fc23a393203c74d0f491ac89c5a8252fb8da90a45ad7979cefb0",
+      "apps/execution-dashboard/test/status-timestamps.test.mjs": "2d5c5353ae7e7e7810922e0906daa48c7491b7442aa489306d568afd247b6620",
+      "apps/execution-dashboard/test/task-timing.browser.mjs": "a932b1bc01436247f30cc9dc3dc9a1e4b3f56ac905b0cda8d59c6e34f1880163"
+    },
+    "scope": "98 pure checks/source review; no browser PASS or budget inheritance"
+  },
+  "sourceReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-browser-preparation-review-20261007.json",
+    "sha256": "d6c0d73d239b9150c7b9083d3d61a6b201620b82dc4c3583f6230fb1569ac6df"
+  },
+  "freshFreeBytes": 18663137280,
+  "freshClaimObservedAt": "2026-10-07T21:34:21.032Z",
+  "observedAt": "2026-10-07T21:35:02.739350+00:00"
+}

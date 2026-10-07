@@ -1,15 +1,12 @@
 {
-  "taskId": "WPF-DASHBOARD-TIMING02",
-  "parent": "D01",
-  "coversExistingManagementTODO": "WPF-001-37",
-  "state": "SOURCE_AND_LOCAL_READY_FOR_INDEPENDENT_REVIEW",
-  "sourceCommit": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
-  "base": "86112a35effcd4d809b5e7b91d9759cdb19d2008",
+  "task": "WPF-DASHBOARD-TIMING02",
+  "sourceTarget": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+  "executionHead": "9503272922a38f2cd7d163332a83b8139187451f",
   "branch": "codex/dashboard-task-timing-readability",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability",
-  "claimId": "d26ac1d8-edf1-413d-ae67-68ce807e9fca",
-  "claimVersion": 1,
-  "productAndTests": [
+  "base": "86112a35effcd4d809b5e7b91d9759cdb19d2008",
+  "state": "READY_FOR_CONTROLLED_MAIN_INTAKE_NOT_INTEGRATED",
+  "productAndTestScope": [
     {
       "path": "apps/execution-dashboard/public/app.js",
       "bytes": 43246,
@@ -46,23 +43,60 @@
       "sha256": "a932b1bc01436247f30cc9dc3dc9a1e4b3f56ac905b0cda8d59c6e34f1880163"
     }
   ],
-  "local": "local-accounting.json",
-  "raw": "local-index.json",
-  "browserCandidate": "browser-candidate.json",
-  "review": "NOT_STARTED",
-  "main": "NOT_INTEGRATED",
-  "deployment": "NOT_RUN",
-  "scopeLimits": [
-    "Signal groups ordered by their highest-ranked member, members sorted within groups; not a claim of globally sorted individual rows after grouping.",
-    "No parent fact is synthesized; unknown relationships remain separate.",
-    "Summary DTO excludes waiting; readable waiting table and original text are detail-only.",
-    "98 pure checks plus final module syntax and own status parse are not browser/focus/visual evidence.",
-    "No registry/real owner status/main writes."
+  "ownerRecords": [
+    "plans/wpf-dashboard-timing-readability",
+    "docs/evidence/wpf-dashboard-timing-readability"
   ],
-  "independentSourceLocalReview": {
-    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-source-local-review-20261007.json",
-    "sha256": "bb05ec07316904e3805b5910e86bc5f59d4b68236739fbee5c61847dc6494019",
-    "decision": "APPROVED_SOURCE_AND_LOCAL_RESULTS_ONLY"
+  "claim": {
+    "claimId": "d26ac1d8-edf1-413d-ae67-68ce807e9fca",
+    "version": 1,
+    "worker": "w01_owner"
   },
-  "browserPreparation": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/browser-preparation.json"
+  "writerState": "ALL9_STOP_CLAIM_RETAINED",
+  "reviews": {
+    "sourceLocal": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-source-local-review-20261007.json",
+      "bytes": 4926,
+      "sha256": "bb05ec07316904e3805b5910e86bc5f59d4b68236739fbee5c61847dc6494019"
+    },
+    "browserPreparation": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-browser-preparation-review-20261007.json",
+      "bytes": 4274,
+      "sha256": "d6c0d73d239b9150c7b9083d3d61a6b201620b82dc4c3583f6230fb1569ac6df"
+    },
+    "native": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/root-timing02-native-acceptance-20261007.json",
+      "bytes": 1294,
+      "sha256": "7bf2a6007ceae2329e8f9e9bfbc1d0a7f0d61eaa520dc7e34a5dbfb5646c841d"
+    },
+    "actualVisual": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/browser-first/root-actual-review.json",
+      "bytes": 5865,
+      "sha256": "74b132aad2cd2523b2d2dfde60e110d6d09244b882090bd93107336e7bb64fd4"
+    }
+  },
+  "validation": {
+    "pure": "98/98 passed; first97/98failure preserved",
+    "browser": "exact6 passed, outer0, scoped390light/dark visual approved",
+    "localClosedMs": 725,
+    "browserClosedMs": 6404,
+    "newRunsRequiredForThisEvidence": false
+  },
+  "evidenceIndex": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/browser-first/index.json",
+    "bytes": 8566,
+    "sha256": "3fc3dba1ba8b4ceb2069d32b17adcf38c41dc8d42164f0cd863a67867da6c9b7"
+  },
+  "observedRuntimeReturn": "2026-10-07T21:35:45.287742Z",
+  "main": "NOT_INTEGRATED",
+  "registry": "NOT_VERIFIED_BY_THIS_SEGMENT",
+  "deployment": "NOT_RUN",
+  "implementationSummary": "Compact local time with explicit zone+offset and UTC/source disclosure; waiting issues separate from elapsed; priority+valid explicit subtask parent presentation preserves each owner/task text and open detail reading.",
+  "limits": [
+    "Synthetic taskHTTP only; no PG, personal endpoint or live4320 aggregation.",
+    "Group order is highest-priority member then within-group priority; not global row ordering.",
+    "No inferred parent status or keyword severity; single owner status remains authority.",
+    "Do not overwrite moving main wholesale; integrate fixed seven-source diff with current ACCESS/TIMING consumers normally."
+  ],
+  "preparedAt": "2026-10-07T21:39:26.313Z"
 }

@@ -1,0 +1,231 @@
+{
+  "task": "WPF-DASHBOARD-TIMING02",
+  "implementation": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+  "executionHead": "9503272922a38f2cd7d163332a83b8139187451f",
+  "outcome": "PASS_EXACT6_VISUAL_PENDING_INDEPENDENT_REVIEW",
+  "checks": [
+    "Explicit task start/end and inclusive elapsed; branch completion never ends the task",
+    "Unknown, missing provenance, future, reverse, stale and frozen observations do not advance",
+    "Read failure marks open timing historical without replacing the dialog or stealing focus",
+    "New snapshot updates cards; an open detail retains its original observation until explicitly reopened",
+    "Both 390px themes preserve UTC/source/wait text, keyboard access and bounded layout",
+    "Priority signal groups retain both owners and literal text; unknown target relations remain separate"
+  ],
+  "screenshots": [
+    "task-timing-light-390.png",
+    "task-timing-dark-390.png"
+  ],
+  "sourceHashes": {
+    "apps/execution-dashboard/public/app.js": "40e56b5c3418f5fae4d2bab65d35fe2ecad36c01847609c4113535ed76ee2044",
+    "apps/execution-dashboard/public/styles.css": "01adbaa9736c995e53802251ea04125c01c33a1dc76ab357924a4971cd0db72c",
+    "apps/execution-dashboard/src/human.mjs": "c410473af6c288b7e51b30715db0af6c323e05f0e461fe503f01c237f85295b4",
+    "apps/execution-dashboard/src/status.mjs": "2dd0977326017518b4482aee0e56a7f035d14b41628ed483526a829f10b9708a",
+    "apps/execution-dashboard/test/human-summary.test.mjs": "ba1e0180dca1fc23a393203c74d0f491ac89c5a8252fb8da90a45ad7979cefb0",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs": "2d5c5353ae7e7e7810922e0906daa48c7491b7442aa489306d568afd247b6620",
+    "apps/execution-dashboard/test/task-timing.browser.mjs": "a932b1bc01436247f30cc9dc3dc9a1e4b3f56ac905b0cda8d59c6e34f1880163"
+  },
+  "files": [
+    {
+      "original": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/browser-results.json",
+      "archived": "raw/browser-results.json",
+      "bytes": 2425,
+      "sha256": "0cc1db986143021b1b0c0668c1196a168be8f4bfca58e707116c161a301dcb85"
+    },
+    {
+      "original": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/chrome.log",
+      "archived": "raw/chrome.log",
+      "bytes": 3865,
+      "sha256": "2c08bbd6acd111a04f3a4cc38e442054971052fe0d416749ca41bc09a36078dd"
+    },
+    {
+      "original": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/owned-chrome.json",
+      "archived": "raw/owned-chrome.json",
+      "bytes": 2276,
+      "sha256": "ba979132b5736d1d8d9dd6d0191f587026bb4390c6440856b1e4254a3bf3e958"
+    },
+    {
+      "original": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/task-timing-dark-390.png",
+      "archived": "raw/task-timing-dark-390.png",
+      "bytes": 85475,
+      "sha256": "e77659a185aa9fe93f5d7dae078a069544a48822eb3f9e942319013ac12abbc5"
+    },
+    {
+      "original": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/task-timing-light-390.png",
+      "archived": "raw/task-timing-light-390.png",
+      "bytes": 89718,
+      "sha256": "1ca96633da2bc821b91ab1088ba75f1490ddaf6725a16e3cc1e1e31627219cc7"
+    },
+    {
+      "original": "/private/tmp/timing02-b1/binding.json",
+      "archived": "packet/binding.json",
+      "bytes": 13357,
+      "sha256": "5bdd9d304cf1febe19791c899684f8d60af7a70f3ed22f4195d2b49294190bd9"
+    },
+    {
+      "original": "/private/tmp/timing02-b1/manifest.json",
+      "archived": "packet/manifest.json",
+      "bytes": 2293,
+      "sha256": "6ab44dab905a46c01ea333c8c82f15010ca09bd29954ce19ae04c3dae1b2fe46"
+    },
+    {
+      "original": "/private/tmp/timing02-b1/result.json",
+      "archived": "packet/result.json",
+      "bytes": 41593,
+      "sha256": "25d7aa492306d1107dbf5fa31f1d9cb6634e5fbd8177d9588184470222944d87"
+    },
+    {
+      "original": "/private/tmp/timing02-b1/browser-budget.json",
+      "archived": "packet/browser-budget.json",
+      "bytes": 299,
+      "sha256": "59b4d070c6b6f1b68af643f369ec485daa29e8d74ce4ac21122f249bdd5fdb19"
+    },
+    {
+      "original": "/private/tmp/timing02-b1/runtime-evidence-manifest.json",
+      "archived": "packet/runtime-evidence-manifest.json",
+      "bytes": 2617,
+      "sha256": "957fbbbb55be32abdaf97a169a24454ca2cee93322e4a70f21a75ad4ac66958a"
+    },
+    {
+      "original": "/private/tmp/timing02-b1/consumed-gate.json",
+      "archived": "packet/consumed-gate.json",
+      "bytes": 3415,
+      "sha256": "542bb58dfb100468bf50c3075f9977a7ea15c5a1f82b7a20c416b6bfa4872ef9"
+    },
+    {
+      "original": "/private/tmp/timing02-b1/worker.log",
+      "archived": "packet/worker.log",
+      "bytes": 615,
+      "sha256": "5910803ac3e88579d669c829e8a78b38333f90a0033e4aff1248dcf53c98bc70"
+    },
+    {
+      "original": "/private/tmp/timing02-browser-actual-tfm8l_gk/before-binding.json",
+      "archived": "outer/before-binding.json",
+      "bytes": 13295,
+      "sha256": "eddda09eb1d6d75cba442d6ad22c09ee53f3d1fc0d816d1ca981bec77b051cdc"
+    },
+    {
+      "original": "/private/tmp/timing02-browser-actual-tfm8l_gk/before-manifest.json",
+      "archived": "outer/before-manifest.json",
+      "bytes": 2293,
+      "sha256": "11e66e7652131c954aa6efc5bcdd3c10f59a914180d09631b2492552639f12f3"
+    },
+    {
+      "original": "/private/tmp/timing02-browser-actual-tfm8l_gk/claim.json",
+      "archived": "outer/claim.json",
+      "bytes": 1034,
+      "sha256": "eb397248e28d92f4e2921d0a198eab720b7c31aac2c956754cf9c281f96ea2a3"
+    },
+    {
+      "original": "/private/tmp/timing02-browser-actual-tfm8l_gk/gate.json",
+      "archived": "outer/gate.json",
+      "bytes": 3642,
+      "sha256": "f52b6d7285133b2abe2676c623229778748a9249469759755afdc816debc7812"
+    },
+    {
+      "original": "/private/tmp/timing02-browser-actual-tfm8l_gk/outer-result.json",
+      "archived": "outer/outer-result.json",
+      "bytes": 768,
+      "sha256": "46438bd19f1589a758293446b5cac5b9ae74996eee01abf1aeb48a82da8f4e83"
+    },
+    {
+      "original": "/private/tmp/timing02-browser-actual-tfm8l_gk/outer-start.json",
+      "archived": "outer/outer-start.json",
+      "bytes": 377,
+      "sha256": "75505db8f740cb3371e5f13d62807147ceac387b1ab7478590961bd6e4f72d5f"
+    },
+    {
+      "original": "/private/tmp/timing02-browser-actual-tfm8l_gk/outer.stderr",
+      "archived": "outer/outer.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/private/tmp/timing02-browser-actual-tfm8l_gk/outer.stdout",
+      "archived": "outer/outer.stdout",
+      "bytes": 708,
+      "sha256": "8f1ec01e3a96a1418c558174f46d5e8d1638952b5d60e78d04a77ebfaf903930"
+    },
+    {
+      "original": "/private/tmp/timing02-browser-actual-tfm8l_gk/return-receipt.json",
+      "archived": "outer/return-receipt.json",
+      "bytes": 1228,
+      "sha256": "29eabaf62933e0465da2bf8849d0c03f104f1d9eb2c5aa3dde232fd44d0e4078"
+    }
+  ],
+  "accounting": {
+    "phase": "CLOSED",
+    "limitMs": 60000,
+    "parentSpentMs": 6349,
+    "lateSealMs": 6350,
+    "outerMs": 6403.390166931786,
+    "conservativeSpentMs": 6404,
+    "remainingMs": 53596,
+    "unusedTransferred": false
+  },
+  "return": {
+    "at": "2026-10-07T21:35:45.287742+00:00",
+    "state": "FULLRETURN",
+    "actualExitCode": 0,
+    "terminalState": "PASS",
+    "identities": [
+      {
+        "kind": "PID",
+        "id": 27747,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PGID",
+        "id": 27747,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PID",
+        "id": 27767,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PGID",
+        "id": 27767,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PID",
+        "id": 27754,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PGID",
+        "id": 27754,
+        "state": "ABSENT"
+      }
+    ],
+    "scratchAbsent": true,
+    "innerEOFdrop0": true,
+    "outerBothEOF": true,
+    "sealedHashesMatch": true,
+    "chargeMs": 6404,
+    "budgetMs": 60000,
+    "remainingMs": 53596,
+    "noRetryGrant": true,
+    "pg": 0,
+    "phase": "CLOSED",
+    "outerDirectory": "/private/tmp/timing02-browser-actual-tfm8l_gk",
+    "originalParentBudgetMs": 6349,
+    "fixtureClosed": true,
+    "contextClosed": true,
+    "httpAndCdpPorts": [
+      {
+        "port": 63621,
+        "result": 61,
+        "state": "REFUSED"
+      },
+      {
+        "port": 63620,
+        "result": 61,
+        "state": "REFUSED"
+      }
+    ],
+    "portsObservedAt": "2026-10-07T21:36:44.006618+00:00"
+  },
+  "scope": "synthetic task DTO fixture only; no real registry/PG/main/deployment proof"
+}

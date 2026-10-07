@@ -1,0 +1,47 @@
+{
+  "files": [
+    {
+      "path": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/browser-results.json",
+      "bytes": 2425,
+      "sha256": "0cc1db986143021b1b0c0668c1196a168be8f4bfca58e707116c161a301dcb85"
+    },
+    {
+      "path": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/owned-chrome.json",
+      "bytes": 2276,
+      "sha256": "ba979132b5736d1d8d9dd6d0191f587026bb4390c6440856b1e4254a3bf3e958"
+    },
+    {
+      "path": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/chrome.log",
+      "bytes": 3865,
+      "sha256": "2c08bbd6acd111a04f3a4cc38e442054971052fe0d416749ca41bc09a36078dd"
+    },
+    {
+      "path": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/task-timing-light-390.png",
+      "bytes": 89718,
+      "sha256": "1ca96633da2bc821b91ab1088ba75f1490ddaf6725a16e3cc1e1e31627219cc7"
+    },
+    {
+      "path": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/task-timing-dark-390.png",
+      "bytes": 85475,
+      "sha256": "e77659a185aa9fe93f5d7dae078a069544a48822eb3f9e942319013ac12abbc5"
+    }
+  ],
+  "expectedChecks": [
+    "Explicit task start/end and inclusive elapsed; branch completion never ends the task",
+    "Unknown, missing provenance, future, reverse, stale and frozen observations do not advance",
+    "Read failure marks open timing historical without replacing the dialog or stealing focus",
+    "New snapshot updates cards; an open detail retains its original observation until explicitly reopened",
+    "Both 390px themes preserve UTC/source/wait text, keyboard access and bounded layout",
+    "Priority signal groups retain both owners and literal text; unknown target relations remain separate"
+  ],
+  "sourceHashes": {
+    "apps/execution-dashboard/public/app.js": "40e56b5c3418f5fae4d2bab65d35fe2ecad36c01847609c4113535ed76ee2044",
+    "apps/execution-dashboard/public/styles.css": "01adbaa9736c995e53802251ea04125c01c33a1dc76ab357924a4971cd0db72c",
+    "apps/execution-dashboard/src/human.mjs": "c410473af6c288b7e51b30715db0af6c323e05f0e461fe503f01c237f85295b4",
+    "apps/execution-dashboard/src/status.mjs": "2dd0977326017518b4482aee0e56a7f035d14b41628ed483526a829f10b9708a",
+    "apps/execution-dashboard/test/human-summary.test.mjs": "ba1e0180dca1fc23a393203c74d0f491ac89c5a8252fb8da90a45ad7979cefb0",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs": "2d5c5353ae7e7e7810922e0906daa48c7491b7442aa489306d568afd247b6620",
+    "apps/execution-dashboard/test/task-timing.browser.mjs": "a932b1bc01436247f30cc9dc3dc9a1e4b3f56ac905b0cda8d59c6e34f1880163"
+  },
+  "sourceHead": "9503272922a38f2cd7d163332a83b8139187451f"
+}
