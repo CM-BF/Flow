@@ -34,7 +34,7 @@ def main():
         assert len(data) == row['bytes'] and hashlib.sha256(data).hexdigest() == row['sha256'], row['path']
     for row in manifest['packages']:
         assert hashlib.sha256(Path(row['packagePath']).read_bytes()).hexdigest() == row['packageSha256']
-        assert Path(row['entry']).is_file()
+        entry = Path(row['entry']).read_bytes(); assert len(entry) == row['entryBytes'] and hashlib.sha256(entry).hexdigest() == row['entrySha256']
     free = shutil.disk_usage(ROOT).free
     assert free >= 1207959552  # 1 GiB retained + 128 MiB candidate increment, including PG/WAL observation.
     run = HERE / window; run.mkdir(mode=0o700)  # Exclusive: never replay an old run.
