@@ -1,0 +1,594 @@
+{
+  "kind": "flow.o16.staged-preparation-delta.v1",
+  "at": "2026-10-07T09:25:01.436075+00:00",
+  "source": "5a45c8919f1c0c5cecf0111609ec111d784553c1",
+  "deliveryInput": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+  "productBase": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "sourceDigest": "b831e6728e10d831cdec4332e9d9b2a2785cd3ebf4c2ad9d398cfffeb0ab66c1",
+  "counts": {
+    "changedExperimentIncludingReadme": 10,
+    "unchangedExperiment": 21,
+    "protectedProductInputs": 289,
+    "fixedDeltaBindings": 52,
+    "unchangedInstalledAliases": 39,
+    "runtimeAnchors": 3,
+    "allRoundExecutedBindingsVerified": 128
+  },
+  "inherited": {
+    "path": "docs/evidence/o16/current-main-manifest.json",
+    "sha256": "0ae119cf209f23ab0b37125b2bf5b2ea35f17bdb7ec2a775663668c12db5364f",
+    "bytes": 147675,
+    "policy": "Reference previously reviewed manifest. Fresh verified all289 protected and21 unchanged experiment paths against original fixed refs/current bytes/hash; exclude changed paths listed below. Historical evidence assertions are not upgraded.",
+    "supersededPaths": [
+      "experiments/continuous-goal-acceptance/README.md",
+      "experiments/continuous-goal-acceptance/driver.mjs",
+      "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+      "experiments/continuous-goal-acceptance/operator.mjs",
+      "experiments/continuous-goal-acceptance/phase-host.mjs",
+      "experiments/continuous-goal-acceptance/query-run.mjs",
+      "experiments/continuous-goal-acceptance/resources.mjs",
+      "experiments/continuous-goal-acceptance/worker.mjs"
+    ],
+    "unchangedAliases": "All39 realpaths/package bytes/SHA match previous manifest; no link mutation/install."
+  },
+  "bindings": [
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/README.md",
+      "fixedRef": "5a45c8919f1c0c5cecf0111609ec111d784553c1",
+      "blob": "ebb5656cbd343e9aae089b5efbdb13563b5aa1e5",
+      "bytes": 7397,
+      "sha256": "c9e183c0ad64c9f63da35d4b5e1f29fcf84e4c76d5bdc86dcb30de50e2fd1386"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/driver.mjs",
+      "fixedRef": "5a45c8919f1c0c5cecf0111609ec111d784553c1",
+      "blob": "870becca070cd4c82534f80d22aa9a1efd5576ac",
+      "bytes": 18671,
+      "sha256": "7bbc4168b48d7ef8a1458969397b6fd97626d9747db433db3aaa61222e3a51a5"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+      "fixedRef": "5a45c8919f1c0c5cecf0111609ec111d784553c1",
+      "blob": "6f7264f4218b62ca23688ba9aad52b7fec487930",
+      "bytes": 3133,
+      "sha256": "083c788812a586b6649ecd45175edeea8a8ad7479f46b288fbdad08f652380fa"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/operator.mjs",
+      "fixedRef": "5a45c8919f1c0c5cecf0111609ec111d784553c1",
+      "blob": "49cec68f1028e3835b547c7a82b9154cef08bfdd",
+      "bytes": 11497,
+      "sha256": "214fd78d661bb29ab789d6991c105aada97e9d89fc42aaeaacf61dea8eac09e1"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/phase-host.mjs",
+      "fixedRef": "5a45c8919f1c0c5cecf0111609ec111d784553c1",
+      "blob": "7057e386f62c62c2d951261338f29e06add4929e",
+      "bytes": 5599,
+      "sha256": "5d045004c4e372e6bd02419a12fc234c6533cb505fb56f8d81108b20c9d95509"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/query-run.mjs",
+      "fixedRef": "5a45c8919f1c0c5cecf0111609ec111d784553c1",
+      "blob": "4d5ee093f7348687c5b54b592d2bf5290d5f442b",
+      "bytes": 5691,
+      "sha256": "128af88a08497c7687c68f089398762a42daa08e0c12c0c23a81813db5f7ed54"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/resources.mjs",
+      "fixedRef": "5a45c8919f1c0c5cecf0111609ec111d784553c1",
+      "blob": "9ea6000afbb12f919ed3f0df9ff3fe59b80dbf24",
+      "bytes": 10693,
+      "sha256": "c349435440983e9d217947d97c53da3db645f493bb88f9b2bd7d6176370c9386"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+      "fixedRef": "5a45c8919f1c0c5cecf0111609ec111d784553c1",
+      "blob": "2cbf827f58588a8162f4ab685fbee6f15585fe04",
+      "bytes": 6388,
+      "sha256": "04ef8be6acdb9828859f1ad5e4d43386bbf95bdeeab20ecd59790bcb1b2e9088"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/stage-policy.test.mjs",
+      "fixedRef": "5a45c8919f1c0c5cecf0111609ec111d784553c1",
+      "blob": "e96f1b59a02d8e7e68b0e14af75486d2e075c80f",
+      "bytes": 13040,
+      "sha256": "3edaa04f2a5f9b46aecce6a7731ad72ae55d6d7613b591b4e56050dc3518ce1f"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/worker.mjs",
+      "fixedRef": "5a45c8919f1c0c5cecf0111609ec111d784553c1",
+      "blob": "f63db3aca9e8d6a2688a894191e892c95f53b67a",
+      "bytes": 5260,
+      "sha256": "679a75d0c9c00afa37a4da6555cebb3db3d4716dac67f026ed78c6677a75f454"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/README.md",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "a65f12336c2311ef58c579bb683f253d26b52ac9",
+      "bytes": 4398,
+      "sha256": "5e1b272e6eca3cb6f7b59633f815d3d6bead92618012fad544fd47add2b5d0c1"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/candidate.md",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "e5f044fe0dfeb3961cd2dc480925d85dff3b245f",
+      "bytes": 8280,
+      "sha256": "10ba0db3c6102209c9be94a37d31709ab6cf42a8a6259104e8e2397ecb113a61"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/readonly-inputs.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "3e32151e591ddbe93174cb453aec849032dd571d",
+      "bytes": 6954,
+      "sha256": "731160fa6554d30b23a452944ba1a3b257191574a8342c222de7ac9cecf9969a"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-01/checkpoint.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "f7574f735e71f83359d5e5a8181a3d8982dd9554",
+      "bytes": 764,
+      "sha256": "e7e4815cdc96471a40b19f9aaafdf1c98f365560a6c6f80f5af1c1c851f6805e"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-01/reservation.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "dc535d227dd1c3756f8ec2a8b804be0c92b57be6",
+      "bytes": 7446,
+      "sha256": "46a2421b07da9418b327933665f676a579c246134429f4b92501853a5b574ae5"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-01/result.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "1e0c6230c721769c126ae86e35d99efc97e80019",
+      "bytes": 836,
+      "sha256": "a16e37461fe0005aadef1beb66762a3eab53693ed7984930498b0772be87ebcb"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-01/stderr",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-01/stdout",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "20ab6de07b759f7a5d66aff360ee418acd63c79a",
+      "bytes": 2647,
+      "sha256": "398bf4602b10dee64793b0e18820fcaac411c778a355dfa1b9905080d6349f68"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-02/checkpoint.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "0363974e6c11115dd328007bf51722e7d18616f9",
+      "bytes": 616,
+      "sha256": "fad6faeaf90beb232678ff47543e9220859b280eb751aeebe2b0f92a460b0b32"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-02/reservation.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "5aa040e46f21cf1c338adc656de5fea6d9b87666",
+      "bytes": 7598,
+      "sha256": "f7df6d8ebc3a375c1df531e114e64211cd781494a414e16dabb307e246554426"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-02/result.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "44a053262ae752c3b1d0d9aff0b5eaaf76d067fb",
+      "bytes": 688,
+      "sha256": "04a26296ae74cf605b13efa5c1f1a6963f59c78b9d707d75a567789205624ada"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-02/stderr",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-02/stdout",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "19600b4c8e5b7011c3e22d119a77810628dc6456",
+      "bytes": 819,
+      "sha256": "1608c9e7d4fa91c29d23edb5d9ba31c151e7c381b04245ab72d97c4037f4bc08"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-03/checkpoint.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "68b074f6cf7954f4953ab18c34f4a5583f2d930e",
+      "bytes": 615,
+      "sha256": "c4de960789d70485e4820f8fc4b2fd5af126c2091130c64b364a9cc33edb7b79"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-03/reservation.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "5564b94fa97176ad6b9e2d8fd922dbdf66c2a350",
+      "bytes": 7381,
+      "sha256": "aba10ebd3b0db4b80d4cf60a5b84ff4eea2a410e40ad057275770bf2a9a9d7cf"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-03/result.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "a5021f5fb748f61e5dd73c3ad580570b351dcbf9",
+      "bytes": 687,
+      "sha256": "78c27b24392ce32f7fa122d339bffeda36c36148c95565842eb8c5e14a7d519d"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-03/stderr",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-03/stdout",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "79b8c238f64a4cbc5d754595a2e6573739fe980d",
+      "bytes": 331,
+      "sha256": "edbad6b005a7eabff05c2908e28d7a7095b18134595a83616dc78470665a70e9"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-04/checkpoint.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "9f4e5b09243aed7803139db67f72a0b86a232a43",
+      "bytes": 616,
+      "sha256": "469d067203b3db46589358277e8afc587ad823407d8ca7a1dfcc398e6cc0fd40"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-04/reservation.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "a591ad63334064f53cabc7c354d0f0db83102e1b",
+      "bytes": 7366,
+      "sha256": "6af434bd77cd4cff2f2a08d8ce7f1856bc712a1ab42f8add3bea608c621f60c0"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-04/result.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "fc9bad97d33b8881c6ca3303f6808d382ab4d3d5",
+      "bytes": 688,
+      "sha256": "cf396c90ca0a6b14a556dafdeb7d22082eea8c52e0c26019eaa9a6096139ad54"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-04/stderr",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run-04/stdout",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "ecdd5958304f0f003f1ec319c005e0ee5602e354",
+      "bytes": 246,
+      "sha256": "ce57387e92a0d57a749f1f4787d5c5c57d5e38d18945e541de74626378338476"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/run.py",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "a485fa2ef8594a06a127a0c5d103dc8933d1c76a",
+      "bytes": 4201,
+      "sha256": "b029c9800f3c28f9d8755a32b518900fa7b0533e858c4b78068eb824aa2b7041"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/source-identity.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "f22ac8707a2c04d03cb8fe62672116f2ea54fb2d",
+      "bytes": 330,
+      "sha256": "1bd7cad59ce518254adc1e7c8adf8f7480097eb4dfe74e0563fbd456ce7e2d7d"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/source-variant-bindings.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "35d267609fd0cf08b5cd3b6f53911afde46aa95e",
+      "bytes": 7686,
+      "sha256": "c0b3b4ba2aa8ca054ef37358f8cdff715bfebdd8eb11f8413e8eb3c7c477cd8c"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/source-variants/108e343777e9620e0123190df142b973334338b591de73dd3e7fe09e8586f48f-stage-policy.mjs",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "8b923d3dbdc46106a9227e0bfb76216bd14e9014",
+      "bytes": 6234,
+      "sha256": "108e343777e9620e0123190df142b973334338b591de73dd3e7fe09e8586f48f"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/source-variants/125139986d2a20a69127e733fb71b035f13ac73abbad7c3037d0c6d6e036e6cc-query-run.mjs",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "a54db7fc25368b9d94a4ac9dfe6afc9826c5f784",
+      "bytes": 5377,
+      "sha256": "125139986d2a20a69127e733fb71b035f13ac73abbad7c3037d0c6d6e036e6cc"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/source-variants/41a1dda963ea6c5546a6eb68d40caf5de0cb8f72974f4a1475fb7276b4f322b1-stage-policy.test.mjs",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "9089d1adb4d966a8466e0ff5af432959c99e508f",
+      "bytes": 12519,
+      "sha256": "41a1dda963ea6c5546a6eb68d40caf5de0cb8f72974f4a1475fb7276b4f322b1"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/source-variants/4554501445394826953a03cac1c17523f3b3505ebc2a61ed3a1a92957547ca23-stage-policy.test.mjs",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "7cecc92ae64c83f03862f7ef2a63a030364d2281",
+      "bytes": 10853,
+      "sha256": "4554501445394826953a03cac1c17523f3b3505ebc2a61ed3a1a92957547ca23"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/source-variants/47dc8ff5da70d98c27eaa45ed7c4baf62e817ee04edccc652c2d278869a363e7-worker.mjs",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "532cc730443cafb1c5007237163edecde7740efa",
+      "bytes": 5090,
+      "sha256": "47dc8ff5da70d98c27eaa45ed7c4baf62e817ee04edccc652c2d278869a363e7"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/source-variants/58ebb23acd36040452689acab4c50ca66f7d2236975692438b875fdf1e957f4d-run.py",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "209a9a2b64fcbb1603a82b61ecf7519b897b3249",
+      "bytes": 4169,
+      "sha256": "58ebb23acd36040452689acab4c50ca66f7d2236975692438b875fdf1e957f4d"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/source-variants/8093fe50d16f85899df9bed635a014dfe704e126d426aa85e345e89a20736fe7-resources.mjs",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "d35a74e1ca596f0f4094422315856462a941ba1d",
+      "bytes": 10609,
+      "sha256": "8093fe50d16f85899df9bed635a014dfe704e126d426aa85e345e89a20736fe7"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/source-variants/9aa43a9cc6fa17f8b750f9110c9dc338dba23812bd8878ba7ecdec63b510eebb-stage-policy.test.mjs",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "307fe60487f54059e272224ee690916c7de994d2",
+      "bytes": 12759,
+      "sha256": "9aa43a9cc6fa17f8b750f9110c9dc338dba23812bd8878ba7ecdec63b510eebb"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/source-variants/9e111c5586e101f8246161240f907854fb8c66742339d98098cbdc1f2d09e993-resources.mjs",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "757cbad318c9e4d1969b35bcbf9742dff14aefcb",
+      "bytes": 10218,
+      "sha256": "9e111c5586e101f8246161240f907854fb8c66742339d98098cbdc1f2d09e993"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/status-check.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "02e3aa56b1597cb7026c95cd3f7700c099ef47c9",
+      "bytes": 314,
+      "sha256": "4128da9d287445dd810ce2b67cc2177f1ed93e24a0bc8ade221e4f9ee3ab4f1a"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/take-receipt.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "8e54ed86805e9a29eb4d99ad57cdc30243747da7",
+      "bytes": 682,
+      "sha256": "36d7612470f12b002fe7476690ea4373ecd90cd8b1c620a607ca1cb7d4f98449"
+    },
+    {
+      "kind": "evidence",
+      "path": "docs/evidence/o16/native-stages/validation.json",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "9bf6b980d6f45bb8d2b13d46fd4b45b3b38275c1",
+      "bytes": 3551,
+      "sha256": "eb7685fe2dfd0d0666161593d2b0023841002bb903606840c7164da4bcebba98"
+    },
+    {
+      "kind": "record",
+      "path": "docs/evidence/o16/interface.md",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "cd8a729eac2b96b7c6c3f8c54e3bc70e37a1254c",
+      "bytes": 7520,
+      "sha256": "84cb271cba55a11a3b440afec68d8577cb240de892d6e5c45a1e45a76d5e18ee"
+    },
+    {
+      "kind": "record",
+      "path": "plans/o16-continuous-goal-acceptance/plan.md",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "07ea08d3484b619dbd6d4bf586f1db55ac380b88",
+      "bytes": 3369,
+      "sha256": "2976bcc84ec5035b3e06a44ab3dd4ace47ff396ec9eafc6741d2a91af5e2a8ea"
+    },
+    {
+      "kind": "record",
+      "path": "plans/o16-continuous-goal-acceptance/status.md",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "5641281cdffc6dc5dc1b86aeb825fc8724deb4e1",
+      "bytes": 9558,
+      "sha256": "ce6b2761aa8351b8b16ac55012efb4ff4d66455319c00c62ccf8a7242b3644cc"
+    },
+    {
+      "kind": "record",
+      "path": "plans/o16-continuous-goal-acceptance/review.md",
+      "fixedRef": "e1541e87c5c129b9652d04669e60e46ea1304e33",
+      "blob": "641d7ccc39933c3a8d5534df16fd63389c958358",
+      "bytes": 5361,
+      "sha256": "703231bacc645b80f7e02bf0283fb5ff9522cbc31803ebccc0f833c87e59b7e7"
+    }
+  ],
+  "runtime": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/bin/python3",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    }
+  ],
+  "validation": {
+    "kind": "flow.o16.native-stages.local.v1",
+    "at": "2026-10-07T09:20:42.554308+00:00",
+    "runs": [
+      {
+        "directory": "docs/evidence/o16/native-stages/run-01",
+        "selectedCases": 15,
+        "passedCases": 14,
+        "failedCases": 1,
+        "emptyFileWrappersNotCounted": 0,
+        "frameworkReportedPass": 14,
+        "childElapsedMs": 2170,
+        "callerElapsedMs": 2213,
+        "rawBytes": 2647,
+        "exitCode": 1,
+        "group": 24939,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "removed": true,
+        "finalPrivateBytes": 0,
+        "finishedAt": "2026-10-07T09:15:17.604780+00:00"
+      },
+      {
+        "directory": "docs/evidence/o16/native-stages/run-02",
+        "selectedCases": 5,
+        "passedCases": 5,
+        "failedCases": 0,
+        "emptyFileWrappersNotCounted": 2,
+        "frameworkReportedPass": 7,
+        "childElapsedMs": 2350,
+        "callerElapsedMs": 2380,
+        "rawBytes": 819,
+        "exitCode": 0,
+        "group": 66283,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "removed": true,
+        "finalPrivateBytes": 0,
+        "finishedAt": "2026-10-07T09:16:25.281450+00:00"
+      },
+      {
+        "directory": "docs/evidence/o16/native-stages/run-03",
+        "selectedCases": 2,
+        "passedCases": 2,
+        "failedCases": 0,
+        "emptyFileWrappersNotCounted": 0,
+        "frameworkReportedPass": 2,
+        "childElapsedMs": 1047,
+        "callerElapsedMs": 1081,
+        "rawBytes": 331,
+        "exitCode": 0,
+        "group": 3102,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "removed": true,
+        "finalPrivateBytes": 0,
+        "finishedAt": "2026-10-07T09:17:26.890652+00:00"
+      },
+      {
+        "directory": "docs/evidence/o16/native-stages/run-04",
+        "selectedCases": 1,
+        "passedCases": 1,
+        "failedCases": 0,
+        "emptyFileWrappersNotCounted": 0,
+        "frameworkReportedPass": 1,
+        "childElapsedMs": 1651,
+        "callerElapsedMs": 1688,
+        "rawBytes": 246,
+        "exitCode": 0,
+        "group": 68138,
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "removed": true,
+        "finalPrivateBytes": 0,
+        "finishedAt": "2026-10-07T09:19:15.788441+00:00"
+      }
+    ],
+    "distinctCases": 16,
+    "newCases": 13,
+    "changedOldDirectConsumers": 3,
+    "cumulativeChildMs": 7218,
+    "cumulativeCallerMs": 7362,
+    "rawBytes": 4043,
+    "result": "all-16-distinct-green-across-rounds",
+    "preservedFailure": "run-01: 14 pass / 1 fail; new injected fixture lacked PreToolUse matcher. No production relaxation.",
+    "selectionCaveat": "run-02 Node reported 7 passes: 5 selected cases and 2 files with no matching tests. The empty file wrappers are not counted. Later targeted commands include only the relevant file.",
+    "limits": {
+      "processCumulativeMs": 180000,
+      "tmpBytes": 16777216,
+      "rawBytes": 2097152
+    },
+    "notMeasured": "Transient fixture high-water is not derived from final zero bytes; only bounded synthetic records were written.",
+    "PG": 0,
+    "SDKQuery": 0,
+    "provider": 0,
+    "auth": 0,
+    "browser": 0,
+    "personalReads": 0,
+    "old26Rerun": false,
+    "guardedUnknown": "Native login source and remaining SDK write locations unresolved; native denied before resources.",
+    "sourceAfterLastRun": "Only resource fact alias is copied from the just-observed worker row, so workerProcess and workerProcesses no longer contradict; no process/permission semantics changed."
+  },
+  "limitations": [
+    "No PG or real SDK/auth/provider/browser. Native inputs unresolved and hard refused before resources.",
+    "Old26 not rerun;16distinct green across rounds, not one16/16.",
+    "Expired/unknown resources retained. Full escaped descendants not proven stopped.",
+    "Failure source variants reconstructed only where saved pre-spawn hash exactly matches; original raw unchanged.",
+    "Last source-only alias synchronization updates resources.workerProcess to the same observed array row; no extra test claim."
+  ],
+  "manifestPreparation": "First builder used kind==protected rather than actual protected-* labels; count assertion stopped before manifest output. Correct prefix used here; no source/test rerun."
+}
