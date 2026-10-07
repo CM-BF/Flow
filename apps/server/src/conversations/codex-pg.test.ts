@@ -69,13 +69,23 @@ check('applies 035 and preserves Claude creation while native creation requires 
   expect(invalid.status).toBe(400);
 });
 check('filters mixed conversation pages before LIMIT and denies hidden direct route families', async () => {
-  const r = await register(); const hidden = await native.createConversation(creation(r.reference), randomUUID());
-  await center.owner.createConversation(conversationCreationSchema.parse({ title: 'Legacy page' }), randomUUID());
-  const expected = (await center.pool.query("SELECT id FROM flow.conversations WHERE harness='claude' ORDER BY id")).rows.map(row => row.id);
-  const observed: string[] = []; let after: string | undefined;
-  for (let page = 0; page < 8; page++) { const result = await center.owner.conversations({ limit: 1, ...(after ? { after } : {}) }); observed.push(...result.conversations.map(x => x.id)); if (!result.nextCursor) break; after = result.nextCursor; }
-  expect(observed).toEqual(expected);
-  const id = hidden.conversation.id;
+  const r = await register(), after = 'zz-c02-pagination-00';
+  const hiddenFirst = 'zz-c02-pagination-01', first = 'zz-c02-pagination-02';
+  const hiddenBetween = 'zz-c02-pagination-03', second = 'zz-c02-pagination-04';
+  const legacy = conversationCreationSchema.parse({ title: 'Legacy page' }), codex = creation(r.reference);
+  // Fixed dedicated-DB rows put hidden records before and between visible records.
+  // Public creation/replay is covered above; the reads here still use the real HTTP client.
+  for (const [id, input] of [[hiddenFirst, codex], [first, legacy], [hiddenBetween, codex], [second, legacy]] as const) {
+    await center.pool.query('INSERT INTO flow.conversations(id,title,harness,requested,execution_profile) VALUES($1,$2,$3,$4,$5)',
+      [id, input.title, input.harness, input.requested, input.executionProfile ?? null]);
+  }
+  expect((await center.pool.query('SELECT id FROM flow.conversations WHERE id>$1 ORDER BY id', [after])).rows.map(row => row.id))
+    .toEqual([hiddenFirst, first, hiddenBetween, second]);
+  const page = await center.owner.conversations({ after, limit: 1 });
+  expect(page.conversations.map(x => x.id)).toEqual([first]); expect(page.nextCursor).toBe(first);
+  const next = await center.owner.conversations({ after: page.nextCursor!, limit: 1 });
+  expect(next.conversations.map(x => x.id)).toEqual([second]); expect(next.nextCursor).toBeNull();
+  const id = hiddenFirst;
   for (const path of ['', '/turns', '/turns/fake/details/fake', '/contexts/fake', '/queue', '/queue/fake']) {
     for (const protocol of [undefined, 'native-v0', 'native-v1, native-v1']) {
       const response = await center.json(`/api/conversations/${id}${path}`, { headers: protocol ? { 'X-Flow-Conversation': protocol } : {} });
