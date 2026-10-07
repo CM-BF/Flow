@@ -1,5 +1,5 @@
 import { pluginRuntimeViewSchema, pluginToolBindingSchema, type PluginRuntimeCommand, type PluginRuntimeView, type PluginToolBinding, type PluginToolTaskRequest } from '../../contracts/src/plugin-runtime.js';
-import { pluginConfigurationSchema, pluginScopeSchema, pluginVersionSchema, type PluginMutationResult, type PluginCommand, type PluginSnapshot } from '../../contracts/src/plugins.js';
+import { pluginConfigurationSchema, pluginRevisionSchema, pluginScopeSchema, pluginVersionSchema, type PluginMutationResult, type PluginCommand, type PluginSnapshot } from '../../contracts/src/plugins.js';
 import type { AcceptedTask } from '../../contracts/src/tasks.js';
 
 /** Retain the exact recovery identity; never print its potentially private body. */
@@ -44,7 +44,7 @@ export function decodePluginBinding(value: unknown, taskId: string): PluginToolB
 function decodePluginMutation(value: unknown, id: string, input: { expectedRevision: number; change: { kind: string } }): PluginMutationResult {
   const result = record(value), snapshot = record(result.snapshot), operation = record(result.operation);
   const installation = record(snapshot.installation), version = record(snapshot.version);
-  const revision = input.expectedRevision + 1;
+  const revision = pluginRevisionSchema.parse(input.expectedRevision + 1);
   const { id: versionId, createdAt, ...declaration } = version;
   const parsedVersion = pluginVersionSchema.parse(declaration);
   pluginScopeSchema.parse(installation.scope);
