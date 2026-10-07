@@ -4,8 +4,8 @@ import type { RunContract } from './contract.js';
 export const QUEUE_PROBE = Object.freeze({ ...COMPARISON, windowId: 's01-pool-wait-delivery-once',
   output: 'docs/evidence/s01/pool-wait-run', maximumTasks: 258, sideTasks: 129,
   revisions: { A: DELIVERY_BASELINE, B: DELIVERY_BASELINE } });
-export const BUFFERED_QUEUE = Object.freeze({ ...QUEUE_PROBE, windowId: 's01-queue-buffered-once',
-  output: QUEUE_PROBE.output + '/buffered-single-v1', maximumTasks: 129 });
+export const BUFFERED_QUEUE = Object.freeze({ ...QUEUE_PROBE, windowId: 's01-queue-buffered-diagnostic-once',
+  output: QUEUE_PROBE.output + '/buffered-diagnostic-v1', maximumTasks: 129 });
 export const BUFFERED_IDENTITY = 'queue-probe-buffered-v1';
 export const isQueueIdentity = (identity: string) => identity === 'queue-probe-O1-v1' || identity === 'queue-probe-O2-v1' || identity === BUFFERED_IDENTITY;
 export function selectQueueRecipe(kind: unknown) {

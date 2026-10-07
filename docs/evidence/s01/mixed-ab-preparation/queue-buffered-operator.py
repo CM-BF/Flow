@@ -11,11 +11,11 @@ import time
 STARTED = time.monotonic()
 HERE = Path(__file__).resolve().parent
 ROOT = HERE.parents[3]
-WINDOW = 's01-queue-buffered-once'
+WINDOW = 's01-queue-buffered-diagnostic-once'
 ENTRY = 'experiments/runner-capacity/mixed/queue-buffered-main.ts'
-OUTPUT = ROOT / 'docs/evidence/s01/pool-wait-run/buffered-single-v1'
-INPUT = HERE / 'queue-buffered-operator-input.json'
-NAMES = tuple('queue-buffered-actual-' + tail for tail in ('reservation.json', 'spawn.json', 'stdout.raw', 'stderr.raw', 'outer.json'))
+OUTPUT = ROOT / 'docs/evidence/s01/pool-wait-run/buffered-diagnostic-v1'
+INPUT = HERE / 'queue-buffered-diagnostic-input.json'
+NAMES = tuple('queue-buffered-diagnostic-actual-' + tail for tail in ('reservation.json', 'spawn.json', 'stdout.raw', 'stderr.raw', 'outer.json'))
 HELPER_SHA = '51457f70cd90b27815b348f6b43c21b332498593891d0a9683036c8d894bf825'
 
 def load(name, path):
