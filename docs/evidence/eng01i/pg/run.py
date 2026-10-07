@@ -24,6 +24,7 @@ def size(root):
 
 def main():
     # Covers initial durable reservation and final report writes too. No child is spawned before reservation.
+    started = time.monotonic(); deadline = started + 150
     signal.signal(signal.SIGALRM, lambda *_: os._exit(124)); signal.setitimer(signal.ITIMER_REAL, 150)
     window = sys.argv[1]; assert re.fullmatch(r'[A-Za-z0-9-]{1,80}', window)
     assert os.environ.get('FLOW_ENG01I_APPROVED_WINDOW') == window
@@ -47,12 +48,22 @@ def main():
          'workSeconds': 120, 'totalSeconds': 150, 'stdoutStderrBytes': 1048576, 'allEvidenceBytes': 2097152, 'runtimeBytes': 8388608, 'providerCalls': 0})
     spec = importlib.util.spec_from_file_location('eng01i_pg_supervisor', ROOT / 'tools/owned-process-supervision/supervise.py')
     module = importlib.util.module_from_spec(spec); sys.modules[spec.name] = module; spec.loader.exec_module(module)
+    # The parent deadline includes all preparation, not a new timer at child spawn.
+    remaining = deadline - time.monotonic(); work_seconds = min(120, remaining - 30)
+    if work_seconds < 1:
+        save(run / 'not-run.json', {'reason': 'TOTAL_DEADLINE_BEFORE_SPAWN', 'childCreated': False, 'remainingSeconds': remaining, 'scratch': str(scratch)})
+        current = scratch.lstat(); assert (current.st_dev, current.st_ino) == (identity.st_dev, identity.st_ino) and not list(scratch.iterdir())
+        scratch.rmdir(); return 2
+    save(run / 'spawn-budget.json', {'elapsedPreparationSeconds': time.monotonic() - started, 'workSeconds': work_seconds, 'stopSeconds': 2.5, 'reservedCleanupAndReportingSeconds': 30})
+    # Recalculate after the durable budget checkpoint too; a delayed fsync never grants another 120s.
+    remaining = deadline - time.monotonic(); work_seconds = min(120, remaining - 30)
+    if work_seconds < 1: raise RuntimeError('TOTAL_DEADLINE_AFTER_CHECKPOINT_NO_CHILD')
     env = {'PATH': '/opt/homebrew/opt/node@24/bin:/usr/bin:/bin', 'HOME': str(scratch), 'TMPDIR': str(scratch), 'NO_COLOR': '1',
            'NODE_DISABLE_COMPILE_CACHE': '1', 'TSX_DISABLE_CACHE': '1', 'FLOW_ENG01I_CACHE': str(scratch / 'cache'),
            'FLOW_ENG01I_LOCAL_FACTS': str(scratch / 'peers.json'), 'FLOW_ENG01I_PG': 'reviewed',
            'FLOW_ENG01I_PG_ADMIN_URL': os.environ['FLOW_ENG01I_PG_ADMIN_URL'], 'FLOW_ENG01I_PG_FACTS': str(run / 'fixture'),
-           'FLOW_ENG01I_CLEANUP_UNTIL': str(round(time.time() * 1000) + 145000)}
-    result = module.supervise(module.Launch(argv, str(ROOT), env, module.Ownership.NEW_CHILD_SESSION), module.Policy(120, .5, 2, 1048576))
+           'FLOW_ENG01I_CLEANUP_UNTIL': str(round((time.time() + remaining - 5) * 1000))}
+    result = module.supervise(module.Launch(argv, str(ROOT), env, module.Ownership.NEW_CHILD_SESSION), module.Policy(work_seconds, .5, 2, 1048576))
     value = dataclasses.asdict(result)
     for name in ['stdout', 'stderr']:
         raw = value.pop(name); save(run / (name + '.log'), raw); value[name] = {'bytes': len(raw), 'sha256': hashlib.sha256(raw).hexdigest()}

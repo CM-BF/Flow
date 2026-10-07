@@ -99,7 +99,8 @@ export class NativeHostCenter {
       const size = Number((await this.admin!.query('SELECT pg_database_size($1)::text AS bytes', [this.database])).rows[0].bytes);
       const until = Math.min(this.until, Date.now() + 3000);
       do {
-        const rows = (await this.admin!.query('SELECT pid,state FROM pg_stat_activity WHERE datname=$1 ORDER BY pid LIMIT 33', [this.database])).rows;
+        const remaining = until - Date.now(); if (remaining <= 0) throw Error('Connection observation deadline reached.');
+        const rows = (await this.admin!.query({ text: 'SELECT pid,state FROM pg_stat_activity WHERE datname=$1 ORDER BY pid LIMIT 33', values: [this.database], query_timeout: remaining })).rows;
         connections = rows;
         if (Date.now() >= until || rows.length > 32) throw Error('Bounded connection observation is unknown.');
         if (!rows.length) break;

@@ -10,3 +10,5 @@
 - finaltypes：新增PG checkpoint/首错保留的必要类型复核exit0/2063ms。PG两例仍NOT_RUN。
 
 七次监督累计15957ms；真实group均最终absent/双EOF。历史pre-reap EPERM observations保留，不冒每次观察均absent。无当前保留tmp。两个缓存清理失败原记录不改绿，后续单独正常收尾。新wrapper关闭Node/tsx缓存，监督自身pycache已记录精确清理并禁写。全部日志/receipt保持原始字节。
+
+后续自查acquire边界：project.acquire部分成功后抛异常必须Native unknown，避免runtime普通failed结算中心admission。c3d29e4a仅2源窄修；新增真实lease故障1/1（29未选）889ms + focused types0/2141ms，group absent/EOF/tmpremoved。累计 **28different**，九轮监督18987ms；原27/3重叠不重跑。PG监督同总期限与每轮query remaining修订仍只准备，无PG执行。
