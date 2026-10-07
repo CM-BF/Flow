@@ -4,6 +4,7 @@ import { mkdir, lstat, realpath } from 'node:fs/promises';
 import { join, dirname } from 'node:path';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { createHash } from 'node:crypto';
+import { createRequire } from 'node:module';
 import { transferWebArtifact } from './current-web-transfer.mjs';
 import { observeCurrentInstallation } from './current-migration.mjs';
 import { readInstance } from './current-import.mjs';
@@ -83,20 +84,38 @@ async function modules(input) {
   assert.equal(verified.manifest.sourceRepository, input.repository);
   assert.equal(verified.root, join(input.installationDirectory, 'backend-artifacts', backend.artifactId, 'root'));
   const at = name => import(pathToFileURL(join(verified.root, 'tools/personal-preview', name)).href);
-  return { preview: await at('preview.mjs'), process: await at('process.mjs'), web: await at('web-release.mjs'),
+  const { Pool } = createRequire(join(verified.root, 'package.json'))('pg');
+  const { readRunnerMaintenance } = await import(pathToFileURL(join(verified.root, 'apps/server/src/runner-maintenance/index.ts')).href);
+  return { Pool, readRunnerMaintenance, preview: await at('preview.mjs'), process: await at('process.mjs'), web: await at('web-release.mjs'),
     artifact: await at('web-artifact.mjs'), policy: await at('web-retention-policy.mjs'), diagnostics: await at('startup-diagnostics.mjs'),
-    maintenance: await at('maintenance-host.mjs'), renameExclusive,
+    renameExclusive,
     // Resolve the same public serializer as this verified artifact's maintenance producer.
     canonical: (await import(pathToFileURL(join(verified.root, 'apps/server/src/database.ts')).href)).canonical };
 }
-async function observe(input, mod) {
+// Caller may already hold the preview lock. Reuse the public read-only store, never reacquire that lock.
+export async function readMaintenanceForWeb(input, mod) {
+  const config = await mod.preview.loadPreviewConfiguration(input.installationDirectory);
+  await mod.preview.assertPreviewMarker(config);
+  assert.equal(config.runner?.runnerId, runnerId, 'RUNNER_IDENTITY_UNAVAILABLE');
+  assert.equal(typeof config.runner.token, 'string', 'RUNNER_IDENTITY_UNAVAILABLE');
+  const pool = new mod.Pool({ connectionString: config.databaseUrl, max: 1, connectionTimeoutMillis: 1500,
+    statement_timeout: 3000, application_name: 'flow-preview-web-publication-readonly' });
+  try {
+    // Same token/revocation identity predicate as fixed maintenance-host verifiedIdentity; no credential is recorded.
+    const identity = await pool.query('SELECT 1 FROM flow.runners WHERE id=$1 AND token_hash=$2 AND NOT revoked',
+      [runnerId, sha(config.runner.token)]);
+    assert.equal(identity.rowCount, 1, 'RUNNER_IDENTITY_UNAVAILABLE');
+    return await mod.readRunnerMaintenance(pool, runnerId);
+  } finally { await pool.end(); }
+}
+export async function observe(input, mod) {
   await observeCurrentInstallation(mod, input);
   const state = await mod.preview.readPreviewJson(join(input.installationDirectory, 'state.json'));
   const op = await mod.preview.readPreviewJson(join(input.installationDirectory, 'maintenance.json'));
   assert.equal(sha(mod.canonical(state)), mod.recovery.stateDigest, 'RECOVERED_LAUNCH_CHANGED');
   assert.equal(sha(mod.canonical(op)), mod.recovery.operationDigest, 'RECOVERED_OPERATION_CHANGED');
   assert.equal(op.operationId, operationId); assert.equal(op.phase, 'resumed'); assert.deepEqual(op.backendArtifact, backend);
-  const view = await mod.maintenance.maintainPreview({ directory: input.installationDirectory, action: 'status' });
+  const view = await readMaintenanceForWeb(input, mod);
   assert.equal(view.state, 'accepting'); assert.equal(view.version, 24); assert.equal(view.operationId, null); assert.equal(view.runnerId, runnerId);
   assert.equal(await mod.diagnostics.readRunnerInitialization({ directory: input.installationDirectory, recordKey: 'runner', record: state.processes.runner, runnerId }), true);
   assert.deepEqual(await mod.web.readWebRelease(input.installationDirectory), input.expectedRelease);

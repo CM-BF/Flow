@@ -4,8 +4,15 @@ import { mkdtemp, realpath, readFile, writeFile, lstat, mkdir, rm, rmdir, chmod,
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
+import { EventEmitter } from 'node:events';
+import { withPreviewLock } from '/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/tools/personal-preview/preview.mjs';
+import { readRunnerMaintenance } from '/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/apps/server/src/runner-maintenance/index.ts';
+import { transferWebArtifact } from './current-web-transfer.mjs';
+import * as artifactModule from '../../../../tools/personal-preview/web-artifact.mjs';
+import * as retentionPolicy from '../../../../tools/personal-preview/web-retention-policy.mjs';
+import { renameExclusive } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs';
 import { canonical } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/apps/server/src/database.ts';
-import { backend, artifact, reports, context, validateInput, assertRecoveryReceipt, assertPublished, publish, runWebOnly, createOutputDirectory } from './recovery-web-publication.mjs';
+import { backend, artifact, reports, context, validateInput, assertRecoveryReceipt, assertPublished, publish, runWebOnly, createOutputDirectory, observe, readMaintenanceForWeb } from './recovery-web-publication.mjs';
 
 const sha = value => createHash('sha256').update(value).digest('hex');
 const fingerprint = value => sha(canonical(value));
@@ -76,7 +83,7 @@ async function fixture(behavior, body) {
     await writeFile(join(value.runDirectory, 'complete.json'), JSON.stringify({ outcome: 'web-artifact-imported-pointer-unchanged', artifact }), { mode: 0o600 });
     const checked = [];
     const mod = { canonical, recovery: { ...receipt(), stateDigest: fingerprint(state), operationDigest: fingerprint(operation) },
-      preview: { readPreviewJson: async path => structuredClone(path.endsWith('state.json') ? state : operation),
+      preview: { loadPreviewConfiguration: async () => ({ directory: root, databaseUrl: 'synthetic', runner: { runnerId: receipt().view.runnerId, token: 'synthetic' } }), assertPreviewMarker: async () => {}, readPreviewJson: async path => structuredClone(path.endsWith('state.json') ? state : operation),
       publishPreviewWeb: async request => { called++; assert.deepEqual(request, { directory: root, artifact, expectedVersion: 3, expectedBackendHead: backend.sourceHead, compatibilityId: reports[artifact.artifactId] });
         if (behavior === 'conflict') throw Object.assign(Error('fixture'), { code: 'WEB_RELEASE_VERSION_CONFLICT' });
         state = { ...state, webReleaseOperation: { phase: 'committed' } };
@@ -84,7 +91,7 @@ async function fixture(behavior, body) {
         return { web: 'ready', release: { version: 4, current: artifact.artifactId, artifacts: [...retainedArtifacts, artifact], compatibilityIds: reports } }; } },
       process: { inspectOwnedProcess: async () => 'running', ownsListener: async () => true },
       web: { readWebRelease: async () => release, verifyWebCompatibility: async request => { checked.push(request); assert.equal(request.backendHead, backend.sourceHead); assert.deepEqual(request.expectedContext, context); } },
-      maintenance: { maintainPreview: async () => receipt().view }, diagnostics: { readRunnerInitialization: async () => true } };
+      Pool: class { async query() { return { rowCount: 1 }; } async end() {} }, readRunnerMaintenance: async () => receipt().view, diagnostics: { readRunnerInitialization: async () => true } };
     await body(value, mod, () => ({ called, checked, state }));
   } finally { await rm(root, { recursive: true }); }
 }
@@ -135,4 +142,91 @@ test('actual output creation rejects writable owned and symlink parents', async 
     await assert.rejects(createOutputDirectory(join(bad, 'output')), /UNTRUSTED_OUTPUT_PARENT/);
     await symlink(root, alias); await assert.rejects(createOutputDirectory(join(alias, 'output')));
   } finally { await rm(root, { recursive: true }); }
+});
+
+
+function databaseFixture(mode = 'ok') {
+  const facts = { ended: 0, released: 0, queries: [], constructions: 0 };
+  class Pool {
+    constructor(options) { facts.constructions++; assert.equal(options.max, 1); assert.equal(options.statement_timeout, 3000); }
+    async query(sql, args) {
+      facts.queries.push(sql);
+      if (sql === 'SELECT 1 FROM flow.runners WHERE id=$1 AND token_hash=$2 AND NOT revoked') {
+        assert.deepEqual(args, [receipt().view.runnerId, sha('synthetic')]);
+        return { rowCount: ['revoked', 'identity-mismatch'].includes(mode) ? 0 : 1, rows: [] };
+      }
+      if (sql === 'SELECT * FROM flow.runners WHERE id=$1') return { rows: [{ maintenance_version: 24, maintenance_state: 'accepting', maintenance_operation_id: null, revoked: false }] };
+      if (sql.includes('FROM flow.attempts')) {
+        if (mode === 'unknown') throw Object.assign(new Error('synthetic'), { code: 'SYNTHETIC_STATUS_UNKNOWN' });
+        return { rows: [{ active: 0, uncertain: 0 }] };
+      }
+      assert.ok(['BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY', 'COMMIT', 'ROLLBACK'].includes(sql)); return { rows: [] };
+    }
+    connect(callback) {
+      const client = new EventEmitter(); client.query = this.query.bind(this); client.release = () => facts.released++;
+      callback(null, client);
+    }
+    async end() { facts.ended++; }
+  }
+  return { Pool, facts };
+}
+async function tinyArtifact(root, letter) {
+  const content = Buffer.from(letter), manifest = { format: 2, policy: 'flow-static-web-v2', releaseId: letter.repeat(32), sourceHead: letter.repeat(40),
+    files: [{ path: 'index.html', bytes: 1, sha256: sha(content) }], totalBytes: 1 };
+  const bytes = Buffer.from(JSON.stringify(manifest) + '\n'), id = sha(bytes), path = join(root, 'web-artifacts', id);
+  await mkdir(join(path, 'dist/assets'), { recursive: true, mode: 0o700 });
+  await writeFile(join(path, 'dist/index.html'), content, { mode: 0o600 }); await writeFile(join(path, 'manifest.json'), bytes, { mode: 0o600 });
+  return { descriptor: { artifactId: id, manifestDigest: id, sourceHead: manifest.sourceHead }, bytes: bytes.length, manifest };
+}
+async function lockedTransferFixture(mode, callback) {
+  await fixture('success', async (value, mod, publication) => {
+    const root = value.installationDirectory, source = join(root, 'source'), run = join(root, 'transfer-locked');
+    await mkdir(source, { mode: 0o700 }); await mkdir(run, { mode: 0o700 });
+    const fresh = await tinyArtifact(source, 'd'), old = [];
+    for (const letter of ['a', 'b', 'c']) old.push((await tinyArtifact(root, letter)).descriptor);
+    const id = async path => { const st = await lstat(path); return { dev: String(st.dev), ino: String(st.ino) }; };
+    Object.assign(value, { sourceDirectory: source, sourceIdentity: await id(source), runDirectory: run, runIdentity: await id(run), artifact: fresh.descriptor,
+      retainedArtifacts: old, expectedRelease: { version: 3, current: old[2].artifactId, artifacts: old }, manifestBytes: fresh.bytes,
+      assetBytes: 1, artifactFiles: 1, releaseId: fresh.manifest.releaseId });
+    mod.web.readWebRelease = async () => value.expectedRelease; mod.web.verifyWebCompatibility = async () => ({});
+    mod.preview.withPreviewLock = withPreviewLock;
+    const db = databaseFixture(mode); Object.assign(mod, { Pool: db.Pool, readRunnerMaintenance, artifact: artifactModule, policy: retentionPolicy, renameExclusive });
+    mod.observe = () => observe(value, mod);
+    await callback(value, mod, db.facts, publication);
+    await assert.rejects(lstat(join(root, 'operation.lock')), { code: 'ENOENT' });
+  });
+}
+test('lock integration reproduces old nested lock rejection with actual transfer and lock', async () => {
+  await lockedTransferFixture('ok', async (value, mod, facts) => {
+    const current = mod.observe;
+    mod.observe = async () => { await withPreviewLock({ directory: value.installationDirectory }, async () => current()); };
+    await assert.rejects(transferWebArtifact(value, mod), { code: 'OPERATION_IN_PROGRESS_OR_UNCONFIRMED' });
+    assert.equal(facts.constructions, 0);
+  });
+});
+test('lock integration actual transfer guard reads public status without lock reacquisition', async () => {
+  await lockedTransferFixture('ok', async (value, mod, facts) => {
+    const result = await transferWebArtifact(value, mod);
+    assert.equal(result.outcome, 'web-artifact-imported-pointer-unchanged');
+    assert.equal((await lstat(join(value.installationDirectory, 'web-artifacts', value.artifact.artifactId))).isDirectory(), true);
+    assert.equal(facts.constructions, 3); assert.equal(facts.ended, 3); assert.equal(facts.released, 3);
+    assert.equal(facts.queries.filter(sql => sql === 'BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY').length, 3);
+  });
+});
+test('lock integration real pre-existing lock is retained and refuses transfer', async () => {
+  await lockedTransferFixture('ok', async (value, mod, facts) => {
+    const lock = join(value.installationDirectory, 'operation.lock'); await mkdir(lock, { mode: 0o700 });
+    try { await assert.rejects(transferWebArtifact(value, mod), { code: 'OPERATION_IN_PROGRESS_OR_UNCONFIRMED' });
+      assert.equal((await lstat(lock)).isDirectory(), true); assert.equal(facts.constructions, 0);
+    } finally { await rmdir(lock); }
+  });
+});
+for (const mode of ['revoked', 'identity-mismatch', 'unknown']) test(`lock integration ${mode} refuses transfer and CAS and closes pool`, async () => {
+  await lockedTransferFixture(mode, async (value, mod, facts, publication) => {
+    await assert.rejects(transferWebArtifact(value, mod), mode === 'unknown' ? { code: 'SYNTHETIC_STATUS_UNKNOWN' } : /RUNNER_IDENTITY_UNAVAILABLE/);
+    await writeFile(join(value.runDirectory, 'complete.json'), JSON.stringify({ outcome: 'web-artifact-imported-pointer-unchanged', artifact }), { mode: 0o600 });
+    await assert.rejects(publish(value, mod), mode === 'unknown' ? { code: 'SYNTHETIC_STATUS_UNKNOWN' } : /RUNNER_IDENTITY_UNAVAILABLE/);
+    assert.equal(publication().called, 0); assert.equal(facts.ended, 2);
+    await assert.rejects(lstat(join(value.installationDirectory, 'web-artifacts', value.artifact.artifactId)), { code: 'ENOENT' });
+  });
 });
