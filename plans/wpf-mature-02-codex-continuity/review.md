@@ -21,3 +21,7 @@ architecture_read 2026-10-07T06:18:46Z SOURCE_AND_LIMITED_RESULT_REVIEW_APPROVED
 ## 2026-10-07T06:38:52.354024+00:00 — conversation PG pagination correction
 
 db_transaction_owner 06:34:28Z对88487552的317绑定/准备结果复核，CHANGES_REQUESTED唯一P2为随机UUID不能强制hidden-first/between。固定e7a130c4只改该case确定排序和两页cursor断言；新focused types0，不执行PG。其余已审输入/资源门禁不改。增量复审待交，入口conversation-pg-pagination-fix-review-ready.json；不把旧准备审或类型检查当PG通过。
+
+## 2026-10-07T06:46:36.856151+00:00 — preparation accepted, actual failed
+
+db_transaction_owner06:40:56Z DELTA_SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED, sourcee7a/packetb3f, paginationP2 CLOSED/0remaining. One actual668a selected6/passed5/failed1, immutable profile fixture UPDATE rejected before sentinel GET; resources closed except exact outerTMP KEEP under original strict gate. Result fidelity review pending, no retry or source change.

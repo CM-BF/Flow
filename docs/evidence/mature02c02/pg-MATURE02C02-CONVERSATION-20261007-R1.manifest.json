@@ -1,0 +1,304 @@
+{
+  "schema": "flow.c02.pg-result.v1",
+  "at": "2026-10-07T06:47:17.935639+00:00",
+  "window": "MATURE02C02-CONVERSATION-20261007-R1",
+  "result": "FAILED_RESULT_REVIEW_PENDING",
+  "executionHead": "668a0683a94202b2f53ade7f258308f84bd8fbe0",
+  "preparedSource": "e7a130c4341f00b77f2207088ee8e2f9fe8dd4eb",
+  "inputManifest": {
+    "name": "pg-conversation-source-manifest.json",
+    "sha256": "0dd19d82e1b1a37d9400054c866ce52652a56a4276090643e21f63bd5f5cac77"
+  },
+  "sourceVerification": {
+    "count": 317,
+    "bytes": 1810789,
+    "GitAtExecutionEqualsWorktree": true,
+    "errors": []
+  },
+  "selection": {
+    "selected": 6,
+    "passed": 5,
+    "failed": 1
+  },
+  "failure": {
+    "case": "rejects a corrupt native-v2 sentinel without replacing its immutable digest",
+    "sourceLine": 145,
+    "phase": "fixture UPDATE before target GET",
+    "observed": "Execution profiles are immutable; register a new runner identity",
+    "productSentinelAssertionReached": false
+  },
+  "realHTTPRequests": 122,
+  "continuity": {
+    "turns": 2,
+    "sameThread": true,
+    "typedDigest": "0906e5b5e560b0a97c83dbe456cc3c6ca8fae141db7b7ed9e761806e8e9302c1",
+    "instances": [
+      {
+        "closed": true,
+        "reads": 1
+      },
+      {
+        "closed": true,
+        "reads": 2
+      }
+    ],
+    "foreignRunnerRejected": true,
+    "unknownAdapterRejected": true
+  },
+  "resourceSummary": {
+    "pid": 97064,
+    "exitCode": 1,
+    "group": {
+      "state": "absent",
+      "signals": [],
+      "observations": [
+        "absent"
+      ]
+    },
+    "stdioEof": [
+      "stderr",
+      "stdout"
+    ],
+    "rawComplete": true,
+    "observedRawBytes": 183,
+    "fixtureReceiptConfirmed": false,
+    "strictErrors": [
+      "TESTS_FAILED_OR_SELECTION",
+      "RESULT_UNKNOWN"
+    ],
+    "retainedTempRoot": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-pg-window-ftey4cw4",
+    "tempIdentity": [
+      16777234,
+      123593883
+    ],
+    "retainedDatabase": null,
+    "databaseIdentity": {
+      "oid": "1238600",
+      "marker": "48fb6a75-0a9a-4b8f-bd43-c5add7e49be2"
+    },
+    "databaseLogicalEndSampleBytes": 12770327,
+    "cleanup": {
+      "startupSettled": true,
+      "runnersClosed": true,
+      "appClosed": true,
+      "poolClosed": true,
+      "adminClosed": true,
+      "databaseIdentityConfirmed": true,
+      "connections": 0,
+      "databaseAbsent": true
+    },
+    "activePeaks": "UNKNOWN",
+    "completeTempAccounting": false
+  },
+  "clocks": {
+    "operatorStart": "2026-10-07T06:44:46.236736+00:00",
+    "operatorBeforeFinalReceipt": "2026-10-07T06:44:50.251186+00:00",
+    "operatorElapsedSeconds": 4.014506750000001,
+    "deliverySeconds": 4.014786584,
+    "externalToolStart": "2026-10-07 06:44:45 UTC",
+    "externalToolEnd": "2026-10-07 06:44:50 UTC",
+    "externalConservativeUpperSeconds": 6,
+    "exactWholeWall": "UNKNOWN"
+  },
+  "claimHistory": {
+    "runtimeVersion": 12,
+    "runtimeScopes": 72,
+    "currentVersion": 13,
+    "currentScopes": 71,
+    "removedAfterRuntime": "apps/runner/src/native-harness/codex/adapter.ts",
+    "receipt": "adapter-handback-receipt.json"
+  },
+  "originals": {
+    "count": 10,
+    "bytes": 8958
+  },
+  "archiveRows": [
+    {
+      "path": "docs/evidence/mature02c02/adapter-handback-receipt.json",
+      "bytes": 3920,
+      "sha256": "27aaa5590a9583d84ccdf5e2f1e62338db4031f9398e2f745d4e6de701ccb873"
+    },
+    {
+      "path": "docs/evidence/mature02c02/adapter-handback-request.json",
+      "bytes": 3935,
+      "sha256": "88b1bc87ab5f50bea7025badc59f1d3c3c31e528a084f426c9efd4f26d6f513b"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-amend-request.json",
+      "bytes": 3982,
+      "sha256": "e941196b3b02be7991feec832eed0798f9fc436e0f614d00565e4cca842987c2"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-next.md",
+      "bytes": 2449,
+      "sha256": "0abdbd7cf113699a5071e790e18f7bb502ad384a25114c267be7b9de3f0c0d75"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-pagination-fix-local.json",
+      "bytes": 3376,
+      "sha256": "3ef667be7e6591e822d63183276021678f24f2e26f516d45acc92442fad6db36"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-pagination-fix-review-ready.json",
+      "bytes": 2141,
+      "sha256": "0f452263c598ea9c5ecf10bde62a6a9311275ded45e184109793a68e9501e42b"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-pagination-fix-types.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-pagination-fix-types.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-prepare-collect.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-prepare-collect.stdout",
+      "bytes": 822,
+      "sha256": "61cb3307cc4c60df21c433defdabab809facda0938832f945057d873e7be72cd"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-prepare-local.json",
+      "bytes": 5829,
+      "sha256": "c4dd62710b5d10cb741e9c87a49a29b88ce9ef9f0fb969c866537e2a4c44e62f"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-prepare-segment.json",
+      "bytes": 765,
+      "sha256": "e01f78c292f62032ba0e64702cec6855838cd11c37538fd51013a796cf0b37bc"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-prepare-types.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-prepare-types.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-r1-admission.json",
+      "bytes": 1467,
+      "sha256": "43918d9f1b3475dbb847a898032941a1f433bb483a695431e59c40f154f744f3"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-review-ready.json",
+      "bytes": 2131,
+      "sha256": "328971e7e69c3218d949ed8c4977df754337f1773378f868794b5db455ae61b0"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-window.md",
+      "bytes": 5364,
+      "sha256": "199dc3d6239225dfa01d764124a845cd727b30b93d409217e769c5d0f7d446b0"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.child.json",
+      "bytes": 80,
+      "sha256": "87910fb673ef9939deb1e3aed132428e8acefbcc0c8302537e6395f1a7df2fbe"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.fixture.json",
+      "bytes": 2055,
+      "sha256": "765d7526dddb24547a23c6210f7b349fa23fac250538574560dc9d45be38277a"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.fixture.json.create-request.json",
+      "bytes": 150,
+      "sha256": "e8fa5ef184725652cac904545db25f07107ce15f448a95c272b05340ddfad34b"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.fixture.json.database.json",
+      "bytes": 190,
+      "sha256": "9aa2802bddcd648143470377a3e2e6c06276154aa2252cf972b70be2ff310c87"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.fixture.json.reservation.json",
+      "bytes": 166,
+      "sha256": "1ee0e7da2757e0afa537e0cdd1bfa7c8f33977579cef3bdef23e8232d9d401f2"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.post-run.json",
+      "bytes": 640,
+      "sha256": "8a71aac72f259ce1469b64b6a20fbe9fc0c44ec0a38d8a1b5c671ae9355cf607"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.report.md",
+      "bytes": 3258,
+      "sha256": "2fdf95f84215e433e2d7e72ee9ed8376a340dadce82832c9e8e5e1a7cb5c4df8"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.reservation.json",
+      "bytes": 589,
+      "sha256": "848cbb14cb8ad5caebc25eea7a57d6773fee6bb389dab8eba1bbbe1cbb7c5bc0"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.result.json",
+      "bytes": 2295,
+      "sha256": "15928b563758516933220aa5badfade0ec5e8bcc821be38f5d41a77dd16c0d93"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.stdout",
+      "bytes": 183,
+      "sha256": "c56bc4ea877799c9b4109aba670fbee4a0e2eebbe246ddcd4f95b410fa5c1e4c"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.tool.json",
+      "bytes": 2886,
+      "sha256": "3fbdd83bd729172eaebb521835aa1da0de76f7d49ab4558b268effc3c7c41079"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.vitest.json",
+      "bytes": 3250,
+      "sha256": "fb5b87d87fe3d33516c2fdd47c8831c70a2d0bedddd02b79b87ce3563e18c800"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-conversation-source-manifest.json",
+      "bytes": 7809,
+      "sha256": "0dd19d82e1b1a37d9400054c866ce52652a56a4276090643e21f63bd5f5cac77"
+    },
+    {
+      "path": "docs/evidence/mature02c02/quality.md",
+      "bytes": 3007,
+      "sha256": "e4f6d2cf9e60038c00be6fa85bdf327bb8845b7cab6107404cdee86ee7cf1586"
+    },
+    {
+      "path": "plans/wpf-mature-02-codex-continuity/review.md",
+      "bytes": 3895,
+      "sha256": "81060c40c196f217f713603a509910850c2d533a2824b250b43356b6a0cda024"
+    },
+    {
+      "path": "plans/wpf-mature-02-codex-continuity/status.md",
+      "bytes": 9246,
+      "sha256": "243c4ae35561019d2a022f3e3d925956a546b19ea2fef999dccb075982129287"
+    }
+  ],
+  "serialization": "path-sorted UTF-8: path TAB decimal-bytes TAB sha256 LF",
+  "orderedSha256": "7afbc9caf1ddce0a65e4d5ef265b16c10c28513f5b506e2f944fe13501a9205b",
+  "accounting": {
+    "archiveRowsBytes": 75880,
+    "selfBytes": 10951,
+    "totalBytes": 86831,
+    "limitBytes": 131072,
+    "remainingBytes": 44241,
+    "disjointFromRuntimeInputs": true,
+    "scope": "All current stage preparation/result metadata and actual outputs; runtime source/input files charged separately without duplication. Unknown retained TMP is not asserted complete."
+  },
+  "limits": [
+    "One actual PG/HTTP run with injected native transport; no Codex/provider/SDK execution.",
+    "No source modification or PG retry followed this failure.",
+    "Old failures and unknown TMP remain unchanged/unvisited.",
+    "Five passed cases do not turn this six-case suite into PASS or complete C02/native/UI acceptance."
+  ]
+}
