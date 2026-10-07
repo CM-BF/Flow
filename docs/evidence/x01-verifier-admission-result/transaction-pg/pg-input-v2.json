@@ -1,0 +1,59 @@
+{
+  "protocol": "flow.x01.verifier-admission-result-pg.v1",
+  "productCommit": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+  "totalSeconds": 180,
+  "workSeconds": 110,
+  "cleanupSeconds": 60,
+  "finalReserveSeconds": 10,
+  "suites": {
+    "runtime": {
+      "cases": 5,
+      "httpRequests": 160,
+      "connectionsMax": 17
+    }
+  },
+  "httpRequestsMax": 160,
+  "responseBytesPerRequest": 131072,
+  "responseBytesPerSuite": 4194304,
+  "databasesMax": 1,
+  "serialSuites": true,
+  "streamsBytes": 262144,
+  "resultBytes": 131072,
+  "rawBytes": 1048576,
+  "temporaryBytes": 33554432,
+  "temporaryEntries": 4096,
+  "reserveBytes": 1073741824,
+  "runName": "var-transaction-pg-v2-run-r1",
+  "databaseReserveBytes": 134217728,
+  "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+  "selection": [
+    {
+      "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+      "name": "same-key concurrent admission creates one task node reference wake and receipt"
+    },
+    {
+      "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+      "name": "stale CAS removed project authority revoked grant and denied trust leave no creation residue"
+    },
+    {
+      "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+      "name": "artifact typed passed verdict and completion commit together and exact replay writes nothing"
+    },
+    {
+      "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+      "name": "forged passed and late invalid completion roll back the whole artifact verdict event batch"
+    },
+    {
+      "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+      "name": "settled failure cancellation UNKNOWN and project capacity preserve their distinct transaction gates"
+    }
+  ],
+  "tasksMax": 16,
+  "attemptsMax": 14,
+  "scope": "Real domain admission and reportEvents TX; public source setup; synthetic installed metadata only; no verifier HTTP mount or worker execution",
+  "runnersMax": 4,
+  "fixtureCommit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+  "metadataRunners": 4,
+  "providerCalls": 0,
+  "registrationsMax": 2
+}

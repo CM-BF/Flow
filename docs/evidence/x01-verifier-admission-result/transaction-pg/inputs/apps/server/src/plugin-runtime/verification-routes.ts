@@ -16,11 +16,13 @@ export function registerPluginVerificationRoutes(app: FastifyInstance, pool: Poo
   policy: { hosts: TrustedPluginHostPolicy; algorithms: TrustedPluginVerifierPolicy }): void {
   if (typeof policy?.hosts !== 'function' || typeof policy?.algorithms !== 'function') throw new Error('Explicit verifier policy is required.');
   app.post<{ Params: { id: string } }>('/api/plugins/:id/verification-tasks', { bodyLimit: 16384 }, async (request, reply) => {
-    const id = z.uuid().parse(request.params.id);
-    const input = pluginVerificationAdmissionSchema.parse(request.body);
+    const id = z.uuid().safeParse(request.params.id);
+    if (!id.success) throw new HttpError(400, 'invalid_plugin_runtime_id', 'Invalid plugin runtime identity.');
+    const input = pluginVerificationAdmissionSchema.safeParse(request.body);
+    if (!input.success) throw new HttpError(400, 'invalid_plugin_verification_admission', 'Invalid plugin verification admission.');
     const key = request.headers['idempotency-key'];
     if (typeof key !== 'string') throw new HttpError(400, 'idempotency_key_required', 'A stable idempotency key is required.');
-    const result = await admitPluginVerification(pool, boss, id, input, key, policy.hosts, policy.algorithms);
+    const result = await admitPluginVerification(pool, boss, id.data, input.data, key, policy.hosts, policy.algorithms);
     if (Buffer.byteLength(JSON.stringify(result)) > PLUGIN_RUNTIME_LIMITS.responseBytes) throw new HttpError(413, 'plugin_runtime_response_limit', 'Response exceeds its bound.');
     return reply.header('cache-control', 'no-store').code(result.replayed ? 200 : 201).send(result);
   });
@@ -28,7 +30,9 @@ export function registerPluginVerificationRoutes(app: FastifyInstance, pool: Poo
     if (!request.runnerId) throw new HttpError(401, 'runner_required', 'Runner authentication is required.');
     const key = request.headers['idempotency-key'];
     if (typeof key !== 'string') throw new HttpError(400, 'idempotency_key_required', 'A stable idempotency key is required.');
-    const result = await authorizePluginPhase(pool, request.runnerId, pluginGrantRequestSchema.parse(request.body), key, 'verifier', policy.algorithms);
+    const input = pluginGrantRequestSchema.safeParse(request.body);
+    if (!input.success) throw new HttpError(400, 'invalid_plugin_grant', 'Invalid plugin phase authorization.');
+    const result = await authorizePluginPhase(pool, request.runnerId, input.data, key, 'verifier', policy.algorithms);
     return reply.header('cache-control', 'no-store').send(result);
   });
 }

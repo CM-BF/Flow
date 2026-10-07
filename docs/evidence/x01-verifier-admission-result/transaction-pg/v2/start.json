@@ -1,0 +1,19 @@
+{
+  "startedAt": "2026-10-07T22:43:26.475Z",
+  "deadline": "2026-10-07T22:53:26.475Z",
+  "firstWriteAt": "2026-10-07T22:43:56.326Z",
+  "base": "b2b7adb1aa91da4691b62d6551139e460db1fa40",
+  "capBytes": 4194304,
+  "engineeringChildren": 0,
+  "PG": 0,
+  "scope": "Only own evidence inputmirror/candidate/status; no products modified, no old input/json/manifest/caller/raw overwritten",
+  "oldFixedHashes": {
+    "candidate.json": "791ff815fbe49b7ef154209d3de3ea7b75f4b294950caacb9adf4f5ab6fafe9a",
+    "manifest.json": "b54b712ed3c5430d8a5510ad318ccd5ffc6b6227101d8df1671087202fbddf08",
+    "pg-input.json": "7191bdb351617e940e4576c272c934eebaf828d227947a85c0eb3e67f7f3a3fc",
+    "pg-once.py": "5d320bd5212f55e0eb9d095e33820236a3e5720679dfc31658e79a53d57c1c77",
+    "claim-receipt.json": "b15744326a6e577009e3f6734a444dae9a07afd7e72ab65a983b852626d3f004",
+    "invocation.json": "a2ea19ef25ec4c3f3e731262f94938d6479b41910b1591f0ad98efc4392e7ca0"
+  },
+  "notes": "Old candidate historical input snapshot may no longer match current two mutable mirrors; fixedGit oldbytes remain. Newcandidate alone references futurecurrent inputs. No duplicated closure."
+}
