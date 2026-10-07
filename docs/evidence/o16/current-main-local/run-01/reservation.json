@@ -1,0 +1,24 @@
+{
+  "startedAt": "2026-10-07T08:24:49.056532+00:00",
+  "scratch": "/private/tmp/flow-o16-current-load-axgsdkqt",
+  "dev": 16777234,
+  "ino": 123654569,
+  "freeBytes": 24077250560,
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "--input-type=module",
+    "--eval",
+    "const {sourceIdentity}=await import('./experiments/continuous-goal-acceptance/identity.mjs'); const identity=await sourceIdentity(); const driver=await import('./experiments/continuous-goal-acceptance/driver.mjs'); const operator=await import('./experiments/continuous-goal-acceptance/operator.mjs'); if(typeof driver.rehearse!=='function'||typeof operator.operate!=='function') throw new Error('Missing reviewed entry'); console.log(JSON.stringify({kind:'O16_IMPORT_ONLY',sourceDigest:identity.digest,base:identity.base,files:identity.files.length,dependencies:identity.dependencies.length,driver:'loaded-not-called',operator:'loaded-not-called',PG:0,provider:0}));"
+  ],
+  "bindings": {
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/current-main-local/load.py": "9fadb6c7d41d5dfc220f5c34b52afce90cf0a634bdb7c7912220ecc697732fe4",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/config.mjs": "f0c197614bde54a89e01615153c10685944e07ef9c542d6eac2bc8b76c0f167c",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/identity.mjs": "9ed99adddb8a79f337c3d049309be9a75010ebb4aa99c172428cbc854bbb8687",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/current-main-entry-preflight.json": "ebadc9afcca5749e8ae02b4aac65736c1a2ce72130bf8bc7b114cbc87d935437",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "PG": 0,
+  "provider": 0
+}

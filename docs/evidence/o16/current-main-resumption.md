@@ -19,3 +19,5 @@
 旧保留库/目录只引用原sealed事实，未现场核验，未删除；未来处理另由Lead明确协调。
 
 2026-10-07T08:23:56.323Z 静态收口：旧全apps/packages基线比较换成实际289输入逐fixed-base Git差异+工作字节hash校验，实验/apps/packages仍要求clean；未恢复无关整个树。旧manifest/raw不改，新输入见current-main-entry-preflight。实际driver import/sourceIdentity将独立记录，PG仍NOT_RUN。
+
+2026-10-07T08:26:45.367Z 默认加载实际1/1 exit0，sourceDigest86ace9e8（完整值见run.json），317files/39aliases；driver/operate仅导入未调用。耗时1849ms/raw269B/私有0B，groupabsent/EOF/临时目录removed。只批准范围内一次加载，无旧26重跑、新PG/provider0；下一仅固定1selected PG候选等待独审/新窗口。

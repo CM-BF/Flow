@@ -17,3 +17,5 @@ Review target commit：4ae43163d4adf8b6c2e0a0b7d3dca940ea820efa
 2026-10-06 19:34:22 UTC：作者按单次纯检查许可运行新增1组，1选中/1通过/0未选，进程exit0/1209ms；两类CAS与先保存rejected、独立cleanup失败记录由该组覆盖。原25未重复，累计26不同纯准备检查。230B stdout/stderr，临时峰值观察1917B，own进程组消失/空临时父目录正常移除。固定[增量manifest](../../docs/evidence/o16/decision-cas-validation-manifest.json)待reviewer只读核；原PG red与13MB DB/目录KEEP未动，0PG/provider。
 
 2026-10-06 19:51:37 UTC：Lead独审 APPROVED_BOUNDED_PREPARATION已归档[原件](../../docs/evidence/o16/decision-cas-validation-independent-review.json)，16绑定/1选中1通过原证据核实，reviewer0运行。准备片与原red/KEEP共138文件已受控main aca6e89214711ef3787ac3e3ee3b2754bb40b960，回执6223c7493a3b6f392813a5d9d82c24d87312ad26。该批准不覆盖新PG旅程或真实模型，原初次PG red仍失败；无新增产品修改或重复测试。
+
+2026-10-07T08:26:45.367Z 当前主线续接待限定delta独审：固定f5a实际输入289项，实验仅config/identity两源343bd436；原29实验其余27保持4ae，旧26不同检查不重跑。默认driver/operator加载与sourceIdentity1/1/1849ms已过，原PG失败仍保留，新的完整PG旅程NOT_RUN。无新模型/恢复许可。
