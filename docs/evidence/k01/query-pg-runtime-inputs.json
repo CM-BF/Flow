@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "kind": "runtime input candidate, no execution grant",
-  "recordedAt": "2026-10-07T16:00:07.261985+00:00",
+  "recordedAt": "2026-10-07T16:08:34.401892+00:00",
   "preparationSegment": {
     "startedAt": "2026-10-07T15:55:02Z",
     "deadline": "2026-10-07T16:07:02Z",
@@ -12,7 +12,7 @@
     "models": 0,
     "actualNamespaceCreated": false
   },
-  "implementationTarget": "e1a785387b74ddf506914cbb35afbb6ccb81b8bd",
+  "implementationTarget": "8020d0ba7df93e9131cdb1e334e3141faf8091a5",
   "fixedProduct": "3c9345df4aec85a37e8a2a155e079db260d515b1",
   "independentReview": {
     "path": "docs/evidence/k01/query-entry-independent-review.json",
@@ -343,13 +343,12 @@
     "state": "CLOSED_AND_EXPIRED; do not execute",
     "candidateRecordPathCurrentlyAbsent": true,
     "namespace": "operator creates .scratch/k01-<32hex UUID> only after actual admission; DB flow_k01_query_<32hex UUID>, marker UUID + OID/owner receipt",
-    "privateConfiguration": "Existing fixed fixture FLOW_K01_TEST_ADMIN source identified at source line13; legal source confirmation pending. No URL/hash of credentials stored."
+    "privateConfiguration": "Mika confirmed fixed3c9345 knowledge/fixture.ts:13 FLOW_K01_TEST_ADMIN/local test fallback may privately map to FLOW_K01_QUERY_ADMIN_URL. No value or credential hash recorded; no connect."
   },
   "closedPermit": {
     "path": "docs/evidence/k01/query-pg-closed-permit.json",
-    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/docs/evidence/k01/query-pg-closed-permit.json",
-    "bytes": 2806,
-    "sha256": "bb60b339512f1ca1f771486491bb0b4ba4fe1cff39fc093dce9586178b34d669"
+    "bytes": 3101,
+    "sha256": "b3877b16f8649615e87e87bcc65e271c2641a13e735d39c2b86f5402189d3bbc"
   },
   "candidateBudget": {
     "totalSeconds": 120,
@@ -385,7 +384,6 @@
   },
   "limits": [
     "DB128MiB is an end sample, not peak disk enforcement.",
-    "Reviewed caller local cap16MiB and result cap2MiB do not by themselves enforce combined candidate8MiB/aggregateRaw2MiB; future admission must confirm accounting/enforcement before OPEN.",
     "Actual PostgreSQL16 version/auth/DB privileges/hidden pool lifecycle remain unprobed.",
     "No old .local or other task KEEP copied/read/cleaned. Fixed source and dependency package content not copied again."
   ],
@@ -409,7 +407,9 @@
       "FLOW_K01_QUERY_PG_OPEN": "'NOT_OPEN'",
       "GIT_CONFIG_NOSYSTEM": "'1'",
       "GIT_CONFIG_GLOBAL": "'/dev/null'",
-      "GIT_TERMINAL_PROMPT": "'0'"
+      "GIT_TERMINAL_PROMPT": "'0'",
+      "FLOW_K01_QUERY_RECORD_DIRECTORY": "permit.get('recordDirectory', '')",
+      "FLOW_K01_QUERY_BASE_BYTES": "str(logical_bytes(ROOT))"
     },
     "pgOnlyAdditionalKey": "FLOW_K01_QUERY_ADMIN_URL",
     "method": "AST literal keys / expressions only; did not import entry or inspect host env",
@@ -420,7 +420,25 @@
       "existingOverride": "FLOW_K01_TEST_ADMIN",
       "futureMapping": "private FLOW_K01_TEST_ADMIN -> FLOW_K01_QUERY_ADMIN_URL",
       "fallback": "fixed local test fallback exists; no URL copied or probed",
-      "confirmedUse": "awaiting lead source confirmation; not supplied/executed"
+      "confirmedUse": "Mika confirmed at this16:02:16 segment authorization; actual value not loaded"
     }
+  },
+  "deltaReview": "PENDING: budget/local URL source delta; old e1a source approval retained as history",
+  "aggregateStorageGate": {
+    "localBytes": 8388608,
+    "rawBytes": 2097152,
+    "workReserveBytes": 524288,
+    "parentReserveBytes": 196608,
+    "counting": "exact new namespace + single run record; baseline fixed experiment/supply bytes included; all new runtime files treated as raw",
+    "pending": "exact pretty serialized result before each work request",
+    "durableWrites": "check exact encoded bytes plus parent reserve before opening wx",
+    "parent": "final retained PG scratch + raw + final ledger allowance included",
+    "failure": "stop work; cleanup retained; unavailable final result reported as bounded original-failure/cleanup fact to reserved parent capture; never PASS",
+    "validation": "13 synthetic/local tests and noEmit on a913; subsequent empty-fragment + sanitized parse-error restrictions statically inspected only (exact diff). Not actual PG."
+  },
+  "budgetDeltaEvidence": {
+    "path": "docs/evidence/k01/query-entry-budget-20261007T160216/manifest.json",
+    "bytes": 9587,
+    "sha256": "e2d4e4eae904da65d84e114273beac8ab1d85bfc392ff94b412031017d5f9311"
   }
 }

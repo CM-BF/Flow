@@ -4,9 +4,9 @@
   ],
   "state": "CLOSED",
   "authority": "NONE: candidate only; Mika/manager must grant a new explicit window",
-  "sourceHead": "e1a785387b74ddf506914cbb35afbb6ccb81b8bd",
+  "sourceHead": "8020d0ba7df93e9131cdb1e334e3141faf8091a5",
   "fixedProduct": "3c9345df4aec85a37e8a2a155e079db260d515b1",
-  "reviewed": true,
+  "reviewed": false,
   "segmentStartedAt": "2026-10-07T15:55:02Z",
   "expiresAt": "2026-10-07T15:55:02Z",
   "window": "NOT_OPEN",
@@ -20,8 +20,18 @@
     },
     {
       "path": "README.md",
-      "bytes": 9690,
-      "sha256": "f3747a65206a24e96577d9577019920cdb5169b1355ca0f127355abc77c6d4f2"
+      "bytes": 12313,
+      "sha256": "1b590923c1ac9212bbea0a7b26f9b3363bc7a7ea0eee5381a36cd1e82ccf6534"
+    },
+    {
+      "path": "budget.test.ts",
+      "bytes": 2995,
+      "sha256": "6208849001473058e77577346518769060850fb78b2fa18ebcbe73f21fa63dcb"
+    },
+    {
+      "path": "budget.ts",
+      "bytes": 2582,
+      "sha256": "2877ab676c9612706b0df5d02789bc67dc012747fdc316d6710c5dee8389d266"
     },
     {
       "path": "corpus.test.ts",
@@ -40,13 +50,13 @@
     },
     {
       "path": "entry.py",
-      "bytes": 14933,
-      "sha256": "64862a8ad381a89d6a0c093b23d35a2200daa2e4cb7d3af66845b09c0b48755e"
+      "bytes": 16498,
+      "sha256": "b7ec3293145e2791defb5333ba9bd873e589b08c42e2be4c4b5ca3d03a05e661"
     },
     {
       "path": "entry.test.py",
-      "bytes": 6148,
-      "sha256": "25e0d270d5c228af0d3d693ac6772ac03e34f2cc043dfa919baf6d086b877cf8"
+      "bytes": 6601,
+      "sha256": "6fcaa38681d7c2910903dfb8b189d12773d9befa5d79d802c6a4bb26d2bbb7cb"
     },
     {
       "path": "listen.test.ts",
@@ -65,13 +75,13 @@
     },
     {
       "path": "owned-database.ts",
-      "bytes": 10641,
-      "sha256": "64d62d40630f5164850016dae22ce4bb8d841a4a33de73718f389c9de1b505d9"
+      "bytes": 10630,
+      "sha256": "c72865e6c02db8677d6a75fb0a344307e0f3d5e16a0b1cff35bc6ec2572e8b49"
     },
     {
       "path": "run.ts",
-      "bytes": 2271,
-      "sha256": "c4895400a8a88754726bbd87e8cc88785f62a112fc41ae1b88bc7d3bc52fe48a"
+      "bytes": 3161,
+      "sha256": "a906c5b8587ffe2cd3fe1a849e349102435f365c9c5aaea0881b29234ecb597c"
     },
     {
       "path": "source-inputs.json",
@@ -85,8 +95,8 @@
     },
     {
       "path": "vitest.config.mjs",
-      "bytes": 191,
-      "sha256": "5c61ebca7f6b84c4c01e4474bb6a343535a6bada34032bc18e9825af7d3777f4"
+      "bytes": 209,
+      "sha256": "5441423d9317d0fa66633b5b341ee29f2cc518cf3d2cebc32c0f7238847d45b8"
     }
   ]
 }

@@ -1,3 +1,10 @@
+# K01-06 合计预算与URL保护差异（当前）
+
+状态：NOT_STARTED
+Review target commit：8020d0ba7df93e9131cdb1e334e3141faf8091a5
+
+前片e1a批准仅下方历史。本次合计8MiB/2MiB、512KiB work/192KiB parent reserve、exact namespace计量与URL query/fragment/错误净化；仅实验范围，无产品PG。证据 query-entry-budget-20261007T160216/manifest.json 绑定3child/13case/noEmit实际a913；最后budget.ts两处拒绝/净化表达式与README未重跑，exact diff单列。请核错误/cleanup保真、写前与最终record计量、原unknown/KEEP不降级、私有URL不泄露和此验证限制；源通过不等实际PG准入。
+
 # K01-06 诊断入口准备（当前）
 
 状态：APPROVED

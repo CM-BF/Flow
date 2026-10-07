@@ -1,0 +1,268 @@
+{
+  "schema": 1,
+  "recordedAt": "2026-10-07T16:08:34.401892+00:00",
+  "implementationTarget": "8020d0ba7df93e9131cdb1e334e3141faf8091a5",
+  "executedSourceTarget": "a913d425bab74ad5fc8aa27ff746cbb01ef19d40",
+  "segment": {
+    "startedAt": "2026-10-07T16:02:16Z",
+    "deadline": "2026-10-07T16:14:16Z",
+    "actualChildren": 3,
+    "lastReturn": "2026-10-07T16:05:57.909881+00:00",
+    "operatorElapsedMs": 3042,
+    "engineeringBudgetConsumed": true
+  },
+  "sourceFiles": [
+    {
+      "path": "experiments/knowledge-search/README.md",
+      "bytes": 12313,
+      "sha256": "1b590923c1ac9212bbea0a7b26f9b3363bc7a7ea0eee5381a36cd1e82ccf6534"
+    },
+    {
+      "path": "experiments/knowledge-search/budget.test.ts",
+      "bytes": 2995,
+      "sha256": "6208849001473058e77577346518769060850fb78b2fa18ebcbe73f21fa63dcb"
+    },
+    {
+      "path": "experiments/knowledge-search/budget.ts",
+      "bytes": 2582,
+      "sha256": "2877ab676c9612706b0df5d02789bc67dc012747fdc316d6710c5dee8389d266"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.test.ts",
+      "bytes": 2390,
+      "sha256": "2a92684c8660fd966369ede94aa1661d6af3b53d987033d5a2031c6c3b0d0d84"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.ts",
+      "bytes": 2816,
+      "sha256": "74784cec7db73db507ca3e37b1820d883a56a9ff07cbada22defd81176f9cd4a"
+    },
+    {
+      "path": "experiments/knowledge-search/dependencies.json",
+      "bytes": 5171,
+      "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.py",
+      "bytes": 16498,
+      "sha256": "b7ec3293145e2791defb5333ba9bd873e589b08c42e2be4c4b5ca3d03a05e661"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.test.py",
+      "bytes": 6601,
+      "sha256": "6fcaa38681d7c2910903dfb8b189d12773d9befa5d79d802c6a4bb26d2bbb7cb"
+    },
+    {
+      "path": "experiments/knowledge-search/listen.test.ts",
+      "bytes": 1431,
+      "sha256": "dd70ffdb2026e9f4c7a38427a509bd14478e3134fd0cf623015ddbce5dd26b22"
+    },
+    {
+      "path": "experiments/knowledge-search/materialize.py",
+      "bytes": 3314,
+      "sha256": "92045f38b3113b06a9bd388d1fba4b2ebf50c3d170fdb9e6db47736d0075ff09"
+    },
+    {
+      "path": "experiments/knowledge-search/measurement.ts",
+      "bytes": 13394,
+      "sha256": "856530a4bc25f011f87126425fc4c1aedaa7ecd8e2ca270ed5872f98d75d3002"
+    },
+    {
+      "path": "experiments/knowledge-search/owned-database.ts",
+      "bytes": 10630,
+      "sha256": "c72865e6c02db8677d6a75fb0a344307e0f3d5e16a0b1cff35bc6ec2572e8b49"
+    },
+    {
+      "path": "experiments/knowledge-search/preparation.json",
+      "bytes": 4918,
+      "sha256": "24bb1bbbba1757d654f266aa7f53048c222c58f29116be00bd2eccae8635d105"
+    },
+    {
+      "path": "experiments/knowledge-search/run.ts",
+      "bytes": 3161,
+      "sha256": "a906c5b8587ffe2cd3fe1a849e349102435f365c9c5aaea0881b29234ecb597c"
+    },
+    {
+      "path": "experiments/knowledge-search/source-inputs.json",
+      "bytes": 49602,
+      "sha256": "daab2f8e8a2c0cfeb06994e09ea75f164dfd11d22faefbb6561e07f7b9ad195c"
+    },
+    {
+      "path": "experiments/knowledge-search/types.tsconfig.json",
+      "bytes": 413,
+      "sha256": "379b404f451e0bb9a22af79573fbf2c61ff60106146817bf0ea6a5efacedc80e"
+    },
+    {
+      "path": "experiments/knowledge-search/vitest.config.mjs",
+      "bytes": 209,
+      "sha256": "5441423d9317d0fa66633b5b341ee29f2cc518cf3d2cebc32c0f7238847d45b8"
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/k01/query-entry-budget-20261007T160216/check-01.raw",
+      "bytes": 515,
+      "sha256": "909ab6818b9a2de92f085a6aa10f27a1d99e13af49c5bca3c963c42e9692f2f0"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-budget-20261007T160216/check-02.raw",
+      "bytes": 107,
+      "sha256": "ca76ae23d74a4f8311220fb98bf9133410292fe2127b0b3238e002043c23db77"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-budget-20261007T160216/check-03.raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-budget-20261007T160216/iterations.jsonl",
+      "bytes": 12243,
+      "sha256": "6ccd3409432c391a5969d1e4d57642ce33be23d451ec408f8ea5126322676956"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-budget-20261007T160216/post-check-restriction.diff",
+      "bytes": 977,
+      "sha256": "0560d9cd19232d448963a2913e2dfe8c6bdb7d28b295131c958fcaafcee4ef22"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-budget-permit.json",
+      "bytes": 559,
+      "sha256": "16781779c4a90b6e42bad524f7b01bc36059d83209943c07b0e4588d553cda19"
+    }
+  ],
+  "checks": {
+    "budgetAndUrl": 4,
+    "caller": 9,
+    "distinctThisSegment": 13,
+    "focusedNoEmit": {
+      "exit": 0,
+      "target": "a913d425bab74ad5fc8aa27ff746cbb01ef19d40"
+    },
+    "PG": "NOT_OPEN",
+    "HTTP": 0,
+    "models": 0
+  },
+  "sourceDeltaAfterChecks": "Only budget.ts URL.hash nonempty -> literal # presence (rejects empty fragment too), plus sanitized URL parse errors (no private input on uncaught native error), plus README facts. No re-execution; exact diff retained. All other executable source unchanged.",
+  "runBindings": [
+    {
+      "label": "check-01",
+      "sourceHead": "a913d425bab74ad5fc8aa27ff746cbb01ef19d40",
+      "mismatchesFromFinal": [
+        "budget.ts"
+      ]
+    },
+    {
+      "label": "check-02",
+      "sourceHead": "a913d425bab74ad5fc8aa27ff746cbb01ef19d40",
+      "mismatchesFromFinal": [
+        "budget.ts"
+      ]
+    },
+    {
+      "label": "check-03",
+      "sourceHead": "a913d425bab74ad5fc8aa27ff746cbb01ef19d40",
+      "mismatchesFromFinal": [
+        "budget.ts"
+      ]
+    }
+  ],
+  "resources": [
+    {
+      "label": "check-01",
+      "pid": 43079,
+      "exit_code": 0,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "observed_bytes": 515,
+      "retained_bytes": 515,
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "resourceConfirmed": true,
+      "scratch": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-acc7528430ab453580554062859ccc2e",
+        "identity": {
+          "dev": 16777234,
+          "ino": 124303164,
+          "marker": "03fc365f262248a28e369ca0a717180e",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-acc7528430ab453580554062859ccc2e"
+        },
+        "processClosed": true,
+        "absent": true,
+        "state": "REMOVED",
+        "logicalBytes": 253
+      },
+      "operatorElapsedMs": 467,
+      "withinTimeBudget": true
+    },
+    {
+      "label": "check-02",
+      "pid": 45775,
+      "exit_code": 0,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "observed_bytes": 107,
+      "retained_bytes": 107,
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "resourceConfirmed": true,
+      "scratch": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-c6b46d03bfdc417d81e54bbcde78e93e",
+        "identity": {
+          "dev": 16777234,
+          "ino": 124303208,
+          "marker": "f532884bbfb842c4a3e72eaea25b7571",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-c6b46d03bfdc417d81e54bbcde78e93e"
+        },
+        "processClosed": true,
+        "absent": true,
+        "state": "REMOVED",
+        "logicalBytes": 253
+      },
+      "operatorElapsedMs": 295,
+      "withinTimeBudget": true
+    },
+    {
+      "label": "check-03",
+      "pid": 49726,
+      "exit_code": 0,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "resourceConfirmed": true,
+      "scratch": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-8a46525357414fb9802a5a118c104366",
+        "identity": {
+          "dev": 16777234,
+          "ino": 124303259,
+          "marker": "428d2fc2958b45ee847c64a84babd304",
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store/experiments/knowledge-search/.scratch/k01-8a46525357414fb9802a5a118c104366"
+        },
+        "processClosed": true,
+        "absent": true,
+        "state": "REMOVED",
+        "logicalBytes": 253
+      },
+      "operatorElapsedMs": 2280,
+      "withinTimeBudget": true
+    }
+  ],
+  "limits": [
+    "No real PG/Fastify lifecycle or storage execution. Deterministic synthetic files only.",
+    "Pure budget fixture largest owned test allocation is RAW_LIMIT-WORK_RESERVE=1572864B; each fixture removed before next. New source/metadata/raw plus this allocation remains below segment2MiB; fixed supply was already retained, not copied.",
+    "Original e1a approval/raw frozen; new delta requires independent review.",
+    "8MiB/2MiB are cooperative managed-write/admission bounds, not OS quotas against external mutation; DB128MiB remains final sample.",
+    "All namespace/record bytes conservatively count as raw;512KiB work reserve and192KiB parent reserve preserve cleanup/error reporting. Unknown DB state still KEEP."
+  ]
+}
