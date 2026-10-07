@@ -1,0 +1,20 @@
+{
+  "kind": "D05_SOURCE_NAVIGATION_INDEPENDENT_REVIEW",
+  "recordedAt": "2026-10-07T15:24:11.354Z",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "target": "36a544409ec5186949aa773ca12e004ccc726638",
+  "base": "0b70df65f0581f83d4c5ddbccca3a77bacd96cd7",
+  "decision": "APPROVED_DOCS_AND_NAVIGATION",
+  "scope": [
+    "apps/execution-dashboard/src/registry.mjs",
+    "docs/evidence/d05/release-plugin-source-switches.json",
+    "plans/d05-architecture-view/status.md"
+  ],
+  "findings": [],
+  "checks": "Reviewer read full three-file diff and original Web authority request; exact four canonical plan/status/review paths, branches and evidence directories exist. 207 unique task IDs.",
+  "limits": "Only navigation. Release/I01 existing IDs switch to new canonical; CLIENT delivered source and VERIFIER design-only remain original owner assertions. Actual reload not yet performed.",
+  "tests": 0,
+  "HTTP": 0,
+  "PG": 0,
+  "provider": 0
+}
