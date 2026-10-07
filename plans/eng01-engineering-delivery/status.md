@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:58:50.341043+00:00 / mainef3a6de8；ENG01I四产品与局部/PG限定结果已接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:30:13.065598+00:00 / main3e4362b0；J固定helper证据已main，K受信工具与异步接缝已独审、组合types0，待本批main接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -16,26 +16,26 @@
 | 工作树dirty状态 | 本次仅父计划/状态真实续接事实，提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | ENG01I原28局部+2真实PG旅程已独审，295fixed/current绑定与10安装入口一致；组合root types0/9139ms，编译cache有界保留另记；父metadata不重跑。 |
-| 已集成main状态 / HEAD | ENG01A至I及公共client已受控mainef3a6de8；I为注入authority的实际HTTP/PG组合，不证明真实权限/模型资格/业务接受。 |
+| 检查状态 | ENG01K 23不同局部分轮（21新/2旧）及类型红后0获限定独审；I02组合root noEmit0/9018ms。原失败/未验范围保持；父文档无工程重测。 |
+| 已集成main状态 / HEAD | A至I、J固定helper机制证据已主线；K source42905d01已审待当前批接收。注入工具消息不是stock实际回调；个人服务与旧grant未变。 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/eng01-engineering-delivery, docs/evidence/eng01 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 工程执行配置、受信完整检查和公开收据已有宿主组合；丢失确认后重启保留原产物且未重复启动写入，限定证据已进主线。 |
-| 下一可用交付 | 由本队native_center_owner实现真实受限写入授权宿主，先验证无模型的强制边界、撤销和未知恢复；Mika提供已有真实身份/能力证据。 |
-| 当前阻塞 | ACTIVE: 首次真实模型工程验收仍缺具体强制写入授权与实际合格模型/全部writer停止证据；宿主实现准备可并行，不能统称等待模型目录资格。 |
+| 当前产出 | 受信宿主的单文件写工具已通过取消、重复请求和在途写入收束检查；原工作区、检查和公开收据可复用，真实模型工程交付尚未完成。 |
+| 下一可用交付 | 把只读原生进程与唯一宿主写句柄组合成可验收接缝；在用户资格决定前继续零模型实现，不启动真实授写。 |
+| 当前阻塞 | ACTIVE: [ENG01J](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)模型资格含义待用户答复；真实工具回调和宿主强制边界仍未验，零模型组合继续。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：I模块、准备与两PG结果分别APPROVED限定范围；完整ENG未验收。 |
 | Claim | 2c8bf375-8247-458b-8891-2dc2b4a289cd v1，仅plan/evidence |
-| 架构影响 | 复用已审workspace/writer生命周期及runtime；ENG01D只读身份/单Codex turn、ENG01E受限语法检查为独立模块，不更改旧只读配置。 |
+| 架构影响 | K新增独立受信写gate/finite recipe，复用R06单pump异步respond；hostWrite收束与nativeWriteAccess未知分开，旧fileChange-only recipe与授写资格不改。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | ENG001-01 | completed | Execution Lead | plan / research / source-observation / claim receipt |
 | ENG001-02 | completed | native_center_owner | ENG01A工作区/检查合同已main；[ENG01B执行配置](../../../engineering-execution-profile/plans/eng01b-engineering-profile/status.md)补用途/pin/恢复门禁 |
 | ENG001-03 | completed | native_center_owner / 独立runner_owner review | ENG01A E0+E1固定040已mainc5；真实Git/checker/PG、unknown重启/丢ACK恢复；fixture非native |
-| ENG001-04 | in-progress | native_center_owner / Execution Lead | ENG01I已main ef3；下一真实NativeWriteAuthority host实现与边界验证由本队承担，精确scope在I交回后独立领取，Mika提供既有实际身份/能力输入。 |
+| ENG001-04 | in-progress | native_center_owner / Execution Lead | I已main；[J](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)维护强制层与唯一资格待决，[K](../../../engineering-trusted-tool-writer/plans/eng01k-trusted-tool-writer/status.md)受信工具与同pump接缝已审，后续只读native组合待精确领取。 |
 | ENG001-05 | pending | 独立operator/reviewer | 无新provider许可或执行 |
 | ENG001-06 | pending | Web/TUI owner | 交付读取与接受待公开合同 |
 | ENG001-07 | pending | adapter owner | 第二harness扩展未实现 |
