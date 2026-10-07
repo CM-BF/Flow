@@ -1,0 +1,52 @@
+{
+  "startedAt": "2026-10-07T11:19:46.512451+00:00",
+  "finishedAt": "2026-10-07T11:19:47.974393+00:00",
+  "wallBeforePersistenceSeconds": 1.461786917061545,
+  "supervision": {
+    "pid": 40314,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 1446,
+    "observed_bytes": 153,
+    "retained_bytes": 153,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "cleanup": {
+    "knownProcessClosed": true,
+    "tmpRemoved": true,
+    "retained": null,
+    "sampleBytes": 0,
+    "sampleEntries": 1
+  },
+  "raw": {
+    "bytes": 153,
+    "sha256": "4d0db97f1e6d0428c8b58ba303e8c60fc30761ffc7fa953b4ce4bf49c15f3499"
+  },
+  "sourceHashes": {
+    "docs/evidence/x01-version-lifecycle/run-local.py": "da187083b91358e056d3caf6032ac6d1923e790a5f1fc3307f739372f031a260",
+    "docs/evidence/x01-version-lifecycle/tsconfig.json": "3500b7f4ccd7dcf1ed310dde05bcac223bda9847471d64ac2a621ec65073efee",
+    "docs/evidence/x01-version-lifecycle/vitest.config.mjs": "eadb2cbc4f16e6d69837655fe6daa7a67743f7cb07803aabe2f0078e36375b7d",
+    "apps/server/src/plugin-runtime/version-rollback-pg.test.ts": "25f898c28419293e070c6df11f6e3971a80f46c53021e8b90b9ccb2cea46790c"
+  }
+}

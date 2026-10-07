@@ -12,7 +12,7 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main99d7fa39；本批仅已审来源发布与只读诊断/中心plan收尾 |
+| 工作基线 / HEAD | main99d7fa39；本批接收已审插件版本回滚单例与固定证据；没有生产变更 |
 | 工作树dirty状态 | 本批仅固定metadata与接收记录；既有未知__pycache__不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | X01三已审片root noEmit0+3selected/33未选通过；2组absent/双EOF、空TMP按预记录身份移除，0PG/provider；独立接收审无P1/P2。 |
@@ -406,3 +406,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 [唯一接收记录](../../docs/evidence/i02/recovery-intake.json)绑定2f8十九源、15833原证据及Web独立组合审。所有主线输入等于84005基线，精确delta无手工冲突；仅Web noEmit复核组合，0新行为/浏览器/PG/模型。原03/05通过，06的lateLogout中心边界继续开放，不把主线接收写成个人部署或整平台Done。类型检查自有组已absent/EOF，非空1.36MB临时目录按原empty-only条件KEEP，未读取内容或扩删除。
 
 2026-10-07T11:55:18.446469+00:00：独立限定批准后接收[O16源码定位、198来源发布与中心plan收尾](../../docs/evidence/i02/o16-d05-closeout-intake.json)。只核固定前像/字节与字段，不重跑工程或认证；O16无第四次调用，个人发布仍待固定兼容组合。
+
+2026-10-07T11:58:29.799277+00:00：插件版本回滚单例及固定证据51文件已完成独立intake审查，见[x01-version-lifecycle-intake](../../docs/evidence/i02/x01-version-lifecycle-intake.json)。主线直接接口已核兼容，无额外PG/types重复检查；原100 HTTP的固定基线旅程不提升为当前main重跑、上游版本升级或长期容量结论。

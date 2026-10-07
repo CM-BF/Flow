@@ -1,0 +1,9 @@
+apps/server/src/browser-session/index.ts(3,41): error TS2307: Cannot find module '@fastify/cors' or its corresponding type declarations.
+apps/server/src/index.ts(37,18): error TS2307: Cannot find module '@fastify/cors' or its corresponding type declarations.
+apps/server/src/package-artifacts/input.ts(1,17): error TS2307: Cannot find module 'npm-package-arg' or its corresponding type declarations.
+apps/server/src/package-artifacts/source.ts(3,20): error TS2307: Cannot find module 'pacote' or its corresponding type declarations.
+apps/server/src/package-artifacts/source.ts(73,47): error TS7006: Parameter 'stream' implicitly has an 'any' type.
+apps/server/src/package-artifacts/storage.ts(5,18): error TS2307: Cannot find module 'ssri' or its corresponding type declarations.
+packages/plugin-runtime/src/package-store.ts(9,24): error TS2307: Cannot find module 'tar' or its corresponding type declarations.
+packages/plugin-runtime/src/package-store.ts(139,24): error TS7006: Parameter 'error' implicitly has an 'any' type.
+packages/plugin-runtime/src/package-store.ts(143,24): error TS7006: Parameter 'entry' implicitly has an 'any' type.

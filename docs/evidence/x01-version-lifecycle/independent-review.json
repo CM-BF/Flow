@@ -1,0 +1,38 @@
+{
+  "reviewer": "chatui01_owner / gpt-6-astra",
+  "verdict": "PG_PREPARATION_SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "remainingP1": 0,
+  "remainingP2": 0,
+  "finalSource": "201674f49b538917f6f46cbdb02da4ed65191d02",
+  "finalPacket": "bf285ed8bb05d0caad3aeeb27b5405d592b99ad2",
+  "manifestSha256": "59b93fb346d8028013068d23aff0d33cebb9c223c77d20af90b45598ebe32d9d",
+  "files": 403,
+  "bytes": 1935237,
+  "external": 35,
+  "links": 20,
+  "reviews": [
+    {
+      "at": "2026-10-07T11:25:51Z",
+      "source": "4f6bc7f6be93095a1b92a78acb0e165632307e15",
+      "packet": "59a17281d392b9b48a3e1c767761f11a541a3043",
+      "verdict": "SOURCE_AND_LOCAL_RESULT_AND_PG_PREPARATION_REVIEW_APPROVED",
+      "scope": "One true runRunner A load ACK gate, B and rollback C fixed material/pin/current-grant; thin caller/resources and local fidelity",
+      "closedFinding": "UUID phase key would fail locally; now exact production stable64hex tuple. Original 403/no invoke/no artifact assertions retained."
+    },
+    {
+      "at": "2026-10-07T11:26:41Z",
+      "source": "201674f49b538917f6f46cbdb02da4ed65191d02",
+      "packet": "bf285ed8bb05d0caad3aeeb27b5405d592b99ad2",
+      "verdict": "TRAFFIC_ACCOUNTING_DELTA_SOURCE_REVIEW_APPROVED",
+      "scope": "Only caller/derivation two rows; actual app hook owner+runner payload counts, helper owner-only subset separately named; missing/invalid accounting remains unknown/keep."
+    }
+  ],
+  "boundaries": [
+    "0 reviewer execution/import/test/PG/write",
+    "types/list only on recorded old fixtures; v1/v2 exact sources retained; later literal key fix static-only",
+    "actual PG NOT_RUN/NOT_OPEN",
+    "gate before import/invoke, not tool function in-flight upgrade",
+    "same upstream semver7.8.5 wrapping versions; not upstream npm upgrade",
+    "no whole X01-04 completion or main integration claimed"
+  ]
+}

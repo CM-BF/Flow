@@ -1,0 +1,32 @@
+{
+  "source": "201674f49b538917f6f46cbdb02da4ed65191d02",
+  "testSource": "0ab4fcb34405db6f4697b4679445d97a1029225a",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle",
+  "manifest": "docs/evidence/x01-version-lifecycle/pg-manifest.json",
+  "manifestSha256": "59b93fb346d8028013068d23aff0d33cebb9c223c77d20af90b45598ebe32d9d",
+  "fileCount": 403,
+  "fileBytes": 1935237,
+  "externalCount": 35,
+  "links": 20,
+  "local": {
+    "children": 4,
+    "supervisionMs": 8009,
+    "rawBytes": 1296,
+    "typesFinalExit": 0,
+    "collected": 1,
+    "testsPassed": null,
+    "PG": "NOT_RUN"
+  },
+  "reviewScope": "new test/caller identity+single-case recipe deltas, source binding and local raw; inherit unchanged production main/OPS14/resource helpers",
+  "parent": "X01",
+  "claim": "5a53d10b-7ce6-4737-8e0c-2c265f4ca542 v1",
+  "actualScope": "not yet authorized",
+  "oldSource": "fixture-local-v1.txt retains first types/list exact bytes",
+  "reviewDelta": {
+    "priorPacket": "2b77ac1f305dfe2c58d39d8bb6bc55e0dc162fc6",
+    "priorManifestSha256": "40caca53035a6193dd6a2d1b1d9d97e1406a4cf9be7926c4e29bf66b432a7f53",
+    "finding": "P2 invalid UUID phase key; source changes to actual runtime stable64hex tuple. Same true403/no invoke/no artifact remain.",
+    "newChecks": "NOT_RUN; literal data-key fix, same import/type. Prior local sources preserved in v1/v2 txt."
+  },
+  "callerDelta": "Actual app hook all owner+runner traffic; helper owner-only count separately named. Resource/selection/lifecycle unchanged."
+}

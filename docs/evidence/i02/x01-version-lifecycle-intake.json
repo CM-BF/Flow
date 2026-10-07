@@ -1,0 +1,38 @@
+{
+  "recordedAt": "2026-10-07T11:56:53.515322+00:00",
+  "source": "fe8a15fb2cebfe512c2d62acabad0c87e47929e7",
+  "baseMain": "064eb27fb473f7c6c8995510c8828d922fb35ab9",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "decision": "APPROVED_TEST_AND_EVIDENCE_INTAKE",
+  "findings": [],
+  "originalIntake": "docs/evidence/x01-version-lifecycle/main-intake.json",
+  "intakeSha256": "16abb0c0e6d5d646335952a65aa8c2a39ba1ed941cc6829c52b409be5900c388",
+  "acceptedRoots": [
+    "apps/server/src/plugin-runtime/version-rollback-pg.test.ts",
+    "docs/evidence/x01-version-lifecycle",
+    "plans/x01-version-lifecycle"
+  ],
+  "acceptedFiles": 51,
+  "acceptedBytes": 338234,
+  "sourceBinding": "51 paths absent in preimage; exact fixed Git bytes",
+  "reviewCoverage": {
+    "immutableItems": 44,
+    "immutableBytes": 315064,
+    "preparedItems": 403,
+    "preparedBytes": 1935237,
+    "outputItems": 12,
+    "outputBytes": 24608,
+    "directInputsUnchanged": 11,
+    "mainChangesRead": 5
+  },
+  "consumerDecision": "No additional runtime check required: exact fixture policy and harnesses fixture satisfy added guards; request paths and remaining direct inputs unchanged. This is source compatibility, not a latest-main rerun.",
+  "limits": [
+    "Only fixed three-task A/B/rollback-C journey",
+    "A stopped after load ACK before invoke",
+    "same semver 7.8.5 packaging, not upstream-version proof",
+    "not native/provider/long-running capacity or peak-resource evidence"
+  ],
+  "newChecks": 0,
+  "providerCalls": 0,
+  "privateServiceChanges": 0
+}

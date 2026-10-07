@@ -1,0 +1,58 @@
+{
+  "lead": "mika",
+  "stage": "X01_VERSION_LIFECYCLE_PG",
+  "state": "OPEN",
+  "claim": {
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/server/src/plugin-runtime/version-rollback-pg.test.ts",
+      "docs/evidence/x01-version-lifecycle",
+      "plans/x01-version-lifecycle"
+    ],
+    "state": "active",
+    "branch": "codex/plugin-version-lifecycle",
+    "origin": "new",
+    "taskId": "X01-VERSION-LIFECYCLE01",
+    "worker": "db_transaction_owner",
+    "claimId": "5a53d10b-7ce6-4737-8e0c-2c265f4ca542",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle",
+    "createdAt": "2026-10-07T11:14:49.386Z",
+    "updatedAt": "2026-10-07T11:14:49.386Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "ledgerObservedAt": "2026-10-07T11:34:15.821Z",
+  "head": "9f447b8f7a3e444b70efeb12ff9b1d082d1f5b45",
+  "window": "c9f68b4fb311419aad5ba87f125c480f",
+  "manifestSha256": "59b93fb346d8028013068d23aff0d33cebb9c223c77d20af90b45598ebe32d9d",
+  "pairedBytes": 4947705856,
+  "resourceSources": {
+    "managerGrant": "Mika unique d01 NEXT, 2026-10-07 current message; no other heavy holder",
+    "minimumWholeFloorBytes": 6190268416,
+    "freshFreeBytes": 22011449344,
+    "measuredAt": "2026-10-07T11:34:16.020179+00:00",
+    "ownBaseBytes": 1242562560,
+    "pairedDerivation": "6190268416 minus own one-reserve base1242562560 =4947705856; policy floor fill, not measured other-child usage",
+    "managerComponents": {
+      "previousWholeFloor": 5479333888,
+      "retainedSvcBootstrap676MiB": 708837376,
+      "newMainTypesKeep2MiB": 2097152
+    },
+    "historicalKeeps": "O16/C02/R3/artifact/private-run KEEP preserved in prior manager floor; no access or cleanup",
+    "ordinaryBudget": "prior manager full conservative envelope retained; this owner/architecture have no local actual or pending child",
+    "semantics": "conservative declared admission reserve; not measured peak or OS hard cap; no duplicate cleanup reserve"
+  },
+  "topology": {
+    "tarChildren": 2,
+    "dynamicLoopbackListeners": 2,
+    "inProcessRunner": 1,
+    "runnerConcurrency": 2,
+    "osRunner": 0,
+    "provider": 0,
+    "chrome": 0,
+    "tooling": "Git group + checkpoint/exec Vitest group, default single forks worker, optional esbuild service in owned group"
+  }
+}

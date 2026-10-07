@@ -1,0 +1,92 @@
+{
+  "executionHead": "9f447b8f7a3e444b70efeb12ff9b1d082d1f5b45",
+  "sourceCommit": "201674f49b538917f6f46cbdb02da4ed65191d02",
+  "preparedPacket": "bf285ed8bb05d0caad3aeeb27b5405d592b99ad2",
+  "inputManifestSha256": "59b93fb346d8028013068d23aff0d33cebb9c223c77d20af90b45598ebe32d9d",
+  "window": "c9f68b4fb311419aad5ba87f125c480f",
+  "files": [
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/admission.json",
+      "bytes": 2359,
+      "sha256": "7bcf738abd7e10c68a432e6b610448acfe9643b3cb4e4db504ee225a9d9a4593",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/launch.json",
+      "bytes": 188,
+      "sha256": "14afbf06d39c68c84174d74ee2f122b1e140edde64304a3bb35fbf7f8a85bd2f",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/output.log",
+      "bytes": 113,
+      "sha256": "e53d036b25d6a2ff5a559da6517187fdb2fec6d42e4a6acdbf7ed65dd813f44d",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/preflight.stdout",
+      "bytes": 301,
+      "sha256": "dd0bf0dd77c25ce414125ccff47a714c24ce996f58e11f16ed950b613a1ec8f1",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/reservation.json",
+      "bytes": 283,
+      "sha256": "d38a0bad26b1952ea764c644c639f12f3cf4f8af4729543f584d6aed2cb62a59",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/result.json",
+      "bytes": 11435,
+      "sha256": "a3fd650a0bfa2d6ea575d95ca3617e46d7c0fbd6d102a600ad86043c3f5b5010",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/runtime-create-request.json",
+      "bytes": 353,
+      "sha256": "f55de31a0f7da94e3c26bfc8636c9dd73db47cbba56eeb2e8a99e4fd97ada647",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/runtime-created.json",
+      "bytes": 402,
+      "sha256": "cace80563a52432450e8ee931e97ab5d5e32d010de0c71908c8bf447ad67dd6e",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/runtime-reservation.json",
+      "bytes": 450,
+      "sha256": "eb4b92d0479ab9ddd49102b5c9346a30ccc55ec20816f4ecb2f38e13c0456f04",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/runtime-result.json",
+      "bytes": 6267,
+      "sha256": "a749d6d7b152244cd82401c31c2329a6ed47cb2c7a6dd7e743788db1c47fdbe8",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/vitest.json",
+      "bytes": 1042,
+      "sha256": "c26e28baaf15f9d05f4f4c1c14060fbe27bf2b4a33ba4eb98c817757828a6fb9",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-outer-tool-receipt.json",
+      "bytes": 1415,
+      "sha256": "ea3ea0e2d64e61784a7fbbf6e9c32308d56553678e8631223277c3142b5c3444",
+      "mode": "0o600"
+    }
+  ],
+  "bytes": 24608,
+  "count": 12,
+  "actualSelected": 1,
+  "actualPassed": 1,
+  "actualFailed": 0,
+  "centerHttpRequests": 100,
+  "centerPayloadBytes": 62736,
+  "registryRequests": 4,
+  "tarDownloads": 2,
+  "noAdditionalRun": true,
+  "review": "PENDING_FIXED_RESULT_COMMIT"
+}

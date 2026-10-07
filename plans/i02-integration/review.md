@@ -47,3 +47,5 @@ P05源6336由chatui01_owner独审/Mika接受，S01完整源6de、固定结果649
 Native独审APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE：22固定+17私有身份摘要+8逐字副本，原work FAIL和helper stopped/normalDROP成立；不批准宿主旅程。准备独审与真实结果分开。三管理文件a609获同reviewer限定APPROVED_DOCS，0执行。Lead仅窄copy并核固定源，详见[SVC06 intake](../../docs/evidence/i02/svc06-b2b-host-intake.json)。
 
 2026-10-07T11:55:18.446469+00:00：assignment_review独立APPROVED_LIMITED_METADATA_INTAKE，O16固定340025a9、D05固定7ca070fc和中心plan固定441c7bae，0P1/P2。详见同批intake；0运行验证，不提升认证根因、浏览器或个人部署结论。
+
+2026-10-07T11:58:29.799277+00:00：native_center_owner对fe8a15fb给出APPROVED_TEST_AND_EVIDENCE_INTAKE，0P1/P2；接收1test+47evidence+3plan，338234B，11直接输入与base相同、5处main变化已读。原结果独审及失败保留；当前不重跑PG/types。

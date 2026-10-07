@@ -1,0 +1,249 @@
+{
+  "taskId": "X01-VERSION-LIFECYCLE01",
+  "parentTaskId": "X01",
+  "owner": "db_transaction_owner",
+  "coLead": "mika",
+  "sourceCommit": "201674f49b538917f6f46cbdb02da4ed65191d02",
+  "resultCommit": "f09fd4a7db3f2fc62da6e2681b64f12dd7d1c024",
+  "resultReviewAt": "2026-10-07T11:36:37Z",
+  "base": "cca4ab7c968598844ca5680140ee7c06ec1dd2f4",
+  "statusPath": "plans/x01-version-lifecycle/status.md",
+  "productPaths": [
+    "apps/server/src/plugin-runtime/version-rollback-pg.test.ts"
+  ],
+  "productionChanges": [],
+  "metadataScopes": [
+    "plans/x01-version-lifecycle",
+    "docs/evidence/x01-version-lifecycle"
+  ],
+  "immutableInputs": [
+    {
+      "path": "apps/server/src/plugin-runtime/version-rollback-pg.test.ts",
+      "bytes": 21457,
+      "sha256": "3c48d75dfe0be51ce07801b42532a57dd68aabbda120fc53adeb72596ef20047"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/README.md",
+      "bytes": 2198,
+      "sha256": "4854fb6ae988e300c7b0a96841a709b73c04411ce0e58a1690f5208feca029b0"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/base-inputs.json",
+      "bytes": 66708,
+      "sha256": "231ccb2a88c5ea141d8c08997acf716b3948bbf3fbc9072a5e4f6508080b9a1b"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/caller-derivation.json",
+      "bytes": 550,
+      "sha256": "be6db6448748922be0702f067c9344953772607df9486bc1c8a50e725804dcf2"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/claim-take.json",
+      "bytes": 695,
+      "sha256": "0201c176f246c8a478f3803137239ba0b5e4537d1f7140db21bc7cc46164b858"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/collect/output.log",
+      "bytes": 153,
+      "sha256": "4d0db97f1e6d0428c8b58ba303e8c60fc30761ffc7fa953b4ce4bf49c15f3499"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/collect/reservation.json",
+      "bytes": 1027,
+      "sha256": "42e479157299dc723fa5ed52c43ef8cae08f50f57849de67b57226bb6765cbad"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/collect/result.json",
+      "bytes": 1523,
+      "sha256": "99a3a86c2e12d081cfd50cdd84a185f0bf595742c295c403db9ed15fc0f3695a"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/dependencies.json",
+      "bytes": 7874,
+      "sha256": "7e9e196545075ec5927897b164a13b716d74821f0c849f9c28194b6c35cb55b6"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/execute-pg-once.py",
+      "bytes": 18110,
+      "sha256": "5692bffe4576f08d04e880af50a8c51c0b167763fece4bc09f8e670e69fd4389"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/fixture-local-v1.txt",
+      "bytes": 20804,
+      "sha256": "25f898c28419293e070c6df11f6e3971a80f46c53021e8b90b9ccb2cea46790c"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/fixture-local-v2.txt",
+      "bytes": 21320,
+      "sha256": "83a47aade72afec1c6985569c96110184f2c75b667a33f4d7dfc98cca67a90ae"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/independent-review.json",
+      "bytes": 1859,
+      "sha256": "41bcb6e2f1886a2b5f3a78905425f9175b8be4e8d54933bba6e1d2fbd61b332a"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-input.json",
+      "bytes": 1380,
+      "sha256": "2d5e89de82ff9e3d9b54056cfa434ee327912672ccca30c0a951abf740c7b24a"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-manifest.json",
+      "bytes": 95026,
+      "sha256": "59b93fb346d8028013068d23aff0d33cebb9c223c77d20af90b45598ebe32d9d"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-outer-tool-receipt.json",
+      "bytes": 1415,
+      "sha256": "ea3ea0e2d64e61784a7fbbf6e9c32308d56553678e8631223277c3142b5c3444"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-output-manifest.json",
+      "bytes": 3261,
+      "sha256": "542ecc692a9ab38552fac2a1e0f6ea36aa7c848d8f874afc2b9867c586ad524d"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-report.md",
+      "bytes": 2190,
+      "sha256": "92e4d1b41496e4bb547ae7783649be5581736dc798cf53ee17e3cb7b687f5a1b"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-result-ready.json",
+      "bytes": 1177,
+      "sha256": "f94d1680453a84a492d0916f6de296042c95dcd6279f9ec85c1ec5e59dce208a"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/admission.json",
+      "bytes": 2359,
+      "sha256": "7bcf738abd7e10c68a432e6b610448acfe9643b3cb4e4db504ee225a9d9a4593"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/launch.json",
+      "bytes": 188,
+      "sha256": "14afbf06d39c68c84174d74ee2f122b1e140edde64304a3bb35fbf7f8a85bd2f"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/output.log",
+      "bytes": 113,
+      "sha256": "e53d036b25d6a2ff5a559da6517187fdb2fec6d42e4a6acdbf7ed65dd813f44d"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/preflight.stdout",
+      "bytes": 301,
+      "sha256": "dd0bf0dd77c25ce414125ccff47a714c24ce996f58e11f16ed950b613a1ec8f1"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/reservation.json",
+      "bytes": 283,
+      "sha256": "d38a0bad26b1952ea764c644c639f12f3cf4f8af4729543f584d6aed2cb62a59"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/result.json",
+      "bytes": 11435,
+      "sha256": "a3fd650a0bfa2d6ea575d95ca3617e46d7c0fbd6d102a600ad86043c3f5b5010"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/runtime-create-request.json",
+      "bytes": 353,
+      "sha256": "f55de31a0f7da94e3c26bfc8636c9dd73db47cbba56eeb2e8a99e4fd97ada647"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/runtime-created.json",
+      "bytes": 402,
+      "sha256": "cace80563a52432450e8ee931e97ab5d5e32d010de0c71908c8bf447ad67dd6e"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/runtime-reservation.json",
+      "bytes": 450,
+      "sha256": "eb4b92d0479ab9ddd49102b5c9346a30ccc55ec20816f4ecb2f38e13c0456f04"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/runtime-result.json",
+      "bytes": 6267,
+      "sha256": "a749d6d7b152244cd82401c31c2329a6ed47cb2c7a6dd7e743788db1c47fdbe8"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-run-r1/vitest.json",
+      "bytes": 1042,
+      "sha256": "c26e28baaf15f9d05f4f4c1c14060fbe27bf2b4a33ba4eb98c817757828a6fb9"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/pg-window.md",
+      "bytes": 4213,
+      "sha256": "c608b4240195b84eced0426b175e47636d6fac071dfdc66b87f6697146b683cc"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/review-ready.json",
+      "bytes": 1554,
+      "sha256": "c4fe5cc81ca92035932c5daa872a34f2fdd7c140efcab9f2fd2ef6c255daf7b1"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/run-local.py",
+      "bytes": 4495,
+      "sha256": "da187083b91358e056d3caf6032ac6d1923e790a5f1fc3307f739372f031a260"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/tsconfig.json",
+      "bytes": 2149,
+      "sha256": "3500b7f4ccd7dcf1ed310dde05bcac223bda9847471d64ac2a621ec65073efee"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/types-final/output.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/types-final/reservation.json",
+      "bytes": 924,
+      "sha256": "dc50d3dcf2b8d14ad172424a96de69325657ea47a7cda871100491361ed997b0"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/types-final/result.json",
+      "bytes": 1518,
+      "sha256": "205b727e0ea943a868671ebe8a361b1b4f319afc0ed3655e4d866b579e0e4385"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/types-fix/output.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/types-fix/reservation.json",
+      "bytes": 922,
+      "sha256": "b926742c4259bf5da707a1ecd6138bef8a7b182c9736f84e1d01539b15034b05"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/types-fix/result.json",
+      "bytes": 1516,
+      "sha256": "f829a0cd2cd6c3314be5238c6519ae508f8a3d603459e9a157f23ef537acc319"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/types/output.log",
+      "bytes": 1143,
+      "sha256": "bd4180af1e4251749b10fddf940da92477497066d5d1a24b5bb7e027771f1f44"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/types/reservation.json",
+      "bytes": 918,
+      "sha256": "e1af818ec95354263cb65e8846e21cbca2819da1b7a14de1a5339f205c4588d7"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/types/result.json",
+      "bytes": 1683,
+      "sha256": "91c863edea60b123e4b00d3c56999fd38a125f9d6a5ba380d8e6630d8cc82e09"
+    },
+    {
+      "path": "docs/evidence/x01-version-lifecycle/vitest.config.mjs",
+      "bytes": 2109,
+      "sha256": "eadb2cbc4f16e6d69837655fe6daa7a67743f7cb07803aabe2f0078e36375b7d"
+    }
+  ],
+  "inputManifestSha256": "59b93fb346d8028013068d23aff0d33cebb9c223c77d20af90b45598ebe32d9d",
+  "outputManifestSha256": "542ecc692a9ab38552fac2a1e0f6ea36aa7c848d8f874afc2b9867c586ad524d",
+  "review": "SOURCE/PREPARATION and REAL_RESULT approved, 0P1P2",
+  "acceptance": "Only this fixed production-base three-task A/B/rollbackC lifecycle test and evidence. No FSM/API/runner product edits. Existing main helper/semver material dependencies retained.",
+  "mainState": "NOT_INTEGRATED",
+  "compatibility": "Main operator checks new test absent/preimage and directly imported helper interfaces. Actual proof is fixed cca4 input, not automatic latest-main runtime approval. Do not rerun unrelated tests or reuse consumed PG window.",
+  "remainingParentBoundary": "upstream package version upgrade and tool-function-in-flight upgrade remain independent open parent work",
+  "claim": "5a53d10b-7ce6-4737-8e0c-2c265f4ca542 v1 retained; source frozen; no active runtime resources"
+}
