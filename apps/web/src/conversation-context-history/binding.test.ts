@@ -63,3 +63,8 @@ test("detail requires the same task and known attempt before any request", async
   await assert.rejects(h.port.detail({ ...initial, expectedAttemptId: "other-attempt" }, historyFixture().latest!, signal));
   assert.equal(h.details(), 0); h.binding.dispose();
 });
+test("authorization revoked during the real private-port await rejects the result", async () => {
+  const h = fixture(); const read = h.port.history(initial, new AbortController().signal);
+  h.authorize(false); h.pending.resolve(historyFixture()); await assert.rejects(read);
+  assert.equal(h.reads(), 1); h.binding.dispose();
+});
