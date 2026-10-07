@@ -1,19 +1,22 @@
 # WPF-RELEASE01 真实产品 Web 发布兼容验证
 
-状态：completed。创建：2026-10-06 10:28 UTC；最近更新：2026-10-06 10:56:51 UTC。父任务：[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)。沿[模块规则](../../AGENTS.md#modular-design)。
+状态：in-progress（原REQ19后继）；原7805交付保持历史完成。直接父WPF-MATURE-01与co-lead沿唯一status。新后继复用原四scope，不创建第二发布系统。
 
-在隔离随机 PostgreSQL、动态端口、零 provider 的受控 runner 上，用真实产品旧 Web 与新 Web 检查固定旧后台。旧 Web / backend：b1c2e39837c2208e6fc2c59a80e16797f26448b5；新 Web / SVC 工具输入：8d8ab520a9d43c7b9dafb22911416ee799ebf665。新Web固定format2 releaseId `8d8ab520a9d43c7b9dafb22911416ee7`，旧Web为format1。两套构建来自 clean detached 固定输入，VITE_FLOW_FIXTURE=false，不用 miniWeb 或直接调用函数替代页面发送。
+## 当前固定origin后继
 
-## Interface 与边界
+复用原两harness及公共发布接口，三份immutable App→同一最终backend/context。实际App保持Bearer，独立Cookie/CSRF为补充来源；format1 artifact可用format2 compatibility report但不补releaseId。固定origin61228仅从受控Chrome真实页面访问，精确ownedproxy转自有动态center；Node/PW APIRequestContext不能访问61228。禁止rebuild/install/个人连接/旧tuplefallback。设计及精确输入见[报告](../../docs/evidence/wpf-release01/fixed-origin/report.md)，已审网络补充见[design-review](../../docs/evidence/wpf-release01/fixed-origin/design-review.json)。
 
-fixture 模块拥有两构建产物、随机专库/owner marker、真实中心、合成 runner、代理故障与清理；返回浏览器所需局部 URL、临时身份、已发布 profile、产物 descriptor 和受控结束方法。browser 模块通过产品连接表单、官方 Composer 和恢复入口验证 read/send/recover/negotiation，用网络原字节核原 key/body/turn。结果按 SVC04 的四 JSON 及 report hash 格式导入自有私有目录。每文件不超过4KiB；完整协议证据另存，无 token/连接串。工具仅复用不修改。
+- [x] RELEASE01-01 历史固定双版本构建与隔离center/runner。
+- [x] RELEASE01-02 历史两App四类兼容证据。
+- [x] RELEASE01-03 历史独审/main接收。
+- [ ] RELEASE01-04 实现显式最终输入、严格代理、真实浏览器请求、流式SSE/ACK故障和有界清理。
+- [ ] RELEASE01-05 完成必要源码/局部检查；最终tuple及合法资源段到达后真实三App四项compat与独立Cookie补证。
+- [ ] RELEASE01-06 后继独审与主线接收，原operator另执行个人发布。
 
-依赖：Node24、pnpm9.15.4、当前Playwright、PG、固定server/runtime和SVC04工具；无新增依赖。不操作个人61227/61228、个人凭据、已有服务/标签；不调用SDK/provider。所有临时资源有上限、own marker、finally清理；失败保留原记录而不签发兼容报告。性能数不是本片目标，provider能力也不由合成adapter推断。
+模块职责：fixture唯一拥有输入校验、owned DB/center/proxy/静态bytes/公共runner；browser只真实UI旅程和独立page内session探针；既有web-release工具拥有最终报告codec/import/verify。缺供给与unknown清理显式失败，不维护第二权威。不导入未来未知runtime，也不借旧dist。
 
-## TODO
+验证按局部影响：先固定源码与精确依赖/定向types或pure检查提案，实际运行另有界段；不全库、不继承旧结果。发布报告只有四raw真值、真实source/context/asset绑定与成功清理后可接收。
 
-- [x] RELEASE01-01 构建真实双版本产品与隔离后台/runner，记录来源及资源清理。
-- [x] RELEASE01-02 浏览器验证四项真实旅程，生成原始hash绑定的兼容报告。
-- [x] RELEASE01-03 独立review、向主线交可复现证据；个人发布由Lead另行执行。
+## 历史已交付计划（原件保留）
 
-范围只含两个新测试脚本及本plan/evidence。完整用户视觉/全部接口/未来版本兼容不在本检查内；没有证据的协商项不得填true。
+见[7805计划原件](../../docs/evidence/wpf-release01/fixed-origin/previous-plan.md)。其中build方法不再作为后继入口。

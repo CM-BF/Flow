@@ -1,0 +1,19 @@
+{
+  "state": "CANDIDATE_NOT_TAKEN_NOT_RUN",
+  "task": "Existing WPF-RELEASE01 / REQ19 successor only",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+  "branch": "codex/web-release-compatibility",
+  "fixedStartingHead": "41276e2ecd154087f66958339d9abfce4d44964c",
+  "originalImplementation": "7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b",
+  "scope": [
+    "apps/web/test/web-release-compatibility.fixture.ts",
+    "apps/web/test/web-release-compatibility.browser.ts",
+    "plans/wpf-release01-product-compatibility",
+    "docs/evidence/wpf-release01"
+  ],
+  "noNewTreeRequired": true,
+  "backendFinalTuple": null,
+  "methodReferenceMain": "8c2ae379a77cffcc1bab3e6f73ebb0fa8681447c",
+  "sourceProvision": "No automatic reset/rebase/checkout. Runtime tools/client/contracts/runner factory are explicit fixed final artifact inputs. If original owner cannot supply those without cross-tree/moving imports, list exact missing files and request source operator; no fallback install/link/copy.",
+  "releasedClaimsCannotAuthorizeWriting": true
+}
