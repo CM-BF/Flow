@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T12:29:51.809776+00:00 / main7524a7fa固定；本分支接已审迁入准备和前置失败，尚未发布main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T12:51:34.332685+00:00 / main7524固定；已接R2部分实际证据，剩余维护准备发现一项保护门缺口并交原owner窄修 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,18 +12,18 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main7524a7fa；本批18个SVC固定文件与本次接收原件，个人窗口中不改变root |
+| 工作基线 / HEAD | main7524a7fa；本分支ef0b9be5已接迁入准备/R1与R2限定实际证据，个人窗口闭合前不改变root |
 | 工作树dirty状态 | 仅已审固定输入与本次接收记录；两个既有未知__pycache__不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | X01原local3/3及真实中心1/1分层获审；当前两新test noEmit0/2363ms，0PG/Chrome/provider重跑。三旧App原兼容独审保持。 |
-| 已集成main状态 / HEAD | 此前main0b22f68e已接201源与插件回滚证据；本批接收固定后台与三个保留页面的实际兼容。个人运行仍原版本。 |
+| 已集成main状态 / HEAD | main7524已接三旧App兼容、插件版本与202来源；本分支最新接收尚未发布。个人迁入/网页宿主/报告/策略已完成，后台仍af51/v18。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 插件版本升级回滚证据已接收，聊天设置接线来源已在实际看板登记；个人后台的更新入口已审，原操作者正在重新核验现场。 |
-| 下一可用交付 | 接收并独立核验个人后台更新结果，保留现有页面和任务；消息设置App由原Web owner并行实施。 |
-| 当前阻塞 | ACTIVE: 个人后台更新尚未完成；首次前置调用缺参已保留并更正，原操作者按受控流程接续。规划认证原因仍未知，三次调用已封存。 |
+| 当前产出 | 已保存个人更新的实际完成步骤和原始失败；新产物与网页宿主已安装，后台仍保持原版。 |
+| 下一可用交付 | 补齐切换前的本地未决记录检查，审后仅接续后台维护，保留原有页面与任务。 |
+| 当前阻塞 | ACTIVE: 剩余维护入口正在补齐停止旧runner前的本地未决记录保护和独立期限；未占用其他组验证窗口。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -412,3 +412,7 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 2026-10-07T12:00:04.010758+00:00：插件版本回滚51文件已main183aba3a；[201来源与后继/正常收口接收](../../docs/evidence/i02/x01-lifecycle-navigation-intake.json)仅导航与metadata。三App实际兼容已通过但独审仍pending，个人服务未改变。
 
 2026-10-07T12:29:51.809776+00:00：已审迁入入口5c29/delivery8825及前置失败35e22在本I02隔离接收，[单份回执](../../docs/evidence/i02/svc06-personal-preparation/receipt.json)共18固定文件248100B；主线root7524保持固定，待个人运行归还后发布。原10定向用例和两次独立限定审查保留，Lead未重测。旧r1漏输出参数在snapshot/SQL前退出，childPidOnly helper absent不冒通用组证明，0个人动作；新1230段由唯一原operator继续，未将准备当部署。
+
+## 2026-10-07T12:51:34.332685+00:00 剩余维护准备独审
+
+[一次差量审查](../../docs/evidence/i02/svc06-personal-preparation/continuation-review.json)核15绑定/78572B，原R2限定实际独审保持；0107准备有一项P2本地idle门缺失，原作者在相同范围窄修。未重跑产品、PG、个人观察或provider；当前无个人重窗口，旧四已完成阶段禁止重放。
