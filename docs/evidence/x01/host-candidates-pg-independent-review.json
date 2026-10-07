@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-07T11:22:22Z",
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "verdict": "RESULT_FIDELITY_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "result": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+  "packet": "5c481e5d7d21cba87a18de4bd7b2ecf63b602045",
+  "manifestSha256": "193269f5eae416b20daabaa831f6c02fd34d5e450ffa872a8520fd8708230214",
+  "bindings": 20,
+  "bytes": 228143,
+  "rawFiles": 14,
+  "rawBytes": 22308,
+  "unchangedPreparedBindings": 376,
+  "actual": {
+    "selected": 1,
+    "passed": 1,
+    "unselected": 10,
+    "httpRequests": 106,
+    "responseBytes": 26141,
+    "metadataRunners": 45,
+    "tasks": 0,
+    "npmOrOSRunnerExecution": false
+  },
+  "resourceFacts": "3580/3581 exit0/finalowned absent/mergedEOF/observed=retained, no signals/secondary; initial EPERM preserved. Launch3581 is supervisor child, fixture3582 is Vitest worker. OID1297894/marker matches four records, allowners/pool/admin closed, zero connections/ordinaryDROP ACK+absence; listener59987closed. TMP sameidentity removed, owner exactENOENT11:19:02.617209; reviewer did not access root.",
+  "timing": {
+    "beforeSaveSeconds": 3.473857625038363,
+    "afterSaveSeconds": 3.4740749170305207,
+    "persistence": "CONFIRMED",
+    "externalTimeSeconds": 3.55,
+    "shellConservativeEnvelopeSeconds": 5,
+    "toolWaitIsNotWholeWall": true
+  },
+  "freshAdmission": {
+    "floorBytes": 5479333888,
+    "availableBytes": 22099996672,
+    "reservationAvailableBytes": 22097702912,
+    "pairedBytes": 4236771328
+  },
+  "limits": [
+    "Only this real owner HTTP/SQL candidate case and observed cleanup",
+    "Not ten old cases, real package, OS runner, UI or completeX01",
+    "No newOPEN; activepeak/physicalDBWAL UNKNOWN"
+  ],
+  "reviewerExecution": 0
+}

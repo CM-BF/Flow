@@ -1,0 +1,445 @@
+diff --git a/apps/server/src/plugin-runtime/commands.ts b/apps/server/src/plugin-runtime/commands.ts
+index ac0fb95e..48c1332e 100644
+--- a/apps/server/src/plugin-runtime/commands.ts
++++ b/apps/server/src/plugin-runtime/commands.ts
+@@ -4,11 +4,10 @@ import type { PgBoss } from 'pg-boss';
+ import { PLUGIN_RUNTIME_PROTOCOL, pluginGrantReceiptSchema, type PluginGrantRequest, type PluginGrantReceipt, type PluginRuntimeCommand, type PluginToolTaskRequest } from '../../../../packages/contracts/src/plugin-runtime.js';
+ import type { PluginSnapshot } from '../../../../packages/contracts/src/plugins.js';
+ import { canonical, HttpError, sha256, transaction } from '../database.js';
+-import { loadInstall } from '../plugin-installations/store.js';
+ import { appendPluginRevision, loadInstallation, readSnapshot } from '../plugins/storage.js';
+ import { ownedAttempt } from '../runners.js';
+ import { acceptTask, command, commandInTransaction } from '../tasks.js';
+-import { assertPluginHost, latestRuntimeRevision, readBinding, readRuntime, recordBinding } from './store.js';
++import { assertPluginHost, assertTrustedPluginHost, installedMaterial, type TrustedPluginHostPolicy, latestRuntimeRevision, readBinding, readRuntime, recordBinding } from './store.js';
+ 
+ function requireToolPermission(snapshot: PluginSnapshot): void {
+   if (!snapshot.grants.includes('tool')) throw new HttpError(403, 'plugin_tool_grant_required', 'Current tool permission is required.');
+@@ -16,27 +15,14 @@ function requireToolPermission(snapshot: PluginSnapshot): void {
+ function requireRevision(actual: number, expected: number): void {
+   if (actual !== expected) throw new HttpError(409, 'plugin_revision_conflict', 'Plugin registration changed.');
+ }
+-async function installedMaterial(client: PoolClient, snapshot: PluginSnapshot, operationId: string, storeId: string) {
+-  const row = await loadInstall(client, operationId);
+-  const receipt = row.receipt;
+-  if (row.registration_id !== snapshot.installation.id || row.version_id !== snapshot.version.id || row.store_id !== storeId
+-    || row.status !== 'installed' || !receipt || receipt.schemaVersion !== 1 || receipt.storeId !== storeId
+-    || !/^[a-f0-9]{64}$/.test(receipt.installationId) || !/^[a-f0-9]{64}$/.test(receipt.treeDigest)
+-    || receipt.manifest?.kind !== 'tool' || receipt.manifest.hostApiMajor !== 1 || !receipt.artifact
+-    || receipt.artifact.artifactId !== row.artifact_id || receipt.artifact.sha256 !== snapshot.version.declaredSha256
+-    || receipt.artifact.name !== snapshot.version.packageName || receipt.artifact.version !== snapshot.version.packageVersion
+-    || receipt.artifact.bytes !== row.artifact.bytes || receipt.artifact.integrity !== row.artifact.integrity
+-    || receipt.artifact.sha256 !== row.artifact.sha256 || receipt.artifact.artifactId !== row.artifact.artifactId
+-    || receipt.artifact.name !== row.artifact.name || receipt.artifact.version !== row.artifact.version) {
+-    throw new HttpError(409, 'plugin_material_mismatch', 'The selected version requires its exact installed tool material.');
+-  }
+-  return receipt;
+-}
+ 
+-export async function changePluginRuntime(pool: Pool, registrationId: string, input: PluginRuntimeCommand, key: string) {
++export async function changePluginRuntime(pool: Pool, registrationId: string, input: PluginRuntimeCommand, key: string, policy?: TrustedPluginHostPolicy) {
+   const result = await command(pool, `plugin.runtime.command:${registrationId}`, key, input, async client => {
+     // Never acquire a runner lock after the registration lock.
+-    if (input.change.kind === 'enable') await assertPluginHost(client, input.change.targetRunnerId, input.change.storeId);
++    if (input.change.kind === 'enable') {
++      await assertPluginHost(client, input.change.targetRunnerId, input.change.storeId);
++      assertTrustedPluginHost(policy, { protocol: PLUGIN_RUNTIME_PROTOCOL, runnerId: input.change.targetRunnerId, storeId: input.change.storeId, hostApiMajor: 1 });
++    }
+     const installation = await loadInstallation(client, registrationId, true);
+     requireRevision(installation.revision, input.expectedRevision);
+     const current = await readSnapshot(client, registrationId);
+@@ -52,17 +38,18 @@ export async function changePluginRuntime(pool: Pool, registrationId: string, in
+       material_install_operation_id,target_runner_id,store_id,host_api_major) VALUES($1,$2,$3,$4,$5,$6,$7,$8)`,
+     [registrationId, changed.snapshot.revision, current.version.id, enabled !== null, enabled?.materialInstallOperationId ?? null,
+       enabled?.targetRunnerId ?? null, enabled?.storeId ?? null, enabled ? 1 : null]);
+-    return { ...changed, runtime: await readRuntime(client, registrationId) };
++    return { ...changed, runtime: await readRuntime(client, registrationId, policy) };
+   });
+   return { ...result.value, replayed: result.replayed };
+ }
+ 
+ /** Unmounted until the claim reader filters bindings and trusted runtime dispatch/recovery are integrated. */
+-export async function admitPluginToolTask(pool: Pool, boss: PgBoss, registrationId: string, input: PluginToolTaskRequest, key: string) {
++export async function admitPluginToolTask(pool: Pool, boss: PgBoss, registrationId: string, input: PluginToolTaskRequest, key: string, policy?: TrustedPluginHostPolicy) {
+   const result = await command(pool, `plugin.tool-task:${registrationId}`, key, input, async client => {
+     const candidate = await latestRuntimeRevision(client, registrationId);
+     if (!candidate?.desired_enabled || !candidate.target_runner_id || !candidate.store_id) throw new HttpError(409, 'plugin_not_enabled', 'Enable this plugin before binding a new task.');
+     await assertPluginHost(client, candidate.target_runner_id, candidate.store_id);
++    assertTrustedPluginHost(policy, { protocol: PLUGIN_RUNTIME_PROTOCOL, runnerId: candidate.target_runner_id, storeId: candidate.store_id, hostApiMajor: 1 });
+     const installation = await loadInstallation(client, registrationId, true);
+     requireRevision(installation.revision, input.expectedRevision);
+     const runtime = await latestRuntimeRevision(client, registrationId);
+diff --git a/apps/server/src/plugin-runtime/host-candidates.test.ts b/apps/server/src/plugin-runtime/host-candidates.test.ts
+new file mode 100644
+index 00000000..ee49ebbc
+--- /dev/null
++++ b/apps/server/src/plugin-runtime/host-candidates.test.ts
+@@ -0,0 +1,124 @@
++import { beforeEach, expect, test, vi } from 'vitest';
++import Fastify from 'fastify';
++import { EventEmitter } from 'node:events';
++import type { Pool, PoolClient } from 'pg';
++import type { PgBoss } from 'pg-boss';
++import { pluginHostCandidatesPageSchema, pluginHostCandidatesQuerySchema } from '../../../../packages/contracts/src/plugin-runtime-hosts.js';
++import { readPluginHostCandidates } from './host-candidates.js';
++import { changePluginRuntime, admitPluginToolTask } from './commands.js';
++import { registerPluginRuntimeRoutes } from './routes.js';
++import { createBrowserSessionAuthentication } from '../browser-session/index.js';
++import { readRuntime } from './store.js';
++import { HttpError } from '../database.js';
++
++const mock = vi.hoisted(() => ({ snapshot: vi.fn(), install: vi.fn(), append: vi.fn(), lock: vi.fn() }));
++vi.mock('../plugins/storage.js', () => ({ readSnapshot: mock.snapshot, loadInstallation: mock.snapshot, appendPluginRevision: mock.append }));
++vi.mock('../plugin-installations/store.js', () => ({ loadInstall: mock.install }));
++vi.mock('../runners.js', () => ({ lockRunner: mock.lock, ownedAttempt: vi.fn() }));
++vi.mock('../tasks.js', () => ({ command: async (pool: Pool, _operation: string, _key: string, _input: unknown, run: (client: PoolClient) => unknown) => ({ value: await run(await pool.connect()), replayed: false }), commandInTransaction: vi.fn(), acceptTask: vi.fn() }));
++const id = (n: number) => `00000000-0000-4000-8000-${String(n).padStart(12, '0')}`;
++const registrationId = id(1000), materialInstallOperationId = id(1001), versionId = id(1002);
++const query = { materialInstallOperationId };
++const artifact = { artifactId: id(1003), sha256: 'a'.repeat(64), name: 'known-tool', version: '1.0.0', bytes: 10, integrity: 'fixed-integrity' };
++const host = (n: number) => ({ runner_id: id(n), name: '同名后端', store_id: 'known-store', host_api_major: 1 as const, maintenance_state: 'accepting', harnesses: ['fixture'] });
++let rows: ReturnType<typeof host>[]; let calls: { sql: string; args: unknown[] }[];
++const client = Object.assign(new EventEmitter(), { query: async (sql: string, args: unknown[] = []) => {
++  calls.push({ sql, args });
++  if (sql.includes('token_hash')) return { rows: [{ id: id(1) }], rowCount: 1 };
++  if (sql.includes("'fixture'=ANY(r.harnesses)")) return { rows: [], rowCount: rows.some(row => row.runner_id === args[0] && row.harnesses.includes('fixture')) ? 1 : 0 };
++  if (sql.includes('FROM flow.plugin_runtime_hosts h')) return { rows: rows.filter(row => !args[0] || row.runner_id > String(args[0])).slice(0, Number(args[1])), rowCount: rows.length };
++  if (sql.includes('plugin_runtime_revisions')) return { rows: [{ revision: 2, desired_enabled: true, target_runner_id: id(1), store_id: 'known-store', material_install_operation_id: materialInstallOperationId }], rowCount: 1 };
++  return { rows: [], rowCount: sql.includes('plugin_runtime_hosts') ? 1 : 0 };
++}, release: () => undefined }) as unknown as PoolClient;
++const pool = { connect: (callback?: (error: Error | null, value: PoolClient, release: () => void) => void) => {
++  if (callback) callback(null, client, () => undefined);
++  return Promise.resolve(client);
++}, query: client.query } as unknown as Pool;
++beforeEach(() => {
++  vi.clearAllMocks(); calls = []; rows = [host(1), host(2)];
++  mock.lock.mockResolvedValue({ maintenance_state: 'accepting', harnesses: ['fixture'] });
++  mock.snapshot.mockResolvedValue({ installation: { id: registrationId }, revision: 2, configurationStatus: 'ready', grants: ['tool'], version: { id: versionId, declaredSha256: artifact.sha256, packageName: artifact.name, packageVersion: artifact.version } });
++  mock.install.mockResolvedValue({ registration_id: registrationId, version_id: versionId, store_id: 'known-store', status: 'installed', artifact_id: artifact.artifactId, artifact, receipt: { schemaVersion: 1, storeId: 'known-store', installationId: 'b'.repeat(64), treeDigest: 'c'.repeat(64), artifact, manifest: { kind: 'tool', hostApiMajor: 1 } } });
++});
++test('same readable names retain distinct IDs without claiming liveness or loaded capability', async () => {
++  const result = await readPluginHostCandidates(client, registrationId, query, identity => { expect(Object.isFrozen(identity)).toBe(true); return true; });
++  expect(result.candidates.map(c => c.runnerId)).toEqual([id(1), id(2)]);
++  expect(result.candidates[0]).toMatchObject({ runnerName: '同名后端', selectable: true, reason: 'compatible', online: 'unknown', loaded: 'unknown', callable: 'unknown' });
++  expect(result).toMatchObject({ registrationId, currentRevision: 2, versionId, materialInstallOperationId, nextCursor: null });
++  expect(pluginHostCandidatesPageSchema.safeParse(result).success).toBe(true);
++});
++test('trusted incompatible candidates expose finite reasons and revoked records are SQL-excluded', async () => {
++  rows = [{ ...host(1), maintenance_state: 'draining' }, { ...host(2), store_id: 'other' }, { ...host(3), harnesses: ['claude'] }];
++  const page = await readPluginHostCandidates(client, registrationId, query, () => true);
++  expect(page.candidates.map(x => [x.selectable, x.reason])).toEqual([[false, 'maintenance'], [false, 'material-store-mismatch'], [false, 'harness-unsupported']]);
++  expect(calls.find(x => x.sql.includes('FROM flow.plugin_runtime_hosts h'))).toMatchObject({ args: [null, 41] });
++  expect(calls.at(-1)!.sql).toContain('WHERE NOT r.revoked');
++});
++test('empty policy-filtered page advances its bounded raw cursor to a later authorized host', async () => {
++  rows = Array.from({ length: 42 }, (_, index) => host(index + 1));
++  const policy = vi.fn(identity => identity.runnerId === id(41));
++  const first = await readPluginHostCandidates(client, registrationId, query, policy);
++  expect(first.candidates).toEqual([]); expect(first.nextCursor).not.toBeNull(); expect(policy).toHaveBeenCalledTimes(40);
++  const second = await readPluginHostCandidates(client, registrationId, { ...query, cursor: first.nextCursor! }, policy);
++  expect(second.candidates.map(x => x.runnerId)).toEqual([id(41)]); expect(second.nextCursor).toBeNull();
++});
++test('cursor binds registration material and revision; malformed query is rejected', async () => {
++  rows = Array.from({ length: 41 }, (_, index) => host(index + 1));
++  const first = await readPluginHostCandidates(client, registrationId, query, () => true);
++  await expect(readPluginHostCandidates(client, id(2000), { ...query, cursor: first.nextCursor! }, () => true)).rejects.toMatchObject({ code: 'plugin_host_cursor_changed' });
++  await expect(readPluginHostCandidates(client, registrationId, { materialInstallOperationId: id(2001), cursor: first.nextCursor! }, () => true)).rejects.toMatchObject({ code: 'plugin_host_cursor_changed' });
++  mock.snapshot.mockResolvedValueOnce({ ...(await mock.snapshot()), revision: 3 });
++  await expect(readPluginHostCandidates(client, registrationId, { ...query, cursor: first.nextCursor! }, () => true)).rejects.toMatchObject({ code: 'plugin_host_cursor_changed' });
++  expect(pluginHostCandidatesQuerySchema.safeParse({ ...query, limit: 1000 }).success).toBe(false);
++  await expect(readPluginHostCandidates(client, registrationId, { ...query, cursor: 'abc' }, () => true)).rejects.toMatchObject({ status: 400 });
++});
++test('foreign stale failed and inconsistent materials disclose no candidates', async () => {
++  const original = await mock.install();
++  for (const delta of [{ registration_id: id(2000) }, { version_id: id(2001) }, { status: 'failed' }, { store_id: 'wrong-store' }]) {
++    mock.install.mockResolvedValueOnce({ ...original, ...delta });
++    await expect(readPluginHostCandidates(client, registrationId, query, () => true)).rejects.toMatchObject({ code: 'plugin_material_mismatch' });
++  }
++  expect(calls).toEqual([]);
++});
++test('missing or throwing current policy returns no partial page', async () => {
++  await expect(readPluginHostCandidates(client, registrationId, query)).rejects.toMatchObject({ status: 403 });
++  await expect(readPluginHostCandidates(client, registrationId, query, () => { throw new Error('policy unavailable'); })).rejects.toThrow('policy unavailable');
++});
++test('trust removed after publication rejects new enable and admission before mutations', async () => {
++  const policy = vi.fn(() => false);
++  await expect(changePluginRuntime(pool, registrationId, { expectedRevision: 2, reason: 'Enable', change: { kind: 'enable', targetRunnerId: id(1), storeId: 'known-store', materialInstallOperationId } }, 'enable-key', policy)).rejects.toMatchObject({ code: 'plugin_host_not_trusted' });
++  await expect(admitPluginToolTask(pool, {} as PgBoss, registrationId, { expectedRevision: 2, title: 'Task', input: 'text' }, 'admit-key', policy)).rejects.toMatchObject({ code: 'plugin_host_not_trusted' });
++  expect(policy).toHaveBeenCalledTimes(2); expect(mock.append).not.toHaveBeenCalled(); expect(mock.install).not.toHaveBeenCalled();
++  expect(calls.some(c => /INSERT|UPDATE/.test(c.sql))).toBe(false);
++});
++test('registered route uses real owner role authentication strict query and a no-store read-only transaction', async () => {
++  const app = Fastify(); const authentication = await createBrowserSessionAuthentication(pool, { ownerToken: 'owner' });
++  app.addHook('preHandler', authentication.authenticate);
++  app.setErrorHandler((error, _request, reply) => reply.code(error instanceof HttpError ? error.status : 500).send({ code: error instanceof HttpError ? error.code : 'internal' }));
++  registerPluginRuntimeRoutes(app, pool, {} as PgBoss, () => true);
++  try {
++    const url = `/api/plugins/${registrationId}/runtime/hosts?materialInstallOperationId=${materialInstallOperationId}`;
++    expect((await app.inject({ url })).statusCode).toBe(401);
++    expect((await app.inject({ url, headers: { authorization: 'Bearer runner' } })).statusCode).toBe(403);
++    expect((await app.inject({ url: url + '&limit=999', headers: { authorization: 'Bearer owner' } })).statusCode).toBe(400);
++    const response = await app.inject({ url, headers: { authorization: 'Bearer owner' } });
++    expect(response.statusCode).toBe(200); expect(response.headers['cache-control']).toBe('no-store');
++    expect(response.json().candidates).toHaveLength(2);
++    expect(calls.map(x => x.sql)).toContain('BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY');
++  } finally { await app.close(); }
++});
++
++test('incompatible acceptance is rechecked even when the caller skips the candidate page', async () => {
++  mock.lock.mockResolvedValueOnce({ maintenance_state: 'accepting', harnesses: ['claude'] });
++  await expect(changePluginRuntime(pool, registrationId, { expectedRevision: 2, reason: 'Enable', change: { kind: 'enable', targetRunnerId: id(1), storeId: 'known-store', materialInstallOperationId } }, 'enable-key', () => true)).rejects.toMatchObject({ code: 'plugin_host_unavailable' });
++  expect(mock.append).not.toHaveBeenCalled();
++});
++
++test('runtime projection rechecks current trust and harness without rewriting old pins', async () => {
++  expect(await readRuntime(client, registrationId, () => true)).toMatchObject({ bindingAllowed: true, reason: 'ready' });
++  expect(await readRuntime(client, registrationId, () => false)).toMatchObject({ desiredEnabled: true, bindingAllowed: false, reason: 'host-unavailable' });
++  await expect(admitPluginToolTask(pool, {} as PgBoss, registrationId, { expectedRevision: 2, title: 'Task', input: 'text' }, 'read-admit-key', () => false)).rejects.toMatchObject({ code: 'plugin_host_not_trusted' });
++  rows = [{ ...host(1), harnesses: ['claude'] }];
++  expect(await readRuntime(client, registrationId, () => true)).toMatchObject({ bindingAllowed: false, reason: 'host-unavailable' });
++  expect(calls.some(c => /INSERT|UPDATE/.test(c.sql))).toBe(false);
++});
+diff --git a/apps/server/src/plugin-runtime/host-candidates.ts b/apps/server/src/plugin-runtime/host-candidates.ts
+new file mode 100644
+index 00000000..ca10b3d0
+--- /dev/null
++++ b/apps/server/src/plugin-runtime/host-candidates.ts
+@@ -0,0 +1,43 @@
++import type { PoolClient } from 'pg';
++import { z } from 'zod';
++import { pluginHostCandidatesPageSchema, type PluginHostCandidatesQuery, type PluginHostCandidatesPage } from '../../../../packages/contracts/src/plugin-runtime-hosts.js';
++import { PLUGIN_RUNTIME_LIMITS, PLUGIN_RUNTIME_PROTOCOL } from '../../../../packages/contracts/src/plugin-runtime.js';
++import { HttpError } from '../database.js';
++import { readSnapshot } from '../plugins/storage.js';
++import { installedMaterial, type TrustedPluginHostPolicy } from './store.js';
++
++const cursorSchema = z.strictObject({ registrationId: z.uuid(), materialInstallOperationId: z.uuid(), revision: z.number().int().positive().max(2_147_483_647), runnerId: z.uuid() });
++function readCursor(value: string | undefined): z.infer<typeof cursorSchema> | null {
++  if (value === undefined) return null;
++  try {
++    const bytes = Buffer.from(value, 'base64url');
++    if (bytes.toString('base64url') !== value) throw new Error('Non-canonical cursor');
++    return cursorSchema.parse(JSON.parse(bytes.toString('utf8')));
++  } catch { throw new HttpError(400, 'invalid_plugin_host_cursor', 'Invalid plugin host cursor.'); }
++}
++interface HostRow { runner_id: string; name: string; store_id: string; host_api_major: 1; maintenance_state: string; harnesses: string[] }
++/** Owner-only advisory projection; no locks, probes, credentials, paths, or new authority. */
++export async function readPluginHostCandidates(client: PoolClient, registrationId: string, input: PluginHostCandidatesQuery,
++  policy?: TrustedPluginHostPolicy): Promise<PluginHostCandidatesPage> {
++  if (!policy) throw new HttpError(403, 'plugin_host_policy_required', 'The operator has not configured trusted plugin hosts.');
++  const cursor = readCursor(input.cursor);
++  const current = await readSnapshot(client, registrationId);
++  if (cursor && (cursor.registrationId !== registrationId || cursor.materialInstallOperationId !== input.materialInstallOperationId || cursor.revision !== current.revision)) {
++    throw new HttpError(409, 'plugin_host_cursor_changed', 'Plugin selection changed. Read candidates again from the first page.');
++  }
++  const material = await installedMaterial(client, current, input.materialInstallOperationId);
++  const rows = (await client.query<HostRow>(`SELECT h.runner_id,r.name,h.store_id,h.host_api_major,r.maintenance_state,r.harnesses
++    FROM flow.plugin_runtime_hosts h JOIN flow.runners r ON r.id=h.runner_id
++    WHERE NOT r.revoked AND ($1::text IS NULL OR h.runner_id>$1)
++    ORDER BY h.runner_id LIMIT $2`, [cursor?.runnerId ?? null, PLUGIN_RUNTIME_LIMITS.pageSize + 1])).rows;
++  const scanned = rows.slice(0, PLUGIN_RUNTIME_LIMITS.pageSize);
++  const candidates = scanned.flatMap(row => {
++    const identity = Object.freeze({ protocol: PLUGIN_RUNTIME_PROTOCOL, runnerId: row.runner_id, storeId: row.store_id, hostApiMajor: row.host_api_major });
++    const reason = row.maintenance_state !== 'accepting' ? 'maintenance' : row.store_id !== material.storeId ? 'material-store-mismatch'
++      : !row.harnesses.includes('fixture') ? 'harness-unsupported' : 'compatible';
++    return policy(identity) === true ? [{ ...identity, runnerName: row.name, selectable: reason === 'compatible', reason, online: 'unknown' as const, loaded: 'unknown' as const, callable: 'unknown' as const }] : [];
++  });
++  return pluginHostCandidatesPageSchema.parse({ protocol: PLUGIN_RUNTIME_PROTOCOL, registrationId, currentRevision: current.revision,
++    versionId: current.version.id, materialInstallOperationId: input.materialInstallOperationId, candidates,
++    nextCursor: rows.length > scanned.length ? Buffer.from(JSON.stringify({ registrationId, materialInstallOperationId: input.materialInstallOperationId, revision: current.revision, runnerId: scanned.at(-1)!.runner_id })).toString('base64url') : null });
++}
+diff --git a/apps/server/src/plugin-runtime/routes.ts b/apps/server/src/plugin-runtime/routes.ts
+index 318208c1..68f614ba 100644
+--- a/apps/server/src/plugin-runtime/routes.ts
++++ b/apps/server/src/plugin-runtime/routes.ts
+@@ -5,6 +5,8 @@ import { z } from 'zod';
+ import { PLUGIN_RUNTIME_LIMITS, pluginGrantRequestSchema, pluginHostPublicationSchema, pluginRuntimeCommandSchema, pluginToolTaskRequestSchema } from '../../../../packages/contracts/src/plugin-runtime.js';
+ import { HttpError, transaction } from '../database.js';
+ import { authorizePluginPhase, admitPluginToolTask, changePluginRuntime } from './commands.js';
++import { pluginHostCandidatesQuerySchema } from '../../../../packages/contracts/src/plugin-runtime-hosts.js';
++import { readPluginHostCandidates } from './host-candidates.js';
+ import { publishPluginHost, readBinding, readRuntime, type TrustedPluginHostPolicy } from './store.js';
+ 
+ function id(value: string): string {
+@@ -39,16 +41,21 @@ export function registerPluginRuntimeRoutes(app: FastifyInstance, pool: Pool, bo
+   app.post<{ Params: { id: string } }>('/api/plugins/:id/runtime/commands', { bodyLimit: PLUGIN_RUNTIME_LIMITS.bodyBytes }, async (request, reply) => {
+     const input = pluginRuntimeCommandSchema.safeParse(request.body);
+     if (!input.success) throw new HttpError(400, 'invalid_plugin_runtime_command', 'Invalid plugin runtime command.');
+-    return reply.header('cache-control', 'no-store').send(bounded(await changePluginRuntime(pool, id(request.params.id), input.data, String(request.headers['idempotency-key'] ?? ''))));
++    return reply.header('cache-control', 'no-store').send(bounded(await changePluginRuntime(pool, id(request.params.id), input.data, String(request.headers['idempotency-key'] ?? ''), trustedHostPolicy)));
+   });
+   app.post<{ Params: { id: string } }>('/api/plugins/:id/tool-tasks', { bodyLimit: PLUGIN_RUNTIME_LIMITS.bodyBytes }, async (request, reply) => {
+     const input = pluginToolTaskRequestSchema.safeParse(request.body);
+     if (!input.success) throw new HttpError(400, 'invalid_plugin_tool_task', 'Invalid plugin tool task.');
+-    const accepted = await admitPluginToolTask(pool, boss, id(request.params.id), input.data, String(request.headers['idempotency-key'] ?? ''));
++    const accepted = await admitPluginToolTask(pool, boss, id(request.params.id), input.data, String(request.headers['idempotency-key'] ?? ''), trustedHostPolicy);
+     return reply.header('cache-control', 'no-store').code(201).send(bounded(accepted));
+   });
++  app.get<{ Params: { id: string } }>('/api/plugins/:id/runtime/hosts', async (request, reply) => {
++    const input = pluginHostCandidatesQuerySchema.safeParse(request.query);
++    if (!input.success) throw new HttpError(400, 'invalid_plugin_host_query', 'Select an installed material and a valid candidate cursor.');
++    return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readPluginHostCandidates(client, id(request.params.id), input.data, trustedHostPolicy), true)));
++  });
+   app.get<{ Params: { id: string } }>('/api/plugins/:id/runtime', async (request, reply) => {
+-    return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readRuntime(client, id(request.params.id)), true)));
++    return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readRuntime(client, id(request.params.id), trustedHostPolicy), true)));
+   });
+   app.get<{ Params: { id: string } }>('/api/tasks/:id/plugin-binding', async (request, reply) => {
+     return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readBinding(client, id(request.params.id)), true)));
+diff --git a/apps/server/src/plugin-runtime/runtime.test.ts b/apps/server/src/plugin-runtime/runtime.test.ts
+index bdd2db4f..a963095a 100644
+--- a/apps/server/src/plugin-runtime/runtime.test.ts
++++ b/apps/server/src/plugin-runtime/runtime.test.ts
+@@ -256,3 +256,52 @@ test.each(['registration-first', 'command-first', 'command-replay'] as const)('l
+     expect(rolledBack).toBe(true);
+   }
+ });
++
++test('owner host candidates use real SQL pagination and current policy for enable and admission', async () => {
++  const f = await fixture();
++  const hosts: { runnerId: string; token: string; storeId: string }[] = [{ runnerId: f.runnerId, token: f.token, storeId: 'test-material' }];
++  for (let index = 0; index < 44; index++) {
++    const runner = await request('/api/runners', { name: 'Readable candidate host', harnesses: index === 2 ? ['claude'] : ['fixture'], capacity: 1 });
++    expect(runner.status).toBe(200);
++    const value = { runnerId: runner.body.runnerId as string, token: runner.body.token as string, storeId: index === 1 ? 'other-material' : 'test-material' };
++    trustedHosts.add(hostKey(value.runnerId, value.storeId, 1));
++    expect((await request('/api/runner/plugin-host', { protocol: PLUGIN_RUNTIME_PROTOCOL, storeId: value.storeId, hostApiMajor: 1 }, randomUUID(), value.token)).status).toBe(200);
++    hosts.push(value);
++  }
++  const endpoint = `/api/plugins/${f.registrationId}/runtime/hosts?materialInstallOperationId=${f.materialId}`;
++  expect((await request(endpoint, undefined, randomUUID(), f.token)).status).toBe(403);
++  expect((await databaseFixture.request(base + endpoint, {})).status).toBe(401);
++  const last = [...hosts].sort((a, b) => a.runnerId.localeCompare(b.runnerId)).at(-1)!;
++  trustedHosts.clear(); trustedHosts.add(hostKey(last.runnerId, last.storeId, 1));
++  const first = await request(endpoint);
++  expect(first.status).toBe(200); expect(first.body.candidates).toEqual([]); expect(first.body.nextCursor).toEqual(expect.any(String));
++  const second = await request(endpoint + '&cursor=' + first.body.nextCursor);
++  expect(second.status).toBe(200); expect(second.body.candidates.map((x: { runnerId: string }) => x.runnerId)).toEqual([last.runnerId]);
++  expect(second.body.nextCursor).toBeNull();
++  for (const host of hosts) trustedHosts.add(hostKey(host.runnerId, host.storeId, 1));
++  const draining = hosts[1]!;
++  expect((await request(`/api/runners/${draining.runnerId}/maintenance/drain`, { version: 0, operationId: randomUUID(), reason: 'Candidate maintenance' })).status).toBe(200);
++  const revoked = hosts[4]!;
++  expect((await request(`/api/runners/${revoked.runnerId}/revoke`, {})).status).toBe(200);
++  const a = await request(endpoint); const b = await request(endpoint + '&cursor=' + a.body.nextCursor);
++  const candidates = [...a.body.candidates, ...b.body.candidates];
++  expect(candidates).toHaveLength(44);
++  expect(candidates.some(x => x.runnerId === revoked.runnerId)).toBe(false);
++  for (const [host, reason] of [[draining, 'maintenance'], [hosts[2]!, 'material-store-mismatch'], [hosts[3]!, 'harness-unsupported']] as const) {
++    expect(candidates.find(x => x.runnerId === host.runnerId)).toMatchObject({ selectable: false, reason, online: 'unknown', loaded: 'unknown', callable: 'unknown' });
++  }
++  const before = (await pool.query('SELECT revision FROM flow.plugin_installations WHERE id=$1', [f.registrationId])).rows;
++  trustedHosts.delete(hostKey(f.runnerId, 'test-material', 1));
++  expect((await request(`/api/plugins/${f.registrationId}/runtime/commands`, f.enable)).status).toBe(403);
++  expect((await pool.query('SELECT revision FROM flow.plugin_installations WHERE id=$1', [f.registrationId])).rows).toEqual(before);
++  trustedHosts.add(hostKey(f.runnerId, 'test-material', 1));
++  expect((await request(`/api/plugins/${f.registrationId}/runtime/commands`, f.enable)).status).toBe(200);
++  expect((await request(endpoint + '&cursor=' + a.body.nextCursor)).status).toBe(409);
++  trustedHosts.delete(hostKey(f.runnerId, 'test-material', 1));
++  expect((await request(`/api/plugins/${f.registrationId}/runtime`)).body).toMatchObject({ desiredEnabled: true, bindingAllowed: false, reason: 'host-unavailable' });
++  const taskCount = (await pool.query('SELECT count(*)::integer AS count FROM flow.tasks')).rows;
++  expect((await request(`/api/plugins/${f.registrationId}/tool-tasks`, { expectedRevision: 4, title: 'Trust removed', input: 'text' })).status).toBe(403);
++  expect((await pool.query('SELECT count(*)::integer AS count FROM flow.tasks')).rows).toEqual(taskCount);
++  expect((await pool.query('SELECT 1 FROM flow.plugin_tool_bindings WHERE registration_id=$1', [f.registrationId])).rowCount).toBe(0);
++  facts.push({ kind: 'host-candidates', registrations: 1, runners: hosts.length, material: 'synthetic-terminal-source-only', tasks: 0 });
++});
+diff --git a/apps/server/src/plugin-runtime/store.ts b/apps/server/src/plugin-runtime/store.ts
+index f87898f2..2b703d0a 100644
+--- a/apps/server/src/plugin-runtime/store.ts
++++ b/apps/server/src/plugin-runtime/store.ts
+@@ -4,6 +4,8 @@ import { PLUGIN_RUNTIME_PROTOCOL, pluginToolBindingSchema, pluginRuntimeViewSche
+ import { HttpError, transaction } from '../database.js';
+ import { lockRunner } from '../runners.js';
+ import { readSnapshot } from '../plugins/storage.js';
++import { loadInstall } from '../plugin-installations/store.js';
++import type { PluginSnapshot } from '../../../../packages/contracts/src/plugins.js';
+ 
+ export interface RuntimeRevision {
+   registration_id: string; revision: number; version_id: string; desired_enabled: boolean;
+@@ -29,12 +31,33 @@ export async function migratePluginRuntime(pool: Pool): Promise<void> {
+ /** Operator-owned synchronous policy; a runner credential alone cannot authorize its material store. */
+ export type TrustedPluginHostPolicy = (identity: Readonly<PluginHostIdentity>) => boolean;
+ 
++export function assertTrustedPluginHost(policy: TrustedPluginHostPolicy | undefined, identity: PluginHostIdentity): void {
++  if (policy?.(Object.freeze({ ...identity })) !== true) throw new HttpError(403, 'plugin_host_not_trusted', 'The operator has not authorized this exact plugin host.');
++}
++
++export async function installedMaterial(client: PoolClient, snapshot: PluginSnapshot, operationId: string, storeId?: string) {
++  const row = await loadInstall(client, operationId);
++  const receipt = row.receipt;
++  if (row.registration_id !== snapshot.installation.id || row.version_id !== snapshot.version.id || (storeId !== undefined && row.store_id !== storeId)
++    || row.status !== 'installed' || !receipt || receipt.schemaVersion !== 1 || receipt.storeId !== row.store_id
++    || !/^[a-f0-9]{64}$/.test(receipt.installationId) || !/^[a-f0-9]{64}$/.test(receipt.treeDigest)
++    || receipt.manifest?.kind !== 'tool' || receipt.manifest.hostApiMajor !== 1 || !receipt.artifact
++    || receipt.artifact.artifactId !== row.artifact_id || receipt.artifact.sha256 !== snapshot.version.declaredSha256
++    || receipt.artifact.name !== snapshot.version.packageName || receipt.artifact.version !== snapshot.version.packageVersion
++    || receipt.artifact.bytes !== row.artifact.bytes || receipt.artifact.integrity !== row.artifact.integrity
++    || receipt.artifact.sha256 !== row.artifact.sha256 || receipt.artifact.artifactId !== row.artifact.artifactId
++    || receipt.artifact.name !== row.artifact.name || receipt.artifact.version !== row.artifact.version) {
++    throw new HttpError(409, 'plugin_material_mismatch', 'The selected version requires its exact installed tool material.');
++  }
++  return receipt;
++}
++
+ /** Authenticated runner identity is supplied by the host route; this is not current claim eligibility. */
+ export async function publishPluginHost(pool: Pool, runnerId: string, input: PluginHostPublication, policy?: TrustedPluginHostPolicy): Promise<void> {
+   const identity = Object.freeze({ ...input, runnerId });
+   await transaction(pool, async client => {
+     await lockRunner(client, runnerId);
+-    if (policy?.(identity) !== true) throw new HttpError(403, 'plugin_host_not_trusted', 'The operator has not authorized this exact plugin host.');
++    assertTrustedPluginHost(policy, identity);
+     await client.query('INSERT INTO flow.plugin_runtime_hosts(runner_id,store_id,host_api_major) VALUES($1,$2,$3) ON CONFLICT DO NOTHING', [runnerId, identity.storeId, identity.hostApiMajor]);
+     if (!(await client.query('SELECT 1 FROM flow.plugin_runtime_hosts WHERE runner_id=$1 AND store_id=$2 AND host_api_major=$3', [runnerId, identity.storeId, identity.hostApiMajor])).rowCount) {
+       throw new HttpError(409, 'plugin_host_conflict', 'A runner cannot change its published material store.');
+@@ -47,11 +70,12 @@ export async function latestRuntimeRevision(client: PoolClient, registrationId:
+ export async function assertPluginHost(client: PoolClient, runnerId: string, storeId: string): Promise<void> {
+   const runner = await lockRunner(client, runnerId);
+   if (runner.maintenance_state && runner.maintenance_state !== 'accepting') throw new HttpError(409, 'plugin_host_unavailable', 'The runner is not accepting new tool tasks.');
++  if (!runner.harnesses.includes('fixture')) throw new HttpError(409, 'plugin_host_unavailable', 'The runner does not accept plugin tool tasks.');
+   if (!(await client.query('SELECT 1 FROM flow.plugin_runtime_hosts WHERE runner_id=$1 AND store_id=$2 AND host_api_major=1', [runnerId, storeId])).rowCount) {
+     throw new HttpError(409, 'plugin_host_unavailable', 'The exact tool host and material store are not registered.');
+   }
+ }
+-export async function readRuntime(client: PoolClient, registrationId: string): Promise<PluginRuntimeView> {
++export async function readRuntime(client: PoolClient, registrationId: string, policy?: TrustedPluginHostPolicy): Promise<PluginRuntimeView> {
+   const current = await readSnapshot(client, registrationId);
+   const runtime = await latestRuntimeRevision(client, registrationId);
+   const enabled = runtime?.desired_enabled === true;
+@@ -62,8 +86,9 @@ export async function readRuntime(client: PoolClient, registrationId: string): P
+     else if (!current.grants.includes('tool')) reason = 'grant-missing';
+     else {
+       const host = await client.query(`SELECT 1 FROM flow.plugin_runtime_hosts h JOIN flow.runners r ON r.id=h.runner_id
+-        WHERE h.runner_id=$1 AND h.store_id=$2 AND h.host_api_major=1 AND NOT r.revoked AND r.maintenance_state='accepting'`, [runtime.target_runner_id, runtime.store_id]);
+-      reason = host.rowCount ? 'ready' : 'host-unavailable';
++        WHERE h.runner_id=$1 AND h.store_id=$2 AND h.host_api_major=1 AND NOT r.revoked AND r.maintenance_state='accepting' AND 'fixture'=ANY(r.harnesses)`, [runtime.target_runner_id, runtime.store_id]);
++      const trusted = runtime.target_runner_id && runtime.store_id && policy?.(Object.freeze({ protocol: PLUGIN_RUNTIME_PROTOCOL, runnerId: runtime.target_runner_id, storeId: runtime.store_id, hostApiMajor: 1 })) === true;
++      reason = host.rowCount && trusted ? 'ready' : 'host-unavailable';
+     }
+   }
+   return pluginRuntimeViewSchema.parse({ protocol: PLUGIN_RUNTIME_PROTOCOL, registrationId, currentRevision: current.revision,
+diff --git a/packages/contracts/src/plugin-runtime-hosts.ts b/packages/contracts/src/plugin-runtime-hosts.ts
+new file mode 100644
+index 00000000..69552928
+--- /dev/null
++++ b/packages/contracts/src/plugin-runtime-hosts.ts
+@@ -0,0 +1,20 @@
++import { z } from 'zod';
++import { pluginRevisionSchema } from './plugins.js';
++import { isPersistablePluginText, PLUGIN_RUNTIME_LIMITS, PLUGIN_RUNTIME_PROTOCOL, pluginHostIdentitySchema } from './plugin-runtime.js';
++
++export const pluginHostCandidatesQuerySchema = z.strictObject({
++  materialInstallOperationId: z.uuid(), cursor: z.string().min(1).max(512).regex(/^[A-Za-z0-9_-]+$/).optional(),
++});
++export const pluginHostCandidateSchema = pluginHostIdentitySchema.extend({
++  runnerName: z.string().min(1).max(120).refine(isPersistablePluginText),
++  selectable: z.boolean(), reason: z.enum(['compatible', 'maintenance', 'material-store-mismatch', 'harness-unsupported']),
++  online: z.literal('unknown'), loaded: z.literal('unknown'), callable: z.literal('unknown'),
++}).refine(value => value.selectable === (value.reason === 'compatible'), 'Candidate selection reason is inconsistent');
++/** A scanned page can be empty but still have a next cursor after policy filtering. */
++export const pluginHostCandidatesPageSchema = z.strictObject({
++  protocol: z.literal(PLUGIN_RUNTIME_PROTOCOL), registrationId: z.uuid(), currentRevision: pluginRevisionSchema,
++  versionId: z.uuid(), materialInstallOperationId: z.uuid(),
++  candidates: z.array(pluginHostCandidateSchema).max(PLUGIN_RUNTIME_LIMITS.pageSize), nextCursor: z.string().min(1).max(512).regex(/^[A-Za-z0-9_-]+$/).nullable(),
++}).refine(value => new TextEncoder().encode(JSON.stringify(value)).byteLength <= PLUGIN_RUNTIME_LIMITS.responseBytes, 'Candidate page exceeds its byte limit');
++export type PluginHostCandidatesQuery = z.infer<typeof pluginHostCandidatesQuerySchema>;
++export type PluginHostCandidatesPage = z.infer<typeof pluginHostCandidatesPageSchema>;
