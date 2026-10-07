@@ -1,0 +1,78 @@
+{
+  "recordedAt": "2026-10-07T12:00:04.010758+00:00",
+  "baseMain": "183aba3a3fe0bf8dfe8fc9804aabceb84627e5df",
+  "decisions": [
+    {
+      "reviewer": "assignment_review",
+      "target": "fc4ee6c2ce095cb15a989913cd60ae1f06f1ca94",
+      "decision": "APPROVED_LIMITED_DOCS_AND_SOURCE_NAVIGATION",
+      "scope": "3 new canonical rows 198 to201; fixed/current9 records. No state promotion."
+    },
+    {
+      "reviewer": "assignment_review",
+      "target": "302f948f9b38535ec7d885d5a60380b9111628ee",
+      "decision": "APPROVED_LIMITED_DOCS_AND_SOURCE_NAVIGATION",
+      "scope": "1354B existing protocol/TUI successors; source inference, NOT_RUN."
+    },
+    {
+      "reviewer": "Execution Lead / gpt-6-astra",
+      "target": "815f0eaf12c72f4c881b5fa1840857db14f7e0ce",
+      "decision": "APPROVED_LIMITED_METADATA_CLOSEOUT",
+      "scope": "3 files inspected; exact main receipt, existing public status cannot classify storage causes, no new probe."
+    }
+  ],
+  "items": [
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "source": "fc4ee6c2ce095cb15a989913cd60ae1f06f1ca94",
+      "bytes": 27757,
+      "sha256": "3214082847eceed09b2f6c0bf53bb30380d4cc10f9c4f0b615edf987fa07420b"
+    },
+    {
+      "path": "docs/evidence/d05/x01-lifecycle-sources.json",
+      "source": "fc4ee6c2ce095cb15a989913cd60ae1f06f1ca94",
+      "bytes": 3182,
+      "sha256": "c06e81219759d5c2d65eb55da570f69d8361f5c31b0c017488dca7272674be4c"
+    },
+    {
+      "path": "plans/flow-001-architecture/plan.md",
+      "source": "302f948f9b38535ec7d885d5a60380b9111628ee",
+      "bytes": 73086,
+      "sha256": "9ad6eea41421dbe3e4717d77e1acd953afb5b005f90cc7fc530d780319a056d3"
+    },
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "source": "a1dd2ca40e8fe80ee06d88fc4f0025876530b335",
+      "bytes": 36425,
+      "sha256": "d898205fc2f599df917d63fda4244bf9fd82393bfcac89cfdff0abc170dd3f45"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "source": "a1dd2ca40e8fe80ee06d88fc4f0025876530b335",
+      "bytes": 100605,
+      "sha256": "dad003eeb9a3271b3389d0238c43c71c19c30a2077317c580c0bd3550737f3d1"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-once/diagnostic-boundary-closeout.md",
+      "source": "815f0eaf12c72f4c881b5fa1840857db14f7e0ce",
+      "bytes": 2313,
+      "sha256": "3bbf8d92e575c483d9d388b4d3a6616d1e288cd075051b248fcad8fdb5ea63ff"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/review.md",
+      "source": "815f0eaf12c72f4c881b5fa1840857db14f7e0ce",
+      "bytes": 13869,
+      "sha256": "24d89fae193130c4493064c5c87ace751cff2a97171e02073cda150302b03ee5"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/status.md",
+      "source": "815f0eaf12c72f4c881b5fa1840857db14f7e0ce",
+      "bytes": 23260,
+      "sha256": "e90ffcbb0e92376a602a93caba4c7ae9b64021b30b76c4fa4d19a16c0794ee24"
+    }
+  ],
+  "parentStatusBasis": "Web canonical C3 actual passed and cleanup returned, independent result review pending; personal service unchanged. Owner current-state maintenance only.",
+  "newEngineeringChecks": 0,
+  "providerCalls": 0,
+  "deployment": "201 navigation awaits dashboard reload, 198 actual retained"
+}

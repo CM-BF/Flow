@@ -1,0 +1,86 @@
+{
+  "recordedAt": "2026-10-07T11:56:20.945194+00:00",
+  "previousCount": 198,
+  "candidateCount": 201,
+  "purpose": "Canonical navigation only; no approval, runtime or owner-status promotion",
+  "sources": [
+    {
+      "id": "X01-VERSION-LIFECYCLE01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle",
+      "branch": "codex/plugin-version-lifecycle",
+      "head": "fe8a15fb2cebfe512c2d62acabad0c87e47929e7",
+      "dirty": [],
+      "planDir": "plans/x01-version-lifecycle",
+      "evidenceDir": "docs/evidence/x01-version-lifecycle",
+      "fixedRecords": [
+        {
+          "path": "plans/x01-version-lifecycle/plan.md",
+          "bytes": 2045,
+          "sha256": "c45ffdb79e9037b43429b547de85323ea74f0daf2eeb98522aba873a0011b641"
+        },
+        {
+          "path": "plans/x01-version-lifecycle/status.md",
+          "bytes": 5567,
+          "sha256": "f3e652b1d42b1f580e07d9ed33cd93dabddfba5a385fd268227a4ad40b545c58"
+        },
+        {
+          "path": "plans/x01-version-lifecycle/review.md",
+          "bytes": 1846,
+          "sha256": "02ff0d2a3fc6d7547dbbc7c647e087e102a68710b4ee9b67c67dc65ffcba3291"
+        }
+      ]
+    },
+    {
+      "id": "X01-REMOVAL-REFERENCES01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references",
+      "branch": "codex/plugin-removal-references",
+      "head": "5bd9ab34f08b64a8774ad1a05d83ca065a532ee3",
+      "dirty": [],
+      "planDir": "plans/x01-removal-references",
+      "evidenceDir": "docs/evidence/x01-removal-references",
+      "fixedRecords": [
+        {
+          "path": "plans/x01-removal-references/plan.md",
+          "bytes": 1134,
+          "sha256": "d7b63ba4768896943c3b7cd9b6549f5ac44084a3aed986deb9e8a2188b3d9635"
+        },
+        {
+          "path": "plans/x01-removal-references/status.md",
+          "bytes": 4179,
+          "sha256": "a14f75363cce5ce4ad9741a35a02aab27fdaec83d594fb0c665545f1c350dfa6"
+        },
+        {
+          "path": "plans/x01-removal-references/review.md",
+          "bytes": 454,
+          "sha256": "4c68c274b60acc032dff4e0220582729c662ec7eb62140b3199d87d65b5184e6"
+        }
+      ]
+    },
+    {
+      "id": "X01-UPSTREAM-UPGRADE01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-upstream-upgrade",
+      "branch": "codex/plugin-upstream-upgrade",
+      "head": "90e131b4a789d526ee3cb2ffac501f26d47e8953",
+      "dirty": [],
+      "planDir": "plans/x01-upstream-upgrade",
+      "evidenceDir": "docs/evidence/x01-upstream-upgrade",
+      "fixedRecords": [
+        {
+          "path": "plans/x01-upstream-upgrade/plan.md",
+          "bytes": 1309,
+          "sha256": "d509c04e9fcc1c7f83e39e11219c32bb1f73af7a1facef512d6340f2b9cc1973"
+        },
+        {
+          "path": "plans/x01-upstream-upgrade/status.md",
+          "bytes": 3935,
+          "sha256": "52fe8a980f4c3fc630820502417a0347b8398dd7dead8957d01719c08160105c"
+        },
+        {
+          "path": "plans/x01-upstream-upgrade/review.md",
+          "bytes": 2212,
+          "sha256": "32d3e086c00095226a2fd60fe4de067dda424b2817e950077e9e3cd0b2fbd4b3"
+        }
+      ]
+    }
+  ]
+}
