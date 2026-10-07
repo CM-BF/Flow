@@ -1,3 +1,5 @@
+Review target commit: af43f7e61395125aed3f0725a9e4305c9e086cdd
+
 状态：NOT_STARTED（首产品独审待固定；设计批准历史如下）
 
 Design review target commit: e8700b2b3e1d717df2c5c41a3a349af31c616cd6
@@ -7,3 +9,5 @@ chatui原固定review经Mika交接：5bindings26145B/17inputs168222B/hash相符�
 本次新段12:50:25–13:00:25 UTC，只改计划/Interface：固定32槽/260KiB表示门禁、FS身份与重启有限读取、unknown全root HOLD及正常清理复用；诊断只drain/discard+bytes/EOF/固定安全code。待固定后由原reviewer只审delta，0工程运行。
 
 Mika在本次恢复消息转述chatui对e870/c349增量 APPROVED /0 remaining P1/P2。独审精确UTC暂UNKNOWN（询问工具threadlimit拒一次，未猜时间）；本owner接收并归档于 2026-10-07T12:57:50.617Z。旧2P2历史保留，已由固定设计修复关闭。后继产品实现必须重新独审，不能沿用设计批准。
+
+2026-10-07T13:10:59.985318+00:00 首产品固定待审；11+3分轮14distinct与最终focused types0，不继承为PG/release/main批准。

@@ -17,12 +17,12 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host |
 | Branch | codex/plugin-trusted-process-host |
 | Base | 4fdd856293a502209d7509ea37da901bbfd89f72 |
-| HEAD | PENDING_FIXED_IMPLEMENTATION |
-| 工作树dirty状态 | 本claim实现/测试/证据待固定，无其他范围变化。 |
-| 实现目标 | UNKNOWN |
-| 实现范围 | plans/x01-trusted-process-host/plan.md,docs/evidence/x01-trusted-process-host/interface.md |
-| 检查状态 | PASSED_LOCAL 11/11 + 3/3分轮，focused types0；原首types2保留，PG/release NOT_RUN。 |
-| Review | 设计APPROVED；当前产品PENDING_FIXED_SOURCE_REVIEW。 |
+| HEAD | af43f7e61395125aed3f0725a9e4305c9e086cdd |
+| 工作树dirty状态 | 固定产品后仅review交接metadata；最终提交clean。 |
+| 实现目标 | af43f7e61395125aed3f0725a9e4305c9e086cdd |
+| 实现范围 | apps/runner/src/configuration.test.ts,apps/runner/src/configuration.ts,apps/runner/src/plugins/execution.test.ts,apps/runner/src/plugins/execution.ts,apps/runner/src/plugins/process-host.test.ts,apps/runner/src/plugins/process-host.ts,apps/runner/src/plugins/process-protocol.ts,apps/runner/src/plugins/process-resources.ts,apps/runner/src/plugins/process-worker.ts,apps/runner/src/plugins/runtime.test.ts,apps/runner/src/runtime.ts |
+| 检查状态 | PASSED af43f7e61395125aed3f0725a9e4305c9e086cdd 11/11 + 3/3分轮，focused types0；原首types2保留，PG/release NOT_RUN。 |
+| Review | 当前产品af43f7e61395125aed3f0725a9e4305c9e086cdd NOT_STARTED；设计e870批准独立保留。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；base只是只读输入 |
 | 最近更新时间 | 2026-10-07T13:10:15.304149+00:00 |
 | 任务开工时间 | 2026-10-07T12:38:43.000Z |
@@ -45,7 +45,7 @@
 | 时间事件 | UTC / 来源 |
 | --- | --- |
 | 实际开工 | 2026-10-07T12:38:43.000Z / owner clock |
-| 分支交付 | 2026-10-07T12:47:14.829Z / fixed design f2884fa869ff231278e8116ddefa0e1029440eca |
+| 分支交付 | 2026-10-07T13:10:59.985318+00:00 / fixed首产品 af43f7e61395125aed3f0725a9e4305c9e086cdd；design旧交付12:47:14.829Z保留 |
 | 独立审查 | NOT_STARTED |
 | 主线集成 | NOT_INTEGRATED |
 | 部署 | NOT_DEPLOYED |
@@ -64,3 +64,5 @@
 Mika明确授权：2026-10-07T12:55:40.000Z至13:15:40 UTC，普通child每次≤60s/累计≤120s，TMP16MiB/raw512KiB/source-meta2MiB。architecture已STOP并v28交回七leaf；本claim v2/14已COMMITTED，原件claim-products/runner-handback保留。S01已RETURN，Mika交回ordinary；紧前freshgate后运行有限checks。Release T7不领取/不改，0PG/服务/provider/安装。固定main7524七候选leaf相对base4fdd无diff，实际读取无dirty，不覆盖他树。
 
 2026-10-07T13:10:15.304149+00:00 ordinary RETURN：五组最终absent/mergedEOF/完整raw，五ownTMP同inode空目录移除；当前仅metadata，0PG/provider/服务。11+3为两个互不重叠selected组，14distinct，非单次14/14。runtime mock与真实executePluginTool/worker范围分开。架构后继：Original/Web D06在main接收后更新runner→process host边，当前未更新/未部署。
+
+2026-10-07T13:10:59.985318+00:00 首产品 source af43f7e61395125aed3f0725a9e4305c9e086cdd 固定。初次git add因五个newleaf不在private sparse而只形成5aa99db8局部提交；立即在本树追加exact sparse leaf并提交af43，全11产品/test均Git=已测试WT，未改源/重跑。当前请求独立产品审查；登记与实际live聚合未收到新正式回执，task-intake仍唯一登记入口。
