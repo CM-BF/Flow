@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-07T10:33:54Z",
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "verdict": "SOURCE_AND_PREPARATION_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "source": "e6bfab16c1b783406729b0a4deb4f3c7e720446f",
+  "packet": "902b85c43fc641f24376f2e288674227cbc3dd3e",
+  "manifestSha256": "9c71a49d6d372ac7e19d29edf6a59c10676565fe8ba555e347c00294fe06d369",
+  "bindings": 350,
+  "bytes": 1794885,
+  "mirror": {
+    "files": 333,
+    "bytes": 1537803,
+    "origins": {
+      "main6aa": 327,
+      "management9f5": 3,
+      "ownerTest": 1,
+      "bacFixture": 2
+    }
+  },
+  "external": 65,
+  "links": 21,
+  "checks": {
+    "types": 0,
+    "collected": 1,
+    "executedCases": 0,
+    "PG": 0,
+    "sourceStrengtheningAfterChecksDisclosed": true
+  },
+  "reviewScope": [
+    "actual main lifecycle and exact trusted bootstrap",
+    "two-task clean post-ACK restart",
+    "fixed application HTTP theoretical bound 1892 below 2048",
+    "process logs/EOF/group and marked DB cleanup gates",
+    "same-origin total deadline and persistence delivery gates"
+  ],
+  "notProven": [
+    "actual process/PG execution",
+    "arbitrary crash or unknown-side-effect recovery",
+    "arbitrary untrusted JSON/TCP/heap/peak bounds",
+    "management source main integration"
+  ],
+  "actual": "NOT_RUN/NOT_OPEN",
+  "originalInputsUnchanged": true,
+  "claimFreshObservedAt": "2026-10-07T10:34:19Z",
+  "claimVersion": 24,
+  "scopeCount": 60
+}
