@@ -1,0 +1,386 @@
+{
+  "task": "D06",
+  "state": "READY_FOR_LEAD_MAIN_INTAKE",
+  "recordedAt": "2026-10-07T04:23:20.207251+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+  "branch": "codex/dashboard-architecture-runtime",
+  "target": "591f5fe96d85c3497f33f1b7f0fb99d955a984dc",
+  "base": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+  "observedMain": "0e09c5d968c059f26402a04907b634460dfebe08",
+  "exactScope": [
+    "apps/execution-dashboard/public/architecture-data.js",
+    "apps/execution-dashboard/public/architecture.js",
+    "apps/execution-dashboard/test/architecture.test.mjs",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py.diff",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/scenario.mjs",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs.diff"
+  ],
+  "preimagesAndTargets": [
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "base": {
+        "exists": true,
+        "bytes": 41828,
+        "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800",
+        "gitBlob": "cabc9fcc24d1c3a5318c3db9a0f2f29002798e7e"
+      },
+      "target": {
+        "exists": true,
+        "bytes": 44076,
+        "sha256": "7ccc2ca80760a4050f09a2d7bdbbaf04884395ff945ae0cda887d9d6a1e12d78",
+        "gitBlob": "16cdbd9c7dc16fe638a98d1844f88e5a43c86c0a"
+      },
+      "mainObserved": {
+        "exists": true,
+        "bytes": 41828,
+        "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800",
+        "gitBlob": "cabc9fcc24d1c3a5318c3db9a0f2f29002798e7e"
+      },
+      "mainMatchesBase": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.js",
+      "base": {
+        "exists": true,
+        "bytes": 7689,
+        "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4",
+        "gitBlob": "295380fba8c207c17f4892fa5ec1ce404e8acd39"
+      },
+      "target": {
+        "exists": true,
+        "bytes": 8424,
+        "sha256": "583e36f24949c5fa7b85f8507c728cd9c447a6da48402ba0f2f2a7c04d581a60",
+        "gitBlob": "6e419f71ec2fc426504799551270f0adbf13e5d4"
+      },
+      "mainObserved": {
+        "exists": true,
+        "bytes": 7689,
+        "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4",
+        "gitBlob": "295380fba8c207c17f4892fa5ec1ce404e8acd39"
+      },
+      "mainMatchesBase": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture.test.mjs",
+      "base": {
+        "exists": true,
+        "bytes": 23045,
+        "sha256": "1cccd582ff3a53c7f1e7583fa810f2c03e366bec19963eb8bd62c4f5e0af2c98",
+        "gitBlob": "7a3a8627feb4ff7ad84f753450675b2f282d2920"
+      },
+      "target": {
+        "exists": true,
+        "bytes": 32645,
+        "sha256": "a8650e9c391efdf5dfa60defbe421bd0789138a62fc76c34252e0b5d2ea27149",
+        "gitBlob": "89a491baf81ffb89b474ac7e0c7fa1b658cd1d97"
+      },
+      "mainObserved": {
+        "exists": true,
+        "bytes": 23045,
+        "sha256": "1cccd582ff3a53c7f1e7583fa810f2c03e366bec19963eb8bd62c4f5e0af2c98",
+        "gitBlob": "7a3a8627feb4ff7ad84f753450675b2f282d2920"
+      },
+      "mainMatchesBase": true
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py",
+      "base": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "target": {
+        "exists": true,
+        "bytes": 7771,
+        "sha256": "351701c89f53f1d94d7008d3b731f746dffa037d4a9cfca46fce792deb451deb",
+        "gitBlob": "0fb567bb014a3b0ad591b028351dc25cb7206c12"
+      },
+      "mainObserved": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "mainMatchesBase": true
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py.diff",
+      "base": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "target": {
+        "exists": true,
+        "bytes": 7769,
+        "sha256": "f8f8f0909c154f86fecfa1e437e842e6af9f214fe94ebd2df235ed97f51c63d0",
+        "gitBlob": "443903c6479941a4c60059e5df2e7b7bd1decc0a"
+      },
+      "mainObserved": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "mainMatchesBase": true
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/scenario.mjs",
+      "base": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "target": {
+        "exists": true,
+        "bytes": 10488,
+        "sha256": "1cc45f2b391070a855596956214b0d88ea3935f5054da767d410d191adc3be5c",
+        "gitBlob": "86d19f559c056895e7f92a65ff003f502a2fc6c1"
+      },
+      "mainObserved": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "mainMatchesBase": true
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs",
+      "base": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "target": {
+        "exists": true,
+        "bytes": 4553,
+        "sha256": "17c0412af26776733dc5f7b84924f9673ee73ce842b7e754d662d2ca7f2347d1",
+        "gitBlob": "4d3e63c099ff133a4e2f4d8107c742d68258c8cf"
+      },
+      "mainObserved": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "mainMatchesBase": true
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs.diff",
+      "base": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "target": {
+        "exists": true,
+        "bytes": 3436,
+        "sha256": "6ce1c206465736eb560ae0646058f457a9cb6b222119caebefae1a986b0a1e7b",
+        "gitBlob": "89061d774e391a2111ac859491f3bcee55245df1"
+      },
+      "mainObserved": {
+        "exists": false,
+        "bytes": null,
+        "sha256": null,
+        "gitBlob": null
+      },
+      "mainMatchesBase": true
+    }
+  ],
+  "productIntakePaths": [
+    "apps/execution-dashboard/public/architecture-data.js",
+    "apps/execution-dashboard/public/architecture.js",
+    "apps/execution-dashboard/test/architecture.test.mjs"
+  ],
+  "ownerRecordRoots": [
+    "plans/d06-architecture-refresh",
+    "docs/evidence/d06"
+  ],
+  "sourceCommits": [
+    "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+    "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d"
+  ],
+  "runtimeReview": {
+    "path": "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/root-actual-review.json",
+    "sha256": "ce859b1958b7717bb72aec273d9d7e77bb8327ac1077a0129c8a0c0c96100184"
+  },
+  "boundary": "Exact8 includes three products plus5 nonmetadata evidence scripts/diffs per existing main proof.mjs. Target includes accepted20PNG/all raw; main/deploy not claimed.",
+  "claim": "adf9539d v2 five authority scopes; own evidence scope covers5 declared nonmetadata files.",
+  "at": "2026-10-07T04:25:13.195354+00:00",
+  "review": {
+    "path": "docs/evidence/d06/snapshot-0da/root-composition-review.json",
+    "sha256": "f640e6b0db62fd29bfc5dfa64cc1979d7682a483da38e99e1fde7079fa026570",
+    "decision": "APPROVED_COMPOSITE_FOR_CONTROLLED_MAIN_INTAKE",
+    "scope": "Original fixed data+renderer and exact8 source/evidence composition; source/direct/browser evidence accepted, no main/live4320 claim."
+  },
+  "metadataSeal": "Following metadata-only commit binds status/review to this fixed591 target. Final owner HEAD is separately returned; does not replace executionHEAD72167.",
+  "ownerChangedPathsAtTarget": [
+    "apps/execution-dashboard/public/architecture-data.js",
+    "apps/execution-dashboard/public/architecture.js",
+    "apps/execution-dashboard/test/architecture.test.mjs",
+    "docs/evidence/d06/snapshot-0da/README.md",
+    "docs/evidence/d06/snapshot-0da/authorization.json",
+    "docs/evidence/d06/snapshot-0da/backend-peer-audit.json",
+    "docs/evidence/d06/snapshot-0da/backend-peer-review.md",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/binding.json",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/consumed.json",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/gate.json",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/index.json",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/manifest.json",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/outer/actual-exit.json",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/outer/started.json",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/outer/stderr.txt",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/outer/stdout.txt",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/browser-results.json",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/chrome.log",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/modules-1280-dark.png",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/modules-1280-light.png",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/modules-390-dark.png",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/modules-390-light.png",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/owned.json",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/parent-stderr.log",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/parent-stdout.log",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/result.json",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/runtime-1280-dark.png",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/runtime-1280-light.png",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/runtime-390-dark.png",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/runtime-390-light.png",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/raw/worker-result.json",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/return.json",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/root-actual-review.json",
+    "docs/evidence/d06/snapshot-0da/browser-first-20261007/root-preparation-review.json",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/README.md",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/index.json",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py.diff",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/scenario.mjs",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs.diff",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/admission-contract.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/binding.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/consumed.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/gate.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/index.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/manifest.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/outer/actual-exit.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/outer/admission.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/outer/parent.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/outer/started.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/outer/stderr.txt",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/outer/stdout.txt",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/browser-results.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/chrome.log",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/data-1280-dark.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/data-1280-light.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/data-390-dark.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/data-390-light.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/dependencies-1280-dark.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/dependencies-1280-light.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/dependencies-390-dark.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/dependencies-390-light.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/modules-1280-dark.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/modules-1280-light.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/modules-390-dark.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/modules-390-light.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/owned.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/parent-stderr.log",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/parent-stdout.log",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/result.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/runtime-1280-dark.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/runtime-1280-light.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/runtime-390-dark.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/runtime-390-light.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/states-1280-dark.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/states-1280-light.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/states-390-dark.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/states-390-light.png",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/raw/worker-result.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/return.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/root-actual-review.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/root-admission-review.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-preparation/README.md",
+    "docs/evidence/d06/snapshot-0da/browser-second-preparation/candidate.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-preparation/coexistence/admission-contract.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-preparation/coexistence/human-parser.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-preparation/coexistence/prior-preparation-review.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-preparation/coexistence/quality.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-preparation/coexistence/selected-claims.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-preparation/coexistence/svc06-cleanup-outer.json",
+    "docs/evidence/d06/snapshot-0da/browser-second-preparation/selected-claims.json",
+    "docs/evidence/d06/snapshot-0da/candidate.json",
+    "docs/evidence/d06/snapshot-0da/composition-scope.json",
+    "docs/evidence/d06/snapshot-0da/coordination-recheck.json",
+    "docs/evidence/d06/snapshot-0da/direct-first-20261007/actual-review-intake.json",
+    "docs/evidence/d06/snapshot-0da/direct-first-20261007/claim.json",
+    "docs/evidence/d06/snapshot-0da/direct-first-20261007/preflight.json",
+    "docs/evidence/d06/snapshot-0da/direct-first-20261007/quality.json",
+    "docs/evidence/d06/snapshot-0da/direct-first-20261007/result.json",
+    "docs/evidence/d06/snapshot-0da/direct-first-20261007/root-actual-review.json",
+    "docs/evidence/d06/snapshot-0da/direct-first-20261007/stderr.txt",
+    "docs/evidence/d06/snapshot-0da/direct-first-20261007/stdout.txt",
+    "docs/evidence/d06/snapshot-0da/edge-label-bounds/amend-receipt.json",
+    "docs/evidence/d06/snapshot-0da/edge-label-bounds/interface.md",
+    "docs/evidence/d06/snapshot-0da/edge-label-bounds/previous-review.txt",
+    "docs/evidence/d06/snapshot-0da/edge-label-bounds/quality.json",
+    "docs/evidence/d06/snapshot-0da/edge-label-bounds/root-source-review.json",
+    "docs/evidence/d06/snapshot-0da/edge-label-bounds/source-proof.json",
+    "docs/evidence/d06/snapshot-0da/interface.md",
+    "docs/evidence/d06/snapshot-0da/peer-backend-facts.md",
+    "docs/evidence/d06/snapshot-0da/peer-backend-pins.json",
+    "docs/evidence/d06/snapshot-0da/peer-data-test-interface-pins.json",
+    "docs/evidence/d06/snapshot-0da/peer-data-test-interface.md",
+    "docs/evidence/d06/snapshot-0da/peer-engineering-facts.md",
+    "docs/evidence/d06/snapshot-0da/peer-engineering-pins.json",
+    "docs/evidence/d06/snapshot-0da/pre-take-ledger.json",
+    "docs/evidence/d06/snapshot-0da/previous-plan.md",
+    "docs/evidence/d06/snapshot-0da/previous-review.md",
+    "docs/evidence/d06/snapshot-0da/previous-status.md",
+    "docs/evidence/d06/snapshot-0da/quality.json",
+    "docs/evidence/d06/snapshot-0da/review-intake.json",
+    "docs/evidence/d06/snapshot-0da/review-metadata-claim-observation.json",
+    "docs/evidence/d06/snapshot-0da/root-interface-facts.json",
+    "docs/evidence/d06/snapshot-0da/root-source-review.json",
+    "docs/evidence/d06/snapshot-0da/root-static-audit.json",
+    "docs/evidence/d06/snapshot-0da/source-proof.json",
+    "docs/evidence/d06/snapshot-0da/take-receipt.json",
+    "docs/evidence/d06/snapshot-0da/take-request.json",
+    "docs/evidence/d06/snapshot-0da/validation.md",
+    "plans/d06-architecture-refresh/plan.md",
+    "plans/d06-architecture-refresh/review.md",
+    "plans/d06-architecture-refresh/status.md"
+  ],
+  "checks": {
+    "dataDirect": {
+      "target": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+      "selected": 22,
+      "passed": 22,
+      "meaning": "21 source/data plus one own loopback HTTP test; no PG/real snapshot"
+    },
+    "browser": {
+      "rendererTarget": "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d",
+      "selected": 5,
+      "passed": 5,
+      "observations": 20,
+      "pngs": 20,
+      "actualExit": 0,
+      "exactCleanup": true,
+      "runtimeRawUniqueBytes": 4699297,
+      "cumulativeMs": 15613,
+      "remainingMs": 74387
+    },
+    "priorFailure": "First geometry2/5FAIL retained; preexisting renderer CJK sizing, then reviewed fix; no automatic third run.",
+    "notClaimed": [
+      "real4320 rollout",
+      "main integration",
+      "newPG/provider/personal operation"
+    ]
+  }
+}

@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-07T04:25:29.786Z",
+  "kind": "metadata-only",
+  "priorMetadataProbeFailure": {
+    "error": "SyntaxError: status.mjs does not export parseReview",
+    "resolution": "Use existing reviewState export; no product module execution or source change."
+  },
+  "errors": [],
+  "human": {
+    "complete": true,
+    "missing": []
+  },
+  "implementation": {
+    "target": "591f5fe96d85c3497f33f1b7f0fb99d955a984dc",
+    "scopes": [
+      "apps/execution-dashboard/public/architecture-data.js",
+      "apps/execution-dashboard/public/architecture.js",
+      "apps/execution-dashboard/test/architecture.test.mjs",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py.diff",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/scenario.mjs",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs.diff"
+    ],
+    "errors": []
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "591f5fe96d85c3497f33f1b7f0fb99d955a984dc"
+  },
+  "proof": {
+    "target": "591f5fe96d85c3497f33f1b7f0fb99d955a984dc",
+    "head": "591f5fe96d85c3497f33f1b7f0fb99d955a984dc",
+    "scopes": [
+      "apps/execution-dashboard/public/architecture-data.js",
+      "apps/execution-dashboard/public/architecture.js",
+      "apps/execution-dashboard/test/architecture.test.mjs",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py.diff",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/scenario.mjs",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs.diff"
+    ],
+    "observedAt": "2026-10-07T04:25:29.688Z",
+    "state": "unchanged",
+    "implementationChanges": [],
+    "outsideChanges": [],
+    "metadataChanges": [
+      "plans/d06-architecture-refresh/review.md",
+      "plans/d06-architecture-refresh/status.md",
+      "docs/evidence/d06/snapshot-0da/main-intake.json",
+      "docs/evidence/d06/snapshot-0da/renderer-review-before-composition.txt",
+      "docs/evidence/d06/snapshot-0da/root-composition-review.json"
+    ],
+    "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+  }
+}

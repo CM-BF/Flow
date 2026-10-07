@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-07T04:24:15.529898+00:00",
+  "reviewer": "/root independent",
+  "decision": "APPROVED_COMPOSITE_SCOPED_SOURCE_AND_ACTUAL_EVIDENCE",
+  "target": "591f5fe96d85c3497f33f1b7f0fb99d955a984dc",
+  "base": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+  "exactScope": [
+    "apps/execution-dashboard/public/architecture-data.js",
+    "apps/execution-dashboard/public/architecture.js",
+    "apps/execution-dashboard/test/architecture.test.mjs",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py.diff",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/scenario.mjs",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs.diff"
+  ],
+  "sourceCommits": [
+    "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+    "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d"
+  ],
+  "reviewedIntake": {
+    "path": "/private/tmp/d06-591-composition-intake.json",
+    "sha256": "f9baa2bc6fb00e6e59c90c2e0d3b790be78634e7e05902f49a48e06885d2ee8d"
+  },
+  "verified": {
+    "all8BaseTargetMainHashesAndBlobs": true,
+    "all8MainPreimagesMatchBase": true,
+    "observedMain": "0e09c5d968c059f26402a04907b634460dfebe08",
+    "nonmetadataExactly8UnderUnchangedMainRule": true,
+    "all5EvidenceScriptsOrDiffsByteEqualReviewedFirstPacket": true,
+    "head591Clean": true,
+    "product3ExactReviewedSourceAndBrowserPins": true
+  },
+  "sourceEvidence": "Data/test5124 earlier scoped independent source+22direct evidence; renderer a28e source review; first browser failure remains retained. Three product hashes equal latest browser immutable pins.",
+  "actualEvidence": {
+    "path": "/private/tmp/root-d06-second-browser-actual-review.json",
+    "sha256": "ce859b1958b7717bb72aec273d9d7e77bb8327ac1077a0129c8a0c0c96100184",
+    "result": "5 groups/20 observations/20 PNGs, actualouter0, complete cleanup; cumulative15613/90000ms; representative6screens inspected"
+  },
+  "reviewFindings": [],
+  "cleanCode": "Composition introduces no additional implementation. Includes historical executable evidence in explicit scope; metadata classification unchanged. No rerun of unchanged accepted source.",
+  "integration": "READY_FOR_CONTROLLED_LEAD_INTAKE; no main mutation or actual4320 deployment performed by reviewer. Fresh preimages/owner final metadata must be checked at intake.",
+  "scopeLimit": "Approval covers exact8 target only; all other owner records remain evidence metadata. Claim remains owner v2 until actual accepted completion and release."
+}

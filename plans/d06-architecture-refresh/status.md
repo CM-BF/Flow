@@ -10,19 +10,19 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime |
 | Branch | codex/dashboard-architecture-runtime |
 | 工作基线 / HEAD | 分支base6d05ec467581e85d21d5532fd29a2bebd1411b41；策展fixed main0da869f7bad98771177472539b5a192365c15117；实际HEAD/dirty由Git聚合 |
-| 工作分支状态 | source-approved / browser-second-passed；实际结果已独立接收、组合target/main待接 |
+| 工作分支状态 | source-approved / browser-second-passed；完整组合已独立接收、main待接 |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新五图数据与连线背景修复已完成页面复验；宽窄屏、双主题、几何和键盘来源下钻通过，旧失败保留，已获独立实证接收，待组合target与主线接收 |
-| 下一可用交付 | 固定完整组合交付并交原Lead接入主线；实际看板部署另由原operator执行 |
+| 当前产出 | 新五图数据与连线背景修复已完成页面复验；宽窄屏、双主题、几何和键盘来源下钻通过，旧失败保留，已获独立实证接收，待主线接收 |
+| 下一可用交付 | 将已获独审的完整组合交原Lead接入主线；实际看板部署另由原operator执行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 实现目标 | a28e8dac9ab3bd56231c13a0b090e986cc69eb0d |
+| 实现目标 | 591f5fe96d85c3497f33f1b7f0fb99d955a984dc |
 | 实现范围 | apps/execution-dashboard/public/architecture-data.js,apps/execution-dashboard/public/architecture.js,apps/execution-dashboard/test/architecture.test.mjs,docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py,docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py.diff,docs/evidence/d06/snapshot-0da/browser-preparation-20261007/scenario.mjs,docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs,docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs.diff |
-| 检查状态 | PASSED a28e8dac9ab3bd56231c13a0b090e986cc69eb0d；第二browser 5/5、20观察/20PNG、actualexit0/清理完整。原5124首轮FAIL及22direct PASS保持；第二实证已root限定接收 |
+| 检查状态 | PASSED 591f5fe96d85c3497f33f1b7f0fb99d955a984dc；组合含5124数据、a28e renderer和五已审证据脚本/diff；第二browser 5/5、20观察/20PNG、actualexit0/清理完整。原5124首轮FAIL及22direct PASS保持；第二实证已root限定接收 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED 本轮；旧aeb已main cde6646dbd4bcb4f42b7ef24f49f3a0cd6c714fd |
-| Review | [review.md](review.md)，APPROVED（a28e仅renderer源码；原5124源码与22direct限定批准保历史，第二页面5/5实证已独立接收；完整组合target待固定审） |
+| Review | [review.md](review.md)，APPROVED（固定591完整组合exact8，5124源码/22direct与a28e页面5/5实证均有独审；main/部署另计） |
 | D04 claim | adf9539d-0d42-49b8-961b-f5195a4c10e9 v2 / 5 literal / 2026-10-07T03:51:56.566Z COMMITTED；[amend](../../docs/evidence/d06/snapshot-0da/edge-label-bounds/amend-receipt.json) |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -49,3 +49,5 @@
 [第二次实际原件](../../docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/index.json)：04:19:25.412665Z–04:19:34.292856Z，5/5、20观察/20PNG、outerexit0；04:19:53.053937Z exact自有组与Chrome absent、双EOF、HTTP/context/scratch清理已归还。保守本次8880+原6733=累计15613/余74387ms，非新运行许可；无自动第三次。此前准备/未运行段落均为其时点历史。
 
 第二次实际结果已获[root独立接收](../../docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/root-actual-review.json)，5/5与20PNG/清理/预算一致。完整交付将以本次封存commit为组合target，覆盖三产品路径与原已归档五个nonmetadata脚本/diff；不放宽主线parser，不把准备脚本作为额外产品验收。
+
+[唯一主线接收包](../../docs/evidence/d06/snapshot-0da/main-intake.json)固定591完整组合/base6d05/exact8/preimages；[root组合独审](../../docs/evidence/d06/snapshot-0da/root-composition-review.json)通过。三个产品路径加五个nonmetadata证据脚本/diff全部显式声明；不改主线proof parser。待原Lead受控接收，不重跑已过组。
