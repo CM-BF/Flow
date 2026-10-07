@@ -1,6 +1,3 @@
-import { PLUGIN_RUNTIME_LIMITS, pluginRuntimeCommandSchema, pluginToolTaskRequestSchema, type PluginRuntimeCommand, type PluginRuntimeView, type PluginToolTaskRequest, type PluginToolBinding } from '../../contracts/src/plugin-runtime.js';
-import { pluginRequestIdentity, decodePluginRuntime, decodePluginRuntimeChanged, decodePluginTaskAccepted, decodePluginBinding, UnknownPluginAcknowledgementError, type PluginRequestIdentity } from './plugin-management.js';
-export { UnknownPluginAcknowledgementError } from './plugin-management.js';
 import { readBoundedJson } from './response-json.js';
 import { PluginRunnerClient } from './plugin-runner.js';
 import { ASSISTANT_SELECTION_PROTOCOL, assistantStreamSelectionSchema, assistantStreamDataSchema, type AssistantStreamProtocol, type AssistantStreamSelection, type AssistantStreamSelectedPage, type AssistantStreamSelectedPatchPage } from '../../contracts/src/assistant-stream.js';
@@ -527,39 +524,6 @@ export class FlowClient {
   }
   commandPluginMaterialInstall(id: string, input: PluginInstallCommand, key: string, signal?: AbortSignal): Promise<PluginInstallAccepted> {
     return this.request(`/api/plugin-installs/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
-  }
-
-  pluginRuntime(id: string, signal?: AbortSignal): Promise<PluginRuntimeView> {
-    return this.pluginAcknowledgement(pluginRequestIdentity(`/api/plugins/${encodeURIComponent(id)}/runtime`),
-      value => decodePluginRuntime(value, id), signal);
-  }
-  commandPluginRuntime(id: string, input: PluginRuntimeCommand, key: string, signal?: AbortSignal): Promise<PluginMutationResult & { runtime: PluginRuntimeView }> {
-    const frozen = pluginRuntimeCommandSchema.parse(input);
-    const request = pluginRequestIdentity(`/api/plugins/${encodeURIComponent(id)}/runtime/commands`, key, frozen);
-    return this.pluginAcknowledgement(request, value => decodePluginRuntimeChanged(value, id, frozen), signal);
-  }
-  admitPluginToolTask(id: string, input: PluginToolTaskRequest, key: string, signal?: AbortSignal): Promise<AcceptedTask & { binding: PluginToolBinding }> {
-    const frozen = pluginToolTaskRequestSchema.parse(input);
-    const request = pluginRequestIdentity(`/api/plugins/${encodeURIComponent(id)}/tool-tasks`, key, frozen);
-    return this.pluginAcknowledgement(request, value => decodePluginTaskAccepted(value, id, frozen), signal);
-  }
-  pluginToolBinding(taskId: string, signal?: AbortSignal): Promise<PluginToolBinding> {
-    return this.pluginAcknowledgement(pluginRequestIdentity(`/api/tasks/${encodeURIComponent(taskId)}/plugin-binding`),
-      value => decodePluginBinding(value, taskId), signal);
-  }
-
-  private async pluginAcknowledgement<T>(identity: PluginRequestIdentity, decode: (value: unknown) => T | Promise<T>, signal?: AbortSignal): Promise<T> {
-    try {
-      const value = await this.request<unknown>(identity.path, identity.key === undefined ? { signal } : {
-        method: 'POST', signal, headers: { 'content-type': 'application/json', 'idempotency-key': identity.key }, body: identity.body,
-      }, undefined, { success: PLUGIN_RUNTIME_LIMITS.responseBytes, error: 4096 });
-      return await decode(value);
-    } catch (error) {
-      // A typed center rejection is distinct from a malformed/proxy response or lost ACK.
-      if (error instanceof FlowApiError && error.status >= 400 && error.status < 500
-        && typeof error.code === 'string' && error.code !== 'http_error' && error.code.length > 0) throw error;
-      throw new UnknownPluginAcknowledgementError(identity);
-    }
   }
 
   registerPlugin(input: PluginRegistration, key: string, signal?: AbortSignal): Promise<PluginMutationResult> {

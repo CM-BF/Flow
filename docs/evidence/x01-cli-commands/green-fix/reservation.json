@@ -1,0 +1,28 @@
+{
+  "startedAt": "2026-10-07T10:15:56.428724+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-cli-commands/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-cli-commands/docs/evidence/x01-cli-commands/vitest.config.mjs",
+    "--no-cache",
+    "packages/client/src/plugin-runtime.test.ts",
+    "apps/cli/src/plugin-runtime.test.ts"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-cli-commands",
+  "free": 22782631936,
+  "required": 6063390720,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-cli-commands/docs/evidence/x01-cli-commands/green-fix/tmp",
+    "dev": 16777234,
+    "ino": 124014249
+  },
+  "budgets": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288
+  },
+  "tmpMeasurement": "before/after sample; not realtime OS isolation"
+}

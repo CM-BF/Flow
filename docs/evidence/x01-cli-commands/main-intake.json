@@ -1,0 +1,102 @@
+{
+  "taskId": "X01-CLI-COMMANDS01",
+  "parentTaskId": "X01",
+  "owner": "db_transaction_owner",
+  "sourceCommit": "9f5d61a10504536f43adca28096878eb71d7fa52",
+  "base": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+  "reviewState": "SOURCE_AND_DELTA_RESULT_REVIEW_APPROVED",
+  "productAndRequiredTestSupport": [
+    {
+      "path": "apps/cli/src/index.ts",
+      "sourceCommit": "9f5d61a10504536f43adca28096878eb71d7fa52",
+      "bytes": 28398,
+      "sha256": "45da8c78d65f5ef367de0c39b15c03f821f4bec54d0a29c3039d007b30e62e6b",
+      "preimage": {
+        "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+        "exists": true,
+        "bytes": 26573,
+        "sha256": "59213e5987492581bde26dd4040bc5729b747d6614e418532884e1c334824449"
+      }
+    },
+    {
+      "path": "apps/cli/src/plugin-runtime.test.ts",
+      "sourceCommit": "9f5d61a10504536f43adca28096878eb71d7fa52",
+      "bytes": 3797,
+      "sha256": "a2f28112571f7c700e25b75ee39ae3456489d2ba5f8b7fd04211d7e41a2c8f4d",
+      "preimage": {
+        "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+        "exists": false,
+        "bytes": null,
+        "sha256": null
+      }
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "sourceCommit": "9f5d61a10504536f43adca28096878eb71d7fa52",
+      "bytes": 66568,
+      "sha256": "c89b0fabeb461a338d27878086c675bcf9d88479b821718695ba9745d819abe6",
+      "preimage": {
+        "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+        "exists": true,
+        "bytes": 63703,
+        "sha256": "19a402fd2b15f6083b9e37f052fcbb6f7bf1fb0ca6a7a0d75e898757981e090d"
+      }
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "sourceCommit": "9f5d61a10504536f43adca28096878eb71d7fa52",
+      "bytes": 6240,
+      "sha256": "ab6f2eccaf3460a3829b8abff767da378bb0bfbcf853414c2e7fac452a9e2ead",
+      "preimage": {
+        "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+        "exists": false,
+        "bytes": null,
+        "sha256": null
+      }
+    },
+    {
+      "path": "packages/client/src/plugin-runtime.test.ts",
+      "sourceCommit": "9f5d61a10504536f43adca28096878eb71d7fa52",
+      "bytes": 7388,
+      "sha256": "561da6f1debd90d3d6e4870ae8a8c3002dcd9c3f6a91c8a096a6d28f4f794d34",
+      "preimage": {
+        "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+        "exists": false,
+        "bytes": null,
+        "sha256": null
+      }
+    },
+    {
+      "path": "docs/evidence/x01-cli-commands/fixtures.ts",
+      "sourceCommit": "9f5d61a10504536f43adca28096878eb71d7fa52",
+      "bytes": 2727,
+      "sha256": "0c0d85c3d68e962dfca95b27ae35e7cf201c0a15c815fc85d4a0a99645385796",
+      "preimage": {
+        "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+        "exists": false,
+        "bytes": null,
+        "sha256": null
+      }
+    }
+  ],
+  "evidencePlanScope": [
+    "docs/evidence/x01-cli-commands",
+    "plans/x01-cli-commands"
+  ],
+  "preserveMain": [
+    "READBOUND bounded decoder",
+    "X01 pluginRunner and terminal",
+    "all other client and CLI methods"
+  ],
+  "validation": "18 prior public local cases accepted as faithful; strict-enum fix1selected1passed18unselected; final focusedtypes0; no PG/process/server acceptance",
+  "pendingRealJourney": "architecture_read cli-process-acceptance-plan.md@bac95641: one dedicated DB case startup + four actual runCli management calls + real runner; not yet run",
+  "registration": "task-intake.json authoritative registration input; originalLead owns registry",
+  "architecture": "four new public owner methods + pure ACK module; D06 handoff to Mika on main intake",
+  "reviewer": "chatui01_owner / gpt-6-astra",
+  "reviewedAt": "2026-10-07T10:25:16Z",
+  "reviewPacket": "756ff8b7c7bfdecaf8416ea6b7fe832153d02bf9",
+  "reviewManifestSha256": "5464a0d85ece80da58fa02cf14cf961e7ccf7b999faca57fb44466fe02e14b28",
+  "readyAt": "2026-10-07T10:26:15.041651+00:00",
+  "integrationState": "READY_NOT_YET_MAIN",
+  "reviewBoundary": "only fixed three production leaves plus direct CLI/client tests; manifest and original raw fixed; no new PG/server authorization/process/Web claim"
+}

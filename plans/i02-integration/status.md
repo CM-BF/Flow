@@ -16,7 +16,7 @@
 | 工作树dirty状态 | 本次已审证据与管理状态归档；未知既有__pycache__不纳入提交 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 沿固定源复用SVC06构建独审、host准备3项和O16失败原件独审；本次0工程复测/PG/provider。两父status纯解析通过，历史开始UNKNOWN保留。 |
-| 已集成main状态 / HEAD | main/origin dea9f100已含插件启动配置与规划私有环境；本批受控发布其实际结果与必要方法。个人backend af51/v18、Web d629/v3/c7b保持。 |
+| 已集成main状态 / HEAD | main/origin dea9f100已含插件启动配置与规划私有环境；本批受控发布其实际结果与必要方法；X01四个终端管理命令已完成组合类型检查。个人backend af51/v18、Web d629/v3/c7b保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
