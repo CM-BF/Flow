@@ -1,0 +1,155 @@
+--- prior/ee11-supervisor.py
++++ followup/supervisor.py
+@@ -1,17 +1,18 @@
+ """PREPARED / NOT_RUN. Native Chrome sibling changes authority; explicit Lead acceptance and a fresh gate are mandatory.
+ Reuses the fixed Settings sibling preparation and DPERF budget/output interface. Never execute for syntax checking.
+ """
+-import datetime, errno, hashlib, json, os, re, selectors, shutil, signal, stat, subprocess, sys, time
++import datetime, errno, hashlib, importlib.util, json, os, re, selectors, shutil, signal, stat, subprocess, sys, time
++from dataclasses import asdict
+ from pathlib import Path
+ BASE = Path(__file__).resolve().parent
+ MiB = 1024 ** 2
+-TOTAL_MS = 60000
++TOTAL_MS = 45000
++PHASE = 'remaining-consumers-20261007'
+ CLEANUP_MS = 15000
+-ENTRIES = {'summary-detail':'apps/execution-dashboard/test/summary-detail.browser.mjs',
+-           'task-links':'apps/execution-dashboard/test/task-links.browser.mjs',
+-           'task-timing':'apps/execution-dashboard/test/task-timing.browser.mjs',
++ENTRIES = {'task-timing-visual':'apps/execution-dashboard/test/task-timing.browser.mjs',
++           'task-links-visual':'apps/execution-dashboard/test/task-links.browser.mjs',
+            'local-access':'apps/execution-dashboard/test/local-access.browser.mjs'}
+-WRAPPER = ENTRIES['summary-detail']
++WRAPPER = 'apps/execution-dashboard/test/summary-detail.browser.mjs'
+ BOUNDARY = 'native-chrome-sibling-without-custom-outer-write-or-egress-sandbox'
+ 
+ def load(p):
+@@ -56,6 +57,7 @@
+     binding = load(BASE/'binding.json')
+     assert binding['state'] == 'REVIEWED_SOURCE_BOUND', 'Independent source review and fresh admission are required'
+     gate = load(sys.argv[2])
++    assert gate['phase'] == PHASE and gate['closedPriorRuntimeMs'] == 40551
+     assert gate['allowRun'] is True and gate['singleUse'] is True and gate['mode'] == 'dperf-browser'
+     assert gate['bindingSha256'] == sha(BASE/'binding.json') and gate['runnerSha256'] == sha(__file__)
+     assert gate['claim'] == binding['claim'] and gate['overlaps'] == []
+@@ -75,7 +77,10 @@
+     assert accepted['runnerSha256'] == sha(__file__) and accepted['workerSha256'] == binding['sources'][WRAPPER]
+     root = Path(binding['worktree']); evidence = root/'docs/evidence/wpf-dperf04'
+     assert root.resolve() == root and evidence.resolve() == evidence
+-    budget = evidence/'browser-budget.json'
++    closed = binding['closedPriorBudget']; assert gate['closedPriorBudget'] == closed and sha(closed['path']) == closed['sha256']
++    closed_record = load(closed['path'])
++    assert closed_record['phaseState'] == 'CLOSED' and closed_record['spentMs'] == 40551 and closed_record['unspentMs'] == 19449
++    budget = evidence/'browser-followup-budget.json'
+     if budget.exists():
+         assert sha(budget) == gate['previousBudgetSha256']
+         previous = load(budget); assert previous['complete'] is True and previous['spentMs'] == gate['previousRuntimeMs']
+@@ -87,7 +92,9 @@
+     assert len(str(scratch).encode('utf8')) <= 40
+     process = chrome = None; errors = []; cleanup = []; samples = []; streams = {}; stopping = False
+     selector = selectors.DefaultSelector(); handles = []; chrome_facts = None
+-    report = {'state':'FAILED', 'sourceHead':binding['head'], 'implementation':binding['implementation'],
++    meter_record = {'adoption':'PARTIAL_RETAINED_ADOPTION', 'module':binding['measurementHelper'], 'roots':binding['measurementRoots'], 'last':{}, 'unknown':[]}
++    meter = None
++    report = {'phase':PHASE, 'closedPriorRuntimeMs':40551, 'measurement':meter_record, 'state':'FAILED', 'sourceHead':binding['head'], 'implementation':binding['implementation'],
+               'entry':gate['entry'], 'startedAt':now(), 'previousRuntimeMs':gate['previousRuntimeMs'],
+               'authorityBoundary':BOUNDARY, 'boundaryApproval':approval, 'samples':samples, 'errors':errors}
+     def request_stop(sig, frame):
+@@ -98,8 +105,22 @@
+             report['stopSignal'] = signal.Signals(sig).name
+             errors.append('Cooperative stop: '+report['stopSignal'])
+     previous_handlers = {sig:signal.signal(sig,request_stop) for sig in (signal.SIGTERM,signal.SIGINT)}
++    def retained_sizes(root, *, exclude_directory=None):
++        assert root in (BASE, evidence)
++        exclude = ()
++        if exclude_directory is not None:
++            assert root == BASE and exclude_directory == BASE/'scratch'
++            exclude = ('scratch',)
++        identity = binding['measurementRoots'][str(root)]
++        sample = meter.measure(meter.Root(str(root), identity['device'], identity['inode']),
++          exclude=exclude, limits=meter.Limits(max_entries=20000, max_seconds=.25))
++        observation = asdict(sample); meter_record['last'][str(root)] = observation
++        if sample.state != 'complete':
++            meter_record['unknown'].append({'root':str(root), **observation})
++            raise RuntimeError('Retained measurement unknown: '+json.dumps(observation['issue']))
++        return sample.logical_bytes, sample.allocated_bytes
+     def observe_resources(phase):
+-        available = free(root); tmp = sizes(scratch); retained = sizes(evidence)[0]+sizes(BASE, exclude_directory=scratch)[0]
++        available = free(root); tmp = sizes(scratch); retained = retained_sizes(evidence)[0]+retained_sizes(BASE, exclude_directory=scratch)[0]
+         samples.append({'phase':phase,'seconds':round(time.monotonic()-started,3),'freeBytes':available,
+                         'scratchLogical':tmp[0],'scratchAllocated':tmp[1],'retainedBytes':retained})
+         if available <= gate['stopFreeBytes']: raise RuntimeError('Free-space stop')
+@@ -149,6 +170,11 @@
+         stop(p,sig)
+     try:
+         try:
++            module = binding['measurementHelper']
++            assert module['path'] == str(BASE/'measure.py') and sha(module['path']) == module['sha256']
++            sys.dont_write_bytecode = True
++            spec = importlib.util.spec_from_file_location('dperf_owned_measure', module['path'])
++            meter = importlib.util.module_from_spec(spec); sys.modules[spec.name] = meter; spec.loader.exec_module(meter)
+             assert git('rev-parse','HEAD')==binding['head'] and git('branch','--show-current')==binding['branch']
+             assert git('status','--porcelain')==''
+             save(budget,{'complete':False,'spentMs':gate['previousRuntimeMs'],'run':gate['run'],'startedAt':report['startedAt']})
+@@ -213,7 +239,7 @@
+               'GIT_OPTIONAL_LOCKS':'0','DPERF04_BROWSER_GATE':str(BASE/'child-gate.json')})
+             checkpoint()
+             worker_log=(BASE/'worker.log').open('xb'); handles.append(worker_log)
+-            process=subprocess.Popen(['/usr/bin/sandbox-exec','-f',str(profile),binding['node'],ENTRIES[gate['entry']]],
++            process=subprocess.Popen(['/usr/bin/sandbox-exec','-f',str(profile),binding['node'],ENTRIES[gate['entry']],*(['--visual-followup'] if gate['entry'].endswith('-visual') else [])],
+               cwd=root,env=env,stdin=subprocess.DEVNULL,stdout=subprocess.PIPE,stderr=subprocess.STDOUT,start_new_session=True)
+             report['pgid']=process.pid; assert process.pid!=chrome.pid
+             register(process.stdout,'worker',worker_log)
+@@ -266,7 +292,8 @@
+                 try: observe_resources('after-both-groups-reaped-before-scratch-removal')
+                 except BaseException as e: errors.append('Final resource observation: '+str(e))
+             try:
+-                if groups_absent and scratch.exists(): shutil.rmtree(scratch)
++                if groups_absent and scratch.exists() and not meter_record['unknown']: shutil.rmtree(scratch)
++                if meter_record['unknown'] and scratch.exists(): cleanup.append('Scratch kept after unknown retained observation; owned groups reaped')
+                 if scratch.exists(): cleanup.append('Scratch remains')
+             except BaseException as e: cleanup.append('Scratch cleanup: '+str(e))
+             if time.monotonic()>hard: cleanup.append('Total deadline exceeded')
+@@ -277,8 +304,12 @@
+                 assert result['serverClosed'] is True and result['fixtureRemoved'] is True and result['contextClosed'] is True
+                 assert result['chromeCleanupOwner']=='external-parent-native-sibling' and chrome is not None and result['chromePid']==chrome.pid
+                 assert result['pg']==0 and result['checks'] and result['errors']==[]
+-                if gate['entry'] in ('task-timing','local-access'):
+-                    assert len(result['checks'])==5 and len(result['screenshots'])==2
++                expected = {'local-access':(5,2), 'task-timing-visual':(1,2), 'task-links-visual':(1,1)}[gate['entry']]
++                assert len(result['checks']) == expected[0] and len(result['screenshots']) == expected[1]
++                for name in result['screenshots']:
++                    assert Path(name).name == name and name.endswith('.png')
++                    picture = output/name
++                    assert picture.is_file() and not picture.is_symlink() and picture.stat().st_size > 0
+                 if gate['entry']=='local-access':
+                     assert result['access']['state']=='PASSED' and result['access']['cleanup']=={'context':'closed','http':'closed'}
+             except BaseException as e: errors.append('Browser report: '+str(e))
+@@ -287,7 +318,7 @@
+                 if cumulative>TOTAL_MS and 'Cumulative allowance exceeded' not in errors: errors.append('Cumulative allowance exceeded')
+                 retained=None
+                 try:
+-                    retained=sizes(evidence)[0]+sizes(BASE, exclude_directory=scratch)[0]
++                    retained=retained_sizes(evidence)[0]+retained_sizes(BASE, exclude_directory=scratch)[0]
+                     if retained>8*MiB-128*1024: raise RuntimeError('Retained evidence reserve exceeded')
+                 except BaseException as e: errors.append('Final evidence accounting: '+str(e))
+                 report.update(elapsedMs=elapsed,cumulativeMs=cumulative,remainingMs=max(0,TOTAL_MS-cumulative),
+@@ -296,7 +327,7 @@
+                     'workerGroupAbsent':not alive(process),'chromeGroupAbsent':not alive(chrome),'scratchAbsent':not scratch.exists()},
+                   state='PASS' if not stopping and not errors and not cleanup and process and process.returncode==0 else 'FAILED')
+                 save(BASE/'result.json',report)
+-                save(budget,{'complete':not cleanup,'spentMs':cumulative,'limitMs':TOTAL_MS,'cleanupReserveMs':CLEANUP_MS,
++                save(budget,{'phase':PHASE,'closedPriorRuntimeMs':40551,'historicalTotalMs':40551+cumulative,'complete':not cleanup,'spentMs':cumulative,'limitMs':TOTAL_MS,'cleanupReserveMs':CLEANUP_MS,
+                   'run':gate['run'],'supervisorResult':str(BASE/'result.json'),
+                   'state':report['state'],'stopSignal':report.get('stopSignal')})
+             persist_results()
+@@ -306,7 +337,7 @@
+             report['afterResultBudgetWritesElapsedMs']=round((time.monotonic()-started)*1000)
+             report['finalTimingMeaning']='Actual monotonic observation after preceding result/budget writes; final record serialization follows this observation'
+             try:
+-                if sizes(evidence)[0]+sizes(BASE, exclude_directory=scratch)[0]>8*MiB: raise RuntimeError('Final retained evidence cap exceeded')
++                if retained_sizes(evidence)[0]+retained_sizes(BASE, exclude_directory=scratch)[0]>8*MiB: raise RuntimeError('Final retained evidence cap exceeded')
+                 if time.monotonic()>hard: raise TimeoutError('Total deadline includes final evidence writes')
+             except BaseException as e: errors.append('Final evidence completion: '+str(e))
+             persist_results()

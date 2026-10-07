@@ -1,0 +1,272 @@
+{
+  "decision": "ACCEPTED_SCOPED",
+  "recordedAt": "2026-10-07T09:25:03.912045+00:00",
+  "reviewer": "/root GPT-6 Astra Ultra",
+  "source": "98baf552d961ed0fa88ce2cf8bad006002d5986a",
+  "executionHead": "6e92f36be29f48928c93f1ecc5253afde1ea6465",
+  "run": "access-20261007-092338-82d16f",
+  "checks": [
+    "empty-by-default; keyboard opening/Tab/Escape/focus return; product href only",
+    "390 light/dark with fake-only empty credential screenshots; no dialog horizontal overflow",
+    "load masks; native clipboard success; explicit injected clipboard denial; show/hide clears",
+    "close aborts outstanding read; late response does not restore token; reopen needs explicit load",
+    "actual hidden page clears; no credential in browser storage"
+  ],
+  "visual": {
+    "inspected": [
+      "390-light.png",
+      "390-dark.png"
+    ],
+    "result": "Both390 screenshots accepted: actual empty credential field, readable narrow dialog/instructions, visible keyboard close focus, disabled credential actions and no horizontal clipping. These are fake-only empty-state images; no real credential or personal installation proof."
+  },
+  "actual": {
+    "startedAt": "2026-10-07T09:23:49.185251+00:00",
+    "endedAt": "2026-10-07T09:23:56.230020+00:00",
+    "exitCode": 0,
+    "conservativeChargeMs": 7045,
+    "newPhaseSpentMs": 7045,
+    "newPhaseRemainingMs": 37955,
+    "oldPhaseSpentMs": 40551,
+    "oldUnusedMs": 19449,
+    "oldPhaseState": "CLOSED",
+    "outerDualEof": true,
+    "allThreeInnerStreamsEofNoDrop": true,
+    "freshKnownProcesses": [
+      {
+        "pid": 32707,
+        "pidState": "ESRCH",
+        "pgidState": "ESRCH"
+      },
+      {
+        "pid": 32625,
+        "pidState": "ESRCH",
+        "pgidState": "ESRCH"
+      },
+      {
+        "pid": 37717,
+        "pidState": "ESRCH",
+        "pgidState": "ESRCH"
+      },
+      {
+        "pid": 33199,
+        "pidState": "ESRCH",
+        "pgidState": "ESRCH"
+      }
+    ],
+    "scratchAbsent": true,
+    "contextHttpClosed": {
+      "context": "closed",
+      "http": "closed"
+    },
+    "pg": 0
+  },
+  "measurement": {
+    "adoption": "PARTIAL_RETAINED_ADOPTION",
+    "fixedHelper": {
+      "path": "/private/tmp/dperf-f1/measure.py",
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08",
+      "sourceCommit": "1e12eaf13a02b45a99dfe126bc182c2ea45a8390",
+      "sourcePath": "tools/owned-resource-measurement/measure.py",
+      "adoption": "PARTIAL_RETAINED_ADOPTION"
+    },
+    "last": {
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04": {
+        "state": "complete",
+        "logical_bytes": 2338941,
+        "allocated_bytes": 2781184,
+        "entries": 239,
+        "regular_files": 214,
+        "directories": 26,
+        "symlinks": 0,
+        "vanished_entries": 0,
+        "excluded_directories": 0,
+        "elapsed_seconds": 0.004540333058685064,
+        "issue": null
+      },
+      "/private/tmp/dperf-f1": {
+        "state": "complete",
+        "logical_bytes": 1261993,
+        "allocated_bytes": 1490944,
+        "entries": 117,
+        "regular_files": 107,
+        "directories": 11,
+        "symlinks": 0,
+        "vanished_entries": 0,
+        "excluded_directories": 0,
+        "elapsed_seconds": 0.0017670410452410579,
+        "issue": null
+      }
+    },
+    "unknown": [],
+    "meaning": "One real DPERF retained consumer now observed complete. This does not prove scratch adoption or second independent caller migration."
+  },
+  "fixedSourcePins": [
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "sha256": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "650b42be8009fb515066c92d3dce7fff3bff03c8c60c9c2f48a2f83e6aee46d3"
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "sha256": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "013ec6261c3e19f49da670e93ac17052534350cb18fa329aecca38e7b2710ac6"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "sha256": "a4cca9b81513c344bf320aa354cb600c7206041ee5ffa7f4b0b721849738b048"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "sha256": "098cb20090bad55f6bc6dad9878cd49652cbfa6df569ed1a475e3100439d5abb"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "sha256": "8da86261cd386a46c494c0218cff7b9b11d222d13a5d414298f7440c9546382a"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "sha256": "56ffc1852f75baf5f9fc67948f81fe3aa6d49adfcc71ed07433a890ecc09c8af"
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.browser.mjs",
+      "sha256": "281d0ff1cb00ddfdee85d7379c22f0e190cc4674f5bcfdf17ee05aad43a48be9"
+    },
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+    },
+    {
+      "path": "apps/execution-dashboard/src/local-access.mjs",
+      "sha256": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932"
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.js",
+      "sha256": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966"
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.css",
+      "sha256": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707"
+    },
+    {
+      "path": "apps/execution-dashboard/public/index.html",
+      "sha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0"
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.test.mjs",
+      "sha256": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248"
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "sha256": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d"
+    }
+  ],
+  "raw": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/access-20261007-092338-82d16f/390-dark.png",
+      "bytes": 68944,
+      "sha256": "fbcfde8ef30e2f37fcc544656b76835135651260d3c47dea05a1d7ee94ae4172"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/access-20261007-092338-82d16f/390-light.png",
+      "bytes": 72835,
+      "sha256": "4a9b4f8cf56ec4216ff7145789ac4cd7b65c96f2e01b1cc9e3d53f29c92cba9b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/access-20261007-092338-82d16f/browser-result.json",
+      "bytes": 832,
+      "sha256": "5ea185a1bdb135572ce1a647642208f0f2b7970aa4872b1b6265ebc33bc3e93c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/access-20261007-092338-82d16f/browser-results.json",
+      "bytes": 4228,
+      "sha256": "2f3df2b0ed62b9a4bc63a3d5dd76b6a73807aeed2eed4b77471e20b80ba937c4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/access-20261007-092338-82d16f/chrome.log",
+      "bytes": 2630,
+      "sha256": "38e895bb3dbd7f7dc7cdc68bd0df8023e963c2463270ec601f4175ed7aff9389"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/access-20261007-092338-82d16f/owned-chrome.json",
+      "bytes": 2252,
+      "sha256": "091b00c4eeb50b691fd26d2522852e8ce57c667f4d090f5fdc5a9ac6c414b1d3"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/binding.json",
+      "bytes": 53628,
+      "sha256": "0efdf1e948386c807ef844ab99b3de71e5505bc36512a0466b627110f3020e53"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/manifest.json",
+      "bytes": 3173,
+      "sha256": "e152c98aebac5ffb83b47e35f9c1484f7bb306583fd670669f4c741a50d31604"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/supervisor.py",
+      "bytes": 26445,
+      "sha256": "d3778771f83d7bcf9e048e3b705b0ba6bc13c5a7271f466b6a2a03910777e6ca"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/gate.json",
+      "bytes": 3252,
+      "sha256": "017304fc7e947f761485c5382c142d61764ad50496a4d65129c89a6bf9bc0753"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/child-gate.json",
+      "bytes": 4134,
+      "sha256": "d198745693045e02a24127a42d5d6d72667599c8304582338ff51fbd433ef0b2"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/consumed-gate.json",
+      "bytes": 3095,
+      "sha256": "3b7b1c3438887cf4bd7144c67c86c9ce290f6f41f7154acd61162b45fe6f39bb"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/result.json",
+      "bytes": 58884,
+      "sha256": "ca20172782f57fef0dc1ac989c005736c89c2dd27fd0ad2ceb6df9a73b12c42e"
+    },
+    {
+      "path": "/private/tmp/dperf-f1/worker.log",
+      "bytes": 690,
+      "sha256": "182c6b45735689dbb20f95e302578dc185ef02e18ea958b834b33698c7b28f89"
+    },
+    {
+      "path": "/private/tmp/dperf-f1-outer/actual-exit.json",
+      "bytes": 529,
+      "sha256": "0126dd1f287e4c634fe19e48769bdf2338703f8d31430481236408385a9c7c18"
+    },
+    {
+      "path": "/private/tmp/dperf-f1-outer/start.json",
+      "bytes": 120,
+      "sha256": "bb0ab7732a0affb8dc8c2ae5a604c2edb03390ef6e344c5c988e51cbe7274a07"
+    },
+    {
+      "path": "/private/tmp/dperf-f1-outer/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/dperf-f1-outer/stdout.txt",
+      "bytes": 154,
+      "sha256": "5bc669fa5c83bc892f26a1bc8f9a68a0d294466f9e2188cf35d13784c2b5e006"
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "Timing and Links visual supplements remain separate NOT_RUN at this observation.",
+    "Real local installation, live personal credentials, main integration and deployment remain unproven by fake HTTP checks."
+  ],
+  "cleanCode": "Focused test lifecycle/source assertions remain intact; actual default-context Chrome exit0 is expected and cleanup is separately evidenced. No new code change required by this result."
+}
