@@ -6,6 +6,7 @@ import { createHash } from 'node:crypto';
 import { readFile } from 'node:fs/promises';
 import path from 'node:path';
 import { parseStatus } from '../src/status.mjs';
+import { humanOverview } from '../src/human.mjs';
 
 // Isolated rendering fixture: real parser and shipped UI, synthetic owner/Git
 // observations. No registry, coordination database, provider, or default service.
@@ -50,7 +51,14 @@ export async function createTaskTimingFixture() {
       if (['/api/summary', '/api/task', '/api/assignments', '/api/snapshot'].includes(url.pathname)) {
         if (state.fail) { response.writeHead(503); response.end('fixture observation unavailable'); return; }
         const tasks = [task('T01', state.fields, state.task), task('T02', { '任务完成时间': '2026-10-07T02:30:00Z', '任务时间来源': '开工：fixture-start；完成：fixture-done' })];
-        const overview = { phase: 'M2', activeIds: ['T01', 'T02'], deliveryIds: [], otherActiveIds: [], decisionIds: [], blockerIds: [], unknownIds: [], historyIds: [] };
+        let overview = { phase: 'M2', activeIds: ['T01', 'T02'], deliveryIds: [], otherActiveIds: [], decisionIds: [], blockerIds: [], unknownIds: [], historyIds: [] };
+        if (state.signals) {
+          tasks[0].status = parseStatus(ownerStatus('T01', { 优先级: '8', 当前阻塞: 'ACTIVE: 同文 <img src=x>', 需用户决定: 'REQUIRED: 同文选择' }), 'T01');
+          tasks[1].status = parseStatus(ownerStatus('T02', { 优先级: '1', 当前阻塞: 'ACTIVE: 同文 <img src=x>', 需用户决定: 'REQUIRED: 同文选择', 单一statusowner: 'child-owner' }), 'T02');
+          tasks[1].status.owner = 'child-owner';
+          tasks[1].links = { kind: 'subtask', parent: { state: state.unknownRelation ? 'unknown' : 'known', targetId: 'T01', reason: state.unknownRelation ? 'fixture 未核实关系' : '' }, coLead: { state: 'known', value: 'fixture' } };
+          overview = humanOverview(tasks);
+        }
         const digest = value => createHash('sha256').update(JSON.stringify(value.status)).digest('hex');
         const common = { version: 1, readId: String(++readId), registryFingerprint, generatedAt: state.generatedAt, startedAt: state.generatedAt, completedAt: state.generatedAt };
         let body;
@@ -223,6 +231,21 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
       await page.screenshot({ path: path.join(outputDir, name) }); screenshots.push(name);
     }
     checks.push('Both 390px themes preserve UTC/source/wait text, keyboard access and bounded layout');
+    await closeDialog();
+    fixture.setState({ signals: true }); await refresh();
+    for (const selector of ['#blockers', '#decisions']) {
+      const signals = page.locator(selector);
+      assert.equal(await signals.locator('.signal-group').count(), 1);
+      assert.deepEqual(await signals.locator('.task-row .task-code').allTextContents(), ['T02', 'T01']);
+      assert.match(await signals.innerText(), /child-owner/);
+      assert.match(await signals.innerText(), /timing-fixture/);
+      assert.equal(await signals.locator('img').count(), 0);
+    }
+    fixture.setState({ signals: true, unknownRelation: true }); await refresh();
+    assert.equal(await page.locator('#blockers .signal-group').count(), 2);
+    assert.match(await page.locator('#blockers').innerText(), /关系未确认/);
+    assert.match(await page.locator('#blockers').innerText(), /fixture 未核实关系/);
+    checks.push('Priority signal groups retain both owners and literal text; unknown target relations remain separate');
     assert.deepEqual(errors, []); checkpoint();
     return { checks, screenshots, pageErrors: errors, observation: 'fixture-only parser/UI; no PG, registry, main proof or deployment validation' };
   } finally { page.off('pageerror', onError); }
