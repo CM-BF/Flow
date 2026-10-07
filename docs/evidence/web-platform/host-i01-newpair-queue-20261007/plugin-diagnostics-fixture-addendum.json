@@ -1,0 +1,38 @@
+{
+  "recordedAt": "2026-10-07T22:09:15.328926+00:00",
+  "status": "STATIC_FIXTURE_FEASIBILITY_ONLY",
+  "sourceHead": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+  "parentDesign": "/private/tmp/root-plugin-diagnostics-minimal-design-20261007.json",
+  "peer": "workspace_panels_owner / gpt-6-astra ultra",
+  "files": [
+    {
+      "path": "apps/web/src/plugins/fixture/main.tsx",
+      "bytes": 11924,
+      "sha256": "b29747baa52d8c62840b269c018450a0267ab34b92ce2e9a3855b78b0c3c1501"
+    },
+    {
+      "path": "apps/web/src/plugins/fixture/index.html",
+      "bytes": 324,
+      "sha256": "84e834c59ac1ee2e4f2e0922858430e39a8b4204cd9c8bd763e2ec4dc1c5a1b0"
+    }
+  ],
+  "confirmed": [
+    "Fixture creates a real standalone PluginHost, not the production PluginSettings/PluginProvider/AppPluginSession.",
+    "Existing Host diagnostics renders registry state and command log; it does not read getDiagnostics.",
+    "Existing Break Notes render uses App broken state and therefore re-renders the ancestor; moving only the toggle without a renderer notification would not actually trigger a new render.",
+    "Fail App bridge can be configured before the measurement and allowed to stabilize. The subsequent active command fails before log.set, avoiding that incidental ancestor refresh."
+  ],
+  "minimalCandidate": [
+    "Preserve existing scenarios and add a fixture-only renderer with its own local state/button that throws through the real PluginView/RenderBoundary. Do not directly inject reportRenderError to stand in for a rendered failure.",
+    "Extract the existing production diagnostic subscription and display into a small host-parameter component shared by Settings and fixture, if the owner confirms this is the smallest real seam. No fake AppPluginSession cast and no duplicate store.",
+    "Assert rendered error fallback and diagnostic phase/message appear with unchanged ancestor render count and no registry lifecycle publication.",
+    "Alternatively use a suitable real App fixture with actual AppPluginSession for full Settings coverage; no claim that the presently read fixture already supports that."
+  ],
+  "testScope": "A shared production diagnostics component plus real host/error-boundary path can establish the notification behavior; it is not whole Settings Dialog or center management authority acceptance.",
+  "execution": {
+    "projectWrites": 0,
+    "tests": 0,
+    "services": 0,
+    "newClaims": 0
+  }
+}

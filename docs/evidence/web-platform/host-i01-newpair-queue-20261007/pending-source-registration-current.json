@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-07T21:32:42.604Z",
-  "state": "ORIGINAL_SOLE_D05_MAPPING_PENDING",
+  "recordedAt": "2026-10-07T22:09:31.899Z",
+  "state": "PRIOR_THREE_CLOSED_TWO_NEW_CANONICAL_SOURCES_PENDING_D05",
   "authority": "Request only; not parallel sourcewriter or generatedprogress. Preserve owner unique status and exactclaim. Do not retake activeclaims.",
   "actualObservation": "Arc/X01 root20:39 API208+2 fixed; laterTIMING02 take20:40:08 andmanager-readownstatus20:41:20/source-switch. No newGET/claimed-live-registration.",
   "requests": [
@@ -59,7 +59,7 @@
       },
       "parentTask": "D01",
       "claimId": "d26ac1d8-edf1-413d-ae67-68ce807e9fca",
-      "claimVersion": 1,
+      "claimVersion": 2,
       "scopeCount": 9,
       "claimCreatedAt": "2026-10-07T20:40:08.317Z",
       "ownerImplementationStart": "2026-10-07T20:41:20.224Z",
@@ -68,10 +68,57 @@
         "bytes": 1648,
         "sha256": "dfe371b7b085da92f045cc37fe54a6157409ef40fde6828f27b309035bbb165f"
       },
-      "history": "ExistingplannedTIMING02, notopeningcompletedTIMING01/DASHSUM01. UIreadlayeralsofulfillsWPF00137tracking."
+      "history": "ExistingplannedTIMING02, notopeningcompletedTIMING01/DASHSUM01. UIreadlayeralsofulfillsWPF00137tracking.",
+      "claimState": "RELEASED",
+      "claimReleasedAt": "2026-10-07T21:53:03.496Z",
+      "ownerFinal": "ae8c93042eaec15c54331b9bba31062de49231a2",
+      "main": "2c96618a1b72472b91bfbcbaaf1758478f8b8873",
+      "sourceAuthority": "Same uniqueownerstatus final delivered; no retake needed for registry/deployment."
+    },
+    {
+      "taskId": "GDEP01",
+      "parentTask": "FLOW-001",
+      "source": {
+        "owner": "b01_bounded_reads",
+        "lead": "mika",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-dependency-batch",
+        "branch": "codex/goal-dependency-batch",
+        "planDir": "plans/gdep01-dependency-batch",
+        "evidenceDir": "docs/evidence/gdep01-dependency-batch",
+        "statusPath": "plans/gdep01-dependency-batch/status.md"
+      },
+      "claimId": "f2442a2f-357e-42d5-bb3d-da1c261684ab",
+      "claimVersion": 1,
+      "scopeCount": 5,
+      "claimCreatedAt": "2026-10-07T22:04:52Z",
+      "ordinaryActualStart": "2026-10-07T22:03:42Z",
+      "checkpoint": "3c0697986dfd9456d8afbf322004b97dbd360270 clean",
+      "state": "PENDING_REGISTRY_SOURCE",
+      "boundary": "Ordinarypreparationstart precedes claim; no inferred productwritebeforeclaim."
+    },
+    {
+      "taskId": "X01-VERIFIER-CENTER-WIRING01",
+      "parentTask": "X01",
+      "source": {
+        "owner": "db_transaction_owner",
+        "lead": "mika",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-center-wiring",
+        "branch": "codex/plugin-verifier-center-wiring",
+        "planDir": "plans/x01-verifier-center-wiring",
+        "evidenceDir": "docs/evidence/x01-verifier-center-wiring",
+        "statusPath": "plans/x01-verifier-center-wiring/status.md"
+      },
+      "claimId": "daf9316f-13dc-4404-ba04-f1033f2eed2e",
+      "claimVersion": 1,
+      "scopeCount": 6,
+      "claimCreatedAt": "2026-10-07T22:05:39Z",
+      "ordinaryActualStart": "2026-10-07T22:04:21Z",
+      "checkpoint": "base69a71 ownmetadata dirty",
+      "state": "PENDING_REGISTRY_SOURCE",
+      "boundary": "ExacttaskId confirmed from uniqueownerstatus heading; explicitplan/evidenceDirs mustnot derive extra01."
     }
   ],
-  "requestedAction": "Original D05 writer register three existing unique sources then normalowned reload preservingACCESS; report liveactual sourceCurrent/matchesSource. No registry/services touched byWebmanager. Personalrepair remainspriority.",
+  "requestedAction": "Original existing D05 owner: add only two newly supplied unique sources after exact ownstatus/taskId verification. Preserve prior211 deployment and three closedsources. No secondwriter or repeatedAPIpoll; claimvisible doesnotmeanregistered.",
   "latestObservation": {
     "source": "Mika21:19:43 readonly",
     "main": "3f5ee09f",
@@ -81,6 +128,50 @@
     "responseBytes": 27,
     "summaryTaskCount": 208,
     "VARCount": 0,
-    "noNewManagerPoll": true
+    "noNewManagerPoll": true,
+    "additional": "Mika21:32:39 and later second exactVARtaskGET still404; no manager repeatedGET. User can seeclaim but no authoritative status drilldown."
+  },
+  "timingMainIntegration": {
+    "main": "2c96618a1",
+    "source": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+    "receipt": "docs/evidence/i02/timing02-integration-receipt.json",
+    "actualEvidence": "98pure+6browser+2PNG approved; no repeatgreen",
+    "ownerClose": "ae8c930 clean/all9STOP/d26v2RELEASED21:53:03.496",
+    "deployment": "CONFIRMED_211_SOURCE_CURRENT_22:01:36.229; owner finishmetadata pending"
+  },
+  "acceptedOwner": "Original",
+  "acceptedClaim": "3a6240d0 v6",
+  "candidate": "d931003d8",
+  "candidateTasks": 211,
+  "actualTasksLastObserved": 208,
+  "actualReceipt": {
+    "file": "dashboard-three-canonical-211-live.json",
+    "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/three-canonical-211-live.json",
+    "bytes": 11920,
+    "sha256": "e44ac65a873662772fa77919deb8d3b55d4282cc4da355d9a87307836c16ae5c"
+  },
+  "actualMain": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
+  "actualAt": "2026-10-07T22:01:36.229Z",
+  "actualTaskCount": 211,
+  "sourceCurrent": {
+    "WPF-DASHBOARD-TIMING02": true,
+    "WPF-WORKSPACEARC01": true,
+    "X01-VERIFIER-ADMISSION-RESULT01": true
+  },
+  "closedActual211": {
+    "actualReceipt": {
+      "file": "dashboard-three-canonical-211-live.json",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/three-canonical-211-live.json",
+      "bytes": 11920,
+      "sha256": "e44ac65a873662772fa77919deb8d3b55d4282cc4da355d9a87307836c16ae5c"
+    },
+    "actualMain": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
+    "actualAt": "2026-10-07T22:01:36.229Z",
+    "actualTaskCount": 211,
+    "sourceCurrent": {
+      "WPF-DASHBOARD-TIMING02": true,
+      "WPF-WORKSPACEARC01": true,
+      "X01-VERIFIER-ADMISSION-RESULT01": true
+    }
   }
 }

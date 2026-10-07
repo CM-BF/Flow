@@ -1,0 +1,52 @@
+{
+  "scope": "Existing Codex IAB at http://127.0.0.1:4320/; read-only UI acceptance after Original D05 deployment",
+  "observedAt": "2026-10-07T22:06:00Z approximately; exact page snapshot timestamp 2026/10/7 15:05:58 America/Los_Angeles",
+  "facts": [
+    "Tab 3 author summary already showed all plans/evidence 211 with original user expanded historical take preserved.",
+    "Tab 1 had old page assets; refreshed this existing non-editing tab once, then confirmed local America/Los_Angeles GMT-7 timestamps and explicit-parent grouping rendered.",
+    "New GDEP01 and X01-VERIFIER-CENTER-WIRING01 claims expanded to show lead/worker, branch/worktree and precise scopes. Both explicitly report progress source not registered."
+  ],
+  "claims": [
+    {
+      "task": "GDEP01",
+      "id": "f2442a2f-357e-42d5-bb3d-da1c261684ab",
+      "version": 1,
+      "lead": "mika",
+      "worker": "b01_bounded_reads",
+      "branch": "codex/goal-dependency-batch",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-dependency-batch",
+      "scope": [
+        "apps/server/src/goals/commands.ts",
+        "apps/server/src/goals/dependency-content.test.ts",
+        "apps/server/src/goals/dependency-content.ts",
+        "docs/evidence/gdep01-dependency-batch",
+        "plans/gdep01-dependency-batch"
+      ]
+    },
+    {
+      "task": "X01-VERIFIER-CENTER-WIRING01",
+      "id": "daf9316f-13dc-4404-ba04-f1033f2eed2e",
+      "version": 1,
+      "lead": "mika",
+      "worker": "db_transaction_owner",
+      "branch": "codex/plugin-verifier-center-wiring",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-center-wiring",
+      "scope": [
+        "apps/server/src/index.ts",
+        "apps/server/src/main.ts",
+        "apps/server/src/plugin-runtime/routes.ts",
+        "apps/server/src/plugin-verification-wiring.test.ts",
+        "docs/evidence/x01-verifier-center-wiring",
+        "plans/x01-verifier-center-wiring"
+      ]
+    }
+  ],
+  "followup": "Manager informed that parent WPF-MATURE-05 still describes older failed HTTP attempts and should reconcile its unique status with third HTTP pass and later first-browser failure/cookie-entry correction; no other owner record modified.",
+  "limitations": [
+    "This does not validate personal product availability; did not follow product links, load credentials or submit forms.",
+    "Read-only claim display is not permission to take work; atomic coordination remains authoritative.",
+    "No new browser process, tests, or duplicate deployment. No claim that all historical missing task timestamps were repaired."
+  ],
+  "userState": "Preserved tab3 old expanded observation. Tab1 retained expanded new take facts.",
+  "recordedAt": "2026-10-07T22:06:39.866758+00:00"
+}

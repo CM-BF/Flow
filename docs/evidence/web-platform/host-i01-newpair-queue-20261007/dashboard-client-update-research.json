@@ -1,0 +1,54 @@
+{
+  "recordedAt": "2026-10-07T22:08:48.583213+00:00",
+  "status": "OBSERVED_UI_VERSION_GAP_RESEARCH_ONLY",
+  "context": "Root existing-IAB acceptance after D05 deploy211; no new browser process or product credentials read.",
+  "observation": [
+    "Existing tab3 continued to receive 211 current author facts while retaining old ungrouped rendering and raw UTC timing text.",
+    "Existing tab1 still displayed historical9-source UI until one explicit reload; after reload showed211, local GMT-7 timestamps and grouped related tasks.",
+    "Data refresh and page-code refresh are distinct. Current successful author sync badge does not itself prove current rendering version."
+  ],
+  "fixedReadOnlySource": {
+    "head": "b7915e276374b8bffac3089d48a4bca0f18430d8",
+    "disclaimer": "Source reference read from root checkout HEAD; not asserted equal to deployed D05 commit.",
+    "files": [
+      {
+        "path": "apps/execution-dashboard/src/server.mjs",
+        "bytes": 5890,
+        "sha256": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4"
+      },
+      {
+        "path": "apps/execution-dashboard/public/app.js",
+        "bytes": 43246,
+        "sha256": "40e56b5c3418f5fae4d2bab65d35fe2ecad36c01847609c4113535ed76ee2044"
+      },
+      {
+        "path": "apps/execution-dashboard/src/read-model.mjs",
+        "bytes": 9470,
+        "sha256": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920"
+      }
+    ]
+  },
+  "sourceFacts": [
+    "Server serves fixed public-file allowlist and no-store response headers.",
+    "Summary includes schema version1, generatedAt and registryFingerprint, but none of these identifies the page asset version.",
+    "Client refresh fetches summary and assignments, updates author facts, and repeats every20s when visible; it does not reload the loaded page modules."
+  ],
+  "candidateRequirement": "Keep author-data synchronization status and loaded-interface version separate; if a newer deployed interface is observed, offer an explicit update action without silently closing an open detail or resetting selection.",
+  "acceptanceIdeas": [
+    "Version is derived from the actual served asset set, not changing status files or metadata-only Git commits.",
+    "No new per-poll Git scan, artifact inventory or provider call. Reuse a bounded current response where appropriate.",
+    "Coherence must be defined if assets change on disk while an old server remains running; a startup label alone must not misidentify newly served file bytes.",
+    "Exercise one open page across an actual controlled asset-version change: data stays current, update prompt appears, no automatic navigation or loss of expanded review.",
+    "Missing/unrecognized version remains unknown and does not fabricate stale or current; normal data failures keep their existing meaning.",
+    "Explicit update action loads new interface and preserves safe navigation context where supported."
+  ],
+  "coordination": "Candidate for existing D05/dashboard followup plan. Original remains registry/deploy authority; manager checks existing backlog and claims before assigning any implementation. Root does not take it or create a second dashboard.",
+  "limits": "This is an observed usability gap plus bounded source rationale, not a security finding or a measured performance regression. Historical tab1 staleness cause beyond old loaded page was not investigated.",
+  "cleanCode": "One derived asset identity, separate from owner status facts; avoid a second editable progress source or broad reload framework.",
+  "execution": {
+    "projectWrites": 0,
+    "tests": 0,
+    "newServices": 0,
+    "newClaims": 0
+  }
+}

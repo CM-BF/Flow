@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-07T21:54:38.451466+00:00",
+  "source": "cb3ca8ec7ed4611097a3ab7414f9591526ccd896",
+  "head": "68d7c5bd56f622b7d9f5476560a5cb5e704bf22a",
+  "remote": "68d7c5bd56f622b7d9f5476560a5cb5e704bf22a",
+  "dirty": "",
+  "claim": "b4d7d7fd-f215-4882-b7f3-2afc133a0365 v1 exact4 ACTIVE",
+  "all4Stop": true,
+  "state": "REVIEWED_SOURCE_BOUND_NOT_RUN",
+  "binding": {
+    "path": "/private/tmp/rel01-e15-c1/binding.json",
+    "bytes": 50732,
+    "sha256": "bf293cbf66e0866036a3aa024ba78cee5c7366cfc783a214370756d0b564198c"
+  },
+  "manifest": {
+    "path": "/private/tmp/rel01-e15-c1/manifest.json",
+    "bytes": 4403,
+    "sha256": "dc8af3378d692f9fba47d4b11f7803c027afa41c619c3238853ecf46143cc12e"
+  },
+  "packetBytes": 230799,
+  "evidenceBytes": 60702,
+  "coordinationSnapshots": {
+    "/private/tmp/timing02-main-close-fresh-20261007.json": 192216,
+    "/private/tmp/timing02-main-close-release-fresh-20261007.json": 192216,
+    "/private/tmp/release01-e15-fresh-claims-20261007.json": 192216
+  },
+  "engineeringChildren": 0,
+  "syntaxOrProductChecks": 0,
+  "onlyMetadataParser": "errors[]/humanMissing[]; historic task start UNKNOWN retained",
+  "runtimeGrant": null,
+  "deadline": "2026-10-07T22:05:43Z",
+  "timingMainClose": "ae8c93042eaec15c54331b9bba31062de49231a2 clean; d26 v2 RELEASED21:53:03.496Z; zero post-release writes"
+}

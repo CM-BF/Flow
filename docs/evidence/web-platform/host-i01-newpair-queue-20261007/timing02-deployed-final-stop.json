@@ -1,0 +1,42 @@
+{
+  "taskId": "WPF-DASHBOARD-TIMING02",
+  "recordedAt": "2026-10-07T22:11:18.614641+00:00",
+  "segmentStart": "2026-10-07T22:07:52.990380Z",
+  "deadline": "2026-10-07T22:13:52.990380Z",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability",
+  "branch": "codex/dashboard-task-timing-readability",
+  "finalHead": "fb418b53e2866e6dd498d458493ea1b12fab30b0",
+  "remoteHead": "fb418b53e2866e6dd498d458493ea1b12fab30b0",
+  "clean": true,
+  "allTwoScopesStopped": true,
+  "postReleaseProjectWrites": 0,
+  "taskStartedAt": "2026-10-07T20:41:20.224Z",
+  "taskCompletedAt": "2026-10-07T22:09:07.984Z",
+  "completionSource": "Owner verified all original acceptance conditions; timestamp is actual final acceptance verification, not inferred from commit or approximate UI observation.",
+  "claim": {
+    "claimId": "96b557dd-d41a-4464-a01e-fc7e69743f5b",
+    "version": 2,
+    "state": "released",
+    "committedAt": "2026-10-07T22:09:53.133Z"
+  },
+  "releaseReceipt": {
+    "path": "/private/tmp/timing02-deployed-close-20261007/release-receipt.json",
+    "bytes": 714,
+    "sha256": "eea07afac02d92c9c4822d4895182bb0c7501d270006224277bc9bdddb457fd6"
+  },
+  "verification": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/deployment-close/verification.json",
+    "bytes": 3623,
+    "sha256": "1e06cea667eeef110d732a56609bc70c9a20f9bb7559a6a4c533a9f7e23e7566"
+  },
+  "parser": {
+    "errors": [],
+    "humanMissing": [],
+    "timingIssues": []
+  },
+  "productChecksOrRuntimeRerun": false,
+  "actualChildren": 0,
+  "budgetBytes": 262144,
+  "accountingMethod": "Conservative current bytes: every file in own TMP segment + every deployment-close evidence file + full current plan/status/review documents; includes this final receipt, excludes unchanged historical artifacts. Not allocated bytes.",
+  "accountedBytes": 44721
+}

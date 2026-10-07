@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:51:38.643Z；恢复新产物已构建获审，Arc首次界面前置失败但资源已归还；TIMING已主线接收，个人仍未恢复。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:14:49.459Z；恢复验证已通过并归还，个人仍停止；TIMING已部署211并完整交付，原作者已释放。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 草稿恢复、文件选择浮层中的恢复弹窗窄屏双主题与组合工作区两项HTTP检查已通过；个人服务仍停止，新网页未切换。 |
+| 当前产出 | 新恢复产物的四版本兼容与三角色冷启动检查已通过；看板已部署紧凑时间和事项归组，211项中三条新来源都可展开查看。个人服务仍待恢复。 |
 | 下一可用交付 | 先沿原流程恢复个人安装接单，再完成已验证网页切换；组合工作区和文件选择浮层按独立候选继续验收。 |
-| 当前阻塞 | ACTIVE: 个人修复产物已构建通过，新版本冷启动与四页兼容尚未完成；个人仍停止。Arc首界面前置失败，需定点修复与独立新验证。 |
+| 当前阻塞 | ACTIVE: 个人仍held23停止；恢复验证结果正在接收，尚未完成个人迁入与网页切换。Arc入口已修，四组浏览器仍待新独立验证。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Arc首浏览器失败但21:49:26.737154Z完整归还；当前actual空，原owner下一次仅30s只读现况观测，个人仍未接单。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：恢复两窗与AV R2均已精确归还；AV5例失败原件保留，无actual/NEXT，个人caller待最终批准；预算数值只读唯一forward表。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

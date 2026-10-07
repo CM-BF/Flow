@@ -1,0 +1,368 @@
+{
+  "recordedAt": "2026-10-07T22:05:07.190910+00:00",
+  "reviewer": "root / gpt-6-astra ultra independent of w01 producer",
+  "status": "APPROVED_SCOPED_ACTUAL_RESULT",
+  "blockingFindings": [],
+  "scope": "RELEASE-E15-FOUR-APP-COMPATIBILITY-20261007-ONCE runtime results, archive equality and exact return; no new execution",
+  "target": {
+    "implementation": "cb3ca8ec7ed4611097a3ab7414f9591526ccd896",
+    "executionHead": "68d7c5bd56f622b7d9f5476560a5cb5e704bf22a",
+    "backend": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+      "manifestDigest": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+      "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488"
+    }
+  },
+  "evidence": [
+    {
+      "path": "/private/tmp/rel01-e15-c1/terminal.json",
+      "bytes": 405,
+      "sha256": "1311a73e8f65cc1a482342ded266a5745c734db8b3ee5c6c45d98e2b5a715611"
+    },
+    {
+      "path": "/private/tmp/rel01-e15-c1/result.json",
+      "bytes": 105464,
+      "sha256": "766c386d36b8a6eb73850c6e48c49a1fc8c0dd7bcca1c8d4b502864707a66040"
+    },
+    {
+      "path": "/private/tmp/rel01-e15-c1/budget.json",
+      "bytes": 106,
+      "sha256": "b6ed76651af01bb8c591c1de7363cd7d5b9ad062c521e25a78fb84886dffa532"
+    },
+    {
+      "path": "/private/tmp/rel01-e15-c1/raw-manifest.json",
+      "bytes": 11474,
+      "sha256": "bfcd27ad4d8dc13451c5d21ab0322abe344ea3a680bfe9d8a0f5cc0e1bb799fa"
+    },
+    {
+      "path": "/private/tmp/rel01-e15-c1-actual-q1vvidpr/outer-exit.json",
+      "bytes": 419,
+      "sha256": "b8a857941486d87d57f3d33afc35b229924c172eebdfad5d18d98ca79a7be764"
+    },
+    {
+      "path": "/private/tmp/rel01-e15-c1-actual-q1vvidpr/return-receipt.json",
+      "bytes": 3421,
+      "sha256": "8eb4ed449b2b0d9bd61cb23aaafeba0e48b4b0a6d2f9cbd8f2ac5e1e201c7c0a"
+    },
+    {
+      "path": "/private/tmp/rel01-e15-c1/raw/release-e15-20261007-215736-q1vvidpr/fixture/browser-results.json",
+      "bytes": 24918,
+      "sha256": "5dc5df9ce8cf0081a7e30c13659f39f450077c49fff643a9b312d74ba2489272"
+    },
+    {
+      "path": "/private/tmp/rel01-e15-c1/raw/release-e15-20261007-215736-q1vvidpr/fixture/cookie-policy.json",
+      "bytes": 785,
+      "sha256": "1efd0435e5cb061364c9d36802017d92cfc9dc2da02d829f8cecfc8f539d70e8"
+    }
+  ],
+  "rawVerification": {
+    "files": 58,
+    "bytes": 773536,
+    "allOriginalHashesMatched": true,
+    "allCanonicalArchiveHashesMatched": true,
+    "noPathTraversalOrDuplicate": true
+  },
+  "reports": [
+    {
+      "label": "retained-461a",
+      "webArtifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      },
+      "compatibilityId": "41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698",
+      "canonicalReport": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/compatibility-state/web-compatibility/41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698/report.json",
+        "bytes": 791,
+        "sha256": "41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698"
+      },
+      "checks": [
+        {
+          "check": "read",
+          "sha256": "99d1bece1fec418cd5ea71dd4a1f50c847e3d44be90baf509bc23406b05fe0fd",
+          "observations": {
+            "ownerAuthenticated": true,
+            "conversationBound": true,
+            "taskBound": true
+          }
+        },
+        {
+          "check": "send",
+          "sha256": "e2c0cb57d2f8eed5bbd04b66769d54e87ea339374f4c63ff0d824e72e5c8087d",
+          "observations": {
+            "acceptedTurnBound": true,
+            "requestedProfilePreserved": true
+          }
+        },
+        {
+          "check": "recover",
+          "sha256": "bdf111c35ddfb960fb46b07ff3bae24e75dbfa59b37543edddcfc5159f70e278",
+          "observations": {
+            "sameKey": true,
+            "sameBody": true,
+            "sameTurn": true
+          }
+        },
+        {
+          "check": "negotiation",
+          "sha256": "9c1f528246aed57c4ddab509ec025bd42fb33e1fc25cb135f99f22874dd6d554",
+          "observations": {
+            "legacyReadable": true,
+            "streamHeaderHandled": true,
+            "profileHeaderHandled": true
+          }
+        }
+      ]
+    },
+    {
+      "label": "retained-caa1",
+      "webArtifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "compatibilityId": "6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117",
+      "canonicalReport": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/compatibility-state/web-compatibility/6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117/report.json",
+        "bytes": 791,
+        "sha256": "6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117"
+      },
+      "checks": [
+        {
+          "check": "read",
+          "sha256": "8eb4608ab36c7a65fa8573f356a134223d143d4f8c8749d7261bc32f0fa2e053",
+          "observations": {
+            "ownerAuthenticated": true,
+            "conversationBound": true,
+            "taskBound": true
+          }
+        },
+        {
+          "check": "send",
+          "sha256": "c8250410107bc55ef7ed39e6137bf8dc101e0bdfbdc90a2f65d297d499a618ec",
+          "observations": {
+            "acceptedTurnBound": true,
+            "requestedProfilePreserved": true
+          }
+        },
+        {
+          "check": "recover",
+          "sha256": "f59535cf3cc121e8c039d3dd5ccf3b26300bb29d456541391fe3af27f9a6d43a",
+          "observations": {
+            "sameKey": true,
+            "sameBody": true,
+            "sameTurn": true
+          }
+        },
+        {
+          "check": "negotiation",
+          "sha256": "55476bdc5dfbca64854d94d8b19ccde9f9046d0747f84416f26be111ac0b6d8f",
+          "observations": {
+            "legacyReadable": true,
+            "streamHeaderHandled": true,
+            "profileHeaderHandled": true
+          }
+        }
+      ]
+    },
+    {
+      "label": "retained-d629",
+      "webArtifact": {
+        "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+        "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+      },
+      "compatibilityId": "9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1",
+      "canonicalReport": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/compatibility-state/web-compatibility/9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1/report.json",
+        "bytes": 791,
+        "sha256": "9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1"
+      },
+      "checks": [
+        {
+          "check": "read",
+          "sha256": "8964854e971a86dd689933241322acc5b4be86ca9c62fd43edebabed957dace1",
+          "observations": {
+            "ownerAuthenticated": true,
+            "conversationBound": true,
+            "taskBound": true
+          }
+        },
+        {
+          "check": "send",
+          "sha256": "8b217e91bb97812e6784eb59b3316fa7cb00a9c01f1e73e007cc8e5a357af50d",
+          "observations": {
+            "acceptedTurnBound": true,
+            "requestedProfilePreserved": true
+          }
+        },
+        {
+          "check": "recover",
+          "sha256": "28bb57c08117bcdd4c6fcac4d2ad58d511237766816d926e83f0c1e963be16be",
+          "observations": {
+            "sameKey": true,
+            "sameBody": true,
+            "sameTurn": true
+          }
+        },
+        {
+          "check": "negotiation",
+          "sha256": "5257759784c32bcb12d4d8c9164afb1a4e076edfc2b8800ef662f114480b20a6",
+          "observations": {
+            "legacyReadable": true,
+            "streamHeaderHandled": true,
+            "profileHeaderHandled": true
+          }
+        }
+      ]
+    },
+    {
+      "label": "recovery-779a",
+      "webArtifact": {
+        "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+        "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+        "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+      },
+      "compatibilityId": "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c",
+      "canonicalReport": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/compatibility-state/web-compatibility/b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c/report.json",
+        "bytes": 791,
+        "sha256": "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c"
+      },
+      "checks": [
+        {
+          "check": "read",
+          "sha256": "e7f39927f453d42210141ebbd1b87f09d618e97df1de71d23159c989047e3019",
+          "observations": {
+            "ownerAuthenticated": true,
+            "conversationBound": true,
+            "taskBound": true
+          }
+        },
+        {
+          "check": "send",
+          "sha256": "f1f3fb95342b49f4c844d661ceb42ca5d849af058d4229c06c1b4f573e995034",
+          "observations": {
+            "acceptedTurnBound": true,
+            "requestedProfilePreserved": true
+          }
+        },
+        {
+          "check": "recover",
+          "sha256": "3d06e58fc8f53cfe044498f0174377ec99020ec3df3c96e3f76b365490995bfb",
+          "observations": {
+            "sameKey": true,
+            "sameBody": true,
+            "sameTurn": true
+          }
+        },
+        {
+          "check": "negotiation",
+          "sha256": "f42781ecbca7049de4da4effeecfcbcc35b0d4ce4a2d0164963f4bf25b2027c6",
+          "observations": {
+            "legacyReadable": true,
+            "streamHeaderHandled": true,
+            "profileHeaderHandled": true
+          }
+        }
+      ]
+    }
+  ],
+  "recoveryCookieEvidence": {
+    "cookieHidden": true,
+    "tokenNotStored": true,
+    "cookieRead": true,
+    "explicitRestoreNoPost": true
+  },
+  "recoveryLogoutEvidence": {
+    "actualHeldHeaders": true,
+    "oldReadRevoked": true,
+    "oldStreamsClosed": true,
+    "newerCookiePreserved": true,
+    "newerReadReady": true,
+    "runningTaskPreserved": true
+  },
+  "boundary": {
+    "runtime": "native-chrome-sibling-fixed-http-proxy-without-custom-outer-write-or-egress-sandbox",
+    "providerQueries": 0,
+    "personalDeployment": "NOT_RUN",
+    "fourReportsBindBackendHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+    "backendArtifactBinding": "e15 tuple bound by reviewed preparation, intake and execution; report format has backendHead rather than a backendArtifactId field",
+    "measurement": "PARTIAL_RETAINED_ADOPTION",
+    "consoleErrors": "Intentional truncated-202 transport error and unauthenticated reads are retained; do not describe browser console as empty."
+  },
+  "return": {
+    "state": "FULL_RETURN",
+    "startedAt": "2026-10-07T21:57:36.662404+00:00",
+    "terminalAt": "2026-10-07T21:58:03.876783+00:00",
+    "returnedAt": "2026-10-07T21:58:28.977667+00:00",
+    "parentElapsedMs": 27130.92550006695,
+    "outerElapsedMs": 27214.293500059284,
+    "chargeMs": 27215,
+    "limitMs": 180000,
+    "unusedMs": 152785,
+    "budgetState": "CLOSED_NO_TRANSFER_NO_RETRY",
+    "pidAndPgidChecks": [
+      {
+        "kind": "PID",
+        "id": 486,
+        "state": "ESRCH"
+      },
+      {
+        "kind": "PGID",
+        "id": 486,
+        "state": "ESRCH"
+      },
+      {
+        "kind": "PID",
+        "id": 806,
+        "state": "ESRCH"
+      },
+      {
+        "kind": "PGID",
+        "id": 806,
+        "state": "ESRCH"
+      },
+      {
+        "kind": "PID",
+        "id": 6944,
+        "state": "ESRCH"
+      },
+      {
+        "kind": "PGID",
+        "id": 6944,
+        "state": "ESRCH"
+      }
+    ],
+    "innerEofStreams": 4,
+    "outerEofStreams": 2,
+    "allDropZero": true,
+    "signals": [],
+    "ownedDatabase": {
+      "at": "2026-10-07T21:58:28.928Z",
+      "databaseName": "flow_release_86bbcf6319d64d08aa8b6169a3e0adc9",
+      "databases": 0,
+      "connections": 0,
+      "adminPoolClosed": true,
+      "error": null
+    },
+    "ownedScratchAndProfileAbsent": true,
+    "adminInputExactRemoved": true
+  },
+  "limitations": [
+    "Independent review reads original evidence and hashes canonical copies; it does not rerun browser, product imports, PostgreSQL, provider, personal services or OS probes.",
+    "PARTIAL_RETAINED_ADOPTION is preserved; sample maxima are not asserted to be whole-system peak usage.",
+    "Public context is the owned local HTTP fixture/proxy, not the held personal installation.",
+    "Prior cd27 reports and b692 NOT_RUN/failed cold history remain distinct.",
+    "Cold R2 evidence and review are separate; this return covers C4 only.",
+    "Main integration and personal restoration require the Original lead separate exact workflow."
+  ],
+  "cleanCodeReview": {
+    "time": "2026-10-07T22:05:07.191333+00:00",
+    "scope": "Actual evidence and report boundaries",
+    "finding": "Keep four inner streams, outer and parent timing, backend-head versus artifact binding, and simulated versus personal contexts explicit.",
+    "resolution": "Recorded without changing source or rerunning green checks.",
+    "unresolved": []
+  }
+}

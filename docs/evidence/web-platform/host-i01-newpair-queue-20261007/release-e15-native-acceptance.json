@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-07T21:52:06.371397+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-fixed-http-proxy-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "b31b484beb75cfc291a24adca3e24927b2a418eaa147eaaca8a7124d6ef85361",
+  "workerSha256": "fcbe66ed3ca2160ea4658caeff974f18647257824c739c612be05171e7683ae6",
+  "source": "cb3ca8ec7ed4611097a3ab7414f9591526ccd896",
+  "backend": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "manifestDigest": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-release-e15-preparation-review-20261007.json",
+    "bytes": 6635,
+    "sha256": "cc65d6498b4d3fd532e58d1504dcff013c2323c26cd43a82a24a763dfc7b47a3"
+  },
+  "scope": "Fixed e15/880060 plus unchanged four Web artifacts and public-context policy. Exact prior native callers reused, new independent180s including30s cleanup/12configuredPG/ownedChrome+proxy+profile. No personal or provider operation.",
+  "freshManagerHandoffRequired": true,
+  "runtimeGranted": false
+}

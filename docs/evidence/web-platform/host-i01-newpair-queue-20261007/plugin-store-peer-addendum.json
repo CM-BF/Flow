@@ -1,0 +1,29 @@
+{
+  "scope": "Read-only peer qualification of existing root plugin store notification research",
+  "sourceReview": "/private/tmp/root-plugin-store-notification-research-20261007.json",
+  "sourceReviewSha256": "b219a239e0587311871e3145bc8ac281fdfa4a73b71c43f0aea9cf2fd7e22520",
+  "sourceHead": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+  "peer": "workspace_panels_owner / gpt-6-astra ultra",
+  "facts": [
+    "Peer verified the same three source hashes.",
+    "Command and render error records replace diagnostics without notifying Settings subscribers; local child setError/boundary state does not reliably wake Settings.",
+    "Activation failure explicitly records and publishes, so this is not a claim that all diagnostics always remain stale.",
+    "PluginView global registry subscription is not filtered by existing slot subscriptions."
+  ],
+  "qualifications": [
+    "Stable PluginView effect dependencies [host,key] and RenderBoundary key mean unrelated publication does not necessarily reactivate or remount plugins.",
+    "No runtime reproduction of diagnostic visibility failure and no performance regression measurement yet.",
+    "AttachmentComposer boolean snapshot demonstrates a targeted subscription pattern; it does not establish PluginView isolation."
+  ],
+  "next": [
+    "Minimal active-plugin error diagnostic visibility behavior test without opening/closing Settings or unrelated registry publication.",
+    "Measure unrelated-plugin notification/render/commit separately before adding performance complexity."
+  ],
+  "execution": {
+    "projectWrites": 0,
+    "tests": 0,
+    "services": 0,
+    "newClaims": 0
+  },
+  "recordedAt": "2026-10-07T22:06:39.866120+00:00"
+}

@@ -1,0 +1,145 @@
+{
+  "at": "2026-10-07T21:58:28.977667+00:00",
+  "state": "FULL_RETURN",
+  "outer": {
+    "startedAt": "2026-10-07T21:57:36.662404+00:00",
+    "finishedAt": "2026-10-07T21:58:03.876783+00:00",
+    "pid": 486,
+    "pgid": 486,
+    "exitCode": 0,
+    "elapsedMs": 27214.293500059284,
+    "streams": {
+      "stdout": {
+        "received": 473,
+        "kept": 473,
+        "drop": 0,
+        "eof": true
+      },
+      "stderr": {
+        "received": 0,
+        "kept": 0,
+        "drop": 0,
+        "eof": true
+      }
+    },
+    "signals": []
+  },
+  "terminal": {
+    "path": "/private/tmp/rel01-e15-c1/terminal.json",
+    "bytes": 405,
+    "sha256": "1311a73e8f65cc1a482342ded266a5745c734db8b3ee5c6c45d98e2b5a715611"
+  },
+  "result": {
+    "path": "/private/tmp/rel01-e15-c1/result.json",
+    "bytes": 105464,
+    "sha256": "766c386d36b8a6eb73850c6e48c49a1fc8c0dd7bcca1c8d4b502864707a66040"
+  },
+  "budget": {
+    "path": "/private/tmp/rel01-e15-c1/budget.json",
+    "bytes": 106,
+    "sha256": "b6ed76651af01bb8c591c1de7363cd7d5b9ad062c521e25a78fb84886dffa532"
+  },
+  "rawManifest": {
+    "path": "/private/tmp/rel01-e15-c1/raw-manifest.json",
+    "bytes": 11474,
+    "sha256": "bfcd27ad4d8dc13451c5d21ab0322abe344ea3a680bfe9d8a0f5cc0e1bb799fa"
+  },
+  "groups": [
+    {
+      "kind": "PID",
+      "id": 486,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 486,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 806,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 806,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 6944,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 6944,
+      "state": "ESRCH"
+    }
+  ],
+  "scratchAbsent": true,
+  "profileAbsent": true,
+  "adminInput": {
+    "identity": {
+      "dev": 16777234,
+      "ino": 124568644
+    },
+    "exactRemoved": true,
+    "absent": true
+  },
+  "ownedDatabase": {
+    "at": "2026-10-07T21:58:28.928Z",
+    "databaseName": "flow_release_86bbcf6319d64d08aa8b6169a3e0adc9",
+    "databases": 0,
+    "connections": 0,
+    "adminPoolClosed": true,
+    "error": null
+  },
+  "fixtureCleanup": {
+    "databaseName": "flow_release_86bbcf6319d64d08aa8b6169a3e0adc9",
+    "marker": "0a79eb84-a712-422f-8b58-c19db3df3096",
+    "create": "CONFIRMED",
+    "markerWritten": true,
+    "databaseRemoved": true,
+    "centerClosed": true,
+    "proxyClosed": true,
+    "errors": []
+  },
+  "innerStreams": {
+    "worker.stdout": {
+      "received": 69,
+      "kept": 69,
+      "drop": 0,
+      "eof": true
+    },
+    "worker.stderr": {
+      "received": 0,
+      "kept": 0,
+      "drop": 0,
+      "eof": true
+    },
+    "chrome.stdout": {
+      "received": 0,
+      "kept": 0,
+      "drop": 0,
+      "eof": true
+    },
+    "chrome.stderr": {
+      "received": 14006,
+      "kept": 14006,
+      "drop": 0,
+      "eof": true
+    }
+  },
+  "chromeCloseObserved": true,
+  "chargeMs": 27215,
+  "limitMs": 180000,
+  "unusedMs": 152785,
+  "budgetState": "CLOSED_NO_TRANSFER_NO_RETRY",
+  "formalCompatibilityIds": [
+    "41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698",
+    "6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117",
+    "9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1",
+    "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c"
+  ],
+  "peerColdR2": "not observed or touched; this return covers only own window"
+}

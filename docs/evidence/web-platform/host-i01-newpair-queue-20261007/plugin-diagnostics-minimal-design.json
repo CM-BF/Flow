@@ -1,0 +1,70 @@
+{
+  "recordedAt": "2026-10-07T22:07:25.527800+00:00",
+  "status": "RESEARCH_READY_FOR_OWNER_SCOPING_NOT_IMPLEMENTED",
+  "parentResearch": "/private/tmp/root-plugin-store-notification-research-20261007.json",
+  "peerAddendum": "/private/tmp/root-plugin-store-peer-addendum-20261007.json",
+  "fixedSource": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+  "taskIntent": "Plugin failures should update already-open diagnostics promptly without forcing unrelated plugin views to refresh.",
+  "boundedPeerReads": [
+    {
+      "path": "apps/web/test/plugin-host.test.ts",
+      "bytes": 24651,
+      "sha256": "ffcfac5d42aad176554ec8ae316856057ce45550cf4a6ac2a61f399272278b4c"
+    },
+    {
+      "path": "apps/web/test/plugin-host.browser.ts",
+      "bytes": 14582,
+      "sha256": "2b9de2637746835332343c496f4f6ed8f8b724cd6941946f35bb1add36aaab82"
+    }
+  ],
+  "design": {
+    "data": "Preserve the existing single immutable diagnostics array and its 100-entry cap. No second registry, state store or persistence layer.",
+    "notification": "Add a dedicated diagnostics subscriber channel with stable function identity; notify after replacing the diagnostics snapshot. Do not publish the registry or invalidate slot arrays for diagnostic-only errors.",
+    "consumer": "Bind the existing production PluginSettings getDiagnostics snapshot to the dedicated subscription.",
+    "lifecycle": "Unsubscribe detaches callbacks; dispose clears listeners. A diagnostic listener failure must not recursively record itself or replace the original command error.",
+    "scheduling": "Prefer direct diagnostics notification unless mounted evidence demonstrates a need for deferred scheduling. Current observed renderer error is reported in componentDidCatch, not render or getDerivedStateFromError. Do not invent a React render-phase bug.",
+    "possibleDeferredAlternative": "Only if justified: one pending microtask per host, immediate data update, no listener after dispose; requires ordering and cancellation coverage. Not currently required."
+  },
+  "verification": {
+    "hostTests": [
+      "Extend existing async command and bridge error tests near lines346-375: first activate and stabilize plugin, then subscribe diagnostics; error causes diagnostics notification while original error is preserved.",
+      "Observe global and slot subscriber counts/references remain unchanged by diagnostic-only publication.",
+      "Extend stable snapshot tests near376-396: unchanged reads return same reference; actual record produces new frozen snapshot.",
+      "Check cap100, ordering, unsubscribe and dispose for actual diagnostic events."
+    ],
+    "mountedTests": [
+      "Use a production PluginSettings already mounted with a stable ancestor. Trigger an active plugin command failure and renderer-local failure without closing/reopening Settings or causing lifecycle/global publication.",
+      "Verify count/list update, original local fallback behavior remains, and no newly introduced cross-component update warning. Preserve expected development React rendering error instead of suppressing all page errors."
+    ],
+    "coverageGaps": [
+      "Existing browser85-110 renderer retry test and177-220 bridge failure test cover local fallback/alert only.",
+      "Fixture was not read in this bounded research, so existing production Settings mounting and ancestor isolation are not yet established."
+    ]
+  },
+  "primarySources": [
+    {
+      "url": "https://react.dev/reference/react/Component#componentdidcatch",
+      "checkedByRoot": true,
+      "relevance": "Error boundary reporting lifecycle; development error bubbling differs from production."
+    },
+    {
+      "url": "https://react.dev/reference/react/useSyncExternalStore",
+      "checkedByRoot": true,
+      "relevance": "Subscription notification and cached snapshot identity contract."
+    }
+  ],
+  "performanceBoundary": "No measured PluginView performance regression. Measure notification, render and renderer commit counts separately before proposing per-plugin registry subscriptions. Stable effect keys do not imply remount on every global publication.",
+  "cleanCode": {
+    "scope": "One-data-source notification design and test seam",
+    "findings": "Avoid global publication coupling, speculative scheduling, duplicate registry and implementation-mirroring tests.",
+    "resolution": "Separate diagnostic notification responsibility and verify user-visible existing Settings behavior.",
+    "unresolved": "Actual behavior test and exact current main/claim scope must be verified by assigned owner."
+  },
+  "execution": {
+    "projectWrites": 0,
+    "tests": 0,
+    "productImports": 0,
+    "services": 0,
+    "newClaims": 0
+  }
+}
