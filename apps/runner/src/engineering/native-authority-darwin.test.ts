@@ -1,7 +1,7 @@
 import assert from 'node:assert/strict';
 import { readFileSync } from 'node:fs';
 import { test } from 'vitest';
-import { createDarwinWriteProfile, createStockHelperProfile, STOCK_CODEX } from './native-authority-darwin.js';
+import { createDarwinWriteProfile, createStockHelperProfile, createStockReadOnlyProfile, STOCK_CODEX } from './native-authority-darwin.js';
 
 test('policy input rejects noncanonical and executable write aliases', () => {
   assert.throws(() => createDarwinWriteProfile({ root: '/', executable: '/x', writableFile: '/calculator.mjs' }));
@@ -12,6 +12,18 @@ test('policy input rejects noncanonical and executable write aliases', () => {
 // This is an exact, declared fixed input; historical evidence fixture must stay materialized.
 const startupRecipe = readFileSync(new URL('../../../../docs/evidence/eng01j/helper-host/startup-input.sb', import.meta.url), 'utf8');
 const helperPaths = { startupRecipe, directory: '/private/tmp/helper-workspace', runtimeDirectory: '/private/tmp/helper-runtime' };
+
+test('ENG01L read-only profile removes exactly the helper workspace write without widening startup resources', () => {
+  const readonly = createStockReadOnlyProfile(helperPaths), helper = createStockHelperProfile(helperPaths);
+  assert.equal(helper, readonly + '(allow file-write-data (literal "/private/tmp/helper-workspace/calculator.mjs"))\n');
+  assert.equal(readonly.includes('calculator.mjs'), false);
+  assert.equal(readonly.match(/\(allow file-read\* file-write\*/g)?.length, 1);
+  assert.ok(readonly.includes('(allow file-read* file-write* (subpath (string-append "/private/tmp/helper-runtime" "/state")))'));
+  for (const denial of ['process-fork', 'network*', 'mach-lookup']) assert.ok(readonly.includes(`(deny ${denial})`));
+  assert.ok(readonly.includes('(allow file-read* (subpath "/private/tmp/helper-workspace"))'));
+  assert.throws(() => createStockReadOnlyProfile({ ...helperPaths, startupRecipe: startupRecipe + '\n' }));
+  assert.throws(() => createStockReadOnlyProfile({ ...helperPaths, runtimeDirectory: helperPaths.directory }));
+});
 
 test('stock helper policy separates runtime writes from the single existing workspace file', () => {
   const profile = createStockHelperProfile(helperPaths);
