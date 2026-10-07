@@ -165,3 +165,7 @@ Lead原件[APPROVED_LIMITED_PREPARATION](../../docs/evidence/svc06/diagnostics-h
 ## 首次legacy采用入口待审
 
 Target `ff445959425128876d5dd6abdb719196cc2867e6`，范围仅 [legacy-first-bootstrap](../../docs/evidence/svc06/legacy-first-bootstrap/Interface.md)。独立review NOT_STARTED；3/3 cleanup guard+语法/status有限局部已过，真实PG未运行。审查应核negative不drain/state不变、root真实生成op、artifact同op/audit1、legacy cleanup reservation/终态身份；不扩真实App/个人批准。原r2批准与失败原件保持。
+
+### 首次采用准备独审接收
+
+2026-10-07T11:18:46.472543+00:00，Lead独立`APPROVED_PREPARATION_AND_LOCAL_ONLY`，target ff445959425128876d5dd6abdb719196cc2867e6 / delivery185ab067ef610df9976e38b877aab72755125705，无P1/P2。[原样review](../../docs/evidence/svc06/legacy-first-bootstrap/independent-review.json)；3owned idle限定、原2.5GiB/4连接与unknown KEEP不变。PG NOT_RUN，真实App与个人仍未验，不扩大原r2或产品批准。

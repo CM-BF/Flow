@@ -14,20 +14,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | 基线3b68f31aef36481620ff1d43d37d9d95d2d7714d；产品/runtime6c与7d1、r2结果固定；只新增自有首次bootstrap fixture |
-| 工作树dirty状态 | 新fixture源码停写待独审；仅本次结果/manifest与status封定，原件保持 |
+| 工作树dirty状态 | 新fixture/source与原件停写；本次只归档唯一准备独审与status |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | 检查状态 | r2 passed：27→35/两项pre-drain拒绝/三role refresh-resume/历史与pointer-config-profile保留/cookie-CSRF-logout；work155073ms+cleanup540ms，六组stopped/normalDROP；真实App/个人未验 |
-| 已集成main状态 / HEAD | main657105已收r2结果；main/origin c38fa3a1已收3b68个人候选。首次legacy入口fixture尚未验证/独审/集成。 |
+| 已集成main状态 / HEAD | main657105已收r2结果；main/origin c38fa3a1已收3b68个人候选。首次legacy入口fixture已获限定准备/局部独审，实际PG尚未运行；本片未宣称主线能力。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 隔离升级与浏览器策略旅程已通过；正在补首次从开发入口采用后台产物的直接验证。 |
-| 下一可用交付 | 首次采用用例已固定待独审，随后在独立数据库核身份拒绝、合法创建和同一操作接续。 |
-| 当前阻塞 | ACTIVE: 首次采用用例已过有限局部检查，待独审及数据库窗口；个人更新仍等三个保留版本的真实App报告及现场核验。 |
+| 下一可用交付 | 在独立数据库核首次采用的身份拒绝、合法创建和同一操作接续；固定入口已获独审。 |
+| 当前阻塞 | ACTIVE: 首次采用用例已获准备独审，等待共享数据库窗口；个人更新仍等三个保留版本的真实App报告及现场核验。 |
 | 需用户决定 | NONE |
-| Review | 原r2 APPROVED_LIMITED_ISOLATED_HOST_RESULT/main657105保持；首次legacy fixture源ff445待独审；3/3+两syntax+status通过，实际PG NOT_RUN。 |
+| Review | 原r2 APPROVED_LIMITED_ISOLATED_HOST_RESULT/main657105保持；首次legacy fixture源ff445/185ab获APPROVED_PREPARATION_AND_LOCAL_ONLY；3/3+两syntax+status通过，实际PG NOT_RUN。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v8，原own两scope加6个启动诊断精确产品literal；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -309,3 +309,11 @@ Lead于10:49:17.625668Z完成[原件review](../../docs/evidence/svc06/diagnostic
 ## 2026-10-07 11:15:46 UTC：首次采用局部收尾
 
 [局部结果](../../docs/evidence/svc06/legacy-first-bootstrap/CHECKS.md)：3个新清理边界例、entry/journey syntax与唯一status parse通过；累计202ms/raw467B、四组absent/双EOF和四scratch正常removed。source ff445固定，不重跑r2/build/import。实际PG仍NOT_RUN，等待独审/窗口；个人与App等待均未解除。
+
+## 2026-10-07 11:19:24 UTC：首次采用入口获限定准备独审
+
+Lead于2026-10-07T11:18:46.472543+00:00独审 [唯一原件](../../docs/evidence/svc06/legacy-first-bootstrap/independent-review.json)，source ff445/delivery185ab，7源/10局部记录/44追加只读/22alias及原inventory引用全符，0P1/P2。批准仅准备与局部；实际PG未启动。等待现共享holder明确归还后fresh原输入/claim/空间与新namespace，沿原180+30/4连接/2.5GiB/KEEP；不提前复制或创建库。
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| SVC06-WAIT-FIRST-BOOTSTRAP-PG | 2026-10-07T11:19:24Z | OPEN | 资源 | 已审首次采用用例等Lead按X01/Web实际holder归还安排一次专库窗口；未占位。 | 独审原件at与收到交接后的clock实采；早于该点的等候不推算 |
