@@ -7,7 +7,7 @@
 - [x] K01-03 实现项目当前版本词法检索、短摘要与真实 JSON 预算。
 - [x] K01-04 真实 PG/HTTP 验证并独立 review，记录生产挂载依赖。
 - [x] K01-05 接收 main 事实；真实生产入口验收由 Lead 独立完成。
-- [ ] K01-06 后继任务继续 REQ-10 hybrid/vector、下游 grant/消费与摘要失效验收；本片交付不关闭该要求。
+- [ ] K01-06 后继任务继续 REQ-10 hybrid/vector、下游 grant/消费与摘要失效验收；本片交付不关闭该要求。2026-10-07补当前词法查询计划诊断准备，见下节；真实PG与性能验收仍NOT_RUN。
 
 原已交付片段容量（历史验收保持有效）：正文 <=256KiB；project <=128 sources；每 source <=16 retained versions；project retained raw <=64MiB。project 行锁→source 锁→命令幂等锁（operation 含 project/source），同事务插版本/chunks 后切 head；不递增 project.revision。达到容量明确拒绝，不自动删除旧版本。chunk <=4096 UTF8B/至少256B重叠，边界向前对齐、严格推进；每版本至多69块（ordinal0..68），衍生原文字节额外 <=69×4096，与原文总量分别说明。
 
@@ -38,3 +38,9 @@
 旧客户端/旧中心不得静默切到可回收语义；managed不可回收保证只有pin或内部冻结同事务成立后可声明。需要新能力/协议协商，不能把>16塞入旧v1 history成功DTO或伪报currentVersion16。请求协议选择与body/key一同冻结，send/queue未知ACK重试原请求不变；变协议必须先解决旧未知回执并新建逻辑命令，不能同key改canonical输入，也不能在ACK未知时换新key再次发送。详见设计证据兼容矩阵。
 
 本轮产品验证NOT_RUN；0测试/产品PG/安装/模型/实际历史或留存设置变更。原已交付chunk/raw不可变与保守容量验收继续作为历史事实，不拿新规划覆盖旧验证。
+
+## 2026-10-07 K01-06 查询计划诊断准备
+
+所属大task仍为本K01，REQ-10为需求来源；本段只在原K01-06内细化，不新增并行计划或关闭hybrid/vector。唯一[诊断入口说明](../../docs/evidence/k01/query-plan-diagnostic.md)绑定只读main `3c9345df4aec85a37e8a2a155e079db260d515b1`，复用12词法金样本与project/current、引用、JSON预算和每source winner。先在未来专库观察现MATERIALIZED+literal/FTS的实际EXPLAIN/扫描节点、returned bytes及分离延迟；GIN存在不证明使用。数据量分别声明当前/历史/foreign chunks，不复用17595历史容量数冒充当前扫描。
+
+当前交付仅小诊断方案，产品/PG/工程检查NOT_RUN；后续建议G金样本+D16/D128有界baseline，独立review后再协调合法scope、单独PG窗口与完整入口生命周期。NOT MATERIALIZED/拆分分支只是假设，不调整SQL/pool、不安装扩展或embedding，不承诺提速。原K01-08～10与R01～12、flow.commands实施前依赖保持不变。
