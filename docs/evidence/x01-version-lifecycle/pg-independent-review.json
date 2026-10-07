@@ -1,0 +1,37 @@
+{
+  "reviewer": "chatui01_owner / gpt-6-astra",
+  "at": "2026-10-07T11:36:37Z",
+  "verdict": "RESULT_FIDELITY_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "resultCommit": "f09fd4a7db3f2fc62da6e2681b64f12dd7d1c024",
+  "packet": "83736dc2361d1deb26e9038da6f05c841a189e72",
+  "outputManifestSha256": "542ecc692a9ab38552fac2a1e0f6ea36aa7c848d8f874afc2b9867c586ad524d",
+  "rawCount": 12,
+  "rawBytes": 24608,
+  "sourceInputs": "403 execution9f447 to result unchanged; original59b93 manifest unchanged",
+  "selection": {
+    "selected": 1,
+    "passed": 1,
+    "failed": 0,
+    "pending": 0
+  },
+  "facts": "A load ACK then B/A/C completion; A same attempt/owner/pin/invocation, A/C same material, ABC independent task identities. Current revoke403/no artifact, disable new-admission denial and later original events preserved.",
+  "traffic": {
+    "appRequests": 100,
+    "appPayloadBytes": 62736,
+    "ownerHelperRequests": 35,
+    "ownerHelperPayloadBytes": 36344,
+    "registryRequests": 4,
+    "tarDownloads": 2
+  },
+  "cleanup": "Git82041/Vitest82082 final absent/MERGED EOF complete bytes/no signals-secondary; tar82610/82611 closed0; DB1300235 marker0conn ordinaryDROP/absence; two listeners and all owners/pools/admin closed; ownTMP sameidentity sampled removal and exactENOENT owner receipt; no new KEEP",
+  "time": "internal pre-save4.823299792/post-save4.823525334/external time4.90/tool0 separate, within180; actual floor6190268416 from paired4947705856 freshfree22011535360",
+  "limits": [
+    "reviewer0 engineering/import/PG/process scan/oldKEEP access/write",
+    "A before import/invoke, not running-tool hot upgrade",
+    "same semver7.8.5 two Flow packaging releases, not upstream version upgrade",
+    "no new OPEN, OS runner, UI, latest-main or wholeX01 approval",
+    "peak/physical DBWAL unknown remains"
+  ]
+}

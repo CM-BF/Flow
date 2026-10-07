@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:35:41.009Z |
+| 最近更新时间 | 2026-10-07T11:38:00.210Z |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
@@ -13,18 +13,18 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle |
 | Branch | codex/plugin-version-lifecycle |
 | 工作基线 / 实现HEAD | cca4ab7c968598844ca5680140ee7c06ec1dd2f4 / 201674f49b538917f6f46cbdb02da4ed65191d02 |
-| 工作树dirty状态 | 实际原件已封存；本次结果提交后clean |
+| 工作树dirty状态 | 源码与实际原件冻结；本次结果独审metadata提交后clean |
 | 工作分支状态 | ready |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | PASSED 201674f49b538917f6f46cbdb02da4ed65191d02：本次真实PG单例1/1，100中心HTTP；旧types/list独立保留 |
-| Review | [review.md](review.md)，准备APPROVED；实际结果待固定独审 |
+| Review | [review.md](review.md)，准备与实际结果APPROVED 2026-10-07T11:36:37Z，0P1/P2 |
 | 已集成main状态 / HEAD | 本片未集成；固定基线cca4ab7c968598844ca5680140ee7c06ec1dd2f4 |
 | 实现目标 | 201674f49b538917f6f46cbdb02da4ed65191d02 |
 | 实现范围 | apps/server/src/plugin-runtime/version-rollback-pg.test.ts,docs/evidence/x01-version-lifecycle/execute-pg-once.py,docs/evidence/x01-version-lifecycle/run-local.py,docs/evidence/x01-version-lifecycle/tsconfig.json,docs/evidence/x01-version-lifecycle/vitest.config.mjs |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 当前产出 | 版本切换与回滚真实旅程通过，旧任务冻结材料和当前权限断言成立 |
-| 下一可用交付 | 结果独审与主线接收，保留工具实际执行中升级的未验边界 |
+| 当前产出 | 真实升级回滚旅程与清理结果已独审通过，待主线接收 |
+| 下一可用交付 | 接收本片验收源码和证据；上游包升级另作后继 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Claim | 5a53d10b-7ce6-4737-8e0c-2c265f4ca542 v1 ACTIVE，3literal |
@@ -59,3 +59,5 @@
 2026-10-07T11:33:37.223Z 仅窗口metadata校正：2串行tar、2 loopback动态listener、单in-process public runRunner/capacity2/local concurrency2；工具链Git组/Vitest单fork与按需esbuild子进程明示。新最低5,479,333,888B通过未来admission实际pairedBytes推导落实（最低4,236,771,328B，fresh组合更高则上调），保KEEP来源/allocatedUNKNOWN。源码/manifest/原件无改；0新check/PG/NEXT/OPEN。见pg-window.md。
 
 2026-10-07T11:35:41.009Z 实际本次已OPEN后唯一执行并RETURN；历史“未OPEN”是当时状态。pg-output-manifest.json原件12项/24608B；实际1/1，resource无KEEP，旧allocatedUNKNOWN/KEEP不改。0待launch；只metadata占用claim，不占窗口。
+
+2026-10-07T11:38:00.210Z 结果独审11:36:37Z APPROVED/0P1P2，targetf09fd4a7/packet83736dc2。唯一接收入口[main-intake.json](../../docs/evidence/x01-version-lifecycle/main-intake.json)，只新增验收test与own metadata，无生产改动；当前尚未main，claim保留/source冻结。资源实际已RETURN，0holder/待launch；原raw/manifest历史待审字符串不改，本附录给固定审锚点。大X01上游真实版本差异及工具函数执行中切换仍开放，不借本片勾完。
