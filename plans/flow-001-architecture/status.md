@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T06:07:57Z / main5cae7a25；Codex公开流已接收，SVC08迁入成功但服务替换前停止 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T06:19:44.585953+00:00 / main311e6215；SVC08真实Web宿主采用完成，后台与网页版本保留 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,11 +15,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main5cae7a25已接Codex公开流固定delta、原PG结果与27/27直接消费者及root/Web types0。个人af51/accepting v18、Web d629/v3仍由原宿主运行；SVC08 r2仅迁入固定产物，request保护断言失败后replace/post未执行。 |
+| 已集成main状态 / HEAD | main311e6215已接Codex公开流、插件领域及已审SVC caller修复。06:17:15.974Z个人Web宿主实际采用固定c7b产物/source422；后台af51/accepting v18、Web d629/v3及三个retained保持。主线源码、宿主产物和实际产品版本分别记录。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | Codex公开流与插件启用领域已进入主线。固定网页宿主产物已迁入本机存储；服务替换前的保护比较未通过，原运行环境保持。 |
-| 下一可用交付 | 修复部署事实中日期的持久表示比较后接续原固定网页宿主采用；继续工程真实工具兼容与完整正文公共接线。 |
+| 当前产出 | 个人网页宿主已从固定产物运行，旧网页资源仍可读取，中心和runner保持原运行版本；Codex公开流与插件启用领域已进入主线。 |
+| 下一可用交付 | 完成工具全文的三个数据库场景及公共接线；并行推进原生文件工具兼容、Codex会话和界面恢复验收。 |
 | 当前阻塞 | ACTIVE: [OPS-CI01唯一启用决定](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)仍PENDING，远程CI等待；真实模型工程与完整界面旅程仍开放。当前已有可实施后继，不等待旧磁盘条件。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
