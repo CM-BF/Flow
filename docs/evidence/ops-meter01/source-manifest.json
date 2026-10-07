@@ -1,0 +1,274 @@
+{
+  "schema": "ops-meter01-local-v1",
+  "at": "2026-10-07T08:58:07.903746+00:00",
+  "base": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+  "implementation": "c1699914fefd0fd49f3842a101a298f5b7376001",
+  "evidenceTarget": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+  "scope": "Bounded directory measurement module; no actual caller adoption",
+  "sourceBindings": [
+    {
+      "path": "tools/owned-resource-measurement/README.md",
+      "fixedRef": "c1699914fefd0fd49f3842a101a298f5b7376001",
+      "bytes": 3663,
+      "sha256": "d4421926ce69435289a16f1519328b5f9f245e04a92ec682a3f47782c181c854",
+      "blob": "b5dfa4e087d7b45111c33628d76fd06765f164b3"
+    },
+    {
+      "path": "tools/owned-resource-measurement/measure.py",
+      "fixedRef": "c1699914fefd0fd49f3842a101a298f5b7376001",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08",
+      "blob": "08066fe767c75232a23efe3c74e34bb90f90bcc9"
+    },
+    {
+      "path": "tools/owned-resource-measurement/measure.test.py",
+      "fixedRef": "c1699914fefd0fd49f3842a101a298f5b7376001",
+      "bytes": 13614,
+      "sha256": "62f79df05dce14da8cf8b123d5edaaea7c5af12bc808bf132cb4f42cc486622a",
+      "blob": "a165f3e3e84ab9ebccbc8aadd40b0efa06c3590e"
+    }
+  ],
+  "protectedBindings": [
+    {
+      "path": "AGENTS.md",
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+      "bytes": 18655,
+      "sha256": "97c72b406c9d97af821a59662daf1ec91588a0ef12c612cfdf9a9a99b28cf348",
+      "blob": "b25a22aee3d8434bb520054502f61cd82cefd66c"
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+      "bytes": 17734,
+      "sha256": "2a2c768af0a62e6cd7ef7500cbbeadc42eb435d41d29eb8e806142a0072e819e",
+      "blob": "49642fc1d7047fdb562c88a3fc695a94b3a4343c"
+    },
+    {
+      "path": "plans/README.md",
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+      "bytes": 20319,
+      "sha256": "2c90675740bdbb63b388646a11006e481ccbe8116525ac32034cd14e983a8ab3",
+      "blob": "a962bcbe7b5f24e1e0fd5778f31e51874a51c9fe"
+    },
+    {
+      "path": "docs/quality/local-validation.md",
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+      "bytes": 24670,
+      "sha256": "34325ae7d0302467f44f78d5328dc4de0766ed919e6fe8e83bb6243adc73eb87",
+      "blob": "9c0f11eebb6d79f59d2734df78a778be4ef961ca"
+    },
+    {
+      "path": "docs/evidence/d04/README.md",
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+      "bytes": 5061,
+      "sha256": "5b05d553a8996f11142f6dc27dc56f00397490e2429f8bde5c7716550fda60be",
+      "blob": "c4a46eec86eb3153d27440572cd7821a07100c4f"
+    },
+    {
+      "path": "tools/owned-process-supervision/README.md",
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+      "bytes": 2553,
+      "sha256": "16c33816012e3551ce17ebf760e019b872689b0ee463f469e897fa37197b29f2",
+      "blob": "efa1596a7195b58ba083944df4230b5fb48d9748"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "blob": "b55925471c9bbd9a3021a75754fca02439ce6cf8"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "fixedRef": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+      "bytes": 13851,
+      "sha256": "fd56da8d02485bb1911856d0c9337c00a7e2c1ca2964efa60b0f20a0112a53ed",
+      "blob": "bcde252c1b44979d2ca46130c805e2561ebab385"
+    }
+  ],
+  "recordBindings": [
+    {
+      "path": "docs/evidence/ops-meter01/README.md",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 1522,
+      "sha256": "5a57ae7ca8d59132c7e05329e331a707130e259d0861507cd7019e24a6d68927",
+      "blob": "81183b7e5abf605873cd343c6e38d0c5ad1193bf"
+    },
+    {
+      "path": "docs/evidence/ops-meter01/caller-inputs.json",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 2820,
+      "sha256": "2b362b534ec18543f7251f4e6c813f0f663053c8049b7dd2abe9e100eba1d340",
+      "blob": "1ea8715551f35365251ab02b28ed6cae29237492"
+    },
+    {
+      "path": "docs/evidence/ops-meter01/interface.md",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 3406,
+      "sha256": "facf7caeffcaee5ccb6d7c4578b52a253cc698fcb3d3aefd9fe79812d1bcccfc",
+      "blob": "3871e103c2bf2a9eb3d46bbcac41e90f7654228b"
+    },
+    {
+      "path": "docs/evidence/ops-meter01/local-01/cleanup.json",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 265,
+      "sha256": "b3b46673b92bb38511d6b46eecd3e10e2b2cabc185d487fda85a6199ba950b80",
+      "blob": "dd81a4e1d313f970d1cead52f7d21420e2114ad1"
+    },
+    {
+      "path": "docs/evidence/ops-meter01/local-01/reservation.json",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 976,
+      "sha256": "4df43ecf3e73e6207a8786685d69e4a8ae55494bd8e9630a45e49f7cf25d96a8",
+      "blob": "056e7604823428931ddd1b543bcab28a9143ff9b"
+    },
+    {
+      "path": "docs/evidence/ops-meter01/local-01/result.json",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 778,
+      "sha256": "d5d3c3d54c595a9296259975ee8977416d565e13c968b487574bacea0249092f",
+      "blob": "c02ae1f72d0b3ac915b20a3323dc2ff3902b1938"
+    },
+    {
+      "path": "docs/evidence/ops-meter01/local-01/stderr.txt",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 2949,
+      "sha256": "7aaf78e8e39926144553031a869adc57432a6c4527bfa95d51c4cec3803acef1",
+      "blob": "cacc76492260ae9b4b4c20c1563cfc08579448ac"
+    },
+    {
+      "path": "docs/evidence/ops-meter01/local-01/stdout.txt",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/ops-meter01/run.py",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 4970,
+      "sha256": "042a5a14a209ab0b9c72644d7c43a1104a6df488eeb76f095342dd11cc22a29a",
+      "blob": "d92fc94e0365c39e8c43e2b646e381855bbb2082"
+    },
+    {
+      "path": "docs/evidence/ops-meter01/skills.json",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 1312,
+      "sha256": "6670709d35618546623bc63bc1ad2d3d769194b0b8c051b5731d2fda9a9da314",
+      "blob": "a2ae565ab0c5d56d90345f727e664e816b572ed1"
+    },
+    {
+      "path": "docs/evidence/ops-meter01/source-provision.json",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 2174,
+      "sha256": "5c312e229949da73b7f35975dc393387a39178522be25613c9278c4b12260ff4",
+      "blob": "187807d5d5a109e513fc3ae9185add19ed257815"
+    },
+    {
+      "path": "docs/evidence/ops-meter01/take-receipt.json",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 674,
+      "sha256": "048505fb88bfc7c8b372f63b5b44a8bb3dc7b141321d78ce5ed0e4534af9dae0",
+      "blob": "8a292b776febd14bfe946608e83d097f88cb4465"
+    },
+    {
+      "path": "docs/evidence/ops-meter01/validation-summary.json",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 1681,
+      "sha256": "114bcf95efb4ee2048c3c134b6594f7aa1ff01b0e4f7127a9fbd98febda408dd",
+      "blob": "b4cca908daa061ae21b9d84d0787e97b6a79c45d"
+    },
+    {
+      "path": "plans/ops-meter01-resource-measurement/plan.md",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 1270,
+      "sha256": "0c3ceb805fea200d767831a409d450c264e22655954af7dcef65dda1d6d44090",
+      "blob": "d39ff717c5a29217cd8138337a0be22afe133fa4"
+    },
+    {
+      "path": "plans/ops-meter01-resource-measurement/review.md",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 1188,
+      "sha256": "4d3858e94e8aee38b9215c3da4cb58a497493dae1c0d260a245a620b6f860b06",
+      "blob": "9e5e5f15ea8a07cc7754d0360981a692047a64d6"
+    },
+    {
+      "path": "plans/ops-meter01-resource-measurement/status.md",
+      "fixedRef": "356d2088ffdaee199d13351e97f2e1441d8eb6ec",
+      "bytes": 3117,
+      "sha256": "f89bab66a0f7858c895bdef84a033239900e684db3842252efecfe25306b02c1",
+      "blob": "5189dacdfb5b963a739e7853b11a6052d53ac510"
+    }
+  ],
+  "externalCallerBindings": [
+    {
+      "path": "/private/tmp/dperf-c1/supervisor.py",
+      "bytes": 23164,
+      "sha256": "67b4f39e5ff84a38ed541b422dccb2d6d05867cb2005ba514b20e88003ce790b",
+      "source": "cfd5a53323438709843828d74cab67502801060c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/supervisor.py",
+      "bytes": 43988,
+      "sha256": "b454173c7393d7597e154bbab9da7eb9d628ea6dcfba73c6904a2b2e01869b1f",
+      "source": "dde571be8853698f8943f952ddef2c648d2e1294"
+    }
+  ],
+  "runtimeBindings": [
+    {
+      "path": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b",
+      "device": 16777234,
+      "inode": "63570890",
+      "version": "3.13.3 (main, Apr  8 2025, 13:54:08) [Clang 17.0.0 (clang-1700.0.13.3)]"
+    }
+  ],
+  "skills": [
+    {
+      "name": "find-skills",
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "name": "codebase-design",
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "name": "clean-code",
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "name": "brainstorming",
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    }
+  ],
+  "validation": {
+    "selected": 20,
+    "passed": 20,
+    "distinct": 20,
+    "rounds": 1,
+    "supervisorMs": 178,
+    "callerMs": 205,
+    "stdoutStderrBytes": 2949,
+    "cleanup": "absent/eof/scratch removed",
+    "PG": 0,
+    "provider": 0,
+    "realCallerAdoption": "NOT_RUN"
+  },
+  "limits": {
+    "segmentWorkMs": 60000,
+    "privateBytes": 4194304,
+    "rawBytes": 262144,
+    "freshFloorBytes": 1078198272
+  },
+  "preservedFacts": [
+    "pre-reap EPERM historical observation retained; final state absent",
+    "No peak/atomic snapshot/reclaimable measurement",
+    "Two current caller snapshots are read-only inputs, not adopted versions"
+  ]
+}

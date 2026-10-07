@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-07T08:56:12.251Z",
+  "sources": 193,
+  "rows": [
+    {
+      "id": "OPS-METER01",
+      "title": "有界资源计量与验证复用",
+      "role": "工程协作",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-resource-measurement",
+      "branch": "codex/owned-resource-measurement",
+      "planDir": "plans/ops-meter01-resource-measurement",
+      "evidenceDir": "docs/evidence/ops-meter01",
+      "errors": [],
+      "human": [],
+      "timing": []
+    },
+    {
+      "id": "MATURE06-LAZY01",
+      "title": "推理正文按需读取",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads",
+      "branch": "codex/lazy-reasoning-reads",
+      "planDir": "plans/mature06-lazy-reasoning",
+      "evidenceDir": "docs/evidence/mature06-lazy-reasoning",
+      "errors": [],
+      "human": [
+        "当前阻塞"
+      ],
+      "timing": []
+    }
+  ]
+}

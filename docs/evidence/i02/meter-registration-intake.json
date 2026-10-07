@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-07T08:59:37.142727+00:00",
+  "mainBefore": "e2b16924038d1215e5f9f389710d1e9b43636d02",
+  "meterSource": "c1699914fefd0fd49f3842a101a298f5b7376001",
+  "meterDelivery": "5ec429a09ef8f22a384b476639d036e44cef239d",
+  "paths": [
+    {
+      "path": "docs/evidence/ops-meter01/README.md",
+      "sha256": "5a57ae7ca8d59132c7e05329e331a707130e259d0861507cd7019e24a6d68927",
+      "bytes": 1522
+    },
+    {
+      "path": "docs/evidence/ops-meter01/caller-inputs.json",
+      "sha256": "2b362b534ec18543f7251f4e6c813f0f663053c8049b7dd2abe9e100eba1d340",
+      "bytes": 2820
+    },
+    {
+      "path": "docs/evidence/ops-meter01/interface.md",
+      "sha256": "facf7caeffcaee5ccb6d7c4578b52a253cc698fcb3d3aefd9fe79812d1bcccfc",
+      "bytes": 3406
+    },
+    {
+      "path": "docs/evidence/ops-meter01/local-01/cleanup.json",
+      "sha256": "b3b46673b92bb38511d6b46eecd3e10e2b2cabc185d487fda85a6199ba950b80",
+      "bytes": 265
+    },
+    {
+      "path": "docs/evidence/ops-meter01/local-01/reservation.json",
+      "sha256": "4df43ecf3e73e6207a8786685d69e4a8ae55494bd8e9630a45e49f7cf25d96a8",
+      "bytes": 976
+    },
+    {
+      "path": "docs/evidence/ops-meter01/local-01/result.json",
+      "sha256": "d5d3c3d54c595a9296259975ee8977416d565e13c968b487574bacea0249092f",
+      "bytes": 778
+    },
+    {
+      "path": "docs/evidence/ops-meter01/local-01/stderr.txt",
+      "sha256": "7aaf78e8e39926144553031a869adc57432a6c4527bfa95d51c4cec3803acef1",
+      "bytes": 2949
+    },
+    {
+      "path": "docs/evidence/ops-meter01/local-01/stdout.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "docs/evidence/ops-meter01/run.py",
+      "sha256": "042a5a14a209ab0b9c72644d7c43a1104a6df488eeb76f095342dd11cc22a29a",
+      "bytes": 4970
+    },
+    {
+      "path": "docs/evidence/ops-meter01/skills.json",
+      "sha256": "6670709d35618546623bc63bc1ad2d3d769194b0b8c051b5731d2fda9a9da314",
+      "bytes": 1312
+    },
+    {
+      "path": "docs/evidence/ops-meter01/source-manifest.json",
+      "sha256": "0cd286696c7974a6bddd6a87774a4dfe38b033e88c38dce7a8096b3715643662",
+      "bytes": 10953
+    },
+    {
+      "path": "docs/evidence/ops-meter01/source-provision.json",
+      "sha256": "5c312e229949da73b7f35975dc393387a39178522be25613c9278c4b12260ff4",
+      "bytes": 2174
+    },
+    {
+      "path": "docs/evidence/ops-meter01/take-receipt.json",
+      "sha256": "048505fb88bfc7c8b372f63b5b44a8bb3dc7b141321d78ce5ed0e4534af9dae0",
+      "bytes": 674
+    },
+    {
+      "path": "docs/evidence/ops-meter01/validation-summary.json",
+      "sha256": "114bcf95efb4ee2048c3c134b6594f7aa1ff01b0e4f7127a9fbd98febda408dd",
+      "bytes": 1681
+    },
+    {
+      "path": "plans/ops-meter01-resource-measurement/plan.md",
+      "sha256": "0c3ceb805fea200d767831a409d450c264e22655954af7dcef65dda1d6d44090",
+      "bytes": 1270
+    },
+    {
+      "path": "plans/ops-meter01-resource-measurement/review.md",
+      "sha256": "4d3858e94e8aee38b9215c3da4cb58a497493dae1c0d260a245a620b6f860b06",
+      "bytes": 1188
+    },
+    {
+      "path": "plans/ops-meter01-resource-measurement/status.md",
+      "sha256": "f89bab66a0f7858c895bdef84a033239900e684db3842252efecfe25306b02c1",
+      "bytes": 3117
+    },
+    {
+      "path": "tools/owned-resource-measurement/README.md",
+      "sha256": "d4421926ce69435289a16f1519328b5f9f245e04a92ec682a3f47782c181c854",
+      "bytes": 3663
+    },
+    {
+      "path": "tools/owned-resource-measurement/measure.py",
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08",
+      "bytes": 8979
+    },
+    {
+      "path": "tools/owned-resource-measurement/measure.test.py",
+      "sha256": "62f79df05dce14da8cf8b123d5edaaea7c5af12bc808bf132cb4f42cc486622a",
+      "bytes": 13614
+    }
+  ],
+  "review": "ops-meter01-independent-review.json",
+  "metadata": {
+    "OPS": "db9c8932066988da2682108fcd9bdcb1a4f27553",
+    "D05": "86cd0651ff08948883349df2c910af85e992f9a6",
+    "independentReviewer": "native_center_owner/gpt-6-astra",
+    "verdict": "APPROVED_DOCS",
+    "P1": 0,
+    "P2": 0,
+    "scope": [
+      "plans/flow-001-architecture/plan.md",
+      "plans/ops-001-status-review/plan.md",
+      "plans/ops-001-status-review/status.md",
+      "apps/execution-dashboard/src/registry.mjs",
+      "docs/evidence/d05/lazy-meter-registration.json",
+      "plans/d05-architecture-view/status.md"
+    ]
+  },
+  "newChecks": 0,
+  "limits": "New measurement module has no existing runtime caller. Two actual Web caller adoptions remain open; registration is navigation only; personal unchanged."
+}

@@ -16,7 +16,7 @@
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | 本批3 selected/3pass/0fail，未选择其余原检查；root noEmit0，两组absent/双EOF。84固定manifest绑定一致，0PG/provider。 |
-| 已集成main状态 / HEAD | main/origin b2b5612b已含SVC09；本固定接收批经I02单次提交/fast-forward发布，精确回执见lazy-x01-intake.json。 |
+| 已集成main状态 / HEAD | main/origin e2b16924已接LAZY/X01与必要组合原件；当前受控接收独审meter模块及193来源登记，个人部署未变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |

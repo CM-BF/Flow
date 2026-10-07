@@ -86,3 +86,5 @@ co-lead→GO每个大task仅允许 **独立blocker数 + Done(1)**。blocker须�
 进程监督Module及实际caller已经交付；后续资源计量保持独立职责，不向OPS14加入callback，也不合并DB删除、身份或源码绑定。Quick b2在6.142秒、产品断言前因retained cap退出，其两次先后扫描再相减会受目录增长影响；ACCESS旧live扫描遇Chrome临时目录消失是另一失败方式，不能合并为同一已证根因。沿两个实际caller下一安全变更选最小共用计量Interface：显式排除子树、logical与allocated分列、文件/目录消失与身份变化/越界/真实I/O unknown分开；保原上限和unknown记录。只需目录增长/消失的直接验证与两consumer，不建inventory平台、不迁移全库、不阻原Quick修复、不重跑已绿产品。具体独立scope由原co-lead协调，当前仅登记待实施验收。
 
 2026-10-07资源计量准备增量：DPERF browser-lifecycle-repair仍有先扫描scratch、再扫描父目录相减的第三个真实caller，与Quick同类非原子计量；ACCESS消失语义仍分开。O16本次零模型旅程收口后的原native_center_owner准备OPS-METER01小片，拟独立tools/owned-resource-measurement；具体caller固定源与下一安全变更由Web原owner协调。SVC09发布路径不让位，不修改当前冻结运行输入；至少两个实际仍会使用caller采用后才算复用交付。
+
+2026-10-07T08:57:27.268283+00:00 实施接续：OPS-METER01 已由 native_center_owner 在独立 owned-resource-measurement 树取得694f7894 v1（三范围），唯一[计划](../../../owned-resource-measurement/plans/ops-meter01-resource-measurement/plan.md)。固定base b2b；小模块20项合成目录/故障检查已完成，仍待独审及两个真实caller安全迁移，不能把纯模块通过称复用交付。Web已交DPERF当前排除式计量和Quick两个固定输入；当前冻结浏览器原件不改。
