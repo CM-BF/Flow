@@ -1,0 +1,9 @@
+# Sentinel-only PG result: PASS, independent review pending
+
+Actual execution `2a90194ed44021cd06a334cb2754bee96a28216d` used fixed manifest1f29a080. Exactly **1 selected/1 passed/5 unselected**,3 realHTTP requests. The native-v2 limit1 GET rejected the corrupt immutable sentinel with409/execution_profile_unavailable; the fixture INSERT created a separate bad record. No UPDATE/trigger bypass/product changes. The earlier R1 remains6 selected/5passed/1failed and RESULT_UNKNOWN/outerTMP KEEP; no old cases were re-executed. Across the two runs six behavior cases now have passing observations, not a single6/6run.
+
+Current PID22298 exit0/group absent/dualEOF/raw192B complete/signals[]. Database OID1245980 and marker bound; startup/runners/app/pool/admin closed,0connections, ordinaryDROP/absence, retainedDatabase=null. The exact outerTMP reserved dev/ino[16777234, 123609968] was sampled4entries/131logicalB then removed; fresh lstat at2026-10-07T07:07:15.527977+00:00=ENOENT. No fixture-owned extra roots; no retained current resources. DB end sample12254231B; configured14connectionlimit is not observed peak. Active DB/TMP peaks remainUNKNOWN.
+
+Operator began2026-10-07T07:05:17.959191+00:00; before-result-persistence2026-10-07T07:05:20.922818+00:00 (2.963617083s). Finalstdout ACK confirms receipt written/success=true at delivery2.9638452920000002s. Externalclock07:05:17 to07:05:21 plus second-resolution bound gives whole-command conservative<=5s; tool poll wall is only wait time, exactwholewallUNKNOWN. Returned toWeb/root after exact cleanup confirmation; current0PG/child/launch.
+
+0Codex/provider/native/install. This is a realPG/HTTP read validation, not production native/auth/UI/wholeC02 acceptance. Old failure/raw/KEEP untouched. Result fidelity review must bind this fixed packet before main intake.

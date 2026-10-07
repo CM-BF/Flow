@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-10-07T07:07:15.527977+00:00",
+  "scope": "Only the exact current-run root lstat; no process scan, DB connection, old KEEP root access or cleanup.",
+  "root": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-pg-window-iabuqyv4",
+    "reservedIdentity": [
+      16777234,
+      123609968
+    ],
+    "lstat": "ENOENT"
+  },
+  "fixtureRoots": [],
+  "fixtureCleanup": {
+    "startupSettled": true,
+    "runnersClosed": true,
+    "appClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "databaseIdentityConfirmed": true,
+    "connections": 0,
+    "databaseAbsent": true
+  },
+  "oldKeepAccess": false
+}

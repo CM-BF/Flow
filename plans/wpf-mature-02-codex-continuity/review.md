@@ -33,3 +33,5 @@ R1 result fixed630e selected6/passed5/failed1, no automatic retry. Sourcebfaee0c
 ## 2026-10-07T07:00:17.883925+00:00 — failure fidelity and sentinel preparation accepted
 
 Independent db_transaction_owner06:55:16Z APPROVED/0P1P2, packet05162934, failure630e+sourcebfae/30d. Old317 and new318 bindings,86831Barchive,types0/list1-only and10absent accepted. R1 remains5/6 FAIL/RESULT_UNKNOWN/TMP KEEP, runtime668a/v12. Newactual remainsNOT_RUN pending realholder handoff; no checks repeated. Full bounded verdict: conversation-pg-sentinel-review.json.
+
+2026-10-07T07:07:15.527977+00:00 Sentinel actual1/1/5unselected is RESULT_REVIEW_PENDING; source/preparation approved06:55:16Z, current resources closed. EarlierR1 remains5/6FAIL.
