@@ -7,8 +7,9 @@ import { createServer as createSocket } from 'node:net';
 import { spawn, execFile } from 'node:child_process';
 import { promisify } from 'node:util';
 import { setTimeout as sleep } from 'node:timers/promises';
+import { performance } from 'node:perf_hooks';
 import { Pool } from 'pg';
-import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess, ownsListener } from './process.mjs';
+import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess, ownsListener, observeOwnedListener } from './process.mjs';
 import { baseServiceEnvironment, serviceEnvironment } from './environment.mjs';
 import { openStartupDiagnostics, observeStartupChild, preserveStartupFailure, publicStartupFailure, startupFailure, startupErrorCode } from './startup-diagnostics.mjs';
 import { LEGACY_NATIVE_CONFIGURATION, SETTINGS_SLOT_KEY, readRunnerSlots, slotServiceKeys, runnerServiceRole, registerSettingsSlot, observeSettingsProfile, pinSettingsProfile } from './runner-slots.mjs';
@@ -147,7 +148,17 @@ async function configuredProfile(config, slot, persist = false) {
   return { id: profile.reference.id, source: 'runner-configured', model: value.model };
 }
 async function reachable(url) {
-  try { const response = await fetch(url, { signal: AbortSignal.timeout(700) }); await response.body?.cancel(); return response.ok; } catch { return false; }
+  return (await observeReachable(url)).reachable;
+}
+async function observeReachable(url) {
+  let status = null;
+  try {
+    const response = await fetch(url, { signal: AbortSignal.timeout(700) }); status = response.status;
+    await response.body?.cancel(); return { reachable: response.ok, status, code: null };
+  } catch (error) {
+    const direct = startupErrorCode(error);
+    return { reachable: false, status, code: direct === 'STARTUP_UNCONFIRMED' ? startupErrorCode(error?.cause) : direct };
+  }
 }
 async function webIdentity(config, artifact, releaseVersion, expectedBackendHead) {
   if (!artifact) return false;
@@ -162,16 +173,38 @@ async function webIdentity(config, artifact, releaseVersion, expectedBackendHead
     return actual.artifactId === artifact.artifactId && actual.sourceHead === artifact.sourceHead && actual.manifestDigest === artifact.manifestDigest && (releaseVersion === undefined || actual.releaseVersion === releaseVersion && actual.releasePolicy === 'flow-web-release-v1');
   } catch { return false; }
 }
-async function waitReady(config, role, record, artifact, expectedBackendHead, slot) {
+async function waitReady(config, role, record, artifact, expectedBackendHead, slot, observation = {}) {
+  const started = performance.now();
+  Object.assign(observation, { role, pid: record.pid, nonce: record.nonce, outcome: 'pending', iterations: 0, elapsedMs: 0, code: null, predicates: {} });
+  const elapsed = start => Math.max(0, Math.round(performance.now() - start));
+  const probe = async (name, operation) => {
+    const began = performance.now();
+    try {
+      const value = await operation();
+      observation.predicates[name] = { iteration: observation.iterations, elapsedMs: elapsed(began), result: value };
+      return value;
+    } catch (error) {
+      observation.predicates[name] = { iteration: observation.iterations, elapsedMs: elapsed(began), result: 'unknown', code: startupErrorCode(error) };
+      throw error;
+    }
+  };
   const deadline = Date.now() + 10_000;
-  do {
-    if (await inspectOwnedProcess(record) !== 'running') fail('SERVICE_EXITED_DURING_START');
-    if (runnerServiceRole(role) === 'runner') { if (await configuredProfile(config, slot, true)) return; }
-    else if (await ownsListener(record, role === 'center' ? config.centerPort : config.webPort)
-      && (role === 'center' ? await reachable(`http://127.0.0.1:${config.centerPort}/api/health`) : await webIdentity(config, artifact, (await readWebRelease(config.directory))?.version, expectedBackendHead))) return;
-    await sleep(50);
-  } while (Date.now() < deadline);
-  fail('SERVICE_START_UNCONFIRMED');
+  try {
+    do {
+      observation.iterations++;
+      if (await probe('owner', () => inspectOwnedProcess(record)) !== 'running') fail('SERVICE_EXITED_DURING_START');
+      let ready;
+      if (runnerServiceRole(role) === 'runner') ready = await probe('profile', async () => Boolean(await configuredProfile(config, slot, true)));
+      else if ((await probe('listener', () => observeOwnedListener(record, role === 'center' ? config.centerPort : config.webPort))).owned) {
+        ready = role === 'center' ? (await probe('health', () => observeReachable(`http://127.0.0.1:${config.centerPort}/api/health`))).reachable
+          : await probe('webIdentity', async () => webIdentity(config, artifact, (await readWebRelease(config.directory))?.version, expectedBackendHead));
+      }
+      if (ready) { observation.outcome = 'ready'; return; }
+      await sleep(50);
+    } while (Date.now() < deadline);
+    fail('SERVICE_START_UNCONFIRMED');
+  } catch (error) { observation.outcome = 'failed'; observation.code = startupErrorCode(error); throw error; }
+  finally { observation.elapsedMs = elapsed(started); }
 }
 async function locked(config, callback) {
   const lock = join(config.directory, 'operation.lock');
@@ -376,7 +409,8 @@ export async function preparePreviewWeb(config, target, selectedBackend) {
   if (browser.context !== null) fail('WEB_COMPATIBILITY_REQUIRED');
   return prepareWebArtifact({ directory: config.directory, repository: config.repository, target: head });
 }
-export async function startPreviewServices(config, state, preparedArtifact, selectedBackend = state.backendArtifact) {
+export async function startPreviewServices(config, state, preparedArtifact, selectedBackend = state.backendArtifact, readStatus = statusPreview) {
+  if (typeof readStatus !== 'function') fail('START_STATUS_PORT_INVALID');
   const browser = await pinnedBrowserSessionConfiguration(config);
   if (browser.context !== null) await assertWebHostPolicyRuntime(config, { ...state, backendArtifact: selectedBackend });
   await assertWebHostSettled(config, state);
@@ -395,6 +429,7 @@ export async function startPreviewServices(config, state, preparedArtifact, sele
   state.webArtifact = artifact;
   if (selectedBackend) state.backendArtifact = selectedBackend;
   state.processes = {}; state.lastError = null; state.lastStartFailure = null; state.startCleanup = []; state.startEvidenceErrors = [];
+  state.startReadiness = {}; // Four declared roles at most; last predicate results only. Missing is not proof of an observation.
   let startingRole = null, startingPhase = 'spawn';
   try {
     for (const role of slotServiceKeys(slots)) {
@@ -411,7 +446,7 @@ export async function startPreviewServices(config, state, preparedArtifact, sele
         onSpawn: async pending => { state.processes[role] = pending; await save(join(config.directory, 'state.json'), state); } });
       state.processes[role] = record; await save(join(config.directory, 'state.json'), state);
       startingPhase = 'ready';
-      await waitReady(config, role, record, artifact, backendHead, slot);
+      await waitReady(config, role, record, artifact, backendHead, slot, state.startReadiness[role] = {});
     }
     startingPhase = 'final-verification';
     if (selectedBackend) await backendRuntime(config, selectedBackend);
@@ -422,7 +457,7 @@ export async function startPreviewServices(config, state, preparedArtifact, sele
     }
     state.source = { head: backendHead, dirty: false };
     state.startedAt = new Date().toISOString(); await save(join(config.directory, 'state.json'), state);
-    return statusPreview({ directory: config.directory });
+    return readStatus({ directory: config.directory });
   } catch (error) {
     await preserveStartupFailure({ state, error, role: startingRole, phase: startingPhase, stop: stopOwnedProcess,
       save: value => save(join(config.directory, 'state.json'), value) });
