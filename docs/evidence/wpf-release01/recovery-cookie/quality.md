@@ -34,3 +34,7 @@
 ## 2026-10-07T15:40:07.837Z artifact实际封存 / clean-code
 
 复用本地find-skills与clean-code（原安装固定版本，不联网重装）。本批核命名/职责/接口/错误/重复：保原prepareWebArtifact唯一codec，caller只负责有界输入/临时links/owned清理；先核全部created-dir再unlink修复已由真实两case与root批准覆盖。实际outer退出、父monotonic与观察上界分列，不把报告等待当构建性能；10assets不等compat/部署。无产品变更、无重复绿检查，尚待actual独审和精确pair准备。
+
+## 2026-10-07T15:47:12.247Z exact-pair / clean-code
+
+沿find-skills本地匹配继续用clean-code：完整两descriptor常量命名区分Web/backend职责；复用深层真实manifest/verifier，未造第二codec；三guard不放宽已审旅程。新caller只入口/固定计数/稀疏树实际模块解析差量，旧生命周期与错误/cleanup合同逐字其余不变。已核74pins、parent AST（非执行）、browser逐字8964、两产品逐字1cea；未运行candidate、types或compat。未解决项仅集中source/native审及实际资源准入。

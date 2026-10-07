@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T15:40:07.837Z |
+| 最近更新时间 | 2026-10-07T15:47:12.247Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery |
 | Branch | codex/web-release-recovery |
 | 工作基线 / HEAD | 固定7272151bb1e3e59e08937dca44949dcdeb42f009；source供给300386e2babce408b85ad5b9732d616782b78097；旧树9fde已释放停写 |
-| 工作树dirty状态 | 本次仅own records封存构建原件；两产品持续STOP/已移出，产品与harness无变化 |
+| 工作树dirty状态 | 新pair guard已固定；本批仅own records，已交回两产品持续STOP |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 检查状态 | PASSED 旧consumer affected noEmit/精确1case及本次固定Web artifact构建/验证；首resolverFAIL保留；新pair browser/compat未运行 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED 当前新pair harness/compat；两产品窄修已随MSG进入main729d3383635b565aa4131078f80a682cac437526，session保留独立MSG接线 |
-| 实现目标 | d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6 |
-| 实现范围 | apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/session.ts, docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/oldconsumer-material.test.ts |
+| 实现目标 | 2f6792ca3f19fcd1d54563531c302937f607c892 |
+| 实现范围 | apps/web/test/web-release-compatibility.fixture.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 新版网页产物已固定生成并清理临时资源；修正后台产物也已供齐 |
-| 下一可用交付 | 绑定新网页与修正后台，准备真实兼容验证输入 |
+| 当前产出 | 新网页和修正后台产物已供齐，真实兼容的精确输入与调用准备已固定 |
+| 下一可用交付 | 完成新产物组合及调用器集中审，安排真实兼容验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：APPROVED 固定d736源码/必要局部及本次固定Web artifact实际；新pair兼容/部署未验 |
+| Review | [review.md](review.md)：NOT_STARTED 当前2f679精确pair guard/新caller集中审；d736源码及固定artifact实际均已批准 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 整体开工UNKNOWN；历史片段完成12:17:59.709Z保前状态；后继领取13:09:33.224Z仅为领取事实，编辑固定来源8964dc1；不以领取或编辑时刻倒填全任务开工 |
@@ -135,8 +135,12 @@ Root 对固定8964两harness与唯一strict实际作正式限定APPROVED、0 fin
 
 2026-10-07T15:10:42.258Z：Root [d736集中审原件](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/root-source-local-review.json)已核两产品/定向用例/35原始记录，APPROVED、0blocking。产品1cea保持802e/728a，两literal自本安全点明确STOP，后继仅保留两harness及本任务records写权；[账本actual amend回执](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/product-handback-receipt.json)确认15:10:52.444Z v2仅保exact4。原90s段CLOSED6165/未用83835不转credit，首resolverFAIL不改。新Web产物仍NULL，build/compat/主线与用户可见部署均未完成；既有prepareWebArtifact只做固定输入和有界调用准备，没有运行预约。
 
-## 当前：新Web产物实际生成与归还
+## 历史：新Web产物实际生成与归还
 
 2026-10-07T15:40:07.837Z：[构建原件](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/README.md)固定source c231、Web artifact779a（10files/1700569B），actual outer0/child0/唯一terminal及完整owned清理。资源15:34:52.365620Z已归还，artifact KEEP；父3756ms与late3756.269ms原样，观察上界25241ms保守CLOSED，未用额度不转移。两descriptors已齐，不再声明缺Web。Root实际结果独审APPROVED/0blocking；新pair四App兼容与个人部署仍未完成。两harness仍8964原字节，下一只在合法exact4内做必要pair guard/source准备，不恢复已交回产品写权。
 
 固定main729d的[两产品窄修核对](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/product-main-observation.json)：attachments逐字同d736；session仅新增已审MSG设置接线，membership修复不变。此事实不改变artifactc231，不重建、不把新pair/部署标成完成。
+
+## 当前：精确新pair源码准备
+
+2026-10-07T15:47:12.247Z：[source2f679与固定caller](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27/README.md)仅独立descriptor守卫及四App入口适配；browser行为原字节不变。PREPARED/无gate，new native/source集中审尚待。新180s/30cleanup只是未授提案，0运行/资源采样；已闭build25241与旧兼容23495均不转信用。全exact4正常seal后STOP保claim，集中审安全点可交后继独立源码，但真实发布优先。

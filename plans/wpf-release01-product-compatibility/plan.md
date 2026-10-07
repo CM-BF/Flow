@@ -72,3 +72,5 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 ## 当前artifact交付安全点
 
 [新Web实际](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/README.md)已生成descriptor779a/sourcec231，两产品1cea与批准d736不变。RELEASE01-08保持pending：两descriptors已齐，结果独审已APPROVED，当前需要两harness最小pair guard适配后再真实兼容，不借本次构建或旧三App报告冒通过。资源已归还，无第二build/Chrome/PG预约；独立150s段按外层观察上界25241ms CLOSED。
+
+新pair source2f679及受控caller已[固定准备](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27/README.md)，RELEASE01-08继续pending真实兼容/发布；当前只待集中源/边界审，不重复设计或产品绿检查。
