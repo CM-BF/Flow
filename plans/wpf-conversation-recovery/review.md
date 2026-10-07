@@ -149,3 +149,7 @@ RECOVERY-SAVED-RECORD-IDENTITY：摘要/时间/intent/材料数和折叠完整ID
 ## 2026-10-07 02:17:40 UTC — 作者第三次真实子集证据待独立核
 
 [原始manifest/验证](../../docs/evidence/wpf-conversation-recovery/browser-third-validation.md)绑定000a/8ed十九源。actualexit1，前段通过与pageOnlyAuthLoss异常分别记录，不把作者运行当root复跑。Root此前两P2源码批准保持源码范围；本次完整行为未通过。所有旧raw、源和直接50证据不变，未修失败或重复运行。
+
+## 2026-10-07 02:20:08 UTC — rec8ed注入脚本作者待审
+
+作者固定9835源码修复，root已认可方向但本target尚待独审；同选项转译/受控注入检查NOT_RUN。完整feature NOT_STARTED/targetUNKNOWN，第三次FAIL与前段局部PASS分别保留。

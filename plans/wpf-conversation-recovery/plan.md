@@ -130,3 +130,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ### 2026-10-07 02:17:40 UTC — -05第三次真实子集仍未闭合
 
 仅原授权run rec8ed，局部cookie/材料恢复/跨tabCAS/原key重试通过，pageOnlyAuthLoss发生page.evaluate异常，后续CSRF/offline/视觉未运行。[原证据](../../docs/evidence/wpf-conversation-recovery/browser-third-validation.md)完整保留；下一步先核失败再独立准入，非自动重试。原完整TODO不勾选，原90秒累计晚终态38364.050667ms，剩51635.949333ms含清理；不改源码或验收要求。
+
+## 2026-10-07 02:20:08 UTC — -05原注入脚本窄修
+
+保持所有原旅程，修page.evaluate序列化闭包外helper接缝；不通过全局helper/删除断言避错。仅原browser与own记录，局部检查和下一浏览器许可分开。

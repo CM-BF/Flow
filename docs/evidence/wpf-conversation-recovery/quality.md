@@ -187,3 +187,7 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 ## 2026-10-07 02:17:40 UTC — 第三次browser证据收口
 
 复用本地find-skills/clean-code：保单一原入口、失败/部分PASS/未运行分开，使用较晚stdout与actualexit而非较早budget判定；原件逐hash、19源冻结、不以新增异常改测试/协议/生产。发现为page.evaluate __name ReferenceError，归因与修复未做。cleanup实际完成，原失败不抹，未扩大direct50或完整feature批准。0新增types/check/provider，除单次获准browser外无重跑。
+
+## 2026-10-07 02:20:08 UTC — page.evaluate自包含边界
+
+应用clean-code单一职责/闭包边界检查：仅两method写法避免转译命名辅助引用；不改原行为authority、不加全局polyfill。静态diffcheck0，实际转译仍NOT_RUN，无新运行占用。

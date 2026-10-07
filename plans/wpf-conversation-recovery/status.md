@@ -2,21 +2,21 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 02:17:40 UTC |
+| 最近更新 | 2026-10-07 02:20:08 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段两源checkpoint 8ed2741327779e57d717653d10c2180e1897c26a；其余17源=4d330；metadata HEAD以Git为准 |
-| 工作树dirty状态 | execution000a clean；19源8ed未变，本次只封存第三次browser原件/metadata，normalpush后核双端clean |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段browser checkpoint 9835e7488dd9b0b44b3afbc285336defdd739e98；其他18源=8ed；metadata HEAD以Git为准 |
+| 工作树dirty状态 | 第三次失败已独立seal a344；当前9835仅browser一源窄修，其他18源不变，metadata后normalpush核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 真实材料恢复、跨标签CAS与原键重试已取得局部实证；验证在后续页面授权失效场景中断 |
-| 下一可用交付 | 保留本次原始失败与清理证据，核实页面执行异常后再安排剩余旅程 |
+| 当前产出 | 前段真实恢复已取得局部实证；页面授权失效验证的注入脚本已窄修，等待局部检查 |
+| 下一可用交付 | 对固定注入回调做有界序列化验证；实际浏览器后继仍须单独准入 |
 | 当前阻塞 | ACTIVE: pageOnlyAuthLoss遇page.evaluate异常；后续CSRF/offline与视觉焦点未运行，完整旅程仍未闭合 |
 | 需用户决定 | NONE |
 | 检查状态 | FAILED: 第三次browser page.evaluate __name未定义，actualexit1/清理完整；前段材料/CAS/同key重试PASS，晚累计38364.050667ms；原50与types范围不变 |
@@ -245,3 +245,7 @@ Root于2026-10-06T21:13:25.405734+00:00对固定 `8ed2741327779e57d717653d10c218
 ## 2026-10-07 02:17:40 UTC — 原子集第三次运行封存
 
 [本次验证](../../docs/evidence/wpf-conversation-recovery/browser-third-validation.md)仅run `rec8ed-20261007-021525-9c6687`，execution000a/source8ed，actualexit1。报告cookieRead/握手、textIntent/materialDraft、sameKeyTurn、crossTabCas PASS；pageOnlyAuthLoss因page.evaluate __name未定义失败，后续NOT_RUN。清理全确认并已即时交还窗口。晚累计38364.050667ms、余51635.949333ms，未来整数51635含15s清理，非续跑许可。19源和旧25raw不变；不裁根因，不自行feature批准。
+
+## 2026-10-07 02:20:08 UTC — rec8ed注入序列化source安全点
+
+固定 `9835e7488dd9b0b44b3afbc285336defdd739e98`，[manifest](../../docs/evidence/wpf-conversation-recovery/page-evaluate-checkpoint.json)仅一browser。匿名value函数改原生method定义，保this/args/return/目标readwrite abort及恢复，未删后续断言。准确原因待同tsx/esbuild选项局部验证；当前local槽TUI占用，NOT_RUN。第三次失败独立metadata a344已pushclean，原晚预算不变；本次无新运行/类型/50/PG/Chrome或容量采样。
