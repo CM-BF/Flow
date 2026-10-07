@@ -705,6 +705,7 @@ async function worker(init: Init) {
       const turns = () => postRows().filter(row => /\/turns$/.test(row.path));
       const bodyReads = () => fixture!.wire.filter(row => /\/attachments\/[^/]+\/content|\/knowledge\/resolve/.test(row.path)).length;
       const composer = () => page.locator("[data-composer-view]").filter({ visible: true });
+      const configuration = () => page.locator(".flow-composer-configuration").filter({ visible: true });
       const knowledge = () => composer().getByRole("button", { name: "Knowledge", exact: true });
       const knowledgeDialog = page.getByRole("dialog", { name: "Conversation knowledge", exact: true });
       const files = () => composer().getByRole("button", { name: "Files", exact: true });
@@ -718,7 +719,8 @@ async function worker(init: Init) {
       const closeKnowledge = async () => { await page.keyboard.press("Escape"); await expect(knowledgeDialog).not.toBeVisible(); await expect(knowledge()).toBeFocused(); };
       const closeFiles = async () => { await page.keyboard.press("Escape"); await expect(fileDialog).not.toBeVisible(); await expect(files()).toBeFocused(); };
       await page.locator(".flow-workspace-bar").getByRole("button", { name: "New chat", exact: true }).click();
-      await composer().getByRole("button", { name: "Execution profile: Runner default", exact: true }).click();
+      await expect(configuration()).toHaveCount(1);
+      await configuration().getByRole("button", { name: "Execution profile: Runner default", exact: true }).click();
       const profiles = page.getByRole("dialog", { name: "Execution profile", exact: true });
       await profiles.getByRole("button", { name: "Refresh profiles", exact: true }).click();
       const profileOption = profiles.locator(".ep-option").filter({ hasText: seed.profile.reference.id });
@@ -733,7 +735,7 @@ async function worker(init: Init) {
       if (await knowledgeDialog.isVisible()) {
         await expect(knowledgeDialog).toContainText(`Conversation project locked: ${fixture!.projectId}`); await closeKnowledge();
       }
-      await expect(composer().getByRole("button", { name: `Conversation settings: ${seed.profile.configuration.model}`, exact: true })).toBeVisible();
+      await expect(configuration().getByRole("button", { name: `Conversation settings: ${seed.profile.configuration.model}`, exact: true })).toBeVisible();
       const createdRow = creations()[0]!, creation = conversationCreationSchema.parse(JSON.parse(createdRow.body));
       expect(creation.projectId).toBe(fixture!.projectId); expect(creation.executionProfile).toEqual(seed.profile.reference);
       expect(creation.requested).toEqual({ model: seed.profile.configuration.model, thinking: "disabled", tools: "none" });
@@ -802,7 +804,7 @@ async function worker(init: Init) {
       const accepted = decodeConversationTurnAccepted(JSON.parse(turnRow.responseBody), created.conversation.id, requested);
       expect(accepted.replayed).toBe(false); expect(accepted.turn.id).not.toBe(""); expect(accepted.turn.task.id).not.toBe("");
       completeDraft.turnId = accepted.turn.id; completeDraft.taskId = accepted.turn.task.id;
-      await composer().getByRole("button", { name: `Conversation settings: ${seed.profile.configuration.model}`, exact: true }).click();
+      await configuration().getByRole("button", { name: `Conversation settings: ${seed.profile.configuration.model}`, exact: true }).click();
       const settings = page.getByRole("dialog", { name: "Conversation settings", exact: true });
       await settings.getByText("Profile identifiers", { exact: true }).click();
       for (const value of Object.values(seed.profile.reference)) await expect(settings.getByRole("region", { name: "Requested configuration", exact: true })).toContainText(value);
