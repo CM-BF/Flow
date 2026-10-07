@@ -11,7 +11,7 @@
 | 最后已审个人运行 | 13:47–13:49 held continuation：backend 与独立 Web host 均 7d1/source6c；中心 accepting/v21；Web d629/v3；三个 retained 保持 |
 | 历史出处 | main b37e404d 中 `docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/{RESULT.md,final.json,result-manifest.json}`；原结果 target acbdc40358a858256967a7322109331a28f4a2fb |
 | 配置合同 | 既有 `browser-session.json` 205 B，文件 SHA256 `ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a`；normalized context 见下表；配置及 token 不复制、不输出 |
-| 新网页 | 准确新Web779acd5b/c231 descriptor和实际构建限定独审已到，详见本页供给记录；对04da/context的真实兼容报告和独审仍待交。不得用旧7272或moving main代替 |
+| 新网页 | 准确新Web779acd5b/c231 descriptor和实际构建限定独审已到，详见本页供给记录；对04da/context的四份真实App兼容报告和正式独审已接收。不得用旧7272或moving main代替 |
 
 历史 accepting/v21、PID、任务及文件身份只是历史输入，不是当前个人 fresh gate。本准备只读固定 Git/已封原件，没有个人 I/O。旧 held 段最终观察到用户原 queued task 自然进入 running，但完整 requestId→receipt→本地 assignment 因果链未被持久证明，`actualClaimRecovery=UNKNOWN` 保持。
 
@@ -36,7 +36,7 @@
 
 `host.mjs:backendById/backendRuntime/assertInstallationSource`、maintenance bootstrap/refresh/resume 都逐产物调用 `verifyBackendArtifact`，不调用 store count 准入；该 verifier 没有全 store count 检查。因此本次正式工具演进不要求重建已审 cd27，旧 manifest 继续可读。旧固定工具的 count2 仍原样存在于旧产物：以后若错误地用它在满 store 中重新 prepare，会保守拒绝，不能偷偷绕开。
 
-旧 `migration-adapter.mjs`（5c29e13a5d251e4fb6b99d7d1277ace85dee24dc）不直接可用于本次：它固定 null backend、policy 不存在及 `[c7b,7d1]` 白名单。新薄装配需显式绑定已有 backend7d1、Web host7d1、已存在 policy 原字节与完整 `[c7b,7d1]` 集合，再加入 cd27；使用新版受信工具的共用容量门。沿原 `migrateOnce`、preview→store 双锁、完整 verify、fsync intent/checkpoint 和 exclusive no-replace rename，不复制第二状态机，不改旧装配或旧运行原件。当前 callable Module 已固定为7324a2a0，复用原锁/协议/只读runner SQL，见[current-migration-interface](current-migration-interface.md)；6个不同直接例通过。Module已于15:11:41.542Z独审批准并main96b424777接收；实际fresh参数、报告集合和本次OPS14实例调用仍待封定，不声称现场已经可执行。
+旧 `migration-adapter.mjs`（5c29e13a5d251e4fb6b99d7d1277ace85dee24dc）不直接可用于本次：它固定 null backend、policy 不存在及 `[c7b,7d1]` 白名单。新薄装配需显式绑定已有 backend7d1、Web host7d1、已存在 policy 原字节与完整 `[c7b,7d1]` 集合，再加入 cd27；使用新版受信工具的共用容量门。沿原 `migrateOnce`、preview→store 双锁、完整 verify、fsync intent/checkpoint 和 exclusive no-replace rename，不复制第二状态机，不改旧装配或旧运行原件。当前 callable Module 已固定为7324a2a0，复用原锁/协议/只读runner SQL，见[current-migration-interface](current-migration-interface.md)；6个不同直接例通过。Module已于15:11:41.542Z独审批准并main96b424777接收；正式报告集合已到；actual fresh参数与本次OPS14实例仍待现场冻结，不声称现场已经可执行。
 
 ## Web 兼容的准确 tuple
 
@@ -49,7 +49,7 @@
 | retained artifact A | `461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90` |
 | retained artifact B | `caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe` |
 | current retained artifact C | `d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88` |
-| 新网页 artifact D | artifact `779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4`，source `c2311b6bd44a2a8e73e3b066be5f12bc8b153b37`；实际构建已审，兼容尚未验 |
+| 新网页 artifact D | artifact `779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4`，source `c2311b6bd44a2a8e73e3b066be5f12bc8b153b37`；实际构建与本次四App兼容均已审，个人未发布 |
 
 每个 report 及 read/send/recover/negotiation 四原件必须同 backend/context/artifact，完整 hash 与实际 App/cookie 证据绑定，原 owner 独审后使用。旧 C3 的 backend6c 报告不能替代；配置文件 SHA 和 normalized policy digest 也不能混写。新页面的晚到 Logout/连接 cookie 场景须由原 Web owner 明确覆盖，本构建内部加载不证明它。
 
@@ -58,13 +58,14 @@ backend 更新前至少三个 retained 的新 tuple 必须齐备；新网页发�
 ## 最小操作顺序（尚未执行）
 
 1. 固定新薄迁入装配/参数及前述独审，取得新唯一 namespace 和当前共享窗口。fresh 核所有工具/Node/解析依赖、源 artifact 全 manifest、安装 realpath/dev/ino/私有权限、全部保留项、现配置/token/profile/runner身份、Web pointer、marker/库、三 owned 组及维护状态；保存无正文的受保护历史投影。变化或未知立即停止，历史v21不能当当前CAS。
-2. 原迁入协议将 cd27 一次迁入，保留 c7b/7d1 和所有旧文件，完成 checkpoint 与完整 verify。没有后台/Web/任务修改。不重复旧 R2 迁入、旧 replace-host、旧 report/policy 写入。新04da报告只按新固定清单导入，既有205B policy不重写。
+2. 原迁入协议将 cd27 一次迁入，保留 c7b/7d1 和所有旧文件，完成 checkpoint 与完整 verify。没有后台/Web/任务修改。不重复旧 R2 迁入、旧 replace-host、旧 report/policy 写入。新04da的前三份retained报告由固定薄入口导入，既有205B policy不重写。
 3. 从**当前已选7d1**的真实 `root/tools/personal-preview/maintenance-host.mjs` 调用公开 `maintainPreview({directory,action:'bootstrap',backendId:cd27})`，固定 Node 和该 artifact 内的 tsx loader、cwd=root。7d1入口由 state.backendArtifact 合法确认；未生成新 operation 前直接从 cd27 调用会被安装身份门拒绝，不能预填 state。bootstrap 内在 drain 前验证 cd27、现策略身份与三个新 report tuple，并合法创建新 operation/CAS。旧 e655 operation 已结束，不复用其 request/hold/resume keys。
-4. 从此新 operation.backendArtifact=cd27 的合法 `root/tools/personal-preview/maintenance-host.mjs` 执行后续 refresh/resume，同一 operation、同一固定目标。保留配置真实 repository；不切开发 checkout、不以 moving-main CLI 选择来源。正常 drain 等现有用户工作完成；active/uncertain、admission v2、outbox/final proposal/journal 的完整有界事实有未知即 KEEP，不套用旧 v1 intent 退休许可，不取消/重发任务。
+4. 从此新 operation.backendArtifact=cd27 的合法 `root/tools/personal-preview/maintenance-host.mjs` 执行后续 refresh/resume，同一 operation、同一固定目标。保留配置真实 repository；不切开发 checkout、不以 moving-main CLI 选择来源。本薄调用不轮询等待；drain后只核当前已无未处理工作，active/uncertain、admission v2、outbox/final proposal/journal 的完整有界事实有未知即 KEEP，不套用旧 v1 intent 退休许可，不取消/重发任务。
 5. 既有 refresh 在 hold 下真实停止旧 Web/runner/center并启动 cd27 center/runner；独立 Web host可保7d1，其真实工具闭包与cd27同6c，应在前置资格中核实，不能把 Web host source当新backend。ready-paused后先持久checkpoint：全部旧组（尤其center）确停、原64表旧列/任务/会话逐值保留，新增合法迁移/audit显式归因，未知不覆盖。6c→04da迁移文件零差异，但运行仍走原 factory；不得因这条静态事实跳过保留校验。
-6. checkpoint通过才同op一次显式resume，然后分开记录新服务实际启动、中心accepting/CAS、实际领取证据。若只有PID/profile/clean v2或claim status missing，`actualClaimRecovery=UNKNOWN`；仅自然用户工作形成中心receipt与本地assignment完整绑定才可升级。0 operator query、无制造任务/重投。新Web第4项发布是另一准确CAS步骤，依赖D真实报告和全部旧namespace保留，不顺手刷新用户tab。
+6. checkpoint通过才同op一次显式resume，然后分开记录新服务实际启动、中心accepting/CAS、实际领取证据。若只有PID/profile/clean v2或claim status missing，`actualClaimRecovery=UNKNOWN`；仅自然用户工作形成中心receipt与本地assignment完整绑定才可升级。0 operator query、无制造任务/重投。新Web第4项发布按第7步另行CAS，不改变此后台阶段3retained合同。
 
-原61227/61228、installation/runner/profile、DB身份、用户任务/会话、token/config、d629/v3及旧3retained均必须按阶段合同保留；自然用户推进须按事实独立归因，不能要求清空任务才能证明保留。合法 maintenance state/PID/backend descriptor/audit变化单列，不伪称全文件始终不变。
+7. 后台final持久成功后，冻结新的Web阶段六文件/三进程/current release身份；绑定原final receipt同op/source04da。依次运行固定 `--execute-fixed-web-import`（迁入779完整字节，不改pointer）、`--execute-fixed-new-report`（正式第4报告）、`--execute-fixed-web-publish`（v3→v4/current779，保留原3项）。所有调用均经同current-operator/原OPS14；具体参数和模块边界见[current-entry-interface](current-entry-interface.md)。每步未知停止，Web失败时已完成后台更新保持；pointer若已提交则如实记committed-unconfirmed，不回滚/自动重试/退役旧项，不刷新用户tab。
+原61227/61228、installation/runner/profile、DB身份、用户任务/会话、token/config、后台阶段d629/v3、后继Web阶段v4/779及旧3retained均必须按各自合同保留；自然用户推进须按事实独立归因，不能要求清空任务才能证明保留。合法 maintenance state/PID/backend descriptor/audit变化单列，不伪称全文件始终不变。
 
 ## 资源、失败与下一交付
 
@@ -74,8 +75,14 @@ backend 更新前至少三个 retained 的新 tuple 必须齐备；新网页发�
 
 本次可调用薄入口与显式依赖闭包见[current-entry-interface](current-entry-interface.md)，固定source6c417850；默认strict-v1保留，v2与history ports及原红/绿证据见[current-entry-result](current-entry-result.json)。参数模板仍ready=false，现阶段不读取个人或启动操作。薄入口/显式reader ports已于15:48:59Z独审批准并main72f5758bc接收；本批准只覆盖准备。
 
-当前交付：产物独审/主线receipt、尺寸/来源、已审并main fd9dd5a9的集中retention工具；当前迁入Module及参数/guard已独审通过。仍缺：现场参数/监督实例固定、三个 retained 和新网页的04da/context报告及审查、届时fresh现场事实/实际窗口。后续长期退役策略仍open。此处不为准备占用资源，不重复build/import/App旧绿项。
+当前交付：产物独审/主线receipt、尺寸/来源、已审并main fd9dd5a9的集中retention工具；当前迁入Module及参数/guard已独审通过。正式四App报告与独审已齐。仍缺：本次新增Web装配独审、现场参数/监督实例固定及届时fresh事实/实际窗口。后续长期退役策略仍open。此处不为准备占用资源，不重复build/import/App旧绿项。
 
 ## 2026-10-07T15:54:09.188Z 新网页供给只读接收
 
 已读Web原lead固定实际结果审查（APPROVED_FIXED_WEB_ARTIFACT_RESULT_AND_FULLRETURN）；descriptor222B/hash0a39b329和manifest1651B/artifact779acd5b核同。10资产1,700,569B，含manifest1,702,220B；只复用原资产完整性独审，未重hashpayload或重跑build。准确路径、来源commit与审查SHA并入唯一managed-update-inputs.json。Web15:51管理快照已准备newpair source2f6792ca/53980e73、actual NOT_RUN；旧Release status14:47仍缺descriptor是陈旧供给字段，不能据此忽略新产物，也不能把新构建结果当四App兼容。现真正缺项为old3+new779对04da/context81a8的正式报告/原件/独审、对应导入参数和获准后的个人fresh实例。
+
+## 正式四App输入与本次新增调用
+
+2026-10-07T18:30:25.086Z接收Web固定8dfb入口；原件 `web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/main-intake.json` 与root-actual-review，decision APPROVED_FIXED_FOUR_APP_COMPATIBILITY_RESULT_AND_COMPLETE_RETURN，main9281447a3已受控接收。20文件9420B逐hash/Git/tuple相符，实际RETURN18:01:09.576Z。准确4 IDs、descriptor、report/check路径统一见managed-update-inputs.json formalFourAppIntake，不用旧11:51同名包。原兼容证明reload前重试/晚到Logout不抹新连接；新登录后重试未验、HPE唯一根因UNKNOWN，旧FAIL/KEEP保持。
+
+本次可调用新增Web迁入、公开report/publish装配和Python四动作映射已完成局部检查；不重建779/cd27、不重验App、不读个人。薄接口只复用旧已审reader/writer/exclusive rename及migrateOnce。正式新source/检查绑定见[唯一准备结果](web-publication-preparation.json)，现场ready仍false。第一次用户可见发布必须同时达到后台更新成功与779/v4实际发布确认；仅后台成功不能关闭可见发布目标。

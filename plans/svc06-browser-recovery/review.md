@@ -35,3 +35,9 @@ Lead于2026-10-07T15:11:41.542Z对7324/ac6给出APPROVED_CALLABLE_CURRENT_IMPORT
 ## 当前入口准备已审并main
 
 2026-10-07T15:48:59Z，Lead唯一APPROVED_CURRENT_ENTRY_AND_EXPLICIT_READER_PORTS_PREPARATION_ONLY；14source/7证据/33readonly/138pg文件/14alias/42旧raw全部核同、0新检查。main/origin `72f5758bcd5e0e58f290f1197e70ad77e2f7c61d` 接收33路径对4001逐字同。唯一原件`docs/evidence/i02/svc06b-current-entry-review.json`，本scope[原字节副本](../../docs/evidence/svc06/browser-recovery/current-entry-independent-review.json)。模板ready=false；正式old3+newWeb报告、fresh实例与完整资源floor仍缺，不是个人操作批准。
+
+## Web779薄迁入与公开发布准备待审
+
+2026-10-07T19:11:09.514Z，source `520d3cb7bdb352a1462d83c214e63c8a47c218f4`，相对eed059仅8项own调用/参数/检查/正式输入。9个文件fixture、5参数case、3真实OPS14 Policy边界及1受限Node导入场景通过；619ms/1251B，三组absent/双EOF/无signals、三exact空scratchremoved，0PG/HTTP/服务/provider/个人I/O。正式四App独审与20原件复用Web8dfb/main928，无重跑；后台3报告与Web第4报告分段。
+
+唯一[准备结果](../../docs/evidence/svc06/browser-recovery/web-publication-preparation.json)绑定当前源码和原始输出；独审尚待，不自审、不批准实际个人操作。现字段ready=false；现场six-file/three-process/新CAS及后端final原件在授权窗口后冻结，旧消耗namespace不复用。

@@ -1,0 +1,214 @@
+{
+  "at": "2026-10-07T19:11:09.514Z",
+  "source": "520d3cb7bdb352a1462d83c214e63c8a47c218f4",
+  "base": "eed059d7cead1b781467fae39d838e04bd459e5b",
+  "scope": "fixed Web779 transfer/public actions preparation only; personal instance ready=false",
+  "sourceBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-operator.py",
+      "bytes": 12910,
+      "sha256": "9e0e2a66af16d1655532d0ac305870b3a5aff8de4bdf31140e0a5caab487fcb3"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-update-template.json",
+      "bytes": 8693,
+      "sha256": "fcdac439f82866836686467ce4189b6ef497aa08ce6b529532a91727fb14149a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/managed-update-inputs.json",
+      "bytes": 19373,
+      "sha256": "055e4ca1effd3f31d0afb3666c309922afad1693b0352f076ced93590dadffe8"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-web-actions.mjs",
+      "bytes": 8396,
+      "sha256": "1cb9ba33023c12e576e106b8a352e1a054dbb1a29566528f450e08c9056119ee"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-web-transfer.mjs",
+      "bytes": 12331,
+      "sha256": "e352999470b0e8544e770b77a0a0ce2eb0295cb2d2ecb72fca1ff05a6526e47b"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-web-transfer.test.mjs",
+      "bytes": 11900,
+      "sha256": "581673fd7fd3b6433afd70cb0f25c8988354db56ea91cc85a0eb2f0499c9648d"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-web-operator.test.py",
+      "bytes": 2629,
+      "sha256": "435bf3c3f53bc7b006802323f7f9b3f69103cbb2a902b76e6f61a809a8efde74"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-web-load.mjs",
+      "bytes": 720,
+      "sha256": "424dc6b8c9fe853810db4ec76abff7f367f19e7e8d1d995fb03d7c2d322899d0"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-web-transfer-local-01-reservation.json",
+      "bytes": 1600,
+      "sha256": "262b5a025e333102d1785c56e91a99cd0810454528f33164cebc40c857539077"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-web-transfer-local-01.json",
+      "bytes": 3451,
+      "sha256": "a41c9ea1ae20393a6c620de1222af5ae4012047c54e526b2f557e333773184d1"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-web-operator-local-01-reservation.json",
+      "bytes": 1556,
+      "sha256": "3755d9586ebd2fd49b4a3ed34d23dbb79c3926675086677494bb8b8675e86f10"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-web-operator-local-01.json",
+      "bytes": 2525,
+      "sha256": "4d3d1d14c66aed721e8f1ba3bc8f37313e94692f4b2948fdc017306f8e47ee8a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-web-import-local-01-reservation.json",
+      "bytes": 1722,
+      "sha256": "648e05583f5dfe2c5f565c74121b0d937859bd8034037de50941e609e596a302"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-web-import-local-01.json",
+      "bytes": 2640,
+      "sha256": "50a3d93060297f3035e8a57f9ea0310f31fac41c9cd076f9afcff0eb91914615"
+    }
+  ],
+  "interfaceBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-entry-interface.md",
+      "bytes": 10037,
+      "sha256": "c3efef1860b2339a0189c8a3cf872060fb385f493cf69447e8092f0caa887a49"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/managed-update-candidate.md",
+      "bytes": 14969,
+      "sha256": "df913e9b344b000b8bd3d1d122bcbf641423299608e65fef8c3349e65f705c05"
+    }
+  ],
+  "runtimeDelta": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-operator.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-operator.py",
+      "dev": "16777234",
+      "ino": "124270471",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 12910,
+      "sha256": "9e0e2a66af16d1655532d0ac305870b3a5aff8de4bdf31140e0a5caab487fcb3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-update-template.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-update-template.json",
+      "dev": "16777234",
+      "ino": "124271167",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 8693,
+      "sha256": "fcdac439f82866836686467ce4189b6ef497aa08ce6b529532a91727fb14149a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/managed-update-inputs.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/managed-update-inputs.json",
+      "dev": "16777234",
+      "ino": "124228526",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 19373,
+      "sha256": "055e4ca1effd3f31d0afb3666c309922afad1693b0352f076ced93590dadffe8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-web-actions.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-web-actions.mjs",
+      "dev": "16777234",
+      "ino": "124411327",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 8396,
+      "sha256": "1cb9ba33023c12e576e106b8a352e1a054dbb1a29566528f450e08c9056119ee"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-web-transfer.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-web-transfer.mjs",
+      "dev": "16777234",
+      "ino": "124407825",
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 12331,
+      "sha256": "e352999470b0e8544e770b77a0a0ce2eb0295cb2d2ecb72fca1ff05a6526e47b"
+    }
+  ],
+  "inheritedReadonly": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-entry-readonly.json",
+    "sha256": "0c6aceff07880d361186f87dcf0f42e087f7dd22c935c4007c545551f2eb8710",
+    "sameCurrentPins": 33,
+    "factsPgInventoryAndAliases": "unchanged existing single record; no reinstallation"
+  },
+  "formalFourApp": {
+    "producer": "8dfb6d580fbe79c4ed30f3499d0e0ba260b0c549",
+    "entry": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/main-intake.json",
+      "bytes": 15220,
+      "sha256": "29004c4469da68a9180426a76024ec005026fbf2c1ab2a282668e6cbeb632bdd"
+    },
+    "review": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/root-actual-review.json",
+      "bytes": 8807,
+      "sha256": "6e24e157b7e0dc9e5200012c269a8d072a8034037846dda9944cb4345a54bc31"
+    },
+    "decision": "APPROVED_FIXED_FOUR_APP_COMPATIBILITY_RESULT_AND_COMPLETE_RETURN",
+    "reportFiles": 20,
+    "reportBytes": 9420,
+    "mainReceipt": "9281447a3 (Lead receipt; no new execution)"
+  },
+  "checks": {
+    "webFileCases": 9,
+    "pythonArgCases": 5,
+    "pythonPolicyCases": 3,
+    "restrictedNodeImportScenarios": 1,
+    "callableExports": 5,
+    "processMs": 619,
+    "rawBytes": 1251,
+    "startedAt": "2026-10-07T19:02:32.909378+00:00",
+    "returnedAt": "2026-10-07T19:02:33.531905+00:00",
+    "groups": 3,
+    "allAbsent": true,
+    "dualEOF": true,
+    "signals": [],
+    "exactScratchRemoved": 3,
+    "pg": 0,
+    "http": 0,
+    "service": 0,
+    "provider": 0,
+    "personalIO": 0
+  },
+  "quality": {
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "/Users/citrine/.agents/skills/brainstorming/SKILL.md"
+    ],
+    "method": "existing Module migration protocol + fixed public host functions; no new FSM/supervision; failure/identity/byte-bound direct fixtures; pre-agreed design; no skill installation",
+    "at": "2026-10-07T19:11:09.514Z",
+    "finding": "Old unconsumed backend import Policy capture2MiB exceeded OPS14 maximum1MiB; fixed capture1MiB and real pure validator covers both accepted policies/old rejection. Overall raw2MiB unchanged."
+  },
+  "limits": {
+    "localProcessSeconds": 120,
+    "scratchBytes": 33554432,
+    "rawBytes": 2097152,
+    "personalReady": false,
+    "actualWindow": null,
+    "pending": "unique independent review, fresh private six-file/three-process/CAS identities, same-maintenance final receipt and Web instance, latest shared floor and actual window",
+    "notRepeated": [
+      "backend build",
+      "Web build",
+      "four App compatibility",
+      "old maintenance/retirement",
+      "personal health"
+    ]
+  }
+}

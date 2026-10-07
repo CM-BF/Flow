@@ -1,0 +1,76 @@
+{
+  "startedAt": "2026-10-07T19:02:32.909378+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-concurrency=1",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-web-transfer.test.mjs"
+  ],
+  "source": {
+    "current-web-transfer.mjs": "e352999470b0e8544e770b77a0a0ce2eb0295cb2d2ecb72fca1ff05a6526e47b",
+    "current-web-actions.mjs": "1cb9ba33023c12e576e106b8a352e1a054dbb1a29566528f450e08c9056119ee",
+    "current-web-transfer.test.mjs": "581673fd7fd3b6433afd70cb0f25c8988354db56ea91cc85a0eb2f0499c9648d",
+    "current-web-load.mjs": "424dc6b8c9fe853810db4ec76abff7f367f19e7e8d1d995fb03d7c2d322899d0",
+    "current-web-operator.test.py": "435bf3c3f53bc7b006802323f7f9b3f69103cbb2a902b76e6f61a809a8efde74",
+    "current-operator.py": "9e0e2a66af16d1655532d0ac305870b3a5aff8de4bdf31140e0a5caab487fcb3",
+    "current-update-template.json": "fcdac439f82866836686467ce4189b6ef497aa08ce6b529532a91727fb14149a",
+    "managed-update-inputs.json": "055e4ca1effd3f31d0afb3666c309922afad1693b0352f076ced93590dadffe8"
+  },
+  "freshFreeBytes": 19439493120,
+  "admissionFloorBytes": 18164744192,
+  "window": {
+    "recordedAt": "2026-10-07T18:58:01.926Z",
+    "state": "NO_ACTUAL_HOLDER_SOURCE_ORDINARY_RESUMED"
+  },
+  "budget": {
+    "totalProcessSeconds": 120,
+    "tmpBytes": 33554432,
+    "rawBytes": 2097152
+  },
+  "scratch": {
+    "path": "/private/tmp/flow-svc06b-web-local-s5f9jwyo",
+    "dev": 16777234,
+    "ino": 124417947
+  },
+  "provider": 0,
+  "pg": 0,
+  "personalIO": 0,
+  "report": {
+    "pid": 10148,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 522,
+    "stdout": "\u2714 web transfer copies verified tiny bytes under the host lock and leaves pointer/source unchanged (224.856583ms)\n\u2714 web transfer rejects changed source bytes before staging (7.662041ms)\n\u2714 web transfer refuses an existing destination and preserves its bytes (21.736167ms)\n\u2714 web transfer rejects source identity drift and symlink input (8.61225ms)\n\u2714 web transfer does not copy a symlink inside the artifact (5.833875ms)\n\u2714 web transfer keeps a renamed destination on unknown post-rename outcome without changing pointer (102.13175ms)\n\u2714 web transfer preserves the verified stage when the pre-rename identity gate changes (36.944458ms)\n\u2714 web public parameters refuse incomplete instances before personal I/O and keep callable imports pure (0.915166ms)\n\u2714 web public parameters keep three backend reports and a separate fixed publication request (1.754417ms)\n\u2139 tests 9\n\u2139 suites 0\n\u2139 pass 9\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 476.195666\n",
+    "stderr": "",
+    "observed_bytes": 984,
+    "retained_bytes": 984,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "remaining": [],
+  "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY",
+  "finishedAt": "2026-10-07T19:02:33.432312+00:00",
+  "cumulativeProcessMs": 522,
+  "cumulativeRawBytes": 984
+}

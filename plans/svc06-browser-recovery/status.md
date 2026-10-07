@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T16:32:16.143Z；现有服务只读健康观察完成；新版四网页兼容仍等待 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T19:08:28.501Z；正式四App报告已齐，新Web薄迁入/发布调用及局部检查完成待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,19 +13,19 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery |
 | Branch | codex/backend-browser-recovery |
-| 工作基线 / HEAD | base 6c0fdcda8858aac33489c48c1948e902dd6a3d7e；artifact source04da/cd27已审；当前薄入口/两读取接缝target6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba |
-| 工作树dirty状态 | 已审source保持停写，仅本次review/mainreceipt与Web供给metadata更新 |
+| 工作基线 / HEAD | base 6c0fdcda8858aac33489c48c1948e902dd6a3d7e；artifact source04da/cd27已审；当前新增Web调用source 520d3cb7bdb352a1462d83c214e63c8a47c218f4；原6c417入口已main |
+| 工作树dirty状态 | 本次own调用/测试/记录固定中，已审产品及旧入口主体保持 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 实现目标 | 6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba |
-| 实现范围 | docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs, docs/evidence/svc05-history-compatibility/release-operation/admission-preservation.test.mjs, docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs, docs/evidence/svc06/browser-recovery/runner-idle.mjs, docs/evidence/svc06/browser-recovery/history-port.test.mjs, docs/evidence/svc06/browser-recovery/current-import.mjs, docs/evidence/svc06/browser-recovery/current-maintenance.mjs, docs/evidence/svc06/browser-recovery/current-operator.py, docs/evidence/svc06/browser-recovery/current-update-template.json, docs/evidence/svc06/browser-recovery/current-entry.test.mjs, docs/evidence/svc06/browser-recovery/current-entry-load.mjs, docs/evidence/svc06/browser-recovery/current-operator.test.py, docs/evidence/svc06/browser-recovery/current-entry-readonly.json, docs/evidence/svc06/browser-recovery/retention-validate.py |
-| 检查状态 | 本次9distinct行为/10选择含1历史红，最终9绿；另2加载/参数检查；6轮661ms/2580B、6组absent/双EOF/exact空scratchremoved；旧绿不重跑，0个人/PG/clone/provider |
-| 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module已独审并main96b424777；本次薄入口source6c417850已独审并main72f5758bcd5e0e58f290f1197e70ad77e2f7c61d，新网页兼容和个人更新未验 |
+| 本片段交付阶段 | review |
+| 实现目标 | 520d3cb7bdb352a1462d83c214e63c8a47c218f4 |
+| 实现范围 | 本次仅own evidence内current-web-transfer/actions及三直接检查、current-operator参数、template和formal输入；精确8source见web-publication-preparation.json；原已审reader/产品停写 |
+| 检查状态 | 本次Web微型fixture9/9、4argv+未知拒绝/3真实Policy边界、1受限Node导入；三轮619ms/raw1251B、三组absent/双EOF/空scratchremoved；0PG/HTTP/个人/provider。旧红绿保留不重跑 |
+| 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module已独审并main96b424777；本次薄入口source6c417850已独审并main72f5758bcd5e0e58f290f1197e70ad77e2f7c61d，新网页四App兼容已获Web独审/main9281447a3；本次个人更新未执行 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 现有服务响应正常且已解除维护；此前排队任务已失败，具体原因仍未知。新版后台和网页产物已收到，兼容验证仍在推进。 |
-| 下一可用交付 | 接收四网页正式兼容报告并固定更新参数；旧任务失败原因另由负责人确认。 |
-| 当前阻塞 | ACTIVE: 四网页兼容报告与现场参数尚未齐备；旧任务失败的具体原因未由安全摘要接口提供。 |
+| 当前产出 | 新版后台与四个网页的兼容已验证，新网页的受管迁入和发布调用已完成局部验证，正在独审。现有服务仅有先前观察，历史任务失败原因仍未知。 |
+| 下一可用交付 | 独审后按新现场身份和窗口受控更新后台，再发布新网页；保留旧页面和用户数据。 |
+| 当前阻塞 | ACTIVE: 新发布调用等待独审和现场执行门禁；历史任务错误分类仍未知。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；artifact/retention/迁入与current入口均已独审/main；current-entry-independent-review仅准备批准，不当现场ready |
 | Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v6 active；own双目录、runner-files/admission-preservation两exact及history-projection.mjs；15:21:42.826Z receipt。已交产品全部停写 |
@@ -36,12 +36,12 @@
 | SVC06B-01 | completed | assignment_review | source.json精确provision/take/三前像/四后像与原独审 |
 | SVC06B-02 | completed | assignment_review | [固定构建准备](../../docs/evidence/svc06/browser-recovery/build-proposal.md)，Lead限定独审已通过 |
 | SVC06B-03 | completed | assignment_review / Execution Lead | 实际artifact cd27/04da及内部加载通过，独审批准并main b37e404d |
-| SVC06B-04 | pending | 原Web owner / assignment_review | 新backend cd27与Web779已供给；等原Web owner四App组合验证，旧C3不能替代 |
+| SVC06B-04 | pending | 原Web owner / assignment_review | 新组合4报告及独审已接收；固定双阶段装配/现场门禁待收口，不重用旧C3 |
 | SVC06B-05 | completed | assignment_review | retention203ec及5/5已独审并main fd9dd5a9，3产品scope已释放；不改cd27 |
 
 ## 等待与实际时间
 
-实际构建窗口已归还，结果独审/主线接收已完成；目前仅受管更新准备及0PG本地工具小片。Web准确新descriptor已于本次只读接收，真实兼容报告仍待；首次接口等待起点无单独记录：UNKNOWN。不把纯准备时间全归因资源。
+实际构建窗口已归还，结果独审/主线接收已完成；目前仅受管更新准备及0PG本地工具小片。Web准确descriptor及正式四App兼容报告已接收；首次接口等待起点无单独记录：UNKNOWN。不把纯准备时间全归因资源。
 
 ## 已有审查与质量方法
 
@@ -71,7 +71,7 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 | --- | --- | --- | --- | --- | --- |
 | SVC06B-W01 | 2026-10-07T14:19:16.013Z | 2026-10-07T14:26:01.460Z | 审查 | 固定准备待唯一独审，正式批准已到 | build-preparation.json / preparation-independent-review.json |
 | SVC06B-W02 | 2026-10-07T14:28:01.673Z | 2026-10-07T14:30:01.227Z | 资源 | 前一旅程归还后取得本次sole窗口，已START | approval-receipt.json / actual-admission.json |
-| SVC06B-W03 | UNKNOWN | OPEN | 接口 | 新Web779 descriptor已到；仍待old3+newWeb对cd27后台/context真实组合报告；旧C3不可替代 | 原派工 / 本次RESULT.md；首次等待时点无独立来源 |
+| SVC06B-W03 | UNKNOWN | 2026-10-07T18:30:25.086Z | 接口 | 本次正式四报告与准确导入来源已接收，接口等待结束；个人现场仍未执行 | managed-update-inputs.json formalFourAppIntake；首次等待时点UNKNOWN |
 | SVC06B-W04 | 2026-10-07T14:32:21.520Z | 2026-10-07T14:37:48.376Z | 审查 | 实际产物已独审并main接收，等待已结束 | result-manifest.json / actual-independent-review.json |
 
 | SVC06B-W05 | 2026-10-07T15:09:12.049Z | 2026-10-07T15:11:41.542Z | 审查 | 当前迁入Module正式独审通过，实际实例仍未封定 | current-migration-independent-review.json |
@@ -112,3 +112,11 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 质量复核：复用已读find-skills/clean-code/codebase-design的最小职责与显式界限方法；单份安全观察结果，source pins仅绑定实际公开只读路径；标题/requested字段及凭据不存档/不输出，响应与输出字节有界，错误不回显原message/stack。无新框架、无产品改动，无工程测试；短健康观察不占新heavy窗口，不当新聊天或下一发布验收。原报告接口等待与NOT_COMPLETED保持。
 
 后续仅静态定位（0新现场调用）：固定6c的queries.ts:16 eventPage返回legacyTimelineEntries、:27 detail返回content；conversations/turn-read.ts:29含user.text，均不用于本次诊断。runner.ts:69的completed只带可选error字符串；events.ts:73将其作为detail.content存储；runtime.ts:268普通失败只发送固定泛化文本。已核这些公开路径没有独立、不带正文的执行错误分类字段，不能据此归因本任务，也不能将通用失败文案推定为真实上游错误。本次停止现场探测，保留failed/原因UNKNOWN；若需深入，先由服务owner提出安全、只投影结构化分类的具体读取合同。固定字节出处：apps/server/src/queries.ts (2605B / 16070c2e9aede9ab7bfb011512e8be147c58f830a69ea2dcf2834004e0f0c0e4)；apps/server/src/events.ts (8925B / 01864e94da6a985ba1d0fcb677c66a1692bd125ed5806d9de37ed919d0d5cd9d)；apps/server/src/conversations/turn-read.ts (2503B / 7222a117bb397e59eb577706e53eceb9554ca4bb4e2f28a26db9453e0bb69620)；apps/runner/src/runtime.ts (17320B / db4e30317baf9a604d5fe89c2c67ff03cb925bbed90cb7cc3debfc055af10648)；packages/contracts/src/runner.ts (7753B / cd987806034ec4ed967fc27229a7e1cd8b81fdfb7c037388c5a5a51615dd5918)。
+
+2026-10-07T18:30:25.086Z：本段最早可证恢复观察18:13:41Z，精确首读时点UNKNOWN；fresh账本95f47 v6与本树归属核同。接收producer8dfb本次四报告/20文件9420B逐hash/Git/tuple一致及正式独审，实际兼容RETURN18:01:09.576Z，主线接收由Lead确认9281447a3。没有重验App、个人I/O或新运行。后台12phase仍3 retained；Web779按独立v3→v4公开CAS。旧d629迁入入口硬绑af51，不能直接套用；沿已授权own scope补薄调用，复用migrateOnce/排他改名/固定校验/锁，不复制FSM或重build。剩余现场pins/floor/窗口未取得，ready=false、NOT_COMPLETED保持。
+
+2026-10-07T19:08:28.501Z：S01性能段按Lead停写回执18:45→其明确RETURN消息恢复（消息未提供精确恢复UTC，不猜）；权威资源18:58:01.926Z已记ordinary恢复。期间0child/pending launch/写入。实际本轮三检查2026-10-07T19:02:32.909378+00:00开始（原始精度），至19:02:33.532Z完整RETURN；619ms/1251B、三组absent/双EOF/无signals，三exact空scratch同身份删除。Web9行为、Python参数/OPS14真实验证与权限沙箱Node导入均绿；0PG/HTTP/服务/模型/个人I/O。继承33readonly及旧facts依赖、119396B旧raw扣减不改。Web后台三报告与独立第4报告/publish两个阶段明确；单份准备结果web-publication-preparation.json待唯一独审。原ready=false/NOT_COMPLETED/旧FAILKEEP保持。
+
+2026-10-07T19:11:09.514Z：新增调用固定source 520d3cb7bdb352a1462d83c214e63c8a47c218f4，唯一交审入口[web-publication-preparation](../../docs/evidence/svc06/browser-recovery/web-publication-preparation.json)绑定8source/6原件/2Interface及继承依赖；未采任何个人fresh字段，ready=false。当前只等本次独审和实际窗口；不为metadata重复测试。
+
+本次封定前clean-code/codebase-design复核：迁入、公开动作与argv职责独立，复用原协议/监督；没有新FSM/通用平台。固定原始输出证明错误留存/排他改名/权限边界，实际模板仍未ready。主线parseStatus仅核本status，errors=[]、human.missing=[]、timing.issues=[]；未运行其它计划聚合或产品检查。
