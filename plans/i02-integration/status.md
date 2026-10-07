@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:29:37.245131+00:00 / main30ec4489；隔离Web宿主已审结果与OPS时间状态窄接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:34:18.755443+00:00 / main1d49da00；ENG01J修后机制片限定独审并精确接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main30ec4489；SVC08 b438固定结果/候选与OPS454两status，本批产品零改 |
+| 工作基线 / HEAD | main1d49da00；ENG01J471实现/4eb交付五source及own记录，全部直接输入不变 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 固定28文件逐字接收、隔离结果原28绑定及私有证据独审；0 reviewer测试/PG/provider。ENG01J专测发现器P2仍修复中。 |
-| 已集成main状态 / HEAD | main30ec4489已接186源实际看板回执；本批仅接隔离Web结果及管理记录。个人af51/accepting v18、Web d629/v3未变。 |
+| 检查状态 | PASSED ENG01J148固定bindings+13已装入口独审同源；普通1pass3skip/受控4/4/focused0复用原证据，0集成重测。 |
+| 已集成main状态 / HEAD | main1d49da00已接SVC08隔离结果；本批ENG01J只接Darwin机制/R06接缝，未给生产写权限。个人af51/v18、d629/v3未变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 固定网页宿主已在隔离环境运行并完成收尾，独立结果通过；完整工具原文的局部验证已通过。 |
-| 下一可用交付 | 完成仅网页宿主的个人采用准备；修正工程宿主专测入口后接收，工具正文数据库验证仍开放。 |
+| 当前产出 | 工程受限启动层已通过限定审查，普通测试入口问题已修复；固定网页宿主的隔离运行结果已在主线。 |
+| 下一可用交付 | 采用固定网页宿主；核真实Codex文件工具辅助进程兼容性，工具原文数据库与生产接线继续推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -330,3 +330,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T05:18:21.913864+00:00：D05限定两文件doc review无finding，实际186源/ENG01J human与timing完整；CHAT05新30bindings、10/10/focused0独审核实，保留PG3未验与15只读main输入变化。原Web入口及个人监听/config/state保持，不刷新tab。SVC08共享PG已由X01实际清理归还后交唯一operator按固定入口执行，运行结果另收。
 
 2026-10-07T05:29:37.245131+00:00：受控接收SVC08隔离真实宿主结果与OPS实际时间状态，[固定28文件](../../docs/evidence/i02/svc08-isolated-result-ops-intake.json)逐字相同；[独审](../../docs/evidence/i02/svc08-isolated-web-host-result-review.json)限1场景/7断言/3静态HTTP和正常专库收尾。个人采用仅候选，不改变af51/v18或d629/v3；ENG01J专测入口P2交原owner窄修，未接产品。0新增工程测试/provider。
+
+2026-10-07T05:34:18.755443+00:00：ENG01J五新source及自有记录按[固定输入](../../docs/evidence/i02/eng01j-controlled-intake.json)受控接收；[增量复审](../../docs/evidence/i02/eng01j-r1-re-review.json)关闭普通Vitest发现器P2，实际R06继承FD对照/unknown传播范围保持。仅机制片，真实Codex helper兼容性/模型资格/全部writer撤销仍开放；0工程重测/PG/provider。

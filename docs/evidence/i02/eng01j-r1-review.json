@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T05:30:46.936857+00:00",
+  "task": "ENG01J",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "324d62267d31273683b4720501a3fbde137225ce",
+  "delivery": "593ebb8b7ec92dd0e959b936310d7b6a97201d58",
+  "manifestSha256": "82148bdf359b8b799bb471ca4e6d9a8031212072fa196e299fd273a03b066380",
+  "bindings": {
+    "fixedCurrent": 126,
+    "product": 5,
+    "protectedInput": 79,
+    "evidencePlan": 42,
+    "installedEntry": 9,
+    "boundBytes": 577632,
+    "mismatches": []
+  },
+  "conclusion": "REQUEST_CHANGES",
+  "findings": [
+    {
+      "id": "ENG01J-R1-P2-01",
+      "severity": "P2",
+      "path": "apps/runner/src/engineering/native-authority.test.ts",
+      "reason": "Root Vitest include apps/**/*.test.ts discovers node:test files; unconditional top-level special-environment assertion throws before normal collection. Pure policy also uses node:test instead of repository runner.",
+      "fix": "Use repository-compatible test registration, explicitly guard Darwin/special fixture-dependent group; preserve actual selected four-test R06 evidence and verify normal missing-fixture collection does not launch/throw.",
+      "scope": "Original seven literals; no R06/C02 or grant expansion."
+    }
+  ],
+  "positiveFacts": [
+    "Full five-source delta and original per-round stdout/stderr/cleanup read.",
+    "Four local checks at be61 plus final erased Stats annotation and focused types0; original compile/type failures retained.",
+    "Inherited regular FD bypass and actual R06 close-FD contrast explicitly retained.",
+    "Current child confirmed-exited never promoted to writeAccess revoked."
+  ],
+  "limits": [
+    "Conditional upstream Codex helper-spawn incompatibility is successor design input, not local native failure.",
+    "No real native binary tool route, model qualification, provider networking, all-writer revocation or production grant demonstrated.",
+    "No integration of this target until direct test-discovery issue fixed."
+  ],
+  "reviewerExecution": {
+    "tests": 0,
+    "PG": 0,
+    "provider": 0,
+    "services": 0
+  }
+}

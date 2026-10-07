@@ -1,0 +1,32 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "esModuleInterop": true,
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/@types"
+    ],
+    "paths": {
+      "zod": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/contracts/node_modules/zod/index.d.cts"
+      ],
+      "vitest": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/vitest/dist/index.d.ts"
+      ]
+    }
+  },
+  "files": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority/apps/runner/src/engineering/native-authority.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority/apps/runner/src/engineering/native-authority.test.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority/apps/runner/src/engineering/native-authority-darwin.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority/apps/runner/src/engineering/native-authority-darwin.test.ts"
+  ]
+}

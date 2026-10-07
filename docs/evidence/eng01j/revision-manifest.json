@@ -1,0 +1,1308 @@
+{
+  "task": "ENG01J",
+  "sourceTarget": "471b1d8b7b19d53e7c7e87efc525e9c193c5242e",
+  "evidenceTarget": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+  "base": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+  "supersedes": {
+    "manifest": "manifest.json",
+    "sha256": "82148bdf359b8b799bb471ca4e6d9a8031212072fa196e299fd273a03b066380",
+    "unchangedCount": 117,
+    "supersededPaths": [
+      "apps/runner/src/engineering/native-authority.test.ts",
+      "apps/runner/src/engineering/native-authority-darwin.test.ts",
+      "docs/evidence/eng01j/README.md",
+      "docs/evidence/eng01j/interface.md",
+      "docs/evidence/eng01j/local/README.md",
+      "docs/evidence/eng01j/local/probe.py",
+      "docs/evidence/eng01j/local/tsconfig.json",
+      "plans/eng01j-native-write-authority/review.md",
+      "plans/eng01j-native-write-authority/status.md"
+    ]
+  },
+  "counts": {
+    "bindings": 148,
+    "installedEntries": 13
+  },
+  "bindings": [
+    {
+      "path": "apps/runner/src/engineering/native-authority.ts",
+      "fixedRef": "324d62267d31273683b4720501a3fbde137225ce",
+      "role": "product",
+      "blob": "4ac17a9da3b9b2b4c713d3bc4e0c915b36a1867e",
+      "bytes": 5846,
+      "sha256": "afaa1d2968eddfb5ecbfae0674ee9d34f13b0dc2dd561f590c58f6d2d7ed5c04"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-authority.test.ts",
+      "fixedRef": "471b1d8b7b19d53e7c7e87efc525e9c193c5242e",
+      "role": "product",
+      "bytes": 3481,
+      "sha256": "05076e0d1dfd6cce598997689fee3f491e5f253e5e929c8a13fbd072dca27f5e",
+      "blob": "b072415e61576e5816a8efdbbd0d8d2026cb612d"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-authority-darwin.ts",
+      "fixedRef": "324d62267d31273683b4720501a3fbde137225ce",
+      "role": "product",
+      "blob": "1fa4a759a57c5db62719702c59c7df0c0c1b4436",
+      "bytes": 1660,
+      "sha256": "26c5585d2b256cab1c53d83b28c1ac494aead830fe4dc3f12a4552ff0a4da16c"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-authority-darwin.test.ts",
+      "fixedRef": "471b1d8b7b19d53e7c7e87efc525e9c193c5242e",
+      "role": "product",
+      "bytes": 656,
+      "sha256": "d095aba784dddf4ce585e75a9d245338502829948332ae636b0fdcdc1693971d",
+      "blob": "e96ac0123b1883dfd7d83073e0ade4eb081c1586"
+    },
+    {
+      "path": "apps/runner/src/engineering/fixtures/native-authority-canary.c",
+      "fixedRef": "324d62267d31273683b4720501a3fbde137225ce",
+      "role": "product",
+      "blob": "36c4909c359588da412c6ed737a0aff1089f6573",
+      "bytes": 4114,
+      "sha256": "f86c5fc83f4bc1c1f587a9dd6e8854825ee843c663f8f847918cef8d25f32459"
+    },
+    {
+      "path": ".gitignore",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "4539012d5f69622debba71391e3390f3cd6a4032",
+      "bytes": 108,
+      "sha256": "677d39b3228b53937e669987421278ac9aa382172aacf8002a7ca7822367bc27"
+    },
+    {
+      "path": "AGENTS.md",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "b25a22aee3d8434bb520054502f61cd82cefd66c",
+      "bytes": 18655,
+      "sha256": "97c72b406c9d97af821a59662daf1ec91588a0ef12c612cfdf9a9a99b28cf348"
+    },
+    {
+      "path": "apps/runner/package.json",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "a648a3e2b13225c9a163b274b08c40348b4ebe1c",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9"
+    },
+    {
+      "path": "apps/runner/src/codex/fixtures/peer.mjs",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "3d6e5c81a4c24cf94dd20f66e32c656ae836a92b",
+      "bytes": 3728,
+      "sha256": "7c98dbdbd941aca973f88833015ffd6052bbcc054f3edb2d649c5536a4ca89cf"
+    },
+    {
+      "path": "apps/runner/src/codex/framing.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "43df5f1616e6b840d5864b61c5ceeae3c1adad55",
+      "bytes": 3554,
+      "sha256": "38d4199ab362efff7bb6bbc157c942d3d55eb5b2d9ae1b86a02d384c027b6f0d"
+    },
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "ba9810587da588218b8bec9f1719db0e8fc88860",
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc"
+    },
+    {
+      "path": "apps/runner/src/codex/options.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "3981da77c7b27646e6f6e93dadfa74e85afb950c",
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843"
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "febc629518dce35bf72867dd24e5d532ce68b9f2",
+      "bytes": 10273,
+      "sha256": "b3dae983e3486ae08c359b7560e01894fc742f64eff5891df6e73f0c9471a575"
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "89732b04b857e6c9420032596b7657065dd9c3f2",
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31"
+    },
+    {
+      "path": "apps/runner/src/codex/types.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "ae4e2d83d7ce28d48a8396a7b21b197fb31e83d7",
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828"
+    },
+    {
+      "path": "apps/runner/src/codex/writer.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "3ab40059fdcea0957137c9426dc9da5c5393e0e4",
+      "bytes": 3117,
+      "sha256": "8e49cc8ef03136790c54e55a49af2821bbc7e40aa75ca1603e6020ed3ecd6a21"
+    },
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "dddace7b709daefd18800faf38223d2911321136",
+      "bytes": 4272,
+      "sha256": "89ff8005b4817b1ae231e999abc9e43e62202dd815d4962ec11e07c9d4b59f43"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-capture.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "23718fce9b3f7e1046bc99f98f45a8132dcca50a",
+      "bytes": 9048,
+      "sha256": "14b67f5952e03037d108d0ef48d012fa3a24bb9c1db483ac9284b2866131a44b"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-capture.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "5b06f5db6899805b8e002bf44b495776638acb23",
+      "bytes": 2845,
+      "sha256": "96ce194d26920292d7f1da37b8b4930e7999fa5b91ac78ad45f98bd35fffec4b"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-checker.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "d544f7982395440a97320aab75cd4232a29ddd1b",
+      "bytes": 7992,
+      "sha256": "40107c8cce459827100573a1ef1766b505ecad9a40f20613bcb519dc2b17cff8"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-checker.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "e4a3e346901ef55bc139470e190c46fcc229a680",
+      "bytes": 4507,
+      "sha256": "aea38fda8724f8fcb5dd764ece8e9289ab6d2dce68817767d218b3df6fa8d7f8"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "1625947a646338bc490bf9b37d7963383eaf9c69",
+      "bytes": 4794,
+      "sha256": "eaa5656eb571c8ec658ff9636b35e018e025b53b2c4d704646313884c98d20b2"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "37157873fc283f3991661abb677570af64ddae43",
+      "bytes": 3166,
+      "sha256": "95d2a5c4c0130684d36dcc5329fb0e53629412da04281a80678016f23d701e03"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-source.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "22e95220b7ddc2ec49e73e4f8dae37c0d113dcaa",
+      "bytes": 2964,
+      "sha256": "73291ba397e5eb0e23a6d5822370c7cea5313a2c97af35d5517d9ffe484c92db"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-source.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "9fade0c8882d664f1837a1fe9538eb424ddf0f18",
+      "bytes": 1711,
+      "sha256": "8fafe89296fd4544ef01a1b5fa66b00a85815aa88f17c39b6a1d6a821f7e8967"
+    },
+    {
+      "path": "apps/runner/src/engineering/checker.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "8928eb9d377bae9b5facb4f2d2ec45e6db1f7603",
+      "bytes": 4705,
+      "sha256": "d670a01c5a1fdd50258ed5faa69cea91e75e33e771cfe107d00677c06956081b"
+    },
+    {
+      "path": "apps/runner/src/engineering/identity.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "c769392a08d3abc148021832d6c805c4aa9264e9",
+      "bytes": 1898,
+      "sha256": "dbe1198133e0158350835ff76735a0efa536994818ef16790f0277b9e2347f5f"
+    },
+    {
+      "path": "apps/runner/src/engineering/integration.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "568f71ebc03ea26e5767d3e1bb7cb8fd59cdb67f",
+      "bytes": 15852,
+      "sha256": "911c45b252e3598d4dfd2d4a4bb7eca2b521eb7152de0670f7a6b57904ef533d"
+    },
+    {
+      "path": "apps/runner/src/engineering/launch-integration.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "2941826534e1f81722c0d0148fa45b7772958565",
+      "bytes": 11961,
+      "sha256": "d9bf6572a1e64998fc9473204e686d46bf54c130ae7f4e348ea1ccac3ad70647"
+    },
+    {
+      "path": "apps/runner/src/engineering/launch.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "8bb283478804012022af1d9ed8143f2948426102",
+      "bytes": 3563,
+      "sha256": "4f465b36b4f104b23cb50ca2fd8e180a9fb24bf2d4738681dd024a26e8506e79"
+    },
+    {
+      "path": "apps/runner/src/engineering/launch.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "c08ab649b0e8cc73ef349931c05f9b3887ba46af",
+      "bytes": 1435,
+      "sha256": "3d41aaa5e45512a33a8d91e1e90a77779d995b9b6388b9f5462fe73a660922f3"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-adapter.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "c4b00ad9ac7108b348bb24f3fe32a39c5fac858e",
+      "bytes": 22622,
+      "sha256": "5396ad7a7f00c99d91666c05b144f6caef591a11957955176ccd2031a8c1484f"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-adapter.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "ab7c3e8c8ae730dc150f97859d694f20da930d59",
+      "bytes": 7328,
+      "sha256": "55558f3abc6afca51c50feca81cb39605b5b98be03fe4e405204a56fb784e7e7"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-policy.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "aa367f54bff030a9825fc1e233d639a231669bb1",
+      "bytes": 5419,
+      "sha256": "32cecb16e5ed2b428c22d59a859f934e597237e038f6cb535b9df03e7eaaaf3e"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-policy.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "9236ac90d71419c131559b586a8796d044e3abe7",
+      "bytes": 4176,
+      "sha256": "029326253edb300215e88c058faedba004189cdcb7e6614383795acb8610e04d"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-writer.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "c6b61535c4da80691f9abe7799ed803a7a35db41",
+      "bytes": 12453,
+      "sha256": "be1cf98bfcfc16e64ac7f8dc5d9a46a6c855a364b7b75383d9256e5b8729cc30"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-writer.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "c6391025d1cb0783d60022d55eda8cbc20f7e974",
+      "bytes": 5521,
+      "sha256": "08039226f4e75cf5c54ab54ed0dacfb55410303abbc93bb0f8354a4eaaacd270"
+    },
+    {
+      "path": "apps/runner/src/engineering/resources.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "6a481f9fba1be83a5aeecde806f28e238e28df4d",
+      "bytes": 4956,
+      "sha256": "26545a80686e0d0e3bed6de85716980df930c471eac891211dd1bdca2d831368"
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "d44b4e00c77717e53507507adae14e4daf2e472b",
+      "bytes": 8715,
+      "sha256": "df2e75ab590b1843defb10ba79c5d0b5d07866b38277c315c0c39cea09e7b9d1"
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "3545330d6d590409934204a17ac214be266cca7f",
+      "bytes": 6695,
+      "sha256": "e8a35ac85c0c048ce2abaafb513562e4b87f31906d6eb24e6ca150ab182cb6ce"
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "85ae5d569864bed4e9ce23c2e1b8e339474e1462",
+      "bytes": 13029,
+      "sha256": "797543c0c78569faa92c969054cf68d0e2a16f83a34a9156656c8b423f652054"
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "36416d4e2eb3d37cbce90208969be3e261513b5f",
+      "bytes": 12205,
+      "sha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d"
+    },
+    {
+      "path": "apps/runner/src/engineering/writer.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "ca7f42ce932b4c2fb3ab85b847aaab671bef9827",
+      "bytes": 7947,
+      "sha256": "0cf6f5408b18c6fef0c47fbd2d683ac9a6349b694a1630207588db970611be4b"
+    },
+    {
+      "path": "apps/runner/src/engineering/writer.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "0f581c95cd7b8b5bebfcc90a3c0dc4631821b323",
+      "bytes": 1514,
+      "sha256": "59ac0c67279b3be98244f0482da9a5413c20d6a6716a3cbcfb3bd674647e1470"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "282af1284ab4907b4072cfade8fc321f2c2558c0",
+      "bytes": 10676,
+      "sha256": "b93d0d911fe731cec7563ee7d2d279e82e7a0fe85014d49e55c32f4fcddab50a"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "92aab2cedfbf9c6bbdef76ed83684e5b7a3be5b2",
+      "bytes": 2738,
+      "sha256": "95fb7cc5246bcb947311c64f1f1d7ecd331e08627dda985eedbcb7b1956113f1"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/continuity-fixture.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "74202bd740571a16d7d6a9131b1d53c287eb5a92",
+      "bytes": 5456,
+      "sha256": "9fccf18054d57145492efd84750bc8a6fe4b9b253f4651190386f137e7ba1b34"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/continuity.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "4af50e568e2a53dde9af33dd6162aae241e28f65",
+      "bytes": 7508,
+      "sha256": "5de110f246274dce374252f198fd291cb85669afe05e0f990d36bad0be537a58"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "7724098565c418e13de701829778df83ad5b16b9",
+      "bytes": 5504,
+      "sha256": "94b1f7279d0ff638fea4a4cb683d9df0f4ff73a1502a52b37c43b3e67e58618f"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "ef1f58ceb0121413994006f0cc37808fc3d0660c",
+      "bytes": 8361,
+      "sha256": "e51986edad382fdf42e5774da855d5fee9127e9715c540eba60600cb91a1cdf4"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "3d908c9671acd8e822049a2c60783f1a4241fb29",
+      "bytes": 10214,
+      "sha256": "9c3a1e7ad1de055540763bcef81be8f5af50189e3bc9fb16c25be1c36d04b8a2"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "4ed5af3d1026ae53be375aa84788f631e18297c1",
+      "bytes": 6116,
+      "sha256": "dc8036e14b7395891b61d7723a8b10212fba7ac70f6579093b160c08fd3d756a"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "a5def0f45c59864c8929c7cfd29100399a03649f",
+      "bytes": 1109,
+      "sha256": "4c480609b0724a20459911f379dbfe63e2875c34b344ef1cc3e95a724aff18c6"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/integration.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "f4d3609d35f987cbfcb37f6a691d313b2cbf7579",
+      "bytes": 11320,
+      "sha256": "68ac70664589b5ab31ccea56a2534a6eed6782b2f76356e08adf42ad1f0ca539"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "44e7aebaa5f046f0215c2f29fe61ab3e6860fdc2",
+      "bytes": 17344,
+      "sha256": "1a4a7da2d532311fc3cbadb3868b5663db65bd902e8a78a33f8e7fbe0f4a8a22"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "3417a4cfe3270dfdaf284ee3688527ad71db1ad2",
+      "bytes": 6077,
+      "sha256": "791db32294dd90783f55da3d9ac8d4a981c04dfea2c11db0d19957fe7a995075"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/peer.mjs",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "a5398643b7cf022c3f51820043121e00b1223d33",
+      "bytes": 7885,
+      "sha256": "d34ed1fc25f55d23342549797507cd52cf421b5273e3af8672d82ef376aa6228"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/policy.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "042ca19adcc231a83a86fd18622429aa5e1d3477",
+      "bytes": 1696,
+      "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/projection.d.mts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "fdab9edde33d870f6effc202c7d709e491503492",
+      "bytes": 716,
+      "sha256": "8595d7c661688e9c2aad8cb3a69530a904167798cccc218bd0a450bd8e8e3e6c"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/projection.mjs",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "90da9a2591d1da64c82426439bbb22e7edca4ab6",
+      "bytes": 5179,
+      "sha256": "01fd832745a81b4e098d63c3a97aadd8c38942b33c73132c0de78fd7c6b6a5ad"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/session-storage.test.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "ff826828a5240d6a0c88afc2bb24e225ab06635d",
+      "bytes": 6207,
+      "sha256": "784b7d91db70083f1ccb4d69b27eb57b45aa3a46a0f1149c47eaf6a8ac5e68d7"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/session-storage.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "e09ec48f26bc472614637178e0b666811fc08a45",
+      "bytes": 3899,
+      "sha256": "68d2d7a40980af68e2682dc9cfa759472014f171fd1ef4a63f9787229fdfb407"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "03456f0b4c12203fa4d11a79f7014eb1aee78280",
+      "bytes": 2979,
+      "sha256": "3b938f081f2e1fff4c214b6a8a82691a036de7329f819ec475c5670a62f13e57"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/wire.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "489ea13112115b7ef202d90ecd7baf6bcf1659fb",
+      "bytes": 2382,
+      "sha256": "59cef88a019829b83d4e50b6abb817c36b1a50c75be8ce1b7608ae7ec1bf8363"
+    },
+    {
+      "path": "apps/runner/src/native-harness/settlement.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "fddb67847003114b2b7cd2d71d3e8c6ae00ba35e",
+      "bytes": 741,
+      "sha256": "1bee2a52454323b8b8d974c32259c4e1f05e30faecbf0f6f15b3542dee9d40eb"
+    },
+    {
+      "path": "docs/evidence/d04/README.md",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "c4a46eec86eb3153d27440572cd7821a07100c4f",
+      "bytes": 5061,
+      "sha256": "5b05d553a8996f11142f6dc27dc56f00397490e2429f8bde5c7716550fda60be"
+    },
+    {
+      "path": "docs/quality/local-validation.md",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "9e82146aa8967f16c2e56af71271eae67229008e",
+      "bytes": 21310,
+      "sha256": "c9e4afb3a36ec175f4539180fe3c395cfcda8da0bcf9f3bcef305015b0aa1558"
+    },
+    {
+      "path": "package.json",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "f12c69735d60e664e3a87082d1571fb48a8b4958",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def"
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "0c6554f9fc20f3bc4f42329b88afce92dbd3eb77",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "5e0faf800c7dd9e5fed8504f87396337bcf9c588",
+      "bytes": 5785,
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997"
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "563c2362dac7bcdcb7b02b484eb0b6621661042e",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    },
+    {
+      "path": "packages/contracts/src/engineering-native.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "6e091c649a3e4f5d59a9e9922d00f3b7d4d4b125",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5"
+    },
+    {
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "9aea65c9bff28bd372ed7e2bc0ae616914ccee15",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "3dc13d6eb7ef7909683fb92cf095240814afb234",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "d47d27229cf4df6bca3152a0fdc87dbd7c11a029",
+      "bytes": 12208,
+      "sha256": "ac6c833730b58ce68ce38b281e6463620653049ab8612012d68fb029a2012938"
+    },
+    {
+      "path": "packages/contracts/src/harnesses.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "83708ad13b2abd40ecee1e5998206663cb20786d",
+      "bytes": 837,
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1"
+    },
+    {
+      "path": "packages/contracts/src/protocol-task.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "6f8f63be7ed8ecca7b6957e039b36adf177c345d",
+      "bytes": 211,
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "2ee5f126e3f035e4428411e4c9958b17ee3660cc",
+      "bytes": 6390,
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087"
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "49642fc1d7047fdb562c88a3fc695a94b3a4343c",
+      "bytes": 17734,
+      "sha256": "2a2c768af0a62e6cd7ef7500cbbeadc42eb435d41d29eb8e806142a0072e819e"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "e9b0dad63bacd2aa6865fcb9b7e86ad630964730",
+      "bytes": 40,
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65"
+    },
+    {
+      "path": "tools/owned-process-supervision/README.md",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "efa1596a7195b58ba083944df4230b5fb48d9748",
+      "bytes": 2553,
+      "sha256": "16c33816012e3551ce17ebf760e019b872689b0ee463f469e897fa37197b29f2"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "b55925471c9bbd9a3021a75754fca02439ce6cf8",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "bcde252c1b44979d2ca46130c805e2561ebab385",
+      "bytes": 13851,
+      "sha256": "fd56da8d02485bb1911856d0c9337c00a7e2c1ca2964efa60b0f20a0112a53ed"
+    },
+    {
+      "path": "tsconfig.json",
+      "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+      "role": "protected-input",
+      "blob": "835349029f0f4a864538ec6bc3917d911e9a9713",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "docs/evidence/eng01j/README.md",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "evidence-or-plan",
+      "bytes": 1558,
+      "sha256": "eda0292736a12ba19980bd312724b4299622188460306c40d2dbdeb60161bc55",
+      "blob": "efa85a0ce4e3f6203b4d176363173abe29cfc739"
+    },
+    {
+      "path": "docs/evidence/eng01j/claim-final-observation.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "dffe2b0e1dbc7c51f7349a3fb64b7bea0a5d5d56",
+      "bytes": 1088,
+      "sha256": "efe2034c53c6471412daa7b99d6d8102ef1679dd04cf0a141188fcde18c33c25"
+    },
+    {
+      "path": "docs/evidence/eng01j/focused-inputs.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "4a8fd8ac9f10a290b22418a35a6d52317c6a5413",
+      "bytes": 1855,
+      "sha256": "eb5ea748306ae2272ada3daa199de88a7295fe94ddda08e8de9c75fb41e76192"
+    },
+    {
+      "path": "docs/evidence/eng01j/installed-entries.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "dafe551a1c12c1902fc57e223e2ad80514b079fd",
+      "bytes": 3136,
+      "sha256": "5651537494764efda1475c57e0f11f84c080b5a783f464017c505ca3a4010108"
+    },
+    {
+      "path": "docs/evidence/eng01j/interface.md",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "evidence-or-plan",
+      "bytes": 4911,
+      "sha256": "b50d85560ff16a221af00832f58b7275ed4c9baef07dd585ed9494eee3dbf1d5",
+      "blob": "e09ed1f72768ffce73fdfc65f11dc0bdab3cc0ae"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/README.md",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "evidence-or-plan",
+      "bytes": 3192,
+      "sha256": "748120cda4578dd73c436d314b7664f643082023bbebc2be5564a307f169ccd5",
+      "blob": "1f3ed625c0a68003fd05ce5c94338c9649266546"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/probe.py",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "evidence-or-plan",
+      "bytes": 10217,
+      "sha256": "49feab30ea3559e63d631f9c40b7d3bbad4f7ed39b57c4379a4b1cdab1f58d2b",
+      "blob": "f28b5998b758c0391f6aafda52a429893fbdf01d"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-01/cleanup.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "a221041c1970edd85b160d954817193db47fdbe2",
+      "bytes": 141,
+      "sha256": "13a92d5f93c819172149d6c5989414078a9ae38a7ccd2d8f9ec611fa950de159"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-01/reservation.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "c1e606002b565f87e8fb126dc6487b35ca595ddd",
+      "bytes": 695,
+      "sha256": "db9a55aea17219ff2c6b870ad5fe9a2e0a8edd4ee84eb7620082bf1d1a2206e1"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-01/result.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "0a7684e6ef7f7137bdd7ee602e13ee2964592beb",
+      "bytes": 738,
+      "sha256": "eeb448c97870e10c3aa8c59a5a718eb897cc51f7911901c089fff0271009caa2"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-01/stderr",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-01/stdout",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "7852b555504896bc6114134b7a7cbc33132daf30",
+      "bytes": 325,
+      "sha256": "07d06ee98f88d3b406a80c92dfcf6435ea2129df98b88e4d8e6798c4118b4b05"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-02/cleanup.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "29a4df3a6aacd1429cb616b47a9da395c662906e",
+      "bytes": 145,
+      "sha256": "38205badc05c18b1879af2cf49d6b56492de80914b974ba3a649ad0de7e81007"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-02/reservation.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "e29545129234d25578cc6206ca626fd341da0142",
+      "bytes": 697,
+      "sha256": "bccf719ea1746aad400ccfe4b83454cf0bc4965de7b2b6cc73a8a63a02c7ff17"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-02/result.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "ce7ebfd1cef3eab35fdd5996a0baa79e78131977",
+      "bytes": 601,
+      "sha256": "1901046d4149e4631784fd06d35ef84462fa2bbf1fdbd8db290cfee4dfbbcce7"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-02/stderr",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-02/stdout",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "81742a8905f1d14ea5138ac85e7c6d42a4f8d356",
+      "bytes": 2786,
+      "sha256": "ab34d472f2dd54232255653e875f470cef81ee40f1904efac950a5a649e44b0b"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-03/cleanup.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "66f2e1b515e56fee7493e66d2d58fd5154fa5f19",
+      "bytes": 146,
+      "sha256": "b06d927300b4e6f211208e261bdf512406e9dfe5ab2236c84b9305e8b23635c9"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-03/reservation.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "5310291a13b766f88ce638a5d26a4969bc9dd27d",
+      "bytes": 1084,
+      "sha256": "1c11796ffa5f69676aec268a8c97cde2f997beec7c20bb06bc9456519a6c6344"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-03/result.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "0032ba4d42dd297e8a0b307f3fc23256f98220e3",
+      "bytes": 599,
+      "sha256": "06baa64a4b6f73d8bef868b0a130a35e229a7a8bb3da25dee9da9c8467314cbe"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-03/stderr",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-03/stdout",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "d51709dcd2c868782f281b77ceaa54b7000f62c9",
+      "bytes": 667,
+      "sha256": "d9041c52f78e3c064d5a82bdcf79f3b3bc9b00b31133bbe118d1ab8b07d54144"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-04/cleanup.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "68bf95d2db27f8b355f14b050887ced253f8b504",
+      "bytes": 141,
+      "sha256": "d49cc3665b3d2f04d4be72367c23d26a9f3d0b885f74a146af32e34a51074215"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-04/reservation.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "fbd964c5e57de63b899c5c5150409960810fcd55",
+      "bytes": 1084,
+      "sha256": "860cf2950640ded219796e007fdbc24ed35f49e76bb13ba79f05a5bd085b4f10"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-04/result.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "a063b0717610e3593924b4d6c99a245cb102d8aa",
+      "bytes": 742,
+      "sha256": "3caec577d18d0504bccb50f43d6ac8c08b05717cd6681a6e0e321c482f2e17bb"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-04/stderr",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-04/stdout",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "926f9de75039bbe7f066c0ed829f66705b235a0e",
+      "bytes": 1282,
+      "sha256": "46674d4bc62b49a68b71ca51f0536698d81944fc0d10ada898147cc08feeac34"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-05/cleanup.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "90a69d3b1b598e48dbbda81a914e6d4fcee4cbbf",
+      "bytes": 141,
+      "sha256": "8761154dec874601fb0376910ed0a9b08dd51014e86d64d429ec0e2ca149bc92"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-05/reservation.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "3f7e3582f79dfdfb1c6cfd335a71b4ab1fd31eaa",
+      "bytes": 1084,
+      "sha256": "ca078869203b2d3e8d4012af28b3e2f2a7b68d09edbaa947fa6be01bb4b41355"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-05/result.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "b18c6240dc61b46d45c473b92300bc6435598641",
+      "bytes": 591,
+      "sha256": "b9ab5e6f7b582efbaeb3f8317d3f62324d794a56d28fbb85f85fb3678a1946a5"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-05/stderr",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-05/stdout",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "b0f051cca25fe0982c768c61e3fe8c981ed4dbf0",
+      "bytes": 66,
+      "sha256": "2cff014e9afaa053bb137a2d2e4711f4129394e8a942bfba7be03d7fb89b7b26"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/run.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "1b781808f34b631547f475bb4dd0967c1768d191",
+      "bytes": 4180,
+      "sha256": "98de0f818d91f3445e6e26f955eb8505141413937ed744d5586cb48a1666d1c6"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/tsconfig.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "evidence-or-plan",
+      "bytes": 1297,
+      "sha256": "7b4acafaaa154c11750261de1eba8ebce70c10a45698ba856736f9798030822f",
+      "blob": "892599dbf219e4c2183576fa3044a37ea55c8bdc"
+    },
+    {
+      "path": "docs/evidence/eng01j/quality.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "d75a7c30c4de43ee0d4fe53191b7295b7a7150a3",
+      "bytes": 1613,
+      "sha256": "8ef29c23dd08044edb43fdd61d0566404e3df3d130a0eb7e8823ebbd8428c3c8"
+    },
+    {
+      "path": "docs/evidence/eng01j/source-inputs.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "42156dd8ecc49ac2b3d32b229726859076482a55",
+      "bytes": 10582,
+      "sha256": "5b1d77f432cfca8636987aa8ba6c836fdbe107fd9806a1db96f6d05159c28458"
+    },
+    {
+      "path": "docs/evidence/eng01j/source-provision.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "3f3442fb153e39eb928bb6cfe89879b1b6bb812c",
+      "bytes": 568,
+      "sha256": "02b966910c1bcc0484aff62db6084a0d752c9ed590cc415eb25e8ecbee7b8291"
+    },
+    {
+      "path": "docs/evidence/eng01j/status-check.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "77c1c24075bf0a78fc2d7ccbed1880e8d9929c1c",
+      "bytes": 1077,
+      "sha256": "4a5a8298749704a932cd84d319973f35d37e3df159b8407063945429e0915cba"
+    },
+    {
+      "path": "docs/evidence/eng01j/take-receipt.json",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "8bcbbc042eb635834bf63421e1d44063d101888d",
+      "bytes": 922,
+      "sha256": "09ae5810ad63954b61a26a687e38a44a205c2cf3f86c32fd0b81421daa467559"
+    },
+    {
+      "path": "plans/eng01j-native-write-authority/plan.md",
+      "fixedRef": "a37727671ecaece3ccbf117f56ab9bdbd666e497",
+      "role": "evidence-or-plan",
+      "blob": "78f03bf41f223b17cf13074c82f0d4841df9ff02",
+      "bytes": 1106,
+      "sha256": "8d1bba7e7c4f12efeda571a30ac74bbf8249e114426e49819b4fc6ff91affefa"
+    },
+    {
+      "path": "plans/eng01j-native-write-authority/review.md",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "evidence-or-plan",
+      "bytes": 901,
+      "sha256": "65ddd5b22e6eff5dd5285382367b4b5e8152ba23f53400ef8bd42810ee054fce",
+      "blob": "7f8d89c216421f3a216aadb880c5a0a6fc78d6b8"
+    },
+    {
+      "path": "plans/eng01j-native-write-authority/status.md",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "evidence-or-plan",
+      "bytes": 4246,
+      "sha256": "52d484898fedcc4c08cfa290fab355e2e535329cdb96db02ad41bd2f198eadb2",
+      "blob": "ac674fa71c7305a8383169b5020f962408521777"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/revision-run.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 3280,
+      "sha256": "657a4f39ce24ee25c24424f7a84ba44e0aa0a83870209631087a3b0b67700686",
+      "blob": "9ba5cb328e3ba645fa5fad5f8420642dd2427182"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-06/cleanup.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 143,
+      "sha256": "74b53b164efa0f963a12e5c2d062717f88279e4c4f44db8cc0808f70c0e048d8",
+      "blob": "75089d7002bc13776a4eba5e7443dbc30f17a45a"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-06/reservation.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 1084,
+      "sha256": "77a1569fc33f84456a2ec9609213209f6744be5a98efc2fd7409a08414e323a8",
+      "blob": "7f8ff568febf53c1c1f9e248e465c1379aafb164"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-06/result.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 599,
+      "sha256": "c159123d45a91c1d455430ffd1b6045b50ef13803128566dbc70e3455447778c",
+      "blob": "2d0b3acd8e5c26c4680645cbd10cb063db2c03ad"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-06/stderr",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-06/stdout",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 1537,
+      "sha256": "f0b99f83e3303e65740c5c06056a0463a713ba6c8f28acab3c2eeb47cabca7cb",
+      "blob": "a58f37a7cf06a1a51cd153192a98267f020b7f20"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-07/cleanup.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 146,
+      "sha256": "3c2eddc12b15b3fcc8ad8bd031d0c723f23e378c88c43bc6cf65f8127735e7c5",
+      "blob": "2c5bb0495fa95992af186c438564ee0813727358"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-07/reservation.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 1084,
+      "sha256": "723b29dc2ac022b8093b446ec5556c9f1442122dae30c6e26e0c9b1fb4e32b89",
+      "blob": "3c6a05705e241199225876668fb471c95453c53a"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-07/result.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 603,
+      "sha256": "9b0c67982d96650222a90dde4ad99640bc12eae320d066abb40593efb5da4a4d",
+      "blob": "ac626ed063173d734a09cde445ce52d00acbd213"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-07/stderr",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-07/stdout",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 1592,
+      "sha256": "c0aaee1c60f08665fd00c3d78d327b0983e757d91be470c210cabe2fbc8af826",
+      "blob": "22a89353841f4dded278f658e5753c8dc4c1bba5"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-08/cleanup.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 141,
+      "sha256": "1504d364321fc9484d4119c13580e2061fef0610c33be1ae94dd1020c953b796",
+      "blob": "41bfd19bc0bcbd7e6429cf88f6ac903efcdd298d"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-08/reservation.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 1084,
+      "sha256": "c1d23270881c8434eeff5fd4fef1cabe8426ddf4daa3e85b183ba3520133b1c4",
+      "blob": "67deeb50f9b9dc19e41f9725ce6a7a8588db0599"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-08/result.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 591,
+      "sha256": "50aadcdac26efdf4a47a6b42096eb0717a93e9fc05466b5917375d107ec13382",
+      "blob": "e1bcfe2a9bb090ed990294e1b7f5dcc2c223113a"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-08/stderr",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/round-08/stdout",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 66,
+      "sha256": "2cff014e9afaa053bb137a2d2e4711f4129394e8a942bfba7be03d7fb89b7b26",
+      "blob": "b0f051cca25fe0982c768c61e3fe8c981ed4dbf0"
+    },
+    {
+      "path": "docs/evidence/eng01j/local/vitest.config.mjs",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 473,
+      "sha256": "f0c1d5a053fbfcec4436c1b617efbb384d7c87cd44d17b87ec5845acb0d51380",
+      "blob": "0fbe4edb72a72c63367e4d1f58db000be3a9dc30"
+    },
+    {
+      "path": "docs/evidence/eng01j/manifest.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 45826,
+      "sha256": "82148bdf359b8b799bb471ca4e6d9a8031212072fa196e299fd273a03b066380",
+      "blob": "8f638ec54a7c92f6a3d78d2d11ea5c3edf0b438b"
+    },
+    {
+      "path": "docs/evidence/eng01j/native-helper-compatibility.md",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 2917,
+      "sha256": "3729c1e2c38b7d0c6ed6409999ccbfa97b82269812f2dae0c8675d4c9841a16e",
+      "blob": "da0bebb621ea699b9d5ce2763b14525b72b6cfc4"
+    },
+    {
+      "path": "docs/evidence/eng01j/r1-independent-review.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 2094,
+      "sha256": "b5a912aa6b60af728a27936e1b9a1047d0172a58234c5baf0d783ef3d625bbf0",
+      "blob": "6a455445dbf9ff96ad0474f89b2ba08f1896480d"
+    },
+    {
+      "path": "docs/evidence/eng01j/revision-status-check.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 270,
+      "sha256": "6e035f678df5efa2542428859c8f905cdfac8ace110d27a76bf27650d76e8950",
+      "blob": "a3b17bd34229fb512a9c42c50adb82251e3d9a78"
+    },
+    {
+      "path": "docs/evidence/eng01j/vitest-entries.json",
+      "fixedRef": "9fbd0298ce5adb77040c53c4b621716cdc87d7e7",
+      "role": "new-evidence",
+      "bytes": 2070,
+      "sha256": "35c100ce25774534fa6a01c70ee82e82548a256e988e2aa12b8202c10fb6f3fe",
+      "blob": "9fb51538eafb6756d3560f1e979aa08e44454f99"
+    }
+  ],
+  "installedBindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/tsx/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "bytes": 1663,
+      "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/tsx/dist/loader.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "bytes": 3620,
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/lib/tsc.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+      "bytes": 267,
+      "sha256": "2cffde0b8c6760dfb0b5b0382bbb7e00ba6a8b2d981b9205b256a700a481d983"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/@types/node/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/package.json",
+      "bytes": 4068,
+      "sha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/contracts/node_modules/zod/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/packages/contracts/node_modules/zod/index.d.cts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.d.cts",
+      "bytes": 119,
+      "sha256": "31506fd6e72c0d09e082b2f0b3741e6bbe90670361c9560ef998bdb1e56edc3e"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/usr/bin/sandbox-exec",
+      "realpath": "/usr/bin/sandbox-exec",
+      "bytes": 102368,
+      "sha256": "abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a",
+      "scope": "Exact sandbox launcher, also checked by host at preparation"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/vitest/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/package.json",
+      "bytes": 5513,
+      "sha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/vitest/vitest.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+      "bytes": 43,
+      "sha256": "39db22f579acf5639bbb17a261408debbde03f4692c0c439e77e7f13aeba74d6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/vitest/dist/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/index.js",
+      "bytes": 975,
+      "sha256": "af0b170bd7b3b2c8bca02dc8640ff73cbf490d640556c478bfd39820e9e1bd3a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/vitest/dist/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/index.d.ts",
+      "bytes": 23880,
+      "sha256": "53c448183c7177c83d3eb0b40824cf8952721a6584cf22052adc24f778986732"
+    }
+  ],
+  "directDiscoveryInput": {
+    "path": "vitest.config.ts",
+    "fixedRef": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+    "bytes": 235,
+    "sha256": "084f86db1a600e34cddc3df7cdeec121788bc909356c38efe8ffc4820f78a8c1",
+    "materialized": false,
+    "scope": "Readonly root include apps/**/*.test.ts; local validation narrows to the two actual discovered test paths and uses repository Vitest registration"
+  },
+  "verification": {
+    "fixedCurrentMismatches": [],
+    "protectedBaseMismatches": [],
+    "installedEntryMismatches": []
+  },
+  "history": "Original126 manifest and rounds01\u201305 retained byte-for-byte; source324 prior review finding retained; two productionTS modules andC unchanged at471.",
+  "validation": "Default1pass/3skip, explicit4pass/0skip, types0. Same4distinct behaviors across old/new rounds; total6357ms supervision,8321B raw. No new syscall/native-provider run."
+}

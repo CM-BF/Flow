@@ -1,0 +1,35 @@
+{
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)",
+      "id": "ENG-001",
+      "location": "../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Execution Lead",
+      "value": "Execution Lead"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "checks": {
+    "state": "passed",
+    "target": "324d62267d31273683b4720501a3fbde137225ce",
+    "record": "PASSED 324d62267d31273683b4720501a3fbde137225ce；4个不同局部检查与focused types0分轮；syscall有明确继承FD缺口；[原始记录](../../docs/evidence/eng01j/local/README.md)"
+  },
+  "review": {
+    "state": "not_started",
+    "record": "NOT_STARTED；作者已固定交付，待独立审查",
+    "target": "324d62267d31273683b4720501a3fbde137225ce"
+  }
+}
