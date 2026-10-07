@@ -1,0 +1,48 @@
+{
+  "recordedAt": "2026-10-07T07:49:54.249365+00:00",
+  "sourceCommit": "685978f6d6f9552a789e0df10da13df7a0757505",
+  "sourceCheckAttribution": [
+    {
+      "label": "types-initial",
+      "commit": "597e7b17",
+      "exit": 2
+    },
+    {
+      "label": "types-fixed",
+      "commit": "c8a71390",
+      "exit": 0
+    },
+    {
+      "label": "tests",
+      "commit": "c8a71390",
+      "exit": 0,
+      "selected": 19,
+      "passed": 19
+    }
+  ],
+  "postCheckDelta": "685978f6 moves a single unchanged import beside existing evidence import; no behavior/test changes. Read-only main patch check now exits 0; initial context failure preserved.",
+  "rawBytes": 1169,
+  "children": 3,
+  "tar": 0,
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "unknown": false,
+  "roots": [
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-artifact-provenance-6en25tbl",
+      "present": false
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-artifact-provenance-g__7616j",
+      "present": false
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-artifact-provenance-8jv0qmp4",
+      "present": false
+    }
+  ],
+  "wholeExternalWall": null,
+  "activeTemporaryPeak": null,
+  "coverage": "Actual applyEvent and existing execution producer mapping with injected host/storage/SQL boundaries. Main SVC07 fixed database donor imported; no PG/query semantics/atomic rollback/authentication proof. Original package tests not repeated."
+}

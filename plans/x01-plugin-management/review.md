@@ -1,3 +1,19 @@
+状态：PENDING（来源合同/真实事件接缝与19项局部结果；真实PG待后继）
+
+Review target commit: 685978f6d6f9552a789e0df10da13df7a0757505
+
+[交审入口](../../docs/evidence/x01/artifact-provenance-review-ready.md)。legacy路径不查新表；公开来源为身份/授权关联，不是独立代码执行证明。
+
+---
+
+状态：APPROVED（Flow包装版本pinning源码与有限结果）
+
+Review target commit: fe826801654c1366a20849fbd2f82d8b36bc01ac
+
+chatui01_owner于2026-10-07T07:40:53Z独审0P1/P2；[回执](../../docs/evidence/x01/semver-pinning-independent-review.json)。原3/3、types0、2tar与未知边界保留。
+
+---
+
 状态：PENDING（新Flow包装版本材料pin三例与局部结果；原semver批准保持）
 
 Review target commit: fe826801654c1366a20849fbd2f82d8b36bc01ac

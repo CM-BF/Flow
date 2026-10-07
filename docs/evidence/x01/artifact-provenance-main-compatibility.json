@@ -1,0 +1,26 @@
+{
+  "initial": {
+    "checkedAt": "2026-10-07T07:47:45.799604+00:00",
+    "mainCommit": "d556780129897582f09945c0621aa2ed64fb52f7",
+    "patchSha256": "6628f0eb0997b2c8fb6e13fe6b048213d7428aab0eebad14c560cc3222a6e858",
+    "patchBytes": 18725,
+    "command": "git apply --check <fixed narrow patch>",
+    "exitCode": 1,
+    "stdout": "",
+    "stderr": "error: patch failed: apps/server/src/events.ts:1\nerror: apps/server/src/events.ts: patch does not apply\n",
+    "statusBefore": "",
+    "statusAfter": "",
+    "mainUnchanged": true,
+    "meaning": "Read-only patch applicability; preserves unrelated current-main native-body/Codex changes. Not main typecheck/PG/integration."
+  },
+  "final": {
+    "checkedAt": "2026-10-07T07:48:33.711607+00:00",
+    "mainCommit": "d556780129897582f09945c0621aa2ed64fb52f7",
+    "patchSha256": "06dc8b584d5261e9c74e91d20a45b1944c6c31fc72adc8015736935eaf83bbf5",
+    "patchBytes": 18500,
+    "exitCode": 0,
+    "stderr": "",
+    "mainStatus": "",
+    "scope": "read-only patch applicability; unrelated native-body/Codex changes preserved; not main types/PG"
+  }
+}

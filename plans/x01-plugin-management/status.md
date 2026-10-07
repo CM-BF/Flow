@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T07:46:23.917716+00:00 |
+| 最近更新时间 | 2026-10-07T07:49:54.249365+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -15,18 +15,18 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
-| 工作树 dirty 状态 | 本段provenance源/直接测试与元数据实施中；旧pinning结果原件冻结 |
-| 工作分支状态 | implementation |
-| 检查状态 | 本段尚NOT_RUN；旧pinning3/3+types0已独审，不重跑 |
-| Review | pinning 07:40:53Z SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED；当前provenance待固定独审 |
+| 工作树 dirty 状态 | source 685978f6d6f9552a789e0df10da13df7a0757505固定；有限检查/元数据封存，提交后clean |
+| 工作分支状态 | review |
+| 检查状态 | 来源直接19/19、focusedtypes首2→修后0，3进程/TMP全闭合；0PG/tar，原checks不重跑 |
+| Review | provenance source/local待独审；pinning fe826/result ca851已07:40:53 APPROVED并READY |
 | 已集成 main 状态 / HEAD | 原16领域main5cd；c15五源+center八源main9816e87a7690d7d36ac25cb8537bc9c8f41364c8，67bindings/roottypes0。当前semver尚未main |
-| 实现目标 | fe826801654c1366a20849fbd2f82d8b36bc01ac |
-| 实现范围 | apps/runner/src/plugins/semver-pinning.test.ts, docs/evidence/x01/semver-pinning-local.py, docs/evidence/x01/semver-pinning-tsconfig.json, docs/evidence/x01/semver-pinning-vitest.config.mjs |
-| 本片段交付阶段 | implementation |
+| 实现目标 | 685978f6d6f9552a789e0df10da13df7a0757505 |
+| 实现范围 | apps/runner/src/plugins/execution.ts, apps/server/src/events.ts, apps/server/src/plugin-runtime/artifact.ts, apps/server/src/plugin-runtime/artifact.test.ts, packages/contracts/src/runner.ts, packages/contracts/src/plugin-artifact.ts, docs/evidence/x01/artifact-provenance-local.py, docs/evidence/x01/artifact-provenance-tsconfig.json, docs/evidence/x01/artifact-provenance-vitest.config.mjs |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 来源字段正接入现有产物事务，核对冻结材料与同次执行的阶段授权 |
-| 下一可用交付 | 完成来源关联的直接检查和独审；随后接原runner公开调用链 |
+| 当前产出 | 产物来源已接入现有事件事务，核对冻结材料和同次执行的阶段授权；直接检查通过 |
+| 下一可用交付 | 来源事务片独审与主线接收；共享出口交回后接入原runner公开执行链 |
 | 当前阻塞 | ACTIVE: 生产runtime/client由CHAT05P02持有；当前来源事务片可独立交付 |
 | 需用户决定 | NONE |
 
@@ -289,3 +289,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T07:35:51.317502+00:00：[新3例结果](../../docs/evidence/x01/semver-pinning-result-summary.json)固定，types0/3过3，两tar61857/61865close0，2检查PID48379/61361 finalownedabsent/mergedEOF/observed=retained；原EPERM观察保留。2TMP+1package exactENOENT；local已07:34:16.968713Z归还status_read。未更改任何生产源和原4fc/28证据。整体main/runRunner未完成，当前0运行。
 
 2026-10-07T07:46:23.917716+00:00：本段fresh v15后原子amend v16 ACTIVE42；07:43:55.203Z COMMITTED。沿本地find-skills/codebase-design/clean-code/brainstorming，执行Mika已准有界来源Interface；保持旧批准/raw，0PG。架构影响见[Interface](../../docs/evidence/x01/artifact-provenance-interface.md)，dashboard固定架构待集成后由Lead更新。
+
+2026-10-07T07:49:54.249365+00:00：来源source 685978f6d6f9552a789e0df10da13df7a0757505已固定，19/19、types首each类型错误2→窄修0，共3child；末07:46:58.890522Z已实际归还local，3组ownedabsent/mergedEOF/3exactTMP absent，raw1169B。仅注入SQL/storage与真实applyEvent/producer mapping，0PG/tar/native/provider；历史EPERM观察保留，external wholewall/全时TMPpeak UNKNOWN。当前main d556窄patch只读apply-check0，不能覆盖其native-body/Codex功能。独审入口将固定至[review-ready](../../docs/evidence/x01/artifact-provenance-review-ready.md)。pinning已独审，独立[READY intake](../../docs/evidence/x01/semver-pinning-integration-ready.json)不改原4fc与ca851原件。
