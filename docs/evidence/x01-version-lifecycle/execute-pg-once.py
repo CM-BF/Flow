@@ -151,8 +151,17 @@ def main():
             if rows['result']['httpRequests'] > limits['suites'][suite]['httpRequests'] or rows['result']['responseBytes'] > limits['responseBytesPerSuite']: raise ValueError('HTTP accounting limit')
         data = read_regular(temporary / 'vitest.json', limits['resultBytes']); write('vitest.json', data); tests = json.loads(data)
         report['selection'] = {key: tests[key] for key in ['numTotalTests', 'numPassedTests', 'numFailedTests', 'numPendingTests', 'success']}
-        report['httpRequests'] = sum(s['httpRequests'] for s in report['suites'].values())
-        report['responseBytes'] = sum(s['responseBytes'] for s in report['suites'].values())
+        # The fixture helper counts owner requests only; the actual app hook also counts runner traffic.
+        traffic_rows = [item for item in report['suites']['runtime']['facts'] if item.get('kind') == 'public-traffic']
+        if len(traffic_rows) != 1: raise ValueError('Actual app traffic receipt missing')
+        traffic = traffic_rows[0]
+        for key, cap in [('httpRequests', limits['httpRequestsMax']), ('responseBytes', limits['responseBytesPerSuite'])]:
+            if type(traffic[key]) is not int or not 0 <= traffic[key] <= cap: raise ValueError('Actual app traffic budget')
+            report[key] = traffic[key]
+        report['fixtureOwnerRequestCount'] = report['suites']['runtime']['httpRequests']
+        report['registryRequests'] = traffic['registryRequests']
+        report['tarDownloads'] = traffic['tarDownloads']
+        if type(report['registryRequests']) is not int or not 0 <= report['registryRequests'] <= 8: raise ValueError('Registry traffic budget')
         expected = limits['selection']
         all_cases = [(str(Path(file['name']).relative_to(ROOT)), case['title'], case['status']) for file in tests['testResults'] for case in file['assertionResults']]
         actual = [case for case in all_cases if case[2] not in ('pending', 'skipped', 'todo')]
