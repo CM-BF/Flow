@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T13:53:42.098Z |
+| 最近更新 | 2026-10-07T13:58:41.052Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,20 +15,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 源码375ecccc427acf59d687153903bd032fb6e684bc及原输入已冻结；本次仅封pure结果，提交后核clean。 |
+| 工作树dirty状态 | 已审源码375ecccc427acf59d687153903bd032fb6e684bc/输入/raw全部STOP；本次只归档结果独审与CURRENT_READY，metadata提交后核clean。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新增caller5/5单轮、1child闭合；原3/6/9/11 distinct各target与首红独立保留，不重跑/不相加。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
 | 实现目标 | 375ecccc427acf59d687153903bd032fb6e684bc |
 | 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-operator.py, docs/evidence/s01/mixed-ab-preparation/queue-operator-env.test.py |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 外层环境隔离问题已独审修复，五个纯反例通过；固定运行准备正做结果忠实性复核。 |
-| 下一可用交付 | 复核本次纯检查并确认完整资源与真实独占窗口后，执行聊天轻读与取消的对照测量。 |
-| 当前阻塞 | ACTIVE：纯检查结果待独审收口；真实对照实验未授窗口。 |
+| 当前产出 | 运行准备及五个纯反例已独审通过，固定实验已进入资源窗口队列，尚未实际运行。 |
+| 下一可用交付 | 获得独占窗口并完成最新资源核验后，交付聊天轻读与取消的真实对照测量。 |
+| 当前阻塞 | ACTIVE：等待manager排队后的明确性能窗口与完整资源核验；当前无运行许可。 |
 | 需用户决定 | NONE |
-| Review | db13:51:11Z对375ecccc427acf59d687153903bd032fb6e684bc DELTA_SOURCE_REVIEW_APPROVED，环境P2 CLOSED/0P1P2；5pure新结果待忠实性复核。 |
+| Review | db13:51:11Z源APPROVED及13:54:42Z RESULT_FIDELITY_REVIEW_APPROVED/0P1P2；限定375e源码与5合成pure例，不含实际PG/HTTP/performance。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T13:34:26.938Z原子追加pool-wait-run，原五scope不变，输出目录尚未创建。 |
 | 架构影响 | 复用OPS14监督及原driver/child资源权威；新增同PID checkpoint→exec薄caller与固定输入清单，生产pool/SQL不变。当前新实验未main/未运行。 |
 
@@ -211,4 +211,12 @@ chatui于13:30:23Z对fixed f722/a180给SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPR
 
 本段自13:47:34Z连续，未重置12min；只源码env/CLI deadline与必要单purechild，未用第2额度，原675/223/33SQL和raw冻结。status唯一事实源，原taskstartUNKNOWN/NOT_COMPLETED、历史main/6TODO保持；本轮无dashboard GET，不把旧同步当新观察。
 
-2026-10-07T13:54:00Z future窗口解释边界（Mika本段回传）：Original恢复后的3个个人服务常驻，已知旧queued用户任务曾自然running，不停止/不读取个人任务数据。正式heavy前由manager确认当时该已知负载仍在或UNKNOWN；未回传不等结束。共享机器负载不是两arm受控常量，结果只限当次观察，不冒SLO或稳定提速。可等负载自然结束争取更干净测量，但不禁止个人任务，也不改变原300s/512MiB合同。
+2026-10-07T13:54:07Z future窗口解释边界（工具clock确认记录）（Mika本段回传）：Original恢复后的3个个人服务常驻，已知旧queued用户任务曾自然running，不停止/不读取个人任务数据。正式heavy前由manager确认当时该已知负载仍在或UNKNOWN；未回传不等结束。共享机器负载不是两arm受控常量，结果只限当次观察，不冒SLO或稳定提速。可等负载自然结束争取更干净测量，但不禁止个人任务，也不改变原300s/512MiB合同。
+
+## 2026-10-07T13:58:41.052Z 完整准备独审收口
+
+[唯一CURRENT_READY](../../docs/evidence/s01/mixed-ab-preparation/CURRENT_READY.md)供manager排队接收。db13:54:42对result3fdb/final01515结果忠实性APPROVED/0P1P2，5selected5pass仅pure；正式回执已归档，原raw/manifest/input-v2未改。freshclaim508fv3/6/owner与01515clean相符，五caller输出+run根exactabsence，0新工程检查/PG/HTTP/资源清理。
+
+futurefloor当前至少9,296,871,424B或manager更高sum，input原minimum只作历史，actual参数必须higher；个人常驻服务/已知用户负载后续UNKNOWN保留，不探/停个人任务。300s/512MiB、同4fdd/O1O2单变量与旧KEEP不变；实际NOT_RUN_NOT_OPEN。原taskstartUNKNOWN/M2/整体NOT_COMPLETED与历史main事实保持，status唯一源/本段无dashboardGET，旧来源观察不冒本次新同步。
+
+本metadata段13:57:24Z开始，沿本地find-skills/codebase-design/固定clean-code核唯一入口/原件冻结/资源与时间口径；无新Module/框架，保claim并STOP等待明确实际派工。

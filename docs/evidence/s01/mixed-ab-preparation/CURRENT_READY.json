@@ -1,0 +1,94 @@
+{
+  "state": "CURRENT_READY_FOR_MANAGER_HANDOFF_NOT_OPEN",
+  "recordedAt": "2026-10-07T13:58:41.052Z",
+  "taskId": "S01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe",
+  "branch": "codex/runner-capacity-probe",
+  "headAtCloseoutStart": "01515ba961a80fa6a3dd761d5b3ab2a670fb0a1c",
+  "source": "375ecccc427acf59d687153903bd032fb6e684bc",
+  "productionBase": "4fdd856293a502209d7509ea37da901bbfd89f72",
+  "pureExecutionHead": "3bd8f7e6649569a385cf67c5ec79d99673a7e5fc",
+  "futureExecutionHead": "NOT_ASSIGNED: manager must name exact final clean HEAD after metadata seal; current metadata HEAD is read from Git, not self-referentially invented.",
+  "input": {
+    "path": "docs/evidence/s01/mixed-ab-preparation/queue-operator-input-v2.json",
+    "sha256": "970f071eb7eb275145c81a6b6d0f6193ed5737c6e0a2b48051ada414f3819512",
+    "historicalMinimumBytes": 9125888000,
+    "unchanged": true
+  },
+  "claim": {
+    "claimId": "508f9c85-a27c-4382-bfe9-caca43be4b0e",
+    "version": 3,
+    "state": "active",
+    "scopeCount": 6,
+    "worker": "status_read",
+    "lead": "mika",
+    "freshCheckedAt": "2026-10-07T13:57:24Z"
+  },
+  "outputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/queue-actual-reservation.json",
+      "state": "absent",
+      "method": "exact lstat ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/queue-actual-spawn.json",
+      "state": "absent",
+      "method": "exact lstat ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/queue-actual-stdout.raw",
+      "state": "absent",
+      "method": "exact lstat ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/queue-actual-stderr.raw",
+      "state": "absent",
+      "method": "exact lstat ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/queue-actual-outer.json",
+      "state": "absent",
+      "method": "exact lstat ENOENT"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/pool-wait-run",
+      "state": "absent",
+      "method": "exact lstat ENOENT"
+    }
+  ],
+  "ordinaryResultReview": "queue-operator-env-result-independent-review.json",
+  "recipe": {
+    "windowId": "s01-pool-wait-delivery-once",
+    "seconds": 300,
+    "logicalBytes": 536870912,
+    "preparationSeconds": 15,
+    "eachArmSeconds": 135,
+    "eachArmBytes": 251658240,
+    "commonBytes": 33554432,
+    "includedFinalReserveBytes": 4194304,
+    "secondArmRequiresFirstPassAndClosed": true,
+    "secondArmRemainingSeconds": 150,
+    "taskLimit": 258,
+    "productionSharedBetweenArms": true,
+    "onlyExperimentalVariable": "SQL observation per-query vs buffered delivery",
+    "providerCalls": 0
+  },
+  "futureFloor": {
+    "managerCurrentLowerBound": 7686258688,
+    "experimentIncrement": 536870912,
+    "dbWalSchedulingHeadroom": 1073741824,
+    "minimumActualArgument": 9296871424,
+    "useHigherManagerCompleteSum": true,
+    "singleCleanupReservePreserved": true,
+    "notMeasuredDbWalCap": true
+  },
+  "actual": "PG_HTTP_PERFORMANCE_NOT_RUN_NOT_OPEN",
+  "concurrentUserLoad": "Original reported three resident personal services and previously running user task; later state UNKNOWN. Manager must confirm at future handoff; no personal probing/stopping, no assumption of empty machine or controlled equal background between arms.",
+  "requiredFutureGates": [
+    "named exclusive performance OPEN and exact fresh clean execution HEAD",
+    "fresh claim identity/full6 and complete input hashes",
+    "five caller outputs plus run root absent",
+    "actual holders returned, current complete floor at least9296871424 or higher; exact cluster/WAL filesystem conditions",
+    "whole external tool clock and all original 300s/512MiB/unknown KEEP gates"
+  ]
+}

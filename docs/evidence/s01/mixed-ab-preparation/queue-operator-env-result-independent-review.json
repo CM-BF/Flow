@@ -1,0 +1,36 @@
+{
+  "reviewer": "db_transaction_owner/gpt-6-astra",
+  "at": "2026-10-07T13:54:42Z",
+  "verdict": "RESULT_FIDELITY_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "source": "375ecccc427acf59d687153903bd032fb6e684bc",
+  "result": "3fdb488064a3414d4ad9903667253e06aa23f7c7",
+  "packet": "01515ba961a80fa6a3dd761d5b3ab2a670fb0a1c",
+  "scope": "Five synthetic environment/clock pure cases and raw fidelity only; no actual queue/PG/HTTP/performance or OPEN.",
+  "bindings": {
+    "count": 5,
+    "bytes": 7183,
+    "manifestSha256": "5c17031bbde36b6586b015c36cfff6ba298aac86a29878f171d4f493fe833501"
+  },
+  "selected": 5,
+  "pass": 5,
+  "rawBytes": 787,
+  "process": {
+    "pid": 15216,
+    "exit": 0,
+    "owned": "absent",
+    "mergedEof": true,
+    "initialEpermRetained": true
+  },
+  "tmp": "Original same-identity empty sample/rmdir receipt; reviewer exact lstat ENOENT only.",
+  "timing": {
+    "supervisorMs": 135,
+    "beforePersistenceMs": 250.54808298591524,
+    "afterPersistenceMs": 250.9349579922855,
+    "toolReportedWallSeconds": 0.362040833,
+    "lateObservationAt": "2026-10-07T13:52:38Z",
+    "peak": "UNKNOWN"
+  },
+  "reviewerNoEngineeringExecution": true
+}
