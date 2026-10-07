@@ -1,0 +1,132 @@
+{
+  "recordedAt": "2026-10-07T06:34:40.711958+00:00",
+  "decision": "ACCEPTED_FAILED_INCONCLUSIVE_DIAGNOSTIC_ACTUAL_AND_OWNED_CLEANUP_NOT_FEATURE_PASS",
+  "run": "msgquick-native2-20261007-062946-51fcb2",
+  "sourceTarget": "521a38395c4b9a38613937c83ce44215afc70280",
+  "executionHead": "753ccd993bc4706d597d4d2c4a82fb24c08c9517",
+  "actual": {
+    "start": "2026-10-07T06:32:06.292003+00:00",
+    "end": "2026-10-07T06:32:12.518811+00:00",
+    "exit": 1,
+    "wallMs": 6226.722708088346,
+    "parentLateMs": 6189,
+    "parentMs": 6188,
+    "chargeMs": 6227,
+    "newSegmentPriorMs": 11222,
+    "newSegmentSpentMs": 17449,
+    "newSegmentRemainingMs": 72551,
+    "oldClosedActualMs": 30625
+  },
+  "observed": {
+    "plainDocument": {
+      "characterSet": "UTF-8",
+      "selectCount": 1,
+      "labels": [
+        "模型"
+      ],
+      "exactLocatorCount": 1
+    },
+    "plainAEvents": 10,
+    "trustedEvents": true,
+    "inputChangeEvents": 0,
+    "traceState": "INSTALLED, no truncation/dropped events/observer errors",
+    "snapshots": "focus/ArrowDown/Enter entries lack value payload; top-level TypeError reads undefined.value",
+    "B": "NOT_RUN",
+    "realModal": "NOT_RUN",
+    "sixFunctionalGroupsPassed": 0,
+    "screenshots": 0,
+    "conclusion": "INCONCLUSIVE"
+  },
+  "interpretation": "UTF-8 and the expected Chinese label are now observed on the .99 owned plain page. Plain-A trusted key traces have no input/change and remain index0 at recorded event observations. Snapshot extraction fails before B/modal, so this neither proves a Picker defect nor the cause of prior .98 failures.",
+  "sourceCorrectionReviewed": {
+    "target": "a9ec5df40470c20f48171eb8d725c6c39f307b55",
+    "scope": "Only apps/web/test/message-settings.browser.ts snapshot helper and two call sites",
+    "decision": "ACCEPTED_NARROW_SOURCE_CORRECTION_NOT_RUN",
+    "reason": "A string arrow expression evaluates to a function value when Playwright isFunction=false; the corrected closure-free named browser function is passed as a function and receives the locator element. Its fields are read-only, options remain bounded to8, and for-loop avoids nested serialized helper captures. No Picker, key sequence, original six assertions, runtime capability/lifecycle/cleanup change.",
+    "newRuntimeOrTypesClaim": false
+  },
+  "cleanup": {
+    "rootReobservedGroups": [
+      {
+        "pgid": 51494,
+        "state": "ESRCH"
+      },
+      {
+        "pgid": 53613,
+        "state": "ESRCH"
+      },
+      {
+        "pgid": 51498,
+        "state": "ESRCH"
+      }
+    ],
+    "scratchAndProfileAbsent": true,
+    "fixtureClosed": true,
+    "contextClosed": true,
+    "outerDualEOF": true,
+    "capturedChromeAndWorkerEOF": true,
+    "droppedBytes": 0,
+    "errors": [],
+    "provider": 0,
+    "postgres": 0
+  },
+  "resourceObservation": {
+    "retainedBytes": 4375158,
+    "samplePeakScratchBytes": 18911232,
+    "minFreeBytes": 24363941888,
+    "qualification": "Sampled sizes and shared-volume free space, not an OS quota or memory benchmark."
+  },
+  "reviewerExecution": "Read-only fixed Git delta and raw/seal/hash checks plus exact owned PGID/scratch absence; no product writes, runtime tests, Chrome/HTTP/PG/provider execution.",
+  "bindings": [
+    {
+      "path": "/private/tmp/msgquick-native2-outer-qwf16841/start.json",
+      "bytes": 336,
+      "sha256": "7c2f17dfe866f20762e091a0674885d90b4022d926b100b392a6f645b93eca9e"
+    },
+    {
+      "path": "/private/tmp/msgquick-native2-outer-qwf16841/actual-exit.json",
+      "bytes": 463,
+      "sha256": "612fc4973b8b3200e1a5635b68696d9207f2f2629ae43e8143f808a76fee112c"
+    },
+    {
+      "path": "/private/tmp/msgquick-native2-outer-qwf16841/stdout.txt",
+      "bytes": 984,
+      "sha256": "beb624a4a865399972b2698c2bde41f9c366694bfdb53d33b857a9ef1f6fd36b"
+    },
+    {
+      "path": "/private/tmp/msgquick-native2-outer-qwf16841/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/msgquick-native2/result.json",
+      "bytes": 68511,
+      "sha256": "3598f8d2b18bea865cb3b05828c2e1bdb9e37fb9ee17ba57847065fc1ff910b0"
+    },
+    {
+      "path": "/private/tmp/msgquick-native2/browser-budget.json",
+      "bytes": 466,
+      "sha256": "cdc8c44c5a05cd8148bfa88f45466302809ecbb01c6493181d0f731b96ed214c"
+    },
+    {
+      "path": "/private/tmp/msgquick-native2/runtime-evidence-manifest.json",
+      "bytes": 1774,
+      "sha256": "35b0816cf54d4468c5f0014d0fe7ddfd370c47f95bca5cddc7360def9a1d4acd"
+    },
+    {
+      "path": "/private/tmp/msgquick-native2/raw/msgquick-native2-20261007-062946-51fcb2/native-control.json",
+      "bytes": 9967,
+      "sha256": "54ceffa2ea7e8a34a8369cae2e1113671beae4680d7595ab9aed867d5b030db6"
+    },
+    {
+      "path": "/private/tmp/msgquick-native2/raw/msgquick-native2-20261007-062946-51fcb2/browser-results.json",
+      "bytes": 2017,
+      "sha256": "186f047d726bcb815bedd98436955385b86a6b576935e458093069d9405ff397"
+    },
+    {
+      "path": "/private/tmp/msgquick-native2/raw/msgquick-native2-20261007-062946-51fcb2/owned-chrome.json",
+      "bytes": 2314,
+      "sha256": "c68bf346ad5890286ab7458e22c8212852f775aa617216ff5422c149e2f74b91"
+    }
+  ]
+}

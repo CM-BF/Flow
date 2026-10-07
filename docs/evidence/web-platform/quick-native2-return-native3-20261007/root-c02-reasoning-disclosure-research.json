@@ -1,0 +1,94 @@
+{
+  "at": "2026-10-07T06:42:33.115523+00:00",
+  "author": "root / GPT-6 Astra Ultra",
+  "kind": "READ_ONLY_EXISTING_MATURE06_C02_CONSUMER_RESEARCH_ADDENDUM",
+  "parentResearch": {
+    "path": "/private/tmp/root-c02-web-consumer-seams-20261007.json",
+    "sha256": "a7ae7a1a38236edc5234f97ecc7a7de7f3a960ff6c30ce14624316de8d5f7c08"
+  },
+  "scope": "Existing C02 Web consumer / REQ43 default collapsed tool and published thinking UI; no new task, claim, product change, test run, provider or browser.",
+  "newFindings": [
+    {
+      "id": "THREAD-REASONING-DEFAULT",
+      "fact": "Installed copied ReasoningRoot defaultOpen=false still opens automatically while streaming: userOpen ?? (streaming || initialOpen). Thread group-reasoning passes streaming=running. Merely mapping a Codex reasoning channel to an official reasoning part would therefore auto-expand it until the user toggles or streaming ends.",
+      "classification": "Forward integration behavior conflict with recorded default-collapsed requirement, not a reproduced current Codex UI bug. Current Web mapper still emits text for every segment.",
+      "proposal": "Use existing Thread ReasoningGroup injection / existing Reasoning primitives with controlled open/onOpenChange initialized collapsed. Preserve streaming indicator without granting streaming control over disclosure. Do not globally rewrite the vendor primitive or replace Thread."
+    },
+    {
+      "id": "THREAD-REASONING-SHAPE",
+      "fact": "Installed @assistant-ui/react 0.15.23 reexports @assistant-ui/core 0.3.22 ThreadMessageLike. ReasoningMessagePart has type reasoning, text, optional status, unstable_summary, providerMetadata and parentId. Both public reasoning-summary and reasoning-text fit supported reasoning parts, while source/channel remain separate identity metadata.",
+      "proposal": "Do not depend on unstable_summary or concatenate independent published channels without a product requirement. Keep their existing stream IDs/source/channel; render supported reasoning parts and label published summary vs published text when needed. Never request unpublished provider reasoning."
+    },
+    {
+      "id": "THREAD-REASONING-GROUP-API",
+      "fact": "reasoning.aui.tsx marks its exported legacy ReasoningGroup wrapper deprecated for old MessagePrimitive.Parts. Current Thread uses MessagePrimitive.GroupedParts and its own components.ReasoningGroup receives group/children.",
+      "proposal": "Implement the current Thread injection shape if needed; do not copy the deprecated startIndex/endIndex wrapper as a new consumer API. Use existing stable message identity and per-pane lifecycle so another conversation or split pane does not inherit disclosure state."
+    }
+  ],
+  "boundedAcceptanceForExistingFollowup": [
+    "Cold reasoning stream stays collapsed in each visible pane; answer text remains visible, and streaming status remains understandable.",
+    "Explicit expand/collapse through keyboard persists during later patches; changing streaming phase does not override manual choice or move composer focus.",
+    "Same turn in two panes has independent disclosure state, and switching center/generation does not carry state into unrelated messages.",
+    "Explicit settlement replaces only replaceStreamIds; retained reasoning and answer blocks keep correct IDs and source/channel, with no duplicate canonical reply or guessed last-block removal.",
+    "Existing official runtime reconciliation still removes evicted messages and preserves composer draft, stable user message object and disabled phantom branches.",
+    "Use existing cached public stream content; no eager detail request. Distinguish a collapsed presentation of already authorized patches from a promise that their bytes were never fetched.",
+    "Double-theme narrow-screen, keyboard and reduced-motion checks on the final integrated consumer; this source-only research is not visual or browser acceptance."
+  ],
+  "skills": {
+    "method": "Reused previously read local find-skills, assistant-ui, codebase-design and clean-code; inspected installed package source and fixed repository blobs; no installation.",
+    "cleanCode": "Prefer one rendering adapter and current Thread injection; separate channel interpretation, disclosure state and stream settlement; preserve current authority/caches. No root implementation."
+  },
+  "pins": [
+    {
+      "ref": "3ee3c0486023feabcc9053a53b2d5c2808aebf59",
+      "path": "apps/web/src/conversation-stream/messages.ts",
+      "bytes": 1934,
+      "sha256": "45c7c0f1f4bb4049764cae6dad7436e2a2c457948bca2b6880fb75d7aff5bef7"
+    },
+    {
+      "ref": "3ee3c0486023feabcc9053a53b2d5c2808aebf59",
+      "path": "packages/interaction/src/stream/presentation.ts",
+      "bytes": 6328,
+      "sha256": "a8d1a8bf51554f5250e99667a2e4cd746cf789e9a00500f9e980e9924b56e087"
+    },
+    {
+      "ref": "3ee3c0486023feabcc9053a53b2d5c2808aebf59",
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "bytes": 32735,
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14"
+    },
+    {
+      "ref": "3ee3c0486023feabcc9053a53b2d5c2808aebf59",
+      "path": "apps/web/src/components/assistant-ui/elements/reasoning.aui.tsx",
+      "bytes": 3217,
+      "sha256": "d695ed0a776b664cb8c620c94598ad10b0c93181079a7abec054884503c53443"
+    },
+    {
+      "ref": "3ee3c0486023feabcc9053a53b2d5c2808aebf59",
+      "path": "apps/web/src/components/assistant-ui/elements/reasoning.tsx",
+      "bytes": 10086,
+      "sha256": "6e629d6cab9204b903120f7195b3d3126ed48d5ecd7191dbb0174ad9ccf8dfb0"
+    },
+    {
+      "ref": "3ee3c0486023feabcc9053a53b2d5c2808aebf59",
+      "path": "apps/web/src/components/ui/collapsible.tsx",
+      "bytes": 329,
+      "sha256": "f4cdd104de29928bfcd40b865c7d08eed9157a537fbb8b5e6d0921f02b63cc04"
+    },
+    {
+      "ref": "3ee3c0486023feabcc9053a53b2d5c2808aebf59",
+      "path": "apps/web/test/conversation-stream-integration.test.ts",
+      "bytes": 12612,
+      "sha256": "d7646add985ef3d288c46aed0ca0e6f7553ce0508a5bc8bb8df2b24f192f96cc"
+    }
+  ],
+  "installedTypes": {
+    "reactVersion": "0.15.23",
+    "coreVersion": "0.3.22",
+    "typePath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/types/message.ts",
+    "sha256": "d3de3bee02401bed0493121dd4dbce109d778c60e1744cf08e5877fb900e94d6"
+  },
+  "projectWrites": 0,
+  "runtimeTests": 0,
+  "services": 0
+}

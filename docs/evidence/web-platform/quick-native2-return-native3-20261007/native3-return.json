@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-07T06:44:15.609240+00:00",
+  "state": "FAILED_INCONCLUSIVE_ACTUAL_CLEANED_RETURNED_ROOT_ACCEPTED",
+  "run": "msgquick-native3-20261007-064135-4132ba",
+  "source": "a9ec5df40470c20f48171eb8d725c6c39f307b55",
+  "executionHead": "0c88e994c8d17f0431e2e9a7084ae8b91869210e",
+  "actual": {
+    "actualExit": 1,
+    "startedAt": "2026-10-07T06:42:22.476880+00:00",
+    "endedAt": "2026-10-07T06:42:28.349391+00:00",
+    "wallMs": 5872.413750039414,
+    "pid": 15507,
+    "pgid": 15507,
+    "bothEOF": true,
+    "groupAbsent": true,
+    "droppedBytes": 0,
+    "stdoutBytes": 984,
+    "stderrBytes": 0,
+    "stdoutSha256": "fea0c3d997ea130c496587ae150829e23606f0d26b699750a6dc1284717aaf7f",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "chargeMs": 5873,
+  "newSegmentPriorMs": 17449,
+  "newSegmentSpentMs": 23322,
+  "newSegmentRemainingMs": 66678,
+  "old30625Closed": true,
+  "parentElapsedMs": 5830,
+  "lateParentMs": 5831,
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "workerGroupAbsent": true,
+    "chromeGroupAbsent": true,
+    "scratchAbsent": true
+  },
+  "managerVerified": "Real outer exit/unique complete terminal sealed hashes/EOF/parent cleanup; no new process/HTTP/PG/resource probes. Exact childESRCH and fixture/context closed reported by owner.",
+  "ownerObserved": {
+    "exactGroupsESRCH": [
+      15507,
+      15534,
+      15514
+    ],
+    "fixtureClosed": true,
+    "contextClosed": true,
+    "profileScratchAbsent": true,
+    "plainAEvents": 10,
+    "plainBEvents": 14,
+    "nativeValue": "empty/index0, noinputchange",
+    "modal": "NOT_RUN",
+    "functionalGroupsPassed": 0,
+    "png": 0,
+    "diagnosis": "Both plain key sequences completed; no unique Picker rootcause or productPASS."
+  },
+  "sealedFiles": {
+    "binding.json": "e83e413b164ea91bac7b2b2cfacac2a82b1f9d8aacc24209c0f42aca163bd4ae",
+    "result.json": "d41a5f61548d5d6fd6a9d0b7fbbe87ef134f925113bf70bde89a23c22353b38e",
+    "browser-budget.json": "0fa18fb5e3dd6101a7bb1b6355368b7277ecfe935a911aeb22bb771fe09173ea",
+    "runtime-evidence-manifest.json": "4c579c66ebd9c94ef7744c4f8ef713edc0c5cadd1accb6511222ee2e5e7cec9c",
+    "raw/msgquick-native3-20261007-064135-4132ba/native-control.json": "3e7e01931d0df5413cc62c58f6ec8a59606fafabc3ffe3cbaddce529f27121e3",
+    "raw/msgquick-native3-20261007-064135-4132ba/select-diagnostics.json": "c93206aed9fa98d4995a4ec7d1135369ec306f9106a2cd678eeea875897880ae"
+  },
+  "originalPacket": "/private/tmp/msgquick-native3",
+  "originalOuter": "/private/tmp/msgquick-native3-outer-1gejsqrh",
+  "native3Review": "root-native3-actual-review.json: scoped INCONCLUSIVE measurement and ownedcleanup accepted; not functionalPASS",
+  "noAutomaticFourth": true,
+  "webActualHolder": null,
+  "webGate": null,
+  "webReservation": false
+}
