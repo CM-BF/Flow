@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:57:00.120352+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:25:50.434795+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,21 +12,21 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
-| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source 876731f4488419d4c9d84584a40944fcd848c0f2；metadata随后seal |
-| 工作树dirty状态 | 首browser实际FAIL已FULLRETURN；产品18源STOP，仅own metadata正常封存，0child/无重试grant |
+| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source d034f13da989c8f175c2664cb903a7273baf84eb；metadata随后seal |
+| 工作树dirty状态 | 源码全20 STOP；仅本次own metadata封存随后clean；0工程child/HTTP/PG/Chrome |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN 876731f4488419d4c9d84584a40944fcd848c0f2；修后browser未运行，原7e911首browserFAILED0/4、0PNG/12808ms，原HTTP2PASS与旧失败保留 |
+| 本片段交付阶段 | validation |
+| 检查状态 | NOT_RUN d034f13da989c8f175c2664cb903a7273baf84eb；新增browser wiring未运行，原7e911首browserFAILED0/4、0PNG/12808ms，原HTTP2PASS/纯模型强例与旧失败保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
-| 实现目标 | 876731f4488419d4c9d84584a40944fcd848c0f2 |
+| 实现目标 | d034f13da989c8f175c2664cb903a7273baf84eb |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 两项HTTP验收已通过；首次浏览器连接前置失败已定位并窄修，修后四组尚待新窗口验证 |
+| 当前产出 | 已补三pane时focused exact2tabs、第四pane拒绝与恢复原三chat；材料await内Merge后先证单pane/activechat/B再Split；新候选NOT_GRANTED |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
-| 当前阻塞 | ACTIVE: 浏览器公开Cookie入口前置修正已独审通过；四组仍待经理独立新运行，当前无grant |
+| 当前阻塞 | ACTIVE: root7379已接受新browser wiring源码/准备；修后四组/双图NOT_RUN，等待经理独立新grant |
 | 需用户决定 | NONE |
-| Review | APPROVED 876731f4488419d4c9d84584a40944fcd848c0f2；root77c593限定接受首FAIL/RETURN证据及query+heading修正，非browser PASS；原11e317/e524/2b2f批准边界保留 |
+| Review | APPROVED d034f13da989c8f175c2664cb903a7273baf84eb；root7379限定两browser wiring源码/准备，非browser PASS；其他未完验收保留 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v1 ACTIVE exact20；COMMITTED 2026-10-07T17:59:04.704Z |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -83,3 +83,9 @@
 2026-10-07T21:53:43.506270+00:00：[固定诊断](../../docs/evidence/wpf-workspace-arc/browser-first-20261007/diagnosis.json)确认源码入口不一致：fixture true+无recovery query选择自动Bearer FixtureWorkspace，原case却找Cookie Connection；固定base同类I01公开query惯例已核。source876731f仅URL?recovery=1+Connect to Flow可见前置，四组/默认5s/产品权限/fixture不变，0新types/纯例/HTTP/browser。无失败DOM不冒实际UI截图；[后继90s候选](../../docs/evidence/wpf-workspace-arc/browser-first-20261007/retry-proposal.json)仅proposal，原12808/90k CLOSED。
 
 2026-10-07T21:57:00.120352+00:00：[root77c593](../../docs/evidence/wpf-workspace-arc/browser-first-20261007/root-arc-first-browser-and-cookie-entry-review-20261007.json)限定APPROVED/0blocking：首0/4FAIL和12808ms闭账、20原件、876入口修正已独立核验。修后actual NOT_RUN，无新types/HTTP/browser；本普通段源码/checks STOP，仅normal seal与≤64KiB审查尾。全20保claim，下一运行需经理独立新grant。
+
+2026-10-07T22:20:48.337197+00:00：经理新12min/4MiB普通段于22:19:49.646Z开始，截止22:31:49.646Z。fresh f6ec clean/c34dv1 exact20/overlap[]；仅补两browser wiring验收，模型已有强例不重跑。原876候选冻结，原0/4FAIL/12808ms闭账不改；0工程child/HTTP/PG/Chrome。
+
+2026-10-07T22:24:05.904925+00:00：固定source `d034f13da989c8f175c2664cb903a7273baf84eb`，仅browser16+/2-，两原组内加强接线判别力；[入口](../../docs/evidence/wpf-workspace-arc/browser-wiring-20261007/entry.json)。chat7为原fixture已有临时tab，max3后真实Delete并恢复原1/2/3三chat；chat4仍仅材料组首次打开。四组/两图/默认超时/207其余源与三caller不变；无新类型接口，syntax/types/HTTP/browser均NOT_RUN。原876包冻结、首12808ms CLOSED不转。
+
+2026-10-07T22:25:50.434795+00:00：root[7379限定独审](../../docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-pane-wiring-source-review-20261007.json)APPROVED/0blocking，新source d034与候选仅两wiring加强。源码/checks STOP，后续仅原≤64KiB审查归档尾；无新syntax/types/纯例/HTTP/browser。原首FAIL、旧876未消费候选及全部历史阶段不变，新90s仍NOT_GRANTED。

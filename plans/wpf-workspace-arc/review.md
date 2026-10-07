@@ -1,5 +1,7 @@
 # WPF-WORKSPACEARC01 review
 
+当前target `d034f13da989c8f175c2664cb903a7273baf84eb`：APPROVED，仅browser两wiring边界16+/2-及准备，未运行；[root7379](../../docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-pane-wiring-source-review-20261007.json)0blocking。三pane focused exact2tabs排除单tab导致disabled的假阳性；Merge在原真实材料await中立即验1pane/activechat/B，保原DOM/A冻结/后续草稿断言。[本次入口](../../docs/evidence/wpf-workspace-arc/browser-wiring-20261007/entry.json)。以下876批准为历史，不能覆盖新target。
+
 当前target `876731f4488419d4c9d84584a40944fcd848c0f2`：仅browser公开Cookie入口前置2+/1-，独立差量review APPROVED（[root77c593](../../docs/evidence/wpf-workspace-arc/browser-first-20261007/root-arc-first-browser-and-cookie-entry-review-20261007.json)）；修后actual NOT_RUN。首browser source7e911/execution16d579实际FAILED0/4/0PNG，12808ms CLOSED，资源完整RETURN；[原件](../../docs/evidence/wpf-workspace-arc/browser-first-20261007/manifest.json)、[源码诊断](../../docs/evidence/wpf-workspace-arc/browser-first-20261007/diagnosis.json)。原caller e744/7FS与产品/HTTP历史批准范围保持。
 
 

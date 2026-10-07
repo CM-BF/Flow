@@ -38,3 +38,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 2026-10-07T21:43:20.807362+00:00：TODO05本次必要caller安全修复：原路径rmtree改为创建目录身份/祖先fd门禁，真实FS样本7PASS，不触旧KEEP。新40s局部封套实计564ms已关闭，原browser90仍未授运行；独审后沿既有四组候选，不增加产品验收组。
 
 2026-10-07T21:53:43.506270+00:00：TODO05首browser0/4FAIL已完整归还；876731f仅修现有受控BrowserWorkspace公开入口query+可见heading前置。真实四组仍未通过，旧90s已封，后继独立90s仅proposal；无新产品权限或断言放宽。
+
+2026-10-07T22:24:05.904925+00:00：原TODO01/02/05浏览器接线覆盖更正，见[root覆盖核对](../../docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-acceptance-coverage-review-20261007.json)与[纯模型补件](../../docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-model-coverage-addendum-20261007.json)。纯模型已有max3/merge强例，不重复运行；browser补多tab max3与Merge中间态，不扩大产品/组/超时。其他键盘/全持久化/侧栏等覆盖限制不因本两点修正而宣称全部满足。

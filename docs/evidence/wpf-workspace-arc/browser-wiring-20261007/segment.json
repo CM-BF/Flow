@@ -1,0 +1,28 @@
+{
+  "id": "ARC-BROWSER-WIRING-SOURCE-20261007",
+  "start": "2026-10-07T22:19:49.646Z",
+  "deadline": "2026-10-07T22:31:49.646Z",
+  "sourceStopAt": "2026-10-07T22:25:50.434795+00:00",
+  "state": "SOURCE_AND_CHECKS_STOP_METADATA_TAIL_ONLY",
+  "source": "d034f13da989c8f175c2664cb903a7273baf84eb",
+  "maximumBytes": 4194304,
+  "tailMaximumBytes": 65536,
+  "engineeringChildCount": 0,
+  "HTTP": 0,
+  "PG": 0,
+  "Chrome": 0,
+  "syntaxNoEmit": "NOT_RUN",
+  "priorBrowser": {
+    "spentMs": 12808,
+    "totalMs": 90000,
+    "state": "CLOSED",
+    "unusedTransfer": false
+  },
+  "candidate": "/private/tmp/arc-browser-pane-wiring-sekaruhl",
+  "review": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-pane-wiring-source-review-20261007.json",
+    "bytes": 4900,
+    "sha256": "7379e03cbff641816aaf28538c38108b2edcc93b279d511bc117597da25e276b"
+  },
+  "remainingAcceptance": "Original four browser groups/two PNG not run on new source; broader coverage limits retained"
+}

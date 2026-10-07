@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-07T22:23:19.618820+00:00",
+  "source": "d034f13da989c8f175c2664cb903a7273baf84eb",
+  "packet": "/private/tmp/arc-browser-pane-wiring-sekaruhl",
+  "manifest": {
+    "path": "/private/tmp/arc-browser-pane-wiring-sekaruhl/before-seal-manifest.json",
+    "bytes": 2632,
+    "sha256": "41dad09a1017c78ba7824c67c0761efb54910a68ff8a6f71f2a841377c413288"
+  },
+  "oldPacketManifest": {
+    "path": "/private/tmp/arc-browser-cookie-entry-6a0d0hx6/manifest.json",
+    "realpath": "/private/tmp/arc-browser-cookie-entry-6a0d0hx6/manifest.json",
+    "bytes": 3011,
+    "sha256": "41767c9d9d8a12af99f1316553796181cbfedc4d20fdc127f6684a118d888fbf"
+  },
+  "diff": {
+    "path": "/private/tmp/arc-browser-pane-wiring-sekaruhl/source.diff",
+    "realpath": "/private/tmp/arc-browser-pane-wiring-sekaruhl/source.diff",
+    "bytes": 3707,
+    "sha256": "ee65972c90247f26294d157f619a353c50425106717f0f1dc2c220a27a3af84e"
+  },
+  "scopeDelta": "browser only; 206 source pins +43 external +33 resolver +3 callers unchanged",
+  "runtime": "NOT_RUN / NOT_GRANTED",
+  "syntaxTypes": "NOT_RUN: existing Playwright locator/assertion APIs only; no type/interface changes",
+  "sourceSegment": {
+    "start": "2026-10-07T22:19:49.646Z",
+    "deadline": "2026-10-07T22:31:49.646Z",
+    "maxBytes": 4194304
+  },
+  "reviews": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-acceptance-coverage-review-20261007.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-acceptance-coverage-review-20261007.json",
+      "bytes": 5513,
+      "sha256": "40a73bf14facb0abe5d54fc4b3c94029ae3b7dfc76a9f21cba89fa169548873d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-model-coverage-addendum-20261007.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-model-coverage-addendum-20261007.json",
+      "bytes": 1499,
+      "sha256": "903186f824a5083118c714096344457ccb1b28b0fc67668639da8e7059e238d4"
+    }
+  ],
+  "finalManifestPath": "/private/tmp/arc-browser-pane-wiring-sekaruhl/manifest.json",
+  "review": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-pane-wiring-source-review-20261007.json",
+    "bytes": 4900,
+    "sha256": "7379e03cbff641816aaf28538c38108b2edcc93b279d511bc117597da25e276b"
+  },
+  "state": "APPROVED_SOURCE_PREPARATION_NOT_GRANTED",
+  "sourceStopAt": "2026-10-07T22:25:50.434795+00:00"
+}

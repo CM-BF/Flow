@@ -1,0 +1,87 @@
+{
+  "recordedAt": "2026-10-07T22:25:11.106116+00:00",
+  "reviewer": "root / gpt-6-astra ultra independent of Arc source owner",
+  "status": "APPROVED_NARROW_BROWSER_WIRING_SOURCE_AND_PREPARATION",
+  "blockingFindings": [],
+  "source": "d034f13da989c8f175c2664cb903a7273baf84eb",
+  "previousSource": "876731f4488419d4c9d84584a40944fcd848c0f2",
+  "sourceDiff": "16\t2\tapps/web/test/workspace-layout.browser.ts",
+  "changedInput": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+    "bytes": 21244,
+    "sha256": "df4f7b3efa76fda940464a504a9553fb8067aaffedf08305595074c1558c7342",
+    "gitPath": "apps/web/test/workspace-layout.browser.ts",
+    "blob": "d0a4e3f8a39b65d67827fcad8306f61e12593ad1"
+  },
+  "manifest": {
+    "path": "/private/tmp/arc-browser-pane-wiring-sekaruhl/manifest.json",
+    "bytes": 2632,
+    "sha256": "41dad09a1017c78ba7824c67c0761efb54910a68ff8a6f71f2a841377c413288"
+  },
+  "binding": {
+    "path": "/private/tmp/arc-browser-pane-wiring-sekaruhl/binding.json",
+    "bytes": 145780,
+    "sha256": "2986ca905dd74e5bcc0591931bc1f5fd72b7063c6cfacaeee81f45eb10cda149"
+  },
+  "preparation": {
+    "allManifestFilesHashed": 9,
+    "manifestFileBytes": 182346,
+    "sourcePinCount": 207,
+    "changedSourcePins": 1,
+    "unchangedSourcePinStructures": 206,
+    "externalPinStructuresUnchanged": 43,
+    "resolverLinkStructuresUnchanged": 33,
+    "otherBindingFieldsUnchanged": true,
+    "callers": {
+      "run.py": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b",
+      "worker.mjs": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778",
+      "capture.py": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12"
+    },
+    "oldPacketManifestUnchanged": {
+      "path": "/private/tmp/arc-browser-cookie-entry-6a0d0hx6/manifest.json",
+      "bytes": 3011,
+      "sha256": "41767c9d9d8a12af99f1316553796181cbfedc4d20fdc127f6684a118d888fbf"
+    }
+  },
+  "behavioralReview": [
+    "Max3 uses existing seeded chat7 before splitting; at3panes explicitly requires focused pane2tabs, chat1 selected/chat7 unselected and hidden, then checks Split disabled and visible/header counts3. This distinguishes max3 from tabs<2.",
+    "Deletes temporary chat7 through the real PaneTabs Delete handler, asserts absence/exact3chat tabs and all3selected active pane routes before original stream/body scenario. Existing fixture seeds1..8; chat7 has no streamTasks entry. Original Read full reply and stream/body assertions remain intact.",
+    "During real material-send preparation await, Merge now must produce1header/1visible pane and sole selected chat4 with its B draft visible before Split. Original DOM identity, pending probe, frozen A payload/attachments/key and B next-draft assertions remain.",
+    "No product, fixture, timeout, group, cleanup or native caller changes; original successful model max3/merge tests are not re-executed merely for added browser assertions."
+  ],
+  "proposal": {
+    "runtime": "NOT_RUN_NOT_GRANTED",
+    "budgetMs": 90000,
+    "workMs": 60000,
+    "cleanupMs": 30000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608,
+    "PG": 0,
+    "HTTP": 2,
+    "Chrome": 1,
+    "provider": 0,
+    "sourcePinValidation": "Reviewed only changed file bytes and unchanged input structure; native launcher still must fresh-validate all approved inputs and actual claim at dispatch.",
+    "floor": "Binding historical minimumFreeBytes is not a new grant. Manager must bind current complete resource floor in the independent actual grant; old unused time is not transferable."
+  },
+  "limits": [
+    "This approves source/preparation only; four runtime groups and two screenshots still NOT_RUN for this candidate.",
+    "First browser0/4 FAIL and first-run12808ms closed accounting remain unchanged.",
+    "Full compact sidebar density, complete keyboard/reload/desktop visual requirements remain open in original mature plan; do not complete whole feature from4group names.",
+    "No complete rehash of unchanged external dependencies or207-source inventory by root; previous approved pin structures reused and native fresh checks still required."
+  ],
+  "cleanCode": {
+    "time": "2026-10-07T22:25:11.106750+00:00",
+    "scope": "Two discriminating browser boundary assertions",
+    "finding": "The first9f5 delta left chat7 in the later scenario; finald034 explicitly removes it and restores3chat active state.",
+    "resolution": "Closed in final source; retains existing business-state authority and original assertions without extra harness abstractions.",
+    "unresolved": []
+  },
+  "execution": {
+    "projectWrites": 0,
+    "tests": 0,
+    "services": 0,
+    "PG": 0,
+    "Chrome": 0
+  }
+}

@@ -1,0 +1,19 @@
+{
+  "recordedAt": "2026-10-07T22:17:27.701576+00:00",
+  "parentReview": "/private/tmp/root-arc-acceptance-coverage-review-20261007.json",
+  "scope": "Additional pure test source qualifies the browser coverage findings",
+  "source": "876731f4488419d4c9d84584a40944fcd848c0f2",
+  "file": {
+    "path": "apps/web/test/workspace-layout.test.ts",
+    "bytes": 4672,
+    "sha256": "5d200cc1b470ddd0bbddb24c3c5af4db7bc2b495dfbe8a4b14f64860b44662cd"
+  },
+  "confirmed": [
+    "Existing populated fixture starts four routes. Unit case splits twice into3panes, then expects split of remaining multi-tab main pane to return identical panes. This discriminates the model max3 refusal boundary.",
+    "Same pure case verifies mergeChats returns one pane with all references and active conversationC.",
+    "Other pure cases cover route uniqueness, adjacent close selection, ratio clamps, open-view/workspace caps, and bounded layout parsing."
+  ],
+  "qualification": "The two original P2 findings concern browser wiring/visible intermediate state, not missing model tests or confirmed product defects. Do not claim max3/merge entirely untested.",
+  "next": "Original owner may add inexpensive direct UI boundary assertions within the pending browser source; do not rerun already-green pure suites merely for this documentation. Manager must distinguish this improvement from a discovered product blocker.",
+  "runtime": "No tests rerun or historical test receipt newly revalidated in this read-only addendum."
+}

@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-07T22:24:05.904925+00:00",
+  "source": "d034f13da989c8f175c2664cb903a7273baf84eb",
+  "skillsReused": [
+    "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+    "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+    "/Users/citrine/.agents/skills/assistant-ui/SKILL.md"
+  ],
+  "method": "Reuse already-read local methods, no installation/research restart",
+  "scope": "One existing browser file plus own records",
+  "actualFindings": [
+    {
+      "finding": "Old disabled Split assertion had single-tab false-positive alternative",
+      "fix": "Three panes plus focused exact2tabs; assert selected/hidden states; afterward public Delete removes temporary chat7 and restores original three-chat baseline"
+    },
+    {
+      "finding": "Old Merge then Split could leave same final shape if both no-op",
+      "fix": "Assert one pane, one visible body, selected chat4 and B text before Split while original material promise remains pending"
+    }
+  ],
+  "cleanCode": {
+    "naming": "reuse existing pane/input/tab locators; no new helper framework",
+    "responsibilities": "test-only public UI setup and assertions; no product/authority changes",
+    "errors": "original default timeouts and outer run/finally retained",
+    "duplication": "existing fixture chat7 reused; no second fixture/profile/state authority",
+    "behavior": "guards are independently falsifiable; pure model and mounted consumer evidence remain distinct"
+  },
+  "checks": {
+    "gitDiffCheck": "PASSED",
+    "syntax": "NOT_RUN; no interface/type change",
+    "types": "NOT_RUN",
+    "pureHTTPBrowser": "NOT_RUN",
+    "metadataStatusParser": "errors[]; historical startUNKNOWN preserved",
+    "localLinks": "36 checked, broken[]"
+  },
+  "remaining": "Four browser groups/two PNG remain NOT_RUN on corrected source; no full acceptance claim",
+  "sourceStopAt": "2026-10-07T22:25:50.434795+00:00",
+  "review": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-pane-wiring-source-review-20261007.json",
+    "bytes": 4900,
+    "sha256": "7379e03cbff641816aaf28538c38108b2edcc93b279d511bc117597da25e276b"
+  }
+}
