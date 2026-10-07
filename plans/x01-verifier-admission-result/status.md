@@ -48,6 +48,8 @@
 | --- | --- | --- | --- | --- | --- |
 | VAR-W01 | 2026-10-07T20:51:17.000Z | 2026-10-07T20:56:31.000Z | 审查 | 已发现工具错误码兼容P2，交原owner修复 | 原审结 |
 | VAR-W02 | 2026-10-07T21:11:09.000Z | 2026-10-07T21:12:11.000Z | 审查 | 修复两叶/3例已获独立批准 | repair/approval.json |
+| VAR-W03 | UNKNOWN | 2026-10-07T21:31:21.000Z | 审查 | 五case唯一断言P2静态关闭；operator另有清理P2 | transaction-pg/reviews.json；21:28仅dispatch分钟粒度记录 |
+| VAR-W04 | 2026-10-07T22:47:22.000Z | OPEN | 审查 | 等待b01在GDEP真实归还后复核v2五行绑定 | 固定packet bf13df9a8与实际dispatch |
 
 聚合登记：D05已实证2026-10-07T22:01:36.229Z live211，本sourceCurrent=true/issues[]/stale=false；不重探dashboard。
 
@@ -63,9 +65,7 @@ VAR-04准备封存：2026-10-07T21:32:52.281Z。测试source57b188f5ee9fce658916
 
 阻塞说明：b01对672ce的operator独审发现继承helper先删子项后核根身份，换根风险须修复并用纯FS反例验证；无实际PG开放。本准备仅PARTIAL/NOT_READY，详见[候选](../../docs/evidence/x01-verifier-admission-result/transaction-pg/candidate.json)。db21:30:22 caseP2在21:31:21对57b188f5静态关闭，原审结保留；不代替operator或完整准备批准。
 
-| 等待ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
-| --- | --- | --- | --- | --- | --- |
-| VAR-W03 | UNKNOWN | 2026-10-07T21:31:21.000Z | 审查 | 五case唯一断言P2静态关闭；operator另有清理P2 | transaction-pg/reviews.json；21:28仅dispatch分钟粒度记录 |
+
 
 本准备实际未申请/消费PG；AV R2前置亦受同helper风险影响，不能因旧READY启动。源检查已STOP，保留claim；完整VAR/父X01均未完成，main/部署事实不变。
 
