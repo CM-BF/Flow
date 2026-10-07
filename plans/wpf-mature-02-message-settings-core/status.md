@@ -10,7 +10,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility |
 | Branch | codex/claude-settings-claim-eligibility |
 | 工作基线 / HEAD | 7524a7fa6768ace7e284fc80d7cc25c1407ec2a9 / fixed source aa74137d84cd7acc45ec23c2ff22128ce944a410；最终metadata HEAD见Git/交付 |
-| 工作树dirty状态 | source固定；本次仅own检查原件/交审metadata待提交推送 |
+| 工作树dirty状态 | source固定；源码/检查原件已固定推送8d150e0b；最终metadata提交后fresh核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 任务开工时间 | UNKNOWN |
@@ -128,7 +128,7 @@ source唯一[review-ready](../../docs/evidence/wpf-mature-02-message-settings-co
 | 本轮事件 | 实际时间/状态 | 来源 |
 | --- | --- | --- |
 | 本轮工作段开始 | 2026-10-07T13:05:32Z | clock原始读数；非原task开工 |
-| 分支交付 | PENDING_FINAL_PUSH | 本metadata提交后固定交付，不以commit时间猜历史 |
+| 分支交付 | 2026-10-07T13:20:43.779344+00:00 | 本metadata提交后固定交付，不以commit时间猜历史 |
 | 独立审查 | NOT_REVIEWED | 待Mika固定source审 |
 | 主线集成 | NOT_INTEGRATED | 仅本轮差量 |
 | 部署 | NOT_DEPLOYED | 未操作个人服务 |

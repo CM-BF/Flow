@@ -1,0 +1,33 @@
+{
+  "observedAt": "2026-10-07T13:20:43.779344+00:00",
+  "source": "aa74137d84cd7acc45ec23c2ff22128ce944a410",
+  "packet": "8d150e0ba2637267b962075314f417f6dcce3cfd",
+  "branch": "codex/claude-settings-claim-eligibility",
+  "pushed": true,
+  "resultBindings": [
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/local.json",
+      "ref": "8d150e0ba2637267b962075314f417f6dcce3cfd",
+      "bytes": 86870,
+      "sha256": "c357e56c3f64d8957c19ffa4a2812b9b7357c39864dcd7754ec0e60bb2de1e53"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/local-closed.json",
+      "ref": "8d150e0ba2637267b962075314f417f6dcce3cfd",
+      "bytes": 370,
+      "sha256": "b1217b77c9adbe8a5aaaa5e91bce647434bc1bf81acfada58e11d1362d1d6598"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/local-final-closed.json",
+      "ref": "8d150e0ba2637267b962075314f417f6dcce3cfd",
+      "bytes": 572,
+      "sha256": "00e828974bcd714b32e7e2e2bb3344b91f66e985c14cc5b7a4672b5a25192b1a"
+    }
+  ],
+  "review": "PENDING_MIKA_SOURCE_AND_LIMITED_RESULT",
+  "ordinary": "RETURNED; 0 pending launch",
+  "PG": "NOT_OPEN; five case sources only",
+  "nextCheck": "precise Vitest list after alias correction; no repeated types needed absent source delta",
+  "remainingPreparation": "actual PG input/caller/external closure and new exclusive NEXT",
+  "STOP": "source/test/config writing stopped; claim retained for review/repair"
+}
