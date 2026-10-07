@@ -176,3 +176,5 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 [最小候选](../../docs/evidence/svc06/update-4fe-candidate/candidate.md)与[固定源码事实](../../docs/evidence/svc06/update-4fe-candidate/fixed-facts.json)。仅原scope只读研究固定4fe与已存SVC08 r3；没有个人probe/构建/PG。识别出真实host未传browserSession策略的接入前置；原refresh三roles停起与独立Web指针保持分别记录。后继薄接线须正式新scope，原历史验收和UNKNOWN不改。
 
 2026-10-07更新候选补充：固定4fe最多3保留Web，已保存r3恰3个；第四新ID会拒绝，后台接通与新Web可发布分别open。不用TTL/pagehide当旧页关闭，不抬上限或自动退役。浏览器策略须prepare/preflight在drain/stop前拒绝非法身份，runService仍复核；兼容报告包含实际origin/epoch配置。本次0个人采样/运行。
+
+下一版保留策略已获规划/实施方向授权，见[集中策略与迁入顺序](../../docs/evidence/svc06/update-4fe-candidate/retention-next-policy.md)：建议固定4项/192MiB/32reports并保全部旧资源，先新宿主支持再第四项CAS；当前c7b仍count3，后台更新不自动升级独立Web宿主。产品尚未领取/实现，0个人读取与运行。

@@ -12,7 +12,7 @@
 
 进入个人安装前，三个保留Web artifact `461a9732…` / `caa1e938…` / `d629631d…` 均须绑定新实际backend target的真实App兼容报告。现报告是af51，不可换tuple或用Quick组件/Story完成冒称App。Web新候选由Web原owner提供明确真实接线source/artifact及其报告；后台成功后才考虑独立Web CAS发布，不提前换指针。
 
-**现有保留版本已经满额，新Web发布是独立待解依赖。** 固定4fe的`web-release.mjs:5,79–85,129–150`限制最多3artifact、192MiB原文总量，publish会在原retained集合上追加而不会删除，第四个新ID会报`WEB_RETENTION_BUDGET_EXCEEDED`。三个现存ID来自已保存r3，不是当前fresh个人读取；进入实际操作前仍须核当前集合。不得默默抬上限、修改旧指针或自动退役；TTL、安静期、pagehide或断开观察均不能证明旧tab永久关闭，其惰性chunk仍可能访问。后继需要独立、可审的旧版本保留/退役语义与用户旧页保证；当前不自行选择旧artifact移除。后台薄接线与旧三App兼容可先推进，新Web可发布保持单独open。
+**现有保留版本已经满额，新Web发布是独立待解依赖。** 固定4fe的`web-release.mjs:5,79–85,129–150`限制最多3artifact、192MiB原文总量，publish会在原retained集合上追加而不会删除，第四个新ID会报`WEB_RETENTION_BUDGET_EXCEEDED`。三个现存ID来自已保存r3，不是当前fresh个人读取；进入实际操作前仍须核当前集合。不得默默抬上限、修改旧指针或自动退役；TTL、安静期、pagehide或断开观察均不能证明旧tab永久关闭，其惰性chunk仍可能访问。Lead后续已授权集中有界count/bytes/report策略演进，具体下一版[保留全部旧资源的路径](retention-next-policy.md)不自动退役、不临时绕过；当前不选择旧artifact移除。后台薄接线与旧三App兼容可先推进，新Web可发布保持单独open。
 
 个人动作仍未开启。候选流程复用原installation锁、exclusive intent、精确产物迁入/验证：全部材料与报告先齐→fresh身份/工作与保留基线→maintenance bootstrap指定backendArtifact→等待原工作完成（不cancel）→同operation hold→原refresh→核保护checkpoint→显式同op resume。**原refresh确实依次停止/重启Web、runner、center三roles**，不是仅两后台角色；它保留独立c7b Webhost选择与原d629/v3/retained指针，故原页面网络可短暂断开但不操作/刷新用户tabs。owned nonce未知或active/uncertain/pending任何无法确认，停止后继；原journal不清空，不复用过去意图退役授权。每阶段明确结果才后继，失败/unknown保留原件与维护态，禁止自动重试/重置key/DB回滚。
 
