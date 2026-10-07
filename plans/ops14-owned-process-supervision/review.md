@@ -60,3 +60,12 @@ Lead APPROVED_LIMITED_OBSERVATION，13绑定与原始两case/cleanup/工具退�
 Review target commit: 715525e4d1510b89be7e71a236d537b1f2953038
 
 Lead APPROVED_SOURCE：新test与Interface窄差异、原实现未改，历史unknown和实际reap后末态区分正确。唯一4例运行现已固定；原ResourceWarning保留，实际结果待Lead增量核验，旧模块/消费者批准不扩大。
+
+
+## 历史观察 / 末态回归最终独审
+
+状态：APPROVED_LIMITED_REGRESSION；Reviewer：astra_ultra_execution_lead
+
+Review target commit: 715525e4d1510b89be7e71a236d537b1f2953038
+
+实际结果固定0720625cd88ff7bfb8c1830eede8b8bfa91ded7e。完整delta、4原始stderr/工具回执、16bindings及stop_test_child已读；无P1/P2，reviewer0运行。新1/旧3重叠、12未选、原2警告与finally收尾保持。shared725bad90/两个既有wrapper源码未改，不扩大至真实服务或历史unknown恢复。详见 zombie-regression-independent-approval.json。
