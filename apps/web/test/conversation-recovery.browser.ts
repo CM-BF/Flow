@@ -277,12 +277,13 @@ async function supervisor() {
     const chromeExecutable = "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", profile = join(scratch, "chrome");
     const chromeArgs = ["--headless=new", "--remote-debugging-port=0", "--remote-debugging-address=127.0.0.1", `--user-data-dir=${profile}`,
       "--no-first-run", "--no-default-browser-check", "--disable-background-networking", "--disable-component-update", "--disable-sync", "about:blank"];
+    const workerArgs = ["--import", "tsx", fileURLToPath(import.meta.url), "--worker"];
     await json(join(directory, "launch-config.json"), {
       temp: { TMPDIR: scratch, TMP: scratch, TEMP: scratch, MAC_CHROMIUM_TMPDIR: scratch, BREAKPAD_DUMP_LOCATION: crashpad, XDG_CACHE_HOME: join(scratch, "cache") },
-      worker: { executable: process.execPath, selectedArgv: [fileURLToPath(import.meta.url), "--worker"], inheritedRuntimeArguments: "not recorded" },
+      worker: { executable: process.execPath, argv: workerArgs, inheritsNodeArguments: false },
       chrome: { executable: chromeExecutable, argv: chromeArgs },
     }); // Deliberate whitelist: never serialize inherited environment or credential-bearing arguments.
-    const worker = own(spawn(process.execPath, [...process.execArgv, fileURLToPath(import.meta.url), "--worker"], { cwd: root, detached: true,
+    const worker = own(spawn(process.execPath, workerArgs, { cwd: root, detached: true,
       stdio: ["ignore", "pipe", "pipe", "ipc"], env: childEnv }));
     worker.on("message", message => {
       const data = message as { kind?: string; result?: WorkerResult };
