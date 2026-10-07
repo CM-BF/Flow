@@ -1,12 +1,16 @@
 import { afterAll, afterEach, expect, it, vi } from 'vitest';
-import { lstatSync, mkdirSync, mkdtempSync, renameSync, rmSync, writeFileSync } from 'node:fs';
+import { chmodSync, lstatSync, mkdirSync, mkdtempSync, realpathSync, renameSync, rmSync, writeFileSync } from 'node:fs';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
+import { createHash } from 'node:crypto';
+import { loadCodexProductionRunnerConfiguration } from '../../configuration.js';
+const native = vi.hoisted(() => ({ create: vi.fn() }));
+vi.mock('../../codex/index.js', () => ({ createCodexTransport: native.create }));
 import type { HarnessContext, RunnerEventData } from '@flow/contracts';
 import { nativeExecutionProfileConfigurationJson, type CodexExecutionProfileConfiguration } from '../../../../../packages/contracts/src/execution-profiles.js';
 import { textDigest } from '../../verifier.js';
 import { persistentTransportFixture } from './continuity-fixture.js';
-import { configureCodexLaunch, publishPersistentCodexLaunch } from './launch.js';
+import { configureCodexLaunch, prepareCodexLaunchRecipe, publishPersistentCodexLaunch } from './launch.js';
 
 const profile = { harness: 'codex', adapterVersion: 'codex-app-server-0.154.0-v1', model: 'synthetic-model',
   reasoningEffort: null, serviceTier: null, serviceTierForTurn: 'default', access: 'none', approvalPolicy: 'never', sandboxMode: 'read-only',
@@ -51,7 +55,7 @@ function ownRoot() {
   const path = mkdtempSync(join(tmpdir(), 'flow-c02-launch-')); const { dev, ino } = lstatSync(path);
   ownedRoots.push({ path, dev, ino }); return path;
 }
-afterEach(() => vi.unstubAllGlobals());
+afterEach(() => { vi.unstubAllGlobals(); native.create.mockReset(); });
 afterAll(() => {
   const receipt = ownedRoots.map(root => {
     const current = lstatSync(root.path); expect([current.dev, current.ino]).toEqual([root.dev, root.ino]);
@@ -149,4 +153,71 @@ it('persistent startup honors cancellation after a publication ACK before bindin
   vi.stubGlobal('fetch', vi.fn(async () => { controller.abort(); return publication(); }));
   await expect(publishPersistentCodexLaunch(persistentProfile, { ...options, signal: controller.signal })).rejects.toThrow();
   expect(options.createTransport).not.toHaveBeenCalled();
+});
+
+function operatorRecipe() {
+  const root = realpathSync(ownRoot()); const executable = join(root, 'codex'); const contents = 'synthetic executable, never launched';
+  writeFileSync(executable, contents, { mode: 0o700 });
+  const recipe = { protocol: 'flow.codex-launch.v1', executable, executableSha256: createHash('sha256').update(contents).digest('hex'),
+    home: join(root, 'home'), codeHome: join(root, 'codex-home'), temporaryDirectory: join(root, 'temporary') };
+  for (const path of [recipe.home, recipe.codeHome, recipe.temporaryDirectory]) mkdirSync(path, { mode: 0o700 });
+  return { root, recipe };
+}
+it('operator recipe binds the actual R06 spawn to fixed storage, independent of each attempt cwd', () => {
+  const { recipe } = operatorRecipe(); const prepared = prepareCodexLaunchRecipe(recipe);
+  expect(native.create).not.toHaveBeenCalled();
+  native.create.mockReturnValue({ synthetic: true });
+  for (const workingDirectory of ['/attempt-a', '/attempt-b']) prepared.createTransport({ workingDirectory, codeHome: recipe.codeHome, signal: new AbortController().signal });
+  expect(native.create).toHaveBeenCalledTimes(2);
+  for (const [index, [options]] of native.create.mock.calls.entries()) {
+    expect(options.spawn).toEqual({ executable: recipe.executable, args: ['app-server', '--listen', 'stdio://'], cwd: index ? '/attempt-b' : '/attempt-a',
+      environment: { PATH: '/usr/bin:/bin', HOME: recipe.home, CODEX_HOME: recipe.codeHome, TMPDIR: recipe.temporaryDirectory, LANG: 'en_US.UTF-8', LC_ALL: 'en_US.UTF-8', TZ: 'UTC' } });
+    expect(options.initialize.capabilities).toBeNull();
+  }
+  expect(() => prepared.createTransport({ workingDirectory: '/attempt', codeHome: '/foreign-root', signal: new AbortController().signal })).toThrow();
+  expect(native.create).toHaveBeenCalledTimes(2);
+});
+it('operator recipe rejects arbitrary options, wrong binary hash and changed identities before R06', () => {
+  const { root, recipe } = operatorRecipe();
+  expect(() => prepareCodexLaunchRecipe({ ...recipe, env: { SECRET: 'never inherited' } })).toThrow();
+  expect(() => prepareCodexLaunchRecipe({ ...recipe, executableSha256: '0'.repeat(64) })).toThrow();
+  const prepared = prepareCodexLaunchRecipe(recipe);
+  renameSync(recipe.home, join(root, 'original-home')); mkdirSync(recipe.home, { mode: 0o700 });
+  expect(() => prepared.createTransport({ workingDirectory: '/attempt', codeHome: recipe.codeHome, signal: new AbortController().signal })).toThrow();
+  expect(native.create).not.toHaveBeenCalled();
+});
+it('operator recipe refuses writable executable and nonprivate roots, including after preparation', () => {
+  const { recipe } = operatorRecipe(); chmodSync(recipe.executable, 0o777);
+  expect(() => prepareCodexLaunchRecipe(recipe)).toThrow(); chmodSync(recipe.executable, 0o700);
+  const prepared = prepareCodexLaunchRecipe(recipe); chmodSync(recipe.temporaryDirectory, 0o755);
+  expect(() => prepared.createTransport({ workingDirectory: '/attempt', codeHome: recipe.codeHome, signal: new AbortController().signal })).toThrow();
+  expect(() => prepareCodexLaunchRecipe(recipe)).toThrow(); expect(native.create).not.toHaveBeenCalled();
+});
+it('production loader reads a strict profile and operator recipe before publication, then restores through R06', async () => {
+  const { root, recipe } = operatorRecipe(); const profileFile = join(root, 'profile.json'), recipeFile = join(root, 'launch.json');
+  writeFileSync(profileFile, JSON.stringify(persistentProfile)); writeFileSync(recipeFile, JSON.stringify(recipe));
+  const fetch = vi.fn(async () => publication()); vi.stubGlobal('fetch', fetch);
+  const fixture = persistentTransportFixture({ codeHome: recipe.codeHome });
+  native.create.mockImplementation(options => fixture.createTransport({ codeHome: options.spawn.environment.CODEX_HOME, workingDirectory: options.spawn.cwd, signal: options.signal }));
+  const loaded = await loadCodexProductionRunnerConfiguration({ codexManifestFile: profileFile, launchManifestFile: recipeFile, baseUrl: 'http://fixture.invalid', token: 'synthetic' });
+  expect(fetch).toHaveBeenCalledOnce(); expect(native.create).not.toHaveBeenCalled();
+  const events: RunnerEventData[] = [];
+  for (const [index, directory] of ['attempt-one', 'attempt-two'].entries()) {
+    const cwd = join(root, directory); mkdirSync(cwd, { mode: 0o700 });
+    await loaded.adapters.find(adapter => adapter.name === 'codex')!.run(persistentContext(cwd, events, index ? 'persistent-thread' : undefined));
+  }
+  expect(native.create).toHaveBeenCalledTimes(2); expect(fixture.instances).toMatchObject([{ closed: true, reads: 1 }, { closed: true, reads: 2 }]);
+  expect(events.filter(event => event.type === 'assistant-final')).toHaveLength(2);
+  expect(native.create.mock.calls.map(([options]) => options.spawn.environment.CODEX_HOME)).toEqual([recipe.codeHome, recipe.codeHome]);
+});
+it('production loader refuses legacy profiles and invalid recipes before publication and never starts after unknown ACK', async () => {
+  const { root, recipe } = operatorRecipe(); const profileFile = join(root, 'profile.json'), recipeFile = join(root, 'launch.json');
+  const fetch = vi.fn(async () => new Response('{}')); vi.stubGlobal('fetch', fetch);
+  const options = { codexManifestFile: profileFile, launchManifestFile: recipeFile, baseUrl: 'http://fixture.invalid', token: 'synthetic' };
+  writeFileSync(profileFile, JSON.stringify(profile));
+  await expect(loadCodexProductionRunnerConfiguration(options)).rejects.toThrow('persistent Codex profile');
+  writeFileSync(profileFile, JSON.stringify(persistentProfile)); writeFileSync(recipeFile, JSON.stringify({ ...recipe, args: [] }));
+  await expect(loadCodexProductionRunnerConfiguration(options)).rejects.toThrow(); expect(fetch).not.toHaveBeenCalled();
+  writeFileSync(recipeFile, JSON.stringify(recipe));
+  await expect(loadCodexProductionRunnerConfiguration(options)).rejects.toThrow(); expect(fetch).toHaveBeenCalledOnce(); expect(native.create).not.toHaveBeenCalled();
 });

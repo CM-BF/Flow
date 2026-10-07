@@ -1,0 +1,155 @@
+{
+  "recordedAt": "2026-10-07T03:30:57.632819+00:00",
+  "head": "519f1b87ff3b41b9a963b6e5dd99c7b117159375",
+  "claimVersion": 4,
+  "sourceRequestSha256": "b2c9e420c11d906a619b0134a41ff540c94bd8221e750f3927d728469f3abfb0",
+  "files": [
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "bytes": 598,
+      "sha256": "9fb5a2d2550c286fdc3231105436f109e26546bca260b86717622a5a5158e4b3",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "bytes": 4272,
+      "sha256": "89ff8005b4817b1ae231e999abc9e43e62202dd815d4962ec11e07c9d4b59f43",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "apps/runner/src/engineering/checker.ts",
+      "bytes": 4705,
+      "sha256": "d670a01c5a1fdd50258ed5faa69cea91e75e33e771cfe107d00677c06956081b",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "apps/runner/src/engineering/launch.ts",
+      "bytes": 1435,
+      "sha256": "3d41aaa5e45512a33a8d91e1e90a77779d995b9b6388b9f5462fe73a660922f3",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.ts",
+      "bytes": 6695,
+      "sha256": "e8a35ac85c0c048ce2abaafb513562e4b87f31906d6eb24e6ca150ab182cb6ce",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "apps/runner/src/main-concurrency.test.ts",
+      "bytes": 8267,
+      "sha256": "d0cff1c8525065b98d8110db37b6a33437646fdef9239bbc442b1822198e1baa",
+      "role": "future writer scope"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 2477,
+      "sha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214",
+      "role": "future writer scope"
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/configuration.ts",
+      "bytes": 2579,
+      "sha256": "647a01cb7b65cb3f125515bc9c895396a4a582f6fa9843fb7ad923ce846d4651",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/index.ts",
+      "bytes": 8396,
+      "sha256": "771642a3a5bc54981c43a2ede864c6daaaac62a491ea23aea7c779990aaf7e51",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/lease.ts",
+      "bytes": 2276,
+      "sha256": "c97314b4d8dd7f8fd7056982a2bca6186245062d94d60fb27c29eeb514ac90fb",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/materials.ts",
+      "bytes": 2078,
+      "sha256": "bd1da1e99f3956585a16a9bd6b59757bff1ecca9a09354f9f0004f9994c9a963",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "packages/protocols/src/a2a-bridge.ts",
+      "bytes": 11288,
+      "sha256": "67fbc4083eea37e1d2c070ac5719551791de690d9d1c008301a172427565e6f3",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "packages/protocols/src/a2a-client.ts",
+      "bytes": 4223,
+      "sha256": "a2e45e629c34480237ab7336f392bb0db9a555c086af3f029b533e346eb38219",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "packages/protocols/src/a2a-http-server.ts",
+      "bytes": 4450,
+      "sha256": "ad4cbc74ce0b91e98a3e6cafe2c4a5fdb31f77df5aabe3fea4df485a07e1a811",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "packages/protocols/src/a2a-mapping.ts",
+      "bytes": 5127,
+      "sha256": "0bc876161bfeb1926e8eb03d043a8f0189bc918c5e5ee14093a9db622f53b0c3",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "packages/protocols/src/http-policy.ts",
+      "bytes": 3017,
+      "sha256": "af6635f13ab067a0ecfb5af582a364e6131ba6f829845eaa3391ed936687a637",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "packages/protocols/src/index.ts",
+      "bytes": 167,
+      "sha256": "0747ae484303c1042148d28bacfd9817cdd2d94795c60e3c690b92dfff394e85",
+      "role": "readonly dependency"
+    },
+    {
+      "path": "packages/protocols/src/mcp-client.ts",
+      "bytes": 4001,
+      "sha256": "c03a6d29112b580ffffa05390638b3ed3dc47f8e2d30a57ed2f11d6624430807",
+      "role": "readonly dependency"
+    }
+  ],
+  "sourceBytes": 76051,
+  "links": [
+    {
+      "destination": "node_modules/@a2a-js/sdk",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk",
+      "kind": "installed-third-party",
+      "version": "1.3.0",
+      "packageJsonBytes": 8032,
+      "packageJsonSha256": "829fcc9e4768d6ca190ca369203061503911e70f4433e4e5e4aed649f440457a",
+      "exists": false
+    },
+    {
+      "destination": "node_modules/@modelcontextprotocol/client",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@modelcontextprotocol+client@2.3.1/node_modules/@modelcontextprotocol/client",
+      "kind": "installed-third-party",
+      "version": "2.3.1",
+      "packageJsonBytes": 4591,
+      "packageJsonSha256": "4a886cbee0d611f822618e4ee94ae4589655c282fa0dbafc17e80da9697f2d91",
+      "exists": false
+    },
+    {
+      "destination": "node_modules/@flow/protocols",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/packages/protocols",
+      "kind": "same-worktree-source",
+      "packageJsonPath": "packages/protocols/package.json",
+      "packageJsonBytes": 366,
+      "packageJsonSha256": "f6a8155b462edf0ccfb39b20c8344576d1ec27f647c11e0e229c52e895867294",
+      "exists": false
+    }
+  ],
+  "sourceAndPackageHashesVerified": true,
+  "existingDirtyPreserved": true,
+  "sharedConfigUnchanged": true,
+  "onlyPrivateSparseAppended": true,
+  "priorSparseSha256": "dd28686b33a2d01ef3f4f2e9a5cb26b645218f0e02c95ed142dc36b1971fadf7",
+  "currentSparseSha256": "0300ca5e26c4fffa459e3160319ae42f5491d09e64947ef1766755b063713e70",
+  "imports": 0,
+  "tests": 0,
+  "install": 0
+}

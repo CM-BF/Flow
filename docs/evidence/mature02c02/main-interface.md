@@ -1,0 +1,11 @@
+# C02-04 production main seam
+
+Explicit `FLOW_CODEX_PROFILE_FILE` + `FLOW_CODEX_LAUNCH_FILE` selects the ordinary persistent Codex host. Missing/empty or mixed Claude/A2A/engineering selection fails before loaders/publication. Legacy defaults and concurrency/signals remain.
+
+Public profile remains strict `host-owned` configuration with no launch authority. Separate operator JSON: `{protocol:"flow.codex-launch.v1", executable, executableSha256, home, codeHome, temporaryDirectory}`; canonical absolute paths only, no arbitrary args/env/auth. Executable is regular executable/no group-world write, nofollow-open SHA256 at startup (512MiB upper bound); metadata identity rechecked before each factory. Three roots already exist, canonical/private/current-user directories, same inode until factory; storage is never created/reset/deleted by the runner. Operator owns persistence, provisioning and intended account context. This is not OS isolation or an authentication/entitlement proof.
+
+Sequence: strict public profile → bounded operator manifest + fixed recipe → existing publication ACK → opaque storage bound to ACK runner/configDigest → existing guard → runRunner. The recipe closure consumes the verified storage codeHome for actual R06 `CODEX_HOME`, per-attempt cwd remains separate. Exact native argv is app-server --listen stdio://; environment is only PATH/HOME/CODEX_HOME/TMPDIR/LANG/LC_ALL/TZ. One R06 transport owns spawn/handshake/close, no second supervisor or fallback. Wrong ACK/storage/profile identity is zero-factory.
+
+Local ≤180s/4 processes, each ≤30s; ownTMP16MiB, raw256KiB, new source/metadata1MiB. Focused strict plus main selection/signals/legacy consumers and recipe/R06-injection behavior. No native executable invocation, PG, provider, install or personal file reads. Existing R2 is historical and frozen; this leaf does not supersede it.
+
+Remaining before a real run: global remoteControl/status/changed strict compatibility in ordinary evidence; lifetime256 legal-stream count versus independent queue/byte bounds; 32/512 same final text and public thinking; fixed native/environment startup validation. Conversation directory/policy/Web/TUI remain C02-05. Saved thread.id resume differs from live sessionId (official app-server Events guidance); completion may be failed/interrupted. No opt-out shortcut for user-visible stream.

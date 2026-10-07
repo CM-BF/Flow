@@ -1,5 +1,5 @@
 import { loadEngineeringRunner } from './engineering/launch.js';
-import { loadRunnerConfiguration } from './configuration.js';
+import { loadCodexProductionRunnerConfiguration, loadRunnerConfiguration } from './configuration.js';
 import { parseRunnerConcurrency } from './concurrency-configuration.js';
 import { guardExecutionProfile, publishExecutionProfile } from './execution-profiles.js';
 import { runRunner } from './runtime.js';
@@ -13,6 +13,11 @@ process.on('SIGTERM', stop);
 try {
   const endpointsFile = process.env.FLOW_A2A_ENDPOINTS_FILE;
   const engineeringFile = process.env.FLOW_ENGINEERING_SETUP_FILE;
+  const codexManifestFile = process.env.FLOW_CODEX_PROFILE_FILE;
+  const launchManifestFile = process.env.FLOW_CODEX_LAUNCH_FILE;
+  const codexSelected = codexManifestFile !== undefined || launchManifestFile !== undefined;
+  if (codexSelected && (!codexManifestFile || !launchManifestFile || endpointsFile !== undefined || engineeringFile !== undefined
+    || process.env.FLOW_CLAUDE_MATERIALS_FILE !== undefined)) throw new Error('Select one complete Codex host configuration.');
   const maxConcurrentAttempts = parseRunnerConcurrency(process.env.FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS, endpointsFile ? 'a2a' : 'native');
   const common = {
     baseUrl: process.env.FLOW_URL ?? 'http://127.0.0.1:4310',
@@ -21,7 +26,10 @@ try {
     signal: shutdown.signal,
     onNotice: (notice: unknown) => process.stderr.write(`${JSON.stringify(notice)}\n`),
   };
-  if (engineeringFile !== undefined) {
+  if (codexSelected) {
+    const loaded = await loadCodexProductionRunnerConfiguration({ ...common, codexManifestFile: codexManifestFile!, launchManifestFile: launchManifestFile! });
+    await runRunner({ ...common, adapters: loaded.adapters, activeSteering: false, maxConcurrentAttempts });
+  } else if (engineeringFile !== undefined) {
     if (endpointsFile !== undefined || process.env.FLOW_CLAUDE_MATERIALS_FILE !== undefined || maxConcurrentAttempts !== 1) throw new Error('Engineering setup requires its dedicated single-project host.');
     const adapter = await loadEngineeringRunner({ ...common, manifestFile: engineeringFile });
     await runRunner({ ...common, adapters: [adapter], maxConcurrentAttempts: 1 });
