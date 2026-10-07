@@ -595,3 +595,11 @@ GO只读输入绑定main22a0806bc2465e11096949618113833f31766b19：index.ts同�
 一手来源（2026-10-07只读核）：[pg.Pool](https://node-postgres.com/apis/pool)的满池FIFO及totalCount/idleCount/waitingCount；[pool sizing](https://node-postgres.com/guides/pool-sizing)的跨实例总量/管理余量；[pg-boss constructor](https://pgboss.io/api/constructor)的实例max共享（本地绑定12.37.0，网页非固定包行为证明）；[PG16客户端超时](https://www.postgresql.org/docs/16/runtime-config-client.html)的服务器命令时间范围。实际安装版本与固定源码在未来候选再次绑定，网页不替代运行证据。
 
 架构影响：本条只记录现存连接生命周期及待测组合，未改产品Interface/运行图；未来实施若调整池/宿主职责，由该owner更新既有D06固定架构输入。方法采用本地find-skills发现、codebase-design的Module/Interface职责与clean-code的单一事实源/无重复；只做文档内容、链接与独立审查，不运行工程检查。
+
+### REQ19 下一可用更新与 O16 旅程接续（2026-10-07）
+
+原SVC04/SVC06目标由SVC09受信host策略与集中保留策略先解除实际部署依赖，assignment_review负责；现P02安全收口后在独立树/精确scope实施。当前个人af51缺browser-session/message-settings/028/032，不能把main接线或Quick组件当Web-only已可用。新策略候选统一count4、资产总192MiB、32兼容报告，保现三个版本及其lazy namespace；只在正式固定实现/直接消费者审查后采用，不临时绕过count3，不把安静期、pagehide或cache当退役证明。版本manifest、实际backend、公开origin/私有策略组合须真实兼容；新host先保原三项再第四CAS，完整退役另保open。计数是可审工程策略、不是用户不可变要求；真实新增存储与阶段总峰值另由固定候选计量。个人动作未开启。
+
+当前CHAT05与ENG有界片收口后的下一ready验收是原O16公共完整零模型旅程，复用原owner、已审4ae准备/CAS修复与最早FAIL/KEEP；fresh核固定源、现资源与未知保留，不能重置旧run。目标→依赖执行→独立接受→统一交付须有真实公开旅程，不由模块通过替代。
+
+原O01-05/O16后继另保一个恢复情景：后续目标/约束已更新时，恢复或native compaction后依据中心当前目标版本及输入收据继续，复用已接受产物、不重复已确认副作用，不以最初请求替代当前工作。现O16禁resume的获审scope不因此改写；零模型与真实native语义分别验收，未新授provider预算，不造第二上下文权威。
