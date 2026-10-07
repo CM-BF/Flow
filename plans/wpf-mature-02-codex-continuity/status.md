@@ -7,7 +7,7 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-07T08:22:43.211901+00:00；仅client stream测试正式STOP/部分交回，文件与main2a7e逐字一致。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T08:30:06.802986+00:00；已main profile合同正式STOP交回，fixed main2a7e/本树相同；v18 ACTIVE55。 |
 | 阶段 | M2 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -23,8 +23,8 @@
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
 | 工作树dirty状态 | 本段仅真实两轮准备与status/quality metadata；产品及旧sealed原件不变，提交后核clean。 |
-| HEAD（最近观察） | 09a0ec34875f56ae037094053a939dc767384de1（本段起点origin同clean；仅移交metadata，提交见Git） |
-| claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v17 ACTIVE56；本次仅移出packages/client/src/assistant-stream.test.ts，见[正式回执](../../docs/evidence/mature02c02/assistant-stream-test-handback-receipt.json)。v16与历史执行事实不回改；LAZY须自行fresh amend。client/index及先前所有交回路径不重领。 |
+| HEAD（最近观察） | 18a115fe502cba8e434ce10af52e221416677c26（本段起点origin同clean；仅依赖交回metadata） |
+| claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v18 ACTIVE55；仅移出packages/contracts/src/execution-profiles.ts供LAZY自行领取支持供给，见[正式回执](../../docs/evidence/mature02c02/profile-contract-handback-receipt.json)。前v17 client stream test已交回；所有历史执行claim保持。 |
 | 实现目标 | C02-04真实两轮固定输入/验收准备；本轮不实施或运行native。 |
 | 实现范围 | 仅原计划/证据metadata；复用已main R06/loader，未领取或修改已交回的runner/client路径。 |
 | Review | db_transaction_owner07:11:38Z对69fa结果与8ee最小intake APPROVED/0P1P2，见[正式记录](../../docs/evidence/mature02c02/conversation-pg-sentinel-result-review.json)；source0ecd+7070及bfae/30d原批准继承。 |
@@ -87,3 +87,5 @@
 2026-10-07T08:20:38.621137+00:00 C02-04验收精度补充：第二轮须观察实际turn/start输入未由中心重放nonce/首轮正文，并关联thread/resume同thread ID；观察不到则保留证明边界。仅既有transport seam提案，ACTUAL_NOT_OPEN/0额度，不为此启动检查。
 
 2026-10-07T08:22:43.211901+00:00 单literal部分交回：STOP08:22:22.493233Z，主线2a7e与本树文件4546B/SHA666650ce…fc1f相同且无待修；v16→v17/57→56已原子提交。LAZY自行领取后写，C02不恢复该文件写权；真实native ACTUAL_NOT_OPEN。
+
+2026-10-07T08:30:06.802986+00:00 LAZY支持供给依赖：profile合同15006B/SHA4ab495a3…f79b7已main、无pending，正式STOP→v17/56至v18/55；仅此literal，新ownerfresh领取后写。原C02真实native提案仍ACTUAL_NOT_OPEN，不为本移交扩写其他任务。
