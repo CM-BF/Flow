@@ -1,0 +1,49 @@
+{
+  "startedAt": "2026-10-07T20:45:52.862872+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/runner-ready-vitest.config.mjs",
+    "-t",
+    "main forwards only"
+  ],
+  "freeBytes": 19247046656,
+  "floorBytes": 18641059840,
+  "scratch": {
+    "path": "/private/tmp/svc06b-ready-06-znwbk3sn",
+    "dev": 16777234,
+    "ino": 124475386
+  },
+  "limits": {
+    "totalWorkSeconds": 120,
+    "tmpBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "pg": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "sourceBindings": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "200437f471fd3dd0e014abde3077343007e7b6679f72beaa1f9f60b5421ee72f"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "sha256": "c6ca8c0711b4c08bc6c9582da63253fa2c0b0c53972d8eb169daf3de54daed41"
+    },
+    {
+      "path": "apps/runner/src/runtime-initialization.test.ts",
+      "sha256": "abce091f03a2e5fea673a7e3df233b9f8868c009d4968866df56ff5773fe357f"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runner-ready-types.json",
+      "sha256": "33ec2f917948f887519b26eaab8cd9669afd14db282758e48016f376734be98b"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runner-ready-vitest.config.mjs",
+      "sha256": "84ad6d87535ea9898b3c0fece80e1d260eca4039c6677b6dd13650b635f5b144"
+    }
+  ]
+}

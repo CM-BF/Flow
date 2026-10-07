@@ -1,0 +1,83 @@
+{
+  "startedAt": "2026-10-07T20:46:44.154910+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/runner-ready-vitest.config.mjs",
+    "-t",
+    "main forwards only"
+  ],
+  "freeBytes": 19244539904,
+  "floorBytes": 18641059840,
+  "scratch": {
+    "path": "/private/tmp/svc06b-ready-07-8yhhoh46",
+    "dev": 16777234,
+    "ino": 124475669
+  },
+  "limits": {
+    "totalWorkSeconds": 120,
+    "tmpBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "pg": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "sourceBindings": [
+    {
+      "path": "apps/runner/src/main.ts",
+      "sha256": "c6ca8c0711b4c08bc6c9582da63253fa2c0b0c53972d8eb169daf3de54daed41"
+    },
+    {
+      "path": "apps/runner/src/runtime-initialization.test.ts",
+      "sha256": "70d43e6d2fc4e8e62706c17bbda9ee34a9592a6b5f905ca38b21f958af1187ac"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runner-ready-vitest.config.mjs",
+      "sha256": "84ad6d87535ea9898b3c0fece80e1d260eca4039c6677b6dd13650b635f5b144"
+    }
+  ],
+  "report": {
+    "pid": 49813,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 922,
+    "stdout": "\n RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery\n\n \u2713 apps/runner/src/runtime-initialization.test.ts (11 tests | 10 skipped) 140ms\n\n Test Files  1 passed (1)\n      Tests  1 passed | 10 skipped (11)\n   Start at  13:46:44\n   Duration  604ms (transform 328ms, setup 0ms, import 379ms, tests 140ms, environment 0ms)\n\n",
+    "stderr": "",
+    "observed_bytes": 357,
+    "retained_bytes": 357,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "finishedAt": "2026-10-07T20:46:45.079614+00:00",
+  "remaining": [
+    "vite",
+    "vite/vitest",
+    "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709",
+    "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json"
+  ],
+  "scratchBytes": 131,
+  "cleanup": "KEEP_NONEMPTY"
+}

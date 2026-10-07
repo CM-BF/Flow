@@ -711,6 +711,7 @@ async function slotPreviewFixture(t, { settings = true, processState = 'running'
       ...(start ? { backendRuntime: async () => ({ root, entry: join(root, 'tools/personal-preview/cli.mjs'), artifact }), serviceRuntime: async () => ({ root, entry: join(root, 'tools/personal-preview/cli.mjs'), artifact }) } : {}) },
     ...(start ? { './web-artifact.mjs': { prepareWebArtifact: async () => artifact, verifyWebArtifact: async () => {} } } : {}),
     './environment.mjs': { ...(await import('./environment.mjs')), baseServiceEnvironment: () => ({ PATH: '/usr/bin:/bin' }) },
+    './startup-diagnostics.mjs': { ...(await import('./startup-diagnostics.mjs')), readRunnerInitialization: async input => { calls.push(['initialization', input.recordKey, input.runnerId]); return readiness?.initialized ?? true; } },
     ...(readiness ? { 'node:timers/promises': { setTimeout: async ms => { milliseconds += ms; } }, 'node:perf_hooks': { performance: { now: () => milliseconds } } } : {}),
   };
   const context = vm.createContext({ process, Buffer, URL, AbortSignal,
@@ -890,4 +891,23 @@ test('SVC09A readiness default status port preserves the original status contrac
 test('SVC09A readiness invalid status port is rejected before any configuration or process access', async () => {
   const { startPreviewServices } = await import('./preview.mjs');
   await assert.rejects(startPreviewServices(null, null, null, null, {}), { code: 'START_STATUS_PORT_INVALID' });
+});
+
+
+test('SVC06B initialization old profile and live wrapper are insufficient for readiness', async t => {
+  const f = await slotPreviewFixture(t, { settings: false, start: true, readiness: { initialized: false } });
+  await assert.rejects(f.preview.startPreviewServices(f.config, f.state, f.artifact, f.artifact), { code: 'START_UNCONFIRMED_CHECK_STATUS' });
+  assert.equal(f.state.lastStartFailure.role, 'runner');
+  assert.equal(f.state.startReadiness.runner.predicates.runtimeInitialization.result, false);
+  assert.equal(f.state.startReadiness.runner.predicates.profile, undefined);
+  assert.deepEqual(f.calls.filter(call => call[0] === 'spawn').map(call => call[1]), ['center', 'runner']);
+});
+
+test('SVC06B initialization positive receipt still requires the original profile and leaves claim unknown', async t => {
+  const f = await slotPreviewFixture(t, { settings: false, start: true, readiness: { initialized: true } });
+  const status = await f.preview.startPreviewServices(f.config, f.state, f.artifact, f.artifact);
+  assert.equal(f.state.startReadiness.runner.predicates.runtimeInitialization.result, true);
+  assert.equal(f.state.startReadiness.runner.predicates.profile.result, true);
+  assert.equal(status.runnerSlots.slots[0].actualClaim, 'unknown');
+  assert.deepEqual(f.calls.filter(call => call[0] === 'initialization')[0], ['initialization', 'runner', f.config.runner.runnerId]);
 });

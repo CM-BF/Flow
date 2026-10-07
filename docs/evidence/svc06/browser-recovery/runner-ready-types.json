@@ -1,0 +1,69 @@
+{
+  "compilerOptions": {
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "lib": [
+      "ES2023",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types"
+    ],
+    "paths": {
+      "@flow/client": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/packages/client/src/index.ts"
+      ],
+      "@flow/contracts": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/packages/contracts/src/index.ts"
+      ],
+      "@flow/plugin-runtime": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/packages/plugin-runtime/src/package-store.ts"
+      ],
+      "@flow/protocols": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/packages/protocols/src/index.ts"
+      ],
+      "zod": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod"
+      ],
+      "tar": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar"
+      ],
+      "vitest": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest"
+      ],
+      "@anthropic-ai/claude-agent-sdk": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk"
+      ],
+      "@a2a-js/sdk": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk"
+      ],
+      "@a2a-js/sdk/server": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk/dist/server/index.d.ts"
+      ],
+      "@a2a-js/sdk/errors": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk/dist/errors/index.d.ts"
+      ],
+      "@a2a-js/sdk/client": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@a2a-js+sdk@1.3.0_express@5.2.1_pg@8.23.1/node_modules/@a2a-js/sdk/dist/client/index.d.ts"
+      ],
+      "@modelcontextprotocol/client": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@modelcontextprotocol+client@2.3.1/node_modules/@modelcontextprotocol/client"
+      ]
+    }
+  },
+  "files": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/apps/runner/src/runtime.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/apps/runner/src/main.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/apps/runner/src/runtime-initialization.test.ts"
+  ]
+}

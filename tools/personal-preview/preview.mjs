@@ -11,7 +11,7 @@ import { performance } from 'node:perf_hooks';
 import { Pool } from 'pg';
 import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess, ownsListener, observeOwnedListener } from './process.mjs';
 import { baseServiceEnvironment, serviceEnvironment } from './environment.mjs';
-import { openStartupDiagnostics, observeStartupChild, preserveStartupFailure, publicStartupFailure, startupFailure, startupErrorCode } from './startup-diagnostics.mjs';
+import { openStartupDiagnostics, observeStartupChild, preserveStartupFailure, publicStartupFailure, startupFailure, startupErrorCode, readRunnerInitialization } from './startup-diagnostics.mjs';
 import { LEGACY_NATIVE_CONFIGURATION, SETTINGS_SLOT_KEY, readRunnerSlots, slotServiceKeys, runnerServiceRole, registerSettingsSlot, observeSettingsProfile, pinSettingsProfile } from './runner-slots.mjs';
 import { WEB_RETENTION_POLICY } from './web-retention-policy.mjs';
 import { pinnedBrowserSessionConfiguration, browserSessionLaunchEnvironment, readBrowserSessionLaunch } from './browser-session-configuration.mjs';
@@ -194,7 +194,8 @@ async function waitReady(config, role, record, artifact, expectedBackendHead, sl
       observation.iterations++;
       if (await probe('owner', () => inspectOwnedProcess(record)) !== 'running') fail('SERVICE_EXITED_DURING_START');
       let ready;
-      if (runnerServiceRole(role) === 'runner') ready = await probe('profile', async () => Boolean(await configuredProfile(config, slot, true)));
+      if (runnerServiceRole(role) === 'runner') ready = await probe('runtimeInitialization', () => readRunnerInitialization({ directory: config.directory, recordKey: role, record,
+        runnerId: (slot?.runner ?? config.runner)?.runnerId })) && await probe('profile', async () => Boolean(await configuredProfile(config, slot, true)));
       else if ((await probe('listener', () => observeOwnedListener(record, role === 'center' ? config.centerPort : config.webPort))).owned) {
         ready = role === 'center' ? (await probe('health', () => observeReachable(`http://127.0.0.1:${config.centerPort}/api/health`))).reachable
           : await probe('webIdentity', async () => webIdentity(config, artifact, (await readWebRelease(config.directory))?.version, expectedBackendHead));
@@ -371,9 +372,9 @@ export async function runService(directory, recordKey) {
         String(config.webPort), String(config.centerPort), artifact.artifactId, artifact.sourceHead, artifact.manifestDigest];
     }
     await stage('child-spawn');
-    child = spawn(process.execPath, args, { cwd, env, stdio: ['ignore', 'ignore', 'pipe'] });
+    child = spawn(process.execPath, args, { cwd, env, stdio: role === 'runner' ? ['ignore', 'ignore', 'pipe', 'ipc'] : ['ignore', 'ignore', 'pipe'] });
     process.on('SIGTERM', stop); process.on('SIGINT', stop);
-    const result = await observeStartupChild(child, diagnostic);
+    const result = await observeStartupChild(child, diagnostic, role === 'runner' ? { runnerId: slot.runner.runnerId } : {});
     diagnostic = null;
     await save(join(config.directory, `${recordKey}-exit.json`), { at: new Date().toISOString(), nonce, ...result });
     process.exitCode = result.code ?? (stopping ? 0 : 1);

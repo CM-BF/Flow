@@ -1,0 +1,93 @@
+{
+  "startedAt": "2026-10-07T20:44:52.951611+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc",
+    "--project",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/runner-ready-types.json"
+  ],
+  "freeBytes": 19246714880,
+  "floorBytes": 18641059840,
+  "scratch": {
+    "path": "/private/tmp/svc06b-ready-03-9254z11l",
+    "dev": 16777234,
+    "ino": 124475013
+  },
+  "limits": {
+    "totalWorkSeconds": 120,
+    "tmpBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "pg": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "sourceBindings": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sha256": "200437f471fd3dd0e014abde3077343007e7b6679f72beaa1f9f60b5421ee72f"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "sha256": "c6ca8c0711b4c08bc6c9582da63253fa2c0b0c53972d8eb169daf3de54daed41"
+    },
+    {
+      "path": "apps/runner/src/runtime-initialization.test.ts",
+      "sha256": "20ea1b5d96d7d4e623cd213a9e23b1ec47a5e3b5b8f35c29e2499864e8f15980"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "sha256": "b6199f7bd0d0871dab1b2f79bcacca5b3deafe6860cdc343273a01c772a8d6ec"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+      "sha256": "183a9562fb985c4eb87690fcc59af074fb1608c883072ae6cc4f4351a55b8f4d"
+    }
+  ],
+  "report": {
+    "pid": 75803,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 2,
+    "elapsed_ms": 1905,
+    "stdout": "packages/protocols/src/a2a-bridge.ts(4,59): error TS2307: Cannot find module '@a2a-js/sdk/server' or its corresponding type declarations.\npackages/protocols/src/a2a-bridge.ts(5,184): error TS2307: Cannot find module '@a2a-js/sdk/errors' or its corresponding type declarations.\npackages/protocols/src/a2a-bridge.ts(103,23): error TS7006: Parameter 'params' implicitly has an 'any' type.\npackages/protocols/src/a2a-bridge.ts(103,31): error TS7006: Parameter 'context' implicitly has an 'any' type.\npackages/protocols/src/a2a-bridge.ts(114,30): error TS7006: Parameter 'params' implicitly has an 'any' type.\npackages/protocols/src/a2a-bridge.ts(114,38): error TS7006: Parameter 'context' implicitly has an 'any' type.\npackages/protocols/src/a2a-bridge.ts(115,13): error TS7006: Parameter 'params' implicitly has an 'any' type.\npackages/protocols/src/a2a-bridge.ts(115,21): error TS7006: Parameter 'context' implicitly has an 'any' type.\npackages/protocols/src/a2a-bridge.ts(116,22): error TS7006: Parameter 'params' implicitly has an 'any' type.\npackages/protocols/src/a2a-bridge.ts(116,30): error TS7006: Parameter 'context' implicitly has an 'any' type.\npackages/protocols/src/a2a-bridge.ts(123,24): error TS7006: Parameter 'params' implicitly has an 'any' type.\npackages/protocols/src/a2a-bridge.ts(123,32): error TS7006: Parameter 'context' implicitly has an 'any' type.\npackages/protocols/src/a2a-bridge.ts(124,21): error TS7006: Parameter 'params' implicitly has an 'any' type.\npackages/protocols/src/a2a-bridge.ts(124,29): error TS7006: Parameter 'context' implicitly has an 'any' type.\npackages/protocols/src/a2a-client.ts(2,116): error TS2307: Cannot find module '@a2a-js/sdk/client' or its corresponding type declarations.\npackages/protocols/src/a2a-client.ts(3,53): error TS2307: Cannot find module '@a2a-js/sdk/errors' or its corresponding type declarations.\npackages/protocols/src/a2a-client.ts(11,54): error TS7006: Parameter 'item' implicitly has an 'any' type.\npackages/protocols/src/a2a-http-server.ts(5,101): error TS2307: Cannot find module '@a2a-js/sdk/server' or its corresponding type declarations.\npackages/protocols/src/mcp-client.ts(1,136): error TS2307: Cannot find module '@modelcontextprotocol/client' or its corresponding type declarations.\npackages/protocols/src/mcp-client.ts(17,68): error TS7006: Parameter 'request' implicitly has an 'any' type.\npackages/protocols/src/mcp-client.ts(17,77): error TS7006: Parameter 'context' implicitly has an 'any' type.\n",
+    "stderr": "",
+    "observed_bytes": 2485,
+    "retained_bytes": 2485,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "finishedAt": "2026-10-07T20:44:54.860528+00:00",
+  "remaining": [
+    "node-compile-cache",
+    "node-compile-cache/v24.20.0-arm64-964aae3f-501",
+    "node-compile-cache/v24.20.0-arm64-964aae3f-501/d1bae4a2"
+  ],
+  "scratchBytes": 1357796,
+  "cleanup": "KEEP_NONEMPTY"
+}

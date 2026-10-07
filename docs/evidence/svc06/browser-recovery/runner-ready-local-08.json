@@ -1,0 +1,72 @@
+{
+  "startedAt": "2026-10-07T20:49:13.030670+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-name-pattern=actual child spawn failure|diagnostic errors still await|ownership replacement|overflow is drained|missing stderr EOF",
+    "tools/personal-preview/startup-diagnostics.test.mjs"
+  ],
+  "freeBytes": 19209129984,
+  "floorBytes": 18641059840,
+  "scratch": {
+    "path": "/private/tmp/svc06b-ready-08-hod26v7i",
+    "dev": 16777234,
+    "ino": 124476649
+  },
+  "limits": {
+    "totalWorkSeconds": 120,
+    "tmpBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "pg": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "reason": "serialized diagnostic persistence also affects these original child lifecycle/primary consumers",
+  "sourceBindings": [
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "sha256": "b6199f7bd0d0871dab1b2f79bcacca5b3deafe6860cdc343273a01c772a8d6ec"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+      "sha256": "183a9562fb985c4eb87690fcc59af074fb1608c883072ae6cc4f4351a55b8f4d"
+    }
+  ],
+  "report": {
+    "pid": 44194,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 450,
+    "stdout": "\u2714 overflow is drained without killing the child and retains exactly the first 64KiB (74.055708ms)\n\u2714 diagnostic errors still await the actual child exit and preserve its numeric status (93.66675ms)\n\u2714 missing stderr EOF is bounded and remains explicitly incomplete (132.37ms)\n\u2714 ownership replacement prevents new phase publication while retaining the original private stderr (20.540792ms)\n\u2714 actual child spawn failure retains a controlled system code without exposing the program path (33.521416ms)\n\u2139 tests 5\n\u2139 suites 0\n\u2139 pass 5\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 402.096875\n",
+    "stderr": "",
+    "observed_bytes": 622,
+    "retained_bytes": 622,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "finishedAt": "2026-10-07T20:49:13.482717+00:00",
+  "remaining": [],
+  "scratchBytes": 0,
+  "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+}

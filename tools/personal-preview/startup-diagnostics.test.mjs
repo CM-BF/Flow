@@ -6,7 +6,7 @@ import { join } from 'node:path';
 import { randomUUID, createHash } from 'node:crypto';
 import { spawn } from 'node:child_process';
 import { PassThrough } from 'node:stream';
-import { openStartupDiagnostics, observeStartupChild, preserveStartupFailure, publicStartupFailure, startupFailure, STARTUP_STDERR_BYTES } from './startup-diagnostics.mjs';
+import { readRunnerInitialization, openStartupDiagnostics, observeStartupChild, preserveStartupFailure, publicStartupFailure, startupFailure, STARTUP_STDERR_BYTES } from './startup-diagnostics.mjs';
 
 async function installation(t) {
   const directory = await mkdtemp(join(tmpdir(), 'flow-startup-diagnostic-'));
@@ -173,4 +173,72 @@ test('SVC09A controlled startup failure identifies settings without weakening le
   const legacy = publicStartupFailure(startupFailure({ code: 'EIO' }, 'runner', 'ready'));
   assert.deepEqual(Object.keys(legacy), ['role','phase','code','at']);
   assert.equal(publicStartupFailure({ ...legacy, recordKey: 'arbitrary' }).recordKey, undefined);
+});
+
+
+const initializedFrame = runnerId => ({ protocol: 'flow.runner-startup.v1', type: 'runtime-initialized', runnerId });
+async function initializationFixture(t) {
+  const input = await installation(t), { realpath } = await import('node:fs/promises');
+  input.directory = await realpath(input.directory); input.stem = join(input.directory, 'startup-diagnostics', `runner-${input.nonce}`);
+  const diagnostic = await openStartupDiagnostics(input);
+  const ready = overrides => readRunnerInitialization({ directory: input.directory, recordKey: 'runner', record: { pid: input.pid, nonce: input.nonce }, runnerId: 'synthetic', ...overrides });
+  return { input, diagnostic, ready };
+}
+
+test('SVC06B initialization actual IPC persists this child identity and exit removes readiness', async t => {
+  const { input, diagnostic, ready } = await initializationFixture(t);
+  const child = spawn(process.execPath, ['-e', `process.send(${JSON.stringify(initializedFrame('synthetic'))}); setTimeout(()=>process.exit(0),2000);`], { stdio: ['ignore', 'ignore', 'pipe', 'ipc'] });
+  t.after(() => { if (child.exitCode === null && child.signalCode === null) child.kill('SIGTERM'); });
+  let persisted;
+  const written = new Promise(resolve => { persisted = resolve; });
+  const observed = observeStartupChild(child, { ...diagnostic, async initialized(...args) { await diagnostic.initialized(...args); persisted(); } }, { runnerId: 'synthetic' });
+  await written;
+  assert.equal(await ready(), true);
+  const receipt = JSON.parse(await readFile(`${input.stem}.json`));
+  assert.deepEqual(receipt.runtimeInitialized, { protocol: 'flow.runner-startup.v1', childPid: child.pid, runnerId: 'synthetic' });
+  assert.equal((await stat(`${input.stem}.json`)).mode & 0o777, 0o600);
+  child.kill('SIGTERM'); await observed; assert.equal(await ready(), false);
+});
+
+test('SVC06B initialization missing IPC and stale launch receipts cannot prove readiness', async t => {
+  const { input, diagnostic, ready } = await initializationFixture(t);
+  assert.equal(await ready(), false);
+  await diagnostic.initialized(99999, 'synthetic'); assert.equal(await ready(), true);
+  assert.equal(await ready({ record: { pid: input.pid + 1, nonce: input.nonce } }), false);
+  assert.equal(await ready({ record: { pid: input.pid, nonce: randomUUID() } }), false);
+  assert.equal(await ready({ runnerId: 'other' }), false);
+  await chmod(`${input.stem}.json`, 0o644);
+  await assert.rejects(ready(), { code: 'STARTUP_DIAGNOSTICS_UNAVAILABLE' });
+  await chmod(`${input.stem}.json`, 0o600); await diagnostic.finish({ code: 0 });
+});
+
+test('SVC06B initialization malformed first IPC rejects all later messages', async () => {
+  const { EventEmitter } = await import('node:events');
+  for (const first of [null, {}, initializedFrame('wrong'), { ...initializedFrame('synthetic'), extra: true }]) {
+    const child = new EventEmitter(); child.pid = 88888; child.connected = true; child.stderr = new PassThrough();
+    child.disconnect = () => { child.connected = false; };
+    let positives = 0;
+    const observed = observeStartupChild(child, { capture() {}, async stage() {}, async initialized() { positives++; }, async finish() {} }, { runnerId: 'synthetic' });
+    child.emit('message', first); child.emit('message', initializedFrame('synthetic')); child.emit('exit', 0, null);
+    await observed; assert.equal(positives, 0); assert.equal(child.connected, false);
+  }
+});
+
+test('SVC06B initialization persistence failure keeps child exit and no positive receipt', async t => {
+  const { input, diagnostic, ready } = await initializationFixture(t), { EventEmitter } = await import('node:events');
+  const child = new EventEmitter(); child.pid = 88888; child.connected = true; child.stderr = new PassThrough();
+  child.disconnect = () => { child.connected = false; };
+  input.state.processes.runner.nonce = randomUUID(); await writeFile(input.statePath, JSON.stringify(input.state));
+  const observed = observeStartupChild(child, diagnostic, { runnerId: 'synthetic' });
+  child.emit('message', initializedFrame('synthetic')); child.stderr.end(); child.emit('exit', 9, null);
+  const result = await observed;
+  assert.equal(result.code, 9); assert.equal(result.diagnosticError, 'STARTUP_DIAGNOSTICS_UNAVAILABLE'); assert.equal(await ready(), false);
+});
+
+
+test('SVC06B initialization a renamed receipt with unfinished durability cannot become ready', async t => {
+  const { input, diagnostic, ready } = await initializationFixture(t);
+  await diagnostic.initialized(88888, 'synthetic'); assert.equal(await ready(), true);
+  await writeFile(`${input.stem}.initializing`, '', { mode: 0o600, flag: 'wx' });
+  assert.equal(await ready(), false); await diagnostic.finish({ code: 0 });
 });

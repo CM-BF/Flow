@@ -59,3 +59,5 @@ Native独审APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE：22固定+17�
 2026-10-07T12:17:26.273047+00:00：X01-UPSTREAM固定5e96/源5beb+9617/结果283d复用Mika分层独审，native独立核当前前像与直接接口；198文件872742B逐固定来源接收，唯一新增两test定向noEmit0/2363ms，不重PG。D05登记1d883相对f045获同reviewer限定APPROVED_DOCS：真实MSG03 canonical/claim/开始来源与202候选分开，未冒部署。[上游接收](../../docs/evidence/i02/x01-upstream-intake/receipt.json)。
 
 2026-10-07T12:21:19.964262+00:00：D05实际部署两metadata3bad31e0获native_center_owner限定APPROVED_DOCS，无finding；实际202、sourceCurrent、人读完整/时间issues[]。原sampler的selected.mode=null是未取source.mode；Lead补一次只读公开summary，source.mode=live、readAt12:21:04.698Z、status digest e0d48a83c6a21cdbf4d8e1db1e68eb324514187f414ec2357c6e05bb502fbe52，真实parent=MATURE02/Web；未改原回执null或声称浏览器实测。源码仍4fdd、个人不变，metadata不再次重启。
+
+2026-10-07T20:53:40.546Z：SVC06B source77b489ea545bae1939f64f4669aeaa3f84816b01限定APPROVED_CURRENT_CHILD_INITIALIZATION，0blocking；完整源/直接消费者及持久失败边界已读，36固定绑定+5runtime核同。25不同局部与types0复用，未复测。个人恢复与实际claim未验，详见[审查](../../docs/evidence/i02/svc06b-runner-initialization-review.json)。

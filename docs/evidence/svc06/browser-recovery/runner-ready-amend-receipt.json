@@ -1,0 +1,28 @@
+{
+  "requestId": "svc06b-current-runner-initialization-amend-20261007",
+  "action": "amend",
+  "committedAt": "2026-10-07T20:34:55.940Z",
+  "claimId": "95f47f5c-7256-44f5-b97b-c20b6756a2cc",
+  "version": 8,
+  "scope": [
+    "apps/runner/src/main.ts",
+    "apps/runner/src/runtime-initialization.test.ts",
+    "apps/runner/src/runtime.ts",
+    "docs/evidence/svc05-history-compatibility/release-operation/admission-preservation.test.mjs",
+    "docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs",
+    "docs/evidence/svc06/browser-recovery",
+    "docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
+    "plans/svc06-browser-recovery",
+    "tools/personal-preview/backend-release/host.mjs",
+    "tools/personal-preview/backend-release/runtime.test.mjs",
+    "tools/personal-preview/preview.mjs",
+    "tools/personal-preview/preview.test.mjs",
+    "tools/personal-preview/startup-diagnostics.mjs",
+    "tools/personal-preview/startup-diagnostics.test.mjs"
+  ],
+  "actor": {
+    "lead": "astra_ultra_execution_lead",
+    "worker": "assignment_review"
+  },
+  "source": "successful atomic CLI response at2026-10-07T20:34:55.940Z"
+}

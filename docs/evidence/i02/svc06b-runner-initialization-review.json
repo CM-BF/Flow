@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-07T20:53:40.546Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_CURRENT_CHILD_INITIALIZATION",
+  "target": "77b489ea545bae1939f64f4669aeaa3f84816b01",
+  "delivery": "1520aeb09f5ce29b44757eb17e47f4a1d9d852cf",
+  "mainPreimage": "86112a35effcd4d809b5e7b91d9759cdb19d2008",
+  "manifestSha256": "ef1e048cc6fe30b8a71a85fc8331f7507a8756b1c8603ef0da96bb480b3c25c2",
+  "fixedBindingsChecked": 36,
+  "fixedBindingBytes": 337264,
+  "runtimeBindingsChecked": 5,
+  "scope": [
+    "apps/runner/src/runtime.ts",
+    "apps/runner/src/main.ts",
+    "apps/runner/src/runtime-initialization.test.ts",
+    "tools/personal-preview/preview.mjs",
+    "tools/personal-preview/preview.test.mjs",
+    "tools/personal-preview/startup-diagnostics.mjs",
+    "tools/personal-preview/startup-diagnostics.test.mjs"
+  ],
+  "blockingFindings": [],
+  "review": [
+    "Exact seven authored product/test blobs only; current main preimages equal 57ab. The 23 readonly supplied sources are not integrated.",
+    "Positive initialization follows existing identity/journal/recovery/body/plugin guards and adds no claim. Main forwards one typed frame only to its parent-created channel.",
+    "Parent uses actual child handle identity, nonce/record key and expected runner identity. Private bounded durable record plus unfinished marker rejects stale/malformed/failed persistence; exit invalidates ready.",
+    "Readiness requires current positive evidence and existing owner/profile checks; original timeout and runtime authority remain unchanged.",
+    "Independent source/test review applied existing find-skills/codebase-design/clean-code: one observer interface, no parallel scheduler or provider inference."
+  ],
+  "evidence": {
+    "distinctPassed": 25,
+    "new": 18,
+    "affected": 7,
+    "focusedTypesExit": 0,
+    "elapsedMs": 8042,
+    "rawBytes": 7634,
+    "groups": "8 absent / dual EOF / no supervisor signals",
+    "scratch": "3 exact empty removed; 5 derived caches 2715904 bytes KEEP",
+    "preservedFailures": [
+      "declaration aliases in focused types",
+      "non-target protocol import in main fixture"
+    ],
+    "reviewerTests": "NOT_RUN_EXISTING_DIRECT_EVIDENCE_REUSED"
+  },
+  "limits": [
+    "Only initialization proof, not accepting or actual claim. No assignment means NO_ASSIGNMENT_OBSERVED.",
+    "Separate 04da patch is static; final recovery composition, new artifact, exact four-page compatibility and real default cold startup remain required.",
+    "No PG/provider/service/personal operation by this review; personal service remains stopped/maintenance23."
+  ],
+  "intakeValidation": {
+    "ownStatus": "errors/missing empty; historical I02 start UNKNOWN retained",
+    "diffCheck": "Product paths clean; fixed raw unified patch context blank lines trigger whitespace check and remain byte-preserved"
+  }
+}

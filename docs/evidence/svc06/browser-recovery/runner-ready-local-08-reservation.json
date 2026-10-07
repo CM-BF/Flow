@@ -1,0 +1,35 @@
+{
+  "startedAt": "2026-10-07T20:49:13.030670+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-name-pattern=actual child spawn failure|diagnostic errors still await|ownership replacement|overflow is drained|missing stderr EOF",
+    "tools/personal-preview/startup-diagnostics.test.mjs"
+  ],
+  "freeBytes": 19209129984,
+  "floorBytes": 18641059840,
+  "scratch": {
+    "path": "/private/tmp/svc06b-ready-08-hod26v7i",
+    "dev": 16777234,
+    "ino": 124476649
+  },
+  "limits": {
+    "totalWorkSeconds": 120,
+    "tmpBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "pg": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "reason": "serialized diagnostic persistence also affects these original child lifecycle/primary consumers",
+  "sourceBindings": [
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "sha256": "b6199f7bd0d0871dab1b2f79bcacca5b3deafe6860cdc343273a01c772a8d6ec"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+      "sha256": "183a9562fb985c4eb87690fcc59af074fb1608c883072ae6cc4f4351a55b8f4d"
+    }
+  ]
+}

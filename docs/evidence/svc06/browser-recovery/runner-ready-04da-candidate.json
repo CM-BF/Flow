@@ -1,0 +1,162 @@
+{
+  "at": "2026-10-07T20:47:33.775377+00:00",
+  "state": "STATIC_COMPOSITION_NOT_BUILT_OR_RUN",
+  "base": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "files": [
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "preimageBytes": 4368,
+      "preimageSha256": "320e6a1d21b0cc7073f3985dace543476ba0672514422b883fb890e2a5d2ca54",
+      "candidateBytes": 8924,
+      "candidateSha256": "35f4b24980faa240013be85e86b2a8c581e68c1fe3c08bac42e91af43f8cc3b4"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "preimageBytes": 48201,
+      "preimageSha256": "3dc665dea6a62874438fb62c72444ccba18f462c935ac276f5d786fbffe37d11",
+      "candidateBytes": 48650,
+      "candidateSha256": "dfd8c6e2e85aa38e112c340389d8f00e02bd82610c2515ce49a30ea806b6d158"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "preimageBytes": 10094,
+      "preimageSha256": "5827f1863578841ad12a459ea7ea42fc474577cd1271e1233beb9a50902c17d8",
+      "candidateBytes": 14601,
+      "candidateSha256": "3190f12de066ef1377f5de966819a08dd6980e13fa4867336aa09a708c1601f1"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "preimageBytes": 17320,
+      "preimageSha256": "db4e30317baf9a604d5fe89c2c67ff03cb925bbed90cb7cc3debfc055af10648",
+      "candidateBytes": 17786,
+      "candidateSha256": "398201e036cedafc801634b50d8f43eb30eb1ef81640bc224f6eae80960d023e"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "preimageBytes": 3297,
+      "preimageSha256": "46c06a84f1bde8db92a7df140d1491609877455b84ff6e520d00cc748a46c1fe",
+      "candidateBytes": 3744,
+      "candidateSha256": "2c0e6f72f63ce91716287e195c798e69ad1d15c160c0b64c7703aff09e6726c7"
+    }
+  ],
+  "exactSubstitutions": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "oldSha256": "359fb602637ed67dd672d20d6ba3834b1ec2e826408d2bfee058b4f28b130d2e",
+      "occurrences": 1
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "oldSha256": "6207a00f2e6fb10a73191bdb1c6ae6744f9a3bf6e492ad4c36cc8ca0cdf591f1",
+      "occurrences": 1
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "oldSha256": "250a0ec5fafa436a1aa08657a958a1f55bce8b71deb240df3c89317ae723d4d8",
+      "occurrences": 1
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "oldSha256": "01e17ea9e29c83eb8074b185bcd379168164149aed747fbfbb687dff4317f803",
+      "occurrences": 1
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "oldSha256": "b7a8def9d090e9d4d0f037d343e1f31b6151f54de63e54c5fd37301c8a4aae07",
+      "occurrences": 1
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "oldSha256": "c51f4d591ccbca6581e07c1516c0e8ee71fd55899025a6b4e07a7adee65305f4",
+      "occurrences": 1
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "oldSha256": "8779560ce1c060503fb3bcfa88e68fd8d6506170b9eed47efd9c4cdb780007b2",
+      "occurrences": 1
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "oldSha256": "16828dc4de8f8bbc62bb30b4b4634fdc5debcc9ddcaf1e8ac338bda9ff0e29e0",
+      "occurrences": 1
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "oldSha256": "bf461b8990861d56ae342f280dd004539add9bfb1c84eabc710dc61fb552ba3a",
+      "occurrences": 1
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "oldSha256": "183c191b2a250909680b1809c4a7bee7e67e35a2707a56eca373d55a8a4e834d",
+      "occurrences": 1
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "oldSha256": "ee3939b5a59598caa8386e0ab9158d45e7d40469c07ddeb50aca3706308cb830",
+      "occurrences": 1
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "oldSha256": "e0be208ae610cd88bb08b5b31a66663f5aeacfa9a4f84f2b2861436c5d00b9f1",
+      "occurrences": 1
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "oldSha256": "69102f3e43622bbf2063343aeca2418189d0a52f62d3c10d1969c645250410fa",
+      "occurrences": 1
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "oldSha256": "4e2e5e63123d30888935203be56fc5824f0ece2c2dcda296f90bc8391d36c29e",
+      "occurrences": 1
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "oldSha256": "59d058a9514353cb9df4af36ce16b67270099dee18fa2e99e460342d3d2d4013",
+      "occurrences": 1
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "oldSha256": "50bef2974e563c1b03356122b60fc225034ff52095756ab4f5811e482761ec44",
+      "occurrences": 1
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "oldSha256": "49a96608cf76b1a898f479963a592a9af96a09df258dcdb9c875371e104d6fe4",
+      "occurrences": 1
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "oldSha256": "eb87766e61967c67d1cd135d6993d1c75d532a404d4a82a47776e52b9abd33b3",
+      "occurrences": 1
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "oldSha256": "03c56a1305abf1339c7e62be3c770771213f68a8ff313d1cc7fc89cc15c1ce16",
+      "occurrences": 1
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "oldSha256": "4049ce28609691b25f11d3debec2a3d5b2ef78a742567fce0ed90955e22b1d99",
+      "occurrences": 1
+    }
+  ],
+  "patch": {
+    "path": "runner-ready-04da-candidate.patch",
+    "bytes": 23066,
+    "sha256": "1ea8e8091339bc66eaf10701a0b5b95bfa86b253d91228387743e189e235f28c"
+  },
+  "preserved": [
+    "04da package and migrations",
+    "04da no plugin/slot additions",
+    "04da three-role lifecycle/10s deadline/stop identities",
+    "all installed artifacts unchanged"
+  ],
+  "stillRequired": [
+    "independently reviewed held-target rebind delta",
+    "single fixed composition review/direct checks",
+    "new immutable artifact and exact compatibility tuple",
+    "fresh authorized same-operation recovery window"
+  ],
+  "claimEvidence": "initialized only proves this child passed local guards; accepting is separate; no new natural assignment means NO_ASSIGNMENT_OBSERVED"
+}

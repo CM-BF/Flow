@@ -1,5 +1,5 @@
 import { constants, writeSync, fsyncSync, fstatSync } from 'node:fs';
-import { open, lstat, realpath, mkdir, rename } from 'node:fs/promises';
+import { open, lstat, realpath, mkdir, rename, unlink } from 'node:fs/promises';
 import { join } from 'node:path';
 import { createHash, randomUUID } from 'node:crypto';
 
@@ -82,7 +82,8 @@ export async function openStartupDiagnostics({ directory, role, recordKey = role
   const identity = await privateDirectory(parent);
   const stem = join(parent, `${recordKey}-${nonce}`);
   const output = await open(`${stem}.stderr`, constants.O_WRONLY | constants.O_CREAT | constants.O_EXCL | constants.O_NOFOLLOW, 0o600);
-  let stream, retained = 0, observed = 0, writeError, closed = false;
+  let stream, retained = 0, observed = 0, writeError, closed = false, runtimeInitialized;
+  let writes = Promise.resolve();
   const digest = createHash('sha256');
   async function checkIdentity() {
     const current = await privateDirectory(directory), child = await privateDirectory(parent);
@@ -99,16 +100,21 @@ export async function openStartupDiagnostics({ directory, role, recordKey = role
       if (state.processes?.[recordKey]?.nonce !== nonce || state.processes[recordKey].pid !== pid) fail();
     } finally { await file.close(); }
   }
-  async function record(phase, detail = {}) {
+  async function persist(phase, detail) {
     if (!phases.includes(phase)) fail();
     await checkIdentity();
-    const value = { format: 1, role, ...(recordKey === role ? {} : { recordKey }), nonce, pid, phase, at: new Date().toISOString(), ...detail };
+    const value = { format: 1, role, ...(recordKey === role ? {} : { recordKey }), nonce, pid, phase, at: new Date().toISOString(), ...detail,
+      ...(runtimeInitialized ? { runtimeInitialized } : {}) };
     try { privateFile(await lstat(`${stem}.json`, { bigint: true }), 4096); }
     catch (error) { if (error.code !== 'ENOENT') throw error; }
     const temporary = `${stem}.${randomUUID()}.tmp`;
     const file = await open(temporary, constants.O_WRONLY | constants.O_CREAT | constants.O_EXCL | constants.O_NOFOLLOW, 0o600);
     try { await file.writeFile(JSON.stringify(value) + '\n'); await file.sync(); } finally { await file.close(); }
     await rename(temporary, `${stem}.json`); await syncDirectory(parent);
+  }
+  function record(phase, detail = {}) {
+    writes = writes.then(() => persist(phase, detail));
+    return writes;
   }
   const streamError = error => { writeError ??= startupErrorCode(error); };
   const consume = bytes => {
@@ -128,6 +134,18 @@ export async function openStartupDiagnostics({ directory, role, recordKey = role
   catch (error) { await output.close(); throw error; }
   return {
     stage: phase => record(phase),
+    async initialized(childPid, runnerId) {
+      if (closed || role !== 'runner' || runtimeInitialized || !Number.isSafeInteger(childPid) || childPid < 2
+        || typeof runnerId !== 'string' || runnerId.length < 1 || runnerId.length > 256) fail();
+      // Publish only after the record and its directory are durable. Any failed write/sync leaves
+      // this bounded marker, so even a renamed-but-unconfirmed positive record is not readiness.
+      const pending = await open(`${stem}.initializing`, constants.O_WRONLY | constants.O_CREAT | constants.O_EXCL | constants.O_NOFOLLOW, 0o600);
+      try { await pending.sync(); } finally { await pending.close(); }
+      runtimeInitialized = { protocol: 'flow.runner-startup.v1', childPid, runnerId };
+      await record('child-running');
+      // This is the final publication operation. A crash can retain the marker, conservatively.
+      await unlink(`${stem}.initializing`);
+    },
     capture(stderr) {
       if (stream || closed || !stderr) fail(); stream = stderr;
       stream.on('data', consume); // Beyond 64KiB, drain without retaining or queuing any further chunks.
@@ -155,15 +173,55 @@ export async function openStartupDiagnostics({ directory, role, recordKey = role
 }
 
 /** Observe the actual child through exit even when diagnostic persistence fails. */
-export async function observeStartupChild(child, diagnostic) {
-  const exited = new Promise(resolve => {
-    child.once('error', error => resolve({ code: null, signal: 'start-error', startupError: startupErrorCode(error) }));
-    child.once('exit', (code, signal) => resolve({ code, signal }));
-  });
+export async function observeStartupChild(child, diagnostic, { runnerId } = {}) {
+  let ended = false, initialization;
   let diagnosticError, stderr;
+  const exited = new Promise(resolve => {
+    child.once('error', error => { ended = true; resolve({ code: null, signal: 'start-error', startupError: startupErrorCode(error) }); });
+    child.once('exit', (code, signal) => { ended = true; resolve({ code, signal }); });
+  });
+  const initialized = value => {
+    // One parent-created channel, one exact message. Neither stderr nor SDK events enter here.
+    if (!ended && value && Object.keys(value).sort().join() === 'protocol,runnerId,type'
+      && value.protocol === 'flow.runner-startup.v1' && value.type === 'runtime-initialized'
+      && value.runnerId === runnerId && typeof runnerId === 'string' && runnerId.length <= 256) {
+      initialization = Promise.resolve().then(() => diagnostic.initialized(child.pid, runnerId))
+        .catch(error => { diagnosticError ??= startupErrorCode(error); });
+    }
+    if (child.connected) { try { child.disconnect(); } catch { /* A closed one-shot channel never licenses a second message. */ } }
+  };
+  if (runnerId !== undefined && child.connected) child.once('message', initialized);
   try { diagnostic.capture(child.stderr); } catch (error) { diagnosticError = startupErrorCode(error); child.stderr?.on('error', () => {}); child.stderr?.resume(); }
   try { await diagnostic.stage('child-running'); } catch (error) { diagnosticError ??= startupErrorCode(error); }
   const result = await exited;
+  child.off('message', initialized);
+  await initialization;
   try { stderr = await diagnostic.finish(result, result.startupError ? { code: result.startupError } : undefined); } catch (error) { diagnosticError ??= startupErrorCode(error); }
   return { ...result, ...(stderr ? { stderr } : {}), ...(diagnosticError ? { diagnosticError } : {}) };
+}
+
+/** A published profile is durable configuration. Only a receipt from this launch proves local initialization. */
+export async function readRunnerInitialization({ directory, recordKey, record, runnerId }) {
+  if (!['runner', 'runner-settings'].includes(recordKey) || !/^[a-f0-9]{8}(?:-[a-f0-9]{4}){3}-[a-f0-9]{12}$/.test(record?.nonce ?? '')
+    || !Number.isSafeInteger(record?.pid) || record.pid < 2 || typeof runnerId !== 'string' || runnerId.length < 1 || runnerId.length > 256) return false;
+  const parent = join(directory, 'startup-diagnostics'), path = join(parent, `${recordKey}-${record.nonce}.json`);
+  try {
+    await privateDirectory(directory); await privateDirectory(parent);
+    const file = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW | constants.O_NONBLOCK);
+    try {
+      const before = await file.stat({ bigint: true }); privateFile(before, 4096);
+      const bytes = Buffer.alloc(4097); let size = 0;
+      while (size < bytes.length) { const part = await file.read(bytes, size, bytes.length - size, size); if (!part.bytesRead) break; size += part.bytesRead; }
+      const after = await file.stat({ bigint: true }), named = await lstat(path, { bigint: true }); privateFile(after, 4096);
+      if (!sameIdentity(before, after) || !sameIdentity(after, named) || before.mtimeNs !== after.mtimeNs || before.size !== after.size || size !== Number(before.size)) fail();
+      // A failed persistence stage can leave a valid-looking JSON file. It remains unconfirmed.
+      try { privateFile(await lstat(join(parent, `${recordKey}-${record.nonce}.initializing`), { bigint: true }), 0); return false; }
+      catch (error) { if (error.code !== 'ENOENT') throw error; }
+      const value = JSON.parse(bytes.subarray(0, size).toString('utf8')), initialized = value.runtimeInitialized;
+      return value.format === 1 && value.role === 'runner' && (value.recordKey ?? value.role) === recordKey && value.nonce === record.nonce
+        && value.pid === record.pid && value.phase === 'child-running' && initialized?.protocol === 'flow.runner-startup.v1'
+        && initialized.runnerId === runnerId && Number.isSafeInteger(initialized.childPid) && initialized.childPid > 1
+        && Object.keys(initialized).sort().join() === 'childPid,protocol,runnerId';
+    } finally { await file.close(); }
+  } catch (error) { if (error.code === 'ENOENT') return false; throw error; }
 }
