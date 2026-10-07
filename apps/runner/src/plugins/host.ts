@@ -61,12 +61,20 @@ function pending<T>(operation: () => T | Promise<T>, signal: AbortSignal): Promi
     catch { finish(false, new PluginToolError('PACKAGE_FAILED')); }
   });
 }
-export async function invokeInstalledTool(input: PluginToolInput): Promise<PluginToolResult> {
+export function invokeInstalledTool(input: PluginToolInput): Promise<PluginToolResult> {
+  return invokeInstalledPackage(input, 'tool');
+}
+/** Explicit local verifier consumer; an installed verifier can never enter the legacy tool path. */
+export function invokeInstalledVerifier(input: PluginToolInput): Promise<PluginToolResult> {
+  return invokeInstalledPackage(input, 'verifier');
+}
+async function invokeInstalledPackage(input: PluginToolInput, kind: 'tool' | 'verifier'): Promise<PluginToolResult> {
   checkAbort(input.signal);
   const binding = frozenInvocation(input); const text = input.input;
   const installed = await readInstalledPackage({ artifact: binding.material.artifact, store: input.store, signal: input.signal });
   if (installed.receipt.installationId !== binding.material.installationId || installed.receipt.storeId !== binding.material.storeId
     || installed.receipt.treeDigest !== binding.material.treeDigest) throw new PluginToolError('MATERIAL_MISMATCH');
+  if (installed.receipt.manifest.kind !== kind) throw new PluginToolError('PACKAGE_KIND_MISMATCH');
   checkAbort(input.signal); await input.assertOwnership();
   // An ES module's top level is executable, so loading needs its own current grant.
   await input.authorize(binding, 'load'); checkAbort(input.signal); await input.assertOwnership(); checkAbort(input.signal);

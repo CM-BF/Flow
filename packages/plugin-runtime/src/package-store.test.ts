@@ -246,3 +246,16 @@ test.each(zeroMetadataCases)('rejects zero-length metadata $type $position regul
     expect(await readdir(f.input.store.root)).toEqual([]);
   } finally { await rm(f.root, { recursive: true, force: true }); }
 });
+
+
+test('AV02 static verifier kind is retained and unknown manifest kinds remain rejected', async () => {
+  const f = await fixture();
+  try {
+    for (const kind of ['verifier', 'unknown']) {
+      const entries = await fixtureEntries(); const manifest = JSON.parse(entries[1]!.body!.toString()); manifest.kind = kind;
+      entries[1]!.body = Buffer.from(JSON.stringify(manifest)); await replaceArchive(f, gzipSync(tarBytes(entries)));
+      if (kind === 'verifier') expect((await prepareInstalledPackage(f.input)).receipt.manifest.kind).toBe('verifier');
+      else await expect(prepareInstalledPackage(f.input)).rejects.toMatchObject({ code: 'MANIFEST_REJECTED' });
+    }
+  } finally { await rm(f.root, { recursive: true, force: true }); }
+});
