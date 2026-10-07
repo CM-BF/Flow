@@ -3,9 +3,9 @@
   "ready": false,
   "operationId": "35d5a7ff-5ef7-4938-9584-adb27f5357ff",
   "version": 23,
-  "candidateArtifact": "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
-  "candidateSource": "f37a3612068c7215994750574a7451ede841bcce",
-  "targetState": "NOT_READY_PUBLIC_LOADER_DEFECT_REQUIRES_REVIEWED_REPLACEMENT",
+  "candidateArtifact": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+  "candidateSource": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+  "targetState": "NOT_READY_COLD_FOUR_REPORTS_FRESH_FACTS_DISPATCH_REQUIRED",
   "freshPersonalInputs": null,
   "reports": null,
   "dispatch": null,
@@ -13,5 +13,11 @@
   "providerQueries": 0,
   "publishNewWeb": false,
   "oldStagesReplay": false,
-  "meaning": "Pending values deliberately prevent execution; no current personal facts have been read or fabricated."
+  "meaning": "Pending values deliberately prevent execution; no current personal facts have been read or fabricated.",
+  "buildResultReference": {
+    "worktree": "backend-browser-recovery",
+    "commit": "8bea672e52f3528b3bf666ffc7d2375aaab3531f",
+    "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2-result-manifest.json",
+    "sha256": "9d10001297d42521115af12f4700280a3b164e5b546724600d1c88cbef9c7d4f"
+  }
 }

@@ -13,7 +13,7 @@ BASE = Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release
 NODE = '/opt/homebrew/Cellar/node@24/24.20.0/bin/node'
 PYTHON = '/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13'
 PHASES = ['fresh', 'import-artifact', 'import-reports', 'rebind', 'refresh', 'checkpoint', 'resume', 'final']
-WINDOW = 'svc06-personal-7d1-held23-b692-once'
+WINDOW = 'svc06-personal-7d1-held23-e15-once'
 
 def pin(binding):
     path = Path(binding['path']); info = path.lstat()

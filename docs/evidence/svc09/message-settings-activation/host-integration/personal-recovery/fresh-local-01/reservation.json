@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-07T21:43:49.252090+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-isolation=none",
+    "--test-reporter=spec",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/fresh-facts.test.mjs"
+  ],
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/fresh-facts.mjs",
+      "bytes": 7982,
+      "sha256": "41ffa8a5adaeb2f9b126ba0c5294e5a34e557f41b650e815d779f215dc5c1e7a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/fresh-facts.test.mjs",
+      "bytes": 4152,
+      "sha256": "eb278bd35f02a9b5f725db2875712c0678dda16c948f512030f7dbf4607e9e32"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/policy.mjs",
+      "bytes": 9889,
+      "sha256": "0fa9dd1bfd3c2c6e6e86d328605e1e5fd8b7b79a9443ea3991af9775bb7e084f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    }
+  ],
+  "priorMs": 205,
+  "priorRawBytes": 1184,
+  "workMsLimit": 30000,
+  "rawLimit": 131072,
+  "scratchLimit": 8388608,
+  "floor": 17977442304,
+  "free": 18287587328,
+  "queueSHA256": "f4840ebc09ae3c66160be1cc84d7ee5bfce59b61e1798d48474e5c572b3e314b",
+  "queueAt": "2026-10-07T21:40:31.748Z",
+  "actualBuildReturn": "2026-10-07T21:42:22.040Z peer/Lead receipt",
+  "scratch": {
+    "path": "/private/tmp/flow-svc09-held-facts-local-91tn7yt2",
+    "dev": 16777234,
+    "ino": 124562732
+  },
+  "PG": 0,
+  "personal": 0,
+  "provider": 0
+}

@@ -15,7 +15,7 @@ export function example() {
       compatibilityId: String(index + 1).repeat(64), sha256: String(index + 1).repeat(64), bytes: 100,
       directory: '/private/tmp/reports/' + index, path: '/private/tmp/reports/' + index + '/report.json' })),
     publishNewWeb: false, providerQueries: 0, phases: PHASES,
-    migration: { installationDirectory: DIRECTORY, repository: ROOT, sourceDirectory: '/private/tmp/flow-svc06b-recovery-artifact-6SJcHt',
+    migration: { installationDirectory: DIRECTORY, repository: ROOT, sourceDirectory: '/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t',
       runDirectory: '/private/tmp/flow-svc06-held-recovery-toy-migration', installationIdentity: { dev: '1', ino: '1' },
       sourceDirectoryIdentity: { dev: '16777234', ino: '124483635' }, runIdentity: null, artifact: TARGET, expectedBackendArtifact: OLD_BACKEND,
       expectedWebHostArtifact: OLD_WEB, expectedSource: { head: OLD_WEB.sourceHead, dirty: false },
@@ -24,8 +24,8 @@ export function example() {
       processDigests: Object.fromEntries(ROLES.map(role => [role, sha(JSON.stringify(processes[role]))])), ports: { center: 61227, web: 61228 },
       python: '/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13',
       cloneDriver: { path: '/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py', sha256: '05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6' },
-      clone: { manifestBytes: 3196787, artifactEntries: 15629, artifactLogicalBytes: 363874679, cloneHelperSha256: 'c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62' },
-      artifactTotalLogicalBytes: 367071466, budget: { freshBytes: 16635330560, liveBytes: 1073741824, addedBytes: 536870912, rawBytes: 2097152 } } };
+      clone: { manifestBytes: 3196787, artifactEntries: 15629, artifactLogicalBytes: 363874705, cloneHelperSha256: 'c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62' },
+      artifactTotalLogicalBytes: 367071492, budget: { freshBytes: 16635330560, liveBytes: 1073741824, addedBytes: 536870912, rawBytes: 2097152 } } };
   return { plan, before: { state, operation, release } };
 }
 test('fixed held contract separates selected backend, old Webhost and actual source', () => {

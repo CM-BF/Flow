@@ -8,7 +8,7 @@ export const DIRECTORY = '/Users/citrine/.flow-personal';
 export const OPERATION = '35d5a7ff-5ef7-4938-9584-adb27f5357ff';
 export const RUNNER = 'd22f4df2-8242-49f4-a1b4-77f8f08611ef';
 const descriptor = (artifactId, sourceHead) => Object.freeze({ policy: 'flow.backend-artifact.v1', artifactId, manifestDigest: artifactId, sourceHead });
-export const TARGET = descriptor('b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d', 'f37a3612068c7215994750574a7451ede841bcce');
+export const TARGET = descriptor('e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd', '880060a317cd99f3f29b41333f6dd7d7f5ab1488');
 export const OLD_BACKEND = descriptor('cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b', '04da80692e79e2b7c3f6341c7fa76515a3f719a3');
 export const OLD_WEB = descriptor('7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920', '6c0fdcda8858aac33489c48c1948e902dd6a3d7e');
 export const OLD_RETAINED = descriptor('c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d', '422f4b150e5801d6010e5bbd6b53574e35384f87');
@@ -37,7 +37,7 @@ export function validateMigration(input) {
   assert.deepEqual(input.expectedRunner, { id: RUNNER, maintenance_state: 'maintenance', maintenance_version: 23, maintenance_operation_id: OPERATION });
   assert.deepEqual(input.retainedArtifacts, [OLD_RETAINED, OLD_WEB, OLD_BACKEND]);
   for (const name of ['installationIdentity', 'sourceDirectoryIdentity', 'runIdentity']) identity(input[name]);
-  assert.equal(input.sourceDirectory, '/private/tmp/flow-svc06b-recovery-artifact-6SJcHt');
+  assert.equal(input.sourceDirectory, '/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t');
   assert.ok(isAbsolute(input.runDirectory) && input.runDirectory.startsWith('/private/tmp/flow-svc06-held-recovery-'));
   assert.deepEqual(Object.keys(input.privateFiles).sort(), [...FILES]);
   for (const pin of Object.values(input.privateFiles)) {
@@ -50,9 +50,9 @@ export function validateMigration(input) {
   assert.equal(input.python, '/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13');
   assert.equal(input.cloneDriver.path, '/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py');
   assert.equal(input.cloneDriver.sha256, '05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6');
-  assert.deepEqual(input.clone, { manifestBytes: 3196787, artifactEntries: 15629, artifactLogicalBytes: 363874679,
+  assert.deepEqual(input.clone, { manifestBytes: 3196787, artifactEntries: 15629, artifactLogicalBytes: 363874705,
     cloneHelperSha256: 'c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62' });
-  assert.equal(input.artifactTotalLogicalBytes, 367071466);
+  assert.equal(input.artifactTotalLogicalBytes, 367071492);
   assert.ok(input.budget.freshBytes >= 2.5 * 1024 ** 3); assert.equal(input.budget.liveBytes, 1024 ** 3);
   assert.equal(input.budget.addedBytes, 512 * 1024 ** 2); assert.equal(input.budget.rawBytes, 2 * 1024 ** 2);
 }
