@@ -1,6 +1,6 @@
-# 工具全文公开接线：下一最小 Interface（提案，未实施）
+# CHAT05P02 工具全文公开接线 Interface
 
-固定输入为已接收 main `f39a5dfea0a33ef55631cb7e29291deca6d4e0d2`；本片领域交付见 [main receipt](main-receipt.json)。本文只在原 owner 的 plan/evidence 范围准备后继，不领取或修改共享源，不表示生产已开通。拟后继 CHAT05P02 属原 FLOW-001/CHAT05–06，名称、独立 worktree/base 和正式 take 由 Lead 确认；不得在原树继续产品写入。
+固定输入为已接收 main `f39a5dfea0a33ef55631cb7e29291deca6d4e0d2`；本片领域交付见 [main receipt](/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/docs/evidence/chat05p01/main-receipt.json)。本文只在原 owner 的 plan/evidence 范围准备后继，不领取或修改共享源，不表示生产已开通。拟后继 CHAT05P02 属原 FLOW-001/CHAT05–06，名称、独立 worktree/base 和正式 take 由 Lead 确认；不得在原树继续产品写入。
 
 ## 最小交付与顺序
 
@@ -29,11 +29,11 @@
 
 该 reader 是唯一传输 codec，严格绑定 taskId/attemptId/activityId/protocol/representation/mediaType/声明 bytes/full digest/chunkCount；可变 receivedBytes/receivedChunks/state 按合法进展核对，不把整个 descriptor 的增长误判为身份变化。每页最多四块，`afterIndex` 沿现服务端语义为下一块的 inclusive index；验证 nextIndex/hasMore、连续 index 与 offset、canonical base64、每块 length/hash，以及完成时总 length/full hash。声明范围 8MiB/body、16MiB/attempt、256 材料、64KiB/chunk、8chunk/batch、4chunk/page 不变；畸形 identity、gap/overlap、hash、越界拒绝。
 
-reader 内保留原文字节最多 8MiB，加一页有界 wire/解码临时量；不每页重新连接/解码全部前缀。完整 digest 只在完整材料核验阶段计算，不能把已验证 chunk 当完整材料。UTF8 使用流式 decoder 或完整验证后的单次 decode，64KiB 可能分割多字节字符；中间页不是独立 JSON，不能逐页 JSON.parse。原始字节完整性与文本/JSON呈现分离。多个 reader 的总保留预算和 DOM 渲染预算由 UI 后继明确限制，不能据单 reader 界限宣称全应用有界。
+reader 内保留原文字节最多 8MiB，加一页有界 wire/解码临时量；显式 completeText 后还可能缓存最多约16MiB UTF16文本，返回chunk副本由caller负责释放；不每页重新连接/解码全部前缀。完整 digest 只在完整材料核验阶段计算，不能把已验证 chunk 当完整材料。UTF8 使用流式 decoder 或完整验证后的单次 decode，64KiB 可能分割多字节字符；中间页不是独立 JSON，不能逐页 JSON.parse。原始字节完整性与文本/JSON呈现分离。多个 reader 的总保留预算和 DOM 渲染预算由 UI 后继明确限制，不能据单 reader 界限宣称全应用有界。
 
 `receiving + hasMore=false` 仅是当前接收尾部，readNext 此次返回“仍接收中”；后续显式调用可在同 cursor 获取新页，不能永久缓存为 complete。`interrupted` 仍是不完整；只有服务端 complete 且本 reader 核完所有原文 length/digest 才可标完整。Web 原 per-pane generation/abort authority 负责阻止晚到结果进入新 pane、折叠/换 row/中心/禁用后停止新读取；client 不复制 UI lease 状态。Web 只消费共享 reader 的已验证 bytes/状态，不新增第二套 codec。完整 8MiB 可保存/取回不等于应一次性 pretty-print 或渲染 8MiB。
 
-上述 consumer 限制来自 [Web 固定只读交接](public-wiring-web-consumer-input.json)（f39、6434B、SHA256 925a32ef8d0c231adaca3db2f954714291deec74aae4ee2be6a3745b88577bd7）；本次不修改 Web。
+上述 consumer 限制来自 [Web 固定只读交接](/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/docs/evidence/chat05p01/public-wiring-web-consumer-input.json)（f39、6434B、SHA256 925a32ef8d0c231adaca3db2f954714291deec74aae4ee2be6a3745b88577bd7）；本次不修改 Web。
 
 ### 新旧中心与显式 host 开通
 

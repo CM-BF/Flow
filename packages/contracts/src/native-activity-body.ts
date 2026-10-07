@@ -60,3 +60,54 @@ export interface NativeActivityBodyPage {
   nextIndex: number;
   hasMore: boolean;
 }
+
+/** Only the authenticated center, after successful production mounting, confirms support. */
+export const nativeActivityBodySupportSchema = z.strictObject({
+  protocol: z.literal(NATIVE_ACTIVITY_BODY_PROTOCOL),
+  representation: z.literal('sdk-public-material-utf8-v1'),
+  runnerId: idSchema,
+  limits: z.strictObject({
+    bodyBytes: z.literal(NATIVE_ACTIVITY_BODY_LIMITS.bodyBytes),
+    attemptBytes: z.literal(NATIVE_ACTIVITY_BODY_LIMITS.attemptBytes),
+    bodies: z.literal(NATIVE_ACTIVITY_BODY_LIMITS.bodies),
+    chunkBytes: z.literal(NATIVE_ACTIVITY_BODY_LIMITS.chunkBytes),
+    batchChunks: z.literal(NATIVE_ACTIVITY_BODY_LIMITS.batchChunks),
+    pageChunks: z.literal(NATIVE_ACTIVITY_BODY_LIMITS.pageChunks),
+  }),
+});
+export type NativeActivityBodySupport = z.infer<typeof nativeActivityBodySupportSchema>;
+
+const counts = z.number().int().min(0).max(128);
+export const nativeActivityBodyDescriptorSchema = z.strictObject({
+  taskId: idSchema, attemptId: idSchema, activityId: digest,
+  protocol: z.literal(NATIVE_ACTIVITY_BODY_PROTOCOL).nullable(),
+  representation: z.literal('sdk-public-material-utf8-v1').nullable(),
+  state: z.enum(['receiving', 'complete', 'interrupted', 'legacy']),
+  mediaType: z.enum(['application/json', 'text/plain']).nullable(),
+  bytes: bytes.nullable(), sha256: digest.nullable(), receivedBytes: bytes,
+  receivedChunks: counts, chunkCount: counts.nullable(),
+}).superRefine((value, context) => {
+  const invalid = () => context.addIssue({ code: 'custom', message: 'Inconsistent material descriptor.' });
+  if (value.state === 'legacy') {
+    if (value.protocol !== null || value.representation !== null || value.mediaType !== null
+      || value.bytes !== null || value.sha256 !== null || value.chunkCount !== null
+      || value.receivedBytes !== 0 || value.receivedChunks !== 0) invalid();
+    return;
+  }
+  if (value.protocol === null || value.representation === null || value.mediaType === null
+    || value.bytes === null || value.sha256 === null || value.chunkCount === null) { invalid(); return; }
+  if (value.chunkCount !== Math.ceil(value.bytes / NATIVE_ACTIVITY_BODY_LIMITS.chunkBytes)
+    || value.receivedChunks > value.chunkCount
+    || value.receivedBytes !== Math.min(value.bytes, value.receivedChunks * NATIVE_ACTIVITY_BODY_LIMITS.chunkBytes)
+    || value.state === 'complete' && value.receivedBytes !== value.bytes) invalid();
+});
+
+export const nativeActivityBodyPageSchema = z.strictObject({
+  descriptor: nativeActivityBodyDescriptorSchema,
+  chunks: z.array(z.strictObject({
+    index: z.number().int().min(0).max(127), offset: bytes,
+    bytes: z.number().int().min(1).max(NATIVE_ACTIVITY_BODY_LIMITS.chunkBytes), sha256: digest,
+    base64: z.string().min(4).max(87_384).regex(/^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$/),
+  })).max(NATIVE_ACTIVITY_BODY_LIMITS.pageChunks),
+  nextIndex: counts, hasMore: z.boolean(),
+});
