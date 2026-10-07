@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 09:04:18 UTC；b2b产物实际完成，运行窗已归还；未采个人事实 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 09:16:46 UTC；固定c2c结果已审并main，后继自有host准备未运行 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -14,20 +14,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | 原owner基线1e7c423ea2c5738d68adf182673803668c47b15d；入口 fbdb93e08a18b6fe21b8750e2ec726388493f8e0；artifact固定main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388 |
-| 工作树dirty状态 | 仅本次结果/raw/状态收口；产品与fbdb入口固定不改 |
+| 工作树dirty状态 | 仅本次结果接收metadata与后继host候选；产品/fbdb入口不改 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 实现目标 | fbdb93e08a18b6fe21b8750e2ec726388493f8e0 |
 | 实现范围 | docs/evidence/svc06/update-b2b-candidate/build-once/entry.mjs, docs/evidence/svc06/update-b2b-candidate/build-once/supervise.py, docs/evidence/svc06/update-b2b-candidate/build-once/runtime-proof.mjs, docs/evidence/svc06/update-b2b-candidate/build-once/inputs.json |
 | 检查状态 | PASSED fbdb93e08a18b6fe21b8750e2ec726388493f8e0；固定b2b一次离线构建与内部加载成功，实际host/配置兼容/个人更新未运行 |
-| 已集成main状态 / HEAD | 原零任务host实验已main a040a364d426f4f8583fbfc67e5922077ba1f9ac；新策略SVC09已main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388；本次c2c构建结果待独审/接收，尚未采用到个人安装 |
+| 已集成main状态 / HEAD | main/origin 9b27005f086c97c13b789020f5f8449d1552bb50 已逐字接收b905的35 own路径；c2c构建/内部加载已限定独审；实际新host/配置/个人更新仍未验 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 新的固定后台及网页宿主产物已构建完成，内部依赖与入口加载检查通过。 |
-| 下一可用交付 | 构建结果独审后，验证三个保留页面与新后台及浏览器配置的兼容。 |
-| 当前阻塞 | ACTIVE: 实际构建结果待独审；配置兼容与个人更新仍待验证 |
+| 下一可用交付 | 验证旧记录在新宿主迁移后保留，并验证默认关闭到显式浏览器登录配置的真实运行。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | 准备已独审通过；实际c2c产物与加载结果PENDING_RESULT_REVIEW，不代表个人采用完成 |
+| Review | c2c实际构建/加载已限定APPROVED；下一自有host/迁移/配置入口准备中，尚未运行 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用原builder/OPS14/SVC08；已main SVC09提供私有策略与固定运行tuple及4项集中retention。此次只准备明确版本产物，不增调度器/状态权威；架构基线待Lead按b2b记录。 |
 
@@ -201,3 +201,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 | --- | --- | --- | --- | --- | --- |
 | SVC06-WAIT-B2B-REVIEW | UNKNOWN | 2026-10-07T09:00:20.787410Z | 审查 | 入口独审完成；最初等待时标无单独原件，不用commit时间推算 | update-b2b-candidate/independent-review.json |
 | SVC06-WAIT-B2B-WINDOW | 2026-10-07T09:00:20.787410Z | 2026-10-07T09:01:39.222Z | 资源 | 准备批准后等待实际共享窗口及fresh准入；唯一entry启动结束 | independent-review / execution-preflight / actual-first/reservation |
+
+## 2026-10-07 09:16:46 UTC：构建结果接收与下一自有宿主准备
+
+[唯一结果独审](../../docs/evidence/svc06/update-b2b-candidate/result-independent-review.json)于09:08:56.687153UTC限定批准，20fixed/current+3private+root一致；main9b270逐字接收b905。0重跑。下一[Interface](../../docs/evidence/svc06/b2b-host-policy/Interface.md)只准备固定af51旧数据→c2c真实factory/宿主/策略，不启动PG、不触个人；三真实App兼容仍独立。fresh ledger v7 active双scope已核。
