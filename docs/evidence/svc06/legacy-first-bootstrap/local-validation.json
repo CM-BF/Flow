@@ -1,0 +1,251 @@
+{
+  "kind": "SVC06_FIRST_BOOTSTRAP_LOCAL_ONLY",
+  "startedAt": "2026-10-07T11:15:45.879093+00:00",
+  "source": "ff445959425128876d5dd6abdb719196cc2867e6",
+  "freshFree": 22129364992,
+  "budget": {
+    "processSeconds": 30,
+    "tmpBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "PG": "NOT_RUN",
+  "runs": [
+    {
+      "name": "guard",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--test",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/legacy-first-bootstrap/legacy-state.test.mjs"
+      ],
+      "startedAt": "2026-10-07T11:15:45.896448+00:00",
+      "finishedAt": "2026-10-07T11:15:45.986554+00:00",
+      "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06-first-bootstrap-local-ia_wu3z4",
+      "scratchIdentity": {
+        "dev": 16777234,
+        "ino": 124074654
+      },
+      "scratchEntries": 0,
+      "scratchRemoved": true,
+      "report": {
+        "pid": 92682,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 89,
+        "stdout": {
+          "path": "local-guard.stdout",
+          "bytes": 388,
+          "sha256": "1aa9f9e2547fb2778ba29c318a67f0241541986d8f5bdfef6cc930e3ca4c17a6"
+        },
+        "stderr": {
+          "path": "local-guard.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "observed_bytes": 388,
+        "retained_bytes": 388,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "entry-syntax",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--check",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/legacy-first-bootstrap/entry.mjs"
+      ],
+      "startedAt": "2026-10-07T11:15:45.986954+00:00",
+      "finishedAt": "2026-10-07T11:15:46.022538+00:00",
+      "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06-first-bootstrap-local-q7j_b264",
+      "scratchIdentity": {
+        "dev": 16777234,
+        "ino": 124074657
+      },
+      "scratchEntries": 0,
+      "scratchRemoved": true,
+      "report": {
+        "pid": 92684,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 35,
+        "stdout": {
+          "path": "local-entry-syntax.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "local-entry-syntax.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "journey-syntax",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--check",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/legacy-first-bootstrap/journey.mjs"
+      ],
+      "startedAt": "2026-10-07T11:15:46.022853+00:00",
+      "finishedAt": "2026-10-07T11:15:46.057610+00:00",
+      "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06-first-bootstrap-local-tlu7lsu5",
+      "scratchIdentity": {
+        "dev": 16777234,
+        "ino": 124074660
+      },
+      "scratchEntries": 0,
+      "scratchRemoved": true,
+      "report": {
+        "pid": 92685,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 34,
+        "stdout": {
+          "path": "local-journey-syntax.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "stderr": {
+          "path": "local-journey-syntax.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      }
+    },
+    {
+      "name": "status",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--input-type=module",
+        "-e",
+        "import{readFile}from'node:fs/promises';import{parseStatus}from'/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/status.mjs';const s=parseStatus(await readFile('plans/svc06-backend-release/status.md','utf8'),'SVC06');console.log(JSON.stringify({errors:s.errors,humanMissing:s.human.missing,timingIssues:s.timing.issues}));if(s.errors.length||s.human.missing.length)process.exitCode=1;"
+      ],
+      "startedAt": "2026-10-07T11:15:46.058072+00:00",
+      "finishedAt": "2026-10-07T11:15:46.102701+00:00",
+      "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06-first-bootstrap-local-_473nbtv",
+      "scratchIdentity": {
+        "dev": 16777234,
+        "ino": 124074663
+      },
+      "scratchEntries": 0,
+      "scratchRemoved": true,
+      "report": {
+        "pid": 92686,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 44,
+        "stdout": {
+          "path": "local-status.stdout",
+          "bytes": 79,
+          "sha256": "2486ff5527e08cb27b7886fcc0612e9a2329533c82649fc65bc9934dc1021c6a"
+        },
+        "stderr": {
+          "path": "local-status.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        "observed_bytes": 79,
+        "retained_bytes": 79,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      }
+    }
+  ],
+  "finishedAt": "2026-10-07T11:15:46.102723+00:00",
+  "processMs": 202,
+  "rawBytes": 467,
+  "passed": true
+}
