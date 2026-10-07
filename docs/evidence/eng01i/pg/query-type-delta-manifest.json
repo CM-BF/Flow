@@ -7,13 +7,20 @@
     "path": "docs/evidence/eng01i/pg/final-preparation-manifest.json",
     "sha256": "a6a2d95922bb0f3a792b2f64624336f1a40a0945ef498f693ec7bebf8e708553",
     "supersededPaths": [
+      "docs/evidence/eng01i/local/README.md",
       "docs/evidence/eng01i/pg/fixture.ts",
       "docs/evidence/eng01i/pg/preflight.json"
     ],
-    "unchangedBindingsVerified": 335,
+    "unchangedBindingsVerified": 334,
     "mismatches": []
   },
   "bindings": [
+    {
+      "path": "docs/evidence/eng01i/local/README.md",
+      "ref": "f855f77da751f8a762a8df8363330d141e393759",
+      "bytes": 2351,
+      "sha256": "d4a458158adc413bab662f42247526eba4277efe561da375502e001bc13b9914"
+    },
     {
       "path": "docs/evidence/eng01i/local/querytypes-cleanup.json",
       "ref": "aadedee7d8df06713768b143c6901d36a6d81897",
@@ -94,5 +101,10 @@
     "PG": "NOT_RUN",
     "providerCalls": 0
   },
-  "limits": "Only explicit QueryConfig extension and original review archival. No behavioral rerun; original preparation manifest and failure evidence retained."
+  "limits": "Only explicit QueryConfig extension and original review archival. No behavioral rerun; original preparation manifest and failure evidence retained.",
+  "metadataCorrection": {
+    "at": "2026-10-07T04:47:29.839386+00:00",
+    "previousManifestRef": "f855f77da751f8a762a8df8363330d141e393759",
+    "reason": "local/README.md was updated after the inherited-binding audit; explicitly superseded and bound to its fixed delivery bytes. Original raw and preparation manifests unchanged."
+  }
 }

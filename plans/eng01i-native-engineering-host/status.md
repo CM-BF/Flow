@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:43:21.318457+00:00 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:47:29.839386+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -56,4 +56,6 @@ Execution Lead 2026-10-06 12:59 优先级指派：暂停ENG01I产品编排，下
 
 2026-10-07T04:38:15.843894Z 自查修复：acquire部分成功后异常改unknown，新增真实lease1/1及focusedtypes0；原27/3重叠不重跑。assignment独审指出PG外层准备耗时未计入child预算与轮询query_timeout未按remaining的问题，dead2c4f准备source已窄修；PG仍NOT_RUN，完整fixed manifest另存final-preparation-manifest.json，旧manifest/raw保持。源码冻结待有限复审。
 
-2026-10-07T04:43:21.318457+00:00：独立原REQUEST_CHANGES与绑定原样归档；acquire和两个期限finding由reviewer静态确认已关闭。其最后类型补充仅改PG fixture的显式QueryConfig扩展，aadedee7d8df06713768b143c6901d36a6d81897，focused0/2204ms；原337绑定中335项仍逐字一致，仅fixture/preflight更新并另存delta manifest。累计28different、十轮21191ms，PG2仍NOT_RUN；未增产品范围，当前固定待复核。
+2026-10-07T04:43:21.318457+00:00：独立原REQUEST_CHANGES与绑定原样归档；acquire和两个期限finding由reviewer静态确认已关闭。其最后类型补充仅改PG fixture的显式QueryConfig扩展，aadedee7d8df06713768b143c6901d36a6d81897，focused0/2204ms；原337绑定中334项逐字一致；fixture/preflight及新增类型记录的local/README三项另列替换绑定。累计28different、十轮21191ms，PG2仍NOT_RUN；未增产品范围，当前固定待复核。
+
+2026-10-07T04:47:29.839386+00:00：仅修正继承清单统计，README固定f855字节新增绑定；334继承项+12delta项全部fixed/current一致，原raw/原准备manifest及4产品未动，0新检查。独审最后语义/类型raw已核无阻断，等待最终固定回执与共享PG准入。
