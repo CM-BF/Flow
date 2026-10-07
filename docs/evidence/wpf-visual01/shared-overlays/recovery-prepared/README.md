@@ -21,3 +21,7 @@ package-graph记录406实际runtime依赖root与1009解析边，required unresol
 64MiB scratch +128MiB DB/WAL规划 +10MiB retained总规划（现parent evidence cap9MiB，outer256KiB及终态包含额外1MiB）+1MiBmetadata＝203MiB上界，待经理正式资源合计；不是新窗口。futurefloor至少18,490,851,328或届时更高完整sum，未采资源。不能将原types5765或MSG历史余额借入。
 
 只跑原cookieRead/themes390两个真实组，2张390图及两geometry文件，保Cookie/恢复页/原焦点断言。不是settings/完整Recovery复验；截图由root实际目视，不以文件存在当视觉通过，只证明实际观测滚动条模式。outer actual exit与双EOF、parent唯一budget/report、exact owned groups/markedDB normalDROP或KEEP/HTTP/context/scratch/admininput完整清理必须分别观测；UNKNOWN不能当RETURN。
+
+## 最新peer补齐（旧406保持）
+
+完整单索引现在是`closure-index.json`：原406快照加`peer-files.json`四peer与undici-types/csstype两个声明依赖，总412roots/18616文件/189701134B。旧peer-gap与报告保留历史；新delta748文件只读hash，没有复制payload或import。原source/capture审abb32限定通过，peer delta未获一次确认前仍HOLD，不凭本作者索引改为实际READY。最终可执行HEAD从同批封存后的TMP binding读取，Git内binding是封存前快照；原始sourceHash固定不漂移。

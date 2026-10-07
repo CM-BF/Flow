@@ -3,7 +3,7 @@
 | 字段 | 记录 |
 | --- | --- |
 | 任务ID | WPF-VISUAL01 |
-| 最近更新 | 2026-10-07T19:44:42.223Z |
+| 最近更新 | 2026-10-07T19:56:33.621Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra |
@@ -15,7 +15,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 1 |
-| 当前产出 | 受影响类型与窄修已独审；Picker源准备已f3b8批准，Recovery入口/38链接与dependencies闭包已固定；末检另发现1个runtime peer及3个types peer未纳文件快照，准备HOLD；两者browser NOT_RUN |
+| 当前产出 | 受影响类型与窄修已独审；Picker源准备已f3b8批准，Recovery原source/capture已限定批准；4peer及2声明依赖补齐，单索引412roots固定待delta审；browser NOT_RUN；两者browser NOT_RUN |
 | 下一可用交付 | Recovery集中source/native审，Picker待native绑定与经理实际窗口；两个consumer独立排程 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -56,8 +56,12 @@
 
 **Picker：SOURCE_PREPARATION_APPROVED / browser NOT_RUN。** [f3b8独审](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/root-picker-source-review.json)已原样归档；原parent/worker字节未改，sourceReview例行绑定，native仍需明确绑定与实际grant。6原行为+2展示组、原2PNG+新5PNG，90s含15cleanup仅提案；保持第一批5318原件。
 
-**Recovery：SOURCE_PREPARED / source-native集中审待完成 / browser NOT_RUN。** [当前报告](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/report.json)、[入口/边界](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/README.md)。38链接已物化、33SQL全在；614own输入与HEAD blob相符，28直接源，406installed roots/17868文件全字节绑定，required unresolved[]。既有可信visual preset仍只appearance/cookieRead/themes390；capture窄适配纠正visualAppearancePhase字段并限制私有outer输出，原父/worker/产品不改。
+**Recovery：SOURCE_AND_CAPTURE_APPROVED / PEER_DELTA_REVIEW_PENDING / browser NOT_RUN。** [当前报告](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/report.json)、[入口/边界](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/README.md)。38链接已物化、33SQL全在；614own输入与HEAD blob相符，28直接源，原406installed roots/17868文件保持；补4peer与2个声明依赖后单索引412roots/18616文件，原差距不回写。既有可信visual preset仍只appearance/cookieRead/themes390；capture窄适配纠正visualAppearancePhase字段并限制私有outer输出，原父/worker/产品不改。
 
 Recovery单次60s/30cleanup仅提案：1markedDB/13配置连接、1Chrome、2owned HTTP，64MiBscratch+128MiB DB/WAL+10MiB retained（parent9与outer/terminal1）+1MiBmetadata=203MiB。没有gate/admin/actual许可；latest完整floor由经理fresh组合，不能因静态包自行启动。准备链接KEEP不等于运行resourceholder；真实cleanup/actual退出/两图目视待实际。滚动条仅报告观测模式，不能冒两个OS模式均通过。
 
-末次静态peer对照发现：406包dependencies/optional闭包未覆盖已安装`@opentelemetry/api`及3个`@types` peer root；不声称完整runtime闭包READY。缺项精确见[peer gap](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/peer-closure-gap.json)。本段到安全STOP，后继只需补这4个固定installed root的metadata pins，不安装/改源码/运行。
+历史19:49静态peer对照发现：406包dependencies/optional闭包未覆盖已安装`@opentelemetry/api`及3个`@types` peer root；不声称完整runtime闭包READY。缺项精确见[peer gap](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/peer-closure-gap.json)。本段到安全STOP，后继只需补这4个固定installed root的metadata pins，不安装/改源码/运行。
+
+## 当前peer差量收口
+
+新10min/2MiB source-only段于2026-10-07T19:51:18Z开始，只读指定4peer与其2个声明依赖（undici-types/csstype），748文件/5,425,840B固定原始字节，0payload复制。原406包不重扫/不改、旧peer-gap保留；[单索引](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/closure-index.json)与[本次报告](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/peer-close-report.json)。[abb32原source/capture审](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/root-preparation-review-with-peer-hold.json)已归档，peer差量等待一次接受，不能称runtimeREADY。个人发布HOLD期间0新工程/PG/Chrome/资源采样；自然seal后统一两TMP绑定最终cleanHEAD，再全8scope STOP。

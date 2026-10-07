@@ -23,3 +23,7 @@ scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, ap
 ## 2026-10-07 Recovery完整准备
 
 Picker [f3b8限定源码准备审](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/root-picker-source-review.json)无blocking，非browser结果/native实际许可。Recovery当前[可审包](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/README.md)固定38links/JS+CSS+SQL/native输入，源/native集中审尚待；首批未物化状态留历史。原六源与已绿types未改/未重跑。
+
+## peer差量当前边界
+
+[abb32](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/root-preparation-review-with-peer-hold.json)已限定接受原614 own/406 roots/38 links/capture，依赖HOLD不回填。当前新[4peer与2必要声明依赖索引](../../docs/evidence/wpf-visual01/shared-overlays/recovery-prepared/closure-index.json)待delta确认；412总roots固定不等于实际运行通过。capture/parent与产品六源没有再次修改。

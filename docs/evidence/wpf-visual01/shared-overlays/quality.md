@@ -19,3 +19,7 @@
 ## 2026-10-07T19:44:42.223Z 只读依赖供给/入口质量复核
 
 复用既读find-skills、webapp-testing、clean-code：只物化授权38精确链接，source/installed包/SQL/native分别固定，payload复制0。复用原passive capture，保parent单一DB/Chrome/HTTP/清理权，visual phase字段与own输出对齐，原MSG默认不改；未增加通用runner/状态库。固定614保守own输入与406package全17868文件，避免把仅manifest当完整JS/CSS绑定。计入parent9MiB证据cap之外outer/终态1MiB规划、13连接。未解决仅集中source/native接受与未来实际fresh准入/运行/视觉，未将静态解析当runtime证明。
+
+## 2026-10-07T19:56:33.621Z 四peer短段clean-code复核
+
+沿既读find-skills/clean-code方法，只补已知四root及其两个真实声明依赖，以单索引引用旧406不可变文件避免重扫/复制。source/capture/生命周期不变；命名区分base、peerDelta及组合、历史HOLD与待审当前。错误/缺口不覆盖旧报告，全部HOLD到独立delta接受。统一封存后更新Picker与Recovery执行HEAD，避免元数据自然追加留下失配。0新的工程检查/运行，无新增框架。

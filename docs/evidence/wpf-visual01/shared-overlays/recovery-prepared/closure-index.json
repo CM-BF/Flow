@@ -1,0 +1,52 @@
+{
+  "state": "RUNTIME_DEPENDENCY_AND_FOUR_PEER_SNAPSHOT_BOUND_AWAITING_REVIEW",
+  "base": {
+    "roots": 406,
+    "files": 17868,
+    "bytes": 184275294,
+    "fileIndex": {
+      "path": "package-files.json",
+      "sha256": "0983a2125a301310e1cbd881419c2783817f5b2b6cb5aff42e7158bd792a27e4"
+    },
+    "dependencyGraph": {
+      "path": "package-graph.json",
+      "sha256": "f44550462f4846d89eaf2913e1c36ad138cd15f5fbccbc8f6f976bde4b3e8ce5"
+    }
+  },
+  "peerDelta": {
+    "roots": 6,
+    "fileIndex": {
+      "path": "peer-files.json",
+      "sha256": "a90e836991755ebd4b25ec440e7660544c15d93aa18ad91d13320c87b9288630"
+    },
+    "files": 748,
+    "bytes": 5425840,
+    "existingGap": {
+      "path": "peer-closure-gap.json",
+      "sha256": "271d277d4180c25d83d38366d703f655d54cff70e1ad82bab0fc0dbf285f35a2",
+      "disposition": "HISTORICAL, all four exact root bytes now bound"
+    },
+    "primaryPeerRoots": 4,
+    "declaredDependencyRoots": 2
+  },
+  "combined": {
+    "uniqueRoots": 412,
+    "files": 18616,
+    "logicalBytes": 189701134
+  },
+  "declarationOnlyEdges": [
+    {
+      "from": "@types/node",
+      "dependency": "undici-types",
+      "state": "DECLARED_DEPENDENCY_BYTES_BOUND",
+      "reason": "Only .d.ts type references; TSX browser entry performs transpilation, no TypeScript compiler/type checking in this browser packet."
+    },
+    {
+      "from": "@types/react",
+      "dependency": "csstype",
+      "state": "DECLARED_DEPENDENCY_BYTES_BOUND",
+      "reason": "Only .d.ts type references; TSX browser entry performs transpilation, no TypeScript compiler/type checking in this browser packet."
+    }
+  ],
+  "runtimeBoundary": "Original 406 dependency snapshot unchanged. Four requested peers plus their two declared dependencies pinned; no unresolved child package dependencies in this delta. No compiler/import/runtime occurred."
+}

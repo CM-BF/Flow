@@ -3,8 +3,8 @@
   "files": [
     {
       "name": "binding.json",
-      "bytes": 9189,
-      "sha256": "90ffb778a35f27c94e556ddf034e1d3f0b23efa09d4c9a1f6e433c3bd11d5546"
+      "bytes": 10662,
+      "sha256": "81660b083ac80cc6644eee4dd5268c624a140957ab15a36a5486a8ff3c0353ba"
     },
     {
       "name": "capture.diff",
@@ -15,6 +15,11 @@
       "name": "capture.py",
       "bytes": 9096,
       "sha256": "34dd9de2c1a6c9ca0d2d337fc94161eb001e6cac7c150dc8165943efd4f9eccf"
+    },
+    {
+      "name": "closure-index.json",
+      "bytes": 1861,
+      "sha256": "b4db128708edbd1ae0891366d60480ed6fbf6626dcfc93657a2fcd19882e56e9"
     },
     {
       "name": "gate.template.json",
@@ -40,6 +45,16 @@
       "name": "package-graph.json",
       "bytes": 535396,
       "sha256": "f44550462f4846d89eaf2913e1c36ad138cd15f5fbccbc8f6f976bde4b3e8ce5"
+    },
+    {
+      "name": "peer-close-report.json",
+      "bytes": 1147,
+      "sha256": "72dd33117f4a5f70fb955ccfbd6da28fd011427053fb76d4cd27a09d236a699a"
+    },
+    {
+      "name": "peer-files.json",
+      "bytes": 121643,
+      "sha256": "a90e836991755ebd4b25ec440e7660544c15d93aa18ad91d13320c87b9288630"
     },
     {
       "name": "preparation.json",
@@ -68,5 +83,6 @@
       "compressedSha256": "bc876a55e187c0477f0e10d1967972e25de7d8b9de72b7c66449f0580dce8209",
       "decodedSha256": "f44550462f4846d89eaf2913e1c36ad138cd15f5fbccbc8f6f976bde4b3e8ce5"
     }
-  ]
+  ],
+  "dependencyInventory": "closure-index.json"
 }

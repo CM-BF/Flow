@@ -1,7 +1,7 @@
 {
-  "state": "SOURCE_PREPARED_NOT_ADMITTED",
+  "state": "SOURCE_PREPARED_PEER_GAP_CLOSED_AWAITING_REVIEW",
   "task": "WPF-VISUAL01",
-  "head": "5318e540f4efe014a7be9d03716ee36f0a1b21d0",
+  "head": "850ff106d7e9eabcf7672fc42365f48ba2729cbe",
   "implementation": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
   "branch": "codex/web-shared-overlays",
@@ -81,6 +81,16 @@
       "path": "/private/tmp/vis-recovery-b1/gate.template.json",
       "bytes": 3734,
       "sha256": "bfcb5ef2a16aa8ba55361436d79f6148c3a99635cd2e94f2fa15dab109ccfc6b"
+    },
+    "closure-index.json": {
+      "path": "/private/tmp/vis-recovery-b1/closure-index.json",
+      "bytes": 1861,
+      "sha256": "b4db128708edbd1ae0891366d60480ed6fbf6626dcfc93657a2fcd19882e56e9"
+    },
+    "peer-files.json": {
+      "path": "/private/tmp/vis-recovery-b1/peer-files.json",
+      "bytes": 121643,
+      "sha256": "a90e836991755ebd4b25ec440e7660544c15d93aa18ad91d13320c87b9288630"
     }
   },
   "runtimeSources": {
@@ -116,13 +126,27 @@
   "inputs": {
     "ownSourceCount": 614,
     "sqlCount": 33,
-    "runtimePackageRoots": 406,
-    "runtimePackageFiles": 17868,
-    "runtimeDependencyBytesReadOnly": 184275294,
+    "runtimePackageRoots": 412,
+    "runtimePackageFiles": 18616,
+    "runtimeDependencyBytesReadOnly": 189701134,
     "requiredUnresolved": [],
     "linkCount": 38,
     "payloadCopiedBytes": 0,
-    "ambientDotEnvFilesAbsent": true
+    "ambientDotEnvFilesAbsent": true,
+    "declarationOnlyEdges": [
+      {
+        "from": "@types/node",
+        "dependency": "undici-types",
+        "state": "DECLARED_DEPENDENCY_BYTES_BOUND",
+        "reason": "Only .d.ts type references; TSX browser entry performs transpilation, no TypeScript compiler/type checking in this browser packet."
+      },
+      {
+        "from": "@types/react",
+        "dependency": "csstype",
+        "state": "DECLARED_DEPENDENCY_BYTES_BOUND",
+        "reason": "Only .d.ts type references; TSX browser entry performs transpilation, no TypeScript compiler/type checking in this browser packet."
+      }
+    ]
   },
   "proposal": {
     "totalMs": 60000,
@@ -161,7 +185,11 @@
       "scope": "2d73 task preset only; 4ca guard separately reviewed"
     }
   ],
-  "sourceReview": null,
+  "sourceReview": {
+    "path": "/private/tmp/root-visual01-recovery-preparation-review-20261007.json",
+    "sha256": "abb32a57a66739d676a5184f91df578dd4a8bc20cbcf853d4f25797690b8060b",
+    "scope": "614 own/406 roots/38links/capture accepted; peer delta still pending concentrated review"
+  },
   "nativeBoundaryApproval": null,
   "admission": {
     "gate": "NOT_CREATED",
@@ -179,5 +207,9 @@
     "Pictures need independent actual visual review; one observed scrollbar mode does not prove two OS modes",
     "No inherited MSG PG/native/time authorization; gate does not allow other journey or output"
   ],
-  "preparedAt": "2026-10-07T19:39:39.170310+00:00"
+  "preparedAt": "2026-10-07T19:39:39.170310+00:00",
+  "closureIndex": {
+    "path": "/private/tmp/vis-recovery-b1/closure-index.json",
+    "sha256": "b4db128708edbd1ae0891366d60480ed6fbf6626dcfc93657a2fcd19882e56e9"
+  }
 }
