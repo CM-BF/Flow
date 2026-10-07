@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:15:10.520Z |
+| 最近更新时间 | 2026-10-07T10:21:39.254787+00:00 |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,23 +10,23 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility |
 | Branch | codex/web-release-compatibility |
 | 工作基线 / HEAD | 固定后继基线 41276e2ecd154087f66958339d9abfce4d44964c；不 reset/rebase |
-| 工作树dirty状态 | 两harness源码9658已固定不变；当前仅自有caller准备与记录 |
+| 工作树dirty状态 | 源码9658a6b763de69038778de1b0c16de64ff824c75已固定；本次metadata正常封存，提交后clean/remote回执另证 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 检查状态 | PASSED 9658a6b763de69038778de1b0c16de64ff824c75：两harness strict/noUnchecked/noEmit实际exit0；首f3d红保留。仅类型检查，browser/PG/compat NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED 当前后继；历史7805于c450c2da7e6185b88db9f46e0299ee504ee6f3e8接收 |
 | 实现目标 | 9658a6b763de69038778de1b0c16de64ff824c75 |
 | 实现范围 | apps/web/test/web-release-compatibility.fixture.ts, apps/web/test/web-release-compatibility.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 最终后台与公开会话策略已核齐，固定地址验证入口类型检查已通过；受控调用器正在准备 |
-| 下一可用交付 | 受控调用器与完整输入包就绪并独审后，安排三份保留App的真实兼容验证 |
-| 当前阻塞 | NONE |
+| 当前产出 | 固定地址验证入口已完成限定源码审查；局部类型复验已通过，真实兼容待最终后台和受控调用器 |
+| 下一可用交付 | 最终后台交付和受控调用器就绪后安排真实兼容验证 |
+| 当前阻塞 | ACTIVE: 最终后台产物与公开会话策略配置尚待原发布负责人提供；不阻塞本段源码实施 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED（仅两harness源码）；f3d源审与9658 type-only修正已独立接受，实际compat未验 |
-| 任务开工时间 | UNKNOWN |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 历史完整任务开工未重建；本次后继实际开工 2026-10-07T10:01:18.415296+00:00，见 [segment-start](../../docs/evidence/wpf-release01/fixed-origin/segment-start.json) |
+| 开工 UTC | UNKNOWN |
+| 完成 UTC | NOT_COMPLETED |
+| 时间来源 | 历史完整任务开工未重建；本次后继实际开工 2026-10-07T10:01:18.415296+00:00，见 [segment-start](../../docs/evidence/wpf-release01/fixed-origin/segment-start.json) |
 | 领取 | 新 claim38b9a7ff-c9be-4b56-af50-e076afb603bc v1 exact4 COMMITTED；旧20a6529a v2 released不复用 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -35,14 +35,14 @@
 | RELEASE01-02 | completed | w01_owner | [历史两App真实兼容](../../docs/evidence/wpf-release01/README.md) |
 | RELEASE01-03 | completed | w01_owner | [历史7805主线接收](../../docs/evidence/wpf-release01/main-source-observation.json) |
 | RELEASE01-04 | completed | w01_owner | [固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，f3d源审及9658类型delta独立接受，strict复验PASS |
-| RELEASE01-05 | pending | w01_owner | 最终tuple和公开设置已核齐；受控caller待闭合，三App真实四项compat待完成；strict复验PASS/真实compat0actual，首红保留 |
+| RELEASE01-05 | pending | w01_owner | 最终tuple与受控caller待闭合，三App真实四项compat待完成；strict复验PASS/真实compat0actual，首红保留 |
 | RELEASE01-06 | pending | w01_owner | 后继最终delta独审/主线接收；个人发布仍由原发布operator执行 |
 
 ## 等待记录
 
-| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| 开始 UTC | 结束 UTC | 原因 | Owner | 解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
-| RELEASE01-W01 | UNKNOWN | 2026-10-07T11:15:10.520Z | 接口 | 原发布负责人供应最终后台source/artifact与公开会话策略；本次已核齐解除，历史起点未知 | [后台tuple](../../docs/evidence/wpf-release01/fixed-origin/final-backend-tuple-root.json)、[公开设置](../../docs/evidence/wpf-release01/fixed-origin/public-settings-supply-root.json) |
+| UNKNOWN | OPEN | 最终后台source/artifact及非敏感会话策略设置待供应 | 原发布负责人 | 收到已审immutable tuple与实际导入入口，明确policy hash一致 | [设计输入](../../docs/evidence/wpf-release01/fixed-origin/candidate-interface.json) |
 
 ## 边界与交接
 
@@ -54,12 +54,6 @@
 
 [唯一strict首红](../../docs/evidence/wpf-release01/fixed-origin/types-first/result.json)：父实际exit1、compiler exit2，stdout852B/双EOF/drop0，owned PGID16208和scratch已清；晚terminal1169.181ms按1170ms记账，原20s段CLOSED、未用18830ms不转credit。[f3d限定独审](../../docs/evidence/wpf-release01/fixed-origin/f3d-source-review.json)与9658 type-only修正分开；后者复用公共配置类型，不硬编码版本/不cast，尚未复验。已授权后继独立10s段按管理顺序在DPERF收口后再fresh，不自动运行。当前四scope停止写入，claim38b9v1保留；不等于释放。
 
-## 历史：必要复验与停写
+## 当前必要复验与停写
 
-[type-only修正独审](../../docs/evidence/wpf-release01/fixed-origin/types-first-root-review.json)已接受。原20s首红1170ms CLOSED；新独立10s段actual parent0/compiler0，晚903.769ms按904ms记，双EOF/drop0/groupAbsent/scratchAbsent。[必要复验独审](../../docs/evidence/wpf-release01/fixed-origin/types-second-root-review.json)、[原始结果](../../docs/evidence/wpf-release01/fixed-origin/types-second/result.json)与[外层退出](../../docs/evidence/wpf-release01/fixed-origin/types-second/outer-observation.json)固定；未用9096ms不触发再测。仅严格类型范围PASS，无产品import/PG/Chrome/HTTP/build/provider。该时点四scope停止写入、claim38b9v1保留；当时tuple与caller尚缺。公开设置与tuple现已供应，见当前入口准备。
-
-## 当前入口准备
-
-2026-10-07T11:15:10.520Z fresh 确认原38b9 v1 exact4 / owner / branch / 无overlap，接续原Release树0482 clean。最终后台6c0fdcda / artifact7d1a3928 / Snq8cV已只读定位，公开cookieOrigin与trustedOrigins固定http://127.0.0.1:61228，authEpoch=svc09-b2b-20261007，规范化policy SHA81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638核同。共享供应不再阻塞。
-
-当前工作是owned Chrome/HTTP proxy/backend生命周期caller与完整输入准备；没有runtime grant/预约，compat仍NOT_RUN。不重编三App/backend，不复测旧types。总任务开工UNKNOWN不以本段10:01时间替代，总完成NOT_COMPLETED。
+[type-only修正独审](../../docs/evidence/wpf-release01/fixed-origin/types-first-root-review.json)已接受。原20s首红1170ms CLOSED；新独立10s段actual parent0/compiler0，晚903.769ms按904ms记，双EOF/drop0/groupAbsent/scratchAbsent。[必要复验独审](../../docs/evidence/wpf-release01/fixed-origin/types-second-root-review.json)、[原始结果](../../docs/evidence/wpf-release01/fixed-origin/types-second/result.json)与[外层退出](../../docs/evidence/wpf-release01/fixed-origin/types-second/outer-observation.json)固定；未用9096ms不触发再测。仅严格类型范围PASS，无产品import/PG/Chrome/HTTP/build/provider。当前四scope停止写入，claim38b9v1保留，最终backend tuple与native caller/budget闭包仍缺；不沿旧tuple启动。
