@@ -268,3 +268,7 @@ chatui01_owner/gpt-6-astra于2026-10-07 03:34:23 UTC，对d17abf426151f0f3d03a93
 ## 2026-10-07T03:42:55.732443+00:00 Stage C局部结果待审
 
 固定资源源码1e48ebf3，执行37e4f169；types和collect真实exit0，但owner断言错误地期待21而得到27，完整首record保留最终FAIL/exit1。实际名单为runtime10+registry17（旧it.each展开），未新增/删除行为、0PG/body；没有重跑。两监督末态/EOF及TMP身份清理确认，当前只请求一次源码+结果独审；实际PG仍未开放。原计数文档纠正是准备口径，不是修改失败raw或已有预算。
+
+## Center claim PG preparation (new, pending)
+
+2026-10-07T06:32Z: test74e187/support24c668 prepared, local types0/list6/pure2 pass. Independent review PENDING; actual PG NOT_OPEN. Canonical [ready](../../docs/evidence/x01/center-claim-pg-ready.md). Existing0224/436a source approval does not approve this new fixture/caller.
