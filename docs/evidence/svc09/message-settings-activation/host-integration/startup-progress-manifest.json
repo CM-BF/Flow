@@ -1,0 +1,189 @@
+{
+  "kind": "SVC09A_STARTUP_PROGRESS_FIVE_LEAVES",
+  "at": "2026-10-07T20:07:36.639047+00:00",
+  "sourceCommit": "233ef91d369e7d7f58bdec8a34f523ed27017639",
+  "recordsCommit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+  "productBindings": [
+    {
+      "path": "apps/server/src/startup-progress.ts",
+      "commit": "233ef91d369e7d7f58bdec8a34f523ed27017639",
+      "bytes": 6646,
+      "sha256": "29103df221dbc72cf69dca7083c7c41e5afc6dda570eafa82bad51b2e2a77d6f"
+    },
+    {
+      "path": "apps/server/src/startup-progress.test.ts",
+      "commit": "233ef91d369e7d7f58bdec8a34f523ed27017639",
+      "bytes": 6562,
+      "sha256": "bd28354c0e8311f816859f5041425a963eba30d708b673b3813904ecebb16913"
+    },
+    {
+      "path": "apps/server/src/startup-progress-consumer.test.ts",
+      "commit": "233ef91d369e7d7f58bdec8a34f523ed27017639",
+      "bytes": 3823,
+      "sha256": "2bab78a86cb581fc20672d09d4fc12b456c1d421a7cef8fc212395caf832f7fe"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "commit": "233ef91d369e7d7f58bdec8a34f523ed27017639",
+      "bytes": 3005,
+      "sha256": "8eba5e25a440a1ef7a9f546343733d9cd24ddc1e4c90f2f6765f6dfd91398ab8"
+    },
+    {
+      "path": "tools/personal-preview/environment.test.mjs",
+      "commit": "233ef91d369e7d7f58bdec8a34f523ed27017639",
+      "bytes": 6560,
+      "sha256": "67c28650593900151d806411c75569ca92bc00fd6107a658d7452f632cbb6cc8"
+    }
+  ],
+  "recordBindings": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-amend-request.json",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 590,
+      "sha256": "9473fcedf9da0adc4ec106402c901fae9b24f3de2dbdbe1533643909be3faad8"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-amend-receipt.json",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 882,
+      "sha256": "e2146b70a5039be6e5e2e05757465d9db59c234c4ba3bc5f9e939989864c7739"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local.py",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 5023,
+      "sha256": "6d8a4eabdd0e3b0c5aa0206aeec20d44be55da9637b5ee97a3f02e339a009814"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-vitest.config.mjs",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 355,
+      "sha256": "058472b0efaea8b18d2954b03409e43681142f5675b50c814dc667f6a9c7db72"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-tsconfig.json",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 249,
+      "sha256": "87604bcf3302626b91504e846e19162123e390ea26a40e80e1cc2ceb3b5d2f17"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-interface.md",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 5360,
+      "sha256": "c4bd593738f0f21838d76e3c51a5a4555dbbb80ced83f0e29aac3657dbc5c22d"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-result.json",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 3569,
+      "sha256": "8a2573bc1f93414053f00f6bed3c1caa8f5022a413b2269c3b826e50f6382ecd"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-status-parse.json",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 136,
+      "sha256": "6ed55917b35c07c8996d44fea96a7ad11a2321039f3b881d4b3422e5de289123"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-01/01-outer.json",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 517,
+      "sha256": "7a0b58f0504e17abdfd5d29ed8911c16cf4559a2751982e7949ba95e6a04b5f3"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-01/01-stderr.txt",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-01/01-stdout.txt",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 2735,
+      "sha256": "2ea2fbb4ea1ed6f7bd0754921d3423cde6a78731ebb7e4d6b7ae5bb9544efcb7"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-01/02-outer.json",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 514,
+      "sha256": "284f780c333b9c3a20e4283a8ed54d4a4117045a9d4e9029b281e9e61093acfa"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-01/02-stderr.txt",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-01/02-stdout.txt",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 307,
+      "sha256": "507e5a9167981782aef6d1296c79038cc843b0da44fdf97e78c5e21256083809"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-01/03-outer.json",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 511,
+      "sha256": "24d4a98832069271c70c23f33f003ad33f1782bae0f24b57865b115a7eb73122"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-01/03-stderr.txt",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-01/03-stdout.txt",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-01/reservation.json",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 8070,
+      "sha256": "d014a26175a342848af640812001a8c4ab82316ff00d0358e01d2d20da06465a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-01/result.json",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 879,
+      "sha256": "025f6ce8df2a998c883532d440a829283cfdc13c7f55a6584a90e46c2157d5de"
+    },
+    {
+      "path": "plans/svc09-message-settings-activation/status.md",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 26451,
+      "sha256": "62df3d16a1a59d89cb70d566a74c7cd2d5d38d771b6d76b5c175efa6a8b52462"
+    },
+    {
+      "path": "plans/svc09-message-settings-activation/review.md",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 11422,
+      "sha256": "601fe53446adc1a1b28079755554d3430d3d387df0280a7fad3e7ae5d56f5eec"
+    }
+  ],
+  "runtimeAndDirectUnchangedInputs": {
+    "reference": {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-01/reservation.json",
+      "commit": "93d4b3455e4bdcfa653df2b4c524f47af0492bc3",
+      "bytes": 8070,
+      "sha256": "d014a26175a342848af640812001a8c4ab82316ff00d0358e01d2d20da06465a"
+    },
+    "field": "inputs",
+    "actualRealpathsAndBytesHashedBeforeRun": true,
+    "unchangedAtSeal": true
+  },
+  "inheritedDesign": {
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/default-host-diagnostic-readonly.json",
+    "commit": "76ad2709f60d4b9ba7fe8cde0cf196a3121d6559",
+    "bytes": 17333,
+    "sha256": "c4fe38eeea89ef48b311d8c17f58ba64ee0585f2d70e409483fd19e9b61f6a1a"
+  },
+  "limitations": [
+    "five leaf optional interface only; main/index not edited or wired",
+    "no PG/service/provider/build/personal I/O",
+    "all prior FAIL/KEEP records unchanged",
+    "new runtime artifact and actual start require subsequent fixed source and window"
+  ]
+}
