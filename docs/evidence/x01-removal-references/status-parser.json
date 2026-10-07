@@ -2,13 +2,13 @@
   "errors": [],
   "human": {
     "delivery": {
-      "state": "review",
+      "state": "integration",
       "source": "explicit"
     },
     "phase": "M2",
     "priority": 2,
-    "output": "材料引用查询已完成真实数据库验收，正常收尾全部闭合，正在独立核对本次结果",
-    "next": "结果独审后受控接收引用查询，并供公共客户端展示保留原因",
+    "output": "材料引用查询与真实数据库收尾均已通过独立审查，可与公共客户端同批接收",
+    "next": "受控接收后，用户可查看任务引用及保留原因；本片不提供物理删除",
     "blocker": {
       "state": "none",
       "text": ""

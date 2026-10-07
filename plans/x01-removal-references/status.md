@@ -7,33 +7,34 @@
 | co-lead | Mika |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 最近更新时间 | 2026-10-07T12:45:39.012721+00:00 |
+| 最近更新时间 | 2026-10-07T12:50:16.963910+00:00 |
 | 任务开工时间 | 2026-10-07T11:36:23Z |
 | 任务完成时间 | NOT_COMPLETED |
+| 独立审查时间 | 2026-10-07T12:47:52Z |
 | 任务时间来源 | 工具UTC实际开工；20min至11:56:23Z，等待计入；此项原准备时间记录；R1已实际执行并另收尾 |
 | 分支交付时间 | 2026-10-07T11:48:51.650207+00:00 |
-| 当前产出 | 材料引用查询已完成真实数据库验收，正常收尾全部闭合，正在独立核对本次结果 |
-| 下一可用交付 | 结果独审后受控接收引用查询，并供公共客户端展示保留原因 |
+| 当前产出 | 材料引用查询与真实数据库收尾均已通过独立审查，可与公共客户端同批接收 |
+| 下一可用交付 | 受控接收后，用户可查看任务引用及保留原因；本片不提供物理删除 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references |
 | branch | codex/plugin-removal-references |
 | 工作基线 / HEAD | 0b1e0d412c38c69b451951c4848e151ed6e2d3e7（R2结果）；product81a064cb；base a4ebb279（HOST现已main） |
-| 工作树 dirty 状态 | 仅R2结果交审metadata；固定源码与原R1证据不变 |
-| 工作分支状态 | review |
+| 工作树 dirty 状态 | 仅正式批准和READY收口；固定源码与R1/R2原件不变 |
+| 工作分支状态 | integration |
 | claim | 04e46691-f4fd-46cc-808c-59c391dfd015 v1 ACTIVE7 |
 | 实现目标 | 81a064cb9f65da4b82bd2df042c4e5414f451811 |
 | 实现范围 | apps/server/src/plugin-runtime/routes.ts,apps/server/src/plugin-runtime/removal-references.ts,apps/server/src/plugin-runtime/removal-references.test.ts,apps/server/src/plugin-runtime/removal-references-pg.test.ts,packages/contracts/src/plugin-removal.ts |
 | 检查状态 | PASSED 0b1e0d412c38c69b451951c4848e151ed6e2d3e7：R2真实1selected1pass、suite成功/完整RETURN；R1失败历史保留；旧direct8与helper6不重跑 |
-| Review | 原source/准备11:53及fixture1424增量12:09:17 APPROVED0P1/P2；R1失败忠实性12:04:43 APPROVED；R2结果独审PENDING |
+| Review | APPROVED 6c7b2495fe53f1997a654479e77600aa2f365548：chatui12:47:52 R2结果忠实性0P1/P2；原source81a与helper1424批准保持 |
 | 已集成 main 状态 | 本片未接收；HOST/ACK/consumer已main de5475039d73caec631ba2ee64556208dbb1751d，主线I02 x01-candidates-combined-intake.json已只读核；不重置本片固定base、不冒本片main通过 |
 
 | TODO ID | 状态 | owner | 证据 |
 | --- | --- | --- | --- |
 | REMOVE-01 | completed | architecture_read | 源码已实现/direct8+types0，11:53独审APPROVED；[local](../../docs/evidence/x01-removal-references/local.json) |
-| REMOVE-02 | in-progress | architecture_read | R1 casepass/afterAllfail并独立cleanupRETURN保留；R2真实1/1及完整收尾已执行待结果独审；[窗口](../../docs/evidence/x01-removal-references/pg-window.md) |
+| REMOVE-02 | completed | architecture_read | R1 casepass/afterAllfail并独立cleanupRETURN保留；R2真实1/1及完整收尾12:47:52独审APPROVED；[窗口](../../docs/evidence/x01-removal-references/pg-window.md) |
 | REMOVE-03 | pending | architecture_read / Execution Lead | HOST前置已main；本片受控接收与必要组合检查未执行 |
 
 ## 架构影响
@@ -61,3 +62,5 @@ local所有8groups终态absent/mergedEOF、8ownTMP同identity删除absent；最�
 2026-10-07T12:45:39.012721+00:00：R2独立180s唯一窗口，12:43:29.800239Z checkpoint71789→12:43:32.969778Z deliveryPASSED；1selected1pass/suite成功，59HTTP78054B。两组finalabsent/mergedEOF，DB同OID1310256/marker、0conn普通DROP/absence、owners/pool/admin/listener关闭，TMP同identity10项3503B删除并12:43:47.783536 exactENOENT。实际floor6895435776/free21805223936，全部并跑声明/KEEP计入；已即时RETURN Mika，当前0actual/待launch。[结果交审入口](../../docs/evidence/x01-removal-references/removal-r2-review-ready.json)。原R1/raw未改；本次首连接观察0，不据此归因原connections1。
 
 结果固定packet6c7b2495。一次 followup 原chatui reviewer被实际threadlimit拒绝（未送达），四live槽已核，未重复或另建task绕过；固定结果等待原reviewer恢复，owner此处STOP写入/0actual以腾槽。公共client已审676ed590/f86bed0b，精确81a合同先/同批依赖已核，[唯一client intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/docs/evidence/x01-removal-references-client/main-intake.json)；不复制其TODO，R2未获审前本片仍待结果审。
+
+2026-10-07T12:50:16.963910+00:00：收到chatui12:47:52限定结果批准，经Mika必要转交归档。[正式批准](../../docs/evidence/x01-removal-references/removal-r2-review-approval.json) / [READY唯一intake](../../docs/evidence/x01-removal-references/main-intake.json)。source81a五路径、fixture1424与R2result0b1e分别绑定，R1原件不改；main7524当前未接本片，consumer676/f86精确合同先或同批，实际集成检查由Original按diff决定。0新检查/PG，claimv1保留；此前review槽等待已解除。

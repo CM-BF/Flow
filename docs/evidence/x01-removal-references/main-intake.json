@@ -3,7 +3,7 @@
   "parentTaskId": "X01",
   "owner": "architecture_read",
   "coLead": "mika",
-  "state": "SOURCE_APPROVED_R2_RESULT_REVIEW_PENDING",
+  "state": "READY",
   "source": "81a064cb9f65da4b82bd2df042c4e5414f451811",
   "reviewPacket": "b95c13636bed0a5ddb7ef76c9af3b1bb59743bd8",
   "review": "docs/evidence/x01-removal-references/review-approval.json",
@@ -65,13 +65,14 @@
   ],
   "statusPath": "plans/x01-removal-references/status.md",
   "dependencies": "HOST a298 now main de5475039d73caec631ba2ee64556208dbb1751d; apply only this routes delta, preserve other main routes. Fresh actual preimages at intake.",
-  "validation": "Source/direct8 approved; helper1424/direct6 approved; actualR1 casepass/suiteafterAllFAIL and separatecleanupRETURN preserved; newR2 1/1 suite success/fullRETURN, result fidelity review pending.",
-  "requiredActual": "R2 executed once on8060; no additional run authorized or required while result review is pending.",
+  "validation": "Source81a/direct8 approved11:53; helper1424/direct6 approved12:09:17; actualR2 result0b1e1selected1passed/suitePASS/fullRETURN independently approved12:47:52. OriginalR1 failure/UNKNOWN+separatecleanup preserved.",
+  "requiredActual": "Satisfied by fixed R2, no PG rerun requested. Necessary main direct-consumer checks belong to integration operator.",
   "actualR2": {
     "result": "0b1e0d412c38c69b451951c4848e151ed6e2d3e7",
     "packet": "6c7b2495fe53f1997a654479e77600aa2f365548",
     "reviewReady": "docs/evidence/x01-removal-references/removal-r2-review-ready.json",
-    "resultReview": "PENDING"
+    "resultReview": "RESULT_FIDELITY_REVIEW_APPROVED",
+    "approval": "docs/evidence/x01-removal-references/removal-r2-review-approval.json"
   },
   "consumerDependency": {
     "intake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/docs/evidence/x01-removal-references-client/main-intake.json",
@@ -82,5 +83,13 @@
     "contract": "81a064cb packages/contracts/src/plugin-removal.ts SHA0e54615b4946bb3b1ef6a970ab6c332da0f3597512c44401e4d26eec7935b9bc first/samebatch",
     "review": "chatui12:30:38 source/local approved; does not substitute backend PG result review",
     "observation": "consumerHEAD=origin clean; own contract bytes unchanged"
+  },
+  "readyAt": "2026-10-07T12:50:16.963910+00:00",
+  "integrationOrder": "Receive backend5 fixed81a rows and exact contract first/samebatch as consumer676ed590 six rows; currentmain preimages freshly checked by operator, narrow routes/client/CLI changes only. Keep all existing main behavior and independent review ranges; no whole-file overlay from old base.",
+  "mainObservation": {
+    "head": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+    "at": "2026-10-07T12:50:16.963910+00:00",
+    "state": "NOT_RECEIVED",
+    "source": "Current main clean/origin; Mika read-only preimage observation for11 paths; actual application still pending"
   }
 }
