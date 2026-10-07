@@ -1,3 +1,11 @@
+# X01 result review
+
+状态：PENDING（实际process联合旅程结果忠实性）
+
+Review target commit: 997f7d44f78f0db1d001e9e7080559cd7139a7af
+
+入口process-runner-pg-result-ready.md；准备批准不代表本次结果已独审。
+
 # X01 review
 
 状态：APPROVED（仅e6bf/902b准备源码，实际PG NOT_OPEN）

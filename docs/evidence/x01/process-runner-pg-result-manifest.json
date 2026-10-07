@@ -1,0 +1,186 @@
+{
+  "resultCommit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+  "executionHead": "4949118f2101b902582cdfd744a68d0e8d29f45f",
+  "sourceCommit": "e6bfab16c1b783406729b0a4deb4f3c7e720446f",
+  "preparedPacket": "902b85c43fc641f24376f2e288674227cbc3dd3e",
+  "preparedManifestSha256": "9c71a49d6d372ac7e19d29edf6a59c10676565fe8ba555e347c00294fe06d369",
+  "preparedBindingsUnchanged": 350,
+  "createdAt": "2026-10-07T10:41:33.477425+00:00",
+  "status": "RESULT_REVIEW_PENDING",
+  "bindings": [
+    {
+      "path": "apps/server/src/plugin-runtime/process-runner-pg.test.ts",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "04a86a46a7dab5ea315c8bc1f4e1400ff2aa125d",
+      "bytes": 22614,
+      "sha256": "8742ba0914bb43e44cb73c4f9645db757787582827f5433e771edb2aadab77fb"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-independent-review.json",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "aae605fef1e68ec29b61b95bf192e95c3a77fabc",
+      "bytes": 1431,
+      "sha256": "ea178c08862afbc32d3ed2b48580e63c9ff564e94bb554e19a1051189226de81"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-input.json",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "73d395449301a85cda02e61e97d91fb9d4c7190d",
+      "bytes": 1659,
+      "sha256": "61c4d1ba8d99b915c9b625b0d8087d1bb1ee7097249df9776881c197475ebdda"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-manifest.json",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "2731875a954ba565b40d487a018f725eb44cd808",
+      "bytes": 148677,
+      "sha256": "9c71a49d6d372ac7e19d29edf6a59c10676565fe8ba555e347c00294fe06d369"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-once.py",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "b46c8d2f717e2a7eaf9096ecdf39bc44b5fe05b6",
+      "bytes": 18819,
+      "sha256": "2f234d06b3678f7eef4252811277c456fa9393e0bd6e4c4e451425ed5ddabfd5"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-owner-close.json",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "e3423ac8b826b913045d973fbdc817b1a05d1d27",
+      "bytes": 4095,
+      "sha256": "8498a0803da0f5676d65c7099ec36c90ee85c97461713f8a39ffb5ceaf3580a7"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/admission.json",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "9535f2e2651b6fdec0d898015ce442c58835c60f",
+      "bytes": 4268,
+      "sha256": "6c308ef17857acccfd17e9b036981027e8f5e99e65ee50744d945744f8d978c6"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/bootstrap-center.log",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/launch.json",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "f666afc5a3ab554a4a19d97885642b4b775be949",
+      "bytes": 188,
+      "sha256": "9364bc94aa3595d74286f7f6b373bec3099a2bddbbdeddeb63eee2023db71830"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/output.log",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "ee0be06d7077cb7f0581896764c7e12827a003a8",
+      "bytes": 113,
+      "sha256": "2ede231fb1c14057ac5ec7457d4bd9bd7ad845125dcd31719a8e1215677836f3"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/preflight.stdout",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "2694afe05a0da48370d2bfb211f0e76901b63286",
+      "bytes": 289,
+      "sha256": "325557db821b7590f864f0df227bff90d6dadb27a08b2e89f30abc9fa2921092"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/reservation.json",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "d2caeb13b70f029bc57a945dfb98f8662b101a20",
+      "bytes": 283,
+      "sha256": "90c34060f5537f81771d81d2632715725ed416a21b2d65250ac62af2a4ad2016"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/result.json",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "86055452da67f42088f50409b8a2aada1a4a8bf0",
+      "bytes": 15495,
+      "sha256": "522d9fdaba03d5ea4d7c4ba5adb0071f7b08460f144b233dcd786bd9c108aa4f"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/runner-first.log",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/runner-second.log",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/runtime-create-request.json",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "530155af6d26e6cdecd9426fc68927194b1e93a2",
+      "bytes": 353,
+      "sha256": "a4b3762caf5b892becd94e589416b1e2ccfcd416e65a21ff5bb695ab56655d6e"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/runtime-created.json",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "ac76c3786877f0c168381f999e5615b728373a11",
+      "bytes": 402,
+      "sha256": "33368f2d44abeb42f6c5380441a556944f605a6fac0c9d0e9540bee4f7d34aba"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/runtime-reservation.json",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "ca586d8cffc8fc23e24453a2b407056b75c60b60",
+      "bytes": 450,
+      "sha256": "a6ee19fdbf4d051a8853bbc0903b0975dcc7bc8cc76fb799c93cd93cca5a4533"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/runtime-result.json",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "db82e1e518c7a783fff50f015a801e88ff8914d1",
+      "bytes": 7986,
+      "sha256": "f84fd764f1aa85d1aee4b2e2cc2e91eba75b9208ee69fe5faac896364117f071"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/trusted-center.log",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-run-r1/vitest.json",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "8a63b7ff2fdf3a6ab2780ddf9904830cb41109c1",
+      "bytes": 1061,
+      "sha256": "096a7fcdc437e6bc3a1c702259d26916a09d4731c068ddc39eb8862872cb54b5"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-pg-tool.json",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "55afe7000cf853c8cc76dfd9197b89da980cf82c",
+      "bytes": 1917,
+      "sha256": "f1f1f7be1ef3a07f129e0d533f461677a4274eaf81e49a2406c18243798f328a"
+    },
+    {
+      "path": "docs/evidence/x01/process-runner-window.md",
+      "commit": "997f7d44f78f0db1d001e9e7080559cd7139a7af",
+      "blob": "d3d3ab8015a328562c2084732abd180ede1a2464",
+      "bytes": 7416,
+      "sha256": "00fcfa52fd477d1bf40ba6ea154db4378d96bc68dcbe94713921b83f6229fe31"
+    }
+  ],
+  "bytes": 237516,
+  "rawAndToolBytes": 36900,
+  "scope": "One real server/runner process CLI and in-process runCli management journey, two known semver invocations, clean post-ACK restart only.",
+  "notCovered": [
+    "unknown side-effect/crash recovery",
+    "three-end product completeness",
+    "management CLI OS process",
+    "third-party package isolation",
+    "arbitrary untrusted response bound"
+  ],
+  "resourceState": "CLOSED / returned before seal",
+  "actualRunnerHttpCount": null,
+  "independentReview": "PENDING"
+}

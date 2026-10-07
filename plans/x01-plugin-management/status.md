@@ -14,13 +14,13 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | 新准备段2026-10-07T10:15:07Z→10:35:07Z；固定main6aa2d42e，bac95641起点 |
+| 工作基线 / HEAD | execution4949118f；固定结果997f7d44f78f0db1d001e9e7080559cd7139a7af；后续仅结果manifest/状态 |
 | 工作树 dirty 状态 | 真实双入口单case与薄支持准备中；已审startup/terminal原件不改 |
 | 工作分支状态 | review |
 | 检查状态 | 真实进程PG一次1/1；两runner任务-1/+1、4main exit0/双EOF、专库与精确TMP已正常收尾；旧检查不重跑 |
 | Review | e6bf/902b准备APPROVED；本次真实结果封存待独立忠实性审 |
 | 已集成 main 状态 / HEAD | 领域/claim/semver/provenance/runtime已main；terminal20b四源已main81b4805c42d12ad35e70cd7e27ad3b78df1f035a，实际核当前3b6db156e9367047f839f06791a80f42fce04993同四hash；startup c8ba十源已main6aa2d42e96c33b73e511e69e2984b5279ce4eb7e/正式I02回执与10hash核符 |
-| 实现目标 | e6bfab16c1b783406729b0a4deb4f3c7e720446f |
+| 实现目标 | 997f7d44f78f0db1d001e9e7080559cd7139a7af |
 | 实现范围 | apps/server/src/plugin-runtime/process-runner-pg.test.ts；docs/evidence/x01/process-runner-* |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
