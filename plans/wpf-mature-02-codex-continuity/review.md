@@ -27,3 +27,5 @@ architecture_read固定3f432/de51只读关闭封套原三P2。Mika随后发现�
 2026-10-07 02:29:39 UTC：原准备批准后R1唯一6组实际运行5pass/1fail，worker/outer exit1；第二轮等待任务完成超出轮询预算。原源码/manifest未改，运行结果忠实性独审PENDING，不能沿准备批准写产品通过。DB/服务已关闭收据与外层TMP KEEP分别记录于R1报告。
 
 2026-10-07 02:38:35 UTC记录：repository_map已独立接受d5e94525 R1失败忠实性，0P1/P2，仅原失败/资源事实。另对固定源码只读确认test fixture把codeHome混作attempt cwd的缺陷，并同意原factory seam最小修正；当前修正与新增1case尚NOT_RUN，待固定源码独审，原PG无新OPEN。详见cwd-regression-diagnosis.md。
+
+2026-10-07 03:00:32 UTC：为保存原R1 manifest，source3c05038c仅在原operator中允许旧/新两个固定清单名并在receipt绑定所选SHA。新pg-cwd-source-manifest绑定302项（4变298不变）及原20links/2external、原6组/预算不变；此输入名delta与固定组合尚待只读复核，ACTUAL_NOT_OPEN。无新wrapper、types/单例重跑或PG/cleanup。
