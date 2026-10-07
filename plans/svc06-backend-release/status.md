@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 08:57:48 UTC；固定b2b来源/依赖；未采个人事实 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 09:04:18 UTC；b2b产物实际完成，运行窗已归还；未采个人事实 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -14,20 +14,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | 原owner基线1e7c423ea2c5738d68adf182673803668c47b15d；入口 fbdb93e08a18b6fe21b8750e2ec726388493f8e0；artifact固定main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388 |
-| 工作树dirty状态 | 固定入口已提交；仅本轮manifest/status收口，产品/raw全停写 |
+| 工作树dirty状态 | 仅本次结果/raw/状态收口；产品与fbdb入口固定不改 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 实现目标 | fbdb93e08a18b6fe21b8750e2ec726388493f8e0 |
 | 实现范围 | docs/evidence/svc06/update-b2b-candidate/build-once/entry.mjs, docs/evidence/svc06/update-b2b-candidate/build-once/supervise.py, docs/evidence/svc06/update-b2b-candidate/build-once/runtime-proof.mjs, docs/evidence/svc06/update-b2b-candidate/build-once/inputs.json |
-| 检查状态 | NOT_RUN fbdb93e08a18b6fe21b8750e2ec726388493f8e0；仅271cache索引/metadata观察已完成，实际b2b构建/安装/import/PG未运行；原已绿构建与旧FAIL保持 |
-| 已集成main状态 / HEAD | 原零任务host实验已main a040a364d426f4f8583fbfc67e5922077ba1f9ac；新策略SVC09已main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388；本次薄entry待独审/接收，未产新artifact |
+| 检查状态 | PASSED fbdb93e08a18b6fe21b8750e2ec726388493f8e0；固定b2b一次离线构建与内部加载成功，实际host/配置兼容/个人更新未运行 |
+| 已集成main状态 / HEAD | 原零任务host实验已main a040a364d426f4f8583fbfc67e5922077ba1f9ac；新策略SVC09已main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388；本次c2c构建结果待独审/接收，尚未采用到个人安装 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新宿主的浏览器配置与四版本保留规则已接入；已整理对应固定后台产物的构建入口。 |
-| 下一可用交付 | 构建新的固定后台及网页宿主产物，为三个旧页面兼容验证提供输入。 |
-| 当前阻塞 | ACTIVE: 构建入口待审和运行窗口；新配置组合的页面兼容仍待验证 |
+| 当前产出 | 新的固定后台及网页宿主产物已构建完成，内部依赖与入口加载检查通过。 |
+| 下一可用交付 | 构建结果独审后，验证三个保留页面与新后台及浏览器配置的兼容。 |
+| 当前阻塞 | ACTIVE: 实际构建结果待独审；配置兼容与个人更新仍待验证 |
 | 需用户决定 | NONE |
-| Review | 原限定构建/host与SVC09独审保持；新b2b薄入口PENDING，不代表实际构建或个人更新就绪 |
+| Review | 准备已独审通过；实际c2c产物与加载结果PENDING_RESULT_REVIEW，不代表个人采用完成 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用原builder/OPS14/SVC08；已main SVC09提供私有策略与固定运行tuple及4项集中retention。此次只准备明确版本产物，不增调度器/状态权威；架构基线待Lead按b2b记录。 |
 
@@ -186,3 +186,18 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 此阶段首次实际准备观察来源source-delta.json 08:49:41.486497Z，不冒完整任务首次开工。等待入口独审自本次固定交付起，结束UNKNOWN；独审/共享窗口由Lead解除，个人更新尚无实际窗口。
 
 新薄entry/proof语法均exit0，Python只AST不执行；自身status parser errors/humanMissing=[]，历史任务开工UNKNOWN提示保持。原checker将timing提示并入退出条件得到exit1，原件与解释见[准备检查](../../docs/evidence/svc06/update-b2b-candidate/preparation-checks.json)/[限定分析](../../docs/evidence/svc06/update-b2b-candidate/preparation-checks-analysis.json)，不复跑为绿。3组absent双EOF、总128ms、0scratch，local已归还；实际构建仍NOT_RUN。
+
+## 2026-10-07T09:01:33.903346Z：固定 b2b 构建窗口已接收
+
+唯一[准备独审](../../docs/evidence/svc06/update-b2b-candidate/independent-review.json) APPROVED_FIXED_ARTIFACT_PREPARATION，69/19/20/4绑定无差。fresh v7 claim/固定源/entry/raw与namespace未用已核，free 23912873984B通过3,927,965,696B门槛；[原始准入](../../docs/evidence/svc06/update-b2b-candidate/execution-preflight.json)。两lead实际PG窗口已归还交本组，Web独立候选73MiB含在512MiB协调余量；尚未spawn，随后仅本唯一入口实际开始。原420+.5+2/live1GiB/raw2MiB不变，0PG/provider/个人。
+
+实际固定 b2b 构建开始：2026-10-07T09:01:39.222Z，来源唯一actual-first/reservation.json；当前本组artifact heavy holder，原输入/预算不变。结果待外层真实终态，不预判通过。
+
+## 2026-10-07 09:04:18 UTC：固定 b2b 实际构建结果待审
+
+[唯一结果](../../docs/evidence/svc06/update-b2b-candidate/RESULT.md)：09:01:39.222Z→09:02:10.132Z，outer30,975ms/exit0/组43300absent双EOF、无primary/secondary failure。新c2c产物真实Flow/b2b、33SQL/内部加载通过；0factory/runRunner/provider/PG/个人操作。旧raw/FAIL保留，固定入口不改，运行窗已立即归还。任务总开工UNKNOWN、任务完成NOT_COMPLETED保持；本构建片段分支交付随result commit，独审/main尚未发生。
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| SVC06-WAIT-B2B-REVIEW | UNKNOWN | 2026-10-07T09:00:20.787410Z | 审查 | 入口独审完成；最初等待时标无单独原件，不用commit时间推算 | update-b2b-candidate/independent-review.json |
+| SVC06-WAIT-B2B-WINDOW | 2026-10-07T09:00:20.787410Z | 2026-10-07T09:01:39.222Z | 资源 | 准备批准后等待实际共享窗口及fresh准入；唯一entry启动结束 | independent-review / execution-preflight / actual-first/reservation |
