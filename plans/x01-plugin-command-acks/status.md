@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T10:43:17.901Z |
+| 最近更新时间 | 2026-10-07T10:48:30Z |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
@@ -12,14 +12,14 @@
 | 任务时间来源 | 实际UTC建树段观察；take COMMITTED10:35:07.563Z |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks |
 | Branch | codex/plugin-command-acks |
-| 工作基线 / HEAD | b67530bb025162629895d11482b5505d4a885c91 |
+| 工作基线 / HEAD | base b67530bb025162629895d11482b5505d4a885c91 / source ae1482fdb498ec367aeeb0f142381ac966d18909 |
 | 工作树dirty状态 | 产品固定；metadata收口后clean |
 | 工作分支状态 | review |
 | 本片段交付阶段 | review |
-| 检查状态 | PASSED ea2e97a36e0e0fe5eaadba0963b07e9aeca07a83：41/41+新增1/1（41未选），finaltypes0；原red/type失败保留 |
-| Review | [review.md](review.md)，NOT_STARTED |
+| 检查状态 | PASSED ae1482fdb498ec367aeeb0f142381ac966d18909：上界增量2/2（42未选）与types0；历史41/41+1/1分轮保留，原red/type失败保留 |
+| Review | [review.md](review.md)，唯一P2已修，等待增量复审 |
 | 已集成main状态 / HEAD | 本片未集成；基线含原CLI已审接收 |
-| 实现目标 | ea2e97a36e0e0fe5eaadba0963b07e9aeca07a83 |
+| 实现目标 | ae1482fdb498ec367aeeb0f142381ac966d18909 |
 | 实现范围 | packages/client/src/index.ts,packages/client/src/plugin-management.ts,packages/client/src/plugin-command-ack.test.ts,apps/cli/src/plugin-command-ack.test.ts,docs/evidence/x01-plugin-command-acks/fixtures.ts |
 | 阶段 | M2 |
 | 优先级 | 5 |
@@ -34,7 +34,7 @@
 | X01ACK-01 | completed | db_transaction_owner | 已接受窄设计 |
 | X01ACK-02 | completed | db_transaction_owner | 现唯一transport |
 | X01ACK-03 | completed | db_transaction_owner | 41/41+1/1，finaltypes0；首红/TS2322保留 |
-| X01ACK-04 | pending | db_transaction_owner | NOT_STARTED |
+| X01ACK-04 | pending | db_transaction_owner | 唯一P2增量待审、未main |
 
 20min段至10:54:10Z，child≤60s/累计≤120s、TMP16MiB/raw512KiB/source+meta2MiB；0PG/provider/Chrome/install。唯一status，canonical登记输入将交原Lead；不写registry或生成JSON。架构边界：复用现ACK Module与transport，命令公开签名不变；main接收后由Mika协调D06。
 
@@ -45,3 +45,5 @@
 登记入口[task-intake.json](../../docs/evidence/x01-plugin-command-acks/task-intake.json)，等待原Lead聚合，未改registry。全X01真实运行能力仍由父task追踪；本片不消费共享PG窗口。
 
 提交前复用main b675部署的parseStatus：errors[]/humanMissing[]/timingIssues[]，parentX01；仅声明形状检查，不冒dashboard已登记或部署。
+
+10:45:43 UTC chatui对ea2e/7fe只读CHANGES_REQUESTED：唯一P2为revision上界，0P1。现ae1482fdb498ec367aeeb0f142381ac966d18909复用合同上界修复；10:47:54–57实际2/2与types0，2child/TMP闭合并已归还local，8child监督累计9799ms/raw49358B。原100bindings包与失败原件未改。新入口[revision-fix-review-ready.json](../../docs/evidence/x01-plugin-command-acks/revision-fix-review-ready.json)。clean-code本次检查：单一合同校验、不新transport、不改合法max输入或错误身份；当前待独立增量审。

@@ -3,7 +3,7 @@ from pathlib import Path
 import dataclasses,datetime,hashlib,importlib.util,json,os,sys,time
 ROOT=Path(__file__).resolve().parents[3]
 E=ROOT/'docs/evidence/x01-plugin-command-acks'
-name=sys.argv[1];assert name in ('red','green','types','types-fix','green-fix','delta-fix','types-final')
+name=sys.argv[1];assert name in ('red','green','types','types-fix','green-fix','delta-fix','types-final','revision-fix','types-revision')
 node='/opt/homebrew/opt/node@24/bin/node'
 files=['packages/client/src/plugin-command-ack.test.ts','apps/cli/src/plugin-command-ack.test.ts']
 if name != 'red': files += ['packages/client/src/plugin-runtime.test.ts','apps/cli/src/plugin-runtime.test.ts']
@@ -11,6 +11,7 @@ cmd=([node,str(ROOT/'node_modules/typescript/bin/tsc'),'--noEmit','-p',str(E/'ts
      if name.startswith('types') else [node,str(ROOT/'node_modules/vitest/vitest.mjs'),'run','--config',str(E/'vitest.config.mjs'),'--no-cache',*files])
 free=os.statvfs(ROOT).f_bavail*os.statvfs(ROOT).f_frsize
 if name == 'delta-fix': cmd += ['-t', 'rejects matching but semantically impossible configuration ACKs']
+if name == 'revision-fix': cmd += ['-t', 'checks maximum revision acknowledgement']
 # Preserve the conservative prior floor; X01 168820736B heavy + 34MiB pair was already closed before green.
 floor=max(6063390720,5334630400+168820736+34*1024*1024)
 if free<floor: print(json.dumps({'state':'HOLD','free':free,'required':floor}));sys.exit(3)

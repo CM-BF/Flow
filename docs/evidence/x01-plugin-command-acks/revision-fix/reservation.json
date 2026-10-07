@@ -1,0 +1,32 @@
+{
+  "startedAt": "2026-10-07T10:47:54.759243+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks/docs/evidence/x01-plugin-command-acks/vitest.config.mjs",
+    "--no-cache",
+    "packages/client/src/plugin-command-ack.test.ts",
+    "apps/cli/src/plugin-command-ack.test.ts",
+    "packages/client/src/plugin-runtime.test.ts",
+    "apps/cli/src/plugin-runtime.test.ts",
+    "-t",
+    "checks maximum revision acknowledgement"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks",
+  "free": 22723395584,
+  "required": 6063390720,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks/docs/evidence/x01-plugin-command-acks/revision-fix/tmp",
+    "dev": 16777234,
+    "ino": 124061390
+  },
+  "budgets": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288
+  },
+  "tmpMeasurement": "before/after sample; not realtime OS isolation"
+}

@@ -1,8 +1,8 @@
 # X01-PLUGIN-COMMAND-ACK01 review
 
-状态：NOT_STARTED
-Review target commit: ea2e97a36e0e0fe5eaadba0963b07e9aeca07a83
+状态：CHANGES_REQUESTED（原唯一P2已修，等待增量复审）
+Review target commit: ae1482fdb498ec367aeeb0f142381ac966d18909
 
-Base b67530bb025162629895d11482b5505d4a885c91；WT plugin-command-acks/codex/plugin-command-acks。请求chatui独立只读核两生产叶、两新公共行为test及共用fixture；原runtime消费者此次19已跑，CLI生产未改。核冻结请求、两kind范围、version/config/grants/CAS/历史replay、bounded bytes与unknown/no retry；不复制server canonical，不宣称inputDigest内容匹配。
+2026-10-07 10:45:43 UTC，chatui01_owner / gpt-6-astra，绑定ea2e97a36e0e0fe5eaadba0963b07e9aeca07a83 / 7fe488aad0516e648f7ac3881c22307ec493d70d：0 P1、1 P2。共用ACK未拒绝2147483648 revision；其余100bindings/6deps、两kind/历史replay/冻结请求/接收上界与原6child结果无新增P1/P2。仅mock Fetch客户端/CLI局部范围，未批准PG/main。
 
-入口docs/evidence/x01-plugin-command-acks/review-ready.json及manifest；actualgreen41/41+新增语义1/1（41未选），最终types0；初21红18fail3pass及TS2322均保留。6child/TMP按receipt闭合；0本片PG/provider/Web/server授权验证。NOT_STARTED不构成批准，修复归原owner。
+ae1482fdb498ec367aeeb0f142381ac966d18909仅共用revision schema与两个真实CLI/FlowClient边界例，旧断言不动；新selector与原runner监督不变。2 selected/2 passed/42 unselected、focused types0，原41/语义1及所有失败不重跑/不改。入口docs/evidence/x01-plugin-command-acks/revision-fix-review-ready.json；待审不表示已通过。
