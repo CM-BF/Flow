@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-07T09:03:11.757512+00:00",
+  "source": "1e12eaf13a02b45a99dfe126bc182c2ea45a8390",
+  "oldPid": 80476,
+  "newPid": 96517,
+  "oldAbsent": true,
+  "log": "/tmp/flow-dashboard-193-20261007-0903.log",
+  "personalOperations": 0,
+  "tokenEndpointRead": false,
+  "tabsReloaded": 0,
+  "observedAt": "2026-10-07T09:03:39.634234+00:00",
+  "snapshotBytes": 2937809,
+  "snapshotSha256": "af1e0d4f96ddb7f91e3c83784e0b4779680f8070f8994ff6ad443ae757817718",
+  "snapshotKeys": [
+    "generatedAt",
+    "staleAfterHours",
+    "main",
+    "tasks",
+    "assignments",
+    "unregisteredAssignments",
+    "overview",
+    "milestones"
+  ],
+  "sourceCount": 193,
+  "selected": [
+    {
+      "id": "OPS-METER01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-07T09:01:36.786Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-resource-measurement/plans/ops-meter01-resource-measurement/status.md",
+        "syncedAt": "2026-10-07T09:03:27.185Z",
+        "stale": false,
+        "ageHours": 0.06402805555555556
+      },
+      "human": null,
+      "timing": null
+    },
+    {
+      "id": "MATURE06-LAZY01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-07T09:03:13.388Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/plans/mature06-lazy-reasoning/status.md",
+        "syncedAt": "2026-10-07T09:03:27.185Z",
+        "stale": false,
+        "ageHours": 0.0062005555555555555
+      },
+      "human": null,
+      "timing": null
+    }
+  ]
+}

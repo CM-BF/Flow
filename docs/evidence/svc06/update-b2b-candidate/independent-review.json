@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-07T09:00:20.787410+00:00",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "verdict": "APPROVED_FIXED_ARTIFACT_PREPARATION",
+  "P1": 0,
+  "P2": 0,
+  "sourceTarget": "fbdb93e08a18b6fe21b8750e2ec726388493f8e0",
+  "delivery": "3d07e788df6d0e427ec4c28f06d231ca9ad70938",
+  "artifactSource": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+  "manifestSha256": "ad112ce3894fe41072bcaff13055f1930c045a5ff3706d5d2ff29181c1599b72",
+  "bindingsVerified": {
+    "sourceBindings": 69,
+    "recordBindings": 20,
+    "runtimeBindings": 19,
+    "reusedMethodBindings": 4
+  },
+  "read": "Full candidate/build Interface,entry/runtime-proof/supervise,inputs and cache interpretation; previous builder/supervision exact bytes unchanged",
+  "findings": [],
+  "bounds": {
+    "workSeconds": 420,
+    "termGraceSeconds": 0.5,
+    "killGraceSeconds": 2,
+    "additionalBytes": 2317352960,
+    "minimumFreeBytes": 3927965696,
+    "liveReserveBytes": 1073741824,
+    "rawBytes": 2097152
+  },
+  "boundary": [
+    "Only fixed b2b archive/offline artifact+import proof; no factory/PG/provider/Chrome/personal service.",
+    "All retained actual Apps require new same-context reports before maintenance; build does not authorize personal policy installation.",
+    "New legacy Web host precedes backend/policy and fourth App CAS; no deletion of unknown or old retained resource.",
+    "Cache metadata does not prove payload integrity; actual clone validates source/destination.",
+    "Historical UNKNOWN start remains; syntax successful versus status check exit1 are separate; old raw preserved."
+  ],
+  "testsRunByReviewer": 0,
+  "actualBuild": "NOT_RUN; coordination and fresh gates still required"
+}

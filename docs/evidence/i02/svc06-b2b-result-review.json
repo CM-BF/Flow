@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07T09:08:56.687153+00:00",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "verdict": "APPROVED_FIXED_ARTIFACT_AND_INTERNAL_LOADING",
+  "P1": 0,
+  "P2": 0,
+  "sourceTarget": "fbdb93e08a18b6fe21b8750e2ec726388493f8e0",
+  "resultTarget": "5d40c8c4c731e519e768c9ab756251a9dd7d8a21",
+  "delivery": "b905765f3e7d5d2c817e941d1f076208cf7d1208",
+  "manifestSha256": "8a0573116f81533b8eef96f54c919eefa8035584b77fcf62199f275770bee2bb",
+  "bindingsVerified": {
+    "fixedAndCurrent": 20,
+    "retainedPrivate": 3,
+    "retainedRootIdentity": true
+  },
+  "artifactSource": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+  "artifactId": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
+  "read": "Full result manifest, analysis, RESULT, durable run result and outer report; inherited preparation review binds entry/runtime proof. Compared stdout parsed object with persisted result; no rerun.",
+  "execution": {
+    "startedAt": "2026-10-07T09:01:39.222Z",
+    "finishedAt": "2026-10-07T09:02:10.132Z",
+    "outerElapsedMs": 30975,
+    "exitCode": 0,
+    "ownedGroup": 43300,
+    "finalOwnedState": "absent",
+    "stdoutEOF": true,
+    "stderrEOF": true,
+    "signals": [],
+    "primaryFailure": null,
+    "secondaryFailures": [],
+    "rawBytes": 14688,
+    "SQLFiles": 33,
+    "importedNativeBinary": false,
+    "nativeBinaryExecuted": false,
+    "PG": 0,
+    "provider": 0,
+    "personalOperations": 0
+  },
+  "findings": [],
+  "boundary": [
+    "One real offline fixed-lock artifact build and internal loader/read-only selection proof, not full host/runtime deployment.",
+    "Original pre-reap unknown observation preserved; final absent/EOF does not manufacture unrecorded child exit codes.",
+    "Own artifact and original stage record retained with exact dev/ino/hash; no personal state changed.",
+    "Logical inventory and shared-volume availability are different measurements; physical exclusive peak is UNKNOWN.",
+    "Real host/migrations, developer checkout isolation, three retained actual Apps under new configuration, personal adoption and fourth App CAS remain open."
+  ],
+  "reviewerTests": 0
+}

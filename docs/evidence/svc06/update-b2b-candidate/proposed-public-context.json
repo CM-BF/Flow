@@ -1,0 +1,19 @@
+{
+  "state": "CANDIDATE_NOT_INSTALLED",
+  "backendHead": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+  "browserSession": {
+    "cookieOrigin": "http://127.0.0.1:61228",
+    "trustedOrigins": [
+      "http://127.0.0.1:61228"
+    ],
+    "authEpoch": "svc09-b2b-20261007"
+  },
+  "expectedContext": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "derivation": "sha256(JSON.stringify([\"flow.browser-policy.v1\", normalizedSettings])); reviewed b2b browser-session-configuration.mjs",
+  "installationId": "NOT_SAMPLED; bind to exact fresh existing installation only in a later authorized operation",
+  "requiredReports": "Three retained real App format2 reports, each with four original checks for this backendHead/artifact/context. No legacy report reinterpretation. Web owner must use this exact candidate or explicitly agree and rebind before running."
+}

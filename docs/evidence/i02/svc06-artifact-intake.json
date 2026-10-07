@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-07T09:09:26.182973+00:00",
+  "integrationBase": "1e12eaf13a02b45a99dfe126bc182c2ea45a8390",
+  "sourceIntakes": [
+    {
+      "target": "b905765f3e7d5d2c817e941d1f076208cf7d1208",
+      "paths": [
+        "docs/evidence/svc06/update-b2b-candidate",
+        "plans/svc06-backend-release"
+      ],
+      "review": "svc06-b2b-result-review.json"
+    },
+    {
+      "target": "f59a0f3e93aa60d4a412f8d2c4ea8d8024019055",
+      "base": "db9c8932066988da2682108fcd9bdcb1a4f27553",
+      "paths": [
+        "plans/ops-001-status-review/status.md"
+      ],
+      "finding": "Build interval, 30975ms, group43300 absent/EOF, 33 SQL and internal-loading-only limits agree with fixed raw."
+    },
+    {
+      "target": "f6874aad9795ca5a6c8982f2dce3a7d8fea5952a",
+      "base": "86cd0651ff08948883349df2c910af85e992f9a6",
+      "paths": [
+        "docs/evidence/d05/lazy-meter-live.json",
+        "plans/d05-architecture-view/status.md"
+      ],
+      "finding": "193-source actual receipt and two canonical inputs agree; no personal operation or whole-task completion claimed."
+    }
+  ],
+  "productChanges": 0,
+  "newTests": 0,
+  "providerCalls": 0,
+  "personalChanges": 0,
+  "limits": "Documentation/evidence intake only. Backend candidate stays fixed b2b/c2c; actual runtime remains af51/v18, Web d629/v3 with separately fixed Web host. No automatic deployment."
+}

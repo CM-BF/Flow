@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T08:55:45.365013+00:00 / main b2b5612b；LAZY/X01必要组合3/3和strict0 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T09:08:56.687153+00:00 / main 1e12eaf1；固定后台产物结果限定独审通过 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,16 +12,16 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main b2b5612b；本批仅已审LAZY12路径、X01六路径窄delta和自身证据 |
+| 工作基线 / HEAD | main 1e12eaf1；本批仅固定后台产物记录和已审管理metadata，无产品源变化 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 本批3 selected/3pass/0fail，未选择其余原检查；root noEmit0，两组absent/双EOF。84固定manifest绑定一致，0PG/provider。 |
-| 已集成main状态 / HEAD | main/origin e2b16924已接LAZY/X01与必要组合原件；当前受控接收独审meter模块及193来源登记，个人部署未变。 |
+| 检查状态 | 本批0工程重跑；固定后台产物20绑定及3保留私有文件身份/hash核同，outer与耐久结果相同；原LAZY/X01组合3/3及strict0保留。 |
+| 已集成main状态 / HEAD | main/origin 1e12eaf1已接资源计量模块及193来源登记；本次固定后台产物结果正受控接收，个人部署未变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 按需读取推理正文与插件产物来源关联已通过审查和必要组合检查。 |
+| 当前产出 | 新版后台已构建成固定产物并验证内部依赖加载，真实宿主与新旧网页兼容性继续验证。 |
 | 下一可用交付 | 固定后台产物与网页兼容组合继续准备；前端接入按需读取并独立验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -378,3 +378,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 2026-10-07T08:43:57.389992+00:00：[O16独审](../../docs/evidence/i02/o16-current-main-result-review.json)与[受控接收](../../docs/evidence/i02/o16-ops-intake.json)绑定实际新旅程、42自身路径和3份已审OPS文档。0产品复测/0provider/0个人服务操作；真实模型规划、工程资格与长任务恢复仍未验。
 
 2026-10-07T08:45:52.079720+00:00：[SVC09独审](../../docs/evidence/i02/svc09-independent-review.json)与[精确接收](../../docs/evidence/i02/svc09-integration.json)记录17产品和局部边界。真实产物/全retained兼容/迁移与个人采用尚未运行，不因源码接收声称部署完成。
+
+2026-10-07T09:08:56.687153+00:00：固定后台产物结果限定独审通过并进入本批接收；见[唯一结果审查](../../docs/evidence/i02/svc06-b2b-result-review.json)。真实构建30,975ms/exit0、33 SQL、自有组absent/双EOF；artifact保留供后继宿主，0PG/provider/个人操作。构建通过不关闭实际迁移、三retained App新tuple或部署验收。

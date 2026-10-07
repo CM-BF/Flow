@@ -1,0 +1,175 @@
+{
+  "analyzedAt": "2026-10-07T09:03:26.472432Z",
+  "source": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+  "entrySource": "fbdb93e08a18b6fe21b8750e2ec726388493f8e0",
+  "verdict": "AUTHOR_REPORTED_FIXED_ARTIFACT_AND_IMPORTS_PASSED_PENDING_INDEPENDENT_REVIEW",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
+    "manifestDigest": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
+    "sourceHead": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+  },
+  "retainedRoot": {
+    "path": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3",
+    "dev": 16777234,
+    "ino": 123686972,
+    "uid": 501,
+    "mode": "0o700",
+    "isDirectory": true
+  },
+  "retainedPrivateBindings": [
+    {
+      "path": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3/owner.json",
+      "bytes": 243,
+      "sha256": "3a45d38c756f5ca3d7151aa1a384db5a4b987b534b5fe947ee504d8153ba36f9",
+      "dev": 16777234,
+      "ino": 123686974,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3/backend-artifacts/c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7/manifest.json",
+      "bytes": 3196239,
+      "sha256": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
+      "dev": 16777234,
+      "ino": 123713756,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3/backend-artifacts/stage-bd62cc22-f23b-445a-bd1f-5c3d56089269.json",
+      "bytes": 806,
+      "sha256": "6b47e9a9b13e37d3ad75422fdf9a4a99cdddb688d499632bc19bcb4ce1812aaa",
+      "dev": 16777234,
+      "ino": 123713815,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    }
+  ],
+  "phase": "artifact-and-imports-passed",
+  "startedAt": "2026-10-07T09:01:39.222Z",
+  "finishedAt": "2026-10-07T09:02:10.132Z",
+  "entryElapsedMs": 30909,
+  "outer": {
+    "pid": 43300,
+    "elapsed_ms": 30975,
+    "exit_code": 0,
+    "owned_state": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "outerStdoutEqualsDurableResult": true,
+  "inventory": {
+    "logicalBytes": 363822116,
+    "entries": 15626,
+    "manifestBytesIncluded": 367018355,
+    "nodeImages": 20
+  },
+  "sqlFilesVerified": 33,
+  "manifestSourceTree": "1bfc93dd1eb870638a6ca48198908dcdc3f28f69",
+  "installation": {
+    "snapshots": 271,
+    "importers": [
+      ".",
+      "apps/runner",
+      "apps/server",
+      "packages/client",
+      "packages/contracts",
+      "packages/plugin-runtime",
+      "packages/protocols"
+    ],
+    "hostTools": [
+      {
+        "name": "tsx",
+        "importer": ".",
+        "dependencyKind": "devDependencies",
+        "specifier": "4.23.15",
+        "version": "4.23.15"
+      },
+      {
+        "name": "pg",
+        "importer": ".",
+        "dependencyKind": "devDependencies",
+        "specifier": "8.23.1",
+        "version": "8.23.1"
+      },
+      {
+        "name": "vite",
+        "importer": "apps/web",
+        "dependencyKind": "devDependencies",
+        "specifier": "8.3.2",
+        "version": "8.3.2(@types/node@24.19.1)(esbuild@0.28.2)(jiti@2.7.0)(tsx@4.23.15)"
+      }
+    ]
+  },
+  "runtimeProof": {
+    "importsAndReadOnlySelectionOnly": true,
+    "newPolicyModulesLoaded": true,
+    "actualPolicyRead": false,
+    "artifactSourceRepository": "/Users/citrine/Projects/AgentHarness/Flow",
+    "realWebArtifactSelected": true,
+    "centerRunnerSelectionPreserved": true,
+    "wrongSourceRejected": true,
+    "factoryCalls": 0,
+    "runnerCalls": 0,
+    "providerCalls": 0,
+    "sdkVersion": "0.3.290",
+    "nativeBinaryExecuted": false,
+    "nativeBinaryBytes": 233260816,
+    "resolved": {
+      "pgEntry": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3/backend-artifacts/c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "sdkEntry": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3/backend-artifacts/c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7/root/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "nativeMetadata": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3/backend-artifacts/c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7/root/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/package.json",
+      "nativeBinary": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3/backend-artifacts/c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7/root/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "viteEntry": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3/backend-artifacts/c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7/root/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "tsxEntry": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3/backend-artifacts/c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7/root/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs"
+    },
+    "delayedImports": [
+      "apps/server/src/index.ts",
+      "apps/runner/src/runtime.ts",
+      "tools/personal-preview/backend-release/host.mjs",
+      "tools/personal-preview/preview.mjs",
+      "tools/personal-preview/maintenance-host.mjs"
+    ],
+    "developmentCheckoutIsolation": "NO mutation or removal; internal resolution/inventory proof only"
+  },
+  "rawBytesIncludingOriginalBuildRecord": 14688,
+  "resourceObservation": {
+    "initialFree": 23912050688,
+    "minimumFree": 23463669760,
+    "sampledDecline": 448380928,
+    "samples": 62,
+    "physicalPeak": "UNKNOWN; availability includes other writers; inventory logical bytes are not physical allocation"
+  },
+  "cleanup": "Builder published to own content-addressed store, no pending prepare lock/stage directory observed by entry; entire supervised work group absent and both EOF. Own artifact/root and stage JSON kept. No PG/Chrome/detached services started. Original old runs unchanged.",
+  "notProven": [
+    "new backend actual factory/migrations",
+    "new configured retained App compatibility",
+    "personal migration/host/backend/policy adoption",
+    "fourth App CAS",
+    "native binary/model execution",
+    "development checkout removed/denied in this run"
+  ]
+}
