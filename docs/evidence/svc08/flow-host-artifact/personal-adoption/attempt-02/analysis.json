@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-07T06:06:08.986Z",
+  "state": "MIGRATED_REQUEST_FAIL_STOPPED",
+  "source": "d95c249dc6b48848128ca068ea93dfda3494e812",
+  "delivery": "bfa8a0d051f0e4e2b005681cba0a7fe8d5197f39",
+  "privateRun": "/private/tmp/flow-svc08-personal-adoption-20261007-r2",
+  "migration": {
+    "outcome": "migrated",
+    "completedAt": "2026-10-07T06:04:16.548Z",
+    "outerMs": 18379,
+    "exit": 0,
+    "groupAbsent": true,
+    "bothEOF": true,
+    "artifact": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+      "manifestDigest": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+      "sourceHead": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+    }
+  },
+  "request": {
+    "outcome": "unknown",
+    "failureAt": "2026-10-07T06:04:26.133Z",
+    "outerMs": 624,
+    "exit": 1,
+    "groupAbsent": true,
+    "bothEOF": true,
+    "signals": [],
+    "failure": "ERR_ASSERTION",
+    "protectionFalseOnly": [
+      "maintenance"
+    ]
+  },
+  "savedEvidence": {
+    "maintenanceRowsJSONEqual": true,
+    "businessObservation": "UNCHANGED",
+    "changedTables": [],
+    "otherProtectionChecks": 10,
+    "allOtherProtectionChecksTrue": true,
+    "newRequestAbsent": true,
+    "replaceIntentAbsent": true,
+    "replaceOuterAbsent": true,
+    "postResultAbsent": true
+  },
+  "diagnosis": {
+    "classification": "SERIALIZED_VS_LIVE_TIMESTAMP_REPRESENTATION",
+    "evidence": "caller request reads migration-before JSON but compares to live snapshot; facts leaves raw pg rows; maintenance_updated_at timestamptz uses pg-types1184 postgres-date returning Date; persisted runner rows are byte/value equal",
+    "notClaimed": "No in-memory object dump was retained; this source explanation does not claim a new live runtime test or a real maintenance state change",
+    "minimalCandidate": "Normalize only declared maintenance_updated_at at the snapshot/preservation boundary with strict field/type/value validation; preserve all maintenance fields, reject invalid/unknown/changed values. No global JSON normalization or relaxed idle/work gates."
+  },
+  "locksObservation": {
+    "at": "2026-10-07T06:06:08.986Z",
+    "onlyPostFailurePersonalMetadataRead": [
+      {
+        "path": "/Users/citrine/.flow-personal/operation.lock",
+        "state": "absent"
+      },
+      {
+        "path": "/Users/citrine/.flow-personal/backend-artifacts/prepare.lock",
+        "state": "absent"
+      }
+    ]
+  },
+  "retained": "All original run files, stage dirs, migrated exact artifact and prior source artifact KEEP; no rollback or retry",
+  "actual": {
+    "CLIReplaceCalls": 0,
+    "postCalls": 0,
+    "serviceStopCalls": 0,
+    "provider": 0,
+    "operatorBusinessWrites": 0,
+    "userTabActions": 0
+  },
+  "observedRawBytes": 86530,
+  "supervisorElapsedSumMs": 19003,
+  "notWholeSessionWall": true,
+  "physicalBytes": "clone st_blocks allocated not exclusive physical; no reclaimed/zero-cost claim"
+}

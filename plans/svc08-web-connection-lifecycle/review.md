@@ -84,3 +84,7 @@ Review target commit: d95c249dc6b48848128ca068ea93dfda3494e812；delivery f00021
 唯一reviewer native_center_owner / gpt-6-astra，2026-10-07T06:01:23.310462Z；[原样回执](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-identity-independent-review.json)，SHA9b1315861829d8099562c07cb6e01bdef35a59afe345ea12f5e44296183340e9；[绑定原件](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-identity-review-bindings.json)。57bindings一致，无P1/P2；6不同/10次选择分轮、原红、456ms/3253B/6组absent双EOF均核实，0reviewer重跑或个人读取。
 
 只批准身份修复与局部证据；private self/nlink1不变，runtime显式uid/nlink和精确十进制dev/ino、真实路径与字节身份拒绝不符。原attempt-01保持；本审不等于个人采用结果，新r2实际窗口仍由Lead协调。作者接受限定结论，源码停写，无新运行。
+
+## 2026-10-07T06:06:44.080Z：修复后r2实际结果待独立审查
+
+d95身份修复批准保持；本轮migrate成功、request原FAIL，不扩大准备批准。15原始副本+16私有原件身份与7固定源见[manifest](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-02/manifest.json)。Date/string表示差异只读定位，不把maintenance=false解释为实际维护状态变化；新修复尚未实施/验证。Web替换与post未调用，当前不再个人读取或操作。
