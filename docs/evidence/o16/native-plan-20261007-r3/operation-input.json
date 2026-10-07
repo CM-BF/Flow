@@ -1,0 +1,78 @@
+{
+  "preparedAt": "2026-10-07T11:13:11.255832Z",
+  "run": "native-plan-20261007-r3",
+  "startBefore": "2026-10-07T11:17:00Z",
+  "authorization": "Root O16-GO-PLANNER-R3-20261007 and Lead actual exclusive150s window; Web11:07:28 no holder, Recovery11:03:49 returned; Mika11:12 next PG not started, Lead informed both teams",
+  "claimId": "55c4e833-bd78-44d4-ba07-e18cd75f00b4",
+  "claimVersion": 1,
+  "source": "49d35d97e2d5d529d34dc29458ed2d95f2474909",
+  "candidateDelivery": "58fd3adbc6c06df310c0d1e89de80024105e9297",
+  "sourceDigest": "c6d957f101c1084a1298c8c933d81ee898bfe94a5faa0f4e3d19139d5d056816",
+  "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "reviewSHA256": "4ac9f256eef363bc25b39c3ba6136be35eb9a4131442c5260dd8dac1107877c4",
+  "candidateManifestSHA256": "d2e87d2910d1e1d6711bb12932fed671276c4b2e9e6a2a10e3433163a732f0ed",
+  "limits": {
+    "queries": 1,
+    "maxTurns": 4,
+    "maxBudgetUsd": 0.2,
+    "timeoutMs": 90000
+  },
+  "resources": {
+    "workMs": 120000,
+    "cleanupMs": 30000,
+    "independentTotalMs": 150000,
+    "rawAndStageEvidenceBytes": 2097152,
+    "privateRuntimeBytes": 8388608,
+    "liveReserveBytes": 1073741824,
+    "baselineFreshBytes": 1207959552,
+    "conservativeOtherTwoLocalTeamsBytes": 62914560,
+    "PGPlanningAllowanceBytes": 134217728,
+    "candidateFreshMinimumBytes": 1405091840,
+    "freshGateMustAlsoAccountForActualOtherHolders": true,
+    "databaseConnections": {
+      "business": 8,
+      "boss": 3,
+      "admin": 1,
+      "managementMargin": 16
+    },
+    "pauseMs": 900000
+  },
+  "diagnostics": {
+    "privateErrorRecordMaxBytes": 8192,
+    "privateTextMaxUTF8Bytes": 4096,
+    "maxErrorArrayItems": 16,
+    "publicStructuredRecords": 16,
+    "bounds": "Included in existing private8MiB/raw2MiB; no additional allowance",
+    "scope": "Structured SDK enum/status declarations first; no text inference of cause; real SDK private diagnostic persistence NOT_RUN"
+  },
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "experiments/continuous-goal-acceptance/operator.mjs",
+    "--plan",
+    "native-plan-20261007-r3",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/native-plan-20261007-r3/permit.json"
+  ],
+  "operatorEnvironment": {
+    "FLOW_O16_PG_WINDOW": "approved-one-shot",
+    "TSX_DISABLE_CACHE": "1",
+    "NODE_DISABLE_COMPILE_CACHE": "1"
+  },
+  "authenticationPolicy": {
+    "authentication": "existing-default-keychain-normal-native-refresh",
+    "credentialCopy": false,
+    "accountChange": false,
+    "privateFiles": "owned-home-config-tmp",
+    "persistSession": false,
+    "sharedKeychainMayUpdate": true,
+    "keychainIncludedInPrivateByteBudget": false,
+    "totalSystemZeroWrites": false
+  },
+  "queryConsumption": "not yet reserved or executed",
+  "previousSDKEntries": 2,
+  "cumulativeAfterNewSDKEntry": 3,
+  "fourthQueryAuthorized": false,
+  "previousAccountCost": "UNKNOWN",
+  "oldResources": "untouched KEEP"
+}

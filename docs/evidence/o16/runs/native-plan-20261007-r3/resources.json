@@ -1,0 +1,44 @@
+{
+  "kind": "flow.o16.private-resources.v1",
+  "database": "flow_o16_09a5ecedcbf64b7ea068ad1845c59211",
+  "marker": "16b993dc-e94b-47a5-8890-a4f0911854d8",
+  "sourceDigest": "c6d957f101c1084a1298c8c933d81ee898bfe94a5faa0f4e3d19139d5d056816",
+  "startedAt": "2026-10-07T11:13:35.058Z",
+  "gate": {
+    "freeBytes": 22164242432,
+    "requiredBytes": 1207959552
+  },
+  "creationRequested": true,
+  "created": true,
+  "marked": true,
+  "phase": "paused-owned-resources",
+  "directory": {
+    "path": "/private/tmp/flow-o16-5YKpcI",
+    "dev": 16777234,
+    "ino": 124073875
+  },
+  "databaseBytes": 12935695,
+  "serverClosed": true,
+  "workersStopped": true,
+  "workerProcess": {
+    "pgid": 14564,
+    "groupLeader": true,
+    "state": "stopped"
+  },
+  "workerProcesses": [
+    {
+      "pgid": 14564,
+      "groupLeader": true,
+      "state": "stopped"
+    }
+  ],
+  "connectionObservations": [
+    {
+      "elapsedMs": 1,
+      "rows": []
+    }
+  ],
+  "adminClosed": true,
+  "errors": [],
+  "endedAt": "2026-10-07T11:13:59.555Z"
+}
