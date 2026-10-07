@@ -19,9 +19,9 @@
 | 实现目标 | 87fb3d5f301d9aef2865a7cad04fbd98b6234274 |
 | 实现范围 | apps/runner/src/plugins/execution.ts,apps/server/src/events.ts,apps/server/src/plugin-runtime/artifact.ts,apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/verification-admission.test.ts,apps/server/src/plugin-runtime/verification-admission.ts,apps/server/src/plugin-runtime/verification-result.test.ts,apps/server/src/plugin-runtime/verification-result.ts,apps/server/src/plugin-runtime/verification-routes.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/plugin-verification-configuration.test.ts,apps/server/src/plugin-verification-configuration.ts,packages/contracts/src/plugin-verification-admission.ts,packages/contracts/src/plugin-verification-event.ts,packages/contracts/src/runner.ts,packages/plugin-runtime/src/verification-input.test.ts,packages/plugin-runtime/src/verification-input.ts |
 | 检查状态 | PASSED 87fb3d5f301d9aef2865a7cad04fbd98b6234274：15 distinct分轮，final focused types0；真实PG/公开装配NOT_RUN；早期错误原件保留 |
-| Review | PENDING；db_transaction_owner已受理，packet 4216ebb001bb1e0d66aa61dca00ac9646bf6d220 |
+| Review | CHANGES_REQUESTED 2026-10-07T20:56:31.000Z：工具权限错误码P2，正在窄修；db_transaction_owner已受理，packet 4216ebb001bb1e0d66aa61dca00ac9646bf6d220 |
 | 已集成 main 状态 / HEAD | NOT_INTEGRATED；AV036/center14前置尚待真实PG及受控接收 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 指定产物验证的受理和中心复算核心已完成局部检查，正在独审 |
@@ -40,12 +40,14 @@
 
 本轮局部终态：6child监督合计10049ms/raw14606B，全部finalabsent/mergedEOF/6TMP同identity删除；最后receipt20:48:43.969Z，tool20:48:50Z。15 distinct分轮，非一次15/15。前两次旧floor误用及事后free比较见result-summary，不修写原gate。
 
-分支交付时间：2026-10-07T20:51:17.000Z，packet 4216ebb001bb1e0d66aa61dca00ac9646bf6d220已push/clean；独立审查/main/部署时间UNKNOWN，任务完成NOT_COMPLETED。已留本授权16MiB内64KiB供之后APPROVED metadata归档，禁止借此改源或加检查。
+分支交付时间：2026-10-07T20:51:17.000Z，packet 4216ebb001bb1e0d66aa61dca00ac9646bf6d220已push/clean；独立审查20:56:31Z CHANGES_REQUESTED；main/部署时间UNKNOWN，任务完成NOT_COMPLETED。已留本授权16MiB内64KiB供之后APPROVED metadata归档，禁止借此改源或加检查。
 
 ## 等待记录
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
-| VAR-W01 | 2026-10-07T20:51:17.000Z | OPEN | 审查 | 固定core源码/局部结果等待独立审结；真实PG和装配另有前置 | review-ready.json/直接followup |
+| VAR-W01 | 2026-10-07T20:51:17.000Z | 2026-10-07T20:56:31.000Z | 审查 | 固定core源码/局部结果等待独立审结；真实PG和装配另有前置 | review-ready.json/直接followup |
 
 聚合登记：root已提交新增任务登记请求，当前只确认本status可被权威parser读取，不冒实际dashboard已reload。
+
+本次窄修段：2026-10-07T21:07:19.000Z–21:17:19.000Z，4MiB已计入经理组合；只恢复工具权限错误码合同、追加直接调用回归。原PG/公开装配仍未验，旧证据/gate不改。

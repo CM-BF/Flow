@@ -30,7 +30,8 @@ export async function changePluginRuntime(pool: Pool, registrationId: string, in
     const current = await readSnapshot(client, registrationId);
     if (input.change.kind === 'enable') {
       const material = await installedMaterial(client, current, input.change.materialInstallOperationId, input.change.storeId, 'either');
-      if (!current.grants.includes(material.manifest.kind)) throw new HttpError(403, 'plugin_execution_grant_required', 'Current permission for the installed execution kind is required.');
+      if (material.manifest.kind === 'tool') requireToolPermission(current);
+      else if (!current.grants.includes('verifier')) throw new HttpError(403, 'plugin_verifier_grant_required', 'Current verifier permission is required.');
       if (material.manifest.kind === 'verifier') assertTrustedVerifier(algorithms, { artifactSha256: material.artifact.sha256, treeDigest: material.treeDigest, hostApiMajor: 1, algorithmId: 'flow.json-object.required-keys', algorithmVersion: 1 });
       if (current.configurationStatus !== 'ready') throw new HttpError(409, 'plugin_configuration_incomplete', 'Complete public configuration before enabling.');
     }
@@ -88,7 +89,8 @@ export async function authorizePluginPhase(pool: Pool, runnerId: string, input: 
       || binding.inputDigest !== sha256(task.submission.prompt)) throw new HttpError(409, 'plugin_binding_mismatch', 'The frozen binding does not match this attempt.');
     await loadInstallation(client, binding.registrationId, true);
     const current = await readSnapshot(client, binding.registrationId);
-    if (!current.grants.includes(kind)) throw new HttpError(403, 'plugin_execution_grant_required', 'Current execution permission is required.');
+    if (kind === 'tool') requireToolPermission(current);
+    else if (!current.grants.includes('verifier')) throw new HttpError(403, 'plugin_verifier_grant_required', 'Current verifier permission is required.');
     if (kind === 'verifier') {
       const qualified = await claimVerificationReference(client, task, binding, { bindingProtocol: 'flow.plugin-verification.v1', storeId: binding.storeId, hostApiMajor: 1, algorithms: [{ id: 'flow.json-object.required-keys', version: 1 }] });
       assertTrustedVerifier(algorithms, { artifactSha256: binding.artifact.sha256, treeDigest: binding.treeDigest, hostApiMajor: 1, algorithmId: qualified.verification.rule.algorithmId, algorithmVersion: qualified.verification.rule.algorithmVersion });

@@ -1,12 +1,14 @@
 import { beforeEach, expect, test, vi } from 'vitest';
 import type { PoolClient } from 'pg';
-const state = vi.hoisted(() => ({ current: { id: 'project', workspace_id: 'personal', revision: 3 }, lock: vi.fn(), recheck: vi.fn(), command: vi.fn(), accept: vi.fn(), graph: vi.fn(), runtime: vi.fn(), snapshot: vi.fn(), installation: vi.fn(), material: vi.fn(), binding: vi.fn() }));
+const state = vi.hoisted(() => ({ current: { id: 'project', workspace_id: 'personal', revision: 3 }, lock: vi.fn(), recheck: vi.fn(), command: vi.fn(), accept: vi.fn(), graph: vi.fn(), runtime: vi.fn(), snapshot: vi.fn(), installation: vi.fn(), material: vi.fn(), binding: vi.fn(), owned: vi.fn(), readBinding: vi.fn(), executionKind: vi.fn() }));
 vi.mock('../projects/storage.js', () => ({ loadProject: state.lock }));
-vi.mock('./verification.js', () => ({ assertSourceProject: state.recheck }));
+vi.mock('./verification.js', () => ({ assertSourceProject: state.recheck, bindingExecutionKind: state.executionKind, claimVerificationReference: vi.fn() }));
 vi.mock('../tasks.js', () => ({ command: state.command, acceptTask: state.accept }));
 vi.mock('../projects/commands.js', () => ({ applyProjectCommand: state.graph }));
 vi.mock('../plugins/storage.js', () => ({ readSnapshot: state.snapshot, loadInstallation: state.installation }));
-vi.mock('./store.js', () => ({ latestRuntimeRevision: state.runtime, installedMaterial: state.material, recordBinding: state.binding, assertPluginHost: vi.fn(), assertTrustedPluginHost: vi.fn() }));
+vi.mock('./store.js', () => ({ latestRuntimeRevision: state.runtime, installedMaterial: state.material, recordBinding: state.binding, readBinding: state.readBinding, assertPluginHost: vi.fn(), assertTrustedPluginHost: vi.fn() }));
+vi.mock('../runners.js', () => ({ ownedAttempt: state.owned }));
+import { authorizePluginPhase, changePluginRuntime } from './commands.js';
 import { sha256 } from '../database.js';
 import { admitPluginVerification, lockSourceProject } from './verification-admission.js';
 beforeEach(() => { vi.clearAllMocks(); state.lock.mockResolvedValue(state.current); });
@@ -46,4 +48,26 @@ test('VAR admission creates exactly one task and project binding on the receipt 
   expect(state.graph.mock.calls[0]![0]).toBe(client); expect(state.graph.mock.calls[0]![2].change.taskId).toBe('new-task');
   expect(state.binding.mock.calls[0]![0]).toBe(client);
   expect(client.query).toHaveBeenCalledWith(expect.stringContaining('INSERT INTO flow.plugin_verification_references'), expect.arrayContaining(['source', 'attempt', 'artifact', 'project']));
+});
+
+test.each(['tool', 'verifier'] as const)('VAR repair %s phase preserves its public permission error without writing a receipt', async kind => {
+  const client = { query: vi.fn(async (_sql: string) => ({ rows: [{ live: true }] })), release: vi.fn() };
+  const pool = { connect: async () => client };
+  state.owned.mockResolvedValue({ task: { id: 'task', status: 'running', submission: { prompt: '{}' } }, attempt: { id: 'attempt', owner_version: 1, completed_at: null, lease_expires_at: '2099-01-01' } });
+  state.readBinding.mockResolvedValue({ bindingId: 'binding', invocationId: 'invocation', targetRunnerId: 'runner', inputDigest: sha256('{}'), registrationId: 'registration' });
+  state.executionKind.mockResolvedValue(kind); state.snapshot.mockResolvedValue({ grants: [] });
+  const args = [pool as never, 'runner', { attemptId: 'attempt', ownerVersion: 1, bindingId: 'binding', invocationId: 'invocation', phase: 'load' as const }, 'stable-key'] as const;
+  const request = kind === 'tool' ? authorizePluginPhase(...args) : authorizePluginPhase(...args, 'verifier');
+  await expect(request).rejects.toMatchObject({ status: 403, code: kind === 'tool' ? 'plugin_tool_grant_required' : 'plugin_verifier_grant_required' });
+  expect(client.query).toHaveBeenCalledWith('ROLLBACK'); expect(client.release).toHaveBeenCalledTimes(1);
+  expect(client.query.mock.calls.some(([sql]) => String(sql).includes('INSERT'))).toBe(false);
+});
+test('VAR repair tool enable retains its existing permission error before revision or binding writes', async () => {
+  const client = { query: vi.fn() };
+  state.command.mockImplementation(async (_pool, _namespace, _key, _input, apply) => ({ value: await apply(client), replayed: false }));
+  state.installation.mockResolvedValue({ revision: 2 }); state.snapshot.mockResolvedValue({ grants: [], configurationStatus: 'ready' });
+  state.material.mockResolvedValue({ manifest: { kind: 'tool' } });
+  await expect(changePluginRuntime({} as never, 'registration', { expectedRevision: 2, reason: 'Enable', change: { kind: 'enable', materialInstallOperationId: 'install', targetRunnerId: 'runner', storeId: 'store' } }, 'stable-key', () => true))
+    .rejects.toMatchObject({ status: 403, code: 'plugin_tool_grant_required' });
+  expect(client.query).not.toHaveBeenCalled();
 });
