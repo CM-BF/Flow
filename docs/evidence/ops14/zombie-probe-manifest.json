@@ -1,0 +1,86 @@
+{
+  "at": "2026-10-07 02:32:36 UTC",
+  "sourceTarget": "14e8fb79c51d59cf0ad7048b077ccd745a1e1ca9",
+  "runCount": 1,
+  "caseCount": 2,
+  "caseComplete": 2,
+  "entryExit": 0,
+  "childExit": 0,
+  "elapsedMs": 58,
+  "newProductChanges": 0,
+  "historicalGroupsObserved": 0,
+  "evidenceBindings": [
+    {
+      "path": "docs/evidence/ops14/zombie-group-probe.py",
+      "bytes": 10452,
+      "sha256": "5a65a698534e74089f9d7da57ff8ab2deeccd1c32349625c8363ce081a436549",
+      "fixedRef": "14e8fb79c51d59cf0ad7048b077ccd745a1e1ca9"
+    },
+    {
+      "path": "docs/evidence/ops14/zombie-probe-proposal.json",
+      "bytes": 3805,
+      "sha256": "f17eeaa29bdeee72e8dc44ba1f3100fa377ff1a794cc4c3ac00034399e259ccc",
+      "fixedRef": "14e8fb79c51d59cf0ad7048b077ccd745a1e1ca9"
+    },
+    {
+      "path": "docs/evidence/ops14/zombie-probe-permit.json",
+      "bytes": 873,
+      "sha256": "46a8d76526be20ec7cdbcd26ec7e56565b25bc3a574c1a21527c4e99b00a98a5"
+    },
+    {
+      "path": "docs/evidence/ops14/zombie-probe-reservation.json",
+      "bytes": 340,
+      "sha256": "779cac4f2e59145e20cf2d8109c2433bb3cd3bda25e8b657727f6c3fac0210a5"
+    },
+    {
+      "path": "docs/evidence/ops14/zombie-probe-stdout.log",
+      "bytes": 3024,
+      "sha256": "8ace21100723c3fef2d5f88fcb04f06d5bcae3f4a596ff955294d0f35f85d61f"
+    },
+    {
+      "path": "docs/evidence/ops14/zombie-probe-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/ops14/zombie-probe-result.json",
+      "bytes": 660,
+      "sha256": "84a56732bfa2105cb512e08fb77f71dc024b336e8bbd9440b144c733111feb02"
+    },
+    {
+      "path": "docs/evidence/ops14/zombie-probe-tool-receipt.json",
+      "bytes": 720,
+      "sha256": "68e69e6157e6fab587345cb61d367464518dbfd69d664bce591a0a06a40564b2"
+    },
+    {
+      "path": "docs/evidence/ops14/zombie-probe-conclusion.md",
+      "bytes": 1812,
+      "sha256": "d8d45911d7626eebd4f762f9714490ededc34e39a15c832bb60a436a8afe2169"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "fixedRef": "14e8fb79c51d59cf0ad7048b077ccd745a1e1ca9"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "bytes": 12306,
+      "sha256": "494635e4ed3e24e89f565f7d53a74b807565a1020a4c4d7d93a18b60d7451f8d",
+      "fixedRef": "14e8fb79c51d59cf0ad7048b077ccd745a1e1ca9"
+    },
+    {
+      "path": "docs/evidence/ops14/interface.md",
+      "bytes": 3614,
+      "sha256": "92d1ea17e85cbc353716331c127981fe5cd6f084c4759aad9b984cf83ab9c369",
+      "fixedRef": "14e8fb79c51d59cf0ad7048b077ccd745a1e1ca9"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/center-recovery/supervise.py",
+      "bytes": 2740,
+      "sha256": "4a775b680fc5b358490c744af66311d8d1ba1169216cac0eeed1b23741a2fcda",
+      "fixedRef": "14e8fb79c51d59cf0ad7048b077ccd745a1e1ca9"
+    }
+  ],
+  "scopeLimit": "own child observations only; result review pending; no product/consumer reruns"
+}

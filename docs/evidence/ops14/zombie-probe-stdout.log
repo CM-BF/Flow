@@ -1,0 +1,131 @@
+{
+  "system": {
+    "sysname": "Darwin",
+    "release": "25.6.0",
+    "version": "Darwin Kernel Version 25.6.0: Fri Jul 31 19:18:53 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T6031",
+    "machine": "arm64"
+  },
+  "cases": [
+    {
+      "case": "leader-only",
+      "ownedLeader": 70971,
+      "stages": [
+        {
+          "name": "live",
+          "waitid": null,
+          "killpg0": {
+            "result": "success",
+            "errno": null
+          }
+        },
+        {
+          "name": "exited-unreaped",
+          "waitid": {
+            "pid": 70971,
+            "code": 1,
+            "status": 0
+          },
+          "killpg0": {
+            "result": "error",
+            "errno": 1,
+            "type": "PermissionError"
+          }
+        },
+        {
+          "name": "reaped",
+          "waitid": "reaped-own-child",
+          "killpg0": {
+            "result": "error",
+            "errno": 3,
+            "type": "ProcessLookupError"
+          }
+        }
+      ],
+      "primaryFailure": null,
+      "cleanup": {
+        "leaderReaped": true,
+        "waitStatus": 0,
+        "groupAfter": {
+          "result": "error",
+          "errno": 3,
+          "type": "ProcessLookupError"
+        },
+        "observations": [
+          {
+            "result": "error",
+            "errno": 3,
+            "type": "ProcessLookupError"
+          }
+        ]
+      },
+      "ready": {
+        "pid": 70971,
+        "pgid": 70971,
+        "sid": 70971,
+        "descendant": null
+      }
+    },
+    {
+      "case": "live-descendant",
+      "ownedLeader": 70972,
+      "stages": [
+        {
+          "name": "live",
+          "waitid": null,
+          "killpg0": {
+            "result": "success",
+            "errno": null
+          },
+          "descendantAcknowledged": true
+        },
+        {
+          "name": "exited-unreaped",
+          "waitid": {
+            "pid": 70972,
+            "code": 1,
+            "status": 0
+          },
+          "killpg0": {
+            "result": "success",
+            "errno": null
+          },
+          "descendantAcknowledged": true
+        },
+        {
+          "name": "reaped",
+          "waitid": "reaped-own-child",
+          "killpg0": {
+            "result": "success",
+            "errno": null
+          },
+          "descendantAcknowledged": true
+        }
+      ],
+      "primaryFailure": null,
+      "cleanup": {
+        "leaderReaped": true,
+        "waitStatus": 0,
+        "descendantPipeEOF": true,
+        "groupAfter": {
+          "result": "error",
+          "errno": 3,
+          "type": "ProcessLookupError"
+        },
+        "observations": [
+          {
+            "result": "error",
+            "errno": 3,
+            "type": "ProcessLookupError"
+          }
+        ]
+      },
+      "ready": {
+        "pid": 70972,
+        "pgid": 70972,
+        "sid": 70972,
+        "descendant": 70973
+      }
+    }
+  ],
+  "limits": "No inference from EPERM to absent; no observation of preexisting groups; no positive group signals."
+}
