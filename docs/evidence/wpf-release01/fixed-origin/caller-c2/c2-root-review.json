@@ -1,0 +1,125 @@
+{
+  "at": "2026-10-07T11:38:44.969840+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "decision": "APPROVED_C2_SOURCE_AND_REAL_HELPER_DELTA_ONLY",
+  "ownerHead": "933c7728af68984f83ffb883cd9e2fc4658b3df5",
+  "implementation": "9658a6b763de69038778de1b0c16de64ff824c75",
+  "previousReview": {
+    "path": "/private/tmp/root-release-c1-caller-review-20261007.json",
+    "bytes": 6792,
+    "sha256": "a5659ee408faf7e1b2c548c79e84fcf91ac64259a64f3cdc34aa71d4da7bc9e7"
+  },
+  "fixedPacket": [
+    {
+      "path": "/private/tmp/rel01-c2/handoff.json",
+      "bytes": 3375,
+      "sha256": "216ac14d86267fc22ba8c1aec461813603bca4fccbbd8f7b2062ad6fd4f36ae6"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/manifest.json",
+      "bytes": 4068,
+      "sha256": "c36a44a6d3eb65811a8cdc5778e0165beb233f6e9fec72d714e5c9fec020fcf3"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/binding.json",
+      "bytes": 38718,
+      "sha256": "d4df9d65f92642237f8ab15a09d3dcc257857699640e22f9510d1d2303985d0f"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/supervisor.py",
+      "bytes": 18546,
+      "sha256": "3a9d66e5242a449e47654b25bce458521aab63d8556815d2efe16d54160f3ad3"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/worker.mjs",
+      "bytes": 5411,
+      "sha256": "5800155a7b5c680cbf580efa60fd311f1f8e13357301fc487d511773560b9751"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/inputs.json",
+      "bytes": 6894,
+      "sha256": "477c61845b1f8abebdc8a8d5f6b3089c447b9e721f1255c511829a01488dcce2"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/c1-c2.diff",
+      "bytes": 4662,
+      "sha256": "fb7b9a66b30a0173378e1dff56ea47665beeb7ccd8bab93d7adb3586c8681c8b"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/scratch-lifecycle-check.py",
+      "bytes": 4284,
+      "sha256": "5efcf4bfe75d267ea46667753e955299b574316c0aa4605b36c7032b24fc9577"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/check-receipt.json",
+      "bytes": 1631,
+      "sha256": "63e43a740f52d2df78bcf08e5ada7d58ebb737594601d049dfe2c0c384c08b78"
+    }
+  ],
+  "checked": {
+    "scope": "Full c1 caller review reused, c2 entire source diff and local entry inspected;71 runtime/dependency pins and14 final manifest files match actual bytes; no product/runtime rerun.",
+    "sourceDelta": "Only this-run scratch identity creation/cleanup helpers and callsites; worker/inputs/measurement helper unchanged.",
+    "localRaw": "All five receipt raw hashes/bytes verified; stdout JSON matches local result; outer exit0 agrees with actual outer start/end.",
+    "scratchLstat": "Exact local scratch /private/tmp/rel01-c2-scratch-guj7rfp8 now ENOENT, matching dev16777234/ino124099281 at create.",
+    "connections": "Configured conservative12 = server8 + independent pg-boss3 + one sequential fixture pool. Fixed artifact sources are now explicit pins; useListenNotify=false. Not measured peak.",
+    "admission": "Latest candidate floor6190268416 is minimum; d01 must fresh-check combined actual declarations and retained/unknown resources, using any larger new floor."
+  },
+  "resolvedFindings": [
+    {
+      "id": "REL-C1-R1",
+      "resolution": "Exclusive mkdir records dev/inode/uid and createdThisRun; preexisting/unowned/replaced/unconfirmed resources KEEP. Exact owned scratch removal requires confirmed groups and measurement.",
+      "actualValidation": "Three actual helper scenarios PASS: preexisting sentinel kept, current exact owned removed, replacement and moved original kept."
+    },
+    {
+      "id": "REL-C1-R2",
+      "resolution": "Caller binding/README/handoff now declare separate pg-boss3 and conservative12 slots; no fixed backend change."
+    }
+  ],
+  "localActual": {
+    "outerExit": 0,
+    "outerMs": 243.295908,
+    "innerMs": 54.48595900088549,
+    "chargeMs": 244,
+    "casesPassed": 3,
+    "stdoutBytes": 811,
+    "stderrBytes": 0,
+    "bothEOF": true,
+    "children": 0,
+    "pg": 0,
+    "chrome": 0,
+    "network": 0,
+    "parentMainCalled": false,
+    "pgidBoundary": "21202 inherited tool shell group; never signalled and not described as owned process group."
+  },
+  "findings": [],
+  "nativeBoundary": {
+    "boundary": "native-chrome-sibling-fixed-http-proxy-without-custom-outer-write-or-egress-sandbox",
+    "decision": "ACCEPTED_AS_FIXED_SOURCE_DESIGN",
+    "basis": [
+      "Existing official Chrome remains its own native sandboxed sibling; absence of custom outer write/egress sandbox is explicitly disclosed. Exact HTTP proxy plus loopback bypass removal and before-credential absolute-form canary are the reviewed intended network boundary, not an OS-enforced Chrome egress guarantee.",
+      "Node worker custom sandbox, explicit deny of personal61228, fixed proxy route, allowlisted environment and removed explicit admin environment before imports are source intentions. Sandbox syntax/effect and actual handshake have not been executed.",
+      "Parent signal, wait/EOF collection and bounded stream retention preserve errors; native group close acknowledgement precedes fixture cleanup/report import. Partial startup can leave marked DB KEEP and must not be described as complete cleanup.",
+      "Actual outer exit plus fixed terminal/result/budget/raw and3 verified compatibility reports remain required. Historical harness source/type approvals remain; no old tests are reopened."
+    ],
+    "limits": "Native Chrome uses its normal internal sandbox; no custom outer OS write/egress sandbox. Proxy routing/canary and argument checks are application controls, not complete OS egress enforcement. Actual deferred launch, proxy, CDP and cleanup remain NOT_RUN.",
+    "acceptedFor": "Only fixed c2 parent3a9d/worker5800 with existing exact fixture and fixed6c artifact/three retained Apps. No general credential/profile/sandbox exception."
+  },
+  "remaining": [
+    "No heavy/PG/browser gate granted by this review. d01 must issue fresh single-use180s total/30s cleanup admission after current actual holder returns.",
+    "Binding native approval attachment, reviewed state and current clean head may be updated as metadata only; caller/worker/product hashes must remain exact.",
+    "Three retained App compatibility reports and independent real browser cookie/CSRF probe are still NOT_RUN.",
+    "Final6c backend does not include new center lateLogout fix; do not claim this compatibility run closes that race.",
+    "Actual terminal requires real outer exit0, complete raw/EOF/drop0, owned groups absent, exact scratch cleanup, marked DB normal DROP/0conn/absence and proxy/center close. Unknown means KEEP/failure, not success."
+  ],
+  "quality": {
+    "at": "2026-10-07T11:38:44.969840+00:00",
+    "method": "Applied existing local clean-code: narrow ownership helpers, explicit identity/error states, no new generic supervisor; meaningful real lifecycle delta tests only.",
+    "findingsFixed": 2,
+    "unresolvedSourceBlocking": 0
+  }
+}

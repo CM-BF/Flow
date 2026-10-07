@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:36:43.807Z |
+| 最近更新时间 | 2026-10-07T11:40:37.791Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -19,11 +19,11 @@
 | 实现范围 | apps/web/test/web-release-compatibility.fixture.ts, apps/web/test/web-release-compatibility.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 最终后台与公开会话策略已核齐；调用器已修复临时目录清理边界，三项局部检查通过，三App兼容尚未实跑 |
-| 下一可用交付 | 集中独审受控调用器与完整输入包，再安排三份保留App的真实兼容验证 |
+| 当前产出 | 最终后台与公开会话策略已核齐；调用器已修复临时目录清理边界，三项局部检查与调用器独审通过，三App兼容尚未实跑 |
+| 下一可用交付 | 按真实资源窗口完成三份保留App的兼容验证与独立Cookie补证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED（仅两harness源码）；f3d源审与9658 type-only修正已独立接受，实际compat未验 |
+| Review | [review.md](review.md)，APPROVED（两harness源码及固定c2调用器准备范围）；c2两finding关闭、3局部checks独立接受，实际compat未验 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史完整任务开工未重建；本次后继实际开工 2026-10-07T10:01:18.415296+00:00，见 [segment-start](../../docs/evidence/wpf-release01/fixed-origin/segment-start.json) |
@@ -35,7 +35,7 @@
 | RELEASE01-02 | completed | w01_owner | [历史两App真实兼容](../../docs/evidence/wpf-release01/README.md) |
 | RELEASE01-03 | completed | w01_owner | [历史7805主线接收](../../docs/evidence/wpf-release01/main-source-observation.json) |
 | RELEASE01-04 | completed | w01_owner | [固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，f3d源审及9658类型delta独立接受，strict复验PASS |
-| RELEASE01-05 | pending | w01_owner | [受控caller/完整输入准备](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)已固定，[c2修复与三场景actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md)已固定；native边界/预算待复审准入；三App四项compat仍NOT_RUN，首红保留 |
+| RELEASE01-05 | pending | w01_owner | [受控caller/完整输入准备](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)已固定，[c2修复与三场景actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md)已固定；native固定边界已独立接受，实际预算/窗口待fresh准入；三App四项compat仍NOT_RUN，首红保留 |
 | RELEASE01-06 | pending | w01_owner | 后继最终delta独审/主线接收；个人发布仍由原发布operator执行 |
 
 ## 等待记录
@@ -58,7 +58,7 @@
 
 [type-only修正独审](../../docs/evidence/wpf-release01/fixed-origin/types-first-root-review.json)已接受。原20s首红1170ms CLOSED；新独立10s段actual parent0/compiler0，晚903.769ms按904ms记，双EOF/drop0/groupAbsent/scratchAbsent。[必要复验独审](../../docs/evidence/wpf-release01/fixed-origin/types-second-root-review.json)、[原始结果](../../docs/evidence/wpf-release01/fixed-origin/types-second/result.json)与[外层退出](../../docs/evidence/wpf-release01/fixed-origin/types-second/outer-observation.json)固定；未用9096ms不触发再测。仅严格类型范围PASS，无产品import/PG/Chrome/HTTP/build/provider。该时点四scope停止写入、claim38b9v1保留；当时tuple与caller尚缺。公开设置与tuple现已供应，见当前入口准备。
 
-## 当前入口准备
+## 历史 c1 入口准备（当前c2结论见下）
 
 2026-10-07T11:15:10.520Z fresh 确认原38b9 v1 exact4 / owner / branch / 无overlap，接续原Release树0482 clean。最终后台6c0fdcda / artifact7d1a3928 / Snq8cV已只读定位，公开cookieOrigin与trustedOrigins固定http://127.0.0.1:61228，authEpoch=svc09-b2b-20261007，规范化policy SHA81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638核同。共享供应不再阻塞。
 
@@ -66,6 +66,10 @@ owned Chrome/HTTP proxy/backend生命周期caller与完整输入现已形成固�
 
 本批安全点：caller PREPARED/native approval=null；新180s含30s清理只是proposal，64MiB scratch/8MiB retained/1MiB metadata与PG128MiB规划估算均待真实组合准入。未运行Node/Chrome/PG/HTTP、未采空间。四scope正常seal后STOP、claim38b9v1保留；TMP最终HEAD绑定不触发重复项目提交。
 
-## 当前 c2 调用器修复安全点
+## 历史 c2 调用器修复安全点（独审前）
 
 2026-10-07T11:36:43.807Z：独立c1审查指出preexisting scratch误删路径及pg-boss额外3连接；原c1完整保留。[原审](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/c1-root-review.json)与[c2精确源/实际](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/source-pins.json)分开。仅TMP父新增exclusive创建/dev+ino+uid身份守卫，旧目录或替换目录KEEP；真实helpers三场景一次3/3 PASS，outer0/charge244ms/精确TMP清理。新15s局部段关闭，未用14756ms不转重验证信用。池配置上限校准12=app8+boss3+fixture1、notifyfalse；不是实际并发峰值。候选floor按管理新组合6190268416B，actual仍须更高完整sum；180s/64MiB/8MiB为未授运行proposal。产品两harness/type/raw不改，c2 native复审待完成；本批seal后STOP原四scope保claim。
+
+## 当前 c2 集中独审与停写
+
+2026-10-07T11:40:37.791Z：[c2集中独审](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/c2-root-review.json)关闭两finding、0blocking；[固定native边界](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/c2-native-boundary.json)仅接受parent3a9d/worker5800源设计。真实helper 3/3、outer0、244ms与精确TMP清理已独立核验，无新检查。原生Chrome保内建sandbox，但无自定义外层OS写入/egress限制，应用代理/canary不冒OS强隔离。三App、独立Cookie补证、完整PG/Chrome生命周期仍NOT_RUN；6c后台不含后继lateLogout修复。TMP仅reviewed/source/native/最终HEAD与manifest重绑，无gate、无运行预约。唯一管理d01按完整fresh组合安排180s含30s清理，12连接为配置上限、非实测。正常push/clean后全四scope STOP，claim38b9v1保留。
