@@ -1,3 +1,14 @@
+# K01-06 首次PG失败结果与后继源码缺口（当前）
+
+状态：CHANGES_REQUESTED
+Review target commit：a82e44be17a7a31b051bf98400d9553513600542
+
+2026-10-07 16:49 UTC，db_transaction_owner独立只读核固定结果dd701f4e08258164d35c68d4c289531173300660：FAILURE_RESULT_FIDELITY_ACCEPTED，17source/8raw/12544B全符。实际FAILED/HOLD不改；owned计算组已reap/finalabsent/EOF，数据库连接与清理结果尚未知，禁止FULLRETURN。
+
+新增P2 K01-PG-01：owned-database.ts:93 动态import位于已创建/identity后且不受work bounded保护；若不settle，finally/40s cleanup无法开始。此为源码条件性缺口，不证明本轮实际卡于此；没有阶段回执，factory/listen/measure/cleanup仍未排除。仅后继合法source段修复，旧a82批准保留其历史范围，本次新finding不掩盖。
+
+另按GO/Mika输入保留同一K01后继：有限phase/首错/已完成结果持久化；现SELECT elapsed包含requireWork/budget.work观察者扫描/序列化，不称PG SQL本体时延，后续分别记录SQL execution、客户端端到端及observer开销。EXPLAIN ANALYZE TIMING OFF另列。本轮无可用measure结果，不产生新性能结论。完整[窄审记录](../../docs/evidence/k01/query-pg-first-independent-review.json)。恢复方案只读审毕不等执行许可；原FAIL/raw/manifest不改。
+
 # K01-06 最终窄复审（当前）
 
 状态：APPROVED

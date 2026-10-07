@@ -1,0 +1,48 @@
+{
+  "reviewedAt": "2026-10-07T16:49:00Z",
+  "timePrecision": "minute from reviewer message",
+  "recordedAt": "2026-10-07T16:50:50.636078+00:00",
+  "reviewer": "db_transaction_owner (Mika delegated independent read-only reviewer)",
+  "target": "dd701f4e08258164d35c68d4c289531173300660",
+  "executionHead": "969b25b49b646d1f09c6059621dbc9b88aa8a9a3",
+  "implementationTarget": "a82e44be17a7a31b051bf98400d9553513600542",
+  "decision": "FAILURE_RESULT_FIDELITY_ACCEPTED",
+  "manifestSha256": "6b670247e64b147e2b4338286212593fda9bdb8bf49d9322c7af78dc8e0f99d0",
+  "bindings": {
+    "source": 17,
+    "rawEvidence": 8,
+    "rawEvidenceBytes": 12544,
+    "gitWorkingBytes": "all matched"
+  },
+  "facts": [
+    "113081ms FAILED/HOLD and raw0 are accurate",
+    "82159 reaped exit-15; final owned group absent; merged EOFtrue, observed=retained=0",
+    "only SIGTERM sent; no STOP_UNKNOWN/SIGNAL_UNKNOWN/capture fault",
+    "original resourceConfirmed=false remains immutable; compute group closure does not prove DB connections or cleanup"
+  ],
+  "findings": [
+    {
+      "id": "K01-PG-01",
+      "severity": "P2",
+      "path": "experiments/knowledge-search/owned-database.ts",
+      "line": 93,
+      "issue": "dynamic import occurs after database identity receipt but outside work deadline; a nonsettling import prevents run finally/cleanup; outer supervisor TERM remains",
+      "observedRootCause": "UNKNOWN: no durable phase record, later factory/listen/measure/cleanup not excluded",
+      "resolution": "future legally scoped source change and meaningful isolated validation; no fix/rerun in consumed window"
+    }
+  ],
+  "followupInputs": [
+    {
+      "source": "GO via Mika after this review",
+      "scope": "same K01 future repair",
+      "issue": "run writes result only after measure and close; retain bounded phase/first failure/partial-result facts"
+    },
+    {
+      "source": "GO via Mika",
+      "issue": "SELECT sample elapsed includes requireWork/budget.work filesystem traversal and result serialization before query invocation; must label client+observer cost, distinguish SQL execution vs end-to-end vs observer; EXPLAIN ANALYZE TIMING OFF separately"
+    }
+  ],
+  "recoverySuggestion": "At most one admin to postgres, exact name parameter, fresh oid/owner/marker and pg_stat_activity count/bounded rows, query text excluded; finally known pool close and <=10s OPS14; no DROP/signal/CREATE/COMMENT; needs separate explicit execution authorization",
+  "reviewerActivity": "0 engineering/import/PG/writes/KEEP access",
+  "limits": "evidence fidelity approval only; actual diagnosis failed and root cause unproven"
+}

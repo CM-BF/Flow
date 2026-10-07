@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 16:48 UTC |
+| 最近更新 | 2026-10-07 16:50 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -32,7 +32,7 @@
 | 下一可用交付 | 定位本次未完成阶段并在明确授权后归还保留数据库 |
 | 当前阻塞 | ACTIVE: 本次数据库清理结果未知，必须保留；Mika协调原身份恢复与后继验证 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；a82e44be17a7a31b051bf98400d9553513600542 源/纯结果APPROVED；真实PG失败证据待独审 |
+| Review | [review.md](review.md)；a82e44be17a7a31b051bf98400d9553513600542 源/纯结果APPROVED；真实PG失败证据FIDELITY_ACCEPTED；新P2动态import生命周期待修 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -126,3 +126,5 @@
 2026-10-07T16:44:52.237894+00:00: actual候选获Mika/d01唯一NEXT；R3 FULLRETURN16:36:44.486680，本组ordinary全drain。freshclaim30965v2/17source/27runtime/245fixedsource/20alias、input SHAfe3db093均一致；freshfree20096720896B≥18129092608B。授权单admin probe16:44:19.265684–.361814闭合，PG max100/占用9/保留3/可用88≥18+16；0建库。首次配置来源路径读取失败在supervise前，0child/0PG，改从固定Git取同已审来源。新permit仅一次120s主体、70work40cleanup10receipt；actual START由entry单ledger记录，不把本次准入壁钟算入或延长主体。旧closed permit/KEEP均不改。
 
 2026-10-07T16:48:09.283948+00:00: 首次PG实际终态FAILED/HOLD，16:44:58.670157→16:46:51.872606Z/113081ms；PID82159 exit-15/finalabsent、work deadline+SIGTERM、resourceConfirmed=false，不能FULLRETURN。自有DB flow_k01_query_2d8516c466264673bb3417de0c349ec1 OID1336476有CREATE ACK/marker身份但无cleanup/result，strict KEEP；无第二探针/删除/重跑。原raw0B/ledger保留，inputafter matched/source未变。W01 ordinary actual重叠事实已记录，不称CPU排他。唯一[失败证据](../../docs/evidence/k01/query-entry-pg-first/manifest.json)；实际金样本/plan/latency/DBsize均UNKNOWN，K01-06继续开放。主体窗口已消费，提交后仅等Mika原身份处理，队列任务仍STOP。
+
+2026-10-07T16:50:50.636078+00:00: db_transaction_owner 16:49窄审核dd701原件忠实，17源/8证据12544B全部匹配，原FAIL/HOLD/raw未改。K01-PG-01新P2为动态import在DB身份后且未受work deadline约束的条件性缺口，真实卡点UNKNOWN；后继有限阶段持久事实及观察开销拆分已纳本K01，未扩task或数据。恢复方案仅静态提交，当前0新增PG/信号/drop，等待Mika明确有界恢复授权。
