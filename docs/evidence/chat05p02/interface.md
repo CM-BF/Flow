@@ -6,7 +6,7 @@
 
 先交受现有 owner/browser 鉴权的 descriptor、分页 reader 与 factory 033 挂载，再交显式 runner host port；读口不等待 runtime 写权，两个阶段各有自己的已验证范围。最后用真实 factory + runRunner + 无 provider 的公开材料 fixture 证明闭环。Web/TUI 显示、真实 provider、宿主聚合容量另为原后继，不在本接线片中勾完。
 
-固定源码事实：factory `apps/server/src/index.ts` 在 105 行完成 032，155 行安装既有 authentication preHandler，176 行挂 legacy activity routes；033 和新 body routes 尚未挂载。`packages/contracts/src/runner-claim.ts` 的 `runnerIdentitySchema` 是 strictObject，不能往原 identity 响应增加字段破坏旧客户端。runtime 已有唯一 admission/recovery/control/outbox；新 port 应接入这些现有流程。
+设计时固定源码事实（不代表当前接线状态）：factory `apps/server/src/index.ts` 在 105 行完成 032，155 行安装既有 authentication preHandler，176 行挂 legacy activity routes；033 和新 body routes 尚未挂载。`packages/contracts/src/runner-claim.ts` 的 `runnerIdentitySchema` 是 strictObject，不能往原 identity 响应增加字段破坏旧客户端。runtime 已有唯一 admission/recovery/control/outbox；新 port 应接入这些现有流程。
 
 ## Module / Interface / 状态所有者
 
@@ -57,22 +57,23 @@ reader 内保留原文字节最多 8MiB，加一页有界 wire/解码临时量�
 
 ## 拟精确写范围与共享依赖
 
-下表为14项设计scope；本片f51 claim初始11项已取得，随后v2加入server/index。client/index与contracts/index仍未取得；原P01 claim仅两metadata且不授本树写权。额外共享输入只按固定已审前像供给，不作本片领域更改。
+下表为原14项设计scope；实际f51 claim已到v4：v2加入server/index，v3加入复用fixture.ts，v4加入client/index和contracts/index，共15literal（13产品+2自有metadata）。三共享出口均按正式移交后写入。原P01 claim不授本树写权。10个额外共享输入只按9816/4fe固定已审前像供给，不作本片领域更改。
 
 | 拟 literal | 改动职责 / 依赖 |
 | --- | --- |
 | `packages/contracts/src/native-activity-body.ts` | 支持确认及 body descriptor/page 的公开有限 schema/type；沿原协议和常量 |
-| `packages/contracts/src/index.ts` | 单公开 export；Mika C02 持有，须正式移交 |
-| `packages/client/src/index.ts` | 薄 transport 接线到唯一 reader 与 runner support；Mika C02 持有，须正式移交 |
+| `packages/contracts/src/index.ts` | 单公开 export；C02 v15正式移出后本片v4领取，4fe前像保留 |
+| `packages/client/src/index.ts` | 薄 transport 接线到唯一 reader 与 runner support；C02 v15正式移出后本片v4领取，4fe前像保留 |
 | `packages/client/src/native-activity-body.ts` | 新 leaf：惰性 reader/唯一 codec，可先独立完成 |
 | `packages/client/src/native-activity-body.test.ts` | 新 leaf：client transport/分页/取消/完整性直接用例 |
 | `apps/server/src/index.ts` | 032 后 mount 033、既有 auth 后 mount routes/确认；X01 v12移出后本片v2领取，9816前像保留 |
 | `apps/server/src/native-activity-body/index.ts` | 窄 runner 支持确认注册，复用现迁移/读口 |
+| `apps/server/src/native-activity-body/fixture.ts` | 正式v3追加；显式production模式复用原marker/OID/有界连接观察，P01默认行为保持 |
 | `apps/server/src/native-activity-body/production.test.ts` | 新 leaf：真实 factory 自动迁移/路由/auth/跨 task 拒绝，不手动 migrate/mount |
 | `apps/runner/src/runtime.ts` | 显式选项与 execute/recovery/report 的小接缝；fresh 领取前再核 writer |
 | `apps/runner/src/native-activity-body/host.ts` | 新 leaf：专用确认、port 绑定与 body 报告前确认，接受既有 client/outbox/control ports |
 | `apps/runner/src/native-activity-body/host.test.ts` | 新 leaf：旧中心/未知/取消/缺选项与恢复直接消费者 |
-| `apps/runner/src/native-activity-body/host-production.test.ts` | 新 leaf：真实 createServer+runRunner+受控无 provider adapter 的完整公开路径 |
+| `apps/runner/src/native-activity-body/host-production.test.ts` | 新 leaf：真实runRunner与合成transport，确认/lostACK/恢复/default-off直接消费者；真实PG组合在production.test.ts |
 | `plans/chat05p02-native-activity-body-wiring` | 拟后继三件套，ID/路径须 Lead 核唯一性 |
 | `docs/evidence/chat05p02` | 后继自身输入/结果证据，不复制旧 raw |
 
@@ -83,9 +84,9 @@ reader 内保留原文字节最多 8MiB，加一页有界 wire/解码临时量�
 ## 最少验证面（进度以status和原raw为准）
 
 1. Client 纯/合成 HTTP：owner 与 browser 原 transport；未调用 reader 零正文请求；descriptor 身份及 limit/offset/hash 坏页；64KiB UTF8 跨界；receiving 尾部后追加；interrupted/legacy；取消期间和 decode 后不发布/不发下一页；完整 >2MiB bytes/digest。只测新增 reader 和直接调用，不重跑已绿领域28。
-2. Runner 直接消费者：原 `runtime-claim-recovery.test.ts` / `runtime-shutdown.test.ts` / `runtime-capacity.test.ts` 受改分支有选择覆盖；原 strict runnerIdentity 不变。新 host 用例证明 port 默认缺、旧中心 legacy、支持确认 identity/limits 错误拒绝、query 尚未开始时阻止、已有 body unknown 只恢复同 key/bytes、final 等 tail。无 provider/model；实际选中数在固定入口后记录，不预报已通过。
-3. Factory 真实 PG：唯一自有 marker DB 和原 cleanup/OPS14，自动033及幂等启动、owner/browser/runner角色、跨 task404、轻 list/SSE零 body；复用原3PG领域结果而不重复整组。动态 SQL、实际 import/dependency 闭包纳准入；真实 PG 另排窗口。
-4. 真实无 provider 组合：新 runRunner 显式 opt-in 与实际支持确认→受控 >2MiB 公开材料→现 report/outbox→FlowClient 分页 bytes 全等；lost ACK/重启复用原 envelope、模型调用计数不增、取消后状态诚实。主线组合 noEmit 覆盖公共 exports/直接消费。
+2. Runner 直接消费者：原 `runtime-claim-recovery.test.ts` / `runtime-shutdown.test.ts` 受改分支有选择覆盖；原 strict runnerIdentity 不变。新 host 用例证明 port 默认缺、旧中心 legacy、支持确认 identity/limits 错误拒绝、query 尚未开始时阻止、已有 body unknown 只恢复同 key/bytes、final 等 tail。无 provider/model；实际选中数在固定入口后记录，不预报已通过。
+3. Factory 真实 PG：唯一自有 marker DB 和原 cleanup/OPS14，自动033及幂等启动、owner/browser/runner角色、跨 task404、轻list零body；SSE原不发送正文的既有领域路径保持，未新增浏览器测量；复用原3PG领域结果而不重复整组。动态 SQL、实际 import/dependency 闭包纳准入；真实 PG 另排窗口。
+4. 真实无 provider 组合：新 runRunner 显式 opt-in 与实际支持确认→受控 >2MiB 公开材料→现 report/outbox→FlowClient 分页 bytes 全等；lost ACK/重启复用原 envelope、模型调用计数不增、取消后状态诚实。lost ACK/重启为局部实际runtime+合成transport验证；本片两项真实PG只验证成功host路径和factory/auth，不将局部重放冒称同轮真实PG故障注入。主线组合noEmit待实际集成。
 
 读口片可先在新 leaf 完成，等待共享文件时明确接口依赖；完整 runtime 片只有真实组合证据后才可声明可开启。生产个人开通、Web/TUI 展开 UI、真实 provider、容量/保留策略均不被本提案或领域批准覆盖。实际时间/字节预算沿后继已固定必要入口复用现有 local/PG 规则，本提案不申请运行窗口。
 
@@ -93,6 +94,6 @@ reader 内保留原文字节最多 8MiB，加一页有界 wire/解码临时量�
 
 ## CHAT05P02 实施定界
 
-Lead已批准本Interface方向；fixed base9f0e916d，原P01与raw不改。初始11literal领取成功；server出口随后正式amend，两个client/contracts出口仍待交权。新增admission前确认先于claim，unknown不会落入execute普通失败分支或误报模型已执行；已开始attempt中的确认丢失沿保守lost处理。body发送/recovery前确认和admission确认分开，不改journal。reader只允许一个inflight，所有失败/取消均不提交cursor或已核材料；返回bytes独立拷贝，不能修改私有完整性状态；完整decode一次。读取端先独立完成，runtime/factory正式挂载与真实PG另按共享移交/窗口。
+Lead已批准本Interface方向；fixed base9f0e916d，原P01与raw不改。15literal已正式领取；三共享出口已接线。新增admission前确认先于claim，unknown不会落入execute普通失败分支或误报模型已执行；已开始attempt中的确认丢失沿保守lost处理。body发送/recovery前确认和admission确认分开，不改journal。reader只允许一个inflight，所有失败/取消均不提交cursor或已核材料；返回bytes独立拷贝，不能修改私有完整性状态；完整decode一次。读取端先独立完成，runtime/factory正式挂载与真实PG另按共享移交/窗口。
 
-局部实际范围：fe8aa55e reader16/host5与focused types通过，累计2791ms；其后runtime/factory接缝继续实施，尚未验证。host opt-in初片显式拒绝maxConcurrentAttempts>1，待聚合保留/背压有证据再扩，不影响legacy并发。
+局部实际范围：30新distinct（client19/host纯5/实际runtime合成6）与11旧直接consumer分轮最终绿、三轮focused noEmit0，累计13818ms/raw7850B。原deadline1红保留，仅失败1+受影响host5补绿；PG2尚NOT_RUN。host opt-in初片显式拒绝maxConcurrentAttempts>1，待聚合保留/背压有证据再扩，不影响legacy并发。

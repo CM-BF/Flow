@@ -1,48 +1,120 @@
 {
-  "source": "fe8aa55e",
-  "selected": {
-    "client": 16,
-    "host": 5
-  },
-  "passed": 21,
-  "focusedTypesExit": 0,
-  "supervisedMs": 2791,
-  "rawBytes": 660,
-  "cleanup": [
+  "at": "2026-10-07T07:33:23.746630+00:00",
+  "source": "1bb025fdf4f6a6a7920b9003ce647a4c2b0dac46",
+  "newDistinct": 30,
+  "legacyDirectDistinct": 11,
+  "finalDistinctPassing": 41,
+  "focusedTypesRounds": 3,
+  "PG": "NOT_RUN; two new production composition cases",
+  "provider": 0,
+  "browser": 0,
+  "supervisedMs": 13818,
+  "rawBytes": 7850,
+  "groups": 9,
+  "allGroupsAbsent": true,
+  "allEOF": true,
+  "rounds": [
     {
-      "name": "leaf",
-      "ownedState": "absent",
-      "eof": {
-        "stdout": true,
-        "stderr": true
-      },
-      "tmpRemoved": true,
-      "finalTmpBytes": 226
+      "path": "local-run-01/result.json",
+      "startedAt": "2026-10-07T07:15:02.753858+00:00",
+      "finishedAt": "2026-10-07T07:15:05.548366+00:00",
+      "supervisedMs": 2791,
+      "commands": [
+        {
+          "name": "leaf",
+          "exit": 0,
+          "status": "PASSED",
+          "tmpRemoved": true,
+          "tmpRetained": false
+        },
+        {
+          "name": "types",
+          "exit": 0,
+          "status": "PASSED",
+          "tmpRemoved": true,
+          "tmpRetained": false
+        }
+      ]
     },
     {
-      "name": "types",
-      "ownedState": "absent",
-      "eof": {
-        "stdout": true,
-        "stderr": true
-      },
-      "tmpRemoved": true,
-      "finalTmpBytes": 0
+      "path": "local-run-02/result.json",
+      "startedAt": "2026-10-07T07:26:26.541236+00:00",
+      "finishedAt": "2026-10-07T07:26:29.970084+00:00",
+      "supervisedMs": 3426,
+      "commands": [
+        {
+          "name": "wiring",
+          "exit": 0,
+          "status": "PASSED",
+          "tmpRemoved": true,
+          "tmpRetained": false
+        },
+        {
+          "name": "types",
+          "exit": 0,
+          "status": "PASSED",
+          "tmpRemoved": true,
+          "tmpRetained": false
+        }
+      ]
+    },
+    {
+      "path": "local-run-03/result.json",
+      "startedAt": "2026-10-07T07:27:17.575451+00:00",
+      "finishedAt": "2026-10-07T07:27:20.332685+00:00",
+      "supervisedMs": 2754,
+      "commands": [
+        {
+          "name": "concurrency",
+          "exit": 0,
+          "status": "PASSED",
+          "tmpRemoved": true,
+          "tmpRetained": false
+        },
+        {
+          "name": "direct",
+          "exit": 1,
+          "status": "FAILED_OR_UNKNOWN",
+          "tmpRemoved": false,
+          "tmpRetained": true
+        }
+      ]
+    },
+    {
+      "path": "local-run-04/result.json",
+      "startedAt": "2026-10-07T07:28:13.980080+00:00",
+      "finishedAt": "2026-10-07T07:28:18.831961+00:00",
+      "supervisedMs": 4847,
+      "commands": [
+        {
+          "name": "deadline",
+          "exit": 0,
+          "status": "PASSED",
+          "tmpRemoved": true,
+          "tmpRetained": false
+        },
+        {
+          "name": "host",
+          "exit": 0,
+          "status": "PASSED",
+          "tmpRemoved": true,
+          "tmpRetained": false
+        },
+        {
+          "name": "types",
+          "exit": 0,
+          "status": "PASSED",
+          "tmpRemoved": true,
+          "tmpRetained": false
+        }
+      ]
     }
   ],
-  "limitations": [
-    "Leaf ports only: public FlowClient/runtime/factory not yet wired",
-    "No PG/provider/browser/install",
-    "Final temporary metadata sample, not a hard filesystem quota or physical peak"
-  ],
-  "quality": {
-    "at": "2026-10-07 07:16:09 UTC",
-    "skills": [
-      "find-skills",
-      "brainstorming",
-      "codebase-design",
-      "clean-code"
-    ],
-    "application": "One reader owns verification/cursor and one host owns specific confirmation. Reuse authenticated transport/outbox; single in-flight; no retries or scheduler. Removed dummy test cast; named bounded interfaces. No current unresolved leaf finding."
-  }
+  "failure": "run03 old request-deadline case expected3 timers observed4; default-off admission created an extra timeout. Fixed optional call and reused one request signal for report confirmation/report. Original red retained; run04 only failed1+affectedhost5+focused types. No assertions weakened.",
+  "retainedTmp": {
+    "path": "local-run-03/direct-tmp",
+    "bytes": 499,
+    "reason": "Original failing check caller retains its exact cache; no active process. Committed evidence, not deleted."
+  },
+  "limits": "Final metadata samples and bounded workload, not instantaneous physical peak or OS disk quota. OPS14 initial EPERM/unknown observations retained; final groups absent and EOF do not rewrite those observations."
 }
