@@ -1,3 +1,9 @@
+状态：APPROVED（仅Stage C固定准备；实际27 PG尚未运行）
+
+Review target commit: 002159b96e98187a050313f2995e199fd2900198
+
+status_read 2026-10-07T04:36:01Z 窄复审APPROVED，唯一P2关闭；[收据](../../docs/evidence/x01/enable-binding-pg-independent-review.json)。chatui原e7范围与新增scandir/DBreserve合并，不扩大到实际PG。
+
 状态：PENDING（Stage C唯一P2修复增量；实际PG未运行）
 
 Review target commit: 002159b96e98187a050313f2995e199fd2900198

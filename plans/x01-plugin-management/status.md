@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T04:29:39.080100+00:00 |
+| 最近更新时间 | 2026-10-07T04:36:52.290823+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -18,7 +18,7 @@
 | 工作树 dirty 状态 | 本段仅两test资源hooks、own fixture/caller/输入/必要局部证据和status；交审后停止写入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | A17真实包/B九入口已独审；C原types0/collect27与旧21计数FAIL保持；本段受影响types0+5资源反例通过，实际27 PG/HTTP仍NOT_RUN |
-| Review | CHANGES_REQUESTED历史e7：1P2目录预枚举；当前002159b9已修并新增反例1/1，待增量独审；真实PG NOT_OPEN |
+| Review | Stage C preparation APPROVED：status_read04:36:01固定002/3e1；实际27 PG未运行 |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
 | 实现目标 | 002159b96e98187a050313f2995e199fd2900198 |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-pg-fixture.ts, docs/evidence/x01/enable-binding-pg-vitest.config.mjs, docs/evidence/x01/enable-binding-pg-once.py, docs/evidence/x01/enable-binding-pg-caller.test.py, docs/evidence/x01/enable-binding-pg-input.json |
@@ -199,3 +199,5 @@ Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case�
 账本2026-10-07T04:27:06.483Z只读：C02 `chatui01_owner` claim8ad6536b v5 ACTIVE持main.ts/configuration.ts；CHAT05 `assignment_review` claimb447f2ce v1 ACTIVE持contracts/runner.ts和server/events.ts。runtime.ts、admission-journal.ts、runner-claim.ts、server/runners.ts、runner-claim-receipts.ts、reconciliation.ts及三共享index当次未见active writer，但X01没有它们写权；后继先各owner协调/新amend，不能沿v8扩写。现成semver7.8.5 bundle、公开enable→指定runRunner→真实包→来源/flow.text→disable旅程仍未完成。本轮只读数个直接源/现账本，无新研究包/测试/PG。
 
 2026-10-07T04:29:39.080100+00:00：准备独审发现唯一P2预枚举，source 002159b96e98187a050313f2995e199fd2900198改惰性scandir/同deadline与数量门禁，新增单例1/1、0.140859s/255B、进程与TMP全部确认清理并直交C02。7ea5固定DB/WAL128MiB保守额外reserve，实际floor覆盖且1GiB不可支出；原27、5/strict、历史FAIL均不重跑。此次状态仅准备修复待独审，不当PG已通过。
+
+2026-10-07T04:36:52.290823+00:00：准备独审通过；Web由Mika转达04:36实际0PG/Chrome/heavy并明确下一ready段交X01，SVC已闭合。当前仍0PG，Mika条件授权本owner在fresh v8/head/manifest/run absent/resource后为唯一R1生成准入。预算沿180s/2serialDB/416HTTP/TMP32MiB/raw1MiB，额外DB128MiB与C02保守18,087,936B叠加，1GiB收尾不可支出。
