@@ -38,7 +38,7 @@ export async function changePluginRuntime(pool: Pool, registrationId: string, in
       material_install_operation_id,target_runner_id,store_id,host_api_major) VALUES($1,$2,$3,$4,$5,$6,$7,$8)`,
     [registrationId, changed.snapshot.revision, current.version.id, enabled !== null, enabled?.materialInstallOperationId ?? null,
       enabled?.targetRunnerId ?? null, enabled?.storeId ?? null, enabled ? 1 : null]);
-    return { ...changed, runtime: await readRuntime(client, registrationId) };
+    return { ...changed, runtime: await readRuntime(client, registrationId, policy) };
   });
   return { ...result.value, replayed: result.replayed };
 }

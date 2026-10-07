@@ -75,7 +75,7 @@ export async function assertPluginHost(client: PoolClient, runnerId: string, sto
     throw new HttpError(409, 'plugin_host_unavailable', 'The exact tool host and material store are not registered.');
   }
 }
-export async function readRuntime(client: PoolClient, registrationId: string): Promise<PluginRuntimeView> {
+export async function readRuntime(client: PoolClient, registrationId: string, policy?: TrustedPluginHostPolicy): Promise<PluginRuntimeView> {
   const current = await readSnapshot(client, registrationId);
   const runtime = await latestRuntimeRevision(client, registrationId);
   const enabled = runtime?.desired_enabled === true;
@@ -86,8 +86,9 @@ export async function readRuntime(client: PoolClient, registrationId: string): P
     else if (!current.grants.includes('tool')) reason = 'grant-missing';
     else {
       const host = await client.query(`SELECT 1 FROM flow.plugin_runtime_hosts h JOIN flow.runners r ON r.id=h.runner_id
-        WHERE h.runner_id=$1 AND h.store_id=$2 AND h.host_api_major=1 AND NOT r.revoked AND r.maintenance_state='accepting'`, [runtime.target_runner_id, runtime.store_id]);
-      reason = host.rowCount ? 'ready' : 'host-unavailable';
+        WHERE h.runner_id=$1 AND h.store_id=$2 AND h.host_api_major=1 AND NOT r.revoked AND r.maintenance_state='accepting' AND 'fixture'=ANY(r.harnesses)`, [runtime.target_runner_id, runtime.store_id]);
+      const trusted = runtime.target_runner_id && runtime.store_id && policy?.(Object.freeze({ protocol: PLUGIN_RUNTIME_PROTOCOL, runnerId: runtime.target_runner_id, storeId: runtime.store_id, hostApiMajor: 1 })) === true;
+      reason = host.rowCount && trusted ? 'ready' : 'host-unavailable';
     }
   }
   return pluginRuntimeViewSchema.parse({ protocol: PLUGIN_RUNTIME_PROTOCOL, registrationId, currentRevision: current.revision,

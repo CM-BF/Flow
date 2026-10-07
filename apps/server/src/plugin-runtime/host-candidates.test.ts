@@ -8,6 +8,7 @@ import { readPluginHostCandidates } from './host-candidates.js';
 import { changePluginRuntime, admitPluginToolTask } from './commands.js';
 import { registerPluginRuntimeRoutes } from './routes.js';
 import { createBrowserSessionAuthentication } from '../browser-session/index.js';
+import { readRuntime } from './store.js';
 import { HttpError } from '../database.js';
 
 const mock = vi.hoisted(() => ({ snapshot: vi.fn(), install: vi.fn(), append: vi.fn(), lock: vi.fn() }));
@@ -24,8 +25,9 @@ let rows: ReturnType<typeof host>[]; let calls: { sql: string; args: unknown[] }
 const client = Object.assign(new EventEmitter(), { query: async (sql: string, args: unknown[] = []) => {
   calls.push({ sql, args });
   if (sql.includes('token_hash')) return { rows: [{ id: id(1) }], rowCount: 1 };
+  if (sql.includes("'fixture'=ANY(r.harnesses)")) return { rows: [], rowCount: rows.some(row => row.runner_id === args[0] && row.harnesses.includes('fixture')) ? 1 : 0 };
   if (sql.includes('FROM flow.plugin_runtime_hosts h')) return { rows: rows.filter(row => !args[0] || row.runner_id > String(args[0])).slice(0, Number(args[1])), rowCount: rows.length };
-  if (sql.includes('plugin_runtime_revisions')) return { rows: [{ desired_enabled: true, target_runner_id: id(1), store_id: 'known-store' }], rowCount: 1 };
+  if (sql.includes('plugin_runtime_revisions')) return { rows: [{ revision: 2, desired_enabled: true, target_runner_id: id(1), store_id: 'known-store', material_install_operation_id: materialInstallOperationId }], rowCount: 1 };
   return { rows: [], rowCount: sql.includes('plugin_runtime_hosts') ? 1 : 0 };
 }, release: () => undefined }) as unknown as PoolClient;
 const pool = { connect: (callback?: (error: Error | null, value: PoolClient, release: () => void) => void) => {
@@ -110,4 +112,13 @@ test('incompatible acceptance is rechecked even when the caller skips the candid
   mock.lock.mockResolvedValueOnce({ maintenance_state: 'accepting', harnesses: ['claude'] });
   await expect(changePluginRuntime(pool, registrationId, { expectedRevision: 2, reason: 'Enable', change: { kind: 'enable', targetRunnerId: id(1), storeId: 'known-store', materialInstallOperationId } }, 'enable-key', () => true)).rejects.toMatchObject({ code: 'plugin_host_unavailable' });
   expect(mock.append).not.toHaveBeenCalled();
+});
+
+test('runtime projection rechecks current trust and harness without rewriting old pins', async () => {
+  expect(await readRuntime(client, registrationId, () => true)).toMatchObject({ bindingAllowed: true, reason: 'ready' });
+  expect(await readRuntime(client, registrationId, () => false)).toMatchObject({ desiredEnabled: true, bindingAllowed: false, reason: 'host-unavailable' });
+  await expect(admitPluginToolTask(pool, {} as PgBoss, registrationId, { expectedRevision: 2, title: 'Task', input: 'text' }, 'read-admit-key', () => false)).rejects.toMatchObject({ code: 'plugin_host_not_trusted' });
+  rows = [{ ...host(1), harnesses: ['claude'] }];
+  expect(await readRuntime(client, registrationId, () => true)).toMatchObject({ bindingAllowed: false, reason: 'host-unavailable' });
+  expect(calls.some(c => /INSERT|UPDATE/.test(c.sql))).toBe(false);
 });
