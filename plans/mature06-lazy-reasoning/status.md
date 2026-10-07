@@ -2,10 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T09:11:41.244159+00:00 |
+| 最近更新 | 2026-10-07T09:17:00Z（静态结论分钟精度） |
 | 任务开工时间 | 2026-10-07T07:19:18Z |
 | 分支交付时间 | 2026-10-07T07:35:58.005114+00:00 |
-| 独立审查时间 | 2026-10-07T08:42:02Z（client）；PG08:13:23Z/core07:47:03Z |
+| 独立审查时间 | 2026-10-07T09:06:13Z（真实journey失败忠实性与selector修复）；既有client/PG/core各自保留 |
 | 主线集成时间 | 2026-10-07T08:54:21.385546+00:00（core/client已接；新journey未接） |
 | 部署时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -18,7 +18,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads |
 | Branch | codex/lazy-reasoning-reads |
 | Base | 9816e87a7690d7d36ac25cb8537bc9c8f41364c8 |
-| HEAD | 2949569bcac7d3b0257a0026f488f42eb6276222 client source；当前metadata HEAD由Git读取 |
+| HEAD | 47f54739f5a2cf8c356dc9ac7e232f64f637e786 selector source；新增journey源75070719；当前metadata HEAD由Git读取 |
 | 工作分支状态 | ready-for-integration |
 | 阶段 | M2 |
 | 优先级 | 3 |
@@ -27,20 +27,20 @@
 | 下一可用交付 | 主线接收新增公开客户端验收及分类修复；后续界面消费按原owner协作。 |
 | 当前阻塞 | ACTIVE：新增验收与分类修复待主线接收；当前无资源或实现阻塞。 |
 | 需用户决定 | NONE |
-| Review | client2949569b/55dc7de8于08:42:02独审APPROVED/0P1P2；旧core/PG各自批准保留 |
-| 检查 | client 7 distinct分轮：首3pass4fail→受影响5pass/2未选；strict0。旧core14/fix4/PG2各自固定且未重跑 |
+| Review | 09:06:13对09fbd42b/47f54739/a91d5b26结果忠实性及修复APPROVED/0P1P2；原actual FAIL不改绿 |
+| 检查 | 新journey实际1pass/2skipped，wrapper1；离线selector4/4。旧client7/core14/fix4/PG2各自固定未重跑 |
 | main | core/client INTEGRATED e2b16924038d1215e5f9f389710d1e9b43636d02；新journey NOT_INTEGRATED |
 | 实现目标 | 47f54739f5a2cf8c356dc9ac7e232f64f637e786 |
 | 实现范围 | apps/server/src/assistant-stream/selection-pg.test.ts; docs/evidence/mature06-lazy-reasoning/execute-pg.py; docs/evidence/mature06-lazy-reasoning/pg-gates.test.py |
 | Claim | 8436ad9e-ec1f-4cfb-b2fa-84e9f207935b v9 ACTIVE /13scope（index正式STOP移出供X01；其take前不得写） |
-| 架构影响 | branch-only：patch-select-v1协商与单projection有限selection；原持久流/授权不变。main架构更新待Lead接收，Web跨turn累计cache尚未接线。 |
+| 架构影响 | patch-select-v1与单projection有限selection已随core/client接入maine2b；新验收/分类修复待接。Web跨turn累计cache尚未接线，架构展示同步待Lead确认。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | LAZY01-01 | completed | status_read | 初始9ef8 setup/Interface与v1 receipt |
 | LAZY01-02 | completed | status_read | v2正式领取；本固定六core/三test |
 | LAZY01-03 | completed | status_read | 原14/14；P2修后4定向/strict0；07:47独审通过 |
-| LAZY01-04 | in-progress | status_read | 原PG实际2/2；公开client本次7distinct分轮/strict0已独审；单条真实client HTTP准备，UI未接 |
+| LAZY01-04 | in-progress | status_read | 原PG2/2、client7分轮；新真实journey1pass但wrapper1，离线selector4/4已独审；UI未接 |
 | LAZY01-05 | pending | status_read | NOT_INTEGRATED |
 
 唯一交审入口 docs/evidence/mature06-lazy-reasoning/review-ready.md。Dashboard来源为本WT/branch/status，actual HEAD/dirty从Git读取；等待聚合器登记展示 / PENDING_REGISTRATION/PENDING_SYNC，root已路由9ef8父链接但未读live，不猜已登记。原setup parseStatus通过只属于历史。时间与四child选中数/真实exit/EOF/精确TMP记录在local.json；0当前actual/待launch。旧S01/P08与未知资源未动。
@@ -80,3 +80,5 @@ client/index handback COMMITTED 2026-10-07T08:43:46.904Z，v8→v9/13，仅移�
 2026-10-07T09:07:13.941086+00:00 正式结果/窄修复审：chatui09:06:13对09fbd42b/47f54739/a91d5b26判FAILED_RESULT_FIDELITY_AND_SELECTOR_FIX_REVIEW_APPROVED，原selectorP2 CLOSED，0P1P2。client-pg-result-review-receipt.json为正式回执，原Vitest1pass/2skipped及wrapper1/TMPKEEP/所有raw-input字节不变。准备与结果失败纠正保留；无后继PG或cleanup授权。当前只metadata归档，13scope保留；新journey/fix主线未接，core/client已在e2b，UI/native/provider仍不在本结果范围。
 
 2026-10-07T09:11:41.244159+00:00 exactTMP后续授权收尾完成：独立client-pg-tmp-cleanup.json/tool.json，09:09:37UTC、同dev16777234/ino123682682，重核已审process/DB关闭证据后4entries138B有界清单、同identity删除/ENOENT，tool0/含收据19ms，0PG/test/新TMP。原11raw/tool1/thenKEEP逐hash不变。唯一新增窄intake为client-pg-integration-ready.md/json；newjourney/fix待接收，旧core/client已maine2b。D05已正式登记来源为root通知，live聚合尚未读取PENDING_SYNC；不推测部署或整个task完成。local已直接归还X01。
+
+2026-10-07 09:17 UTC 静态资源复核：read-byte-bound-research.md绑定main9b27005f。合法text/增量页正文≤64KiB，单block≤1MiB；JSON转义正文分别可达384KiB/6MiB，均另有envelope，不能冒3MiB逻辑resident或JS heap/wire上限。建议后继提取内部bounded JSON机制并保持领域caps，需X01入口与对应leaf正式写权；本轮0源码改动/测试/网络/PG。canonical新增窄intake保持，Web接线不等待此研究；当前无actual/待launch，聚合live仍PENDING_SYNC。
