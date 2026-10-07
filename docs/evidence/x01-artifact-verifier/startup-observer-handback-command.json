@@ -1,0 +1,40 @@
+{
+  "requestId": "av-index-startup-observer-handback-20261007-194331",
+  "actor": {
+    "lead": "mika",
+    "worker": "architecture_read"
+  },
+  "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+  "version": 4,
+  "scope": [
+    "apps/runner/src/admission-journal.ts",
+    "apps/runner/src/admission-verifier-claim.test.ts",
+    "apps/runner/src/plugins/execution.test.ts",
+    "apps/runner/src/plugins/execution.ts",
+    "apps/runner/src/plugins/host.ts",
+    "apps/runner/src/plugins/verifier.test.ts",
+    "apps/server/src/plugin-runtime/claim.ts",
+    "apps/server/src/plugin-runtime/verification-pg.test.ts",
+    "apps/server/src/plugin-runtime/verification.test.ts",
+    "apps/server/src/plugin-runtime/verification.ts",
+    "apps/server/src/runner-claim-receipts.test.ts",
+    "apps/server/src/runner-claim-receipts.ts",
+    "apps/server/src/runner-claim-routes.test.ts",
+    "apps/server/src/runner-claim-routes.ts",
+    "apps/server/src/runners.ts",
+    "docs/evidence/x01-artifact-verifier",
+    "packages/client/src/plugin-runner.test.ts",
+    "packages/client/src/plugin-runner.ts",
+    "packages/contracts/src/plugin-verification-binding.ts",
+    "packages/contracts/src/plugin-verification.test.ts",
+    "packages/contracts/src/plugin-verification.ts",
+    "packages/contracts/src/verifier-runner-claim.test.ts",
+    "packages/contracts/src/verifier-runner-claim.ts",
+    "packages/plugin-runtime/src/json-object-verifier.test.ts",
+    "packages/plugin-runtime/src/json-object-verifier.ts",
+    "packages/plugin-runtime/src/package-store.test.ts",
+    "packages/plugin-runtime/src/package-store.ts",
+    "packages/storage/migrations/036-plugin-verification-bindings.sql",
+    "plans/x01-artifact-verifier"
+  ]
+}

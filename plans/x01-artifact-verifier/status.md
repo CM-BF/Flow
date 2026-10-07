@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T19:04:48.494Z / AV02 e271与journal b791已main；center未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T19:48:21.740Z / AV02 e271与journal b791已main；center未集成 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -27,14 +27,14 @@
 | 当前阻塞 | ACTIVE: 等待独立数据库验证窗口，中心领取片尚缺五项真实验收通过证据 |
 | 需用户决定 | NONE |
 | Review | SOURCE_DELTA_APPROVED 10bd0219f84c34008a0255bfed282052a91bce7c，2026-10-07T18:37:13.000Z/0P1P2；R1失败忠实性18:30:02批准；R2真实PG未运行 |
-| Claim | a67ba659-d859-40d6-82c6-2b7333087639 v4 ACTIVE30，16:18:21.003Z追加center/v4十四leaf，含正式分配036；AV02九叶冻结 |
+| Claim | a67ba659-d859-40d6-82c6-2b7333087639 v5 ACTIVE29；19:46:46.413Z仅移出server/index.ts，正式STOP交startup observer；其余scope含036保留，AV02九叶冻结 |
 | 架构影响 | 同一claim/receipt显式v4与036来源引用；R1仅启动pre036中心后准备数据失败，动态SQL矩阵未实证。主线图更新待本片接收。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | AV-01 | completed | architecture_read | bc5b68a0e4e93e50f9258dd617262263d8db3c1f设计增量于14:49:38独审批准，P2已关闭；非产品完成 |
 | AV-02 | completed | architecture_read | 9895181/e662于15:49:31独审批准；AV02已main e271fb21，完整父功能未完成 |
-| AV-03 | in-progress | architecture_read，a67v4 | journal四叶已main；center/v4局部已验且独审通过，真实SQL与完整生产链仍OPEN |
+| AV-03 | in-progress | architecture_read，a67v5 | journal四叶已main；center/v4局部已验且独审通过，真实SQL与完整生产链仍OPEN |
 | AV-04 | pending | 待入口与现consumer协调 | 启动/CLI/产品验收未实现/未运行 |
 
 ## 本轮工作段与时间
@@ -165,3 +165,5 @@ R2独立namespace av03-verifier-claim-pg-run-r2；仅candidate，NOT_OPEN/NOT_RU
 唯一新候选入口[r2-ready.json](../../docs/evidence/x01-artifact-verifier/av03-pg/r2-ready.json)，manifest14a6aaaf/281pins191external16links34SQL；六rowdelta、275原样，旧R1raw/source/manifest固定Git引用不改。未来独立180s=110work+60cleanup+10final、17配置PG连接、原5case，当前NOT_OPEN/NOT_RUN/0admission/namespace未创建。完整invocation先固定于r2-invocation.json，未来fresh准入后立即调用，避免聊天间过期。root明确test-only既有route复用不补冗余types/collect。
 
 原R1保持FAILED/0selected5skipped，其root18:30忠实性批准与资源FULL_RETURN分列。center仍NOT_INTEGRATION_READY_PG_REQUIRED；AV03/04完整目标、公有producer与PROCESS T7不由本片完成。提交push后STOP保claim；当前无actual/待launch。
+
+2026-10-07T19:48:21.740Z：startup observer依赖交接metadata段（19:43:31开始，≤12min/2MiB）。19:46:26.235Z明确STOP apps/server/src/index.ts；19:46:46.413Z原子amend a67v4/30→v5/29，仅移除该leaf。新owner须fresh take后写，ea3c两行migration import/call仍NOT_INTEGRATED且缺真实PG成功，后续由Original/native_center_owner结合新observer窄合并，不允许wholeblob覆盖。可继续只读固定index用于R2；产品/fixture/caller/原raw均不改。原R2 receipt/manifest/ready/invocation已逐字存pre-startup-handback副本并保固定Git，当前只更新claim metadata pin；R2仍NOT_OPEN/NOT_RUN。root19:15:54对原R2准备metadata批准已归档，与本次重绑分开。

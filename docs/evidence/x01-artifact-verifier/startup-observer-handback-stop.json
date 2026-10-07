@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-07T19:46:26.235Z",
+  "owner": "architecture_read",
+  "state": "STOP_WRITING_EXACT_LEAF",
+  "path": "apps/server/src/index.ts",
+  "head": "62042f78ce3a7cf17dd1a903efacf9dca2df18e7",
+  "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+  "version": 4,
+  "source": {
+    "commit": "62042f78ce3a7cf17dd1a903efacf9dca2df18e7",
+    "path": "apps/server/src/index.ts",
+    "bytes": 15573,
+    "sha256": "8babb15056ab95fa228249cadb6d6db01450fbf7756d9b516d52bfd17a2f8b5c",
+    "blob": "4b7b0a2705ca8dded6fc9eccd70f3c633395259b"
+  },
+  "mainPreimage": {
+    "commit": "c29c2bbb0d9f1548cf54bcb78e0cd3b4a8e5b6c4",
+    "path": "apps/server/src/index.ts",
+    "bytes": 15452,
+    "sha256": "bbb02feaea68447ba91672955e846c0682a9542a9720c8b8cf786ca34694b2c0",
+    "blob": "4c703bbb4b5499d1b74594f4c6b4ebe6f1117f25"
+  },
+  "receiver": "native_center_owner; must fresh take before write",
+  "method": "find-skills local match; clean-code explicit scope/error/history boundaries; metadata-only, no engineering checks",
+  "authority": "Mika 19:41 bounded partial handback; no source edits",
+  "unintegratedDelta": {
+    "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+    "baseline": "b79121e1944f10f82a416d98d776c0f55bf9c943",
+    "state": "SOURCE_AND_LOCAL_APPROVED; real PG NOT_PASSED; NOT_INTEGRATED",
+    "responsibility": "Original/native_center_owner must preserve reviewed AV delta alongside new observer after AV PG gate; never whole-blob overlay.",
+    "patchSha256": "4d8e613b342d2be9b2413e07f47a9eac775b146338e158130914fdcfa43cd692"
+  }
+}

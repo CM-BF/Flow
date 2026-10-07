@@ -1,0 +1,17 @@
+diff --git a/apps/server/src/index.ts b/apps/server/src/index.ts
+index 4c703bbb4..4b7b0a270 100644
+--- a/apps/server/src/index.ts
++++ b/apps/server/src/index.ts
+@@ -1,3 +1,4 @@
++import { migratePluginVerification } from './plugin-runtime/verification.js';
+ import { migrateGoalPlanConfirmations, registerGoalPlanConfirmationRoutes } from './goal-plan-confirmation/index.js';
+ import { migrateGoalProgressions, registerGoalProgressionRoutes, scanGoalProgressions } from './goal-progression/index.js';
+ import { registerUsageReadoutRoutes } from './usage-readout/index.js';
+@@ -107,6 +108,7 @@ export async function createServer(options: ServerOptions) {
+     await migrateBrowserSessions(pool);
+     await migratePluginInstallations(pool);
+     await migratePluginRuntime(pool);
++    await migratePluginVerification(pool);
+     await migrateGoalProgressions(pool);
+     await migrateGoalPlanConfirmations(pool);
+     await migrateClaudeMessageSettings(pool);
