@@ -14,14 +14,14 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；本段资源入口正在固定源码；产品ade4未变，未main |
+| 工作基线 / HEAD | base60ca；Stage C准备source e7f220ee72c5c9bc091846be45ddd8b199dc6f71；metadata后续固定；未main |
 | 工作树 dirty 状态 | 本段仅两test资源hooks、own fixture/caller/输入/必要局部证据和status；交审后停止写入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | A17真实包/B九入口已独审；C原types0/collect27与旧21计数FAIL保持；本段受影响types0+5资源反例通过，实际27 PG/HTTP仍NOT_RUN |
 | Review | PENDING 新Stage C共同期限/计量/执行输入独审；A/B已批准范围不变 |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
-| 实现目标 | 1e48ebf3e1e7c4d37597c9c26efcee0fc9bf38f8 |
-| 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-pg-fixture.ts, docs/evidence/x01/enable-binding-pg-vitest.config.mjs |
+| 实现目标 | e7f220ee72c5c9bc091846be45ddd8b199dc6f71 |
+| 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-pg-fixture.ts, docs/evidence/x01/enable-binding-pg-vitest.config.mjs, docs/evidence/x01/enable-binding-pg-once.py, docs/evidence/x01/enable-binding-pg-caller.test.py, docs/evidence/x01/enable-binding-pg-input.json |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
@@ -184,3 +184,5 @@ Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case�
 2026-10-07 04:12:19.700 UTC：fresh cc19 clean、claim v8 ACTIVE/17一致，恢复Stage C准备实现。C02于04:11:49.742实际closed后交本队local；当前仅源码，PG未开放。27原case/首21计数FAIL保持，不重跑A17/B九types/旧C collect；拟共同工作期限、HTTP分区总账和现OPS14薄caller，后继必要local仅2child各30s、段5min/TMP8MiB/raw256KiB/meta1MiB，组合floor保守4053008384B，待实际启动前fresh。
 
 2026-10-07T04:22:57.274340+00:00：fresh v8/17 scope核对，C02实际closed后完成本段两必要child：types0+5资源资格反例，2.392676s/844B，0PG/HTTP/provider，两group/EOF与ownTMP全部收束并直接告Web归还。新Stage C薄caller消费固定OPS14，27原断言逐字证明、共同work/cleanup期限与HTTP416上限；[窗口准备](../../docs/evidence/x01/enable-binding-stage-c-window.md)及[局部原记录](../../docs/evidence/x01/enable-binding-pg-preparation-local.json)。实际27/两DB未运行，旧21计数FAIL原件保持。SVC06已由原owner04:13:44闭合，不访问其资源；此事实不自动开放PG。架构影响仅测试资源所有权/验证入口，产品接口ade4与shared模块不变。
+
+2026-10-07T04:24:07.438494+00:00：source e7f220ee72c5c9bc091846be45ddd8b199dc6f71固定，[执行前输入](../../docs/evidence/x01/enable-binding-pg-manifest.json) 234本树绑定/1170166B、27外部入口元数据、21已供给links、31正式SQL；run目录不存在。原产品ade4无新改动，实际PG NOT_OPEN；局部type/5反例已实际通过但不替代真实27。待chatui固定独审，停止本段source写入。manifest封包初次遇旧own-worktree link无name字段，0运行/供给，改按固定destination/target处理，不修改历史request。

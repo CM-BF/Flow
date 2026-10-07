@@ -1,5 +1,9 @@
 状态：PENDING（本次Stage C准备；真实27 PG/HTTP NOT_RUN）
 
+Review target commit: e7f220ee72c5c9bc091846be45ddd8b199dc6f71
+
+当前输入：`enable-binding-pg-manifest.json` SHA 8b03f0942eeb6911e3c8237c17928a777c862512537d1a77dd5d38779ba0c634。新增资源控制与薄caller待独审；旧产品/A/B批准保留。
+
 # X01 Stage B 直接消费者类型与依赖视图
 
 状态：PENDING（Stage C资源fixture源码已固定，必要局部检查尚未运行；A/B结果已分别独审）
