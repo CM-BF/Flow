@@ -1,0 +1,231 @@
+{
+  "at": "2026-10-07T04:01:16.562340+00:00",
+  "mainBefore": "2f18dfe92f795e566f7779d67ebea2f556254e2a",
+  "packet": "b7ab660c9f2536c8d21144e118f8fae4a7540be5",
+  "fixedProduct": "83a0799293057f7472f0329c61e566708b2a2381",
+  "fixedTests": "68815dce87cc0a9498802de89448693215d028d6",
+  "fixtureFix": "7d3757128fa45363c846036a96ea73346185829a",
+  "bindings": [
+    {
+      "path": "apps/server/src/runners.ts",
+      "fixed": "83a0799293057f7472f0329c61e566708b2a2381",
+      "equalFixedWholeFile": true,
+      "bytes": 17633,
+      "sha256": "1d0b25e305afc4c21be343f3cc7d55fe107b7b7e75f2fe40723acd586e9d6a44",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.ts",
+      "fixed": "83a0799293057f7472f0329c61e566708b2a2381",
+      "equalFixedWholeFile": true,
+      "bytes": 1884,
+      "sha256": "fa0878022c378867036798187e2d3de0d40b015730c337082e279792f8629a9f",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "fixed": "83a0799293057f7472f0329c61e566708b2a2381",
+      "equalFixedWholeFile": true,
+      "bytes": 15383,
+      "sha256": "c776dc0e0fc18a683c23f81d9d73fbc22d7e406118fe7e9783888c5c4b31a67a",
+      "integration": "reviewed narrow patch preserving newer main additions"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "fixed": "83a0799293057f7472f0329c61e566708b2a2381",
+      "equalFixedWholeFile": true,
+      "bytes": 7646,
+      "sha256": "ba88071c84bf924814cbf7ebd3fff79f2516a3b969fbc37d4b01f5e55d115dab",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "fixed": "83a0799293057f7472f0329c61e566708b2a2381",
+      "equalFixedWholeFile": true,
+      "bytes": 15713,
+      "sha256": "8246b50d9aef92040fdea40e7ba854b2f9b4ae16b513fa2126faea1eb270a583",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "fixed": "83a0799293057f7472f0329c61e566708b2a2381",
+      "equalFixedWholeFile": true,
+      "bytes": 3958,
+      "sha256": "15ab790ab835a17467c161e49bf7f1843a2f3604f63748559ee3bc4f5bfc89ce",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "fixed": "83a0799293057f7472f0329c61e566708b2a2381",
+      "equalFixedWholeFile": true,
+      "bytes": 1547,
+      "sha256": "835edaa03e9070ee42ae5694a1de7a25cb7514548127b70ae26bb614551cc023",
+      "integration": "reviewed narrow patch preserving newer main additions"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "fixed": "83a0799293057f7472f0329c61e566708b2a2381",
+      "equalFixedWholeFile": true,
+      "bytes": 54279,
+      "sha256": "ee3c8caba6274830bd0183011612153ecbb716bd890c3d3a62d4d18553208d96",
+      "integration": "reviewed narrow patch preserving newer main additions"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.test.ts",
+      "fixed": "68815dce87cc0a9498802de89448693215d028d6",
+      "equalFixedWholeFile": true,
+      "bytes": 8975,
+      "sha256": "71318f982a60de1de6aedd834adb87dd1383565b397d2bb5f4d31a5a06518d74",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "apps/runner/src/runner.test.ts",
+      "fixed": "68815dce87cc0a9498802de89448693215d028d6",
+      "equalFixedWholeFile": true,
+      "bytes": 33197,
+      "sha256": "1fdae8c2f9438f4966bebea1e8ebeb1357c0fe066e41b49d02f2001b2c31c908",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "fixed": "68815dce87cc0a9498802de89448693215d028d6",
+      "equalFixedWholeFile": true,
+      "bytes": 26130,
+      "sha256": "af7a9c7791acad1524f3c33329bc7f1a1722c2bf5256483d3641aa075653e2d9",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "apps/runner/src/runtime-claim-recovery.test.ts",
+      "fixed": "68815dce87cc0a9498802de89448693215d028d6",
+      "equalFixedWholeFile": true,
+      "bytes": 11355,
+      "sha256": "05555bff65d45269c76b67dc0cf881218ed8575bfb3005ca7085f88cd21346fe",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "apps/runner/src/runtime-shutdown.test.ts",
+      "fixed": "68815dce87cc0a9498802de89448693215d028d6",
+      "equalFixedWholeFile": true,
+      "bytes": 15498,
+      "sha256": "63fdf3fbca4166149c5b7ce569841175a43cf96e477353301c09dcb866935382",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.test.ts",
+      "fixed": "68815dce87cc0a9498802de89448693215d028d6",
+      "equalFixedWholeFile": true,
+      "bytes": 13057,
+      "sha256": "59338c88937c37e7f996f7b29c4e44f27ee1512d13026ccf363c960e6f9ceb22",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "packages/client/src/runner-claim.test.ts",
+      "fixed": "68815dce87cc0a9498802de89448693215d028d6",
+      "equalFixedWholeFile": true,
+      "bytes": 4653,
+      "sha256": "b9cd84c9c93a2b6018559c36cdbbc1bd8751fca101efba8350d83f240ea70d23",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.test.ts",
+      "fixed": "68815dce87cc0a9498802de89448693215d028d6",
+      "equalFixedWholeFile": true,
+      "bytes": 3926,
+      "sha256": "cd324812720eec77f5ef84d8bfa150783fa38a666edec9a3d6f52554bafc0d10",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "docs/evidence/s01p07/capacity-center.ts",
+      "fixed": "7d3757128fa45363c846036a96ea73346185829a",
+      "equalFixedWholeFile": true,
+      "bytes": 6333,
+      "sha256": "a69ba0be712c4197a04c68cd998b28b0b7afe7083f1c13ba7dba8d9781ae54b2",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-fixture.ts",
+      "fixed": "7d3757128fa45363c846036a96ea73346185829a",
+      "equalFixedWholeFile": true,
+      "bytes": 13459,
+      "sha256": "48f4844895067368156682b56e0f9c731799849d96fecb4fd56ba97f4b8482d4",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "docs/evidence/s01p07/capacity-vitest.config.ts",
+      "fixed": "68815dce87cc0a9498802de89448693215d028d6",
+      "equalFixedWholeFile": true,
+      "bytes": 1058,
+      "sha256": "cda10a9864bdbb83395276f5ca8863b360ed21a25000b8fdd77736587c0db9c7",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-vitest.config.ts",
+      "fixed": "68815dce87cc0a9498802de89448693215d028d6",
+      "equalFixedWholeFile": true,
+      "bytes": 227,
+      "sha256": "a7cff97c07e50da35f3c507fd47ec1ec33a8d74a9504bb136d5dd4164083b45d",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "docs/evidence/s01p07/capacity-tsconfig.json",
+      "fixed": "68815dce87cc0a9498802de89448693215d028d6",
+      "equalFixedWholeFile": true,
+      "bytes": 156,
+      "sha256": "3a7841ba5b45e5766faa018075574fb2d13886b3e98c6e2305ff03a5fdb9f9e2",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "docs/evidence/s01p07/main-database.ts",
+      "fixed": "68815dce87cc0a9498802de89448693215d028d6",
+      "equalFixedWholeFile": true,
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.py",
+      "fixed": "68815dce87cc0a9498802de89448693215d028d6",
+      "equalFixedWholeFile": true,
+      "bytes": 17776,
+      "sha256": "bea6cc9f2aeaef363e3a7f6770eaa62b53a0b871fbba7886484fa7ea91fe17f8",
+      "integration": "exact fixed file"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.test.py",
+      "fixed": "68815dce87cc0a9498802de89448693215d028d6",
+      "equalFixedWholeFile": true,
+      "bytes": 6655,
+      "sha256": "d6e71805ef5abafa69d6c3a8901f8b91e706cf1a4b045f3f576f4adc0b1b8ee7",
+      "integration": "exact fixed file"
+    }
+  ],
+  "reviews": {
+    "product": "chatui01_owner 2026-10-06T20:48:19Z SOURCE_REVIEW_APPROVED /0P1P2",
+    "capacityPreparation": "architecture_read 2026-10-07T03:36:55Z SOURCE_AND_PREPARATION_REVIEW_APPROVED /0P1P2",
+    "capacityResult": "db_transaction_owner 2026-10-07T03:48:41.637621Z RESULT_FIDELITY_REVIEW_APPROVED /0P1P2"
+  },
+  "importFixReview": {
+    "reviewer": "db_transaction_owner / gpt-6-astra",
+    "at": "2026-10-07T03:59:12Z",
+    "state": "SOURCE_REVIEW_APPROVED",
+    "target": "7d3757128fa45363c846036a96ea73346185829a",
+    "P1": 0,
+    "P2": 0,
+    "scope": "Exactly four import path replacements in two fixtures; public exports unchanged. Static only, no main types or PG rerun."
+  },
+  "newChecks": "s01p07-combination-repair-checks.json",
+  "historicalFailedCheck": "s01p07-combination-checks.json",
+  "newSelected": 8,
+  "newPassed": 8,
+  "newTypesExit": 0,
+  "newPG": 0,
+  "provider": 0,
+  "boundaries": [
+    "No provider/model/128-capacity/performance claim.",
+    "Old v1 unknown/retained assignments stay conservative; no automatic old journal upgrade/replay.",
+    "R1 unknown root untouched; successful later runs do not establish its cause.",
+    "Two shell UTC markers failed; raw retains errors, wrapper/time/tool and21s wider observation envelope kept separate.",
+    "Main receipt still required. Task remains incomplete until integration/status handoff."
+  ],
+  "integrationNote": "Only approved product/test deltas, exact own plans/evidence; shared index/client additions preserve current main. No old feature branch merge, config/runtime profile rollback, dependency changes, capacity or native rerun."
+}

@@ -1,0 +1,4 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": ["../../../apps/runner/src/runtime-capacity.test.ts", "./capacity-center.ts", "./main-database.ts"]
+}

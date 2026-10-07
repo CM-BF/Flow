@@ -1,0 +1,238 @@
+{
+  "at": "2026-10-07T03:59:48.259902+00:00",
+  "state": "INTEGRATION_READY_NOT_INTEGRATED",
+  "base": "22a0806bc2465e11096949618113833f31766b19",
+  "owner": "status_read",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery",
+  "branch": "codex/runner-claim-recovery",
+  "claim": {
+    "claimId": "9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac",
+    "version": 2,
+    "state": "ACTIVE",
+    "scopeCount": 18,
+    "retainedUntilMainReceipt": true
+  },
+  "production": [
+    {
+      "path": "apps/server/src/runners.ts",
+      "target": "83a0799293057f7472f0329c61e566708b2a2381",
+      "bytes": 17633,
+      "sha256": "1d0b25e305afc4c21be343f3cc7d55fe107b7b7e75f2fe40723acd586e9d6a44"
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.ts",
+      "target": "83a0799293057f7472f0329c61e566708b2a2381",
+      "bytes": 1884,
+      "sha256": "fa0878022c378867036798187e2d3de0d40b015730c337082e279792f8629a9f"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "target": "83a0799293057f7472f0329c61e566708b2a2381",
+      "bytes": 15383,
+      "sha256": "c776dc0e0fc18a683c23f81d9d73fbc22d7e406118fe7e9783888c5c4b31a67a"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "target": "83a0799293057f7472f0329c61e566708b2a2381",
+      "bytes": 7646,
+      "sha256": "ba88071c84bf924814cbf7ebd3fff79f2516a3b969fbc37d4b01f5e55d115dab"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "target": "83a0799293057f7472f0329c61e566708b2a2381",
+      "bytes": 15713,
+      "sha256": "8246b50d9aef92040fdea40e7ba854b2f9b4ae16b513fa2126faea1eb270a583"
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "target": "83a0799293057f7472f0329c61e566708b2a2381",
+      "bytes": 3958,
+      "sha256": "15ab790ab835a17467c161e49bf7f1843a2f3604f63748559ee3bc4f5bfc89ce"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "target": "83a0799293057f7472f0329c61e566708b2a2381",
+      "bytes": 1547,
+      "sha256": "835edaa03e9070ee42ae5694a1de7a25cb7514548127b70ae26bb614551cc023"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "target": "83a0799293057f7472f0329c61e566708b2a2381",
+      "bytes": 54279,
+      "sha256": "ee3c8caba6274830bd0183011612153ecbb716bd890c3d3a62d4d18553208d96"
+    }
+  ],
+  "directTests": [
+    {
+      "path": "apps/runner/src/admission-journal.test.ts",
+      "target": "68815dce87cc0a9498802de89448693215d028d6",
+      "bytes": 8975,
+      "sha256": "71318f982a60de1de6aedd834adb87dd1383565b397d2bb5f4d31a5a06518d74"
+    },
+    {
+      "path": "apps/runner/src/runner.test.ts",
+      "target": "68815dce87cc0a9498802de89448693215d028d6",
+      "bytes": 33197,
+      "sha256": "1fdae8c2f9438f4966bebea1e8ebeb1357c0fe066e41b49d02f2001b2c31c908"
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "target": "68815dce87cc0a9498802de89448693215d028d6",
+      "bytes": 26130,
+      "sha256": "af7a9c7791acad1524f3c33329bc7f1a1722c2bf5256483d3641aa075653e2d9"
+    },
+    {
+      "path": "apps/runner/src/runtime-claim-recovery.test.ts",
+      "target": "68815dce87cc0a9498802de89448693215d028d6",
+      "bytes": 11355,
+      "sha256": "05555bff65d45269c76b67dc0cf881218ed8575bfb3005ca7085f88cd21346fe"
+    },
+    {
+      "path": "apps/runner/src/runtime-shutdown.test.ts",
+      "target": "68815dce87cc0a9498802de89448693215d028d6",
+      "bytes": 15498,
+      "sha256": "63fdf3fbca4166149c5b7ce569841175a43cf96e477353301c09dcb866935382"
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.test.ts",
+      "target": "68815dce87cc0a9498802de89448693215d028d6",
+      "bytes": 13057,
+      "sha256": "59338c88937c37e7f996f7b29c4e44f27ee1512d13026ccf363c960e6f9ceb22"
+    },
+    {
+      "path": "packages/client/src/runner-claim.test.ts",
+      "target": "68815dce87cc0a9498802de89448693215d028d6",
+      "bytes": 4653,
+      "sha256": "b9cd84c9c93a2b6018559c36cdbbc1bd8751fca101efba8350d83f240ea70d23"
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.test.ts",
+      "target": "68815dce87cc0a9498802de89448693215d028d6",
+      "bytes": 3926,
+      "sha256": "cd324812720eec77f5ef84d8bfa150783fa38a666edec9a3d6f52554bafc0d10"
+    }
+  ],
+  "requiredTestFixtures": [
+    {
+      "path": "docs/evidence/s01p07/capacity-center.ts",
+      "target": "7d3757128fa45363c846036a96ea73346185829a",
+      "bytes": 6333,
+      "sha256": "a69ba0be712c4197a04c68cd998b28b0b7afe7083f1c13ba7dba8d9781ae54b2",
+      "historicalValidatedTarget": "68815dce87cc0a9498802de89448693215d028d6"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-fixture.ts",
+      "target": "7d3757128fa45363c846036a96ea73346185829a",
+      "bytes": 13459,
+      "sha256": "48f4844895067368156682b56e0f9c731799849d96fecb4fd56ba97f4b8482d4",
+      "historicalValidatedTarget": "68815dce87cc0a9498802de89448693215d028d6"
+    }
+  ],
+  "privateValidationInputs": [
+    {
+      "path": "docs/evidence/s01p07/capacity-vitest.config.ts",
+      "target": "68815dce87cc0a9498802de89448693215d028d6",
+      "bytes": 1058,
+      "sha256": "cda10a9864bdbb83395276f5ca8863b360ed21a25000b8fdd77736587c0db9c7"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-vitest.config.ts",
+      "target": "68815dce87cc0a9498802de89448693215d028d6",
+      "bytes": 227,
+      "sha256": "a7cff97c07e50da35f3c507fd47ec1ec33a8d74a9504bb136d5dd4164083b45d"
+    },
+    {
+      "path": "docs/evidence/s01p07/capacity-tsconfig.json",
+      "target": "68815dce87cc0a9498802de89448693215d028d6",
+      "bytes": 156,
+      "sha256": "3a7841ba5b45e5766faa018075574fb2d13886b3e98c6e2305ff03a5fdb9f9e2"
+    },
+    {
+      "path": "docs/evidence/s01p07/main-database.ts",
+      "target": "68815dce87cc0a9498802de89448693215d028d6",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.py",
+      "target": "68815dce87cc0a9498802de89448693215d028d6",
+      "bytes": 17776,
+      "sha256": "bea6cc9f2aeaef363e3a7f6770eaa62b53a0b871fbba7886484fa7ea91fe17f8"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.test.py",
+      "target": "68815dce87cc0a9498802de89448693215d028d6",
+      "bytes": 6655,
+      "sha256": "d6e71805ef5abafa69d6c3a8901f8b91e706cf1a4b045f3f576f4adc0b1b8ee7"
+    }
+  ],
+  "integrationRules": [
+    "Apply only reviewed base-to-target deltas within listed product/test paths; preserve unrelated current main changes. Do not replace entire shared client/barrel/server files from old baseline.",
+    "Fixtures are required by the two direct test imports. Private validation inputs describe dedicated lifecycle; they are not production runtime modules or authorization to run PG.",
+    "No package/tsconfig/migration production change. Do not copy node_modules or donor installations.",
+    "Fixed main15847 database donor was loaded at original module id; actual current main assembly still needs its normal narrow integration checks, no blanket latest-main claim.",
+    "Owner remains stopped on source/raw and retains writer for genuine review/integration fixes until explicit main receipt and release."
+  ],
+  "validation": [
+    {
+      "kind": "historical-nonPG",
+      "distinct": 85,
+      "productTarget": "83a0799293057f7472f0329c61e566708b2a2381",
+      "sourceAndChecks": "See source-review-83a.json and existing checks; no repeat or new combined total."
+    },
+    {
+      "kind": "center-PG",
+      "selected": 8,
+      "passed": 8,
+      "tasks": 10,
+      "http": 80,
+      "resultTarget": "cf762765cc04cf90244cfb0ac3ba9ee2da2ed585",
+      "manifest": "docs/evidence/s01p07/pg-run-r2-manifest.json"
+    },
+    {
+      "kind": "capacity-PG",
+      "selected": 4,
+      "passed": 4,
+      "unselected": 20,
+      "tasks": 13,
+      "http": 120,
+      "resultTarget": "168678c38ed8458420d902c49cfffaf98be226b8",
+      "manifest": "docs/evidence/s01p07/pg-capacity-result-manifest.json",
+      "sha256": "48985fa4328cb60547cbb046b6c73d53eef444ddc9e6f95875badc221f985c22",
+      "review": {
+        "reviewer": "db_transaction_owner / gpt-6-astra",
+        "at": "2026-10-07T03:48:41.637621Z",
+        "state": "RESULT_FIDELITY_REVIEW_APPROVED",
+        "P1": 0,
+        "P2": 0
+      }
+    }
+  ],
+  "reviews": {
+    "product": "chatui01_owner 2026-10-06T20:48:19Z SOURCE_REVIEW_APPROVED /0P1P2",
+    "capacityPreparation": "architecture_read 2026-10-07T03:36:55Z SOURCE_AND_PREPARATION_REVIEW_APPROVED /0P1P2",
+    "capacityResult": "db_transaction_owner 2026-10-07T03:48:41.637621Z RESULT_FIDELITY_REVIEW_APPROVED /0P1P2"
+  },
+  "boundaries": [
+    "No provider/model/128-capacity/performance claim.",
+    "Old v1 unknown/retained assignments stay conservative; no automatic old journal upgrade/replay.",
+    "R1 unknown root untouched; successful later runs do not establish its cause.",
+    "Two shell UTC markers failed; raw retains errors, wrapper/time/tool and21s wider observation envelope kept separate.",
+    "Main receipt still required. Task remains incomplete until integration/status handoff."
+  ],
+  "mainCombinationDelta": {
+    "source": "7d3757128fa45363c846036a96ea73346185829a",
+    "evidence": "docs/evidence/s01p07/main-import-fix.json",
+    "state": "SOURCE_REVIEW_APPROVED",
+    "scope": "Four fixture imports only. Original source/PG reviews stay bound to historical Git; current main types pending Lead.",
+    "review": {
+      "reviewer": "db_transaction_owner / gpt-6-astra",
+      "at": "2026-10-07T03:59:12Z",
+      "state": "SOURCE_REVIEW_APPROVED",
+      "target": "7d3757128fa45363c846036a96ea73346185829a",
+      "P1": 0,
+      "P2": 0,
+      "scope": "Exactly four import path replacements in two fixtures; public exports unchanged. Static only, no main types or PG rerun."
+    }
+  }
+}

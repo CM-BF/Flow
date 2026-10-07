@@ -1,0 +1,62 @@
+{
+  "window": "S01P07-PG-20261007-R2",
+  "executionHead": "44594beb1564732c00fb66721db2fd51b60b87e9",
+  "inputTarget": "0a753088f477932140b10b288e907243cb265c27",
+  "preflight": {
+    "at": "2026-10-07T03:21:06.530506+00:00",
+    "executionHead": "44594beb1564732c00fb66721db2fd51b60b87e9",
+    "headClean": true,
+    "inputSHA": "e38ad3e89ac723d516f3f27a5d13eae8bebe72d85bab9d4829c2ffa2304bc909",
+    "fixedBindings": 65,
+    "slotInputs": 9,
+    "sqlBindings": 30,
+    "dependencies": 24,
+    "outputsAbsent": 10,
+    "outerAbsent": true,
+    "availableBytes": 26508984320,
+    "serialFloor": 1207959552,
+    "errors": [],
+    "claimId": "9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac",
+    "claimVersion": 2,
+    "scopeCount": 18,
+    "claimState": "active",
+    "claimObservedAt": "2026-10-07T03:20:18Z"
+  },
+  "coordination": {
+    "x01": "Owner confirmed terminated at03:20:11 before R2; no current local.",
+    "c02": "Owner confirmed no actual before R2; Mika then explicitly allowed its isolated bounded local up to180s/TMP16MiB/raw256KiB/source+metadata1MiB. Startup checked paired floor1226047488B.",
+    "web": "New Web bounded local9MiB declaration arrived after spawn. Updated floor1235484672B was freshly checked at03:21:30.766046Z, after R2 had already exited; do not describe this as a pre-spawn check.",
+    "latePairingObservation": {
+      "at": "2026-10-07T03:21:30.766046+00:00",
+      "availableBytes": 26500186112,
+      "combinedFloorBytes": 1235484672,
+      "pgFloorBytes": 1207959552,
+      "c02LocalBytes": 18087936,
+      "webLocalBytes": 9437184,
+      "passes": true,
+      "phase": "post-spawn new local pairing declaration"
+    },
+    "heavyEnded": true
+  },
+  "outer": {
+    "startedAt": "2026-10-07T03:21:23Z",
+    "finishedAt": "2026-10-07T03:21:27Z",
+    "timeRealSeconds": 3.91,
+    "timeUserSeconds": 1.93,
+    "timeSystemSeconds": 0.62,
+    "exitCode": 0,
+    "toolCompletionObservedAt": "2026-10-07T03:21:36Z",
+    "boundary": "Shell UTC second precision; /usr/bin/time spans wrapper process through exit, tool completion observed separately. Yield durations are not summed."
+  },
+  "toolOutput": "S01P07_FRESH_PAIRED_BYTES 26509254656\nS01P07_OUTER_START 2026-10-07T03:21:23Z\n{\"window\": \"S01P07-PG-20261007-R2\", \"sourceHead\": \"44594beb1564732c00fb66721db2fd51b60b87e9\", \"startedAt\": \"2026-10-07T03:21:23.733588+00:00\", \"inputManifest\": {\"name\": \"pg-diagnostic-slot-request.json\", \"sha256\": \"e38ad3e89ac723d516f3f27a5d13eae8bebe72d85bab9d4829c2ffa2304bc909\"}, \"resourceBefore\": 26513539072, \"resourceGate\": 1207959552, \"providerCalls\": 0, \"root\": \"/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-pg-window-l6pxi_xd\", \"identity\": {\"dev\": 16777234, \"ino\": 123371336}, \"command\": [\"/opt/homebrew/opt/node@24/bin/node\", \"node_modules/vitest/vitest.mjs\", \"run\", \"--config\", \"docs/evidence/s01p07/pg-vitest.config.ts\", \"--configLoader\", \"native\", \"apps/server/src/runner-claim-receipts.test.ts\"], \"childStarted\": true, \"exitCode\": 0, \"primaryFault\": null, \"faults\": [], \"processGroupGone\": true, \"stdioEnded\": true, \"process\": {\"exitCode\": 0, \"observations\": [{\"state\": \"absent\", \"errno\": null}], \"signals\": [], \"groupState\": {\"state\": \"absent\", \"errno\": null}, \"groupAbsent\": true, \"unknown\": false}, \"fixtureCleanupConfirmed\": true, \"temporaryFinalBytes\": 123, \"temporarySampledPeakBytes\": 3036442, \"temporaryAbsent\": true, \"retainedRoot\": null, \"rawObservedBytes\": 2243, \"rawSavedBytes\": 2243, \"elapsedSeconds\": 3.8461873329943046, \"finishedAt\": \"2026-10-07T03:21:27.579705+00:00\", \"limits\": {\"totalSeconds\": 200, \"workSeconds\": 120, \"rawBytes\": 1048576, \"ownTempBytes\": 33554432}, \"boundary\": \"Sampled own logical temp bytes; shared PG/WAL growth and between-sample peak are unknown.\"}\nreal 3.91\nuser 1.93\nsys 0.62\nS01P07_OUTER_FINISH 2026-10-07T03:21:27Z\nS01P07_OUTER_EXIT 0\n",
+  "caseCounts": {
+    "planned": 8,
+    "selected": 8,
+    "passed": 8,
+    "failed": 0,
+    "skipped": 0
+  },
+  "providerCalls": 0,
+  "state": "ACTUAL_WINDOW_CONSUMED_PASSED",
+  "boundary": "Only original eight dedicated PG/HTTP cases; original four runtime-capacity PG cases not selected. R2 success does not establish the cause of R1. No old unknown root inspected or cleaned."
+}

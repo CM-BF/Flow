@@ -32,11 +32,11 @@ import { migrateAssistantMessages, registerAssistantRoutes } from './assistant/i
 import Fastify from 'fastify';
 import cors from '@fastify/cors';
 import { Pool } from 'pg';
-import { MAX_BATCH_BYTES, taskSubmissionSchema, registerRunnerSchema, ownershipSchema, eventBatchSchema, decisionSchema } from '@flow/contracts';
+import { MAX_BATCH_BYTES, taskSubmissionSchema, registerRunnerSchema, ownershipSchema, eventBatchSchema, decisionSchema, runnerClaimRequestSchema } from '@flow/contracts';
 import { HttpError, migrate } from './database.js';
 import { list, snapshot, submit } from './tasks.js';
 import { startScheduler } from './scheduler.js';
-import { claim, expireLeases, heartbeat, registerRunner, revoke } from './runners.js';
+import { claim, claimOpportunity, claimOpportunityStatus, runnerIdentity, expireLeases, heartbeat, registerRunner, revoke } from './runners.js';
 import { reportEvents } from './events.js';
 import { cancel, decide } from './commands.js';
 import { detail, eventPage, integerQuery } from './queries.js';
@@ -193,6 +193,17 @@ export async function createServer(options: ServerOptions) {
     return registerRunner(pool, input.data);
   });
   app.post('/api/runner/claim', request => { requireEmptyBody(request.body); return claim(pool, request.runnerId!, leaseMs); });
+  app.get('/api/runner/identity', request => runnerIdentity(pool, request.runnerId!));
+  app.post('/api/runner/claim-opportunity', request => {
+    const input = runnerClaimRequestSchema.safeParse(request.body);
+    if (!input.success) throw new HttpError(400, 'invalid_claim_opportunity', 'Invalid claim opportunity.');
+    return claimOpportunity(pool, request.runnerId!, input.data, leaseMs);
+  });
+  app.post('/api/runner/claim-opportunity/status', request => {
+    const input = runnerClaimRequestSchema.safeParse(request.body);
+    if (!input.success) throw new HttpError(400, 'invalid_claim_opportunity', 'Invalid claim opportunity.');
+    return claimOpportunityStatus(pool, request.runnerId!, input.data);
+  });
   app.post<{ Params: { id: string } }>('/api/runners/:id/revoke', request => { requireEmptyBody(request.body); return revoke(pool, request.params.id); });
   app.post('/api/runner/heartbeat', request => {
     const input = ownershipSchema.safeParse(request.body);

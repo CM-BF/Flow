@@ -1,0 +1,15 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery
+
+ ✓ apps/runner/src/runtime-claim-recovery.test.ts (8 tests) 1216ms
+   ✓ keeps the default 500 ms cadence and the same durable file through three empty observations  1057ms
+ ✓ apps/runner/src/admission-journal.test.ts (12 tests) 1138ms
+   ✓ clears only a definite empty response and bounds retained assignments to sixteen  403ms
+ ✓ packages/client/src/runner-claim.test.ts (3 tests) 65ms
+ ✓ packages/contracts/src/runner-claim.test.ts (5 tests) 8ms
+
+ Test Files  4 passed (4)
+      Tests  28 passed (28)
+   Start at  13:25:52
+   Duration  3.43s (transform 212ms, setup 0ms, import 656ms, tests 2.43s, environment 0ms)
+

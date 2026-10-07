@@ -1,0 +1,13 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": [
+    "../../../packages/contracts/src/runner-claim.test.ts",
+    "../../../packages/client/src/runner-claim.test.ts",
+    "../../../apps/runner/src/admission-journal.test.ts",
+    "../../../apps/runner/src/runtime-claim-recovery.test.ts",
+    "../../../apps/runner/src/runtime-shutdown.test.ts",
+    "../../../apps/runner/src/runtime-capacity.test.ts",
+    "../../../apps/runner/src/runner.test.ts",
+    "../../../apps/server/src/runner-claim-receipts.test.ts"
+  ]
+}

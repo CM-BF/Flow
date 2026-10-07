@@ -1,0 +1,93 @@
+{
+  "state": "PREPARATION_NOT_OPEN",
+  "preparedAt": "2026-10-07T03:09:49Z",
+  "base": "22a0806bc2465e11096949618113833f31766b19",
+  "sourceCheckpoint": "Product83a and original fixture unchanged; diagnostic source e3b9 approved; finite input selector bound by this delivery manifest.",
+  "inputs": [
+    {
+      "path": "apps/server/src/runner-claim-receipts.test.ts",
+      "bytes": 13057,
+      "sha256": "59338c88937c37e7f996f7b29c4e44f27ee1512d13026ccf363c960e6f9ceb22"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-fixture.ts",
+      "bytes": 13351,
+      "sha256": "a7e3fe7c8864e2bb03d08d710803a0f671fed4898a372bae4c7cd0375248b543"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-vitest.config.ts",
+      "bytes": 227,
+      "sha256": "a7cff97c07e50da35f3c507fd47ec1ec33a8d74a9504bb136d5dd4164083b45d"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.py",
+      "bytes": 17301,
+      "sha256": "ccecbeb9b9f9214d718c62b5e2b0bb0f70173459b04f2ac239dae28b2f58196a"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-dynamic-inputs.json",
+      "bytes": 7155,
+      "sha256": "d5625539c0dc7d836473295e21a95b737d7854ec2882ce448e80f46aeee3f49e"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-dependency-inputs.json",
+      "bytes": 7207,
+      "sha256": "fd982457966eeaa1dc86725f848984deb27d478896413a8493abe328d87df59f"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.test.py",
+      "bytes": 6655,
+      "sha256": "d6e71805ef5abafa69d6c3a8901f8b91e706cf1a4b045f3f576f4adc0b1b8ee7"
+    },
+    {
+      "path": "docs/evidence/s01p07/claim-amend.json",
+      "bytes": 1211,
+      "sha256": "5cafb31ea871cabd2d103a47b78ba3476b94b19a946d5a2f8f5f902c4f660d83"
+    }
+  ],
+  "command": [
+    "Node24.20",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/s01p07/pg-vitest.config.ts",
+    "--configLoader",
+    "native",
+    "apps/server/src/runner-claim-receipts.test.ts"
+  ],
+  "selectedGroups": 8,
+  "workMs": 120000,
+  "cleanupMs": 70000,
+  "afterAllMs": 80000,
+  "outerRequiredMaxMs": 200000,
+  "taskMax": 16,
+  "httpMax": 160,
+  "rawMaxBytes": 1048576,
+  "ownTempMaxBytes": 33554432,
+  "resourceGateBytes": 1207959552,
+  "adminConfiguration": "source existing /tmp/flow-coordination.env; map FLOW_COORDINATION_DATABASE_URL to FLOW_S01P07_ADMIN_URL without output; enforce localhost:55432 and admin postgres",
+  "environmentGate": "FLOW_S01P07_PG_OPEN=1 only in separately assigned actual slot",
+  "creation": "wx/fsync reservation before CREATE and after own root identity; successful CREATE ACK plus random DB comment/OID required. Unknown creation ownership retained even if name exists.",
+  "cleanup": "app/pool close then same OID+marker and zero DB connections before ordinary DROP; exact root dev/ino before rm; original primary failure retained separately from cleanup; unknown retained",
+  "counts": "8 planned groups, 10 estimated functional tasks; not actual results",
+  "limits": "Exclusive heavy window required. A single bounded local may overlap only with an explicitly confirmed isolated budget and combined fresh floor; otherwise serial. Original PG fresh floor1207959552B remains. Shared PG/WAL growth and sampled-between peaks are unknown. No provider/SDK target. Original4 capacity PG cases stay unselected.",
+  "wrapper": "python3.13 -B docs/evidence/s01p07/execute-pg.py; set FLOW_S01P07_PG_INPUT=pg-diagnostic-slot-request.json; exact FLOW_S01P07_EXECUTION_HEAD and unique FLOW_S01P07_PG_WINDOW require separate FLOW_S01P07_PG_OPEN=1 authorization.",
+  "connections": {
+    "serverPoolMax": 8,
+    "schedulerBossMax": 3,
+    "fixturePoolMax": 3,
+    "adminPoolMax": 1,
+    "theoreticalMaximum": 15
+  },
+  "outer": "One monotonic origin incl preflight; work UTC <=120s; fixture cleanup min(70s,outer190s); 190s end capture, observe group three-state, TERM/KILL at most once each only on known present, unknown no escalation; EOF/leader/group distinct; receipt and external tool wall<=200s. Underlying OS operations are not cancelled by timeout; retain unknown.",
+  "historicalInput": {
+    "path": "docs/evidence/s01p07/pg-slot-request.json",
+    "target": "ac3b8532fb23a9c8549c0b32e225a31327bc85f9"
+  },
+  "inputSelection": "FLOW_S01P07_PG_INPUT=pg-diagnostic-slot-request.json; only this and the historical default name are recognized. New namespace and clean execution HEAD require a separate OPEN."
+}

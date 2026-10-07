@@ -1,0 +1,46 @@
+{
+  "window": "S01P07-PG-20261007-R1",
+  "at": "2026-10-07T02:54:36.894544+00:00",
+  "executionHead": "03d5543cebffeffa53924addd331e65d764586ce",
+  "productTarget": "83a0799293057f7472f0329c61e566708b2a2381",
+  "preparedSource": "ac3b8532fb23a9c8549c0b32e225a31327bc85f9",
+  "preparedManifest": {
+    "path": "docs/evidence/s01p07/pg-prepared-manifest.json",
+    "sha256": "db1364e042fee29978785f93d260504ac12e8f1e7477bcbd7e17107a445fc65f"
+  },
+  "state": "FAILED_BEFORE_CASE_RESULTS",
+  "files": [
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R1.json",
+      "bytes": 1909,
+      "sha256": "5b983bc9497eb0062013f5403388bf6bbae6679c37f4d7cd89ae163a98f4d4f5"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R1.stdout",
+      "bytes": 90,
+      "sha256": "dbdd3ca77878159147aebf849cb35e5308b84d2db932e78d5ae31b06b55051d9"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R1.reservation.json",
+      "bytes": 392,
+      "sha256": "ce6a456f7210aa0c4a13a5cdc61bbbebc8a672171ef41da781b39ed96bee6427"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R1.child.json",
+      "bytes": 184,
+      "sha256": "04aa79859ceef306277ac766039d743679ffadc3b3001b5f157be80eabdcad6a"
+    },
+    {
+      "path": "docs/evidence/s01p07/checks/S01P07-PG-20261007-R1.outer.json",
+      "bytes": 4011,
+      "sha256": "6eb308710be529be497aa2de4b7bbb4433a59758c711816d1d771c26cb9ffcce"
+    }
+  ],
+  "totalBytes": 6586,
+  "boundary": "Actual window consumed; TEMP_INVENTORY_UNKNOWN source cause unclassified. No test result, no PG cleanup proof. Owned temp retained; stopped child/group/EOF confirmed. No source repair or retry."
+}

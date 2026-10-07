@@ -7,7 +7,7 @@ import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { spawn } from 'node:child_process';
 import { afterEach, expect, it } from 'vitest';
-import { eventBatchSchema, type ClaimedTask, type EventBatch, type RunnerEvent, type RunnerEventData, type TaskSubmission } from '@flow/contracts';
+import { RUNNER_CLAIM_PROTOCOL, eventBatchSchema, type ClaimedTask, type EventBatch, type RunnerEvent, type RunnerEventData, type TaskSubmission } from '@flow/contracts';
 import { createClaudeAdapter, runRunner, type RunnerOptions, type RunnerNotice } from './index.js';
 import { NativeExecutionError } from './native-harness/settlement.js';
 
@@ -40,10 +40,13 @@ async function center(task: Partial<TaskSubmission> = {}) {
     if (request.headers.authorization !== 'Bearer test-runner-token') {
       response.writeHead(401).end(JSON.stringify({ error: { code: 'unauthorized', message: 'Unknown runner.' } })); return;
     }
-    if (request.url === '/api/runner/claim') {
+    if (request.url === '/api/runner/identity') { response.end(JSON.stringify({ protocol: RUNNER_CLAIM_PROTOCOL, runnerId: 'runner-1' })); return; }
+    if (request.url === '/api/runner/claim-opportunity/status') { response.end(JSON.stringify({ ...body, state: 'missing' })); return; }
+    if (request.url === '/api/runner/claim-opportunity') {
       claims++;
       const next = claimed ? queuedAssignments.shift() ?? null : assignment;
-      response.end(JSON.stringify({ assignment: next, remainingLeaseMs: next ? claimLeaseMs : 0 })); claimed = true; return;
+      response.end(JSON.stringify(next ? { ...body, state: 'assigned', assignment: next, remainingLeaseMs: claimLeaseMs,
+        identity: { taskId: next.task.id, attemptId: next.attempt.id, runnerId: next.attempt.runnerId, ownerVersion: next.attempt.ownerVersion } } : { ...body, state: 'empty' })); claimed = true; return;
     }
     if (request.url === '/api/runner/heartbeat') {
       if (heartbeatHook?.(response)) return;

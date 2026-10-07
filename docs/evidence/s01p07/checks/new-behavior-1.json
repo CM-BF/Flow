@@ -1,0 +1,40 @@
+{
+  "source": "83a0799293057f7472f0329c61e566708b2a2381",
+  "startedAt": "2026-10-06T20:25:52.593208+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/s01p07/vitest.config.ts",
+    "--configLoader",
+    "native",
+    "packages/contracts/src/runner-claim.test.ts",
+    "packages/client/src/runner-claim.test.ts",
+    "apps/runner/src/admission-journal.test.ts",
+    "apps/runner/src/runtime-claim-recovery.test.ts"
+  ],
+  "resourceBefore": 1299894272,
+  "temporaryRoot": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-check-27rf90da",
+  "rootIdentity": {
+    "dev": 16777234,
+    "ino": 123172886
+  },
+  "testEnvironment": {
+    "NODE_DISABLE_COMPILE_CACHE": "1",
+    "TSX_DISABLE_CACHE": "1"
+  },
+  "timeoutSeconds": 60,
+  "rawLimit": 1048576,
+  "temporaryLimit": 33554432,
+  "exitCode": 0,
+  "fault": null,
+  "processGroupGone": true,
+  "temporaryFinalBytes": 398,
+  "temporarySampledPeakBytes": 1010288,
+  "temporaryAbsent": true,
+  "rawBytes": 720,
+  "elapsedSeconds": 3.7097567920573056,
+  "finishedAt": "2026-10-06T20:25:56.288153+00:00",
+  "resourceAfter": 1300520960
+}

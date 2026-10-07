@@ -1,0 +1,74 @@
+{
+  "window": "S01P07-PG-20261007-R1",
+  "sourceHead": "03d5543cebffeffa53924addd331e65d764586ce",
+  "startedAt": "2026-10-07T02:53:12.081997+00:00",
+  "resourceBefore": 26578714624,
+  "resourceGate": 1207959552,
+  "providerCalls": 0,
+  "root": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-pg-window-qsnu91s5",
+  "identity": {
+    "dev": 16777234,
+    "ino": 123359346
+  },
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/s01p07/pg-vitest.config.ts",
+    "--configLoader",
+    "native",
+    "apps/server/src/runner-claim-receipts.test.ts"
+  ],
+  "childStarted": true,
+  "exitCode": 143,
+  "primaryFault": "TEMP_INVENTORY_UNKNOWN",
+  "faults": [
+    "TEMP_INVENTORY_UNKNOWN",
+    "FIXTURE_RECEIPT_UNKNOWN"
+  ],
+  "processGroupGone": true,
+  "stdioEnded": true,
+  "process": {
+    "exitCode": 143,
+    "observations": [
+      {
+        "state": "present",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "signals": [
+      {
+        "state": "sent",
+        "errno": null,
+        "signal": 15
+      }
+    ],
+    "groupState": {
+      "state": "absent",
+      "errno": null
+    },
+    "groupAbsent": true,
+    "unknown": false
+  },
+  "fixtureCleanupConfirmed": false,
+  "temporaryFinalBytes": 1164095,
+  "temporarySampledPeakBytes": 1164095,
+  "temporaryAbsent": false,
+  "retainedRoot": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-pg-window-qsnu91s5",
+  "rawObservedBytes": 90,
+  "rawSavedBytes": 90,
+  "elapsedSeconds": 0.8700532088987529,
+  "finishedAt": "2026-10-07T02:53:12.952049+00:00",
+  "limits": {
+    "totalSeconds": 200,
+    "workSeconds": 120,
+    "rawBytes": 1048576,
+    "ownTempBytes": 33554432
+  },
+  "boundary": "Sampled own logical temp bytes; shared PG/WAL growth and between-sample peak are unknown."
+}

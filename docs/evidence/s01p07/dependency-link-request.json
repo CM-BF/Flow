@@ -1,0 +1,119 @@
+{
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery",
+  "mode": "Lead sole ignored dependency links; no install or product import",
+  "expectedHead": "dde8da6e6e5d1ffd00a6a59ee400b02112d6f91f",
+  "links": [
+    {
+      "path": "node_modules/vitest",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest",
+      "version": "4.0.18",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/typescript",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript",
+      "version": "5.9.3",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/tsx",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "version": "4.23.15",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/@types/node",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+      "version": "24.19.1",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/@types/pg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg",
+      "version": "8.23.1",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/zod",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "version": "4.6.5",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/@anthropic-ai/claude-agent-sdk",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk",
+      "version": "0.3.290",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/fastify",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "version": "5.12.5",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/@fastify/cors",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "version": "11.3.0",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/pg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "version": "8.23.1",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/pg-boss",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "version": "12.37.0",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/npm-package-arg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg",
+      "version": "13.0.2",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/pacote",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote",
+      "version": "21.5.1",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/ssri",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri",
+      "version": "13.0.1",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/tar",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar",
+      "version": "7.5.22",
+      "kind": "existing-third-party"
+    },
+    {
+      "path": "node_modules/@flow/contracts",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery/packages/contracts",
+      "kind": "declared-workspace-package-own-tree"
+    },
+    {
+      "path": "node_modules/@flow/client",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery/packages/client",
+      "kind": "declared-workspace-package-own-tree"
+    },
+    {
+      "path": "node_modules/@flow/plugin-runtime",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery/packages/plugin-runtime",
+      "kind": "declared-workspace-package-own-tree"
+    }
+  ],
+  "doNotTouch": [
+    "shared Git config",
+    "lockfile",
+    "donor targets",
+    "current writer sources"
+  ],
+  "checks": "NOT_OPEN"
+}

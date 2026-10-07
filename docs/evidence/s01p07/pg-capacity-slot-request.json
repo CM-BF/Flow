@@ -1,0 +1,128 @@
+{
+  "state": "CAPACITY_PREPARATION_NOT_OPEN",
+  "preparedAt": "2026-10-07T03:34:57.772871+00:00",
+  "base": "22a0806bc2465e11096949618113833f31766b19",
+  "sourceCheckpoint": "1fa0a47cf7f135181036d7589a4e2251f32da600 plus the narrow registry type-inference fix; final source target bound in pg-capacity-prepared-manifest.json.",
+  "inputs": [
+    {
+      "path": "docs/evidence/s01p07/pg-fixture.ts",
+      "bytes": 13409,
+      "sha256": "f111069487403bf585e1f742d67b7a02808127a0e655eefaffe27233122d1831"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-vitest.config.ts",
+      "bytes": 227,
+      "sha256": "a7cff97c07e50da35f3c507fd47ec1ec33a8d74a9504bb136d5dd4164083b45d"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.py",
+      "bytes": 17776,
+      "sha256": "bea6cc9f2aeaef363e3a7f6770eaa62b53a0b871fbba7886484fa7ea91fe17f8"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-dynamic-inputs.json",
+      "bytes": 7155,
+      "sha256": "d5625539c0dc7d836473295e21a95b737d7854ec2882ce448e80f46aeee3f49e"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "docs/evidence/s01p07/pg-dependency-inputs.json",
+      "bytes": 7207,
+      "sha256": "fd982457966eeaa1dc86725f848984deb27d478896413a8493abe328d87df59f"
+    },
+    {
+      "path": "docs/evidence/s01p07/execute-pg.test.py",
+      "bytes": 6655,
+      "sha256": "d6e71805ef5abafa69d6c3a8901f8b91e706cf1a4b045f3f576f4adc0b1b8ee7"
+    },
+    {
+      "path": "docs/evidence/s01p07/claim-amend.json",
+      "bytes": 1211,
+      "sha256": "5cafb31ea871cabd2d103a47b78ba3476b94b19a946d5a2f8f5f902c4f660d83"
+    },
+    {
+      "path": "apps/runner/src/runtime-capacity.test.ts",
+      "bytes": 26130,
+      "sha256": "af7a9c7791acad1524f3c33329bc7f1a1722c2bf5256483d3641aa075653e2d9"
+    },
+    {
+      "path": "docs/evidence/s01p07/capacity-center.ts",
+      "bytes": 6283,
+      "sha256": "96202805a85ec00ca2a200e1e80b56f6657046da2a26442f5205136a664add62"
+    },
+    {
+      "path": "docs/evidence/s01p07/capacity-vitest.config.ts",
+      "bytes": 1058,
+      "sha256": "cda10a9864bdbb83395276f5ca8863b360ed21a25000b8fdd77736587c0db9c7"
+    },
+    {
+      "path": "docs/evidence/s01p07/capacity-tsconfig.json",
+      "bytes": 156,
+      "sha256": "3a7841ba5b45e5766faa018075574fb2d13886b3e98c6e2305ff03a5fdb9f9e2"
+    },
+    {
+      "path": "docs/evidence/s01p07/main-database.ts",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    }
+  ],
+  "command": [
+    "Node24.20",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/s01p07/capacity-vitest.config.ts",
+    "--configLoader",
+    "native",
+    "apps/runner/src/runtime-capacity.test.ts"
+  ],
+  "selectedGroups": 4,
+  "workMs": 120000,
+  "cleanupMs": 70000,
+  "afterAllMs": 80000,
+  "outerRequiredMaxMs": 200000,
+  "taskMax": 13,
+  "httpMax": 640,
+  "rawMaxBytes": 1048576,
+  "ownTempMaxBytes": 33554432,
+  "resourceGateBytes": 1207959552,
+  "adminConfiguration": "source existing /tmp/flow-coordination.env; map FLOW_COORDINATION_DATABASE_URL to FLOW_S01P07_ADMIN_URL without output; enforce localhost:55432 and admin postgres",
+  "environmentGate": "FLOW_S01P07_PG_OPEN=1 only in separately assigned actual slot",
+  "creation": "wx/fsync reservation before CREATE and after own root identity; successful CREATE ACK plus random DB comment/OID required. Unknown creation ownership retained even if name exists.",
+  "cleanup": "app/pool close then same OID+marker and zero DB connections before ordinary DROP; exact root dev/ino before rm; original primary failure retained separately from cleanup; unknown retained",
+  "counts": "4 planned cases, cumulative exactly13 submitted tasks if all reach their existing setup. Maximum640HTTP is four independently enforced160/request fixture guards, not an observed count.",
+  "limits": "Original200s total and common120s work deadline; each case fixture cleanup min(70s,remaining before190s), runtime settlement bounded8s then no cleanup if unknown. Original32MiB sampledTMP/raw1MiB/floor1207959552B. Any local paired complete budget added by actual caller. No PG OPEN.",
+  "wrapper": "python3.13 -B docs/evidence/s01p07/execute-pg.py; FLOW_S01P07_PG_INPUT=pg-capacity-slot-request.json; separate exact execution HEAD and unique OPEN namespace required.",
+  "connections": {
+    "serverPoolMax": 8,
+    "schedulerBossMax": 3,
+    "fixturePoolMax": 3,
+    "adminPoolMax": 1,
+    "theoreticalPeak": 15,
+    "databaseSequence": "Four independent cases sequential; close before next case, bail1 on failure. Unknown retains associated identities."
+  },
+  "outer": "One monotonic origin incl preflight; work UTC <=120s; fixture cleanup min(70s,outer190s); 190s end capture, observe group three-state, TERM/KILL at most once each only on known present, unknown no escalation; EOF/leader/group distinct; receipt and external tool wall<=200s. Underlying OS operations are not cancelled by timeout; retain unknown.",
+  "historicalInput": {
+    "path": "docs/evidence/s01p07/pg-slot-request.json",
+    "target": "ac3b8532fb23a9c8549c0b32e225a31327bc85f9"
+  },
+  "inputSelection": "FLOW_S01P07_PG_INPUT=pg-capacity-slot-request.json; exact finite new mode, original two modes retained.",
+  "databaseMax": 4,
+  "testSelection": "^real PG/HTTP (capacity1/capacity4/session exclusion/draining):4; all nonPG cases unselected.",
+  "mainCombination": {
+    "main": "15847da4b4aa00d42bd3e25b9bf88ea046bb19a8",
+    "donor": {
+      "path": "docs/evidence/s01p07/main-database.ts",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    },
+    "originalModuleId": "apps/server/src/database.ts",
+    "loadMarker": "FLOW_S01P07_MAIN_DATABASE_LOADED_SHA must equal fixed SHA in aggregate receipt",
+    "boundary": "Preserves module id/import.meta.url for unchanged migration reads. Other231 known closure entries:228 shared inputs only this database delta;3 own new receipt/contract files not in main. Does not claim all product main integrated."
+  },
+  "outputPaths": "Original10 suffixes plus .fixture.json.case-{1..4} each with empty/.reservation.json/.root.json/.create-request.json/.database.json:30 preflight paths, lstat all absent before own resources. One aggregate cleanup receipt plus four independent DB records."
+}

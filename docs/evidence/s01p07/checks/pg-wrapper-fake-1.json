@@ -1,0 +1,32 @@
+{
+  "source": "e419641f2ccf04145344961e8c7a781e6edf6670",
+  "startedAt": "2026-10-06T20:49:18.297026+00:00",
+  "command": [
+    "python3",
+    "-B",
+    "docs/evidence/s01p07/execute-pg.test.py"
+  ],
+  "resourceBefore": 1233829888,
+  "temporaryRoot": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-check-vd2kncqs",
+  "rootIdentity": {
+    "dev": 16777234,
+    "ino": 123190015
+  },
+  "testEnvironment": {
+    "NODE_DISABLE_COMPILE_CACHE": "1",
+    "TSX_DISABLE_CACHE": "1"
+  },
+  "timeoutSeconds": 60,
+  "rawLimit": 1048576,
+  "temporaryLimit": 33554432,
+  "exitCode": 0,
+  "fault": null,
+  "processGroupGone": true,
+  "temporaryFinalBytes": 0,
+  "temporarySampledPeakBytes": 0,
+  "temporaryAbsent": true,
+  "rawBytes": 101,
+  "elapsedSeconds": 0.1363705419935286,
+  "finishedAt": "2026-10-06T20:49:18.419594+00:00",
+  "resourceAfter": 1233793024
+}

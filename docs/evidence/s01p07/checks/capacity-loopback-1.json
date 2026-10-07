@@ -1,0 +1,39 @@
+{
+  "source": "83a0799293057f7472f0329c61e566708b2a2381",
+  "startedAt": "2026-10-06T20:27:03.162754+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/s01p07/vitest.config.ts",
+    "--configLoader",
+    "native",
+    "apps/runner/src/runtime-capacity.test.ts",
+    "--testNamePattern",
+    "^(refills|defaults|honors|cancels|awaits|stops|retains an unknown opportunity|does not send|never replays)"
+  ],
+  "resourceBefore": 1295028224,
+  "temporaryRoot": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01p07-check-tb69efoz",
+  "rootIdentity": {
+    "dev": 16777234,
+    "ino": 123173878
+  },
+  "testEnvironment": {
+    "NODE_DISABLE_COMPILE_CACHE": "1",
+    "TSX_DISABLE_CACHE": "1"
+  },
+  "timeoutSeconds": 60,
+  "rawLimit": 1048576,
+  "temporaryLimit": 33554432,
+  "exitCode": 0,
+  "fault": null,
+  "processGroupGone": true,
+  "temporaryFinalBytes": 117,
+  "temporarySampledPeakBytes": 3049273,
+  "temporaryAbsent": true,
+  "rawBytes": 348,
+  "elapsedSeconds": 2.7021645000204444,
+  "finishedAt": "2026-10-06T20:27:05.847128+00:00",
+  "resourceAfter": 1295065088
+}
