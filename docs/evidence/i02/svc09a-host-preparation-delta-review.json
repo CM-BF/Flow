@@ -1,0 +1,38 @@
+{
+  "kind": "SVC09A_HOST_PREPARATION_DELTA_REVIEW",
+  "reviewedAt": "2026-10-07T15:45:43.000Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "sourceTarget": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
+  "deliveryTarget": "bc8999dbab2dfa36d1c25adcf05b5b14da40032c",
+  "canonical": "personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-preparation.json",
+  "manifestBytes": 29453,
+  "manifestSha256": "facbe315b491f6e87e248dd95157ee625f7aed9d12c844bf6d8baf10d76aab5f",
+  "decision": "APPROVED_FIXED_HOST_PREPARATION",
+  "priorReview": "svc09a-host-preparation-review.json",
+  "closed": ["SVC09A-HOST-P2-01"],
+  "remainingBlockingFindings": [],
+  "readOnlyChecks": {
+    "sourceBindings": 16,
+    "evidenceBindings": 19,
+    "inheritedReferences": 2,
+    "runtimeBindings": 6,
+    "fixedAndCurrentMismatches": 0,
+    "reviewerTests": 0,
+    "PG": 0,
+    "provider": 0,
+    "personalIO": 0
+  },
+  "directEvidence": {
+    "selectedNewCases": 5,
+    "passed": 5,
+    "elapsedMs": 402,
+    "rawBytes": 955,
+    "returnedAt": "2026-10-07T15:41:14.929848Z",
+    "ownedGroups": 2,
+    "allAbsentAndDualEOF": true,
+    "scratch": "exact owned empty directory removed"
+  },
+  "assessment": "Existing OPS14 now independently supervises the complete operator caller for 215 seconds plus 0.5-second termination and 2-second reap allowance. The injected persistence stall is stopped while retaining earlier failure output. Caller exit never establishes detached-service or database cleanup; phase receipts remain required. Failed work-report persistence still invokes independent cleanup, missing work disposition refuses DROP, and known vanished entries follow the shared measurement contract. No new supervisor loop or ownership authority was introduced.",
+  "scope": "One isolated fixed-artifact host/profile/maintenance and mixed real claim/ACK fixture with adapter-only injection. Prior build approval remains unchanged; synthetic Web is not production App compatibility. Fresh assigned resource window, connection/space sum and exact identities are still required before actual execution. Both actual namespaces remain absent; no PG/host/personal run has occurred.",
+  "history": "Original six cases, post-check STATIC_ONLY stage and P2 review remain intact. Only five affected cases were added; no build/import or original six-case repetition."
+}
