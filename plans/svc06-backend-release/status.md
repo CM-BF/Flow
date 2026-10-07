@@ -20,7 +20,7 @@
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | 检查状态 | r1三角色ready/27→35后BOOTSTRAP_REQUIRED，cleanup确认；r2一个真实loader/CAS直接例原红→1/1，syntax0，379ms/2456B/三组absent，实际host NOT_RUN |
-| 已集成main状态 / HEAD | main/origin 8c2ae379 已接r1失败/cleanup47 own文件及I02复核（Lead回执）；旧c2c build/import批准保持，新诊断尚未集成 |
+| 已集成main状态 / HEAD | Lead回执main650d230d已受控接收d911诊断产物结果/4a6准备及独审；后mainb675为插件CLI。r1 fe46结果待本批，r2最小修正待审/实际运行；不追moving main改变固定6c。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 首次发布的隔离测试步骤已修正，定向检查通过；上一轮失败与正常清理已完成独立核验。 |
