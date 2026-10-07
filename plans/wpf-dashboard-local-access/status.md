@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 03:29:38 UTC |
+| 最近更新 | 2026-10-07 03:39:46 UTC |
 | 任务开工时间 | 2026-10-07T02:53:01Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：owner实际开始此已派实现段时 clock.curr_time 返回UTC；take时间单独保留，不冒开工。完成：未完成 |
@@ -14,7 +14,7 @@
 | 本片段交付阶段 | implementation |
 | 当前产出 | Flow 入口、显式凭据加载与前四组浏览器交互已验证；页面隐藏后的清除仍待验证 |
 | 下一可用交付 | 完成页面隐藏验收后，交付可由原服务发布者启用的本机入口 |
-| 当前阻塞 | 浏览器隐藏前提修正已固定待审；两轮失败保留，等待后续实际验证 |
+| 当前阻塞 | 关闭焦点模拟及最小化自有窗口后仍未观察到页面隐藏；三轮失败保留，待定位前提 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access |
 | Branch | codex/dashboard-local-access |
@@ -23,7 +23,7 @@
 | 工作分支状态 | in-progress / browser-partial / visibility-pending |
 | 实现目标 | ccd88577652369e17385a30c9a9a3dfa8e91d966（仅browser前提；产品08ec不变） |
 | 实现范围 | apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/index.html, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/local-access.browser.mjs |
-| 检查状态 | FAILED 08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7：两次browser均4/5组完成；第二次visibility预期hidden实际visible超时；35direct已过；真实安装/部署 NOT_RUN |
+| 检查状态 | FAILED 08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7：三次browser均4/5组完成；第三次关闭focus模拟/自有窗口最小化后仍visible超时；35direct已过；真实安装/部署 NOT_RUN |
 | Review | source+35direct 独立限定APPROVED；完整feature NOT_STARTED，browser失败保留 |
 | 已集成main状态 / HEAD | 943a66bfa5f71f4a5000ff2674ac1973e85e0353；本功能未集成 |
 | Dashboard 同步 | 首a6fb已由manager核并转READY_FOR_LEAD_INTAKE；实际登记/聚合待回执 |
@@ -32,8 +32,8 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | ACCESS01-01 | in-progress | workspace_panels_owner | provider/HTTP已实现，35direct通过且限定独审接受 |
-| ACCESS01-02 | in-progress | workspace_panels_owner | 实际入口/UI前四组两次均过；第二次第五组未达hidden前提 |
-| ACCESS01-03 | in-progress | workspace_panels_owner | 35/35 direct通过；browser两次失败4/5；原60s保守余41272ms含15s清理 |
+| ACCESS01-02 | in-progress | workspace_panels_owner | 实际入口/UI前四组三次均过；第三次第五组仍未达hidden前提 |
+| ACCESS01-03 | in-progress | workspace_panels_owner | 35/35 direct通过；browser三次失败4/5；原60s保守余29161ms含15s清理 |
 | ACCESS01-04 | pending | workspace_panels_owner | 源+35direct限定独审通过；完整feature/main/部署未验 |
 
 ## 已完成与检查
@@ -42,11 +42,11 @@
 
 ## 阻塞 / 风险 / 未验证
 
-本队已有序列结束后获得普通有界direct段；实际35/35通过并清理。两个授权隔离browser窗口均实际使用并归还；未授权第三次。个人61228已恢复为来源事实，不当本片验收；不自动登录/刷新用户tab。真实secret未读。
+本队已有序列结束后获得普通有界direct段；实际35/35通过并清理。三个授权隔离browser窗口均实际使用并归还；未授权第四次。个人61228已恢复为来源事实，不当本片验收；不自动登录/刷新用户tab。真实secret未读。
 
 ## 下一步与 handoff
 
-固定源码已交root独立审查；运行者修正已经复审并在第二次实际运行中完成双EOF/日志/清理；第五组关闭Playwright focus override并用原生tab/确切自有window触发hidden，已固定待源审；未获得第三次heavy，不重复direct。main与4320部署由原operator受控；不改center/runner。架构新增按需本机凭据Interface，登记D06待更新。
+固定源码已交root独立审查；运行者修正已经复审并在第二次实际运行中完成双EOF/日志/清理；第五组原生前提已获限定源审，但第三次实际仍visible；下一步只定位该前提，未获得第四次heavy，不重复direct。main与4320部署由原operator受控；不改center/runner。架构新增按需本机凭据Interface，登记D06待更新。
 
 ## 等待记录
 
@@ -77,3 +77,9 @@
 ## 隐藏前提源码修正（未运行）
 
 固定 `ccd88577652369e17385a30c9a9a3dfa8e91d966` 仅更新browser第5组：ownpage关闭Playwright焦点模拟，切own tab后若仍visible，仅最小化page关联的own window；先断言真实hidden，再保原清除/no-storage断言；finally恢复window/focusoverride并detach/close，失败保留。原前4组、产品六源与35direct不变。已装Playwright源码支持该前提原因候选，但不冒唯一动态根因或新PASS。[source记录](../../docs/evidence/wpf-dashboard-local-access/visibility-precondition-source.json)与[root第二轮研究](../../docs/evidence/wpf-dashboard-local-access/root-access-second-browser-research.json)；源码待独审，运行0，剩41272ms含15s清理不变。
+
+## 第三次实际浏览器（失败保留）
+
+[全部原件与预算](../../docs/evidence/wpf-dashboard-local-access/browser-third/archive.json)绑定execution e970/source ccd885，actualexit1/outer12110.540500ms，原前4组第三次PASS。第5组focusEmulationDisabled=true，ownedtab切换后visible；page关联windowId975387409原normal，最小化命令成功后5秒仍visible。未达到hidden前提，未标tokenCleared；不推产品handler失效或完整通过。window/focus恢复、sessiondetach、extra tab关闭都记录true，context/HTTPclosed、Chromeexit0/两层双EOF/cleanupErrors[]，终态日志319B/截断0；03:38:53精确自有两PID/组absent、CDP拒绝61、scratch不存在。窗口已即时归还，无第四次安排。
+
+原60s保守累计30839ms/余29161ms含15s清理；三个实际outer合30837.391042ms与父早/晚报告分别保留，未覆盖旧值。产品08ec和前4组不变，35direct未重跑。Root[ccd前提源审](../../docs/evidence/wpf-dashboard-local-access/root-access-ccd-visibility-review.json)和[第三caller准备审](../../docs/evidence/wpf-dashboard-local-access/root-access-third-preparation-review.json)原样归档；它们不是本轮browser通过，完整feature NOT_STARTED/main/部署未验。

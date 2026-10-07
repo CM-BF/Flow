@@ -35,3 +35,9 @@ Root原件 `docs/evidence/wpf-dashboard-local-access/root-source-direct-review.j
 ## 第五组前提修复候选
 
 Source target `ccd88577652369e17385a30c9a9a3dfa8e91d966`，只变browser真实visibility设置与own资源finally，产品08ec/前4组/两次失败原件不变。Root第二轮研究原件已归档；当前candidate尚待独立source review，未运行。原断言仍先hidden再token空；没有属性伪造、事件合成、跳过或降低验收。完整feature仍NOT_STARTED。
+
+## 2026-10-07 03:39:46 UTC — 第三次运行与限定源审分列
+
+Root已对ccd885前提及第三caller给限定源码批准，原件归档于本evidence。实际第三run仍FAILED：原前4组PASS，focus模拟已关闭、自有window最小化命令成功，但真实visibility仍visible。没有跳过hidden或伪造事件，后续token清除不冒通过。全部自有清理、双EOF与actualexit1原件已归档 browser-third；本轮待root实证审，不自行APPROVED。
+
+完整feature仍NOT_STARTED，真实安装/主线/4320发布未验。余29161ms含15000cleanup只是原60s余额，非第四次许可；source/direct35无变化不重跑。

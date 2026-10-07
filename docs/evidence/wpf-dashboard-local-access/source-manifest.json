@@ -2,7 +2,7 @@
   "task": "WPF-DASHBOARD-ACCESS01",
   "base": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
   "implementation": "ccd88577652369e17385a30c9a9a3dfa8e91d966",
-  "state": "SOURCE_FIXED_VISIBILITY_PRECONDITION_NOT_RUN",
+  "state": "SOURCE_FIXED_DIRECT35_PASSED_BROWSER_THIRD_FAILED_4_OF_5",
   "sources": [
     {
       "path": "apps/execution-dashboard/src/server.mjs",
@@ -54,8 +54,8 @@
   ],
   "staticExpectedTests": 35,
   "imports": "Direct entry imports only local-access.mjs and Node built-ins; no aggregate/pg/browser/personal configuration.",
-  "browserEntry": "Same checkLocalAccessBrowser({browser,expect,outputDirectory}); original first four groups and product unchanged. Fifth group disables Playwright focus override on its own page, switches own tab and if needed minimizes exact own window; asserts real hidden before token clearing. No third run granted.",
-  "runtime": "35direct passed at08ec, its dependency source unchanged; two original08ec browser runs FAILED4/5. Newccd885 fifth-group native visibility precondition NOT_RUN.",
+  "browserEntry": "Same checkLocalAccessBrowser({browser,expect,outputDirectory}); first4 groups unchanged/passed in3runs. Fifth group native hidden prerequisite still not achieved in third actualrun; original token-empty/no-storage assertions remain, no fourth authorization.",
+  "runtime": "35direct passed at08ec unchanged dependencies. Original08ec browser runs1/2 FAILED4/5; ccd885 run3 FAILED4/5, actual visibility remained visible after focus disable/owned window minimize. No fourth run.",
   "realInstallation": "NOT_READ_NOT_VERIFIED",
   "main": "NOT_INTEGRATED",
   "deployment4320": "NOT_DEPLOYED",
