@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:07:09.165529+00:00 |
+| 最近更新时间 | 2026-10-07T11:11:36.064948+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,11 +14,11 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base ab5a；source a2981b71b47d254356152c505ddfff29edd76446；support f2848f9d0406222aff54fcfb0c5650147e0ca04b；固定七源与local/PG准备；交审packet82cca2124bd7c234f21088cca53adc46f50751f6已push |
-| 工作树 dirty 状态 | 交审packet82cca212核HEAD=origin且clean；本次仅停点字段收口，提交后复核 |
+| 工作基线 / HEAD | source a2981b71b47d254356152c505ddfff29edd76446；support f2848f9d0406222aff54fcfb0c5650147e0ca04b；review packet 82cca2124bd7c234f21088cca53adc46f50751f6；metadata段起点e9ca6fd7 clean |
+| 工作树 dirty 状态 | 仅正式review/READY/status元数据收口；原固定源码/raw/manifest不改 |
 | 工作分支状态 | review |
 | 检查状态 | PASSED a2981b71b47d254356152c505ddfff29edd76446：10 distinct分轮通过；最终types0；首失败保留；PG新1例NOT_RUN |
-| Review | 初审11:05:20唯一P2已窄修，等待chatui固定增量与准备复审 |
+| Review | chatui01_owner 2026-10-07T11:08:43Z SOURCE_AND_LOCAL_RESULT_AND_PG_PREPARATION_REVIEW_APPROVED / 0 P1/P2；原P2 CLOSED |
 | 检查范围 | 10 distinct分轮通过；最终types0；首失败保留；PG新1例NOT_RUN；非完整X01通过 |
 | 检查目标 | a2981b71b47d254356152c505ddfff29edd76446 |
 | 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；process验收证据已main221921c0，I02 x01-process-acceptance-intake.json，productDelta=[]；新候选七源未main，不冒latest main全集检查 |
@@ -27,8 +27,8 @@
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 授权后端候选可按名称区分，并展示维护或不兼容原因；启用、绑定及状态读取均按当前信任重验，正在独审 |
-| 下一可用交付 | 交付候选合同与中心接口；通过准备独审后，在独立窗口验证真实SQL和鉴权 |
+| 当前产出 | 按名称选择授权后端的合同、中心接口和不可选原因已独审通过；真实SQL验证准备就绪 |
+| 下一可用交付 | 领取独立资源窗口后验证候选分页、鉴权及当前信任重验，再交主线接收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -369,3 +369,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 管理ACK依赖仅链接其唯一owner入口：[已审待main ACK](../../../plugin-command-acks/docs/evidence/x01-plugin-command-acks/main-intake.json)，source ae1482fd / delivery e54f57eb，10:50:56 APPROVED；不复制子task状态。本次process验收已由main221921c0正式接收，原997f/23绑定/raw不改。
 
 2026-10-07T11:07:54.580857+00:00：本20min段安全停止写源码/执行，交审packet82cca212已pushclean；chatui实际running正做P2 delta与最终准备复审。manifest SHA8756391bccddfc88acaca71ff92a8f306b6489ba12381c0fad4395371c9c37c1。当前0local/PG/待launch，claimv26保留审查/修复，合同767不变供已独审consumer；若准备批准仍须独立新180s实际窗口，不自行启动。当前差额仅独审结论/后继真实PG，不以本segment延时等待或推定通过。
+
+2026-10-07T11:11:36.064948+00:00：新≤4min metadata段自11:10:20Z开始，原10:48:53段已结束不重置。归档[正式批准](../../docs/evidence/x01/host-candidates-independent-review.json)与[唯一READY入口](../../docs/evidence/x01/host-candidates-ready.json)，review-target仍a298；旧manifest/PENDING准备记录/raw不重写。候选实际PG未开、无reservation，须资源经理NEXT与fresh完整门槛。0工程child/新PG。ACK与候选consumer分别链接其唯一owner intake，父计划不复制子taskTODO；两Web产品STOP和client共享写权边界保持。主线221921c0只接原process证据，当前候选七源未main。
