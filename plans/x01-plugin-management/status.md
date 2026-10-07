@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T10:10:01.698420+00:00 |
+| 最近更新时间 | 2026-10-07T10:16:08.419154+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -10,24 +10,24 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v23 ACTIVE59scope](../../docs/evidence/x01/cli-startup-amend-v23.json)；新增startup6literal，runner4原持有；client/index已交回 |
+| Claim | [v24 ACTIVE60scope](../../docs/evidence/x01/process-runner-amend-v24.json)；新增唯一process-runner-pg.test.ts |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | 固定源码c8ba6bcb98f697b222cc972d517ea2891dcd8d71；基线main3811048522dcc8a896e7ccf09872389b14bccd63；新20min段09:50:37Z |
-| 工作树 dirty 状态 | 已审源码/原件冻结；仅批准归档metadata，提交后HEAD=origin/clean核验 |
-| 工作分支状态 | integration |
-| 检查状态 | startup15选15过/55未选；首types2缺声明补齐后0，3进程/自有roots实际闭合，0PG |
+| 工作基线 / HEAD | 新准备段2026-10-07T10:15:07Z→10:35:07Z；固定main6aa2d42e，bac95641起点 |
+| 工作树 dirty 状态 | 真实双入口单case与薄支持准备中；已审startup/terminal原件不改 |
+| 工作分支状态 | implementation |
+| 检查状态 | 本段full-entry types0 + exact list1（0hooks/PG）；两child最终absent/EOF、ownTMP同identity删除，post-check新增断言未执行 |
 | Review | startup c8ba十源于10:04:52独审APPROVED/0P1P2；terminal20b独立APPROVED/READY |
-| 已集成 main 状态 / HEAD | 领域/claim/semver/provenance/runtime已main；terminal20b四源已main81b4805c42d12ad35e70cd7e27ad3b78df1f035a，实际核当前3b6db156e9367047f839f06791a80f42fce04993同四hash；startup c8ba十源独立READY待接收 |
+| 已集成 main 状态 / HEAD | 领域/claim/semver/provenance/runtime已main；terminal20b四源已main81b4805c42d12ad35e70cd7e27ad3b78df1f035a，实际核当前3b6db156e9367047f839f06791a80f42fce04993同四hash；startup c8ba十源已main6aa2d42e96c33b73e511e69e2984b5279ce4eb7e/正式I02回执与10hash核符 |
 | 实现目标 | c8ba6bcb98f697b222cc972d517ea2891dcd8d71 |
 | 实现范围 | apps/server/src/main.ts；apps/server/src/private-json-configuration.ts；apps/server/src/plugin-runtime-configuration.ts；apps/server/src/plugin-runtime-configuration.test.ts；packages/plugin-runtime/src/private-configuration.ts；packages/plugin-runtime/src/private-configuration.test.ts；apps/runner/src/configuration.ts；apps/runner/src/configuration.test.ts；apps/runner/src/main.ts；apps/runner/src/main-concurrency.test.ts；docs/evidence/x01/cli-startup-* |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 私有可信配置启动接线已审待主线接收；终态报告恢复已进入主线 |
-| 下一可用交付 | 真实center/runner进程的受控插件旅程：当前只读设计，尚未启动或领取PG窗口 |
-| 当前阻塞 | NONE：本次0local/PG/Chrome/待launch；管理命令由独立owner实施，startup窄intake可直接接收 |
+| 当前产出 | 启动可信配置与终态恢复已进入主线，正在准备两次真实runner启动的共同公开插件验收 |
+| 下一可用交付 | 一条专库旅程验证真实进程启动、管理命令和两个明确semver任务；当前尚未执行 |
+| 当前阻塞 | NONE：PG NOT_OPEN；本段types0/list1已实际收尾，准备包待独审；管理三源9f5已独审，尚未main |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -347,3 +347,7 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T10:10:01.698420+00:00：freshv23 ACTIVE59、d2ed clean起点，仅归档[terminal正式main接收](../../docs/evidence/x01/terminal-main-acceptance.json)：81b4805c四源逐hash与source20b及当前main一致，Lead组合11/11/rootnoEmit0按其收据引用，owner不重跑。startup十源[独立READY入口](../../docs/evidence/x01/cli-startup-integration-ready.json)保持；10:07:15起≤8min只读收敛真实进程PG设计，不申请或执行PG，本组local交db管理命令片。
 
 2026-10-07T10:12:18.800266+00:00：完成[真实进程验收最小设计](../../docs/evidence/x01/cli-process-acceptance-plan.md)。实际server main拒port0，采用有归属候选端口且竞争即失败；先公开注册再重启加载精确policy，避免猜runnerId。旧factory hooks不适用于进程总HTTP，准备必须明确新的实际/理论口径，不能复制256/4MiB证明。与独立管理CLI owner约定同一case替换四公开owner调用，尚未固定不当已实现。仅metadata与只读输入，无新增工程检查/PG/资源预约。
+
+2026-10-07T10:15:34.099Z：原子amend v24 ACTIVE60新增唯一真实进程test；首次CLI误传--input在读取文件阶段ENOENT，保原requestId/payload按正确filename重试COMMITTED，未提前产品写。新20min段从10:15:07Z计，≤120s累计/每child60s、TMP16MiB/raw512KiB/source-meta2MiB，仅types/list/pure推导，0PG/Chrome/provider。第二runner需完成第二独立任务作正证据；旧pin/attempt/events不增。
+
+2026-10-07T10:27:00Z：真实进程准备段持续。固定main6aa含已审startup/terminal/READBOUND；9f5管理三源只读镜像使用，独审10:25:16批准，不借此写其产品。新单case两runner各执行一项明确semver任务，保旧attempt/events/phase/pin不变，只证明clean post-ACK restart。333输入/1,537,057B初始闭包missing[]，随后仅新test加强第二项来源/phase断言；两必要local noEmit0/list1无hooks，累计监督约3.7秒，两TMP闭合，raw0/listJSON299B，0PG/tar/main进程。新的理论HTTP2048及日志/工具子进程预算写[候选窗口](../../docs/evidence/x01/process-runner-window.md)，并非实际测量或OPEN。clean-code复核：复用原fixture/OPS14、单task两次真实启动、明确private config和同组所有权；无新生产readiness接口/调度循环。架构产品无新变化，仅实际entry验收接缝；实际图仍main6aa。

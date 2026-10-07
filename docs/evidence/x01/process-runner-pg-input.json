@@ -1,0 +1,48 @@
+{
+  "protocol": "flow.x01.process-runner-pg.v1",
+  "productCommit": "6aa2d42e96c33b73e511e69e2984b5279ce4eb7e",
+  "totalSeconds": 180,
+  "workSeconds": 110,
+  "cleanupSeconds": 60,
+  "finalReserveSeconds": 10,
+  "suites": {
+    "runtime": {
+      "cases": 1,
+      "httpRequests": 256,
+      "connectionsMax": 17
+    }
+  },
+  "httpRequestsMax": 2048,
+  "responseBytesPerRequest": 131072,
+  "responseBytesPerSuite": 4194304,
+  "databasesMax": 1,
+  "serialSuites": true,
+  "streamsBytes": 262144,
+  "resultBytes": 131072,
+  "rawBytes": 1048576,
+  "temporaryBytes": 33554432,
+  "temporaryEntries": 4096,
+  "reserveBytes": 1073741824,
+  "runName": "process-runner-pg-run-r1",
+  "databaseReserveBytes": 134217728,
+  "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+  "selection": [
+    {
+      "file": "docs/evidence/x01/process-runner-inputs/apps/server/src/plugin-runtime/process-runner-pg.test.ts",
+      "name": "real center and runner entries execute pinned semver before and after clean ACK restart"
+    }
+  ],
+  "tasksMax": 2,
+  "registrationsMax": 1,
+  "attemptsMax": 2,
+  "scope": "Real center/runner OS entries, two post-ACK tasks, runCli management calls; clean restart only. No unknown-effect recovery/provider/npm install.",
+  "registryRequestsMax": 4,
+  "tarChildrenMax": 1,
+  "listenersMax": 3,
+  "managementCommit": "9f5d61a10504536f43adca28096878eb71d7fa52",
+  "applicationHttpActual": "UNKNOWN; only fixture owner/management/registry subsets are recorded",
+  "responseBytesTheoreticalMaximum": 268435456,
+  "concurrentListenersMax": 2,
+  "mainChildren": 4,
+  "toolServiceChildrenReserved": 6
+}
