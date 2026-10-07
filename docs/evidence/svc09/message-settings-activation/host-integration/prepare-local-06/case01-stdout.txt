@@ -1,0 +1,24 @@
+✖ actual Python mkdtemp root and the preserved underscore name cross all three input consumers (1.701333ms)
+✔ shared lexical contract rejects traversal, aliases, nested paths and arbitrary input files (1.175542ms)
+✔ valid lexical names do not bypass pinned root identity or private-file symlink rejection (14.563666ms)
+ℹ tests 3
+ℹ suites 0
+ℹ pass 2
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 70.214708
+
+✖ failing tests:
+
+test at docs/evidence/svc09/message-settings-activation/host-integration/host-paths.test.mjs:15:1
+✖ actual Python mkdtemp root and the preserved underscore name cross all three input consumers (1.701333ms)
+  Error: HOST_FIXED_INPUT_REQUIRED
+      at fail (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-consumer.mjs:11:44)
+      at validateHostInput (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-consumer.mjs:17:108)
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-paths.test.mjs:22:18)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    code: 'HOST_FIXED_INPUT_REQUIRED'
+  }

@@ -37,3 +37,9 @@
 R1 d11e512d1获唯一`APPROVED_LIMITED_FAILED_HOST_RESULT_FIDELITY`，引用main e271fb211 `docs/evidence/i02/svc09a-host-first-result-review.json`；原FAIL/KEEP不改，不是host通过。后继c8912fc0e仅own caller工作PATH补`/usr/sbin`并保原环境隔离，2新直接例/4AST通过；148ms/466B，组absent/双EOF/exact空目录移除。等待assignment唯一差量审查，不重跑旧矩阵，不授权新host。
 
 2026-10-07T16:06:55.481113Z：按Lead同次窄审要求，source78543b025固定R2受限参数与独立once目录，原默认目录保持已消费。追加3纯参数/拒重用例129ms/637B，合计5不同/277ms/1103B；新prep17执行pin=16source+只读lsof，6runtime沿用。此为同次候选审查，不复制监督器、不启动host。
+
+## R2失败保真与路径合同后继
+
+2026-10-07T16:24:21.318911Z：R2固定14f9baed0f7eca7fa9b0084402fb825cecd7ebd1获唯一APPROVED_LIMITED_R2_FAILURE_FIDELITY/noP1P2，main f0aa5c50e，原件`docs/evidence/i02/svc09a-host-r2-result-review.json`；不重抄原件，不把结果保真当host通过。
+
+新source c6b9b084c350a631e8abeb910492fb2a858eee5a统一临时路径Interface并加固定R3namespace；6不同（3新路径+3受影响参数）最终绿、7选择、355ms/2361B、3组absent/双EOF/2空scratch删除。原夹具漏sourceHead红保留，已绿2例未重跑。真实mkdtemp直接消费者覆盖，不改生成器或产品/产物。候选待唯一窄审与新actual窗口；原R1/R2不可重投。

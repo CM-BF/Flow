@@ -1,0 +1,130 @@
+{
+  "kind": "SVC09A_HOST_PATH_CONTRACT_LOCAL_RESULT",
+  "at": "2026-10-07T16:24:21.318911Z",
+  "sourceTarget": "c6b9b084c350a631e8abeb910492fb2a858eee5a",
+  "scope": "OWN_CALLER_ONLY; product/artifact unchanged",
+  "claimObservation": {
+    "at": "2026-10-07T16:22:52.914Z",
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 4,
+    "state": "active"
+  },
+  "reports": [
+    {
+      "record": "prepare-local-06/case01-result.json",
+      "at": "2026-10-07T16:20:34.280154+00:00",
+      "exit": 1,
+      "elapsedMs": 116,
+      "rawBytes": 1500,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      }
+    },
+    {
+      "record": "prepare-local-07/case01-result.json",
+      "at": "2026-10-07T16:23:00.242220+00:00",
+      "exit": 0,
+      "elapsedMs": 102,
+      "rawBytes": 224,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      }
+    },
+    {
+      "record": "prepare-local-07/case02-result.json",
+      "at": "2026-10-07T16:23:00.380172+00:00",
+      "exit": 0,
+      "elapsedMs": 137,
+      "rawBytes": 637,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      }
+    }
+  ],
+  "differentSelected": 6,
+  "newPathCases": 3,
+  "affectedNamespaceCases": 3,
+  "selections": 7,
+  "finalDifferentPassed": 6,
+  "preservedFailures": 1,
+  "firstFailure": {
+    "source": "06c7170eea912ac25893bd36ec258bd45790fc03",
+    "case": "actual Python mkdtemp root and the preserved underscore name cross all three input consumers",
+    "cause": "Synthetic fixture omitted artifact.sourceHead; actual fixed-source guard correctly rejected. Fixture corrected, guard unchanged. Two already-passed cases were not rerun."
+  },
+  "elapsedMs": 355,
+  "rawBytes": 2361,
+  "cleanup": [
+    {
+      "at": "2026-10-07T16:20:34.280526+00:00",
+      "state": "removed",
+      "scratch": "/private/tmp/flow-svc09a-host-nfid35l9",
+      "dev": 16777234,
+      "ino": 124322623,
+      "remainingEntries": 0,
+      "ownedState": "absent",
+      "eof": [
+        {
+          "stdout": true,
+          "stderr": true
+        }
+      ]
+    },
+    {
+      "at": "2026-10-07T16:23:00.380534+00:00",
+      "state": "removed",
+      "scratch": "/private/tmp/flow-svc09a-host-7zrafhvv",
+      "dev": 16777234,
+      "ino": 124325443,
+      "remainingEntries": 0,
+      "ownedState": "absent",
+      "eof": [
+        {
+          "stdout": true,
+          "stderr": true
+        },
+        {
+          "stdout": true,
+          "stderr": true
+        }
+      ]
+    }
+  ],
+  "coverage": [
+    "Actual operator-equivalent Python tempfile.mkdtemp(prefix=flow-svc09a-host-, dir=/private/tmp) produces the Node test root; work argv, cleanup argv and validateHostInput consume it.",
+    "Preserved underscore spelling is a lexical-only sample; no old KEEP contents read.",
+    "Traversal, aliases, final newline, wrong filename/mode, symlink and dev/ino mismatch reject.",
+    "R1/R2 consumed names remain rejected; R3 outer/inner modes bind one new explicit namespace pair; arbitrary or extra arguments reject."
+  ],
+  "limits": {
+    "engineeringChildrenCumulativeSeconds": 30,
+    "scratchBytes": 8388608,
+    "rawBytes": 131072,
+    "actualPG": 0,
+    "actualHost": 0,
+    "provider": 0,
+    "build": 0
+  },
+  "freshBeforeFinalRound": {
+    "windowAt": "2026-10-07T16:20:37.909Z",
+    "windowState": "RELEASE_C2_UNIQUE_NEXT_I01_READY_WAIT",
+    "completeFloorBytes": 17960271872,
+    "freeBytes": 20142608384,
+    "meaning": "ordinary local only; not a reservation of the actual host window"
+  },
+  "runtimeReturnAt": "2026-10-07T16:23:00.380534Z",
+  "qualityReview": {
+    "skills": [
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "method": "One lexical Interface shared by three existing consumers; existing identity/ownership and unknown cleanup remain separate; no new supervisor or broad path acceptance. Actual generator direct consumer plus negative boundaries."
+  },
+  "actualR3": "NOT_RUN; new preparation still requires independent review and fresh window"
+}

@@ -70,3 +70,11 @@ artifact模式的maintenance要求已发布Web pointer与report，因此复用�
 原独审 main729d33836 / docs/evidence/i02/svc09a-host-preparation-review.json 的 SVC09A-HOST-P2-01 REQUEST_CHANGES 保留；它是源码边界发现，不是已发生超时。fixed source `ccf7d057659d99be9c5d42fa035af352eaf647cb` 复用OPS14新增caller-only期限，不实现第二监督循环。外层 `host-outer-once` 与内层 `actual-host-once` 任一已存在拒绝重放；缺phase结果只UNKNOWN_KEEP。
 
 15:41:14.524544→15:41:14.929848Z，新增5/5定向检查（2 Node+3 Python），两组累计402ms/raw955B、absent/双EOF/exact空scratch removed。覆盖tiny child模拟fsync阻塞经独立期限终止、保留先前错误输出、正常caller0不证明detached资源清理；另以真实缺失私有文件/注入落盘失败/共享measurement transient样本覆盖此前三文件差量。原6/6与STATIC_ONLY当时记录保留；本轮没有重跑6/build/import或任何PG/host/provider。原件只有[prepare-local-03](prepare-local-03/summary.json)，结果归属和组事实见两case原report。tiny child的PID/期限/EOF由直接测试断言验证，未另复制一套tiny报告。
+
+## R3 临时路径合同修复（准备，未运行）
+
+2026-10-07T16:24:21.318911Z：R2原FAIL/KEEP与第三guard仅静态发现不变。`host-paths.mjs`只统一词法输入：系统真实`tempfile.mkdtemp`可用的下划线与原字母/数字/连字符，限定同一`/private/tmp/flow-svc09a-host-`单层名称和唯一`input.json`；work、cleanup、validateHostInput共用。词法通过不是所有权证明，原privateJson/rootIdentity的symlink、uid、mode、realpath、dev/ino检查仍承担真实文件身份。不得读取旧root来验证样例。
+
+直接检查实际生成路径→三个消费者；3新路径例与3受影响namespace例最终均通过，7次选择，原夹具漏sourceHead失败保留。累计355ms/2361B、3组absent/双EOF、两个exact空scratch删除。旧33、host、build、PG未重跑。来源与原raw见[本轮结果](host-path-contract-result.json)。
+
+第三轮唯一候选改用`--run-host-r3-once`→`--execute-host-r3-once`，固定`host-outer-r3-once`/`actual-host-r3-once`及`host-preparation-r3.json`；R1/R2原入口仍拒已消费namespace。原215+.5+2外限、26+16连接、全部服务/DB unknown KEEP和无个人/provider界限未改。此候选没有actual许可或资源预约，必须在唯一独审后按最新完整合计floor重新协调一次实际窗口。前文原once入口与NOT_RUN为当时准备历史，不表示可重放R1/R2。

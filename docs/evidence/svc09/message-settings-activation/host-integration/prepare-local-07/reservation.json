@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-07T16:23:00.136779+00:00",
+  "argv": null,
+  "commands": [
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--test",
+      "--test-reporter=spec",
+      "--test-name-pattern=actual Python mkdtemp root",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-paths.test.mjs"
+    ],
+    [
+      "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.test.py",
+      "OperatorBoundary.test_attempt_arguments_bind_each_fixed_namespace_and_preparation",
+      "OperatorBoundary.test_unknown_or_user_supplied_attempt_paths_are_rejected_before_io",
+      "OperatorBoundary.test_consumed_operator_or_outer_namespace_refuses_reuse_without_touching_old_attempt"
+    ]
+  ],
+  "freeBytes": 20142608384,
+  "runtimeBudgetSeconds": 20,
+  "rawBytesCap": 131072,
+  "scratchBytesCap": 2097152,
+  "scratch": "/private/tmp/flow-svc09a-host-7zrafhvv",
+  "dev": 16777234,
+  "ino": 124325443,
+  "pythonAST": "PASS",
+  "inputs": [
+    {
+      "path": "host-run.py",
+      "bytes": 8851,
+      "sha256": "60f8f74cd9b71224f065efcc0bbe9d582e18fd2378d4a4fd8a167cb4d49c3cd0"
+    },
+    {
+      "path": "host-supervise.py",
+      "bytes": 4430,
+      "sha256": "835c1ed58be6c4d94ec5bed0fed8034a52399a2ac0271951529c6a3365a78513"
+    },
+    {
+      "path": "host-supervise.test.py",
+      "bytes": 8499,
+      "sha256": "65be4e8e9545b6732cef23dfde8d7ce1f1d287527bd587901fab5d2c5b283a9a"
+    },
+    {
+      "path": "prepare-run.py",
+      "bytes": 7179,
+      "sha256": "62989be1d338b5613e346dfc0f159e729336f4912b78877fdc2342932214d9dc"
+    },
+    {
+      "path": "host-inputs.json",
+      "bytes": 6374,
+      "sha256": "fcfeeff4dcc58a070cf04b9938944ea0438d9df6a3eda44ded4249bbe8c355e9"
+    },
+    {
+      "path": "host-paths.mjs",
+      "bytes": 634,
+      "sha256": "3f5c86743509a191e0c088240ff7b5644d2f1f8c1336cfb0f99822d2ab6324c0"
+    },
+    {
+      "path": "host-paths.test.mjs",
+      "bytes": 3842,
+      "sha256": "2587401038c7960fb674b592bae84f0f104cf28f6e65071b8b0cac465542b820"
+    },
+    {
+      "path": "host-consumer.mjs",
+      "bytes": 10046,
+      "sha256": "83bc2e8ca20c1e3ca20dc2c2597a8b9c5114f998bebc298e1d18e471745b4930"
+    },
+    {
+      "path": "host-entry.mjs",
+      "bytes": 4085,
+      "sha256": "728b38486b6427d2c53022d4823aa26f356f97454d36b94f8606bf92889a5390"
+    },
+    {
+      "path": "host-cleanup.mjs",
+      "bytes": 8304,
+      "sha256": "00848638f0e4aa648e3a441c3d1c9959e579ca3190eaaa5ba798e24975de8501"
+    },
+    {
+      "path": "host-records.mjs",
+      "bytes": 3150,
+      "sha256": "e71acedf9672720491a70772646665b27e9c82907eb32b6c5ea61eda4a9e1951"
+    },
+    {
+      "path": "host-fixture.mjs",
+      "bytes": 8739,
+      "sha256": "33756ec9e9f969b32e02ddc0f42c18046a11dcb062afd36333f62e6686b80a64"
+    }
+  ]
+}
