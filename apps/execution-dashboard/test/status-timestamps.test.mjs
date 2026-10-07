@@ -1,3 +1,5 @@
+import { readFileSync } from 'node:fs';
+import vm from 'node:vm';
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
 import { parseStatus } from '../src/status.mjs';
@@ -223,4 +225,63 @@ test('waiting records remain source text, including OPEN/UNKNOWN and overlapping
 test('ordinary duplicated status fields retain existing errors', () => {
   const parsed = taskTiming([['Branch', 'codex/conflict']]);
   assert.deepEqual(parsed.errors, ['重复字段：Branch']);
+});
+
+const waitHeader = '## 等待记录\n| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| --- | --- | --- | --- | --- | --- |\n';
+test('waiting OPEN, UNKNOWN and known completion are distinct; escaped text stays literal', () => {
+  const result = taskTiming(timingRows, waitHeader + '| W1 | UNKNOWN | OPEN | 资源 | wait \\| window <img> | receipt |\n| W2 | UNKNOWN | UNKNOWN | 审查 | ended without time | receipt |\n| W3 | UNKNOWN | 2026-10-07T02:00:00Z | 接口 | done | receipt |');
+  assert.deepEqual(result.timing.waitingTable.rows.map(row => row.ended.state), ['open', 'unknown', 'known']);
+  assert.equal(result.timing.waitingTable.rows[0].reason, 'wait | window <img>');
+  assert.deepEqual(result.timing.waitingTable.issues, []);
+  assert.deepEqual(result.timing.issues, []);
+});
+test('malformed and duplicate waiting rows cannot invalidate valid task elapsed declarations', () => {
+  const result = taskTiming(timingRows, waitHeader + '| W1 | 2026-02-30T00:00:00Z | UNKNOWN（已结束） | 资源 | reason | receipt |\n| W1 | UNKNOWN | OPEN | 资源 | reason | receipt |\n| bad | columns |');
+  assert.ok(result.timing.waitingTable.issues.length >= 3);
+  assert.ok(result.timing.waitingTable.rows.every(row => row.issues.includes('等待 ID 缺失或重复')));
+  assert.equal(result.timing.waitingTable.rows[0].ended.state, 'unknown');
+  assert.deepEqual(result.timing.issues, []);
+  assert.deepEqual(result.errors, []);
+  assert.equal(result.checks.state, 'not_run');
+});
+test('wrong waiting headers retain raw evidence without inventing rows', () => {
+  const result = taskTiming(timingRows, waitHeader.replace('开始UTC', '开始') + '| W1 | UNKNOWN | OPEN | 资源 | reason | receipt |');
+  assert.equal(result.timing.waitingTable.rows.length, 0);
+  assert.match(result.timing.waitingTable.issues[0], /列名/);
+  assert.match(result.timing.waiting, /W1/);
+});
+
+// Exercise the actual shipped pure presentation functions without DOM, HTTP or a clock.
+const appSource = readFileSync(new URL('../public/app.js', import.meta.url), 'utf8');
+const clockSource = appSource.slice(appSource.indexOf('const localClock ='), appSource.indexOf('function timeLine('));
+const waitingSource = appSource.slice(appSource.indexOf('function waitingState('), appSource.indexOf('function waitingView('));
+function clock(zone) {
+  const context = vm.createContext({ Intl: { DateTimeFormat: function(locale, options) { return new Intl.DateTimeFormat(locale, { ...options, timeZone: zone }); } } });
+  return vm.runInContext(`${clockSource}\n${waitingSource}\n({ taskTime, waitingState, zone: localClock.zone })`, context);
+}
+test('local times preserve year and distinguish the DST fold by per-instant offset', () => {
+  const presentation = clock('America/Los_Angeles');
+  const first = presentation.taskTime({ state: 'known', at: '2026-11-01T08:30:00Z' });
+  const second = presentation.taskTime({ state: 'known', at: '2026-11-01T09:30:00Z' });
+  assert.match(first, /2026/); assert.match(first, /01:30/); assert.match(second, /01:30/);
+  assert.notEqual(first, second); assert.match(first, /GMT-7/); assert.match(second, /GMT-8/);
+  assert.equal(presentation.zone, 'America/Los_Angeles');
+  assert.match(presentation.taskTime({ state: 'known', at: '2027-01-01T01:00:00Z' }), /2026/);
+  assert.match(presentation.taskTime({ state: 'not_completed' }), /尚未完成/);
+  assert.doesNotMatch(presentation.taskTime({ state: 'not_completed' }), /正在/);
+  assert.equal(presentation.taskTime({ state: 'unknown' }), '未知');
+  assert.match(clock('invalid/zone').taskTime({ state: 'known', at: '2026-01-01T00:00:00Z' }), /2026-01-01T00:00:00Z UTC/);
+});
+test('OPEN waiting loses currency after refresh; UNKNOWN never becomes still waiting', () => {
+  const presentation = clock('UTC'), observation = { generatedAt: '2026-10-07T03:00:00.000Z' };
+  const row = { issues: [], started: { at: null }, ended: { state: 'open', at: null } };
+  assert.match(presentation.waitingState(row, observation, true), /^仍在等待/);
+  assert.match(presentation.waitingState(row, observation, false), /当前是否等待未知/);
+  row.ended.state = 'unknown';
+  assert.match(presentation.waitingState(row, observation, true), /^结束时间未知/);
+  row.ended = { state: 'known', at: '2099-01-01T00:00:00Z' };
+  assert.match(presentation.waitingState(row, observation, true), /待核实/);
+});
+test('shipped dashboard and browser entry remain syntactically valid', () => {
+  new vm.Script(appSource);
 });

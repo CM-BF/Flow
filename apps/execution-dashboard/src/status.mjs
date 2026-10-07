@@ -36,6 +36,47 @@ function utcParts(match) {
   return Number.isFinite(date.getTime()) ? date.toISOString() : null;
 }
 
+function declaredInstant(value) {
+  const match = value.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.(\d{1,3}))?Z$/);
+  return match && Number(match[4]) < 24 ? utcParts(match) : null;
+}
+
+function parseWaitingTable(raw) {
+  const rows = [], issues = [], ids = new Set();
+  const lines = raw.split(/\r?\n/).filter(line => line.trim().startsWith('|'));
+  if (!lines.length) return { rows, issues: raw.trim() ? ['等待记录不是约定表格；保留原文'] : [] };
+  const header = ['ID', '开始UTC', '结束UTC', '类别', '原因与解除条件', '来源'];
+  if (JSON.stringify(cells(lines[0])) !== JSON.stringify(header)) return { rows, issues: ['等待表列名不符；保留原文'] };
+  const instant = (record, end, rowIssues) => {
+    const token = plain(record);
+    if (end && token === 'OPEN') return { state: 'open', at: null, record };
+    const at = declaredInstant(token);
+    if (!at && token !== 'UNKNOWN') rowIssues.push('时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN');
+    return { state: at ? 'known' : 'unknown', at, record };
+  };
+  for (const [index, line] of lines.entries()) {
+    if (!index) continue;
+    const values = cells(line);
+    if (values.every(value => /^:?-+:?$/.test(value))) continue;
+    if (values.length !== 6) { issues.push(`第${index + 1}行列数不符；保留原文`); continue; }
+    const [id, start, end, category, reason, source] = values;
+    const rowIssues = [];
+    if (!id || ids.has(id)) rowIssues.push('等待 ID 缺失或重复');
+    ids.add(id);
+    if (!['资源', '接口', '验证失败', '审查', '用户', '其他'].includes(category)) rowIssues.push('类别未知');
+    if (!reason || !source || source === 'UNKNOWN') rowIssues.push('原因或来源未明确');
+    const started = instant(start, false, rowIssues), ended = instant(end, true, rowIssues);
+    if (started.at && ended.at && ended.at < started.at) rowIssues.push('等待结束早于开始');
+    rows.push({ id, started, ended, category, reason, source, issues: rowIssues });
+    issues.push(...rowIssues.map(issue => `${id || `第${index + 1}行`}：${issue}`));
+  }
+  // A later duplicate invalidates both rows, rather than silently choosing one.
+  const counts = new Map();
+  for (const row of rows) counts.set(row.id, (counts.get(row.id) ?? 0) + 1);
+  for (const row of rows) if (counts.get(row.id) > 1 && !row.issues.includes('等待 ID 缺失或重复')) row.issues.push('等待 ID 缺失或重复');
+  return { rows, issues };
+}
+
 const timingKeys = new Set(['任务开工时间', '任务完成时间', '任务时间来源']);
 
 function parseTaskTiming(fieldRows, waiting) {
@@ -49,8 +90,7 @@ function parseTaskTiming(fieldRows, waiting) {
     const { value, unique } = record(key);
     if (unique && allowIncomplete && value === 'NOT_COMPLETED') return { state: 'not_completed', at: null, record: value };
     // The new task contract is an entire ISO UTC field, not an update sentence.
-    const match = unique && value.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.(\d{1,3}))?Z$/);
-    const at = match && Number(match[4]) < 24 ? utcParts(match) : null;
+    const at = unique ? declaredInstant(value) : null;
     if (!at) issues.push(`${key}${!value || value === 'UNKNOWN' ? '未记录' : '不是唯一有效的 ISO UTC 时间'}`);
     return { state: at ? 'known' : 'unknown', at: at || null, record: value };
   }
@@ -60,7 +100,7 @@ function parseTaskTiming(fieldRows, waiting) {
   const sourceKnown = provenance.unique && Boolean(provenance.value) && provenance.value !== 'UNKNOWN';
   if (!sourceKnown) issues.push('任务时间来源未知');
   if (started.at && completed.at && completed.at < started.at) issues.push('任务完成时间早于开工时间');
-  return { started, completed, source: { state: sourceKnown ? 'declared' : 'unknown', record: provenance.value }, issues, waiting };
+  return { started, completed, source: { state: sourceKnown ? 'declared' : 'unknown', record: provenance.value }, issues, waiting, waitingTable: parseWaitingTable(waiting) };
 }
 
 export function parseStatus(markdown, taskId) {

@@ -55,7 +55,7 @@ export async function createTaskTimingFixture() {
         const common = { version: 1, readId: String(++readId), registryFingerprint, generatedAt: state.generatedAt, startedAt: state.generatedAt, completedAt: state.generatedAt };
         let body;
         if (url.pathname === '/api/summary') body = { ...common, kind: 'summary', overview, tasks: tasks.map(value => {
-          const { waiting, ...timing } = value.status.timing;
+          const { waiting, waitingTable, ...timing } = value.status.timing;
           return { id: value.id, title: value.title, sourceKey: `fixture:${value.id}`, sourceCurrent: value.current,
             source: { ...value.source, digest: digest(value), issues: [], readAt: state.generatedAt },
             declarations: { ...value.status, timing }, progress: value.progress, links: value.links,
@@ -127,9 +127,11 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
     await page.goto(fixture.url);
     await page.locator('#sync-state').filter({ hasText: '已同步' }).waitFor(); checkpoint();
     assert.equal(await row('T01').count(), 1);
-    assert.match(await elapsed().innerText(), /已历时（含等待，截至本次同步）：0天 2小时 0分 0秒/);
-    assert.match(await row('T02').innerText(), /负责人声明完成.*0天 1小时 30分 0秒/);
-    assert.match(await row('T01').innerText(), /01:00:00.000 UTC.*尚未完成/);
+    assert.match(await elapsed().innerText(), /已历时（含等待，截至本次同步）：2小时/);
+    assert.match(await row('T02').innerText(), /负责人声明完成.*1小时 30分/);
+    assert.equal(await row('T01').locator('time').getAttribute('datetime'), '2026-10-07T01:00:00.000Z');
+    assert.match(await row('T01').innerText(), /本地时间.*UTC 偏移/);
+    assert.match(await row('T01').innerText(), /尚未完成/);
     fixture.setState({ fields: { 工作分支状态: 'completed' } }); await refresh();
     assert.match(await elapsed().innerText(), /截至本次同步.*2小时/);
     checks.push('Explicit task start/end and inclusive elapsed; branch completion never ends the task');
@@ -153,15 +155,28 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
     await details.focus(); await page.keyboard.press('Enter');
     const region = page.getByRole('region', { name: '任务时间', exact: true });
     await region.waitFor();
+    const basis = region.locator('.timing-basis');
+    await basis.locator('summary').focus(); await page.keyboard.press('Enter');
+    assert.equal(await basis.evaluate(node => node.open), true);
     assert.match(await region.innerText(), /fixture-start/);
     assert.match(await region.innerText(), /WAIT01/);
     assert.match(await region.innerText(), /未求和/);
+    assert.match(await region.locator('.waiting-state').innerText(), /^仍在等待/);
+    await region.locator('.timing-waits td').first().evaluate(node => {
+      window.timingReadingNode = node;
+      const range = document.createRange(); range.selectNodeContents(node);
+      const selection = getSelection(); selection.removeAllRanges(); selection.addRange(range);
+      window.timingReadingText = selection.toString();
+    });
     await page.locator('#close-dialog').focus();
     fixture.setState({ fail: true });
     await page.evaluate(() => window.timingFixtureRefresh());
     await page.waitForFunction(() => document.querySelector('#sync-state').textContent === '当前同步失败'); checkpoint();
     assert.match(await region.locator('.task-elapsed').innerText(), /历时未知/);
-    assert.match(await region.innerText(), /01:00:00.000 UTC/);
+    assert.match(await region.innerText(), /2026-10-07T01:00:00.000Z/);
+    assert.equal(await basis.evaluate(node => node.open), true);
+    assert.equal(await page.evaluate(() => document.querySelector('.timing-waits td') === window.timingReadingNode && getSelection().toString() === window.timingReadingText), true);
+    assert.match(await region.locator('.waiting-state').innerText(), /当前是否等待未知/);
     assert.equal(await page.locator('#close-dialog').evaluate(node => node === document.activeElement), true);
     assert.equal(await page.locator('#task-dialog').evaluate(node => node.open), true);
     checks.push('Read failure marks open timing historical without replacing the dialog or stealing focus');
@@ -171,6 +186,8 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
     await page.waitForFunction(() => document.querySelector('#sync-state').textContent.startsWith('已同步')); checkpoint();
     assert.match(await region.locator('.task-elapsed').innerText(), /历时未知/);
     assert.match(await region.innerText(), /2026-10-07T03:00:00.000Z/);
+    assert.equal(await basis.evaluate(node => node.open), true);
+    assert.equal(await page.evaluate(() => document.querySelector('.timing-waits td') === window.timingReadingNode && getSelection().toString() === window.timingReadingText), true);
     await closeDialog();
     assert.match(await elapsed().innerText(), /3小时/);
     await row('T01').getByRole('button', { name: '查看详情：T01 时间样本 T01', exact: true }).click();
@@ -197,6 +214,9 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
       await page.setViewportSize({ width: 390, height: 844 });
       await row('T01').getByRole('button', { name: '查看详情：T01 时间样本 T01', exact: true }).focus();
       await page.keyboard.press('Enter'); await region.waitFor(); checkpoint();
+      await region.locator('.timing-basis > summary').focus(); await page.keyboard.press('Enter');
+      assert.match(await region.innerText(), /fixture-start/);
+      assert.match(await region.innerText(), /WAIT01/);
       assert.ok(await page.locator('#task-dialog').evaluate(node => node.scrollWidth <= node.clientWidth + 1));
       assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
       const name = `task-timing-${theme}-390.png`;
@@ -221,6 +241,9 @@ async function timingVisualChecks({ page, f, report, output, checkpoint }) {
     await button.focus(); await page.keyboard.press('Enter');
     const region = page.getByRole('region', { name: '任务时间', exact: true });
     await region.waitFor();
+    const basis = region.locator('.timing-basis');
+    await basis.locator('summary').focus(); await page.keyboard.press('Enter');
+    assert.equal(await basis.evaluate(node => node.open), true);
     assert.match(await region.innerText(), /fixture-start/);
     assert.match(await region.innerText(), /WAIT01/);
     await region.getByRole('heading', { name: '任务时间', exact: true }).evaluate(node => node.scrollIntoView({ block: 'start' }));

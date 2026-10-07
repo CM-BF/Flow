@@ -607,3 +607,20 @@ pre {
 .task-link-records { margin-top:4px; color:var(--muted); }
 .task-link-records summary { cursor:pointer; font-size:12px; min-height:24px; }
 .task-link-records p { white-space:pre-wrap; font-size:12px; }
+
+/* Timing is a reading aid; full declarations remain in native details. */
+.task-time-line, .timing-zone { overflow-wrap: anywhere; }
+.task-timing .task-time-line { margin-bottom: .2rem; }
+.timing-zone, .signal-owner { color: var(--muted); font-size: .78rem; }
+.timing-basis { margin-top: .85rem; }
+.timing-basis > summary { cursor: pointer; padding: .45rem 0; }
+.timing-basis .detail-facts { white-space: pre-wrap; overflow-wrap: anywhere; }
+.timing-waits { width: 100%; table-layout: fixed; border-collapse: collapse; margin-top: .8rem; }
+.timing-waits caption { text-align: left; color: var(--muted); padding-bottom: .45rem; }
+.timing-waits th, .timing-waits td { text-align: left; vertical-align: top; padding: .55rem; overflow-wrap: anywhere; }
+.timing-waits th { border-bottom: 1px solid var(--line); }
+.timing-waits th:first-child { width: 42%; }
+.timing-waits td p { margin: .2rem 0; }
+.signal-group { min-width: 0; margin-bottom: 1rem; }
+.signal-group > h3 { display: flex; align-items: baseline; flex-wrap: wrap; gap: .25rem; font-size: .9rem; }
+.signal-group > .task-row { margin-top: .5rem; }
