@@ -1,0 +1,80 @@
+{
+  "window": "4345a9e2d10447d3ac5236ba09929d95",
+  "sourceHead": "318102583159dd4fcfd746aa0824d7592d2d4dd6",
+  "suite": "runtime",
+  "database": "flow_x01_963baaa69af640acb1e8207a30685151",
+  "facts": [
+    {
+      "protocol": "v1",
+      "legacyTask": "7dbaf0a7-5f88-480d-89a8-bfb295baad4d",
+      "missingSnapshot": "ab4ed75e-1944-47cd-8fc7-c5f6b971baa1",
+      "eligible": "dca696e1-fc44-4f88-8128-29979d6551c6",
+      "providerCalls": 0
+    },
+    {
+      "protocol": "v2",
+      "legacyTask": "60ecc0cd-e523-46bb-9a4d-205cfdc03a50",
+      "missingSnapshot": "3896c7d6-f2a7-47f5-b8f5-b8cc5903b9fc",
+      "eligible": "b5c31bdf-25f8-4b85-9cd3-c2ef21625baa",
+      "providerCalls": 0
+    },
+    {
+      "protocol": "v3",
+      "legacyTask": "eab00f29-df04-4ab7-96c6-b4977f2512ab",
+      "missingSnapshot": "6a3f0a0e-1c96-4305-90b5-40fc6177c8c9",
+      "eligible": "995ac420-fc57-4bc2-8f4d-7d1dd09d5a9e",
+      "providerCalls": 0
+    },
+    {
+      "kind": "bounded-counts",
+      "counts": {
+        "tasks": 13,
+        "attempts": 10,
+        "runners": 10
+      }
+    }
+  ],
+  "cleanup": {
+    "owners": {
+      "startup": true,
+      "server": true
+    },
+    "ownersClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "createRequested": true,
+    "createAcknowledged": true,
+    "creationReceiptSaved": true,
+    "identity": {
+      "oid": "1317812",
+      "owner": "flow",
+      "marker": "x01:4345a9e2d10447d3ac5236ba09929d95:runtime:25f8ae27-728e-491c-a8b9-a1456e93a042"
+    },
+    "identityConfirmed": true,
+    "connections": 0,
+    "dropRequested": true,
+    "dropAcknowledged": true,
+    "databaseAbsent": true,
+    "connectionObservations": [
+      {
+        "at": "2026-10-07T13:54:36.409Z",
+        "connections": 0
+      }
+    ]
+  },
+  "listeners": [
+    {
+      "origin": "http://127.0.0.1:58176",
+      "closed": true
+    }
+  ],
+  "httpRequests": 67,
+  "responseBytes": 31024,
+  "workUntil": 1791381382619,
+  "cleanupUntil": 1791381442619,
+  "errors": [],
+  "errorCount": 0,
+  "cleanupConfirmed": true,
+  "retainedDatabase": null,
+  "finishedAt": "2026-10-07T13:54:36.435Z"
+}

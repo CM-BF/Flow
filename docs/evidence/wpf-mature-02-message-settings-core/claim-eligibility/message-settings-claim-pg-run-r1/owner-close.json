@@ -1,0 +1,174 @@
+{
+  "at": "2026-10-07T13:56:19.459Z",
+  "state": "FULL_RETURN",
+  "window": "4345a9e2d10447d3ac5236ba09929d95",
+  "executionHead": "318102583159dd4fcfd746aa0824d7592d2d4dd6",
+  "claim": {
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+      "apps/server/src/runners.ts",
+      "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility",
+      "plans/wpf-mature-02-message-settings-core"
+    ],
+    "state": "active",
+    "branch": "codex/claude-settings-claim-eligibility",
+    "origin": "new",
+    "taskId": "WPF-MATURE-02-CORE",
+    "worker": "architecture_read",
+    "claimId": "651c4eb4-ca60-41c3-9702-872c242e12d0",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility",
+    "createdAt": "2026-10-07T13:07:54.544Z",
+    "updatedAt": "2026-10-07T13:07:54.544Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "selected": 5,
+  "passed": 5,
+  "failed": 0,
+  "pending": 0,
+  "suiteFailed": 0,
+  "callerState": "PASSED",
+  "unknown": false,
+  "processes": [
+    {
+      "pid": 94433,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 23,
+      "observed_bytes": 429,
+      "retained_bytes": 429,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "git-preflight",
+      "rawComplete": true
+    },
+    {
+      "pid": 94454,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 3761,
+      "observed_bytes": 69,
+      "retained_bytes": 69,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "vitest",
+      "rawComplete": true
+    }
+  ],
+  "launch": {
+    "window": "4345a9e2d10447d3ac5236ba09929d95",
+    "sourceHead": "318102583159dd4fcfd746aa0824d7592d2d4dd6",
+    "pid": 94454,
+    "pgid": 94454,
+    "at": "2026-10-07T13:54:32.753732+00:00"
+  },
+  "database": "flow_x01_963baaa69af640acb1e8207a30685151",
+  "databaseCleanup": {
+    "owners": {
+      "startup": true,
+      "server": true
+    },
+    "ownersClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "createRequested": true,
+    "createAcknowledged": true,
+    "creationReceiptSaved": true,
+    "identity": {
+      "oid": "1317812",
+      "owner": "flow",
+      "marker": "x01:4345a9e2d10447d3ac5236ba09929d95:runtime:25f8ae27-728e-491c-a8b9-a1456e93a042"
+    },
+    "identityConfirmed": true,
+    "connections": 0,
+    "dropRequested": true,
+    "dropAcknowledged": true,
+    "databaseAbsent": true,
+    "connectionObservations": [
+      {
+        "at": "2026-10-07T13:54:36.409Z",
+        "connections": 0
+      }
+    ]
+  },
+  "listeners": [
+    {
+      "origin": "http://127.0.0.1:58176",
+      "closed": true
+    }
+  ],
+  "temporary": {
+    "path": "/private/tmp/flow-x01-pg-rh3iovbw",
+    "dev": 16777234,
+    "ino": 124172637,
+    "removed": true,
+    "sampleBytes": 5553,
+    "sampleEntries": 10,
+    "exactLstat": "ENOENT",
+    "checkedAt": "2026-10-07T13:56:19.459Z"
+  },
+  "httpRequests": 67,
+  "responseBytes": 31024,
+  "counts": {
+    "tasks": 13,
+    "attempts": 10,
+    "runners": 10
+  },
+  "beforeSaveSeconds": 3.8627031670184806,
+  "afterSaveSeconds": 3.8629625840112567,
+  "outerElapsedSeconds": 3.9095613749232143,
+  "outerExitCode": 0,
+  "resourceWindowReturnedToMika": true,
+  "futureLaunches": 0,
+  "limitations": [
+    "Historical initial EPERM observation preserved; final owned state absent.",
+    "Temporary sample is not peak; physical DB/WAL bytes remain UNKNOWN.",
+    "This validates public claim/profile SQL and fences, not provider execution or personal activation.",
+    "Expired first admission was not launched; refreshed admission uses same logical window.",
+    "Outer process elapsed includes Python startup and delivery; tool wait is separate."
+  ]
+}
