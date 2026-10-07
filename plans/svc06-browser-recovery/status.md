@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T19:18:55.858Z；本次调用独审已main089a6e460，等待前一宿主实际RETURN后的唯一现场窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T19:29:13.634Z；一次只读现场参数已核，仍等待唯一服务操作窗口 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -14,7 +14,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery |
 | Branch | codex/backend-browser-recovery |
 | 工作基线 / HEAD | base 6c0fdcda8858aac33489c48c1948e902dd6a3d7e；artifact source04da/cd27已审；当前新增Web调用source 520d3cb7bdb352a1462d83c214e63c8a47c218f4；原6c417入口已main |
-| 工作树dirty状态 | 源码/原件已clean固定并push至96e8c2cf；本次仅独审接收metadata，产品停写 |
+| 工作树dirty状态 | 已审520源/16绑定不变；本次只读参数helper及安全结果封存，未改实际执行入口 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 实现目标 | 520d3cb7bdb352a1462d83c214e63c8a47c218f4 |
@@ -25,7 +25,7 @@
 | 优先级 | 2 |
 | 当前产出 | 新版后台与四个网页的兼容已验证，新网页的受管迁入和发布调用已通过独审。现有服务仅有先前观察，历史任务失败原因仍未知。 |
 | 下一可用交付 | 按新现场身份和窗口受控更新后台，再发布新网页；保留旧页面和用户数据。 |
-| 当前阻塞 | ACTIVE: 等待当前宿主验证实际归还后的独占发布窗口；调用已审，不是产品实现阻塞。历史任务错误分类仍未知。 |
+| 当前阻塞 | ACTIVE: 前一宿主已归还，等待队列交接后的独占发布窗口；调用已审，不是产品实现阻塞。历史任务错误分类仍未知。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；artifact/retention/迁入与current入口均已独审/main；current-entry-independent-review仅准备批准，不当现场ready |
 | Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v6 active；own双目录、runner-files/admission-preservation两exact及history-projection.mjs；15:21:42.826Z receipt。已交产品全部停写 |
@@ -126,3 +126,7 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T19:18:55.858Z：只读公开固定清单/预算，16绑定和9211B/58c0e086原manifest保持；source520/packet96e8无需再审或复测。Web19:04:52旧快照仍NEXT；Lead实际START19:16:09.120/supervisor36049优先，SVC09A217.5s原段正常运行，当前本人0个人I/O/0namespace/0child。个人窗口等待从本次Lead明确排队消息开始，消息精确UTC未提供，起点UNKNOWN；解除条件为原host明确RETURN及Lead唯一handoff。
 
 公开预算候选：现forward17,908,891,648B含当前host1,244,659,712B及一次1GiB reserve；其未知保留/growth未分类前保持全部旧项，再加本次512MiB迁入上限+2MiBraw+1MiB记录=18,448,908,288B。公开磁盘一次可用19,412,176,896B仅准备观察；真实准入仍fresh取latest完整floor与2.5GiB之大，不凭本值启动。新cd27逻辑367,045,616B+779含manifest1,702,220B+四report9420B=368,757,256B，未含操作记录，physicalUNKNOWN；旧KEEP不删，reserve只一次。现场清单沿原candidate/current-entry-interface：新身份六文件/三owned/marker/CAS/保留与兼容→单份0600实例→新迁入/三report→新同op维护15min及resume→后继freshWeb实例→779迁入/第4report/明确v3→v4；不回填历史v21、不重放旧op/退休、不主动任务或tab操作。
+
+2026-10-07T19:29:13.634Z：Lead确认SVC09A真实RETURN19:17:35.003Z后授权一次只读现场参数具体化，不是服务操作窗口。helper固定e21d25bf6fad5cc40e059076ef6ee043052e2d90复用原bounded/durable、完整7d1 verifier/process与已安装pg，只读取六私有文件身份/marker/runner CAS/1个task-index metadata；先实际受限Node import（无个人读）通过。正式观察2026-10-07T19:27:12.063Z→2026-10-07T19:27:16.668Z，安全原件[current-readonly-parameters-observation](../../docs/evidence/svc06/browser-recovery/current-readonly-parameters-observation.json)，[监督](../../docs/evidence/svc06/browser-recovery/current-readonly-parameters-supervision.json)。
+
+当前时点仍backend7d1/source6c/独立Webhost7d1；d629/v3/3retained，六文件前后dev/ino/bytes/hash相同，原三owned PID及两个listener归属真。marker与原安装匹配；只读事务BEGIN READ ONLY→两SELECT→ROLLBACK/Pool关闭，runner accepting21/opnull，维护旧op仅观察resumed不复用。单GET完整5任务（4succeeded/1failed、hasMorefalse）；不采标题/正文/配置值或凭据，原因UNKNOWN保持。OPS14总4664ms、直属组absent/双EOF/无signals，个人三服务有意保持运行。私有准备原件0600 /private/tmp/flow-svc06b-readonly-cyeq_q1g/parameters.json 6491B/SHA1ba892d48401b9071230a8e737e6d905013355358a81653d37bc508566ce58c5；连同安全公开副本/监督本轮新增材料9751B<1MiB。只读目录KEEP作为后继输入，非actual执行namespace；ready=false，紧前须再核身份与最新CAS/队列，未迁入/创建operation/维护/publish，不以本时点授权未来动作。

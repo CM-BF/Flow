@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T19:27:12.020626+00:00",
+  "sourceSha256": "974def39dec37e07ff9dcef3a9397d7f259fdcde2947a00d4f1340479be0a6dc",
+  "report": {
+    "pid": 63533,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 52,
+    "stdout": "readonly export loaded; personal fs denied\n",
+    "stderr": "",
+    "observed_bytes": 43,
+    "retained_bytes": 43,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "personalIO": 0
+}

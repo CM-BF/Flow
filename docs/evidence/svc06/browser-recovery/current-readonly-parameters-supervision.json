@@ -1,0 +1,61 @@
+{
+  "startedAt": "2026-10-07T19:27:12.021589+00:00",
+  "sourceSha256": "974def39dec37e07ff9dcef3a9397d7f259fdcde2947a00d4f1340479be0a6dc",
+  "private": {
+    "path": "/private/tmp/flow-svc06b-readonly-cyeq_q1g",
+    "dev": "16777234",
+    "ino": "124438382"
+  },
+  "output": "/private/tmp/flow-svc06b-readonly-cyeq_q1g/parameters.json",
+  "ready": false,
+  "authority": "Lead bounded readonly parameter preparation after SVC09A actual RETURN19:17:35.003; no actual service window",
+  "limits": {
+    "seconds": 30,
+    "newMaterialBytes": 1048576,
+    "outputBytes": 65536,
+    "modelQueries": 0,
+    "serviceMutations": 0
+  },
+  "finishedAt": "2026-10-07T19:27:16.685719+00:00",
+  "report": {
+    "pid": 63589,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 4664,
+    "stdout": "{\"outcome\":\"OBSERVED_READONLY_NOT_READY\",\"at\":\"2026-10-07T19:27:12.063Z\",\"finishedAt\":\"2026-10-07T19:27:16.668Z\",\"elapsedMs\":4605,\"marker\":true,\"runnerState\":\"accepting\",\"runnerVersion\":21,\"requests\":1,\"failure\":null}\n",
+    "stderr": "",
+    "observed_bytes": 218,
+    "retained_bytes": 218,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "privateDisposition": "KEEP_READONLY_INPUTS_NOT_ACTUAL_NAMESPACE",
+  "outputIdentity": {
+    "dev": "16777234",
+    "ino": "124438391",
+    "bytes": 6491,
+    "sha256": "1ba892d48401b9071230a8e737e6d905013355358a81653d37bc508566ce58c5",
+    "mode": "0600"
+  }
+}

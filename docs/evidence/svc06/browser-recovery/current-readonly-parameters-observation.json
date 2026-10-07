@@ -1,0 +1,186 @@
+{
+  "ready": false,
+  "at": "2026-10-07T19:27:12.063Z",
+  "kind": "READONLY_PARAMETERS_NOT_EXECUTION_INSTANCE",
+  "files": {
+    "config.json": {
+      "dev": "16777234",
+      "ino": "117819925",
+      "bytes": 672,
+      "sha256": "f5a01a80a33b8364316529844334955e359dea4224b72271ab26da798764b7ee"
+    },
+    "claude.json": {
+      "dev": "16777234",
+      "ino": "117819909",
+      "bytes": 145,
+      "sha256": "b79a5a08590000c6d0c01cb9fd04811f24368947e58c6d399b57a2af9a05f9af"
+    },
+    "browser-session.json": {
+      "dev": "16777234",
+      "ino": "124139868",
+      "bytes": 205,
+      "sha256": "ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a"
+    },
+    "maintenance.json": {
+      "dev": "16777234",
+      "ino": "124171477",
+      "bytes": 590,
+      "sha256": "e869e2dbe3b10357cf6cc45588880f44391471f03d5e7427da5c324179af86ed"
+    },
+    "state.json": {
+      "dev": "16777234",
+      "ino": "124171430",
+      "bytes": 4109,
+      "sha256": "6e9e44c3ecc93187558306e26c0ae9746b1b48d779402ad9c993f40882395472"
+    },
+    "web-release.json": {
+      "dev": "16777234",
+      "ino": "123210668",
+      "bytes": 1332,
+      "sha256": "a276952f95337e42a9642223fbcb24532676f5c9435cd91218c6525edb16fa03"
+    }
+  },
+  "processes": {
+    "center": {
+      "pid": 46474,
+      "group": 46474,
+      "digest": "279ed6574882f457378b5514c164cbb5da8ae8ca0de39f1087402d45f4e9a882",
+      "identity": "running"
+    },
+    "runner": {
+      "pid": 55337,
+      "group": 55337,
+      "digest": "eb0b01ab57f11931232408fade5443e8171a5550814000d88416718501f4585b",
+      "identity": "running"
+    },
+    "web": {
+      "pid": 55432,
+      "group": 55432,
+      "digest": "674dcb6fff4d5b212c590a18530528b87cbe0b42aa896f03e81c95e9553a2247",
+      "identity": "running"
+    }
+  },
+  "requests": [
+    {
+      "path": "/api/task-index?limit=20",
+      "status": 200
+    }
+  ],
+  "modelQueries": 0,
+  "mutations": 0,
+  "bodyRecorded": false,
+  "databaseReadOnlyTransactions": 1,
+  "databasePoolClosed": true,
+  "installationIdentity": {
+    "dev": "16777234",
+    "ino": "117819905"
+  },
+  "listeners": {
+    "center": true,
+    "web": true
+  },
+  "markerMatched": true,
+  "runner": {
+    "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "maintenance_state": "accepting",
+    "maintenance_version": 21,
+    "maintenance_operation_id": null,
+    "maintenance_updated_at": "2026-10-07T13:48:45.599Z"
+  },
+  "tasks": {
+    "totalSize": 5,
+    "hasMore": false,
+    "rows": [
+      {
+        "idHash": "82bd52887efc713a10d036499614618fce822dbce892eb170b16302cb4ef3616",
+        "status": "failed",
+        "updatedAt": "2026-10-07T13:48:49.416Z"
+      },
+      {
+        "idHash": "3120d3771df2252463cd9b43c996bda589226b977510f6d0af657550e92072cc",
+        "status": "succeeded",
+        "updatedAt": "2026-10-06T08:29:35.480Z"
+      },
+      {
+        "idHash": "432622a3819942668bb8ac7727822fee83fab7bbf735ad60109ad89af995529e",
+        "status": "succeeded",
+        "updatedAt": "2026-10-06T08:29:32.625Z"
+      },
+      {
+        "idHash": "4fefe47d4bfa7947ae6c587e6172a4abf7f5119470a37544cc1b65ac85181fa7",
+        "status": "succeeded",
+        "updatedAt": "2026-10-06T06:02:27.180Z"
+      },
+      {
+        "idHash": "86b7133f0184b49aa615d0261ea1f99f0048c16aca6699611f8eeeb112def89e",
+        "status": "succeeded",
+        "updatedAt": "2026-10-06T06:02:23.703Z"
+      }
+    ]
+  },
+  "source": {
+    "head": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "dirty": false
+  },
+  "backendArtifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+  },
+  "webHostArtifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+  },
+  "release": {
+    "format": 1,
+    "policy": "flow-web-release-v1",
+    "version": 3,
+    "backendHead": "af51c621696230fbced12227670f014ca73bd8a1",
+    "compatibilityIds": {
+      "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90": "adc587ad334da4136bdc5d364daa933f8b8865f6344ae8b1e04983a423d5d68d",
+      "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe": "e87ffda1ee15c14c6458849c388c5f217675af4053cb1b64bd052214cee2af0e",
+      "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9"
+    },
+    "current": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "artifacts": [
+      {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5"
+      },
+      {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      {
+        "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+        "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+      }
+    ],
+    "updatedAt": "2026-10-06T21:27:12.813Z"
+  },
+  "maintenance": {
+    "phase": "resumed",
+    "operationId": "e6550b3c-1f67-4c2c-869d-e84d5e838113",
+    "backendArtifact": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    }
+  },
+  "identity": {
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "databaseName": "flow_preview_07d6dc6776c8dda8641512aa",
+    "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+    "profileSha256": "731cbb67cedda4280a3a14cd4f378c32d2afbb95233ba07a0ec6de6cc3d6398a"
+  },
+  "outcome": "OBSERVED_READONLY_NOT_READY",
+  "finishedAt": "2026-10-07T19:27:16.668Z",
+  "elapsedMs": 4605
+}
