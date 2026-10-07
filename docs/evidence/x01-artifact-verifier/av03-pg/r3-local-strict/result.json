@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-07T22:12:56.037Z",
+  "startedAt": "2026-10-07T22:12:53.747Z",
+  "sourceHashes": {
+    "docs/evidence/x01-artifact-verifier/av03-pg/r3-local.py": "c88e9389f68292644ee750d9f9ea4ed4ee9f1e6c537e45ea10ebba52ed8bfa5d",
+    "packages/storage/migrations/036-plugin-verification-bindings.sql": "6d47ba7ba8c8addde0ff07bc1f5fb6bf770836896d245c0fc93ee2b5074874be",
+    "apps/server/src/plugin-runtime/verification-pg.test.ts": "22a440b08d070712051c99ad0ff53b5141619901d5df0377b3a6d26319d29278",
+    "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/036-plugin-verification-bindings.sql": "6d47ba7ba8c8addde0ff07bc1f5fb6bf770836896d245c0fc93ee2b5074874be",
+    "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts": "22a440b08d070712051c99ad0ff53b5141619901d5df0377b3a6d26319d29278",
+    "docs/evidence/x01-artifact-verifier/av03-pg/tsconfig.json": "fd17b0cacfc087ca0fb4a40bcb728244aa6fdfce6e66197ca805263c04089e2a"
+  },
+  "supervision": {
+    "pid": 96897,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 2280,
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "cleanup": {
+    "closed": true,
+    "removed": true,
+    "exactLstat": "ENOENT",
+    "dev": 16777234,
+    "ino": 124593083,
+    "endEntries": 0,
+    "endBytes": 0
+  },
+  "raw": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "elapsedBeforePersistenceSeconds": 2.290992207941599,
+  "scope": "affected strict only; zero PG/hooks/SQL execution; five real cases NOT_RUN after repair"
+}
