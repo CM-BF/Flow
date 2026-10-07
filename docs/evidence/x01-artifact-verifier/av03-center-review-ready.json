@@ -1,0 +1,476 @@
+{
+  "at": "2026-10-07T16:34:17.892Z",
+  "state": "SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING",
+  "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+  "result": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+  "baseline": "337060abb836770902493acd02b29d472a34e298",
+  "products": [
+    "apps/server/src/index.ts",
+    "apps/server/src/plugin-runtime/claim.ts",
+    "apps/server/src/plugin-runtime/verification.test.ts",
+    "apps/server/src/plugin-runtime/verification.ts",
+    "apps/server/src/runner-claim-receipts.ts",
+    "apps/server/src/runner-claim-routes.test.ts",
+    "apps/server/src/runner-claim-routes.ts",
+    "apps/server/src/runners.ts",
+    "packages/client/src/plugin-runner.test.ts",
+    "packages/client/src/plugin-runner.ts",
+    "packages/contracts/src/plugin-verification-binding.ts",
+    "packages/contracts/src/verifier-runner-claim.test.ts",
+    "packages/contracts/src/verifier-runner-claim.ts",
+    "packages/storage/migrations/036-plugin-verification-bindings.sql"
+  ],
+  "rows": [
+    {
+      "path": "apps/server/src/index.ts",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 15573,
+      "sha256": "8babb15056ab95fa228249cadb6d6db01450fbf7756d9b516d52bfd17a2f8b5c"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim.ts",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 4000,
+      "sha256": "eb9282cdba015110257c7bd7eb059e11ebffb72f7f5ea0bafabca95a2e37b1b7"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.test.ts",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 4724,
+      "sha256": "7fd6a61c9c9e7ef634e1747d1fb10ba8815af75cf79aa846f3e61d7c6af3b395"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.ts",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 5316,
+      "sha256": "9d140d5072d26d18e698d55d596bc10f94a44ec1b405a2a1a4e309d0ab248bb5"
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.ts",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 2736,
+      "sha256": "efdd9ad43bd1cbfb4a6b8ec3f61a151be59735a724528f4a861aa33572d62652"
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.test.ts",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 8525,
+      "sha256": "3f30f9e9f4b554346ebf1a72e544af56cc9f55b513529dc802d8078067a34ab7"
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.ts",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 1423,
+      "sha256": "2e313671c97ad304c817ebf3f123a14fac31af87e66f98354c17a254b4d7fe3a"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 21699,
+      "sha256": "bfd985db4e5455b1b614155ca71d299ad8b1b60f3f4449b76761689f584d6019"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-amend-command.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 1740,
+      "sha256": "15c0294723e9e9a8ac35fc9535453cce862d0af6e7e17817aeb97bafd8b5aa14"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-amend-receipt.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 1932,
+      "sha256": "caf76057afaa4f3186d01c9afe8d198ddd2687b40cf5019f616f99b33499bb9a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-baseline.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 2369,
+      "sha256": "990c8a41e6d88c441d8be8fc32ac96cf1b8224ba989c0a3b77e7bdf9a7e59e80"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-behavior-final/output.log",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 6782,
+      "sha256": "5fe1de39d456f9c0ab91f0c09495a3589e1df1982ea73a625c9071abc08853f0"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-behavior-final/reservation.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 1085,
+      "sha256": "003a76a6b2d6639e1760c5555a3e677e0d7d88243cb214f18c917b503e1451c6"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-behavior-fix/output.log",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 6782,
+      "sha256": "a5dde3f3428df50f5cc49273970498af0245f9601848a6c2446992d2e7492b06"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-behavior-fix/reservation.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 1083,
+      "sha256": "36a479701d596b64349ea816931c067abb83b69f150c5c8063c241e44d582b45"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-behavior/output.log",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 7589,
+      "sha256": "b310f9dbcd52c81ae6fac88ddbb371836934021a8476024644bb400c60d3516f"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-behavior/reservation.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 1135,
+      "sha256": "5cf935d5c2038056b543d342702fbbbeb9704c4c593954d1390ee403c020c3ff"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-closure.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 53066,
+      "sha256": "c798f7bfa38cc142beec11d6111eb571b40300f3789a86314eb894d7ce466791"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-external-links.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 3993,
+      "sha256": "f93e4952b2d5a55057fc1e22333431d1f0fb30a7289421fc1b75757bb4b73756"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-interface.md",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 3599,
+      "sha256": "6df94535e15908c7e08b5dd4b211e9b0f1361d1bf8996b9ffe83bb85a764bd75"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-local-admission.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 2680,
+      "sha256": "771ddf68d3f74e1e633d087d083d7512e7d69cb4d9f20b7ec9c69c2e0b8f4dbb"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-local.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 16798,
+      "sha256": "b73a71fd13245ee3a59934859c70cdb6d7ce839bccb19a11fc095d7d9972b009"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-local.py",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 4817,
+      "sha256": "5cc227e69d6c16198aa286b867d3c915f5858479e344addcd5765183dc8aec08"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-pg-matrix.md",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 2269,
+      "sha256": "95cf692d8e9f5fe8f1c65ff3a47cea1227377beb1041dd76a4331fab392a1c21"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-provision.py",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 2681,
+      "sha256": "401b71c1510e2f0264893cb4d3ec5b3082308c72eb119f523a1ce282b5aa55f9"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-quality.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 1418,
+      "sha256": "01d3200d25bba17f8fe2af9a64c4738c8437650b179f15005c18fcd1e2e92b8d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-result-summary.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 1643,
+      "sha256": "6a975926c74da2556c88363af62293c42083640af58b212f053ede1018819739"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-tsconfig.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 802,
+      "sha256": "5e182c56301bc8203e08074fc52991b417a536a9268ce508ce70787f70132028"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-types-final/output.log",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-types-final/reservation.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 759,
+      "sha256": "e7fbee8435fe6f6557d2d81745753811163e67320a41eeace697ebfab21edd1c"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-types-fix/output.log",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-types-fix/reservation.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 757,
+      "sha256": "0a771feed75bcde169efb827f132b79b7d795eb7da5773c259238117c1165914"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-types/output.log",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 94166,
+      "sha256": "fdae337698f48bde492216cb55abea710f59f4cd4c16e2e97e14396e360f2d83"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-types/reservation.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 753,
+      "sha256": "1f26204e0e43121dd88f1711cd6a2717f477d8ee99c03472ddab027c8106b352"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-center-vitest.config.mjs",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 431,
+      "sha256": "479ac3349b2421e6b87b7db2fad0c655318fe8fd2d7af31f8c306a5951b0dc8d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-journal-main-acceptance.json",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 1140,
+      "sha256": "8710270c798f1cf74a0ca2fa72ccef136374526a2d74296d5426d1b4ff9242c5"
+    },
+    {
+      "path": "packages/client/src/plugin-runner.test.ts",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 8335,
+      "sha256": "3e968cdbdd2500d7f306784fd69946521b6d9295d1a42896c66077eed558e67b"
+    },
+    {
+      "path": "packages/client/src/plugin-runner.ts",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 3585,
+      "sha256": "151f1d9e908db78b07f177844ad4e5cb13e3d1ea3ed203f1822db2c049d7c035"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-binding.ts",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 696,
+      "sha256": "e96e6f94cbb7570d264eda129306f746b318a1781b9a2a8d1277ce171723a3c1"
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.test.ts",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 3201,
+      "sha256": "95bee3168ae770493d53f741acdc8cd62614536e704619480e62f6fe5e0be069"
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.ts",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 5976,
+      "sha256": "c71cc4898e4d36fe4587e5d94543a10f54269a1541645b5a74e4b4d06d9ad955"
+    },
+    {
+      "path": "packages/storage/migrations/036-plugin-verification-bindings.sql",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 5113,
+      "sha256": "78e341afe35d4dee7a36fdf9d430f427e25d983474931e3ad525002f932cfece"
+    },
+    {
+      "path": "plans/x01-artifact-verifier/review.md",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 5298,
+      "sha256": "3111efd12cb7e1d1bf827b23d92aa954daf399d051118fcd671be2cb3e2061c0"
+    },
+    {
+      "path": "plans/x01-artifact-verifier/status.md",
+      "commit": "e978d30266a8ccf3be23b9c57ae5f64c0dca0f0a",
+      "bytes": 14778,
+      "sha256": "5c383accc10e05dbc7b22abd20d8575447fbed0c2b7e8bc9c998cf7d73fe5883"
+    }
+  ],
+  "bytes": 333247,
+  "closure": {
+    "path": "docs/evidence/x01-artifact-verifier/av03-center-closure.json",
+    "count": 223,
+    "bytes": 1097985,
+    "sha256": "c798f7bfa38cc142beec11d6111eb571b40300f3789a86314eb894d7ce466791",
+    "scope": "223 fixed source/config/036 inputs for focused compiler + direct suite. Not full PG migration/operator closure."
+  },
+  "external": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/typescript/bin/tsc",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc",
+      "bytes": 45,
+      "sha256": "8d5fa5bd883fec0979fc2004f1fe1d99aef40570155d550eadc0b03b55513bf0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/typescript/lib/_tsc.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/_tsc.js",
+      "bytes": 6213092,
+      "sha256": "e8f349eabd48486bdb2bf9dc1a00c89d58297270c54b745838879e2859194419"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/vitest/vitest.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+      "bytes": 43,
+      "sha256": "39db22f579acf5639bbb17a261408debbde03f4692c0c439e77e7f13aeba74d6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/typescript/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "bytes": 3620,
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/vitest/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/package.json",
+      "bytes": 5513,
+      "sha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/zod/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/tar/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/package.json",
+      "bytes": 7839,
+      "sha256": "31b18f4fb83ba7183f54fa9e2cdca610897108c37ba80570c2c6fa7ccf112d97"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/@types/node/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/package.json",
+      "bytes": 4068,
+      "sha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978"
+    }
+  ],
+  "addedExternalLinks": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/@fastify/cors",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors",
+      "packageBytes": 1759,
+      "packageSha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/fastify",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify",
+      "packageBytes": 6973,
+      "packageSha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/npm-package-arg",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg",
+      "packageBytes": 1503,
+      "packageSha256": "1a12d6b689df3628a831b61c29b55fe4ba667b37f37d5317eb306929eeb80bad"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/pacote",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote",
+      "packageBytes": 1956,
+      "packageSha256": "17aaee65ad940680ff9073f0b6f144994270283f55824056377c7f2e8590c90f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/pg",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "packageBytes": 1668,
+      "packageSha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/pg-boss",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss",
+      "packageBytes": 4103,
+      "packageSha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/ssri",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri",
+      "packageBytes": 1832,
+      "packageSha256": "568ffddd852f2bf78cccddc099f443a6fa1af56f1d21de9bea51b3b9a61d9151"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/@types/pg",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg",
+      "packageBytes": 1089,
+      "packageSha256": "d122ef1e1bdb760edd5cff70d39597b9b3ae757c80e829bc297cd34fb7f01bd3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/@types/npm-package-arg",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg",
+      "packageBytes": 975,
+      "packageSha256": "16a651807f0f05fce6ced63db0cd2a0e443d7807a70430ec74bbc28b6264e184"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/@types/pacote",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote",
+      "packageBytes": 909,
+      "packageSha256": "f301ffbda6e67dba33178aee43aa2c06dd8f533d5e99515a0eda6e8a8094569a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/@types/ssri",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri",
+      "packageBytes": 1119,
+      "packageSha256": "6c6c1bd2678420b9874942a395e49f888b552a0aeb650cd8a5c72a8ac8fb6eb2"
+    }
+  ],
+  "checks": {
+    "at": "2026-10-07T16:33:43.875Z",
+    "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+    "state": "LOCAL_PASSED_PG_NOT_RUN_REVIEW_PENDING",
+    "distinctPassed": 12,
+    "newDistinct": 9,
+    "directLegacyDistinct": 3,
+    "rounds": [
+      {
+        "name": "behavior",
+        "passed": 11,
+        "failed": 1,
+        "unselected": 8
+      },
+      {
+        "name": "behavior-fix",
+        "passed": 1,
+        "failed": 0,
+        "unselected": 19
+      },
+      {
+        "name": "behavior-final",
+        "passed": 1,
+        "failed": 0,
+        "unselected": 19
+      }
+    ],
+    "types": [
+      2,
+      0,
+      0
+    ],
+    "typeScope": "Final types0 binds 334e20a2; subsequent ea3 adds current registration scope equality and targeted negative, behavior-final passed. New SQL has static review only, no PG execution.",
+    "children": 6,
+    "supervisionMs": 10418,
+    "rawBytes": 115319,
+    "finalReturnAt": "2026-10-07T16:32:23.773Z",
+    "earlierReturn": "After first five checks, lane returned; final targeted check separately authorized and recorded. Earlier raw/gates remain unchanged.",
+    "closure": {
+      "count": 223,
+      "bytes": 1097985,
+      "errors": []
+    },
+    "scope": "Production v4 route plus SQL fake, finite contracts and real FlowClient mock-fetch. No actual migration/SQL/PG/listener/package/runner invocation. No new public verification-task producer.",
+    "resources": "6groups finalabsent/mergedEOF, six sameidentity TMP removed; initial EPERM retained. Wholeexternalwall/peak UNKNOWN. No PG/Chrome/provider/installation.",
+    "next": "Real PostgreSQL migration/eligibility/fence matrix and immutable admission/result gate; runtime verifier dispatch remain open."
+  },
+  "scope": "14 product/test paths. No public verifier task creation, actual PostgreSQL, verifier runtime/phase/result gate or complete AV03. PG not prepared/open.",
+  "handoff": "Parent v31 removed8; child a67v4/30 active; migration036 explicitly assigned; journal4 main b791 independent accepted."
+}
