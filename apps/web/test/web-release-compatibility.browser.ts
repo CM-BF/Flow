@@ -14,11 +14,12 @@ export type OwnedBrowserLifetime = Lifetime & {
 };
 type Phase = "not-started" | "fixture" | "chrome" | "canary" | "cookie-connect" | "cookie-flags" | "cookie-csrf"
   | "app-connect" | "cookie-reload" | "late-logout" | "durable-retry" | "profile" | "ack-loss" | "task-completion" | "explicit-retry" | "legacy-read" | "asset-observation" | "reports" | "done";
-type Progress = { phase: Phase; app: string | null; completed: Array<{ phase: Phase; app: string | null }> };
+type CookieStep = "unknown-reload" | "original-retry" | "accepted-identity" | "running-task" | "cookie-stream" | "held-response" | "old-read-revoked" | "old-streams-closed" | "reconnect" | "release-old-response" | "new-session-ready" | "draft-restore";
+type Progress = { phase: Phase; app: string | null; step: CookieStep | null; completed: Array<{ phase: Phase; app: string | null }> };
 function advance(progress: Progress, phase: Phase, app: string | null = progress.app) {
   assert.ok(progress.completed.length < 96);
   if (progress.phase !== "not-started") progress.completed.push({ phase: progress.phase, app: progress.app });
-  progress.phase = phase; progress.app = app;
+  progress.phase = phase; progress.app = app; progress.step = null;
 }
 const inputBox = (page: Page) => page.getByRole("textbox", { name: "Message input", exact: true }).filter({ visible: true });
 async function connect(page: Page, fixture: ReleaseFixture) {
@@ -125,14 +126,16 @@ async function cookieReload(page: Page, fixture: ReleaseFixture, draft: string, 
 }
 /** A separate real page keeps the first request alive while the mounted App reconnects. No mocked response or cookie assignment. */
 async function lateLogout(page: Page, fixture: ReleaseFixture, life: Lifetime, taskId: string, progress: Progress) {
-  advance(progress, "late-logout");
+  advance(progress, "late-logout"); progress.step = "running-task";
   assert.equal((await fixture.request(`/api/tasks/${taskId}`)).status, "running");
+  progress.step = "cookie-stream";
   await until(async () => fixture.proxy.records.some(row => row.sse && row.cookie && !row.bearer && row.sse.chunks > 0 && !row.sse.closedAt), Boolean, life);
   const oldStreams = fixture.proxy.records.filter(row => row.sse && row.cookie && !row.bearer && !row.sse.closedAt);
   const probe = await page.context().newPage(); let pending: Promise<{ status: number; state: string }> | undefined;
   const recordStart = fixture.proxy.records.length;
   try {
     await probe.goto(fixture.input.context.publicOrigin + "/__flow_compat_probe");
+    progress.step = "held-response";
     fixture.proxy.holdNextLogout();
     pending = probe.evaluate(async () => {
       const ready = await (await fetch("/api/browser-session")).json();
@@ -142,18 +145,23 @@ async function lateLogout(page: Page, fixture: ReleaseFixture, life: Lifetime, t
     }); void pending.catch(() => {});
     const held = await until(async () => fixture.proxy.records.slice(recordStart).find(row => row.logoutHold?.received), Boolean, life);
     assert.ok(held?.logoutHold); assert.equal(held.logoutHold.released, false);
+    progress.step = "old-read-revoked";
     const revoked = await probe.evaluate(async () => (await (await fetch("/api/browser-session")).json()).state);
     assert.equal(revoked, "unauthenticated");
+    progress.step = "old-streams-closed";
     await until(async () => oldStreams.every(row => row.sse!.closedAt !== null), Boolean, life);
+    progress.step = "reconnect";
     await page.reload({ waitUntil: "domcontentloaded" });
     await page.getByLabel("Owner token", { exact: true }).fill(fixture.token);
     await page.getByRole("button", { name: "Connect workspace", exact: true }).click(); await expect(inputBox(page)).toBeVisible();
     const before = (await page.context().cookies()).filter(cookie => cookie.name.startsWith("flow-session-")); assert.equal(before.length, 1);
+    progress.step = "release-old-response";
     fixture.proxy.releaseLogout(); assert.deepEqual(await pending, { status: 200, state: "unauthenticated" });
     await until(async () => held.logoutHold!.downstreamFinished, Boolean, life);
     assert.equal(held.logoutHold.setCookie, false, "Real corrected logout response must not delete a newer cookie");
     const after = (await page.context().cookies()).filter(cookie => cookie.name.startsWith("flow-session-"));
     assert.equal(after.length, 1); assert.equal(after[0]!.value, before[0]!.value);
+    progress.step = "new-session-ready";
     const ready = await page.evaluate(async () => (await (await fetch("/api/browser-session")).json()).state); assert.equal(ready, "ready");
     assert.equal((await fixture.request(`/api/tasks/${taskId}`)).status, "running", "Logout must not cancel the running task");
     return { actualHeldHeaders: true, oldReadRevoked: true, oldStreamsClosed: true, newerCookiePreserved: true, newerReadReady: true, runningTaskPreserved: true };
@@ -166,6 +174,9 @@ async function retryCookieReceipt(page: Page, fixture: ReleaseFixture, id: strin
   assert.equal(fixture.proxy.records.filter(record => record.method === "POST" && /\/turns$/.test(record.path)).length, originalPosts);
   await row.getByRole("button", { name: "Retry original request", exact: true }).click();
   await expect(row).toContainText("accepted"); await page.keyboard.press("Escape"); await expect(dialog).not.toBeVisible();
+  await restoreSavedDraft(page, draft);
+}
+async function restoreSavedDraft(page: Page, draft: string) {
   const saved = await openRecovery(page), next = saved.locator("li[data-recovery-record-id]").filter({ hasText: "Saved draft" }).filter({ hasText: draft });
   await expect(next).toHaveCount(1); await next.getByRole("button", { name: "Restore without sending", exact: true }).click();
   await page.keyboard.press("Escape"); await expect(saved).not.toBeVisible(); await expect(inputBox(page)).toHaveValue(draft);
@@ -225,20 +236,30 @@ async function checkApp(browser: Browser, fixture: ReleaseFixture, app: LoadedAp
       assert.ok(recoveryId); await page.keyboard.press("Escape"); await expect(dialog).not.toBeVisible();
     }
     advance(progress, "task-completion"); await fixture.completeTask(taskId, text, cookieApp ? async () => {
+      advance(progress, "durable-retry"); assert.ok(recoveryId); progress.step = "unknown-reload";
+      await page.reload({ waitUntil: "domcontentloaded" }); await expect(inputBox(page)).toBeVisible();
+      assert.equal(posts().length, 1, "Reload must not retry the unknown turn");
+      progress.step = "original-retry";
+      await retryCookieReceipt(page, fixture, recoveryId, draft,
+        fixture.proxy.records.filter(record => record.method === "POST" && /\/turns$/.test(record.path)).length);
+      progress.step = "accepted-identity";
+      assert.equal(posts().length, 2); const recovered = posts()[1]!;
+      assert.ok(recovered.cookie && recovered.csrf && !recovered.bearer);
+      assert.equal(recovered.key, first.key); assert.equal(recovered.body, first.body);
+      assert.equal(recovered.response?.replayed, true); assert.equal(recovered.response?.turn.id, accepted.turn.id);
+      assert.equal(recovered.response?.turn.task.id, taskId); await expect(receipt).toHaveCount(0); await expect(inputBox(page)).toHaveValue(draft);
       logoutEvidence = await lateLogout(page, fixture, life, taskId, progress);
-      assert.equal(posts().length, 1, "Re-authentication must not retry the unknown turn");
+      assert.equal(posts().length, 2, "Re-authentication must not create another turn request");
+      progress.step = "draft-restore"; await restoreSavedDraft(page, draft);
+      assert.equal(posts().length, 2, "Restoring the independent draft cannot send");
     } : undefined);
     const finalTask = await until(() => fixture.request(`/api/tasks/${taskId}`), value => value.status === "succeeded", life); assert.equal(finalTask.verificationStatus, "passed");
     advance(progress, "explicit-retry");
-    if (cookieApp) {
-      advance(progress, "durable-retry"); assert.ok(recoveryId);
-      await retryCookieReceipt(page, fixture, recoveryId, draft,
-        fixture.proxy.records.filter(record => record.method === "POST" && /\/turns$/.test(record.path)).length);
-    } else await page.getByRole("button", { name: "Retry same message", exact: true }).click();
+    if (!cookieApp) await page.getByRole("button", { name: "Retry same message", exact: true }).click();
     await expect(receipt).toHaveCount(0); await expect(inputBox(page)).toHaveValue(draft);
     await expect(page.getByText(`Release fixture reply: ${text}`, { exact: true })).toBeVisible();
     assert.equal(posts().length, 2); const recovered = posts()[1]!;
-    if (cookieApp) assert.ok(recovered.cookie && recovered.csrf && !recovered.bearer, "Recovered mutation requires the new browser-session authority");
+    if (cookieApp) assert.ok(recovered.cookie && recovered.csrf && !recovered.bearer, "Recovered mutation requires Cookie and CSRF browser-session authority");
     assert.equal(recovered.key, first.key); assert.equal(recovered.body, first.body);
     assert.equal(recovered.response?.replayed, true); assert.equal(recovered.response?.turn.id, accepted.turn.id); assert.equal(recovered.response?.turn.task.id, taskId);
     assert.equal((await fixture.request(`/api/conversations/${conversationId}/turns`)).turns.length, 1);
@@ -316,7 +337,7 @@ async function runApps(admission: Admission, adminUrl: string, life: OwnedBrowse
   const startedAt = new Date().toISOString(); await life.checkpoint();
   let fixture: ReleaseFixture | undefined, chrome: Awaited<ReturnType<OwnedBrowserLifetime["launchOwnedChrome"]>> | undefined;
   const results: Awaited<ReturnType<typeof checkApp>>[] = [], errors: string[] = []; let cleanup: unknown, reports: unknown = null;
-  const progress: Progress = { phase: "not-started", app: null, completed: [] }; let failedAt: { phase: Phase; app: string | null } | null = null;
+  const progress: Progress = { phase: "not-started", app: null, step: null, completed: [] }; let failedAt: { phase: Phase; app: string | null; step: CookieStep | null } | null = null;
   try {
     advance(progress, "fixture");
     fixture = await startReleaseFixture(admission, adminUrl, life, recoveryApp); await life.checkpoint();
@@ -333,7 +354,7 @@ async function runApps(admission: Admission, adminUrl: string, life: OwnedBrowse
     await cookiePolicy(chrome.browser, fixture, life, progress, Boolean(recoveryApp));
     for (const app of fixture.apps) { await life.checkpoint(); results.push(await checkApp(chrome.browser, fixture, app, life, progress, app.artifact.artifactId === recoveryApp?.artifact.artifactId)); }
     assert.equal(results.length, expected);
-  } catch (error) { failedAt = { phase: progress.phase, app: progress.app }; errors.push(errorCode(error)); }
+  } catch (error) { failedAt = { phase: progress.phase, app: progress.app, step: progress.step }; errors.push(errorCode(error)); }
   finally {
     if (chrome) try { await chrome.close(); } catch (error) { errors.push("chrome-cleanup:" + errorCode(error)); }
     if (fixture) {
@@ -344,7 +365,7 @@ async function runApps(admission: Admission, adminUrl: string, life: OwnedBrowse
   }
   // No success reports are imported before Chrome/HTTP/DB cleanup has completed successfully.
   if (fixture && errors.length === 0 && results.length === expected) {
-    try { advance(progress, "reports", null); await life.checkpoint(); reports = await importReports(fixture, results); await life.checkpoint(); advance(progress, "done", null); } catch (error) { failedAt = { phase: progress.phase, app: progress.app }; errors.push("report:" + errorCode(error)); }
+    try { advance(progress, "reports", null); await life.checkpoint(); reports = await importReports(fixture, results); await life.checkpoint(); advance(progress, "done", null); } catch (error) { failedAt = { phase: progress.phase, app: progress.app, step: progress.step }; errors.push("report:" + errorCode(error)); }
   }
   const result = { startedAt, finishedAt: new Date().toISOString(), results, errors, progress, failedAt, reports, cleanup: cleanup ?? null,
     passed: errors.length === 0 && results.length === expected && reports !== null, publicContext: admission.context, providerQueries: 0 };
