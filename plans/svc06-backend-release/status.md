@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:40:05 UTC；首次完整artifact结果限定独审通过 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 04:14:27 UTC；原失败残留已按独审入口单次正常收尾，收尾限定接受，真实host仍open |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,23 +10,23 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；本入口source 4de45996435dd86c3409910dad787e99efc9cd63 |
-| 工作树dirty状态 | 产品与entry未改；仅独审转录与scope交回metadata |
+| 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；host smoke入口 e6ff0f1f2e7743496f1f17144343a28716c03b38 |
+| 工作树dirty状态 | e6ff入口及产物保持固定；本次仅实际结果与状态metadata |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
-| 实现目标 | 4de45996435dd86c3409910dad787e99efc9cd63 |
-| 实现范围 | docs/evidence/svc06/artifact-first-run/entry.mjs, docs/evidence/svc06/artifact-first-run/runtime-proof.mjs, docs/evidence/svc06/artifact-first-run/supervise.py, docs/evidence/svc06/artifact-first-run/inputs.json |
-| 检查状态 | PASSED 4de45996435dd86c3409910dad787e99efc9cd63；一次完整artifact+verify+30SQL/import exit0，0PG/host生命周期 |
-| 已集成main状态 / HEAD | rootpg893324三源已main/origin 3230becf07b804479ec4dc7ef02fcaff58cc3858逐字同；[回执](../../docs/evidence/svc06/root-pg-main-receipt.json)。入口已审、实际产物构建与导入已完成且结果限定独审通过；本轮结果待main接收，真实host仍open |
+| 本片段交付阶段 | implementation |
+| 实现目标 | e6ff0f1f2e7743496f1f17144343a28716c03b38 |
+| 实现范围 | docs/evidence/svc06/artifact-host-smoke/entry.mjs, docs/evidence/svc06/artifact-host-smoke/supervise.py, docs/evidence/svc06/artifact-host-smoke/inputs.json |
+| 检查状态 | FAILED e6ff0f1f2e7743496f1f17144343a28716c03b38；work/cleanup均exit1；四路径拒读成立，三角色host未通过，center/DB未知保留 |
+| 已集成main状态 / HEAD | 构建及原结果36输入已main/origin 56672e7effec85792366beeacd724976646c50c8，精确同5eb；[接收来源](../../docs/evidence/svc06/artifact-host-smoke/build-main-receipt.json)。host新入口已获准备限定批准；首次实际失败结果待审，未main |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 固定后台产物已完成一次真实离线构建，内部依赖和SQL资源校验通过；原始结果已获独立核验通过；实际宿主启动仍待验证。 |
-| 下一可用交付 | 用保留产物准备真实宿主启动和开发目录不可用验收。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 固定后台产物已构建；首次宿主验证的残留中心与专库已正常收尾，原失败完整保留。 |
+| 下一可用交付 | 修正验证入口的身份监督位置，再完成真实三角色宿主与开发目录不可读验收。 |
+| 当前阻塞 | ACTIVE: 原宿主验证未通过，需最小入口修正；本次残留收尾已完成并获限定接受；真实host后继待最小入口修正。 |
 | 需用户决定 | NONE |
-| Review | APPROVED_FIXED_ARTIFACT_BUILD_AND_IMPORTS 935df27d；Execution Lead唯一限定独审，完整host生命周期仍open |
-| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v6，7 literal scopes；[四宿主共享文件正式交回](../../docs/evidence/svc06/host-scope-return-receipt.json) |
-| 架构影响 | 执行入口只复用原prepare/verify与OPS14；server/runner/host根tsx/pg/Vite已固定，0PG导入验证与真正host生命周期/开发树不可用验收分开。 |
+| Review | 原构建/入口准备批准保持；cleanup f46a经Lead全文审并授权一次，实际收尾结果已获Lead限定接受并归还窗口，不扩大为宿主通过 |
+| Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
+| 架构影响 | 复用产物host与OPS14，工作和独立收尾两个owner顺序执行，三个detached角色只凭原nonce身份停止；仅本次checkout不可读证据，不新建OS沙箱产品。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -109,3 +109,35 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 03:40:05 UTC：首次完整产物结果限定批准
 
 [唯一独审](../../docs/evidence/svc06/artifact-first-run/result-independent-review.json)绑定935df27d原结果、17固定Git条目及3保留artifact/owner/checkpoint；真实安装/import与清理事实批准，reviewer0重跑。原raw/失败和产品入口全不改；本轮integration，真实host/checkout不可用与个人部署保持open。claim已原子v6交回四宿主共享文件给后继SVC08，不以本SVC整体未完阻占。
+
+## 2026-10-07 03:52:51 UTC：原产物后继宿主入口
+
+[短方案](../../docs/evidence/svc06/artifact-host-smoke/PROPOSAL.md) / [固定入口manifest](../../docs/evidence/svc06/artifact-host-smoke/entry-manifest.json)。已有e5产物不改不重建；限定纯检查实证四开发路径/别名均EPERM、自有tmp可读、child继承，138ms/exit0/两EOF/组absent且原unknown观察保留。这里只验证本机机制，实际center/runner/Web、PG、maintenance与App仍NOT_RUN。主线56672已接构建结果，03/04继续保留真实host和恢复/旧数据兼容验收。
+
+## 2026-10-07 03:55:39 UTC：共享产品范围正式交回
+
+后继真实host验证只写自身plan/evidence，原子amend v7已交回backend-release完整目录及package/lock/maintenance两文件；不预留未来产品写权。[固定host来源](../../docs/evidence/svc06/product-scope-return-source.json)记录当前main与产物3230同blob。新entry e6ff与e5产物保持原字节，实际host/PG仍NOT_RUN，无运行窗口占用。仅metadata检查，不重复已过局部检查。
+
+## 2026-10-07 03:59:40 UTC：宿主入口准备限定批准
+
+[唯一独审转录](../../docs/evidence/svc06/artifact-host-smoke/preparation-independent-review.json)核10个固定入口/证据、实际artifact manifest、cleanup helper、OPS14及d629十文件。无P1/P2、reviewer0重跑；本片仅准备通过。实际host/PG仍NOT_RUN，不重建或补测，不占窗口，原03/04与个人部署边界保持。
+
+实际宿主唯一运行开始：2026-10-07T04:04:40.248274+00:00，e6ff/固定e5原入口；fresh 25,857,392,640B通过2.5GiB门槛、claim v7与固定输入已核。120s工作+30s独立清理，0task/provider/Chrome/个人服务操作。结果待原始Report，不预判通过；本条仅记录真实开始。
+
+## 2026-10-07 04:06:15 UTC：首次宿主实际失败与资源保持
+
+[本次结果](../../docs/evidence/svc06/artifact-host-smoke/RESULT.md) / [完整监督原件](../../docs/evidence/svc06/artifact-host-smoke/host-outer.json)。主失败和独立cleanup失败分别保存；两个监督组absent，但中心detached组与DB未知，未DROP/未强停，原artifact与private run保留。执行owner已结束并立即报告Lead；没有自动重试，03/04/05不勾选。
+
+2026-10-07 04:08:16 UTC 限定只读诊断：[原件与边界](../../docs/evidence/svc06/artifact-host-smoke/DIAGNOSIS.md)。原拒读profile不允许身份命令/bin/ps执行，外部确证中心组仍活；精确专库存在/3条idle连接。0停止/删除/重新启动；实际宿主失败保持，原center stderr未记录不补造。
+
+## 2026-10-07 04:13:10 UTC：原失败资源的最窄收尾准备
+
+[固定方法与边界](../../docs/evidence/svc06/artifact-host-smoke/CLEANUP-FOLLOWUP.md)：可信身份观察留在原sandbox外，两次完整匹配后先私有持久意图，复用原一次TERM/marker/OID/零连接/checkpoint→normal DROP；原pending/UNKNOWN不覆盖，不删产物/private run。现仅source准备，执行NOT_RUN，等待Lead短独审；后继host仍open。
+
+## 2026-10-07 04:14:27 UTC：原失败残留的单次正常收尾
+
+[本次独立收尾原件](../../docs/evidence/svc06/artifact-host-smoke/CLEANUP-RESULT.md)：外层672ms/exit0/双EOF/owned absent；原helper一次TERM使中心组stopped；marker/OID同值、零连接与先checkpoint后normal DROP/remaining=[]。原artifact/private run和失败raw不改；03/04实际host仍open，结果待Lead独审。
+
+## 2026-10-07 04:20:48 UTC：隔离接缝局部完成待审
+
+[新3例/原件](../../docs/evidence/svc06/artifact-host-followup/local-manifest.json)一次3/3、374ms、0PG；可信原身份监督与真实拒读子孙分离，有限私有诊断。原host失败和清理结果保持；本轮源码待独审，后继新root/真实三角色仍NOT_RUN。local段已清理归还。

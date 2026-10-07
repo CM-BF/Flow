@@ -1,0 +1,183 @@
+{
+  "at": "2026-10-07T04:08:36.076453+00:00",
+  "source": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+  "resultRef": "493678c6316edf9d130938df30c396a0ada7d238",
+  "artifactSource": "3230becf07b804479ec4dc7ef02fcaff58cc3858",
+  "artifactId": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+  "outcome": "FAILED_WITH_OWNED_RESOURCE_KEEP",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/DIAGNOSIS.md",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 1856,
+      "sha256": "a48228a8ce0a26769639b730b74db34050caec18ce6d256646e88b4b540fa81a"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/RESULT.md",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 1823,
+      "sha256": "82bdbba0d63bf97c28a231d04fe6a770175a7b3300ec913a38d7b0f4dd372ea1"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/actual-cleanup-result.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 369,
+      "sha256": "348de8df6d793a526e3eb3a29effcf7bb70c419602b86d917872e6e54a161ced"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/actual-reservation.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 493,
+      "sha256": "dd7ca5f0049b595e745cf4a9c5d63085816b276e94fdd4e42d54a547d1d6a18a"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/actual-spawn-center-intent.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 383,
+      "sha256": "b0ec8366ad67c1a9b326b674d00e6e634ea4b74e314bc351fdaeb735a82726f2"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/actual-spawn-center-pending.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 128,
+      "sha256": "fc7594f127f4d6c03f858a7ee37b236df1ca0f5926e294a9d8ae5d3fbd5730f6"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/actual-work-checkpoint.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 2697,
+      "sha256": "3244328fbbb0f64a52dbdabc83f8f407577de76154a4d57752be9cb63ce6004b"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/actual-work-result.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 3705,
+      "sha256": "e7d10f8f9558b54790cbc7b361ac14369629380fcc6783068c81446de6c74910"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/diagnosis-database.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 643,
+      "sha256": "2ee0f06a10bd15034c2028d973a5865e89bd38763c7e330c09e3f2a46a1e11a1"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/diagnosis-identity-command.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 434,
+      "sha256": "0792146bdbe6854a55f56ef95a081d1476f7d580f556fc208cc0e18539e793dc"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/diagnosis-identity-worker-cwd.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 646,
+      "sha256": "ec6bedc8ed8a0d4a352ff76f36563d56d30ed199e6ad6a3aa0d06d064606fe5e"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/diagnosis-process.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 914,
+      "sha256": "4d8f30d8a99dbbc771787e895b6589892e6552a3e86903c71a477a893c33711d"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/entry-manifest.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 3765,
+      "sha256": "f91cf2139ed49b05621b50e4b7c3b8262d4f57879f694e6933848c797497b788"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/host-invocation.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 277,
+      "sha256": "ccb38cd7a923b1fb61b39d66e4fa9877d001be9d58b87eed36d85681afb7304d"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/host-outer.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 4272,
+      "sha256": "02f55e4b771587820154a01395ba533280d2cc1289f7fd48849e041b8f9a41d3"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/host-preflight.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 2529,
+      "sha256": "6e69db042d0e5939c4fe6c941366ea2719691308e01e9ddb009b96682b8e605d"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/host-supervise-stderr.txt",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/host-supervise-stdout.txt",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 478,
+      "sha256": "73e8eb1eebcef942d9e492005c1b784bd2c567c2c9fe33d14a44b9f79b652918"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/host-tool-observation.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 2714,
+      "sha256": "f1e0379b1352d2647223ce16d46631434c844017b51bb29c87d52e9a5a484258"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/preparation-independent-review.json",
+      "ref": "493678c6316edf9d130938df30c396a0ada7d238",
+      "bytes": 1985,
+      "sha256": "9236cf61188b4fb459e590e78426fd8c5175c7c8922afb4282cb44ef11849fb5"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/entry.mjs",
+      "ref": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+      "bytes": 21582,
+      "sha256": "677231869d2fae8b6c5ee57a9cd99d17c15764f806769a30d82921fe63a4ea67"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/supervise.py",
+      "ref": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+      "bytes": 3491,
+      "sha256": "238292f4ac39185b0c5e1dfd3cc6df5819bc0120564c01f0def730a4c449f9f7"
+    },
+    {
+      "path": "docs/evidence/svc06/artifact-host-smoke/inputs.json",
+      "ref": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+      "bytes": 4087,
+      "sha256": "51b7567ca0d8232de56f2b0f498945fd4729d707939cece0f967f8c1ccd1bfa4"
+    }
+  ],
+  "fixedEntriesUnchanged": true,
+  "workAndCleanupStdoutEqualSavedResults": true,
+  "result": {
+    "workExit": 1,
+    "cleanupExit": 1,
+    "outerElapsedMsSum": 6336,
+    "workGroup": 69624,
+    "cleanupGroup": 73748,
+    "bothSupervisorGroupsAbsent": true,
+    "bothCompleteEOF": true,
+    "centerGroup": 73345,
+    "centerIdentityOriginal": "pending only, no completed record",
+    "centerLatestReadonly": "running nonce/path matched externally",
+    "database": "flow_preview_5104378c400a8a3a11597418",
+    "databaseOid": 1206953,
+    "connectionsLastReadonly": 3,
+    "databaseCleanup": "NOT_PERFORMED",
+    "runner": "NOT_STARTED",
+    "web": "NOT_STARTED",
+    "providerCalls": 0,
+    "tasksCreated": 0,
+    "personalActions": 0,
+    "minimumObservedFreeBytes": 25854414848,
+    "maximumObservedPrivateBytes": 1621625,
+    "physicalPeak": "NOT_MEASURED",
+    "privateRun": "KEEP",
+    "artifact": "KEEP"
+  },
+  "limits": [
+    "No host smoke PASS, no three-role readiness or delayed-import result",
+    "Original service stderr was discarded by production stdio ignore; cannot recover or infer it",
+    "Exact ps probe under original profile/cwd failed execvp EPERM, external process exists; original failure text was only UNCONFIRMED",
+    "No signal/drop/retry and no new full journey. Cleanup needs explicitly controlled followup.",
+    "Global/private source roots and immutable artifact are unchanged"
+  ]
+}

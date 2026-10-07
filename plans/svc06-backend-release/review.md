@@ -1,3 +1,19 @@
+## 2026-10-07 04:14:53 UTC 原失败残留收尾限定接受
+
+Execution Lead 已直接核 outer/private result 通过并归还 PG 窗口；[固定结果绑定](../../docs/evidence/svc06/artifact-host-smoke/cleanup-followup-result-manifest.json)。仅原残留正常清理，原 host FAIL 与后继未验边界保持，无新probe。
+
+# 最新限定收尾待审
+
+2026-10-07 04:14:27 UTC：固定 f46a29ae26ebeb616343f95de68f8f967c8c8674 的 cleanup entry/input 已获 Execution Lead 同线程完整只读批准并单次执行；真实结果[cleanup-followup-result](../../docs/evidence/svc06/artifact-host-smoke/cleanup-followup-result.json)尚待独立核验。原host失败不改，不能将收尾成功作三角色验收通过。
+
+# 宿主首次实际失败结果：PENDING
+
+固定e6ff入口/source3230原产物首次运行work与cleanup均exit1；[结果及限制](../../docs/evidence/svc06/artifact-host-smoke/RESULT.md)。原入口批准只证明准备，实际三角色未通过；center/DB未知KEEP，无重跑或清理冒称。下文历史准备/构建批准保持。
+
+# 下一host smoke入口：APPROVED_PREPARATION_ONLY
+
+Source `e6ff0f1f2e7743496f1f17144343a28716c03b38`；[manifest](../../docs/evidence/svc06/artifact-host-smoke/entry-manifest.json)。Execution Lead唯一独审于2026-10-07T03:58:11.372402+00:00限定批准；[同bytes原回执](../../docs/evidence/svc06/artifact-host-smoke/preparation-independent-review.json)核10个fixed/current绑定、真实artifact及Web输入、helper/OPS14，完整入口已读，无P1/P2、0重跑。实际PG/三角色host未运行，局部只验证本机拒读机制及入口语法；不把准备批准当运行验收。完整03/04仍open。
+
 # 当前实际artifact结果：APPROVED_FIXED_ARTIFACT_BUILD_AND_IMPORTS
 
 Execution Lead唯一限定批准target `935df27d952d98077f4ed7763966b7023cf93c9d`，原件时间2026-10-07T03:38:27.829073+00:00；[独审转录](../../docs/evidence/svc06/artifact-first-run/result-independent-review.json)。17 fixed/current条目与3保留产物身份核同，完整raw/result逐值相符、无findings、0重跑。entry4de/source3230一次实际结果见[原始结果](../../docs/evidence/svc06/artifact-first-run/RESULT.md)；仅真实构建/安装/导入批准，不含真实host、开发checkout不可用或个人部署。

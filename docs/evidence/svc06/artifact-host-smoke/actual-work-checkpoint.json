@@ -1,0 +1,113 @@
+{
+  "startedAt": "2026-10-07T04:04:40.496Z",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+    "manifestDigest": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+    "sourceHead": "3230becf07b804479ec4dc7ef02fcaff58cc3858"
+  },
+  "providerCalls": 0,
+  "tasksCreated": 0,
+  "checks": {
+    "deniedReads": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow/package.json",
+        "result": "EPERM"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/package.json",
+        "result": "EPERM"
+      },
+      {
+        "path": "/System/Volumes/Data/Users/citrine/Projects/AgentHarness/Flow/package.json",
+        "result": "EPERM"
+      },
+      {
+        "path": "/System/Volumes/Data/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/package.json",
+        "result": "EPERM"
+      }
+    ]
+  },
+  "phase": "starting-center",
+  "freeBefore": 25856811008,
+  "resourceSamples": [
+    {
+      "free": 25856774144,
+      "private": {
+        "bytes": 26768,
+        "attempts": 1,
+        "entriesAcrossAttempts": 8,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25856716800,
+      "private": {
+        "bytes": 26768,
+        "attempts": 1,
+        "entriesAcrossAttempts": 8,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25856491520,
+      "private": {
+        "bytes": 26768,
+        "attempts": 1,
+        "entriesAcrossAttempts": 8,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25856475136,
+      "private": {
+        "bytes": 26768,
+        "attempts": 1,
+        "entriesAcrossAttempts": 8,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25856454656,
+      "private": {
+        "bytes": 26768,
+        "attempts": 1,
+        "entriesAcrossAttempts": 8,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25856704512,
+      "private": {
+        "bytes": 26768,
+        "attempts": 1,
+        "entriesAcrossAttempts": 8,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25856634880,
+      "private": {
+        "bytes": 26768,
+        "attempts": 1,
+        "entriesAcrossAttempts": 8,
+        "atomicSnapshot": false
+      }
+    },
+    {
+      "free": 25855033344,
+      "private": {
+        "bytes": 1504160,
+        "attempts": 1,
+        "entriesAcrossAttempts": 23,
+        "atomicSnapshot": false
+      }
+    }
+  ],
+  "databaseName": "flow_preview_5104378c400a8a3a11597418",
+  "ports": [
+    55573,
+    55574
+  ],
+  "installationId": "383c91dd-0d09-4bb5-b725-6bc6a02b09b0"
+}

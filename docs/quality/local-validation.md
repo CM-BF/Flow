@@ -96,3 +96,24 @@ co-lead在既有scope与资源约束内给一个工作段总预算：明确受�
 复用既有运行器与一份结构化运行记录，记录固定源码、实际选中/通过/失败、每次起止、累计资源、原始输出引用、primary failure与cleanup状态。按风险绑定必要source/直接输入，不重复多套大manifest或复制原raw；失败原件与后续修复分开，未受影响且已通过的检查不重跑。简单纯函数检查不必包上面向副作用operator的全套监督记录，涉及自有子进程时复用OPS14。
 
 真实PG/Chrome/迁移/个人服务仍需必要隔离、fresh身份、准入与恢复审查；未知资源不能自动回收，模型调用不随局部预算新增，已有已消费特殊现场窗口不追溯复开。本段不改变当前共享窗口/并行上限、磁盘门槛、claim、固定target或用户服务控制权。时间与等待仅写唯一status的[时间表](../../plans/AGENTS.md#task-timing)，不建新调度器/第二账本。
+
+<a id="own-status-parse"></a>
+## 只读核对自己刚修改的状态
+
+提交前，只把本owner本轮修改的status交给已安装主线的权威 `parseStatus(markdown, taskId)`；不运行全看板聚合、产品测试或复制解析规则。下面从主线仓库根目录运行，替换任务ID与唯一status绝对路径；特征树解析器较旧时不要借此恢复旧实现。
+
+```sh
+node --input-type=module - OPS-001 /absolute/owner/worktree/plans/ops-001-status-review/status.md <<'JS'
+import { readFileSync } from 'node:fs';
+import { parseStatus } from './apps/execution-dashboard/src/status.mjs';
+const [, , taskId, file] = process.argv;
+const parsed = parseStatus(readFileSync(file, 'utf8'), taskId);
+console.log(JSON.stringify({
+  taskId, errors: parsed.errors, humanMissing: parsed.human.missing,
+  timingIssues: parsed.timing.issues, taskLinks: parsed.taskLinks,
+}, null, 2));
+if (parsed.errors.length || parsed.human.missing.length) process.exitCode = 1;
+JS
+```
+
+先核本次字段和任务关联的实际结果：无阻塞只填`NONE`，说明移到下一步/证据；有阻塞填`ACTIVE: 描述`，用户决定同理遵守既有枚举。新的字段格式错误由原owner修，不让parser猜。时间issues须逐项解释：历史开工缺证据继续`UNKNOWN`，尚未完整完成用`NOT_COMPLETED`；不为消除提示填造时间。纯解析只验证声明形状，不验证链接目标、review覆盖、主线集成或实际部署；这些仍对本次diff与原证据核对。记录复用本次status或检查记录，写明所用parser固定来源和遗留unknown即可，不新增第二schema、全局hook或每文件manifest。

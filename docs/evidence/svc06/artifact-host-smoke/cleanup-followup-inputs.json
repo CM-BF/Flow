@@ -1,0 +1,104 @@
+{
+  "preparedAt": "2026-10-07T04:09:33.211716+00:00",
+  "originalEntrySource": "e6ff0f1f2e7743496f1f17144343a28716c03b38",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+    "manifestDigest": "e5fed419b73beb733ff78d958192813c6ac6ecc7887c1c408d9e5f7b31a552b2",
+    "sourceHead": "3230becf07b804479ec4dc7ef02fcaff58cc3858"
+  },
+  "directory": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6",
+  "directoryIdentity": {
+    "dev": 16777234,
+    "ino": 123378549
+  },
+  "run": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/host-smoke-first",
+  "runIdentity": {
+    "dev": 16777234,
+    "ino": 123428634
+  },
+  "node": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+  "pid": 73345,
+  "group": 73345,
+  "nonce": "d8e57a7b-c6e7-495d-bc7d-391d4f7dca42",
+  "databaseName": "flow_preview_5104378c400a8a3a11597418",
+  "databaseOid": 1206953,
+  "installationId": "383c91dd-0d09-4bb5-b725-6bc6a02b09b0",
+  "centerPort": 55573,
+  "freshBytes": 1074003968,
+  "originalFiles": [
+    {
+      "relative": "config.json",
+      "bytes": 639,
+      "sha256": "776a6d7fea80950d71ef620d543c00a735948fda7ec4064177d12e9a9a10473b",
+      "dev": 16777234,
+      "ino": 123428704
+    },
+    {
+      "relative": "state.json",
+      "bytes": 874,
+      "sha256": "9b0568c1f6eec82a5e0d5c951e4e1cc3c1f286d711b8eb3f9798d9235e51d055",
+      "dev": 16777234,
+      "ino": 123428728
+    },
+    {
+      "relative": "host-smoke-first/reservation.json",
+      "bytes": 493,
+      "sha256": "dd7ca5f0049b595e745cf4a9c5d63085816b276e94fdd4e42d54a547d1d6a18a",
+      "dev": 16777234,
+      "ino": 123428635
+    },
+    {
+      "relative": "host-smoke-first/work-checkpoint.json",
+      "bytes": 2697,
+      "sha256": "3244328fbbb0f64a52dbdabc83f8f407577de76154a4d57752be9cb63ce6004b",
+      "dev": 16777234,
+      "ino": 123428725
+    },
+    {
+      "relative": "host-smoke-first/spawn-center-pending.json",
+      "bytes": 128,
+      "sha256": "fc7594f127f4d6c03f858a7ee37b236df1ca0f5926e294a9d8ae5d3fbd5730f6",
+      "dev": 16777234,
+      "ino": 123428727
+    },
+    {
+      "relative": "host-smoke-first/spawn-center-intent.json",
+      "bytes": 383,
+      "sha256": "b0ec8366ad67c1a9b326b674d00e6e634ea4b74e314bc351fdaeb735a82726f2",
+      "dev": 16777234,
+      "ino": 123428726
+    }
+  ],
+  "runtime": [
+    {
+      "relative": "tools/personal-preview/process.mjs",
+      "bytes": 3493,
+      "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+    },
+    {
+      "relative": "tools/personal-preview/preview.mjs",
+      "bytes": 27844,
+      "sha256": "2eedda6ec6700655557c35c78a2ef490d70023f542740ca18f45b574561e33bd"
+    },
+    {
+      "relative": "apps/tui/src/task-controls/fixture-cleanup.ts",
+      "bytes": 4435,
+      "sha256": "4eeb8756eabca0173d1c3be5c4747e9960499f72f3f4975c37b0beed2929cdf7"
+    }
+  ],
+  "privateDestination": "cleanup-followup-first",
+  "policy": {
+    "workSeconds": 27,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "rawBytes": 262144,
+    "captureBytes": 8192
+  },
+  "sharedSupervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "startedAt": "Tue Oct  6 21:04:44 2026",
+  "commandSha256": "4e9e93ffb0c5b15a0309863fef56a69539c794fa29209690e133ff3a6b903986"
+}

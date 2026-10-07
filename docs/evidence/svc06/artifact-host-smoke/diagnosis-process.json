@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T04:06:36.411701+00:00",
+  "pendingPid": 73345,
+  "pendingGroup": 73345,
+  "process": {
+    "queryExit": 0,
+    "stderrBytes": 0,
+    "pid": 73345,
+    "pgid": 73345,
+    "startedAt": "Tue Oct  6 21:04:44 2026",
+    "nonceMatched": true,
+    "artifactPathMatched": true,
+    "commandSha256": "4e9e93ffb0c5b15a0309863fef56a69539c794fa29209690e133ff3a6b903986"
+  },
+  "groupQueryExit": 0,
+  "groupMembers": [
+    73345,
+    73878,
+    73879
+  ],
+  "listeners": {
+    "55573": {
+      "exit": 0,
+      "pids": [
+        73878
+      ],
+      "stderrBytes": 0
+    },
+    "55574": {
+      "exit": 1,
+      "pids": [],
+      "stderrBytes": 0
+    }
+  },
+  "exitRecord": {
+    "exists": false
+  },
+  "workCheckpointPhase": "starting-center",
+  "fullCapturedRuntimeStderr": null,
+  "stderrLimit": "original production process helper starts detached wrapper stdio ignore; no stderr file is configured"
+}

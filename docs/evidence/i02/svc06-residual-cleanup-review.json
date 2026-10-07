@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T04:13:18.725798+00:00",
+  "reviewer": "astra_ultra_execution_lead",
+  "verdict": "APPROVED_ONE_OWNED_CLEANUP",
+  "bindings": {
+    "cleanup-followup.mjs": "695605db12184faf2bf890eee8c8f9fe8c2717c237f32d349f79761049337f32",
+    "cleanup-followup-inputs.json": "f1bc6bc6e6f873c442c9933eb5ee7753a9037b2c72d36cf649073dcfff4b9e85"
+  },
+  "runtimeChecked": [
+    "tools/personal-preview/process.mjs",
+    "tools/personal-preview/preview.mjs",
+    "apps/tui/src/task-controls/fixture-cleanup.ts"
+  ],
+  "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+  "scope": "One residual center group73345 and original marked DB flow_preview_5104378c400a8a3a11597418/OID1206953; no host replay",
+  "boundary": [
+    "two complete PID/PGID/nonce/startedAt/command observations outside original rejected ps sandbox",
+    "exact directory dev/ino and original private file bytes/dev/ino, no re-baselining",
+    "private durable identity+intent before TERM; original pending/raw untouched",
+    "original stopOwnedProcess once, no FORCE/KILL fallback; unknown KEEP",
+    "same DB marker/OID, bounded connections empty and current group stopped before normal DROP",
+    "artifact and private run retained; no personal service or model touched",
+    "OPS14 childPidOnly bounded29.5s; no detached personal groups controlled"
+  ],
+  "blockingFindings": [],
+  "reviewerTests": 0
+}

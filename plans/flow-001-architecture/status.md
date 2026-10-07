@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:09:13.319076+00:00 / main451bf2ed；4320 ACCESS与计时实际部署，个人仍af51/accepting v18、d629/v3 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:20:37.000Z / mainc0e0263d固定接收；个人af51/accepting v18、d629/v3未变 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -18,9 +18,9 @@
 | 已集成main状态 / HEAD | main/origin451bf2ed已接SVC08同锁入口、S01P07领取恢复、ACCESS与原计时；个人未随主线自动升级。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 看板登录入口与任务计时已实际可见，按需加载、复制和关闭清除已有真实页面观察；领取恢复已进主线。固定后台产物安装/加载通过，首宿主运行失败事实已保留。 |
-| 下一可用交付 | 先收束固定后台首轮自有资源并修正身份观察边界，再验证独立宿主；网页固定宿主选择完成独审后进入受管发布。其他队伍已ready局部检查继续。 |
-| 当前阻塞 | ACTIVE: 远程CI唯一用户选择仍PENDING。SVC06首host运行因拒读profile也拒绝/bin/ps而无法确认center身份，精确自有中心/DB暂KEEP、正在有界收尾；不是旧空间HOLD，也未证明产物加载失败。 |
+| 当前产出 | 看板登录与任务计时已实际可用；Codex会话公共接线已受控接收。固定后台产物安装/加载已通过，首宿主失败的自有中心与专库已正常收尾，原失败证据保留。 |
+| 下一可用交付 | 继续固定后台独立宿主验证，以及工程原生写入、检查和公开收据的零模型组合。网页修复的固定Flow来源产物另行准备，聊天验证按ready顺序推进。 |
+| 当前阻塞 | ACTIVE: 远程CI唯一用户启用选择仍PENDING。固定后台首宿主完整验收仍待隔离与身份观察接缝修正；原残留已收尾，当前不是磁盘HOLD或未知资源占窗。 |
 | 需用户决定 | REQUIRED: OPS-CI01唯一启用选择已由Goal Owner提出，当前PENDING；不重复提问。 |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -190,3 +190,5 @@ fresh canonical SVC07 HEAD1b3e166 clean/pushed，产品e28/HTTP35f原批准输�
 main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；185源与真实IAB开工UTC/含等待历时/详情来源已核。记录：[D05实际回执](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/task-timing-185-live.json)。未重跑原81 parser/5浏览器组，未刷新原用户tab或改个人af51/d629；ACCESS后继不再阻塞本片上线。
 
 2026-10-07T04:09:13.319076+00:00：ACCESS实际部署见D05唯一[回执](../../../dashboard-architecture/docs/evidence/d05/local-access-185-live.json)，main451bf2；S01P07 main0aa组合noEmit0及8直接检查通过，原失败保留。SVC06独立artifact首host运行0task/provider，04:04:40.248开始、work6255ms/cleanup81ms；工作/清理监督组absent，但detached center及专库仍KEEP。只读诊断确认原sandbox禁止/bin/ps，原stderr丢失不能补造根因；按原owner精确身份与先行持久记录收尾，未重跑构建或个人服务。
+
+2026-10-07T04:20:37.000Z：SVC06原自有中心/专库于04:13:43.435–04:13:44.010Z正常收尾，原helper一次TERM、group stopped、marker/OID相同、连接空后一次normal DROP；14固定结果绑定已核，e5与失败原件保留。共享PG窗口已归还，首host仍FAIL，后继观察器只在实验端修正，不重建已绿artifact。见[原owner结果](../../../backend-release/docs/evidence/svc06/artifact-host-smoke/CLEANUP-RESULT.md)。SVC08选择已main422、合法Flow422产物候选NOT_RUN；ENG01I原owner0497新claim正式恢复0provider组合，真实模型资格与独立接受仍开放。

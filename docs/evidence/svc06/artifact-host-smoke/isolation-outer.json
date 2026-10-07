@@ -1,0 +1,33 @@
+{
+  "pid": 52131,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 138,
+  "stdout": "{\"startedAt\":\"2026-10-07T03:43:54.245Z\",\"checks\":{\"results\":[{\"path\":\"/Users/citrine/Projects/AgentHarness/Flow/package.json\",\"code\":\"EPERM\"},{\"path\":\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/package.json\",\"code\":\"EPERM\"},{\"path\":\"/System/Volumes/Data/Users/citrine/Projects/AgentHarness/Flow/package.json\",\"code\":\"EPERM\"},{\"path\":\"/System/Volumes/Data/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/package.json\",\"code\":\"EPERM\"}],\"ownTmpReadable\":true,\"childInheritedDenial\":true},\"forbiddenFiles\":[\"/Users/citrine/Projects/AgentHarness/Flow/package.json\",\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/package.json\",\"/System/Volumes/Data/Users/citrine/Projects/AgentHarness/Flow/package.json\",\"/System/Volumes/Data/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/package.json\"],\"freeBefore\":25921339392,\"provider\":0,\"pg\":0,\"serviceLaunch\":0,\"owned\":{\"directory\":\"/private/tmp/svc06-isolation-eeXrtk\",\"dev\":16777234,\"ino\":123414081},\"stderr\":\"\",\"outcome\":\"PASSED_LOCAL_FILE_ISOLATION_ONLY\",\"finishedAt\":\"2026-10-07T03:43:54.328Z\",\"cleanup\":\"own-tiny-directory-removed-after-checkpoint\"}\n",
+  "stderr": "",
+  "observed_bytes": 1176,
+  "retained_bytes": 1176,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

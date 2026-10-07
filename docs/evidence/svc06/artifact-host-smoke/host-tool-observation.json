@@ -1,0 +1,86 @@
+{
+  "at": "2026-10-07T04:05:37.086684+00:00",
+  "toolSessionId": 33955,
+  "toolExitCode": 1,
+  "toolFinalChunkId": "1bacae",
+  "work": {
+    "exit": 1,
+    "ms": 6255,
+    "group": 69624,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    }
+  },
+  "cleanup": {
+    "exit": 1,
+    "ms": 81,
+    "group": 73748,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    }
+  },
+  "records": [
+    {
+      "name": "reservation.json",
+      "exists": true,
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/host-smoke-first/reservation.json",
+      "dev": 16777234,
+      "ino": 123428635,
+      "bytes": 493,
+      "sha256": "dd7ca5f0049b595e745cf4a9c5d63085816b276e94fdd4e42d54a547d1d6a18a"
+    },
+    {
+      "name": "work-checkpoint.json",
+      "exists": true,
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/host-smoke-first/work-checkpoint.json",
+      "dev": 16777234,
+      "ino": 123428725,
+      "bytes": 2697,
+      "sha256": "3244328fbbb0f64a52dbdabc83f8f407577de76154a4d57752be9cb63ce6004b"
+    },
+    {
+      "name": "work-result.json",
+      "exists": true,
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/host-smoke-first/work-result.json",
+      "dev": 16777234,
+      "ino": 123428729,
+      "bytes": 3705,
+      "sha256": "e7d10f8f9558b54790cbc7b361ac14369629380fcc6783068c81446de6c74910"
+    },
+    {
+      "name": "cleanup-result.json",
+      "exists": true,
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/host-smoke-first/cleanup-result.json",
+      "dev": 16777234,
+      "ino": 123428730,
+      "bytes": 369,
+      "sha256": "348de8df6d793a526e3eb3a29effcf7bb70c419602b86d917872e6e54a161ced"
+    },
+    {
+      "name": "spawn-center-intent.json",
+      "exists": true,
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/host-smoke-first/spawn-center-intent.json",
+      "dev": 16777234,
+      "ino": 123428726,
+      "bytes": 383,
+      "sha256": "b0ec8366ad67c1a9b326b674d00e6e634ea4b74e314bc351fdaeb735a82726f2"
+    },
+    {
+      "name": "spawn-center-pending.json",
+      "exists": true,
+      "path": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/host-smoke-first/spawn-center-pending.json",
+      "dev": 16777234,
+      "ino": 123428727,
+      "bytes": 128,
+      "sha256": "fc7594f127f4d6c03f858a7ee37b236df1ca0f5926e294a9d8ae5d3fbd5730f6"
+    }
+  ],
+  "outcome": "FAILED_WITH_OWNED_RESOURCE_KEEP",
+  "postRunActions": "No retry, signal, database query, drop, or private-root removal.",
+  "serviceState": "center unknown; runner and web not started; database unknown",
+  "window": "execution owners finished; remaining resources KEEP and reported to Lead"
+}

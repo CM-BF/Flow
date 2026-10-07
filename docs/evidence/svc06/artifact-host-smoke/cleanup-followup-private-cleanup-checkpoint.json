@@ -1,0 +1,35 @@
+{
+  "startedAt": "2026-10-07T04:13:43.435Z",
+  "originalResultUnchanged": true,
+  "center": "stopped",
+  "database": "owned-and-empty",
+  "stopCalls": 1,
+  "dropCalls": 0,
+  "failures": [],
+  "artifactRetained": true,
+  "privateRunRetained": true,
+  "freeBefore": 25804611584,
+  "databaseBefore": [
+    {
+      "oid": 1206953,
+      "datname": "flow_preview_5104378c400a8a3a11597418"
+    }
+  ],
+  "markerBefore": true,
+  "markerAfter": true,
+  "databaseAfterStop": [
+    {
+      "oid": 1206953,
+      "datname": "flow_preview_5104378c400a8a3a11597418"
+    }
+  ],
+  "connections": {
+    "state": "empty",
+    "observations": [
+      {
+        "elapsedMs": 1.7295829999999341,
+        "rows": []
+      }
+    ]
+  }
+}

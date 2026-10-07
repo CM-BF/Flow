@@ -1,6 +1,6 @@
 # SVC06 固定后台发布产物
 
-创建：2026-10-06 12:43:33 UTC。子task；所属唯一大task [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) / REQ-19。co-lead Execution Lead。当前 owner assignment_review 已按 claim v4 实施固定小片；完整产物运行验证受资源限制，个人服务不在当前操作范围。
+创建：2026-10-06 12:43:33 UTC。子task；所属唯一大task [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) / REQ-19。co-lead Execution Lead。当前 owner assignment_review 持claim v7，仅own plan/evidence；共享产品已停写交回；真实固定产物构建/import已审并main，后继真实宿主/checkout不可读仍未验，个人服务不在当前操作范围。
 
 用户结果：中心与runner运行源码、依赖及Node执行身份固定；正常开发checkout前进和依赖安装不改变已运行release，不再为现有服务切换或冻结main。复用已有单安装operation锁、drain/active0/hold/refresh/resume和Web独立发布，不建第二部署状态权威。
 
@@ -80,3 +80,7 @@ SVC05 fixed362受控更新于12:41:29 closed，v15 accepting，保留会话/两W
 rootpg已main3230，原局部批准不扩。唯一[执行入口](../../docs/evidence/svc06/artifact-first-run/README.md)固定main `3230becf07b804479ec4dc7ef02fcaff58cc3858`，原prepare/verify/OPS14负责隔离安装与停止。新更严格fresh门槛与500ms观测边界已写明，不运行个人服务/PG或启动provider；完整artifact实际结果与真正host隔离仍分别待验，03/04/05继续open。
 
 2026-10-07首次真实fixed3230产物构建与内部解析已过，限定结果见[RESULT](../../docs/evidence/svc06/artifact-first-run/RESULT.md)。原开发树未改/未隔绝，真实宿主生命周期与后续个人部署仍未验，不整体完成03/04/05。
+
+## 2026-10-07 03:52:51 UTC：固定产物实际host后继
+
+[最小方案与预算](../../docs/evidence/svc06/artifact-host-smoke/PROPOSAL.md)已形成固定源码；复用e5产物与真实d629静态dist，不重建、不伪造3230兼容报告。单次实际拒读本机机制检查已过，host/PG未执行。先验三个零任务owned角色的真实启动/静态字节/延迟导入及独立收尾，完整refresh/resume/旧数据与App兼容仍后继；SVC06-03/04/05不因此勾完。

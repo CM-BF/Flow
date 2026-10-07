@@ -1,0 +1,58 @@
+{
+  "recordedAt": "2026-10-07T03:51:48.833682+00:00",
+  "source": "5aabf8f3b7c6bf415097307877f86247bbc1b842",
+  "outcome": "PASSED_LOCAL_FILE_ISOLATION_ONLY",
+  "differentChecks": [
+    "four exact source paths refused EPERM",
+    "owned tmp readable",
+    "child inherits denial"
+  ],
+  "workStartedAt": "2026-10-07T03:43:54.245Z",
+  "workFinishedAt": "2026-10-07T03:43:54.328Z",
+  "outerElapsedMs": 138,
+  "outerExit": 0,
+  "ownedState": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "historicalObservationsUnchanged": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "tmp": {
+    "path": "/private/tmp/svc06-isolation-eeXrtk",
+    "dev": 16777234,
+    "ino": 123414081,
+    "absentNow": true,
+    "knownWrittenBytesUpperBound": 20000,
+    "physicalPeak": "NOT_MEASURED"
+  },
+  "raw": [
+    {
+      "path": "isolation-outer.json",
+      "bytes": 1814,
+      "sha256": "4c460b49f237142abe924f2f867b0b44be0f894ce3423f5ad209c8cc5e2434d8"
+    },
+    {
+      "path": "isolation-checkpoint.json",
+      "bytes": 1395,
+      "sha256": "1b93c90ecd5322f7806eb27955281588ab9dc39454b8aedb22092f95e8064f7f"
+    }
+  ],
+  "limits": [
+    "No PG, host/service start, Chrome, provider or runtime proof run",
+    "File-read permission only; not a generic security sandbox",
+    "Host entry source and syntax are prepared; behavior NOT_RUN"
+  ]
+}

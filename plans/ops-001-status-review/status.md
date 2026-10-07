@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:09:13.319076+00:00 / main451bf2ed；4320 ACCESS与计时实际部署，个人仍af51/accepting v18、d629/v3 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:20:37.000Z / mainc0e0263d固定接收；个人af51/accepting v18、d629/v3未变 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,15 +15,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin451bf2ed已接SVC08同锁入口、S01P07领取恢复、ACCESS与原计时；个人未随主线自动升级。 |
+| 已集成main状态 / HEAD | mainc0e0263d已接S01P07、Codex会话接线、ACCESS/计时及SVC08选择；个人部署与源码分开，未随main升级。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 看板登录入口与任务计时已实际可见，按需加载、复制和关闭清除已有真实页面观察；领取恢复已进主线。固定后台产物安装/加载通过，首宿主运行失败事实已保留。 |
-| 下一可用交付 | 先收束固定后台首轮自有资源并修正身份观察边界，再验证独立宿主；网页固定宿主选择完成独审后进入受管发布。其他队伍已ready局部检查继续。 |
-| 当前阻塞 | ACTIVE: 远程CI唯一用户选择仍PENDING。SVC06首host运行因拒读profile也拒绝/bin/ps而无法确认center身份，精确自有中心/DB暂KEEP、正在有界收尾；不是旧空间HOLD，也未证明产物加载失败。 |
+| 当前产出 | 看板登录与任务计时已实际可用；Codex会话公共接线已受控接收。固定后台产物安装/加载已通过，首宿主失败的自有中心与专库已正常收尾，原失败证据保留。 |
+| 下一可用交付 | 继续固定后台独立宿主验证，以及工程原生写入、检查和公开收据的零模型组合。网页修复的固定Flow来源产物另行准备，聊天验证按ready顺序推进。 |
+| 当前阻塞 | ACTIVE: 远程CI唯一用户启用选择仍PENDING。固定后台首宿主完整验收仍待隔离与身份观察接缝修正；原残留已收尾，当前不是磁盘HOLD或未知资源占窗。 |
 | 需用户决定 | REQUIRED: Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。 |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -435,3 +435,9 @@ X01实际Git预检出现unreaped阶段EPERM后工程17项未启动；不反复�
 main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；185源与真实IAB开工UTC/含等待历时/详情来源已核。记录：[D05实际回执](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/task-timing-185-live.json)。未重跑原81 parser/5浏览器组，未刷新原用户tab或改个人af51/d629；ACCESS后继不再阻塞本片上线。
 
 2026-10-07T04:09:13.319076+00:00：ACCESS实际部署见D05唯一[回执](../../../dashboard-architecture/docs/evidence/d05/local-access-185-live.json)，main451bf2；S01P07 main0aa组合noEmit0及8直接检查通过，原失败保留。SVC06独立artifact首host运行0task/provider，04:04:40.248开始、work6255ms/cleanup81ms；工作/清理监督组absent，但detached center及专库仍KEEP。只读诊断确认原sandbox禁止/bin/ps，原stderr丢失不能补造根因；按原owner精确身份与先行持久记录收尾，未重跑构建或个人服务。
+
+2026-10-07T04:20:37.000Z：SVC06原自有中心/专库于04:13:43.435–04:13:44.010Z正常收尾，原helper一次TERM、group stopped、marker/OID相同、连接空后一次normal DROP；14固定结果绑定已核，e5与失败原件保留。共享PG窗口已归还，首host仍FAIL，后继观察器只在实验端修正，不重建已绿artifact。见[原owner结果](../../../backend-release/docs/evidence/svc06/artifact-host-smoke/CLEANUP-RESULT.md)。SVC08选择已main422、合法Flow422产物候选NOT_RUN；ENG01I原owner0497新claim正式恢复0provider组合，真实模型资格与独立接受仍开放。
+
+本次状态使用[权威只读解析方法](../../docs/quality/local-validation.md#own-status-parse)，只核本owner的OPS/FLOW状态；实际开工来源缺失继续UNKNOWN，未用最近提交替代。登录实际产品观察由GO独立报告并已归D05，部署/安装回执与UI观察分别保留。
+
+本次解析实际结果：使用mainc0e0263d的parseStatus，OPS-001与FLOW-001均errors=[]、human.missing=[]、taskLinks.kind=big/coLead明确；两者timing.issues仅“任务开工时间未记录”，与历史UNKNOWN一致。只读解析及本次新增链接/差异核对，无工程测试/PG/服务操作。

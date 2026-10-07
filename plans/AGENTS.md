@@ -68,6 +68,7 @@
 - 已确认约束没有遗漏，未决问题没有被静默改成决定。
 - 计划中的“完成”“支持”“兼容”“省 token”等结论都有相应证据或明确限定。
 - 纯文档修改检查内容、链接和一致性即可，不为其添加与产品行为无关的测试。
+- 本owner刚修改的status提交前用[既有parseStatus只读方法](../docs/quality/local-validation.md#own-status-parse)核errors、human.missing、timing.issues及任务关联；只核本次范围，保留真实UNKNOWN，不触发全看板或产品测试。
 
 ## TODO、status 与 review（所有agents必须执行）
 

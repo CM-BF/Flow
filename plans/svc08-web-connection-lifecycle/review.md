@@ -1,8 +1,10 @@
 # SVC08 独立 review
 
-状态：NOT_STARTED；当前Web-only固定宿主选择待唯一独审；前片批准不扩大为新选择/实际个人部署。
+状态：APPROVED；仅Web-only固定宿主选择局部组合，实际完整artifact/internal-service/个人部署未验。
 
 Review target commit: bad019d9691499bed69ae46b6c5d23944709cfe3
+
+Reviewer：astra_ultra_execution_lead / gpt-6-astra；2026-10-07T04:09:30.655440Z。[原样回执](../../docs/evidence/svc08/web-host-selection/independent-review.json) SHA256 df8ec4f07a0fb99fc13a171a31d497e16a2e2dfa3cc38677b2be11ff24458d81。81固定bindings+2runtime一致，无P1/P2，reviewer0执行。main422四源逐字接收，原raw/manifest不改。
 
 当前四产品相对52d3/575：preview、preview.test、host、README，CLI无增量。9不同分轮8/8→3/3→3/3（五新+四受影响旧）；三组absent/双EOF及目录清理，0PG/Chrome/provider/真实artifact/个人运行。注入runtime只证明角色选择与失败组合，默认verify/sourceRepository/Node路径实际产物验收仍后继。见[交付证据](../../docs/evidence/svc08/web-host-selection/README.md)。
 

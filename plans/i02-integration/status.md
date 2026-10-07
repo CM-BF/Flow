@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:19:48.023472+00:00 / main422f4b15；本批C02固定接收及两import修复组合检查 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:22:49.815600+00:00 / mainc0e0263d；Codex固定公共接线已推送 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -13,13 +13,13 @@
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED afe3eb972266c53e867e5db232d53d51d6a666c4 + 92d01931两import；根noEmit exit0/8984ms，自有组absent与tmp清理。前轮缺alias失败保留。 |
-| 已集成main状态 / HEAD | main422f4b15已含S01P07、ACCESS、计时与SVC08选择；C02本批待推送。个人仍af51/accepting v18、Web d629/v3；4320已实际185来源及登录/计时。 |
+| 已集成main状态 / HEAD | mainc0e0263d已接C0224源与92d两import，原S01P07/ACCESS/计时/SVC08仍保留。个人af51/accepting v18、Web d629/v3未变；本批同步已审宿主收尾与管理记录。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 看板已展示登录入口和任务时间；Codex普通会话的公共接线与恢复模块已完成独审及组合类型检查，正在受控发布。 |
-| 下一可用交付 | 把已审Codex接线发布到主线，继续固定后台宿主验证与工程原生宿主组合。 |
+| 当前产出 | Codex会话接线已进入主线；看板登录和时间已实际展示。固定后台首轮自有资源已正常收尾，实验隔离接缝的局部验证和独审完成。 |
+| 下一可用交付 | 固定后台的真实三角色隔离旅程，以及工程原生写入、检查和公开收据的组合；原先模型和界面未验范围仍开放。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -311,3 +311,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T04:10:00.787603+00:00：受控接收SVC08 Web-only descriptor选择bad019/0e11，4产品preimage等于main451；81binding/2runtime及完整delta独审APPROVED。9不同局部检查复用原证据，未重跑/构建/个人切换；e5来源限制保留。同步D05实际ACCESS+计时部署575b9及OPS真实host失败状态3f688；细节见svc08-web-selection-intake.json。
 
 2026-10-07T04:19:48.023472+00:00：C02固定afe3/153a受控接收24源；92d两import独审c6e复用，仅这两文件偏离旧target。组合root类型首轮缺client别名失败保留，修后exit0/8984ms、0PG/provider；见[接收](../../docs/evidence/i02/codex-continuity-intake.json)与[修后检查](../../docs/evidence/i02/codex-continuity-import-fix-types.json)。新stream65c/de0不在本批，实际native两轮/UI仍开放。
+
+2026-10-07T04:22:49.815600+00:00：只窄接SVC06首FAIL/诊断/正常残留收尾和已审实验接缝、SVC08422来源候选NOT_RUN、OPS权威status解析方法。原件逐固定Git字节保持；实验局部3/3复用，0新工程检查/PG/provider/个人操作；见[收口绑定](../../docs/evidence/i02/svc-host-closeout-intake.json)、[后继接收](../../docs/evidence/i02/status-method-host-seam-intake.json)。
