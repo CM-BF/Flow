@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:54:30 UTC；HTTP准备/局部结果独审通过，专用实际窗口未开放；main7b6事实保持 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T03:59:55.762320+00:00；REQ15-HTTP-20261007-R1明确OPEN，准备source/manifest保持；尚未launch |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 任务开工时间 | UNKNOWN |
@@ -29,7 +29,7 @@
 | 优先级 | 2 |
 | 当前产出 | 主线批量分页已接收，公开HTTP单例准备及类型检查已通过独审 |
 | 下一可用交付 | 在专用数据库窗口执行已固定的分页与惰性详情单例，完成剩余公开入口验收 |
-| 当前阻塞 | ACTIVE:等待专用PG/HTTP执行窗口；无准备或依赖缺项 |
+| 当前阻塞 | NONE；独占HTTP窗口已明确交接，启动前准入未完成则不执行 |
 | 需用户决定 | NONE |
 | 真实PG准备目标 | 5ddddd6a7991243b5c42e223b11df879f0fa9498；95 inputs/429768B，manifest df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e；source已批准，types/collect及2PG已完成 |
 | Review | [review.md](review.md)：status_read于2026-10-07T03:53:34Z给出SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED /0 P1/P2，source e099；仅准备和local证据，不是HTTP运行通过 |
@@ -135,3 +135,5 @@ architecture_read已明确X01未OPEN并先交local；原runner仅增加固定pag
 2026-10-07 03:50:21 UTC review修复：status_read于03:49:40Z对bc4/9df提出唯一P2，未知进程状态时空TMP不可删除。source e09978682ec573bacd3d79e7c08e915c16368d49仅在caller加入process_closed共同判断（exit/groupAbsent/EOF/无secondary及历史unknown），finally未确认则保留目录/inode；manifest只更新该row，当前SHA3bcbdfc8176461ae5a1d9ac256fd3647646e7f7fd69f248f380db6cd97008d16（227/1098695B）。旧local段与raw逐字不动，原类型和收集不覆盖未运行wrapper，不重复checks；实际HTTP仍NOT_OPEN。
 
 2026-10-07 03:54:30 UTC 审查收口：status_read/gpt-6-astra于03:53:34UTC对source `e09978682ec573bacd3d79e7c08e915c16368d49` / packet e3a2db4afacdbcba740c8985c314433485a2384e给出SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED /0 P1/P2。唯一P2 CLOSED，已知进程终态才清空TMP；manifest3bcbdfc8176461ae5a1d9ac256fd3647646e7f7fd69f248f380db6cd97008d16/227输入1098695B全符，仅caller row变化，旧raw/fixture/snapshot/supervisor不动。准备和local结果批准不OPEN实际HTTP。fresh v2一致，当前只归档metadata、完全停写固定source，等新heavy窗口；0新增检查/PG/HTTP。
+
+2026-10-07T03:59:55.762320+00:00 已接Mika明确唯一窗口REQ15-HTTP-20261007-R1：Web03:59确认无PG/Chrome/local holder或预约、Lead SVC06无holder，C02未启动；声明并行local预算0。source e099及manifest3bcbdfc8176461ae5a1d9ac256fd3647646e7f7fd69f248f380db6cd97008d16已审，原60s/40work/15cleanup/57监督、64KiB raw/8MiB TMP/64MiB DB/13连接/64HTTP、1task/1runner/0provider不变。先固定clean执行HEAD，再fresh完整claimv2/227输入/16links/7输出absent和floor1207959552B（扣reserve≥1GiB），不符HOLD；本段仅允许一次原入口，失败/unknown保留原件，不自动重试或换namespace。外部实际时长将另记，不用内部wall替代。此行仅授权观察，非已执行或通过。
