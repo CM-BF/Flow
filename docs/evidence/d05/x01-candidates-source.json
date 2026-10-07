@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-07T11:48:54.088Z",
+  "registryCount": 198,
+  "selected": [
+    {
+      "id": "X01-PLUGIN-COMMAND-ACK01",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks/plans/x01-plugin-command-acks",
+      "triplet": true,
+      "evidence": true,
+      "errors": [],
+      "missing": [],
+      "links": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+          "id": "X01",
+          "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "Mika",
+          "value": "Mika"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      },
+      "timing": []
+    },
+    {
+      "id": "X01-HOST-CANDIDATES-CLIENT01",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates/plans/x01-host-candidates-client",
+      "triplet": true,
+      "evidence": true,
+      "errors": [],
+      "missing": [],
+      "links": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+          "id": "X01",
+          "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "Mika",
+          "value": "Mika"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      },
+      "timing": []
+    }
+  ],
+  "mainProducts": "de547503",
+  "checks": "Navigation/source shape only; no product checks; canonical status sole authority; actual serving count remains196 until deployment."
+}
