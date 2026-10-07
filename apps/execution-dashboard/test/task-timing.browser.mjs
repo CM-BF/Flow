@@ -1,3 +1,5 @@
+import { pathToFileURL } from 'node:url';
+import { runBrowserCheck } from './summary-detail.browser.mjs';
 import assert from 'node:assert/strict';
 import http from 'node:http';
 import { createHash } from 'node:crypto';
@@ -85,7 +87,7 @@ export async function createTaskTimingFixture() {
     await new Promise((resolve, reject) => { server.once('error', reject); server.listen(0, '127.0.0.1', resolve); });
   } catch (error) { server.close(); throw error; }
   return {
-    url: `http://127.0.0.1:${server.address().port}`,
+    server, url: `http://127.0.0.1:${server.address().port}`,
     setState: next => { state = { fields: {}, task: {}, generatedAt: observedAt, fail: false, ...next }; },
     close: () => new Promise((resolve, reject) => { server.close(error => error ? reject(error) : resolve()); server.closeAllConnections(); }),
   };
@@ -183,4 +185,15 @@ export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint
     assert.deepEqual(errors, []); checkpoint();
     return { checks, screenshots, pageErrors: errors, observation: 'fixture-only parser/UI; no PG, registry, main proof or deployment validation' };
   } finally { page.off('pageerror', onError); }
+}
+
+if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
+  await runBrowserCheck('task-timing', async ({ page, f, report, output, checkpoint }) => {
+    const result = await runTaskTimingChecks({ page, fixture: f, outputDir: output, checkpoint });
+    report.checks.push(...result.checks); report.screenshots.push(...result.screenshots);
+    report.errors.push(...result.pageErrors);
+    assert.equal(result.checks.length, 5); assert.equal(result.screenshots.length, 2);
+  }, { fixtureFactory: async owner => {
+    const fixture = await createTaskTimingFixture(); owner.after(() => fixture.close()); return fixture;
+  } });
 }

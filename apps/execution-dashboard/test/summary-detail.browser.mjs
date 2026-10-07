@@ -57,12 +57,14 @@ async function bytesIn(directory) {
 }
 
 /** The reviewed parent owns the budget and two independent native-Chrome/Node process groups. */
-export async function runBrowserCheck(name, check) {
+export async function runBrowserCheck(name, check, { fixtureFactory = summaryFixture, useDefaultContext = false } = {}) {
   if (!process.env.DPERF04_BROWSER_GATE) throw new Error('Supervised browser resource gate required');
   const gatePath = process.env.DPERF04_BROWSER_GATE;
   const gateStat = await lstat(gatePath); assert.ok(gateStat.isFile() && !gateStat.isSymbolicLink() && gateStat.size <= 65536);
   const gate = JSON.parse(await readFile(gatePath, 'utf8')), supervision = gate.supervision;
   assert.equal(gate.allowRun, true); assert.equal(gate.mode, 'dperf-browser'); assert.equal(gate.singleUse, true); assert.equal(gate.entry, name);
+  assert.equal(useDefaultContext, name === 'local-access', 'Only the owned ACCESS consumer receives the default context');
+  assert.equal(fixtureFactory === null, name === 'local-access', 'ACCESS owns its HTTP fixture inside the existing check');
   assert.ok(Date.parse(gate.expiresAt) > Date.now()); assert.match(gate.run, /^[a-zA-Z0-9-]{1,80}$/);
   assert.ok(supervision && supervision.parentPid === process.ppid && process.ppid > 1, 'Owned supervisor parent required');
   const { startedAtMs: started, workDeadlineMs: workAt, hardDeadlineMs: hardAt, scratch, output,
@@ -101,26 +103,35 @@ export async function runBrowserCheck(name, check) {
     checkpoint(); assert.equal(git(process.cwd(), 'rev-parse', 'HEAD'), gate.sourceHead); checkpoint();
     for (const file of sourceFiles) { report.sourceHashes[file] = hash(await readFile(file)); assert.equal(report.sourceHashes[file], gate.sourceHashes[file], `Source gate mismatch: ${file}`); checkpoint(); }
     assert.equal(hash(await readFile(gate.playwrightModule)), gate.playwrightSha256, 'Read-only Playwright entry changed'); checkpoint();
-    fixture = await summaryFixture({ after: cleanup => cleanups.push(cleanup) }); checkpoint();
-    const { chromium } = await import(pathToFileURL(gate.playwrightModule).href); checkpoint();
-    browser = await chromium.connectOverCDP(chromeEndpoint, { timeout: Math.min(3000, Math.max(1, workAt - Date.now())) }); checkpoint();
+    if (fixtureFactory) fixture = await fixtureFactory({ after: cleanup => cleanups.push(cleanup) });
+    checkpoint();
+    const { chromium, expect } = await import(pathToFileURL(gate.playwrightModule).href); checkpoint();
+    browser = await chromium.connectOverCDP(chromeEndpoint, { timeout: Math.min(3000, Math.max(1, workAt - Date.now())), ...(useDefaultContext ? { noDefaults: true } : {}) }); checkpoint();
     report.cdpConnectedAt = new Date().toISOString();
-    context = await browser.newContext({ viewport: { width: 1280, height: 720 }, reducedMotion: 'reduce' }); checkpoint();
-    const page = await context.newPage(); page.setDefaultTimeout(2000); checkpoint();
-    page.on('pageerror', error => report.errors.push(error.message));
-    await check({ page, f: fixture, report, output, checkpoint }); checkpoint();
+    if (useDefaultContext) {
+      assert.equal(browser.contexts().length, 1, 'Fresh parent-owned Chrome has one default context');
+      context = browser.contexts()[0];
+    } else context = await browser.newContext({ viewport: { width: 1280, height: 720 }, reducedMotion: 'reduce' });
+    checkpoint();
+    const page = useDefaultContext ? undefined : await context.newPage();
+    if (page) { page.setDefaultTimeout(2000); page.on('pageerror', error => report.errors.push(error.message)); }
+    checkpoint();
+    await check({ page, context, expect, f: fixture, report, output, checkpoint }); checkpoint();
     assert.deepEqual(report.errors, []); report.outcome = 'passed';
   } catch (error) { report.failure = error.stack ?? String(error); report.outcome = 'failed'; }
   finally {
     clearTimeout(workDeadline);
-    try { if (context) { await context.close(); report.contextClosed = true; } } catch (error) { report.cleanupErrors.push(String(error)); }
+    try { if (context && !report.contextClosed) { await context.close(); report.contextClosed = true; } } catch (error) { report.cleanupErrors.push(String(error)); }
     // CDP close disconnects transport; Chrome lifecycle and signalling remain parent-owned.
     try { await browser?.close(); } catch (error) { report.cleanupErrors.push(String(error)); }
     for (const cleanup of cleanups.reverse()) try { await cleanup(); } catch (error) { report.cleanupErrors.push(String(error)); }
     // Never delete scratch before the parent confirms both owned groups absent.
     report.profileCleanupOwner = 'external-parent-after-both-groups-absence';
-    report.serverClosed = fixture ? !fixture.server.listening : null;
-    try { report.fixtureRemoved = fixture ? await stat(fixture.root).then(() => false, error => { if (error.code === 'ENOENT') return true; throw error; }) : null; }
+    report.serverClosed = fixture ? !fixture.server.listening : report.serverClosed ?? null;
+    try {
+      report.fixtureFilesystem = ['task-timing', 'local-access'].includes(name) ? 'not-created' : fixture?.root ? 'owned-temporary-repositories' : 'unknown';
+      report.fixtureRemoved = fixture?.root ? await stat(fixture.root).then(() => false, error => { if (error.code === 'ENOENT') return true; throw error; }) : report.fixtureFilesystem === 'not-created' ? true : null;
+    }
     catch (error) { report.cleanupErrors.push(String(error)); report.fixtureRemoved = false; }
     report.observedElapsedMs = Date.now() - started; report.finishedAt = new Date().toISOString();
     if (report.cleanupErrors.length || report.contextClosed !== true || report.serverClosed !== true || report.fixtureRemoved !== true || Date.now() >= hardAt) report.outcome = 'failed';

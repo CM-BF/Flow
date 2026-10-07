@@ -3,6 +3,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import path from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createDashboardServer } from '../src/server.mjs';
+import { runBrowserCheck } from './summary-detail.browser.mjs';
 
 const FAKE_TOKEN = 'synthetic_browser_owner_token_for_checks_123456';
 const snapshot = {
@@ -175,5 +176,14 @@ export async function checkLocalAccessBrowser({ ownedDefaultContext, expect, out
 }
 
 if (process.argv[1] && import.meta.url === pathToFileURL(path.resolve(process.argv[1])).href) {
-  throw new Error('Use the isolated browser owner to call checkLocalAccessBrowser; direct execution runs zero checks.');
+  await runBrowserCheck('local-access', async ({ context, expect, report, output }) => {
+    const result = await checkLocalAccessBrowser({ ownedDefaultContext: context, expect, outputDirectory: output });
+    report.access = result;
+    report.checks.push(...result.checks); report.errors.push(...result.errors);
+    report.contextClosed = result.cleanup.context === 'closed';
+    report.serverClosed = result.cleanup.http === 'closed';
+    assert.equal(result.state, 'PASSED'); assert.equal(result.checks.length, 5);
+    assert.equal(report.contextClosed, true); assert.equal(report.serverClosed, true);
+    report.screenshots.push('390-light.png', '390-dark.png');
+  }, { fixtureFactory: null, useDefaultContext: true });
 }
