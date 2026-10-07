@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T06:44:54.647259+00:00",
-  "state": "QUICK_NATIVE3_INCONCLUSIVE_SCOPED_ACCEPTED_C02_NEXT_PG",
-  "groupWindowOwnership": "Quicknative3 actual06:42:22.476880–06:42:28.349391Z FAILED/INCONCLUSIVE, all3ownedgroups/EOF/fixture/context/profile/scratch closed. Root notifiedMika actualreturn. No WebPG/Chrome holder or nextgate/reservation; C02 sharedPG currentfreshcoordination governs Recovery queue.",
+  "recordedAt": "2026-10-07T06:51:51.969833+00:00",
+  "state": "RECOVERY_FIRST_CREATE_SCOPED_ACTUAL_ACCEPTED_X01_NEXT_PG",
+  "groupWindowOwnership": "Recovery firstCREATE selected2/2 actual06:49:07.389289–06:49:18.895676Z; markedDB normalDROP/0conn, all3ownedgroups+scratch absent06:49:42.424455Z; exactadminenv deleted06:50:28.462836Z. Root notifiedMika actualreturn. No WebPG/Chrome/currentgate or reservation.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T06:44:15.609240+00:00",
-    "kind": "QUICK_NATIVE3_ACTUAL_RETURNED_NO_AUTORETRY",
-    "source": "quick-native2-return-native3-20261007/native3-return.json",
-    "summary": "Outerexit1/charge5873,new90spent23322/rem66678; A/Bplain completed but no value/inputchange, modal NOT_RUN,0/6/0PNG. Manager exact seal/EOF/hash/cleanup checked; rootactual review pending. No fourth gate. Rootd4e3 accepted actualINCONCLUSIVE+cleanup; C02sourcefindingclosed now freshadmitting, no actualstart supplied; Recoverywaitreturn."
+    "at": "2026-10-07T06:51:21.762339+00:00",
+    "kind": "RECOVERY_FIRST_CREATE_SELECTED_ACTUAL_RETURN_AND_EXACT_ENV_DELETION",
+    "source": "recovery-create-admission-20261007/return.json",
+    "summary": "2/2selected notfullfeature; actualouter0/EOF,charge11507,new150spent36096/rem113904. Allowned/markedDB/fixtureclean; envidentitydeletedwithoutread. Original gateconsumed; nextcreated-turn preparation not newruntimepermission. Rootd4f6 actual scoped reviewaccepted. MikaX01 ready source0224/packet76085115 now freshadmitting; actualstart not yetreported. Recovery next waits X01actualreturn."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -550,7 +550,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "quick-native2-return-native3-20261007/native3-return.json",
+  "currentWindowReturn": "recovery-create-admission-20261007/return.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1120,6 +1120,12 @@
       "state": "QUICK_NATIVE2_DIAGNOSTIC_ADMITTED_NOT_STARTED",
       "source": "recovery-choice-return-native2-20261007/current.json",
       "meaning": "Historical native2 admission consumed; actual FAILED/INCONCLUSIVE and cleanup now accepted, source read-only snapshot callback corrected."
+    },
+    {
+      "at": "2026-10-07T06:44:54.647259+00:00",
+      "state": "QUICK_NATIVE3_INCONCLUSIVE_SCOPED_ACCEPTED_C02_NEXT_PG",
+      "source": "quick-native2-return-native3-20261007/current.json",
+      "meaning": "C02 next-admission state superseded by actualFAIL/ownedPGcleanup; failedouter KEEP retained separately."
     }
   ],
   "dperf05Pure": {
@@ -1167,7 +1173,7 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "QUICK_DIAGNOSTIC_INCONCLUSIVE_RECOVERY_CREATE_SOURCE_READY_NO_GATE",
+    "state": "RECOVERY_FIRST_CREATE_ACTUAL_RETURNED_QUICK_NO_NEXT_CHROME",
     "access": {
       "ownerHead": "269a8566e9b09018fb2e87440a8d96b4c14cf75a",
       "state": "MAIN_ACCEPTED_DEPLOYED185_LOCAL_CREDENTIAL_UI_OBSERVED",
@@ -1226,7 +1232,7 @@
       }
     },
     "quick": {
-      "ownerHead": "0c88e994c8d17f0431e2e9a7084ae8b91869210e",
+      "ownerHead": "9b01e09da742cc8e1278326ee89a803c8b8614f6",
       "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
       "packet": "/private/tmp/msgquick-native3",
       "bindingSha256": "e83e413b164ea91bac7b2b2cfacac2a82b1f9d8aacc24209c0f42aca163bd4ae",
@@ -1241,7 +1247,7 @@
       "remainingMs": 29375,
       "failure": "Both plain sequences complete without selected value/input-change; modal not selected. Diagnosis remains INCONCLUSIVE, not Picker defect proof.",
       "review": "quick-native2-return-native3-20261007/root-native3-actual-review.json",
-      "next": "Originalowner seals actual and factual waiting table; root studies actual native keyboard preconditions. Do not repeat same fourth diagnostic. No new gate.",
+      "next": "Originalowner source-only typeahead precondition proposal after currentRecoveryhandoff; no same fourthrepeat or nativegate.",
       "preparationReview": "quick-native2-return-native3-20261007/manager-native3-routine-binding-review.json",
       "admissionPreparation": "quick-native2-return-native3-20261007/native3-handoff.json",
       "newSegment": {
@@ -1273,13 +1279,14 @@
         "gate": "/private/tmp/msgquick-native3-admission-d5v71cvf/gate.json",
         "gateState": "CONSUMED",
         "handoff": "quick-native2-return-native3-20261007/native3-handoff.json"
-      }
+      },
+      "waitingTable": "Originalowner structuredwaitingfacts sealed; UNKNOWN historicalstart retained"
     },
     "recovery": {
       "ownerHead": "beb6f80b5b31774094d13a2c98067ec74ddd619e",
       "source": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
       "packet": "/private/tmp/recovery-create-ack-67f8-xvle0x_m",
-      "state": "CREATE_QUEUE_SOURCE_LOCAL_ACCEPTED_BROWSER_NOT_RUN",
+      "state": "FIRST_CREATE_SELECTED_ACTUAL_ROOT_ACCEPTED",
       "budget": {
         "priorLateMs": 54883.199542,
         "thisLateMs": 9250.887208,
@@ -1303,47 +1310,47 @@
         "outerWallMsSeparate": 9881.697250064462,
         "state": "HISTORICAL_90K_ENVELOPE_CLOSED_IMMUTABLE_NO_NEW_CREDIT"
       },
-      "runtime": "No new Recovery runtime; previous choice2/full7 actual scopes preserved.",
-      "next": "Originalowner firstcreate after C02 actual PG return and fresh admission; no currentgate/adminenv/reservation.",
+      "runtime": "ActualcookieRead+createAckLoss2/2 and cleanup complete; no activePGChrome.",
+      "next": "Same67f8 owner seals actual and prepares created-turn-ack-loss carry; no freshgate until X01 actual PG return.",
       "review": "quick-native1-recovery-review-20261007/recovery-feature-review.json",
       "admission": {
         "state": "CONSUMED_ACTUAL_RETURNED_ADMIN_ENV_DELETED",
-        "gate": "/private/tmp/recovery-choice-admission-4be1hkih/gate.json",
-        "gateSha256": "332d1dc6dfae4c7394390e3e50e0fffe584eca8fdd7f97e7e17150d5a35a544f",
-        "expiresAt": "2026-10-07T06:27:52.014038+00:00",
-        "run": "recchoice-20261007-062152-1a98e5",
-        "handoff": "recovery-choice-quick-native1-return-20261007/recovery-handoff.json",
-        "adminEnv": "/private/tmp/recovery-choice-admission-4be1hkih/admin.env",
+        "gate": "/private/tmp/recovery-create-admission-65z5d8xx/gate.json",
+        "gateSha256": "72cb284400cafa7b0065cd1b18eec8603b1a2391eeb0712de0115025671cd88d",
+        "expiresAt": "2026-10-07T06:54:10.709711+00:00",
+        "run": "reccreate-20261007-064810-01f20b",
+        "handoff": "recovery-create-admission-20261007/handoff.json",
+        "adminEnv": "/private/tmp/recovery-create-admission-65z5d8xx/admin.env",
         "adminEnvIdentity": {
           "device": 16777234,
-          "inode": 123580200,
+          "inode": 123595219,
           "mode": "0600",
           "uid": 501
         },
         "adminEnvDeletionOwner": "d01_owner",
-        "runtimeProvenance": "recovery-choice-quick-native1-return-20261007/chrome-patch-provenance.json",
-        "adminEnvDeletionReceipt": "recovery-choice-return-native2-20261007/admin-env-deletion-receipt.json"
+        "source": "ef458 fixed approved testinput; value not recorded",
+        "adminEnvDeletionReceipt": "recovery-create-admission-20261007/admin-env-deletion-receipt.json"
       },
-      "actualReceipt": "recovery-choice-return-native2-20261007/return.json",
+      "actualReceipt": "recovery-create-admission-20261007/return.json",
       "sourceReview": "quick-native2-return-native3-20261007/root-recovery-create-queue-source-review.json",
-      "manifestSha256": "e91b0852f78cdd725b393249fd1a8a407ba55ac070011e43f8b734c2f28813e2",
+      "manifestSha256": "9b41db1e06f32616186cb0cd2fdce52fea170d2e5a10a8fe86c275817feb0e91",
       "preparationReview": "Originalparent unchanged; accepted source/local67f8. Routine firstcreate input preparation no gate yet.",
-      "actualReview": "recovery-choice-return-native2-20261007/root-choice-actual-review.json",
+      "actualReview": "recovery-create-admission-20261007/root-create-ack-actual-review.json",
       "newSegment": {
         "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
         "totalActualMs": 150000,
-        "spentMs": 24589,
-        "remainingMs": 125411,
+        "spentMs": 36096,
+        "remainingMs": 113904,
         "perRunMaximumMs": 60000,
         "cleanupMs": 15000,
         "oldEnvelopeClosed": true,
         "oldUnusedCreditTransferred": false,
         "ownerRecord": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/continuous-segment.json",
         "authorization": "continuous-validation-segments-20261007/recovery-segment-authorization.json",
-        "lastParentLateMs": 10806.272125,
-        "lastOuterMs": 11454.569749999791,
+        "lastParentLateMs": 10902.81075,
+        "lastOuterMs": 11506.23241707217,
         "chargeBasis": "ceil(max outer,late,parent); original raw unchanged",
-        "lastChargeMs": 11455
+        "lastChargeMs": 11507
       },
       "historicalFifthSelection": {
         "journey": "page-auth",
@@ -1355,13 +1362,16 @@
         "fullJourneyPassed": false
       },
       "currentSelection": {
-        "nextJourney": "create-ack-loss",
+        "journey": "create-ack-loss",
         "required": [
           "cookieRead",
           "createAckLoss"
         ],
-        "state": "NOT_RUN_NO_GATE_NO_RESERVATION",
-        "previousChoiceActual": "recovery-choice-return-native2-20261007/return.json"
+        "selectedPassIsNotFullJourney": true,
+        "state": "SELECTED_PASS_NOT_FULL_FEATURE",
+        "selectedPassed": 2,
+        "png": 0,
+        "otherGroups": "NOT_SELECTED"
       },
       "reviewHistory": {
         "0141": "CHANGES_REQUESTED_2P2",
@@ -1479,7 +1489,7 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "quick-native2-return-native3-20261007/native3-return.json",
+  "currentWindowEvidence": "recovery-create-admission-20261007/return.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
@@ -1811,16 +1821,29 @@
     "receipt": "dashboard-task-time-intake/dperf-app-receipt.json"
   },
   "externalCurrentAdmission": {
-    "owner": "Mika / C02 originalowner",
-    "state": "C02_FRESH_ADMISSION_IN_PROGRESS_NOT_YET_ACTUAL_RUN",
-    "sourceHead": "b3f59cb6 (parent reported clean)",
-    "sourceReviewClosedAt": "2026-10-07T06:40:56Z",
-    "freshPreparationSince": "after2026-10-07T06:42:38Z",
-    "expectedBindings": 317,
-    "claim": "v12 /72scopes (parent reported; no manager ownership claim)",
-    "singleRunMs": 120000,
-    "resourceDeclaration": "planned32MiBTMP+128KiBarchive+128MiBDBWAL and originalfloor; this is not an observedRUN",
-    "source": "root concrete latestMika handoff"
+    "owner": "Mika / X01 originalowner",
+    "state": "X01_FRESH_ADMISSION_IN_PROGRESS_NOT_YET_ACTUAL_RUN",
+    "source": "0224 (parent reported fixed product)",
+    "packet": "76085115 (parent reported)",
+    "sourceReview": "0P1/P2 accepted by existing independent reviewer, parent receipt",
+    "budget": {
+      "totalMs": 180000,
+      "workMs": 110000,
+      "cleanupMs": 60000,
+      "finalMs": 10000,
+      "postgres": 1,
+      "chrome": 0,
+      "connections": 17,
+      "http": 256,
+      "tasks": 24,
+      "registrations": 8,
+      "tmpBytes": 33554432,
+      "rawBytes": 1048576,
+      "dbWalBytes": 134217728,
+      "sharedReserveBytes": 1073741824
+    },
+    "actualStart": null,
+    "basis": "Root concrete latestMika readyhandoff; not inferred runtime from active chat"
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1830,11 +1853,12 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": [
-    "C02 source finding closed, originalowner now freshadmitting unique120sPG; await actualstart/return, do not infer from time.",
-    "Recovery firstcreate waits C02 actualreturn; no gate/adminenv/reservation.",
-    "Quick actualINCONCLUSIVE/rootacceptedcleanup; no fourth diagnostic gate."
+    "Mika X01 ready0224/76085115 now freshadmitting180s uniquePG0Chrome; await actualstart/return.",
+    "Recovery next created-turn-ACK preparation only, noadminenv/gate; wait X01actualreturn beforePG.",
+    "Quick typeahead distinctsourceprepare and potential independent0PG later; no newChrome gate now.",
+    "C02sentinel casefix offline; failedouter KEEP remains historicalretained evidence."
   ],
-  "currentIntake": "quick-native2-return-native3-20261007/current.json",
+  "currentIntake": "recovery-create-admission-20261007/current.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",

@@ -1,0 +1,62 @@
+{
+  "recordedAt": "2026-10-07T06:51:21.762339+00:00",
+  "state": "SELECTED_TWO_PASS_ACTUAL_CLEANED_RETURNED_ROOT_ACCEPTED_NOT_WHOLE_FEATURE",
+  "run": "reccreate-20261007-064810-01f20b",
+  "actualStart": "2026-10-07T06:49:07.389289Z",
+  "actualEnd": "2026-10-07T06:49:18.895676Z",
+  "exactCleanupAt": "2026-10-07T06:49:42.424455Z",
+  "actualExit": 0,
+  "bothEOF": true,
+  "selection": {
+    "journey": "create-ack-loss",
+    "required": [
+      "cookieRead",
+      "createAckLoss"
+    ],
+    "selectedPassed": 2,
+    "fullJourneyPassed": false,
+    "otherGroups": "NOT_SELECTED",
+    "png": 0,
+    "provider": 0
+  },
+  "accounting": {
+    "old90kClosedMs": 64134.08675,
+    "new150kPriorMs": 24589,
+    "outerMs": 11506.23241707217,
+    "lateParentMs": 10902.81075,
+    "serializedParentMs": 10893.408625,
+    "chargeMs": 11507,
+    "spentMs": 36096,
+    "remainingMs": 113904,
+    "basis": "ceil(max actualouter,late,parent)); originals unchanged"
+  },
+  "cleanup": {
+    "ownedPidPgid": [
+      49914,
+      49929,
+      51348
+    ],
+    "processAndGroups": "ESRCH",
+    "scratch": "/private/tmp/flow-recovery-browser-FoUXvL",
+    "scratchAbsent": true,
+    "markedDatabase": "flow_recovery_426538b36b664e819ed76f21eeb453d9",
+    "bothConnectionObservations": 0,
+    "normalDropRemoved": true,
+    "remaining": [],
+    "fixtureComplete": true,
+    "errors": [],
+    "exactAdminDeletion": "admin-env-deletion-receipt.json",
+    "adminContentRead": false
+  },
+  "raw": {
+    "outer": "/private/tmp/recovery-create-parent-tfgj5isw",
+    "ownerRun": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/reccreate-20261007-064810-01f20b",
+    "files": 11,
+    "bytes": 23183
+  },
+  "review": "root-create-ack-actual-review.json: selected2/2 and cleanup accepted, not other newjourneys/fullfeature",
+  "webActualHolder": null,
+  "webGate": null,
+  "webReservation": false,
+  "next": "Original owner seals this actual and prepares next created-turn-ACK minimal carry within continuous segment; no automatic nextgate or run."
+}

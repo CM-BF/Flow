@@ -1,14 +1,14 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T06:42:51.574669+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T06:49:34.031251+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 ## 当前窗口与用户交付
 
-**Quick第三次原生诊断已结束并清理归还，仍无法定论；Recovery补验源码已审，下一运行尚无gate。** [native3实际回执](quick-native2-return-native3-20261007/native3-return.json)保06:42:22.476880–06:42:28.349391Z outerexit1/FAILED、完整sealedhash/EOF/ownedcleanup；两plain键序均完成，但value空/index0、无input/change，modal未到、0/6/0PNG。保守记5873ms，新90s已耗23322/余66678，旧30625不变；[root独立结果审查](quick-native2-return-native3-20261007/root-native3-actual-review.json)已接受真实测量与清理，仍非功能PASS，不重跑相同第四次。[已消费handoff](quick-native2-return-native3-20261007/native3-handoff.json)保原fresh输入与组合预算，不再充当新许可。
+**Recovery首次建聊丢回执回归已通过所选两项，资源与凭据均已清理归还。** [实际回执](recovery-create-admission-20261007/return.json)保06:49:07.389289–06:49:18.895676Z outerexit0/双EOF，cookieRead+createAckLoss2/2；无PNG、其余旅程NOT_SELECTED，不代表完整feature通过。markedDB两次零连接正常DROP/absence，三个owned组与scratch于06:49:42.424455Z确认absent；[adminenv按exact身份删除](recovery-create-admission-20261007/admin-env-deletion-receipt.json)于06:50:28.462836Z完成，未读值。保守charge11507，新150s已耗36096/余113904，旧90封套不变。原[handoff](recovery-create-admission-20261007/handoff.json)已消费，不继承新窗口；[root独立actual审查](recovery-create-admission-20261007/root-create-ack-actual-review.json)已接受selected2/2与清理，非完整feature。
 
-[native2独审](quick-native2-return-native3-20261007/root-native2-actual-review.json)及a9只读snapshot修复保持；[manager同边界例行绑定](quick-native2-return-native3-20261007/manager-native3-routine-binding-review.json)只核固定历史carry，不扩权限/生命周期/验收。CHAT05于06:37:55.362725Z实际归还；原root已把本次Quick还窗通知Mika。C02唯一分页finding已于06:40:56关闭，原owner现fresh准入120s唯一PG，实际开始尚未收到；Recovery排其actualreturn后，不预建gate。本组无PG/Chrome holder、无预约。
+C02前次5/6整组FAIL的自有DB/组已归还，outerKEEP仍保32MiB+128KiB，不冒所有字节已删。本组无PG/Chrome holder、无新gate/预约；原owner下一created-turn-ACK仅准备；Mika X01已ready并fresh准入180s唯一PG，实际start尚未收到，Recovery排其actualreturn后，不预建env/gate。manager没有启动产品或重复旧full7。
 
-Recovery本次source67f8/metadata beb6已完成CREATE双故障点与Queue旅程，18其他source与parent不变；[root源码/局部审查](quick-native2-return-native3-20261007/root-recovery-create-queue-source-review.json)接受noEmit及33选择断言，三浏览器旅程仍NOT_RUN。原full7及choice2限定PASS保留，新150s已耗24589/余125411。下一first-create只在共享PG/Chrome明确交接后fresh准入；不与Quick同时开第二Chrome。Quick下次自然status应按真实事件补等待表，历史无据起点UNKNOWN，不回填、不重测。
+Quick sourcea9/metadata9b01已由原owner正常封存、双端clean；native3真实INCONCLUSIVE/rootd4e3接受清理，23,322ms已耗/66,678ms余，没有第四gate。结构化等待表使用原真实事件，历史UNKNOWN未倒填。[新typeahead只读研究](recovery-create-admission-20261007/root-native-typeahead-research.json)只提出不同plainC前提；上游current源码不等精确154行为实证，不改旧A/B结论、不增加headful/flags或synthetic/value注入。现为后继方案，未实施/未运行，不争Recovery当前窗口。
 
 **已完成子集：Recovery原七组实际通过、限定结果独审已接受，自有资源已清理并归还。** [实际回执](recovery-full-return-20261007/return.json)保05:52:11.626281–05:52:24.761068Z、exit0/双EOF、7/7与双390图；markedDB正常0连接/DROP/absence、两owned组与scratch absent、fixture清理完成/provider0。[adminenv按exact身份已删除](recovery-full-return-20261007/admin-env-deletion-receipt.json)，未读值。保守新段记13134ms/剩136866，旧64134.08675及五次失败全部保持；[root一次结果独审](recovery-full-return-20261007/root-full7-actual-review.json)无finding，完整feature仍有未验覆盖。该运行的holder/gate已消费；S01后续亦实际归还，此段仅保历史通过范围，当前调度见页首。
 
@@ -88,7 +88,7 @@ Recovery本次source67f8/metadata beb6已完成CREATE双故障点与Queue旅程�
 
 [远程 CI 消费研究已收口](ops-ci01-web-consumer-intake/report.md)：固定 OPS-CI01 只执行 contracts/handler，四个 Web 文件也不是 fe6；不能当作新 26 direct 或六组/双 PNG 页面验收。只关联既有 TODO11 待验项，不新建任务/runner、不阻 OPS 原独审、不开放运行窗口。
 
-- 快速设置：[唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md)当前0c88/sourcea9；native2实际失败和root同件窄修接受见页首，native3实际INCONCLUSIVE并清理，root正审，不自动第四次。旧c2类型/direct通过范围及所有失败保持。
+- 快速设置：[唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md)当前9b01/sourcea9；native3实际INCONCLUSIVE与root结果审已封、完整清理，结构化等待表已记录，不自动第四次。旧c2类型/direct通过范围及所有失败保持。
 - Recovery：[唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md)当前beb6/source67f8；full7/choice2限定通过，新增CREATE/Queue源码与局部检查已审，实际浏览器未跑，完整feature仍未通过。原21 claim保留，下一PG未预约。
 - Settings：限定控件的[4 项浏览器证据已独立批准](message-settings-b5-actual/root-runtime-review.json)，
   [owner main-close 独审](message-settings-main-reception/owner-main-closeout-review.json)与正式主线接收已闭合；真实 App 发送、排队、恢复与成熟快速选择仍属后继。
