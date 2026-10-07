@@ -66,6 +66,59 @@ afterAll(async () => {
     await writeFile(new URL('../../../../docs/evidence/chat04/latest-cleanup.json', import.meta.url), JSON.stringify({ startedAt, endedAt: new Date().toISOString(), databaseName, remaining }, null, 2));
   } finally { await admin.end(); }
 });
+it('skips more than a default batch of paused queues without rotating them and scans again after explicit resume', async () => {
+  const paused: { id: string; itemId: string }[] = [];
+  for (let index = 0; index < 21; index += 1) {
+    const c = await conversation();
+    const item = await enqueueItem(c.id, 0, `Paused scan ${index}`);
+    expect((await request(`/api/conversations/${c.id}/queue/pause`, { expectedQueueRevision: 1 })).status).toBe(200);
+    paused.push({ id: c.id, itemId: item.item.id });
+  }
+  const ready = await conversation();
+  const waiting = await enqueueItem(ready.id, 0, 'Ready behind paused queues');
+  // Paused candidates sort first even when their random UUIDs do not.
+  await pool.query("UPDATE flow.conversations SET queue_checked_at='2000-01-01' WHERE id=$1", [ready.id]);
+  const pausedIds = paused.map(item => item.id);
+  const pausedState = () => pool.query(`SELECT id,queue_checked_at::text,queue_revision,queue_paused
+    FROM flow.conversations WHERE id=ANY($1::text[]) ORDER BY id`, [pausedIds]);
+  const before = (await pausedState()).rows;
+  expect(before.every(row => row.queue_checked_at === '-infinity')).toBe(true);
+
+  expect(await scanConversationQueue(pool, boss)).toEqual({ inspected: 1, promoted: 1, blocked: 0, errors: [] });
+  expect((await pausedState()).rows).toEqual(before);
+  expect(Number((await pool.query('SELECT count(*) FROM flow.conversation_turns WHERE conversation_id=ANY($1::text[])', [pausedIds])).rows[0].count)).toBe(0);
+  expect((await request(`/api/conversations/${ready.id}/queue/${waiting.item.id}`)).body.item.state).toBe('promoted');
+  expect((await request(`/api/conversations/${paused[0].id}/queue`)).body).toMatchObject({ paused: true, queueRevision: 2, currentTurn: null, items: [{ state: 'waiting' }] });
+
+  // Empty explicit resume clears pause; a later enqueue becomes eligible to scan.
+  const resumed = paused[0]; const path = `/api/conversations/${resumed.id}/queue`;
+  expect((await request(`${path}/${resumed.itemId}/cancel`, { expectedQueueRevision: 2 })).body.queueRevision).toBe(3);
+  expect((await request(`${path}/resume`, { expectedQueueRevision: 3, expectedTaskId: null })).body).toMatchObject({ paused: false, queueRevision: 4, promoted: null });
+  const next = await enqueueItem(resumed.id, 4, 'Eligible after explicit resume');
+  expect(await scanConversationQueue(pool, boss)).toEqual({ inspected: 1, promoted: 1, blocked: 0, errors: [] });
+  expect((await request(`${path}/${next.item.id}`)).body.item.state).toBe('promoted');
+  expect((await pausedState()).rows.filter(row => row.id !== resumed.id)).toEqual(before.filter(row => row.id !== resumed.id));
+});
+it('keeps pause CAS authoritative when a candidate scan races promotion', async () => {
+  const c = await conversation(); const path = `/api/conversations/${c.id}/queue`;
+  const item = await enqueueItem(c.id, 0, 'Pause versus candidate scan');
+  const [pause, scan] = await Promise.all([
+    request(`${path}/pause`, { expectedQueueRevision: 1 }),
+    scanConversationQueue(pool, boss, 1),
+  ]);
+  expect(scan.errors).toEqual([]);
+  const current = (await request(`${path}/${item.item.id}`)).body;
+  const turns = (await request(`/api/conversations/${c.id}/turns`)).body.turns;
+  if (pause.status === 200) {
+    expect(current).toMatchObject({ paused: true, queueRevision: 2, item: { state: 'waiting', promoted: null } });
+    expect(turns).toEqual([]); expect(scan.promoted).toBe(0);
+    expect(await promoteReady(pool, boss, c.id)).toMatchObject({ outcome: 'blocked', reason: 'queue-paused' });
+  } else {
+    expect(pause.status).toBe(409); expect(pause.body.error.code).toBe('conversation_queue_revision_conflict');
+    expect(scan.promoted).toBe(1); expect(turns).toHaveLength(1);
+    expect(current).toMatchObject({ paused: false, queueRevision: 2, item: { state: 'promoted', promoted: { taskId: turns[0].task.id } } });
+  }
+});
 it('persists an immutable enqueue receipt through ACK loss and exposes current cancellation with independent revision', async () => {
   const c = await conversation();
   const path = `/api/conversations/${c.id}/queue`;

@@ -28,7 +28,7 @@ export async function scanConversationQueue(pool: Pool, boss: PgBoss, limit = 20
   if (!Number.isInteger(limit) || limit < 1 || limit > 100) throw new HttpError(400, 'invalid_queue_scan_limit', 'Queue scan limit must be between 1 and 100.');
   // Commit rotation before processing so even an unexpected promotion rollback cannot starve later conversations.
   const candidates = await transaction(pool, async client => (await client.query<{ id: string }>(`WITH candidates AS (
-    SELECT c.id FROM flow.conversations c WHERE EXISTS (SELECT 1 FROM flow.conversation_queue q WHERE q.conversation_id=c.id AND q.state='waiting')
+    SELECT c.id FROM flow.conversations c WHERE NOT c.queue_paused AND EXISTS (SELECT 1 FROM flow.conversation_queue q WHERE q.conversation_id=c.id AND q.state='waiting')
     ORDER BY c.queue_checked_at,c.id LIMIT $1 FOR UPDATE OF c SKIP LOCKED
   ) UPDATE flow.conversations c SET queue_checked_at=clock_timestamp() FROM candidates picked WHERE c.id=picked.id RETURNING c.id`, [limit])).rows);
   const result: QueueScanResult = { inspected: candidates.length, promoted: 0, blocked: 0, errors: [] };
