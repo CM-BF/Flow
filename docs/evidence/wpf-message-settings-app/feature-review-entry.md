@@ -2,7 +2,7 @@
 
 当前实现 **c4bee7707a273e98ba7b07dc061ec13e78094c2f**；base `c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50`。WT `web-message-settings-app` / `codex/web-message-settings-app`；claim7e3f v2 exact19（14产品+3test+2metadata）。原MATURE02 TODO11子片，不是新大task。
 
-固定9c46的 [root集中审](source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings；随后c4bee只修worker参数白名单，独立假sentinel通过、caller边界待集中审。完整feature **IN_PROGRESS / 两browser NOT_RUN / NOT_INTEGRATED**。[17源码manifest](source-manifest.json)、[浏览器准备](browser-preparation.md) 和 [独立阶段记录](browser-phase.json) 固定当前范围。最终metadata HEAD不反套过去执行头。
+固定9c46的 [root集中审](source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings；随后c4bee只修worker参数白名单，独立假sentinel通过、caller边界已获root475e限定准备批准。完整feature **IN_PROGRESS / 两browser NOT_RUN / NOT_INTEGRATED**。[17源码manifest](source-manifest.json)、[浏览器准备](browser-preparation.md) 和 [独立阶段记录](browser-phase.json) 固定当前范围。最终metadata HEAD不反套过去执行头。
 
 App每view唯一C与opaque ownership；P01现action/context私有port复用Picker同步CAS。发送前冻结A并同步换新稿ownership，官方text通知不抹C；原key/body的Send与Queue收据、历史turn和Queueitem各自显示frozen requested。Recovery完整draft含可选设置、兼容旧缺省、非法值拒绝，沿原revision/CAS和namespace/lifetime。材料await期间同正文/settings-only B独立，旧opening不写新B。
 
@@ -32,4 +32,8 @@ App每view唯一C与opaque ownership；P01现action/context私有port复用Picke
 
 [clean-code](quality.md)：soleauthority、默认兼容、真实故障/重试、错误和cleanup分离。root撤回“exact File attachment未排uploading”的先前猜测（官方label已排除），不记为bug；本次仅有意义加强B完整身份和已有Send前置，无扩新场景/超时。
 
-本批运行边界更正：worker不再继承Node execArgv中的父admin --env-file，固定tsx loader白名单；c4bee单行域差量由独立假sentinel新10s段实测old-negative/new-positive，exit0、charge219ms、双EOF及owned清理。原60s局部53579/6421未用封存不转credit。9c46 root8488批准保固定source/local范围；本新参数差量与具体outer capture待集中运行边界审，当前仍无PG/Chrome/gate/env。
+本批运行边界更正：worker不再继承Node execArgv中的父admin --env-file，固定tsx loader白名单；c4bee单行域差量由独立假sentinel新10s段实测old-negative/new-positive，exit0、charge219ms、双EOF及owned清理。原60s局部53579/6421未用封存不转credit。9c46 root8488批准保固定source/local范围；本新参数差量与具体outer capture已获root475e限定准备批准；首次初始化FAIL见实际记录。
+
+## 2026-10-07 首次实际安全点
+
+当前实现仍c4bee，执行头df185。首material-return在server初始化因固定c130 SQL017未物化失败，0组完成/无Chrome；实际exit1、双EOF、markedDB正常DROP和owned资源清理闭合，首红不重写。其后按原source-operator补017/019共3278B，全33SQL等fixedbase；这是依赖供给修复。根475e准备批准保留，不作实际PASS。当前90s phase spent3432/remaining86568，后继实际仍须fresh唯一资源与新输入；无当前holder。入口：[首轮原件](browser-attempts/material-first/manifest.json)，[SQL供给](runtime-sql-supply.json)。

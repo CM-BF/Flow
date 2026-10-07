@@ -1,0 +1,88 @@
+{
+  "journey": "message-settings-material-return",
+  "requiredGroups": [
+    "cookieRead",
+    "messageSettingsMaterialReturn"
+  ],
+  "completedGroups": [],
+  "checks": [],
+  "initialization": {
+    "outcome": "FAILED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 2308.4380410000003,
+    "elapsedMs": 2308.4380410000003
+  },
+  "groupTimings": [],
+  "materialPreparation": [],
+  "pageErrors": [],
+  "failure": "ENOENT: no such file or directory, open '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/packages/storage/migrations/017-goal-graph-runs.sql'",
+  "cleanupErrors": [],
+  "wire": [],
+  "coverage": {
+    "cookieRead": "NOT_RUN",
+    "cookieSseHandshake": "NOT_SELECTED",
+    "cookieSseDelivery": "PENDING: only handshake is asserted",
+    "textIntentDraft": "NOT_SELECTED",
+    "materialDraft": "NOT_SELECTED",
+    "sameKeyTurn": "NOT_SELECTED",
+    "crossTabCas": "NOT_SELECTED",
+    "pageOnlyAuthLoss": "NOT_SELECTED",
+    "csrfOffline": "NOT_SELECTED",
+    "themes390": "NOT_SELECTED",
+    "connectionChoice": "NOT_SELECTED",
+    "createAckLoss": "NOT_SELECTED",
+    "createdTurnAckLoss": "NOT_SELECTED",
+    "queueAckLoss": "NOT_SELECTED",
+    "sseDelivery": "NOT_SELECTED",
+    "completeDraft": "NOT_SELECTED",
+    "steeringRecovery": "NOT_SELECTED",
+    "secondCenterCycle": "NOT_SELECTED",
+    "messageSettingsApp": "NOT_SELECTED",
+    "messageSettingsMaterialReturn": "NOT_RUN",
+    "createTwoStage": "PENDING: the two CREATE fault points are independent selected journeys",
+    "queueSteerRecovery": "PENDING: enqueue selection does not validate promotion or steering",
+    "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+    "secondCenter": "NOT_RUN: real A/B cycle is a separate selected journey; principal-only is controlled"
+  },
+  "bodyLoss": [],
+  "sseDelivery": {
+    "baselineCursor": null,
+    "deliveredCursor": null,
+    "cancelledTaskId": null,
+    "externalCancel": null,
+    "readRequests": [],
+    "trace": null
+  },
+  "completeDraft": {
+    "profile": null,
+    "knowledge": null,
+    "savedRecordId": null,
+    "conversationId": null,
+    "preparedPostCount": null,
+    "restoredPostCount": null,
+    "verificationOrder": [],
+    "turnId": null,
+    "taskId": null
+  },
+  "steeringRecovery": {
+    "profile": null,
+    "conversationId": null,
+    "turnId": null,
+    "sameDocumentNavigation": null,
+    "originalTurnReceiptId": null,
+    "actor": null,
+    "draftId": null,
+    "receiptId": null,
+    "commandId": null,
+    "browserPostCounts": [],
+    "draftFailureObservation": null
+  },
+  "secondCenter": {
+    "identities": [],
+    "baseUrl": null,
+    "draftA": null,
+    "draftB": null,
+    "receiptA": null,
+    "lateRead": null
+  }
+}

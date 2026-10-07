@@ -27,7 +27,7 @@
 
 MSGAPP-02/03/04 勾选指源码实现，绑定 c4bee7707a273e98ba7b07dc061ec13e78094c2f，不代表独审或浏览器通过。新增 AttachmentComposer 私有可选 restore/discard 接缝已获 v2 exact19；保默认消费者。原 core 的 prepare failure/cancel 自动归还路径已用真实 installed core + 生产 guard 定向检查，完整 mounted App 材料恢复仍属于 MSGAPP-05。
 
-历史11定向通过/57未选保留；新probe2六PASS/affected types8通过全部当前17源，local累计53579/60000ms。当前9c46 source/local限定独审通过，源码/实际范围见[单一review入口](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)。两个browser selector共享新90s防御总顶，每attempt≤60s含30scleanup；不是运行grant或旧Recoverycredit。全部真实页面/HTTP/PG/Chrome仍NOT_RUN，MSGAPP-06合法main仍pending。
+历史11定向通过/57未选保留；新probe2六PASS/affected types8通过全部当前17源，local累计53579/60000ms。当前9c46 source/local限定独审通过，源码/实际范围见[单一review入口](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)。两个browser selector共享新90s防御总顶，每attempt≤60s含30scleanup；不是运行grant或旧Recoverycredit。首次PG初始化已实际FAIL并清理，真实页面两场景仍NOT_RUN，MSGAPP-06合法main仍pending。
 
 ## MSGAPP-05 当前 mounted 后继
 
@@ -35,4 +35,8 @@ MSGAPP-02/03/04 勾选指源码实现，绑定 c4bee7707a273e98ba7b07dc061ec13e7
 
 个人目录交付依赖（原TODO08/11）：受信opt-in publisher以turnSettings发布 → Web/TUI真实目录 → 个人配置发布；当前Claude无turnSettings的经理来源保留，不修改发布leaf、不以fixture目录代个人能力。
 
-本批运行边界更正：worker不再继承Node execArgv中的父admin --env-file，固定tsx loader白名单；c4bee单行域差量由独立假sentinel新10s段实测old-negative/new-positive，exit0、charge219ms、双EOF及owned清理。原60s局部53579/6421未用封存不转credit。9c46 root8488批准保固定source/local范围；本新参数差量与具体outer capture待集中运行边界审，当前仍无PG/Chrome/gate/env。
+本批运行边界更正：worker不再继承Node execArgv中的父admin --env-file，固定tsx loader白名单；c4bee单行域差量由独立假sentinel新10s段实测old-negative/new-positive，exit0、charge219ms、双EOF及owned清理。原60s局部53579/6421未用封存不转credit。9c46 root8488批准保固定source/local范围；本新参数差量与具体outer capture已获root475e限定准备批准；首次初始化FAIL见实际记录。
+
+## 2026-10-07 首次实际安全点
+
+当前实现仍c4bee，执行头df185。首material-return在server初始化因固定c130 SQL017未物化失败，0组完成/无Chrome；实际exit1、双EOF、markedDB正常DROP和owned资源清理闭合，首红不重写。其后按原source-operator补017/019共3278B，全33SQL等fixedbase；这是依赖供给修复。根475e准备批准保留，不作实际PASS。当前90s phase spent3432/remaining86568，后继实际仍须fresh唯一资源与新输入；无当前holder。入口：[首轮原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/material-first/manifest.json)，[SQL供给](../../docs/evidence/wpf-message-settings-app/runtime-sql-supply.json)。

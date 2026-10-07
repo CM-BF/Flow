@@ -13,3 +13,7 @@
 2026-10-07T13:12:22.793544+00:00 mounted准备安全点clean-code：检查9fc→9c46四源差量（两产品+两harness）。命名与职责沿原authority；公开cancel点击即时双guard，默认consumer保持；完整restore完成后才释放failed hold，失败/冲突保原A。fixture-only精确adapter包装保原upload/send语义与实际abort-ignore迟到返回；只读≤8材料身份记录，不造业务HTTP/IDB。有限等待有timer/abort/dispose/pagehide清理；primaryfailure与cleanup分列。候选取消前后比对同B完整ids/refs，显式恢复A后真实移除+下一不同材料准备验证hold释放。实际6probe与types8通过，原首红/25原件不改；累计53579，五新exactPID/PGID后观ESRCH。当前root9c46源码/局部批准0finding，两个mounted旅程未运行；不以旧11controlled冒新App。技能沿已读本地find-skills/assistant-ui/clean-code/codebase-design，无安装或库privatepatch。
 
 2026-10-07T13:15:42Z clean-code/runtime边界：root发现execArgv继承--env-file后修c4bee白名单常量，日志只写实际白名单，不虚称删除env变量足以隔离。真实Node假sentinel旧反例/新正确219ms，只有工具loader无产品导入；0真实admin。捕获器独立work截止保留30scleanup，异常仍drain至绝对deadline，unknown资源不报absent，真实exit/EOF独立；AST核查未运行，不冒成熟parent批准自动覆盖新outer。
+
+## 2026-10-07T13:29:41.344886+00:00 首次actual与fixed SQL补供给
+
+复用本地find-skills/clean-code方法：保留真实错误和清理独立证据；无产品行为变化，不重测已绿local。确定server migrateGoalGraphRuns固定列表经模板URL读017/019，补两Git blob exclusive且逐33SQL核同，供给失败不说产品缺陷/浏览器PASS。未新装skill/deps或改shared配置。当前17source仍c4bee；自然记录首FAIL和同90s累计，无新框架。
