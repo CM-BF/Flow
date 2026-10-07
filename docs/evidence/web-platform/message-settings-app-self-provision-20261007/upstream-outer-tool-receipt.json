@@ -1,0 +1,43 @@
+{
+  "protocol": "flow.x01.upstream-upgrade.outer.v1",
+  "executionHead": "90e131b4a789d526ee3cb2ffac501f26d47e8953",
+  "window": "66fb86c6f958416ab09a98aa7ec431bd",
+  "tool": {
+    "execChunk": "0993e7",
+    "sessionId": 9105,
+    "initialWaitSeconds": 1.0017465,
+    "completionChunk": "e92e3b",
+    "exitCode": 0,
+    "finalObservationAt": "2026-10-07T12:10:09.681464Z"
+  },
+  "delivery": {
+    "state": "PASSED",
+    "run": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-upstream-upgrade/docs/evidence/x01-upstream-upgrade/pg-run-r1",
+    "receiptState": "PASSED",
+    "resultPersistence": "CONFIRMED",
+    "elapsedAfterPersistence": 5.409021042054519,
+    "withinTotalDeadline": true,
+    "endedAfterPersistenceAt": "2026-10-07T12:09:40.617401+00:00",
+    "retained": [],
+    "temporary": {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-ehq99d5p",
+      "dev": 16777234,
+      "ino": 124115564,
+      "removed": true,
+      "sampleBytes": 225926,
+      "sampleEntries": 60
+    }
+  },
+  "timeRaw": "real 5.54\nuser 2.12\nsys 0.66\n",
+  "clockScope": "time real covers caller interpreter and final persistence; internal monotonic fields have their declared before/after-persistence endpoints; tool wait wall is not whole-window duration",
+  "temporaryObservation": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-ehq99d5p",
+    "expectedDev": 16777234,
+    "expectedIno": 124115564,
+    "exactLstat": "ENOENT",
+    "observedAt": "2026-10-07T12:10:09.681464Z"
+  },
+  "resources": "No DB query/process scan/cleanup retry; fixture receipts establish marked DB and owners closure; this postflight only lstat exact owned TMP",
+  "providerCalls": 0,
+  "additionalEngineeringRuns": 0
+}

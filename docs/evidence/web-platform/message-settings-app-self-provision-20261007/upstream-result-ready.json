@@ -1,0 +1,35 @@
+{
+  "taskId": "X01-UPSTREAM-UPGRADE01",
+  "state": "RESULT_REVIEW_APPROVED",
+  "executionHead": "90e131b4a789d526ee3cb2ffac501f26d47e8953",
+  "resultCommit": "283d58cdba7b77e70140846671ad1ebff7c5dd60",
+  "sourceCommit": "9617bda0f25e11214a3f5893337d3bab733173c8",
+  "report": "docs/evidence/x01-upstream-upgrade/pg-result-report.md",
+  "outputManifest": "docs/evidence/x01-upstream-upgrade/pg-output-manifest.json",
+  "outputManifestSha256": "806a3ed9c8d3d9922a21a9c4981242ac72d8bd525b1c8c4a8e65cc1a85c3bb7d",
+  "rawFileCount": 12,
+  "rawBytes": 25629,
+  "inputManifestSha256": "5830f4f27735223a112bea9ca5a6b6805a3c31f20b2631c1223d386d006ad734",
+  "inputCount": 510,
+  "inputBytes": 2292591,
+  "selection": {
+    "numTotalTests": 1,
+    "numPassedTests": 1,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "sourceUnchanged": "510 prepared inputs remain exact; local5beb and source9617 previously independently approved",
+  "request": "Read-only fidelity review of this one actual R1, selected behavior/results/clock/accounting/owned cleanup; no project writes, PG, engineering checks, imports or old KEEP access. Do not repeat source/local review or treat this as latest-main/OS runner/provider/tool-in-flight proof.",
+  "resourceState": "FULL_RETURN to Mika after exact owned TMP ENOENT; no actual or pending launch",
+  "review": {
+    "at": "2026-10-07T12:12:34Z",
+    "by": "chatui01_owner/gpt-6-astra",
+    "decision": "RESULT_FIDELITY_REVIEW_APPROVED",
+    "target": "283d58cdba7b77e70140846671ad1ebff7c5dd60",
+    "packet": "5e7a48969e0a5c597991d61d0a0caa8a1ebdee45",
+    "P1": 0,
+    "P2": 0,
+    "scope": "Only this actual R1 result fidelity and observed cleanup; prepared and local source approvals inherited. No new OPEN/latest-main/OS-runner/provider/tool-in-flight proof."
+  }
+}

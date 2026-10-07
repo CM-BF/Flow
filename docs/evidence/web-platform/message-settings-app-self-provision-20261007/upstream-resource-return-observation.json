@@ -1,0 +1,32 @@
+{
+  "observedAt": "2026-10-07T12:13:34.420Z",
+  "state": "OWNED_RESOURCES_RETURNED_FROM_EXACT_RECEIPT_FINAL_TOOL_DELIVERY_PENDING",
+  "source": "upstream-result.json",
+  "actualStart": "2026-10-07T12:09:35.427583Z",
+  "terminalBeforePersistenceAt": "2026-10-07T12:09:40.617041+00:00",
+  "wholeElapsedBeforePersistenceSeconds": 5.4086882079718634,
+  "processes": "84428/84459 PID+PGID managerfreshESRCH; receipt both exit0/mergedEOF",
+  "databaseOid": 1308185,
+  "normalDropAndAbsence": true,
+  "temporary": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-ehq99d5p",
+    "dev": 16777234,
+    "ino": 124115564,
+    "removed": true,
+    "sampleBytes": 225926,
+    "sampleEntries": 60
+  },
+  "freshTemporaryAbsent": true,
+  "unknown": false,
+  "selected": {
+    "numTotalTests": 1,
+    "numPassedTests": 1,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "finalToolExitAndPostPersistenceAt": "PENDING_MIKA_DELIVERY_ONLY_NOT_RESOURCE_HOLD",
+  "retained": [],
+  "oldKEEPUnchanged": true,
+  "next": "Original fixeduserupdate when concreteprepared; no newheavy allocated"
+}

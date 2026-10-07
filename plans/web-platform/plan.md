@@ -542,3 +542,5 @@ Release [c2实际失败独审](../../docs/evidence/web-platform/x01-version-retu
 插件HOST与严格ACK公共合同已[de547主线接收](../../docs/evidence/web-platform/x01-version-return-20261007/x01-candidates-main-intake.json)，不再等main；UI采纳留原owner后续自然段，候选不是online/loaded/callable，同revision GET仍可变化、GET不清UNKNOWN。
 
 本次D04作者优先级4已在[12:02真实看板观察](../../docs/evidence/web-platform/release-c3-actual-admission-20261007/root-dashboard-d04-visible-check.json)显示：首屏前三不再由D04占据；旧展开领取卡保留焦点而明确已不在未登记列表，是焦点保留行为，不当重复领取缺陷。没有修改排序/聚合器或另跑浏览器。
+
+原TODO11/MSG03沿[主线常规source-operator规则](../../docs/evidence/web-platform/message-settings-app-self-provision-20261007/rule-intake.json)已解除旧逐片供给许可前置；同一panels自助固定c130/369源、18范围原子领取，首唯一source与所属MATURE02见[登记入口](../../docs/evidence/web-platform/message-settings-app-self-provision-20261007/msg03-source-registration.json)。既有bounded-local-iteration允许原owner在段内连续修复与相关复测，保实际失败/清理/累计额度，不把ordinarysource或local改成逐命令准备批准。共享config、真实PG/Chrome、main和个人操作边界保持。

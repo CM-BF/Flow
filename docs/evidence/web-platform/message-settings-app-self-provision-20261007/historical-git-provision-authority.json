@@ -1,0 +1,29 @@
+{
+  "state": "HISTORICAL_SUPERSEDED_FOR_ROUTINE_OWN_NEW_TREES",
+  "preservedAt": "2026-10-07T12:16:40.618Z",
+  "currentGitConfigurationWindow": {
+    "source": "Lead inbound via root",
+    "state": "RETURNED_EXPLICIT_LEAD_INBOUND",
+    "plannedSeconds": 30,
+    "trees": [
+      "web-workspace-lifecycle-baseline",
+      "attachment-resources",
+      "web-shared-ack-consumer"
+    ],
+    "restriction": "No new branch/worktree or sharedconfig edits; existingbranch normalpush allowed; elapsed not return",
+    "reportedResult": {
+      "historicalItemsEach": 72,
+      "sourceOwnRawDepsOtherConfig": "same protected hashes according to Lead",
+      "historicalFreeBytes": 1146703872,
+      "isWebSample": false,
+      "runtimeAdmission": false,
+      "receipt": "plan-status-review/docs/quality/sparse-worktree-2026-10-06/web-three-next/summary.json"
+    }
+  },
+  "exactGitProvisionAuthority": {
+    "state": "RETURNED_TO_ORIGINAL_EXECUTION_LEAD",
+    "receipt": "dashboard-local-access-intake/actual-provision-receipt.json",
+    "noFurtherRootDelegation": true,
+    "sourceWriterClaimIsNotGitAuthority": true
+  }
+}
