@@ -1,8 +1,8 @@
 # Web 当前交接与唯一来源
 
-**下一新网页：必要共享草稿小修已审，后端允许 Original 的最小 Logout 修复组合。** [当前固定输入](release-backend-route-20261007/current.json)记录 b924 源码/定向局部已获 root b92e4c 批准，W01 已固定并获root限定静态移植审的 c848 提供的[两文件最小移植](release-backend-route-20261007/held-draft-release-minimal.patch)与旧 Web consumer/guard；不能整拷 MSG session，也不把这份批准当移植后兼容通过。Original 04da/6c 已获正式完整源/构建准备审，仍需新 artifact（三 server 路径62+/6-，另78行 support，共4路径140+/6-）。两个 descriptor 仍 NULL，不等完整 MSG/Plugin，不重做已部署7d1。
+**下一新网页：必要共享草稿小修已审，后端允许 Original 的最小 Logout 修复组合。** [当前固定输入](release-backend-route-20261007/current.json)记录 b924 源码/定向局部已获 root b92e4c 批准，W01 已固定并获root限定静态移植审的 c848 提供的[两文件最小移植](release-backend-route-20261007/held-draft-release-minimal.patch)与旧 Web consumer/guard；不能整拷 MSG session，也不把这份批准当移植后兼容通过。Original 04da/6c 已获正式完整源/构建准备审，仍需新 artifact（三 server 路径62+/6-，另78行 support，共4路径140+/6-）。新Web descriptor仍NULL；backend cd27/source04da已产但结果独审待到，不等完整 MSG/Plugin，不重做已部署7d1。
 
-**当前资源：MSG两个旅程已通过所选检查并完整归还；Original SVC06B构建现为唯一NEXT，尚未实际启动。** [固定交接](release-backend-route-20261007/svc06b-build-next.json)绑定已批准82873/04da、420s工作+0.5s TERM+2s reap、0PG/Chrome/provider/个人，operator必须fresh当前claim/完整输入/新目录与组合空间至少11,623,661,568B；单reserve、全部KEEP及个人服务不动。MSG新120s共26368ms、余93632不再授权运行，业务/截图审与封存不占窗。
+**当前资源：Original SVC06B已14:30:45.534Z实际归还，无新heavy/NEXT。** [完整事件记录](release-backend-route-20261007/svc06b-build-actual.json)保14:30:01.227Z START与outer exit0/33158ms、45951组absent/双EOF；新backend cd27/source04da及root IhwFGS保留KEEP，结果独审尚未到，不冒宿主/兼容/部署通过。MSG两旅程已全归还，旧KEEP和个人自然服务/任务保留。
 
 **Arc后继只读输入已归原计划：** [固定12源报告与六约束/八验收](arc-msg03-ownership-intake-20261007/intake.json)已纳MATURE05-01/02/03/05；保持唯一composer父级、view/draft身份与材料准备状态，可见性统一撤销旧CAS/opening，布局不复制权限。仅未实现设计，不新增task/take或公共接口、不占MSG03十九scope。MSG03最新6a258错误观察差量已[限定批准](arc-msg03-ownership-intake-20261007/msg03-6a258-root-review.json)，原第三缺证及余额不变，仍无NEXT。
 
@@ -263,7 +263,10 @@ D06的5/5仅几何/键盘/来源下钻；[390默认阅读后继](d06-second-actu
 [Release最小移植限定审](release-backend-route-20261007/release-minimal-transplant-root-review.json)接受固定7272两blob应用patch77bc后的准确结果；[原owner报告](release-backend-route-20261007/release-transplant-report.md)区分staticapply与尚未运行的旧consumer/类型/产物/四App兼容。Original可沿受控集成供新固定Web，不需迁走正在MSG实证的产品写权。
 
 
-MSG材料[生命周期](release-backend-route-20261007/material-lifecycle-root-review.json)及[业务证据](release-backend-route-20261007/material-business-peer-review.json)限定通过；failure臂B仅settings-only UI，cancel臂才有完整durable B精确断言。第二设置旅程[生命周期与双390图](release-backend-route-20261007/settings-lifecycle-visual-root-review.json)限定通过，第二业务审尚在只读收口，不冒完整MSG/main/个人能力。Speed选择器右侧滚动条贴近是非阻断视觉后继，原MATURE01记录，不加新runtime。
+MSG材料[生命周期](release-backend-route-20261007/material-lifecycle-root-review.json)及[业务证据](release-backend-route-20261007/material-business-peer-review.json)限定通过；failure臂B仅settings-only UI，cancel臂才有完整durable B精确断言。第二设置旅程[生命周期与双390图](release-backend-route-20261007/settings-lifecycle-visual-root-review.json)限定通过，第二[业务审](release-backend-route-20261007/settings-business-peer-review.json)也已限定通过，不冒完整MSG/main/个人能力。Speed选择器右侧滚动条贴近是非阻断视觉后继，原MATURE01记录，不加新runtime。
 
 
 [GO窄屏视觉反馈](release-backend-route-20261007/mature01-visual-feedback.json)已纳原MATURE01，与scrollbarP3同片统一处理；不挡当前功能审或最小网页发布，不新抢App。ACCESS01时间ISO仍排panels正常MSG seal后的原两metadata新take，仅格式/来源/ownparser，无产品复测。
+
+
+共享浮层后继已有[root只读设计输入](release-backend-route-20261007/shared-overlay/report.md)：Dialog/token层次、正常目录渐进筛选与用户文案，保合法组合/Apply/CAS；overlay滚动条下stable gutter无效，需内侧间距并分别验两种滚动条模式。当前主题插件白名单只有color，不冒radius/shadow/filter已可扩。仅归原MATURE01，不新take或挡当前最小发布。

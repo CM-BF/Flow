@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:24:50.216Z；b924共享小修源/局部获审，材料旅程已通过并清理归还，设置旅程仍原阶段NEXT；COREmain及释放确认。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:34:02.960Z；MSG两实际旅程限定审已收，SVC06B actualRETURN与新artifact KEEP待结果审，下一新Web供给仍待。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -24,9 +24,9 @@
 | 优先级 | 1 |
 | 当前产出 | 逐消息设置修后的材料与设置旅程均通过所选检查并清理归还，证据与截图审查在收口。个人后台已恢复接受任务，网页仍旧版本。 |
 | 下一可用交付 | 沿原发布链先交付用户能看到的新网页；准备包含修复的新前后端产物与实际Cookie恢复验证，不等待全部插件或聊天设置完成。MSG03固定新差量后集中审查，个人设置目录按原双槽配置后继推进。 |
-| 当前阻塞 | ACTIVE: 新网页等待必要小修在旧Web消费组合的移植核验，以及正式审定的Logout后端和两个固定产物；不等待完整逐消息设置或插件功能。 |
+| 当前阻塞 | ACTIVE: 最小草稿修复在旧Web组合的必要消费检查与新Web产物尚待；04da新后端已构建、结果审查仍待。真实新pair兼容及个人网页发布尚未完成。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：MSG两旅程已RETURN/26368ms，余量不再授权；Original已审04da构建为唯一NEXT待fresh，未来完整floor至少11623661568B，旧KEEP/单reserve/个人自然任务保留。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：MSG两旅程已RETURN/26368ms，余量不再授权；Original04da构建已14:30:45.534Z完整RETURN，新artifact KEEP待结果审，无新heavyNEXT，未来完整floor至少11623661568B，旧KEEP/单reserve/个人自然任务保留。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

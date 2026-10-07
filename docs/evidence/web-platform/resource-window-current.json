@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T14:28:51.921Z",
-  "state": "MSG_BOTH_RETURNED_ORIGINAL_SVC06B_ARTIFACT_SOLE_NEXT",
-  "groupWindowOwnership": "No currentWebPG/Chrome/local holder; bothMSGselectedjourneys FULLRETURN last14:27:31.462508Z. OriginalSVC06B offline04da build is soleNEXT/fresh-notSTARTED; no parallelheavy. Personalpersistentservices/naturaltask andoldKEEP unchanged.",
+  "recordedAt": "2026-10-07T14:34:02.960Z",
+  "state": "SVC06B_BUILD_RETURNED_ARTIFACT_KEEP_REVIEW_PENDING",
+  "groupWindowOwnership": "No reportedactiveWeb/externalheavy orpendinglaunch afterOriginalSVC06BactualRETURN14:30:45.534Z. Newbackendartifactcd27/rootIhwFGS KEEP for review/latercompatibility, oldKEEP/personalservices/natural task preserved. No Webnewruntime orartifactNEXT granted.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T14:28:51.921Z",
-    "record": "release-backend-route-20261007/svc06b-build-next.json",
-    "event": "BothMSGfullRETURN exactoriginalschecked; formal828preparation+fresh95fv2 binds soleartifactNEXT",
-    "reviews": "Materiallifecycle+business approved; settingslifecycle+visualapproved, businesspending; no additionalruntime"
+    "at": "2026-10-07T14:32:05.215Z",
+    "record": "release-backend-route-20261007/svc06b-build-actual.json",
+    "event": "ActualSTART14:30:01.227 -> RETURN14:30:45.534 bothpreserved; artifactKEEP resultreviewpending",
+    "webReviews": "Bothselectedjourneys scopedbusiness/lifecycle/visualaccepted; ownerseal pending, no newruntime"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1717,7 +1717,7 @@
   },
   "externalCurrentAdmission": {
     "at": "2026-10-07T14:28:51.921Z",
-    "state": "SOLE_NEXT_FRESH_NOT_STARTED",
+    "state": "ACTUAL_RETURNED_BUILD_EXIT0_RESULT_REVIEW_PENDING",
     "task": "SVC06B",
     "owner": "Original / assignment_review",
     "claim": {
@@ -1772,7 +1772,36 @@
     "priorWebActualReturn": "2026-10-07T14:27:31.462508Z",
     "condition": "Original operator immediatefresh ownclaim/HEAD/source/fullprepared pins/rootidentity/newnamespace/actualnootherholder/completebudget/free>=latesthigherfloor. Keep all old KEEP/potential and personalservices; report actualSTART and exact completeRETURN. No new PG/Chrome/performance/artifact parallel.",
     "route": "Canonical handoff for Original actively reading; direct app-server delivery is blocked and was not retried or claimed",
-    "limits": "Build preparation approved, actualartifact/compat/personalpublication stillNOT_RUN; norepeat deployed7d1 or MSGchecks"
+    "limits": "Build preparation approved, actualartifact/compat/personalpublication stillNOT_RUN; norepeat deployed7d1 or MSGchecks",
+    "actualStart": "2026-10-07T14:30:01.227Z",
+    "freeBeforeBytes": 21366022144,
+    "consumedFloorBytes": 11623661568,
+    "ownerFresh": "Original reports claim/hash/newunconsumednamespace verified",
+    "actualPid": 45951,
+    "result": "PENDING_ACTUAL_RETURN",
+    "actualSource": "Original actualSTART via root; no predictedreturn",
+    "actualReturn": "2026-10-07T14:30:45.534Z",
+    "actualExit": 0,
+    "reportedOuterElapsedMs": 33158,
+    "producerStartedAt": "2026-10-07T14:30:01.328Z",
+    "producerFinishedAt": "2026-10-07T14:30:34.404Z",
+    "producerElapsedMs": 33074,
+    "ownedGroup": "Absent/dualEOF/firstFailure null asOriginalreported",
+    "artifact": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+      "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+      "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+    },
+    "artifactRoot": "/private/tmp/flow-svc06b-artifact-IhwFGS",
+    "artifactRootDisposition": "KEEP ownartifact/root/stagerecords; not activevalidationholder or deletion",
+    "rootIdentity": {
+      "dev": 16777234,
+      "ino": 124198066
+    },
+    "resultReview": "Original independentresultreview inprogress; not yet approved",
+    "managerRead": "Exactdescriptor/result/ownedroot archived; outercleanupfacts are Originalrelayed, not independentprocessprobes",
+    "runtimeProofBoundary": "Imports/read-onlyselection/factoryCalls0 do not prove trustedprocessT7, PG/realhost/compatibility or deployment"
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1782,8 +1811,7 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": {
-    "state": "SVC06B_SOLE_NEXT_FRESH_NOT_STARTED",
-    "record": "release-backend-route-20261007/svc06b-build-next.json"
+    "state": "NONE_FIXED_BUILD_CONSUMED_RETURNED"
   },
   "currentIntake": "release-backend-route-20261007/current.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/webOrdinaryLocal/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants. FutureCompleteFreshFloorBytes/futureFloorEvidence and externalOrdinaryCurrent apply to future fresh composition; do not rewrite consumed historical gates.",
@@ -1939,7 +1967,7 @@
     "limits": "No newcookiejar/Connectgeneralrace/installation claims; source6c release unchanged"
   },
   "lastWebActual": {
-    "state": "SELECTED_TWO_PASS_FULL_RETURN_REVIEW_PENDING",
+    "state": "APPROVED_SCOPED_APP_BUSINESS_LIFECYCLE_VISUAL_AND_FULL_RETURN",
     "actualStart": "2026-10-07T14:26:55.840024Z",
     "run": "msg03-settings-20261007-142648-6237f8",
     "outerPid": 25093,
@@ -2048,7 +2076,7 @@
       "directPortProbe": "NOT_RECORDED; existing fixture close plus exact owned process-group absence, no inferred port observation"
     },
     "wholeFeaturePass": false,
-    "businessReview": "PendingW01readonlyreview"
+    "businessReview": "release-backend-route-20261007/settings-business-peer-review.json"
   },
   "futureCompleteFreshFloorBytes": 11623661568,
   "futureFloorEvidence": {
@@ -2099,7 +2127,7 @@
     "receipt": "release-backend-route-20261007/core-main-release-receipt.json"
   },
   "currentActual": {
-    "state": "SELECTED_TWO_PASS_FULL_RETURN_REVIEW_PENDING",
+    "state": "APPROVED_SCOPED_APP_BUSINESS_LIFECYCLE_VISUAL_AND_FULL_RETURN",
     "actualStart": "2026-10-07T14:26:55.840024Z",
     "run": "msg03-settings-20261007-142648-6237f8",
     "outerPid": 25093,
@@ -2208,10 +2236,10 @@
       "directPortProbe": "NOT_RECORDED; existing fixture close plus exact owned process-group absence, no inferred port observation"
     },
     "wholeFeaturePass": false,
-    "businessReview": "PendingW01readonlyreview"
+    "businessReview": "release-backend-route-20261007/settings-business-peer-review.json"
   },
   "releaseCandidateCurrent": {
-    "at": "2026-10-07T14:24:50.216Z",
+    "at": "2026-10-07T14:26:57.829Z",
     "state": "ORIGINAL_AUTHORIZED_MINIMAL_6C_BACKEND_ROUTE_PENDING_FIXED_REVIEW_AND_ARTIFACT",
     "task": "Existing REQ19/Release",
     "authority": "Original explicit route relayed by root; supersedes old research ban on creating a6c-derived third composite",
@@ -2247,9 +2275,15 @@
         }
       ],
       "sourceReview": "Formal complete source/support review not yet received",
-      "artifact": null,
-      "actualValidation": "NOT_RECEIVED",
-      "boundary": "Manager read exact Git fullstat only; no source approval or ownership violation inferred for support"
+      "artifact": {
+        "policy": "flow.backend-artifact.v1",
+        "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+        "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+        "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+      },
+      "actualValidation": "BUILD_EXIT0_AND_IMPORTS_READONLY; RESULT_REVIEW_PENDING; NOT_HOST_OR_COMPATIBILITY",
+      "boundary": "Manager read exact Git fullstat only; no source approval or ownership violation inferred for support",
+      "artifactRoot": "/private/tmp/flow-svc06b-artifact-IhwFGS"
     },
     "previousCandidate": {
       "source": "7272151bb1e3e59e08937dca44949dcdeb42f009",
@@ -2266,15 +2300,16 @@
       "ownerSeal": "c848024a20ac59182360d31c7e0087828bca018d",
       "minimalPatch": "held-draft-release-minimal.patch",
       "minimalPatchSHA256": "77bc71c1aa001c693ba08b0a56ccf6e3b8faac5824e056663a9c81893882bdc8",
-      "transplant": "W01 preparing fixed old-Web consumer composition/guard in TMP and existing Release evidence only; no production attachments/session scope transfer or actual compatibility"
+      "transplant": "Exact7272 twofile TMPstaticcomposition approved root754608; not oldbase consumer behavior/actualartifact/compatibility",
+      "transplantReview": "release-minimal-transplant-root-review.json"
     },
     "releaseOwner": {
       "claim": "27c36b97 v1 exact4",
-      "calibrationHead": "1b284dd7da630d701cb6a6a0a04aed62e1789551",
-      "state": "Owner reported remoteequal/clean STOP; original twoharness source8964 unchanged",
+      "calibrationHead": "4b8a11c6cdd7849dfe75ba920be952b7b802f274",
+      "state": "Ownerremoteequalclean/4STOP; statictransplantfixed androotapproved; no2productscopewrite",
       "task": "W01 prepares exact twofile transplant consumer and guard proposal within TMP/ownrecords; descriptors remain null, runtime not granted"
     },
-    "runtime": "Only MSG03 newscopedphase NEXT fresh-notSTARTED; Releasepair/artefact/personal not granted, olddeployed7d1 not repeated",
+    "runtime": "SVC06Bbuildreturned/KEEP; no newheavyNEXT; newWebdescriptor stillnull",
     "priorDecision": "../s01-first-actual-return-20261007/release-minimal-fix-decision.json",
     "msgNewPhase": {
       "source": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
@@ -2282,11 +2317,20 @@
       "rootReview": "msg03-new-phase-root-review.json",
       "prepared": "msg03-new-phase-manifest.json",
       "handoff": "msg03-membership-handoff.json",
-      "state": "NEXT_FRESH_NOT_STARTED",
+      "state": "BOTH_SELECTED_JOURNEYS_SCOPED_REVIEW_APPROVED_AND_FULL_RETURN",
       "budgetMs": 120000,
-      "spentMs": 0,
+      "spentMs": 26368,
       "perAttempt": "45–60 seconds including30seconds cleanup",
-      "scope": "Originalmaterial-return and messageSettingsApp selectors, oneDB14configured/oneChrome; old90/local20CLOSED no transfer"
+      "scope": "Originalmaterial-return and messageSettingsApp selectors, oneDB14configured/oneChrome; old90/local20CLOSED no transfer",
+      "actual": "msg03-membership-actual.json",
+      "remainingMs": 93632,
+      "runtimeContinuation": false,
+      "settingsActual": "msg03-settings-actual.json",
+      "reviews": {
+        "material": "Scopedlifecycle+businessAPPROVED5853/328f",
+        "settings": "Scopedlifecycle+visual+businessAPPROVEDfc552/5399",
+        "limitations": "Evidenceboundariesinexactreviews; no fullpersonalsettings/provider/main claim"
+      }
     }
   }
 }

@@ -1,49 +1,21 @@
 {
-  "at": "2026-10-07T14:30:32.192813+00:00",
+  "at": "2026-10-07T14:34:03.281992+00:00",
   "scope": "Only current changed manager paths, added Markdown links, JSON and indexed archive hashes",
   "paths": [
     "docs/evidence/web-platform/mature-task-handoff.md",
     "docs/evidence/web-platform/release-backend-route-20261007/archive-index.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/backend04da-full-stat.txt",
-    "docs/evidence/web-platform/release-backend-route-20261007/core-main-release-receipt.json",
     "docs/evidence/web-platform/release-backend-route-20261007/current.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/dashboard-owner-observation.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/external-current.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/held-draft-release-minimal.patch",
-    "docs/evidence/web-platform/release-backend-route-20261007/held-draft-repair.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/manifest.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/material-accounting.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/material-business-peer-review.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/material-env-deletion.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/material-lifecycle-root-review.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/material-outer-exit.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/material-post-cleanup.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/mature01-visual-feedback.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/metadata-validation.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/msg03-b924-root-review.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/msg03-local-14680-snapshot.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/msg03-membership-actual.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/msg03-membership-handoff.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/msg03-new-phase-manifest.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/msg03-new-phase-root-review.json",
     "docs/evidence/web-platform/release-backend-route-20261007/msg03-settings-actual.json",
     "docs/evidence/web-platform/release-backend-route-20261007/quality.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/release-minimal-transplant-root-review.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/release-transplant-manifest.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/release-transplant-report.md",
-    "docs/evidence/web-platform/release-backend-route-20261007/s01p07-timing-release-receipt.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/selected-claims.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/settings-accounting.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/settings-env-deletion.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/settings-lifecycle-visual-root-review.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/settings-outer-exit.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/settings-post-cleanup.json",
+    "docs/evidence/web-platform/release-backend-route-20261007/settings-business-peer-review.json",
+    "docs/evidence/web-platform/release-backend-route-20261007/shared-overlay/report.md",
+    "docs/evidence/web-platform/release-backend-route-20261007/shared-overlay/sources.json",
     "docs/evidence/web-platform/release-backend-route-20261007/status-validation.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/svc06b-build-next.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/svc06b-preparation-lead-review.json",
-    "docs/evidence/web-platform/release-backend-route-20261007/svc06b-selected-claim.json",
+    "docs/evidence/web-platform/release-backend-route-20261007/svc06b-build-actual.json",
+    "docs/evidence/web-platform/release-backend-route-20261007/svc06b-owned-root.json",
+    "docs/evidence/web-platform/release-backend-route-20261007/svc06b-result-descriptor.json",
+    "docs/evidence/web-platform/release-backend-route-20261007/svc06b-result.json",
     "docs/evidence/web-platform/resource-window-current.json",
-    "plans/web-platform/plan.md",
     "plans/web-platform/review.md",
     "plans/web-platform/status.md",
     "plans/wpf-mature-01-visual/plan.md",
@@ -62,67 +34,7 @@
     },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "release-backend-route-20261007/svc06b-build-next.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "mounted-app-and-personal-maintenance-next-20261007/visible-web-release-peer.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "mounted-app-and-personal-maintenance-next-20261007/release-successor-take.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/recovery-cookie/supply-request.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "release-backend-route-20261007/dashboard-owner-observation.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "s01-first-actual-return-20261007/current.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "plugin-browser-source-and-msg03-local-20261007/msg03-amend-receipt.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "s01-first-actual-return-20261007/external-timing-update.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "release-backend-route-20261007/external-current.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "release-backend-route-20261007/external-current.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "release-backend-route-20261007/release-minimal-transplant-root-review.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "release-backend-route-20261007/release-transplant-report.md",
+      "target": "release-backend-route-20261007/svc06b-build-actual.json",
       "exists": true
     },
     {
@@ -142,47 +54,12 @@
     },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "release-backend-route-20261007/mature01-visual-feedback.json",
+      "target": "release-backend-route-20261007/settings-business-peer-review.json",
       "exists": true
     },
     {
-      "source": "docs/evidence/web-platform/release-backend-route-20261007/release-transplant-report.md",
-      "target": "manifest.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/plan.md",
-      "target": "../../docs/evidence/web-platform/s01-first-actual-return-20261007/release-minimal-fix-decision.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/plan.md",
-      "target": "../../docs/evidence/web-platform/release-backend-route-20261007/current.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/plan.md",
-      "target": "../../docs/evidence/web-platform/release-backend-route-20261007/current.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/review.md",
-      "target": "../../docs/evidence/web-platform/s01-first-actual-return-20261007/current.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/review.md",
-      "target": "../../docs/evidence/web-platform/release-backend-route-20261007/current.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/review.md",
-      "target": "../../docs/evidence/web-platform/release-backend-route-20261007/msg03-b924-root-review.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/review.md",
-      "target": "../../docs/evidence/web-platform/release-backend-route-20261007/msg03-new-phase-root-review.json",
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "release-backend-route-20261007/shared-overlay/report.md",
       "exists": true
     },
     {
@@ -201,28 +78,23 @@
       "exists": true
     },
     {
+      "source": "plans/web-platform/review.md",
+      "target": "../../docs/evidence/web-platform/release-backend-route-20261007/settings-business-peer-review.json",
+      "exists": true
+    },
+    {
       "source": "plans/web-platform/status.md",
       "target": "../../docs/evidence/web-platform/resource-window-current.json",
       "exists": true
     },
     {
       "source": "plans/wpf-mature-01-visual/plan.md",
-      "target": "../../docs/evidence/web-platform/release-backend-route-20261007/settings-lifecycle-visual-root-review.json",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-01-visual/plan.md",
-      "target": "../../docs/evidence/web-platform/release-backend-route-20261007/mature01-visual-feedback.json",
+      "target": "../../docs/evidence/web-platform/release-backend-route-20261007/shared-overlay/report.md",
       "exists": true
     },
     {
       "source": "plans/wpf-mature-01-visual/status.md",
-      "target": "../../docs/evidence/web-platform/release-backend-route-20261007/settings-lifecycle-visual-root-review.json",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-01-visual/status.md",
-      "target": "../../docs/evidence/web-platform/release-backend-route-20261007/mature01-visual-feedback.json",
+      "target": "../../docs/evidence/web-platform/release-backend-route-20261007/shared-overlay/report.md",
       "exists": true
     }
   ],
@@ -329,6 +201,30 @@
     },
     {
       "file": "settings-lifecycle-visual-root-review.json",
+      "match": true
+    },
+    {
+      "file": "svc06b-result-descriptor.json",
+      "match": true
+    },
+    {
+      "file": "svc06b-result.json",
+      "match": true
+    },
+    {
+      "file": "svc06b-owned-root.json",
+      "match": true
+    },
+    {
+      "file": "settings-business-peer-review.json",
+      "match": true
+    },
+    {
+      "file": "shared-overlay/report.md",
+      "match": true
+    },
+    {
+      "file": "shared-overlay/sources.json",
       "match": true
     }
   ],

@@ -1,0 +1,87 @@
+{
+  "recordedAt": "2026-10-07T14:32:51.156754+00:00",
+  "state": "READ_ONLY_DESIGN_PROPOSAL_NOT_IMPLEMENTED",
+  "sources": [
+    {
+      "ref": "eb91a4a49de823795111230cc1c3b45e71c014c1",
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "bytes": 3853,
+      "sha256": "5858040deb7446700c0f4d791fa80507fd7c543c3a91f8634410815726634ec0"
+    },
+    {
+      "ref": "eb91a4a49de823795111230cc1c3b45e71c014c1",
+      "path": "apps/web/src/assistant-ui.css",
+      "bytes": 6661,
+      "sha256": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab"
+    },
+    {
+      "ref": "eb91a4a49de823795111230cc1c3b45e71c014c1",
+      "path": "apps/web/src/styles.css",
+      "bytes": 13124,
+      "sha256": "52a733934b498c8940c710898f34576c035b37a810bc0b8857600cebe8f8e3c4"
+    },
+    {
+      "ref": "eb91a4a49de823795111230cc1c3b45e71c014c1",
+      "path": "apps/web/src/themes.ts",
+      "bytes": 1822,
+      "sha256": "f25f0264cb00c798a477b1f7e52fe55c77fbaa7e65c1e0f4d86c8ab728037f1f"
+    },
+    {
+      "ref": "eb91a4a49de823795111230cc1c3b45e71c014c1",
+      "path": "apps/web/src/plugins/validation.ts",
+      "bytes": 8788,
+      "sha256": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831"
+    },
+    {
+      "ref": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 27546,
+      "sha256": "4b18dd562496fa4de82e99afe7659e8262969dbae9db6200a643f5c8e1389d1b"
+    },
+    {
+      "ref": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "bytes": 3942,
+      "sha256": "a7abe82bf1eb53f9ddb286435dc6b2ba1660cfc3af4232fea1e4a5dbcbc11d54"
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/frontend-design/SKILL.md",
+      "bytes": 9390,
+      "sha256": "d91970639e9f5c37682ac7ab60094d35f1c7c1f38d731bd56396563aee10c1d3",
+      "method": "Installed local skill, no installation. Prior find-skills/clean-code discovery reused; frontend-design andbrainstorming read for this bounded design research."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "bytes": 15456,
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608",
+      "method": "Installed local skill, no installation. Prior find-skills/clean-code discovery reused; frontend-design andbrainstorming read for this bounded design research."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "method": "Installed local skill, no installation. Prior find-skills/clean-code discovery reused; frontend-design andbrainstorming read for this bounded design research."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "method": "Installed local skill, no installation. Prior find-skills/clean-code discovery reused; frontend-design andbrainstorming read for this bounded design research."
+    }
+  ],
+  "basis": {
+    "actualRun": "msg03-settings-20261007-142648-6237f8",
+    "rootVisualReview": "/private/tmp/root-msg03-membership-settings-lifecycle-visual-review-20261007.json",
+    "rootVisualReviewSha": "fc552156fe109bce2f0c6e034568bc991b69bf0f13b0dc782c12778ee8e299bd",
+    "GOMessage": "MATURE01 visual acceptance request via thread01a10e15-b908-7a72-b8c0-222a26bf93ff; no ordinary reply requested"
+  },
+  "primarySources": [
+    "https://www.radix-ui.com/primitives/docs/components/dialog",
+    "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+    "https://developer.mozilla.org/en-US/docs/Web/CSS/Reference/Properties/scrollbar-gutter"
+  ],
+  "runtime": false,
+  "projectWrites": false
+}

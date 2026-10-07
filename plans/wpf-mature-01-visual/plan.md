@@ -95,3 +95,6 @@ U19/原MATURE02 TODO11补[T3 Code固定参考](../../docs/evidence/web-platform/
 
 
 GO 对本次两390图的[原MATURE01验收反馈](../../docs/evidence/web-platform/release-backend-route-20261007/mature01-visual-feedback.json)已接收：窄屏浮窗直角硬边、遮罩偏重，四筛选加完整列表显得表单化，省略/不附加设置请求等实现语义文案过多。下一视觉片结合共享浮层、主题和信息层级统一处理，与上述滚动条P3归原02/04；使用本地frontend-design及既有Arc参考，保语义、键盘/焦点、reduced-motion和性能，不在picker堆局部补丁。极长模型名是刻意fixture，完整验收另含正常目录/defaultcollapsed/桌面与窄屏全页。当前优先可用网页，不挡MSG功能收口/最小发布，不新抢App或新增任务。
+
+
+原视觉后继已复用[固定共享浮层设计研究](../../docs/evidence/web-platform/release-backend-route-20261007/shared-overlay/report.md)（7源、4本地skill、3primary文档），建议统一Dialog/token层次与正常目录渐进筛选/面向用户文案；保合法组合、Apply/CAS和原焦点语义。overlay scrollbar不能靠stable gutter解决，后续需内侧间距及两种滚动条模式验收；现theme插件仅color白名单，radius/shadow/filter是待设计权限，不是已有能力。此仅原02/04只读输入，未实现，不新取scope或重跑已绿检查。

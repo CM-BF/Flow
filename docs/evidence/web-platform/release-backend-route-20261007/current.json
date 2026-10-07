@@ -34,11 +34,16 @@
         "kind": "evidence support"
       }
     ],
-    "sourceReview": "APPROVED_SOURCE_COMPOSITION_AND_BUILD_PREPARATION via OriginalLead fixed82873; actualbuild/hostcompat NOT_RUN",
-    "artifact": null,
-    "actualValidation": "NOT_RECEIVED",
+    "sourceReview": "Formal complete source/support review not yet received",
+    "artifact": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+      "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+      "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+    },
+    "actualValidation": "BUILD_EXIT0_AND_IMPORTS_READONLY; RESULT_REVIEW_PENDING; NOT_HOST_OR_COMPATIBILITY",
     "boundary": "Manager read exact Git fullstat only; no source approval or ownership violation inferred for support",
-    "sourceReviewRecord": "svc06b-preparation-lead-review.json"
+    "artifactRoot": "/private/tmp/flow-svc06b-artifact-IhwFGS"
   },
   "previousCandidate": {
     "source": "7272151bb1e3e59e08937dca44949dcdeb42f009",
@@ -64,7 +69,7 @@
     "state": "Ownerremoteequalclean/4STOP; statictransplantfixed androotapproved; no2productscopewrite",
     "task": "W01 prepares exact twofile transplant consumer and guard proposal within TMP/ownrecords; descriptors remain null, runtime not granted"
   },
-  "runtime": "MSGbothactualRETURN; OriginalSVC06BbuildsoleNEXT/fresh-notSTARTED",
+  "runtime": "SVC06Bbuildreturned/KEEP; no newheavyNEXT; newWebdescriptor stillnull",
   "priorDecision": "../s01-first-actual-return-20261007/release-minimal-fix-decision.json",
   "msgNewPhase": {
     "source": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
@@ -72,7 +77,7 @@
     "rootReview": "msg03-new-phase-root-review.json",
     "prepared": "msg03-new-phase-manifest.json",
     "handoff": "msg03-membership-handoff.json",
-    "state": "BOTH_SELECTED_JOURNEYS_PASS_FULL_RETURN_ACTUAL_REVIEW_PENDING",
+    "state": "BOTH_SELECTED_JOURNEYS_SCOPED_REVIEW_APPROVED_AND_FULL_RETURN",
     "budgetMs": 120000,
     "spentMs": 26368,
     "perAttempt": "45–60 seconds including30seconds cleanup",
@@ -82,8 +87,9 @@
     "runtimeContinuation": false,
     "settingsActual": "msg03-settings-actual.json",
     "reviews": {
-      "material": "Scopedlifecycle+businessAPPROVED",
-      "settings": "Scopedlifecycle+visualAPPROVED, W01businesspending"
+      "material": "Scopedlifecycle+businessAPPROVED5853/328f",
+      "settings": "Scopedlifecycle+visual+businessAPPROVEDfc552/5399",
+      "limitations": "Evidenceboundariesinexactreviews; no fullpersonalsettings/provider/main claim"
     }
   }
 }
