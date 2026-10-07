@@ -1,6 +1,6 @@
 # S01P07 独立审查
 
-**原产品 SOURCE_REVIEW APPROVED；R2原8组PG 8/8 RESULT_FIDELITY_REVIEW_APPROVED。原4capacity准备独审通过/实际4/4结果待独审，NOT_INTEGRATED。R1失败与旧未知资源保持。**
+**原产品 SOURCE_REVIEW APPROVED；R2原8组PG 8/8 RESULT_FIDELITY_REVIEW_APPROVED。原4capacity准备及实际4/4结果独审通过，NOT_INTEGRATED。R1失败与旧未知资源保持。**
 
 - Review target commit：83a0799293057f7472f0329c61e566708b2a2381（8 产品源限定）。
 - Base：22a0806bc2465e11096949618113833f31766b19。
@@ -34,3 +34,10 @@ architecture_read / gpt-6-astra，2026-10-07T03:23:39Z，绑定结果cf762765cc0
 - 2026-10-07T03:41:52.772958+00:00 owner安全点沿既有clean-code方法核状态/target/链接及许可边界；仅2份metadata更新，无产品修改或工程检查。
 
 2026-10-07T03:45:30.058152+00:00 本次唯一capacity实际4/4，见[原始结果入口](../../docs/evidence/s01p07/pg-capacity-result-ready.md)。只补结果证据，source与已审输入不改；四专库/worker/EOF/精确自有TMP均清理。外壳UTC标记失败不掩盖，外部time/工具完成独立保留。RESULT_FIDELITY_REVIEW_PENDING，不提前给整体APPROVED，主线尚未接收。
+
+## 原4capacity结果正式独审
+
+- db_transaction_owner / gpt-6-astra，2026-10-07T03:48:41.637621Z；RESULT_FIDELITY_REVIEW_APPROVED /0P1/P2，固定result `168678c38ed8458420d902c49cfffaf98be226b8` / packet `6ef2926344031c7796ea427704c9f4359d5b72fb`。
+- 27raw28919B逐targetGit=WT/bytes/hash；manifest SHA48985fa4328cb60547cbb046b6c73d53eef444ddc9e6f95875badc221f985c22，22输入execution=target=WT，产品/准备未改。4pass/20未选、13task120HTTP、4库OID-marker/0conn普通DROP/absence、PID31444/双EOF/groupabsence、5个新root精确ENOENT均符。
+- main15847实际加载、spawn前组合门槛、sample峰值及两UTC标记ENOENT原样；wrapper6.819s/time6.93s/21s扩大观察包络分列准确。审者仅只读，无测试/import/PG/旧根访问/清理/写入。
+- 批准只限四项原消费者与已观察资源；不推最新main全集/吞吐/R1原因。原85非PG、中心8PG、本次4PG各自固定，不合成新单批。main NOT_INTEGRATED；owner冻结源/raw、保留claim直至正式接收。

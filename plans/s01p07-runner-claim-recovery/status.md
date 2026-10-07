@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T03:45:30.058152+00:00 |
+| 最近更新 | 2026-10-07T03:53:01.250208+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 现有领取receipt仅证明领取；未用其时间推定首次实际开工。原验收尚未完成，诊断修复段时间见inventory-diagnostic-fix.md，不代替task完成时间。 |
@@ -13,21 +13,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery |
 | Branch | codex/runner-claim-recovery |
 | 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品83a0799；4capacity source68815dce/packet1de742；本次execution59d7ab4e7d14b9b5979221c249c0a68ba3836695。 |
-| 工作树dirty状态 | 本次execution59d7ab4e=origin clean；结束仅新增本轮结果/封存及本任务metadata，产品/测试/PG输入与历史raw均冻结。 |
+| 工作树dirty状态 | 恢复时6ef29263=origin clean；本次仅状态/审查/接收清单metadata，源码/raw/已固定manifest全部冻结。 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 检查状态 | 分别保留：历史85 non-PG；R2中心8/8；本次原capacity4/4、20未选、13task/120HTTP。原strict5与本次局部strict修后0各有raw；没有将历史合算为新通过数。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；基线为已供给固定 main 22a0806bc2465e11096949618113833f31766b19 |
-| 实现目标 | 83a0799293057f7472f0329c61e566708b2a2381（8产品源）；消费者68815dce，本次真实4/4已验、结果待审。 |
+| 实现目标 | 83a0799293057f7472f0329c61e566708b2a2381（8产品源）；消费者68815dce，结果168678c3已独审通过。 |
 | 实现范围 | apps/server/src/runners.ts, apps/server/src/runner-claim-receipts.ts, apps/server/src/index.ts, apps/runner/src/admission-journal.ts, apps/runner/src/runtime.ts, packages/contracts/src/runner-claim.ts, packages/contracts/src/index.ts, packages/client/src/index.ts |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 任务层级 | 子task |
-| 当前产出 | 空闲领取与丢响应恢复的中心检查、四项原并发消费者均已完成，专库与运行资源全部清理；结果待独立审查。 |
-| 下一可用交付 | 完成本次四项结果忠实性独审，提交已验证源码与必要消费者给主线接收。 |
-| 当前阻塞 | ACTIVE: 本次结果独审及main接收待完成；当前无local/heavy holder。旧R1原因UNKNOWN、旧根KEEP，与本轮正常清理分开。 |
+| 当前产出 | 空闲领取与丢响应恢复已完成源码及必要直接消费者验证，四项并发结果也已通过独审，现可由主线接收。 |
+| 下一可用交付 | 将已审8项产品变更及必要测试接入主线，完成集成核对后交回写入范围。 |
+| 当前阻塞 | ACTIVE: 等待主线受控接收；实现、分支验证和独立审查已完成。无实际local/heavy holder，旧R1未知资源保留。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：产品SOURCE_REVIEW、R2结果及4capacity准备均已审；本次4/4结果待fidelity审，NOT_INTEGRATED。 |
+| Review | [review.md](review.md)：产品、准备和分轮结果均已独审；capacity结果168678c3于03:48:41.637621Z RESULT_FIDELITY_REVIEW_APPROVED/0P1P2；NOT_INTEGRATED。 |
 | 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 / 18 literal |
 
 | TODO ID | 状态 | Owner | 证据 / 检查 |
@@ -35,8 +35,8 @@
 | S01P07-01 | completed | status_read | [接口](../../docs/evidence/s01p07/interface.md)；协议/职责与直接消费者范围已固定 |
 | S01P07-02 | completed | status_read | contract/client/route/中心事务源码已固定；R2原8组PG与限定结果独审均通过 |
 | S01P07-03 | completed | status_read | v2 journal/runtime 已接线，新恢复及旧peer直接消费者85不同检查分批通过 |
-| S01P07-04 | completed | status_read | 历史85非PG/R2中心8组/本次capacity4组各自原件，strict和资源闭合；本次结果待审，0provider |
-| S01P07-05 | in-progress | status_read | 已审source/准备，R2已审；本次4capacity结果待独审 / NOT_INTEGRATED |
+| S01P07-04 | completed | status_read | 历史85非PG/R2中心8组/本次capacity4组各自原件，strict和资源闭合；本次结果已独审，0provider |
+| S01P07-05 | in-progress | status_read | 源/准备/分轮结果独审0P1P2；[最窄main接收清单](../../docs/evidence/s01p07/integration-ready.json)已就绪 / NOT_INTEGRATED |
 
 ## 架构与登记
 
@@ -75,3 +75,7 @@ R2 `S01P07-PG-20261007-R2` 实际03:21:23–03:21:27 UTC，内部3.846187s/外�
 2026-10-07T03:42:50.732592+00:00 Mika授唯一heavy OPEN `S01P07-CAPACITY-20261007-R1`：Web Timing已03:41:04.044Z确认worker/Chrome/group/fixture/双EOF/目录清理归还。本次仅原4组/4serialDB/13task/640HTTP/15理论峰连接，200s/120work/70fixturecleanup、32MiBTMP/raw1MiB不变；保守配对本组单local9568256B+Web9437184B，fresh floor1226964992B。仅metadata固定clean执行HEAD后核原claim/source/22bindings/30SQL/24deps/30输出与组合空间，一次执行，未知不重试/不触旧根；actual结束即归还，不等封存。
 
 2026-10-07T03:45:30.058152+00:00 唯一`S01P07-CAPACITY-20261007-R1` actual已归还。4/4、20未选、13task/120HTTP、4数据库0conn普通DROP/absence、worker/group/EOF与5精确自有根全部闭合；无本轮KEEP。外壳UTC命令失败真实保留，wrapper/time/tool口径分列；[结果入口](../../docs/evidence/s01p07/pg-capacity-result-ready.md)。原85/8/4分组与target独立，不合成新一次结果；source/历史raw不变，下一步只结果独审/main接收。
+
+2026-10-07T03:50:49.198515+00:00 独立结果审接收：db_transaction_owner / gpt-6-astra于2026-10-07T03:48:41.637621Z对result168678c38ed8458420d902c49cfffaf98be226b8 / packet6ef2926344031c7796ea427704c9f4359d5b72fb给出RESULT_FIDELITY_REVIEW_APPROVED、0P1/P2。27raw28919B与22准备输入、原4断言、DB/process/root清理和UTC错误/计量口径全部核符，审者0运行/PG/写。只补[main接收映射](../../docs/evidence/s01p07/integration-ready.json)：8产品@83a、8直接测试+2必需fixture@68815，私有验证输入另列；共享文件须按base→target增量受控合并，不能旧blob覆盖main。原85/8/4各自独立目标保留；待main回执，claim不release。
+
+2026-10-07T03:53:01.250208+00:00 交付聚合核对：既有4320/api/snapshot一次5s GET超时，PENDING_SYNC，不重试；唯一权威仍为本WT/branch状态。沿既有find-skills/clean-code/codebase-design基线复核本段状态、固定输入映射及历史/主线边界，仅metadata，无工程重测。
