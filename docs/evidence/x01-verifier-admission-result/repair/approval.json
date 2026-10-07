@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-07T21:12:11.000Z",
+  "reviewer": "db_transaction_owner / gpt-6-astra",
+  "conclusion": "SOURCE_AND_DELTA_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "closed": "tool public403 compatibility",
+  "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+  "result": "4f241e7620935584cd5f9514a2e07fb0b1033c1c",
+  "packet": "2128cc681a018085e83bae6deae980984995aa48",
+  "reviewReadySha256": "56243a5d2b32ab235e06ac3c7a11e1619a493d10f812e223bfad4cda31f591a7",
+  "bindings": 18,
+  "bytes": 212857,
+  "scope": "commands two tool branches restore existing permission helper; verifier explicit grant/code; three direct public-function regression cases",
+  "sourceRangeInherited": "87fb other reviewed changes, initial CHANGES_REQUESTED remains historical",
+  "local": "3 selected passed/15 unselected; affectedstrict0; initial1pass2fakeTimeout preserved. 3children13473ms18314B allfinalabsent/mergedEOF/3sameinodeTMPremoved",
+  "resource": "eachspawn19199819776 currentfullsum; free19223146496/19223535616/19223322624. Original stalefloor observations immutable. WholeexternalwallUNKNOWN",
+  "limits": [
+    "not real HTTP/PG",
+    "AV prerequisite and SQL rollback matrix open",
+    "factory/main policy forwarding and producer mount open",
+    "runtime v4/settled/outbox and full user journey open",
+    "not main or OPEN"
+  ],
+  "reviewerActions": "read-only Git/source/hash; no imports/tests/PG/TMP access"
+}
