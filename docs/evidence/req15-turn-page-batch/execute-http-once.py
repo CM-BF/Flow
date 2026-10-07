@@ -32,6 +32,12 @@ COMMAND = [shared.NODE, 'node_modules/vitest/vitest.mjs', 'run', 'docs/evidence/
            '--no-cache', '--reporter', 'verbose', '--no-color']
 
 
+def process_closed(result):
+    return bool(result and result['exit'] is not None and result['groupAbsent'] and result['stdoutEof']
+                and not result['secondaryFailures']
+                and all(row['state'] != 'unknown' for row in result['observations'] + result['signals']))
+
+
 def preflight(expected_head, expected_manifest):
     manifest = HERE / 'http-prepared-manifest.json'
     if shared.digest(manifest) != expected_manifest:
@@ -132,7 +138,7 @@ def main():
             record['selected'] = int(selected[1]) if selected else None
             record['passed'] = int(passed_count[1]) if passed_count else 0
             record['captureComplete'] = result['stdoutEof'] and result['observedBytes'] == result['retainedBytes'] and result['reason'] is None
-            record['lifecycleKnown'] = result['groupAbsent'] and not result['secondaryFailures'] and all(row['state'] != 'unknown' for row in result['observations'] + result['signals'])
+            record['lifecycleKnown'] = process_closed(result)
             passed = (result['exit'] == 0 and record['selected'] == 1 and record['passed'] == 1 and record['captureComplete'] and record['lifecycleKnown']
                       and detail['cleanup']['status'] == 'CONFIRMED' and detail['cleanup']['connectionsZero']
                       and detail['cleanup']['databaseAbsent'] and detail['cleanup']['appClosed'] and detail['cleanup']['fixtureClosed'] and detail['cleanup']['adminClosed']
@@ -147,6 +153,9 @@ def main():
         finally:
             if identity is not None:
                 try:
+                    if not process_closed(record.get('process')):
+                        record['temporary']['retainedReason'] = 'PROCESS_LIFECYCLE_UNKNOWN'
+                        raise ValueError('Keep temporary directory while process closure is unknown')
                     latest = temporary.lstat()
                     if (latest.st_dev, latest.st_ino) != identity or not stat.S_ISDIR(latest.st_mode):
                         raise ValueError('Temporary identity changed')
