@@ -594,3 +594,13 @@ Original后到明确授权的[04da/6c最小后端路线](../../docs/evidence/web
 GO本次补充沿DASHSUM01、TIMING02与本计划WPF-001-37：摘要由唯一status作者描述用户可获得什么、还差什么，SHA/claim/命令保技术字段，不由renderer猜写。TIMING02继续既定简洁本地时间、显式时区、UTC与来源下钻；开工/完成/含等待历时未知明确展示，不改真实时刻、不猜历史。阻塞归组仅沿有效显式关系读源；不扩大旧active/delivery去重验收，不新task或立即take，候选与验收见[既有D01后继输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json)。
 
 固定主线只读定位补足本条分组边界：原blockerIds资格保持；复用既有resolver且须 `links.kind === "subtask" && parent.state === "known"`、目标存在且有效，不能只看可能用于未核实导航的targetId。已验证big/none独立成组，其他关系明确待核实；父无自身blocker仅作导航标题，不创造父阻塞。覆盖父子均阻塞、仅子阻塞、目标存在但关系未知、父陈旧/循环、不同owner同文仍逐项保留；具体fixed source见[后继输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json)。
+
+### 原 WPF-001-37 与 TIMING02 的首屏优先级验收补充
+
+GO 2026-10-07 20:09 对实际4320与固定c29的只读观察：human.mjs 的 blockerIds 仍沿 registry 原顺序，未应用 priorityOrder；首屏前三使用 task 自身 priority，FLOW-001 仍为3；Arc 的实际领取尚未链接到正常任务来源；完整UTC、毫秒耗时与关系声明使摘要过长。来源为 GO 的 find-skills、web-design-guidelines1.0.0 与 Vercel command.md 方法，本管理段只登记观察，不称新增实现或复测。
+
+沿原37既有阅读层改动：打开先能看到关键交付和服务可用性，阻塞按owner明确priority稳定排序，再按已验证的大task关系阅读归组。原task/owner/阻塞原文/详情全部保留，未知关系单列，parent没有自身阻塞不能伪造状态；不以关键词猜severity、不文本去重、不建第二手填状态源。开始/完成用紧凑本地时间和显式时区，精确UTC、耗时来源与UNKNOWN留详情，所有事项可展开。
+
+先由原D05唯一writer在合法安全点完成已有Arc来源登记，Original owner自行核FLOW priority事实；本组不改其status/registry。UI实施等待现有owner空槽，使用独立worktree、fresh精确claim和受影响局部验证，复用现37 parent.state===known的关系规则及TIMING02既有计划，不另建同义task，不阻个人恢复。
+
+上述首屏排序验收复用[固定源码与六类定向输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-first-screen-priority-research.json)：打乱registry仍按owner priority稳定、关键词不影响、tie/unknown确定、父子事实独立、精确UTC可下钻、Arc领取到来源登记转换。只纳原37/TIMING02，不新增task或当前产品写权。

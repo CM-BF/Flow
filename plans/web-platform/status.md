@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T19:54:09.120Z；个人更新刷新阶段停止，优先核实并恢复接单；共享浮层和组合工作区继续各自检查准备。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T20:27:38.876Z；个人服务仍停机待恢复；恢复弹窗双主题窄屏选定检查通过，组合工作区运行准备已封存待审。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 新网页及完整草稿恢复的四版本检查已通过；个人更新已迁入后台产物，刷新服务时停止，恢复接单状态待核实，新网页尚未切换。 |
-| 下一可用交付 | 先沿原流程恢复个人安装接单，再完成已验证网页的切换；共享浮层和组合工作区继续独立推进。 |
+| 当前产出 | 新网页四版本检查已通过；个人更新刷新服务失败，相关进程和连接已关闭，服务尚未恢复、新网页未切换。恢复弹窗窄屏双主题检查已通过。 |
+| 下一可用交付 | 先沿原流程恢复个人安装接单，再完成已验证网页切换；组合工作区和文件选择浮层按独立候选继续验收。 |
 | 当前阻塞 | ACTIVE: 个人更新在刷新服务时停止，现有服务与恢复接单状态待原执行者确认；新网页尚未发布，个人逐消息设置目录仍待激活。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：个人更新仍保留排他窗口，外层退出不等于服务完整归还；无第二重段。隔离源码和已授普通检查可继续。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：个人活动资源已确认关闭，但用户尚未恢复接单；恢复仍最高优先，原执行者允许已就绪的60秒隔离视觉验证短窗。隔离源码和已授普通检查继续。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -73,7 +73,7 @@
 | WPF-001-35 | pending | d01_owner | RS13固定f82候选5asset/1,571,669 raw bytes仅观察，初始依赖图/延后chat及静态host cache-encoding冷暖与回滚验收已落plan；未take/实施，ACK/附件/发布优先，0个人服务/模型。 |
 
 | WPF-001-36 | completed | d01_owner | D01/DPERF两组隔离原证据与六scope[只读第二意见](../../docs/evidence/web-platform/dperf03-readonly-proposal.json)已归档；新增末尾HEAD核对后原28→23初为算术预期，实施后仅该临时样本已实测23，captured HEAD/permit/失败unknown为门槛；ATTACHI02实际派工后已root结构批准并fresh db0b7d25 v2七scope实施（新增专测分类helper）；45s/10s清理/8MiB，独审5609 APPROVED，已main a8aef五源同；7cc5双端clean全停写后db0b v3 released；不泛化CPU/SLO。 |
-| WPF-001-37 | pending | 原D01后继合法owner；d01_owner跟踪 | [原需求与候选scope](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json)：按有效显式关系分组阻塞，保每项原文/owner/来源，未知单列；未take/未实现，不改旧DASHSUM01完成范围。 |
+| WPF-001-37 | pending | 原D01后继合法owner；d01_owner跟踪 | [原需求与候选scope](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json)：按有效显式关系分组阻塞，保每项原文/owner/来源，未知单列；未take/未实现，不改旧DASHSUM01完成范围。  GO20:09补充原owner priority稳定排序、关键服务可用性首屏、TIMING02紧凑时间与详情；Arc既有D05来源登记/Original自身priority核对先行，UI独立领取后局部验收；未实施。 |
 
 已审设计输入：[快速设置双重生命周期门禁](../../docs/evidence/web-platform/message-settings-ownership-interface/root-review.json)已收敛；[新组件唯一source](../../docs/evidence/web-platform/message-settings-quick-controls-provision/registration-request.json)已六scope领取；[固定源码与179来源实际登记](../../docs/evidence/web-platform/message-settings02-35-source-intake/report.md)已接收，[fe6源码与c1静态准备已审](../../docs/evidence/web-platform/message-settings02-c1-prepared/report.md)由原owner负责，真实host接线仍需后继交权。
 

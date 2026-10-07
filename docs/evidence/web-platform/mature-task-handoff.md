@@ -1,6 +1,6 @@
 # Web 当前交接与唯一来源
 
-**即时调度 2026-10-07T19:51:55.743Z：PERSONAL_UPDATE_STOPPED_DIAGNOSIS，个人更新仍占排他HOLD，无第二NEXT。Original固定cd27迁入＋3报告＋bootstrap/strict-idle完成；refresh于19:47:21.167Z失败 START_UNCONFIRMED_CHECK_STATUS（58.210s，operator114.242s/exit1），尚未checkpoint/resume或发布779。19:48:31.241仅外层调用RETURN、outer/refresh PIDabsent及EOF，不能据此认定detached个人服务已停或用户已恢复接单。原owner同op35d5a7ff正在有界只读核3角色/phase/maintenance，不重放/不发模型。用户恢复优先，实际服务身份闭合前不授PG/Chrome/build新窗口；隔离源码与已授普通段继续。原19:43:39.755 START和消费floor18,518,114,304B保持历史。**
+**即时调度 2026-10-07T20:23:37.284Z：actual holder=NONE，NEXT=NONE。Recovery 在20:13:37.668772Z启动，20:15:46.418134Z精确FULLRETURN，选定cookieRead/themes390两项及两张390图已独审通过；10325/60000ms CLOSED，无续跑。经理已亲读PID/PGID、DB正常DROP/0连接、HTTP、scratch与admin归还回执。Picker仍NOT_RUN；Arc仅已封存候选待审。个人用户服务仍全停、maintenance23/同op35d5a7ff，d629/v3未变，未恢复接单或发布779；Original窄修真实READY后最高优先，不自动继承任何窗口。普通隔离source/local可继续，所有历史消费gate保持。**
 
 **S01启动交接历史：** 原owner已在截止前18:52:37.342481Z实际spawn，PID/PGID27722，同PID exec固定入口；18:53交接截止不影响已消费的300s实际运行，未撤销或打断；其后已terminal失败并活动资源RETURN，以下当前栏为准。原未报START等待过程保留历史。
 
@@ -10,9 +10,13 @@
 
 **Release主线接收与释放：** Original main/origin `d669f3acb466f6f11bd6d81c1bffb7ffeedb5010` 已逐字接收已审两harness。原作者 a831c 双端clean，18:35:22.477Z [7d60v3正式释放](host-i01-newpair-queue-20261007/release-main-d669-claim-release.json)，释放后不再写入。个人网页CAS发布仍待Original既有两阶段准备及实际准入；稳定兼容执行器后继仍开放，不冒整体完成。
 
-**普通局部已归还：** VISUAL第二轮严格类型检查PASS，18:25:58.676713Z完整归还；首红2745＋复验3020＝5765/30000ms CLOSED，未用24235不转。source4ca1deac仅真实HTMLElement guard与私有声明映射，owner7a8e双端clean/all8STOP。浏览器视觉尚未运行；W01已完成Release自身metadata收口与fresh claim归还，无产品重测。
+**普通局部已归还：** VISUAL第二轮严格类型检查PASS，18:25:58.676713Z完整归还；首红2745＋复验3020＝5765/30000ms CLOSED，未用24235不转。source4ca1deac仅真实HTMLElement guard与私有声明映射，owner7a8e双端clean/all8STOP。该类型段为历史事实；后继Recovery选定两项和双图现已PASS/归还，Picker仍NOT_RUN。W01已完成Release自身metadata收口与claim归还。
 
 **Original 新网页可接收：** c3的四正式版本报告已[独立批准](host-i01-newpair-queue-20261007/compatibility-c3-four-app-result-review.json)，固定 `cd27/04da + 779/c231 + policy81a8` 不等SVC09A双槽；固定[W01最小供给交接](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/main-intake.json)已齐（15,220B/SHA29004c44…32bdd），含四canonical正式报告及16check pins、两descriptor和原SVC06B接收目标；经理已核四报告本体hash，现正式交Original `assignment_review` 在 `backend-browser-recovery/docs/evidence/svc06/browser-recovery` 的既有SVC06B接收流程；Original已明确接受此职责，producer final8dfb双端clean。AV03本次已失败并完整归还，个人发布实际操作仍沿Original自身既有准入，不跨lead执行。旧两次FAIL与诊断证据原样保留，当前尚未个人部署。
+
+**Original 原源码交权与窄接收：** 原 `native_center_owner` 可按[唯一两叶交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/startup-observer-handoff-ready.json)（SHA5f3954c4…20f）fresh take后实施 startup observer；main.ts/index.ts已原子移出，index未main两行patch必须窄合并保留，禁止整blob覆盖。PROCESS四叶[verifier-extension入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/verifier-extension/review-ready.json)已Mika独审，sourceabc0736/packet3fcdf供Original正常main批；个人排他期间不build，不另授PG。详见[current](host-i01-newpair-queue-20261007/current.json)，Web管理不操作其他owner树。
+
+**Original 看板原优先级与来源请求：** GO 20:09只读发现 FLOW-001 自身priority仍3，关键服务恢复未进入首屏前三；请原owner核自身明确priority事实，Web管理不代改其status。请D05唯一writer在合法安全点完成已有Arc818B登记请求（c34d v1/exact20，唯一web-workspace-composition status；891f局部独审afb555已到），不新take或第二writer。阻塞阅读排序/紧凑时间沿原WPF001-37/TIMING02后继，个人恢复优先，不抢当前产品scope。
 
 **Original 唯一D05登记请求：** 原Arc计划候选已实际领取20scope，唯一status位于 `web-workspace-composition/plans/wpf-workspace-arc/status.md`；请沿[固定登记request](host-i01-newpair-queue-20261007/arc-source-registration-request.json)登记WPF-WORKSPACEARC01→该独立WT/branch，父WPF-MATURE-05。当前awaiting-source-sync，不是未领取；不新增第二writer/手填状态源，工程NOT_RUN保持。
 
@@ -22,7 +26,7 @@
 
 **已归还与保留资源：** K01独立恢复消费floor16,065,757,184B，freshfree18,674,704,384B也高于后到16,101,408,768B。前置KeyError发生在supervise/PG之前，0child0PG未消费；只运行一次恢复。固定receipt封存入口随后归档，不为等待seal占窗；DB后台可能增长仍按有限规划保守计。
 
-**当前领取与工作状态：** Release四版本已验证并main，原作者7d60v3已释放；个人发布待Original。VISUAL accev1/exact8已领取、必要类型检查已通过；已恢复原scope浏览器准备源码，实际浏览器验收尚未运行。Arc已c34d95d1v1精确20scope领取、源码实施中，尚无工程检查；I01已main并61abv2释放。领取、写入状态与实际运行分列。
+**当前领取与工作状态：** Release已验证并main/释放，个人恢复待Original；VISUAL accev1/exact8保留，Recovery两项及双图PASS并归还，Picker未运行，作者自然封存。Arc c34dv1/exact20保留，13定向例及affected types通过，最新reduced-motion候选96d00封存，HTTP2/browser4未运行待审；I01已main/释放。领取、源码STOP、实际运行与用户服务状态分别记录。
 **历史两次新检查候选预算（各计一次，最新完整线与授权只看页首）：** I01第二次独立60s保守新增264MiB、Release c2独立180s保守新增201MiB；17,454,858,240+276,824,064+210,763,776=17,942,446,080B未来完整线。旧两个失败阶段均CLOSED，余额不转，已删scratch不改旧原件，保留证据/KEEP不退款。后到R2/c2已消费gate均保持历史。
 
 **预算算术纠偏（不改历史gate）：** [明确更正事件](host-i01-newpair-queue-20261007/host-budget-arithmetic-correction.json)核SVC09A旧host envelope应为1,243,611,136B，原表漏24MiB；原R1 KEEP不退，新R2候选再计独立1,243,611,136B，当时future完整floor为17,454,858,240B。S01已按更高线实际执行并完整归还；R2已实际运行并明确归还，入口前失败及KEEP原件保留；该R2现无NEXT，不自动重试。

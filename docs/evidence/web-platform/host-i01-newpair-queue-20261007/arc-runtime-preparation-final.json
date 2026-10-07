@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-07T20:18:10.676380+00:00",
+  "task": "WPF-WORKSPACEARC01",
+  "claim": "c34d95d1-af01-4325-bcd5-77ba9dd28379 v1 exact20",
+  "state": "SOURCE_STOP_READY_FOR_REVIEW_NOT_RUNTIME",
+  "source": "7097c4d1cc429ee87e507a2210f2e9cceac99b56",
+  "executionHead": "96d00b0f8b61a6007dd7964e3d964c39828a10f1",
+  "actualRemote": "96d00b0f8b61a6007dd7964e3d964c39828a10f1",
+  "dirty": false,
+  "packetManifest": {
+    "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/manifest.json",
+    "bytes": 6833,
+    "sha256": "7e4be770c3ffcaa059297ef368e79b68647bfd888c18172000b4f51302b18382"
+  },
+  "entry": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/runtime-preparation-20261007/entry.json",
+    "bytes": 3031,
+    "sha256": "2d3e5590bb65bb9d6dc4862afebec3625c8cfa70af71e8a5b85c3eb92e8d04b7"
+  },
+  "binding": {
+    "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/binding.json",
+    "bytes": 145780,
+    "sha256": "d3a966fa23785bce73676af01050a53ba2dca19ce3faba7e46e14940d5d308e3"
+  },
+  "local": {
+    "actualMs": 4683,
+    "totalMs": 20000,
+    "state": "CLOSED",
+    "unusedMs": 15317,
+    "exactPidGroupAbsent": 30692,
+    "scratchAbsent": true
+  },
+  "newMeasuredLogicalBytes": {
+    "fullChangedProjectFiles": 100531,
+    "packetTMP": 224471,
+    "auxiliaryTMPIncludingLedger": 401681,
+    "sum": 726683,
+    "limit": 16777216
+  },
+  "runtime": {
+    "HTTP": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "gateCreated": false,
+    "reservation": false
+  },
+  "limitations": [
+    "207 fixed source physical pins; installed dependency manifests/entries identify packages, not every third-party transitive byte",
+    "Reduced-motion/source delta and caller proposals awaiting review",
+    "Whole feature/main unverified; original source/local approval retained"
+  ]
+}

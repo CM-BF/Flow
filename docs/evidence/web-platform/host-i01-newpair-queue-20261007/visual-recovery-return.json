@@ -1,0 +1,101 @@
+{
+  "observedAt": "2026-10-07T20:15:46.418134+00:00",
+  "run": "visual-rec-20261007-200858-7d7129",
+  "actualToolExit": 0,
+  "owned": [
+    {
+      "pid": 64539,
+      "process": "ABSENT_ESRCH",
+      "group": "ABSENT_ESRCH"
+    },
+    {
+      "pid": 64799,
+      "process": "ABSENT_ESRCH",
+      "group": "ABSENT_ESRCH"
+    },
+    {
+      "pid": 65128,
+      "process": "ABSENT_ESRCH",
+      "group": "ABSENT_ESRCH"
+    },
+    {
+      "pid": 68263,
+      "process": "ABSENT_ESRCH",
+      "group": "ABSENT_ESRCH"
+    }
+  ],
+  "errors": [],
+  "scratch": {
+    "path": "/private/tmp/flow-recovery-browser-VHdotz",
+    "state": "ABSENT_ENOENT"
+  },
+  "adminInputBefore": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/visual01-recovery-admission-34pv19fc/admin.env",
+    "dev": 16777234,
+    "ino": 124463421,
+    "uid": 501,
+    "mode": 384,
+    "nlink": 1
+  },
+  "adminInputDeleted": true,
+  "chargeMs": 10325,
+  "budgetMs": 60000,
+  "remainingUnspentMs": 49675,
+  "phaseState": "CLOSED",
+  "actualParentExit": 0,
+  "outerStreams": {
+    "stdout": {
+      "file": "parent.stdout.jsonl",
+      "bytes": 595,
+      "retainedBytes": 595,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "afb1f5f19a2ee252f6d4c588a1c2b7124c81a8ec2c7d3a9ae3a5942ee0ebc9d1"
+    },
+    "stderr": {
+      "file": "parent.stderr.log",
+      "bytes": 0,
+      "retainedBytes": 0,
+      "droppedBytes": 0,
+      "EOF": true,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  },
+  "fixtureCleanup": {
+    "complete": true,
+    "errors": [],
+    "elapsedMs": 21,
+    "wireBytes": 1271,
+    "providerQueries": 0
+  },
+  "databaseCleanup": {
+    "database": "flow_recovery_e0f4cc05cdfd4a92a0c100cded5f8244",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.755833999999595,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 0.699958000001061,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "selectedPassed": true,
+  "fullJourneyPassed": false,
+  "preparedLinks": "KEEP: readonly prepared inputs, not runtime-owned scratch",
+  "completeReturn": true
+}

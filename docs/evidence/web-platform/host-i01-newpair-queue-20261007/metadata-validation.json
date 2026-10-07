@@ -1,28 +1,49 @@
 {
-  "at": "2026-10-07T19:55:05.661010+00:00",
+  "at": "2026-10-07T20:29:14.648986+00:00",
   "scope": "Only current changed manager paths, added Markdown links, JSON and indexed archive hashes",
   "paths": [
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-layout-confirmation-finding.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-runtime-preparation-final.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-source-local-review.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/archive-index.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/canonical-adoption-research.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-first-screen-priority-research.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/metadata-validation.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/personal-current-window-return.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/quality-record.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/queue-receipt-mature06-research.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/recovery-content-hierarchy-followup.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/status-validation.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/svc09a-default-host-return.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-picker-preparation-review.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-recovery-preparation-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-recovery-actual-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-recovery-final-seal.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-recovery-peer-delta-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-recovery-return.json",
     "docs/evidence/web-platform/mature-task-handoff.md",
     "docs/evidence/web-platform/resource-window-current.json",
+    "plans/web-platform/plan.md",
     "plans/web-platform/status.md",
+    "plans/wpf-mature-01-visual/plan.md",
+    "plans/wpf-mature-01-visual/status.md",
     "plans/wpf-mature-06-chat/plan.md",
     "plans/wpf-mature-06-chat/status.md"
   ],
   "links": [
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "resource-window-current.json",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/startup-observer-handoff-ready.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/verifier-extension/review-ready.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "host-i01-newpair-queue-20261007/current.json",
+      "exists": true
+    },
+    {
+      "source": "plans/web-platform/plan.md",
+      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-first-screen-priority-research.json",
       "exists": true
     },
     {
@@ -31,38 +52,28 @@
       "exists": true
     },
     {
-      "source": "plans/wpf-mature-06-chat/plan.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
+      "source": "plans/web-platform/status.md",
+      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-01-visual/plan.md",
+      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-recovery-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-01-visual/plan.md",
+      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/recovery-content-hierarchy-followup.json",
       "exists": true
     },
     {
       "source": "plans/wpf-mature-06-chat/plan.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/queue-receipt-mature06-research.json",
+      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/canonical-adoption-research.json",
       "exists": true
     },
     {
-      "source": "plans/wpf-mature-06-chat/status.md",
-      "target": "../../docs/evidence/web-platform/release-c3-actual-admission-20261007/recovery-final-release-receipt.json",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-06-chat/status.md",
-      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-06-chat/status.md",
-      "target": "../../docs/evidence/web-platform/quick-b3-admission-20261007/recovery-validation-dependencies.json",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-06-chat/status.md",
-      "target": "plan.md",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-06-chat/status.md",
-      "target": "../../docs/evidence/web-platform/connection-recovery-priority.md",
+      "source": "plans/wpf-mature-06-chat/plan.md",
+      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/recovery-content-hierarchy-followup.json",
       "exists": true
     }
   ],
@@ -381,6 +392,38 @@
     },
     {
       "file": "visual-recovery-preparation-review.json",
+      "match": true
+    },
+    {
+      "file": "arc-source-local-review.json",
+      "match": true
+    },
+    {
+      "file": "visual-recovery-peer-delta-review.json",
+      "match": true
+    },
+    {
+      "file": "canonical-adoption-research.json",
+      "match": true
+    },
+    {
+      "file": "visual-recovery-actual-review.json",
+      "match": true
+    },
+    {
+      "file": "visual-recovery-return.json",
+      "match": true
+    },
+    {
+      "file": "arc-runtime-preparation-final.json",
+      "match": true
+    },
+    {
+      "file": "dashboard-first-screen-priority-research.json",
+      "match": true
+    },
+    {
+      "file": "visual-recovery-final-seal.json",
       "match": true
     }
   ],

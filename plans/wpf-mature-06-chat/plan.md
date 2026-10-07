@@ -206,3 +206,7 @@ Recovery原03/05已由[Original主线回执](../../docs/evidence/web-platform/re
 来源与排程事实见[管理原记录](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json)的 chatQueueAckFollowup；未继承个人部署或真实回执通过结论。
 
 本后继补充[固定035a四源研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/queue-receipt-mature06-research.json)：共享 package 目前没有 queue-control 导出，新增纯语义接口需原owner精确领取；五类定向反例保留历史 replay 与 latest mutable 状态的时态边界，不把重放回执直接与后来可变快照混比。仍为静态研究，未实施/未运行。
+
+原 MATURE06-04 身份恢复后继另保留[canonical adoption 静态研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/canonical-adoption-research.json)：固定f885/891f共有的 accepted(oldId,id) 在目标 canonical view/draft 已存在时可能覆盖该草稿，rename可能产生重复route。候选时序为 CREATE 已持久但 ACK 迟到或丢失、目录另开 canonical 写入B、原A随后回执或重试；必须先用既有真实App/ACK-loss fixture复现。当前标 REPRODUCTION_REQUIRED，非 Arc 新回归或本轮阻断；保完整草稿与原 key/body，不增重复task或并行App writer。
+
+原 MATURE06 恢复体验后继复用同一[草稿内容层级输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/recovery-content-hierarchy-followup.json)：安全名称不可得时用中性标签，不跨身份查名；保不自动发送、未决命令原key/body重试、删除边界和草稿/命令状态区分。仅直接消费者局部验收，个人恢复优先，不重复原完整矩阵。

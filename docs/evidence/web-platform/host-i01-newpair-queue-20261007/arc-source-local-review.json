@@ -1,0 +1,142 @@
+{
+  "reviewer": "root / gpt-6-astra / ultra",
+  "reviewedAt": "2026-10-07T19:58:04.273890+00:00",
+  "task": "WPF-WORKSPACEARC01",
+  "decision": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED_RUNTIME_ACCEPTANCE_PENDING",
+  "base": "f8853d4731eb6229337279079c24617c97d4f56b",
+  "source": "891f478cb0823f2ff1d02c75abefd1485bb826b6",
+  "metadataHead": "92d98f2267ad932d156c6f07a9e4b86524503782",
+  "blockingSourceFindings": [],
+  "verifiedInputs": {
+    "sourceManifest": {
+      "bytes": 5125,
+      "sha256": "261f31531b00ac20dd906248aadc7f384a02033891295475bf8270384398d751"
+    },
+    "productAndTestFiles": 18,
+    "localManifest": {
+      "bytes": 4306,
+      "sha256": "88e0e82713bb974ddfff7d5d7cf9a5599b96a1305ebf4e1a20896a035bbd1414"
+    },
+    "localRawFiles": 18,
+    "localRawBytes": 88327,
+    "mismatches": []
+  },
+  "resolvedFinding": {
+    "original": "root-arc-layout-confirmation-static-finding-20261007.json / SHA45dd24c20c99973f33392f74cffa3f8df623238ac9133dabc83df9b6ad9d6cae",
+    "priority": "P2",
+    "status": "FIXED_IN_SOURCE_AND_COVERED_BY_ACTUAL_HOST_PORT_REGRESSION",
+    "explanation": "AppLayoutPort.close retains the original invocation and plugin signal while the modal is merely prepared. App confirms view identity then commits that retained authorization synchronously before closeNow. Commit rechecks the original lifetime and consumes once. The new selected integration case rejects old confirmation after plugin disable/re-enable, layout A→B→A, or authentication replacement, and allows a fresh confirmation exactly once. Native close keeps its own path.",
+    "evidenceBoundary": "The exercised case uses actual PluginHost/AppLayoutPort with controlled App actions. Mounted App modal cancel/confirm/retained-draft coverage is written in the browser journey but has not run."
+  },
+  "reviewedDesign": [
+    "The bounded reference-only layout owns workspace membership, active panes and ratios; it does not duplicate business drafts, C/Symbol/attachment controllers or command authority.",
+    "All open keyed ChatPane wrappers are siblings under one stable parent across split/merge/reorder; hidden workspace references remain mounted and use the same visible-set decision as projection and message-settings visibility.",
+    "Layout invocation is captured before plugin activation awaits, checked again in the bridge and private App port, and revoked on old layout/connection/plugin lifetimes. Declared arguments and local resource identity are checked.",
+    "Stream leases reserve FIFO waiters before waking and yield after completed bounded batches while preserving hasMore work. The new fairness and hidden-waiter HTTP cases are necessary but not yet executed.",
+    "Workspace close waits for recovery flush and revalidates connection generation plus exact view-key membership; persisted local layout is bounded to 8 workspaces/3 panes/32 open references and excludes private draft data."
+  ],
+  "actualLocalResults": {
+    "direct": {
+      "passed": 13,
+      "notSelected": 34,
+      "failed": 0,
+      "source": "3fee1203490407b14e829903568ae86b57e6505c",
+      "categories": "6 reference-layout +2 plugin host +5 App-port lifecycle cases"
+    },
+    "finalTypes": {
+      "source": "891f478cb0823f2ff1d02c75abefd1485bb826b6",
+      "actualExit": 0,
+      "logBytes": 0,
+      "scope": "17 affected TS/TSX inputs plus the fixed sparse import closure; not whole Web"
+    },
+    "sourceSinceDirect": "Only the browser test added public protected-close assertions; tested product and direct test sources are unchanged. No redundant direct rerun required.",
+    "attempts": [
+      {
+        "label": "direct-1",
+        "actualExit": 1,
+        "chargeMs": 1952
+      },
+      {
+        "label": "types-1",
+        "actualExit": 2,
+        "chargeMs": 4653
+      },
+      {
+        "label": "direct-2",
+        "actualExit": 0,
+        "chargeMs": 2037
+      },
+      {
+        "label": "types-2",
+        "actualExit": 0,
+        "chargeMs": 4692
+      },
+      {
+        "label": "types-3",
+        "actualExit": 0,
+        "chargeMs": 4686
+      }
+    ],
+    "firstFailures": "Initial direct sparse import closure failed; initial types failed on missing fixed transitive files and two fixture typing points. Both raw failures remain archived.",
+    "totalChargedMs": 18020,
+    "segmentState": "CLOSED",
+    "unusedNotTransferred": true,
+    "cleanupObservation": {
+      "observedAt": "2026-10-07T19:44:31.817845+00:00",
+      "identities": [
+        {
+          "pid": 54527,
+          "processAbsent": true,
+          "groupAbsent": true
+        },
+        {
+          "pid": 92068,
+          "processAbsent": true,
+          "groupAbsent": true
+        },
+        {
+          "pid": 66202,
+          "processAbsent": true,
+          "groupAbsent": true
+        },
+        {
+          "pid": 88252,
+          "processAbsent": true,
+          "groupAbsent": true
+        },
+        {
+          "pid": 95910,
+          "processAbsent": true,
+          "groupAbsent": true
+        }
+      ],
+      "scratchAbsent": true,
+      "logs": "regular files closed by parent, not pipe dualEOF",
+      "toolExits": {
+        "direct-1": 1,
+        "types-1": 1,
+        "direct-2": 0,
+        "types-2": 0,
+        "types-3": 0
+      },
+      "actualChildExits": {
+        "direct-1": 1,
+        "types-1": 2,
+        "direct-2": 0,
+        "types-2": 0,
+        "types-3": 0
+      },
+      "spentMs": 18020,
+      "remainingMs": 41980
+    }
+  },
+  "runtimeAcceptancePending": {
+    "http": "Two real fixture HTTP stream-host cases must establish repeated third-pane progress and hidden/closed waiter release, maximum two concurrent reads. NOT_RUN.",
+    "browser": "Four actual App groups cover manual keyboard tabs, max-three/fourth refusal, stable composer identity through real attachment preparation await, explicit six-body-read peak, retained next draft, long-transcript reading anchor, workspace reload, 390px themes and protected close. NOT_RUN; no PNG exists.",
+    "motion": "Include the user-requested reduced-motion observation in the existing browser acceptance coverage before claiming motion accessibility verified; new CSS itself adds no animation.",
+    "visual": "Root must actually view both generated theme screenshots before accepting appearance.",
+    "boundary": "HTTP30s/browser90s entries are proposals only. A concrete bounded caller and native/resource admission belong to the manager after the current personal diagnosis is truly returned; this report grants no runtime."
+  },
+  "skillsAndCleanCode": "Applied previously discovered local assistant-ui, clean-code, codebase-design and accessibility methods: preserve official Thread ownership, review lifetime/single-writer interfaces and finite limits, inspect real-consumer assertions and failure cleanup. Root performed fixed-source/evidence reads only; no product modification/import/test/PG/browser or main integration.",
+  "finalStatus": "Feature remains in progress; independent source/local review now exists, runtime/visual acceptance and main integration do not."
+}

@@ -1,0 +1,47 @@
+{
+  "observedAt": "2026-10-07T20:04:21.548646+00:00",
+  "kind": "existing-MATURE06-canonical-conversation-adoption-research",
+  "state": "REPRODUCTION_REQUIRED_BACKLOG_ONLY",
+  "fixedSources": [
+    {
+      "source": "f8853d4731eb6229337279079c24617c97d4f56b",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 74808,
+      "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e"
+    },
+    {
+      "source": "891f478cb0823f2ff1d02c75abefd1485bb826b6",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 83437,
+      "sha256": "80ab282dc3a18e9a6362235352871dd0b71ae2406fa892c8e32081e593a3cadc"
+    },
+    {
+      "source": "891f478cb0823f2ff1d02c75abefd1485bb826b6",
+      "path": "apps/web/src/workspace-state.ts",
+      "bytes": 8309,
+      "sha256": "e22667e137b7ff08a178063a92f906f0767aceab000ca40ccf6bfb0fc43b54ea"
+    },
+    {
+      "source": "f8853d4731eb6229337279079c24617c97d4f56b",
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28820,
+      "sha256": "e20a387e95689b0f8d532acfd198c433ebd45b13aa6621686c3493f29509bbe2"
+    }
+  ],
+  "observation": "App accepted(oldId,id) already unconditionally replaced views[nextId] and drafts[nextId] on the frozen baseline before Arc. Arc preserves that behavior through renameLayoutView, which does not collapse an existing destination route. This is not a newly introduced Arc regression finding.",
+  "candidateTrigger": [
+    "A new draft sends creation; the center durably creates the conversation but its acknowledgement to this view is delayed or lost.",
+    "The user refreshes the conversation catalog, opens that newly listed canonical conversation in another local view, and writes an independent draft there.",
+    "The original response or explicit same-key retry later resolves. accepted(oldId,id) moves the original view onto the already occupied canonical key."
+  ],
+  "staticConsequenceToVerify": "The map replacement has no destination-owner/protected-draft conflict check; both layout references can become the same route/key. The replacement may hide or overwrite the independent destination draft and leave duplicate layout references. readLayout subsequently rejects duplicate routes. This lifecycle has not been dynamically reproduced by root, so severity and final repair are intentionally not asserted.",
+  "neededReproduction": "Use the existing public HTTP creation/ACK-loss fixture plus actual App: delay CREATE acknowledgement after durable catalog visibility, create a destination draft B, then settle or explicitly retry the original frozen request A. Observe stable view keys, both complete draft records/material/settings, layout uniqueness and request keys. Keep the old failure if observed. Do not create a separate fake state machine or run a PG/provider workflow.",
+  "designConstraints": [
+    "A canonical conversation identity cannot silently authorize discarding another protected local draft.",
+    "Use one explicit conflict/adoption policy for delayed normal acceptance and recovered receipts; keep original idempotency key/body and never resend automatically.",
+    "Preserve complete draft ownership and saved recovery records, not merely textarea text.",
+    "Choose the repair seam only after reproducing the actual two-consumer collision; avoid a new global draft registry or duplicate receipt validator."
+  ],
+  "coordination": "Queue one reference under the existing MATURE06 identity/recovery successor (with MATURE05 navigation cross-reference if useful). Original/manager decide exact scope take after present Arc/runtime and personal recovery work. No new large task, parallel App writer, claim or current scope expansion.",
+  "method": "Fixed-source read-only research using existing find-skills/codebase-design/clean-code methods. No tests, imports, HTTP, PG, Chrome, product edits or resource allocation."
+}
