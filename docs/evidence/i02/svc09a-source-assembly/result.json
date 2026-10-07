@@ -1,0 +1,50 @@
+{
+  "task": "SVC09A",
+  "at": "2026-10-07T14:59:38.993Z",
+  "sourceHead": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+  "tree": "f9f149a4dda976dad500545df1b26f825ac5b59d",
+  "base": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "scope": [
+    "apps/server/src/runners.ts",
+    "tools/personal-preview/backend-release/artifact.test.mjs",
+    "tools/personal-preview/backend-release/files.mjs",
+    "tools/personal-preview/backend-release/index.mjs",
+    "tools/personal-preview/cli.mjs",
+    "tools/personal-preview/environment.mjs",
+    "tools/personal-preview/environment.test.mjs",
+    "tools/personal-preview/maintenance-host.mjs",
+    "tools/personal-preview/maintenance.test.mjs",
+    "tools/personal-preview/preview.mjs",
+    "tools/personal-preview/preview.test.mjs",
+    "tools/personal-preview/runner-slots.mjs",
+    "tools/personal-preview/runner-slots.test.mjs",
+    "tools/personal-preview/startup-diagnostics.mjs",
+    "tools/personal-preview/startup-diagnostics.test.mjs"
+  ],
+  "sourceBinding": "preflight.json",
+  "claimReceipt": "take-receipt.json",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-message-settings-source",
+  "branch": "codex/backend-message-settings-source",
+  "status": "SOURCE_ASSEMBLED_CLEAN",
+  "commonConfigUnchanged": true,
+  "mainUnchanged": "fd9dd5a9bfdd67a5397a2833420b1f874511f1d9",
+  "provisioningNote": "New no-checkout tree had empty index after sparse set, so first preimage read returned missing without source edits. Initialized its index and selected materialization via read-tree -mu HEAD; clean base then verified all preimages before exact restoration. No other tree/config changed.",
+  "tests": 0,
+  "dependencyInstall": 0,
+  "artifactBuild": 0,
+  "personalOperations": 0,
+  "limits": "Fixed reviewed 15-path combination only; runtime artifact and actual host validation still required.",
+  "authorFinalComposition": {
+    "commit": "4470b27820f70460e935eb8fd85251eac0ad453d",
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/source-composition.json",
+    "bytes": 11340,
+    "sha256": "bdd9bd2e5f1e103dbbdae1d21b543a697fbbd664ee1acfe1de6ae67493a58974",
+    "bindingComparison": "15 exact before/after/fixedRef entries identical to assembly preflight"
+  },
+  "branchPushed": true,
+  "integrationClaimReleased": {
+    "version": 2,
+    "at": "2026-10-07T15:00:01.552Z",
+    "receipt": "release-receipt.json"
+  }
+}
