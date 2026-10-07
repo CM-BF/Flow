@@ -1,0 +1,100 @@
+{
+  "sourceTarget": "192d8b35101a7b870bc19c1602cbf209a75aab0a",
+  "base": "311e62158186177e344b49d24ed32e335268be1d",
+  "bindings": [
+    {
+      "path": "apps/runner/src/native-stream-ownership.test.ts",
+      "bytes": 6936,
+      "sha256": "1e695d307142a9b2af84795aa63af0b2d98a76b4ae078b8304c5f7d7affebdaf"
+    },
+    {
+      "path": "apps/runner/src/attempt-control.ts",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 4130,
+      "sha256": "e826e7ed8387bcec3453c0ffb60b044c038ed8c6aab4773ebdfc434452c7f60d"
+    },
+    {
+      "path": "docs/evidence/s01p08/README.md",
+      "bytes": 3129,
+      "sha256": "cabfd1d328d65c62f6bf9de5b75208b5d3aa2c14091c12dc12c0a8cba166ca96"
+    },
+    {
+      "path": "docs/evidence/s01p08/baseline-test.ts.txt",
+      "bytes": 6859,
+      "sha256": "060400fbf16a0c867eeff3d228fe9c1f4ed8578fc15862893e7c86c114f31289"
+    },
+    {
+      "path": "docs/evidence/s01p08/baseline.txt",
+      "bytes": 887,
+      "sha256": "4eae7e1c47e3b5607e28779ad78667e0b07ffed58b575cdcd9be8d4629ef57cd"
+    },
+    {
+      "path": "docs/evidence/s01p08/claim-receipt.json",
+      "bytes": 644,
+      "sha256": "81a514563c02f45c156de326f08a849d70c0dc10491d0350c9c06523fbe96415"
+    },
+    {
+      "path": "docs/evidence/s01p08/dependencies.json",
+      "bytes": 1094,
+      "sha256": "8f620aa40ee05ab403d040ea237706e03e486eb0010211ace2baf621aab1e0bc"
+    },
+    {
+      "path": "docs/evidence/s01p08/focused.txt",
+      "bytes": 887,
+      "sha256": "d2c2e73f7990a8bf523648bb989c9cd2c2d466e94da66ec1ef2e460684325ec9"
+    },
+    {
+      "path": "docs/evidence/s01p08/interface.md",
+      "bytes": 906,
+      "sha256": "e131c491c9aa68a1635a48385c7cd86bdcb4805ed02f10fd3bc7b354aef16a2e"
+    },
+    {
+      "path": "docs/evidence/s01p08/local.json",
+      "bytes": 13505,
+      "sha256": "520be83dd84870e0d4723d370b33329f19b88d2595f97fdabddc559fefc734bc"
+    },
+    {
+      "path": "docs/evidence/s01p08/run-local.py",
+      "bytes": 3621,
+      "sha256": "324399e341e2623d60e93f7c7b4407afef819eb825462cb4948ac76938233881"
+    },
+    {
+      "path": "docs/evidence/s01p08/source-closure.json",
+      "bytes": 19260,
+      "sha256": "09c7808d650de4b27e9e33fe8af4d24054d1feb35e155cb2e984950dbb54f7c9"
+    },
+    {
+      "path": "docs/evidence/s01p08/tsconfig.json",
+      "bytes": 832,
+      "sha256": "444433b06d30c34f4c1c253579c03495efaf7f7b229ddac4581414cbc25ba4fb"
+    },
+    {
+      "path": "docs/evidence/s01p08/types-fixed.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p08/types.txt",
+      "bytes": 1875,
+      "sha256": "ebb767a44d7e2c9ca2d0c54ff6271c72f2f12a6c7bd17f96c6639de2195df8d9"
+    },
+    {
+      "path": "docs/evidence/s01p08/vitest.config.mjs",
+      "bytes": 688,
+      "sha256": "3c6842cd64e2ec7de97aeb287bd3a0e7601dd8270ff0f201002fea341313cd50"
+    },
+    {
+      "path": "docs/evidence/s01p08/vitest.config.mjs.baseline.txt",
+      "bytes": 766,
+      "sha256": "3ee70ab727d52baf50bc516f98a521317112d2c281646b6c6d630efc801d2e50"
+    }
+  ],
+  "count": 18,
+  "bytes": 70739,
+  "coverage": "Baseline/test safety evidence only. Product optimization NOT_IMPLEMENTED; no PG/HTTP/provider/native claim. Readonly87source closure and package metadata in linked records, not copied product files.",
+  "recordedAt": "2026-10-07T06:42:58.783427+00:00"
+}

@@ -13,7 +13,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-stream-ownership |
 | Branch | codex/native-stream-ownership |
 | Base | 311e62158186177e344b49d24ed32e335268be1d |
-| HEAD | 基线；当前metadata提交由Git读取 |
+| HEAD | 基线/检查 target 192d8b35101a7b870bc19c1602cbf209a75aab0a；当前metadata提交由Git读取 |
 | 工作分支状态 | in-progress |
 | 阶段 | M2 |
 | 优先级 | 4 |
@@ -32,6 +32,8 @@ S01P08-01 completed（真实基线）；S01P08-02 blocked（adapter交权）；S
 
 ## 2026-10-07T06:42:10.846281+00:00 有界交付与质量
 
-入口[README](../../docs/evidence/s01p08/README.md)，单份local记录4个child，7distinct/strict0/4个已修fixture类型诊断原件保留；0PG/HTTP/native/provider。C02于06:40附近消息明确停写adapter，但本段尚无amend receipt，因此不占/不改其product，最小候选未实施。原20分钟段在准备/检查范围提前收束，4child额度已用完，无待launch；新运行须后继段。
+入口[README](../../docs/evidence/s01p08/README.md)，单份local记录4个child，7distinct/strict0/4个已修fixture类型诊断原件保留；0PG/HTTP/native/provider。C02于本段消息明确停写adapter，但本段尚无amend receipt，因此不占/不改其product，最小候选未实施。原20分钟段在准备/检查范围提前收束，4child额度已用完，无待launch；新运行须后继段。
 
 本地find-skills/brainstorming/codebase-design/固定clean-code沿interface记录。检查真实Module/Interface、单一AttemptControl权威、错误/unknown、fake字段完整性及预算；不另造benchmark。唯一status供dashboard聚合，来源本WT/branch，提交HEAD由Git读取，展示PENDING_REGISTRATION/PENDING_SYNC；需Lead登记本子task。架构图未变化，候选尚未实现。
+
+独审target `192d8b35101a7b870bc19c1602cbf209a75aab0a`，入口review-manifest.json；产品adapter/control相对base零diff。实际local已于06:41:09.667882Z收束并向C02归还，当前0待启动。
