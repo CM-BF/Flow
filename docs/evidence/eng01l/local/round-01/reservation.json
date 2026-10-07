@@ -1,0 +1,35 @@
+{
+  "startedAt": "2026-10-07T07:41:00.476897+00:00",
+  "scratch": "/private/tmp/eng01l-local-td093s3w",
+  "dev": 16777234,
+  "ino": 123636372,
+  "freeBytes": 24193957888,
+  "priorMs": 0,
+  "mode": "tests",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-readonly-tool-host/docs/evidence/eng01l/local/vitest.config.mjs",
+    "--reporter=verbose",
+    "-t",
+    "ENG01L|stock helper policy"
+  ],
+  "sources": {
+    "apps/runner/src/engineering/native-authority.ts": "f082810981c84648b6abb5c3ce6d6afa5ae87fd2f33ad0f7f83ee1c4f2944f77",
+    "apps/runner/src/engineering/native-authority.test.ts": "664d4a8c08914f5c94266233be2ebbd379ebd13de00596bee5d897af4ab28b36",
+    "apps/runner/src/engineering/native-authority-darwin.ts": "22fa41b44d9793657663655b14e5f5a2657a6dace8d50b98c436904dc4d27148",
+    "apps/runner/src/engineering/native-authority-darwin.test.ts": "7693ae59ac077bc016295538d1c08f53c242bd4c3a58bcf0aca6186eb8d031c3",
+    "apps/runner/src/engineering/native-tool-host.ts": "15f81172bc9933db1c98f8b9f3985f24f39efe62d8e326a3f03b6b4fb4462ffd",
+    "apps/runner/src/engineering/native-tool-host.test.ts": "cf700562b7c50d3a930032b98867e82b84ffce02fc0c7e872688dfcb4d76dd81",
+    "apps/runner/src/native-harness/codex/exchange.ts": "b98319adecafb5a3f8653df0f14844f44d8a40714060a624e3316a264f77f98a",
+    "docs/evidence/eng01j/helper-host/startup-input.sb": "ba856d7949bd2d305789995058e4b11edc4df16eb1504d67c3b160a2821b77cf",
+    "docs/evidence/eng01l/local/run.py": "50d4f3f4a055355e98120d991767a2c33fcc5d1b322b233c93d199ed3f9dec18",
+    "docs/evidence/eng01l/local/vitest.config.mjs": "28401525a6a27237814d8620a9a443a51b2e7f1a5a17d95633a0f5ff0644ff00",
+    "docs/evidence/eng01l/local/tsconfig.json": "255fa5637994433ff5ffecaaefc5a131d3f8e4a7793311a228dfb3f7c637b8c9",
+    "tools/owned-process-supervision/supervise.py": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "provider": 0,
+  "PG": 0
+}
