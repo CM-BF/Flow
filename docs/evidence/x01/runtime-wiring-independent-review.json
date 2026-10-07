@@ -1,0 +1,49 @@
+{
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "at": "2026-10-07T08:59:36Z",
+  "verdict": "SOURCE_AND_LIMITED_LOCAL_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "sourceCommit": "2ea5adfedfe0187a49cde13c769823be753a1496",
+  "resultCommit": "3ae09ac16c744cbfae81edd81b851f7c267f80e9",
+  "packetCommit": "2c219bca90868babf7a7f723404516b856991fb0",
+  "manifest": "docs/evidence/x01/runtime-wiring-review-ready.json",
+  "manifestSha256": "602ae6ad0ce341fcb27022535b221622f2971d6653ab03fc94dcf2966e0c5e10",
+  "checked": {
+    "bindings": 125,
+    "bytes": 851060,
+    "external": 6,
+    "mirrorFiles": 98,
+    "mirrorBytes": 570204,
+    "mirrorOrigins": {
+      "mainB768": 87,
+      "own": 9,
+      "LAZY294": 1,
+      "mainRunnerPlusApproved685": 1
+    }
+  },
+  "sourceConclusion": "Per-file diff retains LAZY/P02/Codex. Single FlowClient private transport and store-only runtime, explicit trusted center mount, binding retry guard before new task/audit/wake. Prior auth/journal/phase uncertainty remains.",
+  "results": {
+    "initialTypes": 2,
+    "fixedTypes": 0,
+    "distinctPass": 6,
+    "initialUnselected": 11,
+    "targetedRetestPass": 2,
+    "targetedUnselected": 15,
+    "children": 4,
+    "rawBytes": 2109,
+    "ownedGroups": "final absent",
+    "mergedEOF": true,
+    "secondaryAndSignals": [],
+    "cleanup": "original four TMP and one fixture identity/cleanup receipts; reviewer did not revisit roots"
+  },
+  "limitations": [
+    "Recovery SQL/command mock rollback is not PG evidence",
+    "Full factory closure not compiled and no real mount/HTTP",
+    "CLI, real npm public journey and complete pin recovery open",
+    "Initial EPERM retained; whole external wall and peak unknown",
+    "Main requires narrow delta and actual integration consumer check"
+  ],
+  "reviewerActions": "read only; no import/test/PG/write; no old11/19/9/3/5 rerun"
+}

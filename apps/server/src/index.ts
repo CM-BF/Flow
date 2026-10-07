@@ -1,7 +1,8 @@
 import { migrateGoalPlanConfirmations, registerGoalPlanConfirmationRoutes } from './goal-plan-confirmation/index.js';
 import { migrateGoalProgressions, registerGoalProgressionRoutes, scanGoalProgressions } from './goal-progression/index.js';
 import { registerUsageReadoutRoutes } from './usage-readout/index.js';
-import { migratePluginRuntime } from './plugin-runtime/store.js';
+import { migratePluginRuntime, type TrustedPluginHostPolicy } from './plugin-runtime/store.js';
+import { registerPluginRuntimeRoutes } from './plugin-runtime/routes.js';
 import { registerRunnerClaimRoutes } from './runner-claim-routes.js';
 import { migratePluginInstallations } from './plugin-installations/migration.js';
 import { registerPluginInstallationRoutes } from './plugin-installations/routes.js';
@@ -60,6 +61,8 @@ export interface ServerOptions {
   automaticQueueScan?: boolean; packageFetchHost?: PackageFetchHost;
   /** Explicit host policy for static material installation; absent keeps these routes disabled. */
   pluginInstallHost?: PluginInstallHost;
+  /** Explicit operator trust. Absence leaves plugin admission and phase routes unmounted. */
+  pluginRuntimeHostPolicy?: TrustedPluginHostPolicy;
   /** Explicit browser trust policy; absent keeps credentialed browser sessions disabled. */
   browserSession?: BrowserSessionOptions;
   /** Trusted host opt-in for controlled integrations; the production CLI leaves intake disabled. */
@@ -177,6 +180,7 @@ export async function createServer(options: ServerOptions) {
   registerPluginRoutes(app, pool);
   if (options.packageFetchHost) registerPackageFetchRoutes(app, pool, options.packageFetchHost);
   if (options.pluginInstallHost) registerPluginInstallationRoutes(app, pool, options.pluginInstallHost);
+  if (options.pluginRuntimeHostPolicy) registerPluginRuntimeRoutes(app, pool, boss, options.pluginRuntimeHostPolicy);
   registerAssistantRoutes(app, pool);
   registerNativeActivityRoutes(app, pool);
   registerNativeActivityBodyRoutes(app, pool);

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T09:27:34.488514+00:00 / main 63768046；O16分阶段实验与FLOW后继记录限定接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T09:37:40.693168+00:00 / main d022c800；本批接收X01已审runtime/中心接线 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main 63768046；本批仅O16实验/自有记录及已审FLOW管理文档，无生产源变化 |
+| 工作基线 / HEAD | main d022c800；八固定产品逐字同2ea5adfe/9b639，四公共路径旧像与已审基线同一 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | O16固定52绑定/289产品/21实验/39alias/3runtime/128轮前绑定核同，16不同局部用例分轮证据复核；本次0工程重跑。 |
-| 已集成main状态 / HEAD | main/origin 63768046已接固定后台构建证据和快捷设置组件；本次O16分阶段实验受控接收，真实PG/native阶段与个人部署未变。 |
+| 检查状态 | 当前组合17/17、根noEmit0、真实createServer入口import0（未调用）；12.445s/800Braw、3组absent/双EOF、临时目录已清理。 |
+| 已集成main状态 / HEAD | main/origin d022c800已接O16分阶段实现；本批接收X01共享client、唯一runner与可信中心接线，原公开插件PG结果另由Mika独审。个人backend af51/v18、Web d629/v3/c7b宿主保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 固定后台构建与快捷设置组件已进入主线；目标旅程分阶段暂停、复核与续接的局部实现已通过独立审查。 |
-| 下一可用交付 | 验证固定后台的真实宿主、历史迁移和网页兼容；目标旅程继续补实际登录与写入范围，再申请独立模型预算。 |
+| 当前产出 | 固定后台构建、快捷设置组件和分阶段目标实验已合入；插件执行接线通过当前主线直接检查。 |
+| 下一可用交付 | 验证新后台的真实宿主、历史迁移和网页兼容；插件的操作入口与未知副作用恢复仍需后继。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -382,3 +382,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 2026-10-07T09:08:56.687153+00:00：固定后台产物结果限定独审通过并进入本批接收；见[唯一结果审查](../../docs/evidence/i02/svc06-b2b-result-review.json)。真实构建30,975ms/exit0、33 SQL、自有组absent/双EOF；artifact保留供后继宿主，0PG/provider/个人操作。构建通过不关闭实际迁移、三retained App新tuple或部署验收。
 
 2026-10-07T09:14:24.661602+00:00：补接独审Quick四固定源与唯一原件，主线原四文件与候选base相同、无手工冲突；当前Codex合同组合Web noEmit0/6121ms、自有组absent/双EOF。见[接收依据](../../docs/evidence/i02/quick-component-intake.json)。原26/6浏览器组未重跑；真实App/Send/Queue/Recovery与个人部署仍未由本片完成。
+
+2026-10-07T09:37:40.693168+00:00：已审插件runtime/domain 9b639与共享接线2ea5按四公共旧像核同后窄接，8产品逐字同固定源；[接收证据](../../docs/evidence/i02/x01-runtime-wiring-intake.json)。17直接检查、根类型和完整中心入口加载均通过，0PG/provider/个人操作；不把factory import当实例/网络验收，CLI和完整pin恢复仍开放。

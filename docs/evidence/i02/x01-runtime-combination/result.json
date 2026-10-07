@@ -1,0 +1,145 @@
+{
+  "startedAt": "2026-10-07T09:36:50.141687+00:00",
+  "freeBefore": 23413370880,
+  "limits": {
+    "totalWorkSeconds": 60,
+    "rawBytes": 1048576,
+    "scratchBytes": 8388608
+  },
+  "scratch": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-intake-e41vqdc7",
+    "dev": 16777234,
+    "ino": 123736672
+  },
+  "runs": [
+    {
+      "pid": 5561,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1559,
+      "observed_bytes": 753,
+      "retained_bytes": 753,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "direct",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "packages/client/src/plugin-runner.test.ts",
+        "apps/runner/src/plugins/runtime.test.ts",
+        "apps/server/src/plugin-runtime/recovery.test.ts",
+        "--no-file-parallelism"
+      ],
+      "passed": true
+    },
+    {
+      "pid": 6924,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 9946,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "types",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "passed": true
+    },
+    {
+      "pid": 16265,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 932,
+      "observed_bytes": 47,
+      "retained_bytes": 47,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "factory-import",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--import",
+        "tsx",
+        "--input-type=module",
+        "-e",
+        "const m=await import('./apps/server/src/index.ts'); if(typeof m.createServer!=='function')throw new Error('factory export missing'); console.log('factory-import: exported function; not invoked')"
+      ],
+      "passed": true
+    }
+  ],
+  "rawBytes": 800,
+  "scratchBytesObserved": 2611412,
+  "elapsedMs": 12445,
+  "finishedAt": "2026-10-07T09:37:02.585239+00:00",
+  "passed": true,
+  "scratchRemoved": true
+}

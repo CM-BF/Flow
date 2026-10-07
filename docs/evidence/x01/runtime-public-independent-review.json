@@ -1,0 +1,20 @@
+{
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-07T08:43:58Z",
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "sourceCommit": "9b639f79367a118562da4fe7c8d977173a488200",
+  "resultCommit": "65d61744d5fc3b63b2c002c291787fea086a1638",
+  "packetCommit": "c178d0672365fec42d3c3c3f4faf3a32bf2fddfe",
+  "manifestSha256": "39350e522a3016777eb1f2fdf64b6ea4118a5db7034a0bd4c653988e964f4a6f",
+  "scope": "runtime/plugin domain four source + 11 injected-host/transport direct cases; no public HTTP/real npm/server mount/CLI",
+  "limits": [
+    "89 bindings/493975B and 6 externals verified",
+    "typed source mirrors retain P02/Codex; two-line approved pluginSource addition",
+    "unknown remains journal-retained; no completed/reexecution",
+    "3child terminal receipts; initial EPERM/wholeExternalWall and peak UNKNOWN preserved",
+    "reviewer zero execution or project writes"
+  ]
+}

@@ -1,0 +1,108 @@
+{
+  "state": "READY_FOR_CONTROLLED_INTAKE",
+  "sourceCommit": "2ea5adfedfe0187a49cde13c769823be753a1496",
+  "reviewPacket": "2c219bca90868babf7a7f723404516b856991fb0",
+  "review": "docs/evidence/x01/runtime-wiring-independent-review.json",
+  "createdAt": "2026-10-07T09:00:56.457504+00:00",
+  "changes": [
+    {
+      "path": "packages/client/src/index.ts",
+      "sourceCommit": "2ea5adfedfe0187a49cde13c769823be753a1496",
+      "baseCommit": "2949569bcac7d3b0257a0026f488f42eb6276222",
+      "blob": "78410622bcd013abe7cef398cc10fd80a1ab6497",
+      "bytes": 62869,
+      "sha256": "bd23661ab3cfa48e1c20c1e4a2b09afdbe237c81a1408510790642bbab81fdbb"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sourceCommit": "2ea5adfedfe0187a49cde13c769823be753a1496",
+      "baseCommit": "9b639f79367a118562da4fe7c8d977173a488200",
+      "blob": "6a3f8a4ec809bb60d3c4b484eccd30dcbc1d6e18",
+      "bytes": 21391,
+      "sha256": "f921a78627da108a0cff3fd3d22f8fbc988e1796790beeeb7ee011ee1ec7d302"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "sourceCommit": "2ea5adfedfe0187a49cde13c769823be753a1496",
+      "baseCommit": "b7687ff3b33d538e2b41e05ec849f670d9b9d8bb",
+      "blob": "4c703bbb4b5499d1b74594f4c6b4ebe6f1117f25",
+      "bytes": 15452,
+      "sha256": "bbb02feaea68447ba91672955e846c0682a9542a9720c8b8cf786ca34694b2c0"
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "sourceCommit": "2ea5adfedfe0187a49cde13c769823be753a1496",
+      "baseCommit": "b7687ff3b33d538e2b41e05ec849f670d9b9d8bb",
+      "blob": "f75d1be6b97ec15ef2f92298ce2b7630e8e0e0b3",
+      "bytes": 12251,
+      "sha256": "9410553d861c9997024304a0e537fbdd7b4a1417dc0025d2f4c59cd951bf03b0"
+    },
+    {
+      "path": "packages/client/src/plugin-runner.test.ts",
+      "sourceCommit": "2ea5adfedfe0187a49cde13c769823be753a1496",
+      "baseCommit": "9b639f79367a118562da4fe7c8d977173a488200",
+      "blob": "850d041a593e8500aa31b9103cc9a091f27a18be",
+      "bytes": 6049,
+      "sha256": "4dc8629df0b96862988418fb47faf8a12b9337f0a898e0841294725c705bf7b6"
+    },
+    {
+      "path": "apps/runner/src/plugins/runtime.test.ts",
+      "sourceCommit": "2ea5adfedfe0187a49cde13c769823be753a1496",
+      "baseCommit": "9b639f79367a118562da4fe7c8d977173a488200",
+      "blob": "414784b3f137633aacfcf7a62f8975acad26ae9e",
+      "bytes": 11058,
+      "sha256": "e0e977543e57343351b872ea4beffec84adb217e1a5c7cf83d27173c1513d6cd"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/recovery.test.ts",
+      "sourceCommit": "2ea5adfedfe0187a49cde13c769823be753a1496",
+      "baseCommit": null,
+      "blob": "dce4e4f2c40a758aa617b1c9d7834c888a29622c",
+      "bytes": 3232,
+      "sha256": "bfda1d74f40d0b821b67dd73c7d2ec68b556dab00f7b33e0198f4cf5db8b7c48"
+    }
+  ],
+  "patch": {
+    "path": "docs/evidence/x01/runtime-wiring-intake.patch",
+    "bytes": 15826,
+    "sha256": "51d4e2ebc7b63f2e54a6c52decf8c1fcea327afe2e5f457cc25a68f6080b596e"
+  },
+  "application": "Apply each narrow diff against its recorded baseline. This is a layered delta; do not overlay whole shared files or the mirror. Resolve changed current main through owner coordination.",
+  "prerequisites": [
+    {
+      "sourceCommit": "9b639f79367a118562da4fe7c8d977173a488200",
+      "review": "docs/evidence/x01/runtime-public-independent-review.json",
+      "paths": [
+        "packages/client/src/plugin-runner.ts",
+        "packages/client/src/plugin-runner.test.ts",
+        "apps/runner/src/runtime.ts",
+        "apps/runner/src/plugins/runtime.test.ts"
+      ],
+      "description": "Prior independently approved runtime/domain slice must be applied first if absent. Current slice changes runtime default transport and adds direct tests."
+    },
+    {
+      "sourceCommit": "2949569bcac7d3b0257a0026f488f42eb6276222",
+      "description": "LAZY handed-back client selected-read baseline and its approved assistant-stream contract are dependencies; preserve P02/Codex too."
+    },
+    {
+      "sourceCommit": "685978f6d6f9552a789e0df10da13df7a0757505",
+      "description": "Independently approved pluginSource producer/contract/center slice; separate canonical provenance intake retains native-body and Codex."
+    }
+  ],
+  "validation": "Existing layered runtime9b and wiring2ea inputs/patch bytes unchanged. Branch full factory noEmit0 and real public npm journey1/1 now approved. Main operator still validates actual direct main combination; preserve LAZY/P02/Codex and do not overlay mirror.",
+  "mainIntegrated": false,
+  "fullX01Complete": false,
+  "remaining": [
+    "operator CLI configuration",
+    "exact-pin remaining-work recovery / unknown side-effect audit"
+  ],
+  "publicJourney": {
+    "sourceCommit": "ced4679c9ce3c183044fb853d71f72de7fc214db",
+    "resultCommit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+    "review": "docs/evidence/x01/public-runner-pg-independent-review.json",
+    "manifest": "docs/evidence/x01/public-runner-pg-result-manifest.json",
+    "selected": 1,
+    "passed": 1,
+    "scope": "Fixed full real factory/runtime/client combination plus one public HTTP/npm case; not current-main combination"
+  }
+}
