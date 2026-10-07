@@ -1,0 +1,163 @@
+{
+  "state": "PREPARED_NOT_RUN_PENDING_SOURCE_NATIVE_REVIEW",
+  "at": "2026-10-07T16:37:19.057Z",
+  "source": "cdd34c3aff2f12492d6f5a2a5debaf4f80c6cb05",
+  "previousSource": "d032a53a62017cc41a3ddf19b316ad1047398fa6",
+  "claim": {
+    "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
+    "version": 2,
+    "worker": "w01_owner",
+    "scope": [
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ]
+  },
+  "packet": "/private/tmp/rel01-recovery-diagnostic-c1",
+  "entry": "runRecoveryCookieDiagnostic",
+  "expected": {
+    "diagnosticOnly": true,
+    "appsExecuted": 1,
+    "retainedBearerAppsExecuted": 0,
+    "newCookieApp": 1,
+    "reports": null,
+    "passed": false,
+    "clientErrorMax": 16,
+    "upstreamAssociationMax": 128,
+    "diagnosticBytesMax": 32768,
+    "entry": "runRecoveryCookieDiagnostic"
+  },
+  "limits": {
+    "totalMs": 90000,
+    "cleanupReserveMs": 30000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "databaseWalEstimateBytes": 134217728,
+    "startFreeBytes": 18171035648,
+    "stopFreeBytes": 1207959552,
+    "pgCount": 1,
+    "chromeCount": 1,
+    "providerCount": 0
+  },
+  "phase": "new independent90s incl30cleanup proposed; c1/c2 closed unused is not credit",
+  "receivingContract": "Actual outer exit0 + unique DIAGNOSTIC_COMPLETE terminal + sealed result/budget/raw + worker0 + diagnosticOnly true / passed false / reports null / one new Cookie App + complete passive observer + all original owned groups/streams/marked DB/center/proxy/scratch cleanup. This is never formal compatibility approval.",
+  "parent": {
+    "path": "/private/tmp/rel01-recovery-diagnostic-c1/supervisor.py",
+    "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/supervisor.py",
+    "bytes": 19123,
+    "sha256": "3872ee12e826c295ec498e6bc4047726621f4dbdcdf02b49db8b6dead43198c9"
+  },
+  "worker": {
+    "path": "/private/tmp/rel01-recovery-diagnostic-c1/worker.mjs",
+    "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/worker.mjs",
+    "bytes": 5610,
+    "sha256": "85544966c56f42cf26701c66f696ea905a51b89d9174aaf0fe9c7573304aa30a"
+  },
+  "sourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 37253,
+      "sha256": "4ba1336fe23af52daf755952c1f0f0eafa21d366fc4b150cc15082b9b7fdf6c6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 40985,
+      "sha256": "b44e0e69d7b549ba8f99b49cd4d636746dcbfefcd678a0bc92e6ddc042a45f53"
+    }
+  ],
+  "preparedPins": [
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-c1/supervisor.py",
+      "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/supervisor.py",
+      "bytes": 19123,
+      "sha256": "3872ee12e826c295ec498e6bc4047726621f4dbdcdf02b49db8b6dead43198c9"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-c1/worker.mjs",
+      "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/worker.mjs",
+      "bytes": 5610,
+      "sha256": "85544966c56f42cf26701c66f696ea905a51b89d9174aaf0fe9c7573304aa30a"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-c1/inputs.json",
+      "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/inputs.json",
+      "bytes": 7818,
+      "sha256": "d082a1b5dba15f89446902e26e2d98a61bfe0dc05b47f713d4bace642585b161"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-c1/measure.py",
+      "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-c1/tsconfig.json",
+      "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/tsconfig.json",
+      "bytes": 433,
+      "sha256": "f316d5da8f22079f133b3d8d3abd1c200947f2048e262028bb00aa4561d40599"
+    }
+  ],
+  "inputsUnchangedFromConsumedC2": {
+    "path": "/private/tmp/rel01-recovery-diagnostic-c1/inputs.json",
+    "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/inputs.json",
+    "bytes": 7818,
+    "sha256": "d082a1b5dba15f89446902e26e2d98a61bfe0dc05b47f713d4bace642585b161"
+  },
+  "diffs": [
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-c1/source.diff",
+      "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/source.diff",
+      "bytes": 20532,
+      "sha256": "da883b8c9a0dbc86d9f1bbb6d0b18b5df59882cb4e5e65c6f7d8e59dca6c1478"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-c1/supervisor.py.diff",
+      "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/supervisor.py.diff",
+      "bytes": 5047,
+      "sha256": "3c66823fb961c3a8c35be9956b854cfd4313d9557575324be4e78922e0c9c461"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-c1/worker.mjs.diff",
+      "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/worker.mjs.diff",
+      "bytes": 4052,
+      "sha256": "85672806dfd73f462e83674e2144e27bb967608613230e7a5bf9a957f139d492"
+    }
+  ],
+  "localCheckProposal": {
+    "path": "/private/tmp/rel01-recovery-diagnostic-c1/local-check-proposal.json",
+    "realpath": "/private/tmp/rel01-recovery-diagnostic-c1/local-check-proposal.json",
+    "bytes": 3754,
+    "sha256": "288fc4e518b6dc9c7cd864995d8215ad16b253aac9fb247df322d0ac8685d3b7"
+  },
+  "guardrails": [
+    "No original Fastify listener removal/replacement or socket handling change",
+    "No rawPacket/headers/body/token/message/stack in clientError observation",
+    "16 errors/128 own-upstream records/32KiB cap; incomplete evidence fails",
+    "Port matching ambiguous or unavailable is UNKNOWN",
+    "No old3 App execution; all4 formal entry and assertions retained; no reports imported in diagnostic",
+    "Runtime/PG/Chrome NOT_RUN; no gate/admin input supplied"
+  ],
+  "closedActuals": [
+    {
+      "name": "pairc1",
+      "chargedMs": 56504,
+      "totalMs": 180000
+    },
+    {
+      "name": "pairc2",
+      "chargedMs": 26554,
+      "totalMs": 180000
+    }
+  ],
+  "fixedParserSource": {
+    "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js",
+    "bytes": 34573,
+    "sha256": "31a0ebd3ee5fd9f525ccb37c312e3b94757cf53bfa481f41ee364ce75d83c0ae",
+    "lines": "963\u20131003; generic400 body985"
+  },
+  "notProven": "Exact clientError code and culprit in c2. Same error body alone cannot prove proxy, App, or backend regression."
+}

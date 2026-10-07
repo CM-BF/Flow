@@ -86,3 +86,5 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 ## 当前c2实际与诊断边界
 
 [第二actual](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/README.md)FAILED/完整RETURN，26554ms新180s CLOSED。RELEASE01-08仍未完成，reports=null/0正式报告。harness原顺序缺口已走通，新的会话GET HTTP-parser400原因未记录；只准备被动有界clientError观察+新Cookie链diagnosticOnly，不能importReports，不为诊断重跑旧3矩阵。正式4App协议保持，下一actual须独立窗口。无新增产品authority，无后台或App越权修改。
+
+2026-10-07T16:37:19.057Z 现RELEASE01-08内准备独立Cookie诊断入口，固定cdd34c3aff2f12492d6f5a2a5debaf4f80c6cb05。仅public链与被动HTTP元数据，正式四App接受合同和错误断言不变；新90s/strict20s仍proposal，见[候选](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/README.md)。

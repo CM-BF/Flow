@@ -1,5 +1,12 @@
 # WPF-RELEASE01 review
 
+**当前状态：NOT_STARTED，固定诊断候选待独立源码/边界审。**
+
+Review target commit：cdd34c3aff2f12492d6f5a2a5debaf4f80c6cb05。范围：apps/web/test/web-release-compatibility.browser.ts、apps/web/test/web-release-compatibility.fixture.ts。[候选与局部提案](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/README.md)仅准备。新类型检查/诊断actual NOT_RUN；正式四App仍FAILED，reports=null，不可部署。
+
+## 历史：d032源码及第二实际失败
+
+
 **当前状态：APPROVED，仅固定源码/准备。实际兼容仍FAILED；完整RETURN已独立接受。**
 
 Review target commit：d032a53a62017cc41a3ddf19b316ad1047398fa6。范围：apps/web/test/web-release-compatibility.browser.ts。[Root源码集中审](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/root-source-review.json)0blocking；[第二实际/失败归还审](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/README.md)接受真实outer1/26554ms CLOSED、完整清理，不接受compatibility。reports=null/不可部署。
