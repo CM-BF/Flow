@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T08:57:27.268283+00:00 / main e2b16924；已审读取与产物来源关联接收，固定发布准备继续 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T09:10:52.406412+00:00 / main 9b27005f；固定后台产物结果已受控接收，窗口归还 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,7 +15,7 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin e2b16924已含O16、SVC09、LAZY和X01受审片；后台产物候选固定b2b，个人backend af51/v18、Web d629/v3/c7b宿主保持。 |
+| 已集成main状态 / HEAD | main9b27005f已接固定后台产物结果与193来源事实；原O16、SVC09、LAZY/X01和资源计量模块保留。个人backend af51/v18、Web d629/v3/c7b宿主保持。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
@@ -495,3 +495,5 @@ SVC06-05 唯一准备 owner 为 assignment_review，候选见 [固定更新方�
 2026-10-07T09:01:39.222Z：SVC06固定b2b已审artifact实际开跑，唯一operator assignment_review，原420s+收尾/新增2,317,352,960B，fresh23,912,873,984B通过3,927,965,696B。Mika08:58:37已归还PG；本段不新开PG/安装/共享服务，Web独立0PGbrowser73MiB在既有512MiB协调余量内，各队local不变。actual-first/reservation为实际开始来源；无provider/个人服务。结果未出，不冒构建或部署完成。
 
 2026-10-07T09:02:10.132Z：SVC06本段结束立即归还，实际30,975ms/exit0，组43300 absent/双EOF/无signals，最低free23,463,669,760B。新b2b固定产物c2c695e7与33SQL/内部加载通过，结果独审和真实host/网页配置兼容仍后继；0PG/provider/个人。09:03已受控发布看板193来源；没有为metadata继续占运行窗口。
+
+2026-10-07T09:10:52.406412+00:00：OPS-001-16新增[当前事实优先读取](../../docs/quality/local-validation.md#focused-status-reading)方法，前部字段/TODO/当前等待优先，按问题展开历史；不删raw或建立第二摘要。固定后台产物结果已接收，后继宿主与三真实保留网页兼容由原owners并行准备。

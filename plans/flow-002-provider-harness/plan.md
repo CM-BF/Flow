@@ -210,3 +210,12 @@ GO于本日完成官方只读研究并交付的候选输入：[Agents API archit
 收益是正式订阅来源与多runner身份边界；代价是新增明确consent、refresh owner和预览兼容责任。当前本机Claude/Codex优先路径不变；若后续实施，Mika沿原MATURE02/FLOW002冻结最小auth接口和固定版离线兼容输入，Flow仍拥有授权/预算/验收。当前不造OAuth服务、不注册client、不读取/复制/输出token、不改已有登录、不新增query预算。
 
 同次安全点补入GO官方[AI SDK Codex harness](https://ai-sdk.dev/providers/ai-sdk-harnesses/codex)研究：当前wrapper经sandbox WebSocket bridge；文档Known Limitations称built-in tool approval尚不支持、要求permissionMode allow-all，host-executed AI SDK tool approval属另一层；cold-resume的apply_patch/view_image原始事件也不能完整呈现。T05/T09公平矩阵保留这两项版本绑定差异：native approval与host-tool approval、live events与cold-resumed history；tool filtering不冒权限批准，不为wrapper放宽Flow access或补造历史。Claude credentialForwarding只改转发值、不限制host discovery的候选边界沿既有E01 synthetic auth证据，未重跑实凭据探针。本段是GO来源归档，尚未核未来wrapper版本或本机适配；原生优先、Pi/AI SDK候选保留。
+
+
+## 2026-10-07 T09 / R05 后继：上游 SessionStore 候选
+
+GO已核本机SDK0.3.290声明1810–1847、6535–6671，包含SessionStore append/load、batched/eager及loadTimeoutMs；[官方Session storage](https://code.claude.com/docs/en/agent-sdk/session-storage)本轮只读确认它镜像本地transcript并提供Postgres参考与conformance方向，参考实现源码/许可证尚未核，不直接复制或声明Flow已支持跨runner会话。
+
+优先评估该小Interface隐藏SDK私有transcript，不另造格式或搬运器。采用前必须核：双写与UUID去重、同会话租约归属、mirror_error时远端完整性与本地保留/清除、缺store的fallback、本地和远端保留，以及整段load的字节/内存界限。Flow仍持有授权/恢复权威，正文轻投影与session存储分离；不为候选引新平台。
+
+当前普通Claude adapter仍persistSession:true，nativeEnvironment保留既有认证配置；settingSources:[]不能当不写盘。O16一次性只读实验可在自身query装饰口评估persistSession:false并拒resume/store，但不改普通聊天恢复，也不声称其他SDK缓存/认证写入消失。具体差量与剩余登录/写入来源缺口见[O16原生阶段候选](../../../continuous-native-goal-acceptance/docs/evidence/o16/native-stages/candidate.md)。本段0安装/query/auth/DB/配置动作，不新增模型预算，当前可见发布与聊天验证优先。
