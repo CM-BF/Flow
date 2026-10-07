@@ -1,0 +1,108 @@
+{
+  "state": "PASSED",
+  "startedAt": "2026-10-07T03:07:00.012295+00:00",
+  "gate": {
+    "head": "8da3ea07e8d567583797fef3dcc42ef91564af92",
+    "manifestSha256": "df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e",
+    "claimId": "09b83400-e41f-4e6c-a5a9-08ae340b74db",
+    "claimVersion": 1,
+    "claimObservedAt": "2026-10-07T03:06:59.993Z",
+    "availableBeforeBytes": 26538192896
+  },
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "docs/evidence/req15-turn-page-batch/pg-turn-page.test.ts",
+    "--config",
+    "docs/evidence/req15-turn-page-batch/pg-vitest.config.mjs",
+    "--configLoader",
+    "runner",
+    "--no-cache",
+    "--reporter",
+    "verbose",
+    "--no-color"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch",
+  "supervisorPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/execute-pg-once.py",
+  "supervisorSha256": "982c2e5a7a1acc98256413ceaf84c9b207a7ec481bbeb0c0462bc41892b51dc0",
+  "wholeBudgetSeconds": 30,
+  "rawBudgetBytes": 65536,
+  "tmpBudgetBytes": 33554432,
+  "tmpMeasurement": "before/after sample, not realtime isolation",
+  "secondaryFailures": [],
+  "temporary": {
+    "device": 16777234,
+    "inode": 123364533,
+    "beforeBytes": 0,
+    "absentAfter": true,
+    "entriesAfter": 0,
+    "afterBytes": 0
+  },
+  "spawn": {
+    "pid": 72871,
+    "pgid": 72871,
+    "startedAt": "2026-10-07T03:07:00.014324+00:00"
+  },
+  "process": {
+    "spawn": {
+      "pid": 72871,
+      "pgid": 72871,
+      "startedAt": "2026-10-07T03:07:00.014324+00:00"
+    },
+    "pid": 72871,
+    "exit": 0,
+    "reason": null,
+    "stdoutEof": true,
+    "retainedBytes": 584,
+    "observedBytes": 584,
+    "rawComplete": true,
+    "groupState": {
+      "state": "absent",
+      "errno": null
+    },
+    "groupAbsent": true,
+    "observations": [
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "signals": [],
+    "secondaryFailures": []
+  },
+  "captureComplete": true,
+  "lifecycleKnown": true,
+  "rawSha256": "af4642a247e0f7287ad8a38c4f00a6d9da9b500480a034085807edee43c52f46",
+  "rawBytes": 584,
+  "testSummary": "Tests  2 passed (2)",
+  "selected": 2,
+  "passed": 2,
+  "resultBytes": 7031,
+  "database": {
+    "identity": {
+      "database": "flow_req15_1eb15243a312",
+      "marker": "d6a146d8-98d6-42b7-808b-c24f457dde4e",
+      "oid": 1193363,
+      "createAcknowledged": true,
+      "markerAcknowledged": true
+    },
+    "cleanup": {
+      "status": "CONFIRMED",
+      "originalsSettled": true,
+      "subjectEndAcknowledged": true,
+      "writerEndAcknowledged": true,
+      "connectionsZero": true,
+      "databaseAbsent": true,
+      "adminEndAcknowledged": true,
+      "secondaryFailures": []
+    }
+  },
+  "completedCases": [
+    "PG1",
+    "PG2"
+  ],
+  "behavior": "PASSED",
+  "endedAt": "2026-10-07T03:07:01.041357+00:00",
+  "wallSeconds": 1.1504937920253724
+}

@@ -1,0 +1,11 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch
+
+ ✓ docs/evidence/req15-turn-page-batch/pg-turn-page.test.ts > PG1 reads mixed 51-turn pages with paired identities, per-task ambiguity and measured UTF8 fields 23ms
+ ✓ docs/evidence/req15-turn-page-batch/pg-turn-page.test.ts > PG2 retains the old task/reply pair in one RR snapshot after the writer COMMIT ACK 14ms
+
+ Test Files  1 passed (1)
+      Tests  2 passed (2)
+   Start at  20:07:00
+   Duration  813ms (transform 213ms, setup 0ms, import 327ms, tests 405ms, environment 0ms)
+
