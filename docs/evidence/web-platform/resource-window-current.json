@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T05:33:51.096894+00:00",
-  "state": "RECOVERY_FIFTH_PAGE_AUTH_ADMITTED_NOT_STARTED",
-  "groupWindowOwnership": "Explicit Mika/Root shared PG+HTTP+Chrome handoff to Recovery fifth page-auth; fresh single gate created, owner has not launched. C02 NOT_OPEN/noholder in handoff. Quick third actual returned. No parallel Web browser or PG launch.",
+  "recordedAt": "2026-10-07T05:37:29.755224+00:00",
+  "state": "RECOVERY_FIFTH_PAGE_AUTH_FAILED_CLEANED_RETURNED",
+  "groupWindowOwnership": "Recovery fifth page-auth actualFAILED/exit1; ownedgroups/scratch and markedDB cleanup closed. Exact adminenv deleted05:36:12.637138Z. Web no actualPG/Chrome holder/gate/reservation. Root already returned sharedPG to Mika/C02 next-ready; no new actualRUN inferred.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T05:33:51.096894+00:00",
-    "kind": "EXPLICIT_RECOVERY_PAGE_AUTH_HANDOFF_FRESH_ADMISSION",
-    "source": "recovery-pageauth-admission-20261007/handoff.json",
-    "summary": "5e629/dd664,6ffv4 exact21/overlap[],145 fixed-input reads+19Git matched, fresh available25061769216>=4053008384. page-auth2 required/otherNOT_SELECTED,35116 incl15000cleanup. New exactowner-only testadminenv; no manager runtime/no automatic sixth."
+    "at": "2026-10-07T05:37:29.755224+00:00",
+    "kind": "RECOVERY_FIFTH_ACTUAL_FAILURE_OWNED_CLEANUP_ENV_DELETE_RETURN",
+    "source": "recovery-pageauth-return-20261007/return.json",
+    "summary": "cookieReadPASS; pageOnlyAuthLoss fixture expiration violates browser_sessions_check, other groupsNOT_SELECTED/0PNG. Parentlate9250.887208 cumulative64134.08675/rem25865.91325; existinggate minimum30000 forbids automaticnext attempt. Exactenv removed; no manager service/proc/resource probe."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -550,7 +550,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "quick-b3-return-navigation-20261007/incoming.json",
+  "currentWindowReturn": "recovery-pageauth-return-20261007/return.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1055,6 +1055,17 @@
         "summary": "Quick b3 FAILED0/6/0PNG with complete passive trace, owned cleanup and root failed-actual acceptance; charge12157/cumulative30625/rem29375 incl15s. Recovery dd664 source/local scoped accepted; fifth page-auth2 groups prepared only, noenv/gate. NavigationU17/MATURE05-06 plan only."
       },
       "currentIntake": "quick-b3-return-navigation-20261007/incoming.json"
+    },
+    {
+      "recordedAt": "2026-10-07T05:33:51.096894+00:00",
+      "state": "RECOVERY_FIFTH_PAGE_AUTH_ADMITTED_NOT_STARTED",
+      "latestCoordination": {
+        "at": "2026-10-07T05:33:51.096894+00:00",
+        "kind": "EXPLICIT_RECOVERY_PAGE_AUTH_HANDOFF_FRESH_ADMISSION",
+        "source": "recovery-pageauth-admission-20261007/handoff.json",
+        "summary": "5e629/dd664,6ffv4 exact21/overlap[],145 fixed-input reads+19Git matched, fresh available25061769216>=4053008384. page-auth2 required/otherNOT_SELECTED,35116 incl15000cleanup. New exactowner-only testadminenv; no manager runtime/no automatic sixth."
+      },
+      "currentIntake": "recovery-pageauth-admission-20261007/handoff.json"
     }
   ],
   "dperf05Pure": {
@@ -1102,7 +1113,7 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "RECOVERY_SINGLE_PAGE_AUTH_ADMISSION_QUICK_NO_GATE",
+    "state": "RECOVERY_AND_QUICK_ACTUAL_FAILURE_DIAGNOSIS_NO_ADMISSION",
     "access": {
       "ownerHead": "269a8566e9b09018fb2e87440a8d96b4c14cf75a",
       "state": "MAIN_ACCEPTED_DEPLOYED185_LOCAL_CREDENTIAL_UI_OBSERVED",
@@ -1184,19 +1195,31 @@
       "ownerHead": "5e629909fb96bebe703ab75670daa9e67ab29979",
       "source": "dd6645b7f3ea84d758705684190c094ad3c87460",
       "packet": "/private/tmp/recovery-browser-fifth-pageauth-kz1s68_n",
-      "state": "FIFTH_PAGE_AUTH_ADMITTED_NOT_STARTED",
+      "state": "FIFTH_CONSUMED_FAILED_CLEANED_RETURNED",
       "budget": {
-        "authoritativePreviousMs": 38364.050667,
-        "thisLateMs": 16519.148875,
-        "cumulativeMs": 54883.199542,
-        "remainingMs": 35116.800458,
-        "nextMaxIntegerTotalMs": 35116,
+        "priorLateMs": 54883.199542,
+        "thisLateMs": 9250.887208,
+        "cumulativeLateMs": 64134.08675,
+        "remainingLateMs": 25865.91325,
+        "futureIntegerMaximumMs": 25865,
         "cleanupIncludedMs": 15000,
-        "originalBudgetElapsedMs": 16515.184833,
-        "earlierOriginalBudgetPreserved": true
+        "existingGateMinimumMs": 30000,
+        "automaticSixthAllowed": false,
+        "reason": "Remaining original envelope is below existing gate minimum; do not reset/increase old budget or weaken gate.",
+        "earlierParentBudget": {
+          "complete": true,
+          "cleanupComplete": true,
+          "journey": "page-auth",
+          "startedAt": "2026-10-07T05:34:45.076Z",
+          "priorMs": 54871.435167,
+          "permittedMs": 35116,
+          "cleanupReserveMs": 15000,
+          "elapsedMs": 9245.085125
+        },
+        "outerWallMsSeparate": 9881.697250064462
       },
-      "runtime": "Fourth PG+HTTP+Chrome attempt consumed and actual cleaned; no current holder/gate/reservation.",
-      "next": "Original panels executes once using fresh expiring gate; manager has not launched. Actual terminal and exactcleanup required; no automatic sixth.",
+      "runtime": "PG+HTTP+Chrome fifth selection failed, actualcleanup complete; no newholder/gate.",
+      "next": "Root accepted failed actual+ownedcleanup and identified isolated fixture expiration timestamp P2; originalowner source-only repair, no runtime/newbudget. Existinggate minimum30000 exceeds originalremaining25865.91325.",
       "review": "quick-b2-return-20261007/recovery-fourth-preparation-review.json",
       "admission": {
         "handoff": "recovery-pageauth-admission-20261007/handoff.json",
@@ -1205,16 +1228,17 @@
         "expiresAt": "2026-10-07T05:39:00.600378+00:00",
         "run": "recpageauth-20261007-053300-ca1a91",
         "adminEnv": "/private/tmp/recovery-pageauth-admission-6rpmu4he/admin.env",
-        "state": "ADMITTED_NOT_STARTED",
+        "state": "HISTORICAL_CONSUMED_ENV_DELETED",
         "adminEnvDeletionOwner": "d01_owner",
         "adminEnvIdentity": {
           "device": 16777234,
           "inode": 123533744,
           "mode": "0o600",
           "uid": 501
-        }
+        },
+        "envDeletion": "recovery-pageauth-return-20261007/admin-env-deletion-receipt.json"
       },
-      "actualReceipt": "recovery-fourth-return-20261007/return.json",
+      "actualReceipt": "recovery-pageauth-return-20261007/return.json",
       "sourceReview": "quick-b3-return-navigation-20261007/recovery-journey-source-review.json",
       "manifestSha256": "5b95e1d1b9cd5bc47ac753e5141532caf2de898b5c9b4cd25107fbc97c33a0f2",
       "fifthSelection": {
@@ -1226,7 +1250,8 @@
         "otherGroups": "NOT_SELECTED",
         "fullJourneyPassed": false
       },
-      "preparationReview": "quick-b3-return-navigation-20261007/recovery-pageauth-preparation-review.json"
+      "preparationReview": "quick-b3-return-navigation-20261007/recovery-pageauth-preparation-review.json",
+      "actualReview": "recovery-pageauth-return-20261007/root-failed-actual-review.json"
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1329,13 +1354,13 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "recovery-pageauth-admission-20261007/admission-observation.json",
+  "currentWindowEvidence": "recovery-pageauth-return-20261007/post-cleanup-observation.json",
   "webActualHolder": null,
-  "webGate": "/private/tmp/recovery-pageauth-admission-6rpmu4he/gate.json",
+  "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": "544c limited source/preparation approved, final929b HEAD and newboundary/pins verified; PREPARED NOTRUN, no gate/holder/reservation",
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": true,
+  "webReservation": false,
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -1662,8 +1687,9 @@
   },
   "externalCurrentAdmission": {
     "owner": null,
-    "state": "X01_SVC08_RETURNED_C02_NOT_OPEN_SHARED_PG_HANDED_TO_RECOVERY",
-    "source": "Root/Mika explicit readiness handoff; no actual external start inferred"
+    "state": "RECOVERY_ACTUAL_RETURNED_TO_MIKA_C02_NEXT_READY",
+    "source": "Root explicit actualhandoff; C02 preparation root109830 accepted, actual start not reported",
+    "newActualStart": "NOT_REPORTED"
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1673,15 +1699,15 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": [
-    "Actual Recovery terminal/owned cleanup returns shared window to Mika; no estimated automatic takeover"
+    "Mika/C02 next ready follows explicit fresh admission; no automatic elapsed-time handoff"
   ],
-  "currentIntake": "recovery-pageauth-admission-20261007/handoff.json",
+  "currentIntake": "recovery-pageauth-return-20261007/return.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",
     "fixedRuleCommit": "bb99223ad73690a25b0ebb251d69cd6d770a2a21",
     "path": "docs/quality/local-validation.md#ready-validation",
     "rule": "At most1 actual PG/migration/shared-service plus1 completely isolated0PG browser, or artifact+browser; not artifact+PG+browser triple. Each team1local remains. Exactprofile/dynamicfixture/cache/output independent; no realcenter/PG in browser; all active declared budgets plus one common reserve; unknown/shared dependencies and performance still exclusive.",
-    "application": "Prior Quick b3 independent0PG gate consumed and returned. No current Web gate. Recovery fifth uses PG+HTTP+Chrome, so needs explicit shared PG handoff and its exact fresh combined admission; source review is not runtime permission."
+    "application": "Fifth Recovery PG+HTTP+Chrome gate consumed and returned. No currentWebgate; remainingbudget below existingminimum does not authorize another run."
   }
 }

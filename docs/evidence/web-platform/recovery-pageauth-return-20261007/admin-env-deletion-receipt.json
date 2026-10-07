@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-07T05:36:12.637138+00:00",
+  "action": "EXACT_OWNER_ADMIN_ENV_DELETED",
+  "path": "/private/tmp/recovery-pageauth-admission-6rpmu4he/admin.env",
+  "expectedIdentity": {
+    "device": 16777234,
+    "inode": 123533744,
+    "uid": 501,
+    "mode": "0600"
+  },
+  "identityMatched": true,
+  "contentRead": false,
+  "valuesRecorded": false,
+  "postLstat": "ENOENT",
+  "otherFilesModifiedOrDeleted": false,
+  "gateObservationEvidenceRetained": true,
+  "actualExitReceipt": {
+    "path": "/private/tmp/recovery-pageauth-fifth-parent-xyfe8xqh/actual-exit.json",
+    "sha256": "a6367066f97a916322998540688944318065e52c3f6556679716f3484735b9c1"
+  },
+  "cleanupReceipt": {
+    "path": "/private/tmp/recovery-pageauth-fifth-parent-xyfe8xqh/post-cleanup-observation.json",
+    "sha256": "01fb9b33a7bd0cd7a8bdea203719a815071857632a7862c8b83bdc59ea0f029e"
+  },
+  "resourceState": "FAILED_CLEANED_RETURNED; original Root already handed PG to Mika/C02; no manager runtime/retry"
+}

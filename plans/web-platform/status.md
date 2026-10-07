@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:33:51.096894+00:00；Recovery page-auth已获明确PG交接并fresh准入，原owner待启动 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:37:29.755224+00:00；Recovery第五实际失败与清理归还、exact输入删除已记录 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,10 +21,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；架构图固定快照和连线显示修复已接入主线并提供新资产；几何与键盘验收通过，窄屏默认阅读体验留作后继。 |
-| 下一可用交付 | 快速设置已有完整键盘诊断，根因待定位；恢复将先验独立的重新认证与页内草稿保留。近期会话与完整标题搜索已纳入工作区后继，尚未实现；本机入口说明文档增量仍待接收。 |
+| 下一可用交付 | 快速设置已有完整键盘诊断，根因待定位；恢复的认证失效检查停在测试会话过期约束，原owner将先修正验证前置。近期会话与完整标题搜索后继已登记；原完整验收和失败预算均保留。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：Quick第三次已清理归还；Recovery仅认证失效两组的一次PG/HTTP/Chrome准入已交原owner，尚未启动。到期不复用，无自动重试。 |
+| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：Recovery第五次已失败并清理，私有输入已精确删除；Web无PG/Chrome holder、gate或预约。root已交回Mika/C02下一ready，不据剩余预算自动重试。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

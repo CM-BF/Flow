@@ -1,0 +1,169 @@
+{
+  "recordedAt": "2026-10-07T05:37:29.755224+00:00",
+  "state": "FAILED_CLEANED_RETURNED",
+  "owner": "workspace_panels_owner",
+  "run": "recpageauth-20261007-053300-ca1a91",
+  "source": "dd6645b7f3ea84d758705684190c094ad3c87460",
+  "admittedHead": "5e629909fb96bebe703ab75670daa9e67ab29979",
+  "actualStart": "2026-10-07T05:34:44.861028+00:00",
+  "actualEnd": "2026-10-07T05:34:54.743600+00:00",
+  "actualExit": 1,
+  "outerElapsedMs": 9881.697250064462,
+  "stdoutEof": true,
+  "stderrEof": true,
+  "journey": "page-auth",
+  "requiredGroups": [
+    "cookieRead",
+    "pageOnlyAuthLoss"
+  ],
+  "completedGroups": [
+    "cookieRead"
+  ],
+  "selectionPassed": false,
+  "fullJourneyPassed": false,
+  "pngCount": 0,
+  "failure": "Root identified fixture expiration setup violates migration028: expires must be >created and <=created+8h. Setting only expires=now-1s can violate a newly created session. Actual native recovery behavior remains unverified.",
+  "otherGroups": "NOT_SELECTED; full/chain/material/csrf/appearance remain unverified",
+  "timing": {
+    "workerInitializationMs": 7608.943791,
+    "cookieReadMs": 1029.861375,
+    "pageOnlyAuthLossFailedMs": 145.407167,
+    "scope": "Worker timing excludes parent preflight; selected preparation included in group timing, not a performance claim"
+  },
+  "budget": {
+    "priorLateMs": 54883.199542,
+    "thisLateMs": 9250.887208,
+    "cumulativeLateMs": 64134.08675,
+    "remainingLateMs": 25865.91325,
+    "futureIntegerMaximumMs": 25865,
+    "cleanupIncludedMs": 15000,
+    "existingGateMinimumMs": 30000,
+    "automaticSixthAllowed": false,
+    "reason": "Remaining original envelope is below existing gate minimum; do not reset/increase old budget or weaken gate.",
+    "earlierParentBudget": {
+      "complete": true,
+      "cleanupComplete": true,
+      "journey": "page-auth",
+      "startedAt": "2026-10-07T05:34:45.076Z",
+      "priorMs": 54871.435167,
+      "permittedMs": 35116,
+      "cleanupReserveMs": 15000,
+      "elapsedMs": 9245.085125
+    },
+    "outerWallMsSeparate": 9881.697250064462
+  },
+  "cleanup": {
+    "rootAlreadyReturnedPgTo": "Mika/C02 next ready, actual new start not reported",
+    "exactPostObservationAt": "2026-10-07T05:35:11.312269+00:00",
+    "groups": [
+      {
+        "pgid": 30289,
+        "state": "ABSENT_ESRCH"
+      },
+      {
+        "pgid": 30305,
+        "state": "ABSENT_ESRCH"
+      }
+    ],
+    "scratchPath": "/private/tmp/flow-recovery-browser-gMWFFQ",
+    "scratchAbsent": true,
+    "databaseCleanup": {
+      "database": "flow_recovery_3624c0f3ac1040f99cf0c6071bb83d02",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.62354200000118,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 1.7894580000011047,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "fixtureCleanup": {
+      "complete": true,
+      "errors": [],
+      "elapsedMs": 19,
+      "wireBytes": 1271,
+      "providerQueries": 0
+    },
+    "adminEnvDeletion": "admin-env-deletion-receipt.json",
+    "limitations": "Group ESRCH and scratch existence observed only for own IDs. Port teardown attributed to fixture.close receipt; no new HTTP/PG/port probe."
+  },
+  "rawManifest": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/browser.json",
+      "bytes": 3558,
+      "sha256": "5c48f88ebd48d0752f3303f471f11efd7949bf970d325f07d5171ba608a2facb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/budget.json",
+      "bytes": 227,
+      "sha256": "9a36499bbdea736f9ee46f00d380556ed7ca8238832fa553d09ee7d5e3fc0b66"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/database-cleanup.json",
+      "bytes": 514,
+      "sha256": "2754b28b469cc45773ecacff3b67699bb348b85be9de8cdcb564375f558c449d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/database-owner.json",
+      "bytes": 164,
+      "sha256": "5b9c9d89dd28dbabb3bcdcb7eeba1243aabff8cfea1e6ae007b81ee22bb37f1f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "369aac6ac1b038df8352eacdba36c5572238c69cbc064b901bcf5bd59b8725aa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/launch-config.json",
+      "bytes": 1215,
+      "sha256": "e1de219d10ce90f6ebb1cd99e8203c3c9af9f63bcba4bbc0cf140fbc5ac6db2b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/process-owner.json",
+      "bytes": 29,
+      "sha256": "e70cf5c44c95fc832ba4cb1674e10b0758e1ac8c11356e6afb79d2433db85acb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/process.log",
+      "bytes": 3788,
+      "sha256": "5d8282face1dcd3bbdcb2106af5968bb3e71bc741299f02f5308bdf80b40f548"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "a90039652f104a47df34d178b6d3d0eab50b5c26ec0f81ffa283df5e7905df54"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/sources.json",
+      "bytes": 2430,
+      "sha256": "327a0c17880a6635c7befbef9b6d7a19dc20d7f531a08a8cd2eee332ed938c1b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/supervisor.json",
+      "bytes": 2633,
+      "sha256": "aad62ffb39db5ee7487a5aa0496dbebb6749e07bd8fa1e46fbbfa8fdc1d28138"
+    }
+  ],
+  "rawCount": 11,
+  "rawBytes": 14774,
+  "originalFailAndUnknownPreserved": true,
+  "noNewProductRuntime": true,
+  "next": "Original owner receives source-only fixture fix within own isolatedDB: set created/expires from one statement_timestamp() to now-2s/now-1s; do not weaken production constraint/store. No runtime/newbudget/gate from this record.",
+  "rootReview": "root-failed-actual-review.json"
+}
