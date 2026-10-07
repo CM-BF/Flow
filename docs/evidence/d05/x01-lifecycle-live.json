@@ -1,0 +1,93 @@
+{
+  "startedAt": "2026-10-07T12:00:37.429757+00:00",
+  "source": "7ffff477e834f59731d0e54d1b30b3d4e27de9ab",
+  "oldPid": 86625,
+  "binding": {
+    "directory": "/Users/citrine/.flow-personal",
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "productOrigin": "http://127.0.0.1:61228/",
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "state": "CONFIRMED_PUBLIC_HTTP",
+  "personalChanges": 0,
+  "tokenRead": false,
+  "browserActions": 0,
+  "oldConfirmedAbsent": true,
+  "newPid": 46010,
+  "log": "/tmp/flow-dashboard-201-20261007-1201.log",
+  "completedAt": "2026-10-07T12:00:37.717398+00:00",
+  "publicMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "publicMetadataHttp": 200,
+  "summaryHttp": 200,
+  "summaryBytes": 539126,
+  "summaryCount": 201,
+  "selected": [
+    {
+      "id": "X01-VERSION-LIFECYCLE01",
+      "sourceCurrent": true,
+      "mode": "live",
+      "humanComplete": true,
+      "humanMissing": [],
+      "delivery": {
+        "state": "delivered",
+        "source": "explicit"
+      },
+      "timingIssues": []
+    },
+    {
+      "id": "X01-REMOVAL-REFERENCES01",
+      "sourceCurrent": true,
+      "mode": "live",
+      "humanComplete": true,
+      "humanMissing": [],
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "timingIssues": []
+    },
+    {
+      "id": "X01-UPSTREAM-UPGRADE01",
+      "sourceCurrent": true,
+      "mode": "live",
+      "humanComplete": true,
+      "humanMissing": [],
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      },
+      "timingIssues": []
+    }
+  ],
+  "initialProjectionNote": "Initial sampler looked for top-level human/parent omitted by this lightweight response and recorded null; not a product or parser failure. Human fields below read from declarations; parent relationship remains source-navigation review evidence.",
+  "initialProjectionFields": [
+    {
+      "id": "X01-VERSION-LIFECYCLE01",
+      "sourceCurrent": true,
+      "mode": "live",
+      "humanComplete": null,
+      "parent": null
+    },
+    {
+      "id": "X01-REMOVAL-REFERENCES01",
+      "sourceCurrent": true,
+      "mode": "live",
+      "humanComplete": null,
+      "parent": null
+    },
+    {
+      "id": "X01-UPSTREAM-UPGRADE01",
+      "sourceCurrent": true,
+      "mode": "live",
+      "humanComplete": null,
+      "parent": null
+    }
+  ],
+  "projectionConfirmedAt": "2026-10-07T12:01:14.444822+00:00",
+  "projectionSummaryBytes": 539649
+}
