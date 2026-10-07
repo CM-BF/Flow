@@ -1,9 +1,10 @@
 import { createHash } from 'node:crypto';
-import { constants, lstatSync, realpathSync, type Stats } from 'node:fs';
+import { constants, lstatSync, realpathSync, openSync, fstatSync, readSync, closeSync, type Stats } from 'node:fs';
 import { open } from 'node:fs/promises';
 import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createCodexTransport, type CodexTransport } from '../codex/index.js';
+import type { PrivateStderrSink } from '../codex/types.js';
 import type { CodexTransportFactory } from '../native-harness/codex/exchange.js';
 import { createDarwinWriteProfile, createStockHelperProfile, createStockReadOnlyProfile, STOCK_CODEX, STOCK_CODEX_SHA256 } from './native-authority-darwin.js';
 
@@ -25,7 +26,10 @@ export interface StockHelperInput {
   readonly startupRecipe: string;
   readonly contents: Uint8Array;
 }
-export type DarwinReadOnlyHostInput = Pick<StockHelperInput, 'directory' | 'runtimeDirectory' | 'startupRecipe'>;
+export type DarwinReadOnlyHostInput = Pick<StockHelperInput, 'directory' | 'runtimeDirectory' | 'startupRecipe'> & {
+  /** Optional trusted diagnostic sink. Native bytes remain private; at most 8192 are retained. */
+  readonly privateStderr?: PrivateStderrSink;
+};
 export interface DarwinReadOnlyHost {
   readonly policySha256: string;
   readonly createTransport: CodexTransportFactory;
@@ -160,6 +164,11 @@ export async function prepareDarwinReadOnlyHost(input: DarwinReadOnlyHostInput):
   if (process.platform !== 'darwin') throw Error('Darwin read-only host is unavailable.');
   const { directory, runtimeDirectory } = input;
   const profile = createStockReadOnlyProfile(input);
+  const privateStderr = input.privateStderr === undefined ? undefined : Object.freeze({
+    maxBytes: input.privateStderr.maxBytes, write: input.privateStderr.write,
+  });
+  if (privateStderr && (!Number.isSafeInteger(privateStderr.maxBytes) || privateStderr.maxBytes < 1
+    || privateStderr.maxBytes > 8192 || typeof privateStderr.write !== 'function')) throw Error('Read-only stderr limit is invalid.');
   const directories = [directory, runtimeDirectory, join(runtimeDirectory, 'control'), join(runtimeDirectory, 'state')]
     .map(path => ({ path, identity: privateDirectory(path) }));
   const binary = ownedFile(STOCK_CODEX), sandbox = lstatSync(SANDBOX);
@@ -167,6 +176,14 @@ export async function prepareDarwinReadOnlyHost(input: DarwinReadOnlyHostInput):
   await verifyDigest(STOCK_CODEX, STOCK_CODEX_SHA256, 512 * 1024 * 1024);
   await verifyDigest(SANDBOX, SANDBOX_SHA256, 1024 * 1024);
   const policySha256 = createHash('sha256').update(profile).digest('hex');
+  // The reviewed profile exceeds R06's per-argument bound. Retain an exclusive control file;
+  // never widen that shared bound, overwrite a previous attempt, or remove evidence on failure.
+  const policyPath = join(runtimeDirectory, 'control', 'flow-readonly.sb');
+  const policyFile = await open(policyPath, constants.O_WRONLY | constants.O_CREAT | constants.O_EXCL | constants.O_NOFOLLOW, 0o600);
+  try { await policyFile.writeFile(profile); await policyFile.sync(); } finally { await policyFile.close(); }
+  const control = await open(join(runtimeDirectory, 'control'), constants.O_RDONLY | constants.O_NOFOLLOW);
+  try { await control.sync(); } finally { await control.close(); }
+  const policyIdentity = ownedFile(policyPath);
   let attempted = false, stopped = false, transport: CodexTransport | undefined;
   let closing: Promise<DarwinWriterStop> | undefined;
   const createTransport: CodexTransportFactory = ({ signal, workingDirectory }) => {
@@ -179,14 +196,16 @@ export async function prepareDarwinReadOnlyHost(input: DarwinReadOnlyHostInput):
       if (now.dev !== identity.dev || now.ino !== identity.ino) throw Error('Read-only directory changed.');
     }
     if (!sameFile(STOCK_CODEX, binary) || !sameFile(SANDBOX, sandbox)) throw Error('Read-only executable changed.');
+    assertPolicyFile(policyPath, policyIdentity, profile, policySha256);
     transport = createCodexTransport({
-      spawn: { executable: SANDBOX, args: ['-p', profile, STOCK_CODEX, 'app-server'], cwd: directory,
+      spawn: { executable: SANDBOX, args: ['-f', policyPath, STOCK_CODEX, 'app-server'], cwd: directory,
         environment: { PATH: '/usr/bin:/bin', LANG: 'C', HOME: join(runtimeDirectory, 'state'),
           TMPDIR: join(runtimeDirectory, 'state'), CODEX_HOME: join(runtimeDirectory, 'state') } },
       initialize: { clientInfo: { name: 'flow-readonly-tool-host', title: null, version: '1' },
         capabilities: { experimentalApi: true, requestAttestation: false } },
       limits: { frameBytes: 16384, inboundBytes: 32768, outboundBytes: 32768, inboundFrames: 32, outboundFrames: 32,
         pendingRequests: 8, serverRequests: 8, initializeTimeoutMs: 2000, terminateMs: 200, killMs: 300 }, signal,
+      ...(privateStderr === undefined ? {} : { privateStderr }),
     });
     return transport;
   };
@@ -199,6 +218,20 @@ export async function prepareDarwinReadOnlyHost(input: DarwinReadOnlyHostInput):
     })();
     return closing;
   } });
+}
+
+function assertPolicyFile(path: string, expected: FileIdentity, profile: string, sha256: string): void {
+  if (!sameFile(path, expected)) throw Error('Read-only profile identity changed.');
+  const fd = openSync(path, constants.O_RDONLY | constants.O_NOFOLLOW);
+  try {
+    const value = fstatSync(fd), bytes = Buffer.alloc(Buffer.byteLength(profile) + 1);
+    if (!value.isFile() || value.dev !== expected.dev || value.ino !== expected.ino || value.nlink !== 1
+      || value.uid !== expected.uid || (value.mode & 0o777) !== 0o600 || value.size !== bytes.length - 1) throw Error('Read-only profile file changed.');
+    let offset = 0;
+    while (offset < bytes.length) { const count = readSync(fd, bytes, offset, bytes.length - offset, offset); if (!count) break; offset += count; }
+    if (offset !== value.size || createHash('sha256').update(bytes.subarray(0, offset)).digest('hex') !== sha256
+      || !sameFile(path, expected)) throw Error('Read-only profile bytes changed.');
+  } finally { closeSync(fd); }
 }
 
 /** A real OS launch seam. It deliberately does not mint NativeWriteAuthority's

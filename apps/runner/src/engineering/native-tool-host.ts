@@ -28,7 +28,7 @@ export async function prepareTrustedToolHost(options: DarwinReadOnlyHostInput & 
 }, ports: TrustedToolHostPorts = { prepareNative: prepareDarwinReadOnlyHost, openTarget: openCalculatorToolFile }) {
   // Freeze caller data before any await; the gate performs the authoritative strict binding validation.
   const binding = Object.freeze({ ...options.binding, identity: Object.freeze({ ...options.binding.identity }) });
-  const { directory, runtimeDirectory, startupRecipe, model, prompt, signal, assertOwnership } = options;
+  const { directory, runtimeDirectory, startupRecipe, privateStderr, model, prompt, signal, assertOwnership } = options;
   let native: DarwinReadOnlyHost | undefined, target: CalculatorToolFile | undefined, writer: TrustedToolWriter | undefined;
   let stopped = false, uncertain = false, attempted = false;
   let closing: Promise<TrustedToolHostStop> | undefined;
@@ -75,7 +75,7 @@ export async function prepareTrustedToolHost(options: DarwinReadOnlyHostInput & 
   }
   try {
     await checkOwnership();
-    native = await ports.prepareNative({ directory, runtimeDirectory, startupRecipe });
+    native = await ports.prepareNative({ directory, runtimeDirectory, startupRecipe, ...(privateStderr === undefined ? {} : { privateStderr }) });
     await checkOwnership();
     target = await ports.openTarget(directory);
     if (target.identity.path !== join(directory, 'calculator.mjs')) throw Error('Trusted tool target differs.');
