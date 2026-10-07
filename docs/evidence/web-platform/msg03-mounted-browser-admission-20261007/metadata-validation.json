@@ -1,79 +1,36 @@
 {
-  "at": "2026-10-07T13:35:04.300270+00:00",
+  "at": "2026-10-07T13:39:46.179440+00:00",
   "scope": "Only current changed manager paths, added Markdown links, JSON and indexed archive hashes",
   "paths": [
     "docs/evidence/web-platform/mature-task-handoff.md",
     "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/archive-index.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/core-owner-switch.json",
+    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/core-formal-owner-switch-intake.json",
     "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/current.json",
     "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/d05-three-source-request.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/dashboard-take-visibility.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/external-source-intakes.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/fresh-claims.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/manager-fresh-claim.json",
     "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/metadata-validation.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/msg03-browser-packet.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/msg03-browser-preparation-root-review.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/msg03-first-accounting.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/msg03-first-admin-env-deletion-receipt.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/msg03-first-post-cleanup.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/msg03-fixed-sql-supply.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/msg03-second-accounting.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/msg03-second-admin-env-deletion-receipt.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/msg03-second-post-cleanup.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/plugin-main-close-intake.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/plugin-main-intake-receipt.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/plugin-release-receipt.json",
+    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/msg03-424c-protocol-root-review.json",
+    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/msg03-third-accounting.json",
+    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/msg03-third-admin-env-deletion-receipt.json",
+    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/msg03-third-post-cleanup.json",
     "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/quality.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/release-source-local-root-review.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/release-strict-outer-observation.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/release-strict-result.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/release-strict-return.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/release-strict-terminal.json",
     "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/status-validation.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/svc1306-reader-path-note.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/svc1320-reservation.json",
-    "docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/svc1320-return.json",
     "docs/evidence/web-platform/resource-window-current.json",
-    "plans/web-platform/plan.md",
-    "plans/web-platform/review.md",
-    "plans/web-platform/status.md",
-    "plans/wpf-mature-01-visual/status.md"
+    "plans/web-platform/status.md"
   ],
   "links": [
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "msg03-mounted-browser-admission-20261007/msg03-fixed-sql-supply.json",
+      "target": "msg03-mounted-browser-admission-20261007/msg03-third-accounting.json",
       "exists": true
     },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "msg03-mounted-browser-admission-20261007/msg03-second-accounting.json",
+      "target": "msg03-mounted-browser-admission-20261007/msg03-third-post-cleanup.json",
       "exists": true
     },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
       "target": "resource-window-current.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "msg03-mounted-browser-admission-20261007/svc1306-reader-path-note.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "mounted-app-and-personal-maintenance-next-20261007/visible-web-release-peer.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "mounted-app-and-personal-maintenance-next-20261007/release-successor-take.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/recovery-cookie/supply-request.json",
       "exists": true
     },
     {
@@ -83,22 +40,7 @@
     },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "msg03-mounted-browser-admission-20261007/fresh-claims.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "msg03-mounted-browser-admission-20261007/plugin-main-close-intake.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "msg03-mounted-browser-admission-20261007/plugin-release-receipt.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "msg03-mounted-browser-admission-20261007/external-source-intakes.json",
+      "target": "msg03-mounted-browser-admission-20261007/core-formal-owner-switch-intake.json",
       "exists": true
     },
     {
@@ -108,62 +50,47 @@
     },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/recovery-cookie/supply-request.json",
+      "target": "msg03-mounted-browser-admission-20261007/plugin-release-receipt.json",
       "exists": true
     },
     {
-      "source": "plans/web-platform/plan.md",
-      "target": "../../docs/evidence/web-platform/mature-task-handoff.md",
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md",
       "exists": true
     },
     {
-      "source": "plans/web-platform/plan.md",
-      "target": "../../docs/evidence/web-platform/dashboard-task-time-intake/incoming.json",
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "recovery-second-center-preparation-20261007/plugin-take-receipt.json",
       "exists": true
     },
     {
-      "source": "plans/web-platform/plan.md",
-      "target": "../../docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/current.json",
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "recovery-second-center-preparation-20261007/plugin-registration-request.json",
       "exists": true
     },
     {
-      "source": "plans/web-platform/plan.md",
-      "target": "../../docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/core-owner-switch.json",
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
       "exists": true
     },
     {
-      "source": "plans/web-platform/review.md",
-      "target": "../../docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/svc1306-reader-path-note.json",
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "plugin-browser-source-and-msg03-local-20261007/msg03-amend-receipt.json",
       "exists": true
     },
     {
-      "source": "plans/web-platform/review.md",
-      "target": "../../docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/current.json",
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "mounted-app-and-personal-maintenance-next-20261007/release-successor-take.json",
       "exists": true
     },
     {
       "source": "plans/web-platform/status.md",
       "target": "../../docs/evidence/web-platform/resource-window-current.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/status.md",
-      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/status.md",
-      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/status.md",
-      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/status.md",
-      "target": "../../docs/evidence/web-platform/release-main-registry-close-20261007/current.json",
       "exists": true
     }
   ],
@@ -242,6 +169,26 @@
     },
     {
       "file": "plugin-release-receipt.json",
+      "match": true
+    },
+    {
+      "file": "msg03-424c-protocol-root-review.json",
+      "match": true
+    },
+    {
+      "file": "core-formal-owner-switch-intake.json",
+      "match": true
+    },
+    {
+      "file": "msg03-third-accounting.json",
+      "match": true
+    },
+    {
+      "file": "msg03-third-post-cleanup.json",
+      "match": true
+    },
+    {
+      "file": "msg03-third-admin-env-deletion-receipt.json",
       "match": true
     }
   ],

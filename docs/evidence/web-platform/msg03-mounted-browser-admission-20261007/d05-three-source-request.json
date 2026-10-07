@@ -1,5 +1,5 @@
 {
-  "at": "2026-10-07T13:25:21.538Z",
+  "at": "2026-10-07T13:37:24.332Z",
   "state": "EXISTING_D05_WRITER_THREE_CANONICAL_MAPPINGS_PENDING",
   "owner": "Original/astra_ultra_execution_lead",
   "claim": "3a6240d0-f861-41fd-b245-3546b2e2dbf3v6",
@@ -21,7 +21,12 @@
       "owner": "architecture_read",
       "lead": "mika",
       "claim": "651c4eb4v1/4",
-      "pathExistsAtManagerRead": true
+      "pathExistsAtManagerRead": true,
+      "formalIntake": "core-formal-owner-switch-intake.json",
+      "fixedHead": "920a966a4d0acdd8464ae7af8c46c9e41a662bac",
+      "intakeState": "RECEIVED_SAME_TASK_OWNER_SWITCH_NO_NEW_TASK",
+      "taskStart": "UNKNOWN",
+      "pgActual": "NOT_OPEN"
     },
     {
       "taskId": "X01-REMOVAL-REFERENCES-CLIENT",

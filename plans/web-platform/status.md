@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:34:47.358Z；MSG03两轮实际失败均清理归还，现fixture窄修；Plugin五源已main9f0，原owner409b30及0a9v2释放已完成。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:38:52.445Z；MSG03第三轮实际失败已物理归还、fixture正常关闭缺证保未知，当前静态修复；Plugin已main并释放；CORE正式owner-switch入口已齐。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -26,7 +26,7 @@
 | 下一可用交付 | 沿原发布链先交付用户能看到的新网页；准备包含修复的新前后端产物与实际Cookie恢复验证，不等待全部插件或聊天设置完成。MSG03固定新差量后集中审查，个人设置目录按原双槽配置后继推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：MSG03第二轮13:32:12.946071Z完整归还，当前无Web运行或NEXT；原90s累计18962ms/余71038ms。后继fresh至少7511998464B，全部KEEP/单reserve保留；不按计划时刻放窗。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：MSG03第三轮13:37:25.274760Z已物理归还，fixture正常关闭证据缺失保UNKNOWN；原90s累计33766/余56234。无Web运行/NEXT，Original原intent恢复ready后用户优先；未来fresh至少7515275264B，不追改旧gate。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
