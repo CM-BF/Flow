@@ -1,0 +1,44 @@
+{
+  "executionHead": "14bc0ba4534bd9926d6b8508387b6fc26015ed91",
+  "command": [
+    "/usr/bin/time",
+    "-p",
+    "/opt/homebrew/bin/python3.13",
+    "-B",
+    "docs/evidence/x01/artifact-pg-once.py",
+    "--admission",
+    "/private/tmp/flow-x01-artifact-pg-a048b1eb49ca461da526411f1ff3e1b6.json",
+    "--sha256",
+    "eaff13c5b69d4cf4e6d5086f54106db10fdf0b463bdc810a649095e746bda88a"
+  ],
+  "exitCode": 0,
+  "shellStartedAtSecondPrecision": "2026-10-07T08:16:57Z",
+  "shellEndedAtSecondPrecision": "2026-10-07T08:17:02Z",
+  "externalTimeRealSeconds": 5.26,
+  "toolWaitChunksSeconds": [
+    1.003782708,
+    1.43787975
+  ],
+  "toolWaitMeaning": "Wait duration only, never substituted for complete process wall.",
+  "outputBytes": 652,
+  "outputSha256": "2e36482baec5f0a68dda14636d0e3076945e76b5d2e81e7ddddf723a6bce93eb",
+  "delivery": {
+    "state": "PASSED",
+    "run": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/artifact-pg-run-r1",
+    "receiptState": "PASSED",
+    "resultPersistence": "CONFIRMED",
+    "elapsedAfterPersistence": 5.090026375022717,
+    "withinTotalDeadline": true,
+    "endedAfterPersistenceAt": "2026-10-07T08:17:02.478941+00:00",
+    "retained": [],
+    "temporary": {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-e3llmx2e",
+      "dev": 16777234,
+      "ino": 123651570,
+      "removed": true,
+      "sampleBytes": 4800,
+      "sampleEntries": 10
+    }
+  },
+  "source": "Actual exec_command and write_stdin tool outputs, preserved verbatim in tool-output.log."
+}
