@@ -1,0 +1,238 @@
+{
+  "at": "2026-10-07T16:35:39.421Z",
+  "state": "NOT_INTEGRATION_READY_PG_REQUIRED",
+  "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+  "reviewPacket": "34f434f9d7e77b11b93a81a652f072db38425f0d",
+  "fixedMain": "b79121e1944f10f82a416d98d776c0f55bf9c943",
+  "observedMain": "38ec8fd80a784f8afd73a342e6f06e36931d2f5a",
+  "rows": [
+    {
+      "path": "apps/server/src/index.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "after": {
+        "bytes": 15573,
+        "sha256": "8babb15056ab95fa228249cadb6d6db01450fbf7756d9b516d52bfd17a2f8b5c"
+      },
+      "fixedPreimage": {
+        "bytes": 15452,
+        "sha256": "bbb02feaea68447ba91672955e846c0682a9542a9720c8b8cf786ca34694b2c0"
+      },
+      "observedMainPreimage": {
+        "bytes": 15452,
+        "sha256": "bbb02feaea68447ba91672955e846c0682a9542a9720c8b8cf786ca34694b2c0"
+      },
+      "mainMatchesFixedPreimage": true
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "after": {
+        "bytes": 4000,
+        "sha256": "eb9282cdba015110257c7bd7eb059e11ebffb72f7f5ea0bafabca95a2e37b1b7"
+      },
+      "fixedPreimage": {
+        "bytes": 2773,
+        "sha256": "4236e8241296ac5ebf53bd254bdfe0e849d8905e693c64bae4c0cc888c7efb15"
+      },
+      "observedMainPreimage": {
+        "bytes": 2773,
+        "sha256": "4236e8241296ac5ebf53bd254bdfe0e849d8905e693c64bae4c0cc888c7efb15"
+      },
+      "mainMatchesFixedPreimage": true
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.test.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "after": {
+        "bytes": 4724,
+        "sha256": "7fd6a61c9c9e7ef634e1747d1fb10ba8815af75cf79aa846f3e61d7c6af3b395"
+      },
+      "fixedPreimage": null,
+      "observedMainPreimage": null,
+      "mainMatchesFixedPreimage": true
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "after": {
+        "bytes": 5316,
+        "sha256": "9d140d5072d26d18e698d55d596bc10f94a44ec1b405a2a1a4e309d0ab248bb5"
+      },
+      "fixedPreimage": null,
+      "observedMainPreimage": null,
+      "mainMatchesFixedPreimage": true
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "after": {
+        "bytes": 2736,
+        "sha256": "efdd9ad43bd1cbfb4a6b8ec3f61a151be59735a724528f4a861aa33572d62652"
+      },
+      "fixedPreimage": {
+        "bytes": 2477,
+        "sha256": "8f5db0d1f4125de77575a45d191b0d45ad5881f8335751135ac22e2c63beee50"
+      },
+      "observedMainPreimage": {
+        "bytes": 2477,
+        "sha256": "8f5db0d1f4125de77575a45d191b0d45ad5881f8335751135ac22e2c63beee50"
+      },
+      "mainMatchesFixedPreimage": true
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.test.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "after": {
+        "bytes": 8525,
+        "sha256": "3f30f9e9f4b554346ebf1a72e544af56cc9f55b513529dc802d8078067a34ab7"
+      },
+      "fixedPreimage": {
+        "bytes": 2486,
+        "sha256": "59661d2480b3129d687d093f833e62420ad04615007394148c87c8dd906406e3"
+      },
+      "observedMainPreimage": {
+        "bytes": 2486,
+        "sha256": "59661d2480b3129d687d093f833e62420ad04615007394148c87c8dd906406e3"
+      },
+      "mainMatchesFixedPreimage": true
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "after": {
+        "bytes": 1423,
+        "sha256": "2e313671c97ad304c817ebf3f123a14fac31af87e66f98354c17a254b4d7fe3a"
+      },
+      "fixedPreimage": {
+        "bytes": 1277,
+        "sha256": "65c05f002eb3f429444235157d5a9745ded0c94bc4698aba98e673efcbb0483c"
+      },
+      "observedMainPreimage": {
+        "bytes": 1277,
+        "sha256": "65c05f002eb3f429444235157d5a9745ded0c94bc4698aba98e673efcbb0483c"
+      },
+      "mainMatchesFixedPreimage": true
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "after": {
+        "bytes": 21699,
+        "sha256": "bfd985db4e5455b1b614155ca71d299ad8b1b60f3f4449b76761689f584d6019"
+      },
+      "fixedPreimage": {
+        "bytes": 20703,
+        "sha256": "897e77e29a20e20f0e221deeb7491ac6af7d8efd3c5f5edac5c8d456b03e5096"
+      },
+      "observedMainPreimage": {
+        "bytes": 20703,
+        "sha256": "897e77e29a20e20f0e221deeb7491ac6af7d8efd3c5f5edac5c8d456b03e5096"
+      },
+      "mainMatchesFixedPreimage": true
+    },
+    {
+      "path": "packages/client/src/plugin-runner.test.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "after": {
+        "bytes": 8335,
+        "sha256": "3e968cdbdd2500d7f306784fd69946521b6d9295d1a42896c66077eed558e67b"
+      },
+      "fixedPreimage": {
+        "bytes": 6049,
+        "sha256": "4dc8629df0b96862988418fb47faf8a12b9337f0a898e0841294725c705bf7b6"
+      },
+      "observedMainPreimage": {
+        "bytes": 6049,
+        "sha256": "4dc8629df0b96862988418fb47faf8a12b9337f0a898e0841294725c705bf7b6"
+      },
+      "mainMatchesFixedPreimage": true
+    },
+    {
+      "path": "packages/client/src/plugin-runner.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "after": {
+        "bytes": 3585,
+        "sha256": "151f1d9e908db78b07f177844ad4e5cb13e3d1ea3ed203f1822db2c049d7c035"
+      },
+      "fixedPreimage": {
+        "bytes": 2687,
+        "sha256": "f74365446f988caaec4e1a287608ab48b1a858d488640eafbf17f9606fb8ead9"
+      },
+      "observedMainPreimage": {
+        "bytes": 2687,
+        "sha256": "f74365446f988caaec4e1a287608ab48b1a858d488640eafbf17f9606fb8ead9"
+      },
+      "mainMatchesFixedPreimage": true
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-binding.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "after": {
+        "bytes": 696,
+        "sha256": "e96e6f94cbb7570d264eda129306f746b318a1781b9a2a8d1277ce171723a3c1"
+      },
+      "fixedPreimage": null,
+      "observedMainPreimage": null,
+      "mainMatchesFixedPreimage": true
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.test.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "after": {
+        "bytes": 3201,
+        "sha256": "95bee3168ae770493d53f741acdc8cd62614536e704619480e62f6fe5e0be069"
+      },
+      "fixedPreimage": {
+        "bytes": 2399,
+        "sha256": "2969316fcdd028422ae70b358d9307bf64d06b231286bd6c90a1ffe39bbc8524"
+      },
+      "observedMainPreimage": {
+        "bytes": 2399,
+        "sha256": "2969316fcdd028422ae70b358d9307bf64d06b231286bd6c90a1ffe39bbc8524"
+      },
+      "mainMatchesFixedPreimage": true
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "after": {
+        "bytes": 5976,
+        "sha256": "c71cc4898e4d36fe4587e5d94543a10f54269a1541645b5a74e4b4d06d9ad955"
+      },
+      "fixedPreimage": {
+        "bytes": 1888,
+        "sha256": "8d293bf9bfb5e66159e2fe667c4202bc7ff711073caf013574ef3b022074144f"
+      },
+      "observedMainPreimage": {
+        "bytes": 1888,
+        "sha256": "8d293bf9bfb5e66159e2fe667c4202bc7ff711073caf013574ef3b022074144f"
+      },
+      "mainMatchesFixedPreimage": true
+    },
+    {
+      "path": "packages/storage/migrations/036-plugin-verification-bindings.sql",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "after": {
+        "bytes": 5113,
+        "sha256": "78e341afe35d4dee7a36fdf9d430f427e25d983474931e3ad525002f932cfece"
+      },
+      "fixedPreimage": null,
+      "observedMainPreimage": null,
+      "mainMatchesFixedPreimage": true
+    }
+  ],
+  "newMigration": "036 formally assigned; static only, must run migration/backfill/constraints before intake. 034/035 unchanged.",
+  "nextReadyScope": [
+    "apps/server/src/plugin-runtime/verification-pg.test.ts",
+    "docs/evidence/x01-artifact-verifier",
+    "plans/x01-artifact-verifier"
+  ],
+  "nextScopeOwnership": "All already a67v4; proposed next source preparation uses owned new PG test and existing bounded fixture/operator. No actual OPEN. Any external fixture path changes need owner coordination or own evidence copy with fixed origin.",
+  "requiredPGMatrix": "av03-center-pg-matrix.md",
+  "missing": [
+    "Complete fixed main+new036 actual SQL/runtime closure",
+    "Dedicated fixture seeds and real mixed queue/receipt/source project assertions",
+    "New bounded operator review/admission/window"
+  ],
+  "forbidden": "Do not merge whole branch or mirror; no new public verifier producer until complete admission/result gates, no runtime/PROCESS write scope implied."
+}
