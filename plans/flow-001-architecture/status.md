@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T20:03:38.273Z / main/origin c29c2bbb0；个人更新部分失败已独审，当前维护23/服务停止，恢复优先 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:06:22.288Z / main/origin8f57d2f9f；恢复产物e15已获三角色冷启动与四App兼容限定批准，个人操作尚未执行 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | 源码main/origin c29c2bbb0；SVC06B实际19:47刷新失败、19:51确认三个服务停止/维护23，未resume/发布新Web。cd27已迁入、旧d629/v3指针保持；源码合入不能冒充运行可用。 |
+| 已集成main状态 / HEAD | main/origin8f57d2f9f；看板TIMING02及三项来源已实际部署211。个人仍同操作35d5/维护23，21:53只读确认三个旧服务停止，未resume/未发布779。固定e15候选独立于moving main。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 新版后台产物与旧页兼容报告已迁入；服务刷新失败，个人入口目前不可用，旧页面发布指针与原件保留。 |
-| 下一可用交付 | 先修复启动校验并恢复个人服务接单，再继续固定新版页面发布；其余独立源码工作并行。 |
-| 当前阻塞 | ACTIVE: 个人服务刷新未完成，三个登记服务已停止、仍在维护状态；最小启动修复正在实施，未盲重试或回滚。远程验证启用仍待原有选择。 |
+| 当前产出 | 修正后的固定后台已通过真实三角色启动与旧新网页兼容验证。个人入口尚未恢复，原件与旧页面保留。 |
+| 下一可用交付 | 沿原维护操作恢复个人服务，再发布已验证的新网页；保留旧页面和历史任务。 |
+| 当前阻塞 | ACTIVE: 个人服务仍处于维护状态；正在完成已验证恢复包的最终现场输入审查与操作交接。远程验证仍等待原CI启用选择。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -276,3 +276,5 @@ R4固定结果a4a2d98/delivery307d4f05获独立限定批准，首错仍为默认
 ### 2026-10-07T20:03:38.273Z 个人可用性恢复优先
 
 原SVC06B actual START19:43:39.755Z，迁入/报告/维护前段完成；19:47:21 refresh失败，19:51:09确认三登记服务停止、维护23，同op保留，未resume或Web发布。限定独审及边界见I02的svc06b-personal-partial-result-review.json；唯一现场记录仍为原SVC06B status，不复制私有输入。等待已从现场窗口转为最小启动修复与实际恢复；完整后置历史/实际领取仍未验，不以监听前或operator0query推断无业务副作用。
+
+2026-10-07T22:06:22.288Z：本轮看板三来源维护21:59:16.198Z开始，22:01:36.306Z完成实际211来源换载（D05唯一回执）；TIMING02本人状态不代填完成。恢复冷启动21:59:12.729Z开始、22:00:23.226Z准确归还，native限定独审批准81fa；四App21:57:36.662404Z开始、21:58:28.977667Z归还，Web独审通过且固定原件收口中。两者仅证明固定候选，不等于个人恢复完成；最终caller仍待交审，旧FAIL/KEEP保持。详细记录分别由[冷启动owner](/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/plans/svc06-browser-recovery/status.md)、[恢复caller owner](/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/plans/svc09-message-settings-activation/status.md)及[D05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/plans/d05-architecture-view/status.md)维护。
