@@ -57,8 +57,53 @@ function assertConfirmation(request, fact) {
   if (!fact || fact.source !== source || fact.sourceClean !== true || fact.runnerId !== request.runnerId
     || fact.operationId !== request.operationId || fact.version !== request.holdVersion || fact.state !== 'maintenance'
     || fact.runnerStopped !== true || fact.soleWriterConfirmed !== true || fact.inventoryComplete !== true
-    || fact.globalUnfinished !== 0 || fact.globalUncertain !== 0 || fact.pendingTasks !== 0 || fact.pendingQueue !== 0
+    || fact.globalUnfinished !== 0 || fact.globalUncertain !== 0
     || fact.pendingOutbox !== 0 || fact.pendingFinal !== 0 || fact.pendingUnknown !== 0) fail('FENCE_UNCONFIRMED');
+  if (request.confirmation === undefined) {
+    if (fact.pendingTasks !== 0 || fact.pendingQueue !== 0) fail('FENCE_UNCONFIRMED');
+  } else {
+    assertPreservedQueueEvidence(request.confirmation, fact.centerEvidence);
+    if (fact.pendingTasks !== request.confirmation.queuedTasks.length || fact.pendingQueue !== 0) fail('FENCE_UNCONFIRMED');
+  }
+}
+
+export const preservedQueueProtocol = 'flow.intent-preserved-queued.v2';
+const historyTables = ['attempts', 'tasks', 'conversation_queue'];
+const requiredColumns = {
+  attempts: ['id', 'task_id', 'runner_id', 'owner_version', 'completed_at'],
+  tasks: ['id', 'status', 'current_attempt_id'],
+  conversation_queue: ['id', 'state'],
+};
+const md5 = bytes => createHash('md5').update(bytes).digest('hex');
+/** Explicit opt-in; never reinterpret a nonzero count as the original empty-pending policy. */
+export function assertPreservedQueueContract(contract) {
+  if (!contract || contract.protocol !== preservedQueueProtocol || !/^[a-f0-9]{64}$/.test(contract.baselineSha256)
+    || !Array.isArray(contract.tables) || contract.tables.length !== historyTables.length
+    || !Array.isArray(contract.queuedTasks) || contract.queuedTasks.length < 1 || contract.queuedTasks.length > 10000) fail('PRESERVED_QUEUE_CONTRACT');
+  for (const [index, table] of contract.tables.entries()) {
+    if (table.name !== historyTables[index] || !Array.isArray(table.columns) || table.columns.length > 100
+      || new Set(table.columns).size !== table.columns.length || table.columns.some(column => !/^[a-z_][a-z0-9_]*$/.test(column))
+      || requiredColumns[table.name].some(column => !table.columns.includes(column))
+      || !Number.isSafeInteger(table.count) || table.count < 0 || table.count > 10000 || !/^[a-f0-9]{32}$/.test(table.digest)) fail('PRESERVED_QUEUE_CONTRACT');
+  }
+  const ids = contract.queuedTasks.map(task => task.id);
+  if (new Set(ids).size !== ids.length || ids.some((id, index) => !uuid.test(id) || (index && id <= ids[index - 1]))
+    || contract.queuedTasks.some(task => Object.keys(task).sort().join(',') !== 'current_attempt_id,id,status'
+      || task.status !== 'queued' || task.current_attempt_id !== null)) fail('PRESERVED_QUEUE_CONTRACT');
+}
+/** All historical rows, including completed attempts, are bound to the pre-drain projection. */
+export function assertPreservedQueueEvidence(contract, evidence) {
+  assertPreservedQueueContract(contract);
+  if (!evidence || evidence.protocol !== contract.protocol || evidence.baselineSha256 !== contract.baselineSha256
+    || JSON.stringify(evidence.queuedTasks) !== JSON.stringify(contract.queuedTasks)
+    || !Array.isArray(evidence.tables) || evidence.tables.length !== contract.tables.length) fail('PRESERVED_QUEUE_CHANGED');
+  for (const [index, expected] of contract.tables.entries()) {
+    const actual = evidence.tables[index];
+    if (!actual || actual.name !== expected.name || JSON.stringify(actual.columns) !== JSON.stringify(expected.columns)
+      || !Array.isArray(actual.rowHashes) || actual.rowHashes.length !== expected.count
+      || actual.rowHashes.some(hash => !/^[a-f0-9]{32}$/.test(hash))
+      || md5([...actual.rowHashes].sort().join('')) !== expected.digest) fail('PRESERVED_QUEUE_CHANGED');
+  }
 }
 function fixedNewBytes(original) {
   const value = JSON.parse(new TextDecoder('utf-8', { fatal: true }).decode(original));

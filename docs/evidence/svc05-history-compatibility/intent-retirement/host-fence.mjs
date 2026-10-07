@@ -5,7 +5,7 @@ import { pathToFileURL } from 'node:url';
 import { createRequire } from 'node:module';
 import { execFile } from 'node:child_process';
 import { promisify } from 'node:util';
-import { source, sha, identity, readRegular } from './retire.mjs';
+import { source, sha, identity, readRegular, assertPreservedQueueContract, assertPreservedQueueEvidence } from './retire.mjs';
 
 const repository = '/Users/citrine/Projects/AgentHarness/Flow';
 const personal = '/Users/citrine/.flow-personal';
@@ -51,10 +51,29 @@ export async function exactHistory(request) {
   if (seen.size !== allowed.size) fail('HISTORY_MISSING');
 }
 
-export async function withHostFence(request, use) {
+/** Actual SQL producer, called only inside the same-runner FOR UPDATE fence below. */
+export async function readPreservedQueueEvidence(client, contract) {
+  assertPreservedQueueContract(contract);
+  const tables = [];
+  for (const table of contract.tables) {
+    const columns = table.columns.map(column => '"' + column + '"').join(',');
+    const result = await client.query(`SELECT md5(to_jsonb(x)::text) AS h FROM (SELECT ${columns} FROM flow."${table.name}" LIMIT 10001) x`);
+    if (result.rows.length > 10000) fail('HISTORY_BOUND');
+    tables.push({ name: table.name, columns: table.columns, rowHashes: result.rows.map(row => row.h).sort() });
+  }
+  const queuedTasks = (await client.query("SELECT id,status,current_attempt_id FROM flow.tasks WHERE status NOT IN ('succeeded','failed','cancelled') ORDER BY id LIMIT 10001")).rows;
+  const evidence = { protocol: contract.protocol, baselineSha256: contract.baselineSha256, tables, queuedTasks };
+  assertPreservedQueueEvidence(contract, evidence);
+  return evidence;
+}
+
+// verifySource is a trusted caller's fixed tool-closure check, not a request-controlled boolean.
+// Omitting it preserves the original af51 checkout qualification. The actual runner source
+// remains af51 in both modes and is separately checked from the immutable state below.
+export async function withHostFence(request, use, { verifySource = fixedSource } = {}) {
   if (request.root !== personal || request.runnerId !== 'd22f4df2-8242-49f4-a1b4-77f8f08611ef'
     || !/^[a-f0-9]{64}$/.test(request.stateSha256) || !/^[a-f0-9]{64}$/.test(request.configSha256)) fail('FIXED_INSTALLATION');
-  await fixedSource();
+  await verifySource();
   const preview = await tool('preview.mjs'), processTools = await tool('process.mjs');
   const config = await preview.loadPreviewConfiguration(personal);
   if (sha((await readRegular(join(personal, 'config.json'))).bytes) !== request.configSha256
@@ -72,11 +91,12 @@ export async function withHostFence(request, use) {
       const runner = (await client.query('SELECT id,revoked,token_hash,maintenance_state,maintenance_version,maintenance_operation_id FROM flow.runners WHERE id=$1 FOR UPDATE', [request.runnerId])).rows[0];
       if (!runner || runner.revoked || runner.token_hash !== sha(config.runner.token)) fail('RUNNER_IDENTITY');
       const confirm = async () => {
-        await fixedSource();
+        await verifySource();
         if (sha((await readRegular(join(personal, 'config.json'))).bytes) !== request.configSha256) fail('CONFIG_CHANGED');
         const stateBytes = (await readRegular(join(personal, 'state.json'))).bytes;
         if (sha(stateBytes) !== request.stateSha256) fail('STATE_CHANGED');
         const state = JSON.parse(stateBytes);
+        if (request.confirmation !== undefined && (state.source?.head !== source || state.source.dirty !== false)) fail('RUNNER_SOURCE_CHANGED');
         if (await processTools.inspectOwnedProcess(state.processes?.runner) !== 'stopped') fail('RUNNER_NOT_STOPPED');
         // Bounded same-installation deployment check; not a claim to detect arbitrary hostile processes.
         const ps = (await execute('ps', ['-axo', 'pid=,command='], { timeout: 1500, maxBuffer: 1048576 })).stdout;
@@ -91,11 +111,13 @@ export async function withHostFence(request, use) {
           (SELECT count(*)::int FROM flow.tasks WHERE status='uncertain') uncertain,
           (SELECT count(*)::int FROM flow.tasks WHERE status NOT IN ('succeeded','failed','cancelled')) pending,
           (SELECT count(*)::int FROM flow.conversation_queue WHERE state='waiting') queue`)).rows[0];
+        const centerEvidence = request.confirmation === undefined ? undefined : await readPreservedQueueEvidence(client, request.confirmation);
         return { source, sourceClean: true, runnerId: runner.id, state: runner.maintenance_state,
           operationId: runner.maintenance_operation_id, version: runner.maintenance_version,
           runnerStopped: true, soleWriterConfirmed: true, inventoryComplete: true,
           globalUnfinished: counts.unfinished, globalUncertain: counts.uncertain, pendingTasks: counts.pending, pendingQueue: counts.queue,
           pendingOutbox: 0, pendingFinal: 0, pendingUnknown: 0,
+          ...(centerEvidence ? { centerEvidence } : {}),
           deployment: { installationId: config.installationId, databaseName: config.databaseName, markerMatched: true,
             registeredRunnerIds: registered.map(row => row.id), configSha256: request.configSha256, stateSha256: request.stateSha256,
             ownedRunnerRecordSha256: sha(JSON.stringify(state.processes.runner)), knownRunnerEntrypoints: 0,
