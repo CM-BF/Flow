@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 23:47:37 UTC；main未集成，当前声明绑定已审PG准备源码，0新检查 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 02:37 UTC恢复局部验证准备；main未集成，0新types/collect/PG |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -11,7 +11,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch |
 | Branch | codex/conversation-turn-page-batch |
 | 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品/局部验证d209eb7275777d50f214fd73f66d6b3c1520c459；本次PG准备源码HEAD 5ddddd6a7991243b5c42e223b11df879f0fa9498 |
-| 工作树dirty状态 | 修正前HEAD0f05edec71dc63fcc26ddcd639d20c41277fc579 clean；本次仅status实现声明，95输入逐字冻结 |
+| 工作树dirty状态 | 恢复前HEAD78c9e400562d6aba0c693856359e22af0e351f4b clean；95输入不变，仅本claim的run-check新增两个固定轻检查选项及准备/status，待delta独审 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 实现目标 | 5ddddd6a7991243b5c42e223b11df879f0fa9498 |
@@ -21,9 +21,9 @@
 | 已集成main状态 / HEAD | 未集成；实现3cd7a6e8已固定，未在main验证 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 批量读取局部验收已通过，真实分页与并发快照验收包已通过源码独审 |
-| 下一可用交付 | 资源窗口开放后完成准备包局部检查，再安排真实数据库验收 |
-| 当前阻塞 | ACTIVE: 后继运行等待可用空间和共享窗口；当前准备包已通过源码审查 |
+| 当前产出 | 批量读取局部验收已通过，真实分页与并发快照验收包及依赖已就绪 |
+| 下一可用交付 | 完成新PG夹具的类型与收集检查，再验证真实批量SQL和并发快照 |
+| 当前阻塞 | ACTIVE: 等待轻检查入口小增量独审及共享窗口；旧空间不足已解除，Lead正恢复现用Web页面，本任务没有轻检查或PG运行授权 |
 | 需用户决定 | NONE |
 | 真实PG准备目标 | 5ddddd6a7991243b5c42e223b11df879f0fa9498；95 inputs/429768B，manifest df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e；PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN |
 | Review | [review.md](review.md)，APPROVED d209eb7275777d50f214fd73f66d6b3c1520c459（局部source+fake+strict）；5ddddd6a的PG准备source另获APPROVED，非执行准入 |
@@ -39,7 +39,7 @@
 
 ## Dashboard 与交接
 
-唯一status canonical为 `/root/db_transaction_owner`；Lead已登记dashboard178权威来源，等待正常聚合；不编辑生成JSON或全局索引。本片产品源码已静态独审，green26/26与strict-v2通过，验证结果/一行fixture修复已独立APPROVED；两份SQL供给已解除等待，真实PG fixture/执行封套已获源码独审，依赖已就绪，保claim等待窗口。SVC07独立旧claim保留且停止执行，不交叉使用claim。
+唯一status由 `/root/db_transaction_owner`维护；Lead已登记dashboard178权威来源，不编辑生成JSON或全局索引。Mika最后已核快照2026-10-06T23:59:35.367Z：HEAD78c9 clean/current/nonstale，review approved target5dd/proof unchanged、checks not_run、issues[]。本次新caller变化须重新审查，不用历史approval掩盖；原95输入与产品d209保持不变。SVC07已独立main接收并于2026-10-07T02:23:17.503Z释放原claim，本任务不再写其scope，只读复用固定supervisor。
 
 ## 最近安全点
 
@@ -76,3 +76,9 @@
 2026-10-06 23:42:48 UTC展示修正：root实际读取4320快照2026-10-06T23:41:52.953Z（182任务），REQ15唯一live/current/nonstale，权威WT正确、HEAD57e134b5 clean、issues[]，确认可正常聚合。旧review首行把当前批准与历史NOT_STARTED放在同一行，聚合器误显示not_started/target:null；检查字段无标准前缀显示unknown。本次仅将首行固定为APPROVED及独立完整Review target commit，将完整历史说明另段保留；检查字段以NOT_RUN新types/collect/PG开头，旧d209/26/strict事实保留。不修改parser/生成JSON，不改变review结论或固定inputs。owner于23:42:48.246Z fresh ledger available、原v1 ACTIVE/10scope/身份未变；后续展示由root定向读回确认，不把本次编辑当已观察结果。
 
 2026-10-06 23:47:37 UTC实现声明校正：root定向快照23:45:59.081已显示REQ15 current/issues[]、checks=not_run且review首行/target解析正确；剩余declarationProof unknown来自旧d209目标之后新增PG支持代码超出原实现范围。本次将当前实现目标如实绑定已获root+chatui源码审的5ddddd6a7991243b5c42e223b11df879f0fa9498，并在原8路径之外逐literal列入3个PG TS、一次性Python封套、Vitest配置及局部tsconfig。产品验证基线d209与原26/strict事实独立保留，5dd只增加未运行的验证准备；review target仍5dd、checks仍NOT_RUN。owner于23:47:37.817Z fresh核原v1 ACTIVE/10scope不变；没有扩大claim/批准、修改parser或固定输入。后继支持代码变化应重新独审，不隐藏变化换取展示通过。
+
+2026-10-07 02:37:41.342Z恢复本任务，fresh ledger available、09b83400 v1 ACTIVE/10scope/owner/branch/WT全符，实际HEAD78c9 clean。只读核95 inputs429768B/manifest df2cd82a…439e、9deps、8driver与固定旧supervisor982c均匹配，六PG输出及两轻检查新输出全部absent；一次free25,745,203,200B满足原轻/PG门槛，旧空间不足阻塞解除，未因资源恢复推断OPEN。SVC06当前持轻slot，本任务没有Web/PG或轻运行授权，0import/types/collect/tests/PG/provider。
+
+剩余最小顺序见[可审入口包](../../docs/evidence/req15-turn-page-batch/validation-ready.md)：新fixture局部types一次、显式list收集2条一次，然后另排原两case PG一次；不重跑d209的26/26或strict。现有run-check原来只能旧tests/types，本段仅追加pg-types/pg-collect两个固定payload、清除PG/admin/OPEN env并记录collect真实数量；不新增监督循环或通用框架，原95执行输入/manifest及产品不变。新的caller delta待固定commit独审；HTTP留实际集成点。沿本地find-skills、固定clean-code与codebase-design复核职责/命令选择单一来源/失败原件/资源所有权，未装技能或依赖。
+
+本段后续Mika资源通知：Lead正在恢复用户现用61228 Web页面的同版本Web-only bootstrap；恢复期间不新开PG/Chrome/安装重负载。本组无actual holder，REQ15没有已打开运行，继续固定准备；不轮询资源或接口、不借准备扩大product/source scope。

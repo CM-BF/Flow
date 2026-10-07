@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-07T02:41:49.578898+00:00",
+  "state": "LOCAL_PRECHECK_DELTA_PREPARED_NOT_RUN_REVIEW_PENDING",
+  "priorHead": "78c9e400562d6aba0c693856359e22af0e351f4b",
+  "productTarget": "d209eb7275777d50f214fd73f66d6b3c1520c459",
+  "approvedPgSource": "5ddddd6a7991243b5c42e223b11df879f0fa9498",
+  "pgManifestSha256": "df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e",
+  "files": [
+    {
+      "path": "docs/evidence/req15-turn-page-batch/run-check.py",
+      "bytes": 7135,
+      "sha256": "9e577e8b5255d59bcbb5f5b3a261ee359daa84045cb95c0f15f859d2328dff0c"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/validation-ready.md",
+      "bytes": 4866,
+      "sha256": "9e6808be27c7b4c503c02247884f151b2273e94b1c8391053bbdbaf438bf77de"
+    },
+    {
+      "path": "docs/evidence/req15-turn-page-batch/pg-prepared-manifest.json",
+      "bytes": 17632,
+      "sha256": "df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e"
+    }
+  ],
+  "readOnlyObservation": {
+    "claimId": "09b83400-e41f-4e6c-a5a9-08ae340b74db",
+    "version": 1,
+    "state": "active",
+    "ledgerObservedAt": "2026-10-07T02:37:41.342Z",
+    "inputs": 95,
+    "inputBytes": 429768,
+    "dependencies": 9,
+    "driverInputs": 8,
+    "allMatched": true,
+    "actualPgOutputsAbsent": 6,
+    "newLocalOutputsAbsent": 6,
+    "availableBytesSingleSample": 25745203200,
+    "resourceSampleIsNotWindowAuthorization": true
+  },
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/docs/evidence/svc07/execute-pg-once.py",
+    "sha256": "982c2e5a7a1acc98256413ceaf84c9b207a7ec481bbeb0c0462bc41892b51dc0",
+    "mode": "existing pure supervise with in-process ROOT injection; no SVC07 writes or OPS14 migration"
+  },
+  "remainingChecks": [
+    {
+      "kind": "pg-types",
+      "label": "pg-types",
+      "expected": "exit0, no tests executed",
+      "seconds": 30,
+      "rawBytes": 65536,
+      "tmpSampleBytes": 33554432,
+      "postgresConnections": 0
+    },
+    {
+      "kind": "pg-collect",
+      "label": "pg-collect",
+      "expected": "exact fixture file, collected2, testPasses=null, no beforeAll",
+      "seconds": 30,
+      "rawBytes": 65536,
+      "tmpSampleBytes": 33554432,
+      "postgresConnections": 0
+    },
+    {
+      "kind": "original-pg-wrapper",
+      "expected": "actual selected2/pass2 and confirmed cleanup",
+      "seconds": 30,
+      "rawBytes": 65536,
+      "tmpSampleBytes": 33554432,
+      "postgresConnections": 3,
+      "reservedDbBytes": 67108864
+    }
+  ],
+  "engineeringExecutions": 0,
+  "pgOpen": false,
+  "lightOpen": false,
+  "notes": [
+    "Do not rerun the existing 26 cases or strict-v2.",
+    "The approved 95-file PG packet is unchanged; only this local caller delta needs source review.",
+    "Current shared Web restoration HOLD takes precedence over this static readiness observation."
+  ]
+}
