@@ -1,0 +1,160 @@
+import assert from 'node:assert/strict';
+import http from 'node:http';
+import { readFile } from 'node:fs/promises';
+import path from 'node:path';
+import { parseStatus } from '../src/status.mjs';
+
+// Isolated rendering fixture: real parser and shipped UI, synthetic owner/Git
+// observations. No registry, coordination database, provider, or default service.
+const observedAt = '2026-10-07T03:00:00.000Z';
+const source = { mode: 'live', stale: false, path: '/fixture/plans/t01/status.md', syncedAt: observedAt };
+function ownerStatus(id, fields = {}) {
+  const values = {
+    '最近更新': observedAt, '单一 status owner': 'timing-fixture', Branch: 'codex/timing-fixture',
+    '工作分支状态': 'in-progress', '检查状态': 'NOT_RUN', Review: 'NOT_STARTED', '已集成main状态': '尚未集成',
+    '阶段': 'M2', '优先级': '1', '当前产出': '核对任务时间', '下一可用交付': '展示明确的时间来源',
+    '当前阻塞': 'NONE', '需用户决定': 'NONE', '本片段交付阶段': 'implementation',
+    '任务开工时间': '2026-10-07T01:00:00.000Z', '任务完成时间': 'NOT_COMPLETED',
+    '任务时间来源': '开工：fixture-start 原始事件；完成：尚未发生', ...fields,
+  };
+  return `# ${id} 状态\n\n| 字段 | 值 |\n| --- | --- |\n${Object.entries(values).map(([key, value]) => `| ${key} | ${value} |`).join('\n')}\n\n| TODO ID | 状态 | Owner | 证据 |\n| --- | --- | --- | --- |\n| ${id}-01 | pending | timing-fixture | 本次尚未检查 |\n\n## 等待记录\n| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| --- | --- | --- | --- | --- | --- |\n| WAIT01 | UNKNOWN | OPEN | 审查 | 尚无结束证据 | fixture-wait |\n`;
+}
+function task(id, fields, overrides = {}) {
+  return {
+    id, title: `时间样本 ${id}`, branch: 'codex/timing-fixture', current: true,
+    source: { ...source }, status: parseStatus(ownerStatus(id, fields), id), issues: [],
+    progress: { completed: 0, total: 1 }, assignments: null, documents: [],
+    git: { available: false, branch: null, head: null, dirty: null },
+    review: { state: 'not_started', record: 'NOT_STARTED', target: null },
+    main: { current: false, record: '尚未集成', reason: 'fixture 未核验 main', method: 'unknown', observedAt },
+    links: { kind: 'big', parent: { state: 'none' }, coLead: { state: 'known', value: 'timing-fixture' } },
+    ...overrides,
+  };
+}
+
+export async function createTaskTimingFixture() {
+  let state = { fields: {}, task: {}, generatedAt: observedAt, fail: false };
+  const assets = new Map([
+    ['/', ['index.html', 'text/html']], ['/app.js', ['app.js', 'text/javascript']], ['/styles.css', ['styles.css', 'text/css']],
+    ['/architecture.js', ['architecture.js', 'text/javascript']], ['/architecture-data.js', ['architecture-data.js', 'text/javascript']], ['/architecture.css', ['architecture.css', 'text/css']],
+  ]);
+  const server = http.createServer(async (request, response) => {
+    try {
+      const url = new URL(request.url, 'http://fixture.invalid');
+      if (url.pathname === '/api/snapshot') {
+        if (state.fail) { response.writeHead(503); response.end('fixture snapshot unavailable'); return; }
+        const tasks = [task('T01', state.fields, state.task), task('T02', { '任务完成时间': '2026-10-07T02:30:00Z', '任务时间来源': '开工：fixture-start；完成：fixture-done' })];
+        response.writeHead(200, { 'Content-Type': 'application/json', 'Cache-Control': 'no-store' });
+        response.end(JSON.stringify({ generatedAt: state.generatedAt, tasks, unregisteredAssignments: [],
+          overview: { phase: 'M2', activeIds: ['T01', 'T02'], deliveryIds: [], otherActiveIds: [], decisionIds: [], blockerIds: [], unknownIds: [], historyIds: [] },
+          main: { available: false, observedAt, worktree: '/fixture/main' },
+        })); return;
+      }
+      const asset = assets.get(url.pathname);
+      if (!asset) { response.writeHead(404); response.end(); return; }
+      const body = await readFile(new URL(`../public/${asset[0]}`, import.meta.url));
+      response.writeHead(200, { 'Content-Type': `${asset[1]}; charset=utf-8`, 'Cache-Control': 'no-store' }); response.end(body);
+    } catch (error) { response.writeHead(500); response.end(error.message); }
+  });
+  try {
+    await new Promise((resolve, reject) => { server.once('error', reject); server.listen(0, '127.0.0.1', resolve); });
+  } catch (error) { server.close(); throw error; }
+  return {
+    url: `http://127.0.0.1:${server.address().port}`,
+    setState: next => { state = { fields: {}, task: {}, generatedAt: observedAt, fail: false, ...next }; },
+    close: () => new Promise((resolve, reject) => { server.close(error => error ? reject(error) : resolve()); server.closeAllConnections(); }),
+  };
+}
+
+// Called by a separately admitted owner runner with an owned page/fixture/output.
+// This file never launches Chrome or writes a budget. Caller owns the total
+// deadline, scratch/output caps, source hashes, page/Chrome and fixture cleanup.
+export async function runTaskTimingChecks({ page, fixture, outputDir, checkpoint }) {
+  const checks = [], screenshots = [], errors = [];
+  const onError = error => errors.push(error.message);
+  page.on('pageerror', onError);
+  const row = id => page.locator('#active-work > .task-row').filter({ has: page.locator('.task-code', { hasText: new RegExp(`^${id}$`) }) });
+  const elapsed = () => row('T01').locator('.task-elapsed');
+  const refresh = async () => {
+    await page.locator('#refresh').click();
+    await page.waitForFunction(() => !document.querySelector('#refresh').disabled);
+    checkpoint();
+  };
+  try {
+    await page.addInitScript(() => {
+      const original = window.setInterval;
+      window.setInterval = (callback, delay, ...args) => {
+        if (delay === 20000) { window.timingFixtureRefresh = callback; return 0; }
+        return original(callback, delay, ...args);
+      };
+    });
+    await page.setViewportSize({ width: 1280, height: 800 });
+    await page.goto(fixture.url);
+    await page.locator('#sync-state').filter({ hasText: '已同步' }).waitFor(); checkpoint();
+    assert.equal(await row('T01').count(), 1);
+    assert.match(await elapsed().innerText(), /已历时（含等待，截至本次同步）：0天 2小时 0分 0秒/);
+    assert.match(await row('T02').innerText(), /负责人声明完成.*0天 1小时 30分 0秒/);
+    assert.match(await row('T01').innerText(), /01:00:00.000 UTC.*尚未完成/);
+    fixture.setState({ fields: { 工作分支状态: 'completed' } }); await refresh();
+    assert.match(await elapsed().innerText(), /截至本次同步.*2小时/);
+    checks.push('Explicit task start/end and inclusive elapsed; branch completion never ends the task');
+
+    for (const [label, state] of [
+      ['unknown end', { fields: { 任务完成时间: 'UNKNOWN' } }],
+      ['missing provenance', { fields: { 任务时间来源: 'UNKNOWN' } }],
+      ['future start', { fields: { 任务开工时间: '2099-10-07T01:00:00Z' } }],
+      ['reverse', { fields: { 任务完成时间: '2026-10-07T00:00:00Z' } }],
+      ['stale', { task: { current: false, source: { ...source, stale: true } } }],
+      ['frozen', { task: { current: false, source: { ...source, mode: 'frozen', frozenCommit: 'fixture-old' } } }],
+    ]) {
+      fixture.setState(state); await refresh();
+      assert.match(await elapsed().innerText(), /历时未知/, label);
+      assert.doesNotMatch(await elapsed().innerText(), /截至本次同步/, label);
+    }
+    checks.push('Unknown, missing provenance, future, reverse, stale and frozen observations do not advance');
+
+    fixture.setState({}); await refresh();
+    const details = row('T01').getByRole('button', { name: '查看详情：T01 时间样本 T01', exact: true });
+    await details.focus(); await page.keyboard.press('Enter');
+    const region = page.getByRole('region', { name: '任务时间', exact: true });
+    await region.waitFor();
+    assert.match(await region.innerText(), /fixture-start/);
+    assert.match(await region.innerText(), /WAIT01/);
+    assert.match(await region.innerText(), /未求和/);
+    await page.locator('#close-dialog').focus();
+    fixture.setState({ fail: true });
+    await page.evaluate(() => window.timingFixtureRefresh());
+    await page.waitForFunction(() => document.querySelector('#sync-state').textContent === '当前同步失败'); checkpoint();
+    assert.match(await region.locator('.task-elapsed').innerText(), /历时未知/);
+    assert.match(await region.innerText(), /01:00:00.000 UTC/);
+    assert.equal(await page.locator('#close-dialog').evaluate(node => node === document.activeElement), true);
+    assert.equal(await page.locator('#task-dialog').evaluate(node => node.open), true);
+    checks.push('Read failure marks open timing historical without replacing the dialog or stealing focus');
+
+    fixture.setState({ generatedAt: '2026-10-07T04:00:00.000Z' });
+    await page.evaluate(() => window.timingFixtureRefresh());
+    await page.waitForFunction(() => document.querySelector('#sync-state').textContent === '已同步'); checkpoint();
+    assert.match(await region.locator('.task-elapsed').innerText(), /历时未知/);
+    assert.match(await region.innerText(), /2026-10-07T03:00:00.000Z/);
+    await page.keyboard.press('Escape');
+    assert.match(await elapsed().innerText(), /3小时/);
+    await row('T01').getByRole('button', { name: '查看详情：T01 时间样本 T01', exact: true }).click();
+    assert.match(await region.locator('.task-elapsed').innerText(), /3小时/);
+    checks.push('New snapshot updates cards; an open detail retains its original observation until explicitly reopened');
+
+    for (const theme of ['light', 'dark']) {
+      await page.keyboard.press('Escape');
+      await page.locator('#theme').selectOption(theme);
+      await page.setViewportSize({ width: 390, height: 844 });
+      await row('T01').getByRole('button', { name: '查看详情：T01 时间样本 T01', exact: true }).focus();
+      await page.keyboard.press('Enter'); await region.waitFor(); checkpoint();
+      assert.ok(await page.locator('#task-dialog').evaluate(node => node.scrollWidth <= node.clientWidth + 1));
+      assert.ok(await page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth));
+      const name = `task-timing-${theme}-390.png`;
+      await page.screenshot({ path: path.join(outputDir, name) }); screenshots.push(name);
+    }
+    checks.push('Both 390px themes preserve UTC/source/wait text, keyboard access and bounded layout');
+    assert.deepEqual(errors, []); checkpoint();
+    return { checks, screenshots, pageErrors: errors, observation: 'fixture-only parser/UI; no PG, registry, main proof or deployment validation' };
+  } finally { page.off('pageerror', onError); }
+}

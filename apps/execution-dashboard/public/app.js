@@ -24,8 +24,61 @@ function mainBadge(task) {
   return badge(task.main.historicalIntegrated ? '曾合入，当前待核验' : '集成待核实');
 }
 let snapshot;
+let snapshotCurrent = false;
 let selectedTask;
+let selectedSnapshot;
 let documentRequest;
+
+function taskTime(value) {
+  if (value?.state === 'known') return `${value.at.replace('T', ' ').replace('Z', '')} UTC`;
+  return value?.state === 'not_completed' ? '尚未完成（负责人声明）' : '未知';
+}
+function elapsedText(task, observedSnapshot, current) {
+  if (!task) return '历时未知（任务已不在本次快照中）';
+  const timing = task.status.timing;
+  if (!current || !task.current || task.source.mode !== 'live' || task.source.stale) return '历时未知（来源待同步；保留时间声明）';
+  if (!timing || timing.issues.length || timing.source.state !== 'declared') return '历时未知（时间或来源待核实）';
+  const snapshotTime = observedSnapshot.generatedAt;
+  const observed = Date.parse(snapshotTime);
+  const start = Date.parse(timing.started.at);
+  const end = timing.completed.state === 'not_completed' ? observed : Date.parse(timing.completed.at);
+  if (![observed, start, end].every(Number.isFinite) || new Date(observed).toISOString() !== snapshotTime || start > observed || end > observed || end < start) return '历时未知（未来时间或区间逆序）';
+  const seconds = Math.floor((end - start) / 1000);
+  const duration = `${Math.floor(seconds / 86400)}天 ${Math.floor(seconds / 3600) % 24}小时 ${Math.floor(seconds / 60) % 60}分 ${seconds % 60}秒`;
+  const label = timing.completed.state === 'not_completed' ? '已历时（含等待，截至本次同步）' : '已历时（含等待，负责人声明完成）';
+  return `${label}：${duration}`;
+}
+function summaryTiming(task) {
+  const section = element('div', undefined, 'task-timing');
+  section.dataset.timingTask = task.id;
+  section.append(element('p', `开工：${taskTime(task.status.timing?.started)} · 完成：${taskTime(task.status.timing?.completed)}`));
+  section.append(element('p', elapsedText(task, snapshot, snapshotCurrent), 'task-elapsed'));
+  return section;
+}
+function timingDetails(task) {
+  const section = element('section'); section.id = 'task-timing-detail'; section.setAttribute('aria-label', '任务时间');
+  section.append(element('h3', '任务时间'), element('p', '唯一负责人声明；含等待的壁钟历时，不代表实际工作或 CPU 用时。', 'muted'));
+  const facts = element('dl', undefined, 'detail-facts');
+  const timing = task.status.timing;
+  for (const [label, value] of [
+    ['任务开工时间（UTC）', taskTime(timing?.started)], ['任务完成时间（UTC）', taskTime(timing?.completed)],
+    ['时间来源（负责人声明，未独立核验）', timing?.source.record], ['时间声明原文', `${timing?.started.record || 'UNKNOWN'}\n${timing?.completed.record || 'UNKNOWN'}`],
+    ['声明问题', timing?.issues.join('；') || '无已识别的格式问题；不构成独立验证'],
+    ['本次快照（UTC）', selectedSnapshot.generatedAt], ['权威来源', task.source.path],
+    ['等待记录（原文，未求和）', timing?.waiting || '未记录；不推断等待或净工作时长'],
+  ]) facts.append(element('dt', label), element('dd', value || '未知'));
+  section.append(element('p', elapsedText(task, selectedSnapshot, snapshotCurrent), 'task-elapsed'), facts);
+  return section;
+}
+function updateTimingFreshness() {
+  for (const section of document.querySelectorAll('[data-timing-task]')) {
+    const observed = section.closest('#task-dialog') ? selectedSnapshot : snapshot;
+    const task = observed.tasks.find(item => item.id === section.dataset.timingTask);
+    section.querySelector('.task-elapsed').textContent = elapsedText(task, observed, snapshotCurrent && observed === snapshot);
+  }
+  const detail = $('#task-timing-detail .task-elapsed');
+  if (detail && selectedTask) detail.textContent = elapsedText(selectedTask, selectedSnapshot, snapshotCurrent && selectedSnapshot === snapshot);
+}
 
 function taskLinks(task, { summary = false } = {}) {
   const section = element('div', undefined, 'task-links');
@@ -66,7 +119,7 @@ function compactTask(task, subtitle, { summary = true } = {}) {
   if (task.assignments === null) allocation.textContent = '领取状态未知';
   else if (!task.assignments?.length) allocation.textContent = '尚无领取登记；接手前须核对';
   else allocation.textContent = [...new Set(task.assignments.map(claim => `${claim.role === 'review' ? '只读审查' : claim.role === 'integration' ? '受控集成' : claim.state === 'handoff_pending' ? '交接待接收' : '已领取'}${summary ? '' : ` · ${claim.lead} / ${claim.worker}`}${claim.needsVerification ? ' · 待核对（仍占用）' : ''}${claim.matchesSource ? '' : ' · 进度来源待对齐'}`))].join('；');
-  text.append(taskLinks(task, { summary }), allocation);
+  text.append(summaryTiming(task), taskLinks(task, { summary }), allocation);
   row.append(text, taskButton(task));
   return row;
 }
@@ -126,8 +179,10 @@ async function refresh() {
   try {
     const response = await fetch('/api/snapshot', { cache: 'no-store' });
     if (!response.ok) throw new Error(`HTTP ${response.status}`);
-    snapshot = await response.json(); render(); $('#load-error').hidden = true;
+    snapshot = await response.json(); snapshotCurrent = true; render(); updateTimingFreshness(); $('#load-error').hidden = true;
   } catch (error) {
+    snapshotCurrent = false;
+    if (snapshot) updateTimingFreshness();
     $('#load-error').hidden = false; $('#load-error').textContent = `读取失败：${error.message}。${snapshot ? '保留上次快照，内容可能已过期。' : '请确认本地服务和登记路径后重试。'}`;
     $('#sync-state').textContent = '当前同步失败';
   } finally { $('#refresh').disabled = false; }
@@ -154,12 +209,13 @@ function childTasks(parent) {
 function openTask(id) {
   const task = snapshot?.tasks.find(task => task.id === id); if (!task) return;
   const navigatingInsideDialog = $('#task-dialog').open;
-  selectedTask = task; documentRequest?.abort();
+  selectedTask = task; selectedSnapshot = snapshot; documentRequest?.abort();
   $('#detail-id').textContent = task.id; $('#detail-title').textContent = task.title;
   const content = $('#detail-content'); content.replaceChildren();
   content.append(element('h3', '任务关联'), taskLinks(task));
   const children = childTasks(task); if (children) content.append(children);
   for (const issue of task.issues) content.append(element('p', issue, 'notice warning'));
+  content.append(timingDetails(task));
   const facts = element('dl', undefined, 'detail-facts');
   for (const [label, value] of [
     ['Owner', task.status.owner], ['人类摘要缺口', task.status.human?.missing.join('、') || '无；摘要字段完整'], ['声明实现目标', task.status.implementation?.target], ['声明实现范围', task.status.implementation?.scopes.join('\n')], ['实现核验', JSON.stringify(task.implementationProof, null, 2)], ['Review 范围核验', JSON.stringify(task.review.proof ?? { state: '未执行', reason: '无可核验的 approval' }, null, 2)], ['工作分支', task.status.branchState], ['下一交付', task.status.human?.next || '未知，待负责人补充'], ['当前阻塞', humanSignal(task.status.human?.blocker)], ['用户决定', humanSignal(task.status.human?.decision)], ['历史风险与技术说明', task.status.risks],
