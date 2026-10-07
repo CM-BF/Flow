@@ -1,6 +1,6 @@
 # WPF-I01 当前后继独立 review
 
-状态：APPROVED（限定源码、相关局部检查与浏览器准备；首actual browser FAILED，0/4完整组；失败/ownedRETURN与scoped locator修复已独审，修后actual NOT_RUN）
+状态：APPROVED（限定源码、相关局部检查与浏览器准备；首actual browser FAILED，0/4完整组；失败/ownedRETURN与scoped locator修复已独审，第二actual FAILED/2of4；公开确认前置待修）
 
 Target: `ee9bd1179bb0e10828a1173beadcbd551c8be1bc`；Base: `3c9345df4aec85a37e8a2a155e079db260d515b1`。
 
@@ -62,3 +62,7 @@ Root 实际执行/核对：
 | workspace.tabs actions | 合法button/menu曾被panel过滤静默丢弃 | 同workspace context独立AppSlot，动作不置于tablist；合法声明fixture/键盘/Bcontext/disable通过，root复核 | CLOSED |
 
 未重新运行作者9browser/3PG/build全套；root已读原始报告与最终源码不变复用边界。结论不覆盖live模型/持续chat、完整X01插件管理、PTY/任意fs或main已集成。后续只有metadata，不扩大行为approval。
+
+## 第二实际 ee9bd / d779
+
+[root3bfd实际审](../../docs/evidence/wpf-i01/runtime-app/root-i01-second-failure-return-review-20261007.json)接收FAILED+FULLRETURN；[16原件](../../docs/evidence/wpf-i01/runtime-app/browser-second-20261007/manifest.json)保原。仅前两完整组通过，第三protected connection前置未完成，第四未到、0PNG。静态链显示测试遗漏附件离开确认，未存失败DOM不冒直接观察。源修待单独固定；无第三browser批准。

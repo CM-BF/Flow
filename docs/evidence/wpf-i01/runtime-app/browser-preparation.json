@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-07T16:13:17.181Z",
-  "state": "SCOPED_FILES_FIX_PREPARED_NOT_RUN_NO_MANAGER_HANDOFF",
+  "at": "2026-10-07T16:30:09.524Z",
+  "state": "CONSUMED_FAILED_2_OF_4_FULL_RETURN_NO_RETRY",
   "source": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
   "packet": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/manifest.json",
   "bytes": 4238,
@@ -51,5 +51,15 @@
     "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/root-i01-first-failure-locator-fix-review-20261007.json",
     "bytes": 5826,
     "sha256": "5b0026d12efc5026310c5d5d8ead1c59e2a4c54ec0976f2b297cba53d0a22c55"
+  },
+  "actualManifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/browser-second-20261007/manifest.json",
+    "original": "/private/tmp/i01-scoped-files-admission-1mrplt7y/raw-manifest.json"
+  },
+  "phaseResult": {
+    "chargeMs": 13436,
+    "unusedMs": 46564,
+    "state": "CLOSED",
+    "automaticRetry": false
   }
 }

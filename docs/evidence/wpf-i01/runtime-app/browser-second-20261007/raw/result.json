@@ -1,0 +1,65 @@
+{
+  "state": "FAILED",
+  "startedAtApprox": "2026-10-07T16:26:22.644071+00:00",
+  "actualExit": 1,
+  "elapsedMs": 13392.250875011086,
+  "ownedGroupAbsent": true,
+  "scratchRemoved": true,
+  "stdoutEOF": true,
+  "stderrEOF": true,
+  "peakSampledLogicalBytes": {
+    "scratch": 30428338,
+    "raw": 171958
+  },
+  "terminalFreeBytes": 20071755776,
+  "errors": [
+    "worker not passed",
+    "required four groups incomplete"
+  ],
+  "cleanupErrors": [],
+  "discardedOutputBytes": 0,
+  "interrupts": [],
+  "workerState": "FAILED",
+  "chromeExit": {
+    "code": 0,
+    "signal": null
+  },
+  "checks": [
+    {
+      "name": "real BrowserWorkspace cookie connection and complete current draft",
+      "startedAt": 5859.710875,
+      "elapsedMs": 1335.2115000000003
+    },
+    {
+      "name": "UNKNOWN survives collapse and close; explicit retry keeps original HTTP key/body and current draft",
+      "startedAt": 7194.925084,
+      "elapsedMs": 439.6761659999993
+    }
+  ],
+  "limits": {
+    "totalMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608
+  },
+  "source": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
+  "executionHead": "d7792f1b03d7e15c799c0d53618064e7b8fdccc4",
+  "grantSha256": "a3b7f46425664c0e7e74b7e3a29dfe13078fa608c46885bdd5f98a6a8ceb5d45",
+  "cacheLinks": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules/.vite",
+      "target": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/scratch/.vite",
+      "dev": 16777234,
+      "inode": 124326875
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/apps/web/node_modules/.vite-temp",
+      "target": "/private/tmp/i01-runtime-app-scoped-files-4yxdc5_x/scratch/.vite-temp",
+      "dev": 16777234,
+      "inode": 124326877
+    }
+  ],
+  "chargeMs": 13393,
+  "independentPortProbe": false,
+  "PG": false
+}

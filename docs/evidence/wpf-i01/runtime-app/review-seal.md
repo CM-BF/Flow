@@ -17,3 +17,8 @@
 ## 2026-10-07T16:13:17.181Z scoped Files source safety point
 
 Clean-code/已装技能方法复用：仅test定位一行，把公共Files绑定focused活跃tab内固定conversation:chat-1的composer ownership；不按DOM顺序选first/nth，不更改生产组件名称或scope。App251→ConversationThread248→react120–122及react300回焦点链静态复核；四组/所有判据/timeout/lifecycle保留。root5b002接受ee9bd与首FAIL/RETURN，失败原件未改。新prepared目录150319B，218source只一pin变、42external同、三caller字节同；旧余额封闭且新候选NO_GRANT。没有新types/direct/browser。独立portprobe未做继续保留限制。
+
+
+## 2026-10-07T16:30:09.524Z second browser failure/clean-code checkpoint
+
+Actual ownership/cleanup/error paths rechecked from exact originals: first two complete groups remain real scoped evidence; held third command does not imply revoked/reconnected success. Fixed four-source read identifies public attachment protection confirmation as missing test precondition; no product mutation or widened timeout. Retain original result, phase charge13436/CLOSED and no independent port probe. Current status updated atSTART and immediately afterRETURN before archive. No Node/types/direct or new browser launched.

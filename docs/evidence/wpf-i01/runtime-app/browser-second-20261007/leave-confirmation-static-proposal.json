@@ -1,0 +1,80 @@
+{
+  "at": "2026-10-07T16:29:08.837023+00:00",
+  "source": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
+  "inputs": [
+    {
+      "commit": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
+      "path": "apps/web/test/plugin-management-integration.browser.ts",
+      "bytes": 25857,
+      "sha256": "4577820d4433f1e091dcdbe575db025ec280166bae5d93ad5742ebb828d93008",
+      "blob": "8a44f888f5a40e115cf3b827851938eb550794bf"
+    },
+    {
+      "commit": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 74808,
+      "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e",
+      "blob": "b8906afb0dec8fcadcf1adb0a9638e9abfa671ff"
+    },
+    {
+      "commit": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 28667,
+      "sha256": "ebfa3f33860ee478f24808ca47fb6f7e7205fe613411608f0ef0bac58680e85d",
+      "blob": "06b6b64edb5ef30e0ab9e6141b0ea1028579621f"
+    },
+    {
+      "commit": "ee9bd1179bb0e10828a1173beadcbd551c8be1bc",
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 23456,
+      "sha256": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4",
+      "blob": "ef436e8a9d1eec5a96c27f229cf170c8d2c19474"
+    }
+  ],
+  "state": "SOURCE_INFERENCE_EXPECTED_PUBLIC_CONFIRMATION_NOT_FAILURE_DOM_OBSERVATION",
+  "actual": {
+    "run": "i01-files-20261007-162618-5fbf4e",
+    "passedCompleteGroups": 2,
+    "failed": "third group waiting Connect to Flow heading after Change connection",
+    "observedDOMAtFailure": false,
+    "screenshots": 0,
+    "runtimeWrites": 3,
+    "productBugConfirmed": false
+  },
+  "chain": [
+    {
+      "at": "browser:239\u2013250,258\u2013274",
+      "fact": "First group explicitly selects two existing files and checks saved full ordered references. Second group ends by asserting savedDraft equals originalDraft; no material consume/remove is called."
+    },
+    {
+      "at": "session:234\u2013254,276",
+      "fact": "Actual per-view ConversationAttachments remains in attachmentBindings. hasProtectedAttachments returns true if any binding.protection is nonempty."
+    },
+    {
+      "at": "attachments:282\u2013285",
+      "fact": "protection includes Attachment draft whenever input snapshot.items.length>0. It does not exempt already-persisted/ready files."
+    },
+    {
+      "at": "App:952,890,883\u2013885",
+      "fact": "Change connection with protected attachment selects leaving connection dialog; it does not call disconnectNow yet. Public Leave view and retain saved records invokes recovery.flush then onDisconnect. The confirmation preserves saved records and does not cancel center work."
+    },
+    {
+      "at": "browser:285\u2013286",
+      "fact": "Current test clicks Change connection and immediately waits for Connect to Flow; it omits that public confirmation. This is consistent with timeout, but no failure DOM proves exact visible dialog at that moment."
+    }
+  ],
+  "recommendedDelta": {
+    "scope": "Only existing apps/web/test/plugin-management-integration.browser.ts, within claim exact8",
+    "after": "await page.getByRole(\"button\", { name: \"Change connection\", exact: true }).click();",
+    "insert": [
+      "const leaving = page.getByRole(\"dialog\", { name: \"Leave attachment drafts?\", exact: true });",
+      "await expect(leaving).toBeVisible();",
+      "await leaving.getByRole(\"button\", { name: \"Leave view and retain saved records\", exact: true }).click();",
+      "await expect(leaving).not.toBeVisible();"
+    ],
+    "retain": "Existing Connect heading then release held runtime response/reconnect/full originalDraft equality/old command authority absent, all four groups/timeouts and cleanup. No internal disconnect call, no removing protection/materials, no assertions weakened.",
+    "status": "PROPOSED_NOT_EDITED_NOT_RUN"
+  },
+  "budget": "New actual60s used13436, remaining46564 CLOSED; first60s8540/51460 and local closed remain unchanged. No third runtime authorization.",
+  "cleanCode": "Reused existing public guarded navigation flow; no new controller, product change or generalized helper. Binding/member ownership read as the single source of protection semantics."
+}
