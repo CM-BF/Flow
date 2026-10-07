@@ -23,8 +23,9 @@ export function currentMigrationModulePaths(input) {
     process: join(root, 'tools/personal-preview/process.mjs'), package: join(root, 'package.json') };
 }
 // Called only inside the later actual window. Full installed-manifest verification precedes loading its code.
-export async function loadCurrentMigrationModules(input) {
-  validateCurrentMigrationInput(input);
+export async function loadCurrentMigrationModules(input, { validateInput = validateCurrentMigrationInput } = {}) {
+  // Only a reviewed in-process caller supplies a policy; JSON cannot select one.
+  validateInput(input);
   const verified = await backend.verifyBackendArtifact({ directory: input.installationDirectory, artifact: input.expectedBackendArtifact });
   assert.equal(verified.manifest.sourceRepository, input.repository);
   const paths = currentMigrationModulePaths(input); assert.equal(verified.root, paths.root);
@@ -146,9 +147,9 @@ export async function inspectCurrentStore(mod, input, store, verifiedOriginal) {
   return present;
 }
 
-export function currentMigrationIO(mod, input, run, healthy) {
+export function currentMigrationIO(mod, input, run, healthy, { observeInstallation = observeCurrentInstallation } = {}) {
   const rec = (name, value) => record(join(run, name), value);
-  const fresh = () => observeCurrentInstallation(mod, input);
+  const fresh = () => observeInstallation(mod, input);
   return {
     record: rec, fresh,
     runner: config => confirmMigrationRunner(mod.Pool, config, input.expectedRunner),
@@ -194,8 +195,10 @@ export function currentMigrationIO(mod, input, run, healthy) {
   };
 }
 
-export async function migrateCurrentArtifact(mod, input, healthy) {
-  validateCurrentMigrationInput(input);
+export async function migrateCurrentArtifact(mod, input, healthy,
+  { validateInput = validateCurrentMigrationInput, observeInstallation = observeCurrentInstallation } = {}) {
+  validateInput(input);
   await directory(input.runDirectory, input.runIdentity);
-  return migrateWithLocks(mod, input, input.runDirectory, currentMigrationIO(mod, input, input.runDirectory, healthy));
+  return migrateWithLocks(mod, input, input.runDirectory,
+    currentMigrationIO(mod, input, input.runDirectory, healthy, { observeInstallation }));
 }
