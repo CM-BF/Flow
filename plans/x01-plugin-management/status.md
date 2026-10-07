@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T05:12:11.029030+00:00 |
+| 最近更新时间 | 2026-10-07T05:14:26.740103+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,8 +14,8 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca；R3候选source37177aba665fa8d787e40c2a18c4d124bdf819ca，R2结果源d9f3a4aa/manifest e49b246d，未main |
-| 工作树 dirty 状态 | 只新增R3原raw/outer副本/结果和intake，source/输入冻结；封包后clean停写供独审 |
+| 工作基线 / HEAD | base60ca；产品/fixture source37177aba665fa8d787e40c2a18c4d124bdf819ca，R3结果2ee9fa442d6f5a68ec364dcca746e54a7282f205；最终metadata本提交，未main |
+| 工作树 dirty 状态 | 本次只新增结果绑定及必要状态；commit/push后clean停写供独审，v8占用保留 |
 | 工作分支状态 | in-progress |
 | 检查状态 | StageC R3原27/27实际通过，2DB/205HTTP/资源完整closed；原R1/R2失败均保留 |
 | Review | 37177/R3准备已独审；R3实际结果忠实性与最小main intake PENDING |
@@ -233,3 +233,5 @@ Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case�
 [原件与范围](../../docs/evidence/x01/enable-binding-stage-c-r3-result.md)：05:10:00.481194–08.767637Z，time8.37s/exit0，27selected27passed/0skip；205HTTP。两专库、四监听、两进程和TMP全部闭合，已直接归还Web。R1/R2历史不改。先独审此结果，再沿[精确main intake](../../docs/evidence/x01/enable-binding-main-intake.json)受控接15产品/test+1直接fixture支撑；此为分支模块能力而非默认挂载/生产runRunner/semver bundle完成。
 
 后继沿已有map，不新领共享scope：可信host发布/当前授权→严格v3claim资格→冻结binding→production runtime执行port→既有outbox/typed provenance/flow.text验证；S01 release只是已知交接事实，main/config/contracts/events等任何新增路径仍需fresh协调/amend。semver7.8.5已选未build；完整X01 TODO保持。
+
+2026-10-07T05:14:26.740103+00:00：R3结果固定2ee9fa44，24bindings/20raw28750B与16source162785B的最小main intake待独审；原27一次27/27，原R1/R2失败不改。fresh账本v8 ACTIVE/17scope无变，当前0运行/0待launch。PG已实际归还，按Mika新队列明确SVC08 assignment为next-ready并已直接通知Web co-lead；C02无PG holder不阻其准入。owner在最终packet提交/push后停止写入保留claim，下一由chatui只读结果审。

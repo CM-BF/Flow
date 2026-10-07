@@ -1,0 +1,214 @@
+{
+  "resultCommit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+  "executionCommit": "4461ae5ade11b9d2c53eee453031417b84084c72",
+  "sourceCommit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+  "recordedAt": "2026-10-07T05:14:26.740103+00:00",
+  "verdict": "PASSED; independent result fidelity review PENDING",
+  "selected": 27,
+  "passed": 27,
+  "failed": 0,
+  "pending": 0,
+  "scope": "Actual two serial dedicated DB/HTTP fixtures; not production runRunner or full plugin ability",
+  "files": [
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/admission.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "496d24f3093563b16c3dd34b8e4270774db9f768",
+      "bytes": 2266,
+      "sha256": "487fb84ec4f5c478fbc8cd4455da7aeb14bd7b5ecd91f8347628d4a4ec72a8b4",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/launch.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "40535b93f710bbc3602e9125347c5215cbfa5b9a",
+      "bytes": 188,
+      "sha256": "0f03b79c2a76aa6333ad0b1295deb42ccb7a90327ce8fba599c8466a1e99238e",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/output.log",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "96d8398e1d1417534452f05458326a163a4784f4",
+      "bytes": 113,
+      "sha256": "1b7ff62931c5c7a0469d0d5510eeb7821ab3c1eddfb6b04c3ae679151815e99a",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/preflight.stdout",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "de75164527d1c7387b3e062633e5509e9d31e050",
+      "bytes": 299,
+      "sha256": "0f71cfe5fb9fcda71696034d5f14dcfa8c5756e32791a580b58b87e34be6aae9",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/registry-create-request.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "fdbf8987b8fdbcf60fbd3c4160760f9205c49ddc",
+      "bytes": 355,
+      "sha256": "de14e2ec39451f5dafc87925f600ae90570150850b30c30b13216b0ad5ca9ce5",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/registry-created.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "ba6263c8c7f40ea1b701c450ce4fbaedcc429713",
+      "bytes": 404,
+      "sha256": "d84970ad63b7548c23ac77beef097d31b67ac78cb2c55392d0cc5e7cccb35537",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/registry-reservation.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "778bb36b60eff6d86b79746e76ff0c33176863ad",
+      "bytes": 452,
+      "sha256": "bd378df3a91fc644b2d1d67d9549eaa2e40b795fa7b118e5395cac1dc5931e4e",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/registry-result.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "674bd398deaddac4cbccb14ff9e7cbe7ab570fad",
+      "bytes": 1195,
+      "sha256": "9803603d8abc27a32bf7bead4a66021e46e35fda98607079f4feaeab17613564",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/reservation.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "c9e0edc9b0efb7660f27dc2d13ec3f6a0c1be208",
+      "bytes": 281,
+      "sha256": "debe6494ca39fea81bc5d2b551abd1b397a88f974e31767ad34212d4bff45a3e",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/result.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "805d6fef551e23d2c90e78b59722a0b7e427d712",
+      "bytes": 8205,
+      "sha256": "08acec4baeb3b0aad08ebdb0cd580a5cde0c199698a93abf023334d59968bd76",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/runtime-create-request.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "2a55dc567b466c7f104623fded51f1a8059fdfc3",
+      "bytes": 353,
+      "sha256": "97840e5d5b50a01fd7f2d7e50ebc46c597e1158a3de7569d403a714ed9aaa014",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/runtime-created.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "d6676c2cc5c44e23c23140ba95e3240708e21d10",
+      "bytes": 402,
+      "sha256": "c9e1037133ac0ce5086ac6fc86a5e3bd61b8b551055c6816e4f7f844165a257b",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/runtime-reservation.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "e15a720027940d4ae60f1f58de6bc95675c139db",
+      "bytes": 450,
+      "sha256": "6f2fc81d3b1ebb7bffbf6b585794ad056cdfcdf5c59c8b2bfb3556fc654b88c5",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/runtime-result.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "2b253d94ea42f51bdfa04782873a6ab36c346db1",
+      "bytes": 2426,
+      "sha256": "8d309bf00b8a8ec4c86b38e66b976aadb007270d309f80e5ca3ff0b69cf3a686",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3/vitest.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "46d8f9d6e4bb563233eff694e3d0d4e6f9020292",
+      "bytes": 8705,
+      "sha256": "70e976b4b33b13f4944d3fd8dac186cf851a8b08be03613470cafdf8e67d72fb",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3-outer/capture.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "b004a6474e81b080058b62738165c667e827b411",
+      "bytes": 2325,
+      "sha256": "4da861b72ef42fd68a3cef30b333de84001a6909f972355cd7e37a3f2af437c3",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3-outer/exit.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "5bfafa4fff519628ef25f6b87492dfc8dce7380a",
+      "bytes": 54,
+      "sha256": "9f78b9ed279b509e9d67eed14693f9ae742777dadfbf7381dee9686641c9950c",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3-outer/start.txt",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "d7cbce03adfa5c6fb1fbab59300f499fd8990bfc",
+      "bytes": 33,
+      "sha256": "084d455a872fe2b0296a74c1394e4084228346efc1b9f55d93d7553b246df381",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3-outer/stderr.txt",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "260023a2216203c20e4ea001e3b5350e0d87ae32",
+      "bytes": 29,
+      "sha256": "75e5e1ebdfd278a653cff3650e7587267da92914f1a6e126a48f9e334a86a509",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r3-outer/stdout.txt",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "b8fca0296c20a7eb83e835fa7c65c3b8d089675b",
+      "bytes": 215,
+      "sha256": "952321f217177c3646728b3a0ceb32fa1fb63b45ba6a2a0148eceaebd9f48ecd",
+      "role": "raw"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-r3-input.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "680b24d8f8d059306792e21a2d8a8e2399a08721",
+      "bytes": 952,
+      "sha256": "cf571c4c9d01e5b86d793c6e13abd5afb480264c42559efc55e226b5bb57b32d",
+      "role": "fixed/support"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-r3-manifest.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "48b2fbf496388b67c902972834de4acaeb251c9d",
+      "bytes": 86642,
+      "sha256": "19e312a014e9e4de210af26ad99de5b303c619155597e5f62d5c259b432fdfbf",
+      "role": "fixed/support"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-r3-result.md",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "b3ea64ba2138327940fa0f003ae2230b268d932a",
+      "bytes": 3127,
+      "sha256": "9afe41c70a60876dab1b03b80deec1f4c7119575484b47106198b880408af81c",
+      "role": "fixed/support"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-main-intake.json",
+      "commit": "2ee9fa442d6f5a68ec364dcca746e54a7282f205",
+      "blob": "67ede43f886edc776ed058259cd6549a75d3dd40",
+      "bytes": 7260,
+      "sha256": "d227a6a36dbf0f9794c650b3ace8a02853676ece3db1297744cc0a3a4b1686de",
+      "role": "fixed/support"
+    }
+  ],
+  "rawFiles": 20,
+  "rawBytes": 28750,
+  "bindingCount": 24,
+  "bindingBytes": 126731,
+  "knownResourcesClosed": true,
+  "completeAccounting": true,
+  "originalR1R2Unchanged": true,
+  "noAutomaticFurtherWindow": true
+}
