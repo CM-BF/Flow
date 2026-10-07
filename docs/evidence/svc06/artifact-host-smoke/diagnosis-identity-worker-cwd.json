@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-07T04:07:26.117000+00:00",
+  "kind": "readonly original ps with original allowed worker cwd/env",
+  "cwd": "/private/tmp/flow-svc06-fixed-artifact-c52Zw6/host-smoke-first",
+  "pid": 73345,
+  "exit": 71,
+  "stdoutBytes": 0,
+  "stdoutSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "originalIdentityRegexMatches": false,
+  "stderr": "sandbox-exec: execvp() of '/bin/ps' failed: Operation not permitted\n",
+  "stderrBytes": 68,
+  "truncated": false,
+  "previousProbeLimit": "previous exact-command observation used development cwd, so was not sufficient alone for original worker-cwd attribution"
+}

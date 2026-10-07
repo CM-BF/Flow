@@ -21,8 +21,8 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 固定后台产物已成功构建并接收；首次独立宿主验证在中心身份确认处失败，已保留原结果和自有资源。 |
-| 下一可用交付 | 只读核对保存的启动与清理证据，确认未知资源状态后再安排最小修正。 |
-| 当前阻塞 | ACTIVE: 首中心身份未获确认，自有数据库及中心资源保持未知；不得自动重试或清除。 |
+| 下一可用交付 | 按已定位的身份观察限制完成受控收尾，再准备最小验证入口修正。 |
+| 当前阻塞 | ACTIVE: 原清理结果UNKNOWN；只读已定位自有中心仍活及专库3连接，等待受控收尾，不重试旅程。 |
 | 需用户决定 | NONE |
 | Review | 原构建与入口准备批准保持；本次实际失败结果PENDING Execution Lead，不将准备批准扩大到运行 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
@@ -127,3 +127,5 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 04:06:15 UTC：首次宿主实际失败与资源保持
 
 [本次结果](../../docs/evidence/svc06/artifact-host-smoke/RESULT.md) / [完整监督原件](../../docs/evidence/svc06/artifact-host-smoke/host-outer.json)。主失败和独立cleanup失败分别保存；两个监督组absent，但中心detached组与DB未知，未DROP/未强停，原artifact与private run保留。执行owner已结束并立即报告Lead；没有自动重试，03/04/05不勾选。
+
+2026-10-07 04:08:16 UTC 限定只读诊断：[原件与边界](../../docs/evidence/svc06/artifact-host-smoke/DIAGNOSIS.md)。原拒读profile不允许身份命令/bin/ps执行，外部确证中心组仍活；精确专库存在/3条idle连接。0停止/删除/重新启动；实际宿主失败保持，原center stderr未记录不补造。
