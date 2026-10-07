@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T16:41:56.399Z",
+  "task": "SVC09A / R3 actual host result",
+  "reviewer": "assignment_review",
+  "model": "gpt-6-astra",
+  "state": "APPROVED_LIMITED_R3_FAILED_RESULT_FIDELITY",
+  "P1": 0,
+  "P2": 0,
+  "fixedOwnerCommit": "42c18154609b370b165d29ad9d0aed85423a0b07",
+  "deliveryCommit": "313418e730623cd7b45286ecd40cc62a4de90d4f",
+  "canonicalManifest": "docs/evidence/svc09/message-settings-activation/host-integration/host-r3-result-manifest.json",
+  "manifestBytes": 16411,
+  "manifestSha256": "09dc3ee1d1dfd06771747ad929e7ea03fa254859fb37b801f870d176a779dd28",
+  "bindings": {
+    "newRecords": 45,
+    "newBytes": 52999,
+    "inherited": 2,
+    "inheritedBytes": 36029,
+    "execution": 19,
+    "runtime": 6
+  },
+  "conclusions": [
+    "Default legacy/settings publication and both slots drain/hold/refresh/resume were observed. Two synthetic tasks reached their corresponding injected adapter claims. Complete mixed final SQL/terminal binding was not established.",
+    "Primary remains host-consumer UnknownError/code:null, work146499ms, outer150659ms/exit1. Fixed text IDs versus caller uuid[] is a static contract mismatch consistent with location, not recovered actual SQLSTATE or proven original cause.",
+    "Eight registered host generations stopped; four supervision records absent/dualEOF/no signals. Separate13 exact PID and PGID observations absent, DB OID1334399 connections[]/adminClosed. RuntimeRETURN2026-10-07T16:36:44.486680Z; mayDrop=false/cleanupConfirmed=false and DB/privateKEEP remain."
+  ],
+  "preserved": [
+    "R1 31 and R2 14 bindings identical",
+    "Reviewed c6b9 19 execution and6 runtime inputs unchanged",
+    "Artifact2515/source098b unchanged"
+  ],
+  "actions": "Fixed source/raw read only; no private original access, tests, PG, services or provider. Payload retained once in pushed owner commits.",
+  "notProven": [
+    "Whole host PASS or mixed terminal/ACK assertions",
+    "Real Web App/native qualification or personal deployment",
+    "Permission to retry or reclaim KEEP"
+  ]
+}
