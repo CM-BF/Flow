@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-07T06:23:32.310670+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "c38218268f9beb70e8b3b9322bbeee1da612eb8f",
+  "source": "c20d21b21caba504cd472c4596110fe535980752",
+  "verdict": "APPROVED_LIMITED_ACTUAL_WEB_HOST_ADOPTION_RESULT",
+  "P1": 0,
+  "P2": 0,
+  "findings": [],
+  "manifestSha256": "204d5b684dec475cc340735dfcc54aceb968180fc06911839023b153d7a72fe7",
+  "bindingAudit": {
+    "fixedAndCurrentSources": 10,
+    "fixedAndCurrentRaw": 15,
+    "fixedAndCurrentMetadata": 6,
+    "privateBytesHashIdentityMode": 16,
+    "mismatches": [],
+    "priorSourceReview": "resume-request-independent-review.json 6295f9e9506acd7a282a129a2464385113ebef65dcbb714cb6b18523824d8a11; unchanged source reused"
+  },
+  "observed": {
+    "requestReplacePostExitCodes": [
+      0,
+      0,
+      0
+    ],
+    "supervisedElapsedSumMs": 25092,
+    "ownedStates": [
+      "absent",
+      "absent",
+      "absent"
+    ],
+    "dualEOF": true,
+    "oldWebExitCode": 1,
+    "oldWebNonceMatches": true,
+    "newWebPid": 22704,
+    "preservationChecksTrue": 11,
+    "databaseSnapshotEqual": true,
+    "tableSummariesEqual": 64,
+    "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+    "runnerMaintenance": "accepting v18",
+    "webContent": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88 / v3",
+    "webHostArtifact": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+    "HTTP200Reads": 5,
+    "HTTPBytes": 30790,
+    "operationId": "adb05eec-4ca2-4d7f-a3a8-f260e44cc3d9",
+    "stateFile": "whole hash changed as expected for webHost; protectedState unchanged"
+  },
+  "limits": [
+    "Fixed raw fidelity and bounded saved preservation observations, not a new live probe.",
+    "Old Web explicit-stop exit1 and initial supervisor unknown observations stay literal; no original64CLOSED cause conclusion.",
+    "No repeated migration or model/center/runner/tab operation; no complete SVC06 backend deployment or browser/long-term acceptance claim.",
+    "All prior failed runs and private original records remain; final new Web is an intentionally retained service."
+  ],
+  "reviewerActions": {
+    "engineeringTests": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "provider": 0,
+    "serviceOperations": 0,
+    "privateReads": "16 existing operator result files only; no credentials or user content"
+  }
+}

@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-07T06:31:32.346220+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "c687b1b63802298d27396aa4c40bd9075ccb1405",
+  "delivery": "8ae4d7a0cf84ee85da00d20d245b4dade6412b79",
+  "verdict": "APPROVED_LIMITED_THREE_PG_ENTRY",
+  "P1": 0,
+  "P2": 0,
+  "findings": [],
+  "manifestSha256": "baa33c2043831931e2fb25afbe75f83fad7b6b4119e98e9a9719bbe88ecf04a1",
+  "bindings": {
+    "entryAndFixture": 7,
+    "inputFiles": 283,
+    "aliases": 21,
+    "mismatches": []
+  },
+  "scope": [
+    "Read complete caller/config and fixture delta/full cleanup; previous three behavior cases and40af product unchanged.",
+    "ExistingOPS14 process owner; exclusive run namespace/checkpoint; markedDB OID check; bounded connection observation before ordinary DROP.",
+    "90-second suite includes normal afterAll; .5TERM/2reap; timeout only owned group and unknownDB retain.",
+    "Fixture failure/output, supervision failure and cleanup observation separately retained; no automatic retry or FORCE."
+  ],
+  "runtimeBudget": {
+    "suiteSeconds": 90,
+    "TERMSeconds": 0.5,
+    "reapSeconds": 2,
+    "freshFreeBytes": 1193279488,
+    "liveReserveBytes": 1073741824,
+    "PGAllowanceBytes": 100663296,
+    "tmpBytes": 16777216,
+    "rawBytes": 2097152,
+    "selectedCases": 3,
+    "provider": 0
+  },
+  "limits": [
+    "Readiness approval only; PG remains NOT_RUN until unique shared holder/fresh gates.",
+    "Manifest/import-meta resolution is not actual runnable proof; selected three actual execution must report true outcome.",
+    "PG size/end temporary observations are bounded samples, not continuous peak/quota.",
+    "No production runtime/factory/client activation or real native/provider capability claim."
+  ],
+  "reviewerRuns": 0
+}
