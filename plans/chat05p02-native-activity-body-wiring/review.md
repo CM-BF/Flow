@@ -10,4 +10,6 @@ APPROVED_PREPARATION（Lead唯一独审，实际PG结果仍待验证）。Base9f
 
 原PG01在已审输入上0/2、suite exit1；caller UNKNOWN_RETAIN与DB/fixture CONFIRMED清理分别保留。见[原结果分析](../../docs/evidence/chat05p02/pg-run-01/analysis.json)与[结果清单](../../docs/evidence/chat05p02/pg01-result-manifest.json)。后继只修测试构造和必要诊断，不放宽生产验证。
 
-增量source f73534fb8f5d4af9def063863b9551a7217280dc待Lead唯一只读复审；[窄修与局部证据](../../docs/evidence/chat05p02/pg-repair/README.md)，[delta绑定](../../docs/evidence/chat05p02/pg-repair/delta-manifest.json)。两个test-only路径不放宽生产；原caller只增加显式新namespace，已消费原入口仍不可重复。
+增量source f73534fb8f5d4af9def063863b9551a7217280dc已获Lead限定测试修复与PG02准备批准；[窄修与局部证据](../../docs/evidence/chat05p02/pg-repair/README.md)，[delta绑定](../../docs/evidence/chat05p02/pg-repair/delta-manifest.json)。两个test-only路径不放宽生产；原caller只增加显式新namespace，已消费原入口仍不可重复。
+
+[原source独审](../../docs/evidence/chat05p02/independent-source-review.json)及[PG02准备独审](../../docs/evidence/chat05p02/independent-pg-repair-review.json)均逐字归档。PG02仍0/2并独立CONFIRMED清理，见[原结果](../../docs/evidence/chat05p02/pg-run-02/analysis.json)。最新c98只修test原始Response收尾/注入Claude身份，生产校验未放宽；[第三段准备](../../docs/evidence/chat05p02/pg-repair-03/README.md)与local07原件待唯一增量独审，不把局部通过当PG通过。
