@@ -1,0 +1,33 @@
+{
+  "recordedAt": "2026-10-07T03:10:25.538000+00:00",
+  "source": "Execution Lead NEW_TASK approval received in this worker conversation; author transcription, not a new independent review",
+  "reviewer": "astra_ultra_execution_lead",
+  "author": "assignment_review",
+  "result": "APPROVED_LIMITED_HOST_TOOL_CLOSURE",
+  "sourceTarget": "2affec4cc7a899082cbf48fce5bbd0f77293676c",
+  "delivery": "9380f3734e2d901e896e46aa3231fe125a1e962b",
+  "manifestSha256": "47fccd3354af26b0b99940d23942e588edad8232489ab66b36529a4e997c256f",
+  "reportedReview": {
+    "fullSourceDiff": 4,
+    "bindings": 51,
+    "fixedCurrentBytesHash": "all match",
+    "findingsP1P2": [],
+    "distinctChecks": 8,
+    "red": 2,
+    "greenRounds": [
+      7,
+      1
+    ],
+    "ownedGroupCleanup": 4,
+    "reviewerTests": 0,
+    "reviewerInstall": 0
+  },
+  "approvalScope": "fixed tsx/Vite sources and peer closure, staging production projection/source bytes restoration and provenance record",
+  "excluded": [
+    "actual filtered install",
+    "runtime resolve",
+    "complete artifact",
+    "PG",
+    "personal deployment"
+  ]
+}

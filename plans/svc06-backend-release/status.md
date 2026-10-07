@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:07:14 UTC；parser/builder a2e已main，新宿主工具片待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 03:10:25 UTC；host工具限定独审完成，主线接收待Lead |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -13,18 +13,18 @@
 | 工作基线 / HEAD | 本片base 59c0fccb41e33076d50c5f782683c9f3fd25061e；宿主工具源码 2affec4cc7a899082cbf48fce5bbd0f77293676c |
 | 工作树dirty状态 | 源码已固定；本轮仅metadata封存，交付后源码停写 |
 | 工作分支状态 | completed |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 实现目标 | 2affec4cc7a899082cbf48fce5bbd0f77293676c |
 | 实现范围 | tools/personal-preview/backend-release/dependency-plan.mjs, tools/personal-preview/backend-release/dependency-plan.test.mjs, tools/personal-preview/backend-release/runtime-installation.mjs, tools/personal-preview/backend-release/runtime-installation.test.mjs |
 | 检查状态 | PASSED 2affec4cc7a899082cbf48fce5bbd0f77293676c；selector7与staging1分轮8 distinct，固定main纯选择额外1次；完整产物NOT_RUN |
 | 已集成main状态 / HEAD | parser/builder b218七源及59c记录已接收 main/origin a2e7803161ffb7e2158eaf3c13531448d2a777b0，七源逐字相同；[接收事实](../../docs/evidence/svc06/parser-builder-main-receipt.json)。本次宿主工具增量尚未集成 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 静态网页宿主需要的固定工具已纳入依赖选择，局部选择与暂存还原通过，等待独立审查。 |
-| 下一可用交付 | 独审并接收宿主工具闭包后，准备真实固定产物的安装与启动验证。 |
+| 当前产出 | 静态网页宿主需要的固定工具已纳入依赖选择，局部选择与暂存还原及独立审查通过。 |
+| 下一可用交付 | 接收宿主工具闭包后，以固定主线准备真实产物的安装与启动验证。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | PENDING 2affec4cc7a899082cbf48fce5bbd0f77293676c；本次独立review由Execution Lead负责，旧b218限定批准不扩大 |
+| Review | APPROVED_LIMITED_HOST_TOOL_CLOSURE 2affec4cc7a899082cbf48fce5bbd0f77293676c；Execution Lead唯一独审，无P1/P2；真实产物仍待验 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v5，11 literal scopes；[parser范围追加](../../docs/evidence/svc06/parser-amend-receipt.json) |
 | 架构影响 | 私有host工具来源表声明tsx与固定Web Vite，沿原图遍历/根staging投影；不装Web workspace，不改公开host/FSM。真实产物仍待集成验收。 |
 
@@ -87,3 +87,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 03:07:14 UTC：宿主工具闭包固定待审
 
 [Interface](../../docs/evidence/svc06/host-tools-interface.md) / [检查](../../docs/evidence/svc06/host-tools-checks.md)：固定4源，2 red→7+1绿、8 distinct与固定a2e选择另记。7importers/271 snapshots是当前main实际选择，无cache完整性/物理收益或启动声明。旧b218已main，新target待独审与main；源码全停写，完整产物输入/总期限/清理只读准备，0新运行。
+
+## 2026-10-07 03:10:25 UTC：宿主工具限定独审批准
+
+[批准转录](../../docs/evidence/svc06/host-tools-independent-review.json)来源本次Execution Lead派工，完整4文件diff/51 fixed-current绑定及8 distinct与4组清理已由唯一review核实，0重跑，无P1/P2。本次integration，产品保持固定停写；下一0PG真实产物仅原prepare+verify/OPS14入口准备，尚无完整构建执行。原2.5GiB/live1GiB、clone/install180s不变；新外层420s+.5TERM/2reap、raw2MiB待固定输入/合计空间窗口。
