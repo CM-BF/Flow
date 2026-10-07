@@ -1,0 +1,274 @@
+{
+  "kind": "SVC09A_STARTUP_ENTRY_LOCAL_RESULT",
+  "at": "2026-10-07T20:34:53.035420Z",
+  "sourceCommit": "8daad9b5aa43d59b9be0e4b5a76a885ef129062a",
+  "claimId": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+  "claimVersion": 8,
+  "implementationStartedAt": "2026-10-07T20:13:35.898Z",
+  "entryBase": "18bf17ea26cacb4a12cd89f962b455f6688f729d",
+  "scope": "actual main/index optional observer wiring; startup-progress phase allowlist adds package-worker",
+  "rounds": [
+    {
+      "run": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-02",
+      "sourceCommit": "9b1fb2ea67bc1d25efebe9ca4108651ca225c942",
+      "startedAt": "2026-10-07T20:27:47.359404+00:00",
+      "returnedAt": "2026-10-07T20:27:49.879971+00:00",
+      "selectedCases": 9,
+      "reports": [
+        {
+          "exit": 0,
+          "elapsedMs": 456,
+          "rawBytes": 1218,
+          "ownedState": "absent",
+          "eof": {
+            "stdout": true,
+            "stderr": true
+          },
+          "firstFailure": null
+        },
+        {
+          "exit": 2,
+          "elapsedMs": 2051,
+          "rawBytes": 77863,
+          "ownedState": "absent",
+          "eof": {
+            "stdout": true,
+            "stderr": true
+          },
+          "firstFailure": {
+            "phase": "work",
+            "code": "CHILD_EXIT_NONZERO",
+            "type": "SupervisionFailure",
+            "errno": null,
+            "message": "child exit nonzero"
+          }
+        }
+      ],
+      "cleanup": {
+        "path": "/private/tmp/flow-svc09a-startup-wgkf9pcf",
+        "dev": 16777234,
+        "ino": 124469012,
+        "remainingEntries": 0,
+        "cleanup": "removed"
+      },
+      "trackedReservationBindingsMatchSource": [
+        "apps/server/src/startup-progress.ts",
+        "apps/server/src/startup-progress.test.ts",
+        "apps/server/src/startup-progress-consumer.test.ts",
+        "tools/personal-preview/environment.mjs",
+        "tools/personal-preview/environment.test.mjs",
+        "tools/personal-preview/browser-session-configuration.mjs",
+        "tools/personal-preview/startup-diagnostics.mjs",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local.py",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-vitest.config.mjs",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-tsconfig.json",
+        "tools/owned-process-supervision/supervise.py",
+        "apps/server/src/main.ts",
+        "apps/server/src/index.ts",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-consumer.test.mjs",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-tsconfig.json",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-entry-inputs.json",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-entry-links.json"
+      ]
+    },
+    {
+      "run": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-03",
+      "sourceCommit": "e29c82df00c09f1b432ed3820009a152f3354df8",
+      "startedAt": "2026-10-07T20:28:44.770364+00:00",
+      "returnedAt": "2026-10-07T20:28:46.868520+00:00",
+      "selectedCases": 0,
+      "reports": [
+        {
+          "exit": 0,
+          "elapsedMs": 2086,
+          "rawBytes": 0,
+          "ownedState": "absent",
+          "eof": {
+            "stdout": true,
+            "stderr": true
+          },
+          "firstFailure": null
+        }
+      ],
+      "cleanup": {
+        "path": "/private/tmp/flow-svc09a-startup-u2qcl59r",
+        "dev": 16777234,
+        "ino": 124469178,
+        "remainingEntries": 0,
+        "cleanup": "removed"
+      },
+      "trackedReservationBindingsMatchSource": [
+        "apps/server/src/startup-progress.ts",
+        "apps/server/src/startup-progress.test.ts",
+        "apps/server/src/startup-progress-consumer.test.ts",
+        "tools/personal-preview/environment.mjs",
+        "tools/personal-preview/environment.test.mjs",
+        "tools/personal-preview/browser-session-configuration.mjs",
+        "tools/personal-preview/startup-diagnostics.mjs",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local.py",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-vitest.config.mjs",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-tsconfig.json",
+        "tools/owned-process-supervision/supervise.py",
+        "apps/server/src/main.ts",
+        "apps/server/src/index.ts",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-consumer.test.mjs",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-tsconfig.json",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-entry-inputs.json",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-entry-links.json"
+      ]
+    },
+    {
+      "run": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-04",
+      "sourceCommit": "8daad9b5aa43d59b9be0e4b5a76a885ef129062a",
+      "startedAt": "2026-10-07T20:32:34.660134+00:00",
+      "returnedAt": "2026-10-07T20:32:37.386948+00:00",
+      "selectedCases": 1,
+      "reports": [
+        {
+          "exit": 0,
+          "elapsedMs": 401,
+          "rawBytes": 400,
+          "ownedState": "absent",
+          "eof": {
+            "stdout": true,
+            "stderr": true
+          },
+          "firstFailure": null
+        },
+        {
+          "exit": 0,
+          "elapsedMs": 2305,
+          "rawBytes": 0,
+          "ownedState": "absent",
+          "eof": {
+            "stdout": true,
+            "stderr": true
+          },
+          "firstFailure": null
+        }
+      ],
+      "cleanup": {
+        "path": "/private/tmp/flow-svc09a-startup-pgip1m21",
+        "dev": 16777234,
+        "ino": 124470111,
+        "remainingEntries": 0,
+        "cleanup": "removed"
+      },
+      "trackedReservationBindingsMatchSource": [
+        "apps/server/src/startup-progress.ts",
+        "apps/server/src/startup-progress.test.ts",
+        "apps/server/src/startup-progress-consumer.test.ts",
+        "tools/personal-preview/environment.mjs",
+        "tools/personal-preview/environment.test.mjs",
+        "tools/personal-preview/browser-session-configuration.mjs",
+        "tools/personal-preview/startup-diagnostics.mjs",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local.py",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-vitest.config.mjs",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-tsconfig.json",
+        "tools/owned-process-supervision/supervise.py",
+        "apps/server/src/main.ts",
+        "apps/server/src/index.ts",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-consumer.test.mjs",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-tsconfig.json",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-entry-inputs.json",
+        "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-entry-links.json"
+      ]
+    }
+  ],
+  "newDifferentCases": 10,
+  "newCaseSelections": 10,
+  "passedCases": 10,
+  "initialTypesExit": 2,
+  "finalTypesExit": 0,
+  "elapsedMs": 7299,
+  "rawBytes": 79481,
+  "cumulativeIncludingApprovedLeaves": {
+    "differentCases": 24,
+    "elapsedMs": 8492,
+    "rawBytes": 82523,
+    "limits": {
+      "elapsedMs": 120000,
+      "rawBytes": 131072,
+      "scratchBytes": 8388608
+    }
+  },
+  "failuresPreserved": {
+    "raw": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-local-02/02-stdout.txt",
+    "typesDiagnostics": {
+      "TS7016": 132,
+      "TS7006": 84,
+      "TS2345": 5,
+      "TS2339": 5,
+      "TS2322": 3
+    },
+    "repair": "Use fixed installed pg declaration in focused config and specify the scan observation common result type; only affected types rerun in local03."
+  },
+  "sourceVariants": {
+    "local02": "Nine entry cases run on exact 9b1 source. Later index type annotation is runtime-erased; exact reverse replacement verified. This is inherited behavior evidence, not nine tests rerun on final bytes.",
+    "local03": "Focused types only on e29, exit0.",
+    "local04": "One new installed Fastify registration case plus final focused types on exact 8daa; CORS callback now awaits thenable and returns void. Earlier nine cases not selected.",
+    "reverseTypeAnnotation": {
+      "from": "e29c82df00c09f1b432ed3820009a152f3354df8",
+      "to": "9b1fb2ea67bc1d25efebe9ca4108651ca225c942",
+      "bytes": 17190,
+      "sha256": "1e7def6caf221140d238cfc2d3dab7deb98a75779926210fb2c32174c16c7178",
+      "exact": true
+    },
+    "finalIndexDeltaFromLocal03": "Only CORS callback return-to-void change, exact reverse replacement verified."
+  },
+  "closure": {
+    "allFiveGroupsTwiceAbsent": true,
+    "allDualEOF": true,
+    "signals": [],
+    "initialEPERMUnknownPreserved": true,
+    "threeExactEmptyScratchRemoved": true,
+    "scratchPeakBytes": null
+  },
+  "dependencySources": {
+    "ownTrackedSources": "8daad9b5aa43d59b9be0e4b5a76a885ef129062a",
+    "mainReadOnlyContractsBase": "18bf17ea26cacb4a12cd89f962b455f6688f729d",
+    "links": "docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-entry-links.json",
+    "rootCurrentComparedEqualToBase": [
+      "packages/contracts",
+      "packages/plugin-runtime",
+      "tsconfig.json",
+      "pnpm-lock.yaml"
+    ],
+    "runtimePins": "Each original reservation inputs; installed Node24/TS5.9.3/Fastify5.12.5 and pg declarations, no installation or donor copy."
+  },
+  "scopeLimits": {
+    "pg": 0,
+    "network": 0,
+    "services": 0,
+    "provider": 0,
+    "personalIO": 0,
+    "build": 0,
+    "installation": 0,
+    "native": 0
+  },
+  "notProven": [
+    "real startup with database, scheduler and transport",
+    "root cause of prior default-host failure",
+    "new artifact or deployment",
+    "default three-role or complete settings/mixed journey"
+  ],
+  "cleanCode": {
+    "at": "2026-10-07T20:34:53.035420Z",
+    "scope": [
+      "main/index dependency direction and migration order",
+      "optional observer lifecycle/error boundary",
+      "actual thenable consumer and fixed-source variants"
+    ],
+    "findingsResolved": [
+      "index owns its original migration sequence; observer cannot select work",
+      "CORS observation callback preserves original await then returns void"
+    ],
+    "unresolved": []
+  },
+  "inheritedReview": {
+    "main": "18bf17ea26cacb4a12cd89f962b455f6688f729d",
+    "path": "docs/evidence/i02/svc09a-startup-progress-review.json",
+    "scope": "five-leaf module/local evidence only; does not approve this entry wiring"
+  },
+  "review": "NOT_REVIEWED"
+}

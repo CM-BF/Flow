@@ -1,0 +1,19 @@
+(node:10985) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+(Use `node --trace-warnings ...` to show where the warning was created)
+✔ actual main/index observer preserves default operation order and emits the full startup boundaries (93.784083ms)
+✔ actual entry retains the original migrateGoals failure before existing cleanup (28.945ms)
+✔ actual entry retains the original authentication failure before existing cleanup (22.992917ms)
+✔ actual entry retains the original scheduler failure before existing cleanup (23.277708ms)
+✔ actual entry retains the original package-worker failure before existing cleanup (20.890708ms)
+✔ actual entry retains the original routes failure before existing cleanup (17.454625ms)
+✔ actual entry retains the original listen failure before existing cleanup (19.8565ms)
+✔ actual migration cleanup failure does not erase the prior structural diagnostic or change old throw semantics (16.815542ms)
+✔ actual configuration rejection has no migration or service side effects and produces a failed stream (18.290167ms)
+ℹ tests 9
+ℹ suites 0
+ℹ pass 9
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 410.600917

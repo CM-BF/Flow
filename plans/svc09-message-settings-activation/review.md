@@ -83,3 +83,7 @@ loader c1e7ad8779d2d115cedeb5c0e29c76a5f5c95792另待review；[Interface](../../
 ## 启动阶段五 leaf 待独审
 
 source `233ef91d369e7d7f58bdec8a34f523ed27017639`；claim v7。14新直接例与focused types通过，单份原件见host-integration/startup-progress-local-01，结果见startup-progress-result.json。独审状态 NOT_REVIEWED；实际 main/index 未接线，无新artifact/host/PG。原默认结果唯一限定批准已main4aba9a705（I02 svc09a-default-host-result-review.json），FAIL/KEEP与根因UNKNOWN保持。
+
+## 五 leaf 已收审；实际入口接线待审
+
+2026-10-07T20:34:53.035420Z：正常收录 Lead 对233ef五leaf的限定 APPROVED/0P1P2，已main18bf17ea，唯一原件 `docs/evidence/i02/svc09a-startup-progress-review.json`，不复制全文；上一段 NOT_REVIEWED 是交付时历史。当前 source `8daad9b5aa43d59b9be0e4b5a76a885ef129062a` 的 main/index/startup-progress 三产品delta及十个直接消费者另待唯一独审。原types红、精确source variant和最终定向绿见 startup-entry-result；不继承五leaf批准覆盖接线或实际运行。旧默认FAIL/KEEP与根因UNKNOWN保持。

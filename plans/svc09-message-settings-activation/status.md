@@ -6,33 +6,33 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T20:05:30.084530Z |
+| 更新时间 | 2026-10-07T20:34:53.035420Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 启动阶段记录接口与中心限定开关已完成并通过直接检查；等待独立审查，真实入口尚未接通。 |
-| 下一可用交付 | 接通实际 server 初始化阶段；共享 main/index 由 Lead 协调交权后实施。 |
+| 本片段交付阶段 | review |
+| 当前产出 | 中心真实启动入口已接入有界阶段记录；直接检查通过，源码与原始失败一起交独立审查。 |
+| 下一可用交付 | 接收本次入口诊断源码；随后固定新运行产物，验证默认启动失败具体停在哪个阶段。 |
 | 当前阻塞 | ACTIVE: 默认中心启动仍未确认监听归属，底层原因未知；完整三角色、双槽与混合任务验收仍开放。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
-| Head | 233ef91d369e7d7f58bdec8a34f523ed27017639（五 leaf 源码）；后续仅本轮原始检查与说明封存。 |
-| 实现目标 | 233ef91d369e7d7f58bdec8a34f523ed27017639 |
-| 工作分支状态 | in-progress（五 leaf 已固定待审，完整 SVC09A 仍开放） |
-| 工作树dirty状态 | 产品停止写入；仅本轮 own 记录封存 |
+| Head | 8daad9b5aa43d59b9be0e4b5a76a885ef129062a（本片接线源码；后续仅 own 记录封存） |
+| 实现目标 | 8daad9b5aa43d59b9be0e4b5a76a885ef129062a |
+| 工作分支状态 | review（接线源码和局部证据待独审；完整 SVC09A 仍开放） |
+| 工作树dirty状态 | 产品已停写；当前只封 own 结果和状态 |
 | 实现范围 | apps/server/src/main.ts；apps/server/src/index.ts；apps/server/src/startup-progress.ts；apps/server/src/startup-progress.test.ts；apps/server/src/startup-progress-consumer.test.ts；tools/personal-preview/environment.mjs；tools/personal-preview/environment.test.mjs；docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v8；20:13:35.898Z追加 main/index；[回执](../../docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-entry-amend-receipt.json) |
-| Review | 新五 leaf NOT_REVIEWED；默认实际结果 APPROVED_LIMITED/main4aba9a705，唯一 docs/evidence/i02/svc09a-default-host-result-review.json；历史四源/loader/准备批准不扩大。 |
-| 检查状态 | 本片14/14新直接例（12 Vitest +2环境）与 focused types0；1193ms/raw3042B，3组absent/双EOF，exact空scratchremoved；初EPERM unknown保留，未跑PG/服务。 |
+| Review | 五 leaf 已 APPROVED/main18bf17ea；本次 main/index 接线 NOT_REVIEWED。默认实际结果仅保真 APPROVED/main4aba9a705，根因 UNKNOWN。 |
+| 检查状态 | 本次10不同/10选择通过；初 types exit2 保留，定向修复后两轮 types0。7299ms/raw79481B、5组absent双EOF、3 exact空scratchremoved；含原14例累计8492ms/raw82523B，无PG/服务。 |
 | 验证限制 | R3双槽生命周期与分别领取有原件；最终SQL/完整mixed结论未通过。observed model/account/native资格、真实App/个人仍未验。 |
-| 已集成main状态 | 原双槽11源main246ed0f；本次诊断四源main496b1d68caad14c7bc40a05b86b2136b12d68ca7，Lead确认逐字f0且main/origin clean；2515/098b旧产物未改变，个人未部署本片。 |
+| 已集成main状态 | 五 leaf 233ef已main18bf17ea，唯一I02 svc09a-startup-progress-review.json；本次接线8daa未集成。原双槽11源main246ed0f、controller四源main496b，旧2515/098b和个人未改。 |
 | 运行窗口 | 默认最小旅程 2026-10-07T19:16:09.120Z START；operator29,140ms/exit1；2026-10-07T19:17:35.003Z实际RETURN。仅center stopped/全部6PID与4自有组absent/连接empty/adminClosed；DB/private KEEP、禁止DROP，无重试。 |
-| 架构影响 | 新增无资源所有权的可选启动观察 Interface，中心限定opt-in；真实main/index尚未接线，diagram后继由Lead登记，不冒运行事实。 |
-| 看板 | 首canonical已登记；本status记录源码片段已main，不声称实际双槽部署 |
+| 架构影响 | 实际 main/index 消费可选启动观察 Interface；index仍拥有迁移顺序和生命周期，记录不决定业务执行。新runtime/运行未验；受审main架构基线由Lead后继登记。 |
+| 看板 | 唯一 own status 正常更新；本片待审，不声称实际默认或双槽部署成功。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -55,7 +55,8 @@
 | SVC09A-W08 | 2026-10-07T16:49:12.381941Z | 2026-10-07T16:51:24.998Z | 审查 | R4固定候选可审后获唯一准备批准；此前实际实现/局部检查不算纯等待 | host-preparation-r4.json at；I02唯一review at |
 | SVC09A-W09 | 2026-10-07T16:51:24.998Z | 2026-10-07T17:09:28.039Z | 资源 | Web Cookie诊断完整RETURN后，Lead给唯一R4NEXT；本次fresh通过并实际START解除等待 | I02 review at；host-r4-actual-admission.json；host-r4-launch.json |
 | SVC09A-W10 | 2026-10-07T18:44:52.319Z | 2026-10-07T19:16:09.120Z | 资源 | 唯一新窗口与现场准入通过，等待以实际START结束；此前仅metadata/只读准备 | I02 svc09a-default-host-preparation-review.json；default-host-admission.json；default-host-start.json |
-| SVC09A-W11 | 2026-10-07T20:06:52.758952Z | OPEN | 审查/接口 | 五 leaf 源和局部结果已封，待独审与 main/index 原子交权；尚无服务或产物窗口 | startup-progress-result.json；claim v7；Lead 派工 |
+| SVC09A-W11 | 2026-10-07T20:06:52.758952Z | 2026-10-07T20:13:35.898Z | 审查/接口 | 五 leaf 已获限定批准并main；两真实入口已原子交权，随后是实际实现/检查，不算纯等待 | I02 svc09a-startup-progress-review.json；claim v8 amend回执 |
+| SVC09A-W12 | 2026-10-07T20:34:53.035420Z | OPEN | 审查 | 实际入口接线与局部结果已固定待唯一独审；真实host未安排，不预占运行资源 | startup-entry-result.json；本次source8daa |
 
 原首次只读子agent被cap拒绝，未重试；本owner继续实施。首轮 reporter 为spec，result计数null，原raw保留20/19/1；派生记录明确纠正口径，不回写旧原件。后续各轮只选新边界/受影响例。临时峰值未采样。完整真实资格、模型与个人部署仍开放。
 
@@ -148,3 +149,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 ## 真实入口接线片
 
 2026-10-07T20:13:35.898Z：fresh全账本无新holder后amend原claim v8，追加apps/server/src/main.ts与index.ts；两入口在本树与fixed main18bf17ea完全相同，按此当前前像接线，未覆盖其他产品。五leaf 233ef已获限定APPROVED并main18bf17ea（I02 svc09a-startup-progress-review.json）。AV ea3c未集成958B patch仅引用，不提前应用。正在用可选observer包住原初始化await、首轮onReady扫描和listen，旧关闭/信号/10s宿主规则不改；当前0PG/服务/build/provider/个人。
+
+2026-10-07T20:34:53.035420Z：入口接线源码 `8daad9b5aa43d59b9be0e4b5a76a885ef129062a` 停写交审。原31个迁移顺序由index自身typed tuples持有，observer没有业务执行权；main入口/首次ready扫描/listen已接可选port。local02九例通过但类型首红（真实pg声明解析及scan返回联合类型）保留；local03只types通过；local04只真实已装Fastify无listen一例+最终types通过。10不同/10选择，7299ms/79481B，5组双EOF/两次absent、3 exact空scratchremoved；最后实际RETURN 20:32:37.386948Z，初EPERM/unknown原件保留。继承五leaf14例不重跑，累计8492ms/82523B。见[单份接线结果](../../docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-result.json)及[Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/startup-entry-interface.md)。声明解析只链接已有依赖，无安装；AV未审patch仅引用，未应用。旧2515/098b和所有FAIL/KEEP未变；本次0PG/服务/build/provider/个人，真实启动/新artifact仍未验。

@@ -7,7 +7,7 @@
 - [x] SVC09A-01 配置/身份模块与全槽直接消费者实现。
 - [x] SVC09A-02 零模型局部故障检查、固定原件与独立限定审查。
 - [x] SVC09A-03 受控主线接收（main246ed0f，11源精确接收）。
-- [ ] SVC09A-04 固定组合产物已构建并独审；隔离真实双槽宿主旅程候选已准备待审，实际PG/host另按固定候选准入。个人激活、双端与provider后验继续开放。
+- [ ] SVC09A-04 固定组合产物已构建并独审；四轮隔离宿主及一次默认启动失败原件保留，完整双槽/SQL验收尚未通过。当前实际server阶段观察接线待独审，新产物/默认启动后验另协调；个人激活、双端与provider后验继续开放。
 
 当前最小下一片见[隔离宿主Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/Interface.md)：04da+15已审路径组合，默认/显式槽真实宿主生命周期，再用既有runRunner的注入adapter证明真实中心领取与ACK，0provider。未授权修改产品或直接使用个人安装。
 

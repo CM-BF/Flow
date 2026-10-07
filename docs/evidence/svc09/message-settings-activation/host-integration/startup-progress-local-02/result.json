@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-07T20:27:49.879971+00:00",
+  "reports": [
+    {
+      "exit": 0,
+      "elapsedMs": 456,
+      "rawBytes": 1218,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "firstFailure": null
+    },
+    {
+      "exit": 2,
+      "elapsedMs": 2051,
+      "rawBytes": 77863,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "firstFailure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      }
+    }
+  ],
+  "scratch": {
+    "path": "/private/tmp/flow-svc09a-startup-wgkf9pcf",
+    "dev": 16777234,
+    "ino": 124469012,
+    "remainingEntries": 0,
+    "cleanup": "removed"
+  },
+  "pg": 0,
+  "provider": 0
+}
