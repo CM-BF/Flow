@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-07T13:56:33.910561+00:00",
+  "reviewer": "native_center_owner / independent GPT-6 Astra",
+  "recorder": "astra_ultra_execution_lead",
+  "decision": "APPROVED_HELD_CONTINUATION_RESULT_FIDELITY",
+  "target": "acbdc40358a858256967a7322109331a28f4a2fb",
+  "canonical": "Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/result-manifest.json",
+  "manifest": {
+    "bytes": 16266,
+    "sha256": "9e9ab8c2df7bf1064a8af76f0ab0345f892adee8853b32ae5555363753eca34b"
+  },
+  "bindings": {
+    "count": 53,
+    "sourceCount": 10,
+    "resultCount": 43,
+    "bytes": 302141,
+    "rawCount": 42,
+    "rawBytes": 219088,
+    "fixedCurrentHashAndSizeEqual": true,
+    "sourcesEqualPreparation": "e7d50fe3c7fcbdc65760d3c82e463c47fda9f048"
+  },
+  "findings": [],
+  "facts": [
+    "Seven stages completed in 75811ms; outer 75906ms, direct operator/phase PIDs absent, dual EOF, no signals. This does not mean new persistent service processes exited.",
+    "Same operation e6550b3c-1f67-4c2c-869d-e84d5e838113: hold, exact legacy intent retirement, artifact refresh, paused preservation checkpoint, explicit resume, accepting21.",
+    "At retirement, all attempts/tasks/queue old-column hashes equal original R4; queued c8a0e95d-d84a-4e96-aef7-3384fbbe5291 retained with current_attempt null. Fresh audit +1, retired audit +2, paused audit +2/migrations +8; all64 tables retain old-row hash multisets.",
+    "Original config/profile/Web release and3 retained artifacts/installation and runner identity preserved. Paused old3 groups absent; final2 listeners and3 new roles running.",
+    "Final saved facts support original queued task naturally running with new attempt7525db4b-a383-413a-be8f-c3c512048ccf on original runner. Original legacy UUID outcome and full requestId/center receipt/local assignment correlation remain UNKNOWN.",
+    "Operator0 query does not imply natural user work0 query. No additional model probe or task replay was used."
+  ],
+  "reviewerActions": {
+    "rerunTests": 0,
+    "personalPathReads": 0,
+    "originalBinReads": 0,
+    "serviceActions": 0,
+    "provider": 0
+  },
+  "managementReview": {
+    "decision": "APPROVED_DOCS",
+    "base": "7963f19ab068e60dc20b246480f6e3d260cbf160",
+    "bindings": [
+      {
+        "path": "docs/quality/local-validation-svc06-personal-window-20261007.json",
+        "bytes": 9528,
+        "sha256": "8839a3fbd1a7189a8424cd6a60594de63921b252b6c36809b64c25209d48fe83"
+      },
+      {
+        "path": "plans/flow-001-architecture/status.md",
+        "bytes": 37856,
+        "sha256": "a2f7469e00b2a1ce11e598a5ecdcb1e0c2d9c87ab8c5edf86e2875428f6c0f36"
+      },
+      {
+        "path": "plans/ops-001-status-review/status.md",
+        "bytes": 103381,
+        "sha256": "2b630bc1cb5f869c8d8c91faf5cb9e9050e734069966584a2a604be39c702bee"
+      }
+    ],
+    "findings": []
+  },
+  "limits": [
+    "Accepting/profile/PID or cleanv2 alone do not prove full admission recovery.",
+    "No claim of native task completion, semantic acceptance or full FLOW-001 completion.",
+    "Historical R1-R4 failures and unknown evidence unchanged; fixed6c deployment is not moving main."
+  ]
+}
