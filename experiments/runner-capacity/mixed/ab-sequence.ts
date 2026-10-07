@@ -2,8 +2,14 @@ import { ComparisonBudget, type Side, type SideReceipt } from './ab-budget.js';
 
 export type SideOutcome = { side: Side; state: 'PASS' | 'FAIL' | 'UNKNOWN' | 'NOT_RUN'; receipt?: SideReceipt; error?: string };
 export async function compareSides(budget: ComparisonBudget, run: (side: Side) => Promise<SideReceipt>): Promise<SideOutcome[]> {
+  return runSides(budget, run, ['A', 'B']);
+}
+export async function runSingleSide(budget: ComparisonBudget, run: (side: Side) => Promise<SideReceipt>): Promise<SideOutcome[]> {
+  return runSides(budget, run, ['A']);
+}
+async function runSides(budget: ComparisonBudget, run: (side: Side) => Promise<SideReceipt>, sides: readonly Side[]): Promise<SideOutcome[]> {
   const results: SideOutcome[] = []; let previous: SideReceipt | undefined;
-  for (const side of ['A', 'B'] as const) {
+  for (const side of sides) {
     let started = false;
     try {
       budget.begin(side, previous); started = true;
@@ -15,6 +21,6 @@ export async function compareSides(budget: ComparisonBudget, run: (side: Side) =
       break;
     }
   }
-  if (!results.some(result => result.side === 'B')) results.push({ side: 'B', state: 'NOT_RUN' });
+  if (sides.includes('B') && !results.some(result => result.side === 'B')) results.push({ side: 'B', state: 'NOT_RUN' });
   return results;
 }

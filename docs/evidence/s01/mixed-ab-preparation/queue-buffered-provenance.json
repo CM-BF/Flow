@@ -1,0 +1,171 @@
+{
+  "base": "39d3b61a8e3b1a656a9316a01cee9d8fb82c7613",
+  "production": "4fdd856293a502209d7509ea37da901bbfd89f72",
+  "oldQueueExecution": "67d0c84d3e8a629d78335b8866173e04d7249e36",
+  "packingProduct": "11abf474fdb7c25cef2ebdc0135da1d0c0bcf5cf",
+  "bindings": [
+    {
+      "path": "experiments/runner-capacity/mixed/queue-buffered-main.ts",
+      "bytes": 1039,
+      "sha256": "38a66c6911ef985db8c37149b66bebdd47eb35a0704598c53281091d2410f536",
+      "baseSha256": null,
+      "changed": true
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-buffered.test.ts",
+      "bytes": 4576,
+      "sha256": "3348648c06e2b4f17567084355f136cb2e668e12344fda32c7414bf7015ffeae",
+      "baseSha256": null,
+      "changed": true
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-probe.ts",
+      "bytes": 1945,
+      "sha256": "8be200677e37266448fe8cc588091765e5f9ec38e0456b30b23497b661095ba6",
+      "baseSha256": "79c23dcd1d7d3a2051f6f994d70108b2c236a77c77d432a51f8c5f31d63138e1",
+      "changed": true
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/run-identity.ts",
+      "bytes": 5625,
+      "sha256": "321bed473511e833aec235a368732910f9d0d6a75b9c9721af23e12988dd8cff",
+      "baseSha256": "7b69cd6e7cfae26747e5dc13e0dfea570f78b3559fcf18ce4367209f18e46775",
+      "changed": true
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-driver.ts",
+      "bytes": 8033,
+      "sha256": "5a7f092fa961e4a32f97abc8d85a50edc910fe9686f706a807557c9e4c00f26c",
+      "baseSha256": "f5c5ae2d31903224717ab17efac509ad41023e458c18d6b6d4e861c7d6aad05b",
+      "changed": true
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-sequence.ts",
+      "bytes": 1526,
+      "sha256": "59a8309e92ca67c499ff54868cf7a0a5b76acd321634d303d473341861baaab2",
+      "baseSha256": "fcf04d95513e91f07a470ed9bf436067032ce8b750c509a6e25ab992c2461f15",
+      "changed": true
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/driver.ts",
+      "bytes": 42526,
+      "sha256": "4fbd73e17f6462703164990bad089b89762193a5d802947aeb784d5f8f6777a6",
+      "baseSha256": "98dfc4179879f28591778b9b2806b53fe827ae9d42127f85fa56abe36f096008",
+      "changed": true
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-main.ts",
+      "bytes": 1032,
+      "sha256": "5e07f10fcbf5761b022d2a761d790e18e0a5893be3317b65efb87e427fba76bc",
+      "baseSha256": "5e07f10fcbf5761b022d2a761d790e18e0a5893be3317b65efb87e427fba76bc",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-main.ts",
+      "bytes": 1071,
+      "sha256": "add10ccadc04ee0cc7a9f32223dcd92975e41aae351f6dc37bc29914feda3bc9",
+      "baseSha256": "add10ccadc04ee0cc7a9f32223dcd92975e41aae351f6dc37bc29914feda3bc9",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-budget.ts",
+      "bytes": 5081,
+      "sha256": "d4b380d4eed81bb0ea87bfecd45cbdda24c942bb1e4b4e4aecad3dbd43420e7e",
+      "baseSha256": "d4b380d4eed81bb0ea87bfecd45cbdda24c942bb1e4b4e4aecad3dbd43420e7e",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/ab-input.ts",
+      "bytes": 9916,
+      "sha256": "91a39c3bfa61e221c7e1e73ac90fa2a7dd7ffd2cf64435c5228b39925880d427",
+      "baseSha256": "91a39c3bfa61e221c7e1e73ac90fa2a7dd7ffd2cf64435c5228b39925880d427",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/child.ts",
+      "bytes": 15831,
+      "sha256": "a85b170dd6e06bc20e87e2867de74b7db0d6e796252c311cc6b39ead222b60c4",
+      "baseSha256": "a85b170dd6e06bc20e87e2867de74b7db0d6e796252c311cc6b39ead222b60c4",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/proof.ts",
+      "bytes": 12378,
+      "sha256": "7659b1146c7da6995862ed76968b9f717eb869e798541c39ec7b7e809256a0f4",
+      "baseSha256": "7659b1146c7da6995862ed76968b9f717eb869e798541c39ec7b7e809256a0f4",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-proof.ts",
+      "bytes": 4466,
+      "sha256": "0b8bfaed9ca7e07b5e3af7ac961d369d2bf55609e8c9680929875e8d5362da1d",
+      "baseSha256": "0b8bfaed9ca7e07b5e3af7ac961d369d2bf55609e8c9680929875e8d5362da1d",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-chat.ts",
+      "bytes": 5970,
+      "sha256": "2909bcbea6b8686fdf7b829cd15b9f08499112930ed754b3be6a1173ab325ac5",
+      "baseSha256": "2909bcbea6b8686fdf7b829cd15b9f08499112930ed754b3be6a1173ab325ac5",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-journal.ts",
+      "bytes": 737,
+      "sha256": "47431b07d212f199699a822a34692ea19cede8d126963bd40034de651c87665a",
+      "baseSha256": "47431b07d212f199699a822a34692ea19cede8d126963bd40034de651c87665a",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/claim-observation.ts",
+      "bytes": 4532,
+      "sha256": "4fd2c9bc04946773080de18cea3d02ac44ae03e384b30e4d41dddb21b78dafc5",
+      "baseSha256": "4fd2c9bc04946773080de18cea3d02ac44ae03e384b30e4d41dddb21b78dafc5",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery.ts",
+      "bytes": 7920,
+      "sha256": "992bbeace6bd7bc205e0be7bb72dfe7fc51867ca469b6eb6c43413fa70249fb2",
+      "baseSha256": "992bbeace6bd7bc205e0be7bb72dfe7fc51867ca469b6eb6c43413fa70249fb2",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/pg-delivery-bridge.ts",
+      "bytes": 4597,
+      "sha256": "659d2322d0344c4b06377f9278870f3830abf2777d68df0a200433102885c56e",
+      "baseSha256": "659d2322d0344c4b06377f9278870f3830abf2777d68df0a200433102885c56e",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/channel.ts",
+      "bytes": 1909,
+      "sha256": "736f982c6dcc3fd2bbb0253e2248c4785579dcdba44ee15c73ac25ddb3d0c24c",
+      "baseSha256": "736f982c6dcc3fd2bbb0253e2248c4785579dcdba44ee15c73ac25ddb3d0c24c",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-source-bindings.ts",
+      "bytes": 988,
+      "sha256": "e148d1beff5861701e87714c2e738a7fe69f6d5b30655cacef93a11ffd11eb4c",
+      "baseSha256": "e148d1beff5861701e87714c2e738a7fe69f6d5b30655cacef93a11ffd11eb4c",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/queue-dependencies.json",
+      "bytes": 4477,
+      "sha256": "151de5db2b13d407a73b015df4aaf212041105556793d2c3b1e3f26ba90d9914",
+      "baseSha256": "151de5db2b13d407a73b015df4aaf212041105556793d2c3b1e3f26ba90d9914",
+      "changed": false
+    },
+    {
+      "path": "experiments/runner-capacity/mixed/runtime-dependencies.json",
+      "bytes": 1150,
+      "sha256": "24deb4832a1c4cde186b959f4b255b26022c11b70a9b00ed0e2ee7097a564462",
+      "baseSha256": "24deb4832a1c4cde186b959f4b255b26022c11b70a9b00ed0e2ee7097a564462",
+      "changed": false
+    }
+  ],
+  "runtimeClosure": "old queue input-v2 and fixed 4fdd/33 SQL by Git reference; not re-exported or relabeled",
+  "actual": "NOT_OPEN"
+}

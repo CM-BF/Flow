@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T16:49:39.801Z |
+| 最近更新 | 2026-10-07T16:57:00.000Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 开段a8f2945624b43d36a873d0411c17230340745c78=origin clean；本次仅主线接收事实/status/review更新，最终metadata HEAD由Git读取。 |
+| 工作树dirty状态 | 开段39d3b61a8e3b1a656a9316a01cee9d8fb82c7613=origin clean；仅本scope新入口/直接纯例/证据。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 82095227e5b865139093cc325484c9885f69e805准备；execution1a3f8aa5edb2444f2960e7433b31ccaf8bd046af四arm actual PASS，结果独审APPROVED，0PG。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
 | 实现目标 | 8a933df2e71e03aa3e9525649877794777ebdec4 |
 | 实现范围 | experiments/runner-capacity/mixed/delivery-replay-main.ts, experiments/runner-capacity/mixed/delivery-packing.ts, experiments/runner-capacity/mixed/delivery-packing.test.ts, docs/evidence/s01/mixed-ab-preparation/delivery-packing-operator.py, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 已审离线观察打包与回放模块已进入主线；四侧局部计量保持原证据，不代表真实center接线或容量验收通过。 |
-| 下一可用交付 | 候选为显式错峰fixture与纯时钟边界；须保留同步burst原失败和原完整验收，不承诺改善。本段未启动实现。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 保持原同步负载和完整验收，新增显式 buffered 单臂实验入口；已接收的离线模块与旧失败事实不变。 |
+| 下一可用交付 | 固定单臂选择、身份及完整验收复用的源码和纯检查；真实性能窗口尚未开放。 |
+| 当前阻塞 | ACTIVE: 本组 ordinary 按 K01→AV03→本片交接；当前仅源码准备，无实际子进程。 |
 | 需用户决定 | NONE |
 | Review | APPROVED 8a933df2e71e03aa3e9525649877794777ebdec4准备及dfb实际结果；assignment_review对primary12最小main接收0P1/P2，范围见I02固定回执。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T16:49:39.801Z fresh本人/WT/branch一致，metadata提交后STOP保留。 |
-| 架构影响 | main8e5仅私有离线packing/replay：parent arm/显式workerFile/单receiver+OPS14；primary12闭包已接。真实child/driver/queue可选接线未接，不改生产pool/SQL/default runner。工程架构聚合如需补图由Execution Lead据该固定target登记。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T16:58Z fresh本人/WT/branch一致。 |
+| 架构影响 | 本片仅实验选择Interface：显式单次buffered复用原runMixed/centerDelivery/完整proof/final/cancel；原A/B默认顺序、产品pool/SQL和生产4fdd不改。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -326,3 +326,7 @@ db16:18:22Z RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，绑定dfb2105ba6e4f3eaa4512d
 接收仅private offline packing/replay；optional历史wire、shared contracts/package/lock、原operator和compiled/raw闭包均排除。原main候选清单作为历史已审包保持原字节，本唯一status纠正已接片段，不将源码接收推断为真实center观测或128能力。原O1FAIL/O2NOT_RUN/KEEP与capacity TODO/taskstartUNKNOWN/NOT_COMPLETED保持。
 
 本段≤3min metadata≤64KiB；fresh508fv3/6本人，0工程/PG/TMP/provider/import，按已读find-skills/codebase-design/clean-code核固定来源/职责/时间边界。候选仅显式staggered workload+纯时钟边界，保留同步burst原失败、6s/4s ACK/取消final原门禁，不声称必然改善，不开实现/child（K01 HOLD由原owner处理）。dashboard唯一来源已更新，本段仅字段parser、未请求snapshot/不冒显示实时确认。
+
+## 2026-10-07T16:57:00.000Z buffered 单臂准备段
+
+实际开始取工具clock，截止17:12:00Z；原claimv3/6已fresh。≤15min/新增8MiB含TMP4MiB及raw512KiB，最多3串行child各30s/累计60s；等待不续时，当前0child，0PG/HTTP/Chrome/provider/安装/build。本地find-skills优先已有brainstorming（已批准有界选择）、codebase-design小Interface复用、固定clean-code错误/身份/生命周期方法，不安装。原O1为per-query、不经过buffered finish；本片不是仅packing因果，亦不改变原burst失败或采用错峰取绿。

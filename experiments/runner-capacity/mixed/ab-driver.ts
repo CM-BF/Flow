@@ -8,13 +8,14 @@ import { directoryBytes } from '../evidence.js';
 import { beforeDeadline } from './deadline.js';
 import { COMPARISON, ComparisonBudget } from './ab-budget.js';
 import { checkDisk, exportInputs, exportQueueInput } from './ab-input.js';
-import { compareSides, type SideOutcome } from './ab-sequence.js';
-import { QUEUE_PROBE } from './queue-probe.js';
+import { compareSides, runSingleSide, type SideOutcome } from './ab-sequence.js';
+import { selectQueueRecipe, queueArm } from './queue-probe.js';
 import { runMixed } from './driver.js';
 
-export async function runComparison(windowId: string, target: string, started = performance.now(), recipe?: { kind: 'queue-delivery'; minimumFreeBytes: number }) {
-  const limits = recipe ? QUEUE_PROBE : COMPARISON;
-  if (recipe) assert(recipe.kind === 'queue-delivery' && Number.isSafeInteger(recipe.minimumFreeBytes) && recipe.minimumFreeBytes >= 6914834432, 'queue_future_complete_resource_sum_required');
+export async function runComparison(windowId: string, target: string, started = performance.now(), recipe?: { kind: 'queue-delivery' | 'queue-buffered-single'; minimumFreeBytes: number }) {
+  const selection = recipe ? selectQueueRecipe(recipe.kind) : undefined;
+  const limits = selection?.limits ?? COMPARISON;
+  if (recipe) assert(Number.isSafeInteger(recipe.minimumFreeBytes) && recipe.minimumFreeBytes >= 6914834432, 'queue_future_complete_resource_sum_required');
   const disk = (starting: boolean) => recipe ? checkDisk(process.cwd(), recipe.minimumFreeBytes - 1024 ** 3) : checkDisk(process.cwd(), starting ? COMPARISON.totalBytes : 0);
   const budget = new ComparisonBudget(started, performance.now.bind(performance), limits); const output = resolve(limits.output);
   assert.equal(windowId, limits.windowId, 'Unexpected comparison window identity.');
@@ -55,12 +56,13 @@ export async function runComparison(windowId: string, target: string, started = 
       preparationPhase = 'complete';
     });
     if (preparation.state !== 'settled') { inputsSettled = false; budget.stop(); throw new Error('comparison_input_unknown'); }
-    outcomes = await compareSides(budget, async side => {
+    outcomes = await (selection?.single ? runSingleSide : compareSides)(budget, async side => {
+      const arm = recipe ? queueArm(recipe.kind, side) : undefined;
       const run = await beforeDeadline(budget.sideDeadlineMs, async () => {
         await disk(true);
-        return runMixed(windowId, target, recipe ? 'queue-probe-' + (side === 'A' ? 'O1' : 'O2') + '-v1' : 'event-state-' + side + '-v1', { sourceDirectory: join(sourceRoot, recipe ? 'production' : side), startedMs: budget.sideStartedMs, deadlineMs: budget.sideDeadlineMs, accounting: {
+        return runMixed(windowId, target, arm ? arm.identity : 'event-state-' + side + '-v1', { sourceDirectory: join(sourceRoot, recipe ? 'production' : side), startedMs: budget.sideStartedMs, deadlineMs: budget.sideDeadlineMs, accounting: {
         charge: (category, bytes) => budget.chargeSide(category, bytes), work: () => budget.work(), submit: () => budget.submit(),
-      } }, recipe ? { mode: side === 'A' ? 'per-query' : 'buffered', epoch: windowId + '-' + side } : undefined);
+      } }, arm ? { mode: arm.mode, epoch: windowId + '-' + side } : undefined);
       });
       if (run.state !== 'settled') { budget.stop(); throw new Error('comparison_side_unknown'); }
       return run.value;
@@ -78,14 +80,14 @@ export async function runComparison(windowId: string, target: string, started = 
       if (removed.state !== 'settled') errors.push('comparison_input_cleanup_unknown');
     } else if (sourceRoot) { cleanup = { sourceRoot, removed: false, retained: true }; errors.push('comparison_input_retained'); }
   }
-  if (!outcomes.length) outcomes = [{ side: 'A', state: 'NOT_RUN' }, { side: 'B', state: 'NOT_RUN' }];
+  if (!outcomes.length) outcomes = selection?.single ? [{ side: 'A', state: 'NOT_RUN' }] : [{ side: 'A', state: 'NOT_RUN' }, { side: 'B', state: 'NOT_RUN' }];
   if (performance.now() >= deadline - 500) errors.push('comparison_deadline_exhausted');
   let success = outcomes.every(result => result.state === 'PASS') && errors.length === 0;
   const result = { windowId, target, outcomes, errors, cleanup, success, tasksSentOrUnknown: budget.tasks,
     finalMeasuredBytes: budget.usedBytes, categories: budget.categories, finalEvidenceBytes, finalReserveBytes: limits.finalReserveBytes,
     elapsedBeforeResultWriteMs: performance.now() - started, diskBytes, preparationPhase,
     byteBasis: 'visible Git/input export + Node streams + IPC + evidence with conservative duplicate charges; not all OS I/O or PG/WAL disk growth',
-    order: 'A then B; shared host background and observer overhead remain confounders', providerCalls: 0 };
+    order: selection?.single ? 'one buffered arm; no paired control or packing-only causal claim' : 'A then B; shared host background and observer overhead remain confounders', providerCalls: 0 };
   const written = await beforeDeadline(deadline - 250, () => finalEvidence('result.json', result));
   if (written.state !== 'settled') { errors.push('comparison_final_evidence_unknown'); success = false; }
   if (performance.now() >= deadline) { errors.push('comparison_total_time_exhausted'); success = false; }

@@ -1,0 +1,5 @@
+{
+  "extends": "./pg-wiring-tsconfig.json",
+  "files": ["../../../../experiments/runner-capacity/mixed/queue-buffered-main.ts", "../../../../experiments/runner-capacity/mixed/queue-buffered.test.ts"],
+  "include": []
+}
