@@ -1,0 +1,1 @@
+/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-center-inputs/docs/evidence/x01/center-claim-fixture.ts

@@ -13,17 +13,17 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
-| 工作树dirty状态 | R3实际结果已审；本轮metadata提交push后clean STOP；产品未改 |
+| 工作树dirty状态 | 仅AV client两叶与own evidence/metadata实施中；旧R3封件和VAR295输入冻结 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED ead8db7e6ac4a47e02790afb3b8551ebee9188ba：R3真实五例5/5、suite成功；R1/R2原失败独立保留 |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
-| 实现目标 | ea3c4599b00505c950cc34ada8a350082fe76747 + ead8db7e6ac4a47e02790afb3b8551ebee9188ba：中心资格/迁移真实PG5/5，待结果独审与窄接收 |
+| 实现目标 | 新增authorizeVerifier客户端增量，尚未执行局部检查；原ea3/ead8交付固定 |
 | 实现范围 | apps/server/src/index.ts,apps/server/src/plugin-runtime/claim.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/runner-claim-receipts.ts,apps/server/src/runner-claim-routes.test.ts,apps/server/src/runner-claim-routes.ts,apps/server/src/runners.ts,packages/client/src/plugin-runner.test.ts,packages/client/src/plugin-runner.ts,packages/contracts/src/plugin-verification-binding.ts,packages/contracts/src/verifier-runner-claim.test.ts,packages/contracts/src/verifier-runner-claim.ts,packages/storage/migrations/036-plugin-verification-bindings.sql |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 本片段交付阶段 | integration |
-| 当前产出 | 中心领取资格、迁移与重放五项数据库验收已通过独立审查，等待主线接收 |
-| 下一可用交付 | 已审中心领取片等待主线窄接收 |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 中心领取与迁移已验；正在补验证器复用现有授权传输的客户端入口 |
+| 下一可用交付 | 交付验证器phase授权薄接口及工具兼容、取消与坏回执直接验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | R3实际结果22:29:10独审APPROVED；22:16:41源/local/准备APPROVED；R1/R2失败忠实性批准保留 |
@@ -205,3 +205,7 @@ R2独立namespace av03-verifier-claim-pg-run-r2；仅candidate，NOT_OPEN/NOT_RU
 2026-10-07T22:36:22.656Z：归档b01 22:29:10结果忠实性APPROVED/0新增P1P2；原29+10bindings与完整FULL_RETURN已核，numeric identity followup22:25:02.763为独立后验，不倒填22:24收尾。原R1/R2失败、所有raw和manifest不改。唯一[r3-result-approval.json](../../docs/evidence/x01-artifact-verifier/av03-pg/r3-result-approval.json)。当前VAR owner明确同意Original按ea3固定verification.ts/test前置窄接收，R3成功与结果独审条件已满足；VAR53d后继及其工作树保持不覆盖。main receipt仍NOT_RECEIVED，父X01/完整AV03/AV04不勾完成。
 
 本次AV metadata→VAR schema修复连续段实际开始22:35:47.945Z，截止22:55:47.945Z，总新8MiB在既有稳定池内；本AV阶段0工程/PG，commit/push后STOP再切VAR。
+
+## AV client verifier授权连续段
+
+2026-10-07T23:14:20.000Z起，截止23:29:20.000Z；首写23:15:07.527Z。fresh a67v6/25无冲突，产品仅plugin-runner.ts/.test.ts；以private authorizePhase复用旧工具的parse/key/65,536B/五项ACK身份校验，仅固定endpoint选择。FlowClient单一request不变，0新增fetch/retry/fallback；无runtime/server/VAR295/R3输入改动。4MiB含index副本/供给/TMP/raw，至多3child各20s（含5s清理）累计45s；原source/index入口字节以独立供给固定，不复制旧闭包。当前未运行局部检查。

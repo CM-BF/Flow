@@ -1,0 +1,25 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "preserveSymlinks": true,
+    "baseUrl": "./inputs",
+    "paths": {
+      "@flow/contracts": [
+        "packages/contracts/src/index.ts"
+      ],
+      "@flow/client": [
+        "packages/client/src/index.ts"
+      ],
+      "@flow/plugin-runtime": [
+        "packages/plugin-runtime/src/package-store.ts"
+      ]
+    }
+  },
+  "include": [],
+  "exclude": [],
+  "files": [
+    "inputs/packages/client/src/plugin-runner.ts",
+    "inputs/packages/client/src/plugin-runner.test.ts"
+  ]
+}
