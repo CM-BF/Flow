@@ -1,0 +1,108 @@
+{
+  "at": "2026-10-07T22:20:20.000Z",
+  "startedAt": "2026-10-07T22:14:24.000Z",
+  "source": "20dc149c78dd4c7d172c609360051e2cec852aae",
+  "state": "SOURCE_DRAFT_NOT_READY_NO_PERSONAL_EXECUTION",
+  "scope": "New isolated Web-only source/instance template; current recovery-bound source untouched",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "bytes": 12967,
+      "sha256": "4429f60046eb3fc6e8bf449a1be3f8059702f5224e3cb032ad21cf3e624d9cea"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs",
+      "bytes": 9374,
+      "sha256": "2e43e07af5e911dac217429f7d489ac12f4df9545b141f4fb63bc724c35c015d"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-input.template.json",
+      "bytes": 3856,
+      "sha256": "fbe92e26b53ea38e9397083ee555cbdb67fc607985de63e763df2f526e485483"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-interface.md",
+      "bytes": 4864,
+      "sha256": "4e954070a6a1f450cc1883da62267e792f0e202a6a277c042cdd9c863ac9bb89"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-01-reservation.json",
+      "bytes": 1795,
+      "sha256": "fe200a58e99ca82b6493ef611251bca2c3364a6e9fead376db12ee90776f0c02"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-01-outer.json",
+      "bytes": 1379,
+      "sha256": "a5e43b79ce050cea2d73d049e54e57175058a89c7f2325e4832dfe7e80a9b58a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-01-result.json",
+      "bytes": 411,
+      "sha256": "27495e86e96d396dccb9483c3844951e5288828c2ad72fd045eec4893a2fe452"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-02-reservation.json",
+      "bytes": 1422,
+      "sha256": "86e0e0deca17133ca135f80253b554cdf711c0f71df9075ea7fdef2b57611d49"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-02-outer.json",
+      "bytes": 1072,
+      "sha256": "9afa1f1ce8daa84a6f537b8fd52df6f158ab54692b711697f5c5f4536c4ce8b8"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-02-result.json",
+      "bytes": 416,
+      "sha256": "52f7e03176ca9ca96143c8f5c8e48ee7d5bc1f199cfe89d31a2b4a714d135451"
+    }
+  ],
+  "checks": {
+    "distinct": 8,
+    "selections": 11,
+    "passed": 11,
+    "elapsedMs": 246,
+    "rawBytes": 1249,
+    "groupsAbsentDualEOF": 2,
+    "scratchRemoved": 2,
+    "note": "First7 atb16; last4 at20dc (3 affected+1 new). Zero repeated transfer/App/cold matrix."
+  },
+  "inherited": [
+    {
+      "commit": "520d3cb7bdb352a1462d83c214e63c8a47c218f4",
+      "path": "docs/evidence/svc06/browser-recovery/current-web-transfer.mjs",
+      "sourceSha256": "e352999470b0e8544e770b77a0a0ce2eb0295cb2d2ecb72fca1ff05a6526e47b",
+      "review": "docs/evidence/i02/svc06b-web-publication-source-review.json at089a6e460 (original limited approval)"
+    },
+    {
+      "commit": "0004900193a83bdcdf1815d20cf5857fc8d1cdcb",
+      "path": "docs/evidence/svc06/browser-recovery/current-migration.mjs",
+      "sha256": "6b70bcef97dd4d0d2ac395e3326877c69d0bb7ac0ac68a1e75013088bc3f982a"
+    },
+    {
+      "commit": "548490abb9d9d8d970384200a531b90d212358f2",
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/final-preparation.json",
+      "sha256": "e97dee78525e3f188794cfcfe853b8e04d9567dc08e1405bc8bcc0fb5940b798",
+      "scope": "Source/protocol only; actual22:18 stopped before refresh/resume, not a successful receipt"
+    },
+    {
+      "commit": "b4222f7660a8e4a176285ff154c82afd95ba3d98",
+      "path": "docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json",
+      "sha256": "905af75b5cb1c1859ba5e482180a65967c1a17127aa059dbef59a0b8cdd11186"
+    }
+  ],
+  "actual": {
+    "personalIO": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "provider": 0,
+    "publication": 0,
+    "ready": false
+  },
+  "next": "Preserve draft for independent review after recovery failure/repair priority; successful final receipt and fresh instance absent. No further checks launched.",
+  "ownStatusParse": {
+    "errors": [],
+    "humanMissing": [],
+    "timingIssues": [],
+    "method": "main parseStatus only; metadata formatting, no product tests"
+  }
+}

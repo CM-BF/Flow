@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T22:19:03.184923+00:00",
+  "source": "20dc149c7",
+  "queueAt": "2026-10-07T22:18:36.284Z",
+  "queueSha256": "1f34e4734c4dca1ae89262d8f801a383735d4da2c40cddcfeffc90bb4f085a3e",
+  "floor": 17452105728,
+  "free": 18083639296,
+  "limits": {
+    "seconds": 10,
+    "scratchBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "scratch": {
+    "path": "/private/tmp/svc06b-web-only-bind-4l7y46zp",
+    "dev": 16777234,
+    "ino": 124611043
+  },
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "--test-reporter=spec",
+    "--test-name-pattern=actual publish|public conflict|post-commit|different launch",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs"
+  ],
+  "bindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "bytes": 12967,
+      "sha256": "4429f60046eb3fc6e8bf449a1be3f8059702f5224e3cb032ad21cf3e624d9cea"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs",
+      "bytes": 9374,
+      "sha256": "2e43e07af5e911dac217429f7d489ac12f4df9545b141f4fb63bc724c35c015d"
+    }
+  ],
+  "pg": 0,
+  "personal": 0,
+  "provider": 0
+}

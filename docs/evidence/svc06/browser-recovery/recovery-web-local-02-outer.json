@@ -1,0 +1,33 @@
+{
+  "pid": 44615,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 120,
+  "stdout": "\u2714 actual publish consumer observes six owned files/four reports and makes one exact public CAS (8.472958ms)\n\u2714 public conflict stops without replay or pointer replacement (3.732ms)\n\u2714 post-commit unknown stays primary and never triggers rollback or retry (3.651042ms)\n\u2714 a different launch since the recovery receipt is refused before public CAS (3.04725ms)\n\u2139 tests 4\n\u2139 suites 0\n\u2139 pass 4\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 75.765083\n",
+  "stderr": "",
+  "observed_bytes": 477,
+  "retained_bytes": 477,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}
