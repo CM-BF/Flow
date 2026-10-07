@@ -2,31 +2,31 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 13:10:16 UTC / fixed main 7524a7fa6768ace7e284fc80d7cc25c1407ec2a9 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 13:19:54 UTC / fixed main 7524a7fa6768ace7e284fc80d7cc25c1407ec2a9 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility |
 | Branch | codex/claude-settings-claim-eligibility |
-| 工作基线 / HEAD | 7524a7fa6768ace7e284fc80d7cc25c1407ec2a9 / source preparation in progress |
-| 工作树dirty状态 | 本轮 own source/test/metadata；旧CORE WT及历史raw不改 |
+| 工作基线 / HEAD | 7524a7fa6768ace7e284fc80d7cc25c1407ec2a9 / fixed source aa74137d84cd7acc45ec23c2ff22128ce944a410；最终metadata HEAD见Git/交付 |
+| 工作树dirty状态 | source固定；本次仅own检查原件/交审metadata待提交推送 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原CORE3e768未记录可证实际任务开工；旧claim时刻不是开始证据。2026-10-07T13:05:32Z仅为clock实测本轮后继工作段起点，不能重置同task历史 |
-| 检查状态 | NOT_RUN：当前0已运行；已获原段内仅types/list两child授权，PG/hooks/provider仍NOT_RUN；旧29项只是已main历史 |
+| 检查状态 | FAILED aa74137d84cd7acc45ec23c2ff22128ce944a410：修后focused types0；collect1后alias修正未重跑；5case源码/0case执行；原types2/2保留 |
 | 已集成main状态 / HEAD | 历史CORE ea276已main8d84，现基线7524保有；本轮领取资格增量NOT_INTEGRATED |
-| 实现目标 | 领取SQL在LIMIT之前隔离需要消息设置的Claude runner；当前未固定source，未验证 |
+| 实现目标 | aa74137d84cd7acc45ec23c2ff22128ce944a410；固定SQL+prepared tests，SOURCE_REVIEW_PENDING / PG_NOT_OPEN |
 | 实现范围 | apps/server/src/runners.ts, apps/server/src/execution-profiles/message-settings-claim-pg.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 正在补齐新旧执行后端共存时的领取资格，避免新设置后端先拿到旧消息再失败 |
-| 下一可用交付 | 固定领取条件和专库用例供独审；随后另段类型/收集与真实PG验证 |
+| 当前产出 | 新旧执行后端的领取资格已实现，修后类型通过；专库用例收集还待修正映射后的确认 |
+| 下一可用交付 | 源与现有检查证据交独审；补一次精确收集后再固定真实专库入口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | PENDING：本轮source尚未独审；旧批准范围维持不扩大 |
+| Review | PENDING — Mika承担本轮固定source/有限结果只读审；历史批准不扩大 |
 | Claim | 651c4eb4-ca60-41c3-9702-872c242e12d0 v1 ACTIVE / 4 literals；take 2026-10-07T13:07:54.544Z |
 
 ## 本轮领取资格后继
@@ -34,7 +34,7 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | M02CORE-CLAIM01 | completed | architecture_read | X01 runners.ts STOP→v29移出，CORE v1 take；固定base与旧3e768历史复制 |
-| M02CORE-CLAIM02 | in-progress | architecture_read | 同一allocateClaim的LIMIT前小条件；5个prepared case，0执行 |
+| M02CORE-CLAIM02 | completed | architecture_read | aa74137d84cd7acc45ec23c2ff22128ce944a410固定5行SQL及5个prepared PG用例源码；没有行为执行通过 |
 | M02CORE-CLAIM03 | pending | architecture_read | 固定source独审、后续必要types/list、真实专库公共认证/SQL验证均待 |
 | M02CORE-CLAIM04 | pending | architecture_read | 受控main接收及SVC09两槽个人激活/用户端验收由父任务协调，本片不改个人配置 |
 
@@ -117,3 +117,19 @@ Root静态发现prepared PG config的`.js`引用在native loader下不存在；�
 2026-10-06 17:58:48 UTC：固定main 8d84d529a0756116bd0fc8bad969d61a6c26248e 的canonical message-settings-integration.json 已逐项核对，34源共239204B与ea276/本WT/hash/bytes一致，0errors。Lead集成首次root types exit2及TUI/Web修复后的final exit0均保留；本owner只读核回执，不重跑任何检查。29项为16合同、5注入、8PG分轮，不将其他组件或main检查合算；无provider/账号资格验证。
 
 本次五项metadata提交推送后，明确停止本claim全部39 scope的源码和metadata写入；以v3提交release，请求身份 6aee0793-2f03-4c59-bcd7-95ef61febc4a，实际COMMITTED结果仅落 `/tmp/flow-core-main-closeout-release-receipt.json` 及协调账本，由Lead观察，不在释放后回写。此处记录释放意图，不提前声称已释放。
+
+
+## 本轮独立交审与实际资源收口
+
+2026-10-07T13:18:56.836360Z：ordinary已RETURN db，4顶层child（原2+Mika明确追加2），types2→2→0、collect1，原raw77818B完整保留；累计各receipt前6.4577807s，非整个工作段wall。两个初始types失败及collect缺alias错误不掩盖；最后补齐Vite同package-store映射后未重跑。所有owned groups最终absent/merged EOF、无signals/secondary，4ownTMP同identity清理/absence；初EPERM观测保留。没有PG/HTTP监听/SDK调用/provider或待launch。
+
+source唯一[review-ready](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/review-ready.json)；[local原件](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/local.json)；[owner-switch登记输入](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/owner-switch-request.json)。本轮main未集成、实际PG未开；固定base历史CORE能力不代表这个SQL差量已验。最终停止源码写入供Mika独审，保claim供修复。
+
+| 本轮事件 | 实际时间/状态 | 来源 |
+| --- | --- | --- |
+| 本轮工作段开始 | 2026-10-07T13:05:32Z | clock原始读数；非原task开工 |
+| 分支交付 | PENDING_FINAL_PUSH | 本metadata提交后固定交付，不以commit时间猜历史 |
+| 独立审查 | NOT_REVIEWED | 待Mika固定source审 |
+| 主线集成 | NOT_INTEGRATED | 仅本轮差量 |
+| 部署 | NOT_DEPLOYED | 未操作个人服务 |
+| 完整任务完成 | NOT_COMPLETED | 旧6项历史完成保留，新资格验证/接收开放 |
