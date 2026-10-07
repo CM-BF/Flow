@@ -8,6 +8,13 @@ export const STOCK_STARTUP_RECIPE_SHA256 = 'ba856d7949bd2d305789995058e4b11edc4d
 /** Fixed Mika e7ff recipe, with its private runtime kept separate from the workspace.
  * This is a derived compatibility candidate, not a claim that its narrower writes have run. */
 export function createStockHelperProfile(input: { startupRecipe: string; directory: string; runtimeDirectory: string }): string {
+  return createStockReadOnlyProfile(input)
+    + `(allow file-write-data (literal ${JSON.stringify(input.directory + '/calculator.mjs')}))\n`;
+}
+
+/** Same fixed startup resources as the helper, with no workspace write grant.
+ * Runtime state is separate; this declaration still requires actual OS launch validation. */
+export function createStockReadOnlyProfile(input: { startupRecipe: string; directory: string; runtimeDirectory: string }): string {
   const { startupRecipe, directory, runtimeDirectory } = input;
   if (Buffer.byteLength(startupRecipe) !== 17393 || createHash('sha256').update(startupRecipe).digest('hex') !== STOCK_STARTUP_RECIPE_SHA256) {
     throw Error('Stock helper startup recipe differs.');
@@ -35,8 +42,7 @@ export function createStockHelperProfile(input: { startupRecipe: string; directo
   }
   return `${profile}\n;; Engineering workspace is not the writable private runtime state tree.\n`
     + `(allow file-read-metadata ${[...ancestors].map(path => `(literal ${JSON.stringify(path)})`).join(' ')})\n`
-    + `(allow file-read* (subpath ${JSON.stringify(directory)}))\n`
-    + `(allow file-write-data (literal ${JSON.stringify(directory + '/calculator.mjs')}))\n`;
+    + `(allow file-read* (subpath ${JSON.stringify(directory)}))\n`;
 }
 
 /** A policy candidate, not model qualification or a NativeWriteAuthority grant.

@@ -2,8 +2,10 @@ import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
 import { copyFileSync, fstatSync, mkdirSync, mkdtempSync, readFileSync, renameSync, writeFileSync, writeSync } from 'node:fs';
 import { join } from 'node:path';
-import { test } from 'vitest';
-import { prepareDarwinWriterHost, prepareDarwinStockHelper, type StockHelperCompletion } from './native-authority.js';
+import { test, vi } from 'vitest';
+import { prepareDarwinWriterHost, prepareDarwinStockHelper, prepareDarwinReadOnlyHost, type StockHelperCompletion } from './native-authority.js';
+import * as codex from '../codex/index.js';
+import { STOCK_CODEX } from './native-authority-darwin.js';
 
 const root = process.env.FLOW_ENG01J_SCRATCH;
 const binary = process.env.FLOW_ENG01J_CANARY;
@@ -116,4 +118,59 @@ test.skipIf(!canRun)('closing an unused host permanently prevents launch', async
   const input = fixture(), host = await prepareDarwinWriterHost(input);
   assert.equal((await host.close()).child, 'not-started');
   assert.throws(() => host.createTransport({ signal: new AbortController().signal, workingDirectory: input.directory }));
+});
+
+// Explicit preparation-only checks hash installed binaries but never execute either one.
+const readonlyScratch = process.env.FLOW_ENG01L_TMP;
+const readonlyPrepare = process.platform === 'darwin' && process.env.FLOW_ENG01L_PREPARE === '1' && Boolean(readonlyScratch);
+function readonlyFixture() {
+  assert.ok(readonlyScratch);
+  const directory = mkdtempSync(join(readonlyScratch, 'workspace-')), runtimeDirectory = mkdtempSync(join(readonlyScratch, 'runtime-'));
+  for (const child of ['control', 'state']) mkdirSync(join(runtimeDirectory, child), { mode: 0o700 });
+  return { directory, runtimeDirectory, startupRecipe: readFileSync(new URL('../../../../docs/evidence/eng01j/helper-host/startup-input.sb', import.meta.url), 'utf8') };
+}
+test.skipIf(!readonlyPrepare)('ENG01L real read-only factory binds stock app-server and private environment through mocked R06 only', async () => {
+  const input = readonlyFixture();
+  const closed = { reason: 'CLOSED' as const, child: 'confirmed-exited' as const, exitCode: 0, signal: null, remoteEffects: 'unknown' as const };
+  const transport: codex.CodexTransport = { ready: Promise.resolve({ userAgent: 'injected', platformFamily: 'test', platformOs: 'test' }),
+    closed: Promise.resolve(closed), async close() { return closed; }, async request() { throw Error('No RPC permitted'); },
+    async receive() { throw Error('No receive permitted'); }, async respond() { throw Error('No reply permitted'); }, snapshot() { throw Error('Unused'); } };
+  const spawn = vi.spyOn(codex, 'createCodexTransport').mockReturnValue(transport);
+  try {
+    const host = await prepareDarwinReadOnlyHost(input); assert.equal(spawn.mock.calls.length, 0);
+    const signal = new AbortController().signal;
+    assert.equal(host.createTransport({ signal, workingDirectory: input.directory }), transport);
+    const options = spawn.mock.calls[0]![0];
+    assert.deepEqual(options.spawn.args.slice(2), [STOCK_CODEX, 'app-server']);
+    assert.equal(options.spawn.executable, '/usr/bin/sandbox-exec');
+    assert.ok(!options.spawn.args[1]!.includes('calculator.mjs'));
+    assert.deepEqual(options.spawn.environment, { PATH: '/usr/bin:/bin', LANG: 'C', HOME: join(input.runtimeDirectory, 'state'),
+      TMPDIR: join(input.runtimeDirectory, 'state'), CODEX_HOME: join(input.runtimeDirectory, 'state') });
+    assert.deepEqual(options.initialize.capabilities, { experimentalApi: true, requestAttestation: false });
+    assert.deepEqual(Object.keys(options.spawn).sort(), ['args', 'cwd', 'environment', 'executable']);
+    assert.throws(() => host.createTransport({ signal, workingDirectory: input.directory }));
+    assert.equal((await host.close()).child, 'confirmed-exited'); assert.equal((await host.close()).writeAccess, 'unknown');
+    assert.equal(spawn.mock.calls.length, 1);
+  } finally { spawn.mockRestore(); }
+});
+test.skipIf(!readonlyPrepare)('ENG01L changed private directory consumes launch without calling R06', async () => {
+  const input = readonlyFixture(), host = await prepareDarwinReadOnlyHost(input);
+  const spawn = vi.spyOn(codex, 'createCodexTransport').mockImplementation(() => { throw Error('Must not spawn'); });
+  try {
+    renameSync(join(input.runtimeDirectory, 'state'), join(input.runtimeDirectory, 'old-state'));
+    mkdirSync(join(input.runtimeDirectory, 'state'), { mode: 0o700 });
+    assert.throws(() => host.createTransport({ signal: new AbortController().signal, workingDirectory: input.directory }));
+    assert.throws(() => host.createTransport({ signal: new AbortController().signal, workingDirectory: input.directory }));
+    assert.equal(spawn.mock.calls.length, 0); assert.equal((await host.close()).child, 'unconfirmed');
+  } finally { spawn.mockRestore(); }
+});
+test.skipIf(!readonlyPrepare)('ENG01L close before launch and invalid private runtime cannot start stock', async () => {
+  const input = readonlyFixture(), host = await prepareDarwinReadOnlyHost(input);
+  const spawn = vi.spyOn(codex, 'createCodexTransport').mockImplementation(() => { throw Error('Must not spawn'); });
+  try {
+    assert.equal((await host.close()).child, 'not-started');
+    assert.throws(() => host.createTransport({ signal: new AbortController().signal, workingDirectory: input.directory }));
+    await assert.rejects(prepareDarwinReadOnlyHost({ ...input, runtimeDirectory: input.directory }));
+    assert.equal(spawn.mock.calls.length, 0);
+  } finally { spawn.mockRestore(); }
 });

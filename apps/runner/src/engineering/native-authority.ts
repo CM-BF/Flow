@@ -5,7 +5,7 @@ import { join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { createCodexTransport, type CodexTransport } from '../codex/index.js';
 import type { CodexTransportFactory } from '../native-harness/codex/exchange.js';
-import { createDarwinWriteProfile, createStockHelperProfile, STOCK_CODEX, STOCK_CODEX_SHA256 } from './native-authority-darwin.js';
+import { createDarwinWriteProfile, createStockHelperProfile, createStockReadOnlyProfile, STOCK_CODEX, STOCK_CODEX_SHA256 } from './native-authority-darwin.js';
 
 const SANDBOX = '/usr/bin/sandbox-exec';
 const SANDBOX_SHA256 = 'abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a';
@@ -24,6 +24,12 @@ export interface StockHelperInput {
   readonly runtimeDirectory: string;
   readonly startupRecipe: string;
   readonly contents: Uint8Array;
+}
+export type DarwinReadOnlyHostInput = Pick<StockHelperInput, 'directory' | 'runtimeDirectory' | 'startupRecipe'>;
+export interface DarwinReadOnlyHost {
+  readonly policySha256: string;
+  readonly createTransport: CodexTransportFactory;
+  close(): Promise<DarwinWriterStop>;
 }
 export interface StockHelperCompletion {
   /** Facts from the one supervisor that actually owned the launched child. */
@@ -146,6 +152,53 @@ async function verifyDigest(path: string, expected: string, maximumBytes: number
     }
     if (hash.digest('hex') !== expected) throw Error('Darwin executable digest differs.');
   } finally { await file.close(); }
+}
+
+/** The existing R06 factory owns the only native child and its three stdio pipes.
+ * No process starts during preparation; no workspace FD or ambient environment is passed. */
+export async function prepareDarwinReadOnlyHost(input: DarwinReadOnlyHostInput): Promise<DarwinReadOnlyHost> {
+  if (process.platform !== 'darwin') throw Error('Darwin read-only host is unavailable.');
+  const { directory, runtimeDirectory } = input;
+  const profile = createStockReadOnlyProfile(input);
+  const directories = [directory, runtimeDirectory, join(runtimeDirectory, 'control'), join(runtimeDirectory, 'state')]
+    .map(path => ({ path, identity: privateDirectory(path) }));
+  const binary = ownedFile(STOCK_CODEX), sandbox = lstatSync(SANDBOX);
+  if (!(binary.mode & 0o111)) throw Error('Read-only host executable is invalid.');
+  await verifyDigest(STOCK_CODEX, STOCK_CODEX_SHA256, 512 * 1024 * 1024);
+  await verifyDigest(SANDBOX, SANDBOX_SHA256, 1024 * 1024);
+  const policySha256 = createHash('sha256').update(profile).digest('hex');
+  let attempted = false, stopped = false, transport: CodexTransport | undefined;
+  let closing: Promise<DarwinWriterStop> | undefined;
+  const createTransport: CodexTransportFactory = ({ signal, workingDirectory }) => {
+    if (attempted || stopped) throw Error('Read-only launch already consumed.');
+    attempted = true;
+    signal.throwIfAborted();
+    if (workingDirectory !== directory) throw Error('Read-only workspace differs.');
+    for (const { path, identity } of directories) {
+      const now = privateDirectory(path);
+      if (now.dev !== identity.dev || now.ino !== identity.ino) throw Error('Read-only directory changed.');
+    }
+    if (!sameFile(STOCK_CODEX, binary) || !sameFile(SANDBOX, sandbox)) throw Error('Read-only executable changed.');
+    transport = createCodexTransport({
+      spawn: { executable: SANDBOX, args: ['-p', profile, STOCK_CODEX, 'app-server'], cwd: directory,
+        environment: { PATH: '/usr/bin:/bin', LANG: 'C', HOME: join(runtimeDirectory, 'state'),
+          TMPDIR: join(runtimeDirectory, 'state'), CODEX_HOME: join(runtimeDirectory, 'state') } },
+      initialize: { clientInfo: { name: 'flow-readonly-tool-host', title: null, version: '1' },
+        capabilities: { experimentalApi: true, requestAttestation: false } },
+      limits: { frameBytes: 16384, inboundBytes: 32768, outboundBytes: 32768, inboundFrames: 32, outboundFrames: 32,
+        pendingRequests: 8, serverRequests: 8, initializeTimeoutMs: 2000, terminateMs: 200, killMs: 300 }, signal,
+    });
+    return transport;
+  };
+  return Object.freeze({ policySha256, createTransport, close() {
+    stopped = true;
+    closing ??= (async (): Promise<DarwinWriterStop> => {
+      let child: DarwinWriterStop['child'] = attempted ? 'unconfirmed' : 'not-started';
+      try { if (transport) child = (await transport.close()).child; } catch { /* Unknown is retained. */ }
+      return { policySha256, child, writeAccess: 'unknown' };
+    })();
+    return closing;
+  } });
 }
 
 /** A real OS launch seam. It deliberately does not mint NativeWriteAuthority's
