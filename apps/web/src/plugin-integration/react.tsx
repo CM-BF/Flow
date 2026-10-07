@@ -140,6 +140,7 @@ export function PluginRail() {
 /** Only mounted for the explicit disclosure; failed chunks cannot tear down the chat. */
 function RegistryManagement({ registry }: { registry: PluginRegistryReader }) {
   const session = useContext(SessionContext)!;
+  const centerRuntime = useSyncExternalStore(session.centerRuntime.subscribe, session.centerRuntime.getSnapshot);
   const [View, setView] = useState<ComponentType<PluginManagementProps>>();
   const [failed, setFailed] = useState(false);
   useEffect(() => {
@@ -151,7 +152,7 @@ function RegistryManagement({ registry }: { registry: PluginRegistryReader }) {
     );
     return () => { current = false; };
   }, []);
-  if (View) return <View open sessionId={session.id} registry={registry} runtime={session.host} />;
+  if (View) return <View open sessionId={centerRuntime?.sessionId ?? session.id} registry={registry} runtime={session.host} centerRuntime={centerRuntime ?? undefined} />;
   return failed
     ? <p role="alert">Plugin management could not load. You can keep chatting. Copy unsent text before you reload this page to try again.</p>
     : <p role="status">Loading plugin management…</p>;
@@ -159,16 +160,23 @@ function RegistryManagement({ registry }: { registry: PluginRegistryReader }) {
 
 export function PluginSettings({ registry }: { registry: PluginRegistryReader }) {
   const session = useContext(SessionContext)!;
+  const centerRuntime = useSyncExternalStore(session.centerRuntime.subscribe, session.centerRuntime.getSnapshot);
   const [open, setOpen] = useState(false);
   const trigger = useRef<HTMLButtonElement>(null);
   const [error, setError] = useState<string>();
   const [managementExpanded, setManagementExpanded] = useState(false);
+  useLayoutEffect(() => {
+    if (!session.managementAvailable()) { setOpen(false); setManagementExpanded(false); }
+  }, [session, centerRuntime]);
   const plugins = useSyncExternalStore(session.host.subscribe, session.host.list);
   const diagnostics = useSyncExternalStore(session.host.subscribe, session.host.getDiagnostics);
   const sections = useSyncExternalStore(listener => session.host.subscribeSlot("settings.sections", listener), () => session.host.getSlotSnapshot("settings.sections"));
   return <>
-    <button className="flow-icon" ref={trigger} aria-label="Extensions and appearance" title="Extensions and appearance" onClick={() => setOpen(true)}><SlidersHorizontal size={18} /></button>
-    <Dialog open={open} onOpenChange={setOpen}><DialogContent className="flow-plugin-settings" onCloseAutoFocus={event => { event.preventDefault(); trigger.current?.focus(); }}><DialogHeader><DialogTitle>Extensions and appearance</DialogTitle><DialogDescription>Manage trusted browser extensions and inspect this center’s plugin registry. Turning an extension off does not cancel your tasks.</DialogDescription></DialogHeader>
+    <button className="flow-icon" ref={trigger} aria-label="Extensions and appearance" title="Extensions and appearance" onClick={() => { if (session.managementAvailable()) setOpen(true); }}><SlidersHorizontal size={18} /></button>
+    <Dialog open={open} onOpenChange={value => setOpen(value && session.managementAvailable())}><DialogContent className="flow-plugin-settings" onCloseAutoFocus={event => {
+      event.preventDefault(); const button = trigger.current;
+      if (session.managementAvailable() && button?.isConnected && !button.disabled && button.getClientRects().length) button.focus();
+    }}><DialogHeader><DialogTitle>Extensions and appearance</DialogTitle><DialogDescription>Manage trusted browser extensions and inspect this center’s plugin registry. Turning an extension off does not cancel your tasks.</DialogDescription></DialogHeader>
       <section className="flow-local-extension-controls" aria-label="Local extension controls">
       {error && <p role="alert">{error}</p>}
       <ul>{plugins.map(plugin => <li key={plugin.id}><div><strong>{plugin.id}</strong><small>{plugin.version} · {plugin.state}</small></div><button type="button" className="flow-view-action" onClick={async () => {

@@ -9,6 +9,8 @@ import type { FrozenCitation } from "../conversation-context/selection";
 import { StreamConnectionBudget, STREAM_PANEL, type StreamIdentity, type StreamReaders, type StreamAuthority } from "../conversation-stream/host";
 import { createAssistantStreamPlugin } from "./react";
 import type { TaskSnapshot, Detail, EventPage, NativeActivity, NativeActivityPage } from "@flow/contracts";
+import type { FlowClient } from "@flow/client";
+import { createRuntimeCommandController, type PluginRuntimeReader, type RuntimeCommandController } from "../plugin-management/runtime-command";
 import { PluginHost } from "../plugins/host";
 import { createBuiltinPlugins } from "../plugins/builtins";
 import { createSamplePlugin } from "../plugins/sample";
@@ -34,6 +36,20 @@ export function createStore<T>(initial: T) {
   };
 }
 
+/** Private, live connection authority. A render snapshot is not write authority. */
+export interface CenterRuntimePort {
+  reader: PluginRuntimeReader;
+  writer: Pick<FlowClient, "commandPluginRuntime">;
+  /** Null when inactive; otherwise includes the complete namespace and auth generation. */
+  authorityKey(): string | null;
+  subscribe(listener: () => void): () => void;
+}
+interface CenterRuntimeBinding {
+  sessionId: string;
+  reader: PluginRuntimeReader;
+  commands: RuntimeCommandController;
+}
+
 /** Private App capabilities. This object is never supplied to a plugin. */
 export interface AppActions {
   knowsTask(id: string): boolean;
@@ -41,6 +57,7 @@ export interface AppActions {
   hasDraft(id: string): boolean;
   recovery?: RecoveryHost;
   messageSettings?: MessageSettingsPort;
+  centerRuntime?: CenterRuntimePort;
   activity?: ActivityReaders;
   knowledge?: KnowledgeReaders;
   stream?: StreamReaders;
@@ -65,6 +82,11 @@ export class AppPluginSession {
   readonly navigation = createStore<NavigationSnapshot>(initialNavigation);
   readonly theme: ReturnType<typeof createStore<ThemeSnapshot>>;
   readonly workspace = createStore<WorkspaceDisplay>(emptyDisplay);
+  readonly centerRuntime = createStore<CenterRuntimeBinding | null>(null);
+  private runtimePort: CenterRuntimePort | undefined;
+  private runtimeAuthority: string | null = null;
+  private stopRuntimeAuthority: (() => void) | undefined;
+  private runtimeGeneration = 0;
   readonly host: PluginHost;
   readonly steering: SteeringWorkspace;
   readonly recovery: RecoveryWorkspace;
@@ -150,9 +172,37 @@ export class AppPluginSession {
       binding.open();
     }));
     this.recovery.sync();
+    this.syncCenterRuntime();
   }
 
-  updateActions(actions: AppActions) { if (!this.closed) { this.actions = actions; this.settingsBindings.forEach(binding => binding.sync()); this.recovery.sync(); this.steering.sync(); this.attachmentBindings.forEach(({ binding }) => binding.sync()); } }
+  updateActions(actions: AppActions) { if (!this.closed) { this.actions = actions; this.syncCenterRuntime(); this.settingsBindings.forEach(binding => binding.sync()); this.recovery.sync(); this.steering.sync(); this.attachmentBindings.forEach(({ binding }) => binding.sync()); } }
+  managementAvailable() {
+    const port = this.actions.centerRuntime;
+    return !this.closed && (!port || (this.centerRuntime.getSnapshot() !== null && this.runtimeAuthority !== null && port.authorityKey() === this.runtimeAuthority));
+  }
+  private syncCenterRuntime = () => {
+    const port = this.closed ? undefined : this.actions.centerRuntime;
+    const authority = port?.authorityKey() ?? null;
+    if (port === this.runtimePort && authority === this.runtimeAuthority) return;
+    this.centerRuntime.getSnapshot()?.commands.revoke();
+    this.centerRuntime.set(null);
+    if (port !== this.runtimePort) {
+      this.stopRuntimeAuthority?.();
+      this.runtimePort = port;
+      this.stopRuntimeAuthority = port?.subscribe(this.syncCenterRuntime);
+    }
+    this.runtimeAuthority = authority;
+    if (!port || authority === null) return;
+    const sessionId = `${this.id}:runtime:${++this.runtimeGeneration}`;
+    const isCurrent = () => !this.closed && this.actions.centerRuntime === port
+      && this.runtimeAuthority === authority && port.authorityKey() === authority;
+    const requireCurrent = () => { if (!isCurrent()) throw Error("This center connection is no longer authorized."); };
+    const reader: PluginRuntimeReader = {
+      pluginRuntime: async (id, signal) => { requireCurrent(); const value = await port.reader.pluginRuntime(id, signal); requireCurrent(); return value; },
+      pluginMaterialInstalls: async (id, options, signal) => { requireCurrent(); const value = await port.reader.pluginMaterialInstalls(id, options, signal); requireCurrent(); return value; },
+    };
+    this.centerRuntime.set({ sessionId, reader, commands: createRuntimeCommandController(port.writer, { sessionId, isCurrent }) });
+  };
   publishNavigation(next: NavigationSnapshot, context: ResourceContext) {
     if (this.closed) return;
     this.context = context;
@@ -344,6 +394,7 @@ export class AppPluginSession {
   dispose = async () => {
     if (this.closed) return;
     this.closed = true;
+    this.syncCenterRuntime();
     this.lifetime.abort();
     this.settingsBindings.forEach(binding => binding.dispose()); this.settingsBindings.clear();
     this.steering.dispose();
