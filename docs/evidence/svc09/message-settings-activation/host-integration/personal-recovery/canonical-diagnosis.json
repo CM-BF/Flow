@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T22:24:41.972383+00:00",
+  "kind": "SAVED_INPUT_CANONICAL_DIFFERENCE",
+  "readScope": "Only already saved run snapshot; no current installation read, PG, service or provider. Values/digest contents not published.",
+  "source": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+  "databaseSource": {
+    "path": "apps/server/src/database.ts",
+    "bytes": 7789,
+    "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+  },
+  "canonicalFragment": {
+    "bytes": 362,
+    "sha256": "fbef6ea203f611be19b02d869af99db222e648ca79e7b936a1bfb72ab9ce0e98"
+  },
+  "method": "Exact exported canonical function read by git show; only TypeScript function signature stripped for pure Node calculation, no database module import. Compared against fixed caller fingerprint and consumed input expected digests.",
+  "snapshot": {
+    "path": "/private/tmp/flow-svc06-held-recovery-e15-20261007-once/fresh.json",
+    "bytes": 8789,
+    "sha256": "ecf5bb6d93b41db591d4bf1f50ff6ee6b9a5507386fabdb2709957d70bb7af03"
+  },
+  "results": {
+    "operation": {
+      "callerMatchesExpected": true,
+      "producerMatchesExpected": true,
+      "algorithmsEqual": true
+    },
+    "state": {
+      "callerMatchesExpected": true,
+      "producerMatchesExpected": false,
+      "algorithmsEqual": false
+    },
+    "release": {
+      "callerMatchesExpected": true,
+      "producerMatchesExpected": true,
+      "algorithmsEqual": true
+    }
+  },
+  "conclusion": "The saved state is rejected by the actual producer canonical while accepted by the caller canonical. A deterministic caller incompatibility is demonstrated. The import-reports final held observer passed with caller hashes.",
+  "limit": "Rebind did not persist its three actual read digests; this does not independently rule out a simultaneous external change. Original identity/MAINTENANCE_TARGET_CHANGED/not-written remains.",
+  "next": "Reuse public canonical in the caller. A separately reviewed continuation must verify existing e15 and four reports, start only unconsumed phases in a new namespace, and obtain a new actual window. No import replay."
+}

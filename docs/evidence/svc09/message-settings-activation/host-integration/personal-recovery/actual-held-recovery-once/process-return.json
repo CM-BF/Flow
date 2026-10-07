@@ -1,0 +1,78 @@
+{
+  "at": "2026-10-07T22:19:32.601106+00:00",
+  "ownedPids": [
+    {
+      "pid": 69686,
+      "state": "absent"
+    },
+    {
+      "pid": 77041,
+      "state": "absent"
+    },
+    {
+      "pid": 77043,
+      "state": "absent"
+    },
+    {
+      "pid": 85151,
+      "state": "absent"
+    },
+    {
+      "pid": 12040,
+      "state": "absent"
+    },
+    {
+      "pid": 25148,
+      "state": "absent"
+    },
+    {
+      "pid": 77042,
+      "state": "absent"
+    }
+  ],
+  "phases": [
+    {
+      "phase": "fresh",
+      "pid": 77043,
+      "owned": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    },
+    {
+      "phase": "import-artifact",
+      "pid": 85151,
+      "owned": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    },
+    {
+      "phase": "import-reports",
+      "pid": 12040,
+      "owned": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    },
+    {
+      "phase": "rebind",
+      "pid": 25148,
+      "owned": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    }
+  ],
+  "scope": "PID_ONLY; phase reports own childPidOnly, no all-group assertion",
+  "newServiceLaunches": 0,
+  "basis": "Stopped before refresh phase; target identity rejection returns mutation not-written."
+}

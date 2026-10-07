@@ -1,0 +1,70 @@
+{
+  "at": "2026-10-07T22:24:41.972383+00:00",
+  "source": "00dcd1b998e59efcf9a72721fbd75ee20c5be065",
+  "preparation": "548490abb9d9d8d970384200a531b90d212358f2",
+  "outcome": "FAILED_PARTIAL_PERSONAL_RECOVERY_RUNTIME_RETURNED",
+  "start": "2026-10-07T22:17:23.713320Z",
+  "terminal": "2026-10-07T22:18:46.870374Z",
+  "return": "2026-10-07T22:20:13.131180Z",
+  "outer": {
+    "elapsedMs": 83078,
+    "exit": 1,
+    "ownership": "childPidOnly",
+    "owned": "absent",
+    "dualEOF": true,
+    "signals": []
+  },
+  "completed": [
+    "fresh",
+    "import-artifact",
+    "import-reports"
+  ],
+  "notRun": [
+    "refresh",
+    "checkpoint",
+    "resume",
+    "final"
+  ],
+  "firstFailure": {
+    "outcome": "unconfirmed",
+    "mutation": "not-written",
+    "primary": {
+      "phase": "identity",
+      "code": "MAINTENANCE_TARGET_CHANGED"
+    },
+    "cleanup": [],
+    "result": null,
+    "maintenance": "held-required",
+    "retry": "not-authorized",
+    "actualClaim": "unknown"
+  },
+  "operatorAssertion": "ERR_ASSERTION after persisted target result; not an alternative producer cause",
+  "personalSideEffects": "New e15 artifact and four reports imported. New 779 page not published. Rebind not-written; no refresh/start/resume. No replay permitted.",
+  "returnEvidence": {
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-recovery-once/return.json",
+    "bytes": 3407,
+    "sha256": "cb99770170d3683ffb6064f9f4180971e6e8b0c61fe885412d06b434eb9ff219"
+  },
+  "scope": "Seven direct PIDs absent, not all-group proof. Old three role PID+group observations absent. Target DB connections empty/admin closed. New detached0/pending0.",
+  "privateRecords": [
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-20261007-once/fresh.json",
+      "bytes": 8789,
+      "sha256": "ecf5bb6d93b41db591d4bf1f50ff6ee6b9a5507386fabdb2709957d70bb7af03"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-20261007-once/history-before.json",
+      "bytes": 27054,
+      "sha256": "e80cf3e7cdaa6478d81a6c4d56e3c123ebb9183a2230216f9c71ae7b84d5e730"
+    }
+  ],
+  "disposition": "Private/migration directories KEEP; no deletion/rollback/retry. Old FAIL/KEEP unaffected.",
+  "providerQueriesByOperator": 0,
+  "actualClaim": "NOT_OBSERVED",
+  "diagnosis": {
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-diagnosis.json",
+    "bytes": 2123,
+    "sha256": "c993d51954d485e0d3e2dd16cd30a8952b567cd8c6a577c44cb2e4e946aed6a6"
+  },
+  "preflightLimitation": "Full public verifyBackendArtifact completed for old/new. Optional inventory.length count was undefined and absent from JSON; no count inferred."
+}

@@ -6,33 +6,33 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T22:10:12.219167+00:00 |
+| 更新时间 | 2026-10-07T22:24:41.972383+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | review |
-| 当前产出 | 新产物的默认服务冷启动和四份 App 兼容报告均已通过限定独审，同一维护操作的恢复输入已固定。 |
-| 下一可用交付 | 完成恢复调用的最终独审与资源安排，再执行受控恢复。 |
-| 当前阻塞 | ACTIVE: 最终调用待独立审查和实际窗口；个人服务仍未恢复。 |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 新产物与四份兼容报告已迁入；目标切换前身份校验失败，默认服务仍停止。 |
+| 下一可用交付 | 修复调用方摘要算法，独审后只续未消费的目标切换、启动与恢复阶段。 |
+| 当前阻塞 | ACTIVE: 调用方与生产摘要算法不一致，当前恢复失败；原件与资源归还已保留，尚无续接运行许可。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
 | Head | 00dcd1b998e59efcf9a72721fbd75ee20c5be065（e15绑定与只读事实入口） |
 | 实现目标 | 00dcd1b998e59efcf9a72721fbd75ee20c5be065 |
-| 工作分支状态 | review（输入与执行绑定已固定，资源floor/window尚待实际选择） |
-| 工作树dirty状态 | 仅own本次最终准备metadata；产品已归还，无新现场读取或运行 |
+| 工作分支状态 | implementation（实际部分失败已封存，窄摘要修复进行中） |
+| 工作树dirty状态 | 仅own失败原件/诊断/状态和待审窄修；生产、个人与旧原件不改 |
 | 实现范围 | docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v12；21:00:39.748Z原子归还4产品，仅own范围继续 |
-| Review | 原4e527只读事实/目标绑定及cold81fa已限定批准；Web四报告b422独立APPROVED。当前最终input/dispatch待assignment独审，不是恢复许可。 |
+| Review | 548490准备独审已批准；本次实际失败/RETURN与窄修待唯一独审。 |
 | 检查状态 | 原7不同+新4不同通过，2受影响例复选；普通累计328ms/2050B，原两次零选择失败保留。实际只读5085ms exit0/组absent双EOF；无个人写/服务/provider。 |
 | 验证限制 | R3双槽生命周期与分别领取有原件；最终SQL/完整mixed结论未通过。observed model/account/native资格、真实App/个人仍未验。 |
-| 已集成main状态 | 原held-target/main9c288、cold helper/I02 b00与42a2准备独审main a8bd保持；4e527只读事实及e15/cold/App各有范围限定独审，本次最终恢复尚未执行。 |
-| 运行窗口 | 只读一次START21:53:19.106796Z→RETURN21:53:24.200188Z；pool.end true，remote零连接未观察，ready:false。普通local21:48:18.809211Z RETURN；无pendinglaunch。 |
+| 已集成main状态 | 原准备及产品各自限定批准已main；本次实际失败与窄修尚未集成。 |
+| 运行窗口 | 实际START22:17:23.713320Z；terminal22:18:46.870374Z；精确RETURN22:20:13.131180Z。fresh/迁入/报告完成，rebind not-written，后4阶段未运行，0provider。 |
 | 架构影响 | 仅实验策略与薄调用复用现有迁入、维护、历史和OPS14接口；无新产品权限、调度器或监督器。固定旧backend与实际state.source分离，未知结果停步。 |
-| 看板 | 唯一own status已更新；个人恢复调用待最终审查和实际窗口，完整双槽/个人settings激活仍开放。 |
+| 看板 | 唯一own status如实记录部分迁入与恢复失败；完整双槽/个人settings激活仍开放。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -184,3 +184,7 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T22:05:01.201470+00:00：peer冷R2固定81fa获本owner独立限定APPROVED，37绑定74798B/30raw29774B全符，current initialization和实际停止/RETURN已核；[唯一own审查](../../docs/evidence/svc09/message-settings-activation/host-integration/peer-recovery-cold-r2-review.json)明确synthetic Web不是4App，KEEP不删。input.pending已填准确4report+16check引用并核bytes/hash/tuple，只消费Web现存main-intake，实际独审仍PENDING且该archive尚待Git固定。ready:false/floor null/dispatch absent，未新现场读取或运行。
 
 2026-10-07T22:10:12.219167+00:00：最终四报告来源固定Web b422，main-intake与唯一root review逐字/哈希核同，消费APPROVED_SCOPED_ACTUAL_RESULT，不重复58raw审查。新增单份[dispatch](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/dispatch.json)绑定66有效公开源/runtime与报告记录，保留ready:false及floor/window null；实际前置需完整installed inventory/身份核对，未新读个人。原00dcd执行源码逐字未变，本次没有工程测试；最终候选交assignment独审，资源字段待实际SELECT后准确绑定。历史失败/KEEP和首次开工UNKNOWN保持。
+
+2026-10-07T22:17:23.713320Z：唯一个人恢复实际START；Web22:15:59.699Z授予本窗，latest22:19:59.699Z。source00dcd及66公开pin/claim v12/namespace核同，原旧cd27与e15完整artifact verify通过，PG100/6/94≥42且预检pool已关，完整freshfloor17452105728B通过。input.pending原件保留，input.actual仅ready/resource字段终结，dispatch绑定其真实hash；operator69686/entry77041，0provider/不publish779，不重放bootstrap/hold/旧迁入。原监督900s/2sreap保持，结果待真实阶段完成，不按时钟归还。
+
+2026-10-07T22:24:41.972383+00:00：实际恢复在rebind identity返回MAINTENANCE_TARGET_CHANGED/not-written后停止，前3阶段已消费不可重放，后4阶段NOT_RUN。22:20:13精确RETURN已交资源owner；七直属PID/旧三role组absent、连接[]/adminclosed，childPidOnly不提升全组语义。已保存snapshot纯计算证明仅state的生产canonical与旧caller摘要不相等；未保存rebind当时三项实际digest，不能排除同时外部变化。见[原结果](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-result.json)与[有限诊断](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/canonical-diagnosis.json)。本段只复用公共canonical修调用方，0新现场/服务/PG/provider，不变更生产校验；工作段至22:35Z、检查累计30s/tmp8MiB。
