@@ -1,5 +1,11 @@
 # SVC06B review
 
+当前可见发布结果：`APPROVED_LIMITED_WEB779_PUBLICATION_AND_RESULT_FIDELITY`，0 P1/P2。Execution Lead于2026-10-07T23:40:01.257Z独审source `6491c4815cd6daf8f640648d5e8a25a599d8cd92` / target `5719f0a4cb252324fa1434a7870bf615f31f66dd`；唯一[I02原件](../../../m2-integration/docs/evidence/i02/svc06b-web779-actual-result-review.json)，不复制raw或制造第二结论。
+
+实际发布23:35:35.341Z–23:36:06.257Z：迁入确认后公开CAS到779/v4，保留三旧Web产物与三运行服务；两个action均0退出/双EOF/owned组absent。随后readonly23:38:23.988Z–23:38:24.007Z仅3GET，身份及新旧各一versioned资产精确size/hash通过。22 fixed/118188B与8安全副本5361B核同；reader无reviewer个人读取或重跑。原04误选FAIL/截断/逃逸UNKNOWN保持；实际用户领取与浏览器新聊天NOT_OBSERVED，不升级整个FLOW完成。
+
+当前产品及执行源码停写，结果已部署/已审，主线结果接收另由Execution Lead完成；claim未随意释放。以下保留各历史片段在当时的范围和结论。
+
 本次固定来源组合及参数化构建入口：APPROVED_SOURCE_COMPOSITION_AND_BUILD_PREPARATION，reviewer astra_ultra_execution_lead，实际 2026-10-07T14:26:01.460Z。0 reviewer重跑/个人操作。唯一原件 main 6fd214eb62f269167f6af4a8390850561dc0d01c docs/evidence/i02/svc06b-preparation-review.json，本scope保存原字节副本[preparation-independent-review.json](../../docs/evidence/svc06/browser-recovery/preparation-independent-review.json)。
 
 - Artifact source: `04da80692e79e2b7c3f6341c7fa76515a3f719a3`（父6c；三已审leaf及固定支持Module）。
