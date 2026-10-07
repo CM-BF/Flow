@@ -2,7 +2,6 @@ import { randomUUID } from 'node:crypto';
 import { mkdir,readFile } from 'node:fs/promises';
 import { join } from 'node:path';
 import { afterAll,beforeAll,expect,it } from 'vitest';
-import type { SDKMessage } from '@anthropic-ai/claude-agent-sdk';
 import type { EventBatch,RunnerEvent,NativeActivityPage,NativeActivity } from '@flow/contracts';
 import type { NativeActivityBodyDescriptor,NativeActivityBodyPage } from '../../../../packages/contracts/src/native-activity-body.js';
 import { bodyBatches,bodyDigest,planBody } from '../../../runner/src/native-activity-body/plan.js';
@@ -14,9 +13,10 @@ let fixture:Awaited<ReturnType<typeof bodyFixture>>;
 beforeAll(async()=>{fixture=await bodyFixture();});
 afterAll(async()=>{if(fixture)await fixture.close();});
 type Attempt=Awaited<ReturnType<typeof fixture.prepareAttempt>>;
+type NativeActivityMessage=Parameters<typeof nativeActivityObservations>[0];
 function material(a:Attempt,text:string,kind:'input'|'result'='input') {
   const content=kind==='input'?[{type:'tool_use',id:'tool1',name:'Read',input:{text}}]:[{type:'tool_result',tool_use_id:'tool1',content:text}];
-  const frame={type:kind==='input'?'assistant':'user',uuid:randomUUID(),session_id:a.sessionId,parent_tool_use_id:null,message:{id:randomUUID(),content}} as SDKMessage;
+  const frame={type:kind==='input'?'assistant':'user',uuid:randomUUID(),session_id:a.sessionId,parent_tool_use_id:null,message:{id:randomUUID(),content}} as NativeActivityMessage;
   return [...nativeActivityObservations(frame,a.sessionId,true)][0]!.material!;
 }
 const url=(a:Attempt,id:string)=>`/api/tasks/${a.taskId}/native-activities/${id}/body`;
@@ -74,7 +74,7 @@ it('rejects conflicting chunks atomically, blocks successful finalization, and r
   fixture.facts.interruptedAndConflict=true;
 });
 it('keeps legacy prefixes honest and reruns migration without rewriting old activity detail',async()=>{
-  const a=await newAttempt(),frame={type:'assistant',uuid:randomUUID(),session_id:a.sessionId,parent_tool_use_id:null,message:{id:randomUUID(),content:[{type:'tool_use',id:'legacy',name:'Read',input:{text:'old-prefix'.repeat(9000)}}]}} as SDKMessage;
+  const a=await newAttempt(),frame={type:'assistant',uuid:randomUUID(),session_id:a.sessionId,parent_tool_use_id:null,message:{id:randomUUID(),content:[{type:'tool_use',id:'legacy',name:'Read',input:{text:'old-prefix'.repeat(9000)}}]}} as NativeActivityMessage;
   const activity=mapNativeActivity(frame,a.sessionId)[0]!;
   await report(a,{...a.ownership,events:[{...activity,id:randomUUID(),sequence:2},{type:'completed',outcome:'succeeded',id:randomUUID(),sequence:3}]});
   const before=(await fixture.http<NativeActivity>(`/api/native-activities/${activity.activityId}`)).value;
