@@ -2,9 +2,9 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:11:19.268665+00:00；固定来源组合，不追moving main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:19:16.013Z；固定来源组合，不追moving main |
 | Plan | [plan.md](plan.md) |
-| 任务开工时间 | 2026-10-07T14:07:49.426228+00:00 |
+| 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | source.json中实际source-only provision开始；完成未验，不用claim或commit替代 |
 | 任务层级 | 子task |
@@ -13,28 +13,28 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery |
 | Branch | codex/backend-browser-recovery |
-| 工作基线 / HEAD | base 6c0fdcda8858aac33489c48c1948e902dd6a3d7e；实现source 04da80692e79e2b7c3f6341c7fa76515a3f719a3；当前仅自有三件套/来源记录准备 |
-| 工作树dirty状态 | 仅本次own计划和来源记录；产品四文件已固定 |
+| 工作基线 / HEAD | base 6c0fdcda8858aac33489c48c1948e902dd6a3d7e；实现source 04da80692e79e2b7c3f6341c7fa76515a3f719a3；调用source 6bebf75f24a80b38d821efd3aaf8db24a0d62e2e；本次准备已固定 |
+| 工作树dirty状态 | 仅本次own证据/状态封存；产品四文件及调用源码已固定，交审后停止写入 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 实现目标 | 04da80692e79e2b7c3f6341c7fa76515a3f719a3 |
 | 实现范围 | apps/server/src/browser-session/index.ts, apps/server/src/browser-session/fixture.ts, apps/server/src/browser-session/session.test.ts, docs/evidence/wpf-connection-session/late-logout/readonly/fixture-cleanup.ts |
-| 检查状态 | 精确Git前后像相同；0新PG/type矩阵/build/import；必要纯入口检查待准备 |
+| 检查状态 | 4/4纯入口197ms总段，group absent/双EOF/空scratch同身份removed；271缓存index/17runtime相符；status parser errors/human/timing=[]；0新PG/type矩阵/build/artifact import |
 | 已集成main状态 / HEAD | 三leaf原语义已main7272151；本片只在固定6c组合，不覆盖moving main；新artifact及新网页组合尚未产生 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已固定浏览器恢复所需的后台修复来源，保持当前个人服务不变。 |
-| 下一可用交付 | 形成可审构建入口，产出新的固定后台后交网页原团队验证组合。 |
+| 当前产出 | 已固定浏览器恢复所需的后台来源与构建入口，局部检查通过，等待独立审查。 |
+| 下一可用交付 | 审查后在共享窗口构建新后台，再交网页原团队验证真实组合。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；原域审复用，本次组合/构建准备NOT_STARTED |
-| Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v1 active，4exact source/support+own plan/evidence2范围 |
+| Review | [review.md](review.md)；原域审复用，本次组合/构建准备待独审 |
+| Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v2 active，4exact source/support+1受审入口literal+own plan/evidence2范围 |
 | 架构影响 | 未增生产Interface或新依赖/迁移；固定部署source组合，后继artifact实际身份由Lead登记 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | SVC06B-01 | completed | assignment_review | source.json精确provision/take/三前像/四后像与原独审 |
-| SVC06B-02 | in-progress | assignment_review | 原builder/固定缓存与薄入口复用准备 |
+| SVC06B-02 | in-progress | assignment_review | [固定构建准备](../../docs/evidence/svc06/browser-recovery/build-proposal.md)，等待独立审查 |
 | SVC06B-03 | pending | assignment_review / Execution Lead | 完整build NOT_RUN；资源窗口未申请 |
 | SVC06B-04 | pending | 原Web owner / assignment_review | 等准确7272descriptor和新backend，旧C3不能替代新组合 |
 
@@ -48,4 +48,8 @@
 
 ## Dashboard
 
-本status为唯一事实源，首个固定三件套交Lead登记SVC06B；等待登记，不手填第二聚合源。
+本status为唯一事实源，Lead已在D05 5c9be36a登记SVC06B候选；实际204换载尚未确认，不手填第二聚合源。
+
+首轮status时间格式校验识别为非标准精度/offset；已规范为同一瞬间的毫秒Z表示，source.json保留实际采样原精度。无工程重测。
+
+2026-10-07T14:19:16.013Z：本片局部实际段 2026-10-07T14:16:59.782032+00:00 → 2026-10-07T14:16:59.979190+00:00，197ms/4例；之后只有固定输入只读核对与metadata。构建尚未占共享窗口；独审等待从本封定交接起，开始来源为本次记录，结束待审查事实。

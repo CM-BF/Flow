@@ -1,0 +1,51 @@
+{
+  "startedAt": "2026-10-07T14:16:59.782032+00:00",
+  "reports": [
+    {
+      "pid": 56597,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 158,
+      "stdout": "\u2714 default CLI paths and explicit new namespace retain the same three-option boundary (4.067208ms)\n\u2714 both entry imports perform no filesystem operations or process launch (38.43325ms)\n{\"startedAt\":\"2026-10-07T14:16:59.955Z\",\"source\":\"fixture\",\"phase\":\"failed-or-unknown\",\"providerCalls\":0,\"artifact\":null,\"directory\":null,\"reservation\":\"/private/tmp/flow-svc06b-local-dpairacu/reservation-ceWPIe/actual-first/reservation.json\",\"failures\":[{\"phase\":\"preflight\",\"name\":\"AssertionError\",\"code\":\"ERR_ASSERTION\",\"message\":\"Expected values to be strictly equal:\\n+ actual - expected\\n\\n+ 'REFUSE_BEFORE_BUILD'\\n- 'FIXED_REVIEW_INPUT'\\n\"}],\"rawBytesBeforeFinalResult\":154,\"resources\":{\"initialFree\":null,\"minimumFree\":21386563584,\"samples\":1,\"rawBytes\":2097152,\"liveReserveBytes\":0,\"additionalBudgetBytes\":0,\"physicalPeak\":\"NOT_MEASURED; sampled filesystem availability includes other writers\",\"rawLimit\":\"1MiB outer capture plus bounded copied build-record and import bytes; original producer record can exceed observation threshold and remains preserved on refusal\"},\"finishedAt\":\"2026-10-07T14:16:59.961Z\",\"elapsedMs\":6,\"retention\":\"KEEP own artifact/root and stage records for later host validation; interrupted/unknown stage or lock is not removed by this entry\"}\n{\"startedAt\":\"2026-10-07T14:16:59.966Z\",\"source\":\"fixture\",\"phase\":\"failed-or-unknown\",\"providerCalls\":0,\"artifact\":null,\"directory\":null,\"reservation\":null,\"failures\":[{\"phase\":\"preflight\",\"name\":\"Error\",\"code\":\"EEXIST\",\"message\":\"EEXIST: file already exists, mkdir '/private/tmp/flow-svc06b-local-dpairacu/reservation-ceWPIe/actual-first'\"}],\"resources\":{\"initialFree\":null,\"minimumFree\":21386559488,\"samples\":1,\"rawBytes\":2097152,\"liveReserveBytes\":0,\"additionalBudgetBytes\":0,\"physicalPeak\":\"NOT_MEASURED; sampled filesystem availability includes other writers\",\"rawLimit\":\"1MiB outer capture plus bounded copied build-record and import bytes; original producer record can exceed observation threshold and remains preserved on refusal\"},\"finishedAt\":\"2026-10-07T14:16:59.967Z\",\"elapsedMs\":0,\"retention\":\"KEEP own artifact/root and stage records for later host validation; interrupted/unknown stage or lock is not removed by this entry\"}\n\u2714 new namespace reserves exact input bytes; duplicate refuses without overwriting first failure (13.776667ms)\n\u2714 actual fixed input and exact argv load without install, reservation, or build (3.248542ms)\n\u2139 tests 4\n\u2139 suites 0\n\u2139 pass 4\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 110.521541\n",
+      "stderr": "",
+      "observed_bytes": 2528,
+      "retained_bytes": 2528,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    }
+  ],
+  "providerCalls": 0,
+  "pgCalls": 0,
+  "buildCalls": 0,
+  "scratch": {
+    "path": "/private/tmp/flow-svc06b-local-dpairacu",
+    "dev": 16777234,
+    "ino": 124188265
+  },
+  "passed": true,
+  "remaining": [],
+  "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY",
+  "finishedAt": "2026-10-07T14:16:59.979190+00:00",
+  "elapsedMs": 197
+}
