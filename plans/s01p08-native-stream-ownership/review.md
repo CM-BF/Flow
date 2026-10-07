@@ -1,8 +1,10 @@
 # S01P08 独立审查
 
 状态：PENDING
-Review target commit: `192d8b35101a7b870bc19c1602cbf209a75aab0a`
+Review target commit: `e3d28f96b971256abd155904b4cbd333bbdc57ad`
 
-唯一入口 [README](../../docs/evidence/s01p08/README.md) / [manifest](../../docs/evidence/s01p08/review-manifest.json)。限定新计数/安全反例与四个local记录；7distinct最终通过，strict先4个mock缺字段诊断→补全合同后0，原件保留。产品adapter/control未改、scope交回未完成，不能批准未实施优化。
+范围为adapter最小检查位置改动、新native-stream-ownership.test及[optimization-review.json](../../docs/evidence/s01p08/optimization-review.json)绑定证据；base311e621、baseline192d8b35仅历史fixedGit。21bindings/当前raw对照，7旧语义+4新保护=11distinct，不将7+11累加为18。产品只删已发布session时重复batch assert；AttemptControl、native start/逐patch/final gates和server fence未改。
 
-请只读核目标Git/WT/hash、实际选择/次数、真实adapter/control接线、周期/取消/过期/失联/并发反例、raw与TMP收尾。0复跑/PG/安装/写入；问题交原owner。未来移除批次重复检查须领取adapter后另有固定源与直接反例，不继承为优化通过。
+标准：前后同样5patch/9emit/32768B下15→11真实控制心跳调用；session后的取消仍挡首patch、patch间取消挡后续、native前拒绝0factory、sink失败unknown；周期、过期late reply、stop/disconnect/shutdown/inflight-only sharing保持。实际0PG/HTTP/native/provider，不用计数推断延迟收益。
+
+审者只读核Git/WT/hash、首失败与两个预算段、进程/EOF/TMP和来源；不复跑/不写owner树。C02 v13正式交回、本v2合法领取前无产品写入。main NOT_INTEGRATED。发现交原owner；本片未另建authority/cache/supervisor。

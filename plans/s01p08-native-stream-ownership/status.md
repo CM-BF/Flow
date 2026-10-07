@@ -13,7 +13,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-stream-ownership |
 | Branch | codex/native-stream-ownership |
 | Base | 311e62158186177e344b49d24ed32e335268be1d |
-| HEAD | 基线/检查 target 192d8b35101a7b870bc19c1602cbf209a75aab0a；当前metadata提交由Git读取 |
+| HEAD | 优化 target e3d28f96b971256abd155904b4cbd333bbdc57ad；基线192d8b35；当前metadata提交由Git读取 |
 | 工作分支状态 | in-progress |
 | 阶段 | M2 |
 | 优先级 | 4 |
@@ -22,9 +22,11 @@
 | 下一可用交付 | 接收最小adapter优化及前后调用计数、保护反例的独立审查。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | PENDING：优化delta+前后计数/安全反例一次独审 |
+| Review | PENDING e3d28f96b971256abd155904b4cbd333bbdc57ad：优化delta+前后计数/安全反例一次独审 |
 | 检查 | 最终优化11/11+strict0；历史基线7/7/strict4→0原件保留，4+2 child各自闭合 |
 | main | NOT_INTEGRATED |
+| 实现目标 | e3d28f96b971256abd155904b4cbd333bbdc57ad |
+| 实现范围 | apps/runner/src/native-harness/codex/adapter.ts, apps/runner/src/native-stream-ownership.test.ts |
 | Claim | 1e4868a6-a900-463a-9de3-0a4234179733 v2 ACTIVE /4scope |
 | 架构影响 | 只删已发布session的重复batch检查，无公共Interface/生命周期/架构变化；保留逐patch与native/周期门禁，待main |
 
@@ -63,3 +65,5 @@ S01P08-01 completed（真实基线）；S01P08-02 completed（06:45:48合法扩s
 06:45:48.214Z开始合法实现；C02已PG/运行归还。新段2child分别为optimized 11/11与focused types0（时间/原raw见local.json），PID与EOF/TMP均已闭合，并直接归还C02。7个原测试语义保留并新增4个adapter级反例；不是18个独立case。只在已发布session时少做batch检查，每patch仍有fresh assert；原source控制/服务端fence未改。4减少调用只是本注入场景事实，不证明真实HTTP/SQL/延迟/吞吐。
 
 独立review把192d基线作为fixedGit历史、新优化为当前target，旧失败/原始raw保持；无重复baseline批准。当前claim1e4868a6 v2保留，main NOT_INTEGRATED。clean-code/codebase-design复核了单一ownership权威、动作前门禁、异步session后取消与unknown、无抽象/依赖扩张。
+
+当前交审target `e3d28f96b971256abd155904b4cbd333bbdc57ad`，21项固定绑定见optimization-review.json；原baseline manifest保fixedGit。源和原raw冻结，等待一次独审，不追加运行。

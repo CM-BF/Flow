@@ -1,0 +1,133 @@
+{
+  "target": "e3d28f96b971256abd155904b4cbd333bbdc57ad",
+  "base": "311e62158186177e344b49d24ed32e335268be1d",
+  "recordedAt": "2026-10-07T06:49:05.640460+00:00",
+  "bindings": [
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 4132,
+      "sha256": "3f22af96739e4485b320b8fb699f053dab35d2799e85672a8ff830d2bf3f6b67"
+    },
+    {
+      "path": "apps/runner/src/native-stream-ownership.test.ts",
+      "bytes": 8071,
+      "sha256": "01d18d01b636fc72bb4bda7c2b4a202a080e79fb94c59aa9f222b308ffffb6de"
+    },
+    {
+      "path": "apps/runner/src/attempt-control.ts",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+    },
+    {
+      "path": "docs/evidence/s01p08/README.md",
+      "bytes": 3119,
+      "sha256": "7ee0235ffd4df981db9145b41ef949ab5f676001beaa932fe8c5b08a2b75aa0f"
+    },
+    {
+      "path": "docs/evidence/s01p08/interface.md",
+      "bytes": 1270,
+      "sha256": "9429da94037be01fa991fa21a915656ce829f74cf6747115fc4c46766985ff93"
+    },
+    {
+      "path": "docs/evidence/s01p08/local.json",
+      "bytes": 21407,
+      "sha256": "d3be7c19d5c25d3c905d0b495a14b2827caff9996d7ae26bed6eba87a5bd5e20"
+    },
+    {
+      "path": "docs/evidence/s01p08/run-local.py",
+      "bytes": 4223,
+      "sha256": "17aa1e595acda6031cf054667850d4c9308ef06ed2dfc1d29b47b46afc7d4f88"
+    },
+    {
+      "path": "docs/evidence/s01p08/dependencies.json",
+      "bytes": 1094,
+      "sha256": "8f620aa40ee05ab403d040ea237706e03e486eb0010211ace2baf621aab1e0bc"
+    },
+    {
+      "path": "docs/evidence/s01p08/source-closure.json",
+      "bytes": 19260,
+      "sha256": "09c7808d650de4b27e9e33fe8af4d24054d1feb35e155cb2e984950dbb54f7c9"
+    },
+    {
+      "path": "docs/evidence/s01p08/baseline.txt",
+      "bytes": 887,
+      "sha256": "4eae7e1c47e3b5607e28779ad78667e0b07ffed58b575cdcd9be8d4629ef57cd"
+    },
+    {
+      "path": "docs/evidence/s01p08/types.txt",
+      "bytes": 1875,
+      "sha256": "ebb767a44d7e2c9ca2d0c54ff6271c72f2f12a6c7bd17f96c6639de2195df8d9"
+    },
+    {
+      "path": "docs/evidence/s01p08/types-fixed.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p08/focused.txt",
+      "bytes": 887,
+      "sha256": "d2c2e73f7990a8bf523648bb989c9cd2c2d466e94da66ec1ef2e460684325ec9"
+    },
+    {
+      "path": "docs/evidence/s01p08/optimized.txt",
+      "bytes": 832,
+      "sha256": "deec1a2e2ff31ca871ffa065216e36b034e4c7e566df10278eb551fcff53d082"
+    },
+    {
+      "path": "docs/evidence/s01p08/optimized-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/s01p08/baseline-test.ts.txt",
+      "bytes": 6859,
+      "sha256": "060400fbf16a0c867eeff3d228fe9c1f4ed8578fc15862893e7c86c114f31289"
+    },
+    {
+      "path": "docs/evidence/s01p08/vitest.config.mjs.baseline.txt",
+      "bytes": 766,
+      "sha256": "3ee70ab727d52baf50bc516f98a521317112d2c281646b6c6d630efc801d2e50"
+    },
+    {
+      "path": "docs/evidence/s01p08/vitest.config.mjs",
+      "bytes": 688,
+      "sha256": "3c6842cd64e2ec7de97aeb287bd3a0e7601dd8270ff0f201002fea341313cd50"
+    },
+    {
+      "path": "docs/evidence/s01p08/tsconfig.json",
+      "bytes": 832,
+      "sha256": "444433b06d30c34f4c1c253579c03495efaf7f7b229ddac4581414cbc25ba4fb"
+    },
+    {
+      "path": "docs/evidence/s01p08/adapter-handback-receipt.json",
+      "bytes": 3920,
+      "sha256": "27aaa5590a9583d84ccdf5e2f1e62338db4031f9398e2f745d4e6de701ccb873"
+    },
+    {
+      "path": "docs/evidence/s01p08/claim-amend-receipt.json",
+      "bytes": 695,
+      "sha256": "6f2ce5a9bc22017c5df86d5989169b3307d0522f65b03084fe86c0400fd42a87"
+    }
+  ],
+  "count": 21,
+  "bytes": 85537,
+  "baseline": {
+    "target": "192d8b35101a7b870bc19c1602cbf209a75aab0a",
+    "packet": "380494978176e669bac1e0c85bd2479b0b58cc38",
+    "manifestSha256": "c0ea94b116cb27ced27272d8859cc2004c2705edd6eca0df0bac7f399748a971",
+    "meaning": "Historical fixedGit, not current WT equality. No separate baseline APPROVED."
+  },
+  "checks": {
+    "baselineDistinct": 7,
+    "finalDistinct": 11,
+    "optimizedTypesExit": 0,
+    "rawCumulativeBytes": 4481,
+    "segments": "four baseline children plus separately authorized two optimization children; local.json initial limit is baseline budget, not a revised six-child baseline."
+  },
+  "notProven": [
+    "real native/HTTP latency",
+    "SQL throughput",
+    "provider capacity",
+    "main integration"
+  ]
+}
