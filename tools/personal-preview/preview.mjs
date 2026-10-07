@@ -268,6 +268,9 @@ export async function activatePreviewMessageSettings({ directory, recipe }) {
     for (const record of Object.values(state.processes)) if (await inspectOwnedProcess(record) !== 'running') fail('EXISTING_PROCESSES_UNCONFIRMED');
     const operation = await privateJson(join(config.directory, 'maintenance.json')).catch(error => { if (error.code === 'ENOENT') return null; throw error; });
     if (operation && operation.phase !== 'resumed') fail('MAINTENANCE_OPERATION_UNCONFIRMED');
+    await assertRunnerIdentity(config, config.runner);
+    const admission = await api(config, `/api/runners/${config.runner.runnerId}/maintenance`);
+    if (admission.runnerId !== config.runner.runnerId || admission.state !== 'accepting' || !Number.isSafeInteger(admission.version)) fail('MAINTENANCE_OPERATION_UNCONFIRMED');
     const runtime = await backendRuntime(config, state.backendArtifact);
     await assertPreviewRunnerSlotsRuntime(config, runtime, [{ id: 'settings' }]);
     const slot = await registerSettingsSlot(config, recipe, () => api(config, '/api/runners', { name: 'Personal message settings', harnesses: ['claude'], capacity: 1 }));
@@ -279,9 +282,14 @@ export async function activatePreviewMessageSettings({ directory, recipe }) {
       await waitReady(config, slot.key, record, null, state.source?.head, slot);
     } catch (error) {
       // The old services remain untouched. Preserve the primary before stopping only this new record.
-      state.lastError = 'RUNNER_SLOT_START_UNCONFIRMED'; await save(join(config.directory, 'state.json'), state);
-      state.settingsCleanup = state.processes[slot.key] ? await stopOwnedProcess(state.processes[slot.key]) : 'not-started';
-      await save(join(config.directory, 'state.json'), state); throw error;
+      state.lastError = 'RUNNER_SLOT_START_UNCONFIRMED';
+      state.lastStartFailure = startupFailure(error, 'runner', 'ready', slot.key);
+      state.settingsEvidenceErrors = [];
+      const persist = async () => { try { await save(join(config.directory, 'state.json'), state); } catch (secondary) { state.settingsEvidenceErrors.push(startupErrorCode(secondary)); } };
+      await persist();
+      try { state.settingsCleanup = state.processes[slot.key] ? await stopOwnedProcess(state.processes[slot.key]) : 'not-started'; }
+      catch { state.settingsCleanup = 'unknown'; }
+      await persist(); throw error;
     }
     return statusPreview({ directory });
   });
@@ -347,6 +355,11 @@ export async function runService(directory, recordKey) {
 /** Trusted local maintenance reuses the same private validation and launch implementation. */
 export { load as loadPreviewConfiguration, privateJson as readPreviewJson, save as savePreviewJson, locked as withPreviewLock, assertMarker as assertPreviewMarker };
 export async function preparePreviewWeb(config, target, selectedBackend) {
+  const slots = await readRunnerSlots(config);
+  if (slots.some(slot => slot.id === 'settings')) {
+    const state = await privateJson(join(config.directory, 'state.json'));
+    await assertPreviewRunnerSlotsRuntime(config, await backendRuntime(config, selectedBackend === undefined ? state.backendArtifact : selectedBackend), slots);
+  }
   const browser = await pinnedBrowserSessionConfiguration(config);
   if (browser.context !== null) {
     const state = await privateJson(join(config.directory, 'state.json'));

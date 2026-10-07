@@ -7,6 +7,10 @@ export const STARTUP_STDERR_BYTES = 64 * 1024;
 const roles = ['center', 'runner', 'web'];
 const phases = ['configuration-ready', 'marker', 'policy', 'runtime', 'child-spawn', 'child-running', 'child-exit', 'startup-failed'];
 const safeCodes = new Set([
+  'RUNNER_SLOT_PROFILE_MISMATCH', 'RUNNER_SLOT_PROFILE_CHANGED', 'RUNNER_SLOT_CONFIGURATION_CHANGED',
+  'RUNNER_SLOT_DIRECTORY_CHANGED', 'RUNNER_SLOT_REGISTRATION_UNKNOWN', 'RUNNER_SLOTS_RUNTIME_UNSUPPORTED',
+  'RUNNER_SLOTS_ARTIFACT_REQUIRED', 'RUNNER_SLOT_FILE_CHANGED', 'RUNNER_SLOT_FILE_INVALID',
+  'RUNNER_SLOT_CATALOG_LIMIT', 'RUNNER_SLOT_CATALOG_CHANGED', 'UNDECLARED_SERVICE_RECORD',
   'STARTUP_UNCONFIRMED', 'STARTUP_DIAGNOSTICS_UNAVAILABLE', 'SERVICE_EXITED_DURING_START', 'SERVICE_START_UNCONFIRMED',
   'SERVICE_NOT_OWNED', 'NATIVE_CONFIGURATION_CHANGED', 'RUNNER_IDENTITY_UNAVAILABLE', 'SOURCE_CHANGED_DURING_START',
   'CENTER_IDENTITY_UNCONFIRMED', 'CENTER_REQUEST_REJECTED', 'DATABASE_NOT_OWNED', 'DATABASE_IDENTITY_MISMATCH',
@@ -17,12 +21,13 @@ const safeCodes = new Set([
   'EACCES', 'EPERM', 'ENOENT', 'EEXIST', 'ENOSPC', 'EIO', 'ELOOP', 'EMFILE', 'ENFILE', 'ECONNREFUSED', 'ETIMEDOUT',
 ]);
 export function startupErrorCode(error) { return safeCodes.has(error?.code) ? error.code : 'STARTUP_UNCONFIRMED'; }
-export function startupFailure(error, role, phase) {
-  return { role: roles.includes(role) ? role : null, phase: ['spawn', 'ready', 'final-verification', ...phases].includes(phase) ? phase : 'unknown', code: startupErrorCode(error), at: new Date().toISOString() };
+export function startupFailure(error, role, phase, recordKey = role) {
+  if (role === 'runner-settings') role = 'runner';
+  return { ...(role === 'runner' && recordKey === 'runner-settings' ? { recordKey } : {}), role: roles.includes(role) ? role : null, phase: ['spawn', 'ready', 'final-verification', ...phases].includes(phase) ? phase : 'unknown', code: startupErrorCode(error), at: new Date().toISOString() };
 }
 export function publicStartupFailure(value) {
   if (!value) return null;
-  const safe = startupFailure({ code: value.code }, value.role, value.phase);
+  const safe = startupFailure({ code: value.code }, value.role, value.phase, value.recordKey ?? value.role);
   return { ...safe, at: /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d\.\d{3}Z$/.test(value.at ?? '') ? value.at : null };
 }
 
@@ -68,6 +73,7 @@ export async function openStartupDiagnostics({ directory, role, recordKey = role
     const file = await open(join(directory, 'config.json'), constants.O_RDONLY | constants.O_NOFOLLOW);
     let config;
     try { privateFile(await file.stat({ bigint: true }), 65536); config = JSON.parse(await file.readFile('utf8')); } finally { await file.close(); }
+    if (config.directory !== directory) fail();
     if (!(await readRunnerSlots(config)).some(slot => slot.key === recordKey)) fail();
   }
   const installation = await privateDirectory(directory);

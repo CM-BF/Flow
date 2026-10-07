@@ -286,7 +286,7 @@ test('SVC09 CLI qualifies the actual selected maintenance runtime before any chi
 });
 
 test('SVC09A maintenance drains both immutable slot identities with one operation and distinct keys', async () => {
-  const f = await maintenancePorts({ settings: true }); const result = await f.run();
+  const f = await maintenancePorts({ settings: true, selected: { artifactId: 'old', sourceHead: 'e'.repeat(40) } }); const result = await f.run();
   const commands = f.calls.filter(call => call[0] === 'command');
   assert.deepEqual(commands.map(call => call[2]), ['runner', 'settings-runner']);
   assert.deepEqual(commands.map(call => call[3]), ['drain', 'drain']);
@@ -327,4 +327,21 @@ test('SVC09A a changed slot set cannot reuse the old single-runner maintenance o
   const f = await maintenancePorts({ settings: true, action: 'refresh', selected: { sourceHead: 'e'.repeat(40) } }); delete f.operation.slots;
   await assert.rejects(f.run(), { code: 'MAINTENANCE_SLOT_SET_CHANGED' });
   assert.equal(f.calls.some(call => ['command', 'stop', 'start'].includes(call[0])), false);
+});
+
+test('SVC09A selected runtime qualification failure precedes drain, hold and every service stop', async () => {
+  for (const action of ['bootstrap', 'refresh']) {
+    const f = await maintenancePorts({ settings: true, action, selected: { artifactId: 'old', sourceHead: 'e'.repeat(40) }, prepareFailure: true });
+    await assert.rejects(f.run(), { code: 'WEB_HOST_POLICY_UNSUPPORTED' });
+    assert.equal(f.calls.some(call => ['stop','start'].includes(call[0])), false);
+    if (action === 'bootstrap') assert.equal(f.calls.some(call => call[0] === 'command'), false);
+  }
+});
+
+test('SVC09A a later accepting version cannot be mistaken for this operation resume receipt', async () => {
+  const f = await maintenancePorts({ settings: true, action: 'resume', selected: { sourceHead: 'e'.repeat(40) } });
+  f.operation.phase = 'resume-requested'; for (const value of f.operation.slots) value.resumeVersion = 7;
+  f.views.get('runner').state = 'accepting'; f.views.get('runner').version = 10;
+  await assert.rejects(f.run(), { code: 'MAINTENANCE_OPERATION_UNCONFIRMED' });
+  assert.equal(f.calls.some(call => call[0] === 'command'), false);
 });

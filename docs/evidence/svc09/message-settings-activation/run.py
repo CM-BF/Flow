@@ -29,12 +29,12 @@ def main():
     run = HERE / run_name; run.mkdir()
     scratch = Path(tempfile.mkdtemp(prefix='flow-svc09a-', dir=Path(tempfile.gettempdir()).resolve()))
     pin = scratch.lstat()
-    argv = (NODE, '--experimental-vm-modules', '--test', '--test-concurrency=1', '--test-name-pattern='+pattern, *files)
+    argv = (NODE, '--experimental-vm-modules', '--test', '--test-reporter=tap', '--test-concurrency=1', '--test-name-pattern='+pattern, *files)
     durable(run/'reservation.json', {'at':datetime.datetime.now(datetime.timezone.utc).isoformat(), 'argv':argv,
       'head':subprocess.check_output(['git','rev-parse','HEAD'],cwd=ROOT,text=True).strip(),
       'freeBytes':free, 'priorWorkMs':elapsed, 'segmentBudgetMs':240000, 'tmpCapBytes':32*1024**2, 'rawCapBytes':2*1024**2,
       'scratch':str(scratch),'dev':pin.st_dev,'ino':pin.st_ino,'PG':0,'provider':0,'browser':0,
-      'inputs':[{'path':p,'bytes':(ROOT/p).stat().st_size,'sha256':hashlib.sha256((ROOT/p).read_bytes()).hexdigest()} for p in files]})
+      'inputs':[{'path':p,'bytes':(ROOT/p).stat().st_size,'sha256':hashlib.sha256((ROOT/p).read_bytes()).hexdigest()} for p in files + ['tools/personal-preview/'+name for name in ['runner-slots.mjs','preview.mjs','environment.mjs','maintenance-host.mjs','cli.mjs','startup-diagnostics.mjs']]]})
     spec=importlib.util.spec_from_file_location('svc09a_ops14',SUPERVISOR);mod=importlib.util.module_from_spec(spec);sys.modules[spec.name]=mod;spec.loader.exec_module(mod)
     env={'PATH':os.environ['PATH'],'HOME':str(scratch),'TMPDIR':str(scratch),'TSX_DISABLE_CACHE':'1','NODE_DISABLE_COMPILE_CACHE':'1'}
     report=mod.supervise(mod.Launch(argv,str(ROOT),env,mod.Ownership.NEW_CHILD_SESSION),mod.Policy(min(60,(238000-elapsed)/1000),0.5,1,256*1024))

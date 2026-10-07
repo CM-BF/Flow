@@ -74,7 +74,7 @@ async function bootstrap(config, pool, state, target, backendId, slots) {
     await backendRuntime(config, backendArtifact);
     if (!await readWebRelease(config.directory)) fail('BACKEND_REQUIRES_WEB_RELEASE');
   }
-  if (backendArtifact || browser.context !== null) await preparePreviewWeb(config, backendArtifact?.sourceHead ?? (target || undefined), backendArtifact);
+  if (backendArtifact || browser.context !== null || slots.length > 1) await preparePreviewWeb(config, backendArtifact?.sourceHead ?? (target || undefined), backendArtifact);
   const facts = await processFacts(state, slots);
   if (Object.values(facts).some(value => value !== 'running')) fail('EXISTING_PROCESSES_UNCONFIRMED');
   await migrateRunnerMaintenance(pool);
@@ -108,6 +108,7 @@ async function refresh(config, pool, state, target, _backendId, slots) {
     await commandRunnerMaintenance(pool, slots[index].runner.runnerId, 'hold', { version: views[index].version, operationId: operation.operationId, reason: 'No active attempts; reserve the local update.' }, commands[index].holdKey, 'trusted-host');
   }
   views = await viewsFor(pool, slots);
+  for (const view of views) assertOperation(operation, view);
   if (views.some(view => view.state !== 'maintenance' || view.activeAttempts !== 0)) fail('MAINTENANCE_HOLD_REQUIRED');
   const facts = await processFacts(state, slots);
   if (Object.values(facts).includes('unknown')) fail('EXISTING_PROCESSES_UNCONFIRMED');
@@ -133,7 +134,9 @@ async function resume(config, pool, state, _target, _backendId, slots) {
   const resuming = ['resume-requested', 'resumed'].includes(operation?.phase);
   if (!operation || !['ready-paused', 'resume-requested', 'resumed'].includes(operation.phase)) fail('UPDATED_PROCESSES_NOT_CONFIRMED');
   const commands = commandsFor(operation, slots);
-  for (const view of views) {
+  for (let index = 0; index < views.length; index++) {
+    const view = views[index];
+    if (view.state === 'accepting' && resuming && view.version !== commands[index].resumeVersion + 1) fail('MAINTENANCE_OPERATION_UNCONFIRMED');
     if (view.state !== 'accepting' || !resuming) assertOperation(operation, view);
     if (!['maintenance', 'accepting'].includes(view.state)) fail('UPDATED_PROCESSES_NOT_CONFIRMED');
   }

@@ -166,3 +166,11 @@ test('SVC09A settings diagnostics bind its declared slot nonce and cannot use th
   const raw = JSON.parse(await readFile(join(input.directory, 'startup-diagnostics', `runner-settings-${newNonce}.json`)));
   assert.equal(raw.role, 'runner'); assert.equal(raw.recordKey, 'runner-settings'); assert.equal(raw.nonce, newNonce);
 });
+
+test('SVC09A controlled startup failure identifies settings without weakening legacy public fields', () => {
+  const value = publicStartupFailure(startupFailure({ code: 'RUNNER_SLOT_PROFILE_MISMATCH' }, 'runner-settings', 'ready'));
+  assert.equal(value.role, 'runner'); assert.equal(value.recordKey, 'runner-settings'); assert.equal(value.code, 'RUNNER_SLOT_PROFILE_MISMATCH');
+  const legacy = publicStartupFailure(startupFailure({ code: 'EIO' }, 'runner', 'ready'));
+  assert.deepEqual(Object.keys(legacy), ['role','phase','code','at']);
+  assert.equal(publicStartupFailure({ ...legacy, recordKey: 'arbitrary' }).recordKey, undefined);
+});
