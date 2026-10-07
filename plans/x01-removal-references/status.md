@@ -9,7 +9,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 最近更新时间 | 2026-10-07T11:48:51.650207+00:00 |
+| 最近更新时间 | 2026-10-07T11:50:53.049795+00:00 |
 | 任务开工时间 | 2026-10-07T11:36:23Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 工具UTC实际开工；20min至11:56:23Z，等待计入；本次PG未开 |
@@ -21,13 +21,13 @@
 | worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references |
 | branch | codex/plugin-removal-references |
 | 工作基线 / HEAD | 81a064cb9f65da4b82bd2df042c4e5414f451811；base a4ebb279dd8613497cf9757ac187c3df923d5b37（HOST已审后像，非main） |
-| 工作树 dirty 状态 | 本次仅交审元数据封存，源码固定 |
+| 工作树 dirty 状态 | clean；仅独审交接metadata收口，源码/原件固定 |
 | 工作分支状态 | review |
 | claim | 04e46691-f4fd-46cc-808c-59c391dfd015 v1 ACTIVE7 |
 | 实现目标 | 81a064cb9f65da4b82bd2df042c4e5414f451811 |
 | 实现范围 | apps/server/src/plugin-runtime/routes.ts,apps/server/src/plugin-runtime/removal-references.ts,apps/server/src/plugin-runtime/removal-references.test.ts,apps/server/src/plugin-runtime/removal-references-pg.test.ts,packages/contracts/src/plugin-removal.ts |
 | 检查状态 | PASSED 81a064cb9f65da4b82bd2df042c4e5414f451811：8 direct/8pass与types0；list1仅收集、PG NOT_RUN。8child累计12.9147665s，原失败保留 |
-| Review | NOT_STARTED；固定准备/源码交chatui独审 |
+| Review | IN_PROGRESS；chatui已followup并核running，固定packet b95c13636bed0a5ddb7ef76c9af3b1bb59743bd8，尚无批准 |
 | 已集成 main 状态 | 本片未接收；HOST/ACK/consumer已main de5475039d73caec631ba2ee64556208dbb1751d，主线I02 x01-candidates-combined-intake.json已只读核；不重置本片固定base、不冒本片main通过 |
 
 | TODO ID | 状态 | owner | 证据 |
