@@ -44,6 +44,7 @@ GO最新明确六项成熟聊天大task，完整用户原话、分工、验收�
 | U16 恢复验收的真实依赖（GO经root准确转述，非逐字） | 不让无关材料/tooltip失败阻断全部认证失效、离线和窄屏检查；列真实依赖，独立者隔离context/服务数据与精确选择 | 归[原MATURE06-04/06](../wpf-mature-06-chat/plan.md)，保真实恢复链、最终E2E和所有原断言/失败/预算；不catch污染状态继续、不以局部PASS冒完整通过、不加provider或新框架 |
 | U17 日用会话导航（GO经root准确转述，非逐字） | 默认可找回近期使用/活动会话，冻结排序语义和稳定tie-break；按中心/项目真实授权搜索全标题，不把已加载50条过滤称完整搜索 | 沿[原MATURE05-06](../wpf-mature-05-workspace/plan.md)独立后继；有界轻摘要/分页、旧cursor兼容及query绑定，保护聊天/草稿/焦点；覆盖>50、未加载页命中与快换query/中心，记录实际请求/字节/局部延迟。当前只计划/接口研究未take，恢复与设置优先 |
 | U18 恢复列表日用可读性（GO实际观察经root准确转述，非逐字） | 默认UUID、accepted收据和长UTC抢占主层，多条No text难区分；主读可读标题、内容摘要与本地时间，技术身份和精确UTC下钻保留 | 沿原MATURE01-03/04、MATURE06-03；[来源与验收](../../docs/evidence/web-platform/quick-native1-recovery-review-20261007/incoming.json)。只用授权轻metadata或诚实fallback，不预取正文；不按No text自动合并、删除、重发；原材料/knowledge/intent/unknown语义保留，不阻已通过full7 |
+| U19 快速设置弹层层级（GO实际观察经root准确转述，非逐字） | 180字压力标签重复占高、Apply在首屏外；真实host需紧凑model/thinking/speed入口、完整目录说明下钻、长名限高且完整身份可看可区分、主要Apply/Cancel易找 | 沿[原MATURE01-02/04](../wpf-mature-01-visual/plan.md)与既有MATURE02 TODO11；[验收来源](../../docs/evidence/web-platform/queue-full6-closeout-20261007/compact-settings-go-intake.json)。复用圆角/阴影/材质tokens，正常真实标签与长名分别截图，保exact授权tuple/显式Apply/ownership；原六PASS不撤，不新增task或接线写权 |
 
 U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射严格以完整 handoff 的 task→唯一 owner worktree 登记为准；临时样本覆盖状态变化、缺失、空 review、转义与路径限制，真实工作树只读核验，二者证据明确分开。U02 原文保留拼写，实施含义为官方 AI Elements Terminal/FileTree，不伪造PTY或任意文件系统。
 
@@ -440,3 +441,5 @@ D06本片已[主线与资产发布收口并释放](../../docs/evidence/web-platf
 本次GO效率纠偏准确转述已[落实为原owner有限工作段](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/recovery-queue-owner-segment.json)：同身份、权限、资源所有权、清理及验收条件内连续定位→修复→相关复测，结束一次独审；以[当前main正式规则](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/formal-rule-source.json)为来源。旧预算/失败保持，原owner唯一结构化运行记录；新增输出超过现有限额才一次说明真实预算变化，不通过复制准备包消耗留存空间。
 
 个人发布须沿[原Lead依赖核对](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/publication-dependency.json)：backend af51/v18缺新browser-session/message-settings/028/032，Web仍d629/v3。原SVC06-05准备backend4fe331与保留artifact兼容后，才评估新的Recovery实际App；Quick fe6未App接线、C02 native/LAZY未被当前Recovery消费各自分列，不用main事实替代部署可用性。
+
+GO经OriginalLead/root新调度要求：[D04测试生命周期后继与OPS例行记录优先级4](../../docs/evidence/web-platform/queue-full6-closeout-20261007/priority-coordination.json)。D04唯一owner仍d01_owner、原dashboard-coordination树；本批仅632a六管理范围，未跨树更改其当前priority1，待原owner下一合法正常status更新执行。保真实用户影响、独立blocker与UNKNOWN历史，不改聚合器/测试、不抢Recovery/Quick。

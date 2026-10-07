@@ -73,3 +73,11 @@ app1750新增用户结果验收仍归原01-03/04与CHATREAD/REQ43：[固定506+a
 
 
 本轮恢复列表可读性输入（U18，原TODO后继）：[GO实际观察及验收来源](../../docs/evidence/web-platform/quick-native1-recovery-review-20261007/incoming.json)指出UUID、工程收据及长UTC抢占主层。使用可读标题/摘要、Intl本地时间与紧凑层级，精确身份/UTC保留下钻；仅授权轻metadata或诚实fallback，不为title预取正文。No text不是重复/可删除证据，文件、知识、intent、unknown及原请求保持，不自动合并删除重发。沿既有web-design-guidelines/Arc方向，未take/未实施，不阻原full7限定结果。
+
+## U19：真实host的快速设置弹层后继
+
+GO实际截图观察经root准确转述，非用户逐字：[固定组件六组结果及体验来源](../../docs/evidence/web-platform/queue-full6-closeout-20261007/compact-settings-go-intake.json)。180字压力标签重复占高、Apply在首屏外；原组件6/6与双主题截图的限定通过保留，不等完整实际App视觉通过。沿01-02/04及原MATURE02 TODO11接线时采用紧凑model/thinking/speed主入口，完整目录与解释下钻；长名视觉限高但完整exact身份可查看、可区分，Apply/Cancel不因目录长度难找，复用已有圆角/阴影/材质tokens。正常真实标签和压力长名分别在390/双主题、键盘与焦点操作中验收；保exact授权tuple、显式Apply、opening/current ownership CAS和两pane草稿，不以自动fallback/提交换紧凑。
+
+本后继尚未take/实施；组件主线接收、Recovery/App写权交接与真实backend028/032兼容须分别确认。个人仍af51/v18+d629/v3，原SVC06-05准备固定backend4fe33178与三保留artifact兼容；不是Web-only已可用或新发布系统。MATURE02父source不在本管理claim内，只经中央需求索引交其owner，不代写其状态。
+
+U19具体[只读源研究](../../docs/evidence/web-platform/queue-full6-closeout-20261007/compact-host-source-research.json)固定7源与官方接口：窄屏sm:rounded-lg不能单独供应radius；可变目录将Apply推远。后继评估有界scroll body外的header/footer，长名可限高但键盘/触控可读完整且相似前缀可辨，复用Thread ComposerActions、现registry及host CAS。仅设计输入/未实施或运行，不撤组件6PASS。

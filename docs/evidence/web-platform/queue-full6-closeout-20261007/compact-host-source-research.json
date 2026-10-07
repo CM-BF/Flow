@@ -1,0 +1,101 @@
+{
+  "at": "2026-10-07T07:48:25.601481+00:00",
+  "author": "/root read-only research, GPT-6 Astra Ultra",
+  "purpose": "Concrete next-scope design input for existing MATURE01 floating layer and MATURE02 TODO11 real host Quick consumption; not a new task or authority.",
+  "sourcePins": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "sha256": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "sha256": "5858040deb7446700c0f4d791fa80507fd7c543c3a91f8634410815726634ec0"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow",
+      "path": "apps/web/src/assistant-ui.css",
+      "sha256": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow",
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow",
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa"
+    }
+  ],
+  "fixedQuickSource": "dde571be8853698f8943f952ddef2c648d2e1294",
+  "rootComponentApproval": "86fa91a12a77d6059fe54d9c977307960841fb45d408c8541808d7ad3a647557",
+  "observations": [
+    {
+      "location": "ExecutionProfilePicker.tsx:252-290 and execution-profiles.css:2-4",
+      "fact": "Trigger/current value/candidates/pending section render full model labels; variable catalogue precedes Apply/Cancel, whole dialog scrolls. Actual390 stress PNG demonstrates repeated180-character label and primary action initially below viewport.",
+      "qualification": "Current six group PASS remains; this is usability follow-up, not a claim that the whole production App was visually tested or failed."
+    },
+    {
+      "location": "components/ui/dialog.tsx:37-42 and assistant-ui.css:70-89",
+      "fact": "Shared primitive has sm:rounded-lg; feature ep-dialog does not supply a narrow-screen radius. Existing --radius=.75rem plus radius scale/theme colors and shadow utility can be reused locally without redesigning unrelated dialogs."
+    },
+    {
+      "location": "ThreadComponents.ComposerActions and plugin-integration ComposerActions",
+      "fact": "Official Thread component has a ComposerActions seam already wired to chat.composer.actions. Recovery ConversationThread still renders old ExecutionProfilePicker in ComposerConfiguration; new MessageSettingsPicker has no real host consumer.",
+      "qualification": "Neither Thread replacement nor a second plugin host is needed. Existing registry and host-owned draft authority are the intended seams; actual precise claim depends on Recovery handback and Quick main intake."
+    }
+  ],
+  "proposedSmallDesign": {
+    "trigger": "Compact current model plus short thinking/speed summary. Preserve full accessible name and an explicit details disclosure usable with keyboard and touch. Do not rely only on hover/title or render opaque IDs on the primary row.",
+    "dialog": "Retain Radix controlled modal and existing ownership lease. Header/current selection and Apply/Cancel footer remain outside a bounded scroll region for filters/catalogue; cap visual long-name height, allow full identity disclosure, and distinguish equal-prefix options using authorized profile identity in details. Footer must not overlap focused controls at zoom or small viewport.",
+    "state": "One pending choice, existing exact authorized tuple projection and explicit Apply. Filtering does not commit; no invented crossproduct or automatic fallback. On unavailable/removed candidate preserve original draft, expose reason, revoke stale ownership, and retain existing return-focus rules.",
+    "extension": "Reuse existing Thread ComposerActions/registry integration and original host CAS seam. A plugin may request UI opening through host-bound context; it does not own recovery authority or acquire arbitrary task IDs. Avoid parallel per-pane settings state or a second registry."
+  },
+  "focusedAcceptance": [
+    "Normal authorized model names AND long180-character stress labels, both light/dark at390; additionally equal-prefix distinct identities are distinguishable through disclosure.",
+    "Apply/Cancel discoverable on first view independent of catalogue length; body scroll never hides or overlaps focused radio or action; narrow/zoom layout has no horizontal clipping.",
+    "Keyboard focus remains trapped; Escape/Cancel no write, Apply one CAS commit, identity/view/draft change invalidates pending choice, details navigation returns focus to logical target.",
+    "Exact authorized32-tuple pagination and missing applied selection retain their prior assertions; do not repeat the entire old suite solely for metadata. New host checks target Send/Queue/Recovery frozen settings separately."
+  ],
+  "primarySources": [
+    {
+      "url": "https://www.assistant-ui.com/llms.txt",
+      "used": "Current documentation router confirms Thread, Composer and component composition are separate primitives/elements; existing installed code is the actual compatibility baseline. No package upgrade inferred."
+    },
+    {
+      "url": "https://www.radix-ui.com/primitives/docs/components/dialog",
+      "used": "Controlled Dialog, Title/Description, focus trapping, Escape and autofocus callbacks support keeping existing semantics while changing feature layout; current website version is not assumed installed."
+    },
+    {
+      "url": "https://www.w3.org/WAI/ARIA/apg/patterns/dialog-modal/",
+      "used": "Contain Tab navigation, choose initial focus according to content size, return to invoking or logical control, and expose a visible closing action. Long structured content should not become one giant announced description."
+    }
+  ],
+  "skillMethod": {
+    "discovery": "find-skills domain mapping with existing local skills first; no installation",
+    "skills": [
+      "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "application": "Preserve actual Thread and deep host-owned settings interface; separate presentation from authorization and lifecycle, reuse registry, prioritize bounded UI and behavior checks."
+  },
+  "notPerformed": [
+    "No project writes",
+    "No new runtime/browser/PG/build/provider",
+    "No production App or deployment changes",
+    "No new claim or task"
+  ]
+}

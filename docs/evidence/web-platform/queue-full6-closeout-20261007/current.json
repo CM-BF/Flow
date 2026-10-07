@@ -1,0 +1,91 @@
+{
+  "recordedAt": "2026-10-07T07:48:01.447294+00:00",
+  "kind": "ACTUAL_QUEUE_AND_COMPONENT_FULL_SIX_CLOSEOUT",
+  "recovery": {
+    "source": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+    "ownerHead": "d321240c486f24a0944a0472cb6f3cebd571fc39",
+    "ownerReceipt": "panels actual normal-push/remote-equal/clean; manager local clean confirmed",
+    "ownerStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+    "actual": {
+      "run": "recqueue-20261007-073438-dbae9f",
+      "startedAt": "2026-10-07T07:34:54.524910+00:00",
+      "endedAt": "2026-10-07T07:35:05.731349+00:00",
+      "parentPid": 83949,
+      "actualExitCode": 0,
+      "outerElapsedMs": 11206.429125042632,
+      "stdoutEof": true,
+      "stderrEof": true,
+      "streams": {
+        "stderr": {
+          "eof": true,
+          "bytes": 0
+        },
+        "stdout": {
+          "eof": true,
+          "bytes": 606
+        }
+      }
+    },
+    "chargeMs": 11207,
+    "segmentSpentMs": 70158,
+    "remainingMs": 79842,
+    "selected": [
+      "cookieRead",
+      "queueAckLoss"
+    ],
+    "pass": 2,
+    "fullFeaturePassed": false,
+    "cleanup": "markedDB0conn normalDROP/absence; fixturecomplete/provider0; ownedgroups/scratch/EOF closed; owner exact-deleted ephemeraladmin",
+    "review": "recovery-queue-actual-review.json",
+    "evidenceBytes": 3131063,
+    "startupEvidenceCeilingBytes": 3145728,
+    "startupHeadroomBytes": 14665,
+    "next": "Root formally dispatched SSE source implementation in original21, panels/Webroot originalWTbranch; no runtimeholder. Listener lifecycle targetreview beforeactual."
+  },
+  "quick": {
+    "productTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+    "sourceTarget": "dde571be8853698f8943f952ddef2c648d2e1294",
+    "executionHead": "421e9ee51415a9005e836f25a2a3773388e6ef9e",
+    "ownerHead": "7e9f0582a88e2ede7e10576a420a47970575d2cf",
+    "ownerHeadState": "Root relayed final normalpush/remoteequal/clean; originalclaim839ev1 remains active pending main",
+    "ownerStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+    "actual": {
+      "run": "msgquick-full1-20261007-073908-dbfef9",
+      "startedAt": "2026-10-07T07:39:23.045263+00:00",
+      "finishedAt": "2026-10-07T07:39:32.913766+00:00",
+      "exitCode": 0,
+      "state": "PASS",
+      "pngCount": 2,
+      "HTTPRequests": 13
+    },
+    "checks": 6,
+    "passed": 6,
+    "chargeMs": 9869,
+    "segmentSpentMs": 47496,
+    "remainingMs": 42504,
+    "review": "quick-full-six-actual-review.json",
+    "decision": "APPROVED_SCOPED_COMPONENT_AND_FULL_SIX_FIXTURE_ACTUAL_NOT_PRODUCTION_APP",
+    "cleanup": "fixture/context closed; ownedgroups/profile/scratch absent; allstreamsEOF/0drop; noPG/provider",
+    "limitations": [
+      "Synthetic controlled component, production App/Send/Queue/Recovery unbound.",
+      "Main integration not yet evidenced in this batch.",
+      "Native printable CDP trusted input is not physical keyboard/IME/macOSpopup coverage.",
+      "All old FAIL/INCONCLUSIVE raw and oldclosed30625ms remain unchanged."
+    ],
+    "next": "OriginalLead controlled intake of fixed four-source main-intake; MSGQUICK04 completed/phaseintegration,05pending/NOT_COMPLETED, realhost unbound.",
+    "mainIntake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/main-intake.json"
+  },
+  "webActualHolder": null,
+  "webGate": null,
+  "webReservation": false,
+  "externalCoordination": {
+    "source": "OriginalLead actual receipt relayed by root",
+    "task": "CHAT05P02",
+    "returnedAt": "2026-10-07T07:42:01.684Z",
+    "result": "0of2 fixture failure, actual owned cleanup complete, no automatic retry reservation",
+    "meaning": "This team has no PG/Chrome holder; does not establish nobody globally uses resources."
+  },
+  "claimSource": "selected-claims.json",
+  "sourceVisibility": "owner-document-source-check.json confirms two exact/api/document responses only at07:37:22, not current UI/claims or new aggregate observation",
+  "personalPublicationDependency": "../paired-return-owner-segment-20261007/publication-dependency.json"
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T04:06:01.265133+00:00 |
+| 最近更新 | 2026-10-07T07:48:01.447294+00:00；新增真实快速设置弹层层级验收，原组件通过保留 |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-01](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -15,7 +15,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 新前端发送、排队和回执恢复已完成受控兼容验证并接主线；个人预览已于21:27按受控流程发布af51后台与d629/v3前端，旧版本组合不再是未解依赖。完整视觉体验仍在推进。 |
-| 下一可用交付 | 优先完成本机入口真实安装操作验收及草稿恢复、快速设置剩余页面验证；继续收拢普通聊天技术信息，保留错误、待办和可展开依据。 |
+| 下一可用交付 | 将已通过的快速设置组件接入真实聊天，收拢长标签与目录解释，确保Apply/Cancel易找；先由原发布owner核后台能力兼容，真实App与完整视觉仍待验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -28,7 +28,7 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-MATURE-01-01 | in-progress | Web co-lead | builtin材质片已审；单一typed catalogue/有限值域/映射/default仍开放，见[固定研究](../../docs/evidence/web-platform/mature-theme-presentation-research.md)。 |
-| WPF-MATURE-01-02 | in-progress | Web co-lead | 外部theme材质/reload仍开放；附件Files入口已走P01但Picker条目动作覆盖缺口沿REQ22–23后继，见plan与固定9eec审计。 |
+| WPF-MATURE-01-02 | in-progress | Web co-lead | U19快速设置紧凑主入口、长名身份下钻和主要操作可达性按原plan待真实host接线；原组件六组通过不代表全App。外部theme材质/reload仍开放；附件Files入口已走P01但Picker条目动作覆盖缺口沿REQ22–23后继，见plan与固定9eec审计。 |
 | WPF-MATURE-01-03 | in-progress | Web co-lead | 实际空态、长正文、代码/表格、streaming、tool/thinking展开、错误截图；[原图源研究](../../docs/evidence/web-platform/short-chat-visual-fixed-source-intake.json)及[三件补充](../../docs/evidence/web-platform/short-chat-visual-supplements-intake.json)已映射plan：footer可发现、不同动作保留、异常不全折叠；真实交互未验。  U18恢复列表可读性按[既有计划](plan.md)待后继；不改原full7范围。 |
 | WPF-MATURE-01-04 | in-progress | Web co-lead | 390px与桌面、键盘焦点/IME、reduced-motion、不支持/禁用backdrop-filter时不透明可读fallback。 |
 | WPF-MATURE-01-05 | pending | Web co-lead | 实际App前后图/交互与固定产物；RS13按唯一asset去重、初始依赖图/延后chat及parse/可输入/首次chat取舍；与SVC owner定义哈希asset cache/encoding和HTML/身份/API边界，有界冷暖/版本切换，未实施。 |

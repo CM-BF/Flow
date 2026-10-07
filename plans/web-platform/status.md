@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:31:54.135822+00:00；提交丢回执回归与原生输入诊断已结束并归还资源 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:48:01.447294+00:00；排队丢回执检查及快速设置组件验收已通过，资源已归还 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -20,11 +20,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；架构图固定快照和连线显示修复已接入主线并提供新资产；几何与键盘验收通过，窄屏默认阅读体验留作后继。 |
-| 下一可用交付 | 原owner继续补齐排队丢回执验收；逐消息设置将已确认的原生输入方式应用到原功能检查。使用有限工作段连续处理相关修复，完整功能仍待验收。 |
+| 当前产出 | 排队丢回执恢复已通过真实选定检查；快速设置组件原六组与双主题截图已获限定批准。完整恢复、真实聊天设置接线及其主线发布仍分别待收口，旧失败证据保留。 |
+| 下一可用交付 | 收口快速设置组件的主线接收，再沿原权限交接推进真实聊天接线与紧凑弹层；恢复功能下一候选验证真实事件流交付。个人后台兼容依赖仍由原发布owner处理。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：两条验证已完成清理，临时凭据已删除；本组无PG或浏览器占用、无新gate或预约。后续按实际资源交接进入原owner有限工作段。 |
+| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：本组PG与浏览器均已归还，无gate或预约；原Lead也报告CHAT05P02已清理。下一实际运行仍按跨Lead最新holder与组合资源核对，不据此断言全局空闲。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -166,4 +166,6 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 
 本次正常协调：[created-turn一次准入与当前准备](../../docs/evidence/web-platform/recovery-created-turn-admission-20261007/current.json)仅索引原owner状态/实际领取，不建第二业务进度。原REQ43的[工具大正文消费研究](../../docs/evidence/web-platform/recovery-created-turn-admission-20261007/chat05-body-consumer-research.json)与REQ10/12的[文件树重入研究](../../docs/evidence/web-platform/recovery-created-turn-admission-20261007/filetree-reentry-research.json)只补原后继验收，未take/实现/运行。
 
-本次[实际归还与限定结果](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/return.json)保留全部旧FAIL：Recovery建聊后提交丢回执2/2通过，Quick仅C原生输入诊断完成、原六功能组仍未通过。下一[Queue原owner有限工作段](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/recovery-queue-owner-segment.json)采用同runner/单记录，不逐轮短期许可；证据仅引用原件，不复制大清单。
+前一历史[配对归还](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/return.json)记录当时Recovery建聊后提交丢回执2/2、Quick仅C诊断完成，原六组当时未过；随后Queue与原六组的实际结果见下方当前入口。原[Queue自治交接](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/recovery-queue-owner-segment.json)已完成实际消费，不是新的待运行许可。
+
+[当前限定结果与后继](../../docs/evidence/web-platform/queue-full6-closeout-20261007/current.json)：Queue2/2与Quick组件原六组/双图已获独审，原失败不改；Quick真实App/Send/Queue及main另计。[U19弹层紧凑验收](../../docs/evidence/web-platform/queue-full6-closeout-20261007/compact-settings-go-intake.json)归原MATURE01与MATURE02 TODO11，不新大task。[SSE原21scope实施接缝](../../docs/evidence/web-platform/queue-full6-closeout-20261007/recovery-sse-scope-readiness.json)不新增领取或运行。

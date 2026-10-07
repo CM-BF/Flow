@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-07T07:37:22.176915+00:00",
+  "scope": "Two read-only document endpoints only; no /api/snapshot aggregation, claim mutation, server restart, local-access credential endpoint or browser. Confirms unique owner status source, not full live UI rendering or claim freshness.",
+  "records": [
+    {
+      "task": "WPF-RECOVERY01",
+      "route": "/api/document",
+      "status": 200,
+      "bytes": 52835,
+      "sha256": "b2cd23a9fe248570b56c00166e4177af520b95307496c438a7d93ec61199490b",
+      "localPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+      "matchesOwnerStatusAtObservation": true
+    },
+    {
+      "task": "WPF-MESSAGESETTINGS02",
+      "route": "/api/document",
+      "status": 200,
+      "bytes": 22107,
+      "sha256": "c27b526e9dd4b74e93596396cf61bb82a2c19ccc207d738cfeef575e06e81477",
+      "localPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
+      "matchesOwnerStatusAtObservation": true
+    }
+  ]
+}
