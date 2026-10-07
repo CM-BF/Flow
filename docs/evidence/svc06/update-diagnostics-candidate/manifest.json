@@ -1,0 +1,708 @@
+{
+  "kind": "svc06-fixed-diagnostics-artifact-preparation",
+  "createdAt": "2026-10-07T10:08:14.501733+00:00",
+  "sourceTarget": "269034c2d07bad564e35469bc8a7e0d0094e9b78",
+  "recordsTarget": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+  "artifactSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "sourceRepository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "entry": "docs/evidence/svc06/update-diagnostics-candidate/build-once/supervise.py",
+  "execution": "NOT_RUN; awaiting Lead actual shared-resource window",
+  "sourceBindings": [
+    {
+      "path": "apps/cli/package.json",
+      "bytes": 215,
+      "sha256": "d35ba2822f9010e0fd4abbd1777b3be128145fa82c0395f1beefb23a4e386333",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "apps/execution-dashboard/package.json",
+      "bytes": 362,
+      "sha256": "8492f44ae6f90dd60a76676f84801f1048256abd5c79b708126358731da8d8aa",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "apps/runner/package.json",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 17320,
+      "sha256": "db4e30317baf9a604d5fe89c2c67ff03cb925bbed90cb7cc3debfc055af10648",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "apps/server/package.json",
+      "bytes": 552,
+      "sha256": "55219b0d08e81fe928ecc85679b1f47f0e496f7e56bf40c71b24b0c131bd079e",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 15083,
+      "sha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "apps/tui/package.json",
+      "bytes": 453,
+      "sha256": "cf66a662ad0dab061952dded7b4a429217bac526f7cd0745297d5dbfc766dcc8",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "apps/web/package.json",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "package.json",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/client/package.json",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/interaction/package.json",
+      "bytes": 381,
+      "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/plugin-runtime/package.json",
+      "bytes": 182,
+      "sha256": "342852a97b2682285ae98035f8e1852a1e616b5de071e60a7454ce8848cb16ae",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/protocols/package.json",
+      "bytes": 366,
+      "sha256": "f6a8155b462edf0ccfb39b20c8344576d1ec27f647c11e0e229c52e895867294",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/002-reconciliation.sql",
+      "bytes": 1730,
+      "sha256": "ee52cb841bc01ab3c0cc433a91625a1d0bc3b3cdbb741ecce805c952de0d387e",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/004-projects.sql",
+      "bytes": 1918,
+      "sha256": "a2f744c164d08168a3aa40584597b62375f3bfb30dbb7ec73348aa01b6633e07",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/005-protocol-dispatch.sql",
+      "bytes": 799,
+      "sha256": "85fd7b66d5110119a3282a74b6946f6ae37bf4eb9361340de2a72e6f6a57872f",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/006-goals.sql",
+      "bytes": 3165,
+      "sha256": "e7174fdb547df194bcae5286981135c1cda3e47a2ea442afcafee0791a762a49",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/007-conversations.sql",
+      "bytes": 1063,
+      "sha256": "5859343c1416331642375c069d4b69943d9fbcf382ee07208733925c21b10a81",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/008-plugins.sql",
+      "bytes": 3675,
+      "sha256": "b23068a5fa46df53c3de8c46097b94d0488f54da577e96b898471e2c7fc8b452",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/009-assistant-messages.sql",
+      "bytes": 736,
+      "sha256": "0e9daf87e5e379134a4c6bb1481f95b3a5f3908b03aad34c155e5a1d85b12d17",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/010-execution-profiles.sql",
+      "bytes": 765,
+      "sha256": "3a518a6953644c6efada3cfe5d38481fa5b48aaf7ef0819a0d99dc25286d2847",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/011-conversation-queue.sql",
+      "bytes": 1357,
+      "sha256": "bea2d6057b4471524ccb89e95e643a7bd2606805d75a775d7d6129857afbc427",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/012-goal-tool-runs.sql",
+      "bytes": 2076,
+      "sha256": "8b9a5c6ac912e2aa7cf7d1a893f3da39e97e2206ee7e2ea94e36fd9559271e5b",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/013-goal-native-mode.sql",
+      "bytes": 185,
+      "sha256": "4ff7ffdb6ff27ccdca75d0dc6d4ed53fcbca1671b184411a7181f5b186470dd3",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/014-goal-graph-proposals.sql",
+      "bytes": 1802,
+      "sha256": "af0509e67b7902f190fc2668e8396a40fa7edddc8f263aea723961153b2d20ba",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/015-knowledge-sources.sql",
+      "bytes": 2406,
+      "sha256": "62e81d76141c3b74bd36cb7e38ef98a24f552ac01598c9b7d7c7f88fe812a3c1",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/016-runner-maintenance.sql",
+      "bytes": 1796,
+      "sha256": "7dc1d7c6f37d94ac600f78b5fe82a665a1fe9eca9d35c9f52ba92371a8c030fc",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/017-goal-graph-runs.sql",
+      "bytes": 3089,
+      "sha256": "d273f0d0d5bf8efc1d189e1fb25cf2d1c3769c3971761c1f5e5bc755d35df09f",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/018-conversation-context.sql",
+      "bytes": 3497,
+      "sha256": "2521ab49a59d535e0a4eebaf4da895e97ed5d0083ed15b24d47656144ffadcf3",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/019-goal-graph-native-mode.sql",
+      "bytes": 189,
+      "sha256": "df159d8dd0fb329899a2d755ae9deeb4a92817f87fc8014f74080932d18c5218",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/020-native-activity.sql",
+      "bytes": 970,
+      "sha256": "4b7d1e031f94e9178120218e34c59a12715d2330282033ef9968cf97dd6578c6",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/021-goal-context.sql",
+      "bytes": 2167,
+      "sha256": "5e36a8e6f694dd1c10e9ba1bec28dfda1cf87055ceeed3943b3efd577eb9b17f",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/022-assistant-stream.sql",
+      "bytes": 1865,
+      "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/023-plugin-package-fetches.sql",
+      "bytes": 2975,
+      "sha256": "709eed00d46817b52b8767fb52dea8db02af7f3e413af269f7bef7dbeb0612c9",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/024-active-steering.sql",
+      "bytes": 1998,
+      "sha256": "551e54f031591dc22b129cb66097132e94cd3f0828441d60acf6248fac555fac",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/025-native-harness-sources.sql",
+      "bytes": 1618,
+      "sha256": "ed4063b040d3a1a3bdf1b8d7c1ea20c3457430ae6077c8a3f8aa45b1a1330bc8",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/026-attachment-resources.sql",
+      "bytes": 2994,
+      "sha256": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/027-context-observation-history.sql",
+      "bytes": 1891,
+      "sha256": "de133222d65fb86137a57e22ada883f5310054e51baa96f8ef5d0d5b13039241",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/028-browser-sessions.sql",
+      "bytes": 875,
+      "sha256": "b1f8d61acbd6692186bd544421b110926c94311556395e39ad09936c7b2498d1",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/029-plugin-material-installs.sql",
+      "bytes": 4435,
+      "sha256": "8713dab5cb3c3169b9f8c71b6e5a2ab81cf2065818bc3a24add3a0400a8d90ea",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/030-goal-progression.sql",
+      "bytes": 4315,
+      "sha256": "0a6a7c0f09729b53da704e188d19167bd907b8180fad8b7f3d761c4a39609737",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/031-goal-plan-confirmations.sql",
+      "bytes": 2279,
+      "sha256": "a0d688470a30f26a03e7cdfc1146f5cb424625ae94d59857ce8403561f832606",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/032-claude-message-settings.sql",
+      "bytes": 3892,
+      "sha256": "97673f4ce120cb26f55f35881977810e516199b97cd8a1fe9fea2ebd24b5c9ed",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/033-native-activity-bodies.sql",
+      "bytes": 1398,
+      "sha256": "cdfba885c10b67d804d985bc0d4fcb30634c50fbfa0cf25be3fc0053e14dd15e",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/034-plugin-runtime.sql",
+      "bytes": 6572,
+      "sha256": "8d3cc77265c7ee621ee5da5aacb402615054e4f234cc65cf430f0dc7bc7e7f9d",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "packages/storage/migrations/035-codex-conversations.sql",
+      "bytes": 189,
+      "sha256": "9b41d66666ec4a7955e22a66fbf994ce873b9dc2d38bd77dab15648ef52a2b6d",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "bytes": 40,
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 6852,
+      "sha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "bytes": 10976,
+      "sha256": "bb39c0dd9925ceb7f93638a6411c09d0dbeaa01132c9265c7a0a71c18bd5bdda",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 4368,
+      "sha256": "320e6a1d21b0cc7073f3985dace543476ba0672514422b883fb890e2a5d2ca54",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "bytes": 6646,
+      "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/browser-session-configuration.mjs",
+      "bytes": 7335,
+      "sha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 5394,
+      "sha256": "fb868c44175b30d096905761b6569bc91f3e4eee270b5f24c225dfcce3785935",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 2690,
+      "sha256": "8d4d1b6f607e602dbfb1501541de565dbc6fb03f188d476d3ebf30022025ceeb",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 9796,
+      "sha256": "87a5ddc0ef6883de926a8cf25b6e38883f6485e00002cdd1973c73da4aea31e8",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 48201,
+      "sha256": "3dc665dea6a62874438fb62c72444ccba18f462c935ac276f5d786fbffe37d11",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 59993,
+      "sha256": "3851a7a64e84dfd6f3e724b781599cfcf4c355a2294d320653c10c130ed32c62",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "bytes": 10094,
+      "sha256": "5827f1863578841ad12a459ea7ea42fc474577cd1271e1233beb9a50902c17d8",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+      "bytes": 10667,
+      "sha256": "18bb2c20f13e93f36e90496e608e00438f59700b4b918d443bcf08e5802411b4",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "bytes": 7633,
+      "sha256": "37cdcd83ac6c65ac3bb57cfaea876aed258f8f8b23897864feba78be9e5413b1",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 9035,
+      "sha256": "dbbe039e28ec1e28dbba004f57823f33865e1eccd4710b34b55dfeade81069ff",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 15567,
+      "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tools/personal-preview/web-retention-policy.mjs",
+      "bytes": 1182,
+      "sha256": "5eda7f605849a255cdc470fb6a7e1211f0f8ada2a7eb5f88ef14d6a9a8cdd594",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+      "fixedRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    }
+  ],
+  "runtimeBindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2",
+      "sourceRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/build.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca",
+      "sourceRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/files.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61",
+      "sourceRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/node-identity.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a",
+      "sourceRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/runtime-installation.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/runtime-installation.mjs",
+      "bytes": 6646,
+      "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a",
+      "sourceRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/dependency-plan.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/dependency-plan.mjs",
+      "bytes": 10976,
+      "sha256": "bb39c0dd9925ceb7f93638a6411c09d0dbeaa01132c9265c7a0a71c18bd5bdda",
+      "sourceRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/installation-view.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/installation-view.mjs",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9",
+      "sourceRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/cache-plan.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/cache-plan.mjs",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb",
+      "sourceRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/clone-store.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 6852,
+      "sha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62",
+      "sourceRef": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/package.json",
+      "bytes": 3254,
+      "sha256": "20b8b197cbd10dad245d45e463dfe58e4c8c25a47e24bc4256ad9ab58bf35683",
+      "origin": "private offline yaml2.9.0, prior47b receipt"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.js",
+      "bytes": 1769,
+      "sha256": "2d58984e0ae80de4acbd8f009fab332f5ce77d9e1a5f138a3058a0ada6567fb9",
+      "origin": "private offline yaml2.9.0, prior47b receipt"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.d.ts",
+      "bytes": 1394,
+      "sha256": "9f85a1810d42f75e1abb4fc94be585aae1fdac8ae752c76b912d95aef61bf5de",
+      "origin": "private offline yaml2.9.0, prior47b receipt"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/pnpm-lock.yaml",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/pnpm-lock.yaml",
+      "bytes": 595,
+      "sha256": "9630fc5d64b85cf1165524268eeac20ae665b0d56f4eb55b3aea3809ef71a095",
+      "origin": "private offline yaml2.9.0, prior47b receipt"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/lib/node_modules/pnpm/bin/pnpm.cjs",
+      "realpath": "/opt/homebrew/lib/node_modules/pnpm/bin/pnpm.cjs",
+      "bytes": 999,
+      "sha256": "98e6b99a881d64a1cc982c3e60aa260bf02160386b12e74475e06486dc74b090"
+    },
+    {
+      "path": "/opt/homebrew/lib/node_modules/pnpm/dist/pnpm.cjs",
+      "realpath": "/opt/homebrew/lib/node_modules/pnpm/dist/pnpm.cjs",
+      "bytes": 8880437,
+      "sha256": "4c319da726786d5535aef95fa78ec5e24f1079382da878a35fa5dd044a7bab96"
+    },
+    {
+      "path": "/opt/homebrew/lib/node_modules/pnpm/package.json",
+      "realpath": "/opt/homebrew/lib/node_modules/pnpm/package.json",
+      "bytes": 6033,
+      "sha256": "3b20ec7bebaa078d5ae4ab09651b80434a9f1d6446065ad53779ecafdc7f9936"
+    },
+    {
+      "path": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "recordBindings": [
+    {
+      "path": "docs/evidence/svc06/startup-diagnostics/independent-review.json",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 1636,
+      "sha256": "f78731c754894eec7543e41428cf21caa8802c2d5e2a1d9e95cf0fc05bc8905e"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/README.md",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 1544,
+      "sha256": "978c1826dfe54099413a43d0bd08642845dd4e96012eff8dbc0c31339d2c9b06"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 10424,
+      "sha256": "696b208bbdea749c8f87b85983f9d8a0e622831dbc0d133646c7a9456de68461"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 40316,
+      "sha256": "a64b558c32656023f7e3e6fcc91ddfb6e0b9b9d451822711763a210e104c59ad"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 5080,
+      "sha256": "b0018289ebd85a18754cbdfd3e8f61d4bbfe9092783af4eb81f945bff3ddb352"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/supervise.py",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 2134,
+      "sha256": "a866af5906dba4c4fafed0d8dc9a1e1e0534575de40fcafbc2fc5d8489093fd5"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/cache-index-refresh.json",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 89433,
+      "sha256": "a30d1b0a2d348076b03b10419ad8266413946300dd31ac3db75f97d150c359de"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/candidate.md",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 3097,
+      "sha256": "99f7e4690062618ad2c1e7a77fd27ed524df5ef8a609cfaa71eb4b978c973858"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/claim-observation.json",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 1007,
+      "sha256": "d8a4a47bc925591d18f54e41e1536ca8cb4e57976b663812be956786cf7f1a1b"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/preparation-checks.json",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 539,
+      "sha256": "f6a06a1e355e7a8d5b786120451a25a67ba0cabd8542a77b177ff5fa93dd9910"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/source-delta.json",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 7482,
+      "sha256": "1a1b84cc91882df899ce3c3c753d9904ffc713a8ea4dcc9cd01e9c919a40706a"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/status-check.json",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 267,
+      "sha256": "43f89d9f153c4af045626f40467e9f60c85e3a74a3f50957d1c29cde6d05d65f"
+    },
+    {
+      "path": "plans/svc06-backend-release/plan.md",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 12749,
+      "sha256": "fe2d5ab433380fe77b0f5a606b2cc5098e0d7111c55e1b70ee794735db03a737"
+    },
+    {
+      "path": "plans/svc06-backend-release/review.md",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 16200,
+      "sha256": "44335e0f32a6b0a7455f2568066342dd415258504a7bc1e271f59046ba5c032f"
+    },
+    {
+      "path": "plans/svc06-backend-release/status.md",
+      "fixedRef": "5b1d38fe488cf87f3cb61de7075c4c6fdecd3128",
+      "bytes": 32545,
+      "sha256": "72824f4de1d3843a68b4f60e60480fc7653e4321841db16b3149e86a396d0309"
+    }
+  ],
+  "reusedMethodBindings": [
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/entry.mjs",
+      "fixedRef": "fbdb93e08a18b6fe21b8750e2ec726388493f8e0",
+      "bytes": 10416,
+      "sha256": "021efcca6324828760a23ed3c02ad98a3c1de5429c7cf90916209bdb0e7bfba6"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/supervise.py",
+      "fixedRef": "fbdb93e08a18b6fe21b8750e2ec726388493f8e0",
+      "bytes": 2126,
+      "sha256": "571218639b1fea8c965b1e93004c19a46e8b364dc9d8f6e3fcabf6a0e6f95c10"
+    },
+    {
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/runtime-proof.mjs",
+      "fixedRef": "fbdb93e08a18b6fe21b8750e2ec726388493f8e0",
+      "bytes": 4697,
+      "sha256": "137164f0bd8789f6ce96b095192602e4cd5eee3fb74f67ac6bf71d7651b4a4e6"
+    }
+  ],
+  "counts": {
+    "sourceBindings": 72,
+    "runtimeBindings": 19,
+    "records": 15,
+    "reusedMethods": 3
+  },
+  "resourceGate": {
+    "artifactFileAndManifestLimit": 1073741824,
+    "selectedSeedLogicalBytes": 354552778,
+    "sourceArchiveAllowance": 33554432,
+    "pnpmHomeCacheAllowance": 134217728,
+    "metadataAllowance": 536870912,
+    "rawBytes": 2097152,
+    "liveReserveBytes": 1073741824,
+    "additionalBudgetBytes": 2317352960,
+    "minimumFreeBytes": 3927965696,
+    "selectedSeedAllowance": 536870912,
+    "baseMinimumFreeBytes": 3391094784,
+    "coordinationAllowanceBytes": 536870912,
+    "coordinationAllowanceMeaning": "Conservative planning margin; not a claim that another task is running. At execution, add any actual concurrent allocation exceeding this margin; never lower base reserve."
+  },
+  "scope": "Own docs/plan only; product source3cb remains stopped and reviewed; fixed6c provided by Lead, no moving-main or source mutation",
+  "interpretation": "Only new source/archive identity, private namespace and diagnostic internal-loading assertion. Parent b2b/271 cache selection/SQL/builder unchanged. Old c2c/r1 immutable; no green local or old-build reruns."
+}
