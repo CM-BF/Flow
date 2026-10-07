@@ -4,7 +4,7 @@
 | --- | --- |
 | 最近更新 / 最近main同步核验 | 2026-10-07T10:51:19.274Z；固定 b675 输入 |
 | Plan | [plan.md](plan.md) |
-| 所属大task | [WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md)；WPF-001-05 / X01-06 |
+| 所属大task | [WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md) |
 | co-lead | Web / root；external_web_d01_owner |
 | 任务开工时间 | 2026-10-07T10:48:09.218Z |
 | 任务完成时间 | NOT_COMPLETED |

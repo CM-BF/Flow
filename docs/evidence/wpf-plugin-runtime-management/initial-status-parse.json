@@ -1,15 +1,15 @@
 {
-  "taskId": "WPF-PLUGIN-RUNTIME01",
   "errors": [],
   "humanMissing": [],
   "timingIssues": [],
   "taskLinks": {
-    "kind": "unknown",
-    "reason": "层级或父任务声明冲突/不完整",
+    "kind": "subtask",
+    "reason": "",
     "parent": {
-      "state": "unknown",
-      "record": "[WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md)；WPF-001-05 / X01-06",
-      "reason": "须声明唯一稳定 ID 及计划链接"
+      "state": "known",
+      "record": "[WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md)",
+      "id": "WPF-001",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md"
     },
     "coLead": {
       "state": "known",
