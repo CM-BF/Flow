@@ -15,3 +15,7 @@
 ## 方法与质量
 
 本地 find-skills → brainstorming/codebase-design/clean-code；需求设计已由 GO/Mika 授权，未重复审批/安装。clean-code 固定 sickn33/agentic-awesome-skills bdacd76ed9e388733b5f91a5c75a4e8183a7c0b5。应用：不扩调度器职责，SQL 候选选择与锁内权威复核分别保留；测试从真实 API/PG 状态断言，不镜像 SQL。实际技能内容 hash 见 skills.json。源码完成后复核命名/单职责/错误路径和已有断言保留；实际 red/green NOT_RUN。
+
+## 固定源交付
+
+2026-10-07T16:31:06.487336+00:00：实现 target `42c6c8cf81d3d648fc3477109e66db6c843aefe3`，两源SHA见source-checkpoint.json。clean-code收尾：一个candidate predicate，无新抽象/重复状态；锁内暂停复核和异常隔离未改；原测试全文从新增两例前后拼回与base逐字相等。当前没有执行证据，不将静态行为推导写成red/green。源码准备 STOP，claim保留待独审/下一有界入口准备。

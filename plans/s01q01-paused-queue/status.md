@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 16:29 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 16:31 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../flow-001-architecture/plan.md) |
@@ -13,12 +13,12 @@
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan |
 | Branch | codex/queue-paused-scan |
-| 工作基线 / HEAD | b79121e1944f10f82a416d98d776c0f55bf9c943 |
-| 工作树dirty状态 | 当前仅本 claim 源准备；提交后以 Git 为准 |
-| 工作分支状态 | in_progress |
+| 工作基线 / HEAD | base b79121e1944f10f82a416d98d776c0f55bf9c943；source HEAD 42c6c8cf81d3d648fc3477109e66db6c843aefe3；metadata 后继不改两源 |
+| 工作树dirty状态 | 实采42c6c8cf=origin clean；本次只metadata，提交push后全部STOP |
+| 工作分支状态 | review |
 | 检查状态 | NOT_RUN |
 | 已集成main状态 / HEAD | 本片未集成；固定基线 b79121e1944f10f82a416d98d776c0f55bf9c943 |
-| 实现目标 | UNKNOWN |
+| 实现目标 | 42c6c8cf81d3d648fc3477109e66db6c843aefe3 |
 | 实现范围 | apps/server/src/conversation-queue/promotion.ts, apps/server/src/conversation-queue/queue.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
@@ -42,3 +42,5 @@
 [唯一证据入口](../../docs/evidence/s01q01-paused-queue/README.md)。不改现有服务/数据库/产品权限。Dashboard 待 Lead 登记本权威树；本段不启动 parser 或 HTTP 探针，聚合 UNKNOWN。旧 CHAT04 已 release 的权限未复用。架构 Interface/FSM 无变化，仅扫描候选选择；Lead 集成时可按本片目标记录，未修改全局架构图。
 
 2026-10-07T16:28:45.176704+00:00：源码安全停点；两新增真实PG用例与单predicate已固定准备，原整个测试文件除插入用例外逐字保留；尚未运行或类型检查。初始静态定位误查010-conversations.sql/control.ts不存在，随后由实际007-conversations.sql和index导出路径核正，非工程检查失败。临时停写本树以顺序归档已获授权K01 review metadata；本段截止不延长。
+
+2026-10-07T16:31:06.487336+00:00：从K01 metadata停写点顺序回本树，仅固定源码target与审查交接；source 42c6c8cf81d3d648fc3477109e66db6c843aefe3，base至target仅promotion候选增加NOT paused及queue.test插入2用例，原测试所有字节保留。源码准备已交付但本片产品未验收；0工程child/PG/HTTP/Chrome/provider，类型/测试/聚合NOT_RUN。未来fixture24连接为配置上限、当前未提供marked/deadline安全入口，后继不能直接把原suite当已准入；待Mika独审与有限PG入口/窗口。整个原15min段于本次metadata push后提前STOP，不借剩余时间新增工作。
