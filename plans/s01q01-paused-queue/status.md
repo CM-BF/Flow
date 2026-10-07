@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 20:38 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 21:03 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -16,16 +16,16 @@
 | 工作基线 / HEAD | base b79121e1944f10f82a416d98d776c0f55bf9c943；历史fixture a4f041e0/01dfc89；当前source 103232eeab0f861e1ab87f496e9b9f0f1c068965；promotion仍42c零diff |
 | 工作树dirty状态 | 源已固定；本段metadata提交push后clean STOP，0待launch |
 | 工作分支状态 | review |
-| 检查状态 | PASSED 103232eeab0f861e1ab87f496e9b9f0f1c068965；15/15受影响caller纯例，外置permit接线由纯mock覆盖；fixture/类型未改未重跑；实际PG/HTTP仍NOT_RUN |
+| 检查状态 | PARTIAL 103232eeab0f861e1ab87f496e9b9f0f1c068965；真实PG2passed/32skipped/0failed；callerexit1/原FAIL保留，资源CLOSED/DB与TMPabsent |
 | 已集成main状态 / HEAD | 本片未集成；固定基线 b79121e1944f10f82a416d98d776c0f55bf9c943 |
 | 实现目标 | 103232eeab0f861e1ab87f496e9b9f0f1c068965 |
 | 实现范围 | apps/server/src/conversation-queue/promotion.ts, apps/server/src/conversation-queue/queue.test.ts, docs/evidence/s01q01-paused-queue/pg-fixture.ts, docs/evidence/s01q01-paused-queue/types.tsconfig.json, docs/evidence/s01q01-paused-queue/dependencies.json, docs/evidence/s01q01-paused-queue/pg-fixture.test.ts, docs/evidence/s01q01-paused-queue/failure-local.py, docs/evidence/s01q01-paused-queue/failure.types.tsconfig.json, docs/evidence/s01q01-paused-queue/failure.vitest.config.ts, docs/evidence/s01q01-paused-queue/entry.py, docs/evidence/s01q01-paused-queue/entry.test.py, docs/evidence/s01q01-paused-queue/queue.vitest.config.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 隔离验证入口已通过独立源码与局部结果审查，可以排队验证两条暂停扫描行为 |
-| 下一可用交付 | 获得唯一新窗口后执行两条真实数据库用例 |
-| 当前阻塞 | ACTIVE: 源准备已审，等待经理唯一新OPEN；实际PG仍CLOSED/NOT_RUN |
+| 当前产出 | 两条暂停扫描真实数据库用例通过，资源已归还；外层选择结果判定存在已定位缺陷 |
+| 下一可用交付 | 修复外层结果选择判定并复核本次原始证据，再完成集成 |
+| 当前阻塞 | ACTIVE: 原caller选择器将32项skipped计入执行数，原运行返回FAIL；新源码修复与结果独审待定 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；architecture19:31:19批准fixture增量，原P2 CLOSED；db20:37:05批准103232ee源码准备；原唯一P2 CLOSED |
 | 当前claim最后观察 | a8a3b2d7-1bde-438a-9fbf-f81e1c791350 v1 ACTIVE；2026-10-07T20:32:48.804Z fresh ACTIVE；四精确 scope |
@@ -68,3 +68,10 @@
 2026-10-07T20:35:15.546469+00:00：本次实现 103232eeab0f861e1ab87f496e9b9f0f1c068965，15/15纯例绑定最终字节，未改fixture/产品/promotion/旧断言。单child START 2026-10-07T20:34:06.444858+00:00 → FULLRETURN 2026-10-07T20:34:06.594010+00:00，监督145ms/raw114B/finalabsent/MERGED EOF/同身份TMP exactENOENT，无secondary/signals。新完整floor16,620,257,280来自canonical20:33:09.724加本段4MiB一次，free19,277,475,840；0真实PG/HTTP/provider。原1P2修复交独审，owner不自行宣称审查关闭；runtime与CLOSEDpermit更新，原raw冻结。提交push后全STOP/0待launch，claimv1保留，原03/04未完成。
 
 2026-10-07T20:39:04.877196+00:00：新3min/64KiB metadata-only收口，fresh347209c=origin clean；归档db20:37:05 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0剩余P1/P2。原15pure与源103232ee、runtime834873…0381、closed-permit/raw完全不改；SOURCE_PREPARATION_APPROVED。唯一候选[pg-ready](../../docs/evidence/s01q01-paused-queue/pg-ready.md)复用固定manifest，实际仍CLOSED/NOT_RUN，新actual输入/namespace未创建。最终交付消息给literal新packetHEAD供future许可绑定，不做自引用提交。原任务03/04保持开放，main未集成；commit/push后STOP/0待launch，claimv1保留。
+
+2026-10-07T21:04:52.098180+00:00：D01唯一OPEN Q01-PAUSED-QUEUE-PG-20261007-ONCE已消费，fixed46912/input834873不变。actual entry origin2026-10-07T21:03:03.511Z；operatorPID83753/child83774；监督2867ms，receipt前2944ms，完整回执确认RETURN21:03:18Z（不把推算当实际end）。原两个精确业务用例passed，32未选skipped；caller只排pending导致原testPassed=false/exit1，此FAIL不改不重跑。DB identityOID1352368/owner/marker吻合、connections0/普通DROP absent/adminclosed，listener门禁与全部owner关闭确认，TMP exactENOENT/无pending。HTTP76/27448B，DBsamples7602703/12516375/12770327，非峰值。唯一结果[interpretation](../../docs/evidence/s01q01-paused-queue/pg-run-4799eda499494ac79f211b89ead71ea8/interpretation.json)与原件manifest；post284/36bindings一致。source/pure review与实际结果分开，main未集成/完整任务未完成，STOP无新launch。
+
+| 等待/阶段 | 实际起点与来源 | 实际终点与来源 | 限定 |
+| --- | --- | --- | --- |
+| 本次共享窗口等待 | 2026-10-07T20:39:15Z READY/STOP消息 | 2026-10-07T21:03:03.511Z entry owner.startMs | 仅此次实际事件，不重置原任务start；等待/计算/修复/review重叠不简单相加 |
+| 本次真实验证 | 2026-10-07T21:03:03.511Z owner.startMs | 2026-10-07T21:03:18Z 完整原件已读确认RETURN | 精确过程时长以OPS14/receipt字段为准；非用commit/mtime推断end |

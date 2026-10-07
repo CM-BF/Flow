@@ -1,0 +1,16 @@
+{
+  "state": "OPEN",
+  "reviewed": true,
+  "totalSeconds": 140,
+  "testNames": [
+    "skips more than a default batch of paused queues without rotating them and scans again after explicit resume",
+    "keeps pause CAS authoritative when a candidate scan races promotion"
+  ],
+  "expiresEpoch": 1791407163.41569,
+  "head": "46912dfdf1fcdaa17484809b21b55e216ab83b95",
+  "window": "4799eda499494ac79f211b89ead71ea8",
+  "recordName": "pg-run-4799eda499494ac79f211b89ead71ea8",
+  "inputSha256": "834873779db710e402bd4a1807a4801d1118378720312dedfc2dce994b500381",
+  "requiredFreeBytes": 19201916928,
+  "logicalId": "Q01-PAUSED-QUEUE-PG-20261007-ONCE"
+}
