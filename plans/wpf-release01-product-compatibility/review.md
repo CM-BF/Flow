@@ -6,7 +6,9 @@ Review target commit：8964dc1185f62ed8934c15416e9798929359ab89
 
 范围：apps/web/test/web-release-compatibility.fixture.ts、apps/web/test/web-release-compatibility.browser.ts。
 
-[固定源码与输入](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)、[接口/生命周期差量](../../docs/evidence/wpf-release01/recovery-cookie/README.md)及[必要局部提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)与[strict实际](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)经[root独立审查](../../docs/evidence/wpf-release01/recovery-cookie/root-source-local-review.json)正式 APPROVED_SCOPED_SOURCE_AND_NECESSARY_TYPES_ONLY，0 findings。旧三份兼容证据不迁移到7272新后台；新descriptor尚未供给。browser/immutable compatibility NOT_RUN，新主线接收及用户可见发布未完成。
+[固定源码与输入](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)、[接口/生命周期差量](../../docs/evidence/wpf-release01/recovery-cookie/README.md)及[必要局部提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)与[strict实际](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)经[root独立审查](../../docs/evidence/wpf-release01/recovery-cookie/root-source-local-review.json)正式 APPROVED_SCOPED_SOURCE_AND_NECESSARY_TYPES_ONLY，0 findings。旧三份兼容证据不迁移到后继新后台；新descriptor尚未供给。browser/immutable compatibility NOT_RUN，新主线接收及用户可见发布未完成。
+
+当前供给政策：[请求](../../docs/evidence/wpf-release01/recovery-cookie/supply-request.json)已按Original新授权接受经正式审定的04da/6c最小后台候选，不再强制7272共源；该候选源审/新artifact与必要Web草稿小修审查仍待。本页8964批准只覆盖既有两harness/strict，不批准04da、b924或新的精确pair。两个descriptor继续NULL，运行与发布均未授权。
 
 ## 历史：9658 三保留 App 兼容性批准及 main 接收
 

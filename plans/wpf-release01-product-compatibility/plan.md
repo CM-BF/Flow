@@ -47,7 +47,7 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 
 ## 当前：新版Cookie网页后继（2026-10-07）
 
-- [x] RELEASE01-07 在原fixture/browser显式加入固定7272新版App，Cookie连接/刷新恢复/原key ACK与迟到logout真实HTTP链；保旧3App/Bearer及4check。
+- [x] RELEASE01-07 在原fixture/browser加入首固定7272新版App入口（后继精确pair供给规则见请求），Cookie连接/刷新恢复/原key ACK与迟到logout真实HTTP链；保旧3App/Bearer及4check。
 - [ ] RELEASE01-08 原发布owner供给新Web与后台descriptor，合法有界实际与集中独审后由其发布；不借旧tuple/PASS。
 
 [已审只读设计](../../docs/evidence/wpf-release01/recovery-cookie/design-input.json)。旧3报告必须对新backend/context重新产生；新App不伪为Bearer。仅原4scope，0产品检查/PG/Chrome/build/install，缺产物失败关闭。
@@ -55,3 +55,5 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 本后继首固定源码8964dc1185f62ed8934c15416e9798929359ab89；RELEASE01-07仅源码完成，必要strict已单次通过，root集中限定源码/局部实际审查已APPROVED，故RELEASE01-07完成。结构与数据输入见[本段入口](../../docs/evidence/wpf-release01/recovery-cookie/README.md)。
 
 当前后继源/strict独审见[原件](../../docs/evidence/wpf-release01/recovery-cookie/root-source-local-review.json)。RELEASE01-08仍未完成；[明确供应字段](../../docs/evidence/wpf-release01/recovery-cookie/supply-request.json)由Original提供，后续实际再独立验收，不视为发布完成。
+
+当前供给决策校准：Original 已授权独立 SVC06B / 6c-base `04da80692e79e2b7c3f6341c7fa76515a3f719a3`，仍待正式源审与artifact。RELEASE01-08以已审lateLogout合同和真实固定pair为准，不再要求7272共源；必要共享draft保护小修待审，不捆绑整个MSG03/Plugin。两个descriptor=NULL，8964现有guard不在本metadata批改写。

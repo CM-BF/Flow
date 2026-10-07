@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T13:23:11.892Z |
+| 最近更新时间 | 2026-10-07T14:16:15.530Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -20,8 +20,8 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 新版会话网页验收源码与必要类型检查已独立批准；真实新产物兼容尚待执行 |
-| 下一可用交付 | 原发布负责人供应7272共源新Web/backend descriptor，再形成实际兼容输入 |
-| 当前阻塞 | ACTIVE: 新Web及含迟到退出修复的后台不可变产物尚待原发布负责人供应；独立源码准备可继续 |
+| 下一可用交付 | 原发布负责人审定修正后台与必要新网页，供齐两份不可变产物后形成兼容输入 |
+| 当前阻塞 | ACTIVE: 已授权最小后台组合尚待正式源审与产物，新网页必要草稿保护仍待审；两份不可变产物均未供给 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：APPROVED 8964dc1185f62ed8934c15416e9798929359ab89，仅源码+必要strict；browser NOT_RUN |
 | 任务开工时间 | UNKNOWN |
@@ -45,7 +45,7 @@
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
 | RELEASE01-W01 | UNKNOWN | 2026-10-07T11:15:10.520Z | 接口 | 原发布负责人供应最终后台source/artifact与公开会话策略；本次已核齐解除，历史起点未知 | [后台tuple](../../docs/evidence/wpf-release01/fixed-origin/final-backend-tuple-root.json)、[公开设置](../../docs/evidence/wpf-release01/fixed-origin/public-settings-supply-root.json) |
-| RELEASE01-W02 | UNKNOWN | OPEN | 产物供给 | 原发布owner提供固定7272新Web与后台descriptor及实际输入后解除；仅阻actual，不阻源码准备 | [固定后继输入](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json) |
+| RELEASE01-W02 | UNKNOWN | OPEN | 产物供给 | 原发布owner供齐审定的新Web与含lateLogout合同后台descriptor后解除；可采用正式审定04da/6c组合，不再要求同源7272；仅阻actual | [固定后继输入](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json) |
 
 ## 边界与交接
 
@@ -99,8 +99,12 @@ owned Chrome/HTTP proxy/backend生命周期caller与完整输入现已形成固�
 
 ## 当前后继源码安全点
 
-[8964dc1 两harness接口与边界](../../docs/evidence/wpf-release01/recovery-cookie/README.md)已固定。旧三App/Bearer与四check保留，新入口只接显式7272新Web/backend；缺供给在fixture启动前拒绝，不fallback6c/7d1。新增真实Cookie刷新恢复、持久原key重试及延迟原logout响应headers后重连链，strict/noEmit单次已通过，浏览器尚未运行，不能据源码或类型检查宣称compat通过。领取原件、来源pins、clean-code记录及20s局部提案在同目录；新增strict-only局部实际1125ms已清理封账；无heavy预约或旧预算迁移。
+[8964dc1 两harness接口与边界](../../docs/evidence/wpf-release01/recovery-cookie/README.md)已固定。旧三App/Bearer与四check保留，固定8964入口目前仍只接显式7272新Web/backend；这是待新pair供齐后窄改的既有断言，不是当前供给必须共源的约束。缺供给仍在fixture启动前拒绝，不fallback未修正6c/7d1。新增真实Cookie刷新恢复、持久原key重试及延迟原logout响应headers后重连链，strict/noEmit单次已通过，浏览器尚未运行，不能据源码或类型检查宣称compat通过。领取原件、来源pins、clean-code记录及20s局部提案在同目录；新增strict-only局部实际1125ms已清理封账；无heavy预约或旧预算迁移。
 
 ## 当前独立源码与局部实际审查收口
 
-Root 对固定8964两harness与唯一strict实际作正式限定APPROVED、0 findings，原件已逐字归档。类型检查1,125ms/20s CLOSED、双EOF与owned清理已独立接受；未用18,875ms不转credit。四App对7272新后台的真实兼容仍NOT_RUN，main/用户可见发布未完成；旧3App各4项报告必须重绑同一新backend/context，不能复用旧6c报告填新结论。新Web+修正backend的最小明确供给请求交d01/Original，descriptor为空不fallback。正常metadata push/clean后全四scope STOP，claim27c36v1保留；无heavy预约。
+Root 对固定8964两harness与唯一strict实际作正式限定APPROVED、0 findings，原件已逐字归档。类型检查1,125ms/20s CLOSED、双EOF与owned清理已独立接受；未用18,875ms不转credit。四App对最终审定新后台的真实兼容仍NOT_RUN，main/用户可见发布未完成；旧3App各4项报告必须重绑同一新backend/context，不能复用旧6c报告填新结论。新Web+修正backend的最小明确供给请求交d01/Original，descriptor为空不fallback。正常metadata push/clean后全四scope STOP，claim27c36v1保留；无heavy预约。
+
+## 当前供给请求校准：允许独立审定的最小后台组合
+
+2026-10-07T14:16:15.530Z：Original 已明确授权 SVC06B / 6c 基底的 `04da80692e79e2b7c3f6341c7fa76515a3f719a3` 候选；正式源审与新artifact仍未到。必需的是已审 lateLogout 公共合同，不再硬绑 Web/backend 同源7272。[校准请求](../../docs/evidence/wpf-release01/recovery-cookie/supply-request.json)保留两个 descriptor=NULL，并明确8964输入断言待真实pair到齐后才改。MSG共享draft必要小修仍待root审，不宣称b924获批，也不捆绑全MSG/Plugin。原8964源码/strict批准、旧报告及失败不变；本批仅metadata/text/link核对，无工程运行或资源预约。正常push/clean后原四scope STOP，claim27c v1保留。

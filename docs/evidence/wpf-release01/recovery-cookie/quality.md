@@ -18,3 +18,7 @@
 待独审：新actor顺序、持久草稿/原key回收、lateLogout持有生命周期、四App报告绑定与未来ownedcaller。待实际：全部新旅程、所有运行清理、有效Web/backend descriptor、容量和完整输入闭包。当前无尚未说明的产品PASS。
 
 正式收口安全点 2026-10-07T13:23:11.892Z：按本地clean-code核本批仅原件/当前状态/供给接口记录，无产品变动、无重复工程检查。Root固定源码与必要types审0 findings原样归档；检查、独审、main和发布四层分离，历史失败及原raw不改。
+
+## 2026-10-07T14:16:15.530Z 供给政策 metadata 校准
+
+复用本地find-skills/clean-code。核原claim exact4/owner/branch/clean/无overlap后，仅校准供给决策与当前状态：接受Original正式审定04da/6c候选，保8964旧guard事实与两个空descriptor。发现并修正旧共源硬绑定描述；候选授权/源码批准/产物/实际严格分层。无产品改写、types/browser/PG/Chrome/HTTP/容量采样；纯文本、相对链接与Git diff核对结果见supply-calibration-checks.json。

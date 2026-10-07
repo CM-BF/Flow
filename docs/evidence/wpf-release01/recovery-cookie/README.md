@@ -2,9 +2,9 @@
 
 固定实现 `8964dc1185f62ed8934c15416e9798929359ab89`，只有原 fixture/browser 两文件变化。新 claim `27c36b97-162d-45e0-9150-25269d3d3f34 v1` 已原子 COMMITTED；[领取原件](claim-receipt.json)和[请求](claim-request.json)固定。旧38b9释放及原9658/c3/main交付不回改。[前状态原件](previous-status.md)保留。当前strict已单次通过，root源码与必要局部检查独审APPROVED；真实兼容仍未完成，不继承历史绿结果。
 
-## 显式入口与尚缺输入
+## 固定8964入口事实与当前供给政策
 
-`runRecoveryReleaseCompatibility(RecoveryAdmission, adminUrl, OwnedBrowserLifetime)` 是新入口；原 `runReleaseCompatibility` 仍只做三 retained App。新入口要求新 Web 和后台的 sourceHead 都为 `7272151bb1e3e59e08937dca44949dcdeb42f009`，新 Web descriptor/manifest/namespace 必须真实供给。空输入或旧6c后台在启动 fixture 前拒绝，不填占位 artifactId、不 fallback、不重建。规范公开 context/policy 沿原真实供给；原发布者若采用不同共源候选须明确重新固定，不能暗中追 moving main。
+`runRecoveryReleaseCompatibility(RecoveryAdmission, adminUrl, OwnedBrowserLifetime)` 是新入口；原 `runReleaseCompatibility` 仍只做三 retained App。新入口要求新 Web 和后台的 sourceHead 都为 `7272151bb1e3e59e08937dca44949dcdeb42f009`，新 Web descriptor/manifest/namespace 必须真实供给。空输入或旧6c后台在启动 fixture 前拒绝，不填占位 artifactId、不 fallback、不重建。规范公开 context/policy 沿原真实供给。上述为已审8964代码现状；Original新授权独立04da/6c后端组合，供给不再强制同源7272。待真实Web/backend pair及各自正式审查到齐，才最窄更新该guard/caller绑定；本批不改或绕过输入断言，不追moving main。
 
 前三个 App 保持原 immutable 身份和原生 Bearer 旅程；第四个是真实新版 App，通过其连接页建立 HttpOnly Cookie。每个 App 仍只有既有 read/send/same-key-recover/negotiation 四项报告，绑定同一新后台与 context。format1 retained manifest 仍没有 releaseId；报告format2不为它补造身份。四App完成且 Chrome/HTTP/markedDB 清理成功后才导入公共报告 codec。当前没有第四报告或任何新实际证据。
 
@@ -35,3 +35,7 @@
 ## 正式独审与下一供给
 
 [Root原件](root-source-local-review.json)固定8964两source和本次strict实际，decision为APPROVED_SCOPED_SOURCE_AND_NECESSARY_TYPES_ONLY，0 findings；不是browser或发布批准。[最小供给请求](supply-request.json)给d01/Original，当前两个descriptor均未提供。正常metadata封存后全四scope STOP，claim保留，不重复strict/旧source研究。
+
+## 供给校准记录
+
+见[supply-request](supply-request.json)、[原请求历史](supply-request-before-04da.json)及[校准与质量记录](supply-calibration.json)。04da候选包含3个server产品/测试文件62增6删，另78行fixture-cleanup支持档案；授权候选不等正式源审或artifact。新Web只纳必需且获批的完整草稿保护delta；b924目前待root审，不能先记批准。两个descriptor均NULL，无gate或运行。
