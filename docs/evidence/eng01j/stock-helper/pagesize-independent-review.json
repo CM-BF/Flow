@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-07T05:58:47.805722+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "2a1224af8d86979a3ebd08ce7b69d028a7572ca0",
+  "result": "e777d45ba022244d14cc7da02d23f1e5723e4b09",
+  "delivery": "4f15ee1bf2c714d343cd8eedcf521029b2dd04a2",
+  "manifestSha256": "4349dc4bf8e603a95e7f442be846f0ec146be75e235e65d5617bc87efd6ef27f",
+  "conclusion": "APPROVED_LIMITED_NEGATIVE_MECHANISM_RESULT",
+  "findings": [],
+  "verified": {
+    "fixedAndCurrentBindings": 73,
+    "installedEntries": 4,
+    "completeRunDeltaRead": true,
+    "CControlAndCheckpointRead": true
+  },
+  "actual": {
+    "elapsedMs": 1043,
+    "outerExit": 1,
+    "CObservations": 2,
+    "nativeHelpers": 0,
+    "rawBytes": 2110,
+    "groupsAbsent": 4,
+    "dualEOF": true,
+    "checkpointBeforeExactCleanup": true
+  },
+  "limitations": [
+    "One exact hw.pagesize rule did not restore sysconf/getpagesize in either controlled process; root cause and matching platform name unknown.",
+    "No new provider/app-server, no production policy change or write grant; all-writer closure remains open.",
+    "Installed entries/settings are not full compiler/SDK payload attestation."
+  ],
+  "reviewerRuns": 0
+}

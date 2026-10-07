@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T05:54:45.592407+00:00 |
+| 最近更新 | 2026-10-07T06:03:49.145460+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -13,7 +13,7 @@
 | 工作基线 / HEAD | ee98e65c147cf2ef28ccf0f519952f60d56e9d4b / 产品 471b1d8b7b19d53e7c7e87efc525e9c193c5242e，R1仅两专测修复，生产三源保持原固定 |
 | 工作树dirty状态 | 本提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | planning |
 | 实现目标 | 471b1d8b7b19d53e7c7e87efc525e9c193c5242e |
 | 实现范围 | apps/runner/src/engineering/native-authority.ts, apps/runner/src/engineering/native-authority.test.ts, apps/runner/src/engineering/native-authority-darwin.ts, apps/runner/src/engineering/native-authority-darwin.test.ts, apps/runner/src/engineering/fixtures/native-authority-canary.c |
 | 检查状态 | PASSED 471b1d8b7b19d53e7c7e87efc525e9c193c5242e；4个不同局部检查分轮；R1正常1pass/3skip、显式4/4、focused types0；syscall继承FD缺口保留；[原始记录](../../docs/evidence/eng01j/local/README.md) |
@@ -23,9 +23,9 @@
 | 任务时间来源 | 原子take 2026-10-07T05:06:16.785Z后本owner开始首合同/源码工作，以上为当次记录时间 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 受限启动层已进入主线；辅助进程启动失败与页大小对照已固定，资源均已收尾 |
-| 下一可用交付 | 依据已保存的反例确定原生启动所需的最小条件，完整工程写入仍未通过 |
-| 当前阻塞 | ACTIVE: 原生初始化尚未通过；单一页大小只读许可未恢复查询，具体原因与正确最小许可仍未确定 |
+| 当前产出 | 受限启动层已进入主线；原失败与对照结果已完成限定审查，现已找到可复用的原生启动正例 |
+| 下一可用交付 | 复用已有可启动组合，明确文件工具和全部写入者停止的最小接线方案 |
+| 当前阻塞 | ACTIVE: 已有受限原生初始化正例，但工程文件工具兼容与全部写入者停止尚未闭合，完整工程写入未通过 |
 | 需用户决定 | NONE |
 | Review | APPROVED [review.md](review.md)；限定Darwin启动/R06机制，真实native工具兼容另验 |
 | Claim | b575e07c-483b-4a4e-824e-6dc54e6469e4 v1 active，七literal |
@@ -37,7 +37,7 @@
 | ENG01J-02 | completed | native_center_owner | [真实syscall与FD限制](../../docs/evidence/eng01j/local/README.md)，不推断全IPC |
 | ENG01J-03 | completed | native_center_owner | [实际启动Interface](../../docs/evidence/eng01j/interface.md)，R06直接4例；完整生产grant未实现 |
 | ENG01J-04 | completed | native_center_owner | [限定独审](../../docs/evidence/eng01j/r1-re-review.json)；main bf8b已接，无新测试 |
-| ENG01J-05 | in-progress | native_center_owner | [stock helper真实结果](../../docs/evidence/eng01j/stock-helper/fd-fix-analysis.json)，FD对照通过/原生初始化中止，待限定审查 |
+| ENG01J-05 | in-progress | native_center_owner | [只读收敛方案](../../docs/evidence/eng01j/stock-helper/convergence.md)，原失败与单名负例已获限定审查；真实FS helper/完整authority仍开放 |
 
 继承I真实零provider组合已main，但不能提供模型身份或OS停止证明。本片不重复Mika Node/Codex诊断；tiny C只测OS行为，不充当模型写改。
 
@@ -67,3 +67,5 @@ helper一次段结束 2026-10-07T05:42:51.508674+00:00，263ms/outer1/两组abse
 2026-10-07T05:53:02.370229+00:00：两轮结果获独立APPROVED_RESULT_FIDELITY_FAILED_NATIVE_STARTUP，只确认原失败/清理保真。Lead授权原evidence新15秒页大小只读对照段，若对照不成立/首stock失败即停；原5产品不改，仍无真实app-server/writeAuthority验收。
 
 单许可对照2026-10-07T05:53:45.468385+00:00→2026-10-07T05:53:46.510688+00:00：1043ms/outer1，2个C观察均仍EPERM，机制前提不成立；native0/PG0/provider0，4组absent/双EOF/目录已正常清理。原政策与5生产源均保持；[固定分析](../../docs/evidence/eng01j/stock-helper/pagesize-analysis.json)。新结果待限定独审，无自动扩大许可或重跑。
+
+2026-10-07T06:03:49.145460+00:00：页大小结果获[APPROVED_LIMITED_NEGATIVE_MECHANISM_RESULT](../../docs/evidence/eng01j/stock-helper/pagesize-independent-review.json)，I02主线5cae7a25；73固定+4入口、2C/0helper及原清理已核，0复跑。此负例与Mika早期同类负例重叠，不再逐名加许可。复用其result9b9c1182已获审initialize/catalog正事实完成[一页收敛](../../docs/evidence/eng01j/stock-helper/convergence.md)；本次仅读固定源码与归档，不启动运行。原五产品与所有raw/manifest不改，下一产品改动需明确固定recipe/终止域输入。

@@ -11,4 +11,4 @@
 
 遵循根AGENTS模块化、时间与局部连续迭代规则。预算累计≤30s/新raw+私有资源≤2MiB，0PG/Chrome/provider/个人服务；本队local开始/实际清理归还一次通知。未知资源KEEP，不凭group或child close授权后续检查。
 
-- [ ] ENG01J-05：按[stock helper最小候选](../../docs/evidence/eng01j/stock-helper-candidate.md)核实际内部参数/受限文件操作；目前PREPARATION_ONLY，不自动启动binary或扩权限。
+- [ ] ENG01J-05：按[stock helper最小候选](../../docs/evidence/eng01j/stock-helper-candidate.md)核实际内部参数/受限文件操作；原段已失败并获限定结果审查，转[既有启动正例收敛](../../docs/evidence/eng01j/stock-helper/convergence.md)。不重复model/list或单名页大小负例，不自动扩权限。
