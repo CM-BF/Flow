@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T08:38:29.810Z |
+| 最近更新 | 2026-10-07T08:45:28.873Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -11,23 +11,23 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance |
 | Branch | codex/continuous-native-goal-acceptance |
 | 基线 | 当前验收f5a13cbed6b75151f34e6924ec7e10c8894acf48；原8bd为历史基线 |
-| HEAD | 输入c10f0d6b，实验差量343bd436；旧4ae修复/证据保留 |
-| Claim | f72ba7c9-52e9-4037-aed0-27af9ed1aae6 v1 active；三literal，18:16:25.736 UTC取得 |
-| 工作分支状态 | in-progress |
+| HEAD | 697e2b27 已审运行交付；本次仅审查/main收口metadata |
+| Claim | f72ba7c9-52e9-4037-aed0-27af9ed1aae6 v1，本次metadata提交后原子release三literal；全源已停止写入，实时结果以账本为准 |
+| 工作分支状态 | delivered |
 | 检查状态 | 原PG1选中/0通过/1失败保持；原26准备不重跑；当前main加载1/1；新PG R1 1/1 outer0/9839ms，正常DROP/目录removed/3组+watchdog absent，0provider |
-| Review | 当前main准备 APPROVED_CURRENT_MAIN_PREPARATION，I02 882f0ada；新零模型PG结果待独立结果审查 |
+| Review | APPROVED_ZERO_MODEL_PUBLIC_JOURNEY，I02 b768；354绑定、1/1原件与正常清理；0 reviewer重跑 |
 | 实现目标 | 343bd43691a5a179d256a2229a4db856d869a267；4ae旅程行为保持，精确主线输入差量 |
 | 实现范围 | experiments/continuous-goal-acceptance |
-| 已集成main状态 | 原准备已main aca6/固定f5a输入；当前343两实验源差量与新PG R1结果待独审/主线接收。 |
+| 已集成main状态 | b7687ff3b33d538e2b41e05ec849f670d9b9d8bb main/origin clean/pushed；42 own路径对697逐字相同，原产品f5a不变；0重测 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 新的零模型目标旅程已跑通：完整输入确认、两项依赖执行、固定产物与单独接受都有公开记录；本轮资源已清理。 |
-| 下一可用交付 | 独立审查并接收本轮完整旅程证据；真实模型规划与语义验收仍是后续阶段。 |
-| 当前阻塞 | ACTIVE: 本轮零模型结果等待独立审查；真实模型阶段仍未授权，旧失败资源继续保留。 |
+| 当前产出 | 零模型公开目标旅程已独审并进入主线，包含输入确认、依赖执行、固定产物、单独接受与正常清理。 |
+| 下一可用交付 | 本片段已交付；真实模型规划与语义验收属于尚未授权的后续阶段。 |
+| 当前阻塞 | NONE；零模型片段已交付。真实native/恢复连续性未完成，历史失败资源仍保留。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -36,7 +36,7 @@
 | O16-02 | completed | native_center_owner | phase/assignment/query入口及合同/持久记录共25不同检查；无SDK query/auth；固定准备源已独立APPROVED |
 | O16-03 | completed | native_center_owner | 当前main公开组合新PG R1 1/1；proposal→owner确认→两依赖执行→独立synthetic接受，原失败保留；真实native语义留O16-06 |
 | O16-04 | completed | native_center_owner | 原26不同准备分轮/加载1/1保留；新namespace PG R1 1/1与正常清理；无SDK query，原PG red/KEEP未动 |
-| O16-05 | in-progress | native_center_owner | 固定manifest与准备独审已归档；实际PG首次red；CAS修复4ae源码独审通过；新增纯例1/1通过，准备片已独审并进main，最终旅程仍待；[原始记录](../../docs/evidence/o16/decision-cas-pure-run.json) |
+| O16-05 | completed | native_center_owner | 当前main准备与PG R1唯一独审APPROVED、42路径受控main b768；原FAIL/KEEP保留、真实模型留O16-06 |
 | O16-06 | pending | native_center_owner | 新模型预算未授，旧O08/O10封存；不影响零query准备 |
 
 架构影响：仅新增验收consumer，复用production主权模块；无新运行FSM/DDL/依赖。待固定target后ExecutionLead登记实验consumer，当前主线架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
@@ -63,3 +63,5 @@
 2026-10-07T08:35:06.043129+00:00：当前main准备独审已原样归档，334固定输入/39aliases/3runtime fresh一致，PG独占窗口已授；新的1选中旅程开始前记录已耐久，未复用旧许可。审查/窗口等待结束；见[current-main-pg-r1](../../docs/evidence/o16/current-main-pg-r1/operation-input.json)。
 
 2026-10-07T08:38:29.810Z：新独占窗口已完成并归还。1selected/1pass/outer0，独立接受的两条公开命令均ACK；原raw、固定artifact/version/CAS与清理见[current-main-pg-r1/RESULT](../../docs/evidence/o16/current-main-pg-r1/RESULT.md)。原FAIL/KEEP不改，实际模型/长程恢复/完整用户语义不升级；产品/实验源码本轮未变。
+
+2026-10-07T08:45:28.873Z：零模型片段正式收口，[main回执](../../docs/evidence/o16/current-main-receipt.json)42路径逐字核同、[独审原件](../../docs/evidence/o16/current-main-pg-r1/independent-review.json)如实归档。全实验/记录停止写入，commit/push后提交原claim release；未把O16-06、长期resume/compaction或旧KEEP处置勾成完成。顶层任务完成NOT_COMPLETED保持，因为原完整验收仍开放。
