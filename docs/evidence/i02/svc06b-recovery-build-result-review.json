@@ -1,0 +1,112 @@
+{
+  "at": "2026-10-07T21:16:53.374Z",
+  "decision": "APPROVED_LIMITED_FIXED_RECOVERY_ARTIFACT_BUILD_RESULT",
+  "reviewer": "native_center_owner / independent peer",
+  "fixedResult": "5938b9d647e459854a181e9fe08ee4024228da3a",
+  "manifest": {
+    "path": "docs/evidence/svc06/browser-recovery/recovery-build-result-manifest.json",
+    "bytes": 8892,
+    "sha256": "97bc6b32e26446d5d9293118a8542210bb2895c26c6768aedf35915709a52293"
+  },
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
+    "manifestDigest": "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
+    "sourceHead": "f37a3612068c7215994750574a7451ede841bcce"
+  },
+  "bindingsReview": {
+    "sourceCount": 9,
+    "sourceBytes": 67031,
+    "rawCount": 10,
+    "rawBytes": 18497,
+    "privateMetadata": 3,
+    "actualArtifactSourcePaths": 7,
+    "fullArtifactRehashedByReviewer": false
+  },
+  "actual": {
+    "start": "2026-10-07T21:14:03.021Z",
+    "return": "2026-10-07T21:14:43.322Z",
+    "elapsedMs": 32675,
+    "exit": 0,
+    "group": 11460,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "firstFailure": null,
+    "signals": [],
+    "initialEPERM": "unknown observation preserved; two final absent observations",
+    "sqlFilesVerified": 33,
+    "logicalFileBytes": 363874679,
+    "withManifestBytes": 367071466,
+    "inventoryEntries": 15629,
+    "nodeImages": 20,
+    "physicalPeak": "NOT_MEASURED_SHARED_FILESYSTEM_SAMPLES_ONLY"
+  },
+  "blockingFindings": [],
+  "receiptScope": "Only 11 fixed result/manifest originals received; execution recipe remains its pushed fixed Git source, no duplicate source snapshots.",
+  "received": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-result-manifest.json",
+      "bytes": 8892,
+      "sha256": "97bc6b32e26446d5d9293118a8542210bb2895c26c6768aedf35915709a52293"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-actual-admission.json",
+      "bytes": 3664,
+      "sha256": "ac4cc3c29aac6bb9b674ecc76124f5db8dbb93d817c981a091e8901e2e0dde3a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-return.json",
+      "bytes": 592,
+      "sha256": "850ee834952a8f9f4a2eff153a7b17ba997971ee0ef6a9790c26587f026a3595"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/build-record.json",
+      "bytes": 806,
+      "sha256": "0faa2f8ba995f0190316e7cddca08f2ab888aa1b5335e57bf24bb234f34bb54c"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/imports.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/imports.stdout",
+      "bytes": 2409,
+      "sha256": "f90538e257c29fb29a581e5e1bab03f377f4e231616e6453ddfa64a044e23af8"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/owned-root.json",
+      "bytes": 166,
+      "sha256": "ac3480379c62da3a0e11a2c34ac980a9e78aa0a5ddf0cc7d0c557d006046cca1"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/reservation.json",
+      "bytes": 187,
+      "sha256": "e654481916283dc02e62bc6e220bc03d1323be14daa2a3c3a6b9fb7b4fd94811"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/result-descriptor.json",
+      "bytes": 275,
+      "sha256": "25507b72d8385d5d279c35093ef27bc0273ad8920795369b137e51cf673b6e6e"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/actual-first/result.json",
+      "bytes": 5117,
+      "sha256": "63c04362be43d56c7d330ec1bbe918ac53c843270eec9163ddbb9dffea90f1c5"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-once/outer-report.json",
+      "bytes": 5281,
+      "sha256": "ba316e3a0dfbbd50739fc6356c9817cec49e5152f234988c58a12b22f4e59ba9"
+    }
+  ],
+  "limits": [
+    "Fixed artifact build and internal resolution/import only; no cold host or App compatibility or personal recovery.",
+    "Personal roles remain stopped and same maintenance v23 held.",
+    "Initial local unknown 8519680B forward allowance remains; this build RETURN does not erase it.",
+    "Zero repeated build/import/test/provider/personal operation by reviewer or integrator."
+  ]
+}

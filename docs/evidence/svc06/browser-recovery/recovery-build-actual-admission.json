@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-07T21:14:03.021Z",
+  "state": "ACTUAL_START",
+  "preparationSha256": "b953432dcd23b94b11c6821ff05c6b5cd32a8a2cc8bfd18cab387f5afd39dd84",
+  "source": "8a0c2739ff6d141731efb7d5d685d2293ad3a434",
+  "delivery": "cb263ba616a399f52235fe37d42add9a55a956f1",
+  "artifactSource": "f37a3612068c7215994750574a7451ede841bcce",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/runner/src/main.ts",
+      "apps/runner/src/runtime-initialization.test.ts",
+      "apps/runner/src/runtime.ts",
+      "docs/evidence/svc05-history-compatibility/release-operation/admission-preservation.test.mjs",
+      "docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs",
+      "docs/evidence/svc06/browser-recovery",
+      "docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
+      "plans/svc06-browser-recovery",
+      "tools/personal-preview/backend-release/host.mjs",
+      "tools/personal-preview/backend-release/runtime.test.mjs",
+      "tools/personal-preview/preview.mjs",
+      "tools/personal-preview/preview.test.mjs",
+      "tools/personal-preview/startup-diagnostics.mjs",
+      "tools/personal-preview/startup-diagnostics.test.mjs"
+    ],
+    "state": "active",
+    "branch": "codex/backend-browser-recovery",
+    "origin": "new",
+    "taskId": "SVC06B",
+    "worker": "assignment_review",
+    "claimId": "95f47f5c-7256-44f5-b97b-c20b6756a2cc",
+    "version": 8,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+    "createdAt": "2026-10-07T14:08:10.726Z",
+    "updatedAt": "2026-10-07T20:34:55.940Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "queue": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
+    "sha256": "6a965072cac9672a8448350d120db050368a74334ac0639fe090ce70055fb8c3",
+    "grant": {
+      "logicalId": "SVC06B-FIXED-RECOVERY-BUILD-20261007-ONCE",
+      "state": "UNIQUE_NEXT_NOT_STARTED",
+      "at": "2026-10-07T21:11:17.880Z",
+      "operator": "Original assignment_review",
+      "source": "8a0c2739ff6d141731efb7d5d685d2293ad3a434",
+      "delivery": "cb263ba616a399f52235fe37d42add9a55a956f1",
+      "preparationSha256": "b953432dcd23b94b11c6821ff05c6b5cd32a8a2cc8bfd18cab387f5afd39dd84",
+      "targetRef": "codex/svc06b-recovery-runtime",
+      "targetCommit": "f37a3612068c7215994750574a7451ede841bcce",
+      "targetTree": "de843e0fda82600b4d7600c76614c9794c17e3af",
+      "newPeakBytes": 2317352960,
+      "minimumFreshFreeBytes": 18933678080,
+      "timeContract": "420s work + 0.5s TERM + 2s reap; raw2MiB; original fixed cleanup/native conditions retained",
+      "actualStart": null,
+      "permissions": "one fixed build only;0PG/Chrome/provider/personal; fresh exact pins/claim/unused namespace/free; failed preflight stops before launch; actual START and exact RETURN required; no retry or old budget reuse",
+      "prelaunchBoundary": "complete fresh+launch within4min of receipt; if not launched report exact0child/blocker before expiry; no second grant. Frozen floor until START or explicit stop. Already-authorized ordinary continues; unstarted new growth waits."
+    }
+  },
+  "freeBytes": 19234660352,
+  "requiredFreeBytes": 18933678080,
+  "firstUnknownForwardIncludedBytes": 8519680,
+  "checks": {
+    "fixedAndEvidence": 15,
+    "runtimeIncludingPrior": 23,
+    "source": 77,
+    "namespaceAbsent": true
+  },
+  "permissions": "one420s+.5TERM+2reap offline build/import;0PG/Chrome/provider/personal; no automatic retry"
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:13:17.959Z / main/origin b00b8b9b0；恢复构建准备已独审，实际产物与恢复尚待本段证据 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:16:53.374Z / main/origin ce9a0911e；固定恢复产物已构建并独审，冷启动/兼容/个人恢复仍未验 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main b00b8b9b0；本段只接收固定构建准备独审事实，不变产品 |
+| 工作基线 / HEAD | main ce9a0911e；本段只接11份已审构建结果原件与精简receipt，不变产品 |
 | 工作树dirty状态 | 自身状态及精简独审记录；两个原有未知__pycache__保留不纳入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 固定构建准备独审0阻塞；复用2Node+2Python局部原件，首轮未知保留；0重复工程检查 |
+| 检查状态 | 固定恢复产物真实构建32.675秒及内部加载已独审；33SQL/7修正源核同，未重复构建/工程检查 |
 | 已集成main状态 / HEAD | main b00b8b9b0已含启动/维护目标修正及冷启动helper审查；恢复构建源f37a为独立固定ref，个人三个服务仍停止 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
 | 当前产出 | 新版产物和旧页兼容报告已迁入，但服务刷新失败并已停止；当前个人入口不可用，原数据和发布指针保留。 |
-| 下一可用交付 | 先完成最小启动修正并恢复个人服务接单，再继续已验证的新页面发布。 |
+| 下一可用交付 | 恢复包已生成；下一步验证真实冷启动与新旧网页兼容，然后恢复个人服务接单并发布新版网页。 |
 | 当前阻塞 | ACTIVE: 个人入口仍停止；启动修正已独审，当前需完成固定恢复产物、隔离启动与网页兼容，再沿原维护操作恢复。 |
 | 需用户决定 | NONE |
 
@@ -526,3 +526,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-07T21:05:35.456Z：冷启动既有helper受限端口独审通过，[单份记录](../../docs/evidence/i02/svc09a-cold-helper-ports-review.json)绑定source4c0cbc/delivery9c900与18执行输入；7Node/3Python/4真实导入、193ms与精确收尾复用，不重复工程检查。薄caller和实际固定产物尚待，个人恢复未执行。
 
 2026-10-07T21:13:17.959Z：固定恢复构建准备由native_center_owner独立限定批准，0P1/P2；复用4项局部检查，首轮缺收尾证据保持UNKNOWN并保留8519680B后续潜在增长。唯一资源owner已选本构建为NEXT，执行结果另记，个人服务仍未恢复。[独审](../../docs/evidence/i02/svc06b-recovery-build-review.json)。
+
+2026-10-07T21:16:53.374Z：新恢复产物b692/sourcef37a实际构建已由native_center_owner限定独审，11份原件逐固定Git与当前canonical核同；32.675秒、组absent/双EOF、0服务/PG/provider/个人。原构建完整RETURN；冷启动和四App新tuple仍待验证，当前个人三服务停止事实不变。[结果独审](../../docs/evidence/i02/svc06b-recovery-build-result-review.json)。
