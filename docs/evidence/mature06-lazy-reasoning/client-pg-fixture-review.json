@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-07T08:49:40.627227+00:00",
+  "reviewer": "status_read/gpt-6-astra",
+  "source": "bfbcdd22df1b9c5a5f5cd01ba82ba99e09230690",
+  "path": "docs/evidence/mature02c02/pg-fixture.ts",
+  "verdict": "SOURCE_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "delta": "Only readClient parameter derives public ClientOptions; unchanged constructor, private bearer and lifecycle. Current local older baseline also lacks existing conversationClient; exact supplied blob includes that already present fixed helper, unused by this journey.",
+  "old": {
+    "bytes": 11829,
+    "sha256": "b2139d3673b771bfe84011fb06f9995aedb6358a51b756cf63fb8092ad18e330"
+  },
+  "new": {
+    "bytes": 12055,
+    "sha256": "283b854249cd6dc02d588728443b49155e9d5a137abda1d066e2ad0f34a08825"
+  },
+  "execution": "0 imports/tests/PG"
+}
