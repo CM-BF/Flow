@@ -1,0 +1,40 @@
+✖ initial bootstrap keeps real report guards and subsequent release CAS (5.485834ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 56.932834
+
+✖ failing tests:
+
+test at docs/evidence/svc06/diagnostics-host-bootstrap/bootstrap.test.mjs:13:1
+✖ initial bootstrap keeps real report guards and subsequent release CAS (5.485834ms)
+  AssertionError [ERR_ASSERTION]: Expected values to be strictly deep-equal:
+  + actual - expected
+  
+    Comparison {
+  +   code: 'ENOENT'
+  -   code: 'WEB_COMPATIBILITY_REQUIRED'
+    }
+  
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/diagnostics-host-bootstrap/bootstrap.test.mjs:24:5)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: true,
+    code: 'ERR_ASSERTION',
+    actual: Error: ENOENT: no such file or directory, scandir '/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc06-bootstrap-direct-local-rochraet/svc06-bootstrap-contract-pGA8et/web-compatibility'
+        at async readdir (node:internal/fs/promises:1661:18)
+        at async verifyWebCompatibility (file:///private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/web-release.mjs:82:22)
+        at async planWebRelease (file:///private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/web-release.mjs:179:5)
+        at async waitForActual (node:assert:646:5)
+        at async strict.rejects (node:assert:769:25)
+        at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/diagnostics-host-bootstrap/bootstrap.test.mjs:24:5)
+        at async Test.run (node:internal/test_runner/test:1404:7)
+        at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3),
+    expected: { code: 'WEB_COMPATIBILITY_REQUIRED' },
+    operator: 'rejects',
+    diff: 'simple'
+  }

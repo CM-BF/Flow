@@ -1,0 +1,544 @@
+{
+  "verdict": "FAIL_AT_RELEASE_FIXTURE_BOOTSTRAP_CLEANUP_CONFIRMED",
+  "recordedAt": "2026-10-07T10:27:59.283456+00:00",
+  "source": "6cd5a15c232210f7802482290b8f7b65318fd1ad",
+  "deliveryAtLaunch": "4a6fd46c721c37a019dd0b77bfd4fbcf0ebac146",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+  },
+  "primary": {
+    "name": "Error",
+    "code": "WEB_RELEASE_BOOTSTRAP_REQUIRED"
+  },
+  "lastCheckpoint": "start-default-off",
+  "provedBeforeFailure": [
+    "New artifact verified before and after own clone",
+    "Real af51 factory public create/replay/cancel; zero attempts/unfinished; old factory closed",
+    "All three roles ready from original startPreviewServices; default browser-session unsupported assertion passed",
+    "Recorded migrations1..27 and1..35; old representative-column snapshot equality and idle assertion reached before failing release plan (control-flow evidence, not separately stored after snapshot)"
+  ],
+  "notProved": [
+    "Original r1 runner first cause remains unknown; did not reproduce this run",
+    "Browser policy negative guards, refresh/resume, cookie/CSRF/logout",
+    "Three real App compatibility or personal adoption"
+  ],
+  "work": {
+    "startedAt": "2026-10-07T10:25:20.179Z",
+    "finishedAt": "2026-10-07T10:26:04.686Z",
+    "elapsedMs": 57759,
+    "exit": 1,
+    "pid": 37787,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "firstFailure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "cleanup": {
+    "startedAt": "2026-10-07T10:26:04.787Z",
+    "finishedAt": "2026-10-07T10:26:05.098Z",
+    "elapsedMs": 393,
+    "exit": 0,
+    "pid": 76776,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "workWriterAbsent": true,
+    "processes": {
+      "13e578ee-ac2e-47dc-a1c5-8cec84c6a7fe": {
+        "role": "web",
+        "pid": 63886,
+        "group": 63886,
+        "state": "stopped"
+      },
+      "59fe747f-79f7-431d-9051-189c0a46e311": {
+        "role": "runner",
+        "pid": 57417,
+        "group": 57417,
+        "state": "stopped"
+      },
+      "3e0fa664-633f-40b8-9eb9-1a7866f7f10d": {
+        "role": "center",
+        "pid": 50116,
+        "group": 50116,
+        "state": "stopped"
+      }
+    },
+    "exitRecords": {
+      "web": {
+        "at": "2026-10-07T10:26:04.814Z",
+        "nonce": "13e578ee-ac2e-47dc-a1c5-8cec84c6a7fe",
+        "code": 1,
+        "signal": null,
+        "stderr": {
+          "bytes": 0,
+          "observedBytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "truncated": false,
+          "complete": true
+        }
+      },
+      "runner": {
+        "at": "2026-10-07T10:26:04.856Z",
+        "nonce": "59fe747f-79f7-431d-9051-189c0a46e311",
+        "code": 0,
+        "signal": null,
+        "stderr": {
+          "bytes": 0,
+          "observedBytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "truncated": false,
+          "complete": true
+        }
+      },
+      "center": {
+        "at": "2026-10-07T10:26:04.932Z",
+        "nonce": "3e0fa664-633f-40b8-9eb9-1a7866f7f10d",
+        "code": 0,
+        "signal": null,
+        "stderr": {
+          "bytes": 0,
+          "observedBytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "truncated": false,
+          "complete": true
+        }
+      }
+    },
+    "database": "removed",
+    "databaseOid": 1282326,
+    "connections": {
+      "state": "empty",
+      "observations": [
+        {
+          "elapsedMs": 1.959875000000011,
+          "rows": []
+        }
+      ]
+    },
+    "remaining": [],
+    "failures": []
+  },
+  "startupObservation": "Work latest child-running, cleanup child-exit; center0/runner0/web1 only explicit stop observation; all stderr0B complete and matching hashes. Missing generation-before-refresh/generation2 remains partial-unknown; no invented old-run cause.",
+  "retention": "KEEP all original artifact/clone/private outputs and old failed runs; no retry or deletion",
+  "privateOriginals": [
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/reservation.json",
+      "bytes": 565,
+      "sha256": "f20341442ec352419bdf5cf4ec80fa6e706c9e0f20c1965a379487156a8120bb",
+      "dev": 16777234,
+      "ino": 124018540,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/clone-result.json",
+      "bytes": 419,
+      "sha256": "451b6ca024c126c62649c0b0a94774654fccaca6aadf6e2a28ac98e6c4b10e15",
+      "dev": 16777234,
+      "ino": 124034228,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/clone-verified.json",
+      "bytes": 387,
+      "sha256": "adce96acc78dc67f38209044675fd3ac1a66eb6278e56dd517bd22ac11495612",
+      "dev": 16777234,
+      "ino": 124034242,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-checkpoint.json",
+      "bytes": 935,
+      "sha256": "a44e84f76ccda2b7367debd11af477a546d110cc79c359752782a034d315008b",
+      "dev": 16777234,
+      "ino": 124034266,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-result.json",
+      "bytes": 4486,
+      "sha256": "2fa464bd79767a7cee3ab110b3e25db16caac3284ed8283f61c66021e6629a02",
+      "dev": 16777234,
+      "ino": 124034787,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-terminal.json",
+      "bytes": 362,
+      "sha256": "68ccf955d914becf85870ce4e043cd8181334455ae1d335208ab25b04d526922",
+      "dev": 16777234,
+      "ino": 124034788,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/cleanup-checkpoint.json",
+      "bytes": 4837,
+      "sha256": "ced5ed554c33ac474e322854cae6741a0c867aba5ef54cbe29681ef13152b502",
+      "dev": 16777234,
+      "ino": 124034796,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/cleanup-result.json",
+      "bytes": 4892,
+      "sha256": "0ac1e7e34be38fd334c6aeb21c491ea5b2a98226d1ce4e08ac5956891c5b1b85",
+      "dev": 16777234,
+      "ino": 124034797,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-startup-observation.json",
+      "bytes": 2319,
+      "sha256": "f7196b313585e3515de0a482486749e8b2ca0f9d13f839306305bd93a40dd198",
+      "dev": 16777234,
+      "ino": 124034786,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/cleanup-startup-observation.json",
+      "bytes": 2508,
+      "sha256": "c16ee3661917f6a6b1d6f6df5e6ac743232cb8d26fae2da6e02840598e281711",
+      "dev": 16777234,
+      "ino": 124034795,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/generation-1.json",
+      "bytes": 1596,
+      "sha256": "faebef0a8063368097be049bfa7350dbe18e7608217d8f2020e60212ddc183d3",
+      "dev": 16777234,
+      "ino": 124034759,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/history-before.json",
+      "bytes": 5719,
+      "sha256": "bcbf3062942f5ca27767b577f72e96d1432df334011cc9d4a2046d8c44c6ef60",
+      "dev": 16777234,
+      "ino": 124034250,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/state.json",
+      "bytes": 2208,
+      "sha256": "69aa343a251bf4817f502f79ec350dc711e4acfd3235586425d7fb6bc22b6504",
+      "dev": 16777234,
+      "ino": 124034750,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/config.json",
+      "bytes": 679,
+      "sha256": "25af0c124c34cff401d928a935d1052ada7fbf6e1fb65ac357a427efcd557281",
+      "dev": 16777234,
+      "ino": 124034504,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/claude.json",
+      "bytes": 174,
+      "sha256": "1711fb04c26bbf4be485350fd0d5efabe649493ce41f03a7e352be901c346c07",
+      "dev": 16777234,
+      "ino": 124034245,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/manifest.json",
+      "bytes": 3196606,
+      "sha256": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "dev": 16777234,
+      "ino": 124034227,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/center-exit.json",
+      "bytes": 253,
+      "sha256": "a2476c9a715509fc184413cb20914ef4376ca98a88d16654b7a44513b0fe2130",
+      "dev": 16777234,
+      "ino": 124034794,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/startup-diagnostics/center-3e0fa664-633f-40b8-9eb9-1a7866f7f10d.json",
+      "bytes": 322,
+      "sha256": "0bd45699e93263c66791bb69ea795b16e50ae3707c2a71a791591c7323846938",
+      "dev": 16777234,
+      "ino": 124034793,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/startup-diagnostics/center-3e0fa664-633f-40b8-9eb9-1a7866f7f10d.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dev": 16777234,
+      "ino": 124034282,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/runner-exit.json",
+      "bytes": 253,
+      "sha256": "547ecb1d6df0852962a8594833e30f9b8018a9053f39f112d6a3f31f582ce403",
+      "dev": 16777234,
+      "ino": 124034792,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/startup-diagnostics/runner-59fe747f-79f7-431d-9051-189c0a46e311.json",
+      "bytes": 322,
+      "sha256": "bf3d1ffba33b818f5d2dd60dd6c008e42542fccfee7588f91b34a4ecfe244a91",
+      "dev": 16777234,
+      "ino": 124034791,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/startup-diagnostics/runner-59fe747f-79f7-431d-9051-189c0a46e311.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dev": 16777234,
+      "ino": 124034605,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/web-exit.json",
+      "bytes": 253,
+      "sha256": "5263855ec735caba7a32b7edc5f11a30894690ece6aade8e85b5be2e8bd3de7a",
+      "dev": 16777234,
+      "ino": 124034790,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/startup-diagnostics/web-13e578ee-ac2e-47dc-a1c5-8cec84c6a7fe.json",
+      "bytes": 319,
+      "sha256": "999c603b6f2b5d9f459a06518627e02fa69c1c9294a9ba82f9c44f74d608e852",
+      "dev": 16777234,
+      "ino": 124034789,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/startup-diagnostics/web-13e578ee-ac2e-47dc-a1c5-8cec84c6a7fe.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dev": 16777234,
+      "ino": 124034712,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/NON_PRODUCTION_LOADER_FIXTURE/SCOPE.json",
+      "bytes": 199,
+      "sha256": "9ebe22b9f2112b539583cfda31c870c06563c5425e44dfa9fd31b2af31cd2dfd",
+      "dev": 16777234,
+      "ino": 124034761,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/NON_PRODUCTION_LOADER_FIXTURE/v1/report.json",
+      "bytes": 716,
+      "sha256": "6c58a1e0f9f0c146014190c205ac499881a3d3a90ebe9458ed987b7377761ec7",
+      "dev": 16777234,
+      "ino": 124034767,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/NON_PRODUCTION_LOADER_FIXTURE/v1/send.json",
+      "bytes": 240,
+      "sha256": "d9fe55bc18a5fdb136b25b8d9b5f455d9a50ecdfc373eb269b9f1651574dd4f2",
+      "dev": 16777234,
+      "ino": 124034764,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/NON_PRODUCTION_LOADER_FIXTURE/v1/negotiation.json",
+      "bytes": 266,
+      "sha256": "6e70b427246e656f80daeb2f491b48a117514c0e952a4ded058fe130c3de46b3",
+      "dev": 16777234,
+      "ino": 124034766,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/NON_PRODUCTION_LOADER_FIXTURE/v1/recover.json",
+      "bytes": 232,
+      "sha256": "075f0654dc548c6eead892cad81df3a7ff112277ea261aa511aaf73aca7aac03",
+      "dev": 16777234,
+      "ino": 124034765,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/NON_PRODUCTION_LOADER_FIXTURE/v1/read.json",
+      "bytes": 250,
+      "sha256": "77abddf7f6b1a363a9dd951cddf3c04e06e601875b59ef7d641f17ccc40af888",
+      "dev": 16777234,
+      "ino": 124034763,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    }
+  ],
+  "byteExactPublicCopies": [
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/reservation.json",
+      "publicPath": "actual-r1/reservation.json",
+      "bytes": 565,
+      "sha256": "f20341442ec352419bdf5cf4ec80fa6e706c9e0f20c1965a379487156a8120bb"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/clone-result.json",
+      "publicPath": "actual-r1/clone-result.json",
+      "bytes": 419,
+      "sha256": "451b6ca024c126c62649c0b0a94774654fccaca6aadf6e2a28ac98e6c4b10e15"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/clone-verified.json",
+      "publicPath": "actual-r1/clone-verified.json",
+      "bytes": 387,
+      "sha256": "adce96acc78dc67f38209044675fd3ac1a66eb6278e56dd517bd22ac11495612"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-checkpoint.json",
+      "publicPath": "actual-r1/work-checkpoint.json",
+      "bytes": 935,
+      "sha256": "a44e84f76ccda2b7367debd11af477a546d110cc79c359752782a034d315008b"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-result.json",
+      "publicPath": "actual-r1/work-result.json",
+      "bytes": 4486,
+      "sha256": "2fa464bd79767a7cee3ab110b3e25db16caac3284ed8283f61c66021e6629a02"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-terminal.json",
+      "publicPath": "actual-r1/work-terminal.json",
+      "bytes": 362,
+      "sha256": "68ccf955d914becf85870ce4e043cd8181334455ae1d335208ab25b04d526922"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/cleanup-checkpoint.json",
+      "publicPath": "actual-r1/cleanup-checkpoint.json",
+      "bytes": 4837,
+      "sha256": "ced5ed554c33ac474e322854cae6741a0c867aba5ef54cbe29681ef13152b502"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/cleanup-result.json",
+      "publicPath": "actual-r1/cleanup-result.json",
+      "bytes": 4892,
+      "sha256": "0ac1e7e34be38fd334c6aeb21c491ea5b2a98226d1ce4e08ac5956891c5b1b85"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-startup-observation.json",
+      "publicPath": "actual-r1/work-startup-observation.json",
+      "bytes": 2319,
+      "sha256": "f7196b313585e3515de0a482486749e8b2ca0f9d13f839306305bd93a40dd198"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/cleanup-startup-observation.json",
+      "publicPath": "actual-r1/cleanup-startup-observation.json",
+      "bytes": 2508,
+      "sha256": "c16ee3661917f6a6b1d6f6df5e6ac743232cb8d26fae2da6e02840598e281711"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/generation-1.json",
+      "publicPath": "actual-r1/generation-1.json",
+      "bytes": 1596,
+      "sha256": "faebef0a8063368097be049bfa7350dbe18e7608217d8f2020e60212ddc183d3"
+    }
+  ],
+  "runRoot": {
+    "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1",
+    "dev": 16777234,
+    "ino": 124018538
+  },
+  "rawBound": "Raw/public packet below2MiB; artifact manifest bound by hash is retained private and is artifact metadata, not duplicated raw",
+  "providerCalls": 0,
+  "personalOperations": 0,
+  "fixtureTasks": {
+    "created": 1,
+    "cancelledBeforeRunner": true,
+    "noProviderExecution": true
+  },
+  "outerStdoutEqualsDurable": true
+}

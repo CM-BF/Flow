@@ -8,7 +8,8 @@ import { fileURLToPath } from 'node:url';
 import { setTimeout as delay } from 'node:timers/promises';
 import { readRecord, writeRecord } from './records.mjs';
 import { sourceIdentity, ROOT } from './identity.mjs';
-import { BOUNDS, runPaths, measureRun } from './operator-bounds.mjs';
+import { BOUNDS, runPaths, measureRun, measureFinalRun, measurementFailure } from './operator-bounds.mjs';
+import { recordQueryCount } from './query-policy.mjs';
 import { startTotalDeadline } from './operator-watchdog.mjs';
 import { stageSpec, stagePassed, assertNativeReady } from './stage-policy.mjs';
 import { readPermitFile, validatePermit } from './permit.mjs';
@@ -20,7 +21,8 @@ function signalGroup(pgid, signal) {
 }
 async function boundedRead(promise, ms) {
   let timer;
-  try { return await Promise.race([promise, new Promise((_, reject) => { timer = setTimeout(() => reject(new Error('Operator observation deadline.')), ms); })]); }
+  try { return await Promise.race([promise, new Promise((_, reject) => { timer = setTimeout(() => reject(Object.assign(
+    new Error('Operator observation deadline.'), { code: 'O16_OBSERVATION_DEADLINE', constraint: 'observationDeadline' })), ms); })]); }
   finally { clearTimeout(timer); }
 }
 /** Operator wall clock, independent of node:test timeouts. Test-only callers may supply short bounds with owned stand-ins. */
@@ -48,7 +50,10 @@ export async function supervise({ child, sample, persist, markStop, outputFailur
       const value = await boundedRead(sample(), 250); report.samples++;
       for (const pgid of value.groups) { assert(Number.isSafeInteger(pgid) && pgid > 1); groups.add(pgid); }
       report.last = value.metrics;
-    } catch { await stop('resource-observation-or-bound-unconfirmed'); }
+    } catch (error) {
+      report.observationFailure ??= measurementFailure(error);
+      await stop('resource-observation-or-bound-unconfirmed');
+    }
     if (outputFailure()) await stop('raw-output-bound-or-write-failed');
     if (report.reason && cleanupAt === undefined) await stop(report.reason);
     if (cleanupAt === undefined && performance.now() - started >= bounds.workMs) await stop('work-deadline');
@@ -136,11 +141,13 @@ export async function operate({ phase = 'rehearse', run: selectedRun, file } = {
       markStop: stop, persist: report => writeRecord(join(paths.operator, 'supervision.json'), report), sample: async () => {
         await registration;
         let resources;
-        try { resources = await readRecord(join(paths.evidence, 'resources.json')); } catch (error) { if (error.code !== 'ENOENT') throw error; }
-        if (resources) assert.equal(resources.sourceDigest, identity.digest);
+        try { resources = await readRecord(join(paths.evidence, 'resources.json')); }
+        catch (error) { if (error.code !== 'ENOENT') throw Object.assign(error, { measurementStage: 'resources-record' }); }
+        if (resources && resources.sourceDigest !== identity.digest) throw Object.assign(new Error('Resource source binding differs.'),
+          { code: 'O16_RESOURCE_FACTS', measurementStage: 'resources-record', constraint: 'sourceDigest' });
         const groups = (resources?.workerProcesses ?? []).filter(row => row.state !== 'stopped').map(row => row.pgid);
         await watchdog.register(groups);
-        let directory = resources?.directoryRemoved ? undefined : resources?.directory;
+        let directory = resources?.directoryRemoved ? null : resources?.directory;
         if (directory && resources?.databaseDropped && resources.phase === 'before-owned-directory-remove') {
           const exists = await lstat(directory.path).then(() => true, error => { if (error.code === 'ENOENT') return false; throw error; });
           if (!exists) directory = undefined;
@@ -152,18 +159,21 @@ export async function operate({ phase = 'rehearse', run: selectedRun, file } = {
   } finally { for (const fd of handles) { fsyncSync(fd); closeSync(fd); } }
   const final = await readRecord(join(paths.evidence, spec.file), 262_144).catch(() => null);
   const pause = spec.next ? await readRecord(join(paths.evidence, 'pause.json')).catch(() => null) : undefined;
-  const directory = final?.resources?.directoryRemoved ? undefined : final?.resources?.directory;
-  const metrics = await measureRun(run, directory).catch(() => null);
+  const measurement = await measureFinalRun(run, identity.digest), metrics = measurement.metrics;
   const passed = !outputFailed && result.outcome === 'processes-complete' && metrics && stagePassed(phase, final, pause);
   const success = phase === 'rehearse' ? 'rehearsal-passed' : spec.next ? 'stage-paused' : 'decision-settled';
   const summary = { run, phase, sourceDigest: identity.digest, outcome: passed ? success : 'unknown-retain', selected: 1,
     process: result, capturedRawBytes: raw, retainedRawBytes: written, finalMetrics: metrics,
-    nativeQueryCalls: final?.nativeQueryCalls ?? 'unknown', pause: pause ?? null };
+    measurementFailure: measurement.failure,
+    nativeQueryCalls: ['plan', 'children'].includes(phase) ? recordQueryCount(final ?? {}) : final?.nativeQueryCalls ?? 'unknown', pause: pause ?? null };
   const summaryBytes = Buffer.byteLength(JSON.stringify(summary, null, 2) + '\n');
   if (!metrics || metrics.rawBytes + summaryBytes > BOUNDS.rawBytes) summary.outcome = 'unknown-retain';
   await writeRecord(join(paths.operator, 'result.json'), summary);
-  const finalMeasurement = await measureRun(run, directory).catch(() => null);
-  if (!finalMeasurement) { summary.outcome = 'unknown-retain'; await writeRecord(join(paths.operator, 'result.json'), summary); }
+  const finalMeasurement = await measureFinalRun(run, identity.digest);
+  if (!finalMeasurement.metrics) {
+    summary.outcome = 'unknown-retain'; summary.measurementFailure ??= finalMeasurement.failure;
+    await writeRecord(join(paths.operator, 'result.json'), summary);
+  }
   await watchdog.complete(); // No timer disarm: a later parent I/O stall remains covered until actual process exit.
   process.stdout.write(JSON.stringify({ run, outcome: summary.outcome, operator: paths.operator }) + '\n');
   if (summary.outcome !== success) process.exitCode = 1;

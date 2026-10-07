@@ -1,0 +1,2753 @@
+{
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+  },
+  "repository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "node": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+  "manifestBytes": 3196606,
+  "webSourceDirectory": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts",
+  "web": {
+    "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91"
+  },
+  "webManifestBytes": 1651,
+  "webManifest": {
+    "format": 2,
+    "policy": "flow-static-web-v2",
+    "releaseId": "388371a4972c469b8ace623454594132",
+    "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+    "sourceTree": "f01fca67b9aa396ea6303fd2246c20c1d62d4277",
+    "lockDigest": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e",
+    "toolchain": {
+      "node": "24.20.0",
+      "vite": "8.3.2"
+    },
+    "files": [
+      {
+        "path": "assets/PluginManagement-A83k3W8t.js",
+        "bytes": 9854,
+        "sha256": "f6a718118ea8959a74b65825ff773fceb0c98e07a927fc9cb30c31ecfb771ad1"
+      },
+      {
+        "path": "assets/PluginManagement-Dok11XwQ.css",
+        "bytes": 2843,
+        "sha256": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9"
+      },
+      {
+        "path": "assets/assistant-ui-C7NurJFc.js",
+        "bytes": 667364,
+        "sha256": "5b15ea345d8912295e322561bc2baa2af88610b7f56a7c2907bdd2215a17687e"
+      },
+      {
+        "path": "assets/assistant-ui-CcdakA0V.css",
+        "bytes": 966,
+        "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+      },
+      {
+        "path": "assets/index-CZaGITme.js",
+        "bytes": 790684,
+        "sha256": "a7178926f022221df9cba8b816145c2bafed25ba8239ab8e0ae617d17a8b843e"
+      },
+      {
+        "path": "assets/index-DzESKX8S.css",
+        "bytes": 112165,
+        "sha256": "f7e34bb0b280ed753b5b2b40f509d90a9f36704c3f658136bacbe83d1e1ce036"
+      },
+      {
+        "path": "assets/rolldown-runtime-qXqUbbKo.js",
+        "bytes": 773,
+        "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+      },
+      {
+        "path": "assets/theme-eZTSIgw9.js",
+        "bytes": 806,
+        "sha256": "926448efd702b51400e86ec9d45316a15f97ebe66832c40241a13832c56c2a45"
+      },
+      {
+        "path": "assets/workspace-OoYt4DTj.js",
+        "bytes": 1906,
+        "sha256": "83c03eceb9611c1beebeb62ef81d667f1baf114fc06f39a442d36bb8581e1aba"
+      },
+      {
+        "path": "index.html",
+        "bytes": 950,
+        "sha256": "542c52c4c40abc54a9f6cf30a9f271b93c0ae7e092ef22864f017ce273d91fc3"
+      }
+    ],
+    "totalBytes": 1588311
+  },
+  "resources": {
+    "workSeconds": 180,
+    "cleanupSeconds": 30,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "freshBytes": 2684354560,
+    "liveBytes": 1073741824,
+    "additionalBytes": 67108864,
+    "rawBytes": 2097152,
+    "newArtifactAndPrivateLogicalCap": 434150591,
+    "newPhysicalPlanningBytes": 706740224,
+    "databaseBytes": 100663296
+  },
+  "runName": "host-policy-once",
+  "sourceDirectory": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV",
+  "sourceDirectoryIdentity": {
+    "dev": 16777234,
+    "ino": 123986127
+  },
+  "directory": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r2",
+  "artifactEntries": 15628,
+  "artifactLogicalBytes": 363845121,
+  "cloneHelperSha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62",
+  "artifactTotalLogicalBytes": 367041727,
+  "legacyRoot": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility",
+  "legacyHead": "af51c621696230fbced12227670f014ca73bd8a1",
+  "python": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+  "cloneCaller": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py",
+    "bytes": 3281,
+    "sha256": "05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6"
+  },
+  "fixedInputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/package.json",
+      "bytes": 423,
+      "sha256": "98933c9182d8c380f53d323ad0b289c1fd945b916f751babc64588092d749063"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/active-steering/host.ts",
+      "bytes": 7143,
+      "sha256": "72f6d236f3b295e32f9d63365f7976017b0305faa254cb89ae1a06abeac66923"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/active-steering/input.ts",
+      "bytes": 1460,
+      "sha256": "ef3adcdfc2ec84984fa9fb6fc0d84fbf80ca23f14ce2406919e5bf5919b48c02"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/active-steering/proposal.ts",
+      "bytes": 3388,
+      "sha256": "45a8502e8d07c861210976de19ec90c6361f26d1a63994007a4fcaf10199da02"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/active-steering/state.test.ts",
+      "bytes": 3270,
+      "sha256": "ece0bfbe99bc1e538ca097fabb0c37dda33a6a42654223ff22ee150fae0bbd5b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/active-steering/state.ts",
+      "bytes": 2511,
+      "sha256": "6b03718a65845f191744918ea4910fac7301da83667d0e95867a47dac5d92e08"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/admission-journal.test.ts",
+      "bytes": 5733,
+      "sha256": "76edf9ace719161329d6534bfd37d27d1185704bf1f1896ebffe9df45adc8559"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/admission-journal.ts",
+      "bytes": 5175,
+      "sha256": "8a8180ddcc29988fb95ff6650362577ba5f09812cdf8a71929d6a8df9262ff04"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/assistant-stream/accumulator.ts",
+      "bytes": 9939,
+      "sha256": "774b8905671370d8e70558a741d8f1e0fe8e7ab0ec9946489e3641f8a7a69792"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/assistant-stream/index.ts",
+      "bytes": 3795,
+      "sha256": "079d425c6959dee76251439af05a1852a6cb2363eab89867073825ee0ffb5dd5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/assistant-stream/stream.test.ts",
+      "bytes": 9946,
+      "sha256": "366435364809e97ce68fd4a03ee27fc1b8bc8eba0dc972532b19a5fcb16e12c5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/attempt-control.ts",
+      "bytes": 4720,
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/claude.test.ts",
+      "bytes": 28030,
+      "sha256": "15ff8ce5bda76108a849f24d49858a96ee92fa15b4da1227afc24a14425bb113"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/claude.ts",
+      "bytes": 19269,
+      "sha256": "3659f874a9ac06963cedb426068fdd481227e861abb9be19c22a68f4844a4439"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/codex.test.ts",
+      "bytes": 16259,
+      "sha256": "ec740e38ef16934718386a0e6ee7e0e940edb009228b0f4656c5b02495b9670d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/codex/fixtures/peer.mjs",
+      "bytes": 3728,
+      "sha256": "7c98dbdbd941aca973f88833015ffd6052bbcc054f3edb2d649c5536a4ca89cf"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/codex/framing.ts",
+      "bytes": 3554,
+      "sha256": "38d4199ab362efff7bb6bbc157c942d3d55eb5b2d9ae1b86a02d384c027b6f0d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/codex/index.ts",
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/codex/options.ts",
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/codex/stderr-capture.test.ts",
+      "bytes": 10273,
+      "sha256": "b3dae983e3486ae08c359b7560e01894fc742f64eff5891df6e73f0c9471a575"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/codex/stderr-capture.ts",
+      "bytes": 1770,
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/codex/types.ts",
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/codex/writer.ts",
+      "bytes": 3117,
+      "sha256": "8e49cc8ef03136790c54e55a49af2821bbc7e40aa75ca1603e6020ed3ecd6a21"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/concurrency-configuration.test.ts",
+      "bytes": 1180,
+      "sha256": "157b85699274472e083b801ccf273ed7acde4512b04bcf4712b642b2ae798e97"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/concurrency-configuration.ts",
+      "bytes": 598,
+      "sha256": "9fb5a2d2550c286fdc3231105436f109e26546bca260b86717622a5a5158e4b3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/configuration.test.ts",
+      "bytes": 7311,
+      "sha256": "337f7ee2af4dfc9d60f3f82c38f573dbab4f828d3ab1cba40b48247da347c190"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/configuration.ts",
+      "bytes": 4568,
+      "sha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/context-observations/claude-summary-values.test.ts",
+      "bytes": 6270,
+      "sha256": "b7492fc438723f2ca6543250c0da3fedaa12856af7d2af835030e869235ce216"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/context-observations/claude-summary-values.ts",
+      "bytes": 2575,
+      "sha256": "5e97397133b44e7712aa0f0151b96ed25c069b7f13dc5df15ed7fc5c4e1c381c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/context-observations/claude-summary.test.ts",
+      "bytes": 13246,
+      "sha256": "fa71594307d87e7c8e53d204dcd7448391993cbac2e33a80161466552a58d040"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/context-observations/claude-summary.ts",
+      "bytes": 2905,
+      "sha256": "4637f84caeb8bef5e002fe2c2e98b306813e0462d24a670d441e44fc6da21ae5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/adapter.ts",
+      "bytes": 4227,
+      "sha256": "d449d350dd2d91611184861df68ce70c4f3b7c9d1543a7d19c61ff26c246547c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/calculator-capture.test.ts",
+      "bytes": 9048,
+      "sha256": "14b67f5952e03037d108d0ef48d012fa3a24bb9c1db483ac9284b2866131a44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/calculator-capture.ts",
+      "bytes": 2845,
+      "sha256": "96ce194d26920292d7f1da37b8b4930e7999fa5b91ac78ad45f98bd35fffec4b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/calculator-checker.test.ts",
+      "bytes": 7992,
+      "sha256": "40107c8cce459827100573a1ef1766b505ecad9a40f20613bcb519dc2b17cff8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/calculator-checker.ts",
+      "bytes": 4507,
+      "sha256": "aea38fda8724f8fcb5dd764ece8e9289ab6d2dce68817767d218b3df6fa8d7f8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/calculator-receipt.test.ts",
+      "bytes": 4094,
+      "sha256": "0b4c9853c2b2377d84b37cc39cd706ac2ceda2a82cbeaaaebdecce54f3f57860"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/calculator-receipt.ts",
+      "bytes": 3858,
+      "sha256": "b646267790c9c3f362c77845aac1b0cab8977ce51dc19759d19aba020700db54"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/calculator-source.test.ts",
+      "bytes": 2964,
+      "sha256": "73291ba397e5eb0e23a6d5822370c7cea5313a2c97af35d5517d9ffe484c92db"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/calculator-source.ts",
+      "bytes": 1711,
+      "sha256": "8fafe89296fd4544ef01a1b5fa66b00a85815aa88f17c39b6a1d6a821f7e8967"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/checker.ts",
+      "bytes": 4705,
+      "sha256": "d670a01c5a1fdd50258ed5faa69cea91e75e33e771cfe107d00677c06956081b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/identity.ts",
+      "bytes": 1898,
+      "sha256": "dbe1198133e0158350835ff76735a0efa536994818ef16790f0277b9e2347f5f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/integration.test.ts",
+      "bytes": 15852,
+      "sha256": "911c45b252e3598d4dfd2d4a4bb7eca2b521eb7152de0670f7a6b57904ef533d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/launch-integration.test.ts",
+      "bytes": 11961,
+      "sha256": "d9bf6572a1e64998fc9473204e686d46bf54c130ae7f4e348ea1ccac3ad70647"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/launch.test.ts",
+      "bytes": 3563,
+      "sha256": "4f465b36b4f104b23cb50ca2fd8e180a9fb24bf2d4738681dd024a26e8506e79"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/launch.ts",
+      "bytes": 1435,
+      "sha256": "3d41aaa5e45512a33a8d91e1e90a77779d995b9b6388b9f5462fe73a660922f3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/resources.ts",
+      "bytes": 4956,
+      "sha256": "26545a80686e0d0e3bed6de85716980df930c471eac891211dd1bdca2d831368"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/setup.test.ts",
+      "bytes": 8715,
+      "sha256": "df2e75ab590b1843defb10ba79c5d0b5d07866b38277c315c0c39cea09e7b9d1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/setup.ts",
+      "bytes": 6695,
+      "sha256": "e8a35ac85c0c048ce2abaafb513562e4b87f31906d6eb24e6ca150ab182cb6ce"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/workspace.test.ts",
+      "bytes": 13029,
+      "sha256": "797543c0c78569faa92c969054cf68d0e2a16f83a34a9156656c8b423f652054"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/workspace.ts",
+      "bytes": 12205,
+      "sha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/writer.test.ts",
+      "bytes": 7947,
+      "sha256": "0cf6f5408b18c6fef0c47fbd2d683ac9a6349b694a1630207588db970611be4b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/engineering/writer.ts",
+      "bytes": 1514,
+      "sha256": "59ac0c67279b3be98244f0482da9a5413c20d6a6716a3cbcfb3bd674647e1470"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/execution-identity.test.ts",
+      "bytes": 6521,
+      "sha256": "d74388c4a8a336d1d105819b29494f0e026dab405061cfc330f3ae37d04bd09d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/execution-profiles.test.ts",
+      "bytes": 14503,
+      "sha256": "1332ee5b8539cbb723e4ea9bf1a5cdaf771a0d7bb5344167c2f3cc0e8c389033"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/execution-profiles.ts",
+      "bytes": 4334,
+      "sha256": "7e116b4e3f115dce27441c9e7b97cf68486369bf40d8d6f08b495f5465639099"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/fixture.ts",
+      "bytes": 2615,
+      "sha256": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-graph-tools/bind.ts",
+      "bytes": 1572,
+      "sha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-graph-tools/integration.test.ts",
+      "bytes": 16039,
+      "sha256": "5603c6ffcaaf806829eccdb03bff042865a81df0fa48f4814c07c30068323071"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-graph-tools/mcp.test.ts",
+      "bytes": 5063,
+      "sha256": "7083b8432715667f54aca2d128dbf84accd744f2d9b2c333d3fa6747b54bc998"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-graph-tools/mcp.ts",
+      "bytes": 2307,
+      "sha256": "df1b2c75c4042bee4ea01179f51af452465ec8b01707a3cdf41946a1b6338298"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-graph-tools/policy.test.ts",
+      "bytes": 3216,
+      "sha256": "b7555ecda6b3f447b38013df88adb8247d0c7b7b54ad173c2927c3463213b2f2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-graph-tools/sdk.test.ts",
+      "bytes": 5802,
+      "sha256": "937373bbcca8723ed4bc36bf7b0840d949978ba585b1d5b2f4962d726966a210"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-graph-tools/test-peer.ts",
+      "bytes": 1006,
+      "sha256": "d89d9a6658bfc10d3efee929ea9e0cef794a31cd9eed9799278969472d6ad0fb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tool-bridge/authority.ts",
+      "bytes": 1281,
+      "sha256": "5f005fdd53eaf8974498bb20e42af558e0381897e78e7ca0162e781c8d357d5e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tool-bridge/configuration.test.ts",
+      "bytes": 1675,
+      "sha256": "b947b9f3d3acea0c7e09357799cd0552a18d62dca6b072c375318b3c847c3fb5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tool-bridge/index.ts",
+      "bytes": 2175,
+      "sha256": "77f540e0d82bc3519daac4f2faaf36f0ee97e3a9fc8c14d86cc37cbb402e5c6a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tool-bridge/integration.test.ts",
+      "bytes": 12135,
+      "sha256": "163275aba22a88ee00ffc688dfcdeed4c009ee27f44fca602179299f4e73bc6e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tool-bridge/policy.ts",
+      "bytes": 3283,
+      "sha256": "de9813a38e32b434a758901a32f199850df14153fed925f1e9a9cb2361f3272c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tool-bridge/sdk.test.ts",
+      "bytes": 5532,
+      "sha256": "fa0269b0ee0f171da5acfe94e7a4dd230c481de6172efde1f509a8111332d7e4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tool-bridge/test-peer.ts",
+      "bytes": 1014,
+      "sha256": "dce0a2954ad4a1af7aa1466ece57a34eeedddcf36548442bccbbbcb6733c4e13"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tools-mcp/bounded-read.test.ts",
+      "bytes": 5911,
+      "sha256": "6105ff9b8da71421b8e055af636376cbc82bc88c6aee2947949c90a1c70990ce"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tools-mcp/bridge.test.ts",
+      "bytes": 6662,
+      "sha256": "863dbfda6257d4e92ce373313293a093922dcccdc0bb6af7e782aa6945658952"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tools-mcp/center.test.ts",
+      "bytes": 5756,
+      "sha256": "c4c0321583aff488d1070978e30cc97805198fb339b899483581f7d4e834573c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tools-mcp/index.ts",
+      "bytes": 1973,
+      "sha256": "ea7e09187645327f83ece4963a6ca3e7cfd56001c371ea65826e797285cf2af8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tools-mcp/read.ts",
+      "bytes": 4353,
+      "sha256": "fe3deb991e871c34871114b1774d6aec3d6bf97d344fd39be2cd7250322c1471"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tools-mcp/result.ts",
+      "bytes": 1425,
+      "sha256": "8d3e748884a5d4992f9d97df8e9ad1cc5ceb90e42c7b63c2254bf5d0428501ed"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tools-mcp/test-peer.ts",
+      "bytes": 1601,
+      "sha256": "60b7e459b6cb840836f7f66b19de4d97bc8eeb61d5626feb660cf2c5c045c26c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tools/goal-tools.test.ts",
+      "bytes": 2944,
+      "sha256": "bd6baa74a290228f3d6b4ac37c9ad2fc0321fa739f80fe298ff3ae35392becdd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/goal-tools/index.ts",
+      "bytes": 2085,
+      "sha256": "1def37a4dcc48150687305ed15994ab2d49ce4a5f7e518b9ab992d9acc1b09ce"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/index.ts",
+      "bytes": 287,
+      "sha256": "c7350f59ab6d4b1353f8482205e35e9a4fbe28b505584d68307f6925d884bb20"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/lease.test.ts",
+      "bytes": 14063,
+      "sha256": "64045287d3ed52c0966d237864c2306c8dde4ce6a4e7ddba88f528f6d029e2c3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/main-concurrency.test.ts",
+      "bytes": 8267,
+      "sha256": "d0cff1c8525065b98d8110db37b6a33437646fdef9239bbc442b1822198e1baa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/main.ts",
+      "bytes": 2477,
+      "sha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-activity/index.ts",
+      "bytes": 4127,
+      "sha256": "247967f51d31bb5e6b76cca83ef143f9efe86981520c6e178b1ff9a1505f925e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-activity/mapper.test.ts",
+      "bytes": 4413,
+      "sha256": "0fe25931f131455336e28a63fc28534eb080e8d04383eccf8e977d70a86479a6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness.test.ts",
+      "bytes": 3470,
+      "sha256": "6d0e715e34bdc8aa1783617a7fff29ba2e60fa0c0b83ff93d4383397c58c4efb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/claude.ts",
+      "bytes": 3286,
+      "sha256": "fc4626777e2d3215a10280c3047cd0b6384e0c43ada39496273461b22bb7d135"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/codex/adapter.test.ts",
+      "bytes": 9014,
+      "sha256": "65bc3e97e891f6fb1767f349e31b3bf4fe92b25ed9daaf331c471c5801e373cb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 2028,
+      "sha256": "ea962ccbc456e8d71304f9bcd7cf7ffd6cef3b54f52e37b98443dac166155f0b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/codex/evidence.test.ts",
+      "bytes": 2430,
+      "sha256": "8140bc49ddf94ee35ff26760a97f7cf5975834f250a87dc6a38d77e3ddde9dd0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/codex/evidence.ts",
+      "bytes": 4041,
+      "sha256": "31c5b334c93f2ca3d1f16d0d1fb8b1233b53fd5254d9975dbf73d23e90159ec9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/codex/index.ts",
+      "bytes": 851,
+      "sha256": "03575f0f86fdb1b15ceb9298fac13add895b5f92b5a80165ba2e13019639205a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/codex/integration.test.ts",
+      "bytes": 11320,
+      "sha256": "68ac70664589b5ab31ccea56a2534a6eed6782b2f76356e08adf42ad1f0ca539"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/codex/launch.test.ts",
+      "bytes": 2135,
+      "sha256": "4e4cc90057bc5f700f1485578d7b71f78f9034b87c26f6a7c65218c28374fbd6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/codex/launch.ts",
+      "bytes": 757,
+      "sha256": "e3e32c49f81f665c90093c50c59913756f74a2ea4bfc261dbdc2afd06dfc3aef"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/codex/peer.mjs",
+      "bytes": 6699,
+      "sha256": "287e78f0b10c1c008d13365c4bcc099bcae8e6e55a1e2ebbb85c7da85542ff63"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/codex/policy.ts",
+      "bytes": 1696,
+      "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/codex/projection.d.mts",
+      "bytes": 716,
+      "sha256": "8595d7c661688e9c2aad8cb3a69530a904167798cccc218bd0a450bd8e8e3e6c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/codex/projection.mjs",
+      "bytes": 5179,
+      "sha256": "01fd832745a81b4e098d63c3a97aadd8c38942b33c73132c0de78fd7c6b6a5ad"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/codex/turn.ts",
+      "bytes": 5176,
+      "sha256": "63aa5aa11744497b4c90e8927cbf90aed383f5a9a945b15358fdaeec8ff0f9ad"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/codex/wire.ts",
+      "bytes": 2016,
+      "sha256": "57d5ce950fbecd4193a432f5dc9fad8b8790ab5a00888ab0ff4095fe17c636d5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/descriptor.ts",
+      "bytes": 1064,
+      "sha256": "f767b065f557e3aca5494575789d35745ceb0cacf2a3bd53d67c662d49dd77dd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/native-harness/settlement.ts",
+      "bytes": 741,
+      "sha256": "1bee2a52454323b8b8d974c32259c4e1f05e30faecbf0f6f15b3542dee9d40eb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/outbox-resume.test.ts",
+      "bytes": 1220,
+      "sha256": "5155362f17f25a0496f519bb1606c4c52ffbbc6f8cbe8a25701497113bfc5e28"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/outbox.test.ts",
+      "bytes": 5323,
+      "sha256": "8edcf030c59342a43a2091b4bb1c3fe5b22bb6204741961c1d27f73480f8a38a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/outbox.ts",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/protocol-dispatch/configuration.ts",
+      "bytes": 2579,
+      "sha256": "647a01cb7b65cb3f125515bc9c895396a4a582f6fa9843fb7ad923ce846d4651"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/protocol-dispatch/index.ts",
+      "bytes": 8396,
+      "sha256": "771642a3a5bc54981c43a2ede864c6daaaac62a491ea23aea7c779990aaf7e51"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/protocol-dispatch/lease.ts",
+      "bytes": 2276,
+      "sha256": "c97314b4d8dd7f8fd7056982a2bca6186245062d94d60fb27c29eeb514ac90fb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/protocol-dispatch/materials.ts",
+      "bytes": 2078,
+      "sha256": "bd1da1e99f3956585a16a9bd6b59757bff1ecca9a09354f9f0004f9994c9a963"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/protocol-dispatch/official-peer.ts",
+      "bytes": 4383,
+      "sha256": "e680c05a8bd6baee1ff37d4c9c6db744f3c1483948533817cec2f41f11554e42"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/protocol-dispatch/runtime.test.ts",
+      "bytes": 18417,
+      "sha256": "2470b074dac0a70841f76598c5e2aa098ae4b5a28e4bd2adb411f22cfa50091f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/protocol-dispatch/test-process.ts",
+      "bytes": 614,
+      "sha256": "67e2eedb41456efd6e8a6e5fcf71ea78d1260bb86866ded36b16b87e8d86ef18"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/runner.test.ts",
+      "bytes": 32676,
+      "sha256": "8f6b91429eef8c1135e33428ec7a2f68f8ea5103068becc1535423473c15e5eb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/runtime-capacity.test.ts",
+      "bytes": 26547,
+      "sha256": "f6a2883606ba1fa35661619da79a747bef176bca90d6b1b5a2fbd4a655783de2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/runtime-shutdown.test.ts",
+      "bytes": 13720,
+      "sha256": "09670094e39e2a3b2da6286c763d161e5b359231d472e655b2d44fe4c1a8c42d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/runtime.ts",
+      "bytes": 14832,
+      "sha256": "f42986ab9f637c20ae8d804e7de17a0b028729875b8c253bd5692d8272e14edc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/runner/src/verifier.ts",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/package.json",
+      "bytes": 509,
+      "sha256": "ed0aa11b4107898d54166a5d340b88396dd972433ba90bc259048db1af8ac0d0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/active-steering-configuration.test.ts",
+      "bytes": 808,
+      "sha256": "ea9b5d676a06ba57a1a3232f431ecc9e3f31503002d4c9d75e1e734987b21777"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/active-steering-configuration.ts",
+      "bytes": 319,
+      "sha256": "8138cd0125132b8a680a0842dad40d573c2f1a4832ab7af7cb0a59ba0dacb09d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/active-steering/admission-policy.ts",
+      "bytes": 1756,
+      "sha256": "508dbe8530c00a43f8e8ef66fd1a0279245df1f46cf71184178f59de2dc9f6bf"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/active-steering/admission.test.ts",
+      "bytes": 16113,
+      "sha256": "0102abedb446a3f3f3e8b5860233f755e6cf493d50ac09bdfc46dff097a2dc30"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/active-steering/admission.ts",
+      "bytes": 4315,
+      "sha256": "839e2148bdf208fa579c766abbb2cc573bee2bafd70aa698a5a8e4682eb59783"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/active-steering/commands.ts",
+      "bytes": 6995,
+      "sha256": "8e105358e2ba9eb2946cf7a7bc2668a3c293f6731d884918bcce9266d41fe920"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/active-steering/finalization.test.ts",
+      "bytes": 22924,
+      "sha256": "a39e30f9a64060b9bc0120c05d074200191ef51d63db62fbdabeb987b27e8cb4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/active-steering/finalization.ts",
+      "bytes": 7050,
+      "sha256": "69428378767444abab96d7d0646f9b2fa77943452e40545b370604babcb377d5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/active-steering/index.ts",
+      "bytes": 4109,
+      "sha256": "ed1b9aff63601aadd81796f83ccc448e6722f2bfacdc216b93e3f75a4a6241bd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/active-steering/queries.ts",
+      "bytes": 3963,
+      "sha256": "4c4dcca036da762457bd979f9e66b70453008d83ebcaf16823cfdf238a097ede"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/active-steering/results.ts",
+      "bytes": 3660,
+      "sha256": "080082ee48e9c7df31d47c5fb24491c1bfb15b4f28e7343e7e294821f91fd86e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/active-steering/steering.test.ts",
+      "bytes": 24237,
+      "sha256": "ecc7e4ac6bfec4797ef4ab8c8e907dd38ff4d3f4edf4e8b19c3e7f54ebdc3e9d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/active-steering/storage.ts",
+      "bytes": 4217,
+      "sha256": "672f030ecb268e2fba024a42f760c7c1f66009b9493b3c2257bed194ced56db9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant-stream-compatibility/compatibility.test.ts",
+      "bytes": 13154,
+      "sha256": "9ddb5422e9e27cded31fc25a51925a25cbb52015f71ef3afd721a0fb0964ebed"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant-stream-compatibility/index.ts",
+      "bytes": 2196,
+      "sha256": "d3f9709ea1c65a30752f0f2dc737b8292bac4d35e009ae22392ee10293105244"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant-stream/index.ts",
+      "bytes": 2061,
+      "sha256": "a261c1e787b450f6d9c1fcaacca3e6d0bb421ade8fdbb142273466e301c29a34"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant-stream/migration.test.ts",
+      "bytes": 3350,
+      "sha256": "dee7ca4b30618f90e1f3c8cff7bcc92cfc94c19e47669d7555cb6bdb01a9c2ff"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant-stream/prefix-hash.test.ts",
+      "bytes": 12665,
+      "sha256": "cdfd2f9ba4d056346ee24e80826fb87aeef20b7b2d85e48039722bf91c0f632e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant-stream/queries.ts",
+      "bytes": 5368,
+      "sha256": "e8987ea10d90c16c61dbaf043b5ed32192ce184f4fd7a20a84659b653e22d7f5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant-stream/settlement.ts",
+      "bytes": 5126,
+      "sha256": "07ebaa42fd2db171c1f09d82adaee48fae82ad48777f4ae16d073ab7c23f8f13"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant-stream/store.ts",
+      "bytes": 5662,
+      "sha256": "861f058b5c2f407c138bfb1c1cddc5e8997e9af93c744f44b96a1ff938163498"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant-stream/stream.test.ts",
+      "bytes": 24960,
+      "sha256": "e3307e4bbd9eedd903086bd2fd3218d33f35d653a37fea94e623aca330492bff"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant-stream/task-head.test.ts",
+      "bytes": 9907,
+      "sha256": "2fc6f6ac9f77a65c609d87a092ec6d47c4286e80e9c2568c2405f81155177d71"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant/assistant.test.ts",
+      "bytes": 16630,
+      "sha256": "06df74c9115bb194e57ec7afca90747f6d12c2bd9a6ec45b78a2fa05036477ab"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant/index.ts",
+      "bytes": 1620,
+      "sha256": "7f332f6a91d6ea14a3ae467b99c52b2e92e4ce9f627b1ff2c7d6ca6c0be9e5d3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant/native-harness.test.ts",
+      "bytes": 21723,
+      "sha256": "cc03f0e4b6cde2f539083d1d37799c88dd521649e6cf7585ba90bf370574a613"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant/preview.test.ts",
+      "bytes": 9283,
+      "sha256": "3e3aa5287816b5aa58383ebdcb6001329cc79f4ea0702f9b6bf4e8be137c7adf"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/assistant/store.ts",
+      "bytes": 11116,
+      "sha256": "15050943fb1182f3c3ca012343fb91542c7fd8740ea39a1bc9cc09d210b87bfa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/attachments/attachments.test.ts",
+      "bytes": 12901,
+      "sha256": "25f102dccd567251faad7376e240c1d6436ad3a45fe52a62c13be6d5fe7d50f2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/attachments/context.test.ts",
+      "bytes": 27442,
+      "sha256": "6bfd2830c9ee8b89e5f7ca7d1c12671ee02c3d76eb1e0d7b813fc9fd4ddbfa71"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/attachments/fixture.ts",
+      "bytes": 15625,
+      "sha256": "584cf45b3c12375d20031ac80e63de4e529c7b2351243136f2eab8bfbd28b0d2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/attachments/index.ts",
+      "bytes": 5023,
+      "sha256": "91d739d031e0f2b8bea58594562b3d6bbbde104f4f960757cb61ea654ea57516"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/attachments/storage.ts",
+      "bytes": 11534,
+      "sha256": "7e62dee9b16a164b250b6d7d0331319fb5f4ea8c7493e91c8b8e25a133c70560"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/commands.ts",
+      "bytes": 2316,
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/context-transparency/attachment-history.test.ts",
+      "bytes": 12618,
+      "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/context-transparency/migration.ts",
+      "bytes": 781,
+      "sha256": "46892e1704d3ab6ebe191be1d7b08d7cac2a93b5eb3c7bc0725875b50de07e5c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/context-transparency/projection.test.ts",
+      "bytes": 10582,
+      "sha256": "3db78fca155f9d031c7881ffc11c1c543686d903f3d09cc736912c91e675c2c9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/context-transparency/projection.ts",
+      "bytes": 5685,
+      "sha256": "6c995109a44c41f37c7f860d103d5e588e020d22b18d545ba2bef661ee345850"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/context-transparency/routes.test.ts",
+      "bytes": 3356,
+      "sha256": "157e7c40c29f36688455775e7a4da63e8df5077f6ff71d2315cf3ee1f2924348"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/context-transparency/routes.ts",
+      "bytes": 996,
+      "sha256": "8c0aeb0268819b339f957d1ffcfd75fd2804ca89017fad8962bb7c81b9c4ed01"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/context-transparency/store.test.ts",
+      "bytes": 25516,
+      "sha256": "d4c9d024f2e92f1e2af3b0414adb12bbf44ce0c876d671ff33439de6f067b7a0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/context-transparency/store.ts",
+      "bytes": 11267,
+      "sha256": "ec4ec2defd095739b2550814cc4324e00b2bcd31ae4b899de5ed983f92126245"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversation-context/context.test.ts",
+      "bytes": 33804,
+      "sha256": "75cd16917334c53ffb0addd182b8750681b09eb924f62cb1ebe87bb269947cee"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversation-context/fixture.ts",
+      "bytes": 5265,
+      "sha256": "676db9f5764142637a3a55bdeb840856cd53564413ece4bd77cbd610096f1df1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversation-context/index.ts",
+      "bytes": 1573,
+      "sha256": "7ae39a02095c01da1be2049004c1093bc886d2e3b77e8309d160fe6d8f29afb6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversation-context/store.ts",
+      "bytes": 14160,
+      "sha256": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversation-queue/commands.ts",
+      "bytes": 3242,
+      "sha256": "82e5e104e68cda1b925908ecfa1b34daf78b07d96fe9f952830746cbc95dd603"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversation-queue/controls.ts",
+      "bytes": 2933,
+      "sha256": "79def0b3ced448deeb0a4bcaf1923484695bcd9f28cd463225a003a00657365e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversation-queue/gate.ts",
+      "bytes": 1849,
+      "sha256": "d6b88877c6190bd2bb026b5c6884a5916a0ea5d49fe9d9cb9f0038776405bf7d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversation-queue/index.ts",
+      "bytes": 3433,
+      "sha256": "c263858be96773183b67ed175ad05c2642e6067ac2e2b124cf7946b5b06ce76e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversation-queue/promotion.ts",
+      "bytes": 4242,
+      "sha256": "54ad1ef9aba63ea437f6c4ebbec589fe82b0b60b15ad0c153778e1f8e2f95e2f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversation-queue/queries.ts",
+      "bytes": 2387,
+      "sha256": "a8c6ca373a085439728ff871f8cdb3f143051ebdaeebdb9c505decaa97552475"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversation-queue/queue.test.ts",
+      "bytes": 33631,
+      "sha256": "fe0a6906844efeab7c31ec0f26da3af29ecb59775a26b428366100c567175ab6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversation-queue/store.ts",
+      "bytes": 3681,
+      "sha256": "3885d55dc32b052412809f1592a534c0b91bcb887899aed26ce6fa755e106990"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversations/admission.ts",
+      "bytes": 3967,
+      "sha256": "62594a07346251b14391dafd67334ad0c5108f84f89ef2b5dde943c653db7feb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversations/commands.ts",
+      "bytes": 3805,
+      "sha256": "9b0ef894b687bccf233378875ac7aff4e83635d404177163b9cbb1412785bff8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversations/conversations.test.ts",
+      "bytes": 34302,
+      "sha256": "f10b0330f2ccc71dd53193fd488d3a4612cdbebc1dbb99f025fa1009b230c9ac"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversations/index.ts",
+      "bytes": 3366,
+      "sha256": "8363551c8303af848a0e5eb0c27be71a1659ac2cbbbd0bb794ea5bbb97772d98"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversations/queries.ts",
+      "bytes": 3554,
+      "sha256": "14652c6fd14d11a685c8a520d337c5e51e23f43f1a9b40cd174739d77df3fe57"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversations/replies.ts",
+      "bytes": 8294,
+      "sha256": "0d8638a7432a34e69b736b50f0307f2f2b7a75eca8dc2f1fa0522355e2def43c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/conversations/state.ts",
+      "bytes": 3222,
+      "sha256": "a0a7a4343428fe7141326ff43569126155a30ce6347f52869f44890e16641ada"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/engineering/index.ts",
+      "bytes": 1387,
+      "sha256": "66269910b1c566bdfe39f9d07bacd11b498add2ae2b410a1097ef22c69cae0b2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/engineering/profile.test.ts",
+      "bytes": 11442,
+      "sha256": "c9cf0abe8cf024969aff12f958af1f3021ddaf83fcb13adfb6c67f3b5d62c430"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/engineering/profile.ts",
+      "bytes": 3616,
+      "sha256": "51cf9f37f5e06e4c3ce7f2480054e4a19752db8902a43b305d1133eac5634b8a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/engineering/verification.test.ts",
+      "bytes": 13032,
+      "sha256": "f5e4e38ca5cb4bdfbcf0995b3afcdc5135a5b8a4d3124abb2b0194145f031108"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/engineering/verification.ts",
+      "bytes": 3874,
+      "sha256": "4e297828859515c6429bcdec45b5e456b60b1c67ab1224e477501bc29c6d58ed"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/events.ts",
+      "bytes": 8678,
+      "sha256": "4a2404d4a82f05dc3538c871dac3e9f0c15f5936310624bee787d6039e37f853"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/evidence.ts",
+      "bytes": 4095,
+      "sha256": "30124654e78c5db1075f306046d8f7a5e1e72e835531e2a87fc1cfb17587bb20"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/execution-profiles/execution-profiles.test.ts",
+      "bytes": 16452,
+      "sha256": "c2d45d9aac20223374dae16dcd1fc3f43226b1a4d1672884ab8807b00dbda158"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/execution-profiles/index.ts",
+      "bytes": 2512,
+      "sha256": "e3b316109191150ba77a5d29bc1b16000f3a87497d42ade5a8402bdb58a1e9ec"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/execution-profiles/native-catalog.test.ts",
+      "bytes": 13777,
+      "sha256": "6783d35e586d38e7811e4a4197867f58fd024b8db2d76b12f622c2b6f219d478"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/execution-profiles/publication.ts",
+      "bytes": 4249,
+      "sha256": "209a01219a22cd621acef8509181c04eb8218de2785b2e29248ae5a8e4dd492a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/execution-profiles/steering-admission.test.ts",
+      "bytes": 14093,
+      "sha256": "e3a1d03701c6684e457d03922ac61d0b3cdceaeab8ceea86ba2c779154230c8b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/execution-profiles/store.ts",
+      "bytes": 9634,
+      "sha256": "5ee63154a5287679c75867ecd6253150b4a47ec5c2c22cfbfb5c3cda96e6dfb8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-context/behavior.test.ts",
+      "bytes": 11552,
+      "sha256": "d366cd443b8c6aaf471c01c1f6658dfb96605002feddd7bc75af56d989ff339f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-context/claim.test.ts",
+      "bytes": 6039,
+      "sha256": "874f75d1d9646a2b6e4361b316a8bd4f1832530ff179278f90b29e920fc0b363"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-context/context.test.ts",
+      "bytes": 15330,
+      "sha256": "fc346794ee8dbea7e34352b5efa5d1e52bb0fc75d043493336f40bf2e89daf84"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-context/fixture.ts",
+      "bytes": 5577,
+      "sha256": "f1aac0106997849d4f7560df7adf862798c6e13b03b2281a662d970fd8f1e190"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-context/freshness.ts",
+      "bytes": 1195,
+      "sha256": "d9ea198ab18f1e13a52c933ffb1210a74b703476371370799145705e198dfcf1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-context/index.ts",
+      "bytes": 1731,
+      "sha256": "7921c324119d60f25f3ffebac1c802a4a8050f9693873e8c138c93e865b6cd5b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-context/input.test.ts",
+      "bytes": 1003,
+      "sha256": "5f4b9bc76ebfceb8b82f8bb66c8f3d180f195ccbe913a5f1a34ddd565b80b27e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-context/input.ts",
+      "bytes": 336,
+      "sha256": "2244bd1565abb1dcec2e1f1702f0582b09774a514c1e1e722667f9b8954c8d35"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-context/recovery.test.ts",
+      "bytes": 6177,
+      "sha256": "9b2df84e063108fbce736271f3c3fd7adfcf1a9014bfc3889d7aef99c2b24ce1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-context/run-consumers.mjs",
+      "bytes": 5997,
+      "sha256": "2c1c273d1d3ca05e3d66b32adf2637413b55d2df5dc2c947ff7842707603298c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-context/store.ts",
+      "bytes": 11740,
+      "sha256": "a5ecb7925878db97613bf5812e5e02da8b89c46761c0e7b2e30ef19b4db2680c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-delivery/delivery.test.ts",
+      "bytes": 20009,
+      "sha256": "ae400bbf3e96b3794b51bbe27d3bbf4d9001a7c496abf9eed63895379a75e276"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-delivery/details.ts",
+      "bytes": 2910,
+      "sha256": "079688da3c4095bb32e9004c6ab5e1361c22ed5dc6e6e340549f1472497a37f3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-delivery/explanations.ts",
+      "bytes": 2818,
+      "sha256": "5a36a2bae4f8bd2c7f96dd87783bafd5b81c352d614207b83ac15fd8c5eb7bfe"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-delivery/history.test.ts",
+      "bytes": 3814,
+      "sha256": "42913db638e0fe3d4d3e38a524539c64fc432caa73c7e56ab824a28261261e9c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-delivery/index.ts",
+      "bytes": 2120,
+      "sha256": "df68185b3229b606084fc775a0cda8716e421ca5b4214a902fcbf2b7dbeb9a1d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-delivery/metadata.ts",
+      "bytes": 4992,
+      "sha256": "afa2812cc6c6eb4e70be02a995053c68b22be1c73a3a4431a6cb6fbe97b68144"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-delivery/plan.ts",
+      "bytes": 2535,
+      "sha256": "17fe7d6fd1b49209b6fe81611ad55b0b8e564b4fcdbdba468507c6de2cbd9bbd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-delivery/session.test.ts",
+      "bytes": 12525,
+      "sha256": "1cc7bd37d061953fa37b48825db8014a32162f09de9ed6aa1dd19c5af11558f6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-delivery/state.ts",
+      "bytes": 3382,
+      "sha256": "cac91bc48664944dbdc3521999207f34346da2e98f2c936ec7da455bfb024976"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-delivery/test-support.ts",
+      "bytes": 4065,
+      "sha256": "380922ba25ba29b245ca0fa03156a3879c61223d4d703ecb6d68f907b85b851b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-graph-proposals/graph.ts",
+      "bytes": 1989,
+      "sha256": "a7e1019cdc47d321402b1d07b402093b0bef0cd26f83629083b0db32e532d5c8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-graph-proposals/index.ts",
+      "bytes": 2430,
+      "sha256": "a8a6fea7f7436df17ca6bc59d902aec7d068af2bbec99c14fac676a928aa966b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-graph-proposals/proposals.test.ts",
+      "bytes": 16687,
+      "sha256": "f72efe1548fc8a12f925e8c83a9979cb0a7bc4680a1c12fb7dd7e623296f6836"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-graph-proposals/store.ts",
+      "bytes": 9383,
+      "sha256": "322778d4a57a32ff35ee9f75e30b287ffc6062313e04ef7e202e30f92053bd8a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-graph-runs/index.ts",
+      "bytes": 3312,
+      "sha256": "6e6d5f1e0cfec52e69069de9176a49b5689a2fcef67c1f41fb0ea4dc8efe9c77"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-graph-runs/migration.test.ts",
+      "bytes": 8486,
+      "sha256": "c527620b2966f1d7a1fb78f0486bf2e8574b64aa1907ff5f741b882b0555150f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-graph-runs/native-migration.test.ts",
+      "bytes": 9748,
+      "sha256": "b0f6be46f2d147e384489774084b55effe66b3319f08eea790fa3980dc862387"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-graph-runs/native.test.ts",
+      "bytes": 8374,
+      "sha256": "00df78e4b2e7c32b0569ff5aa9045b2332fcc92983e91b556f4a3111390a859b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-graph-runs/runner.ts",
+      "bytes": 7935,
+      "sha256": "ca58caa4fa17b5a30188afadd502b6df1f478db3a2e95182ad0d6cacad3026c2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-graph-runs/runs.test.ts",
+      "bytes": 20358,
+      "sha256": "faf85181b491fa4c9209cff1dd7f5f175348d7469a5557a36c1c5a98b37da10e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-graph-runs/store.ts",
+      "bytes": 6688,
+      "sha256": "4bb176a415d3a87523ac72d34819c92de1459839131783816f494ca106ff35c0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-native-executions/admission.test.ts",
+      "bytes": 12997,
+      "sha256": "5e067431472f41508b948585e3931c76d62bc94bfe4542ca0f97761b42443905"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-native-executions/fixture.ts",
+      "bytes": 4380,
+      "sha256": "c091a0163bdb47a5ea2235fe0f2b15a1005be1734ebabd8abe836c7b0bda8304"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-native-executions/index.ts",
+      "bytes": 1083,
+      "sha256": "3a3313def7fd540b4b2da2ae3a2f6e31d4a1f42fcbed190c5f358ef7650c12e8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-native-executions/runtime.test.ts",
+      "bytes": 11098,
+      "sha256": "cd9c0b89e855976f5e01c0274051c61e908950b525d6e26f95705f6de1047b1b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-native-executions/store.ts",
+      "bytes": 1466,
+      "sha256": "1c3960a1eb5b5db431b499e78a0cfb3a9974b459c3e6ed63144f3ba7dbe4c4e5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-native-production.test.ts",
+      "bytes": 8281,
+      "sha256": "46148a70e9bd30a2028f0da285b3ad8e03b16e3ca7f7d312d21227b6f01ba046"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-run-authority/runner-project-fence.ts",
+      "bytes": 2890,
+      "sha256": "19ea493544b92cdd43dff1f8538b49afdbf4f27990fefae938b993ef757de965"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-tool-runs/authorization.test.ts",
+      "bytes": 17135,
+      "sha256": "d908d4567f3fbb576f2c1fbcfb26281198e6c88f99e95fc3441f7cb4145ae4a8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-tool-runs/authorize.ts",
+      "bytes": 1064,
+      "sha256": "2d725eba8915b62e775a62274a8eff7c6aae33148a6615dd9f883193c403ef5a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-tool-runs/index.ts",
+      "bytes": 3343,
+      "sha256": "5a2949ef6a74ffba06c4e713282f0355ee4639bd552b5eaba7503a175e56024a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-tool-runs/migration.test.ts",
+      "bytes": 12188,
+      "sha256": "b7315a157ec8de5c90739bb44db2f8abf0c9f727726450687a37d69d5039c392"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-tool-runs/native.test.ts",
+      "bytes": 4910,
+      "sha256": "91b69292c2c73dcef076914873be1e04830c7b815b6e5c49aff6ff92dcc8ea24"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-tool-runs/runner.ts",
+      "bytes": 3930,
+      "sha256": "f57db1ed2bde342a0a606fca20374f4bdceaa497f415abffc32ff6b9a2ad60e8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goal-tool-runs/store.ts",
+      "bytes": 5080,
+      "sha256": "bbe531bc9752b67a03b946466e336202c88ca3f7e59e8102d5ab7e8f14e1545e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goals/commands.ts",
+      "bytes": 13874,
+      "sha256": "19d90e2279d350e133ebea9099e8a0c1b5b601c674e9567758a16b32b2adf316"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goals/goals.test.ts",
+      "bytes": 27791,
+      "sha256": "6115b135a281f2f6b7cf736c40a578e766a255c4697561162965d28b519bd345"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goals/index.ts",
+      "bytes": 3843,
+      "sha256": "0e33bcbc20f54e91214859d9d2eca096a40bef748ba500938a6015bc488f5842"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/goals/state.ts",
+      "bytes": 11115,
+      "sha256": "8a475b0419ee1991f4d20d9bac2ea73ddc39f40be874b6399521b9d9ce7f61ff"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/index.ts",
+      "bytes": 13507,
+      "sha256": "e1c4bbc0c7d78132ed9f45af527ceaf65725f31321aedbce25af0171a261fdab"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/knowledge/fixture.ts",
+      "bytes": 4298,
+      "sha256": "4873445fb6634d33462a249a69062025b383621035c740a2d45aa91b719379b7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/knowledge/index.ts",
+      "bytes": 3782,
+      "sha256": "28fd0fd2a053c8e1764913cd0a09f1dc9e73576746a38e49bb2b11def94ae5a7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/knowledge/knowledge.test.ts",
+      "bytes": 21935,
+      "sha256": "5e5a5a74a5b1d0b8087b8decc8238c07d6f723b7ea379811733df5d89d7d9e0e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/knowledge/search.ts",
+      "bytes": 3360,
+      "sha256": "e300061702e4557e5fc09c06f6dfdb43d0d1ef9c7b76db30330c4958f72ffb42"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/knowledge/storage.ts",
+      "bytes": 10068,
+      "sha256": "72d2cc8663a9d077367e4ce04cf1fdb7a17ed7966ae1f380e12905212abccd21"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/knowledge/text.ts",
+      "bytes": 927,
+      "sha256": "f44e78e9214fe76b0513f8080acf71d0546c90d62c440b0617e13a73d0d26ce1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/m2-workspace.test.ts",
+      "bytes": 15398,
+      "sha256": "732ae403b2f9fbb05540f89970c15a167eb1be488ddcf7e05ce5c1578b95a010"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/m2-workspace.ts",
+      "bytes": 6752,
+      "sha256": "e1653357b06f16e016c898b54b210b3f53af76557ca8a8498fb53c47eb1f7e78"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/main.ts",
+      "bytes": 2007,
+      "sha256": "d29980feece7e8094f3d317fd6761edc132f6e7827d458e748e9e0ec77a92180"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/native-activity/activity.test.ts",
+      "bytes": 18650,
+      "sha256": "e5ea66e9f9d5e78f5ea48299489c008b9056b3e7a631a04df78c92af0b3ccf18"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/native-activity/index.ts",
+      "bytes": 1459,
+      "sha256": "81b7ec57e00b503db18402121d7e41fb8c140346d46c5a5614efda64efa94250"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/native-activity/migration.test.ts",
+      "bytes": 3229,
+      "sha256": "68533ad2b4d9e0f81fb17512322e57e5168d6991258f68f250f288223d4c4186"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/native-activity/store.ts",
+      "bytes": 8230,
+      "sha256": "33d86d709452bc5546f1f8aa44c9832826f58607299574e2682b11afb69b43e4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/native-harness-migration.ts",
+      "bytes": 772,
+      "sha256": "171050c81a8677c145319adc51e8c542e2be26373a15262fa0d689ae600c5b98"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/native-harness-policy.test.ts",
+      "bytes": 1885,
+      "sha256": "5bc58fae3e27ed1a604393f7397cc6cbedfc5ca7387392d11f931c5b7f6b0fcb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/native-harness-policy.ts",
+      "bytes": 2103,
+      "sha256": "b05a8eaee51ae8c0fba0dbe2183cec0289c0a3393c26dfc0576e54fa10b66cb2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/package-artifacts/artifacts.test.ts",
+      "bytes": 6548,
+      "sha256": "74a1b6605f3b6739a038360c65fbd5126b6ba992061ed70f271c7ff6927bef3a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/package-artifacts/errors.ts",
+      "bytes": 1068,
+      "sha256": "be3220467a00447b49c750220a241121a58e3316641cfdbb75fd2b4fdf0264b2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/package-artifacts/index.ts",
+      "bytes": 2641,
+      "sha256": "12701ce1dfbe9ba5317ceaf6d9b7c16ee3903a89f6a99841c385d97f8578c07c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/package-artifacts/input.ts",
+      "bytes": 3239,
+      "sha256": "aa25eb1f1c68d04f207fc35fa755c034f959c654629f0b7a27ea1c1bcdb731d9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/package-artifacts/registry.test.ts",
+      "bytes": 9795,
+      "sha256": "f0cd9c5be9ae82d2d0a1c7d2bf93bddece00f09dac796ae553ca5b2e7c9e7abe"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/package-artifacts/source.ts",
+      "bytes": 4093,
+      "sha256": "7a21055545d84ea3bcc2f18fa5d78489404dcc06f7a3f3be1af7413db848dd2d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/package-artifacts/storage.ts",
+      "bytes": 4464,
+      "sha256": "827ea2d17247d027e14673848ed7d744c6142a27811e72413cdabb23cb1b30c2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/package-fetch-configuration.test.ts",
+      "bytes": 2054,
+      "sha256": "60e6ac2df214a5d3bb14927e571af421b1073c22a9f966c45eb322e4562522a0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/package-fetch-configuration.ts",
+      "bytes": 2952,
+      "sha256": "96f5531faf224ea751a1b55ef3b0e0a2ac7e11c79c41de23dda639cfd789139d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugin-package-fetches/commands.ts",
+      "bytes": 5071,
+      "sha256": "8abbf5641881cb2976d700ba3660938c7e8a7a0c13d9e14663c4267150f3bc74"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugin-package-fetches/fetches.test.ts",
+      "bytes": 6662,
+      "sha256": "b0bfebd4e7c34384e0319bd32f534e37b4ceb0e4ccc78aaacf62f46aff2c4012"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugin-package-fetches/host.ts",
+      "bytes": 1829,
+      "sha256": "f3f5ec848d3b23a7aad6e6bbcd26fc42d972b3e48b2d45a221c9c9d8b9c48760"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugin-package-fetches/index.ts",
+      "bytes": 853,
+      "sha256": "cf1cf055e7ae70173ae34b40ff32a41193827403dec5446cbffaefa46c362a00"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugin-package-fetches/process-fixture.ts",
+      "bytes": 1272,
+      "sha256": "21d3f27bef98ad79bbec2187f04b468eed1868f10cc476ccfcbcf6471bb6a9ad"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugin-package-fetches/publication.test.ts",
+      "bytes": 1769,
+      "sha256": "3f712c53e2480a3e6072d20580de677343c444f066db760aaf9d7470777f8f12"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugin-package-fetches/routes.ts",
+      "bytes": 4593,
+      "sha256": "3aa612702abf4b794c664abb270b72004466329aa1f5abb0936234168e882c9b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugin-package-fetches/store.ts",
+      "bytes": 4032,
+      "sha256": "10cde940502b0f4a7768de07bef9954bd8ad14f28c71babfb5c3d90e661323b3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugin-package-fetches/worker.ts",
+      "bytes": 7428,
+      "sha256": "e19833a4d2ed168327b2ea870734c8fab3fd4968f3d4c0398a64e5022586f648"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugin-package-fetches/workflow.test.ts",
+      "bytes": 13781,
+      "sha256": "1f655b087a460218978bc504f0f11f2742f9de793feef0a222d5f2b408559f57"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugins/commands.ts",
+      "bytes": 6407,
+      "sha256": "8fd234467020340543e61084a2e807d8148ac244a6dd6d30e18d6cd81d8867f5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugins/index.ts",
+      "bytes": 4058,
+      "sha256": "f3e73d03bab521bdcae419817f844bd8c36d6be0090d3f0ac260f16aae5f1c1c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugins/plugins.test.ts",
+      "bytes": 17498,
+      "sha256": "2e6c36cdd7db85846f9af14ec41c5b7e450fc2a185138185358c3554e09f54fe"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugins/queries.ts",
+      "bytes": 3932,
+      "sha256": "06f365f6381bd6885965a5ff31ae94a78cfced81bd7de8e37b614cdc8f20486a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/plugins/storage.ts",
+      "bytes": 3153,
+      "sha256": "4da0052096f77cfa83a6b7b3b7373eb2cde435d3ab4269235a954c196a557abd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/projects/commands.ts",
+      "bytes": 4181,
+      "sha256": "b362828aa9b8a296d46f8105fc40fcd67b0a4efa091d7070f8c13e92f64742ee"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/projects/graph.ts",
+      "bytes": 4152,
+      "sha256": "d45ec707df3a1be05d6840abb95517aca1c842612a4c6afccdf388f207772cf1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/projects/index.ts",
+      "bytes": 2641,
+      "sha256": "41715a0a5e3868fdf2f958cf5fea19785bbcfc9da75d122c14645c58375fcf7a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/projects/projects.test.ts",
+      "bytes": 19077,
+      "sha256": "536a437f3a095a1c0ae99a3bebcd329be2bea0cf367cc2cc39e4ef6e980b3be4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/projects/storage.ts",
+      "bytes": 4093,
+      "sha256": "3f2eabe24482b36f0d79bf4d81fadd18e2e2a696b199ac60d695ce658e8c0f3e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/protocol-dispatch/dispatch.test.ts",
+      "bytes": 6419,
+      "sha256": "6a714a215a728471650a5db44d25b3a068bcf9dc0bb25a463892e8d87b0b6e4a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/protocol-dispatch/index.ts",
+      "bytes": 2345,
+      "sha256": "d69e32c3783c040a917315a6e98380ba71a6b684a5aaf29bf2e1add6020635c7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/protocol-dispatch/store.ts",
+      "bytes": 9611,
+      "sha256": "d573ddaa69e36fddaec45f14305fb1a5432bd8889c992991925e757eb224d560"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/queries.ts",
+      "bytes": 2605,
+      "sha256": "16070c2e9aede9ab7bfb011512e8be147c58f830a69ea2dcf2834004e0f0c0e4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/reconciliation-http.ts",
+      "bytes": 2033,
+      "sha256": "b09b906b29e3f3551f56e5bdafd63ba23c16f139291747cd2f7cd9e4c5930da6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/reconciliation.test.ts",
+      "bytes": 23964,
+      "sha256": "fc713446b0dd3f9949473ebf93cc9868adfe42f99e90c3c73d7f4d0611c78730"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/reconciliation.ts",
+      "bytes": 11658,
+      "sha256": "0c775485c18b5865192d0137cf69bab4517ab7142f4d69fca0f5d61d1e2527cd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/runner-maintenance/index.ts",
+      "bytes": 2050,
+      "sha256": "1ebd74749045586d3fa7165dbe4db8ce39daa0ba3ed5a57e719cabaa257c267e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/runner-maintenance/legacy-75a33.fixture.ts",
+      "bytes": 8345,
+      "sha256": "5488413ea252a1cda7f87dfcedd04f34148d299a66bd953b13aaea0e63bc3f7a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/runner-maintenance/maintenance.test.ts",
+      "bytes": 17107,
+      "sha256": "c182d83cb285b147f6feedd60369f0b434731a97d78625d3e1c94fc38c0a3344"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/runner-maintenance/store.ts",
+      "bytes": 6384,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/runner-read-fence.test.ts",
+      "bytes": 19489,
+      "sha256": "4bf5cf79cf3894b9b2069cef46461211fb1e026871659e8722614f6ca9f42b0e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/runners.ts",
+      "bytes": 11992,
+      "sha256": "894fe80e02c3e9caa0d9eeeab1a80dcdd44fc15b81bbc6a30d519b45b7c37ea9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/scheduler.ts",
+      "bytes": 957,
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/server.test.ts",
+      "bytes": 21881,
+      "sha256": "20b76a18ae1ad4634e7b94593722f9516ccbb9008e6d90f3da9b086a6a8af0ee"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/sessions.ts",
+      "bytes": 1593,
+      "sha256": "901eefd23c4a1e33e2639149c7335e64bd63ecb0aaed3fb61e69e920ce9d847a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/shutdown/index.ts",
+      "bytes": 1327,
+      "sha256": "26b5afc5018f1a63a69d10c5bc451602d11df87f17183a32f87f1cbf7396de10"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/shutdown/main.test.ts",
+      "bytes": 13926,
+      "sha256": "c088d96a3482ea811fd6e16e6ddbf8503ae1823aec16195dcc32dfb162d30c82"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/steering-production.test.ts",
+      "bytes": 10359,
+      "sha256": "18a46c3212a03235ed3ff675eba4fcf1b26a8a7dbc773480a8338fb51709cdb9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/streams.ts",
+      "bytes": 2299,
+      "sha256": "7a0c0f30138266515acac72b4a7edc4c9629da709cd4007f89ba7b22f42b29ff"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/task-index.ts",
+      "bytes": 3733,
+      "sha256": "f2c2c472b56b660563c0fce39871af972222bf8b4d9eabe4d2775d0f12797d47"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/task-read-projection.test.ts",
+      "bytes": 10661,
+      "sha256": "f54b96f9477a6444aa7b54e52163a026562659a29ed67b85cdfc62e808282ffa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/task-read-projection.ts",
+      "bytes": 821,
+      "sha256": "7194976171df9af15552a23d33958c3141178b311f686adc95cb435c30be04b4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/tasks.ts",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/timeline.ts",
+      "bytes": 658,
+      "sha256": "f947d154067b1e4bc1bce10bc67b136b21c5a267b93cf25de2eee368cd7d19e5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/apps/server/src/usage.ts",
+      "bytes": 5083,
+      "sha256": "ccecbc12914882ef9b74a9a12ec4b0718b6b9f5c908b6fccc7b05322273e6dac"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/package.json",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/active-steering.test.ts",
+      "bytes": 4500,
+      "sha256": "5b89b0dec336c682fe829ae0e8c04206f4978a6dcd094ae7e137400bd170332a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/assistant-stream-production.test.ts",
+      "bytes": 7993,
+      "sha256": "fa6c7a9e1be9ba9413315829f0661311e8d7d5a7441c72bebcef41aa260ad6c1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/assistant-stream.test.ts",
+      "bytes": 3685,
+      "sha256": "5a08ef365cd397c0a4e29f2e78961d84217e7398d4e439b96c7cfb2cb0907be9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/attachment-production.test.ts",
+      "bytes": 11992,
+      "sha256": "f6a3d2d86bb2195c05195f5dc6d1114bdc5253231741d88254ee1b0883f7acb1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/attachments.test.ts",
+      "bytes": 3620,
+      "sha256": "73af8dc0d953ad48171f850574a223b18b93ec353b443b34bf3393672733ba5a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/client.test.ts",
+      "bytes": 6475,
+      "sha256": "543b720b4b7bd35cb22048547abd1c03e7bbf8c6b2294d7be2f59db511984ea6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/context-history-production.test.ts",
+      "bytes": 6803,
+      "sha256": "35b1066de695bbc58b140825fcb1de7448ebca0b8a09068065210507a57fe0e3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/context-history.test.ts",
+      "bytes": 2578,
+      "sha256": "462b04fe59edc00aa190107fbef2ccce5d0c564ecd6337e31f17a6f3acf4507d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/context-production.test.ts",
+      "bytes": 7362,
+      "sha256": "69bdb99458ad6e4575dd9be4a307deaf9a2a2334a0c705753a65b177f32e8ca7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/conversation-acknowledgement.test.ts",
+      "bytes": 16234,
+      "sha256": "137239308138f0e20e28e8d97aa588aac9f73a48849f45bd409ecc855b26dbdf"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/conversation-acknowledgement.ts",
+      "bytes": 11246,
+      "sha256": "aa87365332787666c4426fbbfca305ff20c32e6aee160e601a6f8ada4bc913d8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/conversation-context.test.ts",
+      "bytes": 1704,
+      "sha256": "288ad89df9266a41a85aeea400486dd9394db5613bbdc9d579941ee51d882f61"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/conversation-queue.test.ts",
+      "bytes": 3501,
+      "sha256": "5d06945106c8d720f579b1e1ff4ccbac4d2d0cf64b2676e30438fb46f68806bd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/conversations.test.ts",
+      "bytes": 4105,
+      "sha256": "f48fe8f522ceefaf8c10f866231ff98239b6bc5dbac728a1cf4c5f808177c5bd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/engineering-profiles.test.ts",
+      "bytes": 3846,
+      "sha256": "1441c8cc5db2abe98fbd83806bd60788c1e3a8c214ecbfb2531044bb9529d14b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/execution-profiles.test.ts",
+      "bytes": 5679,
+      "sha256": "3d3a28aa0cadae83e108a288fe99464be5f69372dc1a614a7a1e2d92bbab8a26"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/goal-context-production.test.ts",
+      "bytes": 7716,
+      "sha256": "8b46e61ccb67935783fc0616a5f57dec6398efa818eaa67e79d4b02ff9ab937d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/goal-context.test.ts",
+      "bytes": 1765,
+      "sha256": "76b2522db475e73891bb0697bf34e05861eb1be0a217a3cdd4c402215dc6fa4e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/goal-delivery.test.ts",
+      "bytes": 6918,
+      "sha256": "f58515fb8dddb8caa3fd39dcdb95078099e577673d8ca4a3fa53eeee37ae34af"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/goal-graph-proposals.test.ts",
+      "bytes": 2962,
+      "sha256": "b3f2a9470f45ab5ea7a9e0f11890781501c8ffcc3ed0ba7a138963061a5ac730"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/goal-graph-runs.test.ts",
+      "bytes": 4801,
+      "sha256": "aa64a4e9bbf9d6b545b621ca38c3f0fee228f23cd25cca31a4b9f9720bc154a9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/goal-native-executions.test.ts",
+      "bytes": 2784,
+      "sha256": "f8a1c85abcc2e80caceacd778d6bff92a640d38cd8c5fc9881fa557bf487290c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/goal-session-transport.test.ts",
+      "bytes": 2425,
+      "sha256": "dc228afde63ef9e2b9d62bfc884f6f53fda2ac3bef8fd546b8a80a6fdd189150"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/goal-tool-runs.test.ts",
+      "bytes": 3427,
+      "sha256": "98b3a217a496028ef7c37ce7170cf8d5e7a92be021cb7621445c7b9c43c4f036"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/graph-proposal-production.test.ts",
+      "bytes": 2692,
+      "sha256": "f4fc3a332c239205edece851c13342b603679b0a4831ff760681d5ed50bb07ff"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/graph-run-production.test.ts",
+      "bytes": 2811,
+      "sha256": "b2fc9aa0850fb5ed6eff4adb4d9a66bedfdd8d10356d29ff43bab455f59aefeb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/index.ts",
+      "bytes": 44108,
+      "sha256": "a481b2422039612e109dfb08d0502b20f3550ef53247ada0a0fc400810d2f9dd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/knowledge.test.ts",
+      "bytes": 3427,
+      "sha256": "603ca9978236827b259dd7e0d0cfa8ae63025e979944d1daadec5d8545098c0c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/native-activity-production.test.ts",
+      "bytes": 5235,
+      "sha256": "9e3e272c212911ffa9e5f1083ee09747536d5e6b425cc58883ef9e921f63de19"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/native-activity.test.ts",
+      "bytes": 1926,
+      "sha256": "1b77b6099dde3f880ef2fd8ad0563a09ceff23add9c122f914e36358a5225cee"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/native-profile-catalog.test.ts",
+      "bytes": 4086,
+      "sha256": "0abc50c6603312330f7194a81e8e36977bb8c1b886fecb10f3ea5b118fa29929"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/native-profile-publication.test.ts",
+      "bytes": 3443,
+      "sha256": "bb4a5d3a8ba0355be49653ffc4a965c3569a5c9aa80f8f7ecb92c95328b9028a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/package-fetch-production.test.ts",
+      "bytes": 8529,
+      "sha256": "5231e5dbab811353c86a21591f887dc7a596adf196f4fbf271ce3dadde742d95"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/package-fetches.test.ts",
+      "bytes": 3540,
+      "sha256": "bf05f703001517c36da0d19eb4b1ef79e56cff02c231f70ee3381cbe034d6ef1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/queue-production.test.ts",
+      "bytes": 5478,
+      "sha256": "918d14bbfd9e09d2252b1f66bf05e36a04b46b58bdb3cde3bab27994acc6ea12"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/runner-maintenance.test.ts",
+      "bytes": 2540,
+      "sha256": "6db27e6f74471b2f95fd7d14243e20382bde7c298b0b7baf7fccc2568c9cae5a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/steering-admission.test.ts",
+      "bytes": 2734,
+      "sha256": "06e38b69943ba773369acc4afdee8e9a25f6b0584f74c7c7c75375142430e8e0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client/src/steering-finalization.test.ts",
+      "bytes": 5773,
+      "sha256": "2e83cd0210c49d1631ba70a61d4187ac9c4fbbb5f4f34b68ae46dca91951d780"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/active-steering.ts",
+      "bytes": 7453,
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/assistant-stream.ts",
+      "bytes": 4993,
+      "sha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/assistant.test.ts",
+      "bytes": 2225,
+      "sha256": "babb342aa8c616f0477c7297fb7e6f5831aee022ce19f78d4addc2a5bea374df"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/assistant.ts",
+      "bytes": 4054,
+      "sha256": "a43b555855966d79f1f80d4e350d4f9b4bd1264e809e07f96f934a55ee5327c3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/attachments.test.ts",
+      "bytes": 25626,
+      "sha256": "68af16525405b9837e4db8162670ba8ed2037254e4bf4da4410e6971c7fa9127"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/attachments.ts",
+      "bytes": 8422,
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/context-observation-event.test.ts",
+      "bytes": 3159,
+      "sha256": "cdfebdaa523e1eaaf11d8ff969f118729536a57fbd4139e62f49730bc0b779e5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/context-observation-history.test.ts",
+      "bytes": 4754,
+      "sha256": "3a4cc602ed8a1b0f1b52b34bbbbf26b9725495309704b88a60b3eab8e975e41b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/context-observation-history.ts",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/context-transparency.test.ts",
+      "bytes": 3252,
+      "sha256": "112a8abb79fef71e203799c87038c0e29bd39c9bd9174e26b58dcbcd7c53b9f6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/context-transparency.ts",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/contracts.test.ts",
+      "bytes": 1262,
+      "sha256": "c687506e8a7f0d5bdea1cf3f322a42d0e3e9d046ae5a341b26f56ee61299769b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/conversation-context.ts",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/conversation-queue.ts",
+      "bytes": 3951,
+      "sha256": "c803720f5958ec25febc5e5e1f3b6222f609c2c1e7217e7ad0a5bd2694027414"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/conversations.ts",
+      "bytes": 6138,
+      "sha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/engineering-profile.ts",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/engineering.ts",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/execution-profiles.test.ts",
+      "bytes": 7301,
+      "sha256": "4ce75b9b03cb138aa9dc39f3577965e73731d0a4f233f34fdbb540b142b5d49d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/execution-profiles.ts",
+      "bytes": 9174,
+      "sha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/fixtures.ts",
+      "bytes": 1211,
+      "sha256": "a88d494b659c413ce6a39e6c342380540e4d97381263434d25235d360cd674c3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/goal-context.ts",
+      "bytes": 1443,
+      "sha256": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/goal-delivery.ts",
+      "bytes": 4968,
+      "sha256": "ed2ae445be57919427ab265e9c19b56a17e28ba50aa619b2484a8b2e7db9067f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/goal-graph-proposals.ts",
+      "bytes": 2888,
+      "sha256": "b6da9b983a2a69d7c444e90212f6079f37f59e9a3d654af773e6b0685b88b15c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/goal-graph-runs.ts",
+      "bytes": 5200,
+      "sha256": "d1bff3839b05af2ca348b95cc70f96017bdb746d6729b6456e2fcbf9ca7008b4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/goal-native-executions.ts",
+      "bytes": 931,
+      "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/goal-tool-runs.ts",
+      "bytes": 3709,
+      "sha256": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/goals.ts",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/harnesses.test.ts",
+      "bytes": 2239,
+      "sha256": "a092be1f5b3c8ce0dd3fe02954d2409710d2c504b5084eee51db6734ed24c89a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/harnesses.ts",
+      "bytes": 837,
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/index.ts",
+      "bytes": 1227,
+      "sha256": "15b003d0132513cd8ac65471c4d88d066ca3219601e906a9c1bab4e1ed58d63f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/knowledge.ts",
+      "bytes": 4414,
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/native-activity.ts",
+      "bytes": 3259,
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/native-harness.ts",
+      "bytes": 1134,
+      "sha256": "8e0379749835d5c7c542a0e910b6b506bbea4511d61a4a39a281dd0b8c05749f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/package-artifacts.ts",
+      "bytes": 829,
+      "sha256": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/plugin-package-fetches.ts",
+      "bytes": 2259,
+      "sha256": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/plugins.ts",
+      "bytes": 4885,
+      "sha256": "c9bae366a4fa69a28e103c559ef51ea3ad21a99597ad69adc776c62723fd7747"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/projects.ts",
+      "bytes": 3384,
+      "sha256": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/protocol-dispatch.ts",
+      "bytes": 2063,
+      "sha256": "59a23113e3ba16dc278ca3e16d3612812fb33db21de79a9764b596ff769337ea"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/protocol-task.ts",
+      "bytes": 211,
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/reconciliation.test.ts",
+      "bytes": 2774,
+      "sha256": "c889a9afdd380058175bdc54099a1f03668dccefa6ac10668f15bbecc2489245"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/reconciliation.ts",
+      "bytes": 2903,
+      "sha256": "00ede24b0b2d2f2612fd674e802903562b33f7be1b90dc5ed0a858824faae3a5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/runner-maintenance.ts",
+      "bytes": 1600,
+      "sha256": "fa94507e8951b4ee1d8b0d84f20cd9b3302ef7019a853e2883d2d15ea669b52e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/runner.ts",
+      "bytes": 7140,
+      "sha256": "cdb2af7c7db16252b09e15cbd872b4f3edd29b19ccfbac197362bc5d59751447"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/tasks.ts",
+      "bytes": 5369,
+      "sha256": "6e30e7fc7c3f6852911d42b58c2db3960868f13f6d80b11b0e9abd3ee0e393be"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/src/workspace.ts",
+      "bytes": 1472,
+      "sha256": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/README.md",
+      "bytes": 1331,
+      "sha256": "a0f4d8f2bf87ea06304fbe6aaef081b0393ab54c269a6129d52c160005ea4d8c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/package.json",
+      "bytes": 381,
+      "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/acknowledgement.ts",
+      "bytes": 560,
+      "sha256": "ebeea716b5e120f25f9e7b62009c24c1ce8cc9132f441732af632cc91272862c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/activity/index.ts",
+      "bytes": 3329,
+      "sha256": "897947a0ba807539002b07b84c67dfb01a8091e8f6e780de3d1f10350519e8f9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/commands.ts",
+      "bytes": 5076,
+      "sha256": "3f3639a43fc9f348d3e0d375e81585dfba91e5f3cd087315bca834bd3f1a0347"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/controller.test.ts",
+      "bytes": 15628,
+      "sha256": "dc68b8763b0187b09d9e1cc61a343522e503077bb4805fe96ba036ef6f7bba56"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/controller.ts",
+      "bytes": 16772,
+      "sha256": "ecc97f9795a4ff05a9340c5d71836f59b86246d1f0daa63dfcf3282e3295267f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/goal/commands.ts",
+      "bytes": 5082,
+      "sha256": "87788e3280d279ea7a7656f36c06bcbe8f20cda0ed68e3097f60bf4c8b44a79c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/goal/index.ts",
+      "bytes": 10852,
+      "sha256": "91766e60c23c589151fa75549bf87af840de651b26f55db8212e1fd7627e4135"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/goal/lifecycle.test.ts",
+      "bytes": 9302,
+      "sha256": "6fae106bfc5afa0c7cc91bddbfc4e3907ac7c729bd8a159f787231a0b72ac866"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/goal/reads.ts",
+      "bytes": 7591,
+      "sha256": "9f507ff364a9a74e269f18865638051b2f1f2528201b1af7cb10c6d0cb931795"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/goal/types.ts",
+      "bytes": 2407,
+      "sha256": "a20c40916905737af533a1c6878d31eb9f53517d39147ef0d1d592d65d671529"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/index.ts",
+      "bytes": 475,
+      "sha256": "3e2a37a73589c675145f32753ff455bb7e5c46e6084ca497585c0a2445063286"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/observation/index.ts",
+      "bytes": 7818,
+      "sha256": "635f7cc03497d1eafad9c10801c9b11160bc2c7ece526c1513c89c2edba12352"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/observation/page.ts",
+      "bytes": 1382,
+      "sha256": "19deef6945a46c3c7d2912cd0554bad9ed65b13ba5deee7f055821ab8622794b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/observation/reads.test.ts",
+      "bytes": 1328,
+      "sha256": "050dbe08d0fb464ab66641fb9f7de4efd682c9c1abc504ddff7da5f175805803"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/observation/reads.ts",
+      "bytes": 970,
+      "sha256": "6e7db57ba350dba840dc0a33ff909662db5a2162ca230750c2ed77e1066e1063"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/projection.ts",
+      "bytes": 1647,
+      "sha256": "dbba73e9717f17537a0224b4d7a56305bb0ecbd307d2f43225958d5476a83087"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/stream/index.ts",
+      "bytes": 98,
+      "sha256": "a361f4a3953bd6abd4aecee7c05de7d4ec1320238e986157db273a7ed58c2f79"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/stream/patches.ts",
+      "bytes": 13510,
+      "sha256": "8868cc08faa2ac17f48e3c8cafc8d07521cccd635f05632647e571c60281addc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/stream/presentation.test.ts",
+      "bytes": 2033,
+      "sha256": "e754a26ca00dda812d26a2adba291f51952e7f7a256b93f9570b1f4cd91fd13c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/stream/presentation.ts",
+      "bytes": 6099,
+      "sha256": "46093b1674f03fb475571e1b12a69d8d9b3dfde745e83dd9a394424f04c9aa53"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/stream/projection.ts",
+      "bytes": 10826,
+      "sha256": "cf7b8247f67a1061f5b8a786874cf5e37f4dc7ce51b66c99310e84697b70fa6f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/interaction/src/types.ts",
+      "bytes": 2331,
+      "sha256": "1bf7d4b7d654ca2fa4c4466b038b92fbb59b754eef9bf409f3271037eb3e3cdd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/README.md",
+      "bytes": 1926,
+      "sha256": "81cdbd34db9e4aee088b3669c64da8bf6dc361f4fecc73c73de1a51a180af30d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/package.json",
+      "bytes": 366,
+      "sha256": "f6a8155b462edf0ccfb39b20c8344576d1ec27f647c11e0e229c52e895867294"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/src/a2a-bridge.ts",
+      "bytes": 11288,
+      "sha256": "67fbc4083eea37e1d2c070ac5719551791de690d9d1c008301a172427565e6f3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/src/a2a-client.ts",
+      "bytes": 4223,
+      "sha256": "a2e45e629c34480237ab7336f392bb0db9a555c086af3f029b533e346eb38219"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/src/a2a-http-server.ts",
+      "bytes": 4450,
+      "sha256": "ad4cbc74ce0b91e98a3e6cafe2c4a5fdb31f77df5aabe3fea4df485a07e1a811"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/src/a2a-mapping.ts",
+      "bytes": 5127,
+      "sha256": "0bc876161bfeb1926e8eb03d043a8f0189bc918c5e5ee14093a9db622f53b0c3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/src/http-policy.ts",
+      "bytes": 3017,
+      "sha256": "af6635f13ab067a0ecfb5af582a364e6131ba6f829845eaa3391ed936687a637"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/src/index.ts",
+      "bytes": 167,
+      "sha256": "0747ae484303c1042148d28bacfd9817cdd2d94795c60e3c690b92dfff394e85"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/src/mcp-client.ts",
+      "bytes": 4001,
+      "sha256": "c03a6d29112b580ffffa05390638b3ed3dc47f8e2d30a57ed2f11d6624430807"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/test/a2a-bridge.test.ts",
+      "bytes": 11575,
+      "sha256": "ca39d304343400f0a2de96b8d9cf8909a340dd373079f92437da62b6fb264b0f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/test/a2a-client.test.ts",
+      "bytes": 2117,
+      "sha256": "0516a1bca7edac27e0a8a65f832bcc0b6f543a6aa86b7c4988ce37e048b5cdb9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/test/a2a-observe.test.ts",
+      "bytes": 3161,
+      "sha256": "44027b00057d587ef2da84c7a72a84f9ed93808777fd728900df12e881f0c1a0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/test/a2a-official-peer.test.ts",
+      "bytes": 6118,
+      "sha256": "4b38f5803c8fd7d2eaf1eb127a42c12ced929987685c2d403d5448cf270c2113"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/test/fixtures/mcp-2026.json",
+      "bytes": 826,
+      "sha256": "6b3d2c0658fff45783162f938092d2234a3cb1106586b051bdfd70c5180e0d02"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/test/mcp-boundaries.test.ts",
+      "bytes": 4262,
+      "sha256": "8fff864835e27561ebce46ccd31f40ba6b3c95f006864ed680b4c5ef5a1378df"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/protocols/test/mcp-client.test.ts",
+      "bytes": 5370,
+      "sha256": "03062ddb32d3f9949962be496afbefdfabe8d6bd8bfaeba97260ca44075aff74"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/002-reconciliation.sql",
+      "bytes": 1730,
+      "sha256": "ee52cb841bc01ab3c0cc433a91625a1d0bc3b3cdbb741ecce805c952de0d387e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/004-projects.sql",
+      "bytes": 1918,
+      "sha256": "a2f744c164d08168a3aa40584597b62375f3bfb30dbb7ec73348aa01b6633e07"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/005-protocol-dispatch.sql",
+      "bytes": 799,
+      "sha256": "85fd7b66d5110119a3282a74b6946f6ae37bf4eb9361340de2a72e6f6a57872f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/006-goals.sql",
+      "bytes": 3165,
+      "sha256": "e7174fdb547df194bcae5286981135c1cda3e47a2ea442afcafee0791a762a49"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/007-conversations.sql",
+      "bytes": 1063,
+      "sha256": "5859343c1416331642375c069d4b69943d9fbcf382ee07208733925c21b10a81"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/008-plugins.sql",
+      "bytes": 3675,
+      "sha256": "b23068a5fa46df53c3de8c46097b94d0488f54da577e96b898471e2c7fc8b452"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/009-assistant-messages.sql",
+      "bytes": 736,
+      "sha256": "0e9daf87e5e379134a4c6bb1481f95b3a5f3908b03aad34c155e5a1d85b12d17"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/010-execution-profiles.sql",
+      "bytes": 765,
+      "sha256": "3a518a6953644c6efada3cfe5d38481fa5b48aaf7ef0819a0d99dc25286d2847"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/011-conversation-queue.sql",
+      "bytes": 1357,
+      "sha256": "bea2d6057b4471524ccb89e95e643a7bd2606805d75a775d7d6129857afbc427"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/012-goal-tool-runs.sql",
+      "bytes": 2076,
+      "sha256": "8b9a5c6ac912e2aa7cf7d1a893f3da39e97e2206ee7e2ea94e36fd9559271e5b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/013-goal-native-mode.sql",
+      "bytes": 185,
+      "sha256": "4ff7ffdb6ff27ccdca75d0dc6d4ed53fcbca1671b184411a7181f5b186470dd3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/014-goal-graph-proposals.sql",
+      "bytes": 1802,
+      "sha256": "af0509e67b7902f190fc2668e8396a40fa7edddc8f263aea723961153b2d20ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/015-knowledge-sources.sql",
+      "bytes": 2406,
+      "sha256": "62e81d76141c3b74bd36cb7e38ef98a24f552ac01598c9b7d7c7f88fe812a3c1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/016-runner-maintenance.sql",
+      "bytes": 1796,
+      "sha256": "7dc1d7c6f37d94ac600f78b5fe82a665a1fe9eca9d35c9f52ba92371a8c030fc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/017-goal-graph-runs.sql",
+      "bytes": 3089,
+      "sha256": "d273f0d0d5bf8efc1d189e1fb25cf2d1c3769c3971761c1f5e5bc755d35df09f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/018-conversation-context.sql",
+      "bytes": 3497,
+      "sha256": "2521ab49a59d535e0a4eebaf4da895e97ed5d0083ed15b24d47656144ffadcf3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/019-goal-graph-native-mode.sql",
+      "bytes": 189,
+      "sha256": "df159d8dd0fb329899a2d755ae9deeb4a92817f87fc8014f74080932d18c5218"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/020-native-activity.sql",
+      "bytes": 970,
+      "sha256": "4b7d1e031f94e9178120218e34c59a12715d2330282033ef9968cf97dd6578c6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/021-goal-context.sql",
+      "bytes": 2167,
+      "sha256": "5e36a8e6f694dd1c10e9ba1bec28dfda1cf87055ceeed3943b3efd577eb9b17f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/022-assistant-stream.sql",
+      "bytes": 1865,
+      "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/023-plugin-package-fetches.sql",
+      "bytes": 2975,
+      "sha256": "709eed00d46817b52b8767fb52dea8db02af7f3e413af269f7bef7dbeb0612c9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/024-active-steering.sql",
+      "bytes": 1998,
+      "sha256": "551e54f031591dc22b129cb66097132e94cd3f0828441d60acf6248fac555fac"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/025-native-harness-sources.sql",
+      "bytes": 1618,
+      "sha256": "ed4063b040d3a1a3bdf1b8d7c1ea20c3457430ae6077c8a3f8aa45b1a1330bc8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/026-attachment-resources.sql",
+      "bytes": 2994,
+      "sha256": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/storage/migrations/027-context-observation-history.sql",
+      "bytes": 1891,
+      "sha256": "de133222d65fb86137a57e22ada883f5310054e51baa96f8ef5d0d5b13039241"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/pnpm-lock.yaml",
+      "bytes": 278830,
+      "sha256": "0e6a99c258aa1f2333efc4cb83412875840c028e7a6d75f4735afbf9c5f8a20e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/README.md",
+      "bytes": 14917,
+      "sha256": "1cabefba6cc2f05325f53fc92a1ddc16f2699a25b76586ef2796ce96b5b03857"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/cli.mjs",
+      "bytes": 3782,
+      "sha256": "9e5de1042d649f58d322c296673728117cd09de2aa98d4d260a53937bc11fe69"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/environment.mjs",
+      "bytes": 1983,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/environment.test.mjs",
+      "bytes": 2822,
+      "sha256": "98447b34330a3c014f72732ed8aa8fe9e44e3550857299511cc87546e0b61d3f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/maintenance-host.mjs",
+      "bytes": 8241,
+      "sha256": "e441f575b025420aea5133a54300260bfa558de5f75e95d6380d9d8d4a4be05e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/maintenance.test.mjs",
+      "bytes": 10302,
+      "sha256": "9e9faa83a4ed6660479b63501acf6f35de8351ac75713a8a548d1de482a541c0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/preview.mjs",
+      "bytes": 26793,
+      "sha256": "95a18d8dac7a71db1841cb432b151fcf045ce59446e9a341ea5e6c263f2240e7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/preview.test.mjs",
+      "bytes": 28803,
+      "sha256": "c0f5313b4bf6431329ca5ed921545efc9714579f8e8b67b6a50959448ff299d0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/process.mjs",
+      "bytes": 3493,
+      "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/process.test.mjs",
+      "bytes": 2311,
+      "sha256": "9a23b3ba45125b722ccb13a8eb28adc1e48780898be464b39bf97339de7df01d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/static-web.mjs",
+      "bytes": 6387,
+      "sha256": "a8ac5d1835d64f12f2907563ce7138a08f9c46eef4cc671ba88950b3b57e17d2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/static-web.test.mjs",
+      "bytes": 4740,
+      "sha256": "63b1bf4cf9791be59f179ad025034b1b5abc9046b17c2b3f8efa29bf923fca27"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-artifact.mjs",
+      "bytes": 8163,
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-artifact.test.mjs",
+      "bytes": 8388,
+      "sha256": "5e89a614825242538233363a994833f6d8b04dd580ddd82d3061617db33d6578"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-release.mjs",
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-release.test.mjs",
+      "bytes": 14192,
+      "sha256": "506c5fc6754bf39a18c968bdaeb1def1a85c20908fd6cf9c446193f2eaf0a977"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "bytes": 1663,
+      "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "bytes": 1668,
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/package.json",
+      "bytes": 1759,
+      "sha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/package.json",
+      "bytes": 6973,
+      "sha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/package.json",
+      "bytes": 1503,
+      "sha256": "1a12d6b689df3628a831b61c29b55fe4ba667b37f37d5317eb306929eeb80bad"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/package.json",
+      "bytes": 1956,
+      "sha256": "17aaee65ad940680ff9073f0b6f144994270283f55824056377c7f2e8590c90f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json",
+      "bytes": 4103,
+      "sha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/package.json",
+      "bytes": 1832,
+      "sha256": "568ffddd852f2bf78cccddc099f443a6fa1af56f1d21de9bea51b3b9a61d9151"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py",
+      "bytes": 3281,
+      "sha256": "05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/manifest.json",
+      "bytes": 3196606,
+      "sha256": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+      "bytes": 2546,
+      "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "bytes": 1230597,
+      "sha256": "6a628372e492ad4e2bba08c95862055dd02aaa0786365426f166a60f19f540a2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+sdk@0.131.0_zod@4.6.5/node_modules/@anthropic-ai/sdk/index.js",
+      "bytes": 4261,
+      "sha256": "bec5a6b24aa1f2411f651158f30df4c0574f51b284217bd8ca6a4230f463f9aa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@4.6.5/node_modules/@modelcontextprotocol/sdk/dist/cjs/client/index.js",
+      "bytes": 29575,
+      "sha256": "e2f909e827a6e08870b400f44f9e90f9545ef5655d6e10f9cc7d0a91a374af45"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.cjs",
+      "bytes": 2132,
+      "sha256": "d93a8730d52c0fedab13619c8bc971cc99934c13d8dce7c97ee4d03a98d4096e"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 6852,
+      "sha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/apps/tui/src/task-controls/fixture-cleanup.ts",
+      "bytes": 4435,
+      "sha256": "4eeb8756eabca0173d1c3be5c4747e9960499f72f3f4975c37b0beed2929cdf7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js",
+      "bytes": 34573,
+      "sha256": "31a0ebd3ee5fd9f525ccb37c312e3b94757cf53bfa481f41ee364ce75d83c0ae"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/index.js",
+      "bytes": 10039,
+      "sha256": "e28c92bd82fcbe9045c8991f8ce441fcac3541b0344c1633a30f461c1636b15b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "bytes": 1810,
+      "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js",
+      "bytes": 22927,
+      "sha256": "11487d4ee764d73b54bdd72e691a66d08ef7d1239d2c2cf44d80db869848b34f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.cjs",
+      "bytes": 2132,
+      "sha256": "d93a8730d52c0fedab13619c8bc971cc99934c13d8dce7c97ee4d03a98d4096e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/diagnostics-host-bootstrap/journey.mjs",
+      "bytes": 18883,
+      "sha256": "9b0236c428baaf5d7616c247a5ca1e46091a7ef8d00b7e0f094e5f8901b40672"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/b2b-host-policy/work-terminal.mjs",
+      "bytes": 666,
+      "sha256": "c8c5c1663a19066f8b193a4493e80b9f5056a3e3e9188e515863f1a722cfcecc"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/startup-diagnostics.mjs",
+      "bytes": 10094,
+      "sha256": "5827f1863578841ad12a459ea7ea42fc474577cd1271e1233beb9a50902c17d8"
+    }
+  ],
+  "legacyAliases": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/node_modules/pg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "dev": 16777234,
+      "ino": 123062248
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/node_modules/tsx",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "dev": 16777234,
+      "ino": 123062247
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/node_modules/@flow/contracts",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/contracts",
+      "dev": 16777234,
+      "ino": 123062258
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/node_modules/@flow/client",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/packages/client",
+      "dev": 16777234,
+      "ino": 123140577
+    }
+  ],
+  "runtimeReadonly": [
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "dev": 16777234,
+      "ino": 110837507,
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "dev": 16777234,
+      "ino": 63570890,
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "dev": 16777234,
+      "ino": 123234533,
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "methodSources": {
+    "journey.mjs": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/diagnostics-host-bootstrap/journey.mjs",
+    "work-terminal.mjs": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/b2b-host-policy/work-terminal.mjs"
+  }
+}

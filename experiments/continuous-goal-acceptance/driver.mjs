@@ -17,6 +17,7 @@ import { confirmationDraft, validateConfirmation, expectedChildren } from './pro
 import { acceptObservedArtifact } from './decision.mjs';
 import { assertNativeReady, settleStage } from './stage-policy.mjs';
 import { nativeEnvironmentPolicy } from './native-environment.mjs';
+import { recordQueryCount } from './query-policy.mjs';
 
 const RUNS = fileURLToPath(new URL('../../docs/evidence/o16/runs/', import.meta.url));
 const signal = () => AbortSignal.timeout(5000);
@@ -51,7 +52,7 @@ export async function plan(run, mode, permitPath) {
   if (mode === 'native') await readPermitFile(permitPath); // Refuse missing material before source loading or allocation.
   const source = await sourceIdentity(), permit = await permitFor(mode, permitPath, source, 'plan');
   const directory = output(run); await mkdir(RUNS, { recursive: true, mode: 0o700 }); await mkdir(directory, { mode: 0o700 });
-  const report = { stage: 'plan', mode, sourceDigest: source.digest, outcome: 'unknown', nativeQueryCalls: 0, workerStopped: true };
+  const report = { stage: 'plan', mode, sourceDigest: source.digest, outcome: 'unknown', nativeQueryCalls: 'unknown', workerStopped: true };
   await writeRecord(join(directory, 'plan.json'), report, { exclusive: true });
   // The driver's import TMPDIR is in evidence; runtime must keep its separate 8MiB namespace.
   const center = await privateCenter(directory, source, mode === 'native' ? { temporaryParent: '/private/tmp' } : {}); let controller, primaryError;
@@ -90,6 +91,7 @@ export async function plan(run, mode, permitPath) {
     await writeRecord(join(directory, 'confirmation-draft.json'), draft, { exclusive: true });
   } catch (error) { primaryError = error; report.failure = 'plan-or-observation-unconfirmed'; }
   finally {
+    recordQueryCount(report);
     await settleStage(report, { primaryError, dispose: () => controller?.dispose(),
       persist: value => writeRecord(join(directory, 'plan.json'), value), finish: options => center.finish(options),
       pause: value => center.pause('plan', value) });
@@ -132,7 +134,7 @@ export async function children(run, permitPath) {
   const source = await sourceIdentity(), directory = output(run), confirmation = await readRecord(join(directory, 'confirmation.json'));
   assert.equal(confirmation.outcome, 'confirmed-awaiting-separate-children-permit');
   const permit = await permitFor(confirmation.mode, permitPath, source, 'children', confirmation.confirmationBinding);
-  const center = await privateCenter(directory, source, { resume: true, stage: 'children' }), report = { stage: 'children', outcome: 'unknown', workerStopped: true, nativeQueryCalls: 0 };
+  const center = await privateCenter(directory, source, { resume: true, stage: 'children' }), report = { stage: 'children', outcome: 'unknown', workerStopped: true, nativeQueryCalls: 'unknown' };
   let controller, primaryError;
   try {
     const state = await stateOf(center); assert.equal(state.stage, 'confirmed');
@@ -161,6 +163,7 @@ export async function children(run, permitPath) {
       nativeQueryCalls: report.worker.nativeQueryCalls, artifacts, current, history, semanticAcceptance: 'not-evaluated', clientExitDidNotCancel: true });
   } catch (error) { primaryError = error; }
   finally {
+    recordQueryCount(report);
     await settleStage(report, { primaryError, dispose: () => controller?.dispose(),
       persist: value => writeRecord(join(directory, 'children.json'), value), finish: options => center.finish(options),
       pause: value => center.pause('children', value) });

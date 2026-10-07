@@ -1,0 +1,60 @@
+{
+  "observedAt": "2026-10-07T10:34:27.696932+00:00",
+  "sourceTarget": "ea6bd5852c2754f4179bb6da467caf8d6d67a368",
+  "inheritedSource": "6cd5a15c232210f7802482290b8f7b65318fd1ad",
+  "originalJourneySource": "3444895edf934c5c323639f232ef6fed7d51b022",
+  "unchangedDriverBytes": [
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/entry.mjs",
+      "bytes": 17827,
+      "sha256": "cca31be9413aa6b7ecb73b4ef8f62aae493872822de1091d4d54bad1254039c5"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/supervise.py",
+      "bytes": 4568,
+      "sha256": "7f2abe7f6b6b832be03de94ffceeab7e962868ddf85950fc97b64d4b40882875"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/startup-observer.mjs",
+      "bytes": 6449,
+      "sha256": "13784a6f0ce14f13f9e08fa47d853ecf0353952e29cb6fc4931ff958385cda4c"
+    }
+  ],
+  "journeyDiff": "--- docs/evidence/svc06/b2b-host-policy/journey.mjs\n+++ docs/evidence/svc06/diagnostics-host-bootstrap/journey.mjs\n@@ -117,7 +117,7 @@\n     }\n     const legacyId = await reportFixture(null);\n     await preview.withPreviewLock(await preview.loadPreviewConfiguration(input.directory), async () => {\n-      const pointer = await release.planWebRelease({ directory: input.directory, artifact: input.web, expectedVersion: 0, action: 'publish', backendHead: input.artifact.sourceHead, compatibilityId: legacyId });\n+      const pointer = await release.planWebRelease({ directory: input.directory, artifact: input.web, expectedVersion: 0, action: 'bootstrap', backendHead: input.artifact.sourceHead, compatibilityId: legacyId });\n       await release.commitWebRelease(input.directory, pointer);\n     });\n     const pointerBefore = await readFile(join(input.directory, 'web-release.json'));\n",
+  "inputChangedKeys": [
+    "directory",
+    "fixedInputs",
+    "methodSources"
+  ],
+  "namespace": {
+    "before": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1",
+    "after": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r2"
+  },
+  "methodSources": {
+    "journey.mjs": {
+      "before": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/b2b-host-policy/journey.mjs",
+      "after": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/diagnostics-host-bootstrap/journey.mjs"
+    }
+  },
+  "fixedInputReplacements": [
+    {
+      "index": 511,
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/b2b-host-policy/journey.mjs",
+        "bytes": 18881,
+        "sha256": "3efdd3daa720edbad73cba1e8c851441cffef2f0cbebc2005a18633e746f89ce"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/diagnostics-host-bootstrap/journey.mjs",
+        "bytes": 18883,
+        "sha256": "9b0236c428baaf5d7616c247a5ca1e46091a7ef8d00b7e0f094e5f8901b40672"
+      }
+    }
+  ],
+  "inheritedUnchangedFixedInputs": 513,
+  "aliasesUnchanged": true,
+  "runtimeUnchanged": true,
+  "artifactUnchanged": true,
+  "resourcesUnchanged": true,
+  "actualR2": "NOT_RUN"
+}

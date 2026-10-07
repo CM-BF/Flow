@@ -1,0 +1,56 @@
+{
+  "recordedAt": "2026-10-07T10:34:27.696932+00:00",
+  "sourceTarget": "ea6bd5852c2754f4179bb6da467caf8d6d67a368",
+  "distinctBehaviorTests": 1,
+  "syntaxChecks": 1,
+  "selectedBehaviorRuns": 2,
+  "originalFailure": {
+    "code": "ENOENT",
+    "scope": "test setup lacked the empty compatibility store; production guards unchanged",
+    "preserved": true
+  },
+  "targetedRepair": "Create own empty web-compatibility fixture directory before asserting missing-report guard. No product change.",
+  "finalBehaviorPass": 1,
+  "callerMilliseconds": 379,
+  "rawBytes": 2456,
+  "groups": [
+    {
+      "pid": 43442,
+      "state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    },
+    {
+      "pid": 43483,
+      "state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    },
+    {
+      "pid": 69319,
+      "state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    }
+  ],
+  "allExactScratchRemoved": true,
+  "initialUnknownObservationsPreserved": true,
+  "finishedAt": "2026-10-07T10:31:20.006201+00:00",
+  "PG": 0,
+  "host": 0,
+  "provider": 0,
+  "realAppCompatibility": false,
+  "productionCodeChanged": false,
+  "diskBudgetBytes": 1048576,
+  "diskPeak": "NOT_MEASURED; bounded tiny fixture design and after-cleanup observations only",
+  "metadataPreparation": "Two metadata assertions stopped before writes: key insertion order and expected source spacing. Corrected to exact key-set and actual fixed source bytes; no engineering check rerun."
+}

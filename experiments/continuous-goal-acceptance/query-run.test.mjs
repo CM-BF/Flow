@@ -7,6 +7,8 @@ import { createObservedQuery, checkQueryOptions } from './query-run.mjs';
 import { DECLARATIONS, GRAPH_TOOLS } from './config.mjs';
 import { reservePhase, NATIVE_MODEL } from './permit.mjs';
 import { environmentFixture, fixturePermit } from './native-environment-fixture.mjs';
+import { recordQueryCount } from './query-policy.mjs';
+import { settleStage } from './stage-policy.mjs';
 function input(mode = 'rehearsal') { return { prompt: 'Bounded actual planner prompt', options: {
   model: mode === 'native' ? NATIVE_MODEL : 'synthetic-no-query', maxTurns: 4, maxBudgetUsd: 0.2, abortController: new AbortController(),
   permissionMode: 'dontAsk', strictMcpConfig: true, tools: [], allowedTools: [...GRAPH_TOOLS],
@@ -51,4 +53,37 @@ test('native entry is durably reserved before its injected stand-in and cannot b
     assert.equal(calls, 1); assert.equal(report.nativeQueryCalls, 1); assert.equal(report.queries[0].reservation.assignment.attemptId, 'attempt');
     const restarted = make()(request()); await assert.rejects(drain(restarted), { code: 'EEXIST' }); restarted.close(); assert.equal(calls, 1);
   } finally { await f.dispose(); }
+});
+
+
+test('O16 repair: early init rejection persists consumed one before independent cleanup failure', async () => {
+  const f = await environmentFixture();
+  try {
+    const reservation = await reservePhase(f.root, fixturePermit(f)), worker = { nativeQueryCalls: 0 };
+    const query = createObservedQuery({ mode: 'native', phase: 'plan', reservation, report: worker,
+      nativeEnvironment: f.nativeEnvironment, getBinding: () => binding,
+      nativeQuery() { return Object.assign((async function* () {
+        const good = (await frames().next()).value; yield { ...good, model: 'unexpected-model' };
+      })(), { close() {} }); } });
+    const value = input('native'); value.options.cwd = f.cwd;
+    const stream = query(value); let first;
+    try { await assert.rejects(drain(stream), error => { first = error; return true; }); }
+    finally { stream.close(); }
+    assert.equal(worker.nativeQueryCalls, 1); assert.equal(worker.queries[0].entry, 'native-started-unknown');
+    assert.equal(worker.queries[0].observation.result, null); assert.equal(worker.queries[0].closed, true);
+    const report = { nativeQueryCalls: 0, worker }, checkpoints = [];
+    recordQueryCount(report);
+    await assert.rejects(settleStage(report, { primaryError: first,
+      persist: async value => checkpoints.push(structuredClone(value)),
+      finish: async () => { throw Object.assign(new Error('Synthetic cleanup failure'), { code: 'EIO' }); } }), error => error === first);
+    assert(checkpoints.length >= 2); assert(checkpoints.every(row => row.nativeQueryCalls === 1));
+    assert.equal(report.cleanupFailure.code, 'EIO'); assert(report.primaryFailure);
+    assert.equal(report.worker.queries[0].observation.result, null);
+  } finally { await f.dispose(); }
+});
+test('O16 repair: missing or invalid worker counter remains unknown instead of stale zero', () => {
+  for (const worker of [undefined, {}, { nativeQueryCalls: null }, { nativeQueryCalls: -1 }, { nativeQueryCalls: 1.5 }]) {
+    const report = { nativeQueryCalls: 0, worker }; assert.equal(recordQueryCount(report), 'unknown');
+  }
+  assert.equal(recordQueryCount({ worker: { nativeQueryCalls: 0 } }), 0);
 });

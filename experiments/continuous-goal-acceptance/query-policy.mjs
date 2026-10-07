@@ -8,11 +8,18 @@ const sameNames = (actual, expected) => Array.isArray(actual) && actual.every(va
   && isDeepStrictEqual([...actual].sort(), [...expected].sort());
 function check(condition, message) { if (!condition) throw new Error(message); }
 
+/** Persist the worker's actual SDK entry counter even when no successful result exists. */
+export function recordQueryCount(report) {
+  const count = report.worker?.nativeQueryCalls;
+  report.nativeQueryCalls = Number.isSafeInteger(count) && count >= 0 ? count : 'unknown';
+  return report.nativeQueryCalls;
+}
+
 /** Observes SDK declarations/results only. Runtime authority and SDK iteration remain the original adapter's. */
 export function createQueryObservation(phase) {
   check(Object.hasOwn(PHASE_LIMITS, phase), 'Unknown observation phase.');
   const limits = PHASE_LIMITS[phase], tools = phase === 'plan' ? GRAPH_TOOLS : ['Read'];
-  const facts = { phase, effective: null, reads: [], result: null, permissionDenials: null,
+  const facts = { phase, declarationPolicy: DECLARATIONS.policy, effective: null, reads: [], result: null, permissionDenials: null,
     toolExecutionEvidence: phase === 'plan' ? 'center-audit-required' : 'matching-read-result-required', semanticAcceptance: 'not-evaluated' };
   let frames = 0, failure = null;
   function observeInit(event) {
@@ -25,7 +32,7 @@ export function createQueryObservation(phase) {
     check(effective.model === DECLARATIONS.model && effective.runtimeVersion === DECLARATIONS.runtimeVersion
       && effective.permissionMode === 'dontAsk' && effective.nativeSessionId && sameNames(effective.tools, tools)
       && sameNames(effective.plugins, DECLARATIONS.plugins) && sameNames(effective.skills, DECLARATIONS.skills)
-      && isDeepStrictEqual(effective.mcpServers, phase === 'plan' ? [{ name: 'flow-graph', source: 'sdk', status: 'connected' }] : []), 'SDK declarations differ from the fixed observed baseline.');
+      && isDeepStrictEqual(effective.mcpServers, phase === 'plan' ? [{ name: 'flow-graph', source: 'sdk', status: 'connected' }] : []), 'SDK declarations differ from the fixed private recipe.');
   }
   function observeToolUse(block) {
     check(facts.effective && label(block.id), 'Missing tool-use identity or init declaration.');

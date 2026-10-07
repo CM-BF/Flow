@@ -1,0 +1,571 @@
+{
+  "recordedAt": "2026-10-07T10:38:37.294560+00:00",
+  "base": "b67530bb025162629895d11482b5505d4a885c91",
+  "scope": "Reviewed SVC failed result and bootstrap preparation; O16 zero-model observation repair; dashboard source receipt. No model or personal operation.",
+  "reviews": [
+    "svc06-diagnostics-host-result-review.json",
+    "svc06-bootstrap-delta-review.json",
+    "o16-observation-repair-review.json"
+  ],
+  "sources": [
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/Interface.md",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 1667,
+      "sha256": "9593342841b2077fdc649009a236236325f0f9310c16d64ac69d8de663dcd783"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/README.md",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 2678,
+      "sha256": "5ca223048b8423dc918c1aada70da73d404e3fbaff977b6365f97d3f00d98845"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/bootstrap-direct-1.stderr",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/bootstrap-direct-1.stdout",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 2253,
+      "sha256": "29e8d83f8ee5f44d8e138cf2f0b106c18567f46c6e7f1a158dfd93a09597c4e4"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/bootstrap.test.mjs",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 3899,
+      "sha256": "605fa2a15238f0e9a84827ab764207634e559e57d939c64235928bbf6ce0868c"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/delta.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 3177,
+      "sha256": "747732176481913dd53758db38eb3f744938cf24bfa42822cb8ad027ce863149"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/entry-manifest.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 8403,
+      "sha256": "328930af1b88f93578bc8e2e6c1fbbb0674e914d7e081af2fb1c4a42f9f91e9f"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/entry.mjs",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 17827,
+      "sha256": "cca31be9413aa6b7ecb73b4ef8f62aae493872822de1091d4d54bad1254039c5"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/inputs.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 142654,
+      "sha256": "6caaa42e2dd553c5c3187a3418cba4a4533ed7a9964a955b9a9f52e5d8e923f9"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/journey-syntax.stderr",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/journey-syntax.stdout",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/journey.mjs",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 18883,
+      "sha256": "9b0236c428baaf5d7616c247a5ca1e46091a7ef8d00b7e0f094e5f8901b40672"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/local-checks.py",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 3860,
+      "sha256": "89ed5c9d15a9482ec63f9cff06c9d7b683d908bcaf52e9ff4ca64a0378dd4ceb"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/local-input-check.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 1796,
+      "sha256": "a936146efbabe8b15d8b5be117f7c7287afa6b4aa22634731a548740084a8099"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/local-result.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 2541,
+      "sha256": "2da1d3bb0f1e56a2be253616a64f0c2883740007a0116f0336f26d7062797d07"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/local-summary.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 1612,
+      "sha256": "094fdde7cd6daf4f0b15b3a2436677a47871d195c19befb384df0ca754f96a09"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/retry-bootstrap-direct-1.stderr",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/retry-bootstrap-direct-1.stdout",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 203,
+      "sha256": "4f477e6f5ef496159b846698196c8547c3b9bcd0f3ee1fa8c76582349387adad"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/retry-local-result.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 1439,
+      "sha256": "9e58c70a9d1f557cf8a1bd6deaca39ad7ab2b94b22ffc6271af149cf98232fc5"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/startup-observer.mjs",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 6449,
+      "sha256": "13784a6f0ce14f13f9e08fa47d853ecf0353952e29cb6fc4931ff958385cda4c"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/status-check.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 275,
+      "sha256": "16955b9f9f4f45677b1b791199a36bcd00730f89ca4e52a61b10db6c60bfc9ce"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-bootstrap/supervise.py",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 4568,
+      "sha256": "7f2abe7f6b6b832be03de94ffceeab7e962868ddf85950fc97b64d4b40882875"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/DIAGNOSIS.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 1289,
+      "sha256": "efb6b1d78d8a72bea71c3058c9b9ca785bac4f2ed2b9328ec9eb460fa7b128dd"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/RESULT.md",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 1835,
+      "sha256": "8694206a6289fedff1bce004e946d243b77d95d0ec7582fb863c5bccc81098b6"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/actual-completion.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 397,
+      "sha256": "c20bc9f910ea672724da41e2c0648a245b9482360a8961a94a6d53305c0d4569"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/actual-invocation.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 356,
+      "sha256": "5e2492d299dcbede1a5d91c2fc43c292af1c7ae00a13d6eba29ed4d66d11fc61"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/actual-r1/cleanup-checkpoint.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 4837,
+      "sha256": "ced5ed554c33ac474e322854cae6741a0c867aba5ef54cbe29681ef13152b502"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/actual-r1/cleanup-result.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 4892,
+      "sha256": "0ac1e7e34be38fd334c6aeb21c491ea5b2a98226d1ce4e08ac5956891c5b1b85"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/actual-r1/cleanup-startup-observation.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 2508,
+      "sha256": "c16ee3661917f6a6b1d6f6df5e6ac743232cb8d26fae2da6e02840598e281711"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/actual-r1/clone-result.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 419,
+      "sha256": "451b6ca024c126c62649c0b0a94774654fccaca6aadf6e2a28ac98e6c4b10e15"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/actual-r1/clone-verified.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 387,
+      "sha256": "adce96acc78dc67f38209044675fd3ac1a66eb6278e56dd517bd22ac11495612"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/actual-r1/generation-1.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 1596,
+      "sha256": "faebef0a8063368097be049bfa7350dbe18e7608217d8f2020e60212ddc183d3"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/actual-r1/reservation.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 565,
+      "sha256": "f20341442ec352419bdf5cf4ec80fa6e706c9e0f20c1965a379487156a8120bb"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/actual-r1/state-summary.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 2464,
+      "sha256": "6c61a04537553618f91bfdc7b253ea622fa32b57aa9ab1a61ca2a0e09df29860"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/actual-r1/work-checkpoint.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 935,
+      "sha256": "a44e84f76ccda2b7367debd11af477a546d110cc79c359752782a034d315008b"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/actual-r1/work-result.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 4486,
+      "sha256": "2fa464bd79767a7cee3ab110b3e25db16caac3284ed8283f61c66021e6629a02"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/actual-r1/work-startup-observation.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 2319,
+      "sha256": "f7196b313585e3515de0a482486749e8b2ca0f9d13f839306305bd93a40dd198"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/actual-r1/work-terminal.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 362,
+      "sha256": "68ccf955d914becf85870ce4e043cd8181334455ae1d335208ab25b04d526922"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/cluster-preflight.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 449,
+      "sha256": "3bb3c37fa1ca2d47112f3f721f2a229c1dc8bc975ccfc71abdc66934b69b5e51"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/execution-claim.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 1007,
+      "sha256": "e39ac37972254f8faece29f97f93168e61dbd278407cc1365d323ac28c1d2b05"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/execution-source-preflight.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 829,
+      "sha256": "2c1babe99ff2d0cecf36dd382aa1e3d42ab3a7b5c76f54630288f9c8cd186a5f"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/host-policy-outer.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 8001,
+      "sha256": "6b1ebe3b9b1addda8337d3e8b99f5c28acd55c4fd8e483a26378674aa1c888c9"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/independent-review.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 1838,
+      "sha256": "383250df3f266c0a9503da6385678cd6251012bfa638877a8b7776163dbcf0a9"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/invocation.stderr",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/invocation.stdout",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 359,
+      "sha256": "a2bb2a9d321c1b2932a1324204ed04a388d30c271731c47e7f12242160119d14"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/result-analysis.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 19169,
+      "sha256": "c324398f0ee05386f4ba0c431b3baa024d0ed13419fd52ffa12801c15d642150"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/result-independent-review.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 1900,
+      "sha256": "793439100ec327c6f28785df9bc6dc880cd946cfd7333ca3ec1880b9f91bbb22"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/result-manifest.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 20879,
+      "sha256": "548591927ecf49b3a06f3110211f8b5e394103f936c9a4f11ee08a5311d2ddef"
+    },
+    {
+      "path": "docs/evidence/svc06/diagnostics-host-policy/result-status-check.json",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 267,
+      "sha256": "c22704332cb6f64275305e37fec4d7a34e6a050dd2b35b2e380298872302e5c4"
+    },
+    {
+      "path": "plans/svc06-backend-release/plan.md",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 12749,
+      "sha256": "fe2d5ab433380fe77b0f5a606b2cc5098e0d7111c55e1b70ee794735db03a737"
+    },
+    {
+      "path": "plans/svc06-backend-release/review.md",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 18846,
+      "sha256": "97d57423eba20b733580f7173cfa09d70f1f175b048794ddaafe29cd484ea819"
+    },
+    {
+      "path": "plans/svc06-backend-release/status.md",
+      "originCommit": "94e12b5d56c808bc4145c18356549799da973ca6",
+      "mode": "100644",
+      "bytes": 36099,
+      "sha256": "e902f7c9ea922e061e39766693a4d2528df368edda8338a2c808b48d351a3cc7"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/Interface.md",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 2636,
+      "sha256": "9983ccf75ba04b351a6fe126a40e6ea518683c473fd783abafdcae588f8f73ac"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/RESULT.md",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 1644,
+      "sha256": "080d679a8995ca492509b90ec6cf57c9ea9ee66cdb0dfed12c3e6fd93bdb56cf"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/delta-manifest.json",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 9487,
+      "sha256": "d47e8aad3a880c40fa5e33fe51f46cfc4eae50ca8625decba41b00188965711f"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/run-01/checkpoint.json",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 763,
+      "sha256": "f92b4f8c5deb2f0ba80e7e01d5df15816c841b9c2a38aaea5bcc66df805b5a96"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/run-01/reservation.json",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 2704,
+      "sha256": "5eb1c50d8eb9f2190d1ba35289a6a4734493993b99db5c534820fa8a3014e25f"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/run-01/result.json",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 834,
+      "sha256": "76fdd422e60e642f9d593d7da6346ce12241b7067b5064ab099ebd3c984ec443"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/run-01/stderr",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/run-01/stdout",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 2201,
+      "sha256": "a88c16beb26c40075f0154ebf96ae5a1e6eb812000808b8bc7db393361000fd3"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/run-02/checkpoint.json",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 615,
+      "sha256": "a6ed4fa97523837024aca9f12998f11194aecb5b1bd96be2d1816dcd6c16d0ce"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/run-02/reservation.json",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 2599,
+      "sha256": "e25a23cdec90a6aaf5a70595686eb54a3aae920f874b1a8e07870363cf6710be"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/run-02/result.json",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 686,
+      "sha256": "6b6b0bb5c8c3f33a1f31dd47ff05080e95d25e4d784555f934e0bc6e2eeb457d"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/run-02/stderr",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/run-02/stdout",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 324,
+      "sha256": "1193227c58c980445d6101fac3705c9d24b3291ce2f9f06e480e2a7177556c43"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/run.py",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 4524,
+      "sha256": "d1cdd6f6819d07458f4e36c0e111468d92e6be5e60941388aa9a170c427c4b13"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/start.json",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 512,
+      "sha256": "6caff891ca80fea26e9f091d3346f088a7ada0f88e6905ebbd15915a7512f762"
+    },
+    {
+      "path": "docs/evidence/o16/native-observation-repair/validation.json",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 2000,
+      "sha256": "864721119d19ee1e819ad92f9cc6f50e48fc1de45fad66b4d52a7b855b8d3987"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/config.mjs",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 3335,
+      "sha256": "70e68a69b615eead36d983f64a66c108e0f1a1ea7ed7cc2d6bde6b4f296912b0"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/driver.mjs",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 19264,
+      "sha256": "f350393fa4f896cc48c8f80be739dea845caa409aabdcf05c1b712c6a9b32a58"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 6371,
+      "sha256": "493cf19237a52495b031728c5907814e1a601715728014a73ff2e5019afc0339"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator.mjs",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 12951,
+      "sha256": "3ab651f4024d438fb69078571485e86387449f89ce59bf11759cb815891e6c9f"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator.test.mjs",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 7091,
+      "sha256": "5d0ce10d7fddf6c04fe64ffe7b8180cec159e835d84245e6541436091c6675da"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/query-policy.mjs",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 7133,
+      "sha256": "48e35f0c380c567ca466d20f7baf248f7e580116e388bd6d19f32cc9285e1f4d"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/query-policy.test.mjs",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 5240,
+      "sha256": "514f53f527211dbfed418c5e3eeb757be7d0ae9bc7d2e50a4c94d20de650ed94"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/query-run.test.mjs",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 6858,
+      "sha256": "7754322ee8486bc01dfe54da5c2f032b8fabcc31a65ed3519db978c51836682b"
+    },
+    {
+      "path": "plans/d05-architecture-view/status.md",
+      "originCommit": "990413fc",
+      "mode": "100644",
+      "bytes": 36693,
+      "sha256": "cdc1a902f4e6421f52b1f943fe507fa72184a524652f31e9287c40d6d7beceba"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/review.md",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 8855,
+      "sha256": "2fb3fa9f2fb9a0fc018430fa360c778c9af4a7b47fffb9ef035953215a1718b4"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/status.md",
+      "originCommit": "2841fa77668c570d19acba713e11a804e30062ea",
+      "mode": "100644",
+      "bytes": 14338,
+      "sha256": "1aa3ccca8c7ee9a0ab29c14edcf7d7280dce9df7464086fad72dd202733ba8c8"
+    }
+  ],
+  "counts": {
+    "SVC": 52,
+    "O16": 26,
+    "dashboardStatus": 1
+  },
+  "tests": "Existing direct checks reused; no rerun for evidence intake. O16 experiment source preimages matched the fixed prior delivery."
+}

@@ -1,0 +1,51 @@
+{
+  "reviewedAt": "2026-10-07T10:36:51.023141+00:00",
+  "reviewer": "astra_ultra_execution_lead/gpt-6-astra",
+  "verdict": "APPROVED_LIMITED_PREPARATION",
+  "target": "ea6bd5852c2754f4179bb6da467caf8d6d67a368",
+  "delivery": "94e12b5d56c808bc4145c18356549799da973ca6",
+  "manifest": {
+    "path": "docs/evidence/svc06/diagnostics-host-bootstrap/entry-manifest.json",
+    "sha256": "328930af1b88f93578bc8e2e6c1fbbb0674e914d7e081af2fb1c4a42f9f91e9f",
+    "bytes": 8403
+  },
+  "findings": [],
+  "bindingCheck": {
+    "entries": 24,
+    "bytes": 272626,
+    "fixedAndCurrentIdentical": true,
+    "unchangedDrivers": 3,
+    "inheritedInputs": 513,
+    "changedInputKeys": [
+      "directory",
+      "fixedInputs",
+      "methodSources"
+    ]
+  },
+  "readScope": [
+    "one-word initial action publish to bootstrap; expectedVersion 0 retained",
+    "real artifact plan/import/commit guards and subsequent CAS direct test",
+    "source/control flow after failed guard; process and cleanup boundaries unchanged",
+    "two local results with original ENOENT setup failure retained"
+  ],
+  "evidence": {
+    "distinctBehavior": 1,
+    "finalPass": 1,
+    "syntaxExit": 0,
+    "callerMilliseconds": 379,
+    "rawBytes": 2456,
+    "groupsAbsent": 3,
+    "exactScratchRemoved": 2
+  },
+  "limits": [
+    "No product behavior changed. Synthetic loader reports are not real App compatibility evidence.",
+    "R1 remains failed at fixture bootstrap; its cleanup remains confirmed, old runner cause unknown.",
+    "Actual r2 NOT_RUN at review. Fresh bindings, unused namespace, resource and cluster admission, and current owner window required.",
+    "Same 7d1 artifact/source6c; no rebuild, provider, personal operation, or repeated prior matrix."
+  ],
+  "reviewerRuns": {
+    "engineeringTests": 0,
+    "PG": 0,
+    "provider": 0
+  }
+}

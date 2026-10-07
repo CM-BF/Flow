@@ -129,3 +129,25 @@ Execution Lead独立 `APPROVED_FIXED_ARTIFACT_AND_INTERNAL_LOADING`，target5d40
 Target `3cb0be8f57467a0ed4703119e68a96cd8f8e560e`，对b2b四产品差量；preview/其直接专测、新startup-diagnostics/专测。process两文件保持字节不改，原身份/TERM两例复验。19distinct分轮、2777ms、5owned组absent/双EOF、5scratch removed，原raw见[startup-diagnostics](../../docs/evidence/svc06/startup-diagnostics/README.md)。本作者clean-code复核完成：诊断只拥有私有证据与受控摘要，不拥有spawn/停止决策；无重复监督器/FSM。唯一reviewer Execution Lead，状态NOT_STARTED，不能扩大此前r1结果批准。
 
 审查重点：首错与secondary分离、nonce身份与private保护、64KiB后继续drain、真实child退出不被记录错误掩盖、原ready10s/detach/stop不变、新模块纳入Web/maintenance资格。未执行真实PG/新artifact/host或个人更新。
+
+## 2026-10-07 10:07:16 UTC — 启动诊断唯一批准转录
+
+Execution Lead独立APPROVED source3cb0be8f57467a0ed4703119e68a96cd8f8e560e / deliveryfc02bc6176d59d8d06f1c9d1acc9fffa4f885975，0P1/P2；[原件](../../docs/evidence/svc06/startup-diagnostics/independent-review.json)43+5绑定与原raw核同，0重测。本批准仅源码/局部，r1真实FAIL不改。后继6c固定source由Lead提供，新的build-once差量准备待审，不继承旧artifact结果。
+
+## 2026-10-07 10:14:09 UTC — 诊断产物准备批准与实际结果待审
+
+Execution Lead原件[APPROVED_PREPARATION_ONLY](../../docs/evidence/svc06/update-diagnostics-candidate/independent-review.json)绑定269034/047363，109固定输入/记录及3入口差量已核、0P1/P2。本次10:12:06.871Z→10:12:40.145Z实际产物7d1/6c构建与内部加载通过，监督33332ms/exit0/最终absent/双EOF；[原始结果](../../docs/evidence/svc06/update-diagnostics-candidate/RESULT.md)待独立结果review，不继承准备批准为运行批准。旧r1真实FAIL/未观测runner exit保持；无host/PG/provider/个人操作。
+
+## 2026-10-07 10:20:12 UTC — 新产物结果唯一批准转录
+
+native_center_owner对32d441cc/deliveryd911限定APPROVED_LIMITED_FIXED_ARTIFACT_BUILD_RESULT，原件[result-independent-review](../../docs/evidence/svc06/update-diagnostics-candidate/result-independent-review.json)，3399B/SHA11d6b5f43df9e950f0134f143e16429a581a2f26905ad8370275d6f4a0b0c0c2。21fixed/current+3private/root与33SQL/四诊断源全符；33332ms/exit0/最终absent双EOF，0重测。批准仅产物与内部加载，不是host或个人采用。新diagnostics-host-policy独立输入和3tiny证据待Lead一次审查。
+
+## 2026-10-07 10:28 UTC — 诊断宿主准备批准与r1结果待审
+
+Lead原件[APPROVED](../../docs/evidence/svc06/diagnostics-host-policy/independent-review.json)绑定6cd/4a6，20bindings/3method/3runtime与514输入同，P1/P2=0。本次实际r1的三角色/迁移已到、release fixture首错与cleanup分别记[RESULT](../../docs/evidence/svc06/diagnostics-host-policy/RESULT.md)；结果待独立审查，不以清理通过冒完整host通过。不改原r1、artifact或产品guard。
+
+## 2026-10-07 10:35:07 UTC — r1失败结果限定批准；r2最小修正待审
+
+Execution Lead原件 [review](../../docs/evidence/svc06/diagnostics-host-policy/result-independent-review.json)，1900B/SHA793439100ec327c6f28785df9bc6dc880cd946cfd7333ca3ec1880b9f91bbb22，实际review时间10:30:51.985739Z；target77cf/deliveryfe46，APPROVED_LIMITED_FAILED_HOST_RESULT_ACCOUNTING，无finding。只批准失败事实/正常cleanup，非完整host/三App/个人通过。
+
+r2 source ea6bd5852c2754f4179bb6da467caf8d6d67a368，唯一期待版本0首次publish→bootstrap；entry/observer/outer不变，新r2namespace。一个真实loader/CAS direct例原fixtureENOENT保留，补空report目录后1/1、syntax0、379ms/2456B，3组absent双EOF，两scratch removed。作者clean-code复核见[README](../../docs/evidence/svc06/diagnostics-host-bootstrap/README.md)，准备等待Lead独审，实际host NOT_RUN。

@@ -1,0 +1,572 @@
+{
+  "kind": "SVC06_DIAGNOSTICS_HOST_R1_RESULT",
+  "source": "6cd5a15c232210f7802482290b8f7b65318fd1ad",
+  "resultTarget": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+  "entryManifestSha256": "eb0f8c7c5dd94850d32d60f40d459d71460110733a02e2a2f632cb2ac73b8e9b",
+  "createdAt": "2026-10-07T10:28:52.778782+00:00",
+  "verdict": "FAIL_AT_RELEASE_FIXTURE_BOOTSTRAP_CLEANUP_CONFIRMED",
+  "bindings": [
+    {
+      "path": "entry-manifest.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 8171,
+      "sha256": "eb0f8c7c5dd94850d32d60f40d459d71460110733a02e2a2f632cb2ac73b8e9b"
+    },
+    {
+      "path": "independent-review.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 1838,
+      "sha256": "383250df3f266c0a9503da6385678cd6251012bfa638877a8b7776163dbcf0a9"
+    },
+    {
+      "path": "execution-claim.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 1007,
+      "sha256": "e39ac37972254f8faece29f97f93168e61dbd278407cc1365d323ac28c1d2b05"
+    },
+    {
+      "path": "execution-source-preflight.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 829,
+      "sha256": "2c1babe99ff2d0cecf36dd382aa1e3d42ab3a7b5c76f54630288f9c8cd186a5f"
+    },
+    {
+      "path": "cluster-preflight.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 449,
+      "sha256": "3bb3c37fa1ca2d47112f3f721f2a229c1dc8bc975ccfc71abdc66934b69b5e51"
+    },
+    {
+      "path": "actual-invocation.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 356,
+      "sha256": "5e2492d299dcbede1a5d91c2fc43c292af1c7ae00a13d6eba29ed4d66d11fc61"
+    },
+    {
+      "path": "actual-completion.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 397,
+      "sha256": "c20bc9f910ea672724da41e2c0648a245b9482360a8961a94a6d53305c0d4569"
+    },
+    {
+      "path": "host-policy-outer.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 8001,
+      "sha256": "6b1ebe3b9b1addda8337d3e8b99f5c28acd55c4fd8e483a26378674aa1c888c9"
+    },
+    {
+      "path": "invocation.stdout",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 359,
+      "sha256": "a2bb2a9d321c1b2932a1324204ed04a388d30c271731c47e7f12242160119d14"
+    },
+    {
+      "path": "invocation.stderr",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "result-analysis.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 19169,
+      "sha256": "c324398f0ee05386f4ba0c431b3baa024d0ed13419fd52ffa12801c15d642150"
+    },
+    {
+      "path": "RESULT.md",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 1835,
+      "sha256": "8694206a6289fedff1bce004e946d243b77d95d0ec7582fb863c5bccc81098b6"
+    },
+    {
+      "path": "DIAGNOSIS.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 1289,
+      "sha256": "efb6b1d78d8a72bea71c3058c9b9ca785bac4f2ed2b9328ec9eb460fa7b128dd"
+    },
+    {
+      "path": "result-status-check.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 267,
+      "sha256": "c22704332cb6f64275305e37fec4d7a34e6a050dd2b35b2e380298872302e5c4"
+    },
+    {
+      "path": "actual-r1/cleanup-checkpoint.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 4837,
+      "sha256": "ced5ed554c33ac474e322854cae6741a0c867aba5ef54cbe29681ef13152b502"
+    },
+    {
+      "path": "actual-r1/cleanup-result.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 4892,
+      "sha256": "0ac1e7e34be38fd334c6aeb21c491ea5b2a98226d1ce4e08ac5956891c5b1b85"
+    },
+    {
+      "path": "actual-r1/cleanup-startup-observation.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 2508,
+      "sha256": "c16ee3661917f6a6b1d6f6df5e6ac743232cb8d26fae2da6e02840598e281711"
+    },
+    {
+      "path": "actual-r1/clone-result.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 419,
+      "sha256": "451b6ca024c126c62649c0b0a94774654fccaca6aadf6e2a28ac98e6c4b10e15"
+    },
+    {
+      "path": "actual-r1/clone-verified.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 387,
+      "sha256": "adce96acc78dc67f38209044675fd3ac1a66eb6278e56dd517bd22ac11495612"
+    },
+    {
+      "path": "actual-r1/generation-1.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 1596,
+      "sha256": "faebef0a8063368097be049bfa7350dbe18e7608217d8f2020e60212ddc183d3"
+    },
+    {
+      "path": "actual-r1/reservation.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 565,
+      "sha256": "f20341442ec352419bdf5cf4ec80fa6e706c9e0f20c1965a379487156a8120bb"
+    },
+    {
+      "path": "actual-r1/state-summary.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 2464,
+      "sha256": "6c61a04537553618f91bfdc7b253ea622fa32b57aa9ab1a61ca2a0e09df29860"
+    },
+    {
+      "path": "actual-r1/work-checkpoint.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 935,
+      "sha256": "a44e84f76ccda2b7367debd11af477a546d110cc79c359752782a034d315008b"
+    },
+    {
+      "path": "actual-r1/work-result.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 4486,
+      "sha256": "2fa464bd79767a7cee3ab110b3e25db16caac3284ed8283f61c66021e6629a02"
+    },
+    {
+      "path": "actual-r1/work-startup-observation.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 2319,
+      "sha256": "f7196b313585e3515de0a482486749e8b2ca0f9d13f839306305bd93a40dd198"
+    },
+    {
+      "path": "actual-r1/work-terminal.json",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 362,
+      "sha256": "68ccf955d914becf85870ce4e043cd8181334455ae1d335208ab25b04d526922"
+    },
+    {
+      "path": "../../../../plans/svc06-backend-release/status.md",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 35277,
+      "sha256": "6369cff937fc9b73fbf0e5fbd9efe4be59ead4a8a581e0f1896f3b8a978999ed"
+    },
+    {
+      "path": "../../../../plans/svc06-backend-release/review.md",
+      "ref": "77cfef7cee4e273ff70a175b7f5329eafd17cdc0",
+      "bytes": 17931,
+      "sha256": "20a6c5a11088594d4b2c690fba6e1997380246b6d7aeab8c593c7f7b1fb94aa3"
+    }
+  ],
+  "privateOriginals": [
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/reservation.json",
+      "bytes": 565,
+      "sha256": "f20341442ec352419bdf5cf4ec80fa6e706c9e0f20c1965a379487156a8120bb",
+      "dev": 16777234,
+      "ino": 124018540,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/clone-result.json",
+      "bytes": 419,
+      "sha256": "451b6ca024c126c62649c0b0a94774654fccaca6aadf6e2a28ac98e6c4b10e15",
+      "dev": 16777234,
+      "ino": 124034228,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/clone-verified.json",
+      "bytes": 387,
+      "sha256": "adce96acc78dc67f38209044675fd3ac1a66eb6278e56dd517bd22ac11495612",
+      "dev": 16777234,
+      "ino": 124034242,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-checkpoint.json",
+      "bytes": 935,
+      "sha256": "a44e84f76ccda2b7367debd11af477a546d110cc79c359752782a034d315008b",
+      "dev": 16777234,
+      "ino": 124034266,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-result.json",
+      "bytes": 4486,
+      "sha256": "2fa464bd79767a7cee3ab110b3e25db16caac3284ed8283f61c66021e6629a02",
+      "dev": 16777234,
+      "ino": 124034787,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-terminal.json",
+      "bytes": 362,
+      "sha256": "68ccf955d914becf85870ce4e043cd8181334455ae1d335208ab25b04d526922",
+      "dev": 16777234,
+      "ino": 124034788,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/cleanup-checkpoint.json",
+      "bytes": 4837,
+      "sha256": "ced5ed554c33ac474e322854cae6741a0c867aba5ef54cbe29681ef13152b502",
+      "dev": 16777234,
+      "ino": 124034796,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/cleanup-result.json",
+      "bytes": 4892,
+      "sha256": "0ac1e7e34be38fd334c6aeb21c491ea5b2a98226d1ce4e08ac5956891c5b1b85",
+      "dev": 16777234,
+      "ino": 124034797,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-startup-observation.json",
+      "bytes": 2319,
+      "sha256": "f7196b313585e3515de0a482486749e8b2ca0f9d13f839306305bd93a40dd198",
+      "dev": 16777234,
+      "ino": 124034786,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/cleanup-startup-observation.json",
+      "bytes": 2508,
+      "sha256": "c16ee3661917f6a6b1d6f6df5e6ac743232cb8d26fae2da6e02840598e281711",
+      "dev": 16777234,
+      "ino": 124034795,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/generation-1.json",
+      "bytes": 1596,
+      "sha256": "faebef0a8063368097be049bfa7350dbe18e7608217d8f2020e60212ddc183d3",
+      "dev": 16777234,
+      "ino": 124034759,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/history-before.json",
+      "bytes": 5719,
+      "sha256": "bcbf3062942f5ca27767b577f72e96d1432df334011cc9d4a2046d8c44c6ef60",
+      "dev": 16777234,
+      "ino": 124034250,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/state.json",
+      "bytes": 2208,
+      "sha256": "69aa343a251bf4817f502f79ec350dc711e4acfd3235586425d7fb6bc22b6504",
+      "dev": 16777234,
+      "ino": 124034750,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/config.json",
+      "bytes": 679,
+      "sha256": "25af0c124c34cff401d928a935d1052ada7fbf6e1fb65ac357a427efcd557281",
+      "dev": 16777234,
+      "ino": 124034504,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/claude.json",
+      "bytes": 174,
+      "sha256": "1711fb04c26bbf4be485350fd0d5efabe649493ce41f03a7e352be901c346c07",
+      "dev": 16777234,
+      "ino": 124034245,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/manifest.json",
+      "bytes": 3196606,
+      "sha256": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "dev": 16777234,
+      "ino": 124034227,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/center-exit.json",
+      "bytes": 253,
+      "sha256": "a2476c9a715509fc184413cb20914ef4376ca98a88d16654b7a44513b0fe2130",
+      "dev": 16777234,
+      "ino": 124034794,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/startup-diagnostics/center-3e0fa664-633f-40b8-9eb9-1a7866f7f10d.json",
+      "bytes": 322,
+      "sha256": "0bd45699e93263c66791bb69ea795b16e50ae3707c2a71a791591c7323846938",
+      "dev": 16777234,
+      "ino": 124034793,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/startup-diagnostics/center-3e0fa664-633f-40b8-9eb9-1a7866f7f10d.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dev": 16777234,
+      "ino": 124034282,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/runner-exit.json",
+      "bytes": 253,
+      "sha256": "547ecb1d6df0852962a8594833e30f9b8018a9053f39f112d6a3f31f582ce403",
+      "dev": 16777234,
+      "ino": 124034792,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/startup-diagnostics/runner-59fe747f-79f7-431d-9051-189c0a46e311.json",
+      "bytes": 322,
+      "sha256": "bf3d1ffba33b818f5d2dd60dd6c008e42542fccfee7588f91b34a4ecfe244a91",
+      "dev": 16777234,
+      "ino": 124034791,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/startup-diagnostics/runner-59fe747f-79f7-431d-9051-189c0a46e311.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dev": 16777234,
+      "ino": 124034605,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/web-exit.json",
+      "bytes": 253,
+      "sha256": "5263855ec735caba7a32b7edc5f11a30894690ece6aade8e85b5be2e8bd3de7a",
+      "dev": 16777234,
+      "ino": 124034790,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/startup-diagnostics/web-13e578ee-ac2e-47dc-a1c5-8cec84c6a7fe.json",
+      "bytes": 319,
+      "sha256": "999c603b6f2b5d9f459a06518627e02fa69c1c9294a9ba82f9c44f74d608e852",
+      "dev": 16777234,
+      "ino": 124034789,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/startup-diagnostics/web-13e578ee-ac2e-47dc-a1c5-8cec84c6a7fe.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dev": 16777234,
+      "ino": 124034712,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/NON_PRODUCTION_LOADER_FIXTURE/SCOPE.json",
+      "bytes": 199,
+      "sha256": "9ebe22b9f2112b539583cfda31c870c06563c5425e44dfa9fd31b2af31cd2dfd",
+      "dev": 16777234,
+      "ino": 124034761,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/NON_PRODUCTION_LOADER_FIXTURE/v1/report.json",
+      "bytes": 716,
+      "sha256": "6c58a1e0f9f0c146014190c205ac499881a3d3a90ebe9458ed987b7377761ec7",
+      "dev": 16777234,
+      "ino": 124034767,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/NON_PRODUCTION_LOADER_FIXTURE/v1/send.json",
+      "bytes": 240,
+      "sha256": "d9fe55bc18a5fdb136b25b8d9b5f455d9a50ecdfc373eb269b9f1651574dd4f2",
+      "dev": 16777234,
+      "ino": 124034764,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/NON_PRODUCTION_LOADER_FIXTURE/v1/negotiation.json",
+      "bytes": 266,
+      "sha256": "6e70b427246e656f80daeb2f491b48a117514c0e952a4ded058fe130c3de46b3",
+      "dev": 16777234,
+      "ino": 124034766,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/NON_PRODUCTION_LOADER_FIXTURE/v1/recover.json",
+      "bytes": 232,
+      "sha256": "075f0654dc548c6eead892cad81df3a7ff112277ea261aa511aaf73aca7aac03",
+      "dev": 16777234,
+      "ino": 124034765,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/NON_PRODUCTION_LOADER_FIXTURE/v1/read.json",
+      "bytes": 250,
+      "sha256": "77abddf7f6b1a363a9dd951cddf3c04e06e601875b59ef7d641f17ccc40af888",
+      "dev": 16777234,
+      "ino": 124034763,
+      "uid": 501,
+      "mode": "0o600",
+      "nlink": 1
+    }
+  ],
+  "byteExactPublicCopies": [
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/reservation.json",
+      "publicPath": "actual-r1/reservation.json",
+      "bytes": 565,
+      "sha256": "f20341442ec352419bdf5cf4ec80fa6e706c9e0f20c1965a379487156a8120bb"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/clone-result.json",
+      "publicPath": "actual-r1/clone-result.json",
+      "bytes": 419,
+      "sha256": "451b6ca024c126c62649c0b0a94774654fccaca6aadf6e2a28ac98e6c4b10e15"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/clone-verified.json",
+      "publicPath": "actual-r1/clone-verified.json",
+      "bytes": 387,
+      "sha256": "adce96acc78dc67f38209044675fd3ac1a66eb6278e56dd517bd22ac11495612"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-checkpoint.json",
+      "publicPath": "actual-r1/work-checkpoint.json",
+      "bytes": 935,
+      "sha256": "a44e84f76ccda2b7367debd11af477a546d110cc79c359752782a034d315008b"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-result.json",
+      "publicPath": "actual-r1/work-result.json",
+      "bytes": 4486,
+      "sha256": "2fa464bd79767a7cee3ab110b3e25db16caac3284ed8283f61c66021e6629a02"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-terminal.json",
+      "publicPath": "actual-r1/work-terminal.json",
+      "bytes": 362,
+      "sha256": "68ccf955d914becf85870ce4e043cd8181334455ae1d335208ab25b04d526922"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/cleanup-checkpoint.json",
+      "publicPath": "actual-r1/cleanup-checkpoint.json",
+      "bytes": 4837,
+      "sha256": "ced5ed554c33ac474e322854cae6741a0c867aba5ef54cbe29681ef13152b502"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/cleanup-result.json",
+      "publicPath": "actual-r1/cleanup-result.json",
+      "bytes": 4892,
+      "sha256": "0ac1e7e34be38fd334c6aeb21c491ea5b2a98226d1ce4e08ac5956891c5b1b85"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/work-startup-observation.json",
+      "publicPath": "actual-r1/work-startup-observation.json",
+      "bytes": 2319,
+      "sha256": "f7196b313585e3515de0a482486749e8b2ca0f9d13f839306305bd93a40dd198"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/cleanup-startup-observation.json",
+      "publicPath": "actual-r1/cleanup-startup-observation.json",
+      "bytes": 2508,
+      "sha256": "c16ee3661917f6a6b1d6f6df5e6ac743232cb8d26fae2da6e02840598e281711"
+    },
+    {
+      "privatePath": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1/host-policy-once/generation-1.json",
+      "publicPath": "actual-r1/generation-1.json",
+      "bytes": 1596,
+      "sha256": "faebef0a8063368097be049bfa7350dbe18e7608217d8f2020e60212ddc183d3"
+    }
+  ],
+  "runRoot": {
+    "path": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r1",
+    "dev": 16777234,
+    "ino": 124018538
+  },
+  "originalArtifactRetained": true,
+  "noProductChange": true,
+  "noRetry": true,
+  "primaryPreserved": {
+    "name": "Error",
+    "code": "WEB_RELEASE_BOOTSTRAP_REQUIRED"
+  },
+  "oldRunnerCause": "NOT_DETERMINED",
+  "rawLogicalBytes": 34130
+}
