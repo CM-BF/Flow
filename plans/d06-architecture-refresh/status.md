@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 UTC | 2026-10-07T03:23:50Z |
+| 最近更新时间 UTC | 2026-10-07T03:34:21.464828+00:00 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root |
@@ -34,4 +34,4 @@
 
 原D06-01～08及五源6570/18Node/旧viewport/main证据见[原状态](../../docs/evidence/d06/snapshot-0da/previous-status.md)，不继承为新快照通过。个人af51 backend与d629 Web artifact只按服务owner回执说明，不采个人服务或等同全main。
 
-2026-10-07T03:22:57.010784Z–03:23:00.137584Z：[固定22项实际结果](../../docs/evidence/d06/snapshot-0da/direct-first-20261007/result.json)，outer3126.869875ms/exit0，完整双EOF，自有PGID26784与scratch清理；没有snapshot/PG/Chrome/个人服务或D04重跑，结果待root限定接收。
+2026-10-07T03:22:57.010784Z–03:23:00.137584Z：[固定22项实际结果](../../docs/evidence/d06/snapshot-0da/direct-first-20261007/result.json)，outer3126.869875ms/exit0，完整双EOF，自有PGID26784与scratch清理；没有snapshot/PG/Chrome/个人服务或D04重跑，结果已获[root限定实际接收](../../docs/evidence/d06/snapshot-0da/direct-first-20261007/root-actual-review.json)，未扩大为页面或主线批准。

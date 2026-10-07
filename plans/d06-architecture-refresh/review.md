@@ -12,6 +12,6 @@ Reviewer: root + workspace_panels_owner 限定独立源码审查，0 blocking
 
 原aeb审批[原样保留](../../docs/evidence/d06/snapshot-0da/previous-review.md)，其18Node和旧页面结果只覆盖原6570 target。本轮固定候选与静态来源核对见 [candidate](../../docs/evidence/d06/snapshot-0da/candidate.json)。正式结论 **APPROVED_SOURCE_ONLY_VALIDATION_PENDING**，仅两产品源；非feature/main/部署批准。
 
-[root正式审查](../../docs/evidence/d06/snapshot-0da/root-source-review.json)、[root静态审计](../../docs/evidence/d06/snapshot-0da/root-static-audit.json)、[backend peer](../../docs/evidence/d06/snapshot-0da/backend-peer-review.md)原样归档于[review intake](../../docs/evidence/d06/snapshot-0da/review-intake.json)。0 blocking；后继新22direct已实际通过，结果待root限定接收；所有页面检查仍NOT_RUN，SVG新文案布局仍需适当实际检查。初始candidate的pending状态是送审历史，不回写其固定证据。
+[root正式审查](../../docs/evidence/d06/snapshot-0da/root-source-review.json)、[root静态审计](../../docs/evidence/d06/snapshot-0da/root-static-audit.json)、[backend peer](../../docs/evidence/d06/snapshot-0da/backend-peer-review.md)原样归档于[review intake](../../docs/evidence/d06/snapshot-0da/review-intake.json)。0 blocking；后继新22direct已实际通过，结果已获[root限定实际接收](../../docs/evidence/d06/snapshot-0da/direct-first-20261007/root-actual-review.json)；所有页面检查仍NOT_RUN，SVG新文案布局仍需适当实际检查。初始candidate的pending状态是送审历史，不回写其固定证据。
 
-[direct-first actual22/22](../../docs/evidence/d06/snapshot-0da/direct-first-20261007/result.json)于2026-10-07执行，原source5124不变；本页既有独审仍只指源码，未代root审批新实际结果或主线。
+[direct-first actual22/22](../../docs/evidence/d06/snapshot-0da/direct-first-20261007/result.json)于2026-10-07执行，原source5124不变；root已独立接受22项实际结果与清理，原源码批准不变；新SVG布局、页面/main/发布仍未验。
