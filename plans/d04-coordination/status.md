@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 02:28 UTC / 2026-10-06 03:04 UTC（历史部署观察） |
+| 最近更新 / 最近main同步核验 | 2026-10-07T12:01:03.314Z / 2026-10-06 03:04 UTC（仅历史部署观察；本次未复采服务） |
 | 单一status owner / model | d01_owner / gpt-6-astra ultra；本次原Lead明确委派测试生命周期后继 |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-coordination |
 | Branch | codex/dashboard-coordination |
@@ -14,10 +14,13 @@
 | Review | [review.md](review.md)，APPROVED_SOURCE_ONLY；当前5项pureGit已实过并获root限定接收；PG/页面未复验，不继承旧runtime通过 |
 | 工作分支状态 | in-progress；源码与5项pureGit获限定接收，待主线接收 |
 | Main 集成状态 | NOT_INTEGRATED fa6f8835d95e5e59fb62e14db5561498c741a4e3；原ea8交付及03:04部署观察保留历史 |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 本持续D04后继无可靠总体首次开工事件，不从claim或历史发布时点补造；旧核心交付完成与后继尚待接收分别保留。本次仅排程字段更新，不改任务完成时刻。 |
 | 阶段 | M2 |
-| 优先级 | 1 |
-| 当前产出 | 原账本/冲突/负责人展示交付保留；已fresh领取五scope并固定三测试源码；原业务断言保留 |
-| 下一可用交付 | 已备固定三测试源主线接收入口；PG/CLI四项未重跑，保该验收边界供Lead接收判断 |
+| 优先级 | 4 |
+| 当前产出 | 工作领取、冲突提示和负责人展示已交付；测试生命周期后继的三测试源码与5项纯Git检查已获限定审查，尚未主线接收。 |
+| 下一可用交付 | 按优先级4排队接收已审测试生命周期补强；PG/CLI四项与页面仍未复验，保留边界供原Lead判断，不重复已绿产品检查。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -43,3 +46,7 @@
 2026-10-07T03:03:10.127590Z 至 03:03:14.159509Z：原五项 pureGit 实际通过，日志/真实 exit0/EOF 与自有 TMP 清理见上方结果；没有重跑原 PG/CLI 四项或 dashboard。
 
 [正常主线接收请求](../../docs/evidence/d04/owned-worktree-lifecycle/main-intake.json)绑定原三测试源与root源码/实际结果独审；不将PG/CLI未运行改称通过，不自行合并main。
+
+## 当前排程记录
+
+[本次作者字段更新](../../docs/evidence/d04/priority-records-20261007/update.json)落实GO经root/Original确认的优先级4。只改当前排程、用户可读产出及标准未知时间字段；固定fa6f审批、5项pureGit实际、PG/CLI/页面未验和main未接收均保持，无产品、聚合器或测试改动。

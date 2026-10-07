@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-07T12:01:03.359Z",
+  "scope": "oneD04 ownstatus parser only",
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "unknown",
+      "source": "legacy"
+    },
+    "phase": "M2",
+    "priority": 4,
+    "output": "工作领取、冲突提示和负责人展示已交付；测试生命周期后继的三测试源码与5项纯Git检查已获限定审查，尚未主线接收。",
+    "next": "按优先级4排队接收已审测试生命周期补强；PG/CLI四项与页面仍未复验，保留边界供原Lead判断，不重复已绿产品检查。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "本持续D04后继无可靠总体首次开工事件，不从claim或历史发布时点补造；旧核心交付完成与后继尚待接收分别保留。本次仅排程字段更新，不改任务完成时刻。"
+    },
+    "issues": [
+      "任务开工时间未记录"
+    ],
+    "waiting": ""
+  },
+  "todos": 5
+}
