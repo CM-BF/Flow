@@ -1,0 +1,21 @@
+{
+  "task": "X01-REMOVAL-REFERENCES01",
+  "source": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+  "support": "68f5575e65f723e2b07b4be3d37adb53a1d56521",
+  "base": "a4ebb279dd8613497cf9757ac187c3df923d5b37",
+  "manifest": "docs/evidence/x01-removal-references/pg-manifest.json",
+  "manifestSha256": "70df6363b860d39b1e08bc945b11c2931271c32d6249224c0d82c8acde05d2ef",
+  "summary": {
+    "files": 297,
+    "bytes": 1383296,
+    "external": 62,
+    "links": 21
+  },
+  "local": "docs/evidence/x01-removal-references/local.json",
+  "interface": "docs/evidence/x01-removal-references/interface.md",
+  "window": "docs/evidence/x01-removal-references/pg-window.md",
+  "review": "NOT_STARTED",
+  "PG": "NOT_OPEN",
+  "sourcePostExecutionFixed": true,
+  "scope": "5 product/test leaves + own support. 8 direct pass, types0; list1 no hooks. Query is observation not deletion permission."
+}

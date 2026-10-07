@@ -2,7 +2,8 @@
 
 | 字段 | 当前值 |
 | --- | --- |
-| 所属大task | X01 [完整插件管理](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
+| 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
+| 任务层级 | 子task |
 | co-lead | Mika |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | 阶段 | M2 |
@@ -27,7 +28,7 @@
 | 实现范围 | apps/server/src/plugin-runtime/routes.ts,apps/server/src/plugin-runtime/removal-references.ts,apps/server/src/plugin-runtime/removal-references.test.ts,apps/server/src/plugin-runtime/removal-references-pg.test.ts,packages/contracts/src/plugin-removal.ts |
 | 检查状态 | PASSED 81a064cb9f65da4b82bd2df042c4e5414f451811：8 direct/8pass与types0；list1仅收集、PG NOT_RUN。8child累计12.9147665s，原失败保留 |
 | Review | NOT_STARTED；固定准备/源码交chatui独审 |
-| 已集成 main 状态 | 未接收；HOST前像须先/同批受控接收，不覆盖latest main |
+| 已集成 main 状态 | 本片未接收；HOST/ACK/consumer已main de5475039d73caec631ba2ee64556208dbb1751d，主线I02 x01-candidates-combined-intake.json已只读核；不重置本片固定base、不冒本片main通过 |
 
 | TODO ID | 状态 | owner | 证据 |
 | --- | --- | --- | --- |

@@ -1,0 +1,66 @@
+{
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "可分页查看指定插件材料的任务引用及保留原因，直接检查已通过，等待独审",
+    "next": "审查固定中心入口与真实数据库验收准备；实际数据库验证另行领取窗口",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "timing": {
+    "started": {
+      "state": "known",
+      "at": "2026-10-07T11:36:23.000Z",
+      "record": "2026-10-07T11:36:23Z"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "工具UTC实际开工；20min至11:56:23Z，等待计入；本次PG未开"
+    },
+    "issues": [],
+    "waiting": ""
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+      "id": "X01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Mika",
+      "value": "Mika"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "checks": {
+    "state": "passed",
+    "target": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+    "record": "PASSED 81a064cb9f65da4b82bd2df042c4e5414f451811：8 direct/8pass与types0；list1仅收集、PG NOT_RUN。8child累计12.9147665s，原失败保留"
+  }
+}
