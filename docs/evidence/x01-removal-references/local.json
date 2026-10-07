@@ -1,0 +1,770 @@
+{
+  "startedAt": "2026-10-07T11:41:30.723235+00:00",
+  "startEpoch": 1791372983.0,
+  "attempts": [
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T11:41:30.725011+00:00",
+      "freeBeforeBytes": 22035341312,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-iaghqigp",
+        "dev": 16777234,
+        "ino": 124101729,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01-removal-references/tsconfig.json"
+      ],
+      "process": {
+        "pid": 31790,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 2,
+        "elapsed_ms": 2131,
+        "observed_bytes": 1025,
+        "retained_bytes": 1025,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "apps/server/src/index.ts(20,114): error TS2307: Cannot find module './native-activity-body/index.js' or its corresponding type declarations.\napps/server/src/package-artifacts/input.ts(1,17): error TS2307: Cannot find module 'npm-package-arg' or its corresponding type declarations.\napps/server/src/package-artifacts/source.ts(3,20): error TS2307: Cannot find module 'pacote' or its corresponding type declarations.\napps/server/src/package-artifacts/source.ts(73,47): error TS7006: Parameter 'stream' implicitly has an 'any' type.\napps/server/src/package-artifacts/storage.ts(5,18): error TS2307: Cannot find module 'ssri' or its corresponding type declarations.\npackages/plugin-runtime/src/package-store.ts(9,24): error TS2307: Cannot find module 'tar' or its corresponding type declarations.\npackages/plugin-runtime/src/package-store.ts(139,24): error TS7006: Parameter 'error' implicitly has an 'any' type.\npackages/plugin-runtime/src/package-store.ts(143,24): error TS7006: Parameter 'entry' implicitly has an 'any' type.\n",
+      "rawBytes": 1025,
+      "rawSha256": "96c5ad6cf185e397d838d8515a2c0018fe1588d78af863778162d81462135b78",
+      "finishedAt": "2026-10-07T11:41:32.856591+00:00",
+      "elapsedBeforeReceiptSeconds": 2.13114225002937
+    },
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T11:42:08.745030+00:00",
+      "freeBeforeBytes": 22032572416,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-dl_l22hc",
+        "dev": 16777234,
+        "ino": 124101972,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01-removal-references/tsconfig.json"
+      ],
+      "process": {
+        "pid": 54793,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 2,
+        "elapsed_ms": 2268,
+        "observed_bytes": 1312,
+        "retained_bytes": 1312,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "apps/server/src/package-artifacts/input.ts(1,17): error TS7016: Could not find a declaration file for module 'npm-package-arg'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/lib/npa.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/npm-package-arg` if it exists or add a new declaration (.d.ts) file containing `declare module 'npm-package-arg';`\napps/server/src/package-artifacts/source.ts(3,20): error TS7016: Could not find a declaration file for module 'pacote'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/index.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/pacote` if it exists or add a new declaration (.d.ts) file containing `declare module 'pacote';`\napps/server/src/package-artifacts/source.ts(73,47): error TS7006: Parameter 'stream' implicitly has an 'any' type.\napps/server/src/package-artifacts/storage.ts(5,18): error TS7016: Could not find a declaration file for module 'ssri'. '/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/lib/index.js' implicitly has an 'any' type.\n  Try `npm i --save-dev @types/ssri` if it exists or add a new declaration (.d.ts) file containing `declare module 'ssri';`\n",
+      "rawBytes": 1312,
+      "rawSha256": "724869e70d5c5d40927c2a464ce215176a00bc422ccf1df09ffe3af56b8258c9",
+      "finishedAt": "2026-10-07T11:42:11.016191+00:00",
+      "elapsedBeforeReceiptSeconds": 2.2687322089914232
+    },
+    {
+      "label": "tests",
+      "startedAt": "2026-10-07T11:42:27.855858+00:00",
+      "freeBeforeBytes": 22017789952,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-7f5s4zqi",
+        "dev": 16777234,
+        "ino": 124102201,
+        "removed": true,
+        "endSample": {
+          "entries": 4,
+          "bytes": 2891,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01-removal-references/vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-7f5s4zqi/tests.json"
+      ],
+      "process": {
+        "pid": 66865,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 733,
+        "observed_bytes": 109,
+        "retained_bytes": 109,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "tests",
+        "rawComplete": true
+      },
+      "raw": "JSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-7f5s4zqi/tests.json\n",
+      "rawBytes": 109,
+      "rawSha256": "f9544e6a4346c4967c777ff2506cc22e34cb7cd678d649a01345f4829b5d959d",
+      "tests.json": {
+        "numTotalTestSuites": 1,
+        "numPassedTestSuites": 1,
+        "numFailedTestSuites": 0,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 8,
+        "numPassedTests": 8,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791373348066,
+        "success": true,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "classifies active uncertain and historical without granting removal or disclosing payloads",
+                "status": "passed",
+                "title": "classifies active uncertain and historical without granting removal or disclosing payloads",
+                "duration": 5.6830830000000105,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "empty material-filtered page advances the bounded raw index cursor",
+                "status": "passed",
+                "title": "empty material-filtered page advances the bounded raw index cursor",
+                "duration": 0.8137500000000273,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "historical installed version remains inspectable after selection changes",
+                "status": "passed",
+                "title": "historical installed version remains inspectable after selection changes",
+                "duration": 0.15262500000000045,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "foreign unsettled and missing receipts fail before reference scan",
+                "status": "passed",
+                "title": "foreign unsettled and missing receipts fail before reference scan",
+                "duration": 0.5894589999999766,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "cursor query identity and registration revision cannot be changed",
+                "status": "passed",
+                "title": "cursor query identity and registration revision cannot be changed",
+                "duration": 0.5572090000000003,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "empty observation still cannot certify host release",
+                "status": "passed",
+                "title": "empty observation still cannot certify host release",
+                "duration": 0.10987499999998818,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "owner route preserves authentication strict query and read-only no-store transaction",
+                "status": "passed",
+                "title": "owner route preserves authentication strict query and read-only no-store transaction",
+                "duration": 77.07650000000001,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "different install operation aliases of the same physical material remain visible",
+                "status": "passed",
+                "title": "different install operation aliases of the same physical material remain visible",
+                "duration": 0.26549999999997453,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791373348489,
+            "endTime": 1791373348575.2654,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/apps/server/src/plugin-runtime/removal-references.test.ts"
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T11:42:28.590212+00:00",
+      "elapsedBeforeReceiptSeconds": 0.7336577499518171
+    },
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T11:42:33.362585+00:00",
+      "freeBeforeBytes": 22000820224,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-hf0tu1h5",
+        "dev": 16777234,
+        "ino": 124102257,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01-removal-references/tsconfig.json"
+      ],
+      "process": {
+        "pid": 71139,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 2177,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T11:42:35.541146+00:00",
+      "elapsedBeforeReceiptSeconds": 2.177691583056003
+    },
+    {
+      "label": "collect",
+      "startedAt": "2026-10-07T11:43:10.422273+00:00",
+      "freeBeforeBytes": 22005096448,
+      "floorBeforeBytes": 6300000000,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-evmvbd7o",
+        "dev": 16777234,
+        "ino": 124102414,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/node_modules/vitest/vitest.mjs",
+        "list",
+        "--config",
+        "docs/evidence/x01-removal-references/pg-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--json"
+      ],
+      "process": {
+        "pid": 92848,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 1,
+        "elapsed_ms": 1385,
+        "observed_bytes": 816,
+        "retained_bytes": 816,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "collect",
+        "rawComplete": true
+      },
+      "raw": "Error: Cannot find module '../database.js' imported from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/support/apps/server/src/native-activity-body/index.ts'\n ❯ docs/evidence/x01-removal-references/support/apps/server/src/native-activity-body/index.ts:4:1\n      2| import type { Pool } from 'pg';\n      3| import { readFile } from 'node:fs/promises';\n      4| import { HttpError, transaction } from '../database.js';\n       | ^\n      5| import { integerQuery } from '../queries.js';\n      6| import { nativeActivityBodyDescriptor, nativeActivityBodyPage } from '…\n ❯ apps/server/src/index.ts:20:1\n\n⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯\nSerialized Error: { code: 'ERR_MODULE_NOT_FOUND' }\n",
+      "rawBytes": 816,
+      "rawSha256": "60a9c8f661406f3d4d08cbc24ca35690bb6037c923e8bb530885cf7eff2784b6",
+      "finishedAt": "2026-10-07T11:43:11.809068+00:00",
+      "elapsedBeforeReceiptSeconds": 1.3854225419927388
+    },
+    {
+      "label": "collect",
+      "startedAt": "2026-10-07T11:43:30.147463+00:00",
+      "freeBeforeBytes": 22005608448,
+      "floorBeforeBytes": 6300000000,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-dwo90csx",
+        "dev": 16777234,
+        "ino": 124102734,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/node_modules/vitest/vitest.mjs",
+        "list",
+        "--config",
+        "docs/evidence/x01-removal-references/pg-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--json"
+      ],
+      "process": {
+        "pid": 5651,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1624,
+        "observed_bytes": 270,
+        "retained_bytes": 270,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "collect",
+        "rawComplete": true
+      },
+      "raw": "[\n  {\n    \"name\": \"removal references preserve bounded material aliases uncertain pins and immutable history\",\n    \"file\": \"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/apps/server/src/plugin-runtime/removal-references-pg.test.ts\"\n  }\n]\n",
+      "rawBytes": 270,
+      "rawSha256": "ef14b65a29450a4ed19f0dd7eeaf63899256902df47a82f041d598dba4d9e3c1",
+      "finishedAt": "2026-10-07T11:43:31.772865+00:00",
+      "elapsedBeforeReceiptSeconds": 1.6244599999627098
+    },
+    {
+      "label": "tests",
+      "startedAt": "2026-10-07T11:46:43.073906+00:00",
+      "freeBeforeBytes": 21986820096,
+      "floorBeforeBytes": 6300000000,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-ny2euvpt",
+        "dev": 16777234,
+        "ino": 124104517,
+        "removed": true,
+        "endSample": {
+          "entries": 4,
+          "bytes": 2876,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01-removal-references/vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-ny2euvpt/tests.json"
+      ],
+      "process": {
+        "pid": 28027,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 660,
+        "observed_bytes": 109,
+        "retained_bytes": 109,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "tests",
+        "rawComplete": true
+      },
+      "raw": "JSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-ny2euvpt/tests.json\n",
+      "rawBytes": 109,
+      "rawSha256": "481b8648f020da73e23547999b21379f552de857ecb22adadab7e6e593c26c1d",
+      "tests.json": {
+        "numTotalTestSuites": 1,
+        "numPassedTestSuites": 1,
+        "numFailedTestSuites": 0,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 8,
+        "numPassedTests": 8,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791373603270,
+        "success": true,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "classifies active uncertain and historical without granting removal or disclosing payloads",
+                "status": "passed",
+                "title": "classifies active uncertain and historical without granting removal or disclosing payloads",
+                "duration": 4.7620000000000005,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "empty material-filtered page advances the bounded raw index cursor",
+                "status": "passed",
+                "title": "empty material-filtered page advances the bounded raw index cursor",
+                "duration": 0.7815830000000119,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "historical installed version remains inspectable after selection changes",
+                "status": "passed",
+                "title": "historical installed version remains inspectable after selection changes",
+                "duration": 0.15174999999999272,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "foreign unsettled and missing receipts fail before reference scan",
+                "status": "passed",
+                "title": "foreign unsettled and missing receipts fail before reference scan",
+                "duration": 0.5660409999999843,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "cursor query identity and registration revision cannot be changed",
+                "status": "passed",
+                "title": "cursor query identity and registration revision cannot be changed",
+                "duration": 0.553875000000005,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "empty observation still cannot certify host release",
+                "status": "passed",
+                "title": "empty observation still cannot certify host release",
+                "duration": 0.10808299999996507,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "owner route preserves authentication strict query and read-only no-store transaction",
+                "status": "passed",
+                "title": "owner route preserves authentication strict query and read-only no-store transaction",
+                "duration": 64.22987499999999,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "different install operation aliases of the same physical material remain visible",
+                "status": "passed",
+                "title": "different install operation aliases of the same physical material remain visible",
+                "duration": 0.15625,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791373603653,
+            "endTime": 1791373603724.23,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/apps/server/src/plugin-runtime/removal-references.test.ts"
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T11:46:43.734962+00:00",
+      "elapsedBeforeReceiptSeconds": 0.660441083018668
+    },
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T11:46:46.941417+00:00",
+      "freeBeforeBytes": 21987168256,
+      "floorBeforeBytes": 6300000000,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-removal-i2u6othv",
+        "dev": 16777234,
+        "ino": 124104561,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01-removal-references/tsconfig.json"
+      ],
+      "process": {
+        "pid": 28059,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1933,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T11:46:48.875314+00:00",
+      "elapsedBeforeReceiptSeconds": 1.9332190830027685
+    }
+  ],
+  "unknown": false,
+  "limits": {
+    "segmentSeconds": 1200,
+    "commands": 8,
+    "commandSeconds": 60,
+    "temporaryBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 2097152
+  },
+  "floorBytes": 6100000000,
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "tarPlanned": 0,
+  "wholeExternalWall": null,
+  "updatedAt": "2026-10-07T11:46:48.875333+00:00"
+}

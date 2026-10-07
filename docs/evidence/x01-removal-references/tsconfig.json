@@ -1,0 +1,32 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "baseUrl": ".",
+    "paths": {
+      "@flow/contracts": [
+        "../../../packages/contracts/src/index.ts"
+      ],
+      "@flow/client": [
+        "../../../packages/client/src/index.ts"
+      ],
+      "@flow/plugin-runtime": [
+        "../../../packages/plugin-runtime/src/package-store.ts"
+      ],
+      "@flow/protocols": [
+        "../../../packages/protocols/src/index.ts"
+      ]
+    },
+    "rootDirs": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/support"
+    ]
+  },
+  "include": [
+    "../../../apps/server/src/plugin-runtime/removal-references.ts",
+    "../../../apps/server/src/plugin-runtime/removal-references.test.ts",
+    "../../../apps/server/src/plugin-runtime/removal-references-pg.test.ts",
+    "../../../apps/server/src/plugin-runtime/routes.ts",
+    "../../../packages/contracts/src/plugin-removal.ts",
+    "support/**/*.d.ts"
+  ]
+}

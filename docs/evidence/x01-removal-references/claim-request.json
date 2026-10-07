@@ -1,0 +1,21 @@
+{
+  "requestId": "e9281d8b-108b-484c-be64-16e5cda011bf",
+  "taskId": "X01-REMOVAL-REFERENCES01",
+  "actor": {
+    "lead": "mika",
+    "worker": "architecture_read"
+  },
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references",
+  "branch": "codex/plugin-removal-references",
+  "role": "writer",
+  "origin": "new",
+  "scope": [
+    "apps/server/src/plugin-runtime/routes.ts",
+    "apps/server/src/plugin-runtime/removal-references.ts",
+    "apps/server/src/plugin-runtime/removal-references.test.ts",
+    "apps/server/src/plugin-runtime/removal-references-pg.test.ts",
+    "packages/contracts/src/plugin-removal.ts",
+    "plans/x01-removal-references",
+    "docs/evidence/x01-removal-references"
+  ]
+}
