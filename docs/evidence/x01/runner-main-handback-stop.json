@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-07T20:26:32.000Z",
+  "stoppedWritingAt": "2026-10-07T20:29:04.157Z",
+  "permanentStop": true,
+  "path": "apps/runner/src/main.ts",
+  "parentHead": "32e9153f1e4b9dbd950f36f61ebbb80f30770cae",
+  "mainHead": "18bf17ea26cacb4a12cd89f962b455f6688f729d",
+  "bytes": 3710,
+  "sha256": "e64fff552e2ea225c739fb8af21db25726b5b05e5573fd6f2ec16a26c3964c60",
+  "gitBlob": "e9273a9f63aaeea06079261b70024455144b7325",
+  "ownerEqualsMain": true,
+  "pendingParentSourceDelta": false,
+  "receiver": {
+    "lead": "Original Execution Lead",
+    "worker": "assignment_review",
+    "condition": "Fresh atomic take COMMITTED before any write"
+  },
+  "preserve": [
+    "FLOW_PLUGIN_EXECUTION_CONFIG explicit opt-in and ordinary-native-only guard before publication",
+    "loadPluginExecutionConfiguration and same runRunner pluginExecution port",
+    "Codex/engineering/A2A branch isolation, concurrency, original SIGINT/SIGTERM AbortController and listener cleanup"
+  ],
+  "scope": "metadata/ledger only; no product source, tests, product PG or personal actions",
+  "skills": {
+    "findSkills": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+    "cleanCode": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "method": "Reuse installed local baseline; check exact identity, single-leaf scope, preserved lifecycle, and clear historical/current facts."
+  },
+  "inspectionNote": "Initial read-only ledger used PATH Node23.11.0; refreshed authoritative ledger and all mutations use fixed Node24. No engineering check was performed."
+}

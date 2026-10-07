@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T19:48:21.740Z |
+| 最近更新时间 | 2026-10-07T20:29:29.522Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -10,7 +10,7 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v32 ACTIVE42scope](../../docs/evidence/x01/startup-observer-handback-receipt.json)；runners.ts已STOP交回CORE651，7条runner路径交process-host；routes.ts及两Web路径仍STOP；admission-journal与center八leaf已STOP并交AV03；server main.ts已STOP交startup observer；本次仅parent metadata |
+| Claim | [v33 ACTIVE41scope](../../docs/evidence/x01/runner-main-handback-receipt.json)；runners.ts已STOP交回CORE651，7条runner路径交process-host；routes.ts及两Web路径仍STOP；admission-journal与center八leaf已STOP并交AV03；server main.ts已STOP交startup observer；runner main.ts已永久STOP交回供Original恢复owner接收；本次仅parent metadata |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
@@ -412,3 +412,6 @@ PROCESS固定4dc十一源已远端main96b424777cd2c66e603157649e5a859ca1b914f6�
 2026-10-07T16:34:00.000Z parent安全同步：AV02九叶正式main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶正式main b79121e1944f10f82a416d98d776c0f55bf9c943，独立I02回执均在child权威status链接。当前center片14源的唯一事实源继续为child status，本parent不复制其检查/进度。parent明确STOP八leaf→v31移出，本任务不恢复这些写权；剩余claim保留。无个人部署/完整X01完成结论。
 
 2026-10-07T19:48:21.740Z：仅metadata/协调ledger交接。19:46:26.096Z明确STOP apps/server/src/main.ts，原子amend于19:46:46.313Z将6dd v31/43→v32/42，仅移除此leaf；其余scope保留。固定main c29c2bbb0d9f1548cf54bcb78e0cd3b4a8e5b6c4前像与现WT字节见[handoff](../../docs/evidence/x01/startup-observer-handback-stop.json)。已main的显式runtime policy配置与原关闭链必须保留；native_center_owner须fresh take成功后写。无源码修改/工程check/产品PG/个人操作，父X01未完成。提交push后STOP，不恢复该leaf写权。
+
+
+2026-10-07T20:29:29.522Z：runner 启动结构化ready部分交权，仅本parent metadata/原子账本。apps/runner/src/main.ts于2026-10-07T20:29:04.157Z永久STOP，2026-10-07T20:29:04.252Z COMMITTED v32/42→v33/41，仅移出此leaf，余下scope保留。其字节等固定main 18bf17ea26cacb4a12cd89f962b455f6688f729d，无parent待集成差量；现有显式插件配置、普通native分支传入同runRunner、Codex/engineering/A2A隔离与信号收束须保留。Original assignment_review fresh take成功才写，禁止旧blob覆盖后继主线。唯一[handoff入口](../../docs/evidence/x01/runner-main-handoff-ready.json)记录前像/hash/receipt。0源码改动、0工程测试/产品PG/个人操作；未扩AV R2或新feature范围，父X01未完成。提交/push后STOP本metadata段，不恢复该leaf写权。
