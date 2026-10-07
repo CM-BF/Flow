@@ -146,3 +146,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ## 2026-10-07 05:15:09 UTC — 原-05关闭焦点前置与验收解耦候选
 
 [固定两行前置](../../docs/evidence/wpf-conversation-recovery/focus-precondition-source.md)保所有原材料/名称/顺序/noPOST断言。Root仅源码批准，第四失败根因仍待证据。按GO提速要求，[独立选择提案](../../docs/evidence/wpf-conversation-recovery/browser-scenario-seams/report.md)在原-05内区分真正相连的恢复链和可自备状态的后三组；不新增task、第二authority或通用runner，不把失败catch后污染状态继续。完整full E2E仍必需，selector尚未实现，第五包暂停，预算不增。
+
+## 2026-10-07 05:21:31 UTC — 原-05最小选择接口已实现，真实验收未变
+
+[固定dd6645接口](../../docs/evidence/wpf-conversation-recovery/journey-selection-source.md)将已批准提案落实在原browser；full保原七组，单selected隔离服务端/浏览器状态，0/缺required不得绿，不catch污染续跑。计时显式区分worker初始化与组内UI种稿，只提供可比较来源不冒优化实证。局部类型/纯映射校验已过，真实选组未跑，完整TODO不勾选、原预算不增加。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 05:15:09 UTC |
+| 最近更新 | 2026-10-07 05:21:31 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -12,17 +12,17 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段browser checkpoint 1bc4f20b9257b294adcadd6b68b1b9e015e04e86；其他18源=9835；metadata HEAD以Git为准 |
-| 工作树dirty状态 | 19源固定1bc；本批仅browser关闭/焦点两行前置与own记录，normalpush后核clean |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段browser checkpoint dd6645b7f3ea84d758705684190c094ad3c87460；其他18源=1bc/9835；metadata HEAD以Git为准 |
+| 工作树dirty状态 | 19源固定dd6645；本批仅原browser有限journey选择/计量与own记录，normalpush后核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已补附件键盘检查的关闭前置；恢复验证仍未完成 |
-| 下一可用交付 | 确认独立场景的隔离后，继续恢复旅程验证 |
-| 当前阻塞 | ACTIVE: 原恢复旅程仍失败，关闭焦点修正尚未实测，认证失效和离线等后续验收未完成 |
+| 当前产出 | 已加入恢复场景独立选择；页面行为尚待验 |
+| 下一可用交付 | 选择优先的恢复场景并完成页面验证 |
+| 当前阻塞 | ACTIVE: 原完整恢复旅程仍失败，新的独立场景入口尚待源码审查和实际页面验证 |
 | 需用户决定 | NONE |
-| 检查状态 | 第四browser FAILED原样保留；1bc两行前置获限定source approval但NOT_RUN；独立场景selector仅提案。原50/serialization10不变，晚累计54883.199542ms，下次最多35116含15000cleanup，无新准入 |
+| 检查状态 | 当前Web noEmit0/纯选择与run回调119断言PASS，累计local12.462s；不是浏览器通过。原第四FAIL及所有旧raw不变，晚browser累计54883.199542ms，下次最多35116含15000cleanup，无新准入 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
@@ -276,3 +276,9 @@ DB marked正常清零DROP、fixture关闭、双ownedgroup ESRCH/scratch移除；
 固定 `1bc4f20b9257b294adcadd6b68b1b9e015e04e86`，仅browser最后Escape后确认picker关闭/现Files自然回焦两行；[累计19源manifest](../../docs/evidence/wpf-conversation-recovery/focus-precondition-checkpoint.json)核18其他源不变。[Root限定源审](../../docs/evidence/wpf-conversation-recovery/1bc-focus-precondition-root-review.json)通过，未确定第四失败唯一原因，不冒产品修复或新运行通过。原第四失败/前三历史/50及serialization10全部保留。
 
 [实际依赖与选择提案](../../docs/evidence/wpf-conversation-recovery/browser-scenario-seams/report.md)：材料→同稿CAS→lostACK仍完整相连；后三组需自己通过公开UI准备稿/行，新context不足以隔离全表session expiry，最小单次selector复用原新markedDB/fixture。默认full仍原七组，选组与全旅程通过分开；当前未实现selector，下一packet暂停待设计选择，无gate/预约/运行或资源采样。原累计54883.199542ms和最多35116含15000cleanup保持；完整targetUNKNOWN/reviewNOT_STARTED/main未接。
+
+## 2026-10-07 05:21:31 UTC — 单journey源码与有界local证据
+
+固定 `dd6645b7f3ea84d758705684190c094ad3c87460`，[manifest](../../docs/evidence/wpf-conversation-recovery/journey-selection-checkpoint.json)只browser变化/18其他源不变。新有限选择由Gate绑定，parent自定required并拒空/缺组；full仍原七组，独立项用原新DB/fixture/context和公开UI自种稿。报告分别selectedPassed/fullJourneyPassed，补worker初始化与最多7组单调计时。
+
+[有界local原件](../../docs/evidence/wpf-conversation-recovery/journey-selection-local/index.json)两轮必要增量累计12462.477ms/30000，最终noEmit0+119项抽取纯函数/回调PASS、四Node双EOF/组清理；不启动产品或服务，不复跑50/10。当前独立source review PENDING/真实browser NOT_RUN；root审后才定剩35116一次旅程，无gate/预约，完整feature NOT_STARTED/targetUNKNOWN。

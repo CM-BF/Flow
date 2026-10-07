@@ -206,4 +206,10 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 
 复用已安装find-skills/clean-code/codebase-design/webapp-testing；实际应用为区分Dialog关闭的setup前置与Tooltip行为断言，保唯一UI/材料authority及失败事实，未增加sleep、timeout、替代hover或通用trace。仅两行已有locator断言；生产18源不动。Git diffcheck0、19current=fixed/18unchanged、旧browser-runs零diff；这不是运行检查。
 
-依赖分析发现newContext不能隔离fixture的全表expire与共享conversation/lost/wire；提出单次新DB+context有限selector，复用现真实种子与同份case操作，不复制controller或隐式IDB写入。方案未实现/未验；无Node产品import/types/tests/HTTP/PG/Chrome/free。根因不确定与35000余量不能保证全验收均明确保留。
+依赖分析发现newContext不能隔离fixture的全表expire与共享conversation/lost/wire；提出单次新DB+context有限selector，复用现真实种子与同份case操作，不复制controller或隐式IDB写入。方案未实现/未验；无Node产品import/types/tests/HTTP/PG/Chrome/free。根因不确定与35116ms余量不能保证全验收均明确保留。
+
+## 2026-10-07 05:21:31 UTC — 有限journey实施clean-code复核
+
+按既有find-skills/codebase-design/clean-code/webapp-testing，保单一原run操作与fixture、有限enum映射和相同业务断言；只在真实独立状态前置处显式seed，不拷贝controller/插入IDB记录/第二runner。错误仍原fail-fast，selected与full证据分开，parent不信worker缩required；初始化/每组单调计量有最多7条上限。
+
+复核实际变化：18其他源/全部历史raw不变，noEmit两次0（timing增量后必要再核）与最终119受控assertions已过，累计12.462s在30s内。全程sandbox禁网络/项目deps写，无emit/install/cache/PG/HTTP/Chrome/free，owned Node全reaped。计时port使用stub，不能说浏览器更快；初始化含worker但不含parentDB准备也明确。未解决：真实独立UI前置/页面授权失效/离线/图像需后续实际一次运行与review；完整feature不批准。

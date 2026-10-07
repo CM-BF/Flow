@@ -169,3 +169,7 @@ RECOVERY-SAVED-RECORD-IDENTITY：摘要/时间/intent/材料数和折叠完整ID
 Root固定 `1bc4f20b9257b294adcadd6b68b1b9e015e04e86` 的[独立报告](../../docs/evidence/wpf-conversation-recovery/1bc-focus-precondition-root-review.json)已原样归档；两行仅确认已有picker关闭/Files自然焦点后再执行不变的chip检查，18其他source逐字等9835。批准范围仅测试前置SOURCE，不是唯一根因确诊、第五gate或完整feature批准。
 
 [真实依赖/selector提案](../../docs/evidence/wpf-conversation-recovery/browser-scenario-seams/report.md)仅只读候选：单次选组拥有新服务端数据和context，不吞失败污染续跑；原full E2E仍保留。当前尚未实现、未审、未运行。历史四次browser FAILED/各局部通过不变；fullfeature NOT_STARTED/targetUNKNOWN。
+
+## 2026-10-07 05:21:31 UTC — dd6645有限journey待独审
+
+限定target `dd6645b7f3ea84d758705684190c094ad3c87460`（前序1bc），[manifest](../../docs/evidence/wpf-conversation-recovery/journey-selection-checkpoint.json)一browser/18其他源相同。作者完整noEmit0与119项纯选择/run回调校验PASS，见[原件](../../docs/evidence/wpf-conversation-recovery/journey-selection-local/index.json)；这些没有启动worker/fixture/nativeIDB/browser，单调clock在受控port中只验记录行为。独立源码审查PENDING，真实新journey NOT_RUN。原1bc两行限定批准和四次browserFAIL原样；完整feature仍NOT_STARTED/targetUNKNOWN。
