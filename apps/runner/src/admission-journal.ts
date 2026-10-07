@@ -8,6 +8,9 @@ import { RUNNER_CLAIM_PROTOCOL, type RunnerClaimRequest } from '../../../package
 import { PLUGIN_RUNNER_CLAIM_PROTOCOL, pluginRunnerClaimRequestSchema, pluginToolExecutionSchema,
   type PluginRunnerClaimRequest, type PluginToolExecution } from '../../../packages/contracts/src/plugin-runner-claim.js';
 
+import { VERIFIER_RUNNER_CLAIM_PROTOCOL, verifierRunnerClaimRequestSchema, sameVerifierClaimRequest,
+  type VerifierRunnerClaimRequest, type PluginVerifierExecution } from '../../../packages/contracts/src/verifier-runner-claim.js';
+
 const id = z.string().min(1).max(128);
 const assignmentSchema = z.strictObject({ attemptId: id, taskId: id, runnerId: id, ownerVersion: z.number().int().positive() });
 const legacySnapshotSchema = z.strictObject({ version: z.literal(1), inFlight: z.string().uuid().nullable(), assignments: z.array(assignmentSchema).max(16) });
@@ -16,7 +19,10 @@ const opportunitySnapshotSchema = z.strictObject({ version: z.literal(2), runner
 const pluginSnapshotSchema = z.strictObject({ version: z.literal(3), request: pluginRunnerClaimRequestSchema,
   assignments: z.array(assignmentSchema).max(16) })
   .refine(value => value.assignments.every(item => item.runnerId === value.request.runnerId));
-const snapshotSchema = z.union([legacySnapshotSchema, opportunitySnapshotSchema, pluginSnapshotSchema])
+const verifierSnapshotSchema = z.strictObject({ version: z.literal(4), request: verifierRunnerClaimRequestSchema,
+  assignments: z.array(assignmentSchema).max(16) })
+  .refine(value => value.assignments.every(item => item.runnerId === value.request.runnerId));
+const snapshotSchema = z.union([legacySnapshotSchema, opportunitySnapshotSchema, pluginSnapshotSchema, verifierSnapshotSchema])
   .refine(value => new Set(value.assignments.map(item => item.attemptId)).size === value.assignments.length);
 export type AdmissionAssignment = z.infer<typeof assignmentSchema>;
 type Snapshot = z.infer<typeof snapshotSchema>;
@@ -67,6 +73,7 @@ export class AdmissionJournal {
     id.parse(runnerId);
     const qualification = pluginToolExecution === undefined ? undefined : pluginToolExecutionSchema.parse(pluginToolExecution);
     await this.change(snapshot => {
+      if (snapshot.version === 4) throw new AdmissionStorageError(new Error('A verifier opportunity cannot use the legacy binding API.'));
       if (snapshot.version === 3) {
         if (snapshot.request.runnerId !== runnerId || !qualification
           || qualification.storeId !== snapshot.request.pluginToolExecution.storeId
@@ -90,24 +97,64 @@ export class AdmissionJournal {
     return this.snapshot.version !== 1;
   }
 
+  /** Only clean v1 may opt in. A prior protocol/key can never be upgraded in place. */
+  async bindVerifierRunner(runnerId: string, pluginVerifierExecution: PluginVerifierExecution,
+    pluginToolExecution?: PluginToolExecution): Promise<boolean> {
+    // Parse before the serialized tail: caller mutation cannot change a queued identity.
+    const candidate = verifierRunnerClaimRequestSchema.parse({ protocol: VERIFIER_RUNNER_CLAIM_PROTOCOL,
+      runnerId, requestId: randomUUID(), pluginVerifierExecution,
+      ...(pluginToolExecution === undefined ? {} : { pluginToolExecution }) });
+    await this.change(snapshot => {
+      if (snapshot.version === 4) {
+        if (!sameVerifierClaimRequest({ ...candidate, requestId: snapshot.request.requestId }, snapshot.request)) {
+          throw new AdmissionStorageError(new Error('Verifier admission qualification changed; retain the original request.'));
+        }
+        return snapshot;
+      }
+      if (snapshot.version !== 1) throw new AdmissionStorageError(new Error('An existing opportunity cannot be upgraded to verifier admission.'));
+      if (snapshot.assignments.some(item => item.runnerId !== runnerId)) {
+        throw new AdmissionStorageError(new Error('Admission journal belongs to another authenticated runner.'));
+      }
+      if (snapshot.inFlight !== null || snapshot.assignments.length) return snapshot;
+      return { version: 4, request: candidate, assignments: [] };
+    });
+    return this.snapshot.version === 4;
+  }
+
+  get verifierOpportunity(): VerifierRunnerClaimRequest | null {
+    if (this.snapshot.version === 2 || this.snapshot.version === 3) {
+      throw new AdmissionStorageError(new Error('An older opportunity cannot use the verifier transport.'));
+    }
+    return this.snapshot.version === 4 ? verifierRunnerClaimRequestSchema.parse(this.snapshot.request) : null;
+  }
+
   get opportunity(): RunnerClaimRequest | null {
     const snapshot = this.snapshot;
-    if (snapshot.version === 3) throw new AdmissionStorageError(new Error('A plugin opportunity cannot use the legacy transport.'));
+    if (snapshot.version === 3 || snapshot.version === 4) throw new AdmissionStorageError(new Error('A plugin opportunity cannot use the legacy transport.'));
     return snapshot.version === 2 ? { protocol: RUNNER_CLAIM_PROTOCOL, runnerId: snapshot.runnerId, requestId: snapshot.opportunityId } : null;
   }
 
   /** Detached copy: callers cannot mutate the durable qualification while a request is in flight. */
   get pluginOpportunity(): PluginRunnerClaimRequest | null {
-    if (this.snapshot.version === 2) throw new AdmissionStorageError(new Error('A v2 opportunity cannot use the plugin transport.'));
+    if (this.snapshot.version === 2 || this.snapshot.version === 4) throw new AdmissionStorageError(new Error('This opportunity cannot use the v3 plugin transport.'));
     return this.snapshot.version === 3 ? pluginRunnerClaimRequestSchema.parse(this.snapshot.request) : null;
   }
 
   /** Assignment and the next key become durable together, before any adapter can start. Empty polls do not call this. */
-  acceptOpportunity(expected: RunnerClaimRequest | PluginRunnerClaimRequest, assignment: AdmissionAssignment): Promise<void> {
+  acceptOpportunity(expected: RunnerClaimRequest | PluginRunnerClaimRequest | VerifierRunnerClaimRequest, assignment: AdmissionAssignment): Promise<void> {
     // Snapshot caller-owned input before joining the journal's serialized writes.
-    const request = expected.protocol === PLUGIN_RUNNER_CLAIM_PROTOCOL ? pluginRunnerClaimRequestSchema.parse(expected) : { ...expected };
+    const request = expected.protocol === VERIFIER_RUNNER_CLAIM_PROTOCOL ? verifierRunnerClaimRequestSchema.parse(expected)
+      : expected.protocol === PLUGIN_RUNNER_CLAIM_PROTOCOL ? pluginRunnerClaimRequestSchema.parse(expected) : { ...expected };
     const accepted = assignmentSchema.parse(assignment);
     return this.change(snapshot => {
+      if (snapshot.version === 4) {
+        if (request.protocol !== VERIFIER_RUNNER_CLAIM_PROTOCOL || !sameVerifierClaimRequest(request, snapshot.request)
+          || accepted.runnerId !== snapshot.request.runnerId) {
+          throw new AdmissionStorageError(new Error('Verifier claim acknowledgement does not match the durable opportunity.'));
+        }
+        return snapshotSchema.parse({ ...snapshot, request: { ...snapshot.request, requestId: randomUUID() },
+          assignments: [...snapshot.assignments, accepted] });
+      }
       if (snapshot.version === 3) {
         const saved = snapshot.request;
         if (request.protocol !== PLUGIN_RUNNER_CLAIM_PROTOCOL || request.runnerId !== saved.runnerId

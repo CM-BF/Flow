@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-07T16:17:26.946Z",
+  "task": "X01-ARTIFACT-VERIFIER01 / AV03 four-leaf journal slice",
+  "decision": "ACCEPT_REVIEWED_REQUEST_CODEC_AND_JOURNAL",
+  "source": "e746029f6daa5751f59813f5c18012b782824d54",
+  "result": "f9ea88e8dc38b0d912935739412af0d2a0f88705",
+  "packet": "6517781df1127f6f508d67de6710cc89b23e9b14",
+  "ownerDelivery": "3ba12f4be640a3d801186ce7a531be13cb2c1e84",
+  "mainPreimage": "337060abb836770902493acd02b29d472a34e298",
+  "product": [
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "source": "e746029f6daa5751f59813f5c18012b782824d54",
+      "mode": "100644",
+      "blob": "654a39eec4df8a75977cb276b3f9c526fcf7de08",
+      "bytes": 14222,
+      "sha256": "7ce5f848f5888ca3d6880a2e871c0a3a5e74404f84d35ef750601a018aa7a03a"
+    },
+    {
+      "path": "apps/runner/src/admission-verifier-claim.test.ts",
+      "source": "e746029f6daa5751f59813f5c18012b782824d54",
+      "mode": "100644",
+      "blob": "1a8c53b5d551ff2f29112bdd5f15ce640e4ad994",
+      "bytes": 7850,
+      "sha256": "677d997da31d282cddc5997e99863ba59098c18fa621977754a5a22a65bdc568"
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.ts",
+      "source": "e746029f6daa5751f59813f5c18012b782824d54",
+      "mode": "100644",
+      "blob": "55892cbabfcadc129688f23992fafed312c25a26",
+      "bytes": 1888,
+      "sha256": "8d293bf9bfb5e66159e2fe667c4202bc7ff711073caf013574ef3b022074144f"
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.test.ts",
+      "source": "e746029f6daa5751f59813f5c18012b782824d54",
+      "mode": "100644",
+      "blob": "6712cf586e22b5dc7c371a73ad1ce6f2fde78cd6",
+      "bytes": 2399,
+      "sha256": "2969316fcdd028422ae70b358d9307bf64d06b231286bd6c90a1ffe39bbc8524"
+    }
+  ],
+  "originalIndependentApproval": {
+    "reviewer": "db_transaction_owner",
+    "at": "2026-10-07T16:08:39.000Z",
+    "state": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+    "path": "docs/evidence/x01-artifact-verifier/av03-independent-approval.json",
+    "commit": "3ba12f4be640a3d801186ce7a531be13cb2c1e84"
+  },
+  "intakeReview": {
+    "reviewer": "assignment_review",
+    "state": "APPROVED_LIMITED_INTAKE",
+    "productBytes": 26359,
+    "directSupport": 7,
+    "fixedClosureCount": 73,
+    "fixedClosureBytes": 388701,
+    "nonProductMainDifferences": 0,
+    "newIntegrationRisk": "none observed"
+  },
+  "reusedValidation": {
+    "selected": 10,
+    "passed": 10,
+    "unselected": 4,
+    "focusedTypesExit": 0,
+    "newTests": 0,
+    "PG": 0,
+    "provider": 0
+  },
+  "evidenceStorage": "Original failure/result/raw/73 execution provenance retained once on pushed fixed author commits above; use Git blob or canonical owner path. No copied source closure or duplicate raw tree. All69 nonproduct inputs match main; no additional consumer difference/retest.",
+  "boundary": "No center/v4 HTTP/SQL/response ACK/runtime dispatch/full AV03 acceptance; current cd27/2515 and private personal runtime unchanged."
+}

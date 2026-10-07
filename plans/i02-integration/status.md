@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:53:20.015Z / main/origin72f5758bc；207来源既有15:24:50.706Z实际载入 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T16:17:26.946Z / main/origin337060abb；本次接收AV03四leaf，207来源既有15:24:50.706Z载入 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,11 +12,11 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | 本批已审更新入口与显式reader ports已接main72f5758bc；隔离双槽宿主准备已接24c824035，实际运行另验 |
+| 工作基线 / HEAD | main337060abb已收R2准备；本批按e746固定四leaf接收AV03，原AV02已maine271fb211 |
 | 工作树dirty状态 | 仅已审结果原件/本次接收状态；两个既有未知__pycache__继续不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 固定输入/原raw零差收录，0重复产品测试/PG/浏览器/provider；SVC06B原status末尾多一空行作为格式提示保留受审字节，owner后续正常metadata收口。 |
-| 已集成main状态 / HEAD | main/origin72f5758bc；仅受审准备/证据范围，固定cd27/04da、2515/098b与当前个人运行不变。 |
+| 已集成main状态 / HEAD | 最近已核main/origin337060abb；本次受控接收AV03四leaf见同次intake记录。固定cd27/04da、2515/098b与当前个人运行不变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
@@ -454,3 +454,9 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 ### 2026-10-07T16:02:21.983Z AV02接收与宿主首轮边界
 
 [AV02窄接收](../../docs/evidence/i02/x01-artifact-verifier-av02-intake.json)的9源码/test叶与独审9895181精确一致，73输入中其余主线依赖零差；复用10/10及类型证据，不重复检查。本片仅本地安装式验证器，AV03和中心派发仍开放。[SVC09A首轮结果独审](../../docs/evidence/i02/svc09a-host-first-result-review.json)接受失败保真及15:58:29.899Z资源归还，不是旅程通过；仅center启动确认失败，DB/private KEEP，原32,568ms/0of1保留。原owner定位caller系统工具路径，Web兼容可独立继续；个人安装无变更。
+
+### 2026-10-07T16:17:26.946Z AV03及时接收与当前验证边界
+
+四leaf请求codec/真实文件journal已独审并按相同主线前像接收；73输入中其余69与main相同，复用原10/10和types0，0重复工程运行。单份[接收与固定Git provenance](../../docs/evidence/i02/x01-artifact-verifier-av03-intake.json)保留原raw取得路径；不是center/v4 HTTP或完整AV03完成。正式分配[036唯一DDL与writer](../../docs/evidence/i02/x01-av03-migration-assignment.json)，须原owner原子amend才写。
+
+SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建数据库/服务，新clone/private仍KEEP、R1失败不改。Web兼容和I01各自fixture失败后已归还，原owners修复；正式四份兼容报告仍未齐，未操作个人安装。

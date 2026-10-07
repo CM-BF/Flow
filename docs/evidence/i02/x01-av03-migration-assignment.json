@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-07T16:16:08.471Z",
+  "state": "NUMBER_AND_WRITER_ASSIGNED_NOT_IMPLEMENTED",
+  "task": "X01-ARTIFACT-VERIFIER01 / AV03",
+  "mainObserved": "337060abb836770902493acd02b29d472a34e298",
+  "migration": "packages/storage/migrations/036-plugin-verification-bindings.sql",
+  "owner": "architecture_read",
+  "coLead": "mika",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+  "branch": "codex/plugin-artifact-verifier",
+  "claimBeforeAmend": "a67ba659-d859-40d6-82c6-2b7333087639 v3",
+  "basis": "Fresh coordination ledger read: only034 parentX01 and035 C02 active migration scopes; main highest035. No036 writer observed. This assigns filename, not scope write permission. Owner must atomically amend exact path with other agreed leaves before writing.",
+  "interface": "docs/evidence/x01-artifact-verifier/av03-next-scope.md at current canonical; immutable positive execution kind/reference, compatibility and deferred constraints independently reviewable. Do not modify034/035.",
+  "boundaries": "No personalDB, migrations, PG run, deployment or public verifier admission authorized by this metadata. Scope/claim handoffs and required tests remain original co-lead responsibility."
+}
