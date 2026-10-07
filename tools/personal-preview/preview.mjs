@@ -212,7 +212,7 @@ export async function statusPreview({ directory }) {
     if (artifact) {
       await verifyWebArtifact({ directory: config.directory, artifact });
       const identityMatches = processes.web === 'running' && await ownsListener(state.processes.web, config.webPort) && await webIdentity(config, artifact, release?.version, state.source?.head);
-      webArtifact = { ...artifact, ...(release ? { releaseVersion: release.version, retained: release.artifacts.length, publicationBackendHead: release.backendHead } : {}), state: 'verified', serving: identityMatches ? 'confirmed' : 'unknown' };
+      webArtifact = { ...artifact, ...(release ? { releaseVersion: release.version, retained: release.artifacts.length, validatedAgainstBackendHead: release.backendHead, publicationBackendHead: release.backendHead } : {}), state: 'verified', serving: identityMatches ? 'confirmed' : 'unknown' };
     }
   } catch { webArtifact = { state: 'unknown', reason: 'artifact-verification-failed' }; }
   return { installationId: config.installationId, webArtifact, observedAt: new Date().toISOString(), startedAt: state.startedAt ?? null, sourceAtStart: state.source ?? null, configured: NATIVE_CONFIGURATION.model, provider: 'not-probed', processes,
@@ -274,10 +274,14 @@ export async function runService(directory, role) {
 
 /** Trusted local maintenance reuses the same private validation and launch implementation. */
 export { load as loadPreviewConfiguration, privateJson as readPreviewJson, save as savePreviewJson, locked as withPreviewLock, assertMarker as assertPreviewMarker };
-export async function preparePreviewWeb(config, target) {
+export async function preparePreviewWeb(config, target, selectedBackend) {
   const browser = await pinnedBrowserSessionConfiguration(config);
-  if (browser.context !== null) await assertWebHostPolicyRuntime(config, await privateJson(join(config.directory, 'state.json')));
-  const head = target ?? (await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 })).stdout.trim();
+  if (browser.context !== null) {
+    const state = await privateJson(join(config.directory, 'state.json'));
+    if (selectedBackend !== undefined) state.backendArtifact = selectedBackend;
+    await assertWebHostPolicyRuntime(config, state);
+  }
+  const head = target ?? selectedBackend?.sourceHead ?? (await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 })).stdout.trim();
   const release = await readWebRelease(config.directory);
   if (release) {
     await assertReleaseCompatibility(head, release.artifacts, config);
@@ -294,7 +298,7 @@ export async function startPreviewServices(config, state, preparedArtifact, sele
   const runtime = await backendRuntime(config, selectedBackend);
   const webRuntime = await serviceRuntime(config, { ...state, backendArtifact: selectedBackend }, 'web');
   const backendHead = selectedBackend?.sourceHead ?? (await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 })).stdout.trim();
-  const artifact = preparedArtifact ?? await preparePreviewWeb(config, backendHead);
+  const artifact = preparedArtifact ?? await preparePreviewWeb(config, backendHead, selectedBackend);
   const release = await readWebRelease(config.directory);
   if (release) {
     await assertReleaseCompatibility(backendHead, release.artifacts, config);
@@ -365,6 +369,7 @@ async function launchWeb(config, state, artifact, processes = webHostProcesses, 
 }
 const webHostProcesses = Object.freeze({ inspect: inspectOwnedProcess, ownsListener, stop: stopOwnedProcess, spawn: spawnOwnedProcess, ready: waitReady });
 const webHostFiles = Object.freeze(['cli.mjs', 'preview.mjs', 'static-web.mjs', 'process.mjs', 'environment.mjs', 'browser-session-configuration.mjs', 'web-retention-policy.mjs', 'web-artifact.mjs', 'web-release.mjs', 'backend-release/host.mjs']);
+const maintenanceHostFiles = Object.freeze([...webHostFiles, 'maintenance-host.mjs']);
 const sha256 = value => createHash('sha256').update(value).digest('hex');
 async function boundedHostBytes(path, maximum = 65_536) {
   const file = await open(path, constants.O_RDONLY | constants.O_NOFOLLOW | constants.O_NONBLOCK);
@@ -385,26 +390,41 @@ async function boundedHostBytes(path, maximum = 65_536) {
 }
 async function hostSource(config, state, resolveRuntime = serviceRuntime) {
   const runtime = await resolveRuntime(config, state, 'web');
-  const files = [];
-  for (const path of webHostFiles) {
-    const bytes = await boundedHostBytes(join(runtime.root, 'tools/personal-preview', path));
-    files.push({ path, bytes: bytes.length, sha256: sha256(bytes) });
-  }
+  const files = await runtimeToolFiles(runtime.root, webHostFiles);
   const location = { kind: runtime.artifact ? 'backend-artifact' : 'legacy-repository', artifactId: runtime.artifact?.artifactId ?? null };
   return { policy: 'flow.web-host-source.v1', location, digest: sha256(JSON.stringify({ location, files })), files };
 }
-/** Local read only: no DB, process probe, or state creation. This is host-source identity, not artifact identity. */
+async function runtimeToolFiles(root, paths) {
+  const files = [];
+  for (const path of paths) {
+    const bytes = await boundedHostBytes(join(root, 'tools/personal-preview', path));
+    files.push({ path, bytes: bytes.length, sha256: sha256(bytes) });
+  }
+  return files;
+}
+async function assertPolicyTools(files) {
+  for (const item of files) {
+    const expected = await boundedHostBytes(join(repository, 'tools/personal-preview', item.path));
+    if (expected.length !== item.bytes || sha256(expected) !== item.sha256) fail('WEB_HOST_POLICY_UNSUPPORTED');
+  }
+}
 /** Exact reviewed implementation qualification, not a version or self-reported capability. */
 async function assertWebHostPolicyRuntime(config, state, runtime = serviceRuntime) {
   try {
     const selected = await hostSource(config, state, runtime);
-    for (const item of selected.files) {
-      const expected = await boundedHostBytes(join(repository, 'tools/personal-preview', item.path));
-      if (expected.length !== item.bytes || sha256(expected) !== item.sha256) fail('WEB_HOST_POLICY_UNSUPPORTED');
-    }
+    await assertPolicyTools(selected.files);
     return selected;
   } catch { fail('WEB_HOST_POLICY_UNSUPPORTED'); }
 }
+/** Qualify the selected maintenance program before CLI spawn can reach an older drain path. */
+export async function assertPreviewMaintenanceRuntime(config, runtime) {
+  const browser = await pinnedBrowserSessionConfiguration(config);
+  const release = await readWebRelease(config.directory);
+  if (browser.context === null && (!release || release.artifacts.length < WEB_RETENTION_POLICY.artifacts)) return;
+  try { await assertPolicyTools(await runtimeToolFiles(runtime.root, maintenanceHostFiles)); }
+  catch { fail('MAINTENANCE_HOST_POLICY_UNSUPPORTED'); }
+}
+/** Local read only: no DB, process probe, or state creation. This is host-source identity, not artifact identity. */
 export async function inspectPreviewWebHostSource({ directory, webHostArtifact }) {
   const config = await load(directory);
   const state = await privateJson(join(directory, 'state.json'));

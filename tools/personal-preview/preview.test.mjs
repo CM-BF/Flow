@@ -623,3 +623,26 @@ test('SVC09 old independently selected Web implementation is refused before stop
     assert.equal(await readFile(join(f.directory, 'web-release.json'), 'utf8'), f.protectedBytes['web-release.json']);
   }, { webHost: true });
 });
+
+test('SVC09 maintenance qualification rejects old tools for configured policy or four retained items', async () => {
+  const { assertPreviewMaintenanceRuntime } = await import('./preview.mjs');
+  await hostReplacementFixture(async f => {
+    const runtime = { root: f.hostRoot };
+    // Legacy three-item installations retain their existing dispatch path.
+    await assertPreviewMaintenanceRuntime({ ...f.config }, runtime);
+    await configuredHostProofs(f);
+    await assert.rejects(assertPreviewMaintenanceRuntime({ ...f.config }, runtime), { code: 'MAINTENANCE_HOST_POLICY_UNSUPPORTED' });
+    await writeFile(join(f.hostRoot, 'tools/personal-preview/maintenance-host.mjs'), await readFile(join(f.root, 'tools/personal-preview/maintenance-host.mjs')));
+    await assertPreviewMaintenanceRuntime({ ...f.config }, runtime);
+    const path = join(f.hostRoot, 'tools/personal-preview/maintenance-host.mjs');
+    await writeFile(path, (await readFile(path, 'utf8')).replace('await preparePreviewWeb(config,', 'await oldPreparePreviewWeb(config,'));
+    await assert.rejects(assertPreviewMaintenanceRuntime({ ...f.config }, runtime), { code: 'MAINTENANCE_HOST_POLICY_UNSUPPORTED' });
+    assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+  }, { webHost: true });
+  await hostReplacementFixture(async f => {
+    const fourth = { artifactId: '9'.repeat(64), manifestDigest: '9'.repeat(64), sourceHead: '9'.repeat(40) };
+    await f.json('web-release.json', { ...f.release, artifacts: [...f.release.artifacts, fourth], compatibilityIds: { ...f.release.compatibilityIds, [fourth.artifactId]: '9'.repeat(64) } });
+    await assert.rejects(assertPreviewMaintenanceRuntime({ ...f.config }, { root: f.hostRoot }), { code: 'MAINTENANCE_HOST_POLICY_UNSUPPORTED' });
+    assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+  }, { webHost: true });
+});

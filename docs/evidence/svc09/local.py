@@ -21,6 +21,7 @@ ops = importlib.util.module_from_spec(spec); sys.modules[spec.name] = ops; spec.
 NODE = '/opt/homebrew/Cellar/node@24/24.20.0/bin/node'
 P = 'tools/personal-preview/'
 COMMANDS = {
+    'maintenance-policy': [NODE, '--experimental-vm-modules', '--test', '--test-name-pattern=SVC09', P+'maintenance.test.mjs'],
     'artifact-slot': [NODE, '--test', '--test-name-pattern=SVC09', P+'web-artifact.test.mjs'],
     'host-policy': [NODE, '--test', '--test-name-pattern=SVC09', P+'preview.test.mjs'],
     'policy': [NODE, '--test', P+'browser-session-configuration.test.mjs', P+'web-retention-policy.test.mjs', P+'environment.test.mjs'],
