@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T12:43:04.579Z",
+  "state": "FAILED",
+  "actualExit": 1,
+  "checksReported": 0,
+  "pngs": 0,
+  "pageErrors": [],
+  "rawIndex": "index.json",
+  "completeReturn": true,
+  "chargeMs": 12385,
+  "remainingMs": 47615,
+  "parentBudgetHistoricalMs": 12297,
+  "terminalLateMs": 12298,
+  "outerActualMs": 12384.425707976334,
+  "noAutomaticRetry": true,
+  "sourceUnchanged": true,
+  "sourceInference": {
+    "fixture": "apps/web/test/plugin-management/browser.ts:159 focus/Enter/toBeFocused; no explicit pending/read completion at this final keyboard action",
+    "product": "apps/web/src/plugin-management/PluginManagement.tsx:161 disabled={runtime.pending}; use-read retry makes pending true during read",
+    "observed": "after 5s locator remained inactive across14 observations, button reenabled in final observations",
+    "conclusion": "Consistent with native disabled focus loss, not uniquely proven per-event causality; no product fix or test weakening in this seal",
+    "candidate": "Existing aria-disabled plus guarded refresh pattern may preserve focus without duplicate reads; retain exact natural-focus assertion after decoded read/pending completion"
+  },
+  "notAccepted": [
+    "No reported six-check PASS",
+    "No visual PNG evidence",
+    "No production App or real center proof"
+  ]
+}

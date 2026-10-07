@@ -1,12 +1,16 @@
-# 当前浏览器准备审查入口
+# 当前浏览器源码审查与首次实际
 
-状态：APPROVED（限定 APPROVED_SOURCE_PREPARATION；browser/visual NOT_RUN）
+状态：APPROVED（仅固定源码准备；b1 actual FAILED，完整功能/visual未通过）
 
 Review target commit：0bc393de593fd9d057efa08cd6d4ff261f99b24f
 
 Scope：原五产品 literal；其中 PluginManagement.tsx/runtime-command.ts/direct test 逐字等于旧6544，只有 browser.ts 与 fixture/main.tsx 两源准备改变。精确[五源与caller pins](../../docs/evidence/wpf-plugin-runtime-management/browser-preparation/source-manifest.json)、[两生命周期diff](../../docs/evidence/wpf-plugin-runtime-management/browser-preparation/README.md)已由root固定独审，0 finding。
 
-旧strict与r4 direct15 actual限定批准保留，不迁移成两新fixture/六browser通过。[source独审](../../docs/evidence/wpf-plugin-runtime-management/browser-review/source-review.json)与[native边界接受](../../docs/evidence/wpf-plugin-runtime-management/browser-review/native-boundary.json)已归档；个人排他窗口不运行。已审范围：私有真实JS/CSS映射、decoded read后UNKNOWN、真实组件/controller生命周期不变、native外层隔离差异、scratch identity KEEP、OPS unknown保真与actual外层退出联合终态。
+旧strict与r4 direct15 actual限定批准保留，不迁移成两新fixture/六browser通过。[source独审](../../docs/evidence/wpf-plugin-runtime-management/browser-review/source-review.json)与[native边界接受](../../docs/evidence/wpf-plugin-runtime-management/browser-review/native-boundary.json)已归档；随后manager确认个人窗口实际归还，已执行一次b1；source已审范围：私有真实JS/CSS映射、decoded read后UNKNOWN、真实组件/controller生命周期不变、native外层隔离差异、scratch identity KEEP、OPS unknown保真与actual外层退出联合终态。
+
+## 当前首次 browser actual（待独立证据审）
+
+[b1原件](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/README.md)：outer1/terminalFAILED、0reported groups/0PNG，真实完整cleanup；charge12,385ms/剩47,615ms。第六组refresh自然focus失败，原三份产品/两fixture与6断言均未改。先前source批准不等运行通过，不用补签或末尾手动focus掩盖；候选同scope修复待manager。
 
 ## 历史已审模块与direct（原文保留）
 

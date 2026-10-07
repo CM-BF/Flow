@@ -1,0 +1,8 @@
+(version 1)
+(allow default)
+(deny file-write*)
+(allow file-write* (subpath "/private/tmp/prm-b1/scratch") (subpath "/private/tmp/prm-b1/raw/plugin-b1-20261007-124015-207ac8") (literal "/dev/null"))
+(deny network*)
+(allow network-bind (local ip "localhost:*"))
+(allow network-inbound (local ip "localhost:*"))
+(allow network-outbound (remote ip "localhost:*"))

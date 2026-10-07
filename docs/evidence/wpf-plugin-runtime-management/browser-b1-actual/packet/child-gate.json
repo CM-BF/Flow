@@ -1,0 +1,79 @@
+{
+  "allowRun": true,
+  "singleUse": true,
+  "mode": "plugin-runtime-browser",
+  "taskId": "WPF-PLUGIN-RUNTIME01",
+  "run": "plugin-b1-20261007-124015-207ac8",
+  "entry": "plugin-runtime",
+  "issuedAt": "2026-10-07T12:40:15.585640+00:00",
+  "expiresAt": "2026-10-07T12:44:15.585640+00:00",
+  "bindingSha256": "321f49c31b8e4dbc3de11c6e224d8e1c5ea04dd4a4b784205ecc0e7fbac67ab7",
+  "runnerSha256": "671b19b8b884ea76ad25dfb2eb6bd67a5fb32c7904a54d48cd46d2e371bf123b",
+  "claim": {
+    "claimId": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+    "version": 1,
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "scope": [
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/src/plugin-management/runtime-command.ts",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-runtime-command.test.ts",
+      "docs/evidence/wpf-plugin-runtime-management",
+      "plans/wpf-plugin-runtime-management"
+    ]
+  },
+  "overlaps": [],
+  "sourceHead": "b888930f2e5b92da21dfe984e3c1bc37313c70bb",
+  "sourceHashes": {
+    "apps/web/src/plugin-management/PluginManagement.tsx": "f6ba0266127114af891f46d2e7120213862ef8e6adc6678ab45aaa28b64dd4ca",
+    "apps/web/src/plugin-management/runtime-command.ts": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a",
+    "apps/web/test/plugin-management/browser.ts": "014091c728be1e5f2650e5bc000f218bb6d885b8f2c21d0e867e3c1105a3b0d9",
+    "apps/web/test/plugin-management/fixture/main.tsx": "544d11ffba2031d60c020d649fbce1e1a3f145b3b7b2e9408bf2c914076ce2c2",
+    "apps/web/test/plugin-runtime-command.test.ts": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab"
+  },
+  "previousRuntimeMs": 0,
+  "totalMs": 60000,
+  "startFreeBytes": 6895435776,
+  "stopFreeBytes": 6828326912,
+  "nativeChromeBoundaryApproval": {
+    "path": "/private/tmp/root-plugin-browser-b1-native-boundary-20261007.json",
+    "sha256": "fab6fe8da2be3855b5fe7c73e642bc14404a6f8ba74a37b52c377af6a70e657e"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-plugin-browser-b1-source-review-20261007.json",
+    "sha256": "0c946df666bdefbb827395baf0618c8f33f39c3184b56a258344e695c08cf17d"
+  },
+  "priorLocalEvidence": {
+    "sourceTarget": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+    "reviews": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/docs/evidence/wpf-plugin-runtime-management/direct-only-r4-actual/root-actual-review.json",
+        "sha256": "767f527ea1af59bb310eb495d0ecc86ad315271cf7f177946b1a8fcc75ed80b5"
+      },
+      {
+        "path": "/private/tmp/root-plugin-runtime-6544-local-result-review-20261007.json",
+        "sha256": "9a48b14fb8c7d990486ae5f37c08f221393501bc98850acb5f4d314399ebf6ce"
+      }
+    ],
+    "unchangedSources": {
+      "apps/web/src/plugin-management/PluginManagement.tsx": "f6ba0266127114af891f46d2e7120213862ef8e6adc6678ab45aaa28b64dd4ca",
+      "apps/web/src/plugin-management/runtime-command.ts": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a",
+      "apps/web/test/plugin-runtime-command.test.ts": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab"
+    },
+    "changedBrowserSourcesNotRevalidated": true
+  },
+  "supervision": {
+    "startedAtMs": 1791376836897,
+    "workDeadlineMs": 1791376881897,
+    "hardDeadlineMs": 1791376896897,
+    "scratch": "/private/tmp/prm-b1/scratch",
+    "output": "/private/tmp/prm-b1/raw/plugin-b1-20261007-124015-207ac8",
+    "parentPid": 64185,
+    "chromePid": 64678,
+    "chromePgid": 64678,
+    "chromeEndpoint": "http://127.0.0.1:51215",
+    "chromeOwnership": "external-parent-native-sibling"
+  }
+}

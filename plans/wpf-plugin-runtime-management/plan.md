@@ -50,10 +50,14 @@ fixture 在 lazy view 之外真实持有 controller，原 readonly 旅程保留�
 
 [固定入口与验收提案](../../docs/evidence/wpf-plugin-runtime-management/browser-preparation/README.md)沿原六组/两390图，不调用legacy双PG、不引入production App session或新HOST DTO。当前只准备，旧strict/direct15不能当浏览器通过。后继日用候选资料以root固定de547公共接口研究为输入：绑定snapshot revision/version，空页可next/cursor409显式重启，同名按exact runner/store/API消歧；读取失败不造writeUNKNOWN、候选刷新不改冻结key/body。尚未在本slice实现。
 
-## 当前准备独审安全点
+## 历史：准备独审安全点
 
 固定0bc五源与b1调用器已获[源码/原生边界独审](../../docs/evidence/wpf-plugin-runtime-management/browser-review/README.md)，0 finding；browser六组/visual两图仍NOT_RUN。个人服务排他窗口未见RETURN，未产生gate或实际资源采样。下一实际准入采用最新完整组合，不将6.199GB历史下限误当当前授权。只记录元数据并将最终clean HEAD在TMP内routine重绑；七范围STOP、claim保留，不继承旧strict/direct为browser通过。
 
 ## 未实施后继：查看任务引用
 
 [root固定研究](../../docs/evidence/wpf-plugin-runtime-management/browser-review/removal-reference-future-research.json)只作后继输入：client676ed590须连同contract81a064cb集成基线后才能消费。单页最多40条/64KiB，empty仍可next，registration-only与independent snapshot不推总量或全局安全移除；hostRelease为unknown、physicalRemoval未授权。复用既有宿主管理扩展点，窄identity-bound读展示保留typed cursor409并显式restart；session/material/installation operation变更使旧响应失效，旧物料数据不能显示为当前物料。不得新增生命周期store，不得改UNKNOWN命令的冻结key/body。本后继尚未领取或实现，不扩大本次七scope/六browser验收。
+
+## 当前首次browser实际
+
+[b1失败与清理](../../docs/evidence/wpf-plugin-runtime-management/browser-b1-actual/README.md)完整封存：原6组旅程到第六组read refresh自然焦点断言失败，reported0/6/0PNG，outer1；不得补签前五通过。保守12,385ms已用/47,615ms未用，不自动再跑。后继只在原scope处理focus保留并等待真实decoded read settlement，保原UNKNOWN/写次数/会话/六组断言，禁止末尾手动focus掩盖。当前原source不变，source/native接受与实际失败分层。
