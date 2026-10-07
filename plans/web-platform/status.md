@@ -2,11 +2,11 @@
 
 > 本文件的唯一持续维护权威是 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform`（branch `codex/web-platform-management`，owner d01_owner）。主线中的同路径是经独审、由Execution Lead同步的固定发布副本，不能据它推断当前进度；固定target、生成时间及同步规则见[发布说明](../../docs/evidence/web-platform/publication/README.md)。不得在main另建手填status。
 
-**已验证的能力与交付边界：** 逐消息设置、完整草稿恢复和插件管理所选四组真实界面检查已通过；个人网页仍未更新。新网页会话错误已捕获具体错误码，正式发布还需修复并通过四版本兼容检查。
+**已验证的能力与交付边界：** 逐消息设置、完整草稿恢复和插件管理所选四组真实界面检查已通过；个人网页仍未更新。新网页修复后的四版本检查已通过，固定验证结果已独立通过，实际发布沿原流程待执行。
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T17:51:57.226Z；插件管理已集成并释放，网页新修复已审待四版本验证；数据库失败后独立核验已归还计算与连接。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T18:15:21.266Z；新网页四版本结果已独立通过并交原发布流程，插件管理已集成，组合工作区已领取实施。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 逐消息设置、完整草稿恢复与插件管理所选界面检查已通过；新网页产物已生成并完成会话错误诊断，个人安装仍使用旧网页。 |
-| 下一可用交付 | 修复新网页登录恢复问题；通过四版本兼容后更新实际网页，继续改善共享浮层。 |
-| 当前阻塞 | ACTIVE: 新网页会话恢复兼容检查尚未通过，暂不能发布；个人逐消息设置目录也仍待激活。 |
+| 当前产出 | 逐消息设置、完整草稿恢复与插件管理所选界面检查已通过；新网页四版本兼容结果已独立验收，固定交付已交原发布流程，个人安装尚未切换。 |
+| 下一可用交付 | 沿原发布流程更新已独立验收的新网页；继续交付共享浮层与组合工作区。 |
+| 当前阻塞 | ACTIVE: 新网页四版本检查虽已通过，独立验收已通过，实际发布尚未完成；个人逐消息设置目录仍待激活。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：数据库测量失败后已独立确证计算与连接归还，保留数据不删除；当前无实际重段占用，按已就绪队列安排后继验证。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：网页四版本检查已完整归还资源，当前无实际重段占用；后继验证按已就绪顺序单独准入。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

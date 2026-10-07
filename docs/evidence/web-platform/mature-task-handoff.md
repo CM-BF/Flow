@@ -1,12 +1,16 @@
 # Web 当前交接与唯一来源
 
-**即时调度 2026-10-07T17:54:01.526Z：K01原测量FAILED，单次只读恢复已17:48:38.570227Z确证计算与连接RETURN，DB/scratch KEEP。当前actual holder=NONE；唯一NEXT授W01 Release c3正式四版本验证，新180s含30s清理，执行eada6/source d882/原claim v2 exact4，紧前fresh完整floor≥16,298,278,912B。尚未actualSTART。其他PG/Chrome候选排后；隔离源码/已授非性能纯局部可继续，Arc恢复正常供给与fresh合法领取。**
+**Original 新网页可接收：** c3的四正式版本报告已[独立批准](host-i01-newpair-queue-20261007/compatibility-c3-four-app-result-review.json)，固定 `cd27/04da + 779/c231 + policy81a8` 不等SVC09A双槽；固定[W01最小供给交接](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/main-intake.json)已齐（15,220B/SHA29004c44…32bdd），含四canonical正式报告及16check pins、两descriptor和原SVC06B接收目标；经理已核四报告本体hash，现正式交Original `assignment_review` 在 `backend-browser-recovery/docs/evidence/svc06/browser-recovery` 的既有SVC06B接收流程；Original已明确接受此职责，producer final8dfb双端clean。当前AV03仅获下一验证窗，个人发布实际操作仍沿Original自身既有准入，不跨lead执行。旧两次FAIL与诊断证据原样保留，当前尚未个人部署。
 
-**当前前瞻预算：** 残余未知13,440,909,312＋两K01保留DB各134,217,728＋R4 KEEP待分类1,243,611,136＋Mika新纯局部8,388,608＋Arc源16,777,216＋Original已返回但KEEP待分类35,651,584＋本次c3峰值210,763,776＋一次reserve1,073,741,824＝16,298,278,912B。原已消费gate不回写；sealed scratch与旧源cap不永久累计，未知留有限保守界，见[唯一账本](resource-window-current.json)。
+**Original 唯一D05登记请求：** 原Arc计划候选已实际领取20scope，唯一status位于 `web-workspace-composition/plans/wpf-workspace-arc/status.md`；请沿[固定登记request](host-i01-newpair-queue-20261007/arc-source-registration-request.json)登记WPF-WORKSPACEARC01→该独立WT/branch，父WPF-MATURE-05。当前awaiting-source-sync，不是未领取；不新增第二writer/手填状态源，工程NOT_RUN保持。
+
+**即时调度 2026-10-07T18:05:27.344Z：网页 c3正式四版本PASS、18:01:09.576114Z完整归还，独立结果审已APPROVED/0blocking，实际发布仍由原流程执行。当前actual holder=NONE；唯一NEXT授Mika原AV03 owner一次180s（110work/60cleanup/10receipt），5项SQL/HTTP功能检查、1markedDB/17配置连接/0Chrome/provider，fresh完整floor≥16,275,210,240B。尚未START；S01性能候选排后，不能并行自起。Arc隔离源码与已授pure普通段可继续。**
+
+**当前前瞻预算：** 残余未知13,440,909,312＋两K01保留DB各134,217,728＋R4待分类1,243,611,136＋Mika新16,777,216（旧8MiB已STOP替换）＋Arc16,777,216＋Original KEEP待分类35,651,584＋网页已8dfb封存STOP（不再加9MiB）＋VISUAL新局部10,485,760＋本次AV03峰值168,820,736＋一次reserve1,073,741,824＝16,275,210,240B。c3已删scratch/已DROP的临时cap不沿用；原actualgate不变，详见[唯一账本](resource-window-current.json)。
 
 **已归还与保留资源：** K01独立恢复消费floor16,065,757,184B，freshfree18,674,704,384B也高于后到16,101,408,768B。前置KeyError发生在supervise/PG之前，0child0PG未消费；只运行一次恢复。固定receipt封存入口随后归档，不为等待seal占窗；DB后台可能增长仍按有限规划保守计。
 
-**当前领取与工作状态：** Release7d60v2/exact4保留，d882单点连接策略源码/准备已审、等待新的正式四版本验证；VISUAL accev1/exact8保留且sourceSTOP、检查NOT_RUN；Arc仅准备未领取；I01已main5592且ded404收口/61abv2释放。D05 208来源已同步，领取、写入状态与实际运行分别记录。
+**当前领取与工作状态：** Release7d60v2/exact4保留，d882单点连接策略源码/准备已审、等待新的正式四版本验证；VISUAL accev1/exact8保留且sourceSTOP、检查NOT_RUN；Arc已c34d95d1v1精确20scope领取，正在初始化唯一来源、尚无工程检查；I01已main5592且ded404收口/61abv2释放。D05 208来源已同步，领取、写入状态与实际运行分别记录。
 **历史两次新检查候选预算（各计一次，最新完整线与授权只看页首）：** I01第二次独立60s保守新增264MiB、Release c2独立180s保守新增201MiB；17,454,858,240+276,824,064+210,763,776=17,942,446,080B未来完整线。旧两个失败阶段均CLOSED，余额不转，已删scratch不改旧原件，保留证据/KEEP不退款。后到R2/c2已消费gate均保持历史。
 
 **预算算术纠偏（不改历史gate）：** [明确更正事件](host-i01-newpair-queue-20261007/host-budget-arithmetic-correction.json)核SVC09A旧host envelope应为1,243,611,136B，原表漏24MiB；原R1 KEEP不退，新R2候选再计独立1,243,611,136B，当时future完整floor为17,454,858,240B。S01已按更高线实际执行并完整归还；R2已实际运行并明确归还，入口前失败及KEEP原件保留；该R2现无NEXT，不自动重试。

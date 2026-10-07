@@ -1,25 +1,35 @@
 {
-  "at": "2026-10-07T17:58:35.211340+00:00",
+  "at": "2026-10-07T18:14:28.830198+00:00",
   "scope": "Only current changed manager paths, added Markdown links, JSON and indexed archive hashes",
   "paths": [
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-plugin-invocation-lifetime.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-static-preparation-index.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-three-pane-batch-fairness.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-composition-take-receipt.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-source-registration-request.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/archive-index.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-c3-reviewed-metadata-receipt.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-c3-source-preparation-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-c3-four-app-result-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-c3-return-receipt.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/k01-startup-independent-recovery-observation.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/quality-record.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/status-validation.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-trusted-preset-source-review.json",
     "docs/evidence/web-platform/mature-task-handoff.md",
     "docs/evidence/web-platform/resource-window-current.json",
     "plans/web-platform/status.md",
-    "plans/wpf-mature-05-workspace/plan.md",
     "plans/wpf-mature-05-workspace/status.md"
   ],
   "links": [
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "host-i01-newpair-queue-20261007/compatibility-c3-four-app-result-review.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/main-intake.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "host-i01-newpair-queue-20261007/arc-source-registration-request.json",
+      "exists": true
+    },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
       "target": "resource-window-current.json",
@@ -28,26 +38,6 @@
     {
       "source": "plans/web-platform/status.md",
       "target": "../../docs/evidence/web-platform/resource-window-current.json",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-05-workspace/plan.md",
-      "target": "../../docs/evidence/web-platform/mature-task-handoff.md",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-05-workspace/plan.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-three-pane-batch-fairness.json",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-05-workspace/plan.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-plugin-invocation-lifetime.json",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-05-workspace/plan.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-static-preparation-index.json",
       "exists": true
     }
   ],
@@ -310,6 +300,18 @@
     },
     {
       "file": "arc-static-preparation-index.json",
+      "match": true
+    },
+    {
+      "file": "arc-composition-take-receipt.json",
+      "match": true
+    },
+    {
+      "file": "compatibility-c3-return-receipt.json",
+      "match": true
+    },
+    {
+      "file": "compatibility-c3-four-app-result-review.json",
       "match": true
     }
   ],
