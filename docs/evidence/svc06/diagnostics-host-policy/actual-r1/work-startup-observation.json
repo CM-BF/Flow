@@ -1,0 +1,89 @@
+{
+  "state": "partial-unknown",
+  "at": "2026-10-07T10:26:04.674Z",
+  "primary": null,
+  "roles": [
+    {
+      "role": "center",
+      "nonce": "3e0fa664-633f-40b8-9eb9-1a7866f7f10d",
+      "pid": 50116,
+      "phase": "child-running",
+      "errorCode": null,
+      "exit": "NOT_OBSERVED",
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "identity": {
+          "dev": "16777234",
+          "ino": "124034282",
+          "uid": "501",
+          "nlink": "1",
+          "mode": 384
+        },
+        "complete": null,
+        "truncated": null,
+        "declaredMatchesObserved": null
+      },
+      "at": "2026-10-07T10:25:34.483Z"
+    },
+    {
+      "role": "runner",
+      "nonce": "59fe747f-79f7-431d-9051-189c0a46e311",
+      "pid": 57417,
+      "phase": "child-running",
+      "errorCode": null,
+      "exit": "NOT_OBSERVED",
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "identity": {
+          "dev": "16777234",
+          "ino": "124034605",
+          "uid": "501",
+          "nlink": "1",
+          "mode": 384
+        },
+        "complete": null,
+        "truncated": null,
+        "declaredMatchesObserved": null
+      },
+      "at": "2026-10-07T10:25:42.887Z"
+    },
+    {
+      "role": "web",
+      "nonce": "13e578ee-ac2e-47dc-a1c5-8cec84c6a7fe",
+      "pid": 63886,
+      "phase": "child-running",
+      "errorCode": null,
+      "exit": "NOT_OBSERVED",
+      "stderr": {
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "identity": {
+          "dev": "16777234",
+          "ino": "124034712",
+          "uid": "501",
+          "nlink": "1",
+          "mode": 384
+        },
+        "complete": null,
+        "truncated": null,
+        "declaredMatchesObserved": null
+      },
+      "at": "2026-10-07T10:25:48.136Z"
+    }
+  ],
+  "observations": [
+    {
+      "source": "generation-before-refresh.json",
+      "state": "not-observed",
+      "code": "ENOENT"
+    },
+    {
+      "source": "generation-2.json",
+      "state": "not-observed",
+      "code": "ENOENT"
+    }
+  ],
+  "stderrPolicy": "Private original retained; public metadata only; at most 64KiB per nonce"
+}

@@ -1,0 +1,35 @@
+{
+  "reviewedAt": "2026-10-07T10:23:41.915556+00:00",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "verdict": "APPROVED_LIMITED_ISOLATED_HOST_PREPARATION",
+  "findings": [],
+  "source": "6cd5a15c232210f7802482290b8f7b65318fd1ad",
+  "delivery": "4a6fd46c721c37a019dd0b77bfd4fbcf0ebac146",
+  "manifest": {
+    "path": "docs/evidence/svc06/diagnostics-host-policy/entry-manifest.json",
+    "bytes": 8171,
+    "sha256": "eb0f8c7c5dd94850d32d60f40d459d71460110733a02e2a2f632cb2ac73b8e9b"
+  },
+  "checked": {
+    "entryAndEvidenceFixedCurrent": 20,
+    "methodFixedCurrent": 3,
+    "runtimeIdentityAndHash": 3,
+    "fixedRuntimeInputs": 514,
+    "fixedRuntimeBytes": 7930790,
+    "namespaceAbsent": true,
+    "claim": "3346a60d-0b50-4c73-bf22-9b258f8b1381 v8 active"
+  },
+  "review": [
+    "Full new observer and three direct tests; entry and supervisor delta to unchanged previous method",
+    "Original journey, work-terminal and clone bytes match their fixed source",
+    "Observer reads only recorded own nonces; permissions/identity and bounded output; no raw stderr/config/auth output; absent and runtime-only observations remain unknown",
+    "Original process ownership/readiness/cleanup/marker/OID/zero-connection/DROP boundaries remain; work failure and independent cleanup facts preserved",
+    "3/3 original local results plus syntax exit0 read; 168ms caller, 413B raw, both groups absent and dual EOF; no reviewer test rerun"
+  ],
+  "artifact": {
+    "source": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "id": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920"
+  },
+  "scope": "Preparation only. Actual isolated PG/host subject to fresh inputs, resource/connection gates and unique window. No personal deployment, provider, App compatibility or root-cause conclusion.",
+  "actualRun": "NOT_RUN_AT_REVIEW"
+}

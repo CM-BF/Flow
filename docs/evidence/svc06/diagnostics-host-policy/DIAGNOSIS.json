@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-07T10:27:59.283456+00:00",
+  "scope": "Only saved own run and fixed artifact source; no new PG/HTTP/service/personal probe",
+  "error": {
+    "name": "Error",
+    "code": "WEB_RELEASE_BOOTSTRAP_REQUIRED"
+  },
+  "savedPointerAbsent": true,
+  "fixedMethod": {
+    "path": "docs/evidence/svc06/b2b-host-policy/journey.mjs",
+    "ref": "3444895edf934c5c323639f232ef6fed7d51b022",
+    "line": 120,
+    "calledAction": "publish",
+    "expectedVersion": 0
+  },
+  "fixedProduct": {
+    "source": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "path": "tools/personal-preview/web-release.mjs",
+    "lines": [
+      160,
+      162
+    ],
+    "rule": "(action === 'bootstrap') must equal !previous"
+  },
+  "conclusion": "Fixture invoked publish with no existing pointer. Real product correctly rejects before plan/commit. Minimal fixture correction is initial bootstrap only; preserve product rule/expectedVersion0/compatibility checks/CAS. Not a new artifact or readiness defect.",
+  "correctionScope": "New own-records journey copy one action word; new exclusive run/namespace and bounded direct fixture check before a separately coordinated actual window",
+  "oldRunnerCause": "NOT_DETERMINED; current three roles ready does not retrospectively prove original failure cause"
+}
