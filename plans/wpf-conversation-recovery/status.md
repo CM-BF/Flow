@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 10:36:27 UTC |
+| 最近更新 | 2026-10-07 10:58:25 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -12,29 +12,29 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；sourcea80339a463c4a1a1a5a679d9a89ea79b1650340e；本轮执行d06baf3c70cddcb1614088ac2349a1d416d61851；后置metadata HEAD以Git回执为准 |
-| 工作树dirty状态 | 19源码不变，本次仅actual原件与own记录封存；最终clean以Git回执为准 |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前组合source2f8cc1f61d32f518998a64d0adeec582f85481f2（16生产源逐字同a803）；本次local执行2f8；后置metadata HEAD以Git回执为准 |
+| 工作树dirty状态 | 本批仅own记录待seal；三test固定2f8，16生产源未变；最终clean以Git回执为准 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 晚开聊天的原消息与Steer草稿已真实保存，丢回执后原指令重试和下一稿保留通过 |
-| 下一可用交付 | 完成第二中心/身份隔离补验及最终独审；不重跑已通过Steer选组 |
+| 当前产出 | 同页聊天和引导恢复已验证；中心隔离回归已完成源码与局部检查 |
+| 下一可用交付 | 在同一页面往返两个中心，验证各自草稿与原回执隔离 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 检查状态 | 本轮cookieRead+steeringRecovery 2/2实际PASS；同document/原turn持久化/Steer恢复与同key重试通过，清理完整；旧两FAIL/首local红保留。new90spent15119/rem74881、0holder |
-| 实现目标 | a80339a463c4a1a1a5a679d9a89ea79b1650340e |
+| 检查状态 | 新增受控2PASS/55未选、Web noEmit0，local7481/20000；双真实中心浏览器NOT_RUN，无gate/env/holder；旧实证与FAIL保留 |
+| 实现目标 | 2f8cc1f61d32f518998a64d0adeec582f85481f2 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
-| Review | [review.md](review.md)，IN_PROGRESS；a803 source+direct1/noEmit与本轮selected2 actual/owned清理均已独立限定接受，非完整feature批准 |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；normal CLI 2026-10-07T10:29:42.017Z核active/WTbranch/精确scope/overlap[]，见stale-route-first-parent/admission.json |
-| 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
+| Review | [review.md](review.md)，IN_PROGRESS；2f8源码与local独立限定接受，双中心actual/完整feature仍未批准 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；normal CLI 2026-10-07T10:51:20.873Z核active/WTbranch/精确scope/overlap[]，见two-center-local/preflight.json |
+| 架构影响 | 沿原ConnectionSession/Journal/P01 authorities；本次只扩test双center代理/两lease清理，无生产架构变化；D06后继来源保持原登记 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | WPF-RECOVERY01-01 | completed | workspace_panels_owner | 原21合法输入/唯一canonical及ConnectionSession/Journal有界实现完成；来源取权/50直接检查与full7实证各保边界 |
 | WPF-RECOVERY01-02 | completed | workspace_panels_owner | 原authority/durable barrier与CREATE两阶段/Queue/Steer原key恢复已实现；direct受控错误/CAS+对应真实selected通过，最新Steer2/2含同document/outbox/unknown replay，非promotion/native应用 |
-| WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01/App完整材料与profile/knowledge/双文件、Steer草稿各有实际恢复证据；本轮lateview真实链通过，第二center/principal隔离仍未验 |
+| WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01/App完整材料与profile/knowledge/双文件、Steer草稿各有实际恢复证据；本轮lateview真实链通过，双真实center隔离尚未actual；principal-only新增受控2项已通过 |
 | WPF-RECOVERY01-04 | completed | workspace_panels_owner | [50受控storage/controller实际检查](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)及source hashes完成；不冒完整mountedApp/真实IDB全部边界 |
 | WPF-RECOVERY01-05 | in-progress | workspace_panels_owner | full7/choice/CREATE两分支/Queue/task SSE/completeDraft/Steer各限定实际通过，全部历史FAIL保真；二中心与全部重连边界未验，不冒assistantstream/native应用 |
 | WPF-RECOVERY01-06 | in-progress | workspace_panels_owner | 完整feature独审IN_PROGRESS；本轮a803 Steer2/2 actual及清理已独立限定接受；SSE/completeDraft等旧批准和原FAIL保绑定；第二center/principal/reconnect与最终main接收仍待做 |
@@ -416,3 +416,17 @@ Root最终组合及actual local已独立接受：[原报告](../../docs/evidence
 ## 2026-10-07 10:36:27 UTC — route-fix actual独审封存
 
 [root实际原报告](../../docs/evidence/wpf-conversation-recovery/stale-route-first-root-review.json)限定接受cookieRead/steeringRecovery 2/2及owned清理。原19源码a803不变，执行d06/新90段charge15119、余74881；旧FAIL与三旧phase封账保持。第二center/principal/reconnect与完整feature/main仍未完成，无新gate/env/holder/运行预约。本批只归档并正常推送，不重复任何检查。
+
+## 2026-10-07 10:45:46 UTC — 原03/05双中心隔离补验实施
+
+复用[two-center方案](../../docs/evidence/wpf-conversation-recovery/two-center-proposal.md)与[root设计边界](../../docs/evidence/wpf-conversation-recovery/two-center-design-root-review.json)，原21 fresh唯一owner/nooverlap。保持同origin/context/baseURL/真实IDB，A→B→A→B，真实unknown原key回放与两边草稿显式恢复；每request固定upstream，public身份白名单不归档凭据。两lease独立db-a/db-b，B失败仍清A，UNKNOWN保守不DROP。受控principal-only与ignore-abort晚ready另列，不能冒公开rotation。
+
+新runtime候选90s含30s清理、两DB一Chrome，133MiB增量待固定生命周期集中源审/真实窗口，不运行；旧route90 spent15119/余74881已封闭不转信用。必要local独立20s总含5s清理，0网络/PG/Chrome，旧passed不重跑；本段开始未执行。
+
+## 2026-10-07 10:58:25 UTC — 双中心源码与局部实证安全点
+
+固定source `2f8cc1f61d32f518998a64d0adeec582f85481f2`，三test313+/32-、16生产源同a803；[当前唯一审查入口](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)整合精确19源与历史实际矩阵。[root集中审](../../docs/evidence/wpf-conversation-recovery/two-center-source-local-root-review.json)无finding，限定source/local，不是双DB或完整feature通过。
+
+实际local10:51:36.668691→10:51:44.149082UTC，新2PASS/55NOT_SELECTED及Web noEmit0；outer7480.347708ms，保守charge7481/20k，3个PID/PGID ESRCH、TMP移除，13原件40289B全部归档。[清理/index](../../docs/evidence/wpf-conversation-recovery/two-center-local/cleanup-receipt.json)；Node日志为regular files，外层双EOF另证，不混淆。
+
+两center各app pool8+boss3，fixture1+两admin1，运行配置25；另为两cleanup marker预留2位，保守申报27，不冒实测连接峰值。新[90s phase](../../docs/evidence/wpf-conversation-recovery/two-center-phase.json)spent0、60work+30cleanup、2DB/1Chrome/0provider，64MiBscratch/13MiB retained/start4MiB/run9MiB，133MiB增量和fresh组合/实际shared窗口仍须落实；无env/gate/预约。旧route90已15119/74881封账，旧余额均不转。source已审准备完成不等运行已授，不重跑旧绿。

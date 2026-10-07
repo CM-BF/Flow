@@ -270,3 +270,15 @@ Root最终固定a803源码+本次actual local独审已接受，见[原报告](..
 ## 2026-10-07 10:36:27 UTC — route-fix actual独审封存
 
 [root实际原报告](../../docs/evidence/wpf-conversation-recovery/stale-route-first-root-review.json)限定接受cookieRead/steeringRecovery 2/2及owned清理。原19源码a803不变，执行d06/新90段charge15119、余74881；旧FAIL与三旧phase封账保持。第二center/principal/reconnect与完整feature/main仍未完成，无新gate/env/holder/运行预约。本批只归档并正常推送，不重复任何检查。
+
+## 2026-10-07 10:45:46 UTC — 原03/05双中心隔离补验实施
+
+复用[two-center方案](../../docs/evidence/wpf-conversation-recovery/two-center-proposal.md)与[root设计边界](../../docs/evidence/wpf-conversation-recovery/two-center-design-root-review.json)，原21 fresh唯一owner/nooverlap。保持同origin/context/baseURL/真实IDB，A→B→A→B，真实unknown原key回放与两边草稿显式恢复；每request固定upstream，public身份白名单不归档凭据。两lease独立db-a/db-b，B失败仍清A，UNKNOWN保守不DROP。受控principal-only与ignore-abort晚ready另列，不能冒公开rotation。
+
+新runtime候选90s含30s清理、两DB一Chrome，133MiB增量待固定生命周期集中源审/真实窗口，不运行；旧route90 spent15119/余74881已封闭不转信用。必要local独立20s总含5s清理，0网络/PG/Chrome，旧passed不重跑；本段开始未执行。
+
+## 2026-10-07 10:58:25 UTC — 双中心源实现完成/受控验证通过
+
+原TODO03/05按已批准方案固定2f8：同origin proxy逐request固定A/B，双lease独立db-a/db-b且allSettled清理，A unknown原key回放与双方explicitRestore、迟到GET只按真实aborted/delivered分类；生产源码未改。principal-only真实Journal/ConnectionSession加controlledtransport两case通过，Web noEmit0，13raw/7481ms已清理。集中审root3232限定接受，浏览器selected2仍NOT_RUN。
+
+新phase90候选60work+30cleanup、2DB/1Chrome/64MiBscratch/13MiBretained/start4/run9，133MiB增量一次声明；配置25运行连接位+2清理marker预留，不把2DB当2条连接。旧route90spent15119/unused74881封闭不转。运行前最少条件、现entry与新sourcepins见[preparation](../../docs/evidence/wpf-conversation-recovery/two-center-preparation.json)，不增加task层/runner框架，不预占共享窗。

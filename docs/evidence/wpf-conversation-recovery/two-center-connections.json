@@ -1,0 +1,167 @@
+{
+  "at": "2026-10-07 10:56:47 UTC",
+  "source": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+  "method": "Fixed source and exact installed pg-boss files only; no imports, PG queries, processes or services sampled.",
+  "version": "pg-boss12.37.0 / existing pg8.23.1",
+  "configuration": [
+    {
+      "owner": "center A application",
+      "pools": 1,
+      "maxPerPool": 8
+    },
+    {
+      "owner": "center B application",
+      "pools": 1,
+      "maxPerPool": 8
+    },
+    {
+      "owner": "center A scheduler pg-boss",
+      "pools": 1,
+      "maxPerPool": 3
+    },
+    {
+      "owner": "center B scheduler pg-boss",
+      "pools": 1,
+      "maxPerPool": 3
+    },
+    {
+      "owner": "fixture A-only SQL helper",
+      "pools": 1,
+      "maxPerPool": 1
+    },
+    {
+      "owner": "parent lease A admin",
+      "pools": 1,
+      "maxPerPool": 1
+    },
+    {
+      "owner": "parent lease B admin",
+      "pools": 1,
+      "maxPerPool": 1
+    }
+  ],
+  "runtimeConfiguredPoolSum": 25,
+  "listenNotify": {
+    "configured": false,
+    "source": "scheduler passes no useListenNotify; installed getConfig defaults false, start() gates notifier; therefore no additional dedicated LISTEN pg.Client in this configuration.",
+    "caveat": "scheduler/lease sweep/pg-boss internal maintenance and registration run against the existing pools; this is not a claim of zero scheduler activity."
+  },
+  "stages": [
+    {
+      "stage": "database creation before worker",
+      "maximumConfiguredConnectionSlots": 3,
+      "derivation": "2 admin pools + at most1 sequential marker-creation pool; each marker pool end is awaited before worker starts."
+    },
+    {
+      "stage": "both live centers",
+      "maximumConfiguredConnectionSlots": 25,
+      "derivation": "2*(8 application+3 boss)+1 fixture+2 retained lease admin; fixture helper is lazy but included."
+    },
+    {
+      "stage": "normal cleanup after worker group absence",
+      "maximumConfiguredConnectionSlots": 4,
+      "derivation": "2 admin + at most2 marker-check pools during allSettled lease.close; before-marker zero is required independently for each owned database."
+    }
+  ],
+  "conservativeSchedulingEnvelopeConnectionSlots": 27,
+  "schedulingEnvelopeDerivation": "25 configured work slots +2 independent cleanup marker slots reserved conservatively; not a claim they all open concurrently.",
+  "cleanup": "Both centers close independently via allSettled, boss.stop precedes each app pool.end; fixture pool ends. Parent proves owned group absence before lease cleanup. Each DB marker/zero observations and normal DROP receive independent db-a/db-b receipts; unknown/nonzero fails closed without FORCE or killing other connections.",
+  "limits": [
+    "Configured application limits are not observed connection counts, PostgreSQL max_connections enforcement, or a proof of instantaneous socket disappearance during an error/reconnect.",
+    "No new PG server daemon: two databases on the already authorized isolated test endpoint; two application servers with separate pools.",
+    "No scheduler/runner/provider override was introduced; new journey uses no synthetic runner actor."
+  ],
+  "anchors": [
+    {
+      "path": "apps/server/src/index.ts",
+      "commit": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+      "blob": "8b1d4eb04872175065c2a27b796235a3a56db713",
+      "bytes": 13155,
+      "sha256": "b88b5fbd6f898a78570c6d2cc0d57822df21b0016df3dd180703c7880e6ad798",
+      "lines": [
+        63,
+        98,
+        129
+      ]
+    },
+    {
+      "path": "apps/server/src/scheduler.ts",
+      "commit": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+      "blob": "fba851076d50dd4ba6e55383aeae67d0d17f5e66",
+      "bytes": 957,
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a",
+      "lines": [
+        5,
+        9
+      ]
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "commit": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+      "blob": "901d0c3f7c5cd023425d52b04dfdb0c43a4b65e8",
+      "bytes": 48765,
+      "sha256": "5ebc9f3a6702b46a6e0f4aa5b418649c2999a6039332c5685053946cf693a6ed",
+      "lines": [
+        240,
+        248,
+        294,
+        328
+      ]
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg-boss/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json",
+      "bytes": 4103,
+      "sha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0",
+      "lines": []
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg-boss/dist/attorney.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/attorney.js",
+      "bytes": 43134,
+      "sha256": "1eb0ad087375bf296e1b7bf9ecf0628fd9aeae54c071aa684c80012964def7bd",
+      "lines": [
+        408,
+        415
+      ]
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg-boss/dist/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js",
+      "bytes": 22927,
+      "sha256": "11487d4ee764d73b54bdd72e691a66d08ef7d1239d2c2cf44d80db869848b34f",
+      "lines": [
+        90,
+        98,
+        207,
+        221,
+        299,
+        356,
+        563
+      ]
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg-boss/dist/db.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/db.js",
+      "bytes": 16198,
+      "sha256": "3391762eef4a93bc9a03acee585f6a2c4b11a5e59519f633e17bf7df085b5102",
+      "lines": [
+        27,
+        40,
+        116,
+        197
+      ]
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg-boss/dist/notifier.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/notifier.js",
+      "bytes": 3306,
+      "sha256": "8b84fd4d9660f60b012dd5169c93baa21c5867b38933f619a76ba5b39d542d58",
+      "lines": [
+        31,
+        57,
+        69
+      ]
+    }
+  ]
+}

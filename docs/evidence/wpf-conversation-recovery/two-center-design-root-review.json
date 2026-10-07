@@ -1,0 +1,152 @@
+{
+  "schema": 1,
+  "kind": "RECOVERY_TWO_CENTER_DESIGN_ACCEPTANCE_SOURCE_IMPLEMENTATION_READY",
+  "at": "2026-10-07T10:44:06.649135+00:00",
+  "reviewer": "root / gpt-6-astra / ultra",
+  "source": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+  "sealedInput": "8919b89bde85aa63c8a8d79978b201531370c533",
+  "proposal": {
+    "path": "/private/tmp/w01-recovery-two-center-proposal-20261007/report.md",
+    "bytes": 13081,
+    "sha256": "fbcd3d42c1360e65fc86065145e38c9f4d52906417cf01c284f034ead62d182e"
+  },
+  "verifiedPins": [
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 41391,
+      "sha256": "393254158ec9f175e2aabbd98bc97d89690e389786dedf539aaa9d6a5c660a65",
+      "unchangedAt8919": true
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 103044,
+      "sha256": "61c08ba798b81f8f0033ca010583a0f7436ba1234ebe097d09dd4dc031bec0d3",
+      "unchangedAt8919": true
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71948,
+      "sha256": "a6843bf0b2831d9a666fb9a030b0d26c6e588709b89c6501a379e914124d6b62",
+      "unchangedAt8919": true
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/web/src/connection/session.ts",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "unchangedAt8919": true
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/web/src/recovery/journal.ts",
+      "bytes": 21485,
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "unchangedAt8919": true
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33220,
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+      "unchangedAt8919": true
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 68432,
+      "sha256": "3954eabcba64425d7549653385d849dd6cb4a54805620e93d33dacb48128959d",
+      "unchangedAt8919": true
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/server/src/browser-session/store.ts",
+      "bytes": 4474,
+      "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5",
+      "unchangedAt8919": true
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a",
+      "unchangedAt8919": true
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "packages/contracts/src/browser-session.ts",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30",
+      "unchangedAt8919": true
+    },
+    {
+      "commit": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
+      "path": "packages/client/src/index.ts",
+      "bytes": 47838,
+      "sha256": "c6bb0e580513ab6cf913f72d2c1c85c16f8d03e5ebe1ea20c631122df9a00483",
+      "unchangedAt8919": true
+    }
+  ],
+  "decision": "Proceed through manager with original Recovery owner and existing exact21 scope; no current browser/PG reservation; freeze implementation for one scoped source/lifecycle review before real run.",
+  "approvedDesign": [
+    "One browser origin/context/page and actual IndexedDB/localStorage; one fixed public baseURL, fixture-owned explicit upstream A→B→A→B; two independently initialized marked DBs.",
+    "Capture upstream and generation once per incoming request, no target rewrite mid-flight, no private authentication rewriting/fallback or public proxy control endpoint.",
+    "Observe genuine public ready identities using only protocol/state/centerId/ownerPrincipalId whitelist. Distinct A/B IDs and exact A roundtrip; no whole session/token/cookie/CSRF evidence.",
+    "Save A draft/nextdraft and real lost-ACK original turn; B cannot expose A through accessible UI or send A identity to B; A records remain exact in same journal. Save B, restore A with zero automatic POST, explicit same-key/body real A replay, retain both next drafts; final B explicit Restore verifies B UI recovery.",
+    "Two DB leases use run/db-a and run/db-b to prevent owner/cleanup filename collision. B failure cannot bypass A cleanup; independent settled receipts, only exact marker and zero connections allow normal DROP; unknown stays failure/KEEP.",
+    "Late GET barrier reports either abortedWithoutDelivery or deliveredRejected with actual evidence. Abort does not prove late-success consumer rejection. Do not monkeypatch production fetch to manufacture success."
+  ],
+  "targetedDirectCoverage": {
+    "observedGap": "Fixed conversation-recovery.test.ts only uses original ownerPrincipalId; its switchCenter helpers alter centerId. Existing named controlled cases do not independently exercise principal-only rotation.",
+    "newBehaviorChecks": [
+      "Same baseURL and centerId, changed ownerPrincipalId: use real Journal/ConnectionSession/Recovery boundary with controlled transport to reject old authorization/record adoption, retain old records without transfer.",
+      "A stale ready completion that ignores transport abort must not overwrite the newer selected connection generation; controlled evidence is labelled separately from browser abort outcome."
+    ],
+    "runPolicy": "Only new affected selected cases and appropriate noEmit, independent ordinary local segment at most20s TOTAL including5s cleanup; preserve failures, no rerun old passing suite by default."
+  },
+  "scope": [
+    "apps/web/test/conversation-recovery.fixture.ts",
+    "apps/web/test/conversation-recovery.browser.ts",
+    "apps/web/test/conversation-recovery.test.ts if required for targeted cases",
+    "plans/wpf-conversation-recovery",
+    "docs/evidence/wpf-conversation-recovery"
+  ],
+  "productScope": "Production source remains unchanged for planned test work; substantive discovered defect stays with original owner/exact scope and gets an explicit source delta review.",
+  "resourceCandidate": {
+    "phase": "new independent second-center finite segment",
+    "totalMs": 90000,
+    "workMs": 60000,
+    "cleanupMs": 30000,
+    "markedDatabases": 2,
+    "chrome": 1,
+    "provider": 0,
+    "scratchBytes": 67108864,
+    "extraDatabaseWalPlannedBytes": 134217728,
+    "extraEvidenceMaxBytes": 4194304,
+    "extraMetadataMaxBytes": 1048576,
+    "additionalPlannedBytes": 139460608,
+    "meaning": "133MiB declared incremental estimate, not observed allocation or current reservation. Final parent envelope and complete fresh combined resource calculation required. Existing64MiB scratch not duplicated.",
+    "oldRouteFixPhase": "Close spent15119/unused74881, no unused credit transfer; all prior closed phases immutable."
+  },
+  "currentExternalWindow": "Original SVC06 r2 actual started2026-10-07T10:41:59.689858Z; no Web heavy journey until explicit cleanup return and unique manager handoff.",
+  "acceptanceLimits": [
+    "Two actual tuples changing centerId and principal together cannot alone prove principal-only isolation; currently no public principal-rotation route, so combine real A/B cycle with distinctly labelled controlled principal case without fabricating a public lifecycle.",
+    "Native provider consumption/application and queue promotion belong to cross-owner execution dependencies and are not silently added as new provider-call prerequisites for this rendering/trigger/cache recovery slice.",
+    "Full feature/main readiness remains pending final composite scoped review; preserve old source/test/actual attribution and failures."
+  ],
+  "recordsGuidance": "At next natural source/local seal, clarify one current fixed composite target and validation matrix in feature-review-entry; keep old55b/0141 prose as linked historical evidence rather than contradictory present-tense claims.",
+  "cleanCode": {
+    "applied": "One proxy/identity authority, reuse existing marked DB lease, disjoint immutable receipts, independent cleanup failures, bounded purpose-specific selector.",
+    "findings": "Fixed output filenames would collide with two leases; existing direct tests do not isolate principal dimension; historical review entry uses multiple present-tense targets.",
+    "resolution": "Explicit design conditions and minimal new behavior checks; owner implementation pending."
+  },
+  "rootActivity": {
+    "projectWrites": 0,
+    "productTests": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "HTTP": 0
+  }
+}

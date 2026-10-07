@@ -1,7 +1,7 @@
 {
   "id": "RECOVERY-ROUTE-FIX-20261007",
   "at": "2026-10-07 10:36:27 UTC",
-  "state": "ACCEPTED_SELECTED2_PASS_STOPPED",
+  "state": "CLOSED",
   "sourceTarget": "a80339a463c4a1a1a5a679d9a89ea79b1650340e",
   "authorization": {
     "by": "root + d01_owner",
@@ -123,5 +123,7 @@
     "bytes": 18127,
     "sha256": "e6c904e0fe1dd932902b682e43809680ee0791a160f85f37b67ab12192d6e752",
     "outcome": "APPROVED_SELECTED2_PASS_NOT_WHOLE_FEATURE"
-  }
+  },
+  "unusedMsSealed": 74881,
+  "unusedCreditTransferred": false
 }

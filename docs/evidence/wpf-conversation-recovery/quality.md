@@ -338,3 +338,11 @@ Root最终固定a803源码+本次actual local独审已接受，见[原报告](st
 actual outer0/两EOF，11raw40748B；charge取outer15118.727791、late14518.907833、parent14503.140875之最大ceil15119，旧三phase不转信用。收尾先确认DB marker/0conn正常DROP/fixture，再fresh exact4PID+groups、scratch/env身份删除；没有不明归属kill/个人服务操作或独立port采样声明。共享窗已即时归还不等metadata。此batch只存11新raw+10outer，不复制188旧原件；TODO02按原authority范围有证据完成，其余namespace/完整独审未夸大。
 
 2026-10-07 10:36:27 UTC：root本轮独审已核11raw+10outer/19source/同key回放与owned清理，限定selected2接受。封存前再次按原scope核源码零改、错误/预算原件不回写、manifest保持受审原字节；只从phase/current文档引用原样review，无循环hash或重复raw。无新工程检查/服务启动。
+
+## 2026-10-07 10:58:25 UTC — 双中心source/local交付clean-code
+
+复用本地find-skills→clean-code/codebase-design/brainstorming/webapp-testing，版本SHA同10:20记录，无安装。已有明确设计批准直接实施；每request的target/upstream/generation在await前固定，显式函数表达切换和有界hold，不能让route重选改变飞行中请求。公共session只白名单protocol/state/两ID；不存整包/token/CSRF。两lease独立目录、allSettled与每库marker/zero/drop，不以B异常跳过A或FORCE他人连接；额外buffer16KiB/10s且close/abort释放，未修改生产authority。
+
+原direct模块仅加两项有意义的identity/generation回归，复用真实Journal/ConnectionSession/privateRecovery，明确controlledtransport/非publicrotation；不镜像实现或运行旧55。受影响noEmit和selected2由原singleNode sandbox执行，local7481ms/20k、13raw40289B、3PID+PGID ESRCH、TMP清理；regular logs与outer双EOF分别记录。source只三test313+/32-，无依赖/合同/生产文件漂移，Git whitespace静态检查在封存前执行。
+
+当前feature入口重整为唯一2f8/a803production组合，旧55b/0141及各实证仅历史来源，明确真实SteerHTTP已通过、第二centeractual尚未。所有旧FAIL/原计费不回写，新90账不借旧余。查配置采用精确scheduler/pg-boss installed source，运行pool25+清理保守2位不是PG实测；无PG/Chrome/provider或新gate/env。root3232独审0finding不扩述wholefeature通过。

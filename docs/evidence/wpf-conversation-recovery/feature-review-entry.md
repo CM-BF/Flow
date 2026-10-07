@@ -1,68 +1,51 @@
-# 固定代码审查入口：WPF-RECOVERY01
+# WPF-RECOVERY01 固定代码与验收入口
 
-当前组合target `a80339a463c4a1a1a5a679d9a89ea79b1650340e`，见[晚开路由修复checkpoint](stale-route-checkpoint.json)。App current committed callbacks源修+same-document/exact durable outbox回归与direct barrier已固定，[root dce限定source接受](stale-route-fix-root-review.json)；新增direct1与Web noEmit已实际通过，首前置红保留；本轮same-document+durable原turn/Steer完整恢复已actual selected2 PASS，见[证据](stale-route-first-validation.md)及[root actual独审](stale-route-first-root-review.json)，限定selected2与owned清理已接受。第二Steer真实FAIL/有效观察/清理原件保留，静态缺陷修复后原真实链已通过，旧两FAIL与观察原样保留。新route-fix90s是独立有限段，旧90/150/60 closed不挪余额；完整feature IN_PROGRESS，第二中心/真实runner应用仍开放。
+当前唯一组合 target `2f8cc1f61d32f518998a64d0adeec582f85481f2`，base `84005a260dfcb668cd38b09c21564d0754a0f513`；16 个生产文件逐字等 `a80339a463c4a1a1a5a679d9a89ea79b1650340e`，本次只改两 harness 和原 direct test。完整 feature review 为 **IN_PROGRESS**，不是作者自签通过。WT `web-conversation-recovery` / branch `codex/web-conversation-recovery`，原 claim6ff v4/21；[当前19源/blob/SHA及base统计](two-center-checkpoint.json)为精确范围。后置 owner metadata 不替代历史运行 HEAD。
 
-## 55b已审基线与原证据（历史固定）
+[root 集中源码与local审](two-center-source-local-root-review.json)接受当前三文件delta、2项新受控回归与Web noEmit；双中心真实浏览器 **NOT_RUN**。当前代码不混入恢复目录美化、C02 stream-v2或其他feature。main/真实安装接收尚未取得新的本片完整回执。
 
-**Review target `55b4917e732d11d5e5f660f9c22a1022d7094015`；base `84005a260dfcb668cd38b09c21564d0754a0f513`；完整feature review `IN_PROGRESS`（55b两P2修复与局部实证已独审接受；chooser实际2/2及owned清理已独立限定接受）。** 本文件准备实际独立代码审查，不是作者自评通过。WT/branch：web-conversation-recovery / codex/web-conversation-recovery。当前19源码与target逐字一致，后置改动仅owner记录；源已冻结。
+## 模块与authority
 
-[精确19文件/每文件SHA与Git blob/统计](feature-review-manifest.json)：16个产品源+3个专测/fixture，共3205新增/133删除；范围仅原claim21中的19literal和两own目录，target相对base无范围外路径。源包含App实际消费者、ConnectionSession、唯一Journal/P01 binding及原Outbox/Queue/Steer authority，不是孤立框架。无server/shared contract/依赖/lock写入。证据目录/plan记录随metadata提交；原raw不能被编辑或当代码。
+ConnectionSession 负责公开cookie身份及撤权代际；Journal 按API baseURL/center/principal namespace持久化原owner草稿和冻结命令；P01私有binding组织checkpoint/restore，不成为第二业务发送authority。App使用当前已提交routing callback创建晚来view，client teardown不因session更新重建。原Outbox/Queue/Steer负责各自key/body与终态，严格事务commit/CAS是HTTP之前的屏障；unknown只能显式原key重试。
 
-## 已实现Interface及原authority
+完整稿包括text/intent/profile/project/knowledge/有序文件及Steer草稿。Restore核完整revision/lease，冲突保当前稿，成功新稿checkpoint可按原slot CAS替换旧record；不隐式fork、删稿或自动POST。材料恢复先unverified，显式metadata验证后才可发；新稿与已冻结材料分离。
 
-- Cookie connection只消费已固定public client/session4字段；持久center URL保API base path且拒凭据/query，principal/center namespace与短期权限generation分离；logout同步撤业务授权但不删journal/中心cancel。
-- 同步localreceipt先交接，再strict IDB事务complete/CAS→HTTP；CREATE保两key/两body及bind checkpoint；无法落盘0HTTP，unknown不得被newkey覆盖，显式retry保原body/key。
-- 原view owner管理完整draft、下一稿、材料metadata/顺序与restore lease；App真实挂P01sidebar.footer、保inactive原namespace/client；恢复无自动POST。未验证材料不能静默退化纯文。
+## 当前实证矩阵（固定来源各自保留）
 
-## 早期P1/P2→修复/验证来源（仍供独审复核）
-
-| 原问题 | 当前收敛与来源 | 验证限度 |
+| 验收 | 固定来源/实际证据 | 结论与边界 |
 | --- | --- | --- |
-| 82早期draft transient-empty/prepare失败、缺真实CAS、迟到namespace、写前阻塞原key、logout授权 | [quality](quality.md)保原8项来源；最终[50](direct-fourth-validation.md)含strict commit abort、版本CAS、原key重试/迟到prepare、旧namespace与logout case | 受控IDB/fetch；全UI边界不能仅靠50推断 |
-| 82 peer终态restore/Steer checkpoint、knowledge unverified、255/512附件名 | [f13 peer](f13-peer-source-review.txt)保修复及后继反例；50保终态对账、exact材料/知识resolve cases | 文件与knowledge恢复source/controlled；本次browser实际验证双文件 |
-| F13-1旧pending在reauth后自动续发；F13-2未存稿auth/center切换被卸载 | [原root](f13-root-source-review.json)、[2b01源审](2b01-restore-edit-root-approval.json)、50代际/原owner保护；本full7page-only abort→authloss→同页reconnect0POST | 二中心/换principal实际UI仍未覆盖 |
-| F13 failed/blocked-open缓存与晚success orphan | [原open审](f13-open-source-review.json)，50explicit retry/late close | 受控opening事件；不是全浏览器quota矩阵 |
-| R4-1 commit时namespace=null漏version；terminal reconcile后blocked残留 | [原4ba审](4ba-root-source-review.json)，50含commit-held/publicnull/reauth与只清原terminal blocker | actual App本轮保稿链已过，跨tab终态完整矩阵仍有限 |
-| M1静默少材料/M2分批验证乱序 | [1b8 root](1b8-material-root-review.json)，50send/queue完整性/先B后A/held隔离，本full7双真实chip/原refs/顺序/同body重试 | Queue enqueue实际现见continuous-sixth-validation；不冒promotion/Steer或全部材料组合 |
-| REC667默认checkpoint不激活/observer缺库造空v1悬挂 | [7cc审](7cc-root-source-review.json)，旧38新增生命周期/observer与当前50继承；本full7默认编辑/真实IDB恢复已过 | malformed/blocked各支仍受控证据 |
-| Restore等待中编辑丢失/同view双restore | [2b01 root](2b01-restore-edit-root-approval.json)+[peer](2b01-restore-edit-peer/report.md)，50使用真实App-used helper及deferred projection | 不冒mountedWorkspace全部材料prepare与并发编辑全浏览器覆盖 |
-| 同route多稿locator/对话框回焦 | [8ed审](8ed-identity-focus-root-approval.json)，本full7精确draftId+Enter/Escape+双390图 | 可读性后继已登记，不抹精确identity |
-| __name callback、picker关闭回焦时序、过期fixture非法时间对 | [serialization](serialization-check/root-web-local-segment-20261007-review.json)、[1bc审](1bc-focus-precondition-root-review.json)、[0141审](0141-expiry-root-review.json)；本full7实际走完原断言 | 全部五次历史FAIL保留；不是追溯改绿或唯一flaky根因证明 |
-| Parent期限/未知CREATE、bodyloss证据、PG零连接/late-stop/tail资源 | 原review.md各固定源审+本次[实际root审](continuous-first-root-review.json)及原DB/fixture/group/EOF原件 | 采样非OS硬quota；当前exactcleanup有效，不代表任意进程树强隔离 |
+| strict存储、CAS、恢复编辑/生命周期、材料与原key | [50 direct](direct-fourth-validation.md)，source2b01；[119选择/序列化](journey-selection-local/index.json)，source dd664 | 受控IDB/transport与App-used helper；不是全mountedApp/nativeIDB |
+| 原full7 | [source0141/exec765ab](continuous-first-validation.md) | 7/7实际PASS：cookie、text/intent/files、跨tabCAS、turn lostACK、page-only保稿auth-loss、CSRF/offline、双主题390/键盘；不是整个feature或SSE正文证据 |
+| 显式中心选择不被后台read关闭 | [source55b/exec0a661](continuous-second-validation.md) | selected2/2实际PASS，候选输入/原稿与0业务POST |
+| CREATE第一ACK丢失 | [source67f8/execbeb6](continuous-third-validation.md) | selected2/2实际PASS，同两key/body/同conversation再发原turn |
+| CREATE已绑定后turn ACK丢失 | [source344f/exec7c7ee](continuous-fifth-validation.md) | selected2/2实际PASS，只retry原turn不再CREATE；[原parent失败](continuous-fourth-validation.md)保留 |
+| Queue enqueue ACK丢失 | [source344f/execfafc](continuous-sixth-validation.md) | selected2/2实际PASS，同key/body/revision/item/sequence与两file顺序；不是promotion |
+| 任务详情实时SSE交付 | [source d68/exec1357](continuous-seventh-validation.md) | selected2/2实际PASS，第二public消费者cancel后原stream给App新状态/timeline/cursor，无snapshot/events补读；不是assistant/conversation stream |
+| profile/project/knowledge/双文件完整稿 | [source2e7203/exec7fb](continuous-tenth-validation.md) | selected2/2实际PASS，真实Prepare后保存、reload/reauth/显式Restore0新增POST/0正文prefetch、逆序验证保原refs、首turn匹配；前两红原样保留 |
+| Steer草稿/unknown ACK/同页晚view | [sourcea803/execd06](stale-route-first-validation.md)、[root实际审](stale-route-first-root-review.json) | selected2/2实际PASS：同document/timeOrigin、原turn durable记录、public synthetic actor真实claim/session、两Steer同key/body/command回放及下一稿；不冒native消费或应用 |
+| Steer慢存储跨deadline | [55b定向4case](final-p2-local-index.json) | 4受控PASS，旧50未选；晚accepted不降级，未发送屏障超时可重试 |
+| 同baseURL/center只变principal；忽略abort迟到ready | [当前2f8 local](two-center-local/cleanup-receipt.json)、[root审](two-center-source-local-root-review.json) | 新2PASS/55未选，真实ConnectionSession/Journal/privateRecovery加受控transport；不冒公共principal rotation |
+| 双真实center A→B→A→B | [设计](two-center-design-root-review.json)、[固定准备](two-center-preparation.json) | 源审通过，2DB浏览器尚未运行；actual lateGET将区分abortedWithoutDelivery与deliveredRejected |
 
-## 检查归因
+最新受影响Web noEmit为本次2f8，exit0；两新case+types保守charge7481/20000。原direct50/119/旧绿旅程没有重跑，不能称所有历史checks在同一target一次执行。16生产源与a803一致以Git blob证明；各后继harness检查分别绑定自己的target。
 
-- [50实际direct](direct-fourth-validation.md)：执行994ce、实现2b01，controlledIDB/mockfetch/actualApp-used helper，非nativeIDB或完整mountedApp。与本target的具体差异见manifest（不能把50冒当前19源同刻全验）。
-- [最近Web noEmit/119纯选择回调](journey-selection-local/index.json)：固定dd664，最终types0/119PASS；之前source第一轮111与日志分别保留。0141仅query字符串/预算常量改变，按授权未重复types/旧绿检查。
-- [本次原full7](continuous-first-validation.md)：执行765ab/source0141，actualexit0、完整7组与真实IDB/cookie/HTTP、两390图、markedDB/Chrome收尾；root限定接受。新段保守charge13134/rem136866，旧90k actual64134.08675与五FAIL独立封存。
+## 既有finding闭合映射
 
-## 残留验收/风险
+| 问题 | 修复/独立来源 | 当前证据限度 |
+| --- | --- | --- |
+| 默认checkpoint未激活；observer缺库造空v1/悬挂 | [7cc审](7cc-root-source-review.json)与direct38/50 | full7默认编辑/真实IDB链后续已过；malformed/blocked各支仍受控 |
+| 恢复await覆盖新稿、并发restore | [2b01 root](2b01-restore-edit-root-approval.json)+peer及50 | 保完整draft revision/CAS，不冒所有挂载App并发交错 |
+| 材料遗漏/反转、同route多稿与回焦 | [1b8审](1b8-material-root-review.json)、[8ed审](8ed-identity-focus-root-approval.json) | full7与completeDraft原refs/顺序/精确id/键盘已actual；目录可读性后继非本次阻断 |
+| 背景read关闭选择表单；Steer屏障超时卡sending | [0141完整审](0141-feature-root-review.json)、[55b修复审](55b-p2-fix-root-review.json) | choice actual +4 controlled；保旧CHANGES_REQUESTED原件 |
+| 长期hash监听捕获初始session、晚view绕过durable port | [原finding](stale-route-root-review.json)、[组合source/local审](stale-route-local-root-review.json) | current-committed callbacks，direct屏障及same-document实际Steer已通过；旧两SteerFAIL不回写 |
+| harness callback helper/焦点前置/session过期时间/monitor退休 | [serialization](serialization-check/root-web-local-segment-20261007-review.json)、[1bc审](1bc-focus-precondition-root-review.json)、[0141审](0141-expiry-root-review.json)、[344审](monitor-retirement-root-review.json) | 历史FAIL与晚期/外层计费保真；后续对应actual通过不改旧红 |
 
-CREATE两故障点及Queue enqueue现各有真实选组通过；Queue promotion/nativeSteer应用、二中心与变principal仍未验；profile/project/knowledge/双文件完整草稿和Steer草稿各有独立实际证据；任务详情SSE本次已见实际delivery，conversation/assistant流与全部重连仍未验；旧uploadjournal跨tabCAS/历史metadata隔离不在本片修复声明。三中心语义caller-Origin/迟到ClearCookie/repeatedConnect槽位由共享owner处理，本片不伪造auth保证。IDBstrict是UA耐久hint，不称断电/删库永久保证。主线/真实个人部署未集成验证。
+更早P1/P2逐项来源保留于[quality](quality.md)与[历史review](../../../plans/wpf-conversation-recovery/review.md)，不再把55b/0141列为“当前target”。
 
-GO新可用性验收归原03/05：恢复目录主层改用获准轻metadata标题/摘要/本地Intl时间，UUID/精确UTC留details，不预取正文；空text不判重复/自动删稿，保unknown/key/材料语义。仅后继记录，不阻当前固定代码审查或把这轮图片改成新产品FAIL。
+## 完整验收剩余与边界
 
-独立review应以此固定19源/base读取实际代码，核修复证据与未验边界后给结论；作者不提前标APPROVED，0141正式review为CHANGES_REQUESTED，当前两个修复供独立增量复审。
+原TODO03/05尚需本次双真实center隔离实际、迟到请求实际分类，以及按原要求核对尚缺的重连边界；同center公开principal旋转无本片测试API，当前只受控证明。TODO06仍需完整feature独立结论与合法main接收。两DB新phase90s候选只从自身0已用扣费，旧90/150/Steer60/route90全部closed，不借余额；[新phase](two-center-phase.json)和[连接配置](two-center-connections.json)清楚列源约束/未运行。
 
-## 正式两P2修复与新增验证
+真正runner/provider consumed/applied、Queue promotion、assistant流协议消费及其他owner公共认证合同保证是跨owner能力/未验依赖，不能临时新增为本Web渲染/触发/缓存片必须启动provider的前置；本片不宣称它们已证。IDB strict是UA耐久hint，不保证断电/用户清库永久保存。
 
-[0141 root完整源审](0141-feature-root-review.json)与[peer复核](0141-feature-peer-review/report.md)均确认两项P2。当前固定修复只改App、Steer control与原browser/direct两文件，其他15源同0141。
-
-- SELECTING：显式选择意图独立于背景ready；成功的用户Connect/Check existing才结束当前选择，迟到操作受本地revision与effect清理保护。新增独立`connection-choice`旅程复用真实App/public cookie读，验证输入保留、显式返回与0业务POST；**browser connection-choice 实际2/2 PASS，见[原件](continuous-second-validation.md)，本次已获root限定实际证据接受**。原full7原顺序/断言保持。
-- STEERING-TIMEOUT：同generation在写前屏障deadline进入原键unknown/locallyBlocked，0HTTP且可显式重试；已解码ACK且accepted checkpoint提交后不因deadline降级，旧generation仍不发布并可显式Restore对账。
-- [新增定向局部检查](final-p2-local-index.json)：ecce548四个受控case PASS，旧50 NOT_SELECTED。初noEmit两处mock签名宽化红原样保留；55b只补3处SteeringPort类型泛型，noEmit exit0，运行行为无改。仅受控IDB/端口，不冒mountedApp或真Steer HTTP。
-- 新普通local段累计实际13221.340917ms，保守charge13222/30000，0PG/Chrome/HTTP。browser新150s段累计24589/150000，剩125411；没有未消费gate，有限段已授权但每次须实际交接与fresh输入。
-
-[55b正式限定复审](55b-p2-fix-root-review.json)已接受两P2源码修复及定向local证据，0新增finding；全文的0141 CHANGES_REQUESTED与待复审描述保原历史来源。完整feature仍IN_PROGRESS，不自评APPROVED。
-
-[connection-choice实际回归](continuous-second-validation.md)绑定55b/执行0a661，2/2 selected PASS；原full7绑定0141不重跑，当前新增结果已获root限定实际证据接受。
-
-[root choice实际审](continuous-second-root-review.json)关闭SELECTING的定向实际验收；STEERING-TIMEOUT保4受控case限度，整体review仍IN_PROGRESS，无真实Steer HTTP/主线集成声明。
-
-## first-create实际限定补证
-
-执行beb6/source67f8，[2/2与原件](continuous-third-validation.md)及[root限定审](continuous-third-root-review.json)。只CREATE ACK丢失分支；已绑定后丢turn与Queue尚未实际运行，不替其他验收；预算新段36096/150000、余113904。
-
-## Queue实际与剩余接口
-
-[第六次有限段实际](continuous-sixth-validation.md)绑定344f/fafc，root独立限定接受selected2/2；本source未变化。段累计70158/余79842，历史计费/失败保真。下一最小[只读提案](remaining-validation-after-queue.md)以公开取消事件验证真实SSE到App，不把握手或轮询当交付。
+GO恢复目录可读性后继继续归原MATURE01/06：轻metadata标题/内容摘要/本地Intl时间、精确identity/UTC留details，不预取正文；空text不推重复、不自动合并/删稿/重发。此后继不阻已有恢复行为限定交付，也未在本次源码混入。
