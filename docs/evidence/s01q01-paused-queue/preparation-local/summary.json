@@ -1,0 +1,93 @@
+{
+  "recordedAt": "2026-10-07T19:51:44.545095+00:00",
+  "sourceTarget": "9d1bc8e1e24c281c834be61300d9522ea859f2cf",
+  "runtimeSha256": "1989f045e0d876e98ce5bb5fd29735045d3ddf36c5249b678a61da11f507bdf3",
+  "record": "iterations.json",
+  "evidence": [
+    {
+      "path": "iterations.json",
+      "bytes": 9097,
+      "sha256": "be9c11776f002e669709c295cfd88c1c4dba09ef11a51f536b05b276c48908d2"
+    },
+    {
+      "path": "prepare-caller-fixed-started.json",
+      "bytes": 1149,
+      "sha256": "58b8558407f8c9477cb0e36d81d13f20a2c97a16ad65cbb70121d0af4f2dcba1"
+    },
+    {
+      "path": "prepare-caller-fixed.log",
+      "bytes": 105,
+      "sha256": "83166b089fbcb82fac63f22522fa6ae99bb5e46368cd35d756277fd463dd6346"
+    },
+    {
+      "path": "prepare-caller-started.json",
+      "bytes": 1149,
+      "sha256": "b6df57e30dfc184cfc13661bcb65e87d27f6b8e35f7ce13e17fa7501129892ac"
+    },
+    {
+      "path": "prepare-caller.log",
+      "bytes": 105,
+      "sha256": "fe836cbecd3b6b4f70bec51b58d30c3e45ad72ae7fb3cb63421a0f7337e651ae"
+    },
+    {
+      "path": "prepare-collect-started.json",
+      "bytes": 1149,
+      "sha256": "b2f3d8475c97acc673726c8be492124d316c337c64fad2423ea2b18d4052f74d"
+    },
+    {
+      "path": "prepare-collect.log",
+      "bytes": 578,
+      "sha256": "723160c2edc695d0f387a21e950a7e7b3e5225a0147950e55bc07d1c0f88ac37"
+    },
+    {
+      "path": "prepare-types-fixed-started.json",
+      "bytes": 1149,
+      "sha256": "8f486b9fa9bb3a9197e2141329050bb79057731a93ffb9b673610e83edc9a7f5"
+    },
+    {
+      "path": "prepare-types-fixed.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "prepare-types-started.json",
+      "bytes": 1149,
+      "sha256": "d3612155d51d27dc3e9501e0ae9af8483c2c8cef12cee80a88a95aaede919b8d"
+    },
+    {
+      "path": "prepare-types.log",
+      "bytes": 891,
+      "sha256": "73c18b8964b43a547b56e0f49dc21523235764b7bbe08e97390d62f11d5a14a2"
+    }
+  ],
+  "checks": {
+    "wholeQueueTypes": "first exit2/6 undefined errors; guard fix then exit0, inheritedES2023/noEmit",
+    "collection": {
+      "exit": 0,
+      "selected": 2,
+      "executed": 0,
+      "testNames": [
+        "skips more than a default batch of paused queues without rotating them and scans again after explicit resume",
+        "keeps pause CAS authoritative when a candidate scan races promotion"
+      ],
+      "version": "Before only first-item guard; names unchanged"
+    },
+    "callerPure": {
+      "distinctPassed": 7,
+      "executions": 14,
+      "finalExit": 0,
+      "version": "Final entry byte hash equals final pure run; earlier result retained"
+    }
+  },
+  "resource": {
+    "children": 5,
+    "ms": 5180,
+    "rawBytes": 1679,
+    "fullReturnAt": "2026-10-07T19:46:07.938931+00:00",
+    "allClosed": true,
+    "PG": 0,
+    "HTTP": 0
+  },
+  "earlierMetadataFailure": "First static manifest assembly rejected dangling unused @flow/client alias. No child/PG and no runtime manifest was written by failed assembly; corrected to2valid aliases with explicit limitation.",
+  "limitations": "Actual queue behavior/lifecycle not run. Whole types after guard; final Python-only guards do not change TS. Previous7fixture tests unchanged/unrepeated. Raw stage source hashes retained; no false allchecksfinal-byte rerun claim."
+}

@@ -44,3 +44,13 @@ This command was **not run**. Mika drained engineering before the first launch a
 唯一新局部入口：[failure-local/summary.json](failure-local/summary.json)，运行只一份[iterations](failure-local/iterations.json)。固定source `01dfc89e43fb7793bc3d022b05ea34c129755073`。后台首错现在拒绝后续work；正常清理后仍抛原错误，回执可同时为资源CLOSED与验证FAILED；清理unknown保原cause，持久回执失败保双错。
 
 7/7纯fake资源故障用例及focused fixture types通过，原red1失败和首green4失败/3通过原件保留；无真实PG/HTTP/数据库创建。外部FS/Pool/Boss被内存Adapter替换，真实fixture admission/finish路径不替换。真实paused扫描、整个历史suite/types与实际120秒生命周期仍NOT_RUN。上方原90秒提案及历史旧fixture说明仅历史，当前不据此OPEN；正式候选需完整运行绑定、预算与新窗口。4child19:22:32.454554Z全部归还，停止launch。
+
+## 新完整准备片段（2026-10-07T19:53:58.685272+00:00）
+
+唯一[局部结果入口](preparation-local/summary.json)；[固定运行输入](runtime-inputs.json)283文件/36个alias位置（17外部各两处、2内部），产品252路径/33SQL，当前test/promotion/fixture覆盖逐字绑定。原第三client alias未供给且在固定闭包中无引用，不算有效第三alias；本次无安装/扩大供给。
+
+完整queue类型已通过；首次6个未定义首项错误保留，新增明确守卫，原断言不删。Vitest list只收集两条目标名称，0实际测试hooks/PG；Python caller7纯例通过（最终复跑绑定最终entry），不称实际收尾。局部sampler逐run绑定配置/fixture/caller；252供给只作最终完整绑定，不冒称每次前后全闭包采样。
+
+未来唯一argv在runtime-inputs；[许可](closed-permit.json)为CLOSED/过期、实际permit和namespace不存在。候选140秒=70work（含加载/CREATE）+40cleanup+10child结果+10TERM/KILL+10父receipt；共用origin。正常单center24配置连接，两个用例不启第二center，后者另13须另选范围。OPS14仍监督child、fixture仍管理带marker数据库；未知KEEP，无新调度器/observer/强删/重试。
+
+**真实准入尚未完成**：caller将保留目录最终逻辑总量连同receipt预留按raw2MiB校核，外包络8MiB，但不采临时峰值；数据库大小采样未实现，旧64MiB只是历史提案。完整实际预算须独审与经理后继确认，不把本候选当PG READY或已获运行许可。原两条真实PG测试与剩余队列验收仍NOT_RUN。

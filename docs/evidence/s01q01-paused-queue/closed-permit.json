@@ -1,0 +1,16 @@
+{
+  "state": "CLOSED",
+  "reviewed": false,
+  "totalSeconds": 140,
+  "expiresEpoch": 0,
+  "testNames": [
+    "skips more than a default batch of paused queues without rotating them and scans again after explicit resume",
+    "keeps pause CAS authoritative when a candidate scan races promotion"
+  ],
+  "head": "9d1bc8e1e24c281c834be61300d9522ea859f2cf",
+  "window": "00000000000000000000000000000000",
+  "recordName": "pg-run-00000000000000000000000000000000",
+  "inputSha256": "1989f045e0d876e98ce5bb5fd29735045d3ddf36c5249b678a61da11f507bdf3",
+  "requiredFreeBytes": null,
+  "authority": "NO_RUNTIME_GRANT; source and storage-budget review then fresh manager window/headroom required"
+}
