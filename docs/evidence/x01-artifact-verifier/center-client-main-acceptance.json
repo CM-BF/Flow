@@ -1,0 +1,152 @@
+{
+  "metadataSegmentStart": "2026-10-07T23:48:41.456Z",
+  "deadline": "2026-10-07T23:58:41.456Z",
+  "firstWriteAt": "2026-10-07T23:48:41.456Z",
+  "claim": "a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25",
+  "ledgerObservedAt": "2026-10-07T23:48:01.576Z",
+  "conflicts": [],
+  "base": "79ea930fd77d1ddedb0698c6155dfba88812e275",
+  "capBytes": 3145728,
+  "indexAtomicCopyBytes": 2394879,
+  "reservedMetadataAndIndexGrowth": 262144,
+  "conservativePlanningBytes": 2657023,
+  "canonicalAt": "2026-10-07T23:47:58.341Z",
+  "canonicalFloorBytes": 11911692288,
+  "termPath": "forwardAdmission.termsBytes.MikaAVMainReceiptMetadata",
+  "main": "97353e4f48ea515d268f6e4a6107e778b6c39abb",
+  "mainAncestorOfObservedOrigin": true,
+  "receipt": {
+    "path": "docs/evidence/i02/x01-verifier-center-client-intake.json",
+    "commit": "97353e4f48ea515d268f6e4a6107e778b6c39abb",
+    "at": "2026-10-07T23:41:49.495Z",
+    "bytes": 6542,
+    "sha256": "57e7d0649bdcede1c17b1f6027129c39e59ac2c1bebfc48c36047f5b7f146ed0"
+  },
+  "rows": [
+    {
+      "path": "apps/server/src/index.ts",
+      "source": "2fec9c6ee7ac97686534291fa7421747c86f7bcf",
+      "bytes": 17395,
+      "sha256": "483198deda3f56d7c022ad36ae098ccab3107abad346f5a4a17ce7f6795cf2aa",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 4000,
+      "sha256": "eb9282cdba015110257c7bd7eb059e11ebffb72f7f5ea0bafabca95a2e37b1b7",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.test.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 4724,
+      "sha256": "7fd6a61c9c9e7ef634e1747d1fb10ba8815af75cf79aa846f3e61d7c6af3b395",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 5316,
+      "sha256": "9d140d5072d26d18e698d55d596bc10f94a44ec1b405a2a1a4e309d0ab248bb5",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 2736,
+      "sha256": "efdd9ad43bd1cbfb4a6b8ec3f61a151be59735a724528f4a861aa33572d62652",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.test.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 8525,
+      "sha256": "3f30f9e9f4b554346ebf1a72e544af56cc9f55b513529dc802d8078067a34ab7",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 1423,
+      "sha256": "2e313671c97ad304c817ebf3f123a14fac31af87e66f98354c17a254b4d7fe3a",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 21699,
+      "sha256": "bfd985db4e5455b1b614155ca71d299ad8b1b60f3f4449b76761689f584d6019",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "packages/client/src/plugin-runner.test.ts",
+      "source": "90c23219b88357497c04a9ac3a0297863e66fb60",
+      "bytes": 14007,
+      "sha256": "99d70797bf6c3bab5914cf9ad4c14ac61dbcf89fe2947008ca681921c459f328",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "packages/client/src/plugin-runner.ts",
+      "source": "90c23219b88357497c04a9ac3a0297863e66fb60",
+      "bytes": 3922,
+      "sha256": "04291e846a3fe402ba26c21804b12b020e83ffedb112245bb4b5092aa665032b",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-binding.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 696,
+      "sha256": "e96e6f94cbb7570d264eda129306f746b318a1781b9a2a8d1277ce171723a3c1",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.test.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 3201,
+      "sha256": "95bee3168ae770493d53f741acdc8cd62614536e704619480e62f6fe5e0be069",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.ts",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 5976,
+      "sha256": "c71cc4898e4d36fe4587e5d94543a10f54269a1541645b5a74e4b4d06d9ad955",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "packages/storage/migrations/036-plugin-verification-bindings.sql",
+      "source": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+      "bytes": 5115,
+      "sha256": "6d47ba7ba8c8addde0ff07bc1f5fb6bf770836896d245c0fc93ee2b5074874be",
+      "mainMatchesSource": true
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "source": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+      "bytes": 21055,
+      "sha256": "22a440b08d070712051c99ad0ff53b5141619901d5df0377b3a6d26319d29278",
+      "mainMatchesSource": true
+    }
+  ],
+  "fileCount": 15,
+  "fileBytes": 119790,
+  "independentIntake": "native_center_owner confirmed 13 exact preimages plus current startup parent;56 direct external inputs equal main; old journal4 already main skipped",
+  "assemblyReview": {
+    "reviewer": "Execution Lead / gpt-6-astra",
+    "source": "2fec9c6ee7ac97686534291fa7421747c86f7bcf",
+    "decision": "APPROVED_SCOPED_STARTUP_COMPOSITION",
+    "P1P2": 0,
+    "finding": "Current index equals exact parent. Three-line change imports tested migration and awaits it immediately after migratePluginRuntime inside existing startup observer phase; preserves lifecycle, ordering, errors and all other current startup changes. No old ea3 whole index restore.",
+    "validation": "Static direct-consumer review; reuse fixed actual PG migration and source/local approvals. No new tests or production migration."
+  },
+  "validation": "Fixed Git main/source/hash/bytes only; 0 engineering checks/PG/HTTP/listener/browser/provider. Reused approved local results and R3 actual5/5; no rerun.",
+  "limits": [
+    "Center claim binding and thin client only; complete verifier admission/result/worker execution chain remains open.",
+    "Preserve R1/R2 failures and limited R3 result; no new PG/engineering/provider/installation/personal action.",
+    "Fixed deployed e15/779 remains unchanged; main acceptance is not personal deployment."
+  ],
+  "noModifiedProducts": true,
+  "oldPacketsUnchanged": true,
+  "claimReleased": false
+}

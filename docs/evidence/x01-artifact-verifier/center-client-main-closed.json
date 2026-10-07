@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-07T23:50:16.592Z",
+  "state": "MAIN_RECEIPT_METADATA_COMPLETE_STOP",
+  "base": "79ea930fd77d1ddedb0698c6155dfba88812e275",
+  "main": "97353e4f48ea515d268f6e4a6107e778b6c39abb",
+  "acceptance": "center-client-main-acceptance.json",
+  "claim": "a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25 (kept, not released or amended)",
+  "engineeringChildren": 0,
+  "PG": 0,
+  "HTTP": 0,
+  "pendingLaunch": false,
+  "futureWriteBalance": 0,
+  "productOrOldPacketDelta": [],
+  "VARWrites": 0,
+  "growth": {
+    "changedFullFileBytes": 58111,
+    "gitIndexAtomicCopyBytes": 2394879,
+    "finalReceiptAndIndexMargin": 32768,
+    "conservativeChargeBytes": 2485758,
+    "capBytes": 3145728,
+    "peak": "UNKNOWN"
+  },
+  "validation": "Readonly fixed-main/source/blob/hash comparison and metadata parser only; no engineering replay or live dashboard probe.",
+  "scope": "This completed main receipt slice only; complete AV03/AV04/verifier admission-result/worker/T7 and personal deployment remain open.",
+  "closure": "Commit/push/clean observation follows this receipt; all future writer activity requires a new task segment. Return future3MiB planning cap, not physical reclamation."
+}

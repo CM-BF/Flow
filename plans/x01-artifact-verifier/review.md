@@ -93,3 +93,7 @@ root于2026-10-07T18:30:02.000Z批准result2f32/packet77d失败忠实性，0P1P2
 ## Client authorizeVerifier 独审批准
 
 2026-10-07T23:20:37.443872Z，b01_bounded_reads/gpt-6-astra，SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0P1/P2。runtime b65c765d021dc7f59f9523b720f9b3d062b14206、final test90c23219b88357497c04a9ac3a0297863e66fb60、packet ee1d14d0aebfb6e8ffa0367e6926f91c5880b757；19bindings/223supply/8runtime pins核符。11/11与strict2→0，末类型注解行为未重跑；三child闭合及原失败保留。只批准薄client/source/local，不扩server/PG/worker/main，见client-authorize/approval.json。
+
+## 已审 center / SQL / client 主线接收归档
+
+2026-10-07T23:49:44.932Z：中央main97353e4f48ea515d268f6e4a6107e778b6c39abb、I02 x01-verifier-center-client-intake.json，15paths119790B逐declaredsource与main/hash核符。2fec仅当前startup三行装配、原journal4跳过，原56direct external同main为中央独立intake结果。沿ea3/ead8/R3与b65/90c原有限审批复用；本段没有新source review、工程检查或PG。原CHANGES_REQUESTED/失败及runtime部署限制保留，完整AV03/04仍OPEN。

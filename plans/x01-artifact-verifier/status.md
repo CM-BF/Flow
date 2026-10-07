@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T23:23:30.197Z / AV02 e271与journal b791已main；center/client后继未收到main receipt |
+| 最近更新 / 最近main同步核验 | 2026-10-07T23:49:44.932Z / owner逐15叶核验main97353e4f48ea515d268f6e4a6107e778b6c39abb；119790B与固定source全符 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -13,28 +13,28 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
-| 工作树dirty状态 | 新client两叶与结果固定、独审通过；本次仅批准归档，commit/push后clean STOP，保claim |
+| 工作树dirty状态 | 全部产品/工程STOP；本段仅main回执metadata，提交push后clean；保留原claim |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 90c23219b88357497c04a9ac3a0297863e66fb60：authorizeVerifier新10+旧phase1实际11/11、8未选；strict2→仅类型标注→0；behavior实际b65，末类型改动未重跑 |
-| 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
-| 实现目标 | 90c23219b88357497c04a9ac3a0297863e66fb60：客户端verifier phase薄接口，局部已验且独审通过；原ea3/ead8接收不改 |
+| 已集成main状态 / HEAD | AV02 e271、journal b791及center/SQL/薄client已main97353e4f48ea515d268f6e4a6107e778b6c39abb；公开admission/result/worker完整链及个人部署未验 |
+| 实现目标 | 90c23219b88357497c04a9ac3a0297863e66fb60 client与ea3/ead8 center已受控main；原固定R3/input/raw不改 |
 | 实现范围 | packages/client/src/plugin-runner.ts,packages/client/src/plugin-runner.test.ts（本client增量；旧ea3/ead8精确接收范围保存在其固定intake） |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 本片段交付阶段 | integration |
-| 当前产出 | 验证器执行授权的客户端接口已通过局部验证与独审，等待主线接收 |
-| 下一可用交付 | 先接收已审中心领取片，再接收客户端薄接口；完整执行链仍待后继验收 |
+| 本片段交付阶段 | delivered |
+| 当前产出 | 中心验证器领取资格与客户端授权接口已进入主线；完整产物验证执行链仍待后继验收 |
+| 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | APPROVED 90c23219b88357497c04a9ac3a0297863e66fb60：b01 2026-10-07T23:20:37.443Z，0P1/P2；限定client局部/source，旧R3批准独立保留 |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25；actual前fresh全账本核身份/无重叠；已移出leaf继续STOP |
-| 架构影响 | 同一claim/receipt显式v4与036来源引用；R3已证明有限动态SQL矩阵，完整运行时与公开产物验证仍OPEN；主线图待接收 |
+| 架构影响 | 036来源引用、中心v4领取与client phase薄接口已main97353e4f；完整admission/result/worker未闭合。主线架构固定基线待Execution Lead按target97353e4f自然更新，不把个人e15/779当已部署 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | AV-01 | completed | architecture_read | bc5b68a0e4e93e50f9258dd617262263d8db3c1f设计增量于14:49:38独审批准，P2已关闭；非产品完成 |
 | AV-02 | completed | architecture_read | 9895181/e662于15:49:31独审批准；AV02已main e271fb21，完整父功能未完成 |
-| AV-03 | in-progress | architecture_read，a67v6 | journal四叶已main；center/v4实际R3五例通过且独审，client phase局部已审；center/client待main，完整生产链仍OPEN |
+| AV-03 | in-progress | architecture_read，a67v6 | journal四叶已main；center/v4 R3五例及client phase独审通过，center/SQL/client已main97353e4f；完整生产链仍OPEN |
 | AV-04 | pending | 待入口与现consumer协调 | 启动/CLI/产品验收未实现/未运行 |
 
 ## 本轮工作段与时间
@@ -47,6 +47,7 @@
 | --- | --- | --- | --- | --- | --- |
 | AV-W01 | UNKNOWN | UNKNOWN | 资源 | AV02源码固定后等待ordinary lane；历史缺完整起止，保留原叙述 | 本段15:38:56串行安排记录 |
 | AV-W02 | 2026-10-07T23:19:24.000Z | 2026-10-07T23:20:37.443Z | 审查 | 客户端固定包独立审查已结束 | client-authorize/approval.json及实际dispatch |
+| AV-W03 | 2026-10-07T23:20:37.443Z | 2026-10-07T23:48:41.456Z | 接口 | 已审center/client依赖与受控main接收已由owner逐字确认 | center-client-main-acceptance.json；结束为owner确认时间 |
 
 AV02源码固定后等待本组ordinary lane；15:38:56收到K01→AV→S01串行安排。此前准备/源码不占工程lane；当前0工程child/待launch，等待时长计入本段壁钟。
 
@@ -220,3 +221,11 @@ R2独立namespace av03-verifier-claim-pg-run-r2；仅candidate，NOT_OPEN/NOT_RU
 ## Client 授权接口独审与接收顺序
 
 2026-10-07T23:23:30.197Z：b01于2026-10-07T23:20:37.443Z批准b65运行源/90c类型修正/ee1d固定包，0P1/P2。11/11与strict2→0分列，末四类型注解未重跑行为；旧首错与原件不改。唯一[两叶intake](../../docs/evidence/x01-artifact-verifier/client-authorize/main-intake.json)明确先原AV ea3/ead8、2fec startup assembly及两precursor，再本client b65+90c；当前main receipt未收到，不改原R3 intake。clean-code复核固定endpoint、小private Interface、ACK/取消/错误与旧tool兼容；无新增领域规则或资源所有者。本段全部工程已23:17:23.051Z归还，归档后STOP、0待写/0待launch、无未来写入余额，4MiB由lead归还规划额度，不声称物理回收。完整AV03/AV04/X01仍OPEN。
+
+## Center / SQL / client 主线接收确认
+
+2026-10-07T23:49:44.932Z：仅metadata自然归档，固定main97353e4f48ea515d268f6e4a6107e778b6c39abb的中央接收回执`docs/evidence/i02/x01-verifier-center-client-intake.json`（回执时间23:41:49.495Z）已逐15paths/119790B与declaredsource/hash核符。center其余源ea3、SQL与PGtest为ead8、client两叶90c；startup使用当前父上的2fec三行窄装配，未回盖旧index。原journal四叶已main跳过；56direct external同main为中央独立intake证据，本owner不重验工程。
+
+本片旧“等待AV center/client主线接收”已解除；[owner核验记录](../../docs/evidence/x01-artifact-verifier/center-client-main-acceptance.json)只引用中央权威，不改原R3/input/失败raw或VAR295。0工程/PG/HTTP/provider，复用原R3实际5/5及11/11client有限证据。完整verifier admission/result/worker/T7和AV03/AV04、父X01仍OPEN；主线接收不代表个人e15/779已使用该能力。原任务开工14:29:36.000Z不重置，完成仍NOT_COMPLETED。
+
+本metadata段23:48:41.456–23:58:41.456，3MiB含自身index原子副本；两目录以外均STOP。clean-code复核名称、主线/部署/分片交付边界、唯一status与原历史证据链接；无新产品或测试。
