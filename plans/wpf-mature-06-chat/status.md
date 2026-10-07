@@ -87,3 +87,5 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 **历史Steer修复准备快照：** 原RECOVERY01两次Steer实际失败均清理归还，0SteerPOST/恢复验收未过；原60s段不再消费。原owner沿21scope[修复与新有限回归](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/recovery-route-fix-segment.json)，当前仅source，不增加第二业务status或越权占用App。
 
 原 MATURE06-04 键盘验收新增[实际消费者 @file 边界](plan.md#file-快捷键的实际聊天消费者边界)，仅静态发现/未实现；优先发布与已排视觉片，不冒整个键盘矩阵已验。
+
+MATURE06-03/04/05同一后继新增[官方Thread动作与草稿保护边界](plan.md#官方-thread-动作与草稿保护的后继边界)：Quote现未接入，仅固定源设计输入；未来须保持完整冻结/权限和unknown草稿语义。content-visibility/defer不冒有界DOM，实际优化仍需证据，当前无take/实现/运行。

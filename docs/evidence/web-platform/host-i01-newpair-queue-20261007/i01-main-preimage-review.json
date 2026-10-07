@@ -1,0 +1,58 @@
+{
+  "observedAt": "2026-10-07T17:04:26.406453+00:00",
+  "state": "FIXED_MAIN_PREIMAGE_OBSERVATION_NOT_INTEGRATION",
+  "reviewer": "root / gpt-6-astra ultra",
+  "mainCommit": "b293afc825a298f06fdd81148c49128f166e0610",
+  "candidate": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+  "deliveryCommit": "11a9ba5df03f154d1414650f28fa76f8b402f5a4",
+  "intake": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/main-intake.json",
+    "bytes": 5971,
+    "sha256": "479db4c14399b2015b4dd339b153f0dc38b19f6d17fdcbd193bb6e4994ca0906"
+  },
+  "exactSix": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "mainSha256": "882feae39d2a3dd95c1a45010e1502b6d0e4c1bdd8c2b5275b2d4eb6e1163f6d",
+      "matchesDeclaredBase": true,
+      "alreadyMatchesTarget": false,
+      "targetVerified": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "mainSha256": "ee591334bfa1d89aa5047a75b896c7f7b263fdc2053d99c12ab7fb709515b3c2",
+      "matchesDeclaredBase": true,
+      "alreadyMatchesTarget": false,
+      "targetVerified": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "mainSha256": "9462307df41ad9910a5fbc846003f20e8c378350e6f8e4cbdd601c7b3b96d0e7",
+      "matchesDeclaredBase": true,
+      "alreadyMatchesTarget": false,
+      "targetVerified": true
+    },
+    {
+      "path": "apps/web/test/plugin-integration.test.ts",
+      "mainSha256": "a79d701195b93254026a42432c866eeffe4072cf3ec6d9dcdb3ab37dd8ace5f9",
+      "matchesDeclaredBase": true,
+      "alreadyMatchesTarget": false,
+      "targetVerified": true
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.browser.ts",
+      "mainSha256": "cd4e067ae9238c39348c0ae262e65e54df40637b18d51aa478cb166de86f9c98",
+      "matchesDeclaredBase": true,
+      "alreadyMatchesTarget": false,
+      "targetVerified": true
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.fixture.ts",
+      "mainSha256": "9fa4706fb26e639aed55413ff07d5ff0dbd05dee6a30d14221f2b909b313c692",
+      "matchesDeclaredBase": true,
+      "alreadyMatchesTarget": false,
+      "targetVerified": true
+    }
+  ],
+  "limits": "Read Git blobs only; no project writes, tests, merge or claims. Integrator must fresh check current main before application; any later preimage change needs normal composition review. Actual runtime approval remains controlled HTTP fixture only."
+}

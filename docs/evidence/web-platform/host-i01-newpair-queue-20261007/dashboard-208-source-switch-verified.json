@@ -1,0 +1,144 @@
+{
+  "observedAt": "2026-10-07T17:03:22.437518+00:00",
+  "state": "VERIFIED_208_SOURCE_MAPPING_AND_CLAIMS_ONLY",
+  "reviewer": "root / gpt-6-astra ultra",
+  "sourceCount": 208,
+  "registryFingerprint": "aed20ac1dbf0d7604b9988903e3280a578f3ec0daedf08afe17b7869a4702163",
+  "summaryReadId": "f49f1ca8-8d58-4509-b46e-4633c7667b9f",
+  "assignmentsReadId": "b2427897-a992-4bf6-8b6f-1f960535d83c",
+  "responsePins": {
+    "summary": {
+      "bytes": 565828,
+      "sha256": "7c48cb53a551e8bf0ab7f54d63b5986716e7df98c2fd6e6baee0c8928e75af44"
+    },
+    "assignments": {
+      "bytes": 220414,
+      "sha256": "bedaf15beefea6e4d4bfc973bc570ea86837a7ec23d09d0524629b9a46c676cb"
+    }
+  },
+  "selected": [
+    {
+      "taskId": "WPF-VISUAL01",
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/plans/wpf-visual01-shell/status.md",
+        "digest": "98e1de71c5af6eba749fcefeeeadbe1f3a6ea68c24a55e0848b78ba7b4c41178",
+        "modifiedAt": "2026-10-07T16:00:08.603Z",
+        "readAt": "2026-10-07T17:03:22.377Z",
+        "declaredUpdatedAt": "2026-10-07T16:00:08.479Z",
+        "stale": false,
+        "ageHours": 1.0538605555555556,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "owner": "w01_owner / gpt-6-astra ultra",
+      "branch": "codex/web-shared-overlays",
+      "checks": {
+        "state": "not_run",
+        "target": null,
+        "record": "NOT_RUN；新共享浮层 source-only，旧 a8 历史检查不继承"
+      },
+      "human": {
+        "delivery": {
+          "state": "review",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "共享浮层与渐进消息设置源码已完成；完整身份可展开，窄屏应用/取消固定可达，真实验收待运行",
+        "next": "固定源码独审及受影响局部/代表消费者验证；当前安全停写以顺序完成发布兼容",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "assignment": {
+        "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+        "version": 1,
+        "state": "active",
+        "lead": "external_web_d01_owner",
+        "worker": "w01_owner",
+        "branch": "codex/web-shared-overlays",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+        "matchesSource": true,
+        "scope": [
+          "apps/web/src/assistant-ui.css",
+          "apps/web/src/components/ui/dialog.tsx",
+          "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+          "apps/web/src/execution-profiles/execution-profiles.css",
+          "apps/web/test/conversation-recovery.browser.ts",
+          "apps/web/test/message-settings.browser.ts",
+          "docs/evidence/wpf-visual01",
+          "plans/wpf-visual01-shell"
+        ]
+      }
+    },
+    {
+      "taskId": "S01Q01",
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan/plans/s01q01-paused-queue/status.md",
+        "digest": "6d40dccfe42dd4c97860b814125e1f145275adc8120c1b833d3c680a8bef26fa",
+        "modifiedAt": "2026-10-07T16:31:06.489Z",
+        "readAt": "2026-10-07T17:03:22.377Z",
+        "declaredUpdatedAt": "2026-10-07T16:31:00.000Z",
+        "stale": false,
+        "ageHours": 0.5395491666666666,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "owner": "b01_bounded_reads / gpt-6-astra ultra",
+      "branch": "codex/queue-paused-scan",
+      "checks": {
+        "state": "not_run",
+        "target": null,
+        "record": "NOT_RUN"
+      },
+      "human": {
+        "delivery": {
+          "state": "review",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "已准备暂停聊天不占扫描名额的最小改动和行为用例，实际验证尚未运行",
+        "next": "独立源码审查后准备隔离行为验证入口",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "assignment": {
+        "claimId": "a8a3b2d7-1bde-438a-9fbf-f81e1c791350",
+        "version": 1,
+        "state": "active",
+        "lead": "mika",
+        "worker": "b01_bounded_reads",
+        "branch": "codex/queue-paused-scan",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan",
+        "matchesSource": true,
+        "scope": [
+          "apps/server/src/conversation-queue/promotion.ts",
+          "apps/server/src/conversation-queue/queue.test.ts",
+          "docs/evidence/s01q01-paused-queue",
+          "plans/s01q01-paused-queue"
+        ]
+      }
+    }
+  ],
+  "limits": "No browser refresh, service restart, registry/status mutation, token read, product tests or main integration. Source/claim alignment does not make checks pass or authorize another writer."
+}

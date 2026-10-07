@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T16:56:28.489Z",
+  "state": "RECORDED_EXISTING_D01_FOLLOWUP_NOT_TAKEN",
+  "source": "GO explicit human acceptance relayed by root; no new product task",
+  "tracks": {
+    "summary": "DASHSUM01; current WPF001 status owner makes capability summary metadata now",
+    "timing": "WPF-DASHBOARD-TIMING02 already planned, compact local time+explicit timezone with UTC/source drilldown; unknown start/completion/wait-inclusive elapsed explicit",
+    "blocker": "Existing D01 successor, manager tracking TODO WPF-001-37; previous DASHSUM01 active/delivery first-three rule did not cover blockers"
+  },
+  "acceptance": [
+    "Group blocker presentation only using currently valid explicit big-task relationships",
+    "Retain every task, original owner, original blocker and source/detail navigation within each group",
+    "Unknown/invalid/missing relationship gets explicit separate group; no text-similarity dedup or inferred hierarchy",
+    "Do not synthesize parent status, completion, priority or blocker; do not introduce another hand-filled source",
+    "Preserve stale/unknown/failure and full detail visibility; direct affected selector and representative browser only"
+  ],
+  "candidateScope": [
+    "apps/execution-dashboard/src/human.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/human-summary.test.mjs",
+    "apps/execution-dashboard/test/task-links.browser.mjs",
+    "plans/wpf-dashboard-summary",
+    "docs/evidence/wpf-dashboard-summary"
+  ],
+  "scopeAuthority": "Original DASHSUM01 six paths are candidate only; old claim released. Original D01 owner must fresh authority/worktree and exact scope before implementation; no registry/parser/aggregate/styles claim inferred. Manager only own six metadata scopes.",
+  "priority": "Fixed Web publication then existing I01/VISUAL work; no runtime, take, new agent or big task in this record",
+  "fixedReadInput": {
+    "main": "c6ada2b766bcc2ad45546bb500ad8ba34f277af2",
+    "source": "Root readonly source trace, no runtime",
+    "blockerEligibility": "human.mjs:56 retains blockerIds, unchanged",
+    "rendering": "public/app.js:233-246 renderSignal currently flat",
+    "relationGuard": "links.kind === 'subtask' && parent.state === 'known', and target exists/is valid; targetId alone insufficient because task-links.mjs:74 sets it for unverified navigation",
+    "otherGroups": "verified big/none own group; other relationships explicitly pending verification",
+    "parentTitle": "Navigation title allowed without own blocker; no synthetic blocked state",
+    "focusedAcceptance": [
+      "both known parent and child blocked",
+      "only child blocked",
+      "unknown parent relation with existing target",
+      "stale parent or cycle",
+      "different owner/tasks identical text retained separately"
+    ],
+    "originalReport": "dashboard-blocker-source-input.json",
+    "originalReportSha256": "59601770e4bf9d76b6e0bb9786fa54f70cb4b4356ea7a95d1d2b234eb966417a"
+  }
+}

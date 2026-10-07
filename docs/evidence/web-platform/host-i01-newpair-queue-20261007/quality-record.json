@@ -10,11 +10,11 @@
     "application": "Separate current actual/next from historical failed observations; preserve exact receipts and avoid duplicated product authority. Parent attachment followup remains originaltask, no extra store or task."
   },
   "freshClaim": {
-    "observedAt": "2026-10-07T16:01:31.186Z",
+    "observedAt": "2026-10-07T17:05:05.669Z",
     "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
     "version": 3,
     "scopeCount": 6,
-    "overlapPairs": [],
+    "record": "manager-diagnostic-return-claims.json",
     "migrationNeedsVerificationHistorical": true
   },
   "cleanCodeReview": {
@@ -25,5 +25,21 @@
     "unresolved": "Compatibility and I01 actual pending; VISUAL engineeringNOT_RUN/live source switchpending; attachment action interface unimplemented"
   },
   "engineeringChecks": "NONE; only ownmetadata parser/hash/link/scope/diff",
-  "model": "gpt-6-astra"
+  "model": "gpt-6-astra",
+  "reviews": [
+    {
+      "at": "2026-10-07T17:07:37.588846+00:00",
+      "scope": "Natural manager batch K01 independent RETURN, I01 actual PASS/root review/main, Cookie diagnostic actual RETURN, forward budget and D05 208 close, human summary/explicit blocker grouping requirements",
+      "model": "gpt-6-astra",
+      "skills": "Already-read local find-skills + clean-code reused; no newstack/install",
+      "checks": {
+        "naming": "One current resource holder/NEXT; diagnosticComplete not formal compatibility PASS; I01 main and personal deployment separate",
+        "responsibility": "Only manager six scopes; original owners close/release products, Original alone D05registry/host",
+        "errorHandling": "Original failed HOLD/firsttypeFAIL and overlap preserved; independent recovery distinct; no automaticretry/no elapsed return",
+        "duplication": "Forward terms each once/reserveonce; sealed physicalbytes not additional originalcaps; knownunknown explicit",
+        "behaviorEvidence": "No new engineeringtests; use exact fixed receipts and independent rootreviews",
+        "unresolved": "Formal4Appcompat FAILED; HPE_CLOSED_CONNECTION cause unknown; R4 NEXT not actual; VISUAL selected implementation checks NOT_RUN; personal deployment remains open"
+      }
+    }
+  ]
 }

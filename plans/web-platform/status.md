@@ -2,11 +2,11 @@
 
 > 本文件的唯一持续维护权威是 `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform`（branch `codex/web-platform-management`，owner d01_owner）。主线中的同路径是经独审、由Execution Lead同步的固定发布副本，不能据它推断当前进度；固定target、生成时间及同步规则见[发布说明](../../docs/evidence/web-platform/publication/README.md)。不得在main另建手填status。
 
-**Recovery 主线合同已对齐：** [原19源主线接收](../../docs/evidence/web-platform/release-caller-recovery-main-20261007/recovery-main-intake.json)保持c130/2f8；[lateLogout中心main与既有consumer限定接收](../../docs/evidence/web-platform/x01-version-return-20261007/recovery-late-logout-main-consumer-intake.json)确认原06交接满足。原owner287947已完成原01–06，6ff v6两metadata已[正式释放](../../docs/evidence/web-platform/release-c3-actual-admission-20261007/recovery-final-release-receipt.json)，19源码此前已移出；不冒新cookiejar运行或个人部署，固定6c/7d1未含中心fix。types scratch旧KEEP保留。
+**已验证的能力与交付边界：** 逐消息设置、完整草稿恢复和插件管理所选四组真实界面检查已通过；个人网页仍未更新。新网页会话错误已捕获具体错误码，正式发布还需修复并通过四版本兼容检查。
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T16:47:10.325Z；查询验证已实际启动，网页诊断所需类型检查已完成；短暂检查重叠如实记录。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T17:06:16.444Z；插件管理所选检查已审通过并合入主线；网页诊断已捕获错误并归还资源。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 逐消息设置所选真实旅程已审并main3c9345，原写权已释放；最小新Web两文件修复在独立7272基底固定，后端cd27产物结果已审。个人网页仍旧版本。 |
-| 下一可用交付 | 修正新网页资源观测与插件连接切换检查的具体问题，再按固定候选验收；正式兼容通过后才应用用户网页。共享浮层按安全空档完成局部与代表界面检查。 |
-| 当前阻塞 | ACTIVE: 新网页正式四版本兼容未通过，第二次失败停在资源观测，reports=null；个人真实设置目录仍未完成。 |
+| 当前产出 | 逐消息设置、完整草稿恢复与插件管理所选界面检查已通过；新网页产物已生成并完成会话错误诊断，个人安装仍使用旧网页。 |
+| 下一可用交付 | 修复新网页登录恢复问题；通过四版本兼容后更新实际网页，继续改善共享浮层。 |
+| 当前阻塞 | ACTIVE: 新网页会话恢复兼容检查尚未通过，暂不能发布；个人逐消息设置目录也仍待激活。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：知识查询测量运行中，浏览器等待其明确归还。网页局部检查已归还，重叠区间已交原负责人；新准入只计仍可能增长、所选检查峰值与一次reserve。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：网页诊断已完整归还，下一窗口交原宿主验证；诊断不等于兼容通过，已有数据库继续计可能增长。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -73,6 +73,7 @@
 | WPF-001-35 | pending | d01_owner | RS13固定f82候选5asset/1,571,669 raw bytes仅观察，初始依赖图/延后chat及静态host cache-encoding冷暖与回滚验收已落plan；未take/实施，ACK/附件/发布优先，0个人服务/模型。 |
 
 | WPF-001-36 | completed | d01_owner | D01/DPERF两组隔离原证据与六scope[只读第二意见](../../docs/evidence/web-platform/dperf03-readonly-proposal.json)已归档；新增末尾HEAD核对后原28→23初为算术预期，实施后仅该临时样本已实测23，captured HEAD/permit/失败unknown为门槛；ATTACHI02实际派工后已root结构批准并fresh db0b7d25 v2七scope实施（新增专测分类helper）；45s/10s清理/8MiB，独审5609 APPROVED，已main a8aef五源同；7cc5双端clean全停写后db0b v3 released；不泛化CPU/SLO。 |
+| WPF-001-37 | pending | 原D01后继合法owner；d01_owner跟踪 | [原需求与候选scope](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json)：按有效显式关系分组阻塞，保每项原文/owner/来源，未知单列；未take/未实现，不改旧DASHSUM01完成范围。 |
 
 已审设计输入：[快速设置双重生命周期门禁](../../docs/evidence/web-platform/message-settings-ownership-interface/root-review.json)已收敛；[新组件唯一source](../../docs/evidence/web-platform/message-settings-quick-controls-provision/registration-request.json)已六scope领取；[固定源码与179来源实际登记](../../docs/evidence/web-platform/message-settings02-35-source-intake/report.md)已接收，[fe6源码与c1静态准备已审](../../docs/evidence/web-platform/message-settings02-c1-prepared/report.md)由原owner负责，真实host接线仍需后继交权。
 
@@ -188,3 +189,7 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 本自然批[实际与后继入口](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/personal-maintenance-next.json)保1306首红，新的Release共同source7272只属候选；[D05两来源登记](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/d05-registration-request.json)仍由现合法Original writer处理。
 
 本次[MSG最终接收、看板声明及ACCESS时间收口](../../docs/evidence/web-platform/msg03-final-intake-access-20261007/current.json)均沿原owner唯一status/原子claim：MSG b20仍20 STOP且7e3fv3 active；ACCESS06479完成ISO已可见并e54v2 released。后端cd27结果接受；[历史Original派工请求](../../docs/evidence/web-platform/msg03-final-intake-access-20261007/new-web-producer-handoff.json)现已由[Web/W01实际承接](../../docs/evidence/web-platform/msg03-main-release-source-handoff-20261007/web-producer-handoff.json)取代，W01只在既有四范围消费固定新pair。无新runtime或重复检查。
+
+## 历史合同技术接收记录
+
+**Recovery 主线合同已对齐：** [原19源主线接收](../../docs/evidence/web-platform/release-caller-recovery-main-20261007/recovery-main-intake.json)保持c130/2f8；[lateLogout中心main与既有consumer限定接收](../../docs/evidence/web-platform/x01-version-return-20261007/recovery-late-logout-main-consumer-intake.json)确认原06交接满足。原owner287947已完成原01–06，6ff v6两metadata已[正式释放](../../docs/evidence/web-platform/release-c3-actual-admission-20261007/recovery-final-release-receipt.json)，19源码此前已移出；不冒新cookiejar运行或个人部署，固定6c/7d1未含中心fix。types scratch旧KEEP保留。

@@ -1,0 +1,106 @@
+{
+  "createdAt": "2026-10-07T16:54:04.709145+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "state": "READ_ONLY_DESIGN_INPUT_NOT_IMPLEMENTED_NOT_RUN",
+  "scope": "Existing official Thread / REQ22–23 plugin actions and MATURE06 chat successor; no new task, claim or current Release/I01 scope expansion. Current delivery remains first.",
+  "skills": {
+    "discovery": "Local find-skills, assistant-ui and clean-code already installed; local versions reused, no installation. Consulted official llms.txt then exact primitive docs; .md unavailable, human-readable pages retrieved.",
+    "paths": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "application": "Checked installed library source against public docs; separated view extension from command authority; no duplicate composer or transport. Clean-code review retained the narrow adapter responsibility and identified the missing quote capture boundary rather than adding wrappers."
+  },
+  "sourcePins": [
+    {
+      "path": "apps/web/package.json",
+      "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7"
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "bytes": 32735,
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14"
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/markdown-text.tsx",
+      "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "bytes": 7301,
+      "sha256": "b041132faa98790395e4161329249eb1a38642ce7a5603042a67e7ab7ff72808"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "commit": "5438e375a92f47c1a68d81aeed172a1bfdf05962",
+      "bytes": 29561,
+      "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react/src/primitives/selectionToolbar/SelectionToolbarQuote.tsx",
+      "package": "@assistant-ui/react@0.15.23",
+      "bytes": 1707,
+      "sha256": "fe4e6dd3ce409d3262e399c8355d0a75c246723061836be32437a3f4459d8c1b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react/src/primitives/selectionToolbar/SelectionToolbarRoot.tsx",
+      "package": "@assistant-ui/react@0.15.23",
+      "bytes": 5850,
+      "sha256": "8f82f5616cceb210fc96dec420d6303e8203d98ec8ec6a3214f47c4bef359b9f"
+    }
+  ],
+  "officialSources": [
+    {
+      "url": "https://www.assistant-ui.com/docs/api-reference/primitives/thread",
+      "used": "Official Root/Viewport/Messages/Footer composition and experimental ID-keyed message rendering."
+    },
+    {
+      "url": "https://www.assistant-ui.com/docs/api-reference/primitives/selection-toolbar",
+      "used": "Selection toolbar belongs inside a Thread root and Quote sets composer quote state; selectable/excluded message regions are explicit."
+    }
+  ],
+  "findings": [
+    {
+      "id": "OFFICIAL_EXTENSION_AUTHORITY",
+      "kind": "Design constraint, not current shipped bug",
+      "evidence": [
+        "thread.aui.tsx:84–144 explicit component slots preserve the official Thread structure.",
+        "Installed SelectionToolbarQuote.tsx:40–49 directly calls aui.thread.composer().setQuote and clears browser selection.",
+        "Installed SelectionToolbarRoot.tsx:90 scopes selected message through the thread root."
+      ],
+      "implication": "A visually correct official Quote button is a composer mutation, so generic plugin button capability or render permission cannot authorize it. Reuse the existing host private authority and current view/draft ownership; avoid exposing a runtime setter or arbitrary DOM callback."
+    },
+    {
+      "id": "QUOTE_NEEDS_COMPLETE_DRAFT_MAPPING",
+      "kind": "Future feature gap; toolbar currently not mounted, no reproduced defect",
+      "evidence": [
+        "ConversationThread.tsx:209–228 captures draft.text, knowledge, material and message settings before official send; no quote field is captured.",
+        "ConversationThread.tsx:125–127 sends/enqueues the captured text and existing structured fields.",
+        "ConversationThread.tsx:233–237 persists composer text through its current draft subscription."
+      ],
+      "implication": "Do not mount the upstream Quote primitive and claim an end-to-end quote feature. First decide explicit product representation through the existing allowed contract: visible text insertion with user-visible quoted context, or a separately coordinated structured field. Preserve complete draft, queue, UNKNOWN original body/key and explicit restore semantics. No shared contract changes are authorized by this note.",
+      "acceptance": [
+        "Two split panes: selection and action stay bound to the source message/pane; changing center or disabling extension rejects a stale action.",
+        "Quoting while a previous draft A prepares materials cannot mutate A or silently overwrite current draft B.",
+        "Explicit send/queue and durable recovery retain exactly the representation shown to the user; unknown retry keeps original frozen payload.",
+        "Selection excludes tool controls and file cards; keyboard operation and both themes are tested when this feature is actually taken."
+      ]
+    },
+    {
+      "id": "VIRTUALIZATION_IS_NOT_A_STYLE_REPLACEMENT",
+      "kind": "Existing performance successor constraint; no benchmark claim",
+      "evidence": [
+        "thread.aui.tsx renders ThreadPrimitive.Messages and uses content-visibility on message roots.",
+        "markdown-text.tsx already uses memoized components and deferred Markdown.",
+        "Official docs expose experimental ID-keyed message rendering for custom/windowed lists."
+      ],
+      "implication": "If measured long-thread DOM cost justifies windowing, preserve message ID, official runtime scopes, viewport/footer anchoring, action context, selection and keyboard focus. Existing content-visibility is not a bound on mounted DOM. Do not swap the official Thread for a custom chat shell or upgrade dependencies solely on latest docs. Exact installed export/support and actual multi-pane resource measurements remain prerequisites."
+    }
+  ],
+  "limits": [
+    "No product import, tests, browser, service, PG, dependency change or project edit.",
+    "No measured performance improvement, no UI screenshot and no new feature completion.",
+    "Latest documentation is design reference; execution must bind the installed 0.15.23 surface."
+  ]
+}

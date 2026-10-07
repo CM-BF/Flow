@@ -46,5 +46,13 @@
     "runtime": "0child/PG/HTTP; fixture still needs markedDB/deadline/evidence adaptation, notready",
     "budget": "16MiB already recorded once, no additional reservation",
     "operator": "Original existing D05 writer only; manager routes source record without mapping edits or server reload"
+  },
+  "closure": {
+    "at": "2026-10-07T17:03:22.437518Z",
+    "state": "BOTH_SOURCES_LIVE_VERIFIED",
+    "evidence": "dashboard-208-source-switch-verified.json",
+    "sourceCount": 208,
+    "registryFingerprint": "aed20ac1dbf0d7604b9988903e3280a578f3ec0daedf08afe17b7869a4702163",
+    "checks": "NOT_RUN unchanged; source mapping and activeclaim matching only"
   }
 }

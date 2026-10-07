@@ -190,3 +190,9 @@ Recovery原03/05已由[Original主线回执](../../docs/evidence/web-platform/re
 沿原 MATURE03-03 与 MATURE06-04 键盘验收记录[固定源码发现](../../docs/evidence/web-platform/web-artifact-cleanup-fix-source-reload-20261007/file-tab-keyboard-followup.json)：main9a815eca7 的 ConversationThread 在已有 prevented/IME guard 之前处理 @file+Tab，且未排除修饰键；官方组件先调用消费者 onKeyDown，独立附件 fixture 的正确 guard 不能代替真实 App。此为静态控制流发现，未声称真实 IME 复现。
 
 下一合法 owner 在独立树与精确领取范围内修快捷键判断顺序和边界：普通 @file Tab 保持有效；Shift+Tab、Ctrl/Alt/Meta、已 prevented、composition/keyCode229 不抢焦点、不打开附件、不发请求；保 Enter/Queue/Steer。只测实际消费者受影响路径，不重跑完整 IME 或全库；不重建当前固定 Web 产物、不打断发布，已排用户可见共享浮层片仍优先，不新增大task。
+
+### 官方 Thread 动作与草稿保护的后继边界
+
+沿REQ22–23及MATURE06-03/04/05接收[固定源研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/official-thread-action-research.json)：官方SelectionToolbar Quote会直接修改composer，仅有button/render slot不能代表已获当前view/draft权限。现未挂该功能；当前发送/恢复冻结text、knowledge、materials、settings而无quote，这属于后继设计缺口，非已复现bug。未来owner须复用唯一host和当前完整草稿权限，明确用户可见正文表示或受控协调structured合同，保持unknown原body、Queue及下一草稿保护，不另造状态权威。
+
+官方Thread已有content-visibility与defer，不代表DOM数量有界。只有实际性能证据要求windowing时才在原性能/聊天后继处理，保message-ID、官方viewport/footer与焦点，不替换为自制壳。当前仅设计输入、实际NOT_RUN，不抢I01/Release/已排视觉或扩写权。

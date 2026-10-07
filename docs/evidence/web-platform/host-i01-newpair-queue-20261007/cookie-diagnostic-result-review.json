@@ -1,0 +1,188 @@
+{
+  "reviewedAt": "2026-10-07T17:07:28.956363+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "decision": "ACCEPTED_DIAGNOSTIC_RESULT_AND_FULL_RETURN_NOT_COMPATIBILITY_APPROVAL",
+  "blockingEvidenceFindings": [],
+  "source": "fc2916c275efe86203d91ec33656ea9871eac42a",
+  "executionHead": "af5d8077194fbc6e961d891687336478595ade49",
+  "nativeBoundary": "native-chrome-sibling-fixed-http-proxy-without-custom-outer-write-or-egress-sandbox",
+  "actual": {
+    "state": "DIAGNOSTIC_COMPLETE",
+    "outerExit": 0,
+    "startedAt": "2026-10-07T17:02:28.646549+00:00",
+    "operatorElapsedMs": 14880.28566702269,
+    "fullReturnAt": "2026-10-07T17:03:55.066182+00:00",
+    "chargeMs": 14881,
+    "limitMs": 90000,
+    "unusedMs": 75119,
+    "unusedTransferred": false,
+    "originalFourAppCompatibilityStillFailed": true,
+    "reports": null,
+    "compatibilityPassed": false
+  },
+  "observation": {
+    "error": {
+      "phase": "late-logout",
+      "step": "reconnect",
+      "connectionId": 29,
+      "clientPort": 60741,
+      "serverPort": 60655,
+      "code": "HPE_CLOSED_CONNECTION",
+      "bytesParsed": 1,
+      "elapsedMs": 7112,
+      "association": "UNKNOWN",
+      "wireIndex": null
+    },
+    "upstreamObservations": 56,
+    "physicalDiagnosticBytes": 10207,
+    "physicalCapBytes": 32768,
+    "complete": true,
+    "dropped": 0,
+    "originalHandlersPreserved": true,
+    "candidateEndpointMatches": [
+      {
+        "phase": "durable-retry",
+        "step": "original-retry",
+        "wireIndex": 26,
+        "clientPort": 60741,
+        "serverPort": 60655,
+        "elapsedMs": 6800,
+        "wire": {
+          "method": "GET",
+          "path": "/api/tasks/b635bd5b-c798-4fab-86af-d402fafb4cb9/stream?after=1",
+          "status": 200,
+          "receivedBytes": 455,
+          "complete": true,
+          "sse": {
+            "chunks": 1,
+            "bytes": 455,
+            "firstChunkAt": "2026-10-07T17:02:42.599Z",
+            "endedAt": "2026-10-07T17:02:42.851Z",
+            "closedAt": "2026-10-07T17:02:42.851Z"
+          },
+          "responseSha256": "3ff6b3d47a9b7d9de5e6cfdb631106a7ff4baac731cf3ea5ba1499297e7d8255"
+        }
+      },
+      {
+        "phase": "late-logout",
+        "step": "reconnect",
+        "wireIndex": 34,
+        "clientPort": 60741,
+        "serverPort": 60655,
+        "elapsedMs": 7111,
+        "wire": {
+          "method": "GET",
+          "path": "/api/browser-session",
+          "status": 400,
+          "receivedBytes": 65,
+          "complete": true,
+          "sse": null,
+          "responseSha256": "cd2bab07811f4fcc733f084efab87b04c8932e1de80a3c9390d3181a2ea13535"
+        }
+      }
+    ],
+    "precision": "Two endpoint matches make the retained UNKNOWN/wireIndex=null truthful. Temporal adjacency and same endpoint tuple do not identify socket generation or prove exact request causality. Same prior generic Fastify400 response digest is observed at wire34; no raw packet or credentials were captured.",
+    "browser": {
+      "pageErrors": [],
+      "consoleErrors": [
+        {
+          "text": "Failed to load resource: the server responded with a status of 404 (Not Found)",
+          "path": "/favicon.ico"
+        },
+        {
+          "text": "Failed to load resource: net::ERR_CONTENT_LENGTH_MISMATCH",
+          "path": "/api/conversations/f811f376-a1ce-465a-95a2-5c2aae8e3c72/turns"
+        },
+        {
+          "text": "Failed to load resource: the server responded with a status of 400 (Bad Request)",
+          "path": "/api/browser-session"
+        }
+      ],
+      "loadedAssetsCount": 20
+    },
+    "functionalJourney": {
+      "originalRequestRecovered": true,
+      "finalTaskSucceeded": true,
+      "logoutEvidence": {
+        "actualHeldHeaders": true,
+        "oldReadRevoked": true,
+        "oldStreamsClosed": true,
+        "newerCookiePreserved": true,
+        "newerReadReady": true,
+        "runningTaskPreserved": true
+      }
+    },
+    "limits": "This executes only the focused new Cookie app recovery path. It does not run or approve the full four-app compatibility suite, asset/error acceptance, new deployment, or a parser fix."
+  },
+  "return": {
+    "sixExactPidPgidAbsent": true,
+    "markedDatabaseNormalDrop": true,
+    "centerAndProxyClosed": true,
+    "scratchAndProfileAbsent": true,
+    "exactAdminInputDeleted": true,
+    "innerEofDrop0": true,
+    "outerDualEofDrop0": true,
+    "cleanupErrors": [],
+    "measurement": "PARTIAL_RETAINED_ADOPTION",
+    "performanceClaim": false
+  },
+  "verification": [
+    "All12 raw pins186051B individually rehashed; manifest physical path containment verified.",
+    "Terminal result/budget/rawmanifest digests and receipt terminal/outer/rawmanifest digests matched.",
+    "Worker source pins match previously approved fc291 snapshot; exact prepared native caller remains prior approval.",
+    "Complete browser evidence and observer agree;1error,56upstreams,physical10207B below32768,zero dropped/invalidphase.",
+    "Actual outer0 and exact identity cleanup support independent resource release; no inferred release from timeout."
+  ],
+  "preservedHistory": "c1/c2 formalFAILED/reportsnull and prior strict configurationFAIL remain unchanged;14881/90000 is a closed new phase with no old or remaining time credit.",
+  "cleanCode": "Reviewed bounded error reporting, physical serialization cap, preserved existing error handler, separation of diagnostics from compatibility approval and cleanup ownership. No implementation change; no broad400/HPE allow-list justified.",
+  "next": "Read-only source analysis of closed-connection semantics and the26/34 candidate timing. Any fix must stay in legal owner scope and receive a fresh bounded relevant validation; do not automatically rerun or rebuild the immutable779/cd27 pair.",
+  "receiptPins": [
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-actual-yye8dv3r/return-receipt.json",
+      "bytes": 1714,
+      "sha256": "638e44aa8f2941d9a759163bd857a14206dfba281fc5c4ea9c424f12e8650f7f"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-actual-yye8dv3r/outer-exit.json",
+      "bytes": 283,
+      "sha256": "0fdf07d3fe1a30e9055b3ef17ddbdc13a2ff71895b800b3bc63f189436d50b76"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-actual-yye8dv3r/outer-stdout.txt",
+      "bytes": 493,
+      "sha256": "2ee7ad8f39e241ebd349f547258d560d2f916f2c56060b6e10bab0a0dd7e458c"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-actual-yye8dv3r/outer-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "terminalPins": [
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-c1/terminal.json",
+      "bytes": 421,
+      "sha256": "b3e73b0d9f86c35c4cf4e336f772619d80f06682f69770dce0d60f509a6c17a6"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-c1/result.json",
+      "bytes": 66600,
+      "sha256": "c3b48965a322948e626d530f3839f3762582c08a27d1f641e1a20f0f88df5086"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-c1/budget.json",
+      "bytes": 121,
+      "sha256": "9209ec2782054533e98b4b872120a564d4c20551cc2540d3ef500e8db47d2660"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-diagnostic-c1/raw-manifest.json",
+      "bytes": 2031,
+      "sha256": "981efc1d2239830dff03ccd77d52e9f17b1b7d468212353c00f67316d7c9d42c"
+    }
+  ],
+  "rawManifest": {
+    "path": "/private/tmp/rel01-recovery-diagnostic-c1/raw-manifest.json",
+    "bytes": 2031,
+    "sha256": "981efc1d2239830dff03ccd77d52e9f17b1b7d468212353c00f67316d7c9d42c"
+  }
+}

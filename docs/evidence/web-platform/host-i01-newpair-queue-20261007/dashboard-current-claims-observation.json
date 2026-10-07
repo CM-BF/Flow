@@ -1,0 +1,127 @@
+{
+  "observedAt": "2026-10-07T16:55:10.673754+00:00",
+  "endpoint": "http://127.0.0.1:4320/api/assignments",
+  "responseBytes": 220382,
+  "responseSha256": "fc63db98a60ec658b91241875bc7cbe584639ea3324559286c0f796ed877910e",
+  "metadata": {
+    "kind": "assignments",
+    "version": 1,
+    "registryFingerprint": "1cfc4753a8845bb302415414b2dbdd99f9cf8f6c439e9976916da7fb42dec97f",
+    "readId": "4648501f-23ec-4473-82c7-5a62d6b9818a",
+    "startedAt": "2026-10-07T16:55:10.665Z",
+    "completedAt": "2026-10-07T16:55:10.671Z"
+  },
+  "selected": [
+    {
+      "taskId": "WPF-I01",
+      "lead": "external_web_d01_owner",
+      "worker": "workspace_panels_owner",
+      "claimId": "61abce36-a4d1-4531-9b04-dedaae86108b",
+      "version": 1,
+      "state": "active",
+      "branch": "codex/web-plugin-runtime-app",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+      "scope": [
+        "apps/web/src/App.tsx",
+        "apps/web/src/plugin-integration/react.tsx",
+        "apps/web/src/plugin-integration/session.ts",
+        "apps/web/test/plugin-integration.test.ts",
+        "apps/web/test/plugin-management-integration.browser.ts",
+        "apps/web/test/plugin-management-integration.fixture.ts",
+        "docs/evidence/wpf-i01",
+        "plans/wpf-i01-plugin-integration"
+      ],
+      "matchesSource": true,
+      "needsVerification": false
+    },
+    {
+      "taskId": "WPF-RELEASE01",
+      "lead": "external_web_d01_owner",
+      "worker": "w01_owner",
+      "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
+      "version": 2,
+      "state": "active",
+      "branch": "codex/web-release-recovery",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+      "scope": [
+        "apps/web/test/web-release-compatibility.browser.ts",
+        "apps/web/test/web-release-compatibility.fixture.ts",
+        "docs/evidence/wpf-release01",
+        "plans/wpf-release01-product-compatibility"
+      ],
+      "matchesSource": true,
+      "needsVerification": false
+    },
+    {
+      "taskId": "WPF-VISUAL01",
+      "lead": "external_web_d01_owner",
+      "worker": "w01_owner",
+      "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+      "version": 1,
+      "state": "active",
+      "branch": "codex/web-shared-overlays",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+      "scope": [
+        "apps/web/src/assistant-ui.css",
+        "apps/web/src/components/ui/dialog.tsx",
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/src/execution-profiles/execution-profiles.css",
+        "apps/web/test/conversation-recovery.browser.ts",
+        "apps/web/test/message-settings.browser.ts",
+        "docs/evidence/wpf-visual01",
+        "plans/wpf-visual01-shell"
+      ],
+      "matchesSource": false,
+      "needsVerification": false
+    },
+    {
+      "taskId": "K01",
+      "lead": "mika",
+      "worker": "b01_bounded_reads",
+      "claimId": "30965e7d-6f0d-42bc-8eb8-cfc99b80ecca",
+      "version": 2,
+      "state": "active",
+      "branch": "codex/knowledge-source-store",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store",
+      "scope": [
+        "docs/evidence/k01",
+        "experiments/knowledge-search",
+        "plans/k01-knowledge-sources"
+      ],
+      "matchesSource": true,
+      "needsVerification": false
+    }
+  ],
+  "unregisteredSelected": [
+    {
+      "lead": "mika",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/server/src/conversation-queue/promotion.ts",
+        "apps/server/src/conversation-queue/queue.test.ts",
+        "docs/evidence/s01q01-paused-queue",
+        "plans/s01q01-paused-queue"
+      ],
+      "state": "active",
+      "branch": "codex/queue-paused-scan",
+      "origin": "new",
+      "taskId": "S01Q01",
+      "worker": "b01_bounded_reads",
+      "claimId": "a8a3b2d7-1bde-438a-9fbf-f81e1c791350",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan",
+      "createdAt": "2026-10-07T16:26:21.161Z",
+      "updatedAt": "2026-10-07T16:26:21.161Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "interpretation": [
+    "Each selected active claim is held by one displayed owner; claim active is not runtime active.",
+    "VISUAL01 current claim is visible but matchesSource=false; summary sampled16:54:25 still reads old web-visual-shell31h stale. Existing D05 source-switch request remains pending; no second writer or ownership release inferred.",
+    "Release and I01 current owner sources are visible and both actual checks remain failed; diagnostic/source approvals do not change those results.",
+    "S01Q01 absent selected byTask; inspect unregisteredSelected, not infer unclaimed."
+  ],
+  "note": "First assignment read selected the full assignments metadata and exceeded the16KiB report guard before writing. This second bounded read saves selected facts only; no product validation rerun."
+}

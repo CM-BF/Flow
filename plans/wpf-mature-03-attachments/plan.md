@@ -124,3 +124,5 @@ ATTACHI02生产验证准备（12:00）：[只读矩阵](../../docs/evidence/web-
 [独立反馈采纳](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-action-design-decision.json)进一步固定首片 preview-only：行展示复用 `recoveryDraft` 的实际 membership，不能把含 held 材料的 `input.items` 当当前稿；同连接/view/project与权限布尔值不代表授权仍有效，复用私有 liveauth generation 与 exact binding/projection 即时撤销。单命令 signal 必须贯通实际 HTTP、缓存提交和 Composer 提交边界，不能只在 await 后抛错而宣称撤销了副作用。后继先只读核 controller/App/ConnectionSession，必要才扩精确写权；本研究不扩大当前 I01 或视觉范围。
 
 键盘后继修复边界进一步限定为 `@file + Tab` 分支本身：先排已处理事件、IME/keyCode229及Shift/Ctrl/Alt/Meta，再执行普通mention Tab；不要在整个onKeyDown函数统一对所有modifier早退。保留后续Ctrl/Meta+Shift+Enter提示、普通Queue Enter和assistant-ui默认处理。此固定9a815控制流复核沿原03-03/MATURE06-04，不扩大当前Release/I01范围，后继合法owner在独立小段实施真实消费者回归。
+
+既有条目动作后继收到[固定六源controller补充](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-controller-seam-peer.json)，仍仅设计输入：复用draftItems/recoveryDraft与现bounded cache/HTTP组合signal；激活前捕获当前行和授权世代的invocation lease，对cache、capability、body、digest和error每个提交点即时核验，不仅最终body。未读的具体HTTP abort与其他row API不能假设。现七源候选之外最窄可能增加App/controller；connection/session无需由本研究推定修改。等I01正式释放后由合法owner fresh领取，当前不新增任务或实现权。

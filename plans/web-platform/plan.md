@@ -205,6 +205,8 @@ D01既有U14/REQ16/27/37的[时间信息层级后继](../../docs/evidence/web-pl
 - [ ] **WPF-001-35** RS13既有首屏性能后继：固定RELEASE最终10:39:13.012/new artifact caa1e938的唯一loaded资源1,491,399B（旧1,426,477B，+64,922B），旧10条实为5个唯一asset；不把记录数/解码字节当网络压缩、TTI或收益。查实际index/modulepreload依赖图并按需延后chat chunk，联合测首屏资源/parse/可输入与首次开chat等待；同ExecutionLead/SVC唯一owner确认不可变URL与回滚保留，分别定义HTML/哈希asset/身份/API cache/encoding，保manifest完整，不全站cache或承诺立即撤销。已有artifact独立0模型冷暖/版本切换有界验证，个人服务不动；待关键路径安全后精确scope/fresh claim，不新大task。详见[RS13固定证据](../../docs/evidence/web-platform/research.md)。
 - [x] **WPF-001-36** D01/DPERF既有工程看板fanout后继：CACHE/附件实际接线后，独立临时Git样本量化启动数/峰值，再决定同snapshot main观察复用或有界执行；GO静态139registry/133树×4=532构造调用不是实测峰值/CPU因果。保每snapshot dirty/claim新鲜、unknown/失败语义，不重做DPERF01/02去重与tree批量，不先跨snapshotcache、不压4320/真实repo、0模型；范围与预算另fresh受领。root只读1/4/8临时repo小样本4/16/32starts仅支撑启动量线性，区间峰4/3/4不当OS/CPU；另4task/1tinyrepo并发integrationProof为28starts，其中main dirty/untracked各4，提供同snapshot复用工作量依据，非生产峰值；候选同snapshot执行context/main观察一次复用需覆盖proof入口，不能仅限observeGit外层。详[准确研究归因](../../docs/evidence/web-platform/research.md)。原提案沿工程结果后继，不新增大task；随后实际领取与完成事实见本条末尾。 [只读第二意见](../../docs/evidence/web-platform/dperf03-readonly-proposal.json)提出六精确候选scope、每aggregate单context覆盖所有Git child及permit finally；captured HEAD/排队漂移保守unknown，不能混成原子观察；新增末尾HEAD核对后28→23初为算术预期，后来仅该隔离样本实测23。最终两方法Interface已root结构批准；临时Git≤45s含≥10s清理/≤8MiB。ATTACHI02首12实际派工后，DPERF03以eb95独立树fresh db0b7d25 v1六范围受领，12:14 v2仅加proof-snapshot分类helper为七scope，固定5609已root独立37/37批准/finalcc390，并main a8aef五源同；owner7cc5双端clean全停写后db0b v3释放；原23starts小样本/非原子限制见唯一证据，不泛化生产收益。
 
+- [ ] **WPF-001-37** 跟踪既有D01的阻塞阅读后继：仅按当前有效且显式大task关系归组，组内逐条保留task/owner/原阻塞/详情来源，未知关系单列；不文本相似去重、不合成父状态、不增手填源。原DASHSUM01仅覆盖active/delivery前三去重，不能冒本验收完成。原D01合法owner后续fresh领取必要原六scope候选；先修本管理status用户摘要，当前新网页发布和已排视觉优先，详情见[同一后继记录](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json)。
+
 ## 验收、风险与持续方式
 
 每轮只在其可验证条件满足时完成；持续总目标保持活动，新增用户要求/研究发现追加到本计划、排队并由明确owner实施。禁止为了持续工作堆无依据复杂度，也不能因“本批完成”就把无限优化声明完成。
@@ -586,3 +588,9 @@ Original后到明确授权的[04da/6c最小后端路线](../../docs/evidence/web
 同一REQ19/MSG03后继现由[当前固定包](../../docs/evidence/web-platform/release-backend-route-20261007/current.json)收敛：b924两产品保护小修只通过其源码/消费者局部，W01准备准确旧Web移植，Original04da最小backend正式审定/descriptor尚待。MSG新独立120s mounted阶段复用原两旅程，每次45–60含30cleanup；旧90s/20s均closed不借余量。COREmain/release与D05切源已实际确认；剩余PROCESS/CLIENT登记由Original原D05处理，不新增任务或writer。
 
 既有插件/性能后继接收[固定主线7源只读研究](../../docs/evidence/web-platform/msg03-main-release-source-handoff-20261007/plugin-ui-performance/report.md)：Host已按slot缓存，导航不改registry；React内联subscribe的重订阅与低频全registry通知只是待测候选，没有已测瓶颈，不启动生产优化。隐藏Activity仍可能有低优先级props render，不能写零CPU。本条仅归WPF-001-05与既有性能验收，不新task/take/PASS，不写released PERF源；新网页交付优先。
+
+### D01 当前信息的人读验收补充
+
+GO本次补充沿DASHSUM01、TIMING02与本计划WPF-001-37：摘要由唯一status作者描述用户可获得什么、还差什么，SHA/claim/命令保技术字段，不由renderer猜写。TIMING02继续既定简洁本地时间、显式时区、UTC与来源下钻；开工/完成/含等待历时未知明确展示，不改真实时刻、不猜历史。阻塞归组仅沿有效显式关系读源；不扩大旧active/delivery去重验收，不新task或立即take，候选与验收见[既有D01后继输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json)。
+
+固定主线只读定位补足本条分组边界：原blockerIds资格保持；复用既有resolver且须 `links.kind === "subtask" && parent.state === "known"`、目标存在且有效，不能只看可能用于未核实导航的targetId。已验证big/none独立成组，其他关系明确待核实；父无自身blocker仅作导航标题，不创造父阻塞。覆盖父子均阻塞、仅子阻塞、目标存在但关系未知、父陈旧/循环、不同owner同文仍逐项保留；具体fixed source见[后继输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json)。
