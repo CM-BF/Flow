@@ -1,0 +1,154 @@
+{
+  "task": "S01Q01",
+  "kind": "fixture background-error repair; local evidence only",
+  "recordedAt": "2026-10-07T19:27:05.171494+00:00",
+  "base": "0aa0102ec13c417837fcc936411474d22fd690d1",
+  "implementationTarget": "01dfc89e43fb7793bc3d022b05ea34c129755073",
+  "sourceFiles": [
+    {
+      "path": "docs/evidence/s01q01-paused-queue/pg-fixture.ts",
+      "bytes": 12792,
+      "sha256": "2b32d16a70dc74f9d2bf47c7221300ba305ba3626e4b22c3e8c8d8380bf35945"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/pg-fixture.test.ts",
+      "bytes": 6118,
+      "sha256": "edc7ecf1b685b96e73c76890c7f5e06c01e1ec6e009f948768ee9bfebe00036c"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure-local.py",
+      "bytes": 4404,
+      "sha256": "f852b83bd48faea0d93f7ef477bffd4e9d7f44c2889087750bbd3d4ae3d74e33"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure.types.tsconfig.json",
+      "bytes": 124,
+      "sha256": "e6aa6d69012043d3404f0196389a2f8d7024f894efb01e43af7f36007a02e3f5"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure.vitest.config.ts",
+      "bytes": 195,
+      "sha256": "a30e2b1227eec79af8f35739322a48c851f528159e662e88ac135ca687b1ef94"
+    }
+  ],
+  "evidenceFiles": [
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure-local/first-caller.reconstructed.txt",
+      "bytes": 4404,
+      "sha256": "c31b20938869922f689b4e9267501427e46975d34e5fd895781a9f0210d8e70c"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure-local/first-test.reconstructed.txt",
+      "bytes": 5786,
+      "sha256": "da799f12b336876ab59f873cb24a9f547994c6af78fc117613bc93a6bc74275e"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure-local/fixture-repair.diff",
+      "bytes": 3148,
+      "sha256": "ab625d4a3edf979dc56334e045cf1552a4b76658274041744f6e65ac2519bc20"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure-local/green-fixed-started.json",
+      "bytes": 783,
+      "sha256": "99e95bef3221657dee679c2d2cacbe0d0b33a15bafc0b9eae3ade52bcc2393cc"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure-local/green-fixed.log",
+      "bytes": 322,
+      "sha256": "52944e8105cdf682021b9e9e42abc8bc3843795773de0a7f9900cd6df5698243"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure-local/green-started.json",
+      "bytes": 783,
+      "sha256": "6c08e038e0795a20cfa0bab626ca16161bbf7aaa04e66b10c993c002ccca83fa"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure-local/green.log",
+      "bytes": 2931,
+      "sha256": "ff1c7820afd15c5bd56bdc70c2f2d5c7e5859568000bce515b7fb85b1e4e8191"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure-local/iterations.json",
+      "bytes": 5917,
+      "sha256": "5ae3450f9a5c5b9ba9b397d7082ba854a2bbc16dc6b05a5d23fb66a47e0e498e"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure-local/red-started.json",
+      "bytes": 783,
+      "sha256": "c93cd881a788e29e47cfffab9640551ba005f928c31055affa8d1917d8613d9f"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure-local/red.log",
+      "bytes": 1862,
+      "sha256": "28aa5c088ac9abcb7531e16f75dd52f5bda1fcdda83f7c7b4b2009e85745a77b"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure-local/types-started.json",
+      "bytes": 783,
+      "sha256": "b795eef2f481890aa6af673d6981e21bb94c375241c16df6b515722bcfc020c7"
+    },
+    {
+      "path": "docs/evidence/s01q01-paused-queue/failure-local/types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "record": "failure-local/iterations.json",
+  "selection": {
+    "red": {
+      "selected": 1,
+      "failed": 1,
+      "skipped": 6,
+      "exit": 1,
+      "meaning": "Original fixture allowed work after admin background error"
+    },
+    "firstGreen": {
+      "selected": 7,
+      "passed": 3,
+      "failed": 4,
+      "exit": 1,
+      "meaning": "Test attempted spy assertions on the real fixture Proxy. Product behavior was not weakened; fake pool records external close calls."
+    },
+    "finalGreen": {
+      "selected": 7,
+      "passed": 7,
+      "exit": 0
+    },
+    "types": {
+      "exit": 0,
+      "scope": "Real pg-fixture and its new pure test, inherited ES2023; not the production queue suite"
+    }
+  },
+  "runBindings": {
+    "redFixture": "Git0aa0102 pg-fixture.ts",
+    "firstTest": "first-test.reconstructed.txt reconstructed from exact edit, matches both captured red/first-green SHA; not an original runtime copy",
+    "firstCaller": "first-caller.reconstructed.txt matches both captured SHAs, only earlier manager floor differs",
+    "final": "green-fixed and types five source hashes equal implementation/current files"
+  },
+  "resources": {
+    "startedChildren": 4,
+    "supervisionMilliseconds": 2145,
+    "rawBytes": 5115,
+    "fullReturnAt": "2026-10-07T19:22:32.454554+00:00",
+    "allOwnedGroupsAbsent": true,
+    "allMergedEof": true,
+    "allScratchRemovedExactEnoent": true,
+    "actualPG": 0,
+    "HTTP": 0,
+    "provider": 0,
+    "scratchPeakBytes": "NOT_MEASURED; no filesystem/PG fixture resources created by the mocked tests; operator namespaces removed by exact identity",
+    "retainedNewLogicalBytes": 49375,
+    "newLogicalCapBytes": 8388608,
+    "growthMethod": "Sum positive working file byte increases versus0aa0102 plus newly tracked evidence; excludes unchanged fixed supply/dependencies; own scratch already removed, transient scratch peak not measured."
+  },
+  "unchanged": [
+    "apps/server/src/conversation-queue/promotion.ts",
+    "apps/server/src/conversation-queue/queue.test.ts"
+  ],
+  "limitations": [
+    "No real PG/HTTP or queue behavior evidence; no total queue suite types/collect run",
+    "Original background-error finding is implemented and covered locally, independent delta review pending",
+    "No repeated historical tests or real database ownership cleanup claim",
+    "No actual PG candidate/runtime grant added"
+  ]
+}

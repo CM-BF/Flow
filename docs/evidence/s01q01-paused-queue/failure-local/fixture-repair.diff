@@ -1,0 +1,47 @@
+diff --git a/docs/evidence/s01q01-paused-queue/pg-fixture.ts b/docs/evidence/s01q01-paused-queue/pg-fixture.ts
+index d7d19968b..18618557e 100644
+--- a/docs/evidence/s01q01-paused-queue/pg-fixture.ts
++++ b/docs/evidence/s01q01-paused-queue/pg-fixture.ts
+@@ -24,6 +24,7 @@ export class QueueDatabaseFixture {
+   private receipt = 0;
+   private httpCount = 0;
+   private firstFailure: { phase: string; name: string; code?: string } | undefined;
++  private firstError: unknown;
+   private created = false;
+   private requested = false;
+   private identity?: Identity;
+@@ -52,9 +53,14 @@ export class QueueDatabaseFixture {
+     const stat = await lstat(path); const fixture = new QueueDatabaseFixture(path, { dev: stat.dev, ino: stat.ino }, url.href, start);
+     await fixture.save('reserved', { database: fixture.name, directory: fixture.directory, start }); return fixture;
+   }
+-  checkWork() { if (this.closing || Date.now() >= this.workUntil) throw new Error('S01Q01_WORK_DEADLINE'); }
++  checkWork() {
++    if (this.firstFailure) throw this.firstError;
++    if (this.closing || Date.now() >= this.workUntil) throw new Error('S01Q01_WORK_DEADLINE');
++  }
+   private failure(phase: string, error: unknown) {
+-    this.firstFailure ??= { phase, name: error instanceof Error ? error.name : 'UnknownError',
++    if (this.firstFailure) return;
++    this.firstError = error;
++    this.firstFailure = { phase, name: error instanceof Error ? error.name : 'UnknownError',
+       code: typeof (error as { code?: unknown })?.code === 'string' ? (error as { code: string }).code : undefined };
+   }
+   private async within<T>(operation: Promise<T>, deadline: number): Promise<T> {
+@@ -155,8 +161,14 @@ export class QueueDatabaseFixture {
+     } catch (error) { this.failure('database-cleanup', error); errors.push('database-cleanup'); }
+     finally { adminClosed = await close('admin-close', () => this.admin.end()); }
+     const cleanupConfirmed = !this.pending.size && adminClosed && auxClosed && bossClosed && !errors.length && (!this.requested || absent);
+-    await this.save('cleanup', { database: this.name, identity: this.identity, requested: this.requested, created: this.created, durableIdentity: this.durableIdentity,
+-      connections, absent, cleanupConfirmed, errors, firstFailure: this.firstFailure, state: cleanupConfirmed ? 'CLOSED' : 'KEEP' });
+-    if (!cleanupConfirmed) throw new Error('S01Q01_CLEANUP_UNKNOWN_KEEP');
++    try {
++      await this.save('cleanup', { database: this.name, identity: this.identity, requested: this.requested, created: this.created, durableIdentity: this.durableIdentity,
++        connections, absent, cleanupConfirmed, errors, firstFailure: this.firstFailure,
++        verification: this.firstFailure ? 'FAILED' : 'NO_FAILURE_RECORDED', state: cleanupConfirmed ? 'CLOSED' : 'KEEP' });
++    } catch (error) {
++      throw new AggregateError(this.firstFailure ? [this.firstError, error] : [error], 'S01Q01_CLEANUP_RECEIPT_UNKNOWN_KEEP');
++    }
++    if (!cleanupConfirmed) throw new Error('S01Q01_CLEANUP_UNKNOWN_KEEP', { cause: this.firstError });
++    if (this.firstFailure) throw this.firstError;
+   }
+ }

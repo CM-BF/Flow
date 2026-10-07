@@ -38,3 +38,9 @@ The fixed source closure contains252 files/1,237,032B including fixed migration 
 ```
 
 This command was **not run**. Mika drained engineering before the first launch at17:17:38Z; no OPS14 child/PID/TMP/PG/HTTP was created. Caller+focused type and bounded real lifecycle evidence remain required. Subsequent actual execution must bind the fixed source/helper, a new marked record root, explicit `FLOW_S01Q01_PG_OPEN=reviewed`, actual start/head/window and fresh manager resource floor. Merely setting environment variables is not authorization. OPS14 still owns process supervision; fixture owns only its DB/servers/pools. Synthetic or static source review cannot approve a PG window.
+
+## 后台失败传播修复（2026-10-07T19:27:05.171494+00:00）
+
+唯一新局部入口：[failure-local/summary.json](failure-local/summary.json)，运行只一份[iterations](failure-local/iterations.json)。固定source `01dfc89e43fb7793bc3d022b05ea34c129755073`。后台首错现在拒绝后续work；正常清理后仍抛原错误，回执可同时为资源CLOSED与验证FAILED；清理unknown保原cause，持久回执失败保双错。
+
+7/7纯fake资源故障用例及focused fixture types通过，原red1失败和首green4失败/3通过原件保留；无真实PG/HTTP/数据库创建。外部FS/Pool/Boss被内存Adapter替换，真实fixture admission/finish路径不替换。真实paused扫描、整个历史suite/types与实际120秒生命周期仍NOT_RUN。上方原90秒提案及历史旧fixture说明仅历史，当前不据此OPEN；正式候选需完整运行绑定、预算与新窗口。4child19:22:32.454554Z全部归还，停止launch。

@@ -1,0 +1,41 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan
+
+ ❯ docs/evidence/s01q01-paused-queue/pg-fixture.test.ts (7 tests | 1 failed | 6 skipped) 5ms
+     × rejects further work and propagates admin failure after successful cleanup 5ms
+     ↓ rejects further work and propagates pool failure after successful cleanup
+     ↓ rejects further work and propagates boss failure after successful cleanup
+     ↓ keeps the first background error when a second owner fails
+     ↓ reports cleanup unknown with the original failure as cause and still closes the admin
+     ↓ does not hide the original error when the cleanup receipt cannot be saved
+     ↓ resolves clean shutdown when no failure was recorded
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  docs/evidence/s01q01-paused-queue/pg-fixture.test.ts > queue fixture background failure and resource closure > rejects further work and propagates admin failure after successful cleanup
+AssertionError: promise resolved "undefined" instead of rejecting
+
+- Expected: 
+Error {
+  "message": "rejected promise",
+}
+
++ Received: 
+undefined
+
+ ❯ docs/evidence/s01q01-paused-queue/pg-fixture.test.ts:65:56
+     63|     fixture[owner].emit('error', original);
+     64|     const action = vi.fn(async () => undefined);
+     65|     await expect(fixture.work('must-not-start', action)).rejects.toBe(…
+       |                                                        ^
+     66|     expect(action).not.toHaveBeenCalled();
+     67|     expect(memory.receipts.some(value => value.phase === 'must-not-sta…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 6 skipped (7)
+   Start at  12:21:08
+   Duration  127ms (transform 22ms, setup 0ms, import 35ms, tests 5ms, environment 0ms)
+
