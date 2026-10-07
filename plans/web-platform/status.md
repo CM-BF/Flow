@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:09:05.661Z；1306实际首红归还、MSG03局部归还；实际新网页优先与原发布源码后继推进，Plugin尚未收到main回执 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:34:47.358Z；MSG03两轮实际失败均清理归还，现fixture窄修；Plugin五源已main9f0，原owner409b30及0a9v2释放已完成。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 插件模块已完成限定验收并交主线接收；真实聊天设置正在固定材料失败、取消与恢复的实际页面验证入口。个人维护本次在前置核验失败后归还，已完成阶段不重放。 |
+| 当前产出 | 插件模块五源已主线接收并完成原owner收口；真实聊天设置已进入实际材料恢复验证，当前修复测试代理的配置标识透传。个人R4已归还但仍draining，未冒恢复成功。 |
 | 下一可用交付 | 沿原发布链先交付用户能看到的新网页；准备包含修复的新前后端产物与实际Cookie恢复验证，不等待全部插件或聊天设置完成。MSG03固定新差量后集中审查，个人设置目录按原双槽配置后继推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：1306于13:05:06.750720Z实际失败归还，无重NEXT；MSG03原local53579/60000ms已归还、余量不转browser。Mikaordinary潜在与本组0holder分开；下次fresh至少6914834432B，所有KEEP/单reserve保留。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：MSG03第二轮13:32:12.946071Z完整归还，当前无Web运行或NEXT；原90s累计18962ms/余71038ms。后继fresh至少7511998464B，全部KEEP/单reserve保留；不按计划时刻放窗。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -91,9 +91,9 @@
 | 工作 | 唯一来源 / 写权 | 当前下一步 |
 | --- | --- | --- |
 | WPF管理 | 本worktree，632a7149 v3，仅两管理目录与四Web大task目录 | 管理索引只追溯；普通变化status→dashboard，不构成第三执行层 |
-| 插件运行时模块 → X01-06 | [唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)；w01，0a9a9b2c v1 exact7已COMMITTED | [唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)已实际登记、父X01/原06已确认；模块后继沿原7scope，App/session不在其写权内。 |
+| 插件运行时模块 → X01-06 | [唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)；w01，0a9a9b2c v2 exact7已RELEASED | [唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)已实际登记、父X01/原06已确认；模块已main9f0/原7scope已释放；任何后继须合法新取权，App/session未因此接线。 |
 | ATTACH01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)，ef617d78 v3 released十八scope | 已main fd1322、23批准源同；正式factory6项/8自动启动/无fallback归Lead；ownerc698双端clean全停写后ef617 v3释放 |
-| RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，w01原owner38b9v2 released四scope | [e029主线与原owner58562收口/释放](../../docs/evidence/web-platform/release-main-registry-close-20261007/current.json)已完成；实际兼容与后续个人更新分别计，不再预占caller窗口。 |
+| RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，w01原owner；旧38b9v2已released，新27c36b97v1 exact4 active | 旧[e029收口/释放](../../docs/evidence/web-platform/release-main-registry-close-20261007/current.json)保留；新230cb源/types已审，当前供给缺项与后继只见该owner唯一status，不冒新兼容或个人更新。 |
 | VISUAL01 → MATURE01 | [视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)，原d01_owner，35e5 v3 released，九scope停写 | 已main4391，558895d已push/clean并release；个人产物由SVC04发布，原树只读 |
 | CONTEXTI01 → MATURE03 | [知识App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，原w01_owner，55fe v2 released，二十scope已停写 | 已main df29；fe2b收口后55fe v2 released，原树只读 |
 | STEIRI01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/plans/wpf-steer-i01-integration/status.md)，原w01_owner，bc0ded75 v2 released | 已main f181；8273 push/clean后13scope停写释放，原树只读 |

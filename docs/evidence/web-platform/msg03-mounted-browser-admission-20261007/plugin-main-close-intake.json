@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-07T13:33:11.164Z",
+  "main": "9f0fe5b2c096a49195ff8060d97584de235785d2",
+  "source": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "basis": "Original actual main/origin receipt relayed by root; W01 has independently checked five exact source bytes at owner/current/fixedmain. Archived receipt retains earlier SCOPED_INTEGRATION_STAGED_NOT_MAIN state, not rewritten.",
+  "receipt": "plugin-main-intake-receipt.json",
+  "ownerAction": "Completed metadata mainclose and normal CASrelease; no product rerun. Release27cv1 unchanged.",
+  "notProven": [
+    "production App integration",
+    "personal deployment",
+    "whole X01 completion"
+  ],
+  "final": "409b30b968532f4c0d775d14a83c23b3a5e857c2",
+  "ownerState": "local=remote/clean/7scopesSTOP thenreleased; no writes afterrelease",
+  "claim": {
+    "id": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+    "version": 2,
+    "state": "RELEASED",
+    "committedAt": "2026-10-07T13:33:10.631Z",
+    "receipt": "plugin-release-receipt.json"
+  },
+  "proofBoundary": "Historical360B sandbox.sb archived nonmetadata separately by owner/root; generic proof not silently widened."
+}

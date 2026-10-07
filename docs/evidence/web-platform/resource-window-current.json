@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T13:10:32.905Z",
-  "state": "SVC1306_ACTUAL_RETURNED_NO_HEAVY_NEXT",
-  "groupWindowOwnership": "Web0PG/Chrome/install/personal/local after MSG03types8actualreturn (cumulative53579/60000); Original1306 facts418ms/whole494ms FAILED/fullRETURN13:05:06.750720, noNEXT forsource diagnosis. Mika0heavy; process-hostordinarypotential noactualSTART reported, not inferredglobalzero. AllKEEP/personalretained/singlereserve preserved.",
+  "recordedAt": "2026-10-07T13:34:47.358Z",
+  "state": "MSG03_RETRY_FAILED_COMPLETE_RETURN_NO_NEXT",
+  "groupWindowOwnership": "Web MSG03 retry fully returned13:32:12.946071Z; zero current Web PG/Chrome/local/pendinglaunch. Samephase spent18962/rem71038, no automatic repeat. No external heavy/NEXT received; personalR4 remains draining despite runtimeRETURN. Keep conservative7511998464 floor/allKEEP/one reserve.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,9 +407,9 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "recordedAt": "2026-10-07T13:07:42.103Z",
-    "source": "mounted-app-and-personal-maintenance-next-20261007/personal-maintenance-next.json",
-    "runtime": "Actual return supersedes earlier RESERVED by event order; no fixedsource/browser grant inferred"
+    "at": "2026-10-07T13:34:47.358Z",
+    "source": "msg03-mounted-browser-admission-20261007/current.json",
+    "event": "MSG03 secondactual completeRETURN13:32:12.946071; Pluginmain-close/release13:33:10.631; no currentWebheavyNEXT"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1188,9 +1188,9 @@
   },
   "currentLedgerAvailability": {
     "state": "available",
-    "observedAt": "2026-10-07T12:45:38.089Z",
-    "source": "svc1230-return-plugin-removal-pair-20261007/manager-fresh-claim.json",
-    "boundary": "Fresh manager identity/six scopes checked; no runtime inferred from claims"
+    "observedAt": "2026-10-07T13:31:31.122Z",
+    "source": "msg03-mounted-browser-admission-20261007/manager-fresh-claim.json",
+    "boundary": "Actualmanager6scope/v3 identity confirmed; no runtime inferred from claims"
   },
   "nativeChromeBoundaryDecision": {
     "state": "ACCEPTED_EXPLICIT_GO",
@@ -1199,18 +1199,21 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "MSG03_PACKET_PENDING_REVIEW_RELEASE_SOURCE_ONLY_PLUGIN_MAIN_INTAKE",
+    "state": "MSG03_FIXTURE_HEADER_DELTA_PREPARING_NO_NEXT",
     "heavyGranted": false,
     "release": {
       "claimId": "27c36b97-162d-45e0-9150-25269d3d3f34",
       "version": 1,
       "scopes": 4,
-      "state": "SOURCE_IMPLEMENTATION_NO_RUNTIME",
+      "state": "SOURCE8964_AND_TYPES_APPROVED_FINAL230CB_WAIT_NEW_DESCRIPTORS_NO_RUNTIME",
       "takeAt": "2026-10-07T13:09:33.224Z",
-      "record": "mounted-app-and-personal-maintenance-next-20261007/release-successor-take.json"
+      "record": "mounted-app-and-personal-maintenance-next-20261007/release-successor-take.json",
+      "source": "8964dc1185f62ed8934c15416e9798929359ab89",
+      "finalMetadata": "230cbce38420965a8aecb73a7c0d2fd2ea0f85d1",
+      "supplyRequest": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/recovery-cookie/supply-request.json"
     },
-    "msg03": "9c46scopedsource/local8488APPROVED; finalbrowserpacket sealing; mountedNOT_RUN/noheavygrant",
-    "plugin": "8b315mainintake; noactualmainreceipt"
+    "msg03": "SecondactualFAIL/cookieReadPASS/materialmodelselection0options; completeRETURN13:32:12.946071. Phase18962/rem71038. Same-scope public header forwarding fix being sealed, no automaticlaunch.",
+    "plugin": "Main9f0 accepted/final409b30; claim0a9v2 RELEASED13:33:10.631; actualApp and deployment are separate."
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
   "messageSettingsB4Result": {
@@ -1313,7 +1316,10 @@
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
   "currentWindowEvidence": "svc1230-return-plugin-removal-pair-20261007/removal-r2-events.json",
-  "webActualHolder": null,
+  "webActualHolder": {
+    "state": "NONE_AFTER_COMPLETE_RETURN",
+    "returnedAt": "2026-10-07T13:32:12.946071Z"
+  },
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": {
@@ -1322,7 +1328,9 @@
     "history": "Prior phase totals and evidence remain in dperf04PreparationEvidence; no new preparation or runtime."
   },
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": null,
+  "webReservation": {
+    "state": "NONE"
+  },
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -1715,12 +1723,11 @@
     }
   },
   "externalCurrentAdmission": {
-    "task": "SVC06 remaining personal maintenance",
-    "window": "svc06-personal-7d1-20261007-1306",
-    "state": "RETURNED_FACTS_READER_FAILURE_BEFORE_MAINTENANCE",
-    "actualReturn": "2026-10-07T13:05:06.750720Z",
-    "record": "mounted-app-and-personal-maintenance-next-20261007/personal-maintenance-next.json",
-    "exclusiveHeavyReservation": false
+    "task": "SVC06R4",
+    "state": "RETURNED_DRAINED_LOCAL_ADMISSION_UNKNOWN",
+    "actualReturn": "2026-10-07T13:19:54.167135Z",
+    "record": "msg03-mounted-browser-admission-20261007/svc1320-return.json",
+    "reservation": false
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1730,12 +1737,10 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": {
-    "state": "NONE_NO_CURRENT_HEAVY_RESERVATION",
-    "reservation": false,
-    "newWebHeavyAllowed": "Only fixed source/native accepted and fresh complete composition; not automatic permission",
-    "record": "mounted-app-and-personal-maintenance-next-20261007/personal-maintenance-next.json"
+    "state": "NO_NEXT_SOURCE_DIAGNOSIS_ONLY",
+    "reservation": false
   },
-  "currentIntake": "plugin-module-main-ready-20261007/request.json",
+  "currentIntake": "msg03-mounted-browser-admission-20261007/current.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/webOrdinaryLocal/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants. FutureCompleteFreshFloorBytes/futureFloorEvidence and externalOrdinaryCurrent apply to future fresh composition; do not rewrite consumed historical gates.",
   "readyValidationRule": {
     "source": "Current main local-validation.md, GO explicit PG plus isolated 0PG browser rule",
@@ -1752,35 +1757,32 @@
     "ruleIntake": "release-main-registry-close-20261007/current.json"
   },
   "webOrdinaryLocal": {
-    "state": "FIXED_9C46_SCOPED_SOURCE_LOCAL_APPROVED_RETURNED",
-    "task": "WPF-MESSAGESETTINGS03",
-    "owner": "workspace_panels_owner",
+    "state": "ALL_REPORTED_WEB_LOCAL_CLOSED_RETURNED",
     "currentLocal": 0,
-    "totalMs": 60000,
-    "tmpBytes": 16777216,
-    "rawBytes": 2097152,
-    "sourceLogicalPlanningBytes": 4194304,
-    "minimumFreshBytes": 6895435776,
-    "spentMs": 53579,
-    "remainingMs": 6421,
-    "lastAttempt": {
-      "name": "types-8",
-      "actualStart": "2026-10-07T13:08:14.802356Z",
-      "pidPgid": 19145,
-      "exit": 0,
-      "chargeMs": 5796,
-      "allowanceMs": 12217,
-      "cleanupMs": 5000,
-      "cleanup": "PID/group/scratch absent;errors[]"
-    },
-    "priorFailures": "types-1 config1796; types-2 two narrow type issues5400; direct-1 actual5/8, three tests assumed rejection instead of Restore state error; all prior owned cleanup complete per owner",
-    "record": "mounted-app-and-personal-maintenance-next-20261007/msg03-local-current.json",
-    "lastClosed": "types5 actual0/5602ms and direct6 actual11PASS57notselected/1968ms, group/scratchabsent",
-    "sourceShort": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
-    "sourceReview": "9FC_SOURCE_LOCAL_APPROVED_BROWSER_NOT_RUN",
-    "rootReview": "svc1230-return-plugin-removal-pair-20261007/msg03-9fc0-source-local-root-review.json",
-    "ownerHead": "078797a0ada235bbe282e613c783ea967f9b5003",
-    "nextFreshMinimumBytes": 6914834432
+    "lastSegments": [
+      {
+        "task": "MSG03affected",
+        "budgetMs": 60000,
+        "spentMs": 53579,
+        "unusedClosedMs": 6421
+      },
+      {
+        "task": "MSG03fake-sentinel",
+        "budgetMs": 10000,
+        "spentMs": 219,
+        "unusedClosedMs": 9781
+      },
+      {
+        "task": "Releaseaffectedstrict",
+        "budgetMs": 20000,
+        "spentMs": 1125,
+        "unusedClosedMs": 18875
+      }
+    ],
+    "source": "msg03-mounted-browser-admission-20261007/current.json",
+    "noOldCredit": true,
+    "nextCandidate": null,
+    "futureMinimumBytes": 7511998464
   },
   "externalPreviousReturn": {
     "task": "X01-REMOVAL-REFERENCES01",
@@ -1866,44 +1868,115 @@
     "limits": "No newcookiejar/Connectgeneralrace/installation claims; source6c release unchanged"
   },
   "lastWebActual": {
-    "recordedAt": "2026-10-07T12:50:24.657Z",
-    "event": "ACTUAL_PASS_AND_COMPLETE_RETURN",
-    "task": "WPF-PLUGIN-RUNTIME01",
-    "actualStart": "2026-10-07T12:49:52.554259Z",
-    "head": "756fde2afffc8131f485857e8a65300145b11be3",
-    "source": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
-    "outerPidPgid": 16402,
-    "capturePid": 16146,
-    "claim": "0a9v1exact7",
-    "pins": 228,
-    "priorPins": 37,
-    "freeBytes": 21778104320,
-    "minimumFreshBytes": 6895435776,
-    "gatePath": "/private/tmp/prm-b2-actual-5uwo692b/gate.json",
-    "gateSha256": "4b97094369c28f545a1e482eb9ab63260f3e3c292563ae54260b99e012cf9a64",
-    "remainingMs": 40049,
-    "cleanupMs": 15000,
-    "pg": 0,
-    "chrome": 1,
-    "result": "PENDING",
-    "evidence": "Owner actual message and manager gate hash read; no inferred terminal",
-    "actualEnd": "2026-10-07T12:50:00.119884+00:00",
-    "actualReturn": "2026-10-07T12:50:25.968903+00:00",
-    "chargeMs": 7566,
-    "cumulativeMs": 19951,
-    "reportedChecks": 6,
-    "screenshots": 2,
-    "state": "APPROVED_SCOPED_BROWSER_VISUAL_COMPLETE_RETURN",
-    "record": "svc1230-return-plugin-removal-pair-20261007/plugin-b2-return-receipt.json",
-    "rootReview": "svc1230-return-plugin-removal-pair-20261007/plugin-b2-actual-visual-root-review.json"
+    "state": "FAILED_COMPLETE_RETURN",
+    "run": "msg03-material-20261007-133113-177e00",
+    "actualStart": "2026-10-07T13:31:25.977725Z",
+    "outerPid": 7280,
+    "parentPid": 7290,
+    "toolSession": 31563,
+    "owner": "workspace_panels_owner",
+    "attemptMs": 60000,
+    "cleanupMs": 30000,
+    "phaseBudgetMs": 90000,
+    "spentBeforeMs": 3432,
+    "remainingBeforeMs": 86568,
+    "head": "9fe4137121de72d966361d7932a90d7728fcd768",
+    "source": "c4bee7707a273e98ba7b07dc061ec13e78094c2f",
+    "claimFreshAt": "2026-10-07T13:31:13.830Z",
+    "claim": "7e3fbcf1 v2 exact19 nooverlap",
+    "fixedSqlCount": 33,
+    "pins": 898,
+    "priorRawPins": 69,
+    "freeBeforeBytes": 21630087168,
+    "gateFloorBytes": 7511998464,
+    "retainedBeforeBytes": 518049,
+    "db": 1,
+    "chromeAllowance": 1,
+    "connectionsAllowance": 14,
+    "admissionPath": "/private/tmp/msg03-material-retry-ntugnlfe",
+    "gateShaPrefix": "e1e5ab68",
+    "actualReturn": "2026-10-07T13:32:12.946071Z",
+    "terminal": null,
+    "actualTerminal": "2026-10-07T13:31:41.507466Z",
+    "actualExit": 1,
+    "chargeMs": 15530,
+    "workerPid": 7305,
+    "chromePid": 7759,
+    "selectedEvidence": {
+      "cookieRead": "PASS",
+      "messageSettingsMaterialReturn": "FAIL selecting model A, .ep-option count0; adapter hold not reached",
+      "png": 0
+    },
+    "cleanup": "Fresh all4PID+PGID ESRCH; DB marker/0conn/normalDROP/remaining[]; fixturecomplete/provider0; exactscratch/envremoved; dualEOF/drop0",
+    "failure": "Model A options missing before adapter hold; cause pending same-scope static diagnosis"
   },
-  "futureCompleteFreshFloorBytes": 6914834432,
-  "futureFloorEvidence": "plugin-module-main-ready-20261007/activation-owner-boundary.json",
+  "futureCompleteFreshFloorBytes": 7511998464,
+  "futureFloorEvidence": {
+    "previous": 7492599808,
+    "additionalPotentialBytes": 19398656,
+    "minimumBytes": 7511998464,
+    "source": "MikaS01ordinary new declaration via root",
+    "notMeasured": true,
+    "allKEEPPreserved": true,
+    "reserveOnce": true
+  },
   "externalOrdinaryCurrent": {
-    "source": "plugin-module-main-ready-20261007/external-next-ordinary.json",
-    "state": "S01_RETURNED_PROCESS_HOST_NEXT_NO_ACTUAL_START_REPORTED",
+    "state": "S01_RETURNED_NO_NEW_ACTUAL_REPORTED",
+    "actualReturn": "2026-10-07T13:27:09Z",
+    "source": "msg03-mounted-browser-admission-20261007/external-source-intakes.json",
     "actualHeavy": 0,
     "newHeavyNext": false,
-    "futureCompleteFreshFloorBytes": 6914834432
+    "futureCompleteFreshFloorBytes": 7511998464
+  },
+  "externalPreparedCandidate": {
+    "task": "SVC06 remainingpersonalR3",
+    "source": "Original via root",
+    "state": "FINALHASH_PENDING_NO_RESERVATION",
+    "finding": "optionalreader c51 seam fixed; moderncaller4cases reportedlygreen/Leaddeltareviewed; exactfinalhash notyetreceived",
+    "reply": "Web0heavy/noREADYheavy; waitfixedfinalthenfresh; readyotherworkmayproceed",
+    "routed": "One concrete reply sentMika; no directOriginaldeliveryclaim"
+  },
+  "currentActual": {
+    "state": "FAILED_COMPLETE_RETURN",
+    "run": "msg03-material-20261007-133113-177e00",
+    "actualStart": "2026-10-07T13:31:25.977725Z",
+    "outerPid": 7280,
+    "parentPid": 7290,
+    "toolSession": 31563,
+    "owner": "workspace_panels_owner",
+    "attemptMs": 60000,
+    "cleanupMs": 30000,
+    "phaseBudgetMs": 90000,
+    "spentBeforeMs": 3432,
+    "remainingBeforeMs": 86568,
+    "head": "9fe4137121de72d966361d7932a90d7728fcd768",
+    "source": "c4bee7707a273e98ba7b07dc061ec13e78094c2f",
+    "claimFreshAt": "2026-10-07T13:31:13.830Z",
+    "claim": "7e3fbcf1 v2 exact19 nooverlap",
+    "fixedSqlCount": 33,
+    "pins": 898,
+    "priorRawPins": 69,
+    "freeBeforeBytes": 21630087168,
+    "gateFloorBytes": 7511998464,
+    "retainedBeforeBytes": 518049,
+    "db": 1,
+    "chromeAllowance": 1,
+    "connectionsAllowance": 14,
+    "admissionPath": "/private/tmp/msg03-material-retry-ntugnlfe",
+    "gateShaPrefix": "e1e5ab68",
+    "actualReturn": "2026-10-07T13:32:12.946071Z",
+    "terminal": null,
+    "actualTerminal": "2026-10-07T13:31:41.507466Z",
+    "actualExit": 1,
+    "chargeMs": 15530,
+    "workerPid": 7305,
+    "chromePid": 7759,
+    "selectedEvidence": {
+      "cookieRead": "PASS",
+      "messageSettingsMaterialReturn": "FAIL selecting model A, .ep-option count0; adapter hold not reached",
+      "png": 0
+    },
+    "cleanup": "Fresh all4PID+PGID ESRCH; DB marker/0conn/normalDROP/remaining[]; fixturecomplete/provider0; exactscratch/envremoved; dualEOF/drop0",
+    "failure": "Model A options missing before adapter hold; cause pending same-scope static diagnosis"
   }
 }

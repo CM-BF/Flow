@@ -152,7 +152,7 @@ D01既有U14/REQ16/27/37的[时间信息层级后继](../../docs/evidence/web-pl
 
 ## 执行顺序与交权规则
 
-当前优先级、fixed输入、窗口和下一步统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)及owner status，不另维护第二份滚动状态表。Lead新OPS规则：普通可逆本地实现采用有界工作段总预算，owner连续修改→局部检查→修失败→定向复测，通过后一次独审/集成；复用既有运行器与单份结构化记录，失败原件保留，绑定按风险缩放，不逐条造准备/许可/结果审批链。普通无共享端点/安装/全构建/PG/Chrome/个人服务的局部检查按最新明确规则每队最多1段、全队最多3段自主运行；项目10/本工具cap保持。PG/Chrome/迁移/个人服务仍保必要隔离、资源与恢复审查；旧特殊窗口不因此重开。项目写入仍先核D04精确scope与writer；源码、独审、运行、main、页面发布分别记录。[本轮规则来源](../../docs/evidence/web-platform/dashboard-task-time-intake/incoming.json)。
+当前优先级、fixed输入、窗口和下一步统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)及owner status，不另维护第二份滚动状态表。Lead新OPS规则：普通可逆本地实现采用有界工作段总预算，owner连续修改→局部检查→修失败→定向复测，通过后一次独审/集成；复用既有运行器与单份结构化记录，失败原件保留，绑定按风险缩放，不逐条造准备/许可/结果审批链。普通无共享端点/安装/全构建/PG/Chrome/个人服务的局部检查按最新明确规则每队最多1段、全队最多3段自主运行；当前每Lead最多1+3、三队总12，仍取本运行时4槽与实际ready/资源限制的更小值；原项目10仅历史。PG/Chrome/迁移/个人服务仍保必要隔离、资源与恢复审查；旧特殊窗口不因此重开。项目写入仍先核D04精确scope与writer；源码、独审、运行、main、页面发布分别记录。[本轮规则来源](../../docs/evidence/web-platform/dashboard-task-time-intake/incoming.json)。
 
 最新GO/Lead规则已固定于[普通专库/浏览器有限工作段](../../docs/evidence/web-platform/continuous-validation-segments-20261007/formal-rule-excerpt.md)：已授权0provider、完全自有PG/Chrome且不触个人服务的普通验证可由co-lead分配新有限段。旧90秒/60秒是已封历史段，不是feature终身上限；保所有失败/原预算，不追溯加时或转移未用旧额。合法scope内连续定位→修复→相关复测，通过后一次独审；只有身份/权限/资源所有权/停止清理/验收语义变化才按风险复审，不逐命令造同一审批链。每次实际PG/shared仍唯一holder，独立0PGbrowser依现并行合同，fresh输入/资源组合及实际cleanup不可省；既有runner gate仅作当轮输入校验，不再要求manager逐轮发短到期许可或转录结果批准。复用原runner及owner单份结构化segment记录，不增第二调度状态。
 
@@ -569,3 +569,5 @@ Release [c2实际失败独审](../../docs/evidence/web-platform/x01-version-retu
 MSG03沿原TODO11/19scope收固定四源与两mounted journey，再集中source/native审及有限实际；当前局部53579/60000ms，旧失败/旧批准范围保持。已有[W01取消语义peer](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/msg03-cancel-peer-review.json)供该批复用，不新增研究层或runtime。
 
 [激活分工](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/activation-assignment-request.json)已由Original接受原CORE/SVC09拆分，parent08/11 b4c已落；actual STOP/amend/take未到，不派重复writer。[D05请求](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/d05-registration-request.json)交现3a624v6合法writer，不在manager六范围之外写。
+
+本次[原任务接续](../../docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/current.json)保留原local60s53579/6421未用封账；worker继承env-file风险以固定loader白名单修复，独立假sentinel10s实际219ms通过且归还，不读真实admin。原两个mounted selector共享90s候选、每attempt≤60s含30s清理，caller/native未接受前不建gate。原Release两harness8964在合法27c36四scope准备新Cookie分支，必要strict20s普通段不借旧绿/旧额度。CORE651c实际take与X01v29交回runners见[fresh唯一领取](../../docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/core-owner-switch.json)，不是另新task。

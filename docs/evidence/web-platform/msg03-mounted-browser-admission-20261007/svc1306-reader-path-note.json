@@ -1,0 +1,32 @@
+{
+  "at": "2026-10-07T13:12:54.278Z",
+  "kind": "READ_ONLY_SOURCE_PATH_CONFIRMATION_NOT_PERSONAL_REPORT_INSPECTION",
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+      "bytes": 9070,
+      "sha256": "e1838ec9cfa2c9b20804d5b2436d3576b5f69a58bb32f971444b2f3deca8f038"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/tools/personal-preview/web-release.mjs",
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/web-release.mjs",
+      "bytes": 15567,
+      "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/facts-before-invocation.json",
+      "bytes": 582,
+      "sha256": "f26519ed77aee5afa35e787f7c06ce4778bd7713edd63df2b4417a7711fcc7d5"
+    }
+  ],
+  "finding": "1306invocation ran oldpersonal-history facts, whose default findWebCompatibility is imported from thatWT web-release reader. Thatreader reportValid requiresformat1. Currentfacts exposes snapshot({findCompatibility})/readRetainedCompatibility readerinjection; root confirmsfixedmain7524reader handlesv1/v2/context.",
+  "action": "Original ownwrapper bindscorrectfixedreader andctx; it mayalreadybe repairing sameissue. Do not bypassvalidation or inferprivate report corruption; do notreplayconsumedstages.",
+  "runtime": 0,
+  "privateReportsRead": 0,
+  "authority": "Diagnosticinput only; no service orpersonal operationgrant",
+  "readAttemptNote": "Initial targetedrg named nonexistent maintenance.mjs, exit2/read-only; resolved actual facts module path without broad scan"
+}

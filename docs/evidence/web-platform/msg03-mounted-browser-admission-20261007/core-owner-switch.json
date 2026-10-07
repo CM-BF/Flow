@@ -1,0 +1,37 @@
+{
+  "recordedAt": "2026-10-07T13:12:54.278Z",
+  "state": "ACTUAL_HANDOFF_AND_TAKE_COMMITTED",
+  "source": "Fresh ledger13:11:33.942Z plusMika actualhandoff via root",
+  "oldX01": {
+    "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "version": 29,
+    "scopeCount": 52,
+    "committedAt": "2026-10-07T13:07:40.252Z",
+    "runnersRemoved": true
+  },
+  "newCore": {
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+      "apps/server/src/runners.ts",
+      "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility",
+      "plans/wpf-mature-02-message-settings-core"
+    ],
+    "state": "active",
+    "branch": "codex/claude-settings-claim-eligibility",
+    "origin": "new",
+    "taskId": "WPF-MATURE-02-CORE",
+    "worker": "architecture_read",
+    "claimId": "651c4eb4-ca60-41c3-9702-872c242e12d0",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility",
+    "createdAt": "2026-10-07T13:07:54.544Z",
+    "updatedAt": "2026-10-07T13:07:54.544Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "registry": "Original existingD05 updates sameCOREtask uniqueWT/status; historicaloldWT kept. No newtask or managerregistrywrite",
+  "runtime": "Source-only; no PG grant from thishandoff"
+}

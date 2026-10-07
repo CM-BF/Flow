@@ -80,3 +80,7 @@ root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0
 本批仅管理事实收敛：1306实际首红/完整归还优先于此前预约，MSG03 types8及局部账保53579/60000并不扩9fc批准；[发布只读候选](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/visible-web-release-peer.json)已获root限定SOURCE_CANDIDATE接受，尚非新tuple兼容通过。三类结果均不新增manager工程运行；D05/CORE/SVC09按当前合法owner和实际交权，未用elapsed或旧releasedclaim推权。
 
 [MSG03 9c46新差量与局部独审](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/msg03-mounted-source-local-root-review.json)限定接受两产品修复/两test与六probe、affectedtypes，0finding；两个mounted旅程仍NOT_RUN，原9fc与371结论保各自历史，不继承为browser通过。
+
+本批环境边界修复仍区分层级：9c46/8488仅源与局部，c4bee假sentinel证明固定worker不继承env-file，未运行真实浏览器；最终caller/native集中接受待原件。1306[reader路径确认](../../docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/svc1306-reader-path-note.json)未读取个人报告/配置，不绕compat校验；Original具体修复以其固定包为准。
+
+[MSG03实际准入与归还、Plugin主线释放自然批](../../docs/evidence/web-platform/msg03-mounted-browser-admission-20261007/current.json)：固定c4bee准备475e与Release8964源/types20dc分别限定接受；MSG03首3432ms初始化红和第二15530ms选项红完整归还，产品材料/visual仍未通过。Pluginmain9f0/409b30与0a9v2释放不外推App部署。管理仅检查本批事实/来源/六scope，不新增产品审查层。
