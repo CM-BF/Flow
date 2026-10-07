@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-07T12:51:05.007678+00:00",
+  "state": "PROPOSED_NO_STOP_NO_AMEND_NO_HANDOFF",
+  "design": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/plans/x01-trusted-process-host/plan.md",
+  "designHead": "d94c3ceb75c157cbc51225c3e429e2baa3e8f615",
+  "ownerObservation": {
+    "ledgerAt": "2026-10-07T12:49:20.597Z",
+    "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "version": 27,
+    "state": "active",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding"
+  },
+  "candidatePartialHandback": [
+    "apps/runner/src/plugins/execution.ts",
+    "apps/runner/src/plugins/execution.test.ts",
+    "apps/runner/src/runtime.ts",
+    "apps/runner/src/plugins/runtime.test.ts",
+    "apps/runner/src/configuration.ts",
+    "apps/runner/src/configuration.test.ts",
+    "apps/runner/src/main-concurrency.test.ts"
+  ],
+  "reason": "These seven existing product/test literals overlap the proposed process-host consumer/private-mode scope. Original X01 products already integrated; no pending product dirty in this WT. Main runtime has later work: future owner must use then-fixed main and preserve it, not overlay this old WT.",
+  "notIncluded": [
+    "apps/runner/src/main.ts",
+    "apps/runner/src/admission-journal.ts",
+    "apps/runner/src/outbox.ts",
+    "apps/runner/src/plugins/host.ts",
+    "server/client/contracts/migrations"
+  ],
+  "conditions": [
+    "Mika selects first implementation slice after design review",
+    "owner explicitly STOP exact selected literals",
+    "current-version atomic amend removes only those literals",
+    "newowner fresh take succeeds before writes",
+    "Original release owner separately coordinates worker artifact test scope"
+  ],
+  "newLeaves": "process-host.ts/process-worker.ts/process-protocol.ts/process-host.test.ts need future fresh exact claim; not owned by this proposed handback.",
+  "boundary": "Design input only. No process execution, product implementation, permission transfer or release proof. Host process isolation is not an untrusted-package sandbox."
+}

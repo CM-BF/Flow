@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T12:08:14.596311+00:00 |
+| 最近更新时间 | 2026-10-07T12:51:05.007678+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -27,8 +27,8 @@
 | 本片段交付阶段 | delivered |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 授权后端候选与不可选原因已通过验收并接入主线；引用安全观察后继进度以其唯一子片status为准 |
-| 下一可用交付 | 候选片已交付；后继材料引用查询由独立REMOVAL唯一status跟踪 |
+| 当前产出 | 授权后端候选与真实上游升级已接入主线；材料引用后端和公共客户端均已独审，待受控接收 |
+| 下一可用交付 | 材料引用查询按后端合同先或同批接收公共客户端；具体交付以两子片唯一入口为准 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -37,10 +37,10 @@
 | X01-01 | completed | runner_owner | [完整计划](plan.md)、[事实/质量记录](../../docs/evidence/x01/README.md) |
 | X01-02 | in-progress | Execution Lead（公共入口） | X02 registry/public client/CLI合同已冻结入main；可信工具公开合同及管理CLI已main；完整移除/扩展类型/生命周期投影仍未完 |
 | X01-03 | in-progress | architecture_read | X02 PG registry/commands/CAS/审计已实现并入main；不勾完整安装生命周期验收 |
-| X01-04 | in-progress | architecture_read | semver7.8.5/ISC已真实bundle并经现材料/loader9例验收；材料与Flow包装pinning已main5b0bef；真实公共与双进程任务已验；上游升级身份/真实A-B-C切换仍开放 |
+| X01-04 | in-progress | architecture_read | semver7.8.5/ISC已真实bundle并经现材料/loader9例验收；材料与Flow包装pinning已main5b0bef；真实公共与双进程任务已验；上游7.8.4→7.8.5→回选7.8.4已真实验收并main；真正invoke函数进行中跨版本/物理卸载仍开放 |
 | X01-05 | pending | Lead派发隔离writer | 依赖02/04；未声明第三方隔离存在 |
 | X01-06 | in-progress | Lead + Web管理owner | X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；完整Web/TUI/CLI生命周期未完 |
-| X01-07 | in-progress | architecture_read | 自有text工具及真实npm semver已局部prepare/read/import/invoke，artifact/flow.text可用；真实runRunner公共链及两main/管理HTTP旅程已验；renderer/verifier/升级/完整三端仍未完成 |
+| X01-07 | in-progress | architecture_read | 自有text工具及真实npm semver已局部prepare/read/import/invoke，artifact/flow.text可用；真实runRunner公共链及两main/管理HTTP旅程已验；上游升级已验；renderer/verifier/真正invoke-inflight/完整三端仍未完成 |
 | X01-08 | pending | Lead派发contextwriter | 依赖02/04/G01/usage；通用接口可先推进 |
 | X01-09 | pending | Goal Owner / Lead | 候选固定输入已定位、用户未亲自确认；CTX01 core可推进，不以身份阻塞toy，完整兼容验收未完 |
 | X01-10 | pending | Lead协调review/集成writer | 通用管理依赖03～08；09候选独立后续验收，独立产品review/整体验收未开始 |
@@ -383,3 +383,9 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T11:49:53.193598+00:00：只读正式main回执 docs/evidence/i02/x01-candidates-combined-intake.json，HOST+ACK+consumer已受控接收。原三片接收索引保原时间快照/bytes，不追写历史或重复检查。REMOVAL独立交审准备不混入原HOST产品/输入。
 
 2026-10-07T11:53:57.304501+00:00：X01-VERSION-LIFECYCLE01唯一接收入口：[main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle/docs/evidence/x01-version-lifecycle/main-intake.json)，[子片status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle/plans/x01-version-lifecycle/status.md)。固定交付fe8a15fb2cebfe512c2d62acabad0c87e47929e7；source201674/resultf09fd4a7，11:36:37结果独审0P1/P2，实际1/1且资源RETURN，main待接收。仅链接权威子片，不复制TODO，原三片索引保持原字节。
+
+2026-10-07T12:51:05.007678+00:00：REMOVAL source81a/fixture1424/R2 result0b1e/packet6c7b已由chatui12:47:52 RESULT_FIDELITY_REVIEW_APPROVED0P1/P2，真实1/1suite成功及完整RETURN；R1失败/UNKNOWN与独立cleanup原件保留。仅引用[后端READY intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/docs/evidence/x01-removal-references/main-intake.json)、[后端唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/plans/x01-removal-references/status.md)及[CLIENT唯一intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/docs/evidence/x01-removal-references-client/main-intake.json)。CLIENT676/f86已独审，要求合同81a SHA0e54615b先/同批；main7524当前尚未接这两片，不复制子片TODO或将引用观察当物理删除授权。
+
+2026-10-07T12:51:05.007678+00:00：只读正式[UPSTREAM main回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/x01-upstream-intake/receipt.json)，4fdd856293a502209d7509ea37da901bbfd89f72已接固定源/实验/证据；真实7.8.4 false→7.8.5 true→回选4 false，A门禁仍在import/invoke前，不证明函数进行中升级/完整隔离。[子片唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-upstream-upgrade/plans/x01-upstream-upgrade/status.md)。
+
+2026-10-07T12:51:05.007678+00:00：fresh父claimv27 ACTIVE60与REMOVALv1 ACTIVE7确认。只读process-host design d94：[候选部分移交建议](../../docs/evidence/x01/process-host-handoff-candidate.json)列7既有runner路径；当前未STOP/未amend/未交权，待Mika选首片后单独原子办理。host.ts/package-store/journal/outbox及main.ts不在本建议交回范围，新leaf与release闭包另fresh领取/协调。0工程检查/PG/产品写入；整个X01继续OPEN。

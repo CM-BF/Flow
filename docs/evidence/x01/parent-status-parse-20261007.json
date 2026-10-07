@@ -1,0 +1,68 @@
+{
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "delivered",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "授权后端候选与真实上游升级已接入主线；材料引用后端和公共客户端均已独审，待受控接收",
+    "next": "材料引用查询按后端合同先或同批接收公共客户端；具体交付以两子片唯一入口为准",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始"
+    },
+    "issues": [
+      "任务开工时间未记录"
+    ],
+    "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| X01-STAGE-A-R2-LOCAL | 2026-10-07T03:15:38.909093+00:00 | 2026-10-07T03:16:55.571215+00:00 | local资源 | REQ15主线接收修复先行，等待其明确终态归还；X01固定增量须独审 | Mika当前派工与db_transaction_owner直接交接；本status |\n2026-10-07T03:19:25.466752+00:00：接chatui对0fad准备限定APPROVED。REQ15于其03:16:55.571215Z收口记录确认local已完成，直接交还；本owner03:18:33固定ae899独审接收11/11/资源closed。Mika随后明确授本次30秒原Stage A段，无已知heavy holder。本owner03:19:01.954856Z fresh核v8 ACTIVE17；现在仅准备即时运行，未把授权写作检查通过。"
+  },
+  "taskLinks": {
+    "kind": "big",
+    "reason": "",
+    "parent": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "mika",
+      "value": "mika"
+    },
+    "ownId": {
+      "state": "known",
+      "record": "[X01](plan.md)",
+      "id": "X01",
+      "location": "plan.md"
+    }
+  },
+  "checks": {
+    "state": "passed",
+    "target": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+    "record": "PASSED d05b33a552168aadf07ec1ecabe43c29ff3e0faf：候选真实PG1 selected/1 passed，旧10 unselected；local10 distinct分轮/types0独立保留"
+  }
+}
