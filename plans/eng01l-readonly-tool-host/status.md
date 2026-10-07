@@ -14,7 +14,7 @@
 | 工作树dirty状态 | 本提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 实现目标 | 574a2e31b8eb583a0d44a1a3eafd739784963681；caller36c16c749842c726aefadfd1c22e08bc056c35a6 |
+| 实现目标 | 574a2e31b8eb583a0d44a1a3eafd739784963681 |
 | 实现范围 | 六产品见Interface；ownplan/evidence |
 | 检查状态 | 原16/16保留；差量3/3（2新+1重叠）/22未选，18不同分轮；产品types0；caller types原2→0与AST0；所有6组absent/双EOF/scratchremoved |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
@@ -44,6 +44,9 @@ J唯一资格待决保持，本片不重复询问用户；stock/OS canary/模型
 
 2026-10-07T07:57:14.929Z：原a372批准只覆盖mock R06；准备真实entry静态发现17.6KiB参数超过R06上限，未运行stock。574改-f固定文件，不改shared R06/权限。local03/04 07:48:21.291Z归还；caller05首类型红保留，06定向类型0于07:54:43.317Z归还。18不同检查分轮、实际stock/OS/provider0；独审后才可准入唯一initialize候选。
 
-| 等待开始 | 等待结束 | 类型 | 来源 |
-| --- | --- | --- | --- |
-| 2026-10-07T07:41:02.704Z | UNKNOWN | 独立审查与实际入口修复 | 原local归还；父消息限定mock批准后发现argv静态限制，未把区间当纯资源等待 |
+## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| ENG01L-W01 | 2026-10-07T07:41:02.704Z | UNKNOWN | 审查 | 原mock局部等待独审，实际批准时间未独立记时；已收限定批准 | local01/02归还与父review消息，非纯资源等待 |
+| ENG01L-W02 | UNKNOWN | 2026-10-07T07:48:21.291Z | 验证失败 | 真实argv限制静态发现，fixed-file定向与类型已收口 | profile-file-run，发现时刻未独立记录 |
