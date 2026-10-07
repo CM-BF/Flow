@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T03:36:24.918314+00:00 / main/originc0217f46；本次复用owner运行事实，无额外资源采样 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T03:51:44.749917+00:00 / main52fe6669；计时实际4320部署52fe，与个人服务版本分开 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -18,8 +18,8 @@
 | 已集成main状态 / HEAD | main/originc0217f46已接SVC08连接修复、SVC06根级宿主依赖、REQ15批量读取和185源登记。个人服务仍af51/accepting v18、d629/v3；没有随集成自动部署。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 个人页面已恢复；终端逐消息设置、后台连接恢复和会话批量读取已进入主线。网页连接释放修复已审并接收，个人部署方案由原负责人准备。 |
-| 下一可用交付 | 登录入口与任务时间继续浏览器验收；固定后台产物已完成实际安装与内部加载，下一步独立运行/脱离开发目录验收；网页连接修复部署方案继续准备。 |
+| 当前产出 | 个人页面已恢复；终端逐消息设置、连接恢复与批量读取已进入主线，看板时间展示已实际可用。网页宿主替换入口与固定后台独立运行正在并行实施。 |
+| 下一可用交付 | 登录入口完成独立浏览器验证；固定后台产物继续独立启动与脱离开发目录验收；网页连接释放修复通过受管宿主入口送到个人预览。 |
 | 当前阻塞 | ACTIVE: 远程CI唯一用户选择仍PENDING。本地旧磁盘HOLD已解除；按实际共享资源排队，普通局部段三队各一段，后继允许隔离离线构建与0PG浏览器按合计预算并行。 |
 | 需用户决定 | REQUIRED: OPS-CI01唯一启用选择已由Goal Owner提出，当前PENDING；不重复提问。 |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
@@ -184,3 +184,7 @@ fresh canonical SVC07 HEAD1b3e166 clean/pushed，产品e28/HTTP35f原批准输�
 2026-10-07T02:49:12.685Z：用户访问恢复为当前已完成事实，唯一源为personal-history-compatibility的web-recovery-d629-20261007/run-20261007T024419Z；原始失败、旧Web退出code1和根因unknown保持。一次CLI968ms/0provider，结果独立限定批准，无用户tab刷新。普通验证窗口已归还，两co-lead按既有fresh规则继续。
 
 2026-10-07T03:36:24.918314+00:00：SVC06固定3230产物实际离线构建/import于03:34:59.865Z结束，outer25,390ms/exit0/owned组absent/双EOF，0PG/Chrome/provider；自有artifact保留供后继host验收，不代表个人服务更新或开发checkout不可用已验。重窗口已交Web既有ACCESS/Timing，再由其按实际清理与Mika交接。离线构建+隔离0PG浏览器后继规则已一次同步两co-lead，本次运行未途中放宽。
+
+## 2026-10-07T03:51:44.749917+00:00 已审计时实际可见
+
+main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；185源与真实IAB开工UTC/含等待历时/详情来源已核。记录：[D05实际回执](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/task-timing-185-live.json)。未重跑原81 parser/5浏览器组，未刷新原用户tab或改个人af51/d629；ACCESS后继不再阻塞本片上线。
