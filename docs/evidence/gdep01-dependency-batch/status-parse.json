@@ -1,0 +1,36 @@
+{
+  "pid": 40438,
+  "ownership": "newChildSession",
+  "capture": "merged",
+  "exit_code": 0,
+  "elapsed_ms": 44,
+  "stdout": "{\"errors\":[],\"humanMissing\":[],\"timingIssues\":[],\"taskLinks\":{\"kind\":\"unknown\",\"reason\":\"\u5c42\u7ea7\u6216\u7236\u4efb\u52a1\u58f0\u660e\u51b2\u7a81/\u4e0d\u5b8c\u6574\",\"parent\":{\"state\":\"known\",\"record\":\"[FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md)\",\"id\":\"FLOW-001\",\"location\":\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md\"},\"coLead\":{\"state\":\"known\",\"record\":\"mika\",\"value\":\"mika\"},\"ownId\":{\"state\":\"unknown\",\"record\":\"\",\"reason\":\"\u672a\u58f0\u660e\"}}}\n",
+  "observed_bytes": 545,
+  "retained_bytes": 545,
+  "eof": {
+    "stdout": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "start": "2026-10-07T22:11:28.347870+00:00",
+  "endedAt": "2026-10-07T22:11:28.391922+00:00",
+  "parserSha256": "2dd0977326017518b4482aee0e56a7f035d14b41628ed483526a829f10b9708a",
+  "statusSha256": "84fd14e890cfeeb3b3a5dfbaeadf9158dd8b93523f6377b13ec1cd9f1da5d739",
+  "purpose": "metadata-only own status shape, no test/product execution or TMP"
+}

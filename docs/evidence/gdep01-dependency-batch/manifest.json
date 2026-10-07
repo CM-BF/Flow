@@ -1,0 +1,93 @@
+{
+  "implementation": "e1b02772853d08cf1069bc16a8b47b7ca717f633",
+  "base": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
+  "recordedAt": "2026-10-07T22:11:12.464738+00:00",
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "bytes": 13111,
+      "sha256": "4752162fbfeebc2b62a912e8faac857b829ad84345ddb762aff9b4720a85ef42"
+    },
+    {
+      "path": "apps/server/src/goals/dependency-content.ts",
+      "bytes": 2658,
+      "sha256": "a472ec64b69a84a2ee0c19a80350035cfb8dd57ebebd7673b77b45135f9865d6"
+    },
+    {
+      "path": "apps/server/src/goals/dependency-content.test.ts",
+      "bytes": 6988,
+      "sha256": "a899a4bc74793903c8ecfb9d1c74303c85f1a5503b12ae0c85c7d25791aa986d"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/check.py",
+      "bytes": 5304,
+      "sha256": "74eb67549ae5392e9024c38427f65049a8b55c219b7e12664f886fc32a22fec0"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/vitest.config.ts",
+      "bytes": 259,
+      "sha256": "eae90c4ed70ec06084aa9f49b08755d1283577c943491067dc41b33762cc1db1"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/types.tsconfig.json",
+      "bytes": 560,
+      "sha256": "810bb777ad02a2baedbbf2c6ae7bf2e0d3a43f5e8b7293d23becb0333dde392f"
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/green.log",
+      "bytes": 325,
+      "sha256": "216942b1cc04980d187d352c9059c0b2e89ad73539fc3ddd1dac71c9f93b5ade"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/red.log",
+      "bytes": 1116,
+      "sha256": "3ce2feaaaca8e2b0e4d443b0b727bcd2427c37e0d60a8ddeb3ef21ca8f6b3fde"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/green-started.json",
+      "bytes": 3974,
+      "sha256": "50e504837aa2bc33d993bd87c65a45e0199f309db571e8076a488fcdf719f62d"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/red-started.json",
+      "bytes": 3935,
+      "sha256": "d0f82cbfd10ebdf52e3a093aa75cb715b41c5cfe085bf794c5aaa299939f9ccd"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/types-started.json",
+      "bytes": 3930,
+      "sha256": "54dae3a468a48d776906a0b1bfdea6967eed27153a9e976f165cf70506bcbde0"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/iterations.json",
+      "bytes": 5219,
+      "sha256": "cfdd15a29f16926ccc9be472e86f2ad28e0428cbb8cd2cbb60058923de285517"
+    }
+  ],
+  "fixedSupply": {
+    "path": "docs/evidence/gdep01-dependency-batch/source-supply.json",
+    "bytes": 55935,
+    "sha256": "57b1e5bc89b2c84d5088a2b8050fc1d0627785dc518488162c32803963745586"
+  },
+  "dependencies": {
+    "path": "docs/evidence/gdep01-dependency-batch/dependencies.json",
+    "bytes": 2658,
+    "sha256": "97dcfdae6b6ccfcaccc8357e02613eac446330a9a0d6fa46d2aca419f9dd3f38"
+  },
+  "distinctPure": 16,
+  "noEmitExit": 0,
+  "pg": "NOT_RUN",
+  "claim": "f2442a2f-357e-42d5-bb3d-da1c261684ab v1",
+  "limitations": [
+    "Pure query client is a fake; SQL not executed",
+    "Source bound assumes valid <=1MiB artifacts; not an arbitrary database corruption cap",
+    "No speed, PG work, wire, contention or throughput claim"
+  ]
+}

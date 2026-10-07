@@ -4,7 +4,7 @@
 | --- | --- |
 | 最近更新 / 最近main同步核验 | 2026-10-07 22:11 UTC |
 | Plan | [plan.md](plan.md) |
-| 任务层级 | sub-task |
+| 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 任务开工时间 | 2026-10-07T22:03:42Z |
@@ -13,12 +13,12 @@
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-dependency-batch |
 | Branch | codex/goal-dependency-batch |
-| 工作基线 / HEAD | base69a71e3d9888c24c8f7c7a5965487f106c065c17；红例3c0697986dfd9456d8afbf322004b97dbd360270；最终target待固定 |
-| 工作树dirty状态 | 本owner最终实现及证据待提交 |
-| 工作分支状态 | in-progress |
+| 工作基线 / HEAD | base69a71e3d9888c24c8f7c7a5965487f106c065c17；红例3c0697986dfd9456d8afbf322004b97dbd360270；source e1b02772853d08cf1069bc16a8b47b7ca717f633 |
+| 工作树dirty状态 | STOP；本次最终metadata提交后clean，交接HEAD由Git核验 |
+| 工作分支状态 | review |
 | 检查状态 | PASSED: 16纯行为与局部noEmit；真实PG/SQL/EXPLAIN NOT_RUN |
 | 已集成main状态 / HEAD | 本片未集成；固定base69a71e3d9888c24c8f7c7a5965487f106c065c17 |
-| 实现目标 | UNKNOWN |
+| 实现目标 | e1b02772853d08cf1069bc16a8b47b7ca717f633 |
 | 实现范围 | apps/server/src/goals/commands.ts, apps/server/src/goals/dependency-content.ts, apps/server/src/goals/dependency-content.test.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
@@ -52,3 +52,7 @@
 ## 本段实质事件
 
 22:03:42实际开工；22:04:52.230原子take。22:07:19.148291–19.609501红；22:08:47.931250–48.352341绿；22:09:00.591752–02.082248局部types，0待launch、普通顺位已归还。源/metadata封存不是新工程检查。完整task finish仍NOT_COMPLETED，review/main/真实PG尚未完成。
+
+## 最终封存
+
+source e1b02772853d08cf1069bc16a8b47b7ca717f633，manifest.json绑定6实现/检查输入与7原始日志/运行记录。3工程child2361ms；另两次仅状态parser，用于修正sub-task应为子task的声明；不计作产品通过用例。最终0待launch、全部工程TMP exactENOENT，claim保留待独审/PG后继。D05登记与实际聚合仍待Lead；无HTTP探针。

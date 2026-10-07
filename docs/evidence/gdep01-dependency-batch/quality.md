@@ -33,3 +33,5 @@
 ## 22:11 UTC 安全停点
 
 复核小Interface仅dependencyContent(client,bindings)；读取/验证职责集中，commands只替换import和删除旧helper，原事务/锁/权限/状态/JSON大小判断逐字保留。SQL以ordinal保原序，resolved仅materialize身份/长度，正文同SELECT后取；错误按原hash-before-size顺序。无新pool/缓存/框架/并发查询。16纯绿与ES2023局部types0，真实SQL待PG，不把fake当数据库证明。未解决产品finding：独审尚未开始；DB非法超大行不受合法输入界已说明。
+
+元数据复核：首own-status parser errors/human/timing为空，但英文sub-task未匹配中文子task枚举；按权威task-links.mjs改声明，首输出保留status-parse.json，不修改parser。产品source/16pure/types不变，无新产品检查。
