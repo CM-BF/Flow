@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-10-07T04:56:15.022905+00:00",
+  "operation": "SVC08-FLOW422-BUILD-R1",
+  "workFinishedAt": "2026-10-07T04:54:50.037Z",
+  "outerElapsedMs": 30732,
+  "toolExitCode": 0,
+  "pid": 10435,
+  "finalOwnedState": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "primaryFailure": null,
+  "secondaryFailures": [],
+  "artifactRetained": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+    "manifestDigest": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+    "sourceHead": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+  },
+  "directory": "/private/tmp/flow-svc08-flow-artifact-z5s5tT",
+  "DBCreated": false,
+  "PGCalls": 0,
+  "providerCalls": 0,
+  "personalOperations": 0,
+  "status": "NO_REMAINING_HEAVY_CHILD; metadata only; parent notified immediately after raw read"
+}
