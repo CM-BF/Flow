@@ -20,6 +20,21 @@ resources = load_module('x01_claim_pg_resources', HERE / 'enable-binding-pg-once
 read_regular, save, digest, stamp = resources.read_regular, resources.save, resources.digest, resources.stamp
 assert_directory, tree_sample, remove_sample, suite_confirmed = resources.assert_directory, resources.tree_sample, resources.remove_sample, resources.suite_confirmed
 
+def fixed_environment():
+    """Only fixed process essentials; no inherited loader or private configuration."""
+    return {'PATH': '/usr/bin:/bin', 'LANG': 'C', 'LC_ALL': 'C', 'TZ': 'UTC',
+        'NODE_DISABLE_COMPILE_CACHE': '1', 'PYTHONDONTWRITEBYTECODE': '1',
+        'GIT_CONFIG_NOSYSTEM': '1', 'GIT_CONFIG_GLOBAL': '/dev/null', 'GIT_OPTIONAL_LOCKS': '0'}
+
+
+def pg_environment(temporary, window, head, work_until, cleanup_until):
+    return {**fixed_environment(), 'TMPDIR': str(temporary / 'tmp'), 'TMP': str(temporary / 'tmp'),
+        'TEMP': str(temporary / 'tmp'), 'FLOW_X01_BINDING_CACHE': str(temporary / 'cache'),
+        'FLOW_X01_PG_ROOT': str(temporary / 'fixtures'), 'FLOW_X01_PG_WINDOW': window,
+        'FLOW_X01_PG_HEAD': head, 'FLOW_X01_PG_WORK_UNTIL': str(work_until),
+        'FLOW_X01_PG_CLEANUP_UNTIL': str(cleanup_until)}
+
+
 def child():
     os.umask(0o077)
     window, head = os.environ['FLOW_X01_PG_WINDOW'], os.environ['FLOW_X01_PG_HEAD']
@@ -83,7 +98,7 @@ def main():
         if not 0 <= age <= 60: raise ValueError('Admission stale')
         head, window = admission['head'], admission['window']
         if not re.fullmatch('[a-f0-9]{40}', head) or not re.fullmatch('[a-f0-9]{32}', window): raise ValueError('Invalid window/head')
-        manifest_raw = read_regular(HERE / 'pg-manifest.json', 524288)
+        manifest_raw = read_regular(HERE / 'pg-env-manifest.json', 524288)
         if digest(manifest_raw) != admission['manifestSha256']: raise ValueError('Prepared inputs changed')
         manifest = json.loads(manifest_raw)
         for row in manifest['files']:
@@ -109,7 +124,7 @@ def main():
         write('admission.json', admission_raw)
         write('reservation.json', {'window': window, 'head': head, 'startedAt': report['startedAt'], 'availableBytes': available, 'floorBytes': floor, 'databaseReserveBytes': limits['databaseReserveBytes'], 'pairedBytes': paired})
         report.update(window=window, executionHead=head, manifestSha256=admission['manifestSha256'])
-        git = ops.supervise(ops.Launch(('/usr/bin/git', 'status', '--porcelain=v2', '--branch', '--untracked-files=all'), str(ROOT), dict(os.environ), ops.Ownership.NEW_CHILD_SESSION, ops.Capture.MERGED), ops.Policy(3, .25, .75, 32768))
+        git = ops.supervise(ops.Launch(('/usr/bin/git', 'status', '--porcelain=v2', '--branch', '--untracked-files=all'), str(ROOT), fixed_environment(), ops.Ownership.NEW_CHILD_SESSION, ops.Capture.MERGED), ops.Policy(3, .25, .75, 32768))
         process, unknown = facts.supervision_facts(git, 'git-preflight'); report['processes'].append(process); report['unknown'] |= unknown
         write('preflight.stdout', git.stdout)
         lines = git.stdout.decode().splitlines(); other = [line for line in lines if not line.startswith('# ') and not (line.startswith('? docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/message-settings-claim-pg-run-r1/') and line.rsplit('/', 1)[-1] in {'admission.json', 'reservation.json'})]
@@ -121,9 +136,7 @@ def main():
         temporary = temporary.resolve(); assert_directory(temporary, identity)
         report['temporary']['path'] = str(temporary)
         for name in ['fixtures', 'cache', 'tmp']: (temporary / name).mkdir(mode=0o700)
-        env = dict(os.environ)
-        for key in ['NODE_PG_FORCE_NATIVE', 'NODE_COMPILE_CACHE', 'DATABASE_URL', 'TEST_DATABASE_URL', 'FLOW_COORDINATION_DATABASE_URL']: env.pop(key, None)
-        env.update(TMPDIR=str(temporary / 'tmp'), TMP=str(temporary / 'tmp'), TEMP=str(temporary / 'tmp'), NODE_DISABLE_COMPILE_CACHE='1', FLOW_X01_BINDING_CACHE=str(temporary / 'cache'), FLOW_X01_PG_ROOT=str(temporary / 'fixtures'), FLOW_X01_PG_WINDOW=window, FLOW_X01_PG_HEAD=head, FLOW_X01_PG_WORK_UNTIL=str(int((wall + limits['workSeconds']) * 1000)), FLOW_X01_PG_CLEANUP_UNTIL=str(int((wall + limits['workSeconds'] + limits['cleanupSeconds']) * 1000)))
+        env = pg_environment(temporary, window, head, int((wall + limits['workSeconds']) * 1000), int((wall + limits['workSeconds'] + limits['cleanupSeconds']) * 1000))
         if time.monotonic() - started >= 15: raise TimeoutError('PG start cutoff after reservation')
         report['PGMayHaveStarted'] = True
         result = ops.supervise(ops.Launch((sys.executable, '-B', str(Path(__file__).resolve()), '--child'), str(ROOT), env, ops.Ownership.NEW_CHILD_SESSION, ops.Capture.MERGED), ops.Policy(max(.1, deadline - time.monotonic() - 8), 1, 1, limits['streamsBytes']))

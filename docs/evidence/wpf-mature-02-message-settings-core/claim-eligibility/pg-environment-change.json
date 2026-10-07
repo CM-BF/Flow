@@ -1,0 +1,15 @@
+{
+  "startedAt": "2026-10-07T13:36:56Z",
+  "deadline": "2026-10-07T13:46:56Z",
+  "finding": {
+    "reviewer": "chatui01_owner",
+    "at": "2026-10-07T13:35:47Z",
+    "verdict": "OPERATOR_PREPARATION_CHANGES_REQUESTED",
+    "target": "920a966a4d0acdd8464ae7af8c46c9e41a662bac",
+    "P2": "Inherited Node preload environment not bound; no claim actual environment contaminated"
+  },
+  "scope": "pg-once explicit environment constructors + pure AST sentinel + independent new manifest; no changes product/fixture/donor helpers or old manifest/raw",
+  "check": "NOT_RUN; 1 pure child within separately granted10s including3cleanup; no PGcaller import/real sensitive env read",
+  "futureOuterEntry": "Use env -i PATH=/usr/bin:/bin LANG=C LC_ALL=C TZ=UTC absolutePython -I -B pg-once.py; explicit admission/hash only",
+  "at": "2026-10-07T13:37:40.902Z"
+}

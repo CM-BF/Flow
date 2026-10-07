@@ -144,3 +144,5 @@ source唯一[review-ready](../../docs/evidence/wpf-mature-02-message-settings-co
 2026-10-07T13:29:35.810150+00:00：专库准备包固定[pg-review-ready](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-review-ready.json)，251文件/33SQL/190外部固定入口与metadata/16精确链接，实际0PG、0新工程child，未生成admission/actual目录。新入口待Mika静态审；[同CORE权威owner登记输入](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/owner-switch-intake.json)供Original登记，不是第二状态源。
 
 2026-10-07T13:32:31.718Z：本15min准备段提前收束，[固定交付](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/pg-delivery.json)。新工程child0/PG0/待launch0；仅metadata parser errors[]/humanMissing[]，原任务开工UNKNOWN保持诚实timing issue。提交推送后STOP本段全部写入，保留CORE v1供Mika operator窄审/修复；未获得NEXT，不造admission。REMOVAL已另树核main并release，其资源和claim不与CORE混用。
+
+2026-10-07T13:37:40.902Z：独立operator审查命中唯一P2：父环境可传NODE_OPTIONS预加载。本新10min窄修段13:36:56–13:46:56，仅caller固定allowlist与纯人工污染反例；aa741产品/fixture/两个donorhelper/旧manifest/raw不改。PG仍NOT_OPEN；sentinel另获10s单child普通窗口，尚未启动。
