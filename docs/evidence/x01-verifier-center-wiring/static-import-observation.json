@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-07T22:17:10.742Z",
+  "method": "Readonly literal relative import scan; not compiler/import/closure proof; no engineering child",
+  "missing": [
+    {
+      "source": "apps/server/src/goal-progression/fixture.ts",
+      "import": "../../../runner/src/claude.js"
+    },
+    {
+      "source": "apps/server/src/goal-progression/fixture.ts",
+      "import": "../../../runner/src/execution-profiles.js"
+    },
+    {
+      "source": "apps/server/src/goal-progression/fixture.ts",
+      "import": "../../../runner/src/runtime.js"
+    },
+    {
+      "source": "apps/server/src/goal-plan-confirmation/fixture.ts",
+      "import": "../../../runner/src/claude.js"
+    },
+    {
+      "source": "apps/server/src/goal-plan-confirmation/fixture.ts",
+      "import": "../../../runner/src/execution-profiles.js"
+    },
+    {
+      "source": "apps/server/src/goal-plan-confirmation/fixture.ts",
+      "import": "../../../runner/src/runtime.js"
+    }
+  ]
+}

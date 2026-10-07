@@ -1,0 +1,29 @@
+{
+  "requestId": "x01-center-wiring-take-20261007T220421",
+  "action": "take",
+  "committedAt": "2026-10-07T22:05:39.732Z",
+  "claim": {
+    "claimId": "daf9316f-13dc-4404-ba04-f1033f2eed2e",
+    "version": 1,
+    "taskId": "X01-VERIFIER-CENTER-WIRING01",
+    "lead": "mika",
+    "worker": "db_transaction_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-center-wiring",
+    "branch": "codex/plugin-verifier-center-wiring",
+    "scope": [
+      "apps/server/src/index.ts",
+      "apps/server/src/main.ts",
+      "apps/server/src/plugin-runtime/routes.ts",
+      "apps/server/src/plugin-verification-wiring.test.ts",
+      "docs/evidence/x01-verifier-center-wiring",
+      "plans/x01-verifier-center-wiring"
+    ],
+    "role": "writer",
+    "state": "active",
+    "next": null,
+    "origin": "new",
+    "observedAt": null,
+    "updatedAt": "2026-10-07T22:05:39.732Z",
+    "createdAt": "2026-10-07T22:05:39.732Z"
+  }
+}

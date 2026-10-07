@@ -1,0 +1,150 @@
+{
+  "base": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
+  "VARPreimageDrift": [],
+  "AVPreimageDrift": [],
+  "rows": [
+    {
+      "path": "apps/server/src/events.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 9366,
+      "sha256": "4953c00055aa537fb2f4395ed4083532351e019d03fb4b473e08afa8cd843472",
+      "role": "pending VAR immutable readonly dependency; not product"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/artifact.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 3279,
+      "sha256": "0ab3718c890dc4f3a05fe72fe664a2cab251e687ad518d420cfa82a1c8483929",
+      "role": "pending VAR immutable readonly dependency; not product"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 11569,
+      "sha256": "5903c889850b7370f9f830feab7eb9d76916303221427aad6d0b1105fee2433f",
+      "role": "pending VAR immutable readonly dependency; not product"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 10467,
+      "sha256": "175d7548ecc93f8b22cbdc08d1611ad8959fdd5cd5679c743fffba52a2186f1d",
+      "role": "pending VAR immutable readonly dependency; not product"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 7635,
+      "sha256": "941decfe984dfcfca98017ccf02b270e2443d725c65366e6dcd025c4bb70da51",
+      "role": "pending VAR immutable readonly dependency; not product"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-result.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 6466,
+      "sha256": "ec566ee0cf45e8be078af3f0afa556e1a4f69e4454593421ec1cbc1eb5d40551",
+      "role": "pending VAR immutable readonly dependency; not product"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-routes.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 2718,
+      "sha256": "929ae05b3a44b58e4afbd2a9ae6a28db87fddfc55a05b763698806d2ccd1a35b",
+      "role": "pending VAR immutable readonly dependency; not product"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 5971,
+      "sha256": "3a6d4de476f8fcca4a50055266660b685cdfa1015308cc2a7ced5e9d045f7a17",
+      "role": "pending VAR immutable readonly dependency; not product"
+    },
+    {
+      "path": "apps/server/src/plugin-verification-configuration.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 1930,
+      "sha256": "411538951fb85649c30b391a57bb119fde0d2f51d1d883ff3b095c416e225e87",
+      "role": "pending VAR immutable readonly dependency; not product"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-admission.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 655,
+      "sha256": "6d96d91bb4abfd87e2fe077885216fb73d759d73573393084ef0bfe3ea3fd72e",
+      "role": "pending VAR immutable readonly dependency; not product"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-event.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 916,
+      "sha256": "42d3396318ddfaa38e75ad31b70e669ee6551783bcf7b952533fb9bc6b81f819",
+      "role": "pending VAR immutable readonly dependency; not product"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 8090,
+      "sha256": "01fcdd8d1d3e19c87b4114451e7e46420bd539a8cd1b59b8e8b60c3d752c88ca",
+      "role": "pending VAR immutable readonly dependency; not product"
+    },
+    {
+      "path": "packages/plugin-runtime/src/verification-input.ts",
+      "commit": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+      "bytes": 2526,
+      "sha256": "dfc8f2a174d1d5e3a0c5c8323846aa9310f9761ca8eb1488411cc5bbb6209998",
+      "role": "pending VAR immutable readonly dependency; not product"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "commit": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 21699,
+      "sha256": "bfd985db4e5455b1b614155ca71d299ad8b1b60f3f4449b76761689f584d6019",
+      "role": "pending AV immutable readonly dependency; not product"
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.ts",
+      "commit": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 2736,
+      "sha256": "efdd9ad43bd1cbfb4a6b8ec3f61a151be59735a724528f4a861aa33572d62652",
+      "role": "pending AV immutable readonly dependency; not product"
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.ts",
+      "commit": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 1423,
+      "sha256": "2e313671c97ad304c817ebf3f123a14fac31af87e66f98354c17a254b4d7fe3a",
+      "role": "pending AV immutable readonly dependency; not product"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim.ts",
+      "commit": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 4000,
+      "sha256": "eb9282cdba015110257c7bd7eb059e11ebffb72f7f5ea0bafabca95a2e37b1b7",
+      "role": "pending AV immutable readonly dependency; not product"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-binding.ts",
+      "commit": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 696,
+      "sha256": "e96e6f94cbb7570d264eda129306f746b318a1781b9a2a8d1277ce171723a3c1",
+      "role": "pending AV immutable readonly dependency; not product"
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.ts",
+      "commit": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 5976,
+      "sha256": "c71cc4898e4d36fe4587e5d94543a10f54269a1541645b5a74e4b4d06d9ad955",
+      "role": "pending AV immutable readonly dependency; not product"
+    },
+    {
+      "path": "packages/storage/migrations/036-plugin-verification-bindings.sql",
+      "commit": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "bytes": 5113,
+      "sha256": "78e341afe35d4dee7a36fdf9d430f427e25d983474931e3ad525002f932cfece",
+      "role": "pending AV immutable readonly dependency; not product"
+    }
+  ],
+  "bytes": 113231,
+  "state": "INDEXED_NOT_MATERIALIZED_NOT_RUN",
+  "AVR2": "FAILED; 036 parentheses repair pending; listed old source retained until new fixed owner target"
+}

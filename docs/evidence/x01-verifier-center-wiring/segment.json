@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-07T22:04:21.000Z",
+  "deadline": "2026-10-07T22:29:21.000Z",
+  "kind": "source-preparation",
+  "budgetBytes": 8388608,
+  "sourceBaseBytes": 1454245,
+  "indexManagementReserveBytes": 2359296,
+  "combinationMirrorReserveBytes": 1700000,
+  "sourceMetadataReserveBytes": 350000,
+  "engineeringChildren": 0,
+  "pg": "NOT_RUN",
+  "floorObservation": 16922574848,
+  "claimId": "daf9316f-13dc-4404-ba04-f1033f2eed2e",
+  "claimVersion": 1,
+  "budgetReducedAt": "2026-10-07T22:10:07.000Z",
+  "worktreeLogicalAtReduction": 1461726,
+  "gitIndexBytesAtReduction": 2285437,
+  "remainingAtReduction": 2544293,
+  "futureEngineeringBudget": "NOT_ALLOCATED",
+  "sharedProductEdits": "HOLD_PENDING_ORIGINAL_CONFIRMATION",
+  "note": "Initial 8MiB is historical; 2MiB returned prospectively. No product child launched.",
+  "historicalInitialBudget": {
+    "budgetBytes": 8388608,
+    "futureLocalRemainderBytes": 2350779
+  },
+  "mirrorState": "FIXED_BASE_PLUS_PENDING_AV_VAR; NO_OWN_CONSUMER_OVERLAY_YET",
+  "prospectiveIndexAtomicCopyBytes": 2285437,
+  "budgetRestoredAt": "2026-10-07T22:15:03.000Z",
+  "mirrorActualBytes": 1498751
+}
