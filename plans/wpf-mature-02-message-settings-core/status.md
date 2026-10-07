@@ -18,15 +18,15 @@
 | 任务时间来源 | 原CORE3e768未记录可证实际任务开工；旧claim时刻不是开始证据。2026-10-07T13:05:32Z仅为clock实测本轮后继工作段起点，不能重置同task历史 |
 | 检查状态 | PASSED aa74137d84cd7acc45ec23c2ff22128ce944a410：focused types0+精确list5；0hooks/PG/行为执行，原types2/2与collect1保留 |
 | 已集成main状态 / HEAD | 历史CORE ea276已main8d84，现基线7524保有；本轮领取资格增量NOT_INTEGRATED |
-| 实现目标 | aa74137d84cd7acc45ec23c2ff22128ce944a410；固定SQL+prepared tests，SOURCE_REVIEW_PENDING / PG_NOT_OPEN |
+| 实现目标 | aa74137d84cd7acc45ec23c2ff22128ce944a410；固定SQL+prepared tests，SOURCE_REVIEW_APPROVED / PG_NOT_OPEN |
 | 实现范围 | apps/server/src/runners.ts, apps/server/src/execution-profiles/message-settings-claim-pg.test.ts |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 新旧执行后端共存的领取资格改动已备齐，类型检查与五个专库用例的收集通过 |
-| 下一可用交付 | 完成独立源码审查并固定真实专库执行入口；实际SQL资格验证尚未运行 |
+| 下一可用交付 | 固定真实专库执行入口供独立准备审查；实际SQL资格验证尚未运行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | PENDING — Mika承担本轮固定source/有限结果只读审；历史批准不扩大 |
+| Review | APPROVED 2026-10-07T13:23:26Z — Mika/root，source aa741 / packet7ecbc，0P1/P2；仅source/local |
 | Claim | 651c4eb4-ca60-41c3-9702-872c242e12d0 v1 ACTIVE / 4 literals；take 2026-10-07T13:07:54.544Z |
 
 ## 本轮领取资格后继
@@ -35,7 +35,7 @@
 | --- | --- | --- | --- |
 | M02CORE-CLAIM01 | completed | architecture_read | X01 runners.ts STOP→v29移出，CORE v1 take；固定base与旧3e768历史复制 |
 | M02CORE-CLAIM02 | completed | architecture_read | aa74137d84cd7acc45ec23c2ff22128ce944a410固定5行SQL及5个prepared PG用例源码；没有行为执行通过 |
-| M02CORE-CLAIM03 | pending | architecture_read | 固定source独审、后续必要types/list、真实专库公共认证/SQL验证均待 |
+| M02CORE-CLAIM03 | pending | architecture_read | source独审已通过，types0/list5；真实专库公共认证/SQL验证待独立入口批准及新NEXT |
 | M02CORE-CLAIM04 | pending | architecture_read | 受控main接收及SVC09两槽个人激活/用户端验收由父任务协调，本片不改个人配置 |
 
 ## 等待记录
@@ -129,10 +129,14 @@ source唯一[review-ready](../../docs/evidence/wpf-mature-02-message-settings-co
 | --- | --- | --- |
 | 本轮工作段开始 | 2026-10-07T13:05:32Z | clock原始读数；非原task开工 |
 | 分支交付 | 2026-10-07T13:20:43.779344+00:00 | 本metadata提交后固定交付，不以commit时间猜历史 |
-| 独立审查 | NOT_REVIEWED | 待Mika固定source审 |
+| 独立审查 | 2026-10-07T13:23:26Z | Mika/root SOURCE_REVIEW_APPROVED |
 | 主线集成 | NOT_INTEGRATED | 仅本轮差量 |
 | 部署 | NOT_DEPLOYED | 未操作个人服务 |
 | 完整任务完成 | NOT_COMPLETED | 旧6项历史完成保留，新资格验证/接收开放 |
 
 
 2026-10-07T13:22:23.694329+00:00：Mika在原截止/累计120s不变下追加最后一次exact list；第五child exit0收集恰5case，0hooks/行为/PG/provider。原四attempt逐JSON对象与8d150完全相同，raw全部保留；全5child receipt前累计7.967196375015192s/raw79244B，非wholewall/峰值。最后TMP dev16777234 ino124159564同identity删除absent。已向Mika/db明确ordinary RETURN，0待launch；[最终追加证据](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/final-collect-addendum.json)。原review-ready 13bindings中只有local.py预算4→5按449单行替换，产品/测试/Vitest config始终aa741。此时停止本段全部工程写入，保claim等待Mika独立source审及后续实际入口准备。
+
+## 本轮专库入口准备
+
+2026-10-07T13:24:55Z 开始独立15min source-only段，截止13:39:55Z；0工程child/PG/服务/provider。Mika13:23:26正式源码及有限local批准已归档，[receipt](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/source-independent-review.json)。仅复用REMOVAL R2已审监督/资源与固定fixture，准备新namespace/绑定；未生成admission或占用heavy。当前ordinary留给S01；不重复types/list。

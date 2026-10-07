@@ -1,0 +1,24 @@
+{
+  "startedAt": "2026-10-07T13:24:55Z",
+  "deadline": "2026-10-07T13:39:55Z",
+  "scope": "Source/metadata only operator package",
+  "engineeringChildren": 0,
+  "PG": "NOT_OPEN",
+  "sourceMetadataBytesMax": 2097152,
+  "donorCommit": "8060fdbf7c60df430ad10eac39e99ef8db3e8dfc",
+  "donorCaller": "docs/evidence/x01-removal-references/pg-r2-once.py",
+  "callerLiteralAdaptations": {
+    "Single-suite X01 artifact association recipe.": "Five-case CORE message-settings claim recipe.",
+    "parents[3]": "parents[4]",
+    "docs/evidence/x01-removal-references": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility",
+    "removal-references-pg-run-r2": "message-settings-claim-pg-run-r1",
+    "pg-r2-input.json": "pg-input.json",
+    "pg-r2-manifest.json": "pg-manifest.json",
+    "claim-v1.json": "claim-receipt.json",
+    "X01_REMOVAL_REFERENCES_PG": "M02_SETTINGS_CLAIM_PG",
+    "codex/plugin-removal-references": "codex/claude-settings-claim-eligibility",
+    "apps/server/src/plugin-runtime/removal-references-pg.test.ts": "apps/server/src/execution-profiles/message-settings-claim-pg.test.ts",
+    "len(actual) == 1": "len(actual) == 5",
+    "tests['numPassedTests'] == 1": "tests['numPassedTests'] == 5"
+  }
+}
