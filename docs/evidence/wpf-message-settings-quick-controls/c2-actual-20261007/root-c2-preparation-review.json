@@ -1,0 +1,63 @@
+{
+  "reviewer": "/root independent read-only",
+  "at": "2026-10-07T02:32:15.559502+00:00",
+  "decision": "APPROVED_SCOPED_STATIC_C2_PREPARATION_NOT_RUN",
+  "head": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2",
+  "productTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "packet": "/private/tmp/msgquick-checks-c2",
+  "files": {
+    "run.py": {
+      "bytes": 19440,
+      "sha256": "1d9680c22726bf49ffe2568bf30a055fe9a2e8b0ce45de3caccfbd6023ba6f75"
+    },
+    "binding.json": {
+      "bytes": 54410,
+      "sha256": "1e774431a24d7d9413277fc653e2d8132d96f67d6f01146c04fcfe528e789459"
+    },
+    "manifest.json": {
+      "bytes": 2198,
+      "sha256": "4ee180998c983a5e63c5dfa4cbdf41d6fcf58b7103f7e9fa88517f9dd3504425"
+    },
+    "sandbox.sb": {
+      "bytes": 303,
+      "sha256": "c4a4fac211fa1a8c4ec756ced53eba956804d0f59c64055412c06f6a86fe7c4d"
+    },
+    "steps.mjs": {
+      "bytes": 1669,
+      "sha256": "ab0d4a4ca6cffd88ad08250014698f6a33591d56e069d9cfd30adbda0833fe5b"
+    },
+    "vitest.config.mjs": {
+      "bytes": 4021,
+      "sha256": "7e267987659abacf3eec08542c1b67237e0bb76e19f097a9cd1705d87cc3f316"
+    }
+  },
+  "checks": {
+    "sourceAndDependencyPins": 118,
+    "externalPinsIncludingNode": 59,
+    "preparedFiles": 5,
+    "priorFiles": 47,
+    "priorLogicalBytes": 492987,
+    "errors": []
+  },
+  "acceptedDelta": [
+    "Single already tracked fixed HEAD contract input was materialized by original Execution Lead; its 2388-byte hash is included. No product version change.",
+    "Exact late c1 spending 1875 ms; c2 hard 28125 ms includes 5000 ms cleanup, child work deadline 23125 ms. Cumulative acceptance must remain <=30000 ms using the latest terminal observation.",
+    "Previously retained 47 packet/outer files (492987 logical bytes) are immutable hash inputs and counted against the same 2 MiB retained budget.",
+    "Only owned c2 paths replace c1 literals in sandbox/config/commands; no new write or network permission. Strict noEmit then exact one-file 26 tests remain unchanged."
+  ],
+  "mandatoryActualAcceptance": {
+    "contract": "msgquick-terminal-v1-external-exit-required",
+    "externalActualExitCode": 0,
+    "stdout": "Exactly one complete terminal-seal JSON line, state PASS/declaredExitCode0/stoppingfalse; binding/result/budget/step hashes must match actual retained bytes. Missing/truncated/multiple terminal lines reject.",
+    "sealedFiles": "Result PASS, empty errors/cleanup.errors, groupAbsent/scratchAbsent true, EOF and droppedBytes0; budget complete/PASS and same elapsed/cumulative; two child steps exact strict-noEmit/direct exit0/no signal/error; actual one-file 26 passed names.",
+    "time": "Original cumulative <=30000ms: previous1875 + actual terminal afterFinalWritesElapsedMs, as well as sealed budget. C2 hard28.125s includes5s cleanup; external actual exit mandatory.",
+    "lateInterruption": "After the declared cooperative-handler boundary, durable PASS is only a candidate. Nonzero/missing actual outer exit invalidates it; no through-exit signal atomicity claim."
+  },
+  "notGranted": [
+    "No runtime launch, new gate or reservation. Manager must coordinate actual local slot and fresh source/claim/resource admission.",
+    "No b1 browser launch, native Chrome boundary approval, full App/Send/Queue/Recovery hookup or provider acceptance.",
+    "Existing pins verified read-only; full transitive runtime closure remains subject to actual controlled checks."
+  ],
+  "scope": "Reviewed c1-to-c2 executable delta and fixed existing terminal contract, not a fresh general supervisor audit. Preflight/late signal boundaries remain explicitly limited by trusted outer exit acceptance.",
+  "cleanCode": "Names/budget arithmetic/unchanged worker and actual failure preservation checked; no unrelated refactor or test rerun."
+}

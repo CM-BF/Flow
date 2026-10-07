@@ -1,10 +1,10 @@
 # WPF-MESSAGESETTINGS02 独立审查
 
-状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 02:28:12 UTC。
+状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 03:14:34 UTC。
 
 - 当前 Target：fe6ece131c489c79cf531a184e4cf51209f9c4a0；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。root 已完成限定源码复审：APPROVED_SCOPED_SOURCE_ONLY；完整行为不由此通过。
 - 历史已审 Target：35bbe76faa2128d5c1d00711fb2be3b23d54fc4f，root/peer 结论 REQUEST_CHANGES_SCOPED_VALIDATION_GAP。唯一 MSGQUICK-R3 / P2 是验收覆盖缺口，不是已证明产品错误。
-- Scope：Picker 与三项 test/fixture/browser；catalog/selection/public/旧 Picker 行为保护。首次 c1 strict FAILED；direct/browser NOT_RUN，实际失败限定独审见下。
+- Scope：Picker 与三项 test/fixture/browser；catalog/selection/public/旧 Picker 行为保护。c1历史strict FAILED保留；当前c2 strict/26direct PASS，browser NOT_RUN，实际范围独审见当前结论。
 
 ## 历史源码与准备审查（以下 NOT_RUN 按当时事实保留）
 
@@ -32,7 +32,7 @@ R3：fixture 增加明确的 profile21 会话授权，使用现 HTTP 分页和�
 
 精确packet为 `/private/tmp/msgquick-checks-c1`，binding 在此metadata最终固定后再重绑HEAD；源码/config与外部输入hash见其manifest。默认PREPARED，types/direct/browser全NOT_RUN。源审不冒MATURE02或真实App接线完成。
 
-## 当前静态准备批准与后置浏览器
+## 历史静态准备批准与后置浏览器
 
 [root c1 final](../../docs/evidence/wpf-message-settings-quick-controls/root-c1-final-preparation-review.json)批准终态修复，仅静态准备；c1实际types/direct26仍NOT_RUN。四源不变。独立浏览器 `/private/tmp/msgquick-b1` 复用方法、全新任务/claim/0累计绑定，真实CSS+6组场景+2PNG，nativeChromeBoundaryApproval 与 typesDirectEvidence 均 null，PREPARED/无gate。须先c1真实exit+seal/结果被接收，再新Chrome边界与fresh准入；旧Settings01四项PASS/预算/边界不继承。
 
@@ -46,10 +46,16 @@ Portable review：**APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN / 0 blocking**�
 
 [root dc67 原件](../../docs/evidence/wpf-message-settings-quick-controls/root-dc67-portable-preparation-review.json)、[peer失败路径原件](../../docs/evidence/wpf-message-settings-quick-controls/peer-dc67-portable-failure-review.md)已原样归档。独审只读核117输入/9candidate/7prepared/4fe6/26names与两本地包manifest；没有执行types/direct/browser。当前外层审查结论覆盖固定dc67；候选目录README及原manifest的NOT_STARTED保留其送审时历史字节，不改已审候选。运行仍需本机资源和独立准入，remote未启用、外层隔离与真实cleanup责任仍归未来CI owner。
 
-## 当前实际检查限定独审 2026-10-07 02:28:12 UTC
+## 历史首次实际检查限定独审 2026-10-07 02:28:12 UTC
 
 [root 原件](../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/root-actual-review.json)：ACCEPT_FAILED_C1_EVIDENCE_INPUT_PROVISIONING_BLOCKED。非产品approval。实际执行HEAD60ffa/产品fe6；外层exit1、唯一FAILED seal及四hash相符，strict exit2，direct/browser未运行；own PGID/scratch清理完成。
 
 具体输入为 fixed HEAD 已有但磁盘未物化的 `packages/contracts/src/goal-plan-confirmation.ts`（2388B、index S）。不改公共契约、不抹失败，原Lead处理provision后再安排新准入。计时采用更晚terminal1875ms/余28125ms，原result1874/28126不改；完整[原件索引](../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/archive-manifest.json)。产品/portable源与本地b1准备不变，无新增运行。
 
 后续供给事实 2026-10-07 02:29:30 UTC：原Lead已仅物化固定HEAD缺件，2388B/hash匹配、347既有产品输入不变；[原件](../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/source-provision-receipt.json)。本次失败不改判，direct/browser仍未运行；后继仅可准备剩余28125ms包，不自动重试。
+
+## 当前实际检查限定接受 2026-10-07 03:14:34 UTC
+
+[root原件](../../docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/root-actual-review.json)：ACCEPTED_SCOPED_LOCAL_ACTUAL_RESULTS、errors[]。产品fe6/运行HEAD5e481；本次strict0与26/26单文件direct0、精确names、0skip/todo/fail。outer实际exit0、唯一PASS terminalseal与4hash一致，EOF0drop，两个owned groups和scratch清理完成。晚终态3244ms+旧1875=累计5119、余24881。
+
+仅Quick事实应用本片；同段Recovery/D04不继承。旧c1 FAILED及原供给缺口完整保留。browser6组/2PNG、App/Send/Queue/Recovery、main/部署均未验；因此顶层仍UNKNOWN，不冒完整feature批准。portable准备仍NOT_RUN，未启用远程。

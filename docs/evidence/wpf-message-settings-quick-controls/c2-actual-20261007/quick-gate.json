@@ -1,0 +1,33 @@
+{
+  "allowRun": true,
+  "singleUse": true,
+  "taskId": "WPF-MESSAGESETTINGS02",
+  "mode": "types-and-direct",
+  "expiresAt": "2026-10-07T03:06:06.484194+00:00",
+  "bindingSha256": "9a200ad44280ad679491c812745366de6c1098b8c4b9e8f31569d4c82b1b2ac3",
+  "runnerSha256": "1d9680c22726bf49ffe2568bf30a055fe9a2e8b0ce45de3caccfbd6023ba6f75",
+  "sandboxSha256": "c4a4fac211fa1a8c4ec756ced53eba956804d0f59c64055412c06f6a86fe7c4d",
+  "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "claim": {
+    "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+    "version": 1,
+    "scopeCount": 6,
+    "worker": "w01_owner"
+  },
+  "overlaps": [],
+  "limits": {
+    "totalSeconds": 28.125,
+    "cleanupReserveSeconds": 5,
+    "startFreeBytes": 1090519040,
+    "stopFreeBytes": 1082130432,
+    "tmpBytes": 8388608,
+    "rawBytes": 2097152,
+    "structuredReportBytes": 262144,
+    "finalReportReserveBytes": 65536,
+    "pollSeconds": 0.25
+  },
+  "segment": "/private/tmp/web-local-segment-tvp1bssw/segment.json",
+  "source": "GO/Lead bounded local team segment; fresh manager pins/claim/resource receipt",
+  "sourceHead": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2",
+  "previousRuntimeMs": 1875
+}

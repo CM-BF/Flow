@@ -1,0 +1,140 @@
+{
+  "state": "COMPLETED",
+  "observedAt": "2026-10-07T03:02:29.214509+00:00",
+  "manager": "d01_owner",
+  "model": "gpt-6-astra ultra",
+  "maximumSegmentMs": 90000,
+  "orderedChecks": [
+    "quick-c2",
+    "recovery-serialization",
+    "d04-pure-git"
+  ],
+  "freeBytes": 26546688000,
+  "pins": [
+    {
+      "kind": "quick",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+      "head": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2",
+      "branch": "codex/web-message-settings-quick-controls",
+      "pinsVerified": 239,
+      "binding": "9a200ad44280ad679491c812745366de6c1098b8c4b9e8f31569d4c82b1b2ac3",
+      "manifest": "6df7b16e3ffcaeb6435b4e416172a4eaf3556fccbc28bb20735adbd26060b2db",
+      "review": "8165f50dab432765d33a8ea02f519953b2e4afadc04237fbdfc577d5bbec0c89",
+      "dirty": false
+    },
+    {
+      "kind": "recovery",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+      "head": "79fe564f009d5b78be0878b669a77068089c77ba",
+      "branch": "codex/web-conversation-recovery",
+      "pinsVerified": 50,
+      "binding": "c621fb17f782a85c6769af9c1100c58690340acf62ee69e43fcea08dfc79b0f3",
+      "manifest": "f39cd5292ed76623ec8958fc9633e07e4123016deb5f4f38f41f6b8f14990d84",
+      "review": "c77704015d9b29fb7b0942fa704e708c8f4e6c38225dbd59e07f21036ebb5a12",
+      "dirty": false
+    },
+    {
+      "kind": "d04",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-coordination",
+      "head": "7d9544fb041504a76988c5a53c9f1944ac5f19d9",
+      "branch": "codex/dashboard-coordination",
+      "sourcePins": {
+        "apps/execution-dashboard/test/coordination.test.mjs": "5b4c27e630532b641a62cedc178309a48c429bcf91cc960e5b51e718ab24d20e",
+        "apps/execution-dashboard/test/owned-worktrees.mjs": "4a5e3e0556bec05339c4fd1ec4c1934bb1de5b3852b67e351a7ec29c3155c79a",
+        "apps/execution-dashboard/test/owned-worktrees.test.mjs": "fe89bf5d55a91bf54adac869b3f219ce4b00df339f41fe275391641f59573ea6"
+      },
+      "dirty": false
+    }
+  ],
+  "claimReceipt": "ledger.json",
+  "maxTeamConcurrentSegments": 1,
+  "pgChromeProviderInstall": false,
+  "authority": "GO/Lead incoming team-local bounded-segment policy, relayed by root; original item budgets retained",
+  "skills": {
+    "discovery": "local find-skills, no install",
+    "cleanCode": "exact input binding, no product changes, original failure/cleanup and immutable previous packets retained"
+  },
+  "startedAt": "2026-10-07T03:03:06.486401+00:00",
+  "outcomes": [
+    {
+      "name": "quick",
+      "command": [
+        "python3",
+        "/private/tmp/msgquick-checks-c2/run.py",
+        "--gate",
+        "/private/tmp/web-local-segment-tvp1bssw/quick-gate.json"
+      ],
+      "startedAt": "2026-10-07T03:03:06.486570+00:00",
+      "endedAt": "2026-10-07T03:03:09.802703+00:00",
+      "pid": 36648,
+      "pgid": 36648,
+      "actualExit": 0,
+      "wallMs": 3316.209459095262,
+      "groupAbsent": true,
+      "bothEOF": true,
+      "capturedBytes": {
+        "stdout": 677,
+        "stderr": 0
+      },
+      "droppedBytes": 0,
+      "outerInterrupted": false,
+      "stdoutSha256": "2a2cc693840b774bfd1ceaea4825c828fdfa8121a40d32a6ff45f63453c3f597",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "recovery",
+      "command": [
+        "python3",
+        "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/run.py",
+        "--gate",
+        "/private/tmp/web-local-segment-tvp1bssw/recovery-gate.json"
+      ],
+      "startedAt": "2026-10-07T03:03:09.803532+00:00",
+      "endedAt": "2026-10-07T03:03:10.126732+00:00",
+      "pid": 39784,
+      "pgid": 39784,
+      "actualExit": 0,
+      "wallMs": 323.2180839404464,
+      "groupAbsent": true,
+      "bothEOF": true,
+      "capturedBytes": {
+        "stdout": 394,
+        "stderr": 0
+      },
+      "droppedBytes": 0,
+      "outerInterrupted": false,
+      "stdoutSha256": "e5258347efc5539f776c0634ab889d4315a99455e3ae24ed7ac7f5603eec516e",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "d04",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--test",
+        "apps/execution-dashboard/test/owned-worktrees.test.mjs"
+      ],
+      "startedAt": "2026-10-07T03:03:10.127590+00:00",
+      "endedAt": "2026-10-07T03:03:14.159509+00:00",
+      "pid": 39969,
+      "pgid": 39969,
+      "actualExit": 0,
+      "wallMs": 4032.013582997024,
+      "groupAbsent": true,
+      "bothEOF": true,
+      "capturedBytes": {
+        "stdout": 656,
+        "stderr": 0
+      },
+      "droppedBytes": 0,
+      "outerInterrupted": false,
+      "stdoutSha256": "767ccc440ff2510145c3577ab7a1a100f54ba920ae2917d706d12bec2d4e60ac",
+      "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ownedTmpRemaining": []
+    }
+  ],
+  "active": null,
+  "endedAt": "2026-10-07T03:03:14.160191+00:00",
+  "wallMs": 7673.935333034024,
+  "allOwnCleanupComplete": true,
+  "note": "Result success determined separately for each step; no retry; no browser/PG/provider/install"
+}
