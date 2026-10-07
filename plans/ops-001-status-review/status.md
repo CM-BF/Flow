@@ -491,3 +491,7 @@ SVC06-05 唯一准备 owner 为 assignment_review，候选见 [固定更新方�
 2026-10-07T08:47:12.759951+00:00：沿用户后到的明确规则恢复每Lead 1+3、三队上限12；旧10保留为历史，实际threadlimit/ready限制、2PG/总1浏览器/三队local及unknown边界均不变。O16已独审接main并归还范围，SVC09源码已审接main；真实固定artifact/兼容/个人更新尚待。资源计量由原native_center_owner进入OPS-METER01独立准备，Web当前冻结运行不改；无新增模型或为凑agent数启动空任务。
 
 2026-10-07T08:57:27.268283+00:00：受控接收LAZY/X01后继续固定后台b2b产物准备，assignment_review负责；native_center_owner实施OPS-METER01，20个局部合成例已通过、独审与真实caller迁移待办。本组组合检查3/3及strict0已完成并归还local，0PG/provider。O16 native后继具体阶段化准备缺口已写原FLOW计划，不以未获费用批准掩盖尚缺实现；当前不抢发布/计量槽。
+
+2026-10-07T09:01:39.222Z：SVC06固定b2b已审artifact实际开跑，唯一operator assignment_review，原420s+收尾/新增2,317,352,960B，fresh23,912,873,984B通过3,927,965,696B。Mika08:58:37已归还PG；本段不新开PG/安装/共享服务，Web独立0PGbrowser73MiB在既有512MiB协调余量内，各队local不变。actual-first/reservation为实际开始来源；无provider/个人服务。结果未出，不冒构建或部署完成。
+
+2026-10-07T09:02:10.132Z：SVC06本段结束立即归还，实际30,975ms/exit0，组43300 absent/双EOF/无signals，最低free23,463,669,760B。新b2b固定产物c2c695e7与33SQL/内部加载通过，结果独审和真实host/网页配置兼容仍后继；0PG/provider/个人。09:03已受控发布看板193来源；没有为metadata继续占运行窗口。
