@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T20:18:31.692646+00:00",
+  "mainBase": "18bf17ea26cacb4a12cd89f962b455f6688f729d",
+  "preimages": [
+    {
+      "path": "apps/server/src/main.ts",
+      "commit": "18bf17ea26cacb4a12cd89f962b455f6688f729d",
+      "bytes": 3223,
+      "sha256": "6b7b456a2512c6ffb55e2822d534ba4033c08bb249953c067cb0706a127c7116",
+      "ownEqualsMain": true
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "commit": "18bf17ea26cacb4a12cd89f962b455f6688f729d",
+      "bytes": 15452,
+      "sha256": "bbb02feaea68447ba91672955e846c0682a9542a9720c8b8cf786ca34694b2c0",
+      "ownEqualsMain": true
+    }
+  ],
+  "avPendingPatch": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/startup-observer-av-index.patch",
+    "bytes": 958,
+    "sha256": "4d8e613b342d2be9b2413e07f47a9eac775b146338e158130914fdcfa43cd692",
+    "state": "reference only; not applied; unintegrated AV source ea3c4599"
+  },
+  "sharedEntryState": "claim v8 acquired before edit"
+}

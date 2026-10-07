@@ -10,7 +10,7 @@ export const STARTUP_MIGRATIONS = [
   'migrateGoalPlanConfirmations', 'migrateClaudeMessageSettings', 'migrateNativeActivityBodies',
 ] as const;
 const phases = [...STARTUP_MIGRATIONS, 'main', 'configuration', 'authentication', 'cors',
-  'scheduler', 'routes', 'ready-conversation', 'ready-goal', 'listen'] as const;
+  'scheduler', 'package-worker', 'routes', 'ready-conversation', 'ready-goal', 'listen'] as const;
 export type StartupPhase = typeof phases[number];
 export type StartupEvent = { phase: StartupPhase; event: 'point' | 'enter' | 'settled' | 'error'; error?: unknown };
 export type StartupObserver = (event: StartupEvent) => void;

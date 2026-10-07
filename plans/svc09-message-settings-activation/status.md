@@ -12,7 +12,7 @@
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 当前产出 | 启动阶段记录接口与中心限定开关已完成并通过直接检查；等待独立审查，真实入口尚未接通。 |
 | 下一可用交付 | 接通实际 server 初始化阶段；共享 main/index 由 Lead 协调交权后实施。 |
 | 当前阻塞 | ACTIVE: 默认中心启动仍未确认监听归属，底层原因未知；完整三角色、双槽与混合任务验收仍开放。 |
@@ -24,8 +24,8 @@
 | 实现目标 | 233ef91d369e7d7f58bdec8a34f523ed27017639 |
 | 工作分支状态 | in-progress（五 leaf 已固定待审，完整 SVC09A 仍开放） |
 | 工作树dirty状态 | 产品停止写入；仅本轮 own 记录封存 |
-| 实现范围 | apps/server/src/startup-progress.ts；apps/server/src/startup-progress.test.ts；apps/server/src/startup-progress-consumer.test.ts；tools/personal-preview/environment.mjs；tools/personal-preview/environment.test.mjs；docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation |
-| Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v7；19:42:10.691Z 原子追加五 leaf；[回执](../../docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-amend-receipt.json) |
+| 实现范围 | apps/server/src/main.ts；apps/server/src/index.ts；apps/server/src/startup-progress.ts；apps/server/src/startup-progress.test.ts；apps/server/src/startup-progress-consumer.test.ts；tools/personal-preview/environment.mjs；tools/personal-preview/environment.test.mjs；docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation |
+| Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v8；20:13:35.898Z追加 main/index；[回执](../../docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-entry-amend-receipt.json) |
 | Review | 新五 leaf NOT_REVIEWED；默认实际结果 APPROVED_LIMITED/main4aba9a705，唯一 docs/evidence/i02/svc09a-default-host-result-review.json；历史四源/loader/准备批准不扩大。 |
 | 检查状态 | 本片14/14新直接例（12 Vitest +2环境）与 focused types0；1193ms/raw3042B，3组absent/双EOF，exact空scratchremoved；初EPERM unknown保留，未跑PG/服务。 |
 | 验证限制 | R3双槽生命周期与分别领取有原件；最终SQL/完整mixed结论未通过。observed model/account/native资格、真实App/个人仍未验。 |
@@ -144,3 +144,7 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T19:41:05Z 开始本段只读/设计恢复；19:42:10.691Z 原子 amend v7 后开始五 leaf 实施。采用已确认 76ad actual-server producer 设计；main/index 仍由其他 owner 持有，不写、不宣称接通。局部检查预算累计120s、scratch8MiB/raw128KiB、0PG/服务/provider/个人；尚未运行检查。旧2515与全部FAIL/KEEP不变。find-skills 采用现有本地 brainstorming/codebase-design/clean-code，无安装；小 Interface 隐藏有界流与安全字段，观察失败不接管应用 primary/cleanup。
 
 2026-10-07T20:01:17.185365Z：五 leaf source233ef91d 已固定，14/14新直接例与focused types0。原始1193ms/3042B、3组最终两次absent/双EOF、无signals及初EPERM如实；exact空scratch已清理。见[startup Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-interface.md)与[单份结果](../../docs/evidence/svc09/message-settings-activation/host-integration/startup-progress-result.json)。当前停写交审；main/index仍待合法交权，模块绿不代表真实producer/host通过。clean-code本安全点核命名/职责/安全字段/primary与cleanup分离，无新增监督器或原件复制；默认实际结果仅保真已main4aba9a705，根因仍UNKNOWN。
+
+## 真实入口接线片
+
+2026-10-07T20:13:35.898Z：fresh全账本无新holder后amend原claim v8，追加apps/server/src/main.ts与index.ts；两入口在本树与fixed main18bf17ea完全相同，按此当前前像接线，未覆盖其他产品。五leaf 233ef已获限定APPROVED并main18bf17ea（I02 svc09a-startup-progress-review.json）。AV ea3c未集成958B patch仅引用，不提前应用。正在用可选observer包住原初始化await、首轮onReady扫描和listen，旧关闭/信号/10s宿主规则不改；当前0PG/服务/build/provider/个人。

@@ -30,9 +30,15 @@ tsc = Path('/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bi
 commands = [(str(NODE), str(vitest), 'run', '--config', str(HERE / 'startup-progress-vitest.config.mjs'), '--reporter=verbose'),
  (str(NODE), '--test', '--test-reporter=spec', '--test-name-pattern=startup progress', str(ROOT / 'tools/personal-preview/environment.test.mjs')),
  (str(NODE), str(tsc), '-p', str(HERE / 'startup-progress-tsconfig.json'))]
+if sys.argv[1] != '01':
+    commands = [(str(NODE), '--experimental-vm-modules', '--test', '--test-reporter=spec', str(HERE / 'startup-entry-consumer.test.mjs')),
+      (str(NODE), str(tsc), '-p', str(HERE / 'startup-entry-tsconfig.json'))]
 paths = [ROOT / ('apps/server/src/' + p) for p in ('startup-progress.ts', 'startup-progress.test.ts', 'startup-progress-consumer.test.ts')]
 paths += [ROOT / ('tools/personal-preview/' + p) for p in ('environment.mjs', 'environment.test.mjs', 'browser-session-configuration.mjs', 'startup-diagnostics.mjs')]
 paths += [Path(__file__), HERE / 'startup-progress-vitest.config.mjs', HERE / 'startup-progress-tsconfig.json', SUPERVISOR, NODE, Path(sys.executable).resolve(), vitest, tsc, ROOT / 'node_modules/vitest/package.json']
+if sys.argv[1] != '01':
+    paths += [ROOT / 'apps/server/src/main.ts', ROOT / 'apps/server/src/index.ts', HERE / 'startup-entry-consumer.test.mjs', HERE / 'startup-entry-tsconfig.json', HERE / 'startup-progress-entry-inputs.json', HERE / 'startup-progress-entry-links.json', tsc.parent.parent / 'lib/typescript.js']
+    paths += [Path('/Users/citrine/Projects/AgentHarness/Flow') / p for p in ('apps/server/src/main.ts', 'apps/server/src/index.ts')]
 save('reservation.json', {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'inputs': [pin(p) for p in paths], 'commands': commands,
  'cumulativeSecondsCap': 120, 'priorMs': used_ms, 'rawBytesCap': 131072, 'priorRawBytes': used_raw, 'scratchBytesCap': 8388608,
  'freeBytes': free, 'scratch': str(scratch), 'dev': before.st_dev, 'ino': before.st_ino, 'pg': 0, 'provider': 0})
