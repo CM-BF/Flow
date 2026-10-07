@@ -133,3 +133,7 @@ Target `3cb0be8f57467a0ed4703119e68a96cd8f8e560e`，对b2b四产品差量；prev
 ## 2026-10-07 10:07:16 UTC — 启动诊断唯一批准转录
 
 Execution Lead独立APPROVED source3cb0be8f57467a0ed4703119e68a96cd8f8e560e / deliveryfc02bc6176d59d8d06f1c9d1acc9fffa4f885975，0P1/P2；[原件](../../docs/evidence/svc06/startup-diagnostics/independent-review.json)43+5绑定与原raw核同，0重测。本批准仅源码/局部，r1真实FAIL不改。后继6c固定source由Lead提供，新的build-once差量准备待审，不继承旧artifact结果。
+
+## 2026-10-07 10:14:09 UTC — 诊断产物准备批准与实际结果待审
+
+Execution Lead原件[APPROVED_PREPARATION_ONLY](../../docs/evidence/svc06/update-diagnostics-candidate/independent-review.json)绑定269034/047363，109固定输入/记录及3入口差量已核、0P1/P2。本次10:12:06.871Z→10:12:40.145Z实际产物7d1/6c构建与内部加载通过，监督33332ms/exit0/最终absent/双EOF；[原始结果](../../docs/evidence/svc06/update-diagnostics-candidate/RESULT.md)待独立结果review，不继承准备批准为运行批准。旧r1真实FAIL/未观测runner exit保持；无host/PG/provider/个人操作。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 10:07:16 UTC；诊断独审批准，新固定版本产物入口已备，未运行 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 10:14:09 UTC；新诊断产物实际构建/import完成，窗口已归还，结果待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,21 +13,21 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 产品source3cb0be8f / deliveryfc02bc61已独审；Lead固定runtime source6c0fdcda8858aac33489c48c1948e902dd6a3d7e（父b2b仅四源变更）；own后继docs准备中 |
-| 工作树dirty状态 | 产品停写；仅新diagnostics artifact候选/入口/绑定及own metadata |
+| 工作基线 / HEAD | 产品3cb/fc02已独审；新入口269034/delivery047363，固定runtime6c，结果记录正在提交 |
+| 工作树dirty状态 | 产品与运行入口停写；仅本次结果/own metadata收口 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
-| 检查状态 | 诊断19 distinct分轮已独审APPROVED；2777ms/4252B/5组清理不重跑；新6c完整build/import NOT_RUN，旧c2c/r1原件保持 |
+| 检查状态 | 诊断19 distinct局部已审不重跑；新6c实际build/import exit0，监督33332ms/owned absent/双EOF；旧c2c/r1原件保持 |
 | 已集成main状态 / HEAD | main/origin 8c2ae379 已接r1失败/cleanup47 own文件及I02复核（Lead回执）；旧c2c build/import批准保持，新诊断尚未集成 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 启动诊断已审通过；已准备带诊断的新版本构建入口，旧启动失败记录完整保留。 |
-| 下一可用交付 | 运行固定新版本构建，再依据新诊断继续宿主验证。 |
-| 当前阻塞 | ACTIVE: 新产物入口待收审及共享构建窗口；真实宿主和配置验收仍未完成。 |
+| 当前产出 | 带启动诊断的新产物已构建并完成内部加载检查，构建资源已归还。 |
+| 下一可用交付 | 审查本次结果，并用新产物准备能保留最早启动错误的宿主验证。 |
+| 当前阻塞 | ACTIVE: 本次构建结果待独审；真实宿主与配置验收仍未完成。 |
 | 需用户决定 | NONE |
-| Review | source3cb/fc02获Execution Lead唯一APPROVED，0P1/P2；新build-once入口固定待只读核差量 |
+| Review | 源码3cb与入口269034已独审APPROVED；本次实际结果待唯一独审 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v8，原own两scope加6个启动诊断精确产品literal；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -37,7 +37,7 @@
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
 | SVC06-03 | in-progress | assignment_review | 真实完整artifact构建/import已审；新root三host/拒读实验已限定批准并main，默认部署链不扩大 |
 | SVC06-04 | in-progress | assignment_review / 独立reviewer | 局部检查/构建已审；一次真实host结果已限定批准并main，refresh/resume/旧数据后继open |
-| SVC06-05 | in-progress | assignment_review | update-diagnostics-candidate/candidate.md；固定6c新诊断产物未运行，三App配置兼容/个人更新仍未验 |
+| SVC06-05 | in-progress | assignment_review | update-diagnostics-candidate/candidate.md；固定6c新诊断产物实际build/import完成待结果独审，三App配置兼容/个人更新仍未验 |
 
 ## 依赖闭包后继（2026-10-06 14:41 UTC）
 
@@ -253,4 +253,12 @@ source `3cb0be8f57467a0ed4703119e68a96cd8f8e560e`，claim v8在先fresh原子领
 | 等待ID | 开始 | 结束 | 类别 | 说明 | 来源 |
 | --- | --- | --- | --- | --- | --- |
 | SVC06-WAIT-DIAGNOSTICS-REVIEW | UNKNOWN | 2026-10-07T10:03:27.064114Z | 审查 | 四源小片独审已完成；精确提交交接时标无单独原件，起点不推算 | startup-diagnostics/independent-review.json |
-| SVC06-WAIT-DIAGNOSTICS-BUILD | 2026-10-07T10:07:16.216390+00:00 | UNKNOWN | 资源 | 当前新入口就绪，等Lead实际共享窗口，未预占；首次记时不冒任务开工 | update-diagnostics-candidate/preparation-checks.json |
+| SVC06-WAIT-DIAGNOSTICS-BUILD | 2026-10-07T10:07:16.216390+00:00 | 2026-10-07T10:12:06.871Z | 资源 | 已接实际窗口并启动；首次记时不冒任务开工 | update-diagnostics-candidate/preparation-checks.json |
+
+## 诊断产物唯一构建窗口已接收
+
+2026-10-07T10:12:01.699357+00:00：Lead明确Web/Mika已归还，fresh claim v8有效、109绑定全符、新namespace不存在、卷可用23205769216B ≥ 3,927,965,696B；即将一次执行既有监督入口。实际开工以actual-first/reservation.json为准，不把本观察时间当启动。0PG/host/provider/个人服务。原c2c/r1保持。见[执行前置](../../docs/evidence/svc06/update-diagnostics-candidate/execution-preflight.json)及[独审](../../docs/evidence/svc06/update-diagnostics-candidate/independent-review.json)。
+
+## 2026-10-07 10:14:09 UTC — 新诊断产物构建结束
+
+[唯一结果](../../docs/evidence/svc06/update-diagnostics-candidate/RESULT.md)：2026-10-07T10:12:06.871Z→2026-10-07T10:12:40.145Z，artifact7d1a3928/source6c，33SQL与内部加载通过；outer33332ms/exit0、组62953最终absent/双EOF，无signals。初unknown/EPERM保留，raw15077B；原r1失败、c2c与新根原件不变。实际窗口已归还，结果待独审；仅准备下一新host诊断，不运行PG/个人或重复build。03/04/05仍open。

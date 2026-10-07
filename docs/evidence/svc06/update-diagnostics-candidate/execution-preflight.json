@@ -1,0 +1,661 @@
+{
+  "observedAt": "2026-10-07T10:12:01.699357+00:00",
+  "source": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "delivery": "04736306a278bf2ec684113d6d59832c2592b6c6",
+  "preparationManifestSha256": "6629cc239e113a402d6477359ec64152a65d16f0c2cc1bf1a5f5f989f71c1c0e",
+  "bindingCounts": {
+    "sourceBindings": 72,
+    "runtimeBindings": 19,
+    "records": 15,
+    "reusedMethods": 3
+  },
+  "comparisons": 127,
+  "allMatched": true,
+  "freshFreeBytes": 23205769216,
+  "minimumFreeBytes": 3927965696,
+  "destinationsAbsent": [
+    "build-once/actual-first",
+    "build-once/outer-report.json"
+  ],
+  "claimObservation": "2026-10-07T10:09:53.435Z",
+  "claimVersion": 8,
+  "window": "Lead ACTUAL_WINDOW_GO received; Web10:03 returned; Mika0PG/Chrome/heavy; native local10:08:13 returned; no subsequent holder message",
+  "noPersonalOrPGOrProvider": true,
+  "checks": [
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "apps/cli/package.json",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "apps/execution-dashboard/package.json",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "apps/runner/package.json",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "apps/runner/src/runtime.ts",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "apps/server/package.json",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "apps/server/src/index.ts",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "apps/tui/package.json",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "apps/web/package.json",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "package.json",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/client/package.json",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/contracts/package.json",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/interaction/package.json",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/plugin-runtime/package.json",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/protocols/package.json",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/002-reconciliation.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/004-projects.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/005-protocol-dispatch.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/006-goals.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/007-conversations.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/008-plugins.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/009-assistant-messages.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/010-execution-profiles.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/011-conversation-queue.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/012-goal-tool-runs.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/013-goal-native-mode.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/014-goal-graph-proposals.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/015-knowledge-sources.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/016-runner-maintenance.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/017-goal-graph-runs.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/018-conversation-context.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/019-goal-graph-native-mode.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/020-native-activity.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/021-goal-context.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/022-assistant-stream.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/023-plugin-package-fetches.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/024-active-steering.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/025-native-harness-sources.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/026-attachment-resources.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/027-context-observation-history.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/028-browser-sessions.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/029-plugin-material-installs.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/030-goal-progression.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/031-goal-plan-confirmations.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/032-claude-message-settings.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/033-native-activity-bodies.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/034-plugin-runtime.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "packages/storage/migrations/035-codex-conversations.sql",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "pnpm-lock.yaml",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "pnpm-workspace.yaml",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/backend-release/clone-store.py",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/browser-session-configuration.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/cli.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/environment.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/preview.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/preview.test.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/static-web.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/web-release.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tools/personal-preview/web-retention-policy.mjs",
+      "matched": true
+    },
+    {
+      "kind": "sourceBindings-fixed",
+      "path": "tsconfig.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "docs/evidence/svc06/startup-diagnostics/independent-review.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "docs/evidence/svc06/startup-diagnostics/independent-review.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/README.md",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/README.md",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/supervise.py",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/supervise.py",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/cache-index-refresh.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/cache-index-refresh.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/candidate.md",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/candidate.md",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/claim-observation.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/claim-observation.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/preparation-checks.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/preparation-checks.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/source-delta.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/source-delta.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/status-check.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/status-check.json",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "plans/svc06-backend-release/plan.md",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "plans/svc06-backend-release/plan.md",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "plans/svc06-backend-release/review.md",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "plans/svc06-backend-release/review.md",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-fixed",
+      "path": "plans/svc06-backend-release/status.md",
+      "matched": true
+    },
+    {
+      "kind": "recordBindings-current",
+      "path": "plans/svc06-backend-release/status.md",
+      "matched": true
+    },
+    {
+      "kind": "reusedMethodBindings-fixed",
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/entry.mjs",
+      "matched": true
+    },
+    {
+      "kind": "reusedMethodBindings-current",
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/entry.mjs",
+      "matched": true
+    },
+    {
+      "kind": "reusedMethodBindings-fixed",
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/supervise.py",
+      "matched": true
+    },
+    {
+      "kind": "reusedMethodBindings-current",
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/supervise.py",
+      "matched": true
+    },
+    {
+      "kind": "reusedMethodBindings-fixed",
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/runtime-proof.mjs",
+      "matched": true
+    },
+    {
+      "kind": "reusedMethodBindings-current",
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/runtime-proof.mjs",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/index.mjs",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/build.mjs",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/files.mjs",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/node-identity.mjs",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/runtime-installation.mjs",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/dependency-plan.mjs",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/installation-view.mjs",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/cache-plan.mjs",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/clone-store.py",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/package.json",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.js",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.d.ts",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/pnpm-lock.yaml",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/opt/homebrew/lib/node_modules/pnpm/bin/pnpm.cjs",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/opt/homebrew/lib/node_modules/pnpm/dist/pnpm.cjs",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/opt/homebrew/lib/node_modules/pnpm/package.json",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "matched": true
+    },
+    {
+      "kind": "runtime-current",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "matched": true
+    }
+  ]
+}
