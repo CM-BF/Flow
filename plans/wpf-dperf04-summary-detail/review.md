@@ -1,6 +1,6 @@
 # WPF-DPERF04 独立审查
 
-**状态：APPROVED（固定composite源码、既有实际验收与精确档案闭包；main/部署另列未完成）**
+**状态：APPROVED（固定composite源码、既有实际验收与精确档案闭包；main已接收；部署限定事实另列）**
 
 Review target commit：bc6126278c13e8c355d704dd3c371417331026b2
 
@@ -10,7 +10,7 @@ Scope：apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/sr
 
 [root最终独审原件](../../docs/evidence/wpf-dperf04/reentry-20261007/root-final-composite-review.json)由独立reviewer对固定bc612明确APPROVED、0blocking。16产品/保护输入逐字98baf，生产保持52cdf；14归档.py/.sb/.diff原件精确纳入scope，其余85个变化被原proof规则识别为metadata。78index条目核同；3个parent-budget保持当时快照，不能因共享路径随后合法推进误判篡改。既有8份source/actual独审链完整核同，没有新产品测试或补写旧结果。
 
-检查PASSED与审查APPROVED均限定此精确30范围；当前main NOT_INTEGRATED，实际部署、真实registry性能、公共helper scratch/第二caller未验。Claim仍v4原11，不因审查scope30扩大writer权限。后续正常metadata归档不改变固定review target。原manifest保留当时待审语境，当前结论以本页及最终原件为准。
+检查PASSED与审查APPROVED均限定此精确30范围；当前main 1a6f82a136a1e43213cc58adce96fa92b26ae38b已接收（[独立核验](../../docs/evidence/wpf-dperf04/main-close-20261007/root-main-intake-review.json)），原operator发布和summary194观察已记录；真实详情整页/生产性能、公共helper scratch/第二caller未验。Claim仍v4原11，不因审查scope30扩大writer权限。后续正常metadata归档不改变固定review target。原manifest保留当时待审语境，当前结论以本页及最终原件为准。
 
 ## 当前已完成独立审查
 
@@ -22,7 +22,7 @@ Scope：apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/sr
 - [时间正文一组/双图](../../docs/evidence/wpf-dperf04/reentry-20261007/root-timing-visual-actual-review.json)：可见heading、2h、UTC、尚未完成与来源；不重复计算原5组。
 - [首页窄light一组/新图](../../docs/evidence/wpf-dperf04/reentry-20261007/root-links-visual-actual-review.json)：单topbar可读，旧重复带原图与未知成因不改；不冒首屏展示全部关系。
 
-当前各限定审查0新增blocking。新phase20383/未用24617及旧40551/19449均CLOSED，完整EOF/0drop/所有owned清理；未用额度不触发新检查。尚未验证：真实registry185/生产速度、main/部署，以及公共helper scratch/第二caller迁移。执行索引与具体来源见[phase](../../docs/evidence/wpf-dperf04/reentry-20261007/followup-phase-completion.json)。
+当前各限定审查0新增blocking。新phase20383/未用24617及旧40551/19449均CLOSED，完整EOF/0drop/所有owned清理；未用额度不触发新检查。尚未验证：真实详情整页/生产速度，以及公共helper scratch/第二caller迁移。main接收和operator摘要部署观察见当前收据。执行索引与具体来源见[phase](../../docs/evidence/wpf-dperf04/reentry-20261007/followup-phase-completion.json)。
 
 ## 历史45f8及544c限定审查
 

@@ -1,6 +1,6 @@
 # WPF-DPERF04 首页轻摘要与按需核验
 
-状态：in-progress。创建：2026-10-06 16:12:35 UTC；更新：2026-10-07 09:30:00 UTC。owner w01_owner / gpt-6-astra / ultra。直接父[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)，co-lead Web /root。遵循[模块规则](../../AGENTS.md#modular-design)。
+状态：completed（限定本片段）。创建：2026-10-06 16:12:35 UTC；更新：2026-10-07T10:19:14.492580+00:00。owner w01_owner / gpt-6-astra / ultra。直接父[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)，co-lead Web /root。遵循[模块规则](../../AGENTS.md#modular-design)。
 
 ## 用户结果与范围
 
@@ -14,7 +14,7 @@
 
 - [x] DPERF04-01 实现3读接口及真实首页消费者，保持旧snapshot与全部信息可达。
 - [x] DPERF04-02 有界直接行为和后置浏览器验证、固定来源及原始证据。
-- [ ] DPERF04-03 独立review修复、主线接收与必要部署观察。
+- [x] DPERF04-03 独立review修复、主线接收与必要部署观察。
 - [x] DPERF04-04 保留原窄屏light异常截图，补独立真实截图及对应DOM/viewport观察，并在双主题滚动到真实任务时间正文。
 
 ## 验证与资源
@@ -28,4 +28,4 @@
 直接消费者语义、异步代际/未知、原snapshot兼容及单task freshproof有证据；固定commit独审，main与真实服务部署分开记录。无测试时保持NOT_RUN；不能从源结构推生产延迟。唯一进度见[status](status.md)，独审见[review](review.md)。
 
 
-当前交接：bc612精确30路径源码/actual/非metadata档案闭包独立APPROVED，main NOT_INTEGRATED/部署未发生；正常待主线接收不作为blocker，claim v4原11保持、收口后停写。
+当前交付：bc612精确30路径独立APPROVED，main 1a6f82a136a1e43213cc58adce96fa92b26ae38b已接收，16输入逐字一致。原operator发布PID81154并观察summary194；详情整页/生产性能未验，不冒全UI。见[接收证据](../../docs/evidence/wpf-dperf04/main-close-20261007/owner-main-observation.json)。本次只metadata收口、全11停写，实际释放以D04回执为准。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07 09:36:59 UTC |
+| 最近更新时间 | 2026-10-07T10:19:14.492580+00:00 |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
@@ -11,28 +11,37 @@
 | Branch | codex/dashboard-summary-detail |
 | 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / bc6126278c13e8c355d704dd3c371417331026b2（最终composite已审；后续仅metadata） |
 | 工作树dirty状态 | 16输入及14非metadata档案均固定bc612；本次仅2个own records范围归档/校准，提交后核clean |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 工作分支状态 | completed |
+| 本片段交付阶段 | delivered |
 | 检查状态 | PASSED bc6126278c13e8c355d704dd3c371417331026b2：既有组合Node10/10归cfd5；summary9、关联6、Timing5、ACCESS5及视觉1+1/五新PNG由root精确闭包核验接受，未重跑；旧红保留，两个browser phase CLOSED |
-| 已集成main状态 / HEAD | NOT_INTEGRATED |
+| 已集成main状态 / HEAD | INTEGRATED 1a6f82a136a1e43213cc58adce96fa92b26ae38b；[原主线收据](../../docs/evidence/wpf-dperf04/main-close-20261007/main-intake.json) |
 | 实现目标 | bc6126278c13e8c355d704dd3c371417331026b2 |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs, apps/execution-dashboard/test/task-timing.browser.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/parent.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/sandbox.sb, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/source.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-access/supervisor.py, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/measure.py, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/parent.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/sandbox.sb, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/source.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-linksvisual/supervisor.py, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/measure.py, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/parent.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/sandbox.sb, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/source.diff, docs/evidence/wpf-dperf04/reentry-20261007/browser-followup-timingvisual/supervisor.py |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 轻摘要/按需详情与ACCESS/TIMING组合源码、实际功能/视觉及精确30路径档案闭包已独立APPROVED；main未集成 |
-| 下一可用交付 | 原Execution Lead基于固定bc612与精确接收包完成当前main接收；部署与真实registry性能另记 |
+| 当前产出 | 首页轻摘要与按需详情已进入主线，原服务已发布并观察到194个来源摘要；详情整页与生产延迟未另测 |
+| 下一可用交付 | 本片段已交付；完整详情现场观察与生产性能如需由后继范围承接 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED：target bc6126278c13e8c355d704dd3c371417331026b2 / exact30，0blocking；main NOT_INTEGRATED，部署未发生 |
+| Review | [review.md](review.md)，APPROVED：target bc6126278c13e8c355d704dd3c371417331026b2 / exact30，0blocking；main已接收；operator已发布并观察摘要，未冒全UI/性能 |
+
+| 开工 UTC | UNKNOWN |
+| 完成 UTC | 2026-10-07T10:19:14.492580+00:00 |
+| 时间来源 | [本次实际核齐结束](../../docs/evidence/wpf-dperf04/main-close-20261007/owner-main-observation.json)；历史创建时间不当开工 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | DPERF04-01 | completed | w01_owner | [interface](../../docs/evidence/wpf-dperf04/interface.md)、[当前限定源码复审](review.md) |
 | DPERF04-02 | completed | w01_owner | [当前组合Node10PASS](../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/acceptance.json)，旧8PASS及首失败保留；summary9+关联6、Timing5、ACCESS5及必要视觉均限定独审接受 |
-| DPERF04-03 | pending | w01_owner | 固定composite独审APPROVED；待主线接收与必要部署观察 |
+| DPERF04-03 | completed | w01_owner | [主线接收与限定部署来源](../../docs/evidence/wpf-dperf04/main-close-20261007/owner-main-observation.json)，fixedcomposite独审APPROVED；未新增工程检查 |
 | DPERF04-04 | completed | w01_owner | [窄屏light截图补证](../../docs/evidence/wpf-dperf04/reentry-20261007/narrow-light-evidence-gap.json)：原图/未知原因保留；新light首页与真实时间视口双图已独立接受，见后继phase记录 |
 
-## 来源与架构影响
+
+## 当前收口与权属
+
+main固定16输入与本树及bc612逐字一致，检查PASSED/ReviewAPPROVED/exact30均保原target。全部11scope完成并停写；实际claim释放结果以D04账本/管理回执为准，释放后不补写。原raw、首红、异常图与两个CLOSED预算原样不变；公共helper仍仅PARTIAL_RETAINED_ADOPTION。
+
+## 历史来源与架构影响
 
 本人live核b554ddb6 v1 active/九scope/固定c837，原样[receipt](../../docs/evidence/wpf-dperf04/claim-receipt.json)。首canonical后源码直接实施，不等待登记。新增summary/detail/assignment只读边界；架构固定快照后继由原owner统一维护，本片保护架构文件。旧全snapshot与D04原子写入口不改。
 

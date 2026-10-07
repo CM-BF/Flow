@@ -57,3 +57,6 @@ wrapper只接精确parent端点、停止spawn/killChrome；fixture与check bodie
 ## 2026-10-06 21:11:54 UTC 544c 独审 metadata seal
 
 只原样归档root544c源码复审/边界重绑原件，按当前事实校准UNKNOWN与运行待验，避免保留“当前待复审”的旧结论。修前/修后candidate准备字节和历史报告保留；不改七源、worker、原Node/raw，不复跑root AST或产品检查。最终TMP HEAD/boundary重绑属于独立准备artifact，保持PREPARED/no gate，管理核其哈希；状态记录不循环追写。
+
+## 2026-10-07T10:19:14.492580+00:00 主线收口
+复用已安装find-skills/clean-code；仅metadata，对照固定receipt/root审逐字核16源码，保bc612 exact30，未重跑。修正当前main未集成和TODO03旧声明；历史证据保留。时间只记本次核齐完成，未知开工不推算；发布摘要观察与未验详情/性能分开。范围全11STOP后正常CASrelease，回执在TMP由管理归档，释放后不补写。
