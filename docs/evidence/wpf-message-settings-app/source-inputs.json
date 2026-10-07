@@ -14,5 +14,12 @@
   },
   "sourceOperatorAuthority": "d01 current dispatch; main e0295747200d7f0616779a712fdfd06691c3708f docs/quality/local-validation.md#source-operator",
   "budgetSnapshot": "Historical initial provision (usedMs 0); actual cumulative record is local-20261007/segment.json",
-  "currentLocalRecord": "local-20261007/segment.json"
+  "currentLocalRecord": "mounted-local-20261007/segment.json",
+  "closedLocal60": {
+    "spentMs": 53579,
+    "unusedMs": 6421,
+    "closed": true
+  },
+  "workerArgsSeparateLocal": "worker-args-local-20261007/manifest.json",
+  "browserCandidate": "browser-phase.json"
 }

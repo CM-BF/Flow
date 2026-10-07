@@ -1,0 +1,31 @@
+{
+  "state": "PREPARED_NOT_RUN_NO_GATE_ENV",
+  "id": "MSG03-BROWSER-20261007",
+  "budgetMs": 90000,
+  "spentMs": 0,
+  "remainingMs": 90000,
+  "perAttemptMaxMs": 60000,
+  "perAttemptMinMs": 45000,
+  "cleanupMs": 30000,
+  "charge": "ceil(max(actual outer elapsed, late parent elapsed, serialized parent elapsed))",
+  "noCreditsFrom": "MSG03 local60s, Recovery all phases, Quick leaf",
+  "selectionOrder": [
+    {
+      "journey": "message-settings-material-return",
+      "requiredGroups": [
+        "cookieRead",
+        "messageSettingsMaterialReturn"
+      ]
+    },
+    {
+      "journey": "message-settings-app",
+      "requiredGroups": [
+        "cookieRead",
+        "messageSettingsApp"
+      ]
+    }
+  ],
+  "oneAttemptOneDBChrome": true,
+  "secondAttempt": "Only if manager continuous boundary granted, actual cleanup complete, current cumulative remaining >=45000; never reset90000. Failed incomplete parent budget requires exact independently accepted reconciliation or STOP.",
+  "outerRaw": "Store actual start/PID, per-stream bounded stdout/stderr/drop counts/EOF, actual exit and monotonic outerelapsed, final exact PID/PGID+sandbox+env facts; keep primary failure and cleanup secondary separate."
+}

@@ -1,0 +1,17 @@
+import assert from 'node:assert/strict';
+import {readFileSync} from 'node:fs'; import {spawnSync} from 'node:child_process'; import {fileURLToPath} from 'node:url';
+const base='/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app';
+const source=readFileSync(base+'/apps/web/test/conversation-recovery.browser.ts','utf8');
+const expression=source.match(/const workerArgs = (\[[^;]+);/)[1];
+const child=fileURLToPath(new URL('./child.mjs',import.meta.url));
+const actualArgs=Function('fileURLToPath','moduleURL','return '+expression.replace('import.meta.url','moduleURL'))(()=>child,import.meta.url);
+assert.deepEqual(actualArgs,['--import','tsx',child,'--worker']);
+assert.ok(source.includes('spawn(process.execPath, workerArgs,'));
+assert.ok(source.includes('inheritsNodeArguments: false'));assert.ok(source.includes('delete childEnv.FLOW_RECOVERY_TEST_ADMIN'));
+assert.equal(process.env.MSG03_FAKE_SENTINEL,'fixture-only-nonsecret');
+const environment={...process.env};delete environment.MSG03_FAKE_SENTINEL;
+const old=spawnSync(process.execPath,[...process.execArgv,child,'--worker'],{cwd:base,env:environment,encoding:'utf8',timeout:1500,maxBuffer:65536});
+assert.equal(old.status,0);const oldResult=JSON.parse(old.stdout);assert.equal(oldResult.sentinelPresent,true);
+const fixed=spawnSync(process.execPath,actualArgs,{cwd:base,env:environment,encoding:'utf8',timeout:1500,maxBuffer:65536});
+assert.equal(fixed.status,0);const fixedResult=JSON.parse(fixed.stdout);assert.equal(fixedResult.sentinelPresent,false);assert.deepEqual(fixedResult.argv,['--import','tsx']);
+console.log(JSON.stringify({checks:5,oldNegative:true,newWhitelistPass:true,oldPid:oldResult.pid,newPid:fixedResult.pid,oldExit:old.status,newExit:fixed.status,sourceArgs:actualArgs.map(v=>v===child?'<test-child>':v),noRealEnvRead:true}));

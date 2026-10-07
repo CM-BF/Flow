@@ -1,5 +1,5 @@
-# WPF-MESSAGESETTINGS03
+# WPF-MESSAGESETTINGS03 证据入口
 
-原 MATURE02 TODO11 的真实 App 接线，权威入口为 [feature-review-entry](feature-review-entry.md)。[source pins](source-manifest.json)、[local actual](local-summary.json)、[plan](../../../plans/wpf-message-settings-app/plan.md)、[status](../../../plans/wpf-message-settings-app/status.md)。
+[唯一当前review入口](feature-review-entry.md)、[17源manifest](source-manifest.json)、[browser候选](browser-preparation.md)、[phase](browser-phase.json)。当前组合c4bee，9c46源码/local限定批准；worker白名单与caller集中边界审待，两个browser NOT_RUN、非main/个人部署。原37166/9fc及局部首红原件保留，旧Recovery不写。
 
-当前源码固定、11 定向和 affected noEmit 通过；37166独审两P2已闭合，9fc0源码与局部实证独审通过，mounted App/browser/主线/部署未验。已有 leaf 和旧 Recovery 证据不替代本片。
+[原25 local raw](local-20261007/manifest.json)、[mounted准备13 raw](mounted-local-20261007/manifest.json)、[假sentinel新10s raw](worker-args-local-20261007/manifest.json)。既有60s spent53579封账，新10s实耗219ms；不转browser90s。

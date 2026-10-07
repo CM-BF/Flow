@@ -1,0 +1,120 @@
+{
+  "kind": "root-independent-msg03-mounted-preparation-source-review",
+  "reviewedAt": "2026-10-07T13:09:39.971699+00:00",
+  "reviewer": "/root / gpt-6-astra ultra",
+  "target": "9c46a87fe1b8bcd49f01317d39f765655cc39d13",
+  "previousApprovedSource": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+  "decision": "APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION",
+  "findings": [],
+  "changedSource": [
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sha256": "9462307df41ad9910a5fbc846003f20e8c378350e6f8e4cbdd601c7b3b96d0e7"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "6add10c12cbe16875874a1a324b7bf879a84c0171490f71c62f0fdf528be6786"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "70352835fc823c5a7f7b58873b1f01b8717b2f74b085338ec41424a5cff51798"
+    }
+  ],
+  "sourceFindingsResolved": [
+    {
+      "change": "Explicit preparation cancel",
+      "evidence": "AttachmentComposer subscribes to the installed public composer submission boolean. The action is exposed only with recovery, current material preparation and an actual submission. The click rechecks both states before public composer.cancel, preventing stale preparation UI from falling through to running-message cancel."
+    },
+    {
+      "change": "Release failed material hold only after successful complete restore",
+      "evidence": "ConversationThread awaits restorePreparedDraft, then calls the existing binding.discardFailedSubmission before clearing pending. The fixed binding method rejects preparing and clears only restoredDraftIds/submission; it does not remove input material. Exceptions retain the hold. Later loop iterations and the success branch exercise capture with new material identities."
+    },
+    {
+      "change": "Actual material await and late cancellation witness",
+      "evidence": "The test-only Vite transform wraps the actual original adapter add/send, preserves options and yields original attachments. It validates the actual send result first, then delays that real result. Cancel records abort without immediately settling; only after B survives does the test release the old promise and verify no old business POST. Failure, cancel and success remain three bounded observation rows."
+    },
+    {
+      "change": "Complete B material identity, not count alone",
+      "evidence": "The final test captures id/name/reference from original adapter.add requires-action and caps the read-only witness at eight small rows. Post-cancel Recovery data must match this ordered identity and post-late-settlement complete B data must remain equal. No React private state, draft injection or business HTTP mock is added."
+    }
+  ],
+  "preparedAcceptance": [
+    "Real official Add Attachment upload, actual App/Thread/core and actual isolated HTTP center; synthetic capability publisher is still fixture-only.",
+    "Settings-only B and same-text/file B reject old A restore. Explicit clear/omit then restores exact original A settings and complete ordered Recovery attachments once.",
+    "Held region disappears after successful restore; removing restored chips reaches an empty recorded draft with zero resource DELETE, and next different material captures can proceed.",
+    "Two disjoint selectors, each seeding once, share a separately identified proposed 90000ms browser phase. Each candidate is <=60000ms with 30000ms cleanup and prior actual charge is checked. This source ceiling is not a runtime grant.",
+    "Original message-settings-app candidate still covers HTTP Send/Queue frozen keys/settings, durable recovery, keyboard P01 and actual UI light/dark 390px captures; none has executed in this review."
+  ],
+  "localEvidence": {
+    "directory": "/private/tmp/msg03-local-e4z906p6",
+    "segmentLimitMs": 60000,
+    "spentMs": 53579,
+    "remainingMs": 6421,
+    "checks": [
+      {
+        "label": "probe-2",
+        "startedAt": "2026-10-07T13:06:03.672990+00:00",
+        "actualExit": 0,
+        "pid": 36653,
+        "groupAbsent": true,
+        "scratchAbsent": true,
+        "elapsedMs": 137.81716697849333,
+        "chargeMs": 138,
+        "errors": [],
+        "signals": [],
+        "all17SourcePinsMatchTarget": true
+      },
+      {
+        "label": "types-8",
+        "startedAt": "2026-10-07T13:08:14.802356+00:00",
+        "actualExit": 0,
+        "pid": 19145,
+        "groupAbsent": true,
+        "scratchAbsent": true,
+        "elapsedMs": 5795.088334009051,
+        "chargeMs": 5796,
+        "errors": [],
+        "signals": [],
+        "all17SourcePinsMatchTarget": true
+      }
+    ],
+    "probe": {
+      "state": "PASS",
+      "checks": [
+        "actual source failure rejects and retires timer",
+        "cancel ignores abort until explicit late settlement, bounded timer remains",
+        "success and exact three-row cap/dispose",
+        "dispose rejects pending and removes timer/listener",
+        "controlled deadline callback rejects even ignore-abort cancel",
+        "actual ready identity witness is bounded to eight records"
+      ],
+      "sourceSha256": "70352835fc823c5a7f7b58873b1f01b8717b2f74b085338ec41424a5cff51798",
+      "probeSha256": "6dd3519b82526af58bfa3e891fffa84775d34e766747a1c21d1a2aab029b6c31",
+      "scope": "actual fixture JS extracted, controlled clock; not mounted or browser"
+    },
+    "typeScope": "Existing explicit App.tsx, conversation-recovery.test.ts, conversation-recovery.browser.ts and vite client declarations plus transitive affected types; not whole-Web or a browser result.",
+    "observations": "Root read actual segment/logs/check script/type config and compared all 17 source hashes with target. Existing recorded group/scratch absence accepted as operator evidence; root did not rerun checks or probe processes.",
+    "logs": "Regular files, not a dual-EOF claim. Previous failures and the earlier 11 selected/57 unselected result remain bound to their earlier scopes."
+  },
+  "withdrawnReviewHypothesis": {
+    "text": "Initial concern that exact File attachment count could match an uploading chip was withdrawn after reading fixed attachment.aui.tsx: uploading/error append an aria-label suffix. This is not a demonstrated bug and must not be recorded as one. Explicit success Send-enabled check is an ordinary precondition."
+  },
+  "limits": [
+    "No PG, Chrome, provider, product execution or project modification by root.",
+    "The new mounted browser journeys and screenshots are NOT_RUN.",
+    "Outer execution packet, exact imports/native boundary and actual resource availability require their separate final readiness review.",
+    "No full feature, main integration, personal deployment or real account capability acceptance.",
+    "No new blanket same-id dedup guarantee; assertions address reachable original adapter identities only."
+  ],
+  "skills": [
+    "find-skills local-first method",
+    "assistant-ui local skill and installed-core public API evidence, official llms.txt consulted",
+    "clean-code review of narrow responsibility, reuse, explicit failure and bounded test state"
+  ],
+  "metadataDeltaCount": 49
+}

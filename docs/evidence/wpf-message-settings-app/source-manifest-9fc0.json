@@ -1,6 +1,6 @@
 {
   "base": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
-  "implementationTarget": "c4bee7707a273e98ba7b07dc061ec13e78094c2f",
+  "implementationTarget": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
   "scopeClaim": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
   "scopeVersion": 2,
   "sourceCount": 17,
@@ -21,9 +21,9 @@
     },
     {
       "path": "apps/web/src/conversations/ConversationThread.tsx",
-      "bytes": 29561,
-      "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a",
-      "blob": "cc15de4054c82c8f33218635b64a412a50c0bf92"
+      "bytes": 29338,
+      "sha256": "85f8c353a4bcfbe71bd547106a1b961adfe4e58caa73f742a9b6c568c10c3b72",
+      "blob": "76a96866ac9fe9af4b81df46b780ed9d348cd295"
     },
     {
       "path": "apps/web/src/conversations/outbox.ts",
@@ -75,9 +75,9 @@
     },
     {
       "path": "apps/web/src/plugin-integration/react.tsx",
-      "bytes": 24400,
-      "sha256": "9462307df41ad9910a5fbc846003f20e8c378350e6f8e4cbdd601c7b3b96d0e7",
-      "blob": "6a430efb4c2d48dfffad3a3a50cf69a288d4cc5e"
+      "bytes": 23900,
+      "sha256": "06d8a6bc76693c04989eb2c87acd69760782a353dce9d0b3581bad2fe35655e9",
+      "blob": "d1825901d32becf431d767a20ffce9be1102c48c"
     },
     {
       "path": "apps/web/src/plugin-integration/session.ts",
@@ -93,15 +93,15 @@
     },
     {
       "path": "apps/web/test/conversation-recovery.browser.ts",
-      "bytes": 138732,
-      "sha256": "2512ff98f6aa5fea612d5bbc06f867d10c38c6b847a152b07e990e596c79123a",
-      "blob": "5fcd857b89ff58ac9bc6deb83f9ae0abdbe36147"
+      "bytes": 127124,
+      "sha256": "e93f097810c5036b0d85d090c3190cd0ffbf83d4b92db589dfc73ed445c6a087",
+      "blob": "01f4c32ab0601fab0b645e6601aeed0e21629582"
     },
     {
       "path": "apps/web/test/conversation-recovery.fixture.ts",
-      "bytes": 54875,
-      "sha256": "70352835fc823c5a7f7b58873b1f01b8717b2f74b085338ec41424a5cff51798",
-      "blob": "ec3ca37d5241137788277c56292934dc2b030638"
+      "bytes": 50710,
+      "sha256": "43888810f832f7e7efa58b15659a28533c7ccac6a8872621f841b63d146e3eca",
+      "blob": "ef7ba4456328ca23d3f70407064859968a7cefde"
     },
     {
       "path": "apps/web/test/conversation-recovery.test.ts",
@@ -113,7 +113,7 @@
   "numstat": [
     "37\t9\tapps/web/src/App.tsx",
     "9\t1\tapps/web/src/conversation-context/receipts.ts",
-    "79\t29\tapps/web/src/conversations/ConversationThread.tsx",
+    "76\t29\tapps/web/src/conversations/ConversationThread.tsx",
     "3\t1\tapps/web/src/conversations/outbox.ts",
     "3\t2\tapps/web/src/conversations/projection.ts",
     "3\t0\tapps/web/src/conversations/queue/ConversationQueue.tsx",
@@ -122,11 +122,11 @@
     "29\t7\tapps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
     "12\t0\tapps/web/src/execution-profiles/execution-profiles.css",
     "240\t0\tapps/web/src/plugin-integration/message-settings.tsx",
-    "6\t2\tapps/web/src/plugin-integration/react.tsx",
+    "3\t2\tapps/web/src/plugin-integration/react.tsx",
     "18\t1\tapps/web/src/plugin-integration/session.ts",
     "5\t2\tapps/web/src/recovery/binding.tsx",
-    "241\t12\tapps/web/test/conversation-recovery.browser.ts",
-    "94\t4\tapps/web/test/conversation-recovery.fixture.ts",
+    "117\t6\tapps/web/test/conversation-recovery.browser.ts",
+    "25\t2\tapps/web/test/conversation-recovery.fixture.ts",
     "152\t1\tapps/web/test/conversation-recovery.test.ts"
   ]
 }

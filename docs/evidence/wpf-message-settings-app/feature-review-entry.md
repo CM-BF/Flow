@@ -1,47 +1,35 @@
 # MSG03 固定源码独审入口
 
-固定实现 **9fc0fb8a48cb15ae35b4529013f25362d11a1efc**；base `c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50`。独立 WT `web-message-settings-app` / `codex/web-message-settings-app`。原 MATURE02 TODO11 的唯一实施子片，非新增大任务。当前 **APPROVED_SOURCE_AND_SCOPED_LOCAL / browser NOT_RUN / NOT_INTEGRATED**。
+当前实现 **c4bee7707a273e98ba7b07dc061ec13e78094c2f**；base `c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50`。WT `web-message-settings-app` / `codex/web-message-settings-app`；claim7e3f v2 exact19（14产品+3test+2metadata）。原MATURE02 TODO11子片，不是新大task。
 
-[17 源 manifest](source-manifest.json)（14 产品 + 3 test）与 [v2 scope receipt](scope-amend-receipt.json) 唯一绑定；19 literal 含两 metadata，新增的 AttachmentComposer 私有 typed callbacks 已原子 amend。原 Recovery/ACCESS 证据与写权不复用。
+固定9c46的 [root集中审](source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings；随后c4bee只修worker参数白名单，独立假sentinel通过、caller边界待集中审。完整feature **IN_PROGRESS / 两browser NOT_RUN / NOT_INTEGRATED**。[17源码manifest](source-manifest.json)、[浏览器准备](browser-preparation.md) 和 [独立阶段记录](browser-phase.json) 固定当前范围。最终metadata HEAD不反套过去执行头。
 
-## 用户结果和所有权
+App每view唯一C与opaque ownership；P01现action/context私有port复用Picker同步CAS。发送前冻结A并同步换新稿ownership，官方text通知不抹C；原key/body的Send与Queue收据、历史turn和Queueitem各自显示frozen requested。Recovery完整draft含可选设置、兼容旧缺省、非法值拒绝，沿原revision/CAS和namespace/lifetime。材料await期间同正文/settings-only B独立，旧opening不写新B。
 
-App 每 view 持有唯一 C 与 opaque draft ownership。P01 现有 action/context slot 调用私有 port；Picker 只保本次 opening 的临时选择和目录，不复制 applied C。首 render context 直接来自当次 viewId，关闭回焦点保留合法 opening invoker；隐藏/撤权/namespace generation/plugin activation 过期不能 Apply 或抢焦点。关闭目录读有自己的 AbortController。
+官方core失败/取消自动return由公开ComposerRuntime订阅/getState/setText/remove隔离：保heldA与当前B，不改core、不新增editable store/FSM。显式Restore使用本次点击时的完整目的地lease，不永久绑send旧generation；B非空拒绝，用户清空/omit后可完整恢复A。每await复查。**本次新产品修复**是在完整A恢复成功后才discardFailedSubmission，释放旧failed hold且不删当前draft文件，使不同IDs下一准备合法；冲突/部分恢复不清A。真实取消入口只在binding preparing且官方submission存在时显示，点击时再次双guard再公开cancel；默认consumer无入口变化。
 
-官方 composer.send 前先校验并深冻结 A，随后同步更新下一稿 ownership（值可保留）。Send/Queue 收据带 A 的完整 requested，重试仅使用原 key/body；同正文 B 不能因旧 ACK 被清空。历史 turn、Queue item/receipt 展示自己的 frozen requested，与 conversation requested/effective 区别。
+## 实际局部与证据归因
 
-Recovery CompleteDraft 保存可选 settings，旧缺省仍兼容，非法设置拒绝而不是静默 omit。恢复沿既有 full revision/CAS、namespace/lifetime 权威；Settings-only B 同样是非空草稿。
+旧[25原件](local-20261007/manifest.json)/[9fc批准](source-research/root-msg03-9fc0-source-local-review-20261007.json)保留：direct6十一PASS/57未选，真实installed core与生产guard/helper受控检查；不外推完整mountedThread。37166两P2历史审查与所有首红原件不改。
 
-官方 core 的材料失败/取消会先把 A 自动放回 composer。生产保护只用公开 ComposerRuntime 的 subscribe/getState/setText/remove；用已持有 A 的 identity 观察 submission→return，保存当前 B 原正文/文件集合，隔离自动归还。附件 binding 仍持有 A，不新建 editable C store。显式完整恢复检查 B 的 ownership、generation、intent/profile/knowledge、正文/文件，并在每个 await 后复核；冲突保留 held A，由用户处理，不覆盖 B。AttachmentComposer 的可选 restore/discard 回调只由本宿主提供，默认消费者不变。没有修改 core、shared attachment controller、contracts/client/server。
+本次[13新增原件](mounted-local-20261007/manifest.json)、[摘要](mounted-local-summary.json)、[终态](mounted-local-20261007/terminal.json)记录probe1/2与types6/7/8。最后probe2对**实际fixture String.raw**提取代码进行6项VM行为检查：失败、取消忽略abort后迟到settle、成功、3hold/8identity界限、dispose及timer；不代浏览器。types8明确files传递noEmit exit0，全部17源码hash=9c46；之后只有browser Node参数白名单3+/2-改变，独立假sentinel验证，非wholeWeb。此段实际累计 **53579/60000ms，余6421ms**；0network/PG/Chrome/provider，regular-file logs，不称双EOF。五个新PID/PGID fresh ESRCH、scratch absent；旧9fc局部历史保持。
 
-## 实际局部证据
+原floor提升前probe1/types6真实free已高于两线，未追改原记录；types7/probe2/types8用新6914834432线。local余量不作browser信用。当前没有活动检查。
 
-[单段记录](local-20261007/segment.json)、[25 原件 manifest](local-20261007/manifest.json)、[摘要](local-summary.json)、[exact terminal 观察](local-terminal-observation.json)。本段 60,000 ms，实际累计 **36,212 ms**，余 **23,788 ms**；TMP16MiB/raw2MiB、network denied、0 PG/Chrome/provider/install/build。
+## 两条 mounted 候选与真实边界
 
-- direct-6：11 passed，57 NOT_SELECTED，0 failed。真实私有 host/catalog/CAS、真实 outbox/Queue、真实 Journal+Projection deferred restore；installed core preparation failure/cancel 调用生产公开 API guard，使用受控 thread port。
-- types-5：明确 files 的 affected transitive noEmit，exit 0；不是 whole Web。全部17源码与该结果逐hash相同。新browser仅有独立MSG03 60s防御顶（不是实际授权）；synthetic model ID为合同允许的180字符，三者179字符前缀相同，仅末尾不同。
-- 首红 types-1（TMP types 解析）、types-2（两个类型不符）、direct-1（错把 restore 错误状态当 rejection）、direct-3（短命 scratch 扫描 ENOENT 导致父 FAIL/TERM）全部保留。direct-3 不因部分 JSON 无断言失败而改判通过。caller 修复仅对 scratch ENOENT 忽略，其他 IO 错误 fail closed。
-- 每个 Node 的 exit/group absence/scratch closure 原件保留；先9个、后2个 exact PID/PGID 再观察均 ESRCH。子日志是 regular files，不称双 EOF。简单 local caller 不声称覆盖 report 后的所有 late-signal 外层退出竞态；资源是逻辑轮询，非 OS 硬配额。
+`message-settings-material-return` = cookieRead + messageSettingsMaterialReturn。实际File upload→原adapter.add ready→原adapter.send验证后有界fixture-only await，官方core仍等材料而未onNew；并非HTTP ACK hold。failure/settings-only B、cancel/同正文B+真实文件，取消后旧promise实际settle，前后B完整持久data与真实id/name/ref一致、无旧A命令；显式清空/omit B后完整A准确恢复一次。恢复区消失、真实remove不DELETE中心资源、下一不同材料能继续准备；成功A期间B保留。最后同document切view使旧opening失效。
 
-## 真实 App 验收仍待
+`message-settings-app` = cookieRead + messageSettingsApp。保首mount P01、Apply/Cancel合法回焦点、reload/re-auth/显式nativeIDB restore零auto业务POST、原key/request A丢ACK重试、Queue B相对liveC、历史requested与真实theme390/180字符同前缀目录/每PNG≤512KiB。
 
-既有单文件父生命周期只允许新 `message-settings-app`（cookieRead + messageSettingsApp），输出仅本 evidence。原 Recovery selectors 保留作源码参考但新入口拒绝它们；旧预算/失败不转移。尚无 gate、adminenv、服务、PG 或 Chrome 运行。
+两个selector各独立markedDB/Chrome/public syntheticpublisher，**共享唯一90000ms**新phase，每attempt≤60000含30000cleanup、remaining<45000停。源内parent只准这两selector；旧Recovery选择保留参考却不可在新入口运行。每次保守ceil(max outer/late/serialized)扣账；不重置/不借Recovery/local。probe只fixture启动可达，≤3hold、每hold10s、≤8身份，每项≤1024chars，dispose/pagehide清timer/listener。B观测只读，不能造IDB或业务响应。
 
-新 fixture 用一个公开注册身份发布三条合法 tuple 并预建 pinned conversation，不启动 runner/heartbeat/claim/provider。待验源码包括：首 mount P01/Cancel/Apply 回焦点、settings-only draft reload/re-auth/显式恢复零额外 POST、实际 Send A 请求被暂停期间改 B 同正文、ACK 丢失原 key/body 重试、Queue B 对当前 C 独立、历史 requested、390 双主题长名与 Apply/Cancel 可达。网络路由暂停后继续原请求，不 mock 业务响应。
+配置连接保守14（8center+3boss+1fixture+1admin+1cleanupmarker），非实测峰值；一DB/Chrome，64MiB scratch，9MiB retained、启动<4/run reserve5，1GiBreserve只计一份；最新组合floor至少6953631744且实际更高值优先。真实启动仍需要经理共享资源交接/freshinputs/env/uniquegate。当前没有gate/adminenv/PG/Chrome预约。
 
-**限制必须保留：** 请求/ACK 暂停不是材料适配器 await；现有 11 direct 也不是 mounted ConversationThread。材料准备失败与取消在 mounted App 的完整 A/B 恢复交互、生命周期失效、真实屏幕/键盘仍需有意义直接消费者验证，不能用 leaf 六组或 controlled core 冒充。浏览器源是待审候选，不表示可直接运行或完整 feature 已通过。当前新入口 60s 仅防御上限，真正 browser 预算/组合资源/actor 准入由 co-lead 后续给定。
+## 未完成交付与质量
 
-## 独审重点
+源码和局部通过不等两条页面、视觉或主线；runtime/native动态闭包尚未实际，源packet待集中actor/native边界审。真实个人目录另依赖受信opt-in profile/runner发布turnSettings→Web/TUI目录→个人配置发布（原TODO08/11共享owner）；fixture synthetic目录不冒个人可用或provider有效。
 
-同步 freeze/detach；text 通知与 sole C 相互独立；同正文 settings-only B；官方 core failure/cancel return 以及显式恢复途中完整 lease；opening 与 return-focus 的当前可见授权；无 C 时 wire omit；完整 frozen requested 与历史/Queue；browser locator/真实前提、actor/runtime 与历史输出隔离。
+[clean-code](quality.md)：soleauthority、默认兼容、真实故障/重试、错误和cleanup分离。root撤回“exact File attachment未排uploading”的先前猜测（官方label已排除），不记为bug；本次仅有意义加强B完整身份和已有Send前置，无扩新场景/超时。
 
-技能和 clean-code：[质量记录](quality.md)。本次相对base的精确增删见source-manifest，不凭拆模块或测试数宣称性能改善。用户提供的真实服务/凭据/个人安装未触碰。
-
-## 固定37166独审修复
-
-[原独审CHANGES_REQUESTED](source-research/root-msg03-37166-source-review-20261007.json)保留。9fc0fb8修复5源94+/30-，其余12源相同；[9fc0独立复审](source-research/root-msg03-9fc0-source-local-review-20261007.json)已确认两P2 CLOSED，0 findings；仅source+scoped local接受。
-
-1. 原A恢复永久绑定send时ownership/generation的问题：现生产restorePreparedDraft使用**用户本次点击时**的空目的地授权和generation/ownership。非空B仍拒绝；清空正文/文件并明确omit C后可恢复A，控制profile/intent/knowledge须回原选择。当前mode/knowledge身份与临时composer订阅共同保护await期间变化/ABA。真实core failure/cancel两用例均接着调用此生产恢复函数，验证B拒绝、显式清空且generation变化后A文本/文件/C恢复且无发送。新增await期间B变化的回归拒绝旧continuation，保B不追加后续A文件。
-2. 双主题证据前提：真实Use theme按钮+html data-theme/computed colorScheme断言后截图；每张512KiB上限。合法180字符模型仅末尾差异，完整名称可展开。此为待browser实际验证源码，不声称已有图片。
-
-独立来源顺序：root先实读私有TMP direct6/types5/17pins并批准，owner随后原样归档。source+local批准不授权新运行，不表示 mounted App/视觉/主线已通过；完整 MSGAPP-05/06 继续开放。
+本批运行边界更正：worker不再继承Node execArgv中的父admin --env-file，固定tsx loader白名单；c4bee单行域差量由独立假sentinel新10s段实测old-negative/new-positive，exit0、charge219ms、双EOF及owned清理。原60s局部53579/6421未用封存不转credit。9c46 root8488批准保固定source/local范围；本新参数差量与具体outer capture待集中运行边界审，当前仍无PG/Chrome/gate/env。
