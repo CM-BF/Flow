@@ -1,0 +1,155 @@
+{
+  "extends": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@types"
+    ],
+    "baseUrl": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+    "paths": {
+      "zod": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/zod"
+      ],
+      "@playwright/test": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@playwright/test"
+      ],
+      "tailwind-merge": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/tailwind-merge"
+      ],
+      "ssri": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/ssri"
+      ],
+      "vitest": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/vitest"
+      ],
+      "@tailwindcss/vite": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@tailwindcss/vite"
+      ],
+      "remark-gfm": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/remark-gfm"
+      ],
+      "tsx": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/tsx"
+      ],
+      "typescript": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/typescript"
+      ],
+      "@assistant-ui/react-markdown": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@assistant-ui/react-markdown"
+      ],
+      "@assistant-ui/react": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@assistant-ui/react"
+      ],
+      "pacote": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/pacote"
+      ],
+      "lucide-react": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/lucide-react"
+      ],
+      "@vitejs/plugin-react": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@vitejs/plugin-react"
+      ],
+      "pg": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/pg"
+      ],
+      "radix-ui": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/radix-ui"
+      ],
+      "react-dom": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@types/react-dom/index.d.ts"
+      ],
+      "clsx": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/clsx"
+      ],
+      "vite": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/vite"
+      ],
+      "class-variance-authority": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/class-variance-authority"
+      ],
+      "tw-animate-css": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/tw-animate-css"
+      ],
+      "@radix-ui/react-tooltip": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@radix-ui/react-tooltip"
+      ],
+      "@radix-ui/react-collapsible": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@radix-ui/react-collapsible"
+      ],
+      "@radix-ui/react-dialog": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@radix-ui/react-dialog"
+      ],
+      "@radix-ui/react-avatar": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@radix-ui/react-avatar"
+      ],
+      "@radix-ui/react-slot": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@radix-ui/react-slot"
+      ],
+      "zustand": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/zustand"
+      ],
+      "pg-boss": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/pg-boss"
+      ],
+      "@fastify/cors": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@fastify/cors"
+      ],
+      "esbuild": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/esbuild"
+      ],
+      "tailwindcss": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/tailwindcss"
+      ],
+      "npm-package-arg": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/npm-package-arg"
+      ],
+      "tar": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/tar"
+      ],
+      "react": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@types/react/index.d.ts"
+      ],
+      "ansi-to-react": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/ansi-to-react"
+      ],
+      "fastify": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/fastify"
+      ],
+      "*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/*"
+      ],
+      "@flow/client": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/client/src/index.ts"
+      ],
+      "@flow/contracts": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/contracts/src/index.ts"
+      ],
+      "@flow/interaction": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/interaction/src/index.ts"
+      ],
+      "@flow/interaction/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/packages/interaction/src/*/index.ts"
+      ],
+      "@release-source/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/src/*"
+      ],
+      "react/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@types/react/*"
+      ],
+      "react-dom/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@types/react-dom/*"
+      ]
+    }
+  },
+  "files": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/src/plugin-integration/attachments.tsx",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/src/plugin-integration/session.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/oldconsumer-material.test.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/vite/client.d.ts"
+  ],
+  "include": [],
+  "exclude": []
+}

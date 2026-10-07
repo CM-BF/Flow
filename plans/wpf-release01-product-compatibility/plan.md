@@ -49,7 +49,7 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 
 - [x] RELEASE01-07 在原fixture/browser加入首固定7272新版App入口（后继精确pair供给规则见请求），Cookie连接/刷新恢复/原key ACK与迟到logout真实HTTP链；保旧3App/Bearer及4check。
 - [ ] RELEASE01-08 本组供给唯一新Web descriptor，与已到修正后台组成精确输入；有界兼容与集中独审后交原operator发布，不借旧tuple/PASS。
-- [ ] RELEASE01-09 在固定7272应用已审最小共享草稿两file并做直接旧consumer必要验证；不移植完整MSG/Plugin。
+- [x] RELEASE01-09 在固定7272应用已审最小共享草稿两file并做直接旧consumer必要验证；不移植完整MSG/Plugin。
 
 [已审只读设计](../../docs/evidence/wpf-release01/recovery-cookie/design-input.json)。旧3报告必须对新backend/context重新产生；新App不伪为Bearer。仅原4scope，0产品检查/PG/Chrome/build/install，缺产物失败关闭。
 
@@ -64,3 +64,5 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 ## 当前执行交接
 
 见[唯一source-switch](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/README.md)。旧树与MSG范围已实际交回，新exact6不包括App/Thread或共享配置/依赖。只应用77bc两file，预计hash802e/728a；必要检查和artifact build仍待有界安排。此前关于Original生产接单与MSG持有范围的文字为历史准备条件，已由本次交权替代。
+
+本次仅两file与旧consumer定向检查已完成，见[实际证据](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)。RELEASE01-08的独审/新artifact/兼容/发布继续开放；本地普通段6165ms关闭，未用余额不是新运行许可。

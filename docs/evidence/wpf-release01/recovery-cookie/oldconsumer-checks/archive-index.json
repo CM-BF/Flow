@@ -1,0 +1,139 @@
+{
+  "at": "2026-10-07T15:01:36.362Z",
+  "note": "Compact durable mirrors. Full immutable execution records stay at original private TMP; no raw rewritten. Metadata seal stays below1MiB. Original executable caller/configs remain pinned at original paths; no disguised scripts.",
+  "files": [
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/types-1-outer.json",
+      "archived": "types-1-outer.json",
+      "bytes": 242,
+      "sha256": "e1d9cf810d7f898ca1d1e7eceee28eb5a5f62d67d1807af47e5200dc763e8915"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/types-1-return.json",
+      "archived": "types-1-return.json",
+      "bytes": 396,
+      "sha256": "5dbd1601f4c2c6fbd9b7a1b067a3a71853b1e65a6726bd9acb31392d921e6da5"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/types-1.log",
+      "archived": "types-1.log.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/types-1-outer.stdout",
+      "archived": "types-1-outer.stdout.txt",
+      "bytes": 108377,
+      "sha256": "549036016d9f5ffe5dda4c9c220a72eb442434c3dc0de1efc0c377293e1072b7"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/types-1-outer.stderr",
+      "archived": "types-1-outer.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/direct-1-outer.json",
+      "archived": "direct-1-outer.json",
+      "bytes": 243,
+      "sha256": "be3bf879a1160a2a10eab73ee44a90b701c614f6b5093fd5281962d967512f1a"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/direct-1-return.json",
+      "archived": "direct-1-return.json",
+      "bytes": 300,
+      "sha256": "a6fef99cf2e3bacaad63881e4b9fcade984127a8e86b9e7b3b5fd34698bc0f9a"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/direct-1.log",
+      "archived": "direct-1.log.txt",
+      "bytes": 87,
+      "sha256": "7f80b6d4666d7b6d55491863d2ca77ff1bb16c14ec4ec20c305b89170634ee94"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/direct-1-outer.stdout",
+      "archived": "direct-1-outer.stdout.txt",
+      "bytes": 108648,
+      "sha256": "148853e0754ca8854fb5c8b7933abf9b3cc5d43b3cc30bb042658fc363b88f7d"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/direct-1-outer.stderr",
+      "archived": "direct-1-outer.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/direct-2-outer.json",
+      "archived": "direct-2-outer.json",
+      "bytes": 243,
+      "sha256": "1299cddeda7cf4e28b0c8ba1b02e0d9e3ffb58a23ae2ae5df549b1cb9104d60a"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/direct-2-return.json",
+      "archived": "direct-2-return.json",
+      "bytes": 659,
+      "sha256": "42b456686ff26d646bd1dd08263121c924f9b9390863330d346cdc5697e2af35"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/direct-2.log",
+      "archived": "direct-2.log.txt",
+      "bytes": 87,
+      "sha256": "d2a3dc65e1b3a2ecbc72e1d98ec9ae3f58419bb822eb7bfa4def71ccc503dedd"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/direct-2-outer.stdout",
+      "archived": "direct-2-outer.stdout.txt",
+      "bytes": 108864,
+      "sha256": "efe98bdc4a279dfdba1c2c73aac8fe223c768368b575a208279519c2a2907a02"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/direct-2-outer.stderr",
+      "archived": "direct-2-outer.stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/direct-1.json",
+      "archived": "direct-1.json",
+      "bytes": 954,
+      "sha256": "b5f5ada62448c329bc1ea868c3c994fb1c9c2271be26f6f7e34a69cb906a6ef4"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/direct-2.json",
+      "archived": "direct-2.json",
+      "bytes": 1182,
+      "sha256": "9f7157215c2caa1610cd2aff6b4c363428279f30fd253677c382ed4fccf4a9dc"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/segment.json",
+      "archived": "segment.json",
+      "bytes": 384460,
+      "sha256": "06a601679b8dad0c837569e2293f8e45e9f29253190a129e8ad99a2eae54191e"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/index.json",
+      "archived": "index.json",
+      "bytes": 5926,
+      "sha256": "4aab1eee925f8009462691e67f9d363c8a9b67b1c590203845a0b2e4d4b79b3b"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/dependency-pins.json",
+      "archived": "dependency-pins.json",
+      "bytes": 16765,
+      "sha256": "1c1346d7b80951b828793c95a7ae127c1d932000bca244b60986a303880b99fe"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/commands.json",
+      "archived": "commands.json",
+      "bytes": 788,
+      "sha256": "378359d6feee3ba9160ef996539cdf906ec24148b9e1fe8049ed72944a9a7ffb"
+    },
+    {
+      "source": "/private/tmp/release01-oldconsumer-local-20261007/types.json",
+      "archived": "types.json",
+      "bytes": 7481,
+      "sha256": "268b8ccf48431e3f399a574b9e07a5b9c6616b7d20cfbba570ca27e4f72b6d98"
+    }
+  ],
+  "archivedBytes": 745702
+}

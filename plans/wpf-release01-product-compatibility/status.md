@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T14:54:01.259Z |
+| 最近更新时间 | 2026-10-07T15:01:36.362Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery |
 | Branch | codex/web-release-recovery |
 | 工作基线 / HEAD | 固定7272151bb1e3e59e08937dca44949dcdeb42f009；source供给300386e2babce408b85ad5b9732d616782b78097；旧树9fde已释放停写 |
-| 工作树dirty状态 | 本次唯一后继树已领取exact6；先固定source-switch canonical，再应用已审最小两file；旧树不再写 |
+| 工作树dirty状态 | 两产品与定向旧consumer场景已固定；本批仅证据收口，pushclean后停止六scope写入，待产品交回/后继准备 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN 当前旧consumer两file组合；8964两harness历史strict通过保持独立 |
+| 本片段交付阶段 | review |
+| 检查状态 | PASSED 当前旧consumer affected noEmit与精确1个受控membership case；首resolverFAIL保留；browser/build/compat未运行 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED 当前新App后继；历史9658/c3已main e0295747200d7f0616779a712fdfd06691c3708f |
-| 实现目标 | 300386e2babce408b85ad5b9732d616782b78097 |
-| 实现范围 | apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/session.ts |
+| 实现目标 | d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6 |
+| 实现范围 | apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/session.ts, docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/oldconsumer-material.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 修正后台已到；本组已接手唯一新版网页生产，在固定旧消费者上落最小草稿隔离修复 |
-| 下一可用交付 | 固定两文件最小网页源码，完成直接消费者必要检查，再准备新网页不可变产物 |
+| 当前产出 | 新版网页最小草稿隔离修复已在旧消费者落地，必要类型与定向回归通过；修正后台已供齐 |
+| 下一可用交付 | 集中独审两文件及局部结果，交回产品写权；以固定源码和只读依赖准备唯一新网页产物 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：NOT_STARTED 当前落地组合；精确TMP静态准备已审，旧consumer实际未验 |
+| Review | [review.md](review.md)：NOT_STARTED 当前固定旧consumer source+实际集中审；历史TMP静态准备已批准 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 整体开工UNKNOWN；历史片段完成12:17:59.709Z保前状态；后继领取13:09:33.224Z仅为领取事实，编辑固定来源8964dc1；不以领取或编辑时刻倒填全任务开工 |
@@ -39,7 +39,7 @@
 | RELEASE01-06 | completed | w01_owner | [限定实际独审与主线接收](../../docs/evidence/wpf-release01/fixed-origin/main-close/README.md)；个人更新未执行，属于独立发布交付 |
 | RELEASE01-07 | completed | w01_owner | [Cookie后继固定源码](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)与[局部检查提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)；SOURCE_FIXED；[strict实际PASS](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)与[root限定批准](../../docs/evidence/wpf-release01/recovery-cookie/root-source-local-review.json) |
 | RELEASE01-08 | pending | w01_owner | [同任务唯一新Web生产接权](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/README.md)；后台已到，新Web产物/新pair兼容/发布未完成 |
-| RELEASE01-09 | in-progress | w01_owner | 精确7272两file patch落地与必要旧consumer检查；不带完整MSG/Plugin |
+| RELEASE01-09 | completed | w01_owner | [两file固定与必要旧consumer检查](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)：noEmit0/精确1direct0，独立集中审待完成；非mounted/compat通过 |
 
 ## 等待记录
 
@@ -124,3 +124,9 @@ Root 对固定8964两harness与唯一strict实际作正式限定APPROVED、0 fin
 ## 当前同任务唯一来源切换
 
 2026-10-07T14:54:01.259Z：[source-switch intake](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/source-switch-intake.json)记录新树/固定base/供给/新claim；旧27c四scope与MSG20均实际释放后才take exact6。当前可独立推进最小两file源码，不再等待Original接单。完整任务开工仍UNKNOWN/完成NOT_COMPLETED；本时间仅source段实际开工。生产patch尚待本段应用，当前无工程运行。
+
+## 当前最小产品落地与普通检查安全点
+
+2026-10-07T15:01:36.362Z：[固定source/证据](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)。产品source1cea/验证target d736；只有attachments/session两file12+/4-，值802e/728a逐字已审准备，8964harness不改。新90s本地段CLOSED6165ms：noEmit通过，首direct0selected的resolver失败保留，补本树activity映射后单真实旧consumer场景通过。所有owned进程组/scratch清理、regular日志完整，无PG/Chrome/HTTP/build/provider。
+
+本组唯一newWeb producer，descriptor尚NULL，但现为实施任务而非等待外部接单；已供后台cd27/04da不包含SVC09A host修复且factoryCalls0，非PROCESS T7。独审/新Web构建/新pair兼容/发布分别待完成，不迁移任何旧绿。当前六scope正常seal后STOP保claim；两产品将先交回供主线集成，后继harness/ownerrecords按fresh amend保留。

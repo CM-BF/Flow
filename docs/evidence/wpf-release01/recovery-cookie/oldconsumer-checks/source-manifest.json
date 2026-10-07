@@ -1,0 +1,52 @@
+{
+  "target": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
+  "productPatchCommit": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
+  "base": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "suppliedBaseline": "300386e2babce408b85ad5b9732d616782b78097",
+  "firstCanonical": "ddddcf753f722180b514a9866aea458db6f1821e",
+  "scope": [
+    "apps/web/src/plugin-integration/attachments.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/oldconsumer-material.test.ts"
+  ],
+  "pins": [
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 23456,
+      "sha256": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4",
+      "blob": "ef436e8a9d1eec5a96c27f229cf170c8d2c19474"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 24592,
+      "sha256": "728a08d9e7ba64533da5b0bd9d7fa485f7d1cddefc13554c29101881e9841d9a",
+      "blob": "88c30f0cf534519a2464b53b94c6b53e9a49e81f"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/oldconsumer-material.test.ts",
+      "bytes": 12295,
+      "sha256": "365f14793127406d1e2317ba1d10b08b4cc48f12509aefa8257d47f4e7a1f22e",
+      "blob": "1e6c4984e4dfa947fa9ed8ca7056d0fefa03a880"
+    }
+  ],
+  "expectedPatch": "77bc71c1aa001c693ba08b0a56ccf6e3b8faac5824e056663a9c81893882bdc8",
+  "harnessUnchangedSource": "8964dc1185f62ed8934c15416e9798929359ab89",
+  "actualSource": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804 with exact pinned owned test now committed unchanged",
+  "checkResults": {
+    "strict": "PASS",
+    "firstDirect": "FAIL_IMPORT_RESOLVER_0_SELECTED",
+    "secondDirect": "PASS_EXACT_1_0_SKIP_TODO_FAIL"
+  },
+  "phaseMs": {
+    "total": 90000,
+    "spent": 6165,
+    "unused": 83835,
+    "state": "CLOSED"
+  },
+  "notRun": [
+    "mounted old7272 App/browser/IDB",
+    "artifact build",
+    "newWeb immutable compatibility",
+    "personal deployment"
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "state": "BACKEND_RECEIVED_NEW_WEB_SOURCE_IMPLEMENTATION_BY_WEB_OWNER_NO_RUNTIME",
+  "state": "BACKEND_RECEIVED_MINIMAL_WEB_SOURCE_LOCAL_CHECKED_AWAITING_REVIEW_AND_ARTIFACT",
   "task": "WPF-RELEASE01 / REQ19",
   "owner": "Original artifact/release owner via d01",
   "consumerSource": "8964dc1185f62ed8934c15416e9798929359ab89",
@@ -82,7 +82,18 @@
     "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
     "version": 1,
     "soleProducer": true,
-    "intake": "source-switch/source-switch-intake.json"
+    "intake": "source-switch/source-switch-intake.json",
+    "fixedSource": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
+    "productPatchCommit": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804"
   },
-  "nextAction": "本组同任务在7272落地已审两file及必要检查，随后有界生成唯一新Webartifact；Original不再被记录为待接受producer。"
+  "nextAction": "本组同任务在7272落地已审两file及必要检查，随后有界生成唯一新Webartifact；Original不再被记录为待接受producer。",
+  "oldConsumerValidation": {
+    "source": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
+    "strict": "PASS",
+    "direct": "PASS_EXACT_1",
+    "firstDirectFailurePreserved": true,
+    "mounted": "NOT_RUN",
+    "artifact": "NOT_RUN",
+    "compat": "NOT_RUN"
+  }
 }

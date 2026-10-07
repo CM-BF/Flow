@@ -1,8 +1,10 @@
 # WPF-RELEASE01 review
 
-**当前状态：NOT_STARTED（7272旧消费者落地组合待固定/必要检查；不继承MSG实际或8964两harness类型结果）**
+**当前状态：NOT_STARTED（7272旧消费者固定源码与必要检查已完成，待集中独审；不继承MSG实际或8964类型结果）**
 
-当前来源：300386e2babce408b85ad5b9732d616782b78097，后继两产品范围 attachments.tsx/session.ts。精确TMP准备已由Root754608批准，实际应用后提交固定source供集中审；尚无新Web descriptor/compat/build结果。
+当前 Review target commit：d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6。范围：apps/web/src/plugin-integration/attachments.tsx、apps/web/src/plugin-integration/session.ts、docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/oldconsumer-material.test.ts。
+
+[固定源码与actual](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)：精确patch落地，affected noEmit0/单case actual0、首resolverFAIL保留，6165ms CLOSED及完整清理。待root集中独立审；不以作者检查冒approval。无新Web descriptor/compat/build/用户部署。
 
 ## 历史：8964后继两harness限定批准
 

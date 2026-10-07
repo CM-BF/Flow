@@ -1,0 +1,20 @@
+{
+  "types": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+    "--noEmit",
+    "-p",
+    "/private/tmp/release01-oldconsumer-local-20261007/types.json"
+  ],
+  "direct": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/private/tmp/release01-oldconsumer-local-20261007/vitest.config.mjs",
+    "--configLoader",
+    "native",
+    "--no-cache",
+    "--reporter=json"
+  ]
+}
