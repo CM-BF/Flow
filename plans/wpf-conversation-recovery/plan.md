@@ -18,7 +18,7 @@
 - [ ] WPF-RECOVERY01-02：四类原controller同步接管和durable barrier，CREATE两阶段及错误/CAS恢复。
 - [ ] WPF-RECOVERY01-03：实际App/P01入口、完整草稿/材料和namespace隔离恢复。
 - [ ] WPF-RECOVERY01-04：定向storage/controller直接行为验证与来源hash。
-- [ ] WPF-RECOVERY01-05：资源允许后真实cookie/HTTP/SSE/App旅程，累计≤90s含≥15s清理、≤8MiB、1PG+1Chrome、0provider/个人服务。
+- [ ] WPF-RECOVERY01-05：资源允许后真实cookie/HTTP/SSE/App旅程；旧90s封套关闭保留，后继按原样授权的新150s有限段独立计费，每次≤60s含≥15s清理、总证据≤8MiB、1PG+1Chrome、0provider/个人服务。
 - [ ] WPF-RECOVERY01-06：独立固定审查、修复、push和明确main接收。
 
 ## 验证与资源
@@ -150,3 +150,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ## 2026-10-07 05:21:31 UTC — 原-05最小选择接口已实现，真实验收未变
 
 [固定dd6645接口](../../docs/evidence/wpf-conversation-recovery/journey-selection-source.md)将已批准提案落实在原browser；full保原七组，单selected隔离服务端/浏览器状态，0/缺required不得绿，不catch污染续跑。计时显式区分worker初始化与组内UI种稿，只提供可比较来源不冒优化实证。局部类型/纯映射校验已过，真实选组未跑，完整TODO不勾选、原预算不增加。
+
+### 2026-10-07 05:42:08 UTC — 过期fixture修正与新有限段
+
+原五次失败晚累计64134.08675ms不回填、不重置；旧90k剩余不作新运行额度。[新有限段授权](../../docs/evidence/wpf-conversation-recovery/continuous-segment-authorization.json)允许原21内定位→窄修→相关复测，实际新runtime累计≤150000ms，每次≤60000含15000cleanup。原parent防御总ceiling改240000只对应旧90k+新150k，不代替新段150k独立约束。[唯一segment记录](../../docs/evidence/wpf-conversation-recovery/continuous-segment.json)保存各实际attempt/晚计时/剩余额度。下一优先full7原断言；等待真实PG/Chrome交接和常规fresh输入，当前无新运行。

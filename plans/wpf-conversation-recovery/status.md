@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 05:21:31 UTC |
+| 最近更新 | 2026-10-07 05:42:08 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -18,16 +18,16 @@
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已加入恢复场景独立选择；页面行为尚待验 |
-| 下一可用交付 | 选择优先的恢复场景并完成页面验证 |
-| 当前阻塞 | ACTIVE: 原完整恢复旅程仍失败，新的独立场景入口尚待源码审查和实际页面验证 |
+| 当前产出 | 已分离恢复场景并定位过期会话测试前提错误 |
+| 下一可用交付 | 修正过期会话前提后，继续原完整页面恢复验证 |
+| 当前阻塞 | ACTIVE: 页面恢复验收尚未完成，当前共享验证窗口未归还 |
 | 需用户决定 | NONE |
-| 检查状态 | 当前Web noEmit0/纯选择与run回调119断言PASS，累计local12.462s；不是浏览器通过。原第四FAIL及所有旧raw不变，晚browser累计54883.199542ms，下次最多35116含15000cleanup，无新准入 |
+| 检查状态 | 第五page-auth FAILED：cookieRead通过，过期fixture约束失败；其余NOT_SELECTED。旧五FAIL晚累计64134.08675ms封套保留；新150000ms有限段当前0使用。原50/119/types/serialization10证据不变 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21scope；本次2026-10-07T05:12:13.826920Z本人安全CLI核active/owner/WT/branch/原21、overlap=[]；仅已授权source/own记录，非下一运行许可 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；本段本人安全CLI核active/owner/WT/branch、overlap=[]，见continuous-segment-claim-observation；不等资源准入 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -36,7 +36,7 @@
 | WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt屏障与部分恢复受控case已通过；完整真实controller旅程未完成 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
 | WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [当前50 direct](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)源绑定2b01单次通过；旧38原范围不变，共用owner helper不冒mounted Workspace/Thread或完整App材料prepare通过 |
-| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [第四次browser失败](../../docs/evidence/wpf-conversation-recovery/browser-fourth-validation.md)：仅cookieRead PASS，tooltip超时/后续未跑；前三轮原件与原50实证保持 |
+| WPF-RECOVERY01-05 | in-progress | workspace_panels_owner | [第五次实际失败](../../docs/evidence/wpf-conversation-recovery/browser-fifth-validation.md)，原五轮保真；新有限修复验证段当前0运行 |
 | WPF-RECOVERY01-06 | pending | workspace_panels_owner | 1b8 M1/M2独立源码addressed；完整feature独审NOT_STARTED/main未完成 |
 
 ## 阻塞 / 风险 / 未验证
@@ -282,3 +282,7 @@ DB marked正常清零DROP、fixture关闭、双ownedgroup ESRCH/scratch移除；
 固定 `dd6645b7f3ea84d758705684190c094ad3c87460`，[manifest](../../docs/evidence/wpf-conversation-recovery/journey-selection-checkpoint.json)只browser变化/18其他源不变。新有限选择由Gate绑定，parent自定required并拒空/缺组；full仍原七组，独立项用原新DB/fixture/context和公开UI自种稿。报告分别selectedPassed/fullJourneyPassed，补worker初始化与最多7组单调计时。
 
 [有界local原件](../../docs/evidence/wpf-conversation-recovery/journey-selection-local/index.json)两轮必要增量累计12462.477ms/30000，最终noEmit0+119项抽取纯函数/回调PASS、四Node双EOF/组清理；不启动产品或服务，不复跑50/10。当前独立source review PENDING/真实browser NOT_RUN；root审后才定剩35116一次旅程，无gate/预约，完整feature NOT_STARTED/targetUNKNOWN。
+
+## 2026-10-07 05:42:08 UTC — 第五失败与新有限连续段
+
+[第五原证据](../../docs/evidence/wpf-conversation-recovery/browser-fifth-validation.md)与[root独审](../../docs/evidence/wpf-conversation-recovery/browser-fifth-root-review.json)已原样归档。旧90k封套actual64134.08675ms保持并关闭新launch；新段独立150000ms/每次最多60000含15000cleanup。当前0新运行，无gate/预约；原五FAIL、旧50/119/serialization10保留。fixture时间对及parent防御ceiling源码修复进行中，完整feature仍NOT_STARTED/targetUNKNOWN。

@@ -1,0 +1,562 @@
+{
+  "at": "2026-10-07T05:36:34.422988+00:00",
+  "decision": "ACCEPTED_FAILED_SELECTED_ACTUAL_AND_OWNED_CLEANUP_NOT_FEATURE_PASS",
+  "fixedSource": "dd6645b7f3ea84d758705684190c094ad3c87460",
+  "executionHead": "5e629909fb96bebe703ab75670daa9e67ab29979",
+  "run": "recpageauth-20261007-053300-ca1a91",
+  "gateSha256": "db2870cacf0ab5198d65151acc54a34fff1343a117949cde1b33c5f1a6340611",
+  "actual": {
+    "exitCode": 1,
+    "outerElapsedMs": 9881.697250064462,
+    "endedAt": "2026-10-07T05:34:54.743600+00:00",
+    "stdoutEof": true,
+    "stderrEof": true,
+    "stdoutBytes": 749,
+    "stderrBytes": 0,
+    "parentPid": 30276,
+    "run": "recpageauth-20261007-053300-ca1a91"
+  },
+  "late": {
+    "kind": "recovery-final-accounting",
+    "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91",
+    "journey": "page-auth",
+    "requiredGroups": [
+      "cookieRead",
+      "pageOnlyAuthLoss"
+    ],
+    "completedGroups": [
+      "cookieRead"
+    ],
+    "postWrite": {
+      "phase": "after-final-report-and-budget",
+      "elapsedMs": 9250.887208,
+      "scratchBytes": null,
+      "evidenceBytes": 1448469,
+      "freeBytes": 25033068544,
+      "errors": []
+    },
+    "interruptionRequested": false,
+    "errors": [
+      "new row for relation \"browser_sessions\" violates check constraint \"browser_sessions_check\"",
+      "The selected journey did not complete every required group"
+    ],
+    "cleanupErrors": [],
+    "allOwnedGroupsAbsent": true,
+    "scratchRemoved": true
+  },
+  "checks": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/browser.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/budget.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/database-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/database-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/fixture-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/launch-config.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/process-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/process.log",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/scratch-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/sources.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91/supervisor.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/App.tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/attachments/controller.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/connection/session.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/conversation-context/controller.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/conversation-steering/SteeringControl.tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/conversation-steering/control.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/conversations/ConversationThread.tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/conversations/outbox.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/conversations/projection.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/conversations/queue/commands.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/plugin-integration/attachments.tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/plugin-integration/knowledge.tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/plugin-integration/session.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/plugin-integration/steering.tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/recovery/binding.tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/recovery/journal.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.browser.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.fixture.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.test.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/browser.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/budget.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/database-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/database-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/fixture-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/process-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/process.log",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/scratch-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/sources.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/supervisor.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/browser.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/budget.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/database-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/database-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/fixture-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/launch-config.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/process-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/process.log",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/scratch-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/sources.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/supervisor.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/actual-exit.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/gate.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/parent.stderr.log",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/parent.stdout.jsonl",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/browser.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/budget.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/database-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/database-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/fixture-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/launch-config.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/process-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/process.log",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/scratch-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/sources.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/supervisor.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/actual-exit.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/admission.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/claim-observation.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/gate.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/parent.stderr.log",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/parent.stdout.jsonl",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/pins-check.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/browser.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/budget.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/database-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/database-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/fixture-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/launch-config.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/process-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/process.log",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/scratch-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/sources.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/supervisor.json",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/recovery-pageauth-fifth-parent-xyfe8xqh/parent.stdout.jsonl",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/recovery-pageauth-fifth-parent-xyfe8xqh/parent.stderr.log",
+      "matches": true
+    }
+  ],
+  "outerArtifacts": [
+    {
+      "path": "/private/tmp/recovery-pageauth-fifth-parent-xyfe8xqh/actual-exit.json",
+      "bytes": 261,
+      "sha256": "a6367066f97a916322998540688944318065e52c3f6556679716f3484735b9c1"
+    },
+    {
+      "path": "/private/tmp/recovery-pageauth-fifth-parent-xyfe8xqh/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/recovery-pageauth-fifth-parent-xyfe8xqh/parent.stdout.jsonl",
+      "bytes": 749,
+      "sha256": "6845a93aa6f3c174e65faeb9f12e29c0c435d10a98d58a0021282f7c8155f2b1"
+    },
+    {
+      "path": "/private/tmp/recovery-pageauth-fifth-parent-xyfe8xqh/post-cleanup-observation.json",
+      "bytes": 5831,
+      "sha256": "01fb9b33a7bd0cd7a8bdea203719a815071857632a7862c8b83bdc59ea0f029e"
+    },
+    {
+      "path": "/private/tmp/recovery-pageauth-fifth-parent-xyfe8xqh/start.json",
+      "bytes": 443,
+      "sha256": "210c26942eb153eb59546f4866eb7dc949be965705628118040b79b2aa64a5f8"
+    }
+  ],
+  "selection": {
+    "journey": "page-auth",
+    "requiredGroups": [
+      "cookieRead",
+      "pageOnlyAuthLoss"
+    ],
+    "completedGroups": [
+      "cookieRead"
+    ],
+    "checks": [
+      "actual browser stores HttpOnly cookie; public cookie-only session read opens original center"
+    ],
+    "failure": "new row for relation \"browser_sessions\" violates check constraint \"browser_sessions_check\"",
+    "pageErrors": [],
+    "cleanupErrors": [],
+    "coverage": {
+      "cookieRead": "PASSED",
+      "cookieSseHandshake": "NOT_SELECTED",
+      "cookieSseDelivery": "PENDING: only handshake is asserted",
+      "textIntentDraft": "NOT_SELECTED",
+      "materialDraft": "NOT_SELECTED",
+      "sameKeyTurn": "NOT_SELECTED",
+      "crossTabCas": "NOT_SELECTED",
+      "pageOnlyAuthLoss": "FAILED",
+      "csrfOffline": "NOT_SELECTED",
+      "themes390": "NOT_SELECTED",
+      "createTwoStage": "PENDING: direct/source only",
+      "queueSteerRecovery": "PENDING: direct/source only",
+      "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+      "secondCenter": "PENDING: one-center fixture"
+    },
+    "initialization": {
+      "outcome": "PASSED",
+      "startedOffsetMs": 0,
+      "endedOffsetMs": 7608.943791,
+      "elapsedMs": 7608.943791
+    },
+    "groupTimings": [
+      {
+        "group": "cookieRead",
+        "startedOffsetMs": 7609.007291,
+        "endedOffsetMs": 8638.868665999998,
+        "elapsedMs": 1029.8613749999995,
+        "outcome": "PASSED"
+      },
+      {
+        "group": "pageOnlyAuthLoss",
+        "startedOffsetMs": 8638.884166,
+        "endedOffsetMs": 8784.291333000001,
+        "elapsedMs": 145.4071669999994,
+        "outcome": "FAILED"
+      }
+    ]
+  },
+  "cleanup": {
+    "database": {
+      "database": "flow_recovery_3624c0f3ac1040f99cf0c6071bb83d02",
+      "attempted": true,
+      "confirmed": true,
+      "markerWritten": true,
+      "remaining": [],
+      "connections": 0,
+      "removed": true,
+      "errors": [],
+      "observations": [
+        {
+          "phase": "before-marker",
+          "attempt": 1,
+          "elapsedMs": 1.62354200000118,
+          "total": 0,
+          "sessions": []
+        },
+        {
+          "phase": "after-marker",
+          "attempt": 1,
+          "elapsedMs": 1.7894580000011047,
+          "total": 0,
+          "sessions": []
+        }
+      ]
+    },
+    "fixture": {
+      "complete": true,
+      "errors": [],
+      "elapsedMs": 19,
+      "wireBytes": 1271,
+      "providerQueries": 0
+    },
+    "groups": [
+      {
+        "pgid": 30289,
+        "state": "ABSENT_ESRCH"
+      },
+      {
+        "pgid": 30305,
+        "state": "ABSENT_ESRCH"
+      }
+    ],
+    "scratchAbsent": true,
+    "attribution": "DB/fixture normalDROP and port close from owned receipts; exact groups ESRCH and scratch absence observed at05:35:11.312269Z. Root reads originals, no newPG/HTTP/processprobe."
+  },
+  "timing": {
+    "initializationMs": 7608.943791,
+    "cookieMs": 1029.8613749999995,
+    "pageAuthFailedMs": 145.4071669999994,
+    "latePriorMs": 54883.199542,
+    "lateThisMs": 9250.887208,
+    "lateCumulativeMs": 64134.08675,
+    "remainingMs": 25865.91325,
+    "outerMs": 9881.697250064462,
+    "limitations": "Initializer includes worker imports/fixture/Chrome/context/page; excludes parent DB/startup. One failed run is not a performance improvement measurement. Parent late and outer wall retained as distinct scopes, no retrospective replacement."
+  },
+  "finding": {
+    "priority": "P2",
+    "scope": "test fixture",
+    "summary": "expireSessions creates an invalid timestamp pair for a recently-created session",
+    "evidence": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.fixture.ts",
+        "sha256": "cb3cb9577f7833c8d56f9dc35274e0e3b7dca8a7524a969f63ac9fbefd3765f3"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/storage/migrations/028-browser-sessions.sql",
+        "sha256": "b1f8d61acbd6692186bd544421b110926c94311556395e39ad09936c7b2498d1"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/browser-session/store.ts",
+        "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5"
+      }
+    ],
+    "explanation": "028 requires expires_at > created_at AND expires_at <= created_at +8hours. Existing fixture updates onlyexpires_at toclock_timestamp()-1second. page-auth now reaches this sooner after freshlogin; PostgreSQL explicitly rejects browser_sessions_check. This fixture cannot reliably represent legal expired rows.",
+    "repairRecommendation": "In same owned test database, set both created_at and expires_at from one statement-stable timestamp, e.g. created_at=statement_timestamp()-interval2seconds and expires_at=statement_timestamp()-interval1second. Keep public authentication path, migration and productionstore untouched; preserveoriginal failure."
+  },
+  "remainingValidation": [
+    "Page-only auth loss/reconnect and retained draft/no mutation assertion not completed.",
+    "Materialfocus/fullchain/CSRF/offline/themes/other fullfeature remain separate open scope.",
+    "25865.91325 remaining is below unchanged gate minimum30000; no sixthgate/retry under currentprepared source.",
+    "New fixture source fix can be reviewed without runtime; any nextvalidation changes require explicit plan/budget conditions with full failurehistory retained."
+  ],
+  "fullFeatureReview": "NOT_STARTED",
+  "noRootProjectWrite": true,
+  "skills": "Applied local clean-code/codebase-design: fix test fault at fixture boundary, preserve production invariant; explicit timing/failure/cleanup scopes, no broad abstraction."
+}

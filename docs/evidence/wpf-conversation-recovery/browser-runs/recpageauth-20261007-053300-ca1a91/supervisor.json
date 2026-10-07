@@ -1,0 +1,105 @@
+{
+  "passed": false,
+  "selectedPassed": false,
+  "fullJourneyPassed": false,
+  "journey": "page-auth",
+  "requiredGroups": [
+    "cookieRead",
+    "pageOnlyAuthLoss"
+  ],
+  "completedGroups": [
+    "cookieRead"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 7608.943791,
+    "elapsedMs": 7608.943791
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 7609.007291,
+      "endedOffsetMs": 8638.868665999998,
+      "elapsedMs": 1029.8613749999995,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "pageOnlyAuthLoss",
+      "startedOffsetMs": 8638.884166,
+      "endedOffsetMs": 8784.291333000001,
+      "elapsedMs": 145.4071669999994,
+      "outcome": "FAILED"
+    }
+  ],
+  "acceptanceScope": "selected journey only; full journey remains unverified",
+  "errors": [
+    "new row for relation \"browser_sessions\" violates check constraint \"browser_sessions_check\"",
+    "The selected journey did not complete every required group"
+  ],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_3624c0f3ac1040f99cf0c6071bb83d02",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.62354200000118,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 1.7894580000011047,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "processIds": [
+    {
+      "pid": 30289,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 30305,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 25006157824,
+  "peakScratchBytes": 26391771,
+  "logBytes": 3788,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 9219.323124999999,
+      "scratchBytes": 26391771,
+      "evidenceBytes": 1445794,
+      "freeBytes": 25006157824,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 9245.081291,
+      "scratchBytes": null,
+      "evidenceBytes": 1448270,
+      "freeBytes": 25033068544,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}

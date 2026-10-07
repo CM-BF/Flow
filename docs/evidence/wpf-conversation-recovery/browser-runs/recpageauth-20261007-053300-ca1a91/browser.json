@@ -1,0 +1,147 @@
+{
+  "journey": "page-auth",
+  "requiredGroups": [
+    "cookieRead",
+    "pageOnlyAuthLoss"
+  ],
+  "completedGroups": [
+    "cookieRead"
+  ],
+  "checks": [
+    "actual browser stores HttpOnly cookie; public cookie-only session read opens original center"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 7608.943791,
+    "elapsedMs": 7608.943791
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 7609.007291,
+      "endedOffsetMs": 8638.868665999998,
+      "elapsedMs": 1029.8613749999995,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "pageOnlyAuthLoss",
+      "startedOffsetMs": 8638.884166,
+      "endedOffsetMs": 8784.291333000001,
+      "elapsedMs": 145.4071669999994,
+      "outcome": "FAILED"
+    }
+  ],
+  "pageErrors": [],
+  "failure": "new row for relation \"browser_sessions\" violates check constraint \"browser_sessions_check\"",
+  "cleanupErrors": [],
+  "wire": [
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": false,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/browser-session/connect",
+      "key": null,
+      "body": "{}",
+      "status": 200,
+      "cookie": false,
+      "bearer": true,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/32938c35-2e2e-4a48-a83f-e2652866913b",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/32938c35-2e2e-4a48-a83f-e2652866913b/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/32938c35-2e2e-4a48-a83f-e2652866913b/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    }
+  ],
+  "coverage": {
+    "cookieRead": "PASSED",
+    "cookieSseHandshake": "NOT_SELECTED",
+    "cookieSseDelivery": "PENDING: only handshake is asserted",
+    "textIntentDraft": "NOT_SELECTED",
+    "materialDraft": "NOT_SELECTED",
+    "sameKeyTurn": "NOT_SELECTED",
+    "crossTabCas": "NOT_SELECTED",
+    "pageOnlyAuthLoss": "FAILED",
+    "csrfOffline": "NOT_SELECTED",
+    "themes390": "NOT_SELECTED",
+    "createTwoStage": "PENDING: direct/source only",
+    "queueSteerRecovery": "PENDING: direct/source only",
+    "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+    "secondCenter": "PENDING: one-center fixture"
+  },
+  "bodyLoss": []
+}

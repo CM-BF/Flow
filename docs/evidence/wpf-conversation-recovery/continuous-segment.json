@@ -1,0 +1,32 @@
+{
+  "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
+  "state": "SOURCE_REPAIR_PENDING_RESOURCE_HANDOFF",
+  "authorization": {
+    "path": "continuous-segment-authorization.json",
+    "sha256": "6ea79981213d5df67f1e7ae4c603a90bbf7823daebf53aa15bf85e08f7ed5090"
+  },
+  "oldEnvelope": {
+    "budgetMs": 90000,
+    "actualLateCumulativeMs": 64134.08675,
+    "failures": 5,
+    "closedForNewLaunch": true,
+    "unusedCreditTransferred": false
+  },
+  "limits": {
+    "totalRuntimeMs": 150000,
+    "perAttemptMaximumMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "totalEvidenceBytes": 8388608,
+    "logBytes": 1048576,
+    "additionalSourceMetadataBytes": 1048576,
+    "defensiveCumulativeCeilingMs": 240000
+  },
+  "runtimeSpentMs": 0,
+  "runtimeRemainingMs": 150000,
+  "attempts": [],
+  "nextSelection": "full",
+  "fullFeatureReview": "NOT_STARTED",
+  "noCurrentGate": true,
+  "sourceTarget": "PENDING_FIX"
+}

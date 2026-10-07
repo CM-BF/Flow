@@ -6,7 +6,7 @@ Review target commit：UNKNOWN。Base：84005a260dfcb668cd38b09c21564d0754a0f513
 
 可复制只读审查任务：先核本worktree/branch/HEAD/dirty、AGENTS与plan/status；固定实现后完整读scope，检查cookie连接与namespace、同步receipt→strict事务complete/CAS→HTTP、CREATE两阶段、完整草稿和材料、跨tab冲突/unknown原key、P01私有授权、资源/字节预算。按已授权隔离检查，明确作者与独立证据、未验中心/个人服务。所有finding回owner，不写实现。
 
-当前作者局部检查：2b01受控50、历史38与9835 serialization10保持原批准范围；真实browser四次均FAILED。第四次4c0852/9835仅cookieRead PASS，textIntentDraft的saved.txt tooltip超时，后续未跑/0PNG；前三轮及各自局部通过事实保真。root接受第四实际失败与reported ownedcleanup，不是完整feature通过；无新types或重跑。完整feature NOT_STARTED/targetUNKNOWN。
+当前作者局部检查：2b01受控50、历史38与9835 serialization10保持原批准范围；真实browser前四次均FAILED（历史）；第五page-auth现也FAILED。第四次4c0852/9835仅cookieRead PASS，textIntentDraft的saved.txt tooltip超时，后续未跑/0PNG；前三轮及各自局部通过事实保真。root接受第四实际失败与reported ownedcleanup，不是完整feature通过；无新types或重跑。完整feature NOT_STARTED/targetUNKNOWN。
 
 ## 阶段源码预检（不是最终feature审查）
 
@@ -173,3 +173,7 @@ Root固定 `1bc4f20b9257b294adcadd6b68b1b9e015e04e86` 的[独立报告](../../do
 ## 2026-10-07 05:21:31 UTC — dd6645有限journey待独审
 
 限定target `dd6645b7f3ea84d758705684190c094ad3c87460`（前序1bc），[manifest](../../docs/evidence/wpf-conversation-recovery/journey-selection-checkpoint.json)一browser/18其他源相同。作者完整noEmit0与119项纯选择/run回调校验PASS，见[原件](../../docs/evidence/wpf-conversation-recovery/journey-selection-local/index.json)；这些没有启动worker/fixture/nativeIDB/browser，单调clock在受控port中只验记录行为。独立源码审查PENDING，真实新journey NOT_RUN。原1bc两行限定批准和四次browserFAIL原样；完整feature仍NOT_STARTED/targetUNKNOWN。
+
+## 2026-10-07 05:42:08 UTC — dd664限定源/local接受与第五实际失败
+
+[dd664 root审](../../docs/evidence/wpf-conversation-recovery/dd664-journey-root-review.json)接受选择映射/计量源码与119/types0，未冒browser通过。[第五root审](../../docs/evidence/wpf-conversation-recovery/browser-fifth-root-review.json)接受cookieRead PASS/pageOnlyAuthLoss fixture约束FAIL与实际ownedcleanup；P2回owner修过期时间对。新有限段授权不是实证，完整feature审仍NOT_STARTED/targetUNKNOWN。
