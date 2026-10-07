@@ -1,0 +1,68 @@
+{
+  "kind": "SVC09A_R2_ACTUAL_ADMISSION",
+  "at": "2026-10-07T16:15:32.278596Z",
+  "event": "START_AUTHORIZED_ENTRY",
+  "source": "78543b0250fcf863e81aad6cd3ec614f294de31b",
+  "delivery": "1102f341009bab1995759ce45ca7a620790458a9",
+  "preparation": {
+    "path": "host-preparation-r2.json",
+    "bytes": 23308,
+    "sha256": "d071f4d0dcdffb4c0b175f6c55fde82cd20277b232d4f5bd8d6cfa6756a05cea"
+  },
+  "review": "main337060abb / docs/evidence/i02/svc09a-host-r2-preparation-review.json",
+  "claim": {
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 4,
+    "freshAt": "2026-10-07T16:15:00.826Z",
+    "state": "active"
+  },
+  "windowInputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/resource-window-current.json",
+      "sha256": "81f1102da5dccc9492e5bad68c0c4aceb8ac905865b1daa0ecbaa02d07d7109d",
+      "state": "S01_RETURNED_SVC09A_R2_UNIQUE_NEXT",
+      "at": "2026-10-07T16:13:31.902Z"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
+      "sha256": "86d8fdd9a06b7213f4ee6cd9465731449ba72ef0c1ee82245ff252350ba8a2ed",
+      "state": "S01_RETURNED_SVC09A_R2_UNIQUE_NEXT",
+      "at": "2026-10-07T16:12:24.594Z"
+    }
+  ],
+  "minimumCompleteFloorBytes": 17942446080,
+  "observedFreeBytes": 20162699264,
+  "pins": {
+    "source": 16,
+    "additionalSystemTool": 1,
+    "runtime": 6,
+    "mismatches": 0,
+    "retainedArtifactIdentities": 4
+  },
+  "newNamespacesAbsent": true,
+  "PG": {
+    "kind": "SVC09A_R2_CLUSTER_ADMISSION_READONLY",
+    "at": "2026-10-07T16:15:31.974Z",
+    "ownConfiguredMax": 26,
+    "managementMargin": 16,
+    "adminInput": "Existing coordination env URL with pathname /postgres only; no value persisted",
+    "failures": [],
+    "maximum": 100,
+    "current": 9,
+    "available": 91,
+    "adminPoolClosed": true,
+    "admitted": true,
+    "finishedAt": "2026-10-07T16:15:31.985Z"
+  },
+  "entry": [
+    "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+    "--run-host-r2-once"
+  ],
+  "outerSeconds": 217.5,
+  "selectedJourneys": 1,
+  "providerCalls": 0,
+  "personalIO": 0,
+  "builds": 0,
+  "R1": "All raw/database/private KEEP unchanged; no old DB contents queried"
+}

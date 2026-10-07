@@ -1,0 +1,74 @@
+{
+  "kind": "SVC09A_HOST_R2_PRE_INPUT_REJECTION",
+  "at": "2026-10-07T16:17:44.230352Z",
+  "source": "78543b0250fcf863e81aad6cd3ec614f294de31b",
+  "preparationTarget": "1102f341009bab1995759ce45ca7a620790458a9",
+  "artifactId": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+  "artifactSource": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+  "selectedJourneys": 1,
+  "passedJourneys": 0,
+  "admissionAt": "2026-10-07T16:15:32.278596Z",
+  "operatorReservationAt": "2026-10-07T16:15:44.617161Z",
+  "outerFinishedAt": "2026-10-07T16:15:48.486779Z",
+  "outerElapsedMs": 3953,
+  "outerExit": 1,
+  "primary": {
+    "phase": "entry-or-persistence",
+    "type": "AssertionError",
+    "code": "ERR_ASSERTION",
+    "stderr": {
+      "phase": "entry-or-persistence",
+      "name": "AssertionError",
+      "code": "ERR_ASSERTION"
+    }
+  },
+  "cleanup": {
+    "phase": "cleanup-entry-or-persistence",
+    "type": "AssertionError",
+    "code": "ERR_ASSERTION",
+    "notAResourceCleanupResult": true
+  },
+  "sourceAttribution": {
+    "argument": "/private/tmp/flow-svc09a-host-e143n0_5/input.json",
+    "workGuard": "host-entry.mjs main: assert.match(argv[1], /^\\/private\\/tmp\\/flow-svc09a-host-[A-Za-z0-9-]+\\/input\\.json$/)",
+    "cleanupGuard": "same path character class before privateJson",
+    "generator": "Python tempfile.mkdtemp includes underscore in its valid random alphabet",
+    "evidenceMeaning": "Exact command and first guard determine rejection for this underscore path; no saved stack/message is fabricated. The wrapper error phase is broad but execution cannot reach privateJson/setup.",
+    "otherOccurrences": "validateHostInput has the same restricted root expression and also needs the same narrow correction."
+  },
+  "reached": {
+    "mechanicalClone": {
+      "exit": 0,
+      "elapsedMs": 3699,
+      "reportedRegularBytes": 367105165
+    },
+    "clonedArtifactFinalInventoryVerification": "NOT_RUN: work guard rejected before backendRuntime. Original clone stdout phrase about subsequent verifier is prospective, not evidence that verifier ran.",
+    "privateJsonWorkInput": "NOT_READ_BY_WORK_ENTRY",
+    "fixtureDatabaseCreated": false,
+    "fixtureConnectionsOpened": false,
+    "hostServicesStarted": 0,
+    "settingsPublished": false,
+    "mixedTasks": 0,
+    "mixedAttempts": 0,
+    "providerCalls": 0
+  },
+  "closure": {
+    "cloneWorkCleanupGroups": "absent/dualEOF/no signals; initial EPERM preserved",
+    "operatorPid": 33075,
+    "operatorScope": "childPidOnly, absent/dualEOF/no signals",
+    "resourceReturnAt": "2026-10-07T16:16:36.884252Z",
+    "privateDirectory": "KEEP",
+    "database": "NOT_CREATED",
+    "adminPreflightPoolClosed": true,
+    "originalComplete": false,
+    "originalCleanupExit": 1
+  },
+  "capturedBytes": {
+    "cloneWorkCleanup": 450,
+    "outer": 686,
+    "meaning": "separate streams; outer summary repeats derived disposition"
+  },
+  "R1": "all original raw/private/DB KEEP unchanged; no repeat or old DB contents read",
+  "limits": "217.5s/0personal/provider/browser/build preserved",
+  "next": "Only a bounded path validator fix/local direct consumer is proposed; no new actual retry or DB/resource cleanup authorization."
+}

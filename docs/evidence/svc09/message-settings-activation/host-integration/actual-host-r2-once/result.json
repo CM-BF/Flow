@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-07T16:15:48.318173Z",
+  "work": {
+    "exit": 1,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "firstFailure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    }
+  },
+  "cleanup": {
+    "exit": 1,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "firstFailure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    }
+  },
+  "directory": "/private/tmp/flow-svc09a-host-e143n0_5",
+  "retention": "KEEP",
+  "providerCalls": 0,
+  "persistenceFailures": [],
+  "complete": false,
+  "finishedAt": "2026-10-07T16:15:48.480878Z"
+}

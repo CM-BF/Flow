@@ -1,0 +1,113 @@
+{
+  "kind": "SVC09A_HOST_R2_RESULT_BINDINGS",
+  "at": "2026-10-07T16:17:44.230352Z",
+  "source": "78543b0250fcf863e81aad6cd3ec614f294de31b",
+  "preparation": {
+    "fixedRef": "1102f341009bab1995759ce45ca7a620790458a9",
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-preparation-r2.json",
+    "bytes": 23308,
+    "sha256": "d071f4d0dcdffb4c0b175f6c55fde82cd20277b232d4f5bd8d6cfa6756a05cea"
+  },
+  "oldR1ResultReference": {
+    "fixedRef": "d11e512d16181a3d4fbc0167fee0183fc3e17c5c",
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-result-manifest.json",
+    "bytes": 8245,
+    "sha256": "602d12c8ec56c683e5618e0eed4254a6f14a01929ff5a73d0d2403aab33f0a99"
+  },
+  "bindings": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-r2-actual-admission.json",
+      "bytes": 2543,
+      "sha256": "b0c86fef942257f88b2f2380cf726ff4d24196fb4b01692f628a8059984fbf0e"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-r2-pg-admission.json",
+      "bytes": 401,
+      "sha256": "8a02f23d4a189320f3cdbeb5f07afd9fe17dac6eac5725a7c7a9b175c522ac1d"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-r2-operator-observation.json",
+      "bytes": 482,
+      "sha256": "09254ff7ed79b63429d1837eb5fcb7c4a56798fffc079c0f6a2411d80d0b0108"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-r2-window-return.json",
+      "bytes": 3038,
+      "sha256": "c01d02a5ff5fb2910009e3ab4b0d1d7e6c2f3da6e72223c0b89f4d7cab963dfa"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-r2-result-analysis.json",
+      "bytes": 3205,
+      "sha256": "beb81f74ab71b5d0a0735ad89e50f6483f1eb01deb79febdc908ff7f691fbf8b"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/HOST-R2-RESULT.md",
+      "bytes": 868,
+      "sha256": "dd29bc5d29e12c31d51e852c57d5cb81979e50fa49e967a5ca3199ddba52f581"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-outer-r2-once/outer-report.json",
+      "bytes": 1947,
+      "sha256": "8e914eeebb4262af5ad807083eee2431b61ba35126043da0f1d69be0c40daf18"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-r2-once/cleanup-outer.json",
+      "bytes": 790,
+      "sha256": "74589c228caaf4bed2a432c8e3f673a2a051220fd24605b3e8e20ec841347832"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-r2-once/clone-outer.json",
+      "bytes": 849,
+      "sha256": "54c0c626a6d7d9f9303012396eff73e53b0c5da161f1d672acaca494c125f949"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-r2-once/owned-root.json",
+      "bytes": 150,
+      "sha256": "16cabe8b7f0cc733d3318b23bade97cc06770d241d1084d8949d777138c26b20"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-r2-once/records/work-outer.json",
+      "bytes": 323,
+      "sha256": "092506ac18f5ba782f640ba58e469b316f3ce5acc187e5f9e9ee8dbe99f7da0c"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-r2-once/reservation.json",
+      "bytes": 1170,
+      "sha256": "5e99c4d5e59b02a3b7a6b90cd96b1ded501ca546d638f7c7b0f3a6f0ff568e09"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-r2-once/result.json",
+      "bytes": 854,
+      "sha256": "c59b55df6e9a5d3c542a13e9c24b72e53ede7bdfe823983870f8f30597ffd87b"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-r2-once/work-outer.json",
+      "bytes": 782,
+      "sha256": "74f832a45966b97fd745c72658315184087624e28e38c849ad5f1632f6db76be"
+    }
+  ],
+  "count": 14,
+  "bytes": 17402,
+  "privateRetained": {
+    "root": {
+      "directory": "/private/tmp/flow-svc09a-host-e143n0_5",
+      "identity": {
+        "dev": "16777234",
+        "ino": "124305734"
+      },
+      "retention": "KEEP"
+    },
+    "input": {
+      "path": "/private/tmp/flow-svc09a-host-e143n0_5/input.json",
+      "bytes": 6570,
+      "sha256": "499553a41dbb53049b9e49503bf94892a01b9664793a9b4cbda0386dfe0c145b"
+    },
+    "clonedManifest": {
+      "path": "/private/tmp/flow-svc09a-host-e143n0_5/backend-artifacts/2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4/manifest.json",
+      "bytes": 3196958,
+      "sha256": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4"
+    },
+    "verificationScope": "identity/bytes/hash of listed small inputs only, no full closure scan"
+  },
+  "oldRawUnmodified": true
+}

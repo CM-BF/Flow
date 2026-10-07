@@ -6,16 +6,16 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T16:06:55.481113Z |
+| 更新时间 | 2026-10-07T16:17:44.230352Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | review |
-| 当前产出 | 首次隔离宿主失败记录已获独审并合入主线；入口工具路径已修复并通过直接检查，待窄审。 |
-| 下一可用交付 | 新的独立单次旅程候选已固定，待差量独审与实际窗口；个人安装保持不变。 |
-| 当前阻塞 | ACTIVE: 入口修复待独审；原宿主旅程未通过，已消费目录不能重投，专用DB/私有目录仍保留。 |
+| 当前产出 | R2被临时目录名校验提前拒绝，未建库或启动宿主；实际运行已结束并保留原件。 |
+| 下一可用交付 | 修正隔离路径校验与临时目录生成合同，验证直接入口后交独审；双槽旅程仍未验。 |
+| 当前阻塞 | ACTIVE: 夹具未接受临时目录的合法下划线；两次实际窗口已消费，原件和私有目录保留，禁止自动重投。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
@@ -26,11 +26,11 @@
 | 工作树dirty状态 | 本次仅own plan/evidence准备；提交后以Git状态核对，产品全停写并已归还 |
 | 实现范围 | tools/personal-preview/cli.mjs, tools/personal-preview/environment.mjs, tools/personal-preview/environment.test.mjs, tools/personal-preview/maintenance-host.mjs, tools/personal-preview/maintenance.test.mjs, tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/runner-slots.mjs, tools/personal-preview/runner-slots.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v4；11产品/测试literal于14:37:45.486Z原子归还，仅保留own plan/evidence；[回执](../../docs/evidence/svc09/message-settings-activation/product-return-receipt.json) |
-| Review | R1 APPROVED_LIMITED_FAILED_HOST_RESULT_FIDELITY，main e271fb211 / I02 svc09a-host-first-result-review.json；不认可宿主通过。新PATH源码/2直接例待唯一delta审。 |
+| Review | R2准备已独审；本次读取输入前失败/RETURN待唯一结果独审，PATH首因不因本轮未到达而追认。 |
 | 检查状态 | 7轮44选择/33不同，最终33不同均通过；原1次夹具失败保留。3444ms/11838B，7组absent/双EOF/exactscratchremoved；[原始与派生口径](../../docs/evidence/svc09/message-settings-activation/validation-summary.json) |
-| 验证限制 | 本次仅clone/新DB marker/合成Web loader与center启动尝试；runner/settings/web未启动。完整宿主/mixed/App/个人/provider仍未验。 |
+| 验证限制 | R2机械clone通过但后续完整verifier未到达；private input/work setup、宿主、mixed、App/个人/provider未验。 |
 | 已集成main状态 | 246ed0f52ca0ec3078f0cd8bddc48c655501a711；main commit UTC2026-10-07T14:36:33Z，Lead已确认main/origin clean。11产品与已审source逐字同；[收据](../../docs/evidence/svc09/message-settings-activation/main-receipt.json)。旧7d1/6c和新cd27/04da均不是设置双槽产物。 |
-| 运行窗口 | R1实际运行15:58:29.899259Z RETURN，DB/private KEEP；PATH局部16:02:10.393405Z RETURN，2/2、148ms/466B、组absent/双EOF/exact scratch removed。 |
+| 运行窗口 | R2 operator reservation 2026-10-07T16:15:44.617161Z，16:15:48.486779Z outer结束；16:16:36.884252Z actual RETURN。无fixture DB/服务，private KEEP；R1不动。 |
 | 架构影响 | 同一宿主锁与维护CAS内有限legacy/settings二槽已main；工程dashboard架构基线更新由Execution Lead协调，真实部署未发生 |
 | 看板 | 首canonical已登记；本status记录源码片段已main，不声称实际双槽部署 |
 
@@ -88,3 +88,7 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T16:03:25.400473Z：R1唯一结果独审已main e271fb211，范围仅原FAIL/RETURN/KEEP保真。PATH修复见[差量结果](../../docs/evidence/svc09/message-settings-activation/host-integration/host-path-fix-result.json)，2新直接例通过；原6/5/33及host未重跑。旧host-preparation与raw不改；尚未创建新actual namespace、未绑定新actual许可。
 
 2026-10-07T16:06:55.481113Z：同次delta补固定R2入口/两个新namespace及新source绑定，旧默认入口仍拒重用。3个参数/拒重复直接例通过129ms/637B，16:05:24.231267Z组absent/双EOF/empty exact scratch removed。本次合计5新例277ms/1103B；[R2候选](../../docs/evidence/svc09/message-settings-activation/host-integration/host-preparation-r2.json)未实际运行，旧R1所有原件不改。
+
+2026-10-07T16:15:32.278596Z：R2唯一实际START准入。fresh17执行pin+6runtime、4保留身份、claim v4与新namespace均一致；最新完整floor17942446080B/free20162699264B，PG100上限/9已用，满足26+16且观察poolclose。R1 DB/tmp不读改删；0个人/provider/build。准备至本次START之间的精确等待开始未记录，保UNKNOWN，不将所有间隔称资源等待。
+
+2026-10-07T16:17:44.230352Z：R2已封[失败结果](../../docs/evidence/svc09/message-settings-activation/host-integration/HOST-R2-RESULT.md)，新运行3,953ms。tempfile合法下划线未被入口接受；在input/setup之前拒绝，无fixture DB/服务产生。4PID/组已核absent并RETURN，private KEEP。下一仅有界路径合同修复，不复用已消费R2，不重投host。
