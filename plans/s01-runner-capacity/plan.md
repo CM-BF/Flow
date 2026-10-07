@@ -1,6 +1,6 @@
 # S01 确定性 Runner 容量验证
 
-创建/更新：2026-10-07T12:28:56.483Z。状态 in-progress；owner status_read / gpt-6-astra（co-lead Mika）。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；初始已审基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
+创建/更新：2026-10-07T12:55:31.777835+00:00。状态 in-progress；owner status_read / gpt-6-astra（co-lead Mika）。Goal Owner 已批准最小实验方向。权威 worktree `/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe`，branch `codex/runner-capacity-probe`；初始已审基线 `115b0dbdfa02db5483f9e9699852682ce699633c`。
 
 目标：在真实中心、PostgreSQL、独立 runner 进程及持久 outbox 上，区分持久会话数、中心声明容量、实际执行并发与本次确定性工具负载。先找出最小容量缺口，不把观察者、数据库行数或模拟模型当真实 provider 容量。父要求见 [FLOW-001](../flow-001-architecture/plan.md) 与 [FLOW-002](../flow-002-provider-harness/plan.md)。
 
@@ -132,3 +132,7 @@ A/B在上述19:54历史阶段为另一未运行准备片；其后唯一实际窗
 2026-10-07T12:37:38.684Z 首片仅新增私有pg-delivery/test，11/11与修后strict0，见[接口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-interface.md)。已固定待独审；当前driver未接，v2/chat轻读/取消与新namespace另按原设计继续准备，不把Module通过当实验完成。
 
 2026-10-07T12:40:13.864Z 私有delivery首片source03164654已独审通过，0 P1/P2；完整driver/新实验未接未跑。剩余v2观测、真实chat轻读/取消按已审设计继续，不重跑11绿，主线接收与未来窗口另如实记录。
+
+## 2026-10-07T12:55:31.777835+00:00 方法实施首个消费者片
+
+[已固定接线Interface](../../docs/evidence/s01/mixed-ab-preparation/pg-wiring-interface.md)以原child/driver/reporter贯穿有界交付、同epoch本地phase、当前公开v2 DTO与重放观察。这里只交可独立核验接线，完整recipe仍缺新输出领取/当前production source调用与chat/cancel尾段；原六TODO/性能验收不降低，当前0PG/NOT_OPEN。

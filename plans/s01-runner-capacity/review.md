@@ -1,6 +1,10 @@
 # S01 独立审查
 
-## 当前：私有observer delivery首片
+## 当前：真实消费者接线片
+
+状态PENDING。Review target commit: `b846778835f3cb6dbb60fa4e8b04f87c504f0813`。范围[pg-wiring-interface](../../docs/evidence/s01/mixed-ab-preparation/pg-wiring-interface.md)及[固定binding](../../docs/evidence/s01/mixed-ab-preparation/pg-wiring-review.json)；9 distinct分轮/最终strict0，9raw3436B，0PG/性能/新recipe。请核完整信封/epoch本地phase/summary/pending与v2公开decoder及身份replay；旧11/A-B不重审或重跑。
+
+## 历史：私有observer delivery首片
 
 状态：SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED / 0 P1/P2，chatui01_owner / gpt-6-astra，2026-10-07T12:38:58Z。Review target commit: `0316465419025204d7feffc558c2c80bc9374689`。入口[pg-delivery-interface.md](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-interface.md)与[固定源/局部结果binding](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-review.json)；仅新实验Module/直接tests、11/11+types2→0及3child资源证据，0PG/性能。原driver/默认A/B/产品不变；[正式回执](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-independent-review.json)绑定e5dd74fb packet及13bindings37766B。3raw797B/资源末态/原types失败与early EPERM保留；不批准完整实验READY、性能或PG OPEN。审者0写/工程执行/PG，未访问TMP或旧根。
 

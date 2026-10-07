@@ -1,0 +1,40 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe
+
+ ❯ experiments/runner-capacity/mixed/pg-delivery-wiring.test.ts (8 tests | 1 failed) 169ms
+   ✓ actual center/reporter/driver seams preserve local phases and settle counts in per-query 2ms
+   ✓ actual center/reporter/driver seams preserve local phases and settle counts in buffered 0ms
+   × full envelope cap includes reporter fields and cumulative/pending charges retain failure 3ms
+   ✓ missing, partial, wrong epoch and duplicate finish receipts remain unknown 0ms
+   ✓ v2 empty opportunity and status replay retain one identity without treating replay as a new claim 0ms
+   ✓ v2 conflicts, empty regression, wrong endpoint state and unowned identities fail observation 0ms
+   ✓ legacy claim/null stays compatible and duplicate assignment still fails 0ms
+   ✓ real existing child launch/reporter closes an idle runner IPC peer without starting runtime or PG 162ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  experiments/runner-capacity/mixed/pg-delivery-wiring.test.ts > full envelope cap includes reporter fields and cumulative/pending charges retain failure
+AssertionError: expected true to be false // Object.is equality
+
+- Expected
++ Received
+
+- false
++ true
+
+ ❯ experiments/runner-capacity/mixed/pg-delivery-wiring.test.ts:44:68
+     42|     expect(pending.send({ kind: 'sample', body: 'x'.repeat(40) })).toB…
+     43|     expect(pending.pending).toBeGreaterThan(0);
+     44|     expect(pending.send({ kind: 'sample', body: 'x'.repeat(40) })).toB…
+       |                                                                    ^
+     45|     callbacks[0]!(new Error('send failed')); expect(pending.pending).t…
+     46|     const cumulative = childReporter(stop, () => ({ ...CONTRACT, softB…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  1 failed | 7 passed (8)
+   Start at  05:49:01
+   Duration  361ms (transform 88ms, setup 0ms, import 100ms, tests 169ms, environment 0ms)
+

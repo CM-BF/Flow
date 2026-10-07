@@ -1,0 +1,318 @@
+{
+  "source": "b846778835f3cb6dbb60fa4e8b04f87c504f0813",
+  "startedAt": "2026-10-07T12:42:29Z",
+  "fixedAt": "2026-10-07T12:55:31.777835+00:00",
+  "status": "LOCAL_RESULT_READY_FOR_REVIEW",
+  "mode": "pure-module-and-idle-ipc-peer",
+  "pg": false,
+  "newPerformanceRun": false,
+  "distinctTests": 9,
+  "testRuns": [
+    {
+      "name": "tests-1",
+      "total": 8,
+      "pass": 7,
+      "fail": 1
+    },
+    {
+      "name": "tests-2",
+      "total": 8,
+      "pass": 1,
+      "unselected": 7
+    },
+    {
+      "name": "tests-3",
+      "total": 8,
+      "pass": 2,
+      "unselected": 6
+    },
+    {
+      "name": "tests-4",
+      "total": 9,
+      "pass": 2,
+      "unselected": 7
+    }
+  ],
+  "typesExits": [
+    2,
+    0,
+    0,
+    0,
+    0
+  ],
+  "rawBytes": 3436,
+  "supervisorElapsedSumMs": 12236,
+  "wholeExternalWall": null,
+  "activePeakTmpBytes": null,
+  "topLevelChildren": 9,
+  "nestedIdleIpcPeers": 3,
+  "runs": [
+    {
+      "receipt": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-tests-1.json",
+      "kind": "tests",
+      "startedAt": "2026-10-07T12:49:01.365845+00:00",
+      "endedAt": "2026-10-07T12:49:01.967383+00:00",
+      "exit": 1,
+      "supervisorMs": 597,
+      "pid": 86321,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "raw": {
+        "path": "pg-wiring-tests-1.raw",
+        "bytes": 2098,
+        "sha256": "5a64468b51d5885dc426da80d60d555af61b87a448363c9bb681de00beda3953"
+      },
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-kj2gf4dx",
+        "dev": 16777234,
+        "ino": 124146461,
+        "removed": true,
+        "lastSampleBytes": 88995,
+        "entries": 18
+      },
+      "floorBytes": 6895435776,
+      "freeBytes": 21799354368
+    },
+    {
+      "receipt": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-tests-2.json",
+      "kind": "tests",
+      "startedAt": "2026-10-07T12:49:23.891848+00:00",
+      "endedAt": "2026-10-07T12:49:24.321267+00:00",
+      "exit": 0,
+      "supervisorMs": 425,
+      "pid": 99385,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "raw": {
+        "path": "pg-wiring-tests-2.raw",
+        "bytes": 358,
+        "sha256": "fcc746b8b572f99cc179d2def1832f8c3f09a2713fe466d4497ccd8c74caf7d4"
+      },
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-o44kihrg",
+        "dev": 16777234,
+        "ino": 124146538,
+        "removed": true,
+        "lastSampleBytes": 144,
+        "entries": 4
+      },
+      "floorBytes": 6895435776,
+      "freeBytes": 21780279296
+    },
+    {
+      "receipt": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-tests-3.json",
+      "kind": "tests",
+      "startedAt": "2026-10-07T12:49:50.011001+00:00",
+      "endedAt": "2026-10-07T12:49:50.497513+00:00",
+      "exit": 0,
+      "supervisorMs": 476,
+      "pid": 14181,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "raw": {
+        "path": "pg-wiring-tests-3.raw",
+        "bytes": 359,
+        "sha256": "6ddfda8d3b260782101811488609943c1745345db70fd9df6c764ccc9cd8b4df"
+      },
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-_er7kmf1",
+        "dev": 16777234,
+        "ino": 124146627,
+        "removed": true,
+        "lastSampleBytes": 145,
+        "entries": 4
+      },
+      "floorBytes": 6895435776,
+      "freeBytes": 21777502208
+    },
+    {
+      "receipt": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-tests-4.json",
+      "kind": "tests",
+      "startedAt": "2026-10-07T12:53:16.309774+00:00",
+      "endedAt": "2026-10-07T12:53:17.066372+00:00",
+      "exit": 0,
+      "supervisorMs": 750,
+      "pid": 47104,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "raw": {
+        "path": "pg-wiring-tests-4.raw",
+        "bytes": 363,
+        "sha256": "321e5a6ddc358ffbf76ed07895f36a3bedd70b63d7fd8af2c216579ef5624bb7"
+      },
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-hxb3brqc",
+        "dev": 16777234,
+        "ino": 124149853,
+        "removed": true,
+        "lastSampleBytes": 90882,
+        "entries": 18
+      },
+      "floorBytes": 6895435776,
+      "freeBytes": 21791494144
+    },
+    {
+      "receipt": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-types-1.json",
+      "kind": "types",
+      "startedAt": "2026-10-07T12:48:08.521255+00:00",
+      "endedAt": "2026-10-07T12:48:10.517366+00:00",
+      "exit": 2,
+      "supervisorMs": 1992,
+      "pid": 49066,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "raw": {
+        "path": "pg-wiring-types-1.raw",
+        "bytes": 258,
+        "sha256": "10ba09eeee385d2b5a041684d4b41bc8ffe45da69f6febc03083ce2c4ec9e13e"
+      },
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-iqyd0_42",
+        "dev": 16777234,
+        "ino": 124146225,
+        "removed": true,
+        "lastSampleBytes": 0,
+        "entries": 0
+      },
+      "floorBytes": 6895435776,
+      "freeBytes": 21801095168
+    },
+    {
+      "receipt": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-types-2.json",
+      "kind": "types",
+      "startedAt": "2026-10-07T12:48:51.107879+00:00",
+      "endedAt": "2026-10-07T12:48:53.116698+00:00",
+      "exit": 0,
+      "supervisorMs": 2005,
+      "pid": 76255,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "raw": {
+        "path": "pg-wiring-types-2.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-f5sbipg_",
+        "dev": 16777234,
+        "ino": 124146434,
+        "removed": true,
+        "lastSampleBytes": 0,
+        "entries": 0
+      },
+      "floorBytes": 6895435776,
+      "freeBytes": 21800165376
+    },
+    {
+      "receipt": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-types-3.json",
+      "kind": "types",
+      "startedAt": "2026-10-07T12:50:34.255049+00:00",
+      "endedAt": "2026-10-07T12:50:36.305155+00:00",
+      "exit": 0,
+      "supervisorMs": 2045,
+      "pid": 43827,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "raw": {
+        "path": "pg-wiring-types-3.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-s0w0d4m0",
+        "dev": 16777234,
+        "ino": 124149185,
+        "removed": true,
+        "lastSampleBytes": 0,
+        "entries": 0
+      },
+      "floorBytes": 6895435776,
+      "freeBytes": 21791555584
+    },
+    {
+      "receipt": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-types-4.json",
+      "kind": "types",
+      "startedAt": "2026-10-07T12:51:58.820855+00:00",
+      "endedAt": "2026-10-07T12:52:00.811479+00:00",
+      "exit": 0,
+      "supervisorMs": 1987,
+      "pid": 98015,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "raw": {
+        "path": "pg-wiring-types-4.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-1dij1xy0",
+        "dev": 16777234,
+        "ino": 124149620,
+        "removed": true,
+        "lastSampleBytes": 0,
+        "entries": 0
+      },
+      "floorBytes": 6895435776,
+      "freeBytes": 21788708864
+    },
+    {
+      "receipt": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-types-5.json",
+      "kind": "types",
+      "startedAt": "2026-10-07T12:53:20.866097+00:00",
+      "endedAt": "2026-10-07T12:53:22.828271+00:00",
+      "exit": 0,
+      "supervisorMs": 1959,
+      "pid": 51758,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true
+      },
+      "raw": {
+        "path": "pg-wiring-types-5.raw",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-s01-pg-wiring-qyoa2kq7",
+        "dev": 16777234,
+        "ino": 124149898,
+        "removed": true,
+        "lastSampleBytes": 0,
+        "entries": 0
+      },
+      "floorBytes": 6895435776,
+      "freeBytes": 21790400512
+    }
+  ],
+  "limits": {
+    "segmentSeconds": 1200,
+    "perChildSeconds": 60,
+    "childSecondsCumulative": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 2097152
+  },
+  "boundaries": [
+    "No production runtime started in IPC peer cases; no center/HTTP listener/PG/provider.",
+    "Public v2 decoder is loaded lazily from the future same-baseline source tree; this local check did not load current-main full DTO dependencies.",
+    "No new run identity/output scope or complete 258-task chat/cancel recipe; delivery activation is rejected for all legacy/A-B identities.",
+    "Early CLOSED notice was corrected before final check seal; architecture_read confirmed no ordinary child used that interval.",
+    "Initial EPERM observations and first errors remain in original receipts; final absence is a later observation."
+  ]
+}

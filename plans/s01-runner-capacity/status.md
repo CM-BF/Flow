@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T12:40:13.864Z |
+| 最近更新 | 2026-10-07T12:55:31.777835+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | source/局部结果已固定，当前仅本plan/status/review收口；旧source/raw/input不变，提交后dirty由Git核对。 |
+| 工作树dirty状态 | 本段源码与局部结果已固定；当前只做本任务metadata交审收口，提交后Git另核。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 新私有模块11/11；focused types首次2（无输入）→显式files修后0，三原raw797B保持；0PG/性能/旧64重跑。 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED：当前私有observer模块03164654尚未main。历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2，不受本片改变。 |
-| 实现目标 | 0316465419025204d7feffc558c2c80bc9374689 |
-| 实现范围 | experiments/runner-capacity/mixed/pg-delivery.ts, experiments/runner-capacity/mixed/pg-delivery.test.ts |
+| 检查状态 | 接线9 distinct分轮；首8选7pass1fail→1pass，v2两例与实际child两例定向通过；strict首2→修后0，最终source b846778835f3cb6dbb60fa4e8b04f87c504f0813；9raw3436B。 |
+| 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
+| 实现目标 | b846778835f3cb6dbb60fa4e8b04f87c504f0813 |
+| 实现范围 | experiments/runner-capacity/mixed/ab-input.ts, experiments/runner-capacity/mixed/channel.ts, experiments/runner-capacity/mixed/child.ts, experiments/runner-capacity/mixed/claim-observation.ts, experiments/runner-capacity/mixed/driver.ts, experiments/runner-capacity/mixed/pg-delivery-bridge.ts, experiments/runner-capacity/mixed/pg-delivery-wiring.test.ts, experiments/runner-capacity/mixed/process.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 有界观察交付小接口及11项直接验证已独审通过；首类型配置失败保留，修后严格类型通过。 |
-| 下一可用交付 | 接入当前领取协议与真实聊天轻读、取消验收；完整性能实验尚未准备或运行。 |
+| 当前产出 | 观察交付已接入实验子进程与接收侧，当前领取身份和重放可被准确观察；局部检查已完成，待独立审查。 |
+| 下一可用交付 | 接真实聊天轻读与取消配方，补固定生产闭包和预算；尚无新性能运行入口或许可。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED source03164654 / packete5dd74fb；chatui01_owner，2026-10-07T12:38:58Z，0 P1/P2；只限私有模块及局部结果。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE /5scope；2026-10-07T12:16:51.374748Z只读CLI核owner/WT/branch/全部5范围保持。 |
-| 架构影响 | 本段仅方法设计，生产Module/Interface/FSM/数据库池不改；拟复用原实验观察器的有限delivery策略，不建追踪平台。未来实际实现与架构变化另记录；历史S01P07产品架构事实见其权威status。 |
+| Review | PENDING：本次接线见pg-wiring-review.json；原私有模块03164654审批只覆盖原片，不自动延伸。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE /5scope；2026-10-07T12:42:29Z CLI再次核self/WT/branch/all5。 |
+| 架构影响 | 私有实验增加有界观察交付Module；本段接既有child/reporter/driver，使epoch与本地phase、字节和UNKNOWN语义贯穿消费者。生产池/SQL/协议实现不改，不另建监督器；新性能recipe仍未就绪。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -146,3 +146,15 @@ source `0316465419025204d7feffc558c2c80bc9374689`；[接口与运行记录](../.
 [正式独审](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-independent-review.json)于12:38:58Z绑定source03164654/packete5dd74fb，13bindings37766B全部相符，0 P1/P2。11/11、types首2→0、三raw797B与资源终态批准；不把module批准当完整driver/PG/性能通过。后继必须保center本地epoch/settle计数，不用buffer flush的IPC接收时刻冒充measure。
 
 metadata首push曾timeout；10s有界ls-remote确认远端仍03164654后，同一e5dd74fb重推成功，HEAD=origin/clean于12:39:04Z工具确认。此后本次仅归档review/status，无新工程运行。当前模块尚未main，历史A/B/idle主线事实单独保留；原6TODO仍三完成三开放、task NOT_COMPLETED。当前claim508f v2/all5保留，源码停写；ordinary已12:34:05实际归还。本20min段到此交付，无PG/provider/服务/旧unknown根动作。
+
+## 2026-10-07T12:42:29Z 真实观察接线段
+
+实际开段工具UTC；HEAD=origin 1e66df92debcb7cd2c3f11782038cc174f391828 clean，协调CLI再次核508f v2/self/all5。20分钟截至13:02:29Z，0PG/Chrome/provider/服务/性能/安装。仅私有mixed模块与直接消费者、现有preparation/plan；不创建未领取pool-wait-run。ordinary上限单child60s/累计120s、TMP16MiB/raw512KiB/source+meta2MiB；fresh资源至少6895435776B并服从更新完整sum。旧11绿/64/A-B/raw不重跑、不回写。
+
+## 2026-10-07T12:55:31.777835+00:00 接线片固定交审
+
+[唯一接线入口](../../docs/evidence/s01/mixed-ab-preparation/pg-wiring-interface.md) / [binding](../../docs/evidence/s01/mixed-ab-preparation/pg-wiring-review.json)。本段9 distinct分轮/最终strict0，原两类红与所有原件保留；9顶层child累计12.236s、最后12:53:22.828271Z完全收尾。0PG/HTTPlistener/provider/性能/安装；三个实际idle IPC peer没有启动runtime。新identity/output未领取，所有legacy/A-B均不能启新delivery。后半chat/cancel/currentbaseline整体尚未准备，不标SOURCE_READY或OPEN。
+
+find-skills/codebase-design/clean-code质量结果见入口，私有实验模块与生产权威边界明确；六TODO、整体NOT_COMPLETED和历史main事实不变。唯一status继续原dashboard权威源；本次未重新GET或猜同步时间，最新历史聚合观察保留。当前原claimed范围持有至review修复，不触unknown旧资源。
+
+2026-10-07T12:56:10Z metadata parse：errors=[]、human.missing=[]、implementation.errors=[]，target完整40SHA；原task开工UNKNOWN仍唯一timing提示。38binding/167826B hash核对errors=[]；本次未重新获取dashboard，历史同步来源不冒新快照。
