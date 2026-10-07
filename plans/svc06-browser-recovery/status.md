@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:07:40.572Z；新恢复固定source与构建入口已准备，待独审/实际构建窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:14:03.021Z；恢复固定产物已构建/内部加载成功并归还，待结果独审与冷启动/新tuple兼容 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -152,3 +152,7 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T20:59:44.336Z：新恢复组合准备开始，原初始化小片独审等待结束：Lead APPROVED_LIMITED_CURRENT_CHILD_INITIALIZATION，main/origin770bd2c05已精确接收七源；唯一[I02 review](../../../m2-integration/docs/evidence/i02/svc06b-runner-initialization-review.json)。delivery1520aeb09正常push已返回成功。恢复只组合04da与必要七个运行源，维护目标模块ddd8/be5由原owner独审交接；新source/产物尚未构建。原owner正补冷启动fixture显式port，本任务写薄consumer；0新个人I/O/PG/服务。状态事实仍sameop23/all stopped，实际领取未观察。
 
 2026-10-07T21:07:40.572Z：恢复source f37a/tree de843由Lead按a8f七路径精确生成；build-only入口source8a0c2739固定，见[构建准备](../../docs/evidence/svc06/browser-recovery/recovery-build-preparation.json)。2Node+2Python直接例161ms/698B，21:06:22.648534Z归还，两组absent/双EOF/两exact空scratchremoved；首轮后置汇总KeyError缺子报告，UNKNOWN保留并保守扣25s，不计绿/清理。当前未创建recovery-build-once，真实build仍等唯一共享窗口；cold helper4c0cbc已独审，薄consumer另准备，不把build就绪当冷启动或个人恢复批准。
+
+2026-10-07T21:14:03.021Z：恢复构建唯一actual START；cb263/8a0与f37a固定输入、claim v8及新namespace已核；fresh 19234660352B≥18933678080B（含首local UNKNOWN8519680B一次）。原420+.5+2/0PG/provider/个人；见recovery-build-actual-admission.json，结果待实际收尾。
+
+2026-10-07T21:15:31.319Z：新恢复artifact b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d / f37a构建成功；21:14:43.322Z实际RETURN，32675ms/exit0/group11460 absent/双EOF。root KEEP供验收，原首local UNKNOWN8519680B仍保留，不重测。见[唯一结果manifest](../../docs/evidence/svc06/browser-recovery/recovery-build-result-manifest.json)；冷启动/4App新tuple/个人恢复未运行。
