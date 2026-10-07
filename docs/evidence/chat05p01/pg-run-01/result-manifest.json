@@ -1,0 +1,149 @@
+{
+  "at": "2026-10-07T06:41:15.961102+00:00",
+  "kind": "CHAT05P01-first-three-PG-actual-result",
+  "source": "c687b1b63802298d27396aa4c40bd9075ccb1405",
+  "productSource": "40af6d9071c621707971fd983a85dd9145f065fd",
+  "resultTarget": "8059b7b23a2d98d4c9f3fdfe960142a943314d5f",
+  "status": "AUTHOR_PASS_PENDING_INDEPENDENT_REVIEW",
+  "originalInputManifest": "docs/evidence/chat05p01/pg-entry/manifest.json",
+  "originalInputManifestSha256": "baa33c2043831931e2fb25afbe75f83fad7b6b4119e98e9a9719bbe88ecf04a1",
+  "bindings": [
+    {
+      "path": "apps/server/src/native-activity-body/fixture.ts",
+      "bytes": 10428,
+      "sha256": "29a65ba40e63c5ff686c804876a4cd84e3411632b3679cdadda95c5b6b6d0820",
+      "fixedRef": "c687b1b63802298d27396aa4c40bd9075ccb1405",
+      "kind": "reviewed-entry"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-entry/README.md",
+      "bytes": 5286,
+      "sha256": "2afb5c350d2a29adf8eeaf76486efcf0bb830d9eb123b83bf69d1b12eec568e5",
+      "fixedRef": "c687b1b63802298d27396aa4c40bd9075ccb1405",
+      "kind": "reviewed-entry"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-entry/claim-observation.json",
+      "bytes": 1238,
+      "sha256": "3e9220f381b51b1b694cae8762e806810694da27d5abaca208f956fa2dd66da4",
+      "fixedRef": "c687b1b63802298d27396aa4c40bd9075ccb1405",
+      "kind": "reviewed-entry"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-entry/config.mjs",
+      "bytes": 406,
+      "sha256": "3b24f85002a359286ab759a95a13340cf578b67d19d513082f222154d5ba38da",
+      "fixedRef": "c687b1b63802298d27396aa4c40bd9075ccb1405",
+      "kind": "reviewed-entry"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-entry/inputs.json",
+      "bytes": 111693,
+      "sha256": "e92067c2ad2b77faf92cf129b4966e52513c6b36a1d0f091f2d8d46b58835dd5",
+      "fixedRef": "c687b1b63802298d27396aa4c40bd9075ccb1405",
+      "kind": "reviewed-entry"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-entry/preparation.json",
+      "bytes": 855,
+      "sha256": "8fb41ec845449067f7570e0dcc7f463e7734e12d3143a179d3f0efd5f3010d23",
+      "fixedRef": "c687b1b63802298d27396aa4c40bd9075ccb1405",
+      "kind": "reviewed-entry"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-entry/run.py",
+      "bytes": 7476,
+      "sha256": "d3cfbfe67644033ebb4f0b7c4c66684b9552439b96188acb71da0efcb04ff939",
+      "fixedRef": "c687b1b63802298d27396aa4c40bd9075ccb1405",
+      "kind": "reviewed-entry"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-run-01/RESULT.md",
+      "bytes": 1816,
+      "sha256": "4996e504d2c3b704776d81a3c03cbd200d5b3ab8cfddedad3770b5f3833c2475",
+      "fixedRef": "8059b7b23a2d98d4c9f3fdfe960142a943314d5f",
+      "kind": "result-or-review"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-run-01/fixture.jsonl",
+      "bytes": 4659,
+      "sha256": "563c0d5b61940ccc5438a7da6c05c99dbed6dc59e26767c119c50971e3296150",
+      "fixedRef": "8059b7b23a2d98d4c9f3fdfe960142a943314d5f",
+      "kind": "result-or-review"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-run-01/reservation.json",
+      "bytes": 594,
+      "sha256": "70649f887693843870cb71df293b7b92843657d638e8a7a37bd685e05fa360d4",
+      "fixedRef": "8059b7b23a2d98d4c9f3fdfe960142a943314d5f",
+      "kind": "result-or-review"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-run-01/result.json",
+      "bytes": 2916,
+      "sha256": "118cda3eeaab6ae4cb273ef8b2d3bb90e29e751722122fbe230def266f529a44",
+      "fixedRef": "8059b7b23a2d98d4c9f3fdfe960142a943314d5f",
+      "kind": "result-or-review"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-run-01/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedRef": "8059b7b23a2d98d4c9f3fdfe960142a943314d5f",
+      "kind": "result-or-review"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-run-01/stdout.txt",
+      "bytes": 835,
+      "sha256": "6a338190e4cbc8d5152ed3374e20ceae46b7a779892b5aa0d536012ed312dacc",
+      "fixedRef": "8059b7b23a2d98d4c9f3fdfe960142a943314d5f",
+      "kind": "result-or-review"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-run-01/summary.json",
+      "bytes": 2217,
+      "sha256": "627f38097003ddebd864ff6dcc2356d9a533ae0f441e97790f748e026a934bf1",
+      "fixedRef": "8059b7b23a2d98d4c9f3fdfe960142a943314d5f",
+      "kind": "result-or-review"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-run-01/tmp/cache/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+      "bytes": 134,
+      "sha256": "dc45aa95c5f20e498a6afa551b5f2c5f16486867cc7bbac67c662edf0b2d9ecf",
+      "fixedRef": "8059b7b23a2d98d4c9f3fdfe960142a943314d5f",
+      "kind": "result-or-review"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-run-01/vitest.json",
+      "bytes": 1731,
+      "sha256": "afd0ae6dac1e01ac0f3772e842fd6bd904983c5daaecac2c9524f429f1fbbea8",
+      "fixedRef": "8059b7b23a2d98d4c9f3fdfe960142a943314d5f",
+      "kind": "result-or-review"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-entry/execution-preflight-01.json",
+      "bytes": 1551,
+      "sha256": "6df1f0d123cb55e1bea05cfc91968f79a36a1c7018cc68dbbe911b9e9b0f91c8",
+      "fixedRef": "8059b7b23a2d98d4c9f3fdfe960142a943314d5f",
+      "kind": "result-or-review"
+    },
+    {
+      "path": "docs/evidence/chat05p01/pg-entry/independent-review.json",
+      "bytes": 1764,
+      "sha256": "de2c012053399c9e49c52dd700f498217c2c8202318be43212f725f9c4377c67",
+      "fixedRef": "8059b7b23a2d98d4c9f3fdfe960142a943314d5f",
+      "kind": "result-or-review"
+    }
+  ],
+  "rawOriginals": 7,
+  "rawOriginalBytesIncludingRetainedCache": 10869,
+  "selectedPassed": 3,
+  "newFixtureNoEmit": "NOT_RUN; focused glob includes fixture but last noEmit0 belongs40af before thisdelta",
+  "limits": [
+    "Actual old-base domain fixture with explicit033/routes; no production enablement",
+    "Original unknown errno1 retained; group finalabsent/EOF does not imply all observations wereknown",
+    "Original historical red/local/type records unchanged",
+    "No provider/browser/personal action or repeatedPG"
+  ],
+  "retained": "Run evidence and134B Vitest cache KEEP; only original owned fixture directory removed by accepted cleanup"
+}

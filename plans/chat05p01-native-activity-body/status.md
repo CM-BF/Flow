@@ -19,7 +19,7 @@
 | 工作树 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body |
 | Branch | codex/native-activity-body |
 | Base | fc3246b307f5436ccecb97f38ccaba10c7a72a5a |
-| HEAD | b3db8a89295b38cfd2fd1d944282f952598d130e 后继结果封包；固定c687入口与40af生产未改 |
+| HEAD | 8059b7b23a2d98d4c9f3fdfe960142a943314d5f 实际3PG结果已固定待独审；固定c687入口与40af生产未改 |
 | dirty | 仅本次run原件/summary与own status；封包后核clean |
 | 工作分支状态 | in-progress |
 | 实现目标 | c687b1b63802298d27396aa4c40bd9075ccb1405 |
@@ -79,3 +79,12 @@ Web/Mika已由Lead明确交接，当前CHAT05P01持有唯一PG段。fresh原v1/s
 ## 2026-10-07T06:40:19.954945+00:00：原三项PG一次完成，窗口已归还
 
 实际06:37:51.861095Z→06:37:55.362725Z，原3/3、exit0、监督3461ms；2,160,011B输入与72,032B结果完整追回，10分页/2,985,938B wire。marker/OID/有界零连接→先行fsync→普通DROP/remaining[]，初始目录dev/ino→checkpoint→正常删除；listener/admin关闭、组最终absent/双EOF，原unknown保留。原始结果见[本次记录](../../docs/evidence/chat05p01/pg-run-01/RESULT.md)。0provider/个人操作；窗口已归还，仅封原件交审。原focused配置包含fixture，但上次types0早于c687改动，本次noEmit NOT_RUN，不冒称补跑。主线/生产开通仍open。
+
+## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| CHAT05P01-W-PG01 | UNKNOWN | 2026-10-07T06:37:51.807947Z | 资源 | 原三项PG等待共享窗口；最早等待起点缺证据。已由Lead明确holder交接并fresh准入，现已解除。 | 06:31:32入口独审、06:32:28 approved-preflight、06:37:51 execution-preflight-01 |
+| CHAT05P01-W-RESULT01 | 2026-10-07T06:41:15.961102+00:00 | OPEN | 审查 | 本次3PG结果封定交唯一独审；后续共享接线与主线接收另按实际事实记录。 | pg-run-01/result-manifest.json、当前owner固定交付 |
+
+实际执行与等待分开：06:37:51.861095Z reservation至06:37:55.362725Z caller结果；fixture在06:37:55.330Z已持久cleaned，窗口随后实际告Lead归还。不把claim/独审/commit时间当首次任务开工；本次最早资源等待起点UNKNOWN保持。
