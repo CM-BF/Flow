@@ -15,9 +15,9 @@
 | 优先级 | 2 |
 | 本片段交付阶段 | implementation |
 | 工作分支状态 | in-progress |
-| 当前产出 | 首次会话PG失败事实及单项夹具修复已独审通过；修复后的末项已准备，等待共享PG实际交接。 |
+| 当前产出 | 首次会话PG失败事实及单项夹具修复已独审通过；共享资源已归还，正在进行末项检查的最终准入。 |
 | 下一可用交付 | 在真实资源交接后只执行末项专库检查，再交结果独审；前五项原通过证据保留。 |
-| 当前阻塞 | ACTIVE: X01已实际清理归还，正在直接与Web确认下一PG持有者；未确认前不启动。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
@@ -69,3 +69,5 @@
 2026-10-07T06:46:36.856151+00:00 Actual CONSUMED/CLOSED; PG holder returned. [Result](../../docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.report.md). No remaining launch. Runtime v12 remains frozen; current v13 adapter handback is separate.
 
 2026-10-07T06:52:12.648667+00:00 Next fixed entry: [sentinel review](../../docs/evidence/mature02c02/conversation-pg-sentinel-review-ready.json). Original R1 remains5/6 FAIL/outerTMP KEEP at630e. New source only inserts the bad record at creation; trigger unchanged, exactGET assertion unchanged. Types0/list1 only; no new PG. Current v13 adapter handed back; client/contracts remain held until conversation acceptance/main.
+
+2026-10-07T07:05:10.832496+00:00 Sentinel admission OPEN_NOT_STARTED: Web Recovery resources returned; sole holder=mika/chatui01_owner. Fresh v13/71,318inputs/2external/20links/10absent; free24289361920/floor4053008384/activepair0. Original operator records real start. One selected case only, no old five rerun. See conversation-pg-sentinel-admission.json.
