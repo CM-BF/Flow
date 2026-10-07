@@ -12,3 +12,5 @@
 七次监督累计15957ms；真实group均最终absent/双EOF。历史pre-reap EPERM observations保留，不冒每次观察均absent。无当前保留tmp。两个缓存清理失败原记录不改绿，后续单独正常收尾。新wrapper关闭Node/tsx缓存，监督自身pycache已记录精确清理并禁写。全部日志/receipt保持原始字节。
 
 后续自查acquire边界：project.acquire部分成功后抛异常必须Native unknown，避免runtime普通failed结算中心admission。c3d29e4a仅2源窄修；新增真实lease故障1/1（29未选）889ms + focused types0/2141ms，group absent/EOF/tmpremoved。累计 **28different**，九轮监督18987ms；原27/3重叠不重跑。PG监督同总期限与每轮query remaining修订仍只准备，无PG执行。
+
+2026-10-07T04:43:21.318457+00:00：review补充指出PG类型声明未包含query_timeout；仅用显式QueryConfig扩展变量修正，querytypes focused exit0/2204ms，双EOF/group absent/scratch removed。原运行选择不变，无PG/行为重跑；累计十轮21191ms、28different，固定type delta aadedee7d8df06713768b143c6901d36a6d81897。

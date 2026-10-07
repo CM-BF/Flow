@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:33:52.806000Z |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:43:21.318457+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -10,7 +10,7 @@
 | Owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-host |
 | Branch | codex/engineering-native-host |
-| 工作基线 / HEAD | 原280289；受控main422f4b150e5801d6010e5bbd6b53574e35384f87 / merge78df1e9bba351f6d9c1e440e556f31cab3398f05 |
+| 工作基线 / HEAD | 原280289；受控main422→c0e0263dc01b9527293318a644f964bd048e2a86 / mergeea585db4d198df33b62453d5502f74772bbc3c25 |
 | 工作树dirty状态 | 本metadata提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
@@ -23,11 +23,11 @@
 | 任务时间来源 | 原take及当次Interface准备；2026-10-06T12:59:48.559Z优先级移交释放至2026-10-07T04:18:16.925Z新take期间等待；后者为恢复实际实施开工 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 写入、完整内容检查与公开收据的宿主组合已通过局部检查，正在准备中心恢复验收 |
+| 当前产出 | 写入、完整内容检查与公开收据的宿主组合已通过局部检查，已完成独审指出的窄修，等待中心恢复验收 |
 | 下一可用交付 | 验证成功收据读回和确认丢失后的重启保护，再交独立审查 |
 | 当前阻塞 | ACTIVE: 两个真实中心旅程等待共享数据库验证窗口；本地组合检查已完成 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，源码/PG入口独审进行中，尚无最终批准 |
+| Review | [review.md](review.md)，原REQUEST_CHANGES已归档，修复及最后类型证据待独立复核；尚无最终批准 |
 | Claim | 0497baa2-ea98-46c7-a7fd-5522aec563ab v1 active，6 literal；2026-10-07T04:18:16.925Z新take成功；原73bbb9e0 v2已released |
 | 架构影响 | 新native编排consumer，F消费公开wire；无启动入口/新loop，交Lead同步固定架构 |
 
@@ -55,3 +55,5 @@ Execution Lead 2026-10-06 12:59 优先级指派：暂停ENG01I产品编排，下
 等待区间是实际排程事实，不等于工作耗时。固定C02 main c0e0263d受控输入已核G默认thread/start，局部直接3例绿；本产品仍未独审/main。原两次wrapper缓存收尾exit1、一次测试类型红保持；所有自有进程/目录已确认收尾，真实PG尚未创建。
 
 2026-10-07T04:38:15.843894Z 自查修复：acquire部分成功后异常改unknown，新增真实lease1/1及focusedtypes0；原27/3重叠不重跑。assignment独审指出PG外层准备耗时未计入child预算与轮询query_timeout未按remaining的问题，dead2c4f准备source已窄修；PG仍NOT_RUN，完整fixed manifest另存final-preparation-manifest.json，旧manifest/raw保持。源码冻结待有限复审。
+
+2026-10-07T04:43:21.318457+00:00：独立原REQUEST_CHANGES与绑定原样归档；acquire和两个期限finding由reviewer静态确认已关闭。其最后类型补充仅改PG fixture的显式QueryConfig扩展，aadedee7d8df06713768b143c6901d36a6d81897，focused0/2204ms；原337绑定中335项仍逐字一致，仅fixture/preflight更新并另存delta manifest。累计28different、十轮21191ms，PG2仍NOT_RUN；未增产品范围，当前固定待复核。
