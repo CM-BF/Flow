@@ -16,7 +16,7 @@
 | 优先级 | 1 |
 | 当前产出 | 原50项受控证据保留；本轮真实页面完成cookie读取、草稿/材料恢复、跨tab CAS及原key重放四组检查，随后中断，未完成整体旅程。 |
 | 下一可用交付 | 页面求值脚本修正与局部序列化检查已通过；待实际浏览器窗口验证剩余授权丢失、离线与窄屏键盘流程，再收完整恢复旅程。 |
-| 当前阻塞 | ACTIVE: 剩余真实浏览器验证等待SVC06实际清理归还及本组具体窗口；局部序列化已通过，不再等待local槽。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-06-chat |
@@ -66,3 +66,5 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 局部修复实际来源：[本队实际检查独审](../../docs/evidence/web-platform/current-product-checkpoint-20261007/local-results-review.json)已接受原9835转译反例及修复十断言；owner7440b59已封存，无重复运行。原rec8ed失败与晚累计38364.050667ms保留，未来浏览器整数余量≤51635ms含15000ms清理，非新运行许可；详[唯一Recovery状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md)。
 
 本次当前摘要按既有NONE/ACTIVE合同校准，[三份父status实际元数据解析](../../docs/evidence/web-platform/checkpoint-0400-20261007/parent-human-parser.json)均errors=[]、human.complete=true/missing=[]；不是产品检查或新页面采样。
+
+2026-10-07T04:13:44.010Z：SVC06实际专库与服务组清理已归还，解除此前共享PG等待；本任务仍须自身fresh准入完成剩余真实浏览器验收，不继承D06窗口。来源见[中央实际回执](../../docs/evidence/web-platform/checkpoint-0413-20261007/incoming.json)。

@@ -1,0 +1,78 @@
+{
+  "at": "2026-10-07T04:14:31.506821+00:00",
+  "role": "Web /root boundedread-onlyresearch; no newGET/aggregate/PG/serverrestart/producttests",
+  "trigger": {
+    "source": "Mika actualreceipt, not Web reproduced",
+    "req15": "Final77b7b425 clean/pushed/released; final4320 snapshotGET exceeded5s and honestlyPENDING_SYNC",
+    "s01": "Finaldcf12c72 clean/pushed/released; final4320 snapshotGET exceeded5s plus one03:53 previous timeout",
+    "limits": "Client observation timeouts, not evidence thatserverisdown, sourcesinvalid, or resourcesidle."
+  },
+  "deployedSource": "451bf2ed1c0c3d7688073c8d060629f064044dc2",
+  "pins": [
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "sha256": "a1cfce71211b02006384a96991ad9e65e2cfeb99f497ad5d7777fe077e10a9ff",
+      "bytes": 4446,
+      "equalsDeployed451": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+      "bytes": 7025,
+      "equalsDeployed451": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "bytes": 2396,
+      "equalsDeployed451": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/documents.mjs",
+      "sha256": "e7cddf2b66762c728192280d3823ee8df12f2de324307ea31e9bc0ecfd0998a3",
+      "bytes": 2917,
+      "equalsDeployed451": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+      "bytes": 7058,
+      "equalsDeployed451": true
+    }
+  ],
+  "existingLog": {
+    "path": "/tmp/flow-dashboard-access185-20261007.log",
+    "bytes": 40,
+    "sha256": "171a595ccf68421879756eec31944e0790e699cbff9d9a2028ca76d32db45c46",
+    "lineCount": 1,
+    "startupBannerCount": 1,
+    "snapshotTimings": false,
+    "rawContentsPrinted": false
+  },
+  "staticObservations": [
+    "Server coalesces concurrent in-flight snapshot calls via pendingSnapshot, but aftersettlement the nextrequest startsanotherfullaggregate; no crossrequest TTL or incrementalstate currently.",
+    "Every snapshot waitsallregisteredtask observations/status/review/documentlisting/implementationproof, thenallmainintegrationproof before response. Single slow constituent can delay snapshot, but no phase timing evidence identifies one here.",
+    "Git context limits activechildren to4; timeout5000 applies per startedGit subprocess, not totalqueue/whole185task aggregation. Therefore a5sHTTP timeout is not evidence anyGit timedout.",
+    "listDocuments reads plan,status,review for everytask; aggregateTask separately readsstatus+review. Some same-file reads exist withinoneaggregation; cost contribution unmeasured.",
+    "Assignment pool has configured800msconnect/1000msstatement/1200msquery; allended in finally. Statictimeouts do not establish actualPG latency and noDBprobe wasmade."
+  ],
+  "existingWork": {
+    "task": "WPF-DPERF04",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+    "source": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+    "direction": "Existing summary-first and on-demanddetail candidate already covers this product need; direct7leaf+1parent historicalpass, browserNOT_RUN, fullsource/main/liveperformanceNOT_VALIDATED.",
+    "ownership": "server/app were explicitlyreleased to ACCESS/Timing; mustfreshreclaim/resolveagainst current approvedACCESS+Timing before any newedits. Nevercopyoldercandidate server/app overthosefeatures."
+  },
+  "recommendation": [
+    "Keep boundedowner metadata/parser checks as localdeliveryevidence and marksingleobservedPENDING_SYNC; avoid eachowner retrying full185GET as completion ritual.",
+    "Reuse existing storedsnapshot/operator observations ifavailable; do not duplicate allworktree scans for rootresearch.",
+    "Preserve this input under existingD01/DPERF plan; ACCESSactualcloseout and alreadyreadyD06/Recovery/Quick retaincurrentpriority.",
+    "When DPERF04 owner resumes withlegalcurrent scope, first reconcilecurrentACCESS/Timing Interface and run onlydirectlyaffected checks; then one agreed bounded measuredsnapshot/summary comparison with phasetiming can locateactualcost. Do not claim performance improvement or changeTTL/freshness/priority based on this staticanalysis."
+  ],
+  "unresolved": [
+    "Which actualphase causedthree reported5stimeouts; existinglog has no durations.",
+    "Whether185 actualsnapshot was alreadyinflight or responseclientaborted; no actualconcurrencytrace.",
+    "Whethercandidate summary/detail meetsnewTiming+ACCESS coexistence and measurablelive benefit."
+  ],
+  "cleanCode": "Existingdeep summary/detail seam is preferred to adding asecondprogresscache or anotherfeature; retain singleownerstatus, phase-specificfacts, errorunknown and separateclaim/proof states."
+}

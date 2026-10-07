@@ -1,0 +1,72 @@
+{
+  "recordedAt": "2026-10-07T04:15:54.437389+00:00",
+  "kind": "SVC06_ACTUAL_RETURN_AND_D06_HIGH_FLOOR_ADMISSION_REVISION",
+  "sources": {
+    "access": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture/docs/evidence/d05/local-access-185-live.json",
+      "sha256": "d1c237ade2940c4de0d1b28a4d04ac8e649a1b69126c4eed511b2b3db8c4e208"
+    },
+    "coexistence": "Historical Lead permission allowed isolated zero-PG coexistence. SVC06 now actually cleaned and returned; keep former full-reserve threshold conservatively, no assertion coexistence occurred.",
+    "svc06Cleanup": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-smoke/cleanup-followup-outer.json",
+      "sha256": "4e848c9d838bb7a8e91d511885a7fd87deabb26cb94d19e8e0a51f2eafdaf588",
+      "actualFinishedAt": "2026-10-07T04:13:44.010Z",
+      "outerExit": 0,
+      "elapsedMs": 672,
+      "childPid": 79973,
+      "doubleEOF": true,
+      "ownedAbsent": true,
+      "center": "stopped",
+      "database": "removed",
+      "remaining": [],
+      "authority": "Lead actual receipt relayed by root; manager read this fixed outer receipt only, no service/resource resample."
+    }
+  },
+  "access": {
+    "deploymentAt": "2026-10-07T04:04:16.630273+00:00",
+    "source": "451bf2ed1c0c3d7688073c8d060629f064044dc2",
+    "pid": 61730,
+    "port": 4320,
+    "sources": 185,
+    "optIn": true,
+    "privateRead": "Lead 200/no-store/in-memory-match; token not stored or printed. Temporary tab initially empty.",
+    "userAcceptance": "Separate GO observation: explicit masked load, Copy success indication, close reset; no clipboard read or token output.",
+    "productLogin": false,
+    "personalServiceMutationByWeb": false,
+    "ownerHead": "269a8566e9b09018fb2e87440a8d96b4c14cf75a"
+  },
+  "d06AdmissionRevision": {
+    "state": "PREPARING_REVIEW_NOT_RUN",
+    "samePacket": "/private/tmp/d06-browser-a28e-4mmyk_zp",
+    "baseFloorBytes": 1350565888,
+    "svc06ReserveBytes": 2684354560,
+    "mikaLocalReserveBytes": 18087936,
+    "startupCombinedFloorBytes": 4053008384,
+    "mikaAttribution": "C02 actual cleaned 04:11:49.742Z per root/Mika; next X01 source preparation9,699,328B only. Retain larger18,087,936B conservative allowance, not C02 running.",
+    "resourceObservation": null,
+    "gate": null,
+    "webHolder": null,
+    "reservation": false,
+    "remainingMs": 83267,
+    "workMs": 68267,
+    "cleanupMs": 15000,
+    "svc06ReserveMeaning": "Conservative allowance retained after actual SVC cleanup, not a live holder",
+    "window": "Root explicitly offers next D06 once revised binding is reviewed and fresh admission passes; no run yet."
+  },
+  "dashboardObservation": "REQ15/S01 last snapshot GET exceeded 5s per Mika; PENDING_SYNC observation only, not service-down or source-ineligible proof. No Web GET or full-source scan.",
+  "svc06Current": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-smoke/cleanup-followup-outer.json",
+    "sha256": "4e848c9d838bb7a8e91d511885a7fd87deabb26cb94d19e8e0a51f2eafdaf588",
+    "actualFinishedAt": "2026-10-07T04:13:44.010Z",
+    "outerExit": 0,
+    "elapsedMs": 672,
+    "childPid": 79973,
+    "doubleEOF": true,
+    "ownedAbsent": true,
+    "center": "stopped",
+    "database": "removed",
+    "remaining": [],
+    "authority": "Lead actual receipt relayed by root; manager read this fixed outer receipt only, no service/resource resample."
+  },
+  "historicalRetainedStage": "Root relays latest Lead/Mika actual receipt: 2026-10-07 04:04:40–46 first host-smoke failed when sandbox denied /bin/ps. Center group and dedicated DB retained pending exact owned cleanup; no PG return received. No independent service sample by Web."
+}

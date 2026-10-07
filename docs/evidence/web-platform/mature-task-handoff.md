@@ -1,16 +1,16 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T04:05:08.474427+00:00。本页只作协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准，不另造手填take状态。
+更新：2026-10-07T04:14:05.957986+00:00。本页只作协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准，不另造手填take状态。
 
 ## 当前窗口与用户交付
 
-**Web无heavy/local holder、gate或预约。** [REQ15实际归还与SVC06交接](checkpoint-0400-20261007/incoming.json)：REQ15唯一旅程实际通过并完整清理；Lead已接SVC06 host-smoke窗口，实际启动/清理回执待收。D06第二候选仅READY，待SVC06实际归还及明确交接，不先开窗或采空间。
+**Web无heavy/local holder、gate或预约。** [SVC06后继精确清理原件](checkpoint-0413-20261007/svc06-cleanup-outer.json)证明04:13:44.010Z exit0/双EOF/owned absent、center stopped及DB removed，PG/heavy实际归还；首轮失败与曾保留资源记录保历史。D06是root明确下一0PG浏览器窗口，待同一包新HEAD/准入修订审查及fresh入场，尚未启动。仍保守采用4,053,008,384B高线，不为降额重绑；Mika C02已清理、X01仅源码准备，保留原较高local预算。
 
 **任务时间展示已接主线并部署。** [原Lead实际发布和owner完成回执](checkpoint-0400-20261007/timing-main-close.json)记录03:49:29Z的4320/source52fe/185来源；03:56:00.608Z任务核齐完成，owner4b78双端clean、[9a677v2已释放](checkpoint-0400-20261007/timing-release.json)。原183快照与未部署准备都是历史。首屏易读性是独立有界TIMING02候选，见下，不重开已完成的TIMING01或复用旧写权。
 
-**“打开Flow/登录凭据”已通过隔离验收并接主线。** [第四次5/5与35direct组合独审](checkpoint-0400-20261007/access-composition-review.json)限定接受366，实际hidden/清空已验、03:51:35.626Z清理归还；累计37077/余22923仅保原预算，不自动第五跑。[owner主线接收包](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access/docs/evidence/wpf-dashboard-local-access/main-intake.json)已由Lead接为main451bf2ed。原operator正独立4320显式opt-in真实绑定发布，**尚未收到发布完成/真实安装操作验收**；不自动登录、复制到记录或刷新用户tab。README537窄doc修正已审并由owner9bb正常封存；最新接收包仅README增量与ownrecords，不重拷已main的产品，不撤销实际35+5批准。
+**“打开Flow/登录凭据”已接主线并实际发布。** [Lead部署原件](checkpoint-0413-20261007/access-deployment-receipt.json)记录04:04:16.630Z/source451/4320/185来源、显式opt-in；Lead内存核200匹配且未存印token，自有临时tab默认空。GO另实际观察主动掩码加载、复制成功提示与关闭清空；未读取剪贴板值、未自动登录产品或发送聊天。原[35direct与第四5/5组合独审](checkpoint-0400-20261007/access-composition-review.json)及全部失败预算保留，无第五跑。owner最新269a8566 human摘要已修、十范围停写；README537窄doc与生命周期由原owner/Lead后续收口，不在管理树代写。
 
-**架构图连线背景修复已获源码审查，实际复验待窗口。** [首轮失败实证独审](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/browser-first-20261007/root-actual-review.json)接受2/5与完整清理，归因为既有renderer估宽缺口；[a28e源码批准](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/edge-label-bounds/root-source-review.json)未冒页面通过。[第二精确包审查](checkpoint-0400-20261007/d06-second-preparation-review.json)已限定批准，owner13398326 clean、adf953v2五scope；原scenario不变，剩83267ms含15s清理，旧原件保留。唯一packet `/private/tmp/d06-browser-a28e-4mmyk_zp`，无gate/预约。
+**架构图连线背景修复已获源码审查，正在修订并存准入。** [首轮失败实证独审](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/browser-first-20261007/root-actual-review.json)接受2/5与完整清理，归因为既有renderer估宽缺口；[a28e源码批准](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/edge-label-bounds/root-source-review.json)未冒页面通过。[第二精确包审查](checkpoint-0400-20261007/d06-second-preparation-review.json)已限定批准，owner72167e26 clean、adf953v2五scope；原scenario不变，剩83267ms含15s清理，旧原件保留。唯一packet `/private/tmp/d06-browser-a28e-4mmyk_zp`，无gate/预约。旧待SVC06清理条件先获明确0PG并存许可替代，随后SVC06已实际清理归还；原完整高线保守保留，[新准入修订](checkpoint-0413-20261007/d06-coexistence-revision-report.md)另审，不称已发生并行。
 
 [61228同版本恢复](dashboard-task-time-intake/personal-web-recovery-receipt.json)已由唯一operator完成；本组未采个人服务/容量。Recovery实际局部十项已由7440b59封存、Quick严格类型+26direct与D04五pureGit均已[root限定接收](current-product-checkpoint-20261007/local-results-review.json)，旧NOT_RUN只指历史准备或尚未执行的浏览器，不覆盖这些真实结果。
 
@@ -49,7 +49,7 @@
 | 任务开始/完成/历时展示 | w01_owner；dashboard-task-timing；codex/dashboard-task-timing | 9a677471 v2 RELEASED / 原6 scopes；[已部署185/完成](dashboard-task-timing-provision/current-intake.json) |
 | 看板摘要与详情 | w01_owner；dashboard-summary-detail；codex/dashboard-summary-detail | b554ddb6 v3 / 7 scopes（server/app已移出）；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md) |
 | D04自有测试worktree生命周期 | d01_owner；dashboard-coordination；codex/dashboard-coordination | f61d41f5 v1 / 5 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-coordination/plans/d04-coordination/status.md) · [交接](d04-owned-worktree-lifecycle-intake/handoff.json) |
-| 固定架构快照D06 | d01_owner；dashboard-architecture-runtime；codex/dashboard-architecture-runtime | adf9539d v1 COMMITTED / 原4 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md) · [receipt](architecture-snapshot-0da-intake/take-receipt.json) |
+| 固定架构快照D06 | d01_owner；dashboard-architecture-runtime；codex/dashboard-architecture-runtime | adf9539d v2 COMMITTED / 5 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md) · [receipt](architecture-snapshot-0da-intake/take-receipt.json) |
 | 旧 ACTIVITY 预览生命周期记录 | workspace_panels_owner；web-conversation-activity；codex/web-conversation-activity | 707b1c6c v2 RELEASED / 3 metadata scopes；[原status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/status.md) · [释放receipt](ops-two-fixture-retirement/activity-retirement-release-receipt.json) |
 | 旧 CHAT 预览生命周期记录 | workspace_panels_owner；web-conversations；codex/web-conversations | da159c3d v2 RELEASED / 3 metadata scopes；[原status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversations/plans/wpf-chat01-conversations/status.md) · [释放receipt](ops-two-fixture-retirement/chat-retirement-release-receipt.json) |
 | 三项原 owner 预览生命周期记录 | workspace_panels_owner；plugin-management / profile / steering 三原树 | 741c80b3 / d9f7ff54 / 40ec6625 各 v2 RELEASED / 各3 metadata scopes；[精确唯一status/HEAD/回执](ops-three-fixture-retirement/manager-confirmation.json) |
@@ -101,3 +101,5 @@ MATURE01/05/06视觉继续原计划；D06既有后继已由原owner在原五范�
 原 run/raw/review 文件未改写；本页维护当前索引与有来源的交接，旧运行时点沿原件查询。
 
 [时间展示易读层级后继](dashboard-task-time-intake/readability-followup.json)归原D01/U14，未take/未实施；原72a已main并实际部署，后继不得改其完成事实，ACCESS仍优先。
+
+本批有界只读接收：[Quick同一b1当前HEAD/已过c2原件重绑](checkpoint-0413-20261007/quick-b1-ready-report.md)仍无native边界接受/gate，少一个已存在依赖pin待root裁定，不运行；[snapshot超过5s观察研究](checkpoint-0413-20261007/snapshot-pending-sync-research.json)沿既有DPERF/D01后继，耗时归因尚未实测，保PENDING_SYNC、不重复GET全量来源。

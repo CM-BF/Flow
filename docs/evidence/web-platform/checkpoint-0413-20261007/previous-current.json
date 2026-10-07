@@ -1,0 +1,68 @@
+{
+  "historical": true,
+  "supersededAt": "2026-10-07T04:14:05.957986+00:00",
+  "fields": {
+    "recordedAt": "2026-10-07T04:06:01.265133+00:00",
+    "state": "NO_WEB_HOLDER_SVC06_ACCEPTED_PENDING_ACTUAL",
+    "externalCurrentAdmission": {
+      "owner": "Lead SVC06",
+      "window": "e6ff host-smoke",
+      "state": "LEAD_ACCEPTED_SVC06_WINDOW_ACTUAL_START_CLEANUP_PENDING",
+      "evidence": "checkpoint-0400-20261007/incoming.json"
+    },
+    "latestCoordination": {
+      "at": "2026-10-07T04:05:08.474427+00:00",
+      "kind": "REQ15_ACTUAL_CLEANUP_TO_SVC06_HANDOFF",
+      "source": "checkpoint-0400-20261007/incoming.json",
+      "summary": "REQ15已实际清理归还；Lead已接SVC06窗口，实际run/cleanup待回执。Web无holder/gate/预约；D06第二READY排其后。ACCESS已main，原operator正独立4320 opt-in发布，完成待回执。"
+    },
+    "nextWebReady": {
+      "state": "READY_FIRST_AFTER_SOURCE_REVIEW_AND_FRESH_ADMISSION_NO_RESERVATION",
+      "access": {
+        "ownerHead": "9bb3d51ee86251d1d6ae6e07488684c96193b853",
+        "state": "MAIN_ACCEPTED_REAL_INSTALL_DEPLOYMENT_IN_PROGRESS",
+        "actual": "fourth5/5 exit0/6237.586ms; nativehidden/tokenempty;03:51:35.626Z exactcleanup",
+        "spentMs": 37077,
+        "remainingMs": 22923,
+        "cleanupIncludedMs": 15000,
+        "review": "checkpoint-0400-20261007/access-composition-review.json",
+        "mainIntake": {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access/docs/evidence/wpf-dashboard-local-access/main-intake.json",
+          "fixedHead": "9bb3d51ee86251d1d6ae6e07488684c96193b853",
+          "sha256": "8e1808e0b58e177ebafed15dce2319c590330c7c21dbe7824541273b33c6afca"
+        },
+        "next": "OnlyREADME537 approveddelta+ownrecords remains forLead intake; product366 alreadymain451bf. Originaloperator opt-in4320/actualinstallation completion still pending; no fifthbrowser.",
+        "main": "451bf2ed1c0c3d7688073c8d060629f064044dc2"
+      },
+      "timing": {
+        "source": "72a9407e2e733479631b9409c36113e8f450b6f1",
+        "actual": "5/5 browser PASS actualexit0, 6410.498ms; exact cleanup03:41:04Z; scoped root accepted.",
+        "review": "window-actuals-0341-20261007/timing-browser-review.json",
+        "next": "ExistingD01 readability followup scopeproposal only, newfreshclaim required; no oldwriter authority.",
+        "ownerHead": "4b78a1de06c2c9318ef45cd964a60e8361fcafa2",
+        "main": "52fe66693c370aec72dd8a36ed3fa00292e5127b",
+        "state": "DELIVERED_DEPLOYED185_CLAIM_RELEASED",
+        "actualDeployment": "2026-10-07T03:49:29Z source52fe PID43188/185 byLead",
+        "currentEvidence": "checkpoint-0400-20261007/timing-main-close.json"
+      },
+      "d06": {
+        "ownerHead": "13398326cbec44c7d895f2d616f29c1c22be9e65",
+        "source": "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d",
+        "packet": "/private/tmp/d06-browser-a28e-4mmyk_zp",
+        "state": "SECOND_PREPARATION_AND_BOUNDARY_APPROVED_NOT_RUN",
+        "manifestSha256": "f2e81079558edf3d1c2fd68b337cfa74eaca12eed34709a881a459f31f8dbf87",
+        "proposal": "Original90s consumed6733 conservatively;83267ms remains incl15s cleanup. Future run requires independent review/admission.",
+        "review": "checkpoint-0400-20261007/d06-second-preparation-review.json",
+        "authority": "No actualsecondwindow; afterSVC06 actualcleanup and explicitroot handoff/freshadmission only",
+        "actualReceipt": "d06-browser-actual-20261007/return.json",
+        "conservativeSpentMs": 6733,
+        "remainingMs": 83267,
+        "sourceBoundary": "a28e renderer source approved; identicalscenario, firstfailure/oldraw preserved; actuallayout stillpending",
+        "bindingSha256": "a2c2bf3e850fdb89c161584ccdb70281bc6ccd869dddf17f5426c62322d4f35e",
+        "futureCombinedFloorBytes": 1368653824,
+        "combinedFloorAttribution": "Original1350565888+Mika C02 declared18087936; no fresh resource sample or currentruntime."
+      }
+    },
+    "currentIntake": "checkpoint-0400-20261007/incoming.json"
+  }
+}

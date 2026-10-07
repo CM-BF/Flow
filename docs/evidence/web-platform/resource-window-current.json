@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-07T04:06:01.265133+00:00",
-  "state": "NO_WEB_HOLDER_SVC06_ACCEPTED_PENDING_ACTUAL",
+  "recordedAt": "2026-10-07T04:17:18.585584+00:00",
+  "state": "SVC06_ACTUAL_RETURN_NO_WEB_HOLDER_D06_NEXT_PENDING_REVIEW_ADMISSION",
   "groupWindowOwnership": "D06 actual exit1 after2/5 groups; native worker/Chrome/HTTP/context/scratch cleanup complete. Heavy window returned; no retry or reservation.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T04:05:08.474427+00:00",
-    "kind": "REQ15_ACTUAL_CLEANUP_TO_SVC06_HANDOFF",
-    "source": "checkpoint-0400-20261007/incoming.json",
-    "summary": "REQ15已实际清理归还；Lead已接SVC06窗口，实际run/cleanup待回执。Web无holder/gate/预约；D06第二READY排其后。ACCESS已main，原operator正独立4320 opt-in发布，完成待回执。"
+    "at": "2026-10-07T04:15:54.437389+00:00",
+    "kind": "SVC06_ACTUAL_RETURN_D06_SPECIFIC_NEXT",
+    "source": "checkpoint-0413-20261007/incoming.json",
+    "summary": "SVC06后继精确清理实际完成、PG/heavy已归还，旧FAIL保留。D06为具体下一独占0PG浏览器窗口，修订待审/无gate或运行；仍保留4,053,008,384B高线。ACCESS已实际部署并主动操作观察，未产品登录。"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1058,8 +1058,8 @@
   "nextWebReady": {
     "state": "READY_FIRST_AFTER_SOURCE_REVIEW_AND_FRESH_ADMISSION_NO_RESERVATION",
     "access": {
-      "ownerHead": "9bb3d51ee86251d1d6ae6e07488684c96193b853",
-      "state": "MAIN_ACCEPTED_REAL_INSTALL_DEPLOYMENT_IN_PROGRESS",
+      "ownerHead": "269a8566e9b09018fb2e87440a8d96b4c14cf75a",
+      "state": "MAIN_ACCEPTED_DEPLOYED185_LOCAL_CREDENTIAL_UI_OBSERVED",
       "actual": "fourth5/5 exit0/6237.586ms; nativehidden/tokenempty;03:51:35.626Z exactcleanup",
       "spentMs": 37077,
       "remainingMs": 22923,
@@ -1070,8 +1070,9 @@
         "fixedHead": "9bb3d51ee86251d1d6ae6e07488684c96193b853",
         "sha256": "8e1808e0b58e177ebafed15dce2319c590330c7c21dbe7824541273b33c6afca"
       },
-      "next": "OnlyREADME537 approveddelta+ownrecords remains forLead intake; product366 alreadymain451bf. Originaloperator opt-in4320/actualinstallation completion still pending; no fifthbrowser.",
-      "main": "451bf2ed1c0c3d7688073c8d060629f064044dc2"
+      "next": "README537 approved delta and owner lifecycle closeout remain separately tracked; no product login/chat or automatic extra browser run.",
+      "main": "451bf2ed1c0c3d7688073c8d060629f064044dc2",
+      "actualDeployment": "checkpoint-0413-20261007/access-deployment-receipt.json"
     },
     "timing": {
       "source": "72a9407e2e733479631b9409c36113e8f450b6f1",
@@ -1085,21 +1086,23 @@
       "currentEvidence": "checkpoint-0400-20261007/timing-main-close.json"
     },
     "d06": {
-      "ownerHead": "13398326cbec44c7d895f2d616f29c1c22be9e65",
+      "ownerHead": "72167e26510388d28d9306225a9e30f9819b03ac",
       "source": "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d",
       "packet": "/private/tmp/d06-browser-a28e-4mmyk_zp",
-      "state": "SECOND_PREPARATION_AND_BOUNDARY_APPROVED_NOT_RUN",
-      "manifestSha256": "f2e81079558edf3d1c2fd68b337cfa74eaca12eed34709a881a459f31f8dbf87",
+      "state": "SECOND_PACKET_HIGH_FLOOR_REVISION_PENDING_REVIEW_NOT_RUN",
+      "manifestSha256": "211fd9c65b70dc6b071b7055a196aa078c38e08e84c69c6bbd8f88cc1effce95",
       "proposal": "Original90s consumed6733 conservatively;83267ms remains incl15s cleanup. Future run requires independent review/admission.",
       "review": "checkpoint-0400-20261007/d06-second-preparation-review.json",
-      "authority": "No actualsecondwindow; afterSVC06 actualcleanup and explicitroot handoff/freshadmission only",
+      "authority": "Root explicit next D06 after actual SVC06 return; revised binding review and fresh admission pending. No gate/start.",
       "actualReceipt": "d06-browser-actual-20261007/return.json",
       "conservativeSpentMs": 6733,
       "remainingMs": 83267,
       "sourceBoundary": "a28e renderer source approved; identicalscenario, firstfailure/oldraw preserved; actuallayout stillpending",
-      "bindingSha256": "a2c2bf3e850fdb89c161584ccdb70281bc6ccd869dddf17f5426c62322d4f35e",
-      "futureCombinedFloorBytes": 1368653824,
-      "combinedFloorAttribution": "Original1350565888+Mika C02 declared18087936; no fresh resource sample or currentruntime."
+      "bindingSha256": "efe87e6430fbf2df9542abe8052315f00ab737d3d19dffcc3072b860dad68565",
+      "futureCombinedFloorBytes": 4053008384,
+      "combinedFloorAttribution": "Original1350565888 + conservative formerSVC06 allowance2684354560 + conservative Mika local18087936 =4053008384. SVC06/C02 actually cleaned; no present coexistence asserted.",
+      "coexistenceEvidence": "checkpoint-0413-20261007/incoming.json",
+      "admissionRevision": "checkpoint-0413-20261007/d06-coexistence-revision-report.md"
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1534,10 +1537,11 @@
     "receipt": "dashboard-task-time-intake/dperf-app-receipt.json"
   },
   "externalCurrentAdmission": {
-    "owner": "Lead SVC06",
-    "window": "e6ff host-smoke",
-    "state": "LEAD_ACCEPTED_SVC06_WINDOW_ACTUAL_START_CLEANUP_PENDING",
-    "evidence": "checkpoint-0400-20261007/incoming.json"
+    "owner": null,
+    "state": "SVC06_ACTUAL_CLEANUP_COMPLETE_NO_HEAVY_HOLDER",
+    "actualFinishedAt": "2026-10-07T04:13:44.010Z",
+    "evidence": "checkpoint-0413-20261007/svc06-cleanup-outer.json",
+    "mikaLocal": "C02 actual cleanup04:11:49.742Z; X01 source preparation only, conservative local allowance18,087,936B kept."
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1558,6 +1562,6 @@
       "limits": "83267total incl15000cleanup"
     }
   ],
-  "currentIntake": "checkpoint-0400-20261007/incoming.json",
+  "currentIntake": "checkpoint-0413-20261007/incoming.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants."
 }

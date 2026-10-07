@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:05:08.474427+00:00；原Lead实际发布/接收与owner释放回执、第二候选静态审；本组未采服务 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:14:05.957986+00:00；Lead本机入口实际发布与SVC06后继清理归还、D06具体下一窗口；本组未采服务 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,8 +21,8 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；原五图的新主线快照已完成源码更新和限定独审，定向验证已通过，显示和主线接收待验。 |
-| 下一可用交付 | 本机入口已接主线，待真实安装操作与发布完成；架构图修复待窗口复验。已发布的时间展示保持可用，易读性沿独立有界后继排队。 |
-| 当前阻塞 | ACTIVE: SVC06已接重窗口，本组后续浏览器验证等待其实际清理归还；本机入口真实安装与发布完成回执待收。 |
+| 下一可用交付 | 本机打开Flow与凭据入口已发布，并完成主动加载、复制和关闭观察；接续架构图连线背景修复的页面复验。时间展示易读性沿独立有界后继排队。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -77,7 +77,7 @@
 
 [portable候选交付](../../docs/evidence/web-platform/message-settings02-portable-prepared/report.md)与[REQ17/CHAT06测量接口](../../docs/evidence/web-platform/req17-chat06-measurement-interface/report.md)沿现有验收推进，未新增运行或claim；性能全部未测量。
 
-[D06原树源码后继](../../docs/evidence/web-platform/architecture-snapshot-0da-intake/report.md)已实际领取adf9539d v1四范围，原owner唯一status记录5124限定source-only批准/新检查NOT_RUN；管理索引不冒main或页面完成。
+[D06原树源码后继](../../docs/evidence/web-platform/architecture-snapshot-0da-intake/report.md)保原领取历史；当前adf9539d v2五范围，5124数据22direct已通过、a28e连线背景修复源码获审，页面复验待当前并存准入；功能事实见D06唯一status。
 
 [活动累计缓存覆盖输入](../../docs/evidence/web-platform/activity-cache-total-bound/report.md)已归原MATURE05-05/06-03，已获本次文档限定批准；仅补验收，不新增产品实现、运行阻塞或许可。两大task的唯一status维护对应条目。
 
