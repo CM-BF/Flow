@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:29:23.352950+00:00 |
+| 最近更新时间 | 2026-10-07T11:50:53.042346+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -15,7 +15,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | source a2981b71b47d254356152c505ddfff29edd76446；result d05b33a552168aadf07ec1ecabe43c29ff3e0faf / packet5c481e5d；正式批准与七源窄intake收口 |
-| 工作树 dirty 状态 | 仅正式结果review/窄intake元数据，固定源码/raw/manifest保持 |
+| 工作树 dirty 状态 | clean；仅当前main事实与部分claim交回记录，固定源码/raw/manifest保持 |
 | 工作分支状态 | integration |
 | 检查状态 | PASSED d05b33a552168aadf07ec1ecabe43c29ff3e0faf：候选真实PG1 selected/1 passed，旧10 unselected；local10 distinct分轮/types0独立保留 |
 | Review | chatui11:08:43 source/local/preparation APPROVED + 11:22:22 result忠实性APPROVED，均0P1/P2 |
