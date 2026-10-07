@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07 08:24:22 UTC |
+| 最近更新时间 | 2026-10-07 08:44:35 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
@@ -13,17 +13,17 @@
 | 工作树dirty状态 | 当前16实现输入与固定cfd5逐字；仅本次证据/状态封存，提交后核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | PASSED 当前cfd5单文件9叶+父10/10，outer exit0，保守2866ms；旧3950ms独立保留，browser NOT_RUN 0/60000ms |
+| 检查状态 | cfd5 Node10/10已独审；summary browser首轮FAILED，6组已到达、0图，保守8258/余51742ms；后继仅测试同步修复未复验 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 实现目标 | cfd5a53323438709843828d74cab67502801060c |
+| 实现目标 | 1c1901ebcda1bb9a711fd75684276df009b3e3f8 |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs, apps/execution-dashboard/test/task-timing.browser.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 轻摘要与按需详情已保留连接入口和时间语义；本次组合直接检查全部通过 |
+| 当前产出 | 轻摘要与按需详情的直接检查已通过；浏览器发现关闭详情后的焦点检查尚未等待原生关闭事件，正在相关复验 |
 | 下一可用交付 | 完成组合浏览器验收后交主线接收；当前实际浏览器尚未运行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN：cfd5限定源码批准；组合直接结果待独立实际核验，browser未验 |
+| Review | [review.md](review.md)，UNKNOWN：cfd5源码与Node10实际均已独审；浏览器首轮失败与后继测试同步修复待完整验收 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -138,3 +138,11 @@ root在运行dashboard的资料入口读到当时own status原字节：[观察](
 outer55631及Node PGID55755实际signal0均ABSENT，scratch无、cleanup errors[]；HTTP由fixture after-hook关闭与owned group收尾支持，无额外socket探测。原result较早2786ms/终态2787ms不改，最大outer2865.5355向上取整计2866ms，新phase30s余27134ms；历史3950ms分列，全部Node历史+新6816ms，绝不把旧PASS迁移。临时峰61,137B，raw/metadata均在原上限内。已立即把本组local交回root供panels使用；无重跑、PG、Chrome、provider、真实registry/个人服务。浏览器仍0/60000，实际main/部署未发生。
 
 当前root源码审已完成，实际结果独审另记；[quality](../../docs/evidence/wpf-dperf04/reentry-20261007/quality.md)记录应用方法与非继承边界。剩余时间只是账本，不是后台续跑或自动浏览器授权。
+
+## 2026-10-07 组合浏览器首轮与同步窄修
+
+原cfd5/actualacf8真实summary 6组通过后，在Escape后立即检查精确焦点时失败，0截图。outer exit1，8257.084ms向上计8258，剩51742/总60000含15秒清理；parent8187和late8189原值原封。三owned groups ESRCH、完整EOF/drop0、context/server/fixture/scratch清理均完成，0PG/真实registry/个人端口。原件见[首轮](../../docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/index.json)。
+
+只改同test的被动close事件观察：等待产品原生close listener结算，记录实际焦点目标，保原精确activeElement断言。不改产品、不用sleep、延长timeout或降低期望；未先归为产品错误。摘要优先，关联/Timing/ACCESS仍待按真实余量执行，任何未执行项不继承旧Node结果。
+
+clean-code：同一个scanner精确剪枝owned scratch，避免两遍非原子相减；cap/lifecycle/权限保持。复用已装find-skills/clean-code/codebase-design/webapp-testing，方法与hash在私有准备记录，未安装依赖。Node实际root报告已原样归档；当前claim b554 v4/11范围未变。

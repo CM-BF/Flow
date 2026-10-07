@@ -1,0 +1,13 @@
+{
+  "complete": true,
+  "spentMs": 8258,
+  "limitMs": 60000,
+  "cleanupReserveMs": 15000,
+  "run": "summary-20261007-084117-51ac56",
+  "supervisorResult": "/private/tmp/dperf-c1/result.json",
+  "state": "FAILED",
+  "stopSignal": null,
+  "reportedParentSpentMs": 8187,
+  "conservativeCharge": "ceil max(actual outer, late terminal, reported parent); immutable parent-budget.json retained",
+  "outerActual": "docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-first/outer-actual-exit.json"
+}

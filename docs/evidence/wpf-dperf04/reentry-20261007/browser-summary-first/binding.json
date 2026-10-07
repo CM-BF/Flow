@@ -1,0 +1,280 @@
+{
+  "state": "REVIEWED_SOURCE_BOUND",
+  "entry": "summary-detail",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+  "branch": "codex/dashboard-summary-detail",
+  "implementation": "cfd5a53323438709843828d74cab67502801060c",
+  "head": "acf8e462434ae17eddccd1148d0a2c7deb43fda7",
+  "sources": {
+    "apps/execution-dashboard/src/read-model.mjs": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920",
+    "apps/execution-dashboard/src/aggregate.mjs": "650b42be8009fb515066c92d3dce7fff3bff03c8c60c9c2f48a2f83e6aee46d3",
+    "apps/execution-dashboard/src/server.mjs": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4",
+    "apps/execution-dashboard/public/app.js": "39fb148d39270d48e5174661894334146a9270c4fdbbe8d0791dabe73eafaf29",
+    "apps/execution-dashboard/test/summary-detail.test.mjs": "a4cca9b81513c344bf320aa354cb600c7206041ee5ffa7f4b0b721849738b048",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs": "63b130ab7ae12560a972ef192bc2f8c362df032f6812da0a3d71d627c71642a0",
+    "apps/execution-dashboard/test/task-links.browser.mjs": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712",
+    "apps/execution-dashboard/test/task-timing.browser.mjs": "62912f7dece3c730e2cc466101f98cb1e04adf3a0a81ec7c37f19a8260872fea",
+    "apps/execution-dashboard/test/local-access.browser.mjs": "4266ca04c228ef574dbf0b4f2dd9a688e56b8c6abc387ac9c7cc0ba49a959dc8",
+    "apps/execution-dashboard/src/status.mjs": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+    "apps/execution-dashboard/src/local-access.mjs": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+    "apps/execution-dashboard/public/local-access.js": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+    "apps/execution-dashboard/public/local-access.css": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+    "apps/execution-dashboard/public/index.html": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+    "apps/execution-dashboard/test/local-access.test.mjs": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d"
+  },
+  "node": "/opt/homebrew/opt/node@24/bin/node",
+  "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+  "playwrightModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+  "readOnlyFiles": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/human.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/human.mjs",
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "bytes": 4459
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/task-links.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/task-links.mjs",
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "bytes": 5903
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/status.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+      "bytes": 8548
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/registry.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/registry.mjs",
+      "sha256": "76695b62e820b645ccf2dc764e61bf4c2638060d8416537174f3e4cca059e6e5",
+      "bytes": 21146
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/proof.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/proof.mjs",
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+      "bytes": 6883
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/git-snapshot.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/git-snapshot.mjs",
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "bytes": 2396
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/documents.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/documents.mjs",
+      "sha256": "e7cddf2b66762c728192280d3823ee8df12f2de324307ea31e9bc0ecfd0998a3",
+      "bytes": 2917
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/coordination/ledger.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/src/coordination/ledger.mjs",
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+      "bytes": 7058
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/test/fixture.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/test/fixture.mjs",
+      "sha256": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757",
+      "bytes": 4181
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/index.html",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/index.html",
+      "sha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+      "bytes": 8840
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/styles.css",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/styles.css",
+      "sha256": "c90e9212ae2ab542232e5bd53c264aadc611beda24fa85e94a82b6b252281c2c",
+      "bytes": 8947
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/architecture-data.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/architecture-data.js",
+      "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800",
+      "bytes": 41828
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/package.json",
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "bytes": 729
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/pnpm-lock.yaml",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/pnpm-lock.yaml",
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+      "bytes": 279163
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/pnpm-workspace.yaml",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/pnpm-workspace.yaml",
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65",
+      "bytes": 40
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/architecture.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/architecture.js",
+      "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4",
+      "bytes": 7689
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba",
+      "bytes": 50320
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/INSTALL_RECEIPT.json",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/INSTALL_RECEIPT.json",
+      "sha256": "ba3a11e50915fe2104fe445e026a572f3d119dc83973756c7cd5a5f038d7540d",
+      "bytes": 4261
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/lib/libnode.137.dylib",
+      "sha256": "a39670a770c581be982f65dee2ed21729c316660d22e4df1c406142aff7282c8",
+      "bytes": 67359104
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "sha256": "764f5f6ee523e6d52caf6e56ce7501e932c4f6e52d06d267887cb7ea70350102",
+      "bytes": 367696
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "realpath": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "sha256": "9f98b0da3cced7d981b77b8560e80947f36b81fd263bae538b83829990598f0a",
+      "bytes": 18856
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+      "sha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536",
+      "bytes": 754
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+      "sha256": "ec8997c2e5cea26befc76e7bf990750e96babb16977673a9ff3b5c0575d01e48",
+      "bytes": 679
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "sha256": "8bc2ddebe8d9b051b9ecb87d62c6c63877e59d08617f32c3215681ca8bb70998",
+      "bytes": 1359
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.mjs",
+      "sha256": "1deb265617d0e87b6d05bf8b3d5bf73cd4b788665c249c609a01b94ceff2eea1",
+      "bytes": 1400
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/test.js",
+      "sha256": "b97fa53a6ab864f51c9c48b5e4647d0acae45ba2948c5d78e38bfeb56755d974",
+      "bytes": 806
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/lib/index.js",
+      "sha256": "54bf5935cf339938408c656bde958047a1217bf77434acdf75a0c717cddaaeae",
+      "bytes": 36487
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.js",
+      "sha256": "4e98f65f0a9d9bcab8cffc0c5cfdd87fd3f5b0be74fc494ff166a466b204cd44",
+      "bytes": 648
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "sha256": "f061c58427e47e843e26d201f0a57076c734e57c734ecbbd87d4a23b7a20db9b",
+      "bytes": 876
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.js",
+      "sha256": "a58fb2cec4293e7dcf73c58a179898a4f3986666451a19da4e731fa3af63265b",
+      "bytes": 697
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/bootstrap.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/bootstrap.js",
+      "sha256": "4637f4dbfef9cfc01baeb5f5d2cb63fa0901522c96915ea2227290558d27123e",
+      "bytes": 3481
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171",
+      "bytes": 3477183
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/architecture.css",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/public/architecture.css",
+      "sha256": "648b22fde8ee6361d6904cfe9a60254a646141d89e24ccd03e15c19172709780",
+      "bytes": 4082
+    }
+  ],
+  "previousRuntimeMs": 0,
+  "claim": {
+    "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 4,
+    "taskId": "WPF-DPERF04",
+    "worker": "w01_owner"
+  },
+  "preparedAt": "2026-10-07T08:35:54.212755+00:00",
+  "runCandidate": null,
+  "candidateOnly": true,
+  "nativeChromeBoundaryApproval": {
+    "path": "/private/tmp/root-dperf04-67b4-native-source-acceptance-20261007.json",
+    "sha256": "705d91f8e3feac1fc77893c66c4babd4f761554c046415c9e94d06286ebf654b"
+  },
+  "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "preparedFiles": {
+    "supervisor.py": "67b4f39e5ff84a38ed541b422dccb2d6d05867cb2005ba514b20e88003ce790b"
+  },
+  "previousBindingProvenance": {
+    "path": "/private/tmp/dperf04-summary-binding-candidate-xyzepmut/binding.json",
+    "sha256": "ddf8e09b352e11c1d575c8a7c693e176ce3fe696d7a86269b57a21d0c5347d04",
+    "preparedAt": "2026-10-06T17:47:16.646807+00:00",
+    "runCandidate": "summary-detail-20261006-174716-candidate"
+  },
+  "nativeChromeBoundaryApprovalRebindRequired": false,
+  "sourceReview": {
+    "path": "/private/tmp/root-dperf04-cfd-composition-review-20261007.json",
+    "sha256": "c9901a2a94f189bdfa13a5969177229f955c765b238ed4c7d7d1c2f8c65fa398"
+  },
+  "priorNativeBoundary": {
+    "path": "/tmp/root-dperf04-544c-native-boundary-rebind.json",
+    "sha256": "ccb92f1892be27306cc6293ca63150546b9eff715911a75db33b4e9a3e642d08"
+  },
+  "readiness": {
+    "summary-detail": "READY_FOR_EXACT_REVIEW_AND_ADMISSION",
+    "task-links": "EXISTING_ENTRY_AFTER_SUMMARY_WITHIN_REMAINING_BUDGET",
+    "task-timing": "EXPORT_ONLY_NOT_RUN",
+    "local-access": "EXPORT_ONLY_NOT_RUN"
+  },
+  "proposedAdmission": {
+    "startFreeBytes": 2310537216,
+    "stopFreeBytes": 1140850688,
+    "totalMs": 60000,
+    "cleanupMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "pg": 0,
+    "chrome": 1,
+    "repos": 2,
+    "tasks": 2
+  }
+}

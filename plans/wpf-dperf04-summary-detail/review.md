@@ -59,3 +59,7 @@ root授权日期专测维护固定 `1441d86baa40e98f4cb81b82dcc551202973209b`：
 ## 2026-10-06 21:11:54 UTC 当前限定结论
 
 [root544c复审](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/root-544c-source-review.json)限定APPROVED/0blocking，late-stop P2 CLOSED；原45f8七源与worker不变。[新精确边界接受](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/root-544c-native-boundary-rebind.json)已真实签发。root的AST/pins核对归其独审，作者没有复跑；browserNOT_RUN，全片UNKNOWN/main未集成。只待实际调度/资源freshgate，现TMP仍PREPARED，提交后的metadataHEAD重绑不提供运行权。
+
+## 当前组合直接结果与浏览器边界
+
+cfd5 Node9叶+父10/10已由root限定独审接受：[原件](../../docs/evidence/wpf-dperf04/reentry-20261007/root-dperf04-composed-node-actual-review-20261007.json)。首summary实际FAILED，6组/0PNG，完整清理；后继1c1901ebcda1bb9a711fd75684276df009b3e3f8仅被动原生close同步，尚未复验。全片UNKNOWN，不继承直接PASS为browser/main/deploy。
