@@ -1,0 +1,45 @@
+{
+  "state": "SOURCE_FIXED_NOT_RUN",
+  "sourceCommit": "f0ed0b3e208d84dd0aa420f5ae944cbee0c5dcc9",
+  "base": "b67530bb025162629895d11482b5505d4a885c91",
+  "files": [
+    {
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "bytes": 21344,
+      "sha256": "2648c00343c2652f021161eb9b2e2f69bac849b14689839bc0263bfce71b256e"
+    },
+    {
+      "path": "apps/web/src/plugin-management/runtime-command.ts",
+      "bytes": 4782,
+      "sha256": "fa8b236ca3ae457530c8f59978bf8d315e145b6f91d6006e1682631787ea56ec"
+    },
+    {
+      "path": "apps/web/test/plugin-management/fixture/main.tsx",
+      "bytes": 6791,
+      "sha256": "2f770482608dd76dc94269c6c09ec58e224408f1ff045390e9439a2b94300f6d"
+    },
+    {
+      "path": "apps/web/test/plugin-management/browser.ts",
+      "bytes": 37306,
+      "sha256": "362a2b070cdc6d214136913be6b6bb76bfb2549af75a0b5bcdd719b8b3380876"
+    },
+    {
+      "path": "apps/web/test/plugin-runtime-command.test.ts",
+      "bytes": 8772,
+      "sha256": "ce863feee571b16a7988ace3b265f1f573153daa4303dcb88dce81d47c7f84b8"
+    }
+  ],
+  "directExpected": {
+    "files": 1,
+    "tests": 11,
+    "basis": "8 plain it plus it.each([403,404,409]); source count, not actual run"
+  },
+  "browserExpected": {
+    "checks": 5,
+    "screenshots": 2,
+    "proofBoundary": "actual owned HTTP synthetic public DTO center; real React/FlowClient/controller, not PG/production App"
+  },
+  "runtime": "NOT_RUN",
+  "productionApp": "NOT_WIRED",
+  "legacyBrowser": "Explicit export only; no import-triggered PG or browser. Not authorized as current check."
+}

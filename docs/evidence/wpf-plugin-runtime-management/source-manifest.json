@@ -1,0 +1,45 @@
+{
+  "state": "STRICT_PASS_DIRECT_JSON15_PARENT_FAILED_BROWSER_NOT_RUN",
+  "sourceCommit": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+  "base": "b67530bb025162629895d11482b5505d4a885c91",
+  "files": [
+    {
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "bytes": 21430,
+      "sha256": "f6ba0266127114af891f46d2e7120213862ef8e6adc6678ab45aaa28b64dd4ca"
+    },
+    {
+      "path": "apps/web/src/plugin-management/runtime-command.ts",
+      "bytes": 6251,
+      "sha256": "4ce44b2b9e90fc1666a3de1d1970061e836dc8f45cb8033befa1cfdd83e7ba2a"
+    },
+    {
+      "path": "apps/web/test/plugin-management/fixture/main.tsx",
+      "bytes": 6791,
+      "sha256": "2f770482608dd76dc94269c6c09ec58e224408f1ff045390e9439a2b94300f6d"
+    },
+    {
+      "path": "apps/web/test/plugin-management/browser.ts",
+      "bytes": 38182,
+      "sha256": "e01ea0210120c32385c315022130a04aca6850ed07da7f964316c7141d24b173"
+    },
+    {
+      "path": "apps/web/test/plugin-runtime-command.test.ts",
+      "bytes": 11066,
+      "sha256": "85742fd8dc9ecd74a099c4b0e6e9ee8a8311debe5a2310dd113f7b43e3f50dab"
+    }
+  ],
+  "directExpected": {
+    "files": 1,
+    "tests": 15,
+    "basis": "10 plain + 2 invalid key + 3 unknown retry status; exact names matched actual JSON, child exit not captured"
+  },
+  "browserExpected": {
+    "checks": 6,
+    "screenshots": 2,
+    "proofBoundary": "actual owned HTTP synthetic public DTO center; real React/FlowClient/controller, not PG/production App"
+  },
+  "runtime": "strict PASS; direct JSON 15 passed, parent FAILED; browser NOT_RUN",
+  "productionApp": "NOT_WIRED",
+  "legacyBrowser": "Explicit export only; no import-triggered PG or browser. Not authorized as current check."
+}

@@ -1,0 +1,3 @@
+{"step": {"name": "strict", "startedAt": "2026-10-07T11:10:53.144216+00:00", "pid": 14062, "pgid": 14062}, "base": "/private/tmp/plugin-runtime-local-second-3f6ohx3f"}
+{"step": {"name": "direct", "startedAt": "2026-10-07T11:10:57.195020+00:00", "pid": 17426, "pgid": 17426}, "base": "/private/tmp/plugin-runtime-local-second-3f6ohx3f"}
+{"state": "FAILED", "resultSha256": "05f1c280ad7140bbe10a4822099e3adc08658d6bac48d820cf7f9ed434abd21e", "budgetSha256": "62279c447fad5d5b13be7520a24c484ed1c715e18013232674825167efcfcfb3", "elapsedAfterWritesMs": 4456.445, "cleanup": {"groupsAbsent": [14062, 17426], "allGroupsAbsent": true, "scratchAbsent": true}, "stepExits": [0, 1]}

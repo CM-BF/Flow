@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-10-07T11:09:56.944400+00:00",
+  "state": "FAILED",
+  "head": "20ac1158c5b52093c5fab849886e9578b86eb6e2",
+  "steps": [
+    {
+      "name": "strict",
+      "startedAt": "2026-10-07T11:09:57.168249+00:00",
+      "pid": 80084,
+      "pgid": 80084
+    }
+  ],
+  "samples": [
+    {
+      "elapsedMs": 222.359,
+      "free": 22156603392,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    }
+  ],
+  "cleanup": {},
+  "ownedGroups": [
+    80084
+  ]
+}

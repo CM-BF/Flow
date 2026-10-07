@@ -1,0 +1,84 @@
+{
+  "state": "ADMITTED_LOCAL",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+  "branch": "codex/web-plugin-runtime-management",
+  "head": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+  "claim": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+  "claimVersion": 1,
+  "expectedScope": [
+    "apps/web/src/plugin-management/PluginManagement.tsx",
+    "apps/web/test/plugin-management/fixture/main.tsx",
+    "apps/web/test/plugin-management/browser.ts",
+    "apps/web/src/plugin-management/runtime-command.ts",
+    "apps/web/test/plugin-runtime-command.test.ts",
+    "plans/wpf-plugin-runtime-management",
+    "docs/evidence/wpf-plugin-runtime-management"
+  ],
+  "steps": [
+    {
+      "name": "direct",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "/private/tmp/plugin-runtime-direct-third-l352v0ky/vitest.config.mjs",
+        "--reporter=json",
+        "--outputFile=/private/tmp/plugin-runtime-direct-third-l352v0ky/scratch/direct.json",
+        "--configLoader",
+        "native"
+      ]
+    }
+  ],
+  "previousRuntimeMs": 8862,
+  "limitMs": 21138,
+  "cleanupReserveMs": 5000,
+  "startFreeBytes": 4229169152,
+  "stopFreeBytes": 1082130432,
+  "tmpCap": 8388608,
+  "rawCap": 146404,
+  "live": "/private/tmp/plugin-runtime-direct-third-l352v0ky/claim-live.json",
+  "expectedDirty": "M docs/evidence/wpf-plugin-runtime-management/quality.md\n M docs/evidence/wpf-plugin-runtime-management/skills.json\n M plans/wpf-plugin-runtime-management/plan.md\n M plans/wpf-plugin-runtime-management/review.md\n M plans/wpf-plugin-runtime-management/status.md\n?? docs/evidence/wpf-plugin-runtime-management/command-lifetime-design.json\n?? docs/evidence/wpf-plugin-runtime-management/interface-research-pins.json\n?? docs/evidence/wpf-plugin-runtime-management/interface-research.md\n?? docs/evidence/wpf-plugin-runtime-management/readonly-dependency-proposal.json\n?? docs/evidence/wpf-plugin-runtime-management/source-manifest.json\n?? docs/evidence/wpf-plugin-runtime-management/validation-proposal.md",
+  "prior": {
+    "path": "/private/tmp/plugin-runtime-local-eb1ma5iy",
+    "chargeMs": 4341,
+    "outerSha256": "d28507d8c9e3e992774017fc5cbd57263451c43688f9baf4bfdffbaedc85e443",
+    "rawBytes": 439397
+  },
+  "pinSet": {
+    "path": "/private/tmp/plugin-runtime-local-second-3f6ohx3f/binding.json",
+    "sha256": "78fd5a5481eff908ff0d28c49e423323c78ab4b7bac07283494f20eecfe50223"
+  },
+  "extraPins": [
+    {
+      "path": "/private/tmp/plugin-runtime-direct-third-l352v0ky/vitest.config.mjs",
+      "realpath": "/private/tmp/plugin-runtime-direct-third-l352v0ky/vitest.config.mjs",
+      "bytes": 1149,
+      "sha256": "752c0f7501a81d64015866fe155197ea3446831a1c2cae6593c8bbd409270c17"
+    },
+    {
+      "path": "/private/tmp/plugin-runtime-direct-third-l352v0ky/sandbox.sb",
+      "realpath": "/private/tmp/plugin-runtime-direct-third-l352v0ky/sandbox.sb",
+      "bytes": 175,
+      "sha256": "8fe768233aedaf82269d73c8dd4058d10a55926629d2a6dbdae921bddd56eb85"
+    },
+    {
+      "path": "/private/tmp/plugin-runtime-direct-third-l352v0ky/expected-tests.json",
+      "realpath": "/private/tmp/plugin-runtime-direct-third-l352v0ky/expected-tests.json",
+      "bytes": 1225,
+      "sha256": "ea9b70e88a7e84f7a4e3fe38fa8674b1c414ff706c099073b421974002aaa6e9"
+    },
+    {
+      "path": "/private/tmp/plugin-runtime-direct-third-l352v0ky/run.py",
+      "realpath": "/private/tmp/plugin-runtime-direct-third-l352v0ky/run.py",
+      "bytes": 8821,
+      "sha256": "61210f33d84d85c6190c4ac7d40f1009c5a9757db9e7897cbcacee097c1d5297"
+    }
+  ],
+  "strictAlreadyPassed": {
+    "result": "/private/tmp/plugin-runtime-local-second-3f6ohx3f/result.json",
+    "sha256": "05f1c280ad7140bbe10a4822099e3adc08658d6bac48d820cf7f9ed434abd21e",
+    "strictExit": 0,
+    "directStartup": 1
+  }
+}

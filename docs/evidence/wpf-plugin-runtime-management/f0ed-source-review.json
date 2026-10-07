@@ -1,0 +1,115 @@
+{
+  "recordedAt": "2026-10-07T11:03:45.902553+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra / independent read-only",
+  "target": "f0ed0b3e208d84dd0aa420f5ae944cbee0c5dcc9",
+  "base": "b67530bb025162629895d11482b5505d4a885c91",
+  "observedHead": "f0ed0b3e208d84dd0aa420f5ae944cbee0c5dcc9",
+  "dirtyAtReview": [
+    " M docs/evidence/wpf-plugin-runtime-management/quality.md",
+    " M docs/evidence/wpf-plugin-runtime-management/skills.json",
+    " M plans/wpf-plugin-runtime-management/plan.md",
+    " M plans/wpf-plugin-runtime-management/review.md",
+    " M plans/wpf-plugin-runtime-management/status.md",
+    "?? docs/evidence/wpf-plugin-runtime-management/command-lifetime-design.json",
+    "?? docs/evidence/wpf-plugin-runtime-management/interface-research-pins.json",
+    "?? docs/evidence/wpf-plugin-runtime-management/interface-research.md",
+    "?? docs/evidence/wpf-plugin-runtime-management/readonly-dependency-proposal.json",
+    "?? docs/evidence/wpf-plugin-runtime-management/source-manifest.json",
+    "?? docs/evidence/wpf-plugin-runtime-management/validation-proposal.md"
+  ],
+  "decision": "CHANGES_REQUESTED_SOURCE_P2",
+  "scope": "Five exact source literals and bounded related shared code. No engineering tests, HTTP, PG or browser launched by reviewer.",
+  "files": [
+    {
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "bytes": 21344,
+      "sha256": "2648c00343c2652f021161eb9b2e2f69bac849b14689839bc0263bfce71b256e",
+      "gitAndCurrentMatch": true
+    },
+    {
+      "path": "apps/web/src/plugin-management/runtime-command.ts",
+      "bytes": 4782,
+      "sha256": "fa8b236ca3ae457530c8f59978bf8d315e145b6f91d6006e1682631787ea56ec",
+      "gitAndCurrentMatch": true
+    },
+    {
+      "path": "apps/web/test/plugin-management/fixture/main.tsx",
+      "bytes": 6791,
+      "sha256": "2f770482608dd76dc94269c6c09ec58e224408f1ff045390e9439a2b94300f6d",
+      "gitAndCurrentMatch": true
+    },
+    {
+      "path": "apps/web/test/plugin-management/browser.ts",
+      "bytes": 37306,
+      "sha256": "362a2b070cdc6d214136913be6b6bb76bfb2549af75a0b5bcdd719b8b3380876",
+      "gitAndCurrentMatch": true
+    },
+    {
+      "path": "apps/web/test/plugin-runtime-command.test.ts",
+      "bytes": 8772,
+      "sha256": "ce863feee571b16a7988ace3b265f1f573153daa4303dcb88dce81d47c7f84b8",
+      "gitAndCurrentMatch": true
+    }
+  ],
+  "relatedFixedSource": [
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "bytes": 7455,
+      "sha256": "454c6142b4d95ec55c75187a801808a4dd224ba610ce3441880e0763fac805f2"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 66568,
+      "sha256": "c89b0fabeb461a338d27878086c675bcf9d88479b821718695ba9745d819abe6"
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "bytes": 6240,
+      "sha256": "ab6f2eccaf3460a3829b8abff767da378bb0bfbcf853414c2e7fac452a9e2ead"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0"
+    },
+    {
+      "path": "apps/web/src/plugin-management/use-read.ts",
+      "bytes": 1061,
+      "sha256": "0f32db860d45717394ceed7576bc06051d8c082271269261b705aadf82c3fbba"
+    }
+  ],
+  "findings": [
+    {
+      "id": "PRM-R1",
+      "priority": "P2",
+      "file": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "line": 145,
+      "title": "Historical ACK shadows a later same-revision runtime read",
+      "trigger": "Enable receives accepted ACK with runtime ready, then the same runner becomes unavailable or maintenance changes without changing registration revision. User refreshes runtime successfully.",
+      "evidence": "RuntimeControls selects the ACK whenever its revision is >= the GET revision. Server plugin-runtime/store.ts runtimeView checks runner revoked/maintenance_state on every read and can change reason/bindingAllowed without incrementing registration revision.",
+      "actual": "UI continues displaying bindingAllowed yes / ready despite a successful more recent GET reporting host-unavailable.",
+      "required": "Select the newest applicable runtime observation without replacing a higher-revision ACK with a lower-revision read. Preserve UNKNOWN write identity across reads; do not conflate successful GET and mutation acceptance. Add a focused same-revision host-unavailable refresh assertion; consider an older in-flight GET arriving after an ACK.",
+      "status": "SENT_TO_UNIQUE_MANAGER_AND_IMPLEMENTATION_OWNER"
+    }
+  ],
+  "positiveObservations": [
+    "Narrow session-owned command controller survives subscriber/view unmount; live session revocation prevents stale response application.",
+    "One unresolved command and frozen key/body; prior UNKNOWN remains UNKNOWN after typed retry4xx and successful GET; only validated original ACK resolves.",
+    "Public FlowClient command schema and ACK decoder are reused; no duplicate transport or global outbox.",
+    "Module separates desired enable / binding permission / unknown loaded-callable. Manual exact UUID visibly temporary; real candidate contract not guessed.",
+    "New browser harness is explicit-entry public-DTO HTTP fixture with bounded write count/body and owned close; legacy DB journey no longer runs on import.",
+    "Real App/session integration excluded by exact scope, accurately not claimed."
+  ],
+  "validation": "SOURCE_ONLY; author local/direct/types/browser still NOT_RUN at this review point. Source expectations are not actual results.",
+  "cleanCode": {
+    "applied": "Previously read local clean-code and codebase-design methods; no reinstall.",
+    "reviewed": [
+      "single authority and lifetime",
+      "frozen inputs and typed failure semantics",
+      "UI observation freshness",
+      "bounded test fixture and cleanup",
+      "necessary abstraction and duplication"
+    ],
+    "finding": "One state projection freshness defect; owner fix requested in existing scope. No cosmetic refactoring requested."
+  }
+}

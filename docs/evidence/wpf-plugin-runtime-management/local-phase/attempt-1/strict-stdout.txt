@@ -1,0 +1,17 @@
+apps/server/src/package-artifacts/input.ts(1,17): error TS2307: Cannot find module 'npm-package-arg' or its corresponding type declarations.
+apps/server/src/package-artifacts/source.ts(3,20): error TS2307: Cannot find module 'pacote' or its corresponding type declarations.
+apps/server/src/package-artifacts/source.ts(73,47): error TS7006: Parameter 'stream' implicitly has an 'any' type.
+apps/server/src/package-artifacts/storage.ts(5,18): error TS2307: Cannot find module 'ssri' or its corresponding type declarations.
+apps/server/src/plugin-installations/commands.ts(4,138): error TS2307: Cannot find module '@flow/plugin-runtime' or its corresponding type declarations.
+apps/server/src/plugin-installations/commands.ts(78,45): error TS18046: 'error' is of type 'unknown'.
+apps/server/src/plugin-installations/commands.ts(78,105): error TS18046: 'error' is of type 'unknown'.
+apps/server/src/plugin-installations/store.ts(2,46): error TS2307: Cannot find module '@flow/plugin-runtime' or its corresponding type declarations.
+apps/web/src/components/workspace/ai-elements/terminal.tsx(7,24): error TS2307: Cannot find module 'ansi-to-react' or its corresponding type declarations.
+apps/web/src/plugin-management/PluginManagement.tsx(3,38): error TS2305: Module '"@flow/contracts"' has no exported member 'PluginRuntimeView'.
+apps/web/src/plugin-management/runtime-command.ts(2,10): error TS2724: '"@flow/contracts"' has no exported member named 'pluginRuntimeCommandSchema'. Did you mean 'pluginCommandSchema'?
+apps/web/src/plugin-management/runtime-command.ts(2,43): error TS2305: Module '"@flow/contracts"' has no exported member 'PluginRuntimeCommand'.
+apps/web/src/plugin-management/runtime-command.ts(2,70): error TS2305: Module '"@flow/contracts"' has no exported member 'PluginRuntimeView'.
+apps/web/test/plugin-management/browser.ts(8,10): error TS2724: '"@flow/contracts"' has no exported member named 'pluginRuntimeCommandSchema'. Did you mean 'pluginCommandSchema'?
+apps/web/test/plugin-management/browser.ts(8,63): error TS2305: Module '"@flow/contracts"' has no exported member 'PluginRuntimeCommand'.
+apps/web/test/plugin-management/browser.ts(171,14): error TS2749: 'Pool' refers to a value, but is being used as a type here. Did you mean 'typeof Pool'?
+apps/web/test/plugin-runtime-command.test.ts(3,15): error TS2305: Module '"@flow/contracts"' has no exported member 'PluginRuntimeCommand'.

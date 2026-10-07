@@ -1,0 +1,70 @@
+{
+  "state": "CLOSED_FAILED_PARENT_TERMINAL",
+  "source": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+  "strict": {
+    "attempt": 2,
+    "exit": 0
+  },
+  "direct": {
+    "attempt": 3,
+    "jsonTests": 15,
+    "jsonPassed": 15,
+    "exactNames": true,
+    "childExit": "NOT_CAPTURED",
+    "parentExit": 1,
+    "stdoutDroppedBytes": 93,
+    "acceptance": "JSON_RESULT_ONLY_NOT_COMPLETE_RUN_PASS"
+  },
+  "records": [
+    {
+      "attempt": 1,
+      "outerExit": 1,
+      "outerMs": 4340.527000022121,
+      "terminalMs": 4236.217,
+      "chargeMs": 4341,
+      "path": "/private/tmp/plugin-runtime-local-eb1ma5iy",
+      "cleanup": {
+        "groupsAbsent": [
+          80084
+        ],
+        "allGroupsAbsent": true,
+        "scratchAbsent": true
+      }
+    },
+    {
+      "attempt": 2,
+      "outerExit": 1,
+      "outerMs": 4520.743041997775,
+      "terminalMs": 4456.445,
+      "chargeMs": 4521,
+      "path": "/private/tmp/plugin-runtime-local-second-3f6ohx3f",
+      "cleanup": {
+        "groupsAbsent": [
+          14062,
+          17426
+        ],
+        "allGroupsAbsent": true,
+        "scratchAbsent": true
+      }
+    },
+    {
+      "attempt": 3,
+      "outerExit": 1,
+      "outerMs": 863.6907499749213,
+      "terminalMs": 792.055,
+      "chargeMs": 864,
+      "path": "/private/tmp/plugin-runtime-direct-third-l352v0ky",
+      "cleanup": {},
+      "throughSupplementalCleanupMs": 21219.727277755737,
+      "chargeWithSupplementalCleanupMs": 21220
+    }
+  ],
+  "totalLimitMs": 30000,
+  "conservativeChargedMs": 30082,
+  "overLimitMs": 82,
+  "unusedMs": 0,
+  "evidenceBytes": 929401,
+  "fourthRun": "NOT_RUN",
+  "cleanup": "Supplemental exact PID/PGID ABSENT and owned inode scratch deleted; original incomplete terminal unchanged",
+  "boundary": "0network/PG/Chrome; no grants to infer browser/App functionality"
+}

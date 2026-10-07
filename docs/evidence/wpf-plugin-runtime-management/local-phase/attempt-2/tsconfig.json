@@ -1,0 +1,149 @@
+{
+  "extends": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false,
+    "paths": {
+      "@flow/client": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/packages/client/src/index.ts"
+      ],
+      "@flow/contracts": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/packages/contracts/src/index.ts"
+      ],
+      "zod": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.d.cts"
+      ],
+      "vitest": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/index.d.ts"
+      ],
+      "vite": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.d.ts"
+      ],
+      "vite/client": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/client.d.ts"
+      ],
+      "@vitejs/plugin-react": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react/dist/index.d.ts"
+      ],
+      "@tailwindcss/vite": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite/dist/index.d.mts"
+      ],
+      "@playwright/test": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.d.ts"
+      ],
+      "@radix-ui/react-dialog": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/dist/index.d.ts"
+      ],
+      "@radix-ui/react-slot": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-slot@1.4.0_@types+react@19.3.0_react@19.3.0/node_modules/@radix-ui/react-slot/dist/index.d.ts"
+      ],
+      "lucide-react": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/lucide-react@1.52.0_@types+react@19.3.0_react@19.3.0/node_modules/lucide-react/dist/lucide-react.d.ts"
+      ],
+      "class-variance-authority": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/class-variance-authority@0.7.1/node_modules/class-variance-authority/dist/index.d.ts"
+      ],
+      "clsx": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/clsx.d.ts"
+      ],
+      "tailwind-merge": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tailwind-merge@3.7.0/node_modules/tailwind-merge/dist/types.d.ts"
+      ],
+      "react": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+react@19.3.0/node_modules/@types/react/index.d.ts"
+      ],
+      "react/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+react@19.3.0/node_modules/@types/react/*"
+      ],
+      "react-dom": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+react-dom@19.3.0_@types+react@19.3.0/node_modules/@types/react-dom/index.d.ts"
+      ],
+      "react-dom/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+react-dom@19.3.0_@types+react@19.3.0/node_modules/@types/react-dom/*"
+      ],
+      "@flow/interaction": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/packages/interaction/src/index.ts"
+      ],
+      "@flow/interaction/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/packages/interaction/src/*"
+      ],
+      "@flow/plugin-runtime/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/packages/plugin-runtime/src/*"
+      ],
+      "typescript": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.d.ts"
+      ],
+      "@assistant-ui/react": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react/dist/index.d.ts"
+      ],
+      "@assistant-ui/react-markdown": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+react-markdown@0.14.18_@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@ty_t2hi6cc4fu2igto7fzqbznqjey/node_modules/@assistant-ui/react-markdown/dist/index.d.ts"
+      ],
+      "@radix-ui/react-tooltip": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-tooltip@1.3.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3._vkqim5iyzo54pyjokxbazpnhuq/node_modules/@radix-ui/react-tooltip/dist/index.d.ts"
+      ],
+      "@radix-ui/react-avatar": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-avatar@1.2.7_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_mj6654ekvi7ktl3to63fvkbm2q/node_modules/@radix-ui/react-avatar/dist/index.d.ts"
+      ],
+      "@radix-ui/react-collapsible": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-collapsible@1.1.21_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@_naquxvtbmxxhunvy2f77cme4ty/node_modules/@radix-ui/react-collapsible/dist/index.d.ts"
+      ],
+      "pg-boss": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.d.ts"
+      ],
+      "fastify": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.d.ts"
+      ],
+      "@fastify/cors": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/types/index.d.ts"
+      ],
+      "tar": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/index.d.ts"
+      ],
+      "pg": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg/index.d.ts"
+      ],
+      "playwright": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.d.ts"
+      ],
+      "playwright-core": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.d.ts"
+      ],
+      "@flow/plugin-runtime": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/packages/plugin-runtime/src/package-store.ts"
+      ],
+      "npm-package-arg": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg/index.d.ts"
+      ],
+      "pacote": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote/index.d.ts"
+      ],
+      "ssri": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri/index.d.ts"
+      ],
+      "ansi-to-react": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/ansi-to-react@6.2.6_react-dom@19.3.0_react@19.3.0__react@19.3.0/node_modules/ansi-to-react/lib/index.d.ts"
+      ]
+    },
+    "typeRoots": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+react@19.3.0/node_modules/@types",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+react-dom@19.3.0_@types+react@19.3.0/node_modules/@types"
+    ],
+    "types": [
+      "node"
+    ],
+    "strict": true,
+    "noUncheckedIndexedAccess": true
+  },
+  "files": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/src/plugin-management/PluginManagement.tsx",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/src/plugin-management/runtime-command.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/test/plugin-management/browser.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/test/plugin-management/fixture/main.tsx",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/apps/web/test/plugin-runtime-command.test.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/client.d.ts"
+  ],
+  "include": [],
+  "exclude": []
+}

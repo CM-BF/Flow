@@ -1,0 +1,5 @@
+(version 1)
+(allow default)
+(deny file-write*)
+(allow file-write* (subpath "/private/tmp/plugin-runtime-local-second-3f6ohx3f/scratch") (literal "/dev/null"))
+(deny network*)

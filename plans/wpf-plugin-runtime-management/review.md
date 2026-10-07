@@ -1,9 +1,11 @@
 # WPF-PLUGIN-RUNTIME01 独立审查
 
-**状态：NOT_STARTED**
+**状态：UNKNOWN**
 
-Target：未提交实现；base b67530bb025162629895d11482b5505d4a885c91。唯一 scope 为 claim 原七 literal；产品五文件，计划/证据两目录。
+当前 target：`6544b66b9b711ba861c67547417c3eb5c5bca074`；scope为[source manifest](../../docs/evidence/wpf-plugin-runtime-management/source-manifest.json)五产品源。base b67530bb025162629895d11482b5505d4a885c91。
 
-请先核 worktree/branch/HEAD/dirty、AGENTS 与本 plan/status，读取本地技能；针对固定实现检查唯一 session authority、冻结 key/body 跨 lazy 卸载、prior UNKNOWN 的 409/GET 不解冻、late session 与 read/write 分类、公共 ACK 复用、exact 安装身份与高级 runner 输入、Browser extensions 隔离。仅用实际检查证据，未运行项明确 NOT_RUN。给具体文件行号/severity/blocking，默认只读回 owner；新提交不继承旧产品 PASS。
+[f0ed正式审](../../docs/evidence/wpf-plugin-runtime-management/f0ed-source-review.json)提出PRM-R1；[20ac复审](../../docs/evidence/wpf-plugin-runtime-management/20ac-fix-review.json)确认SOURCE_ADDRESSED/0blocking。6544仅将未导出的runtime公共符号改消费共享实际文件，并明确legacy Pool类型，不改共享barrel或authority。当前集中actual/最后delta审尚待。
 
-实际检查：全部 NOT_RUN。Findings：未评估。实现/检查/独审/main/部署分开。本模块不含实际 App 接线或最终授权候选 selector。作者回应/修复/复审将在固定结论后记录。
+[有限检查段](../../docs/evidence/wpf-plugin-runtime-management/local-phase/summary.json)：第二strict通过。第三direct JSON为15/15但父FAILED、child exit未知、stdout丢弃，不能认完整direct运行通过。后补exact owned清理独立记录，原始失败/超时账保留。六组HTTP浏览器、生产App、最终授权候选UI、main与部署均未验。
+
+复审请核唯一session authority、UNKNOWN retry409/GET不解冻、同revision GET观察顺序与较高ACK保护、late session、公共ACK及exact安装身份；不把scope内模块fixture等同生产App。历史原件保持固定目标。

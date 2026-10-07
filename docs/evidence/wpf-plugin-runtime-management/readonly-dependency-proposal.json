@@ -1,0 +1,333 @@
+{
+  "state": "READ_ONLY_ENTRY_OBSERVATION_NOT_EXECUTED",
+  "donor": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+  "entries": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/lib/tsc.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+      "bytes": 267,
+      "sha256": "2cffde0b8c6760dfb0b5b0382bbb7e00ba6a8b2d981b9205b256a700a481d983"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/lib/_tsc.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/_tsc.js",
+      "bytes": 6213092,
+      "sha256": "e8f349eabd48486bdb2bf9dc1a00c89d58297270c54b745838879e2859194419"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/lib/typescript.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js",
+      "bytes": 9112572,
+      "sha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/vitest/vitest.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+      "bytes": 43,
+      "sha256": "39db22f579acf5639bbb17a261408debbde03f4692c0c439e77e7f13aeba74d6"
+    }
+  ],
+  "packages": [
+    {
+      "name": "typescript",
+      "version": "5.9.3",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+      "types": "./lib/typescript.d.ts",
+      "main": "./lib/typescript.js",
+      "module": null
+    },
+    {
+      "name": "vitest",
+      "version": "4.0.18",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/package.json",
+      "sha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328",
+      "types": "./dist/index.d.ts",
+      "main": "./dist/index.js",
+      "module": "./dist/index.js"
+    },
+    {
+      "name": "zod",
+      "version": "4.6.5",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "types": "./index.d.cts",
+      "main": "./index.cjs",
+      "module": "./index.js"
+    },
+    {
+      "name": "@types/node",
+      "version": "24.19.1",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/package.json",
+      "sha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978",
+      "types": "index.d.ts",
+      "main": "",
+      "module": null
+    },
+    {
+      "name": "@types/pg",
+      "version": "8.23.1",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg/package.json",
+      "sha256": "d122ef1e1bdb760edd5cff70d39597b9b3ae757c80e829bc297cd34fb7f01bd3",
+      "types": "index.d.ts",
+      "main": "",
+      "module": null
+    },
+    {
+      "name": "@types/react",
+      "version": "19.3.0",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+react@19.3.0/node_modules/@types/react/package.json",
+      "sha256": "505c0df4cd73d6a02c946bd9b81451584bd9c83ea72d75cff9b826efceaa19c2",
+      "types": "index.d.ts",
+      "main": "",
+      "module": null
+    },
+    {
+      "name": "@types/react-dom",
+      "version": "19.3.0",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@types+react-dom@19.3.0_@types+react@19.3.0/node_modules/@types/react-dom/package.json",
+      "sha256": "4a2052bb362c34f1d39cfe0818b6fe01a9f988b609e8b7e4832aff7dbf2f7180",
+      "types": "index.d.ts",
+      "main": "",
+      "module": null
+    },
+    {
+      "name": "react",
+      "version": "19.3.0",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/package.json",
+      "sha256": "6e003e4e9ed25afa7fdd55613f8aa877cefa9b359d9c13f81ee704030248e24e",
+      "types": null,
+      "main": "index.js",
+      "module": null
+    },
+    {
+      "name": "react-dom",
+      "version": "19.3.0",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react-dom@19.3.0_react@19.3.0/node_modules/react-dom/package.json",
+      "sha256": "136d4af63de473392ea79d6a21932b0ed9eb37fe518ce70f4621250f3d79e9bb",
+      "types": null,
+      "main": "index.js",
+      "module": null
+    },
+    {
+      "name": "@playwright/test",
+      "version": "1.63.0",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+      "sha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536",
+      "types": null,
+      "main": null,
+      "module": null
+    },
+    {
+      "name": "vite",
+      "version": "8.3.2",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+      "sha256": "2b906339263f24e9be4219f93d966b4bcf0d4141adc05939a537c3a8fd6f760a",
+      "types": null,
+      "main": null,
+      "module": null
+    },
+    {
+      "name": "@vitejs/plugin-react",
+      "version": "6.1.2",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react/package.json",
+      "sha256": "b40248af3bd75adf396d903d042c09ca4f585dcdd9460d51eeeeb83c01a48643",
+      "types": null,
+      "main": null,
+      "module": null
+    },
+    {
+      "name": "@tailwindcss/vite",
+      "version": "4.3.3",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite/package.json",
+      "sha256": "cba2bb8613106ca608bbd757998b2cf56a464584e3848310338fe3fe3b4761aa",
+      "types": null,
+      "main": null,
+      "module": null
+    },
+    {
+      "name": "@assistant-ui/react",
+      "version": "0.15.23",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@types+react-dom@19.3.0_@types+react@19._s3jyva3e5ngc7m6noluemjg7fi/node_modules/@assistant-ui/react/package.json",
+      "sha256": "1d0c3747b6ce89f3e4f6c5a7b780d192b3780df1bc8cbd1092934ff4fb66eca0",
+      "types": "./dist/index.d.ts",
+      "main": "./dist/index.js",
+      "module": null
+    },
+    {
+      "name": "@assistant-ui/react-markdown",
+      "version": "0.14.18",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+react-markdown@0.14.18_@assistant-ui+react@0.15.23_@opentelemetry+api@1.9.1_@ty_t2hi6cc4fu2igto7fzqbznqjey/node_modules/@assistant-ui/react-markdown/package.json",
+      "sha256": "b8bc2d5b903eaa3316242785aa207b25f0d8618a1b4100ab6236d483aca527c1",
+      "types": "./dist/index.d.ts",
+      "main": "./dist/index.js",
+      "module": null
+    },
+    {
+      "name": "lucide-react",
+      "version": "1.52.0",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/lucide-react@1.52.0_@types+react@19.3.0_react@19.3.0/node_modules/lucide-react/package.json",
+      "sha256": "3a8e3206b904805cd7856e9b59fba3590e6702dfe019a2c843a683f3fc25fc26",
+      "types": "dist/lucide-react.d.ts",
+      "main": "dist/cjs/lucide-react.js",
+      "module": "dist/esm/lucide-react.mjs"
+    },
+    {
+      "name": "@radix-ui/react-dialog",
+      "version": "1.2.0",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/package.json",
+      "sha256": "9f7cc1487d93a25d543e96beb00204a59d1b11d3e36b4161ae1c8c10c1e47bde",
+      "types": "./dist/index.d.ts",
+      "main": "./dist/index.js",
+      "module": "./dist/index.mjs"
+    },
+    {
+      "name": "@radix-ui/react-tooltip",
+      "version": "1.3.0",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-tooltip@1.3.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3._vkqim5iyzo54pyjokxbazpnhuq/node_modules/@radix-ui/react-tooltip/package.json",
+      "sha256": "8feaf95e6f255e34a689aa63d9822ade38d81f22d83bf736cc346de8655f9a42",
+      "types": "./dist/index.d.ts",
+      "main": "./dist/index.js",
+      "module": "./dist/index.mjs"
+    },
+    {
+      "name": "@radix-ui/react-avatar",
+      "version": "1.2.7",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-avatar@1.2.7_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_mj6654ekvi7ktl3to63fvkbm2q/node_modules/@radix-ui/react-avatar/package.json",
+      "sha256": "77ffe6fd634ca0512a26ecdf8448babbc80060512154acfc6136a4b94c9ed1ed",
+      "types": "./dist/index.d.ts",
+      "main": "./dist/index.js",
+      "module": "./dist/index.mjs"
+    },
+    {
+      "name": "@radix-ui/react-slot",
+      "version": "1.4.0",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-slot@1.4.0_@types+react@19.3.0_react@19.3.0/node_modules/@radix-ui/react-slot/package.json",
+      "sha256": "1e65d7220c8a7939cdcb81514ae55104ba1763543c4a315abbea3fd3f370846b",
+      "types": "./dist/index.d.ts",
+      "main": "./dist/index.js",
+      "module": "./dist/index.mjs"
+    },
+    {
+      "name": "@radix-ui/react-collapsible",
+      "version": "1.1.21",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@radix-ui+react-collapsible@1.1.21_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@_naquxvtbmxxhunvy2f77cme4ty/node_modules/@radix-ui/react-collapsible/package.json",
+      "sha256": "e940fef57c0cf4e2ba1fdaa42a45a6eaf161de71221c6f3d4176c3af862b41df",
+      "types": "./dist/index.d.ts",
+      "main": "./dist/index.js",
+      "module": "./dist/index.mjs"
+    },
+    {
+      "name": "clsx",
+      "version": "2.1.1",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/package.json",
+      "sha256": "a5e616b9883177fb47c1fca22b6a4ab42be1c3ed6ffae8595a5c7d88630eeec2",
+      "types": "clsx.d.ts",
+      "main": "dist/clsx.js",
+      "module": "dist/clsx.mjs"
+    },
+    {
+      "name": "tailwind-merge",
+      "version": "3.7.0",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tailwind-merge@3.7.0/node_modules/tailwind-merge/package.json",
+      "sha256": "048ace99e7a0c877d540e21fd3991795bfca07efe409aacd54465dfc51845939",
+      "types": "./dist/types.d.ts",
+      "main": "./dist/bundle-cjs.js",
+      "module": null
+    },
+    {
+      "name": "pg",
+      "version": "8.23.1",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "types": null,
+      "main": "./lib",
+      "module": null
+    },
+    {
+      "name": "pg-boss",
+      "version": "12.37.0",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json",
+      "sha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0",
+      "types": "./dist/index.d.ts",
+      "main": "./dist/index.js",
+      "module": null
+    },
+    {
+      "name": "fastify",
+      "version": "5.12.5",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/package.json",
+      "sha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa",
+      "types": "fastify.d.ts",
+      "main": "fastify.js",
+      "module": null
+    },
+    {
+      "name": "@fastify/cors",
+      "version": "11.3.0",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/package.json",
+      "sha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539",
+      "types": "types/index.d.ts",
+      "main": "index.js",
+      "module": null
+    },
+    {
+      "name": "npm-package-arg",
+      "version": "13.0.2",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/package.json",
+      "sha256": "1a12d6b689df3628a831b61c29b55fe4ba667b37f37d5317eb306929eeb80bad",
+      "types": null,
+      "main": "./lib/npa.js",
+      "module": null
+    },
+    {
+      "name": "pacote",
+      "version": "21.5.1",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/package.json",
+      "sha256": "17aaee65ad940680ff9073f0b6f144994270283f55824056377c7f2e8590c90f",
+      "types": null,
+      "main": "lib/index.js",
+      "module": null
+    },
+    {
+      "name": "ssri",
+      "version": "13.0.1",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/package.json",
+      "sha256": "568ffddd852f2bf78cccddc099f443a6fa1af56f1d21de9bea51b3b9a61d9151",
+      "types": null,
+      "main": "lib/index.js",
+      "module": null
+    },
+    {
+      "name": "tar",
+      "version": "7.5.22",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tar@7.5.22/node_modules/tar/package.json",
+      "sha256": "31b18f4fb83ba7183f54fa9e2cdca610897108c37ba80570c2c6fa7ccf112d97",
+      "types": "./dist/commonjs/index.d.ts",
+      "main": "./dist/commonjs/index.min.js",
+      "module": "./dist/esm/index.min.js"
+    },
+    {
+      "name": "playwright",
+      "version": "1.63.0",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "sha256": "8bc2ddebe8d9b051b9ecb87d62c6c63877e59d08617f32c3215681ca8bb70998",
+      "entryResolution": "read-only Node ancestor dependency path from @playwright/test; not imported"
+    },
+    {
+      "name": "playwright-core",
+      "version": "1.63.0",
+      "packageJson": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "sha256": "f061c58427e47e843e26d201f0a57076c734e57c734ecbbd87d4a23b7a20db9b",
+      "entryResolution": "read-only Node ancestor dependency path from @playwright/test; not imported"
+    }
+  ],
+  "writes": "NONE; no links/install/copy",
+  "claim": "Third-party candidate only. Exact transitive execution closure/config still must bind before a local segment; @flow resolves only this feature tree fixed source."
+}

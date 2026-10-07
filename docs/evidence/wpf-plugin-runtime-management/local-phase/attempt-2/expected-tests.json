@@ -1,0 +1,17 @@
+[
+  "accepts real public enable and disable ACK codecs without claiming loaded or callable",
+  "does not regress a higher acknowledged revision to a lower read revision",
+  "does not turn a malformed read ACK into a pending mutation or write retry",
+  "freezes one command before await and blocks duplicate submission",
+  "ignores an old accepted response after live authority changes even when transport ignores abort",
+  "keeps a first typed409 as a rejection with the exact submitted draft",
+  "keeps prior UNKNOWN after retry status 403 and a successful GET until exact original ACK",
+  "keeps prior UNKNOWN after retry status 404 and a successful GET until exact original ACK",
+  "keeps prior UNKNOWN after retry status 409 and a successful GET until exact original ACK",
+  "observer failure cannot swallow transmission or turn accepted ACK into UNKNOWN",
+  "rejects a retained retry callback for a different unresolved command",
+  "rejects an invalid generated key before HTTP (0)",
+  "rejects an invalid generated key before HTTP (1)",
+  "uses a later same-revision GET but prevents a pre-ACK delayed GET from overwriting that ACK",
+  "validates before HTTP and does not create an unknown command for invalid input"
+]

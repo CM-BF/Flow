@@ -1,0 +1,159 @@
+{
+  "startedAt": "2026-10-07T11:11:47.311743+00:00",
+  "state": "FAILED",
+  "head": "6544b66b9b711ba861c67547417c3eb5c5bca074",
+  "steps": [
+    {
+      "name": "direct",
+      "startedAt": "2026-10-07T11:11:47.493701+00:00",
+      "pid": 46362,
+      "pgid": 46362
+    }
+  ],
+  "samples": [
+    {
+      "elapsedMs": 180.252,
+      "free": 22164226048,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 183.101,
+      "free": 22164213760,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 215.214,
+      "free": 22164168704,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 247.123,
+      "free": 22164168704,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 279.213,
+      "free": 22164168704,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 311.342,
+      "free": 22164168704,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 343.437,
+      "free": 22164168704,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 375.536,
+      "free": 22164164608,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 407.085,
+      "free": 22164160512,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 439.188,
+      "free": 22164160512,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 471.294,
+      "free": 22163824640,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 503.392,
+      "free": 22164148224,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 535.502,
+      "free": 22164303872,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 567.6,
+      "free": 22164299776,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 599.156,
+      "free": 22164299776,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 630.135,
+      "free": 22164299776,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 661.391,
+      "free": 22164291584,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 692.044,
+      "free": 22164291584,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 722.331,
+      "free": 22164291584,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    },
+    {
+      "elapsedMs": 754.464,
+      "free": 22164291584,
+      "scratchLogical": 0,
+      "scratchAllocated": 0
+    }
+  ],
+  "cleanup": {},
+  "ownedGroups": [
+    46362
+  ],
+  "streams": {
+    "direct-stdout": {
+      "eof": false,
+      "bytes": 93,
+      "dropped": 93
+    },
+    "direct-stderr": {
+      "eof": false,
+      "bytes": 0,
+      "dropped": 0
+    }
+  },
+  "errors": [
+    "RuntimeError:raw cap",
+    "cleanup:[Errno 1] Operation not permitted",
+    "direct-stdout incomplete",
+    "direct-stderr incomplete"
+  ],
+  "finishedAt": "2026-10-07T11:11:48.102421+00:00",
+  "elapsedMs": 791.284
+}
