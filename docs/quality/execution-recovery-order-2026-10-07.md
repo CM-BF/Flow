@@ -25,19 +25,19 @@ Goal Owner 在 2026-10-07 00:08:27 UTC 只读观察主卷可用 **783,925,248 B*
 
 | 优先组 | 唯一来源与固定输入 | 保留事实 | 下一必要动作 |
 | --- | --- | --- | --- |
-| 1 | [SVC07](../../../server-transaction-disconnect/plans/svc07-transaction-recovery/status.md)，产品 e28c4ed0 / HTTP 准备 35f78c8b | 15 fake/局部 types 与真实 PG 既有批准保持；HTTP HOLD/NOT_RUN，旧窗口已归还 | 原 1 GiB+128 MiB 等全部条件恢复后，单次必要 HTTP 直接消费者检查；成立再受控 main 接收，不重测原 PG |
-| 2 | [Recovery](../../../web-conversation-recovery/plans/wpf-conversation-recovery/status.md)、[快捷设置](../../../web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md)、[TUI01G](../../../tui-message-settings/plans/tui01g-message-settings/status.md) | Recovery 两次真实失败及累计预算保留；快捷设置 fe6ece13 仅源码/准备批准；TUI 215063fb 的 12 新例/直接消费者/types NOT_RUN | 原 owner 冻结输入和剩余预算核对后，先必要局部检查，再串行实际用户路径；headless/PTY/browser 各自证明，不补模型 |
-| 2 | [S01P07](../../../runner-claim-recovery/plans/s01p07-runner-claim-recovery/status.md)，产品 83a07992 | 85 distinct 非 PG /局部 types 保留，8 新 PG 组与旧 4 PG 未运行；供给齐备 | 按原批准 packet 与窗口补必要 PG；不以新 v2 恢复规则追认旧 v1 unknown |
-| 3 | [X01](../../../plugin-enable-binding/plans/x01-plugin-management/status.md)，产品 ade4efa0 /调用方 d6f52c3a | 7 ignored links 已完成；0 新 import/types/tests/安装/PG；不是依赖继续待供给 | 1 GiB+32 MiB 原局部门槛及单次窗口满足后做 Stage A；中心/Web 后继按原分阶段输入，不与 PG/Chrome 并跑 |
-| 3 | [REQ15](../../../conversation-turn-page-batch/plans/req15-conversation-turn-page-batch/status.md)，新准备 5ddddd6a | 旧 26 fake/types 及新准备源审保留；新 types/collect/PG/HTTP NOT_RUN | 补原必要局部检查与有限 PG/HTTP，保持实际查询/字节证据，不借旧结果宣布新片通过 |
-| 3 | [CHAT05P01](../../../native-activity-body/plans/chat05p01-native-activity-body/status.md)，40af6d90 | 原 22 distinct 分轮通过、历史失败保留；新 10 direct/types/3 PG NOT_RUN，尚未生产挂载 | 先原 1 GiB+8/16 MiB types/direct，再原 PG；完整正文/恢复与中心挂载各自验收 |
-| 4 | [D06 当前唯一源](../../../dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md)，5124e6ce /策展 0da869f7 | SOURCE_ONLY_VALIDATION_PENDING；新 22 direct/显示未运行，旧 aeb 结果不继承 | 原局部/显示窗口满足后定向验证；不是重复接旧 dashboard-architecture-current 已交付片 |
+| 1 | [SVC07](/Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect/plans/svc07-transaction-recovery/status.md)，产品 e28c4ed0 / HTTP 准备 35f78c8b | 15 fake/局部 types 与真实 PG 既有批准保持；HTTP HOLD/NOT_RUN，旧窗口已归还 | 原 1 GiB+128 MiB 等全部条件恢复后，单次必要 HTTP 直接消费者检查；成立再受控 main 接收，不重测原 PG |
+| 2 | [Recovery](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md)、[快捷设置](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md)、[TUI01G](/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-message-settings/plans/tui01g-message-settings/status.md) | Recovery 两次真实失败及累计预算保留；快捷设置 fe6ece13 仅源码/准备批准；TUI 215063fb 的 12 新例/直接消费者/types NOT_RUN | 原 owner 冻结输入和剩余预算核对后，先必要局部检查，再串行实际用户路径；headless/PTY/browser 各自证明，不补模型 |
+| 2 | [S01P07](/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery/plans/s01p07-runner-claim-recovery/status.md)，产品 83a07992 | 85 distinct 非 PG /局部 types 保留，8 新 PG 组与旧 4 PG 未运行；供给齐备 | 按原批准 packet 与窗口补必要 PG；不以新 v2 恢复规则追认旧 v1 unknown |
+| 3 | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/status.md)，产品 ade4efa0 /调用方 d6f52c3a | 7 ignored links 已完成；0 新 import/types/tests/安装/PG；不是依赖继续待供给 | 1 GiB+32 MiB 原局部门槛及单次窗口满足后做 Stage A；中心/Web 后继按原分阶段输入，不与 PG/Chrome 并跑 |
+| 3 | [REQ15](/Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch/plans/req15-conversation-turn-page-batch/status.md)，新准备 5ddddd6a | 旧 26 fake/types 及新准备源审保留；新 types/collect/PG/HTTP NOT_RUN | 补原必要局部检查与有限 PG/HTTP，保持实际查询/字节证据，不借旧结果宣布新片通过 |
+| 3 | [CHAT05P01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/plans/chat05p01-native-activity-body/status.md)，40af6d90 | 原 22 distinct 分轮通过、历史失败保留；新 10 direct/types/3 PG NOT_RUN，尚未生产挂载 | 先原 1 GiB+8/16 MiB types/direct，再原 PG；完整正文/恢复与中心挂载各自验收 |
+| 4 | [D06 当前唯一源](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md)，5124e6ce /策展 0da869f7 | SOURCE_ONLY_VALIDATION_PENDING；新 22 direct/显示未运行，旧 aeb 结果不继承 | 原局部/显示窗口满足后定向验证；不是重复接旧 dashboard-architecture-current 已交付片 |
 
-OPS-CI01 仍用[原启用候选](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)，准备片已 delivered/main；其用户选择不由队列中新 worker 重问。各项 claim 仅按 owner 原状态保留，不因 worker 结束就自动 release，也不预领取后继。
+OPS-CI01 仍用[原启用候选](/Users/citrine/Projects/AgentHarness/Flow-worktrees/ops-remote-validation/plans/ops-ci01-remote-validation/status.md)，准备片已 delivered/main；其用户选择不由队列中新 worker 重问。各项 claim 仅按 owner 原状态保留，不因 worker 结束就自动 release，也不预领取后继。
 
 ## X01 供给闭环
 
-只读接收 [唯一结果](../../../plugin-enable-binding/docs/evidence/x01/enable-binding-dependency-view-result.json)：原唯一 operator `architecture_read` 于 00:01:31 UTC 完成 7 links/3 parents，`PROVISIONED`、copiedBytes=0、imports=0、install=false、checks=NOT_RUN、executionState=HOLD。原 request 的 NOT_PROVISIONED 是历史请求，不再当当前 blocker；不重做链接、不覆写两个历史 HOLD/STOP 原件。此次只是读取已存在回执，没有新增供给或重新检验 donor。
+只读接收 [唯一结果](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/enable-binding-dependency-view-result.json)：原唯一 operator `architecture_read` 于 00:01:31 UTC 完成 7 links/3 parents，`PROVISIONED`、copiedBytes=0、imports=0、install=false、checks=NOT_RUN、executionState=HOLD。原 request 的 NOT_PROVISIONED 是历史请求，不再当当前 blocker；不重做链接、不覆写两个历史 HOLD/STOP 原件。此次只是读取已存在回执，没有新增供给或重新检验 donor。
 
 ## 恢复触发与收口
 
