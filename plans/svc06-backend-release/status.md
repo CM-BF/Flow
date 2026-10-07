@@ -137,3 +137,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 04:14:27 UTC：原失败残留的单次正常收尾
 
 [本次独立收尾原件](../../docs/evidence/svc06/artifact-host-smoke/CLEANUP-RESULT.md)：外层672ms/exit0/双EOF/owned absent；原helper一次TERM使中心组stopped；marker/OID同值、零连接与先checkpoint后normal DROP/remaining=[]。原artifact/private run和失败raw不改；03/04实际host仍open，结果待Lead独审。
+
+## 2026-10-07 04:20:48 UTC：隔离接缝局部完成待审
+
+[新3例/原件](../../docs/evidence/svc06/artifact-host-followup/local-manifest.json)一次3/3、374ms、0PG；可信原身份监督与真实拒读子孙分离，有限私有诊断。原host失败和清理结果保持；本轮源码待独审，后继新root/真实三角色仍NOT_RUN。local段已清理归还。
