@@ -10,7 +10,7 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v26 ACTIVE61scope](../../docs/evidence/x01/host-candidates-amend-v26.json)；仅追加三个候选合同/中心叶；两Web路径保持STOP |
+| Claim | [v27 ACTIVE60scope](../../docs/evidence/x01/removal-routes-handback-receipt.json)；routes.ts已正式STOP并移出供独立REMOVAL writer；两Web路径保持STOP |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
@@ -377,3 +377,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T11:23:46.463409+00:00：chatui11:22:22结果忠实性APPROVED/0P1/P2正式归档，原source/PGraw/manifest均冻结。[七源窄main intake](../../docs/evidence/x01/host-candidates-integration-ready.json)READY；fresh主线f68dbb71七路径前像与固定base2f32一致，三个新leaf未出现，不冒main已接。只source/metadata接收说明，不重跑1/10/旧套件；PG已11:19实际返还。客户候选另由db唯一intake消费相同合同；Web两源已STOP不恢复。整体X01未Done，未知副作用恢复/完整三端/隔离/context/真实A-B-C生命周期仍保持原TODO边界。
 
 2026-10-07T11:29:23.352950+00:00：仅metadata收敛[三片固定接收索引](../../docs/evidence/x01/host-candidates-combined-intake-index.json)，引用ACK ae148唯一intake、候选中心a298/actuald05与consumerbc54/8af唯一intake；不复制子taskTODO/第二进度源。三owner现场HEAD=origin clean，mainf68 clean；18路径row的只读顺序模拟（16unique）无前像冲突，均尚未按完整source字节接收。ACK→consumer，合同59ad需先于/同批consumer，a298与767同合同而保留backend修复。建议Original按实际组合diff一次必要directcheck，具体范围仍由集成owner确定，不重跑三批全集/PG。0工程执行/PG/main/registry/他人status写入，原intake/source/raw保持。
+
+2026-10-07T11:49:18.967503+00:00：仅父范围metadata封存。routes.ts于11:37:21.075461Z STOP，v26→v27原子amend于11:37:21.188Z移出唯一literal；[正式回执](../../docs/evidence/x01/removal-routes-handback-receipt.json)。新X01-REMOVAL-REFERENCES01已在独立plugin-removal-references树由claim04e46691 v1接收，[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references/plans/x01-removal-references/status.md)。原HOST固定source/actual/intake均不变，当前Original按三片索引受控接收中，本owner未据通知冒称已经main。旧树不恢复routes写权。
