@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-07T18:36:44.880Z",
+  "source": "10bd0219f84c34008a0255bfed282052a91bce7c",
+  "previousSource": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
+  "testChanges": "Replace incomplete project SQL with pre036 POST /api/projects; adopt returned id;assert201/project+graph revision1;no assertion removal",
+  "mirrors": "One authoritative test copied byte-for-byte to existing isolated mirror;no closure recopied",
+  "callerReplacements": {
+    "av03-verifier-claim-pg-run-r1": 2,
+    "'pg-input.json'": 1,
+    "'pg-isolated-manifest.json'": 1
+  },
+  "callerSemantics": "Only independent output/input/manifest names; supervision/environment/deadlines/cleanup unchanged",
+  "newExecution": "NOT_RUN",
+  "R1Preserved": "result2f32/packet77d/raw20 plus original manifest76ea/281 viafixedGit",
+  "necessaryFutureLocal": "Focused strict for test variable and DTO use; optional exactcollect only if selector changes (none). No ordinary grant in this segment.",
+  "next": "Source delta static review; separate R2 actual grant after readiness; not auto retry"
+}

@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-07T18:33:00.000Z",
+  "reviewer": "db_transaction_owner",
+  "target": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
+  "state": "READ_ONLY_AUDIT",
+  "knownP2": "Project INSERT missing same-TX current revision; use existing pre036 POST /api/projects",
+  "additionalCertainFindings": [],
+  "checked": [
+    "001/004/008/016/023/029/034/036 and production helpers",
+    "task/project bindings schema",
+    "fetch current-attempt/install deferred tuple FK in same transaction",
+    "registry grant revision2 does not create runtime revision",
+    "completed source attempt/detail/artifact exact tuple",
+    "badTree old034 acceptance/new036 rejection and rollback",
+    "mandatory ref23514/wrongAttempt23503/tool ref23503",
+    "strict time ordering/text[]",
+    "project association removal/restore and concurrent grant lock fence"
+  ],
+  "staticSuccessCounts": {
+    "tasks": 14,
+    "attempts": 9,
+    "runners": 5,
+    "registrations": 6
+  },
+  "limits": "Synthetic installed/source metadata; not public verifier producer/execution; no tests/import/PG/probes; static audit not real result"
+}
