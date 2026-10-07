@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-07T21:00:29.341Z",
+  "operator": "astra_ultra_execution_lead / gpt-6-astra",
+  "state": "FIXED_GIT_COMPOSITION_NOT_ARTIFACT",
+  "sourcePacket": "a8f9125aeb8335a5eaf51ee19391888067585b61",
+  "base": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "sourceCommit": "f37a3612068c7215994750574a7451ede841bcce",
+  "tree": "de843e0fda82600b4d7600c76614c9794c17e3af",
+  "ref": "refs/heads/codex/svc06b-recovery-runtime",
+  "paths": [
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "beforeBytes": 4368,
+      "beforeSha256": "320e6a1d21b0cc7073f3985dace543476ba0672514422b883fb890e2a5d2ca54",
+      "afterBytes": 8924,
+      "afterSha256": "35f4b24980faa240013be85e86b2a8c581e68c1fe3c08bac42e91af43f8cc3b4",
+      "provenance": "1520aeb09f5ce29b44757eb17e47f4a1d9d852cf"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "beforeBytes": 48201,
+      "beforeSha256": "3dc665dea6a62874438fb62c72444ccba18f462c935ac276f5d786fbffe37d11",
+      "afterBytes": 48650,
+      "afterSha256": "dfd8c6e2e85aa38e112c340389d8f00e02bd82610c2515ce49a30ea806b6d158",
+      "provenance": "1520aeb09f5ce29b44757eb17e47f4a1d9d852cf"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "beforeBytes": 10094,
+      "beforeSha256": "5827f1863578841ad12a459ea7ea42fc474577cd1271e1233beb9a50902c17d8",
+      "afterBytes": 14601,
+      "afterSha256": "3190f12de066ef1377f5de966819a08dd6980e13fa4867336aa09a708c1601f1",
+      "provenance": "1520aeb09f5ce29b44757eb17e47f4a1d9d852cf"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "beforeBytes": 17320,
+      "beforeSha256": "db4e30317baf9a604d5fe89c2c67ff03cb925bbed90cb7cc3debfc055af10648",
+      "afterBytes": 17786,
+      "afterSha256": "398201e036cedafc801634b50d8f43eb30eb1ef81640bc224f6eae80960d023e",
+      "provenance": "1520aeb09f5ce29b44757eb17e47f4a1d9d852cf"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "beforeBytes": 3297,
+      "beforeSha256": "46c06a84f1bde8db92a7df140d1491609877455b84ff6e520d00cc748a46c1fe",
+      "afterBytes": 3744,
+      "afterSha256": "2c0e6f72f63ce91716287e195c798e69ad1d15c160c0b64c7703aff09e6726c7",
+      "provenance": "1520aeb09f5ce29b44757eb17e47f4a1d9d852cf"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "beforeBytes": 9796,
+      "beforeSha256": "87a5ddc0ef6883de926a8cf25b6e38883f6485e00002cdd1973c73da4aea31e8",
+      "afterBytes": 10380,
+      "afterSha256": "1e8dad55f7daa34a826e19b1adbc7b65e42b7825cbc9aae3a857759275171a13",
+      "provenance": "be5f2f0cf832a41e1c76179d935228656cd52e57"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-target.mjs",
+      "beforeBytes": null,
+      "beforeSha256": null,
+      "afterBytes": 14660,
+      "afterSha256": "1e96204b15b6341b2f7119cf24a9eb4f1858fe477b18c17916de3e7522c2154b",
+      "provenance": "ddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39"
+    }
+  ],
+  "patchSha256": "11c8efaffc3b766a019c6471753eb48f9ef3c7c778ccfc26d622a692e9ec6f03",
+  "reviewInputs": [
+    "docs/evidence/i02/svc06b-runtime-reuse-review.json",
+    "docs/evidence/i02/svc06b-runner-initialization-review.json",
+    "docs/evidence/i02/svc09a-held-target-review.json"
+  ],
+  "validation": "Exact seven source pre/post hashes and Git changed-path set; temporary index only, all active checkouts unchanged",
+  "runtime": "NOT_RUN",
+  "limits": "No build/PG/service/provider/personal action; actual import/cold-start/newtuple compatibility required"
+}
