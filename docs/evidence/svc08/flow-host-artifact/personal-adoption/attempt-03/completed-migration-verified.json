@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-07T06:16:50.809Z",
+  "source": {
+    "directory": "/private/tmp/flow-svc08-personal-adoption-20261007-r2",
+    "identity": {
+      "dev": 16777234,
+      "ino": 123555815
+    },
+    "inputSha256": "47287cd13fd8ff38399e8add8f54fcba996573fb971492f4f11a863e5036ea7a",
+    "files": [
+      {
+        "name": "reservation.json",
+        "bytes": 263,
+        "sha256": "548fd80214175ed15c3824330ef108d9212dc6a4a1ca142e5d0e9cd1d783434c",
+        "dev": 16777234,
+        "ino": 123555816
+      },
+      {
+        "name": "migration-result.json",
+        "bytes": 385,
+        "sha256": "915a8d67935cc4a0b8fc46127a6522a43060b281e335b5033f3d433a42978603",
+        "dev": 16777234,
+        "ino": 123571469
+      },
+      {
+        "name": "migration-checkpoint.json",
+        "bytes": 568,
+        "sha256": "41ccef6075e6061737ddc06cf853fafa08ba0efe2350f393583b8ca2e2e05f81",
+        "dev": 16777234,
+        "ino": 123571457
+      },
+      {
+        "name": "migration-before.json",
+        "bytes": 28292,
+        "sha256": "8c1760ce415d73518c71e8ec7681214645c3571ad24eadf4c59a85b6cfc7b441",
+        "dev": 16777234,
+        "ino": 123555823
+      },
+      {
+        "name": "migrate-outer.json",
+        "bytes": 483,
+        "sha256": "657464bf46896adf3383b597f07bf4c0ab37eb177cdefe70564212f39710d2d3",
+        "dev": 16777234,
+        "ino": 123555817
+      }
+    ]
+  },
+  "priorOperationId": "dcb3961d-55eb-4bb5-af9d-d75fd3a93e6d",
+  "priorOutcome": "migrated",
+  "newMigrationCalls": 0
+}

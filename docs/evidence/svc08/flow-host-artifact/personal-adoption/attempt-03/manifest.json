@@ -1,0 +1,298 @@
+{
+  "at": "2026-10-07T06:19:44.403Z",
+  "source": "c20d21b21caba504cd472c4596110fe535980752",
+  "delivery": "dfbb6220e480404c42a9f3f233d79f4292653df4",
+  "state": "READY_PRESERVED_PENDING_INDEPENDENT_RESULT_REVIEW",
+  "sourceBindings": [
+    {
+      "path": "procedure.mjs",
+      "bytes": 5437,
+      "sha256": "a35c57c1ec7b6defb515acc0dd3f7c9c6000fcdde84697e8464d083a0f31221b"
+    },
+    {
+      "path": "caller.mjs",
+      "bytes": 17125,
+      "sha256": "12d020699010695ac8c7395f29f89559d37eec2662cbe2974db152a8eb1939a9"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 6917,
+      "sha256": "1776b3b7e2165b53d5b542c6b702aadda64d1b14df4b93bea968f44da5a8d48f"
+    },
+    {
+      "path": "procedure.test.mjs",
+      "bytes": 5664,
+      "sha256": "6d8b8d56bc0e403db5f42982334472cfdf158afa998083ad0e46c97438406681"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 26023,
+      "sha256": "27b610f99db436bc8f6d1dc9e1587dbfe1dcbdba1e13b451f70fb7384cbdb753"
+    },
+    {
+      "path": "file-readers.mjs",
+      "bytes": 2456,
+      "sha256": "eefb05757f028b1f16e76845ee7430c381217a4b0d8fd775803fc35d088f853a"
+    },
+    {
+      "path": "file-readers.test.mjs",
+      "bytes": 3123,
+      "sha256": "0e5bdc27fcb51c609dd017d1d746cd862f42dd80b71df933b9a71ac765e55124"
+    },
+    {
+      "path": "facts.test.mjs",
+      "bytes": 3012,
+      "sha256": "80ceef1b233dd02c92097dcb367efac63f94e205c3c2595d9b9fdc7e4704cf69"
+    },
+    {
+      "path": "completed-migration.mjs",
+      "bytes": 2384,
+      "sha256": "f1984f2699cfda8b6339815bfa2b5f51b3456b64807fe9da7055fd2ccfe07e60"
+    },
+    {
+      "path": "completed-migration.test.mjs",
+      "bytes": 3978,
+      "sha256": "fc1b8e5121317cae49fe7dd83df5a044ac1a6b792829968b6d2044ac7cf981a6"
+    }
+  ],
+  "rawBindings": [
+    {
+      "path": "completed-migration-verified.json",
+      "bytes": 1506,
+      "sha256": "c902d30b3169be2946a50c5d9c4365e1528746ded5c5fb3ed86fba3b19bdfa47"
+    },
+    {
+      "path": "migration-preservation.json",
+      "bytes": 463,
+      "sha256": "1bdbddff379687d512494b5d15439de167fe4949f3a2481432c1814be01a8938"
+    },
+    {
+      "path": "old-web-exit-observed.json",
+      "bytes": 94,
+      "sha256": "924ea5fcb274e1c94adcd26f12f332833903671619c8b286a5f122cebec50b71"
+    },
+    {
+      "path": "post-outer.json",
+      "bytes": 478,
+      "sha256": "c920e9f261e83a3dc8fd95822b80cbe6c23cbf78e56a4a217cc741dc40291d6a"
+    },
+    {
+      "path": "post-resource.json",
+      "bytes": 97,
+      "sha256": "80fd277d923e04e9c4a4b89649448f6b896cc2a07a2f34237681d9de9d71072a"
+    },
+    {
+      "path": "post-result.json",
+      "bytes": 1734,
+      "sha256": "0e913057078484d27eaae68ea418d3f888dcda479dde4815324ee3ca42e13ac6"
+    },
+    {
+      "path": "replace-intent.json",
+      "bytes": 482,
+      "sha256": "5f949ae427e8c53e2161404f8519258a0ca64c5944d5a3a93b225f31ee9f476c"
+    },
+    {
+      "path": "replace-outer.json",
+      "bytes": 547,
+      "sha256": "5fbd45e8a2d631253fa1cfb0411355732e66cc9533f5daf7cec940d5dd20e618"
+    },
+    {
+      "path": "replacement-after.json",
+      "bytes": 30433,
+      "sha256": "e92a18c91dfa23ccb8f0f244a7dc050d6cf44c016dae48107df85df85d769857"
+    },
+    {
+      "path": "replacement-before.json",
+      "bytes": 28292,
+      "sha256": "c96393e5c42d07fe215ec2f3e7d1785ddbd45f5c25644bd71f195058f9bf9959"
+    },
+    {
+      "path": "replacement-preservation.json",
+      "bytes": 463,
+      "sha256": "1bdbddff379687d512494b5d15439de167fe4949f3a2481432c1814be01a8938"
+    },
+    {
+      "path": "request-outer.json",
+      "bytes": 482,
+      "sha256": "a7e87219b4b56b285dc8ac7b4ea87ac5ce2eeab79a821e885f73a589367d8b89"
+    },
+    {
+      "path": "request-resource.json",
+      "bytes": 98,
+      "sha256": "3bd3ce577c2047879573ed76f35b27c7f5261c26ea30a61ab2afcfc59a7ea1d6"
+    },
+    {
+      "path": "request.json",
+      "bytes": 878,
+      "sha256": "3b39670ae964b05c202ad94062d1decec80598366eb4affc2385297fad122734"
+    },
+    {
+      "path": "reservation.json",
+      "bytes": 351,
+      "sha256": "c069c1fbe7937be57befe3ac364698686c4a753934d7f9faaf9583d35c5110ec"
+    }
+  ],
+  "privateBindings": [
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/completed-migration-verified.json",
+      "bytes": 1506,
+      "sha256": "c902d30b3169be2946a50c5d9c4365e1528746ded5c5fb3ed86fba3b19bdfa47",
+      "dev": 16777234,
+      "ino": 123578958,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/migration-preservation.json",
+      "bytes": 463,
+      "sha256": "1bdbddff379687d512494b5d15439de167fe4949f3a2481432c1814be01a8938",
+      "dev": 16777234,
+      "ino": 123578976,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/old-web-exit-observed.json",
+      "bytes": 94,
+      "sha256": "924ea5fcb274e1c94adcd26f12f332833903671619c8b286a5f122cebec50b71",
+      "dev": 16777234,
+      "ino": 123579061,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/old-web-record.json",
+      "bytes": 369,
+      "sha256": "a7363a1e49a9bf2e866e0067554fc25eccc0112ab549b969ba8f592ab0538e09",
+      "dev": 16777234,
+      "ino": 123578975,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/post-outer.json",
+      "bytes": 478,
+      "sha256": "c920e9f261e83a3dc8fd95822b80cbe6c23cbf78e56a4a217cc741dc40291d6a",
+      "dev": 16777234,
+      "ino": 123579056,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/post-resource.json",
+      "bytes": 97,
+      "sha256": "80fd277d923e04e9c4a4b89649448f6b896cc2a07a2f34237681d9de9d71072a",
+      "dev": 16777234,
+      "ino": 123579063,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/post-result.json",
+      "bytes": 1734,
+      "sha256": "0e913057078484d27eaae68ea418d3f888dcda479dde4815324ee3ca42e13ac6",
+      "dev": 16777234,
+      "ino": 123579062,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/replace-intent.json",
+      "bytes": 482,
+      "sha256": "5f949ae427e8c53e2161404f8519258a0ca64c5944d5a3a93b225f31ee9f476c",
+      "dev": 16777234,
+      "ino": 123578982,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/replace-outer.json",
+      "bytes": 547,
+      "sha256": "5fbd45e8a2d631253fa1cfb0411355732e66cc9533f5daf7cec940d5dd20e618",
+      "dev": 16777234,
+      "ino": 123578985,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/replacement-after.json",
+      "bytes": 30433,
+      "sha256": "e92a18c91dfa23ccb8f0f244a7dc050d6cf44c016dae48107df85df85d769857",
+      "dev": 16777234,
+      "ino": 123579059,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/replacement-before.json",
+      "bytes": 28292,
+      "sha256": "c96393e5c42d07fe215ec2f3e7d1785ddbd45f5c25644bd71f195058f9bf9959",
+      "dev": 16777234,
+      "ino": 123578974,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/replacement-preservation.json",
+      "bytes": 463,
+      "sha256": "1bdbddff379687d512494b5d15439de167fe4949f3a2481432c1814be01a8938",
+      "dev": 16777234,
+      "ino": 123579060,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/request-outer.json",
+      "bytes": 482,
+      "sha256": "a7e87219b4b56b285dc8ac7b4ea87ac5ce2eeab79a821e885f73a589367d8b89",
+      "dev": 16777234,
+      "ino": 123578957,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/request-resource.json",
+      "bytes": 98,
+      "sha256": "3bd3ce577c2047879573ed76f35b27c7f5261c26ea30a61ab2afcfc59a7ea1d6",
+      "dev": 16777234,
+      "ino": 123578984,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/request.json",
+      "bytes": 878,
+      "sha256": "3b39670ae964b05c202ad94062d1decec80598366eb4affc2385297fad122734",
+      "dev": 16777234,
+      "ino": 123578983,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc08-personal-adoption-20261007-r3/reservation.json",
+      "bytes": 351,
+      "sha256": "c069c1fbe7937be57befe3ac364698686c4a753934d7f9faaf9583d35c5110ec",
+      "dev": 16777234,
+      "ino": 123578956,
+      "mode": "0o600"
+    }
+  ],
+  "metadataBindings": [
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-03/analysis.json",
+      "bytes": 5815,
+      "sha256": "054edebb15ffa0e56e4a9303ad6b01d8d8a9a1fd5c2b4ecc2dc101c50a38ef8d"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-03/RESULT.md",
+      "bytes": 1556,
+      "sha256": "36ca5aa929d1ea5e709ef80b338ac99f078798bcb9dcd5d6beaf4e82b9a90381"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-03-preflight.json",
+      "bytes": 1535,
+      "sha256": "4aedc00622a01882bd92b27e33b632ab8c39a29eef88b94553d229eb2f21120f"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/resume-request-independent-review.json",
+      "bytes": 1474,
+      "sha256": "6295f9e9506acd7a282a129a2464385113ebef65dcbb714cb6b18523824d8a11"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/caller-manifest.json",
+      "bytes": 19727,
+      "sha256": "6dba8885ba55846e980210efc6fd092bd622acaaa68e35aeb5539503de31e244"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/resume-request-manifest.json",
+      "bytes": 22840,
+      "sha256": "ea46c2e1ca16d305e07900e944b49db6c57949d30fe8f867eec73449b02c0bc0"
+    }
+  ],
+  "boundary": "Result fidelity only; no new probe/test; original failures retained"
+}

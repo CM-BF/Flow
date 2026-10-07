@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-07T06:17:15.974Z",
+  "outcome": "ready-preserved",
+  "operatorBusinessWrites": 0,
+  "http": [
+    {
+      "path": "/__flow_preview_identity",
+      "status": 200,
+      "bytes": 278,
+      "sha256": "d64c5c174310dc3973b9b0f1966ad5e023be008bf3883742be30158e5f24dbd4"
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 950,
+      "sha256": "542c52c4c40abc54a9f6cf30a9f271b93c0ae7e092ef22864f017ce273d91fc3"
+    },
+    {
+      "path": "/assets/PluginManagement-CD55oqRe.js",
+      "status": 200,
+      "bytes": 9854,
+      "sha256": "3c62514146458f0d2f64beadec5f837a3f87b70ce0309a9f9f6363372b1bc447"
+    },
+    {
+      "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/PluginManagement-BD6v6BfC.js",
+      "status": 200,
+      "bytes": 9854,
+      "sha256": "3c8931413324efc58684a6c7b595add63b604cbb22d9705210b8be80795b7cee"
+    },
+    {
+      "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/PluginManagement-A83k3W8t.js",
+      "status": 200,
+      "bytes": 9854,
+      "sha256": "f6a718118ea8959a74b65825ff773fceb0c98e07a927fc9cb30c31ecfb771ad1"
+    }
+  ],
+  "totalHttpBytes": 30790,
+  "oldGroup": "stopped",
+  "preservation": {
+    "checks": {
+      "root": true,
+      "identity": true,
+      "source": true,
+      "state": true,
+      "release": true,
+      "retained": true,
+      "center": true,
+      "runner": true,
+      "privateFiles": true,
+      "maintenance": true,
+      "marker": true
+    },
+    "protected": true,
+    "businessObservation": "UNCHANGED",
+    "changedTables": [],
+    "businessWritesByOperator": 0,
+    "actionOnChange": "keep original observations; no rollback, DML, drain or automatic retry"
+  },
+  "automaticFurtherAction": false
+}

@@ -1,7 +1,7 @@
 # SVC08 — 个人 Web 连接生命周期
 
 所属大task：[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)；原 REQ19；co-lead：Execution Lead。
-状态：in-progress（原SVC08限定proxy终结片已于2026-10-07T03:17:28.292Z完成；同锁替换与Web独立来源选择均已main，后继合法Flow产物候选已准备，实际部署/根因/长期稳定性未完成）。只修有因果证据的连接生命周期，不调整64容量或定时重启，不操作个人服务。
+状态：in-progress（原SVC08限定proxy终结片已于2026-10-07T03:17:28.292Z完成；同锁替换与Web独立来源选择均已main，合法Flow产物与隔离宿主已审，r3个人Web-only采用已实际完成待结果独审；根因/长期稳定性未完成）。只修有因果证据的连接生命周期，不调整64容量或定时重启；个人服务动作仅限已授权固定Web-only采用，原后台/配置/指针保留。
 
 - [x] SVC08-01 固定来源、独立树、claim及最小连接实验Interface。
 - [x] SVC08-02 正常/首帧后上游FIN/RST的有界真实loopback对照与完整清理。
@@ -19,3 +19,5 @@
 
 - [x] SVC08-07 Web-only固定host选择、角色授权与同journal恢复边界；五新+四直接用例分轮完成，限定独审与main422接收。
 - [ ] SVC08-08 合法Flow来源真实host artifact、内部子进程/依赖/旧后台动态读取证明与受管个人部署观察；retained3退役仍后继，不自动执行。
+
+2026-10-07T06:17:15.974Z r3受管Web-only采用后置核验完成，source c20；结果待独审/main，原失败与旧Web显式stop exit1保持。SVC08-08完整验收不因静态HTTP自动勾选：旧tab交互、长期连接稳定性/根因与retained退役不是本次操作范围。后继不得自行继续个人probe或重启。
