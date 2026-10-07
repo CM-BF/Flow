@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-07T04:38:52.938571+00:00",
+  "scope": "Only manager existing scope; current status and new/changed links, no product runtime",
+  "changedFiles": 13,
+  "newChangedLocalLinks": 5,
+  "json": "PASS",
+  "diffcheck": "PASS",
+  "priorCheck": {
+    "state": "Existing link not materialized, no new link regression",
+    "path": "plans/web-platform/plan.md",
+    "target": "../x01-plugin-management/plan.md",
+    "unchangedSince": "e862bdbe4c29230f8646f9fd0ba7f967bb3b74ce",
+    "action": "No restore/provision or out-of-scope rewrite; check actual added/changed links instead. Original broad check exception preserved here."
+  },
+  "cleanCode": "Actual X01 run/current is explicit; D06 main/asset/source/readability distinctions, unique status and ledger remain. No copied source status.",
+  "productChecks": 0,
+  "newHTTP": 0,
+  "resourceOrProcessSampling": 0
+}
