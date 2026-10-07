@@ -1,8 +1,14 @@
+import { createTrustedProcessHost } from './plugins/process-host.js';
+import type { PluginToolInput, PluginToolResult } from './plugins/host.js';
+import type { TrustedPackageStore } from '@flow/plugin-runtime';
+import type { PluginRunnerClient } from '../../../packages/client/src/plugin-runner.js';
+import { decodePluginRunnerClaimResponse, pluginToolExecutionSchema, type PluginRunnerClaimResponse } from '../../../packages/contracts/src/plugin-runner-claim.js';
+import { PluginAuthorizationUnknown, PluginExecutionUnsettled, executePluginTool } from './plugins/execution.js';
 import { AdmissionJournal, AdmissionStorageError } from './admission-journal.js';
 import { bindGraphToolCapability } from './goal-graph-tools/bind.js';
 import { bindGoalToolCapability } from './goal-tool-bridge/index.js';
 import { FinalizationUnknown, FinalProposalJournal } from './active-steering/proposal.js';
-import { mkdir, readdir } from 'node:fs/promises';
+import { mkdir, readdir, realpath } from 'node:fs/promises';
 import { join } from 'node:path';
 import { AttemptWakeup } from './attempt-wakeup.js';
 import { FlowApiError, FlowClient } from '@flow/client';
@@ -14,7 +20,8 @@ import { EventOutbox, EventStorageError, replayPending, reportBatch } from './ou
 import { NativeExecutionError, type NativeExecutionSettlement } from './native-harness/settlement.js';
 import { NativeActivityBodyHost } from './native-activity-body/host.js';
 
-export interface RunnerNotice { type: 'connection-lost' | 'ownership-lost' | 'adapter-failed' | 'events-retained' | 'admission-blocked' | 'recovery-waiting'; attemptId?: string }
+export type RunnerNotice = { type: 'connection-lost' | 'ownership-lost' | 'adapter-failed' | 'events-retained' | 'admission-blocked' | 'recovery-waiting'; attemptId?: string }
+  | { type: 'runtime-initialized'; runnerId: string; attemptId?: never };
 export interface RunnerOptions {
   baseUrl: string;
   token: string;
@@ -22,6 +29,12 @@ export interface RunnerOptions {
   /** Stops admission and active attempts; an already-sent claim drains to its original request deadline. */
   signal: AbortSignal;
   adapters?: HarnessAdapter[];
+  /** Trusted host opt-in. The domain transport must use this same FlowClient's request owner. */
+  pluginExecution?: {
+    store: TrustedPackageStore;
+    executionMode?: 'in-process' | 'trusted-process';
+    transport?(client: FlowClient): Pick<PluginRunnerClient, 'claim' | 'status' | 'publishHost' | 'authorize'>;
+  };
   /** Explicit host opt-in; public conversation capabilities remain disabled. */
   activeSteering?: boolean;
   /** Explicit single-attempt host opt-in; a current authenticated center must confirm support. */
@@ -38,20 +51,33 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   validateOptions(input);
   if (input.signal.aborted) return;
   const shutdown = new AbortController();
-  const options = { ...input, signal: AbortSignal.any([input.signal, shutdown.signal]) };
+  const pluginExecution = input.pluginExecution ? { ...input.pluginExecution,
+    store: Object.freeze({ ...input.pluginExecution.store, allowedDigests: Object.freeze([...input.pluginExecution.store.allowedDigests]) }) } : undefined;
+  const qualification = pluginExecution ? pluginToolExecutionSchema.parse({ bindingProtocol: 'flow.plugin-runtime.v1',
+    storeId: pluginExecution.store.storeId, hostApiMajor: 1 }) : undefined;
+  const options = { ...input, pluginExecution, signal: AbortSignal.any([input.signal, shutdown.signal]) };
   let fatal: unknown;
   const stop = (error: unknown) => { fatal ??= error; shutdown.abort(error); };
   const requests = new Set<Promise<unknown>>();
   const client = authenticatedClient(options, stop, requests);
+  const plugin = pluginExecution ? (pluginExecution.transport?.(client) ?? client.pluginRunner) : undefined;
+  const pluginRequest = async <T>(run: () => Promise<T>): Promise<T> => {
+    const pending = (async () => { try { return await run(); } catch (error) { if (isHostAuthenticationError(error)) stop(error); throw error; } })();
+    requests.add(pending);
+    try { return await pending; } finally { requests.delete(pending); }
+  };
+  let hostPublished = false;
   const bodies = new NativeActivityBodyHost(signal => client.nativeActivityBodySupport(AbortSignal.any([signal, requestSignal(options)])));
   const adapters = options.adapters ?? [createFixtureAdapter()];
   const stateDirectory = join(options.workingDirectory, textDigest(options.baseUrl.replace(/\/$/, '')));
   await prepareDirectory(stateDirectory);
   const journal = await AdmissionJournal.open(stateDirectory);
+  const processHost = pluginExecution?.executionMode === 'trusted-process'
+    ? await createTrustedProcessHost({ resourceRoot: join(await realpath(stateDirectory), 'plugin-process') }) : undefined;
   const active = new Map<string, Promise<void>>();
   const wakeup = new AttemptWakeup(options.signal, options.pollIntervalMs ?? 500);
   let recoveryPending = true, disconnected = false, blockedNotice = false, waitingNotice = false;
-  let runnerId: string | undefined, queryOpportunity = true;
+  let runnerId: string | undefined, queryOpportunity = true, initialized = false;
   function failed(error: unknown) {
     if (error instanceof EventStorageError || isHostAuthenticationError(error)) stop(error);
     else if (!options.signal.aborted) {
@@ -59,10 +85,10 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
       disconnected = true;
     }
   }
-  function start(assignment: ClaimedTask, initialLease: LeaseGrant, publishBodies: boolean) {
+  function start(assignment: PluginAssignment, initialLease: LeaseGrant, publishBodies: boolean) {
     const attemptId = assignment.attempt.id;
-    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies)
-      .then(async completed => { if (completed) await journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }); else recoveryPending = true; })
+    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies, plugin, pluginRequest, () => journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }), processHost?.invoke)
+      .then(completed => { if (!completed) recoveryPending = true; })
       .catch(error => { failed(error); recoveryPending = true; })
       .finally(() => { active.delete(attemptId); });
     active.set(attemptId, completion);
@@ -72,7 +98,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
     while (!options.signal.aborted) {
       try {
         runnerId ??= (await client.runnerIdentity(requestSignal(options))).runnerId;
-        await journal.bindRunner(runnerId);
+        await journal.bindRunner(runnerId, qualification);
         if (recoveryPending) {
           if (active.size) {
             if (!waitingNotice) options.onNotice?.({ type: 'recovery-waiting' });
@@ -80,7 +106,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
           }
           await recover(stateDirectory, client, options, journal, bodies, runnerId);
           // A confirmed outbox completion may have made a legacy journal completely clean.
-          await journal.bindRunner(runnerId);
+          await journal.bindRunner(runnerId, qualification);
           recoveryPending = false; waitingNotice = false;
         }
         if (journal.unresolved(new Set(active.keys()))) {
@@ -91,16 +117,33 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
         // Unknown confirmation is outside execute's failed-settlement catch and before any new claim.
         const publishBodies = options.nativeActivityBodies === true
           ? await bodies.beforeAdmission(true, runnerId, requestSignal(options)) : false;
-        const opportunity = journal.opportunity;
+        if (plugin && !hostPublished) {
+          await pluginRequest(() => plugin.publishHost({ protocol: 'flow.plugin-runtime.v1', storeId: qualification!.storeId, hostApiMajor: 1 }, requestSignal(options)));
+          hostPublished = true;
+        }
+        const opportunity = qualification ? journal.pluginOpportunity : journal.opportunity;
         if (!opportunity) throw new AdmissionStorageError(new Error('No runner-bound opportunity exists.'));
         if (options.signal.aborted || recoveryPending) continue;
+        if (!initialized) {
+          initialized = true;
+          // This attests local initialization, never center admission or an actual claim.
+          try { options.onNotice?.({ type: 'runtime-initialized', runnerId }); } catch { /* Observer failure cannot alter execution or replace its primary error. */ }
+          if (options.signal.aborted) continue;
+        }
         let requestedAt = performance.now();
-        let response = queryOpportunity ? await client.claimOpportunityStatus(opportunity, requestSignal(options)) : undefined;
+        const query = (operation: 'claim' | 'status', signal: AbortSignal) => {
+          if (opportunity.protocol === 'flow.runner-claim.v3') {
+            if (!plugin) throw new AdmissionStorageError(new Error('Persisted plugin capability is unavailable.'));
+            return pluginRequest(async () => decodePluginRunnerClaimResponse(await plugin[operation](opportunity, signal), opportunity, operation));
+          }
+          return operation === 'claim' ? client.claimOpportunity(opportunity, signal) : client.claimOpportunityStatus(opportunity, signal);
+        };
+        let response = queryOpportunity ? await query('status', requestSignal(options)) : undefined;
         if (!response || response.state === 'missing') {
           if (options.signal.aborted || recoveryPending) continue;
           requestedAt = performance.now();
           // A sent mutation drains to its original deadline on normal stop; fatal shutdown still preempts it.
-          response = await client.claimOpportunity(opportunity, requestSignal(options, shutdown.signal));
+          response = await query('claim', requestSignal(options, shutdown.signal));
         }
         disconnected = false;
         if (response.state === 'unavailable') {
@@ -123,6 +166,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
     shutdown.abort();
     await Promise.allSettled(active.values());
     await Promise.allSettled(requests);
+    try { await processHost?.close(); } catch (error) { stop(error); }
   }
   if (fatal) throw fatal;
 }
@@ -181,7 +225,8 @@ function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => v
   return client;
 }
 
-async function execute(assignment: ClaimedTask, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean): Promise<boolean> {
+type PluginAssignment = ClaimedTask & { pluginToolBinding?: Extract<PluginRunnerClaimResponse, { state: 'assigned' }>['assignment']['pluginToolBinding'] };
+async function execute(assignment: PluginAssignment, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean, plugin: Pick<PluginRunnerClient, 'authorize'> | undefined, pluginRequest: <T>(run: () => Promise<T>) => Promise<T>, completeAdmission: () => Promise<void>, invokeTool?: (input: PluginToolInput) => Promise<PluginToolResult>): Promise<boolean> {
   const ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion };
   const directory = join(stateDirectory, textDigest(assignment.attempt.id));
   await prepareDirectory(directory);
@@ -191,6 +236,8 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
       const signal = requestSignal(options);
       await bodies.beforeReport(batch, assignment.attempt.runnerId, signal);
       await reportBatch(client, batch, signal);
+      // Match recovery: validated completion ACK -> durable admission clear -> outbox unlink.
+      if (batch.events.some(event => event.type === 'completed')) await completeAdmission();
     }
     catch (error) { control.interrupt('lost'); throw error; }
   });
@@ -231,30 +278,49 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
   const adapter = adapters.find(adapter => adapter.name === assignment.task.harness);
   let outcome: 'succeeded' | 'failed' | 'cancelled' = 'succeeded';
   let nativeSettlement: NativeExecutionSettlement = 'settled';
+  let terminalEvents: RunnerEventData[] | undefined;
   try {
-    if (!adapter) throw new Error('The assigned harness is unavailable.');
-    await control.assertOwnership();
-    if (publishBodies) context.activityBodies = await bodies.publisher({
-      runnerId: assignment.attempt.runnerId, signal: control.signal, assertOwnership: context.assertOwnership,
-      publish: material => outbox.publishActivityBody(material), lost: () => control.interrupt('lost'),
-    });
-    if (assignment.goalToolRun && assignment.goalGraphRun) throw new Error('Conflicting planner authorities.');
-    if (assignment.goalGraphRun) context.goalGraphTools = await bindGraphToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
-    if (assignment.goalToolRun) context.goalTools = await bindGoalToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
-    if (options.activeSteering && adapter.name === 'claude') context.steering = {
-      async mailbox() { await control.assertOwnership(); return client.steeringMailbox(ownership, AbortSignal.any([control.signal, requestSignal(options)])); },
-      async finalize(input) {
-        await control.assertOwnership();
-        try { return await outbox.finalize(input, {
-          submit: proposal => client.finalizeSteering(proposal, requestSignal(options)),
-          status: proposal => client.steeringProposalStatus(proposal, requestSignal(options)),
-        }); } catch (error) { if (error instanceof FinalizationUnknown) control.interrupt('lost'); throw error; }
-      },
-    };
-    await adapter.run(context);
+    if (assignment.pluginToolBinding) {
+      if (!options.pluginExecution || !plugin) throw new PluginExecutionUnsettled(assignment.pluginToolBinding.bindingId, assignment.pluginToolBinding.invocationId);
+      await control.assertOwnership();
+      const binding = assignment.pluginToolBinding;
+      const result = await executePluginTool({ binding, task: assignment.task, ownership, runnerId: assignment.attempt.runnerId,
+        store: options.pluginExecution.store, invokeTool, signal: control.signal, assertOwnership: context.assertOwnership,
+        authorize: async request => {
+          const key = textDigest(JSON.stringify([assignment.attempt.runnerId, binding.bindingId, binding.invocationId,
+            ownership.attemptId, ownership.ownerVersion, request.phase]));
+          try { return await pluginRequest(() => plugin.authorize(request, key, AbortSignal.any([control.signal, requestSignal(options)]))); }
+          catch (error) {
+            if (error instanceof FlowApiError && error.status >= 400 && error.status < 500) throw error;
+            throw new PluginAuthorizationUnknown();
+          }
+        } });
+      terminalEvents = [result.artifact, result.verification];
+    } else {
+      if (!adapter) throw new Error('The assigned harness is unavailable.');
+      await control.assertOwnership();
+      if (publishBodies) context.activityBodies = await bodies.publisher({
+        runnerId: assignment.attempt.runnerId, signal: control.signal, assertOwnership: context.assertOwnership,
+        publish: material => outbox.publishActivityBody(material), lost: () => control.interrupt('lost'),
+      });
+      if (assignment.goalToolRun && assignment.goalGraphRun) throw new Error('Conflicting planner authorities.');
+      if (assignment.goalGraphRun) context.goalGraphTools = await bindGraphToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
+      if (assignment.goalToolRun) context.goalTools = await bindGoalToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
+      if (options.activeSteering && adapter.name === 'claude') context.steering = {
+        async mailbox() { await control.assertOwnership(); return client.steeringMailbox(ownership, AbortSignal.any([control.signal, requestSignal(options)])); },
+        async finalize(input) {
+          await control.assertOwnership();
+          try { return await outbox.finalize(input, {
+            submit: proposal => client.finalizeSteering(proposal, requestSignal(options)),
+            status: proposal => client.steeringProposalStatus(proposal, requestSignal(options)),
+          }); } catch (error) { if (error instanceof FinalizationUnknown) control.interrupt('lost'); throw error; }
+        },
+      };
+      await adapter.run(context);
+    }
   } catch (error) {
     if (error instanceof EventStorageError) throw error;
-    if (error instanceof NativeExecutionError && error.settlement === 'unknown') {
+    if (error instanceof PluginExecutionUnsettled || error instanceof NativeExecutionError && error.settlement === 'unknown') {
       nativeSettlement = 'unknown';
       control.interrupt('lost');
     } else if (!options.signal.aborted && control.reason !== 'lost') {
@@ -265,7 +331,9 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
   // A prior cancel reason stays authoritative in AttemptControl, but is not proof
   // that an adapter's external execution stopped. Retain its admission in that case.
   if (nativeSettlement === 'settled' && !options.signal.aborted && control.reason !== 'lost') {
-    await emit({ type: 'completed', outcome, ...(outcome === 'failed' ? { error: 'Harness execution did not complete.' } : {}) });
+    const completed: RunnerEventData = { type: 'completed', outcome, ...(outcome === 'failed' ? { error: 'Harness execution did not complete.' } : {}) };
+    if (terminalEvents) await outbox.emitBatch([...terminalEvents, completed]);
+    else await emit(completed);
     return true;
   }
   return false;

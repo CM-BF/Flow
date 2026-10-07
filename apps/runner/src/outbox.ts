@@ -5,10 +5,11 @@ import { FinalProposalJournal, type FinalizationTransport } from './active-steer
 import { steeringFinalizationSchema } from '../../../packages/contracts/src/runner.js';
 import type { ActiveSteeringPort, SteeringFinalizationResult } from '../../../packages/contracts/src/active-steering.js';
 import { randomUUID } from 'node:crypto';
-import { readFile, readdir, rename, stat, unlink, writeFile } from 'node:fs/promises';
-import { join } from 'node:path';
+import { constants } from 'node:fs';
+import { open, readFile, readdir, rename, stat, unlink } from 'node:fs/promises';
+import { dirname, join } from 'node:path';
 import { FlowApiError, FlowClient } from '@flow/client';
-import { eventBatchSchema, MAX_BATCH_BYTES, runnerEventSchema, type EventBatch, type Ownership, type RunnerEvent, type RunnerEventData } from '@flow/contracts';
+import { eventBatchSchema, MAX_BATCH_BYTES, type EventBatch, type Ownership, type RunnerEvent, type RunnerEventData } from '@flow/contracts';
 
 type Report = (batch: EventBatch) => Promise<void>;
 
@@ -35,13 +36,22 @@ export class EventOutbox {
     this.bodies = new ActivityBodySpool(directory);
   }
 
-  emit(data: RunnerEventData): Promise<void> {
+  emit(data: RunnerEventData): Promise<void> { return this.emitBatch([data]); }
+
+  /** Capture a bounded, fixed terminal prefix before any HTTP; the existing tail remains its only sender. */
+  emitBatch(data: readonly RunnerEventData[]): Promise<void> {
+    const captured = eventBatchSchema.parse({ ...this.ownership,
+      events: data.map(value => ({ ...value, id: randomUUID(), sequence: 1 })) }).events;
+    return this.enqueue(captured);
+  }
+
+  private enqueue(captured: readonly RunnerEvent[]): Promise<void> {
     if (this.failure) return Promise.reject(this.failure);
-    if (this.barrier) return this.barrier.then(() => this.emit(data));
-    const event = runnerEventSchema.parse({ ...data, id: randomUUID(), sequence: this.sequence + 1 });
-    const batch = eventBatchSchema.parse({ ...this.ownership, events: [...this.events, event] });
+    if (this.barrier) return this.barrier.then(() => this.enqueue(captured));
+    const events = captured.map((event, index) => ({ ...event, sequence: this.sequence + index + 1 }));
+    const batch = eventBatchSchema.parse({ ...this.ownership, events: [...this.events, ...events] });
     this.events = batch.events;
-    this.sequence += 1;
+    this.sequence += captured.length;
     const next = this.tail.then(async () => {
       if (this.events.length === 0) return;
       const sending = { ...this.ownership, events: [...this.events] };
@@ -111,8 +121,14 @@ export class EventOutbox {
 
 async function persist(file: string, batch: EventBatch) {
   try {
-    await writeFile(`${file}.tmp`, JSON.stringify(batch), { mode: 0o600 });
+    const temporary = await open(`${file}.tmp`, constants.O_WRONLY | constants.O_CREAT | constants.O_EXCL | constants.O_NONBLOCK | constants.O_NOFOLLOW, 0o600);
+    try {
+      if (!(await temporary.stat()).isFile()) throw new Error('Event journal temporary must be regular.');
+      await temporary.writeFile(JSON.stringify(batch)); await temporary.sync();
+    } finally { await temporary.close(); }
     await rename(`${file}.tmp`, file);
+    const directory = await open(dirname(file), 'r');
+    try { await directory.sync(); } finally { await directory.close(); }
   } catch { throw new EventStorageError(); }
 }
 

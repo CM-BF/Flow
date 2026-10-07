@@ -1,0 +1,1150 @@
+{
+  "source": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+  "records": [
+    {
+      "path": "apps/runner/src/main.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "e64fff552e2ea225c739fb8af21db25726b5b05e5573fd6f2ec16a26c3964c60",
+      "bytes": 3710,
+      "ownChanged": true,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/index.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "771642a3a5bc54981c43a2ede864c6daaaac62a491ea23aea7c779990aaf7e51",
+      "bytes": 8396,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/configuration.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "647a01cb7b65cb3f125515bc9c895396a4a582f6fa9843fb7ad923ce846d4651",
+      "bytes": 2579,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/materials.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "bd1da1e99f3956585a16a9bd6b59757bff1ecca9a09354f9f0004f9994c9a963",
+      "bytes": 2078,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/verifier.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200",
+      "bytes": 1069,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440",
+      "bytes": 1634,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "bade51d2df5537299b818176b5738cc8ef8438bbd315d06292f078e87a9ee8b9",
+      "bytes": 6001,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/native-activity.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a",
+      "bytes": 3259,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087",
+      "bytes": 6390,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/harnesses.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1",
+      "bytes": 837,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/engineering-native.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5",
+      "bytes": 6307,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9",
+      "bytes": 5378,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7",
+      "bytes": 15006,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd",
+      "bytes": 4857,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836",
+      "bytes": 2271,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/protocol-task.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20",
+      "bytes": 211,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574",
+      "bytes": 1196,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997",
+      "bytes": 5785,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/goal-plan-confirmation.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "018da357868d1b5fddc3f0c8a6fd2cc6432ff21caa45b7e60db98bdc9407c23e",
+      "bytes": 2388,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/goal-progression.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "82d23e7e1da0c8a6d89f779478c113aee497e0563f4f8df6e0e790ed6a78ec10",
+      "bytes": 2915,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/projects.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0",
+      "bytes": 3384,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/goals.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930",
+      "bytes": 4940,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/goal-context.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b",
+      "bytes": 1443,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/knowledge.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43",
+      "bytes": 4414,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-proposals.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "73fc485a2d06eb4600ae65be4bef96acbdbc373131ef642a4f6c2fcd6b4d7b97",
+      "bytes": 3734,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/plugin-installations.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394",
+      "bytes": 2063,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/usage-readout.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5",
+      "bytes": 2212,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/browser-session.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30",
+      "bytes": 1095,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126",
+      "bytes": 3520,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/context-transparency.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577",
+      "bytes": 7580,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020",
+      "bytes": 2828,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/attachments.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93",
+      "bytes": 8422,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/goal-native-executions.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d",
+      "bytes": 931,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311",
+      "bytes": 7453,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "4221ce35157cf4ee91e9c391965ffd224b15c03973b67841525276cfc83887a5",
+      "bytes": 7873,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "499aa71e3f8890c292328781c60536f3d2446ac8177116c87670c14310181f67",
+      "bytes": 7985,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "packages/contracts/src/goal-tool-runs.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db",
+      "bytes": 3709,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67",
+      "bytes": 9794,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-runs.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "1cfc6108a53c34d3b7864170cf6a0393f61d0487c2dc76305502b9a61643d524",
+      "bytes": 6047,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/plugin-artifact.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "7993d31c1ffe4f47365b2a5d641c0efbf2b9b7afa21c335fb5e0c1d2a28053df",
+      "bytes": 720,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "packages/contracts/src/plugin-package-fetches.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166",
+      "bytes": 2259,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/package-artifacts.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056",
+      "bytes": 829,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/runner-maintenance.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "fa94507e8951b4ee1d8b0d84f20cd9b3302ef7019a853e2883d2d15ea669b52e",
+      "bytes": 1600,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b",
+      "bytes": 4175,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/plugins.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "656075884d36145ce73c84283bdd26161c4ea65369f326456ffef1e414e6359f",
+      "bytes": 4908,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a",
+      "bytes": 7382,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/goal-delivery.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "ed2ae445be57919427ab265e9c19b56a17e28ba50aa619b2484a8b2e7db9067f",
+      "bytes": 4968,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/protocol-dispatch.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "59a23113e3ba16dc278ca3e16d3612812fb33db21de79a9764b596ff769337ea",
+      "bytes": 2063,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/workspace.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7",
+      "bytes": 1472,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/reconciliation.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "00ede24b0b2d2f2612fd674e802903562b33f7be1b90dc5ed0a858824faae3a5",
+      "bytes": 2903,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/fixtures.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "a88d494b659c413ce6a39e6c342380540e4d97381263434d25235d360cd674c3",
+      "bytes": 1211,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "67d8dbfa2991426e86b93e74d6443b012e6e1ccee514f8956567dd3c23364a00",
+      "bytes": 3965,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "2ed7dbb40ec75797c0d340880383444ba12a265d678c6919ad4733eec8b51ef4",
+      "bytes": 9711,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "67ef6ca5902fa5fd4363b5b38db13ddb0e3ca664905cab6c4b1267c52a5850f1",
+      "bytes": 69246,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6",
+      "bytes": 15496,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/client/src/native-activity-body.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "0b0260a88c92a83cb43f906150e930fe7444e98e1521695605d9f9d3bc04a418",
+      "bytes": 7574,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "packages/client/src/response-json.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "c51b90db6be12132df0236aabccfce496dab8b835267a23158ff86361784f459",
+      "bytes": 1298,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "packages/client/src/plugin-runner.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "f74365446f988caaec4e1a287608ab48b1a858d488640eafbf17f9606fb8ead9",
+      "bytes": 2687,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0",
+      "bytes": 6201,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/plugin-runner-claim.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824",
+      "bytes": 4197,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "d2d159444dfb9ef1cf491da8ab55ac7eee9432b8887e4f91b540ae13eb140f53",
+      "bytes": 10063,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime-hosts.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "59ad5c6cec92331c53f984625f008bab44ae7a4facb13b9510824ea98a0477aa",
+      "bytes": 1708,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "packages/contracts/src/plugin-removal.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "0e54615b4946bb3b1ef6a970ab6c332da0f3597512c44401e4d26eec7935b9bc",
+      "bytes": 1997,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "apps/runner/src/active-steering/proposal.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "45a8502e8d07c861210976de19ec90c6361f26d1a63994007a4fcaf10199da02",
+      "bytes": 3388,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/plan.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "58ab5036500464a9a634cd3de3472da64d2947585b60080a913526612c87dec9",
+      "bytes": 3961,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/spool.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "a6c0d17b91a532e06f222a57357d7dc01c7bcfb3bd39840d6c6d5cf6b8d1e1d8",
+      "bytes": 7919,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/lease.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "c97314b4d8dd7f8fd7056982a2bca6186245062d94d60fb27c29eeb514ac90fb",
+      "bytes": 2276,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "24c1e4445083e0a1344d7ca4cf562fecbdfc206abf56545d429b3f920d238b9d",
+      "bytes": 22367,
+      "ownChanged": true,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/host.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "fc8b394cfdcb5459f1ebd0e42b31cf34c56253861e1aef53dbb0e01965c05544",
+      "bytes": 2842,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-harness/settlement.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "1bee2a52454323b8b8d974c32259c4e1f05e30faecbf0f6f15b3542dee9d40eb",
+      "bytes": 741,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/attempt-control.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "2d56021ab6358fc14594ca8a3e8ba340931b3539408014181e2985857b9840a2",
+      "bytes": 4720,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/fixture.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "d9312d4765bad250acd6f1e9aef3b652e565aae57910f3c4966ebfe4b0e1642d",
+      "bytes": 2615,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/attempt-wakeup.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "49714e1d8d6f0e2a02f333842d0b88a818d91a632ce49443487aa0e349106792",
+      "bytes": 1325,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/index.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "77f540e0d82bc3519daac4f2faaf36f0ee97e3a9fc8c14d86cc37cbb402e5c6a",
+      "bytes": 2175,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/goal-tools/index.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "1def37a4dcc48150687305ed15994ab2d49ce4a5f7e518b9ab992d9acc1b09ce",
+      "bytes": 2085,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/authority.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "5f005fdd53eaf8974498bb20e42af558e0381897e78e7ca0162e781c8d357d5e",
+      "bytes": 1281,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c",
+      "bytes": 1572,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "7ce5f848f5888ca3d6880a2e871c0a3a5e74404f84d35ef750601a018aa7a03a",
+      "bytes": 14222,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "packages/contracts/src/verifier-runner-claim.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "8d293bf9bfb5e66159e2fe667c4202bc7ff711073caf013574ef3b022074144f",
+      "bytes": 1888,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "385dd464730493447bd9f3d5520d835ff0ae393fdaca5e2d22c2de239c4c35bc",
+      "bytes": 3044,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "b47289187b7f4f27824c48b289a7031270f4a0d9209c0043d217a2bdd7760698",
+      "bytes": 9275,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "apps/runner/src/plugins/host.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "85ead88b8ded0cfe08697d88a9fe64a217bff1f74f64b658d40cfac9bbca9c36",
+      "bytes": 6687,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "packages/plugin-runtime/src/package-store.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "15e1b9554d625db5beb74a582ba513f548421c48e705c4865175105fabdf89aa",
+      "bytes": 17609,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "packages/plugin-runtime/src/json-object-verifier.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "feaa7f97e031b046a0b0f81d1a4287f02f19eb07a7ef6fd17a33f42e885d8be3",
+      "bytes": 1293,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "apps/runner/src/plugins/process-host.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "941138dc50f201aef5d89d2a993756e492876400b14219e22922fc2196525297",
+      "bytes": 9767,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "apps/runner/src/plugins/process-resources.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "1ceb9925df794dc79ef9de62d94b2cf0dee66d4da824494f6923e5a691802614",
+      "bytes": 7933,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "apps/runner/src/plugins/process-protocol.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "1ce085d08547ac5bdfd104bfc65564eabd98becf33fd2afec32c9e9b1e5c4770",
+      "bytes": 4208,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "484d5bcb44f5e2b69b44a0189b25f4d6114f034c9add8deead587590ac462c8f",
+      "bytes": 5186,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-harness/claude.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "44b0920a744c9c162f87fd479be8e87e5c3e1175b4a145d22f6a1b175d2d17de",
+      "bytes": 3555,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "f54045f6965bd3b0d2223ce5ed84ac026531f60ff6c16f22f1a8074dc5f801aa",
+      "bytes": 1213,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/contracts/src/native-harness.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "17ecaad191a70aa5c5010ef4e5967978add8f1ce1732a6c874b1f379b88e20f8",
+      "bytes": 1173,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "f9c111f94cd2a2d59e6c27cbede8e454efa3936a1e223afd38721d9fef973962",
+      "bytes": 24739,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/active-steering/state.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "6b03718a65845f191744918ea4910fac7301da83667d0e95867a47dac5d92e08",
+      "bytes": 2511,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-read.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "e41dc5fba3e0017d86a6d2e1c6f8e362164059356de3c5fbacf572a3b17d95d1",
+      "bytes": 2478,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/context-observations/claude-summary-values.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "5e97397133b44e7712aa0f0151b96ed25c069b7f13dc5df15ed7fc5c4e1c381c",
+      "bytes": 2575,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-activity/index.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "db7d993cfa67d130429bc889f76e130308076af0ad3add824d67cacd5076305e",
+      "bytes": 5178,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/index.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "079d425c6959dee76251439af05a1852a6cb2363eab89867073825ee0ffb5dd5",
+      "bytes": 3795,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/accumulator.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "20c09e60f43395a61a68c3cc4a3b8460f40525fe78b233b92b391e398f9dc2fd",
+      "bytes": 9218,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/assistant-stream/patch-buffer.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "b8f1bdcba280ac998ac65ec8d18be560686bd0c5a420fbc87d3e06e18f54eeb3",
+      "bytes": 2004,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/goal-tool-bridge/policy.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "de9813a38e32b434a758901a32f199850df14153fed925f1e9a9cb2361f3272c",
+      "bytes": 3283,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/goal-tools-mcp/index.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "ea7e09187645327f83ece4963a6ca3e7cfd56001c371ea65826e797285cf2af8",
+      "bytes": 1973,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/goal-tools-mcp/result.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "8d3e748884a5d4992f9d97df8e9ad1cc5ceb90e42c7b63c2254bf5d0428501ed",
+      "bytes": 1425,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/goal-tools-mcp/read.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "fe3deb991e871c34871114b1774d6aec3d6bf97d344fd39be2cd7250322c1471",
+      "bytes": 4353,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/mcp.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "cdb38e534cb7ce5abdfb237999a6ca285cec75ed211757b225c8ea350902737c",
+      "bytes": 2749,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/active-steering/host.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "72f6d236f3b295e32f9d63365f7976017b0305faa254cb89ae1a06abeac66923",
+      "bytes": 7143,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/active-steering/input.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "ef3adcdfc2ec84984fa9fb6fc0d84fbf80ca23f14ce2406919e5bf5919b48c02",
+      "bytes": 1460,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/claude-message-settings.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "6d351ed73d2b66666a63cf7c50e16c9f1a990a9d5e9ab6955ac722b337fedd50",
+      "bytes": 2363,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "9fb5a2d2550c286fdc3231105436f109e26546bca260b86717622a5a5158e4b3",
+      "bytes": 598,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "9efce4d7771aab64294e83000d8dbcffe8526761cabde102281f8f88d616c2c4",
+      "bytes": 7963,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "4c480609b0724a20459911f379dbfe63e2875c34b344ef1cc3e95a724aff18c6",
+      "bytes": 1109,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/session-storage.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "68d2d7a40980af68e2682dc9cfa759472014f171fd1ef4a63f9787229fdfb407",
+      "bytes": 3899,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "b98319adecafb5a3f8653df0f14844f44d8a40714060a624e3316a264f77f98a",
+      "bytes": 8686,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/wire.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "59cef88a019829b83d4e50b6abb817c36b1a50c75be8ce1b7608ae7ec1bf8363",
+      "bytes": 2382,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/codex/types.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828",
+      "bytes": 3203,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "c63d16a5a7c6c74a077c52ecd6c6fb11889b106d4c7630666240362ece480bed",
+      "bytes": 9997,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/policy.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c",
+      "bytes": 1696,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/projection.mjs",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "01fd832745a81b4e098d63c3a97aadd8c38942b33c73132c0de78fd7c6b6a5ad",
+      "bytes": 5179,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "3f22af96739e4485b320b8fb699f053dab35d2799e85672a8ff830d2bf3f6b67",
+      "bytes": 4132,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "5647f245725d51c8951b6851c4217a90ab3167a9ad3f14e6f6f970fc7d5f4daa",
+      "bytes": 3197,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/stream.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "1be5b720b0727eeae7b92796dc16d895f6c707ded01cfef3aea2cf426c371df7",
+      "bytes": 4198,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "791db32294dd90783f55da3d9ac8d4a981c04dfea2c11db0d19957fe7a995075",
+      "bytes": 6077,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc",
+      "bytes": 14128,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/codex/options.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843",
+      "bytes": 3850,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/codex/writer.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "8e49cc8ef03136790c54e55a49af2821bbc7e40aa75ca1603e6020ed3ecd6a21",
+      "bytes": 3117,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/codex/framing.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "38d4199ab362efff7bb6bbc157c942d3d55eb5b2d9ae1b86a02d384c027b6f0d",
+      "bytes": 3554,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "79382143721b968170c8e29297f1ee2640bbd5ea647382f64059c31d3daeba31",
+      "bytes": 1770,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/plugin-runtime/src/private-configuration.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "d28371844178889916ff09df8e7d204d8d5a8306c740e3c21cba812c6cedfb2b",
+      "bytes": 1256,
+      "ownChanged": false,
+      "materialized": true
+    },
+    {
+      "path": "apps/runner/src/engineering/launch.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "3d41aaa5e45512a33a8d91e1e90a77779d995b9b6388b9f5462fe73a660922f3",
+      "bytes": 1435,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "e8a35ac85c0c048ce2abaafb513562e4b87f31906d6eb24e6ca150ab182cb6ce",
+      "bytes": 6695,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/engineering/identity.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "dbe1198133e0158350835ff76735a0efa536994818ef16790f0277b9e2347f5f",
+      "bytes": 1898,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/engineering/resources.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "26545a80686e0d0e3bed6de85716980df930c471eac891211dd1bdca2d831368",
+      "bytes": 4956,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/engineering/checker.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "d670a01c5a1fdd50258ed5faa69cea91e75e33e771cfe107d00677c06956081b",
+      "bytes": 4705,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d",
+      "bytes": 12205,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "89ff8005b4817b1ae231e999abc9e43e62202dd815d4962ec11e07c9d4b59f43",
+      "bytes": 4272,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "apps/runner/src/engineering/writer.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "59ac0c67279b3be98244f0482da9a5413c20d6a6716a3cbcfb3bd674647e1470",
+      "bytes": 1514,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/protocols/src/index.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "0747ae484303c1042148d28bacfd9817cdd2d94795c60e3c690b92dfff394e85",
+      "bytes": 167,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/protocols/src/mcp-client.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "c03a6d29112b580ffffa05390638b3ed3dc47f8e2d30a57ed2f11d6624430807",
+      "bytes": 4001,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/protocols/src/http-policy.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "af6635f13ab067a0ecfb5af582a364e6131ba6f829845eaa3391ed936687a637",
+      "bytes": 3017,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/protocols/src/a2a-bridge.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "67fbc4083eea37e1d2c070ac5719551791de690d9d1c008301a172427565e6f3",
+      "bytes": 11288,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/protocols/src/a2a-mapping.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "0bc876161bfeb1926e8eb03d043a8f0189bc918c5e5ee14093a9db622f53b0c3",
+      "bytes": 5127,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/protocols/src/a2a-http-server.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "ad4cbc74ce0b91e98a3e6cafe2c4a5fdb31f77df5aabe3fea4df485a07e1a811",
+      "bytes": 4450,
+      "ownChanged": false,
+      "materialized": false
+    },
+    {
+      "path": "packages/protocols/src/a2a-client.ts",
+      "fixedSource": "57abdb93b73c697d865cfea5daf52d4f3342e542",
+      "sha256": "a2e45e629c34480237ab7336f392bb0db9a555c086af3f029b533e346eb38219",
+      "bytes": 4223,
+      "ownChanged": false,
+      "materialized": false
+    }
+  ],
+  "bareImports": [
+    ", loader, worker], { cwd: item.scratch,\n      env: { PATH: ",
+    "@a2a-js/sdk",
+    "@anthropic-ai/claude-agent-sdk",
+    "@flow/protocols",
+    "tar",
+    "zod"
+  ],
+  "bytes": 723838
+}

@@ -1,6 +1,9 @@
+import { z } from 'zod';
+import type { TrustedPackageStore } from '@flow/plugin-runtime';
+import { readPrivateJsonConfiguration } from '../../../packages/plugin-runtime/src/private-configuration.js';
 import { open, stat } from 'node:fs/promises';
 import { constants } from 'node:fs';
-import { isAbsolute } from 'node:path';
+import { isAbsolute, resolve } from 'node:path';
 import type { HarnessAdapter } from '@flow/contracts';
 import { createFixtureAdapter } from './fixture.js';
 import { configureClaudeHarness } from './native-harness/claude.js';
@@ -96,4 +99,22 @@ async function readManifest(path: string, harness: 'Claude' | 'Codex'): Promise<
     if (offset > maximumBytes) throw new Error(`${harness} manifest exceeds its size limit.`);
     return JSON.parse(buffer.subarray(0, offset).toString('utf8'));
   } finally { await file.close(); }
+}
+
+const pluginStore = z.strictObject({
+  root: z.string().min(1).max(4096).refine(path => isAbsolute(path) && resolve(path) === path),
+  storeId: z.string().regex(/^[a-zA-Z0-9_-]{1,64}$/),
+  allowedDigests: z.array(z.string().regex(/^[a-f0-9]{64}$/)).max(512),
+  executionMode: z.enum(['in-process', 'trusted-process']).optional(),
+});
+
+/** Explicit private operator input only; actual materials remain checked by the existing package store. */
+export async function loadPluginExecutionConfiguration(filename: string | undefined): Promise<{ store: TrustedPackageStore; executionMode?: 'in-process' | 'trusted-process' } | undefined> {
+  if (filename === undefined) return undefined;
+  try {
+    const { executionMode, ...store } = pluginStore.parse(await readPrivateJsonConfiguration(filename));
+    if (executionMode === 'trusted-process' && (process.platform !== 'darwin' || process.arch !== 'arm64' || process.version !== 'v24.20.0')) throw new Error('Unsupported trusted process host.');
+    return { store, ...(executionMode ? { executionMode } : {}) };
+  }
+  catch { throw new Error('Plugin execution configuration is invalid or unavailable. Use an owned 0600 regular JSON file.'); }
 }
