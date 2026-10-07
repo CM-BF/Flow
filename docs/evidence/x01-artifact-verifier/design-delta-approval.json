@@ -1,0 +1,40 @@
+{
+  "reviewedAt": "2026-10-07T14:49:38.000Z",
+  "reviewer": "chatui01_owner/gpt-6-astra",
+  "relayedBy": "root",
+  "archivedAt": "2026-10-07T14:51:19.370Z",
+  "target": "bc5b68a0e4e93e50f9258dd617262263d8db3c1f",
+  "packet": "bf4901eaaf95c42a7af1d1022bc0982651094906",
+  "conclusion": "DESIGN_DELTA_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "closedFinding": "Completion matrix preserves settled pre-load failure and clean cancellation without forged verdict; UNKNOWN remains retained.",
+  "bindings": {
+    "count": 6,
+    "bytes": 32827,
+    "additionalFixedBaselineRows": 7
+  },
+  "acceptedConstraints": [
+    "positive immutable execution-kind independent of ref presence",
+    "authoritative source project/conversation relations; reject absent or conflicting scope"
+  ],
+  "scope": "design only; not product/source/PG/actual acceptance",
+  "product": "NOT_IMPLEMENTED",
+  "engineeringTests": "NOT_RUN",
+  "businessPG": "NOT_RUN",
+  "actual": "NOT_RUN",
+  "priorChangesRequestedPreserved": "design-review-initial.json",
+  "ledger": {
+    "readId": "4aa36bf0-ab99-4a08-b923-3457ea6ebbcf",
+    "observedAt": "2026-10-07T14:50:26.555Z",
+    "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+    "version": 1,
+    "state": "active",
+    "scopeCount": 2
+  },
+  "managementSegment": {
+    "startedAt": "2026-10-07T14:50:26.000Z",
+    "deadline": "2026-10-07T14:55:26.000Z",
+    "engineeringChildren": 0
+  }
+}
