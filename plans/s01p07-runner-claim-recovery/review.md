@@ -1,6 +1,6 @@
 # S01P07 独立审查
 
-**原产品 SOURCE_REVIEW APPROVED；R2原8组PG 8/8 RESULT_FIDELITY_REVIEW_APPROVED。原4capacity适配待审/真实PG仍NOT_RUN，NOT_INTEGRATED。R1失败与旧未知资源保持。**
+**原产品 SOURCE_REVIEW APPROVED；R2原8组PG 8/8 RESULT_FIDELITY_REVIEW_APPROVED。原4capacity准备独审通过/真实PG仍NOT_RUN，NOT_INTEGRATED。R1失败与旧未知资源保持。**
 
 - Review target commit：83a0799293057f7472f0329c61e566708b2a2381（8 产品源限定）。
 - Base：22a0806bc2465e11096949618113833f31766b19。
@@ -24,3 +24,11 @@ R2 execution `44594beb1564732c00fb66721db2fd51b60b87e9`，2026-10-07T03:21:23Z�
 architecture_read / gpt-6-astra，2026-10-07T03:23:39Z，绑定结果cf762765cc04cf90244cfb0ac3ba9ee2da2ed585：RESULT_FIDELITY_REVIEW_APPROVED /0 P1/P2。11raw12184B+2inputs逐Git/WT/hash符；8/8、10task80HTTP、OID-marker/0连接DROP/workergroupEOF/两rootabsent核实；时间及sampled峰值与Web通知后置如实，0审者运行/PG/旧根访问/写。不归因R1、不替代4capacity。后继只改自有test/fixture适配与有限运行输入，真实4PG仍未跑，另独审。
 
 2026-10-07T03:34:57.772871+00:00 四capacity后继：保持原4case body逐字相同；安全fixture复用/固定main数据库同module id donor/有限第三input分支已固定待独审。局部strict首轮2、窄类型修后0；collect4不是4pass，真实PG仍NOT_RUN。新source与检查绑定见pg-capacity-prepared-manifest.json，未扩大原产品SOURCE_REVIEW或R2结果批准。
+
+## 原4capacity准备审查接收
+
+- 审者：architecture_read / gpt-6-astra；实际独审时间2026-10-07T03:36:55Z，由Mika于本次恢复任务转达，原直达消息受thread limit阻止。
+- SOURCE_AND_PREPARATION_REVIEW_APPROVED，0P1/P2。绑定source `68815dce87cc0a9498802de89448693215d028d6` / packet `1de74274791d55d9808056456379b038b430aa5f`；manifest SHA `d0b026a5e2545e20567b97aeee4875f232fb9383d54a642b50befba04e29a6ef`，22bindings113299B。
+- 核原4case正文4633B逐字、main15847 donor同字节；runtime先settle再各库身份清理，aggregate/30outputs/有限selector；strict原2→修后0与collect4/0执行准确。
+- 仅准备批准；4组真实PG仍NOT_RUN/NOT_OPEN，产品未集成main。原85/8PG、R1/unknown资源、fixed manifests不重跑/不改。
+- 2026-10-07T03:41:52.772958+00:00 owner安全点沿既有clean-code方法核状态/target/链接及许可边界；仅2份metadata更新，无产品修改或工程检查。

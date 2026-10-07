@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T03:34:57.772871+00:00 |
+| 最近更新 | 2026-10-07T03:41:52.772958+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 现有领取receipt仅证明领取；未用其时间推定首次实际开工。原验收尚未完成，诊断修复段时间见inventory-diagnostic-fix.md，不代替task完成时间。 |
@@ -13,7 +13,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery |
 | Branch | codex/runner-claim-recovery |
 | 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；8产品源83a0799293057f7472f0329c61e566708b2a2381；已审输入0a753088f477932140b10b288e907243cb265c27；R2 execution HEAD 44594beb1564732c00fb66721db2fd51b60b87e9 |
-| 工作树dirty状态 | 原8组R2源码/结果按固定Git冻结；当前仅4capacity薄适配与本轮检查证据变更，固定交审后clean。 |
+| 工作树dirty状态 | 本次恢复时1de74274791d55d9808056456379b038b430aa5f=origin clean；仅归档准备独审，产品/PG inputs/manifest/raw均冻结。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | R2原8组PG 8/8、10task/80HTTP、exit0，另历史85 distinct non-PG分批共93行为；strict第5轮exit0、3 lifecycle fake与4诊断fake独立口径且未重跑。R1仅0条case结果，原4组capacity PG单列NOT_RUN |
@@ -23,11 +23,11 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 任务层级 | 子task |
-| 当前产出 | 领取恢复的原8组中心验收和独审已通过；四项原并发消费者断言保持，安全fixture适配已通过局部类型检查并收集到4项。 |
-| 下一可用交付 | 完成四项并发消费者准备独审，取得实际PG窗口后执行并交主线接收。 |
-| 当前阻塞 | ACTIVE: 原4项capacity PG尚未执行，准备包待独审及明确重窗口；当前无实际local/heavy holder。旧R1原因UNKNOWN、旧根KEEP。 |
+| 当前产出 | 原8组领取恢复验收已通过；四项原并发消费者的安全fixture适配、类型与收集检查已通过独立准备审查。 |
+| 下一可用交付 | 取得唯一PG执行窗口后验证四项原并发消费者，再完成产品交付与主线接收。 |
+| 当前阻塞 | ACTIVE: 四项capacity真实PG等待Web Timing窗口归还及唯一OPEN；源码/准备独审已通过，当前不占local/heavy。旧R1原因UNKNOWN、旧根KEEP。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：原产品/诊断/输入已独审，R2 8/8于03:23:39Z RESULT_FIDELITY_REVIEW_APPROVED；原4capacity适配未审/PG未跑，NOT_INTEGRATED |
+| Review | [review.md](review.md)：R2结果已审；4capacity source68815/packet1de742于03:36:55Z SOURCE_AND_PREPARATION_REVIEW_APPROVED，0P1/P2；真实4PG NOT_RUN，NOT_INTEGRATED |
 | 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 / 18 literal |
 
 | TODO ID | 状态 | Owner | 证据 / 检查 |
@@ -36,7 +36,7 @@
 | S01P07-02 | in-progress | status_read | contract/client/route/中心事务源码已固定；R2原8组PG与限定结果独审均通过 |
 | S01P07-03 | in-progress | status_read | v2 journal/runtime 已接线，新恢复及旧peer直接消费者85不同检查分批通过 |
 | S01P07-04 | in-progress | status_read | [R2](../../docs/evidence/s01p07/pg-run-r2-manifest.json)原8组通过；85非PG/strict0原件保留，原4capacity PG未跑，0provider；R1失败不抹 |
-| S01P07-05 | pending | status_read | 源审0P1/P2；R2结果已审 / 4capacity准备待审、真实消费者未跑 / NOT_INTEGRATED |
+| S01P07-05 | pending | status_read | 源审0P1/P2；R2结果已审 / 4capacity准备已审、真实消费者未跑 / NOT_INTEGRATED |
 
 ## 架构与登记
 
@@ -69,3 +69,5 @@ R2 `S01P07-PG-20261007-R2` 实际03:21:23–03:21:27 UTC，内部3.846187s/外�
 2026-10-07T03:29:14.988284+00:00 后继4capacity源码准备：保原4case共4633B逐字不变（SHA2c7da25290c712db3232db38ef0dc7ea7d9377b863440f76faffa73e3439d580），仅realCenter替换为现ClaimCenterFixture的薄适配，4专库串行/累计13task，每库原160HTTP门禁合计640、峰值15连接。fixture只加保旧默认30000的lease参数，capacity仍原300000；原8默认不变，历史包按Git绑定。wrapper只增固定capacity输入/config/30输出预核，不新监督器。固定main15847数据库donor在原module id加载并记录SHA，保持migration import.meta.url；原231输入共同部分仅database.ts有main差异，client相同。见pg-capacity-slot-request.json；types/collect待唯一local，4PG NOT_OPEN。
 
 2026-10-07T03:34:57.772871+00:00 capacity局部验证收束：首strict exit2/788B来自registry自递归ReturnType，收窄为实际receiptPath/processSettled结构后strict0；collect-only准确4项/0执行。原段实际2.159s后停止，诊断/修复/协调间隔保留；另授权后继段3.386s，首启动至末结束146.968s不是90s内连续段。3child末态absent/双EOF，各自空TMP同identity删除，总raw1717B，瞬时TMP峰值UNKNOWN。见[单份记录](../../docs/evidence/s01p07/checks/capacity-local.json)与[准备入口](../../docs/evidence/s01p07/pg-capacity-window-request.md)。0PG/provider/install，local已直接交回C02；原85/8/旧strict未重跑。
+
+2026-10-07T03:41:52.772958+00:00 恢复/独审接收：fresh协调账本available，原claim9ec4dbc8 v2/18 ACTIVE且WT/branch/owner一致。Mika转达architecture_read于2026-10-07T03:36:55Z对source68815dce87cc0a9498802de89448693215d028d6 / packet1de74274791d55d9808056456379b038b430aa5f的SOURCE_AND_PREPARATION_REVIEW_APPROVED、0P1/P2：22bindings113299B、原case正文/main15847 donor、4库清理/aggregate/30outputs/有限selector及strict2→0/collect4已核。只批准准备，4PG仍NOT_RUN；原200s/13task/640HTTP/15理论连接、32MiBTMP/raw1MiB/floor1207959552B不变。实际配对local须按开启时完整预算另加；Mika声明当前X01 local预算9568256B仅为协调输入，不作为我fresh准入或OPEN。无新测试/PG/旧根访问；本次只写status/review，等待下一唯一namespace。
