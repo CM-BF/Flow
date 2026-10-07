@@ -2,11 +2,11 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T09:20:27Z |
+| 最近更新 | 2026-10-07T11:58:07.672Z |
 | 任务开工时间 | 2026-10-07T07:19:18Z |
 | 分支交付时间 | 2026-10-07T07:35:58.005114+00:00 |
 | 独立审查时间 | 2026-10-07T09:06:13Z（真实journey失败忠实性与selector修复）；既有client/PG/core各自保留 |
-| 主线集成时间 | 2026-10-07T08:54:21.385546+00:00（core/client已接；新journey未接） |
+| 主线集成时间 | 2026-10-07T11:08:24.990292+00:00（接收回执at；main f2ccb673已核，非部署时间） |
 | 部署时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | setup首次UTC与local.json实际起止；本次交审固定时点，不以commit/mtime推算 |
@@ -19,22 +19,22 @@
 | Branch | codex/lazy-reasoning-reads |
 | Base | 9816e87a7690d7d36ac25cb8537bc9c8f41364c8 |
 | HEAD | 47f54739f5a2cf8c356dc9ac7e232f64f637e786 selector source；新增journey源75070719；当前metadata HEAD由Git读取 |
-| 工作分支状态 | ready-for-integration |
+| 工作分支状态 | in-progress |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | integration |
-| 当前产出 | 公开客户端真实读取已验证；分类修复独审通过，精确残留目录已授权清理，待接收窄验收增量。 |
-| 下一可用交付 | 主线接收新增公开客户端验收及分类修复；后续界面消费按原owner协作。 |
-| 当前阻塞 | ACTIVE：新增验收与分类修复待主线接收；当前无资源或实现阻塞。 |
+| 本片段交付阶段 | delivered |
+| 当前产出 | 选择性读取核心、公开客户端及真实读取验收已接入主线；原外壳失败与离线分类修复证据完整保留。 |
+| 下一可用交付 | 本片段已交付；后继由Web原owner接入展开交互与缓存预算，再完成界面验收。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | 09:06:13对09fbd42b/47f54739/a91d5b26结果忠实性及修复APPROVED/0P1P2；原actual FAIL不改绿 |
 | 检查 | 新journey实际1pass/2skipped，wrapper1；离线selector4/4。旧client7/core14/fix4/PG2各自固定未重跑 |
-| main | core/client INTEGRATED e2b16924038d1215e5f9f389710d1e9b43636d02；新journey NOT_INTEGRATED |
-| Dashboard同步 | 已确认权威来源实时聚合：2026-10-07T09:18:08.538Z，观察HEAD04ec0a2b/clean；本次后续metadata尚未重读，不推UI或完成状态 |
+| 已集成main状态 / HEAD | INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2：新增journey/selector修复与必要fixture类型接缝；旧core/client已在e2b16924。整体任务NOT_COMPLETED。 |
+| Dashboard同步 | 2026-10-07T11:57:28.584Z live聚合本status，delivered/NONE已读；观察HEAD48ed7373/dirty=true为本次提交前，后续commit未再GET。 |
 | 实现目标 | 47f54739f5a2cf8c356dc9ac7e232f64f637e786 |
-| 实现范围 | apps/server/src/assistant-stream/selection-pg.test.ts; docs/evidence/mature06-lazy-reasoning/execute-pg.py; docs/evidence/mature06-lazy-reasoning/pg-gates.test.py |
-| Claim | 8436ad9e-ec1f-4cfb-b2fa-84e9f207935b v9 ACTIVE /13scope（index正式STOP移出供X01；其take前不得写） |
-| 架构影响 | patch-select-v1与单projection有限selection已随core/client接入maine2b；新验收/分类修复待接。Web跨turn累计cache尚未接线，架构展示同步待Lead确认。 |
+| 实现范围 | apps/server/src/assistant-stream/selection-pg.test.ts, docs/evidence/mature06-lazy-reasoning/execute-pg.py, docs/evidence/mature06-lazy-reasoning/pg-gates.test.py |
+| Claim | 8436ad9e-ec1f-4cfb-b2fa-84e9f207935b v9 ACTIVE /13scope；2026-10-07T11:55:56.215937Z只读CLI核owner/WT/branch/全部scope不变，未交回范围不扩大。 |
+| 架构影响 | core/client选择性读取已main；本次接收仅验收/分类器及类型接缝，不新增产品状态机。Web消费与架构展示后继由原owner协调，整体尚未完成。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -42,9 +42,11 @@
 | LAZY01-02 | completed | status_read | v2正式领取；本固定六core/三test |
 | LAZY01-03 | completed | status_read | 原14/14；P2修后4定向/strict0；07:47独审通过 |
 | LAZY01-04 | in-progress | status_read | 原PG2/2、client7分轮；新真实journey1pass但wrapper1，离线selector4/4已独审；UI未接 |
-| LAZY01-05 | pending | status_read | NOT_INTEGRATED |
+| LAZY01-05 | pending | status_read | 本片段已main f2ccb673；完整消费者/架构事实验收仍开放，不因接收勾整计划 |
 
-唯一交审入口 docs/evidence/mature06-lazy-reasoning/review-ready.md。Dashboard来源为本WT/branch/status，actual HEAD/dirty从Git读取；等待聚合器登记展示 / PENDING_REGISTRATION/PENDING_SYNC，root已路由9ef8父链接但未读live，不猜已登记。原setup parseStatus通过只属于历史。时间与四child选中数/真实exit/EOF/精确TMP记录在local.json；0当前actual/待launch。旧S01/P08与未知资源未动。
+## 历史阶段记录（当前状态以上表及末尾接收记录为准）
+
+原交审入口 docs/evidence/mature06-lazy-reasoning/review-ready.md。Dashboard来源为本WT/branch/status，actual HEAD/dirty从Git读取；等待聚合器登记展示 / PENDING_REGISTRATION/PENDING_SYNC，root已路由9ef8父链接但未读live，不猜已登记。原setup parseStatus通过只属于历史。时间与四child选中数/真实exit/EOF/精确TMP记录在local.json；0当前actual/待launch。旧S01/P08与未知资源未动。
 
 P2修复独审见lifecycle-review-receipt.json。当前PG交审入口docs/evidence/mature06-lazy-reasoning/pg-review-ready.md：复用fixedbase既有ContinuityCenterFixture/OPS14与本树公开API；2case定向types0+list2仅证明类型和收集，0hook/PG/HTTP。90s候选/14连接/2任务/256HTTP/32MiBTMP与DB-WAL128MiB预留保持未知峰值语义，实际未OPEN。244固定输入/31SQL；159只读缺项700820B及额外既有helper固定base，不覆盖当前源码。唯一本段local2child已闭合并交回X01；无actual holder。公开client与Web依赖未解除，main仍NOT_INTEGRATED。
 
@@ -85,3 +87,15 @@ client/index handback COMMITTED 2026-10-07T08:43:46.904Z，v8→v9/13，仅移�
 2026-10-07 09:17 UTC 静态资源复核：read-byte-bound-research.md绑定main9b27005f。合法text/增量页正文≤64KiB，单block≤1MiB；JSON转义正文分别可达384KiB/6MiB，均另有envelope，不能冒3MiB逻辑resident或JS heap/wire上限。建议后继提取内部bounded JSON机制并保持领域caps，需X01入口与对应leaf正式写权；本轮0源码改动/测试/网络/PG。canonical新增窄intake保持，Web接线不等待此研究；当前无actual/待launch，聚合live仍PENDING_SYNC。
 
 2026-10-07T09:20:27Z 归档Mika/root实际只读聚合观察：同一`http://127.0.0.1:4320/api/snapshot`首次8s超时未推终态；root确认node96517仍LISTEN后，第二次在20s限内HTTP200、2,927,623B，generatedAt=2026-10-07T09:18:08.538Z/193tasks。本task source.mode=live，path=/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/plans/mature06-lazy-reasoning/status.md，modifiedAt=2026-10-07T09:17:58.929Z，syncedAt=2026-10-07T09:18:08.538Z，stale=false；git.head=04ec0a2bd050e35986838f0a37634d1fe744e552、branch=codex/lazy-reasoning-reads、dirty=false、observedAt=2026-10-07T09:18:08.638Z。据此关闭“尚未确认可聚合”的PENDING_SYNC，仅证明该历史时点正确权威源可实时聚合；不证明UI渲染、全部质量字段、部署、整个task完成或本次新提交已同步。root未留完整响应hash，本owner未补造，未重复GET/测试；原先未知记录保留。
+
+## 2026-10-07T11:57:14.842Z 主线接收状态纠正
+
+唯一[主线回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/approved-backlog-receipt-20261007-1109.json)的tasks.MATURE06-LAZY01已接source47f54739及必要directConsumer；固定接收main `f2ccb6738e37da87ae0f642652f8cf9bb596f4c2` 是本次观察main064eb27fb473f7c6c8995510c8828d922fb35ab9的祖先。接收回执at为2026-10-07T11:08:24.990292+00:00，当前回执tasks与固定f2ccb673相同；后续仅bindings/referenceClosure补充，不将其误当新实验。静态核五个接收源码/fixture的bytes/SHA全符，未重算大raw、未跑工程检查。
+
+当前片段delivered：真实1pass/2skipped、18HTTP与wrapperFAIL仍原样，离线selector4pass及后续精确TMP清理独立记载；绝不以main接收改绿原运行。LAZY01-04/05及整体NOT_COMPLETED保留，UI、provider/native、完整架构展示与部署不由此推定。当前无本片段待集成阻塞、无actual/预约。
+
+本段沿本地find-skills优先已安装codebase-design/固定clean-code方法，仅修单一status中的主线/等待语义，核历史证据、范围和开放TODO一致；0产品编辑/测试/PG/清理/安装。status唯一手填权威不变。
+
+2026-10-07T11:58:07.672Z 本次唯一dashboard GET：2026-10-07T11:57:32.188787Z开始，11:57:41.468964Z返回HTTP200/3,154,680B/9.277s；generatedAt=2026-10-07T11:57:28.584Z。MATURE06-LAZY01 source.mode=live/path=/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/plans/mature06-lazy-reasoning/status.md/modifiedAt=2026-10-07T11:57:14.844Z/syncedAt=2026-10-07T11:57:28.584Z/stale=false；git.branch=codex/lazy-reasoning-reads、head=48ed7373752781c87a87b8bddd3c9dc4846af52b、dirty=true/changedFiles=1、observedAt=2026-10-07T11:57:28.795Z。这是本轮status尚未提交时的真实观察；读到本片段delivered、blocker=none和正确主线产出摘要，NOT_COMPLETED及开放TODO均保留。此后追加记录/提交未再GET，不冒称最终metadata HEAD已同步、UI渲染或全计划验收。未保存完整响应，不补造hash或第二状态源。
+
+主线parseStatus复用blob29169a47cb52aa84dcb195e08d1ca9241a3b6de4，本轮errors=[]/human.missing=[]、parent/co-lead正确；S01仅历史开工UNKNOWN提示保留，LAZY timing无提示。此次API发现LAZY旧实现范围分号未被literal解析、旧main字段名未识别；同轮仅修为逗号和既有标准主线字段，由最终本地parser复核，不重新GET。0工程测试/PG/清理。
