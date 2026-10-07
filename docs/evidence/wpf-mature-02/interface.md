@@ -4,7 +4,9 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
-- 2026-10-07T14:03:38.056Z 当前路由核验：CORE 唯一 owner 为 architecture_read，权威树 `claude-settings-claim-eligibility` / `codex/claude-settings-claim-eligibility`，fresh HEAD `ae6a2f2ce7505d0eccb6b0d8ee29654013127545` clean；[当前CORE唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/plans/wpf-mature-02-message-settings-core/status.md)及[窄main intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-intake.json)为当前来源。`aa74137d84cd7acc45ec23c2ff22128ce944a410` 五行领取资格 SQL 已获真实专库 5/5、67 HTTP 和 2026-10-07T13:59:19.000Z 独立结果忠实性批准；intake READY，但 NOT_INTEGRATED。历史 ea276 / main8d84 与旧 CORE handoff 保留，不让旧树覆盖当前 owner。D05 owner-switch 登记尚待，未确认 live 聚合已经切换。
+- 2026-10-07T14:20:38.000Z：CORE 领取资格增量已由 main `677a93e96f228ab76edbdde9e22beb800a320156` [正式接收](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/core-claim-intake.json)，5 rows / 52,071B 已逐固定 main blob 核符；原 5 PG / 67 HTTP 与 13:59:19.000Z 独审继承，集成直接 10/10 与 types0 只消费原收据，未重跑。当前 [CORE 唯一 status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/plans/wpf-mature-02-message-settings-core/status.md) 归 architecture_read；registry 204 来源迁移已接收，actual reload UNKNOWN（收据 NOT_YET），不再等待主线或 D05 登记。历史 ea276 / main8d84 与 handoff 保留。
+
+- SVC09A 当前路由为 native_center_owner / `codex/personal-message-settings`，唯一 [两槽宿主 status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/plans/svc09-message-settings-activation/status.md)，已登记 claim8f4071a0 v2。只链接其权威来源，不复制子进度；该树有后续 dirty，旧 status 的 NOT_RUN 不作为当前检查结论，未读取 local 产物。个人设置仍 PERSONAL_SETTINGS_NOT_ACTIVATED；TODO08/11、目录/跨端及独立 provider 后验未完成。
 
 - **本次已取得Codex目录，单次窗口已消费并归还。** [结果忠实性已批准](native-remote-status/result-review.json)：1native完成初始化，1次model/list得到6models且未分页；固定remote-control通知校验后继续。已受控关闭/完整stdio/两own根清理，私有原件KEEP；[实际结束与holder归还](native-remote-status/execution-tool.json)。无待launch、无重试；账号、实际模型/推理/tier、网络/账单与全部writer仍unknown。后续纯归档不占Lead个人发布时段。
 

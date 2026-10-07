@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:03:38.056Z / CORE ae6a2f2c intake READY、增量 NOT_INTEGRATED；个人激活/readiness仍未核 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:20:38.000Z / CORE 已 main677a93e9；registry 来源已迁移，actual reload UNKNOWN；个人设置仍未激活 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-02](plan.md) |
@@ -11,19 +11,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities |
 | Branch | codex/claude-codex-capabilities |
 | 工作基线 / HEAD | 9d6bd45abdf5149bc44f1e9dc534454e7403f7d7；source e7ff1a83，result 9b9c1182d2e649d2a68f3d3c7de980bac0e71fed；封口为本提交，旧源按历史Git保留 |
-| 工作树dirty状态 | fresh b4c3aff401412f8d5511441ec7fd2cd6becf2605 clean=origin；本次仅父 plan/status/个人安装验收与路由 metadata，旧 raw/manifest/封账未改；本提交后 clean 状态由 Git 回执确认。 |
+| 工作树dirty状态 | fresh f268e6052dc9ab09e8bc54a901c1834a9422da79 clean=origin；本次仅父 status/个人安装验收与路由 metadata，旧 raw/manifest/封账未改；本提交后 clean 状态由 Git 回执确认。 |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 原大task实际开工缺可证时间；下述 metadata 段开始不替代任务开始，不以 commit/mtime 推测。 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | planning |
 | 上片检查 | 42 distinct分轮pure（29+8+5+18+1含19重叠）、原生0factory/0listener、7语法exit0；0实际目标/PG/provider；组合e3183758准备APPROVED；实际1目标失败/第二槽NOT_RUN，清理/完整计量确认，结果已获14:38限定忠实性APPROVED。 |
 | 当前检查 | 6/6+sh0与唯一1native/1list/6models证据获20:42:21独立忠实性批准；CLI0、完整stdio、两root清理。无重测或新目标。 |
-| 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；CORE/C01/F01已由main8d84d529接收，唯一组合回执见canonical；不代表个人服务部署或完整跨端验收 |
+| 已集成main状态 / HEAD | 目录本片delivered：main21e0a56c4b2b65a04a1e8d510a9d132e77c3894b，4源=c9/测试=a761已逐blob核；未重新merge本树。R06五源077已由main362af3bac77541e5a60979326bcf4d4b8c947915接收；CORE/C01/F01已由main8d84d529接收，唯一组合回执见canonical；领取资格增量已 main677a93e96f228ab76edbdde9e22beb800a320156，见[正式接收回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/core-claim-intake.json)；不代表个人服务部署或完整跨端验收 |
 | 历史实现目标 | runtime-metadata：设计2ac2993652e21d77c62a25e46c012c0188abfb05获Mika14:03设计批准，最小接线与定向验证完成；组合e3183758已执行一次；slot1 code1/246B UNKNOWN、slot2 NOT_RUN；窗口CONSUMED，结果已获忠实性APPROVED |
 | 实现目标 / 范围 | Claude CORE/C01/F01中心、adapter与公共client已main；跨端完整用户验收仍开放。本树只父管理，四profile路径已停写交回。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | Claude中心与公共客户端已在主线；Codex受控初始化后首次取得6个模型的目录，尚未验证账号或实际模型调用。 |
 | 下一可用交付 | 让个人安装的用户可在 Web/TUI 选择下一条 Claude 消息设置；先交付两槽配置、精确目录与混合队列兼容，再独立验证真实模型效果。 |
-| 当前阻塞 | ACTIVE: PERSONAL_SETTINGS_NOT_ACTIVATED：现个人预览配置未声明逐消息设置；原个人维护已归还；仍待合法 owner 完成两槽配置、已审领取资格主线接收、精确目录及 Web/TUI 实测。真实账号与模型后验另待独立额度。 |
+| 当前阻塞 | ACTIVE: PERSONAL_SETTINGS_NOT_ACTIVATED：现个人预览配置未声明逐消息设置；原个人维护已归还；领取资格已进入主线；仍待合法 owner 完成两槽配置、精确目录及 Web/TUI 实测。真实账号与模型后验另待独立额度。 |
 | 需用户决定 | NONE |
 | 上片Review | [review.md](review.md)：e3183758组合准备APPROVED（architecture_read14:27:58 / Mika14:28:15），0P1/P2；14:34单次运行已消费，结果忠实性APPROVED（architecture_read14:38:13 / Mika14:38:28）；旧cause12f502b1结果批准只在历史范围成立。 |
 | Review | Mika/root 20:42:21 RESULT_FIDELITY_APPROVED/0P1P2绑定9b9c1182；仅真实目录、资源收束和计量忠实性，未知资格不升级。 |
@@ -41,7 +44,7 @@
 | WPF-MATURE-02-07 | in-progress | chatui01_owner | 纯语义固定target已独审通过，待集成；后继隔离片另审 |
 | WPF-MATURE-02-08 | pending | chatui01_owner | [个人安装验收](../../docs/evidence/wpf-mature-02/personal-message-settings-acceptance.md)：两槽兼容、真实 Web/TUI 可达与独立 provider 后验未完成；部署不等个人已启用 |
 | WPF-MATURE-02-09 | pending | R05共享owner / d01 | 下一条配置可变与历史/当前/队列冻结分离；CAS/未知ACK/恢复/跨harness，04测量失效，见唯一interface |
-| WPF-MATURE-02-10 | in-progress | architecture_read / mika | 历史 ea276/core main8d84 保留；当前领取资格增量沿[当前CORE唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/plans/wpf-mature-02-message-settings-core/status.md)与[窄main intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-intake.json)，真实专库及独审通过、READY/NOT_INTEGRATED；完整跨端后继仍开放 |
+| WPF-MATURE-02-10 | in-progress | architecture_read / mika | 历史 ea276/core main8d84 保留；当前领取资格增量沿[当前CORE唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/plans/wpf-mature-02-message-settings-core/status.md)与[窄main intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-intake.json)，真实专库及独审通过，已由[main677a93e9正式接收](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/core-claim-intake.json)；完整跨端后继仍开放 |
 | WPF-MATURE-02-11 | in-progress | native_center_owner / Lead协调WebTUI | [consumer交接](../../docs/evidence/wpf-mature-02/claude-message-settings-consumer-handoff.md)已固定F01函数/CLI、ACK/observed与Web/TUI最小接线及直接验收，MATURE02C01独立树已合法领取并开工；Web/TUI由原owner协调；新增个人安装的有限 choices、精确新 profile/runner/digest、下一条 snapshot 与旧 session/队列兼容验收，本父未领产品源、不代记子进度 |
 
 ## 接口与dashboard
@@ -74,7 +77,7 @@ Flow Node宿主、Node synthetic canary、固定Codex native是三种角色；�
 
 本轮 fresh 13:00:23.336Z 账本 readId eed9166d-c355-4d00-854e-4675ebda6e09：父 claim0dd97484 v6 ACTIVE/3scope matchesSource，同 owner/树/分支；未借 C02 或 released CORE/SVC09 写权。固定输入07341d46、main7524a7fa，新增[验收](../../docs/evidence/wpf-mature-02/personal-message-settings-acceptance.md)与 TODO08/11。个人配置/账号未读，0工程检查/服务/PG/provider。实施/独立 review/个人部署/完整完成时间仍 UNKNOWN；本片 metadata 的精确提交由 Git 记录，不能冒充实现开始。沿固定本地技能核单一生命周期、旧默认与 unknown 边界；架构双槽是 planned，待产品 owner 固定实现后 Lead 更新。唯一 status 供 dashboard 聚合，未新增状态库或大task。
 
-## 当前权威与个人维护同步
+## 历史权威与个人维护同步（14:03 时点）
 
 2026-10-07T14:03:38.056Z 当前路由核验：CORE 唯一 owner 为 architecture_read，权威树 `claude-settings-claim-eligibility` / `codex/claude-settings-claim-eligibility`，fresh HEAD `ae6a2f2ce7505d0eccb6b0d8ee29654013127545` clean；[当前CORE唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/plans/wpf-mature-02-message-settings-core/status.md)及[窄main intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-intake.json)为当前来源。`aa74137d84cd7acc45ec23c2ff22128ce944a410` 五行领取资格 SQL 已获真实专库 5/5、67 HTTP 和 2026-10-07T13:59:19.000Z 独立结果忠实性批准；intake READY，但 NOT_INTEGRATED。历史 ea276 / main8d84 与旧 CORE handoff 保留，不让旧树覆盖当前 owner。D05 owner-switch 登记尚待，未确认 live 聚合已经切换。
 
@@ -83,3 +86,13 @@ Flow Node宿主、Node synthetic canary、固定Codex native是三种角色；�
 本段实际开始 2026-10-07T14:02:06.000Z。fresh 账本 readId `00dbbff6-8ab6-458f-9e61-58fa97560d2f` / 2026-10-07T14:02:55.638Z：父 claim `0dd97484-f0ce-4738-8075-505bd5e2541a` v6 ACTIVE，mika/chatui01_owner，3原scope、matchesSource=true。CLI 未配置连接失败后改读既有 dashboard assignments，未把失败当空闲。仅父 metadata；0工程检查/PG/服务/私有配置读取。复用本地 find-skills、codebase-design、clean-code：核单一状态权威、历史/当前分离、链接和未知语义；未安装、未改 raw/额度。产品实现/个人部署/完整完成时间不补猜。提交后停止本段写入、保留原claim。
 
 文档校核：四文件合计59,742B（后补本条后仍低于64KiB）；新增链接均可解析，git diff --check 无错误。旧父树 parser 不支持毫秒 UTC，首次仅报时间格式；改用当前 main 的只读 parseStatus 后 errors=[]、human.missing=[]，保留毫秒 Z 原值，不修改 parser。此为 metadata 校核，非工程行为测试；D05 聚合切换仍待回执。
+
+## 当前主线与个人安装路由
+
+2026-10-07T14:20:38.000Z：CORE 领取资格增量已由 main `677a93e96f228ab76edbdde9e22beb800a320156` [正式接收](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/core-claim-intake.json)，5 rows / 52,071B 已逐固定 main blob 核符；原 5 PG / 67 HTTP 与 13:59:19.000Z 独审继承，集成直接 10/10 与 types0 只消费原收据，未重跑。当前 [CORE 唯一 status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/plans/wpf-mature-02-message-settings-core/status.md) 归 architecture_read；registry 204 来源迁移已接收，actual reload UNKNOWN（收据 NOT_YET），不再等待主线或 D05 登记。历史 ea276 / main8d84 与 handoff 保留。
+
+SVC09A 当前路由为 native_center_owner / `codex/personal-message-settings`，唯一 [两槽宿主 status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/plans/svc09-message-settings-activation/status.md)，已登记 claim8f4071a0 v2。只链接其权威来源，不复制子进度；该树有后续 dirty，旧 status 的 NOT_RUN 不作为当前检查结论，未读取 local 产物。个人设置仍 PERSONAL_SETTINGS_NOT_ACTIVATED；TODO08/11、目录/跨端及独立 provider 后验未完成。
+
+本段实际开始 2026-10-07T14:18:38.000Z；fresh 账本 readId `d90516f1-105a-4322-93e9-918f03abe0bb` / 2026-10-07T14:18:38.374Z 确认父 claim0dd97484 v6 ACTIVE/3scope、mika/chatui01_owner、同树同分支 matchesSource=true。只更新三份父 metadata，0工程检查/PG/服务/私有配置读取；旧额度/raw不变。复用已读本地 find-skills/codebase-design/clean-code，检查单一事实源、当前与历史分离、未知边界和链接。实际大task开工 UNKNOWN、完整完成 NOT_COMPLETED；文档 parser 的时间缺证据不补猜。提交后 STOP，保留原claim。
+
+本次 metadata 校核：当前 main parseStatus errors=[]、human.missing=[]；timing.issues=[任务开工时间未记录]，对应明确 UNKNOWN，未伪造历史时间。三文件 46,085B（追加本条后仍低于64KiB），git diff --check 通过。正式 main 收据5项及新增 canonical 路径存在；无行为测试。

@@ -29,6 +29,8 @@
 
 ## 当前依赖更新
 
-2026-10-07T14:03:38.056Z 当前路由核验：CORE 唯一 owner 为 architecture_read，权威树 `claude-settings-claim-eligibility` / `codex/claude-settings-claim-eligibility`，fresh HEAD `ae6a2f2ce7505d0eccb6b0d8ee29654013127545` clean；[当前CORE唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/plans/wpf-mature-02-message-settings-core/status.md)及[窄main intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-intake.json)为当前来源。`aa74137d84cd7acc45ec23c2ff22128ce944a410` 五行领取资格 SQL 已获真实专库 5/5、67 HTTP 和 2026-10-07T13:59:19.000Z 独立结果忠实性批准；intake READY，但 NOT_INTEGRATED。历史 ea276 / main8d84 与旧 CORE handoff 保留，不让旧树覆盖当前 owner。D05 owner-switch 登记尚待，未确认 live 聚合已经切换。
+2026-10-07T14:20:38.000Z：CORE 领取资格增量已由 main `677a93e96f228ab76edbdde9e22beb800a320156` [正式接收](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/core-claim-intake.json)，5 rows / 52,071B 已逐固定 main blob 核符；原 5 PG / 67 HTTP 与 13:59:19.000Z 独审继承，集成直接 10/10 与 types0 只消费原收据，未重跑。当前 [CORE 唯一 status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/plans/wpf-mature-02-message-settings-core/status.md) 归 architecture_read；registry 204 来源迁移已接收，actual reload UNKNOWN（收据 NOT_YET），不再等待主线或 D05 登记。历史 ea276 / main8d84 与 handoff 保留。
 
-2026-10-07T14:03:38.056Z 个人安装状态仍为 PERSONAL_SETTINGS_NOT_ACTIVATED。7d1/source6c accepting v21、Web d629 v3仅作为已归还维护的部署观察；原用户任务后续 UNKNOWN，不推断完成或重放。上述第3项 mixed queue 源码/真实专库门禁已由 CORE 完成，当前待主线接收，个人安装与跨端组合仍须实测；其余两槽、目录、Web/TUI 和独立 provider 验收不因本片完成。
+SVC09A 当前路由为 native_center_owner / `codex/personal-message-settings`，唯一 [两槽宿主 status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/plans/svc09-message-settings-activation/status.md)，已登记 claim8f4071a0 v2。只链接其权威来源，不复制子进度；该树有后续 dirty，旧 status 的 NOT_RUN 不作为当前检查结论，未读取 local 产物。个人设置仍 PERSONAL_SETTINGS_NOT_ACTIVATED；TODO08/11、目录/跨端及独立 provider 后验未完成。
+
+上述第3项 mixed queue 资格已在主线，但个人安装与跨端组合仍须实测；源码与已有专库证据不能代替部署/真实账号/模型观察。14:03 的 READY/NOT_INTEGRATED 观察保留在父 status 历史节与旧 Git，本段不改写历史原件。
