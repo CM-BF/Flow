@@ -1,3 +1,7 @@
+import type { TrustedPackageStore } from '@flow/plugin-runtime';
+import type { PluginRunnerClient } from '../../../packages/client/src/plugin-runner.js';
+import { decodePluginRunnerClaimResponse, pluginToolExecutionSchema, type PluginRunnerClaimResponse } from '../../../packages/contracts/src/plugin-runner-claim.js';
+import { PluginAuthorizationUnknown, PluginExecutionUnsettled, executePluginTool } from './plugins/execution.js';
 import { AdmissionJournal, AdmissionStorageError } from './admission-journal.js';
 import { bindGraphToolCapability } from './goal-graph-tools/bind.js';
 import { bindGoalToolCapability } from './goal-tool-bridge/index.js';
@@ -22,6 +26,11 @@ export interface RunnerOptions {
   /** Stops admission and active attempts; an already-sent claim drains to its original request deadline. */
   signal: AbortSignal;
   adapters?: HarnessAdapter[];
+  /** Trusted host opt-in. The domain transport must use this same FlowClient's request owner. */
+  pluginExecution?: {
+    store: TrustedPackageStore;
+    transport(client: FlowClient): Pick<PluginRunnerClient, 'claim' | 'status' | 'publishHost' | 'authorize'>;
+  };
   /** Explicit host opt-in; public conversation capabilities remain disabled. */
   activeSteering?: boolean;
   /** Explicit single-attempt host opt-in; a current authenticated center must confirm support. */
@@ -38,11 +47,22 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   validateOptions(input);
   if (input.signal.aborted) return;
   const shutdown = new AbortController();
-  const options = { ...input, signal: AbortSignal.any([input.signal, shutdown.signal]) };
+  const pluginExecution = input.pluginExecution ? { ...input.pluginExecution,
+    store: Object.freeze({ ...input.pluginExecution.store, allowedDigests: Object.freeze([...input.pluginExecution.store.allowedDigests]) }) } : undefined;
+  const qualification = pluginExecution ? pluginToolExecutionSchema.parse({ bindingProtocol: 'flow.plugin-runtime.v1',
+    storeId: pluginExecution.store.storeId, hostApiMajor: 1 }) : undefined;
+  const options = { ...input, pluginExecution, signal: AbortSignal.any([input.signal, shutdown.signal]) };
   let fatal: unknown;
   const stop = (error: unknown) => { fatal ??= error; shutdown.abort(error); };
   const requests = new Set<Promise<unknown>>();
   const client = authenticatedClient(options, stop, requests);
+  const plugin = pluginExecution?.transport(client);
+  const pluginRequest = async <T>(run: () => Promise<T>): Promise<T> => {
+    const pending = (async () => { try { return await run(); } catch (error) { if (isHostAuthenticationError(error)) stop(error); throw error; } })();
+    requests.add(pending);
+    try { return await pending; } finally { requests.delete(pending); }
+  };
+  let hostPublished = false;
   const bodies = new NativeActivityBodyHost(signal => client.nativeActivityBodySupport(AbortSignal.any([signal, requestSignal(options)])));
   const adapters = options.adapters ?? [createFixtureAdapter()];
   const stateDirectory = join(options.workingDirectory, textDigest(options.baseUrl.replace(/\/$/, '')));
@@ -59,9 +79,9 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
       disconnected = true;
     }
   }
-  function start(assignment: ClaimedTask, initialLease: LeaseGrant, publishBodies: boolean) {
+  function start(assignment: PluginAssignment, initialLease: LeaseGrant, publishBodies: boolean) {
     const attemptId = assignment.attempt.id;
-    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies)
+    const completion = execute(assignment, client, adapters, options, stateDirectory, initialLease, stop, bodies, publishBodies, plugin, pluginRequest)
       .then(async completed => { if (completed) await journal.complete({ attemptId, ownerVersion: assignment.attempt.ownerVersion }); else recoveryPending = true; })
       .catch(error => { failed(error); recoveryPending = true; })
       .finally(() => { active.delete(attemptId); });
@@ -72,7 +92,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
     while (!options.signal.aborted) {
       try {
         runnerId ??= (await client.runnerIdentity(requestSignal(options))).runnerId;
-        await journal.bindRunner(runnerId);
+        await journal.bindRunner(runnerId, qualification);
         if (recoveryPending) {
           if (active.size) {
             if (!waitingNotice) options.onNotice?.({ type: 'recovery-waiting' });
@@ -80,7 +100,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
           }
           await recover(stateDirectory, client, options, journal, bodies, runnerId);
           // A confirmed outbox completion may have made a legacy journal completely clean.
-          await journal.bindRunner(runnerId);
+          await journal.bindRunner(runnerId, qualification);
           recoveryPending = false; waitingNotice = false;
         }
         if (journal.unresolved(new Set(active.keys()))) {
@@ -91,16 +111,27 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
         // Unknown confirmation is outside execute's failed-settlement catch and before any new claim.
         const publishBodies = options.nativeActivityBodies === true
           ? await bodies.beforeAdmission(true, runnerId, requestSignal(options)) : false;
-        const opportunity = journal.opportunity;
+        if (plugin && !hostPublished) {
+          await pluginRequest(() => plugin.publishHost({ protocol: 'flow.plugin-runtime.v1', storeId: qualification!.storeId, hostApiMajor: 1 }, requestSignal(options)));
+          hostPublished = true;
+        }
+        const opportunity = qualification ? journal.pluginOpportunity : journal.opportunity;
         if (!opportunity) throw new AdmissionStorageError(new Error('No runner-bound opportunity exists.'));
         if (options.signal.aborted || recoveryPending) continue;
         let requestedAt = performance.now();
-        let response = queryOpportunity ? await client.claimOpportunityStatus(opportunity, requestSignal(options)) : undefined;
+        const query = (operation: 'claim' | 'status', signal: AbortSignal) => {
+          if (opportunity.protocol === 'flow.runner-claim.v3') {
+            if (!plugin) throw new AdmissionStorageError(new Error('Persisted plugin capability is unavailable.'));
+            return pluginRequest(async () => decodePluginRunnerClaimResponse(await plugin[operation](opportunity, signal), opportunity, operation));
+          }
+          return operation === 'claim' ? client.claimOpportunity(opportunity, signal) : client.claimOpportunityStatus(opportunity, signal);
+        };
+        let response = queryOpportunity ? await query('status', requestSignal(options)) : undefined;
         if (!response || response.state === 'missing') {
           if (options.signal.aborted || recoveryPending) continue;
           requestedAt = performance.now();
           // A sent mutation drains to its original deadline on normal stop; fatal shutdown still preempts it.
-          response = await client.claimOpportunity(opportunity, requestSignal(options, shutdown.signal));
+          response = await query('claim', requestSignal(options, shutdown.signal));
         }
         disconnected = false;
         if (response.state === 'unavailable') {
@@ -181,7 +212,8 @@ function authenticatedClient(options: RunnerOptions, stop: (error: unknown) => v
   return client;
 }
 
-async function execute(assignment: ClaimedTask, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean): Promise<boolean> {
+type PluginAssignment = ClaimedTask & { pluginToolBinding?: Extract<PluginRunnerClaimResponse, { state: 'assigned' }>['assignment']['pluginToolBinding'] };
+async function execute(assignment: PluginAssignment, client: FlowClient, adapters: HarnessAdapter[], options: RunnerOptions, stateDirectory: string, initialLease: LeaseGrant, stop: (error: unknown) => void, bodies: NativeActivityBodyHost, publishBodies: boolean, plugin: Pick<PluginRunnerClient, 'authorize'> | undefined, pluginRequest: <T>(run: () => Promise<T>) => Promise<T>): Promise<boolean> {
   const ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion };
   const directory = join(stateDirectory, textDigest(assignment.attempt.id));
   await prepareDirectory(directory);
@@ -232,29 +264,48 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
   let outcome: 'succeeded' | 'failed' | 'cancelled' = 'succeeded';
   let nativeSettlement: NativeExecutionSettlement = 'settled';
   try {
-    if (!adapter) throw new Error('The assigned harness is unavailable.');
-    await control.assertOwnership();
-    if (publishBodies) context.activityBodies = await bodies.publisher({
-      runnerId: assignment.attempt.runnerId, signal: control.signal, assertOwnership: context.assertOwnership,
-      publish: material => outbox.publishActivityBody(material), lost: () => control.interrupt('lost'),
-    });
-    if (assignment.goalToolRun && assignment.goalGraphRun) throw new Error('Conflicting planner authorities.');
-    if (assignment.goalGraphRun) context.goalGraphTools = await bindGraphToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
-    if (assignment.goalToolRun) context.goalTools = await bindGoalToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
-    if (options.activeSteering && adapter.name === 'claude') context.steering = {
-      async mailbox() { await control.assertOwnership(); return client.steeringMailbox(ownership, AbortSignal.any([control.signal, requestSignal(options)])); },
-      async finalize(input) {
-        await control.assertOwnership();
-        try { return await outbox.finalize(input, {
-          submit: proposal => client.finalizeSteering(proposal, requestSignal(options)),
-          status: proposal => client.steeringProposalStatus(proposal, requestSignal(options)),
-        }); } catch (error) { if (error instanceof FinalizationUnknown) control.interrupt('lost'); throw error; }
-      },
-    };
-    await adapter.run(context);
+    if (assignment.pluginToolBinding) {
+      if (!options.pluginExecution || !plugin) throw new PluginExecutionUnsettled(assignment.pluginToolBinding.bindingId, assignment.pluginToolBinding.invocationId);
+      await control.assertOwnership();
+      const binding = assignment.pluginToolBinding;
+      const result = await executePluginTool({ binding, task: assignment.task, ownership, runnerId: assignment.attempt.runnerId,
+        store: options.pluginExecution.store, signal: control.signal, assertOwnership: context.assertOwnership,
+        authorize: async request => {
+          const key = textDigest(JSON.stringify([assignment.attempt.runnerId, binding.bindingId, binding.invocationId,
+            ownership.attemptId, ownership.ownerVersion, request.phase]));
+          try { return await pluginRequest(() => plugin.authorize(request, key, AbortSignal.any([control.signal, requestSignal(options)]))); }
+          catch (error) {
+            if (error instanceof FlowApiError && error.status >= 400 && error.status < 500) throw error;
+            throw new PluginAuthorizationUnknown();
+          }
+        } });
+      await emit(result.artifact);
+      await emit(result.verification);
+    } else {
+      if (!adapter) throw new Error('The assigned harness is unavailable.');
+      await control.assertOwnership();
+      if (publishBodies) context.activityBodies = await bodies.publisher({
+        runnerId: assignment.attempt.runnerId, signal: control.signal, assertOwnership: context.assertOwnership,
+        publish: material => outbox.publishActivityBody(material), lost: () => control.interrupt('lost'),
+      });
+      if (assignment.goalToolRun && assignment.goalGraphRun) throw new Error('Conflicting planner authorities.');
+      if (assignment.goalGraphRun) context.goalGraphTools = await bindGraphToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
+      if (assignment.goalToolRun) context.goalTools = await bindGoalToolCapability({ client, assignment, signal: control.signal, assertOwnership: context.assertOwnership });
+      if (options.activeSteering && adapter.name === 'claude') context.steering = {
+        async mailbox() { await control.assertOwnership(); return client.steeringMailbox(ownership, AbortSignal.any([control.signal, requestSignal(options)])); },
+        async finalize(input) {
+          await control.assertOwnership();
+          try { return await outbox.finalize(input, {
+            submit: proposal => client.finalizeSteering(proposal, requestSignal(options)),
+            status: proposal => client.steeringProposalStatus(proposal, requestSignal(options)),
+          }); } catch (error) { if (error instanceof FinalizationUnknown) control.interrupt('lost'); throw error; }
+        },
+      };
+      await adapter.run(context);
+    }
   } catch (error) {
     if (error instanceof EventStorageError) throw error;
-    if (error instanceof NativeExecutionError && error.settlement === 'unknown') {
+    if (error instanceof PluginExecutionUnsettled || error instanceof NativeExecutionError && error.settlement === 'unknown') {
       nativeSettlement = 'unknown';
       control.interrupt('lost');
     } else if (!options.signal.aborted && control.reason !== 'lost') {
