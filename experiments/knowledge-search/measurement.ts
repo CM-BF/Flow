@@ -6,6 +6,7 @@ import { chunks } from './source/apps/server/src/knowledge/text.js';
 import { searchSources } from './source/apps/server/src/knowledge/search.js';
 import { counts, goldenCases, scaleSources, sourceId, type SourceSeed } from './corpus.js';
 import { OwnedDatabase } from './owned-database.js';
+import { timedQuery } from './diagnostic.js';
 const digest = (text: string) => createHash('sha256').update(text).digest('hex');
 export async function measure(database: OwnedDatabase, baseUrl: string, evidence: Record<string, unknown>) {
   const pool = database.auxiliary!;
@@ -65,7 +66,8 @@ export async function measure(database: OwnedDatabase, baseUrl: string, evidence
     const resolved = await http(`/api/projects/${p}/knowledge/resolve`, { citation: hit.citation });
     assert.equal(resolved.text, Buffer.from(sample.text).subarray(hit.citation.locator.start, hit.citation.locator.end).toString('utf8'));
     const fts = Number((await executeQuery(pool, `SELECT count(DISTINCT source_id) AS n FROM flow.knowledge_chunks WHERE source_id=$1 AND search_vector @@ plainto_tsquery('simple',$2)`, [id, sample.query])).rows[0].n);
-    observations.push({ kind: 'gold', label: sample.label, ftsOnlySourceCount: fts, combinedSourceCount: found.hits.length });
+    const completed = { kind: 'gold', label: sample.label, ftsOnlySourceCount: fts, combinedSourceCount: found.hits.length };
+    observations.push(completed); await database.checkpoint('gold-completed', completed);
   }
   evidence.activeStep = 'semantic-boundaries';
   const p = await project(), foreign = await project();
@@ -82,18 +84,19 @@ export async function measure(database: OwnedDatabase, baseUrl: string, evidence
   assert.deepEqual(ordered, await search(p, 'alpha beta')); assert.equal((await search(p, 'alpha beta', 1)).hasMore, true);
   const controls = await project(); await seed(controls, Array.from({ length: 21 }, (_, i) => ({ id: sourceId(200 + i), title: 'control ' + i, versions: ['\u0001'.repeat(4096)] })));
   const bounded = await search(controls, '\u0001'); assert.ok(bounded.hits.length > 0 && bounded.hits.length < 20); assert.equal(bounded.hasMore, true); assert.ok(!('total' in bounded));
-  observations.push({ kind: 'semantics', assertions: 'project/current/old citation/one-source winner/stable order/hasMore/JSON budget' });
+  const semanticResult = { kind: 'semantics', assertions: 'project/current/old citation/one-source winner/stable order/hasMore/JSON budget' };
+  observations.push(semanticResult); await database.checkpoint('semantics-completed', semanticResult);
 
   async function observedSearch(projectId: string, query: string) {
-    const records: { text: string; values: unknown[]; elapsedMs: number; rows: number; decodedJsonBytes: number; error?: string }[] = [];
+    const records: { text: string; values: unknown[]; clientEndToEndMs: number; clientSqlRoundTripMs?: number; observerBeforeQueryMs?: number; rows: number; decodedJsonBytes: number; error?: string }[] = [];
     const observingPool = new Proxy(pool, { get(target, property) {
       if (property === 'connect') return async () => {
         const client = await target.connect();
         return new Proxy(client, { get(c, key) {
           if (key === 'query') return async (text: string, values: unknown[] = []) => {
             const at = performance.now();
-            try { database.requireWork(); const result: QueryResult = await c.query(text, values); records.push({ text, values, elapsedMs: performance.now() - at, rows: result.rowCount ?? 0, decodedJsonBytes: Buffer.byteLength(JSON.stringify(result.rows)) }); return result; }
-            catch (error) { records.push({ text, values, elapsedMs: performance.now() - at, rows: 0, decodedJsonBytes: 0, error: 'QUERY_FAILED' }); throw error; }
+            try { const { value: result, ...timing } = await timedQuery(() => { database.requireWork(); }, () => c.query(text, values) as Promise<QueryResult>); records.push({ text, values, ...timing, rows: result.rowCount ?? 0, decodedJsonBytes: Buffer.byteLength(JSON.stringify(result.rows)) }); return result; }
+            catch (error) { records.push({ text, values, clientEndToEndMs: performance.now() - at, rows: 0, decodedJsonBytes: 0, error: 'QUERY_FAILED' }); throw error; }
           };
           const value = Reflect.get(c, key); return typeof value === 'function' ? value.bind(c) : value;
         } }) as PoolClient;
@@ -124,17 +127,18 @@ export async function measure(database: OwnedDatabase, baseUrl: string, evidence
         database.requireWork(); const client = await pool.connect();
         try {
           await executeQuery(client, 'BEGIN ISOLATION LEVEL REPEATABLE READ READ ONLY');
-          const at = performance.now(), result = await executeQuery(client, measured.sql.text, measured.sql.values);
-          samples.push({ elapsedMs: performance.now() - at, rows: result.rows.length, decodedJsonBytes: Buffer.byteLength(JSON.stringify(result.rows)), decodedTextUtf8Bytes: result.rows.reduce((sum, row) => sum + Buffer.byteLength(row.content), 0) });
+          const { value: result, ...timing } = await timedQuery(() => { database.requireWork(); }, () => client.query(measured.sql.text, measured.sql.values));
+          samples.push({ ...timing, rows: result.rows.length, decodedJsonBytes: Buffer.byteLength(JSON.stringify(result.rows)), decodedTextUtf8Bytes: result.rows.reduce((sum, row) => sum + Buffer.byteLength(row.content), 0) });
           await executeQuery(client, 'COMMIT');
         } catch (error) { try { await client.query('ROLLBACK'); } catch { /* Original query failure remains primary. */ } throw error; } finally { client.release(); }
       }
-      observations.push({ kind: 'scale', size, query, queryBytes: Buffer.byteLength(query), records: measured.records, explain, samples, cacheState: 'unknown; no cache flush', sqlDigest: digest(measured.sql.text) });
+      const completed = { kind: 'scale', size, query, queryBytes: Buffer.byteLength(query), records: measured.records, explain, samples, timingMeaning: 'clientSqlRoundTrip excludes guard scans; clientEndToEnd includes guard; row sizing/checkpoint excluded; server execution only from EXPLAIN ANALYZE TIMING OFF', cacheState: 'unknown; no cache flush', sqlDigest: digest(measured.sql.text) };
+      observations.push(completed); await database.checkpoint('scale-completed', completed);
     }
   }
   evidence.httpCount = httpCount; evidence.httpBytes = httpBytes; evidence.seedTotals = { totalChunks, totalRawBytes };
   evidence.databaseLogicalBytes = Number((await executeQuery(pool, 'SELECT pg_database_size(current_database()) AS n')).rows[0].n);
   assert.ok(Number(evidence.databaseLogicalBytes) <= 128 * 1024 * 1024);
-  evidence.activeStep = 'complete';
+  evidence.activeStep = 'complete'; await database.checkpoint('measurement-completed', { httpCount, httpBytes, seedTotals: evidence.seedTotals, databaseLogicalBytes: evidence.databaseLogicalBytes });
   return evidence;
 }

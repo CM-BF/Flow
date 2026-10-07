@@ -1,0 +1,12 @@
+{
+  "reviewedAt": "2026-10-07T16:52:57Z",
+  "reviewer": "db_transaction_owner",
+  "decision": "RECOVERY_OBSERVATION_FIDELITY_APPROVED",
+  "target": "45d731374d375a7bed43b4ca6408ca41b52d3456",
+  "p1": 0,
+  "p2": 0,
+  "manifestSha256": "bdc3a4d26d80be26d36a8901ed6fa0d1edb150500c9a7a0cdc732d1e0c7cbc2e",
+  "verified": "3原件3953B Git/WT/hash匹配，原8失败证据不变；1绑定参数SELECT，精确identity和0conn，pool closed，47277正常闭合；内16.400791ms/监督97ms/owner98ms",
+  "limits": "only this snapshot zero connections and known compute closure; database and scratch KEEP, no DROP/new PG/fix approval, original FAIL/resourceConfirmed=false unchanged",
+  "reviewerExecution": "NONE"
+}

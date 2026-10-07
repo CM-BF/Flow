@@ -35,23 +35,50 @@ export class ListenLifecycle {
   }
   cancel() { this.controller.abort(); }
 }
+/** One import followed by one factory. A timed-out import can never trigger a late factory. */
+export class StartupLifecycle<T> {
+  loading?: Promise<() => Promise<T>>;
+  pending?: Promise<T>;
+  loadSettled = true;
+  settled = true;
+  attempted = false;
+  closing = false;
+  value?: T;
+  async start(load: () => Promise<() => Promise<T>>, wait: <V>(pending: Promise<V>) => Promise<V>, guard: () => void) {
+    if (this.loading || this.closing) throw new Error('STARTUP_ALREADY_ATTEMPTED');
+    guard(); this.loadSettled = false;
+    this.loading = Promise.resolve().then(load).then(value => { this.loadSettled = true; return value; }, error => { this.loadSettled = true; throw error; });
+    const create = await wait(this.loading);
+    if (this.closing) throw new Error('STARTUP_CLOSING');
+    guard(); this.attempted = true; this.settled = false;
+    this.pending = Promise.resolve().then(() => {
+      if (this.closing) throw new Error('STARTUP_CLOSING');
+      guard(); return create();
+    }).then(value => { this.value = value; this.settled = true; return value; }, error => { this.settled = true; throw error; });
+    return wait(this.pending);
+  }
+  async settle(wait: <V>(pending: Promise<V>) => Promise<V>) {
+    this.closing = true; const errors: unknown[] = [];
+    if (this.loading && !this.loadSettled) try { await wait(this.loading); } catch (error) { errors.push(error); }
+    if (this.pending && !this.settled) try { await wait(this.pending); } catch (error) { errors.push(error); }
+    return errors;
+  }
+}
 export class OwnedDatabase {
   readonly database = 'flow_k01_query_' + randomUUID().replaceAll('-', '');
   readonly marker = randomUUID();
   readonly listener = new ListenLifecycle();
   readonly admin: Pool;
   auxiliary?: Pool;
-  app?: FastifyInstance;
+  readonly startupOwner = new StartupLifecycle<FastifyInstance>();
+  get app() { return this.startupOwner.value; }
   identity?: DatabaseIdentity;
   creationAcknowledged = false;
   creationReceiptSaved = false;
-  startup?: Promise<FastifyInstance>;
   creationAttempted = false;
-  startupSettled = true;
-  startupAttempted = false;
   healthy = true;
   readonly facts: Record<string, unknown> = { configuredConnections: { admin: 1, auxiliary: 6, business: 8, pgBoss: 3, total: 18 }, observedPeak: 'unknown' };
-  constructor(readonly adminUrl: string, readonly prefix: string, readonly start: number, readonly budget?: StorageBudget) {
+  constructor(readonly adminUrl: string, readonly prefix: string, readonly start: number, readonly budget?: StorageBudget, readonly checkpoint: (phase: string, data?: unknown) => Promise<void> = async () => {}) {
     localAdminUrl(adminUrl);
     this.admin = new Pool({ connectionString: adminUrl, max: 1, connectionTimeoutMillis: 1000, statement_timeout: 1500, lock_timeout: 500, query_timeout: 1800, application_name: 'k01-query-admin' });
     this.admin.on('error', error => { this.healthy = false; this.facts.adminError = errorFact(error); });
@@ -66,6 +93,7 @@ export class OwnedDatabase {
     finally { clearTimeout(timer); }
   }
   async open() {
+    await this.checkpoint('database-open');
     this.requireWork();
     const version = Number((await this.admin.query("SELECT current_setting('server_version_num') AS version")).rows[0].version);
     if (version < 160000 || version >= 170000) throw new Error('POSTGRES_VERSION');
@@ -85,24 +113,31 @@ export class OwnedDatabase {
     if (!acceptableIdentity(true, this.identity, { oid: this.identity?.oid ?? '', owner, marker: this.marker })) throw new Error('DATABASE_IDENTITY');
     await durableJson(this.prefix + '.database-identity.json', { database: this.database, identity: this.identity }, 8192, this.budget);
     this.creationReceiptSaved = true;
+    await this.checkpoint('database-identity-saved', { database: this.database, identity: this.identity });
     const url = new URL(this.adminUrl); url.pathname = '/' + this.database;
     // Startup needs its migration budget, rather than applying the measurement statement limit to DDL.
     url.searchParams.set('application_name', 'k01-query-center-and-boss');
     this.auxiliary = new Pool({ connectionString: url.href, max: 6, connectionTimeoutMillis: 1000, statement_timeout: 1500, lock_timeout: 500, query_timeout: 1800, application_name: 'k01-query-auxiliary' });
     this.auxiliary.on('error', error => { this.healthy = false; this.facts.auxiliaryError = errorFact(error); });
-    const { createServer } = await import('./source/apps/server/src/index.js');
-    this.requireWork(); this.startupAttempted = true; this.startupSettled = false;
-    const startup = this.startup = createServer({ databaseUrl: url.href, ownerToken: this.marker, automaticQueueScan: false, leaseMs: 300000 }).then(app => { this.app = app; this.startupSettled = true; return app; }, error => { this.startupSettled = true; throw error; });
-    await this.bounded(() => startup, this.workUntil);
-    return this.bounded(() => this.listener.start(signal => this.app!.listen({ host: '127.0.0.1', port: 0, signal })), this.workUntil);
+    await this.checkpoint('module-loading');
+    await this.startupOwner.start(async () => {
+      const { createServer } = await import('./source/apps/server/src/index.js');
+      return async () => {
+        await this.checkpoint('factory-starting');
+        this.requireWork(); // A late diagnostic write must not start the factory after the work deadline.
+        return createServer({ databaseUrl: url.href, ownerToken: this.marker, automaticQueueScan: false, leaseMs: 300000 });
+      };
+    }, pending => this.bounded(() => pending, this.workUntil), () => { this.requireWork(); });
+    await this.checkpoint('factory-ready');
+    this.requireWork();
+    const address = await this.bounded(() => this.listener.start(signal => this.app!.listen({ host: '127.0.0.1', port: 0, signal })), this.workUntil);
+    await this.checkpoint('listener-ready'); return address;
   }
   async close() {
     const errors: unknown[] = [];
     this.listener.cancel();
-    let appClosed = !this.startupAttempted, auxiliaryClosed = !this.auxiliary, absent = !this.creationAttempted;
-    if (this.startup && !this.startupSettled) {
-      try { await this.bounded(() => this.startup!, this.cleanupUntil); } catch (error) { errors.push(errorFact(error)); }
-    }
+    errors.push(...(await this.startupOwner.settle(pending => this.bounded(() => pending, this.cleanupUntil))).map(errorFact));
+    let appClosed = !this.startupOwner.attempted, auxiliaryClosed = !this.auxiliary, absent = !this.creationAttempted;
     if (this.listener.pending && !this.listener.settled) {
       try { await this.bounded(() => this.listener.pending!, this.cleanupUntil); } catch (error) { errors.push(errorFact(error)); }
     }
@@ -116,7 +151,7 @@ export class OwnedDatabase {
     catch (error) { errors.push(errorFact(error)); }
     try {
       if (this.creationAttempted) {
-        if (!this.startupSettled || !this.listener.settled || !appClosed || !auxiliaryClosed || !this.healthy || !this.creationAcknowledged || !this.creationReceiptSaved || !this.identity) throw new Error('DATABASE_KEEP_UNKNOWN');
+        if (!this.startupOwner.loadSettled || !this.startupOwner.settled || !this.listener.settled || !appClosed || !auxiliaryClosed || !this.healthy || !this.creationAcknowledged || !this.creationReceiptSaved || !this.identity) throw new Error('DATABASE_KEEP_UNKNOWN');
         remainingMs(this.cleanupUntil, Date.now(), 1500);
         const actual = (await this.admin.query<DatabaseIdentity>('SELECT oid::text AS oid,pg_get_userbyid(datdba) AS owner,shobj_description(oid,\'pg_database\') AS marker FROM pg_database WHERE datname=$1', [this.database])).rows[0];
         if (!acceptableIdentity(this.creationAcknowledged, this.identity, actual)) throw new Error('DATABASE_KEEP_IDENTITY');
@@ -140,7 +175,7 @@ export class OwnedDatabase {
     } catch (error) { errors.push(errorFact(error)); }
     let adminClosed = false;
     try { await this.bounded(() => this.admin.end(), this.cleanupUntil); adminClosed = true; } catch (error) { errors.push(errorFact(error)); }
-    return { database: this.database, identity: this.identity ?? null, creationAcknowledged: this.creationAcknowledged, creationReceiptSaved: this.creationReceiptSaved, startupAttempted: this.startupAttempted, startupSettled: this.startupSettled,
+    return { database: this.database, identity: this.identity ?? null, creationAcknowledged: this.creationAcknowledged, creationReceiptSaved: this.creationReceiptSaved, moduleLoadSettled: this.startupOwner.loadSettled, startupAttempted: this.startupOwner.attempted, startupSettled: this.startupOwner.settled,
       listenAttempted: this.listener.attempted, listenSettled: this.listener.settled, serverListening: this.app?.server.listening ?? null,
       appClosed, auxiliaryClosed, adminClosed, absent, errors, retainedDatabase: absent ? null : this.database };
   }

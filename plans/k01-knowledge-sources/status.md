@@ -26,10 +26,10 @@
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
 | 实现范围 | experiments/knowledge-search |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 首次检索诊断失败已封存，连接与计算资源已核归还，数据库保持只读留存 |
-| 下一可用交付 | 修复入口阶段时限与失败记录，再准备有限诊断后继 |
+| 当前产出 | 正在修复诊断启动期限、失败阶段留存和时延口径；原失败与保留库不变 |
+| 下一可用交付 | 带合成行为证据的最小入口修复，实际PG仍未开放 |
 | 当前阻塞 | ACTIVE: 首次查询诊断未完成；原身份数据库已核零连接并保留，待合法后继修复入口覆盖缺口 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；a82e44be17a7a31b051bf98400d9553513600542 源/纯结果APPROVED；真实PG失败证据FIDELITY_ACCEPTED；新P2动态import生命周期待修；独立恢复结果待核 |
@@ -130,3 +130,7 @@
 2026-10-07T16:50:50.636078+00:00: db_transaction_owner 16:49窄审核dd701原件忠实，17源/8证据12544B全部匹配，原FAIL/HOLD/raw未改。K01-PG-01新P2为动态import在DB身份后且未受work deadline约束的条件性缺口，真实卡点UNKNOWN；后继有限阶段持久事实及观察开销拆分已纳本K01，未扩task或数据。恢复方案仅静态提交，当前0新增PG/信号/drop，等待Mika明确有界恢复授权。
 
 2026-10-07T16:52:30.789426+00:00: 新授权≤10秒只读恢复段实际16:51:51.303933→16:51:51.402382Z/98ms，唯一路径1admin/1参数绑定SELECT；精确name/OID1336476/owner/marker匹配、连接0、pool.end明确完成；47277 exit0/finalabsent/MERGED EOF完整/无first-secondary-signals。与原82159已reap/finalabsent事实结合，计算+连接归还；DB及scratch继续已知KEEP，不DROP/读scratch/改原FAIL/resourceConfirmed=false。freshfloor18129354752、实际free达标，新raw/metadata3953B，原8证据hash仍匹配。唯一[恢复回执](../../docs/evidence/k01/query-entry-pg-first/recovery-manifest.json)，提交push后STOP交db只读核。
+
+2026-10-07T16:53:08Z：新15分钟source/local段开始、截止17:08:08Z；fresh45d731374=origin clean、claim30965v2三scope。仅修既有实验生命周期/有限progress/计时边界，0PG/HTTP listener/provider/KEEP访问；新8MiB(TMP4MiB/raw512KiB included)、≤4serialchild/30s各/60s累计，经理floor至少18146131968B。本组ordinary归本owner，归还后直接告architecture_read。原全部FAIL/raw/固定3c产品不改。恢复独审16:52:57限定APPROVED，仅当次0连接/计算闭合，不推持续0连接。
+
+2026-10-07T16:56:56.214955+00:00: 生命周期/有限progress/计时小接缝源码已准备；旧listen3保持，新增6纯行为例（包含多个明确边界），待本段首次local检查。测试自身只创建child TMP内小文件且finally删除；0PG/HTTP。当前旧PG失败仍为事实，不把本源修未经检查写成绿。
