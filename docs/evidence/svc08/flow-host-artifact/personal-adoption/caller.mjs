@@ -6,7 +6,7 @@ import { dirname, join } from 'node:path';
 import { pathToFileURL, fileURLToPath } from 'node:url';
 import { execFile } from 'node:child_process';
 import { promisify, isDeepStrictEqual } from 'node:util';
-import { sha, safeError, protectedState, requireFresh, protection, requestFrom, migrateOnce } from './procedure.mjs';
+import { sha, safeError, persistedFacts, protectedState, requireFresh, protection, requestFrom, migrateOnce } from './procedure.mjs';
 import { privateBytes as bounded, runtimeBytes as fixed } from './file-readers.mjs';
 const here = dirname(fileURLToPath(import.meta.url));
 const execute = promisify(execFile);
@@ -44,7 +44,7 @@ async function modules(input) {
     transfer: await at(input.renameModule) };
 }
 async function snapshot(mod, input) {
-  const facts = await mod.facts.snapshot();
+  const facts = persistedFacts(await mod.facts.snapshot());
   const state = await mod.preview.readPreviewJson(join(input.installationDirectory, 'state.json'));
   facts.protectedState = protectedState(state); facts.webHost = state.webHost ?? null;
   facts.backendArtifact = state.backendArtifact ?? null; facts.pendingWebHost = state.pendingWebHost ?? null;

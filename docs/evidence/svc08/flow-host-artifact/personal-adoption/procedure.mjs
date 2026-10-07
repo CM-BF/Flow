@@ -4,6 +4,19 @@ import { isDeepStrictEqual as same } from 'node:util';
 import { createHash } from 'node:crypto';
 export const sha = value => createHash('sha256').update(value).digest('hex');
 export const safeError = error => ({ name: error?.name ?? 'Unknown', code: /^[A-Z0-9_]{1,80}$/.test(error?.code ?? '') ? error.code : 'UNCONFIRMED' });
+function persistedMaintenanceTime(value) {
+  if (value === null) return null;
+  const time = value instanceof Date ? value : typeof value === 'string' ? new Date(value) : null;
+  assert.ok(time && Number.isFinite(time.getTime()), 'INVALID_MAINTENANCE_TIME');
+  const iso = time.toISOString();
+  if (typeof value === 'string') assert.equal(value, iso, 'NONCANONICAL_MAINTENANCE_TIME');
+  return iso;
+}
+export function persistedFacts(facts) {
+  // Only the declared PG timestamp changes representation. Every protection field remains present.
+  const runner = facts.database.runner.map(row => ({ ...row, maintenance_updated_at: persistedMaintenanceTime(row.maintenance_updated_at) }));
+  return { ...facts, database: { ...facts.database, runner } };
+}
 export function protectedState(state) {
   const value = structuredClone(state);
   delete value.webHost; delete value.pendingWebHost; delete value.processes.web;
