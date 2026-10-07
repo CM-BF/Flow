@@ -18,8 +18,8 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 已审前端与恢复入口已合主线；Original held续接已使固定7d1/6c后台accepting v21，个人三服务继续。现网页资产仍d629/v3，新恢复网页未实际发布，不能把后台更新当全部视觉体验完成。 |
-| 下一可用交付 | 沿原发布链优先将包含已审恢复入口的新网页应用到个人预览；先固定相容前后端及真实Cookie恢复证据，不等待全部插件或快速设置验收。MSG03继续真实聊天与窄屏键盘验收。 |
-| 当前阻塞 | ACTIVE: 必要草稿修复在旧Web消费组合及新产物尚待核验；后端可采用Original正式审定的04da/6c最小Logout修复组合，两个新descriptor尚未到。 |
+| 下一可用交付 | 沿原发布链优先将包含已审恢复入口的新网页应用到个人预览；先固定相容前后端及真实Cookie恢复证据，不等待全部插件或快速设置验收。MSG03所选真实App与双390图已获限定接受，main接收与个人目录仍分开。 |
+| 当前阻塞 | ACTIVE: 必要草稿修复在旧Web消费组合及新产物尚待核验；后端可采用Original正式审定的04da/6c最小Logout修复组合，后端cd27/source04da descriptor及结果审已到，唯一待供产物是含必要共享小修的新Webdescriptor；已派Original原发布作者负责，等待其明确接受及唯一WT，未启动第二producer。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-01-visual |
@@ -72,3 +72,5 @@ GO 对本次两390图的[原MATURE01验收反馈](../../docs/evidence/web-platfo
 
 
 原视觉后继已复用[固定共享浮层设计研究](../../docs/evidence/web-platform/release-backend-route-20261007/shared-overlay/report.md)（7源、4本地skill、3primary文档），建议统一Dialog/token层次与正常目录渐进筛选/面向用户文案；保合法组合、Apply/CAS和原焦点语义。overlay scrollbar不能靠stable gutter解决，后续需内侧间距及两种滚动条模式验收；现theme插件仅color白名单，radius/shadow/filter是待设计权限，不是已有能力。此仅原02/04只读输入，未实现，不新取scope或重跑已绿检查。
+
+[共享浮层真实消费者清单](../../docs/evidence/web-platform/msg03-final-intake-access-20261007/shared-overlay-consumers/report.md)将既有设计落实到原02/04候选：固定main六消费文件十一处DialogContent，最少共享Dialog/assistant-ui.css与两既有browser tests四literal，实际Picker/HTTP fixture及App Recovery为代表。MSG内侧滚动留白是另一个CSS精确交权项，不靠外层圆角宣称解决；保插件、焦点和两种滚动条边界。本次只读/NOT_TAKEN/NOT_RUN，未来fresh查重并合法交权；不阻最小网页发布。

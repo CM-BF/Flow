@@ -1,0 +1,22 @@
+{
+  "observedAt": "2026-10-07T14:36:42.481Z",
+  "method": "read-only GET http://127.0.0.1:4320/api/summary",
+  "task": "WPF-MESSAGESETTINGS03",
+  "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
+  "sourceCurrent": true,
+  "sourceIssues": [],
+  "progress": {
+    "completed": 5,
+    "total": 6
+  },
+  "branchState": "reviewed",
+  "delivery": "integration",
+  "checks": {
+    "state": "unknown",
+    "target": null,
+    "record": "两条真实App selector各2/2 PASS；源/local、两业务和生命周期/双图独审接受；旧四FAIL保留"
+  },
+  "finding": "Actual current summary cannot bind checks to the already-reviewed implementation because the owner declaration lacks standard PASSED plus full target SHA. This is a source-document formatting gap, not evidence of failed tests.",
+  "requestedFix": "Originalowner in retainedlegalmetadata scope normalbatch writes PASSED fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56 with explicitselectedscope/limits; confirmactualsummary target. Preserve mainNOT_INTEGRATED and all historicalfailures. No parser/productchange or greenretest.",
+  "coordination": "Sent unique manager;queueafterACCESS safeSTOP, no secondwriter."
+}

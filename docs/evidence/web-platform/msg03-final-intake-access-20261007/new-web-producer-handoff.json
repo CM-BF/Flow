@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-07T14:44:27.708Z",
+  "decision": "SOLE_PRODUCER_DISPATCH_TO_ORIGINAL_EXISTING_AUTHOR_AWAITING_ACCEPTANCE",
+  "task": "ExistingREQ19/Release/I02; no newtask",
+  "producer": "Original / existing assignment_review release-artifact author",
+  "consumer": "W01 / existingRelease27c v1exact4 compatibilityharness",
+  "sourceBase": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "patch": "../release-backend-route-20261007/held-draft-release-minimal.patch",
+  "patchSHA256": "77bc71c1aa001c693ba08b0a56ccf6e3b8faac5824e056663a9c81893882bdc8",
+  "fixedOutputs": {
+    "apps/web/src/plugin-integration/attachments.tsx": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4",
+    "apps/web/src/plugin-integration/session.ts": "728a08d9e7ba64533da5b0bd9d7fa485f7d1cddefc13554c29101881e9841d9a"
+  },
+  "sourceReview": "../release-backend-route-20261007/release-minimal-transplant-root-review.json",
+  "steps": [
+    "Original controlledintegration applies exactreviewed2filepatch tofixedoldWebbase, notfullMSGsession; anyextra/conflictingimplementation returns tooriginalowner",
+    "Original fixes actualnewWebcommit andnecessaryoldconsumer/type evidence, then binds immutableWebbuildinput/closure/budget; futureactualbuild requires normalfreshsharedhandoff",
+    "Original existingartifactchain supplies newWebdescriptor/root/pins/review; W01 updates preciseWebsource andbackendsource guards andoriginal4Appcompatibilityinput only after actualpairavailable"
+  ],
+  "authorityBoundary": "NoMSGscopeisreleased/transferred; no newW01productionwriter. Exactreviewedcontrolledintegration only, not permissiontoalterunreviewedproduction/sharedconfiguration. Existingnewworktree/sourceoperatorrulesapplywithoutnewtask oruserapproval.",
+  "backend": {
+    "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+    "source": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+    "descriptorSHA256": "27fdb3bb7e4f51850579c5cc9df625fa90cb9cdece4b61ef24f23f4e7f9473b4",
+    "resultReview": "OriginalformalAPPROVED_FIXED_ARTIFACT_RESULT_FIDELITY native_center_owner targeta6adfd5970aa77c2440f8eeb89b285ed90bae5650P1P2",
+    "rootDisposition": "/private/tmp/flow-svc06b-artifact-IhwFGS KEEP",
+    "notIncluded": "SVC09A hostmain246ed0f52 orpersonalturnsettingsactivation"
+  },
+  "webDescriptor": null,
+  "blockingDependency": "OnlyfixednewWebsource/necessaryconsumercomposition+immutableWebdescriptor; backendresultaccepted, actualnewpaircompatstillNOT_RUN",
+  "runtimeGrant": null,
+  "route": "CanonicalOriginalread; directappserverblockednotretriedorpretendedsent",
+  "dispatchState": "Canonical dispatch request is explicit; assignment_review has not yet returned acceptance/producer WT. Original saying continue new Web is not treated as acceptance.",
+  "immediateNext": "Original existing artifact author confirms acceptance and exact producer WT/source, or explicitly hands producer responsibility back to Web. Until then W01 does not create a second artifact producer or write the two MSG production literals.",
+  "fallback": "If Original explicitly hands back production, manager will arrange STOP/amend and legal independent producer worktree/claim before W01 writes. No automatic transfer or TMP workaround."
+}

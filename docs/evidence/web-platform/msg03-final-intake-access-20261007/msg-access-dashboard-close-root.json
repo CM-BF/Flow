@@ -1,0 +1,157 @@
+{
+  "observedAt": "2026-10-07T14:39:22.081200+00:00",
+  "summaryAt": "2026-10-07T14:39:22.026Z",
+  "registryFingerprint": "4cb7e31e45a7287ad5dbda575bd1aafde6d5e71f59d720b19abcb3251ca93fbc",
+  "assignmentFingerprint": "4cb7e31e45a7287ad5dbda575bd1aafde6d5e71f59d720b19abcb3251ca93fbc",
+  "tasks": [
+    {
+      "id": "WPF-MESSAGESETTINGS03",
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
+        "digest": "d5b36a8839a8f6ca9405a9834829f2d1e70f3cc7657bbfcae459438fb5842b97",
+        "modifiedAt": "2026-10-07T14:38:13.995Z",
+        "readAt": "2026-10-07T14:39:22.026Z",
+        "declaredUpdatedAt": "2026-10-07T14:38:13.994Z",
+        "stale": false,
+        "ageHours": 0.018897777777777777,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "sourceCurrent": true,
+      "checks": {
+        "state": "passed",
+        "target": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+        "record": "PASSED fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56；两条既有App selector各2/2实际PASS及限定local，原四FAIL保留；不冒未选旅程/完整native四facet键盘/个人目录"
+      },
+      "review": "APPROVED fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56；[review.md](review.md)及root最终精确18源接收审；main/个人部署未验",
+      "branchState": "reviewed",
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "timing": {
+        "started": {
+          "state": "known",
+          "at": "2026-10-07T12:11:30.621Z",
+          "record": "2026-10-07T12:11:30.621Z"
+        },
+        "completed": {
+          "state": "not_completed",
+          "at": null,
+          "record": "NOT_COMPLETED"
+        },
+        "source": {
+          "state": "declared",
+          "record": "owner实际开始本登记实施子片的独立源码供给，见provision.startedAt；不把take自动当开工，未完成"
+        },
+        "issues": []
+      },
+      "main": "NOT_INTEGRATED；base c130已有Recovery和受控Picker，尚无本片真实App接线",
+      "progress": {
+        "completed": 5,
+        "total": 6
+      }
+    },
+    {
+      "id": "WPF-DASHBOARD-ACCESS01",
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access/plans/wpf-dashboard-local-access/status.md",
+        "digest": "f2f6257a636c95c22e1df6229abb0c197142c1024a2d9b95c3de8eef867bb66e",
+        "modifiedAt": "2026-10-07T14:37:03.638Z",
+        "readAt": "2026-10-07T14:39:22.026Z",
+        "declaredUpdatedAt": "2026-10-07T14:37:03.620Z",
+        "stale": false,
+        "ageHours": 0.03844611111111111,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "sourceCurrent": true,
+      "checks": {
+        "state": "passed",
+        "target": "3c0dda7b7a8887ac763d8a1651231374b0f3356d",
+        "record": "PASSED 3c0dda7b7a8887ac763d8a1651231374b0f3356d：第四次browser实际5/5、exit0、原生hidden后token清空、owned清理完整；08ec之35direct保留不重跑；前三次FAILED保留；真实安装启用/按需读取由原发布者与GO回执确认；本owner未新运行，登录/发消息未验"
+      },
+      "review": "APPROVED 53723697a796a1346164c4cddc82ab99baf168ea / exact12；原direct35/fakebrowser5及README修正组合批准，原366和README537均已main；实际启用有原来源回执，用户登录/发消息未验",
+      "branchState": "completed / approved / integrated",
+      "delivery": {
+        "state": "delivered",
+        "source": "explicit"
+      },
+      "timing": {
+        "started": {
+          "state": "known",
+          "at": "2026-10-07T02:53:01.000Z",
+          "record": "2026-10-07T02:53:01Z"
+        },
+        "completed": {
+          "state": "known",
+          "at": "2026-10-07T11:19:00.000Z",
+          "record": "2026-10-07T11:19:00.000Z"
+        },
+        "source": {
+          "state": "declared",
+          "record": "开工：保留原owner clock.curr_time实际UTC记录，不由take推算。完成：原f1b62d唯一status已记2026-10-07 11:19:00 UTC，核Original固定main收据及README字节后收口；本次仅等时规范为ISO UTC，不冒部署时点。"
+        },
+        "issues": []
+      },
+      "main": "原产品451bf2ed1c0c3d7688073c8d060629f064044dc2；README537于fixed main f2ccb6738e37da87ae0f642652f8cf9bb596f4c2 接收，三方字节同/无重测，见readme-main-receipt.json",
+      "progress": {
+        "completed": 4,
+        "total": 4
+      }
+    }
+  ],
+  "git": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+      "branch": "codex/web-message-settings-app",
+      "head": "b20cd84fb68b86aae6c3953cf7d4082a6df98330",
+      "tracking": "b20cd84fb68b86aae6c3953cf7d4082a6df98330",
+      "dirty": ""
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
+      "branch": "codex/dashboard-local-access",
+      "head": "06479e7b6bae6006c0a7b607704b4b62474412bc",
+      "tracking": "06479e7b6bae6006c0a7b607704b4b62474412bc",
+      "dirty": ""
+    }
+  ],
+  "claims": [
+    {
+      "taskId": "WPF-DASHBOARD-ACCESS01",
+      "claimId": "57735ff7-d631-4538-9faf-d7ac090837a2",
+      "version": 3,
+      "state": "released",
+      "worker": "workspace_panels_owner",
+      "lead": "external_web_d01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
+      "updatedAt": "2026-10-07T11:21:01.754Z"
+    },
+    {
+      "taskId": "WPF-DASHBOARD-ACCESS01",
+      "claimId": "e54c2cd0-b446-4a5a-b3bd-0b0ef3ef6049",
+      "version": 2,
+      "state": "released",
+      "worker": "workspace_panels_owner",
+      "lead": "external_web_d01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
+      "updatedAt": "2026-10-07T14:37:29.477Z"
+    },
+    {
+      "taskId": "WPF-MESSAGESETTINGS03",
+      "claimId": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
+      "version": 3,
+      "state": "active",
+      "worker": "workspace_panels_owner",
+      "lead": "external_web_d01_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+      "updatedAt": "2026-10-07T14:05:11.080Z"
+    }
+  ],
+  "conclusion": "MSG current checks are parsed PASSED at exactfcf5;branch reviewed/integration and NOT_INTEGRATED remain separate. ACCESS exact actual completion ISO known and temporary metadata claimreleased;existing startclock preserved. No product rerun orserverrestart."
+}
