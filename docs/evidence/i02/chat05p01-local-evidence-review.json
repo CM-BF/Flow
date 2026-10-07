@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-07T05:16:51.059050+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "author": "assignment_review",
+  "target": "40af6d9071c621707971fd983a85dd9145f065fd",
+  "delivery": "f507fe6bc76b7351a72acd45dff8ed23a039b452",
+  "scope": "incremental local runtime evidence only; previous native_center_owner source review retained",
+  "manifest": "docs/evidence/chat05p01/local-validation-manifest.json",
+  "manifestSha256": "f7ee4b4764913e72934380f105742169fc40381798a559c3837017560272c67c",
+  "verifiedBindings": {
+    "fixedSources": 18,
+    "newEvidence": 12,
+    "currentAndFixedSame": true
+  },
+  "read": [
+    "resumed-local.py",
+    "local-resumed-20261007/result.json",
+    "local-resumed-20261007/summary.json",
+    "local-resumed-20261007/direct.stdout",
+    "local-resumed-20261007/types-checkpoint.json",
+    "plan status and review"
+  ],
+  "observations": {
+    "selected": 10,
+    "passed": 10,
+    "unselected": 11,
+    "newDistinct": 6,
+    "affectedOldDirectRepeated": 4,
+    "distinctAcrossRounds": 28,
+    "focusedTypesExit": 0,
+    "supervisedMs": 3762,
+    "rawBytes": 984,
+    "bothFinalGroupsAbsent": true,
+    "bothStreamsEOF": true,
+    "earlyEPERMObservationRetained": true,
+    "typesTmpRemoved": true,
+    "exactVitestCacheRetainedBytes": 403,
+    "maxObservedTmpBytes": 1179150,
+    "minObservedFreeBytes": 25132105728
+  },
+  "findings": [],
+  "conclusion": "APPROVED_INCREMENTAL_LOCAL_EVIDENCE",
+  "limitations": [
+    "No product source delta. No re-run by reviewer.",
+    "Sampling is not an atomic physical peak/reservation; final checkpoint before types rmdir and final result after removal are distinct.",
+    "Three PG cases remain NOT_RUN. Production mount/export/client and Web/TUI remain separate; no final domain approval or provider claim.",
+    "15 changed read-only main inputs recorded by author still require affected integration consideration.",
+    "Initial whole-task start remains UNKNOWN; local run timestamps do not fill it."
+  ],
+  "reviewerRuns": {
+    "tests": 0,
+    "PG": 0,
+    "provider": 0
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "at": "2026-10-07T05:18:21.912452+00:00",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "source": "5152f32a56772cd5638a77721368debf306d70e1",
+  "scope": [
+    "docs/evidence/d05/eng01j-live.json",
+    "plans/d05-architecture-view/status.md"
+  ],
+  "fixedBindings": [
+    {
+      "path": "docs/evidence/d05/eng01j-live.json",
+      "bytes": 9308,
+      "sha256": "c26ab22f2d634450f24d548dc69204ffbe34bee536815991e4c659e2a688ca17"
+    },
+    {
+      "path": "plans/d05-architecture-view/status.md",
+      "bytes": 32058,
+      "sha256": "b1b177ea25b012e137c04bb13063b2fee0e4c7e63d8aacbe5409909887ba2925"
+    }
+  ],
+  "conclusion": "APPROVED_DOCS",
+  "findings": [],
+  "reviewMethod": "Independent read-only two-file delta against50bb4a8e at working-byte hashes, later commit same bytes",
+  "limits": "Observed deployment receipt only; no reviewer probe/tests and no product/native approval. Historical D05 task start/completion UNKNOWN retained."
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:03:13.243146+00:00 / main ee98e65c；本批固定Web宿主准备、ENG01J登记与时间metadata |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:18:21.913864+00:00 / maine30d40cf；186源实际载入，CHAT05局部增量独审核实 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main ef3a6de8；ENG01I closeout14228、SVC08构建结果228、六份管理docs独审，产品零改 |
+| 工作基线 / HEAD | maine30d40cf；D05实际来源回执5152与CHAT05增量证据限定独审，本批产品零改 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 已审文档及固定结果逐字接收；SVC08实际结果23、后继准备38 bindings一致。0新工程检查/构建/PG/provider；ENG原wrapper exit1与缓存KEEP保持。 |
-| 已集成main状态 / HEAD | main ee98e65c；本批准备/登记待ff。个人af51/accepting v18、Web d629/v3未变。 |
+| 检查状态 | PASSED 文档固定字节/源绑定；CHAT05 18源+12新证据核同、原10/10与focused types0；PG3与挂载仍未验。0 reviewer工程检查/PG/provider。 |
+| 已集成main状态 / HEAD | maine30d40cf已接固定Web宿主准备、ENG01J登记与时间metadata；本批仅接已观察186源回执。个人af51/accepting v18、Web d629/v3未变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 工程宿主公开收据与恢复旅程已进入主线；固定网页宿主产物构建结果通过独立审查，个人服务保持原版本。 |
-| 下一可用交付 | 真实受限写入授权宿主实现准备，以及固定网页宿主隔离运行验收。 |
+| 当前产出 | 工程宿主和工具原文后继已有清楚的实际开工与局部验证记录；看板186个权威来源已载入，登录入口与计时保持可用。 |
+| 下一可用交付 | 接收真实受限写入授权宿主的局部证据，并完成固定网页宿主隔离运行；工具原文数据库验证与生产接线继续开放。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -326,3 +326,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T04:41:47.076164+00:00：C02私有流内核6源按原APPROVED de0f受控接收，主线preimage六项全同；[来源与限定审查](../../docs/evidence/i02/codex-stream-controlled-intake.json)、[一次组合类型检查](../../docs/evidence/i02/codex-stream-combination-types.json)exit0/9170ms/组absent。原106项分轮证据直接复用，0PG/provider。公共v2读取/真实Codex/UI均未随此批准。
 
 2026-10-07T04:56:02.907834+00:00：受控接收ENG01I c3四源及b612自有记录，主线前像四项等于c0e；[结果独审](../../docs/evidence/i02/eng01i-pg-result-review.json)、[精确输入](../../docs/evidence/i02/eng01i-controlled-intake.json)、[组合类型检查](../../docs/evidence/i02/eng01i-combination-types.json)与[缓存保留说明](../../docs/evidence/i02/eng01i-combination-types-retention.json)。真实模型/权限强制/生产注册仍开放；SVC06只接已审实验main回执两文件，0新增PG/provider/个人操作。
+
+2026-10-07T05:18:21.913864+00:00：D05限定两文件doc review无finding，实际186源/ENG01J human与timing完整；CHAT05新30bindings、10/10/focused0独审核实，保留PG3未验与15只读main输入变化。原Web入口及个人监听/config/state保持，不刷新tab。SVC08共享PG已由X01实际清理归还后交唯一operator按固定入口执行，运行结果另收。

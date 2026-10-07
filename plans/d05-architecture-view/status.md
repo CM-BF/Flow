@@ -2,7 +2,10 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:09:11.734788+00:00 / main451bf2ed；本机登录入口、计时与185源实际已部署 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:15:46.943Z / maine30d40cf；本机登录入口与计时保持、186源实际已加载 |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | UNKNOWN |
+| 任务时间来源 | 初始D05交付记录保留于deployment.json与历史段；没有足够字段证明完整任务起止，不以本次登记/进程替换时间补造。当前来源更新实采05:15:46.943Z，见eng01j-live.json。 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -18,7 +21,7 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已提供本机登录凭据的按需入口，并显示任务开始、完成声明与含等待历时；185个唯一来源已加载，缺证时间保持未知。 |
+| 当前产出 | 看板已提供本机登录凭据的按需入口，并显示任务开始、完成声明与含等待历时；186个唯一来源已加载，缺证时间保持未知。 |
 | 下一可用交付 | 本片段已交付；产品页面与后台继续按各自受管发布流程推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -211,3 +214,5 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 2026-10-07T04:09:11.734788+00:00：已审ACCESS源随main451bf2受控部署4320（启动04:04:16.630273Z，PID61730）；实际新IAB页见连接说明、按需凭据窗口及185源/时间字段。私有HTTP响应只在本机内存比对原token成功，no-store；未打印或保存token、未改剪贴板或登录产品。原中心/runner/Web进程、config/state/release摘要保持，用户原tab未刷新。见[实际部署回执](../../docs/evidence/d05/local-access-185-live.json)。不重复35项或fixture浏览器全集。
 
 Goal Owner独立真实页面验收：默认空→显式加载为掩码→复制提示成功→关闭清空。未输出token/读取剪贴板/登录产品/发送消息；与Lead的实际部署及本机内存比对分别记载，同一回执不含凭据。
+
+2026-10-07T05:15:46.943Z：ENG01J登记已审并main e30d40cf；确认旧61730命令/cwd/唯一4320归属后正常结束，新51982从同一m2-integration启动。实际snapshot186源，ENG01J issues/human.missing/timing.issues均空，显示有据05:07:35.705Z开工。按需登录metadata仍enabled，未读取token；个人config/state摘要与61227/61228监听PID保持，未刷新用户tab。[实际回执](../../docs/evidence/d05/eng01j-live.json)。仅看板来源加载，不声明工程native或个人部署通过。
