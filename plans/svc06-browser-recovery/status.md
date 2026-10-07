@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:00:23.226Z；冷启动R2默认三角色/本次runner初始化/显式停止通过，运行窗口已RETURN；DB/private KEEP，待结果独审及四App兼容 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:14:24.000Z；冷启动81fa已独审、Web b422四页已审；恢复调用548490已限定独审，个人尚未恢复；开始新Web-only调用准备 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -24,7 +24,7 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 新版后台与四个网页的兼容已验证，新网页的受管迁入和发布调用已通过独审。新版网页尚未发布；本次后台维护在网页就绪处失败，当前三个服务已停止，正优先恢复可用性。 |
-| 下一可用交付 | 修正后的恢复产物已构建并通过独审；接下来验证三个服务的真实冷启动和四个网页兼容，之后沿原维护操作恢复服务并发布新版网页。 |
+| 下一可用交付 | 修正产物的三服务冷启动和四页兼容均已通过独审，恢复调用已固定待现场窗口；同步准备恢复后新版网页的独立发布调用。 |
 | 当前阻塞 | ACTIVE: 个人服务当前已停止，维护门保持关闭；责任为本服务owner与Lead，需完成新固定宿主、冷启动/兼容和受审恢复路径。禁止盲重试或自动回滚。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；artifact/retention/迁入与current入口均已独审/main；current-entry-independent-review仅准备批准，不当现场ready |
@@ -184,3 +184,5 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T22:00:23.226Z：cold R2实际RETURN；21:59:55.939Z终态PASS，outer43096ms/exit0/直接operator absent双EOF；3内层组和3角色组全部absent，8精确PID absent。当前nonce runner初始化与真实3role均已核，task/attempt0、独立cleanup连接empty/admin关闭/无errors，DB与private按合同KEEP。个人仍未动、实际claim未观察；限定原件见[窗口归还](../../docs/evidence/svc06/browser-recovery/recovery-cold-r2-window-return.json)，等待唯一结果独审。
 
 2026-10-07T22:02:27.474Z：冷启动R2单份结果已封：[结果](../../docs/evidence/svc06/browser-recovery/RECOVERY-COLD-R2-RESULT.md)/[manifest](../../docs/evidence/svc06/browser-recovery/recovery-cold-r2-result-manifest.json)，4输入+30原始记录+3分析；3角色私有诊断只保存身份/hash及受限字段，19checkpoint副本逐字同。等待独立结果审查；未重新启动/探测个人实例。
+
+2026-10-07T22:14:24.000Z：后继Web-only准备实际开始，Lead限定20分钟源码/局部段，截止22:34:24Z；检查累计≤30s/tmp8MiB，0PG/HTTP/个人/provider。claim v8 fresh同，原81fa clean；仅新增独立leaf，不改变恢复548490绑定66pins。复用find-skills/clean-code/codebase-design既有方法与已审transfer/public CAS，不新监督器。冷81fa独审355f与Web b422接受其限定事实，个人恢复未执行；当前服务状态仍为既有21:53只读停止/held23观察，不新增探针。

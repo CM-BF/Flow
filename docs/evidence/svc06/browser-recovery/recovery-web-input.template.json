@@ -1,0 +1,88 @@
+{
+  "ready": false,
+  "installationDirectory": "/Users/citrine/.flow-personal",
+  "repository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "sourceDirectory": "/private/tmp/release01-web-artifact-prepared-20261007/actual/artifact-store",
+  "runDirectory": "/private/tmp/flow-svc06b-e15-web779-transfer-once",
+  "publicationDirectory": "/private/tmp/flow-svc06b-e15-web779-publish-once",
+  "runIdentity": null,
+  "installationIdentity": null,
+  "sourceIdentity": null,
+  "expectedBackendArtifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "manifestDigest": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488"
+  },
+  "expectedWebHostArtifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "manifestDigest": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488"
+  },
+  "expectedSource": {
+    "head": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+    "dirty": false
+  },
+  "artifact": {
+    "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+    "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+    "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+  },
+  "context": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "reportIds": {
+    "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90": "41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698",
+    "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe": "6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117",
+    "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88": "9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1",
+    "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4": "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c"
+  },
+  "retainedArtifacts": [
+    {
+      "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+    },
+    {
+      "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+      "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+    },
+    {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+      "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+    }
+  ],
+  "expectedRelease": null,
+  "privateFiles": null,
+  "processDigests": null,
+  "ports": {
+    "center": 61227,
+    "web": 61228
+  },
+  "finalReceipt": {
+    "path": "/private/tmp/flow-svc06-held-recovery-e15-20261007-once/final.json",
+    "bytes": null,
+    "sha256": null
+  },
+  "artifactFiles": 10,
+  "assetBytes": 1700569,
+  "manifestBytes": 1651,
+  "releaseId": "52a261e294324a11aead58a554f547db",
+  "budget": {
+    "freshBytes": null,
+    "liveBytes": 1073741824,
+    "addedBytes": 536870912,
+    "rawBytes": 2097152
+  },
+  "missing": [
+    "successful actual resumed-confirmed receipt",
+    "authorized fresh post-recovery six-file pins/three running ownerships and exact release v3",
+    "actual source/install identities and full floor",
+    "independent source review and sole actual Web window; existing OPS14 effective pins/argv"
+  ]
+}
