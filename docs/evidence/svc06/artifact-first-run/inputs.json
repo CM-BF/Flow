@@ -190,8 +190,6 @@
       "sha256": "97673f4ce120cb26f55f35881977810e516199b97cd8a1fe9fea2ebd24b5c9ed"
     }
   ],
-  "sourceFiles": 904,
-  "sourceBytes": 6928119,
   "bindings": [
     {
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/index.mjs",
@@ -905,5 +903,6 @@
     "bytecode": "disabled",
     "OPS14Module": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
     "OPS14Sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
-  }
+  },
+  "preparationNotes": "fixed-input-selection is original 52-input generation output; six fixed direct consumer hashes and supervisor path added by read-only Git/file metadata inspection afterward; no cache or build rerun"
 }

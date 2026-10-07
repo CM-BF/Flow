@@ -4,7 +4,7 @@
 
 ## 单一入口与责任
 
-将使用已安装 Python3.13 的 `-B supervise.py`。仅复用固定OPS14 NEW_CHILD_SESSION：420秒工作、0.5秒TERM、2秒reap；entry及git/tar/clone/pnpm/Node证明子进程全在同一owned组，未创建detached服务。原clone/install各180秒不增。外层持久化前已结束监督，原Report交由工具输出保存；关键reservation/自有root identity/构建记录/result在entry内独占写入并fsync，受同一截止约束。没有嵌套监督组或可逃逸安装组。
+将使用已安装 Python3.13 的 `-B supervise.py`。仅复用固定OPS14 NEW_CHILD_SESSION：420秒工作、0.5秒TERM、2秒reap；entry及git/tar/clone/pnpm/Node证明子进程全在同一owned组，未创建detached服务。原clone/install各180秒不增。外层在spawn前独占打开0600 outer-report.json，停止/回收决定完成后直接将完整Report保存并fsync，工具仅显示小摘要；关键reservation/自有root identity/构建记录/result在entry内独占写入并fsync，受同一截止约束。没有嵌套监督组或可逃逸安装组。
 
 entry只调用既有prepareBackendArtifact与verifyBackendArtifact，真实离线frozen、ignore-scripts、copy安装保持，私有HOME/cache/store/配置由原builder负责。原stage发布前checkpoint及失败保留规则不变；entry不清理未知stage/lock、不停止个人服务、不改开发checkout。成功后也保留一个自有产物及其700根，供后继真实host/隔离验收，不将其提前删除。原store最多2产物/2GiB及单artifact1GiB/100k条目继续有效，本次新root仅一个产物。
 
@@ -30,4 +30,4 @@ OPS14实际capture上限1MiB，使用1MiB而非不被模块支持的2MiB参数�
 
 新root pg本已在server闭包内，固定8c锁纯选择仍271snapshot。新main271个选中package key/cache index path已逐项对照旧观察完全相同，固定锁hash不变；原3条mode观察保留，不再读取全部缓存payload。所有旧raw与source保持，准备入口独立审查不扩大此前有限批准。
 
-唯一未来运行命令：`/opt/homebrew/opt/python@3.13/bin/python3.13 -B docs/evidence/svc06/artifact-first-run/supervise.py`，cwd本权威backend-release树。外层Report先由工具原始输出保留，随后在同scope正常归档，禁止预先重定向到尚未创建的actual-first子目录。实际SDK0.3.290已装metadata只读核：sdk.mjs同目录package.json、原SDK锚可resolve darwin-arm64/package.json，claude为regular executable 233260816B；见sdk-layout-observation.json，无SDK import/执行。
+唯一未来运行命令：`/opt/homebrew/opt/python@3.13/bin/python3.13 -B docs/evidence/svc06/artifact-first-run/supervise.py`，cwd本权威backend-release树。外层Report由wrapper直接保存至本目录0600 outer-report.json；该文件和actual-first必须均不存在，否则拒绝新执行。无需依赖工具截断输出转录，也不得重定向到尚未创建的actual-first子目录。实际SDK0.3.290已装metadata只读核：sdk.mjs同目录package.json、原SDK锚可resolve darwin-arm64/package.json，claude为regular executable 233260816B；见sdk-layout-observation.json，无SDK import/执行。
