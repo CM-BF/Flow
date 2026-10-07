@@ -6,13 +6,13 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | assignment_review / gpt-6-astra |
-| 更新时间 | 2026-10-07T04:46:15.301549+00:00 |
+| 更新时间 | 2026-10-07T04:49:45.430064+00:00 |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 当前产出 | Web独立宿主选择已进入主线；来源准确的新产物构建入口已准备，待独立审查和共享运行窗口。个人服务未改变。 |
 | 下一可用交付 | 生成来源准确、可独立加载的新版网页宿主产物；当前准备固定构建入口，尚未执行构建或个人采用。 |
 | 当前阻塞 | NONE |
@@ -23,11 +23,11 @@
 | Head | bad019d9691499bed69ae46b6c5d23944709cfe3；后续仅自身证据和metadata |
 | 工作树dirty状态 | 原3e636候选clean后接收；当前仅自身固定构建准备/metadata，提交后核clean |
 | 工作分支状态 | in-progress；Web-only selector已审并main，当前仅产物入口准备 |
-| 实现目标 | bad019d9691499bed69ae46b6c5d23944709cfe3 |
+| 实现目标 | 20ed0ccd192127ed55f7f0677db17de32cc9e30e；薄entry source，产品bad019不变 |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/backend-release/host.mjs, tools/personal-preview/README.md |
 | Claim | ba1ff3b2-d830-4acf-b84f-be8df92c9c95 v6 active；04:42:47.430Z正式accept，仅own plan/evidence；[receipt](../../docs/evidence/svc08/flow-host-artifact/assignment-accept-receipt.json) |
-| Review | APPROVED；2026-10-07T04:09:30.655440Z，Execution Lead唯一限定独审，81bindings+2runtime，0复跑；[唯一review](review.md) |
-| 检查状态 | 当前9不同=5新+4旧直接，8/8→3/3→3/3，2282ms/raw6422B/三组absent双EOF；0PG/Chrome/provider/真实artifact/服务。原52d3十不同/原红保留，[本片运行](../../docs/evidence/svc08/web-host-selection/run.json) |
+| Review | PENDING 20ed0ccd192127ed55f7f0677db17de32cc9e30e 固定Flow构建入口；旧bad019产品APPROVED/main422保持，[历史review](review.md) |
+| 检查状态 | NOT_RUN 20ed0ccd192127ed55f7f0677db17de32cc9e30e 实际新artifact；仅语法解析0/[准备绑定](../../docs/evidence/svc08/flow-host-artifact/build-once/manifest.json)。旧9不同/2282ms原产品批准保持，未重跑 |
 | 已集成 main 状态 | INTEGRATED 422f4b150e5801d6010e5bbd6b53574e35384f87；当前4产品对bad019/current逐hash相同，[回执](../../docs/evidence/svc08/web-host-selection/main-receipt.json)；前片2f18/158保持 |
 | 架构影响 | serviceRuntime仅为Web选择独立artifact，pendingWebHost与同journal先行；后台artifact/身份与原授权保持。main422已接；Execution Lead同步宿主基线。无新产物格式/FSM/监督器 |
 | 看板 | Lead确认main8c已登记SVC08 source184；实际新registry载入待ACCESS安全点，不冒已载入 |
@@ -74,3 +74,5 @@
 ## 2026-10-07T04:49:10.956976+00:00：固定Flow产物入口
 
 [一次构建入口](../../docs/evidence/svc08/flow-host-artifact/build-once/README.md)复用SVC06 builder与OPS14；固定Flow422的920源文件/7,125,401逻辑B、17运行输入、61直接源/SQL逐字绑定。只语法解析通过，build/install/import/PG/provider均NOT_RUN；271snapshot/7importer依据相同lock与旧成功产物继承，不能冒新运行。420s+.5TERM+2reap、fresh3,391,094,784B/live1GiB、raw2MiB原门槛保持。builder外部源固定hash，newdescriptor必须真实sourceRepository=Flow。产品仍bad019不变，尚未占运行窗口。
+
+固定entry `20ed0ccd192127ed55f7f0677db17de32cc9e30e` 已交唯一review，当前不持有PG/构建/Chrome窗口；实际新artifact NOT_RUN，不把语法解析/原9产品检查扩成新构建通过。

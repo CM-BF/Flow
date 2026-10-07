@@ -1,0 +1,102 @@
+--- SVC06/entry.mjs
++++ SVC08/entry.mjs
+@@ -1,4 +1,5 @@
+-// One isolated artifact preparation. No personal deployment or host/PG journey.
++// Fixed Flow-source artifact preparation; procedural caller derived from reviewed SVC06 entry.
++// Existing builder/selector/installer and OPS14 remain the implementations; no host or PG calls.
+ import assert from 'node:assert/strict';
+ import { constants } from 'node:fs';
+ import { mkdir, mkdtemp, open, readFile, readdir, lstat, realpath, statfs } from 'node:fs/promises';
+@@ -6,9 +7,8 @@
+ import { execFile } from 'node:child_process';
+ import { promisify } from 'node:util';
+ import { dirname, join } from 'node:path';
+-import { fileURLToPath } from 'node:url';
++import { fileURLToPath, pathToFileURL } from 'node:url';
+ import { createRequire } from 'node:module';
+-import { prepareBackendArtifact, verifyBackendArtifact } from '../../../../tools/personal-preview/backend-release/index.mjs';
+ const execute = promisify(execFile), here = dirname(fileURLToPath(import.meta.url));
+ const input = JSON.parse(await readFile(join(here, 'inputs.json'), 'utf8'));
+ const run = join(here, 'actual-first');
+@@ -68,18 +68,22 @@
+   initialFree = await space(); minimumFree = initialFree;
+   assert.ok(initialFree >= input.resources.minimumFreeBytes, 'BACKEND_FRESH_SPACE_REQUIRED');
+   monitor = setInterval(startSample, 500); monitor.unref();
+-  const directory = await realpath(await mkdtemp('/private/tmp/flow-svc06-fixed-artifact-'));
++  const directory = await realpath(await mkdtemp('/private/tmp/flow-svc08-flow-artifact-'));
+   const identity = await lstat(directory);
+   assert.ok(identity.isDirectory() && !identity.isSymbolicLink() && identity.uid === process.getuid() && (identity.mode & 0o777) === 0o700, 'BACKEND_OWN_ROOT_REQUIRED');
+   report.directory = directory; report.directoryIdentity = { dev: identity.dev, ino: identity.ino };
+   await durable(join(run, 'owned-root.json'), { directory, ...report.directoryIdentity, source: input.target });
+   await durable(join(directory, 'owner.json'), { run, source: input.target, ...report.directoryIdentity });
++  const { prepareBackendArtifact, verifyBackendArtifact } = await import(pathToFileURL(input.builderModule).href);
+   report.phase = 'building';
+   const artifact = await prepareBackendArtifact({ repository: input.repository, target: input.target, directory, offlineStore: input.offlineStore, pnpmCli: input.pnpmCli });
+   report.artifact = artifact; report.phase = 'verifying';
+   await copyBuildRecord();
+   const verified = await verifyBackendArtifact({ directory, artifact });
+   assert.equal(artifact.sourceHead, input.target);
++  assert.equal(verified.manifest.sourceRepository, input.repository);
++  assert.equal(verified.manifest.sourceTree, input.sourceTree);
++  for (const source of input.fixedSourceInputs) { const bytes = await readFile(join(verified.root, source.path)); assert.equal(bytes.length, source.bytes); assert.equal(hash(bytes), source.sha256); }
+   assert.equal(verified.manifest.lockDigest, input.lockSha256);
+   assert.deepEqual(verified.manifest.installation.hostTools, input.hostTools);
+   assert.equal(verified.manifest.installation.snapshots.length, input.snapshots);
+@@ -88,10 +92,11 @@
+   for (const sql of input.sql) { const bytes = await readFile(join(verified.root, sql.path)); assert.equal(bytes.length, sql.bytes); assert.equal(hash(bytes), sql.sha256); }
+   report.sqlFilesVerified = input.sql.length;
+   report.inventory = { logicalBytes: verified.manifest.inventory.bytes, entries: verified.manifest.inventory.entries.length, manifestBytesIncluded: verified.totalBytes, nodeImages: verified.manifest.node.images.length };
++  await durable(join(run, 'result-descriptor.json'), artifact);
+   const artifactRequire = createRequire(join(verified.root, 'package.json'));
+   let proof, proofError;
+   try {
+-    proof = await execute(process.execPath, ['--import', artifactRequire.resolve('tsx'), join(here, 'runtime-proof.mjs'), verified.root], {
++    proof = await execute(process.execPath, ['--import', artifactRequire.resolve('tsx'), join(here, 'runtime-proof.mjs'), verified.root, directory, join(run, 'result-descriptor.json'), input.repository], {
+       cwd: verified.root, env: { PATH: `${dirname(process.execPath)}:/usr/bin:/bin`, HOME: directory, TMPDIR: directory, TSX_DISABLE_CACHE: '1' }, timeout: 15000, maxBuffer: 65536,
+     });
+   } catch (error) { proofError = error; proof = { stdout: String(error.stdout ?? ''), stderr: String(error.stderr ?? '') }; }
+--- SVC06/runtime-proof.mjs
++++ SVC08/runtime-proof.mjs
+@@ -33,8 +33,21 @@
+ assert.equal(typeof center.createServer, 'function');
+ assert.equal(typeof runtime.runRunner, 'function');
+ assert.equal(typeof host.backendRuntime, 'function');
++assert.equal(typeof host.serviceRuntime, 'function');
++const artifact = JSON.parse(await readFile(process.argv[4], 'utf8'));
++const config = { directory: process.argv[3], repository: process.argv[5] };
++const state = { backendArtifact: null, webHost: { artifact } };
++const webRuntime = await host.serviceRuntime(config, state, 'web');
++assert.equal(webRuntime.root, root);
++assert.deepEqual(webRuntime.artifact, artifact);
++const selections = [];
++const select = async (_config, chosen) => { selections.push(chosen); return { selected: chosen }; };
++await host.serviceRuntime(config, state, 'center', select);
++await host.serviceRuntime(config, state, 'runner', select);
++assert.deepEqual(selections, [null, null]);
++await assert.rejects(host.backendRuntime({ ...config, repository: config.repository + '-wrong-source' }, artifact), { code: 'BACKEND_INSTALLATION_SOURCE_MISMATCH' });
+ assert.equal(typeof previewHost.loadPreviewConfiguration, 'function');
+ assert.equal(typeof maintenanceHost.maintainPreview, 'function');
+ assert.equal(typeof vite.preview, 'function');
+ assert.equal(typeof sdkModule.query, 'function');
+-console.log(JSON.stringify({ importsOnly: true, factoryCalls: 0, runnerCalls: 0, providerCalls: 0, sdkVersion: sdk.version, nativeBinaryExecuted: false, nativeBinaryBytes: nativeStat.size, resolved: { pgEntry, sdkEntry, nativeMetadata, nativeBinary, viteEntry, tsxEntry }, delayedImports: paths, developmentCheckoutIsolation: 'NO mutation or removal; internal resolution/inventory proof only' }));
++console.log(JSON.stringify({ importsAndReadOnlySelectionOnly: true, artifactSourceRepository: config.repository, realWebArtifactSelected: true, centerRunnerSelectionPreserved: true, wrongSourceRejected: true, factoryCalls: 0, runnerCalls: 0, providerCalls: 0, sdkVersion: sdk.version, nativeBinaryExecuted: false, nativeBinaryBytes: nativeStat.size, resolved: { pgEntry, sdkEntry, nativeMetadata, nativeBinary, viteEntry, tsxEntry }, delayedImports: paths, developmentCheckoutIsolation: 'NO mutation or removal; internal resolution/inventory proof only' }));
+--- SVC06/supervise.py
++++ SVC08/supervise.py
+@@ -8,7 +8,7 @@
+ sys.dont_write_bytecode = True
+ MODULE = Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py')
+ assert hashlib.sha256(MODULE.read_bytes()).hexdigest() == '725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d'
+-spec = importlib.util.spec_from_file_location('svc06_artifact_ops14', MODULE)
++spec = importlib.util.spec_from_file_location('svc08_artifact_ops14', MODULE)
+ supervision = importlib.util.module_from_spec(spec)
+ sys.modules[spec.name] = supervision
+ spec.loader.exec_module(supervision)
+@@ -17,7 +17,7 @@
+ output = entry.with_name('outer-report.json')
+ fd = os.open(output, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
+ report = supervision.supervise(
+-    supervision.Launch(('/opt/homebrew/opt/node@24/bin/node', str(entry)), str(entry.parents[4]),
++    supervision.Launch(('/opt/homebrew/opt/node@24/bin/node', str(entry)), str(entry.parents[5]),
+         {'PATH': '/opt/homebrew/opt/node@24/bin:/usr/bin:/bin', 'PYTHONDONTWRITEBYTECODE': '1', 'TSX_DISABLE_CACHE': '1'}, supervision.Ownership.NEW_CHILD_SESSION),
+     supervision.Policy(420, .5, 2, 1024 * 1024))
+ result = dict(vars(report))
