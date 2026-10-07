@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T03:28:10.310189+00:00",
+  "main": "3230becf07b804479ec4dc7ef02fcaff58cc3858",
+  "source": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+  "intake": "m2-integration/docs/evidence/i02/svc06-root-pg-intake.json",
+  "checks": "no product rerun; fixed bytes only",
+  "files": [
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "bytes": 10976,
+      "sha256": "bb39c0dd9925ceb7f93638a6411c09d0dbeaa01132c9265c7a0a71c18bd5bdda",
+      "equal": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.test.mjs",
+      "bytes": 11836,
+      "sha256": "1c0d92e94d188db47b51fa5288e086697625c6a6da62eec83bad2b348f4a155a",
+      "equal": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+      "bytes": 10913,
+      "sha256": "4c063092ac035c321fb6209b5218154809240de041ba3c3e1f9c7b8db76af27c",
+      "equal": true
+    }
+  ]
+}

@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-07T03:27:25.267Z",
+  "mode": "resolution and metadata only; no SDK import/call/binary execution",
+  "anchor": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/apps/runner/package.json",
+  "entry": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+  "entryRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+  "sdk": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+    "version": "0.3.290",
+    "main": "sdk.mjs",
+    "exports": {
+      ".": {
+        "types": "./sdk.d.ts",
+        "default": "./sdk.mjs"
+      },
+      "./core": {
+        "types": "./core.d.ts",
+        "default": "./core.mjs"
+      },
+      "./extract": {
+        "types": "./extractFromBunfs.d.ts",
+        "default": "./extractFromBunfs.js"
+      },
+      "./browser": {
+        "types": "./browser-sdk.d.ts",
+        "default": "./browser-sdk.js"
+      },
+      "./bridge": {
+        "types": "./bridge.d.ts",
+        "default": "./bridge.mjs"
+      },
+      "./sdk-tools": {
+        "types": "./sdk-tools.d.ts"
+      },
+      "./sdk-tools.js": {
+        "types": "./sdk-tools.d.ts"
+      }
+    },
+    "bytes": 2546,
+    "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3",
+    "optionalDependencies": {
+      "@anthropic-ai/claude-agent-sdk-linux-x64": "0.3.290",
+      "@anthropic-ai/claude-agent-sdk-linux-arm64": "0.3.290",
+      "@anthropic-ai/claude-agent-sdk-linux-x64-musl": "0.3.290",
+      "@anthropic-ai/claude-agent-sdk-linux-arm64-musl": "0.3.290",
+      "@anthropic-ai/claude-agent-sdk-darwin-x64": "0.3.290",
+      "@anthropic-ai/claude-agent-sdk-darwin-arm64": "0.3.290",
+      "@anthropic-ai/claude-agent-sdk-win32-x64": "0.3.290",
+      "@anthropic-ai/claude-agent-sdk-win32-arm64": "0.3.290"
+    }
+  },
+  "native": {
+    "packagePath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/package.json",
+    "packageRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/package.json",
+    "name": "@anthropic-ai/claude-agent-sdk-darwin-arm64",
+    "version": "0.3.290",
+    "files": [
+      "claude",
+      "README.md",
+      "LICENSE.md"
+    ],
+    "exports": null,
+    "bytes": 274,
+    "sha256": "d2cbb0243a4f5fdfe5b11363f704d857579fd86717ea1e6a70cd10065e262261",
+    "binary": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+    "binaryRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+    "regular": true,
+    "symlink": false,
+    "executable": true,
+    "logicalBytes": 233260816
+  }
+}
