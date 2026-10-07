@@ -1,23 +1,19 @@
 import { randomUUID } from 'node:crypto';
-import { writeFile } from 'node:fs/promises';
 import { setTimeout as sleep } from 'node:timers/promises';
 import { afterAll, beforeAll, expect, test } from 'vitest';
-import { Pool } from 'pg';
 import { PgBoss } from 'pg-boss';
 import { createServer } from '../index.js';
 import { transaction } from '../database.js';
 import { PLUGIN_RUNTIME_PROTOCOL, type PluginToolBinding } from '../../../../packages/contracts/src/plugin-runtime.js';
 import { migratePluginRuntime, publishPluginHost, type TrustedPluginHostPolicy } from './store.js';
 import { registerPluginRuntimeRoutes } from './routes.js';
+import { PluginDatabaseFixture } from '../../../../docs/evidence/x01/enable-binding-pg-fixture.js';
 
-const database = `flow_x01_binding_${randomUUID().replaceAll('-', '')}`;
-const adminUrl = 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres';
-const databaseUrl = adminUrl.replace('/postgres', `/${database}`);
-const admin = new Pool({ connectionString: adminUrl, max: 1, connectionTimeoutMillis: 1500, statement_timeout: 3000, query_timeout: 3500 });
-const pool = new Pool({ connectionString: databaseUrl, max: 4, application_name: 'flow-x01-binding', connectionTimeoutMillis: 1500, statement_timeout: 4000, query_timeout: 4500 });
+const databaseFixture = new PluginDatabaseFixture('runtime', 4);
+const { database, databaseUrl, pool } = databaseFixture;
 const owner = `x01-${randomUUID()}`;
 let app: Awaited<ReturnType<typeof createServer>> | undefined;
-let boss: PgBoss | undefined; let base = ''; let creationRequested = false;
+let boss: PgBoss | undefined; let base = ''; let startupConfirmed = true;
 const facts: Record<string, unknown>[] = [];
 const trustedHosts = new Set<string>();
 const hostKey = (runnerId: string, storeId: string, hostApiMajor: number) => JSON.stringify([runnerId, storeId, hostApiMajor]);
@@ -32,6 +28,7 @@ async function request(path: string, body?: unknown, key = randomUUID(), token =
   const raw = await response.text(); return { status: response.status, body: JSON.parse(raw), raw, headers: response.headers };
 }
 async function openApp() {
+  startupConfirmed = false;
   app = await createServer({ databaseUrl, ownerToken: owner, automaticQueueScan: false });
   await migratePluginRuntime(pool);
   // A real PgBoss client without another worker; createServer retains its existing task worker.
@@ -40,28 +37,19 @@ async function openApp() {
   await boss.start();
   registerPluginRuntimeRoutes(app, pool, boss, trustedHostPolicy);
   base = await app.listen({ host: '127.0.0.1', port: 0 });
+  startupConfirmed = true;
 }
 beforeAll(async () => {
-  creationRequested = true; await admin.query(`CREATE DATABASE ${database}`);
+  await databaseFixture.create();
   await openApp();
 }, 30_000);
 afterAll(async () => {
-  const cleanup: Record<string, unknown> = { database, creationRequested, providerCalls: 0, nativeCalls: 0 };
   const closed = await Promise.allSettled([app?.close(), boss?.stop({ graceful: true, timeout: 5000 })]);
-  cleanup.ownersClosed = closed.every(value => value.status === 'fulfilled');
-  cleanup.poolClosed = await pool.end().then(() => true, () => false);
-  try {
-    const exists = (await admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [database])).rowCount;
-    const connections = Number((await admin.query<{ count: string }>('SELECT count(*) FROM pg_stat_activity WHERE datname=$1', [database])).rows[0]!.count);
-    cleanup.connections = connections;
-    if (creationRequested && exists && connections === 0 && cleanup.ownersClosed && cleanup.poolClosed) await admin.query(`DROP DATABASE ${database}`);
-    cleanup.databaseAbsent = (await admin.query('SELECT 1 FROM pg_database WHERE datname=$1', [database])).rowCount === 0;
-  } catch { cleanup.failure = 'owned_database_cleanup_unconfirmed'; }
-  finally {
-    cleanup.adminClosed = await admin.end().then(() => true, () => false);
-    if (process.env.FLOW_X01_BINDING_EVIDENCE) await writeFile(process.env.FLOW_X01_BINDING_EVIDENCE, JSON.stringify({ facts, cleanup }, null, 2) + '\n', { flag: 'wx' });
-  }
-  expect(cleanup).toMatchObject({ ownersClosed: true, poolClosed: true, adminClosed: true, connections: 0, databaseAbsent: true });
+  const result = await databaseFixture.finish({ startup: startupConfirmed,
+    server: closed[0]!.status === 'fulfilled', boss: closed[1]!.status === 'fulfilled' }, facts);
+  expect(result).toMatchObject({ cleanupConfirmed: true, retainedDatabase: null, errors: [],
+    cleanup: { ownersClosed: true, poolClosed: true, adminClosed: true, identityConfirmed: true,
+      connections: 0, dropAcknowledged: true, databaseAbsent: true } });
 }, 60_000);
 
 /** Synthetic terminal material metadata exercises the real SQL source chain; no download/load is claimed here. */

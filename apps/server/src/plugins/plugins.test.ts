@@ -1,15 +1,13 @@
 import { randomUUID } from 'node:crypto';
-import { Pool } from 'pg';
 import { afterAll, beforeAll, expect, it } from 'vitest';
 import { createServer } from '../index.js';
 import { migratePlugins, registerPluginRoutes } from './index.js';
+import { PluginDatabaseFixture } from '../../../../docs/evidence/x01/enable-binding-pg-fixture.js';
 
-const databaseName = `flow_x02_${process.pid}_${randomUUID().slice(0, 8)}`;
-const databaseUrl = `postgresql://flow:flow-local-only@127.0.0.1:55432/${databaseName}`;
-const admin = new Pool({ connectionString: 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres', max: 1 });
+const databaseFixture = new PluginDatabaseFixture('registry', 3);
+const { databaseUrl, pool } = databaseFixture;
 const ownerToken = 'x02-test-owner';
-let created = false;
-let pool: Pool | undefined;
+let startupConfirmed = true;
 let server: Awaited<ReturnType<typeof createServer>> | undefined;
 let baseUrl = '';
 const version = {
@@ -28,25 +26,26 @@ async function request(path: string, body?: unknown, options: { token?: string; 
   return { status: response.status, body: JSON.parse(raw), bytes: Buffer.byteLength(raw), raw };
 }
 async function startServer() {
+  startupConfirmed = false;
   server = await createServer({ databaseUrl, ownerToken });
   if (!server.hasRoute({ method: 'POST', url: '/api/plugins' })) {
     await migratePlugins(pool!);
     registerPluginRoutes(server, pool!);
   }
   baseUrl = await server.listen({ host: '127.0.0.1', port: 0 });
+  startupConfirmed = true;
 }
 beforeAll(async () => {
-  await admin.query(`CREATE DATABASE ${databaseName}`); created = true;
-  pool = new Pool({ connectionString: databaseUrl, max: 3, statement_timeout: 5000 });
+  await databaseFixture.create();
   await startServer();
-});
+}, 30_000);
 afterAll(async () => {
-  try { await server?.close(); }
-  finally {
-    try { await pool?.end(); if (created) await admin.query(`DROP DATABASE ${databaseName}`); }
-    finally { await admin.end(); }
-  }
-});
+  const closed = await Promise.allSettled([server?.close()]);
+  const result = await databaseFixture.finish({ startup: startupConfirmed, server: closed[0]!.status === 'fulfilled' });
+  expect(result).toMatchObject({ cleanupConfirmed: true, retainedDatabase: null, errors: [],
+    cleanup: { ownersClosed: true, poolClosed: true, adminClosed: true, identityConfirmed: true,
+      connections: 0, dropAcknowledged: true, databaseAbsent: true } });
+}, 60_000);
 
 it('registers a fixed declaration without granting capabilities or claiming the package was installed', async () => {
   const accepted = await request('/api/plugins', registration);
