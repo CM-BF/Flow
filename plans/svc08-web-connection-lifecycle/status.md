@@ -13,7 +13,7 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | implementation |
-| 当前产出 | Web独立固定宿主选择已审并进入主线；中心和runner来源保持不变。个人切换尚未执行。 |
+| 当前产出 | Web独立宿主选择已进入主线；来源准确的新产物构建入口已准备，待独立审查和共享运行窗口。个人服务未改变。 |
 | 下一可用交付 | 生成来源准确、可独立加载的新版网页宿主产物；当前准备固定构建入口，尚未执行构建或个人采用。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -70,3 +70,7 @@
 ## 2026-10-07T04:46:15.301549+00:00：Flow来源产物准备接收
 
 原owner全停写后通过pending v5→accept v6正式接收两scope，04:42:47.430Z起实际准备。原作者、独审、全部历史raw和产品target保持。固定Flow422与原builder/OPS14复用；0新运行/安装/PG/服务/provider，e5来源不改。既有本地find-skills/codebase-design/clean-code方法用于保持小Interface与单一打包/监督实现，固定入口交唯一独审后再协调重窗口。
+
+## 2026-10-07T04:49:10.956976+00:00：固定Flow产物入口
+
+[一次构建入口](../../docs/evidence/svc08/flow-host-artifact/build-once/README.md)复用SVC06 builder与OPS14；固定Flow422的920源文件/7,125,401逻辑B、17运行输入、61直接源/SQL逐字绑定。只语法解析通过，build/install/import/PG/provider均NOT_RUN；271snapshot/7importer依据相同lock与旧成功产物继承，不能冒新运行。420s+.5TERM+2reap、fresh3,391,094,784B/live1GiB、raw2MiB原门槛保持。builder外部源固定hash，newdescriptor必须真实sourceRepository=Flow。产品仍bad019不变，尚未占运行窗口。
