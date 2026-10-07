@@ -1,0 +1,147 @@
+{
+  "kind": "X01_OPS14_REPORT_CONSUMER_SOURCE_ONLY",
+  "sourceCommit": "af2b926bc112cdf0c8f169a88671c610aeacc9ef",
+  "baseCommit": "a3b4ac8885a75cb1a2609f2c0d2d8beff29975d7",
+  "createdAt": "2026-10-07T02:40:42.525303+00:00",
+  "review": "PENDING",
+  "execution": "NOT_OPEN",
+  "files": [
+    {
+      "path": "docs/evidence/x01/enable-binding-check-once.py",
+      "gitCommit": "af2b926bc112cdf0c8f169a88671c610aeacc9ef",
+      "gitBlob": "d2cbf5155a07d075bc1feadd87805d324a3930ef",
+      "bytes": 20301,
+      "sha256": "dcd871d28de3551f212257259cad4243cc2423a1d3c6103c3300b936f6d9511e"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-ownership.test.py",
+      "gitCommit": "af2b926bc112cdf0c8f169a88671c610aeacc9ef",
+      "gitBlob": "b3dbdb51d2316807a9acadf44d656d8cd1947a5d",
+      "bytes": 4286,
+      "sha256": "c62fdc6bc715e358a813e31bee02d4d6d7a2f23677f61aa5c781e74af7c26ef0"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-ownership-fix.md",
+      "gitCommit": "af2b926bc112cdf0c8f169a88671c610aeacc9ef",
+      "gitBlob": "97589cb88f18d3a8d6b1bef5b7a84104b5dfe7f3",
+      "bytes": 2749,
+      "sha256": "61843f2f7e0fd37f6e2a465c8563db8f68caa50390a63062b76e486c083c8a4b"
+    }
+  ],
+  "preservedHistory": [
+    {
+      "path": "docs/evidence/x01/enable-binding-caller-manifest.json",
+      "gitCommit": "a3b4ac8885a75cb1a2609f2c0d2d8beff29975d7",
+      "gitBlob": "3488422ad12b2ccae5ccb978e69622b124f29e62",
+      "bytes": 11441,
+      "sha256": "9046ad8b0388e08765a43ef94539e73933aefc5f71fb2ca3a92ec38f69e6f136"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-validation-input.json",
+      "gitCommit": "a3b4ac8885a75cb1a2609f2c0d2d8beff29975d7",
+      "gitBlob": "0a6601d1bebe564f213c2f8a9210e9b6c12ee953",
+      "bytes": 25912,
+      "sha256": "4178efa9b0a111809ffbf56444c4075c32db1d5b67305ff274fc57ee83806241"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-dependency-view-request.json",
+      "gitCommit": "a3b4ac8885a75cb1a2609f2c0d2d8beff29975d7",
+      "gitBlob": "f17abc4b47a6f9dc4aacfbb4b485884fc98b1928",
+      "bytes": 12108,
+      "sha256": "493598a34af50431894e9e316ada9437bda3c57a7b9412e4551da224fcf89878"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-dependency-view-result.json",
+      "gitCommit": "a3b4ac8885a75cb1a2609f2c0d2d8beff29975d7",
+      "gitBlob": "0308a9ebe85aecfed2293cac17222f4892fca238",
+      "bytes": 5956,
+      "sha256": "d54ac27a348a4bc4343ddf2a218751f7d3ddee25d45cb7f37edc0271e657fbf9"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-local-result-manifest.json",
+      "gitCommit": "a3b4ac8885a75cb1a2609f2c0d2d8beff29975d7",
+      "gitBlob": "0d27e2b2d0e2c4ae0d7f88044283fdfb46ee1044",
+      "bytes": 7347,
+      "sha256": "ad2c637495ee259a6888296e537dc10836217444ba38f7bd3d44ae1cd061eba6"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-local-result.md",
+      "gitCommit": "a3b4ac8885a75cb1a2609f2c0d2d8beff29975d7",
+      "gitBlob": "0eee25a76bbe239de31c9174b49ab3eeac891e6e",
+      "bytes": 2228,
+      "sha256": "c54d3f760218e1a33742698a1b59149021d3fad6c7b6ee739aab23551a14ddf8"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-local-run/reservation.json",
+      "gitCommit": "a3b4ac8885a75cb1a2609f2c0d2d8beff29975d7",
+      "gitBlob": "1c901a50abc0a6e7350fe7db2b85d8af18ca66b1",
+      "bytes": 166,
+      "sha256": "e1f262bb0ce3f64cd4eba5d68ddcdfa3740efc31595ca5266683ec24d1739925"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-local-run/admission.json",
+      "gitCommit": "a3b4ac8885a75cb1a2609f2c0d2d8beff29975d7",
+      "gitBlob": "69ea8f6c170721d50b88c648ff06a4e6345c4908",
+      "bytes": 1997,
+      "sha256": "8a076b5c93ccbef57b7f59626b653e5ca6dc34dc204f1c8d4c5f000db0db68d6"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-local-run/preflight.stdout",
+      "gitCommit": "a3b4ac8885a75cb1a2609f2c0d2d8beff29975d7",
+      "gitBlob": "152d9244067679df3762f00ab46d6f444ea28b40",
+      "bytes": 289,
+      "sha256": "9680591844b72a2c872ff52f658663b32b5946da0dacb0f7e1b05bdb64594345"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-local-run/receipt.json",
+      "gitCommit": "a3b4ac8885a75cb1a2609f2c0d2d8beff29975d7",
+      "gitBlob": "2242718395f63e27d295e2ce5df4e7b8ca43dccf",
+      "bytes": 1924,
+      "sha256": "fab4010fee94f6705163649e9677c8823fceea7708c6c2d0cf78cd57dcd117de"
+    }
+  ],
+  "fixedOPS14Inputs": [
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "gitCommit": "715525e4d1510b89be7e71a236d537b1f2953038",
+      "gitBlob": "b55925471c9bbd9a3021a75754fca02439ce6cf8",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision"
+    },
+    {
+      "path": "docs/evidence/ops14/interface.md",
+      "gitCommit": "715525e4d1510b89be7e71a236d537b1f2953038",
+      "gitBlob": "a510d8591afe7588c04c343af2e46edeba7e94f7",
+      "bytes": 4182,
+      "sha256": "c535057de0a3451d817941c381315b7aed892d5ca37043dda02d99417acd9b25",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision"
+    },
+    {
+      "path": "docs/evidence/ops14/zombie-regression-result.json",
+      "gitCommit": "0720625cd88ff7bfb8c1830eede8b8bfa91ded7e",
+      "gitBlob": "c4eed86f672b0e0a0cd333afc10b99b0f0c6a780",
+      "bytes": 1550,
+      "sha256": "18d7b8fcf7278ce3c3441dcf048f57e4d6059c623cc16ddea4716b45042c9886",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision"
+    }
+  ],
+  "productSourceUnchanged": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+  "productPathsDiff": [],
+  "validation": {
+    "state": "NOT_RUN",
+    "plannedGroups": 7,
+    "plannedSubprocesses": 0,
+    "secondsLimit": 5,
+    "combinedRawBytesLimit": 8192,
+    "pythonRealpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "argv": [
+      "-B",
+      "docs/evidence/x01/enable-binding-ownership.test.py"
+    ],
+    "provider": 0,
+    "PG": 0,
+    "tar": 0
+  },
+  "stageA": "NOT_OPEN; original run and original manifest remain sealed. A new namespace and rebound executable packet are not part of this source-only delta."
+}
