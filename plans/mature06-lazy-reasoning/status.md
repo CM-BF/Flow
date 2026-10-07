@@ -2,11 +2,11 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T08:56:17.004523+00:00 |
+| 最近更新 | 2026-10-07T09:00:55.676680+00:00 |
 | 任务开工时间 | 2026-10-07T07:19:18Z |
 | 分支交付时间 | 2026-10-07T07:35:58.005114+00:00 |
 | 独立审查时间 | 2026-10-07T08:42:02Z（client）；PG08:13:23Z/core07:47:03Z |
-| 主线集成时间 | UNKNOWN |
+| 主线集成时间 | 2026-10-07T08:54:21.385546+00:00（core/client已接；新journey未接） |
 | 部署时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | setup首次UTC与local.json实际起止；本次交审固定时点，不以commit/mtime推算 |
@@ -23,13 +23,13 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 本片段交付阶段 | implementation |
-| 当前产出 | 新增真实公开客户端验收准备已独审通过，类型通过且精确选中一例；待实际运行。 |
-| 下一可用交付 | 在明确授权的专库窗口运行这一条公开客户端验收并封存真实结果。 |
-| 当前阻塞 | 等待新的专库实际运行窗口；核心/客户端主线接收回执待核。 |
+| 当前产出 | 公开客户端真实读取用例通过；结果外壳误分类未选用例，整体失败原件已保留。 |
+| 下一可用交付 | 用真实JSON修正结果分类并独审；不重跑PG，保留临时目录待合法清理。 |
+| 当前阻塞 | ACTIVE：结果分类P2待修复/独审；精确TMP按失败门禁KEEP，当前无活动PG。 |
 | 需用户决定 | NONE |
 | Review | client2949569b/55dc7de8于08:42:02独审APPROVED/0P1P2；旧core/PG各自批准保留 |
 | 检查 | client 7 distinct分轮：首3pass4fail→受影响5pass/2未选；strict0。旧core14/fix4/PG2各自固定且未重跑 |
-| main | NOT_INTEGRATED |
+| main | core/client INTEGRATED e2b16924038d1215e5f9f389710d1e9b43636d02；新journey NOT_INTEGRATED |
 | 实现目标 | 2949569bcac7d3b0257a0026f488f42eb6276222 |
 | 实现范围 | packages/client/src/index.ts; packages/client/src/assistant-stream.test.ts |
 | Claim | 8436ad9e-ec1f-4cfb-b2fa-84e9f207935b v9 ACTIVE /13scope（index正式STOP移出供X01；其take前不得写） |
@@ -72,3 +72,5 @@ client/index handback COMMITTED 2026-10-07T08:43:46.904Z，v8→v9/13，仅移�
 2026-10-07T08:53:16.479374+00:00 新client journey准备已完成：types0/2251ms与exactlist1/1706ms，两个child末态absent/mergedEOF、两TMP同identity清理absent，raw130B；0hooks/HTTP/PG。本段08:44:00起点不重置，actual local08:52:23已归还X01。仅新增一个case，旧两case正文逐字保留未选择。新pg-client-input249绑定/31SQL/19external，原claimv9/13、原90s/资源门禁和10新输出保持；actual NOT_OPEN/无预约。准备入口client-pg-review-ready.md，旧core/client canonical仍各自有效且主线回执尚未观察。
 
 2026-10-07T08:56:17.004523+00:00 准备独审通过：chatui08:55:14对75070719/fcf4f1ae判APPROVED/0P1P2，回执client-pg-review-receipt.json。当前claimv9/13 fresh active，原PG输入/raw不变；新inputSHA c9cd5f…0c42保持，10新outputs检查只属准备事实。唯一可执行候选仍MATURE06-LAZY01-CLIENT-PG-20261007-R1，actual NOT_OPEN/NOT_RUN，等待fresh holder/预算与明确OPEN。无本段新增工程运行，main事实仍待真实回执；Dashboard等待聚合器登记展示。
+
+2026-10-07T09:00:55.676680+00:00 CLIENT-PG-R1实际：executiond2d58f25，clock08:58:28→37/tool1，time-p3.90s；新1pass、旧2skipped、18HTTP，默认reasoning正文0B/JSON数组6335B、一次fullGET16B/增量9B独立cursor2→4且text3不动。外壳把skipped计作selected3误拒，VALIDATION_NOT_PASSED；PID26274exit0/groupabsent/mergedEOF，无signals。fixture库OID1268881/marker/CREATE确认，0conn普通DROP/absence及全部closed/errors[]。活动资源已归还；TMPk18wx_uj dev16777234 ino123682682保持KEEP，只exactlstat未扫/删。08:55原准备批准与实际后reviewer纠正均保留，原raw/input不改。root另授≤10min纯JSON分类修复1child≤30s，无新PG。main收据lazy-x01-intake@e2b16924的12个source逐hash已核；D05登记由root确认，live聚合仍PENDING_SYNC而不推部署。

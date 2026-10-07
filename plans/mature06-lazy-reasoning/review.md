@@ -26,3 +26,7 @@ Client复核 2026-10-07T08:42:02Z：chatui01_owner/gpt-6-astra，source2949569bc
 ## Public-client HTTP preparation review — 2026-10-07T08:56:17.004523+00:00
 
 chatui01_owner/gpt-6-astra 于08:55:14UTC 对source75070719/packetfcf4f1ae作独立只读SOURCE_AND_PREPARATION_RESULT_REVIEW_APPROVED，0P1/P2。正式回执docs/evidence/mature06-lazy-reasoning/client-pg-review-receipt.json。16绑定/249inputs/31SQL/19external与types0/list1忠实，实际PG仍NOT_OPEN/NOT_RUN；旧core/client批准不扩大到UI或新HTTP通过。
+
+## Preparation correction / actual failure — 2026-10-07T09:00:55.676680+00:00
+
+08:55批准原文保留；reviewer在本次actual结束后撤回选择器批准并报告1P2，client-pg-review-correction.json。实际新case1pass/旧2skipped但wrapperexit1/TMPKEEP，不宣称整体PASS。结果与后继纯JSON修复分别封存，0自动重跑。

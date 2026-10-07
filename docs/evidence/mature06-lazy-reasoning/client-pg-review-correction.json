@@ -1,0 +1,11 @@
+{
+  "recordedAt": "2026-10-07T09:00:55.676680+00:00",
+  "reviewer": "chatui01_owner/gpt-6-astra",
+  "previousApprovalAt": "2026-10-07T08:55:14Z",
+  "verdict": "CHANGES_REQUESTED",
+  "p2": 1,
+  "source": "750707193b58dadc423bc1806a714cdec7c6a935",
+  "finding": "execute-pg.py selected includes skipped because it only excludes pending; Vitest4.0.18 actual assertion skipped is counted as numPendingTests. Strict1selected gate rejects actual1pass/2unselected.",
+  "timing": "Reviewer correction arrived after actual R1 completed; original approval and actual failure are preserved.",
+  "requiredFix": "Classify passed/failed as selected; skipped/pending as unselected; reject unknown, failed, extra execution or mismatched totals/title. Pure JSON only; no PG rerun."
+}
