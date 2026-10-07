@@ -483,3 +483,7 @@ REQ19 [b905实际descriptor核对](../../docs/evidence/web-platform/consumers-re
 REQ19沿原Release owner补具体只读供给：旧461a/caa1/d629三个实际descriptor与immutable资产根，已向Mika正式发送请求供其原Lead通路转交，未收到终接收回执。复用fixed7805b7的web-release-compatibility browser/fixture四check方法，但旧方法重build、动态origin及无policy不能原样冒作b2b固定61228/context验收。新方案须复用已有artifact、保持真实browser publicOrigin与policy，并隔离用户当前61228服务；仅待原owner设计，不启动代理、不读取个人凭据、不重build或操作个人服务。
 
 DPERF下一原owner包仅PARTIAL_RETAINED_ADOPTION：retained BASE精确排除scratch后调用公共OPS helper，scratch保原regular/allocated扫描与64MiB cap；SPECIAL_FILE和可能UNIX socket仍是接口/平台候选，实际形状UNKNOWN，原OPS owner定政策。source98baf/metadata6e92f36已封存，未运行新45s段；Recovery27f2515封存但原21 claim未释放，LAZY消费者等独立树/组合base与明确交权，不把选定恢复通过等同全feature完成。
+
+本自然批[当前入口纠正与主线接收](../../docs/evidence/web-platform/main-intake-handoff-checkpoint-20261007/current.json)实核D04选定账本后，将handoff中过期DPERFv3/7、ACCESSv1/10改为v4/11、v2/3；旧Quick/Recovery/DPERF动作摘要只保明确历史，当前入口只引用唯一owner status/resource，不新建手填进度副本。Quick组件已由63768046受控main接收，原W01在DPERF安全点后按fresh原claim收口metadata与释放，真实App/CAS仍原TODO11后继，不继承组件验收。
+
+REQ19真实三App兼容仅排原Release owner：历史fixed7805b7和RELEASE03两个canonical status实核owner均为w01，不能凭旧已交付claim开工。SVC06固定产物已由[main9b27005接收](../../docs/evidence/web-platform/main-intake-handoff-checkpoint-20261007/svc06-main-artifact-intake.json)，私有policy/个人服务未变。待DPERF与Quick安全点后，再核独立树/精确范围与供给；[固定origin隔离设计输入](../../docs/evidence/web-platform/main-intake-handoff-checkpoint-20261007/release-fixed-origin-design-input.json)只是候选，须真实origin/cookie/SSE/ACK与生命周期证据，不启动代理、不把动态origin手填61228、不用完整缓存fulfill替代SSE/丢ACK协议。

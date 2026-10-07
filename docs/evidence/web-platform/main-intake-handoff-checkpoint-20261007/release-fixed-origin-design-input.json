@@ -1,0 +1,42 @@
+{
+  "kind": "read-only-origin-preservation-design-input",
+  "recordedAt": "2026-10-07T09:21:54.426461+00:00",
+  "status": "CANDIDATE_NOT_RUN_NOT_TAKEN",
+  "target": {
+    "publicOrigin": "http://127.0.0.1:61228",
+    "backendSource": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+    "backendArtifact": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "purpose": "Give original release owner a bounded design option without binding or changing the personal service at61228; no runtime authorization or second implementation owner.",
+  "candidate": {
+    "method": "Reuse/adapt the original owned fixture HTTP proxy for the test Chrome only. Listen on an owned ephemeral port; manually proxy the browser origin61228 with loopback bypass subtraction. Proxy accepts only the exact expected absolute origin, serves pinned immutable Web assets and forwards API bytes to the owned backend listener. Reject every other target; no DIRECT fallback, CONNECT or general-purpose proxy.",
+    "basis": "Chromium documents implicit localhost proxy bypass and the test-only <-loopback> subtractive rule. This makes a per-browser proxy a supported design direction; application cookie/Origin/SSE/ACK behavior remains unverified until an actual selected journey.",
+    "source": "https://chromium.googlesource.com/chromium/src/+/HEAD/net/docs/proxy.md#overriding-the-implicit-bypass-rules",
+    "requiredProof": [
+      "Actual page location.origin remains61228 and backend browserSession/expectedContext equals the candidate; do not relabel a dynamic-origin report.",
+      "Actual immutable asset hashes and expected backend descriptor are checked; reports remain per actual App artifact.",
+      "Observe exact cookie-session/read/send/recovery/negotiation through the owned backend; preserve strict-prefix ACK loss and streaming rather than manufacture success.",
+      "Owned proxy/center/Chrome lifecycle, fixed-origin request restrictions and actual socket closure belong in a focused source/cleanup review. Personal service61228 is never contacted or used as an upstream."
+    ]
+  },
+  "alternativesNotAssumedEquivalent": [
+    {
+      "method": "Playwright route.fetch plus fulfill",
+      "limitation": "Fetch returns APIResponse before fulfillment, and API request responses retain bodies until disposal. This is a poor default for an unending SSE response or deliberate incomplete-body ACK fault; it is not automatically equivalent to the existing streaming socket proxy.",
+      "sources": [
+        "https://playwright.dev/docs/api/class-route#route-fetch",
+        "https://playwright.dev/docs/api/class-apirequestcontext#api-request-context-dispose"
+      ]
+    },
+    {
+      "method": "Route continue URL override",
+      "limitation": "Official API permits same-protocol URL changes, but this alone is not proof of the exact document origin, cookies and recovery fault semantics. Routing also disables HTTP cache and misses service-worker-handled requests unless workers are blocked; no performance/cache conclusion may be derived from such a check.",
+      "sources": [
+        "https://playwright.dev/docs/api/class-route#route-continue",
+        "https://playwright.dev/docs/api/class-browsercontext#browser-context-route"
+      ]
+    }
+  ],
+  "activity": "Official documentation read only. No runtime, proxy, browser, PG, service probe, credential access, project edit or claim performed. Prefer original release owner to decide inside their existing scope; reuse existing fixture rather than add a proxy framework."
+}

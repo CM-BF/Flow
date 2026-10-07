@@ -1,0 +1,298 @@
+{
+  "decision": "ACCEPTED_SCOPED",
+  "recordedAt": "2026-10-07T09:27:00.397318+00:00",
+  "reviewer": "/root GPT-6 Astra Ultra",
+  "source": "98baf552d961ed0fa88ce2cf8bad006002d5986a",
+  "executionHead": "bdc4d0a394695f98a149b21c7b0150a14f2d226e",
+  "run": "timingvisual-20261007-092540-c4c486",
+  "actual": {
+    "startedAt": "2026-10-07T09:25:48.177112+00:00",
+    "endedAt": "2026-10-07T09:25:55.459927+00:00",
+    "exitCode": 0,
+    "conservativeChargeMs": 7283,
+    "newPhaseSpentMs": 14328,
+    "newPhaseRemainingMs": 30672,
+    "oldPhaseSpentMs": 40551,
+    "oldUnusedMs": 19449,
+    "oldPhaseState": "CLOSED",
+    "freshKnownProcesses": [
+      {
+        "id": 4925,
+        "pid": "ESRCH",
+        "pgid": "ESRCH"
+      },
+      {
+        "id": 4924,
+        "pid": "ESRCH",
+        "pgid": "ESRCH"
+      },
+      {
+        "id": 9752,
+        "pid": "ESRCH",
+        "pgid": "ESRCH"
+      },
+      {
+        "id": 5225,
+        "pid": "ESRCH",
+        "pgid": "ESRCH"
+      }
+    ],
+    "dualOuterEof": true,
+    "innerEofNoDrop": true,
+    "scratchAbsent": true,
+    "contextHttpClosed": true,
+    "pg": 0
+  },
+  "visual": {
+    "viewed": [
+      "task-timing-region-light-390.png",
+      "task-timing-region-dark-390.png"
+    ],
+    "decision": "ACCEPTED",
+    "observation": "Both390 light/dark actual screenshots show readable task timing heading, elapsed2h, explicitUTC start, declared not-completed, source and original declaration, snapshot and authority path. No horizontal clipping. This capture is deliberately scrolled inside dialog; Close is above this viewport and remains separately covered by original keyboard/shell checks.",
+    "scope": "Timing-body supplemental visual proof only; does not repeat or replace prior accepted five semantic groups, and does not claim every longer waiting record fits one viewport.",
+    "bounds": [
+      {
+        "theme": "light",
+        "width": 390,
+        "height": 844,
+        "regionTop": 35.125,
+        "heading": {
+          "top": 35.125,
+          "bottom": 56.8125
+        },
+        "start": {
+          "top": 166.15625,
+          "bottom": 184.75
+        },
+        "dialog": {
+          "top": 33.765625,
+          "bottom": 810.234375,
+          "scrollTop": 979
+        },
+        "contained": true,
+        "scope": "Visible timing heading/start/elapsed/source viewport; full waiting text remains available by scrolling and DOM assertions."
+      },
+      {
+        "theme": "dark",
+        "width": 390,
+        "height": 844,
+        "regionTop": 35.125,
+        "heading": {
+          "top": 35.125,
+          "bottom": 56.8125
+        },
+        "start": {
+          "top": 166.15625,
+          "bottom": 184.75
+        },
+        "dialog": {
+          "top": 33.765625,
+          "bottom": 810.234375,
+          "scrollTop": 979
+        },
+        "contained": true,
+        "scope": "Visible timing heading/start/elapsed/source viewport; full waiting text remains available by scrolling and DOM assertions."
+      }
+    ]
+  },
+  "checks": [
+    "390 light/dark real timing-region text viewport, native keyboard opening and contained scrolling"
+  ],
+  "measurement": {
+    "adoption": "PARTIAL_RETAINED_ADOPTION",
+    "last": {
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04": {
+        "state": "complete",
+        "logical_bytes": 2825487,
+        "allocated_bytes": 3342336,
+        "entries": 271,
+        "regular_files": 244,
+        "directories": 28,
+        "symlinks": 0,
+        "vanished_entries": 0,
+        "excluded_directories": 0,
+        "elapsed_seconds": 0.0025814579566940665,
+        "issue": null
+      },
+      "/private/tmp/dperf-f2": {
+        "state": "complete",
+        "logical_bytes": 1472597,
+        "allocated_bytes": 1740800,
+        "entries": 138,
+        "regular_files": 126,
+        "directories": 13,
+        "symlinks": 0,
+        "vanished_entries": 0,
+        "excluded_directories": 0,
+        "elapsed_seconds": 0.0012482500169426203,
+        "issue": null
+      }
+    },
+    "unknown": []
+  },
+  "raw": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/timingvisual-20261007-092540-c4c486/browser-results.json",
+      "bytes": 4117,
+      "sha256": "5a7ccddf5f1212c88c55f10443865d99042857a8a1b057ec8522c5c11c09b87a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/timingvisual-20261007-092540-c4c486/chrome.log",
+      "bytes": 4158,
+      "sha256": "dad1d4b13c2ec67ca8f2bb5d5f9449a1553bd2769b95d3158b8c01395d291364"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/timingvisual-20261007-092540-c4c486/owned-chrome.json",
+      "bytes": 2249,
+      "sha256": "576fd55c1a709ef75b36e3aa63703155d90eb51403f59db207bea50237572d04"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/timingvisual-20261007-092540-c4c486/task-timing-region-dark-390.png",
+      "bytes": 79107,
+      "sha256": "1d2b0826474da97777f5473f300141777fa7974d127b4454a113e47ee42f17b9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/timingvisual-20261007-092540-c4c486/task-timing-region-light-390.png",
+      "bytes": 82940,
+      "sha256": "e2e8240bb6ec7e5c8861100bbb50c5813122caf5de309c7f2beba256c36f118c"
+    },
+    {
+      "path": "/private/tmp/dperf-f2/binding.json",
+      "bytes": 60810,
+      "sha256": "d4373efa8fd98e7ce7f93ae872751bd9e456fca227c069398185cc40c12c1ee1"
+    },
+    {
+      "path": "/private/tmp/dperf-f2/manifest.json",
+      "bytes": 3176,
+      "sha256": "5aa21839e4ec3f80197467f9c9ab29053f6edef027100f0f0e06fd291eefe907"
+    },
+    {
+      "path": "/private/tmp/dperf-f2/supervisor.py",
+      "bytes": 26445,
+      "sha256": "d3778771f83d7bcf9e048e3b705b0ba6bc13c5a7271f466b6a2a03910777e6ca"
+    },
+    {
+      "path": "/private/tmp/dperf-f2/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "path": "/private/tmp/dperf-f2/gate.json",
+      "bytes": 3329,
+      "sha256": "114ff27c31b34fe0d876096a748f1708dba9813524ca508a77e522487fdd86cd"
+    },
+    {
+      "path": "/private/tmp/dperf-f2/child-gate.json",
+      "bytes": 4214,
+      "sha256": "7b9d346c09fc0ca1597329b7812100ceb94e8bdd4fb3b6390e60eaf65020fc33"
+    },
+    {
+      "path": "/private/tmp/dperf-f2/consumed-gate.json",
+      "bytes": 3172,
+      "sha256": "cb0290d42ab5a74850e1418ceeb36662d0501cf12aafe97f28afa4af89d76d38"
+    },
+    {
+      "path": "/private/tmp/dperf-f2/result.json",
+      "bytes": 65336,
+      "sha256": "769364fffd2926fc6fd76c4b09b4465961397b6b9ce0a3a1615faa41048c3a05"
+    },
+    {
+      "path": "/private/tmp/dperf-f2/worker.log",
+      "bytes": 370,
+      "sha256": "dd2c63cb3a0e6987ec11be2d78d7e5a922b0f15512a8e81d6755b537c52f6e15"
+    },
+    {
+      "path": "/private/tmp/dperf-f2-outer/actual-exit.json",
+      "bytes": 526,
+      "sha256": "46c2331995b6767cc74c7ee3cf35eef2044a75ec7262c08b09edf700d6c09e6a"
+    },
+    {
+      "path": "/private/tmp/dperf-f2-outer/start.json",
+      "bytes": 117,
+      "sha256": "d6e39a3cba39da065b98df09f8f8b43499931211634e9d17390d03be389bd5ec"
+    },
+    {
+      "path": "/private/tmp/dperf-f2-outer/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/dperf-f2-outer/stdout.txt",
+      "bytes": 154,
+      "sha256": "24124849f29a69385d426a65a83b15693b9e6953bb3caa7df868410e83bcab94"
+    }
+  ],
+  "fixedSourcePins": [
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "sha256": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "650b42be8009fb515066c92d3dce7fff3bff03c8c60c9c2f48a2f83e6aee46d3"
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "sha256": "46328732c655c65f222bddf5c2e59a947e7e53f7bb24831aa34e23eb9f2b52a4"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "013ec6261c3e19f49da670e93ac17052534350cb18fa329aecca38e7b2710ac6"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.test.mjs",
+      "sha256": "a4cca9b81513c344bf320aa354cb600c7206041ee5ffa7f4b0b721849738b048"
+    },
+    {
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "sha256": "098cb20090bad55f6bc6dad9878cd49652cbfa6df569ed1a475e3100439d5abb"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "sha256": "8da86261cd386a46c494c0218cff7b9b11d222d13a5d414298f7440c9546382a"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "sha256": "56ffc1852f75baf5f9fc67948f81fe3aa6d49adfcc71ed07433a890ecc09c8af"
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.browser.mjs",
+      "sha256": "281d0ff1cb00ddfdee85d7379c22f0e190cc4674f5bcfdf17ee05aad43a48be9"
+    },
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+    },
+    {
+      "path": "apps/execution-dashboard/src/local-access.mjs",
+      "sha256": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932"
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.js",
+      "sha256": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966"
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.css",
+      "sha256": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707"
+    },
+    {
+      "path": "apps/execution-dashboard/public/index.html",
+      "sha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0"
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.test.mjs",
+      "sha256": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248"
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "sha256": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d"
+    }
+  ],
+  "errors": [],
+  "limits": [
+    "Home light supplement remains independently unverified at this observation.",
+    "No real owner status mutation, main integration or deployment performed."
+  ],
+  "cleanCode": "Original consumers retained; minimal visual selector and native close settlement have actual scoped evidence. No blocking code finding."
+}

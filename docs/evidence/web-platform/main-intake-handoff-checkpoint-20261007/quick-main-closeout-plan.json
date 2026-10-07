@@ -1,0 +1,104 @@
+{
+  "at": "2026-10-07T09:20:13.334525+00:00",
+  "decision": "READ_ONLY_MAIN_RECEIPT_VERIFIED_OWNER_CLOSEOUT_QUEUED",
+  "main": "63768046daa048e955670e74c0ce2491f8ba9873",
+  "receipt": {
+    "path": "lead-main-intake.json",
+    "bytes": 3720,
+    "sha256": "3805cae01660f3b80b0af9f285d07afaad65ed8bb2997da5c58a28c2f20b6a63"
+  },
+  "ancestor": "3c6aa59d9ae72fd793450d48e47d33c3000f8041",
+  "sourceRows": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "expected": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+      "actual": {
+        "63768046daa048e955670e74c0ce2491f8ba9873": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+        "dde571be8853698f8943f952ddef2c648d2e1294": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+        "7e9f0582a88e2ede7e10576a420a47970575d2cf": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+        "ownerFile": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb"
+      }
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "expected": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+      "actual": {
+        "63768046daa048e955670e74c0ce2491f8ba9873": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+        "dde571be8853698f8943f952ddef2c648d2e1294": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+        "7e9f0582a88e2ede7e10576a420a47970575d2cf": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+        "ownerFile": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a"
+      }
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "expected": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+      "actual": {
+        "63768046daa048e955670e74c0ce2491f8ba9873": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+        "dde571be8853698f8943f952ddef2c648d2e1294": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+        "7e9f0582a88e2ede7e10576a420a47970575d2cf": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+        "ownerFile": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd"
+      }
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "expected": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb",
+      "actual": {
+        "63768046daa048e955670e74c0ce2491f8ba9873": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb",
+        "dde571be8853698f8943f952ddef2c648d2e1294": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb",
+        "7e9f0582a88e2ede7e10576a420a47970575d2cf": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb",
+        "ownerFile": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb"
+      }
+    }
+  ],
+  "owner": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+    "branch": "codex/web-message-settings-quick-controls",
+    "head": "7e9f0582a88e2ede7e10576a420a47970575d2cf",
+    "dirty": "",
+    "remote": "7e9f0582a88e2ede7e10576a420a47970575d2cf\trefs/heads/codex/web-message-settings-quick-controls",
+    "claim": "839e466f-1a3f-4e92-94e1-ece390c32fbf v1 / 6 historical registration; fresh ledger required before owner mutation"
+  },
+  "leadActualTypecheck": {
+    "exit": 0,
+    "elapsedMs": 6121,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "ownedFinal": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "notReexecuted": true
+  },
+  "archiveLimit": "Lead receipt reports 34 archived files / 538807 bytes; manager verifies original root review hash and four source pins, not a repeated 34-file actual review.",
+  "ownerStatusFindings": [
+    "Current blocker WAITING is outside exact ACTIVE/NONE contract.",
+    "Top Main/next delivery still awaiting component integration; now superseded by fixed 63768046 main intake.",
+    "True App/Send/Queue/Recovery/P01 ownership/live CAS and compact host remain separate open TODO11 successor."
+  ],
+  "queuedOwnerSteps": [
+    "W01 confirms DPERF source stop/safe checkpoint; do not acquire or release its scopes on behalf of owner.",
+    "Explicitly switch assignment to original Quick tree; fresh branch/head/dirty/claim/version and original six scopes. No new take if same active exact owner claim. Any changed ownership/scope follows STOP/amend then fresh take.",
+    "Update only own plan/status/review/evidence: exact main receipt, scoped MSGQUICK05 component integration, NONE if no current real blocker, preserve open real-host successor and prior failed raw. Completion time comes from actual closeout, historical start remains UNKNOWN.",
+    "Run existing own-status parse and bounded metadata proof, normal commit/push, exact version release after source stop/main match, retain release receipt through authorized metadata closeout. No product tests or services."
+  ],
+  "resourceState": "Web no runtime or reservations; DPERF /private/tmp/dperf-f1 source prep awaits root review, Recovery27f selected2 scoped final then only read-only Steer/second-center dependency proposal.",
+  "deployment": "SVC06 b2b/c2c retained artifact compatibility still preparation; personal runtime unchanged.",
+  "newTask": false,
+  "newClaim": false,
+  "projectWrites": false,
+  "runtime": false,
+  "errors": []
+}

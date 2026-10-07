@@ -1,0 +1,108 @@
+{
+  "observedAt": "2026-10-07T09:23:14.229831+00:00",
+  "source": "Controlled existing CLI list; only selected claims persisted, env not read or printed",
+  "claims": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/web-platform",
+        "plans/web-platform",
+        "plans/wpf-mature-01-visual",
+        "plans/wpf-mature-03-attachments",
+        "plans/wpf-mature-05-workspace",
+        "plans/wpf-mature-06-chat"
+      ],
+      "state": "active",
+      "branch": "codex/web-platform-management",
+      "origin": "migration",
+      "taskId": "WPF-001",
+      "worker": "external_web_d01_owner",
+      "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "createdAt": "2026-10-06T02:48:43.295Z",
+      "updatedAt": "2026-10-06T08:56:20.186Z",
+      "observedAt": "2026-10-06T02:48:42.000Z",
+      "needsVerification": true
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/execution-dashboard/README.md",
+        "docs/evidence/wpf-dashboard-local-access",
+        "plans/wpf-dashboard-local-access"
+      ],
+      "state": "active",
+      "branch": "codex/dashboard-local-access",
+      "origin": "new",
+      "taskId": "WPF-DASHBOARD-ACCESS01",
+      "worker": "workspace_panels_owner",
+      "claimId": "57735ff7-d631-4538-9faf-d7ac090837a2",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
+      "createdAt": "2026-10-07T02:52:33.082Z",
+      "updatedAt": "2026-10-07T08:01:16.565Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/execution-dashboard/public/app.js",
+        "apps/execution-dashboard/src/aggregate.mjs",
+        "apps/execution-dashboard/src/read-model.mjs",
+        "apps/execution-dashboard/src/server.mjs",
+        "apps/execution-dashboard/test/local-access.browser.mjs",
+        "apps/execution-dashboard/test/summary-detail.browser.mjs",
+        "apps/execution-dashboard/test/summary-detail.test.mjs",
+        "apps/execution-dashboard/test/task-links.browser.mjs",
+        "apps/execution-dashboard/test/task-timing.browser.mjs",
+        "docs/evidence/wpf-dperf04",
+        "plans/wpf-dperf04-summary-detail"
+      ],
+      "state": "active",
+      "branch": "codex/dashboard-summary-detail",
+      "origin": "new",
+      "taskId": "WPF-DPERF04",
+      "worker": "w01_owner",
+      "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+      "version": 4,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+      "createdAt": "2026-10-06T16:10:21.626Z",
+      "updatedAt": "2026-10-07T08:09:31.783Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/test/message-settings.browser.ts",
+        "apps/web/test/message-settings.fixture.tsx",
+        "apps/web/test/message-settings.test.ts",
+        "docs/evidence/wpf-message-settings-quick-controls",
+        "plans/wpf-message-settings-quick-controls"
+      ],
+      "state": "active",
+      "branch": "codex/web-message-settings-quick-controls",
+      "origin": "new",
+      "taskId": "WPF-MESSAGESETTINGS02",
+      "worker": "w01_owner",
+      "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+      "createdAt": "2026-10-06T22:00:19.358Z",
+      "updatedAt": "2026-10-06T22:00:19.358Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ]
+}

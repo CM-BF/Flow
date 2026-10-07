@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T09:16:41.142402+00:00",
-  "state": "RECOVERY_THIRD_SELECTED_PASS_CLEANED_ROOT_ACCEPTED",
-  "groupWindowOwnership": "Recoverythirdselected2accepted/root265f; allownedPGChrome/envcleanedreturnedMika; Web0PGChrome/noreservation. DPERFnextphaseonlysource. No globalidle inference.",
+  "recordedAt": "2026-10-07T09:29:52.761054+00:00",
+  "state": "DPERF_PHASE_CLOSED_ROOT_ACCEPTED_X01_ACTUAL_RETURNED",
+  "groupWindowOwnership": "Web entireDPERF phase closed20383/unused24617, scopedactual/visualrootaccepted; Mika explicitX01selected1cleanupreturned09:27:37 and0PGChrome/local/pendinglaunch. No next Web runtime/gate/reservation.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,11 +407,11 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T09:16:41.142402+00:00",
-    "kind": "RECOVERY_THIRD_SELECTED_PASS_CLEANED_ROOT_ACCEPTED",
-    "source": "consumers-resource-checkpoint-20261007/current.json",
+    "at": "2026-10-07T09:29:52.761054+00:00",
+    "kind": "DPERF_PHASE_CLOSED_ROOT_ACCEPTED_X01_ACTUAL_RETURNED",
+    "source": "main-intake-handoff-checkpoint-20261007/current.json",
     "singleWebCoordinator": "d01_owner",
-    "summary": "Recoverythirdselected2rootaccepted/20raw19source;charge11793cum126447/rem23553,earlierFAILunchanged. Timingoldphaseclosed40551,actualtimebodyvisualOPEN. No newruntime."
+    "summary": "Fresh owner table corrected; Quick component main637 accepted and metadatacloseout queued; all current actual resources returned, original failures retained."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1607,11 +1607,11 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "consumers-resource-checkpoint-20261007/current.json",
+  "currentWindowEvidence": "main-intake-handoff-checkpoint-20261007/current.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
-  "dperf04CurrentPreparation": "Root1c4cTimingfirstFAIL9153+secondPASS6934accepted; total40551/60k,unused19449closednottransferred. ActualqueuednativecloseregressionPASS; 2PNGnoshowntimebody/visualOPEN. ACCESSNOT_RUN; new45k/15kcleanupsourcepreparationonly.",
+  "dperf04CurrentPreparation": "Newfollowupphase20383used/24617unused CLOSED. ACCESS5+2,Timingvisual1+2,Linksvisual1+1 root accepted onlyscoped; original60s40551/19449 closed. Owner natural seal pending, no run/gate. Partial retained helper only.",
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
   "webReservation": false,
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
@@ -1969,18 +1969,18 @@
     "ownerTreeState": "Owner reported remote equal / clean at final receipt; claim v4 remains active, not released."
   },
   "externalCurrentAdmission": {
-    "state": "SVC06_BUILD_RETURNED_APPROVED_NO_WEB_ACTIVE_HOLDER",
-    "source": "consumers-resource-checkpoint-20261007/current.json",
-    "actualEndedAt": "2026-10-07T09:02:10.132Z",
-    "artifactId": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
-    "actualStartNotReceived": true,
-    "lastMika": "Freshconfirmed0PGChrome/noPGawaitlaunch/noearlierREADY; LAZYexactTMPcleanupandX01localserial,Recoverypriorityaccepted",
+    "state": "X01_ACTUAL_RETURNED_MIKA_EXPLICIT_NO_HOLDER",
+    "source": "main-intake-handoff-checkpoint-20261007/current.json",
+    "actualStart": "2026-10-07T09:27:32.875133Z",
+    "actualEndReported": "2026-10-07T09:27:37Z",
+    "actualGateFloorBytes": 1319108608,
+    "availableBytes": 23439216640,
+    "cleanup": "CONFIRMED/no unknown; ownedgroups/EOF/tar/DB/ports/exactTMP closed",
+    "actualPG": 0,
+    "actualChrome": 0,
+    "pendingLaunch": false,
     "retainedC02OldKeepBytes": 33685504,
-    "retainedLazyKeepBytes": 0,
-    "retainedLazyMeaning": "Latest Mika explicit receipt: exact known TMP dev/inode matched and removed at 09:09:37 / ENOENT. Prior wrapper FAIL/KEEP preserved as history.",
-    "reservation": false,
-    "newExternalHolder": "Latest Mika explicitly 0 PG/Chrome; X01 only source/local, not READY. No later actual holder reported; do not infer perpetual global idle.",
-    "maximumConcurrentLocalBytes": 19398656
+    "historicalGateUnchanged": true
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1994,7 +1994,7 @@
     "Recovery completeDraft source/local continues in original21; DPERF browser remains unrun.",
     "REQ19 SVC09 and CHAT05 body consumer follow existing dependency owners, no extra take or personal action."
   ],
-  "currentIntake": "consumers-resource-checkpoint-20261007/current.json",
+  "currentIntake": "main-intake-handoff-checkpoint-20261007/current.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",

@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T09:17:31.629740+00:00；Timing行为复验已独审；完整草稿第三次选定通过并清理归还，限定独审已接受 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T09:29:52.761054+00:00；Quick组件main已接收，DPERF后继组合与视觉限定独审已闭合、资源全归还 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -20,11 +20,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 看板摘要、任务链接和时间详情行为已有通过证据，时间正文视觉与ACCESS组合仍待验。完整草稿第三次选定旅程已实际通过并归还资源，原两次失败保留，限定独审已接受；真实消息设置接线尚未完成。 |
-| 下一可用交付 | 完整草稿已由原owner封存，接续明确剩余验收依赖；看板剩余ACCESS与视觉检查按新有限段准备。固定backend产物与LAZY公共接口仍需真实App兼容和合法消费接线。 |
+| 当前产出 | 快速消息设置组件已入主线，真实消息入口尚未接线。完整草稿的选定恢复旅程已有通过证据；看板组合、时间正文与窄屏补证已获限定独审，旧失败保留。 |
+| 下一可用交付 | 原owner收口看板本轮证据并完成Quick主线记录与释放；真实App接线与三份保留页面的固定产物兼容继续按原后继准备。恢复功能先明确Steer与第二中心边界。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Timing复验、SVC06离线build与Recovery第三次均已明确清理归还；本组0PG/Chrome、无后继预约。外部新holder只按真实回执，不推全局空闲。 |
+| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：DPERF整个浏览器段及外部X01选定运行均已明确清理归还，本组无PG/Chrome/local或预约；Mika最新也明确无holder。后续启动仍需fresh实际边界。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -177,3 +177,5 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 历史08:57[浏览器与接口接收](../../docs/evidence/web-platform/browser-interface-checkpoint-20261007/current.json)保留看板首红后绿及完整草稿两次失败；[定向document核验](../../docs/evidence/web-platform/browser-interface-checkpoint-20261007/dashboard-owner-document-check.json)只证明当时两份唯一owner源逐字可下钻，不证明全UI/实时claim/性能。新用户并发规则按原plan更新；take仍来自D04账本，不新建手填领取表。
 
 本次[消费者与资源接收](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/current.json)将Timing首轮失败、Recovery第二红/回执身份修正与SVC实际artifact分开；[三条document原件](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/dashboard-owner-document-check.json)只证明当时管理/DPERF/Recovery唯一owner源逐字可读。所有后继仍原scope与有限段，未知不补为空闲或PASS。
+
+本次[主线接收与当前入口纠正](../../docs/evidence/web-platform/main-intake-handoff-checkpoint-20261007/current.json)仅使用唯一owner状态和D04账本指针：旧DPERF v3/7、ACCESS v1/10及native3时期检查摘要已明确归历史，当前原子版本为v4/11与v2/3，不能沿过时准备派工。Quick受控组件main接收不等真实App/CAS完成，也不自动释放原claim。
