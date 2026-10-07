@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 23:53 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 23:59 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -14,7 +14,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-dependency-batch |
 | Branch | codex/goal-dependency-batch |
 | 工作基线 / HEAD | base69a71e3d9888c24c8f7c7a5965487f106c065c17；红例3c0697986dfd9456d8afbf322004b97dbd360270；source e1b02772853d08cf1069bc16a8b47b7ca717f633 |
-| 工作树dirty状态 | 产品/运行源保持STOP；仅本次主线接收metadata，提交push后clean；少量尾额待root单次聚合事实 |
+| 工作树dirty状态 | 产品/运行源保持STOP；本次最终metadata提交push后clean并全部STOP，0待launch；最终head见交接消息 |
 | 工作分支状态 | completed |
 | 检查状态 | PASSED: 原16pure/types0；本次真实PG精确8/8，SQL/EXPLAIN/回滚与项目锁竞争通过 |
 | 已集成main状态 / HEAD | 已集成fe26cc936d3d645cd102035a1885394c1a48f680；中央接收观察2026-10-07T23:47:33.071Z，owner五路径44890B零差核验见main-receipt.json |
@@ -28,7 +28,7 @@
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，源/局部/准备及ACTUAL_RESULT_FIDELITY_REVIEW_APPROVED，2026-10-07T22:50:25Z |
-| Claim | f2442a2f-357e-42d5-bb3d-da1c261684ab v2 ACTIVE；22:17:28.747Z AMEND COMMITTED，exact6（新增dependency-content.pg.test.ts） |
+| Claim | f2442a2f-357e-42d5-bb3d-da1c261684ab v3 ACTIVE；2026-10-07T23:58:52.648Z AMEND COMMITTED，仅保留本task plan/evidence两metadata目录；四已停写产品/test叶已移出 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -43,7 +43,7 @@
 
 ## 架构影响 / Dashboard
 
-新增目标模块内部依赖正文读取Interface，调用者/事务/锁不变；不新增服务/连接/迁移/外部依赖。Lead在实际集成时登记内部读取变化即可。D05 GDEP01登记由Original进行（纯parse三件套/212唯一source已由Root转述）；本段等待Root单次实际聚合核验，当前未声称sourceCurrent通过。唯一status，不写全局registry。
+新增目标模块内部依赖正文读取Interface，调用者/事务/锁不变；不新增服务/连接/迁移/外部依赖。Lead在实际集成时登记内部读取变化即可。D05 GDEP01已登记；Root23:57:33.471080Z实际定向读取21e820ad clean、consistency matched/stale=false，各issues为空；最终归档commit不新增探针。唯一status，不写全局registry。
 
 ## 等待记录
 
@@ -52,7 +52,7 @@
 | GDEP01-W01 | 2026-10-07T22:41:02Z | 2026-10-07T22:45:32.728Z | 资源 | READY候选等待唯一实际PG窗口；实际START解除 | 本status既有READY事件、pg-actual-results.md |
 | GDEP01-W02 | 2026-10-07T22:52:58.088Z | 2026-10-07T23:47:33.071Z | 其他 | 已审交付STOP后等待主线接收；中央intake观察解除 | owner原交付STOP消息、中央gdep01-approved-intake.json |
 
-未记录的旧等待起止保留UNKNOWN；source/local、审查及资源等待不合计为有效工时。
+标准表采用毫秒展示（向下截到3位）；合法原始微秒22:45:32.728788Z、22:52:58.088050Z留在来源与下方历史事件，未改写。未记录的旧等待起止保留UNKNOWN；source/local、审查及资源等待不合计为有效工时。
 
 ## 本段实质事件
 
@@ -111,3 +111,9 @@ main-intake.md列四产品叶/source/base前像与分列checks/review；commands
 Root于2026-10-07T23:55:31.572218Z定向GET GDEP01：HTTP200/7776B，HEAD4730a0c5 clean、branch匹配、consistency matched、stale=false、task.issues=[]、human.complete=true/missing=[]、blocker.none、4TODO completed；当时main107d61927320fb10a8f50d45450da3ffedf7afc8。waitingTable.issues两条时间格式告警原样保留：原六位小数超出declaredInstant允许的1–3位。上表仅按毫秒展示既有时刻；原事件22:45:32.728788Z和22:52:58.088050Z保持在原记录/本段，不反推或改写。
 
 本地修后parser实际包含timing.waitingTable.issues核验；Root另一次定向读取因本修复而允许，产品检查仍0。此前用父ID的404是非目标请求，不代表GDEP01未登记。
+
+## 修后实际聚合、产品scope交回与STOP
+
+Root 2026-10-07T23:57:33.471080Z GET /api/task?task=GDEP01：HTTP200/7565B，head21e820ad7a429f2a9d246273423ab766752cb559，consistency matched、dirty=false/stale=false；task.issues/humanMissing/timingIssues/waitingTableIssues全[]。该观察证明上述固定metadata可聚合，最终归档commit不再probe；前次两告警保留。
+
+2026-10-07T23:58:52.648Z原子amend成功v3，仅移除commands/dependency-content.ts/.test.ts/.pg.test.ts四已STOP叶，保留ownplan/evidence两目录；无release/take空窗。回执main-scope-handoff-receipt.json，后续不得沿旧v2写产品。最终pushclean后本task全部停写、0child/0待launch，本3MiB prospective尾额关闭；所有已存证据保持。

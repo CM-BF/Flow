@@ -112,5 +112,48 @@
       "GDEP01-W02：时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN"
     ],
     "repair": "Display existing instants at supported millisecond precision; original six-digit event records untouched. Await corrected fixed-head read."
-  }
+  },
+  "dashboardAfterFormatRepair": {
+    "observer": "root",
+    "observedAt": "2026-10-07T23:57:33.471080Z",
+    "taskId": "GDEP01",
+    "httpStatus": 200,
+    "responseBytes": 7565,
+    "head": "21e820ad7a429f2a9d246273423ab766752cb559",
+    "dirty": false,
+    "consistency": "matched",
+    "stale": false,
+    "taskIssues": [],
+    "humanMissing": [],
+    "timingIssues": [],
+    "waitingTableIssues": [],
+    "mainObserved": "107d61927320fb10a8f50d45450da3ffedf7afc8",
+    "finalArchiveCommitProbed": false
+  },
+  "claimAfterAmend": {
+    "requestId": "c481afde-224f-4847-b239-0f6d779134f3",
+    "action": "amend",
+    "committedAt": "2026-10-07T23:58:52.648Z",
+    "claim": {
+      "lead": "mika",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/gdep01-dependency-batch",
+        "plans/gdep01-dependency-batch"
+      ],
+      "state": "active",
+      "branch": "codex/goal-dependency-batch",
+      "origin": "new",
+      "taskId": "GDEP01",
+      "worker": "b01_bounded_reads",
+      "claimId": "f2442a2f-357e-42d5-bb3d-da1c261684ab",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-dependency-batch",
+      "createdAt": "2026-10-07T22:04:52.230Z",
+      "updatedAt": "2026-10-07T23:58:52.648Z",
+      "observedAt": null
+    }
+  },
+  "precision": "Waiting table displays original valid ISO microsecond instants truncated downward to milliseconds; original evidence unchanged."
 }

@@ -57,3 +57,5 @@
 ## 2026-10-07T23:53:56.155Z 主线metadata安全点
 
 沿既有find-skills/codebase-design/固定bdacd76 clean-code；核五叶精确接收，区分任务开始、intake观察、owner完成及部署未知。status阻塞精确NONE，等待采用标准表；旧失败/raw/input不改，无工程检查。3MiB含index2296795+metadata65536+Git/receipt262144=2624475B上界，预留一次聚合尾额。
+
+2026-10-07T23:59:33.277Z：最终metadata复核区分合法微秒与parser毫秒展示限制；修后真实目标聚合各issues为空。scope原子缩为两metadata目录，不释放再领取。四产品及全部raw/input保持不变，最终归档不新增probe/check。
