@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:35:58.225Z；原cold失败已独审，3行适配修正获审并固定新source880060；R2构建薄入口与固定参数已检查，等待本次资源准入 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:43:14.068Z；新恢复产物e15d/source880060已构建通过并实际归还，待结果独审及新三角色冷启动/四App兼容 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -170,3 +170,7 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T21:33:25.847Z：Lead独审补查到同一适配P2：真实runService的两处参数仍传resolver对象，原默认5例未覆盖wrapper接线。现source9d7fb0b7213f71a04d1fb220457c1076d799dfe3统一三行patch（默认函数+两处.resolve），当前main正确产品/b692均不改。新增真实runService的3/3注入直接消费者通过147ms419B，21:33:06.871Z完整RETURN/absent双EOF/空scratchremoved；旧5例保留未重跑。见[统一修复证据](../../docs/evidence/svc06/browser-recovery/recovery-resolver-repair-result.json)，本次仍仅源码/0PG，真实cold必须新产物后另验。
 
 2026-10-07T21:35:58.225Z：Lead已批准统一3行repair并固定child source880060a317cd99f3f29b41333f6dd7d7f5ab1488/tree27cf190b00b3244026952ab85b0d922368676715，只有preview变化26B，其余6叶/依赖/SQL不变。新build caller source0c2/input075c已固定，[唯一R2构建准备](../../docs/evidence/svc06/browser-recovery/recovery-build-r2-preparation.json)引用旧方法，不复制源码/监督器。4个options/namespace例232ms500B+准确input1例100ms227B，3组absent双EOF/空tmpremoved，21:35:12.225Z最后RETURN。新的actual namespace仍不存在，完整构建/新cold/4App及个人仍未运行；fresh预算待资源owner当次确认，不用旧窗口启动。原34c冷启动限定保真获native批准，TypeError/secondary42P01/DBprivateKEEP不改。
+
+2026-10-07T21:41:48.409Z：R2恢复artifact ACTUAL START，source880060/d95b固定15绑定+77source/33SQL及继承runtime核同，claimv8、unused namespace与fresh 18693791744 B≥17977442304 B符合。仅一次420+.5+2 offline build/import，0PG/host/provider/个人；见recovery-build-r2-actual-admission.json。
+
+2026-10-07T21:43:14.068Z：R2实际build于21:42:22.040Z RETURN，group85438 absent/双EOF/exit0、33569ms/nullfirstFailure。新artifact e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/source880060，33SQL与内部加载通过，root KEEP供后继；[唯一结果manifest](../../docs/evidence/svc06/browser-recovery/recovery-build-r2-result-manifest.json)。0PG/host/provider/个人；新产物不等于cold/兼容/个人恢复通过。原b692、首次cold TypeError/42P01/KEEP、首local未知8519680B全部保持。
