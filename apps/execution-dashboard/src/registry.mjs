@@ -10,6 +10,8 @@ const assignments = [
   ['WPF-DASHBOARD-ACCESS01', '本机产品入口与连接资料', '工程协作', 'dashboard-local-access', 'wpf-dashboard-local-access'],
   ['OPS-CI01', '远程最小合同验证准备', '工程协作', 'ops-remote-validation', 'ops-ci01-remote-validation'],
   ['CHAT05P01', '工具完整原文保存与读取', '工作线', 'native-activity-body', 'chat05p01-native-activity-body'],
+  ['CHAT05P02', '工具全文公开读取与运行时接入', '工作线', 'native-activity-body-wiring', 'chat05p02-native-activity-body-wiring'],
+  ['S01P08', '原生流式授权检查收敛', '工作线', 'native-stream-ownership', 's01p08-native-stream-ownership'],
   ['WPF-MESSAGESETTINGS02', '聊天快速设置控件', '工作线', 'web-message-settings-quick-controls', 'wpf-message-settings-quick-controls'],
   ['OPS14', '有界进程监督与可靠收尾', '工程协作', 'owned-process-supervision', 'ops14-owned-process-supervision'],
   ['MATURE02C02', 'Codex会话连续性', '工作线', 'codex-conversation-continuity', 'wpf-mature-02-codex-continuity'],
