@@ -11,8 +11,8 @@ import type { RecoveryDatabaseLease, RecoveryWire, RecoverySseTrace, startRecove
 const root = fileURLToPath(new URL("../../../", import.meta.url));
 // This worktree owns only MSG03 output; historical Recovery evidence remains immutable.
 const evidence = join(root, "docs/evidence/wpf-message-settings-app");
-// MSG03-only defensive ceiling, not a runtime grant. No Recovery phase or credit transfers.
-const TOTAL_MS = 90_000, CLEANUP_MS = 30_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
+// Independent membership-fix phase. The old 90s phase is closed; no unused credit transfers.
+const TOTAL_MS = 120_000, CLEANUP_MS = 30_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
 const RUN_RETAIN_RESERVE = 5 * 1024 ** 2; // 1MiB logs + <=2MiB report + two <=512KiB images + bounded owner/budget records.
 const START_FREE = 1024 ** 3 + 128 * 1024 ** 2, STOP_FREE = 1024 ** 3 + 64 * 1024 ** 2;
 const sleep = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
@@ -62,7 +62,7 @@ function selectedGroups(journey: unknown): readonly Group[] {
 }
 type FailureReconciliation = { run: string; budgetSha256: string; reviewFile: string; reviewSha256: string };
 type Gate = { reconciledFailures?: FailureReconciliation[]; allowRun: true; run: string; journey: Journey; sourceCommit: string; sourceHashes: Record<string, string>; expiresAt: string;
-  messageSettingsPhase: { id: "MSG03-BROWSER-20261007"; budgetMs: 90000; spentMs: number; cleanupMs: 30000 };
+  messageSettingsPhase: { id: "MSG03-MEMBERSHIP-FIX-20261007"; budgetMs: 120000; spentMs: number; cleanupMs: 30000 };
   totalMs: number; minimumFreeBytes: number; scratchParent: string; maxScratchBytes: number;
   twoCenterPhase?: { id: "RECOVERY-TWO-CENTER-20261007"; budgetMs: 90000; spentMs: number; cleanupMs: 30000; databases: 2 } };
 type Init = { kind: "start"; journey: Journey; directory: string; scratch: string; databaseUrl: string; secondDatabaseUrl?: string; workDeadline: number };
@@ -136,9 +136,11 @@ async function supervisor() {
   const gate = JSON.parse(await readFile(gatePath, "utf8")) as Gate;
   requireThat(["message-settings-app", "message-settings-material-return"].includes(gate.journey), "MSG03 owner entry cannot replay historical Recovery journeys");
   const phase = gate.messageSettingsPhase;
-  requireThat(phase?.id === "MSG03-BROWSER-20261007" && phase.budgetMs === TOTAL_MS && phase.cleanupMs === CLEANUP_MS
+  requireThat(phase?.id === "MSG03-MEMBERSHIP-FIX-20261007" && phase.budgetMs === TOTAL_MS && phase.cleanupMs === CLEANUP_MS
     && Number.isSafeInteger(phase.spentMs) && phase.spentMs >= 0 && gate.totalMs <= TOTAL_MS - phase.spentMs,
     "Independent MSG03 phase with conservative actual outer/late/parent accounting required");
+  requireThat(digest(await readFile(join(evidence, "browser-phase.json"))) === "bd32b2d5808ece143ea2d33c2c4c5ba86957e35b2ce790414b86c3ced2051310",
+    "Closed original MSG03 phase must remain unchanged; unused credit does not transfer");
   const requiredGroups = selectedGroups(gate.journey);
   const twoCenter = gate.journey === "second-center-cycle", cleanupMs = twoCenter ? 30_000 : CLEANUP_MS;
   const evidenceLimit = twoCenter ? 13 * 1024 ** 2 : EVIDENCE_BYTES;
@@ -162,7 +164,7 @@ async function supervisor() {
   const sourceHashes = Object.fromEntries(await Promise.all(sourcePaths.map(async path => [path, digest(await readFile(join(root, path)))])));
   for (const path of sourcePaths) requireThat(sourceHashes[path] === gate.sourceHashes[path], `Admitted source mismatch: ${path}`);
   const dirty = !!execFileSync("git", ["status", "--porcelain"], { cwd: root, encoding: "utf8", timeout: 2000 }).trim();
-  const runs = join(evidence, "browser-runs"); await mkdir(runs, { recursive: true });
+  const runs = join(evidence, "browser-membership-runs"); await mkdir(runs, { recursive: true });
   const reconciliations = gate.reconciledFailures ?? [];
   requireThat(Array.isArray(reconciliations) && reconciliations.length <= 8, "Invalid failure reconciliation list");
   const remainingReconciliations = new Map<string, FailureReconciliation>();
