@@ -1,0 +1,160 @@
+{
+  "resultCommit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+  "executionCommit": "8d8eb438fd33f5a6bf39273ad7d3ab0c2c53e686",
+  "sourceCommit": "ced4679c9ce3c183044fb853d71f72de7fc214db",
+  "preparedManifestSha256": "92cfda050e040556e7ca4963d54825aa231a0e192a2c714753496b384b9082f1",
+  "prepared277Unchanged": true,
+  "preparedExternal": 28,
+  "preparedLinks": 21,
+  "review": "PENDING",
+  "createdAt": "2026-10-07T09:30:00.150422+00:00",
+  "files": [
+    {
+      "path": "docs/evidence/x01/public-runner-pg-run-r1/admission.json",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "da6463f97f47b59f227a242f39e42560630c4973",
+      "bytes": 3771,
+      "sha256": "41722225360b4e311895129c8a58827c4f36208dea8b489b6e824fc76359099e"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-run-r1/launch.json",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "70ac86ceba850411702e774bddc085b36a759e0d",
+      "bytes": 188,
+      "sha256": "697c9f750029c3e84a3a1b068482f698b0d2af7c317b48d9244c855eebd5e344"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-run-r1/output.log",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "8ad14f9055d69e975ebbd2029aa5757b0c265b97",
+      "bytes": 113,
+      "sha256": "15b7d3ff33ed282afddd4c705130b1ec7ec88bda56a7188ae96ad92d224ba3ca"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-run-r1/owner-close.json",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "5a31ddc6225fa5abe4c22286818e42a72f85a9de",
+      "bytes": 2343,
+      "sha256": "9edcfac2c2c50731d8f4d41b1a22859ed4759f46887b237a2e379f7b23ea188c"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-run-r1/preflight.stdout",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "e71c6fcbef5a4d3b302981744b4262597b87b40f",
+      "bytes": 287,
+      "sha256": "51523b7fcd2a7c78c3614ebff376f1a6014ff2e5c013a93ee93699d92666058c"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-run-r1/reservation.json",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "40598329a6543ca87f7bf78d232e265c222ef7c2",
+      "bytes": 281,
+      "sha256": "b808254aae373c2ff28c8573dc4fea2d768cfcac9b03c82ca54e8de336af4d48"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-run-r1/result.json",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "b6e13ee72750fb01102878de2756f1448be4b6cb",
+      "bytes": 10630,
+      "sha256": "e63f84b41b36a7ac7cf0b68293de277e72b34c7c71907759580ce8a890e92e13"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-run-r1/runtime-create-request.json",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "384f20b13ee1b3f9e37207401f3c59ac4ec7fa69",
+      "bytes": 353,
+      "sha256": "01af7249a6f24535d07775715df819e165bbcba99c17a338063d9e04fa162144"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-run-r1/runtime-created.json",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "eb1868803969fa491bb2e1d49ebe7c25fd4e9a87",
+      "bytes": 402,
+      "sha256": "b7eadbe78bb90e031495ef92b7b0a8a00dc50b5389b9f2f96d733d34f7024531"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-run-r1/runtime-reservation.json",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "046b368b183edf5edee147618a3cf25ed9530031",
+      "bytes": 450,
+      "sha256": "c291e867bb1ae264c30ca7e222c0c6dc511d77a2035b85d3a8cc75523d3dca7c"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-run-r1/runtime-result.json",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "640f212a4640abbf07d23b0ba0d0aef45db1e80f",
+      "bytes": 5502,
+      "sha256": "fe70536c4f7bbd28d02132c24a6392356fc5fe699a2a56b7c0e32be1a8b1b0a7"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-run-r1/tool-output.log",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "84d5ad6526450a789e34b1b412772c3b80ddb95e",
+      "bytes": 701,
+      "sha256": "a31576e6f8de68b5b2ff6047731ea1bff1c13bb52522344376e7ef49ec1acede"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-run-r1/tool.json",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "fbca647b1fc14e05796b31cbd7c5c24ba553b21a",
+      "bytes": 779,
+      "sha256": "1dc77a4c450286dbf9ec7e5df7834616d9f15da17d3e1cb253f03fcc79320135"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-run-r1/vitest.json",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "2dfab7651beccb12a6d2834857c7e1a1f10dbdf4",
+      "bytes": 1096,
+      "sha256": "55f135f83c9527eeac5d295cf72f155a330a46611e3d1d23b9e1d3d101f995d8"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-result-ready.md",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "895226b423fe1feb2248fb3c6f8e0e168eb692f2",
+      "bytes": 2959,
+      "sha256": "be112ecb27da13ff90603bf48b0b542f7d62679235bed9f305647af1a29237b4"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-manifest.json",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "97f6e20ddbc0df4135d4a1ec62af69806826901a",
+      "bytes": 108683,
+      "sha256": "92cfda050e040556e7ca4963d54825aa231a0e192a2c714753496b384b9082f1"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-independent-review.json",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "56780199e67880353f03a20c5693c77b3ced0de4",
+      "bytes": 1584,
+      "sha256": "3edc8819adbb5feb9de92fceb832c6f666e746f5c4ebaa81e461c6a7e7c2e137"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-input.json",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "04afbba9305d9d30d4b6203c1c42d9e62c766493",
+      "bytes": 1415,
+      "sha256": "96e08c4de47688498f05d383ec2d1be5cada635060d207664c2f94d763a553a9"
+    },
+    {
+      "path": "docs/evidence/x01/public-runner-pg-once.py",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "65fa5c7c496f9e5596517ed7e45007f0a58f447e",
+      "bytes": 18013,
+      "sha256": "db1855cdb7424b13eb85e7a0cdbafd9f810d27003226b3e9e041bf84ebf0f687"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/public-runner-pg.test.ts",
+      "commit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+      "blob": "991cf29e59d217242b9e2a52a578f250be7904a4",
+      "bytes": 13985,
+      "sha256": "6e6b7475cafcbfecff80f25b0178e017fabe52c63900a775756d6c76e5f266f2"
+    }
+  ],
+  "summary": {
+    "bindings": 20,
+    "bytes": 173535,
+    "runToolCloseFiles": 14,
+    "runToolCloseBytes": 26896
+  },
+  "scope": "One real public npm/runner case and actual cleanup; full CLI/unknown-side-effect recovery/main integration remain open."
+}
