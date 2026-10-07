@@ -11,9 +11,10 @@ const snapshot = {
   overview: { phase: 'isolated fixture', activeIds: [], otherActiveIds: [], deliveryIds: [], decisionIds: [], blockerIds: [], unknownIds: [], historyIds: [] },
 };
 
-// The caller owns its isolated browser, deadline/resource supervision and final cleanup receipt.
+// The caller transfers only its fresh owned Chrome default context, attached with noDefaults:true.
+// Closing that context closes this owned browser; the caller still supervises its PID and final cleanup.
 // No launcher, real registry, personal endpoint or credential is used by this fixture.
-export async function checkLocalAccessBrowser({ browser, expect, outputDirectory }) {
+export async function checkLocalAccessBrowser({ ownedDefaultContext, expect, outputDirectory }) {
   const report = { state: 'RUNNING', checks: [], fakeCredentialOnly: true, errors: [], cleanup: {} };
   let reads = 0;
   let delayNext = false;
@@ -32,16 +33,17 @@ export async function checkLocalAccessBrowser({ browser, expect, outputDirectory
     },
   };
   const server = createDashboardServer({ tasks: [] }, { localAccess: provider });
-  let context;
+  const context = ownedDefaultContext;
   try {
+    assert.ok(context, 'caller must transfer its fresh owned default context');
     await mkdir(outputDirectory, { recursive: true });
     await new Promise((resolve, reject) => { server.once('error', reject); server.listen(0, '127.0.0.1', resolve); });
     const origin = `http://127.0.0.1:${server.address().port}`;
-    context = await browser.newContext({ viewport: { width: 1000, height: 800 } });
     // Explicit empty snapshot keeps the real dashboard entry while preventing aggregate/Git/ledger reads.
     await context.route(`${origin}/api/snapshot`, route => route.fulfill({ json: snapshot }));
     await context.grantPermissions(['clipboard-read', 'clipboard-write'], { origin });
     const page = await context.newPage();
+    await page.setViewportSize({ width: 1000, height: 800 });
     page.setDefaultTimeout(3000);
     page.on('pageerror', error => report.errors.push(error.message));
     await page.goto(origin, { waitUntil: 'domcontentloaded' });
@@ -112,9 +114,6 @@ export async function checkLocalAccessBrowser({ browser, expect, outputDirectory
     let otherPage;
     let minimizedWindow;
     try {
-      // Playwright enables focus emulation per page; disable it before testing native visibility.
-      await pageSession.send('Emulation.setFocusEmulationEnabled', { enabled: false });
-      visibility.focusEmulationDisabled = true;
       otherPage = await context.newPage(); await otherPage.bringToFront();
       visibility.afterOwnedTabSwitch = await page.evaluate(() => document.visibilityState);
       if (visibility.afterOwnedTabSwitch !== 'hidden') {
@@ -141,10 +140,6 @@ export async function checkLocalAccessBrowser({ browser, expect, outputDirectory
           visibility.windowRestored = true;
         } catch { report.errors.push('visibility check: owned window restoration failed'); }
       }
-      try {
-        await pageSession.send('Emulation.setFocusEmulationEnabled', { enabled: true });
-        visibility.focusEmulationRestored = true;
-      } catch { report.errors.push('visibility check: focus emulation restoration failed'); }
       try { await pageSession.detach(); visibility.sessionDetached = true; }
       catch { report.errors.push('visibility check: page session detach failed'); }
       try { await otherPage?.close(); visibility.otherPageClosed = true; }
