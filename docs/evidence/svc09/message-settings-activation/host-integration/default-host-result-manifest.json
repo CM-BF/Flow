@@ -1,0 +1,196 @@
+{
+  "kind": "SVC09A_DEFAULT_HOST_ONCE_RESULT_MANIFEST",
+  "at": "2026-10-07T19:22:00.569Z",
+  "resultTarget": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+  "sourceTarget": "62373492cf2db5c0fe62731a5138c7d40482be5c",
+  "executionTarget": "7beb04d5fd9d365765efa24e56b9aa2995e76b96",
+  "inheritedPreparation": {
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/default-host-preparation.json",
+    "fixedRef": "42f0d8668ea606f63a089008a0c6bf46f7e3db41",
+    "bytes": 24186,
+    "sha256": "8257f26e39895cbb25d585b74ef66e30cde167e032464f75732117b22792e85f",
+    "meaning": "Single previously approved packet retains 22 effective execution / 19 record / 6 runtime identities; preflight recorded fresh equality without copying source closures."
+  },
+  "bindings": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/DEFAULT-HOST-RESULT.md",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 1393,
+      "sha256": "b12d2b9de898eb3341bb6c01a7620e393588c95d86953bed94c50e49aa63e3f8"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/cleanup-outer.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 1057,
+      "sha256": "bf9e2f64e723d33c13873d799c7e39cbe716c99a172c03120349880d1f854353"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/clone-outer.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 849,
+      "sha256": "c4c826bbc4056f81c32e320a0b899e0e4c0d5a5ff07f953b942aa77d4d3fb95a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/owned-root.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 150,
+      "sha256": "e4329ccec21f2d11c698c49dab8b2f77f7b7872194546adf7ffd266222d3f50a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/cleanup-01-default-registered-stop.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 418,
+      "sha256": "61d65fcbd412895603ea0082b4b7914f904e9a457677487605aa3cb28ffba2cd"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/cleanup-02-default-closure.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 533,
+      "sha256": "0a124218b98d7ba69c7c1c40e662d691ab2be3d429728820df9382d272c0b061"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/cleanup-result.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 449,
+      "sha256": "2fe6f036bb297c4e6c68f24f349b69a8673f070860da80f77eba1b89b99fb83c"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/work-01-database-create-intent.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 637,
+      "sha256": "1f6a07c6598a0cf4b119a063c3af5a86fd13a907bcbb6e0c0695103505deddf4"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/work-02-pg-capacity.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 454,
+      "sha256": "3aec45192afcace876708e81c0083348b7d88e41a517ec4c1ceb0c4ba6a45374"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/work-03-database-created.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 620,
+      "sha256": "6709fc1fc1428a3d545d6a91bcc69a1c5791b3636c88fcaf2e11ace0af607b19"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/work-04-database-marked.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 618,
+      "sha256": "e583911d7091829b9f3cebe46fb07f52d7ccebbd8daf66b5dcc7f09bcf88fa60"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/work-05-setup-pool-closure.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 465,
+      "sha256": "ce40b6c42be4c416f70933c4bc568b0d46059610e36b5020d32b0524ec9e4f1d"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/work-06-synthetic-web-loader.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 907,
+      "sha256": "9b9c9dcb006271cded6aea5cb658919cbff541f057de1ac529b06d3968cd6af1"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/work-07-controller-driver.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 3445,
+      "sha256": "a2a11da8729151d99a2e30c3e800546f9558f0c5b8dafdecf69dbac18f48c542"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/work-08-before-default-start.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 765,
+      "sha256": "417673b76b558d54d26242c915631ae98df60d2ba86d4c881bb57a2a51860c7f"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/work-09-default-start-observation.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 1612,
+      "sha256": "8f81c25ec4ec28db4d4f1faa0eabf3d092e40a98666f39334fb7c33a178b4c88"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/work-10-work-closure.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 371,
+      "sha256": "d6441cac093dbce2d4bba0232d366f90e2226d10cf88315712ece4c414d39546"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/work-outer.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 323,
+      "sha256": "30eebba931b7c1602f62c91418b25c7f64d7145f65cb3d61f864600df93d485a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/records/work-result.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 290,
+      "sha256": "b63d3d13a061eefb231919b4a6b67a80f607033533c5c3101d6926bb90969a8b"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/reservation.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 1170,
+      "sha256": "e727234897bfbd86cd2c0889864e2599a496ab93f8b52a0631e1dcbe24b9883e"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/result.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 750,
+      "sha256": "8ea48c5fd7a23307539dd22974fab7171d66c98da523c8aa25be1560fe60c244"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once/work-outer.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 1021,
+      "sha256": "9ca223a124500df3fab3246ab743fb577c164802038177ee723030c4a8dce4b8"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/default-host-admission.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 2611,
+      "sha256": "13fa428c71c9d0a8687ee28db634bcf9f83600ec3803c663d5a4423caa140b94"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/default-host-launch-return.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 192,
+      "sha256": "05afed8f3445e7f30c0471ce9495c33f8d3af52487acf670a9ea85080df60b0c"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/default-host-outer-once/outer-report.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 1864,
+      "sha256": "be8f35a34517baad28e6b16b7c4c95822a4b1d361adc8cae21951036f30fc9a8"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/default-host-result-analysis.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 4806,
+      "sha256": "f9c41f2db9c145cbdb9e801a40e43ab82813db08c7c0b43da78a8e0673bc5a66"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/default-host-start.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 895,
+      "sha256": "0a20a93308522a618739a920d6a76f1c9ea4bb58eb98619e09b595863c3f49af"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/default-host-window-return.json",
+      "fixedRef": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+      "bytes": 2100,
+      "sha256": "e1437351b289d34bc5247eab5a7756de8cba9e7e0b3d3c58b17628029ed63aa5"
+    }
+  ],
+  "totalBoundBytes": 30765,
+  "scope": "One consumed default attempt only. FAIL / exact registered resources RETURN / DB and private KEEP. No full three-role success, settings/mixed/App/personal or model evidence. Historical R1–R4 unchanged.",
+  "privateRoot": {
+    "directory": "/private/tmp/flow-svc09a-host-no7xu3pz",
+    "identity": {
+      "dev": "16777234",
+      "ino": "124420522"
+    },
+    "retention": "KEEP"
+  },
+  "privateContents": "Only reviewed records JSON is archived by the original caller; config, token, environment and detached diagnostic bodies are not copied.",
+  "review": "PENDING"
+}
