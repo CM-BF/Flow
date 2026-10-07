@@ -4,11 +4,11 @@ import { isAbsolute } from 'node:path';
 import type { HarnessAdapter } from '@flow/contracts';
 import { createFixtureAdapter } from './fixture.js';
 import { configureClaudeHarness } from './native-harness/claude.js';
-import { configureCodexLaunch } from './native-harness/codex/launch.js';
+import { configureCodexLaunch, prepareCodexLaunchRecipe, publishPersistentCodexLaunch } from './native-harness/codex/launch.js';
 import type { CodexTransportFactory } from './native-harness/codex/index.js';
 import { describeNativeHarness } from './native-harness/descriptor.js';
 import type { ConfiguredNativeHarness } from '../../../packages/contracts/src/native-harness.js';
-import type { CodexExecutionProfileConfiguration, ExecutionProfileConfiguration, NativeExecutionProfileConfiguration } from '../../../packages/contracts/src/execution-profiles.js';
+import { codexExecutionProfileConfigurationSchema, type CodexExecutionProfileConfiguration, ExecutionProfileConfiguration, NativeExecutionProfileConfiguration } from '../../../packages/contracts/src/execution-profiles.js';
 
 /** An explicit operator manifest enables Claude; omission preserves fixture-only startup. */
 export async function loadRunnerAdapters(manifestFile?: string): Promise<HarnessAdapter[]> {
@@ -39,6 +39,32 @@ export async function loadCodexRunnerConfiguration(manifestFile: string, createT
   const configured = configureCodexLaunch(await readManifest(manifestFile, 'Codex'), createTransport);
   const harnesses = [describeNativeHarness(createFixtureAdapter(), null), configured];
   return { harnesses, adapters: harnesses.map(item => item.adapter), profile: configured.descriptor.publicProfile, activeSteering: false };
+}
+
+/** Startup for the explicit persistent profile. Return only after its publication ACK.
+ * The caller can pass these guarded adapters to runRunner without publishing twice. */
+export async function loadPublishedCodexRunnerConfiguration(options: Parameters<typeof publishPersistentCodexLaunch>[1] & {
+  codexManifestFile: string; claudeManifestFile?: string;
+}) {
+  if (options.claudeManifestFile) throw new Error('Select only one native manifest.');
+  const { configured, reference } = await publishPersistentCodexLaunch(await readManifest(options.codexManifestFile, 'Codex'), options);
+  const harnesses = [describeNativeHarness(createFixtureAdapter(), null), configured];
+  return { harnesses, adapters: harnesses.map(item => item.adapter), profile: configured.descriptor.publicProfile,
+    activeSteering: false, reference };
+}
+
+/** Production selection is explicit: public profile first, separate operator recipe second.
+ * Only the shared publisher may supply the runner identity for the persistent storage handle. */
+export async function loadCodexProductionRunnerConfiguration(options: {
+  codexManifestFile: string; launchManifestFile: string; baseUrl: string; token: string; signal?: AbortSignal;
+}) {
+  const profile = codexExecutionProfileConfigurationSchema.parse(await readManifest(options.codexManifestFile, 'Codex'));
+  if (profile.sessionPersistence !== 'host-owned') throw new Error('A persistent Codex profile is required.');
+  const recipe = prepareCodexLaunchRecipe(await readManifest(options.launchManifestFile, 'Codex'));
+  const { configured, reference } = await publishPersistentCodexLaunch(profile, { ...options, ...recipe });
+  const harnesses = [describeNativeHarness(createFixtureAdapter(), null), configured];
+  return { harnesses, adapters: harnesses.map(item => item.adapter), profile: configured.descriptor.publicProfile,
+    activeSteering: false, reference };
 }
 
 export async function loadSelectedRunnerConfiguration(options: {

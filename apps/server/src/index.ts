@@ -16,6 +16,7 @@ import { migrateActiveSteering, registerActiveSteeringRoutes } from './active-st
 import { migrateAssistantStreams, registerAssistantStreamRoutes } from './assistant-stream/index.js';
 import { migratePackageFetches, registerPackageFetchRoutes, startPackageFetchWorker, type PackageFetchHost, type PackageFetchWorker } from './plugin-package-fetches/index.js';
 import { migrateNativeActivities, registerNativeActivityRoutes } from './native-activity/index.js';
+import { migrateNativeActivityBodies, registerNativeActivityBodyRoutes, registerNativeActivityBodySupport } from './native-activity-body/index.js';
 import { migrateGoalContext, registerGoalContextRoutes } from './goal-context/index.js';
 import { migrateGoalGraphRuns, registerGoalGraphRunRoutes } from './goal-graph-runs/index.js';
 import { migrateKnowledge, registerKnowledgeRoutes } from './knowledge/index.js';
@@ -106,6 +107,7 @@ export async function createServer(options: ServerOptions) {
     await migrateGoalProgressions(pool);
     await migrateGoalPlanConfirmations(pool);
     await migrateClaudeMessageSettings(pool);
+    await migrateNativeActivityBodies(pool);
     authentication = await createBrowserSessionAuthentication(pool, options);
     const corsOptions = authentication.corsOptions ?? (options.allowedOrigin ? { origin: options.allowedOrigin, methods: ['GET', 'POST', 'OPTIONS'] } : undefined);
     if (corsOptions) await app.register(cors, corsOptions);
@@ -177,6 +179,8 @@ export async function createServer(options: ServerOptions) {
   if (options.pluginInstallHost) registerPluginInstallationRoutes(app, pool, options.pluginInstallHost);
   registerAssistantRoutes(app, pool);
   registerNativeActivityRoutes(app, pool);
+  registerNativeActivityBodyRoutes(app, pool);
+  registerNativeActivityBodySupport(app);
   registerGoalContextRoutes(app, pool);
   registerExecutionProfileRoutes(app, pool);
   registerEngineeringRoutes(app, pool);

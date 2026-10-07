@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-07T08:30:20.206542+00:00",
+  "sourceCommit": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+  "scope": "Six owned runner/server launch literals intake reviewed current main/P02. No client/index or shared exports changed.",
+  "files": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "mainCommit": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+      "previousSha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0",
+      "bytes": 17320,
+      "sha256": "db4e30317baf9a604d5fe89c2c67ff03cb925bbed90cb7cc3debfc055af10648"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "mainCommit": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+      "previousSha256": "20618181046c716deb5987fd4d61a2c766413c3ea058894760ea47c02cfc9071",
+      "bytes": 15083,
+      "sha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "mainCommit": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+      "previousSha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa",
+      "bytes": 6563,
+      "sha256": "13e653329ee203dde84eec4ce7057de27f23f333d9308f14f4cabe4b1cbccd65"
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "mainCommit": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+      "previousSha256": null,
+      "bytes": 10414,
+      "sha256": "907314670720f49b0dcd6b00bd12d595fc7e60d174a3daa979bd4ab1bddab704"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "mainCommit": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+      "previousSha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214",
+      "bytes": 3297,
+      "sha256": "46c06a84f1bde8db92a7df140d1491609877455b84ff6e520d00cc748a46c1fe"
+    },
+    {
+      "path": "apps/runner/src/main-concurrency.test.ts",
+      "mainCommit": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+      "previousSha256": null,
+      "bytes": 11273,
+      "sha256": "ada94473fc4288a1d319d793860c88cad21d37482c399264c72ebc019b75872b"
+    }
+  ]
+}
