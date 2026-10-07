@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07T22:14:50.447Z",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "recorder": "Execution Lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_FIXED_HELD23_E15_RECOVERY_CALLER_PREPARATION",
+  "target": "548490abb9d9d8d970384200a531b90d212358f2",
+  "source": "00dcd1b998e59efcf9a72721fbd75ee20c5be065",
+  "preparation": {
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/final-preparation.json",
+    "bytes": 5952,
+    "sha256": "e97dee78525e3f188794cfcfe853b8e04d9567dc08e1405bc8bcc0fb5940b798"
+  },
+  "verified": {
+    "fixedBindings": 6,
+    "fixedBytes": 84893,
+    "runtimePins": 66,
+    "runtimeBytes": 553273,
+    "duplicatePaths": 0,
+    "hashRealpathMatches": true,
+    "inheritedManifests": 3,
+    "reportBindings": "Web b422 unique intake/review, four791B reports and16checks",
+    "cold": "81fa/355f limited acceptance"
+  },
+  "review": [
+    "Whole policy/caller/run and inherited continuation seams read; old cd27 fullverified loader does not call old configuration reader after rebind.",
+    "New e15 rebind/refresh, current initialization + old process group absence + history checkpoint, sameop23 explicit resume24 and final. Four reports imported without new779 publishing.",
+    "Exclusive durable phase intent, no retry,900s independent originalOPS14 outer and2MiB raw includingprior phase output. Detached personal service unknown remains outside supervisor kill ownership.",
+    "No source modifications or new tests/import/PG/private directory read by reviewer."
+  ],
+  "blocking": [],
+  "permittedFinalBinding": [
+    "Actual resource-owner window/latestNewSpawnAt/completeForwardFloor",
+    "input.migration.budget.freshBytes matching that floor",
+    "ready/admission state from actual selection",
+    "exact resulting input hash in dispatch; immutable pending originals preserved"
+  ],
+  "requiredBeforeRun": [
+    "Same-call current claim and effective source/native/old-and-new artifact inventories/loader paths match",
+    "Exact new namespaces unused, personal six-file identity and lock/CAS observations match",
+    "Fresh capacity/space against coordinator fullfloor and actualexclusive holder",
+    "Sole native_center_owner executes once; START and exactRETURN recorded"
+  ],
+  "notAuthorizedByThisReview": [
+    "No bootstrap/hold/oldintent retirement replay",
+    "No newprovider/task,779publish,automaticrollback or retry",
+    "No change to target or declared operation budget"
+  ]
+}
