@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 02:53:50 UTC；本轮parser/builder局部验证固定，历史接收不变 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 02:58:16 UTC；本次限定独审收口，主线接收待完成 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -11,20 +11,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | 本片base 1b41f58816341f77e69a64d1cb5cfe7650c01b49；正式parser/builder源码 b21890799fe11b8f1937e4b08382c997877f6d53 |
-| 工作树dirty状态 | 源码已固定；本轮仅原始检查与review交付metadata收口，提交后全停写 |
+| 工作树dirty状态 | 仅独审metadata归档；本次提交后全源停写供受控接收 |
 | 工作分支状态 | completed |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 实现目标 | b21890799fe11b8f1937e4b08382c997877f6d53 |
 | 实现范围 | package.json, pnpm-lock.yaml, tools/personal-preview/backend-release/artifact.test.mjs, tools/personal-preview/backend-release/build.mjs, tools/personal-preview/backend-release/clone-store.py, tools/personal-preview/backend-release/runtime-installation.mjs, tools/personal-preview/backend-release/runtime-installation.test.mjs |
 | 检查状态 | PASSED b21890799fe11b8f1937e4b08382c997877f6d53；6新模块+1直接消费者分轮7 distinct；原红保留，完整产物NOT_RUN |
 | 已集成main状态 / HEAD | 纯模块87dc经受控等价提交fcf59接收 main/origin fb9fe5e745ee1617f889a7fea420d445a0b7c05c，6source与固定target及工作树逐字相同；原target并非main祖先，[接收事实](../../docs/evidence/svc06/closure-main-receipt.json)。旧保护6d276接收cbd3保留；个人runtime/Web未操作 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 后台构建已接入固定解析器和按需依赖复制，局部检查通过，正在独立审查。 |
-| 下一可用交付 | 独立审查后准备真实固定后台产物；启动和隔离性仍待验证。 |
+| 当前产出 | 后台构建已接入固定解析器和按需依赖复制，局部检查与独立审查通过。 |
+| 下一可用交付 | 接收已审改动后，准备真实固定后台产物的安装、启动及隔离性验证。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | REVIEW_PENDING b21890799fe11b8f1937e4b08382c997877f6d53；历史87dc/6d276批准保持原范围 |
+| Review | APPROVED_LIMITED_PARSER_BUILDER b21890799fe11b8f1937e4b08382c997877f6d53；native_center_owner独审，43绑定/7源无P1/P2，完整产物未验 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v5，11 literal scopes；[parser范围追加](../../docs/evidence/svc06/parser-amend-receipt.json) |
 | 架构影响 | build-only惰性YAML正式接入，复用原选择/投影/缓存纯规则；单文件fd clone不进入旧递归。公开host接口不变，完整artifact后继仍需集成点验证。 |
 
@@ -73,3 +73,9 @@ Execution Lead 独立只读 APPROVED `87dc292ae2dc8c1357f074ec7bddd41de20108d8`�
 ## 2026-10-07 02:53:50 UTC：正式parser/builder局部可审交付
 
 私有yaml47b成功安装由本轮实际parse消费；selected_copy潜在目录递归已红复现并改fd单文件clone。6新模块与1 empty-cache直接消费者分轮通过，累计1684ms/120s，原红和初次tmp误置repo拒绝完整保留。自有tmp正常清理，完整构建未启动，原≥2.5GiB/保1GiB及后续固定一致Git目标要求保持。[manifest](../../docs/evidence/svc06/parser-builder-manifest.json) / [结果](../../docs/evidence/svc06/parser-builder-checks.md)。
+
+## 2026-10-07 02:58:16 UTC：正式parser/builder限定独审批准
+
+native_center_owner 于 `2026-10-07T02:55:46.413702+00:00`（review原件时间）独立 APPROVED_LIMITED_PARSER_BUILDER，source `b21890799fe11b8f1937e4b08382c997877f6d53`、deliverya1f2，43 fixed/current绑定与11不变直接输入均核。原selected递归疑点关闭，7 distinct/4轮/1684ms与原红/清理事实保持；reviewer0重跑。原始run首次记录时间 `2026-10-07T02:51:08.145877+00:00`，最后更新 `2026-10-07T02:52:16.551813+00:00`，两者为记录落盘时间；未另保存各轮真实startedAt/finishedAt，故为UNKNOWN，不从目录标签或elapsed推算。
+
+[唯一review](../../docs/evidence/svc06/parser-builder-independent-review.json) / [绑定](../../docs/evidence/svc06/parser-builder-review-bindings.json)。本片integration，全源码停写；下一完整artifact仍先固定一致Git target/原资源门槛与共享窗口，不启动build/PG/个人服务。

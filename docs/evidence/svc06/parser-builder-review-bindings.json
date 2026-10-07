@@ -1,0 +1,534 @@
+{
+  "at": "2026-10-07T02:55:12.160730+00:00",
+  "target": "b21890799fe11b8f1937e4b08382c997877f6d53",
+  "delivery": "a1f2c658841b7965a128a8936840b6053456eb06",
+  "manifestSha256": "67b1bb6e4d82e0eb624e6f1334ebc32478aeb8331f1d707dc0857f1fbf0c2cf8",
+  "count": 43,
+  "kinds": {
+    "source": 7,
+    "directInput": 11,
+    "raw": 9,
+    "evidence": 10,
+    "installedParser": 4,
+    "runtimeInput": 2
+  },
+  "bindings": [
+    {
+      "path": "package.json",
+      "kind": "source",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "kind": "source",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+      "kind": "source",
+      "bytes": 4145,
+      "sha256": "4a2016a00525d055e35d6839aba30ced581afeb7dc6f3b26c592bacc77b05de2",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "kind": "source",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/clone-store.py",
+      "kind": "source",
+      "bytes": 6852,
+      "sha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "kind": "source",
+      "bytes": 6619,
+      "sha256": "e3418512936a8c5335644a114c900ab54d5b159f812cb3e2abc7d1a107ab694d",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+      "kind": "source",
+      "bytes": 10065,
+      "sha256": "8910694db7703df55997eec0a68716b17a877705f4c8b0108ecfc23cce1de5ce",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "kind": "directInput",
+      "bytes": 9549,
+      "sha256": "66b132566e6f34e942f5dbd11ffd04241a8608c81b453fba60b9b635c28a9067",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "kind": "directInput",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "kind": "directInput",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "kind": "directInput",
+      "bytes": 3480,
+      "sha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "kind": "directInput",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "kind": "directInput",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "kind": "directInput",
+      "bytes": 2899,
+      "sha256": "3772f23fc1145cc7d5f517c7741d896a9e62b2e2e72e6263db736a5da83789b4",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "kind": "directInput",
+      "bytes": 40,
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "kind": "directInput",
+      "bytes": 9335,
+      "sha256": "c1bae2dfd44dbd18bc06ae0cab150a5a80f1d42176d717fb90e0efb1b1e371cb",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "kind": "directInput",
+      "bytes": 27844,
+      "sha256": "2eedda6ec6700655557c35c78a2ef490d70023f542740ca18f45b574561e33bd",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "kind": "directInput",
+      "bytes": 4881,
+      "sha256": "75471c37d143131da7e1eb9f170c98341a2d39385005b6307c915183cbd1c929",
+      "currentMatches": true,
+      "fixedRef": "b21890799fe11b8f1937e4b08382c997877f6d53",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/empty-cache/stderr.txt",
+      "kind": "raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/empty-cache/stdout.txt",
+      "kind": "raw",
+      "bytes": 1097,
+      "sha256": "d11513a8c24ec24f13279fb80d955877ad05834f2fa721a44e83cef12f16fc65",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/empty-cache-external/stderr.txt",
+      "kind": "raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/empty-cache-external/stdout.txt",
+      "kind": "raw",
+      "bytes": 237,
+      "sha256": "0cbbfd1606d6961b712a3ee0467f3e88c635dcbc2f1cab38cb021a9916eac984",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/module-green/stderr.txt",
+      "kind": "raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/module-green/stdout.txt",
+      "kind": "raw",
+      "bytes": 776,
+      "sha256": "09d7a73541baa4b1ee7148c8b4a78ec8a9c21ebfa6d6a645eb00a9b7f6ba3adf",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/red/stderr.txt",
+      "kind": "raw",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/red/stdout.txt",
+      "kind": "raw",
+      "bytes": 3656,
+      "sha256": "5ef0ab2e8055d2815e7d797e305295056a53d962250cd7ef2e7e5e010d8e18b0",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-local-validation-20261007T0252Z/run.json",
+      "kind": "raw",
+      "bytes": 12019,
+      "sha256": "c1325f66beeca0796b2ed7e65719049a82f4e50c187e2dec0a191adad6972908",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-install-result.json",
+      "kind": "evidence",
+      "bytes": 2434,
+      "sha256": "84eab09d6b4becd2182057e82f3a06022cc8e6291a6c53210bb4ba56691423d4",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-install-result-manifest.json",
+      "kind": "evidence",
+      "bytes": 1127,
+      "sha256": "6733843766ba1d8986faef5c5105e4d91a99f2ae79bccf039ed1b149604b5159",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-install-outer.json",
+      "kind": "evidence",
+      "bytes": 666,
+      "sha256": "db7fe02ada84ed02c890e7d049dcf3dbeb3bd05ef52d63e55ac0d209fd1eb024",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-install-receipt.json",
+      "kind": "evidence",
+      "bytes": 945,
+      "sha256": "6448340e89a912e7f0aefb496b54658a7ee9f0d6f5758349e3fe6c4b9aade60c",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-install-inputs.json",
+      "kind": "evidence",
+      "bytes": 2221,
+      "sha256": "88011300d180356bd16146ccda4a12e28b22f95f844720e359791f4cba2fe871",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-official-metadata.json",
+      "kind": "evidence",
+      "bytes": 3716,
+      "sha256": "ed36bc66e2b2e87aff5274e3cb197d106add7afb1a7d680444dad667f0d3f103",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-amend-receipt.json",
+      "kind": "evidence",
+      "bytes": 1223,
+      "sha256": "a245090a1154362748e2904e88eaa84736583c5b62c00f2f8e79d09554e3bfb7",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-clone-safety-point.json",
+      "kind": "evidence",
+      "bytes": 2431,
+      "sha256": "cec56853b408d2bc69d57ed920ff1f7690a46e8180a7d76f46d0c66cd500745c",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-builder-checks.md",
+      "kind": "evidence",
+      "bytes": 2642,
+      "sha256": "770f0708f106b9f1c3cc1a507ed8bf9371e659173acf843b7088e5cac454edfa",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "docs/evidence/svc06/parser-builder-interface.md",
+      "kind": "evidence",
+      "bytes": 4937,
+      "sha256": "ea2defa44fbf4540b45f940630f898175ecb63a72b6753e0bc362acf46df6129",
+      "currentMatches": true,
+      "fixedRef": "a1f2c658841b7965a128a8936840b6053456eb06",
+      "fixedMatches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/package.json",
+      "kind": "installedParser",
+      "bytes": 3254,
+      "sha256": "20b8b197cbd10dad245d45e463dfe58e4c8c25a47e24bc4256ad9ab58bf35683",
+      "currentMatches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.js",
+      "kind": "installedParser",
+      "bytes": 1769,
+      "sha256": "2d58984e0ae80de4acbd8f009fab332f5ce77d9e1a5f138a3058a0ada6567fb9",
+      "currentMatches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.d.ts",
+      "kind": "installedParser",
+      "bytes": 1394,
+      "sha256": "9f85a1810d42f75e1abb4fc94be585aae1fdac8ae752c76b912d95aef61bf5de",
+      "currentMatches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/pnpm-lock.yaml",
+      "kind": "installedParser",
+      "bytes": 595,
+      "sha256": "9630fc5d64b85cf1165524268eeac20ae665b0d56f4eb55b3aea3809ef71a095",
+      "currentMatches": true
+    },
+    {
+      "path": "/Library/Developer/CommandLineTools/SDKs/MacOSX.sdk/usr/include/sys/clonefile.h",
+      "kind": "runtimeInput",
+      "bytes": 2490,
+      "sha256": "1efe4ef4241c360905ecc40092245334725a9f1b208be8886ce87e2538b89cbd",
+      "currentMatches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "kind": "runtimeInput",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "currentMatches": true
+    }
+  ],
+  "mismatches": [],
+  "directInputsBase": [
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "baseUnchanged": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "baseUnchanged": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "baseUnchanged": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "baseUnchanged": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "baseUnchanged": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "baseUnchanged": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "baseUnchanged": true
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "baseUnchanged": true
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "baseUnchanged": true
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "baseUnchanged": true
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "baseUnchanged": true
+    }
+  ],
+  "runs": [
+    {
+      "phase": "red",
+      "exit": 1,
+      "ms": 369,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "rawBytes": 3656,
+      "rawCountMatches": true,
+      "tmpRemoved": true,
+      "tmpRemaining": [],
+      "changedFromFinal": [
+        "tools/personal-preview/backend-release/clone-store.py"
+      ],
+      "peak": {
+        "logicalBytes": 6062,
+        "allocatedBytes": 49152,
+        "minimumFreeBytes": 26582261760,
+        "samples": 16,
+        "vanishedChildren": 0
+      }
+    },
+    {
+      "phase": "module-green",
+      "exit": 0,
+      "ms": 721,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "rawBytes": 776,
+      "rawCountMatches": true,
+      "tmpRemoved": true,
+      "tmpRemaining": [],
+      "changedFromFinal": [],
+      "peak": {
+        "logicalBytes": 7460,
+        "allocatedBytes": 57344,
+        "minimumFreeBytes": 26579140608,
+        "samples": 29,
+        "vanishedChildren": 0
+      }
+    },
+    {
+      "phase": "empty-cache",
+      "exit": 1,
+      "ms": 89,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "rawBytes": 1097,
+      "rawCountMatches": true,
+      "tmpRemoved": true,
+      "tmpRemaining": [],
+      "changedFromFinal": [],
+      "peak": {
+        "logicalBytes": 224,
+        "allocatedBytes": 0,
+        "minimumFreeBytes": 26579386368,
+        "samples": 5,
+        "vanishedChildren": 0
+      }
+    },
+    {
+      "phase": "empty-cache-external",
+      "exit": 0,
+      "ms": 505,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "rawBytes": 237,
+      "rawCountMatches": true,
+      "tmpRemoved": true,
+      "tmpRemaining": [],
+      "changedFromFinal": [],
+      "peak": {
+        "logicalBytes": 12195310,
+        "allocatedBytes": 13832192,
+        "minimumFreeBytes": 26564063232,
+        "samples": 16,
+        "vanishedChildren": 1
+      }
+    }
+  ],
+  "head": "a1f2c658841b7965a128a8936840b6053456eb06",
+  "dirty": [],
+  "reviewerExecutions": 0
+}
