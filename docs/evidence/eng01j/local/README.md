@@ -17,3 +17,9 @@ round-02 原始输出显示正常允许文件/越界文件/自有 Unix 委托均
 round-02/03 的 C peer 是受控小程序，无 SDK query。类型检查为本片四 TS 文件及直接 import 闭包的 focused noEmit；不是 root types。installed-entries 仅入口/包身份，未对整个已安装依赖树逐字扫描。
 
 原 canary 编译失败和类型红保留；所有时间/字节分轮记录，不把四例与 syscall 测量凑成完整工程场景。尚无真实模型写改、provider 网络、全 IPC 或生产 grant/完整撤销结论。
+
+## R1 测试入口修复
+
+[revision-run.json](revision-run.json)保新增06–08的真实记录：正常Vitest入口1pass/3skip（不编译/启动canary）；显式Darwin canary入口4/4，host确实持有并写P、R06 child同FD EBADF；focused types0。新增2788ms/raw3195B；累计6357ms/raw8321B。两生产模块与C未改，不重复syscall。四行为例与旧轮重叠，仍4different。三个新组absent/双EOF/原scratch正常删除。
+
+局部Vitest固定4.0.18，单thread池保持测试host的真实FD；产品测试仅标准import Vitest，普通根配置能发现/跳过依赖专用资源的组。证据配置只缩小选择并把cache放私有目录，无依赖安装。functions显示层只转发了执行output，新增三轮数字outer exit未另抄存；内部监督exit0/absence/EOF/cleanup均原始持久，不补造外层工具回执。

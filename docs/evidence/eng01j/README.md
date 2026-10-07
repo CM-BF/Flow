@@ -10,3 +10,5 @@
 - [技能/作者质量复核](quality.json)、[唯一status](../../../plans/eng01j-native-write-authority/status.md)。
 
 本片不是生产 NativeWriteAuthority grant，也没有把 `writeAccess: unknown` 当 revoked。实际二进制/模型/no-fallback、provider网络、任意IPC、目标写入大小强制与完整writer撤销仍开放。仅对实际覆盖操作给OS事实，固定策略不宣称全平台隔离。
+
+R1原[REQUEST_CHANGES](r1-independent-review.json)保留。测试入口修复固定 `471b1d8b7b19d53e7c7e87efc525e9c193c5242e`：正常1pass/3skip、显式canary4/4、types0；[增量绑定](revision-manifest.json)取代旧manifest中实际变更项，旧manifest与round01–05未修改。[helper只读输入](native-helper-compatibility.md)不扩本片grant。

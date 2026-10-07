@@ -17,8 +17,10 @@ Darwin profile 允许固定可执行文件、必要系统动态加载只读、wo
 
 模型身份/no-fallback、实际 Codex binary 的可运行性和 provider 网络尚未验证。当前网络全部拒绝，所以不能直接作为在线 Codex 生产配置。本片提供可运行的实际 OS 机制与真实 transport seam；后继必须将受支持操作和模型来源证据闭合后才实现 G 的 grant/完整停止。无产品 profile 注册，也未消费真实 provider。ENG 完整模型写改与独立接受仍开放。
 
-扩展一个合格生产 host 时，应复用此实际启动层与 G/I 编排，补明确受限 provider 网络/实际二进制和完整 writer 集合证据；不能再加一个只注入 qualified JSON 的包装层。改变 policy 或实际 binary 必须重新覆盖其受影响操作。没有第二 FSM、DB 清理器或 transport。
+后继首先核 stock binary 的实际 helper 兼容性，复用 R06 生命周期与 G/I 编排；本 policy 不是生产工具链必然可复用的既定方案。固定0.154源码的受限文件系统可能派生同binary的FS helper；全禁fork/其它exec与该条件路径有冲突。尚无本机已选中写工具的证据，不将源码推断当本机失败。保持上游sandbox，不能以关闭sandbox/network-all解冲突；完整writer停止须有受信终止域或准确全部handle证据，不靠PID轮询。见[只读兼容输入](native-helper-compatibility.md)。不建设第二executor或exec-server分叉作为本片内容。
 
 本轮预算累计 30s / raw+私有资源 2MiB；复用固定 OPS14 newChildSession。实际五轮累计 3569ms、stdout/stderr 5126B；最大结束时私有目录测量 139373B，不冒连续峰值或硬磁盘 quota。每轮先持久结果再按 exact dev/ino + 最终组 absent + 双 EOF 清理，仅自有 scratch。历史 pre-reap EPERM observations 保留，最终 absent 才是当前观察；不把该组事实等同所有写入者撤销。监督器进程期限不等于后续 fsync 的硬实时期限。
 
 技能应用沿本地 find-skills / codebase-design / clean-code / brainstorming；路径 /Users/citrine/.agents/skills/<name>/SKILL.md。本任务已获设计授权，小 Interface、状态唯一所有者、直接真实消费者、错误与原失败保留。没有重复安装技能或引入依赖框架。
+
+R1发现器修复：两专测改用仓库 Vitest。原三个系统相关例只在Darwin+显式FLOW_ENG01J_DARWIN_CANARY=1+完整scratch/canary/FD前提下启用；缺前提正常收集为3skip，纯路径例仍执行。修后常规1pass/3skip、受控4/4、focused types0；原4个不同例不重复计为新增8个。累计8轮监督6357ms/raw8321B，旧五轮原件不改。

@@ -1,11 +1,11 @@
 # ENG01J 独立review
 
-状态：NOT_STARTED；作者已固定交付，待独立审查
+状态：CHANGES_REQUESTED；R1原finding已按原scope修复，等待唯一增量复审
 
-Review target commit: 324d62267d31273683b4720501a3fbde137225ce
+Review target commit: 471b1d8b7b19d53e7c7e87efc525e9c193c5242e
 
-Base: ee98e65c147cf2ef28ccf0f519952f60d56e9d4b。Scope是status所列五产品；[Interface](../../docs/evidence/eng01j/interface.md)、[manifest](../../docs/evidence/eng01j/manifest.json)和[原始记录](../../docs/evidence/eng01j/local/README.md)给固定输入与实际结果。
+R1 target324d6226 / delivery593ebb8b原[报告](../../docs/evidence/eng01j/r1-independent-review.json)保留；唯一P2为node:test/缺环境顶层断言不兼容根Vitest。
 
-只读核五源/固定R06依赖与原始syscall结果，特别核策略继承FD绕过未被掩盖、实际R06关闭FD、同一launch handle、unknown不授grant。四局部不同检查与focused类型0成立范围由独立review确认，编译/类型原红不删。不得将合成C peer当实际native模型。
+作者修复只改两专测标准Vitest注册和明确Darwin资源gate；正常缺前提3skip+纯1pass，显式资源4/4/真实FD保留，focused types0；[原始新增轮次](../../docs/evidence/eng01j/local/revision-run.json)。生产模块/C与原syscall结果不变。请仅核2filedelta/配置与原raw/新bindings，0重跑。
 
-独立步骤：核actual HEAD/dirty/manifest→阅读源码/直接依赖→核原raw/退出/清理→回明确finding或限定approval；不重复运行已完成检查，不改作者树。当前没有独立结论。
+[Interface](../../docs/evidence/eng01j/interface.md)已明确stock helper条件冲突与后继最短事实，生产grant/模型/网络/全writer停止仍不在批准范围。当前没有修复后的独立批准。

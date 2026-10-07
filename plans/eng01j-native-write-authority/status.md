@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T05:23:45.538Z |
+| 最近更新 | 2026-10-07T05:32:19.996Z |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -10,13 +10,13 @@
 | Owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority |
 | Branch | codex/engineering-native-authority |
-| 工作基线 / HEAD | ee98e65c147cf2ef28ccf0f519952f60d56e9d4b / 产品 324d62267d31273683b4720501a3fbde137225ce，本次仅证据封包 |
+| 工作基线 / HEAD | ee98e65c147cf2ef28ccf0f519952f60d56e9d4b / 产品 471b1d8b7b19d53e7c7e87efc525e9c193c5242e，R1仅两专测修复，生产三源保持原固定 |
 | 工作树dirty状态 | 本提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 实现目标 | 324d62267d31273683b4720501a3fbde137225ce |
+| 实现目标 | 471b1d8b7b19d53e7c7e87efc525e9c193c5242e |
 | 实现范围 | apps/runner/src/engineering/native-authority.ts, apps/runner/src/engineering/native-authority.test.ts, apps/runner/src/engineering/native-authority-darwin.ts, apps/runner/src/engineering/native-authority-darwin.test.ts, apps/runner/src/engineering/fixtures/native-authority-canary.c |
-| 检查状态 | PASSED 324d62267d31273683b4720501a3fbde137225ce；4个不同局部检查与focused types0分轮；syscall有明确继承FD缺口；[原始记录](../../docs/evidence/eng01j/local/README.md) |
+| 检查状态 | PASSED 471b1d8b7b19d53e7c7e87efc525e9c193c5242e；4个不同局部检查分轮；R1正常1pass/3skip、显式4/4、focused types0；syscall继承FD缺口保留；[原始记录](../../docs/evidence/eng01j/local/README.md) |
 | 已集成main状态 / HEAD | 未集成 |
 | 任务开工时间 | 2026-10-07T05:07:35.705Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -24,10 +24,10 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 已实现受限写入启动层，验证了现有传输关闭额外文件描述符，等待独立审查 |
-| 下一可用交付 | 交付实际宿主限制及验证结果；真实模型写改与完整权限撤销另行验证 |
+| 下一可用交付 | 交付修复后的宿主验证片段；下一步先核真实文件工具的辅助进程兼容性 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，R1 REQUEST_CHANGES；修复后待独立复审 |
 | Claim | b575e07c-483b-4a4e-824e-6dc54e6469e4 v1 active，七literal |
 | 架构影响 | 新Darwin策略/启动层直接复用R06；G/I与C02不变，生产grant未注册。架构基线待本target独审/接收后由Execution Lead更新，分支不当main能力 |
 
@@ -50,3 +50,5 @@
 | --- | --- | --- | --- | --- | --- |
 | ENG01J-W01 | UNKNOWN | 2026-10-07T05:12:35.137Z | 资源 | 首syscall后让出本队local给CHAT05；实际归还后执行R06与类型，非全部墙钟均等待 | assignment实际清理回执及Lead同刻通知 |
 | ENG01J-W02 | 2026-10-07T05:23:45.538Z | OPEN | 审查 | 本固定源/证据等待唯一独立审查 | 本次作者封包记录；不新增运行 |
+
+R1修复封包 2026-10-07T05:32:19.996Z：[增量检查](../../docs/evidence/eng01j/local/revision-run.json)。未重复syscall/旧全集，原失败不变；stock helper与全禁派生存在条件源码冲突，下一实际兼容事实未执行。
