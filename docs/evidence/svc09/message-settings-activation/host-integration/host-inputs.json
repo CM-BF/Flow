@@ -120,12 +120,16 @@
     "PGBytes": 134217728,
     "PGConnectionsPeak": 26,
     "PGManagementMargin": 16,
-    "residentProcesses": 10,
+    "residentProcesses": 11,
     "totalWithTransientProcesses": 16,
     "explicitHTTPRequests": 96,
     "mixedTasks": 2,
     "mixedAttempts": 2,
-    "nativeQueries": 0
+    "nativeQueries": 0,
+    "outerOperatorWorkSeconds": 215,
+    "outerTermSeconds": 0.5,
+    "outerReapSeconds": 2,
+    "totalSupervisedEnvelopeSeconds": 217.5
   },
   "readiness": "SOURCE_PREPARATION_NOT_ACTUAL_AUTHORIZATION",
   "admission": "Before execution require unique assigned PG/host window, latest full resource sum >= base, fresh source/claim/namespace/runtime/root identities, PG capacity >=26+16; no personal endpoint. No actual run is authorized by this JSON.",

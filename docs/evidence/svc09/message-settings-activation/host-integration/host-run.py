@@ -46,6 +46,24 @@ def report_value(report):
 def terminated(report):
     return report.owned_state == 'absent' and all(report.eof.values())
 
+def work_and_cleanup(child, node, namespace, directory, result, write=save):
+    work = child([*node, str(HERE / 'host-entry.mjs'), '--work-once', str(directory / 'input.json')], 180, 32, 131072)
+    result['work'] = {'exit': work.exit_code, 'ownedState': work.owned_state, 'eof': work.eof, 'firstFailure': work.first_failure}
+    result['persistenceFailures'] = []
+    try:
+        write(namespace / 'work-outer.json', report_value(work))
+        write(directory / 'records/work-outer.json', {key: report_value(work)[key]
+             for key in ('pid', 'ownership', 'exit_code', 'owned_state', 'eof', 'first_failure')})
+    except Exception as error:
+        result['persistenceFailures'].append({'phase': 'work-record', 'type': type(error).__name__})
+    # Cleanup gets only this exact installation and original work disposition, including unknown.
+    # A failed work record must not skip service stop; missing disposition refuses DROP.
+    cleanup = child([*node, str(HERE / 'host-cleanup.mjs'), '--cleanup-once', str(directory / 'input.json')], 30, 2, 131072)
+    write(namespace / 'cleanup-outer.json', report_value(cleanup))
+    result['cleanup'] = {'exit': cleanup.exit_code, 'ownedState': cleanup.owned_state, 'eof': cleanup.eof, 'firstFailure': cleanup.first_failure}
+    result['complete'] = not result['persistenceFailures'] and work.exit_code == 0 and not work.first_failure and terminated(work) and cleanup.exit_code == 0 and not cleanup.first_failure and terminated(cleanup)
+    return work, cleanup
+
 def main(argv):
     assert argv == ['--execute-host-once'], 'EXACT_ARGUMENT_REQUIRED'
     deadline = time.monotonic() + 215
@@ -94,21 +112,7 @@ def main(argv):
         assert not loader.is_absolute() and '..' not in loader.parts
         node = [fixed['node']['path'], '--import', str(root / loader)]
         env['FLOW_SVC09A_ADMIN_URL'] = os.environ['FLOW_SVC09A_ADMIN_URL']
-        work = child([*node, str(HERE / 'host-entry.mjs'), '--work-once', str(directory / 'input.json')], 180, 32, 131072)
-        result['work'] = {'exit': work.exit_code, 'ownedState': work.owned_state, 'eof': work.eof}
-        result['persistenceFailures'] = []
-        try:
-            save(namespace / 'work-outer.json', report_value(work))
-            save(directory / 'records/work-outer.json', {key: report_value(work)[key]
-                 for key in ('pid', 'ownership', 'exit_code', 'owned_state', 'eof', 'first_failure')})
-        except Exception as error:
-            result['persistenceFailures'].append({'phase': 'work-record', 'type': type(error).__name__})
-        # Cleanup gets only this exact installation and original work disposition, including unknown.
-        # A failed work record must not skip service stop; missing disposition refuses DROP.
-        cleanup = child([*node, str(HERE / 'host-cleanup.mjs'), '--cleanup-once', str(directory / 'input.json')], 30, 2, 131072)
-        save(namespace / 'cleanup-outer.json', report_value(cleanup))
-        result['cleanup'] = {'exit': cleanup.exit_code, 'ownedState': cleanup.owned_state, 'eof': cleanup.eof}
-        result['complete'] = not result['persistenceFailures'] and work.exit_code == 0 and not work.first_failure and terminated(work) and cleanup.exit_code == 0 and not cleanup.first_failure and terminated(cleanup)
+        work, cleanup = work_and_cleanup(child, node, namespace, directory, result)
         if terminated(work) and terminated(cleanup):
             # Archive only checkpoint material; never config, token, environment or diagnostic bodies.
             names = sorted((directory / 'records').iterdir()); assert len(names) <= 160

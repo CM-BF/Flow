@@ -33,6 +33,11 @@ export function ownedRecords(records, state, directory) {
   assert.ok(found.size <= 8, 'SERVICE_GENERATION_LIMIT'); return [...found.values()];
 }
 
+export async function readWorkDisposition(path, failures) {
+  try { return await privateJson(path, 512 * 1024); }
+  catch (error) { failures.push(failure(error, 'work-outer-read')); return { owned_state: 'unknown' }; }
+}
+
 async function close(pool, result, phase) {
   try { await pool.end(); } catch (error) { result.failures.push(failure(error, phase)); }
 }
@@ -54,9 +59,7 @@ export async function cleanup(input) {
       pid: record.pid, nonce: record.nonce, state: await stopOwnedProcess(record, 2500) })))) result.processes.push(fact);
   }
   await checkpoint('registered-processes-stopped', result);
-  let outer;
-  try { outer = await privateJson(join(input.records, 'work-outer.json'), 512 * 1024); }
-  catch (error) { result.failures.push(failure(error, 'work-outer-read')); outer = { owned_state: 'unknown' }; }
+  const outer = await readWorkDisposition(join(input.records, 'work-outer.json'), result.failures);
   let work;
   try { work = await privateJson(join(input.records, 'work-result.json')); }
   catch (error) { result.failures.push(failure(error, 'work-result-read')); work = {}; }
