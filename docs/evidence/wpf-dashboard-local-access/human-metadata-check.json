@@ -1,0 +1,129 @@
+{
+  "at": "2026-10-07T04:08:06.774728+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/private/tmp/access-human-metadata-pq012vy2/check.mjs",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access/plans/wpf-dashboard-local-access/status.md"
+  ],
+  "actualExit": 0,
+  "elapsedMs": 49.29591598920524,
+  "main": "451bf2ed1c0c3d7688073c8d060629f064044dc2",
+  "sourcePins": [
+    {
+      "gitSource": "451bf2ed1c0c3d7688073c8d060629f064044dc2:apps/execution-dashboard/src/status.mjs",
+      "bytes": 8548,
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+    },
+    {
+      "gitSource": "451bf2ed1c0c3d7688073c8d060629f064044dc2:apps/execution-dashboard/src/human.mjs",
+      "bytes": 4459,
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074"
+    },
+    {
+      "gitSource": "451bf2ed1c0c3d7688073c8d060629f064044dc2:apps/execution-dashboard/src/task-links.mjs",
+      "bytes": 5903,
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4"
+    },
+    {
+      "gitSource": "451bf2ed1c0c3d7688073c8d060629f064044dc2:apps/execution-dashboard/src/proof.mjs",
+      "bytes": 6883,
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8"
+    },
+    {
+      "gitSource": "451bf2ed1c0c3d7688073c8d060629f064044dc2:apps/execution-dashboard/src/git-snapshot.mjs",
+      "bytes": 2396,
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a"
+    }
+  ],
+  "driverSha256": "2c451ca9cb326dbc99376ec804e2b6dea27a40cecd385a4ab5a4158556ca2252",
+  "driverSource": "import {readFileSync} from 'node:fs';\nimport assert from 'node:assert/strict';\nimport {parseStatus} from './status.mjs';\nimport {parseHuman} from './human.mjs';\nconst file=process.argv[2];const text=readFileSync(file,'utf8');\nconst parsed=parseStatus(text,'WPF-DASHBOARD-ACCESS01');\nconst fields=Object.fromEntries(text.split('\\n').filter(line=>line.startsWith('|')).map(line=>line.split('|').slice(1,-1).map(x=>x.trim())).filter(row=>row.length===2).map(([key,value])=>[key.replace(/\\s+/g,'').toLowerCase(),value]));\nconst direct=parseHuman(pattern=>Object.entries(fields).find(([key])=>pattern.test(key))?.[1]??'');\nassert.deepEqual(parsed.errors,[]);assert.equal(parsed.human.complete,true);assert.equal(parsed.human.blocker.state,'none');assert.equal(direct.complete,true);assert.deepEqual(direct,parsed.human);assert.equal(parsed.implementation.target,'53723697a796a1346164c4cddc82ab99baf168ea');\nconsole.log(JSON.stringify({state:'PASSED_METADATA_ONLY',taskId:parsed.taskId,errors:parsed.errors,human:parsed.human,directParseHuman:direct,implementation:parsed.implementation,timing:parsed.timing,productTest:false}));\n",
+  "statusSha256": "b30c84502150f1c8b7cebef71a2076194914d8d58f7ad6657e35a3eb4d14f2dc",
+  "stdout": "{\"state\":\"PASSED_METADATA_ONLY\",\"taskId\":\"WPF-DASHBOARD-ACCESS01\",\"errors\":[],\"human\":{\"delivery\":{\"state\":\"integration\",\"source\":\"explicit\"},\"phase\":\"M2\",\"priority\":1,\"output\":\"本机Flow入口的原获审实现已进入主线；README修正待接收\",\"next\":\"接收README单文件修正；由原发布者完成启用与真实安装验证\",\"blocker\":{\"state\":\"none\",\"text\":\"\"},\"decision\":{\"state\":\"none\",\"text\":\"\"},\"missing\":[],\"complete\":true},\"directParseHuman\":{\"delivery\":{\"state\":\"integration\",\"source\":\"explicit\"},\"phase\":\"M2\",\"priority\":1,\"output\":\"本机Flow入口的原获审实现已进入主线；README修正待接收\",\"next\":\"接收README单文件修正；由原发布者完成启用与真实安装验证\",\"blocker\":{\"state\":\"none\",\"text\":\"\"},\"decision\":{\"state\":\"none\",\"text\":\"\"},\"missing\":[],\"complete\":true},\"implementation\":{\"target\":\"53723697a796a1346164c4cddc82ab99baf168ea\",\"scopes\":[\"apps/execution-dashboard/src/server.mjs\",\"apps/execution-dashboard/src/local-access.mjs\",\"apps/execution-dashboard/public/index.html\",\"apps/execution-dashboard/public/local-access.js\",\"apps/execution-dashboard/public/local-access.css\",\"apps/execution-dashboard/test/local-access.test.mjs\",\"apps/execution-dashboard/test/local-access.browser.mjs\",\"apps/execution-dashboard/README.md\",\"docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff\",\"docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr\",\"docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout\",\"docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff\"],\"errors\":[]},\"timing\":{\"started\":{\"state\":\"known\",\"at\":\"2026-10-07T02:53:01.000Z\",\"record\":\"2026-10-07T02:53:01Z\"},\"completed\":{\"state\":\"not_completed\",\"at\":null,\"record\":\"NOT_COMPLETED\"},\"source\":{\"state\":\"declared\",\"record\":\"开工：owner实际开始此已派实现段时 clock.curr_time 返回UTC；take时间单独保留，不冒开工。完成：未完成\"},\"issues\":[],\"waiting\":\"| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\\n| ACCESS-W01 | 2026-10-07T03:02:30Z | UNKNOWN（已结束） | 资源 | manager实际归还后已运行；授权消息无精确UTC，不推算等待时长 | 03:05:42Z实际direct已结束且清理，此为结束上界 |\"},\"productTest\":false}\n",
+  "stderr": "",
+  "scope": "One parseStatus/parseHuman metadata check; no service/test/PG/browser/network call",
+  "sourceTarget": "53723697a796a1346164c4cddc82ab99baf168ea",
+  "result": {
+    "state": "PASSED_METADATA_ONLY",
+    "taskId": "WPF-DASHBOARD-ACCESS01",
+    "errors": [],
+    "human": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "本机Flow入口的原获审实现已进入主线；README修正待接收",
+      "next": "接收README单文件修正；由原发布者完成启用与真实安装验证",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "directParseHuman": {
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "本机Flow入口的原获审实现已进入主线；README修正待接收",
+      "next": "接收README单文件修正；由原发布者完成启用与真实安装验证",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "53723697a796a1346164c4cddc82ab99baf168ea",
+      "scopes": [
+        "apps/execution-dashboard/src/server.mjs",
+        "apps/execution-dashboard/src/local-access.mjs",
+        "apps/execution-dashboard/public/index.html",
+        "apps/execution-dashboard/public/local-access.js",
+        "apps/execution-dashboard/public/local-access.css",
+        "apps/execution-dashboard/test/local-access.test.mjs",
+        "apps/execution-dashboard/test/local-access.browser.mjs",
+        "apps/execution-dashboard/README.md",
+        "docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff",
+        "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr",
+        "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout",
+        "docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff"
+      ],
+      "errors": []
+    },
+    "timing": {
+      "started": {
+        "state": "known",
+        "at": "2026-10-07T02:53:01.000Z",
+        "record": "2026-10-07T02:53:01Z"
+      },
+      "completed": {
+        "state": "not_completed",
+        "at": null,
+        "record": "NOT_COMPLETED"
+      },
+      "source": {
+        "state": "declared",
+        "record": "开工：owner实际开始此已派实现段时 clock.curr_time 返回UTC；take时间单独保留，不冒开工。完成：未完成"
+      },
+      "issues": [],
+      "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| ACCESS-W01 | 2026-10-07T03:02:30Z | UNKNOWN（已结束） | 资源 | manager实际归还后已运行；授权消息无精确UTC，不推算等待时长 | 03:05:42Z实际direct已结束且清理，此为结束上界 |"
+    },
+    "productTest": false
+  },
+  "exact12Unchanged": true,
+  "parserSourceModified": false
+}
