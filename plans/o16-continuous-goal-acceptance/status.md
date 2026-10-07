@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T11:25:52.629Z |
+| 最近更新 | 2026-10-07T11:29:24.726081+00:00 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -11,11 +11,11 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance |
 | Branch | codex/continuous-native-goal-acceptance |
 | 基线 | 当前验收f5a13cbed6b75151f34e6924ec7e10c8894acf48；原8bd为历史基线 |
-| HEAD | 实验诊断source49d仍main；同runtime auth caller dff8e1f8 / 一次结果封存中 |
+| HEAD | 实验诊断source49d仍main；同runtime auth caller dff8e1f8 / result477e；封存缺口另列 |
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
 | 工作分支状态 | in-progress |
 | 检查状态 | 同runtime auth一次：loggedIn=false/authMethodnone，native174ms/exit1；准备+实际1085ms，两组absent/双EOF/无signals，私有427B KEEP。3纯自检+syntax0，0query；真实SDK仍累计3。 |
-| Review | R3结果已限定独审/main f68dbb71；同runtime公开状态结果待独立限定审查 |
+| Review | R3结果已限定独审/main f68dbb71；同runtime公开状态结果待独立限定审查；native原结构被大小写冲突覆盖，按剩余证据限定 |
 | 实现目标 | 49d35d97e2d5d529d34dc29458ed2d95f2474909 |
 | 实现范围 | experiments/continuous-goal-acceptance |
 | 已集成main状态 | 诊断49d main fb647700；R3固定失败8e/8d已main f68dbb71，限定忠实性独审在I02 o16-native-r3-result-review.json；289产品仍f5a，无重测。 |
@@ -37,7 +37,7 @@
 | O16-03 | completed | native_center_owner | 当前main公开组合新PG R1 1/1；proposal→owner确认→两依赖执行→独立synthetic接受，原失败保留；真实native语义留O16-06 |
 | O16-04 | completed | native_center_owner | 原26不同准备分轮/加载1/1保留；新namespace PG R1 1/1与正常清理；无SDK query，原PG red/KEEP未动 |
 | O16-05 | completed | native_center_owner | 当前main准备与PG R1唯一独审APPROVED、42路径受控main b768；原FAIL/KEEP保留、真实模型留O16-06 |
-| O16-06 | in-progress | native_center_owner | 分阶段/环境/观测修复已main；[R2实际结果](../../docs/evidence/o16/native-plan-20261007-r2/RESULT.md) SDK本次1/累计2，声明通过但isError，无成功proposal/pause，DB/tmp KEEP；费用口径与首因缺口保留，children未授权 |
+| O16-06 | in-progress | native_center_owner | 三次SDK累计3/费用UNKNOWN/无第4次；R3结构authentication_failed。后续一次同runtime auth公开false/none，0query；独立审查需保留[fidelity缺口](../../docs/evidence/o16/same-runtime-auth-once/fidelity-gap.md)，旧FAIL/KEEP和children未授权不变 |
 
 架构影响：仅新增验收consumer，复用production主权模块；无新运行FSM/DDL/依赖。待固定target后ExecutionLead登记实验consumer，当前主线架构不变。技能见[质量记录](../../docs/evidence/o16/quality.md)。当前首canonical由Lead登记dashboard；不以metadata缺失猜检查通过。
 
@@ -125,3 +125,5 @@
 2026-10-07T11:24:29.914Z：R3失败结果已限定独审并main f68dbb71；引用唯一I02 review，不复制第二原件。同runtime认证状态候选已获Lead连续段授权，现薄caller只复用白名单/OPS14/原env，3纯例与syntax通过；真实auth子段尚未开始。将只执行SDK内2.1.290 auth status --json，不query/login/凭据读取或换路；原累计3/费用UNKNOWN/KEEP不变。
 
 2026-10-07T11:25:52.629Z：同runtime[公开认证状态](../../docs/evidence/o16/same-runtime-auth-once/RESULT.md)仅一次，loggedIn=false/authMethodnone，原生exit1不是认证通过。11:24:40.634148Z两组absent/双EOF后归还local；新私有427B材料按原empty-only规则KEEP，原stdout/stderr不保存/hash/外发。原SDK3/无第四次，旧KEEP与R3失败不改。待一次结果独审；后继仅源码归因，不让用户盲目重新登录。
+
+2026-10-07T11:29:24.726081+00:00：封存自查发现仅大小写不同的RESULT.json覆盖原result.json；477e已固定事后摘要，原native完整结构未能保留。另记[fidelity-gap](../../docs/evidence/o16/same-runtime-auth-once/fidelity-gap.md)与[disposition](../../docs/evidence/o16/same-runtime-auth-once/disposition-summary.json)，剩余工具白名单回执/预约/准备/cleanup分别限定，不重跑或补造。现送唯一限定独审。

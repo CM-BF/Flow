@@ -1,0 +1,47 @@
+{
+  "recordedAt": "2026-10-07T11:29:24.726081+00:00",
+  "kind": "flow.o16.auth-status-disposition.v1",
+  "supersedesInterpretationOnly": true,
+  "preservedDerivedRecord": {
+    "path": "result.json",
+    "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+    "bytes": 2245,
+    "sha256": "fee332d0028e4b4e70abcdde7920d197611f3eed8b0c9d4ad10b5ed122369e72"
+  },
+  "fidelity": "PARTIAL_ORIGINAL_RECORD_LOSS",
+  "publicObservation": {
+    "loggedIn": false,
+    "authMethod": "none",
+    "apiProvider": "firstParty"
+  },
+  "missingPublicField": "subscriptionType absent; not inferred",
+  "nativeExitCode": 1,
+  "outerExitCode": 0,
+  "originalSurvivingRecords": [
+    "reservation.json",
+    "native-reservation.json",
+    "preparation.json",
+    "prepared.json",
+    "cleanup.json"
+  ],
+  "nativeToolReceipt": {
+    "initialChunk": "7c8884",
+    "completionChunk": "f83f90",
+    "sessionId": 8257,
+    "outerExitCode": 0,
+    "publicSummary": "OBSERVED_PUBLIC_STATUS; loggedIn false/authMethod none/apiProvider firstParty; native exit1/ownedState absent/cleanupKEEP/nativeTotalMs174"
+  },
+  "originalNativeSupervisorRecord": "UNAVAILABLE_AFTER_CASE_INSENSITIVE_NAME_COLLISION",
+  "notRecoverableFromSummary": [
+    "complete native observations",
+    "complete native secondary_failures",
+    "byte-for-byte complete original native result"
+  ],
+  "noReconstruction": true,
+  "nativeStatusCalls": 1,
+  "queryCalls": 0,
+  "SDKQueriesCumulative": 3,
+  "fourthQuery": "NOT_AUTHORIZED",
+  "retention": "new427BscratchKEEP; all oldKEEPunchanged",
+  "scope": "Remaining evidence supports public status and original cleanup timing; summary-only native details are not original transcript evidence"
+}

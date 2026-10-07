@@ -69,3 +69,5 @@ Lead10:37:40Z独审ff266/9e15/2841，APPROVED_LIMITED_ZERO_MODEL_DELTA，无P1/P
 2026-10-07T11:16:00.396Z：R3实际结果[待限定独审](../../docs/evidence/o16/native-plan-20261007-r3/RESULT.md)。原SDK结构authentication_failed、success/isError组合及私有647B/hash公开引用分别保存；runtime收尾通过不把规划失败改绿。原candidate独审[原件](../../docs/evidence/o16/native-plan-20261007-r3/independent-review.json)仅准备，不代替本结果审查；未重复旧检查。
 
 2026-10-07T11:25:52.629Z：同runtime[auth status结果](../../docs/evidence/o16/same-runtime-auth-once/RESULT.md)待只读独审，caller dff8e1f8，3新纯白名单例+syntax0；一次native状态false/exit1，0query/两组absent，原raw不外发。请区分状态观察与真实query认证，不从false推账户退出；新scratch非空KEEP和旧资源不改。
+
+同runtime auth封存补注：result477e是大小写碰撞后派生摘要；原native完整结构未保留。独立审查只能按fidelity-gap/disposition列出的剩余原件与工具回执限定，不能将摘要升级为原始supervisor记录；无重跑。
