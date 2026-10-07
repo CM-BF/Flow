@@ -9,10 +9,13 @@ export const RESERVATIONS = fileURLToPath(new URL('../../docs/evidence/o16/attem
 export async function sourceIdentity({ requireClean = true } = {}) {
   const root = await realpath(ROOT);
   const git = args => execFileSync('git', args, { cwd: root, encoding: 'utf8', timeout: 5000, maxBuffer: 262_144 }).trim();
-  assert.equal(git(['diff', '--name-only', BASE, '--', 'apps', 'packages', 'package.json', 'pnpm-lock.yaml']), '');
   if (requireClean) assert.equal(git(['status', '--porcelain', '--untracked-files=all', '--', 'experiments/continuous-goal-acceptance', 'apps', 'packages', 'package.json', 'pnpm-lock.yaml']), '');
-  const prepared = await readRecord(new URL('../../docs/evidence/o16/product-entry-static-preflight.json', import.meta.url), 262_144);
+  const prepared = await readRecord(new URL('../../docs/evidence/o16/current-main-entry-preflight.json', import.meta.url), 262_144);
+  assert.equal(prepared.source, BASE);
   const expected = [...prepared.staticSources, ...prepared.externalSql, ...prepared.configs];
+  // Bind the actual imported/dynamic inputs; unrelated historical files remain outside this consumer.
+  for (const row of expected) assert(typeof row.path === 'string' && !row.path.includes('..') && !row.path.startsWith('/'));
+  assert.equal(git(['diff', '--name-only', BASE, '--', ...expected.map(row => row.path)]), '');
   const links = await readRecord(new URL('../../docs/evidence/o16/dependency-links.json', import.meta.url));
   assert.equal(links.worktree, root); assert(process.versions.node.startsWith('24.'));
   const dependencies = [];
