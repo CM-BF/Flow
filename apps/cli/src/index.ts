@@ -179,6 +179,16 @@ async function pluginCommand({ client, values, positionals, io, signal }: Comman
   const page = { ...(values.after ? { after: values.after } : {}), ...(values.limit ? { limit: positiveNumber(values.limit, 'limit') } : {}) };
   let result: unknown;
   switch (action) {
+    case 'runtime-hosts': {
+      if (positionals.length !== 4 || values.limit !== undefined || values.before !== undefined) {
+        throw new UsageError('Use plugin runtime-hosts PLUGIN MATERIAL_INSTALL_OPERATION [--after CURSOR]; page size is fixed.');
+      }
+      result = await client.pluginHostCandidates(required(positionals[2], 'plugin ID'), {
+        materialInstallOperationId: required(positionals[3], 'material installation operation ID'),
+        ...(values.after === undefined ? {} : { cursor: values.after }),
+      }, signal);
+      break;
+    }
     case 'runtime': result = await client.pluginRuntime(required(positionals[2], 'plugin ID'), signal); break;
     case 'binding': result = await client.pluginToolBinding(required(positionals[2], 'task ID'), signal); break;
     case 'runtime-change':
@@ -230,7 +240,7 @@ async function pluginCommand({ client, values, positionals, io, signal }: Comman
         : await client.commandPlugin(required(positionals[2], 'plugin ID'), pluginCommandSchema.parse(input), key, signal);
       break;
     }
-    default: throw new UsageError('Use plugin runtime|runtime-change|tool-task|binding|register|list|show|versions|history|operation|change|fetch|fetches|fetch-show|fetch-history|fetch-change|install|installs|install-show|install-history|install-change. Static installation does not load or enable a plugin.');
+    default: throw new UsageError('Use plugin runtime-hosts|runtime|runtime-change|tool-task|binding|register|list|show|versions|history|operation|change|fetch|fetches|fetch-show|fetch-history|fetch-change|install|installs|install-show|install-history|install-change. Static installation does not load or enable a plugin.');
   }
   io.out(JSON.stringify(result));
   return 0;
@@ -360,6 +370,7 @@ function submission(values: Flags, words: string[]): TaskSubmission {
 }
 
 const HELP = `Runtime state: plugin runtime PLUGIN; plugin binding TASK.
+Host candidates: plugin runtime-hosts PLUGIN MATERIAL_INSTALL_OPERATION [--after CURSOR]. One advisory page; follow nextCursor explicitly, even after an empty page. Candidates do not prove online, loaded or callable.
 Runtime command: plugin runtime-change PLUGIN --input FILE --key KEY; plugin tool-task PLUGIN --input FILE --key KEY.
 Runtime input files are bounded to 32 KiB encoded JSON. Enable does not prove loaded/callable; an unknown ACK requires the original route/key/input, never a new key.
 Static material: plugin install PLUGIN VERSION --input FILE --key KEY; plugin installs PLUGIN; plugin install-show OP; plugin install-history OP; plugin install-change OP --input FILE --key KEY.

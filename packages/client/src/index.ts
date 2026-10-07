@@ -1,6 +1,7 @@
 import { pluginCommandSchema } from '../../contracts/src/plugins.js';
+import { pluginHostCandidatesQuerySchema, pluginHostCandidatesPageSchema, type PluginHostCandidatesQuery, type PluginHostCandidatesPage } from '../../contracts/src/plugin-runtime-hosts.js';
 import { PLUGIN_RUNTIME_LIMITS, pluginRuntimeCommandSchema, pluginToolTaskRequestSchema, type PluginRuntimeCommand, type PluginRuntimeView, type PluginToolTaskRequest, type PluginToolBinding } from '../../contracts/src/plugin-runtime.js';
-import { pluginRequestIdentity, decodePluginRegistryChanged, decodePluginRuntime, decodePluginRuntimeChanged, decodePluginTaskAccepted, decodePluginBinding, UnknownPluginAcknowledgementError, type PluginRequestIdentity } from './plugin-management.js';
+import { pluginRequestIdentity, decodePluginHostCandidates, decodePluginRegistryChanged, decodePluginRuntime, decodePluginRuntimeChanged, decodePluginTaskAccepted, decodePluginBinding, UnknownPluginAcknowledgementError, type PluginRequestIdentity } from './plugin-management.js';
 export { UnknownPluginAcknowledgementError } from './plugin-management.js';
 import { readBoundedJson } from './response-json.js';
 import { PluginRunnerClient } from './plugin-runner.js';
@@ -530,6 +531,15 @@ export class FlowClient {
     return this.request(`/api/plugin-installs/${encodeURIComponent(id)}/commands`, { method: 'POST', body: JSON.stringify(input), headers: { 'Idempotency-Key': key }, signal });
   }
 
+  /** Advisory candidates only; each call reads one page and never authorizes enable. */
+  pluginHostCandidates(id: string, input: PluginHostCandidatesQuery, signal?: AbortSignal): Promise<PluginHostCandidatesPage> {
+    const registrationId = pluginHostCandidatesPageSchema.shape.registrationId.parse(id);
+    const frozen = pluginHostCandidatesQuerySchema.parse(input);
+    const query = new URLSearchParams({ materialInstallOperationId: frozen.materialInstallOperationId });
+    if (frozen.cursor !== undefined) query.set('cursor', frozen.cursor);
+    return this.pluginAcknowledgement(pluginRequestIdentity(`/api/plugins/${encodeURIComponent(registrationId)}/runtime/hosts?${query}`),
+      value => decodePluginHostCandidates(value, registrationId, frozen), signal);
+  }
   pluginRuntime(id: string, signal?: AbortSignal): Promise<PluginRuntimeView> {
     return this.pluginAcknowledgement(pluginRequestIdentity(`/api/plugins/${encodeURIComponent(id)}/runtime`),
       value => decodePluginRuntime(value, id), signal);

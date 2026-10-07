@@ -1,6 +1,7 @@
 import { pluginRuntimeViewSchema, pluginToolBindingSchema, type PluginRuntimeCommand, type PluginRuntimeView, type PluginToolBinding, type PluginToolTaskRequest } from '../../contracts/src/plugin-runtime.js';
 import { pluginConfigurationSchema, pluginRevisionSchema, pluginScopeSchema, pluginVersionSchema, type PluginMutationResult, type PluginCommand, type PluginSnapshot } from '../../contracts/src/plugins.js';
 import type { AcceptedTask } from '../../contracts/src/tasks.js';
+import { pluginHostCandidatesPageSchema, type PluginHostCandidatesQuery, type PluginHostCandidatesPage } from '../../contracts/src/plugin-runtime-hosts.js';
 
 /** Retain the exact recovery identity; never print its potentially private body. */
 export type PluginRequestIdentity = Readonly<{ path: string; key?: string; body?: string }>;
@@ -39,6 +40,19 @@ export function decodePluginBinding(value: unknown, taskId: string): PluginToolB
   const binding = pluginToolBindingSchema.parse(value);
   requireAck(binding.taskId === taskId);
   return binding;
+}
+
+/** One advisory page. An empty scanned page can still carry an opaque next cursor. */
+export function decodePluginHostCandidates(value: unknown, id: string, input: PluginHostCandidatesQuery): PluginHostCandidatesPage {
+  const page = pluginHostCandidatesPageSchema.parse(value);
+  requireAck(page.registrationId === id && page.materialInstallOperationId === input.materialInstallOperationId
+    && (page.nextCursor === null || page.nextCursor !== input.cursor));
+  let previous = '';
+  for (const candidate of page.candidates) {
+    requireAck(candidate.runnerId > previous);
+    previous = candidate.runnerId;
+  }
+  return page;
 }
 
 function decodePluginMutation(value: unknown, id: string, input: { expectedRevision: number; change: { kind: string } }): PluginMutationResult {
