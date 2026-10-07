@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-07T04:27:02.403Z",
+  "kind": "own-status metadata only",
+  "errors": [],
+  "human": {
+    "complete": true,
+    "missing": []
+  },
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "原D06首次开工缺独立可信时间记录，不从commit、mtime或本次领取倒推；当前固定快照后继主线/部署尚待接收，owner明确尚未整体完成。实际检查起止另见各原件，不当作任务开工。"
+    },
+    "issues": [
+      "任务开工时间未记录"
+    ],
+    "waiting": ""
+  },
+  "source": "Lead explicit next owner status safety-point requirement; historical task start unproven, no inference from mtime/commit/claim. Target591 and exact8 unchanged."
+}

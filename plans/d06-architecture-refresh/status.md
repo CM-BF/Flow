@@ -4,6 +4,9 @@
 | --- | --- |
 | 最近更新时间 UTC | 2026-10-07T04:21:02.493984+00:00 |
 | Plan | [plan.md](plan.md) |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 原D06首次开工缺独立可信时间记录，不从commit、mtime或本次领取倒推；当前固定快照后继主线/部署尚待接收，owner明确尚未整体完成。实际检查起止另见各原件，不当作任务开工。 |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root |
 | 单一status owner / model | d01_owner / gpt-6-astra ultra |
