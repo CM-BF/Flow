@@ -111,10 +111,11 @@ def main():
     head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=WT, text=True, timeout=3).strip()
     if head != expected or subprocess.check_output(['git', 'status', '--porcelain'], cwd=WT, timeout=3): raise SystemExit('SOURCE_NOT_FIXED')
     manifest_name = os.environ.get('FLOW_C02_PG_MANIFEST', 'pg-source-manifest.json')
-    if manifest_name not in {'pg-source-manifest.json', 'pg-cwd-source-manifest.json', 'pg-public-stream-source-manifest.json', 'pg-conversation-source-manifest.json'}: raise SystemExit('MANIFEST_NOT_REVIEWED')
+    if manifest_name not in {'pg-source-manifest.json', 'pg-cwd-source-manifest.json', 'pg-public-stream-source-manifest.json', 'pg-conversation-source-manifest.json', 'pg-conversation-sentinel-source-manifest.json'}: raise SystemExit('MANIFEST_NOT_REVIEWED')
     manifest_bytes = (EVIDENCE / manifest_name).read_bytes()
     manifest = json.loads(manifest_bytes)
-    conversation = manifest_name == 'pg-conversation-source-manifest.json'
+    sentinel = manifest_name == 'pg-conversation-sentinel-source-manifest.json'
+    conversation = manifest_name == 'pg-conversation-source-manifest.json' or sentinel
     if conversation:
         # One fixed inherited input set; the new packet stores only changed/added bindings.
         base_bytes = (EVIDENCE / 'pg-public-stream-source-manifest.json').read_bytes()
@@ -147,7 +148,7 @@ def main():
         if count != row['bytes'] or digest.hexdigest() != row['sha256']: raise SystemExit('EXTERNAL_CHANGED')
     verify_dependencies(json.loads((EVIDENCE / 'dependency-link-request.json').read_text())['links'], manifest['items'])
     public_stream = manifest_name == 'pg-public-stream-source-manifest.json'
-    claim_receipt = 'conversation-pg-amend-receipt.json' if conversation else 'public-stream-pg-amend-receipt.json' if public_stream else 'claim-amend-receipt.json'
+    claim_receipt = 'adapter-handback-receipt.json' if sentinel else 'conversation-pg-amend-receipt.json' if conversation else 'public-stream-pg-amend-receipt.json' if public_stream else 'claim-amend-receipt.json'
     previous = json.loads((EVIDENCE / claim_receipt).read_text())['claim']
     ledger = json.loads(subprocess.check_output([NODE, '/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/coordination/cli.mjs', 'list'], cwd=WT, timeout=3, stderr=subprocess.DEVNULL))
     current = next((row for row in ledger['claims'] if row['claimId'] == previous['claimId']), None)
@@ -182,6 +183,7 @@ def main():
         command = [NODE, '/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs', 'run',
                    '--config', 'docs/evidence/mature02c02/' + ('vitest.conversation-pg.config.mjs' if conversation else 'vitest.public-stream-pg.config.mjs' if public_stream else 'vitest.pg.config.mjs'), '--configLoader', 'native',
                    '--reporter=json', '--outputFile=' + prefix + '.vitest.json']
+        if sentinel: command += ['-t', '^rejects a corrupt native-v2 sentinel without replacing its immutable digest$']
         for channel in ['stdout', 'stderr']:
             streams[channel] = os.fdopen(os.open(prefix + '.' + channel, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600), 'wb')
         if time.monotonic() - start >= 10: raise ValueError('PREFLIGHT_DEADLINE')
@@ -239,7 +241,11 @@ def main():
             if not isinstance(tests, dict) or not isinstance(tests.get('testResults'), list): raise ValueError('TEST_RESULT_SHAPE')
             assertions = [case for suite in tests['testResults'] for case in suite['assertionResults']]
             record['selection'] = {'selected': len(assertions), 'passed': sum(case['status'] == 'passed' for case in assertions)}
-            if tests.get('success') is not True or len(assertions) != 6 or any(case['status'] != 'passed' for case in assertions): errors.append('TESTS_FAILED_OR_SELECTION')
+            if sentinel:
+                selected = [case for case in assertions if case['status'] not in {'pending', 'skipped'}]
+                record['selection'] = {'selected': len(selected), 'passed': sum(case['status'] == 'passed' for case in selected), 'unselected': len(assertions) - len(selected)}
+                if tests.get('success') is not True or len(assertions) != 6 or len(selected) != 1 or selected[0]['status'] != 'passed' or selected[0].get('title') != 'rejects a corrupt native-v2 sentinel without replacing its immutable digest': errors.append('TESTS_FAILED_OR_SELECTION')
+            elif tests.get('success') is not True or len(assertions) != 6 or any(case['status'] != 'passed' for case in assertions): errors.append('TESTS_FAILED_OR_SELECTION')
             cleanup = fixture.get('cleanup')
             if not isinstance(cleanup, dict) or any(cleanup.get(key) is not True for key in ['startupSettled', 'runnersClosed', 'appClosed', 'poolClosed', 'adminClosed', 'databaseIdentityConfirmed', 'databaseAbsent']) or type(cleanup.get('connections')) is not int or cleanup['connections'] != 0 or 'retainedDatabase' not in fixture or fixture['retainedDatabase'] is not None: raise ValueError('CLEANUP_FACTS_UNKNOWN')
             if fixture.get('primaryPhases') != [] or fixture.get('cleanupErrors') != [] or fixture.get('cleanupComplete') is not True or fixture.get('adminError') or fixture.get('poolError'): raise ValueError('FIXTURE_FAILURE')
