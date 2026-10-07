@@ -1,0 +1,168 @@
+{
+  "kind": "SVC06B_BOUNDED_PERSONAL_METADATA_OBSERVATION",
+  "startedAt": "2026-10-07T16:32:15.904Z",
+  "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+  "requests": [
+    {
+      "path": "/api/health",
+      "at": "2026-10-07T16:32:16.113Z",
+      "httpStatus": 200,
+      "responseBytes": 11
+    },
+    {
+      "path": "/api/runners/d22f4df2-8242-49f4-a1b4-77f8f08611ef/maintenance",
+      "at": "2026-10-07T16:32:16.131Z",
+      "httpStatus": 200,
+      "responseBytes": 205
+    },
+    {
+      "path": "/api/task-index?limit=20",
+      "at": "2026-10-07T16:32:16.134Z",
+      "httpStatus": 200,
+      "responseBytes": 1212
+    },
+    {
+      "path": "/api/conversations?limit=20",
+      "at": "2026-10-07T16:32:16.139Z",
+      "httpStatus": 200,
+      "responseBytes": 1070
+    }
+  ],
+  "providerCalls": 0,
+  "mutations": 0,
+  "directDatabaseConnections": 0,
+  "limits": {
+    "totalSeconds": 30,
+    "maximumGETs": 4,
+    "responseBytes": 65536,
+    "savedBytes": 16384
+  },
+  "boundary": "Point observation only. updatedAt is stored metadata, not a model heartbeat. No browser session, task detail, turn, event, logs, claim receipt, or user text was requested.",
+  "sourcePinsVerified": 14,
+  "processes": {
+    "center": {
+      "pid": 46474,
+      "group": 46474,
+      "recordSha256": "279ed6574882f457378b5514c164cbb5da8ae8ca0de39f1087402d45f4e9a882",
+      "identity": "running"
+    },
+    "runner": {
+      "pid": 55337,
+      "group": 55337,
+      "recordSha256": "eb0b01ab57f11931232408fade5443e8171a5550814000d88416718501f4585b",
+      "identity": "running"
+    },
+    "web": {
+      "pid": 55432,
+      "group": 55432,
+      "recordSha256": "674dcb6fff4d5b212c590a18530528b87cbe0b42aa896f03e81c95e9553a2247",
+      "identity": "running"
+    }
+  },
+  "listeners": {
+    "center": true,
+    "web": true
+  },
+  "center": {
+    "ok": true
+  },
+  "maintenance": {
+    "runnerHash": "d0a0ce6d8b37fbbfb1dac13bd0c551901c8d460f0485d485857d54c204ba9936",
+    "state": "accepting",
+    "version": 21,
+    "activeAttempts": 0,
+    "uncertainAttempts": 0,
+    "updatedAt": "2026-10-07T13:48:45.599Z",
+    "hasOperation": false
+  },
+  "tasks": {
+    "totalSize": 5,
+    "hasMore": false,
+    "rows": [
+      {
+        "idHash": "82bd52887efc713a10d036499614618fce822dbce892eb170b16302cb4ef3616",
+        "historicalQueuedC8a0": true,
+        "status": "failed",
+        "updatedAt": "2026-10-07T13:48:49.416Z",
+        "createdAt": "2026-10-07T08:31:15.449Z",
+        "errorClass": "UNKNOWN_NOT_EXPOSED_BY_SUMMARY"
+      },
+      {
+        "idHash": "3120d3771df2252463cd9b43c996bda589226b977510f6d0af657550e92072cc",
+        "historicalQueuedC8a0": false,
+        "status": "succeeded",
+        "updatedAt": "2026-10-06T08:29:35.480Z",
+        "createdAt": "2026-10-06T08:29:18.045Z",
+        "errorClass": "UNKNOWN_NOT_EXPOSED_BY_SUMMARY"
+      },
+      {
+        "idHash": "432622a3819942668bb8ac7727822fee83fab7bbf735ad60109ad89af995529e",
+        "historicalQueuedC8a0": false,
+        "status": "succeeded",
+        "updatedAt": "2026-10-06T08:29:32.625Z",
+        "createdAt": "2026-10-06T08:28:35.669Z",
+        "errorClass": "UNKNOWN_NOT_EXPOSED_BY_SUMMARY"
+      },
+      {
+        "idHash": "4fefe47d4bfa7947ae6c587e6172a4abf7f5119470a37544cc1b65ac85181fa7",
+        "historicalQueuedC8a0": false,
+        "status": "succeeded",
+        "updatedAt": "2026-10-06T06:02:27.180Z",
+        "createdAt": "2026-10-06T06:02:24.024Z",
+        "errorClass": "UNKNOWN_NOT_EXPOSED_BY_SUMMARY"
+      },
+      {
+        "idHash": "86b7133f0184b49aa615d0261ea1f99f0048c16aca6699611f8eeeb112def89e",
+        "historicalQueuedC8a0": false,
+        "status": "succeeded",
+        "updatedAt": "2026-10-06T06:02:23.703Z",
+        "createdAt": "2026-10-06T06:02:20.480Z",
+        "errorClass": "UNKNOWN_NOT_EXPOSED_BY_SUMMARY"
+      }
+    ]
+  },
+  "conversations": {
+    "hasMore": false,
+    "rows": [
+      {
+        "idHash": "3eb77168369271e6dd35a6f5ff6d956c4025e60eec12a3f663bc7a210b546460",
+        "revision": 2,
+        "updatedAt": "2026-10-07T08:31:15.455Z",
+        "status": "UNKNOWN_LIST_HAS_NO_EXECUTION_STATUS"
+      },
+      {
+        "idHash": "a9144e1a1dbf6970dc49424201a04b247fa96ec5186d5d912f8a2b447fb288dd",
+        "revision": 1,
+        "updatedAt": "2026-10-06T08:29:18.049Z",
+        "status": "UNKNOWN_LIST_HAS_NO_EXECUTION_STATUS"
+      },
+      {
+        "idHash": "a900608603569402b41d40409a6cb7f02d13f2ea157ae142092580518bacff52",
+        "revision": 2,
+        "updatedAt": "2026-10-06T06:02:24.032Z",
+        "status": "UNKNOWN_LIST_HAS_NO_EXECUTION_STATUS"
+      }
+    ]
+  },
+  "privateMetadata": {
+    "config": {
+      "bytes": 672,
+      "sha256": "f5a01a80a33b8364316529844334955e359dea4224b72271ab26da798764b7ee",
+      "dev": "16777234",
+      "ino": "117819925"
+    },
+    "state": {
+      "bytes": 4109,
+      "sha256": "6e9e44c3ecc93187558306e26c0ae9746b1b48d779402ad9c993f40882395472",
+      "dev": "16777234",
+      "ino": "124171430"
+    },
+    "configUnchanged": true,
+    "stateUnchanged": true
+  },
+  "outcome": "OBSERVED_METADATA_ONLY",
+  "finishedAt": "2026-10-07T16:32:16.143Z",
+  "elapsedMs": 239,
+  "actualClaimRecovery": "UNKNOWN_NOT_OBSERVED"
+}

@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-07T16:35:48.430Z",
+  "reviewer": "astra_ultra_execution_lead",
+  "model": "gpt-6-astra",
+  "state": "APPROVED_LIMITED_PERSONAL_METADATA_OBSERVATION",
+  "sourceResult": "32a7f43ada650e1aa4e9ce19dac03e57e27d3c29",
+  "finalOwnerMetadata": "eed059d7cead1b781467fae39d838e04bd459e5b",
+  "scope": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/personal-health-20261007.json",
+      "bytes": 5288,
+      "sha256": "d8eed06ad918406a4b11d48a987c879f1f24345d449d5b118d89f1c0f289b751"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/personal-health-readonly.mjs",
+      "bytes": 8664,
+      "sha256": "fc59d6987f7c53dbf8f0f0b2e76c645b9c5dbbffb15754cd77d4695e0526497c"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/personal-health-source-pins.json",
+      "bytes": 3039,
+      "sha256": "39d8215bf28a48d43f8e3579ff956f55563f2ebdfc3676996f00f802078429aa"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/personal-health-status-parse.json",
+      "bytes": 752,
+      "sha256": "abf82e2c66c7c9891d0e14e4ac325bdf3b3410467645471d8c4783eac307bbee"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/personal-health-owner-status-parse.json",
+      "bytes": 752,
+      "sha256": "409cec2d937824c3ede761f2abb987a548cdf88807388cfcda26916d98ed459e"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/personal-health-supervision.json",
+      "bytes": 1683,
+      "sha256": "dba92ec4c4eb79dcf333d93efa43f51daa4eff6e9c0bdac7e01a468aca7edea0"
+    },
+    {
+      "path": "plans/svc06-browser-recovery/status.md",
+      "bytes": 16516,
+      "sha256": "a8b2a2a7bd41b85a63bbfa3d2f476df7b47e2f91af474b498a62b0be2e8984e7"
+    }
+  ],
+  "fixedSourcePins": {
+    "source": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "count": 14,
+    "mismatches": 0
+  },
+  "resultReview": "Read actual helper, four whitelisted GET results and supervision. Observation239ms/outer310ms; firstEPERM retained then finalabsent/dualEOF, no signals. No raw responses/titles/text/token persisted; config/state unchanged.",
+  "observedAt": "2026-10-07T16:32:16.143Z",
+  "limitedFindings": [
+    "Three owned processes running with center/web listeners; four GET200; accepting21 active0 uncertain0 no operation.",
+    "Task-summary page complete5:4succeeded1failed, no running. Historical c8a0-prefix row reportsfailed updated2026-10-07T13:48:49.416Z; identityhash saved, no actualclaim recovery asserted.",
+    "Conversation list3 contains only summary updatedAt/revision. Detailed errorcauseUNKNOWN; no taskdetail/event/turn/log reads. Fixedsource examination finds error string stored asdetail.content, not a safe standalone public errorclass."
+  ],
+  "actions": "No reviewerliveHTTP/PG/service/provider. Originaloperator0mutation/model/directDB. This is currentmetadata availability, not new chat execution success, fullclaimchain or rootcause proof.",
+  "nextOwner": "assignment_review / service owner; identify permissible structured nonbody error material or record exact lack, never resend original task to diagnose."
+}
