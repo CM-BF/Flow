@@ -140,3 +140,5 @@
 2026-10-07T17:07:18.812917+00:00：fresh claim30965 v2/3scope ACTIVE，81fa8160=origin clean；本段≤8min/new≤1MiB仅metadata。归档17:03:37独审，current candidate [query-pg-startup-runtime-inputs.json](../../docs/evidence/k01/query-pg-startup-runtime-inputs.json)绑定18实验文件/27runtime行/17外部+3内部alias/245固定产品输入及33SQL；新增diagnostic已纳入，preparation旧记录单独绑定不当当前状态。120s=70+40+10、18配置连接、DB128MiB末样本/local8MiB含raw2MiB，progress原件计入同raw额，预留不重复加额。新permit CLOSED且expired，0新namespace/工程/PG/HTTP/凭据读取；old failure/runtime原件与KEEP不改。K01-06/08～10保持开放；固定提交推送后全STOP，claim保留，经理另排候选。
 
 经理后到事实：Original R4 sole NEXT217.5s，current完整forward15,927,083,008B；本组新13MiB分类提交后预计15,915,548,672B但此处未记作已接受。K01候选没有actual授权/资源实采，未来floor必须另获经理完整值，历史gate不复用；prior KEEP/backgrowth128MiB继续计入。
+
+2026-10-07T17:29:04.090046Z：新sole manager许可已收到；freshclaim30965v2/18source/27runtime/245fixed/17+3alias全部吻合，freshfree19,608,182,784≥16,065,495,040B。单独admin准入17:29:04.011154→.090046、available87≥34、poolClosed、PID90815/ownedabsent/完整EOF成立；0数据集改变。新explicit permit仅一次120s=70/40/10，actual START由新ledger定义；旧FAIL/KEEP/许可不改。配置18、0provider/Chrome，原始inputSHA f4255413。

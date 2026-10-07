@@ -1,0 +1,53 @@
+{
+  "startedAt": "2026-10-07T17:29:04.011154+00:00",
+  "endedAt": "2026-10-07T17:29:04.090046+00:00",
+  "elapsedMs": 78.89200000000001,
+  "report": {
+    "pid": 90815,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 79,
+    "observed_bytes": 222,
+    "retained_bytes": 222,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "query": {
+    "startedAt": "2026-10-07T17:29:04.075Z",
+    "endedAt": "2026-10-07T17:29:04.086Z",
+    "elapsedMs": 9.816291,
+    "row": {
+      "maximum": 100,
+      "occupied": 10,
+      "reserved": 3
+    },
+    "available": 87,
+    "required": 34,
+    "poolClosed": true,
+    "error": null,
+    "passed": true
+  },
+  "nodeSource": "import pg from './node_modules/pg/lib/index.js';\nconst startedAt=new Date().toISOString(),start=performance.now();\nconst pool=new pg.Pool({connectionString:process.env.FLOW_K01_QUERY_ADMIN_URL,max:1,connectionTimeoutMillis:1000,statement_timeout:1500,query_timeout:1800,application_name:'k01-query-headroom'});\nlet row=null,error=null,closed=false;pool.on('error',e=>{error={code:e.code??'POOL_ERROR'};});\ntry{row=(await pool.query(\"SELECT current_setting('max_connections')::int AS maximum,(SELECT count(*)::int FROM pg_stat_activity) AS occupied, current_setting('superuser_reserved_connections')::int+COALESCE(NULLIF(current_setting('reserved_connections',true),''),'0')::int AS reserved\")).rows[0];}catch(e){error={code:e.code??'QUERY_ERROR'};}finally{await pool.end();closed=true;}\nconst available=row?row.maximum-row.occupied-row.reserved:null;const passed=closed&&!error&&available>=34;\nconsole.log(JSON.stringify({startedAt,endedAt:new Date().toISOString(),elapsedMs:performance.now()-start,row,available,required:34,poolClosed:closed,error,passed}));if(!passed)process.exitCode=1;\n",
+  "passed": true,
+  "source": "fixedGit private test expression; no value/hash recorded"
+}
