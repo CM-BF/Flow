@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:27 UTC / main3230becf；登记185，实际运行加载待ACCESS部署 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T03:25:48.805837+00:00 / main3230becf；登记185，实际运行加载待ACCESS部署 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -202,4 +202,4 @@ WPF-MATURE-02-CORE与SVC05H01均已有唯一canonical、正式claim和完整人�
 
 2026-10-07T03:10:35.358722+00:00：登记SVC08唯一来源，184项；仅registry/source事实，真实检查与修复以原owner为准。见[登记](../../docs/evidence/d05/svc08-registry-intake.json)。本次没有产品检查/个人服务操作，actual载入待下个看板发布安全点。
 
-2026-10-07 03:27 UTC：TIMING01 source156b/claim9a677v1按唯一请求登记185；保留其browser未验。SVC08来源184已main，实际4320当前载入183，新增两源随ACCESS部署加载；未重启/新增产品检查。证据[登记](../../docs/evidence/d05/task-timing-registry-intake.json)。
+2026-10-07T03:25:48.805837+00:00：TIMING01 source156b/claim9a677v1按唯一请求登记185；保留其browser未验。SVC08来源184已main，实际4320当前载入183，新增两源随ACCESS部署加载；未重启/新增产品检查。证据[登记](../../docs/evidence/d05/task-timing-registry-intake.json)。
