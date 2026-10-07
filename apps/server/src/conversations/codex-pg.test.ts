@@ -29,10 +29,10 @@ async function register(configuration = persistent) {
 }
 const creation = (reference: Awaited<ReturnType<typeof register>>['reference']) => conversationCreationSchema.parse({ title: '会话🙂', harness: 'codex', executionProfile: reference,
   requested: { model: 'runner-default', thinking: 'unknown', tools: 'none' } });
-async function seedProfile(configuration: CodexExecutionProfileConfiguration) {
+async function seedProfile(configuration: CodexExecutionProfileConfiguration, configDigest = sha256(nativeExecutionProfileConfigurationJson(configuration))) {
   const r = await center.owner.registerRunner({ name: 'catalog fixture', harnesses: ['codex'], capacity: 1 });
   const id = `00000000-0000-4000-8000-${String(++ordinal).padStart(12, '0')}`;
-  await center.pool.query('INSERT INTO flow.execution_profiles(id,runner_id,config_digest,configuration) VALUES($1,$2,$3,$4)', [id, r.runnerId, sha256(nativeExecutionProfileConfigurationJson(configuration)), configuration]);
+  await center.pool.query('INSERT INTO flow.execution_profiles(id,runner_id,config_digest,configuration) VALUES($1,$2,$3,$4)', [id, r.runnerId, configDigest, configuration]);
   return id;
 }
 async function completeTask(taskId: string) {
@@ -141,7 +141,12 @@ check('keeps queue receipts idempotent and promotes a pinned Codex task through 
   expect((await native.conversationQueueItem(id, accepted.item.id)).item.state).toBe('promoted');
 });
 check('rejects a corrupt native-v2 sentinel without replacing its immutable digest', async () => {
-  await seedProfile(persistent); const second = await seedProfile(persistent);
-  await center.pool.query("UPDATE flow.execution_profiles SET config_digest=$1 WHERE id=$2", ['0'.repeat(64), second]);
+  const validDigest = sha256(nativeExecutionProfileConfigurationJson(persistent)), invalidDigest = '0'.repeat(64);
+  expect(invalidDigest).not.toBe(validDigest);
+  const first = await seedProfile(persistent), second = await seedProfile(persistent, invalidDigest);
+  // Seed a new corrupt fixture record; the immutable UPDATE/DELETE trigger stays enabled.
+  expect((await center.pool.query(`SELECT p.id,p.config_digest FROM flow.execution_profiles p
+    JOIN flow.runners r ON r.id=p.runner_id WHERE NOT r.revoked ORDER BY p.id LIMIT 2`)).rows)
+    .toEqual([{ id: first, config_digest: validDigest }, { id: second, config_digest: invalidDigest }]);
   await expect(native.nativeConversationProfiles({ limit: 1 })).rejects.toMatchObject({ status: 409, code: 'execution_profile_unavailable' });
 });
