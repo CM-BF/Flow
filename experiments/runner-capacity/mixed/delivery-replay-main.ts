@@ -117,6 +117,13 @@ async function arm(mode: DeliveryInput['mode'], path: string, hash: string, trac
         const metrics = value.metrics as Record<string, unknown>;
         const drained = metrics?.reporterAtFirstDrain as Record<string, unknown>;
         assert(drained?.pending === 0 && drained.dropped === 0, 'worker_not_drained');
+        for (const key of ['recordPhaseWallMs', 'synchronousRecordMs', 'observedWaitMs', 'finishSynchronousMs', 'finishToCallbacksDrainedMs', 'workerStartToFirstDrainMs']) {
+          assert(typeof metrics[key] === 'number' && Number.isFinite(metrics[key]) && metrics[key] >= 0, 'worker_metric_unknown');
+        }
+        const cpu = metrics.cpuMicroseconds as Record<string, unknown>;
+        assert(cpu && [cpu.user, cpu.system, drained.jsonEnvelopeBytes].every(n => Number.isSafeInteger(n) && Number(n) >= 0), 'worker_counter_unknown');
+        assert(metrics.batches === 64 && Number(metrics.synchronousRecordMs) <= Number(metrics.recordPhaseWallMs) &&
+          Number(metrics.observedWaitMs) <= Number(metrics.recordPhaseWallMs), 'worker_timing_or_batches');
         result = value; resultMs = now; return;
       }
       receipt.accept(value);
