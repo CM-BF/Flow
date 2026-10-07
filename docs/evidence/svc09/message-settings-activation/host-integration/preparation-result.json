@@ -1,0 +1,52 @@
+{
+  "format": 1,
+  "task": "SVC09A-04",
+  "at": "2026-10-07T14:57:11.473340Z",
+  "claim": {
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 4,
+    "freshObservedAt": "2026-10-07T14:44:58.126Z",
+    "scope": [
+      "docs/evidence/svc09/message-settings-activation",
+      "plans/svc09-message-settings-activation"
+    ]
+  },
+  "sourceComposition": {
+    "path": "source-composition.json",
+    "bytes": 11340,
+    "sha256": "bdd9bd2e5f1e103dbbdae1d21b543a697fbbd664ee1acfe1de6ae67493a58974",
+    "approvedBlobInputs": 15,
+    "assemblyCreated": false
+  },
+  "local": {
+    "raw": "prepare-local-01",
+    "checks": 3,
+    "passed": 3,
+    "elapsedMs": 49,
+    "rawBytes": 216,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "cleanup": "removed",
+    "returnedAt": "2026-10-07T14:55:39.882982+00:00"
+  },
+  "actual": {
+    "build": "NOT_RUN",
+    "artifact": "NOT_PROVIDED",
+    "PG": "NOT_RUN",
+    "host": "NOT_RUN",
+    "native": "NOT_RUN",
+    "provider": 0,
+    "personalIO": 0
+  },
+  "readiness": "WORK_CONSUMER_PREPARATION_ONLY_NOT_RUN_READY",
+  "remaining": [
+    "Lead controlled15-path source assembly",
+    "Reviewed artifact built with existing SVC06 method from that exact commit",
+    "Fixed thin setup/independent cleanup/OPS14 outer and exact private ownership pins",
+    "Independent full candidate review and fresh shared-resource admission"
+  ],
+  "failurePolicy": "No change to earlier FAIL/unknown/KEEP; source approval is not host/PG/provider approval"
+}

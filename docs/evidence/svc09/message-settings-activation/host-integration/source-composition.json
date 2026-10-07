@@ -1,0 +1,285 @@
+{
+  "format": 1,
+  "task": "SVC09A-04",
+  "at": "2026-10-07T14:47:17.972509+00:00",
+  "state": "PROPOSED_ASSEMBLY_NOT_CREATED",
+  "base": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "replacementSource": "246ed0f52ca0ec3078f0cd8bddc48c655501a711",
+  "sourceRepository": "/Users/citrine/Projects/AgentHarness/Flow",
+  "meaning": "Base04da plus 12 reviewed host/CORE paths from main246 and 3 reviewed retention-policy paths from203ec. All other source remains04da; not fullmain246.",
+  "paths": [
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "before": {
+        "blob": "a2cb2a59266a0681b414a1ee5652a72dafe6a43e",
+        "bytes": 5394,
+        "sha256": "fb868c44175b30d096905761b6569bc91f3e4eee270b5f24c225dfcce3785935"
+      },
+      "after": {
+        "blob": "6c5668912f50d31d9198e22c7a9994642a663501",
+        "bytes": 5753,
+        "sha256": "ac13821a2c72956b0f0a3e9afb499f84291fdf3156f62b61f5e4e6b0be97e1c8"
+      },
+      "fixedRef": "246ed0f52ca0ec3078f0cd8bddc48c655501a711"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "before": {
+        "blob": "ea590ea6af19a8f86f7bc128a7827ddcbcc905cd",
+        "bytes": 2690,
+        "sha256": "8d4d1b6f607e602dbfb1501541de565dbc6fb03f188d476d3ebf30022025ceeb"
+      },
+      "after": {
+        "blob": "85625ac052005f448d0ae20b89c52ec6ebab0d8b",
+        "bytes": 2784,
+        "sha256": "d65214627c98ec83e53d6b651908d5e6f7438874bbaee5868f240bb26bf9396a"
+      },
+      "fixedRef": "246ed0f52ca0ec3078f0cd8bddc48c655501a711"
+    },
+    {
+      "path": "tools/personal-preview/environment.test.mjs",
+      "before": {
+        "blob": "87554637893c0ff1253d32ec8e6c889a4ead716d",
+        "bytes": 4358,
+        "sha256": "18872c678c13b52e8cda8239df26b1f596488348d1687df9c3a7450376237b41"
+      },
+      "after": {
+        "blob": "a950f6439c583968f1b0e11af0dcdeb88cb71a53",
+        "bytes": 5152,
+        "sha256": "8123a6b0b02e1713e5e40bdcd0f75890cdb6508daf50d2d71f5688f6cc995732"
+      },
+      "fixedRef": "246ed0f52ca0ec3078f0cd8bddc48c655501a711"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "before": {
+        "blob": "b012c498520c21b73a2a42910042664a0e5a7589",
+        "bytes": 9796,
+        "sha256": "87a5ddc0ef6883de926a8cf25b6e38883f6485e00002cdd1973c73da4aea31e8"
+      },
+      "after": {
+        "blob": "768533a1c4df5b8b7dae633e4c378edbcfca5a32",
+        "bytes": 12594,
+        "sha256": "9283a215ee4d10abc5563c87b982d21595b7d32fce83254f7d4134e90f984c53"
+      },
+      "fixedRef": "246ed0f52ca0ec3078f0cd8bddc48c655501a711"
+    },
+    {
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "before": {
+        "blob": "10df8ac13382aa83354d1ca0d8d8f219dd29d5d4",
+        "bytes": 19801,
+        "sha256": "f44c8f9bac3670bebc45645261b8560c23663cd94adde9ec08c35d4bdb2ec7cb"
+      },
+      "after": {
+        "blob": "73c658be247e36a2a261918831dd942f22325dcc",
+        "bytes": 26916,
+        "sha256": "eed405bb4df80b285e6047bd4420979823b93e2cdc947fc94c7a1ad6e53cf6f8"
+      },
+      "fixedRef": "246ed0f52ca0ec3078f0cd8bddc48c655501a711"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "before": {
+        "blob": "98b63c2d7a470f4b02b0f335da59b3d98dc4ef7a",
+        "bytes": 48201,
+        "sha256": "3dc665dea6a62874438fb62c72444ccba18f462c935ac276f5d786fbffe37d11"
+      },
+      "after": {
+        "blob": "f93be3af6e148f165a01a283b375fdb6a5b5ae0e",
+        "bytes": 54654,
+        "sha256": "076cebff493c09dfdaeb0d803979feb9d42b0368b83a56a40e29fc343400b412"
+      },
+      "fixedRef": "246ed0f52ca0ec3078f0cd8bddc48c655501a711"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "before": {
+        "blob": "4287f178188c3b13c992f66a38d1409518ce235b",
+        "bytes": 59993,
+        "sha256": "3851a7a64e84dfd6f3e724b781599cfcf4c355a2294d320653c10c130ed32c62"
+      },
+      "after": {
+        "blob": "0e11bec473b6403172be6567a05f4761ac82b486",
+        "bytes": 73747,
+        "sha256": "ba023dd358604c078f44a51151523082a39e7e3d5910372fd6a8aefcd01a6043"
+      },
+      "fixedRef": "246ed0f52ca0ec3078f0cd8bddc48c655501a711"
+    },
+    {
+      "path": "tools/personal-preview/runner-slots.mjs",
+      "before": null,
+      "after": {
+        "blob": "4693e62cce8a899498fa5ab41114be07cbfab56e",
+        "bytes": 9760,
+        "sha256": "98b73761162c9afd22fc68b097012561a2148a66b14d1275d5ad364e7fbcb458"
+      },
+      "fixedRef": "246ed0f52ca0ec3078f0cd8bddc48c655501a711"
+    },
+    {
+      "path": "tools/personal-preview/runner-slots.test.mjs",
+      "before": null,
+      "after": {
+        "blob": "bf959b421bfd18781a1147b41712f47ad6244c51",
+        "bytes": 7410,
+        "sha256": "885ed96b985976c87a1846178ba33cce586320bbcb74ff23374510808f103022"
+      },
+      "fixedRef": "246ed0f52ca0ec3078f0cd8bddc48c655501a711"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "before": {
+        "blob": "f0d2f053ee236b2f3c112604f4e79f432cf008be",
+        "bytes": 10094,
+        "sha256": "5827f1863578841ad12a459ea7ea42fc474577cd1271e1233beb9a50902c17d8"
+      },
+      "after": {
+        "blob": "aa823f271fec520526b485acc51ceeeef34c9fe1",
+        "bytes": 11355,
+        "sha256": "41a21f2595a68167f227a038dc5d54dc18f88439830dfa9e0a1ddc0f5576ca5d"
+      },
+      "fixedRef": "246ed0f52ca0ec3078f0cd8bddc48c655501a711"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+      "before": {
+        "blob": "8ab14e8e2873f378ab91c799ebfceb48cacc27a0",
+        "bytes": 10667,
+        "sha256": "18bb2c20f13e93f36e90496e608e00438f59700b4b918d443bcf08e5802411b4"
+      },
+      "after": {
+        "blob": "fa011f50200fdca9a8fa46c978e5e432302157de",
+        "bytes": 13446,
+        "sha256": "d4fa4a64baf7f108126258431cadc16ffe232aa9b7fb4b690fba01d884527a3b"
+      },
+      "fixedRef": "246ed0f52ca0ec3078f0cd8bddc48c655501a711"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "before": {
+        "blob": "0148eeb30ebde7f259fb559bc0dc9142216ea4d2",
+        "bytes": 20183,
+        "sha256": "d2e47bc20887e24d9200cd70ea6ddd94881677565cc980b536ff2d4b7c69ff67"
+      },
+      "after": {
+        "blob": "399db4f4d012819cd9cb66db46f9c32ecadc73bf",
+        "bytes": 20703,
+        "sha256": "897e77e29a20e20f0e221deeb7491ac6af7d8efd3c5f5edac5c8d456b03e5096"
+      },
+      "fixedRef": "246ed0f52ca0ec3078f0cd8bddc48c655501a711"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "fixedRef": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+      "before": {
+        "blob": "2ca691b878d3b9e7b308539c00126309791cfc10",
+        "bytes": 3480,
+        "sha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61"
+      },
+      "after": {
+        "blob": "13ccd830d8dd139cf5c0c74e180ae7d26825103a",
+        "bytes": 3480,
+        "sha256": "19bb8c2abdf0c5837942228579b343a28998116981ee9251e2e28e7c34f5dd5f"
+      }
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "fixedRef": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+      "before": {
+        "blob": "44df753be24f7b27d06125917dc5ce7689c2116d",
+        "bytes": 6289,
+        "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2"
+      },
+      "after": {
+        "blob": "b84a464d176610ed0b02fbf121679f50bf217e56",
+        "bytes": 7279,
+        "sha256": "2f953d163861860b17257e5ed6da1e50ea495583fa9cb1ab9a62617adcdb558a"
+      }
+    },
+    {
+      "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+      "fixedRef": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+      "before": {
+        "blob": "6b7c7ad7c5f24a6c1a7ddec9aa46291bc96da8ae",
+        "bytes": 4145,
+        "sha256": "4a2016a00525d055e35d6839aba30ced581afeb7dc6f3b26c592bacc77b05de2"
+      },
+      "after": {
+        "blob": "b16364857aaae1274dadadb8a46060774b92df31",
+        "bytes": 9255,
+        "sha256": "c3db62e3fdefda33b1c321446b1a2581ebb109f948c6789e7447f4f9a7feb3b6"
+      }
+    }
+  ],
+  "inheritedSourceReview": {
+    "path": "../source-manifest.json",
+    "bytes": 30977,
+    "sha256": "4e3057512190fc897f8c8ddd3a4cceb04e5a24cc2384e1a2680af09445170d77",
+    "fixedRef": "75489b8f5433fbdc76b4892cc8ae6678bd2141c3"
+  },
+  "sameDirectInputs04daAnd246": [
+    "apps/runner/src/claude.ts",
+    "apps/runner/src/execution-profiles.ts",
+    "apps/runner/src/native-harness/claude.ts",
+    "apps/server/src/database.ts",
+    "apps/server/src/execution-profiles/index.ts",
+    "apps/server/src/execution-profiles/store.ts",
+    "apps/server/src/runner-maintenance/index.ts",
+    "apps/server/src/runner-maintenance/store.ts",
+    "packages/contracts/src/claude-turn-settings.ts",
+    "packages/contracts/src/engineering-native.ts",
+    "packages/contracts/src/engineering-profile.ts",
+    "packages/contracts/src/engineering.ts",
+    "packages/contracts/src/execution-profiles.ts",
+    "packages/contracts/src/harnesses.ts",
+    "packages/contracts/src/protocol-task.ts",
+    "packages/contracts/src/runner-maintenance.ts",
+    "packages/contracts/src/tasks.ts",
+    "packages/storage/migrations/010-execution-profiles.sql",
+    "tools/owned-process-supervision/supervise.py",
+    "tools/personal-preview/backend-release/build.mjs",
+    "tools/personal-preview/backend-release/cache-plan.mjs",
+    "tools/personal-preview/backend-release/dependency-plan.mjs",
+    "tools/personal-preview/backend-release/files.mjs",
+    "tools/personal-preview/backend-release/host.mjs",
+    "tools/personal-preview/backend-release/index.mjs",
+    "tools/personal-preview/backend-release/installation-view.mjs",
+    "tools/personal-preview/backend-release/node-identity.mjs",
+    "tools/personal-preview/backend-release/runtime-installation.mjs",
+    "tools/personal-preview/browser-session-configuration.mjs",
+    "tools/personal-preview/process.mjs",
+    "tools/personal-preview/web-artifact.mjs",
+    "tools/personal-preview/web-release.mjs",
+    "tools/personal-preview/web-retention-policy.mjs"
+  ],
+  "sameDependencyInputs04daAnd246": [
+    "package.json",
+    "pnpm-lock.yaml",
+    "pnpm-workspace.yaml",
+    "apps/server/package.json",
+    "apps/runner/package.json",
+    "packages/contracts/package.json",
+    "packages/client/package.json"
+  ],
+  "migrationTreeEqual": true,
+  "migrationComparisonPath": "packages/storage/migrations",
+  "projectedBuildArchive": {
+    "roots": [
+      "apps",
+      "packages",
+      "tools",
+      "package.json",
+      "pnpm-lock.yaml",
+      "pnpm-workspace.yaml",
+      "tsconfig.json"
+    ],
+    "files": 1000,
+    "logicalBytes": 7897181,
+    "actualArchiveCreated": false
+  },
+  "notIncluded": "Later plugin route/configuration and v3 claim opt-in/outbox changes, assistant-stream/body read changes, Web/UI changes in full main246 are not reclassified as this assembly. Their existing main delivery remains separate.",
+  "requiredAuthority": "Lead controlled source-only assembly of precisely these15 reviewed blobs. Current owner claimv4 only ownplan/evidence; assembly/build NOT_RUN.",
+  "execution": "NOT_RUN; no build, import, HTTP, PG, native or personal I/O",
+  "retentionSource": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+  "pendingReviewSource": "Retention203ec approved by Lead message; source composition does not alter cd27 runtime or any source not independently reviewed."
+}

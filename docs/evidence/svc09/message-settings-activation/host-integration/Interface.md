@@ -1,0 +1,55 @@
+# SVC09A-04：真实双槽宿主消费者候选
+
+本候选沿 FLOW-001/REQ19 与 MATURE02 TODO08/11，只准备隔离安装中的零模型集成。原模块/33不同局部例已审并 main246；本候选没有运行 host、HTTP、PG、SDK/native、浏览器或个人操作。历史任务开工仍 UNKNOWN；本次准备的第一次保留观察为 2026-10-07T14:39:51.563Z，14:44:58.126Z fresh claim 为原 v4 两个 own 目录。
+
+## 选定源码与供给缺项
+
+优先采用 [source-composition.json](source-composition.json)：已审 `04da80692e79e2b7c3f6341c7fa76515a3f719a3` 为底，精确替换来自 main246 的11个 SVC09A 产品/测试和 `apps/server/src/runners.ts`，再加已审203ec的 backend-release files.mjs/index.mjs/artifact.test.mjs 三路径（count4、单1GiB/总2GiB不变）。其中 runners.ts 精确为已审 CORE 的 LIMIT 前资格过滤。其余 source 全部保持04da，不冒称等于main246。当前没有创建 assembly，也没有改既有 cd27；需要 Lead 受控生成这15路径的固定组合提交。owner v4仅 own plan/evidence，不自行修改或领取产品。
+
+33个既有宿主直接输入、7个依赖manifest/lock及整个 migration 树在04da/246逐blob相同。`configuration.ts/main.ts` 后续差量是显式plugin配置；普通Claude manifest→configuration/publisher/guard接口在04da已具备；本候选不启用plugin、activeSteering、nativeActivityBodies或其他新分支。`runRunner` 的 adapters、AbortSignal、poll/heartbeat/requestTimeout接缝在04da存在；它与该底的 client/contracts/outbox/admission-journal整体消费，不拼入main后续plugin v3或新outbox半套。发布/目录/messageSettings/maintenance的合同不需更新。实际组合兼容性仍由下一真实消费者验证，静态同字节不冒实测。
+
+现有 SVC06 builder 从 Flow 仓库的固定Git提交 archive；不移动工作checkout，不修改manifest来源、不把cd27重标成新产物。投影归档1000文件/7,897,181逻辑B，仍使用原 archive roots。复用固定SVC06B build-inputs 对6c原输入的继承方式，新增仅assembly target/tree/15个替换pin；锁文件、runtime importer/cache选择未变。新的实际 descriptor、完整 inventory 验证与该15路径哈希必须到位后才可 host 准入。当前 artifact字段为空是未供给，不能用纯JSON声明通过 `backendRuntime`。
+
+## 唯一旅程与实际调用点
+
+一个 selected journey，不重跑33注入例或CORE5PG矩阵。小 fixture 只建立全新0700安装目录/0600config、marker/OID和动态loopback端口；复用既有 SVC06 私有安装布局与 `loadPreviewConfiguration / withPreviewLock / startPreviewServices`，不调用个人目录或61227/61228。不跑旧27→35迁移旅程；新库由固定artifact的真实center main及33 SQL文件完成当前schema。
+
+| 阶段 | 真实调用与验收 | 证据限度 |
+| --- | --- | --- |
+| A 默认槽 | 固定 artifact 中 startPreviewServices 启动 center/runner/web；真实center HTTP、runner main真实注册/发布、完整目录读回。仅legacy槽；私有manifest/runner/workdir与已登记nonce/PID绑定，任务/attempt均0。 | 正常runner只在空队列启动；SDK模块可被普通main导入，绝不进入adapter.run/query。不称账号或模型可用。 |
+| B 显式槽 | activatePreviewMessageSettings 使用固定两完整choices；真实 POST /api/runners，一次登记，真实新runner main发布，带 settings header 的目录tuple逐字段等于runnerId/profileId/configDigest/configuration/choices。原legacy config/token/manifest/workdir及旧3服务记录不变；四个角色状态逐一记录。 | availability/provider实际缺证据仍unknown/not-probed。目录或PID不冒领取。 |
+| C 两槽维护 | maintainPreview bootstrap→refresh→resume，使用同artifact，不换产物。读两槽同operation、独立key/version；drain两槽、active/uncertain0后hold；旧4组确停，新4组记录与nonce更新、目录pin保持，ready-paused两槽均maintenance，显式resume两槽accepting。 | 部分ACK/unknown立即保留同operation/key/version、首错与收尾；不在本旅程自动续跑或注册新runner。实际失败不回填PASS。 |
+| D 混合领取 | 空队列下，在原宿主锁内用既有stopOwnedProcess精确停止两个普通runner组，保留center/web。确证两组停止、原journal/outbox无未决，才允许插入两条自有任务。固定artifact的 runRunner + guardExecutionProfile 接受显式注入的测试adapter：只assertOwnership、记录executionIdentity/task冻结值、返回；绝不调用原Claude adapter或SDK query。使用同已发布runner/token/workdir。先提交legacy无pin任务，再提交新profile+settings任务；先仅开settings loop，必须越过旧任务领取自己的settings任务，再开legacy loop领取旧任务。已有runtime拥有claim、heartbeat、outbox、completion与取消；不造第二执行loop。 | 真实socket HTTP/PG分配与ACK、两task/attempt/runner映射为可证明事实；native部分是明确fixture adapter。普通main在这两次claim时已停止，不能称原生进程已经实际领取或执行模型。 |
+| E 收尾 | 两条自有任务的真实中心terminal、冻结requested与实际attempt/事件ACK核对；abort并await两runRunner和原在途请求，保存journal/outbox是否clean；然后stopPreview关闭全部实际槽与所有generation，最后数据库零连接屏障/marker/OID核对。 | 不伪造observed或SDK usage。丢ACK/未决journal/进程或DB不可观测保持unknown/KEEP；退出不等于任务取消。 |
+
+旧会话不隐式迁移的产品合同由已审局部证据保留；本最小旅程只核legacy身份/目录不变与无pin任务路由，不冒完整旧native会话恢复、Web/TUI下条草稿或provider后验。后续接受范围按这五阶段逐项，不用单一PASS覆盖未验项目。
+
+## Web 附属输入与fixture边界
+
+只需一个小静态页面服务使原host的Web角色可ready并参加全槽生命周期，不运行WebApp或浏览器矩阵。采用既有 `createWebArtifactPreparer({build})` 受信fixture构造口，给全新小Git fixture（固定source/lock、实际Vite package identity），build只写合成index.html；源头明确 `SYNTHETIC_STATIC_HOST_FIXTURE_NOT_APP_COMPATIBILITY`。由原verifyWebArtifact完整核实际文件，不手改实际Web产物。
+
+artifact模式的maintenance要求已发布Web pointer与report，因此复用旧SVC06隔离 loader fixture 的原report格式/导入/plan/commit；report只断言loader合同，不伪造真实App报告。留在专库私有root并单独标 synthetic，个人部署永远不可复用。browser-session默认off，context null，不触发账号/cookie/retained3或四版本后继。
+
+## 薄入口与所有者边界
+
+当前 own evidence已写 `host-consumer.mjs`（实际host work消费者）与 `mixed-runner.mjs`（同runRunner的唯一注入adapter接缝）；随后仅补 `host-entry.mjs`（fixture setup/cleanup）和 `host-run.py`（OPS14薄调用），不写产品或共享fixture。固定输入复用前置manifest/Git源，旧raw一份保留；准备材料不是运行许可。
+
+旧SVC06 entry/cleanup只能处理center/runner/web且自己的输入namespace固定，不能原样运行到本片。只复用其已审来源/端口/固定artifact clone方法、既有 process模块与OPS14；新薄caller须完整登记 `runner-settings` 及所有generation。不能通过不完整cleanup读回结果就声称全部停止。原entry/supervisor不复制或修改，不将其既有成功覆盖这次未运行入口。当前两个work模块不含top-level产品import/PG/进程动作，可做纯导入/参数拒绝检查；完整outer/setup/cleanup入口必须在assembly/descriptor固定后再绑定，不能仅调用work函数冒RUN_READY。
+
+## 预算、动态 SQL 与结束条件
+
+下列为本次候选预算请求，尚未开启实际窗口：
+
+- artifact构建单独沿已审SVC06 builder段：420s work + 0.5s TERM + 2s reap；监督输出≤64KiB/总记录≤2MiB、artifact≤1GiB/100000 entries、原cache/staging与live/fresh预算继承固定原输入，fresh时另计并行实际预算。不能将该时间塞进host段或本次0PG准备。
+- host 180s work + 30s cleanup，独立总截止215s包含监督TERM/reap/落盘，准备耗时扣除；不足最低收尾余量时0child拒绝。raw总≤2MiB、私有fixture增量≤32MiB/4096 entries，另列克隆artifact≤1GiB与PG≤128MiB，保留1GiB reserve并加所有并行已声明占用。artifact只读来源未变，clone/安装不在已开始PG段临时扩张。
+- fresh host最低 `1GiB reserve + 1GiB artifact clone worst-case + 128MiB PG + 32MiB private + 2MiB raw = 2317352960B`，加实际并行预算；所有数量是上界/采样，非原子峰值或物理回收承诺。实际clone可在先行离线段完成并把此部分计入既有保留，但不能因此减少reserve。
+- 动态端口仅127.0.0.1，center/Web各一个；禁止61227/61228，无抢占旧端口。每次HTTP≤3s/≤64KiB，公开调用≤96次（目录最大4页、显式查询有限），runtime admission阶段另限≤15s/两条task/两条attempt/每loop并发1/poll500ms；本片没有对所有服务进程HTTP作全局计数；不得把显式driver计数写成全进程总请求上界。
+- 中心Pool max8 + pg-boss max3；维护max2、fixture观察max1、admin max1。新旧center远端连接收尾可能短暂重叠，按最多26连接 + 16管理余量准入，不只按空闲态15估算。每个观察Pool显式query_timeout/statement_timeout；admin不与非本库连接交互。
+- resident上界按4host wrapper+4actualrole child+work+outer=10，另保既有ps/lsof/Git并行检查最多6个短子进程，总≤16；不启动SDK CLI/nativequery进程、pnpm、Chrome或新的构建进程。若现有实际工具闭包不能满足此边界，先改候选，不运行中扩权。
+- 复用 marker `public.flow_preview_owner`、固定database OID、自建名称 `flow_preview_[24hex]`。业务SQL仅真实注册/发布/claim/维护已有store与本fixture只读核对；不手动填profile、自报catalog或直接分配attempt。由真实scheduler激活两task，不SQL强置dispatch_ready。
+- 完整中心停止后复用 `observeConnections` 的有界远端零连接屏障（≤3s、逐query扣remaining、晚到0拒绝），只有工作owner absent/双EOF、所有登记服务组确停、runRunner在途settled、marker/OID同一、无未决事务/intent/outbox且远端0才normal DROP。先耐久checkpoint，再DROP并核剩余[]；任何unknown保留专库/私有root、不要FORCE/盲删，也不读取旧O16/SVC未知资源。
+- cleanup为独立受监督owner；若work组unknown，仅能对已登记确切服务身份做安全stop，不允许DROP或清除私有材料。首错与cleanup各自保存，outer0不独自代表通过。所有原件在exact fixture删除前保存hash/bytes与公开脱敏摘要；token/adminURL/rawconfig永不进入公开raw。
+
+## 当前交付与下一个固定入口
+
+本次给出来源组合、两个work消费者与有限旅程；assembly commit/新artifact、薄caller最终可执行输入和实际PG准入均尚缺，不称 RUN_READY。唯一需要的额外源码动作是Lead受控组合上述15已审路径；不需要新的产品修改或共享runtime scope。当前work定义导入与3个参数拒绝检查已完成：49ms/216B，组absent/双EOF/exact空scratch removed。只证明准备入口可加载与pre-I/O拒绝，不证明实际host语义。新artifact有独审descriptor后，owner沿现两目录补齐outer/setup/cleanup和实际参数绑定，随后一次完整候选独审再安排实际PG/host。普通33例、CORE5PG、Web矩阵不会因此重跑。个人激活与真实跨端/账号/provider保持开放。

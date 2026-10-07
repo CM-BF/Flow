@@ -9,3 +9,7 @@
 - 产品已停写；claim v4原子归还全部11产品/专测路径，仅保留自身plan/evidence收尾。
 
 批准只覆盖源码和注入外部端口/真实自有文件的局部消费者。实际双槽host/PG/发布/跨端/个人激活未验，旧7d1/source6c与新cd27/source04da均缺少完整组合，不能激活设置槽。后继必须用含CORE资格与本宿主的新manifest/tuple，目录和PID不能冒实际claim或账号资格；任务SVC09A-04及父FLOW完整验收仍开放。
+
+## SVC09A-04 真实宿主准备（待审）
+
+15个已审来源组合见[固定表](../../docs/evidence/svc09/message-settings-activation/host-integration/source-composition.json)，两个own work消费者与[Interface](../../docs/evidence/svc09/message-settings-activation/host-integration/Interface.md)为当前准备范围。一次0PG定义导入/3参数拒绝检查通过（49ms/216B），原33不同不重跑。实际assembly/artifact、完整outer/setup/cleanup、PG/host仍未运行，不能由本次加载推定语义批准；新的独立审查待Lead，不沿用原产品批准覆盖新caller。
