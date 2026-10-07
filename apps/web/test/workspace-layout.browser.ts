@@ -44,7 +44,8 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
     const tab = (number: number) => page.getByRole("tab", { name: `Conversation ${number}`, exact: true });
     const chooseChat = (number: number) => page.getByRole("navigation", { name: "Conversations", exact: true }).getByRole("button", { name: `Conversation ${number}`, exact: true }).click();
     const run = async (name: string, operation: () => Promise<void>) => { signal.throwIfAborted(); await operation(); signal.throwIfAborted(); result.passed.push(name); };
-    await page.goto(fixture.url + "#conversation=chat-1");
+    await page.goto(fixture.url + "?recovery=1#conversation=chat-1");
+    await expect(page.getByRole("heading", { name: "Connect to Flow", exact: true })).toBeVisible();
     await page.getByLabel("Owner token", { exact: true }).fill("flow-fixture-only"); await page.getByRole("button", { name: "Connect workspace", exact: true }).click();
     await expect(input(1)).toBeVisible();
     await run("layout-navigation", async () => {
