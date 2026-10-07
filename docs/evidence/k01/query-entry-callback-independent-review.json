@@ -1,0 +1,15 @@
+{
+  "reviewer": "Mika / root",
+  "at": "2026-10-07T18:12:26Z",
+  "decision": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "target": "47354f92fed41eafbc5b03e3841ffe446dd65b61",
+  "packet": "b5de40a8aefde23306da1db2d6293429d8002096",
+  "manifestSha256": "0acfb0d95ca3f2e28e18c3769a345caf8a9c62b9957aa69965e6d2c46b745af7",
+  "findings": {
+    "P1": 0,
+    "P2": 0
+  },
+  "verified": "27 bindings; executable unchanged from execution; 7pure/types0/two child/raw524B/exact scratch absent",
+  "closedFinding": "observer callback contract P2",
+  "limits": "source and local only; historical PG failure cause unproven; no PG window or KEEP mutation"
+}

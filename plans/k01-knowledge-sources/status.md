@@ -26,7 +26,7 @@
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
 | 实现范围 | experiments/knowledge-search |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
 | 当前产出 | 已修复诊断观察器的连接接口，局部行为和类型检查通过；规模诊断仍未重新执行 |
 | 下一可用交付 | 独立审查这次接口修复，再完善失败收尾候选；新数据库诊断尚未开放 |
@@ -150,3 +150,5 @@
 2026-10-07T17:52:02Z：新独立15分钟callback修复段开始，截止18:07:02Z；Mika授权new8MiB（TMP4MiB/raw512KiB均包含）、最多3串行child/各30s/累计60s，仅新直接消费者纯行为与focusednoEmit。原claim30965v2范围不变，起点01626e1bc=origin clean。生产transaction callback/Promise checkout契约由root+db静态确认P2；本段只修experiment observer，不改固定245产品/SQL，不访问KEEP，不开PG/HTTP/provider。首次准入floor16,109,797,376B或后到更高值；原PG窗口已消费，不能复用。
 
 2026-10-07T17:59:17.206014+00:00：本段直接consumer纯7/7与focusednoEmit exit0，2个child监督累计2346ms/operator2525ms，raw524B；实际RETURN17:57:05.675212Z。PID51290/76752均finalabsent/MERGED EOF、无first/secondary/signals，各自TMP同身份删除并lstat absence；初EPERM观察保留。紧前manager更高floor16,298,278,912在第二child前写入同record，首已消费gate不倒改。实际execution be725761abc9329868eb70caf60bb33b008da34c与final可执行字节相同，后继只README更新结果表述；未重复旧纯矩阵，0PG/HTTP/provider/KEEP访问。接口真实复用固定production transaction、callback成功/error/同步借出error监听、query失败ROLLBACK/release、Promise与第三release参数，源码未扩产品。后继K01-06失败收尾预算设计由db只读输入，留下一合法段，不在本15分钟内扩大。当前新launchSTOP、独立增量review待db。
+
+2026-10-07T18:13:24Z：新20分钟同窗失败收尾段开始，截止18:33:24Z；Mika授权new16MiB（TMP8/raw1MiB包含），≤4串行child/每30s/累计90s，仅pure及必要focusedtypes，0PG/HTTP/Chrome/provider/install/旧KEEP读写。fresh b5de40a8=origin clean/claim30965v2三scope已核。未来150s候选使用同origin70/110/120/130/140/150截止，测量FAIL与计算终态/独立DB快照分离；本段不消费真实PG许可。callback修复47354已于18:12:26由Mika独审SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2，7pure/types0/原始两child闭合已核；历史两次真实PG失败因果仍UNKNOWN。

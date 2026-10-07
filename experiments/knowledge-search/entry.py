@@ -91,6 +91,89 @@ def process_closed(report,saved_raw):
 def check_passed(report,closed):
     return closed and report.exit_code==0 and report.first_failure is None
 
+def primary_compute_closed(report,saved):
+    """Known terminal failure is not success, but may permit an independent read-only observation."""
+    allowed={'DEADLINE_EXCEEDED','CHILD_EXIT_NONZERO'}
+    failures=([report.first_failure] if report.first_failure else [])+report.secondary_failures
+    return (report.exit_code is not None and report.owned_state=='absent' and report.capture=='merged'
+      and report.eof=={'stdout':True} and report.stdout==saved and report.stderr==b''
+      and report.observed_bytes==report.retained_bytes==len(saved)
+      and all(f.get('code') in allowed for f in failures)
+      and all(signal.get('state') in ('sent','absent') for signal in report.signals))
+
+def phase_budget(origin,now,phase):
+    # All deadlines retain the original start, including preflight time.
+    cutoffs={'work':70,'cleanup':110,'child-result':120,'primary-stop':130,'observer':140,'parent-receipt':150}
+    return max(0,origin+cutoffs[phase]-now)
+
+def owned_database_input(tmp,identity,context):
+    def root_matches():
+        info=tmp.lstat()
+        return (stat.S_ISDIR(info.st_mode) and not tmp.is_symlink() and tmp.resolve(strict=True)==tmp
+          and (info.st_dev,info.st_ino)==(identity['dev'],identity['ino']) and str(tmp)==identity['path'])
+    if not root_matches() or read_marker(tmp/'.owner.json')!=identity or read_marker(tmp/'primary-context.json')!=context:raise ValueError('namespace identity')
+    names=['owned.database-reservation.json','owned.create-ack.json','owned.database-identity.json']
+    bindings=[{'name':name} for name in names]
+    values=[read_marker(tmp/name,binding=binding) for name,binding in zip(names,bindings)]
+    reservation,ack,known=values;database=known['database'];actual=known['identity']
+    if (not isinstance(database,str) or not database.startswith('flow_k01_query_') or len(database)!=47
+      or any(c not in '0123456789abcdef' for c in database[15:]) or reservation['database']!=database
+      or ack!={'database':database,'creationAcknowledged':True} or reservation['owner']!=actual['owner']
+      or reservation['marker']!=actual['marker'] or not isinstance(actual['oid'],str) or not actual['oid'].isdigit()
+      or not actual['oid'].strip('0') or not isinstance(actual['owner'],str) or not 1<=len(actual['owner'])<=63
+      or not isinstance(actual['marker'],str) or len(actual['marker'])!=36):raise ValueError('database identity')
+    if not root_matches():raise ValueError('namespace changed')
+    return known,bindings
+
+def pg_postflight(module,root,folder,tmp,identity,context,report,saved,origin,env,clock=time.monotonic):
+    result={'state':'SKIPPED_UNKNOWN','measurementOutcome':'FAIL',
+      'primaryComputeClosed':primary_compute_closed(report,saved),'observerAttempted':False,'database':'KEEP_UNKNOWN','scratch':'KEEP'}
+    if not result['primaryComputeClosed']:return result
+    try:
+        if phase_budget(origin,clock(),'parent-receipt')<20 or phase_budget(origin,clock(),'observer')<10:raise ValueError('observer time reserve')
+        expected,bindings=owned_database_input(tmp,identity,context)
+        child_result=tmp/'result.json'
+        if not is_absent(child_result):
+            value=read_marker(child_result,2*1024*1024);cleanup=value.get('cleanup',{})
+            if value.get('window')!=context['window']:raise ValueError('child result window')
+            if value.get('passed') is True and check_passed(report,process_closed(report,saved)):result['measurementOutcome']='PASS'
+            if (value.get('window')==context['window'] and cleanup.get('database')==expected['database']
+              and cleanup.get('identity')==expected['identity'] and cleanup.get('absent') is True
+              and all(cleanup.get(k) is True for k in ('adminClosed','appClosed','auxiliaryClosed','startupSettled','moduleLoadSettled','listenSettled'))
+              and cleanup.get('errors')==[]):
+                result.update(state='CHILD_CLEANUP_CONFIRMED',database='ABSENT_BY_CHILD_RECEIPT')
+                return result
+        # This reserve includes the <=8KiB observer raw, identity copies and final caller receipt.
+        retained=logical_bytes(folder,owned=True)+logical_bytes(tmp,owned=True)
+        if retained+48*1024>2*1024*1024 or logical_bytes(root)+retained+48*1024>8*1024*1024:raise ValueError('observer storage reserve')
+        intent={'context':context,'expected':expected,'inputBindings':bindings,'primaryRawSha256':hashlib.sha256(saved).hexdigest(),
+          'attemptedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'observerSourceSha256':sha(root/'owned-db-observation.mjs')}
+        write_new(folder/'db-observer-intent.json',intent) # Existing intent permanently blocks a second attempt.
+        result['observerAttempted']=True
+        left=phase_budget(origin,clock(),'observer')
+        if left<10 or phase_budget(origin,clock(),'parent-receipt')<20:raise ValueError('observer time reserve')
+        observer_env={k:env[k] for k in ('PATH','LANG','LC_ALL','TZ','NODE_DISABLE_COMPILE_CACHE','FLOW_K01_QUERY_ADMIN_URL') if k in env}
+        observer_env['K01_EXPECTED_IDENTITY']=json.dumps(expected)
+        probe=module.supervise(module.Launch((str(NODE),str(root/'owned-db-observation.mjs')),str(root),observer_env,
+          module.Ownership.NEW_CHILD_SESSION,module.Capture.MERGED),module.Policy(min(7,left-3),1,2,8192))
+        with (folder/'db-observer.raw').open('xb') as handle:handle.write(probe.stdout+probe.stderr);handle.flush();os.fsync(handle.fileno())
+        raw=(folder/'db-observer.raw').read_bytes();facts=dataclasses.asdict(probe);facts.pop('stdout');facts.pop('stderr')
+        result['observerProcessFacts']=facts;result['observerRawSha256']=hashlib.sha256(raw).hexdigest()
+        result['observerComputeClosed']=process_closed(probe,raw)
+        observation=json.loads(raw);result['ownedDatabaseObservation']=observation
+        row=(observation.get('rows') or [None])[0]
+        exact=(row is not None and all(row.get(k)==v for k,v in {'name':expected['database'],**expected['identity']}.items()))
+        known_zero=exact and len(observation.get('rows',[]))==1 and type(row.get('connections')) is int and row.get('connections')==0 and observation.get('state')=='ZERO_CONNECTIONS_SNAPSHOT'
+        known_absent=observation.get('rows')==[] and observation.get('state')=='ABSENT_SNAPSHOT'
+        if (result['observerComputeClosed'] and probe.exit_code==0 and probe.first_failure is None
+          and observation.get('closed') is True and observation.get('firstError') is None and observation.get('closeError') is None
+          and (known_zero or known_absent)):
+            result.update(state='OBSERVED',database='KEEP_ZERO_CONNECTIONS_SNAPSHOT' if known_zero else 'ABSENT_SNAPSHOT')
+        if phase_budget(origin,clock(),'observer')<=0:result.update(state='UNKNOWN_DEADLINE',database='KEEP_UNKNOWN')
+    except Exception as error:
+        result['failure']={'type':type(error).__name__,'errno':getattr(error,'errno',None)}
+    return result
+
 def environment(tmp,started,permit,admin_url=None):
     # No ambient HOME, NODE_OPTIONS, proxies, authentication or package manager settings.
     env={'PATH':'/usr/bin:/bin','LANG':'C','LC_ALL':'C','TZ':'UTC','TMPDIR':str(tmp),'TMP':str(tmp),'TEMP':str(tmp),
@@ -114,13 +197,15 @@ def create_scratch(parent,name=None):
     write_new(path/'.owner.json',identity);sync_directory(parent)
     return path,identity
 
-def read_marker(path):
+def read_marker(path,maximum=8192,binding=None):
     fd=os.open(path,os.O_RDONLY|os.O_NOFOLLOW|os.O_NONBLOCK)
     with os.fdopen(fd,'rb') as handle:
         info=os.fstat(handle.fileno())
-        if not stat.S_ISREG(info.st_mode) or info.st_size>8192:raise ValueError('marker file')
-        data=handle.read(8193)
-        if len(data)!=info.st_size or len(data)>8192:raise ValueError('marker changed')
+        if not stat.S_ISREG(info.st_mode) or info.st_nlink!=1 or info.st_size>maximum:raise ValueError('marker file')
+        before=(info.st_dev,info.st_ino,info.st_size,info.st_mtime_ns)
+        data=handle.read(maximum+1);after=os.fstat(handle.fileno());named=path.lstat()
+        if len(data)!=info.st_size or len(data)>maximum or before!=(after.st_dev,after.st_ino,after.st_size,after.st_mtime_ns) or before!=(named.st_dev,named.st_ino,named.st_size,named.st_mtime_ns) or not stat.S_ISREG(named.st_mode) or after.st_nlink!=1 or named.st_nlink!=1:raise ValueError('marker changed')
+    if binding is not None:binding.update(bytes=len(data),sha256=hashlib.sha256(data).hexdigest())
     return json.loads(data)
 
 def cleanup_scratch(path,identity,closed,deadline=None):
@@ -171,16 +256,21 @@ def open_record(permit):
     if {e['label'] for e in started}!={e['label'] for e in returned} or len(started)!=len(returned) or any(not e['resourceConfirmed'] or not e['scratch']['absent'] for e in returned) or any(not e['withinTimeBudget'] for e in finished):raise ValueError('prior result unknown; HOLD')
     return folder,ledger,finished,len(started)+1
 
+def emit_return(value,deadline,clock=time.monotonic,emit=None):
+    (emit or (lambda item:print(json.dumps(item),flush=True)))(value)
+    return clock()<=deadline
+
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('mode',choices=['caller','pure','types','pg']);parser.add_argument('--permit',required=True,type=Path);parser.add_argument('--case',choices=['caller','listener','budget','owned-budget','url','observer'],default='caller')
+    parser=argparse.ArgumentParser();parser.add_argument('mode',choices=['caller','pure','types','pg']);parser.add_argument('--permit',required=True,type=Path);parser.add_argument('--case',choices=['caller','listener','budget','owned-budget','url','observer','postflight','db-observer'],default='caller')
     args=parser.parse_args()
     if sys.version_info<(3,10):raise ValueError('OPS14 requires Python >=3.10 before any reservation')
     started=time.time();started_mono=time.monotonic();permit=json.loads(args.permit.read_text());permit['_sha']=sha(args.permit)
     now=datetime.datetime.now(datetime.timezone.utc);deadline=datetime.datetime.fromisoformat(permit['expiresAt'].replace('Z','+00:00'))
     if args.mode not in permit.get('modes',[]) or permit.get('state')!='OPEN' or now>=deadline or not permit.get('authority'):raise ValueError('not OPEN')
-    maximum=120 if args.mode=='pg' else min(30,permit.get('maxChildSeconds',30))
+    maximum=150 if args.mode=='pg' else min(30,permit.get('maxChildSeconds',30))
     if not isinstance(maximum,int) or maximum<12:raise ValueError('child time budget')
     if (deadline-now).total_seconds()<maximum:raise ValueError('insufficient absolute permit time')
+    if args.mode=='pg' and (permit.get('integratedObservation') is not True or permit.get('pgTotalSeconds')!=150):raise ValueError('integrated observation requires new explicit permit')
     manifest=verify_inputs();folder,ledger,finished,sequence=open_record(permit)
     if args.mode!='pg' and (len(finished)>=min(5,permit.get('maxChildren',5)) or sum(r['operatorElapsedMs'] for r in finished)+maximum*1000>min(90000,permit.get('cumulativeChildMs',90000))):raise ValueError('local iteration budget')
     if logical_bytes(ROOT)+logical_bytes(folder)>(8*1024*1024-512*1024 if args.mode=='pg' else MAX_NEW):raise ValueError('new logical budget')
@@ -198,7 +288,9 @@ def main():
     spec=importlib.util.spec_from_file_location('k01_ops14',SUPERVISOR);module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
     source_files=[{'path':p.name,'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(ROOT.iterdir()) if p.is_file() and p.suffix in ('.py','.ts','.mjs','.json')]
     scratch_name='k01-'+uuid.uuid4().hex
-    if args.mode=='caller' and args.case=='observer':argv=[str(NODE),str(ROOT/'node_modules/vitest/vitest.mjs'),'run','observing-pool.test.ts','--config',str(ROOT/'vitest.config.mjs'),'--no-cache']
+    if args.mode=='caller' and args.case=='postflight':argv=[sys.executable,'-I','-B',str(ROOT/'postflight.test.py')]
+    elif args.mode=='caller' and args.case=='db-observer':argv=[str(NODE),str(ROOT/'node_modules/vitest/vitest.mjs'),'run','owned-db-observation.test.mjs','--config',str(ROOT/'vitest.config.mjs'),'--no-cache']
+    elif args.mode=='caller' and args.case=='observer':argv=[str(NODE),str(ROOT/'node_modules/vitest/vitest.mjs'),'run','observing-pool.test.ts','--config',str(ROOT/'vitest.config.mjs'),'--no-cache']
     elif args.mode=='caller' and args.case in ('listener','budget','url'):argv=[str(NODE),str(ROOT/'node_modules/vitest/vitest.mjs'),'run',('listen.test.ts' if args.case=='listener' else 'budget.test.ts'),'--config',str(ROOT/'vitest.config.mjs'),'--no-cache']
     elif args.mode=='caller' and args.case=='owned-budget':argv=[sys.executable,'-I','-B',str(ROOT/'entry.test.py'),'EntryTests.test_owned_budget_counts_nested_names_and_rejects_symlinks','EntryTests.test_owned_root_and_scandir_fail_closed','EntryTests.test_measurement_failure_preserves_child_and_cleanup_facts']
     elif args.mode=='caller':argv=[sys.executable,'-I','-B',str(ROOT/'entry.test.py')]
@@ -211,7 +303,9 @@ def main():
     tmp,identity=create_scratch(ROOT/'.scratch',scratch_name)
     append_record(ledger,{'event':'namespace-created','label':label,'identity':identity})
     env=environment(tmp,started,permit,os.environ.get('FLOW_K01_QUERY_ADMIN_URL') if args.mode=='pg' else None)
-    work=(110 if args.mode=='pg' else maximum-10)-(time.monotonic()-started_mono)
+    context={'window':permit.get('window'),'sourceHead':permit['sourceHead'],'permitSha256':permit['_sha'],'namespace':identity}
+    if args.mode=='pg':write_new(tmp/'primary-context.json',context)
+    work=(120 if args.mode=='pg' else maximum-10)-(time.monotonic()-started_mono)
     if work<=0:raise ValueError('preflight consumed work budget')
     report=module.supervise(module.Launch(tuple(argv),str(ROOT),env,module.Ownership.NEW_CHILD_SESSION,module.Capture.MERGED),module.Policy(work,3 if args.mode=='pg' else 2,7 if args.mode=='pg' else 5,49152))
     raw=report.stdout+report.stderr
@@ -223,18 +317,23 @@ def main():
     try:verify_inputs();value['fixedInputsAfter']='matched'
     except Exception:value['fixedInputsAfter']='UNKNOWN'
     # Future PG receipts are retained regardless of process closure; no DB outcome is inferred here.
+    if args.mode=='pg':
+        write_new(folder/'primary-process.json',{'recordedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'report':value})
+        value['primaryComputeClosed']=primary_compute_closed(report,saved)
+        value['postflight']=pg_postflight(module,ROOT,folder,tmp,identity,context,report,saved,started_mono,env) if not value['sourceChanged'] and value['fixedInputsAfter']=='matched' else {'state':'SKIPPED_UNKNOWN','measurementOutcome':'FAIL'}
     value['scratch']=cleanup_scratch(tmp,identity,closed,started_mono+maximum-1) if args.mode!='pg' else {'path':str(tmp),'identity':identity,'state':'KEEP_PG_RECEIPTS','absent':False}
-    value.update(storage_facts(ROOT,folder,tmp,args.mode=='pg',closed,value['scratch']))
+    value.update(storage_facts(ROOT,folder,tmp,args.mode=='pg',value.get('primaryComputeClosed',closed),value['scratch']))
     value['operatorElapsedMs']=round((time.monotonic()-started_mono)*1000)
     value['withinTimeBudget']=value['operatorElapsedMs']<=maximum*1000
     value['endedAt']=datetime.datetime.now(datetime.timezone.utc).isoformat()
-    if args.mode=='pg' and closed and value['storageWithinBudget']:
+    if args.mode=='pg' and value.get('primaryComputeClosed') and value['storageWithinBudget']:
         # Reserve more than the maximum 128KiB single ledger plus 48KiB captured raw in child writes; account the exact final line here.
         extra=len((json.dumps(value,ensure_ascii=False,separators=(',',':'))+'\n').encode())+128
         value['storageWithinBudget']=value['storageWithinBudget'] and value['logicalBytes']+extra<=8*1024*1024 and value['aggregateRawBytes']+extra<=2*1024*1024
         value['finalRecordReserveBytes']=extra
     append_record(ledger,value)
     passed=check_passed(report,closed) and not value['sourceChanged'] and value['fixedInputsAfter']=='matched' and value['storageWithinBudget'] and value['withinTimeBudget'] and (args.mode=='pg' or value['scratch']['absent'])
-    print(json.dumps({'mode':args.mode,'exit':report.exit_code,'closed':closed,'scratch':value['scratch']['state'],'passed':passed}))
-    return 0 if passed else 1
+    if args.mode=='pg':passed=passed and value['postflight'].get('measurementOutcome')=='PASS' and value['postflight'].get('database') in ('ABSENT_BY_CHILD_RECEIPT','ABSENT_SNAPSHOT')
+    returned=emit_return({'mode':args.mode,'exit':report.exit_code,'closed':closed,'scratch':value['scratch']['state'],'passed':passed},started_mono+maximum)
+    return 0 if passed and returned else 1
 if __name__=='__main__':raise SystemExit(main())
