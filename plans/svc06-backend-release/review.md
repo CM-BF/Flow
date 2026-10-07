@@ -1,6 +1,10 @@
-# 本次待审：root pg 闭包
+# 当前完整artifact执行入口：PENDING
 
-Target `893324703fe35c3b9fca1dbfbec96bdd6b4405fa`；仅3文件，1生产来源行和2直接测试。见[局部结果](../../docs/evidence/svc06/root-pg-checks.md)。PENDING Execution Lead；不扩大原2aff批准。
+Source `4de45996435dd86c3409910dad787e99efc9cd63` / artifact固定main `3230becf07b804479ec4dc7ef02fcaff58cc3858`；[manifest](../../docs/evidence/svc06/artifact-first-run/manifest.json)绑定原始cache失败、固定源码/实际构建工具和新入口。只读审查，尚无实际完整构建/安装/import/PG。
+
+# 根pg闭包：APPROVED_LIMITED_ROOT_PG_CLOSURE
+
+Target `893324703fe35c3b9fca1dbfbec96bdd6b4405fa`；仅3文件，1生产来源行和2直接测试。见[局部结果](../../docs/evidence/svc06/root-pg-checks.md)。Execution Lead唯一限定批准；[原回执](../../docs/evidence/svc06/root-pg-independent-review.json)。三源已main3230，不扩大原2aff或完整产物批准。
 
 # 当前宿主工具闭包：APPROVED_LIMITED_HOST_TOOL_CLOSURE
 

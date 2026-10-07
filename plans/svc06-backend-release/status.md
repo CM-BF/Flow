@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 03:22:06 UTC；宿主工具已main，新根pg解析增量待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 03:30:05 UTC；rootpg已main，首次完整产物入口固定待审 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,23 +10,23 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 本片base 82bebb856d1bdaca5bf5b9836491ef553f67df53；根pg增量 893324703fe35c3b9fca1dbfbec96bdd6b4405fa |
-| 工作树dirty状态 | 根pg源码已固定停写；完整产物入口仅准备，未运行 |
-| 工作分支状态 | completed |
+| 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；本入口source 4de45996435dd86c3409910dad787e99efc9cd63 |
+| 工作树dirty状态 | 产品及执行入口固定；本轮仅metadata封存，实际构建尚未运行 |
+| 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 实现目标 | 893324703fe35c3b9fca1dbfbec96bdd6b4405fa |
-| 实现范围 | tools/personal-preview/backend-release/dependency-plan.mjs, tools/personal-preview/backend-release/dependency-plan.test.mjs, tools/personal-preview/backend-release/runtime-installation.mjs, tools/personal-preview/backend-release/runtime-installation.test.mjs |
-| 检查状态 | PASSED 893324703fe35c3b9fca1dbfbec96bdd6b4405fa；根pg3 distinct分轮绿，原1 red保留；完整产物NOT_RUN |
-| 已集成main状态 / HEAD | parser/builder b218七源及59c记录已接收 main/origin a2e7803161ffb7e2158eaf3c13531448d2a777b0，七源逐字相同；[接收事实](../../docs/evidence/svc06/parser-builder-main-receipt.json)。宿主工具2aff四源已main8c80a7105cf442783e83184a14e34c8da08ebe16逐字相同；[回执](../../docs/evidence/svc06/host-tools-main-receipt.json)。根pg新增delta尚未main |
+| 实现目标 | 4de45996435dd86c3409910dad787e99efc9cd63 |
+| 实现范围 | docs/evidence/svc06/artifact-first-run/entry.mjs, docs/evidence/svc06/artifact-first-run/runtime-proof.mjs, docs/evidence/svc06/artifact-first-run/supervise.py, docs/evidence/svc06/artifact-first-run/inputs.json |
+| 检查状态 | NOT_RUN 完整artifact；仅Node语法检查/纯Python语法解析和readonly输入核验；原局部检查保持 |
+| 已集成main状态 / HEAD | rootpg893324三源已main/origin 3230becf07b804479ec4dc7ef02fcaff58cc3858逐字同；[回执](../../docs/evidence/svc06/root-pg-main-receipt.json)。本完整产物执行入口尚待审/未运行 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 固定宿主工具已接收；新补的数据库驱动根级入口已通过定向检查，等待独立审查。 |
-| 下一可用交付 | 接收根级驱动修正后，固定一致输入，准备一次真实产物构建与内部解析验证。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 固定宿主依赖闭包已接收；完整产物的离线构建、校验和内部解析入口已准备，等待独立审查。 |
+| 下一可用交付 | 在协调好的运行窗口执行一次真实离线构建，验证产物内依赖与SQL资源可用。 |
+| 当前阻塞 | ACTIVE: 等待执行入口独立审查和共享重运行窗口；未启动完整安装或产物运行 |
 | 需用户决定 | NONE |
-| Review | 根pg 893324703fe35c3b9fca1dbfbec96bdd6b4405fa PENDING；原2aff APPROVED_LIMITED_HOST_TOOL_CLOSURE及main事实保持；完整产物未验 |
+| Review | 本完整入口 PENDING Execution Lead；rootpg893324 APPROVED_LIMITED_ROOT_PG_CLOSURE已main；不扩大完整artifact批准 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v5，11 literal scopes；[parser范围追加](../../docs/evidence/svc06/parser-amend-receipt.json) |
-| 架构影响 | 私有host工具来源表声明根tsx/pg与固定Web Vite，沿原图遍历/根staging投影；不装Web workspace，不改公开host/FSM。真实产物仍待集成验收。 |
+| 架构影响 | 执行入口只复用原prepare/verify与OPS14；server/runner/host根tsx/pg/Vite已固定，0PG导入验证与真正host生命周期/开发树不可用验收分开。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -95,3 +95,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 03:22:06 UTC：根宿主pg解析闭包
 
 [局部结果](../../docs/evidence/svc06/root-pg-checks.md)：source `893324703fe35c3b9fca1dbfbec96bdd6b4405fa`；1 red→3 green及固定8c锁纯选择，0安装/完整构建。原宿主工具2aff已main8c，本增量待唯一独审；完整artifact输入随后固定，不以8c缺rootpg当完整正例。03/04/05仍open。
+
+## 2026-10-07 03:30:05 UTC：首次真实artifact入口固定
+
+[唯一入口/预算](../../docs/evidence/svc06/artifact-first-run/README.md) / [manifest](../../docs/evidence/svc06/artifact-first-run/manifest.json)。source `4de45996435dd86c3409910dad787e99efc9cd63`，artifact固定main `3230becf07b804479ec4dc7ef02fcaff58cc3858`；420s工作+.5TERM/2reap，原clone/install180s不增。新增空间预算2,317,352,960B与1GiB收尾对应fresh3,391,094,784B，比原2.5GiB更严格；不计clone节省、不称硬预留。原cache3mode观察红不重跑；SDK实际metadata/路径只读确认。完整build/import/PG/host仍NOT_RUN，03/04/05不勾。产品/entry全停写供唯一审查。
