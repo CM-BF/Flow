@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-07T22:32:21.253470+00:00",
+  "statusParse": "errors[]; FAILED targetd034 accurate; originalstartUNKNOWN retained",
+  "links": {
+    "count": 55,
+    "broken": []
+  },
+  "source": "UNCHANGED d034; no product/test edits after fixed target",
+  "skills": "Reuse clean-code/codebase-design: distinguish concurrency high-water from cumulative requests, resource absence from log completeness, actual vs hypothesis",
+  "accounting": {
+    "chargeMs": 50944,
+    "basis": "ceil(max(actual outer post-write50943.57704196591,parent post-write50903.253832948394,parent serialized50901.59491589293))",
+    "closed": true,
+    "unusedTransfer": false
+  },
+  "cleanupLayers": {
+    "processesAndKnownGroups": "fresh ESRCH",
+    "scratchAndCacheLinks": "absent",
+    "rawFixture": "contextClosed/httpClosed true",
+    "parent": "workerresultnull/scenario closure UNKNOWN preserved",
+    "ChromeLogs": "stdoutEOF=false/stderrEOF=false; do not assert complete logs",
+    "PG": "none",
+    "independentPortProbe": false
+  },
+  "engineeringChecks": "NOT_RUN; metadata parser only",
+  "rawArchiveBytes": 60075,
+  "futureRuntime": "NOT_GRANTED/no auto retry"
+}

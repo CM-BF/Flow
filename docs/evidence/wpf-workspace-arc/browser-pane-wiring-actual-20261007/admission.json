@@ -1,0 +1,84 @@
+{
+  "at": "2026-10-07T22:28:37.902584+00:00",
+  "grant": {
+    "allowRun": true,
+    "run": "arc-pane-wiring-20261007-222837",
+    "executionHead": "1205f352b578757c6c3154332885e3bd10fa00fa",
+    "source": "d034f13da989c8f175c2664cb903a7273baf84eb",
+    "bindingSha256": "42802a58a261e14362215da38fc4e2836203012553b7b13091f708e023a26f65",
+    "expiresAt": "2026-10-07T22:31:24.277Z",
+    "totalMs": 90000,
+    "minimumFreeBytes": 17729978368,
+    "managerGrant": "ARC-PANE-WIRING-BROWSER-20261007-ONCE"
+  },
+  "freshAvailableBytes": 18049761280,
+  "rootIdentity": {
+    "dev": 16777234,
+    "inode": 124612138,
+    "uid": 501
+  },
+  "claimObservedAt": "2026-10-07T22:28:37.765Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversation-stream/host.ts",
+      "apps/web/src/conversations/ConversationList.tsx",
+      "apps/web/src/plugin-integration/layout.ts",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/plugins/host.ts",
+      "apps/web/src/plugins/sample.tsx",
+      "apps/web/src/plugins/types.ts",
+      "apps/web/src/plugins/validation.ts",
+      "apps/web/src/workspace-layout/WorkspaceTabs.tsx",
+      "apps/web/src/workspace-layout/layout.css",
+      "apps/web/src/workspace-state.ts",
+      "apps/web/test/conversation-stream-integration.test.ts",
+      "apps/web/test/plugin-host.test.ts",
+      "apps/web/test/plugin-integration.test.ts",
+      "apps/web/test/workspace-layout.browser.ts",
+      "apps/web/test/workspace-layout.fixture.ts",
+      "apps/web/test/workspace-layout.test.ts",
+      "docs/evidence/wpf-workspace-arc",
+      "plans/wpf-workspace-arc"
+    ],
+    "state": "active",
+    "branch": "codex/web-workspace-composition",
+    "origin": "new",
+    "taskId": "WPF-WORKSPACEARC01",
+    "worker": "workspace_panels_owner",
+    "claimId": "c34d95d1-af01-4325-bcd5-77ba9dd28379",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+    "createdAt": "2026-10-07T17:59:04.704Z",
+    "updatedAt": "2026-10-07T17:59:04.704Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlap": [],
+  "pins": {
+    "source": 207,
+    "external": 43,
+    "resolver": 33
+  },
+  "nativeIdentity": {
+    "bundle": "com.google.Chrome",
+    "team": "EQHXZ8M8AV",
+    "mode": "codesign display; fixed native file pins matched"
+  },
+  "actualRemote": "1205f352b578757c6c3154332885e3bd10fa00fa",
+  "cleanBeforeLaunch": true,
+  "historicFloor": 15953690624,
+  "routineFloorRebindAuthorized": true,
+  "intrinsicLimitsUnchanged": {
+    "scratch": 268435456,
+    "raw": 8388608,
+    "totalMs": 90000,
+    "workMs": 60000,
+    "cleanupMs": 30000,
+    "minimumCleanupFreeBytes": 1073741824
+  },
+  "pid": 21254
+}

@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T22:29:52.181216+00:00",
+  "processes": {
+    "pid:21254": "ESRCH",
+    "pid:22024": "ESRCH",
+    "pid:22121": "ESRCH",
+    "pid:23047": "ESRCH",
+    "pgid:22024": "ESRCH",
+    "pgid:22121": "ESRCH"
+  },
+  "scratchAbsent": true,
+  "cacheLinksAbsent": {
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite": true,
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp": true
+  },
+  "PG": false,
+  "independentPortProbe": false,
+  "fixtureCloseReceipt": {
+    "contextClosed": true,
+    "httpClosed": true
+  },
+  "scenarioCleanupErrors": [],
+  "fullOwnedReturn": true,
+  "workerChromeStreamEOF": {
+    "stdout": false,
+    "stderr": false
+  },
+  "resourceReturnBasis": "Fresh owned PID/PGID absence, parent EOF/cleanup and raw fixture close receipt; Chrome log completeness is not asserted."
+}

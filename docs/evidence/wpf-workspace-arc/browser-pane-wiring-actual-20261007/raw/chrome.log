@@ -1,0 +1,46 @@
+
+DevTools listening on ws://127.0.0.1:52556/devtools/browser/1a2c0268-52ad-402e-b3b9-24456cbc3c5b
+Trying to load the allocator multiple times. This is *not* supported.
+[23047:174236317:1007/152846.468256:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: DEPRECATED_ENDPOINT
+Created TensorFlow Lite XNNPACK delegate for CPU.
+[40470:174258799:1007/152902.571604:VERBOSE1:chrome/updater/updater.cc:364] Version: 156.0.8067.0, opt, ARM_64, command line: /Users/citrine/Library/Application Support/Google/GoogleUpdater/156.0.8067.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake-all --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[40470:174258799:1007/152902.572167:VERBOSE1:chrome/updater/updater.cc:367] OS version: 26.6.2, arch: arm64, System uptime (seconds): 886913, parent pid: 23047
+[40470:174258799:1007/152902.573804:VERBOSE1:chrome/updater/updater.cc:372] Available disk space in install directory (/Users/citrine/Library/Application Support/Google/GoogleUpdater): 17964150784B (16.730GiB) / 994662584320B (926.352GiB)
+[40470:174258799:1007/152902.573832:VERBOSE1:chrome/updater/updater.cc:376] Available disk space in temporary directory (/private/tmp/arc-browser-pane-wiring-sekaruhl/scratch): 17964150784B (16.730GiB) / 994662584320B (926.352GiB)
+[40470:174258799:1007/152902.573897:VERBOSE2:chrome/updater/event_history.cc:266] Emitted a UPDATER_PROCESS START event to the history log
+[40477:174258812:1007/152902.582037:VERBOSE1:chrome/updater/updater.cc:364] Version: 156.0.8067.0, opt, ARM_64, command line: /Users/citrine/Library/Application Support/Google/GoogleUpdater/156.0.8067.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --crash-handler --database=/Users/citrine/Library/Application Support/Google/GoogleUpdater/156.0.8067.0/Crashpad --url=https://clients2.google.com/cr/report --annotation=prod=Update4 --annotation=ver=156.0.8067.0 --handshake-fd=6 --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[40477:174258812:1007/152902.582610:VERBOSE1:chrome/updater/updater.cc:367] OS version: 26.6.2, arch: arm64, System uptime (seconds): 886913, parent pid: 1
+[40477:174258812:1007/152902.584443:VERBOSE1:chrome/updater/updater.cc:372] Available disk space in install directory (/Users/citrine/Library/Application Support/Google/GoogleUpdater): 17964150784B (16.730GiB) / 994662584320B (926.352GiB)
+[40477:174258812:1007/152902.584468:VERBOSE1:chrome/updater/updater.cc:376] Available disk space in temporary directory (/private/tmp/arc-browser-pane-wiring-sekaruhl/scratch): 17964150784B (16.730GiB) / 994662584320B (926.352GiB)
+[40477:174258812:1007/152902.584681:VERBOSE2:chrome/updater/event_history.cc:266] Emitted a UPDATER_PROCESS START event to the history log
+[40470:174258799:1007/152902.585221:VERBOSE1:chrome/updater/crash_reporter.cc:123] Crash handler launched and ready.
+[40470:174258799:1007/152902.586102:VERBOSE1:chrome/updater/crash_client.cc:108] Found 0 completed crash reports
+[40470:174258799:1007/152902.586211:VERBOSE1:chrome/updater/crash_client.cc:132] Found 0 pending crash reports
+[40470:174258799:1007/152902.586315:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/citrine/Library/Application Support/Google/RLZ/Crashpad/settings.dat: No such file or directory (2)
+[40470:174258799:1007/152902.586327:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/citrine/Library/Application Support/Google/Measurement/Crashpad/settings.dat: No such file or directory (2)
+[40470:174258799:1007/152902.586334:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/citrine/Library/Application Support/Google/consentOptions/Crashpad/settings.dat: No such file or directory (2)
+[40470:174258799:1007/152902.586341:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/citrine/Library/Application Support/Google/Chrome for Testing/Crashpad/settings.dat: No such file or directory (2)
+[40470:174258799:1007/152902.586347:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/citrine/Library/Application Support/Google/AndroidStudio2024.1/Crashpad/settings.dat: No such file or directory (2)
+[40470:174258799:1007/152902.586513:VERBOSE1:chrome/updater/updater.cc:105] Crash reporting initialized.
+[40470:174258839:1007/152902.586767:VERBOSE1:chrome/updater/app/app_wakeall.cc:58] Launching `/Users/citrine/Library/Application Support/Google/GoogleUpdater/156.0.8067.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake`
+[40494:174258843:1007/152902.593828:VERBOSE1:chrome/updater/updater.cc:364] Version: 156.0.8067.0, opt, ARM_64, command line: /Users/citrine/Library/Application Support/Google/GoogleUpdater/156.0.8067.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --wake --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[40494:174258843:1007/152902.594322:VERBOSE1:chrome/updater/updater.cc:367] OS version: 26.6.2, arch: arm64, System uptime (seconds): 886913, parent pid: 40470
+[40494:174258843:1007/152902.596327:VERBOSE1:chrome/updater/updater.cc:372] Available disk space in install directory (/Users/citrine/Library/Application Support/Google/GoogleUpdater): 17964077056B (16.730GiB) / 994662584320B (926.352GiB)
+[40494:174258843:1007/152902.596354:VERBOSE1:chrome/updater/updater.cc:376] Available disk space in temporary directory (/private/tmp/arc-browser-pane-wiring-sekaruhl/scratch): 17964077056B (16.730GiB) / 994662584320B (926.352GiB)
+[40494:174258843:1007/152902.596406:VERBOSE2:chrome/updater/event_history.cc:266] Emitted a UPDATER_PROCESS START event to the history log
+[40516:174258867:1007/152902.604893:VERBOSE1:chrome/updater/updater.cc:364] Version: 156.0.8067.0, opt, ARM_64, command line: /Users/citrine/Library/Application Support/Google/GoogleUpdater/156.0.8067.0/GoogleUpdater.app/Contents/MacOS/GoogleUpdater --crash-handler --database=/Users/citrine/Library/Application Support/Google/GoogleUpdater/156.0.8067.0/Crashpad --url=https://clients2.google.com/cr/report --annotation=prod=Update4 --annotation=ver=156.0.8067.0 --handshake-fd=6 --enable-logging --vmodule=*/components/update_client/*=2,*/chrome/enterprise_companion/*=2,*/chrome/updater/*=2
+[40516:174258867:1007/152902.605397:VERBOSE1:chrome/updater/updater.cc:367] OS version: 26.6.2, arch: arm64, System uptime (seconds): 886913, parent pid: 1
+[40516:174258867:1007/152902.606994:VERBOSE1:chrome/updater/updater.cc:372] Available disk space in install directory (/Users/citrine/Library/Application Support/Google/GoogleUpdater): 17964077056B (16.730GiB) / 994662584320B (926.352GiB)
+[40516:174258867:1007/152902.607017:VERBOSE1:chrome/updater/updater.cc:376] Available disk space in temporary directory (/private/tmp/arc-browser-pane-wiring-sekaruhl/scratch): 17964077056B (16.730GiB) / 994662584320B (926.352GiB)
+[40516:174258867:1007/152902.607067:VERBOSE2:chrome/updater/event_history.cc:266] Emitted a UPDATER_PROCESS START event to the history log
+[40494:174258843:1007/152902.607469:VERBOSE1:chrome/updater/crash_reporter.cc:123] Crash handler launched and ready.
+[40494:174258843:1007/152902.608034:VERBOSE1:chrome/updater/crash_client.cc:108] Found 0 completed crash reports
+[40494:174258843:1007/152902.608110:VERBOSE1:chrome/updater/crash_client.cc:132] Found 0 pending crash reports
+[40494:174258843:1007/152902.608198:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/citrine/Library/Application Support/Google/RLZ/Crashpad/settings.dat: No such file or directory (2)
+[40494:174258843:1007/152902.608210:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/citrine/Library/Application Support/Google/Measurement/Crashpad/settings.dat: No such file or directory (2)
+[40494:174258843:1007/152902.608219:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/citrine/Library/Application Support/Google/consentOptions/Crashpad/settings.dat: No such file or directory (2)
+[40494:174258843:1007/152902.608227:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/citrine/Library/Application Support/Google/Chrome for Testing/Crashpad/settings.dat: No such file or directory (2)
+[40494:174258843:1007/152902.608235:ERROR:third_party/crashpad/crashpad/util/file/file_io_posix.cc:145] open /Users/citrine/Library/Application Support/Google/AndroidStudio2024.1/Crashpad/settings.dat: No such file or directory (2)
+[40494:174258843:1007/152902.608396:VERBOSE1:chrome/updater/updater.cc:105] Crash reporting initialized.
+[40494:174258843:1007/152902.608529:VERBOSE1:chrome/updater/ipc/update_service_internal_proxy_mojo.cc:61] Run
+[23047:174236317:1007/152907.618919:ERROR:google_apis/gcm/engine/registration_request.cc:291] Registration response error message: QUOTA_EXCEEDED

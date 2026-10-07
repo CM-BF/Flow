@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:25:50.434795+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:30:35.932058+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
 | 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source d034f13da989c8f175c2664cb903a7273baf84eb；metadata随后seal |
-| 工作树dirty状态 | 源码全20 STOP；仅本次own metadata封存随后clean；0工程child/HTTP/PG/Chrome |
+| 工作树dirty状态 | 原20产品/source STOP；仅actual失败metadata DIRTY；0child/无新运行grant |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | validation |
-| 检查状态 | NOT_RUN d034f13da989c8f175c2664cb903a7273baf84eb；新增browser wiring未运行，原7e911首browserFAILED0/4、0PNG/12808ms，原HTTP2PASS/纯模型强例与旧失败保留 |
+| 检查状态 | FAILED d034f13da989c8f175c2664cb903a7273baf84eb；本轮1/4、0PNG，layout-navigation通过；three-pane-reads bodyPeak6实际1超时，原失败保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
 | 实现目标 | d034f13da989c8f175c2664cb903a7273baf84eb |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已补三pane时focused exact2tabs、第四pane拒绝与恢复原三chat；材料await内Merge后先证单pane/activechat/B再Split；新候选NOT_GRANTED |
+| 当前产出 | 新浏览器22:28:37.937413START→22:29:28.881210终态→22:29:52.181216精确资源归还；50944/90000 CLOSED |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
-| 当前阻塞 | ACTIVE: root7379已接受新browser wiring源码/准备；修后四组/双图NOT_RUN，等待经理独立新grant |
+| 当前阻塞 | ACTIVE: 原第2组bodyPeak断言失败，未定位唯一根因；无新browser授权，后两组/双图未到达 |
 | 需用户决定 | NONE |
-| Review | APPROVED d034f13da989c8f175c2664cb903a7273baf84eb；root7379限定两browser wiring源码/准备，非browser PASS；其他未完验收保留 |
+| Review | APPROVED d034f13da989c8f175c2664cb903a7273baf84eb；root7379仅源码/准备批准，本次actual FAILED待独审，不冒wholefeature |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v1 ACTIVE exact20；COMMITTED 2026-10-07T17:59:04.704Z |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -89,3 +89,9 @@
 2026-10-07T22:24:05.904925+00:00：固定source `d034f13da989c8f175c2664cb903a7273baf84eb`，仅browser16+/2-，两原组内加强接线判别力；[入口](../../docs/evidence/wpf-workspace-arc/browser-wiring-20261007/entry.json)。chat7为原fixture已有临时tab，max3后真实Delete并恢复原1/2/3三chat；chat4仍仅材料组首次打开。四组/两图/默认超时/207其余源与三caller不变；无新类型接口，syntax/types/HTTP/browser均NOT_RUN。原876包冻结、首12808ms CLOSED不转。
 
 2026-10-07T22:25:50.434795+00:00：root[7379限定独审](../../docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-pane-wiring-source-review-20261007.json)APPROVED/0blocking，新source d034与候选仅两wiring加强。源码/checks STOP，后续仅原≤64KiB审查归档尾；无新syntax/types/纯例/HTTP/browser。原首FAIL、旧876未消费候选及全部历史阶段不变，新90s仍NOT_GRANTED。
+
+2026-10-07T22:28:57.982405+00:00：ARC-PANE-WIRING-BROWSER-20261007-ONCE actualSTART22:28:37.937413Z，run arc-pane-wiring-20261007-222837，outer21254/parent22024；source d034/execution1205，freshfree18049761280>=17729978368。新90=60work30cleanup，0PG/2ownedHTTP/1Chrome，无自动重试；parent raw/start已生成后才写本status，不改执行pins。原件/private/tmp/arc-browser-pane-wiring-sekaruhl。
+
+2026-10-07T22:30:35.932058+00:00：run arc-pane-wiring-20261007-222837实际FAILED1/4/0PNG；layout-navigation含新多tab max3/恢复三chat已过，three-pane-reads:91 bodyPeak预期6实际1超时，材料Merge/两图未达。actual outer/tool1，parent/outer stdout/stderr双EOF/drop0，charge50944/90000 CLOSED/未用39056不转。22:29:52.181216Z四ownedPID/两已知PGID freshESRCH、scratch/cachelinksabsent、raw scenario context/httpclosed=true/cleanupErrors[]；worker.result=null/父scenario closureUNKNOWN及Chrome stdout/stderr EOF=false原样保留，不能宣Chrome日志完整。0PG/无独立portprobe，无新run。
+
+2026-10-07T22:32:55.729968+00:00：只读诊断仍未定修法；响应hold必须先核同源HTTP/1连接容量与常驻SSE/patch，否则等六请求可死锁。现raw无时戳/连接世代，不能推唯一原因；root安排独立只读约束核，本owner只封原失败，源码/runtime全STOP。

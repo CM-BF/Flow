@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-07T22:31:45.548207+00:00",
+  "source": "d034f13da989c8f175c2664cb903a7273baf84eb",
+  "actual": {
+    "passed": [
+      "layout-navigation"
+    ],
+    "stoppedAt": "apps/web/test/workspace-layout.browser.ts:91",
+    "expectedBodyPeak": 6,
+    "observedBodyMetrics": {
+      "bodyInFlight": 0,
+      "bodyPeak": 1,
+      "bodyBytes": 23568
+    },
+    "exactBodyReads": [
+      {
+        "method": "GET",
+        "path": "/api/conversations/chat-1/turns/chat-1-turn-1/details/chat-1-task-1-reply",
+        "bytes": 6218,
+        "bodyRead": true,
+        "ended": true
+      },
+      {
+        "method": "GET",
+        "path": "/api/conversations/chat-1/queue/chat-1-queue",
+        "bytes": 1638,
+        "bodyRead": true,
+        "ended": true
+      },
+      {
+        "method": "GET",
+        "path": "/api/conversations/chat-2/turns/chat-2-turn-1/details/chat-2-task-1-reply",
+        "bytes": 6218,
+        "bodyRead": true,
+        "ended": true
+      },
+      {
+        "method": "GET",
+        "path": "/api/conversations/chat-2/queue/chat-2-queue",
+        "bytes": 1638,
+        "bodyRead": true,
+        "ended": true
+      },
+      {
+        "method": "GET",
+        "path": "/api/conversations/chat-3/turns/chat-3-turn-1/details/chat-3-task-1-reply",
+        "bytes": 6218,
+        "bodyRead": true,
+        "ended": true
+      },
+      {
+        "method": "GET",
+        "path": "/api/conversations/chat-3/queue/chat-3-queue",
+        "bytes": 1638,
+        "bodyRead": true,
+        "ended": true
+      }
+    ],
+    "HTTPErrorCount": 0,
+    "PNG": 0,
+    "materialMergeReached": false
+  },
+  "fixedSourceFacts": [
+    {
+      "path": "apps/web/test/workspace-layout.browser.ts",
+      "lines": [
+        81,
+        83,
+        87,
+        90,
+        91
+      ],
+      "fact": "1200ms response delay; sequential awaited public UI actions; then polls recorded high-water bodyPeak==6"
+    },
+    {
+      "path": "apps/web/test/workspace-layout.fixture.ts",
+      "lines": [
+        85,
+        87,
+        132,
+        151,
+        166
+      ],
+      "fact": "Request increments count; response close decrements; timer schedules response or base handler. No response barrier."
+    }
+  ],
+  "inference": "Time-delayed sequential UI setup does not establish six simultaneously pending responses. Actual all six requested and ended with peak1, but no timestamps to distinguish action scheduling and product scheduling; not a confirmed product concurrency bug.",
+  "proposedSmallestScope": [
+    "apps/web/test/workspace-layout.browser.ts",
+    "apps/web/test/workspace-layout.fixture.ts"
+  ],
+  "proposal": "Only a provisional test-fixture candidate, conditional on proving transport capacity: bounded hold of real responses then exact concurrency assertions. It is not established as the proper fix; root requested independent bounded read-only transport review first.",
+  "implementation": "NOT_STARTED; no new source/runtime grant",
+  "quality": {
+    "method": "Existing clean-code/codebase-design; separate cumulative requests, concurrent count and high-water statistic; avoid timing-based overlap assumptions",
+    "sourceChanged": false,
+    "testsRun": false,
+    "remaining": "Source/lifecycle delta needs authorized owner segment and independent review before any new actual"
+  },
+  "proposalStatus": "UNDECIDED; not approved as a fix",
+  "requiredConstraintCheck": "First establish whether browser HTTP/1 same-origin connection capacity, persistent SSE and patch requests allow six body requests to be sent concurrently. A hold-until-six barrier can deadlock if transport cannot deliver six; do not increase timeout or change product budgets to conceal that. Current raw has no request timestamps or socket-generation evidence."
+}

@@ -40,3 +40,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 2026-10-07T21:53:43.506270+00:00：TODO05首browser0/4FAIL已完整归还；876731f仅修现有受控BrowserWorkspace公开入口query+可见heading前置。真实四组仍未通过，旧90s已封，后继独立90s仅proposal；无新产品权限或断言放宽。
 
 2026-10-07T22:24:05.904925+00:00：原TODO01/02/05浏览器接线覆盖更正，见[root覆盖核对](../../docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-acceptance-coverage-review-20261007.json)与[纯模型补件](../../docs/evidence/wpf-workspace-arc/browser-wiring-20261007/root-arc-model-coverage-addendum-20261007.json)。纯模型已有max3/merge强例，不重复运行；browser补多tab max3与Merge中间态，不扩大产品/组/超时。其他键盘/全持久化/侧栏等覆盖限制不因本两点修正而宣称全部满足。
+
+2026-10-07T22:31:45.548207+00:00：原TODO01/05本轮layout-navigation真实通过（包括max3多tab前置/关闭临时chat7恢复三chat）；整体1/4失败于bodyPeak6实际1，材料Merge与两PNG未达。TODO04六显式body并发仍未通过。只读初判是1200ms timer没有建立并发响应barrier，未证明产品bug；[诊断](../../docs/evidence/wpf-workspace-arc/browser-pane-wiring-actual-20261007/diagnosis.json)保实际/推断分层。原90s50944 CLOSED，当前仅失败归档，无重试。

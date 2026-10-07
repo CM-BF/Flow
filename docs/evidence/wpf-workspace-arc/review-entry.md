@@ -1,5 +1,7 @@
 # Arc 固定实现与必要验证入口
 
+最新实际 `d034` / execution1205：**FAILED1/4，0PNG**；layout-navigation通过，three-pane-reads在bodyPeak6实际1处失败，后两组未达。50944/90000 CLOSED，不转余量。见[本轮manifest](browser-pane-wiring-actual-20261007/manifest.json)与[只读首因诊断](browser-pane-wiring-actual-20261007/diagnosis.json)。原首0/4FAIL不覆盖，以下准备时“NOT_RUN”仅历史；无新运行授权。
+
 当前固定组合 `d034f13da989c8f175c2664cb903a7273baf84eb`；base `f8853d4731eb6229337279079c24617c97d4f56b`，claim20（18产品/test+两metadata）。最新仅browser两wiring断言16+/2-，差量独审[root7379](browser-wiring-20261007/root-arc-pane-wiring-source-review-20261007.json)APPROVED/0blocking；[本次入口](browser-wiring-20261007/entry.json)含207运行源pin的单文件变更、43外部/33resolver和三个原caller复用证明。未新增产品权限或运行授权。
 
 | 证据层 | 当前事实 |
