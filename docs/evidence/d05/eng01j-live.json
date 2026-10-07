@@ -1,0 +1,280 @@
+{
+  "at": "2026-10-07T05:15:46.943313+00:00",
+  "source": "e30d40cf6ca8ef092e28efc7dd52959aeb4e51a8",
+  "oldPid": 61730,
+  "oldConfirmedAbsent": true,
+  "newPid": 51982,
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration",
+  "log": "/tmp/flow-dashboard-eng01j186-20261007.log",
+  "sourceCount": 186,
+  "snapshotBytes": 2739460,
+  "snapshotSha256": "ff72e3c90d32f6d6d56ca080f355297be326db2ef652320e2b74a09bf5ed07d5",
+  "task": {
+    "id": "ENG01J",
+    "title": "真实受限工程写入宿主",
+    "role": "工作线",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority",
+    "branch": "codex/engineering-native-authority",
+    "planDir": "plans/eng01j-native-write-authority",
+    "evidenceDir": "docs/evidence/eng01j",
+    "source": {
+      "mode": "live",
+      "modifiedAt": "2026-10-07T05:07:35.706Z",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority/plans/eng01j-native-write-authority/status.md",
+      "syncedAt": "2026-10-07T05:15:35.273Z",
+      "stale": false,
+      "ageHours": 0.13321333333333332
+    },
+    "git": {
+      "available": true,
+      "branch": "codex/engineering-native-authority",
+      "head": "be61b8364f20cf33b955116bf2c6629eba093238",
+      "dirty": true,
+      "changedFiles": 2,
+      "observedAt": "2026-10-07T05:15:35.996Z"
+    },
+    "status": {
+      "timing": {
+        "started": {
+          "state": "known",
+          "at": "2026-10-07T05:07:35.705Z",
+          "record": "2026-10-07T05:07:35.705Z"
+        },
+        "completed": {
+          "state": "not_completed",
+          "at": null,
+          "record": "NOT_COMPLETED"
+        },
+        "source": {
+          "state": "declared",
+          "record": "原子take 2026-10-07T05:06:16.785Z后本owner开始首合同/源码工作，以上为当次记录时间"
+        },
+        "issues": [],
+        "waiting": ""
+      },
+      "taskLinks": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)",
+          "id": "ENG-001",
+          "location": "../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead",
+          "value": "Execution Lead"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      },
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "正在验证宿主能否强制限制工程写入范围和全部写入者",
+        "next": "给出实际系统调用结果及最小宿主实现或明确机制障碍",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "implementation": {
+        "target": null,
+        "scopes": [
+          "apps/runner/src/engineering/native-authority.ts",
+          "apps/runner/src/engineering/native-authority.test.ts",
+          "apps/runner/src/engineering/native-authority-darwin.ts",
+          "apps/runner/src/engineering/native-authority-darwin.test.ts",
+          "apps/runner/src/engineering/fixtures/native-authority-canary.c"
+        ],
+        "errors": [
+          "实现目标需完整 SHA"
+        ]
+      },
+      "taskId": "ENG01J",
+      "owner": "native_center_owner / gpt-6-astra",
+      "branch": "codex/engineering-native-authority",
+      "branchState": "in-progress",
+      "updatedAt": "2026-10-07T05:07:35.705Z",
+      "updatedRecord": "2026-10-07T05:07:35.705Z",
+      "todos": [
+        {
+          "id": "ENG01J-01",
+          "state": "completed",
+          "owner": "native_center_owner",
+          "evidence": "[take](../../docs/evidence/eng01j/take-receipt.json)、[Interface](../../docs/evidence/eng01j/interface.md)"
+        },
+        {
+          "id": "ENG01J-02",
+          "state": "in-progress",
+          "owner": "native_center_owner",
+          "evidence": "syscall候选；NOT_RUN"
+        },
+        {
+          "id": "ENG01J-03",
+          "state": "pending",
+          "owner": "native_center_owner",
+          "evidence": "机制成立后实现，不造资格字串"
+        },
+        {
+          "id": "ENG01J-04",
+          "state": "pending",
+          "owner": "native_center_owner",
+          "evidence": "独立review待固定"
+        }
+      ],
+      "errors": [],
+      "declaredHead": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b / 首合同提交",
+      "declaredDirty": "本提交后clean",
+      "checks": {
+        "state": "not_run",
+        "target": null,
+        "record": "NOT_RUN"
+      },
+      "reviewRecord": "[review.md](review.md)，NOT_STARTED",
+      "mainRecord": "未集成",
+      "next": "",
+      "risks": "",
+      "decisions": ""
+    },
+    "review": {
+      "state": "not_started",
+      "record": "NOT_STARTED",
+      "target": null
+    },
+    "implementationProof": {
+      "target": null,
+      "head": "be61b8364f20cf33b955116bf2c6629eba093238",
+      "scopes": [
+        "apps/runner/src/engineering/native-authority.ts",
+        "apps/runner/src/engineering/native-authority.test.ts",
+        "apps/runner/src/engineering/native-authority-darwin.ts",
+        "apps/runner/src/engineering/native-authority-darwin.test.ts",
+        "apps/runner/src/engineering/fixtures/native-authority-canary.c"
+      ],
+      "observedAt": "2026-10-07T05:15:35.997Z",
+      "state": "unknown",
+      "reason": "实现目标需完整 SHA"
+    },
+    "documents": [
+      {
+        "path": "plans/eng01j-native-write-authority/plan.md",
+        "title": "plan.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/eng01j-native-write-authority/status.md",
+        "title": "status.md",
+        "kind": "plan"
+      },
+      {
+        "path": "plans/eng01j-native-write-authority/review.md",
+        "title": "review.md",
+        "kind": "plan"
+      },
+      {
+        "path": "docs/evidence/eng01j/interface.md",
+        "title": "Interface",
+        "kind": "evidence"
+      },
+      {
+        "path": "docs/evidence/eng01j/take-receipt.json",
+        "title": "take",
+        "kind": "evidence"
+      }
+    ],
+    "issues": [],
+    "current": true,
+    "progress": {
+      "completed": 1,
+      "total": 4
+    },
+    "main": {
+      "record": "未集成",
+      "recordedHead": null,
+      "target": null,
+      "mainHead": "e30d40cf6ca8ef092e28efc7dd52959aeb4e51a8",
+      "scopes": [
+        "apps/runner/src/engineering/native-authority.ts",
+        "apps/runner/src/engineering/native-authority.test.ts",
+        "apps/runner/src/engineering/native-authority-darwin.ts",
+        "apps/runner/src/engineering/native-authority-darwin.test.ts",
+        "apps/runner/src/engineering/fixtures/native-authority-canary.c"
+      ],
+      "observedAt": "2026-10-07T05:15:35.392Z",
+      "current": false,
+      "historicalIntegrated": false,
+      "method": "unknown",
+      "reason": "实现目标或范围未确认，不能仅以 owner 记录的 main HEAD 推断集成"
+    },
+    "assignments": [
+      {
+        "lead": "astra_ultra_execution_lead",
+        "next": null,
+        "role": "writer",
+        "scope": [
+          "apps/runner/src/engineering/fixtures/native-authority-canary.c",
+          "apps/runner/src/engineering/native-authority-darwin.test.ts",
+          "apps/runner/src/engineering/native-authority-darwin.ts",
+          "apps/runner/src/engineering/native-authority.test.ts",
+          "apps/runner/src/engineering/native-authority.ts",
+          "docs/evidence/eng01j",
+          "plans/eng01j-native-write-authority"
+        ],
+        "state": "active",
+        "branch": "codex/engineering-native-authority",
+        "origin": "new",
+        "taskId": "ENG01J",
+        "worker": "native_center_owner",
+        "claimId": "b575e07c-483b-4a4e-824e-6dc54e6469e4",
+        "version": 1,
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority",
+        "createdAt": "2026-10-07T05:06:16.785Z",
+        "updatedAt": "2026-10-07T05:06:16.785Z",
+        "observedAt": null,
+        "needsVerification": false,
+        "matchesSource": true
+      }
+    ],
+    "links": {
+      "kind": "subtask",
+      "coLead": {
+        "state": "known",
+        "record": "Execution Lead",
+        "value": "Execution Lead"
+      },
+      "parent": {
+        "state": "known",
+        "record": "[ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md)",
+        "reason": "",
+        "targetId": "ENG-001",
+        "title": "真实工程任务交付"
+      }
+    }
+  },
+  "localAccessMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "personalMetadataHashesUnchanged": true,
+  "personalListenerPidsUnchanged": true,
+  "tokenRead": false,
+  "tabsReloaded": 0,
+  "scope": "owned dashboard source registration only; no product tests or personal operation"
+}
