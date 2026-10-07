@@ -4,4 +4,4 @@ Approved source `2949569bcac7d3b0257a0026f488f42eb6276222` (review 2026-10-07T08
 
 New selected metadata/patch methods reuse FlowClient transport and the existing projection. Seven distinct direct transport cases verified across two rounds; first 3/7 failure is preserved, fixed new5 passed and strict0. Prior core14/fix4/PG2 remain independent historical evidence. This does not prove client-to-real-server/UI/native operation or main deployment.
 
-Public client/index is now explicitly STOP for the next X01 writer; formal scope-removal receipt follows. The remaining client test/core/metadata scopes stay with LAZY. Dashboard still awaits Original Lead registry and actual intake evidence.
+Public client/index is now explicitly STOP for the next X01 writer; formal scope-removal receipt is `client-index-handback-receipt.json` (v9/13). The remaining client test/core/metadata scopes stay with LAZY. Dashboard still awaits Original Lead registry and actual intake evidence.

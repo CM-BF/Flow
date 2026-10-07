@@ -32,7 +32,7 @@
 | main | NOT_INTEGRATED |
 | 实现目标 | 2949569bcac7d3b0257a0026f488f42eb6276222 |
 | 实现范围 | packages/client/src/index.ts; packages/client/src/assistant-stream.test.ts |
-| Claim | 8436ad9e-ec1f-4cfb-b2fa-84e9f207935b v8 ACTIVE /14scope（七固定support供给后STOP交回） |
+| Claim | 8436ad9e-ec1f-4cfb-b2fa-84e9f207935b v9 ACTIVE /13scope（index正式STOP移出供X01；其take前不得写） |
 | 架构影响 | branch-only：patch-select-v1协商与单projection有限selection；原持久流/授权不变。main架构更新待Lead接收，Web跨turn累计cache尚未接线。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -64,3 +64,5 @@ R1实际完成 2026-10-07T08:11:42.367020+00:00：execution3a293dc4；实际08:0
 本次状态解析：主线既有parseStatus仅本status，errors[]/human.missing[]/timing.issues[]；parent/co-lead已知。只是形状核对，不代表已登记或main接收。
 
 2026-10-07T08:43:35.483632+00:00 正式client独审已归档client-review-receipt.json，唯一新intake为client-integration-ready.md/json；严格仅两client相对main2a7e语义delta，七support不交为新产品。明确STOP client/index，准备当前v8原子移出供X01；接收者take前无写权。原core intake与raw不改，main尚NOT_INTEGRATED/等待聚合器登记展示。0新工程运行。
+
+client/index handback COMMITTED 2026-10-07T08:43:46.904Z，v8→v9/13，仅移出packages/client/src/index.ts，正式回执client-index-handback-receipt.json。接收者必须fresh原子领取，LAZY不再修改该文件；client test/core/evidence范围保留。
