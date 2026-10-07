@@ -19,8 +19,10 @@
 
 ## 验证与资源
 
-当前cfd5组合限定源码独审0blocking；唯一Node直接单文件9叶项+父项10PASS，实际outer exit0与终态/hash匹配，保守计2866ms。新组合phase30s余27134ms；历史Node3950ms/原失败均保留，不继承旧PASS。当前浏览器实际summary9组与关联6组获限定独审，首轮FAIL保留；累计24464/余35536ms（含15秒清理），8MiB retained/64MiB scratch不变。7图中6图限定接受，窄屏light需补证；Timing/ACCESS原5+5组只接缝源码已审，仍NOT_RUN。后续沿已接受同native边界和精确输入，实际资源交接后才执行。没有真实registry/PG/生产4320采样。GO旧慢响应与静态20ms仅单次来源观察，不作统计基准或宕机判断。
+当前cfd5组合限定源码独审0blocking；唯一Node直接单文件9叶项+父项10PASS，实际outer exit0与终态/hash匹配，保守计2866ms。新组合phase30s余27134ms；历史Node3950ms/原失败均保留，不继承旧PASS。当前浏览器实际summary9组与关联6组获限定独审，首轮FAIL保留；累计40551/余19449ms（含15秒清理），8MiB retained/64MiB scratch不变。7图中6图限定接受，窄屏light需补证；Timing原5组及真实queued-close回归actualPASS（限定独审接受），ACCESS原5组仍NOT_RUN。后续沿已接受同native边界和精确输入，实际资源交接后才执行。没有真实registry/PG/生产4320采样。GO旧慢响应与静态20ms仅单次来源观察，不作统计基准或宕机判断。
 
 ## 完成条件
 
 直接消费者语义、异步代际/未知、原snapshot兼容及单task freshproof有证据；固定commit独审，main与真实服务部署分开记录。无测试时保持NOT_RUN；不能从源结构推生产延迟。唯一进度见[status](status.md)，独审见[review](review.md)。
+
+后继准备：旧60秒段实际40551/未用19449安全闭合。下一有限段计划45秒含15秒清理，只剩ACCESS5组与已明确视觉补证；采用固定main公开OPS-METER helper，旧packet不改，当前SOURCE_ONLY/no gate。无工程检查或Chrome运行由准备声明自动触发。

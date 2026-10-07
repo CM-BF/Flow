@@ -1,0 +1,104 @@
+{
+  "state": "PASS_AUTHOR_ACTUAL_PENDING_INDEPENDENT_REVIEW",
+  "actualExit": 0,
+  "source": "52cdfbbb177ec9c89651ebde9b82e3a5538f45f0",
+  "metadata": "1341ca2f961103c62be60856bc81f9193d675417",
+  "actualChargeMs": 6934,
+  "spentMs": 40551,
+  "remainingMs": 19449,
+  "checksRecorded": 5,
+  "screenshotsRecorded": 2,
+  "visualLimit": "Two390 images show dialog top and close focus without horizontal clipping. Timing region below fold was asserted in DOM, not visually shown in these two frames.",
+  "files": [
+    {
+      "path": "binding.json",
+      "bytes": 46273,
+      "sha256": "f9e6eb3cfb521e53984b6ed3bf0107cfb2018532020a724b659740d0de79ddc9"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 2360,
+      "sha256": "211f7974fcdca9aa059eacf29f5128941151b35138e60a7193a872e3d3101b00"
+    },
+    {
+      "path": "gate.json",
+      "bytes": 2997,
+      "sha256": "c751f36b084eed019a1052c8b0962ae6f184769f6cb3235bf7454d5f5bf8d96c"
+    },
+    {
+      "path": "consumed-gate.json",
+      "bytes": 2858,
+      "sha256": "743977ecbc8edfa3c7473476659d59c08e4b72a2f4931d2f59c82cbdd7d8a871"
+    },
+    {
+      "path": "admission.json",
+      "bytes": 1645,
+      "sha256": "1aec322e274fc0cd9ddc0870227334f621db2fd663941f02c16e445757144e17"
+    },
+    {
+      "path": "child-gate.json",
+      "bytes": 3887,
+      "sha256": "8b37cf3bc1b765a86744250926fc8d97c26c4c81c624e72ac3c87b7b1f33e085"
+    },
+    {
+      "path": "result.json",
+      "bytes": 54744,
+      "sha256": "dcfae43c4bdfa5084ef4b1877680909b23a13f104259646ce1fbffd6bbc963b1"
+    },
+    {
+      "path": "outer-start.json",
+      "bytes": 120,
+      "sha256": "130fd51d4d9fb8f4a1e5a7f46e38abbf7a3e28fe51ac3ca241dedc22192fb62a"
+    },
+    {
+      "path": "outer-actual-exit.json",
+      "bytes": 528,
+      "sha256": "9bd0d2fa1d252b9088cf666c835b3cc134a23e6c541e4001896fb6a3cb34994a"
+    },
+    {
+      "path": "outer-stdout.log",
+      "bytes": 154,
+      "sha256": "a23557f6c0ad0c8aed2fb8959f87a720f5a71f7da3e57669b05d68083dff7327"
+    },
+    {
+      "path": "outer-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "parent-budget.json",
+      "bytes": 242,
+      "sha256": "1249b332799d95ea0a6ac90b4a9844bafe76fb12d3945899b4167b481be2fe58"
+    },
+    {
+      "path": "../../browser-runs/timing2-20261007-090444-d6da19/browser-results.json",
+      "bytes": 3394,
+      "sha256": "fc48743496ec1eec894cfd7aafdabc322e0907e9384ba12595872d0067ae2968"
+    },
+    {
+      "path": "../../browser-runs/timing2-20261007-090444-d6da19/chrome.log",
+      "bytes": 3865,
+      "sha256": "338a0e5156cf200bec3c5ded5ba40389ae863239381c25620f92050a20b4b368"
+    },
+    {
+      "path": "../../browser-runs/timing2-20261007-090444-d6da19/owned-chrome.json",
+      "bytes": 2308,
+      "sha256": "3df1edcfeb4ff56c3ab2c2b9757aeb5f2a5df5e4b301260185ce2d544cb765a3"
+    },
+    {
+      "path": "../../browser-runs/timing2-20261007-090444-d6da19/task-timing-dark-390.png",
+      "bytes": 63669,
+      "sha256": "624fc8d412bd256a288158a6745dce42fdddda1f8d83b2fe24e4cd5db8462b0b"
+    },
+    {
+      "path": "../../browser-runs/timing2-20261007-090444-d6da19/task-timing-light-390.png",
+      "bytes": 67088,
+      "sha256": "434d28103aad4f199e031fba0f41d20a9428490b98b5a9f93f9956a61cac0286"
+    },
+    {
+      "path": "owned-cleanup-observation.json",
+      "bytes": 668,
+      "sha256": "2a1ed6228d03184b1d4536e20f1137e9666e8134c680c3ff564c0d509d925dd1"
+    }
+  ]
+}

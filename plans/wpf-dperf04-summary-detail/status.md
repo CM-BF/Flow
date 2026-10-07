@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07 08:58:13 UTC |
+| 最近更新时间 | 2026-10-07 09:06:43 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
@@ -13,22 +13,22 @@
 | 工作树dirty状态 | 当前16输入与52cdf固定逐字；app新增2行queued-close保护，其余三生产模块仍同cfd5；提交后核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | cfd5 Node10/10与summary9组、关联6组已独审接受；7图中6图限定视觉接受，窄屏light补证OPEN；首FAIL保留，browser累计33617/余26383ms；Timing首轮FAIL，ACCESS未运行 |
+| 检查状态 | cfd5 Node10/10与summary9组、关联6组已独审接受；7图中6图限定视觉接受，窄屏light补证OPEN；首FAIL保留，browser累计40551/余19449ms；Timing修后5组+2图实际PASS、首FAIL保留，ACCESS未运行 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
 | 实现目标 | 52cdfbbb177ec9c89651ebde9b82e3a5538f45f0 |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs, apps/execution-dashboard/test/task-timing.browser.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 轻摘要、按需详情、阅读保留和任务关联浏览器检查通过；时间与本机入口的独立消费验收仍待完成 |
+| 当前产出 | 轻摘要、按需详情、阅读保留和任务关联浏览器检查通过；时间5组真实通过并获限定独审；本机入口消费与窄屏light视觉补证仍待完成 |
 | 下一可用交付 | 完成Timing/ACCESS及窄屏light补证后交主线接收；已有summary/关联实际证据不迁移到待验项 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN：源码/Node及summary/关联实际限定已审；Timing/ACCESS接缝源码已审但未运行，窄屏light视觉补证OPEN |
+| Review | [review.md](review.md)，UNKNOWN：源码/Node及summary/关联实际限定已审；Timing/ACCESS接缝源码已审；Timing5组实际PASS已独审，ACCESS未运行；窄屏light视觉补证OPEN |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | DPERF04-01 | completed | w01_owner | [interface](../../docs/evidence/wpf-dperf04/interface.md)、[当前限定源码复审](review.md) |
-| DPERF04-02 | in-progress | w01_owner | [当前组合Node10PASS](../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/acceptance.json)，旧8PASS及首失败保留；summary9+关联6实际已审，Timing/ACCESS尚未运行 |
+| DPERF04-02 | in-progress | w01_owner | [当前组合Node10PASS](../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/acceptance.json)，旧8PASS及首失败保留；summary9+关联6实际已审，Timing5组实际PASS，ACCESS尚未运行 |
 | DPERF04-03 | pending | w01_owner | 整体验收/main/实际部署未完成 |
 | DPERF04-04 | pending | w01_owner | [窄屏light截图补证](../../docs/evidence/wpf-dperf04/reentry-20261007/narrow-light-evidence-gap.json)：原图保留，原因未证，不影响9+6功能事实 |
 
@@ -177,3 +177,13 @@ clean-code复核：把真实fixture/context差异作为小调用参数，保一�
 ## 原生close延迟送达的产品保护
 
 Root指出app原close listener无条件invalidate；HTML真实close事件异步送达时，同一任务close后立即重新打开的新selection/load可能被旧事件撤销。固定 52cdfbbb177ec9c89651ebde9b82e3a5538f45f0：dialog仍open时忽略旧close；其余close清理/焦点返回不变。Timing新增真实dialog.close()与同任务精确按钮click重开，等真实close已送达再核新详情/3小时/open；不手动dispatch伪close。普通串行Escape仍被动等close，原五组/两图/错误断言不删。当前是source修复，尚未复验，首轮失败不能据此回改根因。
+
+## Timing第二轮真实结果与余额安全点
+
+固定52cdf/actual1341，09:04:53.320539Z→09:05:00.253888Z：outer exit0/唯一PASS终态，原5组/双390PNG，真实native.close→同任务按钮重开→旧close实际送达后新3小时详情保持已通过。[完整原件](../../docs/evidence/wpf-dperf04/reentry-20261007/browser-timing-second/index.json)。6933.063875ms向上计6934，累计40551/剩19449（必须含15秒清理）；首Timing red和首summary red均保留。
+
+outer49738/worker54431/Chrome50453各PID和PGID均ESRCH，scratch不存在；context/server/fixture真实关闭、三streams完整EOF/drop0/errors[]。两图只目视接受可见详情顶部/Close焦点/双主题/横向包含；时间区在折叠下方，UTC/等待正文由DOM断言覆盖，不能宣称图中已目视。
+
+剩工作4449ms低于最近两次约5秒启动阶段，故主动完成/交回本段，不启动可预见deadline失败；ACCESS保持NOT_RUN，DPERF04-04浅色首页补图OPEN。没有追加预算、重跑Node、PG或访问真实服务。下一必须明确剩余额度是否足以有效检查；整体审查/main/部署仍分层未完成。
+
+[root Timing实际/源码独审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-timing-actual-review.json)接受52cdf旧close保护及真实事件回归+5组，未反推首失败唯一因果；33raw/32sourcepins与两attempt完整清理核验。旧60s段以spent40551/unspent19449 CLOSED，未用额保历史不做后继credit。后继仅SOURCE_ONLY准备OPS-METER公开helper接入与ACCESS5组、首页窄light及真实时间正文双图；新建议45秒含15秒清理需独立资源交接，当前未运行。

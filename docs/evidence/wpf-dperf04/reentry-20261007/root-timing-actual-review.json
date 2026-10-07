@@ -1,0 +1,420 @@
+{
+  "at": "2026-10-07T09:07:22.604580+00:00",
+  "reviewer": "root / gpt-6-astra ultra / independent read-only",
+  "decision": "TIMING_SCOPED_ACTUAL_ACCEPTED_PRODUCT_STALE_CLOSE_FIX_ACCEPTED",
+  "runs": [
+    {
+      "label": "first",
+      "run": "timing-20261007-090052-9b6b73",
+      "sourceHead": "50a51dd6d0c6ef9dc9bd43aa7f91e8ee3d2d6c12",
+      "implementation": "08e9ee7e23157268d44bd2fdd460929a4ca5e626",
+      "sourcePinsVerified": 16,
+      "actual": {
+        "startedAt": "2026-10-07T09:00:52.185750+00:00",
+        "outerPid": 13324,
+        "outerPgid": 13324,
+        "capturePid": 13205,
+        "endedAt": "2026-10-07T09:01:01.338856+00:00",
+        "actualExitCode": 1,
+        "outerElapsedMs": 9152.92074996978,
+        "conservativeChargeMs": 9153,
+        "stdoutBytes": 156,
+        "stderrBytes": 0,
+        "stdoutSha256": "c8b0b876c4281e58f33f7c168232f0bfa1113b8addfca90cf1699d2f2992b510",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdoutComplete": true,
+        "stderrComplete": true
+      },
+      "terminal": {
+        "state": "FAILED",
+        "actualExitCode": 1,
+        "stopping": false,
+        "stopSignal": null,
+        "errorCount": 1,
+        "cleanupErrorCount": 0,
+        "afterFinalWritesElapsedMs": 9086
+      },
+      "checks": [],
+      "screenshotsRecorded": [],
+      "actualPngFiles": [
+        "task-timing-light-390.png"
+      ],
+      "failure": "locator.waitFor: Timeout 2000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('region', { name: '任务时间', exact: true }) to be visible\u001b[22m\n\n    at runTaskTimingChecks (/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/test/task-timing.browser.mjs:178:56)\n    at async file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/test/task-timing.browser.mjs:192:20\n    at async runBrowserCheck (/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/test/summary-detail.browser.mjs:119:5)\n    at async file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/apps/execution-dashboard/test/task-timing.browser.mjs:191:3",
+      "freshAbsence": [
+        {
+          "id": 13324,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 13324,
+          "kind": "group",
+          "state": "ESRCH"
+        },
+        {
+          "id": 17700,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 17700,
+          "kind": "group",
+          "state": "ESRCH"
+        },
+        {
+          "id": 13747,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 13747,
+          "kind": "group",
+          "state": "ESRCH"
+        }
+      ],
+      "scratchAbsent": true,
+      "cleanup": {
+        "errors": [],
+        "groupAbsent": true,
+        "workerGroupAbsent": true,
+        "chromeGroupAbsent": true,
+        "scratchAbsent": true
+      },
+      "streams": {
+        "chrome.stdout": {
+          "receivedBytes": 0,
+          "keptBytes": 0,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        },
+        "chrome.stderr": {
+          "receivedBytes": 6433,
+          "keptBytes": 6433,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        },
+        "worker": {
+          "receivedBytes": 266,
+          "keptBytes": 266,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        }
+      }
+    },
+    {
+      "label": "second",
+      "run": "timing2-20261007-090444-d6da19",
+      "sourceHead": "1341ca2f961103c62be60856bc81f9193d675417",
+      "implementation": "52cdfbbb177ec9c89651ebde9b82e3a5538f45f0",
+      "sourcePinsVerified": 16,
+      "actual": {
+        "startedAt": "2026-10-07T09:04:53.320539+00:00",
+        "outerPid": 49738,
+        "outerPgid": 49738,
+        "capturePid": 49429,
+        "endedAt": "2026-10-07T09:05:00.253888+00:00",
+        "actualExitCode": 0,
+        "outerElapsedMs": 6933.06387506891,
+        "conservativeChargeMs": 6934,
+        "stdoutBytes": 154,
+        "stderrBytes": 0,
+        "stdoutSha256": "a23557f6c0ad0c8aed2fb8959f87a720f5a71f7da3e57669b05d68083dff7327",
+        "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "stdoutComplete": true,
+        "stderrComplete": true
+      },
+      "terminal": {
+        "state": "PASS",
+        "actualExitCode": 0,
+        "stopping": false,
+        "stopSignal": null,
+        "errorCount": 0,
+        "cleanupErrorCount": 0,
+        "afterFinalWritesElapsedMs": 6871
+      },
+      "checks": [
+        "Explicit task start/end and inclusive elapsed; branch completion never ends the task",
+        "Unknown, missing provenance, future, reverse, stale and frozen observations do not advance",
+        "Read failure marks open timing historical without replacing the dialog or stealing focus",
+        "New snapshot updates cards; an open detail retains its original observation until explicitly reopened",
+        "Both 390px themes preserve UTC/source/wait text, keyboard access and bounded layout"
+      ],
+      "screenshotsRecorded": [
+        "task-timing-light-390.png",
+        "task-timing-dark-390.png"
+      ],
+      "actualPngFiles": [
+        "task-timing-light-390.png",
+        "task-timing-dark-390.png"
+      ],
+      "failure": null,
+      "freshAbsence": [
+        {
+          "id": 49738,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 49738,
+          "kind": "group",
+          "state": "ESRCH"
+        },
+        {
+          "id": 54431,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 54431,
+          "kind": "group",
+          "state": "ESRCH"
+        },
+        {
+          "id": 50453,
+          "kind": "pid",
+          "state": "ESRCH"
+        },
+        {
+          "id": 50453,
+          "kind": "group",
+          "state": "ESRCH"
+        }
+      ],
+      "scratchAbsent": true,
+      "cleanup": {
+        "errors": [],
+        "groupAbsent": true,
+        "workerGroupAbsent": true,
+        "chromeGroupAbsent": true,
+        "scratchAbsent": true
+      },
+      "streams": {
+        "chrome.stdout": {
+          "receivedBytes": 0,
+          "keptBytes": 0,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        },
+        "chrome.stderr": {
+          "receivedBytes": 3865,
+          "keptBytes": 3865,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        },
+        "worker": {
+          "receivedBytes": 727,
+          "keptBytes": 727,
+          "droppedBytes": 0,
+          "eof": true,
+          "closed": true
+        }
+      }
+    }
+  ],
+  "rawPins": [
+    {
+      "path": "/private/tmp/dperf-consumers/result.json",
+      "bytes": 55025,
+      "sha256": "5c305448013c058c30e4cee3d6a770715b731c6af5ba8340d573d53ea68b1697"
+    },
+    {
+      "path": "/private/tmp/dperf-consumers/binding.json",
+      "bytes": 35068,
+      "sha256": "35fb8f73fe02666318181f6d716876be008e2a4042c9d8ee8168edf1cee3e36d"
+    },
+    {
+      "path": "/private/tmp/dperf-consumers/manifest.json",
+      "bytes": 2990,
+      "sha256": "30eb881585915213403526aed0e2d7455224f8206a2a03cd7811666f47977ee2"
+    },
+    {
+      "path": "/private/tmp/dperf-consumers/admission.json",
+      "bytes": 1854,
+      "sha256": "6c495043debc4148d14ef6539c236185f327049f6bb1addf31aa06fa3d227c9f"
+    },
+    {
+      "path": "/private/tmp/dperf-consumers/gate.json",
+      "bytes": 2996,
+      "sha256": "baf018eaf5138249d65bd8a22d8b00a98c1242449527c853f73a54e085625eed"
+    },
+    {
+      "path": "/private/tmp/dperf-consumers/child-gate.json",
+      "bytes": 3885,
+      "sha256": "a64c5c62f796843c7a089dde23e4809cd5581a5b98b1086aa0a1b3f0f55ed3a7"
+    },
+    {
+      "path": "/private/tmp/dperf-consumers/consumed-gate.json",
+      "bytes": 2857,
+      "sha256": "1f6e0d92f9522689ead682efdb851163c6d4b440effd3bc8ab0118ab9d667c5b"
+    },
+    {
+      "path": "/private/tmp/dperf-consumers/worker.log",
+      "bytes": 266,
+      "sha256": "14184e0e88062a99169d5a870d0e6f256a1472352fc83b02d0898c1e4452b030"
+    },
+    {
+      "path": "/private/tmp/dperf-consumers-outer/start.json",
+      "bytes": 120,
+      "sha256": "055cf5ee6ee7bfce32c833501c6e0c91f211648c25d84ccf1813416021e019da"
+    },
+    {
+      "path": "/private/tmp/dperf-consumers-outer/actual-exit.json",
+      "bytes": 528,
+      "sha256": "8be3434f7d6c749cf9640dd668663239ca75f256bb038457ec069146c2162792"
+    },
+    {
+      "path": "/private/tmp/dperf-consumers-outer/stdout.log",
+      "bytes": 156,
+      "sha256": "c8b0b876c4281e58f33f7c168232f0bfa1113b8addfca90cf1699d2f2992b510"
+    },
+    {
+      "path": "/private/tmp/dperf-consumers-outer/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/timing-20261007-090052-9b6b73/task-timing-light-390.png",
+      "bytes": 67088,
+      "sha256": "434d28103aad4f199e031fba0f41d20a9428490b98b5a9f93f9956a61cac0286"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/timing-20261007-090052-9b6b73/chrome.log",
+      "bytes": 6433,
+      "sha256": "0b9e4b235bd19c5b3bef5de3695d36260e16f372fb5d2129395f49a94f90ca6b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/timing-20261007-090052-9b6b73/browser-results.json",
+      "bytes": 3675,
+      "sha256": "a7eb2686d81f30d4feb41e876e7cb923fbf1c22e50f90d77fd940d87ea89af6c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/timing-20261007-090052-9b6b73/owned-chrome.json",
+      "bytes": 2308,
+      "sha256": "c7f4469f2ce649a5fe87fdb698b9553baaddd8531093a0052f671eddc07e1b37"
+    },
+    {
+      "path": "/private/tmp/dperf-consumer2/result.json",
+      "bytes": 54744,
+      "sha256": "dcfae43c4bdfa5084ef4b1877680909b23a13f104259646ce1fbffd6bbc963b1"
+    },
+    {
+      "path": "/private/tmp/dperf-consumer2/binding.json",
+      "bytes": 46273,
+      "sha256": "f9e6eb3cfb521e53984b6ed3bf0107cfb2018532020a724b659740d0de79ddc9"
+    },
+    {
+      "path": "/private/tmp/dperf-consumer2/manifest.json",
+      "bytes": 2360,
+      "sha256": "211f7974fcdca9aa059eacf29f5128941151b35138e60a7193a872e3d3101b00"
+    },
+    {
+      "path": "/private/tmp/dperf-consumer2/admission.json",
+      "bytes": 1645,
+      "sha256": "1aec322e274fc0cd9ddc0870227334f621db2fd663941f02c16e445757144e17"
+    },
+    {
+      "path": "/private/tmp/dperf-consumer2/gate.json",
+      "bytes": 2997,
+      "sha256": "c751f36b084eed019a1052c8b0962ae6f184769f6cb3235bf7454d5f5bf8d96c"
+    },
+    {
+      "path": "/private/tmp/dperf-consumer2/child-gate.json",
+      "bytes": 3887,
+      "sha256": "8b37cf3bc1b765a86744250926fc8d97c26c4c81c624e72ac3c87b7b1f33e085"
+    },
+    {
+      "path": "/private/tmp/dperf-consumer2/consumed-gate.json",
+      "bytes": 2858,
+      "sha256": "743977ecbc8edfa3c7473476659d59c08e4b72a2f4931d2f59c82cbdd7d8a871"
+    },
+    {
+      "path": "/private/tmp/dperf-consumer2/worker.log",
+      "bytes": 727,
+      "sha256": "363ed735a5e980b1485775dc171932630043b7fd5a73ea09306374d69698d070"
+    },
+    {
+      "path": "/private/tmp/dperf-consumer2-outer/start.json",
+      "bytes": 120,
+      "sha256": "130fd51d4d9fb8f4a1e5a7f46e38abbf7a3e28fe51ac3ca241dedc22192fb62a"
+    },
+    {
+      "path": "/private/tmp/dperf-consumer2-outer/actual-exit.json",
+      "bytes": 528,
+      "sha256": "9bd0d2fa1d252b9088cf666c835b3cc134a23e6c541e4001896fb6a3cb34994a"
+    },
+    {
+      "path": "/private/tmp/dperf-consumer2-outer/stdout.log",
+      "bytes": 154,
+      "sha256": "a23557f6c0ad0c8aed2fb8959f87a720f5a71f7da3e57669b05d68083dff7327"
+    },
+    {
+      "path": "/private/tmp/dperf-consumer2-outer/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/timing2-20261007-090444-d6da19/task-timing-light-390.png",
+      "bytes": 67088,
+      "sha256": "434d28103aad4f199e031fba0f41d20a9428490b98b5a9f93f9956a61cac0286"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/timing2-20261007-090444-d6da19/chrome.log",
+      "bytes": 3865,
+      "sha256": "338a0e5156cf200bec3c5ded5ba40389ae863239381c25620f92050a20b4b368"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/timing2-20261007-090444-d6da19/browser-results.json",
+      "bytes": 3394,
+      "sha256": "fc48743496ec1eec894cfd7aafdabc322e0907e9384ba12595872d0067ae2968"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/timing2-20261007-090444-d6da19/task-timing-dark-390.png",
+      "bytes": 63669,
+      "sha256": "624fc8d412bd256a288158a6745dce42fdddda1f8d83b2fe24e4cd5db8462b0b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/browser-runs/timing2-20261007-090444-d6da19/owned-chrome.json",
+      "bytes": 2308,
+      "sha256": "3df1edcfeb4ff56c3ab2c2b9757aeb5f2a5df5e4b301260185ce2d544cb765a3"
+    }
+  ],
+  "sourceReview": "Read full a56 serial native-close settlement and 52cdf product/test delta. Two-line product guard ignores old queued close while dialog currently open; real same-task dialog.close then existing button.click, waits actual native close delivery, requires open and new 3-hour timing region. Original final-close invalidation/focus restoration unchanged. Five original group checks retained.",
+  "causality": "First actual FAILED waiting second-theme timing region; no causal runtime trace establishes it was exactly stale-close race. Source flaw independently identified; second actual covers new native-close condition and all original timing assertions.",
+  "visual": {
+    "inspected": [
+      "task-timing-light-390.png",
+      "task-timing-dark-390.png"
+    ],
+    "acceptedScope": "Readable detail-shell/header, close-button focus, declarations and bounded390 layout in both themes.",
+    "notShown": "Actual task-time UTC/source/wait section lies below current viewport. Its text has DOM assertion evidence only, not visual screenshot acceptance. Next bounded targeted capture should scroll it into view; preserve original two files."
+  },
+  "budget": {
+    "originalPhaseLimitMs": 60000,
+    "priorSpentMs": 24464,
+    "charges": [
+      9153,
+      6934
+    ],
+    "spentMs": 40551,
+    "unspentMs": 19449,
+    "cleanupReserveMs": 15000,
+    "remainingWorkMs": 4449,
+    "phase": "closed at safe checkpoint; unused balance not erased or silently reallocated",
+    "reason": "Two observed Chromium/worker startups near5s exceed remaining work window. ACCESS and pending visual captures remain unrun, next bounded phase separately prepared."
+  },
+  "notVerified": [
+    "ACCESS five groups",
+    "task-links narrow-light duplicate-header visual followup",
+    "Timing body visual followup",
+    "real registry/PG/main integration/deployment/performance"
+  ],
+  "cleanCode": {
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "applied": "Stale event authority guarded in product; sequential test waits preserve original assertions. Failure/source fix/current scoped actual/visual scope separately labeled. No arbitrary sleep or timeout inflation."
+  }
+}

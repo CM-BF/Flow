@@ -23,3 +23,5 @@
 Timing first failure: preserve result/real light file even zero returned references; exact event settlement reused instead of timeout, sleep or weaker assertion. Product modules unchanged. Three own process groups/HTTP/context/scratch absence and complete EOF verified before metadata. No repeated direct tests.
 
 Queued-close distinct product condition: no longer attribute all Timing failure to harness timing. Guard only a currently reopened native dialog; regress via actual close() queued event and real registered button handler, preserve original five behavior groups and all expectations. No synthetic close dispatch, no timer extension or source-wide rework. Target 52cdfbbb177ec9c89651ebde9b82e3a5538f45f0 awaits actual bounded retest.
+
+Timing2 actual5/5: actual native close event delivered before new detail assertion; two themes/containment checked. Retain both prior failures, charge max outer exactly6934. Avoid useless next launch when cleanup reserve leaves4449ms below observed startup. Screenshot visible scope explicitly excludes below-fold timing text. No false complete/main or inherited acceptance.
