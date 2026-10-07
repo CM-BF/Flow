@@ -1,0 +1,49 @@
+{
+  "kind": "X01_STAGE_C_SOURCE_CHECKPOINT",
+  "recordedAt": "2026-10-07T03:38:32.727114+00:00",
+  "sourceCommit": "1e48ebf3e1e7c4d37597c9c26efcee0fc9bf38f8",
+  "base": "d17abf426151f0f3d03a9310f731bd78afcb1b2d",
+  "productTarget": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+  "scope": "Two test resource hooks, one shared fixture, explicit two-file config and Interface only.",
+  "files": [
+    {
+      "path": "apps/server/src/plugin-runtime/runtime.test.ts",
+      "bytes": 21690,
+      "sha256": "c5ae1293722c8d1ab6f189a08b99df6162fad416fb837d0fae933c92be69bb6d"
+    },
+    {
+      "path": "apps/server/src/plugins/plugins.test.ts",
+      "bytes": 17813,
+      "sha256": "a2b6dc2789df63742fca52e43a4923d426eeb1b5db773ea262a84b59d3efe41e"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-fixture.ts",
+      "bytes": 9217,
+      "sha256": "0a3be51bdd0a618b0e5c63b76021c2674b0a915249ba7f1c1d47d536687bfe6c"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-vitest.config.mjs",
+      "bytes": 534,
+      "sha256": "16b20471faf108c5827bbadac93b9105d9614a3c6ec5101b0dd7746eb9c9aed3"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c.md",
+      "bytes": 3614,
+      "sha256": "0d2e28c5016acba4c87042e89e7e6dda28d98fd3f98ec0765063fc39f639fc63"
+    }
+  ],
+  "originalRuntimeBehaviorSuffixUnchanged": true,
+  "originalRegistryBehaviorSuffixUnchanged": true,
+  "plannedCases": {
+    "runtime": 10,
+    "registry": 11
+  },
+  "checks": "NOT_RUN",
+  "actualPG": "NOT_OPEN",
+  "review": "PENDING",
+  "next": "Use existing OPS14 for authorized local types/list; actual PG needs its separate heavy slot. No new supervisor or duplicate DDL.",
+  "historicalResults": {
+    "A": "2dd587932aae074adcf8a1e754a80876b0aec291",
+    "B": "d17abf426151f0f3d03a9310f731bd78afcb1b2d"
+  }
+}

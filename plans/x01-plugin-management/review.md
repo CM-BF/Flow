@@ -1,8 +1,8 @@
 # X01 Stage B 直接消费者类型与依赖视图
 
-状态：NOT_STARTED（Stage B单次类型结果待独审，Stage C未执行）
+状态：PENDING（Stage C资源fixture源码已固定，必要局部检查尚未运行；A/B结果已分别独审）
 
-Review target commit: a1368dfe88b2eab15e405a4fdbcc707c62c96ae2
+Review target commit: 1e48ebf3e1e7c4d37597c9c26efcee0fc9bf38f8
 
 [依赖视图](../../docs/evidence/x01/enable-binding-stage-b-dependencies.json)固定2dd源与main3230安装观察：195个静态闭包源/1007301B、缺源0，只新增14ignored exact links含本树@flow/client，target1431B+receipt8911B，0依赖复制/安装。九入口沿[原consumer config](../../docs/evidence/x01/enable-binding-consumer-tsconfig.json)，[单记录](../../docs/evidence/x01/enable-binding-stage-b-checks.json)保一次noEmit0/0raw/唯一进程finalabsent/空TMP同identity删除。产品/旧输入不动，review不重跑检查，也不把静态类型通过扩成PG/生产挂载。
 
@@ -168,3 +168,9 @@ Mika / gpt-6-astra 对固定target发现 1 P2 / 0 P1：零长度 TAR metadata �
 ## 独立复审结论
 
 2026-10-06 03:28 UTC Goal Owner / gpt-6-astra，经Lead回传：plan-only APPROVED c21731c01f97afb450e443245b3fae0d2b0edb9b。通用验收依赖03～08、候选09独立及当前无需用户行动的小修已接受。独立只读文档核验，未运行产品tests；实现仍UNKNOWN。此前NOT_STARTED为历史初始状态，本节为当前结论。
+
+## 2026-10-07T03:38:32.727114+00:00 Stage B正式结果与C待审边界
+
+chatui01_owner/gpt-6-astra于2026-10-07 03:34:23 UTC，对d17abf426151f0f3d03a9310f731bd78afcb1b2d给出RESULT_AND_DEPENDENCY_FIDELITY_REVIEW_APPROVED，0P1/P2；4bindings逐Git/WT/hash及14links/package一致，@flow/client本树，九入口noEmit0，0Braw/finalabsent/EOF。历史unknown observation保留；外部wholewall未知，TMP身份/absence按固定收据而非重扫。此批准不覆盖新Stage C资源fixture/PG或生产完整链。
+
+当前1e48ebf3e1e7c4d37597c9c26efcee0fc9bf38f8只替换两test资源hooks并新增共用fixture/config；原21行为正文逐字不变。尚未执行types/collect/PG，SOURCE_REVIEW_PENDING，原ade4产品静态批准与A/B实际结果保留，不挪到新测试资源代码。
