@@ -1,0 +1,464 @@
+{
+  "esbuild": "0.28.2",
+  "release": "7.8.5",
+  "closure": [
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/lrucache.js",
+      "bytes": 802,
+      "sha256": "14d087c87da87b6f5c36fc4cdd7d2d14077874b14a68e20fce5b6138fa2ca34f"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/parse-options.js",
+      "bytes": 338,
+      "sha256": "fdf51d0de8d5442c35a997ef58cd530d239ce206f961d14c5121354451b01d01"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/constants.js",
+      "bytes": 873,
+      "sha256": "38a112baf27ceca0260082ff26ac2fd7a9861cab1af12dd65e720277f68e6ce9"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/debug.js",
+      "bytes": 240,
+      "sha256": "8a9f420572260f3cf944463b5090d62a60f0730589dc23a7ec4ca25e2ee41bb3"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/re.js",
+      "bytes": 8139,
+      "sha256": "5833262888e2b5d843a69193f83c05e374818dbe55379b497819b5bf58e48cd8"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/identifiers.js",
+      "bytes": 525,
+      "sha256": "b4916b09dc7869ae0eb05e71c855c942a3a7365f7e6e89185d59a9e45a2451d7"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/semver.js",
+      "bytes": 9891,
+      "sha256": "813b2c185512d30c9b931c2fed8140889d9d7490ceeeedc370da30337dc8ca57"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/compare.js",
+      "bytes": 170,
+      "sha256": "d404b5aa48aaddc8a654c5da8fb7d4443404b7948589b21ac4b045d1cee4e34c"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/eq.js",
+      "bytes": 126,
+      "sha256": "b6e30a7168e52723216fc163d300e2bbabf92ec0251f9ac5438bb6ccf57c8936"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/neq.js",
+      "bytes": 128,
+      "sha256": "a662883751918822c162183b46b9e20d09489132f82686c92ab78bee67f3a127"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/gt.js",
+      "bytes": 124,
+      "sha256": "135523704aa48cd98834dd170ee9f74f0e68043b379f32d021db11e6304c5c93"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/gte.js",
+      "bytes": 127,
+      "sha256": "991c5bbe48ecb210a562646872f05862ad9fc0d42186d85aa60bdc6fa323eb9d"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/lt.js",
+      "bytes": 124,
+      "sha256": "1c897a9bc849320e2e9dc0f6c09555c01ee3ddf30734515d717b88ad7740ea25"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/lte.js",
+      "bytes": 127,
+      "sha256": "3a8d0b1d00423f60cc7cb810b36ab77b61330831ad237dbe73eb5cecfa412800"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/cmp.js",
+      "bytes": 961,
+      "sha256": "a63d74e87b73788e78e9ce0a4892b5333d6b809c0de88b31e4ed76cbf17f94b3"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/comparator.js",
+      "bytes": 3631,
+      "sha256": "054202956430d63d5ff4599fae09760ce465b489e4f0b5ef5ce7cc7ac21157ac"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/range.js",
+      "bytes": 15647,
+      "sha256": "a6544485aa8575aa9854c67e2caa67726815de18a482d0ceb8a1003244de3bc1"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/satisfies.js",
+      "bytes": 247,
+      "sha256": "8cf5e122b757251671ed6c9d9680904b71cd375845853f05312e608cf2cc2946"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/adapter.mjs",
+      "bytes": 901,
+      "sha256": "d2eb3a83634911d902873cff14f1d5c374d98e1ce35b6f32c577955419f16510"
+    }
+  ],
+  "externalRuntimeImports": [],
+  "bundle": {
+    "bytes": 42938,
+    "sha256": "8e6331c84bfe1b81ff3a5895438190375fa043b5bda118ee3d3dbec0c7d7e5b6"
+  },
+  "metafile": {
+    "inputs": {
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/lrucache.js": {
+        "bytes": 802,
+        "imports": [],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/parse-options.js": {
+        "bytes": 338,
+        "imports": [],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/constants.js": {
+        "bytes": 873,
+        "imports": [],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/debug.js": {
+        "bytes": 240,
+        "imports": [],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/re.js": {
+        "bytes": 8139,
+        "imports": [
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/constants.js",
+            "kind": "require-call",
+            "original": "./constants"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/debug.js",
+            "kind": "require-call",
+            "original": "./debug"
+          }
+        ],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/identifiers.js": {
+        "bytes": 525,
+        "imports": [],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/semver.js": {
+        "bytes": 9891,
+        "imports": [
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/debug.js",
+            "kind": "require-call",
+            "original": "../internal/debug"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/constants.js",
+            "kind": "require-call",
+            "original": "../internal/constants"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/re.js",
+            "kind": "require-call",
+            "original": "../internal/re"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/parse-options.js",
+            "kind": "require-call",
+            "original": "../internal/parse-options"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/identifiers.js",
+            "kind": "require-call",
+            "original": "../internal/identifiers"
+          }
+        ],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/compare.js": {
+        "bytes": 170,
+        "imports": [
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/semver.js",
+            "kind": "require-call",
+            "original": "../classes/semver"
+          }
+        ],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/eq.js": {
+        "bytes": 126,
+        "imports": [
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/compare.js",
+            "kind": "require-call",
+            "original": "./compare"
+          }
+        ],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/neq.js": {
+        "bytes": 128,
+        "imports": [
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/compare.js",
+            "kind": "require-call",
+            "original": "./compare"
+          }
+        ],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/gt.js": {
+        "bytes": 124,
+        "imports": [
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/compare.js",
+            "kind": "require-call",
+            "original": "./compare"
+          }
+        ],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/gte.js": {
+        "bytes": 127,
+        "imports": [
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/compare.js",
+            "kind": "require-call",
+            "original": "./compare"
+          }
+        ],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/lt.js": {
+        "bytes": 124,
+        "imports": [
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/compare.js",
+            "kind": "require-call",
+            "original": "./compare"
+          }
+        ],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/lte.js": {
+        "bytes": 127,
+        "imports": [
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/compare.js",
+            "kind": "require-call",
+            "original": "./compare"
+          }
+        ],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/cmp.js": {
+        "bytes": 961,
+        "imports": [
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/eq.js",
+            "kind": "require-call",
+            "original": "./eq"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/neq.js",
+            "kind": "require-call",
+            "original": "./neq"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/gt.js",
+            "kind": "require-call",
+            "original": "./gt"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/gte.js",
+            "kind": "require-call",
+            "original": "./gte"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/lt.js",
+            "kind": "require-call",
+            "original": "./lt"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/lte.js",
+            "kind": "require-call",
+            "original": "./lte"
+          }
+        ],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/comparator.js": {
+        "bytes": 3631,
+        "imports": [
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/parse-options.js",
+            "kind": "require-call",
+            "original": "../internal/parse-options"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/re.js",
+            "kind": "require-call",
+            "original": "../internal/re"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/cmp.js",
+            "kind": "require-call",
+            "original": "../functions/cmp"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/debug.js",
+            "kind": "require-call",
+            "original": "../internal/debug"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/semver.js",
+            "kind": "require-call",
+            "original": "./semver"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/range.js",
+            "kind": "require-call",
+            "original": "./range"
+          }
+        ],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/range.js": {
+        "bytes": 15647,
+        "imports": [
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/lrucache.js",
+            "kind": "require-call",
+            "original": "../internal/lrucache"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/parse-options.js",
+            "kind": "require-call",
+            "original": "../internal/parse-options"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/comparator.js",
+            "kind": "require-call",
+            "original": "./comparator"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/debug.js",
+            "kind": "require-call",
+            "original": "../internal/debug"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/semver.js",
+            "kind": "require-call",
+            "original": "./semver"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/re.js",
+            "kind": "require-call",
+            "original": "../internal/re"
+          },
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/constants.js",
+            "kind": "require-call",
+            "original": "../internal/constants"
+          }
+        ],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/satisfies.js": {
+        "bytes": 247,
+        "imports": [
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/range.js",
+            "kind": "require-call",
+            "original": "../classes/range"
+          }
+        ],
+        "format": "cjs"
+      },
+      "experiments/plugins/semver-range-upgrade/adapter.mjs": {
+        "bytes": 901,
+        "imports": [
+          {
+            "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/satisfies.js",
+            "kind": "import-statement",
+            "original": "semver/functions/satisfies.js"
+          }
+        ],
+        "format": "esm"
+      }
+    },
+    "outputs": {
+      "experiments/plugins/semver-range-upgrade/releases/7.8.5/package/index.mjs": {
+        "imports": [],
+        "exports": [
+          "hostApiMajor",
+          "invoke"
+        ],
+        "entryPoint": "experiments/plugins/semver-range-upgrade/adapter.mjs",
+        "inputs": {
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/lrucache.js": {
+            "bytesInOutput": 976
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/parse-options.js": {
+            "bytesInOutput": 508
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/constants.js": {
+            "bytesInOutput": 815
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/debug.js": {
+            "bytesInOutput": 388
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/re.js": {
+            "bytesInOutput": 5213
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/identifiers.js": {
+            "bytesInOutput": 737
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/semver.js": {
+            "bytesInOutput": 9913
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/compare.js": {
+            "bytesInOutput": 321
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/eq.js": {
+            "bytesInOutput": 279
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/neq.js": {
+            "bytesInOutput": 283
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/gt.js": {
+            "bytesInOutput": 277
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/gte.js": {
+            "bytesInOutput": 282
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/lt.js": {
+            "bytesInOutput": 277
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/lte.js": {
+            "bytesInOutput": 282
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/cmp.js": {
+            "bytesInOutput": 1260
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/comparator.js": {
+            "bytesInOutput": 3776
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/range.js": {
+            "bytesInOutput": 13072
+          },
+          "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/satisfies.js": {
+            "bytesInOutput": 438
+          },
+          "experiments/plugins/semver-range-upgrade/adapter.mjs": {
+            "bytesInOutput": 808
+          }
+        },
+        "bytes": 42938
+      }
+    }
+  }
+}

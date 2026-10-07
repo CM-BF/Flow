@@ -1,0 +1,58 @@
+{
+  "startedAt": "2026-10-07T11:44:28.109271+00:00",
+  "finishedAt": "2026-10-07T11:44:28.501646+00:00",
+  "wallBeforePersistenceSeconds": 0.392192916944623,
+  "supervision": {
+    "pid": 41052,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 1,
+    "elapsed_ms": 376,
+    "observed_bytes": 2241,
+    "retained_bytes": 2241,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "cleanup": {
+    "knownProcessClosed": true,
+    "tmpRemoved": true,
+    "retained": null,
+    "sampleBytes": 18777,
+    "sampleEntries": 5
+  },
+  "raw": {
+    "bytes": 2241,
+    "sha256": "71ec049df87eda9b2c5c68f924af524ef2c6853d1d6732aa1fd18e2a96d21b1f"
+  },
+  "sourceHashes": {
+    "docs/evidence/x01-upstream-upgrade/run-local.py": "01290ecaae88ee22d5264a1a2a8165c17ed1223777c1cc3059f76a8a259a2780",
+    "docs/evidence/x01-upstream-upgrade/tsconfig.json": "511346d5826ff5f0714fb77fde642c32ddc0fefae04f1ad04ff84cf13f6a1c5c",
+    "docs/evidence/x01-upstream-upgrade/vitest.config.mjs": "6a757ab3381d7e7661675498482ff3a6d0cdb02a3143bae9059dfaee68816420",
+    "apps/runner/src/plugins/semver-upstream-upgrade.test.ts": "de27252ab2e0dad3bbbf8f72f693bb10d8476db80c4c47a40859d17fb8af5f0a"
+  }
+}

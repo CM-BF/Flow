@@ -1,0 +1,49 @@
+{
+  "protocol": "flow.x01.upstream-upgrade-pg.v1",
+  "productCommit": "62e9a83923a3c2996b4ab32610e10e2069828c66",
+  "totalSeconds": 180,
+  "workSeconds": 110,
+  "cleanupSeconds": 60,
+  "finalReserveSeconds": 10,
+  "suites": {
+    "runtime": {
+      "cases": 1,
+      "httpRequests": 256,
+      "connectionsMax": 17
+    }
+  },
+  "httpRequestsMax": 256,
+  "responseBytesPerRequest": 131072,
+  "responseBytesPerSuite": 4194304,
+  "databasesMax": 1,
+  "serialSuites": true,
+  "streamsBytes": 262144,
+  "resultBytes": 131072,
+  "rawBytes": 1048576,
+  "temporaryBytes": 33554432,
+  "temporaryEntries": 4096,
+  "reserveBytes": 1073741824,
+  "runName": "pg-run-r1",
+  "databaseReserveBytes": 134217728,
+  "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+  "selection": [
+    {
+      "file": "apps/server/src/plugin-runtime/upstream-version-pg.test.ts",
+      "name": "real upstream range upgrade keeps active A pinned while B changes behavior and rollback C restores it"
+    }
+  ],
+  "tasksMax": 3,
+  "registrationsMax": 1,
+  "attemptsMax": 3,
+  "scope": "One real in-process runRunner/HTTP upstream range journey; active load ACK before import/invoke. No OS runner/provider/native.",
+  "runnersMax": 1,
+  "runnerCapacity": 2,
+  "wrapperVersions": [
+    "7.8.4",
+    "7.8.5"
+  ],
+  "upstream": [
+    "semver@7.8.4",
+    "semver@7.8.5"
+  ]
+}

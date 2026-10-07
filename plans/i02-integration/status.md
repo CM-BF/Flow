@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T12:09:29.179904+00:00 / main0b22f68e；本批接收固定三页面兼容证据 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T12:17:26.273047+00:00 / main3b6046a5；本批接已审真实上游版本旅程与消息设置唯一来源 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main0b22f68e；本批188个固定文件，两个Web验证入口与当前公共合同定向类型通过 |
+| 工作基线 / HEAD | main3b6046a5；本批198个X01固定文件与D05三文件登记 |
 | 工作树dirty状态 | 仅已审固定输入与本次接收记录；两个既有未知__pycache__不纳入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 三保留页面真实兼容由Web独审批准；本次两验证入口定向noEmit0，1321ms；0PG/Chrome/provider，原始失败保留。 |
+| 检查状态 | X01原local3/3及真实中心1/1分层获审；当前两新test noEmit0/2363ms，0PG/Chrome/provider重跑。三旧App原兼容独审保持。 |
 | 已集成main状态 / HEAD | 此前main0b22f68e已接201源与插件回滚证据；本批接收固定后台与三个保留页面的实际兼容。个人运行仍原版本。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 三个现有页面版本与新版固定后台的实际兼容已独审通过；验证工具与证据完成定向接收。 |
-| 下一可用交付 | 固定现场发布输入独审完成后，按维护流程更新个人后台，保留页面、会话与任务。 |
+| 当前产出 | 插件真实上游版本升级回滚证据完成接收；正在将消息设置接入实际聊天，唯一来源已登记为202候选。 |
+| 下一可用交付 | 固定迁入入口窄补复审后，更新个人后台并保留现有页面和任务；消息设置App由原Web owner并行实施。 |
 | 当前阻塞 | ACTIVE: 个人后台更新清单正在独立审查，实际更新须与既有运行窗口协调；规划认证原因仍未知，三次调用已封存。 |
 | 需用户决定 | NONE |
 

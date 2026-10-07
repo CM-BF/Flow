@@ -1,0 +1,83 @@
+{
+  "taskId": "X01-UPSTREAM-UPGRADE01",
+  "startedAt": "2026-10-07T11:38:39Z",
+  "localClosedAt": "2026-10-07T11:44:53.709696+00:00",
+  "checks": [
+    {
+      "run": "build",
+      "exit": 0,
+      "selected": null,
+      "passed": null,
+      "skipped": null
+    },
+    {
+      "run": "types",
+      "exit": 0,
+      "selected": null,
+      "passed": null,
+      "skipped": null
+    },
+    {
+      "run": "test",
+      "exit": 1,
+      "selected": 3,
+      "passed": 0,
+      "skipped": 3
+    },
+    {
+      "run": "test-fix",
+      "exit": 0,
+      "selected": 3,
+      "passed": 3,
+      "skipped": 0
+    }
+  ],
+  "supervisionMilliseconds": 1682,
+  "rawBytes": 2851,
+  "observations": [
+    {
+      "release": "7.8.4",
+      "input": "{\"version\":\"1.1.0-a\",\"range\":\"~1.1\",\"includePrerelease\":true}",
+      "content": "false",
+      "installationId": "5adef7af30ba40dba01571cd942d0e45f80c70a8b921d80f783ca84c809b62e0",
+      "phases": [
+        "load",
+        "invoke"
+      ]
+    },
+    {
+      "release": "7.8.5",
+      "input": "{\"version\":\"1.1.0-a\",\"range\":\"~1.1\",\"includePrerelease\":true}",
+      "content": "true",
+      "installationId": "cc2f0add602ea47644b4bb573f1314b4d2492a1c5fdccc24332fe20c6aaf7480",
+      "phases": [
+        "load",
+        "invoke"
+      ]
+    },
+    {
+      "release": "7.8.4",
+      "input": "{\"version\":\"1.1.0-a\",\"range\":\"~1.1\",\"includePrerelease\":true}",
+      "content": "false",
+      "installationId": "5adef7af30ba40dba01571cd942d0e45f80c70a8b921d80f783ca84c809b62e0",
+      "phases": [
+        "load",
+        "invoke"
+      ]
+    }
+  ],
+  "scope": "local production prepare/read/import/invoke, mock authorization and ownership; no center/runner process/provider/PG",
+  "clockScope": "supervisor elapsed and wrapper before final persistence separately; not whole-tool wall",
+  "failuresPreserved": "initial suite0pass3skipped rejects uppercase LICENSE; only wrapper filename fixed; no bundle change",
+  "resources": {
+    "allFinalOwnedAbsent": true,
+    "allMergedEof": true,
+    "allOwnTmpRemoved": true,
+    "peakTmpBytes": "UNKNOWN; before/after bounded sample, not OS quota"
+  },
+  "buildCorrection": {
+    "originalSource": "docs/evidence/x01-upstream-upgrade/build-before-license-fix.mjs.txt",
+    "finalSource": "docs/evidence/x01-upstream-upgrade/build.mjs",
+    "delta": "LICENSE filename -> license.txt; two bundle content hashes unchanged"
+  }
+}

@@ -1,0 +1,1122 @@
+{
+  "sourceCommit": "5beb0bb95b77bd20c4d9bcf05297cbdee21abfa9",
+  "base": "62e9a83923a3c2996b4ab32610e10e2069828c66",
+  "gitBindings": [
+    {
+      "path": ".gitignore",
+      "bytes": 108,
+      "sha256": "677d39b3228b53937e669987421278ac9aa382172aacf8002a7ca7822367bc27"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "bytes": 4841,
+      "sha256": "90da81464352d87e0bae125ae7e443bb9b2f40de930063cbc0564be75715b4e3"
+    },
+    {
+      "path": "apps/runner/src/plugins/host.ts",
+      "bytes": 6177,
+      "sha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f"
+    },
+    {
+      "path": "apps/runner/src/plugins/semver-upstream-upgrade.test.ts",
+      "bytes": 7573,
+      "sha256": "de27252ab2e0dad3bbbf8f72f693bb10d8476db80c4c47a40859d17fb8af5f0a"
+    },
+    {
+      "path": "apps/runner/src/verifier.ts",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/build-before-license-fix.mjs.txt",
+      "bytes": 2865,
+      "sha256": "ad6c8ff5b889bed70f7e8f795c16c33857b08a0eb57e17bcad1b1a8d27396bcc"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/build.mjs",
+      "bytes": 2869,
+      "sha256": "5efcd9c9e5ac3310a274f55a87f1893b6127ddf686af70acd099aed80af1e85b"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/build/output.log",
+      "bytes": 274,
+      "sha256": "7b0e2c52a5290895f8c82e9aefab4b3d2eb1aafca7c1bfccc0d2948035ec933c"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/build/reservation.json",
+      "bytes": 767,
+      "sha256": "11cec05942b51402320bb6528bda14b4e7e62180636ebd98ab74a4bd1858b3bd"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/build/result.json",
+      "bytes": 1518,
+      "sha256": "4503c105f21175dd5b4441d25a99d5d1ace22d5907a8884808e96c8a4238f851"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/claim-take.json",
+      "bytes": 729,
+      "sha256": "d4e74254fcefc3a7161a7034b34592c0a723e544b5a1a94f43efc08ed8364fd6"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/dependency-links.json",
+      "bytes": 1584,
+      "sha256": "5e8ac453d27989d4dfaa676431f8cbb7f049740914bf6f792d6d7d7f48d0d0a7"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/fetch-official.py",
+      "bytes": 3450,
+      "sha256": "31beeb4dcc37fec17f90a9845ab7bce4f64ee22b43eead2848389ecf9c620cee"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/license-fix.json",
+      "bytes": 263,
+      "sha256": "339be3a73072bbc5b72d1bcab4f3808084232476dbf32ef35d083767bb9dd2fe"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/local-summary.json",
+      "bytes": 2432,
+      "sha256": "2db68c6978213fe09bea59653ef4ae8953b2faca090edddde549f1362f32a4f5"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/run-local.py",
+      "bytes": 4524,
+      "sha256": "01290ecaae88ee22d5264a1a2a8165c17ed1223777c1cc3059f76a8a259a2780"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/source-provision.json",
+      "bytes": 10623,
+      "sha256": "43029c4295a0756400a441939725582722158632518a503c6039e727ce557e13"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/test-fix/host-facts.json",
+      "bytes": 4888,
+      "sha256": "a9c91a095222d9418d61aa0a93e2b7325ee8ce5ed77cffdea34b3c4b3f2b6ae1"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/test-fix/output.log",
+      "bytes": 336,
+      "sha256": "2c3f86d149e0fd7190acdc21261ab9d7e93bbe265baea613d76bdea0eeb119c3"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/test-fix/reservation.json",
+      "bytes": 1018,
+      "sha256": "54d128ff12ea534504121f5ee509f11aab3d27c87ddea4c3ed94895549a5ff90"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/test-fix/result.json",
+      "bytes": 1523,
+      "sha256": "25252036bf705688177d51268c0487110116a7f47bf75f6100923fed2c8b592c"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/test/host-facts.json",
+      "bytes": 332,
+      "sha256": "0438f79ba40cb81857cb8cd4f394453bd63850e350abc579a917d298fbc9fabf"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/test/output.log",
+      "bytes": 2241,
+      "sha256": "71ec049df87eda9b2c5c68f924af524ef2c6853d1d6732aa1fd18e2a96d21b1f"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/test/reservation.json",
+      "bytes": 1014,
+      "sha256": "2cbaac51b016cd5ccd534ddf45f22c53d87c254444812cb7f0ef44b2d645a447"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/test/result.json",
+      "bytes": 1680,
+      "sha256": "656dee1ede8686304f7a89417f310bf916b1abeefe7b769664c99077f96f7241"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/tsconfig.json",
+      "bytes": 197,
+      "sha256": "511346d5826ff5f0714fb77fde642c32ddc0fefae04f1ad04ff84cf13f6a1c5c"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/types/output.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/types/reservation.json",
+      "bytes": 912,
+      "sha256": "8f416681fab9f24ce82b5e5e9966fbb669a7d6211d36e79c0af201bf8b786783"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/types/result.json",
+      "bytes": 1511,
+      "sha256": "c4bb5227190b39bb0ab321a575095877c92590bd313bb6d0c5dde30785063c91"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/vitest.config.mjs",
+      "bytes": 411,
+      "sha256": "6a757ab3381d7e7661675498482ff3a6d0cdb02a3143bae9059dfaee68816420"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-check-once.py",
+      "bytes": 20307,
+      "sha256": "cfe2b708c762752926f1f24899120fd802ea97e80bc115fabcea12c0b3a3847a"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-once.py",
+      "bytes": 20706,
+      "sha256": "86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/adapter.mjs",
+      "bytes": 901,
+      "sha256": "d2eb3a83634911d902873cff14f1d5c374d98e1ce35b6f32c577955419f16510"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/releases/7.8.4/build-receipt.json",
+      "bytes": 18033,
+      "sha256": "b654dcadfe0c4ac5f4ed52475811f6d460791887be7b73842dc94ba1fe98c6e9"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/releases/7.8.4/package/flow-plugin.json",
+      "bytes": 76,
+      "sha256": "a6786fbcba3573f634a74f64569cfc461e27a2c91260db1262d25496d5c5f8fc"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/releases/7.8.4/package/index.mjs",
+      "bytes": 42875,
+      "sha256": "c8b267d263f9e409bc72c4b7e8d9ed5d6b21fab9bb1823daf0a94e76b3be6314"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/releases/7.8.4/package/license.txt",
+      "bytes": 765,
+      "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/releases/7.8.4/package/package.json",
+      "bytes": 79,
+      "sha256": "609ba71782f72413916d17609eb571a9a8b31a9a2e45fdd0ce78b8c71025286e"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/releases/7.8.4/package/upstream.json",
+      "bytes": 215,
+      "sha256": "3003aeac63f4f3d87d8aa8c834ee26e3e510e368bf6eeed20ffad86d4f815f43"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/releases/7.8.5/build-receipt.json",
+      "bytes": 18033,
+      "sha256": "4f3c37a3d45e5f8715aeecd181e3eb317d507e040ac48179754a5a2492247d7f"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/releases/7.8.5/package/flow-plugin.json",
+      "bytes": 76,
+      "sha256": "a6786fbcba3573f634a74f64569cfc461e27a2c91260db1262d25496d5c5f8fc"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/releases/7.8.5/package/index.mjs",
+      "bytes": 42938,
+      "sha256": "8e6331c84bfe1b81ff3a5895438190375fa043b5bda118ee3d3dbec0c7d7e5b6"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/releases/7.8.5/package/license.txt",
+      "bytes": 765,
+      "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/releases/7.8.5/package/package.json",
+      "bytes": 79,
+      "sha256": "505ed4e4ffce84e71bc1f979cc6ffb3fb2d6c049f3be776638122815784ee310"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/releases/7.8.5/package/upstream.json",
+      "bytes": 215,
+      "sha256": "4d10d37ccbe475bbfe243bb5a95556f6fe2d752c0fa1dc227772220f5f5d6b7c"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/metadata.json",
+      "bytes": 2569,
+      "sha256": "552ff8b78689b1327fd12f859cda3c4aac6d304ef39dacb4fcca771a3034f915"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/LICENSE",
+      "bytes": 765,
+      "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/README.md",
+      "bytes": 25669,
+      "sha256": "f1a789dcec285150be24db2ea04dd3175031554fa9834ec92fab83fb5e025a57"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/bin/semver.js",
+      "bytes": 4957,
+      "sha256": "bd6c871026985937dc945011fc54b74b47f5998154216d7b8d40d5ed782e4402"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/classes/comparator.js",
+      "bytes": 3631,
+      "sha256": "054202956430d63d5ff4599fae09760ce465b489e4f0b5ef5ce7cc7ac21157ac"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/classes/index.js",
+      "bytes": 143,
+      "sha256": "3bb69280c2a788d0eb16f915bb9df4dbe812075182024c753dca2283bcea1b17"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/classes/range.js",
+      "bytes": 15360,
+      "sha256": "96aa532ca1dc5b0c644549498e8667e0c638ba7b90124a5d2f4c16e5a8a44cdd"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/classes/semver.js",
+      "bytes": 9891,
+      "sha256": "813b2c185512d30c9b931c2fed8140889d9d7490ceeeedc370da30337dc8ca57"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/clean.js",
+      "bytes": 205,
+      "sha256": "4eadb0892844cf3ae295121a86163a66c73f89acd1b7f0b114ec115b4539512f"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/cmp.js",
+      "bytes": 961,
+      "sha256": "a63d74e87b73788e78e9ce0a4892b5333d6b809c0de88b31e4ed76cbf17f94b3"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/coerce.js",
+      "bytes": 2004,
+      "sha256": "28a251c5ab210ddf9e97551b9f37a53329fcce91f0c3943dcbc02de1a1de915a"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/compare-build.js",
+      "bytes": 281,
+      "sha256": "5ab651d5b40af289bd85c645a92b6d8cfe1a986dc413c797cfcc8d623d7c844c"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/compare-loose.js",
+      "bytes": 132,
+      "sha256": "07b6a3a1db0a5210ceb784c1708bd4679f3a94fc73a9c9eb349349e7070a6f78"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/compare.js",
+      "bytes": 170,
+      "sha256": "d404b5aa48aaddc8a654c5da8fb7d4443404b7948589b21ac4b045d1cee4e34c"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/diff.js",
+      "bytes": 1423,
+      "sha256": "7a11fd39b987cdf06c65e928cb1aca49bec583feb86fb5c8fe47a6fd61d7de31"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/eq.js",
+      "bytes": 126,
+      "sha256": "b6e30a7168e52723216fc163d300e2bbabf92ec0251f9ac5438bb6ccf57c8936"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/gt.js",
+      "bytes": 124,
+      "sha256": "135523704aa48cd98834dd170ee9f74f0e68043b379f32d021db11e6304c5c93"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/gte.js",
+      "bytes": 127,
+      "sha256": "991c5bbe48ecb210a562646872f05862ad9fc0d42186d85aa60bdc6fa323eb9d"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/inc.js",
+      "bytes": 478,
+      "sha256": "952069fc8690b7d3af0fe9d55f7c54fe2ac067b48c5e74f6a54f9ce19a334493"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/lt.js",
+      "bytes": 124,
+      "sha256": "1c897a9bc849320e2e9dc0f6c09555c01ee3ddf30734515d717b88ad7740ea25"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/lte.js",
+      "bytes": 127,
+      "sha256": "3a8d0b1d00423f60cc7cb810b36ab77b61330831ad237dbe73eb5cecfa412800"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/major.js",
+      "bytes": 136,
+      "sha256": "5c678480d882f511200fed2c16ec3847dfedb08a1d70328dc2f031d35d825276"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/minor.js",
+      "bytes": 136,
+      "sha256": "1b051794f1713adec2a236517196691687c35f82e0b596ff3316a78b3cc10ae6"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/neq.js",
+      "bytes": 128,
+      "sha256": "a662883751918822c162183b46b9e20d09489132f82686c92ab78bee67f3a127"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/parse.js",
+      "bytes": 331,
+      "sha256": "29a69e15b6d02fe381d573f861881a89590e9d0f0f0ca740c5f85eaf0234c4ad"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/patch.js",
+      "bytes": 136,
+      "sha256": "f02d3c1b059fe3d96ce124886f7eef321d381a95638fd3c4a8d5ccd8e76ffadd"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/prerelease.js",
+      "bytes": 234,
+      "sha256": "baedbf503d5610ad041bfb56071efa48feb331ca278295c399537d35d3ffb593"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/rcompare.js",
+      "bytes": 132,
+      "sha256": "84fa5e88adf08d15c993cac8cdec6d1a65045b7e95a9c55184230a7f807f4dc0"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/rsort.js",
+      "bytes": 163,
+      "sha256": "6ec659ce3b6c2b173c719286caab04409adba046c0917874ec3b5e36ddfbc7e3"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/satisfies.js",
+      "bytes": 247,
+      "sha256": "8cf5e122b757251671ed6c9d9680904b71cd375845853f05312e608cf2cc2946"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/sort.js",
+      "bytes": 161,
+      "sha256": "c2fe2d3ed0be8a4e9de8f02abdfd5d9c0d3bcc510d88e87af84185592882c4b8"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/truncate.js",
+      "bytes": 1021,
+      "sha256": "e145833a250311927c92f424f56498c52f1b7bb1271ce6afbf006db87773ff43"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/functions/valid.js",
+      "bytes": 176,
+      "sha256": "0de7ea736cb7807179d46dfac09c830a9338e02b6a07db12d7040cde2def6025"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/index.js",
+      "bytes": 2691,
+      "sha256": "4b3e57d3d40e29e0706002eba113d09f35aea593578376bbeec83b777b9912ab"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/internal/constants.js",
+      "bytes": 873,
+      "sha256": "38a112baf27ceca0260082ff26ac2fd7a9861cab1af12dd65e720277f68e6ce9"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/internal/debug.js",
+      "bytes": 240,
+      "sha256": "8a9f420572260f3cf944463b5090d62a60f0730589dc23a7ec4ca25e2ee41bb3"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/internal/identifiers.js",
+      "bytes": 525,
+      "sha256": "b4916b09dc7869ae0eb05e71c855c942a3a7365f7e6e89185d59a9e45a2451d7"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/internal/lrucache.js",
+      "bytes": 802,
+      "sha256": "14d087c87da87b6f5c36fc4cdd7d2d14077874b14a68e20fce5b6138fa2ca34f"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/internal/parse-options.js",
+      "bytes": 338,
+      "sha256": "fdf51d0de8d5442c35a997ef58cd530d239ce206f961d14c5121354451b01d01"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/internal/re.js",
+      "bytes": 8139,
+      "sha256": "5833262888e2b5d843a69193f83c05e374818dbe55379b497819b5bf58e48cd8"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/package.json",
+      "bytes": 1661,
+      "sha256": "2cf1531ebb4571035e8d361708f3664eba95b6a735a01fe1dded7c8be6ebf2d2"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/preload.js",
+      "bytes": 83,
+      "sha256": "edb6808911bebcb324b2df57e5c9935149e56984ff083b74c6cfe215f5b710ba"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/range.bnf",
+      "bytes": 702,
+      "sha256": "15d0baf9b7b98e6d862c0cb9e822d2533d2bc23e136bb75314d802ca1fcb0392"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/ranges/gtr.js",
+      "bytes": 231,
+      "sha256": "8fadad28e36d28e93d498ac7ac20badba2a407312845eabc18e82e90a0732b19"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/ranges/intersects.js",
+      "bytes": 224,
+      "sha256": "fe87ac5d3020010ad3ec00636dadbf0c669ff07d0f57e0a8165a8264f79a676f"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/ranges/ltr.js",
+      "bytes": 227,
+      "sha256": "e5186fcc03018acf9be6d968755d4c49727aeb0d981d179eb568ae5fbe983038"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/ranges/max-satisfying.js",
+      "bytes": 593,
+      "sha256": "e1a2c0d6144cc772cd20bbc8ecb9e8a3a4074e9172a3d8e794838b591cdeb416"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/ranges/min-satisfying.js",
+      "bytes": 591,
+      "sha256": "2681abf54098aa670f12826b76a6ec77a2441186ae4243afde3be8ae4908f7ca"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/ranges/min-version.js",
+      "bytes": 1514,
+      "sha256": "fefba0a88c2bf74d5cede504b5ae50a8dc3edfd69cf0174a491e2cf3e442614b"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/ranges/outside.js",
+      "bytes": 2204,
+      "sha256": "3a2b0b23593d2f49419c06af2af75450cab103b0c25d665d48fe5bca495a21ca"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/ranges/simplify.js",
+      "bytes": 1355,
+      "sha256": "7b78581c13322bc68ece2088685386b2a9b51c15b94d0a2063bdf2546bd41934"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/ranges/subset.js",
+      "bytes": 7478,
+      "sha256": "ceb9eb6ed5bfc6c7ac7af7f47e5c3535444a4e66a0e2b58cdad4bd02a35d454d"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/ranges/to-comparators.js",
+      "bytes": 282,
+      "sha256": "6c5e966210cff270fa2850668aaf8460fac7759f8d99f282521ef7a78f4564e9"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/package/ranges/valid.js",
+      "bytes": 326,
+      "sha256": "5ef6f995af801868925940cf8df5735d565ebabb090b068695cae65218bcd3ac"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/source-receipt.json",
+      "bytes": 9267,
+      "sha256": "4505227f497501f8f2e4d8bbc7db5285ad9bba91d91f876cc5f9f92a8cef37a1"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.4/upstream.tgz",
+      "bytes": 29325,
+      "sha256": "700e9afebc59f214dc2d833d159acd050712800e7868ad50b5412994b7731c12"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/metadata.json",
+      "bytes": 2569,
+      "sha256": "595600ec8060055e4582121441e8227bc6ab12ff63b42030686e18ec46226ff2"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/LICENSE",
+      "bytes": 765,
+      "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/README.md",
+      "bytes": 25669,
+      "sha256": "f1a789dcec285150be24db2ea04dd3175031554fa9834ec92fab83fb5e025a57"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/bin/semver.js",
+      "bytes": 4957,
+      "sha256": "bd6c871026985937dc945011fc54b74b47f5998154216d7b8d40d5ed782e4402"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/comparator.js",
+      "bytes": 3631,
+      "sha256": "054202956430d63d5ff4599fae09760ce465b489e4f0b5ef5ce7cc7ac21157ac"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/index.js",
+      "bytes": 143,
+      "sha256": "3bb69280c2a788d0eb16f915bb9df4dbe812075182024c753dca2283bcea1b17"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/range.js",
+      "bytes": 15647,
+      "sha256": "a6544485aa8575aa9854c67e2caa67726815de18a482d0ceb8a1003244de3bc1"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/classes/semver.js",
+      "bytes": 9891,
+      "sha256": "813b2c185512d30c9b931c2fed8140889d9d7490ceeeedc370da30337dc8ca57"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/clean.js",
+      "bytes": 205,
+      "sha256": "4eadb0892844cf3ae295121a86163a66c73f89acd1b7f0b114ec115b4539512f"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/cmp.js",
+      "bytes": 961,
+      "sha256": "a63d74e87b73788e78e9ce0a4892b5333d6b809c0de88b31e4ed76cbf17f94b3"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/coerce.js",
+      "bytes": 2004,
+      "sha256": "28a251c5ab210ddf9e97551b9f37a53329fcce91f0c3943dcbc02de1a1de915a"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/compare-build.js",
+      "bytes": 281,
+      "sha256": "5ab651d5b40af289bd85c645a92b6d8cfe1a986dc413c797cfcc8d623d7c844c"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/compare-loose.js",
+      "bytes": 132,
+      "sha256": "07b6a3a1db0a5210ceb784c1708bd4679f3a94fc73a9c9eb349349e7070a6f78"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/compare.js",
+      "bytes": 170,
+      "sha256": "d404b5aa48aaddc8a654c5da8fb7d4443404b7948589b21ac4b045d1cee4e34c"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/diff.js",
+      "bytes": 1423,
+      "sha256": "7a11fd39b987cdf06c65e928cb1aca49bec583feb86fb5c8fe47a6fd61d7de31"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/eq.js",
+      "bytes": 126,
+      "sha256": "b6e30a7168e52723216fc163d300e2bbabf92ec0251f9ac5438bb6ccf57c8936"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/gt.js",
+      "bytes": 124,
+      "sha256": "135523704aa48cd98834dd170ee9f74f0e68043b379f32d021db11e6304c5c93"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/gte.js",
+      "bytes": 127,
+      "sha256": "991c5bbe48ecb210a562646872f05862ad9fc0d42186d85aa60bdc6fa323eb9d"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/inc.js",
+      "bytes": 478,
+      "sha256": "952069fc8690b7d3af0fe9d55f7c54fe2ac067b48c5e74f6a54f9ce19a334493"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/lt.js",
+      "bytes": 124,
+      "sha256": "1c897a9bc849320e2e9dc0f6c09555c01ee3ddf30734515d717b88ad7740ea25"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/lte.js",
+      "bytes": 127,
+      "sha256": "3a8d0b1d00423f60cc7cb810b36ab77b61330831ad237dbe73eb5cecfa412800"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/major.js",
+      "bytes": 136,
+      "sha256": "5c678480d882f511200fed2c16ec3847dfedb08a1d70328dc2f031d35d825276"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/minor.js",
+      "bytes": 136,
+      "sha256": "1b051794f1713adec2a236517196691687c35f82e0b596ff3316a78b3cc10ae6"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/neq.js",
+      "bytes": 128,
+      "sha256": "a662883751918822c162183b46b9e20d09489132f82686c92ab78bee67f3a127"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/parse.js",
+      "bytes": 331,
+      "sha256": "29a69e15b6d02fe381d573f861881a89590e9d0f0f0ca740c5f85eaf0234c4ad"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/patch.js",
+      "bytes": 136,
+      "sha256": "f02d3c1b059fe3d96ce124886f7eef321d381a95638fd3c4a8d5ccd8e76ffadd"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/prerelease.js",
+      "bytes": 234,
+      "sha256": "baedbf503d5610ad041bfb56071efa48feb331ca278295c399537d35d3ffb593"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/rcompare.js",
+      "bytes": 132,
+      "sha256": "84fa5e88adf08d15c993cac8cdec6d1a65045b7e95a9c55184230a7f807f4dc0"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/rsort.js",
+      "bytes": 163,
+      "sha256": "6ec659ce3b6c2b173c719286caab04409adba046c0917874ec3b5e36ddfbc7e3"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/satisfies.js",
+      "bytes": 247,
+      "sha256": "8cf5e122b757251671ed6c9d9680904b71cd375845853f05312e608cf2cc2946"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/sort.js",
+      "bytes": 161,
+      "sha256": "c2fe2d3ed0be8a4e9de8f02abdfd5d9c0d3bcc510d88e87af84185592882c4b8"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/truncate.js",
+      "bytes": 1021,
+      "sha256": "e145833a250311927c92f424f56498c52f1b7bb1271ce6afbf006db87773ff43"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/functions/valid.js",
+      "bytes": 176,
+      "sha256": "0de7ea736cb7807179d46dfac09c830a9338e02b6a07db12d7040cde2def6025"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/index.js",
+      "bytes": 2691,
+      "sha256": "4b3e57d3d40e29e0706002eba113d09f35aea593578376bbeec83b777b9912ab"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/constants.js",
+      "bytes": 873,
+      "sha256": "38a112baf27ceca0260082ff26ac2fd7a9861cab1af12dd65e720277f68e6ce9"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/debug.js",
+      "bytes": 240,
+      "sha256": "8a9f420572260f3cf944463b5090d62a60f0730589dc23a7ec4ca25e2ee41bb3"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/identifiers.js",
+      "bytes": 525,
+      "sha256": "b4916b09dc7869ae0eb05e71c855c942a3a7365f7e6e89185d59a9e45a2451d7"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/lrucache.js",
+      "bytes": 802,
+      "sha256": "14d087c87da87b6f5c36fc4cdd7d2d14077874b14a68e20fce5b6138fa2ca34f"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/parse-options.js",
+      "bytes": 338,
+      "sha256": "fdf51d0de8d5442c35a997ef58cd530d239ce206f961d14c5121354451b01d01"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/internal/re.js",
+      "bytes": 8139,
+      "sha256": "5833262888e2b5d843a69193f83c05e374818dbe55379b497819b5bf58e48cd8"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/package.json",
+      "bytes": 1661,
+      "sha256": "7c94cb7f2a53c27b20d76386ec144c062894dbcc909cfabd0f728c37874b1776"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/preload.js",
+      "bytes": 83,
+      "sha256": "edb6808911bebcb324b2df57e5c9935149e56984ff083b74c6cfe215f5b710ba"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/range.bnf",
+      "bytes": 702,
+      "sha256": "15d0baf9b7b98e6d862c0cb9e822d2533d2bc23e136bb75314d802ca1fcb0392"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/ranges/gtr.js",
+      "bytes": 231,
+      "sha256": "8fadad28e36d28e93d498ac7ac20badba2a407312845eabc18e82e90a0732b19"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/ranges/intersects.js",
+      "bytes": 224,
+      "sha256": "fe87ac5d3020010ad3ec00636dadbf0c669ff07d0f57e0a8165a8264f79a676f"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/ranges/ltr.js",
+      "bytes": 227,
+      "sha256": "e5186fcc03018acf9be6d968755d4c49727aeb0d981d179eb568ae5fbe983038"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/ranges/max-satisfying.js",
+      "bytes": 593,
+      "sha256": "e1a2c0d6144cc772cd20bbc8ecb9e8a3a4074e9172a3d8e794838b591cdeb416"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/ranges/min-satisfying.js",
+      "bytes": 591,
+      "sha256": "2681abf54098aa670f12826b76a6ec77a2441186ae4243afde3be8ae4908f7ca"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/ranges/min-version.js",
+      "bytes": 1514,
+      "sha256": "fefba0a88c2bf74d5cede504b5ae50a8dc3edfd69cf0174a491e2cf3e442614b"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/ranges/outside.js",
+      "bytes": 2204,
+      "sha256": "3a2b0b23593d2f49419c06af2af75450cab103b0c25d665d48fe5bca495a21ca"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/ranges/simplify.js",
+      "bytes": 1355,
+      "sha256": "7b78581c13322bc68ece2088685386b2a9b51c15b94d0a2063bdf2546bd41934"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/ranges/subset.js",
+      "bytes": 7478,
+      "sha256": "ceb9eb6ed5bfc6c7ac7af7f47e5c3535444a4e66a0e2b58cdad4bd02a35d454d"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/ranges/to-comparators.js",
+      "bytes": 282,
+      "sha256": "6c5e966210cff270fa2850668aaf8460fac7759f8d99f282521ef7a78f4564e9"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/package/ranges/valid.js",
+      "bytes": 326,
+      "sha256": "5ef6f995af801868925940cf8df5735d565ebabb090b068695cae65218bcd3ac"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/source-receipt.json",
+      "bytes": 9267,
+      "sha256": "d11cf363358cb7151a530990e55906e11b2aed9d7dec14d60e9ceed114a3e910"
+    },
+    {
+      "path": "experiments/plugins/semver-range-upgrade/upstream/7.8.5/upstream.tgz",
+      "bytes": 29399,
+      "sha256": "d85045d4300d7d57c891336b95df532e73f34c22ffcd222452b6d08b9d127d5d"
+    },
+    {
+      "path": "package.json",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def"
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "bytes": 7453,
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "bytes": 7985,
+      "sha256": "499aa71e3f8890c292328781c60536f3d2446ac8177116c87670c14310181f67"
+    },
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "bytes": 5785,
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997"
+    },
+    {
+      "path": "packages/contracts/src/attachments.ts",
+      "bytes": 8422,
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93"
+    },
+    {
+      "path": "packages/contracts/src/browser-session.ts",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126"
+    },
+    {
+      "path": "packages/contracts/src/context-transparency.ts",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577"
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+    },
+    {
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "bytes": 1196,
+      "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574"
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "bytes": 4175,
+      "sha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "bytes": 7382,
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a"
+    },
+    {
+      "path": "packages/contracts/src/engineering-native.ts",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5"
+    },
+    {
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 15006,
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7"
+    },
+    {
+      "path": "packages/contracts/src/fixtures.ts",
+      "bytes": 1211,
+      "sha256": "a88d494b659c413ce6a39e6c342380540e4d97381263434d25235d360cd674c3"
+    },
+    {
+      "path": "packages/contracts/src/goal-context.ts",
+      "bytes": 1443,
+      "sha256": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b"
+    },
+    {
+      "path": "packages/contracts/src/goal-delivery.ts",
+      "bytes": 4968,
+      "sha256": "ed2ae445be57919427ab265e9c19b56a17e28ba50aa619b2484a8b2e7db9067f"
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-proposals.ts",
+      "bytes": 3734,
+      "sha256": "73fc485a2d06eb4600ae65be4bef96acbdbc373131ef642a4f6c2fcd6b4d7b97"
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-runs.ts",
+      "bytes": 6047,
+      "sha256": "1cfc6108a53c34d3b7864170cf6a0393f61d0487c2dc76305502b9a61643d524"
+    },
+    {
+      "path": "packages/contracts/src/goal-native-executions.ts",
+      "bytes": 931,
+      "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d"
+    },
+    {
+      "path": "packages/contracts/src/goal-plan-confirmation.ts",
+      "bytes": 2388,
+      "sha256": "018da357868d1b5fddc3f0c8a6fd2cc6432ff21caa45b7e60db98bdc9407c23e"
+    },
+    {
+      "path": "packages/contracts/src/goal-progression.ts",
+      "bytes": 2915,
+      "sha256": "82d23e7e1da0c8a6d89f779478c113aee497e0563f4f8df6e0e790ed6a78ec10"
+    },
+    {
+      "path": "packages/contracts/src/goal-tool-runs.ts",
+      "bytes": 3709,
+      "sha256": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db"
+    },
+    {
+      "path": "packages/contracts/src/goals.ts",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930"
+    },
+    {
+      "path": "packages/contracts/src/harnesses.ts",
+      "bytes": 837,
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1634,
+      "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440"
+    },
+    {
+      "path": "packages/contracts/src/knowledge.ts",
+      "bytes": 4414,
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "bytes": 6001,
+      "sha256": "bade51d2df5537299b818176b5738cc8ef8438bbd315d06292f078e87a9ee8b9"
+    },
+    {
+      "path": "packages/contracts/src/native-activity.ts",
+      "bytes": 3259,
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a"
+    },
+    {
+      "path": "packages/contracts/src/native-harness.ts",
+      "bytes": 1173,
+      "sha256": "17ecaad191a70aa5c5010ef4e5967978add8f1ce1732a6c874b1f379b88e20f8"
+    },
+    {
+      "path": "packages/contracts/src/package-artifacts.ts",
+      "bytes": 829,
+      "sha256": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056"
+    },
+    {
+      "path": "packages/contracts/src/plugin-artifact.ts",
+      "bytes": 720,
+      "sha256": "7993d31c1ffe4f47365b2a5d641c0efbf2b9b7afa21c335fb5e0c1d2a28053df"
+    },
+    {
+      "path": "packages/contracts/src/plugin-installations.ts",
+      "bytes": 2063,
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394"
+    },
+    {
+      "path": "packages/contracts/src/plugin-package-fetches.ts",
+      "bytes": 2259,
+      "sha256": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runner-claim.ts",
+      "bytes": 4197,
+      "sha256": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0"
+    },
+    {
+      "path": "packages/contracts/src/plugins.ts",
+      "bytes": 4908,
+      "sha256": "656075884d36145ce73c84283bdd26161c4ea65369f326456ffef1e414e6359f"
+    },
+    {
+      "path": "packages/contracts/src/projects.ts",
+      "bytes": 3384,
+      "sha256": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0"
+    },
+    {
+      "path": "packages/contracts/src/protocol-dispatch.ts",
+      "bytes": 2063,
+      "sha256": "59a23113e3ba16dc278ca3e16d3612812fb33db21de79a9764b596ff769337ea"
+    },
+    {
+      "path": "packages/contracts/src/protocol-task.ts",
+      "bytes": 211,
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20"
+    },
+    {
+      "path": "packages/contracts/src/reconciliation.ts",
+      "bytes": 2903,
+      "sha256": "00ede24b0b2d2f2612fd674e802903562b33f7be1b90dc5ed0a858824faae3a5"
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "bytes": 3965,
+      "sha256": "67d8dbfa2991426e86b93e74d6443b012e6e1ccee514f8956567dd3c23364a00"
+    },
+    {
+      "path": "packages/contracts/src/runner-maintenance.ts",
+      "bytes": 1600,
+      "sha256": "fa94507e8951b4ee1d8b0d84f20cd9b3302ef7019a853e2883d2d15ea669b52e"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "bytes": 7873,
+      "sha256": "4221ce35157cf4ee91e9c391965ffd224b15c03973b67841525276cfc83887a5"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 6390,
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087"
+    },
+    {
+      "path": "packages/contracts/src/usage-readout.ts",
+      "bytes": 2212,
+      "sha256": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5"
+    },
+    {
+      "path": "packages/contracts/src/workspace.ts",
+      "bytes": 1472,
+      "sha256": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7"
+    },
+    {
+      "path": "packages/plugin-runtime/package.json",
+      "bytes": 182,
+      "sha256": "342852a97b2682285ae98035f8e1852a1e616b5de071e60a7454ce8848cb16ae"
+    },
+    {
+      "path": "packages/plugin-runtime/src/package-store.ts",
+      "bytes": 17555,
+      "sha256": "d2bb866b09611025fb82ec80c77503ef864901c7da09288cb84991120b4a1b88"
+    },
+    {
+      "path": "packages/plugin-runtime/src/private-configuration.ts",
+      "bytes": 1256,
+      "sha256": "d28371844178889916ff09df8e7d204d8d5a8306c740e3c21cba812c6cedfb2b"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    }
+  ],
+  "count": 214,
+  "bytes": 754987,
+  "dependencyMetadata": [
+    {
+      "path": "node_modules/vitest",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest",
+      "name": "vitest",
+      "version": "4.0.18",
+      "packageSha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328"
+    },
+    {
+      "path": "node_modules/typescript",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript",
+      "name": "typescript",
+      "version": "5.9.3",
+      "packageSha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "path": "node_modules/@types/node",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+      "name": "@types/node",
+      "version": "24.19.1",
+      "packageSha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978"
+    },
+    {
+      "path": "node_modules/esbuild",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild",
+      "name": "esbuild",
+      "version": "0.28.2",
+      "packageSha256": "9d0bc453f4e791553c4cc2298ba023b409241fd9801e494741666eb0f6051490"
+    },
+    {
+      "path": "node_modules/tar",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar",
+      "name": "tar",
+      "version": "7.5.22",
+      "packageSha256": "31b18f4fb83ba7183f54fa9e2cdca610897108c37ba80570c2c6fa7ccf112d97"
+    }
+  ],
+  "sameTreeLinks": [
+    {
+      "path": "node_modules/@flow/plugin-runtime",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-upstream-upgrade/packages/plugin-runtime"
+    }
+  ],
+  "limits": "local-only; no PG/HTTP/provider/OS runner"
+}

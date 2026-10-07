@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-07T12:15:04.027928+00:00",
+  "purpose": "Single canonical source registration, not approval or deployment",
+  "id": "WPF-MESSAGESETTINGS03",
+  "parent": "WPF-MATURE-02",
+  "coLead": "Web",
+  "owner": "workspace_panels_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+  "branch": "codex/web-message-settings-app",
+  "fixedFirstCanonical": "2efead09ed9767990cb9dadf01980f6d9200e42c",
+  "claim": {
+    "id": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
+    "version": 1,
+    "state": "active",
+    "scopes": 18
+  },
+  "taskStartedAt": "2026-10-07T12:11:30.621Z",
+  "taskStartSource": "owner actual provision.startedAt, not inferred from claim",
+  "state": "implementation; NOT_RUN; actual App integration open",
+  "beforeSources": 201,
+  "candidateSources": 202,
+  "fixedRecords": [
+    {
+      "path": "plans/wpf-message-settings-app/plan.md",
+      "bytes": 2689,
+      "sha256": "6e8e93506100590b2f3a8b686dce5bcde018a13b069d339a1868ea9c0ba2faca"
+    },
+    {
+      "path": "plans/wpf-message-settings-app/status.md",
+      "bytes": 3871,
+      "sha256": "e0d48a83c6a21cdbf4d8e1db1e68eb324514187f414ec2357c6e05bb502fbe52"
+    },
+    {
+      "path": "plans/wpf-message-settings-app/review.md",
+      "bytes": 891,
+      "sha256": "c297a88e97b32474789291ee909042e583934e68d4295b0ac1ac02d21a551128"
+    }
+  ]
+}

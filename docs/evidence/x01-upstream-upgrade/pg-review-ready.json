@@ -1,0 +1,17 @@
+{
+  "sourceCommit": "9617bda0f25e11214a3f5893337d3bab733173c8",
+  "manifestSha256": "5830f4f27735223a112bea9ca5a6b6805a3c31f20b2631c1223d386d006ad734",
+  "files": 510,
+  "bytes": 2292591,
+  "external": 35,
+  "links": 20,
+  "actual": "NOT_RUN_NOT_OPEN",
+  "local": "same-tree focusedtypes0 + list1; firsttypes excluded due old alias, not a pass; original3host cases not rerun",
+  "derivation": "201674f49b538917f6f46cbdb02da4ed65191d02",
+  "selection": [
+    {
+      "file": "apps/server/src/plugin-runtime/upstream-version-pg.test.ts",
+      "name": "real upstream range upgrade keeps active A pinned while B changes behavior and rollback C restores it"
+    }
+  ]
+}

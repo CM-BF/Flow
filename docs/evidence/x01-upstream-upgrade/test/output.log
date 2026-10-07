@@ -1,0 +1,36 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-upstream-upgrade
+
+ ❯ apps/runner/src/plugins/semver-upstream-upgrade.test.ts (3 tests | 3 skipped) 30ms
+   ↓ real upstream 7.8.4 to 7.8.5 to rollback changes the same range result and preserves the old material pin
+   ↓ the pinned dependency does not bypass material identity or current digest trust
+   ↓ the shared adapter bounds JSON fields and preserves ordinary semver booleans
+
+⎯⎯⎯⎯⎯⎯ Failed Suites 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  apps/runner/src/plugins/semver-upstream-upgrade.test.ts [ apps/runner/src/plugins/semver-upstream-upgrade.test.ts ]
+PackageStoreError: Package store operation failed: ARCHIVE_REJECTED
+ ❯ fail packages/plugin-runtime/src/package-store.ts:56:44
+     54| const MAX_JSON = 16 * 1024;
+     55| const hash = (bytes: Uint8Array | string) => createHash('sha256').upda…
+     56| function fail(code: string): never { throw new PackageStoreError(code)…
+       |                                            ^
+     57| const cancelled = (signal?: AbortSignal) => { if (signal?.aborted) fai…
+     58| const isCode = (error: unknown, code: string) => !!error && typeof err…
+ ❯ packagePath packages/plugin-runtime/src/package-store.ts:125:111
+ ❯ rt.<anonymous> packages/plugin-runtime/src/package-store.ts:146:68
+ ❯ rt.[processEntry] ../../Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.min.js:3:6255
+ ❯ rt.[nextEntry] ../../Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.min.js:3:6352
+ ❯ rt.[consumeHeader] ../../Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.min.js:3:6078
+ ❯ rt.[consumeChunkSub] ../../Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.min.js:3:9870
+ ❯ rt.[consumeChunk] ../../Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.min.js:3:9610
+ ❯ rt.write ../../Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.min.js:3:8924
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  3 skipped (3)
+   Start at  04:44:28
+   Duration  169ms (transform 43ms, setup 0ms, import 57ms, tests 30ms, environment 0ms)
+

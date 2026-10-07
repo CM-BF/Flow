@@ -1,0 +1,10 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [
+    "../../../apps/runner/src/plugins/semver-upstream-upgrade.test.ts"
+  ],
+  "exclude": []
+}

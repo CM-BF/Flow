@@ -1,0 +1,85 @@
+{
+  "protocol": "flow.x01.upstream-upgrade.pg-output.v1",
+  "executionHead": "90e131b4a789d526ee3cb2ffac501f26d47e8953",
+  "inputManifestSha256": "5830f4f27735223a112bea9ca5a6b6805a3c31f20b2631c1223d386d006ad734",
+  "window": "66fb86c6f958416ab09a98aa7ec431bd",
+  "reviewState": "PENDING_FIXED_RESULT_COMMIT",
+  "files": [
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/pg-outer-tool-receipt.json",
+      "bytes": 1768,
+      "sha256": "a68d97696a0c4d4599ae18a99e62c52238bd8a5eaeb0cdfb8e3bcd9baa1807b8",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/pg-run-r1/admission.json",
+      "bytes": 2860,
+      "sha256": "bf7f569aa8a8f5d8a0efab3b97ef0c4f89bb1f826b7c0673c5f99d7db0158827",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/pg-run-r1/launch.json",
+      "bytes": 188,
+      "sha256": "bd12a71ff1d98a4904290bd0540e020c6a065203f0406a4c45d33de54858cac0",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/pg-run-r1/output.log",
+      "bytes": 113,
+      "sha256": "a1c6546a82bf43d4348ba27344dd2cf6b2de95c273b5ffe7a7bd85f152544aa1",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/pg-run-r1/preflight.stdout",
+      "bytes": 297,
+      "sha256": "9033203f5b781807ceac15da515c89ed98b19017c44284e904ddbb9bc618f00c",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/pg-run-r1/reservation.json",
+      "bytes": 283,
+      "sha256": "63f1ddf70c78cfb71dadc61ba13e4e1d50abb2f42c95080a310665a355fd3596",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/pg-run-r1/result.json",
+      "bytes": 11528,
+      "sha256": "a2d51b164abf6bf25d707f9a07ad8322d590d8cd579cf084493bded9d5c50297",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/pg-run-r1/runtime-create-request.json",
+      "bytes": 353,
+      "sha256": "ef223869e936e1b367f0aec68bfc0875d1a10185187a6a2c009fa600d18253de",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/pg-run-r1/runtime-created.json",
+      "bytes": 402,
+      "sha256": "1523560b12d6f329ecdaf979e8623e538f2ae9df97b9446899e7fe7ffe522ec6",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/pg-run-r1/runtime-reservation.json",
+      "bytes": 450,
+      "sha256": "563c189d21eb164896b13fdea7d368af2ee8d7a1f70c4fed89ea0cf52ca28a7f",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/pg-run-r1/runtime-result.json",
+      "bytes": 6332,
+      "sha256": "b37d5ed46b18023e4b5e982576a6f5181a8f3ae1b6d99ba07d229f5076a44e56",
+      "mode": "0600"
+    },
+    {
+      "path": "docs/evidence/x01-upstream-upgrade/pg-run-r1/vitest.json",
+      "bytes": 1055,
+      "sha256": "89eb52aad777191a84ab008b79eaba7c0cecaaf896a4e857789ed1b5d11c9b71",
+      "mode": "0600"
+    }
+  ],
+  "fileCount": 12,
+  "bytes": 25629,
+  "immutableRaw": true,
+  "limits": "Only this R1; old local red and wrong-WT excluded types remain unchanged"
+}

@@ -1,0 +1,21 @@
+{
+  "taskId": "X01-UPSTREAM-UPGRADE01",
+  "parent": "X01",
+  "coLead": "mika",
+  "owner": "db_transaction_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-upstream-upgrade",
+  "branch": "codex/plugin-upstream-upgrade",
+  "statusPath": "plans/x01-upstream-upgrade/status.md",
+  "registration": "REGISTERED",
+  "registrationEvidence": {
+    "path": "docs/evidence/d05/x01-lifecycle-live.json",
+    "mainObserved": "0b22f68e",
+    "sha256": "053e4c0b3416c1b1224f4e57e43c6ab52957ca60e62613fa35c7e38fcd37a2c7",
+    "at": "2026-10-07T12:01:14.444822Z",
+    "summaryCount": 201,
+    "sourceCurrent": true,
+    "mode": "live",
+    "humanComplete": true,
+    "timingIssues": []
+  }
+}
