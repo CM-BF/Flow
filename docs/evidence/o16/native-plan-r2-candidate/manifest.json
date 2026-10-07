@@ -1,7 +1,7 @@
 {
   "kind": "flow.o16.native-plan-candidate-bindings.v1",
-  "recordedAt": "2026-10-07T10:42:33.978353+00:00",
-  "candidateTarget": "d24d9b9dfa4eb7cde78907445d8d1e2c2f2106b8",
+  "recordedAt": "2026-10-07T10:44:19.677317+00:00",
+  "candidateTarget": "637da94579127c7f1b6cc4c8c3374c44edb2d6f6",
   "source": "ff266d1ddc3adf3f89012095b4ff446367c3fb7e",
   "sourceDigest": "f963b8439686449a96446b8c4454301d88d029183a95ac839eb570fb60d74d3b",
   "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
@@ -58,9 +58,9 @@
     },
     {
       "path": "docs/evidence/o16/native-plan-r2-candidate/fixed-inputs.json",
-      "fixedRef": "d24d9b9dfa4eb7cde78907445d8d1e2c2f2106b8",
-      "bytes": 5254,
-      "sha256": "eb7a265bcec23a202239ef92fec8b8c1859d935ecbd3b3e2492b5d67832ed5b8"
+      "fixedRef": "637da94579127c7f1b6cc4c8c3374c44edb2d6f6",
+      "bytes": 4591,
+      "sha256": "07e9a5ebbb7dfbb7ff0b7aec79ef032a4425fe0125db1e2b0fd4734d05f06b26"
     },
     {
       "path": "docs/evidence/o16/native-plan-r2-candidate/runtime-binding.json",
@@ -76,9 +76,9 @@
     },
     {
       "path": "plans/o16-continuous-goal-acceptance/status.md",
-      "fixedRef": "d24d9b9dfa4eb7cde78907445d8d1e2c2f2106b8",
-      "bytes": 15771,
-      "sha256": "20015295d17278e4524f68e1ee169a766d3595568f41a1e96e4d326f411b325e"
+      "fixedRef": "637da94579127c7f1b6cc4c8c3374c44edb2d6f6",
+      "bytes": 16004,
+      "sha256": "94de93313991f2a3f7757baa4c55e63ddfb97542ed946ced4373fd696892dbcd"
     }
   ],
   "bindingCount": 9,
@@ -90,5 +90,14 @@
   "previousActualSDKQueryCalls": 1,
   "previousUsageCost": "UNKNOWN",
   "oldKEEP": "untouched",
-  "checksRerun": false
+  "checksRerun": false,
+  "metadataClarification": {
+    "priorTarget": "d24d9b9dfa4eb7cde78907445d8d1e2c2f2106b8",
+    "decodedRequirementAndMaterialMatchedConfigBeforeAndAfter": true,
+    "priorJSONValid": true,
+    "change": "UTF-8 readable JSON representation; exact NONE and main receipt in status",
+    "sourceEnvironmentPermitUnchanged": true,
+    "finding": "No P2; reviewer acknowledged presentation escaping only",
+    "engineeringTestsRun": 0
+  }
 }
