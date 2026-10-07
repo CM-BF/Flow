@@ -1,0 +1,85 @@
+{
+  "recordedAt": "2026-10-07T07:28:50.395253+00:00",
+  "state": "READY",
+  "sourceCommit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+  "packetCommit": "43ce62916da23f8b249b9b2e41447d01cec41803",
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/plugins/semver-package.test.ts",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "23f4f0474da0642bf8e5ad6af87c5a99542cfec1",
+      "role": "source/support",
+      "bytes": 7960,
+      "sha256": "17fc11603b0883705087ea5c061c04174c5c12951ad728461066008e12fb4496"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/adapter.mjs",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "1a3f81dbd1fb24fd11529627bb0e67d0b70e8075",
+      "role": "source/support",
+      "bytes": 733,
+      "sha256": "36d45257abbf96d39870491dfefe1a278faa6686471851699e6f759a75c874bd"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/flow-plugin.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "4bc537558162df9bc5dd63c7f2e51b9f13e178ba",
+      "role": "source/support",
+      "bytes": 93,
+      "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/index.mjs",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "4eca847e2de0acb141afc9d45c7e52ec4cf342e4",
+      "role": "source/support",
+      "bytes": 9749,
+      "sha256": "2ab17629625064a227043d068cbecdf184725391c606dc30b9aa9959ab3702b7"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/license.txt",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "19129e315fe593965a2fdd50ec0d1253bcbd2ece",
+      "role": "source/support",
+      "bytes": 765,
+      "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/package.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "a2f90a217af7f0660a87887012e867b2c335cb83",
+      "role": "source/support",
+      "bytes": 98,
+      "sha256": "b84c47732858827c16694c3a6f65a005dd6519f089dee0b16c62dadda6f805f8"
+    },
+    {
+      "path": "experiments/plugins/semver-compare/package/provenance.json",
+      "commit": "4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9",
+      "blob": "75b762b6fca3127021da82f5dc16aefa35d763a6",
+      "role": "source/support",
+      "bytes": 2397,
+      "sha256": "ace6bddcf7ba8c1888feb928495334dc5a3fe982c386dec00188da3f6c0481cf"
+    }
+  ],
+  "sourceCount": 7,
+  "sourceBytes": 21795,
+  "review": "docs/evidence/x01/semver-independent-review.json",
+  "manifest": "docs/evidence/x01/semver-manifest.json",
+  "evidence": [
+    "docs/evidence/x01/semver-inputs.json",
+    "docs/evidence/x01/semver-interface.md",
+    "docs/evidence/x01/semver-local.json",
+    "docs/evidence/x01/semver-result-summary.json",
+    "docs/evidence/x01/semver-local.py",
+    "docs/evidence/x01/semver-tsconfig.json",
+    "docs/evidence/x01/semver-vitest.config.mjs",
+    "docs/evidence/x01/semver-review-ready.md"
+  ],
+  "integrationRules": [
+    "Apply only these new seven source/fixture blobs and selected evidence; do not overlay old center/runtime source.",
+    "Preserve original raw and manifest PENDING historical field; formal independent approval is separate.",
+    "No new install, bundle, old PG or full suite is required for intake. Necessary direct consumer checks belong to integration owner."
+  ],
+  "mainIntegrated": false,
+  "openGoal": "production FlowClient/runRunner/phase grant/artifact provenance/public lifecycle and three clients remain incomplete."
+}
