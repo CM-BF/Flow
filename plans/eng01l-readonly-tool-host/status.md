@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T08:01:03.505Z |
+| 最近更新 | 2026-10-07T08:04:19.061Z |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -13,19 +13,19 @@
 | 工作基线 / HEAD | d556780129897582f09945c0621aa2ed64fb52f7 |
 | 工作树dirty状态 | 本提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 实现目标 | 574a2e31b8eb583a0d44a1a3eafd739784963681 |
 | 实现范围 | 六产品见Interface；ownplan/evidence |
 | 检查状态 | 原16/16保留；差量3/3（2新+1重叠）/22未选，18不同分轮；产品types0；caller types原2→0与AST0；所有6组absent/双EOF/scratchremoved |
-| 已集成main状态 / HEAD | NOT_INTEGRATED |
+| 已集成main状态 / HEAD | 六产品已接 main/origin 9f314e89b9d4b1b944cca96df0a9fea5a26a51d0；真实run整体未通过，资源KEEP |
 | 任务开工时间 | 2026-10-07T07:35:40.677Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner在原子take 07:34:51.604Z之后首次创建三件套实际UTC；不取commit/mtime |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 启动参数修复已获独立审查，正在执行一次隔离初始化验收 |
-| 下一可用交付 | 保存真实初始化结果与宿主、进程分别收尾的事实 |
-| 当前阻塞 | NONE |
+| 当前产出 | 真实初始化与关闭已有记录；私有状态超预算，原目录保留待收尾 |
+| 下一可用交付 | 审查单次结果与保留资源，按明确边界完成精确收尾 |
+| 当前阻塞 | ACTIVE: 初始化已结束，但私有状态超过原限额，尚需精确收尾；不影响已接收源码 |
 | 需用户决定 | NONE |
 | Review | a372/6d1限定mock独审APPROVED；发现真实argv限制后暂停接收，574修复与caller增量独审APPROVED，实际初始化单次授权；原J/K边界保留 |
 | Claim | 7c447d28-dc48-4df9-93eb-3c2243f5491e v1 active；八literal |
@@ -36,7 +36,7 @@
 | ENG01L-01 | completed | native_center_owner | [Interface](../../docs/evidence/eng01l/interface.md)、take-receipt |
 | ENG01L-02 | completed | native_center_owner | 固定六产品 a372adb8 |
 | ENG01L-03 | in-progress | native_center_owner | 原mock独审已过；实际参数修复3/3+types0，caller静态类型红后0，增量独审PENDING |
-| ENG01L-04 | pending | Execution Lead | NOT_INTEGRATED |
+| ENG01L-04 | completed | Execution Lead | 六产品main 9f314e89，实际结果与cleanup保持独立 |
 
 J唯一资格待决保持，本片不重复询问用户；stock/OS canary/模型provider均未运行。首canonical已由Execution Lead登记为候选190；真实看板载入未在本owner侧重新采样。
 
@@ -52,3 +52,5 @@ J唯一资格待决保持，本片不重复询问用户；stock/OS canary/模型
 | ENG01L-W02 | UNKNOWN | 2026-10-07T07:48:21.291Z | 验证失败 | 真实argv限制静态发现，fixed-file定向与类型已收口 | profile-file-run，发现时刻未独立记录 |
 
 2026-10-07T08:01:03.505Z：Execution Lead 唯一增量独审通过，48实际输入与alias固定匹配。原claim active/fresh combined gate 1,226,833,920B（含P02并行114MiB）满足。此刻仅准备执行一次默认initialize/initialized，不创建thread/turn，不推断OS写权限/资格或全部writer撤销。
+
+2026-10-07T08:04:19.061Z：单次run已于08:01:04.295Z归还local，ready/child exited/host drain均有原件，outerexit1因cleanupunknown。原result保持；后来113项lstat见2,823,900B超1MiB，无内容读取/重跑/删除。source主线已接，结果独审及保留根收尾不冒完成。
