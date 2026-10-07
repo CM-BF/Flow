@@ -15,3 +15,7 @@
 status解析新增waitingTable，保完整waiting原文，等待issues独立；human派生只排序和按现resolver已验证关系归组。app复用一个本地Intl formatter并保每值GMT偏移、原UTC与来源下钻；刷新仅改变历时/等待新鲜度节点，不替换阅读中的表、依据或所选文字。现summary DTO不扩载等待表，因此首屏仅紧凑任务时间，详情展示可读等待原因。
 
 浏览器候选复用原五组与双390，并加信号归组一组；尚未执行。完整交付仍需独审、浏览器与main接收，本task NOT_COMPLETED。
+
+### 浏览器调用准备 2026-10-07T21:01:31.914Z
+
+固定94ed source/local已root批准；复用既有独立Chrome/Node监督器，直接调用原六组导出函数与两390图，60s含15s清理、64MiB scratch/8MiB retained。仅私有TMP适配身份/纯ESM入口，不修改产品或全页DOM。prepared待独审/actual窗口，不重复98项绿。见[browser preparation](../../docs/evidence/wpf-dashboard-timing-readability/browser-preparation.json)。

@@ -7,3 +7,7 @@
 技能实际路径：/Users/citrine/.agents/skills/find-skills/SKILL.md、clean-code/SKILL.md、frontend-design/SKILL.md、brainstorming/SKILL.md。使用既定设计而不重新审批，复用现tokens与原生details；本地clean-code方法作为参考，未重新安装或更新全局基线。
 
 收口复核：新增用户文案与SHA/资源事实分开；准确记录组排序语义、页面NOT_RUN。最终app/browser模块只作语法解析，未import执行browser；唯一status与8链接已通过。本批原件9文件均逐字复制，无.py/.sb等新增非metadata archive。
+
+2026-10-07T21:01:31.914Z 浏览器准备clean-code复核：沿本地find-skills/clean-code/webapp-testing方法，复用既有监督清理而不造框架。worker只组合现fixture/check函数，去掉无关select观察器/双Vite旅程/TSX；保原六组与2000ms默认。错误不跳过finally，缺图与失败不补PASS；原pg延迟导入静态确认未调用。全部产品7pins不变，无工程import/98重跑/HTTP/PG/Chrome。需独立审实际caller差量；actual与图像目视待后继。
+
+2026-10-07T21:02:54.648Z 自有TMP语法校验exit0：parent AST/worker --check/prepared输入hash，32ms，双EOF/PGID41187 absent/空scratch精确移除。没有import产品/PG/HTTP/Chrome；不重98。闭包追加固定实际architecture三assets与Playwright utilsBundle/browsers.json；pg属于未调用延迟分支，未安装/链接。normal seal前检查metadata链接、diff范围与7产品hash。

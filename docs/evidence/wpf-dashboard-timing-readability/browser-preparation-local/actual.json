@@ -1,0 +1,28 @@
+{
+  "startedAt": "2026-10-07T21:01:58.317680+00:00",
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--check",
+    "/private/tmp/timing02-b1/worker.mjs"
+  ],
+  "scope": "Own TMP syntax only; no product imports",
+  "floorBytes": 18926075904,
+  "availableBytes": 19216089088,
+  "limitMs": 10000,
+  "cleanupMs": 3000,
+  "parentAstParsed": true,
+  "boundPreparedHashesVerified": true,
+  "pid": 41187,
+  "pgid": 41187,
+  "exitCode": 0,
+  "stdoutBytes": 0,
+  "stderrBytes": 0,
+  "stdoutEof": true,
+  "stderrEof": true,
+  "groupAbsent": true,
+  "scratchAbsent": true,
+  "finishedAt": "2026-10-07T21:01:58.348773+00:00",
+  "elapsedMs": 31.111332937143743,
+  "chargeMs": 32,
+  "state": "PASS"
+}

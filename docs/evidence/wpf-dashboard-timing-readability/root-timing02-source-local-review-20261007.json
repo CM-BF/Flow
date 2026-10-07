@@ -1,0 +1,73 @@
+{
+  "reviewer": "root / gpt-6-astra ultra",
+  "at": "2026-10-07T20:55:14.293972+00:00",
+  "decision": "APPROVED_SOURCE_AND_LOCAL_RESULTS_ONLY",
+  "blockingP1P2": 0,
+  "source": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+  "metadataHead": "822529464515c12f7eafdfdde2b50c3d078cdfdd",
+  "branch": "codex/dashboard-task-timing-readability",
+  "cleanAndTrackingRemoteEqual": true,
+  "claim": "d26ac1d8-edf1-413d-ae67-68ce807e9fca v1 exact9 retained",
+  "intake": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/main-intake.json",
+    "bytes": 2512,
+    "sha256": "ae75f28b5d43915fe31dad6339cd96457b9cc25bc07258f3c232fea153948485"
+  },
+  "sourceManifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/source-manifest.json",
+    "bytes": 1500,
+    "sha256": "97e35208609eadcbcc95810ee949a0de3273f9f37a27cc1affdad3a0b090f1a7"
+  },
+  "localIndex": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/local-index.json",
+    "bytes": 1718,
+    "sha256": "e9bb03e7323a2a5d57ca0888dffba10f47e2a206651ed9d303547f5a523751f6"
+  },
+  "accounting": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/local-accounting.json",
+    "bytes": 1343,
+    "sha256": "ab96ada28319a0775d9cdec7da54edd3ec2b2bf5fe7a8931b415269e04318dfb"
+  },
+  "inputVerification": {
+    "path": "/private/tmp/root-timing02-input-verification-20261007.json",
+    "bytes": 378,
+    "sha256": "b51201fc8db6be9ec5dafd32fd458359176cbe1340d9c64aeef0cfbb2ce282df"
+  },
+  "verification": {
+    "sourceFiles": 7,
+    "sourceBytes": 115103,
+    "rawFiles": 9,
+    "rawBytes": 25246,
+    "hashOrSourceMismatch": [],
+    "actualSelectedPureTests": 98,
+    "passed": 98,
+    "failed": 0,
+    "firstFailure": "Original97/98 syntax-test failure preserved; test-only async parsing correction followed by98/98 actual pass.",
+    "sourceIdentity": "Final four product files and both pure test files equal actual passing1312 source; only browser fixture changed afterward and received final syntax check.",
+    "staticLast": "Final two module syntax/ownstatus/8links passed; no product execution.",
+    "chargedMs": 725,
+    "phaseMs": 60000,
+    "state": "CLOSED",
+    "unusedNotTransferred": true,
+    "cleanup": "All3 exact owned groups/scratch absent and both streams EOF in actual receipts; no repeat root probe."
+  },
+  "sourceReview": [
+    "Waiting table parses exact owner rows and preserves raw text. OPEN, UNKNOWN and known-ended remain separate; invalid/duplicate waits do not erase valid task elapsed declarations.",
+    "Presentation uses one local formatter with per-instant offset and retains exact UTC, source and raw text in native details. Elapsed remains inclusive of waiting and never estimates working time or ETA.",
+    "Source/summary mismatch, stale data or read failure removes the current-waiting claim without replacing open detail tables or retained selection/focus by design.",
+    "Signal order uses declared owner priority and stable ID ties, unknown last. Only verified current parent relationships group records; each owner text remains separate and no parent fact is synthesized.",
+    "Group order is driven by its highest-priority member and rows sort within each group; it is explicitly not global individual-row priority order after grouping.",
+    "Summary DTO still excludes waiting records; structured waiting loads only with detail. Registry and other owner status files are unchanged.",
+    "All dynamic owner text uses existing text-content DOM creation, including waiting reasons and grouped signals."
+  ],
+  "cleanCode": {
+    "reviewed": "one timestamp parser, one formatter, shared signal grouping and waiting presentation; derived data has no second hand-edited source",
+    "findings": "No blocking naming/interface/error-handling/duplication finding. No unrelated refactor or repeated green checks requested."
+  },
+  "unverified": [
+    "Browser six groups, two390px theme screenshots, native disclosure/keyboard/selection/focus behavior have NOT_RUN status. Static source and pure tests do not prove them.",
+    "No whole-dashboard performance measurement, main integration, running4320 update or deployment claimed.",
+    "Browser source proposes60s including15s cleanup with64MiB scratch/8MiB retained; its native ownership/caller/fresh admission packet still needs preparation and review."
+  ],
+  "next": "Manager may archive this exact independent result and advance the existingTIMING02 candidate. Preserve actual task start and incomplete finish; Original/D05 source registration remains separate. Personal restoration has priority."
+}
