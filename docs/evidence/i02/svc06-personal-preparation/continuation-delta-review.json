@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T13:02:21.326961+00:00",
+  "reviewer": "astra_ultra_execution_lead (gpt-6-astra), independent of author assignment_review",
+  "target": "c36f4a8109c9a75cda42a34aba27f778784f6f14",
+  "decision": "APPROVED_REMAINING_MAINTENANCE_PREPARATION",
+  "manifest": {
+    "path": "docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation-delta.json",
+    "bytes": 5802,
+    "sha256": "85db27d5173eb72aa68498e6f919bf56b9692d56292889ef4294da653b837c0a",
+    "bindings": 23,
+    "boundBytes": 107654
+  },
+  "priorReview": "continuation-review.json",
+  "findings": [],
+  "closed": [
+    "SVC06-CONT-P2-01: original strict-v1 installation observer + fixed 5-file/140-byte historical inventory before refresh; namespace/root identities, before/after same-operation center status and state files required; no journal retirement/clear exception.",
+    "Deadline: fixed OPS14 independently bounds the whole operator, including persistence, at 900 seconds plus 2 seconds reap; per-phase budget recomputed after fsync with reserve. Detached personal services excluded. Missing inner receipt remains UNKNOWN/KEEP."
+  ],
+  "verified": [
+    "All 23 bindings equal current and fixed target bytes/hash; 8 original observer input identities/hash preserved.",
+    "Full changed helper sources, structured phase sequence, new outer and 5+2 tests read; original public maintenance/facts/migration and runnerFiles consumers read.",
+    "Historical 16-resumed facts.native inventory exactly 5 files/140 bytes; retirement-request runnerIdentity and namespaceIdentity match pinned values. Only archived evidence read, no actual runner content.",
+    "Original 7 checks 430ms/707 bytes/2 exit0 final-absent dual-EOF; historical transient EPERM retained, own empty scratch removed. No reviewer rerun.",
+    "Original Node24/tsx/CommonJS pg import and argument checks retained; bootstrap/drain/status/refresh/resume use original public APIs.",
+    "R2 completed migration/Web replacement/report imports/policy excluded from callable continuation. Root remains 7524; artifact7d1/source6c; backend currentaf51/v18."
+  ],
+  "limits": [
+    "Preparation approval is not actual deployment completion. Fresh exclusive window and all fixed gate checks remain required.",
+    "Local file read is bounded and non-atomic under drained active0; any added or changed inventory stops.",
+    "No claim of arbitrary descendant cessation: independently supervised operator PID is not ownership of detached personal services or missing inner phase groups.",
+    "No new query, login, credential export, task cancellation/replay or rollback."
+  ],
+  "reviewerActions": {
+    "tests": 0,
+    "personalIO": 0,
+    "PGEngineering": 0,
+    "serviceActions": 0,
+    "providerQueries": 0
+  },
+  "actualContinuation": "NOT_RUN"
+}
