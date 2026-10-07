@@ -1,0 +1,351 @@
+{
+  "base": "ee98e65c147cf2ef28ccf0f519952f60d56e9d4b",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority",
+  "files": [
+    {
+      "path": ".gitignore",
+      "blob": "4539012d5f69622debba71391e3390f3cd6a4032",
+      "bytes": 108
+    },
+    {
+      "path": "AGENTS.md",
+      "blob": "b25a22aee3d8434bb520054502f61cd82cefd66c",
+      "bytes": 18655
+    },
+    {
+      "path": "apps/runner/package.json",
+      "blob": "a648a3e2b13225c9a163b274b08c40348b4ebe1c",
+      "bytes": 466
+    },
+    {
+      "path": "apps/runner/src/codex/fixtures/peer.mjs",
+      "blob": "3d6e5c81a4c24cf94dd20f66e32c656ae836a92b",
+      "bytes": 3728
+    },
+    {
+      "path": "apps/runner/src/codex/framing.ts",
+      "blob": "43df5f1616e6b840d5864b61c5ceeae3c1adad55",
+      "bytes": 3554
+    },
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "blob": "ba9810587da588218b8bec9f1719db0e8fc88860",
+      "bytes": 14128
+    },
+    {
+      "path": "apps/runner/src/codex/options.ts",
+      "blob": "3981da77c7b27646e6f6e93dadfa74e85afb950c",
+      "bytes": 3850
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.test.ts",
+      "blob": "febc629518dce35bf72867dd24e5d532ce68b9f2",
+      "bytes": 10273
+    },
+    {
+      "path": "apps/runner/src/codex/stderr-capture.ts",
+      "blob": "89732b04b857e6c9420032596b7657065dd9c3f2",
+      "bytes": 1770
+    },
+    {
+      "path": "apps/runner/src/codex/types.ts",
+      "blob": "ae4e2d83d7ce28d48a8396a7b21b197fb31e83d7",
+      "bytes": 3203
+    },
+    {
+      "path": "apps/runner/src/codex/writer.ts",
+      "blob": "3ab40059fdcea0957137c9426dc9da5c5393e0e4",
+      "bytes": 3117
+    },
+    {
+      "path": "apps/runner/src/engineering/adapter.ts",
+      "blob": "dddace7b709daefd18800faf38223d2911321136",
+      "bytes": 4272
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-capture.test.ts",
+      "blob": "23718fce9b3f7e1046bc99f98f45a8132dcca50a",
+      "bytes": 9048
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-capture.ts",
+      "blob": "5b06f5db6899805b8e002bf44b495776638acb23",
+      "bytes": 2845
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-checker.test.ts",
+      "blob": "d544f7982395440a97320aab75cd4232a29ddd1b",
+      "bytes": 7992
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-checker.ts",
+      "blob": "e4a3e346901ef55bc139470e190c46fcc229a680",
+      "bytes": 4507
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.test.ts",
+      "blob": "1625947a646338bc490bf9b37d7963383eaf9c69",
+      "bytes": 4794
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.ts",
+      "blob": "37157873fc283f3991661abb677570af64ddae43",
+      "bytes": 3166
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-source.test.ts",
+      "blob": "22e95220b7ddc2ec49e73e4f8dae37c0d113dcaa",
+      "bytes": 2964
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-source.ts",
+      "blob": "9fade0c8882d664f1837a1fe9538eb424ddf0f18",
+      "bytes": 1711
+    },
+    {
+      "path": "apps/runner/src/engineering/checker.ts",
+      "blob": "8928eb9d377bae9b5facb4f2d2ec45e6db1f7603",
+      "bytes": 4705
+    },
+    {
+      "path": "apps/runner/src/engineering/identity.ts",
+      "blob": "c769392a08d3abc148021832d6c805c4aa9264e9",
+      "bytes": 1898
+    },
+    {
+      "path": "apps/runner/src/engineering/integration.test.ts",
+      "blob": "568f71ebc03ea26e5767d3e1bb7cb8fd59cdb67f",
+      "bytes": 15852
+    },
+    {
+      "path": "apps/runner/src/engineering/launch-integration.test.ts",
+      "blob": "2941826534e1f81722c0d0148fa45b7772958565",
+      "bytes": 11961
+    },
+    {
+      "path": "apps/runner/src/engineering/launch.test.ts",
+      "blob": "8bb283478804012022af1d9ed8143f2948426102",
+      "bytes": 3563
+    },
+    {
+      "path": "apps/runner/src/engineering/launch.ts",
+      "blob": "c08ab649b0e8cc73ef349931c05f9b3887ba46af",
+      "bytes": 1435
+    },
+    {
+      "path": "apps/runner/src/engineering/native-adapter.test.ts",
+      "blob": "c4b00ad9ac7108b348bb24f3fe32a39c5fac858e",
+      "bytes": 22622
+    },
+    {
+      "path": "apps/runner/src/engineering/native-adapter.ts",
+      "blob": "ab7c3e8c8ae730dc150f97859d694f20da930d59",
+      "bytes": 7328
+    },
+    {
+      "path": "apps/runner/src/engineering/native-policy.test.ts",
+      "blob": "aa367f54bff030a9825fc1e233d639a231669bb1",
+      "bytes": 5419
+    },
+    {
+      "path": "apps/runner/src/engineering/native-policy.ts",
+      "blob": "9236ac90d71419c131559b586a8796d044e3abe7",
+      "bytes": 4176
+    },
+    {
+      "path": "apps/runner/src/engineering/native-writer.test.ts",
+      "blob": "c6b61535c4da80691f9abe7799ed803a7a35db41",
+      "bytes": 12453
+    },
+    {
+      "path": "apps/runner/src/engineering/native-writer.ts",
+      "blob": "c6391025d1cb0783d60022d55eda8cbc20f7e974",
+      "bytes": 5521
+    },
+    {
+      "path": "apps/runner/src/engineering/resources.ts",
+      "blob": "6a481f9fba1be83a5aeecde806f28e238e28df4d",
+      "bytes": 4956
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.test.ts",
+      "blob": "d44b4e00c77717e53507507adae14e4daf2e472b",
+      "bytes": 8715
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.ts",
+      "blob": "3545330d6d590409934204a17ac214be266cca7f",
+      "bytes": 6695
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.test.ts",
+      "blob": "85ae5d569864bed4e9ce23c2e1b8e339474e1462",
+      "bytes": 13029
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "blob": "36416d4e2eb3d37cbce90208969be3e261513b5f",
+      "bytes": 12205
+    },
+    {
+      "path": "apps/runner/src/engineering/writer.test.ts",
+      "blob": "ca7f42ce932b4c2fb3ab85b847aaab671bef9827",
+      "bytes": 7947
+    },
+    {
+      "path": "apps/runner/src/engineering/writer.ts",
+      "blob": "0f581c95cd7b8b5bebfcc90a3c0dc4631821b323",
+      "bytes": 1514
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+      "blob": "282af1284ab4907b4072cfade8fc321f2c2558c0",
+      "bytes": 10676
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "blob": "92aab2cedfbf9c6bbdef76ed83684e5b7a3be5b2",
+      "bytes": 2738
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/continuity-fixture.ts",
+      "blob": "74202bd740571a16d7d6a9131b1d53c287eb5a92",
+      "bytes": 5456
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/continuity.test.ts",
+      "blob": "4af50e568e2a53dde9af33dd6162aae241e28f65",
+      "bytes": 7508
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.test.ts",
+      "blob": "7724098565c418e13de701829778df83ad5b16b9",
+      "bytes": 5504
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "blob": "ef1f58ceb0121413994006f0cc37808fc3d0660c",
+      "bytes": 8361
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.test.ts",
+      "blob": "3d908c9671acd8e822049a2c60783f1a4241fb29",
+      "bytes": 10214
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "blob": "4ed5af3d1026ae53be375aa84788f631e18297c1",
+      "bytes": 6116
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "blob": "a5def0f45c59864c8929c7cfd29100399a03649f",
+      "bytes": 1109
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/integration.test.ts",
+      "blob": "f4d3609d35f987cbfcb37f6a691d313b2cbf7579",
+      "bytes": 11320
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+      "blob": "44e7aebaa5f046f0215c2f29fe61ab3e6860fdc2",
+      "bytes": 17344
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "blob": "3417a4cfe3270dfdaf284ee3688527ad71db1ad2",
+      "bytes": 6077
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/peer.mjs",
+      "blob": "a5398643b7cf022c3f51820043121e00b1223d33",
+      "bytes": 7885
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/policy.ts",
+      "blob": "042ca19adcc231a83a86fd18622429aa5e1d3477",
+      "bytes": 1696
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/projection.d.mts",
+      "blob": "fdab9edde33d870f6effc202c7d709e491503492",
+      "bytes": 716
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/projection.mjs",
+      "blob": "90da9a2591d1da64c82426439bbb22e7edca4ab6",
+      "bytes": 5179
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/session-storage.test.ts",
+      "blob": "ff826828a5240d6a0c88afc2bb24e225ab06635d",
+      "bytes": 6207
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/session-storage.ts",
+      "blob": "e09ec48f26bc472614637178e0b666811fc08a45",
+      "bytes": 3899
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "blob": "03456f0b4c12203fa4d11a79f7014eb1aee78280",
+      "bytes": 2979
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/wire.ts",
+      "blob": "489ea13112115b7ef202d90ecd7baf6bcf1659fb",
+      "bytes": 2382
+    },
+    {
+      "path": "docs/evidence/d04/README.md",
+      "blob": "c4a46eec86eb3153d27440572cd7821a07100c4f",
+      "bytes": 5061
+    },
+    {
+      "path": "docs/quality/local-validation.md",
+      "blob": "9e82146aa8967f16c2e56af71271eae67229008e",
+      "bytes": 21310
+    },
+    {
+      "path": "package.json",
+      "blob": "f12c69735d60e664e3a87082d1571fb48a8b4958",
+      "bytes": 750
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "blob": "0c6554f9fc20f3bc4f42329b88afce92dbd3eb77",
+      "bytes": 168
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "blob": "49642fc1d7047fdb562c88a3fc695a94b3a4343c",
+      "bytes": 17734
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "blob": "e9b0dad63bacd2aa6865fcb9b7e86ad630964730",
+      "bytes": 40
+    },
+    {
+      "path": "tools/owned-process-supervision/README.md",
+      "blob": "efa1596a7195b58ba083944df4230b5fb48d9748",
+      "bytes": 2553
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "blob": "b55925471c9bbd9a3021a75754fca02439ce6cf8",
+      "bytes": 12543
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.test.py",
+      "blob": "bcde252c1b44979d2ca46130c805e2561ebab385",
+      "bytes": 13851
+    },
+    {
+      "path": "tsconfig.json",
+      "blob": "835349029f0f4a864538ec6bc3917d911e9a9713",
+      "bytes": 614
+    }
+  ]
+}
