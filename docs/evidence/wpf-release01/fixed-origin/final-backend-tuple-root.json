@@ -1,0 +1,144 @@
+{
+  "schema": 1,
+  "kind": "RELEASE_FINAL_BACKEND_TUPLE_LOCATED_READONLY_NOT_ADMITTED",
+  "at": "2026-10-07T10:47:07.886971+00:00",
+  "reviewer": "root / gpt-6-astra / ultra",
+  "fixedOwnerInput": {
+    "source": "ea6bd5852c2754f4179bb6da467caf8d6d67a368",
+    "path": "docs/evidence/svc06/diagnostics-host-bootstrap/inputs.json",
+    "bytes": 142654,
+    "sha256": "6caaa42e2dd553c5c3187a3418cba4a4533ed7a9964a955b9a9f52e5d8e923f9"
+  },
+  "finalBackendCandidate": {
+    "directory": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV",
+    "root": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root",
+    "artifact": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    "sourceTree": "a83d27430908d78a27a846be9cfbf9de27a1ab97",
+    "node": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "sourceDirectoryIdentity": {
+      "dev": 16777234,
+      "ino": 123986127
+    }
+  },
+  "manifest": {
+    "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/manifest.json",
+    "bytes": 3196606,
+    "sha256": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920"
+  },
+  "requiredRuntimeEntries": [
+    {
+      "requiredPath": "tools/personal-preview/backend-release/index.mjs",
+      "realPath": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2",
+      "dev": 16777234,
+      "ino": 123987236,
+      "nlink": 1,
+      "uid": 501
+    },
+    {
+      "requiredPath": "tools/personal-preview/browser-session-configuration.mjs",
+      "realPath": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/browser-session-configuration.mjs",
+      "bytes": 7335,
+      "sha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde",
+      "dev": 16777234,
+      "ino": 123987242,
+      "nlink": 1,
+      "uid": 501
+    },
+    {
+      "requiredPath": "tools/personal-preview/web-release.mjs",
+      "realPath": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/web-release.mjs",
+      "bytes": 15567,
+      "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d",
+      "dev": 16777234,
+      "ino": 123987260,
+      "nlink": 1,
+      "uid": 501
+    },
+    {
+      "requiredPath": "apps/server/src/index.ts",
+      "realPath": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/apps/server/src/index.ts",
+      "bytes": 15083,
+      "sha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a",
+      "dev": 16777234,
+      "ino": 123986587,
+      "nlink": 1,
+      "uid": 501
+    },
+    {
+      "requiredPath": "packages/client/src/index.ts",
+      "realPath": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/packages/client/src/index.ts",
+      "bytes": 57553,
+      "sha256": "a07ceb97fe08dd68625f6c1468a109863bbc44a2a8b366a990ecfbd41c484b2b",
+      "dev": 16777234,
+      "ino": 123987022,
+      "nlink": 1,
+      "uid": 501
+    },
+    {
+      "requiredPath": "packages/contracts/src/index.ts",
+      "realPath": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/packages/contracts/src/index.ts",
+      "bytes": 1634,
+      "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440",
+      "dev": 16777234,
+      "ino": 123987085,
+      "nlink": 1,
+      "uid": 501
+    },
+    {
+      "requiredPath": "apps/server/node_modules/pg/lib/index.js",
+      "realPath": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "bytes": 1810,
+      "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c",
+      "dev": 16777234,
+      "ino": 124001896,
+      "nlink": 1,
+      "uid": 501
+    },
+    {
+      "requiredPath": "apps/runner/src/verifier.ts",
+      "realPath": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/apps/runner/src/verifier.ts",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200",
+      "dev": 16777234,
+      "ino": 123986402,
+      "nlink": 1,
+      "uid": 501
+    }
+  ],
+  "sourceHarness": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+    "branch": "codex/web-release-compatibility",
+    "implementation": "9658a6b763de69038778de1b0c16de64ff824c75",
+    "sealedMetadata": "0482e7304056b72a0c7ac7f47b925bed181236e3",
+    "types": "Previously scoped PASS; not rerun"
+  },
+  "contextCandidate": {
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638",
+    "settings": "Require exact normalized nonsecret browserSettings input. Do not infer readiness from this origin/policy hash alone."
+  },
+  "ownerActualNotice": {
+    "SVC06r2Start": "2026-10-07T10:41:59.689858Z",
+    "SVC06r2Return": "2026-10-07T10:44:35.378972Z",
+    "result": "Original reports work155073ms exit0, normal marker/OID DB cleanup and all role/outer groups stopped; independent final result review pending; synthetic loader not real App compatibility."
+  },
+  "stillRequired": [
+    "Owner final actual-result manifest/independent acceptance binding exact7d1/source6c; current observation does not supersede it.",
+    "Final runtime source/dependency closure and exact normalized browserSettings/context gate; verify all through existing verifier under bounded caller.",
+    "A fixed runnable external owned native Chrome/lifetime caller invoking current exported runReleaseCompatibility; no top-level launcher exists in harness.",
+    "Fresh unchanged three retained App assets, source claim/HEAD/dirty, secret admin input supplied by owner without value output, complete combined resource/time/cleanup admission.",
+    "Unique shared window after current O16 actual return; no reservation during preparation."
+  ],
+  "limits": [
+    "Eight required entry regular files were read/hashed and their targets remain inside artifact root; not a full15628-entry artifact integrity verification.",
+    "No product import, Node/PG/Chrome/HTTP/provider/installation/build/test run; no private env/token values read.",
+    "Artifact is source6c canonical immutable retained input, not old b2b/c2c fallback; no cloning/writes to artifact."
+  ]
+}

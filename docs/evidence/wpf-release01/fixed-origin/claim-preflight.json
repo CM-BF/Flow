@@ -1,0 +1,29 @@
+{
+  "observedAt": "2026-10-07T09:59:39.558Z",
+  "conflicts": [],
+  "oldClaimReleased": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ],
+    "state": "released",
+    "branch": "codex/web-release-compatibility",
+    "origin": "new",
+    "taskId": "WPF-RELEASE01",
+    "worker": "w01_owner",
+    "claimId": "20a6529a-1b34-4d1c-9d26-cab0bda82b37",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+    "createdAt": "2026-10-06T10:26:38.042Z",
+    "updatedAt": "2026-10-06T10:59:06.085Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "startingHead": "41276e2ecd154087f66958339d9abfce4d44964c",
+  "initialPreparationError": "Local assertion expected live instead of available; no request file existed; CLI returned ENOENT; no take applied"
+}

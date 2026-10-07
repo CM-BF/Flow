@@ -1,0 +1,41 @@
+{
+  "parent": {
+    "path": "/private/tmp/rel01-c3/supervisor.py",
+    "realpath": "/private/tmp/rel01-c3/supervisor.py",
+    "bytes": 18546,
+    "sha256": "2500ca2900b4b912fdaf1a0964d2728d3b677f1a16defc36bdf0e845332062f0"
+  },
+  "profile": {
+    "path": "/private/tmp/rel01-c3/syntax-profile.sb",
+    "realpath": "/private/tmp/rel01-c3/syntax-profile.sb",
+    "bytes": 399,
+    "sha256": "59c3bf6081c60893f8d9b8ff9ad34d9952099f1cc7220de24692b33ff7e61231"
+  },
+  "command": [
+    "/usr/bin/sandbox-exec",
+    "-f",
+    "/private/tmp/rel01-c3/syntax-profile.sb",
+    "/usr/bin/true"
+  ],
+  "totalMs": 10000,
+  "workMs": 5000,
+  "cleanupReserveMs": 5000,
+  "tmpBytes": 8388608,
+  "rawBytes": 1048576,
+  "network": 0,
+  "pg": 0,
+  "chrome": 0,
+  "meaning": "compile/true exit only; does not prove network deny or compat",
+  "immutableC2Parent": {
+    "path": "/private/tmp/rel01-c2/supervisor.py",
+    "realpath": "/private/tmp/rel01-c2/supervisor.py",
+    "bytes": 18546,
+    "sha256": "3a9d66e5242a449e47654b25bce458521aab63d8556815d2efe16d54160f3ad3"
+  },
+  "diff": {
+    "path": "/private/tmp/rel01-c3/c2-c3.diff",
+    "realpath": "/private/tmp/rel01-c3/c2-c3.diff",
+    "bytes": 2881,
+    "sha256": "55a0c73cbab45f9d76fe2632df4934da0ac86f3a0445f8f25ac124ed8a022e1b"
+  }
+}

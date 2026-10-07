@@ -1,0 +1,1148 @@
+{
+  "at": "2026-10-07T12:08:50.413268+00:00",
+  "base": "0b22f68ed41862ec9bbd058dbed1342d773bcf3a",
+  "target": "c06fa79c931998eb03a9d04d441681767fd796bf",
+  "source": "9658a6b763de69038778de1b0c16de64ff824c75",
+  "paths": 188,
+  "bytes": 1390464,
+  "action": "focused noEmit of two accepted Web compatibility harnesses against current direct contracts/client; no PG/browser/provider or service",
+  "bounds": {
+    "workSeconds": 30,
+    "termSeconds": 2,
+    "reapSeconds": 3,
+    "scratchBytes": 8388608,
+    "rawBytes": 1048576
+  },
+  "freeBytes": 21899632640,
+  "preimageReview": "native_center_owner APPROVED_INTAKE_PREIMAGE_COMPATIBILITY; fixture main as-const fix removed with old build loop and retained in new retained tuple; browser exact old blob",
+  "files": [
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 23305,
+      "targetBlob": "03316ea4aae444cff73b91e17485738231220d19",
+      "preimageSha256": "a143860d233be3824284e9360a3574a159b2c5e7e6821e6ec6368d4731317fbc"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 31937,
+      "targetBlob": "e2e8f3f7c8bb60959edc21693a390189ef0243e6",
+      "preimageSha256": "4d37bd07dc4c312d7509fbf367bb07b3d3065a7f0cea7709c7b6ba3ea2c6c355"
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/audit.json",
+      "bytes": 1362,
+      "targetBlob": "d542efb50a7451cec162603db8b46b580800b9bf",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/README.md",
+      "bytes": 1370,
+      "targetBlob": "c64ef9f7f2318685fcf48be88821e2eb800f043a",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/admission.json",
+      "bytes": 1216,
+      "targetBlob": "3236cb915c4730222819b9602d6b1deb2fd6e189",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/binding.json",
+      "bytes": 39079,
+      "targetBlob": "f08ffb5bb4e2abc665f094a5fb1631dea8f78188",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/budget.json",
+      "bytes": 108,
+      "targetBlob": "4cd23d414d56b93b9a0885a587fe485c3a0afc3d",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/child-gate.json",
+      "bytes": 1635,
+      "targetBlob": "f3ae80c28d04a546723c8934d84dbc791053ce3d",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/cleanup-accounting.json",
+      "bytes": 1557,
+      "targetBlob": "f87dfe415cc2a8cce4cb63c86b11c5f81d4a8fdc",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/consumed-gate.json",
+      "bytes": 1226,
+      "targetBlob": "b0e92e2c67cfa803ca1df610bddccd4aa04297cd",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/gate.json",
+      "bytes": 1353,
+      "targetBlob": "5e3e001fcd62f4081afaa71493c6c66c1b7ac4a7",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/handoff.json",
+      "bytes": 3916,
+      "targetBlob": "2329c61d8828195270694d774fb7422f9b049215",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/index.json",
+      "bytes": 5440,
+      "targetBlob": "ddfdf04dff725a6d04391f653c79b13b9fadad3c",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/input-observation.json",
+      "bytes": 937,
+      "targetBlob": "173474c5723fe7f744703999e5acbe6d73c20f5e",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/inputs.json",
+      "bytes": 6894,
+      "targetBlob": "2831c19a3ea8d05cc8427b33f513c1eb28109b8f",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/manifest.json",
+      "bytes": 4627,
+      "targetBlob": "913d0cc511ca9d0e7ee0da569f08974c59971792",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/outer-exit.json",
+      "bytes": 102,
+      "targetBlob": "71d2dfb3988f99ad306cf1399c088951f5e26dc0",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/outer-start.json",
+      "bytes": 51,
+      "targetBlob": "4856463de41c38cd9399e641c18960e65812bce3",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/outer-stderr.txt",
+      "bytes": 0,
+      "targetBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/outer-stdout.txt",
+      "bytes": 480,
+      "targetBlob": "3db58d8b87d61cf649c3d03b16a931bae74d3326",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/raw-manifest.json",
+      "bytes": 255,
+      "targetBlob": "37a734941d7c61b4b9fb432a3865fdf26f3377bb",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/raw/worker.log",
+      "bytes": 145,
+      "targetBlob": "3fda51d689c7474c411195e41d299ade5559dc99",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/result.json",
+      "bytes": 14130,
+      "targetBlob": "22213c75d16241cf36136b07bfa2175f5a092f8c",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/sandbox.sb",
+      "bytes": 421,
+      "targetBlob": "80c64f8ce242d8bd1f078d1132591d269acb68d7",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/started.json",
+      "bytes": 98,
+      "targetBlob": "80106afdc43dee4e0cd22d3559ee6769ca0f7018",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/status-parse.json",
+      "bytes": 5729,
+      "targetBlob": "ddc7d0d15f2d67d10d1102d622413fa1cf0ccd93",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2-first/terminal.json",
+      "bytes": 408,
+      "targetBlob": "5a95b0aeeab188e449026a8a8fa137c3674917bc",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md",
+      "bytes": 11891,
+      "targetBlob": "1d794b38675ac990a979671fe2f3a4c5299c3036",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2/c1-root-review.json",
+      "bytes": 6792,
+      "targetBlob": "891584e69cef1edc8cd49d2a73a25b22cc7c6933",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2/c2-native-boundary.json",
+      "bytes": 1141,
+      "targetBlob": "44c2d9dbfd9faf0883325771a2ef6fbdbef83a69",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2/c2-root-review.json",
+      "bytes": 7036,
+      "targetBlob": "76a0d1c7671450812e37b3a6e9f3c0e886f4a73b",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2/check-admission.json",
+      "bytes": 490,
+      "targetBlob": "cef816106a601dc0a30a15ffc09eccb75590a4da",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2/check-outer.json",
+      "bytes": 81,
+      "targetBlob": "a15736748dd22b3e52e0dc2133b14067b42ec2a7",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2/check-receipt.json",
+      "bytes": 1631,
+      "targetBlob": "51074653d496fbc26fe60f891960b92fdd459980",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2/check-stderr.txt",
+      "bytes": 0,
+      "targetBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2/check-stdout.txt",
+      "bytes": 811,
+      "targetBlob": "4b5ae050201f4c167447ede45654f20bbaf51b07",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2/local-check-result.json",
+      "bytes": 965,
+      "targetBlob": "7c878598b42d685a63d9dbd2bd198b45baae26b7",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2/review-seal-claim.json",
+      "bytes": 880,
+      "targetBlob": "43a879ba5fbf7843984d005c17d6ccee4dff3cbd",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2/reviewed-status-parse.json",
+      "bytes": 5704,
+      "targetBlob": "0ba65e30386f9baff387ffe714201382c2f53f10",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2/source-pins.json",
+      "bytes": 3002,
+      "targetBlob": "45e6e5ea32ee24087c679b39da5e2177914d2ae4",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c2/status-parse.json",
+      "bytes": 151,
+      "targetBlob": "187b2eadcd51def55554f8f7f4afac996737fdf2",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/README.md",
+      "bytes": 1988,
+      "targetBlob": "6378620212b882934448c9c9e8fd500b5c20634d",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/admission.json",
+      "bytes": 934,
+      "targetBlob": "4fba9bcb0df2e7bdd9390f4a19f34629880c3749",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/binding.json",
+      "bytes": 38306,
+      "targetBlob": "2b60eca0b1044138ee372f0f6b012ad603bbcacf",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/budget.json",
+      "bytes": 107,
+      "targetBlob": "6b56e0b5767698a4bd1aaacf66cb55f07901a6c8",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/child-gate.json",
+      "bytes": 1445,
+      "targetBlob": "5a44631861b38207739932894ec77403131cc774",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/cleanup-accounting.json",
+      "bytes": 2507,
+      "targetBlob": "7157f21467f543aa5f8c4f0b4290bd895582b6d4",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/consumed-gate.json",
+      "bytes": 1038,
+      "targetBlob": "d7962e2e20bca69fde267f005c02c26949aa78de",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/gate.json",
+      "bytes": 1163,
+      "targetBlob": "57dd20a532ae5f57600ebf3f8d0ee1310b270748",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/handoff.json",
+      "bytes": 3728,
+      "targetBlob": "59e1ce921b7da47d7731df67e553402157b3b070",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/index.json",
+      "bytes": 20421,
+      "targetBlob": "a1db3f0cb9a6720384a1a9240700f72b4624f5a8",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/inputs.json",
+      "bytes": 6894,
+      "targetBlob": "2831c19a3ea8d05cc8427b33f513c1eb28109b8f",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/manifest.json",
+      "bytes": 5322,
+      "targetBlob": "a0040b0f917b405681e380e0d7d47095e4947f33",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/nonmetadata-scope.json",
+      "bytes": 1479,
+      "targetBlob": "ca3774e30a16c8f8e57a7e0c0d226870b3fc9fdb",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/outer-exit.json",
+      "bytes": 102,
+      "targetBlob": "de842340664abdf67bc06b00bbc4d45a94238892",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/outer-start.json",
+      "bytes": 51,
+      "targetBlob": "c3acf7e02d77d06ccdb87f2aa355d4a592a01b10",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/outer-stderr.txt",
+      "bytes": 0,
+      "targetBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/outer-stdout.txt",
+      "bytes": 478,
+      "targetBlob": "35adf1bfce23af9523a05c7d0feb7e287ea29629",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw-manifest.json",
+      "bytes": 9016,
+      "targetBlob": "fdc6ae7d042af3ecee8f10fb9cee2080b073da16",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/chrome-parent.json",
+      "bytes": 1191,
+      "targetBlob": "93aa1dd911d4ea3149536e05fe350d5d0368ca62",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/chrome.log",
+      "bytes": 12405,
+      "targetBlob": "eb355b3bc958c924410aafb0866969aa15cdb354",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/all-wire.json",
+      "bytes": 167106,
+      "targetBlob": "e06fc052d9c2115fd453cccc7afb308e04c524c7",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/browser-results.json",
+      "bytes": 15954,
+      "targetBlob": "3935a17ac27de274777faa082c6c318d19232c96",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a/negotiation.json",
+      "bytes": 410,
+      "targetBlob": "b3af00677ed14bc2a7dae2c91ed08ffd6830f020",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a/read.json",
+      "bytes": 394,
+      "targetBlob": "3971aeb208346dccfc923d5ad32fd46b4bc0a7bf",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a/recover.json",
+      "bytes": 376,
+      "targetBlob": "ba6f577272cd4d0757c3884c77a935a785475e0c",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a/report.json",
+      "bytes": 791,
+      "targetBlob": "3cfec6ac88eb23b6ccf32bffdf38b487ca3f3912",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a/send.json",
+      "bytes": 384,
+      "targetBlob": "767fd99c06ff1d977b12a6ab608e44b861a377c5",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9/negotiation.json",
+      "bytes": 410,
+      "targetBlob": "fb9bfbab4df31d55aa9b087e686ebc4e631acdba",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9/read.json",
+      "bytes": 394,
+      "targetBlob": "991b139c245b2f4847967b436fa560ffd6449662",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9/recover.json",
+      "bytes": 376,
+      "targetBlob": "bee23933ab94d0980126abe31c25e871acec8673",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9/report.json",
+      "bytes": 791,
+      "targetBlob": "8dcbfed0f4f6030509fb127a148b801ea1763a11",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9/send.json",
+      "bytes": 384,
+      "targetBlob": "3352846f7a506ea3eb128cc5edf5f0f849fba923",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0/negotiation.json",
+      "bytes": 410,
+      "targetBlob": "fe20228acaf0991a4cfe650b31edc9af38a497ee",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0/read.json",
+      "bytes": 394,
+      "targetBlob": "f13c9ee1adb243c603cecfe862b00e1ae39319c3",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0/recover.json",
+      "bytes": 376,
+      "targetBlob": "7f353427afa484a8cfc3f1cc87be7626a1211309",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0/report.json",
+      "bytes": 791,
+      "targetBlob": "90668905d78fdda73d96a704baa6fcd6ce55d1c0",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/compatibility-state/web-compatibility/eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0/send.json",
+      "bytes": 384,
+      "targetBlob": "093fb9d77b3a8b9cce1d159434b5f72472b36d59",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/cookie-policy.json",
+      "bytes": 758,
+      "targetBlob": "bd8e2d81fe906a636fcd120c04baedf85325b76e",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/fixture-cleanup.json",
+      "bytes": 262,
+      "targetBlob": "e94f5bcdbeda7697f333f3e1021e1cc32648243c",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/inputs.json",
+      "bytes": 6984,
+      "targetBlob": "af223a9b06eff9a5a433a0040d33360586006198",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/owned-chrome.json",
+      "bytes": 684,
+      "targetBlob": "e99653d10e537de194c81e8c9f593476d4195480",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-461a-page.json",
+      "bytes": 1887,
+      "targetBlob": "7b96d613c9e167d6d55b3136d0f3d0c00358597c",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-461a-wire.json",
+      "bytes": 45227,
+      "targetBlob": "061d55704a4fb773fc2906719dba6c3d6d68ee2b",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-461a/negotiation.json",
+      "bytes": 410,
+      "targetBlob": "fb9bfbab4df31d55aa9b087e686ebc4e631acdba",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-461a/read.json",
+      "bytes": 394,
+      "targetBlob": "991b139c245b2f4847967b436fa560ffd6449662",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-461a/recover.json",
+      "bytes": 376,
+      "targetBlob": "bee23933ab94d0980126abe31c25e871acec8673",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-461a/report.json",
+      "bytes": 791,
+      "targetBlob": "8dcbfed0f4f6030509fb127a148b801ea1763a11",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-461a/send.json",
+      "bytes": 384,
+      "targetBlob": "3352846f7a506ea3eb128cc5edf5f0f849fba923",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-caa1-page.json",
+      "bytes": 2377,
+      "targetBlob": "e889342f83da3cc4b6bc9013858c61e6da629692",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-caa1-wire.json",
+      "bytes": 55133,
+      "targetBlob": "61cb45f6e4d14d8b4645c190a45328585ad30019",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-caa1/negotiation.json",
+      "bytes": 410,
+      "targetBlob": "b3af00677ed14bc2a7dae2c91ed08ffd6830f020",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-caa1/read.json",
+      "bytes": 394,
+      "targetBlob": "3971aeb208346dccfc923d5ad32fd46b4bc0a7bf",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-caa1/recover.json",
+      "bytes": 376,
+      "targetBlob": "ba6f577272cd4d0757c3884c77a935a785475e0c",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-caa1/report.json",
+      "bytes": 791,
+      "targetBlob": "3cfec6ac88eb23b6ccf32bffdf38b487ca3f3912",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-caa1/send.json",
+      "bytes": 384,
+      "targetBlob": "767fd99c06ff1d977b12a6ab608e44b861a377c5",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-d629-page.json",
+      "bytes": 2377,
+      "targetBlob": "efa425ff1f236d6e47d75facde136c0abc0530e7",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-d629-wire.json",
+      "bytes": 65031,
+      "targetBlob": "fc97b363097d50b421983a7af19c7fee4377dd2d",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-d629/negotiation.json",
+      "bytes": 410,
+      "targetBlob": "fe20228acaf0991a4cfe650b31edc9af38a497ee",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-d629/read.json",
+      "bytes": 394,
+      "targetBlob": "f13c9ee1adb243c603cecfe862b00e1ae39319c3",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-d629/recover.json",
+      "bytes": 376,
+      "targetBlob": "7f353427afa484a8cfc3f1cc87be7626a1211309",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-d629/report.json",
+      "bytes": 791,
+      "targetBlob": "90668905d78fdda73d96a704baa6fcd6ce55d1c0",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-d629/send.json",
+      "bytes": 384,
+      "targetBlob": "093fb9d77b3a8b9cce1d159434b5f72472b36d59",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/worker.json",
+      "bytes": 17518,
+      "targetBlob": "a163e5d5e04f330300cab117c425a02fd2b79eab",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/worker.log",
+      "bytes": 71,
+      "targetBlob": "15a7459944301791e3dda0ff212aaae711567fa6",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/result.json",
+      "bytes": 92542,
+      "targetBlob": "916967a9733ede428f648e8dbb49fae900a9d99b",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/sandbox.sb",
+      "bytes": 421,
+      "targetBlob": "00cdaa70a8c3f41991eb5f5388fefa2d19bf748f",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/started.json",
+      "bytes": 98,
+      "targetBlob": "7a796097c2b74c2718c42094dd11eb187558e056",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/status-parse.json",
+      "bytes": 5857,
+      "targetBlob": "cd99f09c3bde249f00200722448783f83ce3a7c8",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/terminal.json",
+      "bytes": 406,
+      "targetBlob": "e8b3a64fb3566419e8f2b1ab0c11adf913af8310",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/README.md",
+      "bytes": 2103,
+      "targetBlob": "7dc5e1a7d84b3634e49020770feeaa2d9280b588",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/c2-first-root-review.json",
+      "bytes": 4607,
+      "targetBlob": "47618ad4e13617493d73ffd2b50fc3507051baed",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/c3-native-boundary.json",
+      "bytes": 980,
+      "targetBlob": "09b7901f448622821ff9f424d74381f615eafd39",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/c3-root-review.json",
+      "bytes": 4085,
+      "targetBlob": "3f5001ae547546bc53a809268dd4ca94ed7479e6",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/index.json",
+      "bytes": 3429,
+      "targetBlob": "781246358f610555b823fc700d5191f02306e1db",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/reviewed-status-parse.json",
+      "bytes": 5464,
+      "targetBlob": "76d5f6291ebe0e34aa537b082a965f2c4f81a818",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/status-parse.json",
+      "bytes": 5801,
+      "targetBlob": "97f2b592a40a13a305ca51804fa116a663657d65",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/syntax-check-inputs.json",
+      "bytes": 1274,
+      "targetBlob": "07e16812d599ff90bf3f70d644b698d242bb8ffb",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/syntax-outer-exit.json",
+      "bytes": 90,
+      "targetBlob": "d71b5b98543006514745e503a826958165fad103",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/syntax-outer-stderr.txt",
+      "bytes": 0,
+      "targetBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/syntax-outer-stdout.txt",
+      "bytes": 335,
+      "targetBlob": "01b8bf77525fe5dc3dbd473372806d3adbf40e7e",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/syntax-profile.sb",
+      "bytes": 399,
+      "targetBlob": "7593674eb47a5baa89ce41f2e3758991499fdd6d",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/syntax-receipt.json",
+      "bytes": 2671,
+      "targetBlob": "83e35aad11b7035308247c3237cfa67a13868ecd",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/syntax-result.json",
+      "bytes": 1118,
+      "targetBlob": "09a7a0a1c0daf934b01fbf52d4540e409d436549",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/syntax-stderr.txt",
+      "bytes": 0,
+      "targetBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/syntax-stdout.txt",
+      "bytes": 0,
+      "targetBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-c3/syntax-terminal.json",
+      "bytes": 349,
+      "targetBlob": "444d185441d3ac9688561dae8f5c46640464de34",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-claim-observation.json",
+      "bytes": 936,
+      "targetBlob": "cb5bf3c32d4d243d5d589f5fcc9ed88ea018b76e",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md",
+      "bytes": 9838,
+      "targetBlob": "a0f57f1ddff693dc83534cfe34ed7aeba486568f",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-preparation/final-backend-result-review.json",
+      "bytes": 2142,
+      "targetBlob": "57dfeadd5bdb2c1f5889302289cac6b311e97fbb",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-preparation/source-pins.json",
+      "bytes": 32247,
+      "targetBlob": "750aafd892b80c562957eb2b7eb056934239ac77",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-preparation/static-preparation.json",
+      "bytes": 2648,
+      "targetBlob": "dfc3ccd8a9789af15e7ed9900f44d2f0b820480b",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/caller-preparation/status-parse.json",
+      "bytes": 188,
+      "targetBlob": "cc46d150bb5e1fdf784acbc54e738c338e35eecd",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/candidate-interface.json",
+      "bytes": 3591,
+      "targetBlob": "04452b0056a026ca47c1e8f8eaba974ffafbcb34",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/claim-pre-request-enoent.json",
+      "bytes": 0,
+      "targetBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/claim-preflight.json",
+      "bytes": 1078,
+      "targetBlob": "82eee5b8e7535b7dd427e1022015c6ef3bf6993d",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/claim-receipt.json",
+      "bytes": 762,
+      "targetBlob": "f43543935e73a64bd0ea7d0a62c7122eac28a501",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/claim-request.json",
+      "bytes": 590,
+      "targetBlob": "94b106cf621c55897e5e1ceecbb7f28827aa31ac",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/design-review.json",
+      "bytes": 16497,
+      "targetBlob": "1d2f77ffc8330bcf3568eb071b05febc40327a3b",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/f3d-source-review.json",
+      "bytes": 7551,
+      "targetBlob": "af04a1e9dd3cff3b1d1bb61102ecc2157efe4fa3",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/final-backend-tuple-root.json",
+      "bytes": 7414,
+      "targetBlob": "44a9888aa95974b352c37b19b22be2f7a70dd8ae",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/implementation.md",
+      "bytes": 3220,
+      "targetBlob": "a2c0c98dcf86bf2c79eb556ef96930ef6c3af6da",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/metadata-links.json",
+      "bytes": 2586,
+      "targetBlob": "ee85e8d9e8c81d3c14b5a9f95cb580711dc17fff",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/network-boundary-addendum.md",
+      "bytes": 389,
+      "targetBlob": "227ac936dea3e5a28d473b3327e724e90d73a01c",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/pins.json",
+      "bytes": 12863,
+      "targetBlob": "73497c84844d48c8202dd18721cc0b80aac28462",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/previous-plan.md",
+      "bytes": 2282,
+      "targetBlob": "74d3a35bfbe5d547eff9e1a4717c2217bd36457f",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/previous-review.md",
+      "bytes": 2386,
+      "targetBlob": "2b73ec23afd312d75b994b6160a90b958d43a8e7",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/previous-status.md",
+      "bytes": 3224,
+      "targetBlob": "20c22c02922f08ead0cb4d2d0b0360787e5bb927",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/public-settings-supply-root.json",
+      "bytes": 2006,
+      "targetBlob": "b9efa0fcfbef583aa41a40d88567bdb834ee959f",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/public-supply-status-parse.json",
+      "bytes": 1769,
+      "targetBlob": "a35b181879898e614beba53ef209fea17c8ecec3",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/quality.md",
+      "bytes": 2200,
+      "targetBlob": "b51eaef898fdf785e3919fe43214b15ba613a6a4",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/report.md",
+      "bytes": 13438,
+      "targetBlob": "6cd85c6f7dad8eda29040e4759744590f1c27816",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/scope-proposal.json",
+      "bytes": 1083,
+      "targetBlob": "686f224e780b66757fdbe665af728d93b49389f7",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/segment-start.json",
+      "bytes": 449,
+      "targetBlob": "ed470811a99a5d9bf224b806d8e38cbda6e3578e",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/source-manifest.json",
+      "bytes": 1244,
+      "targetBlob": "84ab96999e00b0b638fef7d84e7fc84f9f593620",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/status-before-public-supply.md",
+      "bytes": 5959,
+      "targetBlob": "043aa7856269870db32e2868c448161a38b2762d",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/status-parse.json",
+      "bytes": 8137,
+      "targetBlob": "773fc1373f417daaf196bdd916c5e22950c21134",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/typecheck-proposal.json",
+      "bytes": 2836,
+      "targetBlob": "6101e817f86e6e4cd4508021fb0d0b3572b7cde5",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-first-root-review.json",
+      "bytes": 6422,
+      "targetBlob": "87b328e5bfa9ae6d3831debff7a8c6350afaf9dd",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-first/binding.json",
+      "bytes": 4292,
+      "targetBlob": "c41b66c3203e29540053255adeda4e59926bfef3",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-first/budget.json",
+      "bytes": 118,
+      "targetBlob": "31f188665062304c13c41584361910d39cbd7515",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-first/claim-live.json",
+      "bytes": 169712,
+      "targetBlob": "fa03937b95b875a39c3bf3cd784347d586bfa0fc",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-first/outer-observation.json",
+      "bytes": 373,
+      "targetBlob": "8e3fb6c657b849f9c3e2158ebc389b2352d2e53e",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-first/result.json",
+      "bytes": 6789,
+      "targetBlob": "9595d0cf766847160b264426fd41e20974392f9a",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-first/runtime-input-pins.json",
+      "bytes": 354,
+      "targetBlob": "3bed0e6f5b1c31610b45e80f91ab6a32f844ce57",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-first/started.json",
+      "bytes": 400,
+      "targetBlob": "e091b99e6978c9fbe8dc19e471a4ce50aa874319",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-first/stderr.txt",
+      "bytes": 0,
+      "targetBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-first/stdout.txt",
+      "bytes": 852,
+      "targetBlob": "e3426a5fe523f12b081e29b4fb5bdb073331bd4f",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-first/terminal.json",
+      "bytes": 325,
+      "targetBlob": "12e3dbd3f7b4299511ac1c5903e4444797c2e091",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second-root-review.json",
+      "bytes": 7271,
+      "targetBlob": "767aae4ac4b7903c515139bf7ca95e98ca1925dd",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second/binding.json",
+      "bytes": 4412,
+      "targetBlob": "173c7ba92ac623520f31592da2469f900f42b0b4",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second/budget.json",
+      "bytes": 117,
+      "targetBlob": "b1f1389a7e894c2476f5b912b25eda5a79e06bf8",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second/claim-live.json",
+      "bytes": 169713,
+      "targetBlob": "adb3f3791db1c42ab514abecc9f92988f282cb89",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second/index.json",
+      "bytes": 1799,
+      "targetBlob": "8930041b9d83dc6dbf4649431c98ff09245a52d7",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second/outer-observation.json",
+      "bytes": 472,
+      "targetBlob": "f106ad22cbfc520740156ded041f2a2d4ef0d0f8",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second/outer-stderr.txt",
+      "bytes": 0,
+      "targetBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second/outer-stdout.txt",
+      "bytes": 433,
+      "targetBlob": "ec56ddde4301d5be18b4ccd40cf95c49fc845565",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second/result.json",
+      "bytes": 5519,
+      "targetBlob": "055fd70e32be60739166c0593c75d4fc4bd6e017",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second/runtime-input-pins.json",
+      "bytes": 358,
+      "targetBlob": "17ade7a29d2d6cce1719114e458fc5e602359b1c",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second/started.json",
+      "bytes": 398,
+      "targetBlob": "7c2c5aefa62193eed3d1a9e6d540b70342a9e45a",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second/stderr.txt",
+      "bytes": 0,
+      "targetBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second/stdout.txt",
+      "bytes": 0,
+      "targetBlob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second/terminal.json",
+      "bytes": 324,
+      "targetBlob": "ad3e1ade270c44df58622a2b5c1d64e0ce3eaeea",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/fixed-origin/types-second/tsconfig.json",
+      "bytes": 1017,
+      "targetBlob": "5db66a553426a4b5c4169d845fd54e5e1ce4baea",
+      "preimageSha256": null
+    },
+    {
+      "path": "docs/evidence/wpf-release01/quality.md",
+      "bytes": 9949,
+      "targetBlob": "84a8e93724332e120bad9b3ae6ac46d92581aa92",
+      "preimageSha256": "7c1218dd112babad10eae6bebe56b19a45b339bc93f2cff5bf81a2031e4dc0d4"
+    },
+    {
+      "path": "plans/wpf-release01-product-compatibility/plan.md",
+      "bytes": 4672,
+      "targetBlob": "1dfd5b534556b6f0486540f7eaba7f4c1745ebf5",
+      "preimageSha256": "3742736e406a86c8d5be1cbb2e0b893c2e7a975dcab322c69b42bbcd8e5456ba"
+    },
+    {
+      "path": "plans/wpf-release01-product-compatibility/review.md",
+      "bytes": 5375,
+      "targetBlob": "45de93a8991345e65d17afd93ab4381c47a7825f",
+      "preimageSha256": "69374cd2b0148327792f23e8d4465c8b1473890c1b2790be8a41afd149d51906"
+    },
+    {
+      "path": "plans/wpf-release01-product-compatibility/status.md",
+      "bytes": 12986,
+      "targetBlob": "9bedbaaaccd91f2299a0a1e1c9ef5183969575ed",
+      "preimageSha256": "b4418982c51dfe9e810b08134180d7f049185c1113e9e7cd72f8dd20a8b68405"
+    }
+  ]
+}

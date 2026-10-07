@@ -1,0 +1,31 @@
+{
+  "state": "INPUTS_VERIFIED_NO_LAUNCH",
+  "at": "2026-10-07T11:43:34.657954+00:00",
+  "head": "1e5f4b36f118456d39dcbe2c9eabd4ffb65394d9",
+  "claim": {
+    "claimId": "38b9a7ff-c9be-4b56-af50-e076afb603bc",
+    "version": 1,
+    "worker": "w01_owner",
+    "scope": [
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ]
+  },
+  "ledgerObservedAt": "2026-10-07T11:43:09.401Z",
+  "ledgerSha256": "755388ddd1f05a0d9f98aa1e3e795361eb153ca021234aad2668db111caeefbc",
+  "overlaps": [],
+  "sourcePins": 71,
+  "prepared": 4,
+  "threeAssets": 30,
+  "backendEntries": 15628,
+  "backendBytes": 363845121,
+  "nodeImages": 20,
+  "backendRootIdentity": {
+    "dev": 16777234,
+    "ino": 123986135
+  },
+  "elapsedMs": 3040.4654170852154,
+  "output": "/private/tmp/rel01-c2-actual-jxh2t3d9"
+}

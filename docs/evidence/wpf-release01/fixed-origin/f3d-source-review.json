@@ -1,0 +1,116 @@
+{
+  "at": "2026-10-07T10:16:27.163941+00:00",
+  "reviewer": "root / gpt-6-astra / ultra, independent read-only",
+  "decision": "SCOPED_IMPLEMENTATION_SOURCE_APPROVED_RUNTIME_NOT_ADMITTED",
+  "target": "f3d05910b30e4e75bcbbd9ba43095d02cbb12c18",
+  "base": "41276e2ecd154087f66958339d9abfce4d44964c",
+  "sourcePins": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "commit": "f3d05910b30e4e75bcbbd9ba43095d02cbb12c18",
+      "bytes": 31865,
+      "sha256": "79d8a73b3df33ea6d94b25fe23ed37b296af589d2cfcf40997f0f975fc7c55c3"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "commit": "f3d05910b30e4e75bcbbd9ba43095d02cbb12c18",
+      "bytes": 23305,
+      "sha256": "8d7ef686cbb6cf32b1daa72d692aa5bd4ad9ea4a03a173fc59c1e1bf24d156d7"
+    }
+  ],
+  "readOnlyInterfaceReferences": [
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+      "bytes": 15567,
+      "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca"
+    },
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a"
+    },
+    {
+      "path": "packages/contracts/src/browser-session.ts",
+      "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    },
+    {
+      "path": "apps/runner/src/verifier.ts",
+      "commit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+      "bytes": 1069,
+      "sha256": "a5be3b221a0d3b2aad7ed193610d195773dae2fa1ad673d26b8971965a867200"
+    }
+  ],
+  "scope": "Original RELEASE01 two harness files; remaining claim scope is own plan and evidence. No top-level execution, package installation, shared API edits or personal-service access.",
+  "findings": [
+    {
+      "area": "Explicit source and authority",
+      "assessment": "Entry runReleaseCompatibility requires finalBackend plus explicit test admin URL and externally owned lifetime. Verifier pins exact canonical inputs, verifies backend inventory/source tree/Node identity, checks normalized fixed-origin policy, and refuses legacy fallback. Final tuple is still missing, so these are source properties only."
+    },
+    {
+      "area": "Retained real Apps",
+      "assessment": "Three exact immutable manifest/artifact/source identities are bound. Assets are read via the public exact allowlist helper without loading a release pointer requiring preexisting compatibility reports. Actual loaded JS/CSS and index hashes are checked. Retained roots are not used as writable report state."
+    },
+    {
+      "area": "Fixed-origin transport",
+      "assessment": "Only a private dynamic loopback proxy may forward public61228 Chrome requests to its own center. Authority, exact Host, absolute-form URL, CONNECT refusal and owned-address canary prevent the earlier APIRequestContext bypass. Browser public reads use genuine page navigation/evaluate fetch/response; Node requests use only owned dynamic center. Final native Chrome containment/argv/closure still require caller admission and actual evidence."
+    },
+    {
+      "area": "Streaming and unknown ACK",
+      "assessment": "Proxy forwards streaming chunks with pause/drain backpressure and downstream-close upstream cancellation. Selected turn ACK is received as complete successful bounded JSON, then real headers/full Content-Length and one real body byte are flushed before graceful socket close. Browser observes headers and failure on the same Request and asserts only one POST before explicit retry; retry uses same body/key/turn/task and keeps next draft. This is a source review, not proof of runtime Chrome behavior."
+    },
+    {
+      "area": "Authentication truthfulness",
+      "assessment": "Three old Apps stay original Bearer clients. A distinct fresh browser context checks real same-origin session connect, HttpOnly/Strict cookie flags, missing-CSRF403 retaining principal, valid logout, and cookie removal. Session response/body/token/CSRF are omitted from raw wire; only bounded safe metadata is retained. This does not claim the retained Apps are cookie-migrated."
+    },
+    {
+      "area": "Synthetic actor and acceptance",
+      "assessment": "One public synthetic runner publishes an execution profile, claims only the expected task, emits schema-validated session/final/artifact/real text verification/completed events, and makes zero provider calls. Existing four report checks bind the exact backend, App artifact and public context and import/verify only after owned cleanup succeeds."
+    },
+    {
+      "area": "Lifecycle and failure evidence",
+      "assessment": "Owned DB creation is explicitly marked; marker and zero live connections are required for normal DROP, uncertain creation is kept. Chrome then proxy/center/DB cleanup failures keep overall failure. edabba adds exact favicon404 for pre-App cookie probe. f3d adds finite predefined phase/app/completed trace and all-wire after cleanup without broad error messages or secrets; original failures remain failures."
+    }
+  ],
+  "cleanCodeRecord": {
+    "scope": "Two-file fixture/browser implementation plus favicon and diagnosis deltas",
+    "actualFinding": "Generic errorCode alone hid which expensive real journey failed, especially before per-App evidence existed.",
+    "resolution": "Owner added small private phase trace and bounded all-wire evidence; no framework or extra test transport.",
+    "otherChecks": "Explicit fixture/browser lifetime responsibilities; reuse existing public codecs/importer; no hidden top-level launch or fallback backend."
+  },
+  "requiredBeforeActual": [
+    "Owner necessary strict/noUnchecked/noEmit check at this fixed source; include actual TypeScript _tsc.js behind tsc.js shim in execution bindings.",
+    "Exact final backend descriptor/root/sourceTree/runtime and Node closure plus normalized non-secret policy settings; no oldb2b fallback.",
+    "Existing supervised caller must bind this worker, native browser routing boundary, cleanup receipts, concrete aggregate resource/time limits and all output paths; no new supervisor by implication.",
+    "Fresh unique runtime handoff from d01 after other actual holders return; prepared inputs are not a reservation."
+  ],
+  "limitations": [
+    "No compiler/tests/browser/PG/HTTP executed by root.",
+    "Current main interface references substantiate source compatibility assumptions only; they are not substituted for final backend artifact closure.",
+    "No real three-App PASS, Cookie policy PASS, personal promotion, or deployment claim.",
+    "SSE forwarding source does not demonstrate native model incremental output; synthetic task completion is explicitly zero provider."
+  ],
+  "blockingSourceFindings": [],
+  "resourceUse": {
+    "projectWrites": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "HTTP": 0,
+    "runtime": 0
+  }
+}

@@ -1,0 +1,86 @@
+{
+  "at": "2026-10-07T11:31:06.565377+00:00",
+  "reviewer": "Web co-lead /root, read-only independent review",
+  "decision": "CHANGES_REQUESTED_2_FINDINGS_NO_RUNTIME",
+  "ownerHead": "f2a1b220391a70c5eb5b3c181ff22f9645b79888",
+  "implementation": "9658a6b763de69038778de1b0c16de64ff824c75",
+  "pins": [
+    {
+      "path": "/private/tmp/rel01-c1/supervisor.py",
+      "bytes": 17390,
+      "sha256": "32bff7ccf81703d1cecf98ebac1617deb9d3b9febdacbb1e72cc0f98b46b9ac9"
+    },
+    {
+      "path": "/private/tmp/rel01-c1/worker.mjs",
+      "bytes": 5411,
+      "sha256": "5800155a7b5c680cbf580efa60fd311f1f8e13357301fc487d511773560b9751"
+    },
+    {
+      "path": "/private/tmp/rel01-c1/binding.json",
+      "bytes": 34876,
+      "sha256": "c00e7bb297477d17ca5896cb3db2e19371b35e33524d3cb308817f6ba44770c1"
+    },
+    {
+      "path": "/private/tmp/rel01-c1/handoff.json",
+      "bytes": 3811,
+      "sha256": "c328c3781d65301acb14dc5b6fd1aa00250da0716e5ff0d147e482f49c993b08"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/apps/server/src/scheduler.ts",
+      "bytes": 957,
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/db.js",
+      "bytes": 16198,
+      "sha256": "3391762eef4a93bc9a03acee585f6a2c4b11a5e59519f633e17bf7df085b5102"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/attorney.js",
+      "bytes": 43134,
+      "sha256": "1eb0ad087375bf296e1b7bf9ecf0628fd9aeae54c071aa684c80012964def7bd"
+    }
+  ],
+  "checked": {
+    "declaredPins": 68,
+    "actualBytesHashed": 18594905,
+    "allDeclaredPinsMatched": true,
+    "currentScratchExists": false,
+    "scope": "Read complete parent and worker; focused integration edges of existing approved two harnesses, fixed center scheduler and pg-boss pool/default. Reused existing 30-asset and final backend proofs; no full artifact verification or tests executed."
+  },
+  "findings": [
+    {
+      "id": "REL-C1-R1",
+      "priority": 1,
+      "file": "/private/tmp/rel01-c1/supervisor.py",
+      "lines": [
+        33,
+        111,
+        149,
+        159
+      ],
+      "title": "Preflight failure can delete a pre-existing scratch directory",
+      "trigger": "An old/unknown scratch directory exists, or preflight fails before this invocation creates scratch. The assertion at111 enters finally with worker/chrome=None, so groups=True. After a successful measurement, line159 rmtree deletes existing scratch without this invocation owning its identity. The current directory is absent; this is a verified source path, not a claim that deletion occurred.",
+      "required": "Track successful exclusive creation and its exact dev/inode/type/owner before treating scratch as owned. Delete only that same directory after groups/measurement are confirmed. Pre-existing, replaced or unowned scratch remains KEEP; report failure independently of absent owned processes. Preserve fixed c1 inputs and make the smallest corrected candidate, no new general supervisor.",
+      "validation": "A bounded no-PG/no-Chrome test must invoke the corrected real cleanup path with pre-existing sentinel, current-created directory, and replacement identity; old/replaced content survives and only exact owned safe cleanup removes its directory. No production/browser matrix rerun."
+    },
+    {
+      "id": "REL-C1-R2",
+      "priority": 2,
+      "file": "/private/tmp/rel01-c1/binding.json",
+      "field": "pgConnections.conservativeConnectionCeiling and README PG row",
+      "title": "Declared9 connection slots omit the independently owned pg-boss pool",
+      "trigger": "Fixture creates final backend normally. Fixed center index116 calls startScheduler; scheduler5 creates PgBoss with max3; pg-boss Db.open creates its own pg.Pool. This is separate from server max8. Fixture max1 pools are sequential, so a conservative configured total is12 (8+3+1), not9. pg-boss attorney416 defaults useListenNotify=false, so no additional LISTEN client is counted for these exact options. This is configuration ceiling, not actual measured peak.",
+      "required": "Correct binding/handoff/status/resource proposal to include pg-boss3, use conservative12 or an explicitly justified phase-specific ceiling, and make manager fresh combined admission account for it. Preserve128MiB DB/WAL as declared planning allowance, not measured/enforced quota; do not change fixed backend/scheduler to reduce the claim.",
+      "validation": "Source and metadata consistency inspection is sufficient; no runtime needed merely to count configured pools."
+    }
+  ],
+  "acceptedDesign": [
+    "Existing official Chrome remains its own native sandboxed sibling; absence of custom outer write/egress sandbox is explicitly disclosed. Exact HTTP proxy plus loopback bypass removal and before-credential absolute-form canary are the reviewed intended network boundary, not an OS-enforced Chrome egress guarantee.",
+    "Node worker custom sandbox, explicit deny of personal61228, fixed proxy route, allowlisted environment and removed explicit admin environment before imports are source intentions. Sandbox syntax/effect and actual handshake have not been executed.",
+    "Parent signal, wait/EOF collection and bounded stream retention preserve errors; native group close acknowledgement precedes fixture cleanup/report import. Partial startup can leave marked DB KEEP and must not be described as complete cleanup.",
+    "Actual outer exit plus fixed terminal/result/budget/raw and3 verified compatibility reports remain required. Historical harness source/type approvals remain; no old tests are reopened."
+  ],
+  "next": "Original manager retains sole schedule. Original bootstrap has reported actual return; source corrections come first, then exact source/native acceptance and fresh combined resource admission. Current c1 PREPARED/null native approval is not executable authority. Start floor must use current greater combined requirement (previous manager minimum5479333888B), not old5334630400B alone.",
+  "quality": "Complete new lifecycle/source review emphasized ownership, failure cleanup, pool accounting, fixed input fidelity and no unnecessary abstractions. No project writes, process launches, tests, PG, Chrome, provider or personal endpoints."
+}

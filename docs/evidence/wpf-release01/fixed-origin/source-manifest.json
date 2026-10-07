@@ -1,0 +1,25 @@
+{
+  "state": "SOURCE_APPROVED_TYPES_PASSED_COMPAT_NOT_RUN",
+  "at": "2026-10-07T10:21:39.254787+00:00",
+  "base": "41276e2ecd154087f66958339d9abfce4d44964c",
+  "sourceFiles": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 31937,
+      "sha256": "9d078c59e83bc02d0dee45c7d0ec6c41f8c94e06780495098ce6c79d28ddf86c"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 23305,
+      "sha256": "8d7ef686cbb6cf32b1daa72d692aa5bd4ad9ea4a03a173fc59c1e1bf24d156d7"
+    }
+  ],
+  "finalBackendTuple": null,
+  "checks": "strict/noUnchecked/noEmit PASS at9658; f3d first FAIL retained; actualcompat NOT_RUN",
+  "runtimeEntry": "runReleaseCompatibility(admission, explicitAdminUrl, lifetime) export; importing has no top-level launch",
+  "lifetimeOwner": "Existing admitted parent/worker must supply checkpoint+signal+owned Chrome launcher/receipt/close; no new supervisor",
+  "claimId": "38b9a7ff-c9be-4b56-af50-e076afb603bc",
+  "claimVersion": 1,
+  "implementationCommit": "9658a6b763de69038778de1b0c16de64ff824c75",
+  "deltaAfterFirstFixed": "favicon404; nonsecret phase/all-wire diagnostics; Runtime adapterVersion indexes public ExecutionProfileConfiguration type"
+}

@@ -1,23 +1,41 @@
 # WPF-RELEASE01 review
 
-**状态：APPROVED**
+**状态：APPROVED（两harness与c3准备限定范围；三App actual已通过，独立证据接收待完成）**
 
-Review target commit：7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b
+Review target commit：9658a6b763de69038778de1b0c16de64ff824c75
 
-Base：8d8ab520a9d43c7b9dafb22911416ee799ebf665
+范围：本次fixed public origin / 三retained App successor两harness。f3d限定源码0blocking见[原件](../../docs/evidence/wpf-release01/fixed-origin/f3d-source-review.json)；9658 type-only delta见[独审](../../docs/evidence/wpf-release01/fixed-origin/types-first-root-review.json)。[必要复验独立接收](../../docs/evidence/wpf-release01/fixed-origin/types-second-root-review.json)核12raw/9pin/实际退出及清理。本次必要strict/noUnchecked/noEmit实际exit0，[原始结果](../../docs/evidence/wpf-release01/fixed-origin/types-second/result.json)；首f3d类型失败原样保留。源码批准与类型通过不等于真实兼容通过。最终backend tuple和公开设置已核齐；独立owned caller c2已通过集中delta审与精确native边界审；实际资源准入仍待管理者fresh，c2首次actual在sandbox-exec阶段FAILED；后继c3唯一actual通过，原件见当前段，待独立证据审。
 
-独立 reviewer：/root（gpt-6-astra / ultra），2026-10-06 10:46:30 UTC；本记录由owner原样归因转录。范围：两个测试脚本及其固定兼容证据；不是个人发布批准或全部产品兼容。
+必须核：真实Chrome页面请求和Node APIRequestContext分离；exact proxy/Host与无fallback；原Bearer+独立Cookie补证；SSE与真实ACK prefix；原四观察与最终backend/context；owned cleanup、报告与未知失败。
 
-## 独立实际检查
+## 历史7805限定批准（不迁移到后继）
 
-完整阅读2脚本与SVC verify接口。Node24定向tsc exit0，原始[日志](../../docs/evidence/wpf-release01/independent-typecheck.log)。独立[raw/artifact审计](../../docs/evidence/wpf-release01/independent-audit.json)exit0：2source=target=run hash，8checks/report原字节hash，旧新各24wire、2POST同key/body/turn、真实协商/legacy；两manifest各10files由保留artifact verify重验，loaded10/5逐字匹配，sourceTree/lockDigest与gitobject一致，自有checkout确已移除，protected diff0。目视new light/dark390，侧栏覆盖限制与作者说明一致。
+历史原件[previous-review](../../docs/evidence/wpf-release01/fixed-origin/previous-review.md)逐字保存，target7805b7dd20b1dda1b24ecb7497b1fca84bc5a63b、mainc450事实不改。
 
-0 blocking；没有需修P0–P3 findings。早期非正式检查提出cleanup、console门禁、format2要求均已在固定实现纳入，未把它们伪作某个正式拒绝target。
+## 历史 c1 caller候选（现被c2修复准备替代；三App仍NOT_RUN）
 
-## 作者检查与未验证
+[准备稿](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)与[固定父/worker/inputs/deps](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/source-pins.json)位于独立TMP；本页9658两harness批准不迁移为caller或运行批准。新review需覆盖deferred proxy launch/close握手、native外层sandbox差异、partial startup清理、未知DB保留与outer实际退出/唯一seal合同。已审30asset原件只作输入，不反复验证或伪造actual。
 
-作者真实浏览器两旅程及局部tsc/cleanup见[README](../../docs/evidence/wpf-release01/README.md)和[source-manifest](../../docs/evidence/wpf-release01/source-manifest.json)。root未重跑浏览器/PG：DB删除以作者cleanup为据，未独立查库。没有全故障注入、真实模型、个人发布或全产品兼容结论。390侧栏打开截图不是完整窄屏UX验收。
+## 历史 c2 caller：source修复与小额actual（独审前）
 
-发布条件：严格固定new format2 releaseId `8d8ab520a9d43c7b9dafb22911416ee7` 和已测完整descriptor/manifest相同；不能仅相同source SHA复用。源码后续改变须重新定target。此次metadata提交不改变获审两源码。
+[c1独审](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/c1-root-review.json)的REL-C1-R1/P1通过实际目录identity守卫修复；REL-C1-R2/P2将独立boss池计入12连接上限。[c2源与check](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/source-pins.json)固定，三个真实helper场景3/3/outer0/ownedTMP absent；不等于caller native授权或三App通过。现9658源码与strict原批准保留不重跑；c2父/worker/final native需root集中delta审。
 
-入口：[plan](plan.md)、[status](status.md)、[quality](../../docs/evidence/wpf-release01/quality.md)。
+## 当前 c2 caller：限定集中独审已通过
+
+[c2独审原件](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/c2-root-review.json)与[native精确接受](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/c2-native-boundary.json)绑定933c记录/parent3a9d/worker5800、71输入与14manifest；两finding CLOSED、0blocking。3helper实际/outer0/244ms/精确TMP absent已核。9658两harness及旧strict审查不变。批准仅准备源与这次局部实际，不给三App/Cookie/PG/Chrome通过或运行许可，不给6c缺失的lateLogout修复背书；后续metadata HEAD由TMP正常绑定，不追改历史审查target。
+
+## 历史 c2 actual：原失败已独立接收
+
+[c2首实际原件](../../docs/evidence/wpf-release01/fixed-origin/caller-c2-first/README.md)固定1e5f/parent3a9d，outer1/worker65、410ms，sandbox规则编译拒绝发生于Node前；真实三App/Cookie尚未进入。源码审批与3helper实际接受不撤改，也不充当完整runtime通过。生成profile原文以sandbox.sb保留并由索引明确非metadata，不改proof parser或隐藏后缀。无第二次运行。
+
+## 历史 c3：单点修正（集中审前）
+
+[c2 actual独审](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/c2-first-root-review.json)接受410ms失败/真实cleanup；c3仅host字面改localhost，实际生成profile的true检查exit0/47ms，见[c3原件](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/index.json)。9658两harness与既有strict/source批准不变；c3父需新的精确native绑定，3App仍NOT_RUN。作者不以局部语法通过批准完整网络/数据库/Chrome边界。
+
+## 历史 c3 精确准备已接受（actual前）
+
+[c3集中审](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/c3-root-review.json)核一literal/9规则/47ms syntax实际、0blocking；[native精确接受](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/c3-native-boundary.json)仅parent2500/worker5800与既定权限，不是三App通过。旧c2失败归因及cleanup接受保持，固定9658两harness/strict与当前实际分层。
+
+## 当前 c3 actual PASS / 独立证据审待完成
+
+[65原件](../../docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/index.json)及[限定结果与清理](../../docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/README.md)：真实outer0/23,495ms、3App各4观察/3compat IDs、独立Cookie probe；完整marked DB/HTTP/Chrome/PGID/scratch/admin清理。作者仅报告实际，不自行批准独立review。原源码/准备批准与失败不改，主线/部署仍未接收。

@@ -1,0 +1,479 @@
+{
+  "state": "PASS",
+  "workerPid": 66920,
+  "startedAt": "2026-10-07T11:53:13.895Z",
+  "sourceHead": "5df2b26281881cc992af80a2c0bb92cba9b61435",
+  "implementation": "9658a6b763de69038778de1b0c16de64ff824c75",
+  "sourceHashes": {
+    "apps/web/test/web-release-compatibility.browser.ts": "8d7ef686cbb6cf32b1daa72d692aa5bd4ad9ea4a03a173fc59c1e1bf24d156d7",
+    "apps/web/test/web-release-compatibility.fixture.ts": "9d078c59e83bc02d0dee45c7d0ec6c41f8c94e06780495098ce6c79d28ddf86c"
+  },
+  "errors": [],
+  "chromeRequested": true,
+  "chromeClosed": true,
+  "compatibility": {
+    "startedAt": "2026-10-07T11:53:14.241Z",
+    "finishedAt": "2026-10-07T11:53:37.016Z",
+    "results": [
+      {
+        "label": "retained-461a",
+        "artifact": {
+          "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+          "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+          "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+        },
+        "observations": {
+          "read": {
+            "ownerAuthenticated": true,
+            "conversationBound": true,
+            "taskBound": true
+          },
+          "send": {
+            "acceptedTurnBound": true,
+            "requestedProfilePreserved": true
+          },
+          "recover": {
+            "sameKey": true,
+            "sameBody": true,
+            "sameTurn": true
+          },
+          "negotiation": {
+            "legacyReadable": true,
+            "streamHeaderHandled": true,
+            "profileHeaderHandled": true
+          }
+        },
+        "conversationId": "f77d9033-4b4f-43b4-8380-9da0c0414f57",
+        "taskId": "24f31cdf-aaf5-4c8f-8eb1-869484480ea8",
+        "fault": {
+          "path": "/api/conversations/f77d9033-4b4f-43b4-8380-9da0c0414f57/turns",
+          "key": "4a1ea5ad-10f2-44ae-bd33-d9a2b4b46af7:turn",
+          "bodySha256": "c5ae7510939f6f55e6f56fdadd41757773dc036000756f94af5bfc39548aa12a",
+          "status": 202,
+          "contentLength": 1239,
+          "contentType": "application/json; charset=utf-8",
+          "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+          "sameRequest": true,
+          "matches": 1
+        },
+        "loadedAssets": [
+          {
+            "path": "/assets/assistant-ui-CcdakA0V.css",
+            "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+          },
+          {
+            "path": "/assets/index-5W26Yecv.css",
+            "sha256": "208237f94c4f3a0d1479a527a9e81c2cb457806bf7879baa845a90d1c7f7ec71"
+          },
+          {
+            "path": "/assets/rolldown-runtime-qXqUbbKo.js",
+            "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+          },
+          {
+            "path": "/assets/index-DuzR10it.js",
+            "sha256": "0dc1014006fd9a79601e7d75590c239f63533ef6e4c34f5dc141657f2c313555"
+          },
+          {
+            "path": "/assets/assistant-ui-BW1JBgq4.js",
+            "sha256": "0eaf6899d1d7b4ce9d365aa9481e52a30550c758c4a7129f783907606e8bdc39"
+          },
+          {
+            "path": "/assets/assistant-ui-CcdakA0V.css",
+            "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+          },
+          {
+            "path": "/assets/index-5W26Yecv.css",
+            "sha256": "208237f94c4f3a0d1479a527a9e81c2cb457806bf7879baa845a90d1c7f7ec71"
+          },
+          {
+            "path": "/assets/rolldown-runtime-qXqUbbKo.js",
+            "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+          },
+          {
+            "path": "/assets/index-DuzR10it.js",
+            "sha256": "0dc1014006fd9a79601e7d75590c239f63533ef6e4c34f5dc141657f2c313555"
+          },
+          {
+            "path": "/assets/assistant-ui-BW1JBgq4.js",
+            "sha256": "0eaf6899d1d7b4ce9d365aa9481e52a30550c758c4a7129f783907606e8bdc39"
+          }
+        ],
+        "pageErrors": [],
+        "consoleErrors": [
+          {
+            "text": "Failed to load resource: net::ERR_CONTENT_LENGTH_MISMATCH",
+            "path": "/api/conversations/f77d9033-4b4f-43b4-8380-9da0c0414f57/turns"
+          },
+          {
+            "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "path": "/api/conversations/f77d9033-4b4f-43b4-8380-9da0c0414f57"
+          }
+        ],
+        "auth": "original retained App Bearer",
+        "providerQueries": 0
+      },
+      {
+        "label": "retained-caa1",
+        "artifact": {
+          "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+          "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+          "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+        },
+        "observations": {
+          "read": {
+            "ownerAuthenticated": true,
+            "conversationBound": true,
+            "taskBound": true
+          },
+          "send": {
+            "acceptedTurnBound": true,
+            "requestedProfilePreserved": true
+          },
+          "recover": {
+            "sameKey": true,
+            "sameBody": true,
+            "sameTurn": true
+          },
+          "negotiation": {
+            "legacyReadable": true,
+            "streamHeaderHandled": true,
+            "profileHeaderHandled": true
+          }
+        },
+        "conversationId": "f91d2d93-46dd-453b-92fd-513a5485f295",
+        "taskId": "167ed62e-5ddd-49fd-bff4-b976e23f9794",
+        "fault": {
+          "path": "/api/conversations/f91d2d93-46dd-453b-92fd-513a5485f295/turns",
+          "key": "ee946cbd-0921-4256-bc34-80a12604e2d8:turn",
+          "bodySha256": "300015fc91107df518fbc4fea36cfa11ec356fc0d904d69c295cf9b8fc2c2176",
+          "status": 202,
+          "contentLength": 1239,
+          "contentType": "application/json; charset=utf-8",
+          "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+          "sameRequest": true,
+          "matches": 1
+        },
+        "loadedAssets": [
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-CcdakA0V.css",
+            "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/rolldown-runtime-qXqUbbKo.js",
+            "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-4FtYFUKm.css",
+            "sha256": "5e4136e5e05dea9dafdb1f7eb20aad3241e3242d6d52db40e73383fdf28c761f"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-C4nOJxn3.js",
+            "sha256": "6134c1c4171f07fe0749d50a7095e70ef51c47b75c8e56b3bc1d94fd73e2d495"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-BpywiqNX.js",
+            "sha256": "389e15a7e05d082f140ff6fd88f91991231944655ff9fc46bb36c90604f9a365"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-CcdakA0V.css",
+            "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-4FtYFUKm.css",
+            "sha256": "5e4136e5e05dea9dafdb1f7eb20aad3241e3242d6d52db40e73383fdf28c761f"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/rolldown-runtime-qXqUbbKo.js",
+            "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/index-C4nOJxn3.js",
+            "sha256": "6134c1c4171f07fe0749d50a7095e70ef51c47b75c8e56b3bc1d94fd73e2d495"
+          },
+          {
+            "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/assistant-ui-BpywiqNX.js",
+            "sha256": "389e15a7e05d082f140ff6fd88f91991231944655ff9fc46bb36c90604f9a365"
+          }
+        ],
+        "pageErrors": [],
+        "consoleErrors": [
+          {
+            "text": "Failed to load resource: net::ERR_CONTENT_LENGTH_MISMATCH",
+            "path": "/api/conversations/f91d2d93-46dd-453b-92fd-513a5485f295/turns"
+          },
+          {
+            "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "path": "/api/conversations/f91d2d93-46dd-453b-92fd-513a5485f295"
+          }
+        ],
+        "auth": "original retained App Bearer",
+        "providerQueries": 0
+      },
+      {
+        "label": "retained-d629",
+        "artifact": {
+          "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+          "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+          "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+        },
+        "observations": {
+          "read": {
+            "ownerAuthenticated": true,
+            "conversationBound": true,
+            "taskBound": true
+          },
+          "send": {
+            "acceptedTurnBound": true,
+            "requestedProfilePreserved": true
+          },
+          "recover": {
+            "sameKey": true,
+            "sameBody": true,
+            "sameTurn": true
+          },
+          "negotiation": {
+            "legacyReadable": true,
+            "streamHeaderHandled": true,
+            "profileHeaderHandled": true
+          }
+        },
+        "conversationId": "c1a06aa3-ffcd-4501-9935-13ece6534deb",
+        "taskId": "095dde05-1ba5-49ad-8811-4daef7420d38",
+        "fault": {
+          "path": "/api/conversations/c1a06aa3-ffcd-4501-9935-13ece6534deb/turns",
+          "key": "9681785c-3aad-4b01-84bf-f6e6be640fbb:turn",
+          "bodySha256": "1a7e0a1df462ca96427078ce66d2322b67c40d344f20d0c2a181eb0397ad8a79",
+          "status": 202,
+          "contentLength": 1239,
+          "contentType": "application/json; charset=utf-8",
+          "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+          "sameRequest": true,
+          "matches": 1
+        },
+        "loadedAssets": [
+          {
+            "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/assistant-ui-CcdakA0V.css",
+            "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+          },
+          {
+            "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/index-DzESKX8S.css",
+            "sha256": "f7e34bb0b280ed753b5b2b40f509d90a9f36704c3f658136bacbe83d1e1ce036"
+          },
+          {
+            "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/rolldown-runtime-qXqUbbKo.js",
+            "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+          },
+          {
+            "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/index-CZaGITme.js",
+            "sha256": "a7178926f022221df9cba8b816145c2bafed25ba8239ab8e0ae617d17a8b843e"
+          },
+          {
+            "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/assistant-ui-C7NurJFc.js",
+            "sha256": "5b15ea345d8912295e322561bc2baa2af88610b7f56a7c2907bdd2215a17687e"
+          },
+          {
+            "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/assistant-ui-CcdakA0V.css",
+            "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5"
+          },
+          {
+            "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/index-DzESKX8S.css",
+            "sha256": "f7e34bb0b280ed753b5b2b40f509d90a9f36704c3f658136bacbe83d1e1ce036"
+          },
+          {
+            "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/rolldown-runtime-qXqUbbKo.js",
+            "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51"
+          },
+          {
+            "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/index-CZaGITme.js",
+            "sha256": "a7178926f022221df9cba8b816145c2bafed25ba8239ab8e0ae617d17a8b843e"
+          },
+          {
+            "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/assistant-ui-C7NurJFc.js",
+            "sha256": "5b15ea345d8912295e322561bc2baa2af88610b7f56a7c2907bdd2215a17687e"
+          }
+        ],
+        "pageErrors": [],
+        "consoleErrors": [
+          {
+            "text": "Failed to load resource: net::ERR_CONTENT_LENGTH_MISMATCH",
+            "path": "/api/conversations/c1a06aa3-ffcd-4501-9935-13ece6534deb/turns"
+          },
+          {
+            "text": "Failed to load resource: the server responded with a status of 401 (Unauthorized)",
+            "path": "/api/conversations/c1a06aa3-ffcd-4501-9935-13ece6534deb"
+          }
+        ],
+        "auth": "original retained App Bearer",
+        "providerQueries": 0
+      }
+    ],
+    "errors": [],
+    "progress": {
+      "phase": "done",
+      "app": null,
+      "completed": [
+        {
+          "phase": "fixture",
+          "app": null
+        },
+        {
+          "phase": "chrome",
+          "app": null
+        },
+        {
+          "phase": "canary",
+          "app": null
+        },
+        {
+          "phase": "cookie-connect",
+          "app": null
+        },
+        {
+          "phase": "cookie-flags",
+          "app": null
+        },
+        {
+          "phase": "cookie-csrf",
+          "app": null
+        },
+        {
+          "phase": "app-connect",
+          "app": "retained-461a"
+        },
+        {
+          "phase": "profile",
+          "app": "retained-461a"
+        },
+        {
+          "phase": "ack-loss",
+          "app": "retained-461a"
+        },
+        {
+          "phase": "task-completion",
+          "app": "retained-461a"
+        },
+        {
+          "phase": "explicit-retry",
+          "app": "retained-461a"
+        },
+        {
+          "phase": "legacy-read",
+          "app": "retained-461a"
+        },
+        {
+          "phase": "asset-observation",
+          "app": "retained-461a"
+        },
+        {
+          "phase": "app-connect",
+          "app": "retained-caa1"
+        },
+        {
+          "phase": "profile",
+          "app": "retained-caa1"
+        },
+        {
+          "phase": "ack-loss",
+          "app": "retained-caa1"
+        },
+        {
+          "phase": "task-completion",
+          "app": "retained-caa1"
+        },
+        {
+          "phase": "explicit-retry",
+          "app": "retained-caa1"
+        },
+        {
+          "phase": "legacy-read",
+          "app": "retained-caa1"
+        },
+        {
+          "phase": "asset-observation",
+          "app": "retained-caa1"
+        },
+        {
+          "phase": "app-connect",
+          "app": "retained-d629"
+        },
+        {
+          "phase": "profile",
+          "app": "retained-d629"
+        },
+        {
+          "phase": "ack-loss",
+          "app": "retained-d629"
+        },
+        {
+          "phase": "task-completion",
+          "app": "retained-d629"
+        },
+        {
+          "phase": "explicit-retry",
+          "app": "retained-d629"
+        },
+        {
+          "phase": "legacy-read",
+          "app": "retained-d629"
+        },
+        {
+          "phase": "asset-observation",
+          "app": "retained-d629"
+        },
+        {
+          "phase": "reports",
+          "app": null
+        }
+      ]
+    },
+    "failedAt": null,
+    "reports": [
+      {
+        "label": "retained-461a",
+        "artifact": {
+          "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+          "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+          "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+        },
+        "compatibilityId": "ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9"
+      },
+      {
+        "label": "retained-caa1",
+        "artifact": {
+          "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+          "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+          "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+        },
+        "compatibilityId": "16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a"
+      },
+      {
+        "label": "retained-d629",
+        "artifact": {
+          "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+          "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+          "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+        },
+        "compatibilityId": "eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0"
+      }
+    ],
+    "cleanup": {
+      "databaseName": "flow_release_2cd2f2afaa7e46a19575c8cef72f754e",
+      "marker": "98b23df8-1781-4adc-85e6-ccd9f69a901e",
+      "create": "CONFIRMED",
+      "markerWritten": true,
+      "databaseRemoved": true,
+      "centerClosed": true,
+      "proxyClosed": true,
+      "errors": []
+    },
+    "passed": true,
+    "publicContext": {
+      "format": 1,
+      "publicOrigin": "http://127.0.0.1:61228",
+      "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+    },
+    "providerQueries": 0
+  },
+  "finishedAt": "2026-10-07T11:53:37.017Z",
+  "elapsedMs": 23345
+}

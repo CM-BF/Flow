@@ -51,3 +51,5 @@ Native独审APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE：22固定+17�
 2026-10-07T11:58:29.799277+00:00：native_center_owner对fe8a15fb给出APPROVED_TEST_AND_EVIDENCE_INTAKE，0P1/P2；接收1test+47evidence+3plan，338234B，11直接输入与base相同、5处main变化已读。原结果独审及失败保留；当前不重跑PG/types。
 
 2026-10-07T12:02:59.508446+00:00：native_center_owner限定APPROVED_DOCS f045310247753e117c8155ce286e7c08adbd7f0a，0finding；只接D05实际201源回执与status，初次省略字段null/正确declarations投影分开保留，0重跑/个人变更。实际已部署source7ffff477，metadata不触发再次重启。
+
+2026-10-07T12:09:29.179904+00:00：WPF-RELEASE01 固定9658/c06复用Web实际独审69e9及native_center_owner前像兼容审查；188固定路径逐字接收，主线旧as-const修复由新tuple等价保持。唯一新增直接消费者检查是两入口定向noEmit0/1321ms。三App旧Bearer与独立Cookie探针分开，固定6c不含后继logout修复，未部署个人服务。[接收与原批准](../../docs/evidence/i02/retained-app-7d1-intake/receipt.json)。

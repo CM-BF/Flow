@@ -1,0 +1,290 @@
+{
+  "at": "2026-10-07T11:59:06.606725+00:00",
+  "reviewer": "root / gpt-6-astra / ultra",
+  "decision": "APPROVED_FIXED_ARTIFACT_ACTUAL_COMPATIBILITY_AND_COMPLETE_RETURN",
+  "findings": [],
+  "target": {
+    "source": "9658a6b763de69038778de1b0c16de64ff824c75",
+    "launchMetadata": "5df2b26281881cc992af80a2c0bb92cba9b61435",
+    "seal": "c06fa79c931998eb03a9d04d441681767fd796bf",
+    "branch": "codex/web-release-compatibility",
+    "localRemoteEqual": true,
+    "dirty": false,
+    "backendHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "backendArtifact": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "publicContext": {
+      "format": 1,
+      "publicOrigin": "http://127.0.0.1:61228",
+      "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+    }
+  },
+  "evidence": {
+    "rawFiles": 46,
+    "rawBytes": 409095,
+    "archiveFiles": 65,
+    "archiveBytes": 573653,
+    "allRawAndArchiveByteCountsAndHashesVerified": true,
+    "terminalResultBudgetManifestDigestsVerified": true,
+    "sourceHashes": {
+      "apps/web/test/web-release-compatibility.browser.ts": "8d7ef686cbb6cf32b1daa72d692aa5bd4ad9ea4a03a173fc59c1e1bf24d156d7",
+      "apps/web/test/web-release-compatibility.fixture.ts": "9d078c59e83bc02d0dee45c7d0ec6c41f8c94e06780495098ce6c79d28ddf86c"
+    },
+    "archiveIndex": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/index.json",
+    "archiveIndexSha256": "6ab6135c6849be169d18b1f911581e637136bb54ea8ba0f754637bc9686b6e0f",
+    "cleanupReceipt": "/private/tmp/rel01-c3-actual-yakasi5w/cleanup-accounting.json",
+    "cleanupReceiptSha256": "4f07e3295ea58ae4c1ece15b015dc0c2f6829f43942c3886e00b7da53fd53f60"
+  },
+  "actual": {
+    "outerExit": 0,
+    "workerExit": 0,
+    "chromeExit": {
+      "code": 0,
+      "signal": null,
+      "at": "2026-10-07T11:53:36.801051+00:00"
+    },
+    "outerElapsedMs": 23494.6680069,
+    "lateTerminalElapsedMs": 23419.321166933514,
+    "chargeMs": 23495,
+    "phaseMs": 180000,
+    "phaseState": "CLOSED_ONE_ATTEMPT",
+    "unusedMs": 156505,
+    "unusedIsNotNewCredit": true,
+    "streams": {
+      "worker.stdout": {
+        "received": 71,
+        "kept": 71,
+        "drop": 0,
+        "eof": true
+      },
+      "worker.stderr": {
+        "received": 0,
+        "kept": 0,
+        "drop": 0,
+        "eof": true
+      },
+      "chrome.stdout": {
+        "received": 0,
+        "kept": 0,
+        "drop": 0,
+        "eof": true
+      },
+      "chrome.stderr": {
+        "received": 12405,
+        "kept": 12405,
+        "drop": 0,
+        "eof": true
+      }
+    },
+    "outerBothEOF": true
+  },
+  "applications": [
+    {
+      "label": "retained-461a",
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90"
+      },
+      "compatibilityId": "ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9",
+      "wireRecords": 26,
+      "turn": "e8dceaf9-8e91-49e0-be1d-eebd0adc78fa",
+      "sameKeyBodyAndTurn": true,
+      "explicitUnauthenticated401": true,
+      "observations": {
+        "read": {
+          "ownerAuthenticated": true,
+          "conversationBound": true,
+          "taskBound": true
+        },
+        "send": {
+          "acceptedTurnBound": true,
+          "requestedProfilePreserved": true
+        },
+        "recover": {
+          "sameKey": true,
+          "sameBody": true,
+          "sameTurn": true
+        },
+        "negotiation": {
+          "legacyReadable": true,
+          "streamHeaderHandled": true,
+          "profileHeaderHandled": true
+        }
+      },
+      "loadedAssetObservations": 10,
+      "checksAndImportedCopiesVerified": true
+    },
+    {
+      "label": "retained-caa1",
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "compatibilityId": "16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a",
+      "wireRecords": 26,
+      "turn": "03848908-be93-48a4-a52e-310d0474442a",
+      "sameKeyBodyAndTurn": true,
+      "explicitUnauthenticated401": true,
+      "observations": {
+        "read": {
+          "ownerAuthenticated": true,
+          "conversationBound": true,
+          "taskBound": true
+        },
+        "send": {
+          "acceptedTurnBound": true,
+          "requestedProfilePreserved": true
+        },
+        "recover": {
+          "sameKey": true,
+          "sameBody": true,
+          "sameTurn": true
+        },
+        "negotiation": {
+          "legacyReadable": true,
+          "streamHeaderHandled": true,
+          "profileHeaderHandled": true
+        }
+      },
+      "loadedAssetObservations": 10,
+      "checksAndImportedCopiesVerified": true
+    },
+    {
+      "label": "retained-d629",
+      "artifact": {
+        "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+        "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+      },
+      "compatibilityId": "eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0",
+      "wireRecords": 26,
+      "turn": "cee7d70f-ddb4-4501-b8a4-899e2905dc86",
+      "sameKeyBodyAndTurn": true,
+      "explicitUnauthenticated401": true,
+      "observations": {
+        "read": {
+          "ownerAuthenticated": true,
+          "conversationBound": true,
+          "taskBound": true
+        },
+        "send": {
+          "acceptedTurnBound": true,
+          "requestedProfilePreserved": true
+        },
+        "recover": {
+          "sameKey": true,
+          "sameBody": true,
+          "sameTurn": true
+        },
+        "negotiation": {
+          "legacyReadable": true,
+          "streamHeaderHandled": true,
+          "profileHeaderHandled": true
+        }
+      },
+      "loadedAssetObservations": 10,
+      "checksAndImportedCopiesVerified": true
+    }
+  ],
+  "cookie": {
+    "connection": {
+      "initial": 200,
+      "before": "unauthenticated",
+      "connect": 200,
+      "ready": "ready",
+      "protocol": "flow.browser-session.v1"
+    },
+    "read": 200,
+    "authenticated": "ready",
+    "noCsrf": 403,
+    "logout": 200,
+    "loggedOut": "unauthenticated",
+    "after": "unauthenticated",
+    "samePrincipal": true,
+    "flags": {
+      "domain": "127.0.0.1",
+      "path": "/",
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Strict"
+    },
+    "context": {
+      "format": 1,
+      "publicOrigin": "http://127.0.0.1:61228",
+      "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+    },
+    "scope": "Independent real public Cookie/CSRF probe; retained Apps remain native Bearer clients",
+    "secretsPersisted": false
+  },
+  "cleanup": {
+    "completeReturnAt": "2026-10-07T11:53:59.732591+00:00",
+    "freshRootIdentityChecks": [
+      {
+        "id": 66659,
+        "state": "ESRCH"
+      },
+      {
+        "id": -66659,
+        "state": "ESRCH"
+      },
+      {
+        "id": 66920,
+        "state": "ESRCH"
+      },
+      {
+        "id": -66920,
+        "state": "ESRCH"
+      },
+      {
+        "id": 73869,
+        "state": "ESRCH"
+      },
+      {
+        "id": -73869,
+        "state": "ESRCH"
+      }
+    ],
+    "freshRootScratchAndPrivateAdminAbsent": true,
+    "privateAdminContentsNotRead": true,
+    "fixture": {
+      "databaseName": "flow_release_2cd2f2afaa7e46a19575c8cef72f754e",
+      "marker": "98b23df8-1781-4adc-85e6-ccd9f69a901e",
+      "create": "CONFIRMED",
+      "markerWritten": true,
+      "databaseRemoved": true,
+      "centerClosed": true,
+      "proxyClosed": true,
+      "errors": []
+    },
+    "databaseEvidence": "Reviewed fixed fixture close(): marker equality, owned pools ended, pg_stat_activity empty before ordinary DROP, pg_database name absent after DROP; successful persisted cleanup receipt. No separate DB OID assertion or new root SQL probe."
+  },
+  "boundary": {
+    "name": "native-chrome-sibling-fixed-http-proxy-without-custom-outer-write-or-egress-sandbox",
+    "chromeHasNativeInternalSandbox": true,
+    "customOuterChromeWriteOrEgressSandbox": false,
+    "actualPublicRouting": "owned explicit HTTP proxy and canary; virtual publicOrigin; no personal 61228 service contact",
+    "providerQueries": 0,
+    "rootLaunchedRuntime": false,
+    "measurement": "PARTIAL_RETAINED_ADOPTION"
+  },
+  "reviewNotes": [
+    "Both original 202 and explicit retry are real public HTTP through Chrome; truncated first body is 1 of declared 1239 bytes; original-key/body retry returns same turn and replayed=true.",
+    "Each console 401 has exactly one matching bearer=false conversation GET from deliberate page.evaluate negative-auth probe; all authenticated conversation GETs inspected succeed. Expected body-loss errors retained, no pageErrors.",
+    "Four check documents per App and report hashes/imported copies verified independently; prior asset integrity report remains the full retained artifact check, owner actual preflight reverified fixed full supply.",
+    "Independent Cookie/CSRF probe uses the real fixed center; retained Apps use their original Bearer flow. HTTP loopback cookie secure=false is explicit, not HTTPS coverage.",
+    "Source still uses marked synthetic runner/task completion and zero provider calls; this is genuine center/API/Chrome compatibility with deterministic completion, not live model/provider validation.",
+    "Previous c2 sandbox parse FAIL and complete RETURN retained in caller-c2-first; c3 sole literal correction had separate syntax review before fresh actual."
+  ],
+  "cleanCodeReview": {
+    "scope": "Fixed caller c3 actual receipts, two immutable harness sources, generated reports and archival integrity",
+    "method": "Checked single-purpose state transitions, explicit boundary/cleanup ownership, error retention, expected-error assertions, immutable report identity and behavior evidence; no new implementation edits or duplicate tests.",
+    "findingsRequiringFix": []
+  },
+  "limitations": [
+    "Does not rebind later main or lateLogout fix to this immutable 6c backend artifact.",
+    "Does not prove personal deployment, whole main integration, provider behavior, cross-origin cookie policy, global disk quota or complete OS egress isolation.",
+    "No new screenshots or theme/accessibility checks claimed by this compatibility-only run.",
+    "Owner source scope is STOP; registry release and main intake remain manager/Original responsibilities."
+  ]
+}

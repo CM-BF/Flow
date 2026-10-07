@@ -1,0 +1,119 @@
+{
+  "state": "REVIEWED_SOURCE_BOUND_NOT_RUN",
+  "head": "1e5f4b36f118456d39dcbe2c9eabd4ffb65394d9",
+  "implementation": "9658a6b763de69038778de1b0c16de64ff824c75",
+  "files": [
+    {
+      "path": "/private/tmp/rel01-c2/binding.json",
+      "realpath": "/private/tmp/rel01-c2/binding.json",
+      "bytes": 39079,
+      "sha256": "b1c02802222b61344b8d62487558e9c4def53ba20a913fa212378af2497f4f82"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/supervisor.py",
+      "realpath": "/private/tmp/rel01-c2/supervisor.py",
+      "bytes": 18546,
+      "sha256": "3a9d66e5242a449e47654b25bce458521aab63d8556815d2efe16d54160f3ad3"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/worker.mjs",
+      "realpath": "/private/tmp/rel01-c2/worker.mjs",
+      "bytes": 5411,
+      "sha256": "5800155a7b5c680cbf580efa60fd311f1f8e13357301fc487d511773560b9751"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/measure.py",
+      "realpath": "/private/tmp/rel01-c2/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/inputs.json",
+      "realpath": "/private/tmp/rel01-c2/inputs.json",
+      "bytes": 6894,
+      "sha256": "477c61845b1f8abebdc8a8d5f6b3089c447b9e721f1255c511829a01488dcce2"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/README.md",
+      "realpath": "/private/tmp/rel01-c2/README.md",
+      "bytes": 11891,
+      "sha256": "206443bb07c33e657116a52d94f220f9e591bf32e29bd91c30a3efe5a12baf47"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/scratch-lifecycle-check.py",
+      "realpath": "/private/tmp/rel01-c2/scratch-lifecycle-check.py",
+      "bytes": 4284,
+      "sha256": "5efcf4bfe75d267ea46667753e955299b574316c0aa4605b36c7032b24fc9577"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/c1-c2.diff",
+      "realpath": "/private/tmp/rel01-c2/c1-c2.diff",
+      "bytes": 4662,
+      "sha256": "fb7b9a66b30a0173378e1dff56ea47665beeb7ccd8bab93d7adb3586c8681c8b"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/check-admission.json",
+      "realpath": "/private/tmp/rel01-c2/check-admission.json",
+      "bytes": 490,
+      "sha256": "9e181897a0f6a5727f3b5171fcf43f68a7c145d052594fde1cac11979b425325"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/check-outer.json",
+      "realpath": "/private/tmp/rel01-c2/check-outer.json",
+      "bytes": 81,
+      "sha256": "fd457766f96172f3828440a212854d0a1a30b8e4a3bd8af477a466681ec33855"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/check-stdout.txt",
+      "realpath": "/private/tmp/rel01-c2/check-stdout.txt",
+      "bytes": 811,
+      "sha256": "d0eeeaf3fc98f262c857d654fdca6e82a26f03126bac53a4c21bd7d8025541ee"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/check-stderr.txt",
+      "realpath": "/private/tmp/rel01-c2/check-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/local-check-result.json",
+      "realpath": "/private/tmp/rel01-c2/local-check-result.json",
+      "bytes": 965,
+      "sha256": "74f205a6c05ebf0c923569651629e00052f37d2ea2c157774584ed3639b97c06"
+    },
+    {
+      "path": "/private/tmp/rel01-c2/check-receipt.json",
+      "realpath": "/private/tmp/rel01-c2/check-receipt.json",
+      "bytes": 1631,
+      "sha256": "63e43a740f52d2df78bcf08e5ada7d58ebb737594601d049dfe2c0c384c08b78"
+    }
+  ],
+  "nativeBoundaryApproval": {
+    "path": "/private/tmp/root-release-c2-native-boundary-acceptance-20261007.json",
+    "realpath": "/private/tmp/root-release-c2-native-boundary-acceptance-20261007.json",
+    "bytes": 1141,
+    "sha256": "d92596a5e34966fc87cc91daee28ae0ab2cb6da151c21cc23476c75eb0764ef9"
+  },
+  "productSourcePins": {
+    "apps/web/test/web-release-compatibility.browser.ts": "8d7ef686cbb6cf32b1daa72d692aa5bd4ad9ea4a03a173fc59c1e1bf24d156d7",
+    "apps/web/test/web-release-compatibility.fixture.ts": "9d078c59e83bc02d0dee45c7d0ec6c41f8c94e06780495098ce6c79d28ddf86c"
+  },
+  "oldCandidateUnchanged": {
+    "path": "/private/tmp/rel01-c1/manifest.json",
+    "realpath": "/private/tmp/rel01-c1/manifest.json",
+    "bytes": 2549,
+    "sha256": "65f9d027c147db837fe27720eefadd48d2aa39cb20dcf70f68f363ad20782404"
+  },
+  "localHelperActual": {
+    "cases": 3,
+    "exit": 0,
+    "chargeMs": 244,
+    "threeAppRuntime": "NOT_RUN"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-release-c2-delta-review-20261007.json",
+    "realpath": "/private/tmp/root-release-c2-delta-review-20261007.json",
+    "bytes": 7036,
+    "sha256": "e0b530de500287d4df00239213179413ba20c3028295e2f08fd0952e57ff3e93"
+  }
+}
