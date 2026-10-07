@@ -11,8 +11,14 @@
 
 私有策略初始选定字段：version/installation identity及server现有cookieOrigin、trustedOrigins、authEpoch；不引新secret。publicOrigin必须已规范化，trustedOrigins有界唯一排序用于digest，server仍再次做自己的严格配置/CSRF/epoch验证。具体序列化字段与错误code随实现固定，不能在请求中临时扩大信任。
 
-兼容配置是新增显式v2证据，不修改原v1报告或假造context。导入仍允许有界验证旧报告便于回溯；新configured发布必须v2及全四check一致。策略摘要不含owner/runner/provider token。旧状态读与新configured开通严格区分；若旧指针尚无新context报告，prepare拒绝，不能先停服务再发现缺件。
+兼容配置是新增显式v2证据，不修改原v1报告或假造context。导入仍允许有界验证旧报告便于回溯；新configured发布必须v2及全四check一致。策略摘要不含owner/runner/provider token。旧状态读与新configured开通严格区分；若任一保留artifact缺受信新tuple报告，prepare拒绝，不能先停服务再发现缺件。
 
 已有量级仅来自SVC06封存证据：旧30资产4,538,660B，3manifest4,906B，当前三报告15文件5,362B；历史报告全库存UNKNOWN。第四实际App未提供；新count4不是实际发布通过。192MiB和32reports原已有，不提高这两项。完整来源在backend-release/docs/evidence/svc06/update-4fe-candidate/retained-size-evidence.json（fixed1e7c）。
 
 直接验证：缺失defaultoff、合法设置实际env、错误owner/mode/link/文件变更在stop前拒绝；root env无法注入；normalized context等价与不同origin/digest/check拒绝；旧v1legacy成功/configured失败；原3可读、第四成功且旧namespace原字节、第五/byte/report拒绝且指针不变；旧count3宿主拒读4项反例。只跑本模块和必要直接消费者，不重跑已绿artifact或provider。真实Web/后台组合、用户tab、默认生产部署和个人切换均不在局部证明内。
+
+## 历史发布指针与当前运行证明
+
+pointer只决定current/retained集合及CAS版本；其中backendHead/compatibilityIds记录发布时证明，旧字节不自动重写。configured prepare/host显式提供实际backendHead与规范context，load为全体retained查找并核同一运行tuple的v2报告，返回verifiedTuple（含本次IDs），静态snapshot固定这个tuple。无context沿legacy旧pointer证明；缺任一新报告或wrongtuple停在stop前。publish/rollback继续显式CAS并保存新证明，不自动改历史。
+
+启动三roles时父host从selected backend/current固定目标取head；Web-only从已owned state.source.head取head，绝不使用独立Webhost artifact.sourceHead。白名单owned wrapper传非秘密head与策略pin；runService通过原nonce/PID验证后重核pin，受信serviceEnvironment才生成center设置与Web运行tuple。静态identity返回已验证的非秘密tuple；configured ready不得仅凭旧artifact identity误认为已启用新配置。此实验/单元入口不代表旧宿主实际已升级。

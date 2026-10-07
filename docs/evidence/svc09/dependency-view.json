@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-07T08:27:03.374740+00:00",
+  "purpose": "ignored links only; no install/copy/import/donor write",
+  "links": [
+    {
+      "name": "pg",
+      "version": "8.23.1",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/node_modules/pg",
+      "files": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+          "bytes": 1668,
+          "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+          "bytes": 1810,
+          "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c"
+        }
+      ]
+    },
+    {
+      "name": "vite",
+      "version": "8.3.2",
+      "donor": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite",
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy/apps/web/node_modules/vite",
+      "files": [
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/package.json",
+          "bytes": 5081,
+          "sha256": "2b906339263f24e9be4219f93d966b4bcf0d4141adc05939a537c3a8fd6f760a"
+        },
+        {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+          "bytes": 2670,
+          "sha256": "f109fff88512ed5cf39503b7a4b2a1de1c95bff333cb1d3635454558e3bfefc7"
+        }
+      ]
+    }
+  ]
+}

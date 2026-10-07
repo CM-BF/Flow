@@ -13,8 +13,8 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy |
 | Branch | codex/personal-release-policy |
 | Base | 5b0bef86086a611937e098c78bc542fde6ed9539 |
-| HEAD | 5b0bef86086a611937e098c78bc542fde6ed9539；首canonical准备中，产品尚未修改 |
-| 工作树dirty状态 | 仅own plan/evidence；原46源保持固定 |
+| HEAD | c1a1a44e2812f3164a34cb4a53c842501255064f；12路径源码与直接用例首实现固定中 |
+| 工作树dirty状态 | 原claim内12路径首实现及own记录 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
@@ -25,7 +25,7 @@
 | 需用户决定 | NONE |
 | 实现目标 | NOT_FIXED |
 | 实现范围 | tools/personal-preview/browser-session-configuration.mjs, tools/personal-preview/browser-session-configuration.test.mjs, tools/personal-preview/environment.mjs, tools/personal-preview/environment.test.mjs, tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/web-retention-policy.mjs, tools/personal-preview/web-retention-policy.test.mjs, tools/personal-preview/web-release.mjs, tools/personal-preview/web-release.test.mjs, tools/personal-preview/static-web.mjs, tools/personal-preview/static-web.test.mjs |
-| 检查状态 | NOT_RUN；只读输入/claim与Interface，不运行个人服务或PG |
+| 检查状态 | 本段0PG局部检查即将开始；选择/预算见local-plan，未预报通过 |
 | Review | NOT_STARTED |
 | 已集成main状态 / HEAD | 本片未集成；base固定5b0bef86 |
 | claim | 1a2b634b-f88e-41e1-ada2-e912abe52672 v1，14literal；12产品+2metadata |
@@ -41,4 +41,4 @@
 
 ## 边界
 
-本片仅已授权源码和有界0PG局部实现，180s累计/tmp16MiB/raw2MiB。P02真实PG下一窗口优先，到达时本片停在可复原安全点。原SVC06/SVC08既有原件与个人af51/v18、d629/v3、c7b宿主保持，不取私人现场。本status等待D05正式单源登记，不能以未登记猜任务未开工。
+本片仅已授权源码和有界0PG局部实现，180s累计/tmp16MiB/raw2MiB。P02真实PG下一窗口优先，到达时本片停在可复原安全点。原SVC06/SVC08既有原件与个人af51/v18、d629/v3、c7b宿主保持，不取私人现场。本status为唯一source；登记由Lead/D05负责，未同步不能猜任务未开工。

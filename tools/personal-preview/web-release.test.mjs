@@ -1,22 +1,23 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, mkdir, writeFile, readFile, rm, realpath } from 'node:fs/promises';
+import { mkdtemp, mkdir, writeFile, readFile, rm, realpath, readdir } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createHash } from 'node:crypto';
-import { readWebRelease, planWebRelease, loadReleaseAssets, releaseAsset, importWebCompatibility, verifyWebCompatibility } from './web-release.mjs';
+import { readWebRelease, planWebRelease, loadReleaseAssets, releaseAsset, importWebCompatibility, verifyWebCompatibility, findWebCompatibility } from './web-release.mjs';
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const head = 'a'.repeat(40); const digest = 'b'.repeat(64);
 const compatibilityIds = new Map();
 const checks = { read: ['ownerAuthenticated', 'conversationBound', 'taskBound'], send: ['acceptedTurnBound', 'requestedProfilePreserved'], recover: ['sameKey', 'sameBody', 'sameTurn'], negotiation: ['legacyReadable', 'streamHeaderHandled', 'profileHeaderHandled'] };
-async function report(directory, artifact, backendHead = head) {
+async function report(directory, artifact, backendHead = head, context = null) {
+  const format = context === null ? 1 : 2; const contextFields = context === null ? {} : { context };
   const path = join(directory, `report-${artifact.artifactId}`); await mkdir(path, { recursive: true });
   const hashes = {};
   for (const [name, fields] of Object.entries(checks)) {
-    const bytes = JSON.stringify({ format: 1, check: name, backendHead, artifactId: artifact.artifactId, observations: Object.fromEntries(fields.map(name => [name, true])) });
+    const bytes = JSON.stringify({ format, ...contextFields, check: name, backendHead, artifactId: artifact.artifactId, observations: Object.fromEntries(fields.map(name => [name, true])) });
     hashes[name] = sha(bytes); await writeFile(join(path, `${name}.json`), bytes);
   }
-  await writeFile(join(path, 'report.json'), JSON.stringify({ format: 1, policy: 'flow-web-api-v1', backendHead, artifact, checks: hashes }));
+  await writeFile(join(path, 'report.json'), JSON.stringify({ format, policy: `flow-web-api-v${format}`, ...contextFields, backendHead, artifact, checks: hashes }));
   return path;
 }
 async function artifact(directory, label, releaseId, extras = {}) {
@@ -40,7 +41,7 @@ async function save(directory, release) { await writeFile(join(directory, 'web-r
 const request = (artifact, expectedVersion, action = 'publish') => ({ artifact, expectedVersion, action, backendHead: head, compatibilityId: compatibilityIds.get(artifact.artifactId) });
 test('release CAS retains precise old namespaces, rollback changes only current, and full retention refuses publication', async () => {
   await fixture(async directory => {
-    const one = await artifact(directory, 'one'); const two = await artifact(directory, 'two', '2'.repeat(32)); const three = await artifact(directory, 'three', '3'.repeat(32)); const four = await artifact(directory, 'four', '4'.repeat(32));
+    const one = await artifact(directory, 'one'); const two = await artifact(directory, 'two', '2'.repeat(32)); const three = await artifact(directory, 'three', '3'.repeat(32)); const four = await artifact(directory, 'four', '4'.repeat(32)); const five = await artifact(directory, 'five', '5'.repeat(32));
     let value = await planWebRelease({ directory, ...request(one, 0, 'bootstrap') }); await save(directory, value);
     await assert.rejects(planWebRelease({ directory, ...request(two, 0) }), { code: 'WEB_RELEASE_VERSION_CONFLICT' });
     value = await planWebRelease({ directory, ...request(two, 1) }); await save(directory, value);
@@ -51,9 +52,14 @@ test('release CAS retains precise old namespaces, rollback changes only current,
     value = await planWebRelease({ directory, ...request(one, 2, 'rollback') }); await save(directory, value);
     assert.equal(value.current, one.artifactId); assert.equal(value.artifacts.length, 2);
     value = await planWebRelease({ directory, ...request(three, 3) }); await save(directory, value);
-    await assert.rejects(planWebRelease({ directory, ...request(four, 4) }), { code: 'WEB_RETENTION_BUDGET_EXCEEDED' });
-    await assert.rejects(planWebRelease({ directory, ...request(four, 4, 'rollback') }), { code: 'WEB_ROLLBACK_NOT_RETAINED' });
-    assert.equal((await readWebRelease(directory)).version, 4);
+    value = await planWebRelease({ directory, ...request(four, 4) }); await save(directory, value);
+    assert.deepEqual(value.artifacts, [one, two, three, four]);
+    assets = await loadReleaseAssets({ directory, release: value });
+    assert.equal((await releaseAsset(assets, '/assets/lazy.js')).bytes.toString(), "export default 'one'");
+    for (const n of [2,3,4]) assert.ok(await releaseAsset(assets, `/__flow_releases/${String(n).repeat(32)}/assets/lazy.js`));
+    await assert.rejects(planWebRelease({ directory, ...request(five, 5) }), { code: 'WEB_RETENTION_BUDGET_EXCEEDED' });
+    await assert.rejects(planWebRelease({ directory, ...request(five, 5, 'rollback') }), { code: 'WEB_ROLLBACK_NOT_RETAINED' });
+    assert.equal((await readWebRelease(directory)).version, 5);
   });
 });
 test('legacy collisions, namespace reuse, unsafe paths and corrupt metadata fail before replacing the old release', async () => {
@@ -154,5 +160,85 @@ test('serialized release observations preserve valid in-flight reads and reject 
     await save(directory, newer); observedPointer = await readWebRelease(directory); assert.equal((await snapshot()).version, 2);
     await rm(join(directory, 'web-release.json')); observedPointer = await readWebRelease(directory);
     await assert.rejects(snapshot(), { code: 'WEB_RELEASE_METADATA_MISSING' });
+  });
+});
+
+const configuredContext = { format: 1, publicOrigin: 'https://public.example', policySha256: 'd'.repeat(64) };
+test('SVC09 v2 reports bind all four checks and legacy v1 cannot stand in for configured evidence', async () => {
+  await fixture(async directory => {
+    const one = await artifact(directory, 'one');
+    const id = compatibilityIds.get(one.artifactId);
+    await assert.rejects(verifyWebCompatibility({ directory, artifact: one, backendHead: head, compatibilityId: id, expectedContext: configuredContext }), { code: 'WEB_COMPATIBILITY_COMBINATION_UNKNOWN' });
+    const reportDirectory = await report(directory, one, head, configuredContext);
+    const v2 = await importWebCompatibility({ directory, reportDirectory });
+    assert.equal((await verifyWebCompatibility({ directory, artifact: one, backendHead: head, compatibilityId: v2, expectedContext: configuredContext })).format, 2);
+    for (const context of [ { ...configuredContext, publicOrigin: 'https://other.example' }, { ...configuredContext, policySha256: 'e'.repeat(64) } ]) {
+      await assert.rejects(findWebCompatibility({ directory, artifact: one, backendHead: head, expectedContext: context }), { code: 'WEB_COMPATIBILITY_COMBINATION_UNKNOWN' });
+    }
+    await assert.rejects(verifyWebCompatibility({ directory, artifact: one, backendHead: head, compatibilityId: v2 }), { code: 'WEB_COMPATIBILITY_COMBINATION_UNKNOWN' });
+    const check = JSON.parse(await readFile(join(reportDirectory, 'send.json'))); check.context = { ...configuredContext, policySha256: 'e'.repeat(64) };
+    const raw = JSON.stringify(check); await writeFile(join(reportDirectory, 'send.json'), raw);
+    const value = JSON.parse(await readFile(join(reportDirectory, 'report.json'))); value.checks.send = sha(raw); await writeFile(join(reportDirectory, 'report.json'), JSON.stringify(value));
+    await assert.rejects(importWebCompatibility({ directory, reportDirectory }), { code: 'WEB_COMPATIBILITY_INCOMPLETE' });
+  });
+});
+test('SVC09 old pointer serves only with a complete new running tuple and never changes historical bytes', async () => {
+  await fixture(async directory => {
+    const one = await artifact(directory, 'one'); const two = await artifact(directory, 'two', '2'.repeat(32));
+    await save(directory, await planWebRelease({ directory, ...request(one, 0, 'bootstrap') }));
+    const release = await planWebRelease({ directory, ...request(two, 1) }); await save(directory, release);
+    const original = await readFile(join(directory, 'web-release.json')); const newHead = 'e'.repeat(40);
+    const options = { directory, release, expectedBackendHead: newHead, expectedContext: configuredContext };
+    await assert.rejects(loadReleaseAssets(options), { code: 'WEB_COMPATIBILITY_COMBINATION_UNKNOWN' });
+    const ids = {};
+    ids[one.artifactId] = await importWebCompatibility({ directory, reportDirectory: await report(directory, one, newHead, configuredContext) });
+    await assert.rejects(loadReleaseAssets(options), { code: 'WEB_COMPATIBILITY_COMBINATION_UNKNOWN' });
+    ids[two.artifactId] = await importWebCompatibility({ directory, reportDirectory: await report(directory, two, newHead, configuredContext) });
+    const actual = await loadReleaseAssets(options);
+    assert.deepEqual(actual.verifiedTuple, { backendHead: newHead, context: configuredContext, compatibilityIds: ids });
+    const { createWebReleaseSnapshot } = await import('./static-web.mjs');
+    const supplied = { ...configuredContext };
+    const snapshot = createWebReleaseSnapshot(directory, { expectedBackendHead: newHead, expectedContext: supplied });
+    const cached = await snapshot(); supplied.policySha256 = 'f'.repeat(64);
+    assert.strictEqual(await snapshot(), cached); assert.deepEqual(cached.verifiedTuple.context, configuredContext);
+    const other = createWebReleaseSnapshot(directory, { expectedBackendHead: head, expectedContext: configuredContext });
+    await assert.rejects(other(), { code: 'WEB_COMPATIBILITY_COMBINATION_UNKNOWN' });
+    assert.equal((await releaseAsset(actual, '/')).bytes.toString(), '<html>two</html>');
+    await assert.rejects(loadReleaseAssets({ ...options, expectedBackendHead: head }), { code: 'WEB_COMPATIBILITY_COMBINATION_UNKNOWN' });
+    await assert.rejects(loadReleaseAssets({ ...options, expectedBackendHead: undefined }), { code: 'WEB_COMPATIBILITY_REQUIRED' });
+    assert.deepEqual(await readFile(join(directory, 'web-release.json')), original);
+    const planned = await planWebRelease({ directory, artifact: one, expectedVersion: 2, action: 'rollback', backendHead: newHead,
+      compatibilityId: ids[one.artifactId], expectedContext: configuredContext });
+    assert.equal(planned.version, 3); assert.deepEqual(planned.compatibilityIds, ids); assert.equal(planned.backendHead, newHead);
+    assert.deepEqual(await readFile(join(directory, 'web-release.json')), original); // Planning is not publication.
+  });
+});
+test('SVC09 report count bounds existing reads and imports without deleting any committed history', async () => {
+  await fixture(async directory => {
+    const one = await artifact(directory, 'one'); const reportDirectory = await report(directory, one);
+    const store = join(directory, 'web-compatibility'); const existing = await readdir(store);
+    for (let n = 0; n < 32; n++) await mkdir(join(store, n.toString(16).padStart(64, '0')));
+    await assert.rejects(verifyWebCompatibility({ directory, artifact: one, backendHead: head, compatibilityId: compatibilityIds.get(one.artifactId) }), { code: 'WEB_COMPATIBILITY_BUDGET_EXCEEDED' });
+    await assert.rejects(findWebCompatibility({ directory, artifact: one, backendHead: head }), { code: 'WEB_COMPATIBILITY_BUDGET_EXCEEDED' });
+    await assert.rejects(importWebCompatibility({ directory, reportDirectory }), { code: 'WEB_COMPATIBILITY_BUDGET_EXCEEDED' });
+    assert.equal((await readdir(store)).length, existing.length + 32);
+  });
+});
+
+test('SVC09 fixed historical count3 host rejects a four-artifact pointer', async () => {
+  const { execFile } = await import('node:child_process'); const { promisify } = await import('node:util');
+  const { fileURLToPath } = await import('node:url');
+  const { stdout } = await promisify(execFile)('git', ['show', '5b0bef86086a611937e098c78bc542fde6ed9539:tools/personal-preview/web-release.mjs'],
+    { cwd: fileURLToPath(new URL('../../', import.meta.url)), timeout: 1000, maxBuffer: 65536 });
+  assert.ok(stdout.includes('const MAX_ARTIFACTS = 3;'));
+  const historicalSource = stdout.replace("'./web-artifact.mjs'", JSON.stringify(new URL('./web-artifact.mjs', import.meta.url).href));
+  const historical = await import('data:text/javascript;base64,' + Buffer.from(historicalSource).toString('base64'));
+  await fixture(async directory => {
+    for (let n = 1; n <= 4; n++) {
+      const next = await artifact(directory, String(n), String(n).repeat(32));
+      await save(directory, await planWebRelease({ directory, ...request(next, n - 1, n === 1 ? 'bootstrap' : 'publish') }));
+    }
+    await assert.rejects(historical.readWebRelease(directory), { code: 'WEB_RELEASE_METADATA_INVALID' });
+    assert.equal((await readWebRelease(directory)).artifacts.length, 4);
   });
 });
