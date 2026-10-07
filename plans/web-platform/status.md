@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T17:14:11.784Z；插件管理已合入主线并释放，网页诊断已封存，宿主验证失败后已确切归还；下一测量窗口待排干检查。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T17:51:57.226Z；插件管理已集成并释放，网页新修复已审待四版本验证；数据库失败后独立核验已归还计算与连接。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -26,7 +26,7 @@
 | 下一可用交付 | 修复新网页登录恢复问题；通过四版本兼容后更新实际网页，继续改善共享浮层。 |
 | 当前阻塞 | ACTIVE: 新网页会话恢复兼容检查尚未通过，暂不能发布；个人逐消息设置目录也仍待激活。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：当前无实际重运行，下一数据库测量先排干普通工程检查；原失败与保留资源仍如实记录。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：数据库测量失败后已独立确证计算与连接归还，保留数据不删除；当前无实际重段占用，按已就绪队列安排后继验证。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

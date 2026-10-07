@@ -1,18 +1,23 @@
 {
-  "at": "2026-10-07T17:20:29.439030+00:00",
+  "at": "2026-10-07T17:58:35.211340+00:00",
   "scope": "Only current changed manager paths, added Markdown links, JSON and indexed archive hashes",
   "paths": [
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-plugin-invocation-lifetime.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-static-preparation-index.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-three-pane-batch-fairness.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/archive-index.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/connection-policy-peer-research.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/connection-policy-source-research.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-c3-reviewed-metadata-receipt.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/compatibility-c3-source-preparation-review.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-main-release-receipt.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/metadata-validation.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/k01-startup-independent-recovery-observation.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/quality-record.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/svc09a-r4-host-window-return.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/status-validation.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-trusted-preset-source-review.json",
     "docs/evidence/web-platform/mature-task-handoff.md",
     "docs/evidence/web-platform/resource-window-current.json",
-    "plans/web-platform/status.md"
+    "plans/web-platform/status.md",
+    "plans/wpf-mature-05-workspace/plan.md",
+    "plans/wpf-mature-05-workspace/status.md"
   ],
   "links": [
     {
@@ -21,38 +26,28 @@
       "exists": true
     },
     {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/connection-policy-source-research.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/connection-policy-peer-research.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/i01-third-result-review.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/main-intake.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/i01-main-release-receipt.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/i01-main-preimage-review.json",
-      "exists": true
-    },
-    {
       "source": "plans/web-platform/status.md",
       "target": "../../docs/evidence/web-platform/resource-window-current.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-05-workspace/plan.md",
+      "target": "../../docs/evidence/web-platform/mature-task-handoff.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-05-workspace/plan.md",
+      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-three-pane-batch-fairness.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-05-workspace/plan.md",
+      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-plugin-invocation-lifetime.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-05-workspace/plan.md",
+      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-static-preparation-index.json",
       "exists": true
     }
   ],
@@ -287,6 +282,34 @@
     },
     {
       "file": "connection-policy-peer-research.json",
+      "match": true
+    },
+    {
+      "file": "compatibility-c3-source-preparation-review.json",
+      "match": true
+    },
+    {
+      "file": "visual-trusted-preset-source-review.json",
+      "match": true
+    },
+    {
+      "file": "k01-startup-independent-recovery-observation.json",
+      "match": true
+    },
+    {
+      "file": "compatibility-c3-reviewed-metadata-receipt.json",
+      "match": true
+    },
+    {
+      "file": "arc-three-pane-batch-fairness.json",
+      "match": true
+    },
+    {
+      "file": "arc-plugin-invocation-lifetime.json",
+      "match": true
+    },
+    {
+      "file": "arc-static-preparation-index.json",
       "match": true
     }
   ],

@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-07T17:27:23.590298+00:00",
+  "reviewer": "root gpt-6-astra ultra",
+  "decision": "APPROVED_NARROW_STATIC_PRESET_NOT_BROWSER_OR_TYPECHECK",
+  "blockingFindings": [],
+  "target": "2d73da15b41f115ec815f38b565fb4d80fd1b6fb",
+  "metadataHeadObserved": "b4129dfae1057d3eaa0b37c14799b56cd3cab05e",
+  "dirtyObserved": false,
+  "sourcePin": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/apps/web/test/conversation-recovery.browser.ts",
+    "bytes": 141739,
+    "sha256": "99e8cbfbff9ddc887430e8329ab06fbab3cf07364e97e302ad3d428dc869cee9"
+  },
+  "preparationPins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/validation-prepared/recovery-preset.json",
+      "bytes": 1153,
+      "sha256": "2a0bc939b7d0c818bdd2e5aaa25f635d8cc239c628a0cd7a6713fb99d7f1f1cf"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/validation-prepared/proposal.json",
+      "bytes": 4841,
+      "sha256": "2a32ab6a169ecf98770b361d858f0cc93cca39634d9d77fe59287857d41a947b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/validation-prepared/static-preservation.json",
+      "bytes": 344,
+      "sha256": "6abd6decb74923070f0e1d5c7a842fe96c103d936445a6a3dd25ef39b98a348f"
+    }
+  ],
+  "workerAndAllAssertionsByteIdenticalTo": "63949b24713d1e2c44ac68b122a256677dd055e1",
+  "otherFiveSourcesMatch5f898": {
+    "apps/web/src/components/ui/dialog.tsx": true,
+    "apps/web/src/assistant-ui.css": true,
+    "apps/web/src/execution-profiles/execution-profiles.css": true,
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": true,
+    "apps/web/test/message-settings.browser.ts": true
+  },
+  "actualReview": [
+    "Only fixed task presets can choose evidence directory/run directory/approval environment/phase; no arbitrary caller-supplied output path.",
+    "Visual flag requires appearance journey and dedicated visual phase; default MSG rejects visual phase, retains old phase digest guard and membership journeys.",
+    "Visual source pin set adds dialog.tsx and assistant-ui.css; original execution-profile files already pinned.",
+    "Dedicated 60000ms total includes unchanged30000ms cleanup; gate elapsed/spent/prior-attempt charging, fresh expiry and source hash guards retained. MSG total remains120000 cumulative with original45–60s per-attempt guard.",
+    "Worker receives preset flag; worker implementation/assertions, owned PG/Chrome process lifecycle and cleanup are byte-identical.",
+    "Two-theme390 output is proposed, not observed. Runtime supply and reviewed actual package remain pending."
+  ],
+  "cleanCode": {
+    "scope": "task preset delta",
+    "findings": "Fixed two-entry data selection avoids second worker or mutable output API; no generic scheduler, state clone or duplicated assertion tree. Existing phase distinction preserved.",
+    "unresolved": "Typecheck and actual screenshot/geometry verification remain NOT_RUN."
+  },
+  "validation": "Read-only source/metadata/hash comparison. No compiler/product import/PG/Chrome/launch or resource probe.",
+  "limits": [
+    "No blanket approval of unrelated historical runner; this review covers delta only.",
+    "Picker native dispatch and Recovery runtime supply need their own final preparation; source approval is not runtime grant.",
+    "Old VISUAL evidence and MSG budgets remain historical; future actual must bind owner phase, fresh head and exact source hashes."
+  ]
+}

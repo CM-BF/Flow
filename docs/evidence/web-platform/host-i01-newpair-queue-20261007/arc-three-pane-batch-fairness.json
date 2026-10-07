@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T17:32:16.193595+00:00",
+  "state": "READ_ONLY_EXISTING_ARC_FAIRNESS_DESIGN_INPUT_NOT_IMPLEMENTATION_REVIEW",
+  "task": "WPF-WORKSPACEARC01 / WPF-MATURE-05-01,02,03,05",
+  "source": "f8853d4731eb6229337279079c24617c97d4f56b",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/conversation-stream/host.ts",
+      "bytes": 14766,
+      "sha256": "506efd942fb3f47831db7e1c381616132c1e2ffd6798f2c6c3bc5e22f10b6848"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/projection.ts",
+      "bytes": 207,
+      "sha256": "c8ac83d12411021949d12dedb342669555b33987b162734d3ff51c55fa37119a"
+    },
+    {
+      "path": "packages/interaction/src/stream/projection.ts",
+      "bytes": 19907,
+      "sha256": "287c6da0760ca4eec767384c30dffad9bf6b26cd656385bdc7d447633c0f24ed"
+    }
+  ],
+  "observed": [
+    "Web StreamConnectionBudget has two leases, wakes hosts in Set order, and does not reserve a freed lease for an existing waiter. Current pump holds a lease while hasMore and no error.",
+    "Shared projection already bounds each flight to four patch pages. The finalizer publishes loading:false before arranging the next scheduled batch. updateHost visible:false pauses the projection, aborts old generation and clears scheduled work while retaining text patches."
+  ],
+  "implementationInput": [
+    "Use the existing Web host scope and complete bounded batch as a yield boundary; shared projection changes are not required by this source observation.",
+    "Requeue unfinished hasMore as dirty and grant queued eligible waiters fairly. release+wake followed by immediate self-acquire can still starve a third pane.",
+    "Remove hidden/disposed/unauthorized waiters; reconnect must not revive an old generation. Existing private App/view/controller authority remains unique.",
+    "Declared first maximum3 panes keeps two stream leases. Separate explicit body reads: reply1+queue1 per visible pane yields aggregate6; neither quantity is a claim about all HTTP traffic or total JS heap."
+  ],
+  "acceptance": [
+    "Sustained backlog for all three panes, including third pane joining later; prove repeated progress instead of merely one initial read per pane.",
+    "Hide/remove a queued pane, disconnect and reconnect; prove old activation/generation cannot read or commit.",
+    "Actual App split/merge/move retains stable composer parent/view.key, current draft/settings/ownership/pending preparation. Layout refs cannot clone business state."
+  ],
+  "ownerResponse": "panels confirmed this same 20-path/cap3/FIFO design and K01-period0child/0supply/0claim write. Final owner preparation report not yet sealed.",
+  "cleanCode": "Prefer existing bounded batch and narrow host queue; no new transport/controller or public budget API. Enforce enqueue/grant/remove in one clear lifecycle and avoid using global focus as authority.",
+  "scope": "No new task/claim, no product edits/imports/tests/resource probes; metadata in private tmp only. Archive with existing Arc plan after measurement RETURN."
+}

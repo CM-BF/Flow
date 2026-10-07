@@ -138,3 +138,9 @@ Arc后继当前只读18literal方案已集中到[现有研究入口](../../docs/
 [共享接口与精确路径候选](../../docs/evidence/web-platform/quick-b3-return-navigation-20261007/navigation-scope-candidates.json)仅用于协调原center/contract/Web writer。App/projection仍属Recovery，后继不借旧claim写入；未来fresh查重、独立树和精确take后实施，不新增大task/第二搜索状态源。当前恢复/模型设置验收优先；不要求等全部Web完成才协调共享接口。本文不授权真实用户服务扫描、全库预取、provider或运行。
 
 原REQ10/12、RS04键盘后继补[固定9f0e FileTree重入研究](../../docs/evidence/web-platform/recovery-created-turn-admission-20261007/filetree-reentry-research.json)：现roving重挂仅取active/首项而未采用保留selectedPath，为静态发现、尚无browser复现。候选由原可复用Tree恢复单一tabstop，父层保task选择身份；验选中项重入、唯一tabstop、无eagerdetail和插件action键盘边界。未take/实施、不新task，不阻Recovery/Quick。
+
+### 既有Arc执行位恢复
+
+I01实际App接线已main5592且61abv2于17:11:49.694Z正式释放。现由原panels恢复既有WPF-WORKSPACEARC01候选，独立web-workspace-composition/codex同名，沿本计划01/02/03/05推进，非新同义大task。原18literal于17:18:21.411Z观察无active冲突，固定mainf885含I01，目标树/分支不存在；这是准备观察，实际修改前仍须精确范围fresh原子领取。三pane及以上不能仅取消两栏限制：现stream两lease与持续hasMore要收敛公平前进和整体读取上限，保持唯一composer父级、view/draft/Symbol/材料准备与pending状态，隐藏/断开立即撤旧CAS和activation。新16MiB仅source固定供给/项目delta/own记录/TMP静态准备上界，工程验证另给有限段；K01实际测量期间不启供给、协调CLI、编译或测试child。精确当前进度沿[管理交接](../../docs/evidence/web-platform/mature-task-handoff.md)，产品实施完成不由本准备说明推断。
+
+本片复用[完整批次FIFO公平性输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-three-pane-batch-fairness.json)与[插件调用生命周期输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-plugin-invocation-lifetime.json)：两条stream lease在完整有限batch后优先交等待者，持续backlog与迟到第三pane都要重复进展；不改共享projection源，不把挂载或布局身份当调用永久有效。当前[固定供给索引](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-static-preparation-index.json)只有静态闭包证据，196源/1,809,043B与22外包候选不等runtime验证。

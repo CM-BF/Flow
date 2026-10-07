@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T17:41:44.586661+00:00",
+  "state": "READ_ONLY_ARC_EXTENSION_DESIGN_INPUT_NOT_CURRENT_BUG_OR_IMPLEMENTATION_REVIEW",
+  "task": "existing WPF-WORKSPACEARC01 / MATURE05-02,03,05 / original plugin requirement",
+  "source": "f8853d4731eb6229337279079c24617c97d4f56b",
+  "pins": [
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "bytes": 21387,
+      "sha256": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca"
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "bytes": 6794,
+      "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 28667,
+      "sha256": "ebfa3f33860ee478f24808ca47fb6f7e7205fe613411608f0ef0bac58680e85d"
+    }
+  ],
+  "observed": [
+    "PluginHost.execute captures validated ResourceContext then may await activation, and reauthorizes the resource before constructing the handler context. Session currentness/permission checks exist.",
+    "IntegrationSession.validContext currently recognizes composer by isDraft + hasDraft(viewId), and non-message/non-reference task context by known task. Neither old existing context is an exact future Arc pane-layout invocation lease.",
+    "Current ResourceContext has no conversation-pane/group variant; real Arc actions must be introduced deliberately through the existing owned types/validation/host/session seam, not mislabeled as legacy task actions."
+  ],
+  "designInput": [
+    "Bind Arc menu/command actions to the actual invocation target, not whichever pane has global focus when delayed activation resolves.",
+    "Capture/check the relevant private connection/view/layout invocation lifetime across activation and command execution; A→B→A or close→reopen must not restore an old invocation. Current-valid resource alone does not prove continuous ownership.",
+    "Keep layout command invalidation separate from draft ownership/CAS: moving a retained composer must preserve its draft/material/pending ownership while invalidating superseded layout operations.",
+    "App remains the sole layout writer; no second view store, generic callback bus, raw controller exposure or copied registry is required."
+  ],
+  "acceptance": [
+    "Delayed plugin activation while changing selected group or hiding/closing target; disabled/unloaded then re-enabled contribution; connection switch and close/reopen target. Old callbacks must not mutate a fresh target.",
+    "Explicit action on inactive pane B must remain scoped to B while A is focused; if no longer eligible, reject without redirecting to A.",
+    "Pure layout commands produce no business POST/cancel/send/retry and preserve current draft and receipt identity."
+  ],
+  "limits": "Static future-feature seam, not an observed exploit or current-runtime failure. Existing proposed20 paths already include the required local interfaces. No new task/claim/scope or project edits, runtime imports/tests/PG/browser; record in the existing Arc plan."
+}

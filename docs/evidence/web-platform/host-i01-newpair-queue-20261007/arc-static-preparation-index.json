@@ -1,0 +1,58 @@
+{
+  "state": "STATIC_PREPARATION_COMPLETE_NO_PROVISION_TAKE_OR_RUNTIME",
+  "sealedAt": "2026-10-07T17:53:55.951982+00:00",
+  "fixedBase": "f8853d4731eb6229337279079c24617c97d4f56b",
+  "scopeCount": 20,
+  "sourceFileCount": 196,
+  "sourceBytes": 1809043,
+  "artifacts": [
+    {
+      "path": "/private/tmp/arc-composition-f885-0lr2z4dj/references.json",
+      "bytes": 5071,
+      "sha256": "42129d10dd0d4da8eed0224953d2100a3d5710c9616ccc55eccafc579ed6a5c9"
+    },
+    {
+      "path": "/private/tmp/arc-composition-f885-0lr2z4dj/report.md",
+      "bytes": 12250,
+      "sha256": "7d04557b5b9832d6296842a7f90dd251e0c076178f8814fe64ab28852b75c28e"
+    },
+    {
+      "path": "/private/tmp/arc-composition-f885-0lr2z4dj/scope-observation.json",
+      "bytes": 2024,
+      "sha256": "0afcf578d45814966409103bb84dc27d5ffbe13d6740423b12706f250821eb0c"
+    },
+    {
+      "path": "/private/tmp/arc-composition-f885-0lr2z4dj/supply-first-unresolved.json",
+      "bytes": 167067,
+      "sha256": "7dfc26c6ccb6b81e061c24a63376a0fff8acda5c13f179dd070f014619595e34"
+    },
+    {
+      "path": "/private/tmp/arc-composition-f885-0lr2z4dj/supply-manifest.json",
+      "bytes": 135308,
+      "sha256": "c841a17d4cf34485513c1738b728e010c26388e3e1cd1df2cf4ac24160177540"
+    },
+    {
+      "path": "/private/tmp/arc-composition-f885-0lr2z4dj/supply-manifest.unclassified.json",
+      "bytes": 133753,
+      "sha256": "6634b216f68456d6e3721bffc9bd6b1df6604a26e65a942c646fc4c08a6bedd3"
+    }
+  ],
+  "actualTMPBytesExcludingThisIndex": 455473,
+  "budget": {
+    "fixedSourceBytes": 1809043,
+    "futureDeltaBytes": 8388608,
+    "ownMetadataBytes": 2097152,
+    "staticTMPBytesMaximum": 2097152,
+    "totalEnvelope": 16777216,
+    "plannedTotal": 14391955,
+    "unallocated": 2385261
+  },
+  "historicalLedger": {
+    "observedAt": "2026-10-07T17:18:21.411Z",
+    "activeWriterClaims": 36,
+    "conflicts": []
+  },
+  "checks": "Private report/manifest consistency assertions only; no engineering checks/imports/product execution.",
+  "runtimeBinding": "22 packages covered by historical30-row resolver names, not current executable/entry identity. Dynamic core0.3.22 entry must be fixed before future checks.",
+  "authority": "Manager dispatch and fresh20 take required; no further design approval requested."
+}
