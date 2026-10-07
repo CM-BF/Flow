@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T10:50:21.324Z |
+| 最近更新时间 | 2026-10-07T11:07:09.165529+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,19 +14,21 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | execution4949118f；固定结果997f7d44f78f0db1d001e9e7080559cd7139a7af / packet ea642cff；当前仅正式review/验收差距/handback元数据 |
-| 工作树 dirty 状态 | 候选接口实施；原actual/source/manifest冻结 |
-| 工作分支状态 | implementation |
-| 检查状态 | 本候选片NOT_RUN；旧实际结果997f7d44仅其限定范围APPROVED |
-| Review | chatui01_owner 2026-10-07T10:42:21Z RESULT_FIDELITY_REVIEW_APPROVED / 0 P1/P2，绑定997f7d44 / ea642cff |
-| 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；本次实际验收证据待关联接收，不冒latest main全集检查 |
-| 实现目标 | 997f7d44f78f0db1d001e9e7080559cd7139a7af |
-| 实现范围 | apps/server/src/plugin-runtime/process-runner-pg.test.ts；docs/evidence/x01/process-runner-* |
-| 本片段交付阶段 | implementation |
+| 工作基线 / HEAD | base ab5a；source a2981b71b47d254356152c505ddfff29edd76446；support f2848f9d0406222aff54fcfb0c5650147e0ca04b；固定七源与原local/PG准备，元数据待提交 |
+| 工作树 dirty 状态 | 仅本片绑定/状态收口，源码固定供独审 |
+| 工作分支状态 | review |
+| 检查状态 | PASSED |
+| Review | 初审11:05:20唯一P2已窄修，等待chatui固定增量与准备复审 |
+| 检查范围 | 10 distinct分轮通过；最终types0；首失败保留；PG新1例NOT_RUN；非完整X01通过 |
+| 检查目标 | a2981b71b47d254356152c505ddfff29edd76446 |
+| 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；process验收证据已main221921c0，I02 x01-process-acceptance-intake.json，productDelta=[]；新候选七源未main，不冒latest main全集检查 |
+| 实现目标 | a2981b71b47d254356152c505ddfff29edd76446 |
+| 实现范围 | apps/server/src/plugin-runtime/{commands,store,routes,host-candidates,host-candidates.test,runtime.test}.ts；packages/contracts/src/plugin-runtime-hosts.ts；docs/evidence/x01/host-candidates-*（含Python/配置/固定镜像） |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 真实启动验收已交付；正在增加按可读名称选择中心授权执行后端的候选接口 |
-| 下一可用交付 | 有界授权后端候选与启用时重新核验，供Web直接选择，避免人工查找UUID |
+| 当前产出 | 授权后端候选可按名称区分，并展示维护或不兼容原因；启用、绑定及状态读取均按当前信任重验，正在独审 |
+| 下一可用交付 | 交付候选合同与中心接口；通过准备独审后，在独立窗口验证真实SQL和鉴权 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -361,3 +363,7 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T10:47:17.625248+00:00：metadata验收核对从10:41:57Z开始；[原TODO与矩阵差距](../../docs/evidence/x01/acceptance-gap-20261007.md)保持02～10均未completed。正式[结果独审](../../docs/evidence/x01/process-runner-pg-independent-review.json)与[主线验收入口](../../docs/evidence/x01/process-runner-acceptance-ready.json)固定；[管理main核验](../../docs/evidence/x01/process-runner-management-main.json)不回写执行镜像。两Web路径10:46:23.929Z原子交回至v25/58，不再写入。原运行器、raw、manifest及产品零改、0新检查/资源。架构基线无新增变化，后继UI边由新owner维护；clean-code复核当前/历史分层、单一status与不扩大验收范围。
 
 2026-10-07T10:48:53Z 新20min有界段启动（截止11:08:53Z），[Interface](../../docs/evidence/x01/host-candidates-interface.md)定义授权候选/名称消歧/有限分页/未知能力与enable重验。0PG/新local；db10:47:57实际归还，检查前直接协调。原结果已封存、v25两Web正式交回不恢复写权。Mika10:49:35.124Z实际195源聚合X01 live/current/issues[]；本次将当前阻塞单列NONE，旧自由文本格式不再用于字段。架构新增只读候选边，未集成前不冒main能力。
+
+2026-10-07T11:07:09.165529+00:00：候选源a2981b71b47d254356152c505ddfff29edd76446 / support f2848f9d0406222aff54fcfb0c5650147e0ca04b固定，[唯一交审入口](../../docs/evidence/x01/host-candidates-review-ready.json)。9个实际child，10distinct分轮/最终types0；原首types及route失败保持，新P2只定向1+types，全部ownedabsent/EOF/同inodeTMP清理；11:05:32已直接归还db。新PG单case仅准备，独立180s尚NOT_OPEN，不继承已消费窗口；无PG预约。376绑定/2030211B，65external/21links继承固定闭包；动态SQL/权限影响必须由该新真实PG验证，不把mock当通过。原段10:48:53–11:08:53不重置。架构新增owner候选只读边/当前policy投影，主线图更新待受控接收由Lead负责。
+
+管理ACK依赖仅链接其唯一owner入口：[已审待main ACK](../../../plugin-command-acks/docs/evidence/x01-plugin-command-acks/main-intake.json)，source ae1482fd / delivery e54f57eb，10:50:56 APPROVED；不复制子task状态。本次process验收已由main221921c0正式接收，原997f/23绑定/raw不改。

@@ -1,3 +1,13 @@
+# X01 host candidates review
+
+状态：PENDING（候选源码P2修复与局部结果/新PG准备；实际PG未开）
+
+Review target commit: a2981b71b47d254356152c505ddfff29edd76446
+
+初审7672090/4c808于11:05:20 SOURCE_CHANGES_REQUESTED，唯一P2为runtime投影漏current policy/fixture。修后同policy进入GET与新command响应、无新授权/旧pin修改；1定向反例及types0，等待固定窄复审。[入口](../../docs/evidence/x01/host-candidates-review-ready.json)。历史批准保留后文。
+
+---
+
 # X01 result review
 
 状态：APPROVED（实际process联合旅程结果忠实性；完整X01未完成）

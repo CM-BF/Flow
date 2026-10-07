@@ -1,0 +1,75 @@
+{
+  "sourceCommit": "a2981b71b47d254356152c505ddfff29edd76446",
+  "supportCommit": "f2848f9d0406222aff54fcfb0c5650147e0ca04b",
+  "createdAt": "2026-10-07T11:07:09.165529+00:00",
+  "status": "REVIEW_PENDING_PG_NOT_OPEN",
+  "manifest": {
+    "path": "docs/evidence/x01/host-candidates-pg-manifest.json",
+    "sha256": "8756391bccddfc88acaca71ff92a8f306b6489ba12381c0fad4395371c9c37c1",
+    "files": 376,
+    "bytes": 2030211,
+    "external": 65,
+    "links": 21
+  },
+  "initialSource": "7672090bed43f28f88f16bcbd0d0cfa04a0667ac",
+  "initialReview": {
+    "at": "2026-10-07T11:05:20Z",
+    "reviewer": "chatui01_owner",
+    "verdict": "SOURCE_CHANGES_REQUESTED",
+    "P1": 0,
+    "P2": 1,
+    "finding": "readRuntime current-policy/fixture projection mismatch",
+    "fix": "policy + fixture projection; same policy in GET/new command response; historical replay unchanged"
+  },
+  "local": {
+    "record": "docs/evidence/x01/host-candidates-local.json",
+    "sha256": "eabe3531e53819bf117c27cabad2249577b8c277c3358b044a19d79332362436",
+    "children": 9,
+    "rawBytes": 2358,
+    "elapsedBeforeReceiptsSecondsSum": 18.845997915719636,
+    "distinctPassedAcrossRounds": 10,
+    "finalTypesExit": 0,
+    "notOneFinalTenCaseRun": true,
+    "initialFailuresPreserved": true,
+    "P2Case": {
+      "selected": 1,
+      "passed": 1,
+      "unselected": 9
+    },
+    "allOwnedAbsent": true,
+    "allMergedEOF": true,
+    "allOwnTMPSameInodeRemoved": true,
+    "wholeExternalWall": null,
+    "activePeak": null
+  },
+  "PG": {
+    "actual": 0,
+    "selectedPlan": 1,
+    "oldTenUnselected": true,
+    "newWindowRequired": true,
+    "totalSeconds": 180,
+    "httpMax": 160,
+    "connectionsMax": 17,
+    "registeredRunnerMetadata": 45,
+    "tasks": 0,
+    "assertionAddedAfterLocalTypes": "PG GET runtime current policy refusal"
+  },
+  "contractUnchanged": {
+    "commit": "7672090bed43f28f88f16bcbd0d0cfa04a0667ac",
+    "sha256": "59ad5c6cec92331c53f984625f008bab44ae7a4facb13b9510824ea98a0477aa"
+  },
+  "claim": {
+    "id": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "version": 26,
+    "scopeCount": 61,
+    "observedAt": "2026-10-07T11:04:27.785Z"
+  },
+  "architecture": "owner-only bounded host projection; single material predicate; current policy on new enable/admit and runtime projection; no registry/FSM/active probe",
+  "limitations": [
+    "No real PG or socket authentication evidence",
+    "Historical exact replay is unchanged, not a fresh authorization",
+    "No client/Web ownership or source modifications",
+    "Candidate does not prove online, loaded or callable",
+    "Complete X01 remains open"
+  ]
+}
