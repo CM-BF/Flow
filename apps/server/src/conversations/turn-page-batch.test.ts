@@ -1,4 +1,5 @@
 import { expect, it, vi } from 'vitest';
+import { EventEmitter } from 'node:events';
 import type { Pool, PoolClient } from 'pg';
 import { turnPage } from './queries.js';
 import * as state from './state.js';
@@ -78,8 +79,12 @@ function fixture(count = 50) {
     throw new Error(`Unexpected SQL: ${sql}`);
   });
   const release = vi.fn();
-  const client = { query, release } as unknown as PoolClient;
-  const pool = { connect: vi.fn(async () => client), query: vi.fn(() => { throw Error('escaped transaction'); }) } as unknown as Pool;
+  const client = Object.assign(new EventEmitter(), { query, release }) as unknown as PoolClient;
+  const connect = vi.fn((callback?: (error: Error | undefined, borrowed: PoolClient, done: (error?: Error | boolean) => void) => void) => {
+    if (callback) { callback(undefined, client, release); return; }
+    return Promise.resolve(client);
+  });
+  const pool = { connect, query: vi.fn(() => { throw Error('escaped transaction'); }) } as unknown as Pool;
   return { conversation, turns, tasks, messages, sessions, artifacts, contexts, query, release, client, pool };
 }
 

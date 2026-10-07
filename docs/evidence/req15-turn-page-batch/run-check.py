@@ -25,6 +25,10 @@ commands = {
     'apps/server/src/assistant/final-preview-batch.test.ts', 'apps/server/src/conversations/turn-page-batch.test.ts',
     '--config', 'docs/evidence/req15-turn-page-batch/vitest.config.mjs', '--configLoader', 'runner',
     '--no-cache', '--reporter', 'verbose', '--no-color'],
+    'pages-main': ['node_modules/vitest/vitest.mjs', 'run',
+    'apps/server/src/conversations/turn-page-batch.test.ts', '--config',
+    'docs/evidence/req15-turn-page-batch/main-database-vitest.config.mjs', '--configLoader', 'runner',
+    '--no-cache', '--reporter', 'verbose', '--no-color'],
     'types': ['node_modules/typescript/bin/tsc', '--noEmit', '-p', 'docs/evidence/req15-turn-page-batch/tsconfig.json'],
     'pg-types': ['node_modules/typescript/bin/tsc', '--noEmit', '-p', 'docs/evidence/req15-turn-page-batch/tsconfig.pg.json'],
     'pg-collect': ['node_modules/vitest/vitest.mjs', 'list',
@@ -52,11 +56,18 @@ for path in [receipt_path, log_path, temporary]:
     assert not path.exists() and not path.is_symlink(), 'Existing evidence must be preserved'
 record = {'state': 'RUNNING', 'at': shared.stamp(), 'kind': args.kind, 'command': command, 'cwd': str(ROOT), 'availableBeforeBytes': free,
           'supervisorPath': str(SUPERVISOR), 'supervisorSha256': SUPERVISOR_SHA, 'pg': 0, 'http': 0,
-          'tmpBudgetBytes': 33554432, 'tmpMeasurement': 'before/after sample, not realtime isolation',
+          'tmpBudgetBytes': 8388608 if args.kind == 'pages-main' else 33554432, 'tmpMeasurement': 'before/after sample, not realtime isolation',
           'elapsedBasis': 'wrapper preflight through cleanup before final receipt; excludes interpreter startup and final persistence',
           'sources': {str(p.relative_to(ROOT)): shared.digest(p) for folder in ['assistant', 'conversations']
                       for p in (ROOT / 'apps/server/src' / folder).glob('*.ts') if p.name in
                       ['store.ts','index.ts','queries.ts','state.ts','replies.ts','turn-read.ts','final-preview-batch.test.ts','turn-page-batch.test.ts']}}
+if args.kind == 'pages-main':
+    record['mainDatabase'] = {
+        'donorCommit': '8c80a7105cf442783e83184a14e34c8da08ebe16',
+        'path': 'docs/evidence/req15-turn-page-batch/main-database.ts',
+        'sha256': shared.digest(HERE / 'main-database.ts'),
+        'configSha256': shared.digest(HERE / 'main-database-vitest.config.mjs'),
+    }
 fd = os.open(receipt_path, os.O_WRONLY | os.O_CREAT | os.O_EXCL, 0o600)
 with os.fdopen(fd, 'w') as receipt:
     def save():
@@ -86,7 +97,7 @@ with os.fdopen(fd, 'w') as receipt:
         text = raw.decode('utf8', errors='replace')
         summary = next((line.strip() for line in text.splitlines() if re.match(r'^\s*Tests\s', line)), None)
         record['testSummary'] = summary
-        if args.kind == 'tests' and summary:
+        if args.kind in ['tests', 'pages-main'] and summary:
             record['selected'] = int(re.search(r'\((\d+)\)', summary)[1])
             passed = re.search(r'(\d+) passed', summary); record['passed'] = int(passed[1]) if passed else 0
         if args.kind == 'pg-collect':
