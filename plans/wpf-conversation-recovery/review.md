@@ -1,8 +1,8 @@
 # WPF-RECOVERY01 独立审查
 
-状态：IN_PROGRESS。当前target`2e7203ea01eb069a9d5e6f24e8ce9e1640c83112`；complete-draft第二轮FAIL在测试receipt身份查找，真实Prepare/恢复/metadata验证/turn202已到，但后续完整断言未完成。首红/清理已独审，第二红与清理已获root限定独审接受（continuous-ninth-root-review），2e7203完整delta无source阻碍；当前精确receipt lookup未复测，不自评selected或featurePASS。
+状态：IN_PROGRESS。当前target`2e7203ea01eb069a9d5e6f24e8ce9e1640c83112`；complete-draft第三轮真实selected2/2通过，完整草稿/材料/首turn/独立下一稿断言完成并清理，[root实际独审](../../docs/evidence/wpf-conversation-recovery/continuous-tenth-root-review.json)已限定接受；前两红原样保留。原source与局部noEmit独审保持原绑定，不冒整体feature通过。
 
-Review target commit：`2e7203ea01eb069a9d5e6f24e8ce9e1640c83112`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。原exact21；当前delta12+/1-仅browser，18source不变。
+Review target commit：`2e7203ea01eb069a9d5e6f24e8ce9e1640c83112`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。原exact21；本轮0源码变化。
 
 固定完整变更/修复/实证入口：[feature-review-entry.md](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)，19源/base/pins明确；当前root审查进行中，不是作者自评。
 

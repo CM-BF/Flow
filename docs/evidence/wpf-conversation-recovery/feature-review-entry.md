@@ -1,6 +1,6 @@
 # 固定代码审查入口：WPF-RECOVERY01
 
-当前组合target `2e7203ea01eb069a9d5e6f24e8ce9e1640c83112`；[receipt最小delta/18源引用](complete-draft-receipt-checkpoint.json)。[第二红原件](continuous-ninth-validation.md)：cookieRead通过，真实Prepare/完整恢复/首turn202到达，但测试receipt id与frozen turnKey混淆导致整体FAIL。当前精确唯一outbox映射及accepted/request/checkpoint断言固定未复测；首红与所有旧绿实证保绑定。完整feature IN_PROGRESS，不把202局部事实当selected或fullfeature通过。
+当前组合target `2e7203ea01eb069a9d5e6f24e8ce9e1640c83112`；[精确源码delta/18源引用](complete-draft-receipt-checkpoint.json)。[complete-draft第三轮actual](continuous-tenth-validation.md)cookieRead+completeDraft2/2/清理完成，原完整恢复/metadata验证/首turn精确原refs和accepted身份/锁定profile/独立下一稿全部断言通过；[root实际独审](continuous-tenth-root-review.json)已限定接受。前两FAIL及此前full7/choice/CREATE两故障点/Queue/taskSSE全部保持原绑定。完整feature IN_PROGRESS，Steer/第二中心等剩余开放。
 
 ## 55b已审基线与原证据（历史固定）
 

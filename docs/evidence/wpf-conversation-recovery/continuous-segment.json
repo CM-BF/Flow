@@ -1,6 +1,6 @@
 {
   "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
-  "state": "COMPLETE_DRAFT_SECOND_FAILED_RECEIPT_LOOKUP_FIXED_NOT_RETESTED",
+  "state": "COMPLETE_DRAFT_SELECTED2_ACTUAL_AND_OWNED_CLEANUP_ACCEPTED_SCOPED",
   "authorization": {
     "path": "continuous-segment-authorization.json",
     "sha256": "6ea79981213d5df67f1e7ae4c603a90bbf7823daebf53aa15bf85e08f7ed5090"
@@ -22,8 +22,8 @@
     "additionalSourceMetadataBytes": 1048576,
     "defensiveCumulativeCeilingMs": 240000
   },
-  "runtimeSpentMs": 114654,
-  "runtimeRemainingMs": 35346,
+  "runtimeSpentMs": 126447,
+  "runtimeRemainingMs": 23553,
   "attempts": [
     {
       "run": "recfull-20261007-055138-6c925b",
@@ -194,18 +194,36 @@
       "fullFeaturePassed": false,
       "adminEnvDeleted": true,
       "independentReview": "continuous-ninth-root-review.json"
+    },
+    {
+      "run": "reccomplete-20261007-090937-c16c64",
+      "journey": "complete-draft",
+      "executionHead": "7fb3947d30764ae9da1de9b512ff36c51734ba2a",
+      "sourceTarget": "2e7203ea01eb069a9d5e6f24e8ce9e1640c83112",
+      "manifest": "continuous-tenth-manifest.json",
+      "passedGroups": 2,
+      "selectedPassed": true,
+      "actualExit": 0,
+      "outerActualMs": 11792.84358303994,
+      "parentLateMs": 11181.214666,
+      "serializedParentMs": 11168.190875,
+      "chargedMs": 11793,
+      "cleanupComplete": true,
+      "resourceReturnedAt": "2026-10-07T09:10:28.080735+00:00",
+      "fullJourneyPassed": false,
+      "fullFeaturePassed": false,
+      "adminEnvDeleted": true,
+      "independentReview": "continuous-tenth-root-review.json"
     }
   ],
   "nextSelection": {
-    "journey": "complete-draft",
-    "source": "2e7203ea01eb069a9d5e6f24e8ce9e1640c83112",
-    "state": "RECEIPT_LOOKUP_FIXED_NOT_RETESTED",
-    "requiredGroups": [
-      "cookieRead",
-      "completeDraft"
-    ],
-    "sourceReview": "Root inspected complete2e7203 delta/outbox.begin/journal.prepare: no source blocker, actual still pending",
-    "localValidation": "complete-draft-checkpoint.json"
+    "state": "NONE_SCHEDULED",
+    "reason": "Current complete-draft selected2 passed; remaining23553 below unchanged parent min30000, no implicit next run",
+    "remainingAcceptance": [
+      "Real Steer/steering draft",
+      "Second center/principal isolation",
+      "Conversation assistant stream delivery boundary"
+    ]
   },
   "fullFeatureReview": "IN_PROGRESS",
   "noCurrentGate": true,
