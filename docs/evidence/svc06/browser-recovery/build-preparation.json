@@ -1,0 +1,106 @@
+{
+  "kind": "SVC06B_FIXED_BUILD_PREPARATION",
+  "at": "2026-10-07T14:19:16.013Z",
+  "artifactSource": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "assemblySource": "6bebf75f24a80b38d821efd3aaf8db24a0d62e2e",
+  "base": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "claim": {
+    "id": "95f47f5c-7256-44f5-b97b-c20b6756a2cc",
+    "version": 2
+  },
+  "bindings": [
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+      "bytes": 11839,
+      "sha256": "87c4d1722fa789a5119a78f1fb722d32c9c40a77741dfb9ba8c8378808caa75a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/build-entry.mjs",
+      "bytes": 2456,
+      "sha256": "c89d93fa20f9e66bd3a006437934563a8fed40ff3da7fe9d1df9df69fe961eb7"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/build-entry.test.mjs",
+      "bytes": 4543,
+      "sha256": "5ef91eb1b89b9c954d28d631aeb083458aea6f4ba920e8491d9d720570e165ce"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/build-inputs.json",
+      "bytes": 3271,
+      "sha256": "2939fd91fc0e8a715a38e21b6e2af710f5267eb9be0640833ff8a67cd806e368"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/build-proposal.md",
+      "bytes": 4380,
+      "sha256": "d932e7c54661fb4c38c8fb418a90570d2b16f058da255ad00d8472a7440a5a9f"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/build-supervise.py",
+      "bytes": 2381,
+      "sha256": "9b86a3414deed6c788695456db2d00c3332ed826c01655cf7cebd4ad0e753877"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/preparation-facts.json",
+      "bytes": 3163,
+      "sha256": "add143dfd123d493a7b991f89331bfff4ca5a0932bda884af4983840927be785"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/source.json",
+      "bytes": 8330,
+      "sha256": "3c66638af2af2e975b494958cd8aff3686c6d96ecae0750a4796cf4dcbaa32f1"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/validate.py",
+      "bytes": 2872,
+      "sha256": "6321ae3f05f2f2ef692cc95730dd996e1b7acf0db6c3867d409be6833248b9fc"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/validation-01.json",
+      "bytes": 3810,
+      "sha256": "72bd7cb63895fd7f649a9c1c6733bff6d688ee88883d0d0fb752fb1289e04d93"
+    }
+  ],
+  "inheritedInput": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+    "bytes": 40316,
+    "sha256": "a64b558c32656023f7e3e6fcc91ddfb6e0b9b9d451822711763a210e104c59ad",
+    "gitRef": "d911eb723020b781548e9f643bafebdc4d0eac3c",
+    "gitPath": "docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json"
+  },
+  "additionalMethods": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+      "bytes": 5080,
+      "sha256": "b0018289ebd85a18754cbdfd3e8f61d4bbfe9092783af4eb81f945bff3ddb352"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "inheritedSourceBindings": 72,
+  "newArtifactSourceBindings": 3,
+  "inheritedRuntimeBindings": 17,
+  "local": {
+    "raw": "validation-01.json",
+    "distinct": 4,
+    "passed": 4,
+    "elapsedMs": 197,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+  },
+  "actualBuild": "NOT_RUN",
+  "artifactId": "UNKNOWN",
+  "personalOperations": 0,
+  "providerCalls": 0,
+  "statusParsing": "errors/human/timing=[] after normalization; initial ISO issue preserved in source/status note",
+  "review": "PENDING"
+}

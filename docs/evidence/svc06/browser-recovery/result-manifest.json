@@ -1,0 +1,234 @@
+{
+  "kind": "SVC06B_ACTUAL_FIXED_ARTIFACT_RESULT",
+  "at": "2026-10-07T14:32:21.520Z",
+  "preparationTarget": "82873e845fc7b1a8bcab5e55713a94c94f1dadce",
+  "executionMetadataHead": "0ff5a23a4776bd42edfbd5908eb07ddf1d40577e",
+  "source": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+    "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+    "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+  },
+  "sourceBindings": [
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+      "bytes": 11839,
+      "sha256": "87c4d1722fa789a5119a78f1fb722d32c9c40a77741dfb9ba8c8378808caa75a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/build-entry.mjs",
+      "bytes": 2456,
+      "sha256": "c89d93fa20f9e66bd3a006437934563a8fed40ff3da7fe9d1df9df69fe961eb7"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/build-entry.test.mjs",
+      "bytes": 4543,
+      "sha256": "5ef91eb1b89b9c954d28d631aeb083458aea6f4ba920e8491d9d720570e165ce"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/build-inputs.json",
+      "bytes": 3271,
+      "sha256": "2939fd91fc0e8a715a38e21b6e2af710f5267eb9be0640833ff8a67cd806e368"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/build-proposal.md",
+      "bytes": 4380,
+      "sha256": "d932e7c54661fb4c38c8fb418a90570d2b16f058da255ad00d8472a7440a5a9f"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/build-supervise.py",
+      "bytes": 2381,
+      "sha256": "9b86a3414deed6c788695456db2d00c3332ed826c01655cf7cebd4ad0e753877"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/preparation-facts.json",
+      "bytes": 3163,
+      "sha256": "add143dfd123d493a7b991f89331bfff4ca5a0932bda884af4983840927be785"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/source.json",
+      "bytes": 8330,
+      "sha256": "3c66638af2af2e975b494958cd8aff3686c6d96ecae0750a4796cf4dcbaa32f1"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/validate.py",
+      "bytes": 2872,
+      "sha256": "6321ae3f05f2f2ef692cc95730dd996e1b7acf0db6c3867d409be6833248b9fc"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/validation-01.json",
+      "bytes": 3810,
+      "sha256": "72bd7cb63895fd7f649a9c1c6733bff6d688ee88883d0d0fb752fb1289e04d93"
+    }
+  ],
+  "rawBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/actual-admission.json",
+      "bytes": 1831,
+      "sha256": "ddc62559d04b2d28ad1de47016d04064dbcbd3038851ee47f50672bf798460d1",
+      "dev": 16777234,
+      "ino": 124198062,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/actual-return.json",
+      "bytes": 791,
+      "sha256": "e2ce6a048865c0198d52f9acb28963c68882c03569b00e4462753b8fe731a939",
+      "dev": 16777234,
+      "ino": 124225237,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/outer-report.json",
+      "bytes": 5198,
+      "sha256": "7594b9288c10d75a9ea08c4bff49f60a31b5b383072d467adc6ae9e2b594161d",
+      "dev": 16777234,
+      "ino": 124198063,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/actual-first/build-record.json",
+      "bytes": 806,
+      "sha256": "5f1a02d981639fb6af30f2fa92dae79b0e00f9815c9b1fe8718f06f6e59a863b",
+      "dev": 16777234,
+      "ino": 124224845,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/actual-first/imports.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dev": 16777234,
+      "ino": 124225181,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/actual-first/imports.stdout",
+      "bytes": 2355,
+      "sha256": "e48fd94816766cb7a02dec2d0636566ea449b2a9e28a725a1ee10f322dade998",
+      "dev": 16777234,
+      "ino": 124225180,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/actual-first/owned-root.json",
+      "bytes": 157,
+      "sha256": "0f05ab95571c93fd477992c81e3bdd1f76a0af45cae5ab80041f1f204e126bfa",
+      "dev": 16777234,
+      "ino": 124198067,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/actual-first/reservation.json",
+      "bytes": 187,
+      "sha256": "f6db8e925b854425ff1a69dd9f5bb9a1bc99169257d56d8d62c6b23aa324a80d",
+      "dev": 16777234,
+      "ino": 124198065,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/actual-first/result-descriptor.json",
+      "bytes": 275,
+      "sha256": "27fdb3bb7e4f51850579c5cc9df625fa90cb9cdece4b61ef24f23f4e7f9473b4",
+      "dev": 16777234,
+      "ino": 124224855,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/actual-first/result.json",
+      "bytes": 5034,
+      "sha256": "2821fef8d7d448820d53749ede31530180c7450d02717dd43494c14c2474a84f",
+      "dev": 16777234,
+      "ino": 124225182,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    }
+  ],
+  "privateBindings": [
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/manifest.json",
+      "bytes": 3196606,
+      "sha256": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+      "dev": 16777234,
+      "ino": 124224806,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/owner.json",
+      "bytes": 237,
+      "sha256": "c352969a671cbe0a2d3ca8945bc76d3d7a9a737807723d180f03bb2519871d5c",
+      "dev": 16777234,
+      "ino": 124198068,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/stage-34b23f87-36ae-490a-af46-8cdcd41b19c5.json",
+      "bytes": 806,
+      "sha256": "5f1a02d981639fb6af30f2fa92dae79b0e00f9815c9b1fe8718f06f6e59a863b",
+      "dev": 16777234,
+      "ino": 124224844,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    }
+  ],
+  "rootIdentity": {
+    "path": "/private/tmp/flow-svc06b-artifact-IhwFGS",
+    "dev": 16777234,
+    "ino": 124198066,
+    "mode": "0o700",
+    "uid": 501
+  },
+  "rawBytes": 16634,
+  "rawIncludingOriginalStage": 17440,
+  "result": {
+    "phase": "artifact-and-imports-passed",
+    "outerExit": 0,
+    "elapsedMs": 33158,
+    "ownedPid": 45951,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "firstFailure": null,
+    "outerEqualsDurableResult": true,
+    "stageAndLockAbsent": true,
+    "sqlFilesVerified": 33,
+    "snapshots": 271,
+    "inventory": {
+      "logicalBytes": 363849010,
+      "entries": 15628,
+      "manifestBytesIncluded": 367045616,
+      "nodeImages": 20
+    }
+  },
+  "review": "PENDING",
+  "scope": "Artifact build/verification/internal loading only; no real host/Web compatibility or personal deployment",
+  "providerCalls": 0,
+  "personalOperations": 0
+}

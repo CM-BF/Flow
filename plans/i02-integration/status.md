@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:36:26.888Z / main6fd214eb6；SVC09A已审源码与FLOW原文交接在本批受控接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:37:48.376Z / main246ed0f52已推；SVC06B实际结果独审APPROVED，本批原件受控接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main677a93e9已接本批产品与固定原件；本次仅实际main/看板状态正常收口 |
-| 工作树dirty状态 | 仅本次实际main/部署状态；两个既有未知__pycache__继续不纳入 |
+| 工作基线 / HEAD | main246ed0f52已接SVC09A源码与FLOW后继交接；本批接收固定后台实际构建结果 |
+| 工作树dirty状态 | 仅已审结果原件/本次接收状态；两个既有未知__pycache__继续不纳入 |
 | 工作分支状态 | in-progress |
-| 检查状态 | 领取资格原5PG独审复用；本批两个直接消费者10/10及focused types exit0，自有普通段3258ms完整归还，0新PG/provider/个人操作 |
-| 已集成main状态 / HEAD | main/origin677a93e9已含CORE资格修复与204来源；4320实际204来源已核。个人7d1/source6c、Webd629/v3保持；主线不自动替换运行版本。 |
+| 检查状态 | SVC09A原33不同局部例与CORE原10直接消费者复用；新固定后台实际33158ms构建/校验/内部加载通过，独审0重跑。网页兼容与真实双槽仍未验 |
+| 已集成main状态 / HEAD | main/origin246ed0f52已含SVC09A与CORE；SVC06B结果本批接收。个人7d1/source6c、Webd629/v3保持；主线不自动替换运行版本。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 新旧聊天队列修复已进入主线；消息设置双宿主通过局部验证，正接收源码。固定恢复后台已完成构建，结果独审进行中。 |
-| 下一可用交付 | 继续接收已审成果，并将聊天恢复与消息设置交付到个人可用版本。 |
+| 当前产出 | 消息设置双宿主源码已进入主线；新版网页需要的固定后台产物已独审通过，并已交网页团队验证兼容。 |
+| 下一可用交付 | 验证固定新旧网页与新后台组合，再沿受管流程把恢复能力交到个人页面；消息设置双槽仍需真实宿主验证。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -432,3 +432,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 固定后台组合与薄构建入口已独审通过，见[唯一审查记录](../../docs/evidence/i02/svc06b-preparation-review.json)。10份准备/17运行绑定、75产物源与33 SQL逐字核对，原4项纯检查不重跑。完整artifact尚未运行，需前一实际共享窗口及本队局部段归还后fresh准入；当前个人运行不变。
 
 2026-10-07T14:36:26.888Z：受控接收[SVC09A固定源码](../../docs/evidence/i02/svc09a-intake.json)及[完整工具正文既有后继交接](../../docs/evidence/i02/tool-body-handoff-doc-review.json)。11源与获审record逐字相同、38直接输入和主线前像未变，复用原33不同用例，0重复工程检查；旧局部失败与未验真实双槽宿主/个人激活保留。SVC06B实际构建已归还，结果正在唯一独审，不把artifact生成冒充网页兼容。
+
+2026-10-07T14:37:48.376Z：main246ed0f52实际已push并clean；[SVC06B结果唯一独审](../../docs/evidence/i02/svc06b-actual-result-review.json)绑定a6adfd597与cd27/04da，10source/10raw/3private及三lateLogout字节一致，33158ms全部自有组收束。未重跑构建或原检查，未替换个人运行。实际descriptor已直接交Web；新旧页面兼容与真实双槽部署仍分别开放。
