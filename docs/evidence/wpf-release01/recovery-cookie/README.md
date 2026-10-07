@@ -1,6 +1,6 @@
 # RELEASE01 新版 Cookie 网页：固定源码准备
 
-固定实现 `8964dc1185f62ed8934c15416e9798929359ab89`，只有原 fixture/browser 两文件变化。新 claim `27c36b97-162d-45e0-9150-25269d3d3f34 v1` 已原子 COMMITTED；[领取原件](claim-receipt.json)和[请求](claim-request.json)固定。旧38b9释放及原9658/c3/main交付不回改。[前状态原件](previous-status.md)保留。当前strict已单次通过，源码独审与真实兼容仍未完成，不继承历史绿结果。
+固定实现 `8964dc1185f62ed8934c15416e9798929359ab89`，只有原 fixture/browser 两文件变化。新 claim `27c36b97-162d-45e0-9150-25269d3d3f34 v1` 已原子 COMMITTED；[领取原件](claim-receipt.json)和[请求](claim-request.json)固定。旧38b9释放及原9658/c3/main交付不回改。[前状态原件](previous-status.md)保留。当前strict已单次通过，root源码与必要局部检查独审APPROVED；真实兼容仍未完成，不继承历史绿结果。
 
 ## 显式入口与尚缺输入
 
@@ -31,3 +31,7 @@
 [必要局部提案](local-check-proposal.json)：原两entry strict + noUncheckedIndexedAccess + noEmit，仅一个 Node，20s含5s cleanup、TMP8MiB/raw1MiB、0网络/PG/Chrome。已读实际 tsc shim 与 `_tsc.js` 两者pin；动态后台不据此冒类型覆盖。经理随后明确授一次该独立局部段，实际strict0/outer0/1125ms/完整清理，见[strict原件](strict-actual/README.md)；没有browser预约。浏览器预算/最终caller须在descriptor供给和集中生命周期审查后另给有界输入。
 
 本段进行了文本、Git对象、hash、metadata parser/link和一次两harness strict/noEmit；浏览器兼容 NOT_RUN。真实新网页可见发布仍由 Original 的产物/发布流程完成。主状态与 TODO07/08 是唯一当前事实，旧完成时间只保历史。
+
+## 正式独审与下一供给
+
+[Root原件](root-source-local-review.json)固定8964两source和本次strict实际，decision为APPROVED_SCOPED_SOURCE_AND_NECESSARY_TYPES_ONLY，0 findings；不是browser或发布批准。[最小供给请求](supply-request.json)给d01/Original，当前两个descriptor均未提供。正常metadata封存后全四scope STOP，claim保留，不重复strict/旧source研究。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T13:16:12.934Z |
+| 最近更新时间 | 2026-10-07T13:23:11.892Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,7 +10,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility |
 | Branch | codex/web-release-compatibility |
 | 工作基线 / HEAD | 固定后继基线 41276e2ecd154087f66958339d9abfce4d44964c；不 reset/rebase |
-| 工作树dirty状态 | 两harness已固定8964dc1，strict已终态；本次自有metadata封存，正常push后报告clean |
+| 工作树dirty状态 | 8964dc1两harness保持冻结；本批仅own metadata，正常push后clean并全四scope STOP |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | PASSED 8964dc1185f62ed8934c15416e9798929359ab89 仅两harness strict/noEmit；新Cookie实际与浏览器NOT_RUN |
@@ -19,11 +19,11 @@
 | 实现范围 | apps/web/test/web-release-compatibility.fixture.ts, apps/web/test/web-release-compatibility.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 新版会话网页的发布验收正在准备，保留旧三App兼容与历史证据 |
-| 下一可用交付 | 新版Cookie验收固定源码交独审及必要局部提案；新产物待原发布负责人供应 |
+| 当前产出 | 新版会话网页验收源码与必要类型检查已独立批准；真实新产物兼容尚待执行 |
+| 下一可用交付 | 原发布负责人供应7272共源新Web/backend descriptor，再形成实际兼容输入 |
 | 当前阻塞 | ACTIVE: 新Web及含迟到退出修复的后台不可变产物尚待原发布负责人供应；独立源码准备可继续 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：新Cookie后继NOT_STARTED，旧9658/c3批准仅历史范围 |
+| Review | [review.md](review.md)：APPROVED 8964dc1185f62ed8934c15416e9798929359ab89，仅源码+必要strict；browser NOT_RUN |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 整体开工UNKNOWN；历史片段完成12:17:59.709Z保前状态；后继领取13:09:33.224Z仅为领取事实，编辑固定来源8964dc1；不以领取或编辑时刻倒填全任务开工 |
@@ -37,8 +37,8 @@
 | RELEASE01-04 | completed | w01_owner | [固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，f3d源审及9658类型delta独立接受，strict复验PASS |
 | RELEASE01-05 | completed | w01_owner | [受控caller/完整输入准备](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)已固定，[c2修复与三场景actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md)已固定；native固定边界已独立接受；[c2首次actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2-first/README.md)启动前FAILED/410ms且资源归还，[c3单点修正及语法检查](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/README.md)47ms PASS，集中delta/native已接受；[c3唯一actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/README.md)三App各4项与独立Cookie PASS/完整cleanup，全部首红保留 |
 | RELEASE01-06 | completed | w01_owner | [限定实际独审与主线接收](../../docs/evidence/wpf-release01/fixed-origin/main-close/README.md)；个人更新未执行，属于独立发布交付 |
-| RELEASE01-07 | in-progress | w01_owner | [Cookie后继固定源码](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)与[局部检查提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)；SOURCE_FIXED；[strict实际PASS](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)，独审未完成 |
-| RELEASE01-08 | pending | w01_owner | 新immutable tuple实际、独审与原发布者接收；尚未供给/运行 |
+| RELEASE01-07 | completed | w01_owner | [Cookie后继固定源码](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)与[局部检查提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)；SOURCE_FIXED；[strict实际PASS](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)与[root限定批准](../../docs/evidence/wpf-release01/recovery-cookie/root-source-local-review.json) |
+| RELEASE01-08 | pending | w01_owner | [最小供给请求](../../docs/evidence/wpf-release01/recovery-cookie/supply-request.json)后，new immutable tuple实际/独审/原发布者接收；尚未供给/运行 |
 
 ## 等待记录
 
@@ -100,3 +100,7 @@ owned Chrome/HTTP proxy/backend生命周期caller与完整输入现已形成固�
 ## 当前后继源码安全点
 
 [8964dc1 两harness接口与边界](../../docs/evidence/wpf-release01/recovery-cookie/README.md)已固定。旧三App/Bearer与四check保留，新入口只接显式7272新Web/backend；缺供给在fixture启动前拒绝，不fallback6c/7d1。新增真实Cookie刷新恢复、持久原key重试及延迟原logout响应headers后重连链，strict/noEmit单次已通过，浏览器尚未运行，不能据源码或类型检查宣称compat通过。领取原件、来源pins、clean-code记录及20s局部提案在同目录；新增strict-only局部实际1125ms已清理封账；无heavy预约或旧预算迁移。
+
+## 当前独立源码与局部实际审查收口
+
+Root 对固定8964两harness与唯一strict实际作正式限定APPROVED、0 findings，原件已逐字归档。类型检查1,125ms/20s CLOSED、双EOF与owned清理已独立接受；未用18,875ms不转credit。四App对7272新后台的真实兼容仍NOT_RUN，main/用户可见发布未完成；旧3App各4项报告必须重绑同一新backend/context，不能复用旧6c报告填新结论。新Web+修正backend的最小明确供给请求交d01/Original，descriptor为空不fallback。正常metadata push/clean后全四scope STOP，claim27c36v1保留；无heavy预约。

@@ -28,6 +28,10 @@
   "newBackendDescriptor": null,
   "oldArtifacts": "Historical three-App identities retained; reports must be regenerated for the newly admitted backend/context.",
   "currentChecks": "STRICT_PASSED_1125MS_BROWSER_NOT_RUN",
-  "currentReview": "NOT_STARTED",
-  "metadataSeal": "Final metadata HEAD is reported after normal commit/push; this immutable source target does not chase metadata commits."
+  "currentReview": "APPROVED_SCOPED_SOURCE_AND_NECESSARY_TYPES_ONLY",
+  "metadataSeal": "Final metadata HEAD is reported after normal commit/push; this immutable source target does not chase metadata commits.",
+  "reviewReceipt": {
+    "path": "root-source-local-review.json",
+    "sha256": "20dccd8d8ff126be623fa13e97a12d9317ec53156a33f2b4299f3296740e7acd"
+  }
 }

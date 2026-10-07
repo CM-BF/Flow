@@ -1,12 +1,12 @@
 # WPF-RELEASE01 review
 
-**状态：NOT_STARTED（新版 Cookie 后继固定源码；strict通过，浏览器未运行）**
+**状态：APPROVED（仅固定源码与必要strict/noEmit；浏览器兼容未运行）**
 
 Review target commit：8964dc1185f62ed8934c15416e9798929359ab89
 
 范围：apps/web/test/web-release-compatibility.fixture.ts、apps/web/test/web-release-compatibility.browser.ts。
 
-[固定源码与输入](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)、[接口/生命周期差量](../../docs/evidence/wpf-release01/recovery-cookie/README.md)及[必要局部提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)与[strict实际](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)交 root 集中独审。旧三份兼容证据不迁移到7272新后台；新descriptor尚未供给。作者不自行批准。
+[固定源码与输入](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)、[接口/生命周期差量](../../docs/evidence/wpf-release01/recovery-cookie/README.md)及[必要局部提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)与[strict实际](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)经[root独立审查](../../docs/evidence/wpf-release01/recovery-cookie/root-source-local-review.json)正式 APPROVED_SCOPED_SOURCE_AND_NECESSARY_TYPES_ONLY，0 findings。旧三份兼容证据不迁移到7272新后台；新descriptor尚未供给。browser/immutable compatibility NOT_RUN，新主线接收及用户可见发布未完成。
 
 ## 历史：9658 三保留 App 兼容性批准及 main 接收
 
