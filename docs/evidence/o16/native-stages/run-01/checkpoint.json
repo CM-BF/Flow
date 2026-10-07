@@ -1,0 +1,42 @@
+{
+  "pid": 24939,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 1,
+  "elapsed_ms": 2170,
+  "observed_bytes": 2647,
+  "retained_bytes": 2647,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "privateBytes": 0,
+  "entries": 0,
+  "rawBytes": 2647,
+  "cleanupReady": true,
+  "removed": false
+}

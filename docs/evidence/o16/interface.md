@@ -31,3 +31,7 @@ Assignment binding: the planner matches the immutable admitted task/run and conf
 ## 2026-10-06 19:07:03 UTC 独立 parent 总时限
 
 operator 在 test 启动前建立独立 Node watchdog；其150s计时不依赖父事件循环、persist或fsync。末1s前停止父PID及已登记的最多三个组，再尝试unknown/STOP checkpoint；写入未完成也按固定deadline退出。原始durable unknown reservation是未确认最终写入时的保留依据。complete ACK不能提前解除时限，须实际parent断连退出且登记组已消失。没有DB/tmp删除接口；signal仅记录sent/absent/unknown，不伪称完整停止。三个新纯owned-process用例覆盖pending persist、完成ACK后同步阻塞、正常退出；此前22不同未重跑，累计25不同。PG/真实模型仍NOT_RUN。
+
+## O16-06 分阶段后继（2026-10-07）
+
+当前实现见[native-stages/README](native-stages/README.md)：阶段exclusive reservation、15分钟pause绑定/单次consume、checkpoint先于收尾、首错与cleanup分开、仅实验persistSession:false。原统一监督器和产品base f5a保持。真实native登录来源/其它SDK写入未定，所有真实native入口先拒绝，不产生许可；真实PG/模型与长期恢复未验。此前零模型main结论及原FAIL/KEEP不追溯改变。

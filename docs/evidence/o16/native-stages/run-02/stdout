@@ -1,0 +1,15 @@
+✔ experiments/continuous-goal-acceptance/decision-checkpoint.test.mjs (1023.769292ms)
+✔ experiments/continuous-goal-acceptance/decision.test.mjs (581.538459ms)
+✔ a durable primary failure survives disposal and finish failures in the saved report (23.541834ms)
+✔ checkpoint failure still closes resources, prevents destruction and never publishes a pause (0.519041ms)
+✔ exclusive pause consumption retains a prior record and refuses duplicate continuation (34.736333ms)
+✔ the real resume packet reader refuses changed material before consuming or reconnecting (26.385958ms)
+✔ the actual injected query receives persistSession false with the original hooks, abort and iterator (18.798667ms)
+ℹ tests 7
+ℹ suites 0
+ℹ pass 7
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2305.888792
