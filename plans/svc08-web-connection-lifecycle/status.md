@@ -6,29 +6,29 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | assignment_review / gpt-6-astra |
-| 更新时间 | 2026-10-07T05:14:40.361Z |
+| 更新时间 | 2026-10-07T05:22:25.047133+00:00 |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | review |
-| 当前产出 | Web独立宿主选择和新产物结果已进入主线；只启动网页角色的隔离验收入口已获独立批准，实际运行待共享窗口。个人服务未改变。 |
-| 下一可用交付 | 完成一次隔离网页宿主的实际启动、静态文件读取与受控收尾；个人采用另行验证。 |
-| 当前阻塞 | ACTIVE: 等待共享数据库运行窗口；固定入口已审，个人采用仍是后续独立验收 |
+| 当前产出 | 固定产物已通过一次真实隔离网页宿主验收，静态内容与身份匹配，自有进程和专库已收尾；结果待独立审查，个人服务未改变。 |
+| 下一可用交付 | 交付隔离宿主结果，准备同一产物的受管个人迁入与仅网页宿主替换。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
 | Branch | codex/personal-web-connection-lifecycle |
 | Base | a2e7803161ffb7e2158eaf3c13531448d2a777b0；本片四产品preimage固定0967607a9a9c2435282ca7fbba23b6e96df096c4，两只读叶子input-only26d1be6c |
-| Head | source20ed0ccd192127ed55f7f0677db17de32cc9e30e；实际结果2479e54aacd67395b4c3ac2468a7158beb439705；产品bad019不变 |
-| 工作树dirty状态 | 已审产品/build原件冻结；本次仅隔离host入口及metadata，提交后核clean |
-| 工作分支状态 | in-progress；产物结果已审，当前仅隔离Web宿主源码准备 |
+| Head | 固定产品bad019；隔离入口c8542aee8354fcfcdd6fb68aac5279d108548d4b；本次结果提交后固定 |
+| 工作树dirty状态 | 仅own plan/evidence封存本轮原始结果；提交后核clean |
+| 工作分支状态 | in-progress；隔离宿主真实结果待审，个人采用未运行 |
 | 实现目标 | bad019d9691499bed69ae46b6c5d23944709cfe3 |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/backend-release/host.mjs, tools/personal-preview/README.md |
 | Claim | ba1ff3b2-d830-4acf-b84f-be8df92c9c95 v6 active；04:42:47.430Z正式accept，仅own plan/evidence；[receipt](../../docs/evidence/svc08/flow-host-artifact/assignment-accept-receipt.json) |
 | Review | APPROVED_FIXED_BUILD_PREPARATION 20ed0ccd192127ed55f7f0677db17de32cc9e30e；[唯一准备review](../../docs/evidence/svc08/flow-host-artifact/build-once/preparation-independent-review.json)，实际结果APPROVED_LIMITED_FLOW_SOURCE_ARTIFACT_AND_INTERNAL_LOADING 2479e54aacd67395b4c3ac2468a7158beb439705；[结果独审](../../docs/evidence/svc08/flow-host-artifact/build-once/result-independent-review.json) |
-| 检查状态 | PASSED 20ed0ccd192127ed55f7f0677db17de32cc9e30e；一次Flow422构建/import与只读选择，30,732ms/exit0/双EOF/group absent；[实际结果](../../docs/evidence/svc08/flow-host-artifact/build-once/RESULT.md)，0host/PG/provider |
-| 已集成 main 状态 | INTEGRATED ee98e65c147cf2ef28ccf0f519952f60d56e9d4b；固定228产物结果与独审原件已接；四产品main422保持；当前4产品对bad019/current逐hash相同，[回执](../../docs/evidence/svc08/web-host-selection/main-receipt.json)；前片2f18/158保持 |
+| 检查状态 | PASSED c8542aee8354fcfcdd6fb68aac5279d108548d4b；1场景/7断言/3静态HTTP，work20,735ms+cleanup257ms/双exit0/双EOF/最终组absent；Web显式stop code1原样保留；[结果](../../docs/evidence/svc08/flow-host-artifact/web-host-once/RESULT.md) |
+| 已集成 main 状态 | INTEGRATED ee98e65c147cf2ef28ccf0f519952f60d56e9d4b；固定228构建结果与独审已接，四产品main422保持；本次隔离宿主结果尚待独审/受控接收 |
 | 架构影响 | serviceRuntime仅为Web选择独立artifact，pendingWebHost与同journal先行；后台artifact/身份与原授权保持。main422已接；Execution Lead同步宿主基线。无新产物格式/FSM/监督器 |
 | 看板 | Lead确认main8c已登记SVC08 source184；实际新registry载入待ACCESS安全点，不冒已载入 |
 
@@ -100,3 +100,11 @@
 ## 2026-10-07T05:14:40.361Z：隔离Web宿主入口独审接收
 
 唯一Execution Lead批准APPROVED_FIXED_ISOLATED_WEB_HOST_PREPARATION，target c8542aee8354fcfcdd6fb68aac5279d108548d4b，delivery51f67dde71339ad3bdd598eb105652813f469e35；[原件](../../docs/evidence/svc08/flow-host-artifact/web-host-once/preparation-independent-review.json) SHA d0cd1633620e53332d8f190b79253a84f3831efb699e1013b4834ff65923d607。完整真实调用链与38bindings一致，无P1/P2；不扩成实际host通过，当前未copy/PG/启动Web。原fixed input与120+30/2.5GiB/live1GiB/578MiB保留，等待Lead真实窗口交接。
+
+## 2026-10-07T05:20:27.317981+00:00：隔离 Web 宿主实际单次开始
+
+共享窗口已由 X01R3 清理后经 Lead 交接；38 固定绑定、claim v6、新 namespace/outer 不存在及 fresh free 25,138,454,528 B 均核准。唯一原 supervise→entry 将实际启动，120s work +30s cleanup、原资源界限不变；当前 holder 为本 SVC08，结果及独立 cleanup 以本轮原件为准，未知前不报清理完成。0runner/provider/个人服务。
+
+## 2026-10-07T05:22:25.047133+00:00：隔离宿主结果固定待审
+
+实际05:20:27.448Z开始，05:20:48.327Z专库/组收尾完成；本组窗口已实际归还，不为metadata占用。原7checks全true、3次静态HTTP、合成后台/runner状态保持；Web matching nonce显式stop退出1原样保留。两监督owner最终absent/双EOF，首unknown保留；marker/OID/零连接→先行checkpoint→正常DROP/remaining=[]。原产物、新副本和私有记录KEEP；0task/provider/个人操作。见[唯一结果](../../docs/evidence/svc08/flow-host-artifact/web-host-once/RESULT.md)。本轮结果review PENDING，完整SVC08/个人采用仍open；entry/输入/旧raw没有改写。

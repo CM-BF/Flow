@@ -1,0 +1,32 @@
+{
+  "state": {
+    "source": {
+      "head": "af51c621696230fbced12227670f014ca73bd8a1",
+      "dirty": false
+    },
+    "backendArtifact": null,
+    "webHost": {
+      "artifact": {
+        "policy": "flow.backend-artifact.v1",
+        "artifactId": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+        "manifestDigest": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+        "sourceHead": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+      }
+    },
+    "webArtifact": {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91"
+    },
+    "processes": {
+      "center": {
+        "synthetic": "not-running-center-preservation-sentinel"
+      },
+      "runner": {
+        "synthetic": "not-running-runner-preservation-sentinel"
+      }
+    },
+    "lastError": null
+  },
+  "configSha256": "e7faf4d75523cb40e169374d019e53757da0db143b5643a6c640e2e36c3f924b"
+}

@@ -1,0 +1,261 @@
+{
+  "recordedAt": "2026-10-07T05:21:44.130418+00:00",
+  "entrySource": "c8542aee8354fcfcdd6fb68aac5279d108548d4b",
+  "result": "PASSED_ISOLATED_WEB_HOST",
+  "startedAt": "2026-10-07T05:20:27.448Z",
+  "workFinishedAt": "2026-10-07T05:20:48.080Z",
+  "cleanupStartedAt": "2026-10-07T05:20:48.173Z",
+  "cleanupFinishedAt": "2026-10-07T05:20:48.327Z",
+  "selectedScenarios": 1,
+  "passedScenarios": 1,
+  "actualHttpRequests": 3,
+  "checks": {
+    "actualWebCliAndVite": true,
+    "ownedListener": true,
+    "identity": true,
+    "indexAndAssetBytes": true,
+    "syntheticBackendAndRunnerStateUnchanged": true,
+    "configUnchanged": true,
+    "onlyMarkerDatabaseNoMigrations": true
+  },
+  "providerCalls": 0,
+  "tasksCreated": 0,
+  "runnerStarted": 0,
+  "personalOperations": 0,
+  "workMs": 20735,
+  "cleanupMs": 257,
+  "supervisedMsTotal": 20992,
+  "outerTotalWallMs": null,
+  "outerWallLimit": "not inferred from phase sum; persistence occurs after supervision",
+  "outerExitCode": 0,
+  "bothFinalGroupsAbsent": true,
+  "bothEOFComplete": true,
+  "initialUnknownObservationPreserved": true,
+  "webGroup": 38676,
+  "webStopped": true,
+  "webExit": {
+    "at": "2026-10-07T05:20:48.190Z",
+    "nonce": "32fb9094-7888-4611-9ded-ff2195543d32",
+    "code": 1,
+    "signal": null
+  },
+  "databaseOid": 1226143,
+  "databaseRemoved": true,
+  "remaining": [],
+  "checkpointBeforeDrop": true,
+  "freeMinimumObservedBytes": 25128849408,
+  "maxPrivateObservedBytes": 1614931,
+  "rawBytesIncludingOriginalCopiesAndOuter": 31347,
+  "artifactClone": {
+    "regularFiles": 12599,
+    "directories": 2205,
+    "internalSymlinks": 742,
+    "regularLogicalBytes": 366318536,
+    "regularAllocatedBytes": 401088512,
+    "cloneFallback": false,
+    "physicalExclusiveBytes": null,
+    "finalManifestVerification": "performed by original verifier immediately after copy",
+    "freeAfter": 25131245568
+  },
+  "rawCopies": [
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/reservation.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/reservation.json",
+      "bytes": 269,
+      "sha256": "c484ca09e3c630c675dc4a8e238394ebd81c1d891a7c3872d4639cfbe70625c5",
+      "dev": 16777234,
+      "ino": 123512539,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/inputs.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/inputs.json",
+      "bytes": 11229,
+      "sha256": "459db2148b01f5698819576eaae8558ac06215c65220681e10b38975d1b2fad6",
+      "dev": 16777234,
+      "ino": 123512540,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/preservation.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/preservation.json",
+      "bytes": 1085,
+      "sha256": "add366f0cd17051ef9afb25d0322aa253ab403ed03cc9377880b42daf34be5d4",
+      "dev": 16777234,
+      "ino": 123528119,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/database-intent.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/database-intent.json",
+      "bytes": 206,
+      "sha256": "789305199c419c5c6f50e1fb49aa0609261b5f7ca46bdcd0eea57f4bd0e177d7",
+      "dev": 16777234,
+      "ino": 123528120,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/database-created.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/database-created.json",
+      "bytes": 140,
+      "sha256": "5a03ae02f9244ec3e07d4fe5c39bd5754bc0cc4319860106ca634b3c7c0b4361",
+      "dev": 16777234,
+      "ino": 123528121,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/spawn-web-intent.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/spawn-web-intent.json",
+      "bytes": 680,
+      "sha256": "361d237ef674b34ca2b8985a0c423a5d765b0c3ec72ea8653a1bfc0fffc0b907",
+      "dev": 16777234,
+      "ino": 123528143,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/spawn-web-pending.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/spawn-web-pending.json",
+      "bytes": 128,
+      "sha256": "1f96c0f41a70fbd382101f6d260cf2d9bb9027caac1e33bce820b94518554205",
+      "dev": 16777234,
+      "ino": 123528144,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/spawn-web.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/spawn-web.json",
+      "bytes": 469,
+      "sha256": "f79261c56f1950d24b2d1e720ca8fed13f92300b7e67c3bd70f836dad6893e6f",
+      "dev": 16777234,
+      "ino": 123528146,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/stop-web-intent.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/stop-web-intent.json",
+      "bytes": 124,
+      "sha256": "f3d1d7f0e6224d4ecf6c5f2e9f09f98efc74b199e51df3e7e7bf687cc3ad6ce0",
+      "dev": 16777234,
+      "ino": 123528169,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/work-result.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/work-result.json",
+      "bytes": 8165,
+      "sha256": "b49c08fa68b294e7eb27c3e52ec204a9636f2bafca602e1d1074c2bf1f3d88cc",
+      "dev": 16777234,
+      "ino": 123528168,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/cleanup-result.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/cleanup-result.json",
+      "bytes": 708,
+      "sha256": "3fa787229888c9abceadc8ced844dbee77c177e1f098657e25ec6274352248fa",
+      "dev": 16777234,
+      "ino": 123528172,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/cleanup-checkpoint.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/cleanup-checkpoint.json",
+      "bytes": 629,
+      "sha256": "116d2c217093438c6780a9f43ea5b3d53b28aa434a3e06f169bfd6a2d1220e55",
+      "dev": 16777234,
+      "ino": 123528171,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/clone-result.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/clone-result.json",
+      "bytes": 328,
+      "sha256": "7986cbe9bf4a3dc7e690bf2ee3416dd4f9f260f374f31044ced3997bd0eb1906",
+      "dev": 16777234,
+      "ino": 123528111,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-exit.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/web-exit.json",
+      "bytes": 104,
+      "sha256": "fe6501b9e2673bf7fd1f2e8d6734094a61c9ca28bc7e03718e8fa98fec4df897",
+      "dev": 16777234,
+      "ino": 123528170,
+      "sameBytes": true
+    }
+  ],
+  "privateBindings": [
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/config.json",
+      "bytes": 609,
+      "sha256": "e7faf4d75523cb40e169374d019e53757da0db143b5643a6c640e2e36c3f924b",
+      "dev": 16777234,
+      "ino": 123528117,
+      "mode": "0o600",
+      "contentsArchived": false
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/state.json",
+      "bytes": 1433,
+      "sha256": "b6d162e97e1f11df7bb2dd14b3fa30111dfd8164a2401be912b3f5b0d19b0add",
+      "dev": 16777234,
+      "ino": 123528147,
+      "mode": "0o600",
+      "contentsArchived": false
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/manifest.json",
+      "bytes": 3182109,
+      "sha256": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+      "dev": 16777234,
+      "ino": 123528110,
+      "mode": "0o600",
+      "contentsArchived": false
+    },
+    {
+      "path": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/manifest.json",
+      "bytes": 3182109,
+      "sha256": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+      "dev": 16777234,
+      "ino": 123501822,
+      "mode": "0o600",
+      "contentsArchived": false
+    }
+  ],
+  "retainedDirectories": {
+    "/private/tmp/flow-svc08-web-host-20261007": {
+      "dev": 16777234,
+      "ino": 123512537,
+      "mode": "0o700",
+      "retained": true
+    },
+    "/private/tmp/flow-svc08-web-host-20261007/web-host-once": {
+      "dev": 16777234,
+      "ino": 123512538,
+      "mode": "0o700",
+      "retained": true
+    },
+    "/private/tmp/flow-svc08-flow-artifact-z5s5tT": {
+      "dev": 16777234,
+      "ino": 123475174,
+      "mode": "0o700",
+      "retained": true
+    }
+  },
+  "limits": [
+    "CoW allocated/logical bytes are not exclusive physical cost.",
+    "Resource figures are observed samples, not atomic peaks.",
+    "Synthetic center/runner preservation only; no personal state was sampled.",
+    "No API proxy/Chrome/three-retained/old tabs/default personal replacement acceptance.",
+    "Web matching-nonce code1 follows explicit stop and remains code1.",
+    "RunService stdio=ignore unchanged; no internal stderr capture claim."
+  ],
+  "skills": {
+    "paths": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "method": "Reuse installed discovery and clean-code methods; no install. Fixed Interface/source/Module reuse, independent primary/cleanup and scope distinctions preserved; no product changes."
+  }
+}
