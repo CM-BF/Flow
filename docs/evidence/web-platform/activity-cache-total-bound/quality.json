@@ -1,0 +1,50 @@
+{
+  "recordedAt": "2026-10-07T01:31:40Z",
+  "scope": "Metadata only: original MATURE05-05/MATURE06-03 acceptance and pointers",
+  "model": "gpt-6-astra ultra",
+  "skillDiscovery": {
+    "method": "Installed local find-skills first; matching clean-code applied; no installation/network lookup needed",
+    "skills": [
+      {
+        "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+        "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+      },
+      {
+        "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+        "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+      }
+    ]
+  },
+  "cleanCode": {
+    "naming": "Existing stable TODO IDs; source-only facts distinguish generic/native limits",
+    "responsibility": "05 aggregate/lifecycle; 06 reachability/reread; one shared evidence",
+    "interfaces": "ReadCache capabilities and missing flight/cursor/metadata accounting separated; no implementation mandated",
+    "errors": "No measured leak/performance diagnosis; refresh/reset distinctions explicit",
+    "duplication": "Plans link a shared report; no second feature status or new task",
+    "complexity": "No framework or runtime packet; old evidence retained"
+  },
+  "checks": {
+    "diffCheck": "PASS",
+    "changedPaths": 14,
+    "scopeOutside": [],
+    "newOrChangedMarkdownLinksChecked": 19,
+    "brokenLinks": [],
+    "stableTodoIds": {
+      "plans/wpf-mature-05-workspace/plan.md": 5,
+      "plans/wpf-mature-05-workspace/status.md": 5,
+      "plans/wpf-mature-06-chat/plan.md": 6,
+      "plans/wpf-mature-06-chat/status.md": 6
+    },
+    "overallMatureReviews": "NOT_STARTED / target UNKNOWN preserved",
+    "registry": "Fixed d057 static mapping lines83/84; no actual dashboard observation",
+    "byteBudget": {
+      "limit": 65536,
+      "accounting": "Tracked UTF-8 added plus removed line bytes (excluding diff headers), plus all new evidence bytes; no old evidence removed.",
+      "changedLineBytes": 9637,
+      "newEvidenceBytes": 11869,
+      "totalBytes": 21506
+    }
+  },
+  "runtime": "NOT_RUN; no imports, product tests, HTTP, PG, Chrome, CI, resource sampling or reservation",
+  "review": "NOT_STARTED; independent fixed documentation commit to be provided to root"
+}

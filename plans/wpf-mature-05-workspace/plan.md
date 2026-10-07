@@ -26,7 +26,7 @@
 - [ ] **WPF-MATURE-05-02** 接真实conversation双pane：同顶层tab显示A与B，独立焦点/滚动/未发草稿/上下文，不靠全局focused授权其他pane；真实ConversationList扩展用conversation/view上下文，不借旧task slot冒覆盖。
 - [ ] **WPF-MATURE-05-03** 提供布局操作与恢复：比例调整、交换、合回与恢复；关闭视图不cancel，split/merge只改布局不拼接history；组合pane菜单复用P01 registry并核sample贡献/禁用及跨连接身份。比例键盘与窄屏焦点实际验证；有显著按需加载延迟的tab使用方向键移动focus、Enter/Space手动激活，关闭后焦点落相邻tab或New Chat。Retained chats工作区入口后继复用现有P01 slot的builtin command/button贡献；App私有callback仍唯一控制dialog/views，不新slot/通用总线或公开views；验证disabled/unload/连接旧callback及键盘focus。当前缓存片限定批准不等插件完整覆盖，不立即领取App。
 - [ ] **WPF-MATURE-05-04** 兼容内容种类与窄屏：模型可容chat/文件/产物；首个两栏旅程与3+后继分明，390键盘可达且不强迫外部内容同色。
-- [ ] **WPF-MATURE-05-05** 固定真实交互验收：实际App双会话及内容pane交互/刷新恢复/关闭重开证据，主题和比例/焦点测试；大量反复开关后DOM/缓存/订阅有界，区分visible/hidden/closed-clean/closed-protected，草稿/附件/unknown不可静默丢失，满额保护时拒新开，重开恢复且不cancel后台任务；实际0模型测DOM/effects读取/切换输入时延及未确认恢复，Activity不是内存上限；另核overview/feed同时服务sidebar的观察与命令生命周期，按visible overview/聊天隐藏overview/pagehidden区分请求，不能仅离开overview就全停；后继裁剪必须保raw稀疏cursor/watermark、阅读anchor/hasEarlier/可重取和单一轻摘要来源，不用DOM推算CPU/heap；关联MATURE06-04，没有实现的3+明确开放。
+- [ ] **WPF-MATURE-05-05** 固定真实交互验收：实际App双会话及内容pane交互/刷新恢复/关闭重开证据，主题和比例/焦点测试；大量反复开关后DOM/缓存/订阅有界，区分visible/hidden/closed-clean/closed-protected，草稿/附件/unknown不可静默丢失，满额保护时拒新开，重开恢复且不cancel后台任务；实际0模型测DOM/effects读取/切换输入时延及未确认恢复，Activity不是内存上限；另核overview/feed同时服务sidebar的观察与命令生命周期，按visible overview/聊天隐藏overview/pagehidden区分请求，不能仅离开overview就全停；后继裁剪必须保raw稀疏cursor/watermark、阅读anchor/hasEarlier/可重取和单一轻摘要来源，不用DOM推算CPU/heap；关联MATURE06-04，没有实现的3+明确开放。 长时活动读取的累计缓存验收见[本条补充](#活动读取累计缓存验收)。
 
 ## 验证与交付规则
 
@@ -35,6 +35,10 @@
 ## 固定研究输入
 
 见[固定b1c2源码与官方接口研究](../../docs/evidence/web-platform/mature-task-handoff.md)：现有split硬限两个group，尚无组合pane模型；现theme tokens可复用。可聚焦splitter键盘/ARIA需实际验证，不透明fallback不可只靠支持有限的media query。研究未构成实现或产品验收。
+
+### 活动读取累计缓存验收
+
+原05-05主责同一长时view及其各turn聚合的metadata/body entries与bytes、in-flight界限，不能用单body/单页或view数量代替总量。多次展开/分页后应有明确计量、超额/淘汰与生命周期策略，保持connection/view/turn/task隔离、unknown/草稿/附件/未决回执和后台执行。先评估现有ReadCache/lifecycle，不默认预取或新框架；淘汰后的cursor、显式重读与焦点验收由原06-03共同核对。固定d057的[共享源码事实与验收输入](../../docs/evidence/web-platform/activity-cache-total-bound/report.md)只补覆盖，尚未实施或测量，不改变Recovery/Quick优先顺序。
 
 ### 组结构和预算后继验证（root 09:12固定main77c只读）
 

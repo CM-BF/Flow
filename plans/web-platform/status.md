@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 23:53 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 01:31 UTC；仅管理更新，本次未复核部署/main同步 |
 | Plan | [plan.md](plan.md) |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -75,6 +75,8 @@
 [portable候选交付](../../docs/evidence/web-platform/message-settings02-portable-prepared/report.md)与[REQ17/CHAT06测量接口](../../docs/evidence/web-platform/req17-chat06-measurement-interface/report.md)沿现有验收推进，未新增运行或claim；性能全部未测量。
 
 [D06原树源码后继](../../docs/evidence/web-platform/architecture-snapshot-0da-intake/report.md)已实际领取adf9539d v1四范围，原owner唯一status记录5124限定source-only批准/新检查NOT_RUN；管理索引不冒main或页面完成。
+
+[活动累计缓存覆盖输入](../../docs/evidence/web-platform/activity-cache-total-bound/report.md)已归原MATURE05-05/06-03，待本次文档独审；仅补验收，不新增产品实现、运行阻塞或许可。两大task的唯一status维护对应条目。
 
 ## 当前唯一来源、写权与下一步
 

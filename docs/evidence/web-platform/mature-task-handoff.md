@@ -1,8 +1,12 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-06T23:53:02.712681+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
+更新：2026-10-07T01:31:40Z。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
 
-## 本轮源码交接
+## 本轮管理输入
+
+[固定d057的活动累计缓存覆盖补充](activity-cache-total-bound/report.md)归原MATURE05-05/06-03；只有管理验收差异，尚待独立文档审查、未实施/未测量。两份唯一status保留现registry静态映射，未实采聚合；Recovery/Quick顺序与无新grant/预约保持。root新入站free888332KiB低于原线，本组未采样。
+
+## 已固定源码交接
 
 [D06 原五图后继已在原树领取并固定](architecture-snapshot-0da-intake/report.md)：原owner d01_owner、adf9539d v1四范围；两源5124、owner9fb9双端clean。固定0da事实获root/peer限定source-only批准，新22direct/页面均未运行；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md)仍是功能权威，无新运行窗口。
 

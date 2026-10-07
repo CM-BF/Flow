@@ -14,3 +14,5 @@ Review target commit：UNKNOWN
 
 
 [REQ17/CHAT06测量接口研究](../../docs/evidence/web-platform/req17-chat06-measurement-interface/report.md)及root验收口径已作为原06-03输入归档；仅固定源与接口研究，性能指标全部NOT_RUN，未批准插桩、共享协议修改或优化收益，不改变本功能审查状态。
+
+[活动累计缓存验收补充](../../docs/evidence/web-platform/activity-cache-total-bound/review.md)另设本轮管理文档审查，尚未审查；不改变本完整大task NOT_STARTED / target UNKNOWN。

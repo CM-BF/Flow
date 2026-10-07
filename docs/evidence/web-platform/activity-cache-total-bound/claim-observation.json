@@ -1,0 +1,36 @@
+{
+  "observedAt": "2026-10-07T01:28:41.413Z",
+  "state": "available",
+  "selectedClaims": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/web-platform",
+        "plans/web-platform",
+        "plans/wpf-mature-01-visual",
+        "plans/wpf-mature-03-attachments",
+        "plans/wpf-mature-05-workspace",
+        "plans/wpf-mature-06-chat"
+      ],
+      "state": "active",
+      "branch": "codex/web-platform-management",
+      "origin": "migration",
+      "taskId": "WPF-001",
+      "worker": "external_web_d01_owner",
+      "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "createdAt": "2026-10-06T02:48:43.295Z",
+      "updatedAt": "2026-10-06T08:56:20.186Z",
+      "observedAt": "2026-10-06T02:48:42.000Z",
+      "needsVerification": false
+    }
+  ],
+  "conflicts": [],
+  "rawSha256": "f05667346ada834545d646f0a11c208bafbedf8d94d1552442b877b4f729e9b9",
+  "exitCode": 0,
+  "entry": "/opt/homebrew/opt/node@24/bin/node --env-file=/tmp/flow-coordination.env /Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/coordination/cli.mjs list",
+  "note": "Only manager authority retained here. Original list was read once; no credentials or full ledger are archived."
+}

@@ -22,6 +22,8 @@ root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0
 
 ## 后续子片审查索引（不改变上述固定发布批准）
 
+[活动累计缓存覆盖文档](../../docs/evidence/web-platform/activity-cache-total-bound/review.md)单独送审，当前NOT_STARTED；不借旧a5批准，不改变MATURE05/06完整feature review或实际NOT_RUN。
+
 [portable专用候选](../../docs/evidence/web-platform/message-settings02-portable-prepared/report.md)已获限定静态源码准备批准，所有实际检查未运行；[REQ17/CHAT06接口研究](../../docs/evidence/web-platform/req17-chat06-measurement-interface/report.md)仅限定接收源证据与验收口径，性能NOT_RUN。两者均不创建运行许可或扩大原a5批准。
 
 [OPS-CI01 与 Web 验收消费研究](../../docs/evidence/web-platform/ops-ci01-web-consumer-intake/report.md)仅接收固定源、入口与证据边界分析；当前远程候选不执行 QuickControls 待验入口。这不重做 OPS 独审、不批准 CI 启用或 Web 新运行，既有产品/准备批准保持原范围。
