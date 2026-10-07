@@ -17,13 +17,14 @@ function category(value: unknown): string {
   if (sql === 'SELECT ID,REVOKED FROM FLOW.RUNNERS WHERE ID=$1 FOR SHARE') return 'runner-row-share';
   return 'other';
 }
-export function observePg(poolPrototype: object, report: (event: PgObservation) => void, now = performance.now.bind(performance), onClient: (client: unknown) => void = () => {}) {
+export function observePg(poolPrototype: object, report: (event: PgObservation) => void, now = performance.now.bind(performance), onClient: (client: unknown) => void = () => {}, trackBoundary = false) {
   const prototype = poolPrototype as Shape;
   const original = prototype.connect as Callable;
   if (typeof original !== 'function') throw new Error('pool_connect_not_available');
   const pools = new WeakMap<object, number>();
   const clients = new Map<object, { query: Callable; transactionStart?: number }>();
   let nextId = 1; let dropped = 0;
+  let acquisitionsStarted = 0, acquisitionsSettled = 0, queriesStarted = 0, queriesSettled = 0;
   function emit(pool: Shape, client: Shape | undefined, kind: PgObservation['kind'], startedMs: number, outcome: PgObservation['outcome'], queryCategory?: string) {
     try {
       let poolId = pools.get(pool); if (!poolId) { poolId = nextId++; pools.set(pool, poolId); }
@@ -40,9 +41,11 @@ export function observePg(poolPrototype: object, report: (event: PgObservation) 
     if (typeof state.query !== 'function') return;
     clients.set(client, state);
     client.query = function(this: unknown, ...args: unknown[]) {
+      if (trackBoundary) queriesStarted++;
       const started = now(); const queryCategory = category(args[0]);
       if (queryCategory === 'begin') state.transactionStart = started;
       return observeCall(state.query, this, args, outcome => {
+        if (trackBoundary) queriesSettled++;
         emit(pool, client, 'sql', started, outcome, queryCategory);
         if (queryCategory === 'commit' || queryCategory === 'rollback' || queryCategory === 'begin' && outcome !== 'ok') {
           if (state.transactionStart !== undefined) emit(pool, client, 'transaction', state.transactionStart, outcome, queryCategory);
@@ -53,13 +56,18 @@ export function observePg(poolPrototype: object, report: (event: PgObservation) 
   }
   prototype.connect = function(this: unknown, ...args: unknown[]) {
     const pool = this as Shape; const started = now();
+    if (trackBoundary) acquisitionsStarted++;
     return observeCall(original, this, args, (outcome, client) => {
+      if (trackBoundary) acquisitionsSettled++;
       if (outcome === 'ok' && client && typeof client === 'object') { try { onClient(client); } catch { dropped++; } decorate(client as Shape, pool); }
       if (outcome !== 'ok') { try { onClient(undefined); } catch { dropped++; } }
       emit(pool, client as Shape | undefined, 'pool-acquisition', started, outcome);
     });
   };
   return {
+    boundary() { return { known: trackBoundary && dropped === 0, acquisitionsStarted, acquisitionsSettled, acquisitionsInFlight: acquisitionsStarted - acquisitionsSettled,
+      queriesStarted, queriesSettled, queriesInFlight: queriesStarted - queriesSettled, openTransactions: [...clients.values()].filter(value => value.transactionStart !== undefined).length,
+      basis: 'observed calls only; begin-to-end state, not checkout hold or arrival queue' }; },
     get dropped() { return dropped; },
     restore() { prototype.connect = original; for (const [client, state] of clients) (client as Shape).query = state.query; clients.clear(); },
   };

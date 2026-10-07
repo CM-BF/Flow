@@ -1,4 +1,5 @@
 export interface RunContract {
+  queueProbe?: Readonly<{ activityTailMs: number; emitTailMs: number; lightReadLimit: number; ownerHttpLimit: number; runnerHttpLimit: number }>;
   version: number; base: string; tasks: number; maximumTasks: number; totalMs: number; workMs: number;
   caseMs: number; cancelMs: number; eventsPerSecond: number; messageBytes: number; heartbeatMs: number;
   pollMs: number; requestMs: number; leaseMs: number; readIntervalMs: number; maxReads: number; observationMs: number;
@@ -35,22 +36,29 @@ export const LARGE_CONTRACT: RunContract = Object.freeze({ ...CONTRACT,
   cases: Object.freeze([{ id: 'eight-by-sixteen', runners: 8, slots: 16 }]),
 });
 
+export interface BudgetObserver {
+  charge(category: string, bytes: number): void;
+  work(): void;
+  submit(): void;
+}
 export class Budget {
   readonly categories: Record<string, number> = {};
   usedBytes = 0;
   tasks = 0;
-  constructor(readonly started: number, private readonly now: () => number = performance.now.bind(performance), readonly contract: RunContract = CONTRACT) {}
+  constructor(readonly started: number, private readonly now: () => number = performance.now.bind(performance), readonly contract: RunContract = CONTRACT, private readonly observer?: BudgetObserver) {}
   get remainingWorkMs() { return Math.max(0, this.started + this.contract.workMs - this.now()); }
   get remainingTotalMs() { return Math.max(0, this.started + this.contract.totalMs - this.now()); }
   work() {
+    this.observer?.work();
     if (!this.remainingWorkMs || this.usedBytes >= this.contract.softBytes) throw new Error('mixed_work_budget_exhausted');
   }
   charge(category: string, bytes: number) {
     if (!Number.isSafeInteger(bytes) || bytes < 0) throw new Error('invalid_byte_measurement');
     this.usedBytes += bytes; this.categories[category] = (this.categories[category] ?? 0) + bytes;
+    this.observer?.charge(category, bytes);
     if (this.usedBytes > this.contract.totalBytes) throw new Error('mixed_total_byte_budget_exhausted');
   }
-  submit() { this.work(); if (this.tasks >= this.contract.tasks) throw new Error('mixed_task_budget_exhausted'); this.tasks++; }
+  submit() { this.work(); if (this.tasks >= this.contract.tasks) throw new Error('mixed_task_budget_exhausted'); this.observer?.submit(); this.tasks++; }
 }
 export function deferred<T>() {
   let resolve!: (value: T) => void; let reject!: (reason?: unknown) => void;

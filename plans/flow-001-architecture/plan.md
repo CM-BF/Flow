@@ -663,3 +663,10 @@ GO已查一手文档：[Anthropic tool search](https://platform.claude.com/docs/
 - GO只读输入固定main `9a815eca7`：`apps/server/src/goals/commands.ts:96–107` 的dependencyContent逐项await产物；execute/native合同最多199依赖，applyGoalCommand→loadState(...,true)已持项目行锁。16k输入上限限制最终内容，不能限制许多短依赖的查询次数。此为源码推导，不是199个agent、已测延迟或生产饥饿结论；与会话页N+1属于不同直接消费者。
 - 最小候选先核一次批量读取与旧输入逐字等价：保顺序、精确task/artifact/version/detail绑定、hash、整单预算、事务/授权与未知拒绝；不移开既有锁、不以同连接Promise.all假并行、不新增第二缓存。先局部查询次数/输入等价，再在合适隔离窗口做有限PG同项目竞争，0provider，不重复128容量全集。
 - 与既有SCAN-01、POOL-01关联但不替代：本项负责执行受理依赖查询，前两项分别负责扫描锁隔离与插件宿主连接占用。官方行锁语义参考[PostgreSQL explicit locking](https://www.postgresql.org/docs/current/explicit-locking.html#LOCKING-ROWS)；采用前以实际固定版本核验。
+
+### 失败后的可解释轻摘要（REQ-15 / SVC06B / runner，2026-10-07）
+
+- [ ] **FLOW-001-T03-ERROR-01** 用户应从任务轻摘要看到已确认的失败类别、发生阶段和后续可选动作；无依据明确UNKNOWN。沿现adapter→runtime→中心状态/客户端接口演进，由Execution Lead细分、原runner/中心owner在当前网页发布和双槽宿主验收后领取。当前仅管理准备，产品范围尚未take，不抢现writer。
+- 固定main53f50e的runtime.ts:314–327丢弃原异常并统一输出笼统文本；runner事件合同只有可选error字符串，现轻投影不暴露结构化类别。16:32个人只读观察确认旧任务failed但公开摘要原因UNKNOWN；历史原文缺失不能恢复/补造原因。NativeExecutionError的settlement只表达停止边界，不是认证、超时等原因分类。
+- 小Interface保留来源与有限分类、阶段和UNKNOWN，轻摘要不带原始异常/正文/凭据，详情仍按需授权；取消及副作用未知保持既有语义，分类或可选动作不授权自动重试。旧客户端兼容、同attempt归属与迟到/旧attempt拒绝须验证；只做零模型定向失败注入、直接消费者及实际涉及的前进迁移，不另造观测平台或复制MATURE02已有泛化要求。
+- 仅借鉴[OpenTelemetry错误语义](https://opentelemetry.io/docs/specs/semconv/general/recording-errors/)中类别与说明分开、结合操作语境、避免重复记录的原则，不引入OTel依赖。原运行诊断包和私有材料继续各自授权，当前0新query/个人读取。实施时沿唯一status记录真实工作段与等待。
