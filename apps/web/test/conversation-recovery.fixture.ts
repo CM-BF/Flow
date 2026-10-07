@@ -610,7 +610,7 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
         const registration = await client.registerRunner({ name: "MSG03 synthetic profile publisher", harnesses: ["claude"], capacity: 1 });
         await checkpoint();
         const publisher = new FlowClient({ baseUrl: center, token: registration.token });
-        const choices = ["A", "B", "C"].map(suffix => ({ model: `msg03-${suffix}` + "-declared-model".repeat(10),
+        const choices = ["A", "B", "C"].map(suffix => ({ model: ("msg03-" + "declared-model-".repeat(12)).slice(0, 179) + suffix,
           thinking: "adaptive" as const, effort: { kind: "level" as const, value: "high" as const }, speed: "standard" as const }));
         const { profile } = await publisher.publishExecutionProfile({ configuration: {
           harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model: "msg03-pinned",

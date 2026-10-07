@@ -1,4 +1,4 @@
-import { bindPreparedDraftReturn, MessageSettingsComposer, MessageSettingsSurface } from "../plugin-integration/message-settings";
+import { bindPreparedDraftReturn, restorePreparedDraft, MessageSettingsComposer, MessageSettingsSurface } from "../plugin-integration/message-settings";
 import { MessageSettingsSummary } from "../execution-profiles/ExecutionProfilePicker";
 import { ATTACHMENT_OWNER, ATTACHMENT_OPEN, type AttachmentSubmission } from "../plugin-integration/attachments";
 import { createExistingAttachment } from "../attachments/adapter";
@@ -170,27 +170,21 @@ export function ConversationThread({ viewKey, viewId, visible, projection, draft
     const capture = pending.current, composer = runtime.thread.composer, current = settings.authority();
     if (!capture?.failed || capture.returning || !current?.editable) return;
     try {
-      const sameMaterialsAndMode = () => currentDraftMode.current.intent === capture.intent
-        && JSON.stringify(currentDraftMode.current.profileSelection) === JSON.stringify(capture.profileSelection)
-        && JSON.stringify(knowledge.capture().knowledge) === JSON.stringify(capture.selection.knowledge);
-      const draft = composer.getState();
-      if (!sameMaterialsAndMode() || draft.text || draft.attachments.length || current.draft.ownership !== capture.nextOwnership) {
-        setSendError("Keep the next complete draft first. Restore requires empty text/files and unchanged settings, knowledge, profile and delivery identity."); return;
-      }
-      const owner = settings.restoreCaptured(capture.settings, current.draft.ownership), restored: string[] = [];
-      composer.setText(capture.text);
-      const assertRestoreCurrent = () => {
-        const value = composer.getState();
-        if (!settings.isCurrent(owner, capture.settings.generation) || !sameMaterialsAndMode() || value.text !== capture.text
-          || pending.current !== capture || JSON.stringify(value.attachments.map(file => file.id)) !== JSON.stringify(restored))
-          throw Error("Draft changed during explicit material restoration.");
-      };
-      for (const id of capture.ids) {
-        assertRestoreCurrent();
-        if (!capture.binding?.input) throw Error("The captured attachment authority is unavailable.");
-        await composer.addAttachment(createExistingAttachment(capture.binding.input, id)); restored.push(id);
-      }
-      assertRestoreCurrent();
+      const mode = currentDraftMode.current, selected = knowledge.getSnapshot().controller?.getSnapshot().selected;
+      if (mode.intent !== capture.intent || JSON.stringify(mode.profileSelection) !== JSON.stringify(capture.profileSelection)
+        || JSON.stringify(knowledge.capture().knowledge) !== JSON.stringify(capture.selection.knowledge))
+        throw Error("Restore the original delivery/profile and knowledge selection before restoring the held message.");
+      await restorePreparedDraft(capture, { composer, settings,
+        assertCurrent: () => {
+          if (pending.current !== capture || capture.returning || mode !== currentDraftMode.current
+            || selected !== knowledge.getSnapshot().controller?.getSnapshot().selected)
+            throw Error("Complete draft ownership or materials changed during restoration.");
+        },
+        material: id => {
+          if (!capture.binding?.input) throw Error("The captured attachment authority is unavailable.");
+          return createExistingAttachment(capture.binding.input, id);
+        },
+      });
       pending.current = null; setSendError(null); onDraftChange();
     } catch (error) { setSendError(String(error)); }
   };

@@ -1,4 +1,4 @@
-import { bindPreparedDraftReturn, messageSettingsDraft, MESSAGE_SETTINGS_OWNER, type MessageSettingsDraft, type MessageSettingsPort } from "../src/plugin-integration/message-settings";
+import { bindPreparedDraftReturn, restorePreparedDraft, messageSettingsDraft, MESSAGE_SETTINGS_OWNER, type MessageSettingsDraft, type MessageSettingsPort } from "../src/plugin-integration/message-settings";
 import { CLAUDE_TURN_SETTINGS_PROTOCOL, claudeMessageSettingsCatalogEntrySchema, type ClaudeTurnSettings } from "@flow/contracts";
 import { afterEach, describe, expect, it, vi } from "vitest";
 import { createHash } from "node:crypto";
@@ -793,7 +793,7 @@ describe("MSG03 real App seams", () => {
     await f.open(); expect(f.binding.commit(a, first)).toEqual({ status: "applied" });
     const captured = f.binding.capture(), next = f.binding.detach(captured);
     f.revoke(); f.reauth();
-    expect(() => f.binding.restoreCaptured(captured, next)).toThrow("draft changed");
+    expect(() => f.binding.restoreCaptured(captured, { ownership: next, generation: captured.generation })).toThrow("draft changed");
     const stale = f.read().ownership; f.port.replace(owner.viewKey, stale, a);
     expect(f.binding.commit(undefined, stale)).toEqual({ status: "stale" });
   });
@@ -839,6 +839,7 @@ describe("MSG03 real App seams", () => {
     cleanup.push(() => core.__internal_dispose());
     const composer = { getState: () => ({ text: core.text, attachments: core.attachments, submission: core.submission, inTransit: core.inTransit }),
       subscribe: (listener: () => void) => core.subscribe(listener), setText: (value: string) => core.setText(value),
+      addAttachment: (value: Parameters<typeof core.addAttachment>[0]) => core.addAttachment(value),
       getAttachmentByIndex: (index: number) => ({ remove: () => core.removeAttachment(core.attachments[index]!.id) }),
     } as unknown as ComposerRuntime;
     cleanup.push(bindPreparedDraftReturn(composer, () => captured, returned));
@@ -853,6 +854,32 @@ describe("MSG03 real App seams", () => {
     expect(frozen.value).toEqual(a); expect(captured.text).toBe("same text"); expect(removed).not.toHaveBeenCalled(); expect(delivered).not.toHaveBeenCalled();
     if (outcome === "cancel") prepared.resolve({ id: "file-a", type: "file", name: "a.txt", contentType: "text/plain", content: [], status: { type: "complete" } });
     await sending;
+    const held = { ...captured, settings: frozen, nextOwnership: next };
+    const destination = { composer, settings: f.binding, assertCurrent: () => {},
+      material: (id: string) => ({ id, type: "file" as const, name: "a.txt", contentType: "text/plain", content: [] }) };
+    await expect(restorePreparedDraft(held, destination)).rejects.toThrow("next complete draft");
+    expect(f.read().value).toEqual(b); expect(core.text).toBe(nextText);
+    // The user explicitly clears B/omits C; reconnect must not permanently lock held A.
+    f.port.replace(owner.viewKey, f.read().ownership, undefined); core.setText(""); f.revoke(); f.reauth();
+    await restorePreparedDraft(held, destination);
+    expect(core.text).toBe(captured.text); expect(core.attachments.map(file => file.id)).toEqual(["file-a"]);
+    expect(f.read().value).toEqual(a); expect(f.read().ownership).not.toBe(next); expect(delivered).not.toHaveBeenCalled();
+  });
+  it("rejects late explicit restore after B changes during an attachment await without overwriting B", async () => {
+    const f = await host(); f.binding.commit(a, f.read().ownership); const frozen = f.binding.capture(), next = f.binding.detach(frozen);
+    f.port.replace(owner.viewKey, f.read().ownership, undefined);
+    let text = "", files: { id: string }[] = []; const listeners = new Set<() => void>(), wait = deferred<void>();
+    const emit = () => listeners.forEach(listener => listener());
+    const composer = { getState: () => ({ text, attachments: files }), subscribe: (listener: () => void) => { listeners.add(listener); return () => listeners.delete(listener); },
+      setText: (value: string) => { text = value; emit(); },
+      addAttachment: async (value: { id: string }) => { files.push(value); emit(); await wait.promise; },
+    } as unknown as ComposerRuntime;
+    const restoring = restorePreparedDraft({ text: "A", ids: ["a", "a2"], entered: false, settings: frozen, nextOwnership: next }, {
+      composer, settings: f.binding, assertCurrent: () => {}, material: id => ({ id, type: "file", name: id, contentType: "text/plain", content: [] }),
+    });
+    expect(text).toBe("A"); f.port.replace(owner.viewKey, f.read().ownership, b); composer.setText("B"); wait.resolve();
+    await expect(restoring).rejects.toThrow("complete draft changed");
+    expect(text).toBe("B"); expect(f.read().value).toEqual(b); expect(files.map(file => file.id)).toEqual(["a"]); expect(listeners.size).toBe(0);
   });
   it("retains exact Queue B across unknown acknowledgement and C changes", async () => {
     const requests: { body: unknown; key: string }[] = [];

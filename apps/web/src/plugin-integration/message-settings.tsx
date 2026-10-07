@@ -121,10 +121,10 @@ export class ConversationMessageSettings {
     const next = this.port()!.replace(this.viewKey, captured.ownership, captured.value);
     this.sync(); return next.ownership;
   }
-  restoreCaptured(value: ReturnType<ConversationMessageSettings["capture"]>, expected: symbol) {
+  restoreCaptured(value: ReturnType<ConversationMessageSettings["capture"]>, lease: { ownership: symbol; generation: number }) {
     const current = this.authority();
-    if (!current?.editable || current.generation !== value.generation || current.draft.ownership !== expected) throw Error("The draft changed before restoring its settings.");
-    const next = this.port()!.replace(this.viewKey, expected, value.value); this.sync(); return next.ownership;
+    if (!current?.editable || current.generation !== lease.generation || current.draft.ownership !== lease.ownership) throw Error("The draft changed before restoring its settings.");
+    const next = this.port()!.replace(this.viewKey, lease.ownership, value.value); this.sync(); return next.ownership;
   }
   isCurrent(ownership: symbol, generation?: number) { const current = this.authority(); return current?.draft.ownership === ownership && current.editable === true && (generation === undefined || current.generation === generation); }
   dispose() { if (this.closed) return; this.close(); this.closed = true; this.returnOpening = null; this.catalog.dispose(); this.listeners.clear(); }
@@ -200,4 +200,41 @@ export function bindPreparedDraftReturn<T extends PreparedDraftReturn>(composer:
     });
   });
   return () => { active = false; observed = null; unsubscribe(); };
+}
+
+/** An explicit restore owns a fresh destination lease, not the old Send lease.
+ * The caller guards its unchanged knowledge/profile/intent and held identity. */
+export async function restorePreparedDraft(capture: PreparedDraftReturn & {
+  settings: ReturnType<ConversationMessageSettings["capture"]>; nextOwnership: symbol;
+}, target: {
+  composer: import("@assistant-ui/react").ComposerRuntime;
+  settings: ConversationMessageSettings;
+  assertCurrent(): void;
+  material(id: string): import("@assistant-ui/react").CreateAttachment;
+}): Promise<void> {
+  const { composer, settings } = target, current = settings.authority(), draft = composer.getState();
+  target.assertCurrent();
+  if (!current?.editable || draft.text || draft.attachments.length
+    || (current.draft.value !== undefined && current.draft.ownership !== capture.nextOwnership))
+    throw Error("Keep or clear the next complete draft first, including explicitly omitting its message settings.");
+  // Resolve held complete files before changing the destination; no network reads.
+  const files = capture.ids.map(id => target.material(id));
+  let changing = false, changed = false;
+  const unsubscribe = composer.subscribe(() => { if (!changing) changed = true; });
+  const mutate = <T,>(operation: () => T) => { changing = true; try { return operation(); } finally { changing = false; } };
+  try {
+    const owner = settings.restoreCaptured(capture.settings, { ownership: current.draft.ownership, generation: current.generation });
+    mutate(() => composer.setText(capture.text));
+    const restored: string[] = [];
+    const assertLease = () => {
+      target.assertCurrent(); const value = composer.getState();
+      if (changed || !settings.isCurrent(owner, current.generation) || value.text !== capture.text
+        || JSON.stringify(value.attachments.map(file => file.id)) !== JSON.stringify(restored))
+        throw Error("The current complete draft changed during restoration. Its new edits are kept.");
+    };
+    for (const file of files) {
+      assertLease(); await mutate(() => composer.addAttachment(file)); restored.push(file.id!);
+    }
+    assertLease();
+  } finally { unsubscribe(); }
 }

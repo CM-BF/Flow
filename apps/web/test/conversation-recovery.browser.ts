@@ -1211,12 +1211,18 @@ async function worker(init: Init) {
       await expect(details.getByText("This turn requested", { exact: true })).toBeVisible(); await expect(details).toContainText(a.requested.model);
       await expect(details).not.toContainText(c.requested.model); await page.keyboard.press("Escape");
       for (const theme of ["light", "dark"] as const) {
-        await page.emulateMedia({ colorScheme: theme }); await page.setViewportSize({ width: 390, height: 844 }); await open();
+        await page.setViewportSize({ width: 390, height: 844 });
+        const switchTheme = page.getByRole("button", { name: `Use ${theme} theme`, exact: true });
+        if (await switchTheme.count()) await switchTheme.click();
+        await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
+        await expect.poll(() => page.locator("html").evaluate(element => getComputedStyle(element).colorScheme)).toBe(theme);
+        await open();
         await expect(dialog.getByRole("button", { name: "应用", exact: true })).toBeInViewport();
         await expect(dialog.getByRole("button", { name: "取消", exact: true })).toBeInViewport();
         await dialog.getByRole("combobox", { name: "模型", exact: true }).selectOption(c.requested.model);
         await dialog.getByText("完整模型名称", { exact: true }).click(); await expect(dialog).toContainText(c.requested.model);
-        await page.screenshot({ path: join(init.directory, `message-settings-${theme}-390.png`) });
+        const png = await page.screenshot(); requireThat(png.length <= 512 * 1024, "MSG03 screenshot exceeds its retained budget");
+        await writeFile(join(init.directory, `message-settings-${theme}-390.png`), png);
         await page.keyboard.press("Escape"); await expect(action()).toBeFocused();
       }
       expect(postRows()).toHaveLength(baseline + 4); // two original requests and their exact-key retries only
