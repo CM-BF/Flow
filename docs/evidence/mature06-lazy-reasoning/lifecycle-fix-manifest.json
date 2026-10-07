@@ -1,0 +1,67 @@
+{
+  "source": "60db06152a21c44d73bcc46be3cb785b4aa438b2",
+  "previousSource": "a40256111606fd768f2e80f14cc4584817cd7593",
+  "previousPacket": "59f526e3bcf1a189e4b16bea50cc85ddc4de837b",
+  "reviewAt": "2026-10-07T07:40:03Z",
+  "reviewer": "chatui01_owner/gpt-6-astra",
+  "previousVerdict": "SOURCE_CHANGES_REQUESTED /1P2; original local fidelity APPROVED",
+  "bindings": [
+    {
+      "path": "packages/interaction/src/stream/projection.ts",
+      "bytes": 19907,
+      "sha256": "287c6da0760ca4eec767384c30dffad9bf6b26cd656385bdc7d447633c0f24ed",
+      "fixedGit": "60db06152a21c44d73bcc46be3cb785b4aa438b2"
+    },
+    {
+      "path": "packages/interaction/src/stream/selection.test.ts",
+      "bytes": 14538,
+      "sha256": "9889c23f671031176335c5f599aab47147fbeff41aa00cf1273c82d2080336c7",
+      "fixedGit": "60db06152a21c44d73bcc46be3cb785b4aa438b2"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/lifecycle-local.json",
+      "bytes": 13234,
+      "sha256": "8a44a2aaaa0ab1c6eda8114c930cb97109ca8e24a9c241b44f700f2aea56a7ea",
+      "fixedGit": "packet"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/p2-red.txt",
+      "bytes": 2219,
+      "sha256": "9469f544592ae8ba1146f62032d4d1e96587c7edd4929d2e607e4d0a15879b2f",
+      "fixedGit": "packet"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/p2-green.txt",
+      "bytes": 352,
+      "sha256": "0686444d9c1c3c701463a2a999c4342598018b1c4e0b1db44f22b0b7b0e48d81",
+      "fixedGit": "packet"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/p2-types.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "fixedGit": "packet"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/run-local.py",
+      "bytes": 4717,
+      "sha256": "5d57a462efd70178470a5dd4e0fc006da3b8f961ebfd863a4f6fa4de04f447b1",
+      "fixedGit": "packet"
+    }
+  ],
+  "result": {
+    "red": {
+      "selected": 2,
+      "failed": 2,
+      "exit": 1,
+      "source": "a4025611 + new two regressions"
+    },
+    "green": {
+      "selected": 4,
+      "passed": 4,
+      "unselected": 7
+    },
+    "strictExit": 0
+  },
+  "boundary": "No old14 rerun, no PG/import target/native/provider; review pending. PG fixture f1fce is separate static preparation."
+}

@@ -13,3 +13,9 @@ Own v2/11 committed07:23:01.133Z before product edits. Readonly direct closure75
 All four children owned-absent and mergedEOF; same-inode own TMP sampled after closure and removed. Closed samples64/729/64/722B are not peaks or OS quotas. Raw2433B; external whole-segment tool wall UNKNOWN, observed UTCs in local.json. Engineering slot returned to architecture after07:33:26 final child; metadata only afterwards. Project setup/source/meta budgets bounded; materialization used exact fixed paths, one sparse git-add failed before retry --sparse exact owned paths (no config change).
 
 Pending: independent source/local review, actual HTTP zero-default-body evidence and authentication integration, all-page metadata ACK in real client, Web/TUI same-generation wiring, global body cache accounting, main/dashboard. A selected disclosure read is bounded by its existing15s cancellation deadline; uncooperative external read effects remain unknown, not cancelled by claim. No performance/RSS claim.
+
+## P2 safe point 2026-10-07T07:44:49.362974+00:00
+
+独审确认可选读取不应占text flight。修复保持单selection flight与现调度权威，分离代际有效性与deadline；有限超时错误停止自动重试。新增真实old-source2红与修后4绿/strict0，原10/14/strict红原件不改。3新增children已closed/TMPremoved；未把await取消声称为停止任意不合作外部read。复用同run-local有限p2 selector/单独新段record，未复制supervisor。实际本段开工07:36:26、末child时间见lifecycle-local；不以child累计冒整段。
+
+只读供给first attempt发现storage目录无package.json而未执行checkout，删除该不存在的元数据假设后按真实package exports补159files700820B/31SQL；全部exclusive missing固定base，未覆盖现有source/dirty，0install/import/PG。额外只读源获root≤2MiB许可；新可写source/metadata仍≤512KiB。本段预算4children用了3，不为余量新增无关检查。

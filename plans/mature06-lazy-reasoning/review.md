@@ -1,8 +1,8 @@
 # MATURE06-LAZY01 review
 
-状态：PENDING
-Review target commit: a40256111606fd768f2e80f14cc4584817cd7593
+状态：CHANGES_REQUESTED → P2修复待独立复审
+Review target commit: 60db06152a21c44d73bcc46be3cb785b4aa438b2
 
-独立reviewer chatui01_owner 只读本六core/三newtest、fixed inputs和单local记录；尚无review结论。此前对9ef8设计/main基线的风险提示不是dirty源码批准。优先核协商每页ACK/旧server拒绝、SQL-before-LIMIT与匹配sentinel、text/展开游标独立、late GET一次有限metadata刷新、close/attempt/protocol取消迟到结果、3MiB累计body/8selection/4096跨close receipt、reasoning未展开或失败不阻canonical final。
+chatui01_owner/gpt-6-astra 于2026-10-07T07:40:03Z对a402/59f固定核：1P2/0P1，optional disclosure阻塞text flight且deadline吞错可重试；其余六core/三tests无第二P1/P2。原14/14与strict2→0/4raw2433B忠实性APPROVED，非完整功能批准。
 
-实际最终14/14、strict0（此前strict2/10tests保留）；mock SQL/注入读port，未证明真实HTTP0reasoning、PG或Web/TUI公开交付。旧v1/v2产品语义保留但旧全集未重跑，后继按实际共享接口直接消费者验证。0独审运行/项目写。
+当前60db仅两源窄修；old-source2red→fixed4selectedpass/strict0，含原两取消直接消费者。入口lifecycle-review-ready.md，等待同一reviewer关闭P2，不先记APPROVED。PG准备testf1fce未执行/未独审，公开client/UI/真实HTTP尚未验收。

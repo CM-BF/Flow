@@ -1,10 +1,12 @@
 import sys,os,json,time,datetime,tempfile,pathlib,hashlib,importlib.util,dataclasses,shutil,stat
 root=pathlib.Path(__file__).resolve().parents[3];e=root/'docs/evidence/mature06-lazy-reasoning';mode=sys.argv[1]
-assert mode in ('types','tests','types-fix','tests-fix')
+assert mode in ('types','tests','types-fix','tests-fix','p2-red','p2-green','p2-types')
+fix_mode=mode.startswith('p2-')
 d=json.loads((e/'dependencies.json').read_text());node=d['node'];entries=['packages/contracts/src/assistant-stream-selection.test.ts','apps/server/src/assistant-stream/selection.test.ts','packages/interaction/src/stream/selection.test.ts']
-argv=[node,d['typescript']+'/bin/tsc','--noEmit','-p',str(e/'tsconfig.json')] if mode.startswith('types') else [node,d['vitest']+'/vitest.mjs','run','--config',str(e/'vitest.config.mjs'),'--configLoader','native',*entries]
-p=e/'local.json';now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat();record=json.loads(p.read_text()) if p.exists() else {'startedAt':now(),'runs':[],'limit':{'children':4,'eachSeconds':60,'rawBytes':262144,'tmpBytes':8388608},'actualScope':'pure/injected only; no HTTP/PG/provider/native','segmentStartedAt':'2026-10-07T07:23:01.133Z'}
-assert len(record['runs'])<4 and not (e/(mode+'.txt')).exists();assert (datetime.datetime.now(datetime.timezone.utc)-datetime.datetime.fromisoformat(record['segmentStartedAt'].replace('Z','+00:00'))).total_seconds()<1200
+argv=[node,d['typescript']+'/bin/tsc','--noEmit','-p',str(e/'tsconfig.json')] if 'types' in mode else [node,d['vitest']+'/vitest.mjs','run','--config',str(e/'vitest.config.mjs'),'--configLoader','native',*entries]
+if fix_mode and mode!='p2-types':argv=argv[:-3]+['packages/interaction/src/stream/selection.test.ts','-t',('keeps text advancing|marks a retained disclosure' if mode=='p2-red' else 'keeps text advancing|marks a retained disclosure|aborts a close flight|rejects delayed disclosure')]
+p=e/('lifecycle-local.json' if fix_mode else 'local.json');now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat();record=json.loads(p.read_text()) if p.exists() else {'startedAt':now(),'runs':[],'limit':{'children':4,'eachSeconds':60,'rawBytes':262144,'tmpBytes':8388608},'actualScope':'pure/injected only; no HTTP/PG/provider/native','segmentStartedAt':('2026-10-07T07:36:26Z' if fix_mode else '2026-10-07T07:23:01.133Z')}
+assert len(record['runs'])<4 and not (e/(mode+'.txt')).exists();assert (datetime.datetime.now(datetime.timezone.utc)-datetime.datetime.fromisoformat(record['segmentStartedAt'].replace('Z','+00:00'))).total_seconds()<(720 if fix_mode else 1200)
 free=shutil.disk_usage(root).free;assert free>=1107296256
 module=pathlib.Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py');spec=importlib.util.spec_from_file_location('ops14',module);ops=importlib.util.module_from_spec(spec);sys.modules['ops14']=ops;spec.loader.exec_module(ops)
 tmp=pathlib.Path(tempfile.mkdtemp(prefix='flow-lazy01-'));identity=tmp.lstat()

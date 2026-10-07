@@ -1,0 +1,38 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads
+
+ ❯ packages/interaction/src/stream/selection.test.ts (11 tests | 2 failed | 9 skipped) 212ms
+   ↓ defaults to text only with complete reasoning metadata, and late open has its own cursor
+   ↓ refuses an old server ignoring capability before any selected/body read
+   ↓ aborts a close flight, rejects late snapshot and starts a fresh explicit reopen
+   ↓ rejects selection/source/digest forgery and verifies multibyte snapshot origin
+   ↓ does not let unopened retained reasoning prevent canonical text replacement
+   ↓ rejects delayed disclosure after protocol/attempt lifetime invalidation
+   ↓ retains sealed replay fingerprints across close/reopen
+   ↓ bounds explicit selection count and body bytes while retaining complete metadata
+   ↓ refreshes newer late-open metadata once and seeds only the verified snapshot cursor
+   × keeps text advancing twice while a reasoning read is pending and drops its closed late result 208ms
+   × marks a retained disclosure deadline as a finite error instead of retrying hasMore 3ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 2 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/interaction/src/stream/selection.test.ts > keeps text advancing twice while a reasoning read is pending and drops its closed late result
+Error: Text was blocked by optional reasoning
+ ❯ Timeout.<anonymous> packages/interaction/src/stream/selection.test.ts:93:314
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/2]⎯
+
+ FAIL  packages/interaction/src/stream/selection.test.ts > marks a retained disclosure deadline as a finite error instead of retrying hasMore
+AssertionError: the given combination of arguments (null and string) is invalid for this assertion. You can use an array, a map, an object, a set, a string, or a weakset instead of a string
+ ❯ packages/interaction/src/stream/selection.test.ts:99:324
+
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/2]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  2 failed | 9 skipped (11)
+   Start at  00:41:09
+   Duration  661ms (transform 238ms, setup 0ms, import 356ms, tests 212ms, environment 0ms)
+
