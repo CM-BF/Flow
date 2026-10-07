@@ -1,0 +1,70 @@
+{
+  "recordedAt": "2026-10-07T07:20:32.938196+00:00",
+  "sourceAtRun": "99d588e4 plus only test observations/parenthesis fix and generated index/provenance; final source commit follows",
+  "rawRecord": "docs/evidence/x01/semver-local.json",
+  "rawRecordBytes": 29199,
+  "rawRecordSha256": "4d77eaf53f0b33af89d380bf509fc9f837ac86b8e8735a58d4e974847130bce5",
+  "selection": {
+    "selected": 9,
+    "passed": 9,
+    "failed": 0,
+    "oldExecution11Repeated": 0,
+    "oldPgRepeated": 0
+  },
+  "commands": [
+    {
+      "label": "bundle",
+      "pid": 4064,
+      "exitCode": 0,
+      "finishedAt": "2026-10-07T07:18:51.006166+00:00",
+      "rawBytes": 80
+    },
+    {
+      "label": "types",
+      "pid": 23924,
+      "exitCode": 2,
+      "finishedAt": "2026-10-07T07:19:19.272172+00:00",
+      "rawBytes": 290
+    },
+    {
+      "label": "tests",
+      "pid": 26200,
+      "exitCode": 0,
+      "finishedAt": "2026-10-07T07:19:25.629360+00:00",
+      "rawBytes": 108
+    },
+    {
+      "label": "types",
+      "pid": 31416,
+      "exitCode": 0,
+      "finishedAt": "2026-10-07T07:19:35.256745+00:00",
+      "rawBytes": 0
+    }
+  ],
+  "childBudget": {
+    "topLevelUsed": 4,
+    "topLevelAllowed": 4,
+    "tarUsed": 1,
+    "source": "One tar actual child inside sole package fixture; bundler is direct fixed native esbuild binary, no service child requested"
+  },
+  "resourceClosure": {
+    "allGroupsAbsent": true,
+    "allMergedEOF": true,
+    "allExactRootsAbsent": true,
+    "rootCount": 5,
+    "historicalUnknownObservationsPreserved": true,
+    "temporaryPeak": "UNKNOWN: end samples only",
+    "actualPG": 0,
+    "nativeHarness": 0,
+    "provider": 0,
+    "networkDownloads": 0,
+    "installs": 0
+  },
+  "timing": {
+    "startedAt": "2026-10-07T07:18:50.658026+00:00",
+    "lastActualFinishedAt": "2026-10-07T07:19:35.256745+00:00",
+    "externalWholeWall": null,
+    "notes": "Internal command elapsed and UTC receipt times remain separate. Fourth exec tool session completion output was not surfaced by orchestration; no whole external/tool exit inferred from it. Its supervised TypeScript exit0/EOF/owned absent is in the original structured record."
+  },
+  "boundedScope": "Real controlled npm bundle prepare/read/import/invoke and artifact/flow.text; injected authorization ACKs are not production center/runRunner integration. Upstream installed bytes verified; no upstream registry tarball provenance claim."
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:38:15.582513+00:00 / main d5567801；189唯一来源已实际载入，ENG01L为第190候选 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:51:51.580189+00:00 / main8c92e645；190唯一来源已实际加载 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | UNKNOWN |
 | 任务时间来源 | 初始D05交付记录保留于deployment.json与历史段；没有足够字段证明完整任务起止，不以登记或进程替换时间补造。当前来源发布实采2026-10-07T07:26:47.690445Z，见eng01k-live.json。 |
@@ -14,15 +14,15 @@
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
 | 工作分支状态 | completed |
-| 已集成 main 状态 | d556780129897582f09945c0621aa2ed64fb52f7 已推送；4320实际189源。ENG01L来源候选尚未发布。 |
+| 已集成 main 状态 | main/origin8c92e64520ba7496b507d08cb4abe9c8d83e37a1已接ENG01L登记；4320实际190源。个人af51/v18+d629/v3/c7b保持。 |
 | 实现目标 | cad1251fdbe8f8b527a78c60cf45adce68e4f534 |
 | 实现范围 | apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/src/server.mjs |
 | 检查状态 | PASSED cad1251fdbe8f8b527a78c60cf45adce68e4f534：局部Node 2/2；45节点源码路径固定基线存在；CUA五视图、980浅色/390深色、键盘/缩放/刷新保持，0模型 |
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已提供本机登录凭据的按需入口，并显示任务开始、完成声明与含等待历时；189个唯一来源已加载，工具全文接线与受信工程写入状态可见，缺证时间保持未知。 |
-| 下一可用交付 | 将只读原生与受信写入组合的唯一来源随正常接收批次发布。 |
+| 当前产出 | 看板已提供本机登录凭据的按需入口与任务时间，190个唯一来源已加载；工具全文及工程宿主的当前验证状态可见，缺证时间保持未知。 |
+| 下一可用交付 | 本片段已交付；后续来源按各owner实际状态正常聚合。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -234,3 +234,7 @@ Goal Owner独立真实页面验收：默认空→显式加载为掩码→复制�
 ## ENG01L 来源候选 2026-10-07T07:38:15.582513+00:00
 
 原owner已正式移交J四路径并在独立树取得八literal；仅登记[固定首三件套](../../docs/evidence/d05/eng01l-registration.json)，候选190、实际仍189。资格待决沿J唯一入口，本片不证明真实stock/模型授写。未改owner状态/产品或个人服务，未重复工程检查。
+
+## 2026-10-07T07:51:51.580189+00:00 来源190实际发布
+
+[实际回执](../../docs/evidence/d05/eng01l-live.json)：唯一ENG01L已加载，登录元数据仍enabled；个人五份配置/状态摘要及61227/61228监听/进程身份逐项未变，未读token端点、未重载任何用户tab。首次新dashboard启动缺原显式非秘密安装绑定，已退出且4320无监听；原失败/日志引用保留于[首错](../../docs/evidence/d05/eng01l-live-first-failure.json)。补回原四字段绑定后新组52738正常监听与快照200，不把首次失败改绿。没有产品测试或个人服务操作。

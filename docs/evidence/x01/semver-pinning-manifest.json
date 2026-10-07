@@ -1,0 +1,89 @@
+{
+  "recordedAt": "2026-10-07T07:36:29.446924+00:00",
+  "sourceCommit": "fe826801654c1366a20849fbd2f82d8b36bc01ac",
+  "resultCommit": "a87d7478aea4639af0796f86b7bc7885058b7e07",
+  "files": [
+    {
+      "path": "apps/runner/src/plugins/semver-pinning.test.ts",
+      "commit": "a87d7478aea4639af0796f86b7bc7885058b7e07",
+      "blob": "e6284bf85e70f0ccb3f5222faca306cfaad59cac",
+      "bytes": 8290,
+      "sha256": "e0b5cffc7cc5ac974f1bedde07454d361f19390776dc35b673bd93805746394e"
+    },
+    {
+      "path": "docs/evidence/x01/semver-pinning-local.py",
+      "commit": "a87d7478aea4639af0796f86b7bc7885058b7e07",
+      "blob": "bcaa344849c00a08c6d480460dddb4e4300c0c0b",
+      "bytes": 4833,
+      "sha256": "bae6799a2e6261a31876410553b1730fb1219504d9e822bb4fe6f4b8b7c65fd5"
+    },
+    {
+      "path": "docs/evidence/x01/semver-pinning-tsconfig.json",
+      "commit": "a87d7478aea4639af0796f86b7bc7885058b7e07",
+      "blob": "a52eb164d83cdaef059625fadd8955eef8cb66c8",
+      "bytes": 156,
+      "sha256": "de0d8b73acf4e9a2460f0312f40591f8e24861f9fb94d993e2241d7d3b58b8c5"
+    },
+    {
+      "path": "docs/evidence/x01/semver-pinning-vitest.config.mjs",
+      "commit": "a87d7478aea4639af0796f86b7bc7885058b7e07",
+      "blob": "b3d8b34b888b8625d193b1c7d729bca8fc33c322",
+      "bytes": 429,
+      "sha256": "88c5dfeb85e4c3f19ee2e61bb6ccd31a5b9146573e9ec6670018952b766640df"
+    },
+    {
+      "path": "docs/evidence/x01/runtime-integration-handoff.md",
+      "commit": "a87d7478aea4639af0796f86b7bc7885058b7e07",
+      "blob": "e0e92d88b0573215e6c5d88db21f90748f2789de",
+      "bytes": 5703,
+      "sha256": "2762cc58f0db92171c133d004a4078f1f5f43c477235e07f914d11ea351e52b4"
+    },
+    {
+      "path": "docs/evidence/x01/semver-pinning-amend-request.json",
+      "commit": "a87d7478aea4639af0796f86b7bc7885058b7e07",
+      "blob": "18c3330ce03573db57a6550d2fb44655a4d0484d",
+      "bytes": 1641,
+      "sha256": "1daf87afe57890a79754657a0bc38812a2938c7fa9f6482e13be2cedad7881f2"
+    },
+    {
+      "path": "docs/evidence/x01/semver-pinning-amend-v14.json",
+      "commit": "a87d7478aea4639af0796f86b7bc7885058b7e07",
+      "blob": "39e358727c187e10c911bde6df307bdd5ba50660",
+      "bytes": 1952,
+      "sha256": "363e1c9b14afddd73c59b306f7b3d66764337e38f8f3d9fae2b1d645ecabd14d"
+    },
+    {
+      "path": "docs/evidence/x01/semver-pinning-local.json",
+      "commit": "a87d7478aea4639af0796f86b7bc7885058b7e07",
+      "blob": "c70251d2abac9ed9d390af0c51644b49ac8e4590",
+      "bytes": 13705,
+      "sha256": "cdd2ea8741f04142d7cd1a9720be77c0d4854799fee491d49551879cdda82299"
+    },
+    {
+      "path": "docs/evidence/x01/semver-pinning-result-summary.json",
+      "commit": "a87d7478aea4639af0796f86b7bc7885058b7e07",
+      "blob": "064cd2ebecef14da326cced1634d482fb24a1eec",
+      "bytes": 2700,
+      "sha256": "8bcc23fbfcc0679e145b1e7161cf19d221a692462115058de26cf3d328d1254e"
+    },
+    {
+      "path": "docs/evidence/x01/semver-manifest.json",
+      "commit": "a87d7478aea4639af0796f86b7bc7885058b7e07",
+      "blob": "f820d5aa8534238fa97c23231cb2e0dd97814e2f",
+      "bytes": 10620,
+      "sha256": "2344f0169b04831e97359c2748617eef5bae62142aec71bafc40719b45ca1c94"
+    },
+    {
+      "path": "docs/evidence/x01/semver-independent-review.json",
+      "commit": "a87d7478aea4639af0796f86b7bc7885058b7e07",
+      "blob": "caa00ae59352e36b332a6e7771468464900ec3a6",
+      "bytes": 1056,
+      "sha256": "abb56c8d35ea3395681ac7380086a858f73e7a26b5818edbe4244e13ca2da5a0"
+    }
+  ],
+  "bindingCount": 11,
+  "boundBytes": 51085,
+  "unchangedInputs": "semver-manifest.json binds 28 original inputs/consumers; owner independently rehashed all before new execution, errors[]. Original raw and bundle untouched.",
+  "review": "PENDING",
+  "actual": "types0 and 3/3 with two actual tar children; sole local released after exact owned cleanup; not production runner/center or upstream npm upgrade."
+}

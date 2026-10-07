@@ -12,11 +12,11 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main d556780129897582f09945c0621aa2ed64fb52f7；已审文档预像全部逐字匹配，产品候选独立收口 |
+| 工作基线 / HEAD | main 8c92e64520ba7496b507d08cb4abe9c8d83e37a1；本批只接X01已审测试/固定包与D05事实，产品候选独立收口 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 本批仅7份已审登记/父文档预像与固定字节核对、status解析；0产品重测。P02原两PG失败清理完毕，定向修复中；ENG01L原16局部通过，真实入口静态长度缺口修复中。 |
-| 已集成main状态 / HEAD | main/origin d5567801 已含 Codex 公共会话与 ENG01K；本批登记及父摘要受控接收。实际4320为189来源，190登记待正常加载；个人 af51/v18、d629/v3/c7b宿主不变。 |
+| 检查状态 | 本批X01固定39绑定、D05六文件预像/事实与status解析；0产品重测。P02修复及PG02准备已独审，等共享窗口；ENG01L策略文件修复局部通过，真实stock入口仍未运行。 |
+| 已集成main状态 / HEAD | main/origin 8c92e645 已含登记及父摘要。实际4320于07:51:51已载入190来源；首次启动配置缺件失败和纠正结果分别保留。个人 af51/v18、d629/v3/c7b宿主不变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
@@ -366,3 +366,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 ## 2026-10-07T07:49:14.988603+00:00 用户交付状态收口
 
 [七文件固定接收](../../docs/evidence/i02/user-delivery-status-intake.json)：D05新ENG01L来源、ENG父计划与FLOW/OPS用户摘要分别复用唯一独立审查。零产品修改和工程重测；P02原PG失败与清理分别保留，L真实入口缺口交原owner定向修复，未接其尚需修正的产品候选。
+
+2026-10-07T07:57:58.881173+00:00：X01两片及D05实际190接收见 [固定批次](../../docs/evidence/i02/x01-semver-dashboard-intake.json)。不覆盖X01后继provenance或旧中心/runtime；PG02修复限定审查见 [增量记录](../../docs/evidence/i02/chat05p02-pg-repair-review.json)，未运行不能写通过。

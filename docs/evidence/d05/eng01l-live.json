@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-07T07:51:51.580189+00:00",
+  "source": "8c92e64520ba7496b507d08cb4abe9c8d83e37a1",
+  "oldPid": 80450,
+  "newPid": 52738,
+  "oldConfirmedAbsent": true,
+  "log": "/tmp/flow-dashboard-190-20261007-0753.log",
+  "status": "confirmed",
+  "sourceCount": 190,
+  "snapshotBytes": 2869503,
+  "snapshotSha256": "f309318871ed8715db9b44f79471df6afeba38c5df76454b6d5e751f0ca2e718",
+  "selected": [
+    {
+      "id": "ENG01L",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-07T07:42:43.813Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-readonly-tool-host/plans/eng01l-readonly-tool-host/status.md",
+        "syncedAt": "2026-10-07T07:51:38.995Z",
+        "stale": false,
+        "ageHours": 0.26619944444444443
+      }
+    },
+    {
+      "id": "FLOW-001",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-07T07:47:00.433Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/status.md",
+        "syncedAt": "2026-10-07T07:51:38.995Z",
+        "stale": false,
+        "ageHours": 0.07737916666666667
+      }
+    },
+    {
+      "id": "OPS-001",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-07T07:47:00.432Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/ops-001-status-review/status.md",
+        "syncedAt": "2026-10-07T07:51:38.995Z",
+        "stale": false,
+        "ageHours": 0.07737916666666667
+      }
+    }
+  ],
+  "localAccessMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "personalMetadataHashesUnchanged": true,
+  "personalListenerPidsUnchanged": true,
+  "personalProcessIdentitiesUnchanged": true,
+  "tokenEndpointRead": false,
+  "tabsReloaded": 0,
+  "productTests": 0
+}

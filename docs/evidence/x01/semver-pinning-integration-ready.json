@@ -1,0 +1,43 @@
+{
+  "state": "READY",
+  "sourceCommit": "fe826801654c1366a20849fbd2f82d8b36bc01ac",
+  "packetCommit": "ca851c4ebcfac0d6ef9d455dbd444ce3307fc99a",
+  "review": "docs/evidence/x01/semver-pinning-independent-review.json",
+  "sourceFiles": [
+    {
+      "path": "apps/runner/src/plugins/semver-pinning.test.ts",
+      "commit": "fe826801654c1366a20849fbd2f82d8b36bc01ac",
+      "blob": "e6284bf85e70f0ccb3f5222faca306cfaad59cac",
+      "bytes": 8290,
+      "sha256": "e0b5cffc7cc5ac974f1bedde07454d361f19390776dc35b673bd93805746394e"
+    },
+    {
+      "path": "docs/evidence/x01/semver-pinning-local.py",
+      "commit": "fe826801654c1366a20849fbd2f82d8b36bc01ac",
+      "blob": "bcaa344849c00a08c6d480460dddb4e4300c0c0b",
+      "bytes": 4833,
+      "sha256": "bae6799a2e6261a31876410553b1730fb1219504d9e822bb4fe6f4b8b7c65fd5"
+    },
+    {
+      "path": "docs/evidence/x01/semver-pinning-tsconfig.json",
+      "commit": "fe826801654c1366a20849fbd2f82d8b36bc01ac",
+      "blob": "a52eb164d83cdaef059625fadd8955eef8cb66c8",
+      "bytes": 156,
+      "sha256": "de0d8b73acf4e9a2460f0312f40591f8e24861f9fb94d993e2241d7d3b58b8c5"
+    },
+    {
+      "path": "docs/evidence/x01/semver-pinning-vitest.config.mjs",
+      "commit": "fe826801654c1366a20849fbd2f82d8b36bc01ac",
+      "blob": "b3d8b34b888b8625d193b1c7d729bca8fc33c322",
+      "bytes": 429,
+      "sha256": "88c5dfeb85e4c3f19ee2e61bb6ccd31a5b9146573e9ec6670018952b766640df"
+    }
+  ],
+  "evidence": [
+    "docs/evidence/x01/semver-pinning-local.json",
+    "docs/evidence/x01/semver-pinning-manifest.json",
+    "docs/evidence/x01/semver-pinning-result-summary.json",
+    "docs/evidence/x01/semver-pinning-review-ready.md"
+  ],
+  "requires": "Original 4fc semver package intake; no replacement of center/runtime source. Two Flow wrapper releases only."
+}

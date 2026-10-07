@@ -1,0 +1,389 @@
+{
+  "startedAt": "2026-10-07T07:33:54.386213+00:00",
+  "startEpoch": 1791358434.386369,
+  "attempts": [
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T07:33:54.388066+00:00",
+      "freeBeforeBytes": 24206536704,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-semver-pinning-_0dnfkvx",
+        "dev": 16777234,
+        "ino": 123629357,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/semver-pinning-tsconfig.json"
+      ],
+      "process": {
+        "pid": 48379,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1279,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T07:33:55.667819+00:00",
+      "elapsedBeforeReceiptSeconds": 1.27937175007537
+    },
+    {
+      "label": "tests",
+      "startedAt": "2026-10-07T07:34:16.200557+00:00",
+      "freeBeforeBytes": 24205127680,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-semver-pinning-_izn1hs7",
+        "dev": 16777234,
+        "ino": 123629421,
+        "removed": true,
+        "endSample": {
+          "entries": 5,
+          "bytes": 5922,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01/semver-pinning-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-semver-pinning-_izn1hs7/tests.json"
+      ],
+      "process": {
+        "pid": 61361,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 766,
+        "observed_bytes": 116,
+        "retained_bytes": 116,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "tests",
+        "rawComplete": true
+      },
+      "raw": "JSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-semver-pinning-_izn1hs7/tests.json\n",
+      "rawBytes": 116,
+      "rawSha256": "0a0894078d364674b721844d3cdac2729528e55f4fabbe2663feb229ab26ae4c",
+      "tests.json": {
+        "numTotalTestSuites": 1,
+        "numPassedTestSuites": 1,
+        "numFailedTestSuites": 0,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 3,
+        "numPassedTests": 3,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791358456428,
+        "success": true,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "new material installation preserves the old frozen binding and both exact release identities",
+                "status": "passed",
+                "title": "new material installation preserves the old frozen binding and both exact release identities",
+                "duration": 21.763792000000024,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "substituting the new artifact into an old material pin fails before either grant",
+                "status": "passed",
+                "title": "substituting the new artifact into an old material pin fails before either grant",
+                "duration": 1.796875,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "a historical pin does not bypass current operator digest trust",
+                "status": "passed",
+                "title": "a historical pin does not bypass current operator digest trust",
+                "duration": 0.2786249999999768,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791358456895,
+            "endTime": 1791358456919.2786,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/runner/src/plugins/semver-pinning.test.ts"
+          }
+        ]
+      },
+      "fixtures.json": {
+        "roots": [
+          {
+            "removed": true,
+            "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-semver-pinning-_izn1hs7/tmp/flow-semver-pinning-package-ZSTS5i",
+            "dev": 16777234,
+            "ino": 123629445
+          }
+        ],
+        "children": [
+          {
+            "pid": 61857,
+            "exitCode": 0,
+            "signal": null
+          },
+          {
+            "pid": 61865,
+            "exitCode": 0,
+            "signal": null
+          }
+        ],
+        "receipts": [
+          {
+            "schemaVersion": 1,
+            "installationId": "454df8040eb5ff2d96ee93a25834606595d2b05a94d256897287b82da460fe4f",
+            "storeId": "x01-semver-pinning",
+            "artifact": {
+              "artifactId": "0c1eca3e-08d7-40e0-aefd-02f9bac892d0",
+              "name": "flow-semver-compare",
+              "version": "1.0.0",
+              "bytes": 5218,
+              "sha256": "2370cfead09bb3d353aa961e7cda8d7c96ef4cf4e0fbfdef1506bf7022b52c19",
+              "integrity": "sha512-r6sm7WyjF+JPPxVbvRvc0vCF2C06YsGc4pm7AiqoazQ/HZ+R1T0hJeG5CTY7HjJkUjK3cD5SpRhfcuKhxGsWiw=="
+            },
+            "manifest": {
+              "schemaVersion": 1,
+              "hostApiMajor": 1,
+              "kind": "tool",
+              "entrypoint": "index.mjs"
+            },
+            "files": [
+              {
+                "path": "flow-plugin.json",
+                "bytes": 93,
+                "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1"
+              },
+              {
+                "path": "index.mjs",
+                "bytes": 9749,
+                "sha256": "2ab17629625064a227043d068cbecdf184725391c606dc30b9aa9959ab3702b7"
+              },
+              {
+                "path": "license.txt",
+                "bytes": 765,
+                "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+              },
+              {
+                "path": "package.json",
+                "bytes": 81,
+                "sha256": "48be2d8c23a338baad6ae4f9cf32a919a516528b8334fc7b21d86b7492e86929"
+              },
+              {
+                "path": "provenance.json",
+                "bytes": 2397,
+                "sha256": "ace6bddcf7ba8c1888feb928495334dc5a3fe982c386dec00188da3f6c0481cf"
+              }
+            ],
+            "treeDigest": "de5f2b8751654dec22ccc1744de9846cb15e036231c31a0b06fb95fa2abf5cc9"
+          },
+          {
+            "schemaVersion": 1,
+            "installationId": "3383e6fb713579033fdd8424b4f8e6a73f4780601a2012370b04c99c4ce8f09e",
+            "storeId": "x01-semver-pinning",
+            "artifact": {
+              "artifactId": "fbf5cfa7-9430-4d9a-995a-2abe068dba07",
+              "name": "flow-semver-compare",
+              "version": "1.0.1",
+              "bytes": 5221,
+              "sha256": "2ff63676274e9a8e916c1bd041cbc90de4ad3581e84fcadda3b84e68ced06322",
+              "integrity": "sha512-auIzWrREwkmnsYIppJ3E9VfRmQXRDKqThceV1NDfpvzlAq54h2jH/J7LejfURLKTj7LQNTAUMRnv4ebyVLi/zg=="
+            },
+            "manifest": {
+              "schemaVersion": 1,
+              "hostApiMajor": 1,
+              "kind": "tool",
+              "entrypoint": "index.mjs"
+            },
+            "files": [
+              {
+                "path": "flow-plugin.json",
+                "bytes": 93,
+                "sha256": "2e69527995ef5ba0b0df1c1583f20e2f83973cebb3ba6a6067692a4283a28fb1"
+              },
+              {
+                "path": "index.mjs",
+                "bytes": 9749,
+                "sha256": "2ab17629625064a227043d068cbecdf184725391c606dc30b9aa9959ab3702b7"
+              },
+              {
+                "path": "license.txt",
+                "bytes": 765,
+                "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+              },
+              {
+                "path": "package.json",
+                "bytes": 81,
+                "sha256": "297b0daeab3f7985a15ff218e1687ac153ea1ef46855033c67681b76ff953b96"
+              },
+              {
+                "path": "provenance.json",
+                "bytes": 2397,
+                "sha256": "ace6bddcf7ba8c1888feb928495334dc5a3fe982c386dec00188da3f6c0481cf"
+              }
+            ],
+            "treeDigest": "2a83339e97d9fe310266d8a14187f3822257d9585297668c8cae0ea09c528ad0"
+          }
+        ],
+        "observations": [
+          {
+            "release": "1.0.0",
+            "phases": [
+              "load",
+              "invoke"
+            ],
+            "artifact": {
+              "type": "artifact",
+              "artifactId": "plugin-903f7fb5-5228-475f-bcdd-9b26ab593dbf",
+              "title": "Plugin tool output",
+              "content": "-1",
+              "mediaType": "text/plain",
+              "version": "1bad6b8cf97131fceab8543e81f7757195fbb1d36b376ee994ad1cf17699c464"
+            },
+            "provenance": {
+              "bindingId": "5c999309-3303-4d63-a0f8-4555fe199ee2",
+              "invocationId": "903f7fb5-5228-475f-bcdd-9b26ab593dbf",
+              "taskId": "54f3dc0c-b127-4a96-9c7a-3e78d2b44023",
+              "attemptId": "72b5b2b8-0c15-4549-af62-be8bf1611110",
+              "ownerVersion": 1,
+              "installationId": "454df8040eb5ff2d96ee93a25834606595d2b05a94d256897287b82da460fe4f",
+              "artifactId": "0c1eca3e-08d7-40e0-aefd-02f9bac892d0",
+              "artifactSha256": "2370cfead09bb3d353aa961e7cda8d7c96ef4cf4e0fbfdef1506bf7022b52c19",
+              "treeDigest": "de5f2b8751654dec22ccc1744de9846cb15e036231c31a0b06fb95fa2abf5cc9",
+              "hostApiMajor": 1
+            }
+          },
+          {
+            "release": "1.0.1",
+            "phases": [
+              "load",
+              "invoke"
+            ],
+            "artifact": {
+              "type": "artifact",
+              "artifactId": "plugin-b32c4ab6-e108-4c50-b655-31ef00a86566",
+              "title": "Plugin tool output",
+              "content": "-1",
+              "mediaType": "text/plain",
+              "version": "1bad6b8cf97131fceab8543e81f7757195fbb1d36b376ee994ad1cf17699c464"
+            },
+            "provenance": {
+              "bindingId": "c09972ed-993a-4400-9093-e56bd190228e",
+              "invocationId": "b32c4ab6-e108-4c50-b655-31ef00a86566",
+              "taskId": "2c767d7f-7bcd-46c4-ac90-2f98eff7a81c",
+              "attemptId": "86750b4e-8e6a-4de4-be77-2dc2d6e44757",
+              "ownerVersion": 1,
+              "installationId": "3383e6fb713579033fdd8424b4f8e6a73f4780601a2012370b04c99c4ce8f09e",
+              "artifactId": "fbf5cfa7-9430-4d9a-995a-2abe068dba07",
+              "artifactSha256": "2ff63676274e9a8e916c1bd041cbc90de4ad3581e84fcadda3b84e68ced06322",
+              "treeDigest": "2a83339e97d9fe310266d8a14187f3822257d9585297668c8cae0ea09c528ad0",
+              "hostApiMajor": 1
+            }
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T07:34:16.968713+00:00",
+      "elapsedBeforeReceiptSeconds": 0.7675194999901578
+    }
+  ],
+  "unknown": false,
+  "limits": {
+    "segmentSeconds": 1200,
+    "commands": 4,
+    "commandSeconds": 60,
+    "temporaryBytes": 16777216,
+    "rawBytes": 262144,
+    "sourceMetadataBytes": 1048576
+  },
+  "floorBytes": 4071096320,
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "tarPlanned": 2,
+  "wholeExternalWall": null,
+  "updatedAt": "2026-10-07T07:34:16.968734+00:00"
+}
