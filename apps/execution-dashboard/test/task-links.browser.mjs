@@ -3,6 +3,14 @@ import path from 'node:path';
 import { runBrowserCheck } from './summary-detail.browser.mjs';
 
 await runBrowserCheck('task-links', async ({ page, f, report, output }) => {
+  const closeDialog = async () => {
+    await page.evaluate(() => {
+      window.fixtureLinkClose = false;
+      document.querySelector('#task-dialog').addEventListener('close', () => { window.fixtureLinkClose = true; }, { once: true });
+    });
+    await page.keyboard.press('Escape');
+    await page.waitForFunction(() => window.fixtureLinkClose === true);
+  };
   const [sub, parent] = f.tasks;
   const human = { 本片段交付阶段: 'implementation', 阶段: 'M2', 优先级: '1', 当前产出: '任务关系可从唯一记录核对', 下一可用交付: '核对父任务与责任人', 当前阻塞: 'NONE', 需用户决定: 'NONE' };
   const parentRows = { ...human, 任务层级: '大task', '大task ID': '[T02](plan.md)', 'co-lead': 'Web /root（执行管理 d01_owner）/ technical-owner-context /Users/example/long-owner-identity' };
@@ -50,21 +58,21 @@ await runBrowserCheck('task-links', async ({ page, f, report, output }) => {
   await raw.locator('summary').focus(); await page.keyboard.press('Enter'); assert.equal(await raw.getAttribute('open'), '');
   assert.match(await raw.innerText(), /\[T02\]/); assert.equal(await raw.locator('a').count(), 0);
   await page.keyboard.press('Space'); assert.equal(await raw.getAttribute('open'), null);
-  await page.keyboard.press('Escape'); assert.equal(await parentButton.evaluate(node => node === document.activeElement), true);
+  await closeDialog(); assert.equal(await parentButton.evaluate(node => node === document.activeElement), true);
   report.checks.push('Parent occupies one headline/delivery slot; child remains reachable; technical identities live in details; parent→child Enter and Escape focus work');
   await parentButton.click();
   await page.getByRole('button', { name: 'plan.md', exact: true }).click();
   await page.waitForFunction(() => document.querySelector('#document-text').textContent.includes('# 计划'));
   const documentReads = requests.filter(url => new URL(url).pathname === '/api/document');
   assert.equal(documentReads.length, 1); assert.equal(new URL(documentReads[0]).searchParams.get('task'), 'T02'); assert.equal(new URL(documentReads[0]).searchParams.get('path'), `${parent.planDir}/plan.md`);
-  await page.keyboard.press('Escape');
+  await closeDialog();
   report.checks.push('Parent plan still uses the existing registered-document endpoint');
   const detailsButton = firstChild().getByRole('button', { name: '查看详情：T01 任务 T01', exact: true });
   await detailsButton.focus(); await page.keyboard.press('Enter');
   const nestedParent = page.locator('#detail-content').getByRole('button', { name: '查看所属大task T02：T02 任务 T02', exact: true });
   await nestedParent.focus(); await page.keyboard.press('Enter');
   assert.equal(await page.locator('#detail-id').textContent(), 'T02'); assert.equal(await page.locator('#detail-title').evaluate(node => node === document.activeElement), true);
-  await page.keyboard.press('Escape'); assert.equal(await detailsButton.evaluate(node => node === document.activeElement), true);
+  await closeDialog(); assert.equal(await detailsButton.evaluate(node => node === document.activeElement), true);
   report.checks.push('Child detail to parent stays in one modal, focuses new title, and returns original child invoker on Escape');
   knownAssignments = false; await refresh(); assert.match(await page.locator('#active-work').innerText(), /领取状态未知/);
   await f.writeStatus(parent, { human: parentRows, updated: '2026-10-01 00:00 UTC' }); await refresh();
@@ -81,7 +89,7 @@ await runBrowserCheck('task-links', async ({ page, f, report, output }) => {
   assert.match(await page.locator('#detail-content').innerText(), /attacker.invalid/); assert.match(await page.locator('#detail-content').innerText(), /<img/);
   assert.equal(await page.locator('img[src="x"],a[href*="attacker.invalid"]').count(), 0);
   assert.equal(requests.some(url => !url.startsWith(f.url)), false);
-  await page.keyboard.press('Escape');
+  await closeDialog();
   report.checks.push('Stale parent stays explicitly unknown; unknown ID and wrong path cannot navigate; HTML/remote declarations stay text and cause zero remote reads');
   await f.writeStatus(sub, { human: { ...subRows, 当前阻塞: 'ACTIVE: 子任务待资料', 需用户决定: 'REQUIRED: 子任务需选择' } }); await refresh();
   assert.match(await page.locator('#blockers').innerText(), /子任务待资料/);
@@ -104,6 +112,6 @@ await runBrowserCheck('task-links', async ({ page, f, report, output }) => {
   assert.equal(await page.evaluate(() => document.documentElement.scrollWidth > innerWidth), false);
   assert.equal(await page.locator('#task-dialog').evaluate(node => node.scrollWidth <= node.clientWidth), true);
   const detailShot = 'detail-narrow-dark.png'; await page.screenshot({ path: path.join(output, detailShot), animations: 'disabled' }); report.screenshots.push(detailShot);
-  await page.keyboard.press('Escape');
+  await closeDialog();
   report.checks.push('1280×720 and 390×844 light/dark home and narrow detail: no horizontal overflow, reduced-motion, keyboard raw record');
 });
