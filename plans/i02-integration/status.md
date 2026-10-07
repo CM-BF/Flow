@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:20:05.813Z / local main13d4327b1；远端仍fbad68a68，HTTP500待恢复 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T15:25:44.147Z / main/origine65e148fd；207来源15:24:50.706Z实际载入 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -16,14 +16,14 @@
 | 工作树dirty状态 | 仅已审结果原件/本次接收状态；两个既有未知__pycache__继续不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 本批固定输入与原raw/私有产物身份核验相符，构建结果独审批准；0重复测试/PG/浏览器/provider。 |
-| 已集成main状态 / HEAD | local main13d4327b1；origin main仍fbad68a68，推送HTTP500未完成。固定cd27/098b产物与当前个人运行分别记录，未混入PROCESS。 |
+| 已集成main状态 / HEAD | main/origine65e148fd；已审PROCESS、迁入模块、来源迁移均已同步。固定cd27/098b产物与当前个人运行分别记录，未混入PROCESS。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 插件独立进程执行的已审源码已在本地主线；消息设置的固定后台产物已构建并通过限定独审。 |
+| 当前产出 | 插件独立进程源码与当前迁入模块已进入主线；看板已实际显示当前发布与插件工作来源。 |
 | 下一可用交付 | 完成固定新旧网页与新后台的兼容验证，再沿受管流程发布可体验页面；消息设置双槽另做真实宿主验证。 |
-| 当前阻塞 | ACTIVE: 远端推送暂报服务错误；本地固定审查和发布准备仍可继续。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -444,3 +444,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 受信插件进程宿主固定4dc6的11源/55support与当前主线前像/直接依赖均核符，复用原独审与15distinct分轮结果，不重复工程测试。当前迁入Module固定7324/ac6限定独审通过，未具备个人实例/正式报告或现场调用；双槽宿主098b的独立构建准备b3ee审查已通过。登记仅唯一source，未reload。见本批 [插件接收](../../docs/evidence/i02/x01-trusted-process-host-intake.json)、[当前迁入审查](../../docs/evidence/i02/svc06b-current-import-module-review.json)、[构建准备审查](../../docs/evidence/i02/svc09a-fixed-build-preparation-review.json)。GitHub两owner推送500原错误保留，本地主线/远端状态分记，不称已push。旧个人7d1/source6c、Webd629/v3仍只是最后已审记录，本段未操作。
 
 2026-10-07T15:20:05.813Z：SVC09A固定产物构建及内部加载结果独审通过，见 [限定审查](../../docs/evidence/i02/svc09a-fixed-build-result-review.json)。实际15:14:01.726Z→15:14:34.219Z，15:14:38.558644Z完整归还；宿主/个人部署仍未验。PROCESS和当前迁入模块已local main13d，远端HTTP500单列，不重跑已审检查。
+
+2026-10-07T15:25:44.147Z：远端500已解除，main/origine65e已接本批；D05207来源实际换载15:24:50.706Z，导航限定审查与原live回执已保存。未重跑工程检查、未更新个人服务。
