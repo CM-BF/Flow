@@ -16,8 +16,8 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 已补高并发时插件下载/安装与聊天控制共用连接的组合验收条件；目前仅规划，原候选与恢复证据保持。 |
-| 下一可用交付 | 资源恢复后优先SVC07必要HTTP检查与聊天关键路径，随后按ready队列补局部验证；远程最小片等待原用户选择。 |
-| 当前阻塞 | ACTIVE: GO于00:08:27观测主卷783,925,248B，低于现有运行门槛；CI唯一用户选择PENDING。已归并恢复顺序，不循环采样或占用worker等待。 |
+| 下一可用交付 | 先完成SVC07已审HTTP直接消费者，再按原依赖推进Codex普通会话C02及恢复/快捷设置/TUI；每项保留原packet、预算、独审与实际清理回执。 |
+| 当前阻塞 | ACTIVE: 远程CI原用户选择仍PENDING；本轮空间观察已越过SVC07原线，本地候选改为逐项fresh准入与串行共享窗口，不再按旧余量整体HOLD。 |
 | 需用户决定 | REQUIRED: OPS-CI01唯一启用选择已由Goal Owner提出，当前PENDING；不重复提问。 |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -168,3 +168,10 @@ SVC06依赖选择纯模块87dc已经main，完整固定运行产物仍需2.5GiB�
 固定只读输入05cdc51e9668d8e3b5219440361ee6b8f1b3a549。新增FLOW-001-T04-POOL-01，四种host启用组合、连接占用/checkout等待、心跳/取消/交互响应与资源释放；保留session advisory fence和unknown恢复。新条件尚未运行，不称饥饿/泄漏，也不扩大S01原128fixture证据；SCAN-01沿原项处理。仅计划/状态/质量记录，独立文档review已批准固定target d95551a06157dbd3a88891166d37c75f98800b39，无finding；已接收并push main c919fd3f7705a3e8753b820c0bbf73002c94b949。产品/负载/服务0改动。[本段交付记录](../../docs/quality/req18-plugin-pool-acceptance-2026-10-07.json)。
 
 本段文档交付已完成；FLOW-001-T04-POOL-01仍pending/NOT_RUN，实施owner未领取、原聊天关键路径及资源恢复顺序不变。独立审查8项绑定一致、3个新增引用在固定发布main中存在；历史管理树缺两份S01物化副本的首轮本地链接检查失败保留，未冒称owner树检查通过。
+
+
+## 2026-10-07 02:06 UTC 资源变化后的执行恢复
+
+GO报告空间实质回升后，Lead一次fresh df观察Data Available 26,448,428 KiB（27,083,190,272 B）；本轮没有清理，变化原因未知，不作归因或未来准入保证。只读容量诊断已结束，不生成容量证据文件。原资源门槛、CI唯一PENDING问题和所有历史FAIL/UNKNOWN/NOT_RUN保留；每个operator仍在自己的入口fresh核原条件。
+
+fresh canonical SVC07 HEAD1b3e166 clean/pushed，产品e28/HTTP35f原批准输入不变；本队无PG/Chrome运行。已与Mika和Web直接协调单次 SVC07-HTTP-RESOURCE-RECOVERED-20261007：原60s封套/40s工作/15s清理、floor1,207,959,552B和67,108,864B局部预算；须Web确认无实际holder及owner fresh claim/固定inputs/依赖/输出后才launch。Mika复用原worker，准备不符即交回而非预占。SVC07→C02关键路径优先，随后按ready状态共享窗口；0新增provider、不重测旧PG/fake/无关全集，不操作个人服务。当前仅安排恢复，未声称HTTP已运行或通过。02:06:39账本确认本管理claim3cb8/v3 ACTIVE，现时范围一致。

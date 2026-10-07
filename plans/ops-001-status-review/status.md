@@ -19,8 +19,8 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 个人后台恢复记录已接收；X01依赖链接已齐。已有候选保持原证据，执行worker已结束重复等待。 |
-| 下一可用交付 | 资源恢复后优先SVC07必要HTTP检查与聊天关键路径，随后按ready队列补局部验证；远程最小片等待原用户选择。 |
-| 当前阻塞 | ACTIVE: GO于00:08:27观测主卷783,925,248B，低于现有运行门槛；CI唯一用户选择PENDING。已归并恢复顺序，不循环采样或占用worker等待。 |
+| 下一可用交付 | 先完成SVC07已审HTTP直接消费者，再按原依赖推进Codex普通会话C02及恢复/快捷设置/TUI；每项保留原packet、预算、独审与实际清理回执。 |
+| 当前阻塞 | ACTIVE: 远程CI原用户选择仍PENDING；本轮空间观察已越过SVC07原线，本地候选改为逐项fresh准入与串行共享窗口，不再按旧余量整体HOLD。 |
 | 需用户决定 | REQUIRED: Goal Owner已向用户提出唯一启用选择，目前PENDING：补充workflow权限后由agent发布并手动运行一次／用户网页手动启用而不扩CLI权限／暂不启用。未启动授权或远程运行，不重复提问。 |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -375,3 +375,10 @@ Mika协调读取失败后，Lead独立确认OrbStack Stopped、Docker socket缺�
 2026-10-07 00:14 UTC：现有共享执行阻塞已作一次有界收口，[恢复顺序与解除条件](../../docs/quality/execution-recovery-order-2026-10-07.md)。native_center_owner确认无未完成检查后结束本段；X01七链接既有回执PROVISIONED，未重复供给。各候选原失败/NOT_RUN/限定独审不变，Mika原REQ10/K01规划保持独立。本次无资源或服务探针、测试、清理、CI或新功能。
 
 2026-10-07 00:29 UTC：计划索引小维护沿本OPS范围：fresh协调账本后，原D05 v3→v4移出plans/README.md，OPS v2→v3接收精确路径。索引只导航到权威status，旧批次明确历史；保留全部计划/验收/模板链接、FLOW完整目标与长期授权，不复制新实时状态。本次heartbeat并发上限10且受实际cap约束，未声明实际人数。仅文档/link核对，[记录](../../docs/quality/plan-index-navigation-2026-10-07.json)，原资源与CI阻塞不变。
+
+
+## 2026-10-07 02:06 UTC 资源变化后的执行恢复
+
+GO报告空间实质回升后，Lead一次fresh df观察Data Available 26,448,428 KiB（27,083,190,272 B）；本轮没有清理，变化原因未知，不作归因或未来准入保证。只读容量诊断已结束，不生成容量证据文件。原资源门槛、CI唯一PENDING问题和所有历史FAIL/UNKNOWN/NOT_RUN保留；每个operator仍在自己的入口fresh核原条件。
+
+fresh canonical SVC07 HEAD1b3e166 clean/pushed，产品e28/HTTP35f原批准输入不变；本队无PG/Chrome运行。已与Mika和Web直接协调单次 SVC07-HTTP-RESOURCE-RECOVERED-20261007：原60s封套/40s工作/15s清理、floor1,207,959,552B和67,108,864B局部预算；须Web确认无实际holder及owner fresh claim/固定inputs/依赖/输出后才launch。Mika复用原worker，准备不符即交回而非预占。SVC07→C02关键路径优先，随后按ready状态共享窗口；0新增provider、不重测旧PG/fake/无关全集，不操作个人服务。当前仅安排恢复，未声称HTTP已运行或通过。02:06:39账本确认本管理claim3cb8/v3 ACTIVE，现时范围一致。
