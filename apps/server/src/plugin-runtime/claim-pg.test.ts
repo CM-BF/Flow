@@ -221,6 +221,7 @@ test('restart recovers the same pin without renewing its lease and preserves cap
 test('registration lock waiter observes committed grant revocation before creating attempt or receipt', async () => {
   const f = await enabled(); const binding = await pluginTask(f); const input = opportunity(f);
   const blocker = await pool.connect(); let pending: ReturnType<typeof claimRequest> | undefined;
+  let primaryFailed = false;
   try {
     await blocker.query('BEGIN'); const blockerPid: number = (await blocker.query('SELECT pg_backend_pid() AS pid')).rows[0].pid;
     const installation = await loadInstallation(blocker, f.registrationId, true); const snapshot = await readSnapshot(blocker, f.registrationId);
@@ -239,10 +240,19 @@ test('registration lock waiter observes committed grant revocation before creati
     expect((await pool.query('SELECT 1 FROM flow.sessions WHERE active_task_id=$1', [binding.taskId])).rowCount).toBe(0);
     expect((await claimRequest(f, opportunity(f))).body.state).toBe('empty');
     facts.push({ kind: 'registration-barrier', blockerPid, waiterPid, grantCommitted: true, noAttemptOrReceipt: true });
+  } catch (error) {
+    primaryFailed = true;
+    throw error;
   } finally {
-    const rolledBack = await blocker.query('ROLLBACK').then(() => true, () => false); blocker.release(!rolledBack);
+    const cleanupErrors: unknown[] = [];
+    let rolledBack = false;
+    try { await blocker.query('ROLLBACK'); rolledBack = true; } catch (error) { cleanupErrors.push(error); }
+    try { blocker.release(!rolledBack); } catch (error) { cleanupErrors.push(error); }
     if (pending) await pending.catch(() => undefined);
-    facts.push({ kind: 'barrier-client-closed', rolledBack }); expect(rolledBack).toBe(true);
+    facts.push({ kind: 'barrier-client-closed', rolledBack, primaryFailed,
+      cleanupErrors: cleanupErrors.map(error => ({ name: error instanceof Error ? error.name.slice(0, 128) : 'UnknownError' })) });
+    // Cleanup is secondary to the original assertion/DB error; without one it must still fail the case.
+    if (!primaryFailed && cleanupErrors.length) throw cleanupErrors[0];
   }
 });
 
