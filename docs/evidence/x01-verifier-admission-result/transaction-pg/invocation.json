@@ -1,0 +1,42 @@
+{
+  "state": "CLOSED_PENDING_PREPARATION_REVIEW",
+  "workingDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result",
+  "argv": [
+    "/usr/bin/env",
+    "-i",
+    "PATH=/usr/bin:/bin",
+    "LANG=C",
+    "LC_ALL=C",
+    "TZ=UTC",
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-I",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/transaction-pg/pg-once.py",
+    "--admission",
+    "<FRESH_ABSOLUTE_ADMISSION_PATH>",
+    "--sha256",
+    "<SHA256_OF_EXACT_ADMISSION_BYTES>"
+  ],
+  "callerCommit": "227c70bf83e3a6bb5680b4d2aa0b25b05ece26c1",
+  "callerSha256": "5d320bd5212f55e0eb9d095e33820236a3e5720679dfc31658e79a53d57c1c77",
+  "manifestSha256": "b54b712ed3c5430d8a5510ad318ccd5ffc6b6227101d8df1671087202fbddf08",
+  "admissionInterface": {
+    "lead": "mika",
+    "stage": "VAR_TRANSACTION_PG",
+    "state": "OPEN only after prerequisites and future manager NEXT",
+    "claim": "fresh exact cb699a7a-bc28-4659-82e6-56f6a0765e6c v1 ACTIVE23 matching fixed receipt",
+    "ledgerObservedAt": "fresh <=60s at original caller start; invocation prepared first",
+    "head": "future clean executionHEAD=origin",
+    "window": "fresh32hex generated only for actual grant",
+    "pairedBytes": "future manager complete floor minus fixed base1242562560; no historical free sample reuse"
+  },
+  "namespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/transaction-pg/var-transaction-pg-run-r1",
+  "current": "0actual/0admission/namespace not created",
+  "preconditions": [
+    "AV R2 true PG success and prerequisite approval",
+    "Independent case/fixture and operator/preparation approval",
+    "fresh complete inputs, external links, claim, root identity, no namespace, current whole resource floor"
+  ],
+  "outerEvidence": "Use existing OPS14 operator; record outer PID/PGID/exit/EOF and wall separately; no additional supervisor logic.",
+  "failure": "Preserve actual result and raw; no retry or forced DROP; unknown KEEP."
+}
