@@ -156,7 +156,12 @@ export async function runPluginRuntimeManagementChecks(page: Page, fixture: Awai
   expect(fixture.writes.every(write => write.center === 'A')).toBe(true); checks.push('decoded old-session ACK cannot replace the new center state');
   await page.setViewportSize({ width: 390, height: 844 });
   const refresh = panel.getByRole('button', { name: '刷新启停状态（只读）', exact: true });
-  await refresh.focus(); await page.keyboard.press('Enter'); await expect(refresh).toBeFocused();
+  await expect(refresh).toBeEnabled();
+  const keyboardReadCount = await page.evaluate(() => window.__X03_TEST__.runtimeReadCount);
+  await refresh.focus(); await page.keyboard.press('Enter');
+  await expect.poll(() => page.evaluate(() => window.__X03_TEST__.runtimeReadCount)).toBe(keyboardReadCount + 1);
+  await expect(refresh).toBeEnabled();
+  await expect(refresh).toBeFocused();
   for (const theme of ['light', 'dark'] as const) {
     if (theme === 'dark') await page.getByRole('button', { name: 'Use dark theme', exact: true }).click();
     await panel.scrollIntoViewIfNeeded(); expect(await page.evaluate(() => document.documentElement.scrollWidth <= innerWidth)).toBe(true);

@@ -158,7 +158,7 @@ function RuntimeControls({ access, snapshot, registrationCurrent }: { access: Ce
       <dt>当前执行后端</dt><dd>{value.targetRunnerId ?? '未绑定'}</dd><dt>当前 Store</dt><dd>{value.storeId ?? '未绑定'}</dd>
     </dl>{!readCurrent ? <p role="status">当前读取未确认；保留的展示不构成新授权。</p> : null}</> : null}
     {runtime.failed || !runtime.data ? <ReadNotice {...runtime} label="runtime" /> : null}
-    <button type="button" disabled={runtime.pending} onClick={runtime.retry}>刷新启停状态（只读）</button>
+    <button type="button" aria-disabled={runtime.pending} onClick={() => { if (!runtime.pending) runtime.retry(); }}>刷新启停状态（只读）</button>
     <p className="flow-plugin-note">启用仍由中心检查兼容性与授权，不表示在线、已加载或调用获准。配置与 grants 在本片只读。</p>
     <details><summary>高级执行后端与完整安装身份</summary>
       <p className="flow-plugin-note">临时高级入口：输入已登记执行后端的精确 UUID，不自动注册。按可读名称选择授权候选尚待公共接口。</p>
@@ -172,7 +172,7 @@ function RuntimeControls({ access, snapshot, registrationCurrent }: { access: Ce
         {!materials.data.operations.length ? <p>尚无安装记录，不能启用。</p> : null}
       </fieldset> : null}
       {materials.failed || !materials.data ? <ReadNotice {...materials} label="installed material" /> : null}
-      <button type="button" disabled={materials.pending} onClick={materials.retry}>刷新安装记录（只读）</button>
+      <button type="button" aria-disabled={materials.pending} onClick={() => { if (!materials.pending) materials.retry(); }}>刷新安装记录（只读）</button>
       <Paging label="installed materials" after={after} next={materials.data?.nextCursor ?? null} busy={materials.pending || materials.failed} onPage={setAfter} />
       {selected && !material ? <p>所选安装不在当前页；未替换选择，请返回其所在页再确认。</p> : null}
     </details>
