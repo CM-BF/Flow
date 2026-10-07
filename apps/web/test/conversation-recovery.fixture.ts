@@ -9,7 +9,7 @@ import type { Pool } from "pg";
 import type { Readable } from "node:stream";
 
 export const root = fileURLToPath(new URL("../../../", import.meta.url));
-export const evidence = root + "docs/evidence/wpf-conversation-recovery/";
+export const evidence = root + "docs/evidence/wpf-message-settings-app/";
 type ObservedRecoveryRecord = { id: string; kind: string; phase?: string; version: number; owner: { viewKey: string; routeId: string };
   data?: { text?: string; intent?: string; attachments?: unknown[] }; frozen?: unknown };
 /** Also serialized by page.evaluate: no captured imports, constants or helpers. Never creates schema. */
@@ -339,7 +339,7 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
   const measureWire = () => { wireBytes = Buffer.byteLength(JSON.stringify(wire)); assert.ok(wireBytes <= 1024 * 1024, "Fixture wire budget exceeded"); };
   const lifecycle = new AbortController(), bound = AbortSignal.any([signal, lifecycle.signal]);
   let sseTaskId: string | undefined, sseObserver: RecoverySseObserver | undefined;
-  let completeDraftSeeded = false;
+  let completeDraftSeeded = false, messageSettingsSeeded = false;
   let steeringSeeded = false;
   const steeringLeaseMs = 60_000;
   const steeringActor = { registered: false, claimRequests: 0, claimed: false, sessionEventRequests: 0,
@@ -602,6 +602,29 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
             }
           },
         };
+      },
+      async seedMessageSettings() {
+        assert.equal(messageSettingsSeeded, false, "One MSG03 synthetic publisher per fixture");
+        messageSettingsSeeded = true; await checkpoint();
+        const { CLAUDE_TURN_SETTINGS_PROTOCOL } = await import("@flow/contracts");
+        const registration = await client.registerRunner({ name: "MSG03 synthetic profile publisher", harnesses: ["claude"], capacity: 1 });
+        await checkpoint();
+        const publisher = new FlowClient({ baseUrl: center, token: registration.token });
+        const choices = ["A", "B", "C"].map(suffix => ({ model: `msg03-${suffix}` + "-declared-model".repeat(10),
+          thinking: "adaptive" as const, effort: { kind: "level" as const, value: "high" as const }, speed: "standard" as const }));
+        const { profile } = await publisher.publishExecutionProfile({ configuration: {
+          harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model: "msg03-pinned",
+          thinking: "disabled", permissionMode: "dontAsk", access: "none", requireReadApproval: false,
+          materialScopeDigest: createHash("sha256").update("[]").digest("hex"),
+          limits: { maxTurns: 2, maxBudgetUsd: 0.2, timeoutMs: 60000 },
+          turnSettings: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, choices },
+        } }, bound);
+        await checkpoint();
+        const created = await client.createConversation({ title: "MSG03 real App", harness: "claude", projectId: project.snapshot.project.id,
+          executionProfile: profile.reference, requested: { model: profile.configuration.model, thinking: "disabled", tools: "none" } }, randomUUID(), bound);
+        await checkpoint();
+        return { conversationId: created.conversation.id, profile: profile.reference,
+          choices: choices.map(requested => ({ protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: profile.reference, requested })) };
       },
       async seedCompleteDraft() {
         assert.equal(completeDraftSeeded, false, "Only one complete-draft publisher is allowed");

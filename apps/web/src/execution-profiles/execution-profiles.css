@@ -28,3 +28,15 @@
 .ep-identities summary:focus-visible { outline:2px solid var(--ring); outline-offset:3px; }
 @media (max-width:450px) { .ep-dialog { padding:1.1rem; } .ep-configuration-dialog dl { grid-template-columns:1fr; gap:.2rem; } .ep-configuration-dialog dd { margin-bottom:.4rem; } }
 @media (prefers-reduced-motion:reduce) { .ep-dialog { animation:none!important; transition:none!important; } }
+
+.ep-message-dialog { display:flex; flex-direction:column; gap:.65rem; height:min(42rem,calc(100dvh - 2rem)); overflow:hidden; }
+.ep-settings-body { min-height:0; min-width:0; overflow-y:auto; overscroll-behavior:contain; display:flex; flex-direction:column; gap:.6rem; padding:.15rem; }
+.ep-settings-actions { flex-shrink:0; display:flex; gap:.5rem; border-top:1px solid var(--border); padding-top:.6rem; }
+.ep-message-dialog .ep-option strong { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }
+.ep-settings-summary { font-size:.75rem; min-width:0; overflow-wrap:anywhere; }
+.ep-settings-summary summary { cursor:pointer; display:list-item; max-width:100%; overflow-wrap:anywhere; }
+.ep-settings-summary p { white-space:normal; overflow-wrap:anywhere; }
+.ep-message-dialog .ep-option span > span { font-size:.75rem; color:var(--muted-foreground); }
+.ep-message-dialog .ep-option { padding:.55rem; }
+
+.ep-settings-preview { display:-webkit-box; -webkit-line-clamp:2; -webkit-box-orient:vertical; overflow:hidden; }

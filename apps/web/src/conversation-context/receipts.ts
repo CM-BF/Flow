@@ -1,8 +1,15 @@
 import { assertConversationContextMatches } from "@flow/client";
-import { attachmentSelectionSchema, type AttachmentReference } from "@flow/contracts";
+import { attachmentSelectionSchema, claudeTurnSettingsSchema, type ClaudeTurnSettings, type AttachmentReference } from "@flow/contracts";
 import { freezeContextSelection, type FrozenCitation } from "./selection";
 
+export function freezeMessageSettings(value: unknown): Readonly<ClaudeTurnSettings> {
+  const parsed = claudeTurnSettingsSchema.parse(value);
+  Object.freeze(parsed.profile); Object.freeze(parsed.requested.effort); Object.freeze(parsed.requested);
+  return Object.freeze(parsed);
+}
+
 type MaterialInput = {
+  messageSettings?: Readonly<ClaudeTurnSettings>;
   knowledge?: readonly FrozenCitation[];
   attachments?: readonly Readonly<AttachmentReference>[];
 };
@@ -18,6 +25,7 @@ export function freezeMaterialRequest<T extends object>(request: T & MaterialInp
   if (attachments) { attachments.forEach(Object.freeze); Object.freeze(attachments); }
   const detachedKnowledge = knowledge === undefined ? undefined : Object.freeze([...knowledge]);
   return Object.freeze({ ...request,
+    ...(request.messageSettings === undefined ? {} : { messageSettings: freezeMessageSettings(request.messageSettings) }),
     ...(detachedKnowledge === undefined ? {} : { knowledge: detachedKnowledge }),
     ...(attachments === undefined ? {} : { attachments }),
   });

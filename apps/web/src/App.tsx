@@ -1,3 +1,4 @@
+import { messageSettingsDraft, type MessageSettingsDraft } from "./plugin-integration/message-settings";
 import { ConnectionSession } from "./connection/session";
 import { ConversationRecoveryJournal, recoveryAddress, namespaceKey, recoveryValue, type RecoveryNamespace, type RecoveryRecord, type CommandRecord } from "./recovery/journal";
 import { RecoverySurface, readRecoveryDraft, restoreConversationDraft, type RecoveryHost } from "./recovery/binding";
@@ -207,6 +208,7 @@ interface View {
   conversation?: ConversationProjection;
   intent?: "follow-up" | "queue";
   restoredVersion?: number;
+  settings: MessageSettingsDraft;
 }
 interface PanelFocusRequest { serial: number; taskId: string; tab: WorkspaceTabId }
 function ChatPane({
@@ -450,6 +452,7 @@ function Workspace({
     if (!view) {
       view = {
         key: restoredKey ?? crypto.randomUUID(),
+        settings: messageSettingsDraft(),
         projection: new TaskProjection(client),
         ...((id.startsWith("draft-") || id.startsWith("conversation:")) ? { conversation: new ConversationProjection(client, id.startsWith("conversation:") ? id.slice(13) : null) } : {}),
         title: id.startsWith("draft-")
@@ -466,6 +469,7 @@ function Workspace({
     return view;
   };
   const newChat = () => {
+    session?.closeMessageSettings();
     if (!canOpenConversation(residentCount(), false)) { showRetained(true); return; }
     const id = `draft-${crypto.randomUUID()}`;
     if (!ensureView(id)) return;
@@ -479,6 +483,7 @@ function Workspace({
     );
   };
   const select = (id: string) => {
+    session?.closeMessageSettings();
     if (!ensureView(id)) { history.replaceState(null, "", lastRoute.current || location.pathname + location.search); return; }
     setCapacityBlocked(false); setOverview(false);
     if (window.innerWidth <= 800) setSidebar(false);
@@ -491,10 +496,11 @@ function Workspace({
     });
     history.replaceState(null, "", id.startsWith("conversation:") ? `#conversation=${encodeURIComponent(id.slice(13))}` : `#task=${encodeURIComponent(id)}`);
   };
-  const routeActions = useRef({ select, newChat });
+  const hideSettings = () => session?.closeMessageSettings();
+  const routeActions = useRef({ select, newChat, hideSettings });
   useLayoutEffect(() => {
     // Route listeners outlive renders; dispatch through the last committed session/actions.
-    routeActions.current = { select, newChat };
+    routeActions.current = { select, newChat, hideSettings };
   });
   useEffect(() => {
     void refreshChats();
@@ -505,7 +511,7 @@ function Workspace({
       const id = params.get("task");
       if (conversation) routeActions.current.select(`conversation:${conversation}`);
       else if (id) routeActions.current.select(id);
-      else if (location.hash === "#workspace") setOverview(true);
+      else if (location.hash === "#workspace") { routeActions.current.hideSettings(); setOverview(true); }
       else routeActions.current.newChat();
     };
     followRoute();
@@ -566,7 +572,7 @@ function Workspace({
     unsubmittedProfile: !!view.conversation && !view.conversation.getSnapshot().snapshot && Object.hasOwn(profileSelections, view.key),
     hasOutbox: !!view.conversation?.getSnapshot().outbox,
     queueReceipts: view.conversation?.queue.getSnapshot().receipts.length ?? 0,
-    host: session?.getViewProtection(view.key) ?? ["Host state unavailable"],
+    host: [...(session?.getViewProtection(view.key) ?? ["Host state unavailable"]), ...(view.settings.value ? ["Message settings draft"] : [])],
   });
   const releaseConversation = (view: View) => {
     session?.releaseView(view.key);
@@ -579,6 +585,7 @@ function Workspace({
     view.conversation?.dispose(); view.projection.disconnect();
   };
   const closeNow = (id: string, discardSteering = false) => {
+    session?.closeMessageSettings();
     const next = closeChat(groups, id);
     setGroups(next);
     const targetGroup =
@@ -664,7 +671,7 @@ function Workspace({
     draft: key => {
       const entry = viewEntry(key); if (!entry?.[1].conversation || !session) throw Error("This draft has no current conversation owner.");
       const material = session.recoveryMaterials(key);
-      return recoveryValue({ text: drafts.get(entry[0])?.text ?? "", intent: entry[1].intent ?? "follow-up", profile: profileRef.current[key] ?? defaultProfileSelection,
+      return recoveryValue({ messageSettings: entry[1].settings.value, text: drafts.get(entry[0])?.text ?? "", intent: entry[1].intent ?? "follow-up", profile: profileRef.current[key] ?? defaultProfileSelection,
         ...material, attachments: material.attachments.map(item => ({ id: item.id, name: item.name, state: item.state, metadata: item.metadata, uploadKey: item.uploadKey })), steering: session.steering.drafts(key) });
     },
     restore: async (record, lease) => {
@@ -684,7 +691,7 @@ function Workspace({
       let existing = viewEntry(record.owner.viewKey);
       if (existing && saved) {
         const material = session.recoveryMaterials(record.owner.viewKey);
-        if (drafts.get(existing[0])?.text || material.knowledge.length || material.attachments.length || session.steering.drafts(record.owner.viewKey).length ||
+        if (existing[1].settings.value || drafts.get(existing[0])?.text || material.knowledge.length || material.attachments.length || session.steering.drafts(record.owner.viewKey).length ||
           (existing[1].intent ?? "follow-up") !== "follow-up" || JSON.stringify(profileRef.current[existing[1].key] ?? defaultProfileSelection) !== JSON.stringify(defaultProfileSelection) ||
           (!existing[1].conversation?.getSnapshot().snapshot && material.projectId))
           throw Error("Keep the complete current draft separately before restoring this one.");
@@ -722,6 +729,7 @@ function Workspace({
               commitSteering(); commitKnowledge(); commitAttachments?.();
               drafts.set(targetRoute, { harness: "claude", scenario: "success", text: restored.text });
               profileRef.current = { ...profileRef.current, [view.key]: restored.profile }; setProfileSelections(profileRef.current);
+              view.settings = messageSettingsDraft(restored.messageSettings);
               view.intent = restored.intent; view.restoredVersion = (view.restoredVersion ?? 0) + 1;
               select(targetRoute); setGroups(previous => [...previous]);
             };
@@ -753,6 +761,26 @@ function Workspace({
   } : undefined;
   const actions: AppActions = {
     ...(recoveryHost ? { recovery: recoveryHost } : {}),
+    messageSettings: {
+      read: key => {
+        const entry = viewEntry(key), view = entry?.[1], snapshot = view?.conversation?.getSnapshot();
+        if (!entry || !view?.conversation) return null;
+        return { draft: view.settings, generation: recovery?.session.getSnapshot().generation ?? 0,
+          context: { profile: snapshot?.snapshot?.conversation.executionProfile ?? null, capability: snapshot?.snapshot?.capabilities.messageSettings ?? null },
+          editable: authorizedRef.current && (!recovery || recovery.session.authorized(recovery.namespace))
+            && !overview && document.visibilityState === "visible" && currentGroups.current.some(group => group.activeId === entry[0])
+            && snapshot?.connection === "live" };
+      },
+      replace: (key, expected, value) => {
+        const entry = viewEntry(key);
+        if (!entry || entry[1].settings.ownership !== expected || !authorizedRef.current || (recovery && !recovery.session.authorized(recovery.namespace)))
+          throw Error("This message draft belongs to an expired owner.");
+        const next = messageSettingsDraft(value); entry[1].settings = next;
+        session?.recovery.changed(key); setGroups(previous => [...previous]);
+        return next;
+      },
+      profiles: (options, signal) => client.claudeMessageSettingsProfiles(options, signal),
+    },
     knowsTask: id => Boolean(taskView(id)) || conversationOwnsTask(id) || catalog.getSnapshot().tasks.some(task => task.id === id),
     task: id => taskView(id)?.[1].projection.getSnapshot().task ?? null,
     hasDraft: id => Boolean(views.get(id)?.conversation) || (id.startsWith("draft-") && views.has(id)),
@@ -864,7 +892,7 @@ function Workspace({
       >
         <span className="flow-mark">F</span>
         <IconButton label="Work overview" active={overview} onClick={() => {
-          setOverview(true);
+          session?.closeMessageSettings(); setOverview(true);
           if (window.innerWidth <= 800) setSidebar(false);
           history.replaceState(null, "", "#workspace");
         }}><LayoutDashboard size={18} /></IconButton>
@@ -1101,9 +1129,9 @@ function Workspace({
                         drafts={drafts}
                         profiles={profiles}
                         profileSelection={profileSelections[views.get(id)!.key] ?? defaultProfileSelection}
-                        onProfileSelection={selection => { const key = views.get(id)!.key; profileRef.current = { ...profileRef.current, [key]: selection }; setProfileSelections(profileRef.current); session.recovery.changed(key); }}
+                        onProfileSelection={selection => { session.closeMessageSettings(); const view = views.get(id)!; view.settings = messageSettingsDraft(view.settings.value); const key = view.key; profileRef.current = { ...profileRef.current, [key]: selection }; setProfileSelections(profileRef.current); session.recovery.changed(key); }}
                         onDraftChange={() => session.recovery.changed(views.get(id)!.key)}
-                        onIntent={intent => { const view = views.get(id)!; view.intent = intent; setGroups(previous => [...previous]); session.recovery.changed(view.key); }}
+                        onIntent={intent => { session.closeMessageSettings(); const view = views.get(id)!; view.settings = messageSettingsDraft(view.settings.value); view.intent = intent; setGroups(previous => [...previous]); session.recovery.changed(view.key); }}
                         onAccepted={(taskId) => accepted(id, taskId)}
                         onActivate={() => setActiveGroup(group.id)}
                         onInspect={taskId => { setActiveGroup(group.id); void inspect(id, taskId); }}

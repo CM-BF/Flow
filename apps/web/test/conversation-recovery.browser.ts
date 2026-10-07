@@ -9,9 +9,10 @@ import type { RecoveryDatabaseLease, RecoveryWire, RecoverySseTrace, startRecove
 
 // Only built-ins are loaded by the parent before fresh admission, monitoring and durable ownership facts.
 const root = fileURLToPath(new URL("../../../", import.meta.url));
-const evidence = join(root, "docs/evidence/wpf-conversation-recovery");
-// Defensive ceiling only: closed 90s + 150s + 60s + 90s phases, plus independent two-center 90s. No unused credit transfers.
-const TOTAL_MS = 480_000, CLEANUP_MS = 15_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
+// This worktree owns only MSG03 output; historical Recovery evidence remains immutable.
+const evidence = join(root, "docs/evidence/wpf-message-settings-app");
+// MSG03-only defensive ceiling, not a runtime grant. No Recovery phase or credit transfers.
+const TOTAL_MS = 60_000, CLEANUP_MS = 15_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
 const RUN_RETAIN_RESERVE = 5 * 1024 ** 2; // 1MiB logs + <=2MiB report + two <=512KiB images + bounded owner/budget records.
 const START_FREE = 1024 ** 3 + 128 * 1024 ** 2, STOP_FREE = 1024 ** 3 + 64 * 1024 ** 2;
 const sleep = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
@@ -34,6 +35,7 @@ async function treeBytes(directory: string, scratch = false): Promise<number> {
 }
 async function freeBytes() { const value = await statfs(root); return value.bavail * value.bsize; }
 const sourcePaths = ["apps/web/src/App.tsx", "apps/web/src/connection/session.ts", "apps/web/src/recovery/journal.ts", "apps/web/src/recovery/binding.tsx", "apps/web/src/conversations/ConversationThread.tsx", "apps/web/src/conversations/outbox.ts", "apps/web/src/conversations/projection.ts", "apps/web/src/conversations/queue/commands.ts", "apps/web/src/conversation-steering/control.ts", "apps/web/src/conversation-steering/SteeringControl.tsx", "apps/web/src/conversation-context/controller.ts", "apps/web/src/attachments/controller.ts", "apps/web/src/plugin-integration/attachments.tsx", "apps/web/src/plugin-integration/knowledge.tsx", "apps/web/src/plugin-integration/session.ts", "apps/web/src/plugin-integration/steering.tsx", "apps/web/test/conversation-recovery.test.ts", "apps/web/test/conversation-recovery.fixture.ts", "apps/web/test/conversation-recovery.browser.ts"];
+sourcePaths.push("apps/web/src/plugin-integration/react.tsx", "apps/web/src/conversation-context/receipts.ts", "apps/web/src/conversations/queue/projection.ts", "apps/web/src/conversations/queue/ConversationQueue.tsx", "apps/web/src/plugin-integration/message-settings.tsx", "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx", "apps/web/src/execution-profiles/execution-profiles.css");
 const journeyGroups = {
   full: ["cookieRead", "textIntentDraft", "crossTabCas", "sameKeyTurn", "pageOnlyAuthLoss", "csrfOffline", "themes390"],
   "recovery-chain": ["cookieRead", "textIntentDraft", "crossTabCas", "sameKeyTurn"],
@@ -48,10 +50,11 @@ const journeyGroups = {
   "complete-draft": ["cookieRead", "completeDraft"],
   "steering-recovery": ["cookieRead", "steeringRecovery"],
   "second-center-cycle": ["cookieRead", "secondCenterCycle"],
+  "message-settings-app": ["cookieRead", "messageSettingsApp"],
 } as const;
 type Journey = keyof typeof journeyGroups;
 type Group = (typeof journeyGroups)[Journey][number];
-const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss", "sseDelivery", "completeDraft", "steeringRecovery", "secondCenterCycle"];
+const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss", "sseDelivery", "completeDraft", "steeringRecovery", "secondCenterCycle", "messageSettingsApp"];
 function selectedGroups(journey: unknown): readonly Group[] {
   requireThat(typeof journey === "string" && Object.hasOwn(journeyGroups, journey), "An explicit supported journey is required");
   return journeyGroups[journey as Journey];
@@ -124,10 +127,11 @@ function priorAttemptCharge(run: string, budgetText: string, reconciliation?: Fa
 }
 
 async function supervisor() {
-  requireThat(process.env.FLOW_RECOVERY_BROWSER === "1", "Separate real browser/PG approval is required");
+  requireThat(process.env.FLOW_MSG03_BROWSER === "1", "Separate real browser/PG approval is required");
   const gatePath = process.env.FLOW_RECOVERY_GATE, adminUrl = process.env.FLOW_RECOVERY_TEST_ADMIN;
   requireThat(gatePath && adminUrl, "Fresh explicit gate and isolated PG admin endpoint are required; no discovery/default");
   const gate = JSON.parse(await readFile(gatePath, "utf8")) as Gate;
+  requireThat(String(gate.journey) === "message-settings-app", "MSG03 owner entry cannot replay historical Recovery journeys");
   const requiredGroups = selectedGroups(gate.journey);
   const twoCenter = gate.journey === "second-center-cycle", cleanupMs = twoCenter ? 30_000 : CLEANUP_MS;
   const evidenceLimit = twoCenter ? 13 * 1024 ** 2 : EVIDENCE_BYTES;
@@ -434,7 +438,7 @@ async function worker(init: Init) {
   };
   const coverage: Record<string, string> = {
     cookieRead: "NOT_RUN", cookieSseHandshake: "NOT_RUN", cookieSseDelivery: "PENDING: only handshake is asserted", textIntentDraft: "NOT_RUN", materialDraft: "NOT_RUN", sameKeyTurn: "NOT_RUN", crossTabCas: "NOT_RUN",
-    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN", createAckLoss: "NOT_RUN", createdTurnAckLoss: "NOT_RUN", queueAckLoss: "NOT_RUN", sseDelivery: "NOT_RUN", completeDraft: "NOT_RUN", steeringRecovery: "NOT_RUN", secondCenterCycle: "NOT_RUN",
+    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN", createAckLoss: "NOT_RUN", createdTurnAckLoss: "NOT_RUN", queueAckLoss: "NOT_RUN", sseDelivery: "NOT_RUN", completeDraft: "NOT_RUN", steeringRecovery: "NOT_RUN", secondCenterCycle: "NOT_RUN", messageSettingsApp: "NOT_RUN",
     createTwoStage: "PENDING: the two CREATE fault points are independent selected journeys", queueSteerRecovery: "PENDING: enqueue selection does not validate promotion or steering",
     profileKnowledgeSteeringDraft: "PENDING: direct/source only", secondCenter: "NOT_RUN: real A/B cycle is a separate selected journey; principal-only is controlled",
   };
@@ -1115,6 +1119,107 @@ async function worker(init: Init) {
       expect(nextDraft.data).toMatchObject({ text: next, projectId: fixture!.projectId, knowledge: [], attachments: [] });
       expect(postRows()).toHaveLength(baseline.length + 1); expect(bodyReads()).toBe(readsBefore);
       coverage.profileKnowledgeSteeringDraft = "PARTIAL: prepared profile/project, knowledge and two files; steering draft is not covered";
+    });
+    await run("real App message settings bind frozen Send/Queue requests, complete Recovery and native P01 keyboard", "messageSettingsApp", async () => {
+      const seed = await fixture!.seedMessageSettings(), [a, b, c] = seed.choices;
+      requireThat(a && b && c, "Three declared choices required");
+      const original = "MSG03 same text 中文🙂", path = `/api/conversations/${seed.conversationId}`;
+      const rows = (suffix: string) => postRows().filter(row => row.path === path + suffix);
+      const action = () => page.locator("[data-composer-view]").filter({ visible: true }).getByRole("button", { name: "消息设置", exact: true });
+      const dialog = page.getByRole("dialog", { name: "下一条消息设置", exact: true });
+      const applied = () => page.locator(".ep-settings-summary").filter({ visible: true }).filter({ hasText: "下一条消息设置" });
+      const open = async () => { await action().focus(); await action().press("Enter"); await expect(dialog).toBeVisible(); };
+      const choose = async (value: typeof a) => {
+        const option = dialog.locator(".ep-option").filter({ hasText: value.requested.model });
+        await expect(option).toHaveCount(1); await option.getByRole("radio").check();
+      };
+      const apply = async (value: typeof a) => {
+        await open(); await choose(value); await dialog.getByRole("button", { name: "应用", exact: true }).click();
+        await expect(dialog).not.toBeVisible(); await expect(action()).toBeFocused(); await expect(applied()).toContainText(value.requested.model);
+      };
+      const draft = async (value: typeof a, text: string) => {
+        const matching = (await records(page)).filter(record => record.kind === "draft" && record.owner.routeId === `conversation:${seed.conversationId}`
+          && record.data?.text === text && JSON.stringify(object(record.data).messageSettings) === JSON.stringify(value));
+        expect(matching).toHaveLength(1); return matching[0]!;
+      };
+      await page.goto(fixture!.url + `#conversation=${seed.conversationId}`); await expect(input()).toBeVisible();
+      // First mount must provide valid P01 context before any second-render rescue.
+      await open(); await choose(a); await dialog.getByRole("button", { name: "取消", exact: true }).click();
+      await expect(dialog).not.toBeVisible(); await expect(action()).toBeFocused(); await expect(applied()).toContainText("not attached");
+      await apply(a); await expect(input()).toHaveValue("");
+      await expect.poll(async () => (await draft(a, "")).id).toBeTruthy();
+      const saved = await draft(a, ""), baseline = postRows().length;
+      await reloadAndReauthenticate(); const recovery = await openRecovery(), savedRow = await exactRecordRow(recovery, saved.id);
+      await savedRow.getByRole("button", { name: "Restore without sending", exact: true }).click(); await page.keyboard.press("Escape");
+      await expect(recovery).not.toBeVisible(); await expect(applied()).toContainText(a.requested.model); await expect(input()).toHaveValue("");
+      expect(postRows()).toHaveLength(baseline);
+      // An explicit directory read validates retained C; restore itself neither reads content nor sends.
+      await open(); await expect(dialog.locator(".ep-option").filter({ hasText: a.requested.model })).toHaveCount(1);
+      await dialog.getByRole("button", { name: "取消", exact: true }).click(); await expect(action()).toBeFocused();
+      const files = page.locator("[data-composer-view]").filter({ visible: true }).getByRole("button", { name: "Files", exact: true });
+      await files.click(); const picker = page.getByRole("dialog", { name: "Project text files", exact: true });
+      await picker.getByRole("button", { name: "Browse files", exact: true }).click();
+      await picker.getByRole("button", { name: "Use saved.txt", exact: true }).click();
+      await picker.getByRole("button", { name: "Use later.txt", exact: true }).click();
+      await page.keyboard.press("Escape"); await expect(picker).not.toBeVisible(); await expect(files).toBeFocused();
+      await input().fill(original);
+      // Hold the actual original request, not a mocked response: B is written before A's ACK.
+      let release!: () => void, arrived!: () => void;
+      const held = new Promise<void>(resolve => { release = resolve; }), requested = new Promise<void>(resolve => { arrived = resolve; });
+      const routePattern = `**${path}/turns`;
+      const routeHandler = async (route: import("@playwright/test").Route) => {
+        if (route.request().method() !== "POST") { await route.continue(); return; }
+        arrived(); await held; await route.continue();
+      };
+      await page.route(routePattern, routeHandler);
+      const verifyTurnLoss = observeAckBodyLoss(page, path + "/turns", "text", original); fixture!.dropNext("turn");
+      let requestTimer: ReturnType<typeof setTimeout> | undefined;
+      try {
+        await input().press("Enter");
+        await Promise.race([requested, new Promise<never>((_, reject) => { requestTimer = setTimeout(() => reject(Error("Original Send request not observed")), 4500); })]);
+        clearTimeout(requestTimer);
+        await apply(b); await input().fill(original); release();
+        await expect(page.getByRole("region", { name: "Message receipt", exact: true })).toContainText("Receipt unknown");
+      } finally { clearTimeout(requestTimer); release(); await page.unroute(routePattern, routeHandler); }
+      const first = rows("/turns")[0]!; await verifyTurnLoss(first);
+      const send = conversationTurnSchema.parse(JSON.parse(first.body)); expect(send.messageSettings).toEqual(a);
+      expect(send.attachments).toEqual([fixture!.resource.reference, fixture!.secondResource.reference]);
+      await expect(applied()).toContainText(b.requested.model); await expect(input()).toHaveValue(original);
+      await page.getByRole("button", { name: "Retry same message", exact: true }).click();
+      await expect.poll(() => rows("/turns").length).toBe(2);
+      const retry = rows("/turns")[1]!; expect({ key: retry.key, body: retry.body }).toEqual({ key: first.key, body: first.body });
+      requireThat(retry.responseBody, "Real replay ACK required");
+      expect(decodeConversationTurnAccepted(JSON.parse(retry.responseBody), seed.conversationId, send).replayed).toBe(true);
+      await expect(applied()).toContainText(b.requested.model); await expect(input()).toHaveValue(original);
+      await page.getByRole("radio", { name: "Queue next", exact: true }).check();
+      const verifyQueueLoss = observeAckBodyLoss(page, path + "/queue", "text", original); fixture!.dropNext("queue");
+      await input().press("Enter"); await expect(page.getByRole("region", { name: "enqueue receipt", exact: true })).toContainText("Receipt unknown");
+      const queued = rows("/queue")[0]!; await verifyQueueLoss(queued);
+      expect(conversationQueueEnqueueSchema.parse(JSON.parse(queued.body)).messageSettings).toEqual(b);
+      await apply(c); await input().fill(original); await page.getByRole("button", { name: "Retry same enqueue", exact: true }).click();
+      await expect.poll(() => rows("/queue").length).toBe(2);
+      expect({ key: rows("/queue")[1]!.key, body: rows("/queue")[1]!.body }).toEqual({ key: queued.key, body: queued.body });
+      await expect(applied()).toContainText(c.requested.model); await expect(input()).toHaveValue(original);
+      const queue = page.getByRole("region", { name: "Conversation queue", exact: true });
+      await queue.getByRole("button", { name: /waiting loaded/ }).click();
+      const waiting = queue.getByRole("list", { name: "Waiting messages", exact: true });
+      await expect(waiting).toContainText(b.requested.model); await expect(waiting).not.toContainText(c.requested.model);
+      const config = page.locator(".flow-composer-configuration").filter({ visible: true });
+      await config.getByRole("button", { name: "Conversation settings: msg03-pinned", exact: true }).click();
+      const details = page.getByRole("dialog", { name: "Conversation settings", exact: true });
+      await details.getByText(/Execution history · 1 turn/).click(); await details.getByText("Execution · turn 1", { exact: true }).click();
+      await expect(details.getByText("This turn requested", { exact: true })).toBeVisible(); await expect(details).toContainText(a.requested.model);
+      await expect(details).not.toContainText(c.requested.model); await page.keyboard.press("Escape");
+      for (const theme of ["light", "dark"] as const) {
+        await page.emulateMedia({ colorScheme: theme }); await page.setViewportSize({ width: 390, height: 844 }); await open();
+        await expect(dialog.getByRole("button", { name: "应用", exact: true })).toBeInViewport();
+        await expect(dialog.getByRole("button", { name: "取消", exact: true })).toBeInViewport();
+        await dialog.getByRole("combobox", { name: "模型", exact: true }).selectOption(c.requested.model);
+        await dialog.getByText("完整模型名称", { exact: true }).click(); await expect(dialog).toContainText(c.requested.model);
+        await page.screenshot({ path: join(init.directory, `message-settings-${theme}-390.png`) });
+        await page.keyboard.press("Escape"); await expect(action()).toBeFocused();
+      }
+      expect(postRows()).toHaveLength(baseline + 4); // two original requests and their exact-key retries only
     });
     let draftId = "";
     const originalDraftRow = async (dialog: Locator) => {
