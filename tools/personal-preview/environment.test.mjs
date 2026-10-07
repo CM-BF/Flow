@@ -50,3 +50,12 @@ test('SVC09 browser settings require the explicit host port and never leak throu
   assert.equal(serviceEnvironment('runner', config, inherited, settings).FLOW_BROWSER_SESSION_JSON, undefined);
   assert.throws(() => serviceEnvironment('web', config, inherited, settings), { code: 'WEB_BACKEND_SOURCE_MISMATCH' });
 });
+
+test('SVC09A settings environment changes only explicit runner identity and owned paths', () => {
+  const config = { directory: '/fixture', centerPort: 1234, runner: { token: 'old' } };
+  const slot = { runner: { token: 'new' }, workdir: '/fixture/runner-settings/work', manifestPath: '/fixture/runner-settings/claude.json' };
+  const legacy = serviceEnvironment('runner', config, { HOME: '/synthetic', ANTHROPIC_AUTH_TOKEN: 'auth' });
+  const settings = serviceEnvironment('runner', config, { HOME: '/synthetic', ANTHROPIC_AUTH_TOKEN: 'auth' }, null, null, slot);
+  const expected = { ...legacy, FLOW_RUNNER_TOKEN: 'new', FLOW_RUNNER_WORKDIR: slot.workdir, FLOW_CLAUDE_MATERIALS_FILE: slot.manifestPath };
+  assert.deepEqual(settings, expected); assert.equal(config.runner.token, 'old');
+});

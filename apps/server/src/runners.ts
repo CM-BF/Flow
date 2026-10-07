@@ -64,6 +64,11 @@ async function allocateClaim(client: PoolClient, runner: RunnerRecord, leaseMs: 
     SELECT t.id FROM flow.tasks t LEFT JOIN flow.execution_profiles rp ON rp.runner_id=$2 LEFT JOIN flow.sessions s ON s.id=t.submission->>'resumeSessionId' AND s.harness=t.submission->>'harness'
     WHERE t.status='queued' AND t.dispatch_ready AND t.submission->>'harness'=ANY($1)
     AND (t.submission->'executionProfile' IS NULL OR t.submission->'executionProfile'->>'runnerId'=$2)
+    -- Configured Claude settings runners must skip legacy work before LIMIT; full tuple validation remains below.
+    AND (t.submission->>'harness'<>'claude' OR NOT COALESCE(rp.configuration ? 'turnSettings',false) OR
+      (t.submission->'executionProfile'=jsonb_build_object('id',rp.id,'runnerId',$2::text,'configDigest',rp.config_digest)
+        AND t.submission->'messageSettings'->>'protocol'='flow.claude-turn-settings.v1'
+        AND t.submission->'messageSettings'->'profile'=t.submission->'executionProfile'))
     AND ((t.submission->'engineering' IS NULL AND COALESCE(rp.configuration->>'purpose','') NOT IN ('engineering-fixture','engineering-native')) OR
       (t.submission->'engineering'->>'targetRunnerId'=$2
         AND ((t.submission->'engineering'->>'protocol'='flow.engineering.v1' AND rp.configuration->>'protocol'='flow.engineering-profile.v1'
