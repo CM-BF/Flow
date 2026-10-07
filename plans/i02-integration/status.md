@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T16:42:21.961Z / main/origin53f50e069；本批接收R3限定失败审查与后继资源方法 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T17:01:40.908Z / main c6ada2b76；本批接收208登记已审差量，远端推送故障另记 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,16 +12,16 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main53f50e069已收个人只读健康事实；本批只接四份已审管理doc与两审查记录，不改产品或固定产物 |
+| 工作基线 / HEAD | main c6ada2b76已收S01最小12源、资源方法与SVC09A R4准备独审；本批只接登记/文档，不改产品或固定产物 |
 | 工作树dirty状态 | 仅已审结果原件/本次接收状态；两个既有未知__pycache__继续不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 固定doc字节/链接、两限定独审与own-status解析；0重复产品测试/PG/浏览器/provider，历史UNKNOWN保持 |
-| 已集成main状态 / HEAD | 最近已核main/origin53f50e069；AV03四leaf与个人只读事实已main。本批R3结果保真独审/后继空间方法，固定cd27/04da、2515/098b与个人运行不改 |
+| 已集成main状态 / HEAD | 最近已核main/origin c6ada2b76；208来源登记即将本地接收，GitHub source push两次500尚未成功。固定cd27/04da、2515/098b与个人运行不改 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 新页面所需入口与构建已审，实际兼容仍待收口；后台宿主完成部分生命周期，但完整结果核验失败，原件已审保留。 |
+| 当前产出 | 已审后台准备与队列实验已接收；看板补齐当前负责人来源，网页兼容诊断按既定顺序继续。 |
 | 下一可用交付 | 完成新网页与固定后台的实际兼容验证，再受管更新个人页面；另验证消息设置后台独立启动、接单和收尾。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -472,3 +472,5 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 已核[十二leaf接收记录](../../docs/evidence/i02/s01-delivery-packing-minimal-intake.json)：72,498B，九新文件、三个前像完全吻合；已有逐源独审与局部/strict原证据复用，0重跑ABBA/PG/provider。optional历史接线和旧共享contracts全部保留main，不复制旧93输入/大raw。此为私有实验模块进入主线，不是生产容量优化或完整S01完成。
 
 同批[失败摘要规划差量](../../docs/evidence/i02/flow-failure-summary-doc-review.json)已独审；只登记原FLOW后继与真实预算结果，无产品分类实现。16:44:53.806Z实际4320读取OPS/FLOW/I02均sourceCurrent、human.missing空；父历史开工UNKNOWN保留。
+
+2026-10-07T17:01:40.908Z：D05唯一登记target29093a34d，经assignment_review独立APPROVED/0P1P2，精确接收registry及三份管理记录；source后续908248c只存原独审/推送失败事实。无产品测试或运行源变化。

@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07T17:00:05.064Z",
+  "main": "c6ada2b766bcc2ad45546bb500ad8ba34f277af2",
+  "claim": "3a6240d0-f861-41fd-b245-3546b2e2dbf3 v6",
+  "count": 208,
+  "uniqueIds": 208,
+  "selected": [
+    {
+      "id": "WPF-VISUAL01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+      "branch": "codex/web-shared-overlays",
+      "planDir": "plans/wpf-visual01-shell",
+      "evidenceDir": "docs/evidence/wpf-visual01",
+      "errors": [],
+      "humanMissing": [],
+      "timingIssues": [
+        "任务开工时间未记录"
+      ]
+    },
+    {
+      "id": "S01Q01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan",
+      "branch": "codex/queue-paused-scan",
+      "planDir": "plans/s01q01-paused-queue",
+      "evidenceDir": "docs/evidence/s01q01-paused-queue",
+      "errors": [],
+      "humanMissing": [],
+      "timingIssues": []
+    }
+  ],
+  "own": {
+    "errors": [],
+    "humanMissing": [],
+    "timingIssues": [
+      "任务开工时间未记录"
+    ]
+  },
+  "scope": "Registry source maintenance only; no product tests, PG, provider or personal service changes",
+  "visualInput": "web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/source-switch-intake.json",
+  "queueInput": "queue-paused-scan/plans/s01q01-paused-queue/status.md"
+}

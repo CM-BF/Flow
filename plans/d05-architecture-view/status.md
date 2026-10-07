@@ -2,27 +2,27 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:25:12.732Z / main/origine65e148fd；207个唯一来源于15:24:50.706Z已实际载入 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T17:00:05.010Z / main c6ada2b76；实际看板仍207来源，208候选尚未部署 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 初始D05完整任务开工无足够明确来源，不由登记或进程替换猜测。各次来源发布时间见独立live回执；本次message-settings-app-live.json只证明实际部署时点。 |
+| 任务时间来源 | 初始D05完整任务开工UNKNOWN；本次来源维护实际开始2026-10-07T16:59:18.942Z，以领取核验为据；完成和部署分开记录。 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
 | 工作分支状态 | in-progress |
-| 已集成 main 状态 | main/origin677a93e9已接204来源；4320实际204，SVC06B/SVC09A/CORE均live/current、人读完整。只换载本看板，个人61227/61228及原用户页面未动。 |
+| 已集成 main 状态 | 已部署207来源；本次唯一来源迁移与新增登记待独审/main接收，尚未替换看板。 |
 | 实现目标 | cad1251fdbe8f8b527a78c60cf45adce68e4f534 |
 | 实现范围 | apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/src/server.mjs |
 | 检查状态 | PASSED cad1251fdbe8f8b527a78c60cf45adce68e4f534：局部Node 2/2；45节点源码路径固定基线存在；CUA五视图、980浅色/390深色、键盘/缩放/刷新保持，0模型 |
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 看板已显示发布与插件的当前负责人进度，补齐插件读取模块和验证设计来源。 |
-| 下一可用交付 | 本次来源更新已交付；后续进度由各任务唯一负责人维护。 |
+| 当前产出 | 正在补齐暂停聊天的改进进度，并把视觉外壳指向当前负责人维护的来源。 |
+| 下一可用交付 | 让看板显示这两项的真实审查和验证状态。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -270,3 +270,9 @@ X01-TRUSTED-PROCESS-HOST01唯一canonical登记源0b70已由assignment_review限
 2026-10-07T15:23:15.789Z：远端500已解除。现两迁移/两登记仅导航，详见[本次来源](../../docs/evidence/d05/release-plugin-source-switches.json)；旧Release与I01已释放、新原子claim匹配。CLIENT原ISO offset完成字段仍按原owner声明读取，未代改；VERIFIER仅设计交付。实际换载尚未执行。
 
 2026-10-07T15:25:12.732Z：207来源实际换载完成，见[回执](../../docs/evidence/d05/release-plugin-207-live.json)。旧自有10591正常停止/缺席，新55292固定e65e148fd，五选中source均live/issues空；Release/I01实际读取新canonical。公共本机登录元数据仍200/启用，未读token、不刷新个人页，0个人变更。独立导航审查native APPPROVED 36a544409，main/origin已接；历史UNKNOWN保持。
+
+## 2026-10-07T17:00:05.010Z 来源维护
+
+保持WPF-VISUAL01原ID，依正式交接改读web-shared-overlays；旧web-visual-shell保留历史。新增S01Q01唯一来源queue-paused-scan。两项仅登记，NOT_RUN/待审事实仍从原owner status读取；不修改他人状态，不继承历史批准。claim3a6240d0 v6于16:59:18.942Z核active且三范围一致。验证见[登记核验](../../docs/evidence/d05/visual-queue-208-registry.json)。
+
+2026-10-07T17:01:14.121Z：唯一独审APPROVED_SOURCE_REGISTRATION/0P1P2，固定29093a34d；[审查](../../docs/evidence/d05/visual-queue-208-review.json)。两次远端500拒绝保留，当前仅本地固定提交，受控接收与实际208部署尚未发生。

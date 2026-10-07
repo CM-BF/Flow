@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-07T17:01:40.908Z",
+  "base": "c6ada2b766bcc2ad45546bb500ad8ba34f277af2",
+  "target": "29093a34db2ac99fed895e2df40a4381ca354530",
+  "metadataSource": "908248c6a",
+  "review": "docs/evidence/d05/visual-queue-208-review.json",
+  "paths": [
+    "apps/execution-dashboard/src/registry.mjs",
+    "plans/d05-architecture-view/status.md",
+    "docs/evidence/d05/visual-queue-208-registry.json",
+    "docs/evidence/d05/visual-queue-208-review.json"
+  ],
+  "preimage": "registry main equals source parent a30c7e8d",
+  "checks": "source provenance + independent review + own status parser only",
+  "remote": "source push returned500 twice; do not claim remote receipt until observed",
+  "personalChanges": 0
+}
