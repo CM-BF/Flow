@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T23:40:41.160Z / mainc414c0d0d；5719实际发布结果限定独审通过：779/v4及旧d629各一版本资源HTTP核同；个人e15/currentinit/accepting24、3roles保留，实际用户任务领取NOT_OBSERVED。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T23:50:19.691Z / mainfe26cc936；个人Web779/v4已发布，AV中心/client与GDEP固定已审源码已接收；TUI01F本轮准备23:43:59Z开始，未持实际浏览器/PG窗口。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,15 +15,15 @@
 | 工作基线 / 本记录核验时HEAD | 本次仅汇总已发生的看板部署、隔离验证与现场等待；各固定source和原始结果由唯一owner保留 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | mainc414c0d0d已接收锁修复独审；个人现场e15/880060、current initialization/accepting24，Web779/v4于23:36:06确认。5719结果独审通过，源码接收与部署分列，不冒完整聊天通过。 |
+| 已集成main状态 / HEAD | main97353接收实际Web779结果及AV中心/client；fe26接收GDEP四产品叶与直接fixture。个人仍e15/880060、accepting24，Web779/v4；源码接收不自动部署或证明新用户任务领取。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
 | 当前产出 | 个人服务已恢复，新版网页已发布并完成限定核对。旧页面资源保留，中心和执行器未因这次网页发布重启。 |
-| 下一可用交付 | 接收已审的共享验证接口，继续真实聊天与双端接续验收。 |
-| 当前阻塞 | ACTIVE: 个人恢复和网页发布已完成；真实用户任务领取、完整双端接续与工程模型资格仍各按原验收开放。 |
+| 下一可用交付 | 完成终端与网页交替操作同一会话的实际验收，并继续接入已审的聊天与插件能力。 |
+| 当前阻塞 | ACTIVE: 完整双端聊天仍待实际验收；工程写入模型资格仍待原决定，当前可并行推进零模型工作。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -603,3 +603,5 @@ OPS-001-12/16本段方法增量：SVC09A R2的真实mkdtemp字母表与入口不
 2026-10-07T23:12:32.836Z：原恢复结果146654ac5获独立限定APPROVED，32绑定95322B由reviewer/接收方各核fixed/current/hash。真实工作段23:03:29.033765Z至23:06:25.528431Z，23:07:45.970561Z精确RETURN；三个人服务current initialization与accepting24保留，实际任务领取和resume后全业务再采样均NOT_OBSERVED。77表旧列投影仅在checkpoint/紧前resume一致，0新增query/task。唯一原件留原owner，main仅保存小审查引用；后继网页尚未发布。旧两离线build各2,317,352,960B都已获原owner封存无writer确认，Web未来预算残差现为8,806,203,392B，仍保未知；当前已消费R2门槛不追溯更改。
 
 2026-10-07T23:17:40.257Z：Web现场参数只读核对23:14:04.406Z至23:14:11.066Z通过；随后原owner静态复核发现transfer外层preview锁内的observe再次调用带锁maintenance(status)，会被同一operation锁拒绝。尚无transfer/publish或新namespace，恢复中的个人服务不受此发现影响。原owner在自己leaf与直接消费者连续局部修复，保留身份/撤销核验和真实锁冲突拒绝；0PG/provider/个人I/O，不用再次完整冷启动或四App通过掩盖该真实调用缺口。
+
+2026-10-07T23:50:19.691Z：恢复后的安全接收已消费AV03中心/client（main97353）及GDEP01（mainfe26），没有新工程重测或个人操作。GDEP只接5必要路径44890B与单份Git来源回执，原512运行输入/历史raw仍在canonical，未复制到main；非Git峰值或APFS节省测量。TUI01F owner于23:43:59Z恢复原双端旅程准备，原首FAIL/cleanup保持，已给一个连续有界local段；未来真实PTY/浏览器与headless证据分列。登记和own-status解析只核自身字段，历史首次UNKNOWN不补猜。

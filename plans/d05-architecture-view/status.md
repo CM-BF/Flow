@@ -2,14 +2,14 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:02:07.575Z / main/origin69a71e3d9；211来源已实际载入 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T23:48:23.258Z / mainfe26cc936；GDEP01唯一source登记候选，旧211实际载入仍保留历史 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 初始D05首次开工UNKNOWN；本次三来源维护实际开始2026-10-07T21:59:16.198Z（本轮编辑调用实际clock；不是task首次开工），审查/main/部署分别记录。 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
@@ -21,8 +21,8 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 看板已显示任务时间阅读、会话工作区和插件验证三项的真实进度与已有时间。 |
-| 下一可用交付 | 本次来源更新已交付；后续产品验收与完成时间由各原负责人维护。 |
+| 当前产出 | 已接收的目标依赖批读正在加入看板，沿原负责人的唯一进度显示开工与交付时间。 |
+| 下一可用交付 | 发布这一准确来源；上下文和插件验证的子步骤继续关联原父任务，避免重复状态。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -284,3 +284,5 @@ X01-TRUSTED-PROCESS-HOST01唯一canonical登记源0b70已由assignment_review限
 2026-10-07T22:01:03.629Z：native_center_owner对固定d931003d8登记差异独立APPROVED/0P1P2，旧208逐字保持，211候选待main与实际换载；见[限定登记审查](../../docs/evidence/d05/three-canonical-211-review.json)。
 
 2026-10-07T22:02:07.575Z：三项登记独审后受控接收main69a71e3d9，22:01:36.229Z实际4320为211来源、三项current/无source issues，时间按owner原字段；只替换已核自有50158→57950，ACCESS公开配置保持、0token/浏览器/个人操作。[实际回执](../../docs/evidence/d05/three-canonical-211-live.json)。本次阶段结束22:01:36.306Z，不填补D05历史首次开工。
+
+2026-10-07T23:48:23.258Z：本次来源维护实际开始；仅GDEP01独立canonical新增至212候选。fresh D05 claim3a6240d0/v6 ACTIVE，registry与main前像相同。MATURE04-05和X01-VERIFIER-CENTER-WIRING01先沿父status向原co-lead核关联，未造重复status或冒登记。GDEP四产品与fixture已mainfe26；本次0工程重测，独立登记审查/实际换载待后继。

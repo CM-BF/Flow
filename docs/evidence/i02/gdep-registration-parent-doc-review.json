@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-07T23:51:47.151Z",
+  "base": "fe26cc936d3d645cd102035a1885394c1a48f680",
+  "decision": "APPROVED_DOCS",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "p1": 0,
+  "p2": 0,
+  "targets": [
+    "a73a8fbf8",
+    "b434da11b"
+  ],
+  "bindings": [
+    {
+      "commit": "a73a8fbf8643e93c4fbabc56e487bce95a34f2f8",
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "bytes": 29736,
+      "sha256": "85c9d556cfff408c1f9c9a1e1a45e3bad3b3076d678420359dff4ce5f187197b"
+    },
+    {
+      "commit": "a73a8fbf8643e93c4fbabc56e487bce95a34f2f8",
+      "path": "plans/d05-architecture-view/status.md",
+      "bytes": 42835,
+      "sha256": "50fa710d8c626232f3f567acef63177451f80eb81d4295b5eca0a6b97a8f46e3"
+    },
+    {
+      "commit": "a73a8fbf8643e93c4fbabc56e487bce95a34f2f8",
+      "path": "docs/evidence/d05/gdep-source-validation.json",
+      "bytes": 2198,
+      "sha256": "3d703e7e8ed976da6f3a6fbd9fd5b4e010c3cad077ddbfc343d0d3dbf0c5b100"
+    },
+    {
+      "commit": "b434da11b878d64927e0612a7a87ed6b95ca2aa6",
+      "path": "plans/flow-001-architecture/plan.md",
+      "bytes": 83999,
+      "sha256": "cb592cb0de4c09862939b22b237da860f22325bf4464a7a197b2d3bd670c7614"
+    },
+    {
+      "commit": "b434da11b878d64927e0612a7a87ed6b95ca2aa6",
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 47585,
+      "sha256": "0d25259c90a64232bbc8eee459cdf15b885fc2d49e5b52cc773b711d16a6312b"
+    },
+    {
+      "commit": "b434da11b878d64927e0612a7a87ed6b95ca2aa6",
+      "path": "plans/ops-001-status-review/plan.md",
+      "bytes": 20954,
+      "sha256": "777dd0de39cd186ede3db18fc8ab80b60d9edc518f58401796bda714f7c1301b"
+    },
+    {
+      "commit": "b434da11b878d64927e0612a7a87ed6b95ca2aa6",
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 118421,
+      "sha256": "8782f5a17c511c91b7a5a20c9842183ee5e5e4d9ff0931a12d428fe6d8ecb6f9"
+    }
+  ],
+  "review": "D05 adds one canonical source and evidence map; original211 preserved,212 candidate. FLOW limitedGDEP completion matches exact approved16pure/8PG/intake; public/native/performance excluded. OPS queue daily entrance remains NOT_RUN, no CI/permit change. 0 tests, no peer writes.",
+  "retainedIssues": "GDEP canonical NONE: and nonstandard waiting table sent to original owner; no parser guessing or peer status edits. Historical first task starts UNKNOWN."
+}
