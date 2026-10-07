@@ -11,3 +11,7 @@
 验证：新profile直接对照旧helper、一次factory/目录替换/关闭前启动拒绝（mock R06不spawn），真实自有私有FD与注入transport组合成功/ownership丢失/部分prepare/取消在途/超时unknown。同一180s过程、16MiB私有tmp、2MiB raw，fresh1GiB+32MiB，0PG/browser/provider/stock；后继真实app-server初始化和OS canary另固定入口，不在本轮运行。
 
 模型資格唯一待决仍在ENG01J。旧locked-no-fallback grant保持拒绝；requested/catalog与供应商实际执行身份分开，未收到reroute不证明绝对无fallback。完整app-server真实工具回调与全部writer撤销尚未验。
+
+实际入口差量（574a2e31）：原 `-p` 的约17.6KiB参数超过R06单参数8192字符限制；改用自有control内 `flow-readonly.sb` 的 `-f`。exclusive0600创建、完整写入并fsync文件及父目录、固定dev/ino/uid/size/mode/hash，launch前NOFOLLOW重读复核；同名存在不覆盖、身份或字节变化不启动。文件在close后仍保留，删除由caller在独立收尾证据后处理，不能称文件删除撤销writer。R06全局限制不改。可选privateStderr复用已有受信sink且maxBytes≤8192，不从task输入扩权。
+
+原a372/6d1已获限定mock独审；真实参数限制是静态直接消费者发现，因此主线接收暂停。3定向例（2新+1原例受影响复测）及types0关闭该静态问题；原16不复跑。准备caller只initialize/initialized，真实stock仍NOT_RUN。
