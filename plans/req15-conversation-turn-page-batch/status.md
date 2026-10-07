@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 02:37 UTC恢复局部验证准备；main未集成，0新types/collect/PG |
+| 最近更新 / 最近main同步核验 | 2026-10-07 02:42:37 UTC；局部验收入口及连续工作段预算已固定，等待恢复归还，0新types/collect/PG |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,23 +10,23 @@
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch |
 | Branch | codex/conversation-turn-page-batch |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品/局部验证d209eb7275777d50f214fd73f66d6b3c1520c459；本次PG准备源码HEAD 5ddddd6a7991243b5c42e223b11df879f0fa9498 |
-| 工作树dirty状态 | 恢复前HEAD78c9e400562d6aba0c693856359e22af0e351f4b clean；95输入不变，仅本claim的run-check新增两个固定轻检查选项及准备/status，待delta独审 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品/局部验证d209eb7275777d50f214fd73f66d6b3c1520c459；PG准备5ddddd6a7991243b5c42e223b11df879f0fa9498；当前局部入口source/metadata前HEAD2deb4b865332981fc4a184c04913313b12766ce8 |
+| 工作树dirty状态 | 2deb4b86源码已固定；本次仅准备记录/status/review按OPS新方法收口，95输入不变；提交后核clean等待恢复归还，未运行新入口 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 实现目标 | 5ddddd6a7991243b5c42e223b11df879f0fa9498 |
+| 实现目标 | 2deb4b865332981fc4a184c04913313b12766ce8 |
 | 产品验证基线 | d209eb7275777d50f214fd73f66d6b3c1520c459；原8产品/测试、fake26/26及strict-v2已独审；当前5dd仅增加未运行的PG验证准备，不新增产品行为 |
-| 实现范围 | apps/server/src/assistant/store.ts, apps/server/src/assistant/index.ts, apps/server/src/assistant/final-preview-batch.test.ts, apps/server/src/conversations/queries.ts, apps/server/src/conversations/replies.ts, apps/server/src/conversations/state.ts, apps/server/src/conversations/turn-read.ts, apps/server/src/conversations/turn-page-batch.test.ts, docs/evidence/req15-turn-page-batch/pg-fixture-data.ts, docs/evidence/req15-turn-page-batch/pg-read-observer.ts, docs/evidence/req15-turn-page-batch/pg-turn-page.test.ts, docs/evidence/req15-turn-page-batch/execute-pg-once.py, docs/evidence/req15-turn-page-batch/pg-vitest.config.mjs, docs/evidence/req15-turn-page-batch/tsconfig.pg.json |
+| 实现范围 | apps/server/src/assistant/store.ts, apps/server/src/assistant/index.ts, apps/server/src/assistant/final-preview-batch.test.ts, apps/server/src/conversations/queries.ts, apps/server/src/conversations/replies.ts, apps/server/src/conversations/state.ts, apps/server/src/conversations/turn-read.ts, apps/server/src/conversations/turn-page-batch.test.ts, docs/evidence/req15-turn-page-batch/pg-fixture-data.ts, docs/evidence/req15-turn-page-batch/pg-read-observer.ts, docs/evidence/req15-turn-page-batch/pg-turn-page.test.ts, docs/evidence/req15-turn-page-batch/execute-pg-once.py, docs/evidence/req15-turn-page-batch/pg-vitest.config.mjs, docs/evidence/req15-turn-page-batch/tsconfig.pg.json, docs/evidence/req15-turn-page-batch/run-check.py |
 | 检查状态 | NOT_RUN 新PG准备包types/collect/PG；HTTP未运行。历史d209局部source+fake26/26+strict-v2已独立APPROVED，PG准备source另获APPROVED；不扩大历史运行证据 |
 | 已集成main状态 / HEAD | 未集成；实现3cd7a6e8已固定，未在main验证 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 批量读取局部验收已通过，真实分页与并发快照验收包及依赖已就绪 |
 | 下一可用交付 | 完成新PG夹具的类型与收集检查，再验证真实批量SQL和并发快照 |
-| 当前阻塞 | ACTIVE: 等待轻检查入口小增量独审及共享窗口；旧空间不足已解除，Lead正恢复现用Web页面，本任务没有轻检查或PG运行授权 |
+| 当前阻塞 | ACTIVE: 等待Lead现用Web恢复实际归还；本局部段预算已确认，旧空间不足已解除，真实PG仍须独立窗口 |
 | 需用户决定 | NONE |
 | 真实PG准备目标 | 5ddddd6a7991243b5c42e223b11df879f0fa9498；95 inputs/429768B，manifest df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e；PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN |
-| Review | [review.md](review.md)，APPROVED d209eb7275777d50f214fd73f66d6b3c1520c459（局部source+fake+strict）；5ddddd6a的PG准备source另获APPROVED，非执行准入 |
+| Review | [review.md](review.md)，历史d209局部source/fake/strict与5dd PG准备source批准保留；本次2deb入口及后续必要局部修复/结果在一个工作段结束后统一独审，不逐条增加检查前批准 |
 | Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v1 ACTIVE；10 literal见[回执](../../docs/evidence/req15-turn-page-batch/claim-receipt.json) |
 | 架构影响 | conversation读取内部新增批量Interface，外部契约/事务所有者不变；实现固定后由Lead核架构基线是否需同步，当前未作main事实 |
 
@@ -82,3 +82,7 @@
 剩余最小顺序见[可审入口包](../../docs/evidence/req15-turn-page-batch/validation-ready.md)：新fixture局部types一次、显式list收集2条一次，然后另排原两case PG一次；不重跑d209的26/26或strict。现有run-check原来只能旧tests/types，本段仅追加pg-types/pg-collect两个固定payload、清除PG/admin/OPEN env并记录collect真实数量；不新增监督循环或通用框架，原95执行输入/manifest及产品不变。新的caller delta待固定commit独审；HTTP留实际集成点。沿本地find-skills、固定clean-code与codebase-design复核职责/命令选择单一来源/失败原件/资源所有权，未装技能或依赖。
 
 本段后续Mika资源通知：Lead正在恢复用户现用61228 Web页面的同版本Web-only bootstrap；恢复期间不新开PG/Chrome/安装重负载。本组无actual holder，REQ15没有已打开运行，继续固定准备；不轮询资源或接口、不借准备扩大product/source scope。
+
+本次source固定 `2deb4b865332981fc4a184c04913313b12766ce8`，[准备记录](../../docs/evidence/req15-turn-page-batch/validation-ready-manifest.json)绑定该有限入口与原PG manifest；仅run-check新增固定选项，原95 PG输入及d209产品未变。当前实现声明增加该精确literal，历史5dd批准不覆盖新caller；新OPS方法允许恢复归还后在一次≤5min局部段内types→必要修复/定向复测→collect，至多4次各≤30s/raw64KiB、合计256KiB、自有TMP串行采样32MiB。段末统一独审/集成，不继续增加逐条检查小审批包装。此刻仍HOLD、无actual holder或工程检查；PG两case仍保原特殊窗口。
+
+Mika已确认上述有界局部段，恢复窗口实际归还后即可采用，不逐条再报批准；当前HOLD条件尚未解除。完成后一次提交实际选例、失败原件和未运行事实供独审；不得扩scope/增加tests或替代真实PG。

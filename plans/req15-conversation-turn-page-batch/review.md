@@ -1,10 +1,14 @@
 # REQ15 独立审查
 
-状态：APPROVED（仅5dd PG准备源码；不含运行）
+状态：NOT_STARTED（本次局部工作段结束后统一审查；历史产品和PG准备批准保留）
 
-Review target commit: 5ddddd6a7991243b5c42e223b11df879f0fa9498
+Review target commit: 2deb4b865332981fc4a184c04913313b12766ce8
 
 历史说明：局部产品与fake/strict在d209已获独立APPROVED；新真实PG source packet **PG_PREPARATION_SOURCE_APPROVED / TYPES_COLLECT_PG_NOT_RUN**。以下按时间保留初始模板及各次固定审查，早期NOT_STARTED不是当前产品结论。
+
+## 本次局部工作段结束后的统一审查范围
+
+起始source为2deb4b865332981fc4a184c04913313b12766ce8，仅run-check增加pg-types/pg-collect固定选项；原95 PG输入、封套、fixture及d209产品不变。按新OPS方法，恢复HOLD归还后普通局部段连续修改/检查/修失败/定向复测，段末绑定最终source和原始结果一次独审；本节不是新增检查前批准门槛。最终核命令选择、PG/admin/OPEN env清除、实际collect file/count、原supervisor复用、输出保真和预算，保留失败原件。旧26/26、strict-v2及5dd源码审不重做；此刻新types/collect/2PG均未运行。精确段预算见[validation-ready](../../docs/evidence/req15-turn-page-batch/validation-ready.md)。实际PG仍需必要隔离/特殊窗口，不重开任何旧已消费窗口。
 
 ## Target / scope / 验收
 

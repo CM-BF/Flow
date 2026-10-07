@@ -1,6 +1,6 @@
 {
   "at": "2026-10-07T02:41:49.578898+00:00",
-  "state": "LOCAL_PRECHECK_DELTA_PREPARED_NOT_RUN_REVIEW_PENDING",
+  "state": "LOCAL_WORK_SEGMENT_READY_NOT_RUN",
   "priorHead": "78c9e400562d6aba0c693856359e22af0e351f4b",
   "productTarget": "d209eb7275777d50f214fd73f66d6b3c1520c459",
   "approvedPgSource": "5ddddd6a7991243b5c42e223b11df879f0fa9498",
@@ -13,8 +13,8 @@
     },
     {
       "path": "docs/evidence/req15-turn-page-batch/validation-ready.md",
-      "bytes": 4866,
-      "sha256": "9e6808be27c7b4c503c02247884f151b2273e94b1c8391053bbdbaf438bf77de"
+      "bytes": 5648,
+      "sha256": "ad6bd07675ae07846d9aa1877d71e4ba04c0e936c66b6b1861ddde68549d4c99"
     },
     {
       "path": "docs/evidence/req15-turn-page-batch/pg-prepared-manifest.json",
@@ -76,7 +76,18 @@
   "lightOpen": false,
   "notes": [
     "Do not rerun the existing 26 cases or strict-v2.",
-    "The approved 95-file PG packet is unchanged; only this local caller delta needs source review.",
-    "Current shared Web restoration HOLD takes precedence over this static readiness observation."
-  ]
+    "Original 95-file PG packet remains unchanged. Review the final local delta/results together after the authorized work segment.",
+    "Current shared Web restoration HOLD remains; no local or PG process has launched.",
+    "PG retains its separate original isolation and special window."
+  ],
+  "localSegmentBudget": {
+    "seconds": 300,
+    "maximumSequentialCommandStarts": 4,
+    "perCommandSeconds": 30,
+    "perCommandRawBytes": 65536,
+    "combinedRawBytes": 262144,
+    "oneActiveTmpSampleBytes": 33554432,
+    "review": "once after the contiguous local work segment, not before each check",
+    "stopOn": "unknown resource identity/lifecycle or exhausted segment budget"
+  }
 }
