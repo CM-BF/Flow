@@ -1,0 +1,112 @@
+{
+  "startedAt": "2026-10-07T06:35:51Z",
+  "source": "e7a130c4341f00b77f2207088ee8e2f9fe8dd4eb",
+  "scope": "deterministic mixed conversation pagination data/cursor fixture only",
+  "budget": {
+    "wallSeconds": 600,
+    "commands": 2,
+    "childSeconds": 60,
+    "TMPBytes": 4194304,
+    "rawBytes": 131072,
+    "sourceMetadataBytes": 262144,
+    "floorBytes": 4057595904
+  },
+  "runs": [
+    {
+      "pid": 51227,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 2349,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "kind": "types",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bin/tsc",
+        "-p",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/docs/evidence/mature02c02/conversation-pg-tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "startedAt": "2026-10-07T06:37:41.375657+00:00",
+      "childFinishedAt": "2026-10-07T06:37:43.724760+00:00",
+      "callerBeforePersistenceAt": "2026-10-07T06:37:43.725329+00:00",
+      "callerElapsedBeforePersistenceSeconds": 2.349684583954513,
+      "freeBefore": 24384176128,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-conv-page-fix-yg4f8slt",
+        "dev": 16777234,
+        "ino": 123589339,
+        "removed": true,
+        "activePeak": "UNKNOWN",
+        "endEntries": 1,
+        "endLogicalBytes": 64
+      },
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/conversation-pg-pagination-fix-types.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/conversation-pg-pagination-fix-types.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ],
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "ownedRoots": [
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-conv-page-fix-yg4f8slt",
+      "dev": 16777234,
+      "ino": 123589339,
+      "createdAt": "2026-10-07T06:37:41.366952+00:00"
+    }
+  ],
+  "rawBytes": 0,
+  "lastRecordedAt": "2026-10-07T06:37:43.725338+00:00",
+  "wholeToolWall": "UNKNOWN; each tool call wall is not full segment wall",
+  "toolExitObservedAt": "2026-10-07T06:37:51Z",
+  "toolExitCode": 0,
+  "actualEngineeringChildren": 1,
+  "caseExecutions": 0,
+  "selectedCases": null,
+  "claimFresh": {
+    "claimId": "8ad6536b-1194-44a4-9078-a92215bec7a2",
+    "version": 12,
+    "state": "active",
+    "scopeCount": 72,
+    "worker": "chatui01_owner",
+    "verification": "CLI list exit0 before writes; no credential output"
+  },
+  "staticSelectionCount": 6,
+  "reviewStatus": "DELTA_REVIEW_PENDING"
+}

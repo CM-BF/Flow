@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-10-07T05:52:57.151533+00:00",
+  "ref": "5cd64a4d373a2919d0a00affcb2615667aa18d9a",
+  "claimVersion": 11,
+  "privateIndexNote": "new turn-read not indexed at base; no-skip returned128 after three paths, source bytes all verified",
+  "files": [
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "beforeSha256": "d98272700f1f73de98cdce0f2aeaa09328089a70cc3236b3d94bafcfd06b7c32",
+      "bytes": 3309,
+      "sha256": "9af76197ed8924049e5a0ca979664eba8a022ccbc7ce9d376fee98c11c4788f4"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "beforeSha256": "d05d668c4b893c3eea2fe97bb168995ad65f4daf460b9536e0b00427dfd0afab",
+      "bytes": 11107,
+      "sha256": "a1bcf82cd2c7be8c5632e7c4be46c78772456cca762b568e7ee6b18bda8f2c7a"
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "beforeSha256": "c197d278a3f662cc5d8fabe906b637fe27ef91df9492678f2fc2b36b091a37f0",
+      "bytes": 3554,
+      "sha256": "2e1182123eddf4128a73794fb317f46d74b7f3a2bb5155a1408d450698800e08"
+    },
+    {
+      "path": "apps/server/src/conversations/turn-read.ts",
+      "beforeSha256": null,
+      "bytes": 2234,
+      "sha256": "52512aac932658183465a4b617062e7858f07d2b56c4e686de36a0c9f502efcb"
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "beforeSha256": "990a19e7816b1a8b47c78f906b905e6f71b5a1806226a27241b6559fb619be15",
+      "bytes": 14117,
+      "sha256": "e551360b88fb05885906039e4fe631e9a8ba74d40ccffd60ad0e168b2042f18a"
+    },
+    {
+      "path": "apps/server/src/assistant/index.ts",
+      "beforeSha256": "7f332f6a91d6ea14a3ae467b99c52b2e92e4ce9f627b1ff2c7d6ca6c0be9e5d3",
+      "bytes": 1710,
+      "sha256": "8816a4603b15c0736dea1c32390fc1d6c0eacec3e4bd3b5845f1fc0a3fd57598"
+    }
+  ]
+}

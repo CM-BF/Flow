@@ -1,0 +1,65 @@
+{
+  "recordedAt": "2026-10-07T06:17:38.481795+00:00",
+  "base": "5b981e88d7f3c5c9a96d333fcc27303a6b2d4f81",
+  "source": "7070b8ad1f76b154083eb4d43d00ace544cd0d02",
+  "priorReview": {
+    "reviewer": "architecture_read",
+    "decision": "CHANGES_REQUESTED",
+    "P1": 0,
+    "P2": 1,
+    "fixedSource": "0ecd917c634d5765ff585693a58bd470e3b76f5b"
+  },
+  "decision": "READY_FOR_INDEPENDENT_DELTA_REVIEW",
+  "bindings": [
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "bytes": 11704,
+      "sha256": "21cbeaf853f320eb9cd7c7be5162bcc16c2bda952ee7bd712f8a75911ab6bb98"
+    },
+    {
+      "path": "apps/server/src/conversations/codex.test.ts",
+      "bytes": 13926,
+      "sha256": "74537fe91037eb809fd7b2c97052a4d0fb8c9262da93cc11d857ff6d0685ce18"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-adapter-fix-local.json",
+      "bytes": 11582,
+      "sha256": "4d4d8f0b7d2a2858cb5abdaef7534eeb254cde1dd6f1ce8a2df3245142b5fdba"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-adapter-fix-red.stdout",
+      "bytes": 4037,
+      "sha256": "56f3aa3649c64283da6312d15cf7dabb3b2a7cd2606b9ca620be9783ccc8f4ae"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-adapter-fix-red.stderr",
+      "bytes": 1978,
+      "sha256": "faebce1996956222dce78544d120042a779975267d83e603bc21dae2efaa5813"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-adapter-fix-green.stdout",
+      "bytes": 3959,
+      "sha256": "0dd4bcc7303182b646bb35bd48905b1f10e9463cafa9e3ec11b4c4850f3f30d0"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-adapter-fix-green.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-adapter-fix-types.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-adapter-fix-types.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "bytes": 47186,
+  "onlyProductionDelta": "legacy effective requires knownAdapter and exact claude harness",
+  "checks": "red2=1pass1fail; green7=2new+5direct; types0; 3 launched children closed; 2 pre-child caller failures preserved",
+  "resourceCaveat": "first caller created one empty root before registration and failed before any child; exact identity/path unknown, KEEP and no scan/delete. Registered roots closed. Full TMP accounting cannot be certified.",
+  "next": "after independent approval, prepare dedicated conversation PG cases/input using existing fixture/operator; no PG OPEN, no native/provider"
+}

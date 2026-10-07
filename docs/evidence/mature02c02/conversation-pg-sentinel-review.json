@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-10-07T07:00:17.883925+00:00",
+  "reviewedAt": "2026-10-07T06:55:16Z",
+  "reviewer": "db_transaction_owner",
+  "delivery": "Parent relayed the fixed independent verdict after direct delivery hit the thread cap",
+  "decision": "FAILED_RESULT_FIDELITY_AND_SENTINEL_PREPARATION_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "resultTarget": "630e351f7fd917db8d96b7be81bf899f2f674276",
+  "fixtureSource": "bfaee0cdf6074a39b9bb9e74b85cc7c3f833ca6c",
+  "supportSource": "30d540e6178336f4659d6ab1f95d5416b9594f61",
+  "packet": "051629348993973d77f7ad0a9d3e00fdb001801a",
+  "acceptedEvidence": {
+    "R1ArchiveBytes": 86831,
+    "oldRuntimeInputs": 317,
+    "newRuntimeInputs": 318,
+    "typesExit": 0,
+    "collectOnly": 1,
+    "newOutputsAbsent": 10
+  },
+  "limits": [
+    "R1 remains selected6/passed5/failed1, RESULT_UNKNOWN and exact outer TMP KEEP",
+    "Execution remains668a/v12; currentclaimv13 handback does not rewrite original inputs",
+    "Preparation approval is not an actual PG run or native/provider/UI acceptance",
+    "No old root scan/delete, no repeated types/list/checks"
+  ]
+}

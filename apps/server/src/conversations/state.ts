@@ -21,7 +21,7 @@ export async function conversationCapabilities(client: PoolClient, projectId?: s
     throw error;
   }
 }
-export interface ConversationRow { project_id?: string | null; id: string; title: string; harness: 'claude'; requested: ConversationSettings; execution_profile?: ExecutionProfileReference | null; revision: number; queue_revision: number; queue_paused: boolean; created_at: Date; updated_at: Date }
+export interface ConversationRow { project_id?: string | null; id: string; title: string; harness: 'claude' | 'codex'; requested: ConversationSettings; execution_profile?: ExecutionProfileReference | null; revision: number; queue_revision: number; queue_paused: boolean; created_at: Date; updated_at: Date }
 export interface TurnRow { conversation_input_id?: string | null; id: string; conversation_id: string; number: number; task_id: string; user_text: string; created_at: Date }
 export function conversationView(row: ConversationRow): ConversationSummary {
   return { ...(row.project_id ? { projectId: row.project_id } : {}), id: row.id, title: row.title, harness: row.harness, requested: row.requested, ...(row.execution_profile ? { executionProfile: row.execution_profile } : {}), revision: row.revision, createdAt: row.created_at.toISOString(), updatedAt: row.updated_at.toISOString() };

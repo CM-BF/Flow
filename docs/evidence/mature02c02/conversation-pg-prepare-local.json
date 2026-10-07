@@ -1,0 +1,183 @@
+{
+  "startedAt": "2026-10-07T06:22:39.751315+00:00",
+  "segmentStartedAt": "2026-10-07T06:19:37Z",
+  "budget": {
+    "wallSeconds": 300,
+    "commands": 2,
+    "childSeconds": 45,
+    "TMPBytes": 8388608,
+    "rawBytes": 262144,
+    "sourceMetadataBytes": 1048576,
+    "floorBytes": 4100000000
+  },
+  "runs": [
+    {
+      "pid": 22186,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 2335,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "kind": "types",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bin/tsc",
+        "-p",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/docs/evidence/mature02c02/conversation-pg-tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "startedAt": "2026-10-07T06:22:39.967345+00:00",
+      "childFinishedAt": "2026-10-07T06:22:42.302222+00:00",
+      "callerBeforePersistenceAt": "2026-10-07T06:22:42.302803+00:00",
+      "callerElapsedBeforePersistenceSeconds": 2.335467458004132,
+      "freeBefore": 24427094016,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-conv-prepare-nbah8lw4",
+        "dev": 16777234,
+        "ino": 123580438,
+        "removed": true,
+        "activePeak": "UNKNOWN",
+        "endEntries": 1,
+        "endLogicalBytes": 64
+      },
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/conversation-pg-prepare-types.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/conversation-pg-prepare-types.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "pid": 44697,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1734,
+      "observed_bytes": 822,
+      "retained_bytes": 822,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "kind": "collect",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "list",
+        "--config",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/docs/evidence/mature02c02/vitest.conversation-pg.config.mjs",
+        "--configLoader",
+        "native"
+      ],
+      "startedAt": "2026-10-07T06:23:19.151138+00:00",
+      "childFinishedAt": "2026-10-07T06:23:20.885539+00:00",
+      "callerBeforePersistenceAt": "2026-10-07T06:23:20.886300+00:00",
+      "callerElapsedBeforePersistenceSeconds": 1.7351709579816088,
+      "freeBefore": 24423325696,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-conv-prepare-clc9evlx",
+        "dev": 16777234,
+        "ino": 123580624,
+        "removed": true,
+        "activePeak": "UNKNOWN",
+        "endEntries": 1,
+        "endLogicalBytes": 64
+      },
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/conversation-pg-prepare-collect.stdout",
+          "bytes": 822,
+          "sha256": "61cb3307cc4c60df21c433defdabab809facda0938832f945057d873e7be72cd"
+        },
+        {
+          "path": "docs/evidence/mature02c02/conversation-pg-prepare-collect.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ],
+  "purpose": "focused PG fixture noEmit and list only; no hooks/PG/HTTP/native/provider",
+  "PG": 0,
+  "native": 0,
+  "provider": 0,
+  "ownedRoots": [
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-conv-prepare-nbah8lw4",
+      "dev": 16777234,
+      "ino": 123580438,
+      "createdAt": "2026-10-07T06:22:39.937941+00:00"
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-conv-prepare-clc9evlx",
+      "dev": 16777234,
+      "ino": 123580624,
+      "createdAt": "2026-10-07T06:23:19.125222+00:00"
+    }
+  ],
+  "rawBytes": 822,
+  "lastRecordedAt": "2026-10-07T06:23:20.886312+00:00",
+  "wholeToolWall": "UNKNOWN; each tool call wall is not full segment wall",
+  "validation": {
+    "typesExitCode": 0,
+    "collected": 6,
+    "collectExitCode": 0,
+    "executedCases": 0
+  },
+  "allRegisteredRootsRemoved": true,
+  "endedBeforePersistenceAt": "2026-10-07T06:24:17.882459+00:00",
+  "quality": {
+    "skillBaseline": "find-skills/clean-code bdacd76/codebase-design local, no installs",
+    "application": "reuse ContinuityCenterFixture, fixed existing supervisor; finite delta selector, no second runner/transport/authority",
+    "unresolved": "PG preparation independent review and actual PG NOT_OPEN; 3-task upper plan not observed; historical R1/caller KEEP remains independent"
+  }
+}

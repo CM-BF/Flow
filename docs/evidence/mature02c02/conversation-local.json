@@ -1,0 +1,280 @@
+{
+  "startedAt": "2026-10-07T05:49:30Z",
+  "budget": {
+    "wallSeconds": 900,
+    "commands": 6,
+    "childSeconds": 60,
+    "TMPBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 2097152,
+    "floorBytes": 4072407040
+  },
+  "runs": [
+    {
+      "pid": 91139,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 2,
+      "elapsed_ms": 1519,
+      "observed_bytes": 288,
+      "retained_bytes": 288,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "kind": "types",
+      "startedAt": "2026-10-07T05:56:18.902205+00:00",
+      "finishedAt": "2026-10-07T05:56:20.421209+00:00",
+      "freeBefore": 24550154240,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-conversation-baf31c0o",
+        "dev": 16777234,
+        "ino": 123545034,
+        "removed": true,
+        "endEntries": 0,
+        "endLogicalBytes": 0
+      },
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/conversation-first-types.stdout",
+          "bytes": 288,
+          "sha256": "c9795d2b058d0a7da20993866b43fb3fcd947e84f1fba576f173e6cab01ef9b7"
+        },
+        {
+          "path": "docs/evidence/mature02c02/conversation-first-types.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "pid": 92831,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 893,
+      "observed_bytes": 5583,
+      "retained_bytes": 5583,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "kind": "tests",
+      "startedAt": "2026-10-07T05:56:20.422501+00:00",
+      "finishedAt": "2026-10-07T05:56:21.315252+00:00",
+      "freeBefore": 24550133760,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-conversation-5qr7e8c8",
+        "dev": 16777234,
+        "ino": 123545038,
+        "removed": true,
+        "endEntries": 4,
+        "endLogicalBytes": 617
+      },
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/conversation-first-tests.stdout",
+          "bytes": 5583,
+          "sha256": "f35d283d212c344f419a94f73d3ef917bb4b6d3d2583a58481bca5050e97a728"
+        },
+        {
+          "path": "docs/evidence/mature02c02/conversation-first-tests.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "pid": 4324,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1962,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "kind": "types",
+      "startedAt": "2026-10-07T06:02:23.711016+00:00",
+      "finishedAt": "2026-10-07T06:02:25.673041+00:00",
+      "freeBefore": 24462442496,
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false",
+        "-p",
+        "docs/evidence/mature02c02/conversation-tsconfig.json"
+      ],
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-conversation-e534r8k0",
+        "dev": 16777234,
+        "ino": 123555073,
+        "removed": true,
+        "endEntries": 0,
+        "endLogicalBytes": 0
+      },
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/conversation-resumed-types.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/conversation-resumed-types.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "pid": 4325,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1139,
+      "observed_bytes": 11620,
+      "retained_bytes": 11620,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "kind": "delta",
+      "startedAt": "2026-10-07T06:02:25.674570+00:00",
+      "finishedAt": "2026-10-07T06:02:26.813444+00:00",
+      "freeBefore": 24462405632,
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/mature02c02/conversation-vitest.config.mjs",
+        "-t",
+        "guards every|uses native|validates the native|projects Codex|resumes only|routes only|rejects a foreign|preserves preexisting Claude|requires the exact native page|rejects conversation capabilities",
+        "--reporter=json"
+      ],
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-conversation-nbag75fj",
+        "dev": 16777234,
+        "ino": 123555077,
+        "removed": true,
+        "endEntries": 4,
+        "endLogicalBytes": 683
+      },
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/conversation-resumed-delta.stdout",
+          "bytes": 11620,
+          "sha256": "418fde43a5ee9441e1756bb4530fbac09f0ea82b211d490b35653eec2b61eba3"
+        },
+        {
+          "path": "docs/evidence/mature02c02/conversation-resumed-delta.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ],
+  "PG": 0,
+  "native": 0,
+  "provider": 0,
+  "finishedBeforePersistenceAt": "2026-10-07T06:02:26.814462+00:00",
+  "resumedAt": "2026-10-07T06:02:23.685908+00:00",
+  "performanceReturn": "root: 2026-10-07T06:00:50.057Z; actual clean return",
+  "rawBytes": 17491,
+  "wholeToolWall": "UNKNOWN: command/tool wait latency is not whole wall",
+  "validation": {
+    "firstNewSelected": 17,
+    "firstPassed": 17,
+    "resumedSelected": 19,
+    "resumedPassed": 19,
+    "resumedUnselected": 21,
+    "distinctPassed": 36,
+    "strict": [
+      2,
+      0
+    ],
+    "notes": "17 original new cases not rerun; 16 newly added server cases and 3 existing profile consumer cases passed in resumed selection."
+  }
+}

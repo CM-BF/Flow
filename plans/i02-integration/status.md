@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:12:27.176137+00:00 / main a72181d7已接S01P08；本批X01中心claim与188来源候选已审类型通过，待当前提交快进 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:17:49.084793+00:00 / main9816e87a已接X01与188来源；C02受控差量与实际部署metadata随本批发布 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main a72181d7a8a195e75129522b218bc2e10ccd1fc3；仅X01已审13源/自身记录与D05两来源登记 |
+| 工作基线 / HEAD | main9816e87a7690d7d36ac25cb8537bc9c8f41364c8；C02按逐path原base差量，两个公共index无冲突三方保留主线能力 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | X01固定67 bindings与批准base前像一致；原PG6/6和既有局部独审保留，组合root noEmit exit0/9897ms。D05三文件独立文档审查通过；0新增PG/provider。 |
-| 已集成main状态 / HEAD | main/origin a72181d7已接CHAT05领域、ENG单helper记录与S01P08；当前X01窄批已审待快进。个人backend af51/v18、网页d629/v3与c7b宿主不变。 |
+| 检查状态 | C02原23source+2validation已审，两个原结果61 bindings固定/hash相符；组合root noEmit0/9784ms，旧ACK54+profile5实际HTTP通过，0PG/provider重跑。 |
+| 已集成main状态 / HEAD | main/origin9816e87a已接X01 claim/中心13源、S01P08与工具全文领域。C02本批类型/直接消费者通过待快进；4320实际188源。个人backend af51/v18、Web d629/v3保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 工具全文领域和流片所有权检查优化已进入主线；插件领取现在具备经过数据库验证的中心接线，完整插件执行仍待后继。 |
-| 下一可用交付 | 发布已审插件领取接线和看板来源，接入工具全文公共读取与运行时；继续Codex和界面恢复验收。 |
+| 当前产出 | 插件领取及恢复接线已进入主线，看板实际显示188个来源；Codex普通会话接收与读取的公共协议已审并通过组合兼容检查。 |
+| 下一可用交付 | 接收Codex会话公共协议并移交共享入口，继续工具全文接线、受信工程写入口及界面恢复。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -350,3 +350,7 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 ## X01 / 新来源窄接收 2026-10-07T07:12:02.108822+00:00
 
 X01 五个已审claim/journal源与八个中心源按固定输入接收，所有既有路径与批准base同blob；未重复领域或PG检查。根组合类型检查exit0/9897ms，未重复既有领域/PG检查。D05两来源登记由native_center_owner只读APPROVED，候选188，实际运行仍186直至发布。证据：[X01 intake](../../docs/evidence/i02/x01-claim-intake.json)、[登记独审](../../docs/evidence/i02/chat05p02-s01p08-registration-review.json)。
+
+## Codex会话公共差量接收 2026-10-07T07:17:49.084793+00:00
+
+固定6c836/已审8ee333输入只接conversation/profile/read/ACK/035。两个共享index按原base清洁三方合成，其余前像一致；不覆盖S01P08 adapter、runner、stream源。两次PG原记录为6选5过1失败，定向1选1过；保留原FAIL/UNKNOWN/KEEP，不改称单轮6/6。根组合类型通过，旧客户端ACK54项及profile5项真实HTTP直接消费者通过；未新增PG/native/provider/UI。详见[限定接收](../../docs/evidence/i02/codex-conversation-intake.json)。

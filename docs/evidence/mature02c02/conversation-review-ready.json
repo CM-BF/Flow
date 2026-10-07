@@ -1,0 +1,128 @@
+{
+  "sourceTarget": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+  "base": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+  "batchIntakeRef": "5cd64a4d373a2919d0a00affcb2615667aa18d9a",
+  "recordedAt": "2026-10-07T06:04:09.885342+00:00",
+  "sourceBindings": [
+    {
+      "path": "apps/server/src/assistant/index.ts",
+      "bytes": 1710,
+      "sha256": "8816a4603b15c0736dea1c32390fc1d6c0eacec3e4bd3b5845f1fc0a3fd57598"
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "bytes": 14117,
+      "sha256": "e551360b88fb05885906039e4fe631e9a8ba74d40ccffd60ad0e168b2042f18a"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "bytes": 3786,
+      "sha256": "6bd2fa04238ea210c48694d7f7d9abc940e9f448537ac665233844579256b889"
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "bytes": 5731,
+      "sha256": "24939768eb9d090762930f4111f7d8efa7c91e379bdc649067c766de57096abe"
+    },
+    {
+      "path": "apps/server/src/conversations/codex.test.ts",
+      "bytes": 12037,
+      "sha256": "fff44e5eb61f259558cee1aadc11dec6ad24b6cca0fc27014950744978e1eb1b"
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "bytes": 3418,
+      "sha256": "095b6d06d46317100ca140c542bb3131c966c4f5107396e3dfa48d67e3e84afc"
+    },
+    {
+      "path": "apps/server/src/conversations/index.ts",
+      "bytes": 4764,
+      "sha256": "f364399902975501a50afb445158376ec5934380f5913a729946d0b01ac1740a"
+    },
+    {
+      "path": "apps/server/src/conversations/policy.ts",
+      "bytes": 1594,
+      "sha256": "f4d72d16aa8367f4173d1683546c3ed24e4896a1b3722a6b80a1f78d9a0ff3df"
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "bytes": 3660,
+      "sha256": "a68d1c75a895f3fc26c4db3fd7df0e14bec0ac5a1cdacdbe88111a4173b495e1"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "bytes": 11657,
+      "sha256": "cf4e29469a1a4e5c33a9db2b34eda730088c71df6fae03a9c0bf7525c8625b16"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "bytes": 3319,
+      "sha256": "b81fa9f2d2656512d96906db285669ea85a8019e457fd0c97dc9f79c52ef628e"
+    },
+    {
+      "path": "apps/server/src/conversations/turn-read.ts",
+      "bytes": 2503,
+      "sha256": "7222a117bb397e59eb577706e53eceb9554ca4bb4e2f28a26db9453e0bb69620"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "bytes": 3046,
+      "sha256": "c4e29d579f2dcfeaa8384f43ed6e4cb41fec461c6bf78091a703cc7e0e2ef418"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 15414,
+      "sha256": "ec366517aa575cb33eb8cd07a0eaabd060c45eaf6cfdb58a6761777d84ce92e2"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "bytes": 15496,
+      "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6"
+    },
+    {
+      "path": "packages/client/src/conversation-codex.test.ts",
+      "bytes": 3579,
+      "sha256": "e0e1d6bc122a45bda3d72dce890e22ed676ce04143c4ac66b5149e6ce221641c"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 54887,
+      "sha256": "c4a7be6c6bca6e552aa732e9396bc7518e1370f608344e3a56d826562fe51ffc"
+    },
+    {
+      "path": "packages/contracts/src/conversation-codex.test.ts",
+      "bytes": 1921,
+      "sha256": "3fa91c105ea677ed09a5264067f90adafffef9c1235d6e200d23ec1c5f01a470"
+    },
+    {
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "bytes": 1196,
+      "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "bytes": 7382,
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 15006,
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1556,
+      "sha256": "b71f139729578e99509f131cd031f07c694e417e3543cbfa5b39471e97c03540"
+    },
+    {
+      "path": "packages/storage/migrations/035-codex-conversations.sql",
+      "bytes": 189,
+      "sha256": "9b41d66666ec4a7955e22a66fbf994ce873b9dc2d38bd77dab15648ef52a2b6d"
+    }
+  ],
+  "sourceBytes": 187968,
+  "checks": "conversation-local.json",
+  "review": "NOT_STARTED",
+  "actualPG": "NOT_OPEN_NOT_RUN",
+  "limits": "Only local mocked SQL/Fastify inject; no migration/PG/native/provider/UI acceptance."
+}

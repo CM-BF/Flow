@@ -1,0 +1,124 @@
+{
+  "at": "2026-10-07T07:14:08.283582+00:00",
+  "source": "9816e87a7690d7d36ac25cb8537bc9c8f41364c8",
+  "newPid": 25011,
+  "oldPid": 51982,
+  "oldConfirmedAbsent": true,
+  "log": "/tmp/flow-dashboard-188-20261007-0713.log",
+  "status": "confirmed",
+  "sourceCount": 188,
+  "snapshotBytes": 2865081,
+  "snapshotSha256": "f369bf4640f86ef5d74aae485b413cb1f4b4b5b7314b1c757955c5ed588c6557",
+  "selected": [
+    {
+      "id": "CHAT05P02",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-07T07:04:50.988Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/plans/chat05p02-native-activity-body-wiring/status.md",
+        "syncedAt": "2026-10-07T07:13:55.885Z",
+        "stale": false,
+        "ageHours": 0.15136027777777777
+      },
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 2,
+        "output": "已固定接线合同，开始实现按需分页读取与中心确认逻辑；原正文领域保持已交付",
+        "next": "可独立验证的共享reader与host接缝；共享出口交权后连接实际入口",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "timing": {
+        "started": {
+          "state": "known",
+          "at": "2026-10-07T07:02:57.381Z",
+          "record": "2026-10-07T07:02:57.381Z"
+        },
+        "completed": {
+          "state": "not_completed",
+          "at": null,
+          "record": "NOT_COMPLETED"
+        },
+        "source": {
+          "state": "declared",
+          "record": "本任务首轮fresh领取准备的实际ledger观察；claim07:04:02仅证明领取，不替代开工；后续完成尚未发生"
+        },
+        "issues": [],
+        "waiting": "尚无已记录等待事件。独立leaf实现可继续，不把共享出口等待称全片阻塞。"
+      }
+    },
+    {
+      "id": "S01P08",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-07T07:11:59.535Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-stream-ownership/plans/s01p08-native-stream-ownership/status.md",
+        "syncedAt": "2026-10-07T07:13:55.885Z",
+        "stale": false,
+        "ageHours": 0.0353375
+      },
+      "human": {
+        "delivery": {
+          "state": "delivered",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 4,
+        "output": "减少原生文本流的重复授权检查已进入主线，输出和取消保护保持；仅验证了注入场景中的调用数减少。",
+        "next": "本片段已交付。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "timing": {
+        "started": {
+          "state": "known",
+          "at": "2026-10-07T06:35:06.334Z",
+          "record": "2026-10-07T06:35:06.334Z"
+        },
+        "completed": {
+          "state": "known",
+          "at": "2026-10-07T07:11:48.670Z",
+          "record": "2026-10-07T07:11:48.670Z"
+        },
+        "source": {
+          "state": "declared",
+          "record": "开工为首次可核协调观察；完成为本owner核 main 接收与产品交回后记录本task全部验收，见 main-acceptance.json；不推断部署时间"
+        },
+        "issues": [],
+        "waiting": ""
+      }
+    }
+  ],
+  "localAccessMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "personalMetadataHashesUnchanged": true,
+  "personalListenerPidsUnchanged": true,
+  "personalProcessIdentitiesUnchanged": true,
+  "tokenEndpointRead": false,
+  "tabsReloaded": 0,
+  "productTests": 0
+}

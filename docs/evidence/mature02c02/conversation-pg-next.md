@@ -1,0 +1,12 @@
+# Conversation dedicated PG acceptance — proposal, NOT_OPEN
+
+Use the existing ContinuityCenterFixture/owned execute-pg-once lifecycle, independent output namespace. Do not reuse or overwrite any old R1/R2/public-stream manifest, reservation, raw or KEEP root. No new transport framework, provider, native process or personal service.
+
+Proposed direct cases:
+1. Migrate existing007+allcurrent prerequisites then035; prove Claude rows survive and supported Codex is allowed while unknown harness is rejected. Public native-v2 catalog requires persistent pin, validates sentinel/digest; old native-v1 remains filtered before LIMIT.
+2. Public native conversation create/replay, two sequential turns via two independent injected transports sharing the trusted storage; same native session/runner, typed final/native identity and actualExecution unknown. Read final light page with current REQ15 batch path, not per-turn queries.
+3. Real queue enqueue receipt/replay and promotion after prior success; old Claude contract remains usable. Wrong pin/runner/session, busy/uncertain prior task and supplied Claude messageSettings for Codex reject without another accepted turn.
+4. Mixed Claude/Codex legacy versus native conversation pagination; hidden direct snapshot/turn/detail/context/queue operations deny for no/invalid codec. New exact codec reads only its bound source; wrong typed source/session/full-body digest remains invalid, never artifact fallback.
+5. Public patch-v2 text/reasoning remains separate from typed final; observer disconnect does not cancel runner. Cancellation/ownership loss leaves prefixes without invented final; no unknown ACK retry with a new key.
+
+Before implementation/execution: atomically claim exact new `apps/server/src/conversations/codex-pg.test.ts`, add035 to the current explicit SQL input set and fixed new suite selector using the existing operator. Bound at most8 tasks,14 configuredconnections,256HTTP,32MiBTMP,64MiB final DB sample,128MiB DB/WAL reserve and128KiB receipt archive unless a separately justified reviewed budget is chosen. Initial proposed120s=60work+50cleanup+10outer; final cases/input/actual bounds must be fixed and independently reviewed before opening. Existing fixture preservation, DB reservation→ACK/OID/marker, normal DROP/zero connections, signal/stdio unknown→KEEP all remain. No execution is authorized by this proposal; Recovery/SVC scheduling goes through the actual holder.

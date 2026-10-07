@@ -91,6 +91,9 @@ export class ContinuityCenterFixture {
     const path = mkdtempSync(join(tmpdir(), 'flow-c02-public-')); const root: { path: string; dev?: number; ino?: number } = { path };
     this.roots.push(root); const stat = lstatSync(path); root.dev = stat.dev; root.ino = stat.ino; return path;
   }
+  conversationClient() {
+    return new FlowClient({ baseUrl: this.baseUrl, token: this.ownerToken, conversationProtocol: 'native-v1', assistantStreamProtocol: 'patch-v2' });
+  }
   readClient(assistantStreamProtocol: 'patch-v1' | 'patch-v2') {
     return new FlowClient({ baseUrl: this.baseUrl, token: this.ownerToken, assistantStreamProtocol });
   }

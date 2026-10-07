@@ -1,0 +1,32 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity[39m
+
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22mrequires matching persistent profiles before conversation creation
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22mkeeps Claude defaults and model constraints
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22mfilters directory eligibility before LIMIT with native=false
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22mfilters directory eligibility before LIMIT with native=true
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22mbinds batch session rows to task/attempt/owner and harness with per-task LIMIT2
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22mguards every direct Codex route including queue and context under a legacy codec
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22muses native-v1 eligibility before LIMIT without rewriting the immutable profile
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22muses native-v2 eligibility before LIMIT without rewriting the immutable profile
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22mvalidates the native directory sentinel instead of hiding corruption beyond page size
+ [32m✓[39m apps/server/src/conversations/codex.test.ts[2m > [22mprojects Codex typed final valid without a legacy artifact fallback[32m 3[2mms[22m[39m
+ [32m✓[39m apps/server/src/conversations/codex.test.ts[2m > [22mprojects Codex typed final wrong-source without a legacy artifact fallback[32m 0[2mms[22m[39m
+ [32m✓[39m apps/server/src/conversations/codex.test.ts[2m > [22mprojects Codex typed final wrong-session without a legacy artifact fallback[32m 0[2mms[22m[39m
+ [32m✓[39m apps/server/src/conversations/codex.test.ts[2m > [22mprojects Codex typed final missing without a legacy artifact fallback[32m 0[2mms[22m[39m
+ [32m✓[39m apps/server/src/conversations/codex.test.ts[2m > [22mprojects Codex typed final invalid without a legacy artifact fallback[32m 0[2mms[22m[39m
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22mresumes only the recorded session on the pinned runner: same
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22mresumes only the recorded session on the pinned runner: other-runner
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22mresumes only the recorded session on the pinned runner: other-harness
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22mresumes only the recorded session on the pinned runner: busy
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22mresumes only the recorded session on the pinned runner: uncertain
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22mroutes only the exact new directory codec to the native-v2 SQL choice
+ [32m✓[39m apps/server/src/conversations/codex.test.ts[2m > [22mprojects legacy session settings only for its matching harness: codex[32m 1[2mms[22m[39m
+ [32m✓[39m apps/server/src/conversations/codex.test.ts[2m > [22mprojects legacy session settings only for its matching harness: claude[32m 0[2mms[22m[39m
+ [2m[90m↓[39m[22m apps/server/src/conversations/codex.test.ts[2m > [22mrejects a foreign-harness task before any batch detail/context reads
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[90m (1)[39m
+[2m      Tests [22m [1m[32m7 passed[39m[22m[2m | [22m[33m16 skipped[39m[90m (23)[39m
+[2m   Start at [22m 06:16:48
+[2m   Duration [22m 321ms[2m (transform 151ms, setup 0ms, import 244ms, tests 5ms, environment 0ms)[22m
+

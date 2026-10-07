@@ -1,0 +1,51 @@
+{
+  "startedAt": "2026-10-07T05:49:30Z",
+  "budget": {
+    "wallSeconds": 900,
+    "commands": 6,
+    "childSeconds": 60,
+    "sourceMetadataBytes": 2097152,
+    "TMPBytes": 16777216,
+    "rawBytes": 524288,
+    "floorBytes": 4072407040
+  },
+  "base": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+  "claimVersion": 11,
+  "scopeCount": 71,
+  "mainBatchIntake": "conversation-batch-intake.json",
+  "checks": "conversation-local.json",
+  "status": "SOURCE_AND_LOCAL_READY_PG_NOT_RUN",
+  "mainPublicReceipt": {
+    "ref": "5cae7a25",
+    "path": "docs/evidence/i02/codex-public-stream-intake.json",
+    "bytes": 8182,
+    "sha256": "02d24a28aba1e141cc725e271c66dbc2721578501188eb7e721983b69993e5f3"
+  },
+  "skills": {
+    "find-skills": "local discovery; no install",
+    "clean-code": "/Users/citrine/.agents/skills/clean-code/SKILL.md; fixed bdacd76 baseline",
+    "codebase-design": "finite harness policy; existing queue/command/session state; same-client batch read; versioned strict catalog and whole route-family opt-in",
+    "brainstorming": "existing authorized C02-05 design, no new framework"
+  },
+  "quality": {
+    "at": "2026-10-07T06:00:36.864413+00:00",
+    "scope": "new conversation/domain codec/client; fixed REQ15 intake explicit; strict source/source-identity pairing and shared native capability projection",
+    "findings": "Added direct route guard for queue/context, strict native enqueue matcher, real v2 route switch and cross-harness page guard during local review; tests added. No unknown model facts.",
+    "closedAt": "2026-10-07T06:03:28.848717+00:00",
+    "remaining": "Independent review, real migration/PG/HTTP conversation lifecycle, UI/native remain pending"
+  },
+  "PG": 0,
+  "native": 0,
+  "provider": 0,
+  "performanceHold": {
+    "start": "UNKNOWN exact message time; after first two checks, before root exclusive OPEN",
+    "returnedAt": "2026-10-07T06:00:50.057Z",
+    "source": "root actual cleanup message",
+    "newCheckStartsDuringHold": 0
+  },
+  "localFinishedBeforePersistenceAt": "2026-10-07T06:03:28.848717+00:00",
+  "sourceMetadataLogicalBytes": 48985,
+  "elapsedThroughThisMetadataSeconds": 838.851019,
+  "actualChildren": 4,
+  "testResult": "36 distinct across17+19; strict2\u21920; first failures preserved"
+}

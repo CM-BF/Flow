@@ -1,0 +1,102 @@
+{
+  "database": "flow_c02_551e9815586c4256ad61cc6010f5d750",
+  "window": "MATURE02C02-CONVERSATION-20261007-R1",
+  "sourceHead": "668a0683a94202b2f53ade7f258308f84bd8fbe0",
+  "nativeProcesses": 0,
+  "providerCalls": 0,
+  "configuredConnectionLimit": 14,
+  "primaryPhases": [
+    "rejects a corrupt native-v2 sentinel without replacing its immutable digest"
+  ],
+  "cleanupErrors": [],
+  "httpLimit": 256,
+  "port": "52683",
+  "migrations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32,
+    35
+  ],
+  "lastTaskWait": {
+    "taskId": "45031851-ec22-486e-b5ac-2f5e13b25e01",
+    "polls": 10,
+    "status": "succeeded",
+    "attemptId": "e34d9de4-28ab-4eca-b568-9d374bd9cc9f",
+    "watermark": 4
+  },
+  "conversationContinuity": {
+    "turns": 2,
+    "sameThread": true,
+    "typedDigest": "0906e5b5e560b0a97c83dbe456cc3c6ca8fae141db7b7ed9e761806e8e9302c1",
+    "instances": [
+      {
+        "closed": true,
+        "reads": 1
+      },
+      {
+        "closed": true,
+        "reads": 2
+      }
+    ],
+    "foreignRunnerRejected": true,
+    "unknownAdapterRejected": true
+  },
+  "databaseLogicalBytes": 12770327,
+  "roots": [
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-pg-window-ftey4cw4/flow-c02-public-KB6Mu9",
+      "dev": 16777234,
+      "ino": 123594138,
+      "state": "removed"
+    }
+  ],
+  "httpRequests": 122,
+  "creationRequested": true,
+  "creationAcknowledged": true,
+  "databaseIdentity": {
+    "oid": "1238600",
+    "marker": "48fb6a75-0a9a-4b8f-bd43-c5add7e49be2"
+  },
+  "cleanup": {
+    "startupSettled": true,
+    "runnersClosed": true,
+    "appClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "databaseIdentityConfirmed": true,
+    "connections": 0,
+    "databaseAbsent": true
+  },
+  "retainedDatabase": null,
+  "finishedAt": "2026-10-07T06:44:50.160Z",
+  "cleanupComplete": true
+}

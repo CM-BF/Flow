@@ -1,0 +1,210 @@
+{
+  "schema": "flow.c02.pg-conversation-delta.v1",
+  "status": "PREPARATION_ONLY_NOT_OPEN",
+  "sourceTarget": "e7a130c4341f00b77f2207088ee8e2f9fe8dd4eb",
+  "baseManifest": {
+    "path": "docs/evidence/mature02c02/pg-public-stream-source-manifest.json",
+    "sha256": "67119534517264f7ea8861a6e683d08d7634923ed6d34b61f0e868b4c2cda704",
+    "items": 308
+  },
+  "deltaItems": [
+    {
+      "path": "apps/server/src/assistant/index.ts",
+      "bytes": 1710,
+      "sha256": "8816a4603b15c0736dea1c32390fc1d6c0eacec3e4bd3b5845f1fc0a3fd57598"
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "bytes": 14117,
+      "sha256": "e551360b88fb05885906039e4fe631e9a8ba74d40ccffd60ad0e168b2042f18a"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "bytes": 3786,
+      "sha256": "6bd2fa04238ea210c48694d7f7d9abc940e9f448537ac665233844579256b889"
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "bytes": 5731,
+      "sha256": "24939768eb9d090762930f4111f7d8efa7c91e379bdc649067c766de57096abe"
+    },
+    {
+      "path": "apps/server/src/conversations/codex-pg.test.ts",
+      "bytes": 14578,
+      "sha256": "80bcae732af2133e0bff5d391ee45aeda9a5706c8166ff2a92a336aa00b22602"
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "bytes": 3418,
+      "sha256": "095b6d06d46317100ca140c542bb3131c966c4f5107396e3dfa48d67e3e84afc"
+    },
+    {
+      "path": "apps/server/src/conversations/index.ts",
+      "bytes": 4764,
+      "sha256": "f364399902975501a50afb445158376ec5934380f5913a729946d0b01ac1740a"
+    },
+    {
+      "path": "apps/server/src/conversations/policy.ts",
+      "bytes": 1594,
+      "sha256": "f4d72d16aa8367f4173d1683546c3ed24e4896a1b3722a6b80a1f78d9a0ff3df"
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "bytes": 3660,
+      "sha256": "a68d1c75a895f3fc26c4db3fd7df0e14bec0ac5a1cdacdbe88111a4173b495e1"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "bytes": 11704,
+      "sha256": "21cbeaf853f320eb9cd7c7be5162bcc16c2bda952ee7bd712f8a75911ab6bb98"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "bytes": 3319,
+      "sha256": "b81fa9f2d2656512d96906db285669ea85a8019e457fd0c97dc9f79c52ef628e"
+    },
+    {
+      "path": "apps/server/src/conversations/turn-read.ts",
+      "bytes": 2503,
+      "sha256": "7222a117bb397e59eb577706e53eceb9554ca4bb4e2f28a26db9453e0bb69620"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "bytes": 3046,
+      "sha256": "c4e29d579f2dcfeaa8384f43ed6e4cb41fec461c6bf78091a703cc7e0e2ef418"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 15414,
+      "sha256": "ec366517aa575cb33eb8cd07a0eaabd060c45eaf6cfdb58a6761777d84ce92e2"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-amend-receipt.json",
+      "bytes": 4581,
+      "sha256": "9883ec84620f22ae2f4b6d50970f0ec0ab43c7d8079660ef10204fa43601aff5"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-tsconfig.json",
+      "bytes": 210,
+      "sha256": "9a4dedd9db442d26f3e73a7705ce2fc0dd2590431219ea2bbbade29d27267407"
+    },
+    {
+      "path": "docs/evidence/mature02c02/execute-pg-once.py",
+      "bytes": 20304,
+      "sha256": "61db9111ce81a6b2c642eb03765017e8bb0c7470528d4db68976300a8490a917"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-fixture.ts",
+      "bytes": 12008,
+      "sha256": "c74495e3dc54543f84e29111e3e42650a48df84ec6af1beac7428b7fe1d427c7"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-public-stream-source-manifest.json",
+      "bytes": 65254,
+      "sha256": "67119534517264f7ea8861a6e683d08d7634923ed6d34b61f0e868b4c2cda704"
+    },
+    {
+      "path": "docs/evidence/mature02c02/vitest.conversation-pg.config.mjs",
+      "bytes": 375,
+      "sha256": "6c9715d21c9868d517d79f7ac12700042a5c21b46a5b377a490810010f5cd0ca"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "bytes": 15496,
+      "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 54887,
+      "sha256": "c4a7be6c6bca6e552aa732e9396bc7518e1370f608344e3a56d826562fe51ffc"
+    },
+    {
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "bytes": 1196,
+      "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "bytes": 7382,
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 15006,
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1556,
+      "sha256": "b71f139729578e99509f131cd031f07c694e417e3543cbfa5b39471e97c03540"
+    },
+    {
+      "path": "packages/storage/migrations/035-codex-conversations.sql",
+      "bytes": 189,
+      "sha256": "9b41d66666ec4a7955e22a66fbf994ce873b9dc2d38bd77dab15648ef52a2b6d"
+    }
+  ],
+  "count": 317,
+  "bytes": 1810789,
+  "orderedSha256": "9ed3ab00f9b93cada2c3456ff3051347aed9102897daf493d3a43f4fbcd1f758",
+  "serialization": "path-sorted UTF-8: path TAB decimal-bytes TAB sha256 LF",
+  "external": "inherit fixed base two external bindings; verify before spawn",
+  "dependencies": "existing dependency-link-request.json exact20 (17 installed +3 same tree), verify before spawn",
+  "claimReceipt": "conversation-pg-amend-receipt.json v12/full72",
+  "closure": {
+    "relativeAndSameTreeImports": 231,
+    "missing": [],
+    "externalSpecifiers": [
+      "@anthropic-ai/claude-agent-sdk",
+      "@fastify/cors",
+      "fastify",
+      "npm-package-arg",
+      "pacote",
+      "pg",
+      "pg-boss",
+      "ssri",
+      "tar",
+      "vitest",
+      "zod"
+    ],
+    "SQLCount": 31,
+    "sourceCopied": 0,
+    "generatorCorrection": "initial read-only traversal assumed plugin-runtime index; actual package exports package-store.ts consumed, no runtime import"
+  },
+  "limits": {
+    "seconds": 120,
+    "workSeconds": 60,
+    "fixtureCleanupUntilSeconds": 110,
+    "outerSeconds": 10,
+    "rawBytes": 32768,
+    "temporarySampleBytes": 33554432,
+    "databaseSampleBytes": 67108864,
+    "databaseWALReserveBytes": 134217728,
+    "preservedFreeBytes": 1073741824,
+    "conservativeFloorBytes": 4053008384,
+    "HTTPRequests": 256,
+    "acceptedTaskLimit": 8,
+    "staticallyAcceptedTasks": 3,
+    "configuredConnections": 14,
+    "cases": 6,
+    "fixtureReceiptBytes": 8192,
+    "archiveBytes": 131072
+  },
+  "window": "MATURE02C02-CONVERSATION-20261007-R1",
+  "absentOutputs": [
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.result.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.stdout",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.stderr",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.fixture.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.vitest.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.reservation.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.child.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.fixture.json.reservation.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.fixture.json.create-request.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.fixture.json.database.json"
+  ],
+  "actualPG": 0,
+  "provider": 0,
+  "native": 0,
+  "recordedAt": "2026-10-07T06:38:52.354024+00:00"
+}

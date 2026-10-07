@@ -1,0 +1,356 @@
+{
+  "startedAt": "2026-10-07T06:13:56Z",
+  "base": "5b981e88d7f3c5c9a96d333fcc27303a6b2d4f81",
+  "finding": {
+    "source": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+    "reviewer": "architecture_read",
+    "priority": "P2",
+    "reason": "Codex plus Claude legacy adapter projects effective settings despite knownAdapter=false"
+  },
+  "claim": {
+    "claimId": "8ad6536b-1194-44a4-9078-a92215bec7a2",
+    "version": 11,
+    "scopeCount": 71,
+    "freshObservedAt": "2026-10-07T06:14:13.216Z",
+    "state": "active",
+    "worker": "chatui01_owner"
+  },
+  "budget": {
+    "wallSeconds": 600,
+    "commands": 4,
+    "childSeconds": 60,
+    "TMPBytes": 8388608,
+    "rawBytes": 262144,
+    "sourceMetadataBytes": 1048576,
+    "floorBytes": 4100000000
+  },
+  "skills": {
+    "find-skills": "existing local TypeScript/testing methodology; no install",
+    "codebase-design": "one existing projection seam; no additional interface",
+    "clean-code": "local fixed bdacd76 baseline; exact known-harness guard and public projection regression"
+  },
+  "runs": [
+    {
+      "pid": 10258,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 1,
+      "elapsed_ms": 718,
+      "observed_bytes": 6015,
+      "retained_bytes": 6015,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "kind": "red",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/docs/evidence/mature02c02/conversation-vitest.config.mjs",
+        "apps/server/src/conversations/codex.test.ts",
+        "-t",
+        "projects legacy session settings",
+        "--reporter=verbose"
+      ],
+      "startedAt": "2026-10-07T06:16:40.245793+00:00",
+      "childFinishedAt": "2026-10-07T06:16:40.963938+00:00",
+      "callerBeforePersistenceAt": "2026-10-07T06:16:40.965206+00:00",
+      "callerElapsedBeforePersistenceSeconds": 0.7194157920312136,
+      "freeBefore": 24432582656,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-adapter-fix-v3awfjss",
+        "dev": 16777234,
+        "ino": 123578607,
+        "removed": true,
+        "activePeak": "UNKNOWN",
+        "endEntries": 5,
+        "endLogicalBytes": 510
+      },
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/conversation-adapter-fix-red.stdout",
+          "bytes": 4037,
+          "sha256": "56f3aa3649c64283da6312d15cf7dabb3b2a7cd2606b9ca620be9783ccc8f4ae"
+        },
+        {
+          "path": "docs/evidence/mature02c02/conversation-adapter-fix-red.stderr",
+          "bytes": 1978,
+          "sha256": "faebce1996956222dce78544d120042a779975267d83e603bc21dae2efaa5813"
+        }
+      ]
+    },
+    {
+      "pid": 10554,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 540,
+      "observed_bytes": 3959,
+      "retained_bytes": 3959,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "kind": "green",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/docs/evidence/mature02c02/conversation-vitest.config.mjs",
+        "apps/server/src/conversations/codex.test.ts",
+        "-t",
+        "projects legacy session settings|projects Codex typed final",
+        "--reporter=verbose"
+      ],
+      "startedAt": "2026-10-07T06:16:47.948440+00:00",
+      "childFinishedAt": "2026-10-07T06:16:48.488225+00:00",
+      "callerBeforePersistenceAt": "2026-10-07T06:16:48.489809+00:00",
+      "callerElapsedBeforePersistenceSeconds": 0.5413709579734132,
+      "freeBefore": 24431988736,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-adapter-fix-rvam2bhj",
+        "dev": 16777234,
+        "ino": 123578887,
+        "removed": true,
+        "activePeak": "UNKNOWN",
+        "endEntries": 5,
+        "endLogicalBytes": 511
+      },
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/conversation-adapter-fix-green.stdout",
+          "bytes": 3959,
+          "sha256": "0dd4bcc7303182b646bb35bd48905b1f10e9463cafa9e3ec11b4c4850f3f30d0"
+        },
+        {
+          "path": "docs/evidence/mature02c02/conversation-adapter-fix-green.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    },
+    {
+      "pid": 14395,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 2173,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "kind": "types",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bin/tsc",
+        "-p",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/docs/evidence/mature02c02/conversation-tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "startedAt": "2026-10-07T06:16:52.698108+00:00",
+      "childFinishedAt": "2026-10-07T06:16:54.871366+00:00",
+      "callerBeforePersistenceAt": "2026-10-07T06:16:54.872079+00:00",
+      "callerElapsedBeforePersistenceSeconds": 2.1739823339739814,
+      "freeBefore": 24432340992,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-adapter-fix-8lbuf0xk",
+        "dev": 16777234,
+        "ino": 123578966,
+        "removed": true,
+        "activePeak": "UNKNOWN",
+        "endEntries": 1,
+        "endLogicalBytes": 64
+      },
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/conversation-adapter-fix-types.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/conversation-adapter-fix-types.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ]
+    }
+  ],
+  "PG": 0,
+  "native": 0,
+  "provider": 0,
+  "callerFailure": {
+    "at": "2026-10-07T06:16:08.593926+00:00",
+    "toolChunk": "f66069",
+    "exitCode": 1,
+    "childCount": 0,
+    "cause": "Python3.9 union annotation evaluated during in-memory OPS import; no engineering child launched",
+    "root": "KEEP_UNKNOWN: mkdtemp preceded import; exact path/dev/ino not persisted before exception; no scan/delete",
+    "correction": "compile future annotations and immediately persist mkdtemp identity before importing; OPS source unmodified",
+    "countsAsTopLevelAttempt": true
+  },
+  "ownedRoots": [
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-adapter-fix-iu0gh14x",
+      "dev": 16777234,
+      "ino": 123578479,
+      "createdAt": "2026-10-07T06:16:08.833194+00:00",
+      "removed": true
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-adapter-fix-v3awfjss",
+      "dev": 16777234,
+      "ino": 123578607,
+      "createdAt": "2026-10-07T06:16:40.217535+00:00"
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-adapter-fix-rvam2bhj",
+      "dev": 16777234,
+      "ino": 123578887,
+      "createdAt": "2026-10-07T06:16:47.940327+00:00"
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-adapter-fix-8lbuf0xk",
+      "dev": 16777234,
+      "ino": 123578966,
+      "createdAt": "2026-10-07T06:16:52.685717+00:00"
+    }
+  ],
+  "secondCallerFailure": {
+    "at": "2026-10-07T06:16:40.028886+00:00",
+    "chunk": "14de63",
+    "exitCode": 1,
+    "childCount": 0,
+    "cause": "/usr/bin/python3 lacks waitid; supervisor validate rejected before Popen",
+    "correction": "use existing /opt/homebrew/bin/python3 3.13.3 with waitid/WNOWAIT",
+    "registeredRootCleaned": {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-adapter-fix-iu0gh14x",
+      "dev": 16777234,
+      "ino": 123578479,
+      "createdAt": "2026-10-07T06:16:08.833194+00:00",
+      "removed": true
+    }
+  },
+  "rawBytes": 9974,
+  "lastRecordedAt": "2026-10-07T06:16:54.872091+00:00",
+  "wholeToolWall": "UNKNOWN; each tool call wall is not full segment wall",
+  "source": "7070b8ad1f76b154083eb4d43d00ace544cd0d02",
+  "result": {
+    "red": {
+      "selected": 2,
+      "passed": 1,
+      "failed": 1,
+      "unselected": 21,
+      "exitCode": 1
+    },
+    "green": {
+      "selected": 7,
+      "passed": 7,
+      "failed": 0,
+      "unselected": 16,
+      "exitCode": 0
+    },
+    "typesExitCode": 0,
+    "newDistinctCases": 2,
+    "directExistingCases": 5,
+    "actualEngineeringChildren": 3,
+    "preChildCallerFailures": 2,
+    "allLaunchedChildrenClosed": true,
+    "registeredRootsRemoved": true,
+    "unregisteredFirstRoot": "KEEP_UNKNOWN; not scanned or deleted",
+    "completeTMPAccounting": false,
+    "native": 0,
+    "PG": 0,
+    "provider": 0
+  },
+  "quality": {
+    "at": "2026-10-07T06:17:38.481795+00:00",
+    "scope": "replies projectSession and public assistantProjections regression",
+    "finding": "Only known Claude + legacy adapter may project Claude effective; wrong Codex remains null/unknown and does not query legacy artifact. No new Module/Interface.",
+    "remaining": "Independent delta review; caller first root unregistered KEEP_UNKNOWN; real conversation migration/PG remains NOT_RUN"
+  },
+  "finishedBeforePersistenceAt": "2026-10-07T06:17:38.481795+00:00",
+  "elapsedBeforePersistenceSeconds": 222.501465,
+  "callerFailuresToolEvidence": [
+    {
+      "chunk": "f66069",
+      "exit": 1,
+      "error": "TypeError: unsupported operand type(s) for |: type and NoneType",
+      "phase": "module annotations",
+      "childCount": 0
+    },
+    {
+      "chunk": "14de63",
+      "exit": 1,
+      "error": "ValueError: POSIX waitid WNOWAIT required",
+      "phase": "supervisor _validate before Popen",
+      "childCount": 0
+    }
+  ]
+}

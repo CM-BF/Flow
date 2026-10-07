@@ -15,7 +15,7 @@ export async function enqueue(pool: Pool, conversationId: string, input: Convers
     const pending = (await client.query('SELECT id FROM flow.conversation_queue WHERE conversation_id=$1 AND state=\'waiting\' LIMIT $2', [conversationId, CONVERSATION_QUEUE_MAX_PENDING])).rowCount!;
     if (pending >= CONVERSATION_QUEUE_MAX_PENDING) throw new HttpError(409, 'conversation_queue_full', 'Cancel a waiting item before adding more.');
     // No future native session is guessed at enqueue time; promotion rechecks the frozen request.
-    await assertQueuedMessageSettings(client, { title: conversation.title, prompt: input.text, harness: 'claude',
+    await assertQueuedMessageSettings(client, { title: conversation.title, prompt: input.text, harness: conversation.harness,
       ...(conversation.execution_profile ? { executionProfile: conversation.execution_profile } : {}),
       ...(input.messageSettings ? { messageSettings: input.messageSettings } : {}) });
     const inputId = await freezeContext(client, conversationId, conversation.project_id, input.text, input.knowledge, input.attachments);

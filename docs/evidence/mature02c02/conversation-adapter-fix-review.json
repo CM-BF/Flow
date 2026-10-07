@@ -1,0 +1,24 @@
+{
+  "recordedAt": "2026-10-07T06:24:17.882459+00:00",
+  "reviewedSource": "7070b8ad1f76b154083eb4d43d00ace544cd0d02",
+  "reviewedPacket": "d2ae03b1fb48abbbfc14c20e0819ef16e50be79e",
+  "review": {
+    "reviewer": "architecture_read / gpt-6-astra",
+    "at": "2026-10-07T06:18:46Z",
+    "decision": "SOURCE_AND_LIMITED_RESULT_REVIEW_APPROVED",
+    "P1": 0,
+    "P2": 0,
+    "originalP2": "CLOSED"
+  },
+  "counts": {
+    "engineeringChildren": 3,
+    "preChildCallerFailures": 2,
+    "topLevelCallerAttempts": 5
+  },
+  "budgetMeaning": "Original authorization: at most 4 focused children. 3 engineering checks were launched. Existing commands=4 field cannot certify 5 total caller attempts fit a 4-top-level-attempt interpretation.",
+  "overallBudgetCertification": false,
+  "completeTMPAccounting": false,
+  "wholeToolWall": "UNKNOWN",
+  "unregisteredRoot": "KEEP_UNKNOWN; no scan/delete/identity reconstruction",
+  "scope": "source and limited result fidelity; not complete resource closure, PG, native or UI"
+}

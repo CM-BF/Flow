@@ -1,0 +1,182 @@
+{
+  "startedAt": "2026-10-07T06:47:28Z",
+  "source": "30d540e6178336f4659d6ab1f95d5416b9594f61",
+  "fixtureSource": "bfaee0cdf6074a39b9bb9e74b85cc7c3f833ca6c",
+  "claimVersion": 13,
+  "claimScopes": 71,
+  "budget": {
+    "wallSeconds": 600,
+    "engineeringChildren": 2,
+    "childSeconds": 60,
+    "TMPBytes": 4194304,
+    "rawBytes": 131072,
+    "sourceMetadataBytes": 262144,
+    "floorBytes": 4057595904
+  },
+  "preEngineeringFailure": "functions stored script missing; TypeError before shell/files/children; no PG retry",
+  "runs": [
+    {
+      "pid": 89167,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 2610,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "kind": "types",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/typescript/bin/tsc",
+        "-p",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/docs/evidence/mature02c02/conversation-pg-tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "startedAt": "2026-10-07T06:50:13.407262+00:00",
+      "childFinishedAt": "2026-10-07T06:50:16.017414+00:00",
+      "freeBefore": 24376070144,
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/conversation-pg-sentinel-fix-types.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/conversation-pg-sentinel-fix-types.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-sentinel-ipqrmbp7",
+        "dev": 16777234,
+        "ino": 123598383,
+        "removed": true,
+        "activePeak": "UNKNOWN",
+        "endEntries": 1,
+        "endLogicalBytes": 64
+      },
+      "callerBeforePersistenceAt": "2026-10-07T06:50:16.018054+00:00",
+      "callerElapsedBeforePersistenceSeconds": 2.6107636659871787
+    },
+    {
+      "pid": 91045,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1804,
+      "observed_bytes": 125,
+      "retained_bytes": 125,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "kind": "collect",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "list",
+        "--config",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/docs/evidence/mature02c02/vitest.conversation-pg.config.mjs",
+        "--configLoader",
+        "native",
+        "-t",
+        "^rejects a corrupt native-v2 sentinel without replacing its immutable digest$"
+      ],
+      "startedAt": "2026-10-07T06:50:16.019205+00:00",
+      "childFinishedAt": "2026-10-07T06:50:17.823450+00:00",
+      "freeBefore": 24375169024,
+      "raw": [
+        {
+          "path": "docs/evidence/mature02c02/conversation-pg-sentinel-fix-collect.stdout",
+          "bytes": 125,
+          "sha256": "bc203d5171a35cb9851704aba750af69a9a76bd843144465e9daf1f31140d864"
+        },
+        {
+          "path": "docs/evidence/mature02c02/conversation-pg-sentinel-fix-collect.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-sentinel-3t6lf68l",
+        "dev": 16777234,
+        "ino": 123598389,
+        "removed": true,
+        "activePeak": "UNKNOWN",
+        "endEntries": 1,
+        "endLogicalBytes": 64
+      },
+      "callerBeforePersistenceAt": "2026-10-07T06:50:17.824155+00:00",
+      "callerElapsedBeforePersistenceSeconds": 1.8049314160598442
+    }
+  ],
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "operatorAST": "parsed without import/execute",
+  "roots": [
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-sentinel-ipqrmbp7",
+      "dev": 16777234,
+      "ino": 123598383,
+      "createdAt": "2026-10-07T06:50:13.406574+00:00"
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-sentinel-3t6lf68l",
+      "dev": 16777234,
+      "ino": 123598389,
+      "createdAt": "2026-10-07T06:50:16.018936+00:00"
+    }
+  ],
+  "rawBytes": 125,
+  "lastRecordedAt": "2026-10-07T06:50:17.824165+00:00",
+  "wholeToolWall": "UNKNOWN; per-call wait wall is not full segment",
+  "toolExitObservedAt": "2026-10-07T06:50:17Z",
+  "toolExitCode": 0,
+  "collectedCases": 1,
+  "unselectedCases": 5,
+  "executedCases": 0,
+  "actualEngineeringChildren": 2
+}

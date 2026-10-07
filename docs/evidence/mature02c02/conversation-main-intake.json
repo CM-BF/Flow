@@ -1,0 +1,334 @@
+{
+  "recordedAt": "2026-10-07T07:09:24.952958+00:00",
+  "state": "READY_FOR_CONTROLLED_MAIN_INTAKE",
+  "owner": "chatui01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity",
+  "branch": "codex/codex-conversation-continuity",
+  "purpose": "Receive the already reviewed conversation harness policy, typed read/ACK, native catalog and035 migration; no runner/adapter/stream replacement.",
+  "integrationReferenceObservedByParent": "a72181d7",
+  "originalSourceBindings": [
+    {
+      "path": "apps/server/src/assistant/index.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "d839e8b96bf10e20c9827eb9be86afeee0a38228",
+      "bytes": 1710,
+      "sha256": "8816a4603b15c0736dea1c32390fc1d6c0eacec3e4bd3b5845f1fc0a3fd57598",
+      "baseRef": "5cd64a4d373a2919d0a00affcb2615667aa18d9a",
+      "baseSha256": "8816a4603b15c0736dea1c32390fc1d6c0eacec3e4bd3b5845f1fc0a3fd57598",
+      "hasChangeFromBase": false
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "01a320ff6e20f647eb5daab1b60c308e29947af8",
+      "bytes": 14117,
+      "sha256": "e551360b88fb05885906039e4fe631e9a8ba74d40ccffd60ad0e168b2042f18a",
+      "baseRef": "5cd64a4d373a2919d0a00affcb2615667aa18d9a",
+      "baseSha256": "e551360b88fb05885906039e4fe631e9a8ba74d40ccffd60ad0e168b2042f18a",
+      "hasChangeFromBase": false
+    },
+    {
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "01625c1a2925935d146c9e5f7456ec74551e1f10",
+      "bytes": 3786,
+      "sha256": "6bd2fa04238ea210c48694d7f7d9abc940e9f448537ac665233844579256b889",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": "a77004b33ef72ec5e036e6bddcc95947b116ded0b10d66f043502dc3c3f36f88",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "6f9eab156e7b170b5f26e6c254a4a1c5add5ea65",
+      "bytes": 5731,
+      "sha256": "24939768eb9d090762930f4111f7d8efa7c91e379bdc649067c766de57096abe",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": "8cf8b9b1b75d96f434fd31634f34259807c96ea65021a6a725d87e48da36ea1b",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "apps/server/src/conversations/codex.test.ts",
+      "sourceRef": "7070b8ad1f76b154083eb4d43d00ace544cd0d02",
+      "blob": "3ddd06468ab3b54395c1cba4d0a35182b7d72193",
+      "bytes": 13926,
+      "sha256": "74537fe91037eb809fd7b2c97052a4d0fb8c9262da93cc11d857ff6d0685ce18",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": null,
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "aebc3f90207d142de0d2c8a109da6b0f318aa2f7",
+      "bytes": 3418,
+      "sha256": "095b6d06d46317100ca140c542bb3131c966c4f5107396e3dfa48d67e3e84afc",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": "23ca95111095034336733111c48d035fa5890a5e6aa928f6b59beb81657bb631",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "apps/server/src/conversations/index.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "58ca23dfeb3a3c8a4fe888a7573d43f918fd3982",
+      "bytes": 4764,
+      "sha256": "f364399902975501a50afb445158376ec5934380f5913a729946d0b01ac1740a",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": "8363551c8303af848a0e5eb0c27be71a1659ac2cbbbd0bb794ea5bbb97772d98",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "apps/server/src/conversations/policy.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "34a553b874fba2c61e7556c16b16a4651c39a8ca",
+      "bytes": 1594,
+      "sha256": "f4d72d16aa8367f4173d1683546c3ed24e4896a1b3722a6b80a1f78d9a0ff3df",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": null,
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "858527f2fe26dc28f216fa51f47b116bc9a1e1c8",
+      "bytes": 3660,
+      "sha256": "a68d1c75a895f3fc26c4db3fd7df0e14bec0ac5a1cdacdbe88111a4173b495e1",
+      "baseRef": "5cd64a4d373a2919d0a00affcb2615667aa18d9a",
+      "baseSha256": "2e1182123eddf4128a73794fb317f46d74b7f3a2bb5155a1408d450698800e08",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "sourceRef": "7070b8ad1f76b154083eb4d43d00ace544cd0d02",
+      "blob": "15f9a83eb72712951859776c91fc215440df55fc",
+      "bytes": 11704,
+      "sha256": "21cbeaf853f320eb9cd7c7be5162bcc16c2bda952ee7bd712f8a75911ab6bb98",
+      "baseRef": "5cd64a4d373a2919d0a00affcb2615667aa18d9a",
+      "baseSha256": "a1bcf82cd2c7be8c5632e7c4be46c78772456cca762b568e7ee6b18bda8f2c7a",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "819b2877bbd969ca780486031fb0f8fb336ce4c6",
+      "bytes": 3319,
+      "sha256": "b81fa9f2d2656512d96906db285669ea85a8019e457fd0c97dc9f79c52ef628e",
+      "baseRef": "5cd64a4d373a2919d0a00affcb2615667aa18d9a",
+      "baseSha256": "9af76197ed8924049e5a0ca979664eba8a022ccbc7ce9d376fee98c11c4788f4",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "apps/server/src/conversations/turn-read.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "a3bf434e9f54010bd8e9d477e7bf80bfa6036b46",
+      "bytes": 2503,
+      "sha256": "7222a117bb397e59eb577706e53eceb9554ca4bb4e2f28a26db9453e0bb69620",
+      "baseRef": "5cd64a4d373a2919d0a00affcb2615667aa18d9a",
+      "baseSha256": "52512aac932658183465a4b617062e7858f07d2b56c4e686de36a0c9f502efcb",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "df523b60de3ab276f51d81f130fcf00daf1820cd",
+      "bytes": 3046,
+      "sha256": "c4e29d579f2dcfeaa8384f43ed6e4cb41fec461c6bf78091a703cc7e0e2ef418",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": "682246b4e4a52e8312cbf97cda981b596beb019c53ef6e79dd49f6d7282b0b42",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "a09dc7c5e2eff2a68c6581e7cb9bbd1d72890290",
+      "bytes": 15414,
+      "sha256": "ec366517aa575cb33eb8cd07a0eaabd060c45eaf6cfdb58a6761777d84ce92e2",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": "828bcf4800df47fde5b9ac4683efa2f20fcd686f4e8d9a75181445620f644f44",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "ca395facf7a58c7d9aef1d98a3845ead8640edc7",
+      "bytes": 15496,
+      "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": "12f48987eb28472b9f21263931398b665b4d2004f2855f2d62aca660ac9fc0b2",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "packages/client/src/conversation-codex.test.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "6f42882ef2eaf568a3f5e34c4bf4bd0737cc23a5",
+      "bytes": 3579,
+      "sha256": "e0e1d6bc122a45bda3d72dce890e22ed676ce04143c4ac66b5149e6ce221641c",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": null,
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "1d898fa6a09da9bf6a512630bb59db8b24f2011a",
+      "bytes": 54887,
+      "sha256": "c4a7be6c6bca6e552aa732e9396bc7518e1370f608344e3a56d826562fe51ffc",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": "6a153d988c95b7ffc34cf3ab3dafab3ca7e4fb1c61d4915cdc0ff4d86a45e7dc",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "packages/contracts/src/conversation-codex.test.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "9a2f6440b31abfd017fd85beac7f5abe56d3ef82",
+      "bytes": 1921,
+      "sha256": "3fa91c105ea677ed09a5264067f90adafffef9c1235d6e200d23ec1c5f01a470",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": null,
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "7aacb135ba9e3bb359acf0ad8e11763ff9ddce6c",
+      "bytes": 1196,
+      "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": null,
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "d3d5b084920be2c59dec09338a386b3116b82343",
+      "bytes": 7382,
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "3b3e758ad3adc42fb4ac4167aac78a877cf9c55d",
+      "bytes": 15006,
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": "ac6c833730b58ce68ce38b281e6463620653049ab8612012d68fb029a2012938",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "15098363c3c65b2fd1260c9d1e5e32c83371290d",
+      "bytes": 1556,
+      "sha256": "b71f139729578e99509f131cd031f07c694e417e3543cbfa5b39471e97c03540",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": "81128867d5e7e89ed0037d432613884faeb880506611b0f62ee7cbdcdf13c5b9",
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "packages/storage/migrations/035-codex-conversations.sql",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "blob": "ca04c46aac42aac0b44ae947d2596e9746ceccdd",
+      "bytes": 189,
+      "sha256": "9b41d66666ec4a7955e22a66fbf994ce873b9dc2d38bd77dab15648ef52a2b6d",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": null,
+      "hasChangeFromBase": true
+    }
+  ],
+  "originalSourceBytes": 189904,
+  "necessaryValidationDelta": [
+    {
+      "path": "apps/server/src/conversations/codex-pg.test.ts",
+      "sourceRef": "bfaee0cdf6074a39b9bb9e74b85cc7c3f833ca6c",
+      "blob": "c3898cbdd1eadf61135c8e68f3fce7f6e2e09fc5",
+      "bytes": 15057,
+      "sha256": "3ead98e121d06118cbc5e311173281c2292a1dbb0583b8720a702927063631d0",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": null,
+      "hasChangeFromBase": true
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-fixture.ts",
+      "sourceRef": "42dece37acb10318499404ad83aba90d216043cf",
+      "blob": "c61ce93aba368b53b166b564945bcac5c4875b54",
+      "bytes": 12008,
+      "sha256": "c74495e3dc54543f84e29111e3e42650a48df84ec6af1beac7428b7fe1d427c7",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27",
+      "baseSha256": "b2139d3673b771bfe84011fb06f9995aedb6358a51b756cf63fb8092ad18e330",
+      "hasChangeFromBase": true
+    }
+  ],
+  "intakeRule": "Apply each path delta from its explicit baseRef to sourceRef. Two assistant bindings equal batch baseline and are consumer dependencies, not overwrite requests. On divergence use reviewed three-way integration; new implementation/conflicts require owner coordination. Do not merge whole branch.",
+  "sharedPaths": {
+    "packages/client/src/index.ts": "Apply only18-line conversation delta from d2e to0ecd; preserve main S01P07 claim methods and public patch-v2 changes.",
+    "packages/contracts/src/index.ts": "Only add conversation-harness.js export from d2e to0ecd. Preserve main runner-claim/plugin exports; never copy branch whole index.",
+    "docs/evidence/mature02c02/pg-fixture.ts": "Only conversationClient method addition from d2e to42de; keep already integrated readClient/public-stream behavior."
+  },
+  "excluded": [
+    "apps/runner/src/native-harness/codex/adapter.ts",
+    "old public/private stream source snapshots",
+    "any old main/runner/configuration blob",
+    "historical007 migration edits"
+  ],
+  "reviews": [
+    {
+      "source": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "decision": "initialsource1P2,rest0findings",
+      "reviewer": "architecture_read"
+    },
+    {
+      "source": "7070b8ad1f76b154083eb4d43d00ace544cd0d02",
+      "packet": "d2ae03b1fb48abbbfc14c20e0819ef16e50be79e",
+      "at": "2026-10-07T06:18:46Z",
+      "decision": "SOURCE_AND_LIMITED_RESULT_REVIEW_APPROVED;P2CLOSED",
+      "limits": "Historical pre-child TMP unknown/overallBudgetCertification=false retained"
+    },
+    {
+      "source": "bfaee0cdf6074a39b9bb9e74b85cc7c3f833ca6c",
+      "support": "30d540e6178336f4659d6ab1f95d5416b9594f61",
+      "reviewer": "db_transaction_owner",
+      "at": "2026-10-07T06:55:16Z",
+      "decision": "sentinel preparation and prior failed-result fidelity APPROVED"
+    }
+  ],
+  "PG": [
+    {
+      "target": "630e351f7fd917db8d96b7be81bf899f2f674276",
+      "manifestSha256": "bf868e3630e912ddf28bee603d334e337f26f0d2583d0f23041a3feefa50faf4",
+      "selected": 6,
+      "passed": 5,
+      "failed": 1,
+      "result": "FAIL/RESULT_UNKNOWN/outerTMPKEEP; reviewed faithful, no rewrite"
+    },
+    {
+      "target": "69fa67eb7295f2b81ec7704b0b82042aea5929d8",
+      "execution": "2a90194ed44021cd06a334cb2754bee96a28216d",
+      "manifestSha256": "b921a07c548598e35a587de888f2163dadd7843476a9e08902903b9ce714e647",
+      "selected": 1,
+      "passed": 1,
+      "unselected": 5,
+      "result": "PASS/currentresourcesclosed; db07:11:38 result fidelity APPROVED"
+    }
+  ],
+  "acceptance": "Six distinct behaviors have passing observations across two actual runs; never relabel prior suite6/6. Real PG/HTTP with injected transport proves conversation workflow, not actual Codex/provider/UI.",
+  "mainValidation": "Use main current direct consumers/root types for actual integration. Do not rerun old PG merely for metadata; dynamic SQL/035 evidence already fixed per two runs.",
+  "handoff": "After result review and actual main receipt: stop client/contracts index writes, atomic amend removal, then CHAT05/X01 ready-first own take. Current claim retained; no automatic handoff from this file.",
+  "readyAt": "2026-10-07T07:14:53.275451+00:00",
+  "finalResultReview": {
+    "path": "docs/evidence/mature02c02/conversation-pg-sentinel-result-review.json",
+    "reviewer": "db_transaction_owner",
+    "at": "2026-10-07T07:11:38Z",
+    "decision": "APPROVED",
+    "P1": 0,
+    "P2": 0
+  },
+  "claimNow": {
+    "version": 14,
+    "scopes": 69,
+    "exchangeHandbackReceipt": "docs/evidence/mature02c02/exchange-handback-receipt.json",
+    "sentinelRuntimeVersion": 13
+  }
+}

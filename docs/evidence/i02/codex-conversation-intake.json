@@ -1,0 +1,402 @@
+{
+  "at": "2026-10-07T07:16:41.786822+00:00",
+  "baseMain": "9816e87a7690d7d36ac25cb8537bc9c8f41364c8",
+  "delivery": "6c83682ba75a678738b6a12dee2421beab77a1d8",
+  "approvedIntake": "8ee333315b5cd6a5e00bea8bf45b453e7ba70395",
+  "reviewer": "db_transaction_owner",
+  "decision": "RESULT_AND_MINIMAL_INTAKE_REVIEW_APPROVED",
+  "rows": [
+    {
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "mode": "exactPreimage",
+      "beforeSha256": "a77004b33ef72ec5e036e6bddcc95947b116ded0b10d66f043502dc3c3f36f88",
+      "afterSha256": "6bd2fa04238ea210c48694d7f7d9abc940e9f448537ac665233844579256b889",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "mode": "exactPreimage",
+      "beforeSha256": "8cf8b9b1b75d96f434fd31634f34259807c96ea65021a6a725d87e48da36ea1b",
+      "afterSha256": "24939768eb9d090762930f4111f7d8efa7c91e379bdc649067c766de57096abe",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "apps/server/src/conversations/codex.test.ts",
+      "mode": "new",
+      "beforeSha256": null,
+      "afterSha256": "74537fe91037eb809fd7b2c97052a4d0fb8c9262da93cc11d857ff6d0685ce18",
+      "sourceRef": "7070b8ad1f76b154083eb4d43d00ace544cd0d02",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "mode": "exactPreimage",
+      "beforeSha256": "23ca95111095034336733111c48d035fa5890a5e6aa928f6b59beb81657bb631",
+      "afterSha256": "095b6d06d46317100ca140c542bb3131c966c4f5107396e3dfa48d67e3e84afc",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "apps/server/src/conversations/index.ts",
+      "mode": "exactPreimage",
+      "beforeSha256": "8363551c8303af848a0e5eb0c27be71a1659ac2cbbbd0bb794ea5bbb97772d98",
+      "afterSha256": "f364399902975501a50afb445158376ec5934380f5913a729946d0b01ac1740a",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "apps/server/src/conversations/policy.ts",
+      "mode": "new",
+      "beforeSha256": null,
+      "afterSha256": "f4d72d16aa8367f4173d1683546c3ed24e4896a1b3722a6b80a1f78d9a0ff3df",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "mode": "exactPreimage",
+      "beforeSha256": "2e1182123eddf4128a73794fb317f46d74b7f3a2bb5155a1408d450698800e08",
+      "afterSha256": "a68d1c75a895f3fc26c4db3fd7df0e14bec0ac5a1cdacdbe88111a4173b495e1",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "5cd64a4d373a2919d0a00affcb2615667aa18d9a"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "mode": "exactPreimage",
+      "beforeSha256": "a1bcf82cd2c7be8c5632e7c4be46c78772456cca762b568e7ee6b18bda8f2c7a",
+      "afterSha256": "21cbeaf853f320eb9cd7c7be5162bcc16c2bda952ee7bd712f8a75911ab6bb98",
+      "sourceRef": "7070b8ad1f76b154083eb4d43d00ace544cd0d02",
+      "baseRef": "5cd64a4d373a2919d0a00affcb2615667aa18d9a"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "mode": "exactPreimage",
+      "beforeSha256": "9af76197ed8924049e5a0ca979664eba8a022ccbc7ce9d376fee98c11c4788f4",
+      "afterSha256": "b81fa9f2d2656512d96906db285669ea85a8019e457fd0c97dc9f79c52ef628e",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "5cd64a4d373a2919d0a00affcb2615667aa18d9a"
+    },
+    {
+      "path": "apps/server/src/conversations/turn-read.ts",
+      "mode": "exactPreimage",
+      "beforeSha256": "52512aac932658183465a4b617062e7858f07d2b56c4e686de36a0c9f502efcb",
+      "afterSha256": "7222a117bb397e59eb577706e53eceb9554ca4bb4e2f28a26db9453e0bb69620",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "5cd64a4d373a2919d0a00affcb2615667aa18d9a"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "mode": "exactPreimage",
+      "beforeSha256": "682246b4e4a52e8312cbf97cda981b596beb019c53ef6e79dd49f6d7282b0b42",
+      "afterSha256": "c4e29d579f2dcfeaa8384f43ed6e4cb41fec461c6bf78091a703cc7e0e2ef418",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "mode": "exactPreimage",
+      "beforeSha256": "828bcf4800df47fde5b9ac4683efa2f20fcd686f4e8d9a75181445620f644f44",
+      "afterSha256": "ec366517aa575cb33eb8cd07a0eaabd060c45eaf6cfdb58a6761777d84ce92e2",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "mode": "exactPreimage",
+      "beforeSha256": "12f48987eb28472b9f21263931398b665b4d2004f2855f2d62aca660ac9fc0b2",
+      "afterSha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "packages/client/src/conversation-codex.test.ts",
+      "mode": "new",
+      "beforeSha256": null,
+      "afterSha256": "e0e1d6bc122a45bda3d72dce890e22ed676ce04143c4ac66b5149e6ce221641c",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "mode": "cleanThreeWay",
+      "beforeSha256": "8305feef971008fe610a68ed3fe5a52c2d55ff44b2a917eb868e8a0a2b7c670e",
+      "afterSha256": "bf2716c67e6d0cba75959c90ed31053c11bde3969da91fd1d0b6a6ed823352ba",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "packages/contracts/src/conversation-codex.test.ts",
+      "mode": "new",
+      "beforeSha256": null,
+      "afterSha256": "3fa91c105ea677ed09a5264067f90adafffef9c1235d6e200d23ec1c5f01a470",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "mode": "new",
+      "beforeSha256": null,
+      "afterSha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "mode": "exactPreimage",
+      "beforeSha256": "6f44d84c14b2dd100440d3f2a1fffb3d59b6fba608f18cf06577557b86a11c35",
+      "afterSha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "mode": "exactPreimage",
+      "beforeSha256": "ac6c833730b58ce68ce38b281e6463620653049ab8612012d68fb029a2012938",
+      "afterSha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "mode": "cleanThreeWay",
+      "beforeSha256": "835edaa03e9070ee42ae5694a1de7a25cb7514548127b70ae26bb614551cc023",
+      "afterSha256": "3cfe7b2c55ad67fe81d1a21e6538133e14bcaea0c21fdc57bb5cc1211eaf919d",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "packages/storage/migrations/035-codex-conversations.sql",
+      "mode": "new",
+      "beforeSha256": null,
+      "afterSha256": "9b41d66666ec4a7955e22a66fbf994ce873b9dc2d38bd77dab15648ef52a2b6d",
+      "sourceRef": "0ecd917c634d5765ff585693a58bd470e3b76f5b",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "apps/server/src/conversations/codex-pg.test.ts",
+      "mode": "new",
+      "beforeSha256": null,
+      "afterSha256": "3ead98e121d06118cbc5e311173281c2292a1dbb0583b8720a702927063631d0",
+      "sourceRef": "bfaee0cdf6074a39b9bb9e74b85cc7c3f833ca6c",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-fixture.ts",
+      "mode": "exactPreimage",
+      "beforeSha256": "b2139d3673b771bfe84011fb06f9995aedb6358a51b756cf63fb8092ad18e330",
+      "afterSha256": "c74495e3dc54543f84e29111e3e42650a48df84ec6af1beac7428b7fe1d427c7",
+      "sourceRef": "42dece37acb10318499404ad83aba90d216043cf",
+      "baseRef": "d2e8c567eea8eee40a68dd921557a1dbd9e18b27"
+    }
+  ],
+  "manifestChecks": [
+    {
+      "manifest": "pg-MATURE02C02-CONVERSATION-20261007-R1.manifest.json",
+      "fixedRef": "630e351f7fd917db8d96b7be81bf899f2f674276",
+      "bindings": 34,
+      "mismatches": []
+    },
+    {
+      "manifest": "pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.manifest.json",
+      "fixedRef": "69fa67eb7295f2b81ec7704b0b82042aea5929d8",
+      "bindings": 27,
+      "mismatches": []
+    }
+  ],
+  "files": [
+    "apps/server/src/conversation-queue/commands.ts",
+    "apps/server/src/conversations/admission.ts",
+    "apps/server/src/conversations/codex.test.ts",
+    "apps/server/src/conversations/commands.ts",
+    "apps/server/src/conversations/index.ts",
+    "apps/server/src/conversations/policy.ts",
+    "apps/server/src/conversations/queries.ts",
+    "apps/server/src/conversations/replies.ts",
+    "apps/server/src/conversations/state.ts",
+    "apps/server/src/conversations/turn-read.ts",
+    "apps/server/src/execution-profiles/index.ts",
+    "apps/server/src/execution-profiles/store.ts",
+    "packages/client/src/conversation-acknowledgement.ts",
+    "packages/client/src/conversation-codex.test.ts",
+    "packages/client/src/index.ts",
+    "packages/contracts/src/conversation-codex.test.ts",
+    "packages/contracts/src/conversation-harness.ts",
+    "packages/contracts/src/conversations.ts",
+    "packages/contracts/src/execution-profiles.ts",
+    "packages/contracts/src/index.ts",
+    "packages/storage/migrations/035-codex-conversations.sql",
+    "apps/server/src/conversations/codex-pg.test.ts",
+    "docs/evidence/mature02c02/pg-fixture.ts",
+    "docs/evidence/mature02c02/conversation-adapter-fix-green.stderr",
+    "docs/evidence/mature02c02/conversation-adapter-fix-green.stdout",
+    "docs/evidence/mature02c02/conversation-adapter-fix-local.json",
+    "docs/evidence/mature02c02/conversation-adapter-fix-red.stderr",
+    "docs/evidence/mature02c02/conversation-adapter-fix-red.stdout",
+    "docs/evidence/mature02c02/conversation-adapter-fix-review-ready.json",
+    "docs/evidence/mature02c02/conversation-adapter-fix-review.json",
+    "docs/evidence/mature02c02/conversation-adapter-fix-types.stderr",
+    "docs/evidence/mature02c02/conversation-adapter-fix-types.stdout",
+    "docs/evidence/mature02c02/conversation-amend-receipt.json",
+    "docs/evidence/mature02c02/conversation-amend-request.json",
+    "docs/evidence/mature02c02/conversation-batch-amend-receipt.json",
+    "docs/evidence/mature02c02/conversation-batch-amend-request.json",
+    "docs/evidence/mature02c02/conversation-batch-intake.json",
+    "docs/evidence/mature02c02/conversation-first-tests.stderr",
+    "docs/evidence/mature02c02/conversation-first-tests.stdout",
+    "docs/evidence/mature02c02/conversation-first-types.stderr",
+    "docs/evidence/mature02c02/conversation-first-types.stdout",
+    "docs/evidence/mature02c02/conversation-interface.md",
+    "docs/evidence/mature02c02/conversation-local.json",
+    "docs/evidence/mature02c02/conversation-main-intake.json",
+    "docs/evidence/mature02c02/conversation-pg-amend-receipt.json",
+    "docs/evidence/mature02c02/conversation-pg-amend-request.json",
+    "docs/evidence/mature02c02/conversation-pg-next.md",
+    "docs/evidence/mature02c02/conversation-pg-pagination-fix-local.json",
+    "docs/evidence/mature02c02/conversation-pg-pagination-fix-review-ready.json",
+    "docs/evidence/mature02c02/conversation-pg-pagination-fix-types.stderr",
+    "docs/evidence/mature02c02/conversation-pg-pagination-fix-types.stdout",
+    "docs/evidence/mature02c02/conversation-pg-prepare-collect.stderr",
+    "docs/evidence/mature02c02/conversation-pg-prepare-collect.stdout",
+    "docs/evidence/mature02c02/conversation-pg-prepare-local.json",
+    "docs/evidence/mature02c02/conversation-pg-prepare-segment.json",
+    "docs/evidence/mature02c02/conversation-pg-prepare-types.stderr",
+    "docs/evidence/mature02c02/conversation-pg-prepare-types.stdout",
+    "docs/evidence/mature02c02/conversation-pg-r1-admission.json",
+    "docs/evidence/mature02c02/conversation-pg-review-ready.json",
+    "docs/evidence/mature02c02/conversation-pg-sentinel-admission.json",
+    "docs/evidence/mature02c02/conversation-pg-sentinel-fix-collect.stderr",
+    "docs/evidence/mature02c02/conversation-pg-sentinel-fix-collect.stdout",
+    "docs/evidence/mature02c02/conversation-pg-sentinel-fix-local.json",
+    "docs/evidence/mature02c02/conversation-pg-sentinel-fix-types.stderr",
+    "docs/evidence/mature02c02/conversation-pg-sentinel-fix-types.stdout",
+    "docs/evidence/mature02c02/conversation-pg-sentinel-result-review.json",
+    "docs/evidence/mature02c02/conversation-pg-sentinel-review-ready.json",
+    "docs/evidence/mature02c02/conversation-pg-sentinel-review.json",
+    "docs/evidence/mature02c02/conversation-pg-sentinel-window.md",
+    "docs/evidence/mature02c02/conversation-pg-tsconfig.json",
+    "docs/evidence/mature02c02/conversation-pg-window.md",
+    "docs/evidence/mature02c02/conversation-resumed-delta.stderr",
+    "docs/evidence/mature02c02/conversation-resumed-delta.stdout",
+    "docs/evidence/mature02c02/conversation-resumed-types.stderr",
+    "docs/evidence/mature02c02/conversation-resumed-types.stdout",
+    "docs/evidence/mature02c02/conversation-review-ready.json",
+    "docs/evidence/mature02c02/conversation-segment.json",
+    "docs/evidence/mature02c02/conversation-sentinel-intake-accounting.json",
+    "docs/evidence/mature02c02/conversation-sentinel-sealed-accounting.json",
+    "docs/evidence/mature02c02/conversation-tsconfig.json",
+    "docs/evidence/mature02c02/conversation-vitest.config.mjs",
+    "docs/evidence/mature02c02/conversation-web-handoff.md",
+    "docs/evidence/mature02c02/exchange-handback-receipt.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.child.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.fixture.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.fixture.json.create-request.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.fixture.json.database.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.fixture.json.reservation.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.manifest.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.post-run.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.report.md",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.reservation.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.result.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.stderr",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.stdout",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.tool.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-20261007-R1.vitest.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.child.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.fixture.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.fixture.json.create-request.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.fixture.json.database.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.fixture.json.reservation.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.manifest.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.post-run.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.report.md",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.reservation.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.result.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.stderr",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.stdout",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.tool.json",
+    "docs/evidence/mature02c02/pg-MATURE02C02-CONVERSATION-SENTINEL-20261007-R1.vitest.json",
+    "docs/evidence/mature02c02/pg-conversation-sentinel-source-manifest.json",
+    "docs/evidence/mature02c02/pg-conversation-source-manifest.json",
+    "docs/evidence/mature02c02/vitest.conversation-pg.config.mjs",
+    "plans/wpf-mature-02-codex-continuity/plan.md",
+    "plans/wpf-mature-02-codex-continuity/review.md",
+    "plans/wpf-mature-02-codex-continuity/status.md",
+    "docs/evidence/mature02c02/adapter-handback-receipt.json",
+    "docs/evidence/mature02c02/adapter-handback-request.json"
+  ],
+  "integrationChecks": [
+    {
+      "kind": "types",
+      "pid": 39046,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 9784,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "finishedAt": "2026-10-07T07:17:06.573168+00:00",
+      "passed": true
+    },
+    {
+      "kind": "direct",
+      "pid": 43365,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 818,
+      "observed_bytes": 652,
+      "retained_bytes": 652,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "finishedAt": "2026-10-07T07:17:07.391982+00:00",
+      "passed": true
+    }
+  ],
+  "scope": "Conversation/public catalog/read/ACK/035 only. Adapter/runner/stream unchanged. Prior6select5pass1fail retained; subsequent1pass, not a new6/6. No native/provider/UI claim.",
+  "verdict": "APPROVED_FOR_CONTROLLED_MAIN",
+  "directConsumers": "54 legacy/shared ACK +5 profile real HTTP checks,0PG/provider"
+}

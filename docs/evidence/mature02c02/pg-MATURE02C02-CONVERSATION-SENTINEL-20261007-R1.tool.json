@@ -1,0 +1,26 @@
+{
+  "startedAt": {
+    "current_time": "2026-10-07 07:05:17 UTC"
+  },
+  "endedAt": {
+    "current_time": "2026-10-07 07:05:21 UTC"
+  },
+  "initial": {
+    "chunk_id": "faf764",
+    "wall_time_seconds": 1.002066625,
+    "session_id": 56471,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "final": {
+    "chunk_id": "f51eb7",
+    "wall_time_seconds": 0.000012375,
+    "exit_code": 0,
+    "original_token_count": 524,
+    "output": "{\"result\": {\"window\": \"MATURE02C02-CONVERSATION-SENTINEL-20261007-R1\", \"sourceHead\": \"2a90194ed44021cd06a334cb2754bee96a28216d\", \"inputManifest\": {\"name\": \"pg-conversation-sentinel-source-manifest.json\", \"sha256\": \"1f29a080396ad7e49bd544870f5d30e5ad0f87a943e8028024f4ad54a034ff65\"}, \"startedAt\": \"2026-10-07T07:05:17.959191+00:00\", \"freeBefore\": 24299933696, \"requiredFreeBytes\": 4053008384, \"errors\": [], \"actualCodex\": 0, \"provider\": 0, \"tempRoot\": \"/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-pg-window-iabuqyv4\", \"tempIdentity\": [16777234, 123609968], \"pid\": 22298, \"exitCode\": 0, \"processGroup\": {\"state\": \"absent\", \"signals\": [], \"observations\": [\"absent\"]}, \"stdioEof\": [\"stderr\", \"stdout\"], \"observedRawBytes\": 192, \"rawComplete\": true, \"fixtureBinding\": {\"bytes\": 1197, \"sha256\": \"2163023c862820def325d64cf09b1f63172358ea381f7aef8582646a7040431e\", \"dev\": 16777234, \"ino\": 123610211}, \"vitestBinding\": {\"bytes\": 2383, \"sha256\": \"bc02c1a25893d39f923b57b30b3f3b9f7c9fdaeb49a88e026e1620e6951a7312\", \"dev\": 16777234, \"ino\": 123610216}, \"databaseReservationBinding\": {\"bytes\": 166, \"sha256\": \"0290b6dd4ef69fda057d3222e7885e9b51da3625830c4fa044efe3b26b026a61\", \"dev\": 16777234, \"ino\": 123610208}, \"databaseIdentityBinding\": {\"bytes\": 190, \"sha256\": \"49344f2025dd82ec6dcfe025c7a8727cd8bce27d4c393612085691c2a8d2acf1\", \"dev\": 16777234, \"ino\": 123610210}, \"selection\": {\"selected\": 1, \"passed\": 1, \"unselected\": 5}, \"fixtureReceiptConfirmed\": true, \"captures\": {\"stdout\": {\"bytes\": 192, \"sha256\": \"1ef206999a03892e07946036c3fa648dcbbebcdda97b7e8b0476b5710aa8ee9f\", \"dev\": 16777234, \"ino\": 123609970}, \"stderr\": {\"bytes\": 0, \"sha256\": \"e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855\", \"dev\": 16777234, \"ino\": 123609971}}, \"retainedTempRoot\": null, \"tempFinalSample\": {\"entries\": 4, \"logicalBytes\": 131, \"activePeak\": \"unknown\"}, \"finishedAt\": \"2026-10-07T07:05:20.922818+00:00\", \"elapsedSeconds\": 2.963617083, \"phase\": \"before-final-receipt\", \"checksPassed\": true}, \"delivery\": {\"finalReceiptWritten\": true, \"elapsedSeconds\": 2.9638452920000002, \"success\": true}}\n"
+  },
+  "returnedAt": {
+    "current_time": "2026-10-07 07:05:41 UTC"
+  },
+  "timing": "Second-resolution external clock observations bracket the actual command: conservative upper bound 5 seconds; exact whole wall UNKNOWN. Tool wait wall is not whole elapsed."
+}

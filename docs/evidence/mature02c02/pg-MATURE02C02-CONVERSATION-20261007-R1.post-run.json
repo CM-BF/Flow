@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-07T06:46:36.856151+00:00",
+  "method": "lstat exact outer and one known fixture root only; no walk, no delete, no PG query",
+  "roots": [
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-pg-window-ftey4cw4",
+      "state": "present",
+      "dev": 16777234,
+      "ino": 123593883,
+      "sameIdentity": true,
+      "kind": "directory"
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-pg-window-ftey4cw4/flow-c02-public-KB6Mu9",
+      "state": "absent",
+      "expectedDev": 16777234,
+      "expectedIno": 123594138
+    }
+  ],
+  "oldKEEPTouched": false
+}

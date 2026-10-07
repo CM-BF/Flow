@@ -1,0 +1,50 @@
+{
+  "recordedAt": "2026-10-07T06:39:07.692147+00:00",
+  "source": "e7a130c4341f00b77f2207088ee8e2f9fe8dd4eb",
+  "base": "8848755254d49468c35a9b316bdbdda19700e105",
+  "priorReview": {
+    "reviewer": "db_transaction_owner",
+    "at": "2026-10-07T06:34:28Z",
+    "target": "8848755254d49468c35a9b316bdbdda19700e105",
+    "decision": "CHANGES_REQUESTED",
+    "P1": 0,
+    "P2": 1,
+    "finding": "mixed conversation random UUID ordering did not force hidden-first/hidden-between"
+  },
+  "change": "Only codex-pg.test.ts behavior; four fixed fixture rows, SQL order precondition, exact first/second page cursor assertions. Public creation case and hidden route denial remain.",
+  "bindings": [
+    {
+      "path": "apps/server/src/conversations/codex-pg.test.ts",
+      "bytes": 14578,
+      "sha256": "80bcae732af2133e0bff5d391ee45aeda9a5706c8166ff2a92a336aa00b22602"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-conversation-source-manifest.json",
+      "bytes": 7809,
+      "sha256": "0dd19d82e1b1a37d9400054c866ce52652a56a4276090643e21f63bd5f5cac77"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-pagination-fix-local.json",
+      "bytes": 3376,
+      "sha256": "3ef667be7e6591e822d63183276021678f24f2e26f516d45acc92442fad6db36"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-pagination-fix-types.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-pg-pagination-fix-types.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "runtimeDeltaBindings": 1,
+  "unchangedRuntimeBindings": 316,
+  "limitsChanged": false,
+  "actualPG": 0,
+  "cleanup": "1 engineering child finalabsent/dualEOF, TMP same-inode removed. Initial unknown observation retained; active peak and whole-tool wall unknown. Prior unregistered root remains KEEP_UNKNOWN, unvisited.",
+  "decision": "READY_FOR_INDEPENDENT_DELTA_REVIEW",
+  "sourceMetadataLogicalBytesBeforeThisField": 50093,
+  "sourceMetadataLimit": 262144
+}
