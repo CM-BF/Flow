@@ -1,0 +1,286 @@
+{
+  "at": "2026-10-07T15:45:43.588Z",
+  "scope": "PREPARATION_ONLY; optional reader/history ports plus callable fixed current import/maintenance; actual template remains not ready",
+  "source": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba",
+  "claim": "95f47f5c-7256-44f5-b97b-c20b6756a2cc v6",
+  "sourceBindings": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs",
+      "bytes": 6779,
+      "sha256": "59a8b17e945584a370efc6a22742d57a56da525acc3d9a16c286e0fdbf0967f7",
+      "git": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/release-operation/admission-preservation.test.mjs",
+      "bytes": 18444,
+      "sha256": "814746b7bd0c6930f01b78e5b32a46dd06c1810b834d0181f5ef7e6cbf8f679b",
+      "git": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba"
+    },
+    {
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs",
+      "bytes": 7356,
+      "sha256": "f3e69b610a737d90490ff0a1c65c2a1a4e98a93662112c6c5edcddf201cc01a6",
+      "git": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runner-idle.mjs",
+      "bytes": 1690,
+      "sha256": "be97dc4b6fdea8c85b6b2ee417079936bb36033962456bdbf55fea97e28ce341",
+      "git": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/history-port.test.mjs",
+      "bytes": 2494,
+      "sha256": "585e13668b8784386af6a5e294c18b3e2d5fa5353b0316ecfa03f5243805c13a",
+      "git": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-import.mjs",
+      "bytes": 4439,
+      "sha256": "01639e990e094361d65511393189e969799fccf452aee5049b93ff41c82ab959",
+      "git": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-maintenance.mjs",
+      "bytes": 14787,
+      "sha256": "4b0034c7cc12b410e65b78f2060dd368c0017a0cbd3387d2524401ca5603504e",
+      "git": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-operator.py",
+      "bytes": 10443,
+      "sha256": "65fe69d68b6c77c3c42ebbd4ce0327784edb9bb85a610b2842a0e4b7f87b4088",
+      "git": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-update-template.json",
+      "bytes": 5176,
+      "sha256": "a94eaa88f64472bb9ce6babd9783d9d9b046e9e4c7c38607cb3903f34f023b99",
+      "git": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-entry.test.mjs",
+      "bytes": 4127,
+      "sha256": "552d59af7cd91c7b469e35287c849988dcd6d8516340c0d75f8e26c25b20bba1",
+      "git": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-entry-load.mjs",
+      "bytes": 1032,
+      "sha256": "c584946d7e27987718fcb011479264e64763cfe4806624b0c1f69a2394d51f44",
+      "git": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-operator.test.py",
+      "bytes": 1845,
+      "sha256": "bf642d60bf4f0d7e54a52f1eba59070440b96c924b7de791ec5d85697c5cb4bb",
+      "git": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-entry-readonly.json",
+      "bytes": 38417,
+      "sha256": "0c6aceff07880d361186f87dcf0f42e087f7dd22c935c4007c545551f2eb8710",
+      "git": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/retention-validate.py",
+      "bytes": 6714,
+      "sha256": "51b4709abd36470d61e6c5c85c8e8f738132116212c8fc9a9206e275c7ccc82f",
+      "git": "6c417850ccf63e1a476d5f5b9f9b6d98ccb609ba"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/admission-port-local-01.json",
+      "bytes": 2302,
+      "sha256": "2a6ed932f1aea0cb5c4c13cb732d5803c280a36295f492f638a092889be6a7f3"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/admission-port-observations-01.json",
+      "bytes": 12416,
+      "sha256": "1eac5b83fdf44b1b7ca9758459ca6305dcc3b4fe7a4b5f20139c159ecaa37c87"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/history-port-local-01.json",
+      "bytes": 2947,
+      "sha256": "0948cd98c85ac26b396c734720bd3f505f49a06285b0113f44abe2114c6ed24b"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/history-port-projection-local-02.json",
+      "bytes": 1903,
+      "sha256": "7a46042a7ca569ce3191724e6c48db5beb2aaffa17f164917b823019887ce84e"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-entry-local-01.json",
+      "bytes": 2962,
+      "sha256": "488c01cce462832c22cb54ec8dd64d8061458f0c18f8354c50db781ad31daad5"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-entry-import-local-01.json",
+      "bytes": 2704,
+      "sha256": "ee6a8ca2bc2800bf197bc99c2f918769ada346021e92ad62d1b4d0423b127e5a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/current-entry-python-local-01.json",
+      "bytes": 2546,
+      "sha256": "69996c057b2561526d4dd52e5ce013a00d4aabcd66d0c7a4f42a93fd5e7f8de9"
+    }
+  ],
+  "inherited": {
+    "currentMigration": {
+      "source": "7324a2a0b495eb82e64693ec6d1b8781eb12d8c5",
+      "manifest": {
+        "path": "docs/evidence/svc06/browser-recovery/current-migration-result.json",
+        "bytes": 11512,
+        "sha256": "3cc146eacc53e98ad8fd3b8a2932ecfe2bface1411e0119f708ae012123c6dec"
+      },
+      "main": "96b424777 (Lead receipt 15:22; source unchanged)"
+    },
+    "readerPreimage": {
+      "path": "docs/evidence/svc06/browser-recovery/reader-support.json",
+      "bytes": 807,
+      "sha256": "88aee304649afdab70b25aa8439d54f5dfa12d4d013bf20e4d088513af9d291e"
+    },
+    "historyPreimage": {
+      "path": "docs/evidence/svc06/browser-recovery/history-preimage.json",
+      "bytes": 317,
+      "sha256": "2c98efc948057f31ff77eda8529e6a6a1209f5c42b001be65c7e1e00ff29e371"
+    }
+  },
+  "validation": {
+    "rounds": [
+      {
+        "path": "admission-port-local-01.json",
+        "startedAt": "2026-10-07T15:23:13.666475+00:00",
+        "finishedAt": "2026-10-07T15:23:13.802975+00:00",
+        "exit": 0,
+        "elapsedMs": 136,
+        "rawBytes": 488,
+        "owned": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+      },
+      {
+        "path": "history-port-local-01.json",
+        "startedAt": "2026-10-07T15:23:22.941719+00:00",
+        "finishedAt": "2026-10-07T15:23:23.074104+00:00",
+        "exit": 1,
+        "elapsedMs": 131,
+        "rawBytes": 1090,
+        "owned": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+      },
+      {
+        "path": "history-port-projection-local-02.json",
+        "startedAt": "2026-10-07T15:23:33.551973+00:00",
+        "finishedAt": "2026-10-07T15:23:33.664514+00:00",
+        "exit": 0,
+        "elapsedMs": 112,
+        "rawBytes": 221,
+        "owned": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+      },
+      {
+        "path": "current-entry-local-01.json",
+        "startedAt": "2026-10-07T15:42:40.777969+00:00",
+        "finishedAt": "2026-10-07T15:42:40.894712+00:00",
+        "exit": 0,
+        "elapsedMs": 114,
+        "rawBytes": 468,
+        "owned": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+      },
+      {
+        "path": "current-entry-import-local-01.json",
+        "startedAt": "2026-10-07T15:42:44.587357+00:00",
+        "finishedAt": "2026-10-07T15:42:44.662585+00:00",
+        "exit": 0,
+        "elapsedMs": 74,
+        "rawBytes": 156,
+        "owned": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+      },
+      {
+        "path": "current-entry-python-local-01.json",
+        "startedAt": "2026-10-07T15:42:48.277206+00:00",
+        "finishedAt": "2026-10-07T15:42:48.372059+00:00",
+        "exit": 0,
+        "elapsedMs": 94,
+        "rawBytes": 157,
+        "owned": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+      }
+    ],
+    "directBehaviorDistinct": 9,
+    "directBehaviorSelections": 10,
+    "passingBehaviorSelections": 9,
+    "preservedFailure": "history-port-local-01 assertion called includes on numeric Pool max; only test predicate narrowed, direct failed case then 1/1",
+    "additionalLoadArgumentChecks": 2,
+    "totalElapsedMs": 661,
+    "totalRawBytes": 2580,
+    "originalLocalBudgetCumulativeMs": 6653,
+    "lastReturn": "2026-10-07T15:42:48.372Z",
+    "noRerun": [
+      "artifact build/import",
+      "retention5",
+      "currentModule6",
+      "PG/Web/host matrices"
+    ]
+  },
+  "runtimeClosure": {
+    "record": {
+      "path": "docs/evidence/svc06/browser-recovery/current-entry-readonly.json",
+      "bytes": 38417,
+      "sha256": "0c6aceff07880d361186f87dcf0f42e087f7dd22c935c4007c545551f2eb8710"
+    },
+    "readonlySourcesAndRuntime": 33,
+    "factsPgPackages": 14,
+    "factsPgFiles": 138,
+    "factsPgBytes": 469685,
+    "factsAliases": 14,
+    "historyPool": "explicit selected artifact, not old facts Pool",
+    "oldArchivedRawBytes": 119396,
+    "oldArchivedRawCount": 42
+  },
+  "readiness": {
+    "formalReports": "PENDING_WEB_OWNER",
+    "freshPersonalRead": "NOT_AUTHORIZED_OR_RUN",
+    "templateReady": false,
+    "realNamespace": "NOT_CREATED",
+    "migration": "NOT_RUN",
+    "maintenance": "NOT_RUN",
+    "queryOrProvider": 0
+  },
+  "cleanCode": {
+    "at": "2026-10-07T15:45:43.588Z",
+    "skills": [
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md"
+    ],
+    "review": "Keep migration protocol and supervision single owners; explicit fixed dependencies; no implicit current-main loader, new FSM or observer copy; input missing fails before operational functions. Conservative history/idle failure keeps current maintenance state.",
+    "unresolved": "Formal report import parameters, fresh personal identities/pins and combined actual resource plan remain explicit prerequisites, not guessed from history."
+  }
+}

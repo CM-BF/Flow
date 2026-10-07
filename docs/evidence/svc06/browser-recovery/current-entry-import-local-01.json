@@ -1,0 +1,67 @@
+{
+  "startedAt": "2026-10-07T15:42:44.587357+00:00",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--permission",
+    "--allow-fs-read=/Users/citrine/Projects/AgentHarness/Flow-worktrees",
+    "--allow-fs-read=/Users/citrine/Projects/AgentHarness/Flow/package.json",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-entry-load.mjs"
+  ],
+  "freshFreeBytes": 20347805696,
+  "timeRemainingSeconds": 53.515,
+  "scratch": {
+    "path": "/private/tmp/flow-svc06b-retention-_3h6oqxg",
+    "dev": 16777234,
+    "ino": 124273848
+  },
+  "source": {
+    "docs/evidence/svc06/browser-recovery/current-import.mjs": "01639e990e094361d65511393189e969799fccf452aee5049b93ff41c82ab959",
+    "docs/evidence/svc06/browser-recovery/current-maintenance.mjs": "4b0034c7cc12b410e65b78f2060dd368c0017a0cbd3387d2524401ca5603504e",
+    "docs/evidence/svc06/browser-recovery/current-operator.py": "65fe69d68b6c77c3c42ebbd4ce0327784edb9bb85a610b2842a0e4b7f87b4088",
+    "docs/evidence/svc06/browser-recovery/current-update-template.json": "a94eaa88f64472bb9ce6babd9783d9d9b046e9e4c7c38607cb3903f34f023b99",
+    "docs/evidence/svc06/browser-recovery/current-entry.test.mjs": "552d59af7cd91c7b469e35287c849988dcd6d8516340c0d75f8e26c25b20bba1",
+    "docs/evidence/svc06/browser-recovery/current-entry-load.mjs": "c584946d7e27987718fcb011479264e64763cfe4806624b0c1f69a2394d51f44",
+    "docs/evidence/svc06/browser-recovery/current-operator.test.py": "bf642d60bf4f0d7e54a52f1eba59070440b96c924b7de791ec5d85697c5cb4bb",
+    "docs/evidence/svc06/browser-recovery/current-entry-readonly.json": "0c6aceff07880d361186f87dcf0f42e087f7dd22c935c4007c545551f2eb8710"
+  },
+  "providerCalls": 0,
+  "pgCalls": 0,
+  "buildCalls": 0,
+  "personalIO": 0,
+  "report": {
+    "pid": 42180,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 74,
+    "stdout": "{\"outcome\":\"callable-imports-and-actual-facts-pg-with-personal-read-and-child-spawn-denied\",\"phases\":12,\"calledOperationalFunctions\":0,\"pgConnected\":false}\n",
+    "stderr": "",
+    "observed_bytes": 156,
+    "retained_bytes": 156,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "remaining": [],
+  "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY",
+  "finishedAt": "2026-10-07T15:42:44.662585+00:00"
+}

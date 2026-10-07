@@ -1,0 +1,14 @@
+import assert from 'node:assert/strict';
+import { createRequire } from 'node:module';
+import { readFile } from 'node:fs/promises';
+import { runImport, invocationInput } from './current-import.mjs';
+import { runPhase, validatePlan, phases } from './current-maintenance.mjs';
+for (const entry of [runImport, invocationInput, runPhase, validatePlan]) assert.equal(typeof entry, 'function');
+assert.equal(phases.length, 12);
+assert.equal(process.permission.has('fs.read', '/Users/citrine/.flow-personal'), false);
+assert.equal(process.permission.has('child'), false);
+const fixed = JSON.parse(await readFile(new URL('./current-entry-readonly.json', import.meta.url)));
+const require = createRequire(fixed.factsPg.requireFrom);
+assert.equal(require.resolve('pg'), fixed.factsPg.entry);
+assert.equal(typeof require('pg').Pool, 'function');
+console.log(JSON.stringify({ outcome: 'callable-imports-and-actual-facts-pg-with-personal-read-and-child-spawn-denied', phases: phases.length, calledOperationalFunctions: 0, pgConnected: false }));

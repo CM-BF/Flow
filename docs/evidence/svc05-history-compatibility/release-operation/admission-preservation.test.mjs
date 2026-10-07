@@ -5,6 +5,7 @@ import { join } from 'node:path';
 import { runnerFiles as observeRunnerFiles } from './runner-files.mjs';
 import { compare } from './preservation.mjs';
 import { bounded, durable, sha } from '../center-recovery/facts.mjs';
+import { admissionValidator, assertNoPendingRunnerFiles } from '../../svc06/browser-recovery/runner-idle.mjs';
 
 const parent = process.env.FLOW_SVC05H_TEST_TMP, output = process.env.FLOW_SVC05H_TEST_FACTS;
 assert.ok(parent && output, 'Only exclusive, supervisor-owned test paths');
@@ -31,6 +32,53 @@ after(async () => {
   assert.equal(now.dev, parentIdentity.dev); assert.equal(now.ino, parentIdentity.ino);
   assert.equal(now.uid, process.getuid()); assert.equal(now.isSymbolicLink(), false);
   await rm(parent, { recursive: true });
+});
+
+const currentRunner = 'cfdbf4d4-a6e4-4151-b67d-4f2e59d3dc0a';
+const v2 = { version: 2, runnerId: currentRunner, opportunityId: '901712cb-467b-4615-bf6b-04d8c1a03869', assignments: [] };
+const v2Options = { validateAdmission: admissionValidator(currentRunner) };
+
+test('admission port defaults to strict v1 and explicitly accepts exact empty v2', async () => {
+  const root = await create();
+  assert.equal((await captured(() => runnerFiles(root))).admission.idle, true);
+  await writeFile(journal(root, 'admission.json'), JSON.stringify(v2));
+  await assert.rejects(captured(() => runnerFiles(root)), { code: 'RUNNER_ADMISSION_NOT_IDLE' });
+  const observation = await captured(() => observeRunnerFiles(root, baseUrl, undefined, v2Options));
+  assert.equal(observation.admission.idle, true);
+  assert.ok(observation.files.some(file => file.path === 'history.result'));
+  assert.equal(assertNoPendingRunnerFiles(observation).actualClaimRecovery, 'UNKNOWN');
+});
+
+test('admission port rejects nonempty assignments, wrong identity and unknown intent fields', async () => {
+  const root = await create();
+  for (const value of [{ ...v2, assignments: [{ attemptId: 'saved' }] }, { ...v2, runnerId: v2.opportunityId },
+    { ...v2, inFlight: null }, { ...v2, pending: false }, { ...v2, opportunityId: null }, { ...v2, version: 3 }]) {
+    await writeFile(journal(root, 'admission.json'), JSON.stringify(value));
+    await assert.rejects(captured(() => observeRunnerFiles(root, baseUrl, undefined, v2Options)),
+      { code: 'RUNNER_ADMISSION_NOT_IDLE' });
+  }
+});
+
+test('admission port requires synchronous true and keeps final content integrity', async () => {
+  const root = await create();
+  for (const validateAdmission of [() => 'true', () => Promise.resolve(true)]) {
+    await assert.rejects(captured(() => observeRunnerFiles(root, baseUrl, undefined, { validateAdmission })),
+      { code: 'RUNNER_ADMISSION_NOT_IDLE' });
+  }
+  await writeFile(journal(root, 'admission.json'), JSON.stringify(v2));
+  let count = 0;
+  await assert.rejects(captured(() => observeRunnerFiles(root, baseUrl, { ...io, bounded: async (path, max) => {
+    if (path === journal(root, 'admission.json') && ++count === 2)
+      await writeFile(path, JSON.stringify({ ...v2, opportunityId: 'a242bbac-51d2-4ef4-b423-cc8251b679a0' }));
+    return bounded(path, max);
+  } }, v2Options)), error => ['RUNNER_FILE_CHANGED_OR_BOUND', 'RUNNER_ADMISSION_CHANGED'].includes(error.code));
+});
+
+test('admission port empty v2 does not hide pending delivery or body material', () => {
+  for (const path of ['x/pending-events.json', 'x/uncertain-events.json', 'x/pending-final-proposal.json.tmp',
+    'x/confirmed-final-proposal.json', 'x/activity-bodies/body/ack.json']) {
+    assert.throws(() => assertNoPendingRunnerFiles({ admission: { idle: true }, files: [{ path }] }));
+  }
 });
 
 

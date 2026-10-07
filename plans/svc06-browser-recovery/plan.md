@@ -35,3 +35,5 @@
 后继有限retention工具已于2026-10-07T14:44:35.053Z原子amend；仅三exact产品+own两目录，局部另授≤60s/8MiBtmp/1MiBraw，0PG/build/个人/provider。原browser/support/build-entry停写交回。[受管更新候选](../../docs/evidence/svc06/browser-recovery/managed-update-candidate.md)分别列manifest兼容、工具政策、迁入装配缺件和实际运行门禁。
 
 2026-10-07T15:07:37.505Z：retention工具已独审并main fd9dd5a9，v4归还全部产品，当前只保own plan/evidence。当前迁入Module见[current-migration-interface](../../docs/evidence/svc06/browser-recovery/current-migration-interface.md)，复用原协议/双锁，6个不同直接例通过；真实兼容和个人实例调用仍待固定，不占窗口。
+
+2026-10-07T15:45:43.588Z：current迁入Module7324已main96b424777；v6只保own双目录及两个reader exact/一个history exact。薄调用和可选port固定source6c417850，复用原OPS14/maintenance executor；[本次Interface](../../docs/evidence/svc06/browser-recovery/current-entry-interface.md)明确旧facts实际依赖、新产物history依赖、原R2字节扣减及12phase参数。9不同直接行为最终通过、首轮fixture红保留，另两加载/参数检查；尚待独审。模板ready=false、未生成现场namespace，SVC06B-04仍open；不把已审模块/局部入口当新网页兼容或个人更新通过。

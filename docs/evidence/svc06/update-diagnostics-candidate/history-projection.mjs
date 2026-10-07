@@ -8,7 +8,6 @@ import { bounded, durable } from '/Users/citrine/Projects/AgentHarness/Flow-work
 
 const repository = '/Users/citrine/Projects/AgentHarness/Flow';
 const require = createRequire(join(repository, 'package.json'));
-const { Pool } = require('pg'); // Same published CommonJS entry contract as facts.mjs.
 const identifier = /^[a-z_][a-z0-9_]*$/;
 const maximumTables = 100;
 export const omittedColumns = Object.freeze({ conversations: ['queue_checked_at'],
@@ -50,7 +49,13 @@ async function exclusiveOutput(output) {
   await lstat(output).then(() => { throw Error('OUTPUT_ALREADY_EXISTS'); }, error => { if (error.code !== 'ENOENT') throw error; });
 }
 
-export async function snapshot(output, baselinePath) {
+async function defaultDependencies() {
+  const { Pool } = require('pg'); // Original default; explicit callers supply their verified artifact dependencies.
+  const { loadPreviewConfiguration, assertPreviewMarker } = await import('/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/preview.mjs');
+  return { Pool, loadPreviewConfiguration, assertPreviewMarker };
+}
+
+export async function snapshot(output, baselinePath, dependencies) {
   // Reject missing/existing output before loading private configuration or connecting.
   await exclusiveOutput(output);
   let baseline = null;
@@ -65,7 +70,8 @@ export async function snapshot(output, baselinePath) {
     baseline = JSON.parse(opened.bytes);
   }
   if (baseline) assert.equal(baseline.format, 1);
-  const { loadPreviewConfiguration, assertPreviewMarker } = await import('/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/preview.mjs');
+  const { Pool, loadPreviewConfiguration, assertPreviewMarker } = dependencies ?? await defaultDependencies();
+  for (const dependency of [Pool, loadPreviewConfiguration, assertPreviewMarker]) assert.equal(typeof dependency, 'function');
   const config = await loadPreviewConfiguration('/Users/citrine/.flow-personal');
   await assertPreviewMarker(config);
   const identity = { installationId: config.installationId, databaseName: config.databaseName, directory: config.directory };
@@ -81,7 +87,8 @@ export async function snapshot(output, baselinePath) {
   return { outcome: 'observed', tableCount: tables.length, output };
 }
 
-export async function checkRuntimeOnly() {
+export async function checkRuntimeOnly(dependencies) {
+  const { Pool } = dependencies ?? { Pool: require('pg').Pool };
   assert.equal(typeof Pool, 'function');
   const pool = new Pool({ max: 1 }); // Construction is lazy; never connect or query.
   assert.equal(pool.totalCount, 0); assert.equal(pool.idleCount, 0); assert.equal(pool.waitingCount, 0);
@@ -89,7 +96,7 @@ export async function checkRuntimeOnly() {
   assert.match(projectionQuery('conversations', ['id', 'created_at']), /SELECT "id","created_at" FROM flow\."conversations" LIMIT 10001/);
   assert.throws(() => projectionQuery('tasks;DROP', ['id']));
   assert.throws(() => projectionQuery('tasks', ['id', 'id']));
-  return { outcome: 'runtime-and-query-construction-available', pgEntry: require.resolve('pg'), databaseConnections: 0, personalReads: 0, personalWrites: 0 };
+  return { outcome: 'runtime-and-query-construction-available', pgEntry: dependencies ? 'explicit-verified-dependency' : require.resolve('pg'), databaseConnections: 0, personalReads: 0, personalWrites: 0 };
 }
 
 if (process.argv[1] === fileURLToPath(import.meta.url)) {

@@ -1,0 +1,422 @@
+{
+  "kind": "self-owned tiny filesystem and synthetic comparison observations",
+  "records": [
+    {
+      "dev": 16777234,
+      "ino": 124269221,
+      "uid": 501,
+      "files": [
+        {
+          "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+          "bytes": 46,
+          "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+        },
+        {
+          "path": "history.result",
+          "bytes": 25,
+          "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+        }
+      ],
+      "totalBytes": 71,
+      "admission": {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+        "idle": true,
+        "bytes": 46,
+        "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+      },
+      "observations": [
+        {
+          "attempt": 0,
+          "outcome": "idle",
+          "files": [
+            {
+              "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+              "bytes": 46,
+              "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+            },
+            {
+              "path": "history.result",
+              "bytes": 25,
+              "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+            }
+          ],
+          "totalBytes": 71,
+          "admission": {
+            "idle": true
+          },
+          "admissionFinal": {
+            "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+            "idle": true,
+            "bytes": 46,
+            "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+          }
+        }
+      ],
+      "retries": 0,
+      "observedEntries": 3,
+      "observedBytes": 117,
+      "nonAtomic": true
+    },
+    {
+      "code": "RUNNER_ADMISSION_NOT_IDLE",
+      "observation": {
+        "dev": 16777234,
+        "ino": 124269221,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+                "bytes": 135,
+                "sha256": "e3114b3714c35eb0ec42fdc4c75817731f3931adac6e4930d38249ea152b4a2e"
+              }
+            ],
+            "totalBytes": 135,
+            "admission": {
+              "idle": false
+            },
+            "code": "RUNNER_ADMISSION_NOT_IDLE"
+          }
+        ],
+        "observedEntries": 2,
+        "observedBytes": 135,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "dev": 16777234,
+      "ino": 124269221,
+      "uid": 501,
+      "files": [
+        {
+          "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+          "bytes": 135,
+          "sha256": "e3114b3714c35eb0ec42fdc4c75817731f3931adac6e4930d38249ea152b4a2e"
+        },
+        {
+          "path": "history.result",
+          "bytes": 25,
+          "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+        }
+      ],
+      "totalBytes": 160,
+      "admission": {
+        "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+        "idle": true,
+        "bytes": 135,
+        "sha256": "e3114b3714c35eb0ec42fdc4c75817731f3931adac6e4930d38249ea152b4a2e"
+      },
+      "observations": [
+        {
+          "attempt": 0,
+          "outcome": "idle",
+          "files": [
+            {
+              "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+              "bytes": 135,
+              "sha256": "e3114b3714c35eb0ec42fdc4c75817731f3931adac6e4930d38249ea152b4a2e"
+            },
+            {
+              "path": "history.result",
+              "bytes": 25,
+              "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+            }
+          ],
+          "totalBytes": 160,
+          "admission": {
+            "idle": true
+          },
+          "admissionFinal": {
+            "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+            "idle": true,
+            "bytes": 135,
+            "sha256": "e3114b3714c35eb0ec42fdc4c75817731f3931adac6e4930d38249ea152b4a2e"
+          }
+        }
+      ],
+      "retries": 0,
+      "observedEntries": 3,
+      "observedBytes": 295,
+      "nonAtomic": true
+    },
+    {
+      "code": "RUNNER_ADMISSION_NOT_IDLE",
+      "observation": {
+        "dev": 16777234,
+        "ino": 124269225,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+                "bytes": 156,
+                "sha256": "9d9551cd58e031f3ce69435f2b82cda0d5d16df5f999021d55ba13239d1259f6"
+              }
+            ],
+            "totalBytes": 156,
+            "admission": {
+              "idle": false
+            },
+            "code": "RUNNER_ADMISSION_NOT_IDLE"
+          }
+        ],
+        "observedEntries": 2,
+        "observedBytes": 156,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "RUNNER_ADMISSION_NOT_IDLE",
+      "observation": {
+        "dev": 16777234,
+        "ino": 124269225,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+                "bytes": 135,
+                "sha256": "d4fee01607da8136aca56195ebde980d555ca94cab952475555903c4e9b708bc"
+              }
+            ],
+            "totalBytes": 135,
+            "admission": {
+              "idle": false
+            },
+            "code": "RUNNER_ADMISSION_NOT_IDLE"
+          }
+        ],
+        "observedEntries": 2,
+        "observedBytes": 135,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "RUNNER_ADMISSION_NOT_IDLE",
+      "observation": {
+        "dev": 16777234,
+        "ino": 124269225,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+                "bytes": 151,
+                "sha256": "76a7c30f44d53c0734c33734ace4dc386f6accc223dac32b5eef4603afad64bd"
+              }
+            ],
+            "totalBytes": 151,
+            "admission": {
+              "idle": false
+            },
+            "code": "RUNNER_ADMISSION_NOT_IDLE"
+          }
+        ],
+        "observedEntries": 2,
+        "observedBytes": 151,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "RUNNER_ADMISSION_NOT_IDLE",
+      "observation": {
+        "dev": 16777234,
+        "ino": 124269225,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+                "bytes": 151,
+                "sha256": "3cc0a365c5ea28924cefac1aa92c30a140c1eee2feed90678fd1c23810d82fa8"
+              }
+            ],
+            "totalBytes": 151,
+            "admission": {
+              "idle": false
+            },
+            "code": "RUNNER_ADMISSION_NOT_IDLE"
+          }
+        ],
+        "observedEntries": 2,
+        "observedBytes": 151,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "RUNNER_ADMISSION_NOT_IDLE",
+      "observation": {
+        "dev": 16777234,
+        "ino": 124269225,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+                "bytes": 101,
+                "sha256": "2de491532b9c3f5984c313ddbdc22cf9b036981de8ef9dc4877f5eedfb344671"
+              }
+            ],
+            "totalBytes": 101,
+            "admission": {
+              "idle": false
+            },
+            "code": "RUNNER_ADMISSION_NOT_IDLE"
+          }
+        ],
+        "observedEntries": 2,
+        "observedBytes": 101,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "RUNNER_ADMISSION_NOT_IDLE",
+      "observation": {
+        "dev": 16777234,
+        "ino": 124269225,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+                "bytes": 135,
+                "sha256": "67472c33221edb8a99b4b72aaa81278faee6b54c333c19ca68378f923fc58c1b"
+              }
+            ],
+            "totalBytes": 135,
+            "admission": {
+              "idle": false
+            },
+            "code": "RUNNER_ADMISSION_NOT_IDLE"
+          }
+        ],
+        "observedEntries": 2,
+        "observedBytes": 135,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "RUNNER_ADMISSION_NOT_IDLE",
+      "observation": {
+        "dev": 16777234,
+        "ino": 124269229,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+                "bytes": 46,
+                "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+              }
+            ],
+            "totalBytes": 46,
+            "admission": {
+              "idle": false
+            },
+            "code": "RUNNER_ADMISSION_NOT_IDLE"
+          }
+        ],
+        "observedEntries": 2,
+        "observedBytes": 46,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "RUNNER_ADMISSION_NOT_IDLE",
+      "observation": {
+        "dev": 16777234,
+        "ino": 124269229,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+                "bytes": 46,
+                "sha256": "9319fffd6d468f1dfb8866f01854534deef54c97cfe3c8613daaf478bd5bbd55"
+              }
+            ],
+            "totalBytes": 46,
+            "admission": {
+              "idle": false
+            },
+            "code": "RUNNER_ADMISSION_NOT_IDLE"
+          }
+        ],
+        "observedEntries": 2,
+        "observedBytes": 46,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    },
+    {
+      "code": "RUNNER_FILE_CHANGED_OR_BOUND",
+      "observation": {
+        "dev": 16777234,
+        "ino": 124269229,
+        "uid": 501,
+        "observations": [
+          {
+            "attempt": 0,
+            "outcome": "unknown",
+            "files": [
+              {
+                "path": "89e1cca3c7a4a0e0709f41235d7dad16fca80aa01a1fbe9822e85ab8fb4762f1/admission.json",
+                "bytes": 135,
+                "sha256": "e3114b3714c35eb0ec42fdc4c75817731f3931adac6e4930d38249ea152b4a2e"
+              },
+              {
+                "path": "history.result",
+                "bytes": 25,
+                "sha256": "bbe74c789b7c02f726f350cc8448e48a468a18e1f527d2378b88f06301f46be8"
+              }
+            ],
+            "totalBytes": 160,
+            "admission": {
+              "idle": true
+            },
+            "code": "RUNNER_FILE_CHANGED_OR_BOUND"
+          }
+        ],
+        "observedEntries": 3,
+        "observedBytes": 295,
+        "nonAtomic": true,
+        "outcome": "unknown"
+      }
+    }
+  ]
+}
