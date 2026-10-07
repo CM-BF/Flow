@@ -27,3 +27,6 @@ Pending: independent source/local review, actual HTTP zero-default-body evidence
 ## Caller P2窄修 2026-10-07T08:02:45.955507+00:00
 沿同fixed技能方法恢复原C02已有严格receipt语义，不新增supervisor：fixture事实校验与TMP清理授权分离，未知不删除。same-PID checkpoint对OPS childPID/PGID；fixture reservation PID是Vitest worker，单独正整数而不错误等同父PID。数据库随机name/marker/OID跨预约/CREATEACK/final一致；cleanup各布尔、0连接、no retained/primary/errors/roots，HTTP与结束DB样本有界。所有清理阶段共享原90s起点；检查后、删除紧前再次留3s，不能以事后elapsed修饰迟启。
 本段07:59:19开始，唯一Python3.13 -B child实际7/7/138ms/1104B，0PG/HTTP，末ownedabsent/mergedEOF，精确TMP同inode64B闭合后删除；active峰值/外部whole未知。原PG types/list和14/4未重跑。原fcc/7f4与pg-input.json历史原件保留，v2 input仅wrapper row变更。预算不扩，local已直交X01。registry由OriginalLead登记，owner仅status。
+
+## Actual R1 safe point 2026-10-07T08:11:42.367020+00:00
+沿同技能复核真实输入与职责：claimv3/12、244source/config/31SQL、19existing dependencies、10outputabsent与cleanexecution3a293dc4后仅一次启动。pairedX01完整1052672B在spawn前计入4466937856floor，free24162050048B；不事后回填门槛。实际2/2/38HTTP，所有既有fixture身份/普通DROP与OPS14close/EOF/TMP确认均成功。没有fullsuite/新provider/API重试。decoded默认7响应只证明此fixture0reasoning正文，elapsed/RSS/PG-WALpeak不外推性能。budget原90s/32MiB/1MiB/DBWAL128MiB未改，actual所有11结果文件11151B含tool记录，采样138B非峰值。实际窗口已归还后才做离线metadata，不将其冒充运行wall。

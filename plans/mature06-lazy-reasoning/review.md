@@ -12,3 +12,5 @@ chatui01_owner/gpt-6-astra 于2026-10-07T07:40:03Z对a402/59f固定核：1P2/0P1
 PG准备07:58:24独审2P2/0P1，原fixture/current inputs及local结果忠实性无新finding；见pg-preparation-review-receipt.json。本次caller窄修加入独立confirmation与共用deadline phase；7个必要pure反例一次全通过。新fixed target待同reviewer增量复审，旧core批准不扩展为PG通过。
 
 2026-10-07T08:07:26Z chatui固定8c84/655332增量SOURCE_AND_PREPARATION_DELTA_REVIEW_APPROVED，原2P2全CLOSED/0剩余。PG实际结果仍待独立结果审，不能以准备批准代运行通过。
+
+2026-10-07T08:11:42.367020+00:00：实际R1两例通过/资源闭合；pg-result-manifest.json固定结果等待同reviewer一次忠实性复核。准备批准不代结果批准；原raw完整保留。

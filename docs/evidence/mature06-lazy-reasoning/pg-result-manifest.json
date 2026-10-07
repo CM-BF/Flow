@@ -1,0 +1,90 @@
+{
+  "window": "MATURE06-LAZY01-PG-20261007-R1",
+  "executionHead": "3a293dc4b186aa6ccad6fefd7662385e44686c44",
+  "source": "8c84de1f513acb2f75dbdb355c4411b5428dc045",
+  "inputSHA": "9fd422b9191a4d22ea9c12c488f34d74d7aa49801244cbedbe312032b474b477",
+  "at": "2026-10-07T08:11:42.367020+00:00",
+  "outcome": "2 selected /2 passed /0 failed /0 pending; result fidelity review pending",
+  "bindings": [
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.reservation.json",
+      "bytes": 170,
+      "sha256": "8c860e2c86d13119a3c0f8d3efef4321dd80241f9eebd268744c164ee9c0e903",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.root.json",
+      "bytes": 145,
+      "sha256": "998c6ebc5111711ff990bff2bf1516ed7a7f11b21dffd608277c746cf2a9aa53",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.child.json",
+      "bytes": 165,
+      "sha256": "3accc94adb32e82dca1ffc4d07ceeee0d198f8c79ed08c886730734587fcb994",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.stdout",
+      "bytes": 180,
+      "sha256": "c2c3972c2b8e5f19aecfea68253f70e62ca81cd93becdfd0415698ac439d4965",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.fixture.json",
+      "bytes": 1489,
+      "sha256": "477e97f7e28bd65917950b5a3c1c49ac761ebc1fa7225b30e2e0096ea4342be8",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.vitest.json",
+      "bytes": 1355,
+      "sha256": "78338c122eee7c7b4d2bceeb7d288e593f726c85836180e7a156d399e8d9880f",
+      "mode": "0o644"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.result.json",
+      "bytes": 4690,
+      "sha256": "198430d899e68aac664c7970bccba42aa62374e96f157367465181121edeee4d",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.fixture.json.reservation.json",
+      "bytes": 165,
+      "sha256": "032fc9ffca4bb2de3aec41d4703090cc4719a0ce9c71d1a068c6ddf824759c0a",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.fixture.json.create-request.json",
+      "bytes": 150,
+      "sha256": "362d0afe62cce183056d4e781379e3ed0dbff730efd5da38bc43c3a81a4fd215",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.fixture.json.database.json",
+      "bytes": 190,
+      "sha256": "0b7822aa80841baa956d2fc66571099dc21cd1935dc8e7a69b83d5da4c666a5f",
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-PG-20261007-R1.tool.json",
+      "bytes": 2452,
+      "sha256": "223bb576120dbe29511d83076590ab5fca3a8975f2ec6121d9a85df61e0f4bd0",
+      "mode": "0o644"
+    }
+  ],
+  "evidenceBytes": 11151,
+  "limits": "0provider/native/browser. No UI/client wiring or latestmain combination proven. Seven default decoded JSON responses measure0 reasoning patch-body bytes; JSON.stringify(array)6551B is not raw HTTP/TCP byte total. First GET22B thenonlynew7B; 38 actual HTTP requests across2cases. DBlogical final12755471B is not peak/WAL; TMP138B closed sample/peakUNKNOWN.",
+  "cleanup": "Same checkpointPID2662/exited0/groupabsent/mergedEOF/no signals/first-secondary; fixture OID1257213/marker confirmed,zero connections/ordinary DROP/database absent/app-pool-admin closed/errors[];one ownTMPsameinode removed/exactlstat absent; no oldroot touched.",
+  "resourceBudget": {
+    "floorBeforeLaunch": 4466937856,
+    "freeBeforeLaunch": 24162050048,
+    "tmpAllowance": 33554432,
+    "rawAllowance": 1048576,
+    "databaseWalReserve": 134217728,
+    "actualWAL": "UNKNOWN",
+    "actualPeak": "UNKNOWN"
+  },
+  "main": "NOT_INTEGRATED",
+  "review": "PENDING"
+}

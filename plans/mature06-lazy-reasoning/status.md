@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T08:09:02.552078+00:00 |
+| 最近更新 | 2026-10-07T08:11:42.367020+00:00 |
 | 任务开工时间 | 2026-10-07T07:19:18Z |
 | 分支交付时间 | 2026-10-07T07:35:58.005114+00:00 |
 | 独立审查时间 | 2026-10-07T07:47:03Z（core限定复审） |
@@ -23,11 +23,11 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 本片段交付阶段 | review |
-| 当前产出 | 共享读取核心已支持默认只收正文、展开后独立增量读取推理；可选推理不会拖住正文刷新的修复已独审通过；尚未接公开客户端和界面。 |
-| 下一可用交付 | 对固定专库入口完成审查后，验证真实HTTP默认不传推理正文及游标/身份；再接公开客户端。 |
-| 当前阻塞 | 真实HTTP入口两处门禁独审已关闭，准备执行已授专库窗口；公开客户端仍待CHAT05P02正式交接。 |
+| 当前产出 | 共享核心和真实HTTP已验证默认不传推理正文、展开后仅新增量；可选推理不会阻塞正文。公开客户端和界面尚待接线。 |
+| 下一可用交付 | 完成真实HTTP结果独审并交主线接收核心；接续公开客户端和界面消费。 |
+| 当前阻塞 | 真实HTTP两例通过待结果独审；公开客户端仍待CHAT05P02正式交接。 |
 | 需用户决定 | NONE |
-| Review | 60db/5e8生命周期P2 CLOSED，0P1/P2；PG准备08:07:26独审两P2 CLOSED/0P1P2，R1仅待fresh门禁 |
+| Review | 60db/5e8生命周期P2 CLOSED，0P1/P2；PG准备08:07:26两P2 CLOSED；R1实际2/2结果待独审 |
 | 检查 | 原14/14+strict0保留；P2新2red→4定向pass/strict0，0PG/HTTP/browser/provider/native/install |
 | main | NOT_INTEGRATED |
 | 实现目标 | 60db06152a21c44d73bcc46be3cb785b4aa438b2 |
@@ -52,3 +52,5 @@ PG窄修 2026-10-07T08:02:45.955507+00:00：原fcc/7f4两P2保留，独立fixtur
 主线只读观察2026-10-07T07:58:24Z：main5b0bef86与base9816的六core同字节；可控intake为60db最终九source/test leaf，不merge分支历史，PG fixture/caller独立验收范围。client/index仍CHAT05P02，client assistant-stream.test仍C02；Web App仍RECOVERY01，host/observation所需端口/同代协商/累计正文预算待合法scope。Original Lead登记映射：MATURE06-LAZY01 / lazy-reasoning-reads / codex/lazy-reasoning-reads / plans/mature06-lazy-reasoning / docs/evidence/mature06-lazy-reasoning / parent WPF-MATURE-06 / co-lead mika。root已核main registry未登记；不写共享registry。
 
 2026-10-07T08:09:02.552078+00:00：Mika正式授予唯一MATURE06-LAZY01-PG-20261007-R1（原90s/2case预算），Web实际归还且其它known队仅metadata。本状态尚非运行通过；先clean execution HEAD/claimv3、固定pg-input-v2/10absent输出、freshfloor4463788032+实际配对余量再启动。独审回执pg-fix-review-receipt.json；窗口从未实际消费，不重跑历史检查。
+
+R1实际完成 2026-10-07T08:11:42.367020+00:00：execution3a293dc4；实际08:09:52→工具08:09:56 exit0。2selected/2pass/0fail/0pending，38HTTP；七默认decoded响应reasoning正文0B，首次展开22B/后续新增7B；不冒TCP总字节。time-p3.60s、caller含receipt3.492456s、秒级tool包围≤5s分列。专库OID/marker确认、0conn普通DROP/absence，app/pool/admin闭合；PID2662 exit0/groupabsent/mergedEOF；TMP精确缺失。实际PG已及时归还，0当前holder/待launch。原14、修后4与本2各自target，不汇总为新全套。result入口pg-result-ready.md；main与FlowClient/Web消费仍待交接，等待聚合器登记展示。
