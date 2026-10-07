@@ -1,5 +1,5 @@
 import { pluginRuntimeViewSchema, pluginToolBindingSchema, type PluginRuntimeCommand, type PluginRuntimeView, type PluginToolBinding, type PluginToolTaskRequest } from '../../contracts/src/plugin-runtime.js';
-import { pluginConfigurationSchema, pluginScopeSchema, pluginVersionSchema, type PluginMutationResult } from '../../contracts/src/plugins.js';
+import { pluginConfigurationSchema, pluginScopeSchema, pluginVersionSchema, type PluginMutationResult, type PluginCommand, type PluginSnapshot } from '../../contracts/src/plugins.js';
 import type { AcceptedTask } from '../../contracts/src/tasks.js';
 
 /** Retain the exact recovery identity; never print its potentially private body. */
@@ -41,11 +41,10 @@ export function decodePluginBinding(value: unknown, taskId: string): PluginToolB
   return binding;
 }
 
-/** Only the runtime endpoint's two kinds are covered; legacy registry commands remain separate. */
-export function decodePluginRuntimeChanged(value: unknown, id: string, input: PluginRuntimeCommand): PluginMutationResult & { runtime: PluginRuntimeView } {
+function decodePluginMutation(value: unknown, id: string, input: { expectedRevision: number; change: { kind: string } }): PluginMutationResult {
   const result = record(value), snapshot = record(result.snapshot), operation = record(result.operation);
   const installation = record(snapshot.installation), version = record(snapshot.version);
-  const runtime = decodePluginRuntime(result.runtime, id), revision = input.expectedRevision + 1;
+  const revision = input.expectedRevision + 1;
   const { id: versionId, createdAt, ...declaration } = version;
   const parsedVersion = pluginVersionSchema.parse(declaration);
   pluginScopeSchema.parse(installation.scope);
@@ -56,7 +55,7 @@ export function decodePluginRuntimeChanged(value: unknown, id: string, input: Pl
     && operation.status === 'succeeded' && operation.actor === 'owner'
     && operation.beforeRevision === input.expectedRevision && operation.afterRevision === revision
     && installation.id === id && installation.revision === revision && snapshot.revision === revision
-    && runtime.currentRevision === revision && installation.packageName === parsedVersion.packageName
+    && installation.packageName === parsedVersion.packageName
     && installation.registrationStatus === 'registered' && installation.runtimeStatus === 'unavailable'
     && installation.runtimeReason === 'package_not_verified_or_loaded'
     && validDate(installation.createdAt) && validDate(installation.updatedAt)
@@ -64,6 +63,15 @@ export function decodePluginRuntimeChanged(value: unknown, id: string, input: Pl
     && Array.isArray(snapshot.grants) && snapshot.grants.length <= 4
     && new Set(snapshot.grants).size === snapshot.grants.length
     && snapshot.grants.every(grant => parsedVersion.capabilities.includes(grant as typeof parsedVersion.capabilities[number])));
+  // Existing interface-only DTO fields have now been checked.
+  return result as unknown as PluginMutationResult;
+}
+
+export function decodePluginRuntimeChanged(value: unknown, id: string, input: PluginRuntimeCommand): PluginMutationResult & { runtime: PluginRuntimeView } {
+  const result = decodePluginMutation(value, id, input);
+  const runtime = decodePluginRuntime(record(value).runtime, id);
+  const revision = input.expectedRevision + 1;
+  requireAck(runtime.currentRevision === revision);
   if (input.change.kind === 'enable') {
     requireAck(runtime.desiredEnabled && runtime.enabledRevision === revision
       && runtime.materialInstallOperationId === input.change.materialInstallOperationId
@@ -72,8 +80,38 @@ export function decodePluginRuntimeChanged(value: unknown, id: string, input: Pl
     requireAck(!runtime.desiredEnabled && runtime.enabledRevision === null && runtime.targetRunnerId === null
       && runtime.storeId === null && runtime.materialInstallOperationId === null);
   }
-  // All fields of these existing interface-only DTOs were checked above.
-  return { ...(result as unknown as PluginMutationResult), runtime };
+  return { ...result, runtime };
+}
+
+type PluginRegistryChange = Extract<PluginCommand['change'], { kind: 'configure' | 'set-grants' }>;
+export type PluginRegistryCommand = Omit<PluginCommand, 'change'> & { change: PluginRegistryChange };
+
+function checkConfiguration(snapshot: PluginSnapshot): void {
+  const fields = new Map(snapshot.version.publicConfiguration.map(field => [field.key, field]));
+  for (const [key, value] of Object.entries(snapshot.configuration)) {
+    const field = fields.get(key);
+    const valid = field?.kind === 'boolean' ? typeof value === 'boolean'
+      : field?.kind === 'integer' ? typeof value === 'number' && Number.isInteger(value) && value >= field.min && value <= field.max
+      : field?.kind === 'enum' ? typeof value === 'string' && field.values.includes(value) : false;
+    requireAck(valid);
+  }
+  const incomplete = snapshot.version.publicConfiguration.some(field => field.required && !Object.hasOwn(snapshot.configuration, field.key));
+  requireAck(snapshot.configurationStatus === (incomplete ? 'incomplete' : 'ready'));
+}
+
+/** Check the receipt at its recorded revision, including a historical replay; do not fetch current state. */
+export function decodePluginRegistryChanged(value: unknown, id: string, input: PluginRegistryCommand): PluginMutationResult {
+  const result = decodePluginMutation(value, id, input);
+  checkConfiguration(result.snapshot);
+  if (input.change.kind === 'configure') {
+    const expected = input.change.values, actual = result.snapshot.configuration;
+    requireAck(result.snapshot.configurationStatus === 'ready' && Object.keys(actual).length === Object.keys(expected).length
+      && Object.entries(expected).every(([key, item]) => Object.hasOwn(actual, key) && actual[key] === item));
+  } else {
+    const expected = input.change.capabilities, actual = result.snapshot.grants;
+    requireAck(actual.length === expected.length && actual.every((item, index) => item === expected[index]));
+  }
+  return result;
 }
 
 export async function decodePluginTaskAccepted(value: unknown, id: string, input: PluginToolTaskRequest): Promise<AcceptedTask & { binding: PluginToolBinding }> {
