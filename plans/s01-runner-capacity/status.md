@@ -339,4 +339,4 @@ db16:18:22Z RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，绑定dfb2105ba6e4f3eaa4512d
 
 新入口只选择buffered、只一次A预算slot，使用新身份/同production4fdd及原burst6s/ACK4s/128/final/cancel门禁；A标签不代表旧O1。原O1 per-query失败/O2未跑与旧compiled/raw不改。本片不是packing因果或完整容量证明。旧caller固定两outcomes，尚不能启动此单臂；后继有限选择/input/资源与OPEN均未获。本地codebase-design/固定clean-code复核：选择Module保小Interface、共享生命周期不复制、未知不变PASS/删除；pure反例覆盖错误选择、二次side、失败/资源未知/账目漂移与原proof短ACK/缺最终持久状态。Dashboard沿唯一status，当前只parser核字段，不冒新增snapshot同步。
 
-本次metadata parser首调用误用了不存在的parse.mjs，工具ERR_MODULE_NOT_FOUND原输出保留；随后定位实际status.mjs，仅字段解析复核errors=[]/human.missing=[]/implementation.errors=[]。不是工程测试失败或追加工程child，不改历史开工UNKNOWN，不新GET。
+本次metadata parser首调用误用了不存在的parse.mjs，工具ERR_MODULE_NOT_FOUND原输出保留；第二次定位status.mjs但漏taskId，返回标题不符；第三次按实际parseStatus(markdown, S01)字段解析errors=[]/human.missing=[]/implementation.errors=[]。不是工程测试失败或追加工程child，不改历史开工UNKNOWN，不新GET。
