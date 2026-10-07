@@ -1,0 +1,33 @@
+{
+  "pid": 88279,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 106,
+  "stdout": "\u2714 original recovery load defaults retain the exact old input and namespace (6.528125ms)\n\u2714 trusted successor options require exact input namespace and keep original verifier bindings (5.400709ms)\n\u2714 successor real entry rejects wrong argv without creating its new namespace (0.565ms)\n\u2139 tests 3\n\u2139 suites 0\n\u2139 pass 3\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 61.737875\n",
+  "stderr": "",
+  "observed_bytes": 402,
+  "retained_bytes": 402,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

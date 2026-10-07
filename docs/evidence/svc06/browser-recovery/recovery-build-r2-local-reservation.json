@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-07T21:34:07.008Z",
+  "queueAt": "2026-10-07T21:33:49.462Z",
+  "queueSha256": "0e4e659391a136b5b24ada43374881f7b0679744955df719ebb67fa6c27e81c2",
+  "freeBytes": 18665668608,
+  "minimumFreshBytes": 16850223104,
+  "commands": [
+    [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--test",
+      "--test-reporter=spec",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2.test.mjs"
+    ],
+    [
+      "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2.test.py"
+    ]
+  ],
+  "limits": {
+    "secondsPerCommand": 10,
+    "scratchBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "bindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-entry.mjs",
+      "bytes": 4460,
+      "sha256": "fb4156cde5ce05b5c3206d6642703a786a216dd4cec0f2e5340969eaef1b3096"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-entry.mjs",
+      "bytes": 935,
+      "sha256": "81595eb0f351456242766224a974652e249a5005837a86df0ecc2b974e5036cc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-supervise.py",
+      "bytes": 934,
+      "sha256": "b00262b3c2bac32ea4c13483350321988900200f33e1de1e6d0490bfcdc63b55"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2.test.mjs",
+      "bytes": 2179,
+      "sha256": "38717a06000ec4ab52c29c7277f3aec10ab52349ad3c874947afa68883b815fa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2.test.py",
+      "bytes": 2116,
+      "sha256": "f0cd2c5ec7ca98402614eaae0fccdba254376979f992e1cce02a70ea633de1d7"
+    }
+  ],
+  "pg": 0,
+  "personal": 0,
+  "build": 0,
+  "provider": 0
+}

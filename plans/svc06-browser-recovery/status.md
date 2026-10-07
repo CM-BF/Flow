@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:27:49.215Z；恢复产物构建通过，但首次真实冷启动在公开配置读取入口失败；窗口已归还，保留原件并修正固定组合 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:35:58.225Z；原cold失败已独审，3行适配修正获审并固定新source880060；R2构建薄入口与固定参数已检查，等待本次资源准入 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -168,3 +168,5 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T21:29:58.937Z：默认resolver适配修正source e6582fcf1已固定；f37只有preview.load一行默认null→backendRuntime，主线正确product与b692原件零改。真实公开load/host身份链的5个定向合成例通过，159ms/raw589B，21:29:30.860Z实际RETURN/组absent双EOF/exact空scratchremoved。旧默认TypeError可在同消费者复现；不回填原actual message或把合成验证当冷启动。见[修复结果](../../docs/evidence/svc06/browser-recovery/recovery-default-resolver-result.json)。原FAIL/42P01/KEEP保留，独审后需新的固定source/artifact与namespace；原个人仍未恢复。
 
 2026-10-07T21:33:25.847Z：Lead独审补查到同一适配P2：真实runService的两处参数仍传resolver对象，原默认5例未覆盖wrapper接线。现source9d7fb0b7213f71a04d1fb220457c1076d799dfe3统一三行patch（默认函数+两处.resolve），当前main正确产品/b692均不改。新增真实runService的3/3注入直接消费者通过147ms419B，21:33:06.871Z完整RETURN/absent双EOF/空scratchremoved；旧5例保留未重跑。见[统一修复证据](../../docs/evidence/svc06/browser-recovery/recovery-resolver-repair-result.json)，本次仍仅源码/0PG，真实cold必须新产物后另验。
+
+2026-10-07T21:35:58.225Z：Lead已批准统一3行repair并固定child source880060a317cd99f3f29b41333f6dd7d7f5ab1488/tree27cf190b00b3244026952ab85b0d922368676715，只有preview变化26B，其余6叶/依赖/SQL不变。新build caller source0c2/input075c已固定，[唯一R2构建准备](../../docs/evidence/svc06/browser-recovery/recovery-build-r2-preparation.json)引用旧方法，不复制源码/监督器。4个options/namespace例232ms500B+准确input1例100ms227B，3组absent双EOF/空tmpremoved，21:35:12.225Z最后RETURN。新的actual namespace仍不存在，完整构建/新cold/4App及个人仍未运行；fresh预算待资源owner当次确认，不用旧窗口启动。原34c冷启动限定保真获native批准，TypeError/secondary42P01/DBprivateKEEP不改。
