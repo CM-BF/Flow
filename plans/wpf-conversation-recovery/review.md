@@ -1,12 +1,14 @@
 # WPF-RECOVERY01 独立审查
 
-状态：NOT_STARTED。
+状态：IN_PROGRESS（root已开始固定0141完整源码审，正式结论待出）。
 
-Review target commit：UNKNOWN。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
+Review target commit：`0141cf4f23032ce206b7eaf0a19729c966ca4751`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
+
+固定完整变更/修复/实证入口：[feature-review-entry.md](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)，19源/base/pins明确；当前root审查进行中，不是作者自评。
 
 可复制只读审查任务：先核本worktree/branch/HEAD/dirty、AGENTS与plan/status；固定实现后完整读scope，检查cookie连接与namespace、同步receipt→strict事务complete/CAS→HTTP、CREATE两阶段、完整草稿和材料、跨tab冲突/unknown原key、P01私有授权、资源/字节预算。按已授权隔离检查，明确作者与独立证据、未验中心/个人服务。所有finding回owner，不写实现。
 
-当前作者局部检查：2b01受控50、历史38与9835 serialization10保持原批准范围；真实browser前四次均FAILED（历史）；第五page-auth现也FAILED。第四次4c0852/9835仅cookieRead PASS，textIntentDraft的saved.txt tooltip超时，后续未跑/0PNG；前三轮及各自局部通过事实保真。root接受第四实际失败与reported ownedcleanup，不是完整feature通过；无新types或重跑。完整feature NOT_STARTED/targetUNKNOWN。
+当前作者检查：原50受控/119选择回调/types/serialization10保原绑定；旧五次browser FAIL与各自部分PASS不变。新有限段首run在765ab/0141原full7实际PASS、exit0/双EOF/owned清理和双390图已保存，已获root限定实际证据接受；原full7不覆盖SSEdelivery、CREATE/QueueSteer、完整profile/knowledge/steering与二中心。完整feature NOT_STARTED；当前工程target已固定0141，main未接。
 
 ## 阶段源码预检（不是最终feature审查）
 
@@ -181,3 +183,9 @@ Root固定 `1bc4f20b9257b294adcadd6b68b1b9e015e04e86` 的[独立报告](../../do
 ## 2026-10-07 05:43:10 UTC — 第五fixture P2源码已修，待实际复验
 
 固定 `0141cf4f23032ce206b7eaf0a19729c966ca4751`，两harness4+/2-，17其他源逐hash同dd664。仅在owned测试DB用statement_timestamp构造合法且过期的时间对，生产migration/store不改；现有auth/noPOST/稿文断言不改。原parent TOTAL_MS240000只作为旧90k+新150k防御ceil，新段独立实际150k约束由[段记录](../../docs/evidence/wpf-conversation-recovery/continuous-segment.json)与freshgate执行。0新runtime/0旧50、119、types或serialization重跑。本源码不是页面通过，fullfeature仍NOT_STARTED/targetUNKNOWN。
+
+## 2026-10-07 05:55:58 UTC — 0141源批准与full7作者实际证据
+
+[0141 root源审](../../docs/evidence/wpf-conversation-recovery/0141-expiry-root-review.json)限定批准fixture时间对/防御ceiling。其后[full7实际](../../docs/evidence/wpf-conversation-recovery/continuous-first-validation.md)已通过，作者未将其当完整feature独审；[Root限定实际审](../../docs/evidence/wpf-conversation-recovery/continuous-first-root-review.json)已原样归档：ACCEPTED_SCOPED_FULL7_ACTUAL_AND_OWNED_CLEANUP_NOT_WHOLE_FEATURE，0findings；不是完整feature独审。真实未覆盖范围见上文，旧所有FAIL/raw保持，0盲复跑。
+
+Root已开始固定0141相对base84005完整差异审查；当前有连接选择被后台ready身份回调关闭的P2候选（未实复现，正式finding待root集中结论）。作者保持19源码冻结，不新增验证；原full7受限实证仍有效。

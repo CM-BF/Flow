@@ -1,0 +1,148 @@
+{
+  "passed": true,
+  "selectedPassed": true,
+  "fullJourneyPassed": true,
+  "journey": "full",
+  "requiredGroups": [
+    "cookieRead",
+    "textIntentDraft",
+    "crossTabCas",
+    "sameKeyTurn",
+    "pageOnlyAuthLoss",
+    "csrfOffline",
+    "themes390"
+  ],
+  "completedGroups": [
+    "cookieRead",
+    "textIntentDraft",
+    "crossTabCas",
+    "sameKeyTurn",
+    "pageOnlyAuthLoss",
+    "csrfOffline",
+    "themes390"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 8147.450374999999,
+    "elapsedMs": 8147.450374999999
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 8147.519166000001,
+      "endedOffsetMs": 9142.222791,
+      "elapsedMs": 994.7036250000001,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "textIntentDraft",
+      "startedOffsetMs": 9142.237583,
+      "endedOffsetMs": 10405.107833,
+      "elapsedMs": 1262.87025,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "crossTabCas",
+      "startedOffsetMs": 10405.1145,
+      "endedOffsetMs": 10956.092208,
+      "elapsedMs": 550.9777080000003,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "sameKeyTurn",
+      "startedOffsetMs": 10956.110541,
+      "endedOffsetMs": 11532.553833,
+      "elapsedMs": 576.4432919999999,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "pageOnlyAuthLoss",
+      "startedOffsetMs": 11532.561,
+      "endedOffsetMs": 11642.437957999999,
+      "elapsedMs": 109.87695799999892,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "csrfOffline",
+      "startedOffsetMs": 11642.44675,
+      "endedOffsetMs": 11685.391333,
+      "elapsedMs": 42.94458300000042,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "themes390",
+      "startedOffsetMs": 11685.397707999999,
+      "endedOffsetMs": 11971.733708,
+      "elapsedMs": 286.33600000000115,
+      "outcome": "PASSED"
+    }
+  ],
+  "acceptanceScope": "original seven-group subset; not full feature approval",
+  "errors": [],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_e33f017541fc4b32b9fe1024556e3656",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.308208000000377,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 1.4887499999986176,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "processIds": [
+    {
+      "pid": 42838,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 45492,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 24507207680,
+  "peakScratchBytes": 27536727,
+  "logBytes": 6915,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 12469.634583000001,
+      "scratchBytes": 27536727,
+      "evidenceBytes": 1757178,
+      "freeBytes": 24507207680,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 12495.78225,
+      "scratchBytes": null,
+      "evidenceBytes": 1760618,
+      "freeBytes": 24535621632,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}

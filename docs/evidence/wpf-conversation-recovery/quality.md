@@ -217,3 +217,9 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 ## 2026-10-07 05:43:10 UTC — 合法过期fixture/有限runtime段
 
 沿本地find-skills优先复用clean-code与webapp-testing（无安装），源码核验028明确CHECK后在测试fault边界修复；不引入通用clock/store抽象。单statement稳定时间避免两次clock差异，created=-2s/expires=-1s给出合法顺序和8h内间隔；现有pool仅ownedDB，未动生产、selection或断言。parent防御ceiling注释与独立segment预算分清，历史计费原件不可写。diffcheck0，17未变hash核同；未跑产品检查，实际query/完整恢复旅程待常规fresh入场。性能无新主张；完整feature未知及其余未验保持。
+
+## 2026-10-07 05:55:58 UTC — full7收尾clean-code核
+
+修复保持在fixture合法故障输入，不放宽公开鉴权/noPOST/稿文/材料/ref/CAS断言；原single-fileparent与有限journey/计量接口复用，无新wrapper/store/公有协议。实际7组及初始化分开计时，不把worker初始化冒全启动成本或性能改进；newsegment统一保守max/ceil，原早raw与旧90k不重写。两个390截图已实际查看，真实目录行/折叠身份/滚动与焦点有证据。当前plan首页旧source-only/90s禁止语句标历史并指新段；TODO01/04有定义对应事实才完成，其他验收缺口明确。无新产品修复/复测，completefeature仍未审。
+
+当前正式审查target已收敛0141，root审进行中；其中连接选择意图候选尚未runtime复现，源冻结。主线own-status-parse依据已读，但S01当前排他检查限制，故本次不执行Node/parser；只做静态来源/字段及gitdiff核对，未冒parser通过。

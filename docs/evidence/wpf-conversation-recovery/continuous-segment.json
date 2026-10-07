@@ -1,6 +1,6 @@
 {
   "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
-  "state": "SOURCE_READY_WAITING_FRESH_RUNTIME_ADMISSION",
+  "state": "ORIGINAL_FULL_SEVEN_SCOPED_EVIDENCE_ACCEPTED",
   "authorization": {
     "path": "continuous-segment-authorization.json",
     "sha256": "6ea79981213d5df67f1e7ae4c603a90bbf7823daebf53aa15bf85e08f7ed5090"
@@ -22,12 +22,29 @@
     "additionalSourceMetadataBytes": 1048576,
     "defensiveCumulativeCeilingMs": 240000
   },
-  "runtimeSpentMs": 0,
-  "runtimeRemainingMs": 150000,
-  "attempts": [],
-  "nextSelection": "full",
+  "runtimeSpentMs": 13134,
+  "runtimeRemainingMs": 136866,
+  "attempts": [
+    {
+      "run": "recfull-20261007-055138-6c925b",
+      "journey": "full",
+      "executionHead": "765ab362945b93b66487cadd8e0b54e9ee233bcf",
+      "sourceTarget": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
+      "manifest": "continuous-first-manifest.json",
+      "passedGroups": 7,
+      "actualExit": 0,
+      "parentLateMs": 12501.139416,
+      "outerActualMs": 13133.751874906011,
+      "chargedMs": 13134,
+      "cleanupComplete": true,
+      "resourceReturnedAt": "2026-10-07T05:52:24.761068+00:00",
+      "fullFeaturePassed": false
+    }
+  ],
+  "nextSelection": null,
   "fullFeatureReview": "NOT_STARTED",
   "noCurrentGate": true,
   "sourceTarget": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
-  "sourceCheckpoint": "expiry-fixture-checkpoint.json"
+  "sourceCheckpoint": "expiry-fixture-checkpoint.json",
+  "chargeRule": "ceil(max(actual outer, late parent, serialized parent)) per attempt; original raw unchanged"
 }

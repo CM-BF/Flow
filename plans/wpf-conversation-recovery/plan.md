@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 连接、草稿和未决发送恢复
 
-状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 05:43:10 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 05:55:58 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
 
 目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
 
@@ -14,16 +14,16 @@
 
 ## TODO
 
-- [ ] WPF-RECOVERY01-01：固定输入、合法scope和唯一canonical；实现有界ConnectionSession/Journal。
+- [x] WPF-RECOVERY01-01：固定输入、合法scope和唯一canonical；实现有界ConnectionSession/Journal。
 - [ ] WPF-RECOVERY01-02：四类原controller同步接管和durable barrier，CREATE两阶段及错误/CAS恢复。
 - [ ] WPF-RECOVERY01-03：实际App/P01入口、完整草稿/材料和namespace隔离恢复。
-- [ ] WPF-RECOVERY01-04：定向storage/controller直接行为验证与来源hash。
+- [x] WPF-RECOVERY01-04：定向storage/controller直接行为验证与来源hash。
 - [ ] WPF-RECOVERY01-05：资源允许后真实cookie/HTTP/SSE/App旅程；旧90s封套关闭保留，后继按原样授权的新150s有限段独立计费，每次≤60s含≥15s清理、总证据≤8MiB、1PG+1Chrome、0provider/个人服务。
 - [ ] WPF-RECOVERY01-06：独立固定审查、修复、push和明确main接收。
 
 ## 验证与资源
 
-当前仅轻量source/metadata；禁止安装/build/PG/browser。SVC06整套准备要求fresh空间≥2.5GiB；单Web/小验证按实际physical增量和约1GiB收尾余量另核，不以旧统一门槛误挡。这不新增install/build/PG/browser许可。基础direct tests另记，不冒browser/IDB真实运行。浏览器失败保raw并评估剩余预算，不无限重跑。个人61227/61228/4320不采不改。
+历史建树阶段仅允许轻量source/metadata，当时禁止安装/build/PG/browser；这不是当前运行授权口径。当前遵循[新150s有限段](../../docs/evidence/wpf-conversation-recovery/continuous-segment-authorization.json)与实际共享窗口/fresh准入，已执行结果和保守累计见[段记录](../../docs/evidence/wpf-conversation-recovery/continuous-segment.json)。无新install/build许可；专用DB/Chrome仅原owner隔离入口，个人61227/61228/4320不采不改。基础direct与真实App证据按各自边界分别记录。
 
 ## 范围与证据
 
@@ -31,7 +31,7 @@
 
 ### 未来浏览器入口的运行前门禁（RB1–RB4）
 
-父进程在启动前拥有worker和Chrome进程组，独立监督累计90s并保留至少15s清理；数据库CREATE尝试/确认/marker持久记录，只有精确marker且零连接可删，unknown与非空remaining均阻止通过/重跑。唯一scratch目录与递归evidence/日志预算、实时free监测须先于业务import/CREATE。材料稿及无reload认证失效纳入显式coverage矩阵；未实际运行保持NOT_RUN，不能沿text-only旅程宣称完整恢复。
+历史RB1–RB4首封套为累计90s，五次失败与原raw保持且该封套关闭。后继新150s段独立计费、每次≤60s并保留15s清理，parent总240s仅防御ceil；父进程始终拥有worker和Chrome进程组。数据库CREATE尝试/确认/marker持久记录，只有精确marker且零连接可删，unknown与非空remaining均阻止通过/重跑。唯一scratch目录与递归evidence/日志预算、实时free监测须先于业务import/CREATE。材料稿及无reload认证失效纳入显式coverage矩阵；未实际运行保持NOT_RUN，不能沿text-only旅程宣称完整恢复。
 
 ### 7244 用例窄修
 
@@ -156,3 +156,11 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 原五次失败晚累计64134.08675ms不回填、不重置；旧90k剩余不作新运行额度。[新有限段授权](../../docs/evidence/wpf-conversation-recovery/continuous-segment-authorization.json)允许原21内定位→窄修→相关复测，实际新runtime累计≤150000ms，每次≤60000含15000cleanup。原parent防御总ceiling改240000只对应旧90k+新150k，不代替新段150k独立约束。[唯一segment记录](../../docs/evidence/wpf-conversation-recovery/continuous-segment.json)保存各实际attempt/晚计时/剩余额度。下一优先full7原断言；等待真实PG/Chrome交接和常规fresh输入，当前无新运行。
 
 当前有限段源码固定 `0141cf4f23032ce206b7eaf0a19729c966ca4751`，[精确diff/pins](../../docs/evidence/wpf-conversation-recovery/expiry-fixture-checkpoint.json)。先full7，相关问题在同段有限剩额内连续定位/修复/定向复验，不重复已过无影响检查；实际PG/Chrome仍需原共享窗口明确归还与常规fresh输入。
+
+### 2026-10-07 05:55:58 UTC — 原full7实际通过与TODO真实映射
+
+[原件/范围](../../docs/evidence/wpf-conversation-recovery/continuous-first-validation.md)：01固定输入/唯一canonical/有界ConnectionSession与Journal实现已完成；04定向50受控storage/controller检查和来源hash已完成（不冒mountedApp全部边界）。02四类authority/双CREATE身份/错误CAS已有源码和直接检查，真实CREATE/Queue/Steer旅程仍需补；03实际App/P01与text/intent/双文件、namespace保护已有实证，完整profile/knowledge/steering与二中心未验；05原full7子集通过，SSEdelivery等原验收继续开放；06独立完整target/main未完成。只勾选按原定义已有证据的01/04，不把full7当完整feature。
+
+### 原MATURE01/06恢复目录可读性后继（GO实际图示验收）
+
+沿RECOVERY01-03/05现范围记录，不阻本轮full7限定接收：默认用获准轻metadata标题/有界内容摘要、本地Intl时间和紧凑层级帮助区分记录；精确record/conversation身份与UTC保留details。未知标题诚实fallback，禁止预取聊天正文；空text不证明重复、无用或可删除，保files/knowledge/intent/unknown/原key语义，不自动合并/删除/重发。后继按本地web-design-guidelines/Arc方向做固定设计再实施，本批不改UI、不新增任务层级。

@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-07T05:43:01.635883+00:00",
+  "decision": "APPROVED_MINIMAL_FIXTURE_AND_AUTHORIZED_FINITE_SEGMENT_SOURCE_ONLY",
+  "target": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
+  "base": "dd6645b7f3ea84d758705684190c094ad3c87460",
+  "files": [
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "25f6efb1c70112ea5a611cc8c920bf9eb808d636cdc7e9c16b864df4874a6a58"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "c24ebd04196994b0e51a4fa39bcecff2828ebbe59da567bb7b9c29fac3ee100f"
+    }
+  ],
+  "review": [
+    "Same owned-fixture update now uses statement-stable timestamp with legal1s created→expiry interval already in past; fixes028constraint without changing productionauth/schema or publicjourney.",
+    "Onlydefensive TOTAL90k→240k changed; matches authorized immutable90k historicalenvelope plus separate new150k actualsegment. Nounusedoldremaining credit; perrun60k incl15kcleanup and alloriginalprocess/space/unknownchecks remain.",
+    "No assertion removed; fulloriginalseven unchanged; only4add/2delete across2testfiles.",
+    "Meaningless repeatedtypes or SQL-string mirror tests notneeded; actualpublicauth/fulljourney remainsrequired."
+  ],
+  "findings": [],
+  "runtime": "NOT_RUN_FOR_THIS_SOURCE",
+  "fullFeatureReview": "NOT_STARTED",
+  "authority": "root finite segment6ea799; subsequently confirmed ExecutionLead a9f1fb74 documented rules."
+}

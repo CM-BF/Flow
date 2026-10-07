@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 05:43:10 UTC |
+| 最近更新 | 2026-10-07 05:55:58 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -13,35 +13,35 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段harness checkpoint 0141cf4f23032ce206b7eaf0a19729c966ca4751；17其他源=dd664；metadata HEAD以Git为准 |
-| 工作树dirty状态 | 源固定0141cf4f；当前仅本批own证据/status记录，normalpush后核clean |
+| 工作树dirty状态 | 19源固定0141cf4f/执行765ab362；本批仅actual raw与own记录，封存后核clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已修正测试会话过期前提，保留五次失败证据 |
-| 下一可用交付 | 运行原完整页面恢复旅程，核对保稿与重新连接 |
-| 当前阻塞 | ACTIVE: 页面恢复验收仍未闭合，过期测试前提修复待实际复验 |
+| 当前产出 | 已验证刷新恢复双文件草稿、原键重试及认证失效保稿 |
+| 下一可用交付 | 补齐新会话与队列等恢复边界，完成完整验收和审查 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 检查状态 | 第五page-auth FAILED：cookieRead通过/过期fixture约束失败，其他NOT_SELECTED；本段仅query与budget常量源码修复，未重跑。旧五FAIL晚累计64134.08675ms封套关闭；新150000ms有限段当前0使用，下一full最多60000含15000cleanup |
-| 实现目标 | UNKNOWN |
+| 检查状态 | 原full7实际PASS/exit0/双EOF/owned清理完成，执行765ab/源0141；新150s段保守计13134ms/余136866。旧五FAIL与64134.08675ms封套原样；SSEdelivery/CREATE/QueueSteer/完整材料与二中心待验 |
+| 实现目标 | 0141cf4f23032ce206b7eaf0a19729c966ca4751 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
-| Review | [review.md](review.md)，NOT_STARTED |
+| Review | [review.md](review.md)，IN_PROGRESS（root固定源码审进行中）；固定19源入口 [feature-review-entry](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md) |
 | 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；本段本人安全CLI核active/owner/WT/branch、overlap=[]，见continuous-segment-claim-observation；不等资源准入 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| WPF-RECOVERY01-01 | in-progress | workspace_panels_owner | [live领取](../../docs/evidence/wpf-conversation-recovery/live-claim.json)，输入/容量研究已读，ConnectionSession/Journal第一段源码与types检查已落 |
-| WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt屏障与部分恢复受控case已通过；完整真实controller旅程未完成 |
-| WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
-| WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [当前50 direct](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)源绑定2b01单次通过；旧38原范围不变，共用owner helper不冒mounted Workspace/Thread或完整App材料prepare通过 |
-| WPF-RECOVERY01-05 | in-progress | workspace_panels_owner | [第五次实际失败](../../docs/evidence/wpf-conversation-recovery/browser-fifth-validation.md)，原五轮保真；新有限修复验证段当前0运行 |
-| WPF-RECOVERY01-06 | pending | workspace_panels_owner | 1b8 M1/M2独立源码addressed；完整feature独审NOT_STARTED/main未完成 |
+| WPF-RECOVERY01-01 | completed | workspace_panels_owner | 原21合法输入/唯一canonical及ConnectionSession/Journal有界实现完成；来源取权/50直接检查与full7实证各保边界 |
+| WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 四类原authority/CREATE两key/strict屏障/CAS已实现并有直接检查；真实CREATE两阶段与Queue/Steer恢复仍未覆盖 |
+| WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | 实际App/P01入口、text/intent/双文件原refs与namespace授权保护已接线并由full7部分验证；完整profile/knowledge/steering和二中心待验 |
+| WPF-RECOVERY01-04 | completed | workspace_panels_owner | [50受控storage/controller实际检查](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)及source hashes完成；不冒完整mountedApp/真实IDB全部边界 |
+| WPF-RECOVERY01-05 | in-progress | workspace_panels_owner | [原full7实际PASS](../../docs/evidence/wpf-conversation-recovery/continuous-first-validation.md)，原五FAIL保真；SSEdelivery/CREATE/QueueSteer等原验收尚未全部完成 |
+| WPF-RECOVERY01-06 | pending | workspace_panels_owner | 限定源码/证据审查已多轮；完整feature target0141固定/独审进行中/main未接 |
 
 ## 阻塞 / 风险 / 未验证
 
-pre-provision可用1,584,984,064B，建树后管理报告1,416,241,152B，非当前fresh资源测量。禁止目前install/build/PG/Chrome。中心三语义不阻首代码，但最终cookie/SSE旅程仍需核。旧upload journal跨tabCAS与历史metadata隔离开放，不冒本片修复。
+历史pre-provision可用1,584,984,064B、建树后1,416,241,152B仅为当时观察，历史禁运行阶段已结束；当前按新有限段与每次真实窗口/fresh准入执行，不沿旧数值推资源。中心三语义不阻首代码，但最终cookie/SSE旅程仍需核。旧upload journal跨tabCAS与历史metadata隔离开放，不冒本片修复。
 
 ## 下一步与handoff
 
@@ -290,3 +290,15 @@ DB marked正常清零DROP、fixture关闭、双ownedgroup ESRCH/scratch移除；
 ## 2026-10-07 05:43:10 UTC — fixture合法过期前提源码安全点
 
 固定 `0141cf4f23032ce206b7eaf0a19729c966ca4751`，仅两harness4+/2-；[两pin及原diff](../../docs/evidence/wpf-conversation-recovery/expiry-fixture-checkpoint.json)。fixture同statement将created设为过去2秒、expires过去1秒，满足028两个约束且保持公开auth/noPOST/原稿断言；parent240k仅防御ceil。新段runtime0/150000，每次≤60000含15000cleanup，旧封套剩余不转信用。[唯一段记录](../../docs/evidence/wpf-conversation-recovery/continuous-segment.json)供连续修复/相关复验累计。共享PG已由root报C02实际归还，但尚无本次freshgate/adminenv，不自行launch。
+
+## 2026-10-07 05:55:58 UTC — 首新段full七组实际通过
+
+[13raw/outer/双390图](../../docs/evidence/wpf-conversation-recovery/continuous-first-validation.md)绑定执行765ab362/source0141；7/7和owned清理全部完成。按ceil(max outer,parentlate,parent))新段用13134/150000、余136866，原旧封套与早计费raw不追写。已归还资源且adminenv删除；无自动后继运行。01/04按原定义completed，02/03/05保具体缺口，06完整独审/main仍pending；完整feature targetUNKNOWN/reviewNOT_STARTED不变。
+
+## 原MATURE01/06可用性后继（仅登记，未改UI）
+
+GO实际看双390图后的原验收补充：恢复目录默认显示可读标题/本地内容摘要/本地Intl时间与紧凑层级；现UUID、outbox receipt accepted和长UTC毫秒放折叠details。标题仅用获准轻metadata，无标题诚实fallback，不预取聊天正文。No text不代表重复或可删；保文件/知识/intent/unknown/原key，不自动合并、删除或重发。归原RECOVERY01-03/05及MATURE01/06，不新task；当前仅登记，UI未改、未新验。
+
+当前完整代码审查目标已固定 `0141cf4f23032ce206b7eaf0a19729c966ca4751`，相对base84005的19源3095+/132-与早期finding/检查归因见[单一review入口](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)。独立审尚未开始，main未接；未验能力继续显式保留，不再用UNKNOWN替代已固定工程target。
+
+当前root完整源码审已开始（IN_PROGRESS），正式结论待出；连接选择回调P2仅候选未实复现，19源码不动。S01性能窗口当前OPEN，按root本轮限制未运行own-status-parse；仅静态字段/链接和Git diff核对，后继允许时再用主线权威parser，不把本次未运行记PASS。

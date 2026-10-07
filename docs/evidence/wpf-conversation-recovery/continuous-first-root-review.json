@@ -1,0 +1,203 @@
+{
+  "reviewer": "root / gpt-6-astra ultra",
+  "reviewedAt": "2026-10-07T05:54:38.370066+00:00",
+  "decision": "ACCEPTED_SCOPED_FULL7_ACTUAL_AND_OWNED_CLEANUP_NOT_WHOLE_FEATURE",
+  "implementationSource": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
+  "executionHead": "765ab362945b93b66487cadd8e0b54e9ee233bcf",
+  "run": "recfull-20261007-055138-6c925b",
+  "outer": "/private/tmp/recovery-continuous-full-parent-nq1e5a53",
+  "rawDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b",
+  "sourceBindingsVerified": 19,
+  "rawFilesVerified": 13,
+  "rawBytes": 189116,
+  "actual": {
+    "exitCode": 0,
+    "outerElapsedMs": 13133.751874906011,
+    "endedAt": "2026-10-07T05:52:24.761068+00:00",
+    "stdoutEof": true,
+    "stderrEof": true,
+    "stdoutBytes": 747,
+    "stderrBytes": 0,
+    "parentPid": 42366,
+    "run": "recfull-20261007-055138-6c925b"
+  },
+  "terminal": {
+    "kind": "recovery-final-accounting",
+    "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recfull-20261007-055138-6c925b",
+    "journey": "full",
+    "requiredGroups": [
+      "cookieRead",
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn",
+      "pageOnlyAuthLoss",
+      "csrfOffline",
+      "themes390"
+    ],
+    "completedGroups": [
+      "cookieRead",
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn",
+      "pageOnlyAuthLoss",
+      "csrfOffline",
+      "themes390"
+    ],
+    "postWrite": {
+      "phase": "after-final-report-and-budget",
+      "elapsedMs": 12501.139416,
+      "scratchBytes": null,
+      "evidenceBytes": 1760820,
+      "freeBytes": 24535621632,
+      "errors": []
+    },
+    "interruptionRequested": false,
+    "errors": [],
+    "cleanupErrors": [],
+    "allOwnedGroupsAbsent": true,
+    "scratchRemoved": true
+  },
+  "groups": [
+    "cookieRead",
+    "textIntentDraft",
+    "crossTabCas",
+    "sameKeyTurn",
+    "pageOnlyAuthLoss",
+    "csrfOffline",
+    "themes390"
+  ],
+  "findings": [],
+  "observations": [
+    "Actual exit0, exactly one matching full7 terminal, both stream EOF; worker and Chrome exit0.",
+    "13 raw hashes checked and 19 runtime source hashes equal fixed execution Git blobs and current sources.",
+    "Lost acknowledgement appears as actual ERR_CONTENT_LENGTH_MISMATCH; explicit retry has identical key/body and same accepted turn/task identity with replayed=true.",
+    "Owned database identity matches cleanup; zero connections and normal DROP/absence; fixture complete and zero provider queries. Exact process-group and scratch absence observed after actual exit.",
+    "Viewed both 390x844 PNG originals: readable light/dark recovery dialog, constrained horizontal layout, visible controls and record wrapping. Test verifies Enter open and Escape focus restoration in both themes."
+  ],
+  "budget": {
+    "closedHistoricalActualMs": 64134.08675,
+    "newSegmentLimitMs": 150000,
+    "newSegmentConservativeChargeMs": 13134,
+    "newSegmentRemainingMs": 136866,
+    "basis": "ceil(max actual outer, parent after-final-writes, parent report)); earlier raw parent-only counters retained as historical observations",
+    "singlePermittedMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchPeakSampleBytes": 27536727,
+    "retainedFinalSampleBytes": 1760820,
+    "limitation": "Shared-volume samples and supervisor observations are not hard quotas or attribution of all allocations."
+  },
+  "coverage": {
+    "cookieRead": "PASSED",
+    "cookieSseHandshake": "PASSED",
+    "cookieSseDelivery": "PENDING: only handshake is asserted",
+    "textIntentDraft": "PASSED",
+    "materialDraft": "PASSED",
+    "sameKeyTurn": "PASSED",
+    "crossTabCas": "PASSED",
+    "pageOnlyAuthLoss": "PASSED",
+    "csrfOffline": "PASSED",
+    "themes390": "PASSED",
+    "createTwoStage": "PENDING: direct/source only",
+    "queueSteerRecovery": "PENDING: direct/source only",
+    "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+    "secondCenter": "PENDING: one-center fixture"
+  },
+  "limitations": [
+    "Full7 means original seven-group subset only. Full feature independent review remains NOT_STARTED unless separately performed.",
+    "SSE handshake observed, event delivery not asserted; CREATE two-stage, Queue/Steer recovery, complete profile/knowledge/steering draft and second center are still pending.",
+    "Zero provider calls; no claim of real model or personal service verification."
+  ],
+  "adminDeletionReceipt": {
+    "path": "/private/tmp/recovery-continuous-admission-_f2cv0m2/admin-env-deletion-receipt.json",
+    "sha256": "26b6de562e6b4799292fb6edaa96c798ccc163a7c445e51671ac404876196e77"
+  },
+  "evidencePins": [
+    {
+      "path": "browser.json",
+      "bytes": 26500,
+      "sha256": "dc6f5843552ad77f140e4328fb2824008a19d68bc027b5e8fc1b4543e72852d3"
+    },
+    {
+      "path": "budget.json",
+      "bytes": 223,
+      "sha256": "b1ba27f9f1e077c3f0cbf6ab21a1d03f09fddbfea90a7de42dd2818efb96b581"
+    },
+    {
+      "path": "dark-390.png",
+      "bytes": 73954,
+      "sha256": "e41edcd67e0d04e47baadc2109cd6c984bfb94c67fe0cd006ac0bb94e75957d1"
+    },
+    {
+      "path": "database-cleanup.json",
+      "bytes": 515,
+      "sha256": "54f1b62d2abdfa09e20414e0e8e1db52026a05e4faf024f190a04e3915cff2c1"
+    },
+    {
+      "path": "database-owner.json",
+      "bytes": 164,
+      "sha256": "3c9042d7f6c1b1fa3297b56df2d1079140b26e366c6771a9bf9804ba224db350"
+    },
+    {
+      "path": "fixture-cleanup.json",
+      "bytes": 103,
+      "sha256": "5c6022009cb8bc8518f67da76bc511ad8a7395f81bfbb819ee1bfed174c85a95"
+    },
+    {
+      "path": "launch-config.json",
+      "bytes": 1215,
+      "sha256": "c86ed016b824f46f39c95eb2f10bf5aaa3c77142b444cac88a798c24357cddff"
+    },
+    {
+      "path": "light-390.png",
+      "bytes": 73263,
+      "sha256": "48ff00c5306aac20e2a8e1bfdbd2d06c45a381bc608b61678d98e69f7edf4034"
+    },
+    {
+      "path": "process-owner.json",
+      "bytes": 29,
+      "sha256": "de7b38d81beadefa844091ae64c87a11ca6db523642595666349da4c9fc5d578"
+    },
+    {
+      "path": "process.log",
+      "bytes": 6915,
+      "sha256": "f234ec45dedf0a60a44fcd459d8fcd1d2815f892427201d9694fd2dc62af36af"
+    },
+    {
+      "path": "scratch-owner.json",
+      "bytes": 114,
+      "sha256": "93cc146c00126c0d8c4c2776cfbc02a0e6a049b901edb7769246408c0f3d5e72"
+    },
+    {
+      "path": "sources.json",
+      "bytes": 2522,
+      "sha256": "3274d3f7db47e6248bd196cb7d59508f80483815c494b0f0dee4c4ccf6b9cacd"
+    },
+    {
+      "path": "supervisor.json",
+      "bytes": 3599,
+      "sha256": "1d5f7c6d205884811eb27d493281c98e06d374aa52536ddfbf47ab00ee236f7e"
+    }
+  ],
+  "outerPins": [
+    {
+      "name": "actual-exit.json",
+      "sha256": "a3498e281e88edd6ca6655063528001a2e51fc9d06ac881289b7723a74481f80"
+    },
+    {
+      "name": "parent.stderr.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "name": "parent.stdout.jsonl",
+      "sha256": "116748fde121ae02859110d1887317b66a2ec0b7ff1cc6e420c7713cf69f6c11"
+    },
+    {
+      "name": "post-cleanup-observation.json",
+      "sha256": "21f4ce07a39d0fadd216cd8472f546efffa9b30ab3ec4fcfe5dd7b8fdff7e3cf"
+    },
+    {
+      "name": "start.json",
+      "sha256": "0e72ec157e67e95ff178b53685d8098518fa8b898b928cca27a77bd805d1261a"
+    }
+  ]
+}

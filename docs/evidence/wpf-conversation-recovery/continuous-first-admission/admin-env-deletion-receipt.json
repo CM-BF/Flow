@@ -1,0 +1,34 @@
+{
+  "recordedAt": "2026-10-07T05:53:45.444143+00:00",
+  "state": "REMOVED_EXACT_AFTER_ACTUAL_TERMINAL",
+  "path": "/private/tmp/recovery-continuous-admission-_f2cv0m2/admin.env",
+  "identity": {
+    "device": 16777234,
+    "inode": 123541171,
+    "uid": 501,
+    "mode": "0600"
+  },
+  "secretContentRead": false,
+  "exactLstatAbsentAfter": true,
+  "run": "recfull-20261007-055138-6c925b",
+  "actualExit": 0,
+  "evidence": {
+    "actual-exit.json": {
+      "path": "/private/tmp/recovery-continuous-full-parent-nq1e5a53/actual-exit.json",
+      "sha256": "a3498e281e88edd6ca6655063528001a2e51fc9d06ac881289b7723a74481f80"
+    },
+    "post-cleanup-observation.json": {
+      "path": "/private/tmp/recovery-continuous-full-parent-nq1e5a53/post-cleanup-observation.json",
+      "sha256": "21f4ce07a39d0fadd216cd8472f546efffa9b30ab3ec4fcfe5dd7b8fdff7e3cf"
+    },
+    "parent.stdout.jsonl": {
+      "path": "/private/tmp/recovery-continuous-full-parent-nq1e5a53/parent.stdout.jsonl",
+      "sha256": "116748fde121ae02859110d1887317b66a2ec0b7ff1cc6e420c7713cf69f6c11"
+    }
+  },
+  "managerChecks": "Original receipts confirm exit0/EOF/markedDB cleanup/owned groups absent/scratch absent; no repeated process/PG/port probe.",
+  "conservativeSegmentChargeMs": 13134,
+  "newSegmentRemainingMs": 136866,
+  "oldClosedEnvelopeMs": 64134.08675,
+  "parentLateMsPreserved": 12501.139416
+}
