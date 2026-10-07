@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-05](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-05-workspace/plan.md) |
 | co-lead | Web/root；执行管理d01_owner |
-| 最近更新 / 最近main同步核验 | 2026-10-07T23:23:56.250269+00:00；本次不新核main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T23:38:54.044949+00:00；本次不新核main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,21 +12,21 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
-| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source c1db812ca9377117af73eb692b75fd263d9ae2c3 / execution ebcd746e8e74881395e61f43ab444de48b62a51c；本次actual metadata待seal |
-| 工作树dirty状态 | 仅own metadata本批seal；全部产品/test STOP，0child/HTTP/PG/Chrome，23:20:56.284820Z exact FULLRETURN |
+| 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source e621e7838d50048fcb57f5837a03e9fc474a3799；正常metadata待seal |
+| 工作树dirty状态 | 全部18scope STOP待本次normal seal；0HTTP/PG/Chrome |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | validation |
-| 检查状态 | FAILED c1db812ca9377117af73eb692b75fd263d9ae2c3；新browser实际1/4、0PNG。layout-navigation PASS；three-pane初始body0断言收到4个误分类Vite模块GET；后续未达。fa06 noEmit0/3494ms与c1db第二检查容量拒绝0child保留 |
+| 检查状态 | PASSED e621e7838d50048fcb57f5837a03e9fc474a3799；仅12纯classifier/observer与两test静态import受影响noEmit0；新browser NOT_RUN。旧c1db browser1/4 FAIL与0PNG保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；本片新实现仅分支固定，尚未main集成 |
-| 实现目标 | c1db812ca9377117af73eb692b75fd263d9ae2c3 |
+| 实现目标 | e621e7838d50048fcb57f5837a03e9fc474a3799 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-stream/host.ts, apps/web/src/conversations/ConversationList.tsx, apps/web/src/plugin-integration/layout.ts, apps/web/src/plugin-integration/session.ts, apps/web/src/plugins/host.ts, apps/web/src/plugins/sample.tsx, apps/web/src/plugins/types.ts, apps/web/src/plugins/validation.ts, apps/web/src/workspace-layout/WorkspaceTabs.tsx, apps/web/src/workspace-layout/layout.css, apps/web/src/workspace-state.ts, apps/web/test/conversation-stream-integration.test.ts, apps/web/test/plugin-host.test.ts, apps/web/test/plugin-integration.test.ts, apps/web/test/workspace-layout.browser.ts, apps/web/test/workspace-layout.fixture.ts, apps/web/test/workspace-layout.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 23:19:59.320169Z START→23:20:08.464216Z terminal→23:20:56.284820Z FULLRETURN；9145/90000 CLOSED/未用80855不转。原件/private/tmp/arc-browser-body-flight-final-l652q_zu；被动observer未锚/api的测试分类错误已静态对应，未修改源码 |
+| 当前产出 | 工作区布局首组通过；误计开发模块的测试分类已修。纯分类与受影响类型检查通过；独立早桌面观察已加入源码但未实际截图，真实四组验收待新运行 |
 | 下一可用交付 | 可分拆、调序和调整比例的真实会话工作区，并验证材料准备中草稿不丢失、三个pane都能持续读取 |
-| 当前阻塞 | ACTIVE: browser验收FAILED1/4；需要原test scope修正真实API分类再另授独立验证。当前无重试/NEXT，不能将源码准备批准当运行通过 |
+| 当前阻塞 | ACTIVE: 新classifier browser尚未运行/无授权；旧完整验收仍FAILED1/4。 |
 | 需用户决定 | NONE |
-| Review | APPROVED c1db812ca9377117af73eb692b75fd263d9ae2c3；既有c839仅source/preparation。[b189失败结果保真独审](../../docs/evidence/wpf-workspace-arc/body-flight-actual-20261007/root-arc-body-flight-failed-result-review-20261007.json)APPROVED，仅结果真实性/完整RETURN；产品验收仍FAILED1/4，旧失败与全部证据限制保留 |
+| Review | APPROVED e621e7838d50048fcb57f5837a03e9fc474a3799；root f1f8限定两test/source/local/candidate，0blocking；新browser NOT_RUN，旧三FAIL保留 |
 | Claim | c34d95d1-af01-4325-bcd5-77ba9dd28379 v2 ACTIVE exact18；2026-10-07T22:47:29.074Z原子移出App.tsx与plugin-integration/session.ts，二者固定字节只读供给不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -105,3 +105,7 @@
 2026-10-07T23:21:42.522877+00:00：本次唯一ARC-BODY-FLIGHT-BROWSER-20261007-ONCE实际START23:19:59.320169Z，outer39624/parent40460/worker40566/Chrome41691；紧前ebcd实际remoteequalclean、claimv2 exact18/nooverlap、207/43/33固定inputs全核，free17,953,030,144>=冻结11,983,781,888。23:20:08.464216Z outer/tool1，原raw passed=[layout-navigation]故准确1/4（首口头0/4更正），0PNG；worker.result=null/父checks[]及scenarioUNKNOWN原样保留，raw context/httpClosed=true。23:20:56.284820Z四PID+两PGID ESRCH/scratch和cachelinksabsent、所有已报EOFtrue/drop0/cleanupErrors[]，无独立portprobe。ceilmax9145/90000 CLOSED/余80855不转，0新runtime；只自然封存，不改产品或测试。
 
 2026-10-07T23:23:56.250269+00:00：root b189限定失败结果保真独审APPROVED/0blocking原样归档。21 original/archive pairs359712B与1/4、0PNG、9145CLOSED、FULLRETURN核同；产品验收仍OPEN/FAILED。本自然metadata封存后全18 STOP，后继classifier窄修等待经理新ordinary段，无重复检查或新runtime。
+
+2026-10-07T23:37:07.258160+00:00：新10min/4MiB普通段于23:31:23.413456Z开始、23:41:23.413456Z截止；fresh c34dv2 exact18/overlap[]、972a双端clean。固定source `e621e7838d50048fcb57f5837a03e9fc474a3799`，仅两test19+/4-；真实API classifier同时用于browser/fixture，保意外/重复/非GET正文拒绝。实际12纯例PASS/noEmit0，307（toolwall向上取整；原supervisor243保留）+3408=3715/20000 CLOSED，unused16285不转；两PIDPGID/ownscratchfreshabsent、regularlog非dualEOF。早桌面图为512KiB独立observations，不计组PASS；原四group/最终390两图与总raw8MiB不变。[本次入口](../../docs/evidence/wpf-workspace-arc/body-classifier-fix-20261007/entry.json)。code/checks已STOP，只有原封套metadata尾；0新browsergrant。
+
+2026-10-07T23:38:54.044949+00:00：root[f1f8限定独审](../../docs/evidence/wpf-workspace-arc/body-classifier-fix-20261007/root-arc-classifier-source-review-20261007.json)APPROVED/0blocking。12pure/affectedtypes0与新候选仅准备批准，新browser NOT_RUN无grant；三旧FAIL原件/预算不变。fresh Git index2,286,387B一次atomic copy+source/meta/TMP+64KiB审尾保守2,722,909B<4MiB，64KiB不是commit全峰值。all18STOP，正常seal后候选交经理，不自动运行。

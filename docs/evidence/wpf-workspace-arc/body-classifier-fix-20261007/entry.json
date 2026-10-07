@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-07T23:36:14.764878+00:00",
+  "source": "e621e7838d50048fcb57f5837a03e9fc474a3799",
+  "packet": "/private/tmp/arc-browser-classifier-4s522h4u",
+  "manifest": {
+    "path": "/private/tmp/arc-browser-classifier-4s522h4u/manifest.json",
+    "realpath": "/private/tmp/arc-browser-classifier-4s522h4u/manifest.json",
+    "bytes": 2608,
+    "sha256": "b33163dbe15479e465d8c2fd0c0785beb850f4e248f60807863bd267965a4168"
+  },
+  "localManifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/body-classifier-fix-20261007/local-manifest.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/body-classifier-fix-20261007/local-manifest.json",
+    "bytes": 7858,
+    "sha256": "ec166629704b0f3e2376e1661c1b97ca9e66c06ef748c016fe9756db7e147e59"
+  },
+  "accounting": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/body-classifier-fix-20261007/accounting.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/body-classifier-fix-20261007/accounting.json",
+    "bytes": 311,
+    "sha256": "22d6eb60c0e1df3859f02e6cddbf2a55f13b9b39091af431eeed01d6c0d8c858"
+  },
+  "runtime": "NOT_RUN_NOT_GRANTED",
+  "sourceDelta": [
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 27888,
+        "sha256": "9075388e5250a2eb67cccb4a0111c370f510253c78dac3288687a04b36b42ae0",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "dfdb14ef11e93b8578333cc61ba82d517cb4875a"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.browser.ts",
+        "bytes": 28426,
+        "sha256": "5a30a99d1e720295ee7e68965d4edb78a8d70f664b689fd3a9ea2f10a22825ef",
+        "gitPath": "apps/web/test/workspace-layout.browser.ts",
+        "blob": "c9ecec4265e8a44efc56cd01775fcf8fc39f08dd"
+      }
+    },
+    {
+      "before": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "bytes": 19196,
+        "sha256": "96e06e865d36f1876c59588c24222d7a03df23021c7662bc1e9e9baa3ccbda36",
+        "gitPath": "apps/web/test/workspace-layout.fixture.ts",
+        "blob": "7cb1da83dc65729f67e88d5c3e202093fefc8f7c"
+      },
+      "after": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/workspace-layout.fixture.ts",
+        "bytes": 19592,
+        "sha256": "916b7dc75b78dca89411fe811366993fdff70b39b8ef6eb07e404e061a72c3ea",
+        "gitPath": "apps/web/test/workspace-layout.fixture.ts",
+        "blob": "84e7c28bf2f9c59dc70b0e38d01bb912f48260fb"
+      }
+    }
+  ],
+  "claim": {
+    "id": "c34d95d1-af01-4325-bcd5-77ba9dd28379",
+    "version": 2,
+    "scopeCount": 18
+  },
+  "review": {
+    "state": "APPROVED_LIMITED_SOURCE_LOCAL_AND_CANDIDATE_PREPARATION",
+    "source": "e621e7838d50048fcb57f5837a03e9fc474a3799",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/body-classifier-fix-20261007/root-arc-classifier-source-review-20261007.json",
+    "bytes": 4985,
+    "sha256": "f1f8a44ee2fb2f4c44f07ffe60dddfd1a5f9a9f4e42fb9ade2159ddc6a571bf1",
+    "runtime": "NOT_RUN_NOT_GRANTED"
+  },
+  "observation": "Independent desktopStage <=512KiB, not group PASS; final390light/dark array still exact2. No screenshot runtime here.",
+  "sourceStopAt": "2026-10-07T23:38:54.044949+00:00"
+}

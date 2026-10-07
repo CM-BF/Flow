@@ -1,0 +1,97 @@
+{
+  "at": "2026-10-07T23:38:30.414524+00:00",
+  "reviewer": "root / gpt-6-astra ultra / independent read-only",
+  "verdict": "APPROVED_LIMITED_SOURCE_LOCAL_AND_CANDIDATE_PREPARATION",
+  "target": "e621e7838d50048fcb57f5837a03e9fc474a3799",
+  "scope": [
+    "apps/web/test/workspace-layout.browser.ts",
+    "apps/web/test/workspace-layout.fixture.ts"
+  ],
+  "blockingFindings": [],
+  "changeAssessment": [
+    "Exact public API pathname classifier excludes the four observed Vite queue modules without filtering only the six expected IDs. Both browser observer and HTTP fixture use the same classification.",
+    "Observer still records and rejects unexpected real body paths, duplicate bodies and non-GET bodies; same-origin filtering and streams remain distinct. Initial zero and later exact six logical issued/loading/completed body reads remain unchanged.",
+    "No product source, fixture payload, original four functional groups or assertions were altered.",
+    "Desktop observation occurs after actual App composer visibility, document fonts and two animation frames at 1500x960. It is an independent <=512KiB stage observation, not a group pass or substitute for the original two 390px light/dark screenshots.",
+    "Scenario finally writes its observations after later failure, so an already-written early desktop PNG survives a later assertion failure. Original final screenshots array remains separate; total raw bound stays 8MiB."
+  ],
+  "verifiedInputs": {
+    "candidateManifest": {
+      "path": "/private/tmp/arc-browser-classifier-4s522h4u/manifest.json",
+      "bytes": 2608,
+      "sha256": "b33163dbe15479e465d8c2fd0c0785beb850f4e248f60807863bd267965a4168"
+    },
+    "localManifest": {
+      "path": "docs/evidence/wpf-workspace-arc/body-classifier-fix-20261007/local-manifest.json",
+      "bytes": 7858,
+      "sha256": "ec166629704b0f3e2376e1661c1b97ca9e66c06ef748c016fe9756db7e147e59"
+    },
+    "packetAndLocalPinsReadAndHashed": 27,
+    "sourcePinsReadAndHashed": 207,
+    "changedPinsVerifiedAgainstFixedGit": 2,
+    "unchangedSourcePins": 205,
+    "externalPinRecordsUnchanged": 43,
+    "resolverLinkRecordsUnchanged": 33,
+    "callerHashesUnchanged": 3,
+    "onlyBindingChanges": [
+      "source",
+      "preparedHead",
+      "two sourcePins"
+    ],
+    "bindingSha256": "6f6769952c88ecfd34efa126ccfb3e9e9b0c050eb8ebb8e56ff6e3d27bb4bf50"
+  },
+  "observedLocalEvidence": {
+    "method": "Owner AST extraction of actual two functions and EventEmitter callbacks; root inspected source/cases/raw, did not rerun",
+    "pure": {
+      "passed": 12,
+      "failed": 0,
+      "coverage": [
+        "exact public endpoints",
+        "four Vite modules",
+        "metadata/list and near misses",
+        "actual observer request lifecycle",
+        "unexpected/duplicate/non-GET rejection",
+        "foreign origin",
+        "stream distinction",
+        "failed request and listener disposal"
+      ]
+    },
+    "affectedTypes": {
+      "exitCode": 0,
+      "scope": "two test leaves and static imports"
+    },
+    "children": [
+      {
+        "pid": 32130,
+        "exitCode": 0,
+        "groupAbsent": true
+      },
+      {
+        "pid": 34781,
+        "exitCode": 0,
+        "groupAbsent": true
+      }
+    ],
+    "regularFileLogsNotDualEOF": true,
+    "scratchAbsent": true,
+    "conservativeClosedChargeMs": 3715,
+    "originalLedgerPreserved": "243+3408; separate accounting corrects direct tool wall to307 without editing raw",
+    "rootRuntimeRuns": 0
+  },
+  "cleanCode": {
+    "appliedAt": "2026-10-07T23:38:30.414882+00:00",
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "scope": "two changed test leaves, passive observer boundary, screenshot failure retention",
+    "findingsAndFixes": "Owner removed repeated broad regex into a named pure shared classifier; public read kinds and stage observations remain explicit; no unnecessary product abstraction introduced.",
+    "unresolvedBlocking": []
+  },
+  "limitsAndUnverified": [
+    "New actual browser scenario NOT_RUN: not a full feature, visual quality, six transport arrival or screenshot pass.",
+    "Old three failed browser runs and their consumed closed budgets remain unchanged; no unused time transfers.",
+    "Native/dependency pin records are unchanged reuse, not a new runtime closure check.",
+    "Proposal is one new 90s total / 60s work / 30s cleanup, 256MiB scratch and8MiB retained, one owned Chrome and two HTTP,0PG/provider. This review grants no execution.",
+    "Inherited minimumFreeBytes is historical until the existing manager/op preparation binds a fresh complete floor, grant identity, deadline and actual fresh authoritative claim/head/namespace checks.",
+    "Desktop screenshot is connected-before-layout-actions, not the final three-pane layout or evidence of all themes.",
+    "Arc and Context App/session composition requires the separately recorded integration review; independent branch source approvals do not prove combined behavior."
+  ]
+}

@@ -49,3 +49,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 六真实公共UI动作与六exact GET的浏览器issued/response/finished/failed记录有帽，六visible loading证明逻辑pending；真实HTTP逐个释放已经到达的response，不等待六server同时到达。serverpeak单列≤6，最终六200/全部正文精确完成/无额外body、隐藏无新增。保材料await、滚动anchor、Merge/max3、主题四组原验收，不扩大产品/超时。claim v2移出App/session，仅两test与ownrecords本段写；root正文prompt混淆已修为完整130行pre.textContent。必要local3494ms限定fa06，新target第二check容量不足未启动，待固定审/browser新grant。
 
 2026-10-07T23:22:31.454351+00:00：本次 c1db browser 实际FAILED1/4、0PNG，layout-navigation已通过，six-flight与材料/主题验收未完成。确认测试observer未锚/api误计四个Vite模块GET；仅记录，产品/test未改，新源修与browser须经理后继段。原件见[本次入口](../../docs/evidence/wpf-workspace-arc/body-flight-actual-20261007/failure-review-input.json)。
+
+2026-10-07T23:37:07.258160+00:00 原TODO05验收修复：读取事件以URL.pathname锚定真实/api结构，开发模块不进入body计数，真实意外/重复API仍拒绝。原四组选定不变，ready桌面观察独立保留（非额外PASS），最终390light/dark两图仍是原完成条件。当前新source与12pure/noEmit见[证据](../../docs/evidence/wpf-workspace-arc/body-classifier-fix-20261007/entry.json)，browser未运行；旧三FAIL不改。

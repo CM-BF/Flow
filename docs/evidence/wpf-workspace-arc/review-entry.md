@@ -1,3 +1,7 @@
+# Current Arc review entry
+
+Source `e621e7838d50048fcb57f5837a03e9fc474a3799` / APPROVED limited source/local/candidate preparation (root f1f8). [Classifier correction and local evidence](body-classifier-fix-20261007/entry.json). Pure12PASS/affectednoEmit0 only; browser NOT_RUN on this target. Previous c1db browser1/4FAIL preserved [here](body-flight-actual-20261007/failure-review-input.json). Original product/13pure/2HTTP acceptance retains its exact previous scope. Main NOT_INTEGRATED.
+
 当前 actual：`c1db812ca9377117af73eb692b75fd263d9ae2c3` / execution`ebcd746e8e74881395e61f43ab444de48b62a51c`，**FAILED1/4、0PNG**。仅layout-navigation通过；body observer误分类Vite模块导致three-pane前置失败，后两组未达。9145/90000 CLOSED/余80855不转；精确FULLRETURN23:20:56.284820Z。[本轮failure-review-input](body-flight-actual-20261007/failure-review-input.json)，[b189结果保真审](body-flight-actual-20261007/root-arc-body-flight-failed-result-review-20261007.json)APPROVED仅失败证据/RETURN，产品验收仍FAILED。source/preparation c839批准和旧两browser失败各保原范围。
 
 # Arc 固定实现与必要验证入口

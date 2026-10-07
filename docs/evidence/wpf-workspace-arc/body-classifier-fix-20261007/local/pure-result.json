@@ -1,0 +1,67 @@
+{
+  "method": "AST extraction of actual fixed functions; EventEmitter callback consumer, no HTTP or browser",
+  "pins": [
+    {
+      "path": "apps/web/test/workspace-layout.fixture.ts",
+      "name": "workspaceReadKind",
+      "sha256": "916b7dc75b78dca89411fe811366993fdff70b39b8ef6eb07e404e061a72c3ea"
+    },
+    {
+      "path": "apps/web/test/workspace-layout.browser.ts",
+      "name": "observeBodyRequests",
+      "sha256": "5a30a99d1e720295ee7e68965d4edb78a8d70f664b689fd3a9ea2f10a22825ef"
+    }
+  ],
+  "passed": 12,
+  "failed": 0,
+  "cases": [
+    {
+      "name": "exact public reply, queue, global detail and task stream",
+      "state": "PASS"
+    },
+    {
+      "name": "four observed Vite queue modules ignored",
+      "state": "PASS"
+    },
+    {
+      "name": "metadata and list endpoints ignored",
+      "state": "PASS"
+    },
+    {
+      "name": "prefix and suffix near misses ignored",
+      "state": "PASS"
+    },
+    {
+      "name": "actual observer emits nothing for Vite lifecycle",
+      "state": "PASS"
+    },
+    {
+      "name": "query uses pathname and successful body lifecycle",
+      "state": "PASS"
+    },
+    {
+      "name": "unexpected real API is retained and rejected",
+      "state": "PASS"
+    },
+    {
+      "name": "duplicate expected body is retained and rejected",
+      "state": "PASS"
+    },
+    {
+      "name": "non-GET real body is retained and rejected",
+      "state": "PASS"
+    },
+    {
+      "name": "foreign origin ignored",
+      "state": "PASS"
+    },
+    {
+      "name": "task stream tracked separately from body pending",
+      "state": "PASS"
+    },
+    {
+      "name": "failed body leaves pending and close detaches all callbacks",
+      "state": "PASS"
+    }
+  ]
+}
