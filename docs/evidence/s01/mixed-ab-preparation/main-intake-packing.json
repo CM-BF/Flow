@@ -1,0 +1,813 @@
+{
+  "at": "2026-10-07T16:36:06.978Z",
+  "owner": "status_read / mika",
+  "claim": "508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE6",
+  "fixedSourceView": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+  "mainObservation": {
+    "head": "38ec8fd80a784f8afd73a342e6f06e36931d2f5a",
+    "main": "38ec8fd80a784f8afd73a342e6f06e36931d2f5a",
+    "originMain": "38ec8fd80a784f8afd73a342e6f06e36931d2f5a",
+    "dirty": false,
+    "scope": "read-only preimage; lead must refresh before applying; no conflict edits authorized here"
+  },
+  "primaryCompleteMinimalSlice": {
+    "purpose": "private standalone buffered packing/replay module and direct tests; no production PG integration or default runtime behavior",
+    "paths": [
+      {
+        "path": "experiments/runner-capacity/mixed/delivery-packing.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 3452,
+          "sha256": "7e978018743068cbbf8ed01fb7aae9ee06f33ad73d95b1cce06bb298d6ac5550"
+        },
+        "sourceCommit": "82095227e5b865139093cc325484c9885f69e805",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-independent-review.json",
+          "scope": "core820 / caller8a / packetca484, 16:02:39 preparation approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/delivery-packing.test.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 1384,
+          "sha256": "ddd7edd552d5644630ed867cd46960704b3b5b017b0be17f38c790d483bdfbf1"
+        },
+        "sourceCommit": "82095227e5b865139093cc325484c9885f69e805",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-independent-review.json",
+          "scope": "core820 / caller8a / packetca484, 16:02:39 preparation approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/delivery-replay-main.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 12578,
+          "sha256": "ab9cde53e3eb502a86718aa2c50481e86f3047427c0114ce244f10e56f1db5d8"
+        },
+        "sourceCommit": "82095227e5b865139093cc325484c9885f69e805",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-independent-review.json",
+          "scope": "core820 / caller8a / packetca484, 16:02:39 preparation approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/delivery-replay.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 8513,
+          "sha256": "10871b0ba30b929ffdedc76bea9c605dafc8bad1dea12dd96b3a569a6ff358c5"
+        },
+        "sourceCommit": "d28166e81bcdbb9fb537b40144f7be07a2539130",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-delta-source-review.json",
+          "scope": "bee336 full source except cleanupP2; d281 closes cleanupP2; dbada local/result approved14:59:26 (unique status receipt)"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/delivery-replay.test.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 6433,
+          "sha256": "3ddbecb4734eaf93fc6640bfa652c0c2a32906375d26149444727e658adc825e"
+        },
+        "sourceCommit": "d28166e81bcdbb9fb537b40144f7be07a2539130",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-delta-source-review.json",
+          "scope": "bee336 full source except cleanupP2; d281 closes cleanupP2; dbada local/result approved14:59:26 (unique status receipt)"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/pg-delivery.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 7920,
+          "sha256": "992bbeace6bd7bc205e0be7bb72dfe7fc51867ca469b6eb6c43413fa70249fb2"
+        },
+        "sourceCommit": "75e3d2a316f0796f1d1cb655a8ec9ec35a4da8ff",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-independent-review.json",
+          "scope": "15:44:49 packing11ab/source75e; 18 distinct rounds, no actual benefit approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/pg-delivery.test.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 8708,
+          "sha256": "f0b9065694d3ea840de023daa1d57bae288f5a73a211f3c4dbe33a9ed0daf774"
+        },
+        "sourceCommit": "0316465419025204d7feffc558c2c80bc9374689",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-independent-review.json",
+          "scope": "12:38:58 private module11/11+strict0 approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 6216,
+          "sha256": "88fe6ebb7c518ace5447957dbd8d08ad141da7d440fc8361406dc231a79c2ec3"
+        },
+        "sourceCommit": "75e3d2a316f0796f1d1cb655a8ec9ec35a4da8ff",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-independent-review.json",
+          "scope": "15:44:49 packing11ab/source75e; 18 distinct rounds, no actual benefit approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/pg-delivery-bridge.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 4597,
+          "sha256": "659d2322d0344c4b06377f9278870f3830abf2777d68df0a200433102885c56e"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/channel.ts",
+        "mainBefore": {
+          "bytes": 1675,
+          "sha256": "f99b9c46fb03ab785aa45d2df1d1c1ed9dda8a29751cfbf5345249d67c135830"
+        },
+        "fixedCurrent": {
+          "bytes": 1909,
+          "sha256": "736f982c6dcc3fd2bbb0253e2248c4785579dcdba44ee15c73ac25ddb3d0c24c"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "REPLACE_ONLY_IF_PREIMAGE_MATCHES",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/contract.ts",
+        "mainBefore": {
+          "bytes": 4286,
+          "sha256": "dff6dbe46e5ba15a93179a9b79ffb8c6f6e5ea403bd35a24e69f341e9c83ddb5"
+        },
+        "fixedCurrent": {
+          "bytes": 4691,
+          "sha256": "a838aef1863c9491868ff68a28d3af12474f75aa36112f1628f58db5a8bdc280"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "REPLACE_ONLY_IF_PREIMAGE_MATCHES",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/observe-pg.ts",
+        "mainBefore": {
+          "bytes": 5337,
+          "sha256": "68ea05ed95178c5973c097ebfaca9481a755f625874be253b45f02832467353e"
+        },
+        "fixedCurrent": {
+          "bytes": 6097,
+          "sha256": "88a4a2f0d2a09be795b7a8e6e5ad9ca3450d7a7902e37a0524cf769da91391b6"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "REPLACE_ONLY_IF_PREIMAGE_MATCHES",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      }
+    ]
+  },
+  "optionalHistoricalWiringClosure": {
+    "purpose": "private child/driver/current-v2 queue recipe only if Lead chooses entire local closure, do not include it accidentally with primary12",
+    "paths": [
+      {
+        "path": "experiments/runner-capacity/mixed/ab-budget.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 5081,
+          "sha256": "d4b380d4eed81bb0ea87bfecd45cbdda24c942bb1e4b4e4aecad3dbd43420e7e"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/ab-input.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 9916,
+          "sha256": "91a39c3bfa61e221c7e1e73ac90fa2a7dd7ffd2cf64435c5228b39925880d427"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/claim-observation.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 4532,
+          "sha256": "4fd2c9bc04946773080de18cea3d02ac44ae03e384b30e4d41dddb21b78dafc5"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/pg-delivery-wiring.test.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 10412,
+          "sha256": "6c653713accf2aa6ec4d0e2dd8d80452473265524dc0b7bda0b920e50b5fc62b"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/process.ts",
+        "mainBefore": {
+          "bytes": 2762,
+          "sha256": "87e1e2d959546d48409205b94e7d68926cd34614a5e6c13dfb5e24f7e06b4419"
+        },
+        "fixedCurrent": {
+          "bytes": 3137,
+          "sha256": "52fd3dd943b16cbe82cfe5e01427f9275720a65a3b2a30c6639e77c5661ff484"
+        },
+        "sourceCommit": "de6af442b03533d48e5cdca7b9d6e2bde4229f2f",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-preparation-independent-review.json",
+          "scope": "de6 source/preparation review sole environmentP2, closed375e; original input/dependency set only, no actual green"
+        },
+        "action": "REPLACE_ONLY_IF_PREIMAGE_MATCHES",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/proof.ts",
+        "mainBefore": {
+          "bytes": 12294,
+          "sha256": "40a1ca8a2a61867bd837a9cf1ffb5c9d75d56640320a58a2c62ee85154f5cdba"
+        },
+        "fixedCurrent": {
+          "bytes": 12378,
+          "sha256": "7659b1146c7da6995862ed76968b9f717eb869e798541c39ec7b7e809256a0f4"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "REPLACE_ONLY_IF_PREIMAGE_MATCHES",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/queue-chat.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 5970,
+          "sha256": "2909bcbea6b8686fdf7b829cd15b9f08499112930ed754b3be6a1173ab325ac5"
+        },
+        "sourceCommit": "f722e28678e9e9af0e631af7539e1c6f70adf7c9",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-chat-fix-independent-review.json",
+          "scope": "13:30:23 closes sole legacyDTO P2 from130; earlier unavailable history P2 closed at130"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/queue-dependencies.json",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 4477,
+          "sha256": "151de5db2b13d407a73b015df4aaf212041105556793d2c3b1e3f26ba90d9914"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/queue-journal.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 737,
+          "sha256": "47431b07d212f199699a822a34692ea19cede8d126963bd40034de651c87665a"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/queue-main.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 1032,
+          "sha256": "5e07f10fcbf5761b022d2a761d790e18e0a5893be3317b65efb87e427fba76bc"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/queue-probe.test.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 9168,
+          "sha256": "cfd4510d266af670cb527875309b828bcfae00383c183d824ac102d99b84609b"
+        },
+        "sourceCommit": "f722e28678e9e9af0e631af7539e1c6f70adf7c9",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-chat-fix-independent-review.json",
+          "scope": "13:30:23 closes sole legacyDTO P2 from130; earlier unavailable history P2 closed at130"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/queue-probe.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 903,
+          "sha256": "79c23dcd1d7d3a2051f6f994d70108b2c236a77c77d432a51f8c5f31d63138e1"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/queue-source-bindings.ts",
+        "mainBefore": null,
+        "fixedCurrent": {
+          "bytes": 988,
+          "sha256": "e148d1beff5861701e87714c2e738a7fe69f6d5b30655cacef93a11ffd11eb4c"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "ADD",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/mixed/run-identity.ts",
+        "mainBefore": {
+          "bytes": 4265,
+          "sha256": "d72047c731193540801187bf214945b74c2e080466df6c80260aafbee0f1ff04"
+        },
+        "fixedCurrent": {
+          "bytes": 5486,
+          "sha256": "7b69cd6e7cfae26747e5dc13e0dfea570f78b3559fcf18ce4367209f18e46775"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "REPLACE_ONLY_IF_PREIMAGE_MATCHES",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "experiments/runner-capacity/processes.ts",
+        "mainBefore": {
+          "bytes": 3570,
+          "sha256": "21d70ad37ae1f9672306be75b0fbecabae26c70ba165ed8bd2a03801d99b35cc"
+        },
+        "fixedCurrent": {
+          "bytes": 3570,
+          "sha256": "21d70ad37ae1f9672306be75b0fbecabae26c70ba165ed8bd2a03801d99b35cc"
+        },
+        "sourceCommit": "130c6ec855db850a817312623742cf14e8b45135",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "KEEP_MAIN",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "packages/contracts/src/assistant.ts",
+        "mainBefore": {
+          "bytes": 5785,
+          "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997"
+        },
+        "fixedCurrent": {
+          "bytes": 4054,
+          "sha256": "a43b555855966d79f1f80d4e350d4f9b4bd1264e809e07f96f934a55ee5327c3"
+        },
+        "sourceCommit": null,
+        "approvalRef": null,
+        "action": "REPLACE_ONLY_IF_PREIMAGE_MATCHES",
+        "eligible": false,
+        "unreviewed": "HOLD: no exact byte match within documented reviewed source manifest; inherited bytes alone are not approval."
+      },
+      {
+        "path": "packages/contracts/src/attachments.ts",
+        "mainBefore": {
+          "bytes": 8422,
+          "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93"
+        },
+        "fixedCurrent": {
+          "bytes": 8422,
+          "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93"
+        },
+        "sourceCommit": "38ec8fd80a784f8afd73a342e6f06e36931d2f5a",
+        "approvalRef": null,
+        "action": "KEEP_MAIN",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": "UNCHANGED_MAIN"
+      },
+      {
+        "path": "packages/contracts/src/conversation-context.ts",
+        "mainBefore": {
+          "bytes": 9794,
+          "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+        },
+        "fixedCurrent": {
+          "bytes": 9794,
+          "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+        },
+        "sourceCommit": "38ec8fd80a784f8afd73a342e6f06e36931d2f5a",
+        "approvalRef": null,
+        "action": "KEEP_MAIN",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": "UNCHANGED_MAIN"
+      },
+      {
+        "path": "packages/contracts/src/conversations.ts",
+        "mainBefore": {
+          "bytes": 7382,
+          "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a"
+        },
+        "fixedCurrent": {
+          "bytes": 6138,
+          "sha256": "96d0400080e16733956daecdb5940f6667c746ba8d3186982ca3e21feea1f705"
+        },
+        "sourceCommit": "f722e28678e9e9af0e631af7539e1c6f70adf7c9",
+        "approvalRef": {
+          "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+          "path": "docs/evidence/s01/mixed-ab-preparation/queue-chat-fix-independent-review.json",
+          "scope": "130 review sole queue-chat P2; f722 closes it. Includes b846 history P2 CLOSED, not blanket original b846 approval"
+        },
+        "action": "REPLACE_ONLY_IF_PREIMAGE_MATCHES",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": true
+      },
+      {
+        "path": "packages/contracts/src/engineering-profile.ts",
+        "mainBefore": {
+          "bytes": 2271,
+          "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+        },
+        "fixedCurrent": {
+          "bytes": 2271,
+          "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+        },
+        "sourceCommit": "38ec8fd80a784f8afd73a342e6f06e36931d2f5a",
+        "approvalRef": null,
+        "action": "KEEP_MAIN",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": "UNCHANGED_MAIN"
+      },
+      {
+        "path": "packages/contracts/src/engineering.ts",
+        "mainBefore": {
+          "bytes": 5378,
+          "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+        },
+        "fixedCurrent": {
+          "bytes": 5378,
+          "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+        },
+        "sourceCommit": "38ec8fd80a784f8afd73a342e6f06e36931d2f5a",
+        "approvalRef": null,
+        "action": "KEEP_MAIN",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": "UNCHANGED_MAIN"
+      },
+      {
+        "path": "packages/contracts/src/execution-profiles.ts",
+        "mainBefore": {
+          "bytes": 15006,
+          "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7"
+        },
+        "fixedCurrent": {
+          "bytes": 9174,
+          "sha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204"
+        },
+        "sourceCommit": null,
+        "approvalRef": null,
+        "action": "REPLACE_ONLY_IF_PREIMAGE_MATCHES",
+        "eligible": false,
+        "unreviewed": "HOLD: no exact byte match within documented reviewed source manifest; inherited bytes alone are not approval."
+      },
+      {
+        "path": "packages/contracts/src/harnesses.ts",
+        "mainBefore": {
+          "bytes": 837,
+          "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1"
+        },
+        "fixedCurrent": {
+          "bytes": 837,
+          "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1"
+        },
+        "sourceCommit": "38ec8fd80a784f8afd73a342e6f06e36931d2f5a",
+        "approvalRef": null,
+        "action": "KEEP_MAIN",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": "UNCHANGED_MAIN"
+      },
+      {
+        "path": "packages/contracts/src/knowledge.ts",
+        "mainBefore": {
+          "bytes": 4414,
+          "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+        },
+        "fixedCurrent": {
+          "bytes": 4414,
+          "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+        },
+        "sourceCommit": "38ec8fd80a784f8afd73a342e6f06e36931d2f5a",
+        "approvalRef": null,
+        "action": "KEEP_MAIN",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": "UNCHANGED_MAIN"
+      },
+      {
+        "path": "packages/contracts/src/protocol-task.ts",
+        "mainBefore": {
+          "bytes": 211,
+          "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20"
+        },
+        "fixedCurrent": {
+          "bytes": 211,
+          "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20"
+        },
+        "sourceCommit": "38ec8fd80a784f8afd73a342e6f06e36931d2f5a",
+        "approvalRef": null,
+        "action": "KEEP_MAIN",
+        "eligible": true,
+        "unreviewed": null,
+        "reviewedManifestMembership": "UNCHANGED_MAIN"
+      },
+      {
+        "path": "packages/contracts/src/tasks.ts",
+        "mainBefore": {
+          "bytes": 6390,
+          "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087"
+        },
+        "fixedCurrent": {
+          "bytes": 5369,
+          "sha256": "6e30e7fc7c3f6852911d42b58c2db3960868f13f6d80b11b0e9abd3ee0e393be"
+        },
+        "sourceCommit": null,
+        "approvalRef": null,
+        "action": "REPLACE_ONLY_IF_PREIMAGE_MATCHES",
+        "eligible": false,
+        "unreviewed": "HOLD: no exact byte match within documented reviewed source manifest; inherited bytes alone are not approval."
+      }
+    ],
+    "limitations": "O1 actual FAIL/O2 NOT_RUN; final queue verification/cancel assertions incomplete; all legacy KEEP preserved. File availability is not performance acceptance or permission to run historical operator."
+  },
+  "reviewChain": [
+    {
+      "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-result-ready.md",
+      "purpose": "single actual accepted result canonical"
+    },
+    {
+      "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-result-independent-review.json",
+      "purpose": "16:18:22 result fidelity only"
+    },
+    {
+      "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-result-manifest.json",
+      "purpose": "8 bindings with raw referenced at dfb2105; no copying old raw"
+    },
+    {
+      "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-independent-review.json",
+      "purpose": "16:02:39 ABBA source/preparation"
+    },
+    {
+      "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-independent-review.json",
+      "purpose": "packing product/source review"
+    },
+    {
+      "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-delivery-independent-review.json",
+      "purpose": "original module approval"
+    },
+    {
+      "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+      "path": "docs/evidence/s01/mixed-ab-preparation/pg-wiring-independent-review.json",
+      "purpose": "historical wiring P2, closure chain required"
+    },
+    {
+      "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-independent-review.json",
+      "purpose": "history P2 closed/legacyDTO P2"
+    },
+    {
+      "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-chat-fix-independent-review.json",
+      "purpose": "legacyDTO P2 closed"
+    },
+    {
+      "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-source-review-v1.json",
+      "purpose": "original cleanup P2"
+    },
+    {
+      "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-delta-source-review.json",
+      "purpose": "cleanup P2 closed"
+    },
+    {
+      "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-replay-local-result-manifest.json",
+      "purpose": "dbada three local result bindings"
+    },
+    {
+      "commit": "da0cd765e83b559a6b1d31b09d9ac46571e0e708",
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-operator-env-source-review.json",
+      "purpose": "375e caller env/deadline approval"
+    }
+  ],
+  "historicalCallerReferences": [
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/delivery-packing-operator.py",
+      "source": "8a933df2e71e03aa3e9525649877794777ebdec4",
+      "review": "delivery-packing-independent-review.json",
+      "handling": "retain fixed Git reference; WT hard-pinned operator, not runnable main default; no new window or input rebind"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-operator.py",
+      "source": "375ecccc427acf59d687153903bd032fb6e684bc",
+      "review": "queue-operator-env-source-review.json",
+      "handling": "historical failedO1 operator, reference only; do not copy fixed production675/SQL33/input119closure"
+    }
+  ],
+  "evidenceHandling": "Retain repository fixed Git commit:path references. Do not duplicate93closure, oldcompiled directories, 43MB observations or58MBAB raw; Lead may copy only small receipts/manifest/canonical if required by accepted registry policy. Main evidence reference does not authorize execute.",
+  "consumerGuidance": "Lead applies exact leaves against main before hashes, preserves unrelated shared main. Necessary combination types/direct tests chosen by actual delta; do not rerun ABBA/old18/oldPG just for metadata. Existing main helpers in optional list are KEEP, not replacements. Any unreviewed changed leaf is HOLD pending separate source review.",
+  "state": "READY_FOR_CONTROLLED_MAIN_INTAKE_NOT_INTEGRATED",
+  "scopeBoundary": "No source change/test/PG/import/main write in this metadata handoff.",
+  "metadataBudget": {
+    "priorRetainedFullChangedPathBytes": 129840,
+    "thisIntakeAllowanceBytes": 131072,
+    "tmpReservationBytes": 2097152,
+    "rawReservationBytes": 131072,
+    "conservativeTotalBytes": 2489136,
+    "originalActualCapBytes": 8388608,
+    "note": "Recomputed once; no additional global cleanup reserve; old source/trace not copied."
+  }
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T16:26:41.893Z |
+| 最近更新 | 2026-10-07T16:36:06.978Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -22,11 +22,11 @@
 | 实现目标 | 8a933df2e71e03aa3e9525649877794777ebdec4 |
 | 实现范围 | experiments/runner-capacity/mixed/delivery-replay-main.ts, experiments/runner-capacity/mixed/delivery-packing.ts, experiments/runner-capacity/mixed/delivery-packing.test.ts, docs/evidence/s01/mixed-ab-preparation/delivery-packing-operator.py, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 4 |
-| 当前产出 | 同轨迹四侧打包对照及独立结果审查已完成；新版在这两次观察中减少打包耗时和测量区间CPU，原容量目标仍未完成。 |
-| 下一可用交付 | 本片段已交付；原容量、ACK和取消验收按证据继续协调，暂停队列扫描由另一个已登记owner推进。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 已审观察打包模块、接线与局部对照已整理成精确主线接收清单；不覆盖无关主线或复制完整历史输入。 |
+| 下一可用交付 | 由Execution Lead按固定前像接收最小独立闭包，并返回真实主线收据。 |
+| 当前阻塞 | ACTIVE: 等待主线按唯一清单接收；本分支源码仍为私有实验，不表示容量验收完成。 |
 | 需用户决定 | NONE |
 | Review | APPROVED 8a933df2e71e03aa3e9525649877794777ebdec4准备；db 2026-10-07T16:18:22Z对结果dfb2105ba6e4f3eaa4512d13b58bb0bead7c04ec RESULT_FIDELITY_REVIEW_APPROVED/0P1P2。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T16:26:41.893Z fresh本人/WT/branch一致；本metadata提交后STOP，保留原claim。 |
@@ -314,3 +314,7 @@ db16:18:22Z RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，绑定dfb2105ba6e4f3eaa4512d
 本段16:25:43Z起，fresh原claimv3/6及dfb=origin clean；0工程child/actual/PG，只有metadata≤64KiB。原8MiB累计重算保守2417692B（全变文件全长123932B+TMP2MiB/raw128KiB+本64KiB收尾），不追加第二cleanupreserve。复用find-skills/codebase-design/clean-code核固定来源、职责与计量边界。唯一status供dashboard读取，本段未GET/不冒新同步；M2/taskstartUNKNOWN/mainNOT_INTEGRATED/开放TODO原样。
 
 暂停队列扫描仅关联root协调的S01Q01、owner b01、[独立权威树](/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan)，仍source-only、产品和实际PG未完成，不改其status、不纳本S01完成。
+
+## 2026-10-07T16:36:06.978Z 精确主线intake交接
+
+[唯一MAIN_INTAKE](../../docs/evidence/s01/mixed-ab-preparation/MAIN_INTAKE.md)及其JSON逐leaf核freshmain 38ec8fd80a784f8afd73a342e6f06e36931d2f5a 前像与固定已审source，primary12leaf可独立接收；可选旧driver/queue闭包单列，缺source批准者HOLD，不以actual结果审覆盖。旧raw/input/compiled不复制不改；0工程/actual/PG/import或主线写入。当前仍NOT_INTEGRATED，待正式mainreceipt。预算沿原actual8MiB剩余额度，新增metadata≤128KiB，不新增reserve。原完整容量TODO/UNKNOWN及S01Q01跨owner边界保持。
