@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T02:51:38.985024+00:00",
+  "mainBefore": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+  "operator": "astra_ultra_execution_lead",
+  "packs": [
+    {
+      "task": "OPS14",
+      "approvedDelivery": "de0d539ba89407bf063717fd9ff20d195a0392aa",
+      "preimage": "47e2508a17fc995fc69ba59d3b01492c5f9adbdb",
+      "files": 25,
+      "bytes": 69679,
+      "allPreimagesMatch": true,
+      "allTargetBytesMatch": true,
+      "orderedPathContentDigest": "c7409e46feaeb9a19fec2b7c700240d61a2b0bafaebd256962586894c6f5f791"
+    },
+    {
+      "task": "SVC05H",
+      "approvedDelivery": "4ff4efa35d5166ee1bc888246bca904eae8aeae2",
+      "preimage": "398d4f8cd97ced028f9a0aa746dc163949e37832",
+      "files": 25,
+      "bytes": 127285,
+      "allPreimagesMatch": true,
+      "allTargetBytesMatch": true,
+      "orderedPathContentDigest": "cf45e826211f985ad32656dc409aa39311d063da498254ae5f1ffa5b773419a9"
+    }
+  ],
+  "review": "OPS14 existing fixed independent source/result approvals; SVC05H native_center_owner preparation and actual result approval. Final metadata delta read; no widened claim.",
+  "validation": "Exact fixed blobs and preimages only; no new tests/PG/provider/service. supervisor implementation and wrappers unchanged.",
+  "personal": "af51 / d629 v3 same-version Web recovery, not product upgrade/root-cause fix",
+  "temporaryPyc": "Author confirmed own finished supervision import; exact 23232B regular pyc removed; no other paths touched"
+}

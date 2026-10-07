@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07 02:47:57 UTC |
+| 最近更新时间 | 2026-10-07 02:55:16 UTC |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Plan | [plan.md](plan.md) |
@@ -10,21 +10,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility |
 | Branch | codex/personal-history-compatibility |
 | 工作基线 / HEAD | 3a263677db28e92f28622917eef70edb0f260f85 / 准备246db0d4beb277a14bc61816999308d6cf1ecfe7；本次结果metadata以本文件提交为准 |
-| 工作树dirty状态 | 本次仅原两scope操作记录收口；提交后全停写，源码与旧raw不改 |
+| 工作树dirty状态 | 本次main接收metadata收口；提交后全停写并release，无后续服务动作 |
 | 工作分支状态 | completed |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 检查状态 | PASSED 246db0d4beb277a14bc61816999308d6cf1ecfe7；一次bootstrap exit0/968ms，14后置检查全true；独立结果限定批准，无产品重测 |
-| 已集成main状态 / HEAD | 已接收 2af8639ddfa66252ecf97fd6921eaab40389020d；后继 78fb37704d708e3b3b6ea4f1810947f012666196 两个完整own范围对cef5逐文件零差；[最终接收](../../docs/evidence/svc05-history-compatibility/final-main-receipt.json)；本次af51恢复记录已精确接收 main 122bdcaa790118154f8288c12ef6627da5e616b8，[接收回执](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/main-receipt.json) ；本次d629网页恢复记录待main接收 |
+| 已集成main状态 / HEAD | 已接收 2af8639ddfa66252ecf97fd6921eaab40389020d；后继 78fb37704d708e3b3b6ea4f1810947f012666196 两个完整own范围对cef5逐文件零差；[最终接收](../../docs/evidence/svc05-history-compatibility/final-main-receipt.json)；本次af51恢复记录已精确接收 main 122bdcaa790118154f8288c12ef6627da5e616b8，[接收回执](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/main-receipt.json) ；本次d629网页恢复记录25文件逐字接收 18144593a0f210e8d5b9b2c08f4ff62259c07cf5；[回执](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/main-receipt.json) |
 | 实现目标 | 246db0d4beb277a14bc61816999308d6cf1ecfe7 |
 | 实现范围 | docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/proposal.json, docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/request.json, docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/runtime-bindings.json |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 网页访问已恢复，后台、会话数据、配置和当前页面版本保持不变。 |
-| 下一可用交付 | 恢复记录已获独立核验，等待纳入主线；本次无后续服务操作。 |
+| 当前产出 | 网页访问已恢复，后台、会话数据、配置和当前页面版本保持不变；恢复记录已纳入主线。 |
+| 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | APPROVED_LIMITED_SAME_VERSION_RECOVERY_RESULT；native_center_owner已核本次run原始记录，准备target246db0d4beb277a14bc61816999308d6cf1ecfe7；无P1/P2 |
-| Claim | 967126c0-bbcf-4107-a91c-2d5564417cd7 v1 active，仅own plan与新web-recovery-d629-20261007；旧22000abe v2已release |
+| Claim | 967126c0-bbcf-4107-a91c-2d5564417cd7 v1；本owner全部停写，提交push后正式release，外部receipt /tmp/flow-svc05h-d629-release-receipt.json |
 | 架构影响 | 无产品模块/协议变更；复用固定af51 bootstrap及已审OPS14监督，仅恢复同版本Web进程。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -36,7 +36,7 @@
 | SVC05H01-05 | completed | assignment_review / Execution Lead独审 | 实际af51/v18+d629/v3；[唯一结果APPROVED](../../docs/evidence/svc05-history-compatibility/intent-retirement/retirement-release-independent-review.json)，24命令/25检查/64表保护/27迁移/三retained；原失败与unknown保留 |
 | SVC05H01-06 | completed | assignment_review | 一次ready/8组保留true；Lead独立比对64表并关闭窗口，原期限P2已关闭 |
 | SVC05H01-07 | completed | assignment_review | [实际恢复独立批准](../../docs/evidence/svc05-history-compatibility/center-recovery-af51/operation-independent-review.json)，一次center ready、64表原摘要相同；窗口CLOSED，记录已main接收。 |
-| SVC05H01-08 | in-progress | assignment_review | 实际恢复与独审完成，记录待main；[结果及边界](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/operation-analysis.json) |
+| SVC05H01-08 | completed | assignment_review | 一次实际恢复+独审+main25文件同blob；[main回执](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/main-receipt.json) |
 
 ## Dashboard
 
@@ -135,3 +135,5 @@ GO经Lead已批准a7d提案1–5；当前实现/局部证明而非个人执行�
 02:38:44实采确认访问故障；02:45:02–02:45:03唯一bootstrap exit0/968ms；02:45:34后置14项全true，首页200/950B、identity200且d629/v3。旧99351组absent、匹配nonce的exit1保持；新27112→27144 owned/listening。center/runner、配置/profile/maintenance/pointer/retained及所观察DB元数据不变，不冒64表重采或根因修复。native_center_owner仅核已保存记录并限定APPROVED，0新probe。Lead于02:45:52恢复root clean main943a，窗口关闭；本次metadata交付时间为本段标题，记录待main，完整FLOW目标不勾完。
 
 [原始run](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/run-20261007T024419Z/cli-checkpoint.json)、[唯一结果独审](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/operation-independent-review.json)、[CLOSED回执](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/source-window-closed.json)。本次clean-code安全复核仅检查命名、证据单源、错误/unknown与历史边界；无产品改动/新增测试。
+
+2026-10-07 02:55:16 UTC：固定main `18144593a0f210e8d5b9b2c08f4ff62259c07cf5` 已精确接收交付 `4ff4efa35d5166ee1bc888246bca904eae8aeae2` 的新恢复目录及plan三件套，共25文件逐blob相同。08本恢复片段已交付；完整FLOW目标不扩大。仅Git/既有receipt核验，无个人probe/产品测试；提交后释放原claim，全停写。

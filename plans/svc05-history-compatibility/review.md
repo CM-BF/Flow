@@ -173,3 +173,7 @@ native_center_owner 独立 APPROVED_PREPARATION_ONLY `246db0d4beb277a14bc6181699
 Reviewer native_center_owner；准备target `246db0d4beb277a14bc61816999308d6cf1ecfe7`，运行 `run-20261007T024419Z`。原件[结果review](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/operation-independent-review.json)，SHA256 `ad5ba1e9117a3ea7f993c9f4e6003b4a5f797144f0dd8be064fdf38cbc76d043`；9份run原始文件绑定全匹配。一次CLI exit0/968ms/1379B/双EOF/operator absent，14后置检查全true，首页与identity200，旧组absent、新Webowned/listener。配置/后台runner/source/完整release tuple/DB元数据保持。无P1/P2，reviewer未新probe或执行。
 
 旧Web匹配nonce exit1仍原样；未证明原socket根因、未操作用户tab，不扩到浏览器功能或整个FLOW验收。Lead单独关闭源窗口并恢复main943a；[操作manifest](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/operation-manifest.json)封存原始结果与独审，当前只待记录main接收。
+
+## 2026-10-07 02:55:16 UTC：d629恢复记录main接收
+
+仅记录受控main `18144593a0f210e8d5b9b2c08f4ff62259c07cf5` 对交付 `4ff4efa35d5166ee1bc888246bca904eae8aeae2` 的25文件全同；[回执](../../docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/main-receipt.json)。原native唯一独立批准范围、原exit1/unknown不变；本owner未重跑任何检查或读取个人状态。提交后原claim正式释放，无后继个人动作。
