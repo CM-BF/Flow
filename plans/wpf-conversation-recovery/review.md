@@ -2,7 +2,7 @@
 
 状态：IN_PROGRESS。55b两P2源码修复/定向4case与类型证据已独审接受，connection-choice实际2/2及owned清理已独立限定接受；不是整个feature批准。
 
-Review target commit：`55b4917e732d11d5e5f660f9c22a1022d7094015`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
+Review target commit：`67f8fd25a129ef5c8882f07e54de87e20ed24429`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
 
 固定完整变更/修复/实证入口：[feature-review-entry.md](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)，19源/base/pins明确；当前root审查进行中，不是作者自评。
 
@@ -203,3 +203,11 @@ Root已开始固定0141相对base84005完整差异审查；当前有连接选择
 固定55b/执行0a661，[原件](../../docs/evidence/wpf-conversation-recovery/continuous-second-validation.md)2/2 selected PASS、actualexit0/双EOF/owned清理完整，等待root本次独立实际审查；不把作者结果当整体feature批准。旧0141 full7、两P2源/local限定复审与所有FAIL保持原绑定，未重跑旧绿。
 
 2026-10-07 06:26:09 UTC Root独立[实际证据审](../../docs/evidence/wpf-conversation-recovery/continuous-second-root-review.json)接受本轮selected2/2与owned清理，0新增finding；SELECTING源码+真实定向验收addressed，STEERING-TIMEOUT仍为已审4受控case，不冒真实Steer HTTP。完整feature IN_PROGRESS/main未接，原full7/五FAIL继续原绑定。
+
+## 2026-10-07 06:29:15 UTC — 新三journey作者实施中
+
+原55b两P2与choice限定接受保持；本次仅新增CREATE A/B、Queue入队恢复真实UI验收源码，完整review IN_PROGRESS，新增journey NOT_RUN，待固定delta独审。
+
+## 2026-10-07 06:36:20 UTC — CREATE/Queue三条补验候选
+
+固定`67f8fd25a129ef5c8882f07e54de87e20ed24429`只browser改变/18源及父监督不变，[checkpoint](../../docs/evidence/wpf-conversation-recovery/create-queue-checkpoint.json)。noEmit0/新增选择33实际PASS仅验证本地选择及类型；三真实场景NOT_RUN，完整review IN_PROGRESS；原55b/0141及其actual接受不回写成本目标全通过。本次delta独审PENDING。

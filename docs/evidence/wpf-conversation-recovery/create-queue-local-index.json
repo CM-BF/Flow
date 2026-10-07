@@ -1,0 +1,68 @@
+{
+  "limitMs": 30000,
+  "spentMs": 5828.643000102602,
+  "attempts": [
+    {
+      "kind": "types",
+      "at": "2026-10-07T06:34:19.219137+00:00",
+      "sourceSha256": "fab9588f259b73c335de7eb559b8724b400a28ef617d680666b57e33f740f5d3",
+      "initialFreeBytes": 24393109504,
+      "networkDenied": true,
+      "pid": 32275,
+      "actualExit": 0,
+      "elapsedMs": 5613.436458050273,
+      "ownedGroupAbsent": true,
+      "errors": [],
+      "tmpBytes": 2767,
+      "zeroServices": true
+    },
+    {
+      "kind": "selection",
+      "at": "2026-10-07T06:34:24.833233+00:00",
+      "sourceSha256": "fab9588f259b73c335de7eb559b8724b400a28ef617d680666b57e33f740f5d3",
+      "initialFreeBytes": 24393109504,
+      "networkDenied": true,
+      "pid": 33757,
+      "actualExit": 0,
+      "elapsedMs": 215.2065420523286,
+      "ownedGroupAbsent": true,
+      "errors": [],
+      "tmpBytes": 3508,
+      "zeroServices": true
+    }
+  ],
+  "remainingMs": 24171.356999897398,
+  "conservativeChargeMs": 5829,
+  "source": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
+  "browserSha256": "fab9588f259b73c335de7eb559b8724b400a28ef617d680666b57e33f740f5d3",
+  "scope": "Affected noEmit and 33 new selection assertions only; no prior50/119, product imports, HTTP, PG, Chrome or provider",
+  "commands": [
+    [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/recovery-create-queue-local-9r5hjm63/sandbox.sb",
+      "/opt/homebrew/opt/node@24/bin/node",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/typescript/lib/tsc.js",
+      "--noEmit",
+      "-p",
+      "apps/web/tsconfig.json"
+    ],
+    [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/recovery-create-queue-local-9r5hjm63/sandbox.sb",
+      "/opt/homebrew/opt/node@24/bin/node",
+      "/private/tmp/recovery-create-queue-local-9r5hjm63/selection.cjs",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/typescript/lib/typescript.js",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.browser.ts"
+    ]
+  ],
+  "limits": {
+    "perAttemptTotalMs": 15000,
+    "workMs": 10000,
+    "cleanupReserveMs": 5000,
+    "tmpBytes": 16777216,
+    "retainedBytes": 1048576
+  },
+  "cleanup": "Each owned Node reaped, group ESRCH; no cache or service created; small raw retained. File-backed stdout/stderr drained by process exit, no pipe EOF claim."
+}

@@ -172,3 +172,11 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ## 2026-10-07 06:25:21 UTC — 原03/05/06 connection-choice 验收进展
 
 [真实两组验证](../../docs/evidence/wpf-conversation-recovery/continuous-second-validation.md)通过背景read与用户选择意图区分，原稿保留/显式返回、0业务POST；当前只为55b两P2补真实App回归，不勾选尚缺CREATE/QueueSteer/SSEdelivery/二中心的完整TODO。新150s段累计24589、余125411，后继按已有有限段与实际输入安排，不复用gate。
+
+## 2026-10-07 06:29:15 UTC — 原02/05三独立恢复场景
+
+沿已批准方案补CREATE A/B与Queue enqueue，每个attempt独立原markedDB/context/cookie。full7/choice不重跑；原key/body/revision/identity和下一稿保持、不自动POST、真实ACK截断证据不放宽。只选一种journey，parent与cleanup不变。当前实现/NOT_RUN，不提前勾选TODO或扩大功能批准。
+
+## 2026-10-07 06:36:20 UTC — 原02/05补验源码固定
+
+三例已固定`67f8fd25a129ef5c8882f07e54de87e20ed24429`，详[限定验收表](../../docs/evidence/wpf-conversation-recovery/create-queue-validation.md)。Queue公开enqueue与promotion/Steer前提分开；三场景各cookieRead+一原身份恢复组，先create-ack-loss，再created-turn-ack-loss，再queue-ack-loss，各自新attempt，不将三个合进旧full7或用partial绿替代。noEmit/33选择实证不等真实UI运行；下一单次仍由fresh资源/claim/source/admin/gate绑定，原browser段spent24589/rem125411。本次新local实际5828.643ms/30s，不挪历史预算。
