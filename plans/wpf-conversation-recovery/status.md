@@ -2,7 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 03:30:53 UTC |
+| 最近更新 | 2026-10-07 04:45:38 UTC |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,7 +13,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段browser checkpoint 9835e7488dd9b0b44b3afbc285336defdd739e98；其他18源=8ed；metadata HEAD以Git为准 |
-| 工作树dirty状态 | 19源仍固定9835；本段仅归档既有实际序列化证据，metadata后normalpush核clean |
+| 工作树dirty状态 | 19源仍固定9835；本段仅任务时间字段和C02只读接缝记录，normalpush后核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
@@ -24,7 +27,7 @@
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，NOT_STARTED |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21scope；本次03:30:04.633Z本人经安全CLI窄核active/原21/owner/WT/branch/version；仅既有实证metadata收口，非新运行许可 |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21scope；本次2026-10-07T04:41:48.929532Z本人经安全CLI窄核active/原21/owner/WT/branch/version、overlap=[]；仅时间元数据及C02只读接缝，非新运行许可 |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -255,3 +258,9 @@ Root于2026-10-06T21:13:25.405734+00:00对固定 `8ed2741327779e57d717653d10c218
 管理者在03:03:09.803532Z→03:03:10.126732Z已实际运行原受审packet，execution79fe/source9835；[全部原件](../../docs/evidence/wpf-conversation-recovery/serialization-check/archive.json)现在按唯一owner事实源归档，本次未重跑。旧匿名value回调经实际已装TSX/esbuild转换后在无helper的VM产生预期__name ReferenceError；新method回调十项全PASS（this/args/return、target-only readwrite deferred abort、原error/无全局helper/restore）。actualexit0、外层323.2180839404464ms，父早281.10858309082687ms与终态晚281.615ms分列；双EOF/丢弃0/ownedgroup与scratch清理齐。
 
 [Root限定实际审查](../../docs/evidence/wpf-conversation-recovery/serialization-check/root-web-local-segment-20261007-review.json)和准备/9835源审原件逐字归档。只是实际转译+隔离VM中受控IDB，不是nativeIDB/Playwright或完整App旅程。第三次真实browserFAIL和全部旧raw不变，晚累计38364.050667ms/余51635.949333ms（下次整数最多51635含15000清理）保持，无新准入；50/types未重跑。19源码逐字等9835，完整feature targetUNKNOWN/reviewNOT_STARTED/main未接。
+
+## 2026-10-07 04:45:38 UTC — 任务时间与C02只读消费接缝
+
+顶层任务开工UNKNOWN/完成NOT_COMPLETED，历史计划创建和领取时间不冒实际开工。按当前main `bb99223ad73690a25b0ebb251d69cd6d770a2a21` 的 [own-status-parse](/Users/citrine/Projects/AgentHarness/Flow/docs/quality/local-validation.md#own-status-parse) 只核本status；结果见[解析记录](../../docs/evidence/wpf-conversation-recovery/timing-c02-status-parse.json)。UNKNOWN时间提示须如实保留。
+
+[固定C02接缝](../../docs/evidence/wpf-conversation-recovery/c02-stream-consumer-seams.md)：三个App client仍v1；Web host.ts和共享projection也有v1门禁，不能仅改HTTP头；messages.ts需保公开source/channel并复用既有reasoning renderer。C02 source review尚待，host/messages及五个既有专测入口均需后继精确写权；本批未改产品/共享、未运行测试或浏览器。原19源、所有失败/raw、50与十项转译实证不变；晚累计38364.050667ms，余最多51635ms含15000cleanup。完整targetUNKNOWN/reviewNOT_STARTED，不等待或宣称新的ACCESS主线/部署回执。

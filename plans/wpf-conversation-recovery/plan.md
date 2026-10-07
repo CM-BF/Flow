@@ -134,3 +134,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ## 2026-10-07 02:20:08 UTC — -05原注入脚本窄修
 
 保持所有原旅程，修page.evaluate序列化闭包外helper接缝；不通过全局helper/删除断言避错。仅原browser与own记录，局部检查和下一浏览器许可分开。
+
+## 2026-10-07 04:45:38 UTC — 原-03/-05/-06只读依赖更新
+
+[固定C02消费接缝](../../docs/evidence/wpf-conversation-recovery/c02-stream-consumer-seams.md)记录未来patch-v2输入、三处App client与host/shared gate一致性、公开reasoning独立呈现和精确后继路径。仍是原计划依赖研究，不新增task/实现/claim；现21之外的host.ts/messages.ts和既有stream专测须后继明确交权，C02共享源码由其owner闭合并独审。当前Recovery验收/预算不缩减或重置。任务首次实际开工缺可靠历史事件，status为UNKNOWN；未完成，不从领取/commit推算。

@@ -1,0 +1,75 @@
+{
+  "kind": "OWN_STATUS_METADATA_PARSE_ONLY",
+  "startedAt": "2026-10-07T04:46:27.156078+00:00",
+  "fixedParserMain": "bb99223ad73690a25b0ebb251d69cd6d770a2a21",
+  "recipe": "docs/quality/local-validation.md#own-status-parse",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--input-type=module",
+    "-",
+    "WPF-RECOVERY01",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+  "exitCode": 0,
+  "elapsedMs": 45.656709000468254,
+  "statusSha256": "06cbb191b81aaced5c099bcfe3b81a462ea19b4d8e9d4985c64c292ff92605cb",
+  "sourcePins": [
+    {
+      "path": "docs/quality/local-validation.md",
+      "sha256": "b0f90beab89a116be2c1f3221036617f23450c971f82dc18bd663beb5e5cf17e"
+    },
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+    },
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074"
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4"
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8"
+    }
+  ],
+  "result": {
+    "taskId": "WPF-RECOVERY01",
+    "errors": [],
+    "humanMissing": [],
+    "timingIssues": [
+      "任务开工时间未记录"
+    ],
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)",
+        "id": "WPF-MATURE-06",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root（执行管理 d01_owner）",
+        "value": "Web /root（执行管理 d01_owner）"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    }
+  },
+  "preflightNote": "Earlier a040 recipe pin differed after main advanced; assertion stopped before Node import/execution. Re-read fixed bb99223 recipe, exact parser source unchanged; only this single metadata parse ran.",
+  "timingExplanation": "任务开工UNKNOWN：原计划创建和claim不是明确首次工作事件；任务完成NOT_COMPLETED：完整验收未完成。未知提示不以猜测日期消除。",
+  "doesNotValidate": [
+    "C02产品接入",
+    "真实IDB/browser",
+    "main integration",
+    "deployment"
+  ]
+}
