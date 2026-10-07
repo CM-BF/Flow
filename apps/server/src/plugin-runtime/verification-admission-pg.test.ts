@@ -275,7 +275,7 @@ describe.sequential('VAR real transaction', () => {
       checkWork(); const changed = await changeProject(pool, project, { expectedRevision: current.project.revision, reason: 'Controlled graph capacity', change: { kind: 'add-node', title: 'Unbound capacity node', taskId: null, parent: null } }, randomUUID()); current = changed.snapshot;
     }
     const input = await admissionInput(), before = await creationState();
-    await expect(admit(input)).rejects.toMatchObject({ status: 409 });
+    await expect(admit(input)).rejects.toMatchObject({ status: 409, code: 'project_limit' });
     expect(await creationState()).toEqual(before); expect(await taskState(source.taskId)).toEqual(sourceBefore);
     facts.push({ kind: 'five-domain-cases', publicVerifierMount: false, workerInvocation: false }); await fixture.stage('work-complete');
   });
