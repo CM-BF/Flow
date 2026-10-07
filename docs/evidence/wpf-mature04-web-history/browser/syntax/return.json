@@ -1,0 +1,33 @@
+{
+  "observedAt": "2026-10-07T23:20:15.269129+00:00",
+  "identities": [
+    {
+      "kind": "pid",
+      "id": 34112,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 34112,
+      "state": "ESRCH"
+    }
+  ],
+  "scratchAbsent": true,
+  "chargeMs": 315,
+  "limitMs": 10000,
+  "state": "CLOSED",
+  "streams": {
+    "stdout": {
+      "eof": true,
+      "bytes": 71,
+      "dropped": 0
+    },
+    "stderr": {
+      "eof": true,
+      "bytes": 0,
+      "dropped": 0
+    }
+  },
+  "parentExit": 0,
+  "scope": "SYNTAX_ONLY_NOT_TYPES_OR_PRODUCT_IMPORT"
+}

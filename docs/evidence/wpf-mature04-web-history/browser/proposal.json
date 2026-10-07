@@ -1,0 +1,72 @@
+{
+  "state": "SOURCE_PREPARED_REVIEW_PENDING_NO_RUNTIME_GRANT",
+  "task": "MATURE04-05",
+  "testSource": "ffd73503e32907663dbc0e91d14fe2cd03cf76ba",
+  "productionSource": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+  "groups": [
+    "cookie-no-task",
+    "decoded-read-states",
+    "lazy-detail",
+    "close-late-read",
+    "task-and-visibility",
+    "plugin-revoke",
+    "themes-keyboard",
+    "authority-revoke"
+  ],
+  "png": [
+    "light-390.png",
+    "dark-390.png"
+  ],
+  "totalMs": 90000,
+  "workMs": 60000,
+  "cleanupMs": 30000,
+  "budgetMsAlreadyUsed": 0,
+  "processes": {
+    "pythonOuter": 1,
+    "nodeParent": 1,
+    "nodeWorkerGroup": 1,
+    "ownedChromeGroup": 1,
+    "httpListeners": 2,
+    "markedDatabases": 1,
+    "configuredPGConservative": 13,
+    "availablePGReserve": 16,
+    "providerCalls": 0
+  },
+  "storageBytes": {
+    "scratchCap": 67108864,
+    "databaseWalPlanning": 134217728,
+    "retainedEvidenceCap": 9437184,
+    "outerStreamsCap": 262144,
+    "metadataPlanning": 1048576,
+    "proposalPeakSum": 212074496
+  },
+  "storageNote": "Parent 9MiB evidence cap counts existing browser preparation archives and actual inner evidence; outer streams 256KiB independently bounded. DB WAL planning is not proof of observed allocation. No runtime floor sampled or grant inferred. Future full canonical sum required.",
+  "entry": [
+    "python3",
+    "/private/tmp/context-history-browser-20261007/capture.py",
+    "--gate",
+    "<fresh task-bound gate>",
+    "--env-file",
+    "<unique 0600 owned admin input>",
+    "--output",
+    "/private/tmp/context-history-browser-20261007/actual/<run>"
+  ],
+  "admin": "Existing dedicated fixture source only; unique 0600 single-link input, value never logged; owner dev/ino exact deletion after return. No admin input created in preparation.",
+  "native": "Reuse fixed Recovery sibling Chrome/CDP/Playwright, owned Node groups, marked DB normalDROP/KEEP and passive outer EOF capture. This changed task/worker requires focused source/native review; no runtime grant.",
+  "cleanup": [
+    "context closed then fixture closes own two HTTP listeners, Vite and center; own pending response/upstream/socket close events settled and counts zero",
+    "parent reaps all registered worker/Chrome groups, EOF/drop accounting; lease marker checks, normal DROP/KEEP; scratch removed only after owned groups absent",
+    "outer parent actual exit and both EOF/hash; owner fresh PID/PGID/ports/DB/scratch/private-env exact return before release"
+  ],
+  "coverageLimits": [
+    "b129 independent App, NOT Arc-combined",
+    "DTO history/detail producer is synthetic after real Cookie authentication; not backend observation generation",
+    "same-view task replacement NOT_COVERED",
+    "held detail NOT_COVERED",
+    "plugin disable and authority revoke during a pending read NOT_COVERED",
+    "hidden Arc workspace NOT_COVERED",
+    "serverFinished means ServerResponse finish only, not browser receipt/decoded success",
+    "two PNGs are candidates; actual visual review still required"
+  ],
+  "arcIntegration": "Arc currentGroups includes hidden workspaces; controlled integration must authorize against visibleGroups. Hold real read -> switch workspace -> clear/abort/no late publication -> explicit reopen; not proven by this independent b129 candidate."
+}

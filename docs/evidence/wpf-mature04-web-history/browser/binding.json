@@ -1,0 +1,56 @@
+{
+  "state": "SOURCE_PREPARED_REVIEW_PENDING_NO_RUNTIME_GRANT",
+  "claimId": "25d7e029-9334-479e-8872-61090c406e0a",
+  "claimVersion": 3,
+  "exactScopeCount": 8,
+  "sourceCommit": "ffd73503e32907663dbc0e91d14fe2cd03cf76ba",
+  "executionHead": "ffd73503e32907663dbc0e91d14fe2cd03cf76ba",
+  "branch": "codex/web-context-history",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+  "parent": {
+    "path": "/private/tmp/context-history-browser-20261007/parent.ts",
+    "realpath": "/private/tmp/context-history-browser-20261007/parent.ts",
+    "bytes": 38382,
+    "sha256": "d63afec93c0b7e872709f35148d4e8beb6eb5e77fb0cfecbaa5ebbfe6762da93"
+  },
+  "capture": {
+    "path": "/private/tmp/context-history-browser-20261007/capture.py",
+    "realpath": "/private/tmp/context-history-browser-20261007/capture.py",
+    "bytes": 9088,
+    "sha256": "0b873844714fff7bf991bb8e125662afe6bc2bb330f7cd9555ed429e946273ec"
+  },
+  "sourceInputs": {
+    "path": "/private/tmp/context-history-browser-20261007/source-inputs.json",
+    "realpath": "/private/tmp/context-history-browser-20261007/source-inputs.json",
+    "bytes": 6642,
+    "sha256": "96ac671f0e928b609660fd86473a68f43ebf884004329d3fb0f72c4f9fd7505d"
+  },
+  "proposal": {
+    "path": "/private/tmp/context-history-browser-20261007/proposal.json",
+    "realpath": "/private/tmp/context-history-browser-20261007/proposal.json",
+    "bytes": 3311,
+    "sha256": "843a7161aa49cd7dcf7c2789810fd8f68bd2b55cdde64de6c40ade9be8ffc3ab"
+  },
+  "sourceReview": null,
+  "nativeApproval": null,
+  "gateCreated": false,
+  "runtimeStarted": false,
+  "optionalCheck": {
+    "kind": "TypeScript syntax parse only",
+    "filesAtCheck": 3,
+    "chargeMs": 315,
+    "state": "CLOSED",
+    "finalSmallDeltaNotRetested": [
+      "serverFinished term",
+      "sec-fetch-site pass-through",
+      "immediate close focus assertion",
+      "absolute TMP Playwright resolution and package type module"
+    ],
+    "result": {
+      "path": "/private/tmp/context-history-browser-20261007/syntax/return.json",
+      "realpath": "/private/tmp/context-history-browser-20261007/syntax/return.json",
+      "bytes": 566,
+      "sha256": "95a9d3367da6f06b6d7ecce3e5e5bcaab0a87c5aebc6f55ff5ce0e57a810e43f"
+    }
+  }
+}

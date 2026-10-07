@@ -1,0 +1,1280 @@
+--- 4ca1/conversation-recovery.browser.ts
++++ context-history/parent.ts
+@@ -5,20 +5,15 @@
+ import { join } from "node:path";
+ import { fileURLToPath } from "node:url";
+ import type { Browser, Locator, Page, Request, Response } from "@playwright/test";
+-import type { RecoveryDatabaseLease, RecoveryWire, RecoverySseTrace, startRecoveryFixture } from "./conversation-recovery.fixture";
++import type { RecoveryDatabaseLease, RecoveryWire, RecoverySseTrace, startRecoveryFixture } from "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/test/conversation-recovery.fixture";
+ 
+ // Only built-ins are loaded by the parent before fresh admission, monitoring and durable ownership facts.
+-const root = fileURLToPath(new URL("../../../", import.meta.url));
++const root = "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history";
+ // Task presets bind output, phase and selection together; no caller-supplied evidence path.
+ // The default MSG03 preset preserves its closed-phase guard and historical budget.
+-const visualAppearance = process.argv.includes("--visual-appearance");
+-const taskPreset = visualAppearance ? {
+-  id: "WPF-VISUAL01", evidence: "docs/evidence/wpf-visual01", runs: "browser-appearance-runs",
+-  phaseId: "VISUAL01-RECOVERY-APPEARANCE-20261007", totalMs: 60_000, approvalEnv: "FLOW_VISUAL01_BROWSER",
+-} as const : {
+-  id: "WPF-MESSAGESETTINGS03", evidence: "docs/evidence/wpf-message-settings-app", runs: "browser-membership-runs",
+-  phaseId: "MSG03-MEMBERSHIP-FIX-20261007", totalMs: 120_000, approvalEnv: "FLOW_MSG03_BROWSER",
+-} as const;
++const visualAppearance = true;
++const taskPreset = { id: "MATURE04-05", evidence: "docs/evidence/wpf-mature04-web-history/browser", runs: "actual",
++  phaseId: "CONTEXT-HISTORY-MOUNTED-20261007", totalMs: 90_000, approvalEnv: "FLOW_CONTEXT_HISTORY_BROWSER" } as const;
+ const evidence = join(root, taskPreset.evidence);
+ const TOTAL_MS = taskPreset.totalMs, CLEANUP_MS = 30_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
+ const RUN_RETAIN_RESERVE = 5 * 1024 ** 2; // 1MiB logs + <=2MiB report + two <=512KiB images + bounded owner/budget records.
+@@ -45,7 +40,9 @@
+ const sourcePaths = ["apps/web/src/App.tsx", "apps/web/src/connection/session.ts", "apps/web/src/recovery/journal.ts", "apps/web/src/recovery/binding.tsx", "apps/web/src/conversations/ConversationThread.tsx", "apps/web/src/conversations/outbox.ts", "apps/web/src/conversations/projection.ts", "apps/web/src/conversations/queue/commands.ts", "apps/web/src/conversation-steering/control.ts", "apps/web/src/conversation-steering/SteeringControl.tsx", "apps/web/src/conversation-context/controller.ts", "apps/web/src/attachments/controller.ts", "apps/web/src/plugin-integration/attachments.tsx", "apps/web/src/plugin-integration/knowledge.tsx", "apps/web/src/plugin-integration/session.ts", "apps/web/src/plugin-integration/steering.tsx", "apps/web/test/conversation-recovery.test.ts", "apps/web/test/conversation-recovery.fixture.ts", "apps/web/test/conversation-recovery.browser.ts"];
+ sourcePaths.push("apps/web/src/plugin-integration/react.tsx", "apps/web/src/conversation-context/receipts.ts", "apps/web/src/conversations/queue/projection.ts", "apps/web/src/conversations/queue/ConversationQueue.tsx", "apps/web/src/plugin-integration/message-settings.tsx", "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx", "apps/web/src/execution-profiles/execution-profiles.css");
+ if (visualAppearance) sourcePaths.push("apps/web/src/components/ui/dialog.tsx", "apps/web/src/assistant-ui.css");
++sourcePaths.push("apps/web/test/context-history-fixture.ts", "apps/web/test/context-history.browser.ts", "apps/web/src/conversation-context-history/binding.ts", "apps/web/src/conversation-context-history/controller.ts", "apps/web/src/conversation-context-history/ContextHistoryDialog.tsx", "apps/web/src/conversation-context-history/fixture.ts", "apps/web/src/plugin-integration/context-history.tsx");
+ const journeyGroups = {
++  "context-history": ["cookie-no-task", "decoded-read-states", "lazy-detail", "close-late-read", "task-and-visibility", "plugin-revoke", "themes-keyboard", "authority-revoke"],
+   full: ["cookieRead", "textIntentDraft", "crossTabCas", "sameKeyTurn", "pageOnlyAuthLoss", "csrfOffline", "themes390"],
+   "recovery-chain": ["cookieRead", "textIntentDraft", "crossTabCas", "sameKeyTurn"],
+   "page-auth": ["cookieRead", "pageOnlyAuthLoss"],
+@@ -64,7 +61,7 @@
+ } as const;
+ type Journey = keyof typeof journeyGroups;
+ type Group = (typeof journeyGroups)[Journey][number];
+-const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss", "sseDelivery", "completeDraft", "steeringRecovery", "secondCenterCycle", "messageSettingsApp", "messageSettingsMaterialReturn"];
++const allGroups: readonly Group[] = [...journeyGroups["context-history"],...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss", "sseDelivery", "completeDraft", "steeringRecovery", "secondCenterCycle", "messageSettingsApp", "messageSettingsMaterialReturn"];
+ function selectedGroups(journey: unknown): readonly Group[] {
+   requireThat(typeof journey === "string" && Object.hasOwn(journeyGroups, journey), "An explicit supported journey is required");
+   return journeyGroups[journey as Journey];
+@@ -72,32 +69,13 @@
+ type FailureReconciliation = { run: string; budgetSha256: string; reviewFile: string; reviewSha256: string };
+ type Gate = { reconciledFailures?: FailureReconciliation[]; allowRun: true; run: string; journey: Journey; sourceCommit: string; sourceHashes: Record<string, string>; expiresAt: string;
+   messageSettingsPhase?: { id: "MSG03-MEMBERSHIP-FIX-20261007"; budgetMs: 120000; spentMs: number; cleanupMs: 30000 };
+-  visualAppearancePhase?: { id: "VISUAL01-RECOVERY-APPEARANCE-20261007"; budgetMs: 60000; spentMs: number; cleanupMs: 30000 };
++  visualAppearancePhase?: { id: "CONTEXT-HISTORY-MOUNTED-20261007"; budgetMs: 90000; spentMs: number; cleanupMs: 30000 };
+   totalMs: number; minimumFreeBytes: number; scratchParent: string; maxScratchBytes: number;
+   twoCenterPhase?: { id: "RECOVERY-TWO-CENTER-20261007"; budgetMs: 90000; spentMs: number; cleanupMs: 30000; databases: 2 } };
+ type Init = { kind: "start"; journey: Journey; directory: string; scratch: string; databaseUrl: string; secondDatabaseUrl?: string; workDeadline: number };
+-type BodyLossObservation = { path: string | null; key: string | null; bodySha256: string | null; status: number | null;
+-  headers: Record<string, string>; events: string[]; failure: string | null; finished: boolean };
+-type InitializationTiming = { outcome: "RUNNING" | "PASSED" | "FAILED"; startedOffsetMs: 0; endedOffsetMs: number | null; elapsedMs: number | null };
+-type GroupTiming = { group: Group; startedOffsetMs: number; endedOffsetMs: number; elapsedMs: number; outcome: "PASSED" | "FAILED" };
+-type SteeringSeed = Awaited<ReturnType<Awaited<ReturnType<typeof startRecoveryFixture>>["seedSteeringConversation"]>>;
+-type SecondCenterResult = { identities: { target: "A" | "B"; centerId: string; ownerPrincipalId: string }[];
+-  baseUrl: string | null; draftA: string | null; draftB: string | null; receiptA: string | null;
+-  lateRead: { outcome: "abortedWithoutDelivery" | "deliveredRejected"; proxy: unknown; browserFinished: boolean; browserFailed: boolean } | null };
+ type WorkerResult = { journey: Journey; requiredGroups: readonly Group[]; completedGroups: Group[]; checks: string[];
+-  initialization: InitializationTiming; groupTimings: GroupTiming[]; secondCenter: SecondCenterResult;
+-  materialPreparation: unknown[];
+-  pageErrors: string[]; failure: string | null; cleanupErrors: string[]; wire: RecoveryWire[]; coverage: Record<string, string>; bodyLoss: BodyLossObservation[];
+-  sseDelivery: { baselineCursor: number | null; deliveredCursor: number | null; cancelledTaskId: string | null;
+-    externalCancel: { taskId: string; key: string; status: string } | null; readRequests: string[]; trace: RecoverySseTrace | null };
+-  completeDraft: { profile: import("@flow/contracts").ExecutionProfileReference | null; knowledge: import("@flow/contracts").KnowledgeCitation | null;
+-    savedRecordId: string | null; conversationId: string | null; preparedPostCount: number | null; restoredPostCount: number | null;
+-    verificationOrder: string[]; turnId: string | null; taskId: string | null };
+-  steeringRecovery: { profile: import("@flow/contracts").ExecutionProfileReference | null; conversationId: string | null;
+-    turnId: string | null; actor: Awaited<ReturnType<SteeringSeed["activate"]>> | null; draftId: string | null;
+-    sameDocumentNavigation: boolean | null; originalTurnReceiptId: string | null;
+-    receiptId: string | null; commandId: string | null; browserPostCounts: number[];
+-    draftFailureObservation: { inputMatches: boolean | null; records: unknown[]; recoveryAlerts: string[]; observationErrors: string[] } | null } };
++  pageErrors: string[]; failure: string | null; cleanupErrors: string[]; coverage: Record<string, string>;
++  initialization?: unknown; groupTimings?: unknown };
+ function selectionPassed(journey: Journey, result: WorkerResult | undefined): boolean {
+   const required = selectedGroups(journey);
+   return !!result && result.journey === journey && result.failure === null
+@@ -145,8 +123,8 @@
+   requireThat(gatePath && adminUrl, "Fresh explicit gate and isolated PG admin endpoint are required; no discovery/default");
+   const gate = JSON.parse(await readFile(gatePath, "utf8")) as Gate;
+   if (visualAppearance) {
+-    requireThat(gate.journey === "appearance" && gate.messageSettingsPhase === undefined,
+-      "VISUAL01 can select only the appearance journey and its own phase");
++    requireThat(gate.journey === "context-history" && gate.messageSettingsPhase === undefined,
++      "Context history can select only its own fixed journey and phase");
+   } else {
+     requireThat(["message-settings-app", "message-settings-material-return"].includes(gate.journey) && gate.visualAppearancePhase === undefined,
+       "MSG03 owner entry cannot replay historical Recovery journeys or another task phase");
+@@ -170,7 +148,7 @@
+   } else requireThat(gate.twoCenterPhase === undefined, "Two-center admission cannot authorize another journey");
+   requireThat(gate.allowRun === true && /^[a-z0-9-]{1,48}$/.test(gate.run), "Invalid one-run gate");
+   requireThat(Date.parse(gate.expiresAt) > Date.now(), "Admission expired");
+-  requireThat(Number.isFinite(gate.totalMs) && gate.totalMs >= 45_000 && gate.totalMs <= 60_000, "Invalid admitted time budget");
++  requireThat(Number.isFinite(gate.totalMs) && gate.totalMs >= 45_000 && gate.totalMs <= 90_000, "Invalid admitted time budget");
+   if (gate.journey === "steering-recovery") requireThat(gate.totalMs <= 60_000, "Steering phase requires a <=60s attempt including cleanup");
+   requireThat(gate.minimumFreeBytes >= START_FREE + extraResourceBytes && Number.isFinite(gate.minimumFreeBytes), "Browser start margin must be explicitly admitted");
+   requireThat(Number.isSafeInteger(gate.maxScratchBytes) && gate.maxScratchBytes > 0 && gate.maxScratchBytes <= 64 * 1024 ** 2, "Scratch requires an explicit <=64MiB bound");
+@@ -274,7 +252,7 @@
+     await json(join(directory, "sources.json"), { sourceCommit, dirty, sourceHashes, journey: gate.journey, requiredGroups });
+     monitor = setInterval(() => { if (!monitoring) monitoring = checkpoint("monitor").catch(() => {}).finally(() => { monitoring = undefined; }); }, 250);
+     await checkpoint(); // Before any Vite/PG/Playwright/business import or CREATE.
+-    const { RecoveryDatabaseLease } = await import("./conversation-recovery.fixture");
++    const { RecoveryDatabaseLease } = await import("/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/test/conversation-recovery.fixture");
+     await checkpoint();
+     const databaseDirectory = twoCenter ? join(directory, "db-a") : directory;
+     if (twoCenter) await mkdir(databaseDirectory, { mode: 0o700 });
+@@ -435,1138 +413,46 @@
+ }
+ 
+ async function worker(init: Init) {
+-  const workerBegan = performance.now();
+-  const requiredGroups = selectedGroups(init.journey), completedGroups: Group[] = [];
+-  const { chromium, expect } = await import("@playwright/test");
+-  const { startRecoveryFixture, observeRecoveryRecords } = await import("./conversation-recovery.fixture");
+-  const records = async (page: Page) => {
+-    const result = await page.evaluate(observeRecoveryRecords, { name: "flow.conversation-recovery.v1", version: 1, timeoutMs: 1000 });
+-    return result.records; // Missing/pending remains empty for the existing strict draft poll; malformed rejects.
+-  };
+-  const { decodeConversationCreated, decodeConversationTurnAccepted, assertConversationContextMatches } = await import("@flow/client");
+-  const { conversationCreationSchema, conversationTurnSchema, conversationQueueEnqueueSchema, steeringCommandSchema } = await import("@flow/contracts");
+-  const { parseRecoveryRecord } = await import("../src/recovery/journal");
+-  const { assertQueueItem } = await import("../src/conversations/queue/commands");
+-  const materialPreparation: unknown[] = [];
+-  const checks: string[] = [], pageErrors: string[] = [], cleanupErrors: string[] = [];
+-  const bodyLoss: BodyLossObservation[] = [], stopObservers: (() => void)[] = [];
+-  const sseDelivery: WorkerResult["sseDelivery"] = { baselineCursor: null, deliveredCursor: null, cancelledTaskId: null, externalCancel: null, readRequests: [], trace: null };
+-  const secondCenter: SecondCenterResult = { identities: [], baseUrl: null, draftA: null, draftB: null, receiptA: null, lateRead: null };
+-  const completeDraft: WorkerResult["completeDraft"] = { profile: null, knowledge: null, savedRecordId: null, conversationId: null,
+-    preparedPostCount: null, restoredPostCount: null, verificationOrder: [], turnId: null, taskId: null };
+-  const steeringRecovery: WorkerResult["steeringRecovery"] = { profile: null, conversationId: null, turnId: null,
+-    sameDocumentNavigation: null, originalTurnReceiptId: null,
+-    actor: null, draftId: null, receiptId: null, commandId: null, browserPostCounts: [], draftFailureObservation: null };
+-  const initialization: InitializationTiming = { outcome: "RUNNING", startedOffsetMs: 0, endedOffsetMs: null, elapsedMs: null };
+-  const groupTimings: GroupTiming[] = [];
+-  let errorBytes = 0;
+-  const pageError = (error: Error) => {
+-    errorBytes += Buffer.byteLength(error.message);
+-    if (errorBytes > 64 * 1024 || pageErrors.length >= 64) lifetime.abort(Error("Page error evidence bound exceeded"));
+-    else pageErrors.push(error.message);
+-  };
+-  const coverage: Record<string, string> = {
+-    cookieRead: "NOT_RUN", cookieSseHandshake: "NOT_RUN", cookieSseDelivery: "PENDING: only handshake is asserted", textIntentDraft: "NOT_RUN", materialDraft: "NOT_RUN", sameKeyTurn: "NOT_RUN", crossTabCas: "NOT_RUN",
+-    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN", createAckLoss: "NOT_RUN", createdTurnAckLoss: "NOT_RUN", queueAckLoss: "NOT_RUN", sseDelivery: "NOT_RUN", completeDraft: "NOT_RUN", steeringRecovery: "NOT_RUN", secondCenterCycle: "NOT_RUN", messageSettingsApp: "NOT_RUN", messageSettingsMaterialReturn: "NOT_RUN",
+-    createTwoStage: "PENDING: the two CREATE fault points are independent selected journeys", queueSteerRecovery: "PENDING: enqueue selection does not validate promotion or steering",
+-    profileKnowledgeSteeringDraft: "PENDING: direct/source only", secondCenter: "NOT_RUN: real A/B cycle is a separate selected journey; principal-only is controlled",
+-  };
+-  for (const key of allGroups) if (!requiredGroups.includes(key)) coverage[key] = "NOT_SELECTED";
+-  if (!requiredGroups.includes("textIntentDraft")) coverage.materialDraft = "NOT_SELECTED";
+-  if (!requiredGroups.includes("sameKeyTurn")) coverage.cookieSseHandshake = "NOT_SELECTED";
+-  const lifetime = new AbortController();
+-  const abort = () => lifetime.abort(Error("Supervisor stopped work"));
+-  process.once("SIGTERM", abort); process.once("SIGINT", abort);
+-  const deadline = setTimeout(abort, Math.max(0, init.workDeadline - Date.now()));
+-  const checkpoint = async () => { lifetime.signal.throwIfAborted(); requireThat(Date.now() < init.workDeadline, "Worker work deadline"); };
+-  let fixture: Awaited<ReturnType<typeof startRecoveryFixture>> | undefined, browser: Browser | undefined, failure: string | null = null;
+-  const postRows = () => fixture!.wire.filter(row => row.method === "POST" && !row.path.includes("browser-session"));
+-  const run = async (name: string, key: Group, operation: () => Promise<void>) => {
+-    if (!requiredGroups.includes(key)) return;
+-    requireThat(groupTimings.length < journeyGroups.full.length, "Group timing bound exceeded");
+-    await checkpoint(); coverage[key] = "RUNNING";
+-    const began = performance.now(); let outcome: GroupTiming["outcome"] = "FAILED";
+-    try { await operation(); await checkpoint(); completedGroups.push(key); checks.push(name); coverage[key] = "PASSED"; outcome = "PASSED"; }
+-    catch (error) { coverage[key] = "FAILED"; throw error; }
+-    finally {
+-      const ended = performance.now();
+-      groupTimings.push({ group: key, startedOffsetMs: began - workerBegan, endedOffsetMs: ended - workerBegan, elapsedMs: ended - began, outcome });
+-    }
+-  };
+-  const observeAckBodyLoss = (page: Page, path: string | RegExp, field: "text" | "title", requestedText: string) => {
+-    const observation: BodyLossObservation = { path: null, key: null, bodySha256: null, status: null, headers: {}, events: [], failure: null, finished: false };
+-    bodyLoss.push(observation);
+-    let selected: Request | undefined;
+-    const onRequest = (request: Request) => {
+-      const pathname = new URL(request.url()).pathname;
+-      if (selected || request.method() !== "POST" || !(typeof path === "string" ? pathname === path : path.test(pathname))) return;
+-      const body = request.postData(); if (!body) return;
+-      try { if (JSON.parse(body)[field] !== requestedText) return; } catch { return; }
+-      selected = request; observation.path = new URL(request.url()).pathname;
+-      observation.key = request.headers()["idempotency-key"] ?? null; observation.bodySha256 = digest(body); observation.events.push("request");
+-    };
+-    const onResponse = (response: Response) => {
+-      if (response.request() !== selected) return;
+-      observation.status = response.status(); const headers = response.headers();
+-      for (const name of ["content-length", "content-type", "connection", "cache-control"]) observation.headers[name] = headers[name] ?? "";
+-      observation.events.push("response-headers");
+-    };
+-    const onFailed = (request: Request) => {
+-      if (request !== selected) return;
+-      observation.failure = request.failure()?.errorText ?? null; observation.events.push("requestfailed");
+-    };
+-    const onFinished = (request: Request) => { if (request === selected) { observation.finished = true; observation.events.push("requestfinished"); } };
+-    page.on("request", onRequest); page.on("response", onResponse); page.on("requestfailed", onFailed); page.on("requestfinished", onFinished);
+-    const stop = () => { page.off("request", onRequest); page.off("response", onResponse); page.off("requestfailed", onFailed); page.off("requestfinished", onFinished); };
+-    stopObservers.push(stop);
+-    return async (row: RecoveryWire) => {
+-      const deadline = Math.min(Date.now() + 2000, init.workDeadline);
+-      try {
+-        // Playwright requestfailed is the body-failure event; response.finished() is not awaited.
+-        while (!observation.failure || !row.fault?.socketClosed) {
+-          await checkpoint(); requireThat(Date.now() < deadline, "Same-request ACK body failure observation deadline"); await sleep(20);
++  const lifetime = new AbortController(); const abort = () => lifetime.abort();
++  process.on("SIGTERM", abort); process.on("SIGINT", abort);
++  const deadline = setTimeout(abort, Math.max(1, init.workDeadline - Date.now()));
++  const checkpoint = async () => { lifetime.signal.throwIfAborted(); requireThat(Date.now() < init.workDeadline, "Work deadline"); };
++  let browser: Browser | undefined, failure: string | null = null;
++  const cleanupErrors: string[] = [];
++  try {
++    const { chromium } = await import("/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/node_modules/@playwright/test/index.mjs"); await checkpoint();
++    const endpoint = await new Promise<string>((resolve, reject) => {
++      const onMessage = (value: unknown) => {
++        if (value && typeof value === "object" && "kind" in value && value.kind === "chrome-ready" && "endpoint" in value && typeof value.endpoint === "string") {
++          process.off("message", onMessage); lifetime.signal.removeEventListener("abort", aborted); resolve(value.endpoint);
+         }
+-        expect(observation.events).toEqual(["request", "response-headers", "requestfailed"]); expect(observation.finished).toBe(false);
+-        expect(observation.failure).toMatch(/CONTENT_LENGTH_MISMATCH|FAILED/);
+-        expect({ path: observation.path, key: observation.key, bodySha256: observation.bodySha256, status: observation.status })
+-          .toEqual({ path: row.path, key: row.key, bodySha256: digest(row.body), status: row.status });
+-        requireThat(row.responseBody && row.fault, "Complete real ACK and fault evidence required");
+-        const bytes = Buffer.from(row.responseBody), fault = row.fault;
+-        expect(row.responseSha256).toBe(digest(bytes)); expect(fault.contentLength).toBe(bytes.length);
+-        expect(observation.headers).toEqual({ "content-length": String(bytes.length), "content-type": fault.contentType, "connection": "close", "cache-control": "no-store" });
+-        expect(fault.kind).toBe("truncated-ack-body"); expect(fault.prefixBytes).toBe(1); expect(bytes.length).toBeGreaterThan(fault.prefixBytes);
+-        expect(fault.prefixSha256).toBe(digest(bytes.subarray(0, fault.prefixBytes)));
+-        expect([fault.headersFlushed, fault.prefixFlushed, fault.endFlushed, fault.socketClosed]).toEqual([true, true, true, true]); expect(fault.error).toBeUndefined();
+-      } finally { stop(); }
+-    };
+-  };
+-  try {
+-    requireThat((init.journey === "second-center-cycle") === (typeof init.secondDatabaseUrl === "string"), "Selected journey and two-database input must agree");
+-    fixture = await startRecoveryFixture({ databaseUrl: init.databaseUrl, ...(init.secondDatabaseUrl ? { secondDatabaseUrl: init.secondDatabaseUrl } : {}), directory: init.directory, messageSettings: init.journey.startsWith("message-settings-"), cacheDirectory: join(init.scratch, "vite-cache"), checkpoint,
+-      ...(init.journey === "steering-recovery" ? { steering: { workDeadline: init.workDeadline } } : {}) }, lifetime.signal);
+-    await checkpoint();
+-    const endpoint = await new Promise<string>((resolve, reject) => {
+-      const aborted = () => { process.off("message", onMessage); reject(lifetime.signal.reason); };
+-      const onMessage = (message: unknown) => {
+-        const value = message as { kind?: string; endpoint?: string };
+-        if (value.kind === "chrome-ready" && typeof value.endpoint === "string") { process.off("message", onMessage); lifetime.signal.removeEventListener("abort", aborted); resolve(value.endpoint); }
+       };
++      const aborted = () => { process.off("message", onMessage); reject(Error("Owned Chrome startup aborted")); };
+       process.on("message", onMessage); lifetime.signal.addEventListener("abort", aborted, { once: true });
+       lifetime.signal.throwIfAborted(); process.send?.({ kind: "chrome" });
+     });
+-    await checkpoint(); browser = await chromium.connectOverCDP(endpoint, { timeout: 5000 }); await checkpoint();
+-    const context = await browser.newContext({ viewport: { width: 1280, height: 720 }, reducedMotion: "reduce" });
+-    const page = await context.newPage(); page.setDefaultTimeout(4500); page.on("pageerror", pageError);
+-    const initializedMs = performance.now() - workerBegan;
+-    Object.assign(initialization, { outcome: "PASSED", endedOffsetMs: initializedMs, elapsedMs: initializedMs });
+-    const input = (target = page) => target.getByRole("textbox", { name: "Message input", exact: true }).filter({ visible: true });
+-    const saveDraftThroughUi = async (value: string) => {
+-      await input().fill(value);
+-      await expect.poll(async () => (await records(page)).some(record => record.kind === "draft" && record.data?.text === value)).toBe(true);
+-    };
+-    const openRecovery = async (target = page, keyboard = false) => {
+-      const trigger = target.getByRole("button", { name: "Saved drafts and receipts", exact: true });
+-      if (!await trigger.isVisible()) await target.getByRole("button", { name: "Chats", exact: true }).click();
+-      if (keyboard) { await trigger.focus(); await expect(trigger).toBeFocused(); await trigger.press("Enter"); }
+-      else await trigger.click();
+-      const dialog = target.getByRole("dialog", { name: "Saved drafts and receipts", exact: true }); await expect(dialog).toBeVisible(); return dialog;
+-    };
+-    await run("actual browser stores HttpOnly cookie; public cookie-only session read opens original center", "cookieRead", async () => {
+-      await page.goto(fixture!.url + `#conversation=${fixture!.conversationId}`);
+-      await page.getByLabel("Owner token", { exact: true }).fill(fixture!.token); await page.getByRole("button", { name: "Connect workspace", exact: true }).click(); await expect(input()).toBeVisible();
+-      expect((await context.cookies()).some(cookie => cookie.name.startsWith("flow-session-") && cookie.httpOnly)).toBe(true);
+-      expect(fixture!.wire.some(row => row.path === "/api/browser-session" && row.cookie && !row.bearer && row.status === 200)).toBe(true);
+-    });
+-    await run("a second public consumer cancels a queued task; the observing App receives its new timeline through the original SSE only", "sseDelivery", async () => {
+-      const task = await fixture!.seedSseTask(), taskPath = `/api/tasks/${task.id}`;
+-      sseDelivery.cancelledTaskId = task.id;
+-      const onRequest = (request: Request) => {
+-        const path = new URL(request.url()).pathname;
+-        if (path !== taskPath && path !== `${taskPath}/events`) return;
+-        if (sseDelivery.readRequests.length >= 8) { lifetime.abort(Error("SSE witness REST request bound exceeded")); return; }
+-        sseDelivery.readRequests.push(`${request.method()} ${path}`);
+-      };
+-      page.on("request", onRequest); stopObservers.push(() => page.off("request", onRequest));
+-      try {
+-        await page.goto(fixture!.url + `#task=${task.id}`);
+-        await expect(page.getByText("Observe public cancellation 中文🙂", { exact: true })).toBeVisible();
+-        await expect(page.getByRole("status").filter({ hasText: /^Live$/ })).toBeVisible();
+-        await expect.poll(() => fixture!.sseTrace()?.frames.length ?? 0).toBeGreaterThan(0);
+-        const before = fixture!.sseTrace(); requireThat(before, "Missing original task stream witness");
+-        expect(before.error).toBeNull(); expect(before.connections).toBe(1); expect(before.detached).toBe(false);
+-        const baseline = before.frames.at(-1)!; expect(baseline.status).toBe("queued");
+-        sseDelivery.baselineCursor = baseline.nextCursor;
+-        // The initial snapshot completed before the stream opened. No later snapshot/events read may explain the new entry.
+-        expect(sseDelivery.readRequests).toEqual([`GET ${taskPath}`]);
+-        const postsBefore = postRows().length;
+-        await expect(page.getByText("Cancelled before execution.", { exact: true })).toHaveCount(0);
+-        sseDelivery.externalCancel = await fixture!.cancelSseTask();
+-        await expect.poll(() => fixture!.sseTrace()?.frames.some(frame => frame.status === "cancelled"
+-          && frame.nextCursor > baseline.nextCursor && frame.entries.some(entry => entry.cursor > baseline.nextCursor
+-            && entry.text === "Cancelled before execution.")) ?? false).toBe(true);
+-        await expect(page.getByText("Cancelled before execution.", { exact: true })).toBeVisible();
+-        const trace = fixture!.stopSseTrace(); requireThat(trace, "Missing completed SSE witness");
+-        expect(trace.error).toBeNull(); expect(trace.connections).toBe(1); expect(trace.detached).toBe(true);
+-        const delivered = trace.frames.find(frame => frame.status === "cancelled" && frame.entries.some(entry => entry.text === "Cancelled before execution."));
+-        requireThat(delivered, "No cancellation entry delivered by the original stream");
+-        sseDelivery.deliveredCursor = delivered.nextCursor; sseDelivery.trace = trace;
+-        expect(sseDelivery.readRequests).toEqual([`GET ${taskPath}`]); expect(postRows()).toHaveLength(postsBefore);
+-        const streams = fixture!.wire.filter(row => new URL(row.path, fixture!.url).pathname === `${taskPath}/stream`);
+-        expect(streams).toHaveLength(1); expect(streams[0]).toMatchObject({ method: "GET", status: 200, cookie: true, bearer: false });
+-        coverage.cookieSseHandshake = "PASSED"; coverage.cookieSseDelivery = "PASSED: original task stream frame and new App timeline; no REST refill";
+-      } finally { page.off("request", onRequest); }
+-    });
+-    await run("explicit connection selection survives background cookie reads; only an explicit successful choice returns", "connectionChoice", async () => {
+-      await saveDraftThroughUi("Retained draft while choosing a center");
+-      const posts = postRows().length, chooser = page.getByRole("heading", { name: "Connect to Flow", exact: true });
+-      await page.getByRole("button", { name: "Change connection", exact: true }).click(); await expect(chooser).toBeVisible();
+-      const url = page.getByLabel("Center URL", { exact: true }), token = page.getByLabel("Owner token", { exact: true });
+-      const candidate = new URL("/candidate-not-contacted", fixture!.url).href;
+-      await url.fill(candidate); await token.fill("local-fixture-candidate-token");
+-      const observed = page.waitForResponse(response => new URL(response.url()).pathname === "/api/browser-session" && response.request().method() === "GET" && response.status() === 200);
+-      await page.evaluate(() => window.dispatchEvent(new Event("focus")));
+-      await (await observed).finished();
+-      // Wait for the successful session read's React paint without exposing private controller state.
+-      await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+-      await expect(chooser).toBeVisible(); await expect(url).toHaveValue(candidate); await expect(token).toHaveValue("local-fixture-candidate-token");
+-      expect(postRows()).toHaveLength(posts);
+-      await page.getByRole("button", { name: "Check existing browser session", exact: true }).click();
+-      await expect(input()).toHaveValue("Retained draft while choosing a center"); await expect(chooser).not.toBeVisible();
+-      await page.getByRole("button", { name: "Change connection", exact: true }).click(); await expect(chooser).toBeVisible();
+-      await url.fill(new URL(fixture!.url).origin); await token.fill(fixture!.token);
+-      await page.getByRole("button", { name: "Connect workspace", exact: true }).click();
+-      await expect(input()).toHaveValue("Retained draft while choosing a center"); await expect(chooser).not.toBeVisible();
+-      expect(postRows()).toHaveLength(posts);
+-    });
+-    const object = (value: unknown): Record<string, unknown> => {
+-      requireThat(value !== null && typeof value === "object" && !Array.isArray(value), "Expected a saved command object");
+-      return value as Record<string, unknown>;
+-    };
+-    const savedCommand = async (domain: "outbox" | "queue") => {
+-      const commands = (await records(page)).filter(record => record.kind === "command");
+-      expect(commands).toHaveLength(1);
+-      const record = parseRecoveryRecord(commands[0]);
+-      requireThat(record.kind === "command" && record.domain === domain, "Expected the original command authority");
+-      return record;
+-    };
+-    const waitCommandPhase = async (phase: string) => {
+-      await expect.poll(async () => (await records(page)).find(record => record.kind === "command")?.phase).toBe(phase);
+-    };
+-    const preserveNextDraft = async (value: string) => {
+-      await saveDraftThroughUi(value);
+-      const matches = (await records(page)).filter(record => record.kind === "draft" && record.data?.text === value);
+-      expect(matches).toHaveLength(1); return matches[0]!.id;
+-    };
+-    await run("one origin and journal isolate real A/B identities through A→B→A→B; only explicit original retry sends", "secondCenterCycle", async () => {
+-      requireThat(fixture!.secondCenter, "Second owned center is required");
+-      const second = fixture!.secondCenter, baseUrl = new URL(fixture!.url).origin;
+-      secondCenter.baseUrl = baseUrl;
+-      const identity = (target: "A" | "B") => {
+-        const rows = fixture!.wire.filter(row => row.target === target && row.method === "GET" && row.path === "/api/browser-session" && row.sessionIdentity);
+-        requireThat(rows.length, "A genuine public ready identity is required");
+-        const value = rows.at(-1)!.sessionIdentity!;
+-        return { target, centerId: value.centerId, ownerPrincipalId: value.ownerPrincipalId };
+-      };
+-      const stored = async () => (await records(page)).map(record => parseRecoveryRecord(record));
+-      const byId = async (id: string) => { const found = (await stored()).filter(record => record.id === id); expect(found).toHaveLength(1); return found[0]!; };
+-      const row = async (dialog: Locator, id: string) => {
+-        const selected = dialog.locator(`[data-recovery-record-id="${id}"]`); await expect(selected).toHaveCount(1); return selected;
+-      };
+-      const restore = async (id: string, expectedText: string) => {
+-        const before = postRows().length, dialog = await openRecovery();
+-        await (await row(dialog, id)).getByRole("button", { name: "Restore without sending", exact: true }).click();
+-        await page.keyboard.press("Escape"); await expect(dialog).not.toBeVisible();
+-        await expect(input()).toHaveValue(expectedText); expect(postRows()).toHaveLength(before);
+-      };
+-      const choose = async (target: "A" | "B") => {
+-        const posts = postRows().length;
+-        await page.getByRole("button", { name: "Change connection", exact: true }).click();
+-        await expect(page.getByRole("heading", { name: "Connect to Flow", exact: true })).toBeVisible();
+-        fixture!.switchCenter(target);
+-        await page.evaluate(id => { location.hash = `conversation=${id}`; }, target === "A" ? fixture!.conversationId : second.conversationId);
+-        await page.getByLabel("Center URL", { exact: true }).fill(baseUrl);
+-        await page.getByLabel("Owner token", { exact: true }).fill(target === "A" ? fixture!.token : second.token);
+-        const ready = page.waitForResponse(response => new URL(response.url()).pathname === "/api/browser-session" && response.request().method() === "GET" && response.status() === 200);
+-        await page.getByRole("button", { name: "Connect workspace", exact: true }).click();
+-        await (await ready).finished(); await expect(input()).toBeVisible();
+-        expect(new URL(page.url()).origin).toBe(baseUrl);
+-        expect(await page.evaluate(() => localStorage.getItem("flow.browser-center.v1"))).toBe(baseUrl);
+-        secondCenter.identities.push(identity(target)); expect(postRows()).toHaveLength(posts);
+-      };
+-      const a = identity("A"); secondCenter.identities.push(a);
+-      const aText = "Center A original unknown command", nextA = "Center A retained next draft", bText = "Center B private draft";
+-      await saveDraftThroughUi(aText); await page.getByRole("radio", { name: "Send now", exact: true }).check();
+-      const turnPath = `/api/conversations/${fixture!.conversationId}/turns`;
+-      const verifyLoss = observeAckBodyLoss(page, turnPath, "text", aText); fixture!.dropNext("turn"); await input().press("Enter");
+-      await expect(page.getByRole("region", { name: "Message receipt", exact: true })).toContainText("Receipt unknown");
+-      expect(postRows()).toHaveLength(1); const first = postRows()[0]!; expect(first.target).toBe("A"); await verifyLoss(first);
+-      const receipt = await savedCommand("outbox"), requested = conversationTurnSchema.parse(JSON.parse(first.body));
+-      expect(object(receipt.frozen).turnKey).toBe(first.key); expect(object(receipt.frozen).request).toEqual(requested);
+-      secondCenter.receiptA = receipt.id;
+-      secondCenter.draftA = await preserveNextDraft(nextA);
+-      const savedA = await byId(secondCenter.draftA), savedReceipt = await byId(receipt.id);
+-      const namespaceA = JSON.stringify([baseUrl, a.centerId, a.ownerPrincipalId]); expect(savedA.namespace).toBe(namespaceA);
+-      const hold = fixture!.holdNextSessionRead();
+-      let heldRequest: Request | undefined, browserFinished = false, browserFailed = false;
+-      const requestedRead = (request: Request) => { if (!heldRequest && request.method() === "GET" && new URL(request.url()).pathname === "/api/browser-session") heldRequest = request; };
+-      const finishedRead = (request: Request) => { if (request === heldRequest) browserFinished = true; };
+-      const failedRead = (request: Request) => { if (request === heldRequest) browserFailed = true; };
+-      page.on("request", requestedRead); page.on("requestfinished", finishedRead); page.on("requestfailed", failedRead);
+-      try {
+-        await page.evaluate(() => window.dispatchEvent(new Event("focus")));
+-        await expect.poll(() => hold.snapshot().captured).toBe(true); requireThat(heldRequest, "Actual A session read was not observed");
+-        await choose("B"); const b = identity("B");
+-        expect(b.centerId).not.toBe(a.centerId); expect(b.ownerPrincipalId).not.toBe(a.ownerPrincipalId);
+-        hold.release();
+-        await expect.poll(() => hold.snapshot().outcome).toMatch(/^(abortedWithoutDelivery|delivered)$/);
+-        await expect.poll(() => browserFailed || browserFinished).toBe(true);
+-        await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+-        await expect(page.getByRole("heading", { name: "Connect to Flow", exact: true })).not.toBeVisible();
+-        const outcome = hold.snapshot().outcome;
+-        if (outcome === "abortedWithoutDelivery") { expect(browserFailed).toBe(true); expect(browserFinished).toBe(false); }
+-        else { expect(browserFinished).toBe(true); expect(browserFailed).toBe(false); }
+-        secondCenter.lateRead = { outcome: outcome === "delivered" ? "deliveredRejected" : "abortedWithoutDelivery", proxy: hold.snapshot(), browserFinished, browserFailed };
+-        const dialog = await openRecovery();
+-        await expect(dialog.locator(`[data-recovery-record-id="${receipt.id}"]`)).toHaveCount(0);
+-        await expect(dialog.locator(`[data-recovery-record-id="${savedA.id}"]`)).toHaveCount(0);
+-        await expect(dialog.getByText(nextA, { exact: true })).toHaveCount(0); await page.keyboard.press("Escape");
+-        expect(await byId(savedA.id)).toEqual(savedA); expect(await byId(receipt.id)).toEqual(savedReceipt);
+-        secondCenter.draftB = await preserveNextDraft(bText); const savedB = await byId(secondCenter.draftB);
+-        expect(savedB.namespace).toBe(JSON.stringify([baseUrl, b.centerId, b.ownerPrincipalId]));
+-        await choose("A"); expect(identity("A")).toEqual(a);
+-        const aDialog = await openRecovery();
+-        await expect(aDialog.locator(`[data-recovery-record-id="${savedB.id}"]`)).toHaveCount(0);
+-        await expect(aDialog.getByText(bText, { exact: true })).toHaveCount(0); await page.keyboard.press("Escape");
+-        await restore(savedA.id, nextA); expect(await byId(savedB.id)).toEqual(savedB); expect(postRows()).toHaveLength(1);
+-        const retryDialog = await openRecovery(); await (await row(retryDialog, receipt.id)).getByRole("button", { name: "Retry original request", exact: true }).click();
+-        await expect.poll(() => postRows().length).toBe(2);
+-        await expect.poll(async () => { const saved = await byId(receipt.id); return saved.kind === "command" ? saved.phase : null; }).toBe("accepted");
+-        const retry = postRows()[1]!; expect({ target: retry.target, path: retry.path, key: retry.key, body: retry.body }).toEqual({ target: "A", path: first.path, key: first.key, body: first.body });
+-        requireThat(first.responseBody && retry.responseBody, "Both actual accepted responses required");
+-        const accepted = decodeConversationTurnAccepted(JSON.parse(first.responseBody), fixture!.conversationId, requested);
+-        const replay = decodeConversationTurnAccepted(JSON.parse(retry.responseBody), fixture!.conversationId, requested);
+-        expect(replay.replayed).toBe(true); expect({ turn: replay.turn.id, task: replay.turn.task.id }).toEqual({ turn: accepted.turn.id, task: accepted.turn.task.id });
+-        await page.keyboard.press("Escape");
+-        const next = await byId(savedA.id); requireThat(next.kind === "draft", "A next draft remains a draft"); expect(object(next.data).text).toBe(nextA);
+-        expect(await byId(savedB.id)).toEqual(savedB);
+-        await choose("B"); expect(identity("B")).toEqual(b);
+-        await restore(savedB.id, bText); expect(postRows()).toHaveLength(2);
+-        const finalDialog = await openRecovery();
+-        await expect(finalDialog.locator(`[data-recovery-record-id="${receipt.id}"]`)).toHaveCount(0);
+-        await expect(finalDialog.locator(`[data-recovery-record-id="${savedA.id}"]`)).toHaveCount(0); await page.keyboard.press("Escape");
+-        expect(fixture!.wire.filter(value => value.target === "B").some(value => value.path.includes(fixture!.conversationId) || value.key === first.key || value.body.includes(aText))).toBe(false);
+-        expect(secondCenter.identities.map(value => value.target)).toEqual(["A", "B", "A", "B"]);
+-        coverage.secondCenter = "PASSED: same-origin/baseURL/context/IDB A→B→A→B; both real tuples, not public principal-only rotation";
+-      } finally {
+-        hold.release(); page.off("request", requestedRead); page.off("requestfinished", finishedRead); page.off("requestfailed", failedRead);
+-      }
+-    });
+-    const reloadAndReauthenticate = async () => {
+-      const before = postRows().map(row => ({ path: row.path, key: row.key, body: row.body }));
+-      await fixture!.expireSessions(); await page.reload();
+-      await expect(page.getByRole("heading", { name: "Connect to Flow", exact: true })).toBeVisible();
+-      expect(postRows().map(row => ({ path: row.path, key: row.key, body: row.body }))).toEqual(before);
+-      await page.getByLabel("Owner token", { exact: true }).fill(fixture!.token);
+-      await page.getByRole("button", { name: "Connect workspace", exact: true }).click(); await expect(input()).toBeVisible();
+-      expect(postRows().map(row => ({ path: row.path, key: row.key, body: row.body }))).toEqual(before);
+-    };
+-    const exactRecordRow = async (dialog: Locator, id: string) => {
+-      expect(id).toMatch(/^(?:draft:)?[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i);
+-      const row = dialog.locator(`[data-recovery-record-id="${id}"]`);
+-      await expect(row).toHaveCount(1); await expect(row.locator("code")).toHaveText(id); return row;
+-    };
+-    const retrySavedCommand = async (id: string, domain: "outbox" | "queue") => {
+-      const dialog = await openRecovery(), row = await exactRecordRow(dialog, id);
+-      await expect(row).toContainText(`${domain} receipt · unknown`);
+-      await row.getByRole("button", { name: "Retry original request", exact: true }).click();
+-      await waitCommandPhase("accepted"); await page.keyboard.press("Escape"); await expect(dialog).not.toBeVisible();
+-    };
+-    const restoreNextDraft = async (id: string, value: string) => {
+-      expect((await records(page)).find(record => record.id === id)?.data?.text).toBe(value);
+-      const before = postRows().length, dialog = await openRecovery();
+-      const row = await exactRecordRow(dialog, id);
+-      await row.getByRole("button", { name: "Restore without sending", exact: true }).click(); await page.keyboard.press("Escape");
+-      await expect(dialog).not.toBeVisible(); await expect(input()).toHaveValue(value); expect(postRows()).toHaveLength(before);
+-    };
+-    const createThenRecover = async (lost: "create" | "turn") => {
+-      const original = `Recovery two-stage ${lost} ACK loss`, next = `Next draft after ${lost} ACK loss`;
+-      const newChat = page.locator(".flow-workspace-bar").getByRole("button", { name: "New chat", exact: true });
+-      await expect(newChat).toHaveCount(1); await newChat.click(); await saveDraftThroughUi(original);
+-      const creations = () => postRows().filter(row => row.path === "/api/conversations");
+-      const turns = () => postRows().filter(row => /\/turns$/.test(row.path));
+-      expect(postRows()).toHaveLength(0);
+-      const verifyBodyLoss = observeAckBodyLoss(page, lost === "create" ? "/api/conversations" : /\/api\/conversations\/[^/]+\/turns$/, lost === "create" ? "title" : "text", original);
+-      fixture!.dropNext(lost); await input().press("Enter");
+-      await expect(page.getByRole("region", { name: "Message receipt", exact: true })).toContainText("Receipt unknown");
+-      await waitCommandPhase("unknown"); expect(creations()).toHaveLength(1); expect(turns()).toHaveLength(lost === "create" ? 0 : 1);
+-      const firstCreate = creations()[0]!, creation = conversationCreationSchema.parse(JSON.parse(firstCreate.body));
+-      requireThat(firstCreate.responseBody, "Original real CREATE ACK required");
+-      const created = decodeConversationCreated(JSON.parse(firstCreate.responseBody), creation);
+-      expect(created.replayed).toBe(false); expect(created.conversation.id).not.toBe(fixture!.conversationId);
+-      const saved = await savedCommand("outbox"), frozen = object(saved.frozen);
+-      const originalTurn = conversationTurnSchema.parse(frozen.request);
+-      expect(frozen).toMatchObject({ kind: "turn", id: saved.id, conversationId: null, creationKey: `${saved.id}:create`, turnKey: `${saved.id}:turn` });
+-      expect(conversationCreationSchema.parse(frozen.creation)).toEqual(creation);
+-      expect(originalTurn.text).toBe(original); expect(firstCreate.key).toBe(frozen.creationKey);
+-      if (lost === "create") { expect(saved.stage).toBe("create"); expect(object(saved.checkpoint ?? {}).conversationId).toBeUndefined(); }
+-      else {
+-        expect(saved.stage).toBe("submit"); expect(object(saved.checkpoint).conversationId).toBe(created.conversation.id);
+-        expect(turns()[0]!.path).toBe(`/api/conversations/${created.conversation.id}/turns`);
+-        expect(turns()[0]!.key).toBe(frozen.turnKey); expect(JSON.parse(turns()[0]!.body)).toEqual(originalTurn);
+-      }
+-      const firstLost = lost === "create" ? firstCreate : turns()[0]!; await verifyBodyLoss(firstLost);
+-      expect(postRows()).toHaveLength(lost === "create" ? 1 : 2);
+-      const nextId = await preserveNextDraft(next); await reloadAndReauthenticate();
+-      const restored = await savedCommand("outbox"); expect(restored.frozen).toEqual(saved.frozen); expect(restored.checkpoint).toEqual(saved.checkpoint);
+-      expect(creations()).toHaveLength(1); expect(turns()).toHaveLength(lost === "create" ? 0 : 1);
+-      await retrySavedCommand(saved.id, "outbox");
+-      expect(creations()).toHaveLength(lost === "create" ? 2 : 1); expect(turns()).toHaveLength(lost === "create" ? 1 : 2); expect(postRows()).toHaveLength(3);
+-      if (lost === "create") {
+-        const repeated = creations()[1]!; expect({ key: repeated.key, body: repeated.body }).toEqual({ key: firstCreate.key, body: firstCreate.body });
+-        requireThat(repeated.responseBody, "Replayed CREATE ACK required");
+-        const replay = decodeConversationCreated(JSON.parse(repeated.responseBody), creation);
+-        expect(replay.replayed).toBe(true); expect(replay.conversation.id).toBe(created.conversation.id);
+-      }
+-      const firstTurn = turns()[0]!;
+-      expect(firstTurn.path).toBe(`/api/conversations/${created.conversation.id}/turns`); expect(firstTurn.key).toBe(frozen.turnKey); expect(JSON.parse(firstTurn.body)).toEqual(originalTurn);
+-      requireThat(firstTurn.responseBody, "Original real turn ACK required");
+-      const accepted = decodeConversationTurnAccepted(JSON.parse(firstTurn.responseBody), created.conversation.id, originalTurn);
+-      expect(accepted.turn.id.length).toBeGreaterThan(0); expect(accepted.turn.task.id.length).toBeGreaterThan(0);
+-      if (lost === "turn") {
+-        const repeated = turns()[1]!; expect({ key: repeated.key, body: repeated.body }).toEqual({ key: firstTurn.key, body: firstTurn.body });
+-        requireThat(repeated.responseBody, "Replayed turn ACK required");
+-        const replay = decodeConversationTurnAccepted(JSON.parse(repeated.responseBody), created.conversation.id, originalTurn);
+-        expect(replay.replayed).toBe(true); expect({ turn: replay.turn.id, task: replay.turn.task.id }).toEqual({ turn: accepted.turn.id, task: accepted.turn.task.id });
+-      }
+-      const final = await savedCommand("outbox"); expect(final.frozen).toEqual(saved.frozen);
+-      expect(final.checkpoint).toMatchObject({ conversationId: created.conversation.id, turnId: accepted.turn.id, taskId: accepted.turn.task.id });
+-      await restoreNextDraft(nextId, next);
+-    };
+-    await run("lost CREATE ACK resumes the original two-key/two-body command only after explicit retry", "createAckLoss", () => createThenRecover("create"));
+-    await run("persisted CREATE binding survives lost turn ACK; explicit retry never repeats CREATE", "createdTurnAckLoss", () => createThenRecover("turn"));
+-    await run("lost queue enqueue ACK preserves revision/key/body/ordered files and the independent next draft", "queueAckLoss", async () => {
+-      const queuedText = "Queue recovery with two ordered files", next = "Next draft after queue ACK loss";
+-      const queueRows = () => postRows().filter(row => row.path === `/api/conversations/${fixture!.conversationId}/queue`);
+-      const files = page.locator("[data-composer-view]").getByRole("button", { name: "Files", exact: true }).filter({ visible: true });
+-      await files.click(); const picker = page.getByRole("dialog", { name: "Project text files", exact: true });
+-      await picker.getByRole("button", { name: "Browse files", exact: true }).click();
+-      await picker.getByRole("button", { name: "Use saved.txt", exact: true }).click(); await picker.getByRole("button", { name: "Use later.txt", exact: true }).click();
+-      await page.keyboard.press("Escape"); await expect(picker).not.toBeVisible(); await expect(files).toBeFocused();
+-      await expect(input().locator("xpath=ancestor::form").locator(".aui-composer-attachments .aui-attachment-root")).toHaveCount(2);
+-      await page.getByRole("radio", { name: "Queue next", exact: true }).check(); await saveDraftThroughUi(queuedText);
+-      await expect(page.getByRole("button", { name: "Add to queue", exact: true })).toBeEnabled();
+-      expect(postRows()).toHaveLength(0);
+-      const verifyBodyLoss = observeAckBodyLoss(page, `/api/conversations/${fixture!.conversationId}/queue`, "text", queuedText);
+-      fixture!.dropNext("queue"); await input().press("Enter");
+-      await expect(page.getByRole("region", { name: "enqueue receipt", exact: true })).toContainText("Receipt unknown"); await waitCommandPhase("unknown");
+-      expect(queueRows()).toHaveLength(1); const first = queueRows()[0]!; await verifyBodyLoss(first);
+-      const request = conversationQueueEnqueueSchema.parse(JSON.parse(first.body)); expect(request.text).toBe(queuedText);
+-      expect(request.attachments).toEqual([fixture!.resource.reference, fixture!.secondResource.reference]);
+-      const saved = await savedCommand("queue"), command = object(object(saved.frozen).command);
+-      expect(command).toMatchObject({ kind: "enqueue", conversationId: fixture!.conversationId }); expect(command.input).toEqual(request); expect(saved.id).toBe(first.key);
+-      const nextId = await preserveNextDraft(next); await reloadAndReauthenticate();
+-      expect((await savedCommand("queue")).frozen).toEqual(saved.frozen); expect(queueRows()).toHaveLength(1);
+-      await retrySavedCommand(saved.id, "queue"); expect(queueRows()).toHaveLength(2); expect(postRows()).toHaveLength(2);
+-      const replay = queueRows()[1]!; expect({ key: replay.key, body: replay.body }).toEqual({ key: first.key, body: first.body });
+-      const decodeQueueAck = (row: RecoveryWire) => {
+-        requireThat(row.responseBody, "Complete real queue ACK required");
+-        const ack = object(JSON.parse(row.responseBody));
+-        expect(ack.conversationId).toBe(fixture!.conversationId); expect(ack.queueRevision).toBe(request.expectedQueueRevision + 1);
+-        const item = ack.item as import("@flow/contracts").ConversationQueueItem; assertQueueItem(item, fixture!.conversationId);
+-        expect(item.state).toBe("waiting"); expect(item.sequence).toBe(ack.queueRevision); expect(item.preview).toBe(queuedText);
+-        assertConversationContextMatches(request.knowledge, item.context, { projectId: fixture!.projectId, attachments: request.attachments! });
+-        return { ack, item };
+-      };
+-      const original = decodeQueueAck(first), retried = decodeQueueAck(replay);
+-      expect(original.ack.replayed).toBe(false); expect(retried.ack.replayed).toBe(true);
+-      expect({ id: retried.item.id, sequence: retried.item.sequence }).toEqual({ id: original.item.id, sequence: original.item.sequence });
+-      const final = await savedCommand("queue"); expect(final.frozen).toEqual(saved.frozen);
+-      expect(final.checkpoint).toMatchObject({ conversationId: fixture!.conversationId, queueRevision: request.expectedQueueRevision + 1, item: { id: original.item.id, sequence: original.item.sequence, state: "waiting" } });
+-      await restoreNextDraft(nextId, next);
+-    });
+-    await run("a synthetic protocol attempt receives the same restored steering command; its next draft stays separate", "steeringRecovery", async () => {
+-      const seed = await fixture!.seedSteeringConversation();
+-      steeringRecovery.profile = seed.profile.reference; steeringRecovery.conversationId = seed.conversationId;
+-      const documentTimeOrigin = await page.evaluate(() => performance.timeOrigin);
+-      await page.goto(fixture!.url + `#conversation=${seed.conversationId}`); await expect(input()).toBeVisible();
+-      expect(await page.evaluate(() => performance.timeOrigin)).toBe(documentTimeOrigin);
+-      steeringRecovery.sameDocumentNavigation = true;
+-      const prompt = "Original turn for steering recovery", original = "Restored steering instruction 中文🙂", next = "Next steering draft stays separate";
+-      const turns = () => postRows().filter(row => row.path === `/api/conversations/${seed.conversationId}/turns`);
+-      await input().fill(prompt); await input().press("Enter");
+-      await expect.poll(() => turns()[0]?.responseBody).toBeTruthy(); expect(turns()).toHaveLength(1);
+-      const turnRow = turns()[0]!; requireThat(turnRow.responseBody, "Original turn ACK required before claiming");
+-      const turn = decodeConversationTurnAccepted(JSON.parse(turnRow.responseBody), seed.conversationId, conversationTurnSchema.parse(JSON.parse(turnRow.body)));
+-      expect(turn.replayed).toBe(false); steeringRecovery.turnId = turn.turn.id;
+-      const originalTurnReceipt = async () => {
+-        const matches = (await records(page)).map(parseRecoveryRecord).filter(record =>
+-          record.kind === "command" && record.domain === "outbox" && object(record.frozen).turnKey === turnRow.key);
+-        expect(matches).toHaveLength(1);
+-        const receipt = matches[0]!; requireThat(receipt.kind === "command" && receipt.domain === "outbox", "Original turn must have its durable outbox authority");
+-        return receipt;
+-      };
+-      await expect.poll(async () => (await originalTurnReceipt()).phase).toBe("accepted");
+-      const originalReceipt = await originalTurnReceipt(), originalFrozen = object(originalReceipt.frozen);
+-      expect(originalFrozen).toMatchObject({ id: originalReceipt.id, kind: "turn", conversationId: seed.conversationId, turnKey: turnRow.key });
+-      expect(originalFrozen.request).toEqual(JSON.parse(turnRow.body));
+-      expect(originalReceipt.checkpoint).toMatchObject({ conversationId: seed.conversationId, turnId: turn.turn.id, taskId: turn.turn.task.id });
+-      steeringRecovery.originalTurnReceiptId = originalReceipt.id;
+-      const actor = await seed.activate(turn.turn.task.id); steeringRecovery.actor = actor;
+-      expect(actor.observations).toMatchObject({ registered: true, claimed: true, sessionEventRequests: 1, heartbeatRequests: 0, runnerReceiptRequests: 0, providerQueries: 0 });
+-      const surface = page.getByRole("region", { name: "Running task steering", exact: true });
+-      const instruction = surface.getByLabel("Additional instruction", { exact: true });
+-      const guide = page.getByRole("button", { name: "Guide running task", exact: true });
+-      const openSteering = async () => {
+-        await expect(guide).toHaveCount(1); await guide.click(); await expect(surface).toBeVisible();
+-        await expect(surface).toHaveAttribute("data-steering-task", turn.turn.task.id);
+-      };
+-      const steeringDraft = async (value: string) => {
+-        const matches = (await records(page)).filter(record => {
+-          if (record.kind !== "draft" || !record.data || !Array.isArray(object(record.data).steering)) return false;
+-          return (object(record.data).steering as unknown[]).some(item => {
+-            const draft = object(item); return draft.taskId === turn.turn.task.id && draft.turnId === turn.turn.id && draft.text === value;
+-          });
+-        });
+-        expect(matches.length).toBeLessThanOrEqual(1); return matches[0];
+-      };
+-      const restoreSteeringDraft = async (id: string, value: string) => {
+-        const before = postRows().length, dialog = await openRecovery(), row = await exactRecordRow(dialog, id);
+-        await row.getByRole("button", { name: "Restore without sending", exact: true }).click();
+-        await page.keyboard.press("Escape"); await expect(dialog).not.toBeVisible();
+-        await expect(page.getByRole("button", { name: "Saved drafts and receipts", exact: true })).toBeFocused();
+-        await openSteering(); await expect(instruction).toHaveValue(value); expect(postRows()).toHaveLength(before);
+-      };
+-      await openSteering(); await instruction.fill(original);
+-      await expect(surface.getByRole("button", { name: "Send steering", exact: true })).toBeEnabled();
+-      try {
+-        await expect(instruction).toHaveValue(original);
+-        await expect.poll(async () => (await steeringDraft(original))?.id).toBeTruthy();
+-      } catch (error) {
+-        // Failure-only observation of this owned fixture. Keep the original assertion/error;
+-        // do not save, send, extend its timeout or continue a partially failed journey.
+-        const observation = { inputMatches: null as boolean | null, records: [] as unknown[], recoveryAlerts: [] as string[], observationErrors: [] as string[] };
+-        steeringRecovery.draftFailureObservation = observation;
+-        try {
+-          observation.inputMatches = await instruction.inputValue({ timeout: 1000 }) === original;
+-        } catch (failure) { observation.observationErrors.push("input: " + text(failure).slice(0, 512)); }
+-        try {
+-          observation.records = (await records(page)).slice(0, 8).map(record => {
+-            const data = record.kind === "draft" && record.data ? object(record.data) : {};
+-            const steering = Array.isArray(data.steering) ? data.steering : [], owner = object(record.owner);
+-            return { id: record.id, kind: record.kind, version: record.version,
+-              owner: { viewKey: owner.viewKey, routeId: owner.routeId, projectId: owner.projectId },
+-              steering: steering.slice(0, 8).map(item => { const value = object(item); return {
+-                taskId: value.taskId, turnId: value.turnId, messageId: value.messageId,
+-                textMatches: value.text === original, textBytes: typeof value.text === "string" ? Buffer.byteLength(value.text) : null,
+-              }; }) };
+-          });
+-        } catch (failure) { observation.observationErrors.push("records: " + text(failure).slice(0, 512)); }
+-        try {
+-          await page.getByRole("button", { name: "Saved drafts and receipts", exact: true }).click({ timeout: 1000 });
+-          const dialog = page.getByRole("dialog", { name: "Saved drafts and receipts", exact: true });
+-          observation.recoveryAlerts = (await dialog.getByRole("alert").allTextContents()).slice(0, 8).map(value => value.slice(0, 512));
+-        } catch (failure) { observation.observationErrors.push("alerts: " + text(failure).slice(0, 512)); }
+-        throw error;
+-      }
+-      const draft = (await steeringDraft(original))!; steeringRecovery.draftId = draft.id;
+-      const material = object(draft.data).steering;
+-      expect(material).toEqual([{ taskId: turn.turn.task.id, turnId: turn.turn.id, messageId: expect.any(String), text: original }]);
+-      const before = postRows().length; steeringRecovery.browserPostCounts.push(before);
+-      await reloadAndReauthenticate(); await restoreSteeringDraft(draft.id, original);
+-      expect(object((await steeringDraft(original))!.data).steering).toEqual(material);
+-      expect(postRows()).toHaveLength(before); steeringRecovery.browserPostCounts.push(postRows().length);
+-      const path = `/api/tasks/${turn.turn.task.id}/steering`, commands = () => postRows().filter(row => row.path === path);
+-      const confirmBodyLoss = observeAckBodyLoss(page, path, "text", original);
+-      fixture!.dropNext("steering"); await surface.getByRole("button", { name: "Send steering", exact: true }).click();
+-      await expect(surface.getByRole("status").filter({ hasText: /^Acceptance unknown$/ })).toBeVisible();
+-      expect(commands()).toHaveLength(1); const first = commands()[0]!; await confirmBodyLoss(first);
+-      requireThat(first.key && first.responseBody, "Original steering key and full upstream ACK required");
+-      const savedSteering = async () => {
+-        const matches = (await records(page)).map(parseRecoveryRecord).filter(record => record.kind === "command" && record.domain === "steering");
+-        expect(matches).toHaveLength(1); const record = matches[0]!;
+-        requireThat(record.kind === "command" && record.domain === "steering" && record.id === first.key, "Exact steering receipt identity required"); return record;
+-      };
+-      await expect.poll(async () => (await savedSteering()).phase).toBe("unknown");
+-      const receipt = await savedSteering(), frozen = object(receipt.frozen), requested = steeringCommandSchema.parse(JSON.parse(first.body));
+-      steeringRecovery.receiptId = receipt.id;
+-      expect(requested).toEqual({ attemptId: actor.attemptId, ownerVersion: actor.ownerVersion, expectedRevision: actor.admission.revision, text: original });
+-      expect(frozen).toEqual({ key: first.key, taskId: turn.turn.task.id, input: requested, bytes: Buffer.byteLength(original), digest: digest(original) });
+-      const accepted = object(JSON.parse(first.responseBody)), command = object(accepted.command);
+-      expect(accepted.replayed).toBe(false); expect(first.status).toBe(202);
+-      expect(command).toMatchObject({ taskId: turn.turn.task.id, attemptId: actor.attemptId, ownerVersion: actor.ownerVersion,
+-        nativeSessionId: actor.nativeSessionId, revision: requested.expectedRevision + 1, status: "accepted", receiptRevision: 0,
+-        input: { bytes: Buffer.byteLength(original), digest: digest(original) } });
+-      expect(command.id).toMatch(/^[a-f0-9-]{36}$/i); expect(command.userMessageUuid).toMatch(/^[a-f0-9-]{36}$/i);
+-      steeringRecovery.commandId = String(command.id);
+-      await instruction.fill(next); await expect.poll(async () => (await steeringDraft(next))?.id).toBe(draft.id);
+-      const nextMaterial = object((await steeringDraft(next))!.data).steering;
+-      await reloadAndReauthenticate(); await restoreSteeringDraft(draft.id, next);
+-      const dialog = await openRecovery(), row = await exactRecordRow(dialog, receipt.id);
+-      await expect(row).toContainText("steering receipt · unknown");
+-      await row.getByRole("button", { name: "Restore without sending", exact: true }).click();
+-      await page.keyboard.press("Escape"); await expect(dialog).not.toBeVisible();
+-      await expect(surface).toBeVisible(); await expect(instruction).toHaveValue(next);
+-      expect(commands()).toHaveLength(1); expect(postRows()).toHaveLength(before + 1);
+-      steeringRecovery.browserPostCounts.push(postRows().length);
+-      await surface.getByRole("button", { name: "Retry original command", exact: true }).click();
+-      await expect.poll(async () => (await savedSteering()).phase).toBe("accepted");
+-      await expect(surface.getByRole("status").filter({ hasText: /^Accepted by center$/ })).toBeVisible();
+-      expect(commands()).toHaveLength(2); const replay = commands()[1]!;
+-      expect({ key: replay.key, body: replay.body, status: replay.status }).toEqual({ key: first.key, body: first.body, status: 202 });
+-      requireThat(replay.responseBody, "Replay requires the genuine center ACK");
+-      expect(JSON.parse(replay.responseBody)).toEqual({ command, replayed: true });
+-      const resolved = await savedSteering(); expect(resolved.frozen).toEqual(frozen); expect(resolved.checkpoint).toEqual(command);
+-      await expect(instruction).toHaveValue(next); expect(object((await steeringDraft(next))!.data).steering).toEqual(nextMaterial);
+-      expect(turns()).toHaveLength(1); expect(postRows()).toHaveLength(before + 2); steeringRecovery.browserPostCounts.push(postRows().length);
+-      expect(postRows().some(row => /\/runner\/steering\/(?:receipts|finalize)/.test(row.path))).toBe(false);
+-      coverage.queueSteerRecovery = "PARTIAL: real steering accepted/replay with a synthetic session; no promotion or native application";
+-      coverage.profileKnowledgeSteeringDraft = "PARTIAL: steering draft and next draft; profile/knowledge/files remain separate completed evidence";
+-    });
+-    await run("prepared profile/project and complete draft survive re-auth/restore; explicit verification preserves first-turn material identity", "completeDraft", async () => {
+-      const seed = await fixture!.seedCompleteDraft(), original = "Complete recovery draft 中文🙂", next = "Independent draft after complete material send";
+-      completeDraft.profile = seed.profile.reference; completeDraft.knowledge = seed.citation;
+-      const creations = () => postRows().filter(row => row.path === "/api/conversations");
+-      const turns = () => postRows().filter(row => /\/turns$/.test(row.path));
+-      const bodyReads = () => fixture!.wire.filter(row => /\/attachments\/[^/]+\/content|\/knowledge\/resolve/.test(row.path)).length;
+-      const composer = () => page.locator("[data-composer-view]").filter({ visible: true });
+-      const configuration = () => page.locator(".flow-composer-configuration").filter({ visible: true });
+-      const knowledge = () => composer().getByRole("button", { name: "Knowledge", exact: true });
+-      const knowledgeDialog = page.getByRole("dialog", { name: "Conversation knowledge", exact: true });
+-      const files = () => composer().getByRole("button", { name: "Files", exact: true });
+-      const fileDialog = page.getByRole("dialog", { name: "Project text files", exact: true });
+-      const searchKnowledge = async () => {
+-        await knowledgeDialog.getByRole("textbox", { name: "Search project knowledge", exact: true }).fill(seed.query);
+-        await knowledgeDialog.getByRole("button", { name: "Search", exact: true }).click();
+-        const hit = knowledgeDialog.getByRole("list", { name: "Knowledge search results", exact: true }).locator("article").filter({ hasText: seed.citation.sourceId });
+-        await expect(hit).toHaveCount(1); return hit.getByRole("checkbox");
+-      };
+-      const closeKnowledge = async () => { await page.keyboard.press("Escape"); await expect(knowledgeDialog).not.toBeVisible(); await expect(knowledge()).toBeFocused(); };
+-      const closeFiles = async () => { await page.keyboard.press("Escape"); await expect(fileDialog).not.toBeVisible(); await expect(files()).toBeFocused(); };
+-      await page.locator(".flow-workspace-bar").getByRole("button", { name: "New chat", exact: true }).click();
+-      await expect(configuration()).toHaveCount(1);
+-      await configuration().getByRole("button", { name: "Execution profile: Runner default", exact: true }).click();
+-      const profiles = page.getByRole("dialog", { name: "Execution profile", exact: true });
+-      await profiles.getByRole("button", { name: "Refresh profiles", exact: true }).click();
+-      const profileOption = profiles.locator(".ep-option").filter({ hasText: seed.profile.reference.id });
+-      await expect(profileOption).toHaveCount(1); await profileOption.getByRole("radio").check();
+-      await page.keyboard.press("Escape"); await expect(profiles).not.toBeVisible();
+-      await input().fill(original); await knowledge().click();
+-      await knowledgeDialog.getByRole("combobox", { name: "Conversation project", exact: true }).selectOption(fixture!.projectId);
+-      expect(postRows()).toHaveLength(0);
+-      await knowledgeDialog.getByRole("button", { name: "Prepare conversation in project", exact: true }).click();
+-      // Preparing may remount the route/dialog. Confirm the actual CREATE before reopening the public material picker.
+-      await expect.poll(() => creations()[0]?.responseBody).toBeTruthy();
+-      if (await knowledgeDialog.isVisible()) {
+-        await expect(knowledgeDialog).toContainText(`Conversation project locked: ${fixture!.projectId}`); await closeKnowledge();
+-      }
+-      await expect(configuration().getByRole("button", { name: `Conversation settings: ${seed.profile.configuration.model}`, exact: true })).toBeVisible();
+-      const createdRow = creations()[0]!, creation = conversationCreationSchema.parse(JSON.parse(createdRow.body));
+-      expect(creation.projectId).toBe(fixture!.projectId); expect(creation.executionProfile).toEqual(seed.profile.reference);
+-      expect(creation.requested).toEqual({ model: seed.profile.configuration.model, thinking: "disabled", tools: "none" });
+-      requireThat(createdRow.responseBody, "Prepared conversation needs a complete real CREATE ACK");
+-      const created = decodeConversationCreated(JSON.parse(createdRow.responseBody), creation);
+-      completeDraft.conversationId = created.conversation.id; expect(created.replayed).toBe(false);
+-      expect(turns()).toHaveLength(0); expect(postRows()).toHaveLength(1);
+-      await knowledge().click();
+-      await expect(knowledgeDialog).toContainText(`Conversation project locked: ${fixture!.projectId}`);
+-      await (await searchKnowledge()).check(); await closeKnowledge();
+-      await files().click(); await fileDialog.getByRole("button", { name: "Browse files", exact: true }).click();
+-      await fileDialog.getByRole("button", { name: "Use saved.txt", exact: true }).click();
+-      await fileDialog.getByRole("button", { name: "Use later.txt", exact: true }).click(); await closeFiles();
+-      await page.getByRole("radio", { name: "Queue next", exact: true }).check(); await saveDraftThroughUi(original);
+-      const selectedDrafts = async () => (await records(page)).filter(record => {
+-        if (record.kind !== "draft" || record.data?.text !== original) return false;
+-        const data = object(record.data);
+-        return Array.isArray(data.knowledge) && data.knowledge.length === 1 && Array.isArray(data.attachments) && data.attachments.length === 2 && data.intent === "queue";
+-      });
+-      await expect.poll(async () => (await selectedDrafts()).length).toBe(1);
+-      const saved = parseRecoveryRecord((await selectedDrafts())[0]); requireThat(saved.kind === "draft", "Expected a complete saved draft");
+-      completeDraft.savedRecordId = saved.id;
+-      const assertSavedIdentity = (data: unknown) => {
+-        expect(data).toMatchObject({ text: original, intent: "queue", projectId: fixture!.projectId,
+-          profile: { kind: "configured", profile: { reference: seed.profile.reference, configuration: seed.profile.configuration } },
+-          knowledge: [{ title: seed.title, citation: seed.citation }],
+-          attachments: [{ name: "saved.txt", metadata: { reference: fixture!.resource.reference } }, { name: "later.txt", metadata: { reference: fixture!.secondResource.reference } }] });
+-        expect(object(data).knowledge).toHaveLength(1); expect(object(data).attachments).toHaveLength(2);
+-      };
+-      assertSavedIdentity(saved.data); expect(saved.owner).toMatchObject({ routeId: `conversation:${created.conversation.id}`, projectId: fixture!.projectId });
+-      const baseline = postRows().map(row => ({ path: row.path, key: row.key, body: row.body })), readsBefore = bodyReads();
+-      completeDraft.preparedPostCount = baseline.length; expect(readsBefore).toBe(0);
+-      await reloadAndReauthenticate();
+-      const recovery = await openRecovery(), row = await exactRecordRow(recovery, saved.id);
+-      await expect(row).toContainText(original); await expect(row).toContainText("Files: 2"); await expect(row).toContainText("Knowledge: 1");
+-      await row.getByRole("button", { name: "Restore without sending", exact: true }).click();
+-      await page.keyboard.press("Escape"); await expect(recovery).not.toBeVisible();
+-      await expect(input()).toHaveValue(original); await expect(page.getByRole("radio", { name: "Queue next", exact: true })).toBeChecked();
+-      assertSavedIdentity((await records(page)).find(record => record.id === saved.id)?.data);
+-      expect(postRows().map(value => ({ path: value.path, key: value.key, body: value.body }))).toEqual(baseline);
+-      completeDraft.restoredPostCount = postRows().length; expect(bodyReads()).toBe(readsBefore);
+-      const chips = input().locator("xpath=ancestor::form").locator(".aui-composer-attachments .aui-attachment-root");
+-      await expect(chips).toHaveCount(0);
+-      await knowledge().click(); await expect(knowledgeDialog.getByRole("button", { name: `Remove ${seed.title}, version ${seed.citation.version}`, exact: true })).toBeVisible(); await closeKnowledge();
+-      await files().click(); await expect(fileDialog.getByRole("region", { name: "Files in this draft" })).toContainText("unverified");
+-      // Explicit metadata only, reverse file verification B then A, followed by knowledge search. Never Use/reselect restored materials.
+-      for (const name of ["later.txt", "saved.txt"]) {
+-        await fileDialog.getByRole("textbox", { name: "Find uploaded files", exact: true }).fill(name);
+-        await fileDialog.getByRole("button", { name: "Browse files", exact: true }).click();
+-        await expect(fileDialog.getByRole("region", { name: "Files in this draft" }).locator("article").filter({ hasText: name })).toContainText("ready");
+-        completeDraft.verificationOrder.push(name);
+-      }
+-      await closeFiles(); await expect(chips).toHaveCount(2);
+-      await page.getByRole("radio", { name: "Send now", exact: true }).check(); await input().press("Enter");
+-      await expect(page.getByRole("alert").filter({ hasText: "Verify restored knowledge references" })).toBeVisible();
+-      await expect(input()).toHaveValue(original); expect(postRows()).toHaveLength(baseline.length);
+-      await knowledge().click(); await expect(await searchKnowledge()).toBeChecked(); completeDraft.verificationOrder.push("knowledge"); await closeKnowledge();
+-      expect(bodyReads()).toBe(readsBefore); expect(postRows()).toHaveLength(baseline.length);
+-      await input().press("Enter"); await expect.poll(() => turns()[0]?.responseBody).toBeTruthy();
+-      expect(creations()).toHaveLength(1); expect(postRows()).toHaveLength(baseline.length + 1);
+-      const turnRow = turns()[0]!, requested = conversationTurnSchema.parse(JSON.parse(turnRow.body));
+-      const turnReceipt = async () => {
+-        const matching = (await records(page)).map(record => parseRecoveryRecord(record)).filter(record =>
+-          record.kind === "command" && record.domain === "outbox" && object(record.frozen).turnKey === turnRow.key);
+-        expect(matching).toHaveLength(1);
+-        const receipt = matching[0]!; requireThat(receipt.kind === "command" && receipt.domain === "outbox", "Expected the exact turn authority");
+-        return receipt;
+-      };
+-      await expect.poll(async () => (await turnReceipt()).phase).toBe("accepted");
+-      const receipt = await turnReceipt(), frozen = object(receipt.frozen);
+-      expect(frozen).toMatchObject({ id: receipt.id, kind: "turn", conversationId: created.conversation.id, turnKey: turnRow.key });
+-      expect(frozen.request).toEqual(requested);
+-      expect(turnRow.path).toBe(`/api/conversations/${created.conversation.id}/turns`);
+-      expect(requested).toEqual({ expectedRevision: created.conversation.revision, text: original, mode: "follow-up", knowledge: [seed.citation], attachments: [fixture!.resource.reference, fixture!.secondResource.reference] });
+-      requireThat(turnRow.responseBody, "The first material turn needs its actual accepted ACK");
+-      const accepted = decodeConversationTurnAccepted(JSON.parse(turnRow.responseBody), created.conversation.id, requested);
+-      expect(accepted.replayed).toBe(false); expect(accepted.turn.id).not.toBe(""); expect(accepted.turn.task.id).not.toBe("");
+-      expect(receipt.checkpoint).toMatchObject({ conversationId: created.conversation.id, turnId: accepted.turn.id, taskId: accepted.turn.task.id });
+-      completeDraft.turnId = accepted.turn.id; completeDraft.taskId = accepted.turn.task.id;
+-      await configuration().getByRole("button", { name: `Conversation settings: ${seed.profile.configuration.model}`, exact: true }).click();
+-      const settings = page.getByRole("dialog", { name: "Conversation settings", exact: true });
+-      await settings.getByText("Profile identifiers", { exact: true }).click();
+-      for (const value of Object.values(seed.profile.reference)) await expect(settings.getByRole("region", { name: "Requested configuration", exact: true })).toContainText(value);
+-      await page.keyboard.press("Escape"); await expect(settings).not.toBeVisible();
+-      const nextId = await preserveNextDraft(next), nextDraft = (await records(page)).find(record => record.id === nextId)!;
+-      expect(nextDraft.data).toMatchObject({ text: next, projectId: fixture!.projectId, knowledge: [], attachments: [] });
+-      expect(postRows()).toHaveLength(baseline.length + 1); expect(bodyReads()).toBe(readsBefore);
+-      coverage.profileKnowledgeSteeringDraft = "PARTIAL: prepared profile/project, knowledge and two files; steering draft is not covered";
+-    });
+-    const settingsUi = () => {
+-      const action = () => page.locator("[data-composer-view]").filter({ visible: true }).getByRole("button", { name: "消息设置", exact: true });
+-      const dialog = page.getByRole("dialog", { name: "下一条消息设置", exact: true });
+-      const applied = () => page.locator(".ep-settings-summary").filter({ visible: true }).filter({ hasText: "下一条消息设置" });
+-      const open = async () => { await action().focus(); await action().press("Enter"); await expect(dialog).toBeVisible(); };
+-      const choose = async (value: { requested: { model: string } }) => {
+-        const option = dialog.locator(".ep-option").filter({ hasText: value.requested.model });
+-        await expect(option).toHaveCount(1); await option.getByRole("radio").check();
+-      };
+-      const apply = async (value: { requested: { model: string } }) => {
+-        await open(); await choose(value); await dialog.getByRole("button", { name: "应用", exact: true }).click();
+-        await expect(dialog).not.toBeVisible(); await expect(action()).toBeFocused(); await expect(applied()).toContainText(value.requested.model);
+-      };
+-      const omit = async () => {
+-        await open(); await dialog.getByRole("radio", { name: /不单独设置/ }).check();
+-        await dialog.getByRole("button", { name: "应用", exact: true }).click(); await expect(dialog).not.toBeVisible();
+-      };
+-      return { action, dialog, applied, open, choose, apply, omit };
+-    };
+-    await run("mounted App official material failure/cancel preserve B and explicitly restore complete A", "messageSettingsMaterialReturn", async () => {
+-      const seed = await fixture!.seedMessageSettings(), [a, b, c] = seed.choices;
+-      requireThat(a && b && c, "Three declared choices required");
+-      const { action, dialog, applied, open, choose, apply, omit } = settingsUi();
+-      const original = "MSG03 held material A 中文🙂", path = `/api/conversations/${seed.conversationId}`;
+-      const business = () => postRows().filter(row => row.path === path + "/turns" || row.path === path + "/queue");
+-      const composer = () => page.locator(".aui-composer-root").filter({ visible: true });
+-      const upload = async (name: string) => {
+-        const add = composer().getByRole("button", { name: "Add Attachment", exact: true });
+-        await expect(add).toBeEnabled();
+-        const [chooser] = await Promise.all([page.waitForEvent("filechooser"), add.click()]);
+-        await chooser.setFiles({ name, mimeType: "text/plain", buffer: Buffer.from(`Fixture file ${name}`) });
+-        await expect(composer().getByRole("button", { name: "File attachment", exact: true })).toHaveCount(name === "held-b.txt" ? 1 : name === "held-2.txt" ? 2 : 1);
+-        const ready = (await probe("snapshot")).ready.filter((item: { name: string }) => item.name === name).at(-1);
+-        requireThat(ready?.id && ready.reference, "Real adapter upload identity required"); return ready;
+-      };
+-      const probe = async (operation: "arm" | "settle" | "snapshot" | "dispose", value?: string) => page.evaluate(async ({ operation, value }) => {
+-        const url = "/@id/__x00__virtual:msg03-material-probe", module = await import(url);
+-        if (operation === "snapshot") return module.snapshot();
+-        module[operation](value); return module.snapshot();
+-      }, { operation, value });
+-      await page.goto(fixture!.url + `#conversation=${seed.conversationId}`); await expect(input()).toBeVisible();
+-      try {
+-        const files = page.locator("[data-composer-view]").filter({ visible: true }).getByRole("button", { name: "Files", exact: true });
+-        await files.click();
+-        const picker = page.getByRole("dialog", { name: "Project text files", exact: true });
+-        await expect(picker).toBeVisible();
+-        await page.keyboard.press("Escape"); await expect(picker).not.toBeVisible(); await expect(files).toBeFocused();
+-        for (const mode of ["failure", "cancel"] as const) {
+-          await apply(a); await input().fill(original); await upload("held-1.txt"); await upload("held-2.txt");
+-          const savedA = async () => (await records(page)).find(record => record.kind === "draft" && record.owner.routeId === `conversation:${seed.conversationId}`
+-            && object(record.data).text === original && JSON.stringify(object(record.data).messageSettings) === JSON.stringify(a)
+-            && Array.isArray(object(record.data).attachments) && (object(record.data).attachments as unknown[]).length === 2);
+-          await expect.poll(async () => Boolean(await savedA())).toBe(true);
+-          const savedAttachments = object((await savedA())!.data).attachments;
+-          await expect(composer().getByRole("button", { name: "Send message", exact: true })).toBeEnabled();
+-          await probe("arm", mode); const posts = business().length; await input().press("Enter");
+-          await expect.poll(async () => (await probe("snapshot")).pending).toBe(true);
+-          await expect(input()).toHaveValue(""); await expect(composer().locator(".aui-composer-attachments > *")).toHaveCount(0);
+-          await apply(b); const nextText = mode === "failure" ? "" : original; await input().fill(nextText);
+-          const nextMaterial = mode === "cancel" ? await upload("held-b.txt") : undefined;
+-          if (nextMaterial) {
+-            await composer().getByRole("button", { name: "File attachment", exact: true }).focus();
+-            await expect(page.getByRole("tooltip")).toHaveText("held-b.txt");
+-          }
+-          if (mode === "failure") await probe("settle", "failed");
+-          else await page.getByRole("button", { name: "Cancel material preparation", exact: true }).click();
+-          const held = page.getByRole("region", { name: "Unsent material recovery", exact: true });
+-          await expect(held).toBeVisible(); await expect(held).toContainText(original);
+-          await expect(input()).toHaveValue(nextText); await expect(applied()).toContainText(b.requested.model);
+-          const nextFiles = mode === "failure" ? 0 : 1;
+-          await expect(composer().getByRole("button", { name: "File attachment", exact: true })).toHaveCount(nextFiles);
+-          expect(business()).toHaveLength(posts);
+-          if (mode === "cancel") {
+-            const savedB = async () => (await records(page)).find(record => record.kind === "draft" && record.owner.routeId === `conversation:${seed.conversationId}`
+-              && object(record.data).text === nextText && JSON.stringify(object(record.data).messageSettings) === JSON.stringify(b));
+-            const identities = (data: unknown) => (object(data).attachments as unknown[]).map(item => ({ id: object(item).id, name: object(item).name, reference: object(object(item).metadata).reference }));
+-            await expect.poll(async () => { const row = await savedB(); return row ? identities(row.data) : []; }).toEqual([nextMaterial]);
+-            const beforeLate = structuredClone((await savedB())!.data);
+-            // Core cancellation returned A already. The adapter deliberately ignores abort until this late real settlement.
+-            expect((await probe("snapshot")).rows.at(-1).abortObserved).toBe(true);
+-            await probe("settle", "released"); await expect.poll(async () => (await probe("snapshot")).rows.at(-1).returned).toBe(true);
+-            await expect(input()).toHaveValue(nextText); await expect(applied()).toContainText(b.requested.model);
+-            await expect(composer().getByRole("button", { name: "File attachment", exact: true })).toHaveCount(1); expect(business()).toHaveLength(posts);
+-            await expect.poll(async () => (await savedB())?.data).toEqual(beforeLate);
+-          }
+-          // The production restore button must reject both settings-only B and same-text/file B.
+-          await held.getByRole("button", { name: "Restore into an empty draft", exact: true }).click();
+-          await expect(input()).toHaveValue(nextText); await expect(applied()).toContainText(b.requested.model); await expect(held).toBeVisible();
+-          await input().fill("");
+-          if (nextFiles) await composer().getByRole("button", { name: "Remove file", exact: true }).click();
+-          await omit(); await held.getByRole("button", { name: "Restore into an empty draft", exact: true }).click();
+-          await expect(held).not.toBeVisible(); await expect(input()).toHaveValue(original); await expect(applied()).toContainText(a.requested.model);
+-          await expect(composer().getByRole("button", { name: "File attachment", exact: true })).toHaveCount(2);
+-          await expect.poll(async () => (await records(page)).filter(record => record.kind === "draft" && record.owner.routeId === `conversation:${seed.conversationId}`
+-            && object(record.data).text === original && JSON.stringify(object(record.data).messageSettings) === JSON.stringify(a)
+-            && JSON.stringify(object(record.data).attachments) === JSON.stringify(savedAttachments)).length).toBe(1);
+-          expect(business()).toHaveLength(posts);
+-          const observation = await probe("snapshot"); expect(observation.pending).toBe(false);
+-          expect(observation.rows.at(-1)).toMatchObject({ label: mode, outcome: mode === "failure" ? "failed" : "released", originalValidated: true, returned: mode === "cancel" });
+-          materialPreparation.push({ mode, restoredCompleteDraft: true, businessPostCount: posts, observation });
+-          await input().fill("");
+-          for (let index = 0; index < 2; index++) {
+-            await expect(composer().getByRole("button", { name: "Remove file", exact: true })).toHaveCount(2 - index);
+-            await composer().getByRole("button", { name: "Remove file", exact: true }).first().click();
+-          }
+-          await expect.poll(async () => (await records(page)).some(record => record.kind === "draft" && record.owner.routeId === `conversation:${seed.conversationId}`
+-            && object(record.data).text === "" && JSON.stringify(object(record.data).attachments) === "[]")).toBe(true);
+-          expect(fixture!.wire.filter(row => row.method === "DELETE")).toHaveLength(0);
+-        }
+-        // Success also waits in the actual adapter, before onNew: B is independent before any HTTP turn.
+-        await apply(a); await input().fill(original); await upload("held-1.txt"); await expect(composer().getByRole("button", { name: "Send message", exact: true })).toBeEnabled(); await probe("arm", "success");
+-        await input().press("Enter"); await expect.poll(async () => (await probe("snapshot")).pending).toBe(true);
+-        expect(business()).toHaveLength(0); await apply(b); await input().fill(original); await probe("settle", "released");
+-        await expect.poll(() => business().length).toBe(1); expect(conversationTurnSchema.parse(JSON.parse(business()[0]!.body)).messageSettings).toEqual(a);
+-        await expect(input()).toHaveValue(original); await expect(applied()).toContainText(b.requested.model);
+-        const observation = await probe("snapshot"); expect(observation.rows.at(-1)).toMatchObject({ label: "success", outcome: "released", originalValidated: true, returned: true });
+-        materialPreparation.push({ mode: "success", businessPostCount: 1, observation });
+-        // A pending opening cannot apply after real same-document navigation hides its owner.
+-        const origin = await page.evaluate(() => performance.timeOrigin); await open(); await choose(c);
+-        await page.evaluate(id => { location.hash = `conversation=${id}`; }, fixture!.conversationId);
+-        await expect(dialog).not.toBeVisible(); await page.evaluate(id => { location.hash = `conversation=${id}`; }, seed.conversationId);
+-        await expect(applied()).toContainText(b.requested.model); expect(await page.evaluate(() => performance.timeOrigin)).toBe(origin);
+-        expect(business()).toHaveLength(1); await expect(action()).toBeVisible();
+-      } finally { try { await probe("dispose"); } catch (error) { cleanupErrors.push("material probe: " + text(error)); } }
+-    });
+-    await run("real App message settings bind frozen Send/Queue requests, complete Recovery and native P01 keyboard", "messageSettingsApp", async () => {
+-      const seed = await fixture!.seedMessageSettings(), [a, b, c] = seed.choices;
+-      requireThat(a && b && c, "Three declared choices required");
+-      const original = "MSG03 same text 中文🙂", path = `/api/conversations/${seed.conversationId}`;
+-      const rows = (suffix: string) => postRows().filter(row => row.path === path + suffix);
+-      const { action, dialog, applied, open, choose, apply } = settingsUi();
+-      const draft = async (value: typeof a, text: string) => {
+-        const matching = (await records(page)).filter(record => record.kind === "draft" && record.owner.routeId === `conversation:${seed.conversationId}`
+-          && record.data?.text === text && JSON.stringify(object(record.data).messageSettings) === JSON.stringify(value));
+-        expect(matching).toHaveLength(1); return matching[0]!;
+-      };
+-      await page.goto(fixture!.url + `#conversation=${seed.conversationId}`); await expect(input()).toBeVisible();
+-      // First mount must provide valid P01 context before any second-render rescue.
+-      await open(); await choose(a); await dialog.getByRole("button", { name: "取消", exact: true }).click();
+-      await expect(dialog).not.toBeVisible(); await expect(action()).toBeFocused(); await expect(applied()).toContainText("not attached");
+-      await apply(a); await expect(input()).toHaveValue("");
+-      await expect.poll(async () => (await draft(a, "")).id).toBeTruthy();
+-      const saved = await draft(a, ""), baseline = postRows().length;
+-      await reloadAndReauthenticate(); const recovery = await openRecovery(), savedRow = await exactRecordRow(recovery, saved.id);
+-      await savedRow.getByRole("button", { name: "Restore without sending", exact: true }).click(); await page.keyboard.press("Escape");
+-      await expect(recovery).not.toBeVisible(); await expect(applied()).toContainText(a.requested.model); await expect(input()).toHaveValue("");
+-      expect(postRows()).toHaveLength(baseline);
+-      // An explicit directory read validates retained C; restore itself neither reads content nor sends.
+-      await open(); await expect(dialog.locator(".ep-option").filter({ hasText: a.requested.model })).toHaveCount(1);
+-      await dialog.getByRole("button", { name: "取消", exact: true }).click(); await expect(action()).toBeFocused();
+-      const files = page.locator("[data-composer-view]").filter({ visible: true }).getByRole("button", { name: "Files", exact: true });
+-      await files.click(); const picker = page.getByRole("dialog", { name: "Project text files", exact: true });
+-      await picker.getByRole("button", { name: "Browse files", exact: true }).click();
+-      await picker.getByRole("button", { name: "Use saved.txt", exact: true }).click();
+-      await picker.getByRole("button", { name: "Use later.txt", exact: true }).click();
+-      await page.keyboard.press("Escape"); await expect(picker).not.toBeVisible(); await expect(files).toBeFocused();
+-      await input().fill(original);
+-      // Hold the actual original request, not a mocked response: B is written before A's ACK.
+-      let release!: () => void, arrived!: () => void;
+-      const held = new Promise<void>(resolve => { release = resolve; }), requested = new Promise<void>(resolve => { arrived = resolve; });
+-      const routePattern = `**${path}/turns`;
+-      const routeHandler = async (route: import("@playwright/test").Route) => {
+-        if (route.request().method() !== "POST") { await route.continue(); return; }
+-        arrived(); await held; await route.continue();
+-      };
+-      await page.route(routePattern, routeHandler);
+-      const verifyTurnLoss = observeAckBodyLoss(page, path + "/turns", "text", original); fixture!.dropNext("turn");
+-      let requestTimer: ReturnType<typeof setTimeout> | undefined;
+-      try {
+-        await input().press("Enter");
+-        await Promise.race([requested, new Promise<never>((_, reject) => { requestTimer = setTimeout(() => reject(Error("Original Send request not observed")), 4500); })]);
+-        clearTimeout(requestTimer);
+-        await apply(b); await input().fill(original); release();
+-        await expect(page.getByRole("region", { name: "Message receipt", exact: true })).toContainText("Receipt unknown");
+-      } finally { clearTimeout(requestTimer); release(); await page.unroute(routePattern, routeHandler); }
+-      const first = rows("/turns")[0]!; await verifyTurnLoss(first);
+-      const send = conversationTurnSchema.parse(JSON.parse(first.body)); expect(send.messageSettings).toEqual(a);
+-      expect(send.attachments).toEqual([fixture!.resource.reference, fixture!.secondResource.reference]);
+-      await expect(applied()).toContainText(b.requested.model); await expect(input()).toHaveValue(original);
+-      await page.getByRole("button", { name: "Retry same message", exact: true }).click();
+-      await expect.poll(() => rows("/turns").length).toBe(2);
+-      const retry = rows("/turns")[1]!; expect({ key: retry.key, body: retry.body }).toEqual({ key: first.key, body: first.body });
+-      requireThat(retry.responseBody, "Real replay ACK required");
+-      expect(decodeConversationTurnAccepted(JSON.parse(retry.responseBody), seed.conversationId, send).replayed).toBe(true);
+-      await expect(applied()).toContainText(b.requested.model); await expect(input()).toHaveValue(original);
+-      await page.getByRole("radio", { name: "Queue next", exact: true }).check();
+-      const verifyQueueLoss = observeAckBodyLoss(page, path + "/queue", "text", original); fixture!.dropNext("queue");
+-      await input().press("Enter"); await expect(page.getByRole("region", { name: "enqueue receipt", exact: true })).toContainText("Receipt unknown");
+-      const queued = rows("/queue")[0]!; await verifyQueueLoss(queued);
+-      expect(conversationQueueEnqueueSchema.parse(JSON.parse(queued.body)).messageSettings).toEqual(b);
+-      await apply(c); await input().fill(original); await page.getByRole("button", { name: "Retry same enqueue", exact: true }).click();
+-      await expect.poll(() => rows("/queue").length).toBe(2);
+-      expect({ key: rows("/queue")[1]!.key, body: rows("/queue")[1]!.body }).toEqual({ key: queued.key, body: queued.body });
+-      await expect(applied()).toContainText(c.requested.model); await expect(input()).toHaveValue(original);
+-      const queue = page.getByRole("region", { name: "Conversation queue", exact: true });
+-      await queue.getByRole("button", { name: /waiting loaded/ }).click();
+-      const waiting = queue.getByRole("list", { name: "Waiting messages", exact: true });
+-      await expect(waiting).toContainText(b.requested.model); await expect(waiting).not.toContainText(c.requested.model);
+-      const config = page.locator(".flow-composer-configuration").filter({ visible: true });
+-      await config.getByRole("button", { name: "Conversation settings: msg03-pinned", exact: true }).click();
+-      const details = page.getByRole("dialog", { name: "Conversation settings", exact: true });
+-      await details.getByText(/Execution history · 1 turn/).click(); await details.getByText("Execution · turn 1", { exact: true }).click();
+-      await expect(details.getByText("This turn requested", { exact: true })).toBeVisible(); await expect(details).toContainText(a.requested.model);
+-      await expect(details).not.toContainText(c.requested.model); await page.keyboard.press("Escape");
+-      for (const theme of ["light", "dark"] as const) {
+-        await page.setViewportSize({ width: 390, height: 844 });
+-        const switchTheme = page.getByRole("button", { name: `Use ${theme} theme`, exact: true });
+-        if (await switchTheme.count()) await switchTheme.click();
+-        await expect(page.locator("html")).toHaveAttribute("data-theme", theme);
+-        await expect.poll(() => page.locator("html").evaluate(element => getComputedStyle(element).colorScheme)).toBe(theme);
+-        await open();
+-        await expect(dialog.getByRole("button", { name: "应用", exact: true })).toBeInViewport();
+-        await expect(dialog.getByRole("button", { name: "取消", exact: true })).toBeInViewport();
+-        await dialog.getByRole("combobox", { name: "模型", exact: true }).selectOption(c.requested.model);
+-        await dialog.getByText("完整模型名称", { exact: true }).click(); await expect(dialog).toContainText(c.requested.model);
+-        const png = await page.screenshot(); requireThat(png.length <= 512 * 1024, "MSG03 screenshot exceeds its retained budget");
+-        await writeFile(join(init.directory, `message-settings-${theme}-390.png`), png);
+-        await page.keyboard.press("Escape"); await expect(action()).toBeFocused();
+-      }
+-      expect(postRows()).toHaveLength(baseline + 4); // two original requests and their exact-key retries only
+-    });
+-    let draftId = "";
+-    const originalDraftRow = async (dialog: Locator) => {
+-      expect(draftId).toMatch(/^draft:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i);
+-      const row = dialog.locator(`[data-recovery-record-id="${draftId}"]`);
+-      await expect(row).toHaveCount(1);
+-      await expect(row).toContainText("Saved draft");
+-      await expect(row).toContainText(`conversation:${fixture!.conversationId}`);
+-      await expect(row).toContainText("Original recovery draft 中文🙂");
+-      await expect(row).toContainText("Queue next");
+-      await expect(row).toContainText("Files: 2");
+-      await expect(row.locator("time")).toHaveCount(1);
+-      return row;
+-    };
+-    await run("text, intent and exact file reference survive reload and explicit restore without mutation", "textIntentDraft", async () => {
+-      const files = page.locator("[data-composer-view]").getByRole("button", { name: "Files", exact: true }).filter({ visible: true });
+-      await files.click();
+-      const picker = page.getByRole("dialog", { name: "Project text files", exact: true });
+-      await picker.getByRole("button", { name: "Browse files", exact: true }).click();
+-      await picker.getByRole("button", { name: "Use saved.txt", exact: true }).click();
+-      await picker.getByRole("button", { name: "Use later.txt", exact: true }).click();
+-      await expect(picker.getByRole("region", { name: "Files in this draft" })).toContainText("saved.txt");
+-      await page.keyboard.press("Escape");
+-      await input().fill("Original recovery draft 中文🙂"); await page.getByRole("radio", { name: "Queue next", exact: true }).check();
+-      await expect.poll(async () => (await records(page)).some(record => record.kind === "draft" && record.data?.text === "Original recovery draft 中文🙂" && record.data.intent === "queue")).toBe(true);
+-      draftId = (await records(page)).find(record => record.data?.text === "Original recovery draft 中文🙂")!.id;
+-      const saved = (await records(page)).find(record => record.id === draftId)!;
+-      expect(saved.data?.attachments).toMatchObject([{ name: "saved.txt", metadata: { reference: fixture!.resource.reference } }, { name: "later.txt", metadata: { reference: fixture!.secondResource.reference } }]);
+-      expect(saved.data?.attachments).toHaveLength(2);
+-      const contentReads = () => fixture!.wire.filter(row => /\/attachments\/.*\/content/.test(row.path)).length;
+-      const bodiesBefore = contentReads(), posts = postRows().length; await page.reload(); await expect(input()).toBeVisible();
+-      const dialog = await openRecovery(), row = await originalDraftRow(dialog);
+-      await row.getByRole("button", { name: "Restore without sending", exact: true }).click(); await page.keyboard.press("Escape");
+-      await expect(input()).toHaveValue("Original recovery draft 中文🙂"); await expect(page.getByRole("radio", { name: "Queue next", exact: true })).toBeChecked(); expect(postRows()).toHaveLength(posts);
+-      const composerFiles = input().locator("xpath=ancestor::form").locator(".aui-composer-attachments .aui-attachment-root");
+-      await expect(composerFiles).toHaveCount(0); // Restored metadata alone is not a ready composer attachment.
+-      const commandCount = (await records(page)).filter(record => record.kind === "command").length;
+-      const assertMaterialSubmitBlocked = async () => {
+-        for (const delivery of ["Send now", "Queue next"]) {
+-          await page.getByRole("radio", { name: delivery, exact: true }).check(); await input().press("Enter");
+-          await expect(page.getByRole("alert").filter({ hasText: "Verify every selected file" }).first()).toBeVisible();
+-          await expect(input()).toHaveValue("Original recovery draft 中文🙂"); expect(postRows()).toHaveLength(posts);
+-          expect((await records(page)).filter(record => record.kind === "command")).toHaveLength(commandCount);
+-        }
+-      };
+-      await assertMaterialSubmitBlocked();
+-      await files.click();
+-      await expect(picker.getByRole("region", { name: "Files in this draft" })).toContainText("saved.txt");
+-      await expect(picker.getByRole("region", { name: "Files in this draft" })).toContainText("unverified");
+-      expect(contentReads()).toBe(bodiesBefore);
+-      // Verify B first through a real filtered metadata GET. A is still selected
+-      // and unverified, so B cannot become a partial or reordered submission.
+-      await picker.getByRole("textbox", { name: "Find uploaded files", exact: true }).fill("later.txt");
+-      await picker.getByRole("button", { name: "Browse files", exact: true }).click();
+-      await expect(picker.getByRole("region", { name: "Files in this draft" }).locator("article").filter({ hasText: "later.txt" })).toContainText("ready");
+-      await page.keyboard.press("Escape"); await expect(composerFiles).toHaveCount(0); await assertMaterialSubmitBlocked();
+-      await files.click(); await picker.getByRole("textbox", { name: "Find uploaded files", exact: true }).fill("saved.txt");
+-      await picker.getByRole("button", { name: "Browse files", exact: true }).click();
+-      await expect(picker.getByRole("region", { name: "Files in this draft" }).locator("article").filter({ hasText: "saved.txt" })).toContainText("ready");
+-      await page.keyboard.press("Escape");
+-      await expect(picker).not.toBeVisible();
+-      await expect(files).toBeFocused();
+-      // No Use/reselection/remount: original A,B order must reach actual chips.
+-      await expect(composerFiles).toHaveCount(2);
+-      await composerFiles.nth(0).getByRole("button", { name: "File attachment", exact: true }).focus();
+-      await expect(page.getByRole("tooltip")).toHaveText("saved.txt");
+-      await composerFiles.nth(1).getByRole("button", { name: "File attachment", exact: true }).focus();
+-      await expect(page.getByRole("tooltip")).toHaveText("later.txt");
+-      await input().focus();
+-      expect(contentReads()).toBe(bodiesBefore); expect(postRows()).toHaveLength(posts);
+-      expect((await records(page)).find(record => record.id === draftId)?.data?.attachments).toMatchObject([{ metadata: { reference: fixture!.resource.reference } }, { metadata: { reference: fixture!.secondResource.reference } }]);
+-      coverage.materialDraft = "PASSED";
+-    });
+-    await run("two actual tabs cannot overwrite the same restored draft version", "crossTabCas", async () => {
+-      const other = await context.newPage(); other.setDefaultTimeout(4500); other.on("pageerror", pageError);
+-      await other.goto(fixture!.url + `#conversation=${fixture!.conversationId}`); await expect(input(other)).toBeVisible();
+-      const dialog = await openRecovery(other), row = await originalDraftRow(dialog); await row.getByRole("button", { name: "Restore without sending", exact: true }).click(); await other.keyboard.press("Escape");
+-      await page.bringToFront(); await input().fill("Tab A protected draft"); await expect.poll(async () => (await records(page)).find(record => record.id === draftId)?.data?.text).toBe("Tab A protected draft");
+-      await other.bringToFront(); await input(other).fill("Tab B conflict stays local"); await expect(other.getByRole("alert").filter({ hasText: "another tab" }).first()).toBeVisible();
+-      expect((await records(page)).find(record => record.id === draftId)?.data?.text).toBe("Tab A protected draft"); await other.close(); await page.bringToFront();
+-    });
+-    await run("lost turn ACK preserves exact key/body; reload and re-auth read never submit; explicit retry replays", "sameKeyTurn", async () => {
+-      await page.getByRole("radio", { name: "Send now", exact: true }).check();
+-      const turnRows = () => postRows().filter(row => row.path === `/api/conversations/${fixture!.conversationId}/turns`);
+-      expect(turnRows()).toHaveLength(0);
+-      const verifyBodyLoss = observeAckBodyLoss(page, `/api/conversations/${fixture!.conversationId}/turns`, "text", await input().inputValue()); fixture!.dropNext("turn"); await input().press("Enter");
+-      await expect(page.getByRole("region", { name: "Message receipt", exact: true })).toContainText("Receipt unknown");
+-      expect(turnRows()).toHaveLength(1); const first = turnRows()[0]!; await verifyBodyLoss(first);
+-      const requested = conversationTurnSchema.parse(JSON.parse(first.body));
+-      expect(requested.attachments).toEqual([fixture!.resource.reference, fixture!.secondResource.reference]);
+-      await input().fill("Next draft stays independent"); await expect.poll(async () => (await records(page)).some(record => record.data?.text === "Next draft stays independent")).toBe(true);
+-      const posts = postRows().length; await page.reload(); await expect(input()).toBeVisible(); expect(postRows()).toHaveLength(posts); expect(turnRows()).toHaveLength(1);
+-      const dialog = await openRecovery(); const command = dialog.locator("li").filter({ hasText: "outbox receipt" }); await expect(command).toHaveCount(1);
+-      expect(turnRows()).toHaveLength(1); await command.getByRole("button", { name: "Retry original request", exact: true }).click(); await expect.poll(() => turnRows().length).toBe(2);
+-      const retry = turnRows()[1]!; expect({ key: retry.key, body: retry.body }).toEqual({ key: first.key, body: first.body });
+-      await expect.poll(async () => (await records(page)).find(record => record.kind === "command")?.phase).toBe("accepted");
+-      expect(turnRows()).toHaveLength(2); requireThat(first.responseBody && retry.responseBody, "Both real ACK identities required");
+-      const originalAck = decodeConversationTurnAccepted(JSON.parse(first.responseBody), fixture!.conversationId, requested);
+-      const retryAck = decodeConversationTurnAccepted(JSON.parse(retry.responseBody), fixture!.conversationId, requested);
+-      for (const ack of [originalAck, retryAck]) {
+-        expect(ack.turn.id.length).toBeGreaterThan(0); expect(ack.turn.task.id.length).toBeGreaterThan(0);
+-      }
+-      expect(retryAck.replayed).toBe(true);
+-      expect({ id: retryAck.turn.id, taskId: retryAck.turn.task.id }).toEqual({ id: originalAck.turn.id, taskId: originalAck.turn.task.id });
+-      expect(retry.responseSha256).toBe(digest(retry.responseBody)); expect(retry.fault).toBeUndefined();
+-      await page.keyboard.press("Escape"); expect((await records(page)).some(record => record.data?.text === "Next draft stays independent")).toBe(true);
+-      expect(fixture!.wire.some(row => /\/stream/.test(row.path) && row.cookie && !row.bearer && row.status === 200)).toBe(true); coverage.cookieSseHandshake = "PASSED";
+-    });
+-    await run("auth loss without reload retains an unsaved page-only draft; reconnect sends no command", "pageOnlyAuthLoss", async () => {
+-      if (init.journey === "page-auth") await saveDraftThroughUi("Durable draft before page-only auth loss");
+-      const posts = postRows().length, pageOrigin = await page.evaluate(() => performance.timeOrigin);
+-      await page.evaluate(() => {
+-        const holder = window as Window & { recoveryFixtureRestoreIdb?: () => void };
+-        const original = IDBDatabase.prototype.transaction;
+-        Object.defineProperty(IDBDatabase.prototype, "transaction", { configurable: true, writable: true,
+-          value(this: IDBDatabase, ...args: Parameters<IDBDatabase["transaction"]>) {
+-            const transaction = original.apply(this, args);
+-            if (this.name === "flow.conversation-recovery.v1" && args[1] === "readwrite") queueMicrotask(() => transaction.abort());
+-            return transaction;
+-          } });
+-        Object.defineProperty(holder, "recoveryFixtureRestoreIdb", { configurable: true,
+-          value() { IDBDatabase.prototype.transaction = original; delete holder.recoveryFixtureRestoreIdb; } });
+-      });
+-      try {
+-        await input().fill("Unsaved page-only draft after abort 中文🙂");
+-        await expect(page.getByRole("alert").filter({ hasText: /storage|transaction|save|checkpoint|abort/i }).first()).toBeVisible();
+-        expect((await records(page)).some(record => record.data?.text === "Unsaved page-only draft after abort 中文🙂")).toBe(false);
+-        await fixture!.expireSessions();
+-        await page.evaluate(() => window.dispatchEvent(new Event("focus"))); // Actual public session read; no reload or private controller access.
+-        await expect(page.getByRole("heading", { name: "Connect to Flow", exact: true })).toBeVisible();
+-        await expect(page.getByRole("button", { name: "Saved drafts and receipts", exact: true })).not.toBeVisible();
+-        await page.evaluate(() => (window as Window & { recoveryFixtureRestoreIdb?: () => void }).recoveryFixtureRestoreIdb?.());
+-        await page.getByLabel("Owner token", { exact: true }).fill(fixture!.token);
+-        await page.getByRole("button", { name: "Connect workspace", exact: true }).click();
+-        await expect(input()).toHaveValue("Unsaved page-only draft after abort 中文🙂");
+-        expect(await page.evaluate(() => performance.timeOrigin)).toBe(pageOrigin);
+-        expect(postRows()).toHaveLength(posts);
+-      } finally { await page.evaluate(() => (window as Window & { recoveryFixtureRestoreIdb?: () => void }).recoveryFixtureRestoreIdb?.()); }
+-    });
+-    await run("cookie mutation requires CSRF; offline observation never cancels or submits", "csrfOffline", async () => {
+-      if (init.journey === "csrf-offline") await saveDraftThroughUi("Unsaved page-only draft after abort 中文🙂");
+-      const status = await page.evaluate(async () => (await fetch("/api/conversations", { method: "POST", credentials: "include", headers: { "content-type": "application/json" }, body: "{}" })).status); expect(status).toBe(403);
+-      const posts = postRows().length;
+-      await context.setOffline(true); await expect(page.getByText("Offline. Drafts and pending commands have not been cancelled.", { exact: true })).toBeVisible();
+-      await context.setOffline(false); await expect(input()).toHaveValue("Unsaved page-only draft after abort 中文🙂"); expect(postRows()).toHaveLength(posts);
+-    });
+-    await run("recovery dialog opens with Enter and returns focus after Escape at 390 in both themes", "themes390", async () => {
+-      if (init.journey === "appearance") await saveDraftThroughUi("Saved recovery draft 中文🙂");
+-      await page.setViewportSize({ width: 390, height: 844 }); await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+-      for (const theme of ["light", "dark"] as const) {
+-        if (theme === "dark") await page.getByRole("button", { name: "Use dark theme", exact: true }).click();
+-        const dialog = await openRecovery(page, true); await expect(dialog).toBeVisible();
+-        if (init.journey === "appearance") await expect(dialog).toContainText("Saved recovery draft 中文🙂");
+-        const rect = await dialog.evaluate(element => {
+-          if (!(element instanceof HTMLElement)) throw Error("The dialog geometry requires an HTML element.");
+-          const box = element.getBoundingClientRect(), css = getComputedStyle(element);
+-          return { client: element.clientWidth, scroll: element.scrollWidth, width: box.width, left: box.left, right: box.right, top: box.top, bottom: box.bottom,
+-            radius: parseFloat(css.borderTopLeftRadius), paddingEnd: parseFloat(css.paddingInlineEnd), scrollbarWidth: element.offsetWidth - element.clientWidth, gutter: css.scrollbarGutter };
+-        });
+-        expect(rect.scroll).toBeLessThanOrEqual(rect.client + 1);
+-        if (init.journey === "appearance") {
+-          expect(rect.left).toBeGreaterThanOrEqual(0); expect(rect.right).toBeLessThanOrEqual(390);
+-          expect(rect.top).toBeGreaterThanOrEqual(0); expect(rect.bottom).toBeLessThanOrEqual(844);
+-          expect(rect.radius).toBeGreaterThanOrEqual(12); expect(rect.paddingEnd).toBeGreaterThanOrEqual(12);
+-          await expect(dialog.getByRole("button", { name: "Close", exact: true })).toBeInViewport({ ratio: 1 });
+-          await writeFile(join(init.directory, `overlay-recovery-${theme}-geometry.json`), JSON.stringify({ ...rect, scrollbarCoverage: "observed mode only" }, null, 2));
+-        }
+-        const png = await page.screenshot(); requireThat(png.length <= 512 * 1024, "Screenshot exceeds its retained budget"); await writeFile(join(init.directory, theme + "-390.png"), png); await page.keyboard.press("Escape"); await expect(page.getByRole("button", { name: "Saved drafts and receipts", exact: true })).toBeFocused();
+-      }
+-    });
+-    expect(pageErrors).toEqual([]);
+-  } catch (error) {
+-    failure = text(error);
+-    if (initialization.outcome === "RUNNING") {
+-      const elapsedMs = performance.now() - workerBegan;
+-      Object.assign(initialization, { outcome: "FAILED", endedOffsetMs: elapsedMs, elapsedMs });
+-    }
+-  }
++    browser = await chromium.connectOverCDP(endpoint, { timeout: Math.max(1, Math.min(4000, init.workDeadline - Date.now())) });
++    const { runContextHistoryBrowser } = await import("/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/test/context-history.browser.ts");
++    await runContextHistoryBrowser(browser, { databaseUrl: init.databaseUrl, directory: init.directory, cacheDirectory: join(init.scratch, "vite"), checkpoint }, lifetime.signal);
++  } catch (error) { failure = text(error); }
+   finally {
+     clearTimeout(deadline); lifetime.abort();
+-    for (const stop of stopObservers) stop();
+-    // The supervisor bounds pending startup/close with the owned worker + Chrome groups.
+-    try { await browser?.close(); } catch (error) { cleanupErrors.push("browser: " + text(error)); }
+-    try { await fixture?.close(); } catch (error) { cleanupErrors.push("fixture: " + text(error)); }
+-    if (coverage.materialDraft === "NOT_RUN" && coverage.textIntentDraft === "FAILED") coverage.materialDraft = "NOT_COMPLETED";
+-    sseDelivery.trace = fixture?.sseTrace() ?? null;
+-    const result: WorkerResult = { journey: init.journey, requiredGroups, completedGroups, checks, initialization, groupTimings, materialPreparation, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage, bodyLoss, sseDelivery, completeDraft, steeringRecovery, secondCenter };
+-    const raw = JSON.stringify(result, null, 2); requireThat(Buffer.byteLength(raw) <= 2 * 1024 ** 2, "Browser report exceeds reserved bound");
+-    await writeFile(join(init.directory, "browser.json"), raw, { mode: 0o600 });
++    try { await browser?.close(); } catch { cleanupErrors.push("CDP disconnect failed"); }
++    let observed: { checks: Group[]; pageErrors: string[]; cleanupErrors: string[]; failure: string | null; passed: boolean } | undefined;
++    try { observed = JSON.parse(await readFile(join(init.directory, "context-browser.json"), "utf8")); } catch { failure ??= "Missing complete context browser result"; }
++    if (!observed?.passed) failure ??= observed?.failure ?? "Context browser did not pass";
++    cleanupErrors.push(...observed?.cleanupErrors ?? []);
++    const requiredGroups = selectedGroups(init.journey), completedGroups = observed?.checks ?? [];
++    const result: WorkerResult = { journey: init.journey, requiredGroups, completedGroups, checks: completedGroups,
++      failure, pageErrors: observed?.pageErrors ?? [], cleanupErrors,
++      coverage: Object.fromEntries(requiredGroups.map(group => [group, completedGroups.includes(group) ? "PASSED" : "NOT_COMPLETED"])) };
++    await json(join(init.directory, "browser.json"), result);
+     process.send?.({ kind: "result", result }, () => { process.disconnect(); });
+     process.off("SIGTERM", abort); process.off("SIGINT", abort);
+   }
+ }
+-
+ if (process.argv.includes("--worker")) {
+   requireThat(!!process.send, "Worker requires its owning supervisor IPC");
+-  process.once("message", message => {
+-    const init = message as Init; requireThat(init.kind === "start", "Invalid worker startup");
+-    void worker(init).catch(error => { console.error(text(error)); process.exitCode = 1; process.disconnect(); });
+-  });
++  process.once("message", message => { const init = message as Init; requireThat(init.kind === "start", "Invalid worker startup");
++    void worker(init).catch(error => { console.error(text(error)); process.exitCode = 1; process.disconnect(); }); });
+ } else await supervisor();

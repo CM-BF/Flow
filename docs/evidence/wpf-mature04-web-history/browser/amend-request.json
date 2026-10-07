@@ -1,0 +1,19 @@
+{
+  "requestId": "mature04-history-browser-dda95b9b-3c83-4713-91c6-09ad02ecfac0",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "claimId": "25d7e029-9334-479e-8872-61090c406e0a",
+  "version": 2,
+  "scope": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/conversation-context-history",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/plugin-integration/context-history.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "docs/evidence/wpf-mature04-web-history",
+    "apps/web/test/context-history.browser.ts",
+    "apps/web/test/context-history-fixture.ts"
+  ]
+}

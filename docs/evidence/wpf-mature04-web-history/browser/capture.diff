@@ -1,0 +1,32 @@
+--- vis-recovery-b1/capture.py
++++ capture.py
+@@ -7,14 +7,14 @@
+ parser.add_argument('--env-file', required=True)
+ parser.add_argument('--output', required=True)
+ args = parser.parse_args()
+-base = Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays')
++base = Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history')
+ gate_path, env_path, output = Path(args.gate), Path(args.env_file), Path(args.output)
+ gate = json.loads(gate_path.read_text())
+ assert output == Path(__file__).resolve().parent / 'actual' / gate['run'], 'Outer output must stay in this prepared task namespace'
+ phase = gate.get('visualAppearancePhase', {})
+-assert gate.get('allowRun') is True and gate['journey'] == 'appearance' and gate.get('messageSettingsPhase') is None
+-assert phase.get('id') == 'VISUAL01-RECOVERY-APPEARANCE-20261007' and phase.get('budgetMs') == 60000 and phase.get('cleanupMs') == 30000
+-assert 45000 <= gate['totalMs'] <= min(60000, 60000-phase['spentMs'])
++assert gate.get('allowRun') is True and gate['journey'] == 'context-history' and gate.get('messageSettingsPhase') is None
++assert phase.get('id') == 'CONTEXT-HISTORY-MOUNTED-20261007' and phase.get('budgetMs') == 90000 and phase.get('cleanupMs') == 30000
++assert 45000 <= gate['totalMs'] <= min(90000, 90000-phase['spentMs'])
+ assert datetime.datetime.fromisoformat(gate['expiresAt'].replace('Z','+00:00')) > datetime.datetime.now(datetime.timezone.utc)
+ identity = env_path.lstat()
+ assert not env_path.is_symlink() and env_path.is_file() and identity.st_uid == os.getuid() and identity.st_mode & 0o777 == 0o600
+@@ -47,8 +47,8 @@
+ 
+ for number in (signal.SIGTERM, signal.SIGINT): signal.signal(number, interrupted)
+ env = {key:value for key,value in os.environ.items() if key in ('PATH','HOME','USER','LOGNAME','LANG','LC_ALL')}
+-env.update(FLOW_VISUAL01_BROWSER='1', FLOW_MSG03_BROWSER='1', FLOW_RECOVERY_GATE=str(gate_path), TSX_DISABLE_CACHE='1', NODE_DISABLE_COMPILE_CACHE='1')
+-command = ['/opt/homebrew/opt/node@24/bin/node', '--env-file='+str(env_path), '--import', 'tsx', 'apps/web/test/conversation-recovery.browser.ts', '--visual-appearance']
++env.update(FLOW_CONTEXT_HISTORY_BROWSER='1', FLOW_RECOVERY_GATE=str(gate_path), TSX_DISABLE_CACHE='1', NODE_DISABLE_COMPILE_CACHE='1')
++command = ['/opt/homebrew/opt/node@24/bin/node', '--env-file='+str(env_path), '--import', 'tsx', '/private/tmp/context-history-browser-20261007/parent.ts', '--visual-appearance']
+ streams = {}; selector = selectors.DefaultSelector(); handles = []
+ try:
+     if signals: raise RuntimeError('interrupted before launch')

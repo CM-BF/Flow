@@ -1,0 +1,65 @@
+{
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+  "head": "959e7e295328f624f328a9535e4832c037e9d891",
+  "branch": "codex/web-context-history",
+  "declaredDirty": "M docs/evidence/wpf-mature04-web-history/progress.md\n?? apps/web/test/context-history-fixture.ts\n?? apps/web/test/context-history.browser.ts\n?? docs/evidence/wpf-mature04-web-history/browser/",
+  "claim": "25d7e029-9334-479e-8872-61090c406e0a",
+  "claimVersion": 3,
+  "live": "/private/tmp/context-history-browser-20261007/syntax/live.json",
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/test/context-history-fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/test/context-history-fixture.ts",
+      "bytes": 11948,
+      "sha256": "67a29c97f88e1b389e3a10a8dd7c30b61720d3c9afa47681bd90064e0cd13495"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/test/context-history.browser.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/test/context-history.browser.ts",
+      "bytes": 13361,
+      "sha256": "02fb6d7717842b6c6910d459f335d2ed701cbc163777152d41043eae103dd0c6"
+    },
+    {
+      "path": "/private/tmp/context-history-browser-20261007/parent.ts",
+      "realpath": "/private/tmp/context-history-browser-20261007/parent.ts",
+      "bytes": 38287,
+      "sha256": "e19504f5b65d21084796e3e575c688212a726703887fe2cd9775b8f49c57b67d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js",
+      "bytes": 9112572,
+      "sha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/private/tmp/context-history-browser-20261007/syntax/run.py",
+      "realpath": "/private/tmp/context-history-browser-20261007/syntax/run.py",
+      "bytes": 7818,
+      "sha256": "e2e9be8178018dfc3d69d1094fe648461aea3959d26e49e88ea9d5c35d07d13f"
+    },
+    {
+      "path": "/private/tmp/context-history-browser-20261007/syntax/sandbox.sb",
+      "realpath": "/private/tmp/context-history-browser-20261007/syntax/sandbox.sb",
+      "bytes": 178,
+      "sha256": "9d21779152618f8284f756a91a7ddfa0d24ba932442485329287e19c26351595"
+    },
+    {
+      "path": "/private/tmp/context-history-browser-20261007/syntax/syntax.cjs",
+      "realpath": "/private/tmp/context-history-browser-20261007/syntax/syntax.cjs",
+      "bytes": 881,
+      "sha256": "8491bcb1ed18edcfaeaf8d76ca53f69ede9efd0421c5afc5ea1350ba25151781"
+    }
+  ],
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/private/tmp/context-history-browser-20261007/syntax/syntax.cjs"
+  ],
+  "startFreeBytes": 11983781888,
+  "stopFreeBytes": 11975393280
+}
