@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 07:06:39 UTC |
+| 最近更新 | 2026-10-07 07:13:16 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -12,18 +12,18 @@
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
-| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前三补验源码 67f8fd25a129ef5c8882f07e54de87e20ed24429；55b生产与18其他源不变；metadata HEAD以Git为准 |
-| 工作树dirty状态 | 源67f8本轮未变，当前仅失败raw/own记录封存；后续仅原browser parent窄修 |
+| 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前parent窄修 344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5；18其他源同67f8/55b生产不变；metadata HEAD以Git为准 |
+| 工作树dirty状态 | 源344f12已固定，当前仅own局部实证/状态封存，metadata HEAD以Git为准 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | CREATE回执恢复已验；已绑定后丢turn的业务断言完成，但父监督器终态失败待窄修 |
+| 当前产出 | CREATE回执恢复已验；父监督器收尾修复与定向检查已获独审接受，准备验证原turn恢复 |
 | 下一可用交付 | 验证CREATE已绑定后的turn回执恢复及队列恢复，推进完整交付审查 |
-| 当前阻塞 | ACTIVE: 父监督器正常monitor退休可能误记deadline，后继需窄修与显式失败账reconciliation；源修与有界local已获授权 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 检查状态 | 本次created-turn worker2组通过但parent/outer1，整体FAIL，清理已独立确认；新段47205/余102795。原full7/choice/first-create PASS与旧五FAIL保原绑定 |
-| 实现目标 | 67f8fd25a129ef5c8882f07e54de87e20ed24429 |
+| 检查状态 | 本次parent32项定向与noEmit0；旧created-turn worker2组通过但parent/outer1、整体FAIL不改，清理已独立确认；新段47205/余102795。原full7/choice/first-create PASS与旧五FAIL保原绑定 |
+| 实现目标 | 344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | Review | [review.md](review.md)，IN_PROGRESS（67f8源码/local已接受；full7、choice2/2及first-create2/2实际与owned清理分别独立限定接受）；固定19源入口 [feature-review-entry](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md) |
@@ -37,7 +37,7 @@
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | 实际App/P01入口、text/intent/双文件原refs与namespace授权保护已接线并由full7部分验证；完整profile/knowledge/steering和二中心待验 |
 | WPF-RECOVERY01-04 | completed | workspace_panels_owner | [50受控storage/controller实际检查](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)及source hashes完成；不冒完整mountedApp/真实IDB全部边界 |
 | WPF-RECOVERY01-05 | in-progress | workspace_panels_owner | [原full7实际PASS](../../docs/evidence/wpf-conversation-recovery/continuous-first-validation.md)，原五FAIL保真；SSEdelivery/CREATE/QueueSteer等原验收尚未全部完成 |
-| WPF-RECOVERY01-06 | pending | workspace_panels_owner | 完整feature独审IN_PROGRESS，当前target67f8fd25a129ef5c8882f07e54de87e20ed24429；本次一browser增量待独审，main未接 |
+| WPF-RECOVERY01-06 | pending | workspace_panels_owner | 完整feature独审IN_PROGRESS，当前target344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5；本次一browser增量待独审，main未接 |
 
 ## 阻塞 / 风险 / 未验证
 
@@ -332,3 +332,9 @@ GO实际看双390图后的原验收补充：恢复目录默认显示可读标题
 ## 2026-10-07 07:06:39 UTC — created-turn整体FAIL与限定修复
 
 [原件与根因边界](../../docs/evidence/wpf-conversation-recovery/continuous-fourth-validation.md)：worker两组完成、parent期限错误导致exit1，不能标casePASS；owned清理和env删除已独立核。原raw不可回写；新段47205/余102795。root已授权原browser parent正常退休/真实abort区别与可控barrier局部20s对照，不改业务断言，不重跑PG/Chrome；完整review IN_PROGRESS。
+
+## 2026-10-07 07:13:16 UTC — parent生命周期修正待独审
+
+[344f12固定与实际局部检查](../../docs/evidence/wpf-conversation-recovery/monitor-retirement-validation.md)：正常monitor退休只跳尾部workguard，资源/IO/deadline/late signal均保失败；历史失败凭exact独审原件与11109保守charge显式reconcile，未改旧budget。新local段5973.709ms/20k、32检查及noEmit0，两ownedNode已退出。browser原段47205/余102795不变，当前无新gate，待针对lifecycle独审后再常规资源调度；全feature仍IN_PROGRESS，不将2workerChecks追溯当casePASS。
+
+Root本次[限定独审](../../docs/evidence/wpf-conversation-recovery/monitor-retirement-root-review.json)已接受344f12/32/noEmit；下一created-turn同组只作最小source/carry重绑，未创建gate/未占PG。原预算47205/余102795，原FAIL不改。

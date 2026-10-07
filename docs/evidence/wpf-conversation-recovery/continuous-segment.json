@@ -1,6 +1,6 @@
 {
   "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
-  "state": "CREATED_TURN_PARENT_FAILED_CLEANUP_CONFIRMED_REPAIR_IN_PROGRESS",
+  "state": "PARENT_REPAIR_ACCEPTED_READY_CREATED_TURN_RETRY_PREPARATION",
   "authorization": {
     "path": "continuous-segment-authorization.json",
     "sha256": "6ea79981213d5df67f1e7ae4c603a90bbf7823daebf53aa15bf85e08f7ed5090"
@@ -109,5 +109,12 @@
     "sha256": "ed651acec5332c0eeeea56ad5b3cbbeb1b4c8986aaeb2e991043eca255ba70c7",
     "scope": "two P2 source fixes and targeted local evidence only",
     "connectionChoiceActual": "ACCEPTED_SCOPED_2_OF_2"
+  },
+  "parentRepair": {
+    "source": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+    "localEvidence": "monitor-retirement-local/segment.json",
+    "runtimeNotRun": true,
+    "failedAttemptReconciliation": "monitor-retirement-reconciliation.json",
+    "rootReview": "monitor-retirement-root-review.json"
   }
 }

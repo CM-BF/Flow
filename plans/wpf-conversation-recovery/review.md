@@ -1,8 +1,8 @@
 # WPF-RECOVERY01 独立审查
 
-状态：IN_PROGRESS。55b两P2/4case/choice实证保原绑定；67f8三选择源码/local已接受，first-create2/2实际及owned清理已独立限定接受；B/Queue尚未运行，不是整个feature批准。
+状态：IN_PROGRESS。原full7/choice/first-create实证保原绑定；created-turn整体FAIL与清理已独立接受。当前344f12 parent退休/失败账接缝及32项定向/noEmit0已获root针对lifecycle限定接受；未运行修后PG/Chrome，不是整体feature批准。
 
-Review target commit：`67f8fd25a129ef5c8882f07e54de87e20ed24429`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
+Review target commit：`344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
 
 固定完整变更/修复/实证入口：[feature-review-entry.md](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)，19源/base/pins明确；当前root审查进行中，不是作者自评。
 
@@ -221,3 +221,9 @@ Root已开始固定0141相对base84005完整差异审查；当前有连接选择
 ## 2026-10-07 07:06:39 UTC — created-turn父监督器收敛
 
 [本次失败与root原审](../../docs/evidence/wpf-conversation-recovery/continuous-fourth-validation.md)保overall FAIL，2 workerchecks不等casePASS。原21内只修正常monitor退休与错误混淆，新增可控barrier/资源deadline/late signal对照及exact失败reconciliation。独立local20s（含5cleanup）授权不转browser余量；browser段47205/150000、余102795，无新gate/不复跑。生命周期增量须固定独审后再launch，未知incomplete继续拒绝。
+
+## 2026-10-07 07:13:16 UTC — 344f12 parent固定待审
+
+[精确19源/局部原件](../../docs/evidence/wpf-conversation-recovery/monitor-retirement-checkpoint.json)、[Interface/检查/限制](../../docs/evidence/wpf-conversation-recovery/monitor-retirement-validation.md)。作者32受控+noEmit0只覆盖本次退休/错误/reconciliation，旧FAIL/raw不变；等待独立针对review，不复跑无关旧绿。
+
+Root [344f正式源/局部审](../../docs/evidence/wpf-conversation-recovery/monitor-retirement-root-review.json)已接受，0finding；原actual created-turn FAIL继续有效，不能由本地barrier推实际恢复通过。待常规fresh资源同组复验。

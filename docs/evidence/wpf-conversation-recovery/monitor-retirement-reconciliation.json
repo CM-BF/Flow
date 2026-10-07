@@ -1,0 +1,18 @@
+{
+  "state": "CANDIDATE_NOT_A_GATE",
+  "reconciledFailures": [
+    {
+      "run": "recturn-20261007-070121-4aa406",
+      "budgetSha256": "b47589e353b16bd7c6c1db97c8c5ed6367d808c5037e112769a9647ab4af6537",
+      "reviewFile": "continuous-fourth-root-review.json",
+      "reviewSha256": "5130342004510bc7f4e32211ad32388a334286780c12b632571ffc5c83cb2b8f"
+    }
+  ],
+  "originalOutcome": "FAIL",
+  "originalBudgetComplete": false,
+  "cleanupIndependentlyAccepted": true,
+  "conservativeChargeMs": 11109,
+  "newSegmentSpentMs": 47205,
+  "newSegmentRemainingMs": 102795,
+  "permission": "Requires lifecycle source review and a new real resource/admission gate. No old raw rewrite, no case PASS, no automatic retry."
+}

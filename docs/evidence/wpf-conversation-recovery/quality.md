@@ -235,3 +235,7 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 应用本地find-skills/clean-code/webapp-testing：复用已审parent/worker和有限selection，未新建监督层、公开协议或重复业务authority。当前真实行为与输入前提/清理分列，selected PASS不冒full7或feature；较晚outer最大计费且不改早raw。Chrome同installed bundle小版本更新仅重绑native来源，旧.98历史保持。19源冻结，原78raw逐hash保真；无direct/types重复。未解决项仍是原未覆盖CREATE/QueueSteer/profileknowledge/SSEdelivery/二中心和可读性后继，本次不混入实现。
 
 2026-10-07 06:26:09 UTC Root本次实际审原件已原样归档；admin exact删除回执独立保存。scope/19固定源码/78历史raw静态核对无改，Git diffcheck0；本批不运行额外parser或工程检查，不自签整体APPROVED。
+
+## 2026-10-07 07:13:16 UTC — monitor退休与失败账clean-code
+
+按本地find-skills复用clean-code/codebase-design；只区分timer退役和业务workguard，不引入第二supervisor。命名monitorRetiring/mode表达单一职责，保directcheckpoint与真实exitpoll期限；stop继续记录晚interrupt，清理去重不冒失败已记录。私有priorAttemptCharge隐藏exact失败回执/cleanup/计费检查，不扩大公共接口、不自动修历史JSON。受控测试直接提取实际函数/注册/收尾/扫描，保old负例，避免镜像状态机。32项与noEmit0，6s内退出两自有Node；未运行PG/Chrome，不冒真实复测。旧FAIL与原件不可变，wholefeature/Queue/SteerHTTP等开放。

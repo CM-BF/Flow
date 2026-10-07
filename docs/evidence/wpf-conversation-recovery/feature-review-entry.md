@@ -1,7 +1,6 @@
 # 固定代码审查入口：WPF-RECOVERY01
 
-当前组合target `67f8fd25a129ef5c8882f07e54de87e20ed24429`，完整feature `IN_PROGRESS`。本次仅原browser补CREATE两故障点/Queue原身份恢复三选择，18其他源与父监督函数逐字等55b；[当前19pin与delta](create-queue-checkpoint.json)、[新增选择33/noEmit实证与真实未验边界](create-queue-validation.md)。该增量源码/local独审已接受；first-create2/2实际及owned清理已独立接受，B/Queue仍NOT_RUN。下面55b清单/统计和原证据为已审基线，不冒其覆盖新增166行测试差异。
-
+当前组合target `344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5`，完整feature `IN_PROGRESS`。本次仅原browser parent退休/明确失败计费接缝，18其他源同67f8；[19pin/delta](monitor-retirement-checkpoint.json)、[32定向/noEmit实证](monitor-retirement-validation.md)，[root针对lifecycle独审](monitor-retirement-root-review.json)已接受。first-create2/2实际PASS保原绑定；created-turn整体FAIL/worker2组通过/owned清理事实分开，Queue仍NOT_RUN。
 ## 55b已审基线与原证据（历史固定）
 
 **Review target `55b4917e732d11d5e5f660f9c22a1022d7094015`；base `84005a260dfcb668cd38b09c21564d0754a0f513`；完整feature review `IN_PROGRESS`（55b两P2修复与局部实证已独审接受；chooser实际2/2及owned清理已独立限定接受）。** 本文件准备实际独立代码审查，不是作者自评通过。WT/branch：web-conversation-recovery / codex/web-conversation-recovery。当前19源码与target逐字一致，后置改动仅owner记录；源已冻结。

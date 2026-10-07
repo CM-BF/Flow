@@ -188,3 +188,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ## 2026-10-07 07:06:39 UTC — created-turn父监督器收敛
 
 [本次失败与root原审](../../docs/evidence/wpf-conversation-recovery/continuous-fourth-validation.md)保overall FAIL，2 workerchecks不等casePASS。原21内只修正常monitor退休与错误混淆，新增可控barrier/资源deadline/late signal对照及exact失败reconciliation。独立local20s（含5cleanup）授权不转browser余量；browser段47205/150000、余102795，无新gate/不复跑。生命周期增量须固定独审后再launch，未知incomplete继续拒绝。
+
+## 2026-10-07 07:13:16 UTC — 原-05生命周期窄修与历史计费
+
+[344f12](../../docs/evidence/wpf-conversation-recovery/monitor-retirement-validation.md)已将monitor正常退休与错误事实分离，并为唯一已独审失败建立exact immutable reconciliation。原worker/业务/selected断言不变；32受控和noEmit完成，真实修后parent尚未跑。新local用5973.709/20000ms，与browser新150k spent47205分列。独审前不恢复PG/Queue，TODO02/05/06保持in-progress。
