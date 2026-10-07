@@ -55,3 +55,24 @@ test('cancellation proof keeps driver and runner clocks separate and rejects pos
   rows.push(row('emit-start', { attemptId: 'a-attempt', startedChildMs: 6202 }));
   expect(() => validateQueueCancellation(result, rows)).toThrow('queue_effect_after_control_abort');
 });
+
+test('queue boundary counts pending calls without replacing promises, errors or transaction meaning', async () => {
+  const { observePg } = await import('./observe-pg.js');
+  let acquired!: (value: typeof client) => void; let queryDone!: () => void;
+  const failed = new Error('original');
+  const pendingQuery = new Promise<void>(resolve => { queryDone = resolve; });
+  const client = { query(sql: string) { return sql === 'BEGIN' ? pendingQuery : Promise.reject(failed); } };
+  const pendingConnect = new Promise<typeof client>(resolve => { acquired = resolve; });
+  const prototype = { connect() { return pendingConnect; } };
+  const observer = observePg(prototype, () => {}, () => 1, () => {}, true);
+  try {
+    expect(prototype.connect()).toBe(pendingConnect);
+    expect(observer.boundary()).toMatchObject({ acquisitionsStarted: 1, acquisitionsSettled: 0, acquisitionsInFlight: 1 });
+    acquired(client); await pendingConnect;
+    expect(client.query('BEGIN')).toBe(pendingQuery);
+    expect(observer.boundary()).toMatchObject({ acquisitionsInFlight: 0, queriesInFlight: 1, openTransactions: 1 });
+    queryDone(); await pendingQuery;
+    await expect(client.query('ROLLBACK')).rejects.toBe(failed);
+    expect(observer.boundary()).toMatchObject({ known: true, acquisitionsSettled: 1, queriesStarted: 2, queriesSettled: 2, queriesInFlight: 0, openTransactions: 0 });
+  } finally { observer.restore(); }
+});

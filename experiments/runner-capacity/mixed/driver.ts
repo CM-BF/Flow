@@ -273,7 +273,7 @@ export async function runMixed(windowId: string, target: string, identity?: stri
       }
       if (probing) {
         // Fresh server fence immediately before the four commands; no already-completed target counts as cancellation.
-        const rows = (await query(observer, `SELECT t.id,t.status,t.current_attempt_id,t.owner_version AS task_version,
+        const rows: Row[] = (await query(observer, `SELECT t.id,t.status,t.current_attempt_id,t.owner_version AS task_version,
           a.id AS attempt_id,a.runner_id,a.owner_version,a.completed_at,a.lease_expires_at>clock_timestamp() AS live
           FROM flow.tasks t JOIN flow.attempts a ON a.id=t.current_attempt_id WHERE t.id=ANY($1::text[])`, [result.cancelled])).rows;
         assert.equal(rows.length, 4, 'queue_cancel_targets_missing');

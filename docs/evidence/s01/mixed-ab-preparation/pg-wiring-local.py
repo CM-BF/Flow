@@ -55,7 +55,7 @@ command = [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config'
 if kind == 'tests' and suffix == '2': command += ['-t', '^full envelope cap']
 if kind == 'tests' and suffix == '3': command += ['-t', '^v2']
 if kind == 'tests' and suffix == '4': command += ['-t', '^real existing child']
-if kind == 'queue-tests': command += ['-t', '^(queue policy|real conversation lightweight|clean bound v2|cancellation proof|first unavailable)']
+if kind == 'queue-tests': command += ['-t', '^queue boundary' if suffix == '2' else '^(queue policy|real conversation lightweight|clean bound v2|cancellation proof|first unavailable)']
 record['argv'] = command
 report = owned.supervise(owned.Launch(tuple(command), str(ROOT), env, owned.Ownership.NEW_CHILD_SESSION, owned.Capture.MERGED), owned.Policy(55, .5, 1, 524288))
 raw = report.stdout

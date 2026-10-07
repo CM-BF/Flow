@@ -9,3 +9,5 @@ if (Buffer.byteLength(text) > 32768) throw new Error('comparison_cli_reserve_exc
 const timer = setTimeout(() => { process.exitCode = 1; process.stdout.destroy(); }, Math.max(1, started + 300000 - performance.now()));
 process.stdout.once('error', () => { process.exitCode = 1; });
 process.stdout.write(text, error => { clearTimeout(timer); if (error || !result.success || performance.now() - started >= 300000) process.exitCode = 1; });
+
+export {};
