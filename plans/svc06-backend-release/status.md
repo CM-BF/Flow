@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 11:44:37 UTC；main62e9已接首次采用结果与独审，原件和路径映射已核 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 12:04:28 UTC；main62e9首次采用已收，C3 actual独审已收到；本轮只读个人基线已固定 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,21 +13,21 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 本次metadata前像d112f3f5b87940d05a80b29d3dbcdbc072437ec7；首次采用source ff445/185ab不变；本次仅status/main receipt |
-| 工作树dirty状态 | 全部产品与运行源停写；本次metadata独立提交，提交前仅status/main receipt变化 |
+| 工作基线 / HEAD | 7afa5d718781e54ae956d613e955554d221ca74e；本轮仅原candidate/status与一份只读准备记录；产品/已消费入口不改 |
+| 工作树dirty状态 | 本次准备metadata正常提交后clean；无产品、个人安装或运行源修改 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | 检查状态 | r2 passed：27→35/两项pre-drain拒绝/三role refresh-resume/历史与pointer-config-profile保留/cookie-CSRF-logout；work155073ms+cleanup540ms，六组stopped/normalDROP；真实App/个人未验 |
 | 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人更新未发生。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 首次采用后台产物的隔离验证已审并进入主线，本片段已交付。 |
-| 下一可用交付 | 汇合三个保留版本的真实App兼容证据，完成个人更新前的现场核验。 |
-| 当前阻塞 | ACTIVE: 个人更新仍等三个保留版本的真实App报告及现场核验。 |
+| 当前产出 | 保留旧数据的更新流程已有隔离实证，个人安装现状已核对，三份网页兼容结果已独审，个人更新清单已固定待审。 |
+| 下一可用交付 | 审定一次后台与网页宿主更新清单，在明确运行窗口按原维护流程执行。 |
+| 当前阻塞 | ACTIVE: 等待个人更新清单审查与现有清理独占窗口归还。 |
 | 需用户决定 | NONE |
-| Review | APPROVED_LIMITED_FIRST_ADOPTION_ACTUAL：sourceff445/result5963/delivery5be；5checks与清理成立，真实App/个人未验；独审0重跑。 |
+| Review | 首次采用已APPROVED_LIMITED_FIRST_ADOPTION_ACTUAL/main62e9；当前个人更新候选待独审，未操作个人服务。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -154,7 +154,8 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 | 等待ID | 开始 | 结束 | 类别 | 说明 | 来源 |
 | --- | --- | --- | --- | --- | --- |
 | SVC06-WAIT-BOOTSTRAP-R2 | UNKNOWN | 2026-10-07T10:41:59.689858Z | 审查与资源 | 起点未独立记录；准备独审10:36:51和Mika归还10:38:50后本次实际启动，等待已结束 | diagnostics-host-bootstrap/independent-review.json / actual-invocation.json |
-| SVC06-WAIT-REAL-APP | 2026-10-07T10:44:35.378972Z | ONGOING | 依赖 | 本轮隔离宿主实际结束后等待Web原owner真实App兼容；合成loader不替代验收 | diagnostics-host-bootstrap/invocation-completion.json；Lead本次接收指示 |
+| SVC06-WAIT-REAL-APP | 2026-10-07T10:44:35.378972Z | 2026-10-07T11:59:06.606725Z | 依赖 | Web三App actual与独审已到；等待已结束，不代表个人执行 | diagnostics-host-bootstrap/invocation-completion.json；Web root-c3-actual-compatibility-review.json |
+| SVC06-WAIT-PERSONAL-UPDATE | 2026-10-07T12:06:28.989893+00:00 | ONGOING | 审查与资源 | 单份个人更新清单已固定待独审；仍等原cleanup-only真实归还，不预占 | update-diagnostics-candidate/personal-readonly-preparation.json documentChecks及Lead窗口消息 |
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
@@ -331,3 +332,11 @@ Lead于2026-10-07T11:18:46.472543+00:00独审 [唯一原件](../../docs/evidence
 2026-10-07T11:44:37.221Z：main `62e9a83923a3c2996b4ab32610e10e2069828c66` 已接首次采用实际结果及唯一独审，见[本次接收核对](../../docs/evidence/svc06/legacy-first-bootstrap/main-receipt.json)。25同路径原件逐字相同，准备review与main I02原件等字节，2计划在main准确对应5be（本树后续d112正常更新）；结果I02 review与自有副本相同。intake时间来自原件11:32:50.555840Z，不猜main push时点。当前候选仍7d1/source6c；最近封存个人参考仍af51/v18、d629/v3/c7b，本段未fresh采个人，不能由main接收推断运行部署升级。三真实App报告由Web继续，任务总开工UNKNOWN与03/04/05开放保持；仅own两metadata scope继续active。clean-code/文档复核只核单一事实源、限定结论和引用，无重复原件或新增执行框架；0产品测试/PG验证/provider/个人操作。
 
 本次仅该status复用main7272151bb1e3e59e08937dca44949dcdeb42f009的parseStatus：errors=[]、human.missing=[]，所属FLOW-001/co-lead已识别；timing仅历史任务开工UNKNOWN提示，保持原值。新增接收记录相对链接可达。
+
+## 2026-10-07 12:04:28 UTC：个人更新清单与只读基线
+
+实际只读观察12:00:11.436546–12:00:12.053698 UTC；[单份准备记录](../../docs/evidence/svc06/update-diagnostics-candidate/personal-readonly-preparation.json)保留claim v9、固定root/依赖、三报告tuple/空间与现场身份。af51/v18仍运行、五私有文件与原r3相同；5task/0unfinished/0uncertain，不归因为本operator、不回滚用户变化。C3实际PASS已存在且资源归还，但本次读取时独立结果review未固定；等待由“报告运行”转“结果独审及操作清单”，原10:44等待起点不重置。
+
+[当前一次执行清单](../../docs/evidence/svc06/update-diagnostics-candidate/candidate.md)复用原迁入/no-replace、Web replacement与首次root→同op artifact维护入口。7d1尚未迁入、browser policy absent；当前0HTTP/个人写/停止启动/构建/provider。36 Git+8显式输入及15包978文件均匹配固定来源，不把未来fresh门禁当已通过。准备汇总首次遇relativePath缺省，仅metadata处理失败，按显式非Git row修正保留事实；未改变个人状态/原结果。clean-code/codebase-design复核采用小Interface/单份记录，0新operator或FSM。SVC06-03/04/05保持open，任务总开工UNKNOWN。
+
+Web正式actual独审随后收到并核SHA69e9f809…；原报告等待结束取review原件11:59:06.606725 UTC。当前仅个人清单待本Lead独审及共享窗口实际归还；12:01:55 X01 cleanup-only仍exclusive，未占窗口/无个人操作。候选context保持6c/7d1/81a8，不将后来lateLogout纳入已验证tuple。
