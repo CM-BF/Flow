@@ -1,0 +1,41 @@
+{
+  "recordedAt": "2026-10-07T07:34:33.779954+00:00",
+  "decision": "STOP_WRITING_FOUR_RUNNER_LAUNCH_LEAVES",
+  "owner": "chatui01_owner",
+  "claimId": "8ad6536b-1194-44a4-9078-a92215bec7a2",
+  "beforeVersion": 15,
+  "freshLedgerObservedAt": "2026-10-07T07:34:08.943Z",
+  "ownHead": "1208dbaca9560c422f3ea525202d849da7aade8c",
+  "mainRef": "d556780129897582f09945c0621aa2ed64fb52f7",
+  "paths": [
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 6563,
+      "sha256": "13e653329ee203dde84eec4ce7057de27f23f333d9308f14f4cabe4b1cbccd65",
+      "ownerMainEqual": true
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 10414,
+      "sha256": "907314670720f49b0dcd6b00bd12d595fc7e60d174a3daa979bd4ab1bddab704",
+      "ownerMainEqual": true
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 3297,
+      "sha256": "46c06a84f1bde8db92a7df140d1491609877455b84ff6e520d00cc748a46c1fe",
+      "ownerMainEqual": true
+    },
+    {
+      "path": "apps/runner/src/main-concurrency.test.ts",
+      "bytes": 11273,
+      "sha256": "ada94473fc4288a1d319d793860c88cad21d37482c399264c72ebc019b75872b",
+      "ownerMainEqual": true
+    }
+  ],
+  "pendingC02Edits": false,
+  "recipient": "X01/architecture_read must fresh atomic amend before writing",
+  "reason": "All four sources are exact current main; no unintegrated C02 change or continuing write dependency. Full native/UI acceptance remains open without retaining these leaves.",
+  "engineeringChildren": 0,
+  "provider": 0
+}
