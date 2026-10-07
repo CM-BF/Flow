@@ -1,0 +1,42 @@
+{
+  "protocol": "flow.x01.removal-references-pg.v1",
+  "productCommit": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+  "totalSeconds": 180,
+  "workSeconds": 110,
+  "cleanupSeconds": 60,
+  "finalReserveSeconds": 10,
+  "suites": {
+    "runtime": {
+      "cases": 1,
+      "httpRequests": 160,
+      "connectionsMax": 17
+    }
+  },
+  "httpRequestsMax": 160,
+  "responseBytesPerRequest": 131072,
+  "responseBytesPerSuite": 4194304,
+  "databasesMax": 1,
+  "serialSuites": true,
+  "streamsBytes": 262144,
+  "resultBytes": 131072,
+  "rawBytes": 1048576,
+  "temporaryBytes": 33554432,
+  "temporaryEntries": 4096,
+  "reserveBytes": 1073741824,
+  "runName": "removal-references-pg-run-r2",
+  "databaseReserveBytes": 134217728,
+  "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+  "selection": [
+    {
+      "file": "apps/server/src/plugin-runtime/removal-references-pg.test.ts",
+      "name": "removal references preserve bounded material aliases uncertain pins and immutable history"
+    }
+  ],
+  "tasksMax": 43,
+  "registrationsMax": 1,
+  "attemptsMax": 1,
+  "scope": "One new bounded reference query SQL/owner HTTP case. Synthetic installed rows, no package load/physical deletion.",
+  "runnersMax": 1,
+  "materialInstallsMax": 2,
+  "fixtureCommit": "1424e7eaaf9a737249c5bdd5eac636685950d649"
+}
