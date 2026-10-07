@@ -1,6 +1,6 @@
 # Flow 工程进度 dashboard
 
-独立于产品 Web 的本地只读网页。按派工登记，从各 task 唯一 owner worktree 的 `status.md` 生成 JSON 和 UI。没有第二套手填状态，也不调用产品中心或模型。Node 24.20+，生产依赖 pg 8.23.1；先在仓库根运行 `pnpm install --frozen-lockfile`。领取账本独立于产品中心，专用协调 PostgreSQL 不可用时进度仍可读，领取显示未知。
+独立于产品 Web 的本地工程进度网页（进度与资料只读；可显式启用本机凭据读取）。按派工登记，从各 task 唯一 owner worktree 的 `status.md` 生成 JSON 和 UI。没有第二套手填状态，也不调用产品中心或模型。Node 24.20+，生产依赖 pg 8.23.1；先在仓库根运行 `pnpm install --frozen-lockfile`。领取账本独立于产品中心，专用协调 PostgreSQL 不可用时进度仍可读，领取显示未知。
 
 ## 启动
 
@@ -73,7 +73,7 @@ main 的 HEAD / branch / dirty 单独只读观察。实现目标是现场 main H
 
 ## 资料访问限制
 
-资料入口只允许已登记任务的 plan/status/review，以及它们直接链接的本任务计划、证据目录或指定 `EVIDENCE.md`。拒绝绝对路径、越界、未引用证据、非白名单扩展、超过 2 MiB 的文件；对解析后的真实路径重新验证 worktree 与任务范围。仅返回文本或已知图片，HTML 不在白名单。服务器检查 loopback Host、仅接受 GET，并设置 CSP / nosniff；无 CORS 授权。此服务供本机本人查看，不是多用户认证服务。
+资料入口只允许已登记任务的 plan/status/review，以及它们直接链接的本任务计划、证据目录或指定 `EVIDENCE.md`。拒绝绝对路径、越界、未引用证据、非白名单扩展、超过 2 MiB 的文件；对解析后的真实路径重新验证 worktree 与任务范围。仅返回文本或已知图片，HTML 不在白名单。进度/资料路由检查 loopback Host、仅接受 GET，并设置 CSP / nosniff；无 CORS 授权。本机凭据路由另有下述独立严格门禁。此服务供本机本人查看，不是多用户认证服务。
 
 ## 主题与无障碍
 
@@ -124,3 +124,25 @@ status 顶部同一 metadata 表中添加以下字段，不另建状态文件：
 [D04 运行指引](../../docs/evidence/d04/README.md)说明专用PG数据库、环境变量、CLI回执、迁移、scope和交接。网页为只读入口，CLI必须与网页配置同一协调数据库；DB失效不允许根据空列表接手。
 
 产品导航并列个人真实预览61228（首次仍需本人连接认证；空Center URL走已配置同源proxy）与旧模拟49922，不带token、不自动认证/发消息。常驻启动sourceAtStart是启动记录；Web采用Vite dev，当前页面可随已集成源码HMR，不能视为整个会话冻结版本。center/runner是否升级以实际进程重启记录为准。
+
+
+## 从看板连接本机 Flow
+
+顶部“连接 Flow”保留真实产品入口与非敏感说明。打开产品后，**Center URL 留空**表示使用产品 Web 自己的 `/api` 代理；不是向本看板发送产品请求。看板不会自动登录、刷新已有产品 tab 或重启中心/runner。
+
+凭据能力默认关闭。仅本机安装负责人显式使用 `--local-installation`，并通过 `FLOW_DASHBOARD_LOCAL_INSTALLATION` 提供非敏感的 JSON 绑定：`directory`（安装目录的规范绝对路径）、`installationId`（该安装的既有 UUID）、`repository`（真实安装来源仓库的规范路径，不能填此 feature worktree 代替）、`productOrigin`（该安装的 `http://127.0.0.1:<Web端口>/`）。此变量**不含 token**，不得把整个 config.json 传入。配置绑定只在进程启动时接受，不接受浏览器 path/URL 参数。未显式启用时，即使设置此变量也不读取安装目录。
+
+```sh
+# 绑定值由原安装负责人从已核非敏感身份提供；此处不放个人路径、身份或凭据示例。
+/opt/homebrew/opt/node@24/bin/node apps/execution-dashboard/src/server.mjs --local-installation
+```
+
+启动仅核固定目录和绑定，不加载 token。`GET /api/local-access` 返回 enabled、产品 URL 和空 Center URL；`POST /api/local-access/owner-token` 才按动作读取唯一 `config.json`。只接受实际本机 peer、与监听端口一致的 `127.0.0.1` Host、完全相同 Origin（其他端口也拒绝）、`Sec-Fetch-Site: same-origin`、Fetch cors 模式及 `X-Flow-Local-Access: 1`，无请求体/查询参数、无 CORS/OPTIONS 授权。所有结果 no-store，异常为固定安全文案，不反射 provider 错误。反向代理/remote/enterprise 默认不能借此读取；不要转发此能力。
+
+安装目录需当前有效 uid、0700、非 symlink；配置需同 uid、0600、单链接常规文件、最多64KiB。按 no-follow descriptor 读取，校验目录身份、文件前后状态以及 format/installationId/directory/repository/Web端口，再仅投影 owner token。支持原安装身份下的原子文件轮换；目录被替换则要求负责人重新核对启动绑定。此为同一本机用户的信任边界，不是对同 uid 恶意进程的隔离或任意文件服务。
+
+用户主动加载后默认掩码；显示、复制都需点击。隐藏并清除、关闭、离开/隐藏页面清空内存与字段并撤销迟到请求。复制失败有明确提示，可选择显示后手动复制。页面无法撤销已经完成或已交给系统的剪贴板写入，也不会自行覆盖用户剪贴板。真实 token 不进 URL、聚合 JSON、日志或浏览器存储；不要在真实 token 显示时录截图、DOM、trace 或网络 body。
+
+本片专测入口（尚待运行窗口，不构成通过）：`node --test apps/execution-dashboard/test/local-access.test.mjs`。仅 synthetic config 和动态自有 HTTP；不使用真实 registry/PG/安装。`test/local-access.browser.mjs` 导出 `checkLocalAccessBrowser({ browser, expect, outputDirectory })`，由隔离运行方传入已有受控 Playwright browser 与 expect 并负责 Chrome 最终清理/预算。它使用实际 dashboard server/UI、明确空 snapshot、假 token，自己关闭 context/HTTP；0个人端口/PG/provider。测试中剪贴板成功是原 browser API，拒绝是显式注入，二者分别记录。不可把 fake fixture 成功当实际本机安装已发布。
+
+4320部署仍由原 operator 使用已审代码和明确 opt-in 绑定完成。保持原 tab/端口与页面，必要时由获授权操作方更新看板；此 feature 不增加 HTTP 重启入口，不修改产品 tab。main、看板部署、真实凭据连接分别留独立事实。

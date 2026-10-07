@@ -1,0 +1,15 @@
+.local-connection { margin: 1rem 0 1.5rem; padding: 1rem 1.25rem; border: 1px solid var(--line); border-radius: .75rem; background: var(--surface); }
+.local-connection h2 { margin: 0 0 .5rem; font-size: 1rem; }
+.local-connection p { margin: .5rem 0; }
+.local-connection-actions, .local-access-actions { display: flex; gap: .65rem; flex-wrap: wrap; align-items: center; }
+.local-connection a { overflow-wrap: anywhere; }
+#local-access-dialog { width: min(34rem, calc(100vw - 2rem)); max-height: calc(100dvh - 2rem); padding: 1.25rem; overflow: auto; box-sizing: border-box; }
+#local-access-dialog .dialog-top { gap: 1rem; }
+#local-access-dialog h2 { font-size: 1.2rem; }
+.local-access-field { display: grid; gap: .5rem; margin: 1rem 0; }
+.local-access-field input { min-width: 0; width: 100%; box-sizing: border-box; font: inherit; padding: .7rem; border: 1px solid var(--line); border-radius: .4rem; background: var(--surface); color: var(--ink); }
+.local-access-field input:focus-visible { outline: 3px solid var(--focus); outline-offset: 2px; }
+#local-access-status, #local-access-availability { overflow-wrap: anywhere; }
+#local-access-dialog button { min-height: 2.75rem; }
+#local-access-dialog button:disabled { opacity: .55; cursor: default; }
+#local-access-dialog::backdrop { background: rgb(0 0 0 / .42); }
