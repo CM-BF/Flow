@@ -1,6 +1,6 @@
 # REQ15 独立审查
 
-状态：PENDING（HTTP实际结果待忠实性审；准备e099批准保持）
+状态：APPROVED（6725dd4b固定main7b6 HTTP结果；此前各层批准范围分别保留）
 
 Review target commit: 6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6
 
@@ -117,3 +117,9 @@ status_read / gpt-6-astra，2026-10-07T03:53:34Z，source `e09978682ec573bacd3d7
 ## 实际HTTP结果忠实性独审请求
 
 Target `6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6`，执行c83526f9724c7b9a751e4fd859d9fd3d00750a2e；source e099及227固定输入逐字保持。请architecture_read只读核[结果manifest](../../docs/evidence/req15-turn-page-batch/http-output-manifest.json) SHA89fa60ef99d5741232fa7b4caeed50453a451fc71654f1e9c1bcc4a42964d5fa与7原件6745B、1/1/exit0/raw427、25HTTP、身份与已观察资源closure。wrapper3.012804s、外部time3.05s、秒级UTC分列，原始末尾空行保留。0审者重测/import/PG/写，不新连DB或扫描进程，只可lstat精确http-tmp。批准应只覆盖本fixed-main7b6单例及已观察事实，不扩大为最新main全集或部署。源码准备已独审，不重审旧26/PG2/11。当前RESULT_REVIEW_PENDING，重窗口已归还。
+
+## 实际HTTP结果最终独立结论
+
+architecture_read / gpt-6-astra，2026-10-07T04:04:06Z，result `6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6` / packet `6a3e9be45ec2a0891e57f866fb93c947485d5c1f`：**RESULT_FIDELITY_REVIEW_APPROVED /0 P1/P2**。fresh clean，7 raw/outer6745B逐targetGit=HEAD=WT/bytes/SHA/regular0600，manifest89fa60ef…d5fa；227 inputs1098695B逐execution c835=target=WT，manifest3bcbdfc…08d16未变。原单case+page401/403实际1/1、25HTTP，Unicode不切surrogate、owned lazy全文、错conversation/turn404、分页上限/游标及immutable user由源码/raw支持；通过HTTP register/claim/report合成事件，非真实runner/provider。
+
+PID/PGID27708 exit0/groupabsent/合并EOF/observed=retained427B、无signals/secondary；OID1205057/marker跨原件一致，app/fixture/admin关闭、0conn ordinaryDROP/absence、port55163closed由代码/收据支持；审者只对精确TMP lstat ENOENT，未连PG或扫进程。外部time3.05s/内部3.012804s/秒级UTC分别保留，empty TMP不冒全时峰。批准仅fixed-main7b6此消费者，不重发旧26/PG2/11或扩大latestmain/native/部署。审者0执行/import/tests/PG/写/清理。Owner接受，无未完成必需修复；原log尾空行保真，原manifest历史待审状态不改。

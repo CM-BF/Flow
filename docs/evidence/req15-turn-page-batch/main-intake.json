@@ -1,0 +1,78 @@
+{
+  "state": "PAGE_BATCH_ACCEPTANCE_COMPLETE",
+  "recordedAt": "2026-10-07T04:06:54.384309+00:00",
+  "completedAt": "2026-10-07T04:05:44Z",
+  "completionSource": "Owner matched all four original REQ15 plan TODOs to fixed evidence after architecture_read HTTP result approval at2026-10-07T04:04:06Z; not inferred from commit/mtime.",
+  "task": "REQ15",
+  "parentTask": "FLOW-001",
+  "mainProduct": {
+    "commit": "7b6a196da1cc8d95da09b27fc334555a119ba4bc",
+    "intakeAt": "2026-10-07T03:27:47.998685+00:00",
+    "delivery": "36806867f9e20a11bdfb887d180f7404bf98552d",
+    "intakePath": "docs/evidence/i02/req15-controlled-intake.json",
+    "intakeSha256": "94ef2d7e06f0a91fd1a472b4f0f6b67c6c72d608bbc72035afd503a968fc1334",
+    "files": 65,
+    "bytes": 307043,
+    "accepted": true
+  },
+  "productSource": "d209eb7275777d50f214fd73f66d6b3c1520c459",
+  "consumerMockSource": "9e6cc60bcd1cbdef538cbce9300f09aace6c8a26",
+  "http": {
+    "fixedMain": "7b6a196da1cc8d95da09b27fc334555a119ba4bc",
+    "source": "e09978682ec573bacd3d79e7c08e915c16368d49",
+    "execution": "c83526f9724c7b9a751e4fd859d9fd3d00750a2e",
+    "result": "6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6",
+    "outputManifestSha256": "89fa60ef99d5741232fa7b4caeed50453a451fc71654f1e9c1bcc4a42964d5fa",
+    "inputManifestSha256": "3bcbdfc8176461ae5a1d9ac256fd3647646e7f7fd69f248f380db6cd97008d16",
+    "selected": 1,
+    "passed": 1,
+    "httpRequests": 25,
+    "reviewer": "architecture_read / gpt-6-astra",
+    "reviewAt": "2026-10-07T04:04:06Z",
+    "review": "RESULT_FIDELITY_REVIEW_APPROVED",
+    "p1": 0,
+    "p2": 0
+  },
+  "acceptance": [
+    {
+      "id": "REQ15-01",
+      "state": "completed",
+      "evidence": "Original atomic take; base/worktree/skills receipts; current v2 scope leaves state/replies handed back."
+    },
+    {
+      "id": "REQ15-02",
+      "state": "completed",
+      "evidence": "Six product sources d209, <=50 same-client batches and single-turn reuse; product source review approved."
+    },
+    {
+      "id": "REQ15-03",
+      "state": "completed",
+      "evidence": "26/26 plus focused strict-v2 at d209; original red/strict error preserved. Main Pool mock compatibility 11/11 atae899 separately approved."
+    },
+    {
+      "id": "REQ15-04",
+      "state": "completed",
+      "evidence": "Real PG2/2 atb00 independently approved: paired/LATERAL/JSONB/digest/Unicode/RR and mixed50 sample8 query/8Ready,115722 fieldUTF8B/page96098B. Fixed-main7b6 publicHTTP1/1 at672 independently approved. Product65path main intake verified."
+    }
+  ],
+  "boundaries": [
+    "This completes only the bounded conversation turn-page batch task, not all FLOW REQ-15 multilayer performance work.",
+    "No throughput/TOAST elimination/full-wire-byte/latest-main-suite/native-provider/deployment claim. Legacy full-body digest cost remains.",
+    "Original26, PG2, mock11 and HTTP1 are separate fixed evidence; no cumulative fresh-test count.",
+    "Main receipt proves product intake at7b6; new HTTP validation support/evidence have not been claimed as newly merged into latest main.",
+    "Deployment time UNKNOWN; personal runtime unchanged."
+  ],
+  "architectureFollowup": {
+    "owner": "mika coordinating architecture baseline owner",
+    "target": "d209 product / main7b6",
+    "state": "RESPONSIBILITY_RECORDED_NOT_CLAIMED_UPDATED"
+  },
+  "claimAtCompletion": {
+    "claimId": "09b83400-e41f-4e6c-a5a9-08ae340b74db",
+    "version": 2,
+    "state": "active",
+    "scopeCount": 8,
+    "observedAt": "2026-10-07T04:05:08.663Z",
+    "next": "Owner stops all writes after metadata/dashboard archive, then atomically releases current version; actual ledger receipt is authoritative."
+  }
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 内容 |
 | --- | --- |
-| 计划编号 / 状态 | REQ15 / in-progress |
+| 计划编号 / 状态 | REQ15 / completed |
 | 创建日期 / 最近更新 | 2026-10-06 20:39:12 UTC |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)，REQ-15 |
 | co-lead | mika |
@@ -25,7 +25,7 @@
 - [x] **REQ15-01** 核实际源、规则/技能、独立worktree并取得原子claim。
 - [x] **REQ15-02** 先固定批量Interface与失败反例，最小实现单轮/分页复用。
 - [x] **REQ15-03** 显式两个非PG测试入口及局部types；记录selected/pass/exit/wall，固定源码独审。
-- [ ] **REQ15-04** 隔离真实PG/HTTP消费者、当前roundtrip/UTF8字节测量和main集成，由Lead窗口协调。
+- [x] **REQ15-04** 隔离真实PG/HTTP消费者、当前roundtrip/UTF8字节测量和main集成，由Lead窗口协调。
 
 ## 验收
 
@@ -36,3 +36,5 @@
 2026-10-06 21:49:49 UTC：局部source/fake/strict复审已通过；REQ15-04按[最小真实PG准备](../../docs/evidence/req15-turn-page-batch/pg-acceptance-plan.md)继续。产品冻结；当前仅精确两SQL请求和可审方案，非执行入口批准。
 
 2026-10-07 03:47:30 UTC：main7b6已接收批量产品；真实2PG与测量已验，REQ15-04仅余最窄HTTP直接消费者。按[HTTP固定准备](../../docs/evidence/req15-turn-page-batch/http-window.md)保留现有单case所有断言，固定main含SVC07事务，专库与动态port0；types0/collect1仅说明准备可加载，实际HTTP待独审与新heavy窗口。state/replies在安全点原子amend交回，当前owner只保留其余8scope。
+
+2026-10-07T04:05:44Z 本批验收完成：owner在固定HTTP结果独审通过后逐项核完REQ15-01～04，见[最终验收/主线接收索引](../../docs/evidence/req15-turn-page-batch/main-intake.json)。26/strict、真实2PG及8query/UTF8样本、主线Pool mock11和fixed-main7b6 HTTP1分别沿原证据/批准，不合算新通过数。产品已main7b6；本批page-batch任务完成，不是完整FLOW REQ-15分层性能、最新main全集或部署完成。后继架构基线责任仍由mika协调，不冒称图已更新。

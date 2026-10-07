@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 04:02:17 UTC；固定main公开HTTP实际1/1、全部自有资源闭合，重窗口已归还，结果待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:06:54.384309+00:00；本批分页批量读取完整验收已完成，HTTP结果独审通过；无新工程运行 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 任务开工时间 | UNKNOWN |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 原20:36:40.398Z领取仅证明claim；20:39:12UTC首份质量记录说明已开展，但没有首次实际开工的精确事件，故不猜时间。公开HTTP验收尚未结束，main产品已接收 |
-| 分支交付时间 | 2026-10-07T04:01:29.040096Z为HTTP结果manifest封存事件；固定结果6725dd4b，完整完成仍待结果独审/接收 |
-| 独立审查时间 | 2026-10-07T03:53:34Z，status_read批准HTTP准备source e099；历史ae899/b00结果各自边界保持 |
+| 任务完成时间 | 2026-10-07T04:05:44Z |
+| 任务时间来源 | 首次开工UNKNOWN，保留原缺证据；完成来自owner在2026-10-07T04:05:44Z逐项核完原REQ15 plan及04:04:06Z固定HTTP结果批准，不由commit/mtime推断 |
+| 分支交付时间 | 2026-10-07T04:01:29.040096Z为HTTP结果manifest封存；最终完成对照04:05:44Z，source/result/fullSHA见技术字段 |
+| 独立审查时间 | 2026-10-07T04:04:06Z，architecture_read批准HTTP结果6725dd4b；旧产品/PG/mock/准备批准分别保留 |
 | 主线集成时间 / 部署时间 | 2026-10-07T03:27:47.998685Z为Lead受控接收回执事件，main7b6a196da1cc8d95da09b27fc334555a119ba4bc；部署UNKNOWN/个人runtime未改变 |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/conversation-turn-page-batch |
 | Branch | codex/conversation-turn-page-batch |
-| 工作基线 / HEAD | 执行cleanHEAD c83526f9724c7b9a751e4fd859d9fd3d00750a2e；当前结果target 6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6；HTTP source e099、main组合7b6冻结 |
-| 工作树dirty状态 | 仅结果审查交接metadata；7原件/manifest已固定，commit/push后交付cleanHEAD |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 工作基线 / HEAD | 归档前cleanHEAD 6a3e9be45ec2a0891e57f866fb93c947485d5c1f；产品d209/HTTP sourcee099/result6725dd4b固定，最终metadataHEAD以实际Git交付回执为准 |
+| 工作树dirty状态 | 仅最终计划/状态/审查/验收索引metadata；完成提交与看板确认后完全停写，再安全release |
+| 工作分支状态 | completed |
+| 本片段交付阶段 | delivered |
 | 实现目标 | 6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6 |
 | 产品验证基线 | 六产品始终d209eb7275777d50f214fd73f66d6b3c1520c459；完整8source/tests当前固定9e6cc60b（仅turn-page-batch.test mock接口变化），旧26/strict按原d209证明范围保留 |
 | 实现范围 | apps/server/src/assistant/store.ts, apps/server/src/assistant/index.ts, apps/server/src/assistant/final-preview-batch.test.ts, apps/server/src/conversations/queries.ts, apps/server/src/conversations/replies.ts, apps/server/src/conversations/state.ts, apps/server/src/conversations/turn-read.ts, apps/server/src/conversations/turn-page-batch.test.ts, docs/evidence/req15-turn-page-batch/pg-fixture-data.ts, docs/evidence/req15-turn-page-batch/pg-read-observer.ts, docs/evidence/req15-turn-page-batch/pg-turn-page.test.ts, docs/evidence/req15-turn-page-batch/execute-pg-once.py, docs/evidence/req15-turn-page-batch/pg-vitest.config.mjs, docs/evidence/req15-turn-page-batch/tsconfig.pg.json, docs/evidence/req15-turn-page-batch/run-check.py, docs/evidence/req15-turn-page-batch/main-database.ts, docs/evidence/req15-turn-page-batch/main-database-vitest.config.mjs, docs/evidence/req15-turn-page-batch/http-consumer.test.ts, docs/evidence/req15-turn-page-batch/execute-http-once.py, docs/evidence/req15-turn-page-batch/http-vitest.config.mjs, docs/evidence/req15-turn-page-batch/tsconfig.http.json |
@@ -27,13 +27,13 @@
 | 已集成main状态 / HEAD | 已接收7b6a196da1cc8d95da09b27fc334555a119ba4bc；65路径307043B逐Git=delivery36806867=intake bytes/hash，SVC07 database保持，HTTP验收尚未运行 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 主线批量分页已接收，公开分页与惰性详情用例实际通过，自有资源已全部清理 |
-| 下一可用交付 | 完成HTTP结果独审，交主线接收最终验收记录 |
+| 当前产出 | 分页批量读取已进入主线，并完成局部、数据库与公开HTTP验收；本片段已交付 |
+| 下一可用交付 | 本片段已交付；整体Flow后继性能工作由所属大task继续管理 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 真实PG准备目标 | 5ddddd6a7991243b5c42e223b11df879f0fa9498；95 inputs/429768B，manifest df2cd82a7951b030b90e02c5f84d5ef2ce8150dc72901ab8fd4d11e8fb25439e；source已批准，types/collect及2PG已完成 |
-| Review | [review.md](review.md)：准备e099已批准；新HTTP结果target 6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6 待architecture_read只读忠实性审，不重跑源码检查 |
-| Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v2 ACTIVE/8scope；owner2026-10-07T03:54:02.121Z fresh核身份/路径均符，state/replies移除与停写保持 |
+| Review | [review.md](review.md)：architecture_read于2026-10-07T04:04:06Z批准HTTP结果6725dd4b，0 P1/P2；所有原计划层次有各自固定批准，无未完必需修复 |
+| Claim | 09b83400-e41f-4e6c-a5a9-08ae340b74db v2 ACTIVE/8scope是2026-10-07T04:05:08.663Z归档观察；state/replies已交回。最终停写后释放，之后以ledger/外部原子receipt为准，不为回填释放再写已释放scope |
 | 架构影响 | conversation内部批量Interface已在main7b6接收；架构基线target产品d209/main7b6，责任mika协调架构owner；HTTP验证不新增产品结构，未声称图已同步 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -41,7 +41,7 @@
 | REQ15-01 | completed | db_transaction_owner | 20:36:40.398Z原子take，90路径既有供给，规则/技能读取完成 |
 | REQ15-02 | completed | db_transaction_owner | 3cd7a6e867bd84ca877e07ea4e6e97f70d685e32批量接口+单项复用已固定；首红26/17/9，green待资源 |
 | REQ15-03 | completed | db_transaction_owner / mika | 依赖已核；[源码manifest](../../docs/evidence/req15-turn-page-batch/source-manifest.json)Mika21:45UTC独立APPROVED；green26/26+strict-v2 exit0，首错保留 |
-| REQ15-04 | in-progress | db_transaction_owner / mika / Execution Lead | [两case准备包](../../docs/evidence/req15-turn-page-batch/pg-window.md)与固定输入manifest已获PG_PREPARATION_SOURCE_APPROVED；真实2PG/2pass、RR与样本roundtrip/UTF8测量已完成；结果独审APPROVED，main已接收，HTTP直接消费者仍开放 |
+| REQ15-04 | completed | db_transaction_owner / mika / Execution Lead | 真实PG2/2及样本测量、产品main7b6接收、fixed-main HTTP1/1与结果6725dd4b独审全部完成；[最终验收索引](../../docs/evidence/req15-turn-page-batch/main-intake.json)逐项追溯 |
 
 ## Dashboard 与交接
 
@@ -143,3 +143,5 @@ architecture_read已明确X01未OPEN并先交local；原runner仅增加固定pag
 [输出manifest](../../docs/evidence/req15-turn-page-batch/http-output-manifest.json) SHA89fa60ef99d5741232fa7b4caeed50453a451fc71654f1e9c1bcc4a42964d5fa，7原件6745B/regular0600；raw427B/SHA914fded69705a1169e60c686e822d57e23372126e246f81d98b73094b45e2009。wrapper3.012804s与外部time3.05s、shell04:00:27→04:00:30秒级UTC分列；非以内部wall冒充完整外部耗时。git diff --check exit2仅原raw第10行尾空行，作为Vitest原始输出保真例外，未改log。source/fixture/227inputs及历史26/PG2/11逐字保持，新target `6725dd4b06f4a7aa2d16a28e567bfa7e2dddb8f6` 仅实际证据，待architecture_read直接独审。
 
 Mika本次槽位安排：实际HTTP结果独审接收者改为architecture_read；原status_read准备approval保持。owner固定结果后安全停止本段全部写入/运行并归还agent槽，claimv2保留；root在owner terminal后恢复reviewer，不同时恢复两位或重跑检查。
+
+2026-10-07T04:06:54.384309+00:00 最终收口：architecture_read 04:04:06Z对result6725dd4b/packet6a3e9be4 RESULT_FIDELITY_REVIEW_APPROVED /0 P1/P2已归档。owner在2026-10-07T04:05:44Z核原计划四TODO全部有真实证据，完成本批page-batch任务；保留历史失败/unknown、不重跑、不将该完成泛化到整个FLOW REQ-15或latestmain全集。原产品main7b6/intake事件03:27:47.998685Z准确，新的HTTP验证support/evidence仅本分支归档，不声称最新main包含全部验证文件；部署UNKNOWN/个人runtime未改。当前source/product无未完修复，metadata和看板确认后停写再release整个剩余claim。
