@@ -1,0 +1,87 @@
+{
+  "startedAt": "2026-10-07T09:09:37.893514+00:00",
+  "target": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-lazy-pg-k18wx_uj",
+  "expectedIdentity": {
+    "dev": 16777234,
+    "ino": 123682682
+  },
+  "window": "MATURE06-LAZY01-CLIENT-PG-20261007-R1",
+  "execution": "d2d58f252363046339acba6e7a590b3b281e0481",
+  "authorization": "Mika one exact filesystem cleanup <=15s after independent failed-result review; no PG/test/retry",
+  "originalResultRemains": "wrapperexit1/thenKEEP",
+  "helperSHA": "ead3bce37dee3c8b01da48c6b2ade2a0b4b1bb3d3038684a448f5a855203a8de",
+  "state": "removed-and-absent",
+  "fault": null,
+  "inputs": [
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.result.json",
+      "bytes": 4957,
+      "sha256": "35e3d3926600114eb84f5796b34165395c11e75b308d990a68d2d330c768e514",
+      "dev": 16777234,
+      "ino": 123682942
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.fixture.json",
+      "bytes": 1728,
+      "sha256": "2b98630cf08a3117284d625ad003a5c1ac1ae617cbcf9eafd1ca7c012ae1ea8f",
+      "dev": 16777234,
+      "ino": 123682935
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.child.json",
+      "bytes": 174,
+      "sha256": "d63711cb0cf1d98a047b6fcff4d6dc7b7b83e72970e50f7fae97ff64a97cc777",
+      "dev": 16777234,
+      "ino": 123682684
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.fixture.json.reservation.json",
+      "bytes": 166,
+      "sha256": "1a8674b7d0448f816c55303c0d9a7bb32c70081973d093eab989487e8f7a8c57",
+      "dev": 16777234,
+      "ino": 123682891
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.fixture.json.create-request.json",
+      "bytes": 150,
+      "sha256": "e8c789fc9a06446248a7c6cf1bf67299de3ab2cec7f1cc6aece8372d57735bda",
+      "dev": 16777234,
+      "ino": 123682892
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.fixture.json.database.json",
+      "bytes": 190,
+      "sha256": "e370487d7d5f77c969cef8f47c1e68ff187f2004d5c925b1c5d3ad45722f196d",
+      "dev": 16777234,
+      "ino": 123682893
+    },
+    {
+      "path": "docs/evidence/mature06-lazy-reasoning/pg-MATURE06-LAZY01-CLIENT-PG-20261007-R1.root.json",
+      "bytes": 145,
+      "sha256": "b134bd03eb079818c484b9f6a8e2e86cd2cba54b290a6b044fd17bafec90b205",
+      "dev": 16777234,
+      "ino": 123682683
+    }
+  ],
+  "closedEvidenceConfirmed": true,
+  "databaseIdentity": {
+    "oid": "1268881",
+    "marker": "cca9a304-0a82-4923-8754-e6a3bfc589ca"
+  },
+  "processId": 26274,
+  "actualIdentity": {
+    "dev": 16777234,
+    "ino": 123682682,
+    "uid": 501
+  },
+  "sample": {
+    "entries": 4,
+    "logicalBytes": 138,
+    "activePeak": "unknown"
+  },
+  "deleteReturned": true,
+  "absentAt": "2026-10-07T09:09:37.898416+00:00",
+  "finishedAt": "2026-10-07T09:09:37.898424+00:00",
+  "elapsedBeforeReceiptSeconds": 0.018558374955318868,
+  "within15BeforeReceipt": true
+}

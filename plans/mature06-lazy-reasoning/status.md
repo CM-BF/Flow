@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T09:07:13.941086+00:00 |
+| 最近更新 | 2026-10-07T09:11:41.244159+00:00 |
 | 任务开工时间 | 2026-10-07T07:19:18Z |
 | 分支交付时间 | 2026-10-07T07:35:58.005114+00:00 |
 | 独立审查时间 | 2026-10-07T08:42:02Z（client）；PG08:13:23Z/core07:47:03Z |
@@ -23,15 +23,15 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 本片段交付阶段 | integration |
-| 当前产出 | 公开客户端真实读取用例通过；结果外壳误分类未选用例，整体失败原件已保留。 |
-| 下一可用交付 | 接收本次公开客户端真实验收与分类修复；精确临时目录待独立授权收束。 |
-| 当前阻塞 | ACTIVE：精确TMP按失败门禁KEEP待合法清理；分类P2已关闭，当前无活动PG。 |
+| 当前产出 | 公开客户端真实读取已验证；分类修复独审通过，精确残留目录已授权清理，待接收窄验收增量。 |
+| 下一可用交付 | 主线接收新增公开客户端验收及分类修复；后续界面消费按原owner协作。 |
+| 当前阻塞 | ACTIVE：新增验收与分类修复待主线接收；当前无资源或实现阻塞。 |
 | 需用户决定 | NONE |
 | Review | client2949569b/55dc7de8于08:42:02独审APPROVED/0P1P2；旧core/PG各自批准保留 |
 | 检查 | client 7 distinct分轮：首3pass4fail→受影响5pass/2未选；strict0。旧core14/fix4/PG2各自固定且未重跑 |
 | main | core/client INTEGRATED e2b16924038d1215e5f9f389710d1e9b43636d02；新journey NOT_INTEGRATED |
-| 实现目标 | 2949569bcac7d3b0257a0026f488f42eb6276222 |
-| 实现范围 | packages/client/src/index.ts; packages/client/src/assistant-stream.test.ts |
+| 实现目标 | 47f54739f5a2cf8c356dc9ac7e232f64f637e786 |
+| 实现范围 | apps/server/src/assistant-stream/selection-pg.test.ts; docs/evidence/mature06-lazy-reasoning/execute-pg.py; docs/evidence/mature06-lazy-reasoning/pg-gates.test.py |
 | Claim | 8436ad9e-ec1f-4cfb-b2fa-84e9f207935b v9 ACTIVE /13scope（index正式STOP移出供X01；其take前不得写） |
 | 架构影响 | branch-only：patch-select-v1协商与单projection有限selection；原持久流/授权不变。main架构更新待Lead接收，Web跨turn累计cache尚未接线。 |
 
@@ -78,3 +78,5 @@ client/index handback COMMITTED 2026-10-07T08:43:46.904Z，v8→v9/13，仅移�
 2026-10-07T09:03:04.863327+00:00 新纯修复：原结果09fbd42b冻结，caller纯分类函数对真实JSON离线4/4，新增失败/未知/额外执行均拒绝；1child166ms/602B/EOF/ownedabsent、新TMP删除absent，09:01:58local已归还。旧7gate/core/client/types/PG未重跑；原工具失败不改为绿。当前源改变但旧pg-client-input按R1固定不重绑，0后继运行授权。结果入口client-pg-result.md，窄修与结果一轮交chatui。
 
 2026-10-07T09:07:13.941086+00:00 正式结果/窄修复审：chatui09:06:13对09fbd42b/47f54739/a91d5b26判FAILED_RESULT_FIDELITY_AND_SELECTOR_FIX_REVIEW_APPROVED，原selectorP2 CLOSED，0P1P2。client-pg-result-review-receipt.json为正式回执，原Vitest1pass/2skipped及wrapper1/TMPKEEP/所有raw-input字节不变。准备与结果失败纠正保留；无后继PG或cleanup授权。当前只metadata归档，13scope保留；新journey/fix主线未接，core/client已在e2b，UI/native/provider仍不在本结果范围。
+
+2026-10-07T09:11:41.244159+00:00 exactTMP后续授权收尾完成：独立client-pg-tmp-cleanup.json/tool.json，09:09:37UTC、同dev16777234/ino123682682，重核已审process/DB关闭证据后4entries138B有界清单、同identity删除/ENOENT，tool0/含收据19ms，0PG/test/新TMP。原11raw/tool1/thenKEEP逐hash不变。唯一新增窄intake为client-pg-integration-ready.md/json；newjourney/fix待接收，旧core/client已maine2b。D05已正式登记来源为root通知，live聚合尚未读取PENDING_SYNC；不推测部署或整个task完成。local已直接归还X01。
