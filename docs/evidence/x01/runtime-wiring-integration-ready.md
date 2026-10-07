@@ -5,3 +5,5 @@
 Only narrow patches may be applied to shared entries; retain LAZY selected reads, native-body and Codex. If preceding runtime/domain, provenance or LAZY dependency is absent, intake must preserve the stated ordering and involve its owner; this file does not authorize replacement or claim it already reached main. Actual full factory/main direct consumer validation remains for the integration owner.
 
 Branch evidence is six distinct direct passes, message-only two-case retest, repaired strict0; injected SQL/fetch/host, no newPG. All four engineering children and five exact owned roots are closed. This is an independently reviewable implementation slice, not complete npm/publicrunRunner, CLI or recovery acceptance.
+
+Public journey补充：已独审真实1/1结果c5dd57a1，见public-runner-pg-independent-review.json/result-manifest。runtime9b+七叶2ea源/patch不变，允许独立受控接收；最新main组合仍由Lead核验。CLI/完整pin恢复未完成。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T09:29:40.961634+00:00 |
+| 最近更新时间 | 2026-10-07T09:34:00.386598+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -10,24 +10,24 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v21 ACTIVE52scope](../../docs/evidence/x01/public-runner-amend-v21.json)；新增public-runner-pg.test.ts于09:02:54.938Z原子领取 |
+| Claim | [v22 ACTIVE53scope](../../docs/evidence/x01/terminal-outbox-amend-v22.json)；新增outbox及直接test，client/index已STOP/amend交回READBOUND01 |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 新段09:02:16Z；固定test e6ad1c0f / support ced4679c，main1e12eaf1真实closure；新packet准备固定 |
 | 工作树 dirty 状态 | 实际执行HEAD8d8eb438冻结，唯一R1结果及owner收尾证据归档中；原277输入零修改 |
-| 工作分支状态 | review |
+| 工作分支状态 | implementation |
 | 检查状态 | 真实公开registry/fetch/install/enable/admit/FlowClient v3/runRunner/npm artifact单例1/1；43HTTP+2registry，全部实际资源闭合；待独立结果审 |
-| Review | 准备ced4679c于09:20:40APPROVED；实际R1结果PENDING独立审查 |
+| Review | 公开链resultc5dd/packetbbd于09:32:01APPROVED0P1P2；后继terminal恢复实现尚未审 |
 | 已集成 main 状态 / HEAD | 领域5cd、claim/center9816、semver/pinning5b0已main；来源六源685窄patch及LAZY294已main e2b16924（I02 lazy-x01-intake）；runtime9b/wiring2ea仅按各自正式intake回执认定，不由本次PG推断main |
 | 实现目标 | ced4679c9ce3c183044fb853d71f72de7fc214db |
 | 实现范围 | apps/server/src/plugin-runtime/public-runner-pg.test.ts；docs/evidence/x01/public-runner-*（固定镜像/实际PG薄入口/局部证据） |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 真实npm插件已通过公开安装、启用、任务执行与来源产物的单条验收，结果正交独立审查 |
-| 下一可用交付 | 独审后推进固定材料的终态报告恢复；CLI与未知副作用完整恢复仍开放 |
-| 当前阻塞 | NONE：实际数据库、监听、进程与TMP均已归还，当前仅结果审查 |
+| 当前产出 | 真实公开npm运行链已审通过并独立待主线接收；正在修补终态事件报告的崩溃恢复间隙 |
+| 下一可用交付 | 完整终态事件先持久化、ACK后先清admission，重启只重放原事件不重执行插件 |
+| 当前阻塞 | NONE：当前无实际资源占用；完整CLI与副作用未知阶段恢复仍开放 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -327,3 +327,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T09:20:40Z 独审确认ced4679c/2d9c2bf3准备APPROVED0P1/P2；09:21 fresh v21 ACTIVE52/head clean核符后仅归档。实际连接配置8(server)+3(PgBoss)+4(fixture)+1(admin)=16≤保守17；原受审window的max12描述不精确，本文与正式回执纠正，固定输入预算/原件不改。实际PG NOT_OPEN/0预约，local已closed；新AGENTS每Lead1+3总12替代旧历史10，仍受工具实际cap。
 
 2026-10-07T09:29:40.961634+00:00 唯一公开链R1于09:27:32.875133Z actual PID69054启动，09:27:37.417504Z独立delivery PASSED；1/1及真实资源闭合先返Mika/sharedPG。见[结果入口](../../docs/evidence/x01/public-runner-pg-result-ready.md)。14run/tool/close原件26896B，0后继launch；原actualwindow已消费不复开。后到完整floor仅如实作事后比较，不改原admission。main e2b provenance/LAZY事实本次只读I02收据确认，旧首表待接收措辞已纠正。
+
+2026-10-07T09:32:47Z 新20min terminal报告恢复段启动；累计local≤120s、每child≤60s、TMP16MiB/raw512KiB/source-meta2MiB，0PG。09:33:10.937130 STOP client/index，09:33:11.031当前v21→v22原子移出并加两leaf。原runtime9b+七叶2ea已审待集成始终保留[唯一runtime-wiring入口](../../docs/evidence/x01/runtime-wiring-integration-ready.json)，1/1真实旅程补充已审，不被新WIP覆盖。

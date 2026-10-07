@@ -1,0 +1,32 @@
+{
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-07T09:32:01Z",
+  "verdict": "PUBLIC_RUNNER_PG_RESULT_FIDELITY_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "resultCommit": "c5dd57a111ea1143b4bef84c4ff6c0dfeab65688",
+  "packet": "bbd51a00692639e6b47fff1ccb4199f96ef56750",
+  "manifestSha256": "ac750c3c60ddd8b20880f7bf96f7fd54507c078f0e8be99d60c110e7126c8c27",
+  "bindings": 20,
+  "bytes": 173535,
+  "runFiles": 14,
+  "runBytes": 26896,
+  "actual": {
+    "selected": 1,
+    "passed": 1,
+    "HTTP": 43,
+    "responseBytes": 22113,
+    "registryRequests": 2,
+    "tarDownloads": 1,
+    "tarExit": 0,
+    "processesAbsent": 2,
+    "DBAbsent": true,
+    "listenersClosed": 2,
+    "exactTMPAbsent": true
+  },
+  "scope": "Real public controlled semver chain result and observed cleanup only; CLI/full pin-recovery/global main remain open.",
+  "budgetQualification": "Original gate1319108608 includedWeb73MiB. Full5334630400 declaration arrived afterspawn; observedfree23439216640 exceeds it only as later comparison, not certified full start-gate accounting.",
+  "measurementLimits": "InitialEPERM observations, end-sample versus peak and DBphysical/WAL UNKNOWN retained; pre-save4.744697/postsave4.744990/time4.93/UTC separate.",
+  "reviewActions": "No engineering execution/import/PG/process scan/write or oldroot access."
+}
