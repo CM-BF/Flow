@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-07 02:28:37 UTC",
+  "state": "PREPARED_NOT_RUN",
+  "claim": "2e51f5cb-638b-4c6f-bd49-944581c886ad v2 active",
+  "scope": "Original OPS14 evidence only; no shared module/caller product edit",
+  "hypothesis": "An exited but unreaped own group leader may keep a zombie-only process group observable as EPERM via killpg(0); this is not permission to classify any EPERM as absence.",
+  "officialSource": {
+    "url": "https://github.com/apple-oss-distributions/xnu/blob/f6217f891ac0bb64f3d375211650a4c1ff8ca1ea/bsd/kern/kern_sig.c",
+    "commit": "f6217f891ac0bb64f3d375211650a4c1ff8ca1ea",
+    "rawLines": "1612-1621",
+    "observation": "This fixed source excludes SZOMB members and chooses EPERM for posix nfound=0. Source tag is not verified as the local running kernel binary."
+  },
+  "entry": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-B",
+    "docs/evidence/ops14/zombie-group-probe.py",
+    "--run"
+  ],
+  "cases": [
+    "own session leader: held live, WNOWAIT exited/unreaped, waitpid reaped",
+    "own session leader with actual forked live descendant: same three phases; pipe ping proves descendant liveness; cooperative pipe stop then bounded absence observation"
+  ],
+  "ownership": {
+    "externalPIDInput": false,
+    "positiveGroupSignals": false,
+    "historicalUnknownGroups": false,
+    "personalServices": false,
+    "onlyReadOnlySignalZeroAfterReap": true,
+    "tinyChildrenSelfDeadlineSeconds": 4,
+    "descendantEscapes": false
+  },
+  "bounds": {
+    "parentDeadlineSeconds": 9.5,
+    "probeChildDeadlineSeconds": 7,
+    "sharedSupervisorPolicy": [
+      8,
+      0,
+      1,
+      32768
+    ],
+    "totalRecordBytesMax": 65536,
+    "freshFreeBytes": 1077936128,
+    "PG": 0,
+    "provider": 0,
+    "Chrome": 0,
+    "reservationBytesHardMax": 4096,
+    "resultBytesHardMax": 16384
+  },
+  "failure": "Earliest work error and cleanup observations separate; actual errno preserved. Unknown/permission denial remains unknown. On parent deadline reservation may be the only durable fact; no retry/old-group cleanup. No interpretation based on a different XNU binary.",
+  "sourceSha256": "5a65a698534e74089f9d7da57ff8ab2deeccd1c32349625c8363ce081a436549",
+  "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+  "skillMethods": {
+    "local": [
+      {
+        "name": "find-skills",
+        "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+        "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+      },
+      {
+        "name": "codebase-design",
+        "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+        "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+      },
+      {
+        "name": "clean-code",
+        "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+        "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+      },
+      {
+        "name": "brainstorming",
+        "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+        "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+      }
+    ],
+    "method": "Approved bounded spike: isolate the kernel observation from production ownership semantics, use existing OPS14 childPidOnly as outer supervisor, do not duplicate caller policy or add a new FSM."
+  },
+  "validation": "No execution or syntax import yet; candidate for Lead boundary review and explicit returned local slot.",
+  "resultDecision": "Entry exit 0 requires internal report.exit_code 0, owned_state absent, both capture EOFs, no supervision failures, and exactly two complete three-stage cases with separately recorded leader reap / descendant pipe EOF / group ESRCH cleanup. Neither outer exit 0 alone nor EPERM is PASS."
+}

@@ -1,0 +1,59 @@
+{
+  "pid": 7930,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 1299,
+  "observed_bytes": 1324,
+  "retained_bytes": 1324,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "stdout": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "stderr": {
+    "bytes": 1324,
+    "sha256": "ffc67ed8d5bbfb795cc53ad13de92aa5f9387a4c22ed2a070ef68f4911d8d676"
+  },
+  "outerEntryExitCode": 0,
+  "at": "2026-10-07T02:35:16.575439+00:00",
+  "freeBeforeBytes": 25758130176,
+  "freeAfterBytes": 25758003200,
+  "selectedExpected": 4,
+  "unselectedExpected": 12,
+  "command": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-B",
+    "tools/owned-process-supervision/supervise.test.py",
+    "SupervisionTests.test_unreaped_eperm_remains_history_after_own_reap_confirms_absence",
+    "SupervisionTests.test_unknown_group_observation_never_escalates_or_reports_absent",
+    "SupervisionTests.test_signal_permission_failure_does_not_escalate",
+    "SupervisionTests.test_leader_exit_keeps_group_authority_until_descendant_stopped"
+  ],
+  "sourceTarget": "715525e4d1510b89be7e71a236d537b1f2953038",
+  "wallTimeMs": 1354,
+  "PG": 0,
+  "Chrome": 0,
+  "provider": 0
+}

@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07T02:43:26.729621+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "author": "assignment_review",
+  "target": "246db0d4beb277a14bc61816999308d6cf1ecfe7",
+  "priorTargets": [
+    "a524623d7df81431dba70349eb45ceac4cf12563",
+    "3ab0d4e17eb4107fe8eed046dec1b2e79cddd38c"
+  ],
+  "conclusion": "APPROVED_PREPARATION_ONLY",
+  "findings": [],
+  "closedInputGap": "Current Vite8.3.2 public entry/package anchored by actual Flow/apps/web/package.json resolved paths and hashes; no import or service probe. Request0600 was fixed by author without tuple mutation.",
+  "bindingAudit": {
+    "manifestSha256": "02ffecd1821e11101afba890c460681f7b72c679ed0526f7fc9b26e0b848ce62",
+    "ownInputs": 6,
+    "fixedAf51Source": 8,
+    "runtimePayloadBindings": 32,
+    "compatibilityReports": 3,
+    "hashedChecks": 12,
+    "mismatches": [],
+    "path": "/tmp/flow-web-d629-recovery-final-bindings.json",
+    "sha256": "66dec8f35378ae12e1bd4010e1f97aed0b20f0576fe0ccf491fe65138aa5706b"
+  },
+  "sourceRead": [
+    "af51 CLI exactrequest allowlist/readPreviewJson",
+    "preview load/assertMarker/locked/assertWebBackend/bootstrap previous-release branch/launchWeb/waitReady/runService",
+    "process identity/TERM-only stop/spawn nonce",
+    "web-release full descriptor/retained compatibility/current pointer",
+    "static-web actual Vite dynamic entry and fixed version snapshot",
+    "environment Web auth filtering",
+    "proposal/facts/request/runtime bindings/claim receipt"
+  ],
+  "fixedRequest": {
+    "expectedVersion": 3,
+    "expectedBackendHead": "af51c621696230fbced12227670f014ca73bd8a1",
+    "compatibilityId": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9"
+  },
+  "preservation": "Existing release branch validates marker/backend identities/version/all retained artifacts and compatibility before stop; only recorded Web TERM then spawn; it does not commit/rewrite release pointer and never stops center/runner. State process Web and operation outcome/own exit evidence only.",
+  "failure": "Unknown old Web identity/stop aborts; no force/retry/alternate action. Spawn/readiness uncertainty preserves state and requires readonly resolution. OPS14 childPidOnly28/0/2 cap65536 can only stop operator PID, never detached services; source window/actual source and raw checkpoint are execution gates.",
+  "limits": [
+    "No execution permission issued by this review; Lead owns final source window and one-shot authorization",
+    "Saved facts are not a newly probed liveness guarantee; exact fresh marker/process/config/source/pointer gates remain operator responsibilities",
+    "Compatibility reports are bounded saved attestations, not new UI verification or root-cause proof",
+    "Vite entry/package identity fixed; not a claim to have rehashed its entire transitive payload",
+    "No new service/HTTP/DB/process probes, tests, builds, installation, provider calls, private configuration reads, or project writes"
+  ],
+  "reviewerExecutions": 0
+}

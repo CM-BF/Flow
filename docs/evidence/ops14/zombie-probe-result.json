@@ -1,0 +1,29 @@
+{
+  "pid": 70970,
+  "ownership": "childPidOnly",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 58,
+  "observed_bytes": 3024,
+  "retained_bytes": 3024,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [],
+  "casesComplete": true,
+  "entryExitCode": 0,
+  "decision": "OBSERVATIONS_COMPLETE",
+  "stdout": {
+    "bytes": 3024,
+    "sha256": "8ace21100723c3fef2d5f88fcb04f06d5bcae3f4a596ff955294d0f35f85d61f"
+  },
+  "stderr": {
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}

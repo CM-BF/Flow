@@ -1,0 +1,84 @@
+{
+  "at": "2026-10-07T02:46:41.290446+00:00",
+  "reviewer": "native_center_owner",
+  "conclusion": "APPROVED_LIMITED_SAME_VERSION_RECOVERY_RESULT",
+  "preparationTarget": "246db0d4beb277a14bc61816999308d6cf1ecfe7",
+  "run": "run-20261007T024419Z",
+  "findings": [],
+  "checks": {
+    "config.json": true,
+    "claude.json": true,
+    "maintenance.json": true,
+    "web-release.json": true,
+    "centerPreserved": true,
+    "runnerPreserved": true,
+    "source": true,
+    "release": true,
+    "database": true,
+    "rawStdout": true,
+    "rawStderr": true,
+    "outerSuccess": true,
+    "oneBootstrap": true,
+    "oldGroupAbsent": true,
+    "root200": true,
+    "webIdentity": true,
+    "all14Saved": true
+  },
+  "observed": "One bootstrap;exit0/968ms/1379B/bothEOF/operator absent/no failure. Saved post14true;root200950B;identity200d629/version3;old99351group absent, new27112->27144 owned/listener. Center78240/runner99312 records, config/profile/maintenance/source/pointer/allretained/DBmarker accepting18/4succeeded/0unfinished/uncertain preserved.",
+  "oldExit": "Old matching nonce exit record code1 retained; absence/readiness recovery does not rewrite it or identify original socket failure cause.",
+  "limits": [
+    "Read saved files only;no new HTTP/DB/process/Chrome/provider probes",
+    "HTTProot/identity recovery only;no user-tab/browser functional acceptance",
+    "No product/source change and no root-cause fix inferred",
+    "Lead source-window closing/main restoration is separate operator authority; this result audit binds its saved ready-window input",
+    "Original claim967126c0 v1 owner assignment_review retains canonical metadata; reviewer writes only this tmp receipt"
+  ],
+  "bindings": [
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/run-20261007T024419Z/stdout.bin",
+      "bytes": 1379,
+      "sha256": "f9e2209c4dac1a5075171db281d21fa08e9323e2ccadd74c920334b441b0529f"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/run-20261007T024419Z/cli-intent.json",
+      "bytes": 615,
+      "sha256": "7fcdab8c0170777613fbab8d93331e50a867ae1f58ff01c7efa743c5002bbebf"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/run-20261007T024419Z/fresh-preflight.json",
+      "bytes": 2196,
+      "sha256": "007c0e3ce95831ecd65b6ab6f703f5628ba99ba87c9dc65dea4f13dca200f811"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/run-20261007T024419Z/cli-checkpoint.json",
+      "bytes": 705,
+      "sha256": "573cb0f3ec9a505b0160766f30fd9e14f18465539c19452f7f962e4301a214a0"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/run-20261007T024419Z/source-window.json",
+      "bytes": 530,
+      "sha256": "07106afb8b7c8a95069d8b2b31489318b6e733478c9182e24877db5dcf980f85"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/run-20261007T024419Z/facts-after.json",
+      "bytes": 5577,
+      "sha256": "f5f7f4927617c79312bb052dab413976fc7ebcabf239ec4677a18c822e6932f7"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/run-20261007T024419Z/stderr.bin",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/run-20261007T024419Z/fixed-input-preflight.json",
+      "bytes": 6741,
+      "sha256": "5eb971c4074a2187c8da5a23014ef4b3f33e7d80a3c2abbea59c96c38bb57325"
+    },
+    {
+      "path": "docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/run-20261007T024419Z/reservation.json",
+      "bytes": 857,
+      "sha256": "54e288bba3492cae5a308ced5cbd165920e796668c9c54d431362e4efdd52207"
+    }
+  ],
+  "reviewerExecutions": 0
+}

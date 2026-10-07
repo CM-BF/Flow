@@ -42,3 +42,30 @@ Capture 唯一独审原样[报告](../../docs/evidence/ops14/independent-capture
 assignment_review，2026-10-06 22:05:04 UTC，APPROVED_LIMITED_SVC05H_CONSUMER，固定12c60bfcb3b434b3f3eeb54c581e60c05b21bfd2 / delivery1f754100bf84633c53c88038ce8630fdccab2e56。完整两源delta与21bindings全部核同；原2/2/410ms、detached stand-in由测试独立清理原raw已读，无P1/P2，reviewer0重跑。原样[报告](../../docs/evidence/ops14/independent-svc05h-review.json)及[绑定](../../docs/evidence/ops14/independent-svc05h-review-bindings.json)。批准只覆盖首个真实wrapper源迁移与受控直接消费者；实际恢复未运行，原已消费许可不复开，SVC07及完整OPS14仍open。
 
 主线收据：fc3246b307f5436ccecb97f38ccaba10c7a72a5a 已接首consumer；2源对12c60、3共享源对afd逐字同，见[比较](../../docs/evidence/ops14/svc05h-main-comparison.json)。无重测/实际恢复；SVC07后继继续open。
+
+
+## 自有 zombie group 观察准备 / 结果待审
+
+Review target commit: 14e8fb79c51d59cf0ad7048b077ccd745a1e1ca9
+
+Lead 完整只读 probe/最后 exit 与记录界限，结论 APPROVED_PREPARATION，并明确许可 OPS14-ZOMBIE-ONCE-0233。新两 case 单次实际结果已固定，等待独立结果核验；原 module/consumer 独审不扩大，0 新产品代码。
+
+
+## 本机观察结果已审 / 共享窄回归结果待审
+
+Review target commit: a7cf38642a8f72f77d75e56a2ffcde8b16bbd476
+
+Lead APPROVED_LIMITED_OBSERVATION，13绑定与原始两case/cleanup/工具退出已独立核，无P1/P2、0复跑。转录见 zombie-probe-independent-approval.json。
+
+Review target commit: 715525e4d1510b89be7e71a236d537b1f2953038
+
+Lead APPROVED_SOURCE：新test与Interface窄差异、原实现未改，历史unknown和实际reap后末态区分正确。唯一4例运行现已固定；原ResourceWarning保留，实际结果待Lead增量核验，旧模块/消费者批准不扩大。
+
+
+## 历史观察 / 末态回归最终独审
+
+状态：APPROVED_LIMITED_REGRESSION；Reviewer：astra_ultra_execution_lead
+
+Review target commit: 715525e4d1510b89be7e71a236d537b1f2953038
+
+实际结果固定0720625cd88ff7bfb8c1830eede8b8bfa91ded7e。完整delta、4原始stderr/工具回执、16bindings及stop_test_child已读；无P1/P2，reviewer0运行。新1/旧3重叠、12未选、原2警告与finally收尾保持。shared725bad90/两个既有wrapper源码未改，不扩大至真实服务或历史unknown恢复。详见 zombie-regression-independent-approval.json。

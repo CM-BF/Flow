@@ -216,6 +216,38 @@ print(child.pid,flush=True)
         self.assertTrue(result.observations)
         self.assertEqual(result.observations[-1]['state'], 'absent')
 
+    def test_unreaped_eperm_remains_history_after_own_reap_confirms_absence(self):
+        real_killpg = os.killpg
+        phases = []
+
+        def observe_owned_group(pid, action):
+            self.assertEqual(action, 0, 'uncertain observation must prohibit signal escalation')
+            try:
+                exited = os.waitid(os.P_PID, pid, os.WEXITED | os.WNOHANG | os.WNOWAIT)
+            except ChildProcessError:
+                phases.append('reaped')
+                return real_killpg(pid, action)
+            if exited is not None:
+                phases.append('exited-unreaped')
+                raise PermissionError(errno.EPERM, 'controlled zombie-only observation')
+            phases.append('live')
+            return real_killpg(pid, action)
+
+        with patch.object(MODULE.os, 'killpg', observe_owned_group):
+            result = supervise(launch('pass', Ownership.NEW_CHILD_SESSION), policy(term=.02))
+
+        self.assertEqual(result.exit_code, 0)
+        self.assertIsNone(result.first_failure)
+        self.assertEqual(result.secondary_failures, [])
+        self.assertEqual(result.signals, [])
+        self.assertTrue(all(result.eof.values()))
+        self.assertEqual(phases[0], 'exited-unreaped')
+        self.assertIn('reaped', phases)
+        self.assertEqual(result.observations[0], {'state': 'unknown', 'errno': errno.EPERM})
+        self.assertEqual(result.observations[-1], {'state': 'absent', 'errno': None})
+        self.assertEqual(result.owned_state, 'absent')
+        self.assertTrue(absent(result.pid))
+
     def test_spawn_failure_does_not_leak_command_or_exception(self):
         result = supervise(Launch(('/no-such-ops14-secret',), os.getcwd(), {}, Ownership.CHILD_PID_ONLY), policy())
         self.assertIsNone(result.pid)

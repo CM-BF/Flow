@@ -1,0 +1,15 @@
+test_unreaped_eperm_remains_history_after_own_reap_confirms_absence (__main__.SupervisionTests.test_unreaped_eperm_remains_history_after_own_reap_confirms_absence) ... ok
+test_unknown_group_observation_never_escalates_or_reports_absent (__main__.SupervisionTests.test_unknown_group_observation_never_escalates_or_reports_absent) ... /opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py:1140: ResourceWarning: subprocess 7932 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_signal_permission_failure_does_not_escalate (__main__.SupervisionTests.test_signal_permission_failure_does_not_escalate) ... /opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/lib/python3.13/subprocess.py:1140: ResourceWarning: subprocess 7934 is still running
+  _warn("subprocess %s is still running" % self.pid,
+ResourceWarning: Enable tracemalloc to get the object allocation traceback
+ok
+test_leader_exit_keeps_group_authority_until_descendant_stopped (__main__.SupervisionTests.test_leader_exit_keeps_group_authority_until_descendant_stopped) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 1.135s
+
+OK
