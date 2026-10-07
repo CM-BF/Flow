@@ -1,0 +1,96 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-07T07:11:48.670Z",
+  "acceptanceObservedAt": "2026-10-07T07:10:42.133Z",
+  "main": "a72181d7a8a195e75129522b218bc2e10ccd1fc3",
+  "mainEqualsOriginAndWTAtObservation": true,
+  "mainDirtyAtObservation": false,
+  "actualMainIntegrationUTC": "UNKNOWN",
+  "integrationTimeMeaning": "Receipt preparation07:04:03.517270 and type completion07:04:13.199728 precede main publication; no guessed merge/deploy timestamp. Owner verified accepted main at acceptanceObservedAt.",
+  "intakeReceipt": {
+    "path": "docs/evidence/i02/s01p08-intake.json",
+    "fixedGit": "a72181d7a8a195e75129522b218bc2e10ccd1fc3",
+    "sha256": "292708cbc7d124028ff210988e17ff23922eedb286d56c34657ab941a427df31"
+  },
+  "approvedSource": "e3d28f96b971256abd155904b4cbd333bbdc57ad",
+  "files": [
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.ts",
+      "bytes": 4132,
+      "sha256": "3f22af96739e4485b320b8fb699f053dab35d2799e85672a8ff830d2bf3f6b67"
+    },
+    {
+      "path": "apps/runner/src/native-stream-ownership.test.ts",
+      "bytes": 8071,
+      "sha256": "01d18d01b636fc72bb4bda7c2b4a202a080e79fb94c59aa9f222b308ffffb6de"
+    }
+  ],
+  "ownerChecks": {
+    "fixedMainEqualsMainWTEqualsFeatureWT": true,
+    "shaBytesMatchReceipt": true
+  },
+  "leadEvidence": {
+    "manifestBindings": 21,
+    "manifestMismatches": [],
+    "directClosurePaths": 87,
+    "currentDrift": [
+      "apps/runner/src/outbox.ts",
+      "packages/contracts/src/runner.ts"
+    ],
+    "driftMeaning": "Both CHAT05 approved additions, not the test runtime path; adapter/control/turn/exchange/stream direct sources unchanged. Root type integration only; no rerun of 11 behavior checks or S01 capacity experiment.",
+    "integrationTypes": {
+      "pid": 77575,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 9633,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "finishedAt": "2026-10-07T07:04:13.199728+00:00",
+      "passed": true
+    }
+  },
+  "testsNotRepeated": [
+    "11 existing focused cases",
+    "S01 capacity/PG experiments"
+  ],
+  "productWritesStoppedBeforeAmend": true,
+  "handback": {
+    "committedAt": "2026-10-07T07:10:53.290Z",
+    "claimId": "1e4868a6-a900-463a-9de3-0a4234179733",
+    "version": 3,
+    "scope": [
+      "docs/evidence/s01p08",
+      "plans/s01p08-native-stream-ownership"
+    ]
+  },
+  "dashboard": "PENDING_REGISTRATION/PENDING_SYNC; no live snapshot was read",
+  "deployment": "UNKNOWN",
+  "limits": [
+    "Mock heartbeat15 to11 with same5patches/9events only; no real latency/provider/capacity claim",
+    "Original strict failures, process unknown observations and sampled-resource limits unchanged",
+    "Only this bounded S01P08 task acceptance; overall FLOW-001/S01 remains independent"
+  ]
+}

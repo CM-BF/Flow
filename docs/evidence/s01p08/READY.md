@@ -1,6 +1,6 @@
-# S01P08 — READY for controlled main intake
+# S01P08 — main accepted; metadata sync pending
 
-Recorded 2026-10-07T06:58:13.419Z. Independent approval: **SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED**, db_transaction_owner / gpt-6-astra, 2026-10-07T06:52:59Z; 0 P1/P2. [Formal receipt](review-receipt.json). This is branch delivery, **NOT_INTEGRATED**.
+Recorded 2026-10-07T06:58:13.419Z. Independent approval: **SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED**, db_transaction_owner / gpt-6-astra, 2026-10-07T06:52:59Z; 0 P1/P2. [Formal receipt](review-receipt.json). Historical branch READY was accepted into **main a72181d7a8a195e75129522b218bc2e10ccd1fc3**, verified2026-10-07T07:10:42.133Z; see [main-acceptance.json](main-acceptance.json).
 
 ## Exact intake
 
@@ -23,4 +23,6 @@ Final 11/11 + strict0; historical baseline7/7 and strict exit2→0 preserved. Sa
 
 ## Ownership and registration
 
-Claim `1e4868a6-a900-463a-9de3-0a4234179733` v2 ACTIVE, four literals; fresh same-owner receipt checked before this metadata update. Product writes stopped; keep claim through main acceptance/fix period. No active runtime or pending launch. Dashboard **PENDING_REGISTRATION / PENDING_SYNC**: Execution Lead must register `plans/s01p08-native-stream-ownership/status.md` from this WT/branch and read actual Git HEAD/dirty. No public Interface, connection, timer or lifecycle change requires a new architecture drawing; main acceptance remains to be recorded. Original S01 A/B READY is independent and unchanged.
+Claim `1e4868a6-a900-463a-9de3-0a4234179733` is now v3 ACTIVE, only own evidence/plan literals. Product writes explicitly stopped before atomic amend07:10:53.290Z; [product handback](product-handback-receipt.json). Both product literals have been returned. No active runtime or pending launch. Dashboard **PENDING_REGISTRATION / PENDING_SYNC**: Execution Lead must register `plans/s01p08-native-stream-ownership/status.md` from this WT/branch and read actual Git HEAD/dirty. No public Interface, connection, timer or lifecycle change requires a new architecture drawing; main acceptance is recorded; actual deployment remains UNKNOWN. Original S01 A/B READY is independent and unchanged.
+
+Owner seal 2026-10-07T07:11:48.670Z: current-main two-source bytes/SHA match approved target; Lead root noEmit0/9633ms is separate from branch11/11. No rerun. Receipt preparation07:04:03 and type completion07:04:13 are not invented merge times; main verified at07:10:42. Dashboard registration/synchronization remains pending without a live observed record. Immutable historical manifests/raw/source are unchanged.
