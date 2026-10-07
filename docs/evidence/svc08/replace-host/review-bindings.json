@@ -1,0 +1,759 @@
+{
+  "at": "2026-10-07T03:57:20.129800+00:00",
+  "manifestSha256": "9486b7953dce240a3bbb5701fc3bc1185d008d72d0aa3ba3fdaa5660a7d313f1",
+  "count": 54,
+  "counts": {
+    "product": 4,
+    "protected": 19,
+    "evidence": 28,
+    "metadata": 3
+  },
+  "allMatch": true,
+  "bindings": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "ref": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13",
+      "kind": "product",
+      "bytes": 39332,
+      "sha256": "247d89af6b70ecbabb9f574265d4c1c4b49411b51f1f5e4dc08d56722073c34e",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "ref": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13",
+      "kind": "product",
+      "bytes": 43313,
+      "sha256": "e82691c7b2f9bf9b76ffe2dde4995a3756a4d17fbebabf6fc1f0ee35632333ec",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "ref": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13",
+      "kind": "product",
+      "bytes": 5301,
+      "sha256": "a6343401769258b81d72b5ce117701f28daf74ca1776abf5d269f951b34f0f01",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/README.md",
+      "ref": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13",
+      "kind": "product",
+      "bytes": 18324,
+      "sha256": "84358e3347c2f294ba521f8e070b548785e9590e36f3eeee164a738733946741",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "package.json",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 10976,
+      "sha256": "bb39c0dd9925ceb7f93638a6411c09d0dbeaa01132c9265c7a0a71c18bd5bdda",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 3480,
+      "sha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 2899,
+      "sha256": "3772f23fc1145cc7d5f517c7741d896a9e62b2e2e72e6263db736a5da83789b4",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/installation-view.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 6646,
+      "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 1983,
+      "sha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 3493,
+      "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/static-web-connections.test.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 10423,
+      "sha256": "af94bacf118f213514a6e2bc0aa2880eeca8927431a11abfb74973d41b64cd8d",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 6800,
+      "sha256": "ca632440092ae3d403a65fffe8c5321232f83036aaf6558e6132c6cfad299206",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/static-web.test.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 4740,
+      "sha256": "63b1bf4cf9791be59f179ad025034b1b5abc9046b17c2b3f8efa29bf923fca27",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 8163,
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "ref": "0967607a9a9c2435282ca7fbba23b6e96df096c4",
+      "kind": "protected",
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/README.md",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 1866,
+      "sha256": "efcbff7d4b1df4d2d9ed4d24c19589f293a2812ab850414385877c76f3d83a24",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/amend-receipt.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 790,
+      "sha256": "2c5070aa6352d6027e8e59f96966ef683f593eeae792763a09b74c3bbcfbcd9d",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/amend-request.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 426,
+      "sha256": "b8ebbb8168d99e4e0b77d44f10a5ccbc6f6c4fbb4b1ad4cf0e6ecad593b6c155",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/candidate-independent-review.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 1500,
+      "sha256": "61cb66feb282d0f4d2986748f765834d959d4ea78f4ea669da923f462114705d",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/controlled-source-input.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 5768,
+      "sha256": "947b173fb202a6b8e74c56533892e6fafea42d86f91a86d9cc8a96c5f37e0b71",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/dependency-receipt.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 444,
+      "sha256": "39278b37ef7cbf53ca3d915f5d38e4856c1a4b11fe584aca34106aac826683c3",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/direct-cleanup.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 172,
+      "sha256": "ef669800f8790e8c23dd2cb3a5dfb89b286b11d8add9078f12a352be685c3a64",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/direct-reservation.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 2204,
+      "sha256": "e58ad5c8ffe68f26c54bd1486673aa33d60b66d4446905741fe7a2056bdeb6dd",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/direct-result.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 899,
+      "sha256": "18690e88397bb67e3e1ad54541fa7dde77e57b43171e7459fe57eb82de4d39f3",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/direct-stderr.log",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/direct-stdout.log",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 1412,
+      "sha256": "a94bfa52decd1152f720e8b6739c0aee9078ef64c77dd3e5cca75969c1057cb1",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/first-cleanup.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 172,
+      "sha256": "b99840adac13396e0f72f5dc7c0b1963aa900ed96263684a803f40b5d4a227e3",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/first-reservation.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 2074,
+      "sha256": "431eaa06cc90a35f0e488f180afa7d7bba13cc200ace39c358a5671f4df9ca01",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/first-result.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 902,
+      "sha256": "b0416007c7d4f15a2ddb56b3cf597b77efa4840725fcbcda6411076a542c7fe3",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/first-stderr.log",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/first-stdout.log",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 3991,
+      "sha256": "5fb77b48fe72aae42b134b5e8c57ed1cf87faf41bb8212aea0f0109fbafe81eb",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/interface.md",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 2277,
+      "sha256": "5d21d1ce52f0f10237cb4bc1bd06229b5392c965aa22b0c0982e1006b2c2d7b9",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/legacy-layout-readonly.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 547,
+      "sha256": "19df379ac9aa192e254e90effe88995d89623320573002977726e7a66b693ab5",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/protected-inputs.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 5496,
+      "sha256": "f3afc623b1f2835d83f08d38c4e5428bf0820eeb70b8de80716f053505b76898",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/quality.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 1735,
+      "sha256": "8387ffb3928102e253cc5275531861bbb5dba7fb19698c1d1ec5581bb649d676",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/repair-cleanup.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 172,
+      "sha256": "5828cb68f2ff4d51db5e1927b5eb2039edc879205ab8d27672091c1e6e880994",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/repair-reservation.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 2144,
+      "sha256": "b7d8cc64c4847abd5ab765846f06a10462832ed28c919e8c2cbce4ada339aa80",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/repair-result.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 1047,
+      "sha256": "748642f991acf321faadae2fd4bd4ebb9448aeebab0d2cab01517ec31e74ec8a",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/repair-stderr.log",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/repair-stdout.log",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 1638,
+      "sha256": "e9f336062b1f0355946ed2d4ed089d3b12e3c05d6196cc4708ce2710ff86b28d",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/run-local.py",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 4851,
+      "sha256": "a0b5be6ad466a1a62011557a894a1966ae6f637afbd5d8dc63b0833864fa5020",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/run.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 3848,
+      "sha256": "4571e2bef8add6347870d6995074595c5361ca100ebda4ae58d33996a6d53e08",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/tool-transcripts.json",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "evidence",
+      "bytes": 1582,
+      "sha256": "6c2e9810caa96504aa48850e99be81ee0c04e0b106c04b70247b6b3278412d45",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "plans/svc08-web-connection-lifecycle/plan.md",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "metadata",
+      "bytes": 2065,
+      "sha256": "7aab0f505f3c90a3ab84c022088b02d980ab9a1666f053568ca098f5c7de54d9",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "plans/svc08-web-connection-lifecycle/status.md",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "metadata",
+      "bytes": 5927,
+      "sha256": "b28446bdc0be509ab9010025adf4d681c1083feceae044f72beb81ddc0287938",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    },
+    {
+      "path": "plans/svc08-web-connection-lifecycle/review.md",
+      "ref": "5b624554ae2f58f2e5d2e5649d1848041cc26a3e",
+      "kind": "metadata",
+      "bytes": 2438,
+      "sha256": "744a9680d994fe63e25e084c93b34b76e4361cb9804c5d298438f28dbe687b59",
+      "currentMatches": true,
+      "fixedMatches": true,
+      "blobMatches": true
+    }
+  ],
+  "externalBindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "bytes": 1668,
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "bytes": 1810,
+      "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c",
+      "matches": true
+    }
+  ],
+  "roundBindings": [
+    {
+      "label": "first",
+      "ref": "19c9abc6ddf86ae720f652b6a055104573c403c9",
+      "reservedSourcesMatchFixed": true,
+      "sourceBindings": [
+        {
+          "path": "tools/personal-preview/preview.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/preview.test.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/cli.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/README.md",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/web-artifact.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/web-release.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/backend-release/host.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/owned-process-supervision/supervise.py",
+          "matches": true
+        },
+        {
+          "path": "docs/evidence/svc08/replace-host/run-local.py",
+          "matches": true
+        }
+      ],
+      "testsDefined": 9,
+      "selectedPlanned": 9,
+      "actualTests": [
+        "SVC08 replace-host preserves legacy af51 state, pointer and all retained bytes, then observes same operation",
+        "SVC08 replace-host rejects stale CAS, source, identity, compatibility and missing interruption consent before stop",
+        "SVC08 replace-host checkpoint failure sends no signal or start",
+        "SVC08 replace-host unknown stop cannot repeat or be bypassed by a new operation id",
+        "SVC08 replace-host uncertain spawn preserves pending new record and never starts a duplicate",
+        "SVC08 replace-host concurrent command keeps one operation lock and one start",
+        "SVC08 replace-host does not claim ready after protected data changed during launch",
+        "SVC08 replace-host validates noncurrent retained files before touching Web",
+        "SVC08 replace-host CLI rejects extra request authority before any real marker or process port"
+      ],
+      "fixtureCount": 9,
+      "allFixtureCleanup": true,
+      "exit": 0,
+      "elapsedMs": 1113,
+      "rawBytes": 3991,
+      "ownedState": "absent",
+      "EOF": {
+        "stdout": true,
+        "stderr": true
+      },
+      "rawOutputMatches": true
+    },
+    {
+      "label": "repair",
+      "ref": "d6c6fe9c48ef9050a6d186168014d09cd125830a",
+      "reservedSourcesMatchFixed": true,
+      "sourceBindings": [
+        {
+          "path": "tools/personal-preview/preview.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/preview.test.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/cli.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/README.md",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/web-artifact.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/web-release.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/backend-release/host.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/owned-process-supervision/supervise.py",
+          "matches": true
+        },
+        {
+          "path": "docs/evidence/svc08/replace-host/run-local.py",
+          "matches": true
+        }
+      ],
+      "testsDefined": 10,
+      "selectedPlanned": 1,
+      "actualTests": [
+        "SVC08 replace-host validates exact retained report and backend bindings before touching Web"
+      ],
+      "fixtureCount": 1,
+      "allFixtureCleanup": true,
+      "exit": 1,
+      "elapsedMs": 265,
+      "rawBytes": 1638,
+      "ownedState": "absent",
+      "EOF": {
+        "stdout": true,
+        "stderr": true
+      },
+      "rawOutputMatches": true
+    },
+    {
+      "label": "direct",
+      "ref": "52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13",
+      "reservedSourcesMatchFixed": true,
+      "sourceBindings": [
+        {
+          "path": "tools/personal-preview/preview.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/preview.test.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/cli.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/README.md",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/web-artifact.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/web-release.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/personal-preview/backend-release/host.mjs",
+          "matches": true
+        },
+        {
+          "path": "tools/owned-process-supervision/supervise.py",
+          "matches": true
+        },
+        {
+          "path": "docs/evidence/svc08/replace-host/run-local.py",
+          "matches": true
+        }
+      ],
+      "testsDefined": 10,
+      "selectedPlanned": 3,
+      "actualTests": [
+        "SVC08 replace-host preserves legacy af51 state, pointer and all retained bytes, then observes same operation",
+        "SVC08 replace-host validates noncurrent retained files before touching Web",
+        "SVC08 replace-host validates exact retained report and backend bindings before touching Web"
+      ],
+      "fixtureCount": 3,
+      "allFixtureCleanup": true,
+      "exit": 0,
+      "elapsedMs": 366,
+      "rawBytes": 1412,
+      "ownedState": "absent",
+      "EOF": {
+        "stdout": true,
+        "stderr": true
+      },
+      "rawOutputMatches": true
+    }
+  ]
+}

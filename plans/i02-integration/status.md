@@ -307,3 +307,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 ## 2026-10-07T03:48:53.590963+00:00 计时片受控接收
 
 [固定输入与逐文件绑定](../../docs/evidence/i02/dashboard-timing-intake.json)：四产品及自有记录保持080e1f0e原文，主线前像同181445；复用Web唯一独审72a与81 parser/5浏览器组，0新增工程检查/模型。实际4320加载新版本是独立部署步骤，个人af51/d629不变。
+
+2026-10-07T04:10:00.787603+00:00：受控接收SVC08 Web-only descriptor选择bad019/0e11，4产品preimage等于main451；81binding/2runtime及完整delta独审APPROVED。9不同局部检查复用原证据，未重跑/构建/个人切换；e5来源限制保留。同步D05实际ACCESS+计时部署575b9及OPS真实host失败状态3f688；细节见svc08-web-selection-intake.json。

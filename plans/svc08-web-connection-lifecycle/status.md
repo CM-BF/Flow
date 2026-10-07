@@ -6,30 +6,30 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07 03:54:21 UTC |
+| 更新时间 | 2026-10-07 04:05:58 UTC |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | review |
-| 当前产出 | 只替换 Web 宿主的受管入口已完成局部验证；会保留旧后台、页面版本和未结算操作，个人服务未切换。 |
-| 下一可用交付 | 固定实现交独立审查；真实部署仍需补齐 Web 独立来源与旧后台读取边界。 |
+| 当前产出 | 同锁替换模块已进入主线；Web独立固定来源选择已完成局部验证，中心和runner来源保持不变，正在交独立审查。 |
+| 下一可用交付 | 审查Web专用来源选择；之后仍需合法个人来源产物和真实运行验证，个人服务尚未切换。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
 | Branch | codex/personal-web-connection-lifecycle |
 | Base | a2e7803161ffb7e2158eaf3c13531448d2a777b0；本片四产品preimage固定0967607a9a9c2435282ca7fbba23b6e96df096c4，两只读叶子input-only26d1be6c |
-| Head | 52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13；后续仅作者证据及审查metadata |
+| Head | bad019d9691499bed69ae46b6c5d23944709cfe3；后续仅自身证据和metadata |
 | 工作树dirty状态 | 仅自身证据与metadata；最终交付核clean |
 | 工作分支状态 | review；同锁替换局部实现已固定待独审 |
-| 实现目标 | 52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13 |
-| 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/cli.mjs, tools/personal-preview/README.md |
-| Claim | 原产品f578d8b1-4be5-4d89-9889-9fbd17fe0cc4 v2 released；新ba1ff3b2-d830-4acf-b84f-be8df92c9c95 v2 active；原docs加preview.mjs/preview.test.mjs/cli.mjs/README.md四literal |
-| Review | NOT_STARTED 当前同锁替换四产品；部署文档ad77已APPROVED_DOCS_CANDIDATE；原086产品独审/main保持，[唯一review](review.md) |
-| 检查状态 | 10不同检查分轮首9/9、新1红、定向3/3（1新+2相邻）；累计1744ms、三组absent/双EOF/私有目录清除；原6PG未选，0PG/Chrome/provider/个人操作；[原始运行](../../docs/evidence/svc08/replace-host/run.json) |
-| 已集成 main 状态 | 当前52d3同锁替换 NOT_INTEGRATED；历史086限定修复 INTEGRATED 15847da4b4aa00d42bd3e25b9bf88ea046bb19a8，[原main回执](../../docs/evidence/svc08/main-receipt.json) |
-| 架构影响 | 当前候选在既有operation.lock/进程/release验证/runtime选择下增加host操作journal与独立来源记录；无新监督或产物格式。若集成后由Execution Lead更新对应受管入口基线；Web独立artifact选择仍未实施 |
+| 实现目标 | bad019d9691499bed69ae46b6c5d23944709cfe3 |
+| 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/backend-release/host.mjs, tools/personal-preview/README.md |
+| Claim | ba1ff3b2-d830-4acf-b84f-be8df92c9c95 v3 active；03:57:24.093Z仅增加host.mjs，原四产品+自身plan/evidence保持；原f578产品claim已released |
+| Review | NOT_STARTED 当前Web-only selector；前片52d3独立APPROVED_LIMITED_SAME_LOCK_WEB_HOST_REPLACEMENT并main2f18，原ad77/086批准各自保持，[唯一review](review.md) |
+| 检查状态 | 当前9不同=5新+4旧直接，8/8→3/3→3/3，2282ms/raw6422B/三组absent双EOF；0PG/Chrome/provider/真实artifact/服务。原52d3十不同/原红保留，[本片运行](../../docs/evidence/svc08/web-host-selection/run.json) |
+| 已集成 main 状态 | 当前bad019 selector NOT_INTEGRATED；前片52d3四产品INTEGRATED 2f18dfe92f795e566f7779d67ebea2f556254e2a，[原样独审与逐hash回执](../../docs/evidence/svc08/replace-host/main-receipt.json)；历史086/main158保持 |
+| 架构影响 | 候选serviceRuntime仅为Web选择独立artifact，pendingWebHost与同journal先行；后台artifact/身份与原授权保持。main仍是前片同锁模块；Execution Lead在selector接收后同步受管宿主基线；无新产物格式/发布FSM/监督器 |
 | 看板 | Lead确认main8c已登记SVC08 source184；实际新registry载入待ACCESS安全点，不冒已载入 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -39,8 +39,9 @@
 | SVC08-03 | completed | native_center_owner | 086ba13d；修后1/1，[原证据及边界](../../docs/evidence/svc08/README.md) |
 | SVC08-04 | completed | native_center_owner | 独立批准+固定main接收；原测试未重跑 |
 | SVC08-05 | completed | native_center_owner | [部署候选](../../docs/evidence/svc08/deployment-candidate/candidate.md) / [retained3](../../docs/evidence/svc08/deployment-candidate/retained-three.md)，文档已独审，0个人执行 |
-| SVC08-06 | in-progress | native_center_owner | 同锁替换四产品已固定52d3，10不同局部检查分轮通过，待独审/main |
-| SVC08-07 | pending | native_center_owner | Web独立固定来源/真实个人部署及后续观察未完成；retained3不实施 |
+| SVC08-06 | completed | native_center_owner | 52d3独立限定批准、main2f18逐字接收，10不同分轮原证据保持 |
+| SVC08-07 | in-progress | native_center_owner | Web-only selector bad019，9不同分轮局部通过，待唯一独审/main |
+| SVC08-08 | pending | native_center_owner | 合法Flow来源真实宿主artifact、个人部署/后续观察未完成；retained3仍设计后继 |
 
 ## 等待记录
 
@@ -59,3 +60,5 @@
 2026-10-07T03:40:29.530Z：原SVC06已停写移出四路径，fresh amend v2成功后实施；两只读依赖受控输入26d1be6c，无领域编辑。当前局部0PG验证准备，实际个人部署仍NOT_RUN。
 
 本片作者固定交付准备时间：2026-10-07T03:54:21.236915+00:00（实际证据封包时钟，不冒独审/main/个人部署时间）。当前实现source固定52d3，claim v2保留待审。原root cause及长期稳定性仍未知。
+
+2026-10-07T03:57:24.093Z：v3成功amend后实际开始Web-only selector实施。新局部从first-reservation记录的实际开工至04:04:03.717Z最后结果；三轮累计2282ms，独审/主线/个人部署时间不得用此替代。已于该安全点实际归还本队local，后续仅封包。个人固定源仍需独立artifact，不把e5的backend-release来源改称Flow。

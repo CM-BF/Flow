@@ -1,10 +1,17 @@
 # SVC08 独立 review
 
-状态：NOT_STARTED；当前同锁Web宿主替换四产品已固定，待唯一独审；旧批准不扩大为本片批准。
+状态：NOT_STARTED；当前Web-only固定宿主选择待唯一独审；前片批准不扩大为新选择/实际个人部署。
 
+Review target commit: bad019d9691499bed69ae46b6c5d23944709cfe3
+
+当前四产品相对52d3/575：preview、preview.test、host、README，CLI无增量。9不同分轮8/8→3/3→3/3（五新+四受影响旧）；三组absent/双EOF及目录清理，0PG/Chrome/provider/真实artifact/个人运行。注入runtime只证明角色选择与失败组合，默认verify/sourceRepository/Node路径实际产物验收仍后继。见[交付证据](../../docs/evidence/svc08/web-host-selection/README.md)。
+
+## 同锁替换模块（已批准并主线）
+
+状态：APPROVED_LIMITED_SAME_LOCK_WEB_HOST_REPLACEMENT。
 Review target commit: 52d3c80bbb2afc7c6dc179e7dc8d867c15d1ee13
 
-审查范围：四产品相对固定0967607a；两只读叶子受控输入，原proxy/6PG用例字节保持；10不同局部检查分轮9绿+新增1红→3绿，三组/目录清理。仅私有文件/锁/兼容输入与受信注入进程端口，不是实际DB marker/服务替换或个人部署证明。八文件host摘要不冻结动态读取目录，Web独立artifact后继仍open。完整记录见[当前交付](../../docs/evidence/svc08/replace-host/README.md)。
+Reviewer：assignment_review；[原样独审](../../docs/evidence/svc08/replace-host/independent-review.json) SHA3898465c62c05c7da30b1aeef7a1cabb676446e6b10614c00f2d0172214ccf83；[原绑定](../../docs/evidence/svc08/replace-host/review-bindings.json)。54 fixed/working与2runtime核同；10不同分轮9绿1红3绿、1744ms/raw7041B已核，reviewer0执行，无P1/P2。main2f18四源逐字相同，[回执](../../docs/evidence/svc08/replace-host/main-receipt.json)。批准仅同锁+私有文件/注入端口组合，真实来源/个人部署未就绪；原失败保持。
 
 ## 部署文档候选（已批准）
 
