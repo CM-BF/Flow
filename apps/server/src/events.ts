@@ -1,4 +1,3 @@
-import { recordPluginArtifact } from './plugin-runtime/artifact.js';
 import type { Pool, PoolClient } from 'pg';
 import type { EventAcknowledgement, EventBatch, RunnerEvent } from '@flow/contracts';
 import { recordReceiptInTransaction } from './active-steering/commands.js';
@@ -7,6 +6,7 @@ import { canonical, HttpError, sha256, transaction } from './database.js';
 import { ownedAttempt, type AttemptRecord } from './runners.js';
 import type { TaskRecord } from './tasks.js';
 import { saveDetail, verifyArtifact } from './evidence.js';
+import { recordPluginArtifact } from './plugin-runtime/artifact.js';
 import { assertEngineeringCompletion } from './engineering/verification.js';
 import { record as recordContextObservation } from './context-transparency/store.js';
 import { recordUsage } from './usage.js';
