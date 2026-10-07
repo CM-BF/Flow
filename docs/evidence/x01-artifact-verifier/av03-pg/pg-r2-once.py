@@ -15,7 +15,7 @@ def load_module(name, path):
     spec = importlib.util.spec_from_file_location(name, path)
     module = importlib.util.module_from_spec(spec); sys.modules[name] = module; spec.loader.exec_module(module); return module
 
-if hashlib.sha256((HERE / 'enable-binding-pg-once.py').read_bytes()).hexdigest() != '86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56': raise ValueError('Fixed resource module changed')
+if hashlib.sha256((HERE / 'enable-binding-pg-once.py').read_bytes()).hexdigest() != '64add9586fbf99458187f1569be3dc8ff17f3ad4d30be1d74a4a9568653ffcf5': raise ValueError('Fixed resource module changed')
 resources = load_module('x01_claim_pg_resources', HERE / 'enable-binding-pg-once.py')
 read_regular, save, digest, stamp = resources.read_regular, resources.save, resources.digest, resources.stamp
 assert_directory, tree_sample, remove_sample, suite_confirmed = resources.assert_directory, resources.tree_sample, resources.remove_sample, resources.suite_confirmed

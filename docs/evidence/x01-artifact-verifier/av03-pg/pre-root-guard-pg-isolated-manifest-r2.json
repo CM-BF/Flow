@@ -1,0 +1,2926 @@
+{
+  "schema": "flow.av03.pg-prepared.v1",
+  "state": "R2_CANDIDATE_NOT_OPEN",
+  "source": "10bd0219f84c34008a0255bfed282052a91bce7c",
+  "support": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+  "files": [
+    {
+      "path": ".gitignore",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 108,
+      "sha256": "677d39b3228b53937e669987421278ac9aa382172aacf8002a7ca7822367bc27"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "commit": "10bd0219f84c34008a0255bfed282052a91bce7c",
+      "bytes": 20583,
+      "sha256": "fe7066a97ff6f5e05477eb965c12adc7961e8cb9904f6fd33ad422ef9f4dbf05"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/claim-receipt.json",
+      "commit": "ed70462d02f660a4ec2612882676d8aee8cda9ad",
+      "bytes": 2024,
+      "sha256": "fe226b432fa3a7dc3fd083c560f998ff5f7ca8ab25829d12fdda9117e727ecad"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/closure-r2.json",
+      "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+      "bytes": 91001,
+      "sha256": "1a8d25dbd5f5c9fda1d59a5b11d10bb6f8f072cde415c598ce219ee9947ebd52"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/enable-binding-check-once.py",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 20307,
+      "sha256": "cfe2b708c762752926f1f24899120fd802ea97e80bc115fabcea12c0b3a3847a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/enable-binding-pg-once.py",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 20706,
+      "sha256": "86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/external-preflight.json",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 78072,
+      "sha256": "247820db022a4ee2f8b89dda7f1fe571a5c062ce4e707e6e444fc0dc44cc9ddf"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/fixture.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 15980,
+      "sha256": "ce09cb330ef199308f03bd732de0370587f03bbc3443ef81507fb7c4fa084a2e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/runner/package.json",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/package.json",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 552,
+      "sha256": "55219b0d08e81fe928ecc85679b1f47f0e496f7e56bf40c71b24b0c131bd079e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/active-steering/admission-policy.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1756,
+      "sha256": "508dbe8530c00a43f8e8ef66fd1a0279245df1f46cf71184178f59de2dc9f6bf"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/active-steering/admission.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4315,
+      "sha256": "839e2148bdf208fa579c766abbb2cc573bee2bafd70aa698a5a8e4682eb59783"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/active-steering/commands.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6995,
+      "sha256": "8e105358e2ba9eb2946cf7a7bc2668a3c293f6731d884918bcce9266d41fe920"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/active-steering/finalization.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 7050,
+      "sha256": "69428378767444abab96d7d0646f9b2fa77943452e40545b370604babcb377d5"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/active-steering/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4109,
+      "sha256": "ed1b9aff63601aadd81796f83ccc448e6722f2bfacdc216b93e3f75a4a6241bd"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/active-steering/queries.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3963,
+      "sha256": "4c4dcca036da762457bd979f9e66b70453008d83ebcaf16823cfdf238a097ede"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/active-steering/results.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3660,
+      "sha256": "080082ee48e9c7df31d47c5fb24491c1bfb15b4f28e7343e7e294821f91fd86e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/active-steering/storage.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4217,
+      "sha256": "672f030ecb268e2fba024a42f760c7c1f66009b9493b3c2257bed194ced56db9"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/assistant-stream-compatibility/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1937,
+      "sha256": "1c8ea750132e6ed58cf076a5a4e0bb1e8cdee426ce3a59f10b147987f41336ff"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/assistant-stream/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2917,
+      "sha256": "8771a580393c624b3415ceb69a5d156d90499ac1d329ffadaa9eb42f3af97939"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/assistant-stream/queries.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6742,
+      "sha256": "d5b031448f4797fbedf236bd756692ff8d9736bf4078ed4c61c65390f4e8edd8"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/assistant-stream/settlement.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5744,
+      "sha256": "03d6220462c337cc6d794fd5c270a4c1e850a0e0e19ce33fadddd52b57e72fc8"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/assistant-stream/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5750,
+      "sha256": "d9a3b8c958849eb755ffd2a47443e4ec054015a95ce4ff9c4d06b3beccb69e37"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/assistant/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1710,
+      "sha256": "8816a4603b15c0736dea1c32390fc1d6c0eacec3e4bd3b5845f1fc0a3fd57598"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/assistant/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 14117,
+      "sha256": "e551360b88fb05885906039e4fe631e9a8ba74d40ccffd60ad0e168b2042f18a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/attachments/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5023,
+      "sha256": "91d739d031e0f2b8bea58594562b3d6bbbde104f4f960757cb61ea654ea57516"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/attachments/storage.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 11534,
+      "sha256": "7e62dee9b16a164b250b6d7d0331319fb5f4ea8c7493e91c8b8e25a133c70560"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/browser-session/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 9640,
+      "sha256": "fb44b7558e38b9fda9c3fd32c4117e069ed56e623ee838744039e8f0039b0f12"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/browser-session/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4474,
+      "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/commands.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2316,
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/context-transparency/migration.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 781,
+      "sha256": "46892e1704d3ab6ebe191be1d7b08d7cac2a93b5eb3c7bc0725875b50de07e5c"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/context-transparency/routes.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 996,
+      "sha256": "8c0aeb0268819b339f957d1ffcfd75fd2804ca89017fad8962bb7c81b9c4ed01"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/context-transparency/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 11494,
+      "sha256": "0d203aab9ba58988d4ab7078218e9741d8ae1dbcacbaadf280d6d25212b685d5"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversation-context/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1573,
+      "sha256": "7ae39a02095c01da1be2049004c1093bc886d2e3b77e8309d160fe6d8f29afb6"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversation-context/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 14160,
+      "sha256": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversation-queue/commands.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3786,
+      "sha256": "6bd2fa04238ea210c48694d7f7d9abc940e9f448537ac665233844579256b889"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversation-queue/controls.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3089,
+      "sha256": "ec67151a82096f45128f9a4731f52be021968dd6f2289186e38523d6d42c8852"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversation-queue/gate.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2406,
+      "sha256": "2d25d14f389e264e4deee2330988d0c2ada9f8424441a20136c5a9c507b96c31"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversation-queue/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3433,
+      "sha256": "c263858be96773183b67ed175ad05c2642e6067ac2e2b124cf7946b5b06ce76e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversation-queue/promotion.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4279,
+      "sha256": "14681d64c9809ff3059ad6014f281f25d77bcdfa83663f184299ad82b5896646"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversation-queue/queries.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2404,
+      "sha256": "d9c9e02017f66ddfc8b2b61c97f95c8fb933f63eb4d759d2260078eff936aba8"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversation-queue/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3973,
+      "sha256": "7f53812e5cde726f5e6aaf74cd9376a4f7e8c08e0344460bced39022aecb6723"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversations/admission.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5731,
+      "sha256": "24939768eb9d090762930f4111f7d8efa7c91e379bdc649067c766de57096abe"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversations/commands.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3418,
+      "sha256": "095b6d06d46317100ca140c542bb3131c966c4f5107396e3dfa48d67e3e84afc"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversations/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4764,
+      "sha256": "f364399902975501a50afb445158376ec5934380f5913a729946d0b01ac1740a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversations/message-settings-migration.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 769,
+      "sha256": "2171678ddf764ac95923ee982a1ea8b7b3635f21697da8065a0720bf60827e63"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversations/message-settings.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2728,
+      "sha256": "411e7c0f1343acf0481e9950e9b6721cc28fe00743e36714911d68c6b67b919c"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversations/policy.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1594,
+      "sha256": "f4d72d16aa8367f4173d1683546c3ed24e4896a1b3722a6b80a1f78d9a0ff3df"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversations/queries.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3660,
+      "sha256": "a68d1c75a895f3fc26c4db3fd7df0e14bec0ac5a1cdacdbe88111a4173b495e1"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversations/replies.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 11704,
+      "sha256": "21cbeaf853f320eb9cd7c7be5162bcc16c2bda952ee7bd712f8a75911ab6bb98"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversations/state.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3319,
+      "sha256": "b81fa9f2d2656512d96906db285669ea85a8019e457fd0c97dc9f79c52ef628e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/conversations/turn-read.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2503,
+      "sha256": "7222a117bb397e59eb577706e53eceb9554ca4bb4e2f28a26db9453e0bb69620"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/database.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/engineering/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2469,
+      "sha256": "32540a49df91dd2aef4e12c7c4c525aba215b2bf17a3331a02617b8088850574"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/engineering/native-profile.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3712,
+      "sha256": "ec6360e5df4870fd2f9eb4eb8f6a23f9b9916ef4b3e4c6e0e8be5b4bca874569"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/engineering/native-verification.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4211,
+      "sha256": "8ee043fffa72fe441dab970cfc4fa9ea97733cf8fcacfe33d57c921f65d24bc2"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/engineering/profile.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3810,
+      "sha256": "e5a8ec78d2f5dc89236ab9baa64084dce8eaa3036d0c7e74d6cf36812ca85dfc"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/engineering/verification.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4249,
+      "sha256": "70546ca36bf70a83a8584c638a8f273180cc9b30490726ad5cb4bb853254c7cc"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/events.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 8959,
+      "sha256": "fa3734adabdd4b996bd6d8e25aefa8fd737c282d544b5998b3f4f2b98f0ae425"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/evidence.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4145,
+      "sha256": "4e72f704166ee57b28764b1da57ed54db89dd61c1d5e1bbd68580e9aa0d7b550"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/execution-profiles/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3046,
+      "sha256": "c4e29d579f2dcfeaa8384f43ed6e4cb41fec461c6bf78091a703cc7e0e2ef418"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/execution-profiles/publication.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4786,
+      "sha256": "2ef28420bed9500f6c06a72922fcf52fe72c6f9c8e53048a0fc8dbb20f03d184"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/execution-profiles/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 15414,
+      "sha256": "ec366517aa575cb33eb8cd07a0eaabd060c45eaf6cfdb58a6761777d84ce92e2"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-context/freshness.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1195,
+      "sha256": "d9ea198ab18f1e13a52c933ffb1210a74b703476371370799145705e198dfcf1"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-context/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1731,
+      "sha256": "7921c324119d60f25f3ffebac1c802a4a8050f9693873e8c138c93e865b6cd5b"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-context/input.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 336,
+      "sha256": "2244bd1565abb1dcec2e1f1702f0582b09774a514c1e1e722667f9b8954c8d35"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-context/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 11740,
+      "sha256": "a5ecb7925878db97613bf5812e5e02da8b89c46761c0e7b2e30ef19b4db2680c"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-delivery/details.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2910,
+      "sha256": "079688da3c4095bb32e9004c6ab5e1361c22ed5dc6e6e340549f1472497a37f3"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-delivery/explanations.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2818,
+      "sha256": "5a36a2bae4f8bd2c7f96dd87783bafd5b81c352d614207b83ac15fd8c5eb7bfe"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-delivery/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2120,
+      "sha256": "df68185b3229b606084fc775a0cda8716e421ca5b4214a902fcbf2b7dbeb9a1d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-delivery/metadata.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5144,
+      "sha256": "3db661d56190460957f527e77ea903dd42ec7ecf91bfdab8ef7fcc45baac192b"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-delivery/plan.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2535,
+      "sha256": "17fe7d6fd1b49209b6fe81611ad55b0b8e564b4fcdbdba468507c6de2cbd9bbd"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-delivery/state.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3394,
+      "sha256": "964df126f6188a02fb55d0043529abb029c32cec95c4db17dfd88bc3937b0b5a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-graph-proposals/graph.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1989,
+      "sha256": "a7e1019cdc47d321402b1d07b402093b0bef0cd26f83629083b0db32e532d5c8"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-graph-proposals/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2430,
+      "sha256": "a8a6fea7f7436df17ca6bc59d902aec7d068af2bbec99c14fac676a928aa966b"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-graph-proposals/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 9383,
+      "sha256": "322778d4a57a32ff35ee9f75e30b287ffc6062313e04ef7e202e30f92053bd8a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-graph-runs/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3595,
+      "sha256": "0819ff52946f1281c5fcb0e02d4ed5c80a17bb4a88cd7e6207c8ea9174512726"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-graph-runs/runner.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 8237,
+      "sha256": "01b2abaf6729ce6fd9eabf5a4f3f51b35a8b89f24737ce1619ce548b96e09e26"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-graph-runs/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 10417,
+      "sha256": "5550bfc4296587f13348ed0833d6bc5bcb3b8820cb85e16cb6943904c551b058"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-native-executions/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1083,
+      "sha256": "3a3313def7fd540b4b2da2ae3a2f6e31d4a1f42fcbed190c5f358ef7650c12e8"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-native-executions/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1466,
+      "sha256": "1c3960a1eb5b5db431b499e78a0cfb3a9974b459c3e6ed63144f3ba7dbe4c4e5"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-plan-confirmation/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1737,
+      "sha256": "4f97e159514078e65b4eb1aea4bfab5ffcaed2ede392a6c3302016cac32c5f1e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-plan-confirmation/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6857,
+      "sha256": "3f4013289d5438f468acf9821e422c4e01d52f16f1a23ab08f8a555620dc5da8"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-progression/advance.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3820,
+      "sha256": "24793fc7b9eeb91bc3bf5ec0bd687431c91f7818171b857b0ce9916ede72f8ee"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-progression/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2385,
+      "sha256": "deb89a24c6c3ba1f7ce0968689f5501124b5cd4d987370899dddef50b9172165"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-progression/provenance.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2315,
+      "sha256": "dc8558895803968862431c3ad7dea64be81981170ee5bdab7be1408868a7143f"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-progression/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 11079,
+      "sha256": "d307d41b2df5a5922fa3bb1a25c965d5ca4ad30585c998cc72a49e5fcc129bd0"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-run-authority/runner-project-fence.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2890,
+      "sha256": "19ea493544b92cdd43dff1f8538b49afdbf4f27990fefae938b993ef757de965"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-tool-runs/authorize.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1064,
+      "sha256": "2d725eba8915b62e775a62274a8eff7c6aae33148a6615dd9f883193c403ef5a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-tool-runs/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3343,
+      "sha256": "5a2949ef6a74ffba06c4e713282f0355ee4639bd552b5eaba7503a175e56024a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-tool-runs/runner.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3930,
+      "sha256": "f57db1ed2bde342a0a606fca20374f4bdceaa497f415abffc32ff6b9a2ad60e8"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goal-tool-runs/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5080,
+      "sha256": "bbe531bc9752b67a03b946466e336202c88ca3f7e59e8102d5ab7e8f14e1545e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goals/commands.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 14007,
+      "sha256": "66fc56ff48c46bd9f9ebaac51614985d9f9dbbeec31cf161011dd1ff3813ba32"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goals/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3843,
+      "sha256": "0e33bcbc20f54e91214859d9d2eca096a40bef748ba500938a6015bc488f5842"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/goals/state.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 15446,
+      "sha256": "23365f92b07fa98eb658e6900a22edaeff336ec69ca1e11c794fdf5c806e1405"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 15573,
+      "sha256": "8babb15056ab95fa228249cadb6d6db01450fbf7756d9b516d52bfd17a2f8b5c"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/knowledge/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3782,
+      "sha256": "28fd0fd2a053c8e1764913cd0a09f1dc9e73576746a38e49bb2b11def94ae5a7"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/knowledge/search.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3360,
+      "sha256": "e300061702e4557e5fc09c06f6dfdb43d0d1ef9c7b76db30330c4958f72ffb42"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/knowledge/storage.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 10068,
+      "sha256": "72d2cc8663a9d077367e4ce04cf1fdb7a17ed7966ae1f380e12905212abccd21"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/knowledge/text.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 927,
+      "sha256": "f44e78e9214fe76b0513f8080acf71d0546c90d62c440b0617e13a73d0d26ce1"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/m2-workspace.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6752,
+      "sha256": "e1653357b06f16e016c898b54b210b3f53af76557ca8a8498fb53c47eb1f7e78"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/native-activity-body/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2712,
+      "sha256": "d407b55d468e7208cce1f2d25e9ea3a812f613f9ead1a9e95cd1fd1d72f55a57"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/native-activity-body/read.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3538,
+      "sha256": "0480c2fffda5c775c4c9fa20d9edbbfa6d13e05610f5bdbbbf458c31947ca288"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/native-activity-body/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 8418,
+      "sha256": "0f2b4960dbcd2b685428d5083f9fec6ce69121f51e3a5b108e52904c4068ea69"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/native-activity/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1459,
+      "sha256": "81b7ec57e00b503db18402121d7e41fb8c140346d46c5a5614efda64efa94250"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/native-activity/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 8230,
+      "sha256": "33d86d709452bc5546f1f8aa44c9832826f58607299574e2682b11afb69b43e4"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/native-harness-migration.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 772,
+      "sha256": "171050c81a8677c145319adc51e8c542e2be26373a15262fa0d689ae600c5b98"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/native-harness-policy.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2103,
+      "sha256": "b05a8eaee51ae8c0fba0dbe2183cec0289c0a3393c26dfc0576e54fa10b66cb2"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/package-artifacts/errors.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1068,
+      "sha256": "be3220467a00447b49c750220a241121a58e3316641cfdbb75fd2b4fdf0264b2"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/package-artifacts/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2641,
+      "sha256": "12701ce1dfbe9ba5317ceaf6d9b7c16ee3903a89f6a99841c385d97f8578c07c"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/package-artifacts/input.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3239,
+      "sha256": "aa25eb1f1c68d04f207fc35fa755c034f959c654629f0b7a27ea1c1bcdb731d9"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/package-artifacts/source.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4093,
+      "sha256": "7a21055545d84ea3bcc2f18fa5d78489404dcc06f7a3f3be1af7413db848dd2d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/package-artifacts/storage.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4464,
+      "sha256": "827ea2d17247d027e14673848ed7d744c6142a27811e72413cdabb23cb1b30c2"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-installations/commands.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 11568,
+      "sha256": "829bef240c694be86f8f9fef0808d81586a2f624607ed41d238065bde3bcee89"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-installations/migration.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 760,
+      "sha256": "894abb00a1cd3375e87ef4f05c3607bb7315867a16c1c042989b04eaf26a73c6"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-installations/routes.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6527,
+      "sha256": "8931b177ace5ff0ecff7a14d799c629979e33f63b5cfc3d4bb88c72355c2269c"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-installations/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2459,
+      "sha256": "0856920e72facb705bd2a7e1d038d7ea2a9f10633f4a1f98902b09322f7e786a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-package-fetches/commands.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5071,
+      "sha256": "8abbf5641881cb2976d700ba3660938c7e8a7a0c13d9e14663c4267150f3bc74"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-package-fetches/host.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1829,
+      "sha256": "f3f5ec848d3b23a7aad6e6bbcd26fc42d972b3e48b2d45a221c9c9d8b9c48760"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-package-fetches/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 853,
+      "sha256": "cf1cf055e7ae70173ae34b40ff32a41193827403dec5446cbffaefa46c362a00"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-package-fetches/routes.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4593,
+      "sha256": "3aa612702abf4b794c664abb270b72004466329aa1f5abb0936234168e882c9b"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-package-fetches/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4032,
+      "sha256": "10cde940502b0f4a7768de07bef9954bd8ad14f28c71babfb5c3d90e661323b3"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-package-fetches/worker.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 7428,
+      "sha256": "e19833a4d2ed168327b2ea870734c8fab3fd4968f3d4c0398a64e5022586f648"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/artifact.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3260,
+      "sha256": "3ac3f963b7bb180e55e7d287bc8a51c3453f7568505ec70e4add94d45c4461d3"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/claim.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4000,
+      "sha256": "eb9282cdba015110257c7bd7eb059e11ebffb72f7f5ea0bafabca95a2e37b1b7"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/commands.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 9868,
+      "sha256": "17037fa7d32b47be49b09d36aa8662ee7f29ca56230c9222aa88912d40959d83"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/host-candidates.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3820,
+      "sha256": "7f67d72a7dc5fbb7475a6bd1e328b6e6c963c7031a376a9abb7efa3d94f3e774"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/removal-references.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5437,
+      "sha256": "b47999b523c9b908aef41b60a35a367ab7664ddee371bf88b16102b774bc5c39"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/routes.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5824,
+      "sha256": "89f15587c2a6ec5ee67afd08ae99b7e65206ddbf2d0ba7f5708d0ef3332ffadc"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 9647,
+      "sha256": "6cacfc6111a0d4d2bfb3638779caf85ddb467e9cff7eb12e79a5e93cfb93fae4"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "commit": "10bd0219f84c34008a0255bfed282052a91bce7c",
+      "bytes": 20583,
+      "sha256": "fe7066a97ff6f5e05477eb965c12adc7961e8cb9904f6fd33ad422ef9f4dbf05"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification.test.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4724,
+      "sha256": "7fd6a61c9c9e7ef634e1747d1fb10ba8815af75cf79aa846f3e61d7c6af3b395"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5316,
+      "sha256": "9d140d5072d26d18e698d55d596bc10f94a44ec1b405a2a1a4e309d0ab248bb5"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugins/commands.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5748,
+      "sha256": "3760e0369bcc035ee56f58912286e98639db5ebc63642164c9d4830520c3f22a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugins/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4058,
+      "sha256": "f3e73d03bab521bdcae419817f844bd8c36d6be0090d3f0ac260f16aae5f1c1c"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugins/queries.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3932,
+      "sha256": "06f365f6381bd6885965a5ff31ae94a78cfced81bd7de8e37b614cdc8f20486a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugins/storage.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4657,
+      "sha256": "0765794a5bb2470c5b469c47b5fa38c2db07a44cf0ae5041765336962a1aa3c9"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/pre036-index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 15452,
+      "sha256": "bbb02feaea68447ba91672955e846c0682a9542a9720c8b8cf786ca34694b2c0"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/projects/commands.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4181,
+      "sha256": "b362828aa9b8a296d46f8105fc40fcd67b0a4efa091d7070f8c13e92f64742ee"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/projects/graph.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4152,
+      "sha256": "d45ec707df3a1be05d6840abb95517aca1c842612a4c6afccdf388f207772cf1"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/projects/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2641,
+      "sha256": "41715a0a5e3868fdf2f958cf5fea19785bbcfc9da75d122c14645c58375fcf7a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/projects/storage.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4093,
+      "sha256": "3f2eabe24482b36f0d79bf4d81fadd18e2e2a696b199ac60d695ce658e8c0f3e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/protocol-dispatch/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2345,
+      "sha256": "d69e32c3783c040a917315a6e98380ba71a6b684a5aaf29bf2e1add6020635c7"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/protocol-dispatch/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 9611,
+      "sha256": "d573ddaa69e36fddaec45f14305fb1a5432bd8889c992991925e757eb224d560"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/queries.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2605,
+      "sha256": "16070c2e9aede9ab7bfb011512e8be147c58f830a69ea2dcf2834004e0f0c0e4"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/reconciliation-http.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2033,
+      "sha256": "b09b906b29e3f3551f56e5bdafd63ba23c16f139291747cd2f7cd9e4c5930da6"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/reconciliation.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 12251,
+      "sha256": "9410553d861c9997024304a0e537fbdd7b4a1417dc0025d2f4c59cd951bf03b0"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/runner-claim-receipts.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2736,
+      "sha256": "efdd9ad43bd1cbfb4a6b8ec3f61a151be59735a724528f4a861aa33572d62652"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/runner-claim-routes.test.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 8525,
+      "sha256": "3f30f9e9f4b554346ebf1a72e544af56cc9f55b513529dc802d8078067a34ab7"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/runner-claim-routes.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1423,
+      "sha256": "2e313671c97ad304c817ebf3f123a14fac31af87e66f98354c17a254b4d7fe3a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/runner-maintenance/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2050,
+      "sha256": "1ebd74749045586d3fa7165dbe4db8ce39daa0ba3ed5a57e719cabaa257c267e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/runner-maintenance/store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6384,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/runners.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 21699,
+      "sha256": "bfd985db4e5455b1b614155ca71d299ad8b1b60f3f4449b76761689f584d6019"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/scheduler.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 957,
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/sessions.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1593,
+      "sha256": "901eefd23c4a1e33e2639149c7335e64bd63ecb0aaed3fb61e69e920ce9d847a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/shutdown/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1327,
+      "sha256": "26b5afc5018f1a63a69d10c5bc451602d11df87f17183a32f87f1cbf7396de10"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/streams.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2780,
+      "sha256": "be74745d814b211eeee848ec0e8421a033dcff55a77c1439fa5278b0ae15fa7c"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/task-index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3733,
+      "sha256": "f2c2c472b56b660563c0fce39871af972222bf8b4d9eabe4d2775d0f12797d47"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/task-read-projection.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 821,
+      "sha256": "7194976171df9af15552a23d33958c3141178b311f686adc95cb435c30be04b4"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/tasks.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/timeline.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 658,
+      "sha256": "f947d154067b1e4bc1bce10bc67b136b21c5a267b93cf25de2eee368cd7d19e5"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/usage-readout/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2391,
+      "sha256": "d4ae1559864c8aa75e5932190e736868092f4cfc2b647326fee52cde247a3336"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/usage-readout/projection.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5218,
+      "sha256": "88033a13dfa1bc8c0cc188c795a089aa315d28d9b65f64ffb2d653b2220171dd"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/usage.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5768,
+      "sha256": "1382e0e3d399a41be8c0d7e0d197809f02ea7d9b71b3f24140116ccd35648cb7"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/docs/evidence/x01-artifact-verifier/av03-pg/fixture.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 15980,
+      "sha256": "ce09cb330ef199308f03bd732de0370587f03bbc3443ef81507fb7c4fa084a2e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/docs/evidence/x01-artifact-verifier/av03-pg/pg-input.json",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2423,
+      "sha256": "cf0b549271a94e4ba7adafed2aad6fee371542572f648cfebf27ca439ec2a600"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/docs/evidence/x01/center-claim-fixture.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6948,
+      "sha256": "8cf7af7b025fdc49660870beffb5705a335892f3bde29a6d4c9d134bad3ca224"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/package.json",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/client/package.json",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/client/src/conversation-acknowledgement.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 15496,
+      "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/client/src/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 69246,
+      "sha256": "67ef6ca5902fa5fd4363b5b38db13ddb0e3ca664905cab6c4b1267c52a5850f1"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/client/src/native-activity-body.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 7574,
+      "sha256": "0b0260a88c92a83cb43f906150e930fe7444e98e1521695605d9f9d3bc04a418"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/client/src/plugin-management.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 10063,
+      "sha256": "d2d159444dfb9ef1cf491da8ab55ac7eee9432b8887e4f91b540ae13eb140f53"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/client/src/plugin-runner.test.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 8335,
+      "sha256": "3e968cdbdd2500d7f306784fd69946521b6d9295d1a42896c66077eed558e67b"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/client/src/plugin-runner.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3585,
+      "sha256": "151f1d9e908db78b07f177844ad4e5cb13e3d1ea3ed203f1822db2c049d7c035"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/client/src/response-json.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1298,
+      "sha256": "c51b90db6be12132df0236aabccfce496dab8b835267a23158ff86361784f459"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/package.json",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/active-steering.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 7453,
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/assistant-stream.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 7985,
+      "sha256": "499aa71e3f8890c292328781c60536f3d2446ac8177116c87670c14310181f67"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/assistant.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5785,
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/attachments.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 8422,
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/browser-session.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/claude-turn-settings.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/context-observation-event.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/context-observation-history.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/context-transparency.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/conversation-context.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/conversation-harness.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1196,
+      "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/conversation-queue.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4175,
+      "sha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/conversations.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 7382,
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/engineering-native.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/engineering-profile.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/engineering.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/execution-profiles.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 15006,
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/fixtures.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1211,
+      "sha256": "a88d494b659c413ce6a39e6c342380540e4d97381263434d25235d360cd674c3"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/goal-context.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1443,
+      "sha256": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/goal-delivery.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4968,
+      "sha256": "ed2ae445be57919427ab265e9c19b56a17e28ba50aa619b2484a8b2e7db9067f"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/goal-graph-proposals.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3734,
+      "sha256": "73fc485a2d06eb4600ae65be4bef96acbdbc373131ef642a4f6c2fcd6b4d7b97"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/goal-graph-runs.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6047,
+      "sha256": "1cfc6108a53c34d3b7864170cf6a0393f61d0487c2dc76305502b9a61643d524"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/goal-native-executions.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 931,
+      "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/goal-plan-confirmation.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2388,
+      "sha256": "018da357868d1b5fddc3f0c8a6fd2cc6432ff21caa45b7e60db98bdc9407c23e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/goal-progression.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2915,
+      "sha256": "82d23e7e1da0c8a6d89f779478c113aee497e0563f4f8df6e0e790ed6a78ec10"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/goal-tool-runs.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3709,
+      "sha256": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/goals.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/harnesses.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 837,
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/index.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1634,
+      "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/knowledge.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4414,
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/native-activity-body.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6001,
+      "sha256": "bade51d2df5537299b818176b5738cc8ef8438bbd315d06292f078e87a9ee8b9"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/native-activity.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3259,
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/package-artifacts.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 829,
+      "sha256": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/plugin-artifact.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 720,
+      "sha256": "7993d31c1ffe4f47365b2a5d641c0efbf2b9b7afa21c335fb5e0c1d2a28053df"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/plugin-installations.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2063,
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/plugin-package-fetches.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2259,
+      "sha256": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/plugin-removal.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1997,
+      "sha256": "0e54615b4946bb3b1ef6a970ab6c332da0f3597512c44401e4d26eec7935b9bc"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/plugin-runner-claim.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4197,
+      "sha256": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/plugin-runtime-hosts.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1708,
+      "sha256": "59ad5c6cec92331c53f984625f008bab44ae7a4facb13b9510824ea98a0477aa"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/plugin-runtime.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/plugin-verification-binding.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 696,
+      "sha256": "e96e6f94cbb7570d264eda129306f746b318a1781b9a2a8d1277ce171723a3c1"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/plugin-verification.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3044,
+      "sha256": "385dd464730493447bd9f3d5520d835ff0ae393fdaca5e2d22c2de239c4c35bc"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/plugins.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4908,
+      "sha256": "656075884d36145ce73c84283bdd26161c4ea65369f326456ffef1e414e6359f"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/projects.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3384,
+      "sha256": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/protocol-dispatch.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2063,
+      "sha256": "59a23113e3ba16dc278ca3e16d3612812fb33db21de79a9764b596ff769337ea"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/protocol-task.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 211,
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/reconciliation.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2903,
+      "sha256": "00ede24b0b2d2f2612fd674e802903562b33f7be1b90dc5ed0a858824faae3a5"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/runner-claim.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3965,
+      "sha256": "67d8dbfa2991426e86b93e74d6443b012e6e1ccee514f8956567dd3c23364a00"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/runner-maintenance.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1600,
+      "sha256": "fa94507e8951b4ee1d8b0d84f20cd9b3302ef7019a853e2883d2d15ea669b52e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/runner.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 7873,
+      "sha256": "4221ce35157cf4ee91e9c391965ffd224b15c03973b67841525276cfc83887a5"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/tasks.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6390,
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/usage-readout.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2212,
+      "sha256": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/verifier-runner-claim.test.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3201,
+      "sha256": "95bee3168ae770493d53f741acdc8cd62614536e704619480e62f6fe5e0be069"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/verifier-runner-claim.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5976,
+      "sha256": "c71cc4898e4d36fe4587e5d94543a10f54269a1541645b5a74e4b4d06d9ad955"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/contracts/src/workspace.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1472,
+      "sha256": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/plugin-runtime/src/package-store.ts",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 17609,
+      "sha256": "15e1b9554d625db5beb74a582ba513f548421c48e705c4865175105fabdf89aa"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/002-reconciliation.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1730,
+      "sha256": "ee52cb841bc01ab3c0cc433a91625a1d0bc3b3cdbb741ecce805c952de0d387e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/004-projects.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1918,
+      "sha256": "a2f744c164d08168a3aa40584597b62375f3bfb30dbb7ec73348aa01b6633e07"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/005-protocol-dispatch.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 799,
+      "sha256": "85fd7b66d5110119a3282a74b6946f6ae37bf4eb9361340de2a72e6f6a57872f"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/006-goals.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3165,
+      "sha256": "e7174fdb547df194bcae5286981135c1cda3e47a2ea442afcafee0791a762a49"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/007-conversations.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1063,
+      "sha256": "5859343c1416331642375c069d4b69943d9fbcf382ee07208733925c21b10a81"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/008-plugins.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3675,
+      "sha256": "b23068a5fa46df53c3de8c46097b94d0488f54da577e96b898471e2c7fc8b452"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/009-assistant-messages.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 736,
+      "sha256": "0e9daf87e5e379134a4c6bb1481f95b3a5f3908b03aad34c155e5a1d85b12d17"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/010-execution-profiles.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 765,
+      "sha256": "3a518a6953644c6efada3cfe5d38481fa5b48aaf7ef0819a0d99dc25286d2847"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/011-conversation-queue.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1357,
+      "sha256": "bea2d6057b4471524ccb89e95e643a7bd2606805d75a775d7d6129857afbc427"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/012-goal-tool-runs.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2076,
+      "sha256": "8b9a5c6ac912e2aa7cf7d1a893f3da39e97e2206ee7e2ea94e36fd9559271e5b"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/013-goal-native-mode.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 185,
+      "sha256": "4ff7ffdb6ff27ccdca75d0dc6d4ed53fcbca1671b184411a7181f5b186470dd3"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/014-goal-graph-proposals.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1802,
+      "sha256": "af0509e67b7902f190fc2668e8396a40fa7edddc8f263aea723961153b2d20ba"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/015-knowledge-sources.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2406,
+      "sha256": "62e81d76141c3b74bd36cb7e38ef98a24f552ac01598c9b7d7c7f88fe812a3c1"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/016-runner-maintenance.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1796,
+      "sha256": "7dc1d7c6f37d94ac600f78b5fe82a665a1fe9eca9d35c9f52ba92371a8c030fc"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/017-goal-graph-runs.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3089,
+      "sha256": "d273f0d0d5bf8efc1d189e1fb25cf2d1c3769c3971761c1f5e5bc755d35df09f"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/018-conversation-context.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3497,
+      "sha256": "2521ab49a59d535e0a4eebaf4da895e97ed5d0083ed15b24d47656144ffadcf3"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/019-goal-graph-native-mode.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 189,
+      "sha256": "df159d8dd0fb329899a2d755ae9deeb4a92817f87fc8014f74080932d18c5218"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/020-native-activity.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 970,
+      "sha256": "4b7d1e031f94e9178120218e34c59a12715d2330282033ef9968cf97dd6578c6"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/021-goal-context.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2167,
+      "sha256": "5e36a8e6f694dd1c10e9ba1bec28dfda1cf87055ceeed3943b3efd577eb9b17f"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/022-assistant-stream.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1865,
+      "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/023-plugin-package-fetches.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2975,
+      "sha256": "709eed00d46817b52b8767fb52dea8db02af7f3e413af269f7bef7dbeb0612c9"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/024-active-steering.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1998,
+      "sha256": "551e54f031591dc22b129cb66097132e94cd3f0828441d60acf6248fac555fac"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/025-native-harness-sources.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1618,
+      "sha256": "ed4063b040d3a1a3bdf1b8d7c1ea20c3457430ae6077c8a3f8aa45b1a1330bc8"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/026-attachment-resources.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2994,
+      "sha256": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/027-context-observation-history.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1891,
+      "sha256": "de133222d65fb86137a57e22ada883f5310054e51baa96f8ef5d0d5b13039241"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/028-browser-sessions.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 875,
+      "sha256": "b1f8d61acbd6692186bd544421b110926c94311556395e39ad09936c7b2498d1"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/029-plugin-material-installs.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4435,
+      "sha256": "8713dab5cb3c3169b9f8c71b6e5a2ab81cf2065818bc3a24add3a0400a8d90ea"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/030-goal-progression.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4315,
+      "sha256": "0a6a7c0f09729b53da704e188d19167bd907b8180fad8b7f3d761c4a39609737"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/031-goal-plan-confirmations.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2279,
+      "sha256": "a0d688470a30f26a03e7cdfc1146f5cb424625ae94d59857ce8403561f832606"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/032-claude-message-settings.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 3892,
+      "sha256": "97673f4ce120cb26f55f35881977810e516199b97cd8a1fe9fea2ebd24b5c9ed"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/033-native-activity-bodies.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1398,
+      "sha256": "cdfba885c10b67d804d985bc0d4fcb30634c50fbfa0cf25be3fc0053e14dd15e"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/034-plugin-runtime.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6572,
+      "sha256": "8d3cc77265c7ee621ee5da5aacb402615054e4f234cc65cf430f0dc7bc7e7f9d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/035-codex-conversations.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 189,
+      "sha256": "9b41d66666ec4a7955e22a66fbf994ce873b9dc2d38bd77dab15648ef52a2b6d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/036-plugin-verification-bindings.sql",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 5113,
+      "sha256": "78e341afe35d4dee7a36fdf9d430f427e25d983474931e3ad525002f932cfece"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/tsconfig.json",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/local.json",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 6720,
+      "sha256": "14cb3e826ba01e1775b6b6908ec03c7efbf29f7fa93cf7bf22b88e5baaed7d9b"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/local.py",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 4401,
+      "sha256": "97121730f61e2f9368b49f4bd4dd128ec0babba98302d2202a61e0b78acf2b07"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/operator.md",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 1864,
+      "sha256": "867d61b9b9738f8489d500417e13d9a1d171f3f3a2afd688628cffd20c1f5efa"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-input-r2.json",
+      "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+      "bytes": 2423,
+      "sha256": "4158b2e8d556331e08707bbbc8c55711c9264a68769132b9d0168d5d223862eb"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-r2-once.py",
+      "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+      "bytes": 18385,
+      "sha256": "14d348b70de2c1767324b39f190c5781ab1333d3d7998f4bcf7b02c88fa6e2be"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/preparation-result.json",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 652,
+      "sha256": "88fa801b4171cfef3271d09b52a8787c7aadb8579f1504abe60ee3185f196116"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/provision.py",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 2110,
+      "sha256": "ac7587e6256134a754d6893d7f108fca27c1c05cc953e8c64301592588cbd783"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/quality.json",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 865,
+      "sha256": "e5a684436d4346eeb15ee75da4a01e3194a479b9ee7329eca51c436a0c8251f6"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/tsconfig.json",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 590,
+      "sha256": "fd17b0cacfc087ca0fb4a40bcb728244aa6fdfce6e66197ca805263c04089e2a"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/vitest.config.mjs",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 566,
+      "sha256": "8093218843a5be963e410ebe84c96b62c56c1cf75cf4047c5c448673dd08b797"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/window-request-r2.json",
+      "commit": "e142035dd20c658fae78ce026f3d878f4aaa5538",
+      "bytes": 2269,
+      "sha256": "e8e318abac1a438b2bd4b8983442ae0699aec2e2ac7bf159061c8d4534d16e16"
+    },
+    {
+      "path": "package.json",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def"
+    },
+    {
+      "path": "tsconfig.json",
+      "commit": "417175656f62f01894cb9ad22a24b678e9acfe50",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    }
+  ],
+  "external": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/vitest/vitest.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+      "bytes": 43,
+      "sha256": "39db22f579acf5639bbb17a261408debbde03f4692c0c439e77e7f13aeba74d6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "bytes": 10590882,
+      "sha256": "10b6243df618d374bb2d5c9cfbe7052e1405f6aa4e53a6164f11a91b9f2e1384"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/index.js",
+      "bytes": 10039,
+      "sha256": "e28c92bd82fcbe9045c8991f8ce441fcac3541b0344c1633a30f461c1636b15b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/package.json",
+      "bytes": 1759,
+      "sha256": "8ed5dc353071fb44186d94894a5d92aaaa443a18f42a67f75883e619c6e9d539"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/types/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/types/index.d.ts",
+      "bytes": 4847,
+      "sha256": "41a5fa167b1428ed96d3bc2ccb5ebf1d94d42dc63b3c44e9102fcd6b1f9b0fc4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/index.d.ts",
+      "bytes": 4377,
+      "sha256": "d7e9ab1b0996639047c61c1e62f85c620e4382206b3abb430d9a21fb7bc23c77"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/package.json",
+      "bytes": 4068,
+      "sha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg/index.d.ts",
+      "bytes": 4919,
+      "sha256": "da3d9c69fe4d916969f59b6553ac79b49e8dea8d35084733c396a3555d155f56"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg/package.json",
+      "bytes": 975,
+      "sha256": "16a651807f0f05fce6ced63db0cd2a0e443d7807a70430ec74bbc28b6264e184"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote/index.d.ts",
+      "bytes": 11277,
+      "sha256": "7fad6e21f7b9328ce3180cba945e1271a1abab63fb8dc25a504113152297ffdb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote/package.json",
+      "bytes": 909,
+      "sha256": "f301ffbda6e67dba33178aee43aa2c06dd8f533d5e99515a0eda6e8a8094569a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg/index.d.mts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg/index.d.mts",
+      "bytes": 1980,
+      "sha256": "5aea76ab98173f2c230b1f78dc010da403da622c105c468ace9fe24e3b77883c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg/index.d.ts",
+      "bytes": 11428,
+      "sha256": "67f3d03f61a43f045851624e52ec438803ecf5d2247660f208bd9bcadb6ff298"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg/package.json",
+      "bytes": 1089,
+      "sha256": "d122ef1e1bdb760edd5cff70d39597b9b3ae757c80e829bc297cd34fb7f01bd3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri/index.d.ts",
+      "bytes": 5400,
+      "sha256": "bdcd2c5f1a37a059e1e6a4e377410eecfacc7b8ea10749d7937490c415d412ed"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri/package.json",
+      "bytes": 1119,
+      "sha256": "6c6c1bd2678420b9874942a395e49f888b552a0aeb650cd8a5c72a8ac8fb6eb2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/bin/esbuild",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/bin/esbuild",
+      "bytes": 10590882,
+      "sha256": "10b6243df618d374bb2d5c9cfbe7052e1405f6aa4e53a6164f11a91b9f2e1384"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js",
+      "bytes": 97463,
+      "sha256": "61ec0ba144ff93f4bf0e96ad6fab6f430ede0aa13e27ace8063ed63ba416b3cd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/package.json",
+      "bytes": 3980,
+      "sha256": "9d0bc453f4e791553c4cc2298ba023b409241fd9801e494741666eb0f6051490"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.d.ts",
+      "bytes": 15070,
+      "sha256": "a31d3c5f50d13db8bb892ea6c7667716accb8a4bfc3b350fdb72e96aa1c89a38"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js",
+      "bytes": 34573,
+      "sha256": "31a0ebd3ee5fd9f525ccb37c312e3b94757cf53bfa481f41ee364ce75d83c0ae"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/package.json",
+      "bytes": 6973,
+      "sha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/lib/npa.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/lib/npa.js",
+      "bytes": 14251,
+      "sha256": "41cd09e778c4a7588df362588dbe9146a024d5cfcdf449702feb294e6acde761"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg/package.json",
+      "bytes": 1503,
+      "sha256": "1a12d6b689df3628a831b61c29b55fe4ba667b37f37d5317eb306929eeb80bad"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/lib/index.js",
+      "bytes": 808,
+      "sha256": "3f4a6a8d7ae3eb72ad61e567bae8d05356cc0a7439e9f7006701728a3af95d32"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote/package.json",
+      "bytes": 1956,
+      "sha256": "17aaee65ad940680ff9073f0b6f144994270283f55824056377c7f2e8590c90f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.d.ts",
+      "bytes": 10620,
+      "sha256": "19ff6eb285230d0fb941c2edf7753d943c218e6f63207dbab7f037eda83b7cc5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/dist/index.js",
+      "bytes": 22927,
+      "sha256": "11487d4ee764d73b54bdd72e691a66d08ef7d1239d2c2cf44d80db869848b34f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json",
+      "bytes": 4103,
+      "sha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/esm/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/esm/index.mjs",
+      "bytes": 579,
+      "sha256": "5ef4d06556eeb775987759c2c09229dca2139421ee40e819b566612db2b4a8dc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "bytes": 1810,
+      "sha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "bytes": 1668,
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/lib/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/lib/index.js",
+      "bytes": 15512,
+      "sha256": "e36be1a5e67217f423148f206bce2ea3aa04bb1271e5ea8069836c4a331f4d3b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri/package.json",
+      "bytes": 1832,
+      "sha256": "568ffddd852f2bf78cccddc099f443a6fa1af56f1d21de9bea51b3b9a61d9151"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/create.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/create.d.ts",
+      "bytes": 165,
+      "sha256": "222c838dcf181020b16af6f6239380663843069ddfc3e6f29ea7890bad90fafe"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/create.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/create.js",
+      "bytes": 2588,
+      "sha256": "eff71718fc8424bc6c7cda76d5d2831da98ee1457da1df19bd31b92e563d2336"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/extract.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/extract.d.ts",
+      "bytes": 177,
+      "sha256": "0f001fef552edcfb272c6a1e8a8e1d29a651230789a34bd6960025ef6233ae00"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/extract.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/extract.js",
+      "bytes": 3447,
+      "sha256": "a1aa096322772eb0b341c39fc732857f8a3efbbd4934a0c5376a9b3b18129acd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/header.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/header.d.ts",
+      "bytes": 1387,
+      "sha256": "7886b348d616d41f2f90436331610abbda81426de6558f2aa3399846078ce5c8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/header.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/header.js",
+      "bytes": 14094,
+      "sha256": "2840b352ffdee3ed31cb30b87e51d9b96c6255ea484ced0fe2437ad46f49ad93"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/index.d.ts",
+      "bytes": 945,
+      "sha256": "3d4067cbcf736efe67cba7bfe232841b45944da843304ca9ea12f5a316a18c5e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/index.js",
+      "bytes": 3137,
+      "sha256": "b5c4c31f353da9fe11ed352a95c6c247946549fec4f1326e871a3cd32158f9bf"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/index.min.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/index.min.js",
+      "bytes": 102753,
+      "sha256": "b9464172723801f6ad013a1a819b5f31838753559d56c879202d7fb3c1326167"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/list.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/list.d.ts",
+      "bytes": 302,
+      "sha256": "efa80f586a87dd1a96256b427e075ca773e4068dc6a1821fc11dacf232f0ed0a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/list.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/list.js",
+      "bytes": 5599,
+      "sha256": "9e8c59276c643ceeba7ecf786045dc611150aa440fa98b16f457b9c5aa211093"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/pack.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/pack.d.ts",
+      "bytes": 3776,
+      "sha256": "d66ebf8b7769b025c4651e027cbfb3d5946d0fb3302b3180829973e610b83b7e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/pack.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/pack.js",
+      "bytes": 17624,
+      "sha256": "2f68f54f8a61c33d26b353bf9311f961b614c85e52b4b0b0521b2a3fc314be6c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/parse.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/parse.d.ts",
+      "bytes": 3723,
+      "sha256": "b3ff86489487fd9feb1605308b8e9f0c06b20b8a74a22dff0698c583c47c2d3d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/parse.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/parse.js",
+      "bytes": 24607,
+      "sha256": "c90f3771fa6c839b81c1d24961786463a195dfb8a59a8f190da30d33e7e1f769"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/pax.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/pax.d.ts",
+      "bytes": 684,
+      "sha256": "60eba4c6cacfadb938bc3d0207db25e6894a52e538cfe86b5dc255c2f351f50d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/pax.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/pax.js",
+      "bytes": 5397,
+      "sha256": "8b3fc3092056e28a0e137c4b7ddc230465d62d27df7e9d1665df3f3acbb7c0b2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/read-entry.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/read-entry.d.ts",
+      "bytes": 915,
+      "sha256": "55004d2802575818ae94ff61d0ae63106e9a0ae30cf3163df264bd49d165e3ca"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/read-entry.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/read-entry.js",
+      "bytes": 4394,
+      "sha256": "3152ca6809643af42d413214fbb268736c5f60285941746a9b9d78086e666062"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/types.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/types.d.ts",
+      "bytes": 1159,
+      "sha256": "9c904c8a921ee9fdd962ca59d417f1be8f4ca7be36407dbf8e3bd50aeee66ca5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/types.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/types.js",
+      "bytes": 1889,
+      "sha256": "c07cef6564bcef1f93b7a18a3e22c97b57f18229e31a3f66d15127c43b182b5c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/unpack.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/unpack.d.ts",
+      "bytes": 4114,
+      "sha256": "f693c6f25dce53fa25a798b1d5a159ebf05832e30f035517d6fc7055c3b6e306"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/unpack.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/unpack.js",
+      "bytes": 36414,
+      "sha256": "03515ed98f5df6ec0f23177b7016274f8cdc91b038d0dcd036f438a70e614eed"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/update.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/update.d.ts",
+      "bytes": 119,
+      "sha256": "dbbe9246a51b37902aa24e27418c7ad090100035e0ab8ab226cece2db704fb3e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/update.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/update.js",
+      "bytes": 1229,
+      "sha256": "9e01f728164cea547b955b6e78d4f544ae480a6a8ffeda8bfaf63b9dbbf07d12"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/write-entry.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/write-entry.d.ts",
+      "bytes": 4419,
+      "sha256": "f6acca31f563c9db75e6de6c7ce45bd1f37643918f80aee08350df6e91b279e4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/write-entry.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/commonjs/write-entry.js",
+      "bytes": 25354,
+      "sha256": "4c62f3a5b860d40be8f075b3e9ed9aea4c274f73af5ea5accfa9e04565139d37"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/create.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/create.d.ts",
+      "bytes": 165,
+      "sha256": "222c838dcf181020b16af6f6239380663843069ddfc3e6f29ea7890bad90fafe"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/create.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/create.js",
+      "bytes": 2177,
+      "sha256": "ede714930e3e35d67374b6b18d98669a11f5d98cbabd2684e01e33e773ff7226"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/extract.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/extract.d.ts",
+      "bytes": 177,
+      "sha256": "0f001fef552edcfb272c6a1e8a8e1d29a651230789a34bd6960025ef6233ae00"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/extract.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/extract.js",
+      "bytes": 1692,
+      "sha256": "c2781e3e025fb52495812fbaba10a35a06f19a6cb55874373b1dd14d163446ed"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/header.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/header.d.ts",
+      "bytes": 1387,
+      "sha256": "7886b348d616d41f2f90436331610abbda81426de6558f2aa3399846078ce5c8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/header.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/header.js",
+      "bytes": 12552,
+      "sha256": "8af8946db14f867fa1f1d7bb887554e31002721907b167d8bcfde5f38aaba3c7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.d.ts",
+      "bytes": 945,
+      "sha256": "3d4067cbcf736efe67cba7bfe232841b45944da843304ca9ea12f5a316a18c5e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.js",
+      "bytes": 647,
+      "sha256": "3f6eee754a43f2154124af1db2251ec0edd427367dd2a6edb1e4a3dc76efe3e2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.min.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/index.min.js",
+      "bytes": 84473,
+      "sha256": "1902a2a0b8cc2771f7e2aa0a855e9215a2d1023b1345fd504d28eb9c420c958c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/list.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/list.d.ts",
+      "bytes": 302,
+      "sha256": "efa80f586a87dd1a96256b427e075ca773e4068dc6a1821fc11dacf232f0ed0a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/list.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/list.js",
+      "bytes": 3607,
+      "sha256": "386be389ed1d1765c37252013cfcaf8f1c06d2af5b9e9960492d555e8310382e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/pack.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/pack.d.ts",
+      "bytes": 3776,
+      "sha256": "d66ebf8b7769b025c4651e027cbfb3d5946d0fb3302b3180829973e610b83b7e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/pack.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/pack.js",
+      "bytes": 15622,
+      "sha256": "fdab2a58e536e2541edc212c6faa67406d62fd0764585448b5b5f85495f4da3a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/parse.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/parse.d.ts",
+      "bytes": 3723,
+      "sha256": "b3ff86489487fd9feb1605308b8e9f0c06b20b8a74a22dff0698c583c47c2d3d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/parse.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/parse.js",
+      "bytes": 24366,
+      "sha256": "6528a15bef7787adca4920eacc3131263c3d4114448a60522923fdfe37a584f6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/pax.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/pax.d.ts",
+      "bytes": 684,
+      "sha256": "60eba4c6cacfadb938bc3d0207db25e6894a52e538cfe86b5dc255c2f351f50d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/pax.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/pax.js",
+      "bytes": 5247,
+      "sha256": "de39d126f4641b18ab3558921817a0a52ec0dfbfc429a2148a6dc9d53926b0c8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/read-entry.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/read-entry.d.ts",
+      "bytes": 915,
+      "sha256": "55004d2802575818ae94ff61d0ae63106e9a0ae30cf3163df264bd49d165e3ca"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/read-entry.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/read-entry.js",
+      "bytes": 4111,
+      "sha256": "f6633626a5ea499bd83701aeab9b5f6b813f9ed0e4b26027bf49060ab6b59edd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/types.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/types.d.ts",
+      "bytes": 1159,
+      "sha256": "9c904c8a921ee9fdd962ca59d417f1be8f4ca7be36407dbf8e3bd50aeee66ca5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/types.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/types.js",
+      "bytes": 1671,
+      "sha256": "91a4d5ea812aae1440a53e32fee635aa8627da9d8d7b3df84fbd3d9b39f51320"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/unpack.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/unpack.d.ts",
+      "bytes": 4114,
+      "sha256": "f693c6f25dce53fa25a798b1d5a159ebf05832e30f035517d6fc7055c3b6e306"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/unpack.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/unpack.js",
+      "bytes": 33094,
+      "sha256": "d95795464b13cfa4b5a9da8497d189ca946749951b73b22f4d017c4eace7dfbe"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/update.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/update.d.ts",
+      "bytes": 119,
+      "sha256": "dbbe9246a51b37902aa24e27418c7ad090100035e0ab8ab226cece2db704fb3e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/update.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/update.js",
+      "bytes": 1006,
+      "sha256": "e7379bb9d34d223208ba2f6540d007b4820c761adb13dfe317cdca34a10caecd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/write-entry.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/write-entry.d.ts",
+      "bytes": 4419,
+      "sha256": "f6acca31f563c9db75e6de6c7ce45bd1f37643918f80aee08350df6e91b279e4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/write-entry.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/dist/esm/write-entry.js",
+      "bytes": 22763,
+      "sha256": "97e5699a8ac9afdf58d1863622397acb444c424675a4b2c63d586f5afe844315"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/package.json",
+      "bytes": 7839,
+      "sha256": "31b18f4fb83ba7183f54fa9e2cdca610897108c37ba80570c2c6fa7ccf112d97"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cli.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cli.mjs",
+      "bytes": 124418,
+      "sha256": "8690135061bc49d187143493b82d26a09b7fb71d6dd817d2242cc9dc52506de9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/client-XItNFmsq.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/client-XItNFmsq.cjs",
+      "bytes": 834,
+      "sha256": "cc72bed2d57324f12318efdc804772a2de18a3deb836ab1d63bdc493ad542113"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-Bqjv9TxC.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-Bqjv9TxC.mjs",
+      "bytes": 1272,
+      "sha256": "180e6425aa9ba5716e9141cc049a7ee5367c7127b03b81aea22612ef04d425ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-DE3OBZuV.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-DE3OBZuV.mjs",
+      "bytes": 55651,
+      "sha256": "2e0d42c5a8b65e752ce2fc27d95d382f463e419e12a5ad397b481c705c65fbf2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CGfpMDSb.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CGfpMDSb.cjs",
+      "bytes": 13515,
+      "sha256": "e35faacc23082bc2ad2e1d47896932d804914edee932642558fa55098124ac12"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CanA6ArK.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CanA6ArK.mjs",
+      "bytes": 13462,
+      "sha256": "e12988f68fd477e488d99c23aae1a9f5be78719e8c0b055642340b25a76e621a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/package-Dj0mHsMt.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/package-Dj0mHsMt.mjs",
+      "bytes": 32,
+      "sha256": "20f38ff0210e4f838032714d0590012e4fb82ad4095c8930652a13b37420cd80"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/patch-repl.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/patch-repl.cjs",
+      "bytes": 506,
+      "sha256": "33f5f6755270054783f4c568d0d48d4a79fecde965ec6f91ca27f0f949ba6da6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs",
+      "bytes": 1061,
+      "sha256": "853ed9c14711bb11333f3a53803965149509bac4bc515492707f73c83ed9193d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-B1c7OH6V.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-B1c7OH6V.cjs",
+      "bytes": 94753,
+      "sha256": "dcda008e1b6774abe04d6e7f0c783804e88046691c44615510b628167e5e5179"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs",
+      "bytes": 21001,
+      "sha256": "45628eebec60ddb365201377158bbace219ffd8cf5edab1bcde6b8f7f14b0574"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/repl.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/repl.mjs",
+      "bytes": 738,
+      "sha256": "dad3f9708f4eceb99a5885f9c41b03b01bf30db1418514d7b1dc0637f45cdc21"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CBjy4Foe.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CBjy4Foe.mjs",
+      "bytes": 39218,
+      "sha256": "b1156f2ecff29ef55801df8f4e1d9b34a5eae32e04dfcf3b8c2557fe191264c2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CVaYn9z3.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CVaYn9z3.cjs",
+      "bytes": 474,
+      "sha256": "a29a3db7a21cfd665df96d4cb800b527139903df6e6c52c206f944e854ab59d0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/suppress-warnings.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/suppress-warnings.cjs",
+      "bytes": 497,
+      "sha256": "028063d20bd49083f03a0b1ed4f7a3d55fac1f64f5aca0e58e1ec61601f20ee7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/temporary-directory-Du7LpLp9.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/temporary-directory-Du7LpLp9.mjs",
+      "bytes": 782,
+      "sha256": "cb94c0a5d95542df12c0393e2bb5221ab0977bb80df2d031498cda3dbfdfcef7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/package.json",
+      "bytes": 1663,
+      "sha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/typescript.js",
+      "bytes": 9112572,
+      "sha256": "3ae902c92cc44dace175c0e69e13a4b0899f6983c6121d76b9ab8dd5795e7675"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "bytes": 3620,
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/browser/context.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/browser/context.d.ts",
+      "bytes": 419,
+      "sha256": "45f770f2ae71acc1cacfac137f50911e1a004ccba52b2b55c4432c0d4bd97814"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/browser/context.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/browser/context.js",
+      "bytes": 667,
+      "sha256": "31e0d4b9d4462cdd24c49704879f906c4df0398b1012e37779253ea87e0d3e40"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/config.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/config.d.ts",
+      "bytes": 119,
+      "sha256": "7bbff6783e96c691a41a7cf12dd5486b8166a01b0c57d071dbcfca55c9525ec4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/coverage.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/coverage.d.ts",
+      "bytes": 35,
+      "sha256": "b5506cc23b30b4b07457a965034cc59b282b9171fa987c046d5782bedc0a5508"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/browser.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/browser.d.ts",
+      "bytes": 2414,
+      "sha256": "be5fc0dd37f64420b0423059370b8319521e0b58060d7b07b8f62fe1c145b02e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/browser.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/browser.js",
+      "bytes": 958,
+      "sha256": "8aa5228016d191ca8ad3599230f3d91fcadc92f42ba6d79dde7f7b711179515a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/config.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/config.cjs",
+      "bytes": 2642,
+      "sha256": "b2fc967cbc999414fd9c9d8164aa53299c8237a63b3d26b26c8793f9ced1b5a6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/config.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/config.js",
+      "bytes": 464,
+      "sha256": "4f696be5327dbf44536e3b88632167a8960f89579b69d4835eaf5435a44d4e4e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/coverage.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/coverage.js",
+      "bytes": 604,
+      "sha256": "04ad3df2146009f98eb8430bd2ee5af990ae9a86b720894b53b9ce6dbbfe1ccc"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/environments.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/environments.d.ts",
+      "bytes": 665,
+      "sha256": "756274afc8530b6dc0586aa5966fd61a37ede94b8fa876e6f4d95245e5710150"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/environments.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/environments.js",
+      "bytes": 134,
+      "sha256": "c2abbc00786062371b669e7eed4be9c3b4ab91842b1b01cfd78f8be91fb4db6e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/index.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/index.d.ts",
+      "bytes": 23880,
+      "sha256": "53c448183c7177c83d3eb0b40824cf8952721a6584cf22052adc24f778986732"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/index.js",
+      "bytes": 975,
+      "sha256": "af0b170bd7b3b2c8bca02dc8640ff73cbf490d640556c478bfd39820e9e1bd3a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/mocker.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/mocker.d.ts",
+      "bytes": 32,
+      "sha256": "38ecb3bc5f2465c0468f3c6180da6162c0e1126bfdb07cacfc308d77a42686f2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/mocker.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/mocker.js",
+      "bytes": 32,
+      "sha256": "38ecb3bc5f2465c0468f3c6180da6162c0e1126bfdb07cacfc308d77a42686f2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/module-runner.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/module-runner.js",
+      "bytes": 633,
+      "sha256": "9704d15132301b28178f2801d7ff96960f40ff6c2a69f25f3306023f9fdbf313"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/node.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/node.d.ts",
+      "bytes": 11461,
+      "sha256": "64420e9ef1268960040592d53257a9b75be4d65d88c68b5ca23335dec1adcf64"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/node.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/node.js",
+      "bytes": 3930,
+      "sha256": "666b6fac50266221986f4140e87c86bd02b0fdc27fc005242751460258feabcb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/reporters.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/reporters.d.ts",
+      "bytes": 1411,
+      "sha256": "6f07e0c537b701a9704b943ad53567cb4f02dc9b8ec80356d53ccc774b3837e7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/reporters.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/reporters.js",
+      "bytes": 909,
+      "sha256": "2ee1da9edaed5824990b04f63739cfe90755713ff9a5e0d1a8345008eab3e540"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/runners.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/runners.d.ts",
+      "bytes": 1931,
+      "sha256": "1192cf22b49f825e354899e2995d1d3c7429bc9e41e6b2f834882a6cab540b41"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/runners.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/runners.js",
+      "bytes": 666,
+      "sha256": "3d03cdd7a4680ddfa689ebfc391b8bf4aabf733bfa18bbe0faf2d4f54a2aac65"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/snapshot.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/snapshot.d.ts",
+      "bytes": 364,
+      "sha256": "75a3e0f3612d1367eb54136a389a6dcaf4cfa66fec58c285c00839d03221c330"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/snapshot.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/snapshot.js",
+      "bytes": 211,
+      "sha256": "48f3b5e17a7d20427429c1babb21b91f34cfedcd4fe72ce633fb4c29892478cf"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/suite.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/suite.d.ts",
+      "bytes": 360,
+      "sha256": "bcb1801333a4d728de73b1930680cbd23a3b6a13716781dade1db6953b683524"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/suite.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/suite.js",
+      "bytes": 365,
+      "sha256": "8cd21b85c3e465e55eef8b2e848640355c246658585f561a6908254964eced20"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/worker.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/worker.js",
+      "bytes": 1575,
+      "sha256": "22fe311b517c8fd7ff14a49ed2c12f15e66eb82a3efc1ce9c6909bc35a75a45c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/globals.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/globals.d.ts",
+      "bytes": 899,
+      "sha256": "0a5bc32362b0559b9bcf0a6a83136c4442dbbd0edecd671538a5e03454b6dff0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/import-meta.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/import-meta.d.ts",
+      "bytes": 249,
+      "sha256": "28a9d5c4741fdd62a94faea49ef7585d825e8379e5d23a2d773f723ce56d6b50"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/importMeta.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/importMeta.d.ts",
+      "bytes": 83,
+      "sha256": "13d43666c55b9153815a92c4d3f807833df3491ebe4009cd46c3879b9a3f5d1a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/index.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/index.cjs",
+      "bytes": 412,
+      "sha256": "15a78ebcf7fc24ea0a829448d770ca486b7506fcf8fd696a2cbf8e17d25dc02b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/index.d.cts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/index.d.cts",
+      "bytes": 32,
+      "sha256": "db8e26b83e6708b250200435440c326d84dd9f07114c72b33775569486bebd0b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/jsdom.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/jsdom.d.ts",
+      "bytes": 86,
+      "sha256": "a04dee0a6a525626e49c773ff7bef7e4faa8904098ccc49e166b7fb61e552323"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/optional-types.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/optional-types.d.ts",
+      "bytes": 194,
+      "sha256": "8124828a11be7db984fcdab052fd4ff756b18edcfa8d71118b55388176210923"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/package.json",
+      "bytes": 5513,
+      "sha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/worker.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/worker.d.ts",
+      "bytes": 33,
+      "sha256": "5744f984f4f55dfb760efb241debdf83a3caaa2e267d9b4072e280cdc715a5bd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/compile.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/compile.cjs",
+      "bytes": 4780,
+      "sha256": "56dfeaf286f377344636dd37c19bd2dff50c0a0ed4ab99bb8c42bddcaa535914"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/compile.d.cts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/compile.d.cts",
+      "bytes": 11,
+      "sha256": "8e609bb71c20b858c77f0e9f90bb1319db8477b13f9f965f1a1e18524bf50881"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/compile.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/compile.js",
+      "bytes": 3008,
+      "sha256": "7c4c8bcf404a1c7749cd6f4d765a2882f048c6ae045c8702b2a9e2c79d48ea9b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.cjs",
+      "bytes": 2132,
+      "sha256": "d93a8730d52c0fedab13619c8bc971cc99934c13d8dce7c97ee4d03a98d4096e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.d.cts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.d.cts",
+      "bytes": 119,
+      "sha256": "31506fd6e72c0d09e082b2f0b3741e6bbe90670361c9560ef998bdb1e56edc3e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js",
+      "bytes": 422,
+      "sha256": "32e7efd49a94a765f6d10a1a0a3c02c50c246def17c80c6f0225f85525d98505"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/locales/index.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/locales/index.cjs",
+      "bytes": 1444,
+      "sha256": "581bd6a445bee039476bc2af57fa9853879468a8ad19ea3a0f986ff27952ce1e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/locales/index.d.cts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/locales/index.d.cts",
+      "bytes": 41,
+      "sha256": "79152153afe093c320d882e1d66640fdf7a853fcab8e897ab7f10cbac937cb2e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/locales/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/locales/index.js",
+      "bytes": 40,
+      "sha256": "0b98ccbe349eb9774d8c96fa381335cef127140996f91a4eea47b7742b55f51d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/mini/index.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/mini/index.cjs",
+      "bytes": 2089,
+      "sha256": "7c8d8f6e8b841a620bb49de3d58bd1e97d0e8aacfa1f051747d7ae47b893e857"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/mini/index.d.cts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/mini/index.d.cts",
+      "bytes": 101,
+      "sha256": "067a4a6299bfb7102f10533628b365f3c30c3b6c31ace63aa986ffab057990c1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/mini/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/mini/index.js",
+      "bytes": 99,
+      "sha256": "92f42fea7c90ec3f2f623a923d8798d2a316cb4ff93d6399084065b9214365de"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/compile.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/compile.ts",
+      "bytes": 2867,
+      "sha256": "ed9b1077dd1e037b406177446bb4f78a25720d8f76bc97c6530005515f292458"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/index.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/index.ts",
+      "bytes": 422,
+      "sha256": "32e7efd49a94a765f6d10a1a0a3c02c50c246def17c80c6f0225f85525d98505"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/locales/index.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/locales/index.ts",
+      "bytes": 40,
+      "sha256": "0b98ccbe349eb9774d8c96fa381335cef127140996f91a4eea47b7742b55f51d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/mini/index.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/mini/index.ts",
+      "bytes": 99,
+      "sha256": "92f42fea7c90ec3f2f623a923d8798d2a316cb4ff93d6399084065b9214365de"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/v3/index.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/v3/index.ts",
+      "bytes": 99,
+      "sha256": "3db2efd285e7328d8014b54a7fce3f4861ebcdc655df40517092ed0050983617"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/v4-mini/index.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/v4-mini/index.ts",
+      "bytes": 99,
+      "sha256": "92f42fea7c90ec3f2f623a923d8798d2a316cb4ff93d6399084065b9214365de"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/v4/core/index.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/v4/core/index.ts",
+      "bytes": 690,
+      "sha256": "2a0e452323aa5b75b7d7de4879289e2579b9dd2d6af291c0416ba6806ca2199d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/v4/index.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/v4/index.ts",
+      "bytes": 351,
+      "sha256": "5ba6cdbd3839d2a9df5c6d91d2121ef680f3d22fd60ee9d2c0b4611b7cb49a65"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/v4/locales/index.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/v4/locales/index.ts",
+      "bytes": 2607,
+      "sha256": "7ea85250d1e7bd9459cda61f38c78757a410d561a5421bb3f08019bba79c9849"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/v4/mini/index.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/src/v4/mini/index.ts",
+      "bytes": 81,
+      "sha256": "455d93e660b61feec18cd4c31e2f394627546ae8ab31f9bacdab6318112ac31c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v3/index.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v3/index.cjs",
+      "bytes": 2092,
+      "sha256": "80849f43fee80f567614da950ab7b1393bae87197a95c0298c55cb2fec765000"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v3/index.d.cts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v3/index.d.cts",
+      "bytes": 101,
+      "sha256": "833e92c058d033cde3f29a6c7603f517001d1ddd8020bc94d2067a3bc69b2a8e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v3/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v3/index.js",
+      "bytes": 99,
+      "sha256": "3db2efd285e7328d8014b54a7fce3f4861ebcdc655df40517092ed0050983617"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4-mini/index.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4-mini/index.cjs",
+      "bytes": 2089,
+      "sha256": "7c8d8f6e8b841a620bb49de3d58bd1e97d0e8aacfa1f051747d7ae47b893e857"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4-mini/index.d.cts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4-mini/index.d.cts",
+      "bytes": 101,
+      "sha256": "067a4a6299bfb7102f10533628b365f3c30c3b6c31ace63aa986ffab057990c1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4-mini/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4-mini/index.js",
+      "bytes": 99,
+      "sha256": "92f42fea7c90ec3f2f623a923d8798d2a316cb4ff93d6399084065b9214365de"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/core/index.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/core/index.cjs",
+      "bytes": 3500,
+      "sha256": "aed3af491dc4ee4d18d5c3454dfadc83ff7b5566921602a6adc37a5d58716f83"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/core/index.d.cts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/core/index.d.cts",
+      "bytes": 709,
+      "sha256": "99003dbd8309d6cfda98e4bacb264ad40bfc197ede6af95370b0f3177076eb6a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/core/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/core/index.js",
+      "bytes": 690,
+      "sha256": "2a0e452323aa5b75b7d7de4879289e2579b9dd2d6af291c0416ba6806ca2199d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/index.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/index.cjs",
+      "bytes": 2098,
+      "sha256": "946e368ce2f7939fbf5946ab665f54d1e7d901d922db405aaf5dd40e87c636a0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/index.d.cts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/index.d.cts",
+      "bytes": 109,
+      "sha256": "51a4d8450070d113bb1758ed730a5862e6e676a279a190f5e622d24a8942357a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/index.js",
+      "bytes": 351,
+      "sha256": "5ba6cdbd3839d2a9df5c6d91d2121ef680f3d22fd60ee9d2c0b4611b7cb49a65"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/locales/index.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/locales/index.cjs",
+      "bytes": 11695,
+      "sha256": "eb58a51a00b5a880dcdf9d64b70f6069f386c9245350a54079a8c6007ac50ceb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/locales/index.d.cts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/locales/index.d.cts",
+      "bytes": 2670,
+      "sha256": "8fdac54b93a59a6627b74c680e2df92f8f66b0b7d2699c9dd2a10484066a1c22"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/locales/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/locales/index.js",
+      "bytes": 2607,
+      "sha256": "7ea85250d1e7bd9459cda61f38c78757a410d561a5421bb3f08019bba79c9849"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/mini/index.cjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/mini/index.cjs",
+      "bytes": 2071,
+      "sha256": "429b861f1d159fe1fdbb977ed4fbca5c11641d4df45d80d453768f8b0e710786"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/mini/index.d.cts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/mini/index.d.cts",
+      "bytes": 83,
+      "sha256": "0f29e474ba3555dd52ad61783dc6277683dd19c36473589d6fe2d29e06d99f5a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/mini/index.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/v4/mini/index.js",
+      "bytes": 81,
+      "sha256": "455d93e660b61feec18cd4c31e2f394627546ae8ab31f9bacdab6318112ac31c"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/usr/bin/git",
+      "realpath": "/usr/bin/git",
+      "bytes": 118640,
+      "sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9"
+    },
+    {
+      "path": "/usr/bin/env",
+      "realpath": "/usr/bin/env",
+      "bytes": 102176,
+      "sha256": "75690864f0e7397db05bcc0f4439915559ce24c2d834d530e4e619c14b938556"
+    }
+  ],
+  "links": [
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/@fastify/cors",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/fastify",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/npm-package-arg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/npm-package-arg@13.0.2/node_modules/npm-package-arg"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/pacote",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pacote@21.5.1/node_modules/pacote"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/pg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/pg-boss",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/ssri",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/ssri@13.0.1/node_modules/ssri"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/vitest",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/zod",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/typescript",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/@types/node",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/@types/pg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/@types/npm-package-arg",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/@types/ssri",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/@types/pacote",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote"
+    },
+    {
+      "destination": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/tar",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar"
+    }
+  ],
+  "bytes": 1514094,
+  "sqlCount": 34,
+  "previousManifestSha256": "3b4058caa161fea07eca1bc7973335f76f046a56d88a308245430b9b21220988",
+  "previousManifest": "pre-admission-result-handback-pg-isolated-manifest-r2.json",
+  "claimRebinding": {
+    "at": "2026-10-07T20:33:33.988Z",
+    "previousVersion": 5,
+    "version": 6,
+    "removedWritePaths": [
+      "apps/server/src/plugin-runtime/verification.ts",
+      "apps/server/src/plugin-runtime/verification.test.ts",
+      "apps/runner/src/plugins/execution.ts",
+      "apps/runner/src/plugins/execution.test.ts"
+    ],
+    "changedMetadataRows": 1,
+    "unchangedRows": 280,
+    "sourceAndCallerUnchanged": true
+  }
+}

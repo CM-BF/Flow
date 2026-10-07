@@ -81,11 +81,24 @@ def tree_sample(root, identity, deadline, limits):
 
 
 def remove_sample(rows, deadline):
+    if not rows or not rows[0][3]: raise ValueError('Cleanup root missing')
+    root, root_dev, root_ino, _ = rows[0]
+    identity = (root_dev, root_ino)
+    assert_directory(root, identity)
     for path, dev, ino, directory in reversed(rows):
         if time.monotonic() >= deadline: raise TimeoutError('Cleanup deadline')
+        assert_directory(root, identity)
+        if path != root and root not in path.parents: raise ValueError('Cleanup path outside root')
+        if path.resolve() != path: raise ValueError('Cleanup path redirected')
         current = path.lstat()
         if (current.st_dev, current.st_ino) != (dev, ino) or stat.S_ISDIR(current.st_mode) != directory: raise ValueError('Cleanup identity changed')
+        assert_directory(root, identity)
         path.rmdir() if directory else path.unlink()
+    try:
+        root.lstat()
+    except FileNotFoundError:
+        return
+    raise ValueError('Cleanup root absence unconfirmed')
 
 
 def assert_directory(path, identity):
