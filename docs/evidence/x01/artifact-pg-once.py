@@ -28,6 +28,34 @@ def child():
     argv = [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', 'docs/evidence/x01/artifact-pg-vitest.config.mjs', '--configLoader', 'native', '--reporter=json', '--outputFile=' + str(Path(os.environ['FLOW_X01_PG_ROOT']).parent / 'vitest.json'), 'apps/server/src/plugin-runtime/artifact-pg.test.ts']
     os.execve(NODE, argv, os.environ)
 
+def persist_final_receipt(report, path, started, deadline):
+    """The immutable receipt is a pre-save snapshot; delivery owns the final time verdict."""
+    report['recordPhase'] = 'before-final-persistence'
+    report['endedBeforePersistenceAt'] = stamp()
+    report['elapsedBeforePersistence'] = time.monotonic() - started
+    persistence = 'NOT_ATTEMPTED'
+    failure = None
+    try:
+        data = (json.dumps(report, indent=2) + '\n').encode()
+        if len(data) > 57344: raise ValueError('Final receipt reserve exceeded')
+        charge = report['rawChargeBeforeReceipt']
+        if charge is not None and charge + len(data) + 8192 > report['limits']['rawBytes']: raise ValueError('Final receipt over budget')
+        if time.monotonic() + 2 >= deadline: raise TimeoutError('Final persistence reserve exhausted')
+        persistence = 'UNKNOWN'
+        save(path, data)
+        persistence = 'CONFIRMED'
+    except BaseException as error:
+        failure = type(error).__name__
+    finished = time.monotonic()
+    within_deadline = finished < deadline
+    state = report['state'] if persistence == 'CONFIRMED' and within_deadline and failure is None else 'UNKNOWN'
+    delivery = {'state': state, 'run': str(path.parent), 'receiptState': report['state'],
+        'resultPersistence': persistence, 'elapsedAfterPersistence': finished - started,
+        'withinTotalDeadline': within_deadline, 'endedAfterPersistenceAt': stamp(),
+        'retained': report['retained'], 'temporary': report.get('temporary')}
+    if failure is not None: delivery['failureType'] = failure
+    return delivery, 0 if state == 'PASSED' else 1
+
 def main():
     # Admission is a fresh co-lead coordination receipt, not a cryptographic authorization scheme.
     if len(sys.argv) != 5 or sys.argv[1] != '--admission' or not Path(sys.argv[2]).is_absolute() or sys.argv[3] != '--sha256' or not re.fullmatch('[a-f0-9]{64}', sys.argv[4]): raise ValueError('Explicit admission path and hash required')
@@ -138,14 +166,12 @@ def main():
         if temporary is not None:
             try:
                 if report['unknown'] or len(report['suites']) != 1: raise ValueError('Keep resources with incomplete evidence')
-                rows, size = tree_sample(temporary, identity, deadline - 2, limits)
+                rows, size = tree_sample(temporary, identity, deadline - limits['finalReserveSeconds'], limits)
                 report['temporary'].update(sampleBytes=size, sampleEntries=len(rows))
-                remove_sample(rows, deadline - 2)
+                remove_sample(rows, deadline - limits['finalReserveSeconds'])
                 report['temporary']['removed'] = not temporary.exists()
             except BaseException as error:
                 report['unknown'] = True; report['state'] = 'UNKNOWN'; report['retained'].append(report['temporary'])
-        report['endedBeforePersistenceAt'] = stamp(); report['elapsedBeforePersistence'] = time.monotonic() - started
-        if report['elapsedBeforePersistence'] >= limits['totalSeconds']: report['state'] = 'UNKNOWN'; report['unknown'] = True
         # Count every actual retained output (including a partial child checkpoint), plus uncaptured stream tails.
         try:
             if reserved:
@@ -153,7 +179,7 @@ def main():
                 output_sizes = {}
                 with os.scandir(RUN) as outputs:
                     while True:
-                        gate()
+                        gate(3)
                         if len(output_sizes) >= 24: raise ValueError('Output count limit')
                         try: entry = next(outputs)
                         except StopIteration: break
@@ -171,15 +197,14 @@ def main():
         report['completeAccounting'] = not report['unknown']
         report['rawBytesBeforeReceipt'] = written
         if reserved:
-            try:
-                data = (json.dumps(report, indent=2) + '\n').encode()
-                if len(data) > 57344: raise ValueError('Final receipt reserve exceeded')
-                if report['rawChargeBeforeReceipt'] is not None and report['rawChargeBeforeReceipt'] + len(data) + 8192 > limits['rawBytes']: raise ValueError('Final receipt over budget')
-                save(RUN / 'result.json', data)
-            except BaseException:
-                print(json.dumps({'state': 'UNKNOWN', 'resultPersistence': 'UNKNOWN', 'temporary': report.get('temporary'), 'run': str(RUN)})); return 1
-    print(json.dumps({'state': report['state'], 'run': str(RUN), 'elapsedBeforePersistence': report['elapsedBeforePersistence'], 'retained': report['retained']}))
-    return 0 if report['state'] == 'PASSED' else 1
+            delivery, code = persist_final_receipt(report, RUN / 'result.json', started, deadline)
+        else:
+            delivery = {'state': report['state'], 'run': str(RUN), 'resultPersistence': 'NOT_RESERVED',
+                'elapsedAfterPersistence': time.monotonic() - started, 'retained': report['retained']}
+            code = 1
+    print(json.dumps(delivery), flush=True)
+    # Stdout delivery can itself block; do not return success after the same origin deadline.
+    return code if time.monotonic() < deadline else 1
 
 
 if __name__ == '__main__':
