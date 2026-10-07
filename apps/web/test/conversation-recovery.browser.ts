@@ -797,12 +797,23 @@ async function worker(init: Init) {
       await input().press("Enter"); await expect.poll(() => turns()[0]?.responseBody).toBeTruthy();
       expect(creations()).toHaveLength(1); expect(postRows()).toHaveLength(baseline.length + 1);
       const turnRow = turns()[0]!, requested = conversationTurnSchema.parse(JSON.parse(turnRow.body));
-      await expect.poll(async () => (await records(page)).find(record => record.id === turnRow.key)?.phase).toBe("accepted");
+      const turnReceipt = async () => {
+        const matching = (await records(page)).map(record => parseRecoveryRecord(record)).filter(record =>
+          record.kind === "command" && record.domain === "outbox" && object(record.frozen).turnKey === turnRow.key);
+        expect(matching).toHaveLength(1);
+        const receipt = matching[0]!; requireThat(receipt.kind === "command" && receipt.domain === "outbox", "Expected the exact turn authority");
+        return receipt;
+      };
+      await expect.poll(async () => (await turnReceipt()).phase).toBe("accepted");
+      const receipt = await turnReceipt(), frozen = object(receipt.frozen);
+      expect(frozen).toMatchObject({ id: receipt.id, kind: "turn", conversationId: created.conversation.id, turnKey: turnRow.key });
+      expect(frozen.request).toEqual(requested);
       expect(turnRow.path).toBe(`/api/conversations/${created.conversation.id}/turns`);
       expect(requested).toEqual({ expectedRevision: created.conversation.revision, text: original, mode: "follow-up", knowledge: [seed.citation], attachments: [fixture!.resource.reference, fixture!.secondResource.reference] });
       requireThat(turnRow.responseBody, "The first material turn needs its actual accepted ACK");
       const accepted = decodeConversationTurnAccepted(JSON.parse(turnRow.responseBody), created.conversation.id, requested);
       expect(accepted.replayed).toBe(false); expect(accepted.turn.id).not.toBe(""); expect(accepted.turn.task.id).not.toBe("");
+      expect(receipt.checkpoint).toMatchObject({ conversationId: created.conversation.id, turnId: accepted.turn.id, taskId: accepted.turn.task.id });
       completeDraft.turnId = accepted.turn.id; completeDraft.taskId = accepted.turn.task.id;
       await configuration().getByRole("button", { name: `Conversation settings: ${seed.profile.configuration.model}`, exact: true }).click();
       const settings = page.getByRole("dialog", { name: "Conversation settings", exact: true });
