@@ -1,10 +1,10 @@
 # X01-ARTIFACT-VERIFIER01 独立设计审查
 
-状态：NOT_STARTED。空模板不构成批准。产品/工程/PG/个人部署均未执行。
+状态：PENDING。空模板不构成批准。产品/工程/PG/个人部署均未执行。
 
 ## 固定输入与审查范围
 
-base main6fd214eb62f269167f6af4a8390850561dc0d01c；设计target将在design-review-ready.json固定。只审plan.md、interface.md、scope-and-dependencies.md及绑定的只读来源证据，不修改项目、不执行工程命令或PG，不访问私人配置。
+base main6fd214eb62f269167f6af4a8390850561dc0d01c；设计target 35cbad4a90920cb10d8afdaa5d418ea4975c8028 已由design-review-ready.json固定。只审plan.md、interface.md、scope-and-dependencies.md及绑定的只读来源证据，不修改项目、不执行工程命令或PG，不访问私人配置。
 
 ## 可复制的任务说明
 
@@ -16,4 +16,4 @@ base main6fd214eb62f269167f6af4a8390850561dc0d01c；设计target将在design-rev
 
 ## 审者结论
 
-P1/P2：UNKNOWN（尚未独审）。结论：NOT_STARTED。作者未自批准。
+P1/P2：UNKNOWN（尚未独审）。结论：PENDING。作者未自批准。

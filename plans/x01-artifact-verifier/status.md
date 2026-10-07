@@ -13,11 +13,11 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
 | 工作基线 / HEAD | 6fd214eb62f269167f6af4a8390850561dc0d01c；metadata HEAD见提交记录 |
-| 工作树dirty状态 | 仅本owner设计文档；固定提交后clean，产品无变化 |
+| 工作树dirty状态 | 设计包提交后clean；产品无变化 |
 | 工作分支状态 | in-progress |
 | 检查状态 | NOT_RUN：仅设计与只读源证据；无工程、PG、provider或个人操作 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；固定输入main6fd214eb62f269167f6af4a8390850561dc0d01c不是本功能已实现 |
-| 实现目标 | NOT_IMPLEMENTED；本段仅设计 |
+| 实现目标 | 35cbad4a90920cb10d8afdaa5d418ea4975c8028（设计target；产品NOT_IMPLEMENTED） |
 | 实现范围 | plans/x01-artifact-verifier,docs/evidence/x01-artifact-verifier |
 | 阶段 | M2 |
 | 优先级 | 5 |
@@ -26,7 +26,7 @@
 | 下一可用交付 | 固定设计独审后，可按真实职责领取最小合同与宿主片段 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，NOT_STARTED；不表示源码或功能通过 |
+| Review | [review.md](review.md)，PENDING；设计target 35cbad4a90920cb10d8afdaa5d418ea4975c8028，不表示源码或功能通过 |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v1 ACTIVE，仅两文档目录；14:34:18.144Z fresh available |
 | 架构影响 | PLANNED：安装kind、显式领取协议、不可变产物引用与中心重算；main图未改，产品target固定后交Execution Lead |
 
@@ -39,7 +39,7 @@
 
 ## 本轮工作段与时间
 
-新设计段2026-10-07T14:29:36.000Z–14:44:36.000Z，文档≤256KiB。当前0工程child/0业务PG/0provider/0服务/0待launch；协调账本读/take与metadata解析不当工程验收。分支交付、独审、主线集成、部署时间均尚未发生。PROCESS待接收/真实制品边界不以此设计解除。
+新设计段2026-10-07T14:29:36.000Z–14:44:36.000Z，文档≤256KiB。当前0工程child/0业务PG/0provider/0服务/0待launch；协调账本读/take与metadata解析不当工程验收。设计分支交付时间 2026-10-07T14:39:36.981Z，target 35cbad4a90920cb10d8afdaa5d418ea4975c8028；独审/主线集成/部署尚未发生。PROCESS待接收/真实制品边界不以此设计解除。
 
 ## 等待记录
 
@@ -48,3 +48,5 @@
 ## Dashboard / handoff
 
 本status为唯一手填事实源。新任务聚合登记尚未确认，UNKNOWN/等待Execution Lead登记；不改共享registry。权威父X01-07继续open，不复制父TODO。设计需只读独审后由co-lead选择下一有价值片段，当前不授权实现或PG。
+
+固定入口：[design-review-ready.json](../../docs/evidence/x01-artifact-verifier/design-review-ready.json)。本包push后STOP/保留文档claim等待独审；不得开始产品实现。
