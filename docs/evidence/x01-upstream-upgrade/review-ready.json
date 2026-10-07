@@ -1,0 +1,17 @@
+{
+  "taskId": "X01-UPSTREAM-UPGRADE01",
+  "sourceCommit": "5beb0bb95b77bd20c4d9bcf05297cbdee21abfa9",
+  "manifest": "docs/evidence/x01-upstream-upgrade/review-manifest.json",
+  "manifestSha256": "6e44bf3e93a165eacaf78a30f817a5431ea5a600400859484c758d9cd2565d01",
+  "bindings": 214,
+  "bytes": 754987,
+  "scope": [
+    "experiments/plugins/semver-range-upgrade",
+    "apps/runner/src/plugins/semver-upstream-upgrade.test.ts",
+    "docs/evidence/x01-upstream-upgrade"
+  ],
+  "checks": "build2; types0; initial suitefail/3skipped; license-only filename correction then3/3",
+  "review": "PENDING",
+  "main": "NOT_INTEGRATED",
+  "noActualHolder": true
+}

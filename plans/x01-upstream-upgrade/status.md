@@ -6,10 +6,10 @@
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
-| 工作分支状态 | in-progress |
+| 工作分支状态 | review |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 当前产出 | 本地已验证真实上游升级会改变范围判断，回滚恢复原结果。 |
 | 下一可用交付 | 固定本地材料证据并完成独立审查。 |
 | 当前阻塞 | NONE |
@@ -17,14 +17,14 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-upstream-upgrade |
 | Branch | codex/plugin-upstream-upgrade |
 | Base | 62e9a83923a3c2996b4ab32610e10e2069828c66 |
-| HEAD | 62e9a83923a3c2996b4ab32610e10e2069828c66 |
+| HEAD | 5beb0bb95b77bd20c4d9bcf05297cbdee21abfa9 |
 | 工作树dirty状态 | own metadata implementation |
-| 实现目标 | UNKNOWN |
+| 实现目标 | 5beb0bb95b77bd20c4d9bcf05297cbdee21abfa9 |
 | 实现范围 | experiments/plugins/semver-range-upgrade, apps/runner/src/plugins/semver-upstream-upgrade.test.ts |
-| 检查状态 | PASSED 待固定实现commit；types0、3/3；首suite失败保留 |
-| Review | NOT_STARTED |
+| 检查状态 | PASSED 5beb0bb95b77bd20c4d9bcf05297cbdee21abfa9；types0、3/3；首suite失败保留 |
+| Review | PENDING_FIXED_SOURCE |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 最近更新时间 | 2026-10-07T11:45:00Z |
+| 最近更新时间 | 2026-10-07T11:46:38.401458+00:00 |
 | 任务开工时间 | 2026-10-07T11:38:39Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | owner clock11:38:39实际开工，claim-take11:41:12随后提交 |
@@ -38,3 +38,5 @@
 | X01UP-04 | pending | db_transaction_owner | main/真实中心后继未验 |
 
 登记入口：docs/evidence/x01-upstream-upgrade/task-intake.json，待 OriginalLead 登记。架构：复用现 host/store API，无生产接口变化。
+
+2026-10-07T11:46:38.401458+00:00 固定source 5beb0bb95b77bd20c4d9bcf05297cbdee21abfa9；review-ready.json为唯一审查入口。4child已closed，0actual/待launch；独审未开始，main未接收。
