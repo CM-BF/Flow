@@ -1,0 +1,106 @@
+{
+  "taskId": "X01-REMOVAL-REFERENCES-CLIENT",
+  "observedAt": "2026-10-07T13:28:41.273991+00:00",
+  "main": "9f0fe5b2c096a49195ff8060d97584de235785d2",
+  "deliveryCommit": "f86bed0b991ffad88583630084fdbfa6f95d1a7b",
+  "productSource": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+  "mainReceipt": {
+    "path": "docs/evidence/i02/plugin-removal-and-management-intake/receipt.json",
+    "sha256": "e40dc870123fafc7a614b8f5095397f211fce043d714ac1f3e1e834bef0683f7",
+    "recordedAt": "2026-10-07T12:57:09.017220+00:00",
+    "originalState": "SCOPED_INTEGRATION_STAGED_NOT_MAIN",
+    "meaning": "Historical staged label retained verbatim; actual fixed main bytes independently equal all six rows."
+  },
+  "verifiedRows": [
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "path": "packages/client/src/index.ts",
+      "originCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "mode": "100644",
+      "blob": "045ef7a9f5fadc0587db63aa2bed6a30a6799b4e",
+      "bytes": 69246,
+      "sha256": "67ef6ca5902fa5fd4363b5b38db13ddb0e3ca664905cab6c4b1267c52a5850f1",
+      "preimageSha256": "061bab6f09d4f1f946ba8a2a5185faaf457bba7a06c2ce2241ed90a47a30ebba"
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "path": "packages/client/src/plugin-management.ts",
+      "originCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "mode": "100644",
+      "blob": "63e845baaa45ed9752437e9313b2cb0dde1f53e3",
+      "bytes": 10063,
+      "sha256": "d2d159444dfb9ef1cf491da8ab55ac7eee9432b8887e4f91b540ae13eb140f53",
+      "preimageSha256": "c301f1f5362f0d89ab60f103dc26c9dd6c7c60cef7fd2a58f6c0936fc04765e6"
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "path": "packages/client/src/plugin-removal-references.test.ts",
+      "originCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "mode": "100644",
+      "blob": "a32650a72939747520f6859a8d76f837e34218c0",
+      "bytes": 5540,
+      "sha256": "835df85a636678100b1e02031ac53d8d20674b4fb9f4c934e5c71215ee1e3b43",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "path": "apps/cli/src/index.ts",
+      "originCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "mode": "100644",
+      "blob": "cdad5cbf24a0d694942a38d51b2cee7b5d869767",
+      "bytes": 30134,
+      "sha256": "29db99392dfe37891c515a0b18e31c2520a88fd2afd45f33c1f0b187a9a8c249",
+      "preimageSha256": "efce68a183ac0867a1789cac3e02835f95549d691c5b3a7fb6057fd202866d93"
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "path": "apps/cli/src/plugin-removal-references.test.ts",
+      "originCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "mode": "100644",
+      "blob": "290feb46a461e9c22305a3d03eb70706b9cb2079",
+      "bytes": 2069,
+      "sha256": "217a64008d56f60487c6d42864e32139ff617ba1d84ec8ecdfd1c21ea657c596",
+      "preimageSha256": null
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "path": "docs/evidence/x01-removal-references-client/fixtures.ts",
+      "originCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+      "mode": "100644",
+      "blob": "3427f1531074e15db4b9004f42903cffb7163394",
+      "bytes": 1078,
+      "sha256": "3dd49737c7427d0e0819e20a3dcb237c565468b0f41b62ed35af5f8795df2335",
+      "preimageSha256": null
+    }
+  ],
+  "count": 6,
+  "bytes": 118130,
+  "backendContract": {
+    "path": "packages/contracts/src/plugin-removal.ts",
+    "sha256": "0e54615b4946bb3b1ef6a970ab6c332da0f3597512c44401e4d26eec7935b9bc",
+    "bytes": 1997,
+    "inMain": true
+  },
+  "combinationCheck": {
+    "source": "Original main intake receipt validation; owner did not rerun",
+    "exit": 0,
+    "milliseconds": 2932,
+    "scope": "focused strict combined integration",
+    "noPGChromeProviderRerun": true
+  },
+  "ownerActions": "Only main Git/hash verification and own metadata; no product/test/raw changes.",
+  "completion": {
+    "at": "2026-10-07T13:28:41.273991+00:00",
+    "scope": "X01RC-01/02/03 client+CLI read-only reference feature including review and main intake complete",
+    "notIncluded": "Deployment/physical removal/host-release permission/full X01"
+  },
+  "claimObservation": {
+    "id": "79284ebe-b7dc-4340-a9bb-ed939cb15ade",
+    "version": 1,
+    "state": "active",
+    "scopes": 7,
+    "source": "fresh list before archival"
+  },
+  "release": "After metadata commit/push and complete STOP; actual receipt external. Do not update this archive after release.",
+  "architecture": "Existing client/CLI query edge; Original/Web D06 responsible for main-based architecture view if needed; no view update claimed."
+}
