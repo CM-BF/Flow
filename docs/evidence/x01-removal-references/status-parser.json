@@ -2,13 +2,13 @@
   "errors": [],
   "human": {
     "delivery": {
-      "state": "implementation",
+      "state": "review",
       "source": "explicit"
     },
     "phase": "M2",
     "priority": 2,
-    "output": "查询真实用例及独立收尾证据已审，有限连接复核改进也已通过独审，新的验收准备已固定",
-    "next": "等待独立资源窗口验证完整收尾，再按真实证据受控接收；不复用旧窗口",
+    "output": "材料引用查询已完成真实数据库验收，正常收尾全部闭合，正在独立核对本次结果",
+    "next": "结果独审后受控接收引用查询，并供公共客户端展示保留原因",
     "blocker": {
       "state": "none",
       "text": ""
@@ -59,8 +59,8 @@
     }
   },
   "checks": {
-    "state": "failed",
-    "target": "5bd9ab34f08b64a8774ad1a05d83ca065a532ee3",
-    "record": "FAILED 5bd9ab34f08b64a8774ad1a05d83ca065a532ee3：PG1case passed但afterAll失败，callerUNKNOWN/KEEP；原local8/types0保持"
+    "state": "passed",
+    "target": "0b1e0d412c38c69b451951c4848e151ed6e2d3e7",
+    "record": "PASSED 0b1e0d412c38c69b451951c4848e151ed6e2d3e7：R2真实1selected1pass、suite成功/完整RETURN；R1失败历史保留；旧direct8与helper6不重跑"
   }
 }

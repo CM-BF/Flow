@@ -9,3 +9,5 @@ chatui01_owner / gpt-6-astra，2026-10-07T11:53:00Z；SOURCE_AND_LOCAL_RESULT_AN
 12:04:43 UTC：fixed951b40dc FAILED_RESULT_FIDELITY_AND_SEPARATE_CLEANUP_REVIEW_APPROVED，0P1/P2；真实case通过与原suite失败并存，独立cleanup闭合成立，不归因原连接。[正式收据](../../docs/evidence/x01-removal-references/removal-r1-review-approval.json)。新fixture有限等待delta另审，旧source/原始结果批准不扩大。
 
 12:09:17 UTC：source1424e7ea / packet4ff55672 CLEANUP_DELTA_SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2。[窄批准](../../docs/evidence/x01-removal-references/cleanup-fix-review-approval.json)。新真实teardown未验；R2仅namespace/binding准备，不由审查自动OPEN。
+
+2026-10-07T12:45:39.012721+00:00：R2 result 0b1e0d412c38c69b451951c4848e151ed6e2d3e7 已固定，1/1/suite成功及完整资源RETURN，结果忠实性独审PENDING。[唯一新入口](../../docs/evidence/x01-removal-references/removal-r2-review-ready.json)。原批准与失败边界分别保留。

@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-07T12:45:39.012721+00:00",
+  "task": "X01-REMOVAL-REFERENCES01",
+  "source": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+  "fixture": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+  "execution": "8060fdbf7c60df430ad10eac39e99ef8db3e8dfc",
+  "result": "0b1e0d412c38c69b451951c4848e151ed6e2d3e7",
+  "manifest": "docs/evidence/x01-removal-references/removal-r2-output-manifest.json",
+  "manifestSha256": "a5f6fad9eea4d2763ffe7b80b0952b245b211203ef9362d8be99216581f4dd86",
+  "state": "R2_PASSED_RESOURCE_RETURNED_RESULT_REVIEW_PENDING",
+  "selected": 1,
+  "passed": 1,
+  "suiteSuccess": true,
+  "actualCleanup": "owners/DB0conn normalDROP absence/listener closed/processgroups absent mergedEOF/TMPsameidentity removed exactENOENT; no retained runtime resources",
+  "oldR1": "Case1pass but suiteafterAllFAIL/callerUNKNOWN; separate cleanup RETURN; all unchanged",
+  "boundary": "Only registration-scoped material reference SQL/owner HTTP; synthetic installed metadata; not physical deletion/host release/npm/all-store reclamation/UI/main."
+}
