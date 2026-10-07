@@ -17,3 +17,5 @@ base main6fd214eb62f269167f6af4a8390850561dc0d01c；设计target 35cbad4a90920cb
 ## 审者结论
 
 P1/P2：UNKNOWN（尚未独审）。结论：PENDING。作者未自批准。
+
+派发事实：2026-10-07T14:40:12.757Z，一次followup_task未启动（agent thread limit reached）；没有独审结论，不把dispatch失败当设计缺陷或批准。

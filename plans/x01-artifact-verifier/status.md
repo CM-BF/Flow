@@ -50,3 +50,5 @@
 本status为唯一手填事实源。新任务聚合登记尚未确认，UNKNOWN/等待Execution Lead登记；不改共享registry。权威父X01-07继续open，不复制父TODO。设计需只读独审后由co-lead选择下一有价值片段，当前不授权实现或PG。
 
 固定入口：[design-review-ready.json](../../docs/evidence/x01-artifact-verifier/design-review-ready.json)。本包push后STOP/保留文档claim等待独审；不得开始产品实现。
+
+设计独审派发：2026-10-07T14:40:12.757Z，一次followup_task因agent thread limit reached未启动；不重试，review仍PENDING。仅归档此元数据后STOP/FINAL腾槽，完整任务未完成；见[review-dispatch.json](../../docs/evidence/x01-artifact-verifier/review-dispatch.json)。
