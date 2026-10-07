@@ -1,0 +1,81 @@
+{
+  "kind": "read-only-followup-research",
+  "observedAt": "2026-10-07T06:59:28.260162+00:00",
+  "sourceHead": "9f0e916d38f4615dd5f15103701d188c1f0e60ca",
+  "pins": [
+    {
+      "path": "apps/web/src/components/workspace/ai-elements/file-tree.tsx",
+      "bytes": 10452,
+      "sha256": "c0a0ee5299f2710500fc3bd8c29372565db20953d12fcbf11d30977fccb3e313",
+      "workingCopyMatches": true
+    },
+    {
+      "path": "apps/web/src/components/workspace/WorkspacePanels.tsx",
+      "bytes": 9167,
+      "sha256": "b52f33859f969c6b5751acf5c98d042a265562c168ab2c21107074ef33417861",
+      "workingCopyMatches": true
+    },
+    {
+      "path": "apps/web/src/components/workspace/panels.tsx",
+      "bytes": 6966,
+      "sha256": "5f97e8ba1f41eabf2b79e21957fd59f2d6567f7cc271d4d4431bb3f0c5c6f9b8",
+      "workingCopyMatches": true
+    },
+    {
+      "path": "apps/web/src/plugins/builtins/workspace.tsx",
+      "bytes": 4020,
+      "sha256": "abe905bffb768e260623eee35fa45db8de68f1c4cda264ea3eac401a98c00a3a",
+      "workingCopyMatches": true
+    },
+    {
+      "path": "docs/evidence/w01/workspace-panels/browser-checks.mjs",
+      "bytes": 11576,
+      "sha256": "93de7c4f263f6d10f0a1ce10f77d7992325c3acd6bb95cff1569c4878a493c8d",
+      "workingCopyMatches": true
+    }
+  ],
+  "requirement": "Existing WPF-REQ-10/12 and RS04 keyboard Files/Terminal; no new task or claim",
+  "skills": {
+    "method": "find-skills local-first reused existing assistant-ui/ai-elements, web-design-guidelines, clean-code/codebase-design; no install",
+    "aiElements": "/Users/citrine/.agents/skills/ai-elements/SKILL.md",
+    "review": "/Users/citrine/.agents/skills/web-design-guidelines/SKILL.md",
+    "cleanCode": "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+  },
+  "primarySource": {
+    "url": "https://www.w3.org/WAI/ARIA/apg/patterns/treeview/",
+    "retrieved": "2026-10-07",
+    "paraphrase": "Single-selection tree re-entry should target the selected node; focus and selection remain separate. Typeahead is recommended. Dynamic/virtualized nodes require truthful hierarchy positions."
+  },
+  "findings": [
+    {
+      "id": "files-reentry-focus",
+      "classification": "static source-supported followup; no current browser reproduction",
+      "trigger": "Open a reference detail, activate Files again, then Tab into the tree. WorkspaceFiles restores selectedPath and expands its real group, but fresh FileTree effect chooses activeElement or items[0], never selectedPath/aria-selected. The selected leaf can remain visually selected while the only tabstop is the first folder.",
+      "evidence": [
+        "file-tree.tsx useEffect selects document.activeElement or first visible item, deps expandedPaths/children",
+        "WorkspacePanels.tsx switches panel branches and passes layout.selectedPath to newly mounted WorkspaceFiles",
+        "panels.tsx initial expansion honors selected reference kind; it does not own focus restoration"
+      ],
+      "candidate": "Keep current roving-tabstop ownership. Prefer already focused visible item; otherwise resolve the selected visible node by exact data-path or aria-selected, falling back to a visible ancestor/first item. Do not automatically focus on every background update and do not trigger selection/onOpen while choosing tabstop.",
+      "verification": "Browser case: open second or later reference, return Files, Tab reaches that selected leaf with one tabstop and unchanged detail-read count; missing/hidden selected leaf falls back safely; arrow navigation changes focus without detail fetch. Check pointer selected folder, group remount, task/connection swap, keyboard activation and both themes."
+    },
+    {
+      "id": "files-plugin-actions-and-typeahead",
+      "classification": "future composable interaction acceptance, not evidence current shipped plugin failure",
+      "observation": "The adapted composable tree exports FileTreeActions with event stopPropagation; generic printable-key typeahead is absent. Built-in task references currently use six fixed groups and ordinary leaves, so a large arbitrary filesystem is not established by this UI.",
+      "candidate": "If adding actions/search for long real reference sets, preserve nested action keyboard semantics and bound typeahead to visible names; ignore modifier/composition/editable descendants and do not load details on focus. Avoid installing a new tree framework or conflating reference IDs with filesystem paths.",
+      "verification": "A contributed action receives Enter/Space without triggering parent selection; printable search only moves focus; labels are literal text; no eager read, no new arbitrary-path API."
+    }
+  ],
+  "notPerformed": [
+    "No Node/browser/PG/provider run",
+    "No working tree change",
+    "No claim/take, implementation dispatch or performance result",
+    "No new runtime deficiency assigned to the previous fixed delivery"
+  ],
+  "cleanCodeReview": {
+    "scope": "Current tree focus/selection responsibility and WorkspaceFiles/WorkspacePanels lifetime boundary",
+    "finding": "Focus restoration belongs in reusable adapted FileTree, while parent keeps task-scoped selected path. Avoid parent DOM queries or duplicate selected state.",
+    "changes": "None; queued evidence for original requirement after recovery priority."
+  }
+}

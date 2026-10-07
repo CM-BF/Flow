@@ -1,0 +1,39 @@
+{
+  "recordedAt": "2026-10-07T07:04:25.351953+00:00",
+  "state": "ACTUAL_FAILED_CLEANED_RETURNED_REVIEW_PENDING",
+  "actualStart": "2026-10-07T07:02:04.923806Z",
+  "actualEnd": "2026-10-07T07:02:16.032817+00:00",
+  "actualExit": 1,
+  "outerElapsedMs": 11108.86074998416,
+  "stdoutEof": true,
+  "stderrEof": true,
+  "workerSelected": {
+    "cookieRead": "PASS",
+    "createdTurnAckLoss": "PASS",
+    "otherGroups": "NOT_SELECTED",
+    "png": 0
+  },
+  "overall": "FAILED: parent Work deadline reached; worker2/2doesnotoverrideparent",
+  "cause": "Monitor retirement race is source candidate under root review, not asserted sole runtimecause.",
+  "newSegmentAccounting": {
+    "state": "SELECTED_FAILED_NOT_WHOLE_FEATURE",
+    "newSegmentPriorMs": 36096,
+    "outerElapsedMs": 11108.86074998416,
+    "lateParentMs": 10498.352375,
+    "serializedParentMs": 10488.9235,
+    "chargeMs": 11109,
+    "newSegmentSpentMs": 47205,
+    "newSegmentRemainingMs": 102795,
+    "oldClosedEnvelopeMs": 64134.08675,
+    "noRetry": true
+  },
+  "old90kClosed": 64134.08675,
+  "cleanup": "MarkedDBtwo0conn normalDROP/remaining[];fixturecomplete/provider0;parent7702/worker7722/Chrome7730processgroupsESRCH07:02:32.422463Z;scratchabsent;no additionalsignal/probe",
+  "adminEnvDeletion": "admin-env-deletion-receipt.json",
+  "credentialRead": false,
+  "rawDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recturn-20261007-070121-4aa406",
+  "outer": "/private/tmp/recovery-created-turn-parent-d3h8fotz",
+  "rawCount": 11,
+  "rawBytes": 27344,
+  "next": "C02sentinel next sharedPG; Webnoqueue/retrygate. Ownerparentlifecycle investigation scoped, no runtime."
+}

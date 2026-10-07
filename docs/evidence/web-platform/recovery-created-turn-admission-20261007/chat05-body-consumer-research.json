@@ -1,0 +1,82 @@
+{
+  "at": "2026-10-07T06:52:28.638390+00:00",
+  "author": "root / GPT-6 Astra Ultra",
+  "kind": "READ_ONLY_EXISTING_REQ43_TOOL_DETAIL_CONSUMER_HANDOFF",
+  "source": "f39a5dfea0a33ef55631cb7e29291deca6d4e0d2",
+  "scope": "Existing CHAT05/native activity detail followup; no new task/take and no Quick/Recovery edits. Original Lead reported public client signal/reader wiring is being prepared by original owner; consume its fixed reviewed interface, do not duplicate it.",
+  "facts": [
+    "New body contract has separate authorized task/activity descriptor and chunk pages; existing Web NativeActivityPort.readBody still returns legacy NativeActivity content and UI declares shortened remainder unavailable. New route existence alone is not host capability negotiation.",
+    "Each page holds at most four64KiB chunks. hasMore only means more chunks are currently received. A receiving descriptor may have hasMore=false and later acquire chunks; only complete proves full sealed material, not tool/task success.",
+    "Current Web loadBody caches a complete legacy body per ID and does not re-read if data exists. It validates displayed-page membership and uses per-pane generation/abort authority. Reusing this terminal cache branch for receiving data would freeze an incomplete result.",
+    "Current NativeBody pretty-prints complete JSON and renders one pre; projection structuredClones data. New8MiB bodies and16MiB attempt cap require a deliberate client/rendered-byte budget rather than assuming the old prefix display/cache has suitable cost."
+  ],
+  "consumerPlan": [
+    "Keep current Activity plugin and per-pane owner. Add new read authority only after reviewed public client interface and fixed compatible center/host opt-in. Legacy and redacted content retain their honest unavailable/no-content behavior.",
+    "On explicit disclosure, request descriptor before chunks; unopened/hidden/inactive views perform zero new reads. Keep legacy prefix usable, and expose saved full material only when descriptor actually supports it.",
+    "Bind every page to task/attempt/activity/protocol/representation/declared bytes+digest. Client reader owns base64, contiguous index/offset, chunk digest and final length/hash validation; Web consumes its typed result/stream rather than creating a second codec.",
+    "Use streaming UTF8 decoding or a final verified byte decode because chunk boundaries are byte offsets and may divide a multibyte character. An intermediate page is not independent JSON and must not be parsed as complete material.",
+    "When receiving reaches its current tail, display still receiving, not complete; resume only via an explicit refresh or existing bounded activity invalidation. interrupted retains partial data with incomplete integrity status; legacy cannot promise a recoverable tail.",
+    "Cancel or stop future page admission on collapse, row/page/center change, plugin disable and session invalidation; late completions cannot publish into a new lease. Preserve loaded authorized data according to the existing offline policy and bound both per-pane and connection retained bytes.",
+    "Avoid repeatedly joining/decoding/pretty-printing the full growing body on each chunk. Use bounded text presentation and a separate explicit full-material action if needed; measure time/memory before choosing a threshold, do not invent performance claims."
+  ],
+  "acceptanceForExistingFollowup": [
+    "0chunks before explicit disclosure; descriptor legacy/interrupted/receiving/complete each honest",
+    "receiving hasMorefalse then later new chunks; no premature completed cache",
+    "Unicode split across65536-byte boundary and pages; partial JSON and final full digest",
+    "wrong identity/gap/overlap/hash and stale generation rejected; bodycomplete independent oftool/taskoutcome",
+    "collapse/hidden/authloss stops new reads; repeated explicit access reuses verified immutable cache under bounded retained bytes",
+    ">2MiB controlled body journey with measured request/page/byte counts and dual-theme narrow keyboard disclosure; mockedclient, actualcenter and provider results separate"
+  ],
+  "limitations": [
+    "Research/source-only; no new service, browser, provider, test or implementation run",
+    "CHAT05PG3case actual result was reported by Lead and not rerun here",
+    "Production runtime/factory/client wiring remains next piece according to Lead; f39a route source alone is not product support"
+  ],
+  "skills": "Reused local find-skills, assistant-ui, codebase-design, clean-code; inspect fixed repo interfaces and current consumer; no install. Clean-code: one codec owner, one projection authority and explicit material-state transitions.",
+  "pins": [
+    {
+      "ref": "f39a5dfea0a33ef55631cb7e29291deca6d4e0d2",
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "bytes": 3091,
+      "sha256": "bc0545b5ddd1f1972a0370c556a627555ef78530b2e0dd08da3f5febf7894e4e"
+    },
+    {
+      "ref": "f39a5dfea0a33ef55631cb7e29291deca6d4e0d2",
+      "path": "apps/server/src/native-activity-body/read.ts",
+      "bytes": 3538,
+      "sha256": "0480c2fffda5c775c4c9fa20d9edbbfa6d13e05610f5bdbbbf458c31947ca288"
+    },
+    {
+      "ref": "f39a5dfea0a33ef55631cb7e29291deca6d4e0d2",
+      "path": "apps/server/src/native-activity-body/index.ts",
+      "bytes": 1914,
+      "sha256": "df6162150507f7754777bd0ce74862ec0cef20207b5f70e204a3c60ee61bd859"
+    },
+    {
+      "ref": "f39a5dfea0a33ef55631cb7e29291deca6d4e0d2",
+      "path": "docs/evidence/chat05p01/interface.md",
+      "bytes": 3230,
+      "sha256": "b8b5210625e1acc6c5315efd8c7bc0704e1f3bb93c1a61551fd4a43bda88263b"
+    },
+    {
+      "ref": "f39a5dfea0a33ef55631cb7e29291deca6d4e0d2",
+      "path": "apps/web/src/conversation-activity/native/projection.ts",
+      "bytes": 8153,
+      "sha256": "383539ceb5735626f2738576e30869eccf820d99d9133ed3076aa838f2b08231"
+    },
+    {
+      "ref": "f39a5dfea0a33ef55631cb7e29291deca6d4e0d2",
+      "path": "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+      "bytes": 5777,
+      "sha256": "3438c4dbd5c6cb6ab1c710db0a57126d7cc6644145b5a1957af1256ab0e9ca26"
+    },
+    {
+      "ref": "f39a5dfea0a33ef55631cb7e29291deca6d4e0d2",
+      "path": "apps/web/src/plugin-integration/activity.tsx",
+      "bytes": 9512,
+      "sha256": "8ad48a26e40bc4462221329fdfe9f1d922af3b21f7dfeaf664e1dd21ddfe6ed2"
+    }
+  ],
+  "projectWrites": 0,
+  "runtimeTests": 0
+}

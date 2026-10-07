@@ -1,0 +1,76 @@
+{
+  "at": "2026-10-07T07:02:45.205309+00:00",
+  "x01": {
+    "state": "ACTUAL_CLOSED",
+    "owner": "Mika/X01 originalowner",
+    "actualStart": "2026-10-07T06:58:40.476848Z",
+    "actualEnd": "2026-10-07T06:58:49.193344Z",
+    "earlyEstimatedStart": "06:58:32Z estimate superseded by exactraw receipt",
+    "toolExit": 0,
+    "callerMs": 8716.56,
+    "timeSeconds": 8.89,
+    "selected": 6,
+    "passed": 6,
+    "http": 107,
+    "tasks": 12,
+    "registrations": 7,
+    "cleanup": "markedDB OID1242229 owners/pool/admin closed,0conn normalDROP+absence;listeners53800/53814closed;90063/90064absent/mergedEOF;TMPsameinodeabsent;retained[]/signals[]/errors[]",
+    "provider": 0,
+    "chrome": 0,
+    "source": "Originalowner actualreceipt through root/Mika; manager didnotrerun/probe"
+  },
+  "recovery": {
+    "ownerHead": "81f22ee89544fe48b2bc6fc55c2340df0350970e",
+    "source": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
+    "claim": "6ff988b2 v4 active21",
+    "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+    "priorFirstCreate": "selected2/2PASS scoped/rootaccepted,allownedcleanup+exactenvdeleted; sealed81f22/remoteequal/clean",
+    "selection": {
+      "journey": "created-turn-ack-loss",
+      "requiredGroups": [
+        "cookieRead",
+        "createdTurnAckLoss"
+      ],
+      "originalFullSevenUnchanged": true,
+      "notSelected": [
+        "textIntentDraft",
+        "crossTabCas",
+        "sameKeyTurn",
+        "pageOnlyAuthLoss",
+        "csrfOffline",
+        "themes390",
+        "connectionChoice",
+        "createAckLoss",
+        "queueAckLoss"
+      ],
+      "selectedPassIsNotFullJourneyPass": true,
+      "fullFeatureReview": "IN_PROGRESS",
+      "singleAttemptOnly": true,
+      "otherNewJourneys": "create-ack-loss already scoped actualPASS; queue-ack-loss requires a later distinct fresh gate/attempt, not scheduled here"
+    },
+    "new150sSpentMs": 36096,
+    "new150sRemainingMs": 113904,
+    "gate": "/private/tmp/recovery-created-turn-admission-3l3mtu2g/gate.json",
+    "expiresAt": "2026-10-07T07:07:21.996382+00:00",
+    "nextAfterThisAttempt": "C02 ready nextPG; no secondRecovery reservation"
+  },
+  "quick": {
+    "ownerHead": "63457cab7ee5c2dae0e37735757764aba0a2f121",
+    "source": "2e71bea91c188c5f13723dace905fe429d83834b",
+    "state": "TYPEAHEAD_C_SOURCE_BOUNDARY_ACCEPTED_PREPARED_NOT_RUN",
+    "packet": "/private/tmp/msgquick-typeahead1",
+    "manifestSha256": "959b4f05118839f1d983539388677485ad112238e8b775dcb378aebf9dd7d041",
+    "review": "quick-typeahead-source-boundary-review.json",
+    "sourceMeaning": "OnlyC native m and static UTF8 prerequisite; originalA/B outcomes preserved. Rootexactparent74dc/worker53d6 accepted; no lifecyclechange or runtimePASS.",
+    "ownerReceipt": "normalpush local=remote/clean; no newenginechecks/browser",
+    "segmentSpentMs": 23322,
+    "segmentRemainingMs": 66678,
+    "gate": null,
+    "reservation": false,
+    "actualChrome": 0
+  },
+  "retainedC02Bytes": 33685504,
+  "managementOnly": true,
+  "newClaim": false,
+  "newProductRunByManager": false
+}

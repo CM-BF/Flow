@@ -107,3 +107,5 @@ Arc后继当前只读18literal方案已集中到[现有研究入口](../../docs/
 - 固定隔离材料至少>50会话，只有未加载页出现命中；覆盖同时间戳、连续翻页/刷新、快换query、切中心/项目、恶意/外来cursor与旧中心能力。记录真实请求数、响应bytes及局部延迟；有index不等低延迟承诺。
 
 [共享接口与精确路径候选](../../docs/evidence/web-platform/quick-b3-return-navigation-20261007/navigation-scope-candidates.json)仅用于协调原center/contract/Web writer。App/projection仍属Recovery，后继不借旧claim写入；未来fresh查重、独立树和精确take后实施，不新增大task/第二搜索状态源。当前恢复/模型设置验收优先；不要求等全部Web完成才协调共享接口。本文不授权真实用户服务扫描、全库预取、provider或运行。
+
+原REQ10/12、RS04键盘后继补[固定9f0e FileTree重入研究](../../docs/evidence/web-platform/recovery-created-turn-admission-20261007/filetree-reentry-research.json)：现roving重挂仅取active/首项而未采用保留selectedPath，为静态发现、尚无browser复现。候选由原可复用Tree恢复单一tabstop，父层保task选择身份；验选中项重入、唯一tabstop、无eagerdetail和插件action键盘边界。未take/实施、不新task，不阻Recovery/Quick。

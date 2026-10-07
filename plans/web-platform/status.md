@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T06:51:21.762339+00:00；Recovery首次建聊丢回执回归已通过并清理归还 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:04:25.351953+00:00；Recovery本次提交丢回执外层失败已清理归还，原件保留待窄审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,10 +21,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；架构图固定快照和连线显示修复已接入主线并提供新资产；几何与键盘验收通过，窄屏默认阅读体验留作后继。 |
-| 下一可用交付 | 首次建聊丢回执时保留请求、恢复草稿与原键重放已通过定向页面回归；继续准备后续提交及排队丢回执验证。逐消息设置的原生键盘问题保持明确诊断状态，不重复相同试跑。 |
+| 下一可用交付 | 首次建聊丢回执恢复已通过定向页面回归；后续提交场景断言通过但外层监督失败，先完成窄审与必要修复。逐消息设置的新键盘前提已完成源码审查，待独立页面验证。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Recovery本次自有数据库与浏览器已清理，临时凭据已删除；本组无PG或Chrome占用、无后继gate或预约，C02失败外层证据继续保留。 |
+| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Recovery本次自有专库、浏览器和临时凭据均已清理；本组无PG/Chrome占用或新gate。下一共享PG交C02 fresh准入，旧失败外层证据字节保留。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -163,3 +163,5 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 本次当前摘要按既有NONE/ACTIVE合同校准，[三份父status实际元数据解析](../../docs/evidence/web-platform/checkpoint-0400-20261007/parent-human-parser.json)均errors=[]、human.complete=true/missing=[]；不是产品检查或新页面采样。
 
 [原D01架构图窄屏阅读后继](../../docs/evidence/web-platform/d06-second-actual-20261007/narrow-reading-followup.json)pending/未take：现五图通过限定几何、键盘与来源下钻，不等于42%默认缩放的文字已经可读；不阻本组合主线接收。
+
+本次正常协调：[created-turn一次准入与当前准备](../../docs/evidence/web-platform/recovery-created-turn-admission-20261007/current.json)仅索引原owner状态/实际领取，不建第二业务进度。原REQ43的[工具大正文消费研究](../../docs/evidence/web-platform/recovery-created-turn-admission-20261007/chat05-body-consumer-research.json)与REQ10/12的[文件树重入研究](../../docs/evidence/web-platform/recovery-created-turn-admission-20261007/filetree-reentry-research.json)只补原后继验收，未take/实现/运行。

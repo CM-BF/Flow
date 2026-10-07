@@ -1,14 +1,18 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T06:49:34.031251+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T07:02:45.205309+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 ## 当前窗口与用户交付
 
 **Recovery首次建聊丢回执回归已通过所选两项，资源与凭据均已清理归还。** [实际回执](recovery-create-admission-20261007/return.json)保06:49:07.389289–06:49:18.895676Z outerexit0/双EOF，cookieRead+createAckLoss2/2；无PNG、其余旅程NOT_SELECTED，不代表完整feature通过。markedDB两次零连接正常DROP/absence，三个owned组与scratch于06:49:42.424455Z确认absent；[adminenv按exact身份删除](recovery-create-admission-20261007/admin-env-deletion-receipt.json)于06:50:28.462836Z完成，未读值。保守charge11507，新150s已耗36096/余113904，旧90封套不变。原[handoff](recovery-create-admission-20261007/handoff.json)已消费，不继承新窗口；[root独立actual审查](recovery-create-admission-20261007/root-create-ack-actual-review.json)已接受selected2/2与清理，非完整feature。
 
-C02前次5/6整组FAIL的自有DB/组已归还，outerKEEP仍保32MiB+128KiB，不冒所有字节已删。本组无PG/Chrome holder、无新gate/预约；原owner下一created-turn-ACK仅准备；Mika X01已ready并fresh准入180s唯一PG，实际start尚未收到，Recovery排其actualreturn后，不预建env/gate。manager没有启动产品或重复旧full7。
+X01精确06:58:40.476848–06:58:49.193344Z完成6/6并清理；原估计时刻仅历史。Recovery随后[created-turn本次实际](recovery-created-turn-admission-20261007/return.json)07:02:04.923806–07:02:16.032817Z **overallFAILED/outerexit1**：worker cookieRead+createdTurnAckLoss2/2断言通过，但parent报Work deadline reached，不以局部PASS覆盖外层失败。charge11109，新150s spent47205/余102795；旧90封套与原失败不动。markedDB两次零连接正常DROP/absence，fixturecomplete，三个owned组与scratch已清理；[临时env按exact身份删除](recovery-created-turn-admission-20261007/admin-env-deletion-receipt.json)，未读值。
 
-Quick sourcea9/metadata9b01已由原owner正常封存、双端clean；native3真实INCONCLUSIVE/rootd4e3接受清理，23,322ms已耗/66,678ms余，没有第四gate。结构化等待表使用原真实事件，历史UNKNOWN未倒填。[新typeahead只读研究](recovery-create-admission-20261007/root-native-typeahead-research.json)只提出不同plainC前提；上游current源码不等精确154行为实证，不改旧A/B结论、不增加headful/flags或synthetic/value注入。现为后继方案，未实施/未运行，不争Recovery当前窗口。
+本组当前0PG/Chrome、无新gate/预约，下一共享PG给C02 sentinel原owner fresh准入，未报actualRUN；C02旧outerKEEP仍留32MiB+128KiB，不冒字节已删。Recovery仅等待parent生命周期窄审/原owner同scope源修，不创建Queue或重跑gate；firstCREATE/full7/choice历史限定PASS不回滚。本次结果与功能进度仍以原owner唯一status为准。
+
+Quick现source2e71/metadata63457由原owner正常push、双端clean；[C源码与精确native边界审查](recovery-created-turn-admission-20261007/quick-typeahead-source-boundary-review.json)已接受，typeahead1只PREPARED/no gate。原native3 INCONCLUSIVE、23,322ms已耗/66,678ms余和全部失败保持；新C并非同A/B重复，不把静态UTF8修复当已复现根因或运行通过。Recovery自有Chrome已实际清理，Quick可按ready队列ordinaryfresh独立准入；当前仍无gate。
+
+[CHAT05大正文consumer研究](recovery-created-turn-admission-20261007/chat05-body-consumer-research.json)归REQ43：receiving尾页不是complete，复用原授权client解码/authority与展开惰性读取，UTF8跨块和pane字节界限待原接口冻结后实现。[文件树重入研究](recovery-created-turn-admission-20261007/filetree-reentry-research.json)归REQ10/12、RS04，静态发现不冒browser复现。均未新take，不抢Recovery/Quick。
 
 **已完成子集：Recovery原七组实际通过、限定结果独审已接受，自有资源已清理并归还。** [实际回执](recovery-full-return-20261007/return.json)保05:52:11.626281–05:52:24.761068Z、exit0/双EOF、7/7与双390图；markedDB正常0连接/DROP/absence、两owned组与scratch absent、fixture清理完成/provider0。[adminenv按exact身份已删除](recovery-full-return-20261007/admin-env-deletion-receipt.json)，未读值。保守新段记13134ms/剩136866，旧64134.08675及五次失败全部保持；[root一次结果独审](recovery-full-return-20261007/root-full7-actual-review.json)无finding，完整feature仍有未验覆盖。该运行的holder/gate已消费；S01后续亦实际归还，此段仅保历史通过范围，当前调度见页首。
 

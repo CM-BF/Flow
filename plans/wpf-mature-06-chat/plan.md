@@ -135,3 +135,7 @@ Root已接收完整envelope候选并批准用于实现：128KiB初始record连sl
 本轮恢复列表可读性输入（U18，原TODO后继）：[GO实际观察及验收来源](../../docs/evidence/web-platform/quick-native1-recovery-review-20261007/incoming.json)指出UUID、工程收据及长UTC抢占主层。使用可读标题/摘要、Intl本地时间与紧凑层级，精确身份/UTC保留下钻；仅授权轻metadata或诚实fallback，不为title预取正文。No text不是重复/可删除证据，文件、知识、intent、unknown及原请求保持，不自动合并删除重发。沿既有web-design-guidelines/Arc方向，未take/未实施，不阻原full7限定结果。
 
 C02接口后继仅只读准备：见[固定消费接缝](../../docs/evidence/web-platform/quick-native1-recovery-review-20261007/c02-web-consumer-seams.json)。已main公开patch-v2与未main原生conversation/catalog候选分开；Host和channel映射须显式协调原owner/scope，复用官方Thread reasoning与共享projection，不全改HTTP头把reasoning冒正文，不新registry/轮询。Recovery finalintake按3client+session factory1重数，不抢现21scope。
+
+原REQ43工具详情后继补[固定f39a大正文消费研究](../../docs/evidence/web-platform/recovery-created-turn-admission-20261007/chat05-body-consumer-research.json)：复用descriptor/chunks与原client decoder/authority；receiving的hasMore=false不是complete，禁止套用旧terminal bodycache。仅主动展开读，跨64KiB块保UTF8解码与绑定身份；collapse/切中心/撤权停止后续页，迟到租约不发布。对pane/connection累计bytes设界限，不反复clone/prettyprint增长的8MiB全文；用>2MiB受控材料记录实际request/pages/bytes，clientmock与真实center/provider验收分开。固定7源只读、未take/实施/运行，原runtime/client owner冻结接口后精确协调，不建第二codec或新task。
+
+GO经root新转述的同REQ43/C02后继要求（非用户逐字、未实施）：默认折叠须同时惰性传输reasoning正文，展开前网络正文零字节，不能仅CSS隐藏；metadata和普通text仍持续交付。冻结final/cursor、历史后展开、v1兼容与累计cache界限，保持身份/授权/撤权与真实终态。此前e394仅视觉折叠研究，不冒网络惰性完成；跨层接口只读研究待原co-lead供给，后续精确scope协调，不抢Recovery/App或另建流状态。
