@@ -1,0 +1,76 @@
+{
+  "lead": "mika",
+  "stage": "AV03_VERIFIER_CLAIM_PG",
+  "state": "OPEN",
+  "claim": {
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/runner/src/admission-journal.ts",
+      "apps/runner/src/admission-verifier-claim.test.ts",
+      "apps/runner/src/plugins/host.ts",
+      "apps/runner/src/plugins/verifier.test.ts",
+      "apps/server/src/plugin-runtime/claim.ts",
+      "apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "apps/server/src/runner-claim-receipts.test.ts",
+      "apps/server/src/runner-claim-receipts.ts",
+      "apps/server/src/runner-claim-routes.test.ts",
+      "apps/server/src/runner-claim-routes.ts",
+      "apps/server/src/runners.ts",
+      "docs/evidence/x01-artifact-verifier",
+      "packages/client/src/plugin-runner.test.ts",
+      "packages/client/src/plugin-runner.ts",
+      "packages/contracts/src/plugin-verification-binding.ts",
+      "packages/contracts/src/plugin-verification.test.ts",
+      "packages/contracts/src/plugin-verification.ts",
+      "packages/contracts/src/verifier-runner-claim.test.ts",
+      "packages/contracts/src/verifier-runner-claim.ts",
+      "packages/plugin-runtime/src/json-object-verifier.test.ts",
+      "packages/plugin-runtime/src/json-object-verifier.ts",
+      "packages/plugin-runtime/src/package-store.test.ts",
+      "packages/plugin-runtime/src/package-store.ts",
+      "packages/storage/migrations/036-plugin-verification-bindings.sql",
+      "plans/x01-artifact-verifier"
+    ],
+    "state": "active",
+    "branch": "codex/plugin-artifact-verifier",
+    "origin": "new",
+    "taskId": "X01-ARTIFACT-VERIFIER01",
+    "worker": "architecture_read",
+    "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+    "version": 6,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+    "createdAt": "2026-10-07T14:30:38.019Z",
+    "updatedAt": "2026-10-07T20:32:43.180Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "ledgerObservedAt": "2026-10-07T22:05:50.888Z",
+  "head": "7620f18405d13d0dae47ab6b9b38ebd2496b85bc",
+  "window": "ebeebd4216f74fef9b382040492ac486",
+  "manifestSha256": "b9456699e3268e89f2ce01e0f03bf3c1011d1f1161ab95efacb582ed938a69e2",
+  "pairedBytes": 15848833024,
+  "availableBytes": 18170241024,
+  "floorBytes": 17091395584,
+  "pgPreflight": {
+    "maximum": 100,
+    "reserved": 3,
+    "used": 6,
+    "available": 91,
+    "poolClosed": true
+  },
+  "grant": {
+    "at": "2026-10-07T22:03:42.109Z",
+    "latestStart": "2026-10-07T22:07:42.109Z",
+    "logicalId": "AV03-VERIFIER-CLAIM-PG-R2-20261007-ONCE"
+  },
+  "rootIdentity": {
+    "dev": 16777234,
+    "ino": 124222317
+  },
+  "evidenceIdentity": {
+    "dev": 16777234,
+    "ino": 124353132
+  }
+}

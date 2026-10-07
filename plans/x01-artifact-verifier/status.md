@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:43:02.889Z / AV02 e271与journal b791已main；center未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:07:53.362Z / AV02 e271与journal b791已main；center未集成 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -15,19 +15,19 @@
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
 | 工作树dirty状态 | 所有产品/用例冻结；本轮资源helper副本与binding已审，metadata提交push后clean STOP |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN 10bd0219f84c34008a0255bfed282052a91bce7c：R2仅静态批准，0新types/collect/PG；R1 FAILED/0selected5skipped及原raw保持 |
+| 检查状态 | FAILED 10bd0219f84c34008a0255bfed282052a91bce7c：R2真实5选0过5失败，资源完整归还；原R1失败独立保留 |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
 | 实现目标 | ea3c4599b00505c950cc34ada8a350082fe76747（center局部已审，真实PG R1准备数据失败；未获得真实矩阵通过） |
 | 实现范围 | apps/server/src/index.ts,apps/server/src/plugin-runtime/claim.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/runner-claim-receipts.ts,apps/server/src/runner-claim-routes.test.ts,apps/server/src/runner-claim-routes.ts,apps/server/src/runners.ts,packages/client/src/plugin-runner.test.ts,packages/client/src/plugin-runner.ts,packages/contracts/src/plugin-verification-binding.ts,packages/contracts/src/verifier-runner-claim.test.ts,packages/contracts/src/verifier-runner-claim.ts,packages/storage/migrations/036-plugin-verification-bindings.sql |
 | 阶段 | M2 |
 | 优先级 | 5 |
 | 本片段交付阶段 | review |
-| 当前产出 | 数据库验收配方的清理安全问题已修复并通过独审，五项真实验收仍未运行 |
-| 下一可用交付 | 在新的独立窗口完成五项数据库验收 |
-| 当前阻塞 | ACTIVE: 等待独立数据库验证窗口，中心领取片尚缺五项真实验收通过证据 |
+| 当前产出 | 五项数据库验收已执行但未通过，全部自有资源已关闭，失败原件已封存 |
+| 下一可用交付 | 修复首项数据库错误及后续用例失去服务地址的问题，再完成独立验收 |
+| 当前阻塞 | ACTIVE: 数据库迁移验收失败，中心领取片与后继受理片尚不能集成 |
 | 需用户决定 | NONE |
-| Review | SOURCE_DELTA_APPROVED 10bd0219f84c34008a0255bfed282052a91bce7c，2026-10-07T18:37:13.000Z/0P1P2；R1失败忠实性18:30:02批准；R2真实PG未运行 |
-| Claim | a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25；fresh21:33:32.045Z核；server/index及verification/execution四叶已STOP交权，其余保留 |
+| Review | R2 FAILED_RESULT_FIDELITY_REVIEW_PENDING；既有source/helper批准保留，未将准备批准转作实际通过 |
+| Claim | a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25；actual前fresh全账本核身份/无重叠；已移出leaf继续STOP |
 | 架构影响 | 同一claim/receipt显式v4与036来源引用；R1仅启动pre036中心后准备数据失败，动态SQL矩阵未实证。主线图更新待本片接收。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -176,3 +176,9 @@ R2独立namespace av03-verifier-claim-pg-run-r2；仅candidate，NOT_OPEN/NOT_RU
 2026-10-07T21:36:30.468Z cleanup guard修复中：当前R2暂NOT_READY/NOT_OPEN，继承helper root-swap P2由parent canonical修复，4纯FS通过待独审；本树仅精确副本和caller SHA更新，原R1/历史manifest/raw不改。旧READY归档pre-root-guard文件，待独审和新binding闭合才恢复CLOSED候选。
 
 2026-10-07T21:43:02.889Z：helper canonical1d85/result0b9a 4/4纯FS获b01 21:36:02批准；本树b023/ab15两row副本/binding于21:41:41独审APPROVED0P1P2。R2恢复READY_CLOSED，仍NOT_OPEN/NOT_RUN；281中2变279原样，191external/16links原样，原R1失败及旧manifest/f44完整archive不改。固定入口av03-pg/r2-ready.json；原pendingmanifest是历史审前快照，由root-guard-approval单独补充，不覆盖原件。当前0child/PG/待launch。
+
+## R2 唯一实际运行及归还
+
+2026-10-07T22:07:53.362Z：执行HEAD7620，22:05:50.907Z启动、22:05:54.764Z exit1；5 selected/0 passed/5 failed，0 skipped。首例期待23514但实际JSON语法错误，后四例/api/runners基址为空。原281pins/191external/16links/34SQL紧前核符，执行后281输入零变化；rootguard只证安全清理，不把失败改绿。准入floor17,091,395,584/free18,170,241,024，PG available91且预检poolclosed；全部旧KEEP保留。22:06:17.330Z FULL_RETURN：三组精确ESRCH/EOF、OID1358596同owner/marker/0conn普通DROP+absence、50370关闭、同inodeTMP删除及exactENOENT。
+
+证据[result-summary-r2.json](../../docs/evidence/x01-artifact-verifier/av03-pg/result-summary-r2.json)。结果忠实性待独审，未修改产品/fixture/旧raw；R2窗口已消费，禁止自动重试。AV03/04及X01完整目标仍OPEN，VAR前置未满足。原等待窗口至actualSTART关闭；新的等待是受影响源码修复与后继独立验证，不相加重叠事件。当前0actual/0待launch，本次仅原件封存与status/review，自然收口后STOP。

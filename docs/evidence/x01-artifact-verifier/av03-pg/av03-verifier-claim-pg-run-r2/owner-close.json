@@ -1,0 +1,101 @@
+{
+  "at": "2026-10-07T22:07:53.312Z",
+  "firstExactAbsenceObservation": "2026-10-07T22:06:17.330Z",
+  "state": "FULL_RETURN",
+  "groups": [
+    {
+      "id": 17676,
+      "pidState": "ESRCH",
+      "pgidState": "ESRCH"
+    },
+    {
+      "id": 17808,
+      "pidState": "ESRCH",
+      "pgidState": "ESRCH"
+    },
+    {
+      "id": 17844,
+      "pidState": "ESRCH",
+      "pgidState": "ESRCH"
+    }
+  ],
+  "listener": {
+    "port": 50370,
+    "connectResult": 61,
+    "closedByFixture": true
+  },
+  "temporary": {
+    "path": "/private/tmp/flow-x01-pg-bcvevb1x",
+    "dev": 16777234,
+    "ino": 124590843,
+    "removed": true,
+    "sampleBytes": 7559,
+    "sampleEntries": 14,
+    "exactLstat": "ENOENT"
+  },
+  "database": {
+    "owners": {
+      "startup": true,
+      "server": true
+    },
+    "ownersClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "createRequested": true,
+    "createAcknowledged": true,
+    "creationReceiptSaved": true,
+    "identity": {
+      "oid": "1358596",
+      "owner": "flow",
+      "marker": "x01:ebeebd4216f74fef9b382040492ac486:runtime:2ebcbfc6-7f32-488e-b50e-464f76e3bf8a"
+    },
+    "identityConfirmed": true,
+    "connections": 0,
+    "dropRequested": true,
+    "dropAcknowledged": true,
+    "databaseAbsent": true,
+    "connectionObservations": [
+      {
+        "at": "2026-10-07T22:05:54.685Z",
+        "connections": 0
+      }
+    ]
+  },
+  "outerFilesArchivedAndRemoved": [
+    {
+      "path": "/tmp/flow-av03-pg-r2-ebeebd4216f74fef9b382040492ac486-tool.json",
+      "archived": "tool-result.json",
+      "dev": 16777234,
+      "ino": 124591095,
+      "bytes": 876,
+      "sha256": "e9e28e935725f02416eef756fe58e91dace0d8e3acf698c5ff75469cfac4bce2"
+    },
+    {
+      "path": "/tmp/flow-av03-pg-r2-ebeebd4216f74fef9b382040492ac486.stdout",
+      "archived": "tool-stdout.log",
+      "dev": 16777234,
+      "ino": 124590835,
+      "bytes": 550,
+      "sha256": "2507c9ef1e921b7256c4edd516bf2dded6b9d0836ed4b172db389528dcf2be2a"
+    },
+    {
+      "path": "/tmp/flow-av03-pg-r2-ebeebd4216f74fef9b382040492ac486.stderr",
+      "archived": "tool-stderr.log",
+      "dev": 16777234,
+      "ino": 124590836,
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/tmp/flow-av03-pg-r2-ebeebd4216f74fef9b382040492ac486-admission.json",
+      "archived": "admission.json",
+      "dev": 16777234,
+      "ino": 124590834,
+      "bytes": 2752,
+      "sha256": "012e7add249d6c310d116c3e81240d8bb453ff57ef1b39f07dabc21ec190577d"
+    }
+  ],
+  "actualRetry": false,
+  "retained": [],
+  "note": "No extra database connection was opened for owner close; database identity, zero connections, ordinary DROP ACK and absence use fixed fixture receipts. Initial EPERM observations retained; ended sample is not peak."
+}

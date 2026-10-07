@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-07T22:07:53.362Z",
+  "state": "FAILED_RESULT_REVIEW_PENDING",
+  "source": "10bd0219f84c34008a0255bfed282052a91bce7c",
+  "centerSource": "ea3c4599b00505c950cc34ada8a350082fe76747",
+  "executionHead": "7620f18405d13d0dae47ab6b9b38ebd2496b85bc",
+  "manifest": "pg-isolated-manifest-r2.json",
+  "manifestSha256": "b9456699e3268e89f2ce01e0f03bf3c1011d1f1161ab95efacb582ed938a69e2",
+  "preparedInputs": 281,
+  "preparedChanged": [],
+  "external": 191,
+  "links": 16,
+  "sql": 34,
+  "actualStartedAt": "2026-10-07T22:05:50.907Z",
+  "terminalAt": "2026-10-07T22:05:54.764Z",
+  "fullReturnedAt": "2026-10-07T22:06:17.330Z",
+  "outerExit": 1,
+  "selected": 5,
+  "passed": 0,
+  "failedAssertions": 5,
+  "skipped": 0,
+  "suiteFailed": 2,
+  "callerState": "FAILED",
+  "callerUnknown": false,
+  "completeAccounting": true,
+  "resources": "FULL_RETURN; no retained DB/TMP/listener/groups",
+  "observedFailure": {
+    "first": "Expected23514 but received invalid input syntax for type json at verification-pg.test.ts:126",
+    "remainingFour": "Failed to parse URL from /api/runners after first case closed baseline server; exact source cause not resolved in this metadata segment"
+  },
+  "httpRequests": 9,
+  "responseBytes": 2908,
+  "scope": "Five selected assertions failed; no positive036/mixed/v4 acceptance. No source edits or retries.",
+  "times": {
+    "outerWallSeconds": 3.857749249902554,
+    "callerBeforePersistenceSeconds": 3.7892406249884516,
+    "callerAfterPersistenceSeconds": 3.7895583329955116,
+    "supervisorMilliseconds": 3676
+  },
+  "unknowns": [
+    "Initial EPERM preserved",
+    "Physical DB/WAL peak UNKNOWN",
+    "TMP end sample not peak"
+  ],
+  "next": "Bounded diagnosis and authorized repair required; new actual grant needed. AV/VAR dependencies remain unmet.",
+  "skills": "Existing local find-skills/codebase-design/clean-code applied: failure classification, sole lifecycle authority, immutable history, exact ownership and bounded evidence; no new framework/install."
+}
