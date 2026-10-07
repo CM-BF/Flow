@@ -2,10 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T08:11:42.367020+00:00 |
+| 最近更新 | 2026-10-07T08:16:04.533131+00:00 |
 | 任务开工时间 | 2026-10-07T07:19:18Z |
 | 分支交付时间 | 2026-10-07T07:35:58.005114+00:00 |
-| 独立审查时间 | 2026-10-07T07:47:03Z（core限定复审） |
+| 独立审查时间 | 2026-10-07T08:13:23Z（结果）；core07:47:03Z/准备08:07:26Z |
 | 主线集成时间 | UNKNOWN |
 | 部署时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -19,15 +19,15 @@
 | Branch | codex/lazy-reasoning-reads |
 | Base | 9816e87a7690d7d36ac25cb8537bc9c8f41364c8 |
 | HEAD | 60db06152a21c44d73bcc46be3cb785b4aa438b2 source；后继证据metadata HEAD由Git读取 |
-| 工作分支状态 | in-review |
+| 工作分支状态 | ready-for-integration |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | review |
-| 当前产出 | 共享核心和真实HTTP已验证默认不传推理正文、展开后仅新增量；可选推理不会阻塞正文。公开客户端和界面尚待接线。 |
-| 下一可用交付 | 完成真实HTTP结果独审并交主线接收核心；接续公开客户端和界面消费。 |
-| 当前阻塞 | 真实HTTP两例通过待结果独审；公开客户端仍待CHAT05P02正式交接。 |
+| 本片段交付阶段 | integration |
+| 当前产出 | 共享核心与真实HTTP验收已独审通过：默认不传推理正文，展开后读取新增量，推理读取不阻塞正文；当前可接收核心。 |
+| 下一可用交付 | 主线接收已审核心，再经正式交权接入公开客户端与界面。 |
+| 当前阻塞 | 核心接收无阻塞；后继公开客户端须等现owner正式交回范围。 |
 | 需用户决定 | NONE |
-| Review | 60db/5e8生命周期P2 CLOSED，0P1/P2；PG准备08:07:26两P2 CLOSED；R1实际2/2结果待独审 |
+| Review | 60db/5e8生命周期P2 CLOSED，0P1/P2；core/准备P2均CLOSED；R1结果08:13:23独审APPROVED/0P1P2 |
 | 检查 | 原14/14+strict0保留；P2新2red→4定向pass/strict0，0PG/HTTP/browser/provider/native/install |
 | main | NOT_INTEGRATED |
 | 实现目标 | 60db06152a21c44d73bcc46be3cb785b4aa438b2 |
@@ -54,3 +54,5 @@ PG窄修 2026-10-07T08:02:45.955507+00:00：原fcc/7f4两P2保留，独立fixtur
 2026-10-07T08:09:02.552078+00:00：Mika正式授予唯一MATURE06-LAZY01-PG-20261007-R1（原90s/2case预算），Web实际归还且其它known队仅metadata。本状态尚非运行通过；先clean execution HEAD/claimv3、固定pg-input-v2/10absent输出、freshfloor4463788032+实际配对余量再启动。独审回执pg-fix-review-receipt.json；窗口从未实际消费，不重跑历史检查。
 
 R1实际完成 2026-10-07T08:11:42.367020+00:00：execution3a293dc4；实际08:09:52→工具08:09:56 exit0。2selected/2pass/0fail/0pending，38HTTP；七默认decoded响应reasoning正文0B，首次展开22B/后续新增7B；不冒TCP总字节。time-p3.60s、caller含receipt3.492456s、秒级tool包围≤5s分列。专库OID/marker确认、0conn普通DROP/absence，app/pool/admin闭合；PID2662 exit0/groupabsent/mergedEOF；TMP精确缺失。实际PG已及时归还，0当前holder/待launch。原14、修后4与本2各自target，不汇总为新全套。result入口pg-result-ready.md；main与FlowClient/Web消费仍待交接，等待聚合器登记展示。
+
+2026-10-07T08:16:04.533131+00:00正式收口：canonical docs/evidence/mature06-lazy-reasoning/integration-ready.md/json；精确九leaf最终60db与独立PGtest f1fce已绑定。freshmainc5dbdb712e4fae078ddd4bbdbc51c653d77a3192clean/origin且六product baseline未漂移；本片integration待真实intake，main/deploy/整个task完成仍UNKNOWN/NOT_COMPLETED。结果2/2与decoded口径/全部actualcleanup原件冻结。claimv3/12保留，client/index(P02v4)及assistant-stream.test(C02v16)无移交，0消费者写入。等待聚合器登记展示；0新工程运行。

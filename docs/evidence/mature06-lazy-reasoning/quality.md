@@ -30,3 +30,6 @@ Pending: independent source/local review, actual HTTP zero-default-body evidence
 
 ## Actual R1 safe point 2026-10-07T08:11:42.367020+00:00
 沿同技能复核真实输入与职责：claimv3/12、244source/config/31SQL、19existing dependencies、10outputabsent与cleanexecution3a293dc4后仅一次启动。pairedX01完整1052672B在spawn前计入4466937856floor，free24162050048B；不事后回填门槛。实际2/2/38HTTP，所有既有fixture身份/普通DROP与OPS14close/EOF/TMP确认均成功。没有fullsuite/新provider/API重试。decoded默认7响应只证明此fixture0reasoning正文，elapsed/RSS/PG-WALpeak不外推性能。budget原90s/32MiB/1MiB/DBWAL128MiB未改，actual所有11结果文件11151B含tool记录，采样138B非峰值。实际窗口已归还后才做离线metadata，不将其冒充运行wall。
+
+## Integration safe point 2026-10-07T08:16:04.533131+00:00
+只读核当前mainc5dbdb712e4fae078ddd4bbdbc51c653d77a3192=origin clean，六leaf base未漂移；fresh claimv3/12有效。九final core leaf、独立newPGfixture、必要证据分别列清，拒绝整树/helper覆盖。clean-code/codebase-design复核职责不变：metadata/正文就绪分开，selection/read生命周期独立，sharedtransport和Webhost留唯一owner；未知移交不写。0工程child/PG，本段只metadata。实际独审08:13:23归档，主线/部署/完整task依真实receipt不猜。
