@@ -1,6 +1,6 @@
 {
   "recordedAt": "2026-10-07T07:09:24.952958+00:00",
-  "state": "SOURCE_APPROVED_SENTINEL_RESULT_REVIEW_PENDING",
+  "state": "READY_FOR_CONTROLLED_MAIN_INTAKE",
   "owner": "chatui01_owner",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity",
   "branch": "codex/codex-conversation-continuity",
@@ -310,10 +310,25 @@
       "selected": 1,
       "passed": 1,
       "unselected": 5,
-      "result": "PASS/newresourcesclosed; result-review pending"
+      "result": "PASS/currentresourcesclosed; db07:11:38 result fidelity APPROVED"
     }
   ],
   "acceptance": "Six distinct behaviors have passing observations across two actual runs; never relabel prior suite6/6. Real PG/HTTP with injected transport proves conversation workflow, not actual Codex/provider/UI.",
   "mainValidation": "Use main current direct consumers/root types for actual integration. Do not rerun old PG merely for metadata; dynamic SQL/035 evidence already fixed per two runs.",
-  "handoff": "After result review and actual main receipt: stop client/contracts index writes, atomic amend removal, then CHAT05/X01 ready-first own take. Current claim retained; no automatic handoff from this file."
+  "handoff": "After result review and actual main receipt: stop client/contracts index writes, atomic amend removal, then CHAT05/X01 ready-first own take. Current claim retained; no automatic handoff from this file.",
+  "readyAt": "2026-10-07T07:14:53.275451+00:00",
+  "finalResultReview": {
+    "path": "docs/evidence/mature02c02/conversation-pg-sentinel-result-review.json",
+    "reviewer": "db_transaction_owner",
+    "at": "2026-10-07T07:11:38Z",
+    "decision": "APPROVED",
+    "P1": 0,
+    "P2": 0
+  },
+  "claimNow": {
+    "version": 14,
+    "scopes": 69,
+    "exchangeHandbackReceipt": "docs/evidence/mature02c02/exchange-handback-receipt.json",
+    "sentinelRuntimeVersion": 13
+  }
 }

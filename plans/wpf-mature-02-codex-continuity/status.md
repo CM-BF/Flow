@@ -7,27 +7,27 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:07:15.527977+00:00；本次实际sentinel收尾，旧main5cae7a25沿固定receipt。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:14:53.275451+00:00；本次fresh8ee/origin clean及v13/71，随后原子移交至v14/69；main接收尚待。 |
 | 阶段 | M2 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次实际开工缺独立明确时点，不用claim/commit/mtime推断；各分段实际时点见证据。 |
 | 优先级 | 2 |
-| 本片段交付阶段 | review |
-| 工作分支状态 | review-pending |
-| 当前产出 | 修复后的目录末项已通过真实专库检查并完整清理；原前五项通过证据与首次失败独立保留。 |
-| 下一可用交付 | 固定本次结果交独审，随后将已验证会话能力送主线；界面与真实Codex仍属后继。 |
-| 当前阻塞 | ACTIVE: 本次结果已固定，独审消息受全局任务槽限制未送达；待实际释放槽后接审。 |
+| 本片段交付阶段 | integration |
+| 工作分支状态 | review-approved |
+| 当前产出 | Codex会话创建、连续两轮、队列与目录读取已分段验证并完成独审，可进入主线接收。 |
+| 下一可用交付 | 按固定差量接入主线，收到main回执后交回client/contracts出口；界面与真实Codex验收继续开放。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | 仅本次结果与状态归档；提交后核clean。 |
-| HEAD（最近观察） | 69fa67eb7295f2b81ec7704b0b82042aea5929d8（结果fixed/origin clean；后续仅intake与有限接口metadata） |
-| claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v13 ACTIVE71；运行历史仍v12/72。adapter.ts已STOP并于06:45:25.779Z移除：[正式回执](../../docs/evidence/mature02c02/adapter-handback-receipt.json)，S01须自己fresh领取。 |
+| 工作树dirty状态 | 本次仅审查封存/READY/两leaf交权metadata；提交后核clean。 |
+| HEAD（最近观察） | 8ee333315b5cd6a5e00bea8bf45b453e7ba70395（07:13:07核origin同clean；本次后继封存commit见提交） |
+| claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v14 ACTIVE69；exchange.ts/.test已07:13:41.558617Z明确STOP，原子移除committed07:13:41.724Z，见[回执](../../docs/evidence/mature02c02/exchange-handback-receipt.json)。sentinel运行仍v13/71；adapter先前已v13交回。 |
 | 实现目标 | 当前C02-05 conversation协议/目录/批量typed reply；旧公开流2ab3等沿原固定Git。 |
 | 实现范围 | 已审conversation产品23源+7070门禁；新独立PG六case、fixture client选项、原operator有限delta manifest/config/claim/floor接线，不新增provider/框架。 |
-| Review | db06:55:16Z已批准失败忠实性及sentinel准备；本次1/1结果待固定独审。 |
+| Review | db_transaction_owner07:11:38Z对69fa结果与8ee最小intake APPROVED/0P1P2，见[正式记录](../../docs/evidence/mature02c02/conversation-pg-sentinel-result-review.json)；source0ecd+7070及bfae/30d原批准继承。 |
 | 检查 | 原conversation R1：6选5过1失败；本次sentinel：1选1过5未选/exit0/3HTTP，PID22298双EOF/group absent，专库与当前TMP完整收尾。旧FAIL/KEEP不回填。 |
 | main集成 | 首片/loader/main已INTEGRATED@c0e0263dc01b9527293318a644f964bd048e2a86；私有stream已INTEGRATED@8c7f81b3；公开stream已INTEGRATED@5cae7a25（main固定intake；本会话片尚未集成）。 |
 | Dashboard | Lead已登记至178来源；本次修正解析字段，等待下一次正常聚合；不改生成JSON。 |
@@ -39,7 +39,7 @@
 | C02-02 | in-progress | chatui01_owner | 原单FSM start/resume，7项注入通过；旧post-terminal确定化真实交付反例已通过，收据在fixture-delta-* |
 | C02-03 | in-progress | chatui01_owner | 原R1 5/6失败保持；cwd窄修后[R2原六组](../../docs/evidence/mature02c02/pg-MATURE02C02-PG-20261007-R2.report.md)单次6/6通过，跨两注入transport/真实PG公开API结果已独审；0真实Codex/provider，heavy已归还 |
 | C02-04 | in-progress | chatui01_owner | [loader Interface](../../docs/evidence/mature02c02/loader-interface.md)：四源42 distinct分轮/strict0已独审；main两源已v4领取并接入，固定宿主recipe复用唯一R06；41 distinct分轮、生产focused strict0已独审。详见[main Interface](../../docs/evidence/mature02c02/main-interface.md)。生产R06/CODEX_HOME recipe与持续根生命周期、global remote-status和32/512 stream内核已在本次局部段验证，公开流持久化/读取/界面属C02-05后继；真实两轮另窗。 |
-| C02-05 | in-progress | chatui01_owner | 公开stream已main5cae7a25；conversation policy/035/目录/REQ15批量typed reply已在分支实现，0ecd+7070源码已独审，真实专库六例原5/6FAIL，本次仅末项1/1通过，结果待独审；Web/TUI和真实native仍待后继 |
+| C02-05 | in-progress | chatui01_owner | 公开stream已main5cae7a25；conversation policy/035/目录/REQ15批量typed reply已在分支实现，0ecd+7070源码已独审，真实专库六例原5/6FAIL，本次仅末项1/1通过，结果已独审；Web/TUI和真实native仍待后继 |
 
 
 ## 当前验证与历史固定记录
@@ -58,7 +58,7 @@
 
 已main5cae7a25：public25源原5219/4ec批准范围叠加2ab3c6ff静默修复，最终字节由执行562d/输入snapshot2a125固定；6组PG结果3e52已独审，不混旧private intake。最后根确认按post-run原件05:42:22.313989Z；早期消息05:41:42是更早lstat，不替原件时点。
 
-下一精确交付：当前分支Codex会话policy/typed目录/035已实现并经源码独审，318输入sentinel已实际1/1，等待结果忠实性独审与main接收；旧六组task/公开流证据不替代conversation验收。
+下一精确交付：当前分支Codex会话policy/typed目录/035已实现并经源码独审，318输入sentinel已实际1/1，结果独审已通过、等待main接收；旧六组task/公开流证据不替代conversation验收。
 
 共享出口交回条件：packages/client/src/index.ts、packages/contracts/src/index.ts当前仍由本claim持有。待本会话片真实PG、独审与main receipt完成，明确停止这两literal写入并原子amend移除，不绑定完整native/Web目标。CHAT05P01 [既有接口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/docs/evidence/chat05p01/interface.md)路径已只读确认；其body reader/exports与X01 v3 client需求由合法owner按ready-first串行领取，当前不提前交权。
 
@@ -75,3 +75,5 @@
 2026-10-07T07:07:15.527977+00:00 Sentinel actual CONSUMED/CLOSED:1passed/5unselected,3HTTP. DB/child/stdio/currentTMP clean, sharedPG returned directly toWeb. Fixed report above. OldR1 FAIL/KEEP and old overallBudgetCertification=false remain.
 
 2026-10-07T07:09:24.952958+00:00 Main intake: [precise path deltas](../../docs/evidence/mature02c02/conversation-main-intake.json), original23bindings + necessary test/fixture delta, result review pending. Never overwrite main S01P08 adapter or shared index additions. Lazy reasoning is only [read-only next-interface input](../../docs/evidence/mature02c02/lazy-reasoning-interface-candidate.md), not a blocker for this intake or planned export handback.
+
+2026-10-07T07:14:53.275451+00:00 READY: [conversation main intake](../../docs/evidence/mature02c02/conversation-main-intake.json) is approved for controlled path-delta integration. No old runner/adapter/stream overwrite; preserve main client/contracts additions. Exchange two-leaf STOP/removal is complete independently of conversation main; ENG01J must fresh take. Client/contracts index remain held until this conversation main receipt, then STOP and atomic removal for CHAT05/X01. No new checks/PG/provider. Lazy candidate remains research.
