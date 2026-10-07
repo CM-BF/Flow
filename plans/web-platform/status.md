@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:45:54.615381+00:00；正式连续工作段规则已收录，Recovery原owner获下一PG交接 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:50:48.448496+00:00；SVC08已接窗口，Recovery未启动等待实际归还 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,9 +22,9 @@
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；架构图固定快照和连线显示修复已接入主线并提供新资产；几何与键盘验收通过，窄屏默认阅读体验留作后继。 |
 | 下一可用交付 | 恢复验证的测试前置已修正，将按原完整旅程继续；快速设置正在准备原生控件对照以定位键盘行为。两项沿新有限工作段收敛，原失败和旧预算保留，未把准备当通过。 |
-| 当前阻塞 | NONE |
+| 当前阻塞 | ACTIVE: 恢复验证等待SVC08实际归还共享窗口，再fresh准入；本组当前无运行占用。 |
 | 需用户决定 | NONE |
-| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：C02已实际归还，Recovery新有限段首轮完整检查已fresh准入，原owner尚未启动；Quick仅诊断源码准备。每次实际清理与下一准入仍据真实回执，不复用旧gate。 |
+| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：原Lead已接SVC08唯一窗口，实际启动时间未给；Recovery原准入未消费且凭据已撤下，等待实际归还。Quick仅诊断准备，无Chrome许可。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

@@ -1,12 +1,12 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T05:48:02.181131+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T05:50:48.448496+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 ## 当前窗口与用户交付
 
-**当前具体交接：Recovery新有限工作段首轮full已准入，尚未启动。** [唯一handoff](continuous-validation-segments-20261007/recovery-handoff.json)固定765ab362/0141及原21scope，173输入+19Git核同；到期05:52:32.901509Z，首次原7组60000ms含15s清理。Mika明确C02于05:41:35.604Z实际归还且无后继PGholder/预约，交原Recoveryowner。管理没有启动PG/Chrome。新adminenv仅Node按路径使用、管理负责actual后exact删除。
+**当前窗口由SVC08原Lead接收，Recovery未启动并等待资源。** [最新明确交接](continuous-validation-segments-20261007/resource-reassignment.json)记Mika改序、Original Lead已接唯一窗口；实际启动时间未提供，不冒运行。Recovery 05:46:32准入原件保留但不得续期或复用；原owner未被唤醒、运行目录不存在，[本次未用adminenv已按exact身份删除](continuous-validation-segments-20261007/unused-admin-env-deletion-receipt.json)，未读内容。本组无实际PG/Chrome holder、gate或预约；等SVC08明确实际归还后再fresh准入。
 
-[正式Lead规则a9f1fb74](continuous-validation-segments-20261007/formal-rule-excerpt.md)允许已授权普通自有0provider验证采用有限连续段：Recovery新150s actual总额/每次60s含15s，Quick新90s/每次45s含15s；旧90/60封套与所有失败不变、未用旧余量不转入。相同安全/验收边界可由原owner连续修复、相关复测，通过后一次独审；每次真实holder、输入、组合资源、唯一gate与完整cleanup不省。Quick仅nativecontrol诊断源码，初始语义delta待一次独审，无Chrome许可或预约。
+[正式Lead规则a9f1fb74](continuous-validation-segments-20261007/formal-rule-excerpt.md)允许已授权普通自有0provider验证采用有限连续段：Recovery新150s actual总额/每次60s含15s，Quick新90s/每次45s含15s；旧90/60封套与所有失败不变、未用旧余量不转入。相同安全/验收边界可由原owner连续修复、相关复测，通过后一次独审；每次真实holder、输入、组合资源、唯一gate与完整cleanup不省。Quick原生控件诊断源码及最小runner delta已[独审接受](continuous-validation-segments-20261007/quick-diagnostic-source-review.json)，尚无实际运行、gate或预约；既有新90s授权不等当前窗口。
 
 ### 已结束的前一运行段
 

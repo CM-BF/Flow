@@ -1,0 +1,27 @@
+{
+  "recordedAt": "2026-10-07T05:50:48.448496+00:00",
+  "kind": "EXPLICIT_SHARED_WINDOW_REASSIGNED_BEFORE_RECOVERY_LAUNCH",
+  "source": "Root direct coordination: Mika instructed SVC08 first; Original Execution Lead accepted unique window for personal Web-only two actions and observation, approximately <=200s.",
+  "externalWindowOwner": "SVC08 / Original Execution Lead",
+  "externalState": "WINDOW_ACCEPTED_ACTUAL_START_NOT_REPORTED",
+  "actualStartedAt": null,
+  "webActualHolder": null,
+  "webGate": null,
+  "webReservation": false,
+  "recoveryState": "ADMITTED_NOT_STARTED_WAITING_RESOURCE",
+  "originalAdmissionUnconsumed": true,
+  "originalGatePreserved": "/private/tmp/recovery-continuous-admission-dm3egjxs/gate.json",
+  "originalGateSha256": "56d3e409e39e29d00ccc412772a297f8397430a58b3424e0715a45b468aacdaa",
+  "originalExpiry": "2026-10-07T05:52:32.901509+00:00",
+  "reuseAllowed": false,
+  "adminEnvDeletionReceipt": "unused-admin-env-deletion-receipt.json",
+  "next": "Wait explicit actual SVC08 handback, then fresh claim/source/resource and new exact adminenv/gate; no automatic renewal or launch.",
+  "quick": {
+    "state": "INITIAL_SOURCE_DELTA_APPROVED_NOT_RUN",
+    "source": "bdf444f13f2963235ab3f1659546d19fc8f5c203",
+    "ownerHead": "1aa73f6dba8f3536b43624659ea8a02529646c03",
+    "review": "quick-diagnostic-source-review.json",
+    "actualRuns": 0,
+    "gate": null
+  }
+}

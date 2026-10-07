@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T05:48:02.181131+00:00",
-  "state": "RECOVERY_NEW_FINITE_SEGMENT_FIRST_FULL_ADMITTED_NOT_STARTED",
-  "groupWindowOwnership": "Mika explicitsharedPG handoff afterC02actual05:41:35.604Z return; Recovery new150s actual segment firstfull7 run admitted60000 incl15s cleanup, not launched. Quick onlydiagnostic source/noChromepermission; no parallelWeb PG/browser.",
+  "recordedAt": "2026-10-07T05:50:48.448496+00:00",
+  "state": "SVC08_WINDOW_ACCEPTED_RECOVERY_ADMITTED_NOT_STARTED_WAITING_RESOURCE",
+  "groupWindowOwnership": "Original Execution Lead accepted unique SVC08 window; actual launch timestamp not reported. Web has no actual holder/gate/reservation. Recovery unlaunched admission withdrawn pending explicit return and fresh admission.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T05:48:02.181131+00:00",
-    "kind": "NEW_FINITE_VALIDATION_RULE_C02_RETURN_RECOVERY_FIRST_FULL_ADMISSION",
-    "source": "continuous-validation-segments-20261007/incoming.json",
-    "summary": "FormalLead rulea9f1fb74 permits bounded continuous same-scope/safety/acceptance fix/retest segments. Fresh765ab362/0141/6ffv4/173pins+19Git and available24567570432>=4053008384; firstfull60000incl15000cleanup. Old90k/5FAIL/64134.08675 immutable, nooldremainingcredit."
+    "at": "2026-10-07T05:50:48.448496+00:00",
+    "kind": "EXPLICIT_SHARED_WINDOW_REASSIGNED_BEFORE_RECOVERY_LAUNCH",
+    "source": "continuous-validation-segments-20261007/resource-reassignment.json",
+    "summary": "SVC08 accepted unique window before Recovery launch. Original 05:46:32 gate retained as unconsumed history, no reuse/extension; exact unused admin.env removed without content read. Recovery waits actual return then fresh admission."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1077,6 +1077,17 @@
         "summary": "cookieReadPASS; pageOnlyAuthLoss fixture expiration violates browser_sessions_check, other groupsNOT_SELECTED/0PNG. Parentlate9250.887208 cumulative64134.08675/rem25865.91325; existinggate minimum30000 forbids automaticnext attempt. Exactenv removed; no manager service/proc/resource probe."
       },
       "currentIntake": "recovery-pageauth-return-20261007/return.json"
+    },
+    {
+      "at": "2026-10-07T05:48:02.181131+00:00",
+      "state": "RECOVERY_NEW_FINITE_SEGMENT_FIRST_FULL_ADMITTED_NOT_STARTED",
+      "latestCoordination": {
+        "at": "2026-10-07T05:48:02.181131+00:00",
+        "kind": "NEW_FINITE_VALIDATION_RULE_C02_RETURN_RECOVERY_FIRST_FULL_ADMISSION",
+        "source": "continuous-validation-segments-20261007/incoming.json",
+        "summary": "FormalLead rulea9f1fb74 permits bounded continuous same-scope/safety/acceptance fix/retest segments. Fresh765ab362/0141/6ffv4/173pins+19Git and available24567570432>=4053008384; firstfull60000incl15000cleanup. Old90k/5FAIL/64134.08675 immutable, nooldremainingcredit."
+      },
+      "meaning": "Historical unconsumed admission; superseded by explicit SVC08 handoff before owner launch."
     }
   ],
   "dperf05Pure": {
@@ -1124,7 +1135,7 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "RECOVERY_SINGLE_FIRST_FULL_ADMISSION_QUICK_SOURCE_ONLY",
+    "state": "RECOVERY_WAITING_RESOURCE_QUICK_SOURCE_DELTA_APPROVED_NOT_RUN",
     "access": {
       "ownerHead": "269a8566e9b09018fb2e87440a8d96b4c14cf75a",
       "state": "MAIN_ACCEPTED_DEPLOYED185_LOCAL_CREDENTIAL_UI_OBSERVED",
@@ -1183,7 +1194,7 @@
       }
     },
     "quick": {
-      "ownerHead": "e42bb0299990ebedf2b49a02634575c25bbfeb6b",
+      "ownerHead": "1aa73f6dba8f3536b43624659ea8a02529646c03",
       "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
       "packet": "/private/tmp/msgquick-b3",
       "bindingSha256": "fb5d6a6f5ea9590f134f9b3c7a47a4b5de7b2aec0af9f6d04d28dce8ab401a2f",
@@ -1198,7 +1209,7 @@
       "remainingMs": 29375,
       "failure": "Parent retained evidence sampling limit; static non-atomic BASE minus scratch overcount defect. Actual transient is consistent, not exact causal proof.",
       "review": "quick-b3-return-navigation-20261007/quick-b3-failed-review.json",
-      "next": "W01 onlyprepares nativecontrol diagnostic/finite selectiondelta; initialacceptance change rootreview required. No currentChromepermission. Oldthreefailures and30625remainhistorical.",
+      "next": "Initial diagnostic source delta accepted; no actual run/gate/reservation. Recovery full7 takes next available shared window; Quick independent0PG browser follows fresh coordination.",
       "preparationReview": "quick-b3-admission-20261007/quick-b3-native-review.json",
       "admissionPreparation": "quick-b3-admission-20261007/handoff.json",
       "newSegment": {
@@ -1210,16 +1221,18 @@
         "oldSpentMs": 30625,
         "oldRemainingNotTransferred": true,
         "authorization": "continuous-validation-segments-20261007/quick-segment-authorization.json",
-        "state": "DIAGNOSTIC_SOURCE_ONLY_INITIAL_DELTA_REVIEW_REQUIRED",
+        "state": "INITIAL_SOURCE_DELTA_APPROVED_NOT_RUN",
         "gate": null,
-        "reservation": false
+        "reservation": false,
+        "source": "bdf444f13f2963235ab3f1659546d19fc8f5c203",
+        "review": "continuous-validation-segments-20261007/quick-diagnostic-source-review.json"
       }
     },
     "recovery": {
       "ownerHead": "765ab362945b93b66487cadd8e0b54e9ee233bcf",
       "source": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
       "packet": "/private/tmp/recovery-continuous-full-ready-pkyqyonj/handoff-delta.json",
-      "state": "NEW150S_SEGMENT_FIRST_FULL_ADMITTED_NOT_STARTED",
+      "state": "ADMITTED_NOT_STARTED_WAITING_RESOURCE",
       "budget": {
         "priorLateMs": 54883.199542,
         "thisLateMs": 9250.887208,
@@ -1243,11 +1256,11 @@
         "outerWallMsSeparate": 9881.697250064462,
         "state": "HISTORICAL_90K_ENVELOPE_CLOSED_IMMUTABLE_NO_NEW_CREDIT"
       },
-      "runtime": "No newsegment run yet. First full seven-group60000 incl15000cleanup single gate.",
-      "next": "Original panels runs withinnew150s actual segment; relatedsame-boundary fixes/retests allowed after routinefreshgate/PGcoordination, no repeatedunchanged rootapproval. Historical failures preserved.",
+      "runtime": "Zero new-segment runtime; original unconsumed admission superseded by SVC08 window reassignment.",
+      "next": "Wait explicit actual SVC08 handback, then fresh claim/source/resource and new exact adminenv/gate; no automatic renewal or launch.",
       "review": "quick-b2-return-20261007/recovery-fourth-preparation-review.json",
       "admission": {
-        "state": "ADMITTED_NOT_STARTED",
+        "state": "WITHDRAWN_UNCONSUMED_WAITING_RESOURCE",
         "handoff": "continuous-validation-segments-20261007/recovery-handoff.json",
         "gate": "/private/tmp/recovery-continuous-admission-dm3egjxs/gate.json",
         "gateSha256": "56d3e409e39e29d00ccc412772a297f8397430a58b3424e0715a45b468aacdaa",
@@ -1260,7 +1273,11 @@
           "mode": "0o600",
           "uid": 501
         },
-        "adminEnvDeletionOwner": "d01_owner"
+        "adminEnvDeletionOwner": "d01_owner",
+        "gateReusable": false,
+        "adminEnvState": "REMOVED_EXACT_UNUSED",
+        "withdrawal": "continuous-validation-segments-20261007/resource-reassignment.json",
+        "deletionReceipt": "continuous-validation-segments-20261007/unused-admin-env-deletion-receipt.json"
       },
       "actualReceipt": "recovery-pageauth-return-20261007/return.json",
       "sourceReview": "continuous-validation-segments-20261007/recovery-source-review.json",
@@ -1403,13 +1420,13 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "continuous-validation-segments-20261007/recovery-admission-observation.json",
+  "currentWindowEvidence": "continuous-validation-segments-20261007/resource-reassignment.json",
   "webActualHolder": null,
-  "webGate": "/private/tmp/recovery-continuous-admission-dm3egjxs/gate.json",
+  "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": "544c limited source/preparation approved, final929b HEAD and newboundary/pins verified; PREPARED NOTRUN, no gate/holder/reservation",
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": true,
+  "webReservation": false,
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -1735,12 +1752,11 @@
     "receipt": "dashboard-task-time-intake/dperf-app-receipt.json"
   },
   "externalCurrentAdmission": {
-    "owner": null,
-    "state": "C02_ACTUAL_RETURNED_SHARED_PG_HANDED_TO_RECOVERY",
-    "actualReturnAt": "2026-10-07T05:41:35.604Z",
-    "actualResult": "6/6 viaRoot originalownerreceipt",
-    "source": "continuous-validation-segments-20261007/incoming.json",
-    "next": "S01A/B ownernotresumed/notreserved; C02 readonly0PG review doesnotblock."
+    "owner": "SVC08 / Original Execution Lead",
+    "state": "WINDOW_ACCEPTED_ACTUAL_START_NOT_REPORTED",
+    "actualStartedAt": null,
+    "scope": "Personal Web-only two actions and observation, approximately <=200s, as relayed by root; no manager service action.",
+    "source": "continuous-validation-segments-20261007/resource-reassignment.json"
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1750,9 +1766,9 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": [
-    "Recovery actual cleanup communicated to Mika; any subsequent same-segment run needs fresh currentPG coordination, not elapsed-time assumption"
+    "Wait Original Lead actual SVC08 handback; Recovery new finite segment remains ready, no active Web gate/reservation."
   ],
-  "currentIntake": "continuous-validation-segments-20261007/incoming.json",
+  "currentIntake": "continuous-validation-segments-20261007/resource-reassignment.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",
