@@ -17,14 +17,14 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host |
 | Branch | codex/plugin-trusted-process-host |
 | Base | 4fdd856293a502209d7509ea37da901bbfd89f72 |
-| HEAD | af43f7e61395125aed3f0725a9e4305c9e086cdd |
-| 工作树dirty状态 | 窄修与本次证据待固定；无其他范围变化，ordinary已归还。 |
-| 实现目标 | af43f7e61395125aed3f0725a9e4305c9e086cdd |
+| HEAD | 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70（窄修source；交接metadata后继） |
+| 工作树dirty状态 | source固定后仅交接metadata，最终提交clean；当前STOP无待launch。 |
+| 实现目标 | 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70 |
 | 实现范围 | apps/runner/src/configuration.test.ts,apps/runner/src/configuration.ts,apps/runner/src/plugins/execution.test.ts,apps/runner/src/plugins/execution.ts,apps/runner/src/plugins/process-host.test.ts,apps/runner/src/plugins/process-host.ts,apps/runner/src/plugins/process-protocol.ts,apps/runner/src/plugins/process-resources.ts,apps/runner/src/plugins/process-worker.ts,apps/runner/src/plugins/runtime.test.ts,apps/runner/src/runtime.ts |
-| 检查状态 | PASSED af43f7e61395125aed3f0725a9e4305c9e086cdd 11/11 + 3/3分轮，focused types0；原首types2保留，PG/release NOT_RUN。 |
+| 检查状态 | PASSED 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70 定向2/2与types0；原14distinct证据继承其固定source，不重跑；PG/release NOT_RUN。 |
 | Review | 原13:17:06唯一P2已修，当前PENDING_DELTA_REVIEW；不冒批准。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；base只是只读输入 |
-| 最近更新时间 | 2026-10-07T13:20:57.204225+00:00 |
+| 最近更新时间 | 2026-10-07T13:21:27.207071+00:00 |
 | 任务开工时间 | 2026-10-07T12:38:43.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 实际开读/clock12:38:43；claim12:39:21.479Z另记 |

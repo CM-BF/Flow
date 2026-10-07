@@ -1,4 +1,4 @@
-Review target commit: af43f7e61395125aed3f0725a9e4305c9e086cdd
+Review target commit: 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70
 
 状态：CHANGES_REQUESTED（首产品唯一P2；修复待复审）
 
@@ -15,3 +15,5 @@ Mika在本次恢复消息转述chatui对e870/c349增量 APPROVED /0 remaining P1
 2026-10-07T13:17:06Z chatui对sourceaf43/packete97 SOURCE_CHANGES_REQUESTED，1P2/0P1；其余11源无第二finding，195bindings929779B与14distinct/types/5RETURN忠实。P2：PACKAGE_FAILED或普通第一错误遮盖后续child/EOF/signal/cleanup UNKNOWN，可使runtime终结并清journal。要求独立settlementUnknown判定优先，原错误作cause；clean known denial保持原身份。此正式review由Mika本轮原文交接，原来源不改。
 
 2026-10-07T13:20:57.204225+00:00 Owner已固定窄修前准备：2/2真实残留+原clean denial对照，types0。只请求P2增量复审，原审其余无第二finding面继承；未把owner验证当审查通过。
+
+2026-10-07T13:21:27.207071+00:00 窄修target 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70，p2-fix-review-ready固定14增量绑定；当前CHANGES_REQUESTED待chatui关闭P2，无新批准。
