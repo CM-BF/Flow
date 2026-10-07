@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:17:49.084793+00:00 / main9816e87a已接X01与188来源；C02受控差量与实际部署metadata随本批发布 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:25:47.787621+00:00 / main4fe33178已接X01/C02公共差量；本批接收已审父状态与ENG01K唯一来源登记，实际188/候选189分列 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -354,3 +354,7 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 ## Codex会话公共差量接收 2026-10-07T07:17:49.084793+00:00
 
 固定6c836/已审8ee333输入只接conversation/profile/read/ACK/035。两个共享index按原base清洁三方合成，其余前像一致；不覆盖S01P08 adapter、runner、stream源。两次PG原记录为6选5过1失败，定向1选1过；保留原FAIL/UNKNOWN/KEEP，不改称单轮6/6。根组合类型通过，旧客户端ACK54项及profile5项真实HTTP直接消费者通过；未新增PG/native/provider/UI。详见[限定接收](../../docs/evidence/i02/codex-conversation-intake.json)。
+
+## 2026-10-07 受信工具来源与状态接收
+
+两父status及ENG01K登记均获assignment_review独立文档批准，固定前像与main一致后仅接五个已审文件；[本批绑定](../../docs/evidence/i02/eng01k-source-status-intake.json)。历史时间未知、CI/模型资格用户待决和未部署边界保留；实际4320仍188来源，189部署另记。无工程重测、PG、provider或个人服务操作。
