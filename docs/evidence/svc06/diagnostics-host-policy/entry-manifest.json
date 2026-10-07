@@ -1,0 +1,212 @@
+{
+  "kind": "SVC06_FIXED_DIAGNOSTICS_HOST_POLICY_PREPARATION",
+  "createdAt": "2026-10-07T10:20:50.422689+00:00",
+  "sourceTarget": "6cd5a15c232210f7802482290b8f7b65318fd1ad",
+  "recordsTarget": "83a60a5e551199295e9744100a291e79f4d352d0",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+  },
+  "legacySource": "af51c621696230fbced12227670f014ca73bd8a1",
+  "entryBindings": [
+    {
+      "path": "entry.mjs",
+      "bytes": 17827,
+      "sha256": "cca31be9413aa6b7ecb73b4ef8f62aae493872822de1091d4d54bad1254039c5",
+      "ref": "6cd5a15c232210f7802482290b8f7b65318fd1ad"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 4568,
+      "sha256": "7f2abe7f6b6b832be03de94ffceeab7e962868ddf85950fc97b64d4b40882875",
+      "ref": "6cd5a15c232210f7802482290b8f7b65318fd1ad"
+    },
+    {
+      "path": "startup-observer.mjs",
+      "bytes": 6449,
+      "sha256": "13784a6f0ce14f13f9e08fa47d853ecf0353952e29cb6fc4931ff958385cda4c",
+      "ref": "6cd5a15c232210f7802482290b8f7b65318fd1ad"
+    },
+    {
+      "path": "startup-observer.test.mjs",
+      "bytes": 4209,
+      "sha256": "9fb788201d2cc451b098f31e0daaeae255d0d7f3b795b1e280671cb26ee15f1c",
+      "ref": "6cd5a15c232210f7802482290b8f7b65318fd1ad"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 142632,
+      "sha256": "3b96e3f59e7e728515a7d4f04448207f0dd73f1cbd23f6bd10f4fd6a6399043d",
+      "ref": "6cd5a15c232210f7802482290b8f7b65318fd1ad"
+    },
+    {
+      "path": "local-checks.py",
+      "bytes": 3593,
+      "sha256": "386eb773aac9a58a058377226b6bae2fe6c75922f38856e9087d224e7e12a36a",
+      "ref": "6cd5a15c232210f7802482290b8f7b65318fd1ad"
+    },
+    {
+      "path": "Interface.md",
+      "bytes": 3072,
+      "sha256": "647c4fd4cec2e218b91a6cacfbae31af71a12e3e8e806bfdfbe6cb7beab59087",
+      "ref": "83a60a5e551199295e9744100a291e79f4d352d0"
+    },
+    {
+      "path": "../b2b-host-policy/journey.mjs",
+      "bytes": 18881,
+      "sha256": "3efdd3daa720edbad73cba1e8c851441cffef2f0cbebc2005a18633e746f89ce",
+      "ref": "3444895edf934c5c323639f232ef6fed7d51b022"
+    },
+    {
+      "path": "../b2b-host-policy/work-terminal.mjs",
+      "bytes": 666,
+      "sha256": "c8c5c1663a19066f8b193a4493e80b9f5056a3e3e9188e515863f1a722cfcecc",
+      "ref": "3444895edf934c5c323639f232ef6fed7d51b022"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "README.md",
+      "bytes": 2441,
+      "sha256": "3be8178cbb1d65d18662005e4fc9ed371d6bbaa2dcb0e7192ece6599898b34ca",
+      "ref": "83a60a5e551199295e9744100a291e79f4d352d0"
+    },
+    {
+      "path": "method-delta.json",
+      "bytes": 1442,
+      "sha256": "96b8444edfc0f302fb77bf9b3d600f6d8f4beeac8bfca8e0901073e52a24fb09",
+      "ref": "83a60a5e551199295e9744100a291e79f4d352d0"
+    },
+    {
+      "path": "preparation-observation.json",
+      "bytes": 70349,
+      "sha256": "05e1b51bb05fa25747734bfef4ee01f8bd585974434e697a54afe82ed701aba4",
+      "ref": "83a60a5e551199295e9744100a291e79f4d352d0"
+    },
+    {
+      "path": "local-result.json",
+      "bytes": 2356,
+      "sha256": "d8408a89c2c4d19af4cd63d15af4fe12f60f8985af2162f6d29eee4a58ec5a82",
+      "ref": "83a60a5e551199295e9744100a291e79f4d352d0"
+    },
+    {
+      "path": "entry-syntax.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ref": "83a60a5e551199295e9744100a291e79f4d352d0"
+    },
+    {
+      "path": "entry-syntax.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ref": "83a60a5e551199295e9744100a291e79f4d352d0"
+    },
+    {
+      "path": "observer-3.stdout",
+      "bytes": 413,
+      "sha256": "60539783db14cdf1d0cbd5e6672628efbed03a8d63444da049d3edf9eedc9aec",
+      "ref": "83a60a5e551199295e9744100a291e79f4d352d0"
+    },
+    {
+      "path": "observer-3.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ref": "83a60a5e551199295e9744100a291e79f4d352d0"
+    },
+    {
+      "path": "status-check.json",
+      "bytes": 267,
+      "sha256": "a5f6dcc1cb732537cbd00020b0376a822ea1f20175602febd5fd9ebc13dffc65",
+      "ref": "83a60a5e551199295e9744100a291e79f4d352d0"
+    },
+    {
+      "path": "../../../../plans/svc06-backend-release/status.md",
+      "bytes": 34330,
+      "sha256": "6ad8ae0f69589b4ba297cf9502559aa3837948118c6af7cdbe4ebf445b863e58",
+      "ref": "83a60a5e551199295e9744100a291e79f4d352d0"
+    },
+    {
+      "path": "../../../../plans/svc06-backend-release/review.md",
+      "bytes": 17435,
+      "sha256": "7ad091ec2741757c12f0482ce07dc41c83d968818644d6e6ebf8b67d20da3f0c",
+      "ref": "83a60a5e551199295e9744100a291e79f4d352d0"
+    }
+  ],
+  "fixedRuntimeInputs": 514,
+  "legacyAliases": 4,
+  "readonlyRuntime": [
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "dev": 16777234,
+      "ino": 110837507,
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "dev": 16777234,
+      "ino": 63570890,
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "dev": 16777234,
+      "ino": 123234533,
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "methodBindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py",
+      "bytes": 3281,
+      "sha256": "05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6",
+      "ref": "3444895edf934c5c323639f232ef6fed7d51b022"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/b2b-host-policy/journey.mjs",
+      "bytes": 18881,
+      "sha256": "3efdd3daa720edbad73cba1e8c851441cffef2f0cbebc2005a18633e746f89ce",
+      "ref": "3444895edf934c5c323639f232ef6fed7d51b022"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/b2b-host-policy/work-terminal.mjs",
+      "bytes": 666,
+      "sha256": "c8c5c1663a19066f8b193a4493e80b9f5056a3e3e9188e515863f1a722cfcecc",
+      "ref": "3444895edf934c5c323639f232ef6fed7d51b022"
+    }
+  ],
+  "inheritedCloneCaller": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py",
+    "bytes": 3281,
+    "sha256": "05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6"
+  },
+  "resources": {
+    "workSeconds": 180,
+    "cleanupSeconds": 30,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "freshBytes": 2684354560,
+    "liveBytes": 1073741824,
+    "additionalBytes": 67108864,
+    "rawBytes": 2097152,
+    "newArtifactAndPrivateLogicalCap": 434150591,
+    "newPhysicalPlanningBytes": 706740224,
+    "databaseBytes": 100663296
+  },
+  "maximumConfiguredConnections": 15,
+  "execution": "NOT_RUN; no PG/copy/host/provider/personal access in preparation",
+  "limits": "Only new descriptor/namespace and bounded private metadata observation; original journey/terminal/clone bytes reused. Synthetic loader fixtures do not certify App compatibility or enter personal candidates."
+}
