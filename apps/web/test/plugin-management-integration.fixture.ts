@@ -2,7 +2,8 @@ import { fileURLToPath } from "node:url";
 import { createHash, randomUUID } from "node:crypto";
 import type { IncomingMessage, ServerResponse } from "node:http";
 import { createServer, preview as productionPreview } from "vite";
-import { pluginRuntimeCommandSchema, type PluginRuntimeView, type PluginMutationResult, type PluginMaterialInstall, type PluginInstallation, type PluginOperation, type PluginSnapshot, type PluginVersion, type BrowserSessionReady, type ClaudeMessageSettingsExecutionProfile, type AttachmentMetadata } from "@flow/contracts";
+import type { PluginMutationResult, PluginMaterialInstall, PluginInstallation, PluginOperation, PluginSnapshot, PluginVersion, BrowserSessionReady, ClaudeMessageSettingsExecutionProfile, AttachmentMetadata } from "@flow/contracts";
+import { pluginRuntimeCommandSchema, type PluginRuntimeView } from "../../../packages/contracts/src/plugin-runtime";
 import { createConversationFixture } from "./conversation.fixture";
 
 /** Public HTTP protocol fixture only: no database, SDK, package load, or model. */
