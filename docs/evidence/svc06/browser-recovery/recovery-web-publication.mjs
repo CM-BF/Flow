@@ -24,8 +24,6 @@ export const context = Object.freeze({ format: 1, publicOrigin: 'http://127.0.0.
 const roles = ['center', 'runner', 'web'], files = ['browser-session.json', 'claude.json', 'config.json', 'maintenance.json', 'state.json', 'web-release.json'];
 const oldIds = Object.keys(reports).slice(0, 3), runnerId = 'd22f4df2-8242-49f4-a1b4-77f8f08611ef', operationId = '35d5a7ff-5ef7-4938-9584-adb27f5357ff';
 const sha = bytes => createHash('sha256').update(bytes).digest('hex');
-const fingerprint = value => sha(JSON.stringify(value, (_, current) => current && !Array.isArray(current) && typeof current === 'object'
-  ? Object.fromEntries(Object.keys(current).sort().map(key => [key, current[key]])) : current));
 const identity = value => { assert.deepEqual(Object.keys(value).sort(), ['dev', 'ino']); for (const part of Object.values(value)) assert.match(part, /^\d+$/); };
 const hash = value => assert.match(value, /^[a-f0-9]{64}$/);
 
@@ -49,7 +47,7 @@ export function validateInput(input) {
   for (const value of [input.installationIdentity, input.sourceIdentity]) identity(value);
   assert.deepEqual(Object.keys(input.processDigests).sort(), roles); Object.values(input.processDigests).forEach(hash);
   assert.deepEqual(input.ports, { center: 61227, web: 61228 });
-  assert.equal(input.finalReceipt.path, '/private/tmp/flow-svc06-held-recovery-e15-20261007-once/final.json');
+  assert.equal(input.finalReceipt.path, '/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once/final.json');
   hash(input.finalReceipt.sha256); assert.ok(input.finalReceipt.bytes > 0 && input.finalReceipt.bytes <= 65536);
   assert.equal(input.artifactFiles, 10); assert.equal(input.assetBytes, 1700569); assert.equal(input.manifestBytes, 1651);
   assert.equal(input.releaseId, '52a261e294324a11aead58a554f547db');
@@ -87,14 +85,16 @@ async function modules(input) {
   const at = name => import(pathToFileURL(join(verified.root, 'tools/personal-preview', name)).href);
   return { preview: await at('preview.mjs'), process: await at('process.mjs'), web: await at('web-release.mjs'),
     artifact: await at('web-artifact.mjs'), policy: await at('web-retention-policy.mjs'), diagnostics: await at('startup-diagnostics.mjs'),
-    maintenance: await at('maintenance-host.mjs'), renameExclusive };
+    maintenance: await at('maintenance-host.mjs'), renameExclusive,
+    // Resolve the same public serializer as this verified artifact's maintenance producer.
+    canonical: (await import(pathToFileURL(join(verified.root, 'apps/server/src/database.ts')).href)).canonical };
 }
 async function observe(input, mod) {
   await observeCurrentInstallation(mod, input);
   const state = await mod.preview.readPreviewJson(join(input.installationDirectory, 'state.json'));
   const op = await mod.preview.readPreviewJson(join(input.installationDirectory, 'maintenance.json'));
-  assert.equal(fingerprint(state), mod.recovery.stateDigest, 'RECOVERED_LAUNCH_CHANGED');
-  assert.equal(fingerprint(op), mod.recovery.operationDigest, 'RECOVERED_OPERATION_CHANGED');
+  assert.equal(sha(mod.canonical(state)), mod.recovery.stateDigest, 'RECOVERED_LAUNCH_CHANGED');
+  assert.equal(sha(mod.canonical(op)), mod.recovery.operationDigest, 'RECOVERED_OPERATION_CHANGED');
   assert.equal(op.operationId, operationId); assert.equal(op.phase, 'resumed'); assert.deepEqual(op.backendArtifact, backend);
   const view = await mod.maintenance.maintainPreview({ directory: input.installationDirectory, action: 'status' });
   assert.equal(view.state, 'accepting'); assert.equal(view.version, 24); assert.equal(view.operationId, null); assert.equal(view.runnerId, runnerId);

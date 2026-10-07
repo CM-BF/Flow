@@ -1,14 +1,14 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, realpath, writeFile, lstat, mkdir, rm, rmdir, chmod, symlink } from 'node:fs/promises';
+import { mkdtemp, realpath, readFile, writeFile, lstat, mkdir, rm, rmdir, chmod, symlink } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
+import { canonical } from '/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/apps/server/src/database.ts';
 import { backend, artifact, reports, context, validateInput, assertRecoveryReceipt, assertPublished, publish, runWebOnly, createOutputDirectory } from './recovery-web-publication.mjs';
 
 const sha = value => createHash('sha256').update(value).digest('hex');
-const fingerprint = value => sha(JSON.stringify(value, (_, current) => current && !Array.isArray(current) && typeof current === 'object'
-  ? Object.fromEntries(Object.keys(current).sort().map(key => [key, current[key]])) : current));
+const fingerprint = value => sha(canonical(value));
 const ids = Object.keys(reports).slice(0, 3), roles = ['center', 'runner', 'web'];
 const retainedArtifacts = ids.map(artifactId => ({ artifactId, manifestDigest: artifactId, sourceHead: 'a'.repeat(40) }));
 const release = { version: 3, current: ids[2], artifacts: retainedArtifacts };
@@ -21,7 +21,7 @@ function input() {
     expectedBackendArtifact: backend, expectedWebHostArtifact: backend, expectedSource: { head: backend.sourceHead, dirty: false }, artifact, context, reportIds: reports,
     retainedArtifacts, expectedRelease: release, privateFiles: Object.fromEntries(files.map(name => [name, { ...identity, bytes: 2, sha256: sha('{}') }])),
     installationIdentity: identity, sourceIdentity: identity, processDigests: Object.fromEntries(roles.map(role => [role, 'a'.repeat(64)])), ports: { center: 61227, web: 61228 },
-    finalReceipt: { path: '/private/tmp/flow-svc06-held-recovery-e15-20261007-once/final.json', bytes: 2, sha256: 'a'.repeat(64) },
+    finalReceipt: { path: '/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once/final.json', bytes: 2, sha256: 'a'.repeat(64) },
     artifactFiles: 10, assetBytes: 1700569, manifestBytes: 1651, releaseId: '52a261e294324a11aead58a554f547db',
     budget: { freshBytes: 3 * 1024 ** 3, liveBytes: 1024 ** 3, addedBytes: 512 * 1024 ** 2, rawBytes: 2 * 1024 ** 2 } };
 }
@@ -63,7 +63,8 @@ async function fixture(behavior, body) {
     await mkdir(value.runDirectory, { mode: 0o700 });
     const info = await lstat(root); value.installationIdentity = { dev: String(info.dev), ino: String(info.ino) };
     const processes = Object.fromEntries(roles.map((role, index) => [role, { role, pid: index + 100, nonce: role }]));
-    let state = { source: value.expectedSource, backendArtifact: backend, webHost: { artifact: backend }, processes }, called = 0;
+    let state = { source: value.expectedSource, backendArtifact: backend, webHost: { artifact: backend }, processes,
+      declaration: { Z: 1, a: [{ '10': 2, '2': 3, aA: 4, 'a-': 5 }] } }, called = 0;
     const operation = { operationId: '35d5a7ff-5ef7-4938-9584-adb27f5357ff', phase: 'resumed', backendArtifact: backend };
     const values = { 'state.json': state, 'maintenance.json': operation, 'web-release.json': release };
     for (const name of files) {
@@ -74,7 +75,7 @@ async function fixture(behavior, body) {
     value.processDigests = Object.fromEntries(roles.map(role => [role, sha(JSON.stringify(processes[role]))]));
     await writeFile(join(value.runDirectory, 'complete.json'), JSON.stringify({ outcome: 'web-artifact-imported-pointer-unchanged', artifact }), { mode: 0o600 });
     const checked = [];
-    const mod = { recovery: { ...receipt(), stateDigest: fingerprint(state), operationDigest: fingerprint(operation) },
+    const mod = { canonical, recovery: { ...receipt(), stateDigest: fingerprint(state), operationDigest: fingerprint(operation) },
       preview: { readPreviewJson: async path => structuredClone(path.endsWith('state.json') ? state : operation),
       publishPreviewWeb: async request => { called++; assert.deepEqual(request, { directory: root, artifact, expectedVersion: 3, expectedBackendHead: backend.sourceHead, compatibilityId: reports[artifact.artifactId] });
         if (behavior === 'conflict') throw Object.assign(Error('fixture'), { code: 'WEB_RELEASE_VERSION_CONFLICT' });
@@ -99,6 +100,21 @@ test('post-commit unknown stays primary and never triggers rollback or retry', a
 test('a different launch since the recovery receipt is refused before public CAS', async () => {
   await fixture('success', async (value, mod, facts) => { mod.recovery.stateDigest = 'a'.repeat(64);
     await assert.rejects(publish(value, mod), /RECOVERED_LAUNCH_CHANGED/); assert.equal(facts().called, 0); });
+});
+test('producer canonical actual publish refuses the legacy digest before public CAS', async () => {
+  const source = await readFile('/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/apps/server/src/database.ts');
+  assert.equal(sha(source), '277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653');
+  await fixture('success', async (value, mod, facts) => {
+    const legacy = JSON.stringify(facts().state, (_, item) => item && !Array.isArray(item) && typeof item === 'object'
+      ? Object.fromEntries(Object.keys(item).sort().map(key => [key, item[key]])) : item);
+    assert.notEqual(sha(legacy), mod.recovery.stateDigest); mod.recovery.stateDigest = sha(legacy);
+    await assert.rejects(publish(value, mod), /RECOVERED_LAUNCH_CHANGED/); assert.equal(facts().called, 0);
+  });
+});
+test('continuation receipt path accepts only the new fixed successful predecessor', () => {
+  assert.equal(validateInput(input()).finalReceipt.path, '/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once/final.json');
+  const old = input(); old.finalReceipt.path = '/private/tmp/flow-svc06-held-recovery-e15-20261007-once/final.json';
+  assert.throws(() => validateInput(old));
 });
 test('actual output creation accepts system sticky parent and refuses namespace reuse', async () => {
   const output = await realpath(await mkdtemp('/private/tmp/svc06b-web-entry-'));
