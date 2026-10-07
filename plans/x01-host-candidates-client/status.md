@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:08:09.723Z |
+| 最近更新时间 | 2026-10-07T11:12:31.223Z |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
@@ -19,8 +19,8 @@
 | 检查状态 | PASSED bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5：green14/15+定向1/1（14未选）、finaltypes0；原15红与测试写法错误保留 |
 | Review | [review.md](review.md)，APPROVED 2026-10-07T11:06:37Z，0 P1/P2 |
 | 已集成main状态 / HEAD | 本片未集成；base为已审ACK分支，不冒ACK已main |
-| 实现目标 | c5da46ee97db907c5da1dbb39e243cd841322f07 |
-| 实现范围 | packages/client/src/index.ts,packages/client/src/plugin-management.ts,apps/cli/src/index.ts,packages/client/src/plugin-host-candidates.test.ts,apps/cli/src/plugin-host-candidates.test.ts,docs/evidence/x01-host-candidates-client/fixtures.ts,docs/evidence/x01-host-candidates-client/run-local.py,docs/evidence/x01-host-candidates-client/vitest.config.mjs,docs/evidence/x01-host-candidates-client/tsconfig.json,docs/evidence/x01-host-candidates-client/contract-snapshot/packages/contracts/src/plugin-runtime-hosts.ts |
+| 实现目标 | bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5 |
+| 实现范围 | packages/client/src/index.ts,packages/client/src/plugin-management.ts,apps/cli/src/index.ts,packages/client/src/plugin-host-candidates.test.ts,apps/cli/src/plugin-host-candidates.test.ts,docs/evidence/x01-host-candidates-client/fixtures.ts |
 | 阶段 | M2 |
 | 优先级 | 5 |
 | 当前产出 | 候选后端查询已接入客户端与CLI，独立审查通过，保留不可选原因与手动分页 |
@@ -59,3 +59,5 @@
 | 完整完成时间 | NOT_COMPLETED，本片待main；whole X01由父task追踪 |
 
 提交前仅核本status parseStatus errors/human/timing/parent，可解析不冒dashboard已登记/部署；旧模板UNKNOWN污染已修，无原时间改写。本片没有活动资源，metadata不占local时段；后继写权须明确STOP/当前version移交。
+
+2026-10-07T11:12:31.223Z 按Mika检查绑定收口：实现目标bc54/scope六产品与必需fixture，与检查状态及main-intake一致；caller/config/snapshot仍是原已审证据链接，不计为产品实现范围。前文c5da声明为当时历史，当前此表为准，无新检查或源变化。server修后a298的合同已由chatui核与原767固定bytes一致，intake要求合同字节而非停留旧backend commit。fresh账本11:12:13.319Z claim3f0e v1/7 ACTIVE保持；产品继续冻结。

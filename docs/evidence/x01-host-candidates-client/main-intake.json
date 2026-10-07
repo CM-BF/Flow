@@ -87,7 +87,7 @@
     "path": "packages/contracts/src/plugin-runtime-hosts.ts",
     "sha256": "59ad5c6cec92331c53f984625f008bab44ae7a4facb13b9510824ea98a0477aa",
     "owner": "architecture_read",
-    "instruction": "Must already match main or join the same controlled backend intake; no contracts product is supplied by this consumer."
+    "instruction": "Require these exact contract bytes, already in main or same controlled intake. The backend may use its later approved current-policy fix (a298), whose contract hash was independently checked equal by chatui; do not require main to remain at the earlier backend commit. This consumer supplies no contracts product."
   },
   "requiredAckSource": "ae1482fdb498ec367aeeb0f142381ac966d18909",
   "evidencePlanScope": [
