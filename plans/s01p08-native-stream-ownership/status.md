@@ -3,13 +3,13 @@
 | 字段 | 记录 |
 | --- | --- |
 | 最近更新 | 2026-10-07T06:42:10.846281+00:00 |
-| 任务开工时间 | 2026-10-07T06:35:06.334650Z |
+| 任务开工时间 | 2026-10-07T06:35:06.334Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 首次可核协调只读观察；此前上下文读取起点UNKNOWN |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
-| owner | status_read / gpt-6-astra |
+| 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-stream-ownership |
 | Branch | codex/native-stream-ownership |
 | Base | 311e62158186177e344b49d24ed32e335268be1d |
@@ -37,3 +37,23 @@ S01P08-01 completed（真实基线）；S01P08-02 blocked（adapter交权）；S
 本地find-skills/brainstorming/codebase-design/固定clean-code沿interface记录。检查真实Module/Interface、单一AttemptControl权威、错误/unknown、fake字段完整性及预算；不另造benchmark。唯一status供dashboard聚合，来源本WT/branch，提交HEAD由Git读取，展示PENDING_REGISTRATION/PENDING_SYNC；需Lead登记本子task。架构图未变化，候选尚未实现。
 
 独审target `192d8b35101a7b870bc19c1602cbf209a75aab0a`，入口review-manifest.json；产品adapter/control相对base零diff。实际local已于06:41:09.667882Z收束并向C02归还，当前0待启动。
+
+| TODO ID | 状态 | Owner | 证据 |
+| --- | --- | --- | --- |
+| S01P08-01 | completed | status_read | local.json：7distinct基线/反例，产品未改 |
+| S01P08-02 | in-progress | status_read | 等C02实际PG关闭后单literal原子交回，不等其review/main |
+| S01P08-03 | in-progress | status_read | 原基线随最终优化一次独审，当前不单独批准 |
+| S01P08-04 | pending | status_read | NOT_INTEGRATED |
+
+## Baseline实际四child时间（UTC）
+
+| 模式 | 开始 | 结束 | exit |
+| --- | --- | --- | --- |
+| baseline | 2026-10-07T06:38:56.956757+00:00 | 2026-10-07T06:38:57.687192+00:00 | 0 |
+| types | 2026-10-07T06:39:03.456458+00:00 | 2026-10-07T06:39:04.633644+00:00 | 2 |
+| types-fixed | 2026-10-07T06:40:06.470014+00:00 | 2026-10-07T06:40:07.612465+00:00 | 0 |
+| focused | 2026-10-07T06:40:22.052758+00:00 | 2026-10-07T06:40:22.714274+00:00 | 0 |
+
+四次均owned absent/merged EOF/ownTMP已清；728/1176/1141/659ms为分别监督耗时，不合成整段壁钟。原4child封存，下一已授权独立10min/2child段待C02 PG实际归还和adapter成功amend后启动；不回填旧额度。首次纯metadata parseStatus报owner/TODO字段与六位小数时间格式问题，现用既有字段/表格和三位毫秒修正；不改变真实检查或通过数。
+
+纯metadata解析修后errors=[]/human.missing=[]/timing.issues=[]；不属于工程验证，不新增测试case或native子进程。当前展示仍PENDING_REGISTRATION/PENDING_SYNC。
