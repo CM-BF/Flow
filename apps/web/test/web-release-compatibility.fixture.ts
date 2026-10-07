@@ -15,6 +15,18 @@ export type Artifact = { artifactId: string; sourceHead: string; manifestDigest:
 type Identity = { dev: number; ino: number };
 export type AppInput = { label: string; artifact: Artifact; artifactRoot: string; rootIdentity: Identity; distIdentity: Identity;
   format: 1 | 2; releaseId: string | null; manifest: FilePin };
+const RECOVERY_WEB_ARTIFACT: Artifact = {
+  artifactId: "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+  sourceHead: "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+  manifestDigest: "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+};
+const RECOVERY_BACKEND_ARTIFACT: Artifact & { policy: "flow.backend-artifact.v1" } = {
+  policy: "flow.backend-artifact.v1",
+  artifactId: "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+  sourceHead: "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  manifestDigest: "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+};
+export type RecoveryAdmission = Admission & { recoveryApp: AppInput };
 export type PublicContext = { format: 1; publicOrigin: string; policySha256: string };
 export type Admission = {
   finalBackend: { directory: string; root: string; artifact: Artifact & { policy: "flow.backend-artifact.v1" }; sourceTree: string; node: string; pins: FilePin[] };
@@ -25,8 +37,70 @@ export type Admission = {
 };
 /** The already reviewed external caller owns resource/time monitoring and native Chrome/process cleanup. */
 export type Lifetime = { signal: AbortSignal; checkpoint: () => Promise<void> };
+type DiagnosticPhase = { phase: string; step: string | null };
+/** Passive, bounded metadata only. The existing Fastify error handler keeps full ownership of the socket. */
+function observeClientErrors(server: Server, readPhase: () => DiagnosticPhase) {
+  const originalHandlers = server.listeners("clientError");
+  assert.ok(originalHandlers.length > 0, "Keep the real server clientError handler");
+  const started = performance.now(), capBytes = 32 * 1024;
+  type Connection = { connectionId: number; clientPort: number | null; serverPort: number | null };
+  const connections = new WeakMap<Socket, Connection>();
+  const errors: Array<DiagnosticPhase & Connection & { code: string; bytesParsed: number | null; elapsedMs: number }> = [];
+  const upstreams: Array<DiagnosticPhase & { wireIndex: number; clientPort: number | null; serverPort: number | null; elapsedMs: number }> = [];
+  let connectionId = 0, dropped = 0, invalidPhase = false;
+  const phase = () => {
+    const value = readPhase();
+    if (!/^[a-z-]{1,48}$/.test(value.phase) || value.step !== null && !/^[a-z-]{1,48}$/.test(value.step)) {
+      invalidPhase = true; return { phase: "unknown", step: null };
+    }
+    return { phase: value.phase, step: value.step };
+  };
+  const port = (value: number | undefined) => Number.isSafeInteger(value) && value! > 0 && value! <= 65535 ? value! : null;
+  const elapsedMs = () => Math.round(performance.now() - started);
+  const connected = (socket: Socket) => connections.set(socket, { connectionId: ++connectionId,
+    clientPort: port(socket.remotePort), serverPort: port(socket.localPort) });
+  const clientError = (error: Error & { code?: unknown; bytesParsed?: unknown }, socket: Socket) => {
+    if (errors.length >= 16) { dropped++; return; }
+    errors.push({ ...phase(), ...(connections.get(socket) ?? { connectionId: 0, clientPort: null, serverPort: null }),
+      code: typeof error.code === "string" && /^[A-Z0-9_]{1,64}$/.test(error.code) ? error.code : "UNKNOWN",
+      bytesParsed: typeof error.bytesParsed === "number" && Number.isSafeInteger(error.bytesParsed) && error.bytesParsed >= 0 ? error.bytesParsed : null,
+      elapsedMs: elapsedMs() });
+  };
+  server.on("connection", connected); server.on("clientError", clientError);
+  return {
+    upstream(socket: Socket, wireIndex: number) {
+      const capture = () => {
+        if (upstreams.length >= 128) { dropped++; return; }
+        upstreams.push({ ...phase(), wireIndex, clientPort: port(socket.localPort), serverPort: port(socket.remotePort), elapsedMs: elapsedMs() });
+      };
+      if (socket.connecting) socket.once("connect", capture); else capture();
+    },
+    finish() {
+      server.removeListener("connection", connected); server.removeListener("clientError", clientError);
+      const originalHandlersPreserved = originalHandlers.every(handler => server.listeners("clientError").includes(handler));
+      const rows = errors.map(error => {
+        const matching = upstreams.filter(row => error.clientPort !== null && error.serverPort !== null
+          && row.clientPort === error.clientPort && row.serverPort === error.serverPort);
+        return { ...error, association: matching.length === 1 ? "OWNED_PROXY" : "UNKNOWN", wireIndex: matching.length === 1 ? matching[0]!.wireIndex : null };
+      });
+      const result = { diagnosticOnly: true, complete: dropped === 0 && !invalidPhase && originalHandlersPreserved,
+        limits: { errors: 16, upstreams: 128, bytes: capBytes }, dropped, invalidPhase, originalHandlersPreserved, errors: rows, upstreams };
+      if (Buffer.byteLength(JSON.stringify(result, null, 2) + "\n") > capBytes) return { ...result, complete: false, errors: [], upstreams: [], byteCapExceeded: true };
+      return result;
+    },
+  };
+}
 type AssetFile = { path: string; bytes: number; sha256: string };
 export type LoadedApp = AppInput & { files: AssetFile[]; snapshot: { index: AssetFile; assets: Map<string, AssetFile> } };
+export function assertRecoveryAdmission(input: RecoveryAdmission) {
+  assert.ok(input.recoveryApp && input.finalBackend, "New Web and corrected backend descriptors required; no 6c/7d1 fallback");
+  assert.deepEqual(input.finalBackend.artifact, RECOVERY_BACKEND_ARTIFACT);
+  assert.deepEqual(input.recoveryApp.artifact, RECOVERY_WEB_ARTIFACT);
+  assert.match(input.recoveryApp.artifact.artifactId, /^[a-f0-9]{64}$/);
+  assert.equal(input.recoveryApp.artifact.manifestDigest, input.recoveryApp.artifact.artifactId);
+  assert.equal(input.recoveryApp.format, 2); assert.match(input.recoveryApp.releaseId ?? "", /^[a-f0-9]{32}$/);
+  assert.ok(!retained.some(value => value[0] === input.recoveryApp.artifact.artifactId));
+}
 type Center = { listen(options: { host: string; port: number }): Promise<unknown>; close(): Promise<void>; server: Server };
 type PoolLike = { query(text: string, values?: unknown[]): Promise<{ rows: Record<string, unknown>[]; rowCount: number | null }>; end(): Promise<void> };
 type Runtime = {
@@ -108,18 +182,32 @@ async function runtime(input: Admission, life: Lifetime): Promise<Runtime> {
     adapterVersion: contracts.CLAUDE_CONTEXT_SOURCE.adapterVersion, releaseAsset: tools.releaseAsset,
     importWebCompatibility: tools.importWebCompatibility, verifyWebCompatibility: tools.verifyWebCompatibility };
 }
-async function loadApps(inputs: AppInput[], life: Lifetime): Promise<LoadedApp[]> {
+async function loadApps(inputs: AppInput[], life: Lifetime, recoveryApp?: AppInput): Promise<LoadedApp[]> {
   assert.equal(inputs.length, retained.length); assert.equal(new Set(inputs.map(app => app.label)).size, inputs.length);
-  const loaded: LoadedApp[] = [];
-  for (let i = 0; i < inputs.length; i++) {
-    const app = inputs[i]!, expected = retained[i]!; assert.match(app.label, /^[a-z0-9-]{1,32}$/);
-    assert.deepEqual(app.artifact, { artifactId: expected[0], sourceHead: expected[1], manifestDigest: expected[0] });
-    assert.equal(app.releaseId, expected[2]); assert.equal(app.format, expected[2] === null ? 1 : 2);
+  const admitted = recoveryApp ? [...inputs, recoveryApp] : inputs;
+  assert.equal(new Set(admitted.map(app => app.label)).size, admitted.length);
+  const loaded: LoadedApp[] = []; let totalBytes = 0;
+  for (let i = 0; i < admitted.length; i++) {
+    const app = admitted[i]!, expected = retained[i]; assert.match(app.label, /^[a-z0-9-]{1,32}$/);
+    if (expected) {
+      assert.deepEqual(app.artifact, { artifactId: expected[0], sourceHead: expected[1], manifestDigest: expected[0] });
+      assert.equal(app.releaseId, expected[2]); assert.equal(app.format, expected[2] === null ? 1 : 2);
+    } else {
+      assert.equal(app, recoveryApp); assert.deepEqual(app.artifact, RECOVERY_WEB_ARTIFACT);
+      assert.equal(app.format, 2); assert.match(app.releaseId ?? "", /^[a-f0-9]{32}$/);
+      assert.ok(!inputs.some(value => value.releaseId === app.releaseId), "New namespace must be distinct");
+    }
     await directory(app.artifactRoot, app.rootIdentity); const dist = join(app.artifactRoot, "dist"); await directory(dist, app.distIdentity);
     assert.equal(app.manifest.path, join(app.artifactRoot, "manifest.json")); assert.equal(app.manifest.sha256, app.artifact.manifestDigest);
     const manifest = JSON.parse((await pinnedBytes(app.manifest, 64 * 1024)).toString("utf8"));
     assert.equal(manifest.sourceHead, app.artifact.sourceHead); assert.equal(manifest.format, app.format);
-    assert.equal(manifest.releaseId ?? null, app.releaseId); assert.equal(manifest.files.length, 10);
+    assert.equal(manifest.releaseId ?? null, app.releaseId);
+    assert.equal(manifest.policy, app.format === 2 ? "flow-static-web-v2" : "flow-static-web-v1");
+    assert.ok(Array.isArray(manifest.files));
+    if (expected) assert.equal(manifest.files.length, 10);
+    else assert.ok(manifest.files.length > 0 && manifest.files.length <= 128, "New App manifest file bound");
+    assert.equal(manifest.totalBytes, manifest.files.reduce((sum: number, file: AssetFile) => sum + file.bytes, 0));
+    totalBytes += manifest.totalBytes; assert.ok(Number.isSafeInteger(totalBytes) && totalBytes <= 192 * 1024 * 1024);
     const files: AssetFile[] = manifest.files;
     const assets = new Map<string, AssetFile>(); let index: AssetFile | undefined;
     for (const file of files) {
@@ -134,7 +222,8 @@ async function loadApps(inputs: AppInput[], life: Lifetime): Promise<LoadedApp[]
   return loaded;
 }
 export type Wire = { method: string; path: string; status: number; key?: string; body?: string; response?: Record<string, any>;
-  forwardedStream?: string; profile?: string; bearer: boolean; receivedBytes: number; complete: boolean; responseSha256?: string;
+  forwardedStream?: string; profile?: string; bearer: boolean; cookie: boolean; csrf: boolean;
+  logoutHold?: { received: boolean; released: boolean; downstreamFinished: boolean; setCookie: boolean }; receivedBytes: number; complete: boolean; responseSha256?: string;
   sse?: { chunks: number; bytes: number; firstChunkAt: string | null; endedAt: string | null; closedAt: string | null };
   fault?: { contentLength: number; prefixBytes: number; prefixSha256: string; headersFlushed: boolean; prefixFlushed: boolean; endFlushed: boolean; socketClosed: boolean; error?: string } };
 const hopHeaders = ["connection", "keep-alive", "proxy-connection", "proxy-authenticate", "proxy-authorization", "te", "trailer", "transfer-encoding", "upgrade"];
@@ -172,10 +261,11 @@ async function closeServer(server: Server, sockets: Set<Socket>) {
   const closed = new Promise<void>((resolve, reject) => server.close(error => error ? reject(error) : resolve()));
   for (const socket of sockets) socket.destroy(); server.closeAllConnections(); await closed;
 }
-async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, life: Lifetime) {
+async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, life: Lifetime, diagnostic?: ReturnType<typeof observeClientErrors>) {
   assert.ok(Number.isSafeInteger(centerPort) && centerPort > 0 && centerPort <= 65535); assert.notEqual(centerPort, 61228); let app: LoadedApp | undefined, legacy = false, faultArmed = false, publicEnabled = false;
   const records: Wire[] = [], errors: string[] = [], rejected: string[] = [], sockets = new Set<Socket>(), upstreams = new Set<ReturnType<typeof httpRequest>>();
   const pending = new Set<Promise<void>>(); let captured = 0, port = 0, closing = false;
+  let logoutArmed = false, releaseHeldLogout: (() => void) | undefined;
   const canaryPath = `/__flow_proxy_canary_${randomUUID()}`; let canaryObserved = false;
   const track = (operation: Promise<void>) => { pending.add(operation); void operation.catch(error => { errors.push(errorCode(error)); }).finally(() => pending.delete(operation)); };
   const server = createServer((request, response) => {
@@ -202,27 +292,30 @@ async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, l
         const body = Buffer.concat(chunks); const isSession = url.pathname.startsWith("/api/browser-session");
         const selected = faultArmed && request.method === "POST" && /^\/api\/conversations\/[^/]+\/turns$/.test(url.pathname);
         if (selected) faultArmed = false;
+        const heldLogout = logoutArmed && request.method === "POST" && url.pathname === "/api/browser-session/logout";
+        if (heldLogout) logoutArmed = false;
         const headers = forwardHeaders(request.headers); if (legacy) delete headers["x-flow-assistant-stream"];
         // Preserve public Host/Origin/Cookie/CSRF; upstream destination is always this owned listener.
         headers.host = url.host; headers.connection = "close";
         const record: Wire = { method: request.method!, path, status: 0, bearer: String(headers.authorization ?? "").startsWith("Bearer "),
+          cookie: typeof headers.cookie === "string", csrf: typeof headers["x-flow-csrf"] === "string",
           receivedBytes: 0, complete: false, ...(request.headers["idempotency-key"] ? { key: String(request.headers["idempotency-key"]) } : {}),
           ...(!isSession && body.length ? { body: body.toString("utf8") } : {}),
           ...(headers["x-flow-assistant-stream"] ? { forwardedStream: String(headers["x-flow-assistant-stream"]) } : {}),
           ...(headers["x-flow-execution-profile"] ? { profile: String(headers["x-flow-execution-profile"]) } : {}) };
-        records.push(record);
+        const wireIndex = records.length; records.push(record);
         await new Promise<void>((resolve, reject) => {
           let downstreamClosed = false;
-          const upstream = httpRequest({ hostname: "127.0.0.1", port: centerPort, path, method: request.method, headers }, incoming => {
+          const upstream = httpRequest({ hostname: "127.0.0.1", port: centerPort, path, method: request.method, headers, agent: false }, incoming => {
             record.status = incoming.statusCode!; const sse = /text\/event-stream/i.test(String(incoming.headers["content-type"]));
             if (sse) record.sse = { chunks: 0, bytes: 0, firstChunkAt: null, endedAt: null, closedAt: null };
-            if (!selected) response.writeHead(record.status, forwardHeaders(incoming.headers));
+            if (!selected && !heldLogout) response.writeHead(record.status, forwardHeaders(incoming.headers));
             const capture: Buffer[] = []; const digest = createHash("sha256"); let captureBytes = 0;
             incoming.on("data", (chunk: Buffer) => {
               record.receivedBytes += chunk.length; digest.update(chunk);
               if (record.sse) { record.sse.chunks++; record.sse.bytes += chunk.length; record.sse.firstChunkAt ??= new Date().toISOString(); }
-              if (!sse && !isSession) { captureBytes += chunk.length; if (captureBytes <= 128 * 1024) capture.push(chunk); else { incoming.destroy(); reject(Error("UPSTREAM_CAPTURE_CAP")); } }
-              if (!selected && !response.write(chunk)) { incoming.pause(); response.once("drain", () => incoming.resume()); }
+              if (!sse && (!isSession || heldLogout)) { captureBytes += chunk.length; if (captureBytes <= (heldLogout ? 16 : 128) * 1024) capture.push(chunk); else { incoming.destroy(); reject(Error("UPSTREAM_CAPTURE_CAP")); } }
+              if (!selected && !heldLogout && !response.write(chunk)) { incoming.pause(); response.once("drain", () => incoming.resume()); }
             });
             incoming.once("error", error => downstreamClosed ? resolve() : reject(error));
             incoming.once("aborted", () => downstreamClosed ? resolve() : reject(Error("UPSTREAM_INCOMPLETE")));
@@ -235,10 +328,25 @@ async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, l
                 if (record.response && url.pathname === "/api/runners") delete record.response.token;
                 if (selected) { assert.ok(record.status >= 200 && record.status < 300, "Selected upstream ACK was not successful"); await truncateAck(incoming, response, bytes, record); }
               }
+              if (heldLogout) {
+                assert.ok(incoming.complete && record.status === 200, "Held logout must be a real complete success");
+                assert.equal(releaseHeldLogout, undefined);
+                const bytes = Buffer.concat(capture);
+                const held = { received: true, released: false, downstreamFinished: false, setCookie: incoming.headers["set-cookie"] !== undefined };
+                record.logoutHold = held;
+                // Hold the actual response before headers. Forward bytes and Set-Cookie unchanged on release.
+                releaseHeldLogout = () => {
+                  assert.ok(!response.destroyed && !response.headersSent); releaseHeldLogout = undefined; held.released = true;
+                  response.writeHead(record.status, forwardHeaders(incoming.headers));
+                  response.end(bytes, () => { held.downstreamFinished = true; resolve(); });
+                };
+                return;
+              }
               if (!selected) response.end(); resolve();
             })().catch(reject)); });
             incoming.once("close", () => { if (record.sse) record.sse.closedAt = new Date().toISOString(); });
           });
+          if (diagnostic) upstream.once("socket", socket => diagnostic.upstream(socket, wireIndex));
           upstreams.add(upstream); upstream.once("close", () => upstreams.delete(upstream));
           upstream.once("error", error => downstreamClosed ? resolve() : reject(error));
           response.once("close", () => { downstreamClosed = true; upstream.destroy(); resolve(); }); upstream.end(body);
@@ -257,10 +365,12 @@ async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, l
   return { url: `http://127.0.0.1:${port}`, canaryUrl: `http://127.0.0.1:${port}${canaryPath}`, records, errors, rejected,
     assertCanary() { assert.equal(canaryObserved, true, "Chrome must prove absolute-form proxy route before accessing public origin"); },
     select(value: LoadedApp) { app = value; legacy = false; faultArmed = false; },
+    holdNextLogout() { assert.equal(logoutArmed, false); assert.equal(releaseHeldLogout, undefined); logoutArmed = true; },
+    releaseLogout() { assert.ok(releaseHeldLogout, "No complete held response"); releaseHeldLogout(); },
     setLegacy(value: boolean) { legacy = value; }, arm() { assert.equal(faultArmed, false); faultArmed = true; },
     async settle() { await Promise.all([...pending]); assert.deepEqual(errors, []); },
     async close() {
-      closing = true;
+      closing = true; logoutArmed = false; releaseHeldLogout = undefined;
       const upstreamClosed = [...upstreams].map(upstream => new Promise<void>(resolve => { upstream.once("close", resolve); }));
       for (const upstream of upstreams) upstream.destroy();
       await closeServer(server, sockets); await Promise.all(upstreamClosed); await Promise.allSettled([...pending]);
@@ -274,10 +384,10 @@ export async function until<T>(read: () => Promise<T>, predicate: (value: T) => 
     await new Promise(resolve => setTimeout(resolve, 30)); } while (performance.now() < end);
   throw Error("FIXTURE_CONDITION_DEADLINE");
 }
-export async function startReleaseFixture(input: Admission, adminUrl: string, life: Lifetime) {
+export async function startReleaseFixture(input: Admission, adminUrl: string, life: Lifetime, recoveryApp?: AppInput, diagnosticPhase?: () => DiagnosticPhase) {
   life.signal.throwIfAborted(); await life.checkpoint();
   const outputInfo = await directory(input.output); assert.equal(outputInfo.mode & 0o077, 0); assert.deepEqual(await readdir(input.output), []);
-  const tools = await runtime(input, life); const apps = await loadApps(input.apps, life); await life.checkpoint();
+  const tools = await runtime(input, life); const apps = await loadApps(input.apps, life, recoveryApp); await life.checkpoint();
   const adminIdentity = new URL(adminUrl); assert.ok(adminIdentity.protocol === "postgres:" || adminIdentity.protocol === "postgresql:");
   assert.equal(adminIdentity.hostname, "127.0.0.1", "Explicit owned test PG only"); assert.ok(adminIdentity.port && adminIdentity.pathname === "/postgres");
   const databaseName = `flow_release_${randomUUID().replaceAll("-", "")}`, marker = randomUUID(), token = `release-owned-${randomUUID()}`;
@@ -285,10 +395,16 @@ export async function startReleaseFixture(input: Admission, adminUrl: string, li
   const pool = (url: string) => new tools.Pool({ connectionString: url, max: 1, connectionTimeoutMillis: 3000, statement_timeout: 3000 });
   const cleanup = { databaseName, marker, create: "NOT_STARTED", markerWritten: false, databaseRemoved: false, centerClosed: false, proxyClosed: false, errors: [] as string[] };
   let app: Center | undefined, front: Awaited<ReturnType<typeof proxy>> | undefined, closed = false;
+  let diagnostic: ReturnType<typeof observeClientErrors> | undefined;
+  let diagnosticResult: ReturnType<ReturnType<typeof observeClientErrors>["finish"]> | null = null;
   const close = async () => {
     if (closed) return cleanup; closed = true;
     if (front) try { await front.close(); cleanup.proxyClosed = true; } catch (error) { cleanup.errors.push("proxy:" + errorCode(error)); }
     if (app) try { await app.close(); cleanup.centerClosed = true; } catch (error) { cleanup.errors.push("center:" + errorCode(error)); }
+    if (diagnostic) try {
+      diagnosticResult = diagnostic.finish(); await saveJson(input.output, "http-client-errors.json", diagnosticResult);
+      assert.equal(diagnosticResult.complete, true, "Incomplete passive clientError evidence");
+    } catch (error) { cleanup.errors.push("client-error-evidence:" + errorCode(error)); }
     if (cleanup.create === "CONFIRMED" && cleanup.markerWritten) try {
       const own = pool(databaseUrl.href); try { assert.deepEqual((await own.query("SELECT id FROM public.release_fixture_owner")).rows, [{ id: marker }]); } finally { await own.end(); }
       const admin = pool(adminUrl); try {
@@ -301,21 +417,22 @@ export async function startReleaseFixture(input: Admission, adminUrl: string, li
     await saveJson(input.output, "fixture-cleanup.json", cleanup); return cleanup;
   };
   try {
-    await saveJson(input.output, "inputs.json", { backend: input.finalBackend, apps: input.apps, context: input.context, browserSettings: input.browserSettings, databaseName, marker, providerQueries: 0 });
+    await saveJson(input.output, "inputs.json", { backend: input.finalBackend, apps: input.apps, recoveryApp: recoveryApp ?? null, context: input.context, browserSettings: input.browserSettings, databaseName, marker, providerQueries: 0 });
     await life.checkpoint(); cleanup.create = "UNKNOWN"; const admin = pool(adminUrl);
     try { await admin.query(`CREATE DATABASE "${databaseName}"`); cleanup.create = "CONFIRMED"; } finally { await admin.end(); }
     await life.checkpoint(); const own = pool(databaseUrl.href);
     try { await own.query("CREATE TABLE public.release_fixture_owner(id uuid PRIMARY KEY)"); await own.query("INSERT INTO public.release_fixture_owner VALUES($1)", [marker]); cleanup.markerWritten = true; } finally { await own.end(); }
     await life.checkpoint(); app = await tools.createCenter({ databaseUrl: databaseUrl.href, ownerToken: token, browserSession: input.browserSettings, leaseMs: 300_000 });
+    if (diagnosticPhase) diagnostic = observeClientErrors(app.server, diagnosticPhase);
     await life.checkpoint(); await app.listen({ host: "127.0.0.1", port: 0 }); await life.checkpoint();
     const address = app.server.address(); assert.ok(address && typeof address !== "string" && address.port !== 61228);
-    const centerUrl = `http://127.0.0.1:${address.port}`; front = await proxy(address.port, input.context.publicOrigin, tools, life); await life.checkpoint();
+    const centerUrl = `http://127.0.0.1:${address.port}`; front = await proxy(address.port, input.context.publicOrigin, tools, life, diagnostic); await life.checkpoint();
     const owner = new tools.Client({ baseUrl: centerUrl, token });
     const runner = await owner.registerRunner({ name: "RELEASE01 fixed-origin deterministic runner", harnesses: ["claude"], capacity: 1 }); await life.checkpoint();
     const client = new tools.Client({ baseUrl: centerUrl, token: runner.token });
     const configuration = { harness: "claude", adapterVersion: tools.adapterVersion, model: "release-synthetic", thinking: "disabled", permissionMode: "dontAsk", access: "none", requireReadApproval: false, materialScopeDigest: hash("[]"), limits: { maxTurns: 2, maxBudgetUsd: 0.2, timeoutMs: 60_000 } } as const;
     const { profile } = await client.publishExecutionProfile({ configuration }, life.signal); await life.checkpoint();
-    const completeTask = async (taskId: string, text: string) => {
+    const completeTask = async (taskId: string, text: string, whileRunning?: () => Promise<void>) => {
       const claimed = await until(() => client.claim(life.signal), value => value.assignment !== null, life); assert.ok(claimed.assignment);
       const assignment = claimed.assignment; assert.equal(assignment.task.id, taskId);
       const nativeSessionId = randomUUID(), sourceMessageId = randomUUID(), artifactId = randomUUID(), content = "Release fixture reply: " + text;
@@ -331,11 +448,12 @@ export async function startReleaseFixture(input: Admission, adminUrl: string, li
       for (let sequence = 1; sequence <= events.length; sequence++) {
         const event = tools.parseEvent({ ...Object(events[sequence - 1]), id: randomUUID(), sequence });
         await client.report({ attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion, events: [event] }, life.signal); await life.checkpoint();
+        if (sequence === 1 && whileRunning) await whileRunning();
       }
     };
     const request = async (path: string) => { assert.ok(path.startsWith("/api/") && !path.includes("\\") && !path.includes("#")); await life.checkpoint();
       const result = await fetch(centerUrl + path, { headers: { authorization: `Bearer ${token}` }, redirect: "error", signal: life.signal }); assert.ok(result.ok); return result.json(); };
-    return { apps, profile, token, proxy: front, request, completeTask, tools, close, input };
+    return { apps, profile, token, proxy: front, request, completeTask, tools, close, input, diagnosticEvidence: () => diagnosticResult };
   } catch (error) { await close(); throw error; }
 }
 export type ReleaseFixture = Awaited<ReturnType<typeof startReleaseFixture>>;
