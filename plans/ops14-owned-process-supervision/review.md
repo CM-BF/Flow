@@ -69,3 +69,7 @@ Lead APPROVED_SOURCE：新test与Interface窄差异、原实现未改，历史un
 Review target commit: 715525e4d1510b89be7e71a236d537b1f2953038
 
 实际结果固定0720625cd88ff7bfb8c1830eede8b8bfa91ded7e。完整delta、4原始stderr/工具回执、16bindings及stop_test_child已读；无P1/P2，reviewer0运行。新1/旧3重叠、12未选、原2警告与finally收尾保持。shared725bad90/两个既有wrapper源码未改，不扩大至真实服务或历史unknown恢复。详见 zombie-regression-independent-approval.json。
+
+## 本次主线接收
+
+2026-10-07 02:53:59 UTC：main `18144593a0f210e8d5b9b2c08f4ff62259c07cf5` 已受控接收 fixed delivery `de0d539ba89407bf063717fd9ff20d195a0392aa` 的25路径，逐字核同。仅回归test与Interface及原证据/管理事实；共享实现和旧wrapper未改、0重测。SVC07后继未接，完整OPS14仍open。见[main receipt](../../docs/evidence/ops14/zombie-regression-main-receipt.json)。

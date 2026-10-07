@@ -16,4 +16,4 @@
 
 局部验证仅 Python 标准库受控子进程；0 PG / Chrome / provider。fresh 1 GiB + 4 MiB，私有临时 ≤1 MiB、局部检查 ≤15 秒。先按精确接口验证正常、超量、挂起报告、退出后继承 pipe、未知观察与次生错误；不得用测试通过宣称两生产调用方已迁移。
 
-- [ ] OPS14-06 在只操作新建自有进程的有界 probe 中区分 live / exited-unreaped / reaped 与活 descendant 对照；证据成立后另提共享最小修复，不据平台源码猜本机结果。
+- [x] OPS14-06 在只操作新建自有进程的有界 probe 中区分 live / exited-unreaped / reaped 与活 descendant 对照；证据成立后另提共享最小修复，不据平台源码猜本机结果。
