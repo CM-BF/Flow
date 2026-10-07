@@ -1,3 +1,4 @@
+import { assertVerificationInputFits } from '../../../../packages/plugin-runtime/src/verification-input.js';
 import { randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
 import type { PgBoss } from 'pg-boss';
@@ -56,7 +57,7 @@ export async function admitPluginVerification(pool: Pool, boss: PgBoss, registra
     if (!artifact || sha256(artifact.content) !== input.source.version) throw new HttpError(409, 'verification_source_missing', 'The exact bounded source artifact is unavailable.');
     const verification = pluginVerificationRequestSchema.parse({ source: { ...input.source, content: artifact.content }, rule: input.rule });
     const prompt = JSON.stringify(verification);
-    if (prompt.length > 16000 || Buffer.byteLength(prompt) > 16384) throw new HttpError(413, 'verification_input_limit', 'The complete source and rule exceed the verifier input limit.');
+    try { assertVerificationInputFits(verification); } catch { throw new HttpError(413, 'verification_input_limit', 'The complete source and rule exceed the verifier input limit.'); }
     const created = await acceptTask(client, boss, { title: input.title, prompt, harness: 'fixture' });
     const changed = await applyProjectCommand(client, project.id, { expectedRevision: input.expectedSourceProjectRevision,
       reason: 'Create exact-artifact verification task', change: { kind: 'add-node', title: input.title, taskId: created.id, parent: null } });

@@ -1,0 +1,3 @@
+docs/evidence/x01-verifier-admission-result/inputs/packages/plugin-runtime/src/verification-input.test.ts(39,57): error TS2322: Type '(input: PluginToolInput) => Promise<{ content: string; provenance: never; }>' is not assignable to type '(input: PluginToolInput) => Promise<PluginToolResult>'.
+  Type 'Promise<{ content: string; provenance: never; }>' is not assignable to type 'Promise<PluginToolResult>'.
+    Property 'kind' is missing in type '{ content: string; provenance: never; }' but required in type 'PluginToolResult'.

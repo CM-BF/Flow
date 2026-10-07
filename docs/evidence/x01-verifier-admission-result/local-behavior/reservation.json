@@ -1,0 +1,29 @@
+{
+  "startedAt": "2026-10-07T20:46:45.334Z",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/vitest.config.mjs",
+    "--no-cache",
+    "packages/plugin-runtime/src/verification-input.test.ts",
+    "apps/server/src/plugin-verification-configuration.test.ts",
+    "apps/server/src/plugin-runtime/verification-admission.test.ts",
+    "apps/server/src/plugin-runtime/verification-result.test.ts",
+    "-t",
+    "VAR ",
+    "--reporter=json"
+  ],
+  "floor": 18959564800,
+  "free": 19244277760,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/local-behavior/tmp",
+    "dev": 16777234,
+    "ino": 124475798
+  },
+  "maxSeconds": 40,
+  "cumulativeMaxSeconds": 150,
+  "rawMaxBytes": 2097152,
+  "tmpMaxBytes": 4194304
+}

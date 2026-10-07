@@ -1,0 +1,2738 @@
+{
+  "recordedAt": "2026-10-07T20:42:45.714Z",
+  "state": "NO_ACTUAL_HOLDER_ARC_HTTP_FAILED_RETURN_PERSONAL_PRIORITY",
+  "groupWindowOwnership": "No actualheavyholder/NEXT. Arc HTTP singleattempt failed/exactownedRETURN; personalrepairREADY highestpriority. Allisolatedordinary/source maycontinue.",
+  "release03": {
+    "state": "APPROVED_MAIN_DELIVERED_RELEASED",
+    "run": "app1750-20261006-175014-344a04",
+    "implementation": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+    "actualHead": "58197960009ac882a3aadaf59b51c315dd82e55f",
+    "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+    "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "compatibilityId": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9",
+    "A": "REUSED_EXACT_OLD_ALL12_A; old B FAILED retained",
+    "B": "3_APP_CHECKS_PASS",
+    "newRuntimeMs": 10874,
+    "spentMs": 50809,
+    "remainingMs": 129191,
+    "cleanupComplete": true,
+    "windowReturned": true,
+    "evidence": "release03-app1750-intake.json",
+    "admission": "release03-app1750-admission.json",
+    "next": "Originaloperator retained compatibility preparation and managed publication; no repeat accepted d629 A/B.",
+    "previousRun": {
+      "state": "EF458_APPROVED_B1736_NOT_RUN_RESOURCE",
+      "run": "app-20261006-171109-8cf8c3",
+      "implementation": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
+      "actualHead": "b6c13e0190771fd42e8f34d75cab7ab37adbf6c2",
+      "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+      "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "admissionFreeBytes": 1247502336,
+      "startBytes": 1207959552,
+      "stopBytes": 1140850688,
+      "newRuntimeMs": 19626,
+      "spentMs": 39935,
+      "remainingMs": 140065,
+      "gateConsumed": true,
+      "cleanupComplete": true,
+      "B": "FAILED_REUSED_ACK_OBSERVED_DETERMINISTIC_FAULT_DELTA_PENDING",
+      "compatibilityId": null,
+      "A": "REUSED_ATTESTED_ALL12_NOT_RERUN",
+      "evidence": "release03-app-171109-intake.json",
+      "previousRun": {
+        "state": "A_PASS_B_LOCATOR_FAILURE_CLEANED_WINDOW_RETURNED",
+        "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
+        "actualHead": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
+        "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+        "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "admissionFreeBytes": 1228890112,
+        "startBytes": 1207959552,
+        "stopBytes": 1140850688,
+        "newRuntimeMs": 12326,
+        "spentMs": 20309,
+        "remainingMs": 159691,
+        "minimumSampledFreeBytes": 1199947776,
+        "finalSampledFreeBytes": 1203339264,
+        "gateConsumed": true,
+        "cleanupComplete": true,
+        "evidence": "release03-all-first-intake.json",
+        "B": "FAILED_HARNESS_LOCATOR_BEFORE_COMPLETE_COMPATIBILITY",
+        "labelSource": {
+          "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
+          "metadata": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
+          "review": "APPROVED_SOURCE_LABEL_FIX",
+          "runtime": "Executed in all-20261006-164711-15b54e at ba7dea; A3 remains earlier269103/0b3e.",
+          "evidence": "release03-c18bd-label-review-root.json"
+        },
+        "previousRun": {
+          "state": "PARTIAL_RESOURCE_STOP",
+          "implementation": "269103d44f153f13a2f35fadb08bf11d4f62e48d",
+          "actualHead": "0b3e2415767b2ef9dfff6e7a8e9ffc0025b1d268",
+          "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+          "artifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+          "admissionFreeBytes": 1109671936,
+          "startBytes": 1107296256,
+          "stopBytes": 1090519040,
+          "newRuntimeMs": 4109,
+          "spentMs": 7983,
+          "remainingMs": 172017,
+          "minimumSampledFreeBytes": 1090244608,
+          "finalSampledFreeBytes": 1089323008,
+          "gateConsumed": true,
+          "cleanupComplete": true,
+          "evidence": "release03-a3-intake.json",
+          "B": "NOT_RUN",
+          "labelSource": {
+            "implementation": "c18bd6630cbdbb431460688a0f6bea9248f4151f",
+            "metadata": "ba7dea68ddaeb7238d47d0a31eddaec30a7783aa",
+            "review": "APPROVED_SOURCE_LABEL_FIX",
+            "runtime": "NOT_RUN; A3remains269103/0b3e",
+            "evidence": "release03-c18bd-label-review-root.json"
+          }
+        },
+        "run": "all-20261006-164711-15b54e",
+        "evidenceReview": "release03-all-164711-root-review.json",
+        "reuse": "A facts accepted from all12; explicit adapter/source review and externally pinned all12 required before separate fresh B-only admission.",
+        "sourceRepair": {
+          "implementation": "9927bb071494ec16a9d8091a6ba5edb4ea72c18a",
+          "metadata": "b6c13e0190771fd42e8f34d75cab7ab37adbf6c2",
+          "review": "APPROVED_SOURCE_SCOPED root+peer",
+          "runtime": "NOT_RUN",
+          "evidence": "release03-9927-root-review.json"
+        }
+      },
+      "evidenceReview": "release03-app-171109-root-review.json",
+      "ownerMetadata": "6411ba7a43f0f54b5fc924ef8850b88d80e44ac2",
+      "minimumSampledFreeBytes": 1220063232,
+      "finalSampledFreeBytes": 1230462976,
+      "sourceRepair": {
+        "implementation": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+        "metadata": "58197960009ac882a3aadaf59b51c315dd82e55f",
+        "review": "Root+peer APPROVED_SOURCE_SCOPED0blocking; NOT_RUN",
+        "runtime": "NOT_RUN",
+        "evidence": "release03-ef458-source-intake.json"
+      },
+      "nextWindowRequest": "release03-next-b-window-request.json",
+      "nextAdmission": {
+        "state": "NOT_RUN_RESOURCE",
+        "at": "2026-10-06T17:35:43.958730+00:00",
+        "availableBytes": 1179914240,
+        "startBytes": 1207959552,
+        "stopBytes": 1140850688,
+        "gatePath": null,
+        "runtimeMs": 0,
+        "spentMs": 39935,
+        "remainingMs": 140065,
+        "evidence": "release03-app2-not-run-1736.json",
+        "windowReturned": true
+      },
+      "currentAdmission": {
+        "state": "ADMITTED_ONE_APP",
+        "at": "2026-10-06T17:50:14.366315+00:00",
+        "run": "app1750-20261006-175014-344a04",
+        "availableBytes": 1755238400,
+        "previousRuntimeMs": 39935,
+        "allowedMs": 140065,
+        "history": "all12 A reused; no rerun",
+        "sourceHead": "58197960009ac882a3aadaf59b51c315dd82e55f",
+        "evidence": "release03-app1750-admission.json",
+        "window": "RELEASE03-B-20261006-1750"
+      },
+      "currentResult": {
+        "run": "app1750-20261006-175014-344a04",
+        "state": "PASS_OWNER_RAW_PENDING_ROOT_REVIEW",
+        "runtimeMs": 10874,
+        "spentMs": 50809,
+        "remainingMs": 129191,
+        "A": "REUSED_ALL12_NOT_RERUN",
+        "B": "3_APP_CHECKS_PASS",
+        "compatibilityId": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9",
+        "cleanup": "databaseRemoved=true/errors=[]/worker76508+Chrome76648exit0",
+        "windowReturned": true,
+        "rawDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-current-preview-compatibility/docs/evidence/wpf-release03/runs/app1750-20261006-175014-344a04"
+      }
+    },
+    "evidenceReview": "release03-app1750-root-review.json",
+    "ownerMetadata": "51e8597d10e14146f95c5d572cb3bf5d30545b07",
+    "ownerFinal": "9d4641c9409d02049770610091ddf59537e22378",
+    "main": "8fc76397c4243bdea93c3ca5e1bf6b4c5ef16981",
+    "claimReleased": "bfb209ae v4"
+  },
+  "recoveryDirect": {
+    "at": "2026-10-06T18:38:02.053726+00:00",
+    "state": "CONTROLLED_DIRECT38_EVIDENCE_ACCEPTED_SCOPED",
+    "implementation": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
+    "runtimeHead": "bf14ae68c2c9b1ba9666f9f5b6314ca15353625d",
+    "direct": {
+      "success": true,
+      "numTotalTests": 38,
+      "numPassedTests": 38,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTodoTests": 0
+    },
+    "steps": [
+      {
+        "name": "direct",
+        "exitCode": 0,
+        "signal": null,
+        "elapsedMs": 2136
+      }
+    ],
+    "elapsedMs": 2294,
+    "cumulativeMs": 6868,
+    "remainingMs": 23132,
+    "cleanup": {
+      "state": "fulfilled",
+      "errors": [],
+      "seconds": 0.0,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "serverClosureBasis": "Single direct command and fork remain in the inherited worker group; no external service used"
+    },
+    "maxObservedTmpBytes": 2920536,
+    "minObservedFreeBytes": 1598066688,
+    "sourceCount": 19,
+    "record": "recovery01-38-first-check/result.json",
+    "coverage": "38 controlled IDB/mockhost/observer; network deny, no HTTP/PG/Chrome/types; not realbrowser/fullfeature acceptance",
+    "noRetry": true,
+    "review": "recovery01-38-root-evidence-review.json",
+    "spentMs": 6868,
+    "startBytes": 1090519040,
+    "stopBytes": 1082130432,
+    "gateConsumed": true,
+    "cleanupComplete": true,
+    "supervisor": "recovery01-38-supervisor-prepared/preparation.json",
+    "previousRuntime": {
+      "state": "CONTROLLED_DIRECT_PASS_CLEANED",
+      "implementation": "1b8a335ecf26ece7539ad19e634508ac12ca3729",
+      "metadata": "0eef4cda8813afe336df8dc88256da28e206c0d4",
+      "cases": 27,
+      "startBytes": 1090519040,
+      "stopBytes": 1082130432,
+      "at": "2026-10-06T16:21:52.720658+00:00",
+      "availableBytes": 1134813184,
+      "samples": 1,
+      "gateCreated": true,
+      "newRuntimeMs": 2034,
+      "spentMs": 4574,
+      "remainingMs": 25426,
+      "materials": "recovery01-1b8-rebound-manifest.json",
+      "evidence": "recovery01-direct-1b8-intake.json",
+      "policySource": "Lead16:03 independent low-incremental check permission adopted byroot; prior2.540s/maxsampledtmp2.7MiB. Does not change A/B.",
+      "gateConsumed": true,
+      "cleanupComplete": true,
+      "coverage": "27/27 controlled IDB/mock fetch; no real IDB/browser/HTTP",
+      "laterFixture": "ec91 sourceonly approved; old1b8 direct pass not relabeled",
+      "sourceSuccessor": {
+        "implementation": "667889058d3decc0abc9f635a37fd0f05f2c090c",
+        "metadata": "0926eefa334eeedc75bf923f4d1911ebf6c75548",
+        "review": "APPROVED_SOURCE_SCOPED root0blocking, originalP2 SOURCE_ADDRESSED",
+        "evidence": "recovery01-667-root-source-review.json",
+        "runtime": "NOT_RUN; historical1b8 direct27 unchanged",
+        "next": "panels ownmetadata then read-only DPERF per-entry binding candidate in own/tmp, no runnable state/gate",
+        "historicalOnly": true
+      },
+      "latestSource": {
+        "implementation": "667889058d3decc0abc9f635a37fd0f05f2c090c",
+        "metadata": "0fe939fa222e69993ebaca825c6ca6bf0ea683fd",
+        "review": "APPROVED_SOURCE_SCOPED0blocking",
+        "runtime": "NOT_RUN; historical direct27 remains1b8/0eef",
+        "evidence": "recovery01-667-root-source-review.json"
+      },
+      "historicalOnly": true
+    },
+    "next": "No repeat direct/type checks. Real browser remains prior667 failure; future fresh independent window/gate required."
+  },
+  "dperf04": {
+    "claim": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 1,
+    "scopeCount": 9,
+    "mode": "NODE_SECOND_PASS_CLEANED",
+    "runtime": "7 leaves+parent8 PASS;2318ms/cumulative3950/remaining26050; group+scratch absent",
+    "firstCanonical": "704894e97f573f7683e1c3fa37020fc0d9a5205c",
+    "sourceReady": "dperf04-source-ready.json",
+    "registration": "REGISTERED",
+    "registrationCommit": "65659028ec3aed7c4b5a68eb20a39a32026e5dc5",
+    "registrationEvidence": "dperf04-registration-656-intake.json",
+    "implementation": "abd2aff768f97350762b2eaddbe7ae6843902f48",
+    "actualHead": "823071cd3188a1019d8e5c5eb2c60f0939536054",
+    "evidence": "dperf04-node-second-intake.json",
+    "browser": "NOT_RUN",
+    "nextSource": {
+      "implementation": "abd2aff768f97350762b2eaddbe7ae6843902f48",
+      "metadata": "823071cd3188a1019d8e5c5eb2c60f0939536054",
+      "review": "APPROVED_SOURCE_SCOPED root+peer",
+      "budgetMs": 28368,
+      "supervisor": "dperf04-node-second-prepared/preparation.json",
+      "runtime": "Executed once, PASS; browserNOT_RUN"
+    },
+    "firstRuntime": {
+      "implementation": "1441d86baa40e98f4cb81b82dcc551202973209b",
+      "actualHead": "36d687fc682809ce73a90910d86ad34c6349d9dc",
+      "runtime": "6 leafpass/1 leaffail; TAP6/2 inclparent.1632ms, remaining28368; ownPGID/scratchclosed",
+      "evidence": "dperf04-node-first-intake.json"
+    },
+    "metadata": "62ddb315adc26ff934eecf7e125079dd0ce47d36",
+    "review": "UNKNOWN targetabd2; scopedsource approved, browser/fullfeature pending",
+    "wrapper": {
+      "implementation": "b17bb05c797cfccc8dbeb4c3de26e57143600bec",
+      "metadata": "032b4418f5a944150b888e10fef342b64f3e3655",
+      "review": "root + d01_owner APPROVED_SOURCE_SCOPED, 0 blocking",
+      "supervisorSha256": "bd0536e64096a4234a1e403096e038112b1bfbdd3dbddd36b8b96163c2809a43",
+      "binding": "CANDIDATE_POPULATED_STRUCTURE_APPROVED_NOT_RUN",
+      "browser": "NOT_RUN",
+      "evidence": "dperf04-b17-manager-source-review.json",
+      "bindingEvidence": "dperf04-populated-binding-root-review.json",
+      "bindingCandidate": "dperf04-summary-binding-candidate/binding.json",
+      "bindingBoundary": "No gate or runnable state; future fresh identity/budget/path/claim/window/free required. Stop guard remains >=1140850688; observed stop fires <= threshold.",
+      "runtimePreparation": {
+        "state": "APPROVED_SCOPED_LIFECYCLE_SOURCE_AND_PREPARATION_NOT_RUN",
+        "target": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
+        "metadataAtReview": "3a51a78ebd7f90e36fa2c0c1f5e9d83c2ec4e51c",
+        "evidence": "dperf04-45f8-prepared/intake.json",
+        "rootReview": "dperf04-45f8-prepared/root-review.json",
+        "nativeChromeBoundaryAcceptance": {
+          "state": "ACCEPTED_EXPLICIT_GO",
+          "evidence": "dperf04-b2-native-chrome-boundary-acceptance.json",
+          "binding": "native-chrome-boundary-binding.json",
+          "runtime": "NOT_RUN, no window/gate"
+        },
+        "browser": "NOT_RUN",
+        "ownerFinal": "12ac7db8bfa9037b16432d848d967c85c6389e05",
+        "ownerStoppedWriting": true
+      }
+    }
+  },
+  "leadEvents": [
+    {
+      "time": "16:05:58",
+      "beforeBytes": 884588544,
+      "afterBytes": 896360448,
+      "source": "Lead via root",
+      "attribution": "temporary shared volume change unknown"
+    },
+    {
+      "time": "16:06:38",
+      "freeBytes": 1113837568,
+      "source": "Lead via root",
+      "coordination": "Three trees complete clean; other PG/load held for ONE A3. Fresh manager sample used separately."
+    },
+    {
+      "time": "16:19:10",
+      "freeBytes": 1150287872,
+      "source": "Lead via root",
+      "coordination": "next12 12/12 complete/stopped; A/B paused; existing pure-check fresh policy only"
+    },
+    {
+      "time": "16:44:51",
+      "freeBytes": 1243852800,
+      "source": "Lead via root; not managerfresh",
+      "coordination": "next12b12/12 complete; >=1GiB+160MiB; one serial A->B allowed, O14/O15/TUI PG held"
+    },
+    {
+      "source": "Lead via root, current-turn confirmation",
+      "coordination": "Accepted all cleanup; nextPG Mika CORE8, start+128MiB/120s+80s; no concurrent ownPG. main564 docs/registry only, personal unchanged."
+    },
+    {
+      "source": "Lead via root16:58",
+      "coordination": "CORE initial0/8 due4missingSQL, cleaned; exact28SQL closure fixed; oneCORE-PG-RETRY-20261006-1658 under+128MiB/200s. PG remainsCORE, no B/O14 overlap; <=8MiB pureHTTP allowed separately."
+    },
+    {
+      "source": "LatestLead via root afterCORE16:58retry admission",
+      "coordination": "CORE freshabout15MBshort,NOT_RUN/0newDB/process andreturned; O14native_center_ownerexclusivePG,original+32MiB/120s+30s; B waitsactualcleanup/fresh originalBthreshold."
+    },
+    {
+      "source": "LatestLead via root afterO14",
+      "coordination": "O14 2/2/9.89s, ownedDBDROP/connections0/remaining[]/runtimeclean/0provider, returned. New four-tree batch toward1GiB+160MiB; finish at target orlimit before unifiedCORE8/B coordination. No automatic dispatch merely crossing threshold."
+    },
+    {
+      "source": "Lead17:07 via root",
+      "observedAt": "2026-10-06T17:07:11Z",
+      "freeBytes": 1265397760,
+      "coordination": "Two exact oldBuildKit caches cleaned; next4c0treeoperations stopped atpreparationline; CORE1707exclusive128MiB/120+80, B priority afterreturn. Notmanagerfresh."
+    },
+    {
+      "source": "Lead1710 via root and W01 actual completion",
+      "coordination": "CORE1707 actual8/8 cleaned; one B admitted17:11:09, actual19626ms failure/cleanup; immediately returned, no retry."
+    },
+    {
+      "source": "Lead via root afterB",
+      "coordination": "Accepted17:11:55Breturn; nextPG TUI01F original2shortjourneys. A not rerun, personalservices unchanged."
+    },
+    {
+      "source": "LatestLead via root",
+      "coordination": "TUI01F2behaviorpassed/afterAllexit1;17:18oneownership+zero-connectionsnormalDROP, ownprocesses stopped/windowreturned. RELEASE39935/remaining140065 unchanged; sourcefix/review only, no autoB/A."
+    },
+    {
+      "source": "LatestLead via root",
+      "coordination": "F01_032 exclusive onecase fixed0ee2494 with approvedCOREea276/C016d114; noChrome. Web0PG and budget39935/140065 unchanged."
+    },
+    {
+      "event": "RELEASE03-B-20261006-1736",
+      "source": "Lead via root",
+      "coordination": "Lead RELEASE03-B-20261006-1736 explicitly assigned one B-only after F01-032 1casePASS/ownedDBDROP remaining[]/process exit; TUIcleanup/O15 waiting. No new run until one fresh original gate; no A rerun."
+    },
+    {
+      "source": "Lead via root",
+      "event": "TUI_CLEANUP_RETURN_THEN_O15_EXCLUSIVE",
+      "coordination": "Lead: TUI cleanup-only1/1 ordinaryDROP/tmpremoved/0provider returned; O15 sixcases now exclusivePG, fresh1GiB+64MiB/120+30s. Web B remains paused after B1736 insufficient, no new gate/sample."
+    },
+    {
+      "source": "Lead via root1750",
+      "event": "RELEASE03-B-20261006-1750",
+      "coordination": "Lead explicit RELEASE03-B-20261006-1750: O15/TUI cleaned; resource batch stopped at preparationline. Web sole B-only pending one fresh predicate/free; PROFILEC02 checks not started and paused; others PG/Chrome held."
+    },
+    {
+      "source": "Lead via root1756",
+      "event": "F01-O15-PRODUCTION-1756",
+      "coordination": "Lead F01-O15-PRODUCTION-1756 assigned native_center_owner one productiontest/120+30s/0provider/start1GiB+64MiB. Web1750 returned; Recovery/DPERFbrowser waitactualcleanup/newwindow. No managerfree sample or newrun."
+    },
+    {
+      "source": "Lead via root after1756cleanup",
+      "event": "RECOVERY_NEXT_PREPARED_SUBSET",
+      "coordination": "Lead F01-O15-PRODUCTION1756 actual1/1/5.65s and ownedDB absent/connections[]/PGID52469absent returned; explicitly assigns Recovery nextserialPG/Chrome window. Original90s incl15cleanup subset only; current no run until onefresh gate. DPERFnotassigned."
+    },
+    {
+      "source": "Lead via root latest intake, no manager personal observation",
+      "event": "SVC05H_SAME_VERSION_RESTORE_CLOSED",
+      "facts": "bootstrap0/922ms; old65219exit/new23534+23631ownedready; center64904/runner65168/source362/accepting15/pointercaa1-v2/config+observedDBfacts unchanged;0provider/no tabreload; checkoutmain ec5clean",
+      "boundary": "Does not publish af51+d629; retained461a/caa1\u2192af51 source preparation continues underLead."
+    }
+  ],
+  "limits": [
+    "Sharedfree samples are not causal allocation/physical peak guarantees",
+    "RELEASE\u7d2f\u8ba150809/180000ms\u3001\u4f59129191\u4ec5\u7b97\u672f\uff1b\u5df2main/released\uff0c\u4e0d\u80fd\u81ea\u52a8\u91cd\u8dd1\u6216\u90e8\u7f72\u3002",
+    "Recovery\u7d2f\u8ba114846.267375/90000ms\u3001\u4f5975153.732625\u4ec5\u7b97\u672f\uff1b\u5931\u8d25\u540e\u7a97\u53e3\u5df2\u8fd4\uff0c\u6e90\u7801\u4fee\u590d\u4e0d\u5e26\u8fd0\u884c\u8bb8\u53ef\u3002",
+    "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
+  ],
+  "latestCoordination": {
+    "at": "2026-10-07T20:23:37.284Z",
+    "event": "Manager read exact Recovery RETURN; release heavy window now, no second NEXT. Personal service still stopped; original recovery readiness required before next personal actual. Isolated ordinary remains permitted.",
+    "record": "host-i01-newpair-queue-20261007/current.json"
+  },
+  "profileReadonly": {
+    "task": "WPF-PROFILEC02",
+    "claimId": "e0b86bb5-b373-4ad6-9257-6d8c18d06335",
+    "version": 2,
+    "scopes": 4,
+    "state": "DELIVERED_MAIN_INTEGRATED_RELEASED",
+    "owner": "w01_owner",
+    "source": "profile-readonly-source-request.json",
+    "runtime": "Localdedicatedtypes/testsNOT_RUN; LeadI02actualcombinedrootnoEmit0/9.085672s attributed in mainintake",
+    "implementation": "2d1e2ade19941e9a8b38f18148e6a2d434f8c730",
+    "metadata": "0f4e68927754b188026711b588a722166a618994",
+    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-readonly-compatibility/plans/wpf-profile-readonly-compatibility/status.md",
+    "registry": "Lead reported registry169 source registration; actual4320 display not observed",
+    "sourceReview": "APPROVED_SOURCE_SCOPED0blocking; profile-readonly-2d1-root-source-review.json",
+    "main": "8d84d529a0756116bd0fc8bad969d61a6c26248e",
+    "ownerFinal": "f704714abb8edddd8f6769483495507cf83c93c7",
+    "release": {
+      "claimId": "e0b86bb5-b373-4ad6-9257-6d8c18d06335",
+      "version": 2,
+      "committedAt": "2026-10-06T17:56:15.159Z",
+      "evidence": "profile-readonly-release-receipt.json"
+    }
+  },
+  "recoveryBrowser": {
+    "implementation": "667889058d3decc0abc9f635a37fd0f05f2c090c",
+    "runtimeHead": "0fe939fa222e69993ebaca825c6ca6bf0ea683fd",
+    "run": "rec667-20261006-180030-f86542",
+    "state": "FAILED_UNCLASSIFIED_IDB_STORE_NOT_FOUND",
+    "elapsedMs": 14846.267375,
+    "remainingMs": 75153.732625,
+    "cleanupComplete": true,
+    "cookieRead": "PASS",
+    "textIntentDraft": "FAILED_PREDICATE_TIMEOUT",
+    "materials": "NOT_COMPLETED",
+    "otherCoverage": "NOT_RUN/PENDING",
+    "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542",
+    "files": 10,
+    "bytes": 17415,
+    "adminEnvRemoved": true,
+    "sourceReview": "CHANGES_REQUESTED_SOURCE_SCOPED P1 activation/P2 observer; source repair only; not sole dynamic root-cause proof",
+    "source": "recovery01-browser-first-intake.json",
+    "repair": "recovery01-idb-repair-dispatch.json",
+    "retryAuthorized": false,
+    "repairFixedSource": "7cc7629b6603a6ccc7e2ab6143125dea8daae685",
+    "repairRootReview": "APPROVED_SOURCE_SCOPED_NOT_RUN",
+    "repairIntake": "recovery01-7cc-source-intake.json",
+    "restoreEditSource": {
+      "implementation": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+      "metadata": "a99037a47452cc2a314d4767127b04791fb7d664",
+      "review": "ROOT_AND_PEER_SCOPED_SOURCE_0_BLOCKING_NOT_RUN",
+      "evidence": "recovery01-2b01-source-intake.json",
+      "direct50": "50/50 controlled PASS; late terminal cumulative9968.050625, original browser failure not revalidated",
+      "browser": "Prior failure remains not revalidated",
+      "ownerMetadataSeal": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
+      "direct50Preparation": "Executed once;50controlledPASS accepted. No repeat",
+      "direct50PreparationEvidence": "recovery01-50-ready/intake.json"
+    },
+    "nextPrepared": {
+      "evidence": "recovery01-browser-next4d-prepared/intake.json",
+      "state": "SCOPED_PARENT_SOURCE_APPROVED_PREPARED_NOT_RUN",
+      "window": null,
+      "source": "4d3303d7e107b400ebe8ecae62b8d843c0d1d4cb",
+      "review": "recovery01-browser-next-prepared/root-4d330-source-review.json",
+      "head": "d3d45bcb58e2b34064abfdbb90b9d56edc6cd0d9"
+    }
+  },
+  "settingsLeaf": {
+    "state": "FOCUSED_CHECK_EVIDENCE_ACCEPTED_CLEANED",
+    "owner": "w01_owner",
+    "claimId": "a5b0c231-aff2-41c9-a20b-a08ccc6dc3cb",
+    "version": 1,
+    "sourceRequest": "mature02-message-settings-source-request.json",
+    "PG": false,
+    "browser": "B5_4_CHECKS_PASS_SCOPED_EVIDENCE_APPROVED",
+    "sourceReady": "message-settings-source-ready.json",
+    "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+    "metadata": "3b945339151abd29e213ff37774ea7d6c5aee93f",
+    "registration": "message-settings-registration-intake.json",
+    "checkPreparation": "message-settings-check-preparation/report.md",
+    "sourceFixedBeforeDelta": "Historical ed769 estimate20 not authoritative; actual f3 sixsources executed at85aba",
+    "currentSourceIntake": "message-settings-f3-source-intake.json",
+    "review": "message-settings-f3-root-source-review.json",
+    "parent": "message-settings-supervisor-preparation.json",
+    "runtime": "types/direct37 PASS independently accepted; parentcountFAIL retained. No retry.",
+    "elapsedMs": 2762,
+    "remainingMs": 27238,
+    "cleanupComplete": true,
+    "evidence": "message-settings-first-check-intake.json",
+    "parentReview": "message-settings-supervisor-root-review.json",
+    "evidenceReview": "message-settings-first-root-evidence-review.json",
+    "browserCandidate": "message-settings-browser-candidate/intake.json",
+    "browserCandidateState": "B4_CONSUMED_FAILED_CLEANED_SELECTOR_REPAIR_SOURCE_ONLY",
+    "metadataSeal": "message-settings-browser-metadata-seal.json",
+    "browserResult": "message-settings-b4-window-return.json",
+    "browserSpentMs": 28876,
+    "browserRemainingMs": 31124,
+    "browserRepair": {
+      "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+      "metadata": "b41c93e7a7e054faec68faed101be5adf4d21225",
+      "evidence": "message-settings-browser-b2-prepared/intake.json",
+      "runtime": "NOT_RUN",
+      "previousRuntimeMs": 5197,
+      "remainingMs": 54803,
+      "historicalOnly": true
+    },
+    "browserAdmission": "message-settings-b4-admission.json",
+    "browserEvidenceReview": "message-settings-b5-actual/root-runtime-review.json",
+    "nextPreparation": {
+      "state": "APPROVED_SCOPED_LOCATOR_SOURCE_NOT_RUN_WAITING_NEW_WINDOW",
+      "evidence": "message-settings-b4-locator-dispatch.json",
+      "nativeChromeBoundaryApproval": "settings-b4-native-chrome-boundary-acceptance.json",
+      "runtimeGate": false,
+      "previousRuntimeMs": 20609,
+      "remainingMs": 39391,
+      "cleanupReserveMs": 15000,
+      "rootReview": "message-settings-270c-root-source-review.json",
+      "implementation": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+      "metadata": "ba43716f142667897ec6ca8e17442dde92b6f4d2",
+      "intake": "message-settings-270c-locator-intake.json"
+    },
+    "b5Ready": {
+      "evidence": "message-settings-b5-prepared/intake.json",
+      "state": "APPROVED_REPAIRED_PREPARATION_NATIVE_BOUNDARY_ACCEPTED_NOT_RUN",
+      "source": "270cfdfa2bcbd04ef62a6ad3ecbc22358db32d67",
+      "metadata": "0925d6e3b1c86c432449cbe324f4f8ebfe1ebf0e",
+      "bindingSha256": "dbd44eb3de82d2c5e6d6ac9886a90a118db67ed1d88dee089ac90b09d345adde",
+      "gate": false,
+      "runtime": false,
+      "windowState": "NOT_RUN_REASSIGNED_BEFORE_DISPATCH"
+    },
+    "ownerEvidenceSeal": "message-settings-b5-actual/owner-approval-seal.json"
+  },
+  "retainedAf51": {
+    "state": "LEAD_APPROVED_AND_MAIN_ACCEPTED_LIMITED_COMPATIBILITY",
+    "main": "1126ada4891dc07aff9c83e0747b66069aaf2111",
+    "evidence": "retained-af51-main-intake.json",
+    "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
+  },
+  "currentWindowReturn": {
+    "logicalId": "SVC06B-FIXED-CD27-WEB779-PERSONAL-20261007-ONCE",
+    "state": "FAILED_PERSONAL_SERVICES_STOPPED_RESOURCE_RETURNED_NOT_RESUMED",
+    "grantedAt": "2026-10-07T19:28:11.839Z",
+    "owner": "Original assignment_review under Original Lead",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+    "source": "520d3cb7bdb352a1462d83c214e63c8a47c218f4",
+    "preparation": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/web-publication-preparation.json",
+    "deliveryPrefixes": [
+      "96e8",
+      "b895"
+    ],
+    "review": "Original approved source+actual-local main089a6e460; eight source paths mainc15cdffcb",
+    "candidatePeakBytes": 540016640,
+    "completeMinimumFreeBytes": 18518114304,
+    "selectedTuple": "cd27/04da backend; Web779/c231; policy81a8; four formal reports unchanged",
+    "sequence": "Fresh private identities -> fixed cd27 import -> three retained reports -> reviewed original maintenance -> exact resumed-confirmed receipt -> fresh private Web instance -> fixed779 Web import -> fourth report -> explicit expectedVersion3 CAS publication. Old pointer retained until public publish action. No rebuilt artifacts.",
+    "limits": {
+      "importWorkMs": 120000,
+      "importTermMs": 500,
+      "importReapMs": 2000,
+      "maintenanceWorkMs": 900000,
+      "maintenanceReapMs": 2000,
+      "eachFixedWebActionWorkMs": 30000,
+      "eachFixedWebActionTermMs": 500,
+      "eachFixedWebActionReapMs": 2000,
+      "newLogicalBytes": 536870912,
+      "rawTotalBytes": 2097152,
+      "recordBytes": 1048576
+    },
+    "preflight": "Original sole operator fresh exact claim/source/runtime/tuple/report pins, private0600 six-file and three-process/CAS identity, unique idle and free>=latest complete floor. Personal input remains null until normal trusted freeze. No credentials in public records. Any mismatch or unknown stop before dependent side effects.",
+    "resourceRule": "Exclusive against other PG/Chrome/build/heavy or personal operations; isolated source and already-authorized nonmeasurement0PG ordinary can continue. No second heavy NEXT.",
+    "failureRule": "Preserve partial effects and unknown status; no automatic retry/rollback/delete journals/replay. Separate actualSTART, phase terminal, publication result, and exact resource RETURN; do not infer from elapsed time.",
+    "contractFreeze": {
+      "at": "2026-10-07T19:45:01.641Z",
+      "logicalId": "SVC06B-FIXED-CD27-WEB779-PERSONAL-20261007-ONCE",
+      "floorBytes": 18518114304,
+      "until": "Historical consumed gate immutable; independent future budget may change",
+      "prelaunchFact": "Original reports0START/0personal effects. Old18509725696 frozenoperator stopped at launch-before assert after newQ01 changed requiredfloor. Same unconsumed operator now routine rebinds18518114304 and directly fresh launches; free about19.38GB reported, exact sample belongs actualreceipt.",
+      "rule": "No secondgrant/sourceapproval. Existing authorized ordinary/source continues. Any new not-yet-authorized growth queues until actualSTART or explicitSTOP; do not mutate this fixed resource contract again. Historical/preflightfailure kept. No globalSTOP.",
+      "state": "CONSUMED_IMMUTABLE"
+    },
+    "actualStart": "2026-10-07T19:43:39.755Z",
+    "operator": "Original assignment_review",
+    "consumedFloorBytes": 18518114304,
+    "freshFreeBytes": 19391119360,
+    "privateInstanceSha256": "a064ed9155ebffb980af937672ddab8e4f2306e8f45dbb955ea41b0618a6600f",
+    "freshBindings": "48pins/inheritedclosure/sixprivatefiles matched by Original operator; values not copied",
+    "currentPhase": "same operation35d5a7ff boundedreadonly3role/phase/maintenance observation by Original owner",
+    "maintenance": "NOT_STARTED",
+    "webPublication": "NOT_STARTED",
+    "pid": "NOT_REPORTED",
+    "return": "ACTIVE_RESOURCES_RETURNED_NOT_USER_SUCCESS",
+    "terminalAt": "2026-10-07T19:47:21.167Z",
+    "outerCallReturnedAt": "2026-10-07T19:48:31.241Z",
+    "operatorElapsedMs": 114242,
+    "operatorExit": 1,
+    "refreshElapsedMs": 58210,
+    "primary": "START_UNCONFIRMED_CHECK_STATUS",
+    "completed": "fixedcd27 import,threeformalreports,bootstrap,strictidle",
+    "notCompleted": "checkpoint,resume,newWeb",
+    "returnState": "ACTIVE_RESOURCES_RETURNED_USER_SERVICE_RECOVERY_PENDING",
+    "receipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/personal-current-window-return.json",
+    "receiptBytes": 1032,
+    "receiptSha256": "9993c19e8edb7d4983efccb69f3ef96d40cfd9ffb8a683db6c27bc4893f80a47",
+    "priority": "User accepting/service recovery before any newheavy",
+    "prohibited": "No replay/model/newWeb/secondgrant/automaticrollback; only original sameop exactbounded observation and authorized recovery decision",
+    "activeResourcesReturnedAt": "2026-10-07T19:51:09.047Z",
+    "latestDiagnosticReturn": "2026-10-07T19:55:22.549Z",
+    "resourceClosure": "3newroles stopped/center+Web noownedlistener;3oldgroups ESRCH;PGpoolclosed;2resolve diagnostic exactgroupabsent+dualEOF0PG",
+    "maintenanceState": "maintenance",
+    "maintenanceVersion": 23,
+    "operationId": "35d5a7ff-5ef7-4938-9584-adb27f5357ff",
+    "webPointer": "d629/v3 unchanged",
+    "userAcceptingRestored": false,
+    "resourceReceipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/personal-current-result.json",
+    "resourceReceiptSha256": "07f3f538cc756a883d357145f21f7ce7b1449d8d4a78b9ebdd5580b0af3e077a"
+  },
+  "coordinationHistory": [
+    {
+      "recordedAt": "2026-10-06T19:12:36.267670+00:00",
+      "source": "Latest Lead inbound forwarded by root; no manager service or space observation",
+      "state": "R01_EXCLUSIVE_PG_CHROME_WINDOW",
+      "target": "R01 fixed25b / backendaf51",
+      "workMs": 87073,
+      "cleanupMs": 20000,
+      "preconditionReceipt": "Four factory import-only checks exit0, reported by Lead",
+      "web": "Settings b2 source preparation only, Recovery browser frozen, no current Web PG/Chrome/HTTP; DPERF05 pure Node separately authorized",
+      "next": "R01 actual cleanup/return then ready-first new window; no old-free reuse or automatic Settings retry"
+    },
+    {
+      "recordedAt": "2026-10-06T19:15:30.132303+00:00",
+      "source": "LatestLeadinboundviaRoot; no manager runtime/space observation",
+      "state": "O16_EXCLUSIVE_PG_CHROME_WINDOW",
+      "previousR01": "19:13:22returned;two groups/three ports/DB/tmp cleaned;Chrome/CDP ready but atomic-rename ENOENT samplingstop and bodytimeout separate;0App pass/provider",
+      "current": "O16 solewindow120s work+30s cleanup; R01sourcefix",
+      "webNext": "Settings1cd5/b41c b2 READY;54803ms incl15cleanup;root e6e16e1 preparationapproved;0PG/provider;waitO16actualreturn+newwindow/freshgate",
+      "pure": "DPERF05onlysingleNode15s independentlyadmitted; noHTTP/PG/Chrome"
+    },
+    {
+      "recordedAt": "2026-10-06T19:17:42.926129+00:00",
+      "source": "Lead explicit Settings-next-1916 via root",
+      "window": "Settings-next-1916",
+      "state": "ASSIGNED_WEB_PENDING_FRESH_SINGLE_ADMISSION",
+      "previousO16": "19:15:28 returned;driver/runtime/watchdog gone,centerclosed/rows[];retained13.3MBDB/30KiBdirectory no active load perLead",
+      "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+      "metadata": "b41c93e7a7e054faec68faed101be5adf4d21225",
+      "previousRuntimeMs": 5197,
+      "remainingMs": 54803,
+      "workMs": 39803,
+      "cleanupMs": 15000,
+      "startFreeBytes": 1207959552,
+      "stopFreeBytes": 1140850688,
+      "limits": "64MiB scratch/8MiB retained including previous177631B;0PG/provider;one browser run, no retry/direct37repeat",
+      "review": "message-settings-browser-b2-prepared/root-review.json"
+    },
+    {
+      "recordedAt": "2026-10-06T19:19:32.600004+00:00",
+      "window": "Settings-next-1916",
+      "state": "FAILED_BEFORE_UI_CLEANED_WINDOW_RETURNED",
+      "source": "Actual parent/worker raw + owner cleanup receipt, no extra runtime/space observation",
+      "sourceHead": "b41c93e7a7e054faec68faed101be5adf4d21225",
+      "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+      "run": "settings-b2-20261006-191743-60f52b",
+      "startedAt": "2026-10-06T19:18:07.180541+00:00",
+      "elapsedMs": 8551,
+      "cumulativeMs": 13748,
+      "remainingMs": 46252,
+      "checks": 0,
+      "screenshots": 0,
+      "PG": 0,
+      "provider": 0,
+      "pgid": 66244,
+      "cleanup": {
+        "errors": [],
+        "groupAbsent": true,
+        "scratchAbsent": true
+      },
+      "chromePid": 67309,
+      "chromeExitCode": null,
+      "chromeExitSignal": "SIGTRAP",
+      "chromeCloseCode": null,
+      "chromeCloseSignal": "SIGTRAP",
+      "beforeCdpReady": false,
+      "fixtureClosed": true,
+      "phase": "DevTools endpoint and websocket connected, then CDP timeout/1006 disconnect; no UI behavior reached",
+      "logs": "11145B retained,0drop; sandboxinitializationEPERM/GPUexit6/GPUunusableFATAL observed; not unique cause adjudication",
+      "retry": false,
+      "rawDirectory": "/private/tmp/msgset-b2/raw/settings-b2-20261006-191743-60f52b",
+      "windowReturned": true,
+      "next": "Lead schedules next holder; Web readonly evidence/cause only, no automaticretry or sandboxdisable."
+    },
+    {
+      "recordedAt": "2026-10-06T19:21:28.086200+00:00",
+      "source": "Lead actual19:19:29 observation forwarded byroot; no manager free sample",
+      "observedAt": "2026-10-06T19:19:29Z",
+      "availableDescription": "827\u2013828 MB,below1GiB; precisionnotprovidedhere",
+      "state": "SHARED_RESOURCE_BELOW_RESERVE_NEW_HEAVY_RUNS_BLOCKED",
+      "holders": "NoWebactivePG/Chrome/HTTP;Settingsb2returnedwithcompletecleanup",
+      "restriction": "AllnewPG/Chrome/build includingI02/R01/O16 NOT_RUN; no threshold reduction, polling or automaticretry",
+      "allowed": "Existinglegal source-only/readonly,includingRecoveryparentnarrowrepair; next runtime only genuinely new resource/window plusfreshgate"
+    },
+    {
+      "recordedAt": "2026-10-06T19:26:58.263479+00:00",
+      "source": "Lead19:24inbound forwarded byroot; no manager space/daemon/socket/PG/ledger resampling",
+      "sourceObservedAt": "2026-10-06T19:24:00Z",
+      "timePrecision": "Lead message minute, not fabricated exact sample second",
+      "availableBytes": 1250004992,
+      "spaceMeaning": "Priorlowspacehold changed; no runtime permission inferred",
+      "daemonFacts": [
+        "docker.sock unavailable",
+        "orbctl status Stopped",
+        "port55432 no listener",
+        "coordination ledger unreadable"
+      ],
+      "cause": "UNKNOWN; no known active daemon stop by root or this group; do not infer user action",
+      "state": "DAEMON_AND_LEDGER_UNAVAILABLE_NO_NEW_RUNTIME_OR_TAKE",
+      "restrictions": [
+        "No restart/newPG/Chrome/build; preserve volumes/services/user tabs",
+        "No busy polling or lowered admissionthreshold",
+        "Ledgerunknown is notunclaimed scope; no newtake/amend/release or writer reassignment",
+        "ExistingRecovery narrow segment authorized under19:18:39fresh6ffv4 may reachsafe source-only checkpoint; no scope expansion/runtime"
+      ],
+      "webBrowser": "SecondSettings18ede sealed;0newattempt,cleanupcomplete/windowreturned",
+      "managementAuthority": "Root explicitly requested this bounded normal metadata segment in original6; lastobserved632a7149v3 preserved as pointintime, not fabricatedfreshledger."
+    },
+    {
+      "recordedAt": "2026-10-06T19:30:45.295530+00:00",
+      "source": "LatestLead inbound via root; manager didnot restartdaemon/container or samplefree",
+      "state": "LEDGER_AVAILABLE_HEAVY_RESOURCE_NOT_ADMITTED",
+      "orbStack": "One preexistingstart command timedout,actualRunninglater; no retry reported",
+      "postgresContainer": "2c45767d4802 originalimage/volume/ports preserved; one start19:26:58healthy perLead",
+      "coordination": "Lead list succeeded; manager separatefreshreadonly19:29:13.863Zavailable original5claims/nooverlap",
+      "availableBytes": 1089486848,
+      "resourceMeaning": "Lead pointintime,stillbelowPG/Chrome thresholds; purechecks onlytheir ownfreshconditions,notnewRootapproval",
+      "runtimePermission": "No currentPG/Chrome authorization;no repeatacceptedchecks;personal61227noListener belongsLead",
+      "cause": "Originaldaemoninterruption cause remainsUNKNOWN; no inference ofuser action",
+      "claims": "Outage didnotreleaseoriginalclaims; futurewrites usefreshD04 exactscope,notoldunavailableasfree"
+    },
+    {
+      "recordedAt": "2026-10-06T19:36:06.395280+00:00",
+      "source": "Lead 19:30:33 inbound forwarded by root; no manager service or space probe",
+      "observedAt": "2026-10-06T19:30:33Z",
+      "availableBytes": 1429176320,
+      "attribution": "Shared volume observation; not attributed to any team deletion",
+      "postgres": "Original container healthy per Lead",
+      "personal": "Center61227 exited; Web/runner wrappers remain alive per Lead",
+      "state": "PERSONAL_CENTER_RECOVERY_PRIORITY",
+      "authority": "GO prioritizes managed same362/v15 center restoration; Lead exclusively owns the existing entry preparation, review and service operations",
+      "webRestrictions": [
+        "No new PG/Chrome/native diagnostic runtime or gate",
+        "No personal service, volume, configuration or user-tab operation",
+        "Resume the ready queue only after Lead reports restoration window closed and assigns a new window; then use fresh original predicates"
+      ],
+      "ledger": "Restored; manager separately read original five active claims at19:35:01.030Z with unchanged versions/scopes and no overlap",
+      "cause": "Earlier daemon interruption cause remains unknown; no attribution to user action"
+    },
+    {
+      "recordedAt": "2026-10-06T19:48:03.976583+00:00",
+      "source": "Lead actual19:46:35 center-window close and ready-first offer, forwarded byroot",
+      "state": "NOT_RUN_READINESS_WINDOW_RETURNED",
+      "window": "Web ready-first after personal center recovery19:46:35",
+      "leadCenterReceipt": {
+        "closedAt": "2026-10-06T19:46:35Z",
+        "centerPid": 74763,
+        "source": "362/v15",
+        "unchanged": "Original64tables/runner/Web/config/pointer perLead",
+        "taskCalls": 0,
+        "providerCalls": 0,
+        "flowMain": "22a0806bc2465e11096949618113833f31766b19"
+      },
+      "decision": "No eligible ready candidate; window returned immediately without starting or holding it",
+      "recovery": {
+        "state": "SOURCE_REPAIR_IN_PROGRESS_NOT_READY",
+        "finding": "RECOVERY-RESTORE-EDIT/P1",
+        "evidence": "recovery01-restore-edit-dispatch.json",
+        "next": "Original owner fixes full local draft ownership and persistence; fixedsource independent review before any fresh runtime gate"
+      },
+      "settings": {
+        "state": "SOURCE_PREPARATION_APPROVED_BOUNDARY_NOT_ACCEPTED",
+        "candidate": "/private/tmp/msgset-b4",
+        "supervisorSha256": "277166abcb815a444fc1cd1ecd33e8d8269386fce492ec720c7cad0eca1b9ee3",
+        "workerSha256": "71a643de31a15586a78be6bb26a36fd1b24f40d4e9462e07d8ef2fe304d0346b",
+        "sourceReview": "message-settings-browser-b4-prepared/root-review.json",
+        "boundary": "native Chrome sibling preserves Chrome native sandbox but loses custom outer OS write/egress restriction; Node retains its own custom sandbox",
+        "boundaryAcceptance": null,
+        "needed": "Real Lead acceptance of this exact boundary and pinned candidate, then a separate new window/fresh original predicates. Generic ready-first offer is not that acceptance."
+      },
+      "execution": {
+        "started": false,
+        "gateCreated": false,
+        "spaceSampled": false,
+        "PG": 0,
+        "Chrome": 0,
+        "HTTP": 0,
+        "provider": 0
+      },
+      "budgetsUnchanged": {
+        "settingsPreviousMs": 13748,
+        "settingsRemainingMs": 46252,
+        "recoveryPreviousMs": 14846.267375,
+        "recoveryRemainingMs": 75153.732625
+      },
+      "cleanup": "No new process/DB/scratch created. Prior Settings b2, Recovery browser and pure-check cleanup receipts remain actual historical proof.",
+      "nextHolder": "Lead schedules R01/O16/Mika or other authorized holder; Web retains no heavy window",
+      "externalMessageSent": false
+    },
+    {
+      "recordedAt": "2026-10-06T19:53:15.713748+00:00",
+      "source": "Latest Lead inbound forwarded byroot after explicit acceptance of Web19:46 NOT_RUN return",
+      "state": "R01_EXCLUSIVE_PG_CHROME_WINDOW",
+      "holder": "R01",
+      "fixed": "b41 perLead inbound",
+      "workRemainingMs": 72188,
+      "cleanupReserveMs": 20000,
+      "permission": "One shared PG/Chrome window, original fresh gate,0provider/personal operations",
+      "web": "No Web PG/Chrome/HTTP active; source and independently permitted pure checks only; no native Chrome boundary acceptance inferred",
+      "next": "Wait actual R01 cleanup and Lead fresh window scheduling, not reuse Web returned opportunity"
+    },
+    {
+      "recordedAt": "2026-10-06T19:57:45.509000+00:00",
+      "source": "Latest Lead inbound via root; manager has not sampled services/space or independently reviewed R01 runtime",
+      "state": "MIKA_NATIVE_DIAGNOSTIC_SHARED_WINDOW",
+      "previousHolder": "R01",
+      "r01ReportedResult": {
+        "elapsedSeconds": 15.794,
+        "retainedAppsPassed": 2,
+        "cleanup": "Owned DB DROP, groups, ports and temporary directories cleaned; window returned perLead"
+      },
+      "holder": "Mika original reviewed native diagnostic",
+      "web": "No active PG/Chrome/HTTP and no new runtime gate; Settings/DPERF native boundary acceptance remains null; Recovery source repair only",
+      "provisionNotice": "Lead will provision three small trees at a safe point; no Web provision scope or newtake inferred"
+    },
+    {
+      "recordedAt": "2026-10-06T20:06:29.994634+00:00",
+      "source": "Latest Lead explicit inbound via root; Mika canonical run-report/interface shows native close19:56:50 and two owned roots cleaned",
+      "state": "WEB_MESSAGESETTINGS_ONE_NATIVE_BROWSER_WINDOW",
+      "holder": "Web WPF-MESSAGESETTINGS01 single b4 attempt",
+      "previousHolder": "Mika actual closed/cleaned perLead",
+      "sourceHead": "18ede5e0b606f9aa08a075565637fb2d991bd81a",
+      "implementation": "1cd5cd41e47c8c101d9bb1acfdca1e870769c014",
+      "run": "settings-b4-20261006-200629-5a13ef",
+      "previousMs": 13748,
+      "remainingMs": 46252,
+      "workMs": 31252,
+      "cleanupMs": 15000,
+      "boundaryAcceptance": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/settings-b4-native-chrome-boundary-acceptance.json",
+        "sha256": "3259796e617f696f686b35c760c0cc03b1add6f06b4f016c22caf9bfd570bbd4"
+      },
+      "otherWebBrowsers": "Recovery and DPERF not authorized concurrently",
+      "provider": 0,
+      "PG": 0
+    },
+    {
+      "recordedAt": "2026-10-06T20:07:55.826235+00:00",
+      "state": "FAILED_SINGLE_BROWSER_CLEANED_WINDOW_RETURNED",
+      "source": "W01 actual result plus manager read original parent/budget; no automatic retry",
+      "run": "settings-b4-20261006-200629-5a13ef",
+      "elapsedMs": 6861,
+      "previousMs": 13748,
+      "cumulativeMs": 20609,
+      "remainingMs": 39391,
+      "checks": [],
+      "failure": "First UI assertion strict locator: dialog.getByRole(group) matches4 at browser.ts:81; actualCDP/fixture ready, not Chrome startup failure",
+      "cleanup": {
+        "errors": [],
+        "groupAbsent": true,
+        "workerGroupAbsent": true,
+        "chromeGroupAbsent": true,
+        "scratchAbsent": true
+      },
+      "workerPgid": 11051,
+      "chromePgid": 6481,
+      "raw": "/private/tmp/msgset-b4",
+      "resultSha256": "f0a78f25bf3acb5a0b4c55639a1252b75943473fcdb6d841af2d74da8ef7d02c",
+      "budgetSha256": "60ae0838ab7f0a0e98633ff677e98c6de406af06a6b4fcd1c9461702e2b01373",
+      "runtimeReleased": true,
+      "PG": 0,
+      "provider": 0,
+      "personalOperations": 0,
+      "next": "Lead schedules next holder; no automatic DPERF04/Recovery/b4 retry. Source/data diagnosis before new fixed candidate and gate."
+    },
+    {
+      "recordedAt": "2026-10-06T21:29:07.084169+00:00",
+      "state": "NO_HOLDER_MIKA_212825_NOT_RUN_RESOURCE_WEB_NOT_ADMITTED",
+      "groupWindowOwnership": "Mika fresh21:28:25 below fixedfloor, noentry/child/PG/HTTP; returned with noreservation. Web also noholder/gate/free. Wait actual resource and scheduling; logical sparsecandidate bytes do not establish physicalfree.",
+      "source": "Preserved previous current snapshot before OPS bounded5 intake",
+      "priorLatestCoordination": {
+        "source": "Leadvia root",
+        "record": "f04-cleanup-only-window-intake.json",
+        "allocatedHolder": "Lead F04 cleanup-only",
+        "webHolder": null,
+        "next": "Wait actualcleanup return/newsharedwindow; no Webrun"
+      }
+    },
+    {
+      "at": "2026-10-06T21:41:34.226572+00:00",
+      "state": "NO_WEB_HOLDER_OPS_RESOURCE_RECOVERY_PRIORITY_NO_HEAVY_WINDOW",
+      "latestCoordination": {
+        "source": "Execution Lead inbound via root",
+        "record": "ops-next-five-sparse-candidates/lead-resource-intake.json",
+        "allocatedHolder": null,
+        "webHolder": null,
+        "next": "OPS bounded five candidate preflight by Lead; heavy runtime window not open"
+      },
+      "source": "Previous OPS five-tree current retained before narrow nine-cache request"
+    },
+    {
+      "retainedAt": "2026-10-06T22:59:57.767859+00:00",
+      "reason": "Superseded old two-cache/two-fixture next step by actual three-cache COMPLETE receipts; no next dispatch authorized",
+      "value": {
+        "source": "Execution Lead inbound via root",
+        "record": "ops-nine-vite-cache/lead-two-cache-cleanup-intake.json",
+        "allocatedHolder": null,
+        "webHolder": null,
+        "next": "Resource still belowfloor per Lead historical1182425088. Continue only alreadyauthorized originalowner twofixture retirement; no new heavy launch."
+      }
+    },
+    {
+      "source": "Lead exact three-operation-summary disk receipt, independently read by root and manager",
+      "state": "THREE_EXACT_CACHES_COMPLETE_NO_NEW_RUN_GRANT",
+      "evidence": "ops-three-fixture-retirement/lead-cache-results/intake.json",
+      "summary": "ops-three-fixture-retirement/lead-cache-results/three-operation-summary.json",
+      "operationsComplete": 3,
+      "ownedProcessesAbsent": true,
+      "lastHistoricalFreeBytes": 1073909760,
+      "lastHistoricalAt": "2026-10-06T22:57:44.501908+00:00",
+      "newGrant": false,
+      "webHolder": null,
+      "next": "No further cache candidate authorized. Preserve SVC07/C02 queue; c1/Recovery/DPERF require fresh legitimate admission and resource floor, no repeat run or new packet."
+    },
+    {
+      "supersededAt": "2026-10-07T02:08:36Z",
+      "state": "NO_WEB_HOLDER_RESOURCE_GATE_UNMET_REMOTE_CI_WEB_CONSUMER_RESEARCH_ONLY",
+      "latestCoordination": {
+        "source": "Execution Lead incoming through root; structured intake only, no Web resource resampling",
+        "state": "THREE_CACHES_COMPLETE_SUBSEQUENT_RESOURCE_HOLD_NO_NEW_GRANT",
+        "evidence": "ops-ci01-web-consumer-intake/lead-incoming.json",
+        "terminalSummary": "ops-three-fixture-retirement/lead-cache-results/three-operation-summary.json",
+        "lastReportedFreeBytes": 1069273088,
+        "lastReportedSampleAt": null,
+        "sampleTimeUnknown": true,
+        "newGrant": false,
+        "webHolder": null,
+        "next": "Preserve SVC07/C02 queue and no new runtime grant. Existing D06 source-only follow-up is now fixed/reviewed under original four-scope claim; all new runtime checks remain NOT_RUN. No further cache candidates or resource sampling."
+      },
+      "latestMikaQueueIntake": {
+        "source": "Mika collaboration inbound through root; no Web sampling",
+        "state": "NO_ACTUAL_HOLDER_OR_RESERVATION_PREPARED_QUEUE_ONLY",
+        "SVC07": {
+          "source": "1b3e1662",
+          "manifestPrefixSuffix": "13349864\u2026bea06",
+          "priority": "next actual run requested; fresh gate remains necessary"
+        },
+        "C02": {
+          "source": "60e9a755",
+          "packet": "fd5bc893",
+          "checks": "six PG cases NOT_RUN",
+          "after": "SVC07 + fresh Lead/Web handoff and gate"
+        },
+        "REQ15": "Waiting Lead two SQL inputs /2681B; no entry",
+        "webStarts": 0
+      },
+      "reason": "Historical resource hold and queue observation superseded by Lead capacity recovery/SVC07 allocation; original evidence retained"
+    },
+    {
+      "recordedAt": "2026-10-07T02:40:35.366502+00:00",
+      "historicalCurrentIndices": {
+        "state": "NO_WEB_HOLDER_QUICK_C1_FAILED_CLEANED_RETURNED",
+        "latestCoordination": {
+          "state": "FAILED_CLEANED_WINDOW_RETURNED",
+          "source": "Original outer actualexit, unique terminal seal and matching result/budget/step hashes read by manager",
+          "evidence": "message-settings02-c1-actual/window.json",
+          "webHolder": null,
+          "newWebGrant": false,
+          "localCheckSlot": "Root relay: OPS14 followed by SVC06 planned local checks; no Web gate/reservation. C02 heavy window separately coordinated by Mika, actual latest terminal not sampled here.",
+          "next": "D04 source-only complete, pureGit pending. Quick exact missing input supplied by Lead, c2 static prepared only. No automatic runtime.",
+          "newUserSourceTask": "dashboard-local-access-intake/request.json; partial handoffs pending, no runtime reservation",
+          "personalService": "Lead reports user61228 unavailable; sole SVC operator assigned for same-version recovery after SVC06 safety point, no Web personal operations",
+          "heavyWindow": "Root relay reports C02 actual returned; no Web heavy grant/reservation"
+        },
+        "nextWebReady": {
+          "state": "PREPARED_NO_HOLDER_WAIT_RESOURCE_AND_NEW_SCHEDULING",
+          "priority": "Recovery8ed/000a and DPERF544c/929b preparation approved, no gate. Settings01 delivered/main/released. Settings02 new six-scope source implementation only; runtime remains behind existing shared ready queue.",
+          "gate": null
+        },
+        "quickControlsPreparation": {
+          "request": "message-settings02-c1-prepared/request.json",
+          "state": "APPROVED_STATIC_PREPARATION_NOT_RUN",
+          "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+          "grant": false,
+          "reservation": false,
+          "gate": null,
+          "freeSample": false,
+          "runtimeStarted": false,
+          "queueUnchanged": "Lead SVC07/C02",
+          "ownerHeadAtPacketSeal": "3fbaf49ef761354430ba23bcba536f5bf3a9804c",
+          "currentOwnerHead": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
+          "headRebindRequiredAtFutureAdmission": true
+        },
+        "quickControlsBrowserPreparation": {
+          "state": "APPROVED_SCOPED_STATIC_BROWSER_PREPARATION_NOT_RUN",
+          "ownerHead": "38bfce69c632d52e1e1d3ab02cff21fbcc21b826",
+          "sourceTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+          "evidence": "message-settings02-browser-prepared/request.json",
+          "actualChecks": "NOT_RUN",
+          "grant": false,
+          "gate": null,
+          "reservation": false,
+          "review": "message-settings02-browser-prepared/root-preparation-review.json",
+          "currentOwnerHead": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2",
+          "headRebindRequiredAtFutureAdmission": true,
+          "prerequisite": "Same-source types/direct actual pass plus required precise native Chrome boundary; c1 failed, c2 not run."
+        },
+        "quickControlsPortablePreparation": {
+          "state": "APPROVED_SCOPED_STATIC_PORTABLE_PREPARATION_NOT_RUN",
+          "evidence": "message-settings02-portable-prepared/intake.json",
+          "candidate": "dc67b3410c12f321d62a1565145e184b52b0ca84",
+          "ownerHead": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
+          "productSource": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+          "grant": false,
+          "gate": null,
+          "reservation": false,
+          "runtimeStarted": false,
+          "review": "message-settings02-portable-prepared/root-preparation-review.json",
+          "ownerStoppedWriting": true,
+          "currentOwnerHead": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2"
+        },
+        "latestSourceOnlyProgress": {
+          "at": "2026-10-06T23:53:02.712681+00:00",
+          "evidence": "architecture-snapshot-0da-intake/intake.json",
+          "runtimeGrant": false,
+          "holder": null,
+          "reservation": false
+        },
+        "latestMikaQueueIntake": {
+          "source": "Mika actual handback via root",
+          "SVC07": "PASS selected1/pass1 outerexit0 wall2.979205s;02:11:53.535889Z all cleanup; no pending launch",
+          "C02": "NOT_OPEN/no holder/gate/reservation; operator unavailable, explicit yield to Web one Recovery attempt",
+          "actualWebStart": "pending original owner acknowledgement"
+        }
+      },
+      "supersededBy": "dashboard-task-time-intake/incoming.json"
+    },
+    {
+      "recordedAt": "2026-10-07T02:46:13.457995+00:00",
+      "state": "PERSONAL_61228_WEB_ONLY_RECOVERY_PRIORITY_NO_WEB_GRANT",
+      "latestCoordination": {
+        "state": "PERSONAL_61228_WEB_ONLY_RECOVERY_PRIORITY_NO_WEB_GRANT",
+        "source": "Lead incoming relayed by root; no Web service/process/resource sample",
+        "evidence": "dashboard-task-time-intake/incoming.json",
+        "webHolder": null,
+        "newWebGrant": false,
+        "actualPersonalRecoveryStart": null,
+        "actualPersonalRecoveryCompletion": null,
+        "next": "Await sole operator actual recovery/cleanup handback; no Web PG/Chrome/install/rebuild. Independent source work only after exact supply and claim. Ordinary reversible checks use bounded work segments when permitted, not per-command permit chains."
+      },
+      "supersededBy": "dashboard-task-time-intake/personal-web-recovery-receipt.json"
+    },
+    {
+      "recordedAt": "2026-10-07T02:55:35.824896+00:00",
+      "latestCoordination": {
+        "state": "PERSONAL_WEB_RECOVERED_RETURNED_NO_WEB_GRANT",
+        "source": "Lead actual handback via root plus bounded original receipt read; no service/free/proc resample",
+        "evidence": "dashboard-task-time-intake/incoming.json",
+        "webHolder": null,
+        "newWebGrant": false,
+        "personalRecoveryStartedAt": "2026-10-07T02:45:02.253755+00:00",
+        "personalRecoveryFinishedAt": "2026-10-07T02:45:03.223312+00:00",
+        "next": "Ready-first with fresh necessary admission, original budgets and owner scopes; ordinary reversible local implementation uses one bounded modify/check/fix/recheck segment. No superseded window reuse; PG/Chrome/personal-service safeguards remain.",
+        "localSlot": "Mika X01 \u2192 C02 \u2192 REQ15 chain; S01P07-PG-20261007-R1 heavy actually OPEN per root and combination binds only Mika local. Web cannot start even if local returns first.",
+        "webFollowingRequest": "Mika accepted scheduling Web \u226490s only after whole local chain AND S01P07 actual terminal/cleanup. No Web OPEN/reservation/gate; no automatic combination expansion.",
+        "newSourceTask": "dashboard-local-access-intake/registration-request.json: first canonical a6fb present; READY_FOR_LEAD_INTAKE, not actually aggregated"
+      },
+      "source": "Prior specific scheduling, superseded by root-relayed actual chain/heavy return and new SVC06 local holder"
+    },
+    {
+      "recordedAt": "2026-10-07T04:45:21.778593+00:00",
+      "state": "X01_R1_HEAVY_RETURNED_RETAINED_EVIDENCE_KEEP_WEB_NO_GRANT",
+      "historicalFields": "quick-b2-return-20261007/previous-current-fields.json",
+      "supersededBy": "quick-b2-return-20261007/incoming.json"
+    },
+    {
+      "recordedAt": "2026-10-07T05:00:09.075191+00:00",
+      "state": "X01_R2_ACTUAL_RETURNED_RECOVERY_ADMITTED_NOT_STARTED",
+      "source": "quick-b2-return-20261007/incoming.json",
+      "gate": "/private/tmp/recovery-fourth-admission-c7oo_y3a/gate.json",
+      "meaning": "Consumed Recovery admission; actual failure and cleanup supersede this scheduling state."
+    },
+    {
+      "recordedAt": "2026-10-07T05:03:57.276219+00:00",
+      "state": "RECOVERY_FOURTH_FAILED_CLEANED_RETURNED_WEB_NO_HOLDER",
+      "latestCoordination": {
+        "at": "2026-10-07T05:03:57.276219+00:00",
+        "kind": "RECOVERY_FOURTH_ACTUAL_FAILURE_CLEANUP_ENV_DELETE_WINDOW_RETURN",
+        "source": "recovery-fourth-return-20261007/return.json",
+        "summary": "cookieRead passed; saved.txt tooltip timed out in textIntentDraft, later groups incomplete/not run and0PNG. Actual owned cleanup accepted for handoff; env exactdeleted. Conservative late cumulative54883.199542, remaining35116.800458. Root independent feature review pending; no automatic retry."
+      },
+      "currentIntake": "recovery-fourth-return-20261007/return.json"
+    },
+    {
+      "recordedAt": "2026-10-07T05:19:32.149050+00:00",
+      "state": "QUICK_B3_ADMITTED_NOT_STARTED_SVC08_NEXT_SHARED_PG",
+      "latestCoordination": {
+        "at": "2026-10-07T05:19:32.149050+00:00",
+        "kind": "X01_R3_RETURN_SVC08_SHARED_PG_HANDOFF_QUICK_B3_INDEPENDENT_ADMISSION",
+        "source": "quick-b3-admission-20261007/incoming.json",
+        "summary": "X01 R3 actual fully returned; work end, outer exit and final TMP cleanup distinct. SVC08 explicitly NEXT_READY_SHARED_PG, no actual start reported. Quick b3 admitted not started with fresh combined4,053,008,384B floor; 18468 spent/41532 remaining includes15s cleanup. No manager runtime."
+      },
+      "currentIntake": "quick-b3-admission-20261007/incoming.json"
+    },
+    {
+      "recordedAt": "2026-10-07T05:31:13.172504+00:00",
+      "state": "QUICK_B3_FAILED_CLEANED_RETURNED_RECOVERY_PAGE_AUTH_PREPARED",
+      "latestCoordination": {
+        "at": "2026-10-07T05:29:56.950734+00:00",
+        "kind": "QUICK_B3_ACTUAL_RETURN_SVC08_RETURN_RECOVERY_SELECTION_READY",
+        "source": "quick-b3-return-navigation-20261007/incoming.json",
+        "summary": "Quick b3 FAILED0/6/0PNG with complete passive trace, owned cleanup and root failed-actual acceptance; charge12157/cumulative30625/rem29375 incl15s. Recovery dd664 source/local scoped accepted; fifth page-auth2 groups prepared only, noenv/gate. NavigationU17/MATURE05-06 plan only."
+      },
+      "currentIntake": "quick-b3-return-navigation-20261007/incoming.json"
+    },
+    {
+      "recordedAt": "2026-10-07T05:33:51.096894+00:00",
+      "state": "RECOVERY_FIFTH_PAGE_AUTH_ADMITTED_NOT_STARTED",
+      "latestCoordination": {
+        "at": "2026-10-07T05:33:51.096894+00:00",
+        "kind": "EXPLICIT_RECOVERY_PAGE_AUTH_HANDOFF_FRESH_ADMISSION",
+        "source": "recovery-pageauth-admission-20261007/handoff.json",
+        "summary": "5e629/dd664,6ffv4 exact21/overlap[],145 fixed-input reads+19Git matched, fresh available25061769216>=4053008384. page-auth2 required/otherNOT_SELECTED,35116 incl15000cleanup. New exactowner-only testadminenv; no manager runtime/no automatic sixth."
+      },
+      "currentIntake": "recovery-pageauth-admission-20261007/handoff.json"
+    },
+    {
+      "recordedAt": "2026-10-07T05:37:29.755224+00:00",
+      "state": "RECOVERY_FIFTH_PAGE_AUTH_FAILED_CLEANED_RETURNED",
+      "latestCoordination": {
+        "at": "2026-10-07T05:37:29.755224+00:00",
+        "kind": "RECOVERY_FIFTH_ACTUAL_FAILURE_OWNED_CLEANUP_ENV_DELETE_RETURN",
+        "source": "recovery-pageauth-return-20261007/return.json",
+        "summary": "cookieReadPASS; pageOnlyAuthLoss fixture expiration violates browser_sessions_check, other groupsNOT_SELECTED/0PNG. Parentlate9250.887208 cumulative64134.08675/rem25865.91325; existinggate minimum30000 forbids automaticnext attempt. Exactenv removed; no manager service/proc/resource probe."
+      },
+      "currentIntake": "recovery-pageauth-return-20261007/return.json"
+    },
+    {
+      "at": "2026-10-07T05:48:02.181131+00:00",
+      "state": "RECOVERY_NEW_FINITE_SEGMENT_FIRST_FULL_ADMITTED_NOT_STARTED",
+      "latestCoordination": {
+        "at": "2026-10-07T05:48:02.181131+00:00",
+        "kind": "NEW_FINITE_VALIDATION_RULE_C02_RETURN_RECOVERY_FIRST_FULL_ADMISSION",
+        "source": "continuous-validation-segments-20261007/incoming.json",
+        "summary": "FormalLead rulea9f1fb74 permits bounded continuous same-scope/safety/acceptance fix/retest segments. Fresh765ab362/0141/6ffv4/173pins+19Git and available24567570432>=4053008384; firstfull60000incl15000cleanup. Old90k/5FAIL/64134.08675 immutable, nooldremainingcredit."
+      },
+      "meaning": "Historical unconsumed admission; superseded by explicit SVC08 handoff before owner launch."
+    },
+    {
+      "at": "2026-10-07T05:50:48.448496+00:00",
+      "state": "SVC08_WINDOW_ACCEPTED_RECOVERY_ADMITTED_NOT_STARTED_WAITING_RESOURCE",
+      "source": "continuous-validation-segments-20261007/resource-reassignment.json"
+    },
+    {
+      "at": "2026-10-07T05:52:55.088797+00:00",
+      "state": "RECOVERY_NEW_FINITE_SEGMENT_FIRST_FULL_RUNNING",
+      "source": "continuous-validation-segments-20261007/recovery-full-actual-start.json"
+    },
+    {
+      "at": "2026-10-07T05:55:28.992240+00:00",
+      "state": "ACTUAL_RETURNED_SCOPED_FULL7_ACCEPTED",
+      "source": "recovery-full-return-20261007/return.json"
+    },
+    {
+      "at": "2026-10-07T06:10:49.993860+00:00",
+      "state": "QUICK_NATIVE_DIAGNOSTIC_ADMITTED_NOT_STARTED",
+      "source": "quick-native1-recovery-review-20261007/incoming.json"
+    },
+    {
+      "at": "2026-10-07T06:22:49.266492+00:00",
+      "state": "RECOVERY_CONNECTION_CHOICE_ADMITTED_NOT_STARTED",
+      "source": "recovery-choice-quick-native1-return-20261007/incoming.json",
+      "meaning": "Historical choice admission subsequently consumed; actual return supersedes current holder/gate."
+    },
+    {
+      "at": "2026-10-07T06:30:31.626372+00:00",
+      "state": "QUICK_NATIVE2_DIAGNOSTIC_ADMITTED_NOT_STARTED",
+      "source": "recovery-choice-return-native2-20261007/current.json",
+      "meaning": "Historical native2 admission consumed; actual FAILED/INCONCLUSIVE and cleanup now accepted, source read-only snapshot callback corrected."
+    },
+    {
+      "at": "2026-10-07T06:44:54.647259+00:00",
+      "state": "QUICK_NATIVE3_INCONCLUSIVE_SCOPED_ACCEPTED_C02_NEXT_PG",
+      "source": "quick-native2-return-native3-20261007/current.json",
+      "meaning": "C02 next-admission state superseded by actualFAIL/ownedPGcleanup; failedouter KEEP retained separately."
+    },
+    {
+      "recordedAt": "2026-10-07T06:51:51.969833+00:00",
+      "state": "RECOVERY_FIRST_CREATE_SCOPED_ACTUAL_ACCEPTED_X01_NEXT_PG",
+      "currentIntake": "recovery-create-admission-20261007/current.json",
+      "supersededBy": "recovery-created-turn-admission-20261007/current.json"
+    },
+    {
+      "recordedAt": "2026-10-07T07:04:25.351953+00:00",
+      "state": "RECOVERY_CREATED_TURN_FAILED_CLEANED_RETURNED_C02_NEXT_PG",
+      "currentIntake": "recovery-created-turn-admission-20261007/current.json",
+      "supersededBy": "quick-typeahead-admission-20261007/current.json"
+    },
+    {
+      "recordedAt": "2026-10-07T07:07:59.811057+00:00",
+      "state": "QUICK_TYPEAHEAD_ADMITTED_NOT_STARTED_C02_ACTUAL_RETURNED",
+      "currentIntake": "quick-typeahead-admission-20261007/current.json",
+      "supersededBy": "recovery-quick-paired-admission-20261007/current.json"
+    }
+  ],
+  "dperf05Pure": {
+    "state": "APPROVED_SCOPED_PARSER_SOURCE_AND_62_RUNTIME_EVIDENCE",
+    "implementation": "c8d59449a5c4752fdf98a0cd7bb59653b6fbdab2",
+    "runtimeHead": "7311ac51113c27a8ddd0e368338dbb0f9e1037fd",
+    "resultElapsedMs": 201,
+    "actualParentPostWriteElapsedMs": 201.40412508044392,
+    "tap": {
+      "tests": 62,
+      "pass": 62,
+      "fail": 0,
+      "cancelled": 0,
+      "skipped": 0,
+      "todo": 0,
+      "expectedTests": 62
+    },
+    "pgid": 22632,
+    "cleanup": {
+      "state": "fulfilled",
+      "errors": [],
+      "seconds": 0.0,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "basis": "Only the owned sandbox/Node process group and own scratch; no service/database created"
+    },
+    "evidence": "dperf05-node-first/intake.json",
+    "window": "Independentpurefinished;O16sharedPG/Chromeownershipunchanged",
+    "ownerFinal": "8f0b7a5d04c1bae82dc99cb068d4f8e66f0034c6",
+    "mainIntake": "dperf05-main-intake.json",
+    "main": "aca6e89214711ef3787ac3e3ee3b2754bb40b960",
+    "closure": "MAIN_DELIVERED_CAS_RELEASED v2; no rerun",
+    "release": "dperf05-main-release-receipt.json"
+  },
+  "currentLedgerAvailability": {
+    "state": "available",
+    "observedAt": "2026-10-07T14:42:01.488Z",
+    "source": "msg03-final-intake-access-20261007/selected-claims.json",
+    "boundary": "Selected claims and literal/directory-prefix conflicts checked; claim is not a runtime grant."
+  },
+  "nativeChromeBoundaryDecision": {
+    "state": "ACCEPTED_EXPLICIT_GO",
+    "evidence": "native-chrome-boundary-go-intake.json",
+    "execution": "Exact accepted boundary remains valid only for its pinned candidate; no current Web shared window/gate.",
+    "bindingRecord": "native-chrome-boundary-binding.json"
+  },
+  "nextWebReady": null,
+  "messageSettingsB4Admission": "message-settings-b4-admission.json",
+  "messageSettingsB4Result": {
+    "recordedAt": "2026-10-06T20:07:55.826235+00:00",
+    "state": "FAILED_SINGLE_BROWSER_CLEANED_WINDOW_RETURNED",
+    "source": "W01 actual result plus manager read original parent/budget; no automatic retry",
+    "run": "settings-b4-20261006-200629-5a13ef",
+    "elapsedMs": 6861,
+    "previousMs": 13748,
+    "cumulativeMs": 20609,
+    "remainingMs": 39391,
+    "checks": [],
+    "failure": "First UI assertion strict locator: dialog.getByRole(group) matches4 at browser.ts:81; actualCDP/fixture ready, not Chrome startup failure",
+    "cleanup": {
+      "errors": [],
+      "groupAbsent": true,
+      "workerGroupAbsent": true,
+      "chromeGroupAbsent": true,
+      "scratchAbsent": true
+    },
+    "workerPgid": 11051,
+    "chromePgid": 6481,
+    "raw": "/private/tmp/msgset-b4",
+    "resultSha256": "f0a78f25bf3acb5a0b4c55639a1252b75943473fcdb6d841af2d74da8ef7d02c",
+    "budgetSha256": "60ae0838ab7f0a0e98633ff677e98c6de406af06a6b4fcd1c9461702e2b01373",
+    "runtimeReleased": true,
+    "PG": 0,
+    "provider": 0,
+    "personalOperations": 0,
+    "next": "Lead schedules next holder; no automatic DPERF04/Recovery/b4 retry. Source/data diagnosis before new fixed candidate and gate."
+  },
+  "recovery50Admission": {
+    "evidence": "recovery01-50-admission.json",
+    "state": "ADMITTED_ONE_CONTROLLED_DIRECT",
+    "run": "recovery50-20261006-202206-1188c7",
+    "runtimeStarted": false
+  },
+  "recovery50Result": {
+    "at": "2026-10-06T20:23:39.576168+00:00",
+    "state": "CONTROLLED_DIRECT50_PASS_CLEANED_WINDOW_RETURNED",
+    "run": "recovery50-20261006-202206-1188c7",
+    "sourceHead": "994ce852a6cd4d0f4c9b590be67900b4d9f7418e",
+    "implementation": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
+    "actualExitCode": 0,
+    "resultElapsedMs": 3099,
+    "terminalPostWriteMs": 3100.050624925643,
+    "actualCumulativeMs": 9968.050624925643,
+    "actualRemainingMs": 20031.949375074357,
+    "nextIntegerBudgetCeilingUsedMs": 9969,
+    "nextIntegerRemainingMs": 20031,
+    "budgetMeaning": "Use later terminal settlement; result3099/9967 remains original earlier serialization. Rounded future integer budget is conservative accounting, not a new permit.",
+    "checks": {
+      "success": true,
+      "numTotalTests": 50,
+      "numPassedTests": 50,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTodoTests": 0
+    },
+    "ownedPGID": 98483,
+    "cleanup": {
+      "state": "fulfilled",
+      "errors": [],
+      "seconds": 0.0,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "serverClosureBasis": "Single direct command and fork remain in the inherited worker group; no external service used"
+    },
+    "resourcePostWrite": {
+      "tmpBytes": 201465,
+      "rawBytes": 201465,
+      "resultBytes": 5730,
+      "freeBytes": 1304555520,
+      "softStopSignal": null,
+      "elapsedMs": 3100.050624925643,
+      "cumulativeMs": 9968.050624925643,
+      "withinLimits": true
+    },
+    "windowReturned": true,
+    "PG": false,
+    "Chrome": false,
+    "HTTP": false,
+    "provider": false,
+    "noRetry": true,
+    "sourceFiles": {
+      "result": "/private/tmp/recovery50-once-en2_sud5/result.json",
+      "stdout": "/private/tmp/recovery50-parent-stdout.jsonl",
+      "exit": "/private/tmp/recovery50-parent-exit.json"
+    },
+    "review": "DIRECT50_EVIDENCE_ACCEPTED_SCOPED",
+    "evidence": "recovery01-50-window-return.json",
+    "reviewEvidence": "recovery01-50-actual/root-runtime-review.json",
+    "ownerFinal": "c36b1f12d169d09ff9f6bb58d97f99b1bf9e8f83",
+    "ownerSealEvidence": "recovery01-50-owner-seal.json"
+  },
+  "messageSettingsB5Admission": "message-settings-b5-next-admission.json",
+  "messageSettingsB5Result": "message-settings-b5-window-return.json",
+  "recovery4dAdmission": "recovery01-4d-admission.json",
+  "recovery4dResult": "recovery01-4d-window-return.json",
+  "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
+  "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
+  "currentWindowEvidence": "release-backend-route-20261007/msg03-settings-actual.json",
+  "webActualHolder": null,
+  "webGate": {
+    "state": "NOT_CREATED_BY_MANAGER_ACTUAL_GATE_OWNER_FRESH_REQUIRED",
+    "historical": "Previous consumed gates remain in original run records"
+  },
+  "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
+  "dperf04CurrentPreparation": {
+    "state": "RETIRED_HISTORICAL_POINTER",
+    "currentCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md",
+    "history": "Prior phase totals and evidence remain in dperf04PreparationEvidence; no new preparation or runtime."
+  },
+  "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
+  "webReservation": null,
+  "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
+  "latestPersonalPublication": {
+    "recordedAt": "2026-10-06T21:28:49.564681+00:00",
+    "source": "Execution Lead formal inbound via root; no Web personal/service/tab/free inspection",
+    "state": "PERSONAL_PUBLICATION_COMPLETED_WINDOW_RETURNED_MIKA_NEXT",
+    "completedAt": "2026-10-06T21:27:19Z",
+    "reportedPersonal": {
+      "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+      "acceptingVersion": 18,
+      "webArtifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "webCurrentVersion": 3,
+      "retainedArtifacts": 3,
+      "queries": 0,
+      "tabs": 0
+    },
+    "rootCheckout": "main c8e2e9e clean restored per Lead",
+    "nextHolder": "Mika SVC07 one reviewed HTTP journey; next allocation, no actual result reported here",
+    "web": {
+      "running": false,
+      "reservation": false,
+      "gate": null,
+      "freeSample": false
+    },
+    "previousAck": "lead-personal-next-window-ack-2124.json",
+    "boundary": "Personal managed operation attribution belongs to original Lead/operator; does not imply settings270c or Recovery8ed personal deployment."
+  },
+  "opsBoundedCandidates": {
+    "count": 5,
+    "index": "ops-next-five-sparse-candidates/candidate-index.json",
+    "status": "SEALED_0ff01c08_NO_FURTHER_RESEARCH_CURRENT_PRIORITY_NINE_VITE",
+    "originalEight": 8,
+    "excludedAlreadySparse": 3,
+    "onlyOperator": "Execution Lead",
+    "writesByWeb": 0,
+    "report": "ops-next-five-sparse-candidates/report.md"
+  },
+  "opsNineViteCache": {
+    "request": "ops-nine-vite-cache/request.json",
+    "state": "LEAD_TWO_EXACT_CLEANUPS_COMPLETE_SEVEN_KEEP",
+    "operator": "Execution Lead only",
+    "cacheOperationsByWeb": 0,
+    "report": "ops-nine-vite-cache/report.md",
+    "managerConfirmation": "ops-nine-vite-cache/two-cache-manager-confirmation.json",
+    "cleanupIntake": "ops-nine-vite-cache/lead-two-cache-cleanup-intake.json",
+    "historicalPhaseOnly": true,
+    "laterThreePreviewRetirement": "ops-three-fixture-retirement/manager-confirmation.json"
+  },
+  "currentOpsFixtureRetirement": {
+    "dispatch": "ops-two-fixture-retirement/dispatch.json",
+    "state": "RETIRED_LIFECYCLE_METADATA_CLOSED_BOTH_RELEASED",
+    "owner": "workspace_panels_owner",
+    "onlyPorts": [
+      53851,
+      63743
+    ],
+    "noNewHeavyLaunch": true,
+    "receipt": "ops-two-fixture-retirement/owner-raw/retirement-receipt.json",
+    "handoff": "ops-two-fixture-retirement/lead-handoff-current.json",
+    "cacheDisposition": {
+      "source": "New original Execution Lead fresh audit inbound via root; not Web resampling",
+      "activity": {
+        "decision": "STRICT_KEEP",
+        "observedConsumerPid": 15811,
+        "observedPorts": [
+          51452,
+          51453,
+          51454
+        ],
+        "observedOpenFiles": true,
+        "boundary": "Only old53851 was retired; separate consumer identity is not established by this manager. Do not stop51454 or broaden service operations."
+      },
+      "chat": {
+        "decision": "LEAD_EXACT_CACHE_FINAL_FRESH_CANDIDATE",
+        "sourceObservation": "Lead reported no process/openfiles and metadata claim released",
+        "authority": "Lead alone final identity/consumer check; not a whole-directory/dependency deletion permit"
+      }
+    }
+  },
+  "currentGitConfigurationWindow": {
+    "state": "NO_SHARED_GIT_CONFIGURATION_WINDOW_HELD",
+    "ordinaryNewWorktreeRule": "Current main source-operator permits bounded ownnewWT/branch materialization after freshidentity/conflictcheck, no per-tree Original permission",
+    "restriction": "Shared Gitconfig/main integration/otherowner existingWT/install remain outside this routine authority",
+    "ruleIntake": "message-settings-app-self-provision-20261007/rule-intake.json",
+    "historicalPriorWindows": "message-settings-app-self-provision-20261007/historical-git-provision-authority.json"
+  },
+  "exactGitProvisionAuthority": {
+    "state": "REGULAR_SOURCE_OPERATOR_RULE_ACTIVE",
+    "source": "main e029 docs/quality/local-validation.md#source-operator",
+    "coLead": "Web/root; d01 coordinates solepanels operator",
+    "currentExactOperation": "MSG03 fixedc130/369files/18scope: provisioned then committed7e3fv1",
+    "sharedConfigChangeAuthorized": false,
+    "sourceWriterClaimAloneIsNotAuthority": true,
+    "historicalOneTimeRestriction": "message-settings-app-self-provision-20261007/historical-git-provision-authority.json",
+    "ruleIntake": "message-settings-app-self-provision-20261007/rule-intake.json"
+  },
+  "latestMikaQueueIntake": {
+    "observedAt": "2026-10-07T12:33:55.287Z",
+    "source": "Mika message relayed by root; external source/main facts not manager-executed tests",
+    "clientRemoval": {
+      "head": "f86bed0b991ffad88583630084fdbfa6f95d1a7b",
+      "state": "READY_SOURCE_AND_LOCAL_REVIEW_APPROVED_NOT_MAIN",
+      "claim": "79284 v1 exact7 per relay",
+      "intake": "6 rows/118130B, requires contract81a prior or same integration",
+      "boundary": "mockFetch/local is not PG/Web/removal actual; not a Web writer grant"
+    },
+    "upstream": {
+      "main": "4fdd856293a502209d7509ea37da901bbfd89f72",
+      "ownerFinal": "2b4c0ca8 (reported short hash)",
+      "claim": "5e6eba8c-5838-42c5-9455-f5112ca05e47",
+      "version": 3,
+      "state": "RELEASED",
+      "committedAt": "2026-10-07T12:31:13.248Z",
+      "receipt": "/tmp/x01-upstream-release-stopped-20261007-1231-receipt.json"
+    },
+    "ordinaryLocalDeclaredBytes": 22020096,
+    "newHeavyOrNext": false,
+    "webReservation": false,
+    "personalWindow": "Original1230 exclusive; no actual RETURN received"
+  },
+  "opsWorkspaceCacheDependencies": {
+    "state": "EXACT_PAYLOAD_RETIRED_NOT_RUNTIME_READY",
+    "source": "Lead actual postcheck, archived verbatim",
+    "evidence": "ops-three-fixture-retirement/lead-workspace-cache-postcheck.json",
+    "postcheckFreeBytes": 1079889920,
+    "sharedVolumeDeltaBytes": 1769472,
+    "freshManagerResourceSample": false,
+    "runtimeReady": false,
+    "restoreRequiredBeforeAnyReplay": true
+  },
+  "latestContractSourceIntake": {
+    "recordedAt": "2026-10-07T13:00:28.759Z",
+    "personalTurnSettingsDependency": "plugin-module-main-ready-20261007/activation-owner-boundary.json",
+    "priorRequirement": "svc1230-return-plugin-removal-pair-20261007/personal-turn-settings-next.json",
+    "boundary": "Original parent/sharedleaf owners coordinate; manager writes only own metadata; no runtime/installation grant"
+  },
+  "quickControlsPreparation": {
+    "state": "C2_TYPES_DIRECT_SCOPED_APPROVED_BROWSER_NOT_RUN",
+    "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+    "currentOwnerHead": "545769dd23a02e1fcc75e3a6fac0707a909e2807",
+    "actualEvidence": "current-product-checkpoint-20261007/local-results-review.json",
+    "sourceSupplyReceipt": "message-settings02-c1-actual/lead-source-provision-receipt.json",
+    "nextPreparationReview": "message-settings02-c1-actual/root-c2-static-preparation-review.json",
+    "cumulativeMs": 5119,
+    "remainingMs": 24881,
+    "cleanupMs": 5000,
+    "direct": "26/26 PASS independently accepted",
+    "grant": false,
+    "gate": null,
+    "reservation": false
+  },
+  "currentOpsThreeFixtureRetirement": {
+    "state": "THREE_PREVIEWS_RETIRED_LIFECYCLE_CLOSED_ALL_METADATA_CLAIMS_RELEASED",
+    "request": "ops-three-fixture-retirement/request.json",
+    "owner": "workspace_panels_owner",
+    "ports": [
+      59473,
+      51832,
+      63251
+    ],
+    "actualRetirementReceipt": "ops-three-fixture-retirement/owner-raw/receipt.json",
+    "cacheDeletionAuthorizedToWeb": false,
+    "metadataClaimsTaken": false,
+    "managerConfirmation": "ops-three-fixture-retirement/manager-confirmation.json",
+    "actualSignals": [
+      {
+        "port": 59473,
+        "pid": 56147,
+        "at": "2026-10-06T22:47:46.557547+00:00",
+        "sessionExitCode": 143
+      },
+      {
+        "port": 51832,
+        "pid": 8693,
+        "at": "2026-10-06T22:48:03.338875+00:00",
+        "sessionExitCode": 143
+      },
+      {
+        "port": 63251,
+        "pid": 46425,
+        "at": "2026-10-06T22:48:20.695816+00:00",
+        "sessionExitCode": 143
+      }
+    ],
+    "metadataClaimIds": [
+      "741c80b3-242e-4519-b16f-0ac61737e78e",
+      "d9f7ff54-4406-4097-b8b8-a889cba8d9c2",
+      "40ec6625-2a14-4033-bc26-0c223e1f7677"
+    ],
+    "metadataAllReleased": true,
+    "metadataReleases": [
+      {
+        "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration",
+        "branch": "codex/web-plugin-management-integration",
+        "finalHead": "fc838e66621d1e68531c0fd8da989921f26e4991",
+        "claimId": "741c80b3-242e-4519-b16f-0ac61737e78e",
+        "version": 2,
+        "claimState": "RELEASED",
+        "scope": [
+          "docs/evidence/wpf-x03/README.md",
+          "docs/evidence/wpf-x03/preview-retirement",
+          "plans/wpf-x03-plugin-integration/status.md"
+        ],
+        "releaseAt": "2026-10-06T22:53:43.891Z",
+        "receipt": "plugin-management-release-receipt.json",
+        "closeoutCheck": "plugin-management-closeout-check.json",
+        "ownerStoppedWriting": true,
+        "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-management-integration/apps/web/node_modules/.vite",
+        "disposition": "LEAD_FINAL_FRESH_EXACT_CACHE_CANDIDATE_ONLY"
+      },
+      {
+        "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration",
+        "branch": "codex/web-profile-integration",
+        "finalHead": "e90492d759421d153641a024ed0b6e1c42bf334e",
+        "claimId": "d9f7ff54-4406-4097-b8b8-a889cba8d9c2",
+        "version": 2,
+        "claimState": "RELEASED",
+        "scope": [
+          "docs/evidence/wpf-profile-integration/README.md",
+          "docs/evidence/wpf-profile-integration/preview-retirement",
+          "plans/wpf-profile-integration/status.md"
+        ],
+        "releaseAt": "2026-10-06T22:53:44.030Z",
+        "receipt": "profile-release-receipt.json",
+        "closeoutCheck": "profile-closeout-check.json",
+        "ownerStoppedWriting": true,
+        "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-profile-integration/apps/web/node_modules/.vite",
+        "disposition": "LEAD_FINAL_FRESH_EXACT_CACHE_CANDIDATE_ONLY"
+      },
+      {
+        "tree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control",
+        "branch": "codex/web-steering-control",
+        "finalHead": "300aacd5b961fcacbe8f5f7520f2f1d5e7cb6eaa",
+        "claimId": "40ec6625-2a14-4033-bc26-0c223e1f7677",
+        "version": 2,
+        "claimState": "RELEASED",
+        "scope": [
+          "docs/evidence/wpf-steering-control/README.md",
+          "docs/evidence/wpf-steering-control/preview-retirement",
+          "plans/wpf-steering-control/status.md"
+        ],
+        "releaseAt": "2026-10-06T22:53:44.173Z",
+        "receipt": "steering-release-receipt.json",
+        "closeoutCheck": "steering-closeout-check.json",
+        "ownerStoppedWriting": true,
+        "exactCache": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-control/apps/web/node_modules/.vite",
+        "disposition": "LEAD_FINAL_FRESH_EXACT_CACHE_CANDIDATE_ONLY"
+      }
+    ],
+    "rootMetadataReview": "ops-three-fixture-retirement/root-metadata-closeout-intake.json"
+  },
+  "quickControlsBrowserPreparation": {
+    "state": "APPROVED_SCOPED_STATIC_BROWSER_PREPARATION_NOT_RUN",
+    "ownerHead": "38bfce69c632d52e1e1d3ab02cff21fbcc21b826",
+    "sourceTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+    "evidence": "message-settings02-browser-prepared/request.json",
+    "actualChecks": "NOT_RUN",
+    "grant": false,
+    "gate": null,
+    "reservation": false,
+    "review": "message-settings02-browser-prepared/root-preparation-review.json",
+    "currentOwnerHead": "545769dd23a02e1fcc75e3a6fac0707a909e2807",
+    "headRebindRequiredAtFutureAdmission": true,
+    "prerequisite": "HISTORICAL originalb1 preparation only; latest typeahead C diagnostic completed, original six stillpending. CurrentIntake and ownerstatus control.",
+    "historicalPrerequisite": "Same-source types/direct actual pass plus required precise native Chrome boundary; c1 failed, c2 not run.",
+    "ownerHeadMeaning": "Historicaloriginalb1 preparation; current source/state comes only from nextWebReady.quick and originalownerstatus.",
+    "prerequisiteEvidence": "current-product-checkpoint-20261007/local-results-review.json"
+  },
+  "latestLeadExactCacheResult": {
+    "state": "LEAD_THREE_EXACT_CACHES_COMPLETE_NO_NEW_WEB_GRANT",
+    "evidence": "ops-three-fixture-retirement/lead-cache-results/intake.json",
+    "historicalFreeBytes": 1073909760,
+    "historicalAt": "2026-10-06T22:57:44.501908+00:00",
+    "managerResourceSample": false,
+    "noFurtherCandidateAuthorized": true
+  },
+  "currentCoordinationAudit": "svc1230-return-plugin-removal-pair-20261007/manager-fresh-claim.json",
+  "latestLeadResourceIntake": {
+    "evidence": "resource-restored-svc07-handoff.json",
+    "source": "Lead incoming through root",
+    "reportedDataAvailableKiB": 26448428,
+    "sampleAt": null,
+    "recoveryCause": "UNKNOWN",
+    "managerResourceSample": false,
+    "webCleanupThisRound": false,
+    "webRuntimeGrant": false
+  },
+  "remoteValidationConsumerResearch": {
+    "evidence": "ops-ci01-web-consumer-intake/intake.json",
+    "scope": "Existing MATURE02/TODO11 and MSGQUICK-03/04 only",
+    "state": "CURRENT_CI_DOCS_DO_NOT_EXECUTE_WEB_ACCEPTANCE",
+    "newTask": false,
+    "newClaim": false,
+    "newRemoteRunner": false,
+    "workflowActivated": false,
+    "runtime": "NOT_RUN",
+    "opsDocsDeliveryIntake": "message-settings02-portable-prepared/dispatch-intake.json",
+    "remoteEnabled": false,
+    "portableSourceCandidate": "Specialized static source prepared in existing Quick evidence scope; no remote job or outer supervisor created or activated"
+  },
+  "quickControlsPortablePreparation": {
+    "state": "APPROVED_SCOPED_STATIC_PORTABLE_PREPARATION_NOT_RUN",
+    "evidence": "message-settings02-portable-prepared/intake.json",
+    "candidate": "dc67b3410c12f321d62a1565145e184b52b0ca84",
+    "ownerHead": "60ffa4365abf6185a4138507067fe8c75f97aa3a",
+    "productSource": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+    "grant": false,
+    "gate": null,
+    "reservation": false,
+    "runtimeStarted": false,
+    "review": "message-settings02-portable-prepared/root-preparation-review.json",
+    "ownerStoppedWriting": true,
+    "currentOwnerHead": "5e4811765e1f7d25ef97639a421e4cc7cf9df0f2"
+  },
+  "performanceMeasurementInterface": {
+    "evidence": "req17-chat06-measurement-interface/report.md",
+    "mapping": "Existing REQ17/21/MATURE06-03/CHAT06",
+    "state": "READ_ONLY_INTERFACE_ALL_METRICS_NOT_RUN",
+    "newTaskClaimGateOrReservation": false
+  },
+  "latestSourceOnlyProgress": {
+    "at": "2026-10-07T15:22:17.005Z",
+    "PROCESS": "main/origin96b424777cd2c66e603157649e5a859ca1b914f6actualmatch,notT7/deployment",
+    "I01": "61abv1active8/sourceimplementation0engineeringchild",
+    "Release": "7d60v2active4/fixed11filebuildpreparationunderrootreview0runtime"
+  },
+  "dperf04CurrentClaim": {
+    "freshReceipt": "main-deployment-route-fix-20261007/dperf-timing-release-receipt.json",
+    "source": "98baf552d961ed0fa88ce2cf8bad006002d5986a",
+    "ownerHead": "f47bd5dd391e022dddc9e5e365ef6cb9b97ce42c",
+    "next": "Records-only timing correction completed and732fv2 released; productb554v5 stillreleased. Known originalcompletion displayed, UNKNOWNstart issue retained.",
+    "readOnlySupply": "composed-consumer-checkpoint-20261007/dperf-source-supply-review.json",
+    "ownerTreeState": "Owner actual remoteequalclean f47; both product and records scopes stopped/released, no product rerun.",
+    "reviewTarget": "bc6126278c13e8c355d704dd3c371417331026b2",
+    "observedAt": "2026-10-07T10:25:05.401569+00:00",
+    "observationBasis": "Exact atomic release receipt plus owner final remote/clean report. Not a new product check.",
+    "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md",
+    "mainIntake": "main-deployment-route-fix-20261007/dperf-main-intake.json",
+    "mainIntakeDeliveryConfirmed": true,
+    "mainCommit": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+    "deploymentReceipt": "main-deployment-route-fix-20261007/dashboard-summary-deployment.json",
+    "productClaimClosed": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/execution-dashboard/public/app.js",
+        "apps/execution-dashboard/src/aggregate.mjs",
+        "apps/execution-dashboard/src/read-model.mjs",
+        "apps/execution-dashboard/src/server.mjs",
+        "apps/execution-dashboard/test/local-access.browser.mjs",
+        "apps/execution-dashboard/test/summary-detail.browser.mjs",
+        "apps/execution-dashboard/test/summary-detail.test.mjs",
+        "apps/execution-dashboard/test/task-links.browser.mjs",
+        "apps/execution-dashboard/test/task-timing.browser.mjs",
+        "docs/evidence/wpf-dperf04",
+        "plans/wpf-dperf04-summary-detail"
+      ],
+      "state": "released",
+      "branch": "codex/dashboard-summary-detail",
+      "origin": "new",
+      "taskId": "WPF-DPERF04",
+      "worker": "w01_owner",
+      "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+      "version": 5,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+      "createdAt": "2026-10-06T16:10:21.626Z",
+      "updatedAt": "2026-10-07T10:19:55.499Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    "claim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/wpf-dperf04",
+        "plans/wpf-dperf04-summary-detail"
+      ],
+      "state": "released",
+      "branch": "codex/dashboard-summary-detail",
+      "origin": "new",
+      "taskId": "WPF-DPERF04",
+      "worker": "w01_owner",
+      "claimId": "732f82cc-1483-43fb-9965-739dea83bede",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+      "createdAt": "2026-10-07T10:23:01.966Z",
+      "updatedAt": "2026-10-07T10:24:18.890Z",
+      "observedAt": null
+    }
+  },
+  "externalCurrentAdmission": null,
+  "historicalSourceOnlyProgress024613": {
+    "recordedAt": "2026-10-07T02:46:13.457995+00:00",
+    "evidence": "d04-owned-worktree-lifecycle-intake/handoff.json",
+    "sourceReview": "APPROVED_SOURCE_ONLY",
+    "pureGit": "NOT_RUN",
+    "newRuntimeGrant": false
+  },
+  "nextExternalQueue": "DEFAULT_THREE_ROLE_HOST_UNIQUE_NEXT",
+  "currentIntake": "Approved Web779/c231 + backendcd27/04da fixed artifact pair. Both compatibility attempts FAILED with null reports; complete resources returned. I01 second reviewed browser phase is sole NEXT. No deployment authorization.",
+  "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/webOrdinaryLocal/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants. FutureCompleteFreshFloorBytes/futureFloorEvidence and externalOrdinaryCurrent apply to future fresh composition; do not rewrite consumed historical gates.",
+  "readyValidationRule": {
+    "source": "Current main local-validation.md, GO explicit PG plus isolated 0PG browser rule",
+    "fixedRuleCommit": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+    "path": "docs/quality/local-validation.md#ready-validation",
+    "rule": "At most1 actual PG/migration/shared-service plus1 completely isolated0PG browser, or artifact+browser; not artifact+PG+browser triple. Each team1local remains. Exactprofile/dynamicfixture/cache/output independent; no realcenter/PG in browser; all active declared budgets plus one common reserve; unknown/shared dependencies and performance still exclusive.",
+    "application": "Current personal1230 actual returned; approved REMOVAL R2 PG and reviewed Plugin b1 independent0PG browser NEXT assigned, both fresh completebudget>=6895435776 and exactisolation required. No actualstart received. Max1 browser; personal remainingsteps unassigned; priorfixedwindows unchanged.",
+    "finiteSegments": {
+      "sourceCommit": "3e4362b08359433620a07b05bd034a25e2dd7c4b",
+      "source": "paired-return-owner-segment-20261007/formal-rule-source.json",
+      "rule": "Owner autonomous same-boundary fixes/relatedretests in finite existingbudget, one runner/one structured record/one independent end review. No per-round short permit or result approval. Actual resource/identity/cleanup and substantive boundary review unchanged."
+    },
+    "resourceCoordinator": "d01_owner consolidatesactualstart/end/cleanupviaMika;Rootreadonlyreview; sameownerfiniteautonomyunchanged.",
+    "ruleIntake": "release-main-registry-close-20261007/current.json"
+  },
+  "webOrdinaryLocal": {
+    "logicalId": "ARC-RUNTIME-PREPARATION-AFFECTED-TYPES-20261007",
+    "state": "CHECK_RETURNED_PREPARATION_SEGMENT_CONTINUES_NO_NEW_CHECK_PLANNED",
+    "authorizedWithin": "20min/new16MiB source-runtime-preparation segment;optional cumulative20s/max2serial each15incl5cleanup",
+    "actualStart": "2026-10-07T20:10:11.700391Z",
+    "pid": 30692,
+    "sourcePrefix": "7097c4d1c",
+    "exit": 0,
+    "spentMs": 4683,
+    "remainingMs": 15317,
+    "actualChildActive": false,
+    "closure": "freshPID+PGID ESRCH/scratchabsent/errors[];emptyregularlog not dualEOF",
+    "consumedFloorBytes": 18622054400,
+    "freshFreeBytes": 19341062144,
+    "laterFloorFact": "Future synchronization18632540160 reported later; sample exceeds it too,consumedgateunchanged",
+    "record": "/private/tmp/arc-runtime-preparation-0xrqtd0l/local/segment.json",
+    "cleanupRecord": "/private/tmp/arc-runtime-preparation-0xrqtd0l/local/exact-cleanup.json",
+    "HTTP": 0,
+    "PG": 0,
+    "Chrome": 0
+  },
+  "externalPreviousReturn": {
+    "logicalId": "SVC09A-DEFAULT-THREE-ROLE-20261007-ONCE",
+    "state": "FAILED_ACTIVE_RESOURCES_RETURNED_KEEP",
+    "grantedAt": "2026-10-07T19:04:52.076Z",
+    "owner": "Original native_center_owner through original Lead only",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+    "branch": "codex/personal-message-settings",
+    "source": "62373492cf2db5c0fe62731a5138c7d40482be5c",
+    "execution": "7beb04d5fd9d365765efa24e56b9aa2995e76b96",
+    "preparation": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/default-host-preparation.json",
+    "preparationBytes": 24186,
+    "preparationSha256": "8257f26e39895cbb25d585b74ef66e30cde167e032464f75732117b22792e85f",
+    "review": "Original I02 fixed preparation approval035a4dfce,12distinct/15selected/0blocking",
+    "claim": {
+      "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+      "version": 6,
+      "scope": [
+        "docs/evidence/svc09/message-settings-activation",
+        "plans/svc09-message-settings-activation"
+      ]
+    },
+    "entry": {
+      "argv": [
+        "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+        "--run-default-host-once"
+      ],
+      "operatorArgument": "--execute-default-host-once",
+      "outerNamespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/default-host-outer-once",
+      "operatorNamespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/actual-default-host-once",
+      "preparationFile": "default-host-preparation.json",
+      "newNamespaceObservation": "both absent; recheck immediately before actual launch",
+      "oldPurpose": "Full R1-R4/default old namespaces unchanged and not selected"
+    },
+    "limits": {
+      "operatorWorkSeconds": 215,
+      "termSeconds": 0.5,
+      "reapSeconds": 2,
+      "outerMilliseconds": 217500,
+      "cloneBytes": 1073741824,
+      "privateBytes": 33554432,
+      "rawBytes": 2097152,
+      "recordsBytes": 1048576,
+      "pgBytes": 134217728,
+      "pgPeakConnections": 26,
+      "pgManagementMargin": 16,
+      "roles": 3,
+      "tasks": 0,
+      "attempts": 0,
+      "providerQueries": 0
+    },
+    "phaseMs": 217500,
+    "configuredPG": 26,
+    "managementAllowance": 16,
+    "candidatePeakBytes": 1244659712,
+    "completeMinimumFreeBytes": 17908891648,
+    "Chrome": 0,
+    "provider": 0,
+    "personal": 0,
+    "install": 0,
+    "build": 0,
+    "scope": "Only default3role start/status/emptyTasks/stop/ownedconnection verification; no full8generation/settings/mixed/finalSQL/App/personal/model qualification. No changing2515/098b artifact or rebuilding.",
+    "preflight": "Owner immediatefresh exactclaim,clean execution/fixed22exec+19records/referenced6runtime and4artifacts/oldKEEPidentity,newtwo namespacesabsence,noactiveheavy,freshfree>=latestcompletefloor,PGavailable>=26+16/preflightpoolfinallyclosed. Fixedsource approval reusable. Any mismatchUNKNOWN stopsbeforelaunch.",
+    "returnRule": "One attempt only; report actualSTART/terminal/exactregisteredPIDPGID/EOF/DBmarkerOIDconnections/adminclose/KEEP separately. Callerexit alone doesnot return resources. DB/privateKEEP only, noDROP/signals beyond original reviewed supervisor; no retry/oldcredit.",
+    "ordinaryRule": "Functional host verification can coexist with isolated already-authorized0PGHTTPChromeordinary/source. No secondheavy/PG/browserwindow or personal service changes. No performancefreeze.",
+    "executionAtInitialGrant": "42f0d8668ea606f63a089008a0c6bf46f7e3db41",
+    "routineMetadataDelivery": "Original fresh confirms source62373492/prep8257/22pins/2inherit/2references/5runtime/2artifact unchanged, bothnewnamespacesabsent,0child/pending. Metadata-only delivery updates same unconsumed grant, no newsourceapproval or runtime.",
+    "actualStart": "2026-10-07T19:16:09.120Z",
+    "actualReturn": "2026-10-07T19:17:35.003Z",
+    "outerPid": 36049,
+    "outerElapsedMs": 29140,
+    "consumedFloorBytes": 17908891648,
+    "receipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/default-host-window-return.json",
+    "receiptSha256": "e1437351b289d34bc5247eab5a7756de8cba9e7e0b3d3c58b17628029ed63aa5",
+    "databaseOid": 1348911,
+    "keep": "DB/private KEEP; no DROP; no three-role success",
+    "retry": false
+  },
+  "retiredNextWebReadySnapshot": "release-caller-recovery-main-20261007/historical-next-web-ready-58ef.json (historical owner/packet/budget snapshots only; no permission/currentstatus)",
+  "quickAppSourceProvision": {
+    "state": "PROVISIONED_CLAIM_COMMITTED_IMPLEMENTING",
+    "request": "message-settings-app-source-request/request.json",
+    "scopeCount": 19,
+    "base": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+    "authority": "Currentmain source-operator; old one-time permission prerequisite superseded",
+    "runtimeReservation": null,
+    "sourceClosure": {
+      "files": 369,
+      "logicalBytes": 2650881,
+      "report": "message-settings-app-source-request/supply-report.md",
+      "thirdPartyResolver": "READONLY_COMPLETE 43candidate/351pins/203manifest/315firstlevel; no missingnecessary firstlevel; no runtime/fullpayload proof"
+    },
+    "resolverReport": "message-settings-app-source-request/resolver-completion-report.md",
+    "operator": "workspace_panels_owner",
+    "ruleIntake": "message-settings-app-self-provision-20261007/rule-intake.json",
+    "claim": {
+      "id": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
+      "version": 2,
+      "scopeCount": 19,
+      "committedAt": "2026-10-07T12:32:04.114Z"
+    },
+    "receipt": "message-settings-app-self-provision-20261007/msg03-receipt.json",
+    "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
+    "registration": "REGISTERED_SOURCE_CURRENT_PARENT_KNOWN",
+    "firstCanonicalHead": "2efead09ed9767990cb9dadf01980f6d9200e42c",
+    "registrationRequest": "message-settings-app-self-provision-20261007/msg03-source-registration.json",
+    "registrationReceipt": "release-main-registry-close-20261007/msg03-live-receipt.json",
+    "registrationObservedAt": "2026-10-07T12:18:58Z",
+    "scopeFollowup": "plugin-browser-source-and-msg03-local-20261007/msg03-restore-seam-scope-proposal.json",
+    "latestAmendReceipt": "plugin-browser-source-and-msg03-local-20261007/msg03-amend-receipt.json"
+  },
+  "recoveryFinalClosure": {
+    "ownerHead": "2879477536796656227e67a0cd53641af73cb305",
+    "state": "ORIGINAL_ENGINEERING_DELIVERED_MAIN_INTEGRATED_CLAIM_RELEASED",
+    "completedAt": "2026-10-07T11:50:39Z",
+    "claim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/wpf-conversation-recovery",
+        "plans/wpf-conversation-recovery"
+      ],
+      "state": "released",
+      "branch": "codex/web-conversation-recovery",
+      "origin": "new",
+      "taskId": "WPF-RECOVERY01",
+      "worker": "workspace_panels_owner",
+      "claimId": "6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab",
+      "version": 6,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+      "createdAt": "2026-10-06T13:46:08.213Z",
+      "updatedAt": "2026-10-07T11:52:40.337Z",
+      "observedAt": null
+    },
+    "receipt": "release-c3-actual-admission-20261007/recovery-final-release-receipt.json",
+    "productSource": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+    "noNewRuntime": true,
+    "limits": "No newcookiejar/Connectgeneralrace/installation claims; source6c release unchanged"
+  },
+  "lastWebActual": {
+    "logicalId": "ARC-FIFO-HTTP-20261007-ONCE",
+    "state": "FAILED_EXACT_OWNED_RETURN",
+    "grantedAt": "2026-10-07T20:34:48.450Z",
+    "owner": "workspace_panels_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+    "branch": "codex/web-workspace-composition",
+    "claim": "c34d95d1-af01-4325-bcd5-77ba9dd28379 v1 exact20",
+    "source": "7097c4d1cc429ee87e507a2210f2e9cceac99b56",
+    "executionHead": "96d00b0f8b61a6007dd7964e3d964c39828a10f1",
+    "packet": "/private/tmp/arc-runtime-preparation-0xrqtd0l",
+    "entry": "http/run.py",
+    "callerSha256": "8c0179cc1b6f0162a47b9972fdc03e041dd69c54e9eacfefee0f94070bc5b9e2",
+    "sourceReview": "/private/tmp/root-arc-runtime-preparation-review-20261007.json",
+    "sourceReviewSha256": "1491b127a3e18ebba97546214ff62e70366cdfb6fd897dce197590b94d434939",
+    "phaseMs": 30000,
+    "workMs": 20000,
+    "cleanupMs": 10000,
+    "scratchBytes": 8388608,
+    "retainedBytes": 1048576,
+    "minimumFreshFreeBytes": 16629628928,
+    "PG": 0,
+    "Chrome": 0,
+    "HTTP": "one self-owned loopback fixture at a time",
+    "requiredCases": [
+      "Arc FIFO yields complete four-page batches repeatedly to a late third pane under backlog",
+      "Arc removes hidden or closed FIFO waiters without retaining a reserved lease"
+    ],
+    "nativeBoundary": "Manager accepts reviewed existing singleNode/necessarysame-grouphelper boundedHTTP runner, loopback sandbox, exactidentity group/scratch closure and actualexit/regular-filelogs contract. No browsernative launch approved.",
+    "preflight": "Owner immediatefresh claim20/nooverlap/clean96d00/source207/external43 selectedentrypins+4HTTPtool/33links/inputmanifest/unusednamespace/nativeNode/free>=frozenfloor; reuse closure exactly as declared, not fulltransitivepackage claim. Budget/head/review routinebinding only, no newsourceaudit; mismatchUNKNOWN stopbefore dependentlaunch.",
+    "priority": "Original permits isolated<=60s after personal exact resourceRETURN. PersonalrepairREADY before spawn yields unconsumedselection; alreadyspawned must finish boundedcleanup and return. No otherheavyNEXT. No globalordinary/source freeze.",
+    "failureRule": "One new attempt only; no retry/no oldunusedtime. Exact two assertions required, nonzero/cleanupUNKNOWN fail and preserve. Report actualSTART,terminal,exactPIDPGID/scratch and fixtureclosure promptly before seal. Do not label regularfilelogs dualEOF.",
+    "metadata": "Same<=1MiBretained allowance includes immediateownstatus/reviewarchive/resultseal; sourceunchanged, no separate sealing prerequisite beforelaunch. Rootreview can be archived afteractualinput cleancheck and return.",
+    "actualStart": "2026-10-07T20:36:11.197384Z",
+    "pid": 37390,
+    "pgid": 37390,
+    "managerFrozenFloorBytes": 16629628928,
+    "consumedFloorBytes": 18622054400,
+    "freshFreeBytes": 19256406016,
+    "freshBinding": "96d00 clean=remote/c34dv1exact20 overlap[]/207source+43externalentry+4HTTPtool+33resolver/unusednamespace match",
+    "higherFloorBasis": "Owner actual retained higher already-reviewed binding minimum18622054400; did not edit packet. Managerfrozen16629628928 separately preserved.",
+    "logs": "regular files, not dualEOF",
+    "actualReturn": "2026-10-07T20:36:27.433733Z",
+    "actualExit": 1,
+    "chargeMs": 3408,
+    "phaseState": "CLOSED",
+    "unusedMs": 26592,
+    "unusedTransferred": false,
+    "result": "2selected:1PASS continuousbacklog/late-third fairness;1FAIL hidden/closedwaiter prerequisite expectedtotalreads2 actual6;11unselected. Rootresultreviewpending; no productrootcause claim.",
+    "receipt": "/private/tmp/arc-runtime-preparation-0xrqtd0l/http/post-cleanup.json",
+    "receiptSha256": "64cedc0f247d0be56798f579926cd87b4fabbe31aa98e37a9b163d43739ecd6c",
+    "managerReadReceipt": true,
+    "closure": "Exact37390 PID/PGID ESRCH; scratchabsent; fixtureafterEach nohook/cleanuperror reported. Regularfilelogs/notdualEOF; no independentportprobe.0PG/Chrome.",
+    "rawStateCaveat": "Original segment topstate remains legacyNOT_GRANTED despite actualattempt; preserve raw, actualmanagergrant andattempt/evidence explain currentCLOSED result; do not silently edit raw."
+  },
+  "futureCompleteFreshFloorBytes": 18959564800,
+  "futureFloorEvidence": "host-i01-newpair-queue-20261007/current.json#forwardAdmission",
+  "externalOrdinaryCurrent": {
+    "state": "KCALLER_ALL_ENGINEERING_RETURNED_METADATA_NOT_STOP",
+    "actualReturn": "2026-10-07T18:26:24.696182Z",
+    "result": "29pass;3childexit0/exactabsent/MERGED EOF/raw750B/3sameidentityTMPremoved",
+    "futureCapBytes": 16777216,
+    "drain": "Mika reports0engineering/pendinglaunch; await performance source/CLI safeSTOP confirmation"
+  },
+  "externalPreparedCandidate": null,
+  "currentActual": null,
+  "releaseCandidateCurrent": {
+    "state": "MAIN_INTEGRATED_CLAIM_RELEASED_PERSONAL_DEPLOYMENT_PENDING",
+    "main": "d669f3acb466f6f11bd6d81c1bffb7ffeedb5010",
+    "ownerFinal": "a831c6682f22321d339c19132d97788d11241b30",
+    "ownerState": "remoteequalclean/all4STOP/no write after release",
+    "claim": "7d60cb91-7537-4052-8ba7-0c0aac8eb722 v3 RELEASED",
+    "releasedAt": "2026-10-07T18:35:22.477Z",
+    "receipt": "release-main-d669-claim-release.json",
+    "receiptSha256": "eb6e19db277610676dd5cf0d4e49767cfcc2f99a6251df198bee633d6e9881fc",
+    "canonical": "web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/main-close-d669/README.md",
+    "completedLeaf": "RELEASE01-08",
+    "overall": "NOT_COMPLETED: personal deployment not done; stableexecutor-10 remains open"
+  },
+  "admissionBudgetMethodTransition": {
+    "state": "APPLIED_AFTER_EXPLICIT_R3_RETURN",
+    "requestedBy": "GO budget correction relayed by Original/root",
+    "recordedAt": "2026-10-07T16:37:40.505Z",
+    "consumedR3FloorUnchanged": 19363266560,
+    "historicalLedgerRule": "All prior gates, elapsed/write expenditure, failures and raw bytes remain immutable. This is no time credit transfer, physical deletion or refund event.",
+    "afterReturnMethod": "Fresh free compared against still-possible growth plus selected next candidate peak plus one reserve, and each retained genuine single-item minimum. Fixed sealed KEEP bytes already consume fresh free and are not added again as original full caps. Unknown growth remains conservative.",
+    "ownedConsumedPhaseClassifications": [
+      {
+        "task": "I01_FIRST",
+        "phase": "i01-browser-20261007-160438-84ee0c",
+        "historicalPhaseCapBytes": 276824064,
+        "historicalTimeMs": 8540,
+        "closedUnusedMs": 51460,
+        "timeCreditTransfer": false,
+        "temporaryResources": "CLEANED_ABSENT_OR_MARKED_DB_DROPPED",
+        "exactCleanupEvidence": {
+          "file": "i01-browser-first-post-cleanup.json",
+          "sha256": "f489d1c1f08f0b4b81417611ef91bc94995733c58be9bcef48bd22335108ed03"
+        },
+        "fixedRawReview": {
+          "file": "i01-first-failure-locator-fix-review.json",
+          "sha256": "5b0026d12efc5026310c5d5d8ead1c59e2a4c54ec0976f2b297cba53d0a22c55",
+          "fixedFiles": 16,
+          "fixedLogicalBytes": 19009
+        },
+        "sealedRaw": "KEEP_FIXED_NO_FURTHER_WRITES_IN_THIS_CONSUMED_PHASE; already reflected in fresh free",
+        "growthBeyondExistingBytes": 0,
+        "limits": "Only consumed phase fixed raw/temp resources classified; active owner source/meta and future candidates are separate. No new deletion or whole-filesystem claim."
+      },
+      {
+        "task": "I01_SECOND",
+        "phase": "i01-files-20261007-162618-5fbf4e",
+        "historicalPhaseCapBytes": 276824064,
+        "historicalTimeMs": 13436,
+        "closedUnusedMs": 46564,
+        "timeCreditTransfer": false,
+        "temporaryResources": "CLEANED_ABSENT_OR_MARKED_DB_DROPPED",
+        "exactCleanupEvidence": {
+          "file": "i01-browser-second-post-cleanup.json",
+          "sha256": "b1aaad1befbb3bdf900a4baa0c1a7f18002b1fb3f51e42444edbd460b3278fbe"
+        },
+        "fixedRawReview": {
+          "file": "i01-second-failure-return-review.json",
+          "sha256": "3bfd06da272717922eeb55ebbfbe01a77f779d4ad13261b520bb9eab61f8a87a",
+          "fixedFiles": 16,
+          "fixedLogicalBytes": 25778
+        },
+        "sealedRaw": "KEEP_FIXED_NO_FURTHER_WRITES_IN_THIS_CONSUMED_PHASE; already reflected in fresh free",
+        "growthBeyondExistingBytes": 0,
+        "limits": "Only consumed phase fixed raw/temp resources classified; active owner source/meta and future candidates are separate. No new deletion or whole-filesystem claim."
+      },
+      {
+        "task": "RELEASE_C1",
+        "phase": "release-first-779a-cd27",
+        "historicalPhaseCapBytes": 210763776,
+        "historicalTimeMs": 56504,
+        "closedUnusedMs": 123496,
+        "timeCreditTransfer": false,
+        "temporaryResources": "CLEANED_ABSENT_OR_MARKED_DB_DROPPED",
+        "exactCleanupEvidence": {
+          "file": "compatibility-c1-return-receipt.json",
+          "sha256": "e4e6da2515b4617cc94b8ae2db0d3613635eb931eb9f9a6f9d8405eff25944f0"
+        },
+        "fixedRawReview": {
+          "file": "compatibility-c1-failed-result-review.json",
+          "sha256": "ad5d7acd5d799cc947a0152674bc1652c9b787492f6fc05fd805e12a861127b8",
+          "fixedFiles": 18,
+          "fixedLogicalBytes": 504218
+        },
+        "sealedRaw": "KEEP_FIXED_NO_FURTHER_WRITES_IN_THIS_CONSUMED_PHASE; already reflected in fresh free",
+        "growthBeyondExistingBytes": 0,
+        "limits": "Only consumed phase fixed raw/temp resources classified; active owner source/meta and future candidates are separate. No new deletion or whole-filesystem claim."
+      },
+      {
+        "task": "RELEASE_C2",
+        "phase": "release-recovery-20261007-162201-90ab93",
+        "historicalPhaseCapBytes": 210763776,
+        "historicalTimeMs": 26554,
+        "closedUnusedMs": 153446,
+        "timeCreditTransfer": false,
+        "temporaryResources": "CLEANED_ABSENT_OR_MARKED_DB_DROPPED",
+        "exactCleanupEvidence": {
+          "file": "compatibility-c2-return-receipt.json",
+          "sha256": "1b47b89668aa47c8e375fe84e3395f02da931e1a36b3de78cd5908ea95238fd9"
+        },
+        "fixedRawReview": {
+          "file": "compatibility-c2-failed-result-review.json",
+          "sha256": "8ddcff6de15e117222b73fe7cb6ff2674eaaa842d7343a623f946f07dfdbb085",
+          "fixedFiles": 18,
+          "fixedLogicalBytes": 719707
+        },
+        "sealedRaw": "KEEP_FIXED_NO_FURTHER_WRITES_IN_THIS_CONSUMED_PHASE; already reflected in fresh free",
+        "growthBeyondExistingBytes": 0,
+        "limits": "Only consumed phase fixed raw/temp resources classified; active owner source/meta and future candidates are separate. No new deletion or whole-filesystem claim."
+      },
+      {
+        "task": "WEB_ARTIFACT_BUILD",
+        "historicalPhaseCapBytes": 268435456,
+        "historicalTimeMs": 25241,
+        "closedUnusedMs": 124759,
+        "timeCreditTransfer": false,
+        "temporaryResources": "29links/scopeddirs/node_modules/scratch ABSENT, exact2PIDgroups absent",
+        "sealedKEEP": "779 manifest10assets1700569B/store identity dev16777234ino124271607; fixed no builder remains; bytes already included in fresh free",
+        "growthBeyondExistingBytes": 0,
+        "review": "docs/evidence/web-platform/web-artifact-cleanup-fix-source-reload-20261007/web-artifact-result-review.json",
+        "reviewSha256": "9242b43931346b81adfb1b8405d3b98c6f7da27aa721fae51f61fcf3b48d0b5b",
+        "limits": "Source/metadata successor writes accounted separately; no KEEP deletion"
+      }
+    ],
+    "activeOrUnknown": [
+      {
+        "item": "Original R1/R2/R3 consumed host phases",
+        "classification": "RETURN; original owner sealed clone/private namespaces and no further writes. Existing sealed bytes already occupy fresh free; retained databases may still grow in PostgreSQL background, keep original bounded DB uncertainty. R3 old ACTIVE was a historical pre-return observation.",
+        "source": "Root relay: R3 fixed42c181 result review;13PIDgroupsabsent;R1/R2 namespaces not reused; no new scans"
+      },
+      {
+        "item": "Original persistent personal services and retained DB background growth",
+        "classification": "POSSIBLE_GROWTH_BOUND_NOT_ZERO; retained within interim conservative bound pending exact existing-ledger term reconciliation"
+      },
+      {
+        "item": "Mika old ordinary, fixed compiled/source/raw and S01 closed KEEP",
+        "classification": "Original lead confirmed all old children/drivers/listeners/pending launch drained, all owners STOP. Fixed compiled/source/raw sealed; S01 O1 DB/port/process closed14:08:08.536 and no namespace writes. Prior ordinary16/4/2/1MiB caps do not permanently become new growth."
+      },
+      {
+        "item": "Mika K01 historical .local HOLD",
+        "classification": "UNKNOWN_IDENTITY_OR_CLEANUP; only process closure confirmed15:25, original owner will not reuse/write. No size guessed/no deletion; retain conservative unknown bound."
+      },
+      {
+        "item": "Current Web source/metadata and W01 strict local",
+        "classification": "Bounded legal preparation; W01 new20s affected strict uses9MiB once. Diagnostic90s and I01third are READY/proposed candidate peaks, not runtime or accumulated spent caps."
+      }
+    ],
+    "nextCandidatePeaks": [
+      {
+        "task": "K01",
+        "bytes": 142606336,
+        "state": "CONSUMED_FAILED_INDEPENDENT_COMPUTE_CONNECTIONS_RETURN_KEEP",
+        "boundary": "DB last sample128MiB not verified peak; preserve original single-item admission boundary and unknown conservatism",
+        "measurementIsolation": "10 EXPLAIN ANALYZE plus30 timed SELECT; I01Chrome waits exactRETURN for this measurement phase, not a universal PG/browser exclusion rule."
+      },
+      {
+        "task": "I01_THIRD",
+        "bytes": 276824064,
+        "state": "PASSED_RETURN_REVIEW_APPROVED_SEALED_STOP",
+        "boundary": "scratch256MiB+evidence8MiB for next phase only"
+      },
+      {
+        "task": "RELEASE_DIAGNOSTIC",
+        "bytes": 210763776,
+        "state": "DIAGNOSTIC_COMPLETE_RETURN_PENDING_REVIEW",
+        "boundary": "Consumed90s/CLOSED14881; no formalcompat pass; no future full201MiB cap"
+      }
+    ],
+    "externalInputsPending": true,
+    "newForwardNumericFloor": 16052912128,
+    "keepExistingLedgerOnly": true,
+    "noFullDiskScanOrExtraRun": true,
+    "mikaLatestClosure": "S01 replay15:18:44.466, packing15:41:49, ABBAprep15:54:53.480, ABBAactual16:10:32.815; K01repair15:45:17.411812, budget16:05:57.909881, P2fix16:17:20.190555; AV02 15:42:55.342; journal16:02:02.838; AV03sixth16:32:23.773 allchildren/TMP closed per originallead.",
+    "R3ReturnEvidence": "svc09a-r3-host-window-return.json",
+    "appliedAt": "2026-10-07T16:42:23.921Z",
+    "interimUnknownGrowthBoundBytes": 13440909312,
+    "selectedCandidatePeakBytes": 142606336,
+    "selectedCandidate": "K01_STARTUP_PG",
+    "singleReserveBytes": 1073741824,
+    "parallelOrdinaryGrowthBytes": 1048576,
+    "formula": "13440909312 residualunknown +134217728 K01retainedDB +1243611136 R4KEEPpendingclassification +142606336 newK01candidate +1048576 AV03source +16777216 Arcsource +1073741824 onereserve =16052912128",
+    "derivation": "Unknown/active interim bound = legacy19363266560 - provenclosed(2*276824064+2*210763776+268435456) - alreadyincludedK01(142606336) - oneexistingreserve(1073741824). This is a temporary conservative bound for unclassified remaining original entries, not an intrinsic legacy floor or claimed actual use.",
+    "knownNoFutureGrowthCapBytes": 1243611136,
+    "unknownRule": "Remaining Original/Mika source/service/DB/KEEP growth not assumed zero. Replace interim upper bound with original-lead evidence when provided; no full-history audit required before this conservative, isolated admission.",
+    "singleItemMinima": "Keep actual executor/cleanup and candidate single-item minima; K01 DB128MiB is a last sample, not peak enforcement; opaque DB/WAL growth remains within conservative uncertainty and one reserve. Old global sum copied into a proposal is not intrinsic.",
+    "physicalMeaning": "Sealed existing bytes occupy fresh free once. Removing obsolete full caps from future equation is neither deleting KEEP nor refunding prior time/write expenditure.",
+    "externalLeadClassifications": {
+      "receivedVia": "root exact lead relay",
+      "at": "2026-10-07T16:46:16.063Z",
+      "Original": "R1/R2/R3 clone/private sealed no owner writes; retained DB possible background growth bounded, not absolute zero",
+      "Mika": "All old ordinary drained; source/compiled/raw sealed STOP. K01 historical .local HOLD cleanup UNKNOWN kept. Current selected K01142606336 planning increment only; AV03/queue next PG not ready.",
+      "numericTreatment": "Current K01 grant remains approved conservative18129092608; reconciliation of original individual uncertain terms will refine future admissions without rewriting consumed gates or delaying already-ready phase."
+    },
+    "methodAuthority": "Original approved docs main17ac5917c; docs/quality/local-validation.md#future-disk-budget",
+    "nextAdmissionReconciliation": {
+      "state": "FOR_NEXT_ADMISSION_ONLY_NOT_A_NEW_GRANT",
+      "historicalConsumedR3Floor": 19363266560,
+      "currentConsumedK01Floor": 18129092608,
+      "previousInterimUnknownUpperBoundBytes": 16903307264,
+      "newlyClassifiedNoFutureGrowthTerms": [
+        {
+          "term": "R1 sealed clone/private/raw",
+          "bytes": 1109393408,
+          "arithmetic": "1073741824+33554432+2097152",
+          "evidence": "svc09a-host-window-return.json; root relayed original owner sealed namespace/no future writes",
+          "DBRetainedPossibleGrowthBytes": 134217728
+        },
+        {
+          "term": "R2 sealed pre-IO rejected namespace",
+          "bytes": 1243611136,
+          "arithmetic": "full candidate cap: clone1073741824+private33554432+PG134217728+raw2097152",
+          "evidence": "svc09a-r2-host-window-return.json explicitly fixtureDatabaseCreated=false/setup before services; original owner no further namespace writes",
+          "DBRetainedPossibleGrowthBytes": 0
+        },
+        {
+          "term": "R3 sealed clone/private/raw",
+          "bytes": 1109393408,
+          "arithmetic": "1073741824+33554432+2097152",
+          "evidence": "svc09a-r3-host-window-return.json; fixed42c181 original result review; sealed namespace/no further writes",
+          "DBRetainedPossibleGrowthBytes": 134217728
+        }
+      ],
+      "newlyClassifiedNoFutureGrowthBytes": 3462397952,
+      "remainingConservativeUnknownUpperBoundBytes": 13440909312,
+      "retainedR1R3DBGrowthBoundInsideUnknownBytes": 268435456,
+      "closedW01StrictAdditionalPeakNoLongerFutureBytes": 9437184,
+      "pendingCurrentK01": "Historical failed phase; independent read-only receipt confirms compute/connections returned. DBknownKEEP0conn/backgroundplanning128MiB; originalFAIL/HOLD stays.",
+      "illustrativeI01AfterConfirmedZeroK01ResidualGrowth": {
+        "unknownBoundBytes": 13440909312,
+        "selectedCandidateBytes": 276824064,
+        "oneReserveBytes": 1073741824,
+        "sumBytes": 14791475200,
+        "condition": "Only if K01 exact closure proves no additional future growth; otherwise add original owner bound. This is not a grant or a fresh-free sample."
+      },
+      "limits": "No KEEP deletion/refund/old-time credit. Exact currently consumed K01 gate remains immutable. Old Mika individual ordinary cap numeric reconciliation is not guessed; residual conservative upper bound remains."
+    },
+    "knownRetainedDBPossibleGrowthBytes": 134217728,
+    "currentConsumedK01GateUnchanged": 18129092608,
+    "I01NaturalSealEvidenceGrowthUpperBoundBytes": 0,
+    "ReleaseNaturalSealEvidenceGrowthUpperBoundBytes": 0,
+    "newVisualSourceGrowthBytes": 0,
+    "R4KeepPendingClassificationUpperBoundBytes": 1243611136,
+    "newReleasePolicySourceGrowthBytes": 0,
+    "newArcSourceGrowthBytes": 16777216
+  },
+  "forwardAdmission": {
+    "state": "FUTURE_CLASSIFIED_NO_GRANTED_NEXT",
+    "at": "2026-10-07T20:42:45.714Z",
+    "termsBytes": {
+      "residualUnknown": 13440909312,
+      "priorK01Db": 134217728,
+      "secondK01Db": 134217728,
+      "R4KeepPendingClassification": 1243611136,
+      "MikaPureSourceLocal": 0,
+      "ArcSource": 0,
+      "OriginalOrdinaryKeepPendingClassification": 35651584,
+      "ReleaseC3PendingSeal": 0,
+      "reserveOnce": 1073741824,
+      "AV03FailureMetadata": 0,
+      "ReleaseMainCloseoutMetadata": 0,
+      "OriginalNewPublicationOrdinaryPendingStop": 0,
+      "S01UnknownRetainedScratchPotential": 536870912,
+      "VisualBrowserPreparationSource": 0,
+      "S01NewOfflineSeal": 0,
+      "defaultHostKeepPendingClassification": 0,
+      "selectedSVC06BPersonalPublication": 0,
+      "MikaQ01NewOrdinary": 0,
+      "MikaS01NewOrdinary": 0,
+      "MikaPROCESSNewOrdinary": 0,
+      "ArcNewOrdinaryTMPAndRaw": 0,
+      "MikaQ01SuccessorOrdinary": 0,
+      "MikaArchitectureNewMetadata": 0,
+      "ArcNextSourcePreparationAndAffectedTypes": 0,
+      "MikaS01NewReviewStatusSeal": 0,
+      "selectedVisualRecoveryAppearance": 0,
+      "MikaQ01ThirdOrdinary": 0,
+      "MikaS01DiagnosticCandidateMetadata": 0,
+      "VisualPickerReadyMetadata": 0,
+      "MikaVerifierAdmissionResultProposedOrdinary": 16777216,
+      "MikaS01ApprovalArchiveMetadata": 0,
+      "MikaQ01CleanupRepairOrdinary": 0,
+      "selectedArcHTTP30": 1048576,
+      "MikaProcessMainReceiptMetadata": 0,
+      "ArcHTTPFailureSourceFix": 8388608,
+      "MikaQ01ReviewReadyMetadata": 0,
+      "DashboardTiming02OrdinarySource": 16777216,
+      "OriginalRecoveryFixedBuildCandidate": 2317352960
+    },
+    "minimumFreshFreeBytes": 18959564800,
+    "formula": "13440909312 + 134217728 + 134217728 + 1243611136 + 0 + 0 + 35651584 + 0 + 1073741824 + 0 + 0 + 0 + 536870912 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 16777216 + 0 + 0 + 1048576 + 0 + 8388608 + 0 + 16777216 + 2317352960 = 18959564800",
+    "method": "Freshfree compared with remaininggrowth/explicitlyboundedunknown plus selectednextpeak and one reserve. Original has classified defaultHost and personalphase retained stock after exactresourceclosure/no writers; their oldphasepeaks no longer futuregrowth, user service is still NOT_RESUMED. Oldresidual/R4/oldunknownKEEP bounds remain unchanged. Q01/S01sealed ordinarycaps removed. ProposedX01-07 new16MiB included once before actualclaim/start, not a heavygrant. W01 Picker metadata2MiB is now sealed STOP and removed from future. Mika new3min64KiB approval archive is included once. No pendingheavyNEXT and no rewrite of any historical consumedgate.",
+    "classificationEvents": [
+      {
+        "at": "2026-10-07T19:43:30.272Z",
+        "term": "MikaQ01NewOrdinary",
+        "beforeBytes": 8388608,
+        "afterBytes": 0,
+        "basis": "Mika authoritative SOURCE_STOP06118de7/source01dfc89,4child19:22:32.454554 exact group and TMPRETURN,49375B sealed retained, independentapproval19:31. Immutable retained already reduces fresh free. Successor new8MiB separate term remains. No deletion/timecredit/historyrewrite.",
+        "reportedVia": "root19:34/19:31 messages"
+      },
+      {
+        "at": "2026-10-07T19:49:26.419Z",
+        "term": "MikaS01NewOrdinary",
+        "beforeBytes": 16777216,
+        "afterBytes": 0,
+        "basis": "S01 source84b5/packet86bb cleanSTOP;4childFULLRETURN19:33:01.365; fixed source/local now in independentreview",
+        "rule": "Sealed immutable bytes already reduce freshfree; remove oldgrowthcap only, do not delete KEEP or rewrite historical gate."
+      },
+      {
+        "at": "2026-10-07T19:49:26.419Z",
+        "term": "MikaPROCESSNewOrdinary",
+        "beforeBytes": 16777216,
+        "afterBytes": 0,
+        "basis": "PROCESS abc0736/3fcdf cleanSTOP;FULLRETURN19:35; independentreview pending doesnot imply growth",
+        "rule": "Sealed immutable bytes already reduce freshfree; remove oldgrowthcap only, do not delete KEEP or rewrite historical gate."
+      },
+      {
+        "at": "2026-10-07T19:49:26.419Z",
+        "term": "MikaPureSourceLocal",
+        "beforeBytes": 1048576,
+        "afterBytes": 0,
+        "basis": "K8627 cleanSTOP reported root19:14; no newactual or pending child",
+        "rule": "Sealed immutable bytes already reduce freshfree; remove oldgrowthcap only, do not delete KEEP or rewrite historical gate."
+      },
+      {
+        "at": "2026-10-07T19:49:26.419Z",
+        "term": "AV03FailureMetadata",
+        "beforeBytes": 4194304,
+        "afterBytes": 0,
+        "basis": "AV6204 cleanSTOP/R2ready; no newactual, candidateCLOSED",
+        "rule": "Sealed immutable bytes already reduce freshfree; remove oldgrowthcap only, do not delete KEEP or rewrite historical gate."
+      },
+      {
+        "at": "2026-10-07T19:49:26.419Z",
+        "term": "S01NewOfflineSeal",
+        "beforeBytes": 1048576,
+        "afterBytes": 0,
+        "basis": "S01d6ce cleanSTOP reportedroot19:14; old2KEEP remains separate unknown512MiB, untouched",
+        "rule": "Sealed immutable bytes already reduce freshfree; remove oldgrowthcap only, do not delete KEEP or rewrite historical gate."
+      },
+      {
+        "at": "2026-10-07T19:49:26.419Z",
+        "term": "OriginalNewPublicationOrdinaryPendingStop",
+        "beforeBytes": 33554432,
+        "afterBytes": 0,
+        "basis": "Original source520d3/packet96e8/b895 cleanSTOP;3checks19:02:33.532 RETURN; current personal instance/records covered by separate selected515MiB",
+        "rule": "Sealed immutable bytes already reduce freshfree; remove oldgrowthcap only, do not delete KEEP or rewrite historical gate."
+      },
+      {
+        "at": "2026-10-07T19:54:09.120Z",
+        "term": "VisualBrowserPreparationSource",
+        "beforeBytes": 8388608,
+        "afterBytes": 2097152,
+        "basis": "Old33f034cleanSTOP19:49:13/fixed4ca, new10min2MiB fourpeer source-only delta replaces old8MiB.",
+        "rule": "Forward growth only; personal consumed18518114304 unchanged, no deletion/refund/timecredit."
+      },
+      {
+        "at": "2026-10-07T19:54:09.120Z",
+        "term": "ArcSource",
+        "beforeBytes": 16777216,
+        "afterBytes": 0,
+        "basis": "891f478 source/92d98f2 metadata actualremoteequalclean/exact20STOP; originalsource+TMP2.76MiB<16MiB sealed.",
+        "rule": "Forward growth only; personal consumed18518114304 unchanged, no deletion/refund/timecredit."
+      },
+      {
+        "at": "2026-10-07T19:54:09.120Z",
+        "term": "ArcNewOrdinaryTMPAndRaw",
+        "beforeBytes": 18874368,
+        "afterBytes": 0,
+        "basis": "ARC local18020/60000 CLOSED/5exactPIDPGIDandTMPabsent,92d98seal completed; raw retained immutable no furthergrowth.",
+        "rule": "Forward growth only; personal consumed18518114304 unchanged, no deletion/refund/timecredit."
+      },
+      {
+        "at": "2026-10-07T20:01:45.295Z",
+        "term": "VisualBrowserPreparationSource",
+        "beforeBytes": 2097152,
+        "afterBytes": 0,
+        "basis": "d85257e067eb96888f2b26479625b86572869995 cleanSTOP19:58:48;fourpeer+2actualdependencies fixed,6roots748files;no runtime",
+        "rule": "Sealed immutable retained no futurecap; personal consumedgateunchanged"
+      },
+      {
+        "at": "2026-10-07T20:01:45.295Z",
+        "term": "MikaArchitectureNewMetadata",
+        "beforeBytes": 2097152,
+        "afterBytes": 0,
+        "basis": "Mika parent32e9153/AVe32c2d9 remoteequalclean;handoff2MiB segment sealed194980B,no productchild;main/index partialamend committed",
+        "rule": "Sealed immutable retained no futurecap; personal consumedgateunchanged"
+      },
+      {
+        "at": "2026-10-07T20:10:17.421Z",
+        "term": "MikaQ01SuccessorOrdinary",
+        "beforeBytes": 8388608,
+        "afterBytes": 0,
+        "basis": "Mika20:06 reports predecessor new8 segment sealed164876B/RETURN;no futurewrites",
+        "rule": "Future only, not prior consumedtime/gate; architecture2 alreadyclassified once, not subtractedagain"
+      },
+      {
+        "at": "2026-10-07T20:10:17.421Z",
+        "term": "MikaS01NewReviewStatusSeal",
+        "beforeBytes": 131072,
+        "afterBytes": 0,
+        "basis": "Mika reports128KiB seal closed<4KiB immutable;no futurewrites",
+        "rule": "Future only, not prior consumedtime/gate; architecture2 alreadyclassified once, not subtractedagain"
+      },
+      {
+        "at": "2026-10-07T20:27:38.876Z",
+        "term": "ArcNextSourcePreparationAndAffectedTypes",
+        "beforeBytes": 16777216,
+        "afterBytes": 0,
+        "basis": "Final96d00 clean=remote/SOURCE_STOP20:18:10.676380; preparation726683B sealed, local4683ms exact group/scratch returned; fixed final receipt149f read. No runtime granted."
+      },
+      {
+        "at": "2026-10-07T20:27:38.876Z",
+        "term": "selectedVisualRecoveryAppearance",
+        "beforeBytes": 212860928,
+        "afterBytes": 11534336,
+        "basis": "Exact Recovery complete RETURN de99 personally read: markedDB normalDROP/0conn and64MiB scratch absent. Remove192MiB future scratch+DB planning; retain original10MiB evidence+1MiB metadata for ongoing natural seal within same envelope.38read-onlylinks remain staticKEEP. Not a budget refund/history rewrite."
+      },
+      {
+        "at": "2026-10-07T20:29:04.134Z",
+        "term": "selectedVisualRecoveryAppearance",
+        "beforeBytes": 11534336,
+        "afterBytes": 0,
+        "basis": "Manager read fixed30766 receipt:180f93 remoteequal/clean/all8STOP,0child/no pending,31rawsealed; remove remaining11MiB seal planning from future only, static38links KEEP unaffected."
+      },
+      {
+        "at": "2026-10-07T20:29:04.134Z",
+        "term": "VisualPickerReadyMetadata",
+        "beforeBytes": 0,
+        "afterBytes": 2097152,
+        "basis": "New10min ordinary metadata/TMP only finalPicker native/source-review routinebinding and normal seal; no runtime/gate/source change. Separate from closedRecovery."
+      },
+      {
+        "at": "2026-10-07T20:31:52.788Z",
+        "term": "defaultHostKeepPendingClassification",
+        "beforeBytes": 1244659712,
+        "afterBytes": 0,
+        "basis": "Original authoritative classification after19:17:35 formalRETURN and later own groups/listener/DB connectionsclosed; no growthwriter/pendinglaunch. DB/private retained stock, not futurephasepeak. I02 svc09a-default-host-result-review.json/canonical52d95; no new probe.",
+        "rule": "Futuregrowth only; no historical credit/refund, KEEP deletion or changed consumedgate. Other unknown residual unchanged."
+      },
+      {
+        "at": "2026-10-07T20:31:52.788Z",
+        "term": "selectedSVC06BPersonalPublication",
+        "beforeBytes": 540016640,
+        "afterBytes": 0,
+        "basis": "Original authoritative classification:19:51 three oldgroupsESRCH/three newrolesstopped/no listener/poolclosed;19:55 diagnosticabsent;20:02 historypoolclosed. No writer/pendinglaunch. Retained stock, not future515MiB phasepeak. I02 svc06b-personal-partial-result-review.json/canonical52d95; user NOT_RESUMED unchanged.",
+        "rule": "Futuregrowth only; no historical credit/refund, KEEP deletion or changed consumedgate. Other unknown residual unchanged."
+      },
+      {
+        "at": "2026-10-07T20:31:52.788Z",
+        "term": "MikaQ01ThirdOrdinary",
+        "beforeBytes": 8388608,
+        "afterBytes": 0,
+        "basis": "Mika originalowner:5child3714ms/raw3109B allRETURN/STOP;225KiBsealed+29KiBremoved. Last externalpermission wiring NOT_RUN/PARTIAL, notallchecksPASS.",
+        "rule": "Futuregrowth only; no historical credit/refund, KEEP deletion or changed consumedgate. Other unknown residual unchanged."
+      },
+      {
+        "at": "2026-10-07T20:31:52.788Z",
+        "term": "MikaS01DiagnosticCandidateMetadata",
+        "beforeBytes": 2097152,
+        "afterBytes": 0,
+        "basis": "Mika originalowner:2MiB segment sealed<65KiB/0child; candidate08819a limitedreview20:28 PASS butPG NOT_RUN.",
+        "rule": "Futuregrowth only; no historical credit/refund, KEEP deletion or changed consumedgate. Other unknown residual unchanged."
+      },
+      {
+        "at": "2026-10-07T20:31:52.788Z",
+        "term": "MikaVerifierAdmissionResultProposedOrdinary",
+        "beforeBytes": 0,
+        "afterBytes": 16777216,
+        "basis": "Proposed existingX01-07 child25min16MiB source/local, no heavy. Parent5+AV4 exactleaves must STOP/amend before receiver fresh take. No currentclaim/start inferred.",
+        "rule": "Futuregrowth only; no historical credit/refund, KEEP deletion or changed consumedgate. Other unknown residual unchanged."
+      },
+      {
+        "at": "2026-10-07T20:33:09.724Z",
+        "term": "VisualPickerReadyMetadata",
+        "beforeBytes": 2097152,
+        "afterBytes": 0,
+        "basis": "Fixed dcbd7a remoteequal/clean/all8STOP from personally-read039918 final receipt. Candidate READY,90s NOT_GRANTED/0gate. Parent/worker/fiveprepared unchanged; new109790Bsealed."
+      },
+      {
+        "at": "2026-10-07T20:33:09.724Z",
+        "term": "MikaS01ApprovalArchiveMetadata",
+        "beforeBytes": 0,
+        "afterBytes": 65536,
+        "basis": "New3min64KiB only approval/status archival by Mika originalowner; old2MiBclosed,0PG/engineering. Independent new sourcegrowth once, no historicalgatechange."
+      },
+      {
+        "at": "2026-10-07T20:34:48.450Z",
+        "term": "MikaS01ApprovalArchiveMetadata",
+        "beforeBytes": 65536,
+        "afterBytes": 0,
+        "basis": "Fixed4cb21543a415022e5c495532b803e842435ef364 remoteequal/cleanSTOP,3748Bfourmetadata; original64KiBphaseclosed,nochildren. Candidate4cb215+cd39 actualPGNOT_RUN."
+      },
+      {
+        "at": "2026-10-07T20:34:48.450Z",
+        "term": "MikaQ01CleanupRepairOrdinary",
+        "beforeBytes": 0,
+        "afterBytes": 4194304,
+        "basis": "Mika new10min4MiB cleanup root-identity P2 repair/pure2counterexample+externalpermitmock,<=3serial30/cum60,raw512KiB included,0PGHTTPprovider. Old8MiB sealed remains0."
+      },
+      {
+        "at": "2026-10-07T20:34:48.450Z",
+        "term": "selectedArcHTTP30",
+        "beforeBytes": 0,
+        "afterBytes": 9437184,
+        "basis": "Single new30s20work10cleanup HTTP2 candidate;8MiBscratch+1MiBretained includesmetadata.0PG/Chrome/provider/personal; root1491prepapproved. No priorphasebudget transfer."
+      },
+      {
+        "at": "2026-10-07T20:36:10.388Z",
+        "term": "MikaProcessMainReceiptMetadata",
+        "beforeBytes": 0,
+        "afterBytes": 65536,
+        "basis": "Mika new3min64KiB only PROCESS mainreceipt/handback metadata. Post-ARCgrant newgrowth: if notyetstarted deferuntil ArcactualSTART, do not move same frozen16629628928 contract; noengineerPG."
+      },
+      {
+        "at": "2026-10-07T20:36:47.067Z",
+        "term": "MikaProcessMainReceiptMetadata",
+        "beforeBytes": 65536,
+        "afterBytes": 0,
+        "basis": "Corrected arrival order: actualmetadataSTART20:33:57 preceded Arcgrant20:34:48;STOP20:35:26, fixed862f0a025314de757a9310c521036adbbeb22828 clean/28276B/0child. No pending growth; oldqueued inference superseded."
+      },
+      {
+        "at": "2026-10-07T20:36:47.067Z",
+        "term": "MikaQ01CleanupRepairOrdinary",
+        "beforeBytes": 4194304,
+        "afterBytes": 0,
+        "basis": "Fixedsource103232ee/packet347209c cleanSTOP20:35:26;15purePASS/145ms/raw114B, actualFULLRETURN20:34:06.594010/exactTMPENOENT.194522Bsealed, readonlyreviewonly; actualPGNOT_RUN."
+      },
+      {
+        "at": "2026-10-07T20:37:26.258Z",
+        "term": "selectedArcHTTP30",
+        "beforeBytes": 9437184,
+        "afterBytes": 1048576,
+        "basis": "Managerread post-cleanup exactPIDPGIDabsent/scratchabsent, remove8MiB scratchfuture; retain1MiB originalevidence/metadataseal. Failed30sCLOSED unusedno credit."
+      },
+      {
+        "at": "2026-10-07T20:37:26.258Z",
+        "term": "ArcHTTPFailureSourceFix",
+        "beforeBytes": 0,
+        "afterBytes": 8388608,
+        "basis": "New20min8MiB exact20 source/metadata-only diagnosisandnarrowfix; optionalaffectedtypes<=20scumulative1Node0network/HTTPPGChrome; no secondHTTPgrant."
+      },
+      {
+        "at": "2026-10-07T20:39:54.145Z",
+        "term": "MikaQ01ReviewReadyMetadata",
+        "beforeBytes": 0,
+        "afterBytes": 65536,
+        "basis": "New3min64KiB only finalreview/pgreadyarchive. Source103232ee/347209c source/localP2closed20:37:05; PGNOT_RUN/candidate140snotgranted. Old4MiBclosed."
+      },
+      {
+        "at": "2026-10-07T20:39:54.145Z",
+        "term": "DashboardTiming02OrdinarySource",
+        "beforeBytes": 0,
+        "afterBytes": 16777216,
+        "basis": "ExistingTIMING02 + originalWPF00137 samefrontseam, W01 independentWT/exact9 after freshsource/scopeCAS,25min16MiB allinclusive/TMP8raw1; necessarypure<=60s3serial20inc5cleanup,0HTTPPGChrome/build. Noactualclaim/start yet."
+      },
+      {
+        "at": "2026-10-07T20:40:57.783Z",
+        "term": "MikaQ01ReviewReadyMetadata",
+        "beforeBytes": 65536,
+        "afterBytes": 0,
+        "basis": "Fixed46912dfdf1fcdaa17484809b21b55e216ab83b95 cleanSTOP20:39:15;4metadata21834B/0child. Futurepermit exact46912, noactualPGgrant."
+      },
+      {
+        "at": "2026-10-07T20:42:45.714Z",
+        "term": "OriginalRecoveryFixedBuildCandidate",
+        "beforeBytes": 0,
+        "afterBytes": 2317352960,
+        "basis": "Original newrecovery fixedsource buildpreparation candidate, notREADY/no pendinglaunch. ReuseexistingSVC06Bbuilder420swork; newpeak2,317,352,960 includes1GiBfinal/installsamecopy+seed512MiB/private128MiB/meta512MiB etc, original2.5GiB/1GiBcleanup512MiBcoordinationconditions unchanged. No inheritedwindow, nooldKEEPdeletion."
+      }
+    ],
+    "currentWindowConservativeFrozenFloorBytes": null,
+    "frozenFloorExplanation": "ARC consumedmanager16629628928 and binding18622054400 preserve; exactownedRETURN complete, no currentlaunchfreeze or grantedNEXT."
+  },
+  "originalOrdinaryCurrent": {
+    "state": "ACTUAL_CHECKS_RETURNED_SEAL_PENDING",
+    "owner": "Original assignment_review",
+    "scope": "SVC06B two-stage fixedWeb import/publication preparation",
+    "phaseMs": 120000,
+    "growthCapBytes": 33554432,
+    "actualChild": "Latest exact child timing pending originalowner; do not infer",
+    "PG": 0,
+    "publicationReady": false,
+    "actualReturn": "2026-10-07T19:02:33.532Z",
+    "chargeMs": 619,
+    "rawBytes": 1251,
+    "closure": "3ownedgroupsabsent/dualEOF/emptydirsremoved",
+    "phaseBoundary": "Three authorizedSVC06B checks returned; preparation seal/review pending, no personalactualgrant"
+  },
+  "lastExternalActual": {
+    "logicalId": "SVC06B-FIXED-CD27-WEB779-PERSONAL-20261007-ONCE",
+    "state": "FAILED_PERSONAL_SERVICES_STOPPED_RESOURCE_RETURNED_NOT_RESUMED",
+    "grantedAt": "2026-10-07T19:28:11.839Z",
+    "owner": "Original assignment_review under Original Lead",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+    "source": "520d3cb7bdb352a1462d83c214e63c8a47c218f4",
+    "preparation": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/web-publication-preparation.json",
+    "deliveryPrefixes": [
+      "96e8",
+      "b895"
+    ],
+    "review": "Original approved source+actual-local main089a6e460; eight source paths mainc15cdffcb",
+    "candidatePeakBytes": 540016640,
+    "completeMinimumFreeBytes": 18518114304,
+    "selectedTuple": "cd27/04da backend; Web779/c231; policy81a8; four formal reports unchanged",
+    "sequence": "Fresh private identities -> fixed cd27 import -> three retained reports -> reviewed original maintenance -> exact resumed-confirmed receipt -> fresh private Web instance -> fixed779 Web import -> fourth report -> explicit expectedVersion3 CAS publication. Old pointer retained until public publish action. No rebuilt artifacts.",
+    "limits": {
+      "importWorkMs": 120000,
+      "importTermMs": 500,
+      "importReapMs": 2000,
+      "maintenanceWorkMs": 900000,
+      "maintenanceReapMs": 2000,
+      "eachFixedWebActionWorkMs": 30000,
+      "eachFixedWebActionTermMs": 500,
+      "eachFixedWebActionReapMs": 2000,
+      "newLogicalBytes": 536870912,
+      "rawTotalBytes": 2097152,
+      "recordBytes": 1048576
+    },
+    "preflight": "Original sole operator fresh exact claim/source/runtime/tuple/report pins, private0600 six-file and three-process/CAS identity, unique idle and free>=latest complete floor. Personal input remains null until normal trusted freeze. No credentials in public records. Any mismatch or unknown stop before dependent side effects.",
+    "resourceRule": "Exclusive against other PG/Chrome/build/heavy or personal operations; isolated source and already-authorized nonmeasurement0PG ordinary can continue. No second heavy NEXT.",
+    "failureRule": "Preserve partial effects and unknown status; no automatic retry/rollback/delete journals/replay. Separate actualSTART, phase terminal, publication result, and exact resource RETURN; do not infer from elapsed time.",
+    "contractFreeze": {
+      "at": "2026-10-07T19:45:01.641Z",
+      "logicalId": "SVC06B-FIXED-CD27-WEB779-PERSONAL-20261007-ONCE",
+      "floorBytes": 18518114304,
+      "until": "Historical consumed gate immutable; independent future budget may change",
+      "prelaunchFact": "Original reports0START/0personal effects. Old18509725696 frozenoperator stopped at launch-before assert after newQ01 changed requiredfloor. Same unconsumed operator now routine rebinds18518114304 and directly fresh launches; free about19.38GB reported, exact sample belongs actualreceipt.",
+      "rule": "No secondgrant/sourceapproval. Existing authorized ordinary/source continues. Any new not-yet-authorized growth queues until actualSTART or explicitSTOP; do not mutate this fixed resource contract again. Historical/preflightfailure kept. No globalSTOP.",
+      "state": "CONSUMED_IMMUTABLE"
+    },
+    "actualStart": "2026-10-07T19:43:39.755Z",
+    "operator": "Original assignment_review",
+    "consumedFloorBytes": 18518114304,
+    "freshFreeBytes": 19391119360,
+    "privateInstanceSha256": "a064ed9155ebffb980af937672ddab8e4f2306e8f45dbb955ea41b0618a6600f",
+    "freshBindings": "48pins/inheritedclosure/sixprivatefiles matched by Original operator; values not copied",
+    "currentPhase": "same operation35d5a7ff boundedreadonly3role/phase/maintenance observation by Original owner",
+    "maintenance": "NOT_STARTED",
+    "webPublication": "NOT_STARTED",
+    "pid": "NOT_REPORTED",
+    "return": "ACTIVE_RESOURCES_RETURNED_NOT_USER_SUCCESS",
+    "terminalAt": "2026-10-07T19:47:21.167Z",
+    "outerCallReturnedAt": "2026-10-07T19:48:31.241Z",
+    "operatorElapsedMs": 114242,
+    "operatorExit": 1,
+    "refreshElapsedMs": 58210,
+    "primary": "START_UNCONFIRMED_CHECK_STATUS",
+    "completed": "fixedcd27 import,threeformalreports,bootstrap,strictidle",
+    "notCompleted": "checkpoint,resume,newWeb",
+    "returnState": "ACTIVE_RESOURCES_RETURNED_USER_SERVICE_RECOVERY_PENDING",
+    "receipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/personal-current-window-return.json",
+    "receiptBytes": 1032,
+    "receiptSha256": "9993c19e8edb7d4983efccb69f3ef96d40cfd9ffb8a683db6c27bc4893f80a47",
+    "priority": "User accepting/service recovery before any newheavy",
+    "prohibited": "No replay/model/newWeb/secondgrant/automaticrollback; only original sameop exactbounded observation and authorized recovery decision",
+    "activeResourcesReturnedAt": "2026-10-07T19:51:09.047Z",
+    "latestDiagnosticReturn": "2026-10-07T19:55:22.549Z",
+    "resourceClosure": "3newroles stopped/center+Web noownedlistener;3oldgroups ESRCH;PGpoolclosed;2resolve diagnostic exactgroupabsent+dualEOF0PG",
+    "maintenanceState": "maintenance",
+    "maintenanceVersion": 23,
+    "operationId": "35d5a7ff-5ef7-4938-9584-adb27f5357ff",
+    "webPointer": "d629/v3 unchanged",
+    "userAcceptingRestored": false,
+    "resourceReceipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/personal-current-result.json",
+    "resourceReceiptSha256": "07f3f538cc756a883d357145f21f7ce7b1449d8d4a78b9ebdd5580b0af3e077a"
+  },
+  "latestOrdinaryCoordination": {
+    "at": "2026-10-07T18:19:49.081Z",
+    "event": "FIRST_ATTEMPT_FAILED_RETURNED_SOURCE_FIX_SAME_PHASE",
+    "record": "host-i01-newpair-queue-20261007/current.json#visual.ordinaryLocal"
+  },
+  "performanceDrain": {
+    "state": "ENDED_BY_EXACT_ACTIVE_RESOURCE_RETURN",
+    "at": "2026-10-07T18:42:24.886Z",
+    "W01": "0child/0pendinglaunch/all VISUAL8STOP/7a8e clean, Release released; source/engineering/supply/CLI paused",
+    "panels": "0engineering/PG/Chrome/supply/CLI; f885 HEAD Arc20dirty implementation retained, source paused at safe point, no checks started",
+    "Mika": "Finalwholeteamdrain0child/PG/pending,source/supply/CLI/metadataSTOP: PROCESS18:37:13/6c881, unstarted8MiBwithdrawn;AV18:38:02 known1959af0a2 pushed/no freshdirty probe4MiB;K18:39:04 known3f08866d+3dirtymetadata~74.7KB1MiB;S01c751/input842STOP",
+    "Original": "18:45Z fullSTOP: native completed/nohoststart; assignment0child/0pending/localholder, threechecksnotstarted,source/docSTOP dirtyHEAD eed059 kept; Lead0child/pending/I02metauncommitted, noPGChrome/build/service/personal. No seal required.",
+    "timeoutRule": "No fixed clock release/launch; wait explicit real facts",
+    "root": "18:37:51 source/CLI/researchprobeSTOP; coordinationonly",
+    "OriginalRequest": {
+      "issuedAt": "2026-10-07T18:45:45.822Z",
+      "target": "Original existing lead and all current owners",
+      "state": "DRAIN_REQUEST_NOT_RUNTIME_GRANT",
+      "instruction": "Current already-started bounded small check may finish and clean up normally. Then all owners stop source writes, supply/install/build, Git, metadata writes, coordination/inspection/test CLI and all new engineering launches. Report each owner actual safeSTOP time, last child actual RETURN or no-child fact, any pendinglaunch, possible remaining growth and KEEP. No new checks/push/seal needed to establish drain. Do not interrupt required cleanup.",
+      "startCondition": "S01 remains NOT_OPEN/NO_GRANT until Original whole-team explicitSTOP and manager singlefresh grant; original S01 owner then immediately freshchecks inputs/claim/namespace/PG/fullfloor before START. No planned time used as actual START.",
+      "duration": "One S01 selected300s whole maximum including measurement+cleanup/receipt, existing caller limits unchanged. Actual terminal and exact resource RETURN required; no clock-based release.",
+      "releaseCondition": "On exactRETURN manager promptly releases source/ordinary freeze and selects ready work; personal publication READY has priority, sourcepreparation does not reserve NEXT. Unknown resource return retains only the implicated resource boundary, not indefinite unrelated source freeze.",
+      "noExtraAuthority": "No new source review or user approval needed; no restart or second execution; only same selected S01 candidate."
+    },
+    "completedAt": "2026-10-07T18:47:24.211Z",
+    "endedAt": "2026-10-07T18:54:50.216335Z",
+    "managerResumedAt": "2026-10-07T18:58:01.926Z",
+    "remainingBoundary": "Two source/runner TMPunknownKEEP; originalcaller failureunchanged. No activePGchild/listener, no automaticretry."
+  },
+  "historicalSupersededCurrentFields": "host-i01-newpair-queue-20261007/historical-current-fields-e7c001.json",
+  "launchHandoffBoundary": {
+    "notifiedAt": "2026-10-07T18:52:01Z",
+    "latestNewSpawnAt": "2026-10-07T18:53:00Z",
+    "state": "ACTUAL_SPAWN_BEFORE_DEADLINE_GRANT_CONSUMED",
+    "rule": "Samegrant only. Already-spawned run retains original300s/cleanup; immediately report realSTART. If not spawned by handoff deadline no laterlaunch from thisgrant; report exact0child/PG/namespace or knownresources/blocker. Manager waits explicitNOT_STARTED/closure before restoringdrain, no time-inferredRETURN. No newprep/greencheck/seal prerequisite."
+  },
+  "publicationContractFreeze": {
+    "at": "2026-10-07T19:45:01.641Z",
+    "logicalId": "SVC06B-FIXED-CD27-WEB779-PERSONAL-20261007-ONCE",
+    "floorBytes": 18518114304,
+    "until": "Historical consumed gate immutable; independent future budget may change",
+    "prelaunchFact": "Original reports0START/0personal effects. Old18509725696 frozenoperator stopped at launch-before assert after newQ01 changed requiredfloor. Same unconsumed operator now routine rebinds18518114304 and directly fresh launches; free about19.38GB reported, exact sample belongs actualreceipt.",
+    "rule": "No secondgrant/sourceapproval. Existing authorized ordinary/source continues. Any new not-yet-authorized growth queues until actualSTART or explicitSTOP; do not mutate this fixed resource contract again. Historical/preflightfailure kept. No globalSTOP.",
+    "state": "CONSUMED_IMMUTABLE"
+  }
+}

@@ -16,7 +16,7 @@ test('VAR shared identity is detached, configuration-order stable and binds the 
   request.rule.requiredKeys.push('later'); expect(JSON.parse(first.serialized).rule.requiredKeys).toEqual(['a']); request.rule.requiredKeys.pop();
 });
 test('VAR complete serialized envelope is bounded without truncation', () => {
-  expect(() => verificationInput({ ...invocation, configuration: { value: 'x'.repeat(16384) } }, request)).toThrow('VERIFICATION_INPUT_TOO_LARGE');
+  expect(() => verificationInput(invocation, { ...request, source: { ...request.source, content: '\u0001'.repeat(8192) } })).toThrow('VERIFICATION_INPUT_TOO_LARGE');
 });
 test('VAR admission requires source project CAS and rejects caller body/project authority', () => {
   const source = { taskId: 'source', attemptId: 'attempt', artifactId: 'artifact', version: 'd'.repeat(64) };
@@ -25,4 +25,22 @@ test('VAR admission requires source project CAS and rejects caller body/project 
   for (const input of [{ ...body, projectId: 'forged' }, { ...body, source: { ...source, content: '{}' } }, { ...body, expectedSourceProjectRevision: undefined }]) {
     expect(pluginVerificationAdmissionSchema.safeParse(input).success).toBe(false);
   }
+});
+
+test('VAR trusted verifier invoker uses shared bytes and never falls back after host failure', async () => {
+  const { executePluginVerifier } = await import('../../../apps/runner/src/plugins/execution.js');
+  const { verifyJsonObject } = await import('./json-object-verifier.js');
+  const { createHash } = await import('node:crypto');
+  const verification = { ...request, source: { ...request.source, version: createHash('sha256').update(request.source.content).digest('hex') } };
+  const base = { store: { root: '/unused', storeId: 'store', allowedDigests: [invocation.material.artifact.sha256] }, binding: invocation,
+    verification, signal: new AbortController().signal, assertOwnership: () => {}, authorize: async () => {},
+    trustedAlgorithms: [{ artifactSha256: invocation.material.artifact.sha256, treeDigest: invocation.material.treeDigest, hostApiMajor: 1 as const, algorithmId: verification.rule.algorithmId, algorithmVersion: 1 as const }] };
+  let calls = 0;
+  const result = await executePluginVerifier({ ...base, invokeVerifier: async input => {
+    calls++; expect(input.input).toBe(verificationInput(invocation, verification).serialized);
+    return { kind: 'text', content: JSON.stringify({ schemaVersion: 1, algorithmId: verification.rule.algorithmId, algorithmVersion: 1,
+      inputDigest: verificationInput(invocation, verification).inputDigest, verdict: verifyJsonObject(verification.source.content, verification.rule) }), provenance: {} as never };
+  } });
+  expect(result.output.verdict.result).toBe('passed'); expect(calls).toBe(1);
+  await expect(executePluginVerifier({ ...base, invokeVerifier: async () => { throw new Error('process closed with failure'); } })).rejects.toThrow('process closed with failure');
 });

@@ -4,13 +4,13 @@ import dataclasses,datetime,hashlib,importlib.util,json,os,sys,time,shutil
 sys.dont_write_bytecode=True
 R=Path(__file__).resolve().parents[3];E=R/'docs/evidence/x01-verifier-admission-result'
 B=E/'inputs'
-name=sys.argv[1];assert name in ('types','behavior','types-fix','behavior-fix','types-final','behavior-final')
+name=sys.argv[1];assert name in ('types','behavior','types-fix','behavior-fix','types-final','behavior-final','types-verified')
 record=E/'local.json';state=json.loads(record.read_text()) if record.exists() else {'attempts':[]}
 assert len(state['attempts'])<6
 used=sum(x['supervision']['elapsed_ms'] for x in state['attempts']);rawused=sum(x['raw']['bytes'] for x in state['attempts']);assert used<150000 and rawused<2097152
 node='/opt/homebrew/opt/node@24/bin/node';files=['packages/plugin-runtime/src/verification-input.test.ts','apps/server/src/plugin-verification-configuration.test.ts','apps/server/src/plugin-runtime/verification-admission.test.ts','apps/server/src/plugin-runtime/verification-result.test.ts']
 cmd=([node,str(E/'node_modules/typescript/bin/tsc'),'--noEmit','-p',str(E/'tsconfig.json')] if name.startswith('types') else [node,str(E/'node_modules/vitest/vitest.mjs'),'run','--config',str(E/'vitest.config.mjs'),'--no-cache',*files,'-t',os.environ.get('FLOW_AV03_SELECTION','VAR ' ),'--reporter=json'])
-floor=int(os.environ['FLOW_AV03_FLOOR']);assert floor>=16620322816
+floor=int(os.environ['FLOW_AV03_FLOOR']);assert floor>=18959564800
 free=os.statvfs(R).f_bavail*os.statvfs(R).f_frsize;assert free>=floor
 out=E/('local-'+name);out.mkdir();tmp=out/'tmp';tmp.mkdir();ident=tmp.stat();now=lambda:datetime.datetime.now(datetime.timezone.utc).isoformat(timespec='milliseconds').replace('+00:00','Z');start=now();clock=time.monotonic()
 def save(path,value):
@@ -30,5 +30,5 @@ if closed:
   p=tmp/file
   if p.exists():assert p.stat().st_size<=65536; (out/file).write_bytes(p.read_bytes())
  shutil.rmtree(tmp);assert not tmp.exists();cleanup.update({'removed':True,'retained':None,'endSampleEntries':n,'endSampleBytes':b,'dev':ident.st_dev,'ino':ident.st_ino})
-state['attempts'].append({'name':name,'startedAt':start,'endedAt':now(),'wallBeforePersistenceSeconds':time.monotonic()-clock,'supervision':rep,'cleanup':cleanup,'raw':{'path':str((out/'output.log').relative_to(R)),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()},'sourceHashes':{str(p.relative_to(R)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),*(B/f for f in files),B/'apps/server/src/events.ts',B/'apps/server/src/plugin-runtime/verification-result.ts',B/'apps/server/src/plugin-runtime/verification-admission.ts',B/'apps/server/src/plugin-runtime/verification.ts']}})
+state['attempts'].append({'name':name,'startedAt':start,'endedAt':now(),'wallBeforePersistenceSeconds':time.monotonic()-clock,'supervision':rep,'cleanup':cleanup,'raw':{'path':str((out/'output.log').relative_to(R)),'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()},'sourceHashes':{str(p.relative_to(R)):hashlib.sha256(p.read_bytes()).hexdigest() for p in [Path(__file__),*(B/row['path'] for row in json.loads((E/'closure.json').read_text())['rows'] if row['source']=='CURRENT_OWNER')]}})
 save(record,state);print(json.dumps({'name':name,'exit':result.exit_code,'elapsedMs':result.elapsed_ms,'owned':result.owned_state,'eof':result.eof,'rawBytes':len(raw),'cleanup':cleanup}));sys.exit(0 if result.exit_code==0 and closed and cleanup['removed'] else 1)

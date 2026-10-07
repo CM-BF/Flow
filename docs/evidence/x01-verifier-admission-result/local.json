@@ -1,0 +1,327 @@
+{
+  "attempts": [
+    {
+      "name": "types",
+      "startedAt": "2026-10-07T20:45:05.052Z",
+      "endedAt": "2026-10-07T20:45:06.710Z",
+      "wallBeforePersistenceSeconds": 1.6568779579829425,
+      "supervision": {
+        "pid": 84872,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 2,
+        "elapsed_ms": 1628,
+        "observed_bytes": 698,
+        "retained_bytes": 698,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124475279
+      },
+      "raw": {
+        "path": "docs/evidence/x01-verifier-admission-result/local-types/output.log",
+        "bytes": 698,
+        "sha256": "9b9b3d21d389d9b91181795598c43d810ed522ec5e5b97e098129d78f8a73198"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-verifier-admission-result/local.py": "58651742943f7ca8f94dac9d769160d74089f81f1bc00b40a90db6fc01629bbb",
+        "docs/evidence/x01-verifier-admission-result/inputs/packages/plugin-runtime/src/verification-input.test.ts": "124982fb41521ea69e0d5c6b29c889bc0fcfd05e4c301259f6cba1ef9d18068a",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-verification-configuration.test.ts": "415972bdd5e5115a5405decff3f1ffdeb0c5d6c496c094eed42d40929ffcd9e2",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-admission.test.ts": "c4d6d56859c9ae24ffd96b35ee722195a47a81b0a99e1bb73f5928688badf8b3",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-result.test.ts": "8678a35b1ec2f1c243ebe9cb2937781487bf3924cc0d949ada7ed11380409160",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/events.ts": "4953c00055aa537fb2f4395ed4083532351e019d03fb4b473e08afa8cd843472",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-result.ts": "ec566ee0cf45e8be078af3f0afa556e1a4f69e4454593421ec1cbc1eb5d40551",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-admission.ts": "27afbc9e0abaedaa5bb3b1ce347a17554bf037b7d2dffbc0b0beb72a1ac8c29e",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification.ts": "3a6d4de476f8fcca4a50055266660b685cdfa1015308cc2a7ced5e9d045f7a17"
+      }
+    },
+    {
+      "name": "types-fix",
+      "startedAt": "2026-10-07T20:45:50.754Z",
+      "endedAt": "2026-10-07T20:45:53.003Z",
+      "wallBeforePersistenceSeconds": 2.2483736659632996,
+      "supervision": {
+        "pid": 13023,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 2239,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124475355
+      },
+      "raw": {
+        "path": "docs/evidence/x01-verifier-admission-result/local-types-fix/output.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-verifier-admission-result/local.py": "58651742943f7ca8f94dac9d769160d74089f81f1bc00b40a90db6fc01629bbb",
+        "docs/evidence/x01-verifier-admission-result/inputs/packages/plugin-runtime/src/verification-input.test.ts": "124982fb41521ea69e0d5c6b29c889bc0fcfd05e4c301259f6cba1ef9d18068a",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-verification-configuration.test.ts": "415972bdd5e5115a5405decff3f1ffdeb0c5d6c496c094eed42d40929ffcd9e2",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-admission.test.ts": "c4d6d56859c9ae24ffd96b35ee722195a47a81b0a99e1bb73f5928688badf8b3",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-result.test.ts": "8678a35b1ec2f1c243ebe9cb2937781487bf3924cc0d949ada7ed11380409160",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/events.ts": "4953c00055aa537fb2f4395ed4083532351e019d03fb4b473e08afa8cd843472",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-result.ts": "ec566ee0cf45e8be078af3f0afa556e1a4f69e4454593421ec1cbc1eb5d40551",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-admission.ts": "27afbc9e0abaedaa5bb3b1ce347a17554bf037b7d2dffbc0b0beb72a1ac8c29e",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification.ts": "3a6d4de476f8fcca4a50055266660b685cdfa1015308cc2a7ced5e9d045f7a17"
+      }
+    },
+    {
+      "name": "behavior",
+      "startedAt": "2026-10-07T20:46:45.334Z",
+      "endedAt": "2026-10-07T20:46:46.169Z",
+      "wallBeforePersistenceSeconds": 0.8350000419886783,
+      "supervision": {
+        "pid": 49832,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 1,
+        "elapsed_ms": 826,
+        "observed_bytes": 7635,
+        "retained_bytes": 7635,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124475798
+      },
+      "raw": {
+        "path": "docs/evidence/x01-verifier-admission-result/local-behavior/output.log",
+        "bytes": 7635,
+        "sha256": "7ba8a112f9baae56417f9d27c12b49b41db386d7f26e15dc10954a6b1de19d5b"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-verifier-admission-result/local.py": "baf86433c24909d868f4d4b382a6d68543445709d89745ad06e366f704a7a14f",
+        "docs/evidence/x01-verifier-admission-result/inputs/packages/plugin-runtime/src/verification-input.test.ts": "42a2f36621dea1bae34f28e187e0ce65ae7fc26ebdd0d0e7424151aa38051e05",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-verification-configuration.test.ts": "415972bdd5e5115a5405decff3f1ffdeb0c5d6c496c094eed42d40929ffcd9e2",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-admission.test.ts": "85d12151401720cb927430e89efa8fa713bf17eaa00c44066ad15b65170632dc",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-result.test.ts": "8678a35b1ec2f1c243ebe9cb2937781487bf3924cc0d949ada7ed11380409160",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/events.ts": "4953c00055aa537fb2f4395ed4083532351e019d03fb4b473e08afa8cd843472",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-result.ts": "ec566ee0cf45e8be078af3f0afa556e1a4f69e4454593421ec1cbc1eb5d40551",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-admission.ts": "27afbc9e0abaedaa5bb3b1ce347a17554bf037b7d2dffbc0b0beb72a1ac8c29e",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification.ts": "3a6d4de476f8fcca4a50055266660b685cdfa1015308cc2a7ced5e9d045f7a17"
+      }
+    },
+    {
+      "name": "behavior-fix",
+      "startedAt": "2026-10-07T20:47:37.241Z",
+      "endedAt": "2026-10-07T20:47:38.340Z",
+      "wallBeforePersistenceSeconds": 1.098900041077286,
+      "supervision": {
+        "pid": 82854,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1063,
+        "observed_bytes": 5743,
+        "retained_bytes": 5743,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124476054
+      },
+      "raw": {
+        "path": "docs/evidence/x01-verifier-admission-result/local-behavior-fix/output.log",
+        "bytes": 5743,
+        "sha256": "6433a48df32068aa83d1b1bb8a8ef5e657e281171d4058be68f993dd3388fcfb"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-verifier-admission-result/local.py": "baf86433c24909d868f4d4b382a6d68543445709d89745ad06e366f704a7a14f",
+        "docs/evidence/x01-verifier-admission-result/inputs/packages/plugin-runtime/src/verification-input.test.ts": "65594dd75166cd130793db5057f6dece55a2c7e2d6aa3e207ea58107fd7dfc36",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-verification-configuration.test.ts": "415972bdd5e5115a5405decff3f1ffdeb0c5d6c496c094eed42d40929ffcd9e2",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-admission.test.ts": "85d12151401720cb927430e89efa8fa713bf17eaa00c44066ad15b65170632dc",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-result.test.ts": "8678a35b1ec2f1c243ebe9cb2937781487bf3924cc0d949ada7ed11380409160",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/events.ts": "4953c00055aa537fb2f4395ed4083532351e019d03fb4b473e08afa8cd843472",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-result.ts": "ec566ee0cf45e8be078af3f0afa556e1a4f69e4454593421ec1cbc1eb5d40551",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-admission.ts": "941decfe984dfcfca98017ccf02b270e2443d725c65366e6dcd025c4bb70da51",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification.ts": "3a6d4de476f8fcca4a50055266660b685cdfa1015308cc2a7ced5e9d045f7a17"
+      }
+    },
+    {
+      "name": "types-final",
+      "startedAt": "2026-10-07T20:47:50.106Z",
+      "endedAt": "2026-10-07T20:47:52.393Z",
+      "wallBeforePersistenceSeconds": 2.287346916971728,
+      "supervision": {
+        "pid": 89490,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 2,
+        "elapsed_ms": 2255,
+        "observed_bytes": 530,
+        "retained_bytes": 530,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124476219
+      },
+      "raw": {
+        "path": "docs/evidence/x01-verifier-admission-result/local-types-final/output.log",
+        "bytes": 530,
+        "sha256": "1ca20b76afab7bdbd112b6ea9dc7129b5fbb719e48edc6d9ea4ee1051680d68c"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-verifier-admission-result/local.py": "baf86433c24909d868f4d4b382a6d68543445709d89745ad06e366f704a7a14f",
+        "docs/evidence/x01-verifier-admission-result/inputs/packages/plugin-runtime/src/verification-input.test.ts": "65594dd75166cd130793db5057f6dece55a2c7e2d6aa3e207ea58107fd7dfc36",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-verification-configuration.test.ts": "415972bdd5e5115a5405decff3f1ffdeb0c5d6c496c094eed42d40929ffcd9e2",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-admission.test.ts": "85d12151401720cb927430e89efa8fa713bf17eaa00c44066ad15b65170632dc",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-result.test.ts": "8678a35b1ec2f1c243ebe9cb2937781487bf3924cc0d949ada7ed11380409160",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/events.ts": "4953c00055aa537fb2f4395ed4083532351e019d03fb4b473e08afa8cd843472",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-result.ts": "ec566ee0cf45e8be078af3f0afa556e1a4f69e4454593421ec1cbc1eb5d40551",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification-admission.ts": "941decfe984dfcfca98017ccf02b270e2443d725c65366e6dcd025c4bb70da51",
+        "docs/evidence/x01-verifier-admission-result/inputs/apps/server/src/plugin-runtime/verification.ts": "3a6d4de476f8fcca4a50055266660b685cdfa1015308cc2a7ced5e9d045f7a17"
+      }
+    }
+  ]
+}

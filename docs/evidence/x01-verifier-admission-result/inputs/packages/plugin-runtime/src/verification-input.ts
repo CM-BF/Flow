@@ -8,8 +8,14 @@ export interface VerificationInvocation {
   material: { installationId: string; storeId: string; treeDigest: string; artifact: PackageArtifactIdentity };
   configuration: Record<string, string>;
 }
+/** Digest has a fixed 64-byte representation; admission can validate the envelope before an attempt exists. */
+export function assertVerificationInputFits(verification: PluginVerificationRequest): void {
+  const serialized = JSON.stringify({ schemaVersion: 1, ...verification, inputDigest: '0'.repeat(64) });
+  if (serialized.length > PLUGIN_VERIFICATION_LIMITS.inputCodeUnits || Buffer.byteLength(serialized) > PLUGIN_VERIFICATION_LIMITS.inputBytes) throw new Error('VERIFICATION_INPUT_TOO_LARGE');
+}
 export function verificationInput(binding: VerificationInvocation, input: PluginVerificationRequest): { inputDigest: string; serialized: string } {
   const verification = pluginVerificationRequestSchema.parse(input);
+  assertVerificationInputFits(verification);
   const identity = { domain: 'flow.plugin-verification.input.v1', source: verification.source, rule: verification.rule,
     invocation: { bindingId: binding.bindingId, invocationId: binding.invocationId, taskId: binding.taskId, attemptId: binding.attemptId, ownerVersion: binding.ownerVersion },
     material: { installationId: binding.material.installationId, storeId: binding.material.storeId, treeDigest: binding.material.treeDigest,
@@ -18,6 +24,5 @@ export function verificationInput(binding: VerificationInvocation, input: Plugin
     configuration: Object.fromEntries(Object.entries(binding.configuration).sort(([left], [right]) => left < right ? -1 : left > right ? 1 : 0)) };
   const inputDigest = createHash('sha256').update(JSON.stringify(identity)).digest('hex');
   const serialized = JSON.stringify({ schemaVersion: 1, ...verification, inputDigest });
-  if (serialized.length > PLUGIN_VERIFICATION_LIMITS.inputCodeUnits || Buffer.byteLength(serialized) > PLUGIN_VERIFICATION_LIMITS.inputBytes) throw new Error('VERIFICATION_INPUT_TOO_LARGE');
   return { inputDigest, serialized };
 }

@@ -1,6 +1,6 @@
 import { verificationInput } from '../../../../packages/plugin-runtime/src/verification-input.js';
 import { pluginVerificationRequestSchema, pluginVerificationOutputSchema, JSON_OBJECT_ALGORITHM,
-  PLUGIN_VERIFICATION_LIMITS, type PluginVerificationRequest, type PluginVerificationOutput } from '../../../../packages/contracts/src/plugin-verification.js';
+  type PluginVerificationRequest, type PluginVerificationOutput } from '../../../../packages/contracts/src/plugin-verification.js';
 import { verifyJsonObject } from '../../../../packages/plugin-runtime/src/json-object-verifier.js';
 import type { TrustedPackageStore } from '@flow/plugin-runtime';
 import type { Ownership, TaskSubmission, RunnerEventData } from '@flow/contracts';
@@ -79,6 +79,8 @@ export interface PluginVerifierExecutionInput extends Omit<PluginToolInput, 'inp
   verification: PluginVerificationRequest;
   /** Operator-owned exact material association; never supplied by a task or package. */
   trustedAlgorithms: readonly TrustedVerifierAlgorithm[];
+  /** Trusted host selection; shares the same verification and unknown-outcome gate. */
+  invokeVerifier?: typeof invokeInstalledVerifier;
 }
 export interface PluginVerifierExecutionResult {
   output: PluginVerificationOutput;
@@ -100,7 +102,7 @@ export async function executePluginVerifier(input: PluginVerifierExecutionInput)
   try { prepared = verificationInput(binding, verification); } catch { throw new PluginToolError('VERIFICATION_INPUT_TOO_LARGE'); }
   const { inputDigest, serialized } = prepared;
   try {
-    const result = await invokeInstalledVerifier({ ...input, store, binding, input: serialized });
+    const result = await (input.invokeVerifier ?? invokeInstalledVerifier)({ ...input, store, binding, input: serialized });
     let parsed: unknown;
     try { parsed = JSON.parse(result.content); } catch { throw new PluginToolError('VERIFIER_OUTPUT_REJECTED'); }
     const decoded = pluginVerificationOutputSchema.safeParse(parsed);
