@@ -4,7 +4,7 @@ Parent FLOW-001 / co-lead mika. Bounded measurement and safe local optimization,
 
 - [x] S01P08-01 Quantify actual adapter + AttemptControl calls through injected transport.
 - [x] S01P08-02 Eliminate only proven redundant checks, or document why unsafe.
-- [ ] S01P08-03 Direct safety/behavior checks and independent review.
+- [x] S01P08-03 Direct safety/behavior checks and independent review.
 - [ ] S01P08-04 Controlled main intake; retain unresolved claims/measurement limits.
 
-Candidate: retain a check before initial session emission and every patch; skip only a second batch-level check for an already published session. No freshness cache or modified AttemptControl semantics. C02 owns adapter.ts/stream.test.ts until exact handoff; never modify before atomic receipt.
+Candidate: retain a check before initial session emission and every patch; skip only a second batch-level check for an already published session. No freshness cache or modified AttemptControl semantics. C02 adapter.ts 已在06:45:25正式交回，本claim于06:45:48成功amend后才实施；stream.test.ts仍属C02。06:52:59独审通过，当前等待受控main接收。

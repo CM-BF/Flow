@@ -1,0 +1,35 @@
+{
+  "schemaVersion": 1,
+  "recordedAt": "2026-10-07T06:58:13.419Z",
+  "reviewedAt": "2026-10-07T06:52:59Z",
+  "reviewer": {
+    "owner": "db_transaction_owner",
+    "model": "gpt-6-astra"
+  },
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "remainingP1": 0,
+  "remainingP2": 0,
+  "source": "e3d28f96b971256abd155904b4cbd333bbdc57ad",
+  "packet": "b3d8327e4945d2465ab704bdf25ec7ff41a86371",
+  "manifest": {
+    "path": "docs/evidence/s01p08/optimization-review.json",
+    "sha256": "95e973c3d5b6d4105669fdaf4f7b0f213a8c9d69f7d722db1be358d155d791a0",
+    "bindings": 21,
+    "bytes": 85537
+  },
+  "verified": [
+    "21 bindings Git=WT/hash/bytes; 87 baseline closure files (435601B) except declared adapter delta and four dependency metadata match",
+    "First session, per-patch, native factory/start and final gates retained; AttemptControl unchanged",
+    "Six raw files total4481B; baseline7 and final11 distinct kept separate; original strict exit2 four diagnostics retained before strict0",
+    "Both32/512-fragment samples:32768 text bytes,5patches,9events; mocked heartbeat/control calls15 to11",
+    "Four plus two supervised children final absent/MERGED EOF; six exact TMP absent; original EPERM unknown observations retained; closed516B sample is not peak",
+    "C02 v13 handback06:45:25.779 precedes own v2 amend06:45:48.214"
+  ],
+  "limits": [
+    "No reviewer execution/import/tests/PG/writes/cleanup",
+    "No measured real HTTP/SQL/latency/native/provider/capacity benefit",
+    "Whole external segment wall UNKNOWN; child timing is separate",
+    "NOT_INTEGRATED; no claim about latest main"
+  ],
+  "sourceOfReview": "Direct collaboration message from db_transaction_owner at stated reviewedAt; archived by owner without re-execution"
+}
