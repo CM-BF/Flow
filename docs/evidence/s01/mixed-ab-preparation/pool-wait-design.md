@@ -27,12 +27,12 @@
 
 | 单次顺序 | 唯一变化 | 可以回答 / 不能回答 |
 | --- | --- | --- |
-| O1 | 现有逐query IPC发送；增加的配对/计时字段与O2一致 | 当前详细观察方式下的用户请求和checkout分布 |
+| O1 | 现有逐query IPC发送；保留现有connect/transaction计时，epoch字段与O2一致 | 当前详细观察方式下的用户请求和checkout分布 |
 | O2 | SQL分类计数与耗时在中心有界累积，仅在测量结束/停止时有界分块输出；必要生命周期与ACK证据仍保留 | O1→O2仅比较遥测交付方式的敏感性；不是无观察器基线，不证明全部观察开销或生产收益 |
 
-两个cell均8个runtime实例×capacity16，同一runner child承载（不是8个OS进程），128个fixture task/attempt/session共同进入活动屏障；500ms周期、256B正文、1000ms heartbeat等沿现已测负载。两侧相同同步开始，不同时加入错峰变量。记录每个emit的计划/实际开始/ACK和500ms相位偏差、每100ms实际到达数、中心定时采样迟到量；这些能显示拥塞与突发的时间关联，不能把相关性当突发因果。
+两个cell均8个runtime实例×capacity16，同一runner child承载（不是8个OS进程），128个fixture task/attempt/session共同进入活动屏障；500ms周期、256B正文、1000ms heartbeat等沿现已测负载。两侧相同同步开始，不同时加入错峰变量。首片只保留已有emit/ACK与活动屏障证据，不增加全面相位偏差或checkout→release拦截。同步突发仍是控制不变的已知负载形状，首对照不尝试证明其因果。
 
-若O2仍有高获取等待且排队随突发同步，后继才提出**同O2观察方式的确定性分散发送对照**，另获预算；本设计不自动启动第三组。若O1/O2样本不完整或任何正确性/清理未知，停止后继并保留失败；不换顺序重试以追求更好数字。一次O1→O2仍受顺序、缓存和共享PG背景混杂，报告只给方向性诊断，不给置信提升或SLO结论。
+若O2仍有高获取等待，后继再决定是否需要**checkout→release配对/hold测量**或**同O2观察方式的确定性分散发送对照**；前者才能补全持有时间、后者才干预突发，分别另定最小输入和预算。本设计不自动启动第三组。若O1/O2样本不完整或任何正确性/清理未知，停止后继并保留失败；不换顺序重试以追求更好数字。一次O1→O2仍受顺序、缓存和共享PG背景混杂，报告只给方向性诊断，不给置信提升或SLO结论。
 
 ## 用户结果与计量 Interface
 
@@ -40,11 +40,11 @@
 
 | 所有者 | 最小输入/输出与不变量 |
 | --- | --- |
-| 中心私有observer | `delivery: per-query | buffered`、固定epoch、预算接收器；同一Pool/client wrapper。connect调用时与settle时各采一次total/idle/waiting，单調checkoutId把acquisition→BEGIN→terminal→release配对；记录结果/错误分类、不记录SQL参数/凭据。release后测完整hold，完整事务子区间另列；未终结配对为UNKNOWN，不补0。 |
-| 中心有界累积 | acquisition/transaction/hold各最多16384个有限数值样本，最多256个在途checkout；SQL仅既有有限category计数/总耗时，不存每query文本。计数/容量溢出明确invalid并停止新增工作，保留清理通道，不丢样后声称精确quantile。中心累积逻辑数据≤4MiB，结束分块每块≤64KiB、全输出计入IPC/raw预算；正常stop和失败都flush一次，不无限重试。 |
-| driver请求观察 | 沿现唯一HTTP调用记录request ordinal、路径类别、发送/接收/解码时刻、字节和状态；不跨进程相减。只有同checkout的acquisition/hold/事务可配对；HTTP与checkout没有request关联时明确UNPAIRED，不用它们归因单条HTTP。 |
+| 中心私有observer | `delivery: per-query | buffered`、固定epoch、预算接收器；沿同一Pool/client wrapper，保现connect调用→settle及BEGIN→terminal计时、settle计数与结果分类，不加checkoutId或release拦截。仍不是纯queue/完整hold，样本不配对；不记录SQL参数/凭据。 |
+| 中心有界累积 | acquisition/transaction各最多16384个有限数值样本；SQL仅既有有限category计数/总耗时，不存每query文本。计数/容量溢出明确invalid并停止新增工作，保留清理通道，不丢样后声称精确quantile。中心累积逻辑数据≤4MiB，结束分块每块≤64KiB、全输出计入IPC/raw预算；正常stop和失败都flush一次，不无限重试。 |
+| driver请求观察 | 沿现唯一HTTP调用记录request ordinal、路径类别、发送/接收/解码时刻、字节和状态；不跨进程相减。HTTP与acquisition/transaction均没有对应关系，明确UNPAIRED；首片不相减quantile，不归因单条HTTP。 |
 | 阶段/时钟 | driver发epoch并等center/runner各自ACK后开始负载；各进程用自己的单调开始/结束标记筛选。记录ACK往返与本地窗口、跨边界在途数；IPC接收phase只作路由。报告“同epoch本地窗口”，未经时钟校准不称严格共同6秒；外部tool/time/入口单调计时分列。 |
-| 错误和取消 | 保持原promise、callback、this、错误对象与release(discard)语义；connect callback第三参release与client.release均按实际pg-pool实现处理，单次释放只记一次、不能包装出第二次release；SVC07 client error listener不被移除；wrapper恢复在finally。abort只终止新请求/排空已有请求，不清除未知ACK、不变更持久化payload。观察器报错不改变SQL返回，实验判无效并保留证据。 |
+| 错误和取消 | 保持原promise、callback、this、错误对象；不改release(discard)或SVC07 client error listener。wrapper恢复在finally。abort只终止新请求/排空已有请求，不清除未知ACK、不变更持久化payload。观察器报错不改变SQL返回，实验判无效并保留证据。 |
 
 已锁定真实安装依赖：pg **8.23.1**（package.json SHA `b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435`）、pg-pool **3.14.0**（SHA `0a9924def9e06f791b09a44eaefb227f323a39199887f6ce17b44cb5a9193134`）。只读现有安装，不将在线文档新增API视为本版本能力；实现前按其真实callback/release签名定向验证。Node24/pnpm9.15.4/Vitest4.0.18沿工程基线，实际入口需在准备时绑定，不安装更新。
 
@@ -66,15 +66,15 @@
 
 每侧单随机专库、port0、一个center和一个runner child，最多四个业务children顺序运行；center8+scheduler3+单observer1+admin1=理论13个PG连接，实施时若真实factory闭包出现其它pool必须在ready前修订清单而非运行后隐去。固定库OID+随机marker、CREATE前durable reservation、CREATE ACK确认、PID/PGID即时登记、stdio EOF/组absence分开；normal DROP前本库零连接、无未知操作，未知KEEP。不能FORCE DROP、清旧FKye9L等根或停个人服务。
 
-PG/WAL另预留1GiB调度空间，不是已测增长或硬cap；不可动保留1GiB，当前候选fresh线为5,663,621,120B（当前共享floor4,053,008,384 +512MiB本实验+1GiB PG/WAL）。真正OPEN时按届时规则与所有实际并行预算重新核，不借旧free值；还须确认PG/WAL文件系统，DB size末值不等WAL/peak。性能需独占实际窗口，个人后台更新优先；所有其它队实际运行先在安全点归还，未归还/HOLDER_UNKNOWN不启动。
+PG/WAL暂提议1GiB调度额度，不是已测增长或硬cap；512MiB含本实验source/数据/TMP/raw而不重复另加。旧4,053,008,384B共享线及5,663,621,120B组合线仅属于先前A/B历史，不是当前准入门槛。Mika本段告知当前manager最低已6,237,454,336B且Original个人后台窗口优先；此数也不是本新实验的完整sum或OPEN。准备后必须由manager明确每项是否已包含、按当前实际共享预算+本实验新增512MiB+PG/WAL实际预留组成唯一总账；不可动reserve只计一份，不能在不知基数组成时再叠加1GiB或借旧free值。真正OPEN须fresh核完整sum、PG/WAL文件系统、其它队归还与个人窗；DB size末值不等WAL/peak，HOLDER_UNKNOWN不启动。
 
 ## 最小实施与直接验证范围
 
-候选精确编辑（均在现claim的mixed目录，但**本段不实施**）：`contract.ts`（新有限recipe参数）、`observe-pg.ts`（配对/累积策略）、`channel.ts`（有限块交付）、`child.ts`（phase/发送时间/当前v2 claim观测）、`driver.ts`（真实chat轻读/四cancel/界限）、`ab-sequence.ts`/`ab-budget.ts`（复用顺序与预算能力，旧A/B默认常量及断言保持）。新入口建议仅 `queue-probe.ts` 与 `queue-probe.test.ts`；旧ab-main输出/历史合同不能改名重用。准备时若提取共用函数须证明旧行为保持，不复制整套driver/资源监督循环。
+候选精确编辑（均在现claim的mixed目录，但**本段不实施**）：`contract.ts`（新有限recipe参数）、`observe-pg.ts`（现计时上的有限累积策略）、`channel.ts`（有限块交付）、`child.ts`（本地phase/当前v2 claim观测）、`driver.ts`（真实chat轻读/四cancel/界限）、`ab-sequence.ts`/`ab-budget.ts`（复用顺序与预算能力，旧A/B默认常量及断言保持）。新入口建议仅 `queue-probe.ts` 与 `queue-probe.test.ts`；旧ab-main输出/历史合同不能改名重用。准备时若提取共用函数须证明旧行为保持，不复制整套driver/资源监督循环。
 
 当前runtime默认v2机会领取；旧child仅识别路径尾`/claim`，不能直接拿它测当前main。实施必须用当前公开DTO解码同runner/request/attempt/ownerVersion，维持v1观测兼容；不变更生产协议或claim重试规则。这是明确实施缺口，当前只有设计READY，不是可执行SOURCE_READY。
 
-后继必要纯局部验证：callback/promise/error/this/release透传、checkout配对与溢出unknown、缓冲chunk字节、同epoch筛选/边界样本、累计预算/前侧失败禁后侧；真实PG专库另验公开chat响应/128持续/四cancel/ACK与持久事件/全部owned cleanup。只测改动模块和直接消费者，不重跑旧64或旧A/B，不把collect/typecheck当真实测量。运行前固定当前baseline完整runtime/动态SQL/依赖closure及实际recipe/input/唯一namespace，单次独审后由co-lead明确OPEN。
+首片不引入checkout map/hold拦截/完整emit偏差采样；它们不是区分IPC交付方式的必要条件，留待首结果再决策。后继必要纯局部验证：callback/promise/error/this透传、累积样本溢出unknown、缓冲chunk字节、同epoch筛选/边界样本、累计预算/前侧失败禁后侧；真实PG专库另验公开chat响应/128持续/四cancel/ACK与持久事件/全部owned cleanup。只测改动模块和直接消费者，不重跑旧64或旧A/B，不把collect/typecheck当真实测量。运行前固定当前baseline完整runtime/动态SQL/依赖closure及实际recipe/input/唯一namespace，单次独审后由co-lead明确OPEN。
 
 ## 方法与本段交付
 
