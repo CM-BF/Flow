@@ -59,5 +59,11 @@
   },
   "scope": "Only result-ready reporting recovery; no repeated invocation, startup CLI or arbitrary side-effect recovery claim. Preserve current main P02/LAZY/Codex and do narrow preimage-checked delta.",
   "reviewReceipt": "terminal-independent-review.json",
-  "reviewedAt": "2026-10-07T09:45:42Z"
+  "reviewedAt": "2026-10-07T09:45:42Z",
+  "status": "INTEGRATED",
+  "mainAcceptance": {
+    "commit": "81b4805c42d12ad35e70cd7e27ad3b78df1f035a",
+    "receipt": "docs/evidence/x01/terminal-main-acceptance.json",
+    "observedAt": "2026-10-07T10:10:01.698420+00:00"
+  }
 }

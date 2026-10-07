@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T10:06:06.409169+00:00 |
+| 最近更新时间 | 2026-10-07T10:10:01.698420+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -19,15 +19,15 @@
 | 工作分支状态 | integration |
 | 检查状态 | startup15选15过/55未选；首types2缺声明补齐后0，3进程/自有roots实际闭合，0PG |
 | Review | startup c8ba十源于10:04:52独审APPROVED/0P1P2；terminal20b独立APPROVED/READY |
-| 已集成 main 状态 / HEAD | 领域/claim/semver/provenance均已main；runtime9b+公共wiring2ea已main3811048522dcc8a896e7ccf09872389b14bccd63，正式I02 x01-runtime-wiring-intake；本次terminal恢复未main |
+| 已集成 main 状态 / HEAD | 领域/claim/semver/provenance/runtime已main；terminal20b四源已main81b4805c42d12ad35e70cd7e27ad3b78df1f035a，实际核当前3b6db156e9367047f839f06791a80f42fce04993同四hash；startup c8ba十源独立READY待接收 |
 | 实现目标 | c8ba6bcb98f697b222cc972d517ea2891dcd8d71 |
 | 实现范围 | apps/server/src/main.ts；apps/server/src/private-json-configuration.ts；apps/server/src/plugin-runtime-configuration.ts；apps/server/src/plugin-runtime-configuration.test.ts；packages/plugin-runtime/src/private-configuration.ts；packages/plugin-runtime/src/private-configuration.test.ts；apps/runner/src/configuration.ts；apps/runner/src/configuration.test.ts；apps/runner/src/main.ts；apps/runner/src/main-concurrency.test.ts；docs/evidence/x01/cli-startup-* |
 | 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 私有可信配置已接入现有center和runner启动入口，并通过局部检查和独立审查，等待主线接收 |
-| 下一可用交付 | 接收启动入口后验证真实进程的插件运行；终态报告恢复另有独立可接收片段 |
-| 当前阻塞 | NONE：本片段可独立集成；local已闭合，真实CLI进程PG尚未准备/未OPEN |
+| 当前产出 | 私有可信配置启动接线已审待主线接收；终态报告恢复已进入主线 |
+| 下一可用交付 | 真实center/runner进程的受控插件旅程：当前只读设计，尚未启动或领取PG窗口 |
+| 当前阻塞 | NONE：本次0local/PG/Chrome/待launch；管理命令由独立owner实施，startup窄intake可直接接收 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -343,3 +343,7 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T10:02:14.221219+00:00：startup源码固定c8ba6bcb98f697b222cc972d517ea2891dcd8d71，[一次独审入口](../../docs/evidence/x01/cli-startup-review-ready.md)。fresh账本v23 ACTIVE59全身份不变。归档3child/15项与types修后0、290文件闭包及原失败；0新增工程执行/PG。架构影响为私有reader双consumer复用和两个既有进程入口显式可信配置；main架构基线待独审/接收后由Lead更新。terminal四叶20b独立READY不变。
 
 2026-10-07T10:06:06.409169+00:00：归档chatui10:04:52对c8ba/182e独审APPROVED0P1P2，[十源窄集成入口](../../docs/evidence/x01/cli-startup-integration-ready.json)READY，产品48638B/patch24998B。314bindings/290逻辑源和原3child/480Braw保持；审查文字仅纠正“0 npm import”为“0插件npm load/invoke”，ordinary SDK静态加载不冒零。旧terminal20b四叶仍独立READY，main381已接runtime/wiring事实不变。本段09:50:37开工、09:56:38检查末记录、09:57:52exactclose、10:04:52独审；本次metadata归档不增加进程/PG。完整CLI真实进程/管理命令/未知副作用恢复与整个X01均未完成。
+
+2026-10-07T10:10:01.698420+00:00：freshv23 ACTIVE59、d2ed clean起点，仅归档[terminal正式main接收](../../docs/evidence/x01/terminal-main-acceptance.json)：81b4805c四源逐hash与source20b及当前main一致，Lead组合11/11/rootnoEmit0按其收据引用，owner不重跑。startup十源[独立READY入口](../../docs/evidence/x01/cli-startup-integration-ready.json)保持；10:07:15起≤8min只读收敛真实进程PG设计，不申请或执行PG，本组local交db管理命令片。
+
+2026-10-07T10:12:18.800266+00:00：完成[真实进程验收最小设计](../../docs/evidence/x01/cli-process-acceptance-plan.md)。实际server main拒port0，采用有归属候选端口且竞争即失败；先公开注册再重启加载精确policy，避免猜runnerId。旧factory hooks不适用于进程总HTTP，准备必须明确新的实际/理论口径，不能复制256/4MiB证明。与独立管理CLI owner约定同一case替换四公开owner调用，尚未固定不当已实现。仅metadata与只读输入，无新增工程检查/PG/资源预约。

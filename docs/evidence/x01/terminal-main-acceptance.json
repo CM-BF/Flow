@@ -1,0 +1,57 @@
+{
+  "observedAt": "2026-10-07T10:10:01.698420+00:00",
+  "mainIntakeCommit": "81b4805c42d12ad35e70cd7e27ad3b78df1f035a",
+  "currentMainObserved": "3b6db156e9367047f839f06791a80f42fce04993",
+  "sourceCommit": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+  "deliveryCommit": "a52b8f5ff509a09f64c3645082f533358a3d2de3",
+  "receipt": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/client-terminal-intake.json",
+    "bytes": 10658,
+    "sha256": "409f977a7aab54a3c01ae3012919f8c100c0999c4e86a5f5c41ae71742991570"
+  },
+  "product": [
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "source": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "sha256": "2ed7dbb40ec75797c0d340880383444ba12a265d678c6919ad4733eec8b51ef4",
+      "bytes": 9711,
+      "mainPreimageSha256": "e53b116c825c87b72fd58804dd2cb22db4255b91cf100f0dbbdaba88ad6332ac"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "source": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "sha256": "d920809370179c5d1c663e612ac119573ef01c005243d9ac0ca10fa96cbe30c8",
+      "bytes": 21786,
+      "mainPreimageSha256": "f921a78627da108a0cff3fd3d22f8fbc988e1796790beeeb7ee011ee1ec7d302"
+    },
+    {
+      "path": "apps/runner/src/plugins/runtime.test.ts",
+      "source": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "sha256": "08d9933eb97e5ce23a3dbdd4ee791c7c4964e70a5591312fcdd41975dfa4aa18",
+      "bytes": 15424,
+      "mainPreimageSha256": "e0e977543e57343351b872ea4beffec84adb217e1a5c7cf83d27173c1513d6cd"
+    },
+    {
+      "path": "apps/runner/src/plugins/terminal-outbox.test.ts",
+      "source": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "sha256": "09ade285c84af7fc9acfe681792c83892687da491805fc5bb46cea27c003dd55",
+      "bytes": 2643,
+      "mainPreimageSha256": null
+    }
+  ],
+  "verification": "All four fixed source hashes match intake commit and current observed main; no engineering checks repeated.",
+  "leadCombination": {
+    "passed": true,
+    "directConsumers": 11,
+    "rootNoEmitExit": 0,
+    "source": "client-terminal-combination/result.json",
+    "elapsedMs": 10841,
+    "rawBytes": 753,
+    "scratchObservedBytes": 1357820,
+    "scratchRemoved": true,
+    "PG": 0,
+    "provider": 0,
+    "repeatedAuthorSuites": false
+  },
+  "boundary": "Terminal result-ready report-only recovery entered main. Startup c8ba ten paths remain independent READY; real CLI process acceptance, unknown side effects and whole X01 remain open."
+}
