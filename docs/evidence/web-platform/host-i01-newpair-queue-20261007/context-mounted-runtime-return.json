@@ -1,0 +1,146 @@
+{
+  "at": "2026-10-07T23:48:20.440952+00:00",
+  "state": "FULL_RETURN_FAILED_INITIALIZATION",
+  "run": "context-history-234701-b66e19",
+  "actualStart": "2026-10-07T23:47:02.152215+00:00",
+  "outerExit": 1,
+  "parentExit": 1,
+  "identities": [
+    {
+      "kind": "PID",
+      "id": 96729,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 3136,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 3136,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 3339,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 3339,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 3341,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 3341,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 3375,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 2806,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 2806,
+      "state": "ESRCH"
+    }
+  ],
+  "ChromeCDPPort": {
+    "port": 59865,
+    "listenerAbsent": true
+  },
+  "scratch": "/private/tmp/flow-recovery-browser-Y6OdyZ",
+  "scratchAbsent": true,
+  "adminInputDeleted": true,
+  "adminIdentity": {
+    "path": "/private/tmp/context-history-browser-20261007/admission-context-history-234701-b66e19/admin.env",
+    "dev": 16777234,
+    "ino": 124643484,
+    "uid": 501,
+    "mode": 33152,
+    "nlink": 1,
+    "bytes": 84,
+    "sourceBlobSha256": "2b010a0eab2155b048e1af634774515bd2f37b1db1b8dbdd9f9282a64ee5e0b7",
+    "field": "adminUrl"
+  },
+  "databaseCleanup": {
+    "database": "flow_recovery_89f2274fd5994658a0085866640c518e",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.3766660000001139,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 0.8742920000004233,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "fixtureHTTP": "NOT_CREATED: mandatory dynamic import failed before public HTTP/center creation; no wire",
+  "browserContext": "NOT_CREATED: fixture rejected before browser.newContext; worker CDP closed before IPC result",
+  "innerStreams": "worker stdout/stderr and Chrome stdout/stderr parent settled; outer dual EOF",
+  "actualExit": {
+    "run": "context-history-234701-b66e19",
+    "startedAt": "2026-10-07T23:47:02.152215+00:00",
+    "endedAt": "2026-10-07T23:47:08.502789+00:00",
+    "outerPid": 96729,
+    "parentPid": 3136,
+    "exitCode": 1,
+    "elapsedMs": 6350.587916,
+    "signals": [],
+    "streams": {
+      "stdout": {
+        "file": "parent.stdout.jsonl",
+        "bytes": 1005,
+        "retainedBytes": 1005,
+        "droppedBytes": 0,
+        "EOF": true,
+        "sha256": "c29f761eeaec4dc92d5aaa379b63e79f253a58a8b8a7018feb798639087143c3"
+      },
+      "stderr": {
+        "file": "parent.stderr.log",
+        "bytes": 0,
+        "retainedBytes": 0,
+        "droppedBytes": 0,
+        "EOF": true,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      }
+    },
+    "errors": [
+      "actual parent exit 1"
+    ],
+    "cleanupAuthority": "Only parent supervisor owns DB/worker/Chrome/scratch. Separate exact post-cleanup observation required; absent not inferred here."
+  },
+  "chargeMs": 6352,
+  "limitMs": 90000,
+  "phase": "CLOSED",
+  "unusedMs": 83648,
+  "checks": [],
+  "png": [],
+  "retry": false
+}

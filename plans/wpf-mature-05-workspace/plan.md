@@ -173,3 +173,5 @@ Arc首实际HTTP两项的[独立失败结果审查](../../docs/evidence/web-plat
 - [ ] MATURE05/REQ22–23：顶部 WorkspaceTabs 只有 layout/onSelect/onAdd/onClose，缺少 renderActions/AppSlot；PaneTabs 已有 renderActions。现 `workspace.tabs` 是右侧 task 面板，不能代替 Arc 导航扩展点。后继沿原 host 声明独立 slot、准确 workspaceId 上下文与权限，不硬编码外部按钮；当前只是 root 固定 a322 只读研究，尚未领取/实施。
 
 URL 分类已在 e621 两测试修正并获[源码与局部检查批准](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-classifier-source-review.json)：12 pure 与 affected types 通过，保守3715ms CLOSED。a322 全18范围 STOP，新四组/两张末态图和独立桌面 observation 尚未运行；旧 c1db 同轮1/4失败、0PNG/9145ms保留。
+
+23:51 实际阶段视觉把上述 CSS 风险升级为交付前必须修复的 P2：[桌面独立图审](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-desktop-stage-visual-review.json)已真实打开1500×960 PNG，顶部导航撑成约450px空白、聊天约y512开始。当前同次2/4通过（布局导航、三pane读取），材料设置radio前置失败，末态390无图；早桌面图独立保留不冒全通过。下一15min普通源段修独立namespace并诊断材料前置，旧候选/实际不回写，修后另审另授窗口。

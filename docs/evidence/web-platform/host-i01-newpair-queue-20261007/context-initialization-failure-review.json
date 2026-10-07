@@ -1,0 +1,141 @@
+{
+  "at": "2026-10-07T23:49:55.051127+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra independent read-only",
+  "verdict": "APPROVED_LIMITED_FAILURE_RESULT_FIDELITY",
+  "blockingResultFidelityFindings": [],
+  "run": "context-history-234701-b66e19",
+  "executionHead": "0c8b23a68ab32adf8665ebe2fbb5a009a5de464a",
+  "testSource": "ffd73503e32907663dbc0e91d14fe2cd03cf76ba",
+  "productionSource": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+  "facts": {
+    "actualStart": "2026-10-07T23:47:02.152215+00:00",
+    "terminal": "2026-10-07T23:47:08.502789+00:00",
+    "fullReturn": "2026-10-07T23:48:20.440952+00:00",
+    "outerExit": 1,
+    "parentExit": 1,
+    "conservativeClosedMs": 6352,
+    "totalMs": 90000,
+    "unusedMs": 83648,
+    "unusedTransfers": false,
+    "passedGroups": 0,
+    "plannedGroups": 8,
+    "PNG": 0,
+    "wire": 0,
+    "provider": 0,
+    "outerStreams": "dual EOF /0 dropped; exact bytes+sha256 verified",
+    "knownIdentityObservations": 10,
+    "identityOutcome": "Owner exact receipt records all10 PID/PGID ESRCH; no new root live probe",
+    "CDP": "59865 listener absent per same return receipt",
+    "DB": "Owned marked database0connections, normalDROP confirmed; no FORCE",
+    "scratch": "Own scratch absent per exact receipt",
+    "privateInput": "Same-identity0600 admin input removed per receipt; root did not read input",
+    "fixtureAndBrowserContext": "Fixture import failed before HTTP listener and browser.newContext; native Chrome and supervisor did start and were returned."
+  },
+  "cause": {
+    "classification": "INCOMPLETE_FIXED_SOURCE_SUPPLY",
+    "entry": "apps/server/src/index.ts:1 imports ./startup-progress.js",
+    "missing": "apps/server/src/startup-progress.ts",
+    "fixedGitBlob": "380d1f211fbb3df392a8297980d4d71834d41159",
+    "observation": "Fixed Git tree contains the source; own sparse worktree has S/skip-worktree and no materialized file. Existing614-item source supply omits the path. Hash equality of a supplied list does not establish graph completeness.",
+    "sourceSupplyBasis": "Reused old Recovery conservative path set with own fixed Git bytes; index imports have evolved.",
+    "directEntryScan": "Read-only direct relative from-import scan of server/index.ts found this one missing path; this is NOT a full transitive/literal dynamic/workspace-export closure result."
+  },
+  "followup": {
+    "owner": "w01_owner under D01 normal bounded source/supply dispatch",
+    "next": "Preserve this failed run; traverse the selected fixed entry dependency closure without executing product imports, include relative .js-to-.ts mappings, reexports/literal dynamic imports and workspace exports as applicable; list unresolved/conditional edges explicitly. Only exact already-fixed Git materialization under existing supply rules, no moving main, install or test retry loop.",
+    "runtime": "A successor candidate needs explicit unique manager scheduling after closure correction. No execution granted by this review.",
+    "reviewCorrection": "Earlier source/native preparation review remains an accurately limited review; actual failure establishes a concrete supply completeness gap. Do not relabel prior preparation as actual browser success."
+  },
+  "cleanCode": {
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "applied": "Reviewed error attribution and resource ownership; separate source list integrity from dependency completeness, initialization failure from UI acceptance, and terminal from exact resource RETURN.",
+    "unresolved": "Selected fixed entry transitive supply closure remains incomplete/unverified."
+  },
+  "limitations": [
+    "No Context UI functional group, visual theme, keyboard, Cookie journey or real producer coverage established.",
+    "No new root product import, engineering test, PG probe, browser, service modification or artifact cleanup.",
+    "Pre-spawn mkdir failure belongs to the earlier separate NOT_RUN attempt and is not erased or included as a passed group."
+  ],
+  "pins": [
+    {
+      "path": "/private/tmp/context-history-browser-20261007/actual/context-history-234701-b66e19/start.json",
+      "bytes": 210,
+      "sha256": "a6e15a4c9f8e43f8ab27290de2fe3230d25fa463e1fc76836e576cc2802d1389"
+    },
+    {
+      "path": "/private/tmp/context-history-browser-20261007/actual/context-history-234701-b66e19/actual-exit.json",
+      "bytes": 935,
+      "sha256": "2c9d99ddde577998591b273b5e2714096bba201f2af4c184830cc9411541f5d2"
+    },
+    {
+      "path": "/private/tmp/context-history-browser-20261007/actual/context-history-234701-b66e19/parent.stdout.jsonl",
+      "bytes": 1005,
+      "sha256": "c29f761eeaec4dc92d5aaa379b63e79f253a58a8b8a7018feb798639087143c3"
+    },
+    {
+      "path": "/private/tmp/context-history-browser-20261007/actual/context-history-234701-b66e19/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/context-history-browser-20261007/actual/context-history-234701-b66e19/return.json",
+      "bytes": 3607,
+      "sha256": "bd855cf2d6615dfda2a1aaca0cea8e999940d8553f2622a53012a6d0e5507791"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/actual/context-history-234701-b66e19/sources.json",
+      "bytes": 4568,
+      "sha256": "3810dcc1cc9ee926c36536ec7f3b7c179809f31a33551d53782025c869843360"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/actual/context-history-234701-b66e19/process-owner.json",
+      "bytes": 27,
+      "sha256": "0d8affb6a8bcb48cde2530b4cd342608b7d53c05809723346bddeaee457806d0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/actual/context-history-234701-b66e19/supervisor.json",
+      "bytes": 2580,
+      "sha256": "43522ba51d5e9a12a89dcb952cfb426c5bf1294d0814490a61faabf4a0f5f062"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/actual/context-history-234701-b66e19/process.log",
+      "bytes": 1860,
+      "sha256": "7840508c635193f8c5ac75eaaf08dff5a10fb4ee0185fb863584e2db0a942ca2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/actual/context-history-234701-b66e19/context-browser.json",
+      "bytes": 1079,
+      "sha256": "9f79bae36cefe6d5d7ec6b7438a71a4ff8b7cedf39eebe8670b637d582b87bab"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/actual/context-history-234701-b66e19/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "d45d24478ba4bf893512823742217d7184eab286eb850b492b9eb72c6ffd8b96"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/actual/context-history-234701-b66e19/budget.json",
+      "bytes": 222,
+      "sha256": "6ce7baab82e3189d80c0ab4ea3eb1d5846e0e77c4bc29b3cd977c668253af825"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/actual/context-history-234701-b66e19/launch-config.json",
+      "bytes": 1185,
+      "sha256": "7be7f36cb5cae51acd05a87ccb2a4198dbfa63ce186b66eb6845742e63573d2f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/actual/context-history-234701-b66e19/database-owner.json",
+      "bytes": 164,
+      "sha256": "fd34efe446ef7673df238503933c174b1593f6c8640de015308b34fd7834d2ce"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/actual/context-history-234701-b66e19/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "f9668986943564f03eeb6411cbfad0d686cdda88fb07f84a735a24f7bad6e639"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/browser/actual/context-history-234701-b66e19/browser.json",
+      "bytes": 936,
+      "sha256": "8539afe3279f5ecf1071c169bcd91ac684fa88826a4db3ed90dfbfaeead01884"
+    }
+  ]
+}

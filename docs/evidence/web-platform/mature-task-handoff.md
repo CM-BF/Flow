@@ -1,6 +1,6 @@
 # Web 当前交接与唯一来源
 
-**即时调度 2026-10-07T23:47:50.495Z：Context已实际START 23:47:02.152215Z，run context-history-234701-b66e19，outer96729/parent3136；fresh17,881,026,560≥冻结11,911,692,288B，PG88≥29且预检poolclosed，固定输入/claimv3exact8/remote clean齐。唯一90s窗口运行，终态与精确RETURN分别记录，不自动重试。旧缺父目录的capture失败已23:42:23RETURN并保留，原capture不改。Arc a322与VAR e33排归还后。**
+**即时调度 2026-10-07T23:53:14.099Z：Arc已23:51:28.680683精确RETURN，2/4通过、材料前置失败，早桌面同时发现导航撑高的CSS视觉缺陷，原失败/图/50986ms保留。当前actual空，唯一NEXT `VAR-TRANSACTION-PG-V2-FIXED-PREFLIGHT-20261007-ONCE` 给Mika/architecture_read，fixed e33及CJS7496；冻结完整floor 11,914,575,872B/latestSTART 2026-10-07T23:58:14.099Z，外置10s明确PG33语义后180s/17PG1HTTP0Chrome一次。Context8MiB供给closure与Arc8MiB CSS/材料普通源段、AV/GDEP各3MiB、Original迟到24MiB普通段均已完整计入；不扩实际窗口。**
 
 **Context紧前修正 2026-10-07T23:41:56.064Z：** 首次只读precheck误比D04 `ACTIVE`/实际 `active`，0业务/PG/namespace/gate/env。经理已明确允许同一未消费选择内仅修两处真实schema字面值（本claim与其他active冲突筛选），原STOP保留，fixed parent/capture/product不变；一次same-call fresh接续，原floor/latest23:45:13.079不变，非自动runtime重试。
 **Original 同ID防重派提醒：** FLOW-001 `T04-DEPENDENCY-READ-01` 在main7cbcf04仍pending/未领取的旧文案应在唯一父metadata安全点改为 GDEP4511/b01已审SOURCE_STOP待main；沿 `GDEP01MainIntake` 四叶接收与原status路径，不新派任务或复跑PG。
@@ -14,7 +14,7 @@
 
 **普通源边界：** Arc c34dv2 exact18/source e621/final a322 全STOP；Context25d7v3 exact8/source ed5/tests ffd/final0c8b 全STOP，本次只派已审挂载候选。Mika AV main回执新3MiB已计入当前完整组合，fresh后仅metadata；VAR e33 READY未运行。App/session双基线未组合验收。
 
-**候选顺序：** 当前唯一选择见页首Context新dispatch；Arc a322与VAR e33均已审SOURCE_STOP/READY，排其精确RETURN后，K01后继。779已发布归还，不是当前前置。
+**候选顺序：** Context初始化失败且精确RETURN，当前唯一选择见页首Arc；VAR e33后继，Context仅自然失败seal和只读缺项定位，修后另定新候选。779已经发布归还。
 
 **未来增长对账：** 原旧cd27/2515未来build峰值已各按固定无writer事实分类，residual仍8,806,203,392 UNKNOWN；当前精确组合见双current，旧frozen gates保留。Arc普通4MiB及779发布538,968,064B已据各作者最终STOP前向关闭，KEEP不删。个人R2旧538MiB、两旧ordinary各9,568,256B及04未知4MiB仍保守。
 

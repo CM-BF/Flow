@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T23:24:48.924Z；第三HTTP同轮2PASS保留。第三browser c1db实际1/4、0PNG/9145ms CLOSED，23:20:56.284820 exactRETURN；新URL分类修正普通段待实际开始。 |
+| 最近更新 | 2026-10-07T23:54:11.436Z；最新浏览器同次2/4通过，早桌面1图/末态390零图；23:51:28.680683资源归还。原作者新普通段修真实CSS视觉缺陷并诊断材料前置。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本大task历史首次开工缺独立证据，不以研究/领取时间回填；完整Arc验收尚未完成。 |
@@ -17,9 +17,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 三pane布局与保护源码/局部已审，第三HTTP同轮两项通过；浏览器历次失败保留。开发模块误计已修，12纯检查与相关类型通过，新四组/双图待实际。 |
-| 下一可用交付 | a322 已审候选在 Context 实际归还后运行一次四组/双图；桌面阶段图独立保留。现网页779/v4已发布，不再等待发布修复。 |
-| 当前阻塞 | ACTIVE: 原浏览器未完成四组，源码修正已审且已停写，正在排真实验收窗口；不将局部通过当产品整体通过。 |
+| 当前产出 | 最新真实布局导航、三pane读取通过；早期桌面画面已留存并发现导航栏撑高。材料设置前置失败，完整四组及双主题仍开放，原各次失败独立保留。 |
+| 下一可用交付 | 原owner窄修Arc导航CSS隔离和材料前置，固定新候选后做新的实际验收；不靠局部检查或两组通过宣布完成。 |
+| 当前阻塞 | ACTIVE: 桌面导航被共享CSS撑高已实证，材料设置radio前置未通过；需修复和新实际验收，原窗口已归还，不占用共享资源。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-05-workspace |
@@ -67,3 +67,5 @@ GO最新排程：原MATURE06-04连接/刷新/未决发送恢复完整旅程先�
 当前验收分层：前两次HTTP分别1PASS/1FAIL原件保留，不拼绿；第三次同轮2PASS/11未选（2912ms CLOSED、trace NOT_RETAINED）。首browser0/4、0PNG/12808ms CLOSED；旧876入口候选未运行，后继d034补wiring并实际1/4、0PNG/50944ms CLOSED，22:29:52精确ownedRETURN。parent closure UNKNOWN/worker result null与raw context/httpClosed true分层保留，Chrome两流EOF false不改。历史e611已封；新两test测量c1db/最终ebcd已获源准备审并全18STOP，fa06 types3494限定PASS、c1db补充types在资源准入前0child拒绝。新90s四组/双图仍READY_NOT_GRANTED，见[计划设计](plan.md)。来源沿子task唯一status，不合成整体PASS。
 
 23:47 管理更新：原子领取仍 c34d v2 exact18，交付 a322 双端 clean/STOP，测试源码 e621。3715ms局部账闭合；实际浏览器待新独立许可。CSS隔离/顶部导航插件slot后继已进入同一 plan TODO，当前候选不改。
+
+23:51 最新独立实际：e621/a322浏览器2/4，layout-navigation与three-pane-reads通过，材料radio前置5s超时；早桌面75641B一图、最终390零图，50986ms CLOSED，exactRETURN23:51:28.680683。父scenarioUNKNOWN与rawclosed仍分层。当前8MiB普通段替代失败seal封套，0新HTTP/Chrome许可。

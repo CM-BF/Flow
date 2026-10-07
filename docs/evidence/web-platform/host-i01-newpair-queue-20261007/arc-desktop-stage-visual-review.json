@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T23:51:42.857424+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra read-only visual research",
+  "run": "arc-classifier-20261007-235010",
+  "executionHead": "a32224b5b757c8f75003235b5ab00c8afbf0f785",
+  "testSource": "e621e7838d50048fcb57f5837a03e9fc474a3799",
+  "state": "BLOCKING_VISUAL_FINDING_BEFORE_FEATURE_DELIVERY",
+  "screenshot": {
+    "path": "/private/tmp/arc-browser-classifier-4s522h4u/raw/arc-desktop-ready.png",
+    "bytes": 75641,
+    "sha256": "e7d151eab495126733a5755c7f2ebdb5dc762de95051bd45a93e33e015758e30",
+    "width": 1500,
+    "height": 960,
+    "stage": "connected-before-layout-actions",
+    "syntheticFixture": true
+  },
+  "finding": {
+    "priority": "P2",
+    "title": "Arc workspace navigation expands into a large empty panel",
+    "observed": "At1500x960, the Workspace1 navigation button sits near y285 in a large gray band; conversation tab/transcript starts around y512. These are approximate visual coordinates, not measured DOM rectangles. Compact sidebar and left rail are visible, but the large navigation band consumes nearly half the page.",
+    "sourceLink": "root-arc-workspace-css-isolation-research-20261007.json",
+    "confirmedSharedSelectors": [
+      "workspace-layout/WorkspaceTabs.tsx:18 and components/workspace/WorkspacePanels.tsx:138 both use flow-workspace-tabs",
+      "components/workspace/workspace.css:11 sets flex:1 globally",
+      "workspace-layout/layout.css:1-4 adds navigation-specific padding/gap/button rules globally"
+    ],
+    "causeAssessment": "Source overlap is directly confirmed; growth into available vertical space is consistent with the leaked flex:1 rule. Computed style not sampled. Fix this scope collision before using further layout screenshots as acceptance."
+  },
+  "requestedOwnerFix": {
+    "owner": "workspace_panels_owner under D01, existing Arc task/claim",
+    "timing": "After current actual reaches terminal and exactRETURN; no mutation or interruption of the frozen running candidate.",
+    "change": "Use a distinct Arc navigation root class and scoped descendant styles; leave right-side Files/Terminal selectors, public extension slot semantics and focus lookup intact. Avoid fixed-height masking or !important specificity escalation.",
+    "verification": "Use the real App at desktop with right panel closed/open; navigation height and reading area should remain stable. Preserve original narrow light/dark, keyboard and functional expectations. Current image is only one early desktop state, not a full browser/theme pass."
+  },
+  "additionalKnownGap": "Arc workspace navigation lacks a distinct action extension slot/context; recorded separately as same-task followup, not fixed merely by CSS.",
+  "cleanCode": "Applied component ownership/naming and coupling check; root does not implement.",
+  "runtimeBoundary": "Root used only an existing local PNG and fixed source reads; no new browser/HTTP/PG/check or writes to owner worktree."
+}
