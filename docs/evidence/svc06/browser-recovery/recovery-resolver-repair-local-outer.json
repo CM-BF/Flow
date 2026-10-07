@@ -1,0 +1,33 @@
+{
+  "pid": 50000,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 147,
+  "stdout": "\u2714 runService original object passed to load fails before any service stage (8.516834ms)\n\u2714 runService corrected load alone still rejects the object passed to runtime before spawn (6.526375ms)\n\u2714 runService repaired real resolver authenticates and seals then reuses one full verification (6.461541ms)\n\u2139 tests 3\n\u2139 suites 0\n\u2139 pass 3\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 104.219875\n",
+  "stderr": "",
+  "observed_bytes": 419,
+  "retained_bytes": 419,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

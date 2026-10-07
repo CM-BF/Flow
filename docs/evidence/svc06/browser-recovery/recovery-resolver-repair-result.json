@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-07T21:33:25.847Z",
+  "source": "9d7fb0b7213f71a04d1fb220457c1076d799dfe3",
+  "base": "f37a3612068c7215994750574a7451ede841bcce",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-resolver-repair.patch",
+      "bytes": 1735,
+      "sha256": "23131d1a4c5dade57212b57017b1213bfb4404697ffcf6feda5384e2bc816d78"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-resolver-repair.json",
+      "bytes": 1406,
+      "sha256": "201f6b4616fa9e2668eda42a0249dcdb35f06e70bfa229efe84142a970b9eb5e"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-default-resolver.test.mjs",
+      "bytes": 10115,
+      "sha256": "34ce65a75ccdec34b758f5fae7ae864a12da4d0624481f7ab9cb8cb60856281f"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-resolver-repair-local-reservation.json",
+      "bytes": 1695,
+      "sha256": "cb13974dfc82f42ccbf446dc8d6af0abb7a03a04bfe1331ab0f25a4369b9b3f6"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-resolver-repair-local-outer.json",
+      "bytes": 1010,
+      "sha256": "84608a710c685e0abada8c471553c00081f52af72db626e4db58c429c14484cf"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-resolver-repair-local-result.json",
+      "bytes": 386,
+      "sha256": "cb5a8490a7b5ea9f9dc5ac02a96db81e3efab45b29256ecd187df7cc018f4e13"
+    }
+  ],
+  "priorDefaultEvidence": {
+    "commit": "18f0cd49f0febcc1fa22651e2bd20e589cba2d50",
+    "path": "recovery-default-resolver-result.json",
+    "bytes": 2292,
+    "sha256": "fc98feb317a25f0d0bbebfb785ccd683d59c3f55d896f1a4940cbed2e5c91705",
+    "selected": 5,
+    "passed": 5,
+    "elapsedMs": 159,
+    "rawBytes": 589
+  },
+  "newWrapperEvidence": {
+    "selected": 3,
+    "passed": 3,
+    "elapsedMs": 147,
+    "rawBytes": 419,
+    "actualReturn": "2026-10-07T21:33:06.871Z"
+  },
+  "reviewFinding": {
+    "priority": "P2",
+    "foundBy": "Execution Lead",
+    "finding": "Both adapted runService calls passed resolver object rather than .resolve; original default-only cases did not cover wrapper wiring",
+    "disposition": "three-line fixed composition patch and three real runService entry consumers"
+  },
+  "testBoundary": "Actual fixed preview and host module bodies plus real owned synthetic files/manifest identities. Inventory verifier, PG marker query, environment, diagnostics and spawn injected: no real service/PG/artifact/person reads. The wrapper path proves one verifier call through authentication, seal and runtime reuse; not actual cold startup.",
+  "unchanged": "all six other f37 composition leaves; current main product already correct; immutable b692, old cold failure and original five local records",
+  "review": "PENDING",
+  "next": "controlled child commit of f37 with exact patch; new build/namespace after fresh resource coordination"
+}
