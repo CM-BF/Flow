@@ -1,0 +1,16 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "rootDirs": [
+      "../../../packages",
+      "./support/packages"
+    ]
+  },
+  "include": [
+    "../../../packages/client/src/response-json.ts",
+    "../../../packages/client/src/response-json.test.ts",
+    "../../../packages/client/src/assistant-stream-bounds.test.ts",
+    "../../../packages/client/src/native-activity-body.test.ts",
+    "../../../packages/client/src/assistant-stream.test.ts"
+  ]
+}

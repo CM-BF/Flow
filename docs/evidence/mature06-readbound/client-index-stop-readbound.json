@@ -1,0 +1,19 @@
+{
+  "stoppedWritingAt": "2026-10-07T09:33:10.937130+00:00",
+  "literal": "packages/client/src/index.ts",
+  "sourceCommit": "bbd51a00692639e6b47fff1ccb4199f96ef56750",
+  "bytes": 62869,
+  "sha256": "bd23661ab3cfa48e1c20c1e4a2b09afdbe237c81a1408510790642bbab81fdbb",
+  "baseMain": "d022c8003fc4bd8ba560f1a039411ed098186659",
+  "pendingMainDelta": "Three reviewed lines import/read-only domain/constructor pluginRunner; preserve LAZY/P02/Codex. Not yet main by exact diff.",
+  "readOnlyDependency": {
+    "path": "packages/client/src/plugin-runner.ts",
+    "sourceCommit": "9b639f79367a118562da4fe7c8d977173a488200",
+    "bytes": 2687,
+    "sha256": "f74365446f988caaec4e1a287608ab48b1a858d488640eafbf17f9606fb8ead9"
+  },
+  "nextOwner": "db_transaction_owner / MATURE06-READBOUND01",
+  "scopeReceiptPending": false,
+  "receipt": "docs/evidence/x01/terminal-outbox-amend-v22.json",
+  "committedAt": "2026-10-07T09:33:11.031Z"
+}

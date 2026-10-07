@@ -1,0 +1,57 @@
+{
+  "startedAt": "2026-10-07T09:43:14.507663+00:00",
+  "finishedAt": "2026-10-07T09:43:16.115048+00:00",
+  "wallBeforePersistenceSeconds": 1.607095874962397,
+  "supervision": {
+    "pid": 49511,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 1570,
+    "observed_bytes": 528,
+    "retained_bytes": 528,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "cleanup": {
+    "knownProcessClosed": true,
+    "tmpRemoved": true,
+    "retained": null,
+    "tmpEmpty": true,
+    "sampleBytes": 0
+  },
+  "raw": {
+    "bytes": 528,
+    "sha256": "34216722e1853f02eea12c19384408a0a9c94d99374fa3263f13e4081c106b1a"
+  },
+  "sourceHashes": {
+    "docs/evidence/mature06-readbound/run-local.py": "108810e7b40ddc7cc57af509adc3cb0ed21c409a8ff2db147b00052863f252d5",
+    "docs/evidence/mature06-readbound/supervision-policy.test.py": "410e520451ee8f79fbc470187ed20fffe96dc8f5a5bcadfcc857e7d39fcaef25",
+    "packages/client/src/index.ts": "19a402fd2b15f6083b9e37f052fcbb6f7bf1fb0ca6a7a0d75e898757981e090d",
+    "packages/client/src/response-json.ts": "c51b90db6be12132df0236aabccfce496dab8b835267a23158ff86361784f459",
+    "packages/client/src/native-activity-body.ts": "0b0260a88c92a83cb43f906150e930fe7444e98e1521695605d9f9d3bc04a418",
+    "packages/client/src/response-json.test.ts": "e9b57c7104f8822e87cdccc3ffa2d2e454a2960ac6b7da6bca3584bba148613c",
+    "packages/client/src/assistant-stream-bounds.test.ts": "49c1c4ec1ac967ca7d70d21d33bc03d540a1b40bb7e60e9280828d15fd217891",
+    "packages/client/src/native-activity-body.test.ts": "08382ba0cfc011ee204e2b0617867bf7fca0c2735319f5534c7feb8c0da39ab0",
+    "packages/client/src/assistant-stream.test.ts": "61446a7532b77ee9b52c69db510ada7cd88440e99f7302f00ef7201955c7f468"
+  }
+}

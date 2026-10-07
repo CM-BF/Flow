@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-07T09:43:14.507663+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds/docs/evidence/mature06-readbound/vitest.config.mjs",
+    "--no-cache",
+    "packages/client/src/response-json.test.ts",
+    "packages/client/src/assistant-stream-bounds.test.ts",
+    "packages/client/src/native-activity-body.test.ts",
+    "packages/client/src/assistant-stream.test.ts"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds",
+  "free": 23302062080,
+  "required": 6063390720,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds/docs/evidence/mature06-readbound/green/tmp",
+    "dev": 16777234,
+    "ino": 123969645
+  },
+  "budgets": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288
+  },
+  "tmpMeasurement": "before/after sample; not realtime OS isolation"
+}

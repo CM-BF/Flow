@@ -1,0 +1,77 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds
+
+ ❯ packages/client/src/assistant-stream-bounds.test.ts (9 tests | 7 failed) 9041ms
+   × 'metadata' rejects bytes beyond its policy before parsing 1505ms
+   × 'patch' rejects bytes beyond its policy before parsing 1502ms
+   × 'block' rejects bytes beyond its policy before parsing 1501ms
+   × 'metadata' cancels an active read and preserves abort reason 1503ms
+   × 'patch' cancels an active read and preserves abort reason 1501ms
+   × 'block' cancels an active read and preserves abort reason 1500ms
+   ✓ full block accepts a legal 1MiB control-character body plus its complete envelope 24ms
+   × selected errors preserve status and code; oversized error bodies use the same status with a safe fallback 4ms
+   ✓ legacy stream error payload handling remains unchanged 0ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 7 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/assistant-stream-bounds.test.ts > 'metadata' rejects bytes beyond its policy before parsing
+ FAIL  packages/client/src/assistant-stream-bounds.test.ts > 'patch' rejects bytes beyond its policy before parsing
+ FAIL  packages/client/src/assistant-stream-bounds.test.ts > 'block' rejects bytes beyond its policy before parsing
+Error: Test timed out in 1500ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ packages/client/src/assistant-stream-bounds.test.ts:16:14
+     14| ];
+     15| afterEach(() => vi.restoreAllMocks());
+     16| it.each(reads)('$name rejects bytes beyond its policy before parsing',…
+       |              ^
+     17|   const json = JSON.stringify(body), cancel = vi.fn();
+     18|   const response = new Response(new ReadableStream({ start(controller)…
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/7]⎯
+
+ FAIL  packages/client/src/assistant-stream-bounds.test.ts > 'metadata' cancels an active read and preserves abort reason
+ FAIL  packages/client/src/assistant-stream-bounds.test.ts > 'patch' cancels an active read and preserves abort reason
+ FAIL  packages/client/src/assistant-stream-bounds.test.ts > 'block' cancels an active read and preserves abort reason
+Error: Test timed out in 1500ms.
+If this is a long-running test, pass a timeout value as the last argument or configure it globally with "testTimeout".
+ ❯ packages/client/src/assistant-stream-bounds.test.ts:23:14
+     21|   expect(cancel).toHaveBeenCalledOnce();
+     22| });
+     23| it.each(reads)('$name cancels an active read and preserves abort reaso…
+       |              ^
+     24|   let started!: () => void;
+     25|   const ready = new Promise<void>(resolve => { started = resolve; }), …
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[2/7]⎯
+
+ FAIL  packages/client/src/assistant-stream-bounds.test.ts > selected errors preserve status and code; oversized error bodies use the same status with a safe fallback
+AssertionError: expected FlowApiError: xxxxxxxxxxxxxxxxxxxxxxxxxxx… { …(2) } to match object { status: 429, …(2) }
+(1 matching property omitted from actual)
+
+- Expected
++ Received
+
+- {
+-   "code": "http_error",
+-   "message": "The center returned HTTP 429.",
++ FlowApiError {
++   "code": "untrusted",
+    "status": 429,
+  }
+
+ ❯ packages/client/src/assistant-stream-bounds.test.ts:46:3
+     44|     .mockResolvedValueOnce(new Response(JSON.stringify({ error: { code…
+     45|   await expect(client().assistantStreamBlock('task', id)).rejects.toMa…
+     46|   await expect(client().assistantStreamBlock('task', id)).rejects.toMa…
+       |   ^
+     47|   expect(fetch).toHaveBeenCalledTimes(2);
+     48| });
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[3/7]⎯
+
+
+ Test Files  1 failed (1)
+      Tests  7 failed | 2 passed (9)
+   Start at  02:37:47
+   Duration  9.47s (transform 195ms, setup 0ms, import 323ms, tests 9.04s, environment 0ms)
+
