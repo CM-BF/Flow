@@ -2,34 +2,34 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 更新时间 | 2026-10-07 08:14:00 UTC |
+| 更新时间 | 2026-10-07 08:20:07 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T07:02:57.381Z |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 本任务首轮fresh领取准备的实际ledger观察；claim07:04:02仅证明领取，不替代开工；后续完成尚未发生 |
+| 任务完成时间 | 2026-10-07T08:20:07.402Z |
+| 任务时间来源 | 首轮fresh领取准备为实际开工；本次main receipt确认及本片段收口为完成，后继SDK/CLI/UI未包括 |
 | Owner / model | assignment_review / gpt-6-astra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring |
 | Branch | codex/native-activity-body-wiring |
 | Base | 9f0e916d38f4615dd5f15103701d188c1f0e60ca |
-| HEAD | c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0；两处测试接缝修正与第三段入口固定，证据封存后停写 |
-| 工作树dirty状态 | 仅末次自有证据/status封存；产品/入口已停写 |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| HEAD | 184ccf8dd8335f333fc57f6d0e14d6483e3a1c3d；本次仅main receipt收口 |
+| 工作树dirty状态 | 本次仅自有收口metadata，commit/push后全停写 |
+| 工作分支状态 | completed |
+| 本片段交付阶段 | delivered |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 真实中心与runner完整正文传输及授权读取已通过，两轮原失败和清理事实保留 |
-| 下一可用交付 | 本次真实组合结果独审和主线接收；界面及模型开通仍为后继 |
-| 当前阻塞 | ACTIVE: 实际结果待独立审查与主线接收 |
+| 当前产出 | 完整正文传输与授权分页已在主线交付；保留两轮失败与独立清理事实 |
+| 下一可用交付 | 本片段已交付；界面及模型开通为后继 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0 |
 | 实现范围 | packages/contracts/src/native-activity-body.ts, packages/contracts/src/index.ts, packages/client/src/native-activity-body.ts, packages/client/src/native-activity-body.test.ts, packages/client/src/index.ts, apps/server/src/native-activity-body/index.ts, apps/server/src/native-activity-body/fixture.ts, apps/server/src/native-activity-body/production.test.ts, apps/server/src/index.ts, apps/runner/src/runtime.ts, apps/runner/src/native-activity-body/host.ts, apps/runner/src/native-activity-body/host.test.ts, apps/runner/src/native-activity-body/host-production.test.ts |
 | 检查状态 | 44不同局部例分轮通过，6轮focused types0；PG03 2/2，cleanup CONFIRMED；PG01/02各0/2原件保留 |
-| Review | 原1bb/f735/c98准备均限定APPROVED；PG03实际结果待唯一独审 |
-| 已集成main状态 / HEAD | 本片未集成；P01领域已在f39并包含于本base |
-| claim | f51cc458-ced9-48ff-a033-97f42483dcf4 v4，15literal；13产品+2自有metadata，三共享出口和fixture均正式amend后写入 |
-| 架构影响 | 共享reader/专用中心确认/显式单attempt host开通及033真实factory挂载；固定target待独审/main后由Lead登记架构 |
+| Review | APPROVED_SOURCE_AND_PG03_RESULT；唯一Lead独审已逐字归档 |
+| 已集成main状态 / HEAD | f5a13cbed6b75151f34e6924ec7e10c8894acf48；13产品逐字同，main focused types0/2165ms |
+| claim | f51cc458-ced9-48ff-a033-97f42483dcf4 v4；全停写，完成本次commit/push后正式release |
+| 架构影响 | 主线已接共享reader/中心协议确认/显式单attempt host开通与033挂载；Lead维护架构映射，未开通SDK/CLI/UI |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -37,7 +37,7 @@
 | CHAT05P02-02 | completed | assignment_review | reader19/19；local-run-01/02 |
 | CHAT05P02-03 | completed | assignment_review | host纯5+实际runtime合成6、旧direct11分轮最终绿；local-summary |
 | CHAT05P02-04 | completed | assignment_review | 原2case PG03通过；pg-run-03原件及结果manifest；PG01/02原失败保持 |
-| CHAT05P02-05 | pending | assignment_review | 未独审/集成，不扩大P01结论 |
+| CHAT05P02-05 | completed | assignment_review | independent-pg03-review/main-receipt；不扩大至SDK/CLI/UI |
 
 ## 等待记录
 
@@ -46,7 +46,7 @@
 | P02-PG01 | UNKNOWN | 2026-10-07T07:41:52.549090Z | 资源 | 原准备审查与实际PG窗口 | Lead消息/pg-run-01 reservation |
 | P02-PG02 | UNKNOWN | 2026-10-07T07:59:45.501260Z | 资源 | 定向修复后新窗口 | Lead revision994桥接/pg-run-02 reservation |
 | P02-PG03 | UNKNOWN | 2026-10-07T08:12:38.421033Z | 资源 | 第二次修复后新窗口 | Lead revision1008实际归还桥接/pg-run-03 reservation |
-| P02-RESULT | 2026-10-07T08:14:00.514174+00:00 | OPEN | 审查 | 已固定实际结果独审及主线接收 | pg-run-03/analysis与本次结果交付 |
+| P02-RESULT | 2026-10-07T08:14:00.514174+00:00 | 2026-10-07T08:20:07.402Z | 审查 | 已固定实际结果独审及主线接收 | pg-run-03/analysis与本次结果交付 |
 
 ## 下一步与handoff
 
@@ -73,3 +73,5 @@
 2026-10-07T08:12:38.367782+00:00：Mika revision1008实际归还后Lead授唯一PG03。fresh23delta/22继承/286runtime/21aliases同，claimv4active、原新namespace不存在、free24159821824B≥1287651328B；SVC09 clean首canonical暂停，未启动其它local。现在即将原repair-03，真正开始取exclusive reservation，0provider/个人。
 
 2026-10-07T08:12:42.063226Z：PG03原2/2通过，3617ms监督/3664mscaller/raw834B；64请求，1次注入Claude adapter/0provider，2,225,539B/9页完整相同。3315组absent/双EOF；OID1259234/marker核对/零连接/普通DROP remaining[]、原自有目录移除、listener/pool/admin关闭，cleanupErrors[]，133B缓存KEEP。已即时归还窗口，原初unknown/PG01/02不改。见pg-run-03/README和pg03-result-manifest；产品/入口停写待结果独审。
+
+本次收口：唯一结果独审APPROVED、主线f5a13cbed6b75151f34e6924ec7e10c8894acf48已接收。13产品当前字节对main零差，原PG/局部未重跑。原01/02红、初unknown及缓存KEEP不改；全部范围停写，release回执由协调账本留存。

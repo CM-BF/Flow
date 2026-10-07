@@ -9,4 +9,4 @@
 
 见[Interface](../../docs/evidence/eng01l/interface.md)。源scope为六产品与ownplan/evidence；R06/exchange/G/I/合同不改，provider0。
 
-真实initialize/close及失败后的exact cleanup另见stock-initialize/RESULT；原run因私有状态超预算FAIL，后续收尾单列成功，结果已获APPROVED_RESULT_WITH_PRESERVED_FAILURE限定独审，记录待主线接收。完整ENG/资格/OS写拒绝与真实工具调用仍开放。
+真实initialize/close及失败后的exact cleanup另见stock-initialize/RESULT；原run因私有状态超预算FAIL，后续收尾单列成功，结果已获APPROVED_RESULT_WITH_PRESERVED_FAILURE限定独审，结果与批准metadata已main f5a13cbe，本限定片段交付。完整ENG/资格/OS写拒绝与真实工具调用仍开放。

@@ -11,3 +11,5 @@
 2026-10-07T08:09:55.319Z：exact cleanup方案经Lead审后一次完成，0stock重跑，原raw与FAIL不改。实际结果和后续收尾统一待结果独审，源码批准/main事实独立。
 
 2026-10-07T08:15:55Z：a4a结果包唯一独审 **APPROVED_RESULT_WITH_PRESERVED_FAILURE**，34固定/current绑定全同，无P1/P2、0重跑。[批准转录](../../docs/evidence/eng01l/result-independent-review-message.json)。限定一次真实initialize/close与后续exact cleanup；原outer FAIL/1MiB超限/unknown不改绿，不证明native授写、模型资格或全部writer撤销。源码批准与实际结果批准分别保留。
+
+2026-10-07T08:20:11.203Z：结果与批准metadata受控进入main f5a13cbed6b75151f34e6924ec7e10c8894acf48，六产品仍574逐字，0复跑；限定片段已交付，旧FAIL与开放能力范围保持。

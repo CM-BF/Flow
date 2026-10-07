@@ -15,3 +15,7 @@ APPROVED_PREPARATION（Lead唯一独审，实际PG结果仍待验证）。Base9f
 [原source独审](../../docs/evidence/chat05p02/independent-source-review.json)及[PG02准备独审](../../docs/evidence/chat05p02/independent-pg-repair-review.json)均逐字归档。PG02仍0/2并独立CONFIRMED清理，见[原结果](../../docs/evidence/chat05p02/pg-run-02/analysis.json)。最新c98只修test原始Response收尾/注入Claude身份，生产校验未放宽；[第三段准备](../../docs/evidence/chat05p02/pg-repair-03/README.md)与local07原件待唯一增量独审，不把局部通过当PG通过。
 
 c98/8b3d第三段准备获Lead限定APPROVED，见[转录](../../docs/evidence/chat05p02/pg-repair-03/preparation-review-transcript.json)。随后原2项PG03实际通过/资源CONFIRMED清理，见[结果](../../docs/evidence/chat05p02/pg-run-03/README.md)；此实际结果尚待独立review，不由作者自批。旧PG01/02原件不改，后继CLI/SDK/UI仍开放。
+
+## 最终限定结果及主线接收
+
+APPROVED_SOURCE_AND_PG03_RESULT，target c98、delivery184cc、31结果绑定；[唯一独审原件](../../docs/evidence/chat05p02/independent-pg03-review.json)。主线f5a13cbed6b75151f34e6924ec7e10c8894acf48，13产品零差及组合types0/2165ms见[main receipt](../../docs/evidence/chat05p02/main-receipt.json)。原失败/unknown/KEEP不改，默认off/单attempt、0provider；CLI/真实SDK/UI未包括。

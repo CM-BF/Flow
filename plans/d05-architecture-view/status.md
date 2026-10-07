@@ -2,10 +2,10 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:51:51.580189+00:00 / main8c92e645；190唯一来源已实际加载 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T08:20:31.727602+00:00 / main2a7e004b；191唯一来源已实际加载 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | UNKNOWN |
-| 任务时间来源 | 初始D05交付记录保留于deployment.json与历史段；没有足够字段证明完整任务起止，不以登记或进程替换时间补造。当前来源发布实采2026-10-07T07:26:47.690445Z，见eng01k-live.json。 |
+| 任务时间来源 | 初始D05交付记录保留于deployment.json与历史段；没有足够字段证明完整任务起止，不以登记或进程替换时间补造。当前来源发布实采2026-10-07T08:20:31.727602+00:00，见svc09-live.json。 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -14,15 +14,15 @@
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
 | 工作分支状态 | completed |
-| 已集成 main 状态 | main/origin8c92e64520ba7496b507d08cb4abe9c8d83e37a1已接ENG01L登记；4320实际190源。个人af51/v18+d629/v3/c7b保持。 |
+| 已集成 main 状态 | main/origin2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a已接SVC09登记；4320实际191源。本批无个人服务操作。 |
 | 实现目标 | cad1251fdbe8f8b527a78c60cf45adce68e4f534 |
 | 实现范围 | apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/src/server.mjs |
 | 检查状态 | PASSED cad1251fdbe8f8b527a78c60cf45adce68e4f534：局部Node 2/2；45节点源码路径固定基线存在；CUA五视图、980浅色/390深色、键盘/缩放/刷新保持，0模型 |
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 看板已提供本机登录凭据的按需入口与任务时间，190个唯一来源已加载；工具全文及工程宿主的当前验证状态可见，缺证时间保持未知。 |
-| 下一可用交付 | 将已开工的网页发布接线纳入现有任务来源；实际状态继续读取唯一负责人。 |
+| 当前产出 | 看板已提供本机登录凭据的按需入口与任务时间，191个唯一来源已加载；新版发布、工具全文和工程宿主的当前状态可见，缺证时间保持未知。 |
+| 下一可用交付 | 本次来源发布已完成；各工作线继续读取唯一负责人的实际状态。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -240,3 +240,7 @@ Goal Owner独立真实页面验收：默认空→显式加载为掩码→复制�
 [实际回执](../../docs/evidence/d05/eng01l-live.json)：唯一ENG01L已加载，登录元数据仍enabled；个人五份配置/状态摘要及61227/61228监听/进程身份逐项未变，未读token端点、未重载任何用户tab。首次新dashboard启动缺原显式非秘密安装绑定，已退出且4320无监听；原失败/日志引用保留于[首错](../../docs/evidence/d05/eng01l-live-first-failure.json)。补回原四字段绑定后新组52738正常监听与快照200，不把首次失败改绿。没有产品测试或个人服务操作。
 
 2026-10-07T08:17:49.353557+00:00：SVC09唯一来源登记候选191；原子claim1a2b v1/14literal，canonical c1a1a44e，源码尚在实施。实际4320此前190不冒称已重载；没有产品测试或个人服务操作。
+
+## SVC09 来源实际发布
+
+2026-10-07T08:20:31.727602+00:00：main2a7e004b已接收唯一SVC09登记；原自有4320进程52738确认身份与退出后，由同一工作目录的新进程80476加载。单次实际快照191来源，SVC09、CHAT05P02、ENG01L均从各自权威status实时读取；见[实际回执](../../docs/evidence/d05/svc09-live.json)与[前置身份](../../docs/evidence/d05/svc09-live-before.json)。此为看板来源部署，不代表SVC09产品或个人版本已更新；未读取token端点、操作个人服务或刷新用户tab，未重复产品检查。

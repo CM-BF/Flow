@@ -1,0 +1,80 @@
+{
+  "observedAt": "2026-10-07T08:20:07.402447+00:00",
+  "main": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "source": "c98c68b02fcdcff3b9bb7295c1fcda6bb79d28f0",
+  "delivery": "184ccf8dd8335f333fc57f6d0e14d6483e3a1c3d",
+  "productZeroDiff": [
+    {
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "bytes": 6001,
+      "sha256": "bade51d2df5537299b818176b5738cc8ef8438bbd315d06292f078e87a9ee8b9"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1634,
+      "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440"
+    },
+    {
+      "path": "packages/client/src/native-activity-body.ts",
+      "bytes": 8416,
+      "sha256": "fbc8465c2def5a876ea9859bf63813b68db6008bf4e1f613bd0a41f491c4e060"
+    },
+    {
+      "path": "packages/client/src/native-activity-body.test.ts",
+      "bytes": 11836,
+      "sha256": "08382ba0cfc011ee204e2b0617867bf7fca0c2735319f5534c7feb8c0da39ab0"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 57553,
+      "sha256": "a07ceb97fe08dd68625f6c1468a109863bbc44a2a8b366a990ecfbd41c484b2b"
+    },
+    {
+      "path": "apps/server/src/native-activity-body/index.ts",
+      "bytes": 2712,
+      "sha256": "d407b55d468e7208cce1f2d25e9ea3a812f613f9ead1a9e95cd1fd1d72f55a57"
+    },
+    {
+      "path": "apps/server/src/native-activity-body/fixture.ts",
+      "bytes": 12824,
+      "sha256": "d85ef108e8c76535f0aac579ac88b6587728f2f99b6f4168f5de61e753249b52"
+    },
+    {
+      "path": "apps/server/src/native-activity-body/production.test.ts",
+      "bytes": 7796,
+      "sha256": "32506da67750e49937a2f1ae13acb1045d0093b49f106f2d25820251f7fabbcd"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 15083,
+      "sha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 17320,
+      "sha256": "db4e30317baf9a604d5fe89c2c67ff03cb925bbed90cb7cc3debfc055af10648"
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/host.ts",
+      "bytes": 2842,
+      "sha256": "fc8b394cfdcb5459f1ebd0e42b31cf34c56253861e1aef53dbb0e01965c05544"
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/host.test.ts",
+      "bytes": 4303,
+      "sha256": "2ca69c1fd8358db42c05c0fec421b981b1c65d7f14c6c0eb7b17e87b15895090"
+    },
+    {
+      "path": "apps/runner/src/native-activity-body/host-production.test.ts",
+      "bytes": 8682,
+      "sha256": "bd3a7d86dedca39e6d5f778c5d03b5138f3dd08e6477df9d8be204cd95f100b3"
+    }
+  ],
+  "review": "independent-pg03-review.json",
+  "mainFocusedTypes": {
+    "exit": 0,
+    "elapsedMs": 2165
+  },
+  "scope": "default-off / single-attempt explicit host; injected adapter; 0 provider. CLI/SDK/UI rollout not claimed.",
+  "writeState": "all product/evidence writes stop after this closeout; release request will be sent after push"
+}

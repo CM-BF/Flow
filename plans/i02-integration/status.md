@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T08:18:29.907615+00:00 / main c5dbdb71；本批接工具全文与工程宿主结果 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T08:26:21.093155+00:00 / main 2a7e004b；本批仅已交付记录与看板实际来源收口 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main c5dbdb712e4fae078ddd4bbdbc51c653d77a3192；本批已审固定源，待本次fast-forward |
+| 工作基线 / HEAD | main 2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a；本次仅受审17个文档/回执 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 工具全文PG03原2/2与清理已独审，当前main依赖组合focused types exit0/2165ms；工程宿主34结果绑定与七文档增量核同，0重复stock/provider。 |
-| 已集成main状态 / HEAD | main/origin 8c92e645 已含登记及父摘要。实际4320于07:51:51已载入190来源；首次启动配置缺件失败和纠正结果分别保留。个人 af51/v18、d629/v3/c7b宿主不变。 |
+| 检查状态 | P02 13与ENG01L 6产品对固定receipt及当前main逐字一致；本次17个metadata逐diff核对，D05/FLOW/OPS由native_center_owner独立doc review，0产品复测。 |
+| 已集成main状态 / HEAD | main/origin 2a7e004b已含工具全文接线、工程宿主结果与SVC09登记；4320 08:20:31实际191来源。个人服务未随本批改变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 超过单包上限的工具全文已通过公开读取与运行时接入验收；原生工程初始化和独立收尾事实分别保存。 |
-| 下一可用交付 | 接收已审接线并准备当前版本的完整目标旅程，网页更新继续保留现有页面。 |
+| 当前产出 | 完整正文接线与工程宿主限定结果已交主线；看板已显示新版发布工作的唯一状态。 |
+| 下一可用交付 | 当前固定版本的完整目标旅程与保留旧页面资源的新版发布接线并行推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -372,3 +372,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 2026-10-07T08:01:14.203380+00:00：ENG01L六源码与自身plan/evidence按固定175884接收，三源策略文件delta与caller限定独审通过；[固定输入](../../docs/evidence/i02/eng01l-source-intake.json)。30直接源码相对当前main完全相同，未重复原局部检查。实际initialize另验、模型资格仍待；P02第二次PG两项失败但07:59:48专库/组/端口已确认归还，原owner窄修。
 
 本批证据：[工具全文结果与主线组合](../../docs/evidence/i02/chat05p02-pg03-intake.json)、[工程初始化与后续清理](../../docs/evidence/i02/eng01l-result-intake.json)。主线接收不启用真实SDK/CLI/UI，不改变个人af51/v18、d629/v3/c7b。
+
+2026-10-07T08:26:21.093155+00:00：本批受控接收P02/ENG01L限定完成回执、191来源实际部署与FLOW/OPS当前摘要；17文档的固定输入及独审见[收口记录](../../docs/evidence/i02/delivery-closeout-0828.json)。原失败、UNKNOWN时间与未部署范围保留，不重复产品检查或重启看板。

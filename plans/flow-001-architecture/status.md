@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T08:02:37.739545Z / main 9f314e89；已合入与个人部署分别记录 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T08:21:18.665591+00:00 / main f5a13cbe；源码接收与个人部署分别记录 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,11 +15,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origin 9f314e89 已含 Codex 公共会话、ENG01L 只读宿主组合及 X01 固定插件测试证据。个人仍 backend af51/v18、Web d629/v3/c7b宿主；新恢复、逐消息设置和完整工具正文未部署。 |
+| 已集成main状态 / HEAD | main/origin f5a13cbe 已接工具全文13源及2/2公开HTTP/PG结果、工程宿主初始化与后续清理证据；个人仍 backend af51/v18、Web d629/v3/c7b宿主，未随main升级。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 现有个人网页保持可访问；新会话协议和受信工程工具已合入。聊天恢复、消息设置及工具完整正文仍在完成实际使用链路。 |
-| 下一可用交付 | 先交可实际登录并恢复会话的新版本，保全旧页面资源；工具全文验证修复后接续完整目标交付旅程。 |
+| 当前产出 | 工具全文已通过超过单包上限的保存和分页读回验收并合入；当前个人网页保持原版本，新版登录恢复与完整目标旅程继续推进。 |
+| 下一可用交付 | 新版登录恢复的发布接线与当前版本完整目标旅程并行推进；现有个人页面和历史继续保留。 |
 | 当前阻塞 | ACTIVE: 远程验证启用与工程模型授写资格仍待用户决定；这些等待不阻止本地接口验证和新版兼容准备。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
@@ -212,3 +212,5 @@ SVC06-05 唯一准备 owner 为 assignment_review，候选见 [固定更新方�
 2026-10-07T08:02:37.739545Z：主线9f314e89已接收ENG01L受审源码与X01包固定/版本固定证据，实际4320为190来源。ENG01L隔离原生initialize已READY、关闭已确认，但目录测量返回unknown，原件与scratch KEEP；不称完整工程资格或全writer撤销。P02 PG02于07:59:48.421609Z终止：0/2失败原件保留，专库/组/端口/exact tmp确认清理归还；原owner只修测试wrapper的已消费body cancel与注入adapter的harness身份，生产store不放宽，未预占下一PG。
 
 REQ19下一片由assignment_review承担SVC09（尚在原P02安全收口前的只读准备）：受信浏览器策略停服务前校验/实际host传递，加集中count/bytes/report策略，使新Web在保留旧三项资源下有正式第四项发布路径。方案见 [原SVC06候选](/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-4fe-candidate/candidate.md) 与 [集中保留规划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-4fe-candidate/retention-next-policy.md)。未take不写产品；未构建新artifact或操作个人服务。后台策略/迁移、旧App真实兼容、新宿主先读三项后第四CAS均保持独立验收。
+
+2026-10-07T08:21:18.665591+00:00：CHAT05P02原两次失败和PG03成功分别封存，真实factory/runRunner注入材料2,225,539B/9页完整一致，0provider；当前主线focused组合types0。ENG01L一次initialize/close已有记录，但原超限outerFAIL不改，后续exact清理独立成功。P02/ENG01L原owner已正式停写归还范围；SVC09由assignment_review实施，O16由原native_center_owner按f5a固定组合准备新旅程，旧FAIL/KEEP不动。证据分别在各唯一status与I02固定接收记录；共享PG于08:12:42归还Mika，本队当前无holder。
