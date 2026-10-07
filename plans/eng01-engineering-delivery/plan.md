@@ -104,4 +104,4 @@ ENG01G已main557397；唯一receive/close pump、finite file策略、真实assig
 
 ## 13:03 UTC 当前顺序
 
-ENG01I [唯一准备合同](../../../engineering-native-host/plans/eng01i-native-engineering-host/plan.md)已固定为docs-only候选并释放旧claim，尚无adapter产品改动。Mika唯一原生资格核验仍进行；取得可用的固定authority/模型/停止依据后重新领取该宿主组合。当前空出的worker先交付MATURE06可恢复连接，SVC06固定后台产物另位并行；不取消ENG原真实写改与独立接受目标，也不以空closed capability当完成。
+ENG01I [唯一准备合同](../../../engineering-native-host/plans/eng01i-native-engineering-host/plan.md)已固定为docs-only候选并释放旧claim，尚无adapter产品改动。该暂停是2026-10-06历史安排。2026-10-07 Connection核心与SVC08限定片已交付后，原worker已fresh领取原六范围恢复宿主组合，独立局部/PG旅程先0provider验证；具体authority/模型/全部writer停止依据仍为ENG001-05真实执行门槛，不作为整个零模型组合前置。Mika唯一资格核验并行，SVC06后继另位推进；不新增资格probe或模型预算、不取消ENG真实写改与独立接受目标。
