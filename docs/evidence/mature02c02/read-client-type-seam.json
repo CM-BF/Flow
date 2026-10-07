@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-07T08:46:11.842762+00:00",
+  "base": "878943cf567d91cfae984e1b424c6f0424eb8624",
+  "claim": {
+    "id": "8ad6536b-1194-44a4-9078-a92215bec7a2",
+    "version": 19,
+    "scopeCount": 52
+  },
+  "path": "docs/evidence/mature02c02/pg-fixture.ts",
+  "before": {
+    "bytes": 12008,
+    "sha256": "c74495e3dc54543f84e29111e3e42650a48df84ec6af1beac7428b7fe1d427c7"
+  },
+  "after": {
+    "bytes": 12055,
+    "sha256": "283b854249cd6dc02d588728443b49155e9d5a137abda1d066e2ad0f34a08825"
+  },
+  "change": "Only readClient parameter annotation derives the existing FlowClient constructor assistantStreamProtocol option; construction/body unchanged. No credentials exposed, no copied fixture, no cast or new protocol literal.",
+  "validation": "Static single-line diff only; no engineering tests/PG/provider. Existing historical inputs/raw/manifest remain fixed to their original Git targets.",
+  "requestedBy": "status_read for existing LAZY public-client HTTP preparation; current C02 evidence scope retained."
+}

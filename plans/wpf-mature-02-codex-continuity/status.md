@@ -7,7 +7,7 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-07T08:35:39.196509+00:00；三处已main会话支持文件正式STOP交回，fixed main2a7e/本树相同；v19 ACTIVE52。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T08:46:11.842762+00:00；fixture只读客户端类型改用真实公开构造选项，v19 ACTIVE52不变。 |
 | 阶段 | M2 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,8 +22,8 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | 本段仅真实两轮准备与status/quality metadata；产品及旧sealed原件不变，提交后核clean。 |
-| HEAD（最近观察） | 85598d30dd1a2e2093c95d0ca8ba9c410ef83afe（本段起点origin同clean；仅依赖交回metadata） |
+| 工作树dirty状态 | 本段仅fixture参数类型一行与status/quality metadata；旧raw/manifest不变，提交后核clean。 |
+| HEAD（最近观察） | 878943cf567d91cfae984e1b424c6f0424eb8624（本段起点origin同clean；fixture仅类型一行与metadata） |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v19 ACTIVE52；本次仅移出contracts/conversation-harness.ts、contracts/conversations.ts、client/conversation-acknowledgement.ts，见[正式回执](../../docs/evidence/mature02c02/conversation-support-handback-receipt.json)。前v17 client stream test与v18 profile合同已交回；所有历史执行claim保持。 |
 | 实现目标 | C02-04真实两轮固定输入/验收准备；本轮不实施或运行native。 |
 | 实现范围 | 仅原计划/证据metadata；复用已main R06/loader，未领取或修改已交回的runner/client路径。 |
@@ -91,3 +91,5 @@
 2026-10-07T08:30:06.802986+00:00 LAZY支持供给依赖：profile合同15006B/SHA4ab495a3…f79b7已main、无pending，正式STOP→v17/56至v18/55；仅此literal，新ownerfresh领取后写。原C02真实native提案仍ACTUAL_NOT_OPEN，不为本移交扩写其他任务。
 
 2026-10-07T08:35:39.196509+00:00 LAZY固定主线支持交接：三文件合计24074B，own85598/main2a7e逐字一致且无未交付修改；STOP08:33:32.465985Z，atomic amend08:33:32.577Z，v18/55→v19/52。仅交出[STOP清单](../../docs/evidence/mature02c02/conversation-support-stop.json)三literal，LAZY fresh领取后自行供给；不改其树或产品。当前真实native ACTUAL_NOT_OPEN/0新额度，旧执行与KEEP保持。
+
+2026-10-07T08:46:11.842762+00:00 LAZY可复用fixture接缝：[单行类型记录](../../docs/evidence/mature02c02/read-client-type-seam.json)。readClient参数直接派生FlowClient公开构造option；私有ownerToken与new FlowClient实现不变，既有v1/v2与未来已审selected由实际client定义。0测试/PG/provider，旧窗口input/raw绑定原Git不回写；C02真实native ACTUAL_NOT_OPEN。
