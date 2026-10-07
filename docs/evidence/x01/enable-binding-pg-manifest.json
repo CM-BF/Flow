@@ -1,6 +1,6 @@
 {
-  "sourceCommit": "e7f220ee72c5c9bc091846be45ddd8b199dc6f71",
-  "preparedAt": "2026-10-07T04:24:07.437659+00:00",
+  "sourceCommit": "002159b96e98187a050313f2995e199fd2900198",
+  "preparedAt": "2026-10-07T04:29:52.486326+00:00",
   "scope": "Preparation only; actual PG NOT_OPEN",
   "files": [
     {
@@ -1013,10 +1013,10 @@
     },
     {
       "path": "docs/evidence/x01/enable-binding-pg-caller.test.py",
-      "commit": "e7f220ee72c5c9bc091846be45ddd8b199dc6f71",
-      "blob": "43a174d8e4bb152c84785937db59cd45fb2e228f",
-      "bytes": 4786,
-      "sha256": "dbcb19e62bc834a7f47fed03f82dd175fc19a13479104985d9b07a40799c45a8"
+      "commit": "90ba5c028d56c23ee74867f99ba3e6d6f6f3f156",
+      "blob": "7e2c7708c4c942634775e18e9d99add1bb60c187",
+      "bytes": 5902,
+      "sha256": "f93047e371c979ea9cb744fbfa3ffb8ec8c347f1d07fd95cb8c7e2a60e5214e8"
     },
     {
       "path": "docs/evidence/x01/enable-binding-pg-closure.json",
@@ -1034,17 +1034,24 @@
     },
     {
       "path": "docs/evidence/x01/enable-binding-pg-input.json",
-      "commit": "e7f220ee72c5c9bc091846be45ddd8b199dc6f71",
-      "blob": "b4b4f3c3eb5eb3bc4b66127ec8bab472f7b1895b",
-      "bytes": 766,
-      "sha256": "7288f02fb0007c9bb6428d1ab7e3d93876bf8169e58db0d61482eb42e0c4514f"
+      "commit": "90ba5c028d56c23ee74867f99ba3e6d6f6f3f156",
+      "blob": "1bf3ea2c6c1bce0e480d4362832dbb3973561dbf",
+      "bytes": 952,
+      "sha256": "ccc3097797ac1adf4080351cd5d7f0739b7e53e99858dd1764275a019f50cb06"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-lazy-local.json",
+      "commit": "90ba5c028d56c23ee74867f99ba3e6d6f6f3f156",
+      "blob": "23e0137d9cacd373b84f95a5225979c044db73ca",
+      "bytes": 1655,
+      "sha256": "e4a814d9d34f209ce329136a2a3a721d06a584ce538e349bfdc76709dece72d7"
     },
     {
       "path": "docs/evidence/x01/enable-binding-pg-once.py",
-      "commit": "e7f220ee72c5c9bc091846be45ddd8b199dc6f71",
-      "blob": "8718fb401bc2f9522a5eb6172d88217a4a26422b",
-      "bytes": 19458,
-      "sha256": "465a18b38718dc5bca3e43d31525c042b75f38a2274a0818e598427ab5c6424d"
+      "commit": "90ba5c028d56c23ee74867f99ba3e6d6f6f3f156",
+      "blob": "9393a8041d0e41ab9496646fd2cb69493052246a",
+      "bytes": 20181,
+      "sha256": "86dec6bd164e09cbb948ffaa16aa859e53c23cc83b08d59f00e4167b0bca6154"
     },
     {
       "path": "docs/evidence/x01/enable-binding-pg-preparation-local.json",
@@ -1052,6 +1059,13 @@
       "blob": "e873b6e070bfe757063017630bc3fc3178287216",
       "bytes": 4518,
       "sha256": "51d939250fffa6a520557f9c3aae87adbb7051bf0b48f30889a711c67143f627"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-preparation-tool.json",
+      "commit": "90ba5c028d56c23ee74867f99ba3e6d6f6f3f156",
+      "blob": "83cf3188232ec39878f0f87d4196e4e4930bce4e",
+      "bytes": 322,
+      "sha256": "a82a0d056e2e6c6a4f1647b9434a7d58f0ead9b8389cffc20eeaac9e00a5ee20"
     },
     {
       "path": "docs/evidence/x01/enable-binding-pg-vitest.config.mjs",
@@ -1069,10 +1083,10 @@
     },
     {
       "path": "docs/evidence/x01/enable-binding-stage-c-window.md",
-      "commit": "e7f220ee72c5c9bc091846be45ddd8b199dc6f71",
-      "blob": "c7ad192a829d29dd156b0dd099c3b7f28f998426",
-      "bytes": 4862,
-      "sha256": "ed2204cf4a35ae5bb07ef1a0ecee81cc0cdd4f08a717b236333f89c0f927fce5"
+      "commit": "90ba5c028d56c23ee74867f99ba3e6d6f6f3f156",
+      "blob": "2046ce5c3d8115fcc61990f1e3ad4ccc032e2e20",
+      "bytes": 6034,
+      "sha256": "78d42557f74df3aaffd3e640fc114f8e0bd36a840e14621171781dc8c14c60d7"
     },
     {
       "path": "package.json",
@@ -1642,8 +1656,8 @@
       "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
     }
   ],
-  "filesCount": 234,
-  "fileBytes": 1170166,
+  "filesCount": 236,
+  "fileBytes": 1175340,
   "external": [
     {
       "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
@@ -1903,5 +1917,11 @@
   "existingCollectReference": "cc19f57ced0c230c53d1ae43b9889b50dad79764",
   "unchangedProductCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
   "externalLimit": "Package metadata and executable/entry bytes are fixed; not a full recursive donor hash or proof of all toolchain behavior",
-  "runDirectoryAbsent": true
+  "runDirectoryAbsent": true,
+  "supersedes": {
+    "packet": "84d1403140d9250817882562e7ead97901a7eb98",
+    "manifestSha256": "8b03f0942eeb6911e3c8237c17928a777c862512537d1a77dd5d38779ba0c634",
+    "reason": "DB/WAL reserve and single reviewer P2 lazy inventory fix; original packet preserved in Git"
+  },
+  "databaseReserveBytes": 134217728
 }
