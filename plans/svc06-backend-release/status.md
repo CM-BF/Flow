@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 04:40:09 UTC；零任务真实三宿主结果获限定独审批准，待接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:45:56.833930+00:00；零任务真实三宿主实验已获限定独审并进入main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -16,15 +16,15 @@
 | 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；host后继入口 d37981b06ec70b9f9e6254b66e0a1b69d7555dc1 |
 | 工作树dirty状态 | 固定d379入口及e5产物不变；本次只封实际结果/状态，提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 实现目标 | d37981b06ec70b9f9e6254b66e0a1b69d7555dc1 |
 | 实现范围 | docs/evidence/svc06/artifact-host-followup/entry.mjs, docs/evidence/svc06/artifact-host-followup/supervise.py, docs/evidence/svc06/artifact-host-followup/clone-artifact.py, docs/evidence/svc06/artifact-host-followup/inputs.json, docs/evidence/svc06/artifact-host-followup/service-boundary.mjs, docs/evidence/svc06/artifact-host-followup/role-bootstrap.mjs |
 | 检查状态 | PASSED d37981b06ec70b9f9e6254b66e0a1b69d7555dc1；一次零任务三宿主/拒读实验与独立清理已获限定独审；原e6ff FAILED保持 |
-| 已集成main状态 / HEAD | 构建及原结果已main/origin56672e7effec85792366beeacd724976646c50c8；本次真实结果已审，待受控接收；不追逐无关metadata主线 |
+| 已集成main状态 / HEAD | INTEGRATED a040a364d426f4f8583fbfc67e5922077ba1f9ac；本实验30固定源/结果绑定逐字相同，[main回执](../../docs/evidence/svc06/artifact-host-followup/main-receipt.json)；不追逐无关metadata主线 |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 固定产物的独立目录运行与开发目录隔离已通过验证和独立审查，所有验证进程与数据库已正常收尾。 |
-| 下一可用交付 | 接收本次零任务宿主证据；新版网页宿主产物由原后继继续准备。 |
+| 下一可用交付 | 本实验已交付；新版网页宿主产物由SVC08继续准备，完整部署验收另列。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | APPROVED_FIXED_ZERO_TASK_HOST_RESULT；结果target c59c29e797a8d07081a1f84d9f922bcc8163d4dc，30fixed/17private/10原件，无blocking；默认部署/个人验收不扩大 |
@@ -35,8 +35,8 @@
 | --- | --- | --- | --- |
 | SVC06-01 | completed | Execution Lead | plan / source-observation / claim |
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
-| SVC06-03 | in-progress | assignment_review | 真实完整artifact构建/import已审；新root三host/拒读实验已通过待审，默认部署链不扩大 |
-| SVC06-04 | in-progress | assignment_review / 独立reviewer | 局部检查/构建已审；一次真实host结果待独审，refresh/resume/旧数据后继open |
+| SVC06-03 | in-progress | assignment_review | 真实完整artifact构建/import已审；新root三host/拒读实验已限定批准并main，默认部署链不扩大 |
+| SVC06-04 | in-progress | assignment_review / 独立reviewer | 局部检查/构建已审；一次真实host结果已限定批准并main，refresh/resume/旧数据后继open |
 | SVC06-05 | pending | 独立operator | 无个人操作许可 |
 
 ## 依赖闭包后继（2026-10-06 14:41 UTC）
@@ -166,3 +166,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 04:40:09 UTC：真实结果限定批准
 
 [唯一独审原件](../../docs/evidence/svc06/artifact-host-followup/result-independent-review.json)：Execution Lead于2026-10-07T04:38:50.337581+00:00核30fixed/current、17private身份/hash和10原件复制，APPROVED_FIXED_ZERO_TASK_HOST_RESULT，无blocking/0重跑。本次integration，不含默认部署、refresh/resume、旧数据/App或个人更新；Web显式stop诊断exit1与旧失败保持。03/04/05不因本限定结果整体勾完。
+
+## 2026-10-07T04:45:56.833930+00:00：本实验主线收口
+
+[唯一main回执](../../docs/evidence/svc06/artifact-host-followup/main-receipt.json)核30固定源/结果与main逐字相同。本片delivered；03/04/05整体仍open，Web显式stop的exit1、旧首FAIL/后续cleanup、原e5及自有副本全部保留。本次只metadata，无新运行或个人采样。
