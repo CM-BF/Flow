@@ -21,7 +21,7 @@ function input() {
     expectedBackendArtifact: backend, expectedWebHostArtifact: backend, expectedSource: { head: backend.sourceHead, dirty: false }, artifact, context, reportIds: reports,
     retainedArtifacts, expectedRelease: release, privateFiles: Object.fromEntries(files.map(name => [name, { ...identity, bytes: 2, sha256: sha('{}') }])),
     installationIdentity: identity, sourceIdentity: identity, processDigests: Object.fromEntries(roles.map(role => [role, 'a'.repeat(64)])), ports: { center: 61227, web: 61228 },
-    finalReceipt: { path: '/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once/final.json', bytes: 2, sha256: 'a'.repeat(64) },
+    finalReceipt: { path: '/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/final.json', bytes: 2, sha256: 'a'.repeat(64) },
     artifactFiles: 10, assetBytes: 1700569, manifestBytes: 1651, releaseId: '52a261e294324a11aead58a554f547db',
     budget: { freshBytes: 3 * 1024 ** 3, liveBytes: 1024 ** 3, addedBytes: 512 * 1024 ** 2, rawBytes: 2 * 1024 ** 2 } };
 }
@@ -112,8 +112,10 @@ test('producer canonical actual publish refuses the legacy digest before public 
   });
 });
 test('continuation receipt path accepts only the new fixed successful predecessor', () => {
-  assert.equal(validateInput(input()).finalReceipt.path, '/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once/final.json');
+  assert.equal(validateInput(input()).finalReceipt.path, '/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/final.json');
   const old = input(); old.finalReceipt.path = '/private/tmp/flow-svc06-held-recovery-e15-20261007-once/final.json';
+  assert.throws(() => validateInput(old));
+  old.finalReceipt.path = '/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once/final.json';
   assert.throws(() => validateInput(old));
 });
 test('actual output creation accepts system sticky parent and refuses namespace reuse', async () => {

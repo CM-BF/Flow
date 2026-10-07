@@ -47,7 +47,7 @@ export function validateInput(input) {
   for (const value of [input.installationIdentity, input.sourceIdentity]) identity(value);
   assert.deepEqual(Object.keys(input.processDigests).sort(), roles); Object.values(input.processDigests).forEach(hash);
   assert.deepEqual(input.ports, { center: 61227, web: 61228 });
-  assert.equal(input.finalReceipt.path, '/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once/final.json');
+  assert.equal(input.finalReceipt.path, '/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/final.json');
   hash(input.finalReceipt.sha256); assert.ok(input.finalReceipt.bytes > 0 && input.finalReceipt.bytes <= 65536);
   assert.equal(input.artifactFiles, 10); assert.equal(input.assetBytes, 1700569); assert.equal(input.manifestBytes, 1651);
   assert.equal(input.releaseId, '52a261e294324a11aead58a554f547db');
