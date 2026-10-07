@@ -2,9 +2,11 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 00:17 UTC |
+| 最近更新 | 2026-10-07 00:18 UTC |
 | Plan | [plan.md](plan.md) |
-| 所属大task | [REQ-10：版本化知识与授权一致的混合检索](../flow-001-architecture/full-plan-matrix.md) |
+| 任务层级 | 大task |
+| 大task ID | [K01](plan.md) |
+| 需求来源 | [REQ-10 §9：版本化知识与授权一致的混合检索](../flow-001-architecture/full-plan-matrix.md) |
 | co-lead | mika |
 | 当前claim / scope | 4be228e2-64f8-46e6-94a8-aa7eb867d730 v1 ACTIVE；仅docs/evidence/k01、plans/k01-knowledge-sources |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
@@ -67,3 +69,5 @@
 2026-10-07 00:16 UTC：当前固定规划target fd02eb63d0e01d51c390dc5dcf5df8078a6f0063 包含满额安全release、不可复用pin实例ID，以及release掉ACK/迟到重放不得误作用于新pin的R12验收；flow.commands生命周期不在本片有界证明范围。单次dashboard读5秒超时，聚合UNKNOWN（retention-planning-dashboard.json），不重试或服务操作。唯一status已更新；新规划待db_transaction_owner独立只读文档review，不沿原产品批准。提交后停写规划源，claim4be228e2 v1保留。
 
 2026-10-07 00:17 UTC：规划独审DESIGN_REVIEW_APPROVED fd02eb63d0e01d51c390dc5dcf5df8078a6f0063，无P1/P2，回执retention-independent-review.json。批准只覆盖3文档；K01-08～10仍pending、产品检查NOT_RUN，flow.commands生命周期与具体schema/协商由后续合法owner在实施前审定。本次仅review/status记录，无重新读取聚合/工程检查；snapshot仍单次超时UNKNOWN。最终metadata提交/推送后停止本次规划全部写入，claim4be228e2 v1保留待Lead协调。
+
+2026-10-07 00:18 UTC：Mika报告其00:17:59实际snapshot已核本任务source live/current/nonstale、21db1fc2 clean、review approved fd02/unchanged、checks not_run、10个TODO对应、claim v1 matchesSource。聚合发现REQ-10不是独立registry task，本次只将层级改为既有K01大task、REQ-10移到需求来源，co-lead保持mika；不造平行计划，不改已审3文档。此记录为Mika提供的聚合事实，本owner未再次请求dashboard或运行工程检查；提交/push后停止本次全部写入，待Mika实际读回关系字段。
