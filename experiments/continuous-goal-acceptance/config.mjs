@@ -8,10 +8,16 @@ export const REQUIREMENT = Object.freeze({
   acceptance: '完整包含材料的项目、版本、草稿预览与未正式发布状态，说明简洁不超过120个汉字；保留草稿与最终稿，独立审阅后才接受。',
 });
 export const GRAPH_TOOLS = Object.freeze(['mcp__flow-graph__graph_command', 'mcp__flow-graph__graph_read']);
-// Fixed O10 observations, not plugin trust or permission to execute their tools.
-export const DECLARATIONS = Object.freeze({ model: 'claude-sonnet-5-5', runtimeVersion: '2.1.290',
+// Historical O10/O08 declarations remain provenance, not a policy for every environment.
+export const HISTORICAL_O10_DECLARATIONS = Object.freeze({
   plugins: Object.freeze(['cc-plugin-agents-md', 'cc-plugin-telemetry', 'cc-plugin-plugin-authoring']),
   skills: Object.freeze(['design', 'doctor', 'plugin-authoring']) });
+// Exact private recipe projection from native-plan-20261007-1018/observed-init.json.
+// These names convey no execution permission; model/tools/MCP/host grants stay separate.
+export const DECLARATIONS = Object.freeze({ policy: 'o16-private-recipe-20261007-1018',
+  model: 'claude-sonnet-5-5', runtimeVersion: '2.1.290',
+  plugins: Object.freeze(['cc-plugin-agents-md', 'cc-plugin-plugin-authoring']),
+  skills: Object.freeze(['doctor', 'plugin-authoring']) });
 export function graphScope(baseRevision) {
   return { baseRevision, allowedExistingNodes: [], maxProposals: 1, maxApplications: 0, maxNewNodes: 2, maxNewEdges: 1,
     inputProposalProtocol: 'flow.goal-input-proposal.v1' };

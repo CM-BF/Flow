@@ -1,6 +1,6 @@
 import { test } from 'node:test';
 import assert from 'node:assert/strict';
-import { DECLARATIONS, GRAPH_TOOLS, MATERIAL } from './config.mjs';
+import { DECLARATIONS, HISTORICAL_O10_DECLARATIONS, GRAPH_TOOLS, MATERIAL } from './config.mjs';
 import { createQueryObservation } from './query-policy.mjs';
 function init(phase = 'children') { return { type: 'system', subtype: 'init', session_id: 'session', model: DECLARATIONS.model,
   permissionMode: 'dontAsk', tools: phase === 'plan' ? GRAPH_TOOLS : ['Read'], plugins: DECLARATIONS.plugins.map(name => ({ name })),
@@ -30,4 +30,26 @@ test('planner evidence only admits the two registered graph tools and keeps sema
   const observed = createQueryObservation('plan'); observed.frame(init('plan')); observed.frame(result());
   const facts = observed.finish(); assert.equal(facts.semanticAcceptance, 'not-evaluated'); assert.equal(facts.toolExecutionEvidence, 'center-audit-required');
   assert.throws(() => createQueryObservation('plan').frame(init('children')));
+});
+
+
+test('O16 repair: exact private recipe declarations pass while O10 stays historical', () => {
+  const observed = createQueryObservation('plan'); observed.frame(init('plan'));
+  assert.deepEqual(observed.snapshot().effective.plugins, ['cc-plugin-agents-md', 'cc-plugin-plugin-authoring']);
+  assert.deepEqual(observed.snapshot().effective.skills, ['doctor', 'plugin-authoring']);
+  assert.equal(observed.snapshot().declarationPolicy, 'o16-private-recipe-20261007-1018');
+  assert.deepEqual(HISTORICAL_O10_DECLARATIONS.plugins, ['cc-plugin-agents-md', 'cc-plugin-telemetry', 'cc-plugin-plugin-authoring']);
+  assert.deepEqual(HISTORICAL_O10_DECLARATIONS.skills, ['design', 'doctor', 'plugin-authoring']);
+  assert.equal(observed.snapshot().result, null); // Init is neither actual-model qualification nor usage.
+});
+test('O16 repair: private declaration metadata never widens executable authority or accepts conflicts', () => {
+  for (const mutate of [e => e.plugins.push({ name: 'unknown' }), e => e.skills.push('unknown'),
+    e => e.plugins.push({ name: e.plugins[0].name }), e => e.skills.push(e.skills[0]), e => delete e.plugins,
+    e => e.skills = [], e => e.model = 'other', e => e.claude_code_version = 'other',
+    e => e.tools = ['Bash'], e => e.mcp_servers[0].source = 'external', e => e.permissionMode = 'bypassPermissions']) {
+    const observed = createQueryObservation('plan'), event = structuredClone(init('plan')); mutate(event);
+    assert.throws(() => observed.frame(event)); assert.equal(observed.snapshot().failure, 'observation-rejected');
+  }
+  const observed = createQueryObservation('plan'); observed.frame(init('plan'));
+  assert.throws(() => observed.frame({ ...init('plan'), session_id: 'conflicting-session' }));
 });
