@@ -1,0 +1,34 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-readonly-tool-host[39m
+
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority.test.ts[2m > [22mreal R06 factory closes the inherited regular FD and holds the sandboxed writer handle
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority.test.ts[2m > [22mstock helper preparation freezes one request and reports only observed bytes, never revoked
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority.test.ts[2m > [22mstock helper changed target and aborted handoff consume the one launch
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority.test.ts[2m > [22mstock helper preparation rejects broad writes and nonprivate state before issuing a spec
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority.test.ts[2m > [22mchanged target identity rejects before transport; wrong executable digest is rejected
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority.test.ts[2m > [22mclosing an unused host permanently prevents launch
+ [32m✓[39m apps/runner/src/engineering/native-authority.test.ts[2m > [22mENG01L real read-only factory binds stock app-server and private environment through mocked R06 only[32m 187[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-authority.test.ts[2m > [22mENG01L profile replacement and repeated prepare preserve original control evidence and reject launch[32m 275[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-authority.test.ts[2m > [22mENG01L bounded private stderr rejects excessive capture before creating a policy[32m 1[2mms[22m[39m
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority.test.ts[2m > [22mENG01L changed private directory consumes launch without calling R06
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority.test.ts[2m > [22mENG01L close before launch and invalid private runtime cannot start stock
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-host.test.ts[2m > [22mENG01L composes the real private file with the existing exchange and injected readonly transport
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-host.test.ts[2m > [22mENG01L rejects stale initial ownership without opening a target or native host
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-host.test.ts[2m > [22mENG01L cancellation after native preparation closes it without acquiring the write FD
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-host.test.ts[2m > [22mENG01L ownership lost after opening the target closes both partial resources
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-host.test.ts[2m > [22mENG01L wrong target and FD close failure retain a preparation error with unknown cleanup
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-host.test.ts[2m > [22mENG01L late ownership cannot write after close has sealed admission
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-host.test.ts[2m > [22mENG01L confirmed child close does not settle held file write or FD close
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-host.test.ts[2m > [22mENG01L cancelled close keeps unknown and retains the real pending drain exactly once
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-host.test.ts[2m > [22mENG01L native close failure stays separate while the host FD still closes
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-tool-host.test.ts[2m > [22mENG01L freezes binding before asynchronous preparation and refuses a changed launch cwd
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority-darwin.test.ts[2m > [22mpolicy input rejects noncanonical and executable write aliases
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority-darwin.test.ts[2m > [22mENG01L read-only profile removes exactly the helper workspace write without widening startup resources
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority-darwin.test.ts[2m > [22mstock helper policy separates runtime writes from the single existing workspace file
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority-darwin.test.ts[2m > [22mstock helper policy rejects altered recipes, overlap, path escapes and control characters
+
+[2m Test Files [22m [1m[32m1 passed[39m[22m[2m | [22m[33m2 skipped[39m[90m (3)[39m
+[2m      Tests [22m [1m[32m3 passed[39m[22m[2m | [22m[33m22 skipped[39m[90m (25)[39m
+[2m   Start at [22m 00:48:19
+[2m   Duration [22m 854ms[2m (transform 108ms, setup 0ms, import 212ms, tests 464ms, environment 0ms)[22m
+

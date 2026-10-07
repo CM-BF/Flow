@@ -13,7 +13,7 @@ def save(path,value):
  try:os.fsync(fd)
  finally:os.close(fd)
 def main(mode,round_id,*selection):
- assert mode in ('tests','types') and round_id.isdigit() and len(round_id)==2
+ assert mode in ('tests','types','caller-types') and round_id.isdigit() and len(round_id)==2
  start=time.monotonic();signal.signal(signal.SIGALRM,lambda *_:os._exit(124));signal.setitimer(signal.ITIMER_REAL,45)
  out=HERE/('round-'+round_id);out.mkdir()
  prior=[json.loads(p.read_text()) for p in HERE.glob('round-*/result.json')]
@@ -26,10 +26,11 @@ def main(mode,round_id,*selection):
  assert hashlib.sha256(SUPERVISOR.read_bytes()).hexdigest()=='725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d'
  scratch=Path(tempfile.mkdtemp(prefix='eng01l-local-',dir='/private/tmp'));identity=scratch.stat()
  env={'PATH':'/usr/bin:/bin','HOME':str(scratch),'TMPDIR':str(scratch),'NODE_DISABLE_COMPILE_CACHE':'1','PYTHONDONTWRITEBYTECODE':'1','FLOW_ENG01L_CACHE':str(scratch/'cache'),'FLOW_ENG01L_TMP':str(scratch),'FLOW_ENG01L_PREPARE':'1'}
- command=[NODE,str(I02/'node_modules/vitest/vitest.mjs'),'run','--config',str(HERE/'vitest.config.mjs'),'--reporter=verbose'] if mode=='tests' else [NODE,str(I02/'node_modules/typescript/lib/tsc.js'),'-p',str(HERE/'tsconfig.json')]
+ command=[NODE,str(I02/'node_modules/vitest/vitest.mjs'),'run','--config',str(HERE/'vitest.config.mjs'),'--reporter=verbose'] if mode=='tests' else [NODE,str(I02/'node_modules/typescript/lib/tsc.js'),'-p',str(HERE.parent/'stock-initialize/tsconfig.json' if mode=='caller-types' else HERE/'tsconfig.json')]
  if selection:assert mode=='tests' and len(selection)==1;command+=['-t',selection[0]]
  sources=[ROOT/('apps/runner/src/engineering/'+p) for p in ('native-authority.ts','native-authority.test.ts','native-authority-darwin.ts','native-authority-darwin.test.ts','native-tool-host.ts','native-tool-host.test.ts')]
  sources += [ROOT/'apps/runner/src/native-harness/codex/exchange.ts',ROOT/'docs/evidence/eng01j/helper-host/startup-input.sb']
+ if mode=='caller-types': sources += [HERE.parent/'stock-initialize/driver.ts',HERE.parent/'stock-initialize/run.py',HERE.parent/'stock-initialize/tsconfig.json']
  sources += [Path(__file__).resolve(),HERE/'vitest.config.mjs',HERE/'tsconfig.json',SUPERVISOR]
  save(out/'reservation.json',{'startedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scratch':str(scratch),'dev':identity.st_dev,'ino':identity.st_ino,'freeBytes':free,'priorMs':used,'mode':mode,'command':command,'sources':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},'provider':0,'PG':0})
  spec=importlib.util.spec_from_file_location('eng01l_supervisor',SUPERVISOR);module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)

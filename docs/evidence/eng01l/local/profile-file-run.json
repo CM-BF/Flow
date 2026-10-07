@@ -1,0 +1,170 @@
+{
+  "kind": "ENG01L_ACTUAL_OPTIONS_GUARD_DELTA",
+  "source": "574a2e31b8eb583a0d44a1a3eafd739784963681",
+  "rounds": [
+    {
+      "round": "03",
+      "reservation": {
+        "startedAt": "2026-10-07T07:48:19.071722+00:00",
+        "scratch": "/private/tmp/eng01l-local-d6qrhef5",
+        "dev": 16777234,
+        "ino": 123639411,
+        "freeBytes": 24209920000,
+        "priorMs": 2247,
+        "mode": "tests",
+        "command": [
+          "/opt/homebrew/opt/node@24/bin/node",
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/vitest/vitest.mjs",
+          "run",
+          "--config",
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-readonly-tool-host/docs/evidence/eng01l/local/vitest.config.mjs",
+          "--reporter=verbose",
+          "-t",
+          "ENG01L (real read-only factory|profile replacement|bounded private stderr)"
+        ],
+        "sources": {
+          "apps/runner/src/engineering/native-authority.ts": "c2cf7dc6fef0c5fe86472d69f13ea84584b5688e53929d63e96723e3f5f0ba81",
+          "apps/runner/src/engineering/native-authority.test.ts": "78c84a9d0b9e149ef77ae0a9318fdf634ad6359ee6899899db9b641b3ddfae69",
+          "apps/runner/src/engineering/native-authority-darwin.ts": "22fa41b44d9793657663655b14e5f5a2657a6dace8d50b98c436904dc4d27148",
+          "apps/runner/src/engineering/native-authority-darwin.test.ts": "7693ae59ac077bc016295538d1c08f53c242bd4c3a58bcf0aca6186eb8d031c3",
+          "apps/runner/src/engineering/native-tool-host.ts": "a043fdf9f1cc31c09c07fe59ef344337720ba15a2a0a05a43fbab70171d6c71a",
+          "apps/runner/src/engineering/native-tool-host.test.ts": "cf700562b7c50d3a930032b98867e82b84ffce02fc0c7e872688dfcb4d76dd81",
+          "apps/runner/src/native-harness/codex/exchange.ts": "b98319adecafb5a3f8653df0f14844f44d8a40714060a624e3316a264f77f98a",
+          "docs/evidence/eng01j/helper-host/startup-input.sb": "ba856d7949bd2d305789995058e4b11edc4df16eb1504d67c3b160a2821b77cf",
+          "docs/evidence/eng01l/local/run.py": "50d4f3f4a055355e98120d991767a2c33fcc5d1b322b233c93d199ed3f9dec18",
+          "docs/evidence/eng01l/local/vitest.config.mjs": "28401525a6a27237814d8620a9a443a51b2e7f1a5a17d95633a0f5ff0644ff00",
+          "docs/evidence/eng01l/local/tsconfig.json": "255fa5637994433ff5ffecaaefc5a131d3f8e4a7793311a228dfb3f7c637b8c9",
+          "tools/owned-process-supervision/supervise.py": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+        },
+        "provider": 0,
+        "PG": 0
+      },
+      "result": {
+        "pid": 66896,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 1163,
+        "observed_bytes": 4806,
+        "retained_bytes": 4806,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "mode": "tests",
+        "privateBytes": 53957,
+        "rawBytes": 4806,
+        "cleanupReady": true,
+        "removed": true,
+        "elapsedMs": 1334,
+        "finishedAt": "2026-10-07T07:48:20.265979+00:00"
+      },
+      "outerToolExit": 0
+    },
+    {
+      "round": "04",
+      "reservation": {
+        "startedAt": "2026-10-07T07:48:20.416875+00:00",
+        "scratch": "/private/tmp/eng01l-local-wxoz7odc",
+        "dev": 16777234,
+        "ino": 123639440,
+        "freeBytes": 24210137088,
+        "priorMs": 3581,
+        "mode": "types",
+        "command": [
+          "/opt/homebrew/opt/node@24/bin/node",
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/lib/tsc.js",
+          "-p",
+          "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-readonly-tool-host/docs/evidence/eng01l/local/tsconfig.json"
+        ],
+        "sources": {
+          "apps/runner/src/engineering/native-authority.ts": "c2cf7dc6fef0c5fe86472d69f13ea84584b5688e53929d63e96723e3f5f0ba81",
+          "apps/runner/src/engineering/native-authority.test.ts": "78c84a9d0b9e149ef77ae0a9318fdf634ad6359ee6899899db9b641b3ddfae69",
+          "apps/runner/src/engineering/native-authority-darwin.ts": "22fa41b44d9793657663655b14e5f5a2657a6dace8d50b98c436904dc4d27148",
+          "apps/runner/src/engineering/native-authority-darwin.test.ts": "7693ae59ac077bc016295538d1c08f53c242bd4c3a58bcf0aca6186eb8d031c3",
+          "apps/runner/src/engineering/native-tool-host.ts": "a043fdf9f1cc31c09c07fe59ef344337720ba15a2a0a05a43fbab70171d6c71a",
+          "apps/runner/src/engineering/native-tool-host.test.ts": "cf700562b7c50d3a930032b98867e82b84ffce02fc0c7e872688dfcb4d76dd81",
+          "apps/runner/src/native-harness/codex/exchange.ts": "b98319adecafb5a3f8653df0f14844f44d8a40714060a624e3316a264f77f98a",
+          "docs/evidence/eng01j/helper-host/startup-input.sb": "ba856d7949bd2d305789995058e4b11edc4df16eb1504d67c3b160a2821b77cf",
+          "docs/evidence/eng01l/local/run.py": "50d4f3f4a055355e98120d991767a2c33fcc5d1b322b233c93d199ed3f9dec18",
+          "docs/evidence/eng01l/local/vitest.config.mjs": "28401525a6a27237814d8620a9a443a51b2e7f1a5a17d95633a0f5ff0644ff00",
+          "docs/evidence/eng01l/local/tsconfig.json": "255fa5637994433ff5ffecaaefc5a131d3f8e4a7793311a228dfb3f7c637b8c9",
+          "tools/owned-process-supervision/supervise.py": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+        },
+        "provider": 0,
+        "PG": 0
+      },
+      "result": {
+        "pid": 68519,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 864,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "mode": "types",
+        "privateBytes": 0,
+        "rawBytes": 0,
+        "cleanupReady": true,
+        "removed": true,
+        "elapsedMs": 981,
+        "finishedAt": "2026-10-07T07:48:21.291343+00:00"
+      },
+      "outerToolExit": 0
+    }
+  ],
+  "selected": 3,
+  "passed": 3,
+  "unselected": 22,
+  "newDistinct": 2,
+  "overlapWithOriginal16": 1,
+  "allDistinctAcrossRounds": 18,
+  "focusedTypesExit": 0,
+  "newCallerElapsedMs": 2315,
+  "newRawBytes": 4806,
+  "original16Unchanged": true,
+  "stock": 0,
+  "provider": 0,
+  "PG": 0,
+  "returnedAt": "2026-10-07T07:48:21.291343+00:00"
+}
