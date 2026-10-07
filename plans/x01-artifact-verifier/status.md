@@ -56,3 +56,5 @@
 设计初审14:42:49为CHANGES_REQUESTED/1P2；本次新段14:44:00–14:52:00仅修文档，完成矩阵及两项实施前约束已修，待独立增量审，不自称已关闭。source/product/工程运行均0；旧设计包与审查历史保留。
 
 设计窄修交付 2026-10-07T14:46:20.059Z：target bc5b68a0e4e93e50f9258dd617262263d8db3c1f；入口[design-delta-review-ready.json](../../docs/evidence/x01-artifact-verifier/design-delta-review-ready.json)。metadata形状复核errors/humanMissing/timingIssues均空。push后STOP，保留doc claim；0工程/PG/provider/待launch。
+
+本窄修段增量审派发 2026-10-07T14:46:41.341Z：一次followup被thread limit拒绝，未启动审查，不重试；见design-delta-review-dispatch.json。P2是否关闭仍待独审。仅归档此事实后STOP/FINAL腾槽。
