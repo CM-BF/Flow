@@ -6,9 +6,11 @@
 
 - [x] **ENG01I-01** fresh claim、技能与首Interface。
 - [x] **ENG01I-02** 同authority停止事实→完整capture→公开收据的宿主编排；F复用公开wire。
-- [ ] **ENG01I-03** 原两个直接消费者/JSON兼容，真实Git+PG/runtime/outbox及未知/重启局部验证。
+- [x] **ENG01I-03** 原两个直接消费者/JSON兼容，真实Git+PG/runtime/outbox及未知/重启局部验证。
 - [ ] **ENG01I-04** 固定证据、独立review与main接收。
 
 Interface及资源/错误边界见[证据](../../docs/evidence/eng01i/interface.md)。实际Node/Codex资格预检归Mika，不新增模型/个人服务/启动入口。
 
 2026-10-06 12:59：按新的用户收益优先级暂缓本片，产品尚未修改；接口保留，恢复时重新领取scope，不等待Mika期间预占。
+
+2026-10-07T04:56:21.047231+00:00：模块、局部28different及实际公共PG2/2（18未选）均已独立限域批准；30different分轮，原失败保留。04仍等main接收，不将真实模型/OS authority/生产入口验收算完成。

@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-07T04:54:15.896589+00:00",
+  "reviewer": "astra_ultra_execution_lead",
+  "conclusion": "APPROVED_FIXED_ZERO_PROVIDER_PG_RESULT",
+  "source": "c3d29e4a36af74380565922fbb838ebec1bf7afc",
+  "delivery": "b61209bc9b34cc0d527dfca371305bdc5cd2d940",
+  "manifestSha256": "90070a07fb4ea1484fbf7d9cf1b36b9320608ffa49fd604075746b69edcd5467",
+  "verified": {
+    "fixedAndCurrentBindings": 295,
+    "product": 4,
+    "protected": 257,
+    "runEvidence": 34,
+    "installedEntriesAndPackageMetadata": 10,
+    "errors": []
+  },
+  "inheritedReview": {
+    "path": "/tmp/flow-eng01i-final-independent-review.json",
+    "sha256": "e8bea16e67eeb10bcc09613d324c20545a32cf5f50a24ce1959e38ba75912dcc",
+    "conclusion": "APPROVED_MODULE_LOCAL_AND_PG_PREPARATION",
+    "closedFindings": 3
+  },
+  "actual": {
+    "selected": 2,
+    "passed": 2,
+    "unselected": 18,
+    "supervisedMilliseconds": 3829,
+    "stdoutBytes": 594,
+    "stderrBytes": 0,
+    "finalOwnedGroup": "absent",
+    "fullEOF": true,
+    "databaseOid": "1214681",
+    "checkpointAt": "2026-10-07T04:50:46.973Z",
+    "databaseBytes": 12516375,
+    "databaseConnections": [],
+    "normalDropAbsentAt": "2026-10-07T04:50:47.025Z",
+    "temporaryRemovedAt": "2026-10-07T04:50:47.092199+00:00",
+    "cleanupErrors": []
+  },
+  "observations": [
+    "Success: one writer open/close, two complete snapshots, one release, public succeeded/verification passed",
+    "Lost artifact ACK: same exact batch replay twice, one attempt/one committed artifact, no second writer, verification pending and lease retained",
+    "Both runs use real HTTP/PG/runtime/outbox with a controlled Node JSONL peer and injected authority",
+    "Initial group observation EPERM retained; resolved final observations absent under approved OPS14 semantics"
+  ],
+  "scope": "Accept composition and public receipt/recovery only. Does not prove actual provider/model qualification, enforced native write authority, all real native writers stopped, production registration or full engineering acceptance.",
+  "findings": [],
+  "reviewerTests": 0,
+  "providerCalls": 0
+}
