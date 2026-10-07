@@ -59,7 +59,11 @@ async function peer() {
 it.each([undefined, true])('keeps actual runtime legacy when opt-in is %s and the old center is explicit', async enabled => {
   const api = await peer(); api.support(() => Response.json({}, { status: 404 }));
   let called = 0;
-  const running = api.start(async context => { called++; expect(context.activityBodies).toBeUndefined(); running.stop.abort(); }, enabled);
+  const running = api.start(async context => {
+    called++; expect(context.activityBodies).toBeUndefined();
+    expect(()=>context.emit({type:'native-activity-body',protocol:'native-activity-body-v1',action:'seal',activityId:'a'.repeat(64),nativeSessionId:'session',bytes:0,sha256:'b'.repeat(64)})).toThrow('runtime');
+    running.stop.abort();
+  }, enabled);
   await running.promise; expect(called).toBe(1); expect(api.claims()).toBe(1);
   expect(api.paths.filter(path => path.includes('body-support'))).toHaveLength(enabled ? 1 : 0);
   expect(api.batches.flatMap(batch => batch.events).some(event => event.type === 'native-activity-body')).toBe(false);

@@ -1,0 +1,75 @@
+{
+  "name": "direct",
+  "startedAt": "2026-10-07T07:27:18.758368+00:00",
+  "freeBefore": 24166879232,
+  "requiredFree": 1092616192,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/chat05p02/direct.config.mjs"
+  ],
+  "supervision": {
+    "pid": 11453,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 1,
+    "elapsed_ms": 1573,
+    "observed_bytes": 3595,
+    "retained_bytes": 3595,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "rawBytes": 3595,
+  "finishedAt": "2026-10-07T07:27:20.331632+00:00",
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123625727
+  },
+  "finalSample": {
+    "bytes": 499,
+    "files": [
+      {
+        "path": "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709/results.json",
+        "bytes": 499,
+        "dev": 16777234,
+        "ino": 123625948
+      }
+    ],
+    "directories": [
+      "vite",
+      "vite/vitest",
+      "vite/vitest/da39a3ee5e6b4b0d3255bfef95601890afd80709"
+    ],
+    "free": 24166518784,
+    "sampleOnly": true
+  },
+  "status": "FAILED_OR_UNKNOWN"
+}

@@ -24,6 +24,8 @@ COMMANDS = {
     'wiring': [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', 'docs/evidence/chat05p02/local.config.mjs', '-t', 'public FlowClient|public client original|actual runtime legacy|blocks new claims|admitted attempt unresolved|retains body envelopes'],
     'concurrency': [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', 'docs/evidence/chat05p02/local.config.mjs', '-t', 'unqualified multi-attempt'],
     'direct': [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', 'docs/evidence/chat05p02/direct.config.mjs'],
+    'deadline': [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', 'docs/evidence/chat05p02/direct.config.mjs', '-t', 'uses the original request deadline'],
+    'host': [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', 'docs/evidence/chat05p02/local.config.mjs', 'apps/runner/src/native-activity-body/host-production.test.ts', '-t', 'actual runtime legacy|blocks new claims|admitted attempt unresolved|retains body envelopes'],
 }
 
 def now(): return datetime.now(timezone.utc).isoformat()

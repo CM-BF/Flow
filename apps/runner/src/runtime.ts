@@ -89,7 +89,8 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
         }
         if (active.size >= (options.maxConcurrentAttempts ?? 1)) { await wakeup.wait(); continue; }
         // Unknown confirmation is outside execute's failed-settlement catch and before any new claim.
-        const publishBodies = await bodies.beforeAdmission(options.nativeActivityBodies === true, runnerId, requestSignal(options));
+        const publishBodies = options.nativeActivityBodies === true
+          ? await bodies.beforeAdmission(true, runnerId, requestSignal(options)) : false;
         const opportunity = journal.opportunity;
         if (!opportunity) throw new AdmissionStorageError(new Error('No runner-bound opportunity exists.'));
         if (options.signal.aborted || recoveryPending) continue;
@@ -128,8 +129,9 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
 
 async function recover(directory: string, client: FlowClient, options: RunnerOptions, journal: AdmissionJournal, bodies: NativeActivityBodyHost, runnerId: string) {
   await replayPending(directory, async batch => {
-    await bodies.beforeReport(batch, runnerId, requestSignal(options));
-    await reportBatch(client, batch, requestSignal(options));
+    const signal = requestSignal(options);
+    await bodies.beforeReport(batch, runnerId, signal);
+    await reportBatch(client, batch, signal);
     if (batch.events.some(event => event.type === 'completed')) await journal.complete(batch);
   }, attemptId => options.onNotice?.({ type: 'events-retained', attemptId }));
   for (const entry of await readdir(directory, { withFileTypes: true })) {
@@ -186,8 +188,9 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
   const control = new AttemptControl(assignment, client, options, initialLease);
   const outbox = new EventOutbox(directory, ownership, async batch => {
     try {
-      await bodies.beforeReport(batch, assignment.attempt.runnerId, requestSignal(options));
-      await reportBatch(client, batch, requestSignal(options));
+      const signal = requestSignal(options);
+      await bodies.beforeReport(batch, assignment.attempt.runnerId, signal);
+      await reportBatch(client, batch, signal);
     }
     catch (error) { control.interrupt('lost'); throw error; }
   });
@@ -200,7 +203,7 @@ async function execute(assignment: ClaimedTask, client: FlowClient, adapters: Ha
   const context: HarnessContext = {
     task: assignment.task, workingDirectory: directory, signal: control.signal,
     emit(data) {
-      if (data.type === 'completed' || data.type === 'decision') throw new Error('Lifecycle events belong to the runner runtime.');
+      if (data.type === 'completed' || data.type === 'decision' || data.type === 'native-activity-body') throw new Error('Lifecycle and body transport events belong to the runner runtime.');
       return emit(data);
     },
     assertOwnership: () => control.assertOwnership(),
