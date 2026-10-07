@@ -15,7 +15,7 @@ function Sample({ sample }: { sample: ContextHistorySample }) {
   const { observation, materials } = sample, { identity } = observation;
   return <>
     <p className="text-sm font-medium">{observation.used.kind !== "unknown" || observation.compactionWindow.kind !== "unknown" ? "Last observed · estimate" : "Last observation · values unknown"}</p>
-    <p className="text-sm">Observed model: {identity.resolvedModel ?? "unknown"} · <time dateTime={observation.observedAt}>{new Date(observation.observedAt).toLocaleString()}</time></p>
+    <p className="min-w-0 break-words text-sm [overflow-wrap:anywhere]">Observed model: {identity.resolvedModel ?? "unknown"} · <time dateTime={observation.observedAt}>{new Date(observation.observedAt).toLocaleString()}</time></p>
     <dl className="grid gap-4 text-sm sm:grid-cols-2">
       <Reading name="Last observed use" reading={observation.used} />
       <Reading name="Strategy-window estimate" reading={observation.compactionWindow} />
@@ -74,7 +74,7 @@ export function ContextHistoryDialog({ controller }: { controller: ContextHistor
       {state.history && !state.history.latest && <p className="text-sm">{state.history.attemptId === null ? "No current execution attempt was reported." : "No observation was reported for this attempt."} This is not a zero-token reading.</p>}
       {state.history?.latest && <><Sample sample={state.history.latest} />
         <button type="button" className="justify-self-start rounded-md border px-3 py-2 text-sm" aria-disabled={state.pending || state.detail !== null} onClick={() => { if (!state.pending) void controller.readDetail(); }}>Read observation detail</button>
-        {state.detail && <section aria-label="Observation detail" className="min-w-0"><h3 className="font-medium">{state.detail.title}</h3><pre className="mt-2 whitespace-pre-wrap break-words [overflow-wrap:anywhere] text-xs">{state.detail.content}</pre></section>}
+        {state.detail && <section aria-label="Observation detail" className="min-w-0"><h3 className="break-words font-medium [overflow-wrap:anywhere]">{state.detail.title}</h3><pre className="mt-2 whitespace-pre-wrap break-words [overflow-wrap:anywhere] text-xs">{state.detail.content}</pre></section>}
       </>}
     </DialogContent>
   </Dialog>;
