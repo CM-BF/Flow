@@ -1,0 +1,73 @@
+{
+  "kind": "X01_LOCAL_WORK_SEGMENT",
+  "startedAt": "2026-10-07T02:48:04.514592+00:00",
+  "executionHead": "3cd3f670c5ee19c00d3ef0f086c87af4110ed938",
+  "sourceCommit": "af2b926bc112cdf0c8f169a88671c610aeacc9ef",
+  "claimObservedAt": "2026-10-07T02:47:37.294Z",
+  "claimVersion": 8,
+  "attempt": 1,
+  "argv": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-B",
+    "docs/evidence/x01/enable-binding-ownership.test.py"
+  ],
+  "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+  "freeBeforeBytes": 26597015552,
+  "report": {
+    "pid": 19146,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 135,
+    "observed_bytes": 1232,
+    "retained_bytes": 1232,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "combinedOutput": {
+    "bytes": 1232,
+    "sha256": "43f40f74adea46aeff04e3895b68bea21087a3f049adb249e97efd6039ce3d5a",
+    "text": "test_business_failure_can_have_complete_raw_but_keeps_failure_and_exit (__main__.OwnershipConsumptionTests.test_business_failure_can_have_complete_raw_but_keeps_failure_and_exit) ... ok\ntest_confirmed_absence_preserves_historical_unknown_without_rejecting (__main__.OwnershipConsumptionTests.test_confirmed_absence_preserves_historical_unknown_without_rejecting) ... ok\ntest_final_unknown_or_present_is_never_complete (__main__.OwnershipConsumptionTests.test_final_unknown_or_present_is_never_complete) ... ok\ntest_first_supervision_failure_survives_final_absence (__main__.OwnershipConsumptionTests.test_first_supervision_failure_survives_final_absence) ... ok\ntest_missing_exit_eof_or_truncated_output_remains_unknown (__main__.OwnershipConsumptionTests.test_missing_exit_eof_or_truncated_output_remains_unknown) ... ok\ntest_secondary_failure_survives_a_business_failure_and_final_absence (__main__.OwnershipConsumptionTests.test_secondary_failure_survives_a_business_failure_and_final_absence) ... ok\ntest_signal_unknown_survives_final_absence (__main__.OwnershipConsumptionTests.test_signal_unknown_survives_final_absence) ... ok\n\n----------------------------------------------------------------------\nRan 7 tests in 0.000s\n\nOK\n"
+  },
+  "stderrBytes": 0,
+  "outputComplete": true,
+  "unknown": false,
+  "selected": 7,
+  "passed": 7,
+  "temporaryRootsCreated": [],
+  "testSpawnedChildren": 0,
+  "supervisedCheckProcesses": 1,
+  "PG": 0,
+  "tar": 0,
+  "Chrome": 0,
+  "provider": 0,
+  "limits": {
+    "checkSeconds": 5,
+    "segmentSeconds": 120,
+    "maxRuns": 3,
+    "perRunRawBytes": 8192,
+    "segmentRawBytes": 24576
+  },
+  "elapsedBeforePersistenceMs": 173.7633750308305,
+  "result": "PASS",
+  "oldStageAReopened": false
+}

@@ -53,3 +53,7 @@ local noEmit配置继承全部根选项，server consumer明确含真实index au
 ## 2026-10-07T02:40:42.525303+00:00 — OPS14历史与终态消费
 
 复用已读本地find-skills、codebase-design与sickn33 clean-code固定基线；bounded brainstorming已有明确授权，TDD只准备七组反例，遵守0执行。小纯函数将Report判定与监督/持久化分离，原记录全留，未复制平台组查询或监督循环。只移除observations作为永久失败来源；真实最终unknown、signal unknown、first/secondary监督失败和capture未知保持，既有持久化/checkpoint的sticky unknown不动。原ade4/034与旧结果、输入、deps全冻。新源码尚待独审，七组未跑；原Stage A已消费，后继需要独立namespace和输入绑定，未制造第二次OPEN。
+
+## 2026-10-07T02:49:08.448494+00:00 — 窄消费回归完成
+
+chatui01_owner独审确认报告终态/失败/审计职责分离，无P1/P2。复用原OPS14执行一个受监督Python进程，七组内存反例一次通过；未为每个命令生成新prep/批准链，单结构化记录保原输出。测试无子进程/TMP，源码无失败修订；旧HOLD不改绿，原17case/11tar仍未选。核未知不折成功、业务失败与raw完整性区分、两个时钟如实分列、实际local槽已direct handoff；无额外测试、类型检查或资源清理。

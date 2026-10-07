@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T02:40:42.525303+00:00 |
+| 最近更新时间 | 2026-10-07T02:49:08.448494+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -12,19 +12,19 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；产品ade4及支持源码d6f52c3a0db45eb69a57c68c54ff47423a8ccb79均仅源码静审，未main |
-| 工作树 dirty 状态 | 本段从a3b4ac88 clean开始；窄修源码已固定af2b926b，当前只补对应manifest/status/review，产品与旧raw不改；提交后clean |
+| 工作树 dirty 状态 | 执行前3cd3f670 clean；当前仅归档一次内存回归及metadata，源码af2/产品ade4/原Stage A证据未改；提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN strict/Vitest：唯一Stage A在OPS14 Git预检归属unknown/errno1后HOLD，selected/pass=null、0tar；17项仍为待选计划，没有工程检查通过声明 |
-| Review | PENDING af2b926b调用方增量源码独审；ade4与d6历史静审、91f86结果忠实性批准保留；新7组NOT_RUN |
+| 检查状态 | PASS 本次七组内存Report回归7/7，exit0/完整输出/最终absent；Stage A strict/Vitest17项与11tar仍NOT_RUN，旧HOLD原件保留 |
+| Review | APPROVED af2b926bc112cdf0c8f169a88671c610aeacc9ef SOURCE_REVIEW（chatui01_owner，02:42:07UTC，0P1/P2）；本次7组结果待只读接收，不产生Stage A OPEN |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
 | 实现目标 | af2b926bc112cdf0c8f169a88671c610aeacc9ef |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-validation-tsconfig.json, docs/evidence/x01/enable-binding-consumer-tsconfig.json, docs/evidence/x01/enable-binding-validation-vitest.config.mjs, docs/evidence/x01/enable-binding-check-once.py, docs/evidence/x01/enable-binding-launch.py, docs/evidence/x01/enable-binding-caller-ready.md, docs/evidence/x01/enable-binding-ownership.test.py |
 | 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已修正调用方对监督历史记录的误判，保留真实未知与失败；窄增量待独审，合同与包执行仍未开始 |
-| 下一可用交付 | 先独审并验证调用方七组内存反例，再准备新的受控合同与包执行窗口；原窗口与原失败证据保留 |
-| 当前阻塞 | ACTIVE: 共享监督Interface已澄清并有独立证据；本调用方增量尚待独审和局部槽准入，Stage A仍未OPEN，不复用旧预约或降低真实unknown门禁 |
+| 当前产出 | 调用方历史记录误判已修正并通过七组内存反例；合同与实际包执行尚未开始 |
+| 下一可用交付 | 在独立namespace绑定下一次受控合同与包执行输入；原窗口不复开，当前先固定本段结果供独审 |
+| 当前阻塞 | ACTIVE: Stage A后继实际包检查仍需新的namespace/输入绑定与Lead实质风险准入；当前局部槽已交C02，X01不并行实际运行 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -145,3 +145,5 @@
 2026-10-07 02:25:05 UTC：fresh账本02:25:05.513Z确认原claim v8 ACTIVE、17scope及身份未变。接收Mika于02:23:57Z对固定结果91f86b8df59e5ec623a533e2c13509da00217353的HOLD_RESULT_REVIEW_APPROVED/0 P1/P2；仅批准忠实性，Stage A仍未选择、未运行。15bindings/7347B manifest与原件核符；完整时长/完整总量仍null，已知量不冒充总量，工具wait与caller时间不混用。原manifest的PENDING保留为封存历史，本段及review记录后到结论。local槽已归还Lead并交Web Quick，当前无X01 OPEN。Mika与b01只读定位errno1来自固定OPS14的os.killpg(child.pid,0)，发生在finish/reap前；Darwin未reap leader查询仅候选解释，不能推断权限/SIP/TCC/沙箱原因或后代残留。后继由OPS14原owner native_center_owner在其scope处理，X01不改donor、不降门禁、不重跑。沿既有find-skills/clean-code方法仅核事实、错误/未知和职责边界；本次只追加两metadata，源码/输入/raw全部冻结，提交后停写保留v8。
 
 2026-10-07T02:40:42.525303+00:00：fresh02:38:47.791Z核原v8 ACTIVE/17scope及新树身份完全匹配。接收OPS14共享Interface715525与结果0720625（4/4归属其owner，不累计为X01）；supervise.py SHA725bad保持。固定af2b926b只提取并修正caller报告消费：observations保留审计，不压过最终owned_state；signal unknown、first/secondary监督失败、capture/持久化/身份未知仍阻后继。新增七组内存Report行为反例源码和[限定准备](../../docs/evidence/x01/enable-binding-ownership-fix.md)，0测试/import/进程/PG/tar。旧HOLD结果91f86与全部原raw/manifest/d54不改；新的执行namespace与manifest未准备，此处SOURCE_ONLY并非可执行Stage A。局部槽尚无本任务准入，当前仅待独审。
+
+2026-10-07T02:49:08.448494+00:00：chatui01_owner于02:42:07UTC完成af2/3cd固定SOURCE_REVIEW_APPROVED，16bindings逐GitWT/hash符、0P1/P2。Lead明确Web恢复终态归还后Mika授权本组local工作段；fresh02:47:37.294Z核原v8/17scope，固定af2源码一次7/7内存回归通过，[单结构化记录](../../docs/evidence/x01/enable-binding-ownership-check.json)3004B/SHA8f593e420ddae45bb1b2edc896505a9d0cb6be86fe6416f706aab6d3bc1a38db。受监督check exit0/最终absent/EOF完整，1232B observed=retained、无failure/signal unknown；0测试内子进程/临时根/tar/PG/Chrome/provider，未安装。OPS14监督只启动一个Python检查进程，七组中的参数化子项不累计。外部工具exit0，wall0.1141195s仅等待口径；CLI持久化后实际elapsed174.354ms为另一计量，不相加或声称完整工具启动前时间。既有bounded工作段只用一次，无修后重跑。实际local已归还并直接followup给C02 owner（派交前da6 clean/status已核），附其原有限段与随后REQ15接力要求；本X01停止实际运行，只作这次metadata归档。旧Stage A窗口、HOLD、d6manifest与d54供给全部保留，af2源码不变，完整X01未Done。
