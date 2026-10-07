@@ -1,6 +1,6 @@
 # WPF-RELEASE01 真实产品 Web 发布兼容验证
 
-状态：in-progress（原REQ19后继）；原7805交付保持历史完成。直接父WPF-MATURE-01与co-lead沿唯一status。新后继复用原四scope，不创建第二发布系统。
+状态：delivered（原REQ19后继工程验证与主线接收完成）；原7805交付保持历史完成。直接父WPF-MATURE-01与co-lead沿唯一status。新后继复用原四scope，不创建第二发布系统。
 
 ## 当前固定origin后继
 
@@ -11,7 +11,7 @@
 - [x] RELEASE01-03 历史独审/main接收。
 - [x] RELEASE01-04 实现显式最终输入、严格代理、真实浏览器请求、流式SSE/ACK故障和有界清理。
 - [x] RELEASE01-05 完成必要源码/局部检查；最终tuple及合法资源段到达后真实三App四项compat与独立Cookie补证。
-- [ ] RELEASE01-06 后继独审与主线接收，原operator另执行个人发布。
+- [x] RELEASE01-06 后继独审与主线接收；个人发布由原operator独立交付。
 
 模块职责：fixture唯一拥有输入校验、owned DB/center/proxy/静态bytes/公共runner；browser只真实UI旅程和独立page内session探针；既有web-release工具拥有最终报告codec/import/verify。缺供给与unknown清理显式失败，不维护第二权威。不导入未来未知runtime，也不借旧dist。
 
@@ -21,11 +21,13 @@
 
 见[7805计划原件](../../docs/evidence/wpf-release01/fixed-origin/previous-plan.md)。其中build方法不再作为后继入口。
 
+## 历史执行记录（保留当时事实；当前结论见唯一status）
+
 历史首段2026-10-07：f3d限定源审0blocking；唯一strict检查发现adapterVersion声明过宽，9658仅type-only公共接口修正，NOT_RETESTED。首失败/1170ms/完整清理保留；暂停本四scope写入并保claim，管理顺序先DPERF收口，后独立10s必要复验。
 
-当前：9658源码delta已独立接受，必要strict复验exit0/904ms；原首红不改。RELEASE01-05的最终tuple/公开策略已核齐，caller源码准备已固定并通过c2集中独审，待实际资源准入；三App真实兼容仍NOT_RUN，不把类型检查当四check通过。四scope本批seal后停写，38b9v1保留，无运行预约。
+历史类型安全点：9658源码delta已独立接受，必要strict复验exit0/904ms；原首红不改。RELEASE01-05的最终tuple/公开策略已核齐，caller源码准备已固定并通过c2集中独审，待实际资源准入；三App真实兼容仍NOT_RUN，不把类型检查当四check通过。四scope本批seal后停写，38b9v1保留，无运行预约。
 
-当前可审调用准备：[资源、真实网络与清理合同](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)。重用既有fixture/report codec与DPERF自有双组生命周期；延迟Chrome握手仅为取得真实owned代理端口，不新增发布平台。标准Python语法和文本/pin核验是静态准备，非产品行为通过。
+历史调用准备：[资源、真实网络与清理合同](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)。重用既有fixture/report codec与DPERF自有双组生命周期；延迟Chrome握手仅为取得真实owned代理端口，不新增发布平台。标准Python语法和文本/pin核验是静态准备，非产品行为通过。
 
 调用器c2准备已处理独立审查的目录ownership/P1与pg-boss连接声明/P2，真实helper三边界小额检查通过；详见[c2当前记录](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md)。三App运行仍在RELEASE01-05未完成项，原c1及全部历史错误保留。
 
@@ -38,3 +40,7 @@ c3仅修非法sandbox host，真实生成profile一次true语法检查通过/47m
 c3准备source/native独审已接受，管理新独立一次180sNEXT，紧前fresh/gate后才实际；原三App TODO05仍开放，无旧信用转移。
 
 c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495ms/完整清理。原失败保留，等待独立证据审及RELEASE01-06主线接收，不自动追加运行。
+
+## 当前交付
+
+[独立实际批准与主线接收](../../docs/evidence/wpf-release01/fixed-origin/main-close/README.md)已完成；188后继路径同c06fa。保失败、不重跑已绿检查，个人更新/后继后台不扩称。
