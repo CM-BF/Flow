@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-07T02:17:00.073465+00:00",
+  "sourceTarget": "215063fb4667fc394a07417d608b075fa1188d92",
+  "productSourceChanged": false,
+  "finalState": "AUTHOR_VALIDATION_COMPLETE_REVIEW_PENDING",
+  "rounds": [
+    {
+      "id": "new-01",
+      "selected": 12,
+      "passed": 11,
+      "failed": 1,
+      "exit": 1
+    },
+    {
+      "id": "types-01",
+      "kind": "focused typecheck",
+      "exit": 0
+    },
+    {
+      "id": "direct-01",
+      "selected": 39,
+      "passed": 37,
+      "failed": 2,
+      "exit": 1
+    },
+    {
+      "id": "ink-02",
+      "selected": 3,
+      "passed": 3,
+      "unselected": 2,
+      "exit": 0
+    }
+  ],
+  "distinct": {
+    "new": 12,
+    "existingDirect": 39,
+    "total": 51,
+    "eventuallyPassed": 51,
+    "rerunFailedCases": 3,
+    "successfulUnrelatedCasesRerun": 0
+  },
+  "failure": "First three Ink cases loaded two same-version React/Ink module instances from distinct donor roots through ink-testing-library; package payload six files/10991 bytes equal. Only this task-owned ignored dependency link changed to I02. Same resolved React/Ink identities then verified; no product change.",
+  "dependencyRepair": "dependency-ink-repair.json",
+  "resourceFacts": {
+    "allOwnedGroupsAbsent": true,
+    "maxCommandElapsedMs": 3356,
+    "peakObservedRawPlusCacheBytes": 10380,
+    "cacheRemoved": true,
+    "rawBothStreamsPreserved": true
+  },
+  "notRun": [
+    "socket HTTP",
+    "real PTY",
+    "PG",
+    "Chrome",
+    "provider",
+    "F04",
+    "full root typecheck"
+  ],
+  "scope": "Pure contract/controller, actual Ink with controlled ports, existing direct consumers, focused TypeScript only. No complete TUI→Web journey or real model claim."
+}

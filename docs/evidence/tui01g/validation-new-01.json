@@ -1,0 +1,78 @@
+{
+  "pid": 97048,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 1,
+  "elapsed_ms": 3312,
+  "observed_bytes": 3375,
+  "retained_bytes": 3375,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "stdout": {
+    "path": "docs/evidence/tui01g/validation-new-01-stdout.log",
+    "bytes": 623,
+    "sha256": "52ca029c7ddd913296d7f31121c9dbb18c890dba15aa82d7b50649b17654e181"
+  },
+  "stderr": {
+    "path": "docs/evidence/tui01g/validation-new-01-stderr.log",
+    "bytes": 2752,
+    "sha256": "caa352313b9bbe1de25f52e2cdb23f2058f479252e574786b38db44afdb27c80"
+  },
+  "at": "2026-10-07T02:14:41.256313+00:00",
+  "group": "new",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/tui01g/vitest.config.mts",
+    "packages/interaction/src/message-settings",
+    "apps/tui/src/message-settings.test.tsx"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-message-settings",
+  "freeBefore": 26750541824,
+  "rawBefore": 0,
+  "supervisor": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+  "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+  "bounds": {
+    "workSeconds": 27,
+    "termSeconds": 0.5,
+    "killSeconds": 2,
+    "combinedOutputBytes": 262144,
+    "rawAndCacheBytes": 8388608
+  },
+  "providerCalls": 0,
+  "PG": 0,
+  "Chrome": 0,
+  "PTY": 0,
+  "cacheBytesAfter": 342,
+  "combinedRawAndCacheAfter": 3717,
+  "freeAfter": 26751283200,
+  "resourceBoundMet": true
+}

@@ -1,0 +1,29 @@
+{
+  "recordedAt": "2026-10-07 02:22:05 UTC",
+  "source": "Execution Lead direct handoff message; faithful owner transcription, not an additional review",
+  "reviewer": "assignment_review",
+  "reviewTarget": "335f402a63d56236b733bcf4068dcbef06dfc49b",
+  "productSourceTarget": "215063fb4667fc394a07417d608b075fa1188d92",
+  "verdict": "APPROVED",
+  "scope": "Limited local contract/controller/Ink and focused types; not complete TUI acceptance",
+  "facts": {
+    "bindings": 260,
+    "distinctCasesAcrossRounds": 51,
+    "newCases": 12,
+    "directCases": 39,
+    "initialInkFailuresPreserved": 3,
+    "focusedTypesExit": 0,
+    "ownedGroupsAbsent": 4,
+    "maxCommandMs": 3356,
+    "maxRawPlusCacheBytes": 10380,
+    "reviewerReruns": 0
+  },
+  "notRun": [
+    "HTTP",
+    "PG",
+    "real PTY",
+    "browser",
+    "provider"
+  ],
+  "unchanged": "Product/raw/manifests preserved; claim active waiting main receipt"
+}

@@ -16,6 +16,8 @@ export function TerminalScreen({ controller }: { controller: InteractionControll
     if (key.ctrl && input === 'c') { void controller.execute({ type: 'quit' }); return; }
     if (key.tab) { const completions = completeInput(state.draft); if (completions.length === 1) controller.setDraft(`${completions[0]} `); }
   });
+  const settingsRows = state.settings.profiles.flatMap(profile => profile.choices.map((label, index) => ({ profile, label, choice: index + 1 })));
+  const settingsPages = Math.max(1, Math.ceil(settingsRows.length / 8));
   const observed = state.observation; const textWindow = observed ? observationPage(observed) : null;
   const currentTurn = observed ? state.turns.find(turn => turn.id === observed.turnId) : state.turns.at(-1);
   const turns = (observed ? state.turns.filter(turn => turn.id === observed.turnId) : state.turns).slice(-Math.max(1, Math.min(3, Math.floor((rows - 10) / 5))));
@@ -24,6 +26,7 @@ export function TerminalScreen({ controller }: { controller: InteractionControll
     <Text dimColor>{state.selected ? `${visible(state.selected.title, 80)}  ${state.selected.id}` : 'Select /conversations or /new. /help lists commands.'}</Text>
     {state.pending && <Text color="yellow">{state.pending.status === 'unknown' ? 'Acknowledgement unknown — saved original request. Use /recover.' : 'Submitting immutable request…'}</Text>}
     {state.view === 'conversation' && currentTurn && <Text>Task: {visible(currentTurn.taskId, 128)} · {currentTurn.status} · /cancel task-id</Text>}
+    {state.view === 'conversation' && <Text dimColor>Next message settings: {state.settings.selectionLabel ? visible(state.settings.selectionLabel, 350) : state.settings.supported ? 'selection required · /settings' : 'unsupported · ordinary chat unchanged'}</Text>}
     {state.view === 'queue' && <Box flexDirection="column">
       <Text bold>Queue · {state.queue?.paused ? 'paused' : 'not paused'} · revision {state.queue?.queueRevision ?? 'unknown'}</Text>
       <Text dimColor>Pause stops later promotion, not current work. Resume may start the next item. /cancel task-id requests cancellation of the current task.</Text>
@@ -41,7 +44,11 @@ export function TerminalScreen({ controller }: { controller: InteractionControll
         <Text dimColor>{segment.kind === 'final' ? 'recorded reply' : segment.interrupted ? 'incomplete' : segment.observationPaused ? 'observation paused' : segment.phase}{segment.truncated ? ' · truncated' : ''}</Text>
       </Box>) : <Text>Assistant: {turn.assistant.text === null ? `[${turn.assistant.state}; task ${turn.status}]` : visible(turn.assistant.text)}{turn.assistant.truncated ? ' [truncated]' : ''}</Text>}
 
-      <Text dimColor>{turn.status} · model {visible(turn.effectiveModel ?? 'unknown', 180)}</Text>
+      {turn.messageSettings ? <Box flexDirection="column">
+        <Text dimColor>Requested: {visible(turn.messageSettings.requestedLabel, 350)}</Text>
+        <Text dimColor>Observed: {visible(turn.messageSettings.observedLabel, 450)}</Text>
+        <Text dimColor>Actual thinking: unknown · {turn.status}</Text>
+      </Box> : <Text dimColor>{turn.status} · model {visible(turn.effectiveModel ?? 'unknown', 180)}</Text>}
     </Box>)}
     {state.view === 'conversation' && observed?.panel === 'activity' && <Box flexDirection="column">
       <Text bold>Activity · turn {observed.number} · /detail number</Text>
@@ -57,6 +64,14 @@ export function TerminalScreen({ controller }: { controller: InteractionControll
     {state.view === 'conversation' && observed?.error && <Text color="yellow">Observation incomplete: {visible(observed.error,250)}</Text>}
     {state.view === 'conversations' && state.conversations.map(item => <Text key={item.id}>{item.id} {visible(item.title, 70)}</Text>)}
     {state.view === 'profiles' && state.profiles.map(item => <Text key={item.id}>{item.id} {visible(item.model, 80)} · {item.access} · not probed</Text>)}
+    {state.view === 'settings' && <Box flexDirection="column">
+      <Text bold>Claude complete choices · not probed · {state.settings.page}/{settingsPages}</Text>
+      <Text dimColor>/new --profile id · /setting id choice · /settings-page number</Text>
+      {state.settings.profiles.length === 0 && <Text>No configured settings profiles on this page.</Text>}
+      {state.settings.profiles.filter(profile => profile.choices.length === 0).map(profile => <Text key={profile.id}>{profile.id} · no allowed choices</Text>)}
+      {settingsRows.slice((state.settings.page - 1) * 8, state.settings.page * 8).map(row => <Text key={`${row.profile.id}:${row.choice}`}>{row.profile.id} #{row.choice} · {visible(row.label, 350)} · access {row.profile.access}</Text>)}
+      {state.settings.nextCursor && <Text dimColor>Next catalog: /settings {state.settings.nextCursor}</Text>}
+    </Box>}
     <Text dimColor>{visible(editorNotice || state.notice, 2200)}</Text>
     {state.view === 'conversations' && state.conversationCursor && <Text dimColor>More: /conversations {visible(state.conversationCursor, 128)}</Text>}
     {state.view === 'profiles' && state.profileCursor && <Text dimColor>More: /profiles {visible(state.profileCursor, 128)}</Text>}

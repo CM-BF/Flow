@@ -37,7 +37,7 @@ export async function runTerminal(args = process.argv.slice(2), env = process.en
   const stop = () => { void (controller?.dispose() ?? Promise.resolve()).then(stopObservation, stopObservation).catch(() => { process.exitCode = 1; }); };
   try {
     const goal = goalId ? createGoalTerminal({ client, connectionId, goalId, intents: store as Awaited<ReturnType<typeof openGoalIntentStore>> }) : null;
-    const conversation = goal ? null : createInteractionController({ client, observe: client, queue: client, taskControl: client, connectionId, intents: store as Awaited<ReturnType<typeof openIntentStore>> });
+    const conversation = goal ? null : createInteractionController({ client, observe: client, queue: client, taskControl: client, messageSettings: client, connectionId, intents: store as Awaited<ReturnType<typeof openIntentStore>> });
     controller = goal ?? conversation!;
     process.once('SIGTERM', stop); if (args.includes('--headless')) process.once('SIGINT', stop);
     await controller.initialize();

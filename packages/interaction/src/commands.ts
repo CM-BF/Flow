@@ -6,6 +6,10 @@ export const commandSchema = z.discriminatedUnion('type', [
   z.strictObject({ type: z.literal('conversations'), after: cursor }),
   z.strictObject({ type: z.literal('open'), id: z.uuid() }),
   z.strictObject({ type: z.literal('profiles'), after: cursor }),
+  z.strictObject({ type: z.literal('settings'), after: cursor }),
+  z.strictObject({ type: z.literal('settings-page'), number: z.number().int().min(1).max(24) }),
+  z.strictObject({ type: z.literal('setting'), profileId: z.uuid(), choice: z.number().int().min(1).max(32) }),
+  z.strictObject({ type: z.literal('setting-clear') }),
   z.strictObject({ type: z.literal('new'), title: z.string().trim().min(1).max(180).default('Terminal conversation'), profileId: z.uuid().optional() }),
   z.strictObject({ type: z.literal('send'), text }),
   z.strictObject({ type: z.literal('turn'), number: z.number().int().min(1).max(2147483647) }),
@@ -33,6 +37,10 @@ export const commandDescriptors: readonly CommandDescriptor[] = [
   { name: 'conversations', usage: '/conversations [cursor]', description: 'List one page of saved conversations.', parse: after => ({ type: 'conversations', ...(after.trim() ? { after: after.trim() } : {}) }) },
   { name: 'open', usage: '/open <id>', description: 'Observe a saved conversation.', parse: id => ({ type: 'open', id: id.trim() }) },
   { name: 'profiles', usage: '/profiles [cursor]', description: 'List configured execution profiles; availability remains unprobed.', parse: after => ({ type: 'profiles', ...(after.trim() ? { after: after.trim() } : {}) }) },
+  { name: 'settings', usage: '/settings [cursor]', description: 'Read finite Claude message settings choices; provider support remains unprobed.', parse: after => ({ type: 'settings', ...(after.trim() ? { after: after.trim() } : {}) }) },
+  { name: 'settings-page', usage: '/settings-page <number>', description: 'Show eight choices from the loaded catalog; no request.', parse: number => ({ type: 'settings-page', number: Number(number.trim()) }) },
+  { name: 'setting', usage: '/setting <profile-id> <choice>', description: 'Select a complete allowed tuple for the next message in the current conversation.', parse: argument => { const parts = argument.trim().split(/\s+/); if (parts.length !== 2) throw Error('Use /setting <profile-id> <choice>'); return { type: 'setting', profileId: parts[0], choice: Number(parts[1]) }; } },
+  { name: 'setting-clear', usage: '/setting-clear', description: 'Clear the unsent selection; unresolved requests remain immutable.', parse: noArguments('setting-clear') },
   { name: 'new', usage: '/new [--profile <id>] [title]', description: 'Create a conversation; does not itself start a model.', parse: argument => {
     const match = /^--profile\s+(\S+)(?:\s+([\s\S]*))?$/.exec(argument.trim());
     return { type: 'new', title: (match ? match[2] : argument)?.trim() || 'Terminal conversation', ...(match ? { profileId: match[1] } : {}) };

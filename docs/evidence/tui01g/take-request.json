@@ -1,0 +1,24 @@
+{
+  "requestId": "808f16fc-d3fc-493e-af62-d213d5ca6656",
+  "actor": {
+    "lead": "astra_ultra_execution_lead",
+    "worker": "native_center_owner"
+  },
+  "taskId": "TUI01G",
+  "role": "writer",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-message-settings",
+  "branch": "codex/tui-message-settings",
+  "scope": [
+    "packages/interaction/src/message-settings",
+    "packages/interaction/src/controller.ts",
+    "packages/interaction/src/commands.ts",
+    "packages/interaction/src/types.ts",
+    "apps/tui/src/main.tsx",
+    "apps/tui/src/screen.tsx",
+    "apps/tui/README.md",
+    "packages/interaction/src/projection.ts",
+    "apps/tui/src/message-settings.test.tsx",
+    "plans/tui01g-message-settings",
+    "docs/evidence/tui01g"
+  ]
+}

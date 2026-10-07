@@ -1,0 +1,2 @@
+import { defineConfig } from 'vitest/config';
+export default defineConfig({ cacheDir: '/tmp/flow-tui01g-vite', test: { include: ['packages/interaction/src/message-settings/*.test.ts', 'apps/tui/src/message-settings.test.tsx', 'packages/interaction/src/controller.test.ts', 'apps/tui/src/terminal.test.ts', 'packages/interaction/src/queue-control/controller.test.ts', 'packages/interaction/src/task-control/controller.test.ts'], testTimeout: 5000, hookTimeout: 5000, fileParallelism: false, maxWorkers: 1 } });

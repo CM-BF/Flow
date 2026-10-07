@@ -285,3 +285,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07：仅窄接OPS三树收尾准备与资源恢复状态，固定来源76ffcef3、独审a60614fe APPROVED_DOCS；[5文件绑定](../../docs/evidence/i02/worktree-retirement-planning-intake.json)核前像与新字节一致。三树全部KEEP、authority不迁移、无清理/安装/产品检查/PG/provider/个人服务变更。既有运行门槛和CI唯一PENDING保留，已ready验证按原owner窗口推进。
 
 2026-10-07：受控接收SVC07产品e28/delivery4a85569b，2产品+67自有plan/evidence逐字绑定，[接收清单](../../docs/evidence/i02/svc07-controlled-intake.json)。前像及直接消费者无冲突；复用Mika分层独审15fake/types、2真实PG、1HTTP与正常清理，未重跑或合称同轮18项。旧HOLD/监督unknown和原始日志空行保留；不操作个人runtime，架构发布另由D06 owner处理。
+
+2026-10-07：TUI01G产品215/交付66ac窄接12源+43自有plan/evidence，前像无漂移；[固定55文件](../../docs/evidence/i02/tui01g-controlled-intake.json)。原结果335f独审APPROVED，51不同用例分轮通过/focusedtypes；3个Ink依赖身份失败保留、仅失败补跑，0集成重测。无HTTP/PG/真实PTY/browser/provider证据，完整双端验收仍开放，个人runtime不变。

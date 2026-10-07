@@ -4,6 +4,7 @@ import { conversationCreationSchema, conversationTurnSchema, type ConversationQu
 import { queuePauseIntentSchema, queueResumeIntentSchema } from './queue-control/index.js';
 import { taskCancelIntentSchema } from './task-control/index.js';
 import type { TurnObservationView } from './observation/index.js';
+import type { MessageSettingsView, MessageSettingsEvidence } from './message-settings/index.js';
 import type { Command } from './commands.js';
 const identity = { version: z.literal(1), connectionId: z.string().min(1).max(160), key: z.uuid() };
 export const intentSchema = z.discriminatedUnion('kind', [
@@ -20,11 +21,13 @@ export interface TurnView {
   id: string; number: number; taskId: string; status: string; userText: string;
   assistant: { state: string; text: string | null; truncated: boolean; messageId: string | null };
   effectiveModel: string | null;
+  messageSettings?: MessageSettingsEvidence;
 }
 export interface InteractionSnapshot {
-  view: 'conversation' | 'conversations' | 'profiles' | 'help' | 'queue';
+  view: 'conversation' | 'conversations' | 'profiles' | 'help' | 'queue' | 'settings';
   connected: boolean; busy: boolean; closed: boolean; draft: string; notice: string;
   observation: TurnObservationView | null;
+  settings: MessageSettingsView;
   queue: ConversationQueuePage | null;
   selected: { id: string; title: string; revision: number; requestedModel: string } | null;
   turns: TurnView[];
