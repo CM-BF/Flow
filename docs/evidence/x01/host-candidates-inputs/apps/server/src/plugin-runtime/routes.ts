@@ -55,7 +55,7 @@ export function registerPluginRuntimeRoutes(app: FastifyInstance, pool: Pool, bo
     return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readPluginHostCandidates(client, id(request.params.id), input.data, trustedHostPolicy), true)));
   });
   app.get<{ Params: { id: string } }>('/api/plugins/:id/runtime', async (request, reply) => {
-    return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readRuntime(client, id(request.params.id)), true)));
+    return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readRuntime(client, id(request.params.id), trustedHostPolicy), true)));
   });
   app.get<{ Params: { id: string } }>('/api/tasks/:id/plugin-binding', async (request, reply) => {
     return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readBinding(client, id(request.params.id)), true)));

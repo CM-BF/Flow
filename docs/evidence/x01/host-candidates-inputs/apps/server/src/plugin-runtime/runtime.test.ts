@@ -298,6 +298,7 @@ test('owner host candidates use real SQL pagination and current policy for enabl
   expect((await request(`/api/plugins/${f.registrationId}/runtime/commands`, f.enable)).status).toBe(200);
   expect((await request(endpoint + '&cursor=' + a.body.nextCursor)).status).toBe(409);
   trustedHosts.delete(hostKey(f.runnerId, 'test-material', 1));
+  expect((await request(`/api/plugins/${f.registrationId}/runtime`)).body).toMatchObject({ desiredEnabled: true, bindingAllowed: false, reason: 'host-unavailable' });
   const taskCount = (await pool.query('SELECT count(*)::integer AS count FROM flow.tasks')).rows;
   expect((await request(`/api/plugins/${f.registrationId}/tool-tasks`, { expectedRevision: 4, title: 'Trust removed', input: 'text' })).status).toBe(403);
   expect((await pool.query('SELECT count(*)::integer AS count FROM flow.tasks')).rows).toEqual(taskCount);

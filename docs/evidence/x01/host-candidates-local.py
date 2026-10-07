@@ -22,10 +22,10 @@ label = sys.argv[1]
 if label not in ('types', 'tests', 'fix'): raise ValueError('Only the two focused consumers are selected')
 now = lambda: datetime.datetime.now(datetime.timezone.utc).isoformat()
 record = json.loads(RECORD.read_text()) if RECORD.exists() else {'startedAt': now(), 'startEpoch': 1791370133.0, 'attempts': [], 'unknown': False,
-    'limits': {'segmentSeconds': 1200, 'commands': 8, 'commandSeconds': 60, 'temporaryBytes': 16777216, 'rawBytes': 524288, 'sourceMetadataBytes': 2097152},
+    'limits': {'segmentSeconds': 1200, 'commands': 10, 'commandSeconds': 60, 'temporaryBytes': 16777216, 'rawBytes': 524288, 'sourceMetadataBytes': 2097152},
     'floorBytes': 6100000000, 'PG': 0, 'provider': 0, 'native': 0, 'tarPlanned': 0, 'wholeExternalWall': None}
 if sum(x.get('elapsedBeforeReceiptSeconds',0) for x in record['attempts']) >= 120: raise ValueError('Cumulative execution reserve exhausted')
-if record['unknown'] or len(record['attempts']) >= 8 or time.time()-record['startEpoch'] >= 1140: raise ValueError('Segment exhausted or unknown')
+if record['unknown'] or len(record['attempts']) >= 10 or time.time()-record['startEpoch'] >= 1140: raise ValueError('Segment exhausted or unknown')
 free = shutil.disk_usage(ROOT).free
 if free < record['floorBytes']: raise ValueError('Fresh combined floor not met')
 root = Path(tempfile.mkdtemp(prefix='flow-x01-host-candidates-')); identity = root.lstat()
@@ -36,7 +36,7 @@ RECORD.write_text(json.dumps(record, indent=2)+'\n')
 node = '/opt/homebrew/opt/node@24/bin/node'
 argv = [node, str(ROOT/'node_modules/typescript/bin/tsc'), '--noEmit', '-p', 'docs/evidence/x01/host-candidates-tsconfig.json'] if label=='types' else [node,
     str(ROOT/'node_modules/vitest/vitest.mjs'), 'run', '--config', 'docs/evidence/x01/host-candidates-vitest.config.mjs', '--configLoader', 'native', '--reporter=json', '--outputFile='+str(root/'tests.json')]
-if label == 'fix': argv += ['--testNamePattern=incompatible acceptance']
+if label == 'fix': argv += ['--testNamePattern=runtime projection']
 env = dict(os.environ, TMPDIR=str(root/'tmp'), TMP=str(root/'tmp'), TEMP=str(root/'tmp'), FLOW_X01_BINDING_CACHE=str(root/'cache'),
     FLOW_X01_PLUGIN_RUNTIME_FACTS=str(root/'fixtures.json'), FLOW_X01_TERMINAL_FACTS=str(root/'terminal-fixtures.json'), NODE_DISABLE_COMPILE_CACHE='1')
 started = time.monotonic()

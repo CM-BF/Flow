@@ -910,12 +910,260 @@
       "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
       "finishedAt": "2026-10-07T10:58:14.983738+00:00",
       "elapsedBeforeReceiptSeconds": 4.428169249906205
+    },
+    {
+      "label": "fix",
+      "startedAt": "2026-10-07T11:05:20.450672+00:00",
+      "freeBeforeBytes": 22307028992,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-9aehbdjc",
+        "dev": 16777234,
+        "ino": 124071553,
+        "removed": true,
+        "endSample": {
+          "entries": 4,
+          "bytes": 3388,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01/host-candidates-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-9aehbdjc/tests.json",
+        "--testNamePattern=runtime projection"
+      ],
+      "process": {
+        "pid": 12155,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 681,
+        "observed_bytes": 117,
+        "retained_bytes": 117,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "fix",
+        "rawComplete": true
+      },
+      "raw": "JSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-9aehbdjc/tests.json\n",
+      "rawBytes": 117,
+      "rawSha256": "e70b69554fdd5ea016b5f302d448460dd31a25fec236db0523bcafa1d982c726",
+      "tests.json": {
+        "numTotalTestSuites": 1,
+        "numPassedTestSuites": 1,
+        "numFailedTestSuites": 0,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 10,
+        "numPassedTests": 1,
+        "numFailedTests": 0,
+        "numPendingTests": 9,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791371120670,
+        "success": true,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "same readable names retain distinct IDs without claiming liveness or loaded capability",
+                "status": "skipped",
+                "title": "same readable names retain distinct IDs without claiming liveness or loaded capability",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "trusted incompatible candidates expose finite reasons and revoked records are SQL-excluded",
+                "status": "skipped",
+                "title": "trusted incompatible candidates expose finite reasons and revoked records are SQL-excluded",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "empty policy-filtered page advances its bounded raw cursor to a later authorized host",
+                "status": "skipped",
+                "title": "empty policy-filtered page advances its bounded raw cursor to a later authorized host",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "cursor binds registration material and revision; malformed query is rejected",
+                "status": "skipped",
+                "title": "cursor binds registration material and revision; malformed query is rejected",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "foreign stale failed and inconsistent materials disclose no candidates",
+                "status": "skipped",
+                "title": "foreign stale failed and inconsistent materials disclose no candidates",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "missing or throwing current policy returns no partial page",
+                "status": "skipped",
+                "title": "missing or throwing current policy returns no partial page",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "trust removed after publication rejects new enable and admission before mutations",
+                "status": "skipped",
+                "title": "trust removed after publication rejects new enable and admission before mutations",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "registered route uses real owner role authentication strict query and a no-store read-only transaction",
+                "status": "skipped",
+                "title": "registered route uses real owner role authentication strict query and a no-store read-only transaction",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "incompatible acceptance is rechecked even when the caller skips the candidate page",
+                "status": "skipped",
+                "title": "incompatible acceptance is rechecked even when the caller skips the candidate page",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "runtime projection rechecks current trust and harness without rewriting old pins",
+                "status": "passed",
+                "title": "runtime projection rechecks current trust and harness without rewriting old pins",
+                "duration": 3.353458000000046,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791371121080,
+            "endTime": 1791371121083.3535,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/host-candidates-inputs/apps/server/src/plugin-runtime/host-candidates.test.ts"
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T11:05:21.133945+00:00",
+      "elapsedBeforeReceiptSeconds": 0.6823705410351977
+    },
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T11:05:29.828949+00:00",
+      "freeBeforeBytes": 22306828288,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-8deyl6xd",
+        "dev": 16777234,
+        "ino": 124071605,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/host-candidates-tsconfig.json"
+      ],
+      "process": {
+        "pid": 13998,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 2224,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T11:05:32.054968+00:00",
+      "elapsedBeforeReceiptSeconds": 2.2250147499144077
     }
   ],
   "unknown": false,
   "limits": {
     "segmentSeconds": 1200,
-    "commands": 8,
+    "commands": 10,
     "commandSeconds": 60,
     "temporaryBytes": 16777216,
     "rawBytes": 524288,
@@ -927,6 +1175,6 @@
   "native": 0,
   "tarPlanned": 0,
   "wholeExternalWall": null,
-  "updatedAt": "2026-10-07T10:58:14.983751+00:00",
-  "commandLimitClarification": "Original authorization bounds individual<=60s and cumulative<=120s, with no top-level command-count limit. Local selector conservatively caps8. Original failed attempts retained; focused fixes only. Actual count reported separately."
+  "updatedAt": "2026-10-07T11:05:32.054983+00:00",
+  "commandLimitClarification": "Original authorization bounds each child <=60s and cumulative <=120s, without a command-count limit. Selector cap increased8 to10 only for one independent-review P2 targeted case and types; actual9, old failures retained."
 }
