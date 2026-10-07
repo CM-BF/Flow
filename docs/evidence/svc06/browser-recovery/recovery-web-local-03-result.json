@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-07T22:30:38.397314+00:00",
+  "exit": 0,
+  "elapsedMs": 112,
+  "rawBytes": 293,
+  "ownedState": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "signals": [],
+  "firstFailure": null,
+  "scratch": {
+    "path": "/private/tmp/svc06b-web-parent-aswgt02m",
+    "dev": 16777234,
+    "ino": 124617734,
+    "disposition": "removed"
+  },
+  "fixtureBoundary": "The actual-entry test creates one separate system-temp child and removes it only after exact dev/ino verification. Second fixture is within TMPDIR. Assertions cover cleanup; no global resource scan.",
+  "pg": 0,
+  "personal": 0,
+  "provider": 0
+}

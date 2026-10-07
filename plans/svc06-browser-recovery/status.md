@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:20:20.000Z；冷启动/四页已审；恢复在目标绑定处止步，未恢复服务或发布网页；Web-only新源草案封存，个人输入未采 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T22:31:27.195Z；恢复失败原件已限定独审，修复待最终绑定；Web-only父目录P2已修/局部通过，个人输入未采 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,13 +13,13 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery |
 | Branch | codex/backend-browser-recovery |
-| 工作基线 / HEAD | base6c；既有recovery runtime880060/e15固定；当前Web-only新leaf source20dc149c78dd4c7d172c609360051e2cec852aae，未合main |
+| 工作基线 / HEAD | base6c；既有recovery runtime880060/e15固定；当前Web-only父目录修复 source225a71eeea583200139aace9464d907b10a5c4f4，未合main |
 | 工作树dirty状态 | 新leaf源码停写；仅本片结果/接口/status收口，原恢复依赖与已消费raw不改 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 实现目标 | 恢复成功后用新e15身份受管迁入779并单次公开CAS发布；本片仅source draft，个人输入未采 |
 | 实现范围 | 新recovery-web-publication.mjs/直接专测/template；复用旧transfer算法和source880公开publish，不修改恢复66pins |
-| 检查状态 | Web-only 8distinct/11selections全部通过，246ms/raw1249B，2组absent/双EOF/无signals、2exact空scratchremoved。既有cold/4App/transfer矩阵不重跑；个人发布NOT_RUN |
+| 检查状态 | Web-only原8distinct/11selections保留；父目录修复新增2/2实际创建例112ms/293B，本段累计358ms/1542B，3组absent/双EOF/无signals、3exact空scratchremoved。个人发布NOT_RUN |
 | 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module已独审并main96b424777；本次薄入口source6c417850已独审并main72f5758bcd5e0e58f290f1197e70ad77e2f7c61d，新网页四App兼容已获Web独审/main9281447a3；新增Web薄调用独审已main089a6e460；本次cd27迁入/三报告/新维护操作已发生；refresh启动未确认，未resume/未发布Web |
 | 阶段 | M2 |
 | 优先级 | 2 |
@@ -188,3 +188,5 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T22:14:24.000Z：后继Web-only准备实际开始，Lead限定20分钟源码/局部段，截止22:34:24Z；检查累计≤30s/tmp8MiB，0PG/HTTP/个人/provider。claim v8 fresh同，原81fa clean；仅新增独立leaf，不改变恢复548490绑定66pins。复用find-skills/clean-code/codebase-design既有方法与已审transfer/public CAS，不新监督器。冷81fa独审355f与Web b422接受其限定事实，个人恢复未执行；当前服务状态仍为既有21:53只读停止/held23观察，不新增探针。
 
 2026-10-07T22:20:20.000Z：Web-only后继准备收束为[source draft](../../docs/evidence/svc06/browser-recovery/recovery-web-preparation.json)，source20dc149c78dd4c7d172c609360051e2cec852aae；8不同/11选择，246ms/1249B，两组absent/双EOF/无signals、两个exact空scratch removed，最后实际RETURN22:19:03.340878Z。实现仅新独立leaf/template，恢复66pins未改。22:18:46.870374Z恢复terminal来自Lead交接：fresh/新artifact/四报告完成，rebind未写确认且identity/MAINTENANCE_TARGET_CHANGED，refresh/resume未到；这里只记收到的限定事实，原件独审待固定。草案依然ready=false，未读取私人参数；个人新发布NOT_RUN，任务NOT_COMPLETED。现在0child/0pending，留出独立失败/修复审查能力，不追加检查。
+
+2026-10-07T22:31:27.195Z：Lead对20dc发现系统临时父目录错误要求0700的P2，已以source 225a71eeea583200139aace9464d907b10a5c4f4 窄修；[增量结果](../../docs/evidence/svc06/browser-recovery/recovery-web-parent-fix.json)保留旧原件。两个真实创建入口例2/2，112ms/293B，22:30:38.397314Z完整RETURN；原本段累计358ms/1542B。恢复434482失败原件已由本worker只读限定审查交Lead；e871 canonical/仅剩维护阶段源码正在独审。Web草案仍NOT_READY，canonical与成功新恢复回执尚未绑定，无个人I/O/PG/HTTP/provider。当前0child/0pending，未为新网页重建产物或重跑兼容。

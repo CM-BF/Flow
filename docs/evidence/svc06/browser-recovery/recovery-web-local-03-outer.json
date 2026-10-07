@@ -1,0 +1,33 @@
+{
+  "pid": 1885,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 112,
+  "stdout": "\u2714 actual output creation accepts system sticky parent and refuses namespace reuse (2.877458ms)\n\u2714 actual output creation rejects writable owned and symlink parents (4.54025ms)\n\u2139 tests 2\n\u2139 suites 0\n\u2139 pass 2\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 66.627792\n",
+  "stderr": "",
+  "observed_bytes": 293,
+  "retained_bytes": 293,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

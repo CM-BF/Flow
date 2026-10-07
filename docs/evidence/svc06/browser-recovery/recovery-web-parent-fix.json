@@ -1,0 +1,75 @@
+{
+  "at": "2026-10-07T22:31:27.195Z",
+  "source": "225a71eeea583200139aace9464d907b10a5c4f4",
+  "previousSource": "20dc149c78dd4c7d172c609360051e2cec852aae",
+  "state": "PARENT_CONTRACT_FIXED_PENDING_REVIEW_NOT_READY",
+  "finding": {
+    "priority": "P2",
+    "source": "Lead independent static review of 20dc",
+    "description": "The draft applied private owned 0700 directory checks to the system /private/tmp parent, rejecting both actual actions before creation."
+  },
+  "change": "Separate trusted canonical root-owned 1777 /private/tmp or owned 0700 parent from a newly created exclusive owned 0700 output. Symlink/untrusted parent and namespace reuse reject. runWebOnly uses this actual helper.",
+  "bindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-publication.mjs",
+      "bytes": 13688,
+      "sha256": "3cb6527f75b61d676b51bcfaa033a7a8905ef4820d24815222d5949fca0f58c1"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-publication.test.mjs",
+      "bytes": 10711,
+      "sha256": "bca26499b439a3a7f586aac942833c5e674ef3b39086ee12d27d75c31321be0d"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-03-reservation.json",
+      "bytes": 1373,
+      "sha256": "bb8ffe955834b0f0c3ffa87f79aeff5a90f2a9e4efc7748a7c31e8dd31aa8c1a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-03-outer.json",
+      "bytes": 879,
+      "sha256": "b79603edbe7b47b37be452aa489ab5653ca20adfa4b0271c7ee3f91e0d6c2916"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-web-local-03-result.json",
+      "bytes": 636,
+      "sha256": "96a5368dfb05fcbd3842328fca6a9233408d244c7cd30af79bc31ec390e07df1"
+    }
+  ],
+  "checks": {
+    "selected": 2,
+    "passed": 2,
+    "elapsedMs": 112,
+    "rawBytes": 293,
+    "wholeSegmentElapsedMs": 358,
+    "wholeSegmentRawBytes": 1542,
+    "ownedGroup": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "scratch": "OPS exact empty scratch removed; synthetic system-temp child was checked by dev/ino before removal inside the actual-entry test.",
+    "noRepeatedMatrix": true
+  },
+  "remaining": [
+    "Replace draft fingerprint with the fixed public producer canonical only after recovery repair source review.",
+    "Bind successful continuation namespace/final receipt and fresh input; current draft references failed predecessor and remains unusable.",
+    "No personal observation or execution; no backend or Web publication permission."
+  ],
+  "preserved": [
+    "Original draft preparation and all prior raw remain unchanged.",
+    "Existing recovery execution dependencies remain unchanged."
+  ],
+  "quality": {
+    "method": "Previously discovered local clean-code/codebase-design; separate parent trust and owned-output lifecycle, no copied supervisor/FSM.",
+    "reviewAt": "2026-10-07T22:31:27.195Z",
+    "unresolved": "Canonical and successful recovery receipt binding; independent source approval pending."
+  },
+  "actual": {
+    "personalIO": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "provider": 0,
+    "ready": false
+  }
+}

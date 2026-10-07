@@ -63,3 +63,7 @@ Lead于2026-10-07T15:11:41.542Z对7324/ac6给出APPROVED_CALLABLE_CURRENT_IMPORT
 ## Web-only successor source draft — 2026-10-07T22:20:20.000Z
 
 Target20dc149c78dd4c7d172c609360051e2cec852aae。NOT_STARTED independent review; [单份准备与原检查](../../docs/evidence/svc06/browser-recovery/recovery-web-preparation.json)。仅新增ownleaf，恢复依赖停写。8distinct/11selected通过不构成个人发布批准；最新恢复失败待独审，Web input仍readyfalse。
+
+## Web-only父目录P2修复待复审
+
+2026-10-07T22:31:27.195Z：原20dc的P2由Lead发现，source 225a71eeea583200139aace9464d907b10a5c4f4 已修系统临时父目录/新owned目录的不同合同；新增2/2真实创建例通过，原检查保留。见[单份增量](../../docs/evidence/svc06/browser-recovery/recovery-web-parent-fix.json)。独审PENDING，canonical/后继成功回执未绑定，NOT_READY，不批准个人发布。
