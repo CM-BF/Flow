@@ -192,6 +192,7 @@ async function proxy(centerPort: number, publicOrigin: string, tools: Runtime, l
         if (rejected.length < 32) rejected.push("non-admitted-authority"); response.writeHead(421); response.end(); return;
       }
       const path = url.pathname + url.search;
+      if (path === "/favicon.ico" && request.method === "GET") { response.writeHead(404); response.end(); return; }
       if (path === "/__flow_compat_probe" && request.method === "GET") { response.writeHead(200, { "content-type": "text/html; charset=utf-8", "cache-control": "no-store" }); response.end("<!doctype html><title>Owned compatibility probe</title>"); return; }
       if (url.pathname === "/api" || url.pathname.startsWith("/api/")) {
         assert.ok(["GET", "POST", "OPTIONS", "DELETE", "PATCH", "PUT"].includes(request.method ?? "")); assert.ok(records.length < 1000);
