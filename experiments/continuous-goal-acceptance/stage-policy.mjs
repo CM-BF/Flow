@@ -1,5 +1,6 @@
 import assert from 'node:assert/strict';
 import { digest } from './records.mjs';
+import { assertNativePermit } from './permit.mjs';
 
 export const REVIEW_MS = 15 * 60_000;
 const STAGES = Object.freeze({
@@ -11,10 +12,10 @@ const STAGES = Object.freeze({
 export function stageSpec(phase) { assert(Object.hasOwn(STAGES, phase)); return STAGES[phase]; }
 export const recordDigest = value => digest(JSON.stringify(value));
 
-/** This unresolved input is a refusal, never a caller-controlled claim of login/write safety. */
-export function assertNativeReady(mode) {
+/** No login boolean: a new trusted handoff must match the fixed source and environment recipe. */
+export function assertNativeReady(mode, permit, environmentDigest) {
   assert(['native', 'rehearsal'].includes(mode));
-  assert.equal(mode, 'rehearsal', 'Native login source and remaining SDK write locations are not yet fixed; no native entry.');
+  if (mode === 'native') assertNativePermit(permit, environmentDigest);
 }
 
 function closure(resources) {

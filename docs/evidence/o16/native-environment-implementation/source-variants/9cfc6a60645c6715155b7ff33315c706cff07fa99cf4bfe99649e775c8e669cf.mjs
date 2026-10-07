@@ -53,8 +53,7 @@ export async function plan(run, mode, permitPath) {
   const directory = output(run); await mkdir(RUNS, { recursive: true, mode: 0o700 }); await mkdir(directory, { mode: 0o700 });
   const report = { stage: 'plan', mode, sourceDigest: source.digest, outcome: 'unknown', nativeQueryCalls: 0, workerStopped: true };
   await writeRecord(join(directory, 'plan.json'), report, { exclusive: true });
-  // The driver's import TMPDIR is in evidence; runtime must keep its separate 8MiB namespace.
-  const center = await privateCenter(directory, source, mode === 'native' ? { temporaryParent: '/private/tmp' } : {}); let controller, primaryError;
+  const center = await privateCenter(directory, source); let controller, primaryError;
   try {
     await center.start(false);
     const project = (await center.client.createProject({ title: 'O16 合成连续目标验收', workspaceId: 'personal' }, randomUUID(), signal())).snapshot.project;

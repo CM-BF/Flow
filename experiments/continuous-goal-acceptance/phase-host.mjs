@@ -11,22 +11,25 @@ import { PHASE_LIMITS } from './permit.mjs';
 import { assertNativeReady, failureFact } from './stage-policy.mjs';
 export const experimentStop = new AbortController();
 import { GRAPH_TOOLS } from './config.mjs';
+import { nativeEnvironmentPolicy } from './native-environment.mjs';
 
 /** One owned runtime per phase, no command dispatch loop; polling only observes public center facts. */
 export async function runPhase(center, state, phase, { source, permit, report, done }) {
-  assertNativeReady(state.mode); // No process.env fallback while login/write inputs remain unresolved.
+  assertNativeReady(state.mode, permit, nativeEnvironmentPolicy.digest);
   const directory = join(center.root, phase), configFile = join(directory, 'worker.json'), reportFile = join(directory, 'report.json');
   await mkdir(directory, { mode: 0o700 });
   const runner = state.runners[phase];
+  const nativeEnvironment = state.mode === 'native' ? await nativeEnvironmentPolicy.prepare(directory, source) : undefined;
   await writeRecord(configFile, { mode: state.mode, phase, sourceDigest: source.digest, baseUrl: center.origin,
     runnerToken: runner.token, profile: runner.profile, workingDirectory: join(directory, 'runtime'), reportFile,
     materialFile: state.materialFile, citation: state.citation, admitted: state.admitted, expected: state.expected,
-    confirmation: state.confirmationBinding, ...(permit ? { permit } : {}) }, { exclusive: true });
+    confirmation: state.confirmationBinding, ...(permit ? { permit, nativeEnvironment } : {}) }, { exclusive: true });
   const home = join(directory, 'home'); await mkdir(home, { mode: 0o700 });
-  const env = { PATH: process.env.PATH, HOME: home, TMPDIR: directory, LANG: 'C.UTF-8' };
+  const env = nativeEnvironment ? nativeEnvironmentPolicy.environment(nativeEnvironment) : { PATH: process.env.PATH, HOME: home, TMPDIR: directory, LANG: 'C.UTF-8' };
+  if (nativeEnvironment) { await nativeEnvironmentPolicy.verify(nativeEnvironment, source); report.nativeEnvironment = nativeEnvironment; report.writePolicy = nativeEnvironmentPolicy.recipe.writePolicy; }
   await center.beforeWorker();
   const child = spawn(process.execPath, ['--import', 'tsx', fileURLToPath(new URL('./worker.mjs', import.meta.url)), configFile],
-    { detached: true, stdio: ['ignore', 'ignore', 'ignore', 'ipc'], env: { ...env, TMPDIR: directory, TSX_DISABLE_CACHE: '1' } });
+    { detached: true, stdio: ['ignore', 'ignore', 'ignore', 'ipc'], env: { ...env, TSX_DISABLE_CACHE: '1', NODE_DISABLE_COMPILE_CACHE: '1' } });
   report.workerPid = child.pid; report.workerStopped = false;
   let failure, requests = 0; const pending = new Set();
   child.once('error', () => { failure = new Error('Worker startup unconfirmed.'); });

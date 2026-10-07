@@ -9,7 +9,8 @@ import { runPaths } from './operator-bounds.mjs';
 import { createObservedQuery, oneShotQueryInput } from './query-run.mjs';
 import { readRecord, writeRecord } from './records.mjs';
 import { GRAPH_TOOLS } from './config.mjs';
-import { PHASE_LIMITS, validatePermit, reservePhase } from './permit.mjs';
+import { reservePhase, NATIVE_MODEL } from './permit.mjs';
+import { environmentFixture, fixturePermit } from './native-environment-fixture.mjs';
 import { claimPausedResources } from './resources.mjs';
 
 function paused() {
@@ -57,12 +58,12 @@ test('each phase has a distinct reservation and STOP path but shares one aggrega
   for (const args of [['--plan', '../old', '/file'], ['--resume'], ['--rehearse', 'extra']]) assert.throws(() => operationArguments(args));
 });
 test('native operation refuses before source loading, permits, allocation or child startup while inputs are unresolved', async () => {
-  assert.throws(() => assertNativeReady('native'), /login source/); assertNativeReady('rehearsal');
-  await assert.rejects(operate({ phase: 'plan', run: 'stage-unit', file: '/does-not-exist' }), /login source/);
+  assert.throws(() => assertNativeReady('native'), /source\/environment-bound/); assertNativeReady('rehearsal');
+  await assert.rejects(operate({ phase: 'plan', run: 'stage-unit', file: '/does-not-exist' }), { code: 'ENOENT' });
   const { plan } = await import('./driver.mjs');
-  await assert.rejects(plan('stage-unit', 'native', '/does-not-exist'), /login source/);
+  await assert.rejects(plan('stage-unit', 'native', '/does-not-exist'), { code: 'ENOENT' });
   const { runPhase } = await import('./phase-host.mjs');
-  await assert.rejects(runPhase({}, { mode: 'native' }, 'plan', {}), /login source/);
+  await assert.rejects(runPhase({}, { mode: 'native' }, 'plan', {}), /source\/environment-bound/);
 });
 test('a durable primary failure survives disposal and finish failures in the saved report', async () => {
   const root = await mkdtemp(join(tmpdir(), 'o16-stage-primary-'));
@@ -118,7 +119,7 @@ test('the real resume packet reader refuses changed material before consuming or
 });
 
 function queryInput() { return { prompt: 'Synthetic bounded prompt', options: {
-  model: 'sonnet', maxTurns: 4, maxBudgetUsd: .2, abortController: new AbortController(), persistSession: true,
+  model: NATIVE_MODEL, maxTurns: 4, maxBudgetUsd: .2, abortController: new AbortController(), persistSession: true,
   permissionMode: 'dontAsk', strictMcpConfig: true, tools: [], allowedTools: [...GRAPH_TOOLS],
   disallowedTools: ['Bash', 'Write', 'Edit', 'WebSearch', 'WebFetch', 'Agent', 'Task', 'Skill'], settingSources: [], plugins: [], skills: [],
   thinking: { type: 'disabled' }, canUseTool: async () => ({ behavior: 'deny' }),
@@ -135,15 +136,13 @@ test('restore and store options fail before a query slot or injected transport i
   }
 });
 test('the actual injected query receives persistSession false with the original hooks, abort and iterator', async () => {
-  const root = await mkdtemp(join(tmpdir(), 'o16-stage-query-'));
+  const f = await environmentFixture(), root = f.root;
   try {
-    const now = Date.now(), identity = { root: '/synthetic', digest: 'a'.repeat(64) };
-    const permit = validatePermit({ kind: 'flow.o16.phase-permit.v1', authorizedBy: 'Goal Owner', approvalId: 'stage-unit-only', phase: 'plan',
-      sourceDigest: identity.digest, worktree: identity.root, model: 'sonnet', limits: PHASE_LIMITS.plan,
-      approvedAt: new Date(now - 1).toISOString(), expiresAt: new Date(now + 60000).toISOString(), authorizationReference: 'Synthetic local injected test only' }, { identity, phase: 'plan' });
+    const permit = fixturePermit(f);
     const reservation = await reservePhase(root, permit), original = queryInput(), report = { nativeQueryCalls: 0 }; let calls = 0;
+    original.options.cwd = f.cwd;
     const originalHook = original.options.hooks.PreToolUse[0].hooks[0];
-    const query = createObservedQuery({ mode: 'native', phase: 'plan', reservation, report,
+    const query = createObservedQuery({ mode: 'native', phase: 'plan', reservation, report, nativeEnvironment: f.nativeEnvironment,
       getBinding: () => ({ slot: 'planner', assignment: { taskId: 'task', attemptId: 'attempt', runnerId: 'runner', ownerVersion: 1 } }),
       nativeQuery(prepared) { calls++; assert.equal(prepared.options.persistSession, false); assert.notEqual(prepared.options, original.options);
         assert.notEqual(prepared.options.hooks, original.options.hooks); assert.equal(prepared.options.abortController, original.options.abortController);
@@ -154,5 +153,5 @@ test('the actual injected query receives persistSession false with the original 
     assert.equal(original.options.hooks.PreToolUse[0].hooks[0], originalHook);
     assert.equal(report.queries[0].reservation.slot, 'planner'); assert.equal(report.queries[0].closed, true);
     assert.equal(oneShotQueryInput(original).prompt, original.prompt);
-  } finally { await rm(root, { recursive: true }); }
+  } finally { await f.dispose(); }
 });

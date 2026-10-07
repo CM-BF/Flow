@@ -1,4 +1,4 @@
-import { PHASE_LIMITS } from './permit.mjs';
+import { PHASE_LIMITS, NATIVE_MODEL } from './permit.mjs';
 
 export const BASE = 'f5a13cbed6b75151f34e6924ec7e10c8894acf48';
 export const MATERIAL = '项目：纸鸢。版本：0.1。新增能力：草稿预览。发布状态：内部测试，尚未正式发布。';
@@ -24,6 +24,6 @@ export function adapterOptions(mode, phase, materialFile) {
   const limit = PHASE_LIMITS[phase];
   if (phase === 'children' && (typeof materialFile !== 'string' || !materialFile.startsWith('/'))) throw new Error('Host-owned fixed material is required.');
   return { materialFiles: phase === 'plan' ? [] : [materialFile], allowRead: phase === 'children', requireReadApproval: false,
-    goalTools: false, goalGraphTools: phase === 'plan', model: mode === 'native' ? 'sonnet' : 'synthetic-no-query',
+    goalTools: false, goalGraphTools: phase === 'plan', model: mode === 'native' ? NATIVE_MODEL : 'synthetic-no-query',
     maxTurns: limit.maxTurns, maxBudgetUsd: limit.maxBudgetUsd, timeoutMs: mode === 'native' ? limit.timeoutMs : 12_000 };
 }

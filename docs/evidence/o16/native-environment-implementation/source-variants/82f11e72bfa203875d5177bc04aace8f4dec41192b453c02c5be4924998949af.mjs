@@ -12,7 +12,7 @@ import { BOUNDS, runPaths, measureRun } from './operator-bounds.mjs';
 import { startTotalDeadline } from './operator-watchdog.mjs';
 import { stageSpec, stagePassed, assertNativeReady } from './stage-policy.mjs';
 import { readPermitFile, validatePermit } from './permit.mjs';
-import { nativeEnvironmentPolicy, prepareDriverEnvironment } from './native-environment.mjs';
+import { nativeEnvironmentPolicy } from './native-environment.mjs';
 
 function signalGroup(pgid, signal) {
   assert(Number.isSafeInteger(pgid) && pgid > 1);
@@ -111,11 +111,8 @@ export async function operate({ phase = 'rehearse', run: selectedRun, file } = {
   const args = phase === 'rehearse'
     ? ['--import', 'tsx', '--test', '--test-concurrency=1', 'experiments/continuous-goal-acceptance/journey.test.mjs']
     : ['--import', 'tsx', 'experiments/continuous-goal-acceptance/driver.mjs', phase, run, file];
-  const driverEnvironment = phase === 'rehearse' ? undefined : await prepareDriverEnvironment(paths.operator, run, phase);
-  if (driverEnvironment) await writeRecord(join(paths.operator, 'driver-environment.json'), driverEnvironment, { exclusive: true });
   const child = spawn(process.execPath, args,
-    { cwd: ROOT, detached: true, stdio: ['ignore', 'pipe', 'pipe'], env: driverEnvironment?.environment
-      ?? { ...process.env, FLOW_O16_RUN: run, FLOW_O16_OPERATOR_PHASE: phase, TSX_DISABLE_CACHE: '1' } });
+    { cwd: ROOT, detached: true, stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env, FLOW_O16_RUN: run, FLOW_O16_OPERATOR_PHASE: phase, TSX_DISABLE_CACHE: '1' } });
   const capture = index => chunk => {
     raw += chunk.length; if (raw > BOUNDS.rawBytes) outputFailed = true;
     const piece = chunk.subarray(0, Math.max(0, BOUNDS.rawBytes - written));

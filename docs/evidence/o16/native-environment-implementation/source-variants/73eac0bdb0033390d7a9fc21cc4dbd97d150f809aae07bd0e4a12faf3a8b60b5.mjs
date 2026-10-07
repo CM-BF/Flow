@@ -1,7 +1,6 @@
 import { isDeepStrictEqual } from 'node:util';
 import { createQueryObservation } from './query-policy.mjs';
 import { PHASE_LIMITS, consumeSlot, assertNativePermit, NATIVE_MODEL } from './permit.mjs';
-import { failureFact } from './stage-policy.mjs';
 import { GRAPH_TOOLS } from './config.mjs';
 import { recordHostDecisions } from '../native-graph-acceptance/guard.mjs';
 
@@ -68,8 +67,8 @@ export function createObservedQuery({ mode, phase, reservation, getBinding, nati
         for await (const frame of original) { observed.frame(frame); yield frame; }
         row.observation = observed.finish(); row.entry = mode === 'native' ? 'native-result-observed' : 'injected-result-observed';
       } catch (error) {
-        row.observation = observed.snapshot(); row.failure = 'query-or-observation-unconfirmed'; row.firstFailure = failureFact(error);
-        input.options.abortController.abort(error); throw error;
+        row.observation = observed.snapshot(); row.failure = 'query-or-observation-unconfirmed';
+        input.options.abortController.abort(); throw error;
       } finally { row.observation ??= observed.snapshot(); }
     })(), { close() { closed = true; row.closed = true; original?.close(); } });
     if (mode === 'native') stream.getContextUsage = async options => {

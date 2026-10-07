@@ -5,9 +5,10 @@ import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { createObservedQuery, checkQueryOptions } from './query-run.mjs';
 import { DECLARATIONS, GRAPH_TOOLS } from './config.mjs';
-import { PHASE_LIMITS, validatePermit, reservePhase } from './permit.mjs';
+import { reservePhase, NATIVE_MODEL } from './permit.mjs';
+import { environmentFixture, fixturePermit } from './native-environment-fixture.mjs';
 function input(mode = 'rehearsal') { return { prompt: 'Bounded actual planner prompt', options: {
-  model: mode === 'native' ? 'sonnet' : 'synthetic-no-query', maxTurns: 4, maxBudgetUsd: 0.2, abortController: new AbortController(),
+  model: mode === 'native' ? NATIVE_MODEL : 'synthetic-no-query', maxTurns: 4, maxBudgetUsd: 0.2, abortController: new AbortController(),
   permissionMode: 'dontAsk', strictMcpConfig: true, tools: [], allowedTools: [...GRAPH_TOOLS],
   disallowedTools: ['Bash', 'Write', 'Edit', 'WebSearch', 'WebFetch', 'Agent', 'Task', 'Skill'], settingSources: [], plugins: [], skills: [],
   thinking: { type: 'disabled' }, canUseTool: async () => ({ behavior: 'deny' }),
@@ -39,17 +40,15 @@ test('close-before-iteration starts no transport and a used task or slot cannot 
   assert.equal(calls, 0); assert.equal(report.queries[0].closed, true); assert.throws(() => query(input()));
 });
 test('native entry is durably reserved before its injected stand-in and cannot be repeated after reopening', async () => {
-  const root = await mkdtemp(join(tmpdir(), 'flow-o16-query-unit-'));
+  const f = await environmentFixture(), root = f.root;
   try {
-    const identity = { root: '/o16-unit-fixture', digest: 'a'.repeat(64) }, now = Date.now();
-    const permit = validatePermit({ kind: 'flow.o16.phase-permit.v1', authorizedBy: 'Goal Owner', approvalId: 'unit-test-only', phase: 'plan',
-      sourceDigest: identity.digest, worktree: identity.root, model: 'sonnet', limits: PHASE_LIMITS.plan,
-      approvedAt: new Date(now - 1000).toISOString(), expiresAt: new Date(now + 60000).toISOString(), authorizationReference: 'Synthetic unit test only, never a real permit' }, { identity, phase: 'plan' });
+    const permit = fixturePermit(f);
     const reservation = await reservePhase(root, permit), report = { nativeQueryCalls: 0 }; let calls = 0;
-    const make = () => createObservedQuery({ mode: 'native', phase: 'plan', reservation, report, getBinding: () => binding,
+    const make = () => createObservedQuery({ mode: 'native', phase: 'plan', reservation, report, nativeEnvironment: f.nativeEnvironment, getBinding: () => binding,
       nativeQuery() { calls++; const original = frames(); original.getContextUsage = async options => { assert.deepEqual(options, { detail: 'summary' }); return { control: 'summary-stand-in' }; }; return original; } });
-    const stream = make()(input('native')); await drain(stream); assert.deepEqual(await stream.getContextUsage({ detail: 'summary' }), { control: 'summary-stand-in' }); stream.close();
+    const request = () => { const value = input('native'); value.options.cwd = f.cwd; return value; };
+    const stream = make()(request()); await drain(stream); assert.deepEqual(await stream.getContextUsage({ detail: 'summary' }), { control: 'summary-stand-in' }); stream.close();
     assert.equal(calls, 1); assert.equal(report.nativeQueryCalls, 1); assert.equal(report.queries[0].reservation.assignment.attemptId, 'attempt');
-    const restarted = make()(input('native')); await assert.rejects(drain(restarted), { code: 'EEXIST' }); restarted.close(); assert.equal(calls, 1);
-  } finally { await rm(root, { recursive: true }); }
+    const restarted = make()(request()); await assert.rejects(drain(restarted), { code: 'EEXIST' }); restarted.close(); assert.equal(calls, 1);
+  } finally { await f.dispose(); }
 });
