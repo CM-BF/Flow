@@ -46,3 +46,19 @@ Reviewer：astra_ultra_execution_lead / gpt-6-astra；2026-10-07T03:15:08.399916
 Review target commit: 2479e54aacd67395b4c3ac2468a7158beb439705
 
 Reviewer native_center_owner / gpt-6-astra，04:59:09.482492Z，APPROVED_LIMITED_FLOW_SOURCE_ARTIFACT_AND_INTERNAL_LOADING；[原样报告](../../docs/evidence/svc08/flow-host-artifact/build-once/result-independent-review.json)，SHA256 5a4ff0762d62128e323c4b06669db04abb5ab2bf2dec6adad4b19bc360f9f85f；[原绑定](../../docs/evidence/svc08/flow-host-artifact/build-once/result-review-bindings.json)。23 fixed/current与3 private逐项同，0reviewer运行，无P1/P2。原30,732ms/exit0/双EOF/group absent、首EPERM unknown与时间/采样限制保持。真实host、旧tab/个人采用均不在本批准内。
+
+## 2026-10-07T05:14:40.361Z：隔离Web宿主入口准备批准
+
+Review target commit: c8542aee8354fcfcdd6fb68aac5279d108548d4b
+
+APPROVED_FIXED_ISOLATED_WEB_HOST_PREPARATION，唯一reviewer Execution Lead；[原样报告](../../docs/evidence/svc08/flow-host-artifact/web-host-once/preparation-independent-review.json)。38固定绑定/完整entry和原422调用链核同，无P1/P2，0reviewer运行。真正PG/Web宿主及个人采用均仍NOT_RUN；本批准不改原运行窗口边界。
+
+## 2026-10-07T05:22:25.047133+00:00：隔离宿主真实结果待独审
+
+固定entry c8542aee8354fcfcdd6fb68aac5279d108548d4b 已获准备批准。本轮实际结果见 [RESULT](../../docs/evidence/svc08/flow-host-artifact/web-host-once/RESULT.md)，结果独审 PENDING；作者不将准备review扩成结果批准。旧产品与构建批准、首unknown、stop exit1保持，个人采用未运行。
+
+## 2026-10-07T05:27:31.281281+00:00：唯一隔离宿主结果批准
+
+Review target commit: aa71a7a3855f27b80d7045ec64c0ca644d87156d
+
+APPROVED_ISOLATED_WEB_HOST_RESULT；唯一reviewer astra_ultra_execution_lead，05:23:53.532074Z。[原样回执](../../docs/evidence/svc08/flow-host-artifact/web-host-once/result-independent-review.json) SHA1fdfdd7b7d504ef0701c253ca5e2ee3963b992361f913b2de496622d2e5cc0e3。28固定/source/raw、4private及14原件副本核同，无P1/P2，reviewer0运行。只限这一次隔离真实Web/marker DB/合成保护哨兵；未知首观察/显式stop code1/未测个人边界保持。个人采用candidate是后继准备，不套本批准。

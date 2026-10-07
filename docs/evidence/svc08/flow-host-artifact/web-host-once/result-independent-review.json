@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-07T05:23:53.532074+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "author": "assignment_review",
+  "conclusion": "APPROVED_ISOLATED_WEB_HOST_RESULT",
+  "target": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+  "delivery": "604ce630b6703063c882d950f0b8fa4ca10fa6e1",
+  "entry": "c8542aee8354fcfcdd6fb68aac5279d108548d4b",
+  "manifestSha256": "7a9d0f3f6a9bcc7790e3a1bbc7a11ccaac7052d985124d1ed86b6fc87ff0a21d",
+  "checked": {
+    "fixedCurrentBindings": 28,
+    "boundBytes": 122490,
+    "privateFileHashSizeIdentityMode": 4,
+    "rawPrivateCopiesHashSizeIdentity": 14,
+    "entryThreeUnchanged": true,
+    "preparationMetadataTwoUnchanged": true
+  },
+  "read": [
+    "RESULT.md",
+    "result-summary.json",
+    "actual work/cleanup/checkpoint/clone originals",
+    "web-host-outer.json",
+    "original entry preparation review"
+  ],
+  "facts": {
+    "scenarioPassed": 1,
+    "checksPassed": 7,
+    "staticHttpRequests": 3,
+    "workMs": 20735,
+    "cleanupMs": 257,
+    "supervisedTotalMs": 20992,
+    "outerTotalWallMs": null,
+    "bothFinalGroupsAbsent": true,
+    "bothEOF": true,
+    "initialUnknownRetained": true,
+    "webStoppedMatchingNonceExitCode": 1,
+    "markedDatabaseNormalDropAfterPersistedCheckpoint": true,
+    "remainingDatabases": [],
+    "syntheticStateAndConfigPreserved": true,
+    "providerCalls": 0,
+    "runnerStarted": 0,
+    "personalOperations": 0
+  },
+  "findings": [],
+  "reviewerExecution": {
+    "tests": 0,
+    "PG": 0,
+    "copy": 0,
+    "services": 0,
+    "provider": 0
+  },
+  "limits": [
+    "Only actual isolated CLI/Vite/static Web host with marker DB and synthetic center/runner preservation sentinels.",
+    "No API proxy/browser/three retained namespace/old-tab or personal deployment claim.",
+    "Private original and clone retained; allocated/logical/volume delta not exclusive physical cost.",
+    "Config credential bytes never printed or archived by reviewer.",
+    "Same-version personal migration and replace-host need fixed exact operator input and original live gates."
+  ],
+  "reviewToolCorrection": "Extra unchanged check first addressed the later preparation manifest at source-only c854; corrected to original delivery51f. Original source and data were not changed."
+}

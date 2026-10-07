@@ -1,0 +1,374 @@
+{
+  "at": "2026-10-07T05:22:45.196472+00:00",
+  "entrySource": "c8542aee8354fcfcdd6fb68aac5279d108548d4b",
+  "resultSource": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+  "result": "PASSED_ISOLATED_WEB_HOST_PENDING_REVIEW",
+  "count": 28,
+  "bindings": [
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/entry.mjs",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 20678,
+      "sha256": "6febd50fbb5830c3b08887cf5cc42a2a112bd12bebf7db2f435c2866d225b608"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/supervise.py",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 3127,
+      "sha256": "957dc925e518fa154e3dbbe570ff8fbc0ff81eee0a6151b6d7d19a2e5b41f558"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/inputs.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 11157,
+      "sha256": "50dffb2dcd3cd9ddf7b308a61964ba5a7473308e5030e59ad1f2dbc33280f0af"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/README.md",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 5426,
+      "sha256": "55275a37790c48653a2a5a7465f734351cbaa6f9abf67f29a126234a2a8d2390"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/preparation-checks.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 1957,
+      "sha256": "c6f0a4a7defe5f91eb62305a3e651a12efe9eed32d43432569977babfa49ffc8"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/manifest.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 13384,
+      "sha256": "33e328ac7f3c4705d5bf2488e9f3520b2dd7a858579627c705328dd8ee0929fd"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/preparation-independent-review.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 1684,
+      "sha256": "d0cd1633620e53332d8f190b79253a84f3831efb699e1013b4834ff65923d607"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/RESULT.md",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 2453,
+      "sha256": "e8b2ad47d56571688af4435385fb3b8a7d025e6e6b669d39d21b289150ca76f6"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-invocation.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 663,
+      "sha256": "1ee0e456a74679a37e48e873b6628f34e70fb9e7eea76b67d435cdefa19930e4"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-preflight.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 1398,
+      "sha256": "3612e2e0a9ed4068fd4d9a8bd6826b17782369ab432ab05e810100637e73ae2a"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/cleanup-checkpoint.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 629,
+      "sha256": "116d2c217093438c6780a9f43ea5b3d53b28aa434a3e06f169bfd6a2d1220e55"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/cleanup-result.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 708,
+      "sha256": "3fa787229888c9abceadc8ced844dbee77c177e1f098657e25ec6274352248fa"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/clone-result.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 328,
+      "sha256": "7986cbe9bf4a3dc7e690bf2ee3416dd4f9f260f374f31044ced3997bd0eb1906"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/database-created.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 140,
+      "sha256": "5a03ae02f9244ec3e07d4fe5c39bd5754bc0cc4319860106ca634b3c7c0b4361"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/database-intent.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 206,
+      "sha256": "789305199c419c5c6f50e1fb49aa0609261b5f7ca46bdcd0eea57f4bd0e177d7"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/inputs.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 11229,
+      "sha256": "459db2148b01f5698819576eaae8558ac06215c65220681e10b38975d1b2fad6"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/preservation.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 1085,
+      "sha256": "add366f0cd17051ef9afb25d0322aa253ab403ed03cc9377880b42daf34be5d4"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/reservation.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 269,
+      "sha256": "c484ca09e3c630c675dc4a8e238394ebd81c1d891a7c3872d4639cfbe70625c5"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/spawn-web-intent.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 680,
+      "sha256": "361d237ef674b34ca2b8985a0c423a5d765b0c3ec72ea8653a1bfc0fffc0b907"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/spawn-web-pending.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 128,
+      "sha256": "1f96c0f41a70fbd382101f6d260cf2d9bb9027caac1e33bce820b94518554205"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/spawn-web.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 469,
+      "sha256": "f79261c56f1950d24b2d1e720ca8fed13f92300b7e67c3bd70f836dad6893e6f"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/stop-web-intent.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 124,
+      "sha256": "f3d1d7f0e6224d4ecf6c5f2e9f09f98efc74b199e51df3e7e7bf687cc3ad6ce0"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/web-exit.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 104,
+      "sha256": "fe6501b9e2673bf7fd1f2e8d6734094a61c9ca28bc7e03718e8fa98fec4df897"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/work-result.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 8165,
+      "sha256": "b49c08fa68b294e7eb27c3e52ec204a9636f2bafca602e1d1074c2bf1f3d88cc"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/result-summary.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 10018,
+      "sha256": "1ec3f7ae06cba62a21d2f45899bb232bd9b908e3f7cb00d4aad8b060e7d00e1f"
+    },
+    {
+      "path": "docs/evidence/svc08/flow-host-artifact/web-host-once/web-host-outer.json",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 7083,
+      "sha256": "f83aa10850feae934ac8f7974e27ada5cb03f9d5ab4f15cf413aaf1eef9cd7f8"
+    },
+    {
+      "path": "plans/svc08-web-connection-lifecycle/review.md",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 5592,
+      "sha256": "4555f8b3da1548b33232533b7a3c873741f7e37b607cced866f2869f7db45ad4"
+    },
+    {
+      "path": "plans/svc08-web-connection-lifecycle/status.md",
+      "ref": "aa71a7a3855f27b80d7045ec64c0ca644d87156d",
+      "bytes": 13606,
+      "sha256": "94799a51e584e88d1d69150e49f5789ebe3b9fd4451ef4721f237a1b7b7eed3a"
+    }
+  ],
+  "preparationInputCount": 38,
+  "privateBindings": [
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/config.json",
+      "bytes": 609,
+      "sha256": "e7faf4d75523cb40e169374d019e53757da0db143b5643a6c640e2e36c3f924b",
+      "dev": 16777234,
+      "ino": 123528117,
+      "mode": "0o600",
+      "contentsArchived": false
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/state.json",
+      "bytes": 1433,
+      "sha256": "b6d162e97e1f11df7bb2dd14b3fa30111dfd8164a2401be912b3f5b0d19b0add",
+      "dev": 16777234,
+      "ino": 123528147,
+      "mode": "0o600",
+      "contentsArchived": false
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/manifest.json",
+      "bytes": 3182109,
+      "sha256": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+      "dev": 16777234,
+      "ino": 123528110,
+      "mode": "0o600",
+      "contentsArchived": false
+    },
+    {
+      "path": "/private/tmp/flow-svc08-flow-artifact-z5s5tT/backend-artifacts/c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d/manifest.json",
+      "bytes": 3182109,
+      "sha256": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+      "dev": 16777234,
+      "ino": 123501822,
+      "mode": "0o600",
+      "contentsArchived": false
+    }
+  ],
+  "rawPrivateCopies": [
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/reservation.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/reservation.json",
+      "bytes": 269,
+      "sha256": "c484ca09e3c630c675dc4a8e238394ebd81c1d891a7c3872d4639cfbe70625c5",
+      "dev": 16777234,
+      "ino": 123512539,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/inputs.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/inputs.json",
+      "bytes": 11229,
+      "sha256": "459db2148b01f5698819576eaae8558ac06215c65220681e10b38975d1b2fad6",
+      "dev": 16777234,
+      "ino": 123512540,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/preservation.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/preservation.json",
+      "bytes": 1085,
+      "sha256": "add366f0cd17051ef9afb25d0322aa253ab403ed03cc9377880b42daf34be5d4",
+      "dev": 16777234,
+      "ino": 123528119,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/database-intent.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/database-intent.json",
+      "bytes": 206,
+      "sha256": "789305199c419c5c6f50e1fb49aa0609261b5f7ca46bdcd0eea57f4bd0e177d7",
+      "dev": 16777234,
+      "ino": 123528120,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/database-created.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/database-created.json",
+      "bytes": 140,
+      "sha256": "5a03ae02f9244ec3e07d4fe5c39bd5754bc0cc4319860106ca634b3c7c0b4361",
+      "dev": 16777234,
+      "ino": 123528121,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/spawn-web-intent.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/spawn-web-intent.json",
+      "bytes": 680,
+      "sha256": "361d237ef674b34ca2b8985a0c423a5d765b0c3ec72ea8653a1bfc0fffc0b907",
+      "dev": 16777234,
+      "ino": 123528143,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/spawn-web-pending.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/spawn-web-pending.json",
+      "bytes": 128,
+      "sha256": "1f96c0f41a70fbd382101f6d260cf2d9bb9027caac1e33bce820b94518554205",
+      "dev": 16777234,
+      "ino": 123528144,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/spawn-web.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/spawn-web.json",
+      "bytes": 469,
+      "sha256": "f79261c56f1950d24b2d1e720ca8fed13f92300b7e67c3bd70f836dad6893e6f",
+      "dev": 16777234,
+      "ino": 123528146,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/stop-web-intent.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/stop-web-intent.json",
+      "bytes": 124,
+      "sha256": "f3d1d7f0e6224d4ecf6c5f2e9f09f98efc74b199e51df3e7e7bf687cc3ad6ce0",
+      "dev": 16777234,
+      "ino": 123528169,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/work-result.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/work-result.json",
+      "bytes": 8165,
+      "sha256": "b49c08fa68b294e7eb27c3e52ec204a9636f2bafca602e1d1074c2bf1f3d88cc",
+      "dev": 16777234,
+      "ino": 123528168,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/cleanup-result.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/cleanup-result.json",
+      "bytes": 708,
+      "sha256": "3fa787229888c9abceadc8ced844dbee77c177e1f098657e25ec6274352248fa",
+      "dev": 16777234,
+      "ino": 123528172,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/cleanup-checkpoint.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/cleanup-checkpoint.json",
+      "bytes": 629,
+      "sha256": "116d2c217093438c6780a9f43ea5b3d53b28aa434a3e06f169bfd6a2d1220e55",
+      "dev": 16777234,
+      "ino": 123528171,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-host-once/clone-result.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/clone-result.json",
+      "bytes": 328,
+      "sha256": "7986cbe9bf4a3dc7e690bf2ee3416dd4f9f260f374f31044ced3997bd0eb1906",
+      "dev": 16777234,
+      "ino": 123528111,
+      "sameBytes": true
+    },
+    {
+      "path": "/private/tmp/flow-svc08-web-host-20261007/web-exit.json",
+      "evidencePath": "docs/evidence/svc08/flow-host-artifact/web-host-once/actual-raw/web-exit.json",
+      "bytes": 104,
+      "sha256": "fe6501b9e2673bf7fd1f2e8d6734094a61c9ca28bc7e03718e8fa98fec4df897",
+      "dev": 16777234,
+      "ino": 123528170,
+      "sameBytes": true
+    }
+  ],
+  "retainedDirectories": {
+    "/private/tmp/flow-svc08-web-host-20261007": {
+      "dev": 16777234,
+      "ino": 123512537,
+      "mode": "0o700",
+      "retained": true
+    },
+    "/private/tmp/flow-svc08-web-host-20261007/web-host-once": {
+      "dev": 16777234,
+      "ino": 123512538,
+      "mode": "0o700",
+      "retained": true
+    },
+    "/private/tmp/flow-svc08-flow-artifact-z5s5tT": {
+      "dev": 16777234,
+      "ino": 123475174,
+      "mode": "0o700",
+      "retained": true
+    }
+  },
+  "totalBoundBytes": 122490,
+  "limits": [
+    "CoW allocated/logical bytes are not exclusive physical cost.",
+    "Resource figures are observed samples, not atomic peaks.",
+    "Synthetic center/runner preservation only; no personal state was sampled.",
+    "No API proxy/Chrome/three-retained/old tabs/default personal replacement acceptance.",
+    "Web matching-nonce code1 follows explicit stop and remains code1.",
+    "RunService stdio=ignore unchanged; no internal stderr capture claim."
+  ],
+  "noNewExecution": true
+}

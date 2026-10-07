@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:18:21.913864+00:00 / maine30d40cf；186源实际载入，CHAT05局部增量独审核实 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:29:37.245131+00:00 / main30ec4489；隔离Web宿主已审结果与OPS时间状态窄接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | maine30d40cf；D05实际来源回执5152与CHAT05增量证据限定独审，本批产品零改 |
+| 工作基线 / HEAD | main30ec4489；SVC08 b438固定结果/候选与OPS454两status，本批产品零改 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 文档固定字节/源绑定；CHAT05 18源+12新证据核同、原10/10与focused types0；PG3与挂载仍未验。0 reviewer工程检查/PG/provider。 |
-| 已集成main状态 / HEAD | maine30d40cf已接固定Web宿主准备、ENG01J登记与时间metadata；本批仅接已观察186源回执。个人af51/accepting v18、Web d629/v3未变。 |
+| 检查状态 | PASSED 固定28文件逐字接收、隔离结果原28绑定及私有证据独审；0 reviewer测试/PG/provider。ENG01J专测发现器P2仍修复中。 |
+| 已集成main状态 / HEAD | main30ec4489已接186源实际看板回执；本批仅接隔离Web结果及管理记录。个人af51/accepting v18、Web d629/v3未变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 工程宿主和工具原文后继已有清楚的实际开工与局部验证记录；看板186个权威来源已载入，登录入口与计时保持可用。 |
-| 下一可用交付 | 接收真实受限写入授权宿主的局部证据，并完成固定网页宿主隔离运行；工具原文数据库验证与生产接线继续开放。 |
+| 当前产出 | 固定网页宿主已在隔离环境运行并完成收尾，独立结果通过；完整工具原文的局部验证已通过。 |
+| 下一可用交付 | 完成仅网页宿主的个人采用准备；修正工程宿主专测入口后接收，工具正文数据库验证仍开放。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -328,3 +328,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T04:56:02.907834+00:00：受控接收ENG01I c3四源及b612自有记录，主线前像四项等于c0e；[结果独审](../../docs/evidence/i02/eng01i-pg-result-review.json)、[精确输入](../../docs/evidence/i02/eng01i-controlled-intake.json)、[组合类型检查](../../docs/evidence/i02/eng01i-combination-types.json)与[缓存保留说明](../../docs/evidence/i02/eng01i-combination-types-retention.json)。真实模型/权限强制/生产注册仍开放；SVC06只接已审实验main回执两文件，0新增PG/provider/个人操作。
 
 2026-10-07T05:18:21.913864+00:00：D05限定两文件doc review无finding，实际186源/ENG01J human与timing完整；CHAT05新30bindings、10/10/focused0独审核实，保留PG3未验与15只读main输入变化。原Web入口及个人监听/config/state保持，不刷新tab。SVC08共享PG已由X01实际清理归还后交唯一operator按固定入口执行，运行结果另收。
+
+2026-10-07T05:29:37.245131+00:00：受控接收SVC08隔离真实宿主结果与OPS实际时间状态，[固定28文件](../../docs/evidence/i02/svc08-isolated-result-ops-intake.json)逐字相同；[独审](../../docs/evidence/i02/svc08-isolated-web-host-result-review.json)限1场景/7断言/3静态HTTP和正常专库收尾。个人采用仅候选，不改变af51/v18或d629/v3；ENG01J专测入口P2交原owner窄修，未接产品。0新增工程测试/provider。

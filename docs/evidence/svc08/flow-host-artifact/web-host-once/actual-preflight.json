@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-07T05:20:08.598898+00:00",
+  "head": "f130b7726a141fc61fd0ff5675a656a1e4ba3255",
+  "source": "c8542aee8354fcfcdd6fb68aac5279d108548d4b",
+  "bindingCount": 38,
+  "bindingsAllMatched": true,
+  "claimObservedAt": "2026-10-07T05:17:47.196Z",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/svc08",
+      "plans/svc08-web-connection-lifecycle"
+    ],
+    "state": "active",
+    "branch": "codex/personal-web-connection-lifecycle",
+    "origin": "new",
+    "taskId": "SVC08",
+    "worker": "assignment_review",
+    "claimId": "ba1ff3b2-d830-4acf-b84f-be8df92c9c95",
+    "version": 6,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle",
+    "createdAt": "2026-10-07T03:29:21.929Z",
+    "updatedAt": "2026-10-07T04:42:47.430Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "freshFreeBytes": 25138454528,
+  "requiredBytes": 2684354560,
+  "namespaceAbsent": true,
+  "outerAbsent": true,
+  "artifactSourceIdentity": {
+    "dev": 16777234,
+    "ino": 123475174
+  },
+  "adminSource": "Existing /tmp/flow-coordination.env; FLOW_COORDINATION_DATABASE_URL normalized to /postgres in memory; no value persisted.",
+  "authorization": "Parent SVC08 isolated once GO after X01R3 returned; 120s work + 30s cleanup; no runner/provider/personal."
+}

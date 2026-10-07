@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-07T05:20:48.173Z",
+  "web": "stopped",
+  "database": "owned-and-empty",
+  "failures": [],
+  "artifactAndPrivateRunRetained": true,
+  "webExit": {
+    "at": "2026-10-07T05:20:48.190Z",
+    "nonce": "32fb9094-7888-4611-9ded-ff2195543d32",
+    "code": 1,
+    "signal": null
+  },
+  "databaseOid": 1226143,
+  "connections": {
+    "state": "empty",
+    "observations": [
+      {
+        "elapsedMs": 1.737374999999986,
+        "rows": []
+      }
+    ]
+  },
+  "freeBeforeDrop": 25129005056,
+  "privateBeforeDrop": {
+    "bytes": 1614931,
+    "attempts": 1,
+    "entries": 32,
+    "atomicSnapshot": false
+  }
+}
