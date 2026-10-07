@@ -1,3 +1,9 @@
+# 当前 X01 enable/binding 集成入口
+
+[READY：已审领域模块与16文件main intake](enable-binding-integration-ready.md)。唯一当前状态仍为[status](../../../plans/x01-plugin-management/status.md)，生产mount/runner/npm完整链未完成。
+
+---
+
 # X01 计划交付事实与质量记录
 
 2026-10-06，runner_owner / gpt-6-astra。唯一写入 worktree `plugin-management-plan`、branch `codex/plugin-management-plan`，开工 HEAD3773db5d014a6d38d09553acd0a5fe8df900b7c4 clean；scope仅`plans/x01-plugin-management/`和本证据目录。

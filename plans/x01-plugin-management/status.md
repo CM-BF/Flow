@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T05:14:26.740103+00:00 |
+| 最近更新时间 | 2026-10-07T05:33:27.229572+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,20 +14,20 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca；产品/fixture source37177aba665fa8d787e40c2a18c4d124bdf819ca，R3结果2ee9fa442d6f5a68ec364dcca746e54a7282f205；最终metadata本提交，未main |
-| 工作树 dirty 状态 | 本次只新增结果绑定及必要状态；commit/push后clean停写供独审，v8占用保留 |
+| 工作基线 / HEAD | base60ca；source37177aba665fa8d787e40c2a18c4d124bdf819ca；已审结果packet e628dbdfe0e53b27f8d15b2ecfba438f4217e872；本提交仅独审归档，未main |
+| 工作树 dirty 状态 | 本段仅独审/READY/status metadata；commit/push后clean停写，v8占用保留 |
 | 工作分支状态 | in-progress |
 | 检查状态 | StageC R3原27/27实际通过，2DB/205HTTP/资源完整closed；原R1/R2失败均保留 |
-| Review | 37177/R3准备已独审；R3实际结果忠实性与最小main intake PENDING |
+| Review | APPROVED：chatui01_owner 2026-10-07T05:17:35Z，target e628dbdfe0e53b27f8d15b2ecfba438f4217e872；0P1/P2，限定R3结果和16文件intake |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
 | 实现目标 | 37177aba665fa8d787e40c2a18c4d124bdf819ca |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-pg-fixture.ts, docs/evidence/x01/enable-binding-pg-vitest.config.mjs, docs/evidence/x01/enable-binding-pg-once.py, docs/evidence/x01/enable-binding-pg-caller.test.py, docs/evidence/x01/enable-binding-pg-input.json |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 插件启用、冻结任务绑定与逐阶段授权的27项数据库验收已全部通过，等待结果独审和主线接收 |
-| 下一可用交付 | 受控接收领域模块、持久化绑定与执行叶片；之后接生产runner和真实现成npm能力 |
-| 当前阻塞 | ACTIVE: 本片R3结果待独审/主线接收；生产调用链与semver实用能力尚未接入，无运行资源占用 |
+| 当前产出 | 插件启用、冻结绑定与逐阶段授权的领域模块已通过验收和独立审查，可受控接入主线 |
+| 下一可用交付 | 主线接收固定领域模块；生产runner接线和真实现成npm能力随后继续 |
+| 当前阻塞 | ACTIVE: 等待主线受控接收；生产调用链与semver能力仍未接入，当前无运行资源占用 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -235,3 +235,5 @@ Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case�
 后继沿已有map，不新领共享scope：可信host发布/当前授权→严格v3claim资格→冻结binding→production runtime执行port→既有outbox/typed provenance/flow.text验证；S01 release只是已知交接事实，main/config/contracts/events等任何新增路径仍需fresh协调/amend。semver7.8.5已选未build；完整X01 TODO保持。
 
 2026-10-07T05:14:26.740103+00:00：R3结果固定2ee9fa44，24bindings/20raw28750B与16source162785B的最小main intake待独审；原27一次27/27，原R1/R2失败不改。fresh账本v8 ACTIVE/17scope无变，当前0运行/0待launch。PG已实际归还，按Mika新队列明确SVC08 assignment为next-ready并已直接通知Web co-lead；C02无PG holder不阻其准入。owner在最终packet提交/push后停止写入保留claim，下一由chatui只读结果审。
+
+2026-10-07T05:33:27.229572+00:00：fresh核e628=origin clean、claim v8 ACTIVE/17scope。接收chatui05:17:35独审APPROVED并将[唯一集成入口](../../docs/evidence/x01/enable-binding-integration-ready.md)标READY；固定16源/24结果bindings及全部失败原件不改，原intake的pending字段作为封存历史由READY receipt后继。0tests/PG/types/产品扩写；Execution Lead可直接读取最小受控输入。完成本提交/push后停止写入保claim，未main/未完整X01。
