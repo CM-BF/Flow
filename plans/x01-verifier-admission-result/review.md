@@ -51,3 +51,7 @@ b01对同672ce薄caller审查为SOURCE_CHANGES_REQUESTED（1P2/0P1）：继承re
 ## VAR v2 PG preparation delta — review pending
 
 2026-10-07T22:47:52.673Z：packet bf13df9a89c6ae6475439060e134fd0a6ec1e507，10bindings219314B；仅5输入row与literal caller/namespace、claimv2重绑。既有route8eb/AV ead8修复批准只按原范围引用。待b01在自身actual归还后只读核差量；不是准备批准或PG通过。原manifest/candidate/raw历史不改。
+
+## VAR v2准备差量独审批准
+
+2026-10-07T22:53:19.955Z归档b01 2026-10-07T22:50:13.904235Z PREPARATION_DELTA_REVIEW_APPROVED/0新增P1P2，target14dcc/packetbf13。10固定bindings及295输入字节成立；191external/16links本轮声明对比，未重新全读外部内容。不扩大为domain/guard重审或实际PG。见[批准原范围](../../docs/evidence/x01-verifier-admission-result/transaction-pg/v2/preparation-approval.json)。Lead后到顺序决策单列在queue-ready，不伪托审者已批准main或撤销实际准入。

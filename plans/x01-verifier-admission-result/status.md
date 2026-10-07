@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T22:47:52.673Z |
+| 最近更新时间 | 2026-10-07T22:53:19.955Z |
 | 任务开工时间 | 2026-10-07T20:31:27.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner本段首次实际clock；25min截止20:56:27Z，包含等待 |
@@ -14,19 +14,19 @@
 | Branch | codex/plugin-verifier-admission-result |
 | 工作基线 / HEAD | 57abdb93b73c697d865cfea5daf52d4f3342e542 / implementation 87fb3d5f301d9aef2865a7cad04fbd98b6234274 |
 | Claim | cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE24；[receipt](../../docs/evidence/x01-verifier-admission-result/route-validation/claim-receipt.json) |
-| 工作树 dirty 状态 | 产品/工程/供给均STOP；新版PG准备packet已push，末metadata提交后clean |
-| 工作分支状态 | in-progress（公开输入边界已审；新PG准备绑定待窄审） |
+| 工作树 dirty 状态 | 产品/工程/供给均STOP；本轮仅批准与排队metadata，提交push后clean |
+| 工作分支状态 | in-progress（固定领域PG组合已审，等待独立资源窗口） |
 | 实现目标 | 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd（公开schema400增量；核心53d保留） |
 | 实现范围 | apps/runner/src/plugins/execution.ts,apps/server/src/events.ts,apps/server/src/plugin-runtime/artifact.ts,apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/verification-admission.test.ts,apps/server/src/plugin-runtime/verification-admission.ts,apps/server/src/plugin-runtime/verification-result.test.ts,apps/server/src/plugin-runtime/verification-result.ts,apps/server/src/plugin-runtime/verification-routes.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/plugin-verification-configuration.test.ts,apps/server/src/plugin-verification-configuration.ts,packages/contracts/src/plugin-verification-admission.ts,packages/contracts/src/plugin-verification-event.ts,packages/contracts/src/runner.ts,packages/plugin-runtime/src/verification-input.test.ts,packages/plugin-runtime/src/verification-input.ts |
 | 检查状态 | PASSED 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd：11/11 inject、focusedtypes0；0PG/listener，旧15与5domain未重跑 |
-| Review | APPROVED 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd：chatui 2026-10-07T22:41:46.000Z SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0P1P2，schema400 P2 CLOSED；原历史审结保留 |
+| Review | APPROVED 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd：公开输入修复22:41:46已审；v2准备差量由b01于22:50:13.904235Z批准0新增P1P2，限固定组合准备而非5PG通过 |
 | 已集成 main 状态 / HEAD | NOT_INTEGRATED；AV R3已实际5/5且独审通过，等待其主线前置接收 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 非法验证请求边界已审通过；数据库验收已更新到修复后的迁移和输入合同 |
-| 下一可用交付 | 前置主线接收并更新准入绑定后，在独立窗口验证真实受理和事件整批回滚 |
-| 当前阻塞 | ACTIVE: 等待AV R3主线前置接收及VAR独立数据库窗口 |
+| 当前产出 | 公开请求边界已审；受理与事件整批回滚的固定数据库验证组合已准备 |
+| 下一可用交付 | 在独立数据库窗口验证受理幂等、权限拒绝与事件整批回滚 |
+| 当前阻塞 | ACTIVE: 等待独立数据库验证窗口；主线接收仍为后续集成门槛 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -34,7 +34,7 @@
 | VAR-01 | completed | architecture_read | 新合同与共享序列化 |
 | VAR-02 | in-progress | architecture_read | 依赖已审AV036/center，真实PG未通过 |
 | VAR-03 | in-progress | architecture_read | 与受理同片，不能先暴露producer |
-| VAR-04 | in-progress | architecture_read | 类型检查和收集5例完成（0业务执行），两P2分别关闭；历史d407候选保持CLOSED；v2已绑定修复后的036、schema400和claimv2，待窄审及AV R3 main |
+| VAR-04 | in-progress | architecture_read | 类型检查和收集5例完成（0业务执行），两P2分别关闭；历史d407候选保持CLOSED；v2已独审通过，固定036/route/claimv2组合等独立PG窗口；main接收留作后续集成门槛 |
 
 架构影响：新增verifier admission/result领域Module，唯一事务/事件权威不变；基线图待本片受控main后由集成owner更新。
 
@@ -49,7 +49,8 @@
 | VAR-W01 | 2026-10-07T20:51:17.000Z | 2026-10-07T20:56:31.000Z | 审查 | 已发现工具错误码兼容P2，交原owner修复 | 原审结 |
 | VAR-W02 | 2026-10-07T21:11:09.000Z | 2026-10-07T21:12:11.000Z | 审查 | 修复两叶/3例已获独立批准 | repair/approval.json |
 | VAR-W03 | UNKNOWN | 2026-10-07T21:31:21.000Z | 审查 | 五case唯一断言P2静态关闭；operator另有清理P2 | transaction-pg/reviews.json；21:28仅dispatch分钟粒度记录 |
-| VAR-W04 | 2026-10-07T22:47:22.000Z | OPEN | 审查 | 等待b01在GDEP真实归还后复核v2五行绑定 | 固定packet bf13df9a8与实际dispatch |
+| VAR-W04 | 2026-10-07T22:47:22.000Z | 2026-10-07T22:50:13.904Z | 审查 | b01已批准v2五行绑定 | 固定packet bf13df9a8及preparation-approval |
+| VAR-W05 | 2026-10-07T22:53:19.955Z | OPEN | 资源 | 固定领域PG组合已审，等经理独立NEXT与fresh准入 | v2/queue-ready.json |
 
 聚合登记：D05已实证2026-10-07T22:01:36.229Z live211，本sourceCurrent=true/issues[]/stale=false；不重探dashboard。
 
@@ -97,3 +98,9 @@ D05已确认22:01:36.229Z live211/sourceCurrenttrue/issues[]/stalefalse（dashbo
 2026-10-07T22:47:06.663Z：新独立段22:43:26.475Z→22:53:26.475Z，首写22:43:56.326Z，4MiB内仅own evidence供给/metadata，0工程child/PG/HTTP。产品source8ebedd冻结；原d407六份候选/输入/caller/manifest/claim/invocation逐字保留，原raw不改。新[候选](../../docs/evidence/x01-verifier-admission-result/transaction-pg/v2/candidate.json)将295输入的5row重绑（036采用AV R3 ead8，route采用8eb，另claim/input/caller各自v2路径），290原row及191external/16links不变。原五case不改且NOT_RUN；新namespace未创建，180s/17PG只是CLOSED候选。当前等待独立metadata窄审、AV前置main receipt及未来唯一窗口，不能称公开factory或worker已验。
 
 2026-10-07T22:47:52.673Z：VAR v2准备固定packet bf13df9a89c6ae6475439060e134fd0a6ec1e507已push，10个delta绑定219314B；manifest f0c77f4d1335bb9acd459e827ddcddea1de8f42150ee3fa69e33b004b452a141。差量交b01排在其GDEP完整RETURN之后只读审，当前CLOSED_REVIEW_PENDING_WAIT_MAIN_INTAKE。0新child/PG/监听/待launch，新namespace未创建；本树本提交push后STOP，保claimv2。实际增长保守计量见[v2/closed.json](../../docs/evidence/x01-verifier-admission-result/transaction-pg/v2/closed.json)，不冒峰值。
+
+## VAR v2批准归档与验证顺序
+
+2026-10-07T22:53:19.955Z：新独立metadata段22:52:00Z→22:58:00Z，3MiB含index原子副本，0工程/PG/listener/provider。b01 22:50:13.904235Z PREPARATION_DELTA_REVIEW_APPROVED/0新增P1P2，固定target14dcc7bbe1f56f7e0ca539c3f091ba86c0eef4dc/packetbf13df9a8；10bindings219314B/295inputs1648395B，5变290同；191external/16links本审仅比旧manifest声明，未重扫内容。原owner此前stream/hash核仍限其原时点。
+
+Mika明确允许先用本树固定组合验证五domain PG；AV main receipt移出此次实际验证前置，仍是后续主线集成及main能力声明门槛。caller与alias只用已固定inputs，没有main receipt代码门禁，不绕过运行检查。唯一当前[queue-ready](../../docs/evidence/x01-verifier-admission-result/transaction-pg/v2/queue-ready.json)状态PREPARED_REVIEWED_CLOSED_WAIT_RESOURCE，NOT_MAIN/NOT_OPEN/NOT_RUN；旧候选、invocation、manifest文字为历史快照，原字节保持，主线仍未收到receipt。五case/180s/17PG不变，不能复用AV或GDEP已消费窗口。

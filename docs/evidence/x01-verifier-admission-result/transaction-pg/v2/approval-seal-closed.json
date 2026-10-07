@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-10-07T22:52:00.000Z",
+  "sourceMetadataStopAt": "2026-10-07T22:53:19.955Z",
+  "deadline": "2026-10-07T22:58:00.000Z",
+  "claim": "cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE24",
+  "freshLedgerAt": "2026-10-07T22:52:00.751Z",
+  "baseHead": "c00da7fd7ba90bb6a5a3210297353212506244ac",
+  "engineeringChildren": 0,
+  "PG": 0,
+  "HTTP": 0,
+  "provider": 0,
+  "pendingLaunch": false,
+  "growth": {
+    "changedFullBytes": 28534,
+    "indexAtomicCopyBytes": 2417033,
+    "lastTailAllowance": 16384,
+    "conservativeUpperBytes": 2461951,
+    "capBytes": 3145728,
+    "peak": "UNKNOWN"
+  },
+  "frozenInputs": "All10 reviewed v2 bindings checked against fixed Git, bytes/SHA unchanged; no product/runtime/source/raw changes",
+  "queueReadySha256": "f8e607a574e8bbd1c7f700a5bf6602783468fa2838cd653c2e5686633682526c",
+  "manifestSha256": "f0c77f4d1335bb9acd459e827ddcddea1de8f42150ee3fa69e33b004b452a141",
+  "skills": "Reused fixed find-skills/codebase-design/clean-code; separate execution gates from integration policy, one queue metadata source, no new authority or wrapper, explicit bounded lifecycle and unknown cleanup."
+}

@@ -1,0 +1,164 @@
+{
+  "recordedAt": "2026-10-07T22:52:45.536Z",
+  "state": "PREPARED_REVIEWED_CLOSED_WAIT_RESOURCE",
+  "actual": "NOT_OPEN_NOT_RUN",
+  "main": "NOT_INTEGRATED_NO_RECEIPT",
+  "soleQueueReadyFor": "VAR_TRANSACTION_PG_V2_ONCE",
+  "workingDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result",
+  "branch": "codex/plugin-verifier-admission-result",
+  "source": {
+    "core": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+    "route": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+    "test": "57b188f5ee9fce6589160bb61b75891a800bfb6b",
+    "AVCenter": "ea3c4599b00505c950cc34ada8a350082fe76747",
+    "migration036": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+    "support": "35a758f399d8daaa2c9918dd1ec047000c934ebc"
+  },
+  "review": {
+    "path": "v2/preparation-approval.json",
+    "target": "14dcc7bbe1f56f7e0ca539c3f091ba86c0eef4dc",
+    "packet": "bf13df9a89c6ae6475439060e134fd0a6ec1e507",
+    "decision": "PREPARATION_DELTA_REVIEW_APPROVED",
+    "at": "2026-10-07T22:50:13.904235Z"
+  },
+  "runtime": {
+    "manifestPath": "manifest-v2.json",
+    "manifestSourceCommit": "9c7245420cd08a72bada29b69ca74d6d14ec85a3",
+    "manifestSha256": "f0c77f4d1335bb9acd459e827ddcddea1de8f42150ee3fa69e33b004b452a141",
+    "fileCount": 295,
+    "fileBytes": 1648395,
+    "externalCount": 191,
+    "links": 16,
+    "sourceDelta": "5 changed and290 unchanged from fixed historical candidate; no change in this seal"
+  },
+  "claim": {
+    "claimId": "cb699a7a-bc28-4659-82e6-56f6a0765e6c",
+    "version": 2,
+    "state": "active",
+    "scopeCount": 24,
+    "worker": "architecture_read",
+    "lead": "mika",
+    "freshObservation": "2026-10-07T22:52:00.751Z",
+    "scope": "exact claim-receipt-v2.json; reacquire full fresh matching identity/scope at actual admission <=60s"
+  },
+  "futureNamespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/transaction-pg/var-transaction-pg-v2-run-r1",
+  "namespaceAtRecord": "lstat ENOENT",
+  "argv": [
+    "/usr/bin/env",
+    "-i",
+    "PATH=/usr/bin:/bin",
+    "LANG=C",
+    "LC_ALL=C",
+    "TZ=UTC",
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-I",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/transaction-pg/pg-v2-once.py",
+    "--admission",
+    "<FRESH_ABSOLUTE_ADMISSION_PATH>",
+    "--sha256",
+    "<SHA256_OF_EXACT_ADMISSION_BYTES>"
+  ],
+  "caller": {
+    "path": "pg-v2-once.py",
+    "commit": "35a758f399d8daaa2c9918dd1ec047000c934ebc",
+    "sha256": "53e5f1b28351ad6c566a72f59d9e9cb27e85d1cac1cbf30e11c52c7d3cf9f2d5"
+  },
+  "historicalInvocation": {
+    "path": "invocation-v2.json",
+    "sha256": "a4bb3f213809fcdc668507f3b03d25a74d278bc992fdc45f56a7586c4c28d730",
+    "unchanged": true,
+    "preconditionsSupersededOnlyByThisQueueRecord": true
+  },
+  "orderingDecision": {
+    "owner": "Mika / root",
+    "authority": "Direct task assignment after b01 limited preparation review",
+    "decision": "Allow this fixed domain PG validation before AV main intake. Main receipt remains mandatory for subsequent controlled integration and any main capability claim.",
+    "basis": "Fixed config root/aliases select this evidence inputs; fixed index invokes migratePluginVerification; 036 bytes equal approved R3 ead8, route bytes equal8eb. AV R3 remaining test-lifecycle delta is not this VAR five-case consumer. No runtime main-receipt gate exists in pg-v2-once.py; actual gates unchanged.",
+    "notChanged": "No original acceptance criterion, source, SQL, runtime manifest, old candidate, raw or checks changed."
+  },
+  "limits": {
+    "protocol": "flow.x01.verifier-admission-result-pg.v1",
+    "productCommit": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+    "totalSeconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalReserveSeconds": 10,
+    "suites": {
+      "runtime": {
+        "cases": 5,
+        "httpRequests": 160,
+        "connectionsMax": 17
+      }
+    },
+    "httpRequestsMax": 160,
+    "responseBytesPerRequest": 131072,
+    "responseBytesPerSuite": 4194304,
+    "databasesMax": 1,
+    "serialSuites": true,
+    "streamsBytes": 262144,
+    "resultBytes": 131072,
+    "rawBytes": 1048576,
+    "temporaryBytes": 33554432,
+    "temporaryEntries": 4096,
+    "reserveBytes": 1073741824,
+    "runName": "var-transaction-pg-v2-run-r1",
+    "databaseReserveBytes": 134217728,
+    "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+    "selection": [
+      {
+        "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+        "name": "same-key concurrent admission creates one task node reference wake and receipt"
+      },
+      {
+        "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+        "name": "stale CAS removed project authority revoked grant and denied trust leave no creation residue"
+      },
+      {
+        "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+        "name": "artifact typed passed verdict and completion commit together and exact replay writes nothing"
+      },
+      {
+        "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+        "name": "forged passed and late invalid completion roll back the whole artifact verdict event batch"
+      },
+      {
+        "file": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts",
+        "name": "settled failure cancellation UNKNOWN and project capacity preserve their distinct transaction gates"
+      }
+    ],
+    "tasksMax": 16,
+    "attemptsMax": 14,
+    "scope": "Real domain admission and reportEvents TX; public source setup; synthetic installed metadata only; no verifier HTTP mount or worker execution",
+    "runnersMax": 4,
+    "fixtureCommit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+    "metadataRunners": 4,
+    "providerCalls": 0,
+    "registrationsMax": 2
+  },
+  "resourceAccounting": {
+    "temporaryBytes": 33554432,
+    "rawBytes": 1048576,
+    "databaseAndWalPlanningBytes": 134217728,
+    "newExecutionPlanningBytes": 168820736,
+    "globalCleanupReserveBytes": 1073741824,
+    "fixedCallerBaseFloorBytes": 1242562560,
+    "pairedBytesAtActual": "Fresh complete manager floor minus1242562560; all valid actual/potential/KEEP included, reserve counted only once",
+    "databaseReserveMeaning": "Combined DB/WAL planning bound, not measured bytes or physical enforcement",
+    "connectionsConfiguredMax": 17,
+    "externalAdminHeadroom": 16,
+    "requiredAvailableConnections": 33,
+    "HTTPConcurrentMax": 1,
+    "serverLifecycle": "Factory public source setup must close before one domain scheduler starts; no overlapping factory/scheduler owner pools",
+    "notActualReservation": true
+  },
+  "freshAdmissionRequired": [
+    "Unique manager NEXT/window/latestStart, no conflicting heavy holder; original AV/GDEP grant is unusable",
+    "ExecutionHEAD=origin and clean, exact claimv2 worker/branch/WT/scope current <=60s; no overlap",
+    "Fresh295 files/191external realpath bytes/16links and existing fixed helpers; ownedroot identity and namespace exact absent",
+    "Fresh complete manager terms/free above requiredfloor; PG availability>=33 and probe admin/pool closed",
+    "Use fixed env-i/Python-I-B argv once with fresh32hex window and absolute admission/hash, no retry"
+  ],
+  "cleanup": "Preserve first failure; complete180s shares one origin (110work+60cleanup+10final). Known ownedgroups/EOF/startup/server/scheduler/pool/admin settlement and same marked DB/OID/owner/marker with0connections required before ordinaryDROP and explicit absence. Guarded root canonical/non-symlink/devino and bounded sample before each remove, final lstat ENOENT; any uncertainty KEEP/UNKNOWN, no force/terminate.",
+  "coverage": "Five real domain TX cases only: public source setup, synthetic installed-material prerequisite. No verifier HTTP mount/factory authorization chain, v4 worker execution, provider or personal deployment proof."
+}
