@@ -45,3 +45,6 @@ Reused local find-skills and clean-code (no install): keep public profile interf
 
 ## 2026-10-07T11:52:25.563Z c3 reviewed binding
 本地find-skills/clean-code复用；仅核两审原件与当前/历史措辞，不重跑syntax/types或改程序。原生sandbox与customouter缺失边界原样；actual未运行。metadata/parser后统一TMP绑定最终HEAD，无循环审批。
+
+## 2026-10-07T11:55:28.219Z c3 actual 完整安全点
+沿本地find-skills/clean-code检查职责与证据边界：3旧Bearer App与独立Cookie验证分开，未注入/改写为Cookie客户端；每个report同backend/publiccontext，461a格式1不补releaseId。完整EOF/真实outer+seal/markedDB与exact身份清理后才接受检查，通过不推个人部署/lateLogout。保首c2失败、syntax独立47ms及本actual23495ms，余量不触发重测。65原件逐hash，generatedsb非metadata不隐藏；正常metadata/parser后固定供独审。

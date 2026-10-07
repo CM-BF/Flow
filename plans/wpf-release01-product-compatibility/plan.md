@@ -10,7 +10,7 @@
 - [x] RELEASE01-02 历史两App四类兼容证据。
 - [x] RELEASE01-03 历史独审/main接收。
 - [x] RELEASE01-04 实现显式最终输入、严格代理、真实浏览器请求、流式SSE/ACK故障和有界清理。
-- [ ] RELEASE01-05 完成必要源码/局部检查；最终tuple及合法资源段到达后真实三App四项compat与独立Cookie补证。
+- [x] RELEASE01-05 完成必要源码/局部检查；最终tuple及合法资源段到达后真实三App四项compat与独立Cookie补证。
 - [ ] RELEASE01-06 后继独审与主线接收，原operator另执行个人发布。
 
 模块职责：fixture唯一拥有输入校验、owned DB/center/proxy/静态bytes/公共runner；browser只真实UI旅程和独立page内session探针；既有web-release工具拥有最终报告codec/import/verify。缺供给与unknown清理显式失败，不维护第二权威。不导入未来未知runtime，也不借旧dist。
@@ -36,3 +36,5 @@ c2集中审与native固定边界已接受（0blocking），原件见[c2记录](.
 c3仅修非法sandbox host，真实生成profile一次true语法检查通过/47ms/清理完整。见[c3记录](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/README.md)；集中delta/native审与真实compat仍待，RELEASE01-05不勾选。
 
 c3准备source/native独审已接受，管理新独立一次180sNEXT，紧前fresh/gate后才实际；原三App TODO05仍开放，无旧信用转移。
+
+c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495ms/完整清理。原失败保留，等待独立证据审及RELEASE01-06主线接收，不自动追加运行。

@@ -1,10 +1,10 @@
 # WPF-RELEASE01 review
 
-**状态：APPROVED（两harness源码与固定c2准备限定范围；真实三App兼容尚未执行）**
+**状态：APPROVED（两harness与c3准备限定范围；三App actual已通过，独立证据接收待完成）**
 
 Review target commit：9658a6b763de69038778de1b0c16de64ff824c75
 
-范围：本次fixed public origin / 三retained App successor两harness。f3d限定源码0blocking见[原件](../../docs/evidence/wpf-release01/fixed-origin/f3d-source-review.json)；9658 type-only delta见[独审](../../docs/evidence/wpf-release01/fixed-origin/types-first-root-review.json)。[必要复验独立接收](../../docs/evidence/wpf-release01/fixed-origin/types-second-root-review.json)核12raw/9pin/实际退出及清理。本次必要strict/noUnchecked/noEmit实际exit0，[原始结果](../../docs/evidence/wpf-release01/fixed-origin/types-second/result.json)；首f3d类型失败原样保留。源码批准与类型通过不等于真实兼容通过。最终backend tuple和公开设置已核齐；独立owned caller c2已通过集中delta审与精确native边界审；实际资源准入仍待管理者fresh，browser/PG/HTTP旅程NOT_RUN；c2首次actual在sandbox-exec阶段FAILED，见下方本次边界。
+范围：本次fixed public origin / 三retained App successor两harness。f3d限定源码0blocking见[原件](../../docs/evidence/wpf-release01/fixed-origin/f3d-source-review.json)；9658 type-only delta见[独审](../../docs/evidence/wpf-release01/fixed-origin/types-first-root-review.json)。[必要复验独立接收](../../docs/evidence/wpf-release01/fixed-origin/types-second-root-review.json)核12raw/9pin/实际退出及清理。本次必要strict/noUnchecked/noEmit实际exit0，[原始结果](../../docs/evidence/wpf-release01/fixed-origin/types-second/result.json)；首f3d类型失败原样保留。源码批准与类型通过不等于真实兼容通过。最终backend tuple和公开设置已核齐；独立owned caller c2已通过集中delta审与精确native边界审；实际资源准入仍待管理者fresh，c2首次actual在sandbox-exec阶段FAILED；后继c3唯一actual通过，原件见当前段，待独立证据审。
 
 必须核：真实Chrome页面请求和Node APIRequestContext分离；exact proxy/Host与无fallback；原Bearer+独立Cookie补证；SSE与真实ACK prefix；原四观察与最终backend/context；owned cleanup、报告与未知失败。
 
@@ -32,6 +32,10 @@ Review target commit：9658a6b763de69038778de1b0c16de64ff824c75
 
 [c2 actual独审](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/c2-first-root-review.json)接受410ms失败/真实cleanup；c3仅host字面改localhost，实际生成profile的true检查exit0/47ms，见[c3原件](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/index.json)。9658两harness与既有strict/source批准不变；c3父需新的精确native绑定，3App仍NOT_RUN。作者不以局部语法通过批准完整网络/数据库/Chrome边界。
 
-## 当前 c3 精确准备已接受
+## 历史 c3 精确准备已接受（actual前）
 
 [c3集中审](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/c3-root-review.json)核一literal/9规则/47ms syntax实际、0blocking；[native精确接受](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/c3-native-boundary.json)仅parent2500/worker5800与既定权限，不是三App通过。旧c2失败归因及cleanup接受保持，固定9658两harness/strict与当前实际分层。
+
+## 当前 c3 actual PASS / 独立证据审待完成
+
+[65原件](../../docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/index.json)及[限定结果与清理](../../docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/README.md)：真实outer0/23,495ms、3App各4观察/3compat IDs、独立Cookie probe；完整marked DB/HTTP/Chrome/PGID/scratch/admin清理。作者仅报告实际，不自行批准独立review。原源码/准备批准与失败不改，主线/部署仍未接收。
