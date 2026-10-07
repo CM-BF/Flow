@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T07:31:25.369263+00:00 |
+| 最近更新时间 | 2026-10-07T07:35:51.317502+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -15,18 +15,18 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
-| 工作树 dirty 状态 | 新版本pin测试及own准备metadata；原4fc及28项证据保持冻结 |
-| 工作分支状态 | in-progress |
-| 检查状态 | semver9/9实际材料/loader检查，1tar；首次types语法失败保留，修后types0。原PG/旧tests未重跑 |
-| Review | chatui01_owner 2026-10-07T07:23:32Z semver源码/直接结果APPROVED，0P1/P2；正式回执semver-independent-review.json |
+| 工作树 dirty 状态 | fe826801源固定；两实际检查及精确收尾封存，提交后clean待独审 |
+| 工作分支状态 | review |
+| 检查状态 | 新pinning 3/3 + focusedtypes0，两真实tar；2进程/3精确roots收尾。原semver9/27/6PG未重跑 |
+| Review | 新pinning源ba540限定批准；fe826三行增量与3/3结果待一次独审。原semver4fc已APPROVED/READY |
 | 已集成 main 状态 / HEAD | 原16领域main5cd；c15五源+center八源main9816e87a7690d7d36ac25cb8537bc9c8f41364c8，67bindings/roottypes0。当前semver尚未main |
-| 实现目标 | 4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9 |
-| 实现范围 | apps/runner/src/plugins/semver-package.test.ts, experiments/plugins/semver-compare, docs/evidence/x01/semver-local.py, docs/evidence/x01/semver-vitest.config.mjs, docs/evidence/x01/semver-tsconfig.json |
-| 本片段交付阶段 | implementation |
+| 实现目标 | fe826801654c1366a20849fbd2f82d8b36bc01ac |
+| 实现范围 | apps/runner/src/plugins/semver-pinning.test.ts, docs/evidence/x01/semver-pinning-local.py, docs/evidence/x01/semver-pinning-tsconfig.json, docs/evidence/x01/semver-pinning-vitest.config.mjs |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 真实semver能力包已独审待主线接收；正在补新材料安装后的旧版本绑定行为 |
-| 下一可用交付 | 交付旧版本固定与新材料身份直接证据，并按精确移交接入原runner和客户端 |
+| 当前产出 | 旧版本绑定在新材料安装后保持，来源身份和当前信任拒绝行为已通过直接检查 |
+| 下一可用交付 | 完成本片独审及主线接收；共享入口正式交回后接入原runner完整执行链 |
 | 当前阻塞 | ACTIVE: 生产runner与客户端共享出口由CHAT05P02持有；本段可独立验证版本固定，不阻材料片接收 |
 | 需用户决定 | NONE |
 
@@ -285,3 +285,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 正式独审限定source4fc60b4c/packet43ce6291，7个新source/fixture可受控接收；原28项manifest、失败raw、9例与types不重跑。fresh账本v13 ACTIVE32与本树身份一致。固定main3e4362b08359433620a07b05bd034a25e2dd7c4b仍runRunner v2；CHAT05P02 claimf51cc458 v4持runtime/client/contracts出口，C02 claim8ad6536b v15持main/configuration。下一生产接线按精确handoff顺序，不写他人范围。当前0local/PG/待launch；status_read持本队local。
 
 2026-10-07T07:31:25.369263+00:00：原子amend v14/33已成功，仅追加一个版本pin行为test。[精确生产handoff](../../docs/evidence/x01/runtime-integration-handoff.md)复用既有runtime/client/事件流，shared源0改动。原npm source/9例/结果批准已READY；新3例、2tar与focusedtypes仍NOT_RUN，本队local等待status_read实际归还，源码准备不占执行槽。
+
+2026-10-07T07:35:51.317502+00:00：[新3例结果](../../docs/evidence/x01/semver-pinning-result-summary.json)固定，types0/3过3，两tar61857/61865close0，2检查PID48379/61361 finalownedabsent/mergedEOF/observed=retained；原EPERM观察保留。2TMP+1package exactENOENT；local已07:34:16.968713Z归还status_read。未更改任何生产源和原4fc/28证据。整体main/runRunner未完成，当前0运行。

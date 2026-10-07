@@ -1,0 +1,74 @@
+{
+  "recordedAt": "2026-10-07T07:35:51.317502+00:00",
+  "sourceCommit": "fe826801654c1366a20849fbd2f82d8b36bc01ac",
+  "priorSourceReview": {
+    "target": "ba540e36c5dcb7f646d0a375bca5b29c8e3f654e",
+    "reviewer": "chatui01_owner",
+    "verdict": "SOURCE_REVIEW_APPROVED / VALIDATION_PENDING",
+    "P1": 0,
+    "P2": 0,
+    "subsequentDelta": "Capture original binding before preparing second installation, then assert it unchanged after installation and execution; existing thin local selector chooses only the two consumers."
+  },
+  "localRecord": {
+    "path": "docs/evidence/x01/semver-pinning-local.json",
+    "bytes": 13705,
+    "sha256": "cdd2ea8741f04142d7cd1a9720be77c0d4854799fee491d49551879cdda82299"
+  },
+  "actual": {
+    "topLevelChildren": 2,
+    "typesExit": 0,
+    "selected": 3,
+    "passed": 3,
+    "failed": 0,
+    "tarChildren": [
+      {
+        "pid": 61857,
+        "exitCode": 0,
+        "signal": null
+      },
+      {
+        "pid": 61865,
+        "exitCode": 0,
+        "signal": null
+      }
+    ],
+    "rawBytes": 116,
+    "firstStartedAt": "2026-10-07T07:33:54.386213+00:00",
+    "lastFinishedAt": "2026-10-07T07:34:16.968713+00:00",
+    "wholeExternalWall": null,
+    "temporaryWholePeak": null,
+    "PG": 0,
+    "provider": 0,
+    "native": 0,
+    "Chrome": 0
+  },
+  "exactRootPostflight": [
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-semver-pinning-_0dnfkvx",
+      "dev": 16777234,
+      "ino": 123629357,
+      "lstat": "ENOENT"
+    },
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-semver-pinning-_izn1hs7",
+      "dev": 16777234,
+      "ino": 123629421,
+      "lstat": "ENOENT"
+    },
+    {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-semver-pinning-_izn1hs7/tmp/flow-semver-pinning-package-ZSTS5i",
+      "dev": 16777234,
+      "ino": 123629445,
+      "lstat": "ENOENT"
+    }
+  ],
+  "scope": "Two Flow wrapper releases of the identical frozen npm semver7.8.5 bundle. Old binding remains byte-identical before/after second installation, real calls retain each exact material/artifact/tree provenance; mixed tuple and withdrawn current digest trust reject before grants.",
+  "limitations": [
+    "Injected grant, not live center authority or runRunner dispatch.",
+    "Not an upstream npm semver upgrade, public registry revision/disable workflow, or full X01 completion.",
+    "Whole external wall and active TMP peak remain unknown; end sample is not a peak.",
+    "Early EPERM observations preserved; final ownership/EOF authoritative under unchanged OPS14 contract."
+  ],
+  "localReleasedAt": "2026-10-07T07:34:16.968713+00:00",
+  "review": "PENDING"
+}

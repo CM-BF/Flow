@@ -1,3 +1,11 @@
+状态：PENDING（新Flow包装版本材料pin三例与局部结果；原semver批准保持）
+
+Review target commit: fe826801654c1366a20849fbd2f82d8b36bc01ac
+
+[结果摘要](../../docs/evidence/x01/semver-pinning-result-summary.json)。ba540源已chatui限定SOURCE批准；其后仅安装前snapshot与薄检查选择器，types0/3过3待一次结果独审。不把Flow包装升级称npm上游升级或生产完整链。
+
+---
+
 状态：APPROVED（仅真实semver能力包源码与直接结果；非生产完整链）
 
 Review target commit: 4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9
