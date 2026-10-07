@@ -1,26 +1,26 @@
 {
   "at": "2026-10-07T11:35:52.598100+00:00",
-  "productSource": "f5ac8dcade01ebc187be276339a5e94e21111b9f",
+  "productSource": "66caee46341c91db71a3590bfcd288396b30567a",
   "preimage": "239b6a818d5c0380842aa61120bf308bb9846df3",
   "comparedCurrentMain": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
   "bindings": [
     {
       "path": "apps/server/src/browser-session/index.ts",
-      "originCommit": "f5ac8dcade01ebc187be276339a5e94e21111b9f",
+      "originCommit": "66caee46341c91db71a3590bfcd288396b30567a",
       "bytes": 9640,
       "sha256": "fb44b7558e38b9fda9c3fd32c4117e069ed56e623ee838744039e8f0039b0f12"
     },
     {
       "path": "apps/server/src/browser-session/fixture.ts",
-      "originCommit": "f5ac8dcade01ebc187be276339a5e94e21111b9f",
+      "originCommit": "66caee46341c91db71a3590bfcd288396b30567a",
       "bytes": 3452,
       "sha256": "0aabd8267a723651c19515d9176117d33f74eb158f4654d4d36f1507c7f67868"
     },
     {
       "path": "apps/server/src/browser-session/session.test.ts",
-      "originCommit": "f5ac8dcade01ebc187be276339a5e94e21111b9f",
-      "bytes": 30255,
-      "sha256": "ed2d1ad6806ef2c26e4bda97bc9de34bcf10036f497bfc717ce081649d0ae87e"
+      "originCommit": "66caee46341c91db71a3590bfcd288396b30567a",
+      "bytes": 30443,
+      "sha256": "6baf9b667cf3416514c27c0be749b6510757997894448798c790457f083c9de8"
     },
     {
       "path": "package.json",
@@ -192,5 +192,14 @@
     "freshFloorBytes": 1763704832
   },
   "providerCalls": 0,
-  "window": "PENDING_LEAD_ACTUAL_HOLDER_CONFIRMATION"
+  "window": "Consumed once pg-01 at2026-10-07T11:37:55Z approx display; exact reservation is authoritative; actual returned11:37:58.902201Z",
+  "connectionObserver": {
+    "originCommit": "62e9a83923a3c2996b4ab32610e10e2069828c66",
+    "originPath": "apps/tui/src/task-controls/fixture-cleanup.ts",
+    "materializedPath": "docs/evidence/wpf-connection-session/late-logout/readonly/fixture-cleanup.ts",
+    "bytes": 4435,
+    "sha256": "4eeb8756eabca0173d1c3be5c4747e9960499f72f3f4975c37b0beed2929cdf7",
+    "permission": "Lead exact readonly fixed helper supply; no edits to helper",
+    "reason": "Existing old WT lacks this main test-only leaf; isolated runtime needs one exact source file; use existing observeConnections only"
+  }
 }

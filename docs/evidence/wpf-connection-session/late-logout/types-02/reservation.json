@@ -1,0 +1,27 @@
+{
+  "at": "2026-10-07T11:36:58.602543+00:00",
+  "mode": "types",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "-p",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session/docs/evidence/wpf-connection-session/late-logout/focused-types.json"
+  ],
+  "source": {
+    "apps/server/src/browser-session/index.ts": "fb44b7558e38b9fda9c3fd32c4117e069ed56e623ee838744039e8f0039b0f12",
+    "apps/server/src/browser-session/fixture.ts": "0aabd8267a723651c19515d9176117d33f74eb158f4654d4d36f1507c7f67868",
+    "apps/server/src/browser-session/session.test.ts": "6baf9b667cf3416514c27c0be749b6510757997894448798c790457f083c9de8",
+    "apps/server/src/browser-session/store.ts": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5"
+  },
+  "callerSHA256": "a6059291e3be8618c21edc9a9e3abc6b6afbb029dfcaf6a6b16d7a8d312a6c58",
+  "freeBytes": 22014644224,
+  "priorElapsedMs": 1753,
+  "scratch": {
+    "path": "/private/tmp/flow-logout-lxagzvd9",
+    "dev": 16777234,
+    "ino": 124099772
+  },
+  "providerCalls": 0,
+  "selected": null
+}
