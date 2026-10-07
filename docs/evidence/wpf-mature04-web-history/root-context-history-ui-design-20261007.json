@@ -1,0 +1,123 @@
+{
+  "kind": "root-read-only-context-history-ui-design",
+  "createdAt": "2026-10-07T22:30:42.180761+00:00",
+  "fixedGit": "b1291faae260be8d86ada12ff63341d44efc2709",
+  "task": "Existing WPF-MATURE-04 / MATURE04-05 / WPF-001-09; no duplicate task or progress authority",
+  "decision": "Implement the existing historical-context consumer next; keep full current-window transparency acceptance OPEN. This is design evidence, not implementation, actual validation, claim, or start authorization.",
+  "researchInputs": [
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 28667,
+      "sha256": "ebfa3f33860ee478f24808ca47fb6f7e7205fe613411608f0ef0bac58680e85d"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 25086,
+      "sha256": "d47002c00baad69c4cff0f205c76f89a4598b7bb7e817e7bb605b96e0d7eb907"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "bytes": 14114,
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 29561,
+      "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 74808,
+      "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e"
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "bytes": 6794,
+      "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879"
+    },
+    {
+      "path": "docs/evidence/wpf-mature-04/handoff-current.md",
+      "bytes": 8029,
+      "sha256": "2efe16b13d8aa2dc6dc23987ff83a431001e395309a5d02b75530a8d3de0d449"
+    }
+  ],
+  "contractReview": {
+    "owner": "w01_owner",
+    "fixedGit": "b1291faae260be8d86ada12ff63341d44efc2709",
+    "filesRead": 6,
+    "findings": [
+      "FlowClient.contextHistory(taskId, signal) returns at most one latest-by-eventSequence observation for current_attempt_id, not all history and not a current-window snapshot.",
+      "Requested/resolved models are historical frozen request and host observation; resolved may be null. Selected next-message model is separate.",
+      "current and remaining are always unknown/history-only; modelCapacity unknown; compactionWindow and used can only be correctly attributed SDK estimates. Never synthesize current percentage or remaining.",
+      "observedAt and receivedAt are separate; sequence does not establish freshness. Do not borrow general ContextSnapshot freshness/cut rules absent from this endpoint.",
+      "v1 materials can supply bounded citation/locator bytes, tokens null; v2 attachments produce unknown metadata. Unknown is not zero, unused, unsupported, or not compressed.",
+      "Transport/auth/conflict/schema/identity failure differs from no attempt/no observation; no failure becomes healthy unknown.",
+      "Schema 65536B bound is not an enforced streaming network limit in the current client. No invented claim of transport bound."
+    ]
+  },
+  "experience": {
+    "entry": "Existing plugin-contributed Context button in chat.composer.actions opens explicit accessible disclosure/dialog; use existing chat.composer.context panel slot. Preserve official assistant-ui Thread, composer, drafts and Arc view identity.",
+    "headline": "Context observation. Present current window / remaining as unavailable from history. Show Last observed estimate only when supplied; do not render a numeric ring for history-only data.",
+    "detail": [
+      "Historical requested and observed model with source/version/method/token basis, exact observation and received time, task/attempt reference. Label selected next-message settings separately if exposed by existing settings surface; never reuse them as observed execution identity.",
+      "Strategy-window estimate is not a model hard limit. Material exact refs/bytes are not token costs or residence proof.",
+      "Explicitly expand sample detail using existing authorized detail reader; preserve detail ref and exact selected observation identity. No eager body reads.",
+      "Click/Enter/Space opens; Escape closes and restores originating visible button focus. Works on touch, 390px, light/dark, reduced motion. Error/unknown labels must remain legible without color."
+    ]
+  },
+  "lifecycle": [
+    "A private typed ContextHistoryReaders port on AppActions calls the existing FlowClient; plugins never receive client credentials or unrestricted fetch. Authorization checks before and after await.",
+    "Bind controller to existing AppPluginSession (center connection lifetime), stable viewKey and ConversationProjection. Navigation/split/merge must not recreate authority or remount Thread.",
+    "Read target is the selected conversation turn/task (initially last turn), not an invented conversation-wide aggregate. Identity carries session/view/conversation/task and current request generation; returned attempt/session/profile/input remain labeled historical identity.",
+    "Open/explicit refresh starts bounded one-inflight read; no timer, repeated model/token-count calls, global event subscription per keystroke, or load of all past tasks. Close/hidden pane/revocation/disposal aborts and makes late response inert.",
+    "Task/connection/view identity switch clears current target and detail; task attempt changes observable from existing projection invalidate. For identity components not available in current projection, do not invent a freshness guarantee; next explicit refresh obtains center-selected current attempt.",
+    "Draft/model/material edits cannot transform historical result into current data. Keep historical label with exact binding; do not recompute from token sums. No writes to outbox, model settings, materials, or recovery journal.",
+    "Use immutable stable snapshots and a dedicated controller subscription; notify only changed context-history state. Reuse existing host registration/enable/disable and PluginView failure boundary; disabled plugin aborts reads."
+  ],
+  "pluginDesign": {
+    "preferred": "Register a real plugin command/button/panel, with private owner-bound read adapter; context-history domain state in its own module. Add narrow task.context.read capability to Web types and validation if no existing precise capability is adopted; declaration is not authority, private session/view checks still required.",
+    "scopeCandidate": [
+      "apps/web/src/conversation-context-history/** (new bounded controller, UI, fixtures, focused tests)",
+      "apps/web/src/plugin-integration/context-history.tsx (new typed binding and plugin)",
+      "apps/web/src/plugin-integration/session.ts (thin registration/lifecycle/read port)",
+      "apps/web/src/conversations/ConversationThread.tsx (thin existing binding wrapper)",
+      "apps/web/src/App.tsx (thin authorized client adapter)",
+      "apps/web/src/plugins/types.ts and validation.ts (only if adding narrow read capability)",
+      "Existing same-task plan/status/review and evidence paths assigned by manager after authority routing; no duplicate hand-filled status"
+    ],
+    "claimNote": "Manager resolves fresh exact scope versus Arc20 and other leads before writes; no current source authorization implied. New feature must have independent WT/branch. Keep original MATURE04 canonical status ownership with Mika; Web child progress via current WPF management until agreed unique registration, never write another owner tree."
+  },
+  "validation": {
+    "meaningful": [
+      "Pure controller: target switch and late response, abort/disable/dispose, one inflight read and explicit retry, null attempt vs no observation, error vs unknown, source and identity preservation.",
+      "Contract-aligned HTTP fixture and browser: legitimate estimate including zero, unknown, requested != resolved/null, v2 materials unknown, never show current remaining/ring, lazy detail request count, two visible split views and hidden/closed cleanup, preserved drafts, keyboard/touch, light/dark390px screenshots.",
+      "No-model fixture is simulated validation; actual center/producer sampling, full current cut/model hard capacity/compression residence and personal deployment remain explicitly unverified."
+    ],
+    "noRepeat": "No broad rerun of already green Arc/model tests for metadata; run focused checks after implementation and one bounded browser window assigned by manager."
+  },
+  "aiElements": {
+    "primarySource": "https://elements.ai-sdk.dev/components/context",
+    "observed": "Official Context is a compound usage/cost hover-card with ratio presentation and tokenlens cost support; a display component cannot establish backend context identity or comparability.",
+    "decision": "Use only semantics supported by real history contract. Do not inject fake maxTokens/usedTokens, cumulative task usage, guessed model catalog capacity or price. Local source compatibility review pending w01. Accessible click disclosure takes precedence over hover-only details."
+  },
+  "fullParentStillOpen": [
+    "Authoritative current consumption cut and freshness",
+    "Current draft/queued/model/material invalidation projection",
+    "Provider model hard limit and comparable current remaining/overflow",
+    "Complete attachment/context material inventory and residence semantics",
+    "Compression events/history with trustworthy before/after and coverage",
+    "Real producer/current service validation"
+  ],
+  "cleanCode": {
+    "time": "2026-10-07T22:30:42.181059+00:00",
+    "scope": "Read-only design boundary review",
+    "findings": [
+      "Avoid naming latest history current context.",
+      "Avoid second authority/state store or copied HTTP DTO.",
+      "Keep adapter, read controller and presentation responsibilities separate.",
+      "Avoid eager per-turn reads, global rerender notifications and speculative performance claims."
+    ],
+    "fix": "Design states explicit historical scope, lazy one-target read, typed private port and distinct error/unknown. No implementation modified.",
+    "unresolved": "Actual scope/registration and AI Elements source adaptation require owner implementation/review."
+  }
+}

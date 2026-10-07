@@ -1,0 +1,15 @@
+# MATURE04-05 Web history consumer
+
+Stage: IMPLEMENTING. This is the existing WPF-MATURE-04 child, managed through WPF-001-09; the parent plan/status remains with Mika/context-transparency. No duplicate parent status is created here.
+
+Actual claim start: 2026-10-07T22:35:02.638Z. Conservative source-segment deadline: 2026-10-07T22:59:17Z. Fixed base: b1291faae260be8d86ada12ff63341d44efc2709. Branch: codex/web-context-history. Claim: 25d7e029-9334-479e-8872-61090c406e0a v1, exactly the new conversation-context-history directory, new plugin binding, and this evidence directory.
+
+The approved design uses a private authorized reader and one explicit historical read at a time, with view/session/attempt invalidation, abort and lazy detail. It presents real historical estimates separately from unknown current/remaining. It uses the existing Dialog, not a fabricated AI Elements numeric Context component. No model/pricing call or new dependency.
+
+App, session, Thread and plugin capability/validation wiring are outside this claim. Module and binding are prepared independently; mounted App/browser and current-window transparency remain NOT_RUN / NOT_IMPLEMENTED respectively. Future wiring must keep session-owned controller identity per stable view and perform authorization before and after each existing FlowClient call. No second draft, material, recovery or command authority.
+
+Source supply: 263 fixed files, 1,826,585 logical bytes. No dependency installation/copy. Local checks not started. Source/metadata+supplied source <=7MiB, TMP <=8MiB, raw <=1MiB; total16MiB. Up to4 serial checks, each20s incl5s cleanup, cumulative60s, no network/PG/HTTP/Chrome/build. Browser needs a separate assigned window.
+
+Skills: reused local find-skills discovery; clean-code (names, one responsibility, errors, no extra authority), codebase-design (small private reader Interface hiding read lifetime), assistant-ui (preserve official Thread/composer), ai-elements source audit (history is not numeric capacity), and brainstorming (existing root design already accepted by manager; no new design round). Exact skill paths live under /Users/citrine/.agents/skills. No reinstall/network.
+
+Design inputs: /private/tmp/root-context-history-ui-design-20261007.json (d2925d91dbce92f27992da408c6da7e614ca84cd22e5f54970517f8e2eecdd11), /private/tmp/root-context-ai-elements-adaptation-20261007.json (b357ca8ad0765811dfc4c999cc55d9bee6745b06238833c3d29a9a13c8c02fe0). Source supply / take originals: /private/tmp/context-history-20261007.
