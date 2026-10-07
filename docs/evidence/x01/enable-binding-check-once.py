@@ -50,6 +50,20 @@ def read_regular(path, maximum):
         os.close(fd)
 
 
+def supervision_facts(result, label):
+    """Preserve OPS14 history; qualify its final ownership and capture facts."""
+    facts = dataclasses.asdict(result)
+    facts.pop('stdout'); facts.pop('stderr')
+    facts['label'] = label
+    facts['rawComplete'] = (result.owned_state == 'absent' and result.exit_code is not None
+                            and all(result.eof.values()) and result.observed_bytes == result.retained_bytes)
+    # Historical observations are audit data, not failures. Signal uncertainty is not recoverable here.
+    failures = [result.first_failure, *result.secondary_failures]
+    uncertain = (not facts['rawComplete'] or any(x and x['code'] != 'CHILD_EXIT_NONZERO' for x in failures)
+                 or any(x['state'] == 'unknown' for x in result.signals))
+    return facts, uncertain
+
+
 def main():
     if (len(sys.argv) != 5 or sys.argv[1] != '--mika-approved-once'
             or not re.fullmatch('[a-f0-9]{40}', sys.argv[2])
@@ -124,15 +138,7 @@ def main():
                                ops.Policy(min(seconds, deadline - time.monotonic() - 3), .25, .75,
                                           min(4096 if label == 'preflight' else STREAM_LIMIT, STREAM_LIMIT - observed_streams)))
         observed_streams += result.observed_bytes
-        facts = dataclasses.asdict(result)
-        facts.pop('stdout'); facts.pop('stderr')
-        facts['label'] = label
-        facts['rawComplete'] = (result.owned_state == 'absent' and result.exit_code is not None
-                                and all(result.eof.values()) and result.observed_bytes == result.retained_bytes)
-        # Nonzero business exit is still complete raw; any uncertain ownership/capture stays sticky.
-        failures = [result.first_failure, *result.secondary_failures]
-        uncertain = (not facts['rawComplete'] or any(x and x['code'] != 'CHILD_EXIT_NONZERO' for x in failures)
-                     or any(x['state'] == 'unknown' for x in result.signals + result.observations))
+        facts, uncertain = supervision_facts(result, label)
         report['unknown'] |= uncertain
         report['steps'].append(facts)
         persist(label + '.stdout', result.stdout)
