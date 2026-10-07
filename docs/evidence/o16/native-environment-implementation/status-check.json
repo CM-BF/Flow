@@ -1,0 +1,23 @@
+{
+  "errors": [],
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 2,
+    "output": "已完成私有环境与单次规划入口的局部验证，保留原始失败；真实原生规划尚未运行。",
+    "next": "审查固定环境与首段规划入口后，绑定一次运行材料并生成实际提案供确认。",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  }
+}
