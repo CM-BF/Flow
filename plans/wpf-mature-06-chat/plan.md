@@ -161,3 +161,7 @@ SSE源码准备阶段source d68与12局部检查/noEmit已[独审接受](../../d
 CHAT05后继[九固定源研究](../../docs/evidence/web-platform/composed-consumer-checkpoint-20261007/chat05p02-fixed-web-research.json)补真实消费风险：reader构造虽零HTTP，已分配最多8MiB，因此构造前先做全pane累计reservation；折叠须通知关闭reader和释放，而非只改React展开ID。保完整合同能力、两pane总量与有界DOM，不截成旧2MiB或整份JSON反复pretty-print。App/session仍待Recovery与真实settings消费者精确交权，当前NOT_TAKEN。
 
 本次[完整草稿首轮实际及修正](../../docs/evidence/web-platform/browser-interface-checkpoint-20261007/current.json)明确原1/2整体失败、测试定位在CREATE/turn之前、cleanup与15676ms不回退；修正bc3随后第二次实际复验仍1/2整体FAIL，恢复/B→A/knowledge部分通过而最终accepted回执undefined待定位；两次清理归还，累计114654/余35346，独立第二次actual审尚待，不补成功。LAZY固定publicclient2949569/packet55dc的源码批准只作为后继input，Mika原canonical维持唯一进度与scope；Web消费未take。stream2/4MiB保持，nativebody8MiB独立计入aggregate reservation，展开前不构造预分配正文reader。SVC09真实兼容context严格用format/publicOrigin/policySha256，不从main集成推个人产物已更新。
+
+原completeDraft第二次[实际与身份修正独审](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/recovery-complete-second-actual-review.json)确认1个202TURN与材料/知识/profile匹配只是部分实证；测试误拿record.id比turnKey，后继2e7203e改精确frozen.turnKey唯一匹配，保accepted/request/ACK身份完整要求，未复验。原150s已用114654/余35346，不能从旧90k取额度或自动排PG。共享LAZY e2b的3/3+strict与SVC b2b artifact成功仍分别是接口/产物输入，不是当前Recovery App已升级或个人兼容通过；真实caller须固定b2b descriptor/publiccontext后再执行。
+
+共享selected协议与部署再次分离：LAZY e2b公共client/core已main，但本次实际SVC b2b artifact不含selected能力；Web后继必须按真实backendtuple能力启用并实际验收，legacy兼容保持，不能以静默codec降级假装验收通过。此不改变当前Recovery输入/原35346ms余额，也不阻b2b既定兼容交付。

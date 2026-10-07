@@ -463,3 +463,23 @@ REQ19/SVC09 [固定接口研究](../../docs/evidence/web-platform/browser-interf
 REQ43 [既有7f29正文研究](../../docs/evidence/web-platform/composed-consumer-checkpoint-20261007/chat05p02-fixed-web-research.json)继续要求reader构造前聚合reservation、关闭释放、跨pane有界DOM。MATURE06-LAZY01公共client固定2949569/packet55dc已由chatui08:42独审批准（root转交）；唯一status/Interface仍指Mika原owner，db_owner只读Web映射不形成新writer。stream既定2/4MiB上限不抬，nativebody8MiB单独计量，并纳同次所有活跃reader/两pane总admission，不能静默混用缓存预算。尚无Web消费实现/验收或新take。
 
 原OPS14 [caller输入](../../docs/evidence/web-platform/browser-interface-checkpoint-20261007/ops14-resource-caller-input.json)仅供下一安全点：OriginalLead拥有tools/owned-resource-measurement新Module，Web原owner在现有范围接后继caller；不改当前运行或历史封存runner。测量helper只管exact-ownedscratch排除、logical/allocated和unknown，进程/权限/DB/drop/deletion/时间/准入仍原caller负责，不复制整套supervisor。
+
+本轮原D01/DPERF与MATURE06 [消费者适配/实际资源链](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/current.json)采用单一执行管理d01_owner向Mika报actual，root只读审查；OriginalLead直发受限通道不重试，Mika回执经root内部转交不产生双重发令。Timing0PG独立fixture首轮第二主题超时、9153ms与清理保留，原60s累计33617/余26383；[stale nativeclose源码风险](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/dperf-stale-close-research.json)由原app.js owner窄修并真实事件投递回归，未证该风险是此次超时唯一原因，原summary9/links6通过不撤。这是09:01历史安全点：Recovery回执身份修正当时仅源码接受；本批第三次selected2实际通过见下方独审，原1个202或材料中间步骤不独立当整组PASS。
+
+REQ19/SVC06 [固定公开context](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/svc06-fixed-public-context-intake.json)绑定backend b2b5612、publicOrigin http://127.0.0.1:61228、policySha256 81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638。OriginalLead离线artifact09:02:10.132Z实际成功归还，artifactId c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7（不是descriptor文件SHA）；实际descriptor已发现，三retained及新App仍须各四check绑定同真实artifact/context，未个人切换，不以动态fixtureorigin冒固定origin。后到LAZY公共模块main e2b16924038d1215e5f9f389710d1e9b43636d02不使本artifact改基线。
+
+REQ43的LAZY core60db/client294已由OriginalLead受控main e2b；组合3/3及strict0只属共享模块，唯一[client接收入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads/docs/evidence/mature06-lazy-reasoning/client-integration-ready.json)与原Mika status继续权威。Web Thread/网络惰性/恢复组合未验、无新Webtake，不沿旧Chat06写权重开。stream2/4MiB、nativebody8MiB及跨pane总reservation规则原样保留。
+
+OPS-METER01公共helper已由OriginalLead以source c169受控main1e12eaf13a02b45a99dfe126bc182c2ea45a8390，入口tools/owned-resource-measurement及其interface；20synthetic/raw/27bindings获独审为原Lead回执。DPERF/Quick两actual caller尚未接，只在当前冻结有限段结束后的下一prepared安全点由原owner在原scope接入；不改正在/历史raw，不为计量helper重跑已绿产品，不新增task或writer。
+
+本段[Timing实际首红/修复复验独审](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/dperf-timing-actual-review.json)接受52cdf最小旧close保护及真实nativeclose事件回归，5组PASS/6934ms，全自有资源归还。原60s总40551、未用19449封账；不足启动的4449ms work不硬开ACCESS，新45s/15cleanup仅准备不取旧credit。截图未见实际时间正文，视觉仍OPEN；不把shell/焦点截图当时间用户验收。后续OPS-METER [精确consumer接缝](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/ops-meter-web-consumer-intake.json)要求导入零pycache、原rootdev/ino不重认、exactexclude、缺rootunknown与已证生命周期absence分开；双实际caller仍未采用。
+
+LAZY selected protocol虽已main e2b，当前实际SVC06 b2b产物不含它。后继Web selected验收须固定支持e2b协议的真实backendtuple，不把main事实或旧b2b部署冒能力支持，不静默换codec/降断言；legacy保持，不阻或重做b2b原兼容交付。
+
+REQ19 [b905实际descriptor核对](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/svc06-actual-descriptor-intake.json)已确认manifest/result-descriptor完整tuple一致；OriginalLead实际build/import独审APPROVED与作者RESULT历史pending措辞分列，不改原件。保留artifact目录F63Mk3，三retained真实App→b2b及context的format2兼容仍需原release继承交权/具体owner安全点，不手造report、不重build、不自动个人服务或挪用Recovery/DPERF当前scope。
+
+原Recovery第三次[完整草稿选定实际独审](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/recovery-complete-third-actual-review.json)已接受2/2与清理，profile/knowledge/有序双文件/receiptcheckpoint/nextdraft均有真实覆盖；11793ms后新150s累计126447/余23553，原两红保留。无本次PNG，fullfeature/Steer/queuepromotion/第二center尚未验，不自动排新运行，owner正常封存。
+
+REQ19沿原Release owner补具体只读供给：旧461a/caa1/d629三个实际descriptor与immutable资产根，已向Mika正式发送请求供其原Lead通路转交，未收到终接收回执。复用fixed7805b7的web-release-compatibility browser/fixture四check方法，但旧方法重build、动态origin及无policy不能原样冒作b2b固定61228/context验收。新方案须复用已有artifact、保持真实browser publicOrigin与policy，并隔离用户当前61228服务；仅待原owner设计，不启动代理、不读取个人凭据、不重build或操作个人服务。
+
+DPERF下一原owner包仅PARTIAL_RETAINED_ADOPTION：retained BASE精确排除scratch后调用公共OPS helper，scratch保原regular/allocated扫描与64MiB cap；SPECIAL_FILE和可能UNIX socket仍是接口/平台候选，实际形状UNKNOWN，原OPS owner定政策。source98baf/metadata6e92f36已封存，未运行新45s段；Recovery27f2515封存但原21 claim未释放，LAZY消费者等独立树/组合base与明确交权，不把选定恢复通过等同全feature完成。

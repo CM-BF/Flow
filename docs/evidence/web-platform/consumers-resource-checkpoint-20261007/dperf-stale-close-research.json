@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T09:03:24.220642+00:00",
+  "author": "root / gpt-6-astra ultra / read-only source research",
+  "state": "SOURCE_STALE_CLOSE_RISK_PENDING_OWNER_ACTUAL",
+  "severity": "P2 candidate",
+  "sources": [
+    {
+      "commit": "08e9ee7e23157268d44bd2fdd460929a4ca5e626",
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "39fb148d39270d48e5174661894334146a9270c4fdbbe8d0791dabe73eafaf29",
+      "bytes": 38088
+    },
+    {
+      "commit": "08e9ee7e23157268d44bd2fdd460929a4ca5e626",
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "sha256": "c58e1f9410ac22184e3f5f0910c6c3a05e98f8c060b8f8774dab27e48b257616",
+      "bytes": 13906
+    },
+    {
+      "commit": "08e9ee7e23157268d44bd2fdd460929a4ca5e626",
+      "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
+      "sha256": "54cf28b6dd4afc6e5734a0ceebd4d0c73655ac11a54ee4aa7e5dea00fd2c5ab0",
+      "bytes": 34645
+    }
+  ],
+  "primaryReference": {
+    "url": "https://html.spec.whatwg.org/multipage/interactive-elements.html#close-the-dialog",
+    "retrievedAt": "2026-10-07",
+    "fact": "Closing a dialog queues its close event on the user interaction task source; it is not the synchronous end of dialog.close()."
+  },
+  "finding": "app.js openTask synchronously invalidates old selection, creates a new selection and starts detail loading. The close handler later invalidates selection unconditionally even if this same dialog has already reopened. Thus an old queued native close can invalidate a new open dialog and move its focus.",
+  "reproductionCandidate": "Use actual dialog.close() and the existing task button activation in the same evaluate task, then wait for the queued native close event delivery; assert dialog remains open, selected new task/detail loads and new focus is not stolen. Do not dispatch a fake close event, suppress the listener or wait before reopen.",
+  "minimalDesignCandidate": "An old close observation must not clear the current open dialog. Owner can use current open/generation state, keeping ordinary final-close invalidation and return focus. Existing openTask already invalidates prior detail authority. No source edits performed by root.",
+  "distinctions": [
+    "Timing actual timeout at second theme remains causally unproven; this source analysis is not runtime proof of that specific failure.",
+    "Passive close-event settlement in sequential keyboard tests preserves their intended serialized interaction and original exact assertions. It does not validate rapid close/reopen safety.",
+    "Earlier scoped summary9/task-links6 actual pass remains historical; add focused regression for this newly identified condition."
+  ],
+  "scope": "Existing DPERF app.js and own browser tests, original b554 v4 writer; no new task/take or parallel implementation.",
+  "runtime": "Root no browser/PG/Node execution; owner must preserve original finite segment and resource queue.",
+  "cleanCode": {
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "applied": "Event ownership and asynchronous state invalidation; fix stale operation authority instead of relying on arbitrary test sleeps."
+  }
+}

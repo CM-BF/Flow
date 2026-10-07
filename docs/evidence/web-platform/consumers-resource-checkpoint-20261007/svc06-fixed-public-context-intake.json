@@ -1,0 +1,57 @@
+{
+  "recordedAt": "2026-10-07T09:00:43.560689+00:00",
+  "recordedBy": "root / gpt-6-astra ultra / read-only source intake",
+  "status": "FIXED_PUBLIC_CANDIDATE_INPUT_ONLY",
+  "sources": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+      "commit": "3d07e788df6d0e427ec4c28f06d231ca9ad70938",
+      "path": "docs/evidence/svc06/update-b2b-candidate/candidate.md",
+      "bytes": 5494,
+      "sha256": "a34fcf75ccef2f79701d55d39106192da2c53e384a7072be855a6c63c155b652"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+      "commit": "3d07e788df6d0e427ec4c28f06d231ca9ad70938",
+      "path": "docs/evidence/svc06/update-b2b-candidate/proposed-public-context.json",
+      "bytes": 965,
+      "sha256": "f114cb28433aca5977d569c40f8bddcaded38fbb4048f916611f23cb183dd0d7"
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow",
+      "commit": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+      "path": "tools/personal-preview/browser-session-configuration.mjs",
+      "bytes": 7335,
+      "sha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde"
+    }
+  ],
+  "backendHead": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+  "browserSession": {
+    "cookieOrigin": "http://127.0.0.1:61228",
+    "trustedOrigins": [
+      "http://127.0.0.1:61228"
+    ],
+    "authEpoch": "svc09-b2b-20261007"
+  },
+  "expectedContext": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "digestIndependentlyRecomputed": true,
+  "acceptedMeaning": [
+    "Exact context keys are format/publicOrigin/policySha256; public origin has no trailing slash.",
+    "Backend/artifact/policy/context must agree for each retained461a/caa1/d629 App and futurefourthApp; four actual read/send/recover/negotiation reports each.",
+    "Missing browser configuration is legacy; malformed or changed configuration cannot silently fall back to legacy.",
+    "Changing actual public origin or authEpoch changes this candidate and needs explicit report rebinding. Source/API module tests do not prove any real App compatibility."
+  ],
+  "notPerformed": [
+    "No actualbuild, install, privatefile or credentialread, browser, server/port, PG, servicechange or compatibilityjourney.",
+    "No new writer/take, no copied release system, no replacement of oldpointer/report history."
+  ],
+  "nextOriginalOwnerBoundary": "Lead delivers actual descriptor first; original Web owner binds actual App/source/artifact and its public-context execution approach. Preserve oldthree; fourthApp actual report still missing. Dynamic fixture origin must not be silently relabeled as this fixed publicOrigin.",
+  "skills": {
+    "discovery": "Existing local find-skills/codebase-design/clean-code retained; no install",
+    "cleanCode": "Read exact normalization/hash boundary, separate candidate from installed configuration/actualreport; reuse single release context authority."
+  }
+}

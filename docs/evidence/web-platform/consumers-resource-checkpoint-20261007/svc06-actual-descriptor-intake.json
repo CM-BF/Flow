@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-07T09:09:19.151068+00:00",
+  "by": "root / gpt-6-astra ultra / read-only intake, not duplicate build review",
+  "state": "ACTUAL_DESCRIPTOR_RECEIVED_LEAD_REPORTED_INDEPENDENT_APPROVAL",
+  "pins": [
+    {
+      "commit": "b905765f3e7d5d2c817e941d1f076208cf7d1208",
+      "path": "docs/evidence/svc06/update-b2b-candidate/result-manifest.json",
+      "bytes": 7998,
+      "sha256": "8a0573116f81533b8eef96f54c919eefa8035584b77fcf62199f275770bee2bb"
+    },
+    {
+      "commit": "b905765f3e7d5d2c817e941d1f076208cf7d1208",
+      "path": "docs/evidence/svc06/update-b2b-candidate/build-once/actual-first/result-descriptor.json",
+      "bytes": 275,
+      "sha256": "6ad4f441e28482dac2e730286fbc3c2f52900cf02b93ab05d1888f51e26b39fb"
+    },
+    {
+      "commit": "b905765f3e7d5d2c817e941d1f076208cf7d1208",
+      "path": "docs/evidence/svc06/update-b2b-candidate/proposed-public-context.json",
+      "bytes": 965,
+      "sha256": "f114cb28433aca5977d569c40f8bddcaded38fbb4048f916611f23cb183dd0d7"
+    },
+    {
+      "commit": "b905765f3e7d5d2c817e941d1f076208cf7d1208",
+      "path": "docs/evidence/svc06/update-b2b-candidate/RESULT.md",
+      "bytes": 2868,
+      "sha256": "9b7cf8e57a22e9dc5af019bbf1e0d5afdb122d3711455fde8b834b5a351ffa22"
+    }
+  ],
+  "descriptor": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
+    "manifestDigest": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
+    "sourceHead": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+  },
+  "retainedRoot": {
+    "path": "/private/tmp/flow-svc06-b2b-artifact-F63Mk3",
+    "dev": 16777234,
+    "ino": 123686972,
+    "uid": 501,
+    "mode": "0o700",
+    "isDirectory": true
+  },
+  "publicContextSource": "docs/evidence/svc06/update-b2b-candidate/proposed-public-context.json",
+  "authorityDistinction": "OriginalLead explicitly reported actual build/import independent approval and delivery b905765f. Immutable author RESULT/result-manifest still say pending independent review; preserve their original wording, do not rewrite them or infer approval solely from that manifest. Root did not rerun build/import or independently review full build.",
+  "next": [
+    "Original release owner prepares three retained real App format2 reports and four raw behavior checks each against this exact backend artifact and public context. Oldreports remain history; do not hand-author a PASS.",
+    "Future fourth App must name actual App/source/artifact and same agreed context; UI leaf check success is insufficient.",
+    "b2b artifact predates maine2b selected-stream protocol. New LAZY UI needs separate actual backend supporting that protocol; do not block/re-run b2b original compatibility for this later input."
+  ],
+  "scope": "No project write/take, artifact execution, private installation read/change, service change, PG, browser or provider. Own artifact root is a retained published input, not an active runtime holder.",
+  "cleanCode": "Single release authority/context reused; fixed tuple versus actual tested capability kept distinct."
+}

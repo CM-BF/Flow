@@ -1,0 +1,37 @@
+{
+  "observedAt": "2026-10-07T09:04:04.659623+00:00",
+  "method": "Three bounded read-only /api/document calls; no summary/snapshot/PG observer or refresh/UI request.",
+  "results": [
+    {
+      "task": "WPF-001",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/status.md",
+      "http": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 32069,
+      "sha256": "b894fec32f749b9e9013b27d0020cbe979fc80c9f38ed4864787eab6f930f959",
+      "sourceStable": true,
+      "exactOwnerBytes": true
+    },
+    {
+      "task": "WPF-DPERF04",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md",
+      "http": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 26769,
+      "sha256": "6c8184daba135488c45a00f7e6a89583366b49e03fc44c73a29480ef5269291d",
+      "sourceStable": true,
+      "exactOwnerBytes": true
+    },
+    {
+      "task": "WPF-RECOVERY01",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
+      "http": 200,
+      "contentType": "text/plain; charset=utf-8",
+      "bytes": 57697,
+      "sha256": "69e5b8e12ae644b9c29750bd30fc8c307bd8dfe5ba967e29ea543242adb1abb9",
+      "sourceStable": true,
+      "exactOwnerBytes": true
+    }
+  ],
+  "meaning": "Verifies live registry task-to-canonical-owner status document mapping at this instant only. Not active claim/holder, parser, freshness or performance proof."
+}

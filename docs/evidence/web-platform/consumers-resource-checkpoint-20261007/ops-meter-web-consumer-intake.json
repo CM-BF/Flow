@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T09:05:02.322739+00:00",
+  "author": "root / gpt-6-astra ultra / readonly consumer intake",
+  "state": "PUBLIC_HELPER_INPUT_ONLY_TWO_REAL_CALLERS_NOT_ADOPTED",
+  "sources": [
+    {
+      "commit": "1e12eaf13a02b45a99dfe126bc182c2ea45a8390",
+      "path": "tools/owned-resource-measurement/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "commit": "1e12eaf13a02b45a99dfe126bc182c2ea45a8390",
+      "path": "tools/owned-resource-measurement/README.md",
+      "bytes": 3663,
+      "sha256": "d4421926ce69435289a16f1519328b5f9f245e04a92ec682a3f47782c181c854"
+    },
+    {
+      "commit": "1e12eaf13a02b45a99dfe126bc182c2ea45a8390",
+      "path": "docs/evidence/ops-meter01/interface.md",
+      "bytes": 3406,
+      "sha256": "facf7caeffcaee5ccb6d7c4578b52a253cc698fcb3d3aefd9fe79812d1bcccfc"
+    }
+  ],
+  "scope": "Original Quick/DPERF owners next safe prepared caller versions only; historical and current finite packets immutable.",
+  "concreteSeams": [
+    "Load one hash-pinned module through original fixed loader; importing must not write __pycache__ into another owner/shared source tree. Disable bytecode writes before import or use existing no-write source loader. No dependency install.",
+    "Pin original root dev/ino at creation/accepted owner checkpoint; never repin a replaced root to make measurement succeed.",
+    "Measure scratch separately, measure retained with exact exclude=(scratch,) as root-relative directory name. Preserve existing external evidence/metadata/terminal reserve additions exactly; no subtract-two-snapshots.",
+    "Before scratch creation/after independently confirmed removal, caller records lifecycle absence explicitly; do not call measure on a missing root and reinterpret unknown as zero.",
+    "Unknown retains partial totals/issue and triggers original stop/KEEP policy; complete counts regular files only, symlink count explicit, logical/allocated are not peak/physical reclaimable.",
+    "Keep original hard supervisor deadline; per-scan entry/depth/time limits cannot interrupt a blocked kernel call. Do not copy scheduling/DB/process/deletion ownership into this helper."
+  ],
+  "validationNext": "Only affected original caller accounting shapes, disappeared/replaced root, excluded subtree, unknown propagation and real next-caller path; do not rerun completed green UI solely for helper adoption. Original source/tests/results remain separately evidenced.",
+  "cleanCode": {
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "applied": "Deep single-purpose measurement interface; caller retains resource policy/lifecycle, explicit missing-root semantics, no implementation copied by root."
+  },
+  "runtime": "Zero PG/browser/Node/helper execution, no project edits/take."
+}
