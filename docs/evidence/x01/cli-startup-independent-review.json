@@ -1,0 +1,69 @@
+{
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-07T10:04:52Z",
+  "recordedAt": "2026-10-07T10:06:06.409169+00:00",
+  "sourceCommit": "c8ba6bcb98f697b222cc972d517ea2891dcd8d71",
+  "packetCommit": "182e539507ad283c727c378b1b43a0d92fb3780a",
+  "observedHead": "ec327f6848eeeaf005a01c5940e2aa6432294b14",
+  "P1": 0,
+  "P2": 0,
+  "manifest": {
+    "path": "docs/evidence/x01/cli-startup-review-ready.json",
+    "bytes": 116180,
+    "sha256": "9ba97ca7213a8468847b64679da41156f5660504d532cc8664ba090a1c08e2db"
+  },
+  "bindingFacts": {
+    "files": 314,
+    "bytes": 1670215,
+    "external": 21,
+    "logicalInputFiles": 290,
+    "logicalInputBytes": 1401696
+  },
+  "scope": "Ten startup composition product/test files; fixed main381 baseline; bounded direct local results. Not real CLI OS process or main validation.",
+  "sourceFindings": [
+    "Private JSON reader byte-identical extraction; server re-export preserves old installation/fetch consumers.",
+    "Strict finite center tuple policy uses a private snapshot; undefined default-off, explicit empty rejected.",
+    "Runner private store configuration only; A2A/engineering/Codex mixing rejected before reading/publication. Existing journal/material checks and one runtime unchanged."
+  ],
+  "results": {
+    "types": [
+      2,
+      0
+    ],
+    "selected": 15,
+    "passed": 15,
+    "unselected": 55,
+    "files": 4,
+    "children": 3,
+    "pids": [
+      11808,
+      27357,
+      34452
+    ],
+    "rawBytes": 480,
+    "finalOwnedState": "absent",
+    "mergedEOF": true,
+    "ownTMP": 3,
+    "fixtureRoots": 18,
+    "exactAbsence": "Existing owner receipts, not reviewer process/root traversal.",
+    "wholeExternalWall": null,
+    "activePeak": null
+  },
+  "limitations": [
+    "Only compile/shared-reader behavior covers old server installation/fetch config consumers; no additional behavior rerun.",
+    "Signals are direct calls to registered handlers, not actual OS signal delivery.",
+    "No real process entry startup, HTTP/PG/provider/plugin execution or main-combination verification.",
+    "Initial EPERM observations and first TS7016 failure remain intact."
+  ],
+  "clarification": "Frozen cli-startup-quality.md phrase \"0 npm import\" means zero plugin npm load/invoke. Configuration tests statically import installed SDK nativeQuery through claude.ts without calling it. Ordinary dependency module loading is not claimed zero. This addendum corrects the wording without altering the reviewed source/input/raw.",
+  "reviewerActions": {
+    "projectWrites": 0,
+    "tests": 0,
+    "imports": 0,
+    "PG": 0,
+    "provider": 0,
+    "oldKEEPAccess": 0
+  }
+}

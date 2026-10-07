@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 10:07:53 UTC / main1a6f82a1；4320实际194来源/轻摘要与按需核验已部署 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 10:13:24 UTC / main3b6db156；X01启动配置十源无冲突接收、组合4项及根类型检查通过 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,18 +12,18 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main81b4805c；DPERF04九源全部前像及七只读输入一致；SVC06四源与b2b前像相同 |
+| 工作基线 / HEAD | main3b6db156；X01十源全部前像与38110485相同，受控接收固定c8ba6bcb |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | DPERF04原独审30闭包及真实Node/浏览器证据复用；SVC06独审43绑定/5运行输入与19不同直接检查成立；无新冲突，不重跑已绿矩阵。 |
-| 已集成main状态 / HEAD | main/origin1a6f82a1已接看板与启动诊断。4320已更新并实际CUA核摘要/详情；个人backend af51/v18、Web d629/v3/c7b保持。 |
+| 检查状态 | X01已有独审15项复用；本次当前组合4项旧配置直接消费者通过、根noEmit exit0，10.363秒，两个自有组absent/EOF。无PG/provider或个人操作。 |
+| 已集成main状态 / HEAD | main/origin3b6db156已含看板轻摘要/详情与后台启动诊断；本批X01启动配置待fast-forward。个人backend af51/v18、Web d629/v3/c7b保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 看板现在先显示轻量进度摘要，打开任务后读取现场核验；登录入口和计时保留。后台启动失败诊断已进入主线。 |
-| 下一可用交付 | 在独立环境构建并验证新固定后台，继续对照保留网页的兼容性。 |
-| 当前阻塞 | ACTIVE: 新后台宿主启动尚未通过；诊断源码已审，正在准备新固定产物。个人运行版本未变更。 |
+| 当前产出 | 看板摘要、按需详情、登录入口和计时已可用；插件启动配置已完成主线组合检查，新固定后台产物已构建成功。 |
+| 下一可用交付 | 验证新固定后台能独立启动并兼容保留页面，继续接收已审插件管理入口。 |
+| 当前阻塞 | ACTIVE: 新后台的独立宿主启动仍待验证；新产物已构建，正在固定隔离验证输入。个人运行版本未变更。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -390,3 +390,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 2026-10-07 10:05:23 UTC：本批按[看板接收](../../docs/evidence/i02/dashboard-summary-detail-intake.json)与[启动诊断独审](../../docs/evidence/i02/svc06-startup-diagnostics-review.json)接收。已有产品/测试前像无漂移，未修改registry194或七只读ACCESS/TIMING输入，未重复既有矩阵；固定诊断runtime源6c0fdcda仅b2b上的四已审文件，旧c2c/r1保留。实际看板部署和新后台宿主验证分开。
 
 2026-10-07 10:07:53 UTC：看板已按[实际部署回执](../../docs/evidence/i02/dashboard-summary-deployment.json)切到1a6f82a1，194来源；CUA临时tab核作者摘要/时间/按需详情后关闭，原用户tab与个人服务未动。首次启动缺少既有非秘密installation env而在listen前拒绝；恢复原binding后启动成功，原失败保留。已审原浏览器矩阵未重跑。
+
+2026-10-07T10:13:24Z：X01启动配置十源固定接收，314绑定核对及当前4项直接消费者/root类型检查通过，见[受控接收](../../docs/evidence/i02/x01-startup-intake.json)。新SVC06构建于10:12:40Z归还窗口，构建成功不代表host已通过；旧r1失败保留。

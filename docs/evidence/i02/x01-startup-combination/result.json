@@ -1,0 +1,104 @@
+{
+  "startedAt": "2026-10-07T10:13:04.390676+00:00",
+  "freeBefore": 22796193792,
+  "limits": {
+    "workSeconds": 60,
+    "cleanupSeconds": 2.5,
+    "rawBytes": 1048576,
+    "scratchBytes": 8388608
+  },
+  "scratch": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-startup-intake-q6zk7g3w",
+    "dev": 16777234,
+    "ino": 124013264
+  },
+  "runs": [
+    {
+      "pid": 99837,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 605,
+      "observed_bytes": 652,
+      "retained_bytes": 652,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "direct",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/vitest/vitest.mjs",
+        "run",
+        "apps/server/src/package-fetch-configuration.test.ts",
+        "apps/server/src/plugin-installation-configuration.test.ts",
+        "--no-file-parallelism"
+      ],
+      "passed": true
+    },
+    {
+      "pid": 99851,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 9755,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "types",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "passed": true
+    }
+  ],
+  "rawBytes": 652,
+  "scratchBytesObserved": 1357724,
+  "scratchRemoved": true,
+  "elapsedMs": 10363,
+  "finishedAt": "2026-10-07T10:13:14.753840+00:00",
+  "passed": true
+}
