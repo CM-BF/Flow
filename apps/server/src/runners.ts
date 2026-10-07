@@ -1,3 +1,5 @@
+import { verifierRunnerClaimRequestSchema, verifierRunnerClaimResponseSchema, type VerifierRunnerClaimRequest, type VerifierRunnerClaimResponse, type PluginVerifierExecution } from '../../../packages/contracts/src/verifier-runner-claim.js';
+import type { PluginVerifierBinding } from '../../../packages/contracts/src/plugin-verification-binding.js';
 import { RUNNER_CLAIM_PROTOCOL, runnerClaimRequestSchema, type RunnerIdentity, type RunnerClaimRequest, type RunnerClaimReceipt, type RunnerClaimResponse } from '../../../packages/contracts/src/runner-claim.js';
 import { goalExecutionInputForTask } from './goal-context/index.js';
 import { executionInputForTask } from './conversation-context/store.js';
@@ -55,7 +57,7 @@ export async function claim(pool: Pool, runnerId: string, leaseMs: number): Prom
 }
 
 /** Both protocols enter with the same exclusive runner lock and transaction. */
-async function allocateClaim(client: PoolClient, runner: RunnerRecord, leaseMs: number, qualification?: PluginToolExecution): Promise<ClaimResponse> {
+async function allocateClaim(client: PoolClient, runner: RunnerRecord, leaseMs: number, qualification?: PluginToolExecution, verifier?: PluginVerifierExecution): Promise<ClaimResponse> {
   const runnerId = runner.id;
   if (runner.maintenance_state && runner.maintenance_state !== 'accepting') return { assignment: null, remainingLeaseMs: 0 };
   const busy = await client.query<{ count: number }>("SELECT count(*)::integer AS count FROM flow.attempts WHERE runner_id=$1 AND completed_at IS NULL", [runnerId]);
@@ -90,7 +92,7 @@ async function allocateClaim(client: PoolClient, runner: RunnerRecord, leaseMs: 
         (SELECT 1 FROM flow.goal_graph_runs g WHERE g.task_id=t.id AND g.mode='claude' AND g.revoked_at IS NULL)))
     AND (t.submission->>'resumeSessionId' IS NULL OR (s.runner_id=$2 AND s.active_task_id IS NULL))
     ${pluginClaimEligibilitySql}
-    ORDER BY t.created_at,t.id FOR UPDATE OF t SKIP LOCKED LIMIT 1`, [runner.harnesses, runnerId, qualification?.storeId ?? null, qualification?.hostApiMajor ?? null]);
+    ORDER BY t.created_at,t.id FOR UPDATE OF t SKIP LOCKED LIMIT 1`, [runner.harnesses, runnerId, qualification?.storeId ?? null, qualification?.hostApiMajor ?? null, verifier?.storeId ?? null, verifier?.hostApiMajor ?? null, JSON.stringify(verifier?.algorithms ?? [])]);
   if (!result.rows[0]) return { assignment: null, remainingLeaseMs: 0 };
   const task = await loadTask(client, result.rows[0].id);
   if (task.submission.engineering && (task.submission.harness !== (task.submission.engineering.protocol === 'flow.engineering.v1' ? 'fixture' : 'codex') || task.submission.engineering.targetRunnerId !== runnerId)) {
@@ -104,7 +106,7 @@ async function allocateClaim(client: PoolClient, runner: RunnerRecord, leaseMs: 
     const session = await client.query('UPDATE flow.sessions SET active_task_id=$3 WHERE id=$1 AND harness=$2 AND runner_id=$4 AND active_task_id IS NULL RETURNING id', [task.submission.resumeSessionId, task.submission.harness, task.id, runnerId]);
     if (!session.rowCount) return { assignment: null, remainingLeaseMs: 0 };
   }
-  const binding = await claimPluginBinding(client, task, runnerId, qualification);
+  const binding = await claimPluginBinding(client, task, runnerId, qualification, verifier);
   const id = randomUUID();
   const inserted = await client.query<AttemptRecord>("INSERT INTO flow.attempts(id,task_id,runner_id,owner_version,lease_expires_at) VALUES($1,$2,$3,$4,clock_timestamp()+$5 * interval '1 millisecond') RETURNING *", [id, task.id, runnerId, task.owner_version + 1, leaseMs]);
   await client.query("UPDATE flow.tasks SET status='running',current_attempt_id=$2,owner_version=owner_version+1,updated_at=clock_timestamp() WHERE id=$1", [task.id, id]);
@@ -112,11 +114,11 @@ async function allocateClaim(client: PoolClient, runner: RunnerRecord, leaseMs: 
 }
 
 type ToolRun = { id: string; version: 1; mode: string };
-async function assignmentForTask(client: PoolClient, task: TaskRecord, attempt: AttemptRecord, goalRun?: ToolRun, graphRun?: ToolRun, binding?: PluginToolBinding): Promise<ClaimedTask> {
+async function assignmentForTask(client: PoolClient, task: TaskRecord, attempt: AttemptRecord, goalRun?: ToolRun, graphRun?: ToolRun, binding?: PluginToolBinding | PluginVerifierBinding): Promise<ClaimedTask> {
   const executionInput = await executionInputForTask(client, task.id, task.submission.prompt);
   const goalInput = await goalExecutionInputForTask(client, task.id, task.submission.prompt);
   const privatePrompt = goalInput?.prompt ?? executionInput?.prompt;
-  return { ...(binding ? { pluginToolBinding: binding } : {}), ...(executionInput ? { conversationContext: executionInput.context } : {}), attempt: attemptView(attempt),
+  return { ...(binding ? ('executionKind' in binding ? { pluginVerifierBinding: binding } : { pluginToolBinding: binding }) : {}), ...(executionInput ? { conversationContext: executionInput.context } : {}), attempt: attemptView(attempt),
     task: { ...task.submission, id: task.id, ...(privatePrompt !== undefined ? { prompt: privatePrompt } : {}) },
     ...(goalRun?.mode === 'claude' ? { goalToolRun: { id: goalRun.id, version: goalRun.version } } : {}),
     ...(graphRun?.mode === 'claude' ? { goalGraphRun: { id: graphRun.id, version: graphRun.version } } : {}) };
@@ -126,8 +128,8 @@ export async function runnerIdentity(pool: Pool, runnerId: string): Promise<Runn
   return transaction(pool, async client => { await lockRunner(client, runnerId); return { protocol: RUNNER_CLAIM_PROTOCOL, runnerId }; });
 }
 
-type OpportunityRequest = RunnerClaimRequest | PluginRunnerClaimRequest;
-type OpportunityResponse = RunnerClaimResponse | PluginRunnerClaimResponse;
+type OpportunityRequest = RunnerClaimRequest | PluginRunnerClaimRequest | VerifierRunnerClaimRequest;
+type OpportunityResponse = RunnerClaimResponse | PluginRunnerClaimResponse | VerifierRunnerClaimResponse;
 export function claimOpportunity(pool: Pool, runnerId: string, input: RunnerClaimRequest, leaseMs: number): Promise<RunnerClaimResponse>;
 export function claimOpportunity(pool: Pool, runnerId: string, input: PluginRunnerClaimRequest, leaseMs: number): Promise<PluginRunnerClaimResponse>;
 export function claimOpportunity(pool: Pool, runnerId: string, input: OpportunityRequest, leaseMs: number): Promise<OpportunityResponse>;
@@ -137,8 +139,8 @@ export async function claimOpportunity(pool: Pool, runnerId: string, input: Oppo
     const runner = await lockRunner(client, runnerId);
     const previous = await readClaimReceipt(client, request);
     if (previous) return readCurrentAssignment(client, request, previous);
-    const qualification = request.protocol === 'flow.runner-claim.v3' ? request.pluginToolExecution : undefined;
-    const allocated = await allocateClaim(client, runner, leaseMs, qualification);
+    const qualification = request.protocol === 'flow.runner-claim.v2' ? undefined : request.pluginToolExecution;
+    const allocated = await allocateClaim(client, runner, leaseMs, qualification, request.protocol === 'flow.runner-claim.v4' ? request.pluginVerifierExecution : undefined);
     if (!allocated.assignment) return { ...request, state: 'empty' };
     const { task, attempt } = allocated.assignment;
     const identity = { taskId: task.id, attemptId: attempt.id, runnerId, ownerVersion: attempt.ownerVersion };
@@ -161,7 +163,7 @@ export async function claimOpportunityStatus(pool: Pool, runnerId: string, input
 }
 
 function parseClaimRunner(input: OpportunityRequest, runnerId: string): OpportunityRequest {
-  const parsed = runnerClaimRequestSchema.or(pluginRunnerClaimRequestSchema).safeParse(input);
+  const parsed = runnerClaimRequestSchema.or(pluginRunnerClaimRequestSchema).or(verifierRunnerClaimRequestSchema).safeParse(input);
   if (!parsed.success) throw new HttpError(400, 'invalid_claim_opportunity', 'Invalid claim opportunity.');
   if (parsed.data.runnerId !== runnerId) throw new HttpError(403, 'claim_runner_mismatch', 'The opportunity belongs to another runner identity.');
   return parsed.data;
@@ -184,14 +186,15 @@ async function readCurrentAssignment(client: PoolClient, input: OpportunityReque
   if (task.submission.resumeSessionId && !(await client.query(
     'SELECT 1 FROM flow.sessions WHERE id=$1 AND harness=$2 AND runner_id=$3 AND active_task_id=$4',
     [task.submission.resumeSessionId, task.submission.harness, input.runnerId, task.id])).rowCount) return unavailable;
-  let binding: PluginToolBinding | undefined;
-  try { binding = await claimPluginBinding(client, task, input.runnerId, input.protocol === 'flow.runner-claim.v3' ? input.pluginToolExecution : undefined); }
+  let binding: PluginToolBinding | PluginVerifierBinding | undefined;
+  try { binding = await claimPluginBinding(client, task, input.runnerId, input.protocol !== 'flow.runner-claim.v2' ? input.pluginToolExecution : undefined, input.protocol === 'flow.runner-claim.v4' ? input.pluginVerifierExecution : undefined); }
   catch (error) { if (error instanceof HttpError && error.code === 'plugin_claim_unavailable') return unavailable; throw error; }
   const assignment = await assignmentForTask(client, task, attempt, goalRun, graphRun, binding);
   const remainingLeaseMs = (await client.query<{ remaining_ms: number }>(
     'SELECT floor(EXTRACT(EPOCH FROM ($1::timestamptz-clock_timestamp()))*1000)::double precision AS remaining_ms', [attempt.lease_expires_at])).rows[0]!.remaining_ms;
   if (!Number.isSafeInteger(remainingLeaseMs) || remainingLeaseMs <= 0 || remainingLeaseMs > 300000) return unavailable;
   const response = { ...input, state: 'assigned' as const, identity, assignment, remainingLeaseMs };
+  if (input.protocol === 'flow.runner-claim.v4') return verifierRunnerClaimResponseSchema.parse(response);
   return input.protocol === 'flow.runner-claim.v3' ? pluginRunnerClaimResponseSchema.parse(response) : response;
 }
 export async function heartbeat(pool: Pool, runnerId: string, ownership: Ownership, leaseMs: number): Promise<HeartbeatResponse> {

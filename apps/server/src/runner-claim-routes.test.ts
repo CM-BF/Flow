@@ -5,7 +5,8 @@ import { ClaimFixture } from '../../../docs/evidence/x01/center-claim-fixture.js
 import { HttpError } from './database.js';
 
 test('the production claim routes decode v3 and return an allocated binding through the real transaction path', async () => {
-  const f=new ClaimFixture(), app=Fastify(); app.decorateRequest('runnerId',f.runnerId);
+  const f=new ClaimFixture(), app=Fastify();
+  const oldQuery=f.query.bind(f); f.query=async(sql,values=[])=>sql.startsWith('SELECT kind FROM flow.plugin_binding_executions')?{rows:[{kind:'tool'}],rowCount:1}:oldQuery(sql,values); app.decorateRequest('runnerId',f.runnerId);
   app.setErrorHandler((error,_request,reply)=>reply.code(error instanceof HttpError?error.status:500).send({code:error instanceof HttpError?error.code:'internal'}));
   registerRunnerClaimRoutes(app,f.pool,5000);
   try {
@@ -31,5 +32,29 @@ test('malformed v2 opt-in fails before any transaction and legacy identity stays
     const identity=await app.inject({method:'GET',url:'/api/runner/identity'});
     expect(identity.json()).toEqual({protocol:'flow.runner-claim.v2',runnerId:f.runnerId});
   }finally{await app.close();}
+  expect(app.server.listening).toBe(false);
+});
+
+test('AV03 center production v4 route shares receipt transaction and explicit tool qualification', async () => {
+  const f = new ClaimFixture(), app = Fastify();
+  const original = f.query.bind(f);
+  f.query = async (sql, values = []) => sql.startsWith('SELECT kind FROM flow.plugin_binding_executions')
+    ? { rows: [{ kind: 'tool' }], rowCount: 1 } : original(sql, values);
+  app.decorateRequest('runnerId', f.runnerId);
+  app.setErrorHandler((error, _request, reply) => reply.code(error instanceof HttpError ? error.status : 500).send({ code: error instanceof HttpError ? error.code : 'internal' }));
+  registerRunnerClaimRoutes(app, f.pool, 5000);
+  const input = { ...f.request, protocol: 'flow.runner-claim.v4', pluginVerifierExecution: { bindingProtocol: 'flow.plugin-verification.v1',
+    storeId: 'owned-store', hostApiMajor: 1, algorithms: [{ id: 'flow.json-object.required-keys', version: 1 }] } };
+  try {
+    const first = await app.inject({ method: 'POST', url: '/api/runner/claim-opportunity', payload: input });
+    expect(first.statusCode).toBe(200); expect(first.json()).toMatchObject({ state: 'assigned', assignment: { pluginToolBinding: f.binding } });
+    const replay = await app.inject({ method: 'POST', url: '/api/runner/claim-opportunity/status', payload: input });
+    expect(replay.json()).toEqual(first.json()); expect(f.receipts).toHaveLength(1);
+    const conflict = await app.inject({ method: 'POST', url: '/api/runner/claim-opportunity', payload: f.request });
+    expect(conflict.statusCode).toBe(409); expect(conflict.json().code).toBe('claim_key_conflict');
+    const query = f.queries.find(q => q.sql.includes('SELECT t.id FROM flow.tasks t'))!;
+    expect(query.sql.indexOf('plugin_binding_executions')).toBeLessThan(query.sql.indexOf('LIMIT 1'));
+    expect(query.values.slice(2)).toEqual(['owned-store', 1, 'owned-store', 1, JSON.stringify(input.pluginVerifierExecution.algorithms)]);
+  } finally { await app.close(); }
   expect(app.server.listening).toBe(false);
 });

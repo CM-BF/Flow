@@ -67,3 +67,29 @@ test('shared request preserves cancellation and rejects an oversized plugin resp
   vi.stubGlobal('fetch', oversized); await expect(client.pluginRunner.publishHost(input)).rejects.toThrow();
   expect(oversized).toHaveBeenCalledTimes(1);
 });
+
+test('AV03 center FlowClient sends detached v4 through one bounded authenticated request', async () => {
+  const input = { protocol: 'flow.runner-claim.v4' as const, runnerId: randomUUID(), requestId: randomUUID(),
+    pluginVerifierExecution: { bindingProtocol: 'flow.plugin-verification.v1' as const, storeId: 'owned', hostApiMajor: 1 as const,
+      algorithms: [{ id: 'flow.json-object.required-keys' as const, version: 1 as const }] } };
+  const original = structuredClone(input); let release!: (value: Response) => void;
+  const fetch = vi.fn((_url: unknown, _init?: RequestInit) => new Promise<Response>(resolve => { release = resolve; })); vi.stubGlobal('fetch', fetch);
+  const client = new FlowClient({ baseUrl: 'http://fixture.invalid', token: 'owned-token' });
+  const pending = client.pluginRunner.claimVerifier(input); input.pluginVerifierExecution.storeId = 'changed';
+  release(new Response(JSON.stringify({ ...original, state: 'empty' })));
+  expect(await pending).toEqual({ ...original, state: 'empty' }); expect(fetch).toHaveBeenCalledTimes(1);
+  const init = fetch.mock.calls[0]![1]!;
+  expect(JSON.parse(String(init.body))).toEqual(original); expect(new Headers(init.headers).get('authorization')).toBe('Bearer owned-token');
+});
+test('AV03 center v4 unknown ACK and cancellation do not resend', async () => {
+  const input = { protocol: 'flow.runner-claim.v4' as const, runnerId: randomUUID(), requestId: randomUUID(),
+    pluginVerifierExecution: { bindingProtocol: 'flow.plugin-verification.v1' as const, storeId: 'owned', hostApiMajor: 1 as const,
+      algorithms: [{ id: 'flow.json-object.required-keys' as const, version: 1 as const }] } };
+  const transport = vi.fn<PluginJsonRequest>(async () => ({ ...input, state: 'empty' }));
+  await expect(new PluginRunnerClient(transport).statusVerifier(input)).rejects.toThrow(); expect(transport).toHaveBeenCalledTimes(1);
+  const abort = new AbortController(); transport.mockImplementation(async (_path, init) => {
+    expect(init.signal).toBe(abort.signal); throw new DOMException('Cancelled', 'AbortError');
+  }); abort.abort();
+  await expect(new PluginRunnerClient(transport).claimVerifier(input, abort.signal)).rejects.toMatchObject({ name: 'AbortError' });
+  expect(transport).toHaveBeenCalledTimes(2);
+});

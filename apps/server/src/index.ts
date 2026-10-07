@@ -1,3 +1,4 @@
+import { migratePluginVerification } from './plugin-runtime/verification.js';
 import { migrateGoalPlanConfirmations, registerGoalPlanConfirmationRoutes } from './goal-plan-confirmation/index.js';
 import { migrateGoalProgressions, registerGoalProgressionRoutes, scanGoalProgressions } from './goal-progression/index.js';
 import { registerUsageReadoutRoutes } from './usage-readout/index.js';
@@ -107,6 +108,7 @@ export async function createServer(options: ServerOptions) {
     await migrateBrowserSessions(pool);
     await migratePluginInstallations(pool);
     await migratePluginRuntime(pool);
+    await migratePluginVerification(pool);
     await migrateGoalProgressions(pool);
     await migrateGoalPlanConfirmations(pool);
     await migrateClaudeMessageSettings(pool);

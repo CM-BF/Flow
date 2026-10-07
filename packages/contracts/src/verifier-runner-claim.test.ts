@@ -22,3 +22,14 @@ test('AV03 replay identity includes key, runner, protocol and every explicit qua
   expect(sameVerifierClaimRequest(input, { ...input, pluginToolExecution: { bindingProtocol: 'flow.plugin-runtime.v1', storeId: 'owned', hostApiMajor: 1 } })).toBe(false);
   expect(() => verifierRunnerClaimRequestSchema.parse({ ...input, protocol: 'flow.runner-claim.v3' })).toThrow();
 });
+
+test('AV03 center v4 ACK binds complete qualification and operation without fallback', async () => {
+  const { decodeVerifierRunnerClaimResponse } = await import('./verifier-runner-claim.js');
+  const input = request();
+  expect(decodeVerifierRunnerClaimResponse({ ...input, state: 'empty' }, input, 'claim')).toMatchObject({ state: 'empty' });
+  for (const changed of [{ ...input, state: 'missing' }, { ...input, state: 'empty', requestId: randomUUID() },
+    { ...input, state: 'empty', pluginToolExecution: { bindingProtocol: 'flow.plugin-runtime.v1', storeId: 'owned', hostApiMajor: 1 } }]) {
+    expect(() => decodeVerifierRunnerClaimResponse(changed, input, 'claim')).toThrow();
+  }
+  expect(() => decodeVerifierRunnerClaimResponse({ ...input, state: 'empty' }, input, 'status')).toThrow();
+});

@@ -1,3 +1,4 @@
+import { decodeVerifierRunnerClaimResponse, verifierRunnerClaimRequestSchema, type VerifierRunnerClaimRequest } from '../../contracts/src/verifier-runner-claim.js';
 import { decodePluginRunnerClaimResponse, pluginRunnerClaimRequestSchema, type PluginRunnerClaimRequest } from '../../contracts/src/plugin-runner-claim.js';
 import { pluginGrantReceiptSchema, pluginGrantRequestSchema, pluginHostPublicationSchema, type PluginGrantRequest, type PluginHostPublication } from '../../contracts/src/plugin-runtime.js';
 
@@ -8,6 +9,16 @@ export class PluginRunnerClient {
 
   claim(input: PluginRunnerClaimRequest, signal?: AbortSignal) { return this.opportunity(input, 'claim', signal); }
   status(input: PluginRunnerClaimRequest, signal?: AbortSignal) { return this.opportunity(input, 'status', signal); }
+
+  claimVerifier(input: VerifierRunnerClaimRequest, signal?: AbortSignal) { return this.verifierOpportunity(input, 'claim', signal); }
+  statusVerifier(input: VerifierRunnerClaimRequest, signal?: AbortSignal) { return this.verifierOpportunity(input, 'status', signal); }
+
+  private async verifierOpportunity(input: VerifierRunnerClaimRequest, operation: 'claim' | 'status', signal?: AbortSignal) {
+    const expected = verifierRunnerClaimRequestSchema.parse(input);
+    const value = await this.request('/api/runner/claim-opportunity' + (operation === 'status' ? '/status' : ''),
+      { method: 'POST', body: JSON.stringify(expected), signal }, 131072);
+    return decodeVerifierRunnerClaimResponse(value, expected, operation);
+  }
 
   async publishHost(input: PluginHostPublication, signal?: AbortSignal): Promise<void> {
     const publication = pluginHostPublicationSchema.parse(input);

@@ -1,18 +1,19 @@
+import { VERIFIER_RUNNER_CLAIM_PROTOCOL, type VerifierRunnerClaimRequest } from '../../../packages/contracts/src/verifier-runner-claim.js';
 import type { PoolClient } from 'pg';
 import { RUNNER_CLAIM_PROTOCOL, runnerClaimReceiptSchema, type RunnerClaimReceipt, type RunnerClaimRequest } from '../../../packages/contracts/src/runner-claim.js';
 import { PLUGIN_RUNNER_CLAIM_PROTOCOL, type PluginRunnerClaimRequest } from '../../../packages/contracts/src/plugin-runner-claim.js';
 import { canonical, HttpError, sha256 } from './database.js';
 
-function address(input: RunnerClaimRequest | PluginRunnerClaimRequest) {
+function address(input: RunnerClaimRequest | PluginRunnerClaimRequest | VerifierRunnerClaimRequest) {
   return { operation: `${input.protocol}:${input.runnerId}`, key: input.requestId, digest: sha256(canonical(input)) };
 }
 
 /** Caller holds this authenticated runner's exclusive lock for the entire transaction. */
-export async function readClaimReceipt(client: PoolClient, input: RunnerClaimRequest | PluginRunnerClaimRequest): Promise<RunnerClaimReceipt | null> {
+export async function readClaimReceipt(client: PoolClient, input: RunnerClaimRequest | PluginRunnerClaimRequest | VerifierRunnerClaimRequest): Promise<RunnerClaimReceipt | null> {
   const { operation, key, digest } = address(input);
   const rows = (await client.query<{ operation: string; digest: string; response: unknown }>(
     'SELECT operation,digest,response FROM flow.commands WHERE operation=ANY($1::text[]) AND key=$2',
-    [[RUNNER_CLAIM_PROTOCOL, PLUGIN_RUNNER_CLAIM_PROTOCOL].map(protocol => `${protocol}:${input.runnerId}`), key])).rows;
+    [[RUNNER_CLAIM_PROTOCOL, PLUGIN_RUNNER_CLAIM_PROTOCOL, VERIFIER_RUNNER_CLAIM_PROTOCOL].map(protocol => `${protocol}:${input.runnerId}`), key])).rows;
   if (rows.length > 1) throw new HttpError(409, 'claim_receipt_unknown', 'Multiple allocation receipts require reconciliation.');
   const saved = rows[0];
   if (!saved) return null;
@@ -23,7 +24,7 @@ export async function readClaimReceipt(client: PoolClient, input: RunnerClaimReq
 }
 
 /** Nonempty only: no permanent receipt for idle polls, private prompt, or stale lease grant. */
-export async function saveClaimReceipt(client: PoolClient, input: RunnerClaimRequest | PluginRunnerClaimRequest, identity: RunnerClaimReceipt): Promise<void> {
+export async function saveClaimReceipt(client: PoolClient, input: RunnerClaimRequest | PluginRunnerClaimRequest | VerifierRunnerClaimRequest, identity: RunnerClaimReceipt): Promise<void> {
   const receipt = runnerClaimReceiptSchema.parse(identity);
   if (receipt.runnerId !== input.runnerId) throw new HttpError(409, 'claim_receipt_unknown', 'The allocation belongs to another runner.');
   const { operation, key, digest } = address(input);
