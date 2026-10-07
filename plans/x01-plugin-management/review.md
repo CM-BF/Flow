@@ -1,10 +1,10 @@
 # X01 review
 
-状态：PENDING（真实进程联合验收准备；PG NOT_OPEN）
+状态：APPROVED（仅e6bf/902b准备源码，实际PG NOT_OPEN）
 
 Review target commit: e6bfab16c1b783406729b0a4deb4f3c7e720446f
 
-本次仅process-runner新test/实际入口镜像/薄caller与准备结果；既有已审片结论保留后文。
+2026-10-07T10:33:54Z chatui01_owner/gpt-6-astra：SOURCE_AND_PREPARATION_REVIEW_APPROVED，0 P1/P2。350bindings、真实入口/资源/理论HTTP与准备types0/list1忠实；不授实际OPEN。见process-runner-independent-review.json。既有已审片结论保留后文。
 
 状态：APPROVED（startup十源及有限局部结果；真实CLI进程未验）
 

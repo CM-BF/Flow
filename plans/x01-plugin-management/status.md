@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T10:29:02.979735+00:00 |
+| 最近更新时间 | 2026-10-07T10:34:19Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -16,18 +16,18 @@
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 新准备段2026-10-07T10:15:07Z→10:35:07Z；固定main6aa2d42e，bac95641起点 |
 | 工作树 dirty 状态 | 真实双入口单case与薄支持准备中；已审startup/terminal原件不改 |
-| 工作分支状态 | review |
+| 工作分支状态 | ready |
 | 检查状态 | 本段full-entry types0 + exact list1（0hooks/PG）；两child最终absent/EOF、ownTMP同identity删除，post-check新增断言未执行 |
-| Review | 新真实进程准备源 e6bfab16c1b783406729b0a4deb4f3c7e720446f PENDING；startup/terminal及管理9f5独审APPROVED范围不扩大 |
+| Review | process准备 e6bf/902b 于10:33:54独审APPROVED/0P1P2；仅准备，不是actual通过 |
 | 已集成 main 状态 / HEAD | 领域/claim/semver/provenance/runtime已main；terminal20b四源已main81b4805c42d12ad35e70cd7e27ad3b78df1f035a，实际核当前3b6db156e9367047f839f06791a80f42fce04993同四hash；startup c8ba十源已main6aa2d42e96c33b73e511e69e2984b5279ce4eb7e/正式I02回执与10hash核符 |
 | 实现目标 | e6bfab16c1b783406729b0a4deb4f3c7e720446f |
 | 实现范围 | apps/server/src/plugin-runtime/process-runner-pg.test.ts；docs/evidence/x01/process-runner-* |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 真实中心与runner双入口及四个管理命令已合成一条专库验收，准备类型和精确收集通过 |
-| 下一可用交付 | 独立审查固定输入与HTTP上界后，领取一个新窗口验证两个真实semver任务和clean restart |
-| 当前阻塞 | NONE：准备待独审，PG NOT_OPEN，无活动local或待launch |
+| 当前产出 | 真实中心、runner重启和四管理命令的共同验收准备已独立审查通过 |
+| 下一可用交付 | 一次新专库窗口验证两个真实semver任务及clean post-ACK restart；保持精确身份和清理证据 |
+| 当前阻塞 | NONE：准备READY，实际PG NOT_OPEN；无活动local或待launch |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -353,3 +353,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T10:27:00Z：真实进程准备段持续。固定main6aa含已审startup/terminal/READBOUND；9f5管理三源只读镜像使用，独审10:25:16批准，不借此写其产品。新单case两runner各执行一项明确semver任务，保旧attempt/events/phase/pin不变，只证明clean post-ACK restart。333输入/1,537,057B初始闭包missing[]，随后仅新test加强第二项来源/phase断言；两必要local noEmit0/list1无hooks，累计监督约3.7秒，两TMP闭合，raw0/listJSON299B，0PG/tar/main进程。新的理论HTTP2048及日志/工具子进程预算写[候选窗口](../../docs/evidence/x01/process-runner-window.md)，并非实际测量或OPEN。clean-code复核：复用原fixture/OPS14、单task两次真实启动、明确private config和同组所有权；无新生产readiness接口/调度循环。架构产品无新变化，仅实际entry验收接缝；实际图仍main6aa。
 
 2026-10-07T10:29:02.981799+00:00：本段 source e6bfab16c1b783406729b0a4deb4f3c7e720446f 已固定；333镜像为main6aa/管理9f5/自有fixture明确来源，35官方SQL、65只读external、21既有链接。source/meta约1.9MiB（含manifest，未复制依赖）在2MiB内。正式startup I02回执10产品hash全同main6aa，历史15不重跑。固定[准备manifest](../../docs/evidence/x01/process-runner-pg-manifest.json)交chatui一次只读独审；实际新run不存在，没有PG预约。两准备检查local已返db，types/list不是case通过；第二任务新增phase/source静态断言时间界限如实披露。未改主线生产/原raw。
+
+2026-10-07T10:34:19Z：fresh902b clean/v24 ACTIVE60身份与原scope核符。归档chatui10:33:54对e6bf/902b的SOURCE_AND_PREPARATION_REVIEW_APPROVED/0P1P2，[限定独审](../../docs/evidence/x01/process-runner-independent-review.json)。350bindings/65external/21links核符；333镜像实际1,537,803B（已含后增断言），HTTP1892<2048限定理论及真实入口/收尾门禁获认可。仅metadata，不改原manifest/检查/raw，不再types/list。准备段10:15:07–10:34:19闭合，实际case尚0、PG NOT_OPEN；保留后继真实CLI/fullX01验收。
