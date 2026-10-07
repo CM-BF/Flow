@@ -8,14 +8,15 @@ CREATE TABLE flow.plugin_binding_executions (
 CREATE FUNCTION flow.installed_binding_kind(binding flow.plugin_tool_bindings) RETURNS text
 LANGUAGE sql STABLE AS $$
  SELECT i.receipt->'manifest'->>'kind' FROM flow.plugin_material_installs i
- WHERE i.id=binding.material_install_operation_id AND i.registration_id=binding.registration_id
-   AND i.version_id=binding.version_id AND i.store_id=binding.store_id AND i.status='installed'
-   AND i.receipt->>'schemaVersion'='1' AND i.receipt->>'storeId'=binding.store_id
-   AND i.receipt->>'installationId'=binding.material_id AND i.receipt->>'treeDigest'=binding.tree_digest
-   AND i.receipt->'manifest'->>'hostApiMajor'=binding.host_api_major::text
+ WHERE i.id=(binding).material_install_operation_id AND i.registration_id=(binding).registration_id
+   AND i.version_id=(binding).version_id AND i.store_id=(binding).store_id AND i.status='installed'
+   AND i.receipt->>'schemaVersion'='1' AND i.receipt->>'storeId'=(binding).store_id
+   AND i.receipt->>'installationId'=(binding).material_id AND i.receipt->>'treeDigest'=(binding).tree_digest
+   AND i.receipt->'manifest'->>'schemaVersion'='1'
+   AND i.receipt->'manifest'->>'hostApiMajor'=(binding).host_api_major::text
    AND i.receipt->'manifest'->>'kind' IN ('tool','verifier')
-   AND i.receipt->'artifact' @> binding.artifact AND binding.artifact @> (i.receipt->'artifact' - ARRAY['format','verifiedAt','source'])
-   AND i.artifact @> binding.artifact AND i.artifact_id=binding.artifact->>'artifactId'
+   AND i.receipt->'artifact' @> (binding).artifact AND (binding).artifact @> (i.receipt->'artifact' - ARRAY['format','verifiedAt','source'])
+   AND i.artifact @> (binding).artifact AND i.artifact_id=(binding).artifact->>'artifactId'
 $$;
 DO $$ BEGIN
  IF EXISTS (SELECT 1 FROM flow.plugin_tool_bindings b WHERE flow.installed_binding_kind(b) IS DISTINCT FROM 'tool') THEN
@@ -49,6 +50,8 @@ CREATE TABLE flow.plugin_verification_references (
  artifact_version text NOT NULL CHECK(artifact_version ~ '^[a-f0-9]{64}$'),
  project_id text NOT NULL REFERENCES flow.projects(id),
  rule jsonb NOT NULL CHECK(jsonb_typeof(rule)='object' AND octet_length(rule::text)<=8192
+   AND rule ?& ARRAY['schemaVersion','algorithmId','algorithmVersion','requiredKeys']
+   AND rule->>'schemaVersion'='1' AND jsonb_typeof(rule->'requiredKeys')='array' AND jsonb_array_length(rule->'requiredKeys')<=32
    AND rule->>'algorithmId'='flow.json-object.required-keys' AND rule->>'algorithmVersion'='1'),
  FOREIGN KEY(binding_id,kind) REFERENCES flow.plugin_binding_executions(binding_id,kind),
  FOREIGN KEY(source_task_id,source_attempt_id,artifact_id,artifact_version) REFERENCES flow.artifacts(task_id,attempt_id,artifact_id,version)

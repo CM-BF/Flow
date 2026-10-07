@@ -91,6 +91,10 @@ test('AV03 center verifier assignment traverses production route, locks, source 
     expect(response.statusCode).toBe(200);
     expect(decodeVerifierRunnerClaimResponse(response.json(), input, 'claim')).toMatchObject({ state: 'assigned', assignment: {
       pluginVerifierBinding: { executionKind: 'verifier', bindingId: f.binding.bindingId, verification: { projectId: 'project', rule } } } });
+    f.binding.scope.projectId = 'foreign';
+    const foreign = await app.inject({ method: 'POST', url: '/api/runner/claim-opportunity/status', payload: input });
+    expect(foreign.json()).toMatchObject({ state: 'unavailable', identity: response.json().identity });
+    f.binding.scope.projectId = null;
     permission = false;
     const denied = await app.inject({ method: 'POST', url: '/api/runner/claim-opportunity/status', payload: input });
     expect(denied.json()).toMatchObject({ state: 'unavailable', identity: response.json().identity }); expect(f.receipts).toHaveLength(1);

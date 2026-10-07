@@ -43,7 +43,8 @@ export async function claimPluginBinding(client: PoolClient, task: TaskRecord, r
   const current = await readSnapshot(client, binding.registrationId);
   const host = await client.query('SELECT 1 FROM flow.plugin_runtime_hosts WHERE runner_id=$1 AND store_id=$2 AND host_api_major=$3',
     [runnerId, hostQualification.storeId, hostQualification.hostApiMajor]);
-  if (!current.grants.includes(kind) || !host.rowCount) {
+  if (!current.grants.includes(kind) || !host.rowCount
+    || current.installation.scope.workspaceId !== binding.scope.workspaceId || current.installation.scope.projectId !== binding.scope.projectId) {
     throw new HttpError(409, 'plugin_claim_unavailable', 'Current tool permission and the exact published host are required.');
   }
   return kind === 'verifier' ? claimVerificationReference(client, task, binding, verifier!) : binding;
