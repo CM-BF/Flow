@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T19:08:28.501Z；正式四App报告已齐，新Web薄迁入/发布调用及局部检查完成待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T19:08:28.501Z；正式四App报告已齐，新Web薄迁入/发布调用已独审；实际个人实例尚未采集 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -14,18 +14,18 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery |
 | Branch | codex/backend-browser-recovery |
 | 工作基线 / HEAD | base 6c0fdcda8858aac33489c48c1948e902dd6a3d7e；artifact source04da/cd27已审；当前新增Web调用source 520d3cb7bdb352a1462d83c214e63c8a47c218f4；原6c417入口已main |
-| 工作树dirty状态 | 本次own调用/测试/记录固定中，已审产品及旧入口主体保持 |
+| 工作树dirty状态 | 源码/原件已clean固定并push至96e8c2cf；本次仅独审接收metadata，产品停写 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 实现目标 | 520d3cb7bdb352a1462d83c214e63c8a47c218f4 |
 | 实现范围 | 本次仅own evidence内current-web-transfer/actions及三直接检查、current-operator参数、template和formal输入；精确8source见web-publication-preparation.json；原已审reader/产品停写 |
 | 检查状态 | 本次Web微型fixture9/9、4argv+未知拒绝/3真实Policy边界、1受限Node导入；三轮619ms/raw1251B、三组absent/双EOF/空scratchremoved；0PG/HTTP/个人/provider。旧红绿保留不重跑 |
 | 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module已独审并main96b424777；本次薄入口source6c417850已独审并main72f5758bcd5e0e58f290f1197e70ad77e2f7c61d，新网页四App兼容已获Web独审/main9281447a3；本次个人更新未执行 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新版后台与四个网页的兼容已验证，新网页的受管迁入和发布调用已完成局部验证，正在独审。现有服务仅有先前观察，历史任务失败原因仍未知。 |
-| 下一可用交付 | 独审后按新现场身份和窗口受控更新后台，再发布新网页；保留旧页面和用户数据。 |
-| 当前阻塞 | ACTIVE: 新发布调用等待独审和现场执行门禁；历史任务错误分类仍未知。 |
+| 当前产出 | 新版后台与四个网页的兼容已验证，新网页的受管迁入和发布调用已通过独审。现有服务仅有先前观察，历史任务失败原因仍未知。 |
+| 下一可用交付 | 按新现场身份和窗口受控更新后台，再发布新网页；保留旧页面和用户数据。 |
+| 当前阻塞 | ACTIVE: 新发布调用已审，等待现场身份与唯一执行窗口；历史任务错误分类仍未知。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；artifact/retention/迁入与current入口均已独审/main；current-entry-independent-review仅准备批准，不当现场ready |
 | Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v6 active；own双目录、runner-files/admission-preservation两exact及history-projection.mjs；15:21:42.826Z receipt。已交产品全部停写 |
@@ -120,3 +120,5 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T19:11:09.514Z：新增调用固定source 520d3cb7bdb352a1462d83c214e63c8a47c218f4，唯一交审入口[web-publication-preparation](../../docs/evidence/svc06/browser-recovery/web-publication-preparation.json)绑定8source/6原件/2Interface及继承依赖；未采任何个人fresh字段，ready=false。当前只等本次独审和实际窗口；不为metadata重复测试。
 
 本次封定前clean-code/codebase-design复核：迁入、公开动作与argv职责独立，复用原协议/监督；没有新FSM/通用平台。固定原始输出证明错误留存/排他改名/权限边界，实际模板仍未ready。主线parseStatus仅核本status，errors=[]、human.missing=[]、timing.issues=[]；未运行其它计划聚合或产品检查。
+
+2026-10-07T19:14:15.123Z：Lead于19:13:10.034Z给本次520d源码唯一APPROVED_LIMITED_FIXED_WEB_TRANSFER_AND_PUBLICATION_SOURCE，无blocking；原件[I02唯一审查](../../../m2-integration/docs/evidence/i02/svc06b-web-publication-source-review.json)。源码及16绑定交付96e8c2cf0c7faab32f010ec3ac20b83e93d7f100已正常push；不为本后置metadata追SHA验收。个人fresh/实际执行窗口仍未取得，当前0child/0holder/0pending launch，无个人I/O；新阶段不重放任何旧maintenance/retirement。
