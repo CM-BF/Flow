@@ -1,0 +1,118 @@
+{
+  "attempts": [
+    {
+      "name": "behavior",
+      "startedAt": "2026-10-07T22:38:45.678Z",
+      "endedAt": "2026-10-07T22:38:46.426Z",
+      "wallBeforePersistenceSeconds": 0.7468932499177754,
+      "supervision": {
+        "pid": 22083,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 737,
+        "observed_bytes": 3664,
+        "retained_bytes": 3664,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124621505
+      },
+      "raw": {
+        "path": "docs/evidence/x01-verifier-admission-result/route-validation/local-behavior/output.log",
+        "bytes": 3664,
+        "sha256": "fc57f71753c10840b85f06583768ef310aa5d5026f01cde6bcd6f598220f4711"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-verifier-admission-result/route-validation/local.py": "32192081490060a9e6ca717743093e3c37b46e21ce012e731c20c1cf03d01dae",
+        "docs/evidence/x01-verifier-admission-result/route-validation/vitest.config.mjs": "1053e8ac40c5d3f86a6ff4630f2806539fb9ef21e9909a4376b693ca2934b339",
+        "docs/evidence/x01-verifier-admission-result/route-validation/tsconfig.json": "ddcf0828ea54cd8313ea56b428824c7f56f6ff711c3cc65ab74b68375a921204",
+        "docs/evidence/x01-verifier-admission-result/route-validation/inputs/apps/server/src/plugin-runtime/verification-routes.test.ts": "bb4083430c152c9703139d1ff48f784f723080d14f0e14fab2226601c7a1d1ef",
+        "docs/evidence/x01-verifier-admission-result/route-validation/inputs/apps/server/src/plugin-runtime/verification-routes.ts": "32887cd3097ddeb6f1e010aa9a0799659d6fa63620fd49a03760698e26f823d8"
+      }
+    },
+    {
+      "name": "types",
+      "startedAt": "2026-10-07T22:38:48.806Z",
+      "endedAt": "2026-10-07T22:38:50.378Z",
+      "wallBeforePersistenceSeconds": 1.5714695419883355,
+      "supervision": {
+        "pid": 22119,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1562,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124621550
+      },
+      "raw": {
+        "path": "docs/evidence/x01-verifier-admission-result/route-validation/local-types/output.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-verifier-admission-result/route-validation/local.py": "32192081490060a9e6ca717743093e3c37b46e21ce012e731c20c1cf03d01dae",
+        "docs/evidence/x01-verifier-admission-result/route-validation/vitest.config.mjs": "1053e8ac40c5d3f86a6ff4630f2806539fb9ef21e9909a4376b693ca2934b339",
+        "docs/evidence/x01-verifier-admission-result/route-validation/tsconfig.json": "ddcf0828ea54cd8313ea56b428824c7f56f6ff711c3cc65ab74b68375a921204",
+        "docs/evidence/x01-verifier-admission-result/route-validation/inputs/apps/server/src/plugin-runtime/verification-routes.test.ts": "bb4083430c152c9703139d1ff48f784f723080d14f0e14fab2226601c7a1d1ef",
+        "docs/evidence/x01-verifier-admission-result/route-validation/inputs/apps/server/src/plugin-runtime/verification-routes.ts": "32887cd3097ddeb6f1e010aa9a0799659d6fa63620fd49a03760698e26f823d8"
+      }
+    }
+  ]
+}

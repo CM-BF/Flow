@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T21:44:35.747Z |
+| 最近更新时间 | 2026-10-07T22:40:07.917Z |
 | 任务开工时间 | 2026-10-07T20:31:27.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner本段首次实际clock；25min截止20:56:27Z，包含等待 |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result |
 | Branch | codex/plugin-verifier-admission-result |
 | 工作基线 / HEAD | 57abdb93b73c697d865cfea5daf52d4f3342e542 / implementation 87fb3d5f301d9aef2865a7cad04fbd98b6234274 |
-| Claim | cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE23；[receipt](../../docs/evidence/x01-verifier-admission-result/claim-receipt.json) |
-| 工作树 dirty 状态 | 所有源和工程检查STOP；封包push后clean，claim保留 |
-| 工作分支状态 | in-progress（核心已审，真实事务准备） |
-| 实现目标 | 53d50dddcefb5b1e060f45b5a7addd429aa6ec81 |
+| Claim | cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE24；[receipt](../../docs/evidence/x01-verifier-admission-result/route-validation/claim-receipt.json) |
+| 工作树 dirty 状态 | 公开请求边界已局部验证，源码STOP；本次metadata封包push后clean |
+| 工作分支状态 | in-progress（公开输入边界待独审；领域PG待前置main与窗口） |
+| 实现目标 | 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd（公开schema400增量；核心53d保留） |
 | 实现范围 | apps/runner/src/plugins/execution.ts,apps/server/src/events.ts,apps/server/src/plugin-runtime/artifact.ts,apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/verification-admission.test.ts,apps/server/src/plugin-runtime/verification-admission.ts,apps/server/src/plugin-runtime/verification-result.test.ts,apps/server/src/plugin-runtime/verification-result.ts,apps/server/src/plugin-runtime/verification-routes.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/plugin-verification-configuration.test.ts,apps/server/src/plugin-verification-configuration.ts,packages/contracts/src/plugin-verification-admission.ts,packages/contracts/src/plugin-verification-event.ts,packages/contracts/src/runner.ts,packages/plugin-runtime/src/verification-input.test.ts,packages/plugin-runtime/src/verification-input.ts |
-| 检查状态 | PASSED 53d50dddcefb5b1e060f45b5a7addd429aa6ec81：修复3/3公共调用反例和affected strict0；旧15distinct不重跑/旧错误保留，PG NOT_RUN |
-| Review | APPROVED 53d50dddcefb5b1e060f45b5a7addd429aa6ec81：db 2026-10-07T21:12:11.000Z；P2 CLOSED/0P1P2，原CHANGES_REQUESTED保留 |
-| 已集成 main 状态 / HEAD | NOT_INTEGRATED；AV036/center14前置尚待真实PG及受控接收 |
+| 检查状态 | PASSED 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd：11/11 inject、focusedtypes0；0PG/listener，旧15与5domain未重跑 |
+| Review | 当前schema400源/局部增量待独审；核心53d、五case与helper已审历史保留 |
+| 已集成 main 状态 / HEAD | NOT_INTEGRATED；AV R3已实际5/5且独审通过，等待其主线前置接收 |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 真实事务验收用例与清理门禁已完成局部审查，数据库验收尚未运行 |
-| 下一可用交付 | 前置中心资格验收通过后，在独立窗口验证受理与事件整批回滚 |
-| 当前阻塞 | ACTIVE: 等待前置数据库验收通过及独立运行窗口 |
+| 当前产出 | 非法验证请求已返回明确客户端错误，并保持角色授权、浏览器防伪与响应协议 |
+| 下一可用交付 | 独审公开请求边界；前置主线接收后验证真实受理和事件整批回滚 |
+| 当前阻塞 | ACTIVE: 等待AV R3主线前置接收及VAR独立数据库窗口 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -34,7 +34,7 @@
 | VAR-01 | completed | architecture_read | 新合同与共享序列化 |
 | VAR-02 | in-progress | architecture_read | 依赖已审AV036/center，真实PG未通过 |
 | VAR-03 | in-progress | architecture_read | 与受理同片，不能先暴露producer |
-| VAR-04 | in-progress | architecture_read | 类型检查和收集5例完成（0业务执行），两P2分别关闭；候选PREPARED_CLOSED_WAIT_AV_R2 |
+| VAR-04 | in-progress | architecture_read | 类型检查和收集5例完成（0业务执行），两P2分别关闭；历史d407候选保持CLOSED，当前等AV R3 main及claimv2必要metadata rebind |
 
 架构影响：新增verifier admission/result领域Module，唯一事务/事件权威不变；基线图待本片受控main后由集成owner更新。
 
@@ -78,3 +78,12 @@ VAR-04准备封存：2026-10-07T21:32:52.281Z。测试source57b188f5ee9fce658916
 2026-10-07T22:35:47.945Z起连续20分钟，截止22:55:47.945Z。前序AV批准metadata已STOP；本树22:36:47.114Z原子amend v2/24精确增加verification-routes.test.ts。仅三处safeParse→HttpError400，保owner/runner鉴权、cookieOrigin/CSRF、no-store、201/200重放、413。新inject测试复用真实认证钩子与领域mock，0监听/PG；当前源码未验证。新8MiB含Git index临时/TMP/raw，≤3child各20s累计50s/raw128KiB。旧候选/原raw不覆盖。
 
 D05已确认22:01:36.229Z live211/sourceCurrenttrue/issues[]/stalefalse（dashboard-architecture/docs/evidence/d05/three-canonical-211-live.json），本owner不重复探针。AV R3实际5/5且22:29:10结果独审通过，等待AV R3主线窄接收与本VAR真实PG新窗口；历史“等待R2”保留为当时快照，由本段当前事实取代。
+
+## 公开输入边界局部结果
+
+2026-10-07T22:40:07.917Z：source 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd，11个inject直接例全过、focusedtypes0；2child合计2299ms/raw3664B，22083/22119均exit0/finalabsent/MERGED EOF，两个登记TMP同identity为空删除/exactENOENT；22:38:50.378Z FULL_RETURN。真实鉴权钩子保owner/runner、Origin/CSRF，领域调用与store/pool为显式fake；0监听/PG，不称factory或worker已验。仅新增两regular镜像与旧固定inputs软链接，不复制旧供给或覆盖原manifest。当前交chatui固定增量独审。
+
+| 等待事件 | 开始UTC | 结束UTC | 依据 |
+| --- | --- | --- | --- |
+| 公开schema400实施 | 2026-10-07T22:36:47.114Z | 2026-10-07T22:38:50.378Z | claimamend→局部RETURN |
+| 公开schema400独审 | 2026-10-07T22:40:07.917Z | OPEN | 本次fixed packet |

@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-07T22:40:07.917Z",
+  "state": "FUTURE_ACTUAL_REBIND_REQUIRED_NOT_OPEN",
+  "unchangedHistoricalCandidate": "d407eff55811813df912771a43f8cfb6149db2f5",
+  "newClaim": {
+    "claimId": "cb699a7a-bc28-4659-82e6-56f6a0765e6c",
+    "version": 2,
+    "paths": 24,
+    "receipt": "claim-receipt.json"
+  },
+  "newRouteSource": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+  "oldPGInputsUntouched": true,
+  "actualCondition": [
+    "AV R3 resultapproved; AV mainintake pending",
+    "Fresh claimv2 metadata/admissionmanifest and exact current fixed dependency supply after intake",
+    "Independent unique managerNEXT and all normal fresh gates"
+  ],
+  "notAuthority": "No R2/R3 PG budget or oldready may be reused; this document is dependency detail, not another status."
+}
