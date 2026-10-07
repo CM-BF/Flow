@@ -2,8 +2,8 @@
 
 | 字段 | 内容 |
 | --- | --- |
-| 计划编号 / 状态 | SVC07 / in-progress |
-| 创建日期 / 最近更新 | 2026-10-06 20:04 UTC |
+| 计划编号 / 状态 | SVC07 / completed |
+| 创建日期 / 最近更新 | 2026-10-06 20:04 UTC / 2026-10-07 02:20 UTC |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)，追溯 REQ-19/SVC |
 | co-lead | mika |
 | Owner / model | db_transaction_owner / gpt-6-astra |
@@ -21,7 +21,7 @@
 - [x] **SVC07-01** 核定窄设计、固定输入、唯一 worktree 与原子领取。
 - [x] **SVC07-02** 先写公开 Interface 失败反例，再实现连接错误与清理生命周期。
 - [x] **SVC07-03** 完成显式 fake、局部 types、质量复核和固定提交，取得独立 source review。
-- [ ] **SVC07-04** 受控窗口完成必要直接消费者检查、main 接收与架构基线更新登记。
+- [x] **SVC07-04** 受控窗口完成必要直接消费者检查、main 接收与架构基线更新登记；[main回执](../../docs/evidence/svc07/main-receipt.json)绑定6b531d46，架构更新由WebD06接续，未声称图已发布。
 
 ## 验收与证据
 

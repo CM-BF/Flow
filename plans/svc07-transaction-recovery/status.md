@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 02:15 UTC结果独审归档；Mika只读main d0573c7dcf6b051a007b44e84cba4ff74fda247d，产品e28未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 02:20 UTC；固定main接收点6b531d4632b60e1a70a8183c68a98dc561e5f79c的69文件Git/bytes/hash核符；随后refs观察7a7c3f4b214c41fb740c610d810f2fc5963d25b2，接收target不改 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -10,34 +10,34 @@
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/server-transaction-disconnect |
 | Branch | codex/server-transaction-disconnect |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品e28c4ed0a30ec2800eeca2ca5c444c0081c38165；HTTP执行HEAD1b3e16626c214f179640574dcd3ba93de10213ed；结果/本次review归档前HEAD3a94a629c28a44e9f7dc6369ecd5cf947a30f80c |
-| 工作树dirty状态 | 3a94a629 clean/pushed已核；本次仅status/review归档独审，提交后核clean；全部原件/manifest/产品不改 |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | integration |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；产品e28c4ed0a30ec2800eeca2ca5c444c0081c38165；HTTP结果3a94a629c28a44e9f7dc6369ecd5cf947a30f80c；本次main接收的delivery/归档前HEAD4a85569b409c8ca6cea032055119725dc486adda |
+| 工作树dirty状态 | 4a85569b clean/pushed已核；最后仅main-receipt及plan/status/review收口，提交后核clean并完全停写；历史原件/manifest/产品不改 |
+| 工作分支状态 | completed |
+| 本片段交付阶段 | delivered |
 | 实现目标 | e28c4ed0a30ec2800eeca2ca5c444c0081c38165 |
 | 实现范围 | apps/server/src/database.ts, apps/server/src/database-transaction.test.ts |
 | 检查状态 | PASSED e28c4ed0a30ec2800eeca2ca5c444c0081c38165：显式fake15/15、局部types exit0、真实PG2/2；HTTP结果3a94a629c28a44e9f7dc6369ecd5cf947a30f80c为1/1、exit0、wall2.979205s、19HTTP/cleanup CONFIRMED；[manifest](../../docs/evidence/svc07/http-output-manifest.json) fedeba9427c46abb84e99944bed83600bac80cd48abd6a2712e60d2e86e8d409，各自范围不累计 |
-| 已集成main状态 / HEAD | 未集成；Mika本轮只读main d0573c7dcf6b051a007b44e84cba4ff74fda247d clean，database.ts相对原base22a无差异；待Execution Lead受控接收 |
+| 已集成main状态 / HEAD | 已在main接收点6b531d4632b60e1a70a8183c68a98dc561e5f79c集成；Lead确认该点clean/pushed、Mika独核；owner逐Git核2产品+67plan/evidence与delivery4a85569b及intake hashes一致。归档时main/origin refs已为7a7c3f4b214c41fb740c610d810f2fc5963d25b2，个人runtime未改变 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 事务断连保护已通过真实连接恢复和HTTP并发领取、命令重放及重启验证 |
-| 下一可用交付 | 将已验证并独审通过的事务保护纳入主线 |
+| 当前产出 | 已验证的事务断连保护已纳入主线，保留业务原始失败并支持后续独立事务恢复 |
+| 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，APPROVED产品e28、真实PG结果05a3e901、HTTP准备35f78c8b与HTTP结果3a94a629；最终HTTP审为2026-10-07 02:14–02:15 UTC/0 P1/P2；main尚未接收 |
-| Claim | 3bbb8293-c36d-40c8-a133-723463801943 v1 ACTIVE；4 literal scopes仅领取事实，非产品target范围；[原子回执](../../docs/evidence/svc07/claim-receipt.json) |
-| 架构影响 | 借用期连接错误/释放生命周期变化；产品source已固定，待集成时由 Execution Lead 更新 apps/execution-dashboard/public/architecture-data.js，分支设计未作为main事实 |
+| Review | [review.md](review.md)，APPROVED产品e28、PG结果05a3e901、HTTP准备35f78c8b及HTTP结果3a94a629；原独审分层复用，main已受控接收，无新工程检查 |
+| Claim | 3bbb8293-c36d-40c8-a133-723463801943 v1 ACTIVE为02:20:42.795Z最后观察；metadata提交后owner完全停写，由Mika fresh原子release全claim，不提前宣称已释放 |
+| 架构影响 | 连接借用期监听/错误/释放生命周期已入main6b531d46；Mika已登记WebD06更新 apps/execution-dashboard/public/architecture-data.js，target为完整main6b531d4632b60e1a70a8183c68a98dc561e5f79c；图更新尚未确认，本owner不修改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | SVC07-01 | completed | db_transaction_owner | 固定22a输入与20:03:32.621Z原子领取 |
 | SVC07-02 | completed | db_transaction_owner | 首红保留；[15例绿色与类型检查](../../docs/evidence/svc07/checks.md) |
 | SVC07-03 | completed | db_transaction_owner / Mika | 15/15+types0，固定source独审APPROVED/0 P1/P2 |
-| SVC07-04 | in-progress | db_transaction_owner / mika / Execution Lead | 真实PG2/2及[HTTP1/1](../../docs/evidence/svc07/http-checks.md)、cleanup CONFIRMED和结果独审已完成；main接收与架构同步仍开放 |
+| SVC07-04 | completed | db_transaction_owner / mika / Execution Lead | 真实PG2/2、HTTP1/1、结果独审及[main接收](../../docs/evidence/svc07/main-receipt.json)完成；架构后继WebD06/target6b531d46已登记，未冒称图已更新 |
 
 ## Dashboard 同步
 
-本 status 为唯一手填事实源；任务已有权威worktree，当前结果随本status正常聚合，最新聚合快照待Lead定向核对，不编辑生成JSON。产品/真实PG/HTTP消费者与main接收分别记录，SVC07-04未因本次HTTP通过提前关闭。
+本 status 为唯一手填事实源；任务已有权威worktree，本次main接收随status正常聚合。Mika当次8s dashboard只读超时，最新展示待下一次正常刷新；owner不重启或轮询服务、不编辑生成JSON。SVC07-04因直接消费者/main接收及架构更新登记均完成而关闭；图发布本身由WebD06后继承担。
 
 ## 真实连接验收准备与安全停写点
 
@@ -78,3 +78,11 @@ Mika已只读核原结果与资源closure并明确归还窗口、通知Web manag
 2026-10-07 02:14–02:15 UTC：Mika完成固定结果 `3a94a629c28a44e9f7dc6369ecd5cf947a30f80c` 忠实性及已观察cleanup独审，APPROVED/0 P1/P2。7原件4935B逐Git=WT/bytes/SHA/regular0600一致，输出manifest fedeba9427c46abb84e99944bed83600bac80cd48abd6a2712e60d2e86e8d409及233输入/原manifest/e28两源均未变；reviewer独立lstat确认TMP absent，没有新连PG/扫描进程。结果delta的whitespace检查exit2仅原始Vitest日志末尾空行，是raw保真例外，原件不修改。此前output manifest的PENDING_FIXED_RESULT_COMMIT是封存时点状态，最终approval只在本status/review追加。
 
 02:15:16.975Z fresh ledger确认原claim v1 ACTIVE/4scope及owner/branch/worktree不变。当前仅两份metadata收尾后commit/push并停止写入，保留claim等待Lead main接收；不占共享窗口、不新增运行、不关闭SVC07-04。Lead已确认可从本唯一status及固定manifest接收。
+
+## Main接收与最终停写
+
+2026-10-07 02:20 UTC，[唯一main回执](../../docs/evidence/svc07/main-receipt.json)记录main/origin `6b531d4632b60e1a70a8183c68a98dc561e5f79c`接收delivery `4a85569b409c8ca6cea032055119725dc486adda`。owner按固定main的 `docs/evidence/i02/svc07-controlled-intake.json`逐Git核69文件403460B与delivery/bytes/hash一致；2产品与67plan/evidence已入main。Lead确认clean/pushed、Mika已独核；15fake/2PG/1HTTP与独审分别复用，0新工程检查/模型/provider/runtime动作，个人runtime没有随源码接收改变。
+
+原计划SVC07-04的必要消费者、主线接收和架构更新登记均完成。架构图更新已由Mika交WebD06，目标绑定main6b531d46；owner只登记责任，不宣称图已更新或修改图。原COMMIT ACK-loss未注入、历史HOLD/PGID391UNKNOWN/raw EOF空行/manifest历史状态保留。本段沿固定clean-code/codebase-design核事实范围和状态所有权，不增实现/运行。
+
+最后metadata commit/push、核clean后，owner完全停止SVC07所有scope写入；原claim以02:20:42.795Z fresh v1 ACTIVE记录，实际release由Mika另行fresh原子完成，owner不在释放后再补写。后继工作须另行合法派工/领取，当前无后台任务或资源预约。

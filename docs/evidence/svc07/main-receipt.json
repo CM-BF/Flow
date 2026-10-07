@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-07T02:21:46.896306+00:00",
+  "kind": "SVC07_MAIN_RECEIPT",
+  "main": "6b531d4632b60e1a70a8183c68a98dc561e5f79c",
+  "delivery": "4a85569b409c8ca6cea032055119725dc486adda",
+  "productTarget": "e28c4ed0a30ec2800eeca2ca5c444c0081c38165",
+  "httpResultTarget": "3a94a629c28a44e9f7dc6369ecd5cf947a30f80c",
+  "intakeReceipt": {
+    "path": "docs/evidence/i02/svc07-controlled-intake.json",
+    "readAtCommit": "6b531d4632b60e1a70a8183c68a98dc561e5f79c",
+    "bytes": 13269,
+    "sha256": "7e2e279bb6acdca51c02d14eb472da468bc9c72b30dcfd27eb269a127e741368"
+  },
+  "acceptedFiles": {
+    "products": 2,
+    "planAndEvidence": 67,
+    "total": 69,
+    "bytes": 403460,
+    "gitAtMainMatchesDeliveryAndIntakeHashes": true
+  },
+  "refsObserved": {
+    "main": "7a7c3f4b214c41fb740c610d810f2fc5963d25b2",
+    "originMain": "7a7c3f4b214c41fb740c610d810f2fc5963d25b2"
+  },
+  "mainCleanAndPushedEvidence": "Execution Lead confirmation and Mika independent main read; this owner verified fixed Git blobs and refs only",
+  "sourceManifest": {
+    "path": "docs/evidence/svc07/source-manifest.json",
+    "bytes": 635,
+    "sha256": "c3387ee8c3b74d2c7fb552d4f7848f131a42a2a8457c1e7a9c80eb002718056f"
+  },
+  "httpPreparedManifestSha256": "13349864e53abfb85b827e13545e6ffb9de5280ba6a242ee1e5f10f0d78bea06",
+  "httpOutputManifestSha256": "fedeba9427c46abb84e99944bed83600bac80cd48abd6a2712e60d2e86e8d409",
+  "checksReused": {
+    "fake": 15,
+    "pg": 2,
+    "http": 1,
+    "httpWallSeconds": 2.979205375,
+    "separateRunsNotOneSuite": true
+  },
+  "reviewsReused": {
+    "product": "e28c4ed0a30ec2800eeca2ca5c444c0081c38165",
+    "pgResult": "05a3e901f4abf6f11cb7067cfca6167589a1cf9b",
+    "httpPreparation": "35f78c8b1edc67f1646b395dd62bc1cf389ebef9",
+    "httpResult": "3a94a629c28a44e9f7dc6369ecd5cf947a30f80c",
+    "findings": "APPROVED / 0 P1/P2 within each recorded scope"
+  },
+  "newEngineeringChecks": 0,
+  "providerQueries": 0,
+  "runtimeChanges": false,
+  "architectureFollowUp": {
+    "owner": "WebD06",
+    "registeredBy": "Mika to Web manager",
+    "target": "6b531d4632b60e1a70a8183c68a98dc561e5f79c",
+    "path": "apps/execution-dashboard/public/architecture-data.js",
+    "state": "REGISTERED_UPDATE_NOT_CLAIMED_COMPLETE"
+  },
+  "claimAtFinalMetadataStart": {
+    "claimId": "3bbb8293-c36d-40c8-a133-723463801943",
+    "version": 1,
+    "state": "active",
+    "observedAt": "2026-10-07T02:20:42.795Z",
+    "releaseOwner": "mika",
+    "releaseNotYetClaimed": true
+  },
+  "dashboard": "Mika prior single 8-second read timed out; latest display awaits normal refresh; no restart or polling by owner",
+  "limitations": [
+    "Real COMMIT ACK loss was not injected.",
+    "Historical HOLD and PGID391 UNKNOWN preserved.",
+    "Raw trailing blank line preserved; no normalization.",
+    "Personal runtime is unchanged; architecture publication separately owned."
+  ],
+  "scopeCompletion": "SVC07-04 necessary direct-consumer evidence, main intake and architecture follow-up registration complete; architecture publication itself belongs to WebD06",
+  "ownerWriteStop": "After this metadata commit/push, owner stops all SVC07 writes; Mika may atomically release the original full claim"
+}
