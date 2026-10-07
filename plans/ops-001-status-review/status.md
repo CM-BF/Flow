@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:21:55.897Z / main/origin96b424777；插件宿主/当前迁入模块接收，固定双槽后台产物结果独审已收口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T15:55:26.554Z / main/origin7aa9a6b08；固定受管入口已审接收，新Web产物已核收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,14 +15,14 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/origin96b424777已含已审插件进程宿主、消息设置App接线、双槽宿主源及后台保留策略；远端推送错误已解除。最后已审个人7d1/source6c、accepting21、Webd629/v3保持；本段未新采个人事实或部署。 |
+| 已集成main状态 / HEAD | main/origin7aa9a6b08已收SVC06B当前入口/显式reader ports与SVC09A隔离宿主准备；二者只是准备。新Web779/c231构建结果独审通过，四网页对cd27/04da的兼容报告未齐。最后已审个人7d1/source6c、accepting21、Webd629/v3保持，本段未新采个人事实或操作。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 新网页配套后台与消息设置后台产物已备妥；网页兼容验证和双槽宿主验证由原团队并行收口。 |
-| 下一可用交付 | 收口固定网页与后台组合，把已审能力交到用户可访问的页面；继续按实际依赖及时接收成果。 |
+| 当前产出 | 新网页及配套后台产物已完成固定构建；更新入口已审，正在收口网页兼容与后台独立启动验收。 |
+| 下一可用交付 | 取得旧页面和新页面的正式兼容依据，再受管发布可体验页面；逐消息设置后台独立启动和接单另外验收。 |
 | 当前阻塞 | ACTIVE: 远程验证启用仍待既有用户选择；本地发布准备和独立验证继续。 |
 | 需用户决定 | NONE |
 
@@ -547,3 +547,7 @@ Recovery十九源已main c13042ba，Web既有03/05独审和一次组合类型检
 ## 2026-10-07T15:21:55.897Z 发布准备与接收事实
 
 受信插件宿主已审源码已接main/origin96b424777，原500推送失败保留且本次已解除；精确接收范围见[I02记录](../../../m2-integration/docs/evidence/i02/x01-trusted-process-host-intake.json)。双槽后台固定098b产物构建实际15:14:01.726Z→15:14:34.219Z、15:14:38.558644Z完整归还，15:20限定独审通过，仍非宿主或个人部署验收；复用[构建结果审查](../../../m2-integration/docs/evidence/i02/svc09a-fixed-build-result-review.json)，不重复原始记录。S01随后独占已于15:18:44.466Z完整归还，当前K01普通局部段由Mika管理；本队迁入reader准备继续，heavy不因准备预占。新网页仍绑定cd27/04da，后续逐消息设置绑定2515/098b，各自兼容证据与个人操作另验。
+
+### 2026-10-07T15:55:26.554Z 固定发布输入收口
+
+[SVC06B当前入口独审](../../../m2-integration/docs/evidence/i02/svc06b-current-entry-review.json)与[SVC09A宿主准备增量审查](../../../m2-integration/docs/evidence/i02/svc09a-host-preparation-delta-review.json)均已main；未重复构建或已绿局部检查。新Web779/c231已有正式构建批准，但四页面对cd27/04da的真实兼容仍待收口；具体缺项只引用[唯一owner输入](../../../backend-browser-recovery/docs/evidence/svc06/browser-recovery/managed-update-inputs.json)，不复制第二清单。现有用户服务保持，准备批准不当实际部署/接单证明。
