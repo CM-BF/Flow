@@ -4,7 +4,7 @@
 
 ## 本轮管理输入
 
-[固定d057的活动累计缓存覆盖补充](activity-cache-total-bound/report.md)归原MATURE05-05/06-03；只有管理验收差异，尚待独立文档审查、未实施/未测量。两份唯一status保留现registry静态映射，未实采聚合；Recovery/Quick顺序与无新grant/预约保持。root新入站free888332KiB低于原线，本组未采样。
+[固定d057的活动累计缓存覆盖补充](activity-cache-total-bound/report.md)归原MATURE05-05/06-03；仅管理验收差异获独立文档批准，产品未实施/未测量。两份唯一status保留现registry静态映射，未实采聚合；Recovery/Quick顺序与无新grant/预约保持。root新入站free888332KiB低于原线，本组未采样。
 
 ## 已固定源码交接
 

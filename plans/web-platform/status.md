@@ -76,7 +76,7 @@
 
 [D06原树源码后继](../../docs/evidence/web-platform/architecture-snapshot-0da-intake/report.md)已实际领取adf9539d v1四范围，原owner唯一status记录5124限定source-only批准/新检查NOT_RUN；管理索引不冒main或页面完成。
 
-[活动累计缓存覆盖输入](../../docs/evidence/web-platform/activity-cache-total-bound/report.md)已归原MATURE05-05/06-03，待本次文档独审；仅补验收，不新增产品实现、运行阻塞或许可。两大task的唯一status维护对应条目。
+[活动累计缓存覆盖输入](../../docs/evidence/web-platform/activity-cache-total-bound/report.md)已归原MATURE05-05/06-03，已获本次文档限定批准；仅补验收，不新增产品实现、运行阻塞或许可。两大task的唯一status维护对应条目。
 
 ## 当前唯一来源、写权与下一步
 
