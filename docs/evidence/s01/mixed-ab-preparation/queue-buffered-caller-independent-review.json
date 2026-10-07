@@ -1,0 +1,22 @@
+{
+  "schema": "s01-caller-independent-review-v1",
+  "reviewer": "root / gpt-6-astra",
+  "reviewedAt": "2026-10-07T17:19:22Z",
+  "source": "ece9241418d0f17c6ef2cfd6e32e5b868ab22273",
+  "packet": "b10cea5654990650f5a9246d6536cad9d952d693",
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "verifiedUniqueBindings": 129,
+  "pure": {
+    "selected": 5,
+    "passed": 5,
+    "rawBytes": 103
+  },
+  "historicalInputSha256": "a317b064dd399f929cf600c988c2d4951a2e1cbd498df3d4761f9fcec1e4144b",
+  "boundaries": [
+    "Source and pure local results only; no PG/HTTP/performance execution approval.",
+    "Original selection 839a and old caller/input unchanged at review.",
+    "New floor-only metadata correction is separately bound; this approval is not rewritten to claim it reviewed the new input."
+  ]
+}

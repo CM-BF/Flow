@@ -10,14 +10,16 @@
     "version": 3,
     "scopeCount": 6
   },
-  "minimumCandidateFloorBytes": 17537695744,
+  "minimumCandidateFloorBytes": 2684354560,
   "floorBasis": {
-    "managerCompleteObserved": 15927083008,
+    "basis": "intrinsic_candidate_lower_bound_only_not_complete_admission_floor",
     "experimentLogicalIncrement": 536870912,
     "additionalDbWalSchedulingHeadroom": 1073741824,
-    "cleanupReserveAlreadyInManagerSumOnce": true,
+    "globalCleanupReserveIncludedOnce": 1073741824,
+    "managerMustCombineRemainingGrowthAndUnknownsOnce": true,
     "futureManagerCompleteSumRequired": true,
-    "schedulingHeadroomNotDbWalHardCap": true
+    "schedulingHeadroomNotDbWalHardCap": true,
+    "reserveCombination": "The manager counts this same global cleanup reserve once; do not add a second reserve."
   },
   "limits": {
     "wholeSeconds": 300,

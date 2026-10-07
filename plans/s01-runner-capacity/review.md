@@ -2,7 +2,7 @@
 
 ## 当前：单臂caller/input与pure结果
 
-PENDING，source `ece9241418d0f17c6ef2cfd6e32e5b868ab22273`；[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-caller-ready.md)。仅新finite variant/input与5pure；0PG/HTTP/性能，旧operator冻结。
+SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，root / gpt-6-astra，2026-10-07T17:19:22Z，0P1/P2，固定packet `b10cea5654990650f5a9246d6536cad9d952d693`，source `ece9241418d0f17c6ef2cfd6e32e5b868ab22273`；[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-caller-ready.md)。仅新finite variant/input与5pure；129唯一绑定与103B原件核符，0PG/HTTP/性能，旧operator冻结。[正式回执](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-caller-independent-review.json)。当前floor-only metadata另见[增量绑定](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-floor-delta.json)，旧a317 input由固定packet保留；不把intrinsic下限当完整运行准入。
 
 ## 已审：显式 buffered 单臂选择
 

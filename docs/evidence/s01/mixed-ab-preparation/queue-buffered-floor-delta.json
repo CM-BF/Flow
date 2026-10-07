@@ -1,0 +1,51 @@
+{
+  "schema": "s01-buffered-floor-metadata-delta-v1",
+  "updatedAt": "2026-10-07T17:47:40.299Z",
+  "historicalTarget": "b10cea5654990650f5a9246d6536cad9d952d693",
+  "historicalInputSha256": "a317b064dd399f929cf600c988c2d4951a2e1cbd498df3d4761f9fcec1e4144b",
+  "currentInputSha256": "842a7e1d8e152337692b884e905bc0b1b97a28090bc244b3bcf11309e0decbc2",
+  "changedInputFields": [
+    "minimumCandidateFloorBytes",
+    "floorBasis"
+  ],
+  "oldMinimumCandidateFloorBytes": 17537695744,
+  "newMinimumCandidateFloorBytes": 2684354560,
+  "oldFloorBasis": {
+    "managerCompleteObserved": 15927083008,
+    "experimentLogicalIncrement": 536870912,
+    "additionalDbWalSchedulingHeadroom": 1073741824,
+    "cleanupReserveAlreadyInManagerSumOnce": true,
+    "futureManagerCompleteSumRequired": true,
+    "schedulingHeadroomNotDbWalHardCap": true
+  },
+  "all123FileBindingsUnchanged": true,
+  "actual": "NOT_OPEN",
+  "checks": "metadata JSON/content/hash only; zero engineering child/PG/HTTP/coordination CLI",
+  "bindings": [
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator-input.json",
+      "bytes": 47270,
+      "sha256": "842a7e1d8e152337692b884e905bc0b1b97a28090bc244b3bcf11309e0decbc2"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-caller-ready.md",
+      "bytes": 6072,
+      "sha256": "25071bab7530f051bd2e4791a6faf51aadd239b19dcae5b91c8be5f3aadccad1"
+    },
+    {
+      "path": "docs/evidence/s01/mixed-ab-preparation/queue-buffered-caller-independent-review.json",
+      "bytes": 829,
+      "sha256": "eb0354852abe194c57e65ff1c386442e3650a14576592f5dbd7968b05da45868"
+    },
+    {
+      "path": "plans/s01-runner-capacity/status.md",
+      "bytes": 58853,
+      "sha256": "94ca87f041c631836fa08871be42289c9d3a3689fa9633999f76425e3cc2dfe6"
+    },
+    {
+      "path": "plans/s01-runner-capacity/review.md",
+      "bytes": 41320,
+      "sha256": "16f118567e92182410140fc696b31e5c9dd44f1e31f10204f980e069c3cca36d"
+    }
+  ]
+}

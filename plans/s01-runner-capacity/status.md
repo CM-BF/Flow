@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T17:11:33.451Z |
+| 最近更新 | 2026-10-07T17:47:40.299Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -15,20 +15,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 源839a1614bb8429922716fb86e8a9ebe6b2972967固定；本次只封局部结果与metadata，最终HEAD由Git读取。 |
+| 工作树dirty状态 | 开段 b10cea5654990650f5a9246d6536cad9d952d693 = origin clean；本段仅资源元数据/独审归档，最终 HEAD 由 Git 读取。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 839a1614bb8429922716fb86e8a9ebe6b2972967：新选择8/8+受影响sequence5/5，focused types0；2children完整RETURN，非PG通过。 |
+| 检查状态 | PASSED ece9241418d0f17c6ef2cfd6e32e5b868ab22273：5 synthetic pure；原839a的13与types另列；本段0工程重跑、0PG。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
 | 实现目标 | ece9241418d0f17c6ef2cfd6e32e5b868ab22273 |
 | 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py, docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.test.py, docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator-input.json, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | planning |
 | 优先级 | 4 |
-| 当前产出 | 显式 buffered 单臂入口已独审通过；独立caller及固定输入已补齐，纯入口5例通过，等待该增量独审。 |
-| 下一可用交付 | 独审有限caller/input后，按真实资源交接决定是否开放单臂PG候选；旧同步负载验收保持。 |
-| 当前阻塞 | ACTIVE: 新caller/input待独审与正式运行窗口，当前0实际holder。 |
+| 当前产出 | 单臂入口与运行封套已独审通过，局部5例通过；候选资源下限已纠正，真实容量实验尚未运行。 |
+| 下一可用交付 | 由 manager 合并实际剩余资源与未知保留量，完成独立窗口交接后再决定运行；原同步负载验收保持。 |
+| 当前阻塞 | ACTIVE: PG 仍 HOLD / NOT_OPEN，等待完整资源准入和正式运行窗口；本 owner 0 child、无待启动工程检查。 |
 | 需用户决定 | NONE |
-| Review | APPROVED 839a1614bb8429922716fb86e8a9ebe6b2972967选择/13pure/types；新caller增量PENDING。 |
+| Review | APPROVED ece9241418d0f17c6ef2cfd6e32e5b868ab22273 / b10cea5654990650f5a9246d6536cad9d952d693，root 2026-10-07T17:19:22Z，0P1/P2；仅源码与局部结果，资源元数据增量另列。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T16:58Z fresh本人/WT/branch一致。 |
 | 架构影响 | 本片仅实验选择Interface：显式单次buffered复用原runMixed/centerDelivery/完整proof/final/cancel；原A/B默认顺序、产品pool/SQL和生产4fdd不改。 |
 
@@ -346,3 +346,11 @@ db16:18:22Z RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，绑定dfb2105ba6e4f3eaa4512d
 Root于17:06:05Z独审source839a/packet17cb，SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0P1P2，正式回执queue-buffered-independent-review.json。新8分钟至17:15:07Z，新增4MiB含TMP2MiB/raw256KiB，最多3串行child各30s/累计45s；fresh claim508fv3/6本人匹配。仅复用旧OPS14/固定queue operator helpers的新有限variant，冻结旧caller/raw/input不改，0PG/HTTP/Chrome/provider/install/build。经理紧前floor至少15,927,083,008B或更高；actual300s/512MiB与PG/WAL预留仅候选，绝无OPEN。
 
 2026-10-07T17:11:33.451Z caller准备FULLRETURN/STOP：source `ece9241418d0f17c6ef2cfd6e32e5b868ab22273`，[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-caller-ready.md)。新123input/12612600B引用原production675/223/33SQL，六已审leaf替换+两新caller/entry，其余原件不改。纯5/5、1child142ms监督/193.316mscaller、raw103B，资源末态与旧EPERM分别保留；0PG/HTTP/perf。新五输出及root精确absence只为本次准备观察，不当future许可。旧source839批准已归档，caller待一次独审。
+
+## 2026-10-07T17:47:40.299Z caller独审与资源元数据收口
+
+本段实际开始17:41:17Z，限5min/256KiB。父协调17:39:55确认原508f v3/6继续，本段按明确要求0协调CLI；开段 HEAD/origin b10cea5654990650f5a9246d6536cad9d952d693 clean，freshfree19,597,012,992B≥16,066,281,472B。归档root17:19:22固定caller/source+local批准，129唯一绑定、5pass/103B，0P1/P2；旧a317 input/旧审批按固定Git保留，不改raw或local。
+
+[唯一候选入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-caller-ready.md)及[增量绑定](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-floor-delta.json)：当前input SHA `842a7e1d8e152337692b884e905bc0b1b97a28090bc244b3bcf11309e0decbc2`。仅floor两个字段更正，123files/12612600B不变。2,684,354,560B只是实验增长512MiB+DB/WAL规划1GiB+全局一次reserve1GiB的intrinsic下限；实际manager须一次合并剩余增长与unknown，不能直接启动，也不重复reserve。历史纯检查的15,927,083,008B实际gate不改。
+
+复用本地find-skills/codebase-design/固定clean-code核单一状态源、历史/当前绑定与资源职责，无新接口或实现。0工程child/PG/HTTP/build/install/KEEP访问，所有源码、compiled与原始证据不变；任务startUNKNOWN、三开放TODO/main已接边界保持。提交后STOP保claim；dashboard依本唯一status，不新增GET或猜新同步。
