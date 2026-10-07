@@ -1,0 +1,16 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-stream-ownership
+
+stdout | apps/runner/src/native-stream-ownership.test.ts > guards 'normal' with 32 injected fragments
+{"kind":"ownership-count","fragments":32,"patches":5,"events":9,"ownershipChecks":11,"heartbeats":11,"clockMs":0,"realHTTP":0,"nativeProcesses":0}
+
+stdout | apps/runner/src/native-stream-ownership.test.ts > guards 'normal' with 512 injected fragments
+{"kind":"ownership-count","fragments":512,"patches":5,"events":9,"ownershipChecks":11,"heartbeats":11,"clockMs":0,"realHTTP":0,"nativeProcesses":0}
+
+ ✓ apps/runner/src/native-stream-ownership.test.ts (11 tests) 28ms
+
+ Test Files  1 passed (1)
+      Tests  11 passed (11)
+   Start at  23:46:33
+   Duration  467ms (transform 226ms, setup 0ms, import 346ms, tests 28ms, environment 0ms)
+

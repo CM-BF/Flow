@@ -17,9 +17,11 @@ function controlFixture(lease = 10000) {
   controls.push(control); return { control, heartbeat, shutdown };
 }
 
-it.each([32,512])('counts actual adapter/control heartbeat calls for %i injected fragments', async fragments => {
+it.each([{fragments:32,mode:'normal'}, {fragments:512,mode:'normal'}, {fragments:32,mode:'cancel-between-patches'}, {fragments:32,mode:'cancel-after-session'}, {fragments:32,mode:'deny-before-native'}, {fragments:32,mode:'sink-failure'}])('guards $mode with $fragments injected fragments', async ({fragments,mode}) => {
   vi.useFakeTimers({ toFake: ['setTimeout','clearTimeout','setInterval','clearInterval','performance'] });
   const { control, heartbeat } = controlFixture();
+  if(mode==='deny-before-native') heartbeat.mockResolvedValueOnce(grant(0,'cancel'));
+  let factories=0;
   const events: RunnerEventData[] = [], queue: Inbound[] = [];
   let receive: ((message: Inbound | null) => void) | undefined, closed = false;
   const close = { reason: 'CLOSED' as const, child: 'confirmed-exited' as const, exitCode: 0, signal: null, remoteEffects: 'unknown' as const };
@@ -40,12 +42,23 @@ it.each([32,512])('counts actual adapter/control heartbeat calls for %i injected
   };
   const profile={harness:'codex' as const,adapterVersion:'codex-app-server-0.154.0-v1' as const,model:'synthetic-model',reasoningEffort:null,serviceTier:null,serviceTierForTurn:'default' as const,access:'none' as const,approvalPolicy:'never' as const,sandboxMode:'read-only' as const,hostLimits:{wallTimeMs:1000,maxOutputBytes:65536}};
   let checks=0;
-  await createCodexAdapter(profile,()=>port).run({task:{title:'Counter',prompt:'Injected',harness:'codex',executionProfile:{id:'profile',runnerId:'runner',configDigest:'a'.repeat(64)},verification:{kind:'contains',expected:'x'}},workingDirectory:'/synthetic',signal:control.signal,
-    async assertOwnership(){checks++;await control.assertOwnership();},async emit(event){events.push(event);},async waitForDecision(){throw Error('Unused');}} satisfies HarnessContext);
+  const result = await createCodexAdapter(profile,()=>{factories++;return port;}).run({task:{title:'Counter',prompt:'Injected',harness:'codex',executionProfile:{id:'profile',runnerId:'runner',configDigest:'a'.repeat(64)},verification:{kind:'contains',expected:'x'}},workingDirectory:'/synthetic',signal:control.signal,
+    async assertOwnership(){checks++;await control.assertOwnership();},async emit(event){
+      if(mode==='sink-failure' && event.type==='assistant-stream') throw Error('Injected sink failure');
+      events.push(event);
+      if((mode==='cancel-after-session' && event.type==='session') || (mode==='cancel-between-patches' && event.type==='assistant-stream')) heartbeat.mockResolvedValueOnce(grant(0,'cancel'));
+    },async waitForDecision(){throw Error('Unused');}} satisfies HarnessContext).catch(error=>error);
   const patches=events.filter(event=>event.type==='assistant-stream');
+  if(mode==='deny-before-native'){expect(result).toMatchObject({reason:'cancel'});expect(factories).toBe(0);expect(events).toEqual([]);return;}
+  if(mode!=='normal'){
+    expect(result).toMatchObject({settlement:'unknown'});expect(closed).toBe(true);
+    expect(events.some(event=>event.type==='assistant-final')).toBe(false);
+    expect(patches).toHaveLength(mode==='cancel-between-patches'?1:0);return;
+  }
+  expect(result).toBeUndefined();expect(factories).toBe(1);
   expect(events[0]?.type).toBe('session');expect(patches.map(p=>p.text).join('')).toBe(text);
   expect(events.filter(e=>e.type==='assistant-final')).toHaveLength(1);expect(events.at(-1)).toMatchObject({type:'verification',result:'passed'});
-  expect(heartbeat).toHaveBeenCalledTimes(checks);expect(checks).toBeGreaterThan(patches.length+4);
+  expect(heartbeat).toHaveBeenCalledTimes(checks);expect(checks).toBe(patches.length+6);
   console.log(JSON.stringify({kind:'ownership-count',fragments,patches:patches.length,events:events.length,ownershipChecks:checks,heartbeats:heartbeat.mock.calls.length,clockMs:performance.now(),realHTTP:0,nativeProcesses:0}));
 });
 

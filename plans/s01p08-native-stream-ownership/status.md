@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T06:42:10.846281+00:00 |
+| 最近更新 | 2026-10-07T06:48:24.358937+00:00 |
 | 任务开工时间 | 2026-10-07T06:35:06.334Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 首次可核协调只读观察；此前上下文读取起点UNKNOWN |
@@ -17,18 +17,18 @@
 | 工作分支状态 | in-progress |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 已量化5个公开patch对应15次心跳，并验证取消、失联、租约保护；产品尚未改动。 |
-| 下一可用交付 | 接收基线独审；待adapter范围交回后，仅删除已发布session的批次层重复检查。 |
-| 当前阻塞 | ACTIVE: adapter精确范围仍由C02持有，等待其STOP/amend；自身测量可独立继续 |
+| 本片段交付阶段 | review |
+| 当前产出 | 同样5个公开patch的心跳调用由15减至11，取消、失联和租约反例通过；待独审，不宣称真实延迟收益。 |
+| 下一可用交付 | 接收最小adapter优化及前后调用计数、保护反例的独立审查。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | PENDING：本次基线/反例证据，非优化批准 |
-| 检查 | 最终7/7；局部strict原4诊断保留、修后0；4个child已闭合 |
+| Review | PENDING：优化delta+前后计数/安全反例一次独审 |
+| 检查 | 最终优化11/11+strict0；历史基线7/7/strict4→0原件保留，4+2 child各自闭合 |
 | main | NOT_INTEGRATED |
-| Claim | 1e4868a6-a900-463a-9de3-0a4234179733 v1 ACTIVE /3scope |
-| 架构影响 | 候选只删重复网络检查，不改变ownership Interface/周期心跳/逐批服务端fence；未实施 |
+| Claim | 1e4868a6-a900-463a-9de3-0a4234179733 v2 ACTIVE /4scope |
+| 架构影响 | 只删已发布session的重复batch检查，无公共Interface/生命周期/架构变化；保留逐patch与native/周期门禁，待main |
 
-S01P08-01 completed（真实基线）；S01P08-02 blocked（adapter交权）；S01P08-03 in-progress（独审）；S01P08-04 pending（main）。原S01状态与raw不修改。预算：20分钟连续段，≤4 child各60s，ownTMP8MiB/raw256KiB/source+metadata1MiB；0PG/provider/native/browser/install。87只读源435601B，Node24/Vitest4.0.18/TS5.9.3固定已有包。
+S01P08-01 completed（真实基线）；S01P08-02 completed（06:45:48合法扩scope后实施）；S01P08-03 in-progress（独审）；S01P08-04 pending（main）。原S01状态与raw不修改。预算：20分钟连续段，≤4 child各60s，ownTMP8MiB/raw256KiB/source+metadata1MiB；0PG/provider/native/browser/install。87只读源435601B，Node24/Vitest4.0.18/TS5.9.3固定已有包。
 
 ## 2026-10-07T06:42:10.846281+00:00 有界交付与质量
 
@@ -41,7 +41,7 @@ S01P08-01 completed（真实基线）；S01P08-02 blocked（adapter交权）；S
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
 | S01P08-01 | completed | status_read | local.json：7distinct基线/反例，产品未改 |
-| S01P08-02 | in-progress | status_read | 等C02实际PG关闭后单literal原子交回，不等其review/main |
+| S01P08-02 | completed | status_read | C02 v13 handback→本v2 amend后，只移动batch检查一行 |
 | S01P08-03 | in-progress | status_read | 原基线随最终优化一次独审，当前不单独批准 |
 | S01P08-04 | pending | status_read | NOT_INTEGRATED |
 
@@ -57,3 +57,9 @@ S01P08-01 completed（真实基线）；S01P08-02 blocked（adapter交权）；S
 四次均owned absent/merged EOF/ownTMP已清；728/1176/1141/659ms为分别监督耗时，不合成整段壁钟。原4child封存，下一已授权独立10min/2child段待C02 PG实际归还和adapter成功amend后启动；不回填旧额度。首次纯metadata parseStatus报owner/TODO字段与六位小数时间格式问题，现用既有字段/表格和三位毫秒修正；不改变真实检查或通过数。
 
 纯metadata解析修后errors=[]/human.missing=[]/timing.issues=[]；不属于工程验证，不新增测试case或native子进程。当前展示仍PENDING_REGISTRATION/PENDING_SYNC。
+
+## 2026-10-07T06:48:24.358937+00:00 新优化段实际交付
+
+06:45:48.214Z开始合法实现；C02已PG/运行归还。新段2child分别为optimized 11/11与focused types0（时间/原raw见local.json），PID与EOF/TMP均已闭合，并直接归还C02。7个原测试语义保留并新增4个adapter级反例；不是18个独立case。只在已发布session时少做batch检查，每patch仍有fresh assert；原source控制/服务端fence未改。4减少调用只是本注入场景事实，不证明真实HTTP/SQL/延迟/吞吐。
+
+独立review把192d基线作为fixedGit历史、新优化为当前target，旧失败/原始raw保持；无重复baseline批准。当前claim1e4868a6 v2保留，main NOT_INTEGRATED。clean-code/codebase-design复核了单一ownership权威、动作前门禁、异步session后取消与unknown、无抽象/依赖扩张。

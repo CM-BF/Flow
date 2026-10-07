@@ -24,8 +24,8 @@ export function createCodexAdapter(configuration: CodexExecutionProfileConfigura
     const stream = new CodexAssistantStream(); let publishedSession: string | undefined;
     const publishPatches = async (patches: AssistantStreamData[], signal: AbortSignal) => {
       if (!patches.length) return;
-      await context.assertOwnership(); signal.throwIfAborted();
       if (publishedSession === undefined) {
+        await context.assertOwnership(); signal.throwIfAborted();
         await context.emit({ type: 'session', nativeSessionId: patches[0]!.nativeSessionId, adapterVersion: profile.adapterVersion });
         publishedSession = patches[0]!.nativeSessionId;
       }
