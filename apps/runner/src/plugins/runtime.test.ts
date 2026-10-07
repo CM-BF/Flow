@@ -106,7 +106,7 @@ test('persisted v3 with no current port fails before claim or execution and pres
 
 test('ordinary v3 assignment still follows the original adapter path', async () => {
   const f = await fixture(); f.ordinary();
-  f.options.adapters = [{ name: 'fixture', async run(context) { await context.emit({ type: 'message', text: 'ordinary' }); } }];
+  f.options.adapters = [{ name: 'fixture', version: '1', async run(context) { await context.emit({ type: 'message', text: 'ordinary' }); } }];
   await runRunner(f.options); expect(state.invokes).toBe(0);
   expect(f.reports.flatMap(batch => batch.events.map(event => event.type))).toEqual(['message', 'completed']);
 });
