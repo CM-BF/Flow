@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 更新时间 | 2026-10-07T05:14:02.132Z |
+| 更新时间 | 2026-10-07T05:29:25.847866+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原首合同/领取及技能段时间有记录，但本次不把它们猜作最初开工；当前局部实际05:12:31.371451Z至05:12:35.136974Z，见local-resumed原reservation/result。 |
@@ -12,21 +12,21 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 本片段交付阶段 | review |
-| 当前产出 | 完整工具材料保存、分块重报与分页读口已完成原定无数据库检查和类型复验；剩余数据库验收与生产接线尚未完成 |
-| 下一可用交付 | 接收本次局部结果独审，并准备三个数据库场景的固定窗口与主线接线 |
-| 当前阻塞 | ACTIVE: 三个数据库验收等待共享窗口与固定入口；本次局部结果待独审，生产开通仍未完成 |
+| 当前产出 | 完整工具材料的原定局部检查与类型复验已获独立批准，数据库场景的固定源码、SQL和已列依赖仍齐备；生产开通尚未完成 |
+| 下一可用交付 | 固定三个数据库场景的受控运行入口，完成领域真实读写验收后进入主线接线 |
+| 当前阻塞 | ACTIVE: 三个数据库场景尚待固定监督入口和共享窗口；生产接线及整体容量后继未完成 |
 | 需用户决定 | NONE |
 | 工作树 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body |
 | Branch | codex/native-activity-body |
 | Base | fc3246b307f5436ccecb97f38ccaba10c7a72a5a |
-| HEAD | ce92122607e661051cb6f3b54a9a7c6b758cce5d；后继验证准备中，产品40af未变 |
+| HEAD | f507fe6bc76b7351a72acd45dff8ed23a039b452；产品40af未变，本轮仅独审归档和静态准备 |
 | dirty | 产品40af持续冻结；本轮仅恢复验证与metadata |
 | 工作分支状态 | in-progress |
 | 实现目标 | 40af6d9071c621707971fd983a85dd9145f065fd |
 | 实现范围 | apps/runner/src/claude.ts, apps/runner/src/native-activity-body, apps/runner/src/native-activity/index.ts, apps/runner/src/native-activity/mapper.test.ts, apps/runner/src/outbox.ts, apps/server/src/events.ts, apps/server/src/native-activity-body, packages/contracts/src/native-activity-body.ts, packages/contracts/src/runner.ts, packages/storage/migrations/033-native-activity-bodies.sql |
 | claim | b447f2ce-a4b3-49b0-bcbe-034ff60b73be v1，12literal，2026-10-06T22:17:47.363Z |
 | 检查状态 | PASSED 40af6d9071c621707971fd983a85dd9145f065fd；本次10/10+focused types0，28不同分轮（原22+6新、4受影响旧）；PG/provider/生产挂载NOT_RUN |
-| 独立review | SOURCE_APPROVED_PENDING_VALIDATION，native_center_owner，target40af6d9071c621707971fd983a85dd9145f065fd，无P1/P2；不是最终领域批准 |
+| 独立review | SOURCE_APPROVED_PENDING_VALIDATION 40af6d9071c621707971fd983a85dd9145f065fd；新增localevidence获APPROVED_INCREMENTAL_LOCAL_EVIDENCE f507fe6bc76b7351a72acd45dff8ed23a039b452；不是最终PG领域批准 |
 | main集成 | 未集成 |
 | Dashboard | registry180已实际live；TODO表头已纠正待下次聚合 |
 | 架构影响 | 新增工具正文spool与immutable chunk读口；复用原事件事务，架构基线由Lead集成时更新 |
@@ -57,3 +57,9 @@
 ## 2026-10-07T05:14:02.132Z：原定局部验证完成
 
 [原始单份运行记录](../../docs/evidence/chat05p01/local-resumed-20261007/result.json)与[口径摘要](../../docs/evidence/chat05p01/local-resumed-20261007/summary.json)：实际10选中/10过/11未选，focused types exit0；1395+2367=3762ms，两组absent/双EOF、raw984B。最大观测tmp1,179,150B；仅403B生成Vitest cache保留，全部测试夹具目录消失，types目录初始dev/ino一致后正常rmdir。旧22未整批重跑，本次4个outbox旧直接消费者按计划复验；总28不同跨轮次，不是同轮28。产品40af逐字未变，全部旧红与NOT_RUN原件保留。当前不持有本队local或共享PG窗口。
+
+## 2026-10-07T05:29:25.847866+00:00：局部独审接收与PG静态入口复核
+
+原样归档[唯一增量独审](../../docs/evidence/chat05p01/local-evidence-review.json)，Lead05:16:51.059050Z批准30绑定与原10/10+focused0、3762ms事实；保28不同分轮、原unknown/失败，不重跑。fresh账本05:28:01.748Z确认v1仍本owner。
+
+[PG静态复核](../../docs/evidence/chat05p01/pg-static-resume.json)：原209本地源、31URL/SQL资源（含033）与20个已列dependency manifest/alias均匹配，3个case定义准确；0import/测试/PG/provider。原pure配置明确不选PG文件，下一需固定单入口/外层监督再排共享窗口，90s/96MiB+1GiB原界不变。最初只读路径拼写错误保留在报告，不影响产品。主线15只读输入漂移仍按main-preimage独立处理，不覆盖。
