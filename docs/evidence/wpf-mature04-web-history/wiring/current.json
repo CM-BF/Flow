@@ -1,6 +1,6 @@
 {
-  "observedAt": "2026-10-07T23:03:54.928249+00:00",
-  "stage": "SOURCE_LOCAL_COMPLETE_AWAITING_RESULT_REVIEW",
+  "observedAt": "2026-10-07T23:06:05.130247+00:00",
+  "stage": "APPROVED_SCOPED_SOURCE_AND_LOCAL_ALL_SIX_STOP",
   "sourceHead": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
   "start": "2026-10-07T22:49:21Z",
   "deadline": "2026-10-07T23:14:21Z",
@@ -151,5 +151,14 @@
   "phaseState": "CLOSED",
   "returnReceipt": "return.json",
   "furtherLaunches": false,
-  "unusedMsNotCredit": 50447
+  "unusedMsNotCredit": 50447,
+  "independentReview": {
+    "path": "root-source-local-review.json",
+    "bytes": 3583,
+    "sha256": "d880fa46088790bf4419933d5a8cc337efc8eec78f05d4ef4791b2e365ea525a",
+    "target": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+    "blockingFindings": 0,
+    "scope": "Seven source pins and four bounded local results only; no browser/Arc/current-capacity approval"
+  },
+  "sourceStopped": true
 }

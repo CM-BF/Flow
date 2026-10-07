@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-07 23:05:39 UTC",
+  "reviewer": "/root — GPT-6 Astra Ultra",
+  "verdict": "APPROVED_LIMITED_CONTEXT_HISTORY_WIRING_SOURCE_AND_LOCAL_RESULTS",
+  "blockingFindings": 0,
+  "source": "ed5b5185b7c08c500f77611cc87be169f8bc06d2",
+  "seal": "6e0db39031ed096e4922be7dcad2a3a4f9c2eaab",
+  "branch": "codex/web-context-history",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+  "input": {
+    "path": "docs/evidence/wpf-mature04-web-history/wiring/source-local-review-input.json",
+    "bytes": 4612,
+    "sha256": "df4d86c3112a9d42bf60f530954d354e77a95826fe4eb42021a15868c0d53a2f"
+  },
+  "staticReview": {
+    "path": "/private/tmp/root-context-history-wiring-static-review-20261007.json",
+    "bytes": 3614,
+    "sha256": "40b4993ebca2aff895d11d8303ee5d929a3c42530fb131b17c1c66043e4433c6",
+    "peer": "workspace_panels_owner independently reviewed same fixed source, no confirmed P1/P2; 0write/0runtime"
+  },
+  "verified": [
+    "All 7 product pin byte counts and SHA256s matched fixed source Git blobs.",
+    "All 52 archived raw files and their 52 original counterparts matched bytes/hashes:675789B per set.",
+    "Read final strict config: includes changed App/session/Thread/plugin/binding/test and real Vite declarations, strict enabled. Changes from prior config map missing packages to existing actual .d.ts paths; no replacement stub, loosening strict, or new install.",
+    "Read all 12 test output names:12pass,0fail,0skip,0cancel. They exercise the real private port and binding with synthetic readers; they do not mount App or reach HTTP.",
+    "All four terminal result/budget hashes verified. Final two exits0, dual stdout/stderr EOF,drop0; initial two exit2 failures preserved.",
+    "Read exact return receipt:2026-10-07T23:02:57.081186+00:00;all4ownedPID/PGID ESRCH and all4scratchabsent,0active/furtherlaunchfalse."
+  ],
+  "local": {
+    "firstTwo": "FAILED private vite/client config then missing readonly package aliases;1004+3774ms recorded charge retained.",
+    "prestartHold": "Third preparation refused capacity before child; preserved,0charge.",
+    "finalTypes": "PASS on ed5;4582ms conservative charge.",
+    "newBindings": "12/12 PASS on ed5;193ms conservative charge.",
+    "aggregate": "9553/60000ms CLOSED across4engineeringchildren;unused not transferred, no fifth child.",
+    "resource": "Final strict preflight23:02:26.823059 free17982656512 and binding preflight23:02:41.516664 free17979719680 each checked canonical23:01:55.363 sum=minimum=top16341663744. Sampled capacity checks do not claim continuous hard peak.",
+    "rootExecutions": 0
+  },
+  "cleanCode": "Source review confirmed one private authority path, session-owned binding, cleanup symmetry, unchanged draft/runtime ownership, explicit no-execution error; owner added missing task/auth/visibility subscriptions and wrapping. No further blocking source finding identified.",
+  "limits": [
+    "Browser/mounted plugin entry, real decoder and networking behavior, focus/touch/keyboard, dual-theme390px screenshots and performance NOT_RUN.",
+    "Arc controlled combination NOT_RUN: independent b129-based patch must preserve handed-off Arc App/session edits during later integration.",
+    "Current/remaining context capacity, fullCT01–09 and complete original product request remain OPEN.",
+    "Prior module16PASS belongs to earlier module evidence; it was not rerun or counted as new wiring coverage.",
+    "Approval is source/local fidelity only, not main integration, current personal deployment, or a runtime grant."
+  ]
+}
