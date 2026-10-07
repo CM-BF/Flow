@@ -110,7 +110,10 @@ def main():
     expected = os.environ.get('FLOW_C02_EXECUTION_HEAD', '')
     head = subprocess.check_output(['git', 'rev-parse', 'HEAD'], cwd=WT, text=True, timeout=3).strip()
     if head != expected or subprocess.check_output(['git', 'status', '--porcelain'], cwd=WT, timeout=3): raise SystemExit('SOURCE_NOT_FIXED')
-    manifest = json.loads((EVIDENCE / 'pg-source-manifest.json').read_text())
+    manifest_name = os.environ.get('FLOW_C02_PG_MANIFEST', 'pg-source-manifest.json')
+    if manifest_name not in {'pg-source-manifest.json', 'pg-cwd-source-manifest.json'}: raise SystemExit('MANIFEST_NOT_REVIEWED')
+    manifest_bytes = (EVIDENCE / manifest_name).read_bytes()
+    manifest = json.loads(manifest_bytes)
     for row in manifest['items']:
         value = (WT / row['path']).read_bytes()
         if len(value) != row['bytes'] or hashlib.sha256(value).hexdigest() != row['sha256']: raise SystemExit('INPUT_CHANGED')
@@ -142,7 +145,8 @@ def main():
         raise SystemExit('OUTPUT_EXISTS_NO_RETRY')
     fs = os.statvfs(WT); free = fs.f_bavail * fs.f_frsize
     if free < 1207959552: raise SystemExit('RESOURCE_NOT_RUN')
-    record = {'window': window, 'sourceHead': head, 'startedAt': at.isoformat(), 'freeBefore': free, 'errors': [], 'actualCodex': 0, 'provider': 0}
+    record = {'window': window, 'sourceHead': head, 'inputManifest': {'name': manifest_name, 'sha256': hashlib.sha256(manifest_bytes).hexdigest()},
+              'startedAt': at.isoformat(), 'freeBefore': free, 'errors': [], 'actualCodex': 0, 'provider': 0}
     errors = record['errors']; root = None; child = None; streams = {}; eof = set(); selector = selectors.DefaultSelector(); observed = 0
     def phase(name, reserve):
         if time.monotonic() + reserve >= start + 120:
