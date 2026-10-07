@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-07T14:37:03.620Z",
+  "task": "WPF-DASHBOARD-ACCESS01",
+  "action": "same-instant ISO UTC metadata normalization",
+  "beforeHead": "f1b62d7094de7cdd1d21ed9f95156c3703309727",
+  "statusBeforeSha256": "95777a686f1f0ae846d6d49321e092e2e52ff5a64eab3509eff1e4491369836b",
+  "oldCompleted": "2026-10-07 11:19:00 UTC",
+  "normalizedCompleted": "2026-10-07T11:19:00.000Z",
+  "source": "The previous unique owner status at fixed f1b62d7094de7cdd1d21ed9f95156c3703309727 already records completion at11:19:00UTC after fixed main receipt/README byte checks. This edit changes representation only, not event time.",
+  "start": "2026-10-07T02:53:01Z",
+  "startProvenance": "Preserved existing owner clock.curr_time provenance; initial dispatch abbreviated UNKNOWN, corrected by manager14:36 after reading actual status. No inferred start time.",
+  "scope": [
+    "plans/wpf-dashboard-local-access",
+    "docs/evidence/wpf-dashboard-local-access"
+  ],
+  "notChanged": [
+    "product",
+    "README",
+    "implementationTarget537/exact12",
+    "historical raw",
+    "actual task start/complete instants"
+  ],
+  "checks": "Only own parseStatus and metadata links/diff; no product tests/PG/Chrome/HTTP/service/credential reading",
+  "skills": {
+    "findSkills": "Reused installed local /Users/citrine/.agents/skills/find-skills/SKILL.md method: exact metadata task, no install/search needed.",
+    "cleanCode": "Reused /Users/citrine/.agents/skills/clean-code/SKILL.md: single timestamp authority, explicit historical provenance, no second generated progress source or code change."
+  }
+}

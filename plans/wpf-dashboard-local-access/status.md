@@ -2,10 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 11:19:00 UTC |
+| 最近更新 | 2026-10-07T14:37:03.620Z |
 | 任务开工时间 | 2026-10-07T02:53:01Z |
-| 任务完成时间 | 2026-10-07 11:19:00 UTC |
-| 任务时间来源 | 开工：owner实际开始时clock.curr_time返回UTC，不由take推算。完成：owner于本字段所记UTC核对Original固定main收据及README三方字节，确认原01–04交付证据齐；此为本片收口时点，不冒实际部署时点。 |
+| 任务完成时间 | 2026-10-07T11:19:00.000Z |
+| 任务时间来源 | 开工：保留原owner clock.curr_time实际UTC记录，不由take推算。完成：原f1b62d唯一status已记2026-10-07 11:19:00 UTC，核Original固定main收据及README字节后收口；本次仅等时规范为ISO UTC，不冒部署时点。 |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -19,7 +19,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access |
 | Branch | codex/dashboard-local-access |
 | 工作基线 / HEAD | base943a66bfa5f71f4a5000ff2674ac1973e85e0353；获审537/exact12、产品08ec/测试3c0/执行d0f6原身份保留；本批仅README main接收来源与own metadata |
-| 工作树dirty状态 | 本批仅原三metadata scope；README与七已交回产品/test不变，最终clean以Git回执为准 |
+| 工作树dirty状态 | 仅本次两metadata目录内时间格式/来源/检查记录；产品README与原实际证据不变，normal push clean后STOP |
 | 工作分支状态 | completed / approved / integrated |
 | 实现目标 | 53723697a796a1346164c4cddc82ab99baf168ea |
 | 实现范围 | apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/index.html, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/README.md, docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff, docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr, docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout, docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff |
@@ -27,7 +27,7 @@
 | Review | APPROVED 53723697a796a1346164c4cddc82ab99baf168ea / exact12；原direct35/fakebrowser5及README修正组合批准，原366和README537均已main；实际启用有原来源回执，用户登录/发消息未验 |
 | 已集成main状态 / HEAD | 原产品451bf2ed1c0c3d7688073c8d060629f064044dc2；README537于fixed main f2ccb6738e37da87ae0f642652f8cf9bb596f4c2 接收，三方字节同/无重测，见readme-main-receipt.json |
 | Dashboard 同步 | 首a6fb已由manager核并转READY_FOR_LEAD_INTAKE；实际登记/聚合待回执 |
-| Claim | 57735ff7-d631-4538-9faf-d7ac090837a2 v2；11:16:43.138140Z fresh仅README+ownplan/evidence三literal/唯一owner/overlap[]；本批seal后全三scope停写待manager fresh CAS release，七产品scope保持无写权 |
+| Claim | 本次records-only e54c2cd0-b446-4a5a-b3bd-0b0ef3ef6049 v1 ACTIVE，14:36:30.032Z COMMITTED；exact2仅ownplan/evidence，seal后STOP并fresh CAS release。原57735 v3已RELEASED，不恢复产品/README写权。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -131,3 +131,7 @@ GO实际页面发现“当前阻塞”使用了 `NONE；说明`，现human parse
 ## 2026-10-07 11:19:00 UTC — 原README增量接收，ACCESS四TODO完成
 
 [本次来源核验](../../docs/evidence/wpf-dashboard-local-access/readme-main-receipt.json)只投影Original固定收据的ACCESS一项与README绑定，并记录完整原件hash/Git blob；未把投影当原件全文。mainf2ccb/获审537/currentowner README15592B完全相同。先前“README待main”是当时状态，现04完成；本片任务收口，不扩大成用户登录/发消息或整平台完成。0新runtime/工程检查/凭据或服务读取，产品与旧raw保持。全三scope停写，释放由manager fresh CAS办理。
+
+## 完成时间格式规范
+
+[本次记录](../../docs/evidence/wpf-dashboard-local-access/completion-time-iso-20261007/normalization.json)仅将既有11:19:00 UTC写成ISO UTC。开工仍为原有来源的02:53:01Z，不因派工简称改UNKNOWN。旧claim已释放，本次新领两metadata；无产品或服务动作，原537/exact12和所有实际检查结论不变。
