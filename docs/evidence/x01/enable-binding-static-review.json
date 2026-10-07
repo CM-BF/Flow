@@ -1,0 +1,49 @@
+{
+  "schemaVersion": 1,
+  "taskId": "X01",
+  "kind": "SOURCE_REVIEW_ONLY",
+  "sourceCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+  "initialCommit": "9abf099326a78d4777fed1bdf9d986b3597ad5a3",
+  "sourceVerdict": "APPROVED",
+  "validation": "NOT_RUN",
+  "productionIntegration": "NOT_INTEGRATED",
+  "scope": "15 authorized domain/contract/DDL/runner adapter/direct consumer source and test files; final runnable product review remains pending",
+  "findings": [
+    {
+      "priority": "P2",
+      "name": "PostgreSQL persistable text",
+      "fixedCommit": "37cf1c28d8dd1e45fe1bb3cadda1c6658aac5f56",
+      "reviewer": "Mika / gpt-6-astra",
+      "verdict": "TEXT_SOURCE_REVIEW_APPROVED",
+      "state": "SOURCE_CLOSED",
+      "basis": "NUL and unpaired surrogate rejected for new reason/title/input/contains.expected and real package output; BOM/emoji preserved, empty output remains failed flow.text verification"
+    },
+    {
+      "priority": "P2",
+      "name": "Lease expiry during lock wait",
+      "fixedCommit": "37cf1c28d8dd1e45fe1bb3cadda1c6658aac5f56",
+      "reviewer": "independent lease reviewer, accepted by Mika",
+      "reviewedAt": "2026-10-06T23:32:57Z",
+      "verdict": "LEASE_SOURCE_REVIEW_APPROVED",
+      "state": "SOURCE_CLOSED",
+      "basis": "Final database clock lease check follows registration/command locks and replay; three real lock-barrier test cases prepared but not run"
+    },
+    {
+      "priority": "P2",
+      "name": "Operator trusted host publication",
+      "fixedCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+      "reviewer": "db_transaction_owner / gpt-6-astra",
+      "reviewedAt": "2026-10-06T23:38:28Z",
+      "verdict": "SOURCE_REVIEW_APPROVED",
+      "state": "SOURCE_CLOSED",
+      "basis": "Authenticated tuple copied/frozen before await; synchronous exact true after runner lock and before INSERT; default/rejection/exception leave no row; HTTP/DB counterexample assertions prepared but not run"
+    }
+  ],
+  "remainingP1P2SourceFindings": 0,
+  "limits": [
+    "No tests, typecheck, import, PG, browser, build, install or provider execution",
+    "Does not approve default factory mount or current process claim capability",
+    "Does not implement runtime retained recovery, event provenance persistence or actual production runner journey",
+    "Does not complete X01 or prove semver bundle execution"
+  ]
+}

@@ -2,29 +2,32 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 14:48:21 UTC |
+| 最近更新时间 | 2026-10-07T05:33:27.229572+00:00 |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [host gates v5](../../docs/evidence/x01/host-gates-amend-receipt.json)，ACTIVE；仅host两源+两metadata，8center已交回 |
+| Claim | [enable/binding v8](../../docs/evidence/x01/enable-binding-amend-v8.json)，ACTIVE；14源码+034+两metadata，旧host两源已交回 |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
-| Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-management-plan |
-| Branch | codex/plugin-management-plan |
-| 工作基线 / HEAD | base8e520b7274a6d4112e91318c6eb5ba1758bf7c1c；host固定e6827d8a30fd103e34966a5d7298570545865057；center已main56d90 |
-| 工作树 dirty 状态 | host两源/raw固定e6827d8a30fd103e34966a5d7298570545865057；metadata独立，聚合读取实际clean |
+| Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
+| Branch | codex/plugin-enable-binding |
+| 工作基线 / HEAD | base60ca；source37177aba665fa8d787e40c2a18c4d124bdf819ca；已审结果packet e628dbdfe0e53b27f8d15b2ecfba438f4217e872；本提交仅独审归档，未main |
+| 工作树 dirty 状态 | 本段仅独审/READY/status metadata；commit/push后clean停写，v8占用保留 |
 | 工作分支状态 | in-progress |
-| 检查状态 | host 21/21（14旧+7新）/strict局部0；真实TLA撤权1red保留，23own roots已清理；0PG/provider |
-| Review | APPROVED e6827d8a30fd103e34966a5d7298570545865057；Mika/gpt-6-astra 2026-10-06 14:47:23 UTC，0P1/P2 |
-| 已集成 main 状态 / HEAD | center a578八源已main56d90e8c36d48e6c23a796283f3b89d0d08e7294，默认factory/client/CLI未声称挂载；leaf bf3378+依赖f635已main2f16 |
-| 实现目标 | e6827d8a30fd103e34966a5d7298570545865057 |
-| 实现范围 | apps/runner/src/plugins/host.ts, apps/runner/src/plugins/host.test.ts |
+| 检查状态 | StageC R3原27/27实际通过，2DB/205HTTP/资源完整closed；原R1/R2失败均保留 |
+| Review | APPROVED：chatui01_owner 2026-10-07T05:17:35Z，target e628dbdfe0e53b27f8d15b2ecfba438f4217e872；0P1/P2，限定R3结果和16文件intake |
+| 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
+| 实现目标 | 37177aba665fa8d787e40c2a18c4d124bdf819ca |
+| 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-pg-fixture.ts, docs/evidence/x01/enable-binding-pg-vitest.config.mjs, docs/evidence/x01/enable-binding-pg-once.py, docs/evidence/x01/enable-binding-pg-caller.test.py, docs/evidence/x01/enable-binding-pg-input.json |
 | 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 包加载与执行前分别核验当前权限的改动已独审通过，准备进入主线 |
-| 下一可用交付 | 将双阶段权限核验接入主线；中心实时授权和任务绑定仍是独立后继 |
-| 当前阻塞 | NONE |
+| 当前产出 | 插件启用、冻结绑定与逐阶段授权的领域模块已通过验收和独立审查，可受控接入主线 |
+| 下一可用交付 | 主线接收固定领域模块；生产runner接线和真实现成npm能力随后继续 |
+| 当前阻塞 | ACTIVE: 等待主线受控接收；生产调用链与semver能力仍未接入，当前无运行资源占用 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -32,23 +35,23 @@
 | X01-01 | completed | runner_owner | [完整计划](plan.md)、[事实/质量记录](../../docs/evidence/x01/README.md) |
 | X01-02 | in-progress | Execution Lead（公共入口） | X02 registry/public client/CLI合同已冻结入main；完整安装生命周期合同仍未完 |
 | X01-03 | in-progress | architecture_read | X02 PG registry/commands/CAS/审计已实现并入main；不勾完整安装生命周期验收 |
-| X01-04 | in-progress | architecture_read | 静态材料/真实loader首leaf已独审；中心资格/绑定、版本pin与回收仍待接入 |
+| X01-04 | in-progress | architecture_read | 静态材料/真实loader首leaf已独审；中心资格/绑定、版本pin与回收仍待接入；新增现成npm能力固定来源/许可/版本及bundle或受控依赖验收，已选semver7.8.5/ISC compare，尚未构建/执行 |
 | X01-05 | pending | Lead派发隔离writer | 依赖02/04；未声明第三方隔离存在 |
 | X01-06 | in-progress | Lead + Web管理owner | X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；完整Web/TUI/CLI生命周期未完 |
-| X01-07 | in-progress | architecture_read | 自有真实text-tool已通过局部实际import/invoke；真实runner任务产物/public管理链未接入 |
+| X01-07 | in-progress | architecture_read | 自有真实text-tool已通过局部实际import/invoke；真实runner任务产物/public管理链未接入；须另验至少一个现成npm能力及升级身份 |
 | X01-08 | pending | Lead派发contextwriter | 依赖02/04/G01/usage；通用接口可先推进 |
 | X01-09 | pending | Goal Owner / Lead | 候选固定输入已定位、用户未亲自确认；CTX01 core可推进，不以身份阻塞toy，完整兼容验收未完 |
 | X01-10 | pending | Lead协调review/集成writer | 通用管理依赖03～08；09候选独立后续验收，独立产品review/整体验收未开始 |
 
 ## 当前事实与边界
 
-静态材料与trusted self-owned真实loader已main2f16e30a，修后65局部检查/独审成立。中心材料片a578已独审并正式main56d90接收，14不同检查含11真实PG/HTTP；SDK/provider为0。Web只读入口已完成，trusted host不等第三方隔离或完整public管理链。
+静态材料与trusted self-owned真实loader已main2f16e30a，修后65局部检查/独审成立。中心材料片a578已独审并正式main56d90接收，14不同检查含11真实PG/HTTP；SDK/provider为0。host双gate已main fe1b，main7810已包含可选安装policy的factory/client/CLI入口：未配置policy时不挂载，安装完成不等于enabled/loaded/callable。Web只读入口已完成，trusted host不等第三方隔离或完整public管理链。
 
 当前无用户行动或身份阻塞。候选来源/版本已由Goal Owner提供，见[候选输入](candidate-inputs.md)；用户所指身份尚未亲自确认，但不阻止已授权CTX01固定core实验。不从名字猜项目，也不重复询问已授权生命周期方向。后续产品实现必须另明确 worktree/owner/scope，本计划不授予跨模块写权。
 
 ## Handoff 与看板
 
-计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；当前6ddedc73 v5持host两源与两metadata，旧center八源和其余leaf已交回。真实事实/检查/文档target随本scope metadata单独更新。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。当前同claim v8已accept到plugin-enable-binding，17scope为14源码+034+两metadata；host两源已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
 
 2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
 
@@ -105,3 +108,132 @@
 2026-10-06 14:46:08 UTC：host实现e6827d8a30fd103e34966a5d7298570545865057已冻结，[37项交审packet](../../docs/evidence/x01/host-gates-review-ready.md)准备独立review。当前21/strict通过不等于main能力；无新增检查，保留v5修复期。
 
 2026-10-06 14:48:21 UTC：接收Mika14:47:23对e6827d8a30fd103e34966a5d7298570545865057独立APPROVED；[稳定集成输入](../../docs/evidence/x01/host-gates-integration-ready.md)列两host源码、固定manifest/21与strict证据，0P1/P2。原源码/raw/support/manifest逐字保持、未重测；v5保留至正式main接收。完整X01原TODO未减少，中心live grant/runtime retained仍后继。
+
+2026-10-06 15:53:31 UTC：fresh owner HEAD96712f914ddb2cf4fae3b932ac48b41250a87bbd clean、6ddedc73 v5 ACTIVE四scope。补录15:11:44已完成的主线核验，并再次只读核host两源e682=fe1b=7810=owner；[接收记录](../../docs/evidence/x01/host-gates-main-acceptance.md)引用main生产安装13源收据。本片段delivered，原10TODO与未完成publicvertical保持；host两源明确停止写入，v5尚未amend交回。本次零工程测试/PG/provider。仅只读本树两个Vitest缓存，最多4096 allocated B，未删除、实际回收0 B；不扩大资源扫描。
+
+2026-10-06 16:09:00 UTC：fresh owner HEAD4de33e6688f0b002805388b35deb10723397cff7 clean、账本16:08:31确认6ddedc73 v5 ACTIVE原四scope。仅在[后继准备](../../docs/evidence/x01/enable-binding-preparation.md)及原计划归档GO新增X01-04/07验收：至少一个来源/许可/版本固定的现成npm能力，通过明确bundle或受控依赖接Flow Adapter，证明真实runner产物与升级身份。只读main e807730328a8f220721efcc3e346c03945991965 clean确认host仍无production caller；静态安装/host双gate已交付事实与原10TODO状态不变。当前未选包/安装/工程测试/PG/provider，host两源继续停写，未操作sparse或缓存；质量方法沿本地find-skills/codebase-design/clean-code固定基线，未改旧raw/manifest。只读parseStatus errors=[]、delivered/10TODO，三份文档链接无缺失、diff空白检查通过；不声称看板在线页面已刷新。
+
+2026-10-06 16:30:00 UTC：fresh owner HEAD7f6d82228632ddc46723a3a8a3e3305733940ab7 clean、16:28:29 ledger 6ddedc73 v5 ACTIVE 原四scope；仅收敛[后继一页合同](../../docs/evidence/x01/enable-binding-preparation.md)。固定只读 main65659028ec3aed7c4b5a68eb20a39a32026e5dc5 的 runtime/claim/TaskSubmission/host/插件命令/事件与验证真实接口，推荐 host tuple、单revision enable、中心生成binding、load/invoke当前grant与有来源artifact字段。未知复用原settlement/admission保留，不增加执行FSM；独立领域HTTP/持久冻结片与共享caller逐literal分开。F01现v41、CORE现v3，空闲共享路径也未授写权；新SQL号/共享writer/受控输入由Lead冻结。已交付e682片仍delivered，后继仅design，原10TODO不变；host两源停写，旧raw/manifest不改。方法沿本地find-skills/codebase-design/固定clean-code/brainstorming，检查有限接口、错误保留及锁序；0工程测试、PG、SDK/provider、安装和sparse操作。后继有Module/runtime接线架构影响，实施后由Lead维护固定main视图，本次未改架构图。 只读parseStatus errors=[]、delivered/10TODO，两个文档本地链接无缺失、diff空白检查通过；不声称在线看板已刷新。
+
+2026-10-06 16:31:30 UTC：补固定main656的直接reconciliation consumer：通用retry只复制submission/K02/goal，后继必须显式拒绝plugin binding走普通fixture重试，避免丢来源后伪成功；精确共享guard路径已列入准备页，当前CORE持有，未写入。其余字段/已交付事实不变，0工程运行。
+
+2026-10-06 22:48:06 UTC：GO恢复既有X01/REQ11–13后继；fresh旧树3c5622ad clean、6ddedc73 v5 ACTIVE原四scope，host两源维持停写。冻结main60ca1942411634843fda14e158f138191b832d8b作为本次source-only请求输入，新plugin-enable-binding树/branch尚不存在。只准备≤5MiB Flow源码、直接consumer与自有文档；0依赖复制、安装、导入、工程测试、PG或provider。新SQL号待Lead，033属CHAT05P01；现runtime/client/factory/exports占用不抢。迁移前本status仍唯一权威，完整10TODO不减少。技能沿本地find-skills→codebase-design/clean-code固定sickn33基线/brainstorming，已授权设计不增加用户审批。
+
+2026-10-06 22:53:00 UTC：已收敛[一次源码供给/唯一权威移交请求](../../docs/evidence/x01/enable-binding-provision.md)，候选14源码literal及待Lead分配的唯一SQL。补齐008审计kind、旧五操作直接读回与Web两个label consumer；first slice无生产mount，明确claim能力协商/旧strict decoder/fixture fallback门槛。Root选semver7.8.5/ISC compare方向，初始请求不含上游包源或依赖复制；实际bundle及真实runner仍未验。当前仍原树metadata唯一authority，0新产品修改/工程运行。
+
+2026-10-06 22:59:39 UTC：fresh HEAD68db2d60 clean、6ddedc73 v5 ACTIVE原四scope。Lead指出固定main60ca两个迁移入口以file数组读取012/013/017/019，前包未纳这四官方SQL；撤回68db的source-complete结论，仅在本metadata追加精确四Git输入并重算总量。14候选/base/0依赖复制不变，未产品写/执行工程检查。另记录browser固定旧X03输出须在新树合法领取后改自有排他namespace；本轮不改该源码、不运行浏览器。
+
+2026-10-06 23:12:23 UTC：新唯一owner接收。旧树最终status提交c3a4c1a2a75284c379cdfaaa92797216cfcbfae3已push/clean并停止全部范围；handoff v6在23:09:51.395Z、accept v7在23:09:58.229Z、amend v8在23:10:09.716Z均COMMITTED，23:12:23 fresh账本确认新树v8 ACTIVE。两host源移出，保14候选+正式034+两metadata。sole source operator已停写；[完整供给](../../docs/evidence/x01/enable-binding-source-provision.json)545文件2,999,381B/30官方SQL与067请求逐hash一致，0依赖复制/安装/导入；新树base60ca，仅5 modified+3 untracked旧metadata overlay。所有收据精确归档于自有evidence，067/c778固定请求/历史raw不改。本树接续唯一status；旧树不回写。semver7.8.5/ISC compare已选，未build/真实执行；完整X01未Done。即开始合法源码实施，不因检查资源门槛停在重复设计。工程检查仍NOT_RUN，浏览器运行前须将旧X03输出改X01排他namespace；生产route必须等shared资格/恢复guard，不借模块路由提前mount。[方法与质量](../../docs/evidence/x01/enable-binding-quality.md)。Lead需将dashboard唯一来源迁到本树，当前未宣称在线已刷新。
+
+2026-10-06 23:22:45 UTC：fresh账本23:18:42.545确认v8 ACTIVE。首源码checkpoint形成单revision追加、正式034复合身份/不可变绑定与phase唯一收据、独立runtime命令/未挂载公开路由和原host/flow.text窄适配。旧四change schema不扩，仅operation读回增加两kind并补Web两个label。已落实grant/fence先于幂等缓存，disable不撤旧pin；新claim v3协商/旧reader过滤/retained/reconciliation仍共享后继，生产不mount。Root静态指出ES2023无String.isWellFormed声明，已改局部surrogate检查并保留emoji/lone surrogate/BOM用例；没有修改tsconfig。DB reviewer对034初稿未见NULL/复合FK阻断，非正式实现批准。只做文件/Git空白检查，0工程checks；server/runner行为tests与browser输出修正仍本片待办，不以首checkpoint当交付。方法/架构影响见quality。
+
+2026-10-06 23:27:49 UTC：首checkpoint9abf0993已push。Mika静态发现NUL/孤surrogate无法持久化的P2；当前新增共享ES2023 predicate并应用title/input/contains.expected与包输出，非法输出在artifact创建前OUTPUT_REJECTED，空输出仍交flow.text失败。补齐6组合同、6组实际PGHTTP模块与11个参数化真实package行为case源码，均NOT_RUN，未把计划选择数当通过。中心fixture明确合成terminal材料元数据只验DB绑定，不称真实下载；runner fixture才实际包prepare/import/invoke，未来另受运行门禁。原plugins旧五kind读回断言保留/加强。Web两个label增加有界DTO注入断言，browser输出已改X01独立目录与wx，进度写失败仍执行cleanup；不触X03。接缝/未mount边界见[本片Interface](../../docs/evidence/x01/enable-binding-interface.md)。0工程运行/安装/PG/provider，当前source-only尚无运行依赖就绪证据。
+
+2026-10-06 23:29:27 UTC：Mika完成9abf静态审查，CHANGES_REQUESTED/两项P2：不可持久化文本与锁等待跨lease后仍可授权。文本修复a81保留并补reason拒绝；phase在command缓存/首次插入所有可能阻塞操作后再次clock_timestamp检查，过期整事务回滚。新增3个未运行PGcase：registration等待、首次command等待及缓存replay等待；专属application_name+实际pid/pg_locks未grant屏障证明请求已越过初始live，按原lease与DB时钟再放锁，核409和无新增授权/command。最终检查不称直到COMMIT的绝对墙钟原子。当前计划PG共9case、合同6组/runner11case与旧直接consumer，全部NOT_RUN。源码仍v8范围，0生产挂载/模型/PG/工程check；待固定静态复审与依赖/运行窗口。
+
+2026-10-06 23:36:16 UTC：37cf文本与lease静态复审分别通过，原两P2源码关闭但检查仍NOT_RUN；可信host发布第3P2已在routes/store加入本地同步policy，缺省拒绝、冻结认证tuple、INSERT前严格true授权。新增1个PGHTTP反例源码核无policy/未授权runner/错误store不留行、正确tuple随后可发布；目前中心计划10case而非通过数。23:31附近协调ECONNREFUSED期间保持37cf clean停写；Lead恢复原服务后本owner23:35:45.596Z核v8 ACTIVE/17scope未变才续写。共享factory/config/旧host未改，资源仍不足checks，0types/tests/import/PG/provider。当前source增量待固定独审，完整X01未完成。
+
+2026-10-06 23:43:16 UTC：ade4可信host静态复审23:38:28通过，原三P2全部源码关闭；[范围收据](../../docs/evidence/x01/enable-binding-static-review.json)与review首状态/target已对齐当前ade4，历史9ab结论保留。fresh23:39:19.839核v8 ACTIVE后只整理[分段验证](../../docs/evidence/x01/enable-binding-validation-plan.md)/50TS输入/7精确依赖链接请求：0依赖复制、0供给/安装/import/工程运行，17静态case包括11真实tar子进程而非pure。PG/浏览器后续独立资源封套，两个审计label不触发历史整旅程。Lead23:41:52.953实际4320显示182任务、X01正确新WT/live/current/nonstale/issues[]，当时ade4/dirty4为本准备段，如实记录而非新采样。源码/034/旧host/sharedruntime冻结；本片未main、完整X01未完成。
+
+2026-10-06T23:56:37.116585+00:00：fresh23:53:50.095Z核v8 ACTIVE/17scope未变；新增薄caller源码043298ef，仅复用固定OPS14，不另写监督循环。d12依赖设计于23:45:58被独审通过；本次新支持代码与整体准备包待审，未继承ade4批准。产品15源、原输入/请求/配置均逐字保持。Lead23:45:59看板已读回正确current/source及checks not_run；本次实现目标改完整SHA、范围含所有产品及可执行支持，等待聚合读取新待审状态，不手改parser。架构仅新增验证caller→OPS14依赖，不改变产品runtime/DB/外部包接线。
+
+23:56:51.367558Z：Lead明确本owner为7ignored links唯一operator后，fresh资源1,013,399,552 B低于1,107,296,256 B，未进入供给；[HOLD事实](../../docs/evidence/x01/enable-binding-dependency-view-hold-235651.json)。精确7dest均不存在，0目录/link/依赖复制/安装；未将operator授权当工程运行窗口。保留d12原请求与当前support源码不变。
+
+2026-10-07 00:01:57 UTC：Lead明确7link仅源码准备，1,107,296,256 B仍为运行门槛。fresh23:59:35.187Z核v8/17scope；先前保守预算预检停止且0写目录/link，原1238B STOP收据保留。随后同一sole operator按精确请求exclusive创建7links/3parents，752B target文本，两个@flow均本树；[新供给收据](../../docs/evidence/x01/enable-binding-dependency-view-result.json)。0复制/安装/import/check，运行HOLD。root23:59:46核043的24Git/3external及准入门禁无P1/P2，完整lifecycle独审仍待。
+
+2026-10-07 00:05:20 UTC：fresh00:04:01.184Z核v8 ACTIVE/17scope后仅修checkpoint读取/解码/身份异常→sticky unknown，原异常透传，业务ValueError范围不变；db_transaction_owner于00:04:23对d6f52c3a增量APPROVED/0P1P2，与043于00:03:20原静审组成最终SOURCE_REVIEW_APPROVED。ade4产品、d12原输入/配置、d54供给与原STOP收据全部不改。root00:04:08观察available1,011,073,024 B，低于light1,107,296,256及PG1,207,959,552，未发OPEN。Darwin若在OPS14 Git预检报告EPERM/ownership unknown即HOLD并保留，不绕过监督门禁。0import/syntax/types/tests/PG。
+
+2026-10-07 02:21:36 UTC：已授权唯一Stage A实际HOLD，见[结果](../../docs/evidence/x01/enable-binding-local-result.md)。仅Git预检PID91903，最终exit0/EOF/absent，但首次unknown errno1按原规则粘住；tool exit1。strict/tests/tar均0、TMP从未创建；证据根保留。fresh02:20:51.310Z核v8 ACTIVE17scope后封存，原源码/输入/7links收据未变，不重试。原00:05:39.083看板确认live/current/issues[]及d6审批是历史聚合，待读取本次HOLD事实。
+
+2026-10-07 02:25:05 UTC：fresh账本02:25:05.513Z确认原claim v8 ACTIVE、17scope及身份未变。接收Mika于02:23:57Z对固定结果91f86b8df59e5ec623a533e2c13509da00217353的HOLD_RESULT_REVIEW_APPROVED/0 P1/P2；仅批准忠实性，Stage A仍未选择、未运行。15bindings/7347B manifest与原件核符；完整时长/完整总量仍null，已知量不冒充总量，工具wait与caller时间不混用。原manifest的PENDING保留为封存历史，本段及review记录后到结论。local槽已归还Lead并交Web Quick，当前无X01 OPEN。Mika与b01只读定位errno1来自固定OPS14的os.killpg(child.pid,0)，发生在finish/reap前；Darwin未reap leader查询仅候选解释，不能推断权限/SIP/TCC/沙箱原因或后代残留。后继由OPS14原owner native_center_owner在其scope处理，X01不改donor、不降门禁、不重跑。沿既有find-skills/clean-code方法仅核事实、错误/未知和职责边界；本次只追加两metadata，源码/输入/raw全部冻结，提交后停写保留v8。
+
+2026-10-07T02:40:42.525303+00:00：fresh02:38:47.791Z核原v8 ACTIVE/17scope及新树身份完全匹配。接收OPS14共享Interface715525与结果0720625（4/4归属其owner，不累计为X01）；supervise.py SHA725bad保持。固定af2b926b只提取并修正caller报告消费：observations保留审计，不压过最终owned_state；signal unknown、first/secondary监督失败、capture/持久化/身份未知仍阻后继。新增七组内存Report行为反例源码和[限定准备](../../docs/evidence/x01/enable-binding-ownership-fix.md)，0测试/import/进程/PG/tar。旧HOLD结果91f86与全部原raw/manifest/d54不改；新的执行namespace与manifest未准备，此处SOURCE_ONLY并非可执行Stage A。局部槽尚无本任务准入，当前仅待独审。
+
+2026-10-07T02:49:08.448494+00:00：chatui01_owner于02:42:07UTC完成af2/3cd固定SOURCE_REVIEW_APPROVED，16bindings逐GitWT/hash符、0P1/P2。Lead明确Web恢复终态归还后Mika授权本组local工作段；fresh02:47:37.294Z核原v8/17scope，固定af2源码一次7/7内存回归通过，[单结构化记录](../../docs/evidence/x01/enable-binding-ownership-check.json)3004B/SHA8f593e420ddae45bb1b2edc896505a9d0cb6be86fe6416f706aab6d3bc1a38db。受监督check exit0/最终absent/EOF完整，1232B observed=retained、无failure/signal unknown；0测试内子进程/临时根/tar/PG/Chrome/provider，未安装。OPS14监督只启动一个Python检查进程，七组中的参数化子项不累计。外部工具exit0，wall0.1141195s仅等待口径；CLI持久化后实际elapsed174.354ms为另一计量，不相加或声称完整工具启动前时间。既有bounded工作段只用一次，无修后重跑。实际local已归还并直接followup给C02 owner（派交前da6 clean/status已核），附其原有限段与随后REQ15接力要求；本X01停止实际运行，只作这次metadata归档。旧Stage A窗口、HOLD、d6manifest与d54供给全部保留，af2源码不变，完整X01未Done。
+
+## 2026-10-07T03:15:38.909093+00:00 — 原Stage A后继准备
+
+fresh v8 ACTIVE17、原e484 clean。已接chatui01_owner于03:11:53对e484七组结果的RESULT_FIDELITY_REVIEW_APPROVED/0P1P2；不计为产品17检查。支持源只改三个路径字面，独立[后继输入与预算](../../docs/evidence/x01/enable-binding-stage-a-r2.md)保原合同/配置/命令/未知门禁，旧run/manifest/HOLD与7deps供给未改。依据固定main73717的新local工作段规则，不为strict与tests增加分条批准链；当前仅准备无执行、无磁盘轮询。REQ15 intake修复先用本队local，实际清理归还后才接续。架构：产品/存储/运行时无变，只有验证支持路径。
+
+## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| X01-STAGE-A-R2-LOCAL | 2026-10-07T03:15:38.909093+00:00 | 2026-10-07T03:16:55.571215+00:00 | local资源 | REQ15主线接收修复先行，等待其明确终态归还；X01固定增量须独审 | Mika当前派工与db_transaction_owner直接交接；本status |
+
+2026-10-07T03:19:25.466752+00:00：接chatui对0fad准备限定APPROVED。REQ15于其03:16:55.571215Z收口记录确认local已完成，直接交还；本owner03:18:33固定ae899独审接收11/11/资源closed。Mika随后明确授本次30秒原Stage A段，无已知heavy holder。本owner03:19:01.954856Z fresh核v8 ACTIVE17；现在仅准备即时运行，未把授权写作检查通过。
+
+## 2026-10-07T03:21:59.672788+00:00 — Stage A实际单次通过
+
+Mika将30秒local段正式交本owner；03:19:49.463834Z fresh账本v8 ACTIVE17与clean ebd0e591相符，独立admission由受委派operator排他创建并由caller复制封存，free26527911936B≥合计1107828736B。实际03:19:54.282027Z开始，strict0、17选17过，11真实tar全exit0；preflight/strict/tests三监督进程final absent/EOF完整，无failure/unknown。外层`time -p` real2.37s，caller CLI前2346.240ms与UTC秒级保守≤10s分别记录，不把工具等待wall叠加。
+
+[单结果/绑定](../../docs/evidence/x01/enable-binding-stage-a-result-r2.json)及[工具原输出](../../docs/evidence/x01/enable-binding-stage-a-tool-r2.json)保留原9raw15301B、全部child/根身份和原CLI；记录自身/工具/外部准入副本共27484B，小于512KiB。12个精确TMP路径03:20:11及最终归档lstat全部absent；32MiB仍是结束采样非硬峰值。local已direct交chatui01_owner接C02，并通知S01 heavy owner核对未来local预算。0PG/Chrome/provider/install/重试。产品ade4、旧HOLD原件、原manifest和7dep供给全不变。boolean/integer/enum实际字符串传包的独立断言仍未覆盖，不借17通过扩称。
+
+2026-10-07T03:27:38.876807+00:00：Stage A结果2dd587获得chatui01_owner于03:26:21UTC独立RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，原件不改。根据Mika授权Stage B source/dependency operator，fresh03:25:23.525647Z核v8 ACTIVE17，source固定2dd587/main安装donor观察3230becf；九入口静态import/export闭包195源1007301B、缺源0。只排他创建14ignored links（含本树@flow/client）/1431B target，[供给单记录](../../docs/evidence/x01/enable-binding-stage-b-dependencies.json)8911B，总10342B≤128KiB；无依赖复制/安装，原7links与产品不改。C02实际资源归还，下面只开始普通local≤120s、TMP16MiB/raw256KiB、最多3次有意义types/fix，Web heavy按完整256MiB+8MiB保守叠加。
+
+## 2026-10-07T03:29:28.739973+00:00 — Stage B类型闭环
+
+[单结构化记录](../../docs/evidence/x01/enable-binding-stage-b-checks.json)：03:28:10.367720Z→03:28:12.682238Z唯一noEmit检查exit0/0raw，PID7937最终absent/mergedEOF、无unknown。原consumer config九入口与根strict/ES2023选项不改，scope外源码0改。TMP16MiB结束采样为空、同inode删除并于03:28:31exactlstat absent；14新link/package metadata执行后无漂移。保守计Web heavy 256MiB+8MiB加本次16MiB/raw256KiB/metadata1MiB及1GiB，freshfree通过；不把工具wait相加当whole wall。local已direct交status_read原types/collect段，本owner无待运行。
+
+Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case（3锁屏障）+旧plugins11是唯一候选，保持原断言和唯一034/30已供官方SQL。现runtime fixture缺CREATE前持久reservation/OID+marker身份与外部可核完整cleanup；旧plugins fixture仍created-after-ACK/直接DROP，须在原领取两test范围窄补，不以类型通过冒充PG安全闭环。领域route仍手动注入trusted policy，不默认mount；实际安装数据是合成terminal metadata，不能称下载/真实runner完成。浏览器两label仅本轮类型覆盖，不因此跑全Chrome旅程。
+
+2026-10-07T03:38:32.727114+00:00：Stage B固定d17abf于03:34:23 UTC经chatui01_owner独立RESULT_AND_DEPENDENCY_FIDELITY_REVIEW_APPROVED/0P1P2；4绑定与14精确links/package均符，唯一九入口types0，未扩大为PG或功能通过。原结果/raw不改。fresh03:31:46.826核v8 ACTIVE/17scope后，Stage C仅共用两现有test的资源fixture：持久CREATE前请求、ACK/OID/owner/marker、全部owners/pool结束及0连接后普通DROP；异常保留。原10+11行为用例主体与ade4逐字一致，产品实现/034未改；[固定输入](../../docs/evidence/x01/enable-binding-stage-c-source.json)。本段0types/collect/PG/HTTP/provider执行；C02当前local，未占等待槽。原A/B通过不覆盖本次新fixture。
+
+2026-10-07T03:42:55.732443+00:00：C02实际local归还后，Mika给定Web完整heavy276824064B+本段9568256B+1GiB合计floor1360134144B；fresh03:40:30.849核v8后执行一次types→collect，两个child均exit0/EOF/finalabsent，两ownTMP同inode清理absent。原收集计划漏计registry参数化：实际27=10+17；owner计数断言21导致最终exit1，首[完整记录](../../docs/evidence/x01/enable-binding-stage-c-local.json)保留FAIL，另[只读纠正](../../docs/evidence/x01/enable-binding-stage-c-analysis.json)记录真实名单/原断言不变。0PG或test body；没有为计数错误复跑。原件内部4.010s/raw6396B，外部wholewall未知。实际local已直接交REQ15 owner，当前无待launch/资源残留；下一PG需按27原case和共同期限/HTTP上界重新定界，不把此前21计划自动扩大。
+
+2026-10-07 04:12:19.700 UTC：fresh cc19 clean、claim v8 ACTIVE/17一致，恢复Stage C准备实现。C02于04:11:49.742实际closed后交本队local；当前仅源码，PG未开放。27原case/首21计数FAIL保持，不重跑A17/B九types/旧C collect；拟共同工作期限、HTTP分区总账和现OPS14薄caller，后继必要local仅2child各30s、段5min/TMP8MiB/raw256KiB/meta1MiB，组合floor保守4053008384B，待实际启动前fresh。
+
+2026-10-07T04:22:57.274340+00:00：fresh v8/17 scope核对，C02实际closed后完成本段两必要child：types0+5资源资格反例，2.392676s/844B，0PG/HTTP/provider，两group/EOF与ownTMP全部收束并直接告Web归还。新Stage C薄caller消费固定OPS14，27原断言逐字证明、共同work/cleanup期限与HTTP416上限；[窗口准备](../../docs/evidence/x01/enable-binding-stage-c-window.md)及[局部原记录](../../docs/evidence/x01/enable-binding-pg-preparation-local.json)。实际27/两DB未运行，旧21计数FAIL原件保持。SVC06已由原owner04:13:44闭合，不访问其资源；此事实不自动开放PG。架构影响仅测试资源所有权/验证入口，产品接口ade4与shared模块不变。
+
+2026-10-07T04:24:07.438494+00:00：source e7f220ee72c5c9bc091846be45ddd8b199dc6f71固定，[执行前输入](../../docs/evidence/x01/enable-binding-pg-manifest.json) 234本树绑定/1170166B、27外部入口元数据、21已供给links、31正式SQL；run目录不存在。原产品ade4无新改动，实际PG NOT_OPEN；局部type/5反例已实际通过但不替代真实27。待chatui固定独审，停止本段source写入。manifest封包初次遇旧own-worktree link无name字段，0运行/供给，改按固定destination/target处理，不修改历史request。
+
+## 2026-10-07T04:27Z 后继生产接缝核对（只读）
+
+固定当前main `0e09c5d968c059f26402a04907b634460dfebe08` clean；本领域ade4只在分支，main已有host双gate、S01 claim v2与journal/outbox，仍没有`executePluginTool`生产caller。下列是下一可用交付的实际接缝，不是新claim或实施批准：
+
+- **已有领域→窄host**：本树`packages/contracts/src/plugin-runtime.ts`固定binding/material/config/inputDigest/targetRunner与双phase receipt；`apps/server/src/plugin-runtime/{commands,store,routes}.ts`同revision enable、冻结任务与ownedAttempt/current grant事务；`apps/runner/src/plugins/execution.ts`实际调用`invokeInstalledTool`，返回原artifact/verification及provenance，明确`PluginExecutionUnsettled`。这些不分配事件sequence、不发completed、不恢复包；尚未production mount。
+- **claim兼容缺口**：main `packages/contracts/src/runner-claim.ts` v2 strict assignment没有binding，`apps/server/src/runners.ts` allocate/assignment无plugin资格SQL过滤，`runner-claim-receipts.ts`以protocol+runner+key寻址。最小后继需独立v3 opt-in当前能力tuple `{bindingProtocol,storeId,hostApiMajor}`、旧v2 SQL-before-LIMIT排除绑定任务，并同runner锁防同requestId跨协议二次分配；持久host publication不能代替当前进程资格。
+- **原journal/runner接线**：`apps/runner/src/admission-journal.ts`当前只持runner/key并用全局v2 constant重建请求。v3需持久完整请求；降级/缺trusted port时保留原key blocked，不fallback。`runtime.ts:217–250`只找harness adapter；最小分派在同AttemptControl/EventOutbox内识别明确plugin binding并调用已有execution。每phase精确一次当前授权，artifact→verification沿原emit/ACK；unsettled和原native unknown共用“不completed/不journal.complete、停新claim”路径，不能丢成failed。无需第二loop或adapter复制。
+- **启动与来源**：operator在`apps/runner/src/{configuration,main}.ts`装配可信store和执行port；client补薄host发布/phase方法，server factory只在claim/recovery兼容门禁具备后mount。现execution返回provenance但旧artifact wire不持完整来源，应经`packages/contracts/src/runner.ts`+`apps/server/src/events.ts`同reportEvents事务核绑定/精确artifact，再落有界来源ref；不得仅emit文本就称可验证npm来源。`apps/server/src/reconciliation.ts`通用重试需防独立binding丢失降成fixture。原verifier/textDigest及outbox照用。
+
+账本2026-10-07T04:27:06.483Z只读：C02 `chatui01_owner` claim8ad6536b v5 ACTIVE持main.ts/configuration.ts；CHAT05 `assignment_review` claimb447f2ce v1 ACTIVE持contracts/runner.ts和server/events.ts。runtime.ts、admission-journal.ts、runner-claim.ts、server/runners.ts、runner-claim-receipts.ts、reconciliation.ts及三共享index当次未见active writer，但X01没有它们写权；后继先各owner协调/新amend，不能沿v8扩写。现成semver7.8.5 bundle、公开enable→指定runRunner→真实包→来源/flow.text→disable旅程仍未完成。本轮只读数个直接源/现账本，无新研究包/测试/PG。
+
+2026-10-07T04:29:39.080100+00:00：准备独审发现唯一P2预枚举，source 002159b96e98187a050313f2995e199fd2900198改惰性scandir/同deadline与数量门禁，新增单例1/1、0.140859s/255B、进程与TMP全部确认清理并直交C02。7ea5固定DB/WAL128MiB保守额外reserve，实际floor覆盖且1GiB不可支出；原27、5/strict、历史FAIL均不重跑。此次状态仅准备修复待独审，不当PG已通过。
+
+2026-10-07T04:36:52.290823+00:00：准备独审通过；Web由Mika转达04:36实际0PG/Chrome/heavy并明确下一ready段交X01，SVC已闭合。当前仍0PG，Mika条件授权本owner在fresh v8/head/manifest/run absent/resource后为唯一R1生成准入。预算沿180s/2serialDB/416HTTP/TMP32MiB/raw1MiB，额外DB128MiB与C02保守18,087,936B叠加，1GiB收尾不可支出。
+
+2026-10-07T04:40:57.010703+00:00：[R1真实结果](../../docs/evidence/x01/enable-binding-stage-c-r1-result.md)封存，execution85b7726e、18/9、两实际专库close/0conn/ordinaryDROPabsence回执；外层UNKNOWN/KEEP不改，精确postflight仅复制已存在registry/Vitest/outer原件，0额外PG/cleanup。db_transaction_owner独审heavy归还，Web已收到真实终态。修复与后继窗口分开，不预占重资源。
+
+## Stage C 首次实际失败后的有限修复
+
+2026-10-07T04:47:12.776946+00:00：独审资源原件支持heavy归还；本次源`083085f990424cff8a585fbcb46c30fdb8821578`只将runtime夹具枚举v1:/v2:改为合法v1/v2，同步原预期配置值；不放宽生产schema或删除27原断言。新增同输入schema检查仅定位两个enum路径；原HTTP400响应正文未采，不补造错误code。caller只核实际listener有限loopback身份与closed状态，早失败不要求出现预期restart；复用原R1封存原件证明闭合资格与27/18/9、UNKNOWN历史可同时成立。
+
+[局部单记录](../../docs/evidence/x01/enable-binding-stage-c-r1-fix-local.json)：04:46:13.939118–04:46:14.713357Z，内部持久化前0.811555s；2受监督进程，schema1/1（旧6未选）+caller4/4（2新、2直接消费者旧例）。raw1113B/单记录4829B，最终owned absent/mergedEOF/无失败或signals；两自有TMP同inode空目录删除。0PG/HTTP/tar/provider；未重跑A/B/collect/原27。local已直接归还C02并通知Web。
+
+[独立精确清理](../../docs/evidence/x01/enable-binding-stage-c-r1-tmp-cleanup.json)：Mika明确授权后04:44:47.835200–47.842826Z核两旧root原identity、全部九postflight副本及原runtime/admission一致，惰性有限采样15项19577B和6项2439B，再按节点identity正常删除，均absent。原R1 UNKNOWN、大小/峰值UNKNOWN及原收据均不改；此为后续资源收尾，不是原caller成功或用例通过。
+
+当前新PG输入尚未发布、旧run-r1已消费不可复用；下一轮只增量绑定新源/新namespace，继续180s/27case/2serialDB/416HTTP/32MiBTMP/1MiBraw/1GiB reserve+128MiB DB/WAL reserve。新ready-validation允许独立0PG浏览器配对，仍须实际资源协调与完整预算叠加；本次未OPEN。
+
+2026-10-07T04:53:44.970838+00:00：归档chatui04:50:38限定独审0P1/P2；R2 source77ed仅caller RUN/全untracked白名单及新input/manifest文件名字面，新input只runName不同，180s/27/2DB/416HTTP及全部清理/unknown门禁不变。旧R1 input/manifest/raw未改。Mika已给R2条件授权，但随后真实SVC08 artifact取得资源；当前未生成admission、run-r2 absent，明确HOLD等待实际归还。准备不占窗口，不将条件授权记录为RUN。
+
+## 2026-10-07T04:58:59.635390+00:00 Stage C R2实际终态
+
+[R2结果](../../docs/evidence/x01/enable-binding-stage-c-r2-result.md)：唯一实际27=26过1失败、199HTTP；两专库全部identity→0conn→普通DROP/absence，四listeners、两受监督进程、TMP均闭合。caller FAILED/unknown=false，业务非零不是资源未知。8.80s外部time与8.737759s内部单列。已直接归还Web；旧R1原件保持，无自动R3。唯一错误来自runtime.fixture只改maintenance_state、未给016要求的operation_id；本次尚未改源或重跑。
+
+## 2026-10-07T05:01:33.536708+00:00 维护夹具窄修/R3候选
+
+固定`37177aba665fa8d787e40c2a18c4d124bdf819ca`：runtime.test只将非法直接UPDATE改为已存在的owner HTTP maintenance/drain（version0/独立operationId/reason），断言200与准确draining/version1/operationId后仍执行原load/invoke/cancel/lease/revoke全部断言。状态、revision、operation和audit由原维护Module拥有；没有改016 CHECK、生产代码或删场景。比R2多1次HTTP，仍在原runtime256/total416已声明上界内。
+
+[focused类型](../../docs/evidence/x01/enable-binding-maintenance-fix-local.json)：05:00:53.151613–55.267568Z，单runtime.fixture noEmit0/0B，PID37593最终absent/EOF、TMP同inode删，无PG/用例执行。新config仅该直接consumer，无alias或tsconfig放宽。R3只换4个namespace字面及对应input/manifest绑定，236源码/31SQL/原27cases与180s等界限不变；0admission/0reservation，需独审和新窗口。已直归还local给C02并通知Web。
+
+2026-10-07T05:09:35.698753+00:00：status_read05:08:05限定独审经Mika必要转交已归档：23 R2绑定/9窄修绑定、233/236 R3输入不变、31SQL/27external/21links无误，0P1P2。R3源37177批准不等运行通过。Mika明确委派本owner新一次R3准入；Web Recovery及SVC资源actualclosed来源已交接，启动前仍重核≤60s账本/cleanhead/runabsent/freshfloor并直接告Web。原R1/R2失败/raw不可改，不自动R4。
+
+## 2026-10-07T05:12:11.029030+00:00 R3真实27项全过
+
+[原件与范围](../../docs/evidence/x01/enable-binding-stage-c-r3-result.md)：05:10:00.481194–08.767637Z，time8.37s/exit0，27selected27passed/0skip；205HTTP。两专库、四监听、两进程和TMP全部闭合，已直接归还Web。R1/R2历史不改。先独审此结果，再沿[精确main intake](../../docs/evidence/x01/enable-binding-main-intake.json)受控接15产品/test+1直接fixture支撑；此为分支模块能力而非默认挂载/生产runRunner/semver bundle完成。
+
+后继沿已有map，不新领共享scope：可信host发布/当前授权→严格v3claim资格→冻结binding→production runtime执行port→既有outbox/typed provenance/flow.text验证；S01 release只是已知交接事实，main/config/contracts/events等任何新增路径仍需fresh协调/amend。semver7.8.5已选未build；完整X01 TODO保持。
+
+2026-10-07T05:14:26.740103+00:00：R3结果固定2ee9fa44，24bindings/20raw28750B与16source162785B的最小main intake待独审；原27一次27/27，原R1/R2失败不改。fresh账本v8 ACTIVE/17scope无变，当前0运行/0待launch。PG已实际归还，按Mika新队列明确SVC08 assignment为next-ready并已直接通知Web co-lead；C02无PG holder不阻其准入。owner在最终packet提交/push后停止写入保留claim，下一由chatui只读结果审。
+
+2026-10-07T05:33:27.229572+00:00：fresh核e628=origin clean、claim v8 ACTIVE/17scope。接收chatui05:17:35独审APPROVED并将[唯一集成入口](../../docs/evidence/x01/enable-binding-integration-ready.md)标READY；固定16源/24结果bindings及全部失败原件不改，原intake的pending字段作为封存历史由READY receipt后继。0tests/PG/types/产品扩写；Execution Lead可直接读取最小受控输入。完成本提交/push后停止写入保claim，未main/未完整X01。

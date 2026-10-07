@@ -1,3 +1,161 @@
+状态：APPROVED（R3结果忠实性及16文件领域模块intake；不含生产mount/整X01）
+
+Review target commit: e628dbdfe0e53b27f8d15b2ecfba438f4217e872
+
+chatui01_owner/gpt-6-astra，2026-10-07T05:17:35Z，0P1/P2；[独立回执](../../docs/evidence/x01/enable-binding-stage-c-r3-independent-review.json)、[READY集成入口](../../docs/evidence/x01/enable-binding-integration-ready.md)。source37177原准备/source批准保留。27/27证据与原R1/R2未改；main接收仍待Execution Lead。
+
+---
+
+状态：PENDING（R3实际27/27结果忠实性与最小main intake；source此前已审）
+
+Review target commit: 2ee9fa442d6f5a68ec364dcca746e54a7282f205
+
+固定结果2ee9fa44；[24项结果清单](../../docs/evidence/x01/enable-binding-stage-c-r3-result-manifest.json)及[16源集成输入](../../docs/evidence/x01/enable-binding-main-intake.json)。执行4461ae5a；本轮只读review核实际原件/精确选择/生命周期/预算/时钟，不重跑旧源码和检查。完整X01未完成、未main。
+
+---
+
+状态：APPROVED（R2结果忠实性及维护夹具/R3准备；不含实际R3通过）
+
+Review target commit: 37177aba665fa8d787e40c2a18c4d124bdf819ca
+
+status_read/gpt-6-astra 2026-10-07T05:08:05Z，0P1/P2；[独立回执](../../docs/evidence/x01/enable-binding-maintenance-independent-review.json)。原26/1失败与完整资源收尾保留，R3源及输入固定；下一实际运行另核资源与准入。
+
+---
+
+状态：PENDING（R2结果忠实性及维护夹具/R3准备；不含实际R3通过）
+
+Review target commit: 37177aba665fa8d787e40c2a18c4d124bdf819ca
+
+R2固定结果d9f3a4aa/e49b246d：27=26过1失败、资源完整closed；原件不改。当前唯一行为差异是在原runtime用例经公开maintenance/drain建立合法状态，其余caller仅namespace替换；单focused noEmit0，原27未重跑。
+
+---
+
+状态：PENDING（Stage C R2实际失败结果忠实性；26过1失败，不是整片验收通过）
+
+Review target commit: 77ed66bab3ff72513436ab936811e03f8cbb3e18
+
+执行2f018b27；结果源/packet随后固定。仅核原件、实际27/26/1、资源闭合与会计/时钟；0重测。已审083窄修及原R1保持。
+
+---
+
+状态：APPROVED（083085四文件窄修及定向local；R2仅namespace准备，实际PG未开启）
+
+Review target commit: 083085f990424cff8a585fbcb46c30fdb8821578
+
+chatui01_owner/gpt-6-astra 2026-10-07T04:50:38Z SOURCE_AND_TARGETED_RESULT_REVIEW_APPROVED/0P1P2；[收据](../../docs/evidence/x01/enable-binding-stage-c-r1-fix-review.json)。77ed仅Mika明确授权的四namespace字面及新输入绑定，未推新行为批准或PG通过。
+
+---
+
+状态：PENDING（Stage C首轮失败后的四文件窄修及定向local；不继承原准备批准）
+
+Review target commit: 083085f990424cff8a585fbcb46c30fdb8821578
+
+原R1 27=18pass9fail/UNKNOWN保留；本次schema1+caller4定向通过及两精确旧TMP后续收尾待独审。产品生产源码无改；PG未重跑，旧namespace已消费。
+
+---
+
+状态：APPROVED（仅Stage C固定准备；实际27 PG尚未运行）
+
+Review target commit: 002159b96e98187a050313f2995e199fd2900198
+
+status_read 2026-10-07T04:36:01Z 窄复审APPROVED，唯一P2关闭；[收据](../../docs/evidence/x01/enable-binding-pg-independent-review.json)。chatui原e7范围与新增scandir/DBreserve合并，不扩大到实际PG。
+
+状态：PENDING（Stage C唯一P2修复增量；实际PG未运行）
+
+Review target commit: 002159b96e98187a050313f2995e199fd2900198
+
+chatui对e7/84发现1 P2：目录预枚举；002惰性遍历及1个反例已修，DB reserve7ea纳入本次复审。原5/strict与新1分轮通过，不宣称单轮6。
+
+状态：PENDING（本次Stage C准备；真实27 PG/HTTP NOT_RUN）
+
+Review target commit: e7f220ee72c5c9bc091846be45ddd8b199dc6f71
+
+当前输入：`enable-binding-pg-manifest.json` SHA 8b03f0942eeb6911e3c8237c17928a777c862512537d1a77dd5d38779ba0c634。新增资源控制与薄caller待独审；旧产品/A/B批准保留。
+
+# X01 Stage B 直接消费者类型与依赖视图
+
+状态：PENDING（Stage C资源fixture源码已固定，必要局部检查尚未运行；A/B结果已分别独审）
+
+Review target commit: 1e48ebf3e1e7c4d37597c9c26efcee0fc9bf38f8
+
+[依赖视图](../../docs/evidence/x01/enable-binding-stage-b-dependencies.json)固定2dd源与main3230安装观察：195个静态闭包源/1007301B、缺源0，只新增14ignored exact links含本树@flow/client，target1431B+receipt8911B，0依赖复制/安装。九入口沿[原consumer config](../../docs/evidence/x01/enable-binding-consumer-tsconfig.json)，[单记录](../../docs/evidence/x01/enable-binding-stage-b-checks.json)保一次noEmit0/0raw/唯一进程finalabsent/空TMP同identity删除。产品/旧输入不动，review不重跑检查，也不把静态类型通过扩成PG/生产挂载。
+
+---
+
+# X01 Stage A R2 实际结果
+
+状态：APPROVED（Stage A R2结果忠实性，Stage B尚未验证）
+
+Review target commit: 2dd587932aae074adcf8a1e754a80876b0aec291
+
+实际execution ebd0e591c6b056e7d3b9460557715bc36eebf31c；[单结果绑定](../../docs/evidence/x01/enable-binding-stage-a-result-r2.json)与[工具原观察](../../docs/evidence/x01/enable-binding-stage-a-tool-r2.json)。一次strict0/17选17过、11tar closed0；三监督进程final absent/完整capture，12自有TMP exact absent，0retry/PG/provider。只读review应核raw/实际选择/退出/会计与未知边界，不重跑原65/七内存/17，不访问旧HOLD资源。chatui01_owner / gpt-6-astra于2026-10-07 03:26:21UTC独立RESULT_FIDELITY_REVIEW_APPROVED/0P1P2：14绑定/27484B计账/真实17与11tar/12根absence/时钟均符。批准限模块局部结果，这不是完整publicvertical或main验收。
+
+---
+
+# X01 Stage A 后继准备增量
+
+状态：APPROVED（5fcadf8f后继准备静审，Stage A checks NOT_RUN）
+
+Review target commit: 5fcadf8f1b8084d56670393a8ec07ebfb644015f
+
+[本次Interface](../../docs/evidence/x01/enable-binding-stage-a-r2.md)仅复用已审caller并更换独立namespace及小support输入；原产品ade4/旧HOLD/原manifest不改。独立准备审查已通过；后继实际运行仍必须fresh claim/资源/独立admission门禁。
+
+已接历史结果独审：chatui01_owner / gpt-6-astra，2026-10-07 03:11:53 UTC，固定e484a6d263886dcd3874610d10c5f02482662d02，RESULT_FIDELITY_REVIEW_APPROVED/0P1P2。单记录3004B/SHA8f593e420ddae45bb1b2edc896505a9d0cb6be86fe6416f706aab6d3bc1a38db，raw1232B复算正确，7/7/exit0/最终absent/完整捕获；不扩成Stage A17项/11tar或完整外部wall证明。
+
+独立SOURCE/PREPARATION_REVIEW_APPROVED：chatui01_owner / gpt-6-astra，2026-10-07 03:16:39 UTC，固定packet0fad1401444437e46b0e2db29ae91a649e7e327b/source5fcadf8f1b8084d56670393a8ec07ebfb644015f，0P1/P2。3literal、6support和3external均核符，新run absent；原产品/配置/输入未变，17/11tar尚NOT_RUN。本次Mika于实际REQ15局部资源归还后授权原30秒Stage A工作段，由owner使用真实freshledger生成同机准入，0PG/provider/安装；不复用旧已消费窗口。
+
+---
+
+# X01 OPS14 Report消费增量源码审查
+
+状态：APPROVED（af2源码静审；本次七组PASS，Stage A NOT_OPEN）
+
+Review target commit: af2b926bc112cdf0c8f169a88671c610aeacc9ef
+
+范围仅caller报告判定与七组内存反例；[固定清单](../../docs/evidence/x01/enable-binding-ownership-fix-manifest.json)，[Interface及验证请求](../../docs/evidence/x01/enable-binding-ownership-fix.md)。共享715525明确observations是历史，结果0720625限定4/4已由Lead独审；supervisor字节不变。最终ownership/失败/signal unknown/EOF/字节完整性仍共同判定，业务非零不变通过，历史数组不删。独立review应核这一delta和测试反例，不运行Stage A或重查历史PID；本轮没有任何新执行。原d6批准与91f86忠实性结论如下保留。
+
+独立SOURCE_REVIEW_APPROVED：chatui01_owner / gpt-6-astra，2026-10-07 02:42:07 UTC，target af2b926bc112cdf0c8f169a88671c610aeacc9ef / packet3cd3f670，0P1/P2。3source+10history+3OPS14共16bindings全符；确认仅移除历史observations的永久失败解释，final ownership/exit/EOF/bytes、first/secondary/signal unknown与原持久化/业务拒绝不变。原NOT_RUN描述保留为审查当时事实。
+
+后续owner实际验证：2026-10-07T02:49:08.448494+00:00归档[唯一结构化记录](../../docs/evidence/x01/enable-binding-ownership-check.json)，固定同源一次7/7 exit0，1232B完整输出/最终absent/无unknown，未创建测试临时根或任何测试内child；工具exit0/等待wall0.1141195s，CLI含持久化174.354ms分列，不混同完整窗口。此段由Mika新local工作段授权，未复用旧Stage A OPEN。结果仍供Lead只读接收，不能声称合同/11tar/真实plugin执行通过；local已交C02，当前无X01实际运行。
+
+---
+
+# X01 当前局部验证调用方组合准备
+
+状态：APPROVED（仅d6f52c3a SOURCE_REVIEW；checks NOT_RUN）
+
+Review target commit: d6f52c3a0db45eb69a57c68c54ff47423a8ccb79
+
+当前范围包含ade4的15产品源码/测试/034及3个既有验证配置、2个新Python支持源与caller Interface，详[清单](../../docs/evidence/x01/enable-binding-caller-manifest.json)。ade4产品源码静审及d12依赖设计批准分别保留。db_transaction_owner于2026-10-07 00:03:20 UTC对043298ef2faeea63a814c2cd524489ab4abe5c73作SOURCE_REVIEW_APPROVED/0P1P2；root已核其24Git/3external和准入门禁。唯一非阻断一致性提示由d6f52c3a修复，于00:04:23独立增量APPROVED/0P1P2，root接收。检查checkpoint读取/解码/身份异常都sticky unknown+原异常透传，业务错误不扩大。未运行任何新工程检查；7链接只由sole operator另行供给，不是执行通过。
+
+独立review仅读固定Git/manifest，核OPS14外部固定输入、同PID checkpoint、完整Git/claim receipt准入、30s和输出账、unknown与资源身份；不要执行新代码或改owner树。任意问题交owner修复。准备批准不开放实际窗口；依赖已按固定请求供给；实际仍需fresh资源/ledger及Mika一次OPEN。Darwin如OPS14预检报告EPERM/ownership unknown应HOLD，不降门禁或假称具备完整监督能力。
+
+本次唯一实际Stage A于2026-10-07 02:20:15 UTC在OPS14预检ownership unknown/errno1处HOLD；strict/tests未启动，见[原件与结果](../../docs/evidence/x01/enable-binding-local-result.md)。这不撤回源码静审，也不产生运行通过或第二次OPEN。
+
+结果忠实性审查：Mika / gpt-6-astra，2026-10-07T02:23:57Z，固定target `91f86b8df59e5ec623a533e2c13509da00217353`，**HOLD_RESULT_REVIEW_APPROVED，0 P1/P2**。15bindings（6raw 6072B、4support 53936B、5fixed）逐Git/WT/blob/bytes/SHA相符；[manifest](../../docs/evidence/x01/enable-binding-local-result-manifest.json)7347B/SHA `ad2c637495ee259a6888296e537dc10836217444ba38f7bd3d44ae1cd061eba6`。原4运行文件4376B、预检PID91903 exit0/EOF/最终absent但历史unknown、tool exit1、0strict/tests/tar、selected/pass=null、TMP未创建均忠实。完整时长/总量保持null；工具wall仅等待口径，不能证明完整30s窗口。manifest内PENDING原字节保留，本条记录随后到达的审查结论。
+
+依赖与解除条件：Mika及b01只读固定OPS14 SHA725bad…定位errno1于supervise.py:234的`os.killpg(child.pid,0)`，首次查询早于finish:269/reap:275，signals[]，不是Git业务失败或TERM/KILL失败。退出未reap leader的Darwin组查询行为只是候选解释，不据此认定权限/SIP/TCC/沙箱或后代残留。由原owner native_center_owner核平台组观察Interface，必要时记录诊断阶段/exit_observed/reaped并另获有界验证；后继X01须Lead新准入。local槽已归还，当前无OPEN，禁止本树降门禁、改donor或复用本窗口。源码静审范围保持d6/ade4，不将结果忠实性批准套用于Stage A通过或完整X01。
+
+---
+
+# X01 当前 enable / frozen binding 实施
+
+状态：APPROVED（仅ade4源码静审，checks NOT_RUN）
+
+Review target commit: ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc
+
+唯一owner已转入plugin-enable-binding树，claim6ddedc73 v8 ACTIVE；正式034已分配。当前15源码/测试/DDL的领域enable/disable、immutable binding/phase gate、窄host及直接consumer静态审查完成，三项P2仅源码关闭；[静态收据](../../docs/evidence/x01/enable-binding-static-review.json)。db_transaction_owner于23:38:28确认ade4可信host修复，Mika接收。没有运行验证或生产接入批准，新[验证准备](../../docs/evidence/x01/enable-binding-validation-plan.md)尚未获执行窗口。前包动态SQL遗漏已由067补012/013/017/019；545文件全部供给。browser旧X03输出已改X01排他namespace，未运行；所有tests/typecheck/PG均NOT_RUN。旧批准只对应下文历史target，不套用新生产链。
+
+以下9abf发现/早期增量状态是历史记录，不覆盖上述当前ade4静态结论。
+
+2026-10-06 23:27:49 UTC：Mika对9abf静态审发现1P2（新输入/包输出接受NUL或孤surrogate，会导致PG text/jsonb不能持久化）。当前在已领合同/execution修复，不变更旧host或共享lib；合同反例与真实package输出反例源码已加，静态闭环及实际验证仍待，不将此记录为APPROVED。
+
+2026-10-06 23:29:27 UTC：9abf静态结论CHANGES_REQUESTED，追加lease晚锁P2。已补事务末live检查，缓存replay同受约束；3个真实锁屏障用例源码待运行。两P2修复当前待固定增量复审，0tests/typecheck/PG通过声明。
+
+2026-10-06 23:36:16 UTC：Mika接收37cf的LEASE_SOURCE_REVIEW_APPROVED（独立审查23:32:57）及TEXT_SOURCE_REVIEW_APPROVED，原两P2在源码层关闭，3锁屏障仍NOT_RUN。第3P2是未挂载领域入口缺operator可信host门禁，当前已补同步policy/冻结精确tuple/缺省拒绝及反例源码，待固定增量审。未把旧运行证据或上述source approval当本片产品/生产接入批准。账本短时不可用期间停写，23:35:45.596Z恢复后核v8再继续。
+
+---
+
 # X01 当前host双阶段权限核验
 
 状态：APPROVED
@@ -84,3 +242,13 @@ Mika / gpt-6-astra 对固定target发现 1 P2 / 0 P1：零长度 TAR metadata �
 ## 独立复审结论
 
 2026-10-06 03:28 UTC Goal Owner / gpt-6-astra，经Lead回传：plan-only APPROVED c21731c01f97afb450e443245b3fae0d2b0edb9b。通用验收依赖03～08、候选09独立及当前无需用户行动的小修已接受。独立只读文档核验，未运行产品tests；实现仍UNKNOWN。此前NOT_STARTED为历史初始状态，本节为当前结论。
+
+## 2026-10-07T03:38:32.727114+00:00 Stage B正式结果与C待审边界
+
+chatui01_owner/gpt-6-astra于2026-10-07 03:34:23 UTC，对d17abf426151f0f3d03a9310f731bd78afcb1b2d给出RESULT_AND_DEPENDENCY_FIDELITY_REVIEW_APPROVED，0P1/P2；4bindings逐Git/WT/hash及14links/package一致，@flow/client本树，九入口noEmit0，0Braw/finalabsent/EOF。历史unknown observation保留；外部wholewall未知，TMP身份/absence按固定收据而非重扫。此批准不覆盖新Stage C资源fixture/PG或生产完整链。
+
+当前1e48ebf3e1e7c4d37597c9c26efcee0fc9bf38f8只替换两test资源hooks并新增共用fixture/config；原21行为正文逐字不变。尚未执行types/collect/PG，SOURCE_REVIEW_PENDING，原ade4产品静态批准与A/B实际结果保留，不挪到新测试资源代码。
+
+## 2026-10-07T03:42:55.732443+00:00 Stage C局部结果待审
+
+固定资源源码1e48ebf3，执行37e4f169；types和collect真实exit0，但owner断言错误地期待21而得到27，完整首record保留最终FAIL/exit1。实际名单为runtime10+registry17（旧it.each展开），未新增/删除行为、0PG/body；没有重跑。两监督末态/EOF及TMP身份清理确认，当前只请求一次源码+结果独审；实际PG仍未开放。原计数文档纠正是准备口径，不是修改失败raw或已有预算。

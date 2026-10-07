@@ -3,7 +3,7 @@ import type { Pool, PoolClient } from 'pg';
 import type { PluginCommand, PluginConfiguration, PluginMutationResult, PluginRegistration, PluginVersionDeclaration } from '../../../../packages/contracts/src/plugins.js';
 import { canonical, HttpError, sha256 } from '../database.js';
 import { command } from '../tasks.js';
-import { loadInstallation, operationView, readSnapshot, type OperationRecord } from './storage.js';
+import { appendPluginRevision, loadInstallation, operationView, readSnapshot, type OperationRecord } from './storage.js';
 
 async function registerVersion(client: PoolClient, installationId: string, declaration: PluginVersionDeclaration): Promise<string> {
   const id = randomUUID();
@@ -73,13 +73,7 @@ export async function changePlugin(pool: Pool, id: string, input: PluginCommand,
       configuration = {};
       grants = [];
     } else throw new HttpError(400, 'invalid_plugin_command', 'This registry command is unavailable.');
-    const revision = installation.revision + 1;
-    await client.query('INSERT INTO flow.plugin_revisions(installation_id,revision,version_id,configuration,grants) VALUES($1,$2,$3,$4,$5)',
-      [id, revision, versionId, JSON.stringify(configuration), JSON.stringify(grants)]);
-    await client.query('UPDATE flow.plugin_installations SET revision=$2,updated_at=clock_timestamp() WHERE id=$1', [id, revision]);
-    const operation = (await client.query<OperationRecord>(`INSERT INTO flow.plugin_operations(id,installation_id,kind,actor,input_digest,before_revision,after_revision)
-      VALUES($1,$2,$3,'owner',$4,$5,$6) RETURNING *`, [randomUUID(), id, change.kind, sha256(canonical(input)), installation.revision, revision])).rows[0]!;
-    return { snapshot: await readSnapshot(client, id), operation: operationView(operation) };
+    return appendPluginRevision(client, installation, { versionId, configuration, grants, kind: change.kind, inputDigest: sha256(canonical(input)) });
   });
   return { ...result.value, replayed: result.replayed };
 }

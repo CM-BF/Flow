@@ -1,0 +1,136 @@
+{
+  "kind": "X01_STAGE_B_BOUNDED_LOCAL",
+  "startedAt": "2026-10-07T03:28:10.367720+00:00",
+  "sourceHead": "a1368dfe88b2eab15e405a4fdbcc707c62c96ae2",
+  "productSource": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+  "callerFactSource": "5fcadf8f1b8084d56670393a8ec07ebfb644015f",
+  "dependencyViewSha256": "b9aaa9df2c3b93ab9b8355a8340fd04aad957035790e9061f8dcc88a122d6d8f",
+  "limits": {
+    "wholeWorkSegmentSeconds": 120,
+    "maxMeaningfulAttempts": 3,
+    "tempSampleBytes": 16777216,
+    "rawBytes": 262144,
+    "metadataBytes": 1048576
+  },
+  "freeBeforeBytes": 26517643264,
+  "combinedFloorBytes": 1368653824,
+  "webHeavyReservationBytes": 276824064,
+  "PG": 0,
+  "provider": 0,
+  "install": 0,
+  "attempts": [
+    {
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/enable-binding-consumer-tsconfig.json"
+      ],
+      "report": {
+        "pid": 7937,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 2313,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "consumer-types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "failure": null,
+  "unknown": false,
+  "temporary": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-stage-b-ll3tuc6j",
+    "dev": 16777234,
+    "ino": 123376514,
+    "removed": true,
+    "finalSample": {
+      "entries": 0,
+      "logicalBytes": 0,
+      "hardPeakProven": false
+    }
+  },
+  "finishedAt": "2026-10-07T03:28:12.682238+00:00",
+  "elapsedBeforeReceiptSeconds": 2.347528540994972,
+  "postRun": {
+    "observedAt": "2026-10-07T03:28:31.232404+00:00",
+    "temporaryExactLstatAbsent": true,
+    "donorPackageMetadataAndLinkTargetsAfter": {
+      "checked": 14,
+      "errors": []
+    },
+    "localReturnedTo": "status_read",
+    "pendingLaunches": false
+  },
+  "bindings": [
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-b-dependencies.json",
+      "bytes": 8911,
+      "sha256": "b9aaa9df2c3b93ab9b8355a8340fd04aad957035790e9061f8dcc88a122d6d8f"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-consumer-tsconfig.json",
+      "bytes": 604,
+      "sha256": "739704f99e6692b722ee8cd062a02be5ce4760ed9f3396ec16d69f7700212076"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-check-once.py",
+      "bytes": 20307,
+      "sha256": "cfe2b708c762752926f1f24899120fd802ea97e80bc115fabcea12c0b3a3847a"
+    }
+  ],
+  "resultReview": "PENDING_FIXED_RESULT_REVIEW",
+  "limitations": [
+    "One noEmit typecheck across the nine configured direct consumer roots; not a test pass count or PG result.",
+    "Product and shared sources were not modified. Stage C two PG fixtures are still unselected.",
+    "16MiB is the own TMP end-sample budget, not a proven hard peak.",
+    "Whole external tool wall is unknown: tool waits must not be summed. The recorded monotonic elapsed excludes interpreter startup and final output.",
+    "Only existing installed donors were linked; no install/copy/network. All @flow references remain this worktree."
+  ],
+  "toolObservation": {
+    "initialChunk": "9ef974",
+    "initialWaitSeconds": 1.003603833,
+    "finalChunk": "2d1462",
+    "finalWaitSeconds": 6.625e-06,
+    "exitCode": 0,
+    "safeFinalStdout": "{\"exit\": 0, \"failure\": null, \"unknown\": false, \"temporary\": {\"path\": \"/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-stage-b-ll3tuc6j\", \"dev\": 16777234, \"ino\": 123376514, \"removed\": true, \"finalSample\": {\"entries\": 0, \"logicalBytes\": 0, \"hardPeakProven\": false}}, \"elapsed\": 2.3478821660391986, \"recordBytes\": 2293, \"raw\": \"\"}\n",
+    "wholeWallSeconds": null,
+    "note": "safeFinalStdout recordBytes2293 refers to the original automatic receipt before owner post-run/archive fields; original automatic fields and raw preserved."
+  },
+  "preArchiveAutomaticReceipt": {
+    "bytes": 2293,
+    "sha256": "4581c66b6893fb50d61c6a74747e10bca0a488905853bcc021566d86a8fca8c2",
+    "preservedAs": "all original root fields above; additions only after the initial receipt"
+  }
+}

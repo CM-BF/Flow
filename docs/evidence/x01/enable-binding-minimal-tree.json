@@ -1,0 +1,53 @@
+{
+  "observedAt": "2026-10-06T23:08:43.304985+00:00",
+  "authorization": "GO one-time X01 source operator; Execution Lead confirmed not started and transferred exact tree",
+  "state": "MINIMAL_TREE_CLEAN",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+  "branch": "codex/plugin-enable-binding",
+  "base": "60ca1942411634843fda14e158f138191b832d8b",
+  "head": "60ca1942411634843fda14e158f138191b832d8b",
+  "adminDir": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/plugin-enable-binding",
+  "sourceRequestSha256": "6a7bd014a689beb95bce47aa44c08dbc005edcc1f1eb0203ccc17b19f4529e39",
+  "sourceDeliveryCommit": "067920b54a6106ea9b9c942025e0f2fcfc78f5f4",
+  "initialFiles": [
+    {
+      "path": "AGENTS.md",
+      "gitCommit": "60ca1942411634843fda14e158f138191b832d8b",
+      "gitBlob": "ac3cd0c85b8b5dce179a4abd36af052b18543243",
+      "bytes": 17226,
+      "sha256": "42137bac40ba6362c2355e5d707de9e3cf3cdd79435f845b786ee68574e9b0fa",
+      "role": "fixed-main-source-or-direct-consumer"
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "gitCommit": "60ca1942411634843fda14e158f138191b832d8b",
+      "gitBlob": "5acd706bc71ff367d395677238d1d1b3da53eb1d",
+      "bytes": 15077,
+      "sha256": "16abf33b17b51191c49b4c4b6703c3ea59df132676cacda85184a55a8dabb77c",
+      "role": "fixed-main-source-or-direct-consumer"
+    }
+  ],
+  "initialPayloadBytes": 32303,
+  "availableBeforeBytes": 1105563648,
+  "availableAfterBytes": 1104252928,
+  "protectedBefore": {
+    "mainHead": "d721cf28123b45dab5b4e531281b312956e1bc28",
+    "mainIndexSha256": "1511d815531016ca2bedad45b89c40c86a49aa96d80fd58fe051e77a58f52607",
+    "sharedConfigSha256": "90844cada9aa67281a14fa1c9df5bad9af7934ba7d0694c51400add0c02566c8",
+    "ownerHead": "067920b54a6106ea9b9c942025e0f2fcfc78f5f4",
+    "ownerIndexSha256": "0829ad9e2c7a6228ca9de5bda107626f23ebd3ef681d169fc70def1f1655995b"
+  },
+  "protectedAfter": {
+    "mainHead": "d721cf28123b45dab5b4e531281b312956e1bc28",
+    "mainIndexSha256": "1511d815531016ca2bedad45b89c40c86a49aa96d80fd58fe051e77a58f52607",
+    "sharedConfigSha256": "90844cada9aa67281a14fa1c9df5bad9af7934ba7d0694c51400add0c02566c8",
+    "ownerHead": "067920b54a6106ea9b9c942025e0f2fcfc78f5f4",
+    "ownerIndexSha256": "0829ad9e2c7a6228ca9de5bda107626f23ebd3ef681d169fc70def1f1655995b"
+  },
+  "protectedUnchanged": true,
+  "sparseSha256": "6001252fb72bf0666d3408025a251b4812d64114c81d88f1b3c2c7bbf2548546",
+  "dependencyCopies": 0,
+  "installBuildImportPgBrowserProviderCalls": 0,
+  "preflightHistory": "Prior read-only preflight assumed .gitignore was in the fixed list; StopIteration occurred before any mutation. Seed corrected to the two listed AGENTS files; no manifest change.",
+  "next": "Original owner must stop old scope then handoff/accept/amend before remaining source provision. No metadata or product edits started."
+}

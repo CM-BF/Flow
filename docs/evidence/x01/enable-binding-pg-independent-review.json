@@ -1,0 +1,17 @@
+{
+  "reviewer": "status_read/gpt-6-astra",
+  "reviewedAt": "2026-10-07T04:36:01Z",
+  "verdict": "SOURCE_AND_PREPARATION_DELTA_REVIEW_APPROVED",
+  "source": "002159b96e98187a050313f2995e199fd2900198",
+  "packet": "3e1df76d25b8d8bf1f15b07a4103914a35daf267",
+  "manifestSha256": "0dbf2641c62df312db671ef481e1cadf4c1ba004f04f9a9245e7dfbb5c377c13",
+  "P1": 0,
+  "P2": 0,
+  "closed": "Directory eager enumeration",
+  "bindings": 236,
+  "sourceBytes": 1175340,
+  "external": 27,
+  "links": 21,
+  "checks": "Original types/5 plus new lazy iterator 1/1 in separate runs; reviewer zero execution",
+  "boundary": "Preparation only. Actual27 PG not yet run. PG OPEN requires actual operator fresh resources and Web handoff."
+}

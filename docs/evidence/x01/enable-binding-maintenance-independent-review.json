@@ -1,0 +1,31 @@
+{
+  "reviewer": "status_read/gpt-6-astra",
+  "reviewedAt": "2026-10-07T05:08:05Z",
+  "sourceCommit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+  "packetCommit": "b8bf6c0306cdd23a489a76830125f46723ef5fab",
+  "verdict": "R2_RESULT_FIDELITY_AND_MAINTENANCE_R3_PREPARATION_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "deliveredBy": "Mika/root05:08:35 necessary relay after direct delivery cap rejection",
+  "verified": {
+    "R2Bindings": 23,
+    "R2RawFiles": 20,
+    "R2RawBytes": 29455,
+    "fixBindings": 9,
+    "fixBytes": 142877,
+    "fixedGitPacketWT": true,
+    "R3UnchangedRows": 233,
+    "R3Rows": 236,
+    "dynamicSQL": 31,
+    "external": 27,
+    "links": 21
+  },
+  "facts": [
+    "R2 exact27=26pass1fail; maintenance_operation CHECK setup failure; later assertions not reached",
+    "Process/EOF, two DB identity/marker/0conn/ordinaryDROPabsence, four listeners and threeTMP closed",
+    "37177 public drain + precise state assertions replace illegal UPDATE; original business assertions preserved",
+    "One direct runtime-fixture noEmit0; R3 four namespace literals;128MiBDB reserve in floor",
+    "R1/R2 raw unchanged; R3 not run, this source/result approval does not authorize actual OPEN"
+  ],
+  "reviewPG": 0
+}

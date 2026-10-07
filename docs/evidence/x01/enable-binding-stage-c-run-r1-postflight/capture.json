@@ -1,0 +1,122 @@
+{
+  "copiedAt": "2026-10-07T04:39:41.767376+00:00",
+  "kind": "READ_ONLY_POSTFLIGHT_CAPTURE",
+  "executionHead": "85b7726e4b0acdaed309020eb0e4e0237be048ed",
+  "window": "c88edb99fb254316a40e68bbecf7cbbc",
+  "copyRows": [
+    {
+      "source": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-38ywpnw_/fixtures/registry/reservation.json",
+      "destination": "registry-reservation.json",
+      "dev": 16777234,
+      "ino": 123467882,
+      "bytes": 452,
+      "sha256": "3e7cfa56f4f9d7930a514bd8d88d9569df8bff4b1962b0170e1f4fd8eaff4b30"
+    },
+    {
+      "source": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-38ywpnw_/fixtures/registry/create-request.json",
+      "destination": "registry-create-request.json",
+      "dev": 16777234,
+      "ino": 123467883,
+      "bytes": 355,
+      "sha256": "5147f35df12f769845c9fcb91bc20402b523516384266bd08372f59589fb4aa4"
+    },
+    {
+      "source": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-38ywpnw_/fixtures/registry/created.json",
+      "destination": "registry-created.json",
+      "dev": 16777234,
+      "ino": 123467884,
+      "bytes": 404,
+      "sha256": "1cf0b83263c90d43b583a135e24d2c44ed310b47590bb7bc8b5780cc355e0daa"
+    },
+    {
+      "source": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-38ywpnw_/fixtures/registry/result.json",
+      "destination": "registry-result.json",
+      "dev": 16777234,
+      "ino": 123467888,
+      "bytes": 1195,
+      "sha256": "833fcaf243e7475779034f6a32ddb1ae8c83a7ff8a9dad6f46042c5a43f80ee2"
+    },
+    {
+      "source": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-38ywpnw_/vitest.json",
+      "destination": "vitest.json",
+      "dev": 16777234,
+      "ino": 123467889,
+      "bytes": 14831,
+      "sha256": "7ac3c6f5a8b9ef41d2f4b6391677b3bc15af1d42dbaa38c2e52823154be84bca"
+    },
+    {
+      "source": "/private/tmp/flow-x01-stagec-outer-wr1yz0br/start.txt",
+      "destination": "outer-start.txt",
+      "dev": 16777234,
+      "ino": 123467660,
+      "bytes": 33,
+      "sha256": "e85971b8c3ef635c4b4aa54eba31f021a6e8b54ef13658b688064e7dca02404f"
+    },
+    {
+      "source": "/private/tmp/flow-x01-stagec-outer-wr1yz0br/stdout.txt",
+      "destination": "outer-stdout.txt",
+      "dev": 16777234,
+      "ino": 123467662,
+      "bytes": 358,
+      "sha256": "8c28f209c5682f0348f944292f3390fbb4766da36c470ab18ff6e8d74456b42a"
+    },
+    {
+      "source": "/private/tmp/flow-x01-stagec-outer-wr1yz0br/stderr.txt",
+      "destination": "outer-stderr.txt",
+      "dev": 16777234,
+      "ino": 123467663,
+      "bytes": 29,
+      "sha256": "6daf3d164785bbcc19393df91a86539e6f991fdfb3c72e0967fa18c1e665e665"
+    },
+    {
+      "source": "/private/tmp/flow-x01-stagec-outer-wr1yz0br/exit.json",
+      "destination": "outer-exit.json",
+      "dev": 16777234,
+      "ino": 123467896,
+      "bytes": 63,
+      "sha256": "3c67e0e94edf434eaad30b693c0dcd72e07601b9b4663fbec8a48f6c60be012d"
+    }
+  ],
+  "originalCaller": "UNKNOWN/KEEP unchanged",
+  "PGQueries": 0,
+  "recursiveInventory": 0,
+  "cleanupAttempt": 0,
+  "retainedTmp": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-38ywpnw_",
+    "dev": 16777234,
+    "ino": 123467679,
+    "size": "UNKNOWN",
+    "state": "KEEP"
+  },
+  "outerRoot": {
+    "path": "/private/tmp/flow-x01-stagec-outer-wr1yz0br",
+    "dev": 16777234,
+    "ino": 123467536,
+    "state": "KEEP until bounded exact cleanup authorized"
+  },
+  "originalTools": {
+    "startChunk": "7bd690",
+    "startWaitSeconds": 1.0024415,
+    "finalChunk": "66e5c3",
+    "finalWaitSeconds": 6.791e-06,
+    "actualExit": 1,
+    "waitIsWholeWall": false
+  },
+  "business": {
+    "selected": 27,
+    "passed": 18,
+    "failed": 9,
+    "pending": 0,
+    "runtime": {
+      "passed": 1,
+      "failed": 9
+    },
+    "registry": {
+      "passed": 17,
+      "failed": 0
+    }
+  },
+  "knownHTTP": 100,
+  "knownResponseBodyBytes": 268014,
+  "note": "Complete total/TMP peak remains UNKNOWN. Original caller expected two listeners and stopped after runtime receipt before copying registry or Vitest report."
+}

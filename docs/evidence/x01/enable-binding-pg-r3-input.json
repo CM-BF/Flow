@@ -1,0 +1,34 @@
+{
+  "protocol": "flow.x01.stage-c.v1",
+  "productCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+  "totalSeconds": 180,
+  "workSeconds": 110,
+  "cleanupSeconds": 60,
+  "finalReserveSeconds": 10,
+  "suites": {
+    "runtime": {
+      "cases": 10,
+      "httpRequests": 256,
+      "connectionsMax": 17
+    },
+    "registry": {
+      "cases": 17,
+      "httpRequests": 160,
+      "connectionsMax": 15
+    }
+  },
+  "httpRequestsMax": 416,
+  "responseBytesPerRequest": 131072,
+  "responseBytesPerSuite": 4194304,
+  "databasesMax": 2,
+  "serialSuites": true,
+  "streamsBytes": 262144,
+  "resultBytes": 131072,
+  "rawBytes": 1048576,
+  "temporaryBytes": 33554432,
+  "temporaryEntries": 4096,
+  "reserveBytes": 1073741824,
+  "runName": "enable-binding-stage-c-run-r3",
+  "databaseReserveBytes": 134217728,
+  "databaseReserveScope": "Two serial dedicated DBs and WAL outside owned TMP; conservative extra reserve, not a measured or enforced DB size cap."
+}

@@ -1,0 +1,129 @@
+{
+  "sourceCommit": "083085f990424cff8a585fbcb46c30fdb8821578",
+  "startedAt": "2026-10-07T04:46:13.939118+00:00",
+  "availableBytes": 25627664384,
+  "floorBytes": 4053008384,
+  "budget": {
+    "totalSeconds": 300,
+    "commandsMax": 2,
+    "childSeconds": 30,
+    "TMPBytes": 8388608,
+    "rawBytes": 262144,
+    "sourceMetadataBytes": 1048576
+  },
+  "PG": 0,
+  "HTTP": 0,
+  "tar": 0,
+  "provider": 0,
+  "commands": [
+    {
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01/enable-binding-validation-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "packages/contracts/src/plugin-runtime.test.ts",
+        "-t",
+        "runtime fixture registration uses the existing finite enum alphabet"
+      ],
+      "temporary": {
+        "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-r1-fix-i0c7rcfh",
+        "dev": 16777234,
+        "ino": 123470536,
+        "removed": true,
+        "sampleBytes": 0,
+        "sampleEntries": 1
+      },
+      "report": {
+        "pid": 24393,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 610,
+        "stdout": "\n RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding\n\n \u2713 packages/contracts/src/plugin-runtime.test.ts (7 tests | 6 skipped) 4ms\n\n Test Files  1 passed (1)\n      Tests  1 passed | 6 skipped (7)\n   Start at  21:46:14\n   Duration  330ms (transform 134ms, setup 0ms, import 234ms, tests 4ms, environment 0ms)\n\n",
+        "stderr": "",
+        "observed_bytes": 345,
+        "retained_bytes": 345,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      }
+    },
+    {
+      "argv": [
+        "/opt/homebrew/opt/python@3.13/bin/python3.13",
+        "-B",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/enable-binding-pg-caller.test.py",
+        "ResourceQualification.test_actual_listener_count_does_not_require_a_success_path_restart",
+        "ResourceQualification.test_sealed_r1_actual_receipts_confirm_resources_without_changing_failed_cases",
+        "ResourceQualification.test_complete_matching_receipts_are_required",
+        "ResourceQualification.test_unknown_owner_marker_connection_or_listener_never_confirms"
+      ],
+      "temporary": {
+        "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-r1-fix-fvoh3egr",
+        "dev": 16777234,
+        "ino": 123470551,
+        "removed": true,
+        "sampleBytes": 0,
+        "sampleEntries": 1
+      },
+      "report": {
+        "pid": 24849,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 162,
+        "stdout": "test_actual_listener_count_does_not_require_a_success_path_restart (__main__.ResourceQualification.test_actual_listener_count_does_not_require_a_success_path_restart) ... ok\ntest_sealed_r1_actual_receipts_confirm_resources_without_changing_failed_cases (__main__.ResourceQualification.test_sealed_r1_actual_receipts_confirm_resources_without_changing_failed_cases) ... ok\ntest_complete_matching_receipts_are_required (__main__.ResourceQualification.test_complete_matching_receipts_are_required) ... ok\ntest_unknown_owner_marker_connection_or_listener_never_confirms (__main__.ResourceQualification.test_unknown_owner_marker_connection_or_listener_never_confirms) ... ok\n\n----------------------------------------------------------------------\nRan 4 tests in 0.003s\n\nOK\n",
+        "stderr": "",
+        "observed_bytes": 768,
+        "retained_bytes": 768,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      }
+    }
+  ],
+  "state": "PASSED",
+  "endedBeforePersistenceAt": "2026-10-07T04:46:14.713357+00:00",
+  "elapsedBeforePersistence": 0.8115549170179293,
+  "observedRawBytes": 1113
+}

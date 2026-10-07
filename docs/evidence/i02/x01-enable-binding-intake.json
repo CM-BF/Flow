@@ -1,0 +1,143 @@
+{
+  "at": "2026-10-07T05:45:30.858706+00:00",
+  "base": "bf8b5f1d5f554b3195b04b150821d8262a4daef1",
+  "kind": "controlled-reviewed-intake",
+  "source": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+  "sourceBaseAll16MatchMainBefore": true,
+  "sourceBindings": [
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0",
+      "bytes": 6201
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.test.ts",
+      "sha256": "353dc19ec733c45e46a90642fe790e38681f95d9295ff87ccabd0e4d6c926b44",
+      "bytes": 7039
+    },
+    {
+      "path": "packages/contracts/src/plugins.ts",
+      "sha256": "656075884d36145ce73c84283bdd26161c4ea65369f326456ffef1e414e6359f",
+      "bytes": 4908
+    },
+    {
+      "path": "apps/server/src/plugins/storage.ts",
+      "sha256": "0765794a5bb2470c5b469c47b5fa38c2db07a44cf0ae5041765336962a1aa3c9",
+      "bytes": 4657
+    },
+    {
+      "path": "apps/server/src/plugins/commands.ts",
+      "sha256": "3760e0369bcc035ee56f58912286e98639db5ebc63642164c9d4830520c3f22a",
+      "bytes": 5748
+    },
+    {
+      "path": "apps/server/src/plugins/plugins.test.ts",
+      "sha256": "50c0201838eb72d8b49b374bbcfbbc7cc80996dc59d3bf8601321fb9eba2a93e",
+      "bytes": 18029
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "sha256": "454c6142b4d95ec55c75187a801808a4dd224ba610ce3441880e0763fac805f2",
+      "bytes": 7455
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "sha256": "6c90279e8af9d2ab8516e93ad1741da62d86075bdaa1337574af1c3be36c0f7d",
+      "bytes": 10806
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "sha256": "2e65341828f8b703194e3b8d574189f2b495636277379e15ce122f1ab3c2e96b",
+      "bytes": 4390
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/runtime.test.ts",
+      "sha256": "340b0fdeaa76769c1afd3be037fd2adaed942259c9d8165992562b9cf309e092",
+      "bytes": 22309
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "sha256": "09b410abd6028019e3c74b38ef9596b5f1dd2981c40e9d9306efae6ecab6309d",
+      "bytes": 4764
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.test.ts",
+      "sha256": "cc2bacc965a1aa341d744c993230b5fd3bcf4b027cc03602f0da6ed5cf363db9",
+      "bytes": 10110
+    },
+    {
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "sha256": "b51bb04f343b289bf6b3944da354f9b6ab3fe9ed8dd72d17aebfdb24c7add30e",
+      "bytes": 11298
+    },
+    {
+      "path": "apps/web/test/plugin-management/browser.ts",
+      "sha256": "f919352290f8086c20bfd929628ec83e9332ddd3237bb9ecfd45b144a6444414",
+      "bytes": 23974
+    },
+    {
+      "path": "packages/storage/migrations/034-plugin-runtime.sql",
+      "sha256": "8d3cc77265c7ee621ee5da5aacb402615054e4f234cc65cf430f0dc7bc7e7f9d",
+      "bytes": 6572
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-fixture.ts",
+      "sha256": "65c583f65371e4cfc6f778ebd0f0a69b1a5c9672b17619a57349bc5a57a8367a",
+      "bytes": 14525
+    }
+  ],
+  "metadataComparisons": [
+    {
+      "commit": "a6d22c8368a38adf5bda1af37d4bb815fbc0c9d9",
+      "scopes": [
+        "docs/evidence/x01",
+        "plans/x01-plugin-management"
+      ],
+      "filesCompared": 309,
+      "same": true
+    },
+    {
+      "commit": "a9f1fb74a154f6a81deee3dbd5d2231d067bf877",
+      "scopes": [
+        "docs/quality/local-validation.md",
+        "plans/ops-001-status-review/plan.md",
+        "plans/ops-001-status-review/status.md",
+        "plans/flow-001-architecture/status.md"
+      ],
+      "filesCompared": 4,
+      "same": true
+    },
+    {
+      "commit": "bd344e426a6e9b80fd5d06ebc628a991c65dbb14",
+      "scopes": [
+        "docs/evidence/eng01j/r1-re-review.json",
+        "docs/evidence/eng01j/stock-helper-candidate.md",
+        "plans/eng01j-native-write-authority"
+      ],
+      "filesCompared": 5,
+      "same": true
+    }
+  ],
+  "reviews": {
+    "x01": "docs/evidence/x01/enable-binding-stage-c-r3-independent-review.json",
+    "ops": "native_center_owner APPROVED_DOCS final4 files, no P1/P2; messages2026-10-07",
+    "eng01j": "Own formal r1-re-review copied byte-for-byte; metadata and helper candidate full delta read, no product changes"
+  },
+  "combination": {
+    "record": "x01-enable-binding-combination/result.json",
+    "root": 0,
+    "web": 0,
+    "elapsedMs": 14907,
+    "allGroupsAbsent": true,
+    "allEOF": true,
+    "PG": 0,
+    "provider": 0,
+    "unchanged27Rerun": false
+  },
+  "limits": [
+    "X01 domain and 034 only; production mount/v3 claim/runtime caller still open",
+    "ENG01J Darwin/R06 mechanism only; actual Codex helper and all-writer closure separate",
+    "OPS changes new bounded ordinary work segments; historic failures and consumed permits unchanged",
+    "Personal backend af51/accepting18 and Web d629/v3 unchanged"
+  ]
+}

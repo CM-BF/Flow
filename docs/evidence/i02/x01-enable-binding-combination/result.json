@@ -1,0 +1,71 @@
+{
+  "at": "2026-10-07T05:44:01.105021+00:00",
+  "finishedAt": "2026-10-07T05:44:16.012475+00:00",
+  "elapsedMs": 14907,
+  "reports": [
+    {
+      "pid": 58102,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 8868,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "root"
+    },
+    {
+      "pid": 59282,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 6038,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "name": "web"
+    }
+  ]
+}

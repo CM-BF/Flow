@@ -1,0 +1,30 @@
+{
+  "status": "READY",
+  "recordedAt": "2026-10-07T05:33:27.229572+00:00",
+  "reviewTargetCommit": "e628dbdfe0e53b27f8d15b2ecfba438f4217e872",
+  "sourceCommit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+  "intake": {
+    "path": "docs/evidence/x01/enable-binding-main-intake.json",
+    "commit": "e628dbdfe0e53b27f8d15b2ecfba438f4217e872",
+    "sha256": "d227a6a36dbf0f9794c650b3ace8a02853676ece3db1297744cc0a3a4b1686de",
+    "files": 16,
+    "sourceBytes": 162785,
+    "immutableHistoricalStatus": "The original pending wording remains sealed in the result manifest; this READY receipt supersedes its readiness status without changing any frozen binding."
+  },
+  "review": "docs/evidence/x01/enable-binding-stage-c-r3-independent-review.json",
+  "evidence": "docs/evidence/x01/enable-binding-stage-c-r3-result-manifest.json",
+  "operator": "Execution Lead shared main operator",
+  "scope": "Enable/binding/phase domain module +034 + trusted execution leaf + operation labels; public mount remains unconnected",
+  "directConsumerEvidence": [
+    "Stage A 17 checks (6 contract +11 real package), Stage B nine-entry noEmit0, Stage C R3 27 PG/HTTP checks; separate actual runs",
+    "The two server tests require the included enable-binding-pg-fixture.ts",
+    "Main operator may perform necessary integration-only type/consumer checks against current main; do not repeat 27 unchanged cases solely for metadata intake"
+  ],
+  "constraints": [
+    "Apply the 16 exact source blobs only; owner coordinates any source conflict",
+    "034 is the assigned migration; historical008/029 are unchanged",
+    "Do not mount routes or wire production claims/runtime as an incidental integration edit",
+    "No dependency installation, provider invocation, new PG window or browser journey is authorized here",
+    "Claim v8 remains active through main receipt/repair; owner stops all writes after this metadata push"
+  ]
+}

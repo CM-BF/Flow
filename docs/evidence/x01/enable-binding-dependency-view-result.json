@@ -1,0 +1,157 @@
+{
+  "kind": "X01_DEPENDENCY_VIEW_PROVISION",
+  "startedAt": "2026-10-07T00:01:31.249209+00:00",
+  "sourceHead": "2a4a656764fbfca6fba9e43c32387c1e3c23286b",
+  "sourceCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+  "requestSha256": "493598a34af50431894e9e316ada9437bda3c57a7b9412e4551da224fcf89878",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+  "claim": {
+    "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "version": 8,
+    "state": "active",
+    "scopeCount": 17,
+    "ledgerObservedAt": "2026-10-06T23:59:35.187Z"
+  },
+  "soleOperator": "architecture_read / gpt-6-astra",
+  "authority": "Execution Lead through Mika; exact seven-link source preparation only; 0 install/import/check",
+  "state": "PROVISIONED",
+  "phase": "COMPLETE",
+  "budget": {
+    "limitBytes": 65536,
+    "priorStopReceiptBytes": 1238,
+    "resultReceiptReservedBytes": 8192,
+    "targetTextBytes": 752,
+    "statusFullBeforeBytes": 29315,
+    "statusGrowthReserveBytes": 2048,
+    "conservativeTotalReservedBytes": 41545
+  },
+  "parents": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules",
+      "created": true,
+      "dev": 16777234,
+      "ino": 123295743,
+      "logicalBytes": 256,
+      "allocatedBytes": 0
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/@flow",
+      "created": true,
+      "dev": 16777234,
+      "ino": 123295744,
+      "logicalBytes": 128,
+      "allocatedBytes": 0
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/@types",
+      "created": true,
+      "dev": 16777234,
+      "ino": 123295745,
+      "logicalBytes": 96,
+      "allocatedBytes": 0
+    }
+  ],
+  "links": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript",
+      "name": "typescript",
+      "version": "5.9.3",
+      "created": true,
+      "dev": 16777234,
+      "ino": 123295746,
+      "metadataSha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6",
+      "targetTextBytes": 101,
+      "allocatedBytes": 0,
+      "confirmed": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest",
+      "name": "vitest",
+      "version": "4.0.18",
+      "created": true,
+      "dev": 16777234,
+      "ino": 123295747,
+      "metadataSha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328",
+      "targetTextBytes": 182,
+      "allocatedBytes": 0,
+      "confirmed": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/zod",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod",
+      "name": "zod",
+      "version": "4.6.5",
+      "created": true,
+      "dev": 16777234,
+      "ino": 123295748,
+      "metadataSha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000",
+      "targetTextBytes": 87,
+      "allocatedBytes": 0,
+      "confirmed": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/tar",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar",
+      "name": "tar",
+      "version": "7.5.22",
+      "created": true,
+      "dev": 16777234,
+      "ino": 123295749,
+      "metadataSha256": "31b18f4fb83ba7183f54fa9e2cdca610897108c37ba80570c2c6fa7ccf112d97",
+      "targetTextBytes": 88,
+      "allocatedBytes": 0,
+      "confirmed": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/@types/node",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node",
+      "name": "@types/node",
+      "version": "24.19.1",
+      "created": true,
+      "dev": 16777234,
+      "ino": 123295750,
+      "metadataSha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978",
+      "targetTextBytes": 105,
+      "allocatedBytes": 0,
+      "confirmed": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/@flow/contracts",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/packages/contracts",
+      "name": "@flow/contracts",
+      "version": "0.1.0",
+      "created": true,
+      "dev": 16777234,
+      "ino": 123295751,
+      "metadataSha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "targetTextBytes": 92,
+      "allocatedBytes": 0,
+      "confirmed": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/@flow/plugin-runtime",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/packages/plugin-runtime",
+      "name": "@flow/plugin-runtime",
+      "version": "0.1.0",
+      "created": true,
+      "dev": 16777234,
+      "ino": 123295752,
+      "metadataSha256": "342852a97b2682285ae98035f8e1852a1e616b5de071e60a7454ce8848cb16ae",
+      "targetTextBytes": 97,
+      "allocatedBytes": 0,
+      "confirmed": true
+    }
+  ],
+  "error": null,
+  "copiedBytes": 0,
+  "imports": 0,
+  "install": false,
+  "checks": "NOT_RUN",
+  "executionState": "HOLD",
+  "finishedAt": "2026-10-07T00:01:31.259201+00:00",
+  "createdLinkCount": 7,
+  "createdParentCount": 3,
+  "observedNewAllocatedBytes": 0
+}

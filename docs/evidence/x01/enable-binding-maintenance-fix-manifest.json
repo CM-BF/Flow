@@ -1,0 +1,85 @@
+{
+  "sourceCommit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+  "supportCommit": "0394ef9dd6ea93c79fc317ee5566ac295984869c",
+  "review": "PENDING; no new PG OPEN",
+  "recordedAt": "2026-10-07T05:02:01.418158+00:00",
+  "files": [
+    {
+      "path": "apps/server/src/plugin-runtime/runtime.test.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "bdd2db4f8b9c29fcb4f4591e5d7d87993d3b0360",
+      "bytes": 22309,
+      "sha256": "340b0fdeaa76769c1afd3be037fd2adaed942259c9d8165992562b9cf309e092"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-once.py",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "f0e97c7935409ae555f71daf493da00732e42aec",
+      "bytes": 20706,
+      "sha256": "86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-r3-input.json",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "680b24d8f8d059306792e21a2d8a8e2399a08721",
+      "bytes": 952,
+      "sha256": "cf571c4c9d01e5b86d793c6e13abd5afb480264c42559efc55e226b5bb57b32d"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-runtime-fixture-tsconfig.json",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "f39194e02ef17119191dcffe47ea5992506d0c6e",
+      "bytes": 172,
+      "sha256": "4877e32d27dcb3cb1f89f541ddcf431ec5d659baaf6555e4453c747943f9095b"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-maintenance-fix-local.json",
+      "commit": "0394ef9dd6ea93c79fc317ee5566ac295984869c",
+      "blob": "fbfdbdea34eaa59328865cb1874237bab220b681",
+      "bytes": 1866,
+      "sha256": "09f0c8aa171f69702fc8191f7ca3aa65e7ae4270a3335564b121352d6a9a0d3d"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-r3-manifest.json",
+      "commit": "0394ef9dd6ea93c79fc317ee5566ac295984869c",
+      "blob": "48b2fbf496388b67c902972834de4acaeb251c9d",
+      "bytes": 86642,
+      "sha256": "19e312a014e9e4de210af26ad99de5b303c619155597e5f62d5c259b432fdfbf"
+    },
+    {
+      "path": "packages/storage/migrations/016-runner-maintenance.sql",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "77ca4a57138fe2f38632d6c5765baacc3a745475",
+      "bytes": 1796,
+      "sha256": "7dc1d7c6f37d94ac600f78b5fe82a665a1fe9eca9d35c9f52ba92371a8c030fc"
+    },
+    {
+      "path": "apps/server/src/runner-maintenance/index.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "74b59e5291f05a3f4f19b151eb0cf42d370c68f4",
+      "bytes": 2050,
+      "sha256": "1ebd74749045586d3fa7165dbe4db8ce39daa0ba3ed5a57e719cabaa257c267e"
+    },
+    {
+      "path": "apps/server/src/runner-maintenance/store.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "21f1bc2988cb63fe006b7d1e4b4580a1995e9f80",
+      "bytes": 6384,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926"
+    }
+  ],
+  "bindingBytes": 142877,
+  "scope": "One existing PG case setup uses public maintenance command; retains original assertions. Caller changes namespace literals only. Single direct consumer noEmit passed; runtime behavior remains NOT_RUN after this fix.",
+  "originalResult": {
+    "commit": "e49b246da5ef429f1b72e2868dbb1094aa60517f",
+    "manifest": "docs/evidence/x01/enable-binding-stage-c-r2-result-manifest.json",
+    "sha256": "26ffd3a5b33deb71c4f9e6da8eda1ac2102e6510ce8e3057757c73ab4a1eb982",
+    "selected": 27,
+    "passed": 26,
+    "failed": 1,
+    "unchanged": true
+  },
+  "testReruns": 0,
+  "PGAfterR2": 0,
+  "declaration": "One extra bounded HTTP request in the original runtime suite, still below256 and total416; budgets otherwise unchanged."
+}

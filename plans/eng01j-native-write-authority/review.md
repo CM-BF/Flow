@@ -1,11 +1,11 @@
 # ENG01J 独立review
 
-状态：CHANGES_REQUESTED；R1原finding已按原scope修复，等待唯一增量复审
+状态：APPROVED；Reviewer astra_ultra_execution_lead / gpt-6-astra；限定 APPROVED_LIMITED_DARWIN_LAUNCH_AND_R06_MECHANISM
 
 Review target commit: 471b1d8b7b19d53e7c7e87efc525e9c193c5242e
 
-R1 target324d6226 / delivery593ebb8b原[报告](../../docs/evidence/eng01j/r1-independent-review.json)保留；唯一P2为node:test/缺环境顶层断言不兼容根Vitest。
+固定交付4eb35b2bf4ec4df4b4b3e731dcd18aa8a3dde785；[正式复审原件](../../docs/evidence/eng01j/r1-re-review.json)，SHA25631c37a5bcd46ec2e2e56ffa4786de005dbe921ba847ae14076bc82fa3cf36b62。148固定/current和13入口全部匹配；保护输入对main无diff。reviewer读完整两专测/runner/config及06–08原raw，0新执行。
 
-作者修复只改两专测标准Vitest注册和明确Darwin资源gate；正常缺前提3skip+纯1pass，显式资源4/4/真实FD保留，focused types0；[原始新增轮次](../../docs/evidence/eng01j/local/revision-run.json)。生产模块/C与原syscall结果不变。请仅核2filedelta/配置与原raw/新bindings，0重跑。
+原[REQUEST_CHANGES](../../docs/evidence/eng01j/r1-independent-review.json)唯一P2已关闭：两专测使用Vitest，专用Darwin资源前提显式启用；普通1pass/3skip、实际canary4/4、focused类型0，继承FD真实对照保持。原syscall/编译/类型失败不改，新三轮outer数字exit未单独抄存保持null，不补造/不补跑。
 
-[Interface](../../docs/evidence/eng01j/interface.md)已明确stock helper条件冲突与后继最短事实，生产grant/模型/网络/全writer停止仍不在批准范围。当前没有修复后的独立批准。
+批准仅实际Darwin受限启动及R06机制，不证明真实native工具兼容、模型/no-fallback、provider网络、任意IPC、完整writer撤销或生产grant。stock helper与当前禁派生策略的条件源码冲突留后继零query方案；无个人服务操作。

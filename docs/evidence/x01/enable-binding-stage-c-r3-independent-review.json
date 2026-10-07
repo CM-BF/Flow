@@ -1,0 +1,32 @@
+{
+  "verdict": "APPROVED",
+  "kind": "R3_RESULT_FIDELITY_AND_MAIN_INTAKE_REVIEW",
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-07T05:17:35Z",
+  "targetCommit": "e628dbdfe0e53b27f8d15b2ecfba438f4217e872",
+  "sourceCommit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+  "recordedAt": "2026-10-07T05:33:27.229572+00:00",
+  "communicationSource": "Mika/root relayed the independent reviewer conclusion once after direct delivery was rejected by the active-agent cap; owner did not self-review",
+  "p1": 0,
+  "p2": 0,
+  "scope": "R3 actual result fidelity and fixed 16-file domain-module intake; prior source/preparation approval remains status_read 2026-10-07T05:08:05Z",
+  "manifest": {
+    "path": "docs/evidence/x01/enable-binding-stage-c-r3-result-manifest.json",
+    "sha256": "1d0b8ca3f40a8972e9b35e7f8f12a36be209726fbe14a898b04b9abcdd0db857",
+    "bindings": 24
+  },
+  "confirmed": [
+    "27 selected / 27 passed / 205 HTTP",
+    "Two dedicated databases, four listeners, two supervised processes and temporary resource closure",
+    "Caller 8.286570s and external time real8.37s kept as separate clock observations",
+    "R1/R2 history unchanged",
+    "16 fixed source/support files, 162785 bytes ready for controlled main intake"
+  ],
+  "limitations": [
+    "No new checks or PG run during review or this archival segment",
+    "No production default mount, v3 claim or runRunner plugin execution wiring",
+    "No real semver bundle execution or whole X01 completion",
+    "No main integration or new execution authorization implied"
+  ]
+}

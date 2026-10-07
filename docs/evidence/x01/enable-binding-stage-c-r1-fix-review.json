@@ -1,0 +1,21 @@
+{
+  "reviewer": "chatui01_owner/gpt-6-astra",
+  "reviewedAt": "2026-10-07T04:50:38Z",
+  "verdict": "SOURCE_AND_TARGETED_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "sourceCommit": "083085f990424cff8a585fbcb46c30fdb8821578",
+  "packetCommit": "b8f5367ad9d48899bd0fad09cc8d0aea7a78a7b5",
+  "manifestSha256": "34a266e595355112429e9ccd5c041a2fcab31414b8d09bee641d900dbd03aecb",
+  "bindings": 22,
+  "bindingBytes": 189267,
+  "scope": "Four-file narrow fixture/listener fix and targeted local result; no PG pass or next window",
+  "facts": [
+    "Original schema finite alphabet unchanged; fixture v1:/v2: replaced only with v1/v2; 27 business assertions retained",
+    "Actual nonempty loopback listener instances must all be identified and closed; owned/EOF/DB identity/27-pass and unknown KEEP checks retained",
+    "Schema1/1 plus 6unselected and caller4/4 (2new2directexisting); 1113B raw, owned absent/EOF/no signals-secondary",
+    "Original R1 27=18pass9fail/UNKNOWN/raw/manifest unchanged; original400 body not recorded",
+    "Normal exact twoTMP cleanup accepted within owner receipt/earlier independent resource review; reviewer did not access roots"
+  ],
+  "reviewExecution": 0
+}

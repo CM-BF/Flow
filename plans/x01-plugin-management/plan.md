@@ -14,7 +14,7 @@
 
 用户能在产品 Web 的插件管理页和 CLI 中，对同一中心持久化的插件执行安装、配置、授予权限、启用、停用、升级、回滚、移除，并了解当前版本、实际能力、作用范围、运行中引用、错误与审计。客户端只调用公共中心 commands，不各自保存另一份权威安装/授权状态。Web 的管理页不能成为业务的唯一入口。
 
-这是一份完整 X01 的实施计划，**不是已实现的插件管理系统**。现有内建 adapter seam 和 trusted Web host 不等于 npm 生命周期、中心安装记录或第三方隔离已完成。当前进入同机trusted自有npm包纵向片的Interface设计；本轮仍只写原计划/证据，0模型/云/产品PG，不安装依赖、不改产品或全局索引。
+这是一份完整 X01 的实施计划，**不是已实现的插件管理系统**。静态安装公开入口与 trusted host 双阶段授权接口已入 main；中心实时授权、冻结任务绑定和真实 runner 插件调用仍待接入，第三方隔离未完成。当前沿原计划准备完整纵向片与现成 npm 能力复用验收；本轮只写原计划/证据，不选择或安装新包、不改产品或全局索引。
 
 已只读核对 [WPF-P01 权威计划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-host/plans/wpf-p01-plugin-host/plan.md)：trusted Web host target 6ce3ba0a41d51f26cd6fbceddfbb2f80e4931bd6 已有独立批准，范围是可信贡献与 fixture；[WPF-I01 权威状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/plans/wpf-i01-plugin-integration/status.md) 与后继WPF-X03I01已交付主App挂载；当前事实见[owner接收](../../docs/evidence/x01/owner-acceptance.md)。这两项只是本计划 Web 前置，不能替代全 X01 验收，也不要求它们等待中心完整生命周期完成。观察时间/HEAD/dirty 见 [事实记录](../../docs/evidence/x01/README.md)，后续以各 owner 状态为准。
 
@@ -83,10 +83,10 @@
 - [x] **X01-01** 完整计划、现有能力核对、稳定验收/依赖与三件套。Owner：runner_owner；本轮文档交付。
 - [ ] **X01-02** 冻结 manifest、安装/版本/配置/授予/operation 公共合同与 client。Owner：Execution Lead（共享入口）；依赖 X01-01；交付精确合同及拒绝语义，不先扩平台。
 - [ ] **X01-03** 中心 PG registry、commands、鉴权/CAS/幂等/审计及重启恢复。Owner：Lead 派发中心 writer；依赖 X01-02。
-- [ ] **X01-04** 固定 npm 包 resolver、可信 loader、活跃版本 pin、六项生命周期与 config/grant。Owner：Lead 派发宿主 writer；依赖 X01-03 和实际 runner 能力接口。
+- [ ] **X01-04** 固定 npm 包 resolver、可信 loader、活跃版本 pin、六项生命周期与 config/grant；除零依赖自有 fixture，至少一个来源/许可/版本固定的现成 npm 能力经明确 build-time bundle 或受控依赖方案接入 Flow Adapter。Owner：Lead 派发宿主 writer；依赖 X01-03 和实际 runner 能力接口。
 - [ ] **X01-05** 第三方工具/renderer 隔离与能力 gate、超限/取消/停用清理。Owner：Lead 派发隔离 writer；依赖 X01-02/04；隔离不足不得启用第三方。
 - [ ] **X01-06** 产品 Web 管理页 + CLI 同公共 commands，未知类型通用展示、状态/进度/审计。Owner：Lead + Web 管理 owner 派工；依赖 X01-02/03、已审 WPF-P01 和实际 WPF-I01 挂载。
-- [ ] **X01-07** 实际工具、renderer、verifier 扩展示例与更换版本证据。Owner：Lead 派发集成 writer；依赖 X01-04/05/06；不能仅注册空 manifest。
+- [ ] **X01-07** 实际工具、renderer、verifier 扩展示例与更换版本证据；现成 npm 能力须经公开 enable→冻结 binding→真实 runner→有来源产物验证，并证明上游能力来源与升级身份。Owner：Lead 派发集成 writer；依赖 X01-04/05/06；不能仅注册空 manifest或以自有 fixture 代替完整 npm 复用。
 - [ ] **X01-08** 通用 context Interface 与唯一 compression owner、来源失效/恢复矩阵。Owner：Lead 派发 context writer；依赖 X01-02/04、G01 版本/项目身份和 usage 账本；不等待具体候选身份才设计窄接口。
 - [ ] **X01-09** 确认具体 billion-context 候选后，固定源码/许可并做上述兼容实验。Owner：Goal Owner 确认需求身份，Lead 派发 E01/context writer；依赖 X01-08 + 精确候选身份 + 实验预算（需要时）。
 - [ ] **X01-10** 独立 review、中心/CLI/Web/runner 整体验收并受控 main 集成。Owner：Lead 协调独立 reviewer/集成 writer；通用管理验收与集成仅依赖 X01-03～08 的明确交付与限制；X01-09 候选插件另做后续兼容验收，不阻塞本项。
@@ -109,6 +109,7 @@ Goal Owner 已批准 Mika 在 [X03 唯一计划](/Users/citrine/Projects/AgentHa
 | 停用/移除/副作用 | 新动作被 gate 拒绝；在途外部写 ACK 丢失不标撤回；活跃引用阻止物理移除；清理失败可见且不跳过剩余清理 |
 | 隔离/隐私 | 受控第三方越权读/网络/进程/DOM请求被拒；列表/配置/错误/日志无合成secret marker；真实凭据不进入测试 |
 | 实际扩展 | 精确 npm fixture工具完成一次任务；renderer真实展示产物且未知类型fallback；独立verifier校验指定artifact版本，换版本不伪复用旧通过 |
+| 现成 npm 能力复用 | 至少一个真实有用的现成包固定来源/许可/版本/integrity与Adapter构建身份，经明确bundle或受控依赖方案完成同一真实runner旅程；升级用新身份，旧任务仍pin原版本；不放开任意安装 |
 | Web/CLI 旅程 | 安装→配置/授权→启用→任务→停用→升级/回滚→移除同语义；两主题/窄屏/键盘/进行中错误与重试可读 |
 | Context | 原文/版本/lineage/唯一owner及压缩前后恢复/fork/引用正确性；成本与信息遗漏分开，候选身份与支持边界固定 |
 
@@ -127,3 +128,5 @@ Goal Owner 已批准 Mika 在 [X03 唯一计划](/Users/citrine/Projects/AgentHa
 ## 首个真实npm包纵向片（原TODO子段）
 
 已授权同机、workspace级、显式trusted自有包方向，具体[Interface](../../docs/evidence/x01/vertical-interface.md)和[scope/依赖请求](../../docs/evidence/x01/scope-request.md)供Mika/Execution Lead冻结。共享安装材料模块只承担有界解包/静态manifest/receipt，runner host真实import/invoke，中心权威复用原revision/command/fence。产品scope/唯一DDL未分配前不写实现。原X01-02/03/04/06/07获得这个可交付子段，全部10TODO及完整版本/撤销/移除/renderer/verifier/context/隔离验收保留。
+
+2026-10-06 16:09 UTC 验收补充：静态安装与host双gate已在main e8077303，`invokeInstalledTool`仍无真实runRunner production caller；当前已交付slice保持delivered，完整X01开放。GO要求把现成npm能力复用落实到X01-04/07，详见[唯一后继准备](../../docs/evidence/x01/enable-binding-preparation.md)。现package-store拒dependencies/node_modules仅首片限制，不宣称完成通用npm复用。本轮只归档需求，不选择/安装新包或领取产品范围。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:34:18.755443+00:00 / main1d49da00；ENG01J修后机制片限定独审并精确接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:45:30.858706+00:00 / mainbf8b5f1d；X01领域已审精确接收，root/Web组合types0 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,7 +21,7 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 工程受限启动层已通过限定审查，普通测试入口问题已修复；固定网页宿主的隔离运行结果已在主线。 |
+| 当前产出 | 插件启用与冻结绑定领域模块已审接收，组合类型检查通过；工程受限启动层及固定网页宿主隔离结果已在主线。 |
 | 下一可用交付 | 采用固定网页宿主；核真实Codex文件工具辅助进程兼容性，工具原文数据库与生产接线继续推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -332,3 +332,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T05:29:37.245131+00:00：受控接收SVC08隔离真实宿主结果与OPS实际时间状态，[固定28文件](../../docs/evidence/i02/svc08-isolated-result-ops-intake.json)逐字相同；[独审](../../docs/evidence/i02/svc08-isolated-web-host-result-review.json)限1场景/7断言/3静态HTTP和正常专库收尾。个人采用仅候选，不改变af51/v18或d629/v3；ENG01J专测入口P2交原owner窄修，未接产品。0新增工程测试/provider。
 
 2026-10-07T05:34:18.755443+00:00：ENG01J五新source及自有记录按[固定输入](../../docs/evidence/i02/eng01j-controlled-intake.json)受控接收；[增量复审](../../docs/evidence/i02/eng01j-r1-re-review.json)关闭普通Vitest发现器P2，实际R06继承FD对照/unknown传播范围保持。仅机制片，真实Codex helper兼容性/模型资格/全部writer撤销仍开放；0工程重测/PG/provider。
+
+2026-10-07T05:45:30.858706+00:00：[X01窄接收](../../docs/evidence/i02/x01-enable-binding-intake.json)固定37177的16source/support共162785B对原main均base相同且接收后逐hash一致；034唯一新增，008/029保持。复用Mika独审27/27结果，0PG重跑；本批root/Web组合类型0、所有组absent/双EOF。OPS四文档a9f独立APPROVED_DOCS及ENG01J bd344五metadata同步，不覆盖他组或旧产品blob。下一动作main快进；生产插件挂载、个人网页采用仍未发生。

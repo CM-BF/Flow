@@ -1,0 +1,68 @@
+{
+  "sourceCommit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+  "startedAt": "2026-10-07T05:00:53.151613+00:00",
+  "floorBytes": 4053008384,
+  "availableBytes": 25152602112,
+  "pairedDeclaration": "Web Recovery PG+Chrome scratch64MiB/evidence8MiB; conservative previously authorized4,053,008,384B floor retained, not a measured DB cap",
+  "budget": {
+    "totalSeconds": 300,
+    "childSeconds": 30,
+    "TMPBytes": 8388608,
+    "rawBytes": 262144,
+    "metadataBytes": 1048576
+  },
+  "PG": 0,
+  "HTTP": 0,
+  "provider": 0,
+  "selectedTests": null,
+  "state": "PASSED",
+  "temporary": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-drain-types-yt4gzq67",
+    "dev": 16777234,
+    "ino": 123504618,
+    "removed": true,
+    "sampleEntries": 1,
+    "sampleBytes": 0
+  },
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "--project",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/enable-binding-runtime-fixture-tsconfig.json"
+  ],
+  "report": {
+    "pid": 37593,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 2114,
+    "stdout": "",
+    "stderr": "",
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "endedBeforePersistenceAt": "2026-10-07T05:00:55.267568+00:00",
+  "elapsedBeforePersistence": 2.152861542068422
+}

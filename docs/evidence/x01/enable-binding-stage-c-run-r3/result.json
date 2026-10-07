@@ -1,0 +1,297 @@
+{
+  "startedAt": "2026-10-07T05:10:00.481194+00:00",
+  "state": "PASSED",
+  "unknown": false,
+  "limits": {
+    "protocol": "flow.x01.stage-c.v1",
+    "productCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+    "totalSeconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalReserveSeconds": 10,
+    "suites": {
+      "runtime": {
+        "cases": 10,
+        "httpRequests": 256,
+        "connectionsMax": 17
+      },
+      "registry": {
+        "cases": 17,
+        "httpRequests": 160,
+        "connectionsMax": 15
+      }
+    },
+    "httpRequestsMax": 416,
+    "responseBytesPerRequest": 131072,
+    "responseBytesPerSuite": 4194304,
+    "databasesMax": 2,
+    "serialSuites": true,
+    "streamsBytes": 262144,
+    "resultBytes": 131072,
+    "rawBytes": 1048576,
+    "temporaryBytes": 33554432,
+    "temporaryEntries": 4096,
+    "reserveBytes": 1073741824,
+    "runName": "enable-binding-stage-c-run-r3",
+    "databaseReserveBytes": 134217728,
+    "databaseReserveScope": "Two serial dedicated DBs and WAL outside owned TMP; conservative extra reserve, not a measured or enforced DB size cap."
+  },
+  "processes": [
+    {
+      "pid": 59211,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 25,
+      "observed_bytes": 299,
+      "retained_bytes": 299,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "git-preflight",
+      "rawComplete": true
+    },
+    {
+      "pid": 59243,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 8145,
+      "observed_bytes": 113,
+      "retained_bytes": 113,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "vitest",
+      "rawComplete": true
+    }
+  ],
+  "suites": {
+    "runtime": {
+      "window": "be02c51eff5a48cf9f5ad0f2ad1f4449",
+      "sourceHead": "4461ae5ade11b9d2c53eee453031417b84084c72",
+      "suite": "runtime",
+      "database": "flow_x01_2445bb7f375046f4b03eb280776fb5cb",
+      "facts": [
+        {
+          "kind": "lease-expired-under-lock",
+          "gate": "registration-first",
+          "blockedPid": 72716,
+          "originalLease": "2026-10-07T05:10:04.879Z",
+          "observedWait": true,
+          "committedPositiveRows": 0,
+          "replayWasPreexisting": false
+        },
+        {
+          "kind": "owned-lock-client-release",
+          "gate": "registration-first",
+          "rolledBack": true,
+          "destroyed": false
+        },
+        {
+          "kind": "lease-expired-under-lock",
+          "gate": "command-first",
+          "blockedPid": 72716,
+          "originalLease": "2026-10-07T05:10:05.962Z",
+          "observedWait": true,
+          "committedPositiveRows": 0,
+          "replayWasPreexisting": false
+        },
+        {
+          "kind": "owned-lock-client-release",
+          "gate": "command-first",
+          "rolledBack": true,
+          "destroyed": false
+        },
+        {
+          "kind": "lease-expired-under-lock",
+          "gate": "command-replay",
+          "blockedPid": 72716,
+          "originalLease": "2026-10-07T05:10:07.038Z",
+          "observedWait": true,
+          "committedPositiveRows": 1,
+          "replayWasPreexisting": true
+        },
+        {
+          "kind": "owned-lock-client-release",
+          "gate": "command-replay",
+          "rolledBack": true,
+          "destroyed": false
+        }
+      ],
+      "cleanup": {
+        "owners": {
+          "startup": true,
+          "server": true,
+          "boss": true
+        },
+        "ownersClosed": true,
+        "poolClosed": true,
+        "adminClosed": true,
+        "createRequested": true,
+        "createAcknowledged": true,
+        "creationReceiptSaved": true,
+        "identity": {
+          "oid": "1222226",
+          "owner": "flow",
+          "marker": "x01:be02c51eff5a48cf9f5ad0f2ad1f4449:runtime:75162566-549b-4d36-8cb2-5f27c0d0e5f3"
+        },
+        "identityConfirmed": true,
+        "connections": 0,
+        "dropRequested": true,
+        "dropAcknowledged": true,
+        "databaseAbsent": true
+      },
+      "listeners": [
+        {
+          "origin": "http://127.0.0.1:61050",
+          "closed": true
+        },
+        {
+          "origin": "http://127.0.0.1:61059",
+          "closed": true
+        }
+      ],
+      "httpRequests": 119,
+      "responseBytes": 84722,
+      "workUntil": 1791349910480,
+      "cleanupUntil": 1791349970480,
+      "errors": [],
+      "errorCount": 0,
+      "cleanupConfirmed": true,
+      "retainedDatabase": null,
+      "finishedAt": "2026-10-07T05:10:07.110Z"
+    },
+    "registry": {
+      "window": "be02c51eff5a48cf9f5ad0f2ad1f4449",
+      "sourceHead": "4461ae5ade11b9d2c53eee453031417b84084c72",
+      "suite": "registry",
+      "database": "flow_x01_4e0c6d77b3e446538951f364579715ac",
+      "facts": [],
+      "cleanup": {
+        "owners": {
+          "startup": true,
+          "server": true
+        },
+        "ownersClosed": true,
+        "poolClosed": true,
+        "adminClosed": true,
+        "createRequested": true,
+        "createAcknowledged": true,
+        "creationReceiptSaved": true,
+        "identity": {
+          "oid": "1224245",
+          "owner": "flow",
+          "marker": "x01:be02c51eff5a48cf9f5ad0f2ad1f4449:registry:e424d0a2-3b9f-4cc9-bdec-5437a1acfa86"
+        },
+        "identityConfirmed": true,
+        "connections": 0,
+        "dropRequested": true,
+        "dropAcknowledged": true,
+        "databaseAbsent": true
+      },
+      "listeners": [
+        {
+          "origin": "http://127.0.0.1:61077",
+          "closed": true
+        },
+        {
+          "origin": "http://127.0.0.1:61086",
+          "closed": true
+        }
+      ],
+      "httpRequests": 86,
+      "responseBytes": 266957,
+      "workUntil": 1791349910480,
+      "cleanupUntil": 1791349970480,
+      "errors": [],
+      "errorCount": 0,
+      "cleanupConfirmed": true,
+      "retainedDatabase": null,
+      "finishedAt": "2026-10-07T05:10:08.732Z"
+    }
+  },
+  "PGMayHaveStarted": true,
+  "retained": [],
+  "temporaryPeak": "UNKNOWN",
+  "window": "be02c51eff5a48cf9f5ad0f2ad1f4449",
+  "executionHead": "4461ae5ade11b9d2c53eee453031417b84084c72",
+  "manifestSha256": "19e312a014e9e4de210af26ad99de5b303c619155597e5f62d5c259b432fdfbf",
+  "temporary": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-d2wobu8v",
+    "dev": 16777234,
+    "ino": 123509615,
+    "removed": true,
+    "sampleBytes": 14742,
+    "sampleEntries": 15
+  },
+  "selection": {
+    "numTotalTests": 27,
+    "numPassedTests": 27,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "httpRequests": 205,
+  "responseBytes": 351679,
+  "exactSelection": true,
+  "allAssertionsPassed": true,
+  "endedBeforePersistenceAt": "2026-10-07T05:10:08.767637+00:00",
+  "elapsedBeforePersistence": 8.286570416996256,
+  "outputBytesBeforeReceipt": {
+    "registry-result.json": 1195,
+    "runtime-created.json": 402,
+    "registry-create-request.json": 355,
+    "registry-reservation.json": 452,
+    "vitest.json": 8705,
+    "runtime-reservation.json": 450,
+    "runtime-create-request.json": 353,
+    "output.log": 113,
+    "runtime-result.json": 2426,
+    "registry-created.json": 404,
+    "reservation.json": 281,
+    "launch.json": 188,
+    "preflight.stdout": 299,
+    "admission.json": 2266
+  },
+  "uncapturedStreamBytes": 0,
+  "rawChargeBeforeReceipt": 17889,
+  "completeAccounting": true,
+  "rawBytesBeforeReceipt": 17889
+}

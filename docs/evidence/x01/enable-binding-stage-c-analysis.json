@@ -1,0 +1,166 @@
+{
+  "kind": "X01_STAGE_C_COUNT_CORRECTION",
+  "observedAt": "2026-10-07T03:42:55.732443+00:00",
+  "rawRecord": {
+    "path": "docs/evidence/x01/enable-binding-stage-c-local.json",
+    "bytes": 12587,
+    "sha256": "541d06362b0d65646b96bcb12c310de337c56d2897c2daa7ff4c19ed64d04823",
+    "unchanged": true
+  },
+  "sourceCommit": "1e48ebf3e1e7c4d37597c9c26efcee0fc9bf38f8",
+  "executionHead": "37e4f169b97d70066fea8acbb85cc145167b7759",
+  "originalOwnerAssertion": {
+    "expected": 21,
+    "failed": true,
+    "cause": "Static plan counted registry groups instead of expanded parameterized cases. Both child commands exited 0; no body executed."
+  },
+  "typesExit": 0,
+  "collectExit": 0,
+  "collectedCount": 27,
+  "perFile": {
+    "apps/server/src/plugin-runtime/runtime.test.ts": 10,
+    "apps/server/src/plugins/plugins.test.ts": 17
+  },
+  "collectedNames": [
+    {
+      "name": "host publication requires an exact operator tuple before the first immutable insert",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts"
+    },
+    {
+      "name": "enable advances the same revision, preserves old operation readback and replays the original receipt",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts"
+    },
+    {
+      "name": "owner and runner roles, exact host/store/material and strict public bodies reject without revision changes",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts"
+    },
+    {
+      "name": "configuration changes invalidate new bindings while an accepted binding and original key survive disable and restart",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts"
+    },
+    {
+      "name": "phase replay rechecks grant/fence and changing key cannot authorize a second package action",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts"
+    },
+    {
+      "name": "disable preserves accepted pin permission, maintenance drains, and cancellation/expired/stale/revoked fences reject",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts"
+    },
+    {
+      "name": "binding constraint failure rolls back task and command, and immutable rows reject edits",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts"
+    },
+    {
+      "name": "lease expiry while waiting for registration-first rolls back positive authority, including cached replay",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts"
+    },
+    {
+      "name": "lease expiry while waiting for command-first rolls back positive authority, including cached replay",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts"
+    },
+    {
+      "name": "lease expiry while waiting for command-replay rolls back positive authority, including cached replay",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/runtime.test.ts"
+    },
+    {
+      "name": "registers a fixed declaration without granting capabilities or claiming the package was installed",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "versions configuration and explicit grants with CAS and original-result idempotency",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "retains immutable declarations and history while selecting a version clears configuration and grants",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "keeps the same registration receipt and immutable operation after the center restarts",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "rejects undeclared configuration, credentials and grants without exposing input or advancing revision",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "rejects non-exact npm semver latest",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "rejects non-exact npm semver ^1.0.0",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "rejects non-exact npm semver 1.0",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "rejects non-exact npm semver 01.2.3",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "rejects non-exact npm semver 1.0.0-01",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "rejects non-exact npm semver file:../package",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "validates integer and enum public values and does not inherit configuration from object prototypes",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "lets only one simultaneous registration reserve the same package and scope",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "preserves owner authorization and scope in list cursors, project registrations and operation lookups",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "rejects schema ambiguity and bounds request bytes before accepting registry data",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "returns complete paginated version history within both item and UTF8 byte limits",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    },
+    {
+      "name": "protects accepted version, revision and operation history from SQL mutation",
+      "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugins/plugins.test.ts"
+    }
+  ],
+  "testBodiesExecuted": 0,
+  "PG": 0,
+  "sameOriginalBehaviorBodies": true,
+  "postRunExactRoots": [
+    {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-stage-c-local-7tvsmhpq",
+      "dev": 16777234,
+      "ino": 123410159,
+      "exactLstatAbsent": true
+    },
+    {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-stage-c-local-w5yaroto",
+      "dev": 16777234,
+      "ino": 123410171,
+      "exactLstatAbsent": true
+    }
+  ],
+  "donorMetadataAfter": {
+    "checked": 14,
+    "errors": []
+  },
+  "localReturnedTo": "db_transaction_owner for authorized REQ15 types/collect",
+  "toolObservation": {
+    "initialChunk": "4043af",
+    "initialWaitSeconds": 1.001063917,
+    "finalChunk": "098b56",
+    "finalWaitSeconds": 1.0042e-05,
+    "exitCode": 1,
+    "wholeWallSeconds": null,
+    "note": "Outer owner assertion exit1 preserved; tool waits are not full duration. Original record internal elapsed and closed child exits remain distinct."
+  },
+  "futurePG": "NOT_OPEN; correct 27 original cases does not enlarge a previous 21-case PG approval. No repeats of types/collect."
+}

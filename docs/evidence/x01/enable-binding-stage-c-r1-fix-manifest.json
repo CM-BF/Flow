@@ -1,0 +1,200 @@
+{
+  "scope": "Source/targeted local/normal exact TMP cleanup only; no new PG preparation or OPEN",
+  "sourceCommit": "083085f990424cff8a585fbcb46c30fdb8821578",
+  "evidenceCommit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+  "previousResultPacket": "56a968a579297178e642de259bdd42f1cbc627a6",
+  "recordedAt": "2026-10-07T04:47:45.883764+00:00",
+  "files": [
+    {
+      "path": "apps/server/src/plugin-runtime/runtime.test.ts",
+      "commit": "083085f990424cff8a585fbcb46c30fdb8821578",
+      "blob": "18c74b5bd6b8fa4bbac16d50e791a95725533f49",
+      "bytes": 22013,
+      "sha256": "f918fe8500fa8d402e442aa6e93d4155d7dee69fb39b65359230a4fb917b450e"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-once.py",
+      "commit": "083085f990424cff8a585fbcb46c30fdb8821578",
+      "blob": "774cef801a9e461b1cb90892b873c1da1ca92a98",
+      "bytes": 20700,
+      "sha256": "b47984894a700b78bff42fe9ce19b4d94880b01a7c55a1cabdc49f78f768c2ba"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-caller.test.py",
+      "commit": "083085f990424cff8a585fbcb46c30fdb8821578",
+      "blob": "2ac0cf53fcc6c35d7747d886d1d9fecbe8721a05",
+      "bytes": 7909,
+      "sha256": "5da739642439404d730cb86207dccf4f83b9fe27e65fae68cdbfe3136ebeaf61"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.test.ts",
+      "commit": "083085f990424cff8a585fbcb46c30fdb8821578",
+      "blob": "12e6aef87fa3020dde68e263913e2f423b3350b7",
+      "bytes": 7039,
+      "sha256": "353dc19ec733c45e46a90642fe790e38681f95d9295ff87ccabd0e4d6c926b44"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-r1-fix-local.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "f62892145c37b56b26a3074c1762ca4156db3c11",
+      "bytes": 4829,
+      "sha256": "dd2af97886d646560dc7d6c3a2674c1e64c2536f8051f56d6737696ea62a3778"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-r1-tmp-cleanup.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "e7354deb8ce1a40d915a91bb07908cdc90e2b33b",
+      "bytes": 1002,
+      "sha256": "9deb1c3479545428d6b05197525c7b89d9bfb15ba9d7aedbbcd04193630b7077"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-r1-resource-review.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "e1964ebdd47af2af8625fdfa50b2f9e0c81b6d93",
+      "bytes": 678,
+      "sha256": "010b3ae54845d318675ad07ef6771aa432d856f2ad9f6fc0aa9a908736a5b6f3"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-r1-result-manifest.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "a4c599f28b325470547a1cd28457f8ab2e4b6fd2",
+      "bytes": 7420,
+      "sha256": "40106ca0a3b7e1c24325ed16bd38d3198aa81ca1d2f09b780d9e1723eadcbb24"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r1/result.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "a857d1a2cdc876743a2bfb2336d7b59695935ed4",
+      "bytes": 5234,
+      "sha256": "cb797255dd567601b912cc14fc3cb1ba50b2c088e9e0fda26027085a54e41e9e"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r1-postflight/vitest.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "cac017e198ac9bf488b63bed9bb58c850a93ea3a",
+      "bytes": 14831,
+      "sha256": "7ac3c6f5a8b9ef41d2f4b6391677b3bc15af1d42dbaa38c2e52823154be84bca"
+    },
+    {
+      "path": "packages/contracts/src/plugins.ts",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "1407925bf658811b26c8a5809f4b6d2dac12f274",
+      "bytes": 4908,
+      "sha256": "656075884d36145ce73c84283bdd26161c4ea65369f326456ffef1e414e6359f"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-validation-vitest.config.mjs",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "e0f8ea8b60edcdea05ccd3f2f1c6246ad3e2b25c",
+      "bytes": 618,
+      "sha256": "7f1abd34e8d96a8c1485a36ec2f2ce441584be24e0ab8fe7546c802d8e6aa1cb"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-input.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "1bf3ea2c6c1bce0e480d4362832dbb3973561dbf",
+      "bytes": 952,
+      "sha256": "ccc3097797ac1adf4080351cd5d7f0739b7e53e99858dd1764275a019f50cb06"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-manifest.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "6642d090e5477223b64a99dc824cfabf5e2508c8",
+      "bytes": 86388,
+      "sha256": "0dbf2641c62df312db671ef481e1cadf4c1ba004f04f9a9245e7dfbb5c377c13"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r1/runtime-reservation.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "77879c44799f2b69bd1ee76581b5c3982ecb38af",
+      "bytes": 450,
+      "sha256": "57f5794696d251dcc6035a4944005d412289a03964e08a43cc9968148c2b2c22"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r1/runtime-create-request.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "637dfb5baf486ef2625e5a890f519a863b79ddc8",
+      "bytes": 353,
+      "sha256": "28793c6e7ed946c01b5da04135ce181881371da6d1e093b6ad37be167220e360"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r1/runtime-created.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "70d865cc62a19f82248c3bfb9cf3b0867c650859",
+      "bytes": 402,
+      "sha256": "240381353c8c7c29f97d1cd3206c4e2fed944b35b7ef829f3c2ef803990af2f7"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r1/runtime-result.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "144bd6c1ff88a38ddbe378164e96c2f71da707e6",
+      "bytes": 1135,
+      "sha256": "5300e68d915868ee2540cf4981f2d006e143e66e9e096bdd3a7e788c7bd22ab2"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r1-postflight/registry-reservation.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "6c3ce6e85ac5f11f6a1167b778eed3efc409232a",
+      "bytes": 452,
+      "sha256": "3e7cfa56f4f9d7930a514bd8d88d9569df8bff4b1962b0170e1f4fd8eaff4b30"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r1-postflight/registry-create-request.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "82f6e0bc92cd51f3003835fc79c7c2ed233f8f59",
+      "bytes": 355,
+      "sha256": "5147f35df12f769845c9fcb91bc20402b523516384266bd08372f59589fb4aa4"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r1-postflight/registry-created.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "74c73e5fd53cbe59b8d55bf7ef5c00e681e179fd",
+      "bytes": 404,
+      "sha256": "1cf0b83263c90d43b583a135e24d2c44ed310b47590bb7bc8b5780cc355e0daa"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-c-run-r1-postflight/registry-result.json",
+      "commit": "da6dd3a0407cef9258fd8bb02661ebd82e25069d",
+      "blob": "3675670f59342b0f9e24566f26fe034f1c8ce40d",
+      "bytes": 1195,
+      "sha256": "833fcaf243e7475779034f6a32ddb1ae8c83a7ff8a9dad6f46042c5a43f80ee2"
+    }
+  ],
+  "bindingCount": 22,
+  "bindingBytes": 189267,
+  "oldPreparation": {
+    "path": "docs/evidence/x01/enable-binding-pg-manifest.json",
+    "sha256": "0dbf2641c62df312db671ef481e1cadf4c1ba004f04f9a9245e7dfbb5c377c13",
+    "currentChangedRows": [
+      "apps/server/src/plugin-runtime/runtime.test.ts",
+      "docs/evidence/x01/enable-binding-pg-caller.test.py",
+      "docs/evidence/x01/enable-binding-pg-once.py"
+    ],
+    "currentNewContractTest": "packages/contracts/src/plugin-runtime.test.ts",
+    "unchangedBindings": 233,
+    "runtimeEligibility": "Consumed run-r1; old manifest intentionally unchanged. A new input/namespace and independent review are still required before any next PG execution."
+  },
+  "checks": {
+    "schema": {
+      "selected": 1,
+      "passed": 1,
+      "unselected": 6
+    },
+    "caller": {
+      "selected": 4,
+      "passed": 4,
+      "new": 2,
+      "directExisting": 2
+    },
+    "PG": 0,
+    "tar": 0,
+    "provider": 0,
+    "originalPG": {
+      "selected": 27,
+      "passed": 18,
+      "failed": 9,
+      "originalCaller": "UNKNOWN"
+    }
+  },
+  "limits": "No full-runtime/semver/production-runRunner claim; no rerun of A/B/27 or full types."
+}

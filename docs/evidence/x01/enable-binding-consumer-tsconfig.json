@@ -1,0 +1,15 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": [
+    "../../../apps/server/src/index.ts",
+    "../../../apps/server/src/plugin-runtime/store.ts",
+    "../../../apps/server/src/plugin-runtime/commands.ts",
+    "../../../apps/server/src/plugin-runtime/routes.ts",
+    "../../../apps/server/src/plugin-runtime/runtime.test.ts",
+    "../../../apps/server/src/plugins/storage.ts",
+    "../../../apps/server/src/plugins/commands.ts",
+    "../../../apps/server/src/plugins/plugins.test.ts",
+    "../../../apps/web/src/plugin-management/PluginManagement.tsx"
+  ],
+  "exclude": ["../../../node_modules"]
+}

@@ -1,0 +1,13 @@
+{
+  "reviewer": "db_transaction_owner/gpt-6-astra",
+  "reviewedAt": "2026-10-07T04:40:34Z",
+  "scope": "Existing receipts support heavy handback only",
+  "executionHead": "85b7726e4b0acdaed309020eb0e4e0237be048ed",
+  "P1": 0,
+  "P2": 0,
+  "processes": "Git29938/Vitest29959 final absent/EOF, signals and secondary empty",
+  "databases": "runtime1210765/registry1212783 exact identity, 0conn normalDROP+absence, all owners/pools/admin closed",
+  "listeners": "One actual runtime listener and two actual registry listeners closed",
+  "retained": "Original caller UNKNOWN and both own roots KEEP; size/peak UNKNOWN; no independent cleanup or DB queries",
+  "resultChange": false
+}

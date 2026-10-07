@@ -1,0 +1,56 @@
+{
+  "startedAt": "2026-10-07T04:29:06.239909+00:00",
+  "sourceCommit": "002159b9",
+  "availableBytes": 25647300608,
+  "floorBytes": 4053008384,
+  "PG": 0,
+  "HTTP": 0,
+  "provider": 0,
+  "complete": true,
+  "temporary": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-lazy-k_lkwgal",
+    "dev": 16777234,
+    "ino": 123448357,
+    "removed": true
+  },
+  "argv": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/enable-binding-pg-caller.test.py",
+    "ResourceQualification.test_inventory_consumes_directory_lazily_under_entry_limit"
+  ],
+  "report": {
+    "pid": 20636,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 138,
+    "observed_bytes": 255,
+    "retained_bytes": 255,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "stdout": "test_inventory_consumes_directory_lazily_under_entry_limit (__main__.ResourceQualification.test_inventory_consumes_directory_lazily_under_entry_limit) ... ok\n\n----------------------------------------------------------------------\nRan 1 test in 0.001s\n\nOK\n",
+    "stderr": ""
+  },
+  "endedBeforePersistenceAt": "2026-10-07T04:29:06.380753+00:00",
+  "elapsedSeconds": 0.14085874997545034
+}

@@ -1,0 +1,149 @@
+{
+  "kind": "Controlled main intake candidate; independent R3 result review pending",
+  "sourceCommit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+  "sourceBase": "60ca1942411634843fda14e158f138191b832d8b",
+  "files": [
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "5ac6a731b93f10c4e981aa74924a4e0ef45b2682",
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.test.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "12e6aef87fa3020dde68e263913e2f423b3350b7",
+      "bytes": 7039,
+      "sha256": "353dc19ec733c45e46a90642fe790e38681f95d9295ff87ccabd0e4d6c926b44"
+    },
+    {
+      "path": "packages/contracts/src/plugins.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "1407925bf658811b26c8a5809f4b6d2dac12f274",
+      "bytes": 4908,
+      "sha256": "656075884d36145ce73c84283bdd26161c4ea65369f326456ffef1e414e6359f"
+    },
+    {
+      "path": "apps/server/src/plugins/storage.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "71e7cb2b00ba198d0337752693f6ef8114800674",
+      "bytes": 4657,
+      "sha256": "0765794a5bb2470c5b469c47b5fa38c2db07a44cf0ae5041765336962a1aa3c9"
+    },
+    {
+      "path": "apps/server/src/plugins/commands.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "8f6dde93dfd0c243009b31ac23cf7ee6cfc3a81a",
+      "bytes": 5748,
+      "sha256": "3760e0369bcc035ee56f58912286e98639db5ebc63642164c9d4830520c3f22a"
+    },
+    {
+      "path": "apps/server/src/plugins/plugins.test.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "a407dc682b627dbf9ea2dfd3174b2b031cae8438",
+      "bytes": 18029,
+      "sha256": "50c0201838eb72d8b49b374bbcfbbc7cc80996dc59d3bf8601321fb9eba2a93e"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "f87898f22d4f09ea378758524808a17ec84fc3ce",
+      "bytes": 7455,
+      "sha256": "454c6142b4d95ec55c75187a801808a4dd224ba610ce3441880e0763fac805f2"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "ac0fb95e7032ac5eedee0b15ae886b9e8e21c6fa",
+      "bytes": 10806,
+      "sha256": "6c90279e8af9d2ab8516e93ad1741da62d86075bdaa1337574af1c3be36c0f7d"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "318208c1a2519bc7bf35626f57a90357cc096402",
+      "bytes": 4390,
+      "sha256": "2e65341828f8b703194e3b8d574189f2b495636277379e15ce122f1ab3c2e96b"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/runtime.test.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "bdd2db4f8b9c29fcb4f4591e5d7d87993d3b0360",
+      "bytes": 22309,
+      "sha256": "340b0fdeaa76769c1afd3be037fd2adaed942259c9d8165992562b9cf309e092"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "60b637ad15eadc641c60a0b91687f56ec3519214",
+      "bytes": 4764,
+      "sha256": "09b410abd6028019e3c74b38ef9596b5f1dd2981c40e9d9306efae6ecab6309d"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.test.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "561185bc1f781e899ed25b8d8741b6a226e30330",
+      "bytes": 10110,
+      "sha256": "cc2bacc965a1aa341d744c993230b5fd3bcf4b027cc03602f0da6ed5cf363db9"
+    },
+    {
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "0169a325b6e2e62805f1eb84214ef9f9457354b0",
+      "bytes": 11298,
+      "sha256": "b51bb04f343b289bf6b3944da354f9b6ab3fe9ed8dd72d17aebfdb24c7add30e"
+    },
+    {
+      "path": "apps/web/test/plugin-management/browser.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "f5400cd61a81fd449ffa76dd030569718a3c5402",
+      "bytes": 23974,
+      "sha256": "f919352290f8086c20bfd929628ec83e9332ddd3237bb9ecfd45b144a6444414"
+    },
+    {
+      "path": "packages/storage/migrations/034-plugin-runtime.sql",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "6939466d1802ada95d4889c83d42374cc1b8903c",
+      "bytes": 6572,
+      "sha256": "8d3cc77265c7ee621ee5da5aacb402615054e4f234cc65cf430f0dc7bc7e7f9d"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-fixture.ts",
+      "commit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+      "blob": "2faf5fe4ea73c123101a47c8fecfc901608eb16f",
+      "bytes": 14525,
+      "sha256": "65c583f65371e4cfc6f778ebd0f0a69b1a5c9672b17619a57349bc5a57a8367a"
+    }
+  ],
+  "sourceBytes": 162785,
+  "productAndTests": 15,
+  "directFixtureSupport": 1,
+  "scope": "X01 enable/binding/phase domain module+034+trusted execution leaf+operation labels; no production mount/claim capability/runtime wiring",
+  "requiredSupport": "runtime/plugins tests import own enable-binding-pg-fixture.ts. Reuse reviewed dedicated fixture and explicit PG entry/environment; do not run broad tests without owned resource admission. Root TS should include same-tree dependencies; never alias donor product sources.",
+  "checks": {
+    "A": "2dd58793:17 different=6contract+11realpackage/tar; independently accepted",
+    "B": "d17abf42:9directentry noEmit0; independently accepted",
+    "C": "R3 actual27/27 under reviewed fixture; result fidelity pending",
+    "latestFixture": "37177 single runtime.test focused noEmit0; no added test rerun",
+    "browser": "NOT_RUN; two operation labels typed, no browser-journey pass claimed"
+  },
+  "previousReviews": [
+    "ade4 production3P2 source closure",
+    "083 fixture alphabet/listener fix approved chatui04:50:38",
+    "37177 maintenance fixture/R3 approved status_read05:08:05"
+  ],
+  "architecture": "New plugin-runtime domain / immutable binding and phase receipt tables; publication trusted tuple policy defaults deny. Main architecture baseline pending integration by Lead; no shared architecture write scope.",
+  "integrationRequirements": [
+    "Apply precise fixed source blobs after result review; shared main merge/conflicts belong to Lead with owner coordination",
+    "034 is formally allocated; 008/029 are readonly inputs, not modified historical DDL",
+    "Do not automatically mount routes: current trusted-host qualification, v3 claim negotiation/recovery, production runner caller and shared owner handoffs remain open",
+    "Originalhost source already main and not part of this write scope; no overwrite",
+    "Keep raw result history and scoped writer for review/main repair until formal MAIN_RECEIPT"
+  ],
+  "openAcceptance": [
+    "production enable\u2192frozenbinding\u2192v3claim\u2192runRunner\u2192host load/invoke live gates\u2192artifact verification",
+    "semver7.8.5ISC controlled bundle provenance/version/build and actual npm capability",
+    "other completeX01 lifecycle/render/verifier/context/isolation TODOs remain open"
+  ]
+}

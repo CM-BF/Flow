@@ -1,0 +1,24 @@
+{
+  "initial": {
+    "chunk_id": "a3cc8b",
+    "wall_time_seconds": 1.0014695,
+    "session_id": 11524,
+    "original_token_count": 0,
+    "output": ""
+  },
+  "final": {
+    "chunk_id": "249df9",
+    "wall_time_seconds": 0.000012875,
+    "exit_code": 0,
+    "original_token_count": 97,
+    "output": "{\"receiptWritten\":true,\"failure\":null,\"unknown\":false,\"rawDiskBytes\":15301,\"rawLimitBytes\":524288,\"elapsedBeforeCliMs\":2346.2403340963647,\"observedUnretainedBytes\":0,\"rawAccountingComplete\":true,\"temporaryRemoved\":true,\"selected\":17,\"passed\":17,\"wholeToolExitRequiresExternalObservation\":true,\"knownChargeWithCliReserve\":23493,\"withinKnownRawBudget\":true}\nreal 2.37\nuser 3.14\nsys 0.39\n"
+  },
+  "externalUTCBefore": "2026-10-07 03:19:49 UTC",
+  "externalUTCAfter": "2026-10-07 03:19:58 UTC",
+  "externalUTCConservativeUpperSeconds": 10,
+  "utcBasis": "Second-resolution independent samples bracket invocation and observed final exit; +1 second quantization allowance. Tool wait durations are not summed.",
+  "timeCommand": "/usr/bin/time -p",
+  "timeRealSeconds": 2.37,
+  "timeResolutionSeconds": 0.01,
+  "timeBasis": "time(1) measured the complete Python caller invocation through exit; not inferred from PTY wait duration."
+}

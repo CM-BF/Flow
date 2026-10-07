@@ -1,0 +1,95 @@
+{
+  "window": "cf9d3c58d2074ad6bae7161b42c7298c",
+  "sourceHead": "2f018b27b1db6a6a9b02034ca20c18ea688aeb1d",
+  "suite": "runtime",
+  "database": "flow_x01_0ec958c8e3df47f3bd04ff101e9732f7",
+  "facts": [
+    {
+      "kind": "lease-expired-under-lock",
+      "gate": "registration-first",
+      "blockedPid": 69836,
+      "originalLease": "2026-10-07T04:57:00.137Z",
+      "observedWait": true,
+      "committedPositiveRows": 0,
+      "replayWasPreexisting": false
+    },
+    {
+      "kind": "owned-lock-client-release",
+      "gate": "registration-first",
+      "rolledBack": true,
+      "destroyed": false
+    },
+    {
+      "kind": "lease-expired-under-lock",
+      "gate": "command-first",
+      "blockedPid": 69836,
+      "originalLease": "2026-10-07T04:57:01.206Z",
+      "observedWait": true,
+      "committedPositiveRows": 0,
+      "replayWasPreexisting": false
+    },
+    {
+      "kind": "owned-lock-client-release",
+      "gate": "command-first",
+      "rolledBack": true,
+      "destroyed": false
+    },
+    {
+      "kind": "lease-expired-under-lock",
+      "gate": "command-replay",
+      "blockedPid": 69836,
+      "originalLease": "2026-10-07T04:57:02.281Z",
+      "observedWait": true,
+      "committedPositiveRows": 1,
+      "replayWasPreexisting": true
+    },
+    {
+      "kind": "owned-lock-client-release",
+      "gate": "command-replay",
+      "rolledBack": true,
+      "destroyed": false
+    }
+  ],
+  "cleanup": {
+    "owners": {
+      "startup": true,
+      "server": true,
+      "boss": true
+    },
+    "ownersClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "createRequested": true,
+    "createAcknowledged": true,
+    "creationReceiptSaved": true,
+    "identity": {
+      "oid": "1216577",
+      "owner": "flow",
+      "marker": "x01:cf9d3c58d2074ad6bae7161b42c7298c:runtime:64a063d3-0ee5-44ad-a982-37ee0d35b8cd"
+    },
+    "identityConfirmed": true,
+    "connections": 0,
+    "dropRequested": true,
+    "dropAcknowledged": true,
+    "databaseAbsent": true
+  },
+  "listeners": [
+    {
+      "origin": "http://127.0.0.1:59969",
+      "closed": true
+    },
+    {
+      "origin": "http://127.0.0.1:59978",
+      "closed": true
+    }
+  ],
+  "httpRequests": 113,
+  "responseBytes": 83437,
+  "workUntil": 1791349125394,
+  "cleanupUntil": 1791349185394,
+  "errors": [],
+  "errorCount": 0,
+  "cleanupConfirmed": true,
+  "retainedDatabase": null,
+  "finishedAt": "2026-10-07T04:57:02.370Z"
+}

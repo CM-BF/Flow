@@ -1,15 +1,13 @@
 import { randomUUID } from 'node:crypto';
-import { Pool } from 'pg';
 import { afterAll, beforeAll, expect, it } from 'vitest';
 import { createServer } from '../index.js';
 import { migratePlugins, registerPluginRoutes } from './index.js';
+import { PluginDatabaseFixture } from '../../../../docs/evidence/x01/enable-binding-pg-fixture.js';
 
-const databaseName = `flow_x02_${process.pid}_${randomUUID().slice(0, 8)}`;
-const databaseUrl = `postgresql://flow:flow-local-only@127.0.0.1:55432/${databaseName}`;
-const admin = new Pool({ connectionString: 'postgresql://flow:flow-local-only@127.0.0.1:55432/postgres', max: 1 });
+const databaseFixture = new PluginDatabaseFixture('registry', 3);
+const { databaseUrl, pool } = databaseFixture;
 const ownerToken = 'x02-test-owner';
-let created = false;
-let pool: Pool | undefined;
+let startupConfirmed = true;
 let server: Awaited<ReturnType<typeof createServer>> | undefined;
 let baseUrl = '';
 const version = {
@@ -19,34 +17,43 @@ const version = {
 };
 const registration = { scope: { workspaceId: 'personal', projectId: null }, version };
 async function request(path: string, body?: unknown, options: { token?: string; key?: string } = {}) {
-  const response = await fetch(`${baseUrl}${path}`, {
+  return databaseFixture.request(`${baseUrl}${path}`, {
     method: body === undefined ? 'GET' : 'POST',
     headers: { authorization: `Bearer ${options.token ?? ownerToken}`, 'content-type': 'application/json', 'idempotency-key': options.key ?? randomUUID() },
-    body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(10_000),
+    body: body === undefined ? undefined : JSON.stringify(body),
   });
-  const raw = await response.text();
-  return { status: response.status, body: JSON.parse(raw), bytes: Buffer.byteLength(raw), raw };
 }
 async function startServer() {
-  server = await createServer({ databaseUrl, ownerToken });
-  if (!server.hasRoute({ method: 'POST', url: '/api/plugins' })) {
-    await migratePlugins(pool!);
-    registerPluginRoutes(server, pool!);
-  }
-  baseUrl = await server.listen({ host: '127.0.0.1', port: 0 });
+  startupConfirmed = false;
+  await databaseFixture.start(async () => {
+    server = await createServer({ databaseUrl, ownerToken });
+    if (!server.hasRoute({ method: 'POST', url: '/api/plugins' })) {
+      await migratePlugins(pool!);
+      registerPluginRoutes(server, pool!);
+    }
+    baseUrl = await server.listen({ host: '127.0.0.1', port: 0 });
+    databaseFixture.listener(baseUrl); startupConfirmed = true;
+  });
+}
+async function closeServer() {
+  await server?.close();
+  if (server?.server.listening) throw new Error('X01 server is still listening');
+  if (baseUrl) databaseFixture.listenerClosed(baseUrl);
+  baseUrl = '';
+  server = undefined;
 }
 beforeAll(async () => {
-  await admin.query(`CREATE DATABASE ${databaseName}`); created = true;
-  pool = new Pool({ connectionString: databaseUrl, max: 3, statement_timeout: 5000 });
+  await databaseFixture.create();
   await startServer();
-});
+}, 30_000);
 afterAll(async () => {
-  try { await server?.close(); }
-  finally {
-    try { await pool?.end(); if (created) await admin.query(`DROP DATABASE ${databaseName}`); }
-    finally { await admin.end(); }
-  }
-});
+  const settled = await databaseFixture.settleStartup();
+  const closed = settled && await databaseFixture.close('server-close', closeServer);
+  const result = await databaseFixture.finish({ startup: startupConfirmed, server: closed });
+  expect(result).toMatchObject({ cleanupConfirmed: true, retainedDatabase: null, errors: [],
+    cleanup: { ownersClosed: true, poolClosed: true, adminClosed: true, identityConfirmed: true,
+      connections: 0, dropAcknowledged: true, databaseAbsent: true } });
+}, 60_000);
 
 it('registers a fixed declaration without granting capabilities or claiming the package was installed', async () => {
   const accepted = await request('/api/plugins', registration);
@@ -105,6 +112,8 @@ it('retains immutable declarations and history while selecting a version clears 
   const foreign = await registered();
   expect((await request(`/api/plugins/${id}/commands`, { expectedRevision: 5, reason: 'Cannot select another installation version', change: { kind: 'select-version', versionId: foreign.version.id } })).status).toBe(404);
   expect((await request(`/api/plugins/${id}`)).body.revision).toBe(5);
+  expect((await request(`/api/plugins/${id}/operations`)).body.operations.map((item: { kind: string }) => item.kind).sort())
+    .toEqual(['configure', 'register', 'register-version', 'select-version', 'set-grants']);
 });
 
 it('keeps the same registration receipt and immutable operation after the center restarts', async () => {
@@ -112,7 +121,7 @@ it('keeps the same registration receipt and immutable operation after the center
   const key = randomUUID(); const accepted = await request('/api/plugins', input, { key });
   expect(accepted.status).toBe(201);
   const id = accepted.body.snapshot.installation.id;
-  await server!.close(); await startServer();
+  await closeServer(); await startServer();
   expect((await request(`/api/plugins/${id}`)).body).toEqual(accepted.body.snapshot);
   const replay = await request('/api/plugins', input, { key });
   expect(replay.body).toEqual({ ...accepted.body, replayed: true });

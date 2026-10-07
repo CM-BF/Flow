@@ -1,0 +1,256 @@
+{
+  "kind": "X01_STAGE_A_R2_RESULT",
+  "recordedAt": "2026-10-07T03:21:18.236566+00:00",
+  "executionHead": "ebd0e591c6b056e7d3b9460557715bc36eebf31c",
+  "productSource": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+  "callerSource": "5fcadf8f1b8084d56670393a8ec07ebfb644015f",
+  "preparationPacket": "0fad1401444437e46b0e2db29ae91a649e7e327b",
+  "input": {
+    "path": "docs/evidence/x01/enable-binding-stage-a-input-r2.json",
+    "bytes": 4289,
+    "sha256": "8131035a2206707b432141049869dbae6a1a6c40d8ba572d6b5609f009357fc9"
+  },
+  "validationInput": {
+    "path": "docs/evidence/x01/enable-binding-validation-input.json",
+    "bytes": 25912,
+    "sha256": "4178efa9b0a111809ffbf56444c4075c32db1d5b67305ff274fc57ee83806241"
+  },
+  "originalManifest": {
+    "path": "docs/evidence/x01/enable-binding-caller-manifest.json",
+    "bytes": 11441,
+    "sha256": "9046ad8b0388e08765a43ef94539e73933aefc5f71fb2ca3a92ec38f69e6f136"
+  },
+  "dependencyReceipt": {
+    "path": "docs/evidence/x01/enable-binding-dependency-view-result.json",
+    "bytes": 5956,
+    "sha256": "d54ac27a348a4bc4343ddf2a218751f7d3ddee25d45cb7f37edc0271e657fbf9"
+  },
+  "outputs": [
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-a-run-r2/admission.json",
+      "bytes": 1624,
+      "sha256": "df92c48995ab2c6b90f9d9af5613ebec3d38e9c6d65dd834e8a4db248c05b2dc",
+      "dev": 16777234,
+      "ino": 123370825,
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-a-run-r2/fixture.json",
+      "bytes": 3105,
+      "sha256": "819b7ceff801c5bf2524ece9fd7507e0337859e7c8cf9fa84b20823144332ba2",
+      "dev": 16777234,
+      "ino": 123371057,
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-a-run-r2/preflight.stdout",
+      "bytes": 299,
+      "sha256": "bf2cef233f45d4519466e1b8825fd243661b78d3e849a19856ab54ec972c3cd5",
+      "dev": 16777234,
+      "ino": 123370826,
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-a-run-r2/receipt.json",
+      "bytes": 3214,
+      "sha256": "02c8781be5ab53880a71733c1ad3fe638305c74c5acf3ac37d1b8dd6fbad672a",
+      "dev": 16777234,
+      "ino": 123371060,
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-a-run-r2/reservation.json",
+      "bytes": 166,
+      "sha256": "187a9c3ad178afec45103ce8a5d0aa231b8d9c81a28681a8cdcc16046597bc4b",
+      "dev": 16777234,
+      "ino": 123370824,
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-a-run-r2/strict-launch.json",
+      "bytes": 358,
+      "sha256": "017585e205d39ef6270a206f3fef70acde8f687fdd297cda4f2b83702f8d4930",
+      "dev": 16777234,
+      "ino": 123370831,
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-a-run-r2/strict.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "dev": 16777234,
+      "ino": 123370836,
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-a-run-r2/tests-launch.json",
+      "bytes": 497,
+      "sha256": "1196d6099d3babac34aa51515c5e1acc9b336800b5133e3a29881048129b423f",
+      "dev": 16777234,
+      "ino": 123370837,
+      "mode": "0o600"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-stage-a-run-r2/tests.stdout",
+      "bytes": 6038,
+      "sha256": "8d709fa6073ce7053385bae615c3be07aa0040c7dd82aa5eec53e1b7903f80d6",
+      "dev": 16777234,
+      "ino": 123371059,
+      "mode": "0o600"
+    }
+  ],
+  "externalTool": {
+    "path": "docs/evidence/x01/enable-binding-stage-a-tool-r2.json",
+    "bytes": 1260,
+    "sha256": "1776035f26b30ae9f5fd3ebb80fc0fd739f03751c6fa9d8158ad7cb3eb5f7cf9"
+  },
+  "actual": {
+    "startedAt": "2026-10-07T03:19:54.282027+00:00",
+    "strictExit": 0,
+    "selected": 17,
+    "passed": 17,
+    "failed": 0,
+    "pending": 0,
+    "selectedFiles": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/packages/contracts/src/plugin-runtime.test.ts",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/runner/src/plugins/execution.test.ts"
+    ],
+    "tarChildren": 11,
+    "tarAllClosedExit0": true,
+    "supervisedCommandCount": 3,
+    "supervisedFinalAbsent": true,
+    "supervisedRawComplete": true,
+    "unknown": false,
+    "failure": null,
+    "cli": {
+      "receiptWritten": true,
+      "failure": null,
+      "unknown": false,
+      "rawDiskBytes": 15301,
+      "rawLimitBytes": 524288,
+      "elapsedBeforeCliMs": 2346.2403340963647,
+      "observedUnretainedBytes": 0,
+      "rawAccountingComplete": true,
+      "temporaryRemoved": true,
+      "selected": 17,
+      "passed": 17,
+      "wholeToolExitRequiresExternalObservation": true,
+      "knownChargeWithCliReserve": 23493,
+      "withinKnownRawBudget": true
+    },
+    "PG": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "install": 0,
+    "retries": 0
+  },
+  "cleanup": {
+    "fixtureConfirmed": true,
+    "retainedFixture": [],
+    "postRunObservationAt": "2026-10-07T03:21:18.236566+00:00",
+    "method": "Exact lstat only after reported normal close; no scan of other roots or PIDs",
+    "roots": [
+      {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-local-jk_m1_t2",
+        "expectedDev": 16777234,
+        "expectedIno": 123370828,
+        "absent": true
+      },
+      {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-local-jk_m1_t2/tmp/flow-x01-execution-mvw3TL",
+        "expectedDev": 16777234,
+        "expectedIno": 123370863,
+        "absent": true
+      },
+      {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-local-jk_m1_t2/tmp/flow-x01-execution-dHmMSY",
+        "expectedDev": 16777234,
+        "expectedIno": 123370881,
+        "absent": true
+      },
+      {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-local-jk_m1_t2/tmp/flow-x01-execution-hfkNyL",
+        "expectedDev": 16777234,
+        "expectedIno": 123370898,
+        "absent": true
+      },
+      {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-local-jk_m1_t2/tmp/flow-x01-execution-TmRJyv",
+        "expectedDev": 16777234,
+        "expectedIno": 123370915,
+        "absent": true
+      },
+      {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-local-jk_m1_t2/tmp/flow-x01-execution-t10GyO",
+        "expectedDev": 16777234,
+        "expectedIno": 123370934,
+        "absent": true
+      },
+      {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-local-jk_m1_t2/tmp/flow-x01-execution-PzsrlO",
+        "expectedDev": 16777234,
+        "expectedIno": 123370951,
+        "absent": true
+      },
+      {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-local-jk_m1_t2/tmp/flow-x01-execution-iSewOv",
+        "expectedDev": 16777234,
+        "expectedIno": 123370968,
+        "absent": true
+      },
+      {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-local-jk_m1_t2/tmp/flow-x01-execution-1BJKK1",
+        "expectedDev": 16777234,
+        "expectedIno": 123370985,
+        "absent": true
+      },
+      {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-local-jk_m1_t2/tmp/flow-x01-execution-ESCKeo",
+        "expectedDev": 16777234,
+        "expectedIno": 123371003,
+        "absent": true
+      },
+      {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-local-jk_m1_t2/tmp/flow-x01-execution-xlmu6r",
+        "expectedDev": 16777234,
+        "expectedIno": 123371021,
+        "absent": true
+      },
+      {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-local-jk_m1_t2/tmp/flow-x01-execution-rjrsqu",
+        "expectedDev": 16777234,
+        "expectedIno": 123371039,
+        "absent": true
+      }
+    ],
+    "allExactAbsent": true,
+    "temporaryPeak": "UNKNOWN; end samples only"
+  },
+  "time": {
+    "callerElapsedBeforeCliMs": 2346.2403340963647,
+    "externalTimeRealSeconds": 2.37,
+    "externalTimeResolutionSeconds": 0.01,
+    "independentUTCBracketConservativeUpperSeconds": 10,
+    "toolWaitIsWholeWall": false
+  },
+  "accounting": {
+    "rawDiskBytes": 15301,
+    "toolRecordBytes": 1260,
+    "selfBytes": 9299,
+    "externalAdmissionCopyBytes": 1624,
+    "knownNewEvidenceBytesIncludingSelfAndExternalAdmission": 27484,
+    "limitBytes": 524288,
+    "knownNewEvidenceWithinLimit": true,
+    "sourceAndMetadataBudgetBytes": 1048576
+  },
+  "functionalResult": "PASS_MODULE_STRICT_AND_17_PRODUCT_CASES",
+  "resultReview": "PENDING",
+  "boundaries": [
+    "Product/034/shared sources unchanged from ade4; no new product implementation in this segment.",
+    "Stage A covers 6 contract cases and 11 actual self-owned package import/invoke cases, not a pure fake run.",
+    "The current prefix assertion does not separately prove boolean/integer/enum strings reached the package.",
+    "No center PG, browser, production runRunner tool binding or semver bundle execution was selected.",
+    "Old Stage A HOLD and its consumed run/manifest stay unchanged; seven Report cases and old65 were not repeated.",
+    "Temporary samples are not a hard peak bound."
+  ]
+}
