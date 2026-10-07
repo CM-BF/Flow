@@ -1,0 +1,75 @@
+{
+  "at": "2026-10-07T04:35:36.032Z",
+  "parserSource": "main e29e5d82d3d1a3f58fe6fac909fae52e83f7bc49",
+  "errors": [],
+  "human": {
+    "complete": true,
+    "missing": []
+  },
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "unknown",
+      "at": null,
+      "record": "2026-10-07T04:35:12.794806+00:00"
+    },
+    "source": {
+      "state": "declared",
+      "record": "开工UNKNOWN：原首次开工缺可信记录，不从commit/mtime/claim倒推。完成2026-10-07T04:35:12.794806+00:00：本owner核齐Lead主线02c880与04:32:08静态资产发布回执、exact8一致后记录的实际收口时点；不冒原用户tab刷新。领取释放另以D04账本为准。"
+    },
+    "issues": [
+      "任务开工时间未记录",
+      "任务完成时间不是唯一有效的 ISO UTC 时间"
+    ],
+    "waiting": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED",
+    "target": "591f5fe96d85c3497f33f1b7f0fb99d955a984dc"
+  },
+  "implementation": {
+    "target": "591f5fe96d85c3497f33f1b7f0fb99d955a984dc",
+    "scopes": [
+      "apps/execution-dashboard/public/architecture-data.js",
+      "apps/execution-dashboard/public/architecture.js",
+      "apps/execution-dashboard/test/architecture.test.mjs",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py.diff",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/scenario.mjs",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs",
+      "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs.diff"
+    ],
+    "errors": []
+  },
+  "todo": [
+    {
+      "id": "D06-09",
+      "state": "completed",
+      "owner": "d01_owner",
+      "evidence": "[授权与领取](../../docs/evidence/d06/snapshot-0da/authorization.json)"
+    },
+    {
+      "id": "D06-10",
+      "state": "completed",
+      "owner": "d01_owner",
+      "evidence": "[候选与来源](../../docs/evidence/d06/snapshot-0da/README.md)；source 5124e6cea1edd3437f765ff67aa13386ae845bfa"
+    },
+    {
+      "id": "D06-11",
+      "state": "completed",
+      "owner": "d01_owner",
+      "evidence": "[root与peer限定源码批准](../../docs/evidence/d06/snapshot-0da/review-intake.json)；[22direct实际通过、页面未验](../../docs/evidence/d06/snapshot-0da/validation.md)"
+    },
+    {
+      "id": "D06-12",
+      "state": "completed",
+      "owner": "d01_owner",
+      "evidence": "[main/资产发布与exact8核齐](../../docs/evidence/d06/snapshot-0da/main-closeout-20261007/main-readproof.json)；本轮交付收口后停写，CAS释放回执由管理中央保留"
+    }
+  ]
+}

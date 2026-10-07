@@ -9,4 +9,6 @@ Reviewer: root independent; 0 blocking; source/data + targeted direct + actual b
 
 证据链：5124固定策展源码与22direct；a28e仅renderer真实SVG bbox修复；[第二browser实际5/5独审](../../docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/root-actual-review.json)核20观察/200edge fit、20PNG/宽窄双主题、键盘和固定source下钻、实际outer0及完整owned清理。旧首轮失败原件与6733历史耗时保留；累计15613/余74387ms不是重跑许可。
 
-[唯一main intake](../../docs/evidence/d06/snapshot-0da/main-intake.json)供原Lead受控接收，main/真实4320部署尚未完成。本次final metadata只绑定已审组合；运行HEAD72167与最终ownerHEAD分列，不追改原gate。原[source审查全文](../../docs/evidence/d06/snapshot-0da/renderer-review-before-composition.txt)作为历史保存。
+[唯一main intake](../../docs/evidence/d06/snapshot-0da/main-intake.json)供原Lead受控接收，main02c880及Lead04:32:08静态资产发布已核齐，见[本轮收口核验](../../docs/evidence/d06/snapshot-0da/main-closeout-20261007/main-readproof.json)。本次final metadata只绑定已审组合；运行HEAD72167与最终ownerHEAD分列，不追改原gate。原[source审查全文](../../docs/evidence/d06/snapshot-0da/renderer-review-before-composition.txt)作为历史保存。
+
+验收边界：5/5证明新几何、局部横向滚动、键盘和来源下钻；默认390缩放后的文本阅读字号尚有后继验收缺口，不列为本轮视觉可读PASS，不撤销当前固定组合的限定批准。

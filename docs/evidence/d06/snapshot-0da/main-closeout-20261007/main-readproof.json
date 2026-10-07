@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-07T04:35:12.794806+00:00",
+  "task": "D06",
+  "sourceTarget": "591f5fe96d85c3497f33f1b7f0fb99d955a984dc",
+  "base": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+  "integratedMain": "02c8802800e28439bc5bf69c86f2c7705aa9764e",
+  "observedMain": "e29e5d82d3d1a3f58fe6fac909fae52e83f7bc49",
+  "ownerBeforeCloseout": "babd780e7e5d08b70d12ae697711c9bcda035588",
+  "exactScope": [
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "bytes": 44076,
+      "sha256": "7ccc2ca80760a4050f09a2d7bdbbaf04884395ff945ae0cda887d9d6a1e12d78",
+      "targetMainCurrentOwnerEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.js",
+      "bytes": 8424,
+      "sha256": "583e36f24949c5fa7b85f8507c728cd9c447a6da48402ba0f2f2a7c04d581a60",
+      "targetMainCurrentOwnerEqual": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture.test.mjs",
+      "bytes": 32645,
+      "sha256": "a8650e9c391efdf5dfa60defbe421bd0789138a62fc76c34252e0b5d2ea27149",
+      "targetMainCurrentOwnerEqual": true
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py",
+      "bytes": 7771,
+      "sha256": "351701c89f53f1d94d7008d3b731f746dffa037d4a9cfca46fce792deb451deb",
+      "targetMainCurrentOwnerEqual": true
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py.diff",
+      "bytes": 7769,
+      "sha256": "f8f8f0909c154f86fecfa1e437e842e6af9f214fe94ebd2df235ed97f51c63d0",
+      "targetMainCurrentOwnerEqual": true
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/scenario.mjs",
+      "bytes": 10488,
+      "sha256": "1cc45f2b391070a855596956214b0d88ea3935f5054da767d410d191adc3be5c",
+      "targetMainCurrentOwnerEqual": true
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs",
+      "bytes": 4553,
+      "sha256": "17c0412af26776733dc5f7b84924f9673ee73ce842b7e754d662d2ca7f2347d1",
+      "targetMainCurrentOwnerEqual": true
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs.diff",
+      "bytes": 3436,
+      "sha256": "6ce1c206465736eb560ae0646058f457a9cb6b222119caebefae1a986b0a1e7b",
+      "targetMainCurrentOwnerEqual": true
+    }
+  ],
+  "errors": [],
+  "deployment": {
+    "source": "lead-serving-assets.json",
+    "at": "2026-10-07T04:32:08.460355+00:00",
+    "method": "Lead original two static GET receipts, no new request",
+    "assetHashesMatch": true
+  },
+  "limitations": [
+    "Original22direct/5browser accepted evidence reused; no new product checks.",
+    "Geometry/keyboard approval does not prove default390 readable text.",
+    "Narrow-reading follow-up remains in existing D01/REQ39; not implemented here.",
+    "Task start UNKNOWN; completion is this actual owner closeout observation; release occurs only after clean normal push."
+  ]
+}
