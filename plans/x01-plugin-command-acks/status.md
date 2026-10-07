@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T10:52:01.309Z |
+| 最近更新时间 | 2026-10-07T10:58:16.712Z |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
@@ -27,7 +27,7 @@
 | 下一可用交付 | 将已审客户端小片接入主线，供现有CLI和后续管理界面使用 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Claim | e81d88b7-8fdb-42b5-b9a1-364ad0fd9bdb v1 ACTIVE/6literal |
+| Claim | e81d88b7-8fdb-42b5-b9a1-364ad0fd9bdb v2 ACTIVE/4literal |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -52,6 +52,8 @@
 
 [task-intake.json](../../docs/evidence/x01-plugin-command-acks/task-intake.json)为唯一登记输入，等待原Lead登记/正常聚合；未写registry或生成JSON。原CLI b51d9ffa main b675收口已完成，旧部署TODO错误原件保留。其后独立真实进程旅程由父X01封存，不能替代本片configure/set-grants ACK验收。
 
-产品两client叶当前仍由本claim持有，已固定停止实现改动，等待主线接收及可能的合法review修复；后继要写须本owner明确STOP→当前version amend移出→新claim成功，不能由local CLOSED推断可写。架构影响为现内部ACK module校验扩展、公开签名不变；main后由Mika协调D06登记target/owner，不冒图已更新。
+产品两client叶已于10:57明确STOP并从本claim v2移出，交新候选consumer claim3f0e3404 v1；本task仅保留其余4scope处理接收。原ae1482及intake固定不变，不在本树恢复产品写入。架构影响为现内部ACK module校验扩展、公开签名不变；main后由Mika协调D06登记target/owner，不冒图已更新。
 
 本段与交付clean-code复核：使用本地find-skills/codebase-design/clean-code（固定sickn33 bdacd76）；职责内聚、复用合同schema和唯一transport、错误身份/历史replay/冻结输入清楚，无第二canonical或通用框架。无剩余本片P1/P2。提交前parseStatus仅核声明可解析，不代表dashboard已登记/部署；历史优先级与时间格式问题已按模板修正，不改原证据时间。
+
+2026-10-07T10:58:16.712Z 明确STOP并原子amend交回后继候选consumer所需产品路径，见host-consumer-stop.json与host-consumer-amend.json；旧固定产品/原件/intake不变。本树不再修改已移出路径，保留本task元数据与测试scope处理原主线接收，实际占用以当前ledger为准。
