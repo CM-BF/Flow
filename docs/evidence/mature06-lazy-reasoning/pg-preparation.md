@@ -1,6 +1,6 @@
 # Real HTTP/PG preparation — NOT_OPEN
 
-Source fixture f1fce60f has two cases; core60db was independently approved07:47. Reuse fixedbase9816 ContinuityCenterFixture/createServer plus OPS14 supervisor. No new DB lifecycle or supervisor. pg-input.json binds244 current files/31SQL and19 installed tool/package inputs; no @flow donor source. Original pg-source-closure.json remains collection-time history; current exact rows are in pg-input.
+Source fixture f1fce60f has two cases; core60db was independently approved07:47. Reuse fixedbase9816 ContinuityCenterFixture/createServer plus OPS14 supervisor. No new DB lifecycle or supervisor. pg-input-v2.json binds244 current files/31SQL and19 installed tool/package inputs; no @flow donor source. Original pg-source-closure.json remains collection-time history; current exact rows are in pg-input.
 
 Actual local: pg-local.json records focused strict exit0 and Vitest list exit0/two names/zero hooks, raw303B; two finalabsent/mergedEOF/same-inode TMP cleanup. This is not test pass. Core14 and fix4 were not rerun. AST-only syntax read of new Python is not runtime validation.
 
@@ -8,4 +8,6 @@ Candidate single namespace MATURE06-LAZY01-PG-20261007-R1:90s whole-tool limit i
 
 InternalChecksPassed is pre-final-persistence only. Actual external tool exit/end UTC/wall must be recorded separately before declaring90s whole-window success; unknown process/stdio/fixture retains ownTMP and exact DB facts. Fixture exact OID/marker and current zero connections govern ordinary DROP. No forced DROP, provider/native or existing personal service use.
 
-Only after review and root explicit OPEN: privately source /tmp/flow-coordination.env, set FLOW_COORDINATION_REPO to originalFlow, map FLOW_COORDINATION_DATABASE_URL into FLOW_C02_PG_ADMIN_URL without printing; export FLOW_LAZY_PG_OPEN=1, FLOW_LAZY_WINDOW above, FLOW_LAZY_EXECUTION_HEAD to the exact named clean execution commit, FLOW_LAZY_INPUT_SHA to fixed pg-input SHA. Invoke /opt/homebrew/bin/python3.13 -B docs/evidence/mature06-lazy-reasoning/execute-pg.py under the already-bounded tool call. No moving-HEAD selection; unknown gate consumes no child and is reported. Public client/Web remain excluded.
+Only after review and root explicit OPEN: privately source /tmp/flow-coordination.env, set FLOW_COORDINATION_REPO to originalFlow, map FLOW_COORDINATION_DATABASE_URL into FLOW_C02_PG_ADMIN_URL without printing; export FLOW_LAZY_PG_OPEN=1, FLOW_LAZY_WINDOW above, FLOW_LAZY_EXECUTION_HEAD to the exact named clean execution commit, FLOW_LAZY_INPUT_SHA to fixed pg-input-v2 SHA. Invoke /opt/homebrew/bin/python3.13 -B docs/evidence/mature06-lazy-reasoning/execute-pg.py under the already-bounded tool call. No moving-HEAD selection; unknown gate consumes no child and is reported. Public client/Web remain excluded.
+
+Original fcc/7f4 remains a CHANGES_REQUESTED history packet. Current confirmation/deadline fix is independently review-pending; no actual admission or planned output has been created.

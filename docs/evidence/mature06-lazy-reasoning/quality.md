@@ -23,3 +23,7 @@ Pending: independent source/local review, actual HTTP zero-default-body evidence
 ## PG准备安全点 2026-10-07T07:55:34.749366+00:00
 复用本地find-skills/codebase-design/clean-code固定版本：现有C02 fixture唯一管理专库/OID-marker/普通DROP；OPS14唯一管理child/EOF/group；薄caller只绑定本次input/deadline/证据，same-PID checkpoint后exec。未复制旧supervisor、无新权限/恢复FSM。core60db独审07:47通过。新fixturetypes0、Vitest list精确2项/0hooks；两child真实闭合/同inodeTMP删除，raw303B。此后只有Python AST解析（不import/执行caller），没有第三工程child。
 支持源159项700820B及固定base execute-pg-once.py只读helper仍总<4MiB；root批准可写512KiB内。TMP只闭合采样非峰值，DB/WAL是物理余量预留非硬quota。pre-persistence内部计时不代externaltool最终完成。尚未实际HTTP/PG，caller需独立静态审查，0provider/native。
+
+## Caller P2窄修 2026-10-07T08:02:45.955507+00:00
+沿同fixed技能方法恢复原C02已有严格receipt语义，不新增supervisor：fixture事实校验与TMP清理授权分离，未知不删除。same-PID checkpoint对OPS childPID/PGID；fixture reservation PID是Vitest worker，单独正整数而不错误等同父PID。数据库随机name/marker/OID跨预约/CREATEACK/final一致；cleanup各布尔、0连接、no retained/primary/errors/roots，HTTP与结束DB样本有界。所有清理阶段共享原90s起点；检查后、删除紧前再次留3s，不能以事后elapsed修饰迟启。
+本段07:59:19开始，唯一Python3.13 -B child实际7/7/138ms/1104B，0PG/HTTP，末ownedabsent/mergedEOF，精确TMP同inode64B闭合后删除；active峰值/外部whole未知。原PG types/list和14/4未重跑。原fcc/7f4与pg-input.json历史原件保留，v2 input仅wrapper row变更。预算不扩，local已直交X01。registry由OriginalLead登记，owner仅status。

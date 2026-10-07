@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T07:55:34.749366+00:00 |
+| 最近更新 | 2026-10-07T08:02:45.955507+00:00 |
 | 任务开工时间 | 2026-10-07T07:19:18Z |
 | 分支交付时间 | 2026-10-07T07:35:58.005114+00:00 |
 | 独立审查时间 | 2026-10-07T07:47:03Z（core限定复审） |
@@ -25,9 +25,9 @@
 | 本片段交付阶段 | review |
 | 当前产出 | 共享读取核心已支持默认只收正文、展开后独立增量读取推理；可选推理不会拖住正文刷新的修复已独审通过；尚未接公开客户端和界面。 |
 | 下一可用交付 | 对固定专库入口完成审查后，验证真实HTTP默认不传推理正文及游标/身份；再接公开客户端。 |
-| 当前阻塞 | NONE（公开客户端由CHAT05P02持有，后继接线待正式交接；本片审查可独立进行） |
+| 当前阻塞 | 真实HTTP入口两处清理门禁已修，等待窄复审；公开客户端仍待CHAT05P02正式交接。 |
 | 需用户决定 | NONE |
-| Review | 60db/5e8生命周期P2 CLOSED，0P1/P2；新PG准备单独待审 |
+| Review | 60db/5e8生命周期P2 CLOSED，0P1/P2；新PG准备独审2P2，窄修7反例通过待复审 |
 | 检查 | 原14/14+strict0保留；P2新2red→4定向pass/strict0，0PG/HTTP/browser/provider/native/install |
 | main | NOT_INTEGRATED |
 | 实现目标 | 60db06152a21c44d73bcc46be3cb785b4aa438b2 |
@@ -43,6 +43,10 @@
 | LAZY01-04 | in-progress | status_read | PG fixture types0/collect2，实际PG NOT_OPEN；client/UI未接 |
 | LAZY01-05 | pending | status_read | NOT_INTEGRATED |
 
-唯一交审入口 docs/evidence/mature06-lazy-reasoning/review-ready.md。Dashboard来源为本WT/branch/status，actual HEAD/dirty从Git读取；PENDING_REGISTRATION/PENDING_SYNC，root已路由9ef8父链接但未读live，不猜已登记。原setup parseStatus通过只属于历史。时间与四child选中数/真实exit/EOF/精确TMP记录在local.json；0当前actual/待launch。旧S01/P08与未知资源未动。
+唯一交审入口 docs/evidence/mature06-lazy-reasoning/review-ready.md。Dashboard来源为本WT/branch/status，actual HEAD/dirty从Git读取；等待聚合器登记展示 / PENDING_REGISTRATION/PENDING_SYNC，root已路由9ef8父链接但未读live，不猜已登记。原setup parseStatus通过只属于历史。时间与四child选中数/真实exit/EOF/精确TMP记录在local.json；0当前actual/待launch。旧S01/P08与未知资源未动。
 
 P2修复独审见lifecycle-review-receipt.json。当前PG交审入口docs/evidence/mature06-lazy-reasoning/pg-review-ready.md：复用fixedbase既有ContinuityCenterFixture/OPS14与本树公开API；2case定向types0+list2仅证明类型和收集，0hook/PG/HTTP。90s候选/14连接/2任务/256HTTP/32MiBTMP与DB-WAL128MiB预留保持未知峰值语义，实际未OPEN。244固定输入/31SQL；159只读缺项700820B及额外既有helper固定base，不覆盖当前源码。唯一本段local2child已闭合并交回X01；无actual holder。公开client与Web依赖未解除，main仍NOT_INTEGRATED。
+
+PG窄修 2026-10-07T08:02:45.955507+00:00：原fcc/7f4两P2保留，独立fixtureReceiptConfirmed仅在child/window/head、数据库reservation/createACK/OID/marker与完整cleanup、HTTP256/DB结束样本64MiB及两实际case结果验证后成立；同origin90s在receipt/sample/delete/final-persist开始前逐阶段留余量。未知KEEP，不改原预算。pg-fix-local.json唯一pure7/7、1104B、138ms；0PG且未重跑旧types/list/core14/fix4。新输入pg-input-v2.json仅wrapper binding变化，原pg-input/manifest原字节保留。canonical下一审查入口pg-fix-review-ready.md。
+
+主线只读观察2026-10-07T07:58:24Z：main5b0bef86与base9816的六core同字节；可控intake为60db最终九source/test leaf，不merge分支历史，PG fixture/caller独立验收范围。client/index仍CHAT05P02，client assistant-stream.test仍C02；Web App仍RECOVERY01，host/observation所需端口/同代协商/累计正文预算待合法scope。Original Lead登记映射：MATURE06-LAZY01 / lazy-reasoning-reads / codex/lazy-reasoning-reads / plans/mature06-lazy-reasoning / docs/evidence/mature06-lazy-reasoning / parent WPF-MATURE-06 / co-lead mika。root已核main registry未登记；不写共享registry。

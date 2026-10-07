@@ -1,0 +1,14 @@
+{
+  "at": "2026-10-07T07:58:24Z",
+  "reviewer": "chatui01_owner/gpt-6-astra",
+  "source": "fcc1fdf2b6a84a6527d75ba7e7c2f78ac1f65942",
+  "packet": "7f4aca4802b35177432875103cfaf52145e13ddc",
+  "verdict": "CHANGES_REQUESTED",
+  "P1": 0,
+  "P2": 2,
+  "findings": [
+    "Loaded foreign/partial fixture could authorize TMP deletion despite binding failure; require independent confirmation including child/database/cleanup facts.",
+    "Postprocessing lacked shared monotonic phase gates; exhausted reserve must prevent new reads/sample/delete and retain root."
+  ],
+  "other": "Two API cases no other finding;12review/244runtime/19external all bound;types0/list2 not passes;303Braw and2closures correct."
+}
