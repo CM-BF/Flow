@@ -1,0 +1,20 @@
+{
+  "requestId": "afea4015-aaa9-49bd-b808-5a6e95401a12",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "workspace_panels_owner"
+  },
+  "taskId": "WPF-I01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+  "branch": "codex/web-plugin-runtime-app",
+  "scope": [
+    "apps/web/src/App.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/plugin-integration/react.tsx",
+    "apps/web/test/plugin-integration.test.ts",
+    "apps/web/test/plugin-management-integration.browser.ts",
+    "apps/web/test/plugin-management-integration.fixture.ts",
+    "plans/wpf-i01-plugin-integration",
+    "docs/evidence/wpf-i01"
+  ]
+}

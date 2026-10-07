@@ -1,0 +1,73 @@
+{
+  "fixedMain": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "msgSources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "mainBlob": "1cc0057ec2188beacd5632bd358271ed38a3422f",
+      "matchesReviewedMsg": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "mainBlob": "fea4381f15dd9e7a7e74511efe9dd306a2590087",
+      "matchesReviewedMsg": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "mainBlob": "6a430efb4c2d48dfffad3a3a50cf69a288d4cc5e",
+      "matchesReviewedMsg": true
+    },
+    {
+      "path": "apps/web/test/plugin-integration.test.ts",
+      "mainBlob": "809444943268cb37cd9c17b45427d88892ca4304",
+      "matchesReviewedMsg": true
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.browser.ts",
+      "mainBlob": "054b7bd5a4f4f5d16d6387dad9d46b8a67a21acc",
+      "matchesReviewedMsg": true
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.fixture.ts",
+      "mainBlob": "c3f6fb56de13033ef7650726c94feecfcd4ccd1f",
+      "matchesReviewedMsg": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "mainBlob": "5bf5e329c4b8c726622e998271857aad0ac828ce",
+      "matchesReviewedMsg": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "mainBlob": "cc15de4054c82c8f33218635b64a412a50c0bf92",
+      "matchesReviewedMsg": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "mainBlob": "ef436e8a9d1eec5a96c27f229cf170c8d2c19474",
+      "matchesReviewedMsg": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "mainBlob": "863d33df7ac5b8a434102fbbadabe096b4233db9",
+      "matchesReviewedMsg": true
+    }
+  ],
+  "reusedManagement": [
+    {
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "mainBlob": "99ac2cd9f08cbca5ac269cdf3766eaf9c3e3581e",
+      "matchesPriorSeam": true
+    },
+    {
+      "path": "apps/web/src/plugin-management/runtime-command.ts",
+      "mainBlob": "19cb2929daee913cb69b6138d9902ee6b9853cc4",
+      "matchesPriorSeam": true
+    },
+    {
+      "path": "apps/web/src/plugin-management/use-read.ts",
+      "mainBlob": "fb195ddc086b607025d53b043a64c0a0bdd94642",
+      "matchesPriorSeam": true
+    }
+  ],
+  "contentInputsAdded": 0
+}

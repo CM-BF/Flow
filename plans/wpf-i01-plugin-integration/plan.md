@@ -1,4 +1,32 @@
-# WPF-I01 主 App 插件挂载
+# WPF-I01 主 App 插件挂载与运行时管理接线
+
+当前原任务后继：in-progress；固定base 3c9345df4aec85a37e8a2a155e079db260d515b1。所属[WPF-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/plan.md)，沿原X01-06/WPF001-05职责；不新增大task。唯一owner workspace_panels_owner / gpt-6-astra，codex/web-plugin-runtime-app。本段真实供给开始2026-10-07T15:11:58.585Z；原task首次实际开工缺可靠事件，UNKNOWN不从旧03:00创建时间或take猜测。
+
+## 当前接口与验收
+
+把已main运行时管理模块接入真实App Settings/Cookie连接。一个controller归AppPluginSession私有authority；Settings折叠/关闭不丢unknown原key/body。实时namespace/principal/generation/active变化撤权，旧请求不能写新会话；本地host启停与中心desired状态分开。MSG的App唯一C、同步freeze/opaqueownership、held A/current B共享projection、恢复/焦点保持，无第二store/FSM/HTTP系统。固定设计见[增量](../../docs/evidence/wpf-i01/runtime-app/report.md)。
+
+当前exact8见[新take](../../docs/evidence/wpf-i01/runtime-app/receipt.json)。旧I01记录保[latest历史](../../docs/evidence/wpf-i01/history/legacy-f4335/status.md)，原通过不外推新接线。真实模式不可用旧Bearer FixtureWorkspace当Cookie边界通过；publicclient请求与受控响应须明确，actor/运行资源另在固定方案中量化。
+
+## TODO
+
+- [x] **WPF-I01-01** 原首次供给/领取完成，历史证据保留。
+- [x] **WPF-I01-02** 原P01 host/slots挂载完成，历史target92a保留。
+- [x] **WPF-I01-03** 原局部/浏览器/真实协议验证完成，旧结论不继承。
+- [x] **WPF-I01-04** 原固定target独审/main收口完成，f4335历史保留。
+- [ ] **WPF-I01-05** 既有centerRuntime接入App/session/Settings，live epoch失效与完整草稿保护。
+- [ ] **WPF-I01-06** 直接消费者回归及真实Conversation/Cookie mounted验收，受控故障/完整清理分别记录。
+- [ ] **WPF-I01-07** 新固定组合独立review与合法main接收，原发布组合不暗换。
+
+## 当前运行边界
+
+经理SVC09A为唯一NEXT/独占；本段仅source/取权metadata，禁止工程child/PG/Chrome/build/安装。source供给221固定文件2436297B+3历史31374B，≤8MiB，一次计入组合门槛；未来fresh至少14069989376B或当时更高，不是本次runtime许可。必要local到入口就绪后报经理统一授权，不借MSG/Recovery已闭额度。
+
+## 历史材料
+
+以下保原首批计划、TODO和当时未接收措辞，不作本后继当前状态；唯一当前进度见同目录status。
+
+# 历史 WPF-I01 首批 App 插件挂载
 
 创建：2026-10-06 03:00 UTC；更新：03:30 UTC。状态：completed（本 owner 实现、review 与交付完成；main 集成仍由原 Lead 执行）。唯一 owner：workspace_panels_owner / gpt-6-astra ultra。
 

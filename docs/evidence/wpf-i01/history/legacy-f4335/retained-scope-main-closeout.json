@@ -1,0 +1,365 @@
+{
+  "observedAt": "2026-10-06T06:45:27Z",
+  "fixedMain": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+  "implementation": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+  "headBeforeMetadata": "b5844442699733558a152c12392ea78f26c393a4",
+  "dirtyBeforeMetadata": false,
+  "targetIsAncestor": true,
+  "retainedImplementationPaths": [
+    "apps/web/src/TaskThread.tsx",
+    "apps/web/src/components/workspace/WorkspacePanels.tsx",
+    "apps/web/src/plugin-integration/slot-fixture.tsx",
+    "apps/web/src/plugin-integration/task-actions.ts",
+    "apps/web/src/themes.ts",
+    "apps/web/test/plugin-integration.browser.ts",
+    "apps/web/test/plugin-integration.config.ts",
+    "apps/web/test/plugin-integration.test.ts"
+  ],
+  "retainedPathsMatch": true,
+  "historicalFullScopeMayDiffer": "Successor tasks own transferred files; this does not reapprove their changes.",
+  "claimBeforeRelease": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/TaskThread.tsx",
+      "apps/web/src/components/workspace/WorkspacePanels.tsx",
+      "apps/web/src/plugin-integration/slot-fixture.tsx",
+      "apps/web/src/plugin-integration/task-actions.ts",
+      "apps/web/src/themes.ts",
+      "apps/web/test/plugin-integration.browser.ts",
+      "apps/web/test/plugin-integration.config.ts",
+      "apps/web/test/plugin-integration.test.ts",
+      "docs/evidence/wpf-i01",
+      "plans/wpf-i01-plugin-integration"
+    ],
+    "state": "active",
+    "branch": "codex/web-plugin-integration",
+    "origin": "new",
+    "taskId": "WPF-I01",
+    "worker": "workspace_panels_owner",
+    "claimId": "b6666c29-ebc5-47b2-b754-55b62687fd00",
+    "version": 3,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration",
+    "createdAt": "2026-10-06T02:58:06.016Z",
+    "updatedAt": "2026-10-06T04:22:12.797Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "dashboard": {
+    "sourcePath": "/tmp/flow-wpf-deployed77-snapshot.json",
+    "sourceSha256": "68b34bf76dcd26c729fcd939fd8f22ecfd74627df58d5f00eda5988e2f93f033",
+    "generatedAt": "2026-10-06T06:36:34.965Z",
+    "task": {
+      "id": "WPF-I01",
+      "title": "Web 插件集成",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration",
+      "branch": "codex/web-plugin-integration",
+      "planDir": "plans/wpf-i01-plugin-integration",
+      "evidenceDir": "docs/evidence/wpf-i01",
+      "source": {
+        "mode": "live",
+        "modifiedAt": "2026-10-06T03:30:45.445Z",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration/plans/wpf-i01-plugin-integration/status.md",
+        "syncedAt": "2026-10-06T06:36:34.965Z",
+        "stale": false,
+        "ageHours": 3.1097125
+      },
+      "git": {
+        "available": true,
+        "branch": "codex/web-plugin-integration",
+        "head": "b5844442699733558a152c12392ea78f26c393a4",
+        "dirty": false,
+        "changedFiles": 0,
+        "observedAt": "2026-10-06T06:36:35.856Z"
+      },
+      "status": {
+        "human": {
+          "delivery": {
+            "state": "unknown",
+            "source": "legacy"
+          },
+          "phase": "M2",
+          "priority": 2,
+          "output": "固定实现 92a786abb9f7ef16e15482ac00b98ff860ecc47f 获 root 独立 APPROVED，两个进行中发现 CLOSED；作者交付完成，实现停止写入",
+          "next": "原 Lead 集成队列；等待正式 scope 转交后再承接 CHAT frontend，不自行开写",
+          "blocker": {
+            "state": "none",
+            "text": ""
+          },
+          "decision": {
+            "state": "none",
+            "text": ""
+          },
+          "missing": [],
+          "complete": true
+        },
+        "implementation": {
+          "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+          "scopes": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/TaskThread.tsx",
+            "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+            "apps/web/src/components/workspace/WorkspacePanels.tsx",
+            "apps/web/src/plugin-integration",
+            "apps/web/src/themes.ts",
+            "apps/web/test/plugin-integration.browser.ts",
+            "apps/web/test/plugin-integration.config.ts",
+            "apps/web/test/plugin-integration.test.ts"
+          ],
+          "errors": []
+        },
+        "taskId": "WPF-I01",
+        "owner": "workspace_panels_owner / gpt-6-astra ultra",
+        "branch": "codex/web-plugin-integration",
+        "branchState": "completed；实现、作者检查和独立 review 均完成，已交原 Lead 集成；main 未集成",
+        "updatedAt": "2026-10-06T03:30:00.000Z",
+        "updatedRecord": "2026-10-06 03:30 UTC / 03:25 UTC 只读核验本机 main，未集成本 feature",
+        "todos": [
+          {
+            "id": "WPF-I01-01",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "两输入已审；D04 v1 active；完整 merge1002，无冲突；三件套唯一"
+          },
+          {
+            "id": "WPF-I01-02",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "[接缝映射](../../docs/evidence/wpf-i01/seams.md)；固定实现 92a786abb9f7ef16e15482ac00b98ff860ecc47f，13文件，未改 P01/shared"
+          },
+          {
+            "id": "WPF-I01-03",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "[验证](../../docs/evidence/wpf-i01/validation.md)与[技能/clean-code](../../docs/evidence/wpf-i01/quality.md)；模拟和真实协议旅程分开"
+          },
+          {
+            "id": "WPF-I01-04",
+            "state": "completed",
+            "owner": "workspace_panels_owner",
+            "evidence": "root 固定 92a786abb9f7ef16e15482ac00b98ff860ecc47f APPROVED；两个发现关闭，已交管理者/原 Lead 集成；main 未集成"
+          }
+        ],
+        "errors": [],
+        "declaredHead": "c526c1c889437ee39155d669921577995195c74e / 实际完整输入 merge 1002f2688c2b4d2e3a5723d94bdbe965a2a88626；实际 metadata HEAD 由 Git 聚合，不作为实现 target",
+        "declaredDirty": "实现已冻结；正式 review metadata 提交后 Git 聚合实际 clean 状态，rootlock 已恢复",
+        "checks": {
+          "state": "passed",
+          "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+          "record": "PASSED 92a786abb9f7ef16e15482ac00b98ff860ecc47f; 9 bridge + 15 host direct tests, 9 HTTP fixture browser groups, 3 real PG/public runner journey groups, typecheck, build, production smoke；范围与限定见 validation"
+        },
+        "reviewRecord": "[review.md](review.md)，APPROVED，target 92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+        "mainRecord": "NOT_INTEGRATED；03:25 只读 main 3773db5d014a6d38d09553acd0a5fe8df900b7c4，未 merge main",
+        "next": "[领取证据](../../docs/evidence/wpf-i01/assignment.md)记录正式 receipt、现场 active v1 核验及 M02 v2 三路径释放。唯一事实源在本文件；管理准备目录由管理者转 stub。已正式获派发：Node24/pnpm9.15.4 本树独立安装既有依赖；临时 lock patch 保存并还原。完整 no-ff 合入已审 P01 2910，旧 M02 树三路径保持停写。实现已在受领范围提交并冻结；独立 review 已完成，停止 I01 实现写入，等待新 committed receipt 转交范围。\nP01 实现6ce已获root整体APPROVED，PH-R1..R4 CLOSED；依赖阻塞解除。无新增用户决定。已有能力与后续风险分开：M02 的批准不覆盖 I01；P01 fixture 的通过不覆盖产品 App 挂载，也不覆盖跨中心 UI 生命周期。",
+        "risks": "[领取证据](../../docs/evidence/wpf-i01/assignment.md)记录正式 receipt、现场 active v1 核验及 M02 v2 三路径释放。唯一事实源在本文件；管理准备目录由管理者转 stub。已正式获派发：Node24/pnpm9.15.4 本树独立安装既有依赖；临时 lock patch 保存并还原。完整 no-ff 合入已审 P01 2910，旧 M02 树三路径保持停写。实现已在受领范围提交并冻结；独立 review 已完成，停止 I01 实现写入，等待新 committed receipt 转交范围。\nP01 实现6ce已获root整体APPROVED，PH-R1..R4 CLOSED；依赖阻塞解除。无新增用户决定。已有能力与后续风险分开：M02 的批准不覆盖 I01；P01 fixture 的通过不覆盖产品 App 挂载，也不覆盖跨中心 UI 生命周期。",
+        "decisions": ""
+      },
+      "review": {
+        "state": "approved",
+        "record": "APPROVED**",
+        "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+        "proof": {
+          "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+          "head": "b5844442699733558a152c12392ea78f26c393a4",
+          "scopes": [
+            "apps/web/src/App.tsx",
+            "apps/web/src/TaskThread.tsx",
+            "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+            "apps/web/src/components/workspace/WorkspacePanels.tsx",
+            "apps/web/src/plugin-integration",
+            "apps/web/src/themes.ts",
+            "apps/web/test/plugin-integration.browser.ts",
+            "apps/web/test/plugin-integration.config.ts",
+            "apps/web/test/plugin-integration.test.ts"
+          ],
+          "observedAt": "2026-10-06T06:36:35.974Z",
+          "state": "unchanged",
+          "implementationChanges": [],
+          "outsideChanges": [],
+          "metadataChanges": [
+            "docs/evidence/wpf-i01/assignment.md",
+            "docs/evidence/wpf-i01/browser-failure.png",
+            "docs/evidence/wpf-i01/browser-results.json",
+            "docs/evidence/wpf-i01/dashboard-approved.json",
+            "docs/evidence/wpf-i01/dashboard-observation.json",
+            "docs/evidence/wpf-i01/dependency-install.patch",
+            "docs/evidence/wpf-i01/integration-dark-390.png",
+            "docs/evidence/wpf-i01/integration-dark.png",
+            "docs/evidence/wpf-i01/integration-light-390.png",
+            "docs/evidence/wpf-i01/integration-light.png",
+            "docs/evidence/wpf-i01/module-results.json",
+            "docs/evidence/wpf-i01/production-smoke.json",
+            "docs/evidence/wpf-i01/quality.md",
+            "docs/evidence/wpf-i01/real-center-dark-390.png",
+            "docs/evidence/wpf-i01/real-center-light.png",
+            "docs/evidence/wpf-i01/real-center-results.json",
+            "docs/evidence/wpf-i01/seams.md",
+            "docs/evidence/wpf-i01/validation.md",
+            "docs/evidence/wpf-i01/workspace-slot-actions.png",
+            "plans/wpf-i01-plugin-integration/plan.md",
+            "plans/wpf-i01-plugin-integration/review.md",
+            "plans/wpf-i01-plugin-integration/status.md"
+          ],
+          "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+        },
+        "declarationProof": "unchanged"
+      },
+      "implementationProof": {
+        "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+        "head": "b5844442699733558a152c12392ea78f26c393a4",
+        "scopes": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/TaskThread.tsx",
+          "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+          "apps/web/src/components/workspace/WorkspacePanels.tsx",
+          "apps/web/src/plugin-integration",
+          "apps/web/src/themes.ts",
+          "apps/web/test/plugin-integration.browser.ts",
+          "apps/web/test/plugin-integration.config.ts",
+          "apps/web/test/plugin-integration.test.ts"
+        ],
+        "observedAt": "2026-10-06T06:36:35.974Z",
+        "state": "unchanged",
+        "implementationChanges": [],
+        "outsideChanges": [],
+        "metadataChanges": [
+          "docs/evidence/wpf-i01/assignment.md",
+          "docs/evidence/wpf-i01/browser-failure.png",
+          "docs/evidence/wpf-i01/browser-results.json",
+          "docs/evidence/wpf-i01/dashboard-approved.json",
+          "docs/evidence/wpf-i01/dashboard-observation.json",
+          "docs/evidence/wpf-i01/dependency-install.patch",
+          "docs/evidence/wpf-i01/integration-dark-390.png",
+          "docs/evidence/wpf-i01/integration-dark.png",
+          "docs/evidence/wpf-i01/integration-light-390.png",
+          "docs/evidence/wpf-i01/integration-light.png",
+          "docs/evidence/wpf-i01/module-results.json",
+          "docs/evidence/wpf-i01/production-smoke.json",
+          "docs/evidence/wpf-i01/quality.md",
+          "docs/evidence/wpf-i01/real-center-dark-390.png",
+          "docs/evidence/wpf-i01/real-center-light.png",
+          "docs/evidence/wpf-i01/real-center-results.json",
+          "docs/evidence/wpf-i01/seams.md",
+          "docs/evidence/wpf-i01/validation.md",
+          "docs/evidence/wpf-i01/workspace-slot-actions.png",
+          "plans/wpf-i01-plugin-integration/plan.md",
+          "plans/wpf-i01-plugin-integration/review.md",
+          "plans/wpf-i01-plugin-integration/status.md"
+        ],
+        "reason": "声明范围未变；其余变化仅为已识别的文档或证据 metadata"
+      },
+      "documents": [
+        {
+          "path": "plans/wpf-i01-plugin-integration/plan.md",
+          "title": "plan.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-i01-plugin-integration/status.md",
+          "title": "status.md",
+          "kind": "plan"
+        },
+        {
+          "path": "plans/wpf-i01-plugin-integration/review.md",
+          "title": "review.md",
+          "kind": "plan"
+        },
+        {
+          "path": "docs/evidence/wpf-i01/assignment.md",
+          "title": "领取证据",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-i01/seams.md",
+          "title": "接缝映射",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-i01/validation.md",
+          "title": "验证",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-i01/quality.md",
+          "title": "技能/clean-code",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-i01/dashboard-approved.json",
+          "title": "批准后聚合",
+          "kind": "evidence"
+        },
+        {
+          "path": "docs/evidence/wpf-i01/dashboard-observation.json",
+          "title": "交付时实采",
+          "kind": "evidence"
+        }
+      ],
+      "issues": [],
+      "current": true,
+      "progress": {
+        "completed": 4,
+        "total": 4
+      },
+      "main": {
+        "record": "NOT_INTEGRATED；03:25 只读 main 3773db5d014a6d38d09553acd0a5fe8df900b7c4，未 merge main",
+        "recordedHead": "3773db5d014a6d38d09553acd0a5fe8df900b7c4",
+        "target": "92a786abb9f7ef16e15482ac00b98ff860ecc47f",
+        "mainHead": "a26a5f34577d3fdfeee81ef8c0e7d5658617d2b8",
+        "scopes": [
+          "apps/web/src/App.tsx",
+          "apps/web/src/TaskThread.tsx",
+          "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+          "apps/web/src/components/workspace/WorkspacePanels.tsx",
+          "apps/web/src/plugin-integration",
+          "apps/web/src/themes.ts",
+          "apps/web/test/plugin-integration.browser.ts",
+          "apps/web/test/plugin-integration.config.ts",
+          "apps/web/test/plugin-integration.test.ts"
+        ],
+        "observedAt": "2026-10-06T06:36:35.856Z",
+        "current": false,
+        "historicalIntegrated": true,
+        "method": "ancestor-changed",
+        "scopeEqual": false,
+        "dirtyScopePaths": [],
+        "reason": "历史已合入；当前声明范围已有变化或未提交内容，需核验后继实现，不判断新实现失效"
+      },
+      "assignments": [
+        {
+          "lead": "external_web_d01_owner",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "apps/web/src/TaskThread.tsx",
+            "apps/web/src/components/workspace/WorkspacePanels.tsx",
+            "apps/web/src/plugin-integration/slot-fixture.tsx",
+            "apps/web/src/plugin-integration/task-actions.ts",
+            "apps/web/src/themes.ts",
+            "apps/web/test/plugin-integration.browser.ts",
+            "apps/web/test/plugin-integration.config.ts",
+            "apps/web/test/plugin-integration.test.ts",
+            "docs/evidence/wpf-i01",
+            "plans/wpf-i01-plugin-integration"
+          ],
+          "state": "active",
+          "branch": "codex/web-plugin-integration",
+          "origin": "new",
+          "taskId": "WPF-I01",
+          "worker": "workspace_panels_owner",
+          "claimId": "b6666c29-ebc5-47b2-b754-55b62687fd00",
+          "version": 3,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-integration",
+          "createdAt": "2026-10-06T02:58:06.016Z",
+          "updatedAt": "2026-10-06T04:22:12.797Z",
+          "observedAt": null,
+          "needsVerification": false,
+          "matchesSource": true
+        }
+      ]
+    }
+  },
+  "limits": "Metadata closeout only; no product tests, new API fetch, model calls, or service operations. Remaining successor TODOs are not marked complete."
+}

@@ -1,3 +1,12 @@
+# WPF-I01 运行时App接线独立review
+
+状态：NOT_STARTED
+Review target commit: UNKNOWN
+
+当前后继固定base3c9345，源实施尚未固定，0新检查；不得继承原I01/MSG/runtime叶子批准。[接口与供给](../../docs/evidence/wpf-i01/runtime-app/report.md)。
+
+## 历史首批独审（原文保留，不是当前批准）
+
 # WPF-I01 独立审查入口
 
 **状态：APPROVED**
