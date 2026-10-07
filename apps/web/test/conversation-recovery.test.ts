@@ -562,6 +562,56 @@ describe("recovery storage barriers (controlled IDB event port)", () => {
   });
 });
 
+describe("second-center controlled principal and generation boundaries", () => {
+  it("isolates a changed principal with the same center and address through the real session, journal and recovery boundary", async () => {
+    const { journal: store } = journal(), principalB = { ...ns, ownerPrincipalId: uuid(91) };
+    const readyA: BrowserSessionReady = { protocol: "flow.browser-session.v1", state: "ready", centerId: ns.centerId, ownerPrincipalId: ns.ownerPrincipalId, expiresAt: "2099-01-01T00:00:00Z", csrfToken: "a".repeat(64) };
+    let ready = readyA;
+    const connection = new ConnectionSession(ns.baseUrl, () => ({ browserSession: async () => ready, connectBrowserSession: async () => ready,
+      logoutBrowserSession: async () => ({ protocol: "flow.browser-session.v1", state: "unauthenticated" }) }));
+    cleanup.push(() => connection.dispose()); await connection.read();
+    const makeWorkspace = async (identity: RecoveryNamespace, view: typeof owner, value: Json) => {
+      const restore = vi.fn(async (_record: RecoveryRecord) => {}), retry = vi.fn(async () => {});
+      const host = new AppPluginSession(actions({ journal: store, namespace: () => identity,
+        authorized: () => connection.authorized(identity), generation: () => connection.getSnapshot().generation,
+        owner: () => view, draft: () => value, restore, retry }), themes[0]!);
+      cleanup.push(() => host.dispose()); await host.host.activate(RECOVERY_OWNER);
+      host.recovery.changed(view.viewKey); await host.recovery.flush();
+      return { host, restore, retry };
+    };
+    const a = await makeWorkspace(ns, owner, draft("A private draft")), original = (await store.list(ns))[0]!;
+    const oldPort = store.bind(ns, () => owner, () => connection.authorized(ns));
+    ready = { ...readyA, ownerPrincipalId: principalB.ownerPrincipalId, csrfToken: "b".repeat(64) }; await connection.read();
+    expect(connection.getSnapshot().identity).toEqual(principalB); expect(connection.authorized(ns)).toBe(false);
+    expect(await store.list(principalB)).toEqual([]);
+    await expect(oldPort.prepare(command)).rejects.toThrow();
+    await a.host.recovery.restore(original); expect(a.restore).not.toHaveBeenCalled();
+    const b = await makeWorkspace(principalB, { ...owner, viewKey: uuid(92) }, draft("B private draft"));
+    await b.host.recovery.open(); expect(b.host.recovery.getSnapshot().records).toEqual(await store.list(principalB));
+    expect(b.host.recovery.getSnapshot().records.some(record => record.namespace === namespaceKey(ns))).toBe(false);
+    await b.host.recovery.restore(original); expect(b.restore).not.toHaveBeenCalled(); expect(b.retry).not.toHaveBeenCalled();
+    expect(await store.list(ns)).toEqual([original]); const savedB = await store.list(principalB);
+    ready = readyA; await connection.read(); await a.host.recovery.restore(original);
+    expect(a.restore).toHaveBeenCalledTimes(1); expect(a.restore.mock.calls[0]![0]).toEqual(original); expect(a.retry).not.toHaveBeenCalled();
+    expect(await store.list(principalB)).toEqual(savedB);
+  });
+  it("rejects ready completions that ignore abort across A to B and B back to A without replacing current authority", async () => {
+    const readyA: BrowserSessionReady = { protocol: "flow.browser-session.v1", state: "ready", centerId: ns.centerId, ownerPrincipalId: ns.ownerPrincipalId, expiresAt: "2099-01-01T00:00:00Z", csrfToken: "a".repeat(64) };
+    const readyB = { ...readyA, ownerPrincipalId: uuid(93), csrfToken: "b".repeat(64) }, lateA = deferred<BrowserSessionReady>(), lateB = deferred<BrowserSessionReady>();
+    const signals: AbortSignal[] = [], responses = [Promise.resolve(readyA), lateA.promise, Promise.resolve(readyB), lateB.promise, Promise.resolve({ ...readyA, csrfToken: "c".repeat(64) })];
+    const session = new ConnectionSession(ns.baseUrl, () => ({ browserSession: async signal => { signals.push(signal!); return await responses.shift()!; },
+      connectBrowserSession: async () => readyA, logoutBrowserSession: async () => ({ protocol: "flow.browser-session.v1", state: "unauthenticated" }) }));
+    cleanup.push(() => session.dispose()); await session.read();
+    const oldA = session.read(); await session.connect("controlled-B"); const currentB = session.getSnapshot();
+    expect(signals[1]!.aborted).toBe(true); lateA.resolve(readyA); await oldA;
+    expect(session.getSnapshot()).toBe(currentB); expect(session.csrfToken()).toBe(readyB.csrfToken);
+    const oldB = session.read(); await session.connect("controlled-A"); const currentA = session.getSnapshot();
+    expect(signals[3]!.aborted).toBe(true); lateB.resolve(readyB); await oldB;
+    expect(session.getSnapshot()).toBe(currentA); expect(session.getSnapshot().identity).toEqual(ns); expect(session.csrfToken()).toBe("c".repeat(64));
+    expect(responses).toEqual([]);
+  });
+});
+
 describe("connection and original authority consumers", () => {
   it("keeps safe API base paths without persisting credentials or doubling the public /api prefix", () => {
     expect(recoveryAddress("", "https://web.example/app")).toBe("https://web.example");

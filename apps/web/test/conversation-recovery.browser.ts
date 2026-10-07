@@ -10,8 +10,8 @@ import type { RecoveryDatabaseLease, RecoveryWire, RecoverySseTrace, startRecove
 // Only built-ins are loaded by the parent before fresh admission, monitoring and durable ownership facts.
 const root = fileURLToPath(new URL("../../../", import.meta.url));
 const evidence = join(root, "docs/evidence/wpf-conversation-recovery");
-// Defensive ceiling only: closed 90s + 150s + 60s phases, plus the independent 90s route-fix phase.
-const TOTAL_MS = 390_000, CLEANUP_MS = 15_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
+// Defensive ceiling only: closed 90s + 150s + 60s + 90s phases, plus independent two-center 90s. No unused credit transfers.
+const TOTAL_MS = 480_000, CLEANUP_MS = 15_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
 const RUN_RETAIN_RESERVE = 5 * 1024 ** 2; // 1MiB logs + <=2MiB report + two <=512KiB images + bounded owner/budget records.
 const START_FREE = 1024 ** 3 + 128 * 1024 ** 2, STOP_FREE = 1024 ** 3 + 64 * 1024 ** 2;
 const sleep = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
@@ -47,25 +47,30 @@ const journeyGroups = {
   "sse-delivery": ["cookieRead", "sseDelivery"],
   "complete-draft": ["cookieRead", "completeDraft"],
   "steering-recovery": ["cookieRead", "steeringRecovery"],
+  "second-center-cycle": ["cookieRead", "secondCenterCycle"],
 } as const;
 type Journey = keyof typeof journeyGroups;
 type Group = (typeof journeyGroups)[Journey][number];
-const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss", "sseDelivery", "completeDraft", "steeringRecovery"];
+const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss", "sseDelivery", "completeDraft", "steeringRecovery", "secondCenterCycle"];
 function selectedGroups(journey: unknown): readonly Group[] {
   requireThat(typeof journey === "string" && Object.hasOwn(journeyGroups, journey), "An explicit supported journey is required");
   return journeyGroups[journey as Journey];
 }
 type FailureReconciliation = { run: string; budgetSha256: string; reviewFile: string; reviewSha256: string };
 type Gate = { reconciledFailures?: FailureReconciliation[]; allowRun: true; run: string; journey: Journey; sourceCommit: string; sourceHashes: Record<string, string>; expiresAt: string;
-  totalMs: number; minimumFreeBytes: number; scratchParent: string; maxScratchBytes: number };
-type Init = { kind: "start"; journey: Journey; directory: string; scratch: string; databaseUrl: string; workDeadline: number };
+  totalMs: number; minimumFreeBytes: number; scratchParent: string; maxScratchBytes: number;
+  twoCenterPhase?: { id: "RECOVERY-TWO-CENTER-20261007"; budgetMs: 90000; spentMs: number; cleanupMs: 30000; databases: 2 } };
+type Init = { kind: "start"; journey: Journey; directory: string; scratch: string; databaseUrl: string; secondDatabaseUrl?: string; workDeadline: number };
 type BodyLossObservation = { path: string | null; key: string | null; bodySha256: string | null; status: number | null;
   headers: Record<string, string>; events: string[]; failure: string | null; finished: boolean };
 type InitializationTiming = { outcome: "RUNNING" | "PASSED" | "FAILED"; startedOffsetMs: 0; endedOffsetMs: number | null; elapsedMs: number | null };
 type GroupTiming = { group: Group; startedOffsetMs: number; endedOffsetMs: number; elapsedMs: number; outcome: "PASSED" | "FAILED" };
 type SteeringSeed = Awaited<ReturnType<Awaited<ReturnType<typeof startRecoveryFixture>>["seedSteeringConversation"]>>;
+type SecondCenterResult = { identities: { target: "A" | "B"; centerId: string; ownerPrincipalId: string }[];
+  baseUrl: string | null; draftA: string | null; draftB: string | null; receiptA: string | null;
+  lateRead: { outcome: "abortedWithoutDelivery" | "deliveredRejected"; proxy: unknown; browserFinished: boolean; browserFailed: boolean } | null };
 type WorkerResult = { journey: Journey; requiredGroups: readonly Group[]; completedGroups: Group[]; checks: string[];
-  initialization: InitializationTiming; groupTimings: GroupTiming[];
+  initialization: InitializationTiming; groupTimings: GroupTiming[]; secondCenter: SecondCenterResult;
   pageErrors: string[]; failure: string | null; cleanupErrors: string[]; wire: RecoveryWire[]; coverage: Record<string, string>; bodyLoss: BodyLossObservation[];
   sseDelivery: { baselineCursor: number | null; deliveredCursor: number | null; cancelledTaskId: string | null;
     externalCancel: { taskId: string; key: string; status: string } | null; readRequests: string[]; trace: RecoverySseTrace | null };
@@ -124,11 +129,21 @@ async function supervisor() {
   requireThat(gatePath && adminUrl, "Fresh explicit gate and isolated PG admin endpoint are required; no discovery/default");
   const gate = JSON.parse(await readFile(gatePath, "utf8")) as Gate;
   const requiredGroups = selectedGroups(gate.journey);
+  const twoCenter = gate.journey === "second-center-cycle", cleanupMs = twoCenter ? 30_000 : CLEANUP_MS;
+  const evidenceLimit = twoCenter ? 13 * 1024 ** 2 : EVIDENCE_BYTES;
+  const retainedReserve = twoCenter ? 9 * 1024 ** 2 : RUN_RETAIN_RESERVE;
+  const extraResourceBytes = twoCenter ? 133 * 1024 ** 2 : 0, stopFree = STOP_FREE + extraResourceBytes;
+  if (twoCenter) {
+    const phase = gate.twoCenterPhase;
+    requireThat(phase?.id === "RECOVERY-TWO-CENTER-20261007" && phase.budgetMs === 90_000
+      && phase.cleanupMs === 30_000 && phase.databases === 2 && Number.isSafeInteger(phase.spentMs) && phase.spentMs >= 0
+      && gate.totalMs >= 60_000 && gate.totalMs <= 90_000 - phase.spentMs, "Independent two-center phase and cleanup budget required");
+  } else requireThat(gate.twoCenterPhase === undefined, "Two-center admission cannot authorize another journey");
   requireThat(gate.allowRun === true && /^[a-z0-9-]{1,48}$/.test(gate.run), "Invalid one-run gate");
   requireThat(Date.parse(gate.expiresAt) > Date.now(), "Admission expired");
   requireThat(Number.isFinite(gate.totalMs) && gate.totalMs >= 30_000 && gate.totalMs <= TOTAL_MS, "Invalid admitted time budget");
   if (gate.journey === "steering-recovery") requireThat(gate.totalMs <= 60_000, "Steering phase requires a <=60s attempt including cleanup");
-  requireThat(gate.minimumFreeBytes >= START_FREE && Number.isFinite(gate.minimumFreeBytes), "Browser start margin must be explicitly admitted");
+  requireThat(gate.minimumFreeBytes >= START_FREE + extraResourceBytes && Number.isFinite(gate.minimumFreeBytes), "Browser start margin must be explicitly admitted");
   requireThat(Number.isSafeInteger(gate.maxScratchBytes) && gate.maxScratchBytes > 0 && gate.maxScratchBytes <= 64 * 1024 ** 2, "Scratch requires an explicit <=64MiB bound");
   requireThat(await realpath(gate.scratchParent) === "/private/tmp", "Scratch must use the explicitly admitted local tmp parent");
   const sourceCommit = execFileSync("git", ["rev-parse", "HEAD"], { cwd: root, encoding: "utf8", timeout: 2000 }).trim();
@@ -163,15 +178,15 @@ async function supervisor() {
   }
   requireThat(priorMs + gate.totalMs <= TOTAL_MS, "Cumulative browser/HTTP budget exhausted");
   requireThat(await freeBytes() >= gate.minimumFreeBytes, "Fresh free space below admitted start threshold");
-  requireThat(await treeBytes(evidence) < EVIDENCE_BYTES - RUN_RETAIN_RESERVE, "Insufficient retained evidence headroom");
+  requireThat(await treeBytes(evidence) < evidenceLimit - retainedReserve, "Insufficient retained evidence headroom");
   const directory = join(runs, gate.run); await mkdir(directory, { mode: 0o700 }); // Exclusive: never overwrite a run.
-  const began = performance.now(), workDeadline = Date.now() + gate.totalMs - CLEANUP_MS;
+  const began = performance.now(), workDeadline = Date.now() + gate.totalMs - cleanupMs;
   const hardAt = began + gate.totalMs;
-  const budget = { complete: false, cleanupComplete: false, journey: gate.journey, startedAt: new Date().toISOString(), priorMs, permittedMs: gate.totalMs, cleanupReserveMs: CLEANUP_MS, elapsedMs: 0 };
+  const budget = { complete: false, cleanupComplete: false, journey: gate.journey, startedAt: new Date().toISOString(), priorMs, permittedMs: gate.totalMs, cleanupReserveMs: cleanupMs, elapsedMs: 0 };
   writeFileSync(join(directory, "budget.json"), JSON.stringify(budget), { mode: 0o600 });
   const children: ChildProcess[] = [], closed = new Map<ChildProcess, Promise<void>>();
   const errors: string[] = [], cleanupErrors: string[] = [];
-  let lease: RecoveryDatabaseLease | undefined, scratch: string | undefined, result: WorkerResult | undefined;
+  let lease: RecoveryDatabaseLease | undefined, secondLease: RecoveryDatabaseLease | undefined, scratch: string | undefined, result: WorkerResult | undefined;
   let minimumFreeBytes = Infinity, peakScratchBytes = 0, logBytes = 0, stopped = false, chromeRequested = false;
   let stopReason: string | undefined, interruptionRequested = false;
   let monitor: NodeJS.Timeout | undefined, monitoring: Promise<void> | undefined, logs = Promise.resolve();
@@ -186,7 +201,7 @@ async function supervisor() {
     try {
       writeFileSync(join(directory, "budget.json"), JSON.stringify(budget), { mode: 0o600 });
       writeFileSync(join(directory, "hard-stop.json"), JSON.stringify({ at: new Date().toISOString(), scratch, database: lease?.database,
-        databaseState: lease?.state, ownedPids: children.map(child => child.pid), cleanupConfirmed: false }), { mode: 0o600 });
+        databaseState: lease?.state, secondDatabase: secondLease?.database, secondDatabaseState: secondLease?.state, ownedPids: children.map(child => child.pid), cleanupConfirmed: false }), { mode: 0o600 });
     } finally { process.exit(1); } // Even a hard stop during final accounting invalidates the budget.
   }, gate.totalMs);
   const stop = (reason: string) => {
@@ -199,13 +214,13 @@ async function supervisor() {
     interruptionRequested = true; stop("Supervisor interrupted");
   };
   process.on("SIGINT", interrupted); process.on("SIGTERM", interrupted);
-  const working = () => { requireThat(!stopped && performance.now() < hardAt - CLEANUP_MS, "Work deadline reached; cleanup reserve started"); };
+  const working = () => { requireThat(!stopped && performance.now() < hardAt - cleanupMs, "Work deadline reached; cleanup reserve started"); };
   const checkpoint = async (mode: "work" | "monitor" = "work") => {
     try {
       working();
       const free = await freeBytes(); minimumFreeBytes = Math.min(minimumFreeBytes, free);
-      requireThat(free > STOP_FREE, "Free space reached stop margin");
-      requireThat(await treeBytes(evidence) <= EVIDENCE_BYTES - 32 * 1024, "Evidence limit reached");
+      requireThat(free > stopFree, "Free space reached stop margin");
+      requireThat(await treeBytes(evidence) <= evidenceLimit - 32 * 1024, "Evidence limit reached");
       if (scratch) { const bytes = await treeBytes(scratch, true); peakScratchBytes = Math.max(peakScratchBytes, bytes); requireThat(bytes <= gate.maxScratchBytes, "Scratch limit reached"); }
       // A timer already in flight still checks resources, but normal cleanup has retired its work guard.
       if (mode === "work" || !monitorRetiring) working();
@@ -223,14 +238,22 @@ async function supervisor() {
     return child;
   };
   let databaseCleanup: Awaited<ReturnType<RecoveryDatabaseLease["close"]>> | undefined;
+  const databaseCleanups: { target: "A" | "B"; result: Awaited<ReturnType<RecoveryDatabaseLease["close"]>> | null; error: string | null }[] = [];
   try {
     await json(join(directory, "sources.json"), { sourceCommit, dirty, sourceHashes, journey: gate.journey, requiredGroups });
     monitor = setInterval(() => { if (!monitoring) monitoring = checkpoint("monitor").catch(() => {}).finally(() => { monitoring = undefined; }); }, 250);
     await checkpoint(); // Before any Vite/PG/Playwright/business import or CREATE.
     const { RecoveryDatabaseLease } = await import("./conversation-recovery.fixture");
     await checkpoint();
-    lease = new RecoveryDatabaseLease(adminUrl, directory);
+    const databaseDirectory = twoCenter ? join(directory, "db-a") : directory;
+    if (twoCenter) await mkdir(databaseDirectory, { mode: 0o700 });
+    lease = new RecoveryDatabaseLease(adminUrl, databaseDirectory);
     await lease.create(checkpoint);
+    if (twoCenter) {
+      await checkpoint(); const secondDirectory = join(directory, "db-b"); await mkdir(secondDirectory, { mode: 0o700 });
+      secondLease = new RecoveryDatabaseLease(adminUrl, secondDirectory);
+      await secondLease.create(checkpoint);
+    }
     await checkpoint();
     scratch = await mkdtemp(join(gate.scratchParent, "flow-recovery-browser-"));
     await json(join(directory, "scratch-owner.json"), { scratch, maxBytes: gate.maxScratchBytes, retainedEvidence: false });
@@ -270,7 +293,7 @@ async function supervisor() {
         })().catch(error => stop("Chrome startup: " + text(error)));
       }
     });
-    working(); worker.send({ kind: "start", journey: gate.journey, directory, scratch, databaseUrl: lease.url, workDeadline } satisfies Init);
+    working(); worker.send({ kind: "start", journey: gate.journey, directory, scratch, databaseUrl: lease.url, ...(secondLease ? { secondDatabaseUrl: secondLease.url } : {}), workDeadline } satisfies Init);
     while (worker.exitCode === null && worker.signalCode === null && !stopped) { await sleep(30); working(); }
     if (!result) errors.push("Worker did not return a complete result");
   } catch (error) { errors.push(text(error)); }
@@ -294,19 +317,31 @@ async function supervisor() {
       } else cleanupErrors.push("Owned process has no confirmed PID");
       allOwnedGroupsAbsent = allOwnedGroupsAbsent && absent;
     }
-    if (lease) try { databaseCleanup = await lease.close(hardAt); cleanupErrors.push(...databaseCleanup.errors); }
-    catch (error) { cleanupErrors.push("Database cleanup: " + text(error)); }
+    // Each lease has its own durable ownership/cleanup directory. B startup or cleanup never skips A.
+    const ownedDatabases = [{ target: "A" as const, lease }, { target: "B" as const, lease: secondLease }].filter(item => item.lease);
+    await Promise.allSettled(ownedDatabases.map(async item => {
+      try {
+        const result = await item.lease!.close(hardAt);
+        if (item.target === "A") databaseCleanup = result;
+        databaseCleanups.push({ target: item.target, result, error: null }); cleanupErrors.push(...result.errors);
+      } catch (error) {
+        const message = "Database " + item.target + " cleanup: " + text(error);
+        databaseCleanups.push({ target: item.target, result: null, error: message }); cleanupErrors.push(message);
+        try { await json(join(twoCenter ? join(directory, item.target === "A" ? "db-a" : "db-b") : directory, "cleanup-error.json"), { error: message, confirmed: false }); }
+        catch (failure) { cleanupErrors.push("Database failure receipt: " + text(failure)); }
+      }
+    }));
     const terminal: TailObservation[] = [];
     const observeTail = async (phase: string, includeScratch = false, reserveBytes = 0): Promise<TailObservation> => {
       const observation: TailObservation = { phase, elapsedMs: 0, scratchBytes: null, evidenceBytes: null, freeBytes: null, errors: [] };
       const failed = (message: string) => { observation.errors.push(message); errors.push(`${phase}: ${message}`); };
       try {
         observation.freeBytes = await freeBytes(); minimumFreeBytes = Math.min(minimumFreeBytes, observation.freeBytes);
-        if (observation.freeBytes <= STOP_FREE) failed("Free space reached stop margin");
+        if (observation.freeBytes <= stopFree) failed("Free space reached stop margin");
       } catch (error) { failed("Free-space accounting: " + text(error)); }
       try {
         observation.evidenceBytes = await treeBytes(evidence);
-        if (observation.evidenceBytes > EVIDENCE_BYTES - reserveBytes) failed("Retained evidence limit reached");
+        if (observation.evidenceBytes > evidenceLimit - reserveBytes) failed("Retained evidence limit reached");
       } catch (error) { failed("Evidence accounting: " + text(error)); }
       if (includeScratch && scratch) try {
         observation.scratchBytes = await treeBytes(scratch, true); peakScratchBytes = Math.max(peakScratchBytes, observation.scratchBytes);
@@ -340,7 +375,7 @@ async function supervisor() {
         journey: gate.journey, requiredGroups, completedGroups: result?.completedGroups ?? [],
         initialization: result?.initialization ?? null, groupTimings: result?.groupTimings ?? null,
         acceptanceScope: gate.journey === "full" ? "original seven-group subset; not full feature approval" : "selected journey only; full journey remains unverified",
-        errors, cleanupErrors, databaseCleanup, processIds: children.map(child => ({ pid: child.pid, exitCode: child.exitCode, signalCode: child.signalCode })),
+        errors, cleanupErrors, databaseCleanup, ...(twoCenter ? { databaseCleanups, twoCenterPhase: gate.twoCenterPhase } : {}), processIds: children.map(child => ({ pid: child.pid, exitCode: child.exitCode, signalCode: child.signalCode })),
         stopReason, interruptionRequested, allOwnedGroupsAbsent, minimumFreeBytes, peakScratchBytes, logBytes, scratchRemoved, terminal,
         attribution: "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation", providerQueries: 0 });
       await json(join(directory, "budget.json"), budget);
@@ -383,6 +418,7 @@ async function worker(init: Init) {
   const checks: string[] = [], pageErrors: string[] = [], cleanupErrors: string[] = [];
   const bodyLoss: BodyLossObservation[] = [], stopObservers: (() => void)[] = [];
   const sseDelivery: WorkerResult["sseDelivery"] = { baselineCursor: null, deliveredCursor: null, cancelledTaskId: null, externalCancel: null, readRequests: [], trace: null };
+  const secondCenter: SecondCenterResult = { identities: [], baseUrl: null, draftA: null, draftB: null, receiptA: null, lateRead: null };
   const completeDraft: WorkerResult["completeDraft"] = { profile: null, knowledge: null, savedRecordId: null, conversationId: null,
     preparedPostCount: null, restoredPostCount: null, verificationOrder: [], turnId: null, taskId: null };
   const steeringRecovery: WorkerResult["steeringRecovery"] = { profile: null, conversationId: null, turnId: null,
@@ -398,9 +434,9 @@ async function worker(init: Init) {
   };
   const coverage: Record<string, string> = {
     cookieRead: "NOT_RUN", cookieSseHandshake: "NOT_RUN", cookieSseDelivery: "PENDING: only handshake is asserted", textIntentDraft: "NOT_RUN", materialDraft: "NOT_RUN", sameKeyTurn: "NOT_RUN", crossTabCas: "NOT_RUN",
-    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN", createAckLoss: "NOT_RUN", createdTurnAckLoss: "NOT_RUN", queueAckLoss: "NOT_RUN", sseDelivery: "NOT_RUN", completeDraft: "NOT_RUN", steeringRecovery: "NOT_RUN",
+    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN", createAckLoss: "NOT_RUN", createdTurnAckLoss: "NOT_RUN", queueAckLoss: "NOT_RUN", sseDelivery: "NOT_RUN", completeDraft: "NOT_RUN", steeringRecovery: "NOT_RUN", secondCenterCycle: "NOT_RUN",
     createTwoStage: "PENDING: the two CREATE fault points are independent selected journeys", queueSteerRecovery: "PENDING: enqueue selection does not validate promotion or steering",
-    profileKnowledgeSteeringDraft: "PENDING: direct/source only", secondCenter: "PENDING: one-center fixture",
+    profileKnowledgeSteeringDraft: "PENDING: direct/source only", secondCenter: "NOT_RUN: real A/B cycle is a separate selected journey; principal-only is controlled",
   };
   for (const key of allGroups) if (!requiredGroups.includes(key)) coverage[key] = "NOT_SELECTED";
   if (!requiredGroups.includes("textIntentDraft")) coverage.materialDraft = "NOT_SELECTED";
@@ -472,7 +508,8 @@ async function worker(init: Init) {
     };
   };
   try {
-    fixture = await startRecoveryFixture({ databaseUrl: init.databaseUrl, directory: init.directory, cacheDirectory: join(init.scratch, "vite-cache"), checkpoint,
+    requireThat((init.journey === "second-center-cycle") === (typeof init.secondDatabaseUrl === "string"), "Selected journey and two-database input must agree");
+    fixture = await startRecoveryFixture({ databaseUrl: init.databaseUrl, ...(init.secondDatabaseUrl ? { secondDatabaseUrl: init.secondDatabaseUrl } : {}), directory: init.directory, cacheDirectory: join(init.scratch, "vite-cache"), checkpoint,
       ...(init.journey === "steering-recovery" ? { steering: { workDeadline: init.workDeadline } } : {}) }, lifetime.signal);
     await checkpoint();
     const endpoint = await new Promise<string>((resolve, reject) => {
@@ -587,6 +624,110 @@ async function worker(init: Init) {
       const matches = (await records(page)).filter(record => record.kind === "draft" && record.data?.text === value);
       expect(matches).toHaveLength(1); return matches[0]!.id;
     };
+    await run("one origin and journal isolate real A/B identities through A→B→A→B; only explicit original retry sends", "secondCenterCycle", async () => {
+      requireThat(fixture!.secondCenter, "Second owned center is required");
+      const second = fixture!.secondCenter, baseUrl = new URL(fixture!.url).origin;
+      secondCenter.baseUrl = baseUrl;
+      const identity = (target: "A" | "B") => {
+        const rows = fixture!.wire.filter(row => row.target === target && row.method === "GET" && row.path === "/api/browser-session" && row.sessionIdentity);
+        requireThat(rows.length, "A genuine public ready identity is required");
+        const value = rows.at(-1)!.sessionIdentity!;
+        return { target, centerId: value.centerId, ownerPrincipalId: value.ownerPrincipalId };
+      };
+      const stored = async () => (await records(page)).map(record => parseRecoveryRecord(record));
+      const byId = async (id: string) => { const found = (await stored()).filter(record => record.id === id); expect(found).toHaveLength(1); return found[0]!; };
+      const row = async (dialog: Locator, id: string) => {
+        const selected = dialog.locator(`[data-recovery-record-id="${id}"]`); await expect(selected).toHaveCount(1); return selected;
+      };
+      const restore = async (id: string, expectedText: string) => {
+        const before = postRows().length, dialog = await openRecovery();
+        await (await row(dialog, id)).getByRole("button", { name: "Restore without sending", exact: true }).click();
+        await page.keyboard.press("Escape"); await expect(dialog).not.toBeVisible();
+        await expect(input()).toHaveValue(expectedText); expect(postRows()).toHaveLength(before);
+      };
+      const choose = async (target: "A" | "B") => {
+        const posts = postRows().length;
+        await page.getByRole("button", { name: "Change connection", exact: true }).click();
+        await expect(page.getByRole("heading", { name: "Connect to Flow", exact: true })).toBeVisible();
+        fixture!.switchCenter(target);
+        await page.evaluate(id => { location.hash = `conversation=${id}`; }, target === "A" ? fixture!.conversationId : second.conversationId);
+        await page.getByLabel("Center URL", { exact: true }).fill(baseUrl);
+        await page.getByLabel("Owner token", { exact: true }).fill(target === "A" ? fixture!.token : second.token);
+        const ready = page.waitForResponse(response => new URL(response.url()).pathname === "/api/browser-session" && response.request().method() === "GET" && response.status() === 200);
+        await page.getByRole("button", { name: "Connect workspace", exact: true }).click();
+        await (await ready).finished(); await expect(input()).toBeVisible();
+        expect(new URL(page.url()).origin).toBe(baseUrl);
+        expect(await page.evaluate(() => localStorage.getItem("flow.browser-center.v1"))).toBe(baseUrl);
+        secondCenter.identities.push(identity(target)); expect(postRows()).toHaveLength(posts);
+      };
+      const a = identity("A"); secondCenter.identities.push(a);
+      const aText = "Center A original unknown command", nextA = "Center A retained next draft", bText = "Center B private draft";
+      await saveDraftThroughUi(aText); await page.getByRole("radio", { name: "Send now", exact: true }).check();
+      const turnPath = `/api/conversations/${fixture!.conversationId}/turns`;
+      const verifyLoss = observeAckBodyLoss(page, turnPath, "text", aText); fixture!.dropNext("turn"); await input().press("Enter");
+      await expect(page.getByRole("region", { name: "Message receipt", exact: true })).toContainText("Receipt unknown");
+      expect(postRows()).toHaveLength(1); const first = postRows()[0]!; expect(first.target).toBe("A"); await verifyLoss(first);
+      const receipt = await savedCommand("outbox"), requested = conversationTurnSchema.parse(JSON.parse(first.body));
+      expect(object(receipt.frozen).turnKey).toBe(first.key); expect(object(receipt.frozen).request).toEqual(requested);
+      secondCenter.receiptA = receipt.id;
+      secondCenter.draftA = await preserveNextDraft(nextA);
+      const savedA = await byId(secondCenter.draftA), savedReceipt = await byId(receipt.id);
+      const namespaceA = JSON.stringify([baseUrl, a.centerId, a.ownerPrincipalId]); expect(savedA.namespace).toBe(namespaceA);
+      const hold = fixture!.holdNextSessionRead();
+      let heldRequest: Request | undefined, browserFinished = false, browserFailed = false;
+      const requestedRead = (request: Request) => { if (!heldRequest && request.method() === "GET" && new URL(request.url()).pathname === "/api/browser-session") heldRequest = request; };
+      const finishedRead = (request: Request) => { if (request === heldRequest) browserFinished = true; };
+      const failedRead = (request: Request) => { if (request === heldRequest) browserFailed = true; };
+      page.on("request", requestedRead); page.on("requestfinished", finishedRead); page.on("requestfailed", failedRead);
+      try {
+        await page.evaluate(() => window.dispatchEvent(new Event("focus")));
+        await expect.poll(() => hold.snapshot().captured).toBe(true); requireThat(heldRequest, "Actual A session read was not observed");
+        await choose("B"); const b = identity("B");
+        expect(b.centerId).not.toBe(a.centerId); expect(b.ownerPrincipalId).not.toBe(a.ownerPrincipalId);
+        hold.release();
+        await expect.poll(() => hold.snapshot().outcome).toMatch(/^(abortedWithoutDelivery|delivered)$/);
+        await expect.poll(() => browserFailed || browserFinished).toBe(true);
+        await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
+        await expect(page.getByRole("heading", { name: "Connect to Flow", exact: true })).not.toBeVisible();
+        const outcome = hold.snapshot().outcome;
+        if (outcome === "abortedWithoutDelivery") { expect(browserFailed).toBe(true); expect(browserFinished).toBe(false); }
+        else { expect(browserFinished).toBe(true); expect(browserFailed).toBe(false); }
+        secondCenter.lateRead = { outcome: outcome === "delivered" ? "deliveredRejected" : "abortedWithoutDelivery", proxy: hold.snapshot(), browserFinished, browserFailed };
+        const dialog = await openRecovery();
+        await expect(dialog.locator(`[data-recovery-record-id="${receipt.id}"]`)).toHaveCount(0);
+        await expect(dialog.locator(`[data-recovery-record-id="${savedA.id}"]`)).toHaveCount(0);
+        await expect(dialog.getByText(nextA, { exact: true })).toHaveCount(0); await page.keyboard.press("Escape");
+        expect(await byId(savedA.id)).toEqual(savedA); expect(await byId(receipt.id)).toEqual(savedReceipt);
+        secondCenter.draftB = await preserveNextDraft(bText); const savedB = await byId(secondCenter.draftB);
+        expect(savedB.namespace).toBe(JSON.stringify([baseUrl, b.centerId, b.ownerPrincipalId]));
+        await choose("A"); expect(identity("A")).toEqual(a);
+        const aDialog = await openRecovery();
+        await expect(aDialog.locator(`[data-recovery-record-id="${savedB.id}"]`)).toHaveCount(0);
+        await expect(aDialog.getByText(bText, { exact: true })).toHaveCount(0); await page.keyboard.press("Escape");
+        await restore(savedA.id, nextA); expect(await byId(savedB.id)).toEqual(savedB); expect(postRows()).toHaveLength(1);
+        const retryDialog = await openRecovery(); await (await row(retryDialog, receipt.id)).getByRole("button", { name: "Retry original request", exact: true }).click();
+        await expect.poll(() => postRows().length).toBe(2);
+        await expect.poll(async () => { const saved = await byId(receipt.id); return saved.kind === "command" ? saved.phase : null; }).toBe("accepted");
+        const retry = postRows()[1]!; expect({ target: retry.target, path: retry.path, key: retry.key, body: retry.body }).toEqual({ target: "A", path: first.path, key: first.key, body: first.body });
+        requireThat(first.responseBody && retry.responseBody, "Both actual accepted responses required");
+        const accepted = decodeConversationTurnAccepted(JSON.parse(first.responseBody), fixture!.conversationId, requested);
+        const replay = decodeConversationTurnAccepted(JSON.parse(retry.responseBody), fixture!.conversationId, requested);
+        expect(replay.replayed).toBe(true); expect({ turn: replay.turn.id, task: replay.turn.task.id }).toEqual({ turn: accepted.turn.id, task: accepted.turn.task.id });
+        await page.keyboard.press("Escape");
+        const next = await byId(savedA.id); requireThat(next.kind === "draft", "A next draft remains a draft"); expect(object(next.data).text).toBe(nextA);
+        expect(await byId(savedB.id)).toEqual(savedB);
+        await choose("B"); expect(identity("B")).toEqual(b);
+        await restore(savedB.id, bText); expect(postRows()).toHaveLength(2);
+        const finalDialog = await openRecovery();
+        await expect(finalDialog.locator(`[data-recovery-record-id="${receipt.id}"]`)).toHaveCount(0);
+        await expect(finalDialog.locator(`[data-recovery-record-id="${savedA.id}"]`)).toHaveCount(0); await page.keyboard.press("Escape");
+        expect(fixture!.wire.filter(value => value.target === "B").some(value => value.path.includes(fixture!.conversationId) || value.key === first.key || value.body.includes(aText))).toBe(false);
+        expect(secondCenter.identities.map(value => value.target)).toEqual(["A", "B", "A", "B"]);
+        coverage.secondCenter = "PASSED: same-origin/baseURL/context/IDB A→B→A→B; both real tuples, not public principal-only rotation";
+      } finally {
+        hold.release(); page.off("request", requestedRead); page.off("requestfinished", finishedRead); page.off("requestfailed", failedRead);
+      }
+    });
     const reloadAndReauthenticate = async () => {
       const before = postRows().map(row => ({ path: row.path, key: row.key, body: row.body }));
       await fixture!.expireSessions(); await page.reload();
@@ -1147,7 +1288,7 @@ async function worker(init: Init) {
     try { await fixture?.close(); } catch (error) { cleanupErrors.push("fixture: " + text(error)); }
     if (coverage.materialDraft === "NOT_RUN" && coverage.textIntentDraft === "FAILED") coverage.materialDraft = "NOT_COMPLETED";
     sseDelivery.trace = fixture?.sseTrace() ?? null;
-    const result: WorkerResult = { journey: init.journey, requiredGroups, completedGroups, checks, initialization, groupTimings, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage, bodyLoss, sseDelivery, completeDraft, steeringRecovery };
+    const result: WorkerResult = { journey: init.journey, requiredGroups, completedGroups, checks, initialization, groupTimings, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage, bodyLoss, sseDelivery, completeDraft, steeringRecovery, secondCenter };
     const raw = JSON.stringify(result, null, 2); requireThat(Buffer.byteLength(raw) <= 2 * 1024 ** 2, "Browser report exceeds reserved bound");
     await writeFile(join(init.directory, "browser.json"), raw, { mode: 0o600 });
     process.send?.({ kind: "result", result }, () => { process.disconnect(); });

@@ -62,6 +62,8 @@ export function observeRecoveryRecords(options: { name: string; version: number;
 export interface RecoveryWire {
   method: string; path: string; key: string | null; body: string; status: number; cookie: boolean; bearer: boolean; csrf: boolean;
   responseBody?: string; responseSha256?: string;
+  target?: "A" | "B"; ordinal?: number; switchGeneration?: number;
+  sessionIdentity?: { protocol: "flow.browser-session.v1"; state: "ready"; centerId: string; ownerPrincipalId: string };
   fault?: { kind: "truncated-ack-body"; contentLength: number; contentType: string; prefixBytes: number; prefixSha256: string;
     headersFlushed: boolean; prefixFlushed: boolean; endFlushed: boolean; socketClosed: boolean; error?: string };
 }
@@ -212,6 +214,7 @@ type ConnectionObservation = { phase: "before-marker" | "after-marker"; attempt:
 
 export interface RecoveryFixtureOptions {
   databaseUrl: string;
+  secondDatabaseUrl?: string;
   directory: string;
   cacheDirectory: string;
   checkpoint(): Promise<void>;
@@ -324,7 +327,15 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
   const ackWrites = new Set<Promise<void>>(), ackErrors: string[] = [];
   const pool = new Pool({ connectionString: options.databaseUrl, max: 1, connectionTimeoutMillis: 2000, query_timeout: 4000, statement_timeout: 4000 });
   let app: Awaited<ReturnType<typeof createServer>> | undefined, vite: Awaited<ReturnType<typeof viteServer>> | undefined;
-  let center = "", lost: CommandKind | undefined, wireBytes = 0;
+  let center = "", secondCenter = "", activeCenter: "A" | "B" = "A", switchGeneration = 0, requestOrdinal = 0;
+  const secondToken = options.secondDatabaseUrl ? randomUUID() : undefined;
+  let secondApp: Awaited<ReturnType<typeof createServer>> | undefined;
+  let secondConversationId: string | undefined;
+  let lost: CommandKind | undefined, wireBytes = 0;
+  type HeldRead = { ordinal: number | null; target: "A"; switchGeneration: number | null; captured: boolean;
+    released: boolean; bytes: number; outcome: "armed" | "held" | "abortedWithoutDelivery" | "delivered" | "failed" };
+  let heldRead: { state: HeldRead; release(): void; wait: Promise<void> } | undefined;
+  const centerCleanup: { target: "A" | "B"; closed: boolean; error: string | null }[] = [];
   const measureWire = () => { wireBytes = Buffer.byteLength(JSON.stringify(wire)); assert.ok(wireBytes <= 1024 * 1024, "Fixture wire budget exceeded"); };
   const lifecycle = new AbortController(), bound = AbortSignal.any([signal, lifecycle.signal]);
   let sseTaskId: string | undefined, sseObserver: RecoverySseObserver | undefined;
@@ -335,10 +346,15 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
     heartbeatRequests: 0, runnerReceiptRequests: 0, providerQueries: 0 };
   const publicServer = httpServer(async (request, response) => {
     responses.add(response); response.on("close", () => responses.delete(response));
+    // Freeze the destination before the first await; switching never retargets an in-flight request.
+    const target = activeCenter, upstreamAddress = target === "A" ? center : secondCenter;
+    const generation = switchGeneration, ordinal = ++requestOrdinal;
     const path = request.url ?? "/";
+    const hold = target === "A" && request.method === "GET" && path === "/api/browser-session" && heldRead?.state.outcome === "armed" ? heldRead : undefined;
+    if (hold) Object.assign(hold.state, { ordinal, switchGeneration: generation, outcome: "held" });
     if (!path.startsWith("/api/")) { if (vite) vite.middlewares(request, response); else { response.writeHead(503); response.end("Fixture starting"); } return; }
     try {
-      if (!center) throw Error("Fixture center has not started.");
+      if (!upstreamAddress) throw Error("Fixture center has not started.");
       const chunks: Buffer[] = []; let size = 0;
       for await (const chunk of request) { size += chunk.length; if (size > 256 * 1024) throw Error("Fixture request bound exceeded."); chunks.push(chunk); }
       const method = request.method ?? "GET", bytes = Buffer.concat(chunks), body = bytes.toString("utf8"), headers: string[] = [];
@@ -361,7 +377,7 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
           if (error) reject(error); else resolve();
         };
         const closed = () => finish(), failed = (error: Error) => finish(error);
-        const outgoing = httpRequest(center + path, { method, headers, setHost: false, agent: false, signal: bound }, source => {
+        const outgoing = httpRequest(upstreamAddress + path, { method, headers, setHost: false, agent: false, signal: bound }, source => {
           source.on("error", failed); source.once("aborted", () => failed(Error("Fixture upstream response aborted.")));
           if (settled) { source.destroy(); return; }
           upstream = source;
@@ -369,7 +385,52 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
             const status = source.statusCode;
             if (status === undefined) throw Error("Fixture upstream has no HTTP status.");
             const row: RecoveryWire = { method, path, key: typeof request.headers["idempotency-key"] === "string" ? request.headers["idempotency-key"] : null, body, status, cookie: request.headers.cookie !== undefined, bearer: request.headers.authorization !== undefined, csrf: request.headers["x-flow-csrf"] !== undefined };
+            if (options.secondDatabaseUrl) Object.assign(row, { target, ordinal, switchGeneration: generation });
             wire.push(row); measureWire();
+            if (options.secondDatabaseUrl && method === "GET" && path === "/api/browser-session") {
+              // The real body remains memory-only. Evidence contains just the public identity whitelist.
+              const operation = (async () => {
+                const chunks: Buffer[] = []; let size = 0;
+                for await (const chunk of source) { size += chunk.length; assert.ok(size <= 16 * 1024, "Session response bound"); chunks.push(chunk); }
+                assert.ok(source.complete, "Complete session response required");
+                const bytes = Buffer.concat(chunks); assert.ok(bytes.equals(Buffer.from(bytes.toString("utf8"))), "Session response UTF-8 bound");
+                const value = JSON.parse(bytes.toString("utf8"));
+                if (value.state === "ready") {
+                  assert.equal(value.protocol, "flow.browser-session.v1");
+                  for (const id of [value.centerId, value.ownerPrincipalId]) assert.match(id, /^[a-f0-9-]{36}$/i);
+                  row.sessionIdentity = { protocol: value.protocol, state: "ready", centerId: value.centerId, ownerPrincipalId: value.ownerPrincipalId };
+                }
+                if (hold) {
+                  Object.assign(hold.state, { captured: true, bytes: bytes.length });
+                  await new Promise<void>((resolve, reject) => {
+                    let settled = false;
+                    const closed = () => { hold.state.outcome = "abortedWithoutDelivery"; settle(); };
+                    const aborted = () => settle(Error("Held session aborted by fixture lifecycle"));
+                    const timer = setTimeout(() => settle(Error("Held session exceeded 10s bound")), 10_000);
+                    const settle = (error?: Error) => {
+                      if (settled) return; settled = true;
+                      clearTimeout(timer); response.off("close", closed); bound.removeEventListener("abort", aborted);
+                      if (error) { hold.state.outcome = "failed"; reject(error); } else resolve();
+                    };
+                    response.once("close", closed); bound.addEventListener("abort", aborted, { once: true });
+                    void hold.wait.then(() => settle());
+                    if (response.destroyed) closed(); else if (bound.aborted) aborted();
+                  });
+                  if (hold.state.outcome === "abortedWithoutDelivery") return;
+                }
+                if (response.destroyed) { if (hold) hold.state.outcome = "abortedWithoutDelivery"; return; }
+                for (const name of ["content-type", "cache-control", "set-cookie"]) {
+                  const value = source.headers[name]; if (value !== undefined) response.setHeader(name, value);
+                }
+                if (hold) response.once("finish", () => { hold.state.outcome = "delivered"; });
+                response.writeHead(status, { "content-length": bytes.length }); response.end(bytes); measureWire();
+              })().catch(error => {
+                if (hold) hold.state.outcome = "failed";
+                if (ackErrors.length < 16) ackErrors.push("Bounded public session observation failed");
+                response.destroy(); failed(Error("Bounded public session observation failed"));
+              });
+              ackWrites.add(operation); void operation.then(() => ackWrites.delete(operation)); return;
+            }
             const kind = /\/turns$/.test(path) ? "turn" : /\/queue$/.test(path) ? "queue" : path === "/api/conversations" ? "create"
               : /^\/api\/tasks\/[^/]+\/steering$/.test(path) ? "steering" : undefined;
             if (method === "POST" && status >= 200 && status < 300 && kind) {
@@ -417,18 +478,25 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
   const close = () => closing ??= (async () => {
     const began = Date.now(), errors: string[] = [];
     const save = (complete: boolean) => writeFile(join(options.directory, "fixture-cleanup.json"), JSON.stringify({ complete, errors, elapsedMs: Date.now() - began, wireBytes, providerQueries: 0,
-      ...(options.steering ? { steeringActor } : {}) }, null, 2));
+      ...(options.steering ? { steeringActor } : {}), ...(options.secondDatabaseUrl ? { centerCleanup } : {}) }, null, 2));
     const attempt = async (name: string, operation: () => Promise<unknown>) => {
       await save(false);
       try { await operation(); } catch (error) { errors.push(`${name}: ${String(error)}`); }
     };
     await attempt("SSE witness", async () => { sseObserver?.stop(); if (sseObserver?.snapshot().error) throw Error(sseObserver.snapshot().error!); });
     // No orphaned Promise.race: the parent hard deadline owns/terminates this complete process group.
-    lifecycle.abort(); for (const response of responses) response.destroy(); publicServer.closeAllConnections();
+    heldRead?.release(); lifecycle.abort(); for (const response of responses) response.destroy(); publicServer.closeAllConnections();
     await attempt("vite", async () => { await vite?.close(); });
     await attempt("public HTTP", async () => { if (publicServer.listening) await new Promise<void>((resolve, reject) => publicServer.close(error => error ? reject(error) : resolve())); });
     await attempt("command ACK writes", async () => { await Promise.all(ackWrites); measureWire(); if (ackErrors.length) throw Error(ackErrors.join("; ")); });
-    await attempt("center", async () => { await app?.close(); });
+    await attempt("centers", async () => {
+      const centers = [{ target: "A" as const, app }, ...(options.secondDatabaseUrl ? [{ target: "B" as const, app: secondApp }] : [])];
+      const results = await Promise.allSettled(centers.map(async item => {
+        const row = { target: item.target, closed: false, error: null as string | null }; centerCleanup.push(row);
+        try { await item.app?.close(); row.closed = true; } catch { row.error = "Owned center close failed"; throw Error(row.error); }
+      }));
+      if (results.some(result => result.status === "rejected")) throw Error("One or more owned centers did not close");
+    });
     await attempt("fixture pool", () => pool.end());
     await save(true);
     if (errors.length) throw Error("Fixture cleanup incomplete; see retained raw evidence.");
@@ -448,6 +516,16 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
       browserSession: { cookieOrigin: url, trustedOrigins: [url], authEpoch: "recovery-fixture-v1" } });
     await checkpoint();
     center = await app.listen({ host: "127.0.0.1", port: 0 }); await checkpoint();
+    if (options.secondDatabaseUrl) {
+      assert.ok(secondToken); await checkpoint();
+      secondApp = await createServer({ databaseUrl: options.secondDatabaseUrl, ownerToken: secondToken, automaticQueueScan: false,
+        browserSession: { cookieOrigin: url, trustedOrigins: [url], authEpoch: "recovery-fixture-v1" } });
+      await checkpoint(); secondCenter = await secondApp.listen({ host: "127.0.0.1", port: 0 }); await checkpoint();
+      const secondClient = new FlowClient({ baseUrl: secondCenter, token: secondToken });
+      const created = await secondClient.createConversation({ title: "Recovery center B", harness: "claude",
+        requested: { model: "runner-default", thinking: "disabled", tools: "configured-readonly" } }, randomUUID(), bound);
+      secondConversationId = created.conversation.id; await checkpoint();
+    }
     const client = new FlowClient({ baseUrl: center, token });
     const project = await client.createProject({ workspaceId: "personal", title: "Recovery project" }, randomUUID());
     await checkpoint();
@@ -464,6 +542,18 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
     await checkpoint();
     return { url: url + "/?recovery=1", token, wire, resource: resource.resource, secondResource: secondResource.resource, conversationId: conversation.conversation.id, projectId: project.snapshot.project.id, close,
       dropNext(kind: typeof lost) { lost = kind; },
+      secondCenter: secondToken && secondConversationId ? { token: secondToken, conversationId: secondConversationId } : undefined,
+      switchCenter(target: "A" | "B") {
+        assert.ok(options.secondDatabaseUrl && secondCenter, "Two-center selection required"); bound.throwIfAborted();
+        activeCenter = target; switchGeneration++;
+      },
+      holdNextSessionRead() {
+        assert.ok(options.secondDatabaseUrl && !heldRead && activeCenter === "A", "Only one A read may be held");
+        let resolve!: () => void;
+        const state: HeldRead = { ordinal: null, target: "A", switchGeneration: null, captured: false, released: false, bytes: 0, outcome: "armed" };
+        heldRead = { state, wait: new Promise<void>(yes => { resolve = yes; }), release: () => { state.released = true; resolve(); } };
+        return { release: heldRead.release, snapshot: () => ({ ...state }) };
+      },
       async seedSteeringConversation() {
         assert.ok(options.steering, "Steering actor requires the explicit selected journey");
         assert.equal(steeringSeeded, false, "Only one synthetic steering actor is allowed");
