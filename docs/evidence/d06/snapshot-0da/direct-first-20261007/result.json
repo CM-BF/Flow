@@ -1,0 +1,34 @@
+{
+  "state": "PASS",
+  "source": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+  "runHead": "9fb9ad57ec4a5deb71ac107e0b4bd2d7d0dd55ce",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "apps/execution-dashboard/test/architecture.test.mjs"
+  ],
+  "startedAt": "2026-10-07T03:22:57.010784+00:00",
+  "endedAt": "2026-10-07T03:23:00.137584+00:00",
+  "actualExit": 0,
+  "elapsedMs": 3126.8698750063777,
+  "selected": 22,
+  "passed": 22,
+  "pid": 26784,
+  "pgid": 26784,
+  "bothEOF": true,
+  "capturedBytes": {
+    "stdout": 2520,
+    "stderr": 0
+  },
+  "maxSampledTmpBytes": 0,
+  "cleanup": {
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "remaining": []
+  },
+  "errors": [],
+  "stdoutSha256": "ab0e2465ecdad661dce9ed69840023c0ed1607d3d466a37bd86cbf97d59cf1f4",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "scope": "Original22: 21 Git/source/data +1 permitted owned dynamic HTTP case (9 requests). No snapshot/PG/Chrome/provider/install/personal services.",
+  "browser": "NOT_RUN"
+}

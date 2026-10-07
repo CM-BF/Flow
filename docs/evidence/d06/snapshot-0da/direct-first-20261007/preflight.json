@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-07T03:22:56.980934+00:00",
+  "head": "9fb9ad57ec4a5deb71ac107e0b4bd2d7d0dd55ce",
+  "branch": "codex/dashboard-architecture-runtime",
+  "dirty": false,
+  "source": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+  "sourcePins": [
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "bytes": 44076,
+      "sha256": "7ccc2ca80760a4050f09a2d7bdbbaf04884395ff945ae0cda887d9d6a1e12d78"
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture.test.mjs",
+      "bytes": 32645,
+      "sha256": "a8650e9c391efdf5dfa60defbe421bd0789138a62fc76c34252e0b5d2ea27149"
+    }
+  ],
+  "claim": {
+    "observedAt": "2026-10-07T03:22:16.971Z",
+    "claim": {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/execution-dashboard/public/architecture-data.js",
+        "apps/execution-dashboard/test/architecture.test.mjs",
+        "docs/evidence/d06",
+        "plans/d06-architecture-refresh"
+      ],
+      "state": "active",
+      "branch": "codex/dashboard-architecture-runtime",
+      "origin": "new",
+      "taskId": "D06",
+      "worker": "d01_owner",
+      "claimId": "adf9539d-0d42-49b8-961b-f5195a4c10e9",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+      "createdAt": "2026-10-06T23:36:04.842Z",
+      "updatedAt": "2026-10-06T23:36:04.842Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  },
+  "pg": {
+    "version": "8.23.1",
+    "packageRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+    "packageSha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+    "mainRealpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+    "mainSha256": "3fad6e6d3d976edbabe0cbc9e1d39f4340bcb719bbbb186a0d3a24f3dbd4a94c"
+  },
+  "freshFreeBytes": 26536275968,
+  "floorPlusLocalTmpAndRaw": 1217396736,
+  "tmpBytesLimit": 8388608,
+  "rawBytesLimit": 1048576,
+  "segmentLimitMs": 90000,
+  "commandLimitMs": 30000,
+  "boundary": "Original22: 21 Git/source/data +1 permitted owned dynamic HTTP case (9 requests). No snapshot/PG/Chrome/provider/install/personal services.",
+  "preflightCorrections": [
+    "Used original worker d01_owner instead of lead label",
+    "Resolved pg main ./lib directory to existing lib/index.js; not a missing dependency"
+  ]
+}
