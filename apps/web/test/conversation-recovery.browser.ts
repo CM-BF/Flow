@@ -488,12 +488,13 @@ async function worker(init: Init) {
         const holder = window as Window & { recoveryFixtureRestoreIdb?: () => void };
         const original = IDBDatabase.prototype.transaction;
         Object.defineProperty(IDBDatabase.prototype, "transaction", { configurable: true, writable: true,
-          value: function (this: IDBDatabase, ...args: Parameters<IDBDatabase["transaction"]>) {
+          value(this: IDBDatabase, ...args: Parameters<IDBDatabase["transaction"]>) {
             const transaction = original.apply(this, args);
             if (this.name === "flow.conversation-recovery.v1" && args[1] === "readwrite") queueMicrotask(() => transaction.abort());
             return transaction;
           } });
-        holder.recoveryFixtureRestoreIdb = () => { IDBDatabase.prototype.transaction = original; delete holder.recoveryFixtureRestoreIdb; };
+        Object.defineProperty(holder, "recoveryFixtureRestoreIdb", { configurable: true,
+          value() { IDBDatabase.prototype.transaction = original; delete holder.recoveryFixtureRestoreIdb; } });
       });
       try {
         await input().fill("Unsaved page-only draft after abort 中文🙂");
