@@ -1,0 +1,22 @@
+{
+  "startedAt": "2026-10-07T11:44:21.966285+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-upstream-upgrade/docs/evidence/x01-upstream-upgrade/build.mjs"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-upstream-upgrade",
+  "free": 22003236864,
+  "required": 6300000000,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-upstream-upgrade/docs/evidence/x01-upstream-upgrade/build/tmp",
+    "dev": 16777234,
+    "ino": 124103062
+  },
+  "budgets": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288
+  },
+  "tmpMeasurement": "before/after sample; not realtime OS isolation"
+}
