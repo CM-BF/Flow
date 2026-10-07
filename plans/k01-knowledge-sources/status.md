@@ -90,3 +90,5 @@
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
 | K01-QP-REVIEW | 2026-10-07T14:57:04Z | OPEN | 审查 | 查询计划诊断文档待Mika独审；真实PG仍NOT_OPEN，独审不自动授予运行 | c2ed3bb固定提交与本段派工 |
+
+2026-10-07T14:57:42.144976Z：本段唯一dashboard读取（generatedAt14:57:28.669Z）返回live/current、实际Git4c235e8c clean、claim v1 matchesSource、10TODO及checks not_run/review not_started；但其status内容仍是14:55启动版本（target UNKNOWN），与已提交14:57交付status不同，implementationProof为unknown。该次聚合不是最终target同步成功；原读取保存在/tmp/flow-k01-query-plan-dashboard.json，交Mika后续读取，不在本段轮询/改parser/重启服务。唯一owner文件现已声明完整c2ed3bb target；本次metadata push完成后STOP，独审与main未完成。
