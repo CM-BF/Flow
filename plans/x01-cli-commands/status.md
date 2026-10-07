@@ -8,7 +8,7 @@
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T10:08:18Z |
-| 任务完成时间 | 2026-10-07T10:36:15.274361+00:00 |
+| 任务完成时间 | 2026-10-07T10:36:15.274Z |
 | 任务时间来源 | 实际UTC建树段观察；take COMMITTED10:08:44.048Z |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-cli-commands |
 | Branch | codex/plugin-cli-commands |
@@ -22,6 +22,7 @@
 | 实现目标 | 9f5d61a10504536f43adca28096878eb71d7fa52 |
 | 实现范围 | apps/cli/src/index.ts,apps/cli/src/plugin-runtime.test.ts,packages/client/src/index.ts,packages/client/src/plugin-management.ts,packages/client/src/plugin-runtime.test.ts,docs/evidence/x01-cli-commands/fixtures.ts |
 | 阶段 | M2 |
+| 优先级 | 5 |
 | 当前产出 | 四个管理命令已接入主线；坏回执明确结果未知，真实进程联合验收由父任务继续 |
 | 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
@@ -54,3 +55,5 @@
 10:23:00.786Z fresh账本available，claim5f33ae20 v1 ACTIVE/7scope身份不变。local已归还且无待launch，metadata不占资源holder。唯一注册输入task-intake.json待原Lead登记/正常聚合；未写registry或生成JSON。独审完成安全点复核命名/接口/冻结请求/严格错误字段，无剩余本片修复，产品停止写入并保claim待main。架构后继交Mika协调D06固定三叶source，不冒架构图已更新。
 
 主线接收见main-accepted.json；原I02 dashboard-cli-source-deployment.json记录TODO done不识别，本次仅将真实完成项改为completed，保原部署错误观察。main已195登记/部署事实由I02来源提供，本片不重跑产品。新ACK片已独立claim接收index/helper，本树永不恢复其写入。
+
+本轮parseStatus首核errors空、human缺优先级；旧CLI另完成时间需ISO毫秒Z。按模板补默认优先级5并规范同一实际UTC表示；不改变原证据时间或部署错误历史。
