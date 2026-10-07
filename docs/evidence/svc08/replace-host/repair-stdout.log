@@ -1,0 +1,28 @@
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-host-segment-meq4cx3u/flow-svc08-host-4wOjhk","dev":16777234,"ino":123418784,"cleaned":true,"bytes":0,"calls":{"marker":1,"stop":1,"spawn":1,"ready":1,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✖ SVC08 replace-host validates exact retained report and backend bindings before touching Web (116.792292ms)
+ℹ tests 1
+ℹ suites 0
+ℹ pass 0
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 221.0415
+
+✖ failing tests:
+
+test at tools/personal-preview/preview.test.mjs:425:1
+✖ SVC08 replace-host validates exact retained report and backend bindings before touching Web (116.792292ms)
+  AssertionError [ERR_ASSERTION]: Missing expected rejection.
+      at async file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/tools/personal-preview/preview.test.mjs:431:5
+      at async hostReplacementFixture (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/tools/personal-preview/preview.test.mjs:348:5)
+      at async TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/tools/personal-preview/preview.test.mjs:426:3)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async startSubtestAfterBootstrap (node:internal/test_runner/harness:387:3) {
+    generatedMessage: false,
+    code: 'ERR_ASSERTION',
+    actual: undefined,
+    expected: { code: 'WEB_COMPATIBILITY_INVALID' },
+    operator: 'rejects',
+    diff: 'simple'
+  }

@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-07T03:51:16.435598+00:00",
+  "round": "direct",
+  "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc08-host-segment-wi16ib1i",
+  "scratchDev": 16777234,
+  "scratchIno": 123418868,
+  "freeBytes": 25863589888,
+  "sources": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 39332,
+      "sha256": "247d89af6b70ecbabb9f574265d4c1c4b49411b51f1f5e4dc08d56722073c34e"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 43313,
+      "sha256": "e82691c7b2f9bf9b76ffe2dde4995a3756a4d17fbebabf6fc1f0ee35632333ec"
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 5301,
+      "sha256": "a6343401769258b81d72b5ce117701f28daf74ca1776abf5d269f951b34f0f01"
+    },
+    {
+      "path": "tools/personal-preview/README.md",
+      "bytes": 18324,
+      "sha256": "84358e3347c2f294ba521f8e070b548785e9590e36f3eeee164a738733946741"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "bytes": 8163,
+      "sha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 2899,
+      "sha256": "3772f23fc1145cc7d5f517c7741d896a9e62b2e2e72e6263db736a5da83789b4"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "docs/evidence/svc08/replace-host/run-local.py",
+      "bytes": 4851,
+      "sha256": "a0b5be6ad466a1a62011557a894a1966ae6f637afbd5d8dc63b0833864fa5020"
+    }
+  ],
+  "selectedPlanned": 3,
+  "selection": "SVC08 replace-host (validates exact retained report|preserves legacy af51|validates noncurrent retained files)",
+  "legacyPgNotSelected": 6,
+  "rawBytesMax": 262144,
+  "tmpBytesMax": 16777216,
+  "PG": 0,
+  "Chrome": 0,
+  "provider": 0,
+  "policy": {
+    "work": 20,
+    "term": 0.5,
+    "reap": 2,
+    "parent": 24.5
+  }
+}

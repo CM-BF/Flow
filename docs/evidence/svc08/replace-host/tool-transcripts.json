@@ -1,0 +1,34 @@
+{
+  "source": "Faithful excerpts from this owner conversation tool returns; not subprocess stdout recreation",
+  "entries": [
+    {
+      "round": "first",
+      "tool": "tools.write_stdin",
+      "session_id": 19843,
+      "chunk_id": "f1c27b",
+      "exit_code": 0,
+      "note": "Exit/session/chunk retained in conversation context; subprocess stdout is independently retained first-stdout.log. No missing tool stdout reconstructed."
+    },
+    {
+      "stage": "first sparse add attempt",
+      "tool": "tools.exec_command",
+      "chunk_id": "ab93ac",
+      "exit_code": 1,
+      "reason": "Exact test path outside sparse definition. Commit/test did not run; then exact add --sparse used. No shared configuration changes."
+    },
+    {
+      "round": "repair",
+      "tool": "tools.exec_command",
+      "chunk_id": "d4fb22",
+      "exit_code": 1,
+      "output": "[codex/personal-web-connection-lifecycle d6c6fe9c] test(svc08): bind replacement preflight to exact retained reports\n 2 files changed, 19 insertions(+), 2 deletions(-)\n{\"round\": \"repair\", \"complete\": false, \"childExit\": 1, \"ownedState\": \"absent\", \"elapsedMs\": 265}\n"
+    },
+    {
+      "round": "direct",
+      "tool": "tools.exec_command",
+      "chunk_id": "97d3c8",
+      "exit_code": 0,
+      "output": "[codex/personal-web-connection-lifecycle 52d3c80b] fix(svc08): validate exact release bindings before host stop\n 1 file changed, 4 insertions(+), 3 deletions(-)\n{\"round\": \"direct\", \"complete\": true, \"childExit\": 0, \"ownedState\": \"absent\", \"elapsedMs\": 366}\n"
+    }
+  ]
+}
