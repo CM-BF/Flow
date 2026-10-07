@@ -1,0 +1,200 @@
+{
+  "observedAt": "2026-10-07T08:49:41.486497+00:00",
+  "target": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388",
+  "previous": "422f4b150e5801d6010e5bbd6b53574e35384f87",
+  "sourceArchive": {
+    "files": 996,
+    "logicalBytes": 7811090
+  },
+  "fixedInputs": 69,
+  "sql": 33,
+  "differences": [
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "oldBytes": 15713,
+      "newBytes": 17320,
+      "oldSha256": "8246b50d9aef92040fdea40e7ba854b2f9b4ae16b513fa2126faea1eb270a583",
+      "newSha256": "db4e30317baf9a604d5fe89c2c67ff03cb925bbed90cb7cc3debfc055af10648"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "oldBytes": 15383,
+      "newBytes": 15083,
+      "oldSha256": "c776dc0e0fc18a683c23f81d9d73fbc22d7e406118fe7e9783888c5c4b31a67a",
+      "newSha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a"
+    },
+    {
+      "path": "packages/storage/migrations/033-native-activity-bodies.sql",
+      "oldBytes": null,
+      "newBytes": 1398,
+      "oldSha256": null,
+      "newSha256": "cdfba885c10b67d804d985bc0d4fcb30634c50fbfa0cf25be3fc0053e14dd15e"
+    },
+    {
+      "path": "packages/storage/migrations/034-plugin-runtime.sql",
+      "oldBytes": null,
+      "newBytes": 6572,
+      "oldSha256": null,
+      "newSha256": "8d3cc77265c7ee621ee5da5aacb402615054e4f234cc65cf430f0dc7bc7e7f9d"
+    },
+    {
+      "path": "packages/storage/migrations/035-codex-conversations.sql",
+      "oldBytes": null,
+      "newBytes": 189,
+      "oldSha256": null,
+      "newSha256": "9b41d66666ec4a7955e22a66fbf994ce873b9dc2d38bd77dab15648ef52a2b6d"
+    },
+    {
+      "path": "tools/personal-preview/browser-session-configuration.mjs",
+      "oldBytes": null,
+      "newBytes": 7335,
+      "oldSha256": null,
+      "newSha256": "7109e968fb32e5a73a096ef8febf4aed5de0710319113b68301a6d53d5832fde"
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "oldBytes": 5301,
+      "newBytes": 5394,
+      "oldSha256": "a6343401769258b81d72b5ce117701f28daf74ca1776abf5d269f951b34f0f01",
+      "newSha256": "fb868c44175b30d096905761b6569bc91f3e4eee270b5f24c225dfcce3785935"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "oldBytes": 1983,
+      "newBytes": 2690,
+      "oldSha256": "07f37e7d6ca07e1b48899811bf05e3f8ff76eacb33831f74b6e8f277414d16b6",
+      "newSha256": "8d4d1b6f607e602dbfb1501541de565dbc6fb03f188d476d3ebf30022025ceeb"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "oldBytes": 9335,
+      "newBytes": 9796,
+      "oldSha256": "c1bae2dfd44dbd18bc06ae0cab150a5a80f1d42176d717fb90e0efb1b1e371cb",
+      "newSha256": "87a5ddc0ef6883de926a8cf25b6e38883f6485e00002cdd1973c73da4aea31e8"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "oldBytes": 41320,
+      "newBytes": 46785,
+      "oldSha256": "6d85a9890d15dc619b22cce71bf88701fb70826ab646395c45dc803b9329efc0",
+      "newSha256": "810f192a5f121b48a6c317be5a506e24346035b6793e2fb4b27dcf7a931da737"
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "oldBytes": 6800,
+      "newBytes": 7633,
+      "oldSha256": "ca632440092ae3d403a65fffe8c5321232f83036aaf6558e6132c6cfad299206",
+      "newSha256": "37cdcd83ac6c65ac3bb57cfaea876aed258f8f8b23897864feba78be9e5413b1"
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "oldBytes": 8163,
+      "newBytes": 9035,
+      "oldSha256": "e2997e95f2d1bff4c90f21f08ba646c941d3805a6a3aa7a40ae0ad5afe43296e",
+      "newSha256": "dbbe039e28ec1e28dbba004f57823f33865e1eccd4710b34b55dfeade81069ff"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "oldBytes": 12759,
+      "newBytes": 15567,
+      "oldSha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674",
+      "newSha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d"
+    },
+    {
+      "path": "tools/personal-preview/web-retention-policy.mjs",
+      "oldBytes": null,
+      "newBytes": 1182,
+      "oldSha256": null,
+      "newSha256": "5eda7f605849a255cdc470fb6a7e1211f0f8ada2a7eb5f88ef14d6a9a8cdd594"
+    }
+  ],
+  "dependencyInputs": [
+    {
+      "path": "apps/cli/package.json",
+      "bytes": 215,
+      "sha256": "d35ba2822f9010e0fd4abbd1777b3be128145fa82c0395f1beefb23a4e386333",
+      "sameAs422": true
+    },
+    {
+      "path": "apps/execution-dashboard/package.json",
+      "bytes": 362,
+      "sha256": "8492f44ae6f90dd60a76676f84801f1048256abd5c79b708126358731da8d8aa",
+      "sameAs422": true
+    },
+    {
+      "path": "apps/runner/package.json",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9",
+      "sameAs422": true
+    },
+    {
+      "path": "apps/server/package.json",
+      "bytes": 552,
+      "sha256": "55219b0d08e81fe928ecc85679b1f47f0e496f7e56bf40c71b24b0c131bd079e",
+      "sameAs422": true
+    },
+    {
+      "path": "apps/tui/package.json",
+      "bytes": 453,
+      "sha256": "cf66a662ad0dab061952dded7b4a429217bac526f7cd0745297d5dbfc766dcc8",
+      "sameAs422": true
+    },
+    {
+      "path": "apps/web/package.json",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+      "sameAs422": true
+    },
+    {
+      "path": "package.json",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+      "sameAs422": true
+    },
+    {
+      "path": "packages/client/package.json",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a",
+      "sameAs422": true
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6",
+      "sameAs422": true
+    },
+    {
+      "path": "packages/interaction/package.json",
+      "bytes": 381,
+      "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa",
+      "sameAs422": true
+    },
+    {
+      "path": "packages/plugin-runtime/package.json",
+      "bytes": 182,
+      "sha256": "342852a97b2682285ae98035f8e1852a1e616b5de071e60a7454ce8848cb16ae",
+      "sameAs422": true
+    },
+    {
+      "path": "packages/protocols/package.json",
+      "bytes": 366,
+      "sha256": "f6a8155b462edf0ccfb39b20c8344576d1ec27f647c11e0e229c52e895867294",
+      "sameAs422": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b",
+      "sameAs422": true
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "bytes": 40,
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65",
+      "sameAs422": true
+    }
+  ],
+  "productWrites": 0,
+  "build": 0,
+  "install": 0
+}

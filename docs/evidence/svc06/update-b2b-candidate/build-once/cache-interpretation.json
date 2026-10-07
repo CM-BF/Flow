@@ -1,0 +1,35 @@
+{
+  "recordedAt": "2026-10-07T08:54:47.029799Z",
+  "rawUnchanged": true,
+  "observerSourceSha256": "581fa2285f97356ca49eef6383ac5d254ad87af2238f0fafe12aad32be8561f5",
+  "stdoutSha256": "f29172952d1a56976605a478fd17deada14224f4294cda5c8bcc8431eb9498b6",
+  "fieldCorrection": {
+    "field": "modeObservationMeaning",
+    "unsupportedClause": "applies manifest executable mode",
+    "correctMeaning": "The frozen clone primitive verifies selected regular-file content/size and stable source identity, then verifies cloned content and target nlink=1. It uses fclonefileat and does not chmod to declared executable mode. Source mode differences are observations outside that clone input contract, not missing cache. This observation does not establish installed mode correctness."
+  },
+  "modeObservationsRetained": [
+    {
+      "path": "files/01/c581d9e4f281cc5b3bf83c796fefa584b52d43563c5adc8c7dae7f8c590695aaab630e619a960b16c9ef0e3de6eb9ef0b1c3db072798c8b059b24f6a3e2555",
+      "executableExpected": false,
+      "mode": 493
+    },
+    {
+      "path": "files/28/bde0d8e3076f0e7be1a9fc34b5ed87c53d65b3fc369e26621a167390df26b2b1936202f14b02a0679d0d7ec9d45868cb00e92e5a255c371f0ffb19029ed9a3",
+      "executableExpected": false,
+      "mode": 493
+    },
+    {
+      "path": "files/c2/a6a7f253ad253e075af3f1eab442fd28001b0bc59c84140c64c6b63ffacfe7fe3d98f3aa80b9cf10c7b2cba62c26700e2235d327c6a576cc8f8342cb290e7e",
+      "executableExpected": false,
+      "mode": 493
+    }
+  ],
+  "metadataOnly": true,
+  "payloadHashesVerified": false,
+  "selectedLogicalBytes": 354552778,
+  "selectedAllocatedBytesDeviceInodeDeduplicated": 383692800,
+  "physicalExclusiveOrReclaimableBytes": "UNKNOWN; st_blocks is not exclusive APFS clone allocation",
+  "oldThreeProbeFailures": "Preserved in artifact-first-run/cache-stdout.txt; no rerun to replace them",
+  "buildAndRuntime": "NOT_RUN"
+}
