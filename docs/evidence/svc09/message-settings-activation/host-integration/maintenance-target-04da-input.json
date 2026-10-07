@@ -1,0 +1,24 @@
+{
+  "source": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "path": "tools/personal-preview/maintenance-host.mjs",
+  "baseBytes": 9796,
+  "baseSha256": "87a5ddc0ef6883de926a8cf25b6e38883f6485e00002cdd1973c73da4aea31e8",
+  "candidateBytes": 10380,
+  "candidateSha256": "1e8dad55f7daa34a826e19b1adbc7b65e42b7825cbc9aae3a857759275171a13",
+  "changes": [
+    {
+      "before": "import { readWebRelease }",
+      "after": "import { selectHeldPreviewWebHost } from './maintenance-target.mjs';\nimport { readWebRelease }"
+    },
+    {
+      "before": "  const artifact = await preparePreviewWeb(config, target, operation.backendArtifact);",
+      "after": "  if (operation.webHostTarget?.status === 'pending') await selectHeldPreviewWebHost(config, pool, state, operation);\n  const artifact = await preparePreviewWeb(config, target, operation.backendArtifact);"
+    },
+    {
+      "before": "  await startPreviewServices(config, state, artifact, operation.backendArtifact);",
+      "after": "  if (operation.webHostTarget) { state.webHost.selection = 'starting'; await savePreviewJson(join(config.directory, 'state.json'), state); }\n  await startPreviewServices(config, state, artifact, operation.backendArtifact);\n  if (operation.webHostTarget) {\n    state.webHost.selection = 'ready'; state.webHost.recordSha256 = createHash('sha256').update(JSON.stringify(state.processes.web)).digest('hex');\n    await savePreviewJson(join(config.directory, 'state.json'), state);\n  }"
+    }
+  ],
+  "authority": "source-only candidate, no assembly or deployment performed",
+  "slots": "unchanged legacy single runner"
+}
