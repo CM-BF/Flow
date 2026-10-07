@@ -1,0 +1,55 @@
+{
+  "at": "2026-10-07T07:08:46.769660+00:00",
+  "fixedSource": "6b9826e3aa83b1a5947db50f4332cb9c65f1b340",
+  "official": [
+    {
+      "url": "https://raw.githubusercontent.com/openai/codex/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/app-server-protocol/src/protocol/v2/thread.rs",
+      "bytes": 76531,
+      "sha256": "ffc2f432bc7d0dadf9ae10db832035c8b75d7b709462bfed3c83d33ea89c526a"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/openai/codex/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/app-server/src/dynamic_tools.rs",
+      "bytes": 3863,
+      "sha256": "b93d2e6adb139da47f1e0479f5c0099b5c2b612ed1080e12917a4b590eb286c0"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/openai/codex/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/protocol/src/dynamic_tools.rs",
+      "bytes": 5992,
+      "sha256": "d73d51aa0cd0e6318d6fc1faa890a3524301af0c3ba2b2dc0d071728b2caa402"
+    },
+    {
+      "url": "https://raw.githubusercontent.com/openai/codex/6b9826e3aa83b1a5947db50f4332cb9c65f1b340/codex-rs/app-server/tests/suite/v2/dynamic_tools.rs",
+      "bytes": 33904,
+      "sha256": "9873714b3da2463a6f275879b2a2e77fcc6de1dbf441a51e768a8b4731018e7b"
+    }
+  ],
+  "local": [
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc"
+    },
+    {
+      "path": "apps/runner/src/codex/options.ts",
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "bytes": 6116,
+      "sha256": "dc8036e14b7395891b61d7723a8b10212fba7ac70f6579093b160c08fd3d756a"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "bytes": 8361,
+      "sha256": "e51986edad382fdf42e5774da855d5fee9127e9715c540eba60600cb91a1cdf4"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-policy.ts",
+      "bytes": 4176,
+      "sha256": "029326253edb300215e88c058faedba004189cdcb7e6614383795acb8610e04d"
+    }
+  ],
+  "mode": "read-only comparison; no tests/import/native/provider/PG/service",
+  "newInstalledDependencies": 0
+}

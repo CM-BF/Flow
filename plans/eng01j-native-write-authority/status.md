@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T07:03:48.337103+00:00 |
+| 最近更新 | 2026-10-07T07:09:03.390767+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -24,7 +24,7 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 独立受限文件工具的单文件写入已获审并进入主线 |
-| 下一可用交付 | 固定真实工具派生与全部写入者停止的最小接入方案 |
+| 下一可用交付 | 受信host独占单文件写入的动态工具接入，待明确共享scope |
 | 当前阻塞 | ACTIVE: 完整工具派生仍缺可证明的进程收束边界；模型授写前保证与现接口不相符，零模型路线继续准备 |
 | 需用户决定 | NONE |
 | Review | 四源/caller及实际结果均获限定批准；[最新独审](../../docs/evidence/eng01j/helper-host/stock-result-independent-review.json)，不含app-server派生或完整authority |
@@ -83,3 +83,5 @@ helper一次段结束 2026-10-07T05:42:51.508674+00:00，263ms/outer1/两组abse
 2026-10-07T07:00:49.443601+00:00：原stock结果获 APPROVED_LIMITED_STANDALONE_STOCK_HELPER_RESULT，38固定/6安装输入及原raw已由Lead核，main f39a已接。此次仅原样归档与receipt，0复跑；writeAccess unknown。后继开始只读固定公开协议/上游调度、Mika07341输入，停止于新源码权限/平台范围之前。产品与原raw/manifest保持。
 
 2026-10-07T07:03:48.337103+00:00：完成[下一路线只读候选](../../docs/evidence/eng01j/helper-host/app-server-route.md)。9份既存binary schema匹配原摘要，5份官方固定调度源码留小段；公开fs/writeFile明确sandbox=None，不安排它重复验证外层边界。command/exec可零模型桥接真实派生，但不等模型apply_patch；现Darwin fork-deny与此冲突。候选明确专属Linux内核进程域/平台LSM依赖、R06复用与两新叶子scope建议，未领取/未实施/未确认本机可用。模型写前locked-no-fallback与现公开字段的精确冲突交产品裁决，未调用资格query。0工程测试/native/PG/browser/provider/个人操作，五产品与所有原raw/manifest不变。
+
+2026-10-07T07:09:03.390767+00:00：按Lead有界只读比较完成[host工具路线](../../docs/evidence/eng01j/helper-host/host-tool-comparison.md)。优先现0.154实验dynamicTools→同R06回调、native工作区只读、host唯一写gate；MCP需额外服务不选，Linux专域仅候选非当前必经。原fileChange-only语义不可冒充，现同步respond需共享owner明确异步接缝；只新增docs，0运行/安装/服务。真实stock工具回调与资格仍未验。

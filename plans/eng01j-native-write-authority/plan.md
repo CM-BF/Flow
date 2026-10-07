@@ -16,3 +16,5 @@
 ENG01J-05已获Lead授权的四源后继见[准备Interface](../../docs/evidence/eng01j/helper-host/interface.md)：先5例/聚焦类型与独审，真实stock单文件另固定零provider工作段。原30s段已结束；本次为新≤60s/4MiB普通local，未追溯延长旧失败运行。
 
 独立stock单文件结果已获审/main f39a，完整ENG仍未完成。下一范围只读收敛见[真实app-server路线与停止域](../../docs/evidence/eng01j/helper-host/app-server-route.md)：不重复公开fs外层边界或目录检查；新的受信平台域/两源码路径须由Lead明确scope与固定输入后实施。旧段预算不用于新平台运行。
+
+后继优先级校准：先按[本机host工具比较](../../docs/evidence/eng01j/helper-host/host-tool-comparison.md)准备原生只读、受信host唯一写gate，Linux专域保留为备选而非必经前置。新recipe/共享async接缝须明确scope；0provider纯/注入检查不能冒真实stock工具调用。
