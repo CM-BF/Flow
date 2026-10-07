@@ -45,3 +45,7 @@ Lead10:16:07Z完成独审，无P1/P2；[原样报告](../../docs/evidence/o16/na
 ## 2026-10-07T10:23:06Z 首段结果待独审
 
 [实际结果](../../docs/evidence/o16/native-plan-20261007-1018/RESULT.md)绑定source0cf7与本次一次材料。SDK1/init1而原top-level0矛盾保留；名单拒绝与独立测量unknown/TERM分开，费用/usage未知，原DB/tmp KEEP，后续只读两组/监督器absent/连接[]不能回填原adminClosed。作者未自批，不继承源码批准为真实planner通过；[候选](../../docs/evidence/o16/native-plan-20261007-1018/declaration-candidate.md)仅原scope零模型设计，无第二query许可。
+
+## 2026-10-07T10:35:51.413710Z 私有声明与失败可观测性修复待审
+
+真实首段 89a/d5e 已获 Lead APPROVED_RESULT 限定忠实性结论，仍为失败，无提案/成功pause、费用未知、资源KEEP。新修复 source `ff266d1ddc3adf3f89012095b4ff446367c3fb7e` / caller `9e15c7261a0e73267fe60dfd901617ad54abdf36`：5行为源+3专测；[Interface](../../docs/evidence/o16/native-observation-repair/Interface.md)与[原始分轮结果](../../docs/evidence/o16/native-observation-repair/validation.json)。7新不同局部例分两轮、首文件加载红保留，0PG/SDK native import/auth/provider。不重复旧15/16/26，不改普通adapter/预算/停止/清理权限；作者未自批，固定差量交Lead唯一独审。

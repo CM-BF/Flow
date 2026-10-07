@@ -1,0 +1,71 @@
+{
+  "kind": "flow.o16.observation-repair-validation.v1",
+  "recordedAt": "2026-10-07T10:35:51.413710Z",
+  "source": "ff266d1ddc3adf3f89012095b4ff446367c3fb7e",
+  "caller": "9e15c7261a0e73267fe60dfd901617ad54abdf36",
+  "plannedNewCases": 7,
+  "distinctPassedAcrossRounds": 7,
+  "originalFailurePreserved": true,
+  "rounds": [
+    {
+      "run": "run-01",
+      "executedNewCases": 5,
+      "passed": 5,
+      "uncollectedCases": 2,
+      "fileLoadFailure": 1,
+      "reportedNodeTests": 6,
+      "reason": "ERR_MODULE_NOT_FOUND: missing inherited tsx loader, no production workaround",
+      "outerExitCode": 1,
+      "toolChunk": "fe7c37",
+      "supervisedMs": 374,
+      "rawBytes": 2201
+    },
+    {
+      "run": "run-02",
+      "executedNewCases": 2,
+      "passed": 2,
+      "failed": 0,
+      "unaffectedFiveRerun": false,
+      "outerExitCode": 0,
+      "toolChunk": "5e4e18",
+      "supervisedMs": 321,
+      "rawBytes": 324
+    }
+  ],
+  "supervisedMs": 695,
+  "callerMs": 717,
+  "rawBytes": 2525,
+  "privateBytesAtClosure": [
+    0,
+    0
+  ],
+  "cleanup": {
+    "ownedStates": [
+      "absent",
+      "absent"
+    ],
+    "dualEOF": true,
+    "exactScratchRemoved": true,
+    "historicalEPERMObservationsRetained": true
+  },
+  "execution": {
+    "PG": 0,
+    "provider": 0,
+    "authentication": 0,
+    "SDKNativeImport": 0,
+    "realSDKQuery": 0,
+    "injectedNativeQueryStandIn": 1,
+    "oldSuitesRerun": false
+  },
+  "sourceBindingsInRunsMatched": true,
+  "changedExperimentPaths": [
+    "experiments/continuous-goal-acceptance/config.mjs",
+    "experiments/continuous-goal-acceptance/driver.mjs",
+    "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+    "experiments/continuous-goal-acceptance/operator.mjs",
+    "experiments/continuous-goal-acceptance/operator.test.mjs",
+    "experiments/continuous-goal-acceptance/query-policy.mjs",
+    "experiments/continuous-goal-acceptance/query-policy.test.mjs",
+    "experiments/continuous-goal-acceptance/query-run.test.mjs"
+  ]
+}

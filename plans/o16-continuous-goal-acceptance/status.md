@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T10:33:06.831797Z |
+| 最近更新 | 2026-10-07T10:35:51.413710Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -11,23 +11,23 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance |
 | Branch | codex/continuous-native-goal-acceptance |
 | 基线 | 当前验收f5a13cbed6b75151f34e6924ec7e10c8894acf48；原8bd为历史基线 |
-| HEAD | source0cf7e1ba；环境已审；首段实际失败/资源KEEP，结果待独审 |
+| HEAD | 修复 source ff266d1d / caller 9e15c726，7 新不同直接例分轮已绿待独审；真实首段失败保留 |
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
 | 工作分支状态 | in-progress |
-| 检查状态 | 首段实际1selected/0pass、SDK1/init1，费用UNKNOWN，原失败KEEP；本次15 different（12新+3受影响旧）分5轮通过，原3失败保留；child8730ms/raw7207B，5组absent/双EOF/scratch removed。0PG/auth/SDK进程/provider，旧16/26未重跑。 |
-| Review | APPROVED_SOURCE_AND_LOCAL_RESULTS（10:16:07Z，原样报告已归档）；真实规划结果另审，旧批准不扩大 |
-| 实现目标 | 0cf7e1ba3016b2439c2b383437daa3dff1483299 |
+| 检查状态 | 本次 7 新不同直接例分两轮通过；首轮 5 绿 + 文件加载失败，补原 loader 后仅 2/2；监督 695ms/raw2525B，两组 absent/双EOF/scratch removed。0PG/SDK native import/auth/provider，旧15/16/26未重跑。真实首段仍1SDK/init1，费用UNKNOWN。 |
+| Review | 真实首段限定结果忠实性已获 Lead 批准（非规划成功）；本次零模型源码修复待唯一独审 |
+| 实现目标 | ff266d1ddc3adf3f89012095b4ff446367c3fb7e |
 | 实现范围 | experiments/continuous-goal-acceptance |
 | 已集成main状态 | d022c8003fc4bd8ba560f1a039411ed098186659 main/origin受控接收216 own路径，与78df逐字同；原产品f5a不变，0重测；b768零模型公开旅程批准独立保留 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 首次规划已启动一次，但初始化声明不匹配，未得到提案；自有进程和连接已关闭，原失败与资源保留。 |
-| 下一可用交付 | 核对本次失败证据，修正声明基线与记录缺口；新的真实请求须另行绑定授权。 |
-| 当前阻塞 | ACTIVE: 初始化声明与历史基线不符，真实提案尚未产生；旧许可已消费，不能自动重试。 |
+| 当前产出 | 已补齐失败调用计数与资源未知记录，并为私有环境固定声明名单；局部检查通过，等待独立审查。 |
+| 下一可用交付 | 交付本次最小修复与原始检查证据；下一真实规划需新授权。 |
+| 当前阻塞 | ACTIVE: 真实提案尚未产生；原许可已消费，本次局部修复不授权第二次请求。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -91,3 +91,5 @@
 2026-10-07T10:23:06.485898Z：首段原始结果已封存：[RESULT](../../docs/evidence/o16/native-plan-20261007-1018/RESULT.md)。实际SDK1/初始化1，原top-level0矛盾保留，usage/cost未知。10:20:24.318Z目标连接[]/两组absent后归还窗口；10:21:45.810Zwatchdog亦absent。原adminClosed未持久、测量原因未知，DB/tmp KEEP，不DROP/重投。无proposal/成功pause/children；后继仅声明/记录候选，源保持0cf7。
 
 2026-10-07T10:33:06.831797Z：实际结果已获 Lead 限定忠实性批准（非规划成功）；fresh55c4v1/clean d5e 后进入最小零模型修复。修私有声明策略与失败计数/计量记录，原 raw/FAIL/KEEP 不改；[本片 Interface](../../docs/evidence/o16/native-observation-repair/Interface.md)。本次新段60s/512KiB raw/2MiB tmp，仅相关注入/纯测，禁止 SDK/auth/provider/PG 与第二 query。
+
+2026-10-07T10:35:51.413710Z：本次修复已固定 `ff266d1ddc3adf3f89012095b4ff446367c3fb7e`，7 新不同例分轮通过，[原始结果](../../docs/evidence/o16/native-observation-repair/RESULT.md)。首轮 loader 文件失败保留，仅补未执行2例；产品未因测试失败修改。10:34:07.897Z 两组/目录实际收尾并归还 local。原 query/native/PG 0；此前真实失败/费用未知/DB与tmp KEEP不动，source待独审。
