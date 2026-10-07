@@ -1,0 +1,75 @@
+{
+  "at": "2026-10-07T10:01:10.297001+00:00",
+  "run": "recsteer-20261007-100004-46e3cb",
+  "processes": [
+    {
+      "pid": 71146,
+      "process": "ESRCH"
+    },
+    {
+      "pid": 71508,
+      "process": "ESRCH",
+      "group": "ESRCH"
+    },
+    {
+      "pid": 71608,
+      "process": "ESRCH",
+      "group": "ESRCH"
+    },
+    {
+      "pid": 71610,
+      "process": "ESRCH",
+      "group": "ESRCH"
+    }
+  ],
+  "scratch": "/private/tmp/flow-recovery-browser-F7odFV",
+  "scratchAbsent": true,
+  "databaseCleanup": {
+    "database": "flow_recovery_c8e23dd732a7459a918a582406127d09",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.3960000000006403,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 1.652458000000479,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "fixtureCleanup": {
+    "complete": true,
+    "errors": [],
+    "elapsedMs": 20,
+    "wireBytes": 6453,
+    "providerQueries": 0,
+    "steeringActor": {
+      "registered": true,
+      "claimRequests": 4,
+      "claimed": true,
+      "sessionEventRequests": 1,
+      "heartbeatRequests": 0,
+      "runnerReceiptRequests": 0,
+      "providerQueries": 0
+    }
+  },
+  "adminEnvAbsent": true,
+  "actualExit": 1,
+  "stdoutEof": true,
+  "stderrEof": true,
+  "HTTPPortCleanup": "fixture.close complete/errors[]; no separate socket sampling claimed",
+  "providerQueries": 0
+}

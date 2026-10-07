@@ -1,0 +1,452 @@
+{
+  "journey": "steering-recovery",
+  "requiredGroups": [
+    "cookieRead",
+    "steeringRecovery"
+  ],
+  "completedGroups": [
+    "cookieRead"
+  ],
+  "checks": [
+    "actual browser stores HttpOnly cookie; public cookie-only session read opens original center"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 7654.480667,
+    "elapsedMs": 7654.480667
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 7654.562667,
+      "endedOffsetMs": 8695.198459,
+      "elapsedMs": 1040.6357919999991,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "steeringRecovery",
+      "startedOffsetMs": 8695.22425,
+      "endedOffsetMs": 16151.523084,
+      "elapsedMs": 7456.298834000001,
+      "outcome": "FAILED"
+    }
+  ],
+  "pageErrors": [],
+  "failure": "expect(received).toBeTruthy()\n\nReceived: undefined\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate",
+  "cleanupErrors": [],
+  "wire": [
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": false,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/browser-session/connect",
+      "key": null,
+      "body": "{}",
+      "status": 200,
+      "cookie": false,
+      "bearer": true,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/a06ee938-caca-41f7-a653-e2d7f0034570",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/a06ee938-caca-41f7-a653-e2d7f0034570/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/a06ee938-caca-41f7-a653-e2d7f0034570/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/a4681247-17ed-4ec7-9c56-ecf93fa01c0a/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/a4681247-17ed-4ec7-9c56-ecf93fa01c0a",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/a4681247-17ed-4ec7-9c56-ecf93fa01c0a/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/a4681247-17ed-4ec7-9c56-ecf93fa01c0a/turns",
+      "key": "c7e4579b-e407-4ef1-9511-fb086d0e86a7:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"Original turn for steering recovery\",\"mode\":\"follow-up\",\"knowledge\":[]}",
+      "status": 202,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true,
+      "responseBody": "{\"conversation\":{\"projectId\":\"1e41ce63-b848-4983-b160-ce93ed2391a4\",\"id\":\"a4681247-17ed-4ec7-9c56-ecf93fa01c0a\",\"title\":\"Recovery steering conversation\",\"harness\":\"claude\",\"requested\":{\"model\":\"recovery-steering\",\"tools\":\"none\",\"thinking\":\"disabled\"},\"executionProfile\":{\"id\":\"2989ba46-8cbe-4436-a013-0ea63b3725e1\",\"runnerId\":\"f63a8a0a-ca88-43c3-b160-3358ba898115\",\"configDigest\":\"4fbf48ae94f85985e4cd75b1490fedc78e9f487da3b09e78613786b5cfeacc68\"},\"revision\":1,\"createdAt\":\"2026-10-07T10:00:30.518Z\",\"updatedAt\":\"2026-10-07T10:00:30.702Z\"},\"turn\":{\"id\":\"5d040a6c-2778-44e4-a78d-b32299711727\",\"conversationId\":\"a4681247-17ed-4ec7-9c56-ecf93fa01c0a\",\"number\":1,\"createdAt\":\"2026-10-07T10:00:30.701Z\",\"user\":{\"role\":\"user\",\"text\":\"Original turn for steering recovery\"},\"task\":{\"id\":\"172750f6-08b9-479c-b887-7559ba103df1\",\"title\":\"Recovery steering conversation\",\"harness\":\"claude\",\"status\":\"queued\",\"verificationStatus\":\"pending\",\"createdAt\":\"2026-10-07T10:00:30.697Z\",\"updatedAt\":\"2026-10-07T10:00:30.697Z\"},\"assistant\":{\"state\":\"pending\",\"reason\":\"execution-pending\"},\"effective\":{\"model\":null,\"thinking\":\"unknown\",\"tools\":\"unknown\",\"source\":null},\"telemetry\":{\"kind\":\"execution\",\"taskId\":\"172750f6-08b9-479c-b887-7559ba103df1\",\"title\":\"Execution details\"}},\"replayed\":false}",
+      "responseSha256": "2a19e8d1e8c1e652ea46c052c69186adc4f18c6ec2ef8e819e247ae244d7e741"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/172750f6-08b9-479c-b887-7559ba103df1",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/172750f6-08b9-479c-b887-7559ba103df1/assistant-stream?limit=100",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/172750f6-08b9-479c-b887-7559ba103df1/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/a4681247-17ed-4ec7-9c56-ecf93fa01c0a/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/a4681247-17ed-4ec7-9c56-ecf93fa01c0a",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/172750f6-08b9-479c-b887-7559ba103df1/assistant-stream?limit=100",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/172750f6-08b9-479c-b887-7559ba103df1/assistant-stream/patches?attemptId=c10b4251-12d5-4f08-82e2-f3b234de4d0b&after=0&limit=8",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/172750f6-08b9-479c-b887-7559ba103df1/steering/admission",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/172750f6-08b9-479c-b887-7559ba103df1/steering?attemptId=c10b4251-12d5-4f08-82e2-f3b234de4d0b&after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=0",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/a4681247-17ed-4ec7-9c56-ecf93fa01c0a/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/a4681247-17ed-4ec7-9c56-ecf93fa01c0a",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace?after=2",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/a4681247-17ed-4ec7-9c56-ecf93fa01c0a/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/a4681247-17ed-4ec7-9c56-ecf93fa01c0a",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    }
+  ],
+  "coverage": {
+    "cookieRead": "PASSED",
+    "cookieSseHandshake": "NOT_SELECTED",
+    "cookieSseDelivery": "PENDING: only handshake is asserted",
+    "textIntentDraft": "NOT_SELECTED",
+    "materialDraft": "NOT_SELECTED",
+    "sameKeyTurn": "NOT_SELECTED",
+    "crossTabCas": "NOT_SELECTED",
+    "pageOnlyAuthLoss": "NOT_SELECTED",
+    "csrfOffline": "NOT_SELECTED",
+    "themes390": "NOT_SELECTED",
+    "connectionChoice": "NOT_SELECTED",
+    "createAckLoss": "NOT_SELECTED",
+    "createdTurnAckLoss": "NOT_SELECTED",
+    "queueAckLoss": "NOT_SELECTED",
+    "sseDelivery": "NOT_SELECTED",
+    "completeDraft": "NOT_SELECTED",
+    "steeringRecovery": "FAILED",
+    "createTwoStage": "PENDING: the two CREATE fault points are independent selected journeys",
+    "queueSteerRecovery": "PENDING: enqueue selection does not validate promotion or steering",
+    "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+    "secondCenter": "PENDING: one-center fixture"
+  },
+  "bodyLoss": [],
+  "sseDelivery": {
+    "baselineCursor": null,
+    "deliveredCursor": null,
+    "cancelledTaskId": null,
+    "externalCancel": null,
+    "readRequests": [],
+    "trace": null
+  },
+  "completeDraft": {
+    "profile": null,
+    "knowledge": null,
+    "savedRecordId": null,
+    "conversationId": null,
+    "preparedPostCount": null,
+    "restoredPostCount": null,
+    "verificationOrder": [],
+    "turnId": null,
+    "taskId": null
+  },
+  "steeringRecovery": {
+    "profile": {
+      "id": "2989ba46-8cbe-4436-a013-0ea63b3725e1",
+      "runnerId": "f63a8a0a-ca88-43c3-b160-3358ba898115",
+      "configDigest": "4fbf48ae94f85985e4cd75b1490fedc78e9f487da3b09e78613786b5cfeacc68"
+    },
+    "conversationId": "a4681247-17ed-4ec7-9c56-ecf93fa01c0a",
+    "turnId": "5d040a6c-2778-44e4-a78d-b32299711727",
+    "actor": {
+      "attemptId": "c10b4251-12d5-4f08-82e2-f3b234de4d0b",
+      "ownerVersion": 1,
+      "nativeSessionId": "663cf7d6-65f7-4e83-a4bd-4de2a28152ef",
+      "admission": {
+        "taskId": "172750f6-08b9-479c-b887-7559ba103df1",
+        "attemptId": "c10b4251-12d5-4f08-82e2-f3b234de4d0b",
+        "ownerVersion": 1,
+        "revision": 0,
+        "state": "ready",
+        "reason": "ready"
+      },
+      "remainingLeaseMs": 59988.655958,
+      "leaseMs": 60000,
+      "protocolActor": "synthetic-session-event",
+      "observations": {
+        "registered": true,
+        "claimRequests": 4,
+        "claimed": true,
+        "sessionEventRequests": 1,
+        "heartbeatRequests": 0,
+        "runnerReceiptRequests": 0,
+        "providerQueries": 0
+      }
+    },
+    "draftId": null,
+    "receiptId": null,
+    "commandId": null,
+    "browserPostCounts": [],
+    "draftFailureObservation": {
+      "inputMatches": true,
+      "records": [
+        {
+          "id": "draft:0f6d91d4-bc05-4de8-b9aa-2be855e74778",
+          "kind": "draft",
+          "version": 4,
+          "owner": {
+            "viewKey": "0f6d91d4-bc05-4de8-b9aa-2be855e74778",
+            "routeId": "conversation:a4681247-17ed-4ec7-9c56-ecf93fa01c0a",
+            "projectId": "1e41ce63-b848-4983-b160-ce93ed2391a4"
+          },
+          "steering": []
+        },
+        {
+          "id": "draft:92f32dca-77dc-4365-9d49-0c3a98b709cf",
+          "kind": "draft",
+          "version": 1,
+          "owner": {
+            "viewKey": "92f32dca-77dc-4365-9d49-0c3a98b709cf",
+            "routeId": "conversation:a06ee938-caca-41f7-a653-e2d7f0034570",
+            "projectId": "1e41ce63-b848-4983-b160-ce93ed2391a4"
+          },
+          "steering": []
+        }
+      ],
+      "recoveryAlerts": [],
+      "observationErrors": []
+    }
+  }
+}

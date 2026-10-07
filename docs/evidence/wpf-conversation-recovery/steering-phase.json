@@ -1,6 +1,6 @@
 {
   "id": "RECOVERY-STEERING-20261007",
-  "state": "FIRST_ATTEMPT_FAILED_DIAGNOSTIC_SOURCE_ACCEPTED_NOT_RUN",
+  "state": "TWO_FAILED_ATTEMPTS_STOPPED_BELOW_MINIMUM",
   "sourceTarget": "a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e",
   "authorization": "Original RECOVERY01 continuation within existing6ffv4/exact21, not a new task or claim. Root authorized an independent <=60s steering phase after focused actor/lifecycle source review; actual shared resources remain manager-coordinated.",
   "selection": {
@@ -28,7 +28,7 @@
     "providerCalls": 0,
     "leaseMs": 60000
   },
-  "runtimeSpentMs": 17332,
+  "runtimeSpentMs": 34753,
   "closedPriorPhases": {
     "original90": {
       "budgetMs": 90000,
@@ -50,7 +50,7 @@
   "gate": null,
   "adminEnv": null,
   "holder": "NONE",
-  "actual": "FIRST_ATTEMPT_FAIL; DIAGNOSTIC_NOT_RUN",
+  "actual": "SECOND_ATTEMPT_FAIL_WITH_VALID_FAILURE_OBSERVATIONS",
   "remainingPrerequisites": [
     "Fresh original claim/HEAD/clean/source+read-only runtime pins",
     "Explicit unique shared PG+Chrome handoff and current combined resource observation",
@@ -63,7 +63,7 @@
     "Center accepted/replay and browser restoration only; no received/observed-consumed/applied fabricated",
     "Second center/principal and real runner/native application remain unverified"
   ],
-  "runtimeRemainingMs": 42668,
+  "runtimeRemainingMs": 25247,
   "attempts": [
     {
       "run": "recsteer-20261007-094616-1ab0a4",
@@ -87,22 +87,46 @@
         "bytes": 14854,
         "sha256": "1e6cb7674aeb90734da03a8aa2a294846e546816dd3b004ca166839c5f23422f"
       }
+    },
+    {
+      "run": "recsteer-20261007-100004-46e3cb",
+      "outcome": "FAIL",
+      "passedGroups": [
+        "cookieRead"
+      ],
+      "failedGroup": "steeringRecovery",
+      "actualOuterMs": 17420.67970801145,
+      "lateParentMs": 16866.963875,
+      "serializedParentMs": 16853.57675,
+      "chargeMs": 17421,
+      "cleanupComplete": true,
+      "manifest": {
+        "path": "steering-second-manifest.json",
+        "bytes": 6868,
+        "sha256": "0a422a281752fe0680f77d473ef19bafdc9f2fea9f85e59635fef81b6b477759"
+      },
+      "review": {
+        "path": "steering-second-root-review.json",
+        "bytes": 14966,
+        "sha256": "5b4ec7913cbe5677b3cb11d1a1294e89119929de7f7a82c06fff4623350427c1"
+      }
     }
   ],
   "nextAttemptDerivation": {
     "phaseId": "RECOVERY-STEERING-20261007",
     "phaseBudgetMs": 60000,
-    "currentPhaseSpentMs": 17332,
-    "currentPhaseRemainingMs": 42668,
-    "maximumAdmissibleTotalMs": 42668,
+    "currentPhaseSpentMs": 34753,
+    "currentPhaseRemainingMs": 25247,
+    "maximumAdmissibleTotalMs": 25247,
     "cleanupReserveMs": 15000,
-    "maximumWorkMs": 27668,
+    "maximumWorkMs": 10247,
     "equation": "remaining = max(0, 60000 - sum(ceil(max(actualOuterMs, lateTerminalMs, parentMs))) for this phase only); next total <= min(60000, remaining)",
     "noTransferFromClosedPhases": true,
     "parentMinimumAttemptMs": 30000,
     "belowMinimum": "No attempt; do not enlarge phase or use historical unused credit",
     "onAmbiguousAccountingOrCleanup": "FAIL_CLOSED; no subsequent attempt until exact reconciliation",
-    "actualGateState": "NOT_CREATED"
+    "actualGateState": "NO_FURTHER_RUN_BELOW_MINIMUM",
+    "eligible": false
   },
   "focusedSourceReview": {
     "path": "steering-root-source-review.json",

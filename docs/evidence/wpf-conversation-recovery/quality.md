@@ -301,3 +301,9 @@ find-skills本地优先复用clean-code/codebase-design/webapp-testing，无安�
 按本地find-skills优先复用已有clean-code/codebase-design/webapp-testing，无安装。当前09:54:41.577Z normal CLI核原21/唯一owner/nooverlap；实际开始/结束与精确清理在steering-first-manifest，未用commit/claim猜任务起点。仅browser职责内输出有限失败证据，不新通用trace/状态authority：输入、记录和alerts分别捕获，次要观察失败不能覆盖原断言；command无data按kind守卫，owner只暴露viewKey/routeId/projectId。记录/steering/alert均限定条数，文本只长度/匹配布尔或限长错误；无全文token/IDB改写、继续失败或时间放宽。
 
 Root发现的command data缺失遮蔽观察在a8e已修并源码独审通过；18源逐Git blob不变。实际首红仅证明draft predicate未满足，无失败DOM/IDB不能预断产品或locator根因。原首红与两个早phase保真，计费取max三种实际时钟ceil17332，精确env删除归档。git diff --check静态通过，本段无新测试/types/PG/Chrome/空间采样；原noEmit绿绑定54952，诊断仅源码证据。
+
+## 2026-10-07 10:04:43 UTC — Steer第二actual/源码诊断clean-code安全点
+
+同有限段原入口运行，19源未改；失败观察三独立路径均成功，证明数据缺口而不掩盖原5秒失败。raw/outer精确保存、0SteerPOST、不继续后续；清理先归还，再归档root独审。计费取outer/late/parent最大值ceil17421，累计34753/剩25247小于原parent最小值，拒第三run，不借旧余额。
+
+本地find-skills/clean-code/codebase-design/webapp-testing复用无安装：静态检查真实controlled draft→entry→RecoveryHost→state.handoff/deferred→journal，没有observer字段过滤；App长期listener当前依赖和session闭包候选交root独核。仅提出保持同authority的current callback/ref与真实same-document导航回归，不为不足证据重写产品/添加框架。有限alerts只该时点空，不夸大全程。当前0holder，原actor/permissions/lifecycle源码全不动。

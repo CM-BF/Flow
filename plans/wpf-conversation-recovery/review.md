@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 独立审查
 
-状态：IN_PROGRESS。当前target`a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e`；原actor/lifecycle source54952与noEmit限定通过，首次Steer整体FAIL/owned清理已独立接受。新诊断只在失败处采集有界事实，[root源码审](../../docs/evidence/wpf-conversation-recovery/steering-diagnostic-root-review.json)0blocking，未运行，不冒功能通过。
+状态：IN_PROGRESS。当前target`a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e`；第二Steer整体FAIL/有效有限观察/owned清理已获[root独立接受](../../docs/evidence/wpf-conversation-recovery/steering-second-root-review.json)，不是case或feature通过。cookieRead通过，首draft仍未保存；诊断source批准实际已执行，noEmit仍保54952绑定。只读生命周期候选见steering-second-diagnosis，未修改产品。
 
 Review target commit：`a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。原exact21；对54952仅browser变化、18源相同，见[差量checkpoint](../../docs/evidence/wpf-conversation-recovery/steering-diagnostic-checkpoint.json)。[首红实证](../../docs/evidence/wpf-conversation-recovery/steering-first-validation.md)保原source/执行头；原五秒predicate/错误、actor、parent与旧失败原件不变。
 
@@ -267,3 +267,7 @@ Root固定54952/0f4b审[原报告](../../docs/evidence/wpf-conversation-recovery
 ## 2026-10-07 09:56:42 UTC — 首Steer失败与诊断源码限定独审
 
 [1e6首实际审](../../docs/evidence/wpf-conversation-recovery/steering-first-root-review.json)只接受FAILED+ownedcleanup，1组过/Steer保存草稿前失败，0SteerPOST；[8ddd noEmit审](../../docs/evidence/wpf-conversation-recovery/steering-local-root-review.json)保54952范围；[be4诊断源码审](../../docs/evidence/wpf-conversation-recovery/steering-diagnostic-root-review.json)接受a8e的kind guard/narrow owner/独立采集和原样throw。未重复运行，未将真实草稿失败预判成唯一产品根因或locator错误。剩42668ms不是自动后继运行许可。
+
+## 2026-10-07 10:04:43 UTC — 第二实际失败限定结论
+
+[5b4原审](../../docs/evidence/wpf-conversation-recovery/steering-second-root-review.json)核11raw/19fixedpins、inputMatches与同route草稿/空steering、0POST及owned清理。因果只收窄，非唯一根因结论。原scope当前sourcea8e不变，完整feature IN_PROGRESS；phase34753/rem25247<parentmin，不第三run。

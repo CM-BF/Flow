@@ -1,6 +1,6 @@
 # 固定代码审查入口：WPF-RECOVERY01
 
-当前组合target `a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e`；[差量checkpoint](steering-diagnostic-checkpoint.json)相对已审54952只改browser失败观察，其他18源不变。新诊断限定source批准/NOT_RUN；[首轮Steer实际](steering-first-validation.md)整体FAIL，cookieRead1过，首draft等待未通过，0SteerPOST/ACKloss/Restore。旧actor source/noEmit与full7、CREATE、Queue、taskSSE、完整draft实证各保绑定，不扩大。完整feature IN_PROGRESS，第二中心/真实runner应用仍开放。
+当前组合target `a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e`；[差量checkpoint](steering-diagnostic-checkpoint.json)仍只含browser观察，18其他源不变。第二Steer[actual整体FAIL+owned清理](steering-second-validation.md)已独审接受：inputMatches=true、匹配route draft.steering=[]；原predicate失败，0SteerPOST/ACKloss/恢复。两次红及旧通过各保原绑定。当前[产品生命周期候选](steering-second-diagnosis.md)仅只读分析，尚未实现/动态确诊；完整feature IN_PROGRESS，Steer/第二中心/真实runner应用仍开放。
 
 ## 55b已审基线与原证据（历史固定）
 

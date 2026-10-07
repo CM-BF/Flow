@@ -1,0 +1,376 @@
+{
+  "reviewedAt": "2026-10-07T10:02:30.428101+00:00",
+  "reviewer": "root / gpt-6-astra / ultra / read-only",
+  "decision": "ACCEPTED_FAILED_ACTUAL_WITH_USEFUL_DIAGNOSTICS_AND_OWNED_CLEANUP",
+  "run": "recsteer-20261007-100004-46e3cb",
+  "fixedExecutionHead": "f0a97719f470e7536c705cc3fac2453b634c5978",
+  "fixedSource": "a8e8aa3eba74abe400b3cbd9d4788d8e9d63d90e",
+  "actual": {
+    "run": "recsteer-20261007-100004-46e3cb",
+    "startedAt": "2026-10-07T10:00:21.159337+00:00",
+    "endedAt": "2026-10-07T10:00:38.580627+00:00",
+    "outerPid": 71146,
+    "parentPid": 71508,
+    "parentPgid": 71508,
+    "actualExit": 1,
+    "outerElapsedMs": 17420.67970801145,
+    "stdoutEof": true,
+    "stderrEof": true,
+    "stdoutBytes": 784,
+    "stderrBytes": 0
+  },
+  "checks": {
+    "outerFailure1": true,
+    "requiredSelected2CompletedCookieOnly": true,
+    "steerFailed": true,
+    "draftIdUnavailable": true,
+    "zeroSteerPost": true,
+    "noAckFaultInjected": true,
+    "exactOriginalTurn202": true,
+    "actorAdmissionReady": true,
+    "diagnosticInputActualMatches": true,
+    "matchingRouteDraftVersion4EmptySteering": true,
+    "diagnosticErrorsEmpty": true,
+    "observedRecoveryAlertsEmpty": true,
+    "noProviderCalls": true,
+    "outerDualEof": true,
+    "parentCleanupErrorsEmpty": true,
+    "budgetCompleteAndCleanup": true,
+    "fixtureClosed": true,
+    "databaseNormalCleanupReceipt": true,
+    "scratchAbsent": true,
+    "envDeletedAbsent": true,
+    "chargeAndRemainingExact": true,
+    "belowParentMinimum": true,
+    "gateBindingExact": true,
+    "fixedSourceCount19": true,
+    "rawCount11": true
+  },
+  "accounting": {
+    "phase": "RECOVERY-STEERING-20261007",
+    "phaseTotalMs": 60000,
+    "previousSpentMs": 17332,
+    "actualOuterMs": 17420.67970801145,
+    "lateParentMs": 16866.963875,
+    "serializedParentMs": 16853.57675,
+    "chargeMs": 17421,
+    "spentMs": 34753,
+    "remainingMs": 25247,
+    "old90ActualMs": 64134.08675,
+    "old150SpentMs": 126447,
+    "old150Unused23553Closed": true,
+    "oldCreditTransferred": false,
+    "outcome": "FAIL",
+    "requiredGroups": [
+      "cookieRead",
+      "steeringRecovery"
+    ],
+    "completedGroups": [
+      "cookieRead"
+    ],
+    "belowParentMinimum30000": true
+  },
+  "rawIndex": {
+    "path": "/private/tmp/recovery-steering-second-v_wuvfhp/raw-index.json",
+    "bytes": 1900,
+    "sha256": "f59271710eeae55c2fa502b32f136a0a8a809314190d0e54cfa92237e0db2be0"
+  },
+  "rawFiles": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-100004-46e3cb/browser.json",
+      "bytes": 13308,
+      "sha256": "22041624ed8dcd59a2a2455a2666bb2a9017962e8b3cd206d2251bd218b26af6",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-100004-46e3cb/budget.json",
+      "bytes": 241,
+      "sha256": "aae314b6c6e9d4d92ef638ad064961cb055de3e765c3dec3463a214fbd7eedaa",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-100004-46e3cb/database-cleanup.json",
+      "bytes": 515,
+      "sha256": "f1845ccfcacca7860e256477c9982c8fa435883b6b62ede1b0eb430673c7ea56",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-100004-46e3cb/database-owner.json",
+      "bytes": 164,
+      "sha256": "f01b98143f7ea6a607afb33c810baab1ffabb2335105fe418b09c3234d5d84ec",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-100004-46e3cb/fixture-cleanup.json",
+      "bytes": 313,
+      "sha256": "2e24a889d055825c55ccb39c61fefed627b53c3afa707ca792b3bd7721e6a753",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-100004-46e3cb/launch-config.json",
+      "bytes": 1215,
+      "sha256": "a7a34e62922d74b8970d1df8182d6db969d7d56c8ab82064f66a08607fad4794",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-100004-46e3cb/process-owner.json",
+      "bytes": 29,
+      "sha256": "15147d41dae9e75e1137cdd01585d0caefeb98f3e6dd85985bce3dcd9e97a58a",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-100004-46e3cb/process.log",
+      "bytes": 6712,
+      "sha256": "70bf6a31399b60007994e84efffaa0d8a55d9c66d15947517c602e69f9a305c7",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-100004-46e3cb/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "21fbc01a5b54d80ec8e5917f2a67dd6a517ace237948ca9a5b74c18575938eae",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-100004-46e3cb/sources.json",
+      "bytes": 2438,
+      "sha256": "16fa165e575f9316084a4629fec6154909ec4dab4cce05bb20c9ac942d4619ed",
+      "matchesIndex": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recsteer-20261007-100004-46e3cb/supervisor.json",
+      "bytes": 2653,
+      "sha256": "611fb2fa7c863a3c6ab6e82cda2b4765dfd90991593c050fe92e4b0f5614e8a3",
+      "matchesIndex": true
+    }
+  ],
+  "outerEvidence": [
+    {
+      "path": "/private/tmp/recovery-steering-second-v_wuvfhp/accounting.json",
+      "bytes": 565,
+      "sha256": "7e685da7923603b9dc18b35b765f82345d644cecd901f238f5817aa539908340"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-second-v_wuvfhp/actual-exit.json",
+      "bytes": 355,
+      "sha256": "3cc79023c91bfd17a303e5fce9939878ab2d72a424c87dfaf49b1bdeae8e94dd"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-second-v_wuvfhp/admin-env-deletion-receipt.json",
+      "bytes": 320,
+      "sha256": "31be45d8685b7aecc472f6207bca1d49eae9351c7b82d1f815fad8b6cc4bff23"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-second-v_wuvfhp/admission.json",
+      "bytes": 4407,
+      "sha256": "b315c14d5c8cde0e91fb5c9e10814b3ac92ea9601d0237d07818bc7b04f8fc12"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-second-v_wuvfhp/gate.json",
+      "bytes": 3374,
+      "sha256": "860f90d8f905ed9536c8c1471ff447cec8f75c6f2e3b7491c39475e5e4525c42"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-second-v_wuvfhp/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-second-v_wuvfhp/parent.stdout.jsonl",
+      "bytes": 784,
+      "sha256": "f61e42c9df9b3ac0b1072ac112a70c19cb42838e484827d62f12f0e0a328bba3"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-second-v_wuvfhp/post-cleanup-observation.json",
+      "bytes": 1656,
+      "sha256": "3c6cf7371920244026b9adabe48a3efcb30ad8e892416a51883f4c33adfb0402"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-second-v_wuvfhp/raw-index.json",
+      "bytes": 1900,
+      "sha256": "f59271710eeae55c2fa502b32f136a0a8a809314190d0e54cfa92237e0db2be0"
+    },
+    {
+      "path": "/private/tmp/recovery-steering-second-v_wuvfhp/start.json",
+      "bytes": 727,
+      "sha256": "a2554d8b2dad65f3977bba8ac54e8ca116009eb3b7d65cfefae9ceecc297d135"
+    }
+  ],
+  "sourcePins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "7b891f3bd01e2f8a014c0be0079f4e4c2e892df60f753d5508ec855f6290c4d9",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "sha256": "98e70247917d378eb010e7917c6e1552c8182b09b927dd30bbf1bd2caa108161",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "sha256": "5cf411df4d8bb3298ae71132d6225f1d512f6b6c8e7ccbd79bb8ddf768a60f58",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+      "sha256": "bc96c967c2dd2208afe659538583fece2aec3d884e4d39638a403aa85d93088c",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "sha256": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sha256": "8956e69fe2b3b44f0b3a047bcbcc28679bf849cc4940825ef04f6501e509990b",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sha256": "393254158ec9f175e2aabbd98bc97d89690e389786dedf539aaa9d6a5c660a65",
+      "matchesActualFixedCommit": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "sha256": "d94f1d71a842df27dd31a5be8e5a7ff7e762142b89388a6e9f2bceb3c530fb55",
+      "matchesActualFixedCommit": true
+    }
+  ],
+  "freshKnownProcesses": [
+    {
+      "id": 71146,
+      "kind": "pid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 71508,
+      "kind": "pid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 71508,
+      "kind": "pgid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 71608,
+      "kind": "pid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 71608,
+      "kind": "pgid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 71610,
+      "kind": "pid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 71610,
+      "kind": "pgid",
+      "state": "ESRCH"
+    }
+  ],
+  "diagnostic": {
+    "inputMatches": true,
+    "records": [
+      {
+        "id": "draft:0f6d91d4-bc05-4de8-b9aa-2be855e74778",
+        "kind": "draft",
+        "version": 4,
+        "owner": {
+          "viewKey": "0f6d91d4-bc05-4de8-b9aa-2be855e74778",
+          "routeId": "conversation:a4681247-17ed-4ec7-9c56-ecf93fa01c0a",
+          "projectId": "1e41ce63-b848-4983-b160-ce93ed2391a4"
+        },
+        "steering": []
+      },
+      {
+        "id": "draft:92f32dca-77dc-4365-9d49-0c3a98b709cf",
+        "kind": "draft",
+        "version": 1,
+        "owner": {
+          "viewKey": "92f32dca-77dc-4365-9d49-0c3a98b709cf",
+          "routeId": "conversation:a06ee938-caca-41f7-a653-e2d7f0034570",
+          "projectId": "1e41ce63-b848-4983-b160-ce93ed2391a4"
+        },
+        "steering": []
+      }
+    ],
+    "recoveryAlerts": [],
+    "observationErrors": []
+  },
+  "assessment": [
+    "Strict5s draft persistence assertion failed again; cookieRead passed but no steerPOST,restore orACKbodyloss tookplace.",
+    "Newdiagnostics executed without observererrors. DOMinput containsoriginaltext; correctconversation-owned draft exists/version4 butits persistedsteering array is empty. Oneotherroute draftversion1 alsoempty.",
+    "This narrows investigation to draft notification/capture/material ownership/persistence betweenvisible steeringstate andjournal. Emptyalertsample doesnot proveabsenceof everytransienterror; source diagnosis/regressionproof stillrequired beforeassigninguniquerootcause.",
+    "Publicsynthetic actor had4readinessclaimrequests with1successfulclaim/1sessionevent andreadyadmission; noheartbeat/provider/nativeconsumption.",
+    "Actualouter17420.679708 dominatesparenttimings; charged17421,phase34753/rem25247 below30000minimum. No thirdactualcanuse thisremainingphase undercurrentparent.",
+    "Freshall4PIDs/3PGIDs ESRCH andscratch/env absent; preservednormal0connectionmarkedDBdrop/fixtureclosure/outerdualEOF accepted."
+  ],
+  "limitations": [
+    "No wholeSteer/recovery/nativeApp/secondcenter PASS.",
+    "DBclosure fromownerpreservedreceipt, no reviewerconnection/socketprobe.",
+    "No newproductfix ornode/browsertest authorized bythisfailedactualreview; originalowner maydiagnosesourcewithinclaim andpresentconcretefix/regressionplan.",
+    "Futurefinitefixvalidationphase requiresmanager resourceallocation afterfixedsource; unusedoldbudget cannot silently transfer."
+  ],
+  "errors": []
+}

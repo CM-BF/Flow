@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 连接、草稿和未决发送恢复
 
-状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 09:56:42 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 10:04:43 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
 
 目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
 
@@ -18,7 +18,7 @@
 - [ ] WPF-RECOVERY01-02：四类原controller同步接管和durable barrier，CREATE两阶段及错误/CAS恢复。
 - [ ] WPF-RECOVERY01-03：实际App/P01入口、完整草稿/材料和namespace隔离恢复。
 - [x] WPF-RECOVERY01-04：定向storage/controller直接行为验证与来源hash。
-- [ ] WPF-RECOVERY01-05：资源允许后真实cookie/HTTP/SSE/App旅程；旧90s封套关闭保留，150s后继段已126447/unused23553封账；当前新Steer独立60s段已17332/余42668，按各段授权独立计费，每次≤60s含≥15s清理、总证据≤9MiB（SSE已授权增量）、1PG+1Chrome、0provider/个人服务。
+- [ ] WPF-RECOVERY01-05：资源允许后真实cookie/HTTP/SSE/App旅程；旧90s封套关闭保留，150s后继段已126447/unused23553封账；当前新Steer独立60s段已34753/余25247（小于入口30s，不再开），按各段授权独立计费，每次≤60s含≥15s清理、总证据≤9MiB（SSE已授权增量）、1PG+1Chrome、0provider/个人服务。
 - [ ] WPF-RECOVERY01-06：独立固定审查、修复、push和明确main接收。
 
 ## 验证与资源
@@ -244,3 +244,7 @@ Root接受固定27f后的bounded设计：仅该selected selector允许一个synt
 ## 2026-10-07 09:56:42 UTC — 原02/03/05 Steer首红后诊断
 
 首轮仅cookieRead通过，已到App turn202/一次公开claim与session就绪，保存Steer draft等待失败，后续恢复/unknownACK未到。原件与清理/root审保真；不删断言或把首红归唯一产品原因。只browser失败处补有限只读观测，kind/data保护与独立input/records/alerts处理，保持原5秒predicate和错误。诊断源码a8e限定批准、尚未运行；下一实际余42668ms含15秒清理，原两phase余量不挪用。
+
+## 2026-10-07 10:04:43 UTC — 原02/03/05 Steer诊断实际收口
+
+第二run仍首draft五秒失败，但有限观察已确认实际输入与同route IDB空steering；不删除恢复断言，不称actor原始任务202为Steer通过。新phase34753/60000剩25247不足入口，资源已归还；保原红和精确清理。下游通知/捕获/保存链与App同页hash route闭包候选仅静态方案，待root集中核生命周期，不新task/不偷用封账额度。

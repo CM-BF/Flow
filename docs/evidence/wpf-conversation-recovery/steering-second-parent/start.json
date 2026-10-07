@@ -1,0 +1,23 @@
+{
+  "run": "recsteer-20261007-100004-46e3cb",
+  "startedAt": "2026-10-07T10:00:21.159337+00:00",
+  "outerPid": 71146,
+  "parentPid": 71508,
+  "parentPgid": 71508,
+  "command": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "environment": {
+      "FLOW_RECOVERY_BROWSER": "1",
+      "FLOW_RECOVERY_GATE": "/private/tmp/recovery-steering-second-v_wuvfhp/gate.json",
+      "TSX_DISABLE_CACHE": "1",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--env-file=/private/tmp/recovery-steering-second-v_wuvfhp/admin.env",
+      "--import",
+      "tsx",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ]
+  }
+}
