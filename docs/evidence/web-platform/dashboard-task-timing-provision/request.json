@@ -1,0 +1,264 @@
+{
+  "state": "EXACT_SOURCE_PROVISION_REQUEST_NOT_PERFORMED",
+  "taskId": "WPF-DASHBOARD-TIMING01",
+  "parentTask": "D01",
+  "owner": "w01_owner",
+  "responsibleRegistryOwner": "Original Execution Lead",
+  "base": "18144593a0f210e8d5b9b2c08f4ff62259c07cf5",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing",
+  "branch": "codex/dashboard-task-timing",
+  "planDir": "plans/wpf-dashboard-task-timing",
+  "statusPath": "plans/wpf-dashboard-task-timing/status.md",
+  "evidenceDir": "docs/evidence/wpf-dashboard-task-timing",
+  "sourceCount": 37,
+  "sourceBytes": 572960,
+  "sourceCapBytes": 5242880,
+  "sourceManifest": {
+    "path": "source-input-manifest.json",
+    "sha256": "bd4baedc532557464542a1657b2e3f0bbb7031a9674d5d89955ad6878f2e4e1d"
+  },
+  "files": [
+    {
+      "path": ".gitignore",
+      "bytes": 108,
+      "sha256": "677d39b3228b53937e669987421278ac9aa382172aacf8002a7ca7822367bc27",
+      "gitBlob": "4539012d5f69622debba71391e3390f3cd6a4032"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 18180,
+      "sha256": "a4cd28f20ea9652e66859354a36f3ba9b8c5cda31fbfff37deef22c7802b4ddf",
+      "gitBlob": "cc2d982a42eeca65ab9500c1e71716fd00211185"
+    },
+    {
+      "path": "apps/execution-dashboard/README.md",
+      "bytes": 10657,
+      "sha256": "068205346f4e98b1cf8e73c4daa2bd21f3054282f295b76fbba6f2a1091545a3",
+      "gitBlob": "1dbf223d0aa6790fe050db682f48119f50f5a245"
+    },
+    {
+      "path": "apps/execution-dashboard/package.json",
+      "bytes": 362,
+      "sha256": "8492f44ae6f90dd60a76676f84801f1048256abd5c79b708126358731da8d8aa",
+      "gitBlob": "c37ec33af0f553e8003c665d8acca7cede9b4615"
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "bytes": 18589,
+      "sha256": "6fcebdeeebe257dd50db4de50ed430116b56de2b73b81a9506e1df111f3524c9",
+      "gitBlob": "3d01cdec02fe12ccbe2be3d57d28b428d81c137a"
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "bytes": 41828,
+      "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800",
+      "gitBlob": "cabc9fcc24d1c3a5318c3db9a0f2f29002798e7e"
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.css",
+      "bytes": 4082,
+      "sha256": "648b22fde8ee6361d6904cfe9a60254a646141d89e24ccd03e15c19172709780",
+      "gitBlob": "c99c39601adbf20d4af672f16856ee7ba5a3f7c2"
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.js",
+      "bytes": 7689,
+      "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4",
+      "gitBlob": "295380fba8c207c17f4892fa5ec1ce404e8acd39"
+    },
+    {
+      "path": "apps/execution-dashboard/public/index.html",
+      "bytes": 6397,
+      "sha256": "bb1bfbefd5cf80794f658a32b4530bfc28a18d08d09978fb8a8461b69e8a8614",
+      "gitBlob": "1196fb2074dc588e7e3468c13f0c4fd01dea7bd5"
+    },
+    {
+      "path": "apps/execution-dashboard/public/styles.css",
+      "bytes": 8947,
+      "sha256": "c90e9212ae2ab542232e5bd53c264aadc611beda24fa85e94a82b6b252281c2c",
+      "gitBlob": "0abd829c1a30205066449716c59ad9eecbc5b560"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "bytes": 7025,
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+      "gitBlob": "d885ac1550a52db1bfabd6d92fcce5b92da402fd"
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/cli.mjs",
+      "bytes": 1248,
+      "sha256": "a3fdc296e1af25050453f253776c0c80b506ae3bfee14ee5384f13bc3425ff87",
+      "gitBlob": "fbd4b9a8396a490222e3233333fbdd39346b2f1d"
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/input.mjs",
+      "bytes": 5970,
+      "sha256": "d950149a4c173dfef82912b207635750ccd3a9c318cebf7d140c18a1c9af2fa1",
+      "gitBlob": "6642621b21b94243373cd0a8c6939a5c0da95778"
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "bytes": 7058,
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+      "gitBlob": "46c71f5d2a5b9119618c655f1de7031bc0fbc0b5"
+    },
+    {
+      "path": "apps/execution-dashboard/src/documents.mjs",
+      "bytes": 2917,
+      "sha256": "e7cddf2b66762c728192280d3823ee8df12f2de324307ea31e9bc0ecfd0998a3",
+      "gitBlob": "339f8a2422f6620d224e493bbf5917116f3eaed7"
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "bytes": 2396,
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a",
+      "gitBlob": "4ab8b56bff835ceac6a96b39ecc001879a81f2fc"
+    },
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "bytes": 4459,
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074",
+      "gitBlob": "4362291c16e3e69d53e187e52e2667f9134fbe07"
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "bytes": 6883,
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8",
+      "gitBlob": "500b46eb13aa749e6b195c16eed95aedc9589c14"
+    },
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "bytes": 24732,
+      "sha256": "b110b910f14df5866f39aa3f47b44162aea579be5f65ab0ca77ccedb4ca7b1a0",
+      "gitBlob": "58125a0669c968b7043055017f9403b82fb22d98"
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "bytes": 4034,
+      "sha256": "b93a77a17655ac777e07f9edbe0f47738cb34ddfc9dfa63e3099cd7372dc7be4",
+      "gitBlob": "e68a67a7c1214b5b3d015f45cb92585b26b1e9bc"
+    },
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "bytes": 6660,
+      "sha256": "0f2a6379906f0049578925aa08a385aace3845615779ad770ae8943d07493432",
+      "gitBlob": "5b88a9dccb37d5c8eb59da0894f50ebaa31a3833"
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "bytes": 5903,
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4",
+      "gitBlob": "5d57a5d3ebf1bf16df056c357f95cd3bf6d30146"
+    },
+    {
+      "path": "apps/execution-dashboard/test/fixture.mjs",
+      "bytes": 4181,
+      "sha256": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757",
+      "gitBlob": "6000b2ce3b7e20a8b407792f0c0168c550814364"
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "bytes": 6353,
+      "sha256": "516c0b65ad6c6c021f77861eab2cdbc0bdfbd4f7fe816bffda10eff565cd05a1",
+      "gitBlob": "9f88883d32b33f070f687dbd2970672c2dd9d8ab"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "bytes": 13880,
+      "sha256": "6476a888d8b5b0a3d8919653679bb4d19bb6ee261ca5d4fb9be90ee37b88c103",
+      "gitBlob": "34387ac50dd925968bc216146bdfb8952aeed92a"
+    },
+    {
+      "path": "docs/quality/local-validation.md",
+      "bytes": 14014,
+      "sha256": "b07b74207e5e34720adc4773cc73d0cb51bf2d41e3984bf75765562d79b6ebde",
+      "gitBlob": "019b66f6f91644daba4067ae17eb38588b07f31a"
+    },
+    {
+      "path": "package.json",
+      "bytes": 729,
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f",
+      "gitBlob": "34091cf383f1fd79f5fc70496ea6408fdc118fa8"
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "bytes": 17443,
+      "sha256": "b3af7284e0f6835650f997e73280c511d1fe26914d1c0ace12804a16cb0f0f7d",
+      "gitBlob": "49c33ae6ef9212a961bba07d4d81d129337b5fef"
+    },
+    {
+      "path": "plans/README.md",
+      "bytes": 20319,
+      "sha256": "2c90675740bdbb63b388646a11006e481ccbe8116525ac32034cd14e983a8ab3",
+      "gitBlob": "a962bcbe7b5f24e1e0fd5778f31e51874a51c9fe"
+    },
+    {
+      "path": "plans/d01-execution-dashboard/plan.md",
+      "bytes": 4272,
+      "sha256": "7507c21c6879a5fe6ed334d2aa1f14270079386eb6437a409673f65a07dafba9",
+      "gitBlob": "e5a762795206cc13bb4ade8524011df752c81caf"
+    },
+    {
+      "path": "plans/d01-execution-dashboard/review.md",
+      "bytes": 4632,
+      "sha256": "23765e9c84ebefecff6dcfcf40be5dbd1d367ef06bff233eb61cb5ed9f9fdd71",
+      "gitBlob": "e08143cfb24b016dcea6360157d102b4bd0bbd92"
+    },
+    {
+      "path": "plans/d01-execution-dashboard/status.md",
+      "bytes": 4961,
+      "sha256": "16ace0aacf77a84b7ccd82459b6320a8c3f2ba3010eb9ef991fe9637968a88e2",
+      "gitBlob": "adddd382626805adddee52ba2a0f29dbd7b46f5d"
+    },
+    {
+      "path": "plans/templates/plan.md",
+      "bytes": 1207,
+      "sha256": "8ac39aa61957fc076c25c85ad860517d878c05176d4f4cb2bb9e475015005ef4",
+      "gitBlob": "4be3c7b459910da2a470587bf185a1364c8ccc6d"
+    },
+    {
+      "path": "plans/templates/review.md",
+      "bytes": 2830,
+      "sha256": "42437867857b38237312e2f726dad590a1f09a6d1ea9d4ae4df01db7794bd3d5",
+      "gitBlob": "98a288d4fb3d6abec4da4cdceb3af3014bceb4aa"
+    },
+    {
+      "path": "plans/templates/status.md",
+      "bytes": 2812,
+      "sha256": "57d81bae9a88c5b977bd2f39b21c23deb19f146d23560f1703c2666e510b5bfc",
+      "gitBlob": "ea77a77b0b90f67c0203e7d93d16157a8adfd00e"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 279163,
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2",
+      "gitBlob": "f7d61920414fbcc0b80353c3c81bb67bdea5a4fb"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "bytes": 40,
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65",
+      "gitBlob": "e9b0dad63bacd2aa6865fcb9b7e86ad630964730"
+    }
+  ],
+  "plannedScopes": [
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs",
+    "apps/execution-dashboard/test/task-timing.browser.mjs",
+    "plans/wpf-dashboard-task-timing",
+    "docs/evidence/wpf-dashboard-task-timing"
+  ],
+  "takeState": "NOT_TAKEN",
+  "authority": "Original Lead sole source Git operator must perform or explicitly delegate this one exact operation; previous ACCESS one-path authority is exhausted/returned",
+  "method": "Fresh confirm exact path/ref absent, no-checkout fixedbase; only new-tree-local exact sparse/config. No full checkout/shared config/main/other worktree changes. Existing state means stop, never reset/rebuild.",
+  "forbidden": [
+    "dependencies/install",
+    "imports/checks/build",
+    "private credentials/config",
+    "runtime reservation",
+    "shared Git configuration changes"
+  ],
+  "next": "After operator receipt, manager fresh actual tree/pins/claim collision check and exact six-scope take, then dispatch original W01. Claim does not imply actual registry load.",
+  "preflight": "preflight.json"
+}

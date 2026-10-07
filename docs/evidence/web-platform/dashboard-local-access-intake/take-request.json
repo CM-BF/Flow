@@ -1,0 +1,22 @@
+{
+  "requestId": "83497275-e0cf-4c18-81b5-229c7c6ad47e",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "workspace_panels_owner"
+  },
+  "taskId": "WPF-DASHBOARD-ACCESS01",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
+  "branch": "codex/dashboard-local-access",
+  "scope": [
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/src/local-access.mjs",
+    "apps/execution-dashboard/public/local-access.js",
+    "apps/execution-dashboard/public/local-access.css",
+    "apps/execution-dashboard/test/local-access.test.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs",
+    "plans/wpf-dashboard-local-access",
+    "docs/evidence/wpf-dashboard-local-access",
+    "apps/execution-dashboard/README.md"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "recordedAt": "2026-10-07T02:58:59.450886+00:00",
+  "baseManagement": "953be65f1901ca717bc20053b40318ec48822cb1",
+  "model": "gpt-6-astra ultra",
+  "claim": "632a7149 v3 / original management scopes only",
+  "scope": "Actual ACCESS provision/take/source registration, DPERF partial handoff, timing exact request, actual window intake",
+  "skills": "Reused installed find-skills/clean-code/codebase-design; local fixed proposal and status single source; no reinstallation",
+  "cleanCode": "Single source and exact ownership, clear historical/current labels, unknown times preserved; no new product framework or runtime packet. Corrected old12 concurrency to user10/runtimecap. Ordinary local checks use a bounded work segment.",
+  "checks": {
+    "paths": 24,
+    "newOrChangedLinks": 23,
+    "errors": [],
+    "jsonParse": "PASS",
+    "diffCheck": "PASS",
+    "fixedTimingBlobs": 37,
+    "fixedTimingBytes": 572960,
+    "freshScopeOverlap": 0,
+    "addedBytesBeforeQuality": 63246,
+    "byteMetric": "UTF8 added diff lines plus all newly archived files; excludes deleted-byte credits"
+  },
+  "notRun": [
+    "product checks",
+    "Node imports",
+    "HTTP/PG/Chrome",
+    "free/proc sampling",
+    "private credential read",
+    "new source provisioning by manager"
+  ],
+  "operatorRequest": "request.json",
+  "review": "This management commit pending independent scoped review; no new feature passed claim."
+}

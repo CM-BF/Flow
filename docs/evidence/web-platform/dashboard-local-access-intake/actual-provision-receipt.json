@@ -1,0 +1,32 @@
+{
+  "startedAt": "2026-10-07T02:51:39.120589+00:00",
+  "authority": "Original Execution Lead exact one-time source-only operator delegation to Web co-lead",
+  "base": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+  "branch": "codex/dashboard-local-access",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
+  "requestSha256": "8f5f205a371adc90d1103fd52ed244debeea15976f52914c4548b7e424f14903",
+  "sharedConfigBefore": "27a16e3997c258fb87c87acace44359aa8c9e979ba6592dd92570b0ca8baead6",
+  "mainBefore": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+  "mainDirtyBefore": false,
+  "operations": [
+    "git worktree add --no-checkout exact branch/base",
+    "new-worktree-local sparse config and exact 27-path patterns",
+    "git read-tree materialize exact sparse inputs"
+  ],
+  "state": "PROVISIONED_SOURCE_ONLY",
+  "sourceFiles": 27,
+  "sourceBytes": 515876,
+  "head": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+  "actualBranch": "codex/dashboard-local-access",
+  "dirty": false,
+  "gitDir": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/dashboard-local-access",
+  "worktreeConfig": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/dashboard-local-access/config.worktree",
+  "sparseFile": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/dashboard-local-access/info/sparse-checkout",
+  "sharedConfigAfter": "27a16e3997c258fb87c87acace44359aa8c9e979ba6592dd92570b0ca8baead6",
+  "mainAfter": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+  "mainDirtyAfter": false,
+  "dependenciesInstalled": false,
+  "applicationImportsOrRuns": false,
+  "otherWorktreesModified": false,
+  "finishedAt": "2026-10-07T02:51:39.726605+00:00"
+}

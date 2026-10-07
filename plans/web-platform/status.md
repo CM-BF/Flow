@@ -6,6 +6,9 @@
 | --- | --- |
 | 最近更新 / 最近main同步核验 | 2026-10-07 02:48 UTC；依据原operator恢复终态与管理输入，不复采服务/main |
 | Plan | [plan.md](plan.md) |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 本持续管理任务首次实际开工无独立时间证据，不以建树/领取/历史更新时间倒填；owner明确本任务尚未整体完成。字段按Lead固定79da合同。 |
 | 来源角色 | 总需求与协调索引，非执行task父层；六大task见成熟度来源 |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 单一status owner / model | d01_owner（执行管理者）/ gpt-6-astra ultra |
@@ -18,8 +21,8 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；原五图的新主线快照已完成源码更新和限定独审，等待必要验证。 |
-| 下一可用交付 | 61228同版本恢复已完成并归还窗口；接续4320本机打开Flow/按需掩码凭据入口（待精确供给与交权）。既有Recovery脚本修复与Quick已补输入后的必要验证按ready及有界工作段协调；任务开工/完成/历时展示合同已记录，待Lead统一字段与合法实现范围。 |
-| 当前阻塞 | ACTIVE: 新入口尚待原Git operator供给，D05已移出index、仍持README，首阶段九scope可在供给后fresh领取先做。Recovery剩余旅程、Quick direct/browser、D04 pureGit、D06验证未完成；Quick c1类型失败已清理且缺件已补。Web无holder/gate/预约，Mika现X01→C02→REQ15局部链；已请求链清理后一个有界段，尚未交还。远程CI不替代Web验收，workspace-cache依赖不可直接运行。 |
+| 下一可用交付 | 61228同版本恢复已完成并归还窗口；接续4320本机打开Flow/按需掩码凭据入口（独立树已供给/十scope领取，panels实施中）。既有Recovery脚本修复与Quick已补输入后的必要验证按ready及有界工作段协调；任务开工/完成/历时展示合同已记录，Lead规则已入main，显示片待合法独立供给与范围。 |
+| 当前阻塞 | ACTIVE: 新入口已供给且panels在十scope内实施，尚无实际功能验收。Recovery剩余旅程、Quick direct/browser、D04 pureGit、D06验证未完成；Quick c1类型失败已清理且缺件已补。Web无holder/gate/预约，Mika局部链与S01P07 heavy已按各自结果实际归还，SVC06 local也已结束；按新每队一段/全队三段规则，Web原≤90s获授权，尚未现场准入启动。远程CI不替代Web验收，workspace-cache依赖不可直接运行。 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -146,6 +149,8 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 
 本轮真实检查：[Quick c1首类型失败/完整清理与供给缺项](../../docs/evidence/web-platform/message-settings02-c1-actual/report.md)；[Recovery8ed失败及9835限定源码审](../../docs/evidence/web-platform/recovery01-8ed-actual/root-actual-and-source-review.json)。两项终态已归窗，不自动接续验证。
 
-[D04测试自有worktree后继](../../docs/evidence/web-platform/d04-owned-worktree-lifecycle-intake/handoff.json)在原树新精确领取并完成fa6f源码限定独审；真实pureGit检查仍待独立准入。新4320本机“打开Flow/登录凭据”入口正由panels只读收敛最窄路径与root可信边界，新独立树/范围尚未领取，不占旧Recovery/Quick范围。
+[D04测试自有worktree后继](../../docs/evidence/web-platform/d04-owned-worktree-lifecycle-intake/handoff.json)在原树新精确领取并完成fa6f源码限定独审；真实pureGit检查仍待独立准入。新4320本机“打开Flow/登录凭据”入口正由panels只读收敛最窄路径与root可信边界，新独立树已十scope领取并由panels实施，不占旧Recovery/Quick范围。
 
-本轮新输入：[任务时间单源合同与Lead有界工作段规则](../../docs/evidence/web-platform/dashboard-task-time-intake/report.md)；仅管理追溯/已接受提案，未改产品或历史owner时间。字段/枚举与规则由Lead统一，普通局部检查不再逐条建立审批链；凭据入口的真实服务/Chrome仍保必要隔离。当前领取精确变化见[同批fresh摘要](../../docs/evidence/web-platform/dashboard-task-time-intake/fresh-selected-claims.json)，DPERF已v2八scope，不复用原server权。
+本轮新输入：[任务时间单源合同与Lead有界工作段规则](../../docs/evidence/web-platform/dashboard-task-time-intake/report.md)；仅管理追溯/已接受提案，未改产品或历史owner时间。字段/枚举与规则由Lead统一，普通局部检查不再逐条建立审批链；凭据入口的真实服务/Chrome仍保必要隔离。当前领取精确变化见[同批fresh摘要](../../docs/evidence/web-platform/dashboard-task-time-intake/fresh-selected-claims.json)，DPERF已v3七scope，不复用原server/app权。
+
+时间显示沿已有D01/REQ16/27/37：[唯一source供给请求](../../docs/evidence/web-platform/dashboard-task-timing-provision/request.json)已按固定18144593核37源码与六scope无交集，task WPF-DASHBOARD-TIMING01 / W01，未建树/未take/未运行。ACCESS首a6fb已存在，[注册请求](../../docs/evidence/web-platform/dashboard-local-access-intake/registration-request.json)已交Lead渠道，实际聚合尚未收到。

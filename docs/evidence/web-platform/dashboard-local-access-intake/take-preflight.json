@@ -1,0 +1,104 @@
+{
+  "observedAt": "2026-10-07T02:52:28.373Z",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
+  "head": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+  "branch": "codex/dashboard-local-access",
+  "dirty": false,
+  "sourceFiles": 27,
+  "sourceBytes": 515876,
+  "allSourceHashesMatch": true,
+  "requestedScope": [
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/src/local-access.mjs",
+    "apps/execution-dashboard/public/local-access.js",
+    "apps/execution-dashboard/public/local-access.css",
+    "apps/execution-dashboard/test/local-access.test.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs",
+    "plans/wpf-dashboard-local-access",
+    "docs/evidence/wpf-dashboard-local-access",
+    "apps/execution-dashboard/README.md"
+  ],
+  "activeOverlap": [],
+  "relatedClaims": [
+    {
+      "lead": "astra_ultra_execution_lead",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/execution-dashboard/src/registry.mjs",
+        "docs/evidence/d05",
+        "plans/d05-architecture-view"
+      ],
+      "state": "active",
+      "branch": "codex/dashboard-architecture",
+      "origin": "new",
+      "taskId": "D05",
+      "worker": "astra_ultra_execution_lead",
+      "claimId": "3a6240d0-f861-41fd-b245-3546b2e2dbf3",
+      "version": 6,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture",
+      "createdAt": "2026-10-06T03:13:58.720Z",
+      "updatedAt": "2026-10-07T02:50:35.490Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/web-platform",
+        "plans/web-platform",
+        "plans/wpf-mature-01-visual",
+        "plans/wpf-mature-03-attachments",
+        "plans/wpf-mature-05-workspace",
+        "plans/wpf-mature-06-chat"
+      ],
+      "state": "active",
+      "branch": "codex/web-platform-management",
+      "origin": "migration",
+      "taskId": "WPF-001",
+      "worker": "external_web_d01_owner",
+      "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "createdAt": "2026-10-06T02:48:43.295Z",
+      "updatedAt": "2026-10-06T08:56:20.186Z",
+      "observedAt": "2026-10-06T02:48:42.000Z",
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/execution-dashboard/public/app.js",
+        "apps/execution-dashboard/src/aggregate.mjs",
+        "apps/execution-dashboard/src/read-model.mjs",
+        "apps/execution-dashboard/test/summary-detail.browser.mjs",
+        "apps/execution-dashboard/test/summary-detail.test.mjs",
+        "apps/execution-dashboard/test/task-links.browser.mjs",
+        "docs/evidence/wpf-dperf04",
+        "plans/wpf-dperf04-summary-detail"
+      ],
+      "state": "active",
+      "branch": "codex/dashboard-summary-detail",
+      "origin": "new",
+      "taskId": "WPF-DPERF04",
+      "worker": "w01_owner",
+      "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail",
+      "createdAt": "2026-10-06T16:10:21.626Z",
+      "updatedAt": "2026-10-07T02:37:44.100Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "provisionReceipt": {
+    "path": "/private/tmp/root-dashboard-local-access-provision-q24c9e83/receipt.json",
+    "sha256": "8a824b16bc1caf570d35c6f6f848ea27de14192fd02669a572692faa4a829a0e"
+  },
+  "runtime": "NOT_STARTED"
+}

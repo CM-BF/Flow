@@ -39,7 +39,7 @@ GO最新明确六项成熟聊天大task，完整用户原话、分工、验收�
 | U11 真实持续对话优先（原Goal Owner反馈经root转交，准确摘要，未提供完整逐字原话） | 用户在49922输入hi后只看到固定英文center/runner/result和Field notes/Verification卡片，要求真实Codex式持续对话；需要模型、thinking/effort、access权限、context、files、语音、发送、消息气泡、queue、steering、tool calls及可展示thinking；正文优先而详情按需 | 真实聊天核心优先于PERF02与工作台装饰；I01既有收尾继续，49922原tab/fixture服务保持且明确演示性质；真实中心能力与契约由主线唯一owner提供，不能用缺少持久conversation/turn/context lineage的任务拼接伪装追问，steering必须active turn/attempt确认生效 |
 | U12 领取与跨Lead协作重申（root准确转述，压缩重申U08，非用户逐字） | take工作在dashboard标清、跨lead防overlap | 复用U08/WPF-REQ-37与现有D04事务claim；确认owner/Lead、worktree/branch、精确写入范围、state/version实际可见，不造第二手填进度或口头抢占 |
 | U13 本机登录入口（GO经root准确转述，非逐字） | 4320提供打开Flow及按需掩码显示/复制登录凭据；真实本机安装验收 | [独立入口请求](../../docs/evidence/web-platform/dashboard-local-access-intake/request.json)；显式local-installation限定、可信固定来源，token不进日志/URL/聚合/Git；唯一operator恢复和发布，不代用户登录/刷新聊天 |
-| U14 任务时间展示（GO经root准确转述，非逐字） | 展示任务开始、完成时间及进行中耗时 | 归已有REQ16/27/37与D01；唯一status明确UTC声明，结束未知不冒进行中，不回填历史；字段/枚举由Lead统一，[限定合同](../../docs/evidence/web-platform/dashboard-task-time-intake/report.md)未实施 |
+| U14 任务时间展示（GO经root准确转述，非逐字） | 展示任务开始、完成时间及进行中耗时 | 归已有REQ16/27/37与D01；唯一status明确UTC声明，结束未知不冒进行中，不回填历史；字段/枚举已由Lead固定79da规则并报告入main18144593，[限定合同](../../docs/evidence/web-platform/dashboard-task-time-intake/report.md)未实施 |
 
 U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射严格以完整 handoff 的 task→唯一 owner worktree 登记为准；临时样本覆盖状态变化、缺失、空 review、转义与路径限制，真实工作树只读核验，二者证据明确分开。U02 原文保留拼写，实施含义为官方 AI Elements Terminal/FileTree，不伪造PTY或任意文件系统。
 
@@ -139,11 +139,13 @@ GO 既有 REQ17/Web性能与 CHAT06 的[有界测量接口](../../docs/evidence/
 
 原 MSGQUICK-04 的[portable strict→26direct 候选](../../docs/evidence/web-platform/message-settings02-portable-prepared/report.md)已由唯一W01在原六scope的证据目录固定，产品fe6四源不变，portable候选仅获限定静态独审；本地c1随后类型失败/direct未启动，当前原件与已补输入见集中handoff。它复用原真实检查入口，外层CI containment与启用归原owner/GO；本地c1/b1不因此重写或继承远程结果。
 
+U14时间显示实现已收敛到[固定main18144593的独立六scope候选](../../docs/evidence/web-platform/dashboard-task-timing-provision/request.json)，仅status解析/app显示/两专测与own计划证据，直接D01，W01唯一候选owner。DPERF app已正式移出v3，本片仍须独立供给+fresh take；不扩主线规则、aggregate或旧DPERF验证范围。
+
 ## 执行顺序与交权规则
 
-当前优先级、fixed输入、窗口和下一步统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)及owner status，不另维护第二份滚动状态表。Lead新OPS规则：普通可逆本地实现采用有界工作段总预算，owner连续修改→局部检查→修失败→定向复测，通过后一次独审/集成；复用既有运行器与单份结构化记录，失败原件保留，绑定按风险缩放，不逐条造准备/许可/结果审批链。PG/Chrome/迁移/个人服务仍保必要隔离、资源与恢复审查；旧特殊窗口不因此重开。项目写入仍先核D04精确scope与writer；源码、独审、运行、main、页面发布分别记录。[本轮规则来源](../../docs/evidence/web-platform/dashboard-task-time-intake/incoming.json)。
+当前优先级、fixed输入、窗口和下一步统一见[集中handoff](../../docs/evidence/web-platform/mature-task-handoff.md)及owner status，不另维护第二份滚动状态表。Lead新OPS规则：普通可逆本地实现采用有界工作段总预算，owner连续修改→局部检查→修失败→定向复测，通过后一次独审/集成；复用既有运行器与单份结构化记录，失败原件保留，绑定按风险缩放，不逐条造准备/许可/结果审批链。普通无共享端点/安装/全构建/PG/Chrome/个人服务的局部检查按最新明确规则每队最多1段、全队最多3段自主运行；项目10/本工具cap保持。PG/Chrome/迁移/个人服务仍保必要隔离、资源与恢复审查；旧特殊窗口不因此重开。项目写入仍先核D04精确scope与writer；源码、独审、运行、main、页面发布分别记录。[本轮规则来源](../../docs/evidence/web-platform/dashboard-task-time-intake/incoming.json)。
 
-用户总槽位约束仍Root4/Web4/Mika4=12，本组root与三成员共4；claim数量不等运行agent数。普通进展通过唯一status聚合到dashboard，不重复普通外部消息。
+用户有来源的项目总并发上限仍为10，实际并发取运行时cap与ready独立任务的更小值；本组root与三成员共4。旧Root4/Web4/Mika4=12只是分组算术，没有后续用户升限证据，不作为扩大并发授权；claim数量不等运行agent数。普通进展通过唯一status聚合到dashboard，不重复普通外部消息。
 
 ## TODO
 

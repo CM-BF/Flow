@@ -1,6 +1,6 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T02:48:10.805158+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
+更新：2026-10-07T02:58:59.175698+00:00。本页只作协调与证据索引；功能进度以各 owner 的唯一 status 为准，领取以 D04 账本为准。
 
 ## 当前窗口与用户可用性
 
@@ -12,9 +12,11 @@
 
 ## 新用户入口与时间展示
 
-[4320“打开 Flow / 登录凭据”请求](dashboard-local-access-intake/request.json)由panels拟接，未建树/未take。DPERF server 已停写并原子移出，b554现v2/8scope，[回执](dashboard-local-access-intake/dperf-server-receipt.json)。D05已在02:47:36.182Z正式移出index，[receipt](dashboard-local-access-intake/d05-index-release-receipt.json)与[02:48:40 fresh v5](dashboard-task-time-intake/fresh-index-handoff.json)吻合；**README.md仍由D05持有且不写**；[唯一供给请求](dashboard-local-access-intake/provision-request.json)保持943a/27文件515876B，首阶段拟9scope（含index、不含README），启动说明写自有plan/evidence，README不阻独立实现。供给receipt未到，不自行建树。真实验收使用已恢复的原安装，token不进入源码/管理/日志/URL/聚合；不自动登录或刷新用户tab。
+[4320“打开 Flow / 登录凭据”请求](dashboard-local-access-intake/request.json)已由原operator[供给独立树](dashboard-local-access-intake/actual-provision-receipt.json)：固定943a/27文件515876B逐hash相同。02:52:33.082Z [57735ff7 v1十scope正式take](dashboard-local-access-intake/take-receipt.json)，panels已开始provider/UI/窄接线；[source注册请求](dashboard-local-access-intake/registration-request.json)给原Lead，首三件套a6fb已实际固定/双端clean观察，注册请求已READY_FOR_LEAD_INTAKE；未声称实际加载。D05 index/README均已v6交还、DPERF server已v2移出。唯一source供给operator权已归Lead，不是owner共享Git权。真实入口验收等待功能部署与操作验证；不自动替用户登录/刷新原tab，token不进源码/管理/日志/URL/聚合。
 
-[任务开始、完成与进行中历时合同](dashboard-task-time-intake/report.md)归原REQ16/27/37/D01，8个固定来源已核，仅设计输入未实施。时间只取唯一owner显式声明，不用mtime/claim/更新时间猜历史；字段/枚举由Lead统一。当前local链为Mika的X01→C02→REQ15；已请求其实际清理交还后Web一段≤90s局部工作，保持Quick原余28125ms/Recovery10s/D04≤30s各自上限，尚未接窗或预约。普通可逆本地工作按[Lead新OPS规则](dashboard-task-time-intake/incoming.json)采用有界连续修改→局部检查→修失败→定向复测，复用运行器/单份记录后一次独审，不再逐检查造许可链；PG/Chrome/迁移/个人服务仍保必要隔离。
+[任务开始、完成与进行中历时合同](dashboard-task-time-intake/report.md)归原REQ16/27/37/D01，8个固定来源已核，仅设计输入未实施。时间只取唯一owner显式声明，不用mtime/claim/更新时间猜历史；[Lead固定79da合同](dashboard-task-time-intake/lead-time-contract.md)已给三字段、NOT_COMPLETED/UNKNOWN及单源等待表，规则已由Lead报告入main18144593，显示功能未实施。Mika局部链已实际清理，S01P07失败16a938独审后归还heavy（未查询DB清理、旧TMP KEEP）；最新SVC06已结束；GO/Lead新规则允许每队一个普通隔离local段、全队最多三个。本队原≤90s已明确授权，先一次fresh现场核验，封存时尚未启动。Quick原余28125ms/Recovery10s/D04≤30s上限不重置。普通可逆本地工作按[Lead新OPS规则](dashboard-task-time-intake/incoming.json)采用有界连续修改→局部检查→修失败→定向复测，复用运行器/单份记录后一次独审，不再逐检查造许可链；PG/Chrome/迁移/个人服务仍保必要隔离。
+
+[任务时间展示的唯一精确供给请求](dashboard-task-timing-provision/request.json)：WPF-DASHBOARD-TIMING01 → D01 / w01_owner，拟dashboard-task-timing独立树，固定main18144593、37源码572960B、六scope。02:58:07 fresh path/ref/正式worktree登记均不存在、无active交集；尚未provision/take，不复用ACCESS单次Git授权。原Lead执行或明确一次委派后才接管，当前W01 idle。
 
 ## 本轮管理输入
 
@@ -28,7 +30,7 @@
 
 ## 资源与窗口历史入口
 
-当前协调仅看页首与[resource current](resource-window-current.json)。[本批选定fresh领取](dashboard-task-time-intake/fresh-selected-claims.json)核manager632a v3、DPERF b554 v2、D04 f61d v1及Quick839e v1；writer claim不等于runtime holder。
+当前协调仅看页首与[resource current](resource-window-current.json)。[本批选定fresh领取](dashboard-task-time-intake/fresh-selected-claims.json)核manager632a v3、DPERF b554 v2历史、D04 f61d v1及Quick839e v1；[后继app移出回执](dashboard-task-time-intake/dperf-app-receipt.json)已使DPERF v3/7scope，writer claim不等于runtime holder。
 
 - [原容量恢复/SVC07交接](resource-restored-svc07-handoff.json)是当时入站，非新的Web grant；后续实际运行与清理按各原始receipt记账。
 - [三预览退役、生命周期释放](ops-three-fixture-retirement/manager-confirmation.json)与[Lead exact-cache最终结果](ops-three-fixture-retirement/lead-cache-results/report.md)均已结束，不再派同一批。
@@ -49,7 +51,8 @@
 | 草稿恢复 | workspace_panels_owner；web-conversation-recovery；codex/web-conversation-recovery | 6ff988b2 v4 / 21 scopes；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md) |
 | 逐消息设置控件 | w01_owner；web-message-settings；codex/web-message-settings | a5b0c231 v2 RELEASED / 原8 scopes；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/plans/wpf-message-settings/status.md) |
 | 快速消息设置 | w01_owner；web-message-settings-quick-controls；codex/web-message-settings-quick-controls | 839e466f v1 COMMITTED / 6 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md) · [原子receipt](message-settings-quick-controls-provision/take-receipt.json) |
-| 看板摘要与详情 | w01_owner；dashboard-summary-detail；codex/dashboard-summary-detail | b554ddb6 v2 / 8 scopes（server已移出）；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md) |
+| 本机打开Flow/登录凭据 | workspace_panels_owner；dashboard-local-access；codex/dashboard-local-access | 57735ff7 v1 / 10 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access/plans/wpf-dashboard-local-access/status.md) · [待Lead登记请求](dashboard-local-access-intake/registration-request.json) |
+| 看板摘要与详情 | w01_owner；dashboard-summary-detail；codex/dashboard-summary-detail | b554ddb6 v3 / 7 scopes（server/app已移出）；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md) |
 | D04自有测试worktree生命周期 | d01_owner；dashboard-coordination；codex/dashboard-coordination | f61d41f5 v1 / 5 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-coordination/plans/d04-coordination/status.md) · [交接](d04-owned-worktree-lifecycle-intake/handoff.json) |
 | 固定架构快照D06 | d01_owner；dashboard-architecture-runtime；codex/dashboard-architecture-runtime | adf9539d v1 COMMITTED / 原4 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md) · [receipt](architecture-snapshot-0da-intake/take-receipt.json) |
 | 旧 ACTIVITY 预览生命周期记录 | workspace_panels_owner；web-conversation-activity；codex/web-conversation-activity | 707b1c6c v2 RELEASED / 3 metadata scopes；[原status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-activity/plans/wpf-activity01/status.md) · [释放receipt](ops-two-fixture-retirement/activity-retirement-release-receipt.json) |
@@ -77,7 +80,7 @@
   不重复已过的类型、37 项 direct 或 4 项页面检查。
 - DPERF04：[544c 停止记录窄修已获限定源码准备批准](dperf04-544c-prepared/root-source-review.json)，
   [同一 native Chrome 边界已精确重绑](dperf04-544c-prepared/native-boundary-rebind.json)；原 owner 已 seal 929b，[最终 HEAD、边界和全部 pins 已核](dperf04-544c-prepared/final-binding-verification.json)。
-  七项目源 45f8 与旧 Node 证据不动，浏览器仍 0/60 秒含 15 秒清理；无 gate。claim现v2/8scope，未来实际准入须校准该绑定，不自行重写旧包。
+  七项目源 45f8 与旧 Node 证据不动，浏览器仍 0/60 秒含 15 秒清理；无 gate。claim现v3/7scope，未来实际准入须校准该绑定，不自行重写旧包。
 
 ## 旧树资源候选
 

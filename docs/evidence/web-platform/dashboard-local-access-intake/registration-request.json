@@ -1,0 +1,36 @@
+{
+  "state": "READY_FOR_LEAD_REGISTRY_INTAKE",
+  "taskId": "WPF-DASHBOARD-ACCESS01",
+  "responsibleRegistryOwner": "Original Execution Lead; Web manager supplies exact intake, does not edit registry",
+  "owner": "workspace_panels_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
+  "branch": "codex/dashboard-local-access",
+  "planDir": "plans/wpf-dashboard-local-access",
+  "statusPath": "plans/wpf-dashboard-local-access/status.md",
+  "evidenceDir": "docs/evidence/wpf-dashboard-local-access",
+  "base": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+  "claimId": "57735ff7-d631-4538-9faf-d7ac090837a2",
+  "claimVersion": 1,
+  "claimCommittedAt": "2026-10-07T02:52:33.082Z",
+  "canonicalHead": "a6fb3ef5b2da0aa0bc760971237b01899b59ecc4",
+  "actualLoadedObservation": null,
+  "sourceAuthority": "Owner status is sole handwritten feature state. Claim visibility is not source registration or actual aggregation.",
+  "timeContract": {
+    "commit": "79da82aeb1d1943a04bc81f33bdb78fd2571af79",
+    "path": "plans/AGENTS.md#task-timing",
+    "fields": [
+      "任务开工时间",
+      "任务完成时间",
+      "任务时间来源"
+    ],
+    "mainIntegration": "18144593a0f210e8d5b9b2c08f4ff62259c07cf5",
+    "mainSource": "Lead inbound via root"
+  },
+  "ownerSourceStartedAt": "2026-10-07T02:53:01Z",
+  "observation": {
+    "localEqualsRemote": true,
+    "cleanAtFirstCanonicalObservation": true,
+    "actualLoadedObservation": null,
+    "source": "Manager read exact first status and Git; owner continuing implementation, not claimed to stay clean"
+  }
+}

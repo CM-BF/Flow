@@ -43,6 +43,23 @@
       "initialScopeCount": 9,
       "provisionPerformed": false,
       "claimCreated": false
+    },
+    {
+      "kind": "LOCAL_ACCESS_PROVISION_AND_TAKE",
+      "provisionReceipt": "../dashboard-local-access-intake/actual-provision-receipt.json",
+      "operatorAuthorityReturned": true,
+      "takeReceipt": "../dashboard-local-access-intake/take-receipt.json",
+      "firstCanonical": "a6fb3ef5b2da0aa0bc760971237b01899b59ecc4",
+      "registryRequest": "../dashboard-local-access-intake/registration-request.json",
+      "actualLoaded": false
+    },
+    {
+      "kind": "TASK_TIME_RULES_MAIN",
+      "main": "18144593a0f210e8d5b9b2c08f4ff62259c07cf5",
+      "source": "Lead actual main/origin clean inbound relayed by root",
+      "frozenProposal": "79da82aeb1d1943a04bc81f33bdb78fd2571af79",
+      "displayImplementation": "W01 independently preparing exact new source provision; no new tree/claim yet",
+      "dperfAppReleased": "dperf-app-receipt.json"
     }
   ],
   "artifacts": [
@@ -80,7 +97,7 @@
       "D04PureGitTotalMs": 30000,
       "cleanupIncluded": true,
       "originalQuickCumulativeMs": 1875,
-      "state": "REQUESTED_AFTER_ACTUAL_CHAIN_RETURN_NOT_RESERVED",
+      "state": "SCHEDULED_AFTER_ACTUAL_LOCAL_AND_S01P07_RETURN_NOT_OPEN",
       "PG": false,
       "Chrome": false,
       "provider": false,
@@ -88,6 +105,7 @@
     },
     "sentToMikaThread": "01a10f3f-4ef0-7ca2-8e66-f1947fa4b295",
     "toolConfirmedDelivery": true,
-    "actualHandoffToWeb": false
+    "actualHandoffToWeb": false,
+    "additionalHeavyPrerequisite": "S01P07-PG-20261007-R1 actual OPEN; combo binds only Mika local, excludes Web. Require its actual terminal/cleanup too."
   }
 }

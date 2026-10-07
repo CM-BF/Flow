@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-07T02:49:23.987411+00:00",
-  "state": "PERSONAL_WEB_RECOVERED_RETURNED_NO_WEB_GRANT",
+  "recordedAt": "2026-10-07T02:59:28.346225+00:00",
+  "state": "WEB_LOCAL_SEGMENT_AUTHORIZED_NOT_STARTED",
   "groupWindowOwnership": "Lead confirms same-version 61228 Web recovery completed and exclusive window returned; Web has no actual holder, gate or reservation.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
@@ -407,16 +407,17 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "state": "PERSONAL_WEB_RECOVERED_RETURNED_NO_WEB_GRANT",
-    "source": "Lead actual handback via root plus bounded original receipt read; no service/free/proc resample",
-    "evidence": "dashboard-task-time-intake/incoming.json",
+    "state": "WEB_LOCAL_SEGMENT_AUTHORIZED_NOT_STARTED",
+    "source": "Latest Lead/Mika actual incoming relayed by root; no manager process/resource observation",
+    "localChain": "Mika X01/C02/REQ15 all actual terminal cleanup completed per incoming",
+    "heavyReturn": "S01P07 failure16a938 independently reviewed and heavy returned; no DB cleanup query performed, old TMP KEEP",
+    "currentLocalHolder": "SVC06 ended per new Lead incoming; Web segment not yet started",
     "webHolder": null,
     "newWebGrant": false,
-    "personalRecoveryStartedAt": "2026-10-07T02:45:02.253755+00:00",
-    "personalRecoveryFinishedAt": "2026-10-07T02:45:03.223312+00:00",
-    "next": "Ready-first with fresh necessary admission, original budgets and owner scopes; ordinary reversible local implementation uses one bounded modify/check/fix/recheck segment. No superseded window reuse; PG/Chrome/personal-service safeguards remain.",
-    "localSlot": "Mika actual OPEN local chain per root: X01 → C02 → REQ15, all 0PG/Chrome/provider/install. No Web holder.",
-    "webFollowingRequest": "After actual terminal cleanup of complete chain only, requested one ≤90s local segment preserving Quick28125ms/Recovery10s/D04≤30s caps; sent to Mika, no acceptance/reservation yet."
+    "webFollowingRequest": "Authorized one original ≤90s team segment; budgets preserved, no current execution/gate yet.",
+    "newSourceTask": "ACCESS claim57735ff7v1 ten scopes/firsta6fb ready for Lead registry intake; timing six-scope exact provision request not performed",
+    "evidence": "dashboard-task-timing-provision/coordination-intake.json",
+    "next": "New GO/Lead rule: ordinary isolated local checks autonomous max1 segment/team and max3 globally, cap10/runtimecap unchanged. Manager will start original ≤90s Quick→Recovery→D04 after one fresh onsite admission; no external per-command permission. No PG/Chrome/install/fullbuild/personal service."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -998,6 +999,23 @@
         "next": "Await sole operator actual recovery/cleanup handback; no Web PG/Chrome/install/rebuild. Independent source work only after exact supply and claim. Ordinary reversible checks use bounded work segments when permitted, not per-command permit chains."
       },
       "supersededBy": "dashboard-task-time-intake/personal-web-recovery-receipt.json"
+    },
+    {
+      "recordedAt": "2026-10-07T02:55:35.824896+00:00",
+      "latestCoordination": {
+        "state": "PERSONAL_WEB_RECOVERED_RETURNED_NO_WEB_GRANT",
+        "source": "Lead actual handback via root plus bounded original receipt read; no service/free/proc resample",
+        "evidence": "dashboard-task-time-intake/incoming.json",
+        "webHolder": null,
+        "newWebGrant": false,
+        "personalRecoveryStartedAt": "2026-10-07T02:45:02.253755+00:00",
+        "personalRecoveryFinishedAt": "2026-10-07T02:45:03.223312+00:00",
+        "next": "Ready-first with fresh necessary admission, original budgets and owner scopes; ordinary reversible local implementation uses one bounded modify/check/fix/recheck segment. No superseded window reuse; PG/Chrome/personal-service safeguards remain.",
+        "localSlot": "Mika X01 → C02 → REQ15 chain; S01P07-PG-20261007-R1 heavy actually OPEN per root and combination binds only Mika local. Web cannot start even if local returns first.",
+        "webFollowingRequest": "Mika accepted scheduling Web ≤90s only after whole local chain AND S01P07 actual terminal/cleanup. No Web OPEN/reservation/gate; no automatic combination expansion.",
+        "newSourceTask": "dashboard-local-access-intake/registration-request.json: first canonical a6fb present; READY_FOR_LEAD_INTAKE, not actually aggregated"
+      },
+      "source": "Prior specific scheduling, superseded by root-relayed actual chain/heavy return and new SVC06 local holder"
     }
   ],
   "dperf05Pure": {
@@ -1255,14 +1273,14 @@
   },
   "exactGitProvisionAuthority": {
     "state": "RETURNED_TO_ORIGINAL_EXECUTION_LEAD",
-    "receipt": "message-settings-quick-controls-provision/root-actual-provision.json",
+    "receipt": "dashboard-local-access-intake/actual-provision-receipt.json",
     "noFurtherRootDelegation": true,
     "sourceWriterClaimIsNotGitAuthority": true
   },
   "latestMikaQueueIntake": {
     "source": "Root relay of latest Lead/Mika coordination, no Web resample",
     "previousActualReturns": "SVC07 PASS cleanup; C02 heavy returned per root; Quick c1 FAILED cleanup; immutable receipts remain under existing history",
-    "current": "Mika OPEN X01 → C02 → REQ15 local chain per root; Web following request delivered but no actual handback.",
+    "current": "Mika local chain and S01P07 heavy returned as scoped above; Lead SVC06 local running; Web not OPEN.",
     "webReservation": false
   },
   "opsWorkspaceCacheDependencies": {
@@ -1469,5 +1487,13 @@
     "sourceReview": "APPROVED_SOURCE_ONLY",
     "pureGit": "NOT_RUN",
     "newRuntimeGrant": false
+  },
+  "dperf04CurrentClaim": {
+    "id": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+    "version": 3,
+    "scopeCount": 7,
+    "serverAndAppReleased": true,
+    "bindingRecheckAtFutureAdmission": true,
+    "receipt": "dashboard-task-time-intake/dperf-app-receipt.json"
   }
 }

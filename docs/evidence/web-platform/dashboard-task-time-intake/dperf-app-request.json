@@ -1,0 +1,18 @@
+{
+  "requestId": "c3794ac4-0cf3-46a0-90ff-2a6eed1e2677",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+  "version": 2,
+  "scope": [
+    "apps/execution-dashboard/src/aggregate.mjs",
+    "apps/execution-dashboard/src/read-model.mjs",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs",
+    "apps/execution-dashboard/test/summary-detail.test.mjs",
+    "apps/execution-dashboard/test/task-links.browser.mjs",
+    "docs/evidence/wpf-dperf04",
+    "plans/wpf-dperf04-summary-detail"
+  ]
+}
