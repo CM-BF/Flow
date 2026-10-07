@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T17:01:40.908Z / main c6ada2b76；208登记已审接收，实际4320已载入，source push恢复成功 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T17:38:15.978Z / main/origin f8853d473；R4限定失败结果接收批 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main c6ada2b76已收S01最小12源、资源方法与SVC09A R4准备独审；本批只接登记/文档，不改产品或固定产物 |
+| 工作基线 / HEAD | main f8853d473；已审I01六源/208来源已接收，本批仅R4限定结果与管理事实 |
 | 工作树dirty状态 | 仅已审结果原件/本次接收状态；两个既有未知__pycache__继续不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 固定doc字节/链接、两限定独审与own-status解析；0重复产品测试/PG/浏览器/provider，历史UNKNOWN保持 |
-| 已集成main状态 / HEAD | 最近已核main/origin e5ecd07bc；208来源17:02:13.739Z实际载入，source8e5515550 push已成功。固定cd27/04da、2515/098b与个人运行不改 |
+| 已集成main状态 / HEAD | 最近已核main/origin f8853d473；I01固定5438六源已5592f9d83接收、208来源17:02实际载入。本次R4限定结果进入受控metadata接收，未运行新检查或改变个人部署。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 已审后台准备与队列实验已接收；看板补齐当前负责人来源，网页兼容诊断按既定顺序继续。 |
-| 下一可用交付 | 完成新网页与固定后台的实际兼容验证，再受管更新个人页面；另验证消息设置后台独立启动、接单和收尾。 |
+| 当前产出 | 已审插件接线已进入主线；后台启动失败的原始结果获限定独审，诊断实施继续。 |
+| 下一可用交付 | 接收失败记录并完成最小后台启动诊断，再继续消息设置双槽与新网页兼容验证。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -478,3 +478,7 @@ SVC09A R2于16:16:36.884252Z归还，入口拒绝新临时目录名；未创建�
 2026-10-07T17:02:58.990Z：归档D05实际208源部署回执；主线e5ecd07bc与source8e5515550均已push。历史两次500保持，不是当前blocker。个人端口/任务/凭据未操作。
 
 2026-10-07T17:05:27.267Z：I01固定5438六源独审/source local+实际浏览器通过，fresh main六前像均与3c9345声明相同；主线仅另外四个verifier合同/测试变化，与本消费面无交叉，复用已有4direct/types0/四组双主题，不重跑。按[固定接收记录](../../docs/evidence/i02/i01-runtime-app-intake.json)精确集成；原失败与raw只保留在唯一canonical/Git，不复制历史材料。新页面/个人部署另验。
+
+### 2026-10-07T17:38:15.978Z R4限定结果接收
+
+[唯一结果独审记录](../../docs/evidence/i02/svc09a-host-r4-result-review.json)绑定a4a2d98/307d4f05：34新原件与2继承、19执行输入和5公开runtime核同，另1私有runtime只继承此前批准；没有重新读取私有产物。R4仍FAIL，17:10:57.626406Z运行资源归还而DB/private KEEP，SQL和mixed未到达；停止信号为后续清理，不追認根因。原件保留在owner固定Git来源，本次不复制正文。K01性能测量已终止后只恢复文档/独立源码，未知数据库仍保留；0新产品测试、host、PG旅程或provider。

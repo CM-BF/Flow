@@ -1,0 +1,39 @@
+{
+  "format": 1,
+  "task": "SVC09A / R4 actual host result",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "state": "APPROVED_LIMITED_R4_FAILED_RESULT_FIDELITY",
+  "P1": 0,
+  "P2": 0,
+  "fixedOwnerCommit": "a4a2d98bde3b4b3509962f88c6c0ab61ee61bd23",
+  "deliveryCommit": "307d4f05a6c4d650f032c0085759b508891bf773",
+  "canonicalWorktree": "personal-message-settings",
+  "canonicalManifest": "docs/evidence/svc09/message-settings-activation/host-integration/host-r4-result-manifest.json",
+  "manifestBytes": 12961,
+  "manifestSha256": "686c93df0171640be9f9b070a4ca7570ae7ee19771dc59efa3dc8f8766cac919",
+  "bindings": {
+    "newRecords": 34,
+    "newBytes": 59202,
+    "inherited": 2,
+    "execution": 19,
+    "publicRuntime": 5,
+    "privateRuntime": 1,
+    "privateRuntimeVerification": "inherited previous approval; not reread in this review"
+  },
+  "conclusions": [
+    "FAILED_NOT_HOST_PASS",
+    "host-consumer/START_UNCONFIRMED_CHECK_STATUS",
+    "6 exactPIDs/same-numbergroups absent,center stopped/pending0,DB1340622 zero connections/adminclosed",
+    "mayDrop=false/cleanupConfirmed=false/DB+privateKEEP;7futuregenerations neverstarted"
+  ],
+  "runtimeReturnAt": "2026-10-07T17:10:57.626406Z",
+  "elapsedMs": 32137,
+  "preserved": [
+    "R1/R2/R3 failures and KEEP unchanged",
+    "Artifact2515/source098b unchanged",
+    "No assertion that SIGTERM during cleanup caused the startup failure"
+  ],
+  "limits": "No rootcause proof/no later grant;0new checks/PG/service/provider/private personal reads",
+  "next": "Minimum default startup diagnostic before another complete settings/mixed journey; technical candidate needs its own source review and new bounded runtime segment.",
+  "at": "2026-10-07T17:35:59Z"
+}

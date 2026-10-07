@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-07T17:39:51Z",
+  "task": "FLOW-001 / OPS-001 current startup diagnosis",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "state": "APPROVED_DOCS",
+  "P1": 0,
+  "P2": 0,
+  "target": "99d137a0d6421aa4a4cfb70c2e2839dd1b8c1d3a",
+  "base": "1f94112e02c7cf304d5a4d4f9c3e5aa82b517b18",
+  "scope": [
+    "plans/flow-001-architecture/status.md",
+    "plans/ops-001-status-review/status.md"
+  ],
+  "integrationMetadata": [
+    "docs/evidence/i02/svc09a-host-r4-result-review.json",
+    "plans/i02-integration/status.md"
+  ],
+  "limits": "R4 FAIL, DB/private KEEP, runtime return only, no root cause or new runtime authorization. Source resumption based on window owner message; older public K01 window snapshot not construed as returned. Historical start UNKNOWN preserved. No tests/PG/services/provider/private original or personal reads."
+}
