@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T16:34:57.084Z |
+| 最近更新时间 | 2026-10-07T19:48:21.740Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -10,7 +10,7 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v31 ACTIVE43scope](../../docs/evidence/x01/av03-center-handback-receipt.json)；runners.ts已STOP交回CORE651，7条runner路径交process-host；routes.ts及两Web路径仍STOP；admission-journal与center八leaf已STOP并交AV03；本次仅parent metadata |
+| Claim | [v32 ACTIVE42scope](../../docs/evidence/x01/startup-observer-handback-receipt.json)；runners.ts已STOP交回CORE651，7条runner路径交process-host；routes.ts及两Web路径仍STOP；admission-journal与center八leaf已STOP并交AV03；server main.ts已STOP交startup observer；本次仅parent metadata |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
@@ -27,8 +27,8 @@
 | 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 材料引用与管理模块、受信插件进程宿主已接收主线；本地安装式验证器与显式资格恢复接缝已接收主线，中心领取和确认接口局部已验待审 |
-| 下一可用交付 | 中心验证任务资格与客户端确认接口待独审；真实数据库与独立校验闭环继续实施 |
+| 当前产出 | 材料引用与管理模块、受信插件进程宿主已接收主线；本地安装式验证器与显式资格恢复接缝已接收主线，中心领取和确认接口局部已审，真实数据库验收待新窗口 |
+| 下一可用交付 | 中心验证任务资格与客户端确认接口待真实数据库验收；独立校验闭环继续实施 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -40,7 +40,7 @@
 | X01-04 | in-progress | architecture_read | semver7.8.5/ISC已真实bundle并经现材料/loader9例验收；材料与Flow包装pinning已main5b0bef；真实公共与双进程任务已验；上游7.8.4→7.8.5→回选7.8.4已真实验收并main；真正invoke函数进行中跨版本/物理卸载仍开放 |
 | X01-05 | pending | Lead派发隔离writer | 依赖02/04；未声明第三方隔离存在 |
 | X01-06 | in-progress | Lead + Web管理owner | X03只读模块已审入main；WPF-X03I01主App懒挂载已main80e3c50；Weba952独立管理模块已main9f0，不冒本次生产App挂载或个人部署；完整Web/TUI/CLI生命周期未完 |
-| X01-07 | in-progress | architecture_read | 自有text工具及真实npm semver已局部prepare/read/import/invoke，artifact/flow.text可用；真实runRunner公共链及两main/管理HTTP旅程已验；上游升级已验；[安装式verifier子片](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/plans/x01-artifact-verifier/status.md) AV02已main e271，journal四叶已main b791；center/v4局部已验待独审，SQL/renderer/真正invoke-inflight/完整三端仍未完成 |
+| X01-07 | in-progress | architecture_read | 自有text工具及真实npm semver已局部prepare/read/import/invoke，artifact/flow.text可用；真实runRunner公共链及两main/管理HTTP旅程已验；上游升级已验；[安装式verifier子片](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/plans/x01-artifact-verifier/status.md) AV02已main e271，journal四叶已main b791；center/v4局部已审，R1准备数据失败、R2未运行，SQL/renderer/真正invoke-inflight/完整三端仍未完成 |
 | X01-08 | pending | Lead派发contextwriter | 依赖02/04/G01/usage；通用接口可先推进 |
 | X01-09 | pending | Goal Owner / Lead | 候选固定输入已定位、用户未亲自确认；CTX01 core可推进，不以身份阻塞toy，完整兼容验收未完 |
 | X01-10 | pending | Lead协调review/集成writer | 通用管理依赖03～08；09候选独立后续验收，独立产品review/整体验收未开始 |
@@ -410,3 +410,5 @@ PROCESS固定4dc十一源已远端main96b424777cd2c66e603157649e5a859ca1b914f6�
 本parent admission-journal.ts已15:56:11.654Z明确STOP；v29→v30/51原子amend于15:56:11.816Z COMMITTED，回执见上。原字节=固定main96b，无待交付源码；移出后不恢复父路径写权，AV03须自己amend成功才写。其它parent范围不动，父完整X01未完成。
 
 2026-10-07T16:34:00.000Z parent安全同步：AV02九叶正式main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶正式main b79121e1944f10f82a416d98d776c0f55bf9c943，独立I02回执均在child权威status链接。当前center片14源的唯一事实源继续为child status，本parent不复制其检查/进度。parent明确STOP八leaf→v31移出，本任务不恢复这些写权；剩余claim保留。无个人部署/完整X01完成结论。
+
+2026-10-07T19:48:21.740Z：仅metadata/协调ledger交接。19:46:26.096Z明确STOP apps/server/src/main.ts，原子amend于19:46:46.313Z将6dd v31/43→v32/42，仅移除此leaf；其余scope保留。固定main c29c2bbb0d9f1548cf54bcb78e0cd3b4a8e5b6c4前像与现WT字节见[handoff](../../docs/evidence/x01/startup-observer-handback-stop.json)。已main的显式runtime policy配置与原关闭链必须保留；native_center_owner须fresh take成功后写。无源码修改/工程check/产品PG/个人操作，父X01未完成。提交push后STOP，不恢复该leaf写权。
