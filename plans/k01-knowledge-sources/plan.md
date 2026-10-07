@@ -31,10 +31,10 @@
 
 **本次推荐，未实施：** 身份用JSON number/PG int32正整数，currentVersion作已提交单调高水位；16是实际保留版本数而非编号上限，64MiB/128 sources/256KiB保持有界。原版本全部legacy保守保护；新managed协议区分临时preview/receipt与已持久固定引用。当前head、legacy/unknown、K02/K03内部历史永久保护及外部有界holder不可回收；归档原文仍计容量。只回收经同version锁/FK证明可回收的版本；发布拟定newhead后，确无引用保护的oldhead可成为候选，所有失败保留原head/bytes/receipt。16个durable/legacy/unknown全保护则拒绝，不能承诺旧满源或有限容量下无限发布。
 
-内部保护拟用每version永久标记，外部可释放holder建议每version≤64；新留存命令receipt建议每project≤4096，复用flow.commands且满额拒绝，不额外积累无限tombstone。具体schema、协商字段/endpoint、配额计数索引及前进migration只由后续合法owner落实，当前无产品权限。source identity不删除，历史详情仍读其head；旧citation/digest/冻结正文/执行prompt不重写。
+内部保护拟用每version永久标记，外部可释放holder建议每version≤64，不额外积累无限tombstone。本次有界证明只覆盖保留原文/版本/投影/pin元数据；flow.commands原ACK/重放规则不改，其生命周期是实施前需审定的跨模块依赖，不声称整个DB永久有界，也不把4096等终身命令上限作为替代方案。具体schema、协商字段/endpoint、计数索引及前进migration只由后续合法owner落实，当前无产品权限。source identity不删除，历史详情仍读其head；旧citation/digest/冻结正文/执行prompt不重写。
 
 状态所有权保持：knowledge负责原文/身份/保护；K02/K03负责冻结输入与自己的锁，pin在caller事务内向下锁有序version，不能反向再拿project/source；publish/reclaim沿project→source向下。该锁序建议必须用真实竞争测试证明，不能把只读推导当已验。无缺省pin降级、无TTL推定旧引用失效，无通用GC/新broker。
 
-旧客户端/旧中心不得静默切到可回收语义；managed不可回收保证只有pin或内部冻结同事务成立后可声明。需要新能力/协议协商，不能把>16塞入旧v1 history成功DTO或伪报currentVersion16。请求协议选择与body/key一同冻结，send/queue未知ACK重试原请求不变；变协议必须先解决旧未知回执并新建逻辑命令，不能同key改canonical输入。详见设计证据兼容矩阵。
+旧客户端/旧中心不得静默切到可回收语义；managed不可回收保证只有pin或内部冻结同事务成立后可声明。需要新能力/协议协商，不能把>16塞入旧v1 history成功DTO或伪报currentVersion16。请求协议选择与body/key一同冻结，send/queue未知ACK重试原请求不变；变协议必须先解决旧未知回执并新建逻辑命令，不能同key改canonical输入，也不能在ACK未知时换新key再次发送。详见设计证据兼容矩阵。
 
 本轮产品验证NOT_RUN；0测试/产品PG/安装/模型/实际历史或留存设置变更。原已交付chunk/raw不可变与保守容量验收继续作为历史事实，不拿新规划覆盖旧验证。
