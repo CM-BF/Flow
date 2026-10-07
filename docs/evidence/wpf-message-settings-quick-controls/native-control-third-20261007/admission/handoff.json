@@ -1,0 +1,47 @@
+{
+  "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+  "createdAt": "2026-10-07T06:41:35.677679+00:00",
+  "gate": "/private/tmp/msgquick-native3-admission-d5v71cvf/gate.json",
+  "gateSha256": "7205a0e1d71f1688fa8dc6e63283da45917985ea3af4197000e9295944983414",
+  "expiresAt": "2026-10-07T06:47:35.677679+00:00",
+  "run": "msgquick-native3-20261007-064135-4132ba",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "head": "0c88e994c8d17f0431e2e9a7084ae8b91869210e",
+  "sourceTarget": "a9ec5df40470c20f48171eb8d725c6c39f307b55",
+  "bindingSha256": "e83e413b164ea91bac7b2b2cfacac2a82b1f9d8aacc24209c0f42aca163bd4ae",
+  "manifestSha256": "d5dd4d24d6f77242b4cf18dc22d05914c12c34c89122c218c190ae3b797a0f12",
+  "command": [
+    "python3",
+    "/private/tmp/msgquick-native3/supervisor.py",
+    "--gate",
+    "/private/tmp/msgquick-native3-admission-d5v71cvf/gate.json"
+  ],
+  "selection": "diagnostic",
+  "singleRunMaximumMs": 45000,
+  "cleanupMs": 15000,
+  "newSegmentTotalMs": 90000,
+  "newSegmentSpentMs": 17449,
+  "oldClosedActualMs": 30625,
+  "nativeReview": {
+    "path": "/private/tmp/manager-msgquick-native3-routine-binding-review.json",
+    "sha256": "9f3d7f4dd5c9276916be27a41bb824f258ba5fd37d3a2feeda3326c99c2e8296"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-msgquick-native2-actual-review.json",
+    "sha256": "c8922db98504683d02dfff783672bb9d3d6b8eabe92a0eb087e2f9c6b9e608f1",
+    "scope": "sourceCorrectionReviewed only; actual failure remains failure"
+  },
+  "outerEvidenceReserveBytes": 2113536,
+  "outerRequirements": "Unique owned outercapture; realexit/stdout/stderr/EOF/terminal hashes and ownedcleanup must agree. Chargeceilmax actualouter/late/parent. Do not infer diagnostic measurement is featurePASS. Report actualstart and terminal immediately; preserve FAIL/INCONCLUSIVE.",
+  "managerLaunch": false,
+  "remainingNewSegmentMs": 72551,
+  "chromeVersion": "154.0.8037.99",
+  "chromeProvenance": {
+    "path": "/private/tmp/msgquick-native2/chrome99-provenance.json",
+    "meaning": "Only two physical native input pins updated; original .98 preparation preserved; installed patch cause unknown.",
+    "sha256": "b824372e40de408f23f3b5b7766cf55a81eb2f615b3e63fee4e14fd668a2e29d"
+  },
+  "mustNotOverlap": "No second own Chrome/PG or exclusive personal/performance window; independent C02 plannedPG budget included without asserting RUN; current external handoff authoritative",
+  "ownerStatusFollowup": "Next natural owner metadata update adds a structured waiting table from observed reason/owner/release-condition/start/end. Unknown historical starts remain UNKNOWN; no present-time backfill or checks rerun.",
+  "noSecretsOrPersonalInputs": true
+}

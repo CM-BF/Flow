@@ -1,0 +1,8 @@
+(version 1)
+(allow default)
+(deny file-write*)
+(allow file-write* (subpath "/private/tmp/msgquick-native3/scratch") (subpath "/private/tmp/msgquick-native3/raw/msgquick-native3-20261007-064135-4132ba") (literal "/dev/null"))
+(deny network*)
+(allow network-bind (local ip "localhost:*"))
+(allow network-inbound (local ip "localhost:*"))
+(allow network-outbound (remote ip "localhost:*"))

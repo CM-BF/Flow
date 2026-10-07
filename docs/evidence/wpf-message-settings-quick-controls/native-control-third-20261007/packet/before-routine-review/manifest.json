@@ -1,0 +1,58 @@
+{
+  "state": "PREPARED",
+  "metadataHead": "0c88e994c8d17f0431e2e9a7084ae8b91869210e",
+  "diagnosticSourceTarget": "a9ec5df40470c20f48171eb8d725c6c39f307b55",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "c261949f88dd330eddd42ce53957a2808befc1504f455c44ca490b8c987c8d4a"
+  },
+  "prepared": {
+    "README.md": {
+      "bytes": 1059,
+      "sha256": "3048359a600b04167a128b84f3319341a63ae7c32789e10d587a2a2450f5723f"
+    },
+    "aliases.json": {
+      "bytes": 3483,
+      "sha256": "b1e602aa62b5ebff2006e7ad3aefabea5606c9cf0998e14d5afa7aa8ec4110d4"
+    },
+    "binding.json": {
+      "bytes": 43203,
+      "sha256": "b0681c8ce9a8903c11315d6f9ec24bc38a58b3448d304f7686b4cf75f1c459e6"
+    },
+    "binding.json.diff": {
+      "bytes": 7589,
+      "sha256": "48967edec7691af4318c45a6a7921e495a543f2dd1c289437ae5352cc764a851"
+    },
+    "prior-evidence.json": {
+      "bytes": 49732,
+      "sha256": "429df8fdc96c40c1ed5a996439345af6dc316ca4562865441859819ac464179e"
+    },
+    "runtime-tsconfig.json": {
+      "bytes": 1620,
+      "sha256": "bc0bd602d32d2a03d122fff259684bee15cfe17a7ea40224cc06c1ffd2a51f18"
+    },
+    "static-audit.json": {
+      "bytes": 733,
+      "sha256": "d4cbd813c8d565b645611c429cfacc99b8ccf3885ec055ebb23fe18cba735025"
+    },
+    "supervisor.py": {
+      "bytes": 38676,
+      "sha256": "7d65c238486ae158853b314c4b4bc5ef9099eb6fe6e9ffa68fe59d60451f2679"
+    },
+    "supervisor.py.diff": {
+      "bytes": 8137,
+      "sha256": "8521fd48ff0bebbbccbf99d4ee655f9ba4ec898a0263fb7d86f180b8427de31b"
+    },
+    "worker.mjs": {
+      "bytes": 13674,
+      "sha256": "3a521deb334b10748ba220a623cd3be4bee833f3c52953f20d2a4d0aedf5ce49"
+    }
+  },
+  "newSegmentSpentMs": 17449,
+  "newSegmentRemainingMs": 72551,
+  "historyClosedMs": 30625,
+  "nativeChromeBoundaryApproval": null,
+  "gate": null
+}

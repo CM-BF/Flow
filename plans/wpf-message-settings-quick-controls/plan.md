@@ -77,3 +77,9 @@ parent11178/late11182/outer11221.448166994378ms原样；保守本次11222，新�
 [本次实际/原件](../../docs/evidence/wpf-message-settings-quick-controls/native-control-second-20261007/README.md)：source521a/HEAD753ccd、Chrome154.0.8037.99；outerexit1/唯一FAILEDseal。UTF-8/公开label模型/count1已实测；plain A10事件无input-change，快照value缺失后TypeError，B/modal未执行、0/6组/0PNG。不能用.99倒推原.98唯一原因。
 
 fixture/context正常关闭，全部EOF/0drop、parent51494/worker53613/Chrome51498及scratch absent。parent6188/late6189/outer6226.722708088346ms原样，本次保守6227，新段累计17449/余72551；旧30625封闭。当前仅修真实函数snapshot调用，后继源a9ec5df40470c20f48171eb8d725c6c39f307b55，原三源/六组字节不变；[窄修准备](../../docs/evidence/wpf-message-settings-quick-controls/native-control-snapshot-preparation/README.md)待同段fresh定向复验。
+
+## Native-control第三轮实际 2026-10-07 06:45:03 UTC
+
+[完整原件与root独审](../../docs/evidence/wpf-message-settings-quick-controls/native-control-third-20261007/README.md)：sourcea9ec/HEAD0c88、Chrome154.0.8037.99；actualouterexit1/唯一FAILEDseal，worker INCONCLUSIVE而无场景exception。两独立plain页UTF-8/模型/count1，A10+B14个可信事件无input/change，逐键快照value空/index0/focusedtrue/openfalse。因plain B未真实选值，actual modal未运行；0/6功能组、0PNG。原键盘验收不削弱，不以该样本认定唯一产品或平台原因，也不回推.98。
+
+fixture/context正常关闭，全日志EOF/0drop，parent15507/worker15534/Chrome15514与scratch/profile absent，资源已实际归还。parent5830/late5831/outer5872.413750039414ms原样；本次保守5873，新90s段累计23322/余66678；旧30625封闭/未用29375不抵扣。root限定接受FAILED/INCONCLUSIVE观测与owned清理，不是feature PASS。源a9ec不变、无第四同样run；完整任务NOT_COMPLETED。

@@ -1,0 +1,230 @@
+{
+  "at": "2026-10-07T06:44:08.053306+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra; independent actual evidence review",
+  "decision": "ACCEPTED_FAILED_INCONCLUSIVE_NATIVE_CONTROL_ACTUAL_AND_OWNED_CLEANUP_NOT_FEATURE_PASS",
+  "source": "a9ec5df40470c20f48171eb8d725c6c39f307b55",
+  "executionHead": "0c88e994c8d17f0431e2e9a7084ae8b91869210e",
+  "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "packet": "/private/tmp/msgquick-native3",
+  "outer": "/private/tmp/msgquick-native3-outer-1gejsqrh",
+  "actual": {
+    "actualExit": 1,
+    "startedAt": "2026-10-07T06:42:22.476880+00:00",
+    "endedAt": "2026-10-07T06:42:28.349391+00:00",
+    "wallMs": 5872.413750039414,
+    "pid": 15507,
+    "pgid": 15507,
+    "bothEOF": true,
+    "groupAbsent": true,
+    "droppedBytes": 0,
+    "stdoutBytes": 984,
+    "stderrBytes": 0,
+    "stdoutSha256": "fea0c3d997ea130c496587ae150829e23606f0d26b699750a6dc1284717aaf7f",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "terminal": {
+    "state": "FAILED",
+    "exit": 1,
+    "singleSeal": true,
+    "sealedFilesVerified": 6,
+    "runtimeFilesVerified": 5,
+    "fourGitSourcePinsVerified": true,
+    "lateParentMs": 5831,
+    "serializedParentMs": 5830
+  },
+  "accounting": {
+    "authoritativeElapsedMs": 5872.413750039414,
+    "chargeMs": 5873,
+    "previousSegmentSpentMs": 17449,
+    "segmentSpentMs": 23322,
+    "segmentRemainingMs": 66678,
+    "closedHistoryMs": 30625,
+    "totalWithClosedHistoryMs": 53947,
+    "meaning": "Use actual outer elapsed ceiling; smaller serialized parent estimates are retained unchanged."
+  },
+  "diagnostic": {
+    "conclusion": "INCONCLUSIVE",
+    "diagnosticComplete": false,
+    "arms": [
+      {
+        "name": "plain-A-ArrowDown-Enter",
+        "document": {
+          "characterSet": "UTF-8",
+          "selectCount": 1,
+          "labels": [
+            "模型"
+          ],
+          "exactLocatorCount": 1
+        },
+        "traceRecords": 10,
+        "eventTypes": [
+          "focusin",
+          "keydown",
+          "keyup"
+        ],
+        "allTrusted": true,
+        "allUnpreventedAtRecordedPhases": true,
+        "observerErrors": [],
+        "truncated": false,
+        "snapshots": [
+          {
+            "after": "focus",
+            "value": "",
+            "selectedIndex": 0,
+            "focused": true,
+            "connected": true,
+            "disabled": false,
+            "open": false
+          },
+          {
+            "after": "ArrowDown",
+            "value": "",
+            "selectedIndex": 0,
+            "focused": true,
+            "connected": true,
+            "disabled": false,
+            "open": false
+          },
+          {
+            "after": "Enter",
+            "value": "",
+            "selectedIndex": 0,
+            "focused": true,
+            "connected": true,
+            "disabled": false,
+            "open": false
+          }
+        ],
+        "selectedWithNativeEvents": false
+      },
+      {
+        "name": "plain-B-Space-ArrowDown-Enter",
+        "document": {
+          "characterSet": "UTF-8",
+          "selectCount": 1,
+          "labels": [
+            "模型"
+          ],
+          "exactLocatorCount": 1
+        },
+        "traceRecords": 14,
+        "eventTypes": [
+          "focusin",
+          "keydown",
+          "keyup"
+        ],
+        "allTrusted": true,
+        "allUnpreventedAtRecordedPhases": true,
+        "observerErrors": [],
+        "truncated": false,
+        "snapshots": [
+          {
+            "after": "focus",
+            "value": "",
+            "selectedIndex": 0,
+            "focused": true,
+            "connected": true,
+            "disabled": false,
+            "open": false
+          },
+          {
+            "after": "Space",
+            "value": "",
+            "selectedIndex": 0,
+            "focused": true,
+            "connected": true,
+            "disabled": false,
+            "open": false
+          },
+          {
+            "after": "ArrowDown",
+            "value": "",
+            "selectedIndex": 0,
+            "focused": true,
+            "connected": true,
+            "disabled": false,
+            "open": false
+          },
+          {
+            "after": "Enter",
+            "value": "",
+            "selectedIndex": 0,
+            "focused": true,
+            "connected": true,
+            "disabled": false,
+            "open": false
+          }
+        ],
+        "selectedWithNativeEvents": false
+      }
+    ],
+    "actualModalAttempted": false,
+    "originalAcceptanceGroupsPassed": 0,
+    "originalAcceptanceGroupsTotal": 6,
+    "screenshots": 0,
+    "interpretation": "Both independent plain native SELECT controls stayed at the empty option despite actual trusted focus/key events with no observed prevention. The repaired snapshots now execute and produce values. There is no product-modal measurement in this run; native control precondition did not permit it. This is not proof of a Picker product defect, OS bug, or root cause."
+  },
+  "cleanup": {
+    "workerReport": {
+      "fixtureClosed": true,
+      "contextClosed": true,
+      "cleanupErrors": [],
+      "pg": 0
+    },
+    "parent": {
+      "errors": [],
+      "groupAbsent": true,
+      "workerGroupAbsent": true,
+      "chromeGroupAbsent": true,
+      "scratchAbsent": true
+    },
+    "streams": {
+      "chrome.stdout": {
+        "receivedBytes": 0,
+        "keptBytes": 0,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      },
+      "chrome.stderr": {
+        "receivedBytes": 4223,
+        "keptBytes": 4223,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      },
+      "worker": {
+        "receivedBytes": 58,
+        "keptBytes": 58,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      }
+    },
+    "freshRootGroupObservation": [
+      {
+        "pgid": 15507,
+        "state": "ABSENT"
+      },
+      {
+        "pgid": 15534,
+        "state": "ABSENT"
+      },
+      {
+        "pgid": 15514,
+        "state": "ABSENT"
+      }
+    ],
+    "scratchAbsent": true,
+    "profileAbsent": true
+  },
+  "resourceMeasurements": {
+    "retainedBytes": 4836988,
+    "peakObservedScratchBytes": 18570171,
+    "minObservedFreeBytes": 24347512832,
+    "meaning": "Samples are observations, not hard quota claims."
+  },
+  "followup": "Do not blindly repeat the same native A/B. Preserve this measurement and bounded budget. Research native-select/keyboard preconditions before choosing a materially different controlled diagnostic; any launch/ownership/boundary change needs targeted review. The actual feature six groups and light/dark PNGs remain unverified.",
+  "findings": [],
+  "rawManifestSha256": "4c579c66ebd9c94ef7744c4f8ef713edc0c5cadd1accb6511222ee2e5e7cec9c"
+}

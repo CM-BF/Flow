@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-07T06:40:23.070461+00:00",
+  "reviewer": "d01_owner / gpt-6-astra ultra / existing manager routine provenance authority",
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "7d65c238486ae158853b314c4b4bc5ef9099eb6fe6e9ffa68fe59d60451f2679",
+  "workerSha256": "3a521deb334b10748ba220a623cd3be4bee833f3c52953f20d2a4d0aedf5ce49",
+  "source": "a9ec5df40470c20f48171eb8d725c6c39f307b55",
+  "head": "0c88e994c8d17f0431e2e9a7084ae8b91869210e",
+  "preparedBindingSha256": "b0681c8ce9a8903c11315d6f9ec24bc38a58b3448d304f7686b4cf75f1c459e6",
+  "preparedManifestSha256": "b1004647fab7acb0593d9d20a890ba602147ed8a9a7d2725382c6697b7f94188",
+  "basis": {
+    "path": "/private/tmp/root-msgquick-native2-routine-binding-review.json",
+    "sha256": "78f9d87ed9c9ab9e280539a7dcd1c7a6611a32ce965929bc857b5652f276d835",
+    "meaning": "Same native authority/lifecycle; only fixed two-run carry changes parent hash. Exact routine hash rebind required before admission."
+  },
+  "classification": "Routine exact-hash carry/source provenance under already-authorized same-boundary finite segment. No new native permissions or lifecycle/cleanup/acceptance change.",
+  "observedDelta": "Parent only41847→48074/11222→17449/two-run roots and a fixed two-entry loop preserving the same previous actualexit/seal/hash/EOF/group/scratch/root-review checks. Tail from combined-carry consistency assertion byte-identical; worker/flags/sandbox/deadlines/acceptance unchanged.",
+  "sourceCorrection": {
+    "path": "/private/tmp/root-msgquick-native2-actual-review.json",
+    "sha256": "c8922db98504683d02dfff783672bb9d3d6b8eabe92a0eb087e2f9c6b9e608f1",
+    "scope": "sourceCorrectionReviewed only; actual failure remains failure"
+  },
+  "sourceCorrectionScope": "Root c892 sourceCorrectionReviewed: read-only snapshot callback invocation only; original six assertion groups and other three source files unchanged.",
+  "checks": {
+    "prepared": 10,
+    "priorFiles": 217,
+    "priorBytes": 2369875,
+    "old178Unchanged": true,
+    "sourceGitPins": 4,
+    "actualParentDiffMatches": true,
+    "errors": []
+  },
+  "budget": {
+    "closedHistoryMs": 30625,
+    "newSegmentMs": 90000,
+    "spentMs": 17449,
+    "remainingMs": 72551,
+    "singleRunMs": 45000,
+    "cleanupMs": 15000,
+    "temporaryBytes": 67108864,
+    "retainedBytesIncludingOuter": 8388608,
+    "outerAlreadyIncludedBytes": 2113536
+  },
+  "resources": "NO_GATE / NOT_RUN until fresh actual handoff, claim/head/source/runtime/prior/output/resource checks. Independent own0PG Chrome/fixture only.",
+  "managerRuntimeTests": 0
+}

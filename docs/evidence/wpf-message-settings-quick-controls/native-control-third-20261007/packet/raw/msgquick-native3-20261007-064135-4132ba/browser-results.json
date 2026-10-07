@@ -1,0 +1,39 @@
+{
+  "sourceHead": "0c88e994c8d17f0431e2e9a7084ae8b91869210e",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "c261949f88dd330eddd42ce53957a2808befc1504f455c44ca490b8c987c8d4a"
+  },
+  "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "startedAt": "2026-10-07T06:42:22.512Z",
+  "workerPid": 15534,
+  "parentPid": 15507,
+  "chromePid": 15514,
+  "chromeProcessGroup": "separate-parent-owned-session",
+  "chromeCleanupOwner": "external-parent-native-sibling",
+  "checks": [],
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "outcome": "inconclusive",
+  "pg": 0,
+  "selection": "diagnostic",
+  "diagnosticComplete": false,
+  "budgetOwner": "external-parent",
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cdpConnectedAt": "2026-10-07T06:42:27.819Z",
+  "diagnosticConclusion": "INCONCLUSIVE",
+  "limitation": "Native-control measurement only; zero of the original six acceptance groups executed.",
+  "selectDiagnostics": {
+    "path": "select-diagnostics.json",
+    "bytes": 13232,
+    "sha256": "c93206aed9fa98d4995a4ec7d1135369ec306f9106a2cd678eeea875897880ae",
+    "state": "INSTALLED",
+    "truncated": false
+  },
+  "finishedAt": "2026-10-07T06:42:28.129Z",
+  "observedElapsedMs": 5617,
+  "profileCleanupOwner": "external-parent-after-both-process-groups-absent"
+}

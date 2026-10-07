@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS02 当前证据
 
-最新[native-control第二轮](native-control-second-20261007/README.md)为FAILED/INCONCLUSIVE：页编码/标签已实测正确，真实Down/Enter10事件捕获；诊断snapshot调用错误阻止B/modal，0/6组/0PNG，owned清理已完成。新段累计17449/余72551；旧30625闭合。[snapshot窄修](native-control-snapshot-preparation/README.md)尚未复验，完整feature UNKNOWN。
+最新[native-control第三轮](native-control-third-20261007/README.md)为FAILED/INCONCLUSIVE：两独立plain页已完成真实键盘与快照观察，A10/B14事件均无input/change或选值，actual modal未启动，0/6组/0PNG。root接受实际/owned清理，未认定产品缺陷。新段累计23322/余66678；旧30625闭合。源a9ec保持，不自动第四次，完整feature UNKNOWN。
 
 产品固定fe6ece131c489c79cf531a184e4cf51209f9c4a0，四源限定源码已审。当前[c2实际strict/26direct](c2-actual-20261007/README.md)已由root限定接受：两个子退出0、outer actualexit0+唯一PASS seal/四hash/双EOF0drop，owned groups/scratch清理。累计5119ms/余24881ms。
 
