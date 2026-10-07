@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:23:46.463409+00:00 |
+| 最近更新时间 | 2026-10-07T11:29:23.352950+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -375,3 +375,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T11:20:53.836740+00:00：独立候选PG R1执行0bf7，11:18:44.075676Z launch3581→11:18:47.316809Z deliveryPASSED，1/1、旧10unselected，106HTTP/26141B，45metadata runners/0tasks。两ownedgroups/mergedEOF、DB1297894同marker0conn普通DROPabsence、listener59987closed、TMP同inode10项6535Bremoved/11:19:02.617209exactENOENT，立即返Mika/db不等待metadata占窗。新[结果入口](../../docs/evidence/x01/host-candidates-pg-result-ready.md)待独审；旧376输入/raw/历史失败不改。实际floor5,479,333,888B启动前fresh完整核，O16/C02旧KEEP不访问。无重跑/新预约。架构待main接收后由Lead更新候选读边及policy投影；wholeX01继续OPEN。
 
 2026-10-07T11:23:46.463409+00:00：chatui11:22:22结果忠实性APPROVED/0P1/P2正式归档，原source/PGraw/manifest均冻结。[七源窄main intake](../../docs/evidence/x01/host-candidates-integration-ready.json)READY；fresh主线f68dbb71七路径前像与固定base2f32一致，三个新leaf未出现，不冒main已接。只source/metadata接收说明，不重跑1/10/旧套件；PG已11:19实际返还。客户候选另由db唯一intake消费相同合同；Web两源已STOP不恢复。整体X01未Done，未知副作用恢复/完整三端/隔离/context/真实A-B-C生命周期仍保持原TODO边界。
+
+2026-10-07T11:29:23.352950+00:00：仅metadata收敛[三片固定接收索引](../../docs/evidence/x01/host-candidates-combined-intake-index.json)，引用ACK ae148唯一intake、候选中心a298/actuald05与consumerbc54/8af唯一intake；不复制子taskTODO/第二进度源。三owner现场HEAD=origin clean，mainf68 clean；18路径row的只读顺序模拟（16unique）无前像冲突，均尚未按完整source字节接收。ACK→consumer，合同59ad需先于/同批consumer，a298与767同合同而保留backend修复。建议Original按实际组合diff一次必要directcheck，具体范围仍由集成owner确定，不重跑三批全集/PG。0工程执行/PG/main/registry/他人status写入，原intake/source/raw保持。

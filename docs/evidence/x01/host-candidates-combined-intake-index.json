@@ -1,0 +1,278 @@
+{
+  "kind": "FIXED_CONTROLLED_INTAKE_INDEX",
+  "notProgressSource": true,
+  "createdAt": "2026-10-07T11:29:23.352950+00:00",
+  "parentTask": "X01",
+  "authoritativeProgress": "Each listed owner status only; this is an immutable intake snapshot with no TODO/percentage/second status",
+  "mainObservation": {
+    "head": "f68dbb7167dcbd3377bb13c38c02636cfb7c28ff",
+    "clean": true,
+    "at": "2026-10-07T11:29:23.352950+00:00"
+  },
+  "order": [
+    "ACK",
+    "HOST",
+    "CONSUMER"
+  ],
+  "dependencyEdges": [
+    {
+      "from": "ACK",
+      "to": "CONSUMER",
+      "reason": "Two shared client preimages exactly match ACK postimages; apply ACK first."
+    },
+    {
+      "from": "HOST",
+      "to": "CONSUMER",
+      "reason": "Exact plugin-runtime-hosts contract required before or same batch as consumer. Full a298 backend includes reviewed policy fix; do not revert to767."
+    }
+  ],
+  "independentSlices": "ACK and HOST have no source overlap and can be staged in either order; both precede CONSUMER. Existing individual intakes remain independently valid.",
+  "contractIdentity": {
+    "path": "packages/contracts/src/plugin-runtime-hosts.ts",
+    "sha256": "59ad5c6cec92331c53f984625f008bab44ae7a4facb13b9510824ea98a0477aa",
+    "bytes": 1708,
+    "equalCommits": [
+      "a2981b71b47d254356152c505ddfff29edd76446",
+      "7672090bed43f28f88f16bcbd0d0cfa04a0667ac"
+    ]
+  },
+  "slices": [
+    {
+      "slice": "ACK",
+      "owner": "db_transaction_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks",
+      "branch": "codex/plugin-command-acks",
+      "observedAt": "2026-10-07T11:29:23.352950+00:00",
+      "ownerHead": "7691783ddacad7669bf7a599e0636253972c511a",
+      "originHead": "7691783ddacad7669bf7a599e0636253972c511a",
+      "dirty": false,
+      "statusAuthority": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks/plans/x01-plugin-command-acks/status.md",
+        "bytes": 5781,
+        "sha256": "9af30152cd9ed30422fc523e20a4520c13b5a35fd7f8966e1a85d49f03da06b2"
+      },
+      "canonicalIntake": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-command-acks/docs/evidence/x01-plugin-command-acks/main-intake.json",
+        "bytes": 5068,
+        "sha256": "7719d8683e691fd59841a9f8fa5c418a9cf7ec5ab5170dd34be3e29c794b7cae"
+      },
+      "canonicalGitCommit": "7691783ddacad7669bf7a599e0636253972c511a",
+      "fixedSource": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "sourceRowsPointer": "productAndRequiredTestSupport",
+      "sourceRowsCount": 5,
+      "pathBindings": [
+        {
+          "path": "packages/client/src/index.ts",
+          "sourceHashPointer": "docs/evidence/x01-plugin-command-acks/main-intake.json#/productAndRequiredTestSupport/0/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "packages/client/src/plugin-management.ts",
+          "sourceHashPointer": "docs/evidence/x01-plugin-command-acks/main-intake.json#/productAndRequiredTestSupport/1/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "packages/client/src/plugin-command-ack.test.ts",
+          "sourceHashPointer": "docs/evidence/x01-plugin-command-acks/main-intake.json#/productAndRequiredTestSupport/2/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "apps/cli/src/plugin-command-ack.test.ts",
+          "sourceHashPointer": "docs/evidence/x01-plugin-command-acks/main-intake.json#/productAndRequiredTestSupport/3/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "docs/evidence/x01-plugin-command-acks/fixtures.ts",
+          "sourceHashPointer": "docs/evidence/x01-plugin-command-acks/main-intake.json#/productAndRequiredTestSupport/4/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        }
+      ],
+      "remainingP1": 0,
+      "remainingP2": 0,
+      "mainAtObservation": {
+        "head": "f68dbb7167dcbd3377bb13c38c02636cfb7c28ff",
+        "matchingSourceRows": 0,
+        "allRows": 5,
+        "received": false,
+        "interpretation": "Byte observation only; formal main receipt remains integration operator authority"
+      },
+      "review": {
+        "state": "SOURCE_AND_DELTA_RESULT_REVIEW_APPROVED",
+        "at": "2026-10-07T10:50:56Z",
+        "packet": "3608284d45b44a77a1a0c28b4e299fbe3d845713",
+        "deliveryBaseline": "e54f57ebbd7b100bc90c38055f2e11eb826f2b8f",
+        "authority": "canonicalIntake.reviewState/reviewedAt/remainingFindings; owner review.md"
+      },
+      "validationScope": "44 distinct across41+1+2 rounds, focusedtypes0, original failures preserved. Real client/runCli with mockFetch; no actual PG/socket owner auth/Web/provider."
+    },
+    {
+      "slice": "HOST",
+      "owner": "architecture_read",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+      "branch": "codex/plugin-enable-binding",
+      "observedAt": "2026-10-07T11:29:23.352950+00:00",
+      "ownerHead": "96ad9e6b8d3f7b3d8ec36762e603f10e4036c6e2",
+      "originHead": "96ad9e6b8d3f7b3d8ec36762e603f10e4036c6e2",
+      "dirty": false,
+      "statusAuthority": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/status.md",
+        "bytes": 84980,
+        "sha256": "36156009728e75c0edde621d66c1cc858f0ea44c01a344c0dee2f53354d3ea50"
+      },
+      "canonicalIntake": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/host-candidates-integration-ready.json",
+        "bytes": 5554,
+        "sha256": "58f45573f4ab5d4895970cbeb4ed2f55826d5111c35f745e043aa0b2cbf89a65"
+      },
+      "canonicalGitCommit": "96ad9e6b8d3f7b3d8ec36762e603f10e4036c6e2",
+      "fixedSource": "a2981b71b47d254356152c505ddfff29edd76446",
+      "sourceRowsPointer": "changes",
+      "sourceRowsCount": 7,
+      "pathBindings": [
+        {
+          "path": "apps/server/src/plugin-runtime/commands.ts",
+          "sourceHashPointer": "docs/evidence/x01/host-candidates-integration-ready.json#/changes/0/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "apps/server/src/plugin-runtime/store.ts",
+          "sourceHashPointer": "docs/evidence/x01/host-candidates-integration-ready.json#/changes/1/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "apps/server/src/plugin-runtime/routes.ts",
+          "sourceHashPointer": "docs/evidence/x01/host-candidates-integration-ready.json#/changes/2/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "apps/server/src/plugin-runtime/host-candidates.ts",
+          "sourceHashPointer": "docs/evidence/x01/host-candidates-integration-ready.json#/changes/3/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "apps/server/src/plugin-runtime/host-candidates.test.ts",
+          "sourceHashPointer": "docs/evidence/x01/host-candidates-integration-ready.json#/changes/4/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "apps/server/src/plugin-runtime/runtime.test.ts",
+          "sourceHashPointer": "docs/evidence/x01/host-candidates-integration-ready.json#/changes/5/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "packages/contracts/src/plugin-runtime-hosts.ts",
+          "sourceHashPointer": "docs/evidence/x01/host-candidates-integration-ready.json#/changes/6/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        }
+      ],
+      "remainingP1": 0,
+      "remainingP2": 0,
+      "mainAtObservation": {
+        "head": "f68dbb7167dcbd3377bb13c38c02636cfb7c28ff",
+        "matchingSourceRows": 0,
+        "allRows": 7,
+        "received": false,
+        "interpretation": "Byte observation only; formal main receipt remains integration operator authority"
+      },
+      "review": {
+        "sourceAt": "2026-10-07T11:08:43Z",
+        "sourcePacket": "82cca2124bd7c234f21088cca53adc46f50751f6",
+        "sourceReview": {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/host-candidates-independent-review.json",
+          "bytes": 2209,
+          "sha256": "43d958d4296357eb4fb0d1cc93c484c8601cb4279c71b1176c837a70eb2824b5"
+        },
+        "result": "d05b33a552168aadf07ec1ecabe43c29ff3e0faf",
+        "resultAt": "2026-10-07T11:22:22Z",
+        "resultPacket": "5c481e5d7d21cba87a18de4bd7b2ecf63b602045",
+        "resultReview": {
+          "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/host-candidates-pg-independent-review.json",
+          "bytes": 1757,
+          "sha256": "1d5d1e2e2b9a80da57047761fc3a85b92b4568d0a8442038125fcef0b6e8a041"
+        }
+      },
+      "validationScope": "10 local distinct across rounds/types0; one real candidate ownerHTTP/PGcase passed,10 older cases unselected,106HTTP/45metadata runners/0tasks and observed closure. Synthetic installed material; not npm/OSrunner/UI."
+    },
+    {
+      "slice": "CONSUMER",
+      "owner": "db_transaction_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates",
+      "branch": "codex/plugin-host-candidates",
+      "observedAt": "2026-10-07T11:29:23.352950+00:00",
+      "ownerHead": "8af0a59448d23a81079f9b749648169c1febe64c",
+      "originHead": "8af0a59448d23a81079f9b749648169c1febe64c",
+      "dirty": false,
+      "statusAuthority": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates/plans/x01-host-candidates-client/status.md",
+        "bytes": 5277,
+        "sha256": "d70af1e280012dd29f451cc3f08cf0cc79044f8d918aac9558d640d22943192e"
+      },
+      "canonicalIntake": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates/docs/evidence/x01-host-candidates-client/main-intake.json",
+        "bytes": 5477,
+        "sha256": "1bd31feae31de508ec5a62eec4a5ace6ffa21a055b99058083a3cb96259edd80"
+      },
+      "canonicalGitCommit": "8af0a59448d23a81079f9b749648169c1febe64c",
+      "fixedSource": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "sourceRowsPointer": "productAndRequiredTestSupport",
+      "sourceRowsCount": 6,
+      "pathBindings": [
+        {
+          "path": "packages/client/src/index.ts",
+          "sourceHashPointer": "docs/evidence/x01-host-candidates-client/main-intake.json#/productAndRequiredTestSupport/0/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "packages/client/src/plugin-management.ts",
+          "sourceHashPointer": "docs/evidence/x01-host-candidates-client/main-intake.json#/productAndRequiredTestSupport/1/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "apps/cli/src/index.ts",
+          "sourceHashPointer": "docs/evidence/x01-host-candidates-client/main-intake.json#/productAndRequiredTestSupport/2/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "packages/client/src/plugin-host-candidates.test.ts",
+          "sourceHashPointer": "docs/evidence/x01-host-candidates-client/main-intake.json#/productAndRequiredTestSupport/3/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "apps/cli/src/plugin-host-candidates.test.ts",
+          "sourceHashPointer": "docs/evidence/x01-host-candidates-client/main-intake.json#/productAndRequiredTestSupport/4/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        },
+        {
+          "path": "docs/evidence/x01-host-candidates-client/fixtures.ts",
+          "sourceHashPointer": "docs/evidence/x01-host-candidates-client/main-intake.json#/productAndRequiredTestSupport/5/sha256",
+          "sequentialPreimage": "EXPECTED_PREIMAGE_MATCH"
+        }
+      ],
+      "remainingP1": 0,
+      "remainingP2": 0,
+      "mainAtObservation": {
+        "head": "f68dbb7167dcbd3377bb13c38c02636cfb7c28ff",
+        "matchingSourceRows": 0,
+        "allRows": 6,
+        "received": false,
+        "interpretation": "Byte observation only; formal main receipt remains integration operator authority"
+      },
+      "review": {
+        "state": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+        "at": "2026-10-07T11:06:37Z",
+        "packet": "c5da46ee97db907c5da1dbb39e243cd841322f07",
+        "authority": "canonicalIntake.reviewState/reviewedAt/remainingFindings; owner review.md"
+      },
+      "validationScope": "15 local distinct across14pass+targeted1pass, focusedtypes0; mockFetch through one real FlowClient/runCli, strict64KiB/4KiB response bounds and opaque cursor; no real server/PG/Web end-to-end."
+    }
+  ],
+  "sequentialPreimageSimulation": {
+    "readOnly": true,
+    "rows": 18,
+    "uniquePaths": 16,
+    "conflicts": [],
+    "doesNotApplyAnySource": true
+  },
+  "integrationAdvice": "OriginalLead performs one necessary direct composition check at actual final intake point, selecting according to its real diff. Reuse reviewed local and HOST PG evidence; do not run three redundant whole-suite/PG batches just because there are three owners/intakes. Preserve READBOUND/nativebody/Codex/runtime/terminal and all unrelated main changes. Fresh drift means coordinate with exact owner, never blanket overlay.",
+  "execution": "No engineering checks/PG/source modifications/main/registry writes in preparing this index."
+}
