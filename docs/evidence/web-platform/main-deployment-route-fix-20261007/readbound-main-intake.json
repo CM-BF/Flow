@@ -1,0 +1,216 @@
+{
+  "kind": "flow.i02.preimage-checked-intake.v1",
+  "at": "2026-10-07T09:56:14.386872+00:00",
+  "mainBefore": "b10420712c6a9cb2881d66bae32676cfa42208cb",
+  "slices": [
+    {
+      "slice": "terminal",
+      "source": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+      "delivery": "a52b8f5ff509a09f64c3645082f533358a3d2de3",
+      "review": {
+        "reviewer": "chatui01_owner",
+        "model": "gpt-6-astra",
+        "at": "2026-10-07T09:45:42Z",
+        "source": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+        "packet": "75830d236f8d1707d00308744841fc6c4a7acccd",
+        "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+        "P1": 0,
+        "P2": 0,
+        "manifestSha256": "23e70b4a8de9bb18ce0f1e90b6980b7b0b5cad1db4b2cad562f9afe9a79d296a",
+        "scope": "Four product paths vs main38110485,22bindings298449B+6external; 11/11 and types0; injected host/transport plus own filesystem, not real PG/npm in this slice. Main P02 body/steering intact.",
+        "limits": [
+          "Before-result durability remains UNKNOWN",
+          "No CLI or arbitrary side-effect recovery claim",
+          "Initial EPERM/wholewall/peak UNKNOWN preserved",
+          "Current production batch3 and emit1; map-before-length not P2 for trusted consumers, no preparse hard allocation cap claim"
+        ],
+        "nonBlocking": "At next relevant interface change, reject non-array/length outside1..50 before mapping and prior sticky failure check; no retest required for approved slice."
+      },
+      "manifestVerified": 22,
+      "product": [
+        {
+          "path": "apps/runner/src/outbox.ts",
+          "source": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+          "sha256": "2ed7dbb40ec75797c0d340880383444ba12a265d678c6919ad4733eec8b51ef4",
+          "bytes": 9711,
+          "mainPreimageSha256": "e53b116c825c87b72fd58804dd2cb22db4255b91cf100f0dbbdaba88ad6332ac"
+        },
+        {
+          "path": "apps/runner/src/runtime.ts",
+          "source": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+          "sha256": "d920809370179c5d1c663e612ac119573ef01c005243d9ac0ca10fa96cbe30c8",
+          "bytes": 21786,
+          "mainPreimageSha256": "f921a78627da108a0cff3fd3d22f8fbc988e1796790beeeb7ee011ee1ec7d302"
+        },
+        {
+          "path": "apps/runner/src/plugins/runtime.test.ts",
+          "source": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+          "sha256": "08d9933eb97e5ce23a3dbdd4ee791c7c4964e70a5591312fcdd41975dfa4aa18",
+          "bytes": 15424,
+          "mainPreimageSha256": "e0e977543e57343351b872ea4beffec84adb217e1a5c7cf83d27173c1513d6cd"
+        },
+        {
+          "path": "apps/runner/src/plugins/terminal-outbox.test.ts",
+          "source": "20b143f847ea44d3f8e22a1e5b9229f62e2e5b86",
+          "sha256": "09ade285c84af7fc9acfe681792c83892687da491805fc5bb46cea27c003dd55",
+          "bytes": 2643,
+          "mainPreimageSha256": null
+        }
+      ],
+      "ownChangedPaths": [
+        "docs/evidence/x01/public-runner-pg-manifest.json",
+        "docs/evidence/x01/terminal-close.json",
+        "docs/evidence/x01/terminal-independent-review.json",
+        "docs/evidence/x01/terminal-inputs/apps/runner/src/admission-journal.ts",
+        "docs/evidence/x01/terminal-inputs/apps/runner/src/outbox.test.ts",
+        "docs/evidence/x01/terminal-inputs/apps/runner/src/outbox.ts",
+        "docs/evidence/x01/terminal-inputs/apps/runner/src/plugins/runtime.test.ts",
+        "docs/evidence/x01/terminal-inputs/apps/runner/src/plugins/terminal-outbox.test.ts",
+        "docs/evidence/x01/terminal-inputs/apps/runner/src/runtime.ts",
+        "docs/evidence/x01/terminal-intake.patch",
+        "docs/evidence/x01/terminal-integration-ready.json",
+        "docs/evidence/x01/terminal-integration-ready.md",
+        "docs/evidence/x01/terminal-local.json",
+        "docs/evidence/x01/terminal-local.py",
+        "docs/evidence/x01/terminal-outbox-amend-v22.json",
+        "docs/evidence/x01/terminal-outbox-interface.md",
+        "docs/evidence/x01/terminal-quality.md",
+        "docs/evidence/x01/terminal-reused-input.json",
+        "docs/evidence/x01/terminal-review-ready.json",
+        "docs/evidence/x01/terminal-review-ready.md",
+        "docs/evidence/x01/terminal-tsconfig.json",
+        "docs/evidence/x01/terminal-vitest.config.mjs"
+      ],
+      "canonicalStatus": "plugin-enable-binding/plans/x01-plugin-management/status.md remains the authority; owner closes intake after main receipt"
+    },
+    {
+      "slice": "readbound",
+      "source": "bc213e44db2b74130836782720728f8a59b52b99",
+      "delivery": "4a1a93827f38b38ad19a4977c21b8353e2e67709",
+      "review": {
+        "reviewedAt": "2026-10-07T09:48:57Z",
+        "reviewer": "chatui01_owner / gpt-6-astra",
+        "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+        "p1": 0,
+        "p2": 0,
+        "sourceCommit": "bc213e44db2b74130836782720728f8a59b52b99",
+        "packetCommit": "da44078aa58291ea2dc095a6b2484af7eefa4c29",
+        "manifestSha256": "a86b80ce431fa21c48a7de2d9f43dc18831cf3af947b234ec2fb52ac66395872",
+        "manifestFiles": 38,
+        "manifestBytes": 227783,
+        "local": {
+          "selected": 45,
+          "passed": 45,
+          "typesExit": 0,
+          "pureCallerSelected": 12,
+          "pureCallerPassed": 12,
+          "redSelected": 9,
+          "redFailed": 7,
+          "redPassed": 2,
+          "rawBytes": 4564,
+          "supervisionMs": 12605
+        },
+        "resources": "all four final groups absent/merged EOF/full capture; red original KEEP preserved with separately authorized inode-empty cleanup; later same-inode empty TMP removed",
+        "boundary": "product delta and finite local fidelity only; not real production HTTP/Web/provider/deployment or latest-main whole-suite",
+        "reviewActions": "read-only, no execution/import/tests/PG/write"
+      },
+      "manifestVerified": 38,
+      "product": [
+        {
+          "path": "packages/client/src/index.ts",
+          "source": "bc213e44db2b74130836782720728f8a59b52b99",
+          "sha256": "19a402fd2b15f6083b9e37f052fcbb6f7bf1fb0ca6a7a0d75e898757981e090d",
+          "bytes": 63703,
+          "mainPreimageSha256": "bd23661ab3cfa48e1c20c1e4a2b09afdbe237c81a1408510790642bbab81fdbb"
+        },
+        {
+          "path": "packages/client/src/native-activity-body.ts",
+          "source": "bc213e44db2b74130836782720728f8a59b52b99",
+          "sha256": "0b0260a88c92a83cb43f906150e930fe7444e98e1521695605d9f9d3bc04a418",
+          "bytes": 7574,
+          "mainPreimageSha256": "fbc8465c2def5a876ea9859bf63813b68db6008bf4e1f613bd0a41f491c4e060"
+        },
+        {
+          "path": "packages/client/src/response-json.ts",
+          "source": "bc213e44db2b74130836782720728f8a59b52b99",
+          "sha256": "c51b90db6be12132df0236aabccfce496dab8b835267a23158ff86361784f459",
+          "bytes": 1298,
+          "mainPreimageSha256": null
+        },
+        {
+          "path": "packages/client/src/response-json.test.ts",
+          "source": "bc213e44db2b74130836782720728f8a59b52b99",
+          "sha256": "e9b57c7104f8822e87cdccc3ffa2d2e454a2960ac6b7da6bca3584bba148613c",
+          "bytes": 1866,
+          "mainPreimageSha256": null
+        },
+        {
+          "path": "packages/client/src/assistant-stream-bounds.test.ts",
+          "source": "bc213e44db2b74130836782720728f8a59b52b99",
+          "sha256": "49c1c4ec1ac967ca7d70d21d33bc03d540a1b40bb7e60e9280828d15fd217891",
+          "bytes": 8679,
+          "mainPreimageSha256": null
+        }
+      ],
+      "ownChangedPaths": [
+        "docs/evidence/mature06-readbound/README.md",
+        "docs/evidence/mature06-readbound/caller-tests/output.log",
+        "docs/evidence/mature06-readbound/caller-tests/reservation.json",
+        "docs/evidence/mature06-readbound/caller-tests/result.json",
+        "docs/evidence/mature06-readbound/claim.json",
+        "docs/evidence/mature06-readbound/client-index-stop-readbound.json",
+        "docs/evidence/mature06-readbound/dependencies.json",
+        "docs/evidence/mature06-readbound/design.md",
+        "docs/evidence/mature06-readbound/flow-readbound01-index-amend-20261007-0935.json",
+        "docs/evidence/mature06-readbound/flow-readbound01-take-20261007-0933.json",
+        "docs/evidence/mature06-readbound/green/output.log",
+        "docs/evidence/mature06-readbound/green/reservation.json",
+        "docs/evidence/mature06-readbound/green/result.json",
+        "docs/evidence/mature06-readbound/independent-review.json",
+        "docs/evidence/mature06-readbound/index-x01-baseline.txt",
+        "docs/evidence/mature06-readbound/main-dependency.json",
+        "docs/evidence/mature06-readbound/main-intake.json",
+        "docs/evidence/mature06-readbound/quality.md",
+        "docs/evidence/mature06-readbound/red/assistant-stream-bounds.test.txt",
+        "docs/evidence/mature06-readbound/red/cleanup-followup.json",
+        "docs/evidence/mature06-readbound/red/output.log",
+        "docs/evidence/mature06-readbound/red/reservation.json",
+        "docs/evidence/mature06-readbound/red/result.json",
+        "docs/evidence/mature06-readbound/review-manifest.json",
+        "docs/evidence/mature06-readbound/run-local.py",
+        "docs/evidence/mature06-readbound/supervision-policy.test.py",
+        "docs/evidence/mature06-readbound/support/packages/client/src/plugin-runner.ts",
+        "docs/evidence/mature06-readbound/task-registration-intake.json",
+        "docs/evidence/mature06-readbound/terminal-outbox-amend-v22.json",
+        "docs/evidence/mature06-readbound/tsconfig.json",
+        "docs/evidence/mature06-readbound/types/output.log",
+        "docs/evidence/mature06-readbound/types/reservation.json",
+        "docs/evidence/mature06-readbound/types/result.json",
+        "docs/evidence/mature06-readbound/vitest.config.mjs",
+        "plans/mature06-client-read-bounds/plan.md",
+        "plans/mature06-client-read-bounds/review.md",
+        "plans/mature06-client-read-bounds/status.md"
+      ]
+    }
+  ],
+  "combination": {
+    "passed": true,
+    "directConsumers": 11,
+    "rootNoEmitExit": 0,
+    "source": "client-terminal-combination/result.json",
+    "elapsedMs": 10841,
+    "rawBytes": 753,
+    "scratchObservedBytes": 1357820,
+    "scratchRemoved": true,
+    "PG": 0,
+    "provider": 0,
+    "repeatedAuthorSuites": false
+  },
+  "limits": "reuse independent fixed reviews; no new provider/PG/package installation; preserve old failures and known unknowns",
+  "sourceRegistration": {
+    "taskId": "MATURE06-READBOUND01",
+    "delivery": "62e32cda61c02862112412fe50410bc05b4275a3",
+    "sourceCount": 194,
+    "actualDashboard": "NOT_YET_RELOADED"
+  }
+}

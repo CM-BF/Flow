@@ -1,0 +1,104 @@
+{
+  "at": "2026-10-07T10:15:12.100613+00:00",
+  "researcher": "root / gpt-6-astra / ultra, read-only",
+  "state": "DESIGN_INPUT_NOT_TAKEN_NOT_IMPLEMENTED",
+  "parentRequirement": "User complete pluggable system and cross-lead unique take; Mika X01-06 Settings runtime management request",
+  "fixedMain": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/plugin-management/PluginManagement.tsx",
+      "bytes": 11298,
+      "sha256": "b51bb04f343b289bf6b3944da354f9b6ab3fe9ed8dd72d17aebfdb24c7add30e"
+    },
+    {
+      "path": "apps/web/src/plugin-management/use-read.ts",
+      "bytes": 1061,
+      "sha256": "0f32db860d45717394ceed7576bc06051d8c082271269261b705aadf82c3fbba"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 50767,
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 63703,
+      "sha256": "19a402fd2b15f6083b9e37f052fcbb6f7bf1fb0ca6a7a0d75e898757981e090d"
+    },
+    {
+      "path": "packages/client/src/plugin-runner.ts",
+      "bytes": 2687,
+      "sha256": "f74365446f988caaec4e1a287608ab48b1a858d488640eafbf17f9606fb8ead9"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0"
+    },
+    {
+      "path": "packages/contracts/src/plugin-installations.ts",
+      "bytes": 2063,
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "bytes": 4390,
+      "sha256": "2e65341828f8b703194e3b8d574189f2b495636277379e15ce122f1ab3c2e96b"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "bytes": 10806,
+      "sha256": "6c90279e8af9d2ab8516e93ad1741da62d86075bdaa1337574af1c3be36c0f7d"
+    }
+  ],
+  "findings": [
+    {
+      "topic": "Existing Web boundary",
+      "fact": "PluginManagement is lazy via open=false return and keyed by sessionId plus project scope. It consumes a narrow read-only registry and separate local Browser extensions source. App constructs the current registry reader; adding real commands requires an explicit host port and App integration scope, currently overlapping Recovery ownership.",
+      "implication": "An isolated component can be prepared after legal supply/take; final App wiring must wait for the existing owner handoff, never claim the old released X03 scope."
+    },
+    {
+      "topic": "Mutation is not a read retry",
+      "fact": "useRead aborts outdated reads and retries by incrementing attempt; it is not a command authority.",
+      "implication": "Use one private per-session/install command state machine: freeze validated request and idempotency key before await; single flight; explicit identical retry only; typed409 keeps the editable draft; aborted/disconnected/malformed or mismatched ACK remains UNKNOWN. New read of current state cannot prove the historical command never happened."
+    },
+    {
+      "topic": "Client availability versus proposed interface",
+      "fact": "Fixed main client has generic commandPlugin transport and no implemented owner pluginRuntime/commandPluginRuntime methods in these source inputs. Mika reports those methods as the current independent X01-CLI-COMMANDS01 interface being implemented, not an already reviewed main consumer dependency.",
+      "implication": "Wait for exact source/helper delivery and reuse its runtime decoding. Do not add a second fetch transport or cast a mutation response into success. Config/grant editing needs its acknowledged shared decoder before inclusion."
+    },
+    {
+      "topic": "Material identity and first enable target",
+      "fact": "PluginMaterialInstall contains registrationId/versionId/admittedRevision, material operation ID, storeId, status and material/tree digests, but no targetRunnerId. Runtime view includes targetRunnerId only for an enabled binding; disabled coherent state has null target/store/material identities. Enable command requires an explicit targetRunnerId/storeId/materialInstallOperationId. The examined runtime route module exposes runner publication and runtime/binding reads, but no owner host-directory endpoint.",
+      "implication": "Future owner must resolve the first-enable host selection interface with db owner. Do not infer a runner from an installed-material receipt, an ordinary runner status, or the current disabled runtime. A known prior binding can support presentation but is not fresh capability permission. If manual exact identity entry is intentionally chosen, label it and let the existing server validate; never fabricate a loaded/ready host."
+    },
+    {
+      "topic": "Truthful user-facing state",
+      "fact": "Runtime contract distinguishes desiredEnabled, bindingAllowed/reason, enabled/current revision and exact install/runner/store identity, while loaded and callable are literal unknown. Material installed is a static receipt.",
+      "implication": "Show these separately, map reasons into actionable plain language, keep Browser extensions local state independent. A successful enable allows new tool-task binding; it does not prove package execution or cancel already-running tasks."
+    }
+  ],
+  "candidateAcceptance": [
+    "No command before an explicit user action; immutable body/key for identical retry.",
+    "Changes to session, installation or project isolate late ACKs and cancel local pending work without claiming server cancellation.",
+    "409 preserves inputs and exposes current revision; uncertain ACK keeps recovery action distinct from refresh.",
+    "First-enable target is supplied by an agreed public interface or an explicit reviewed input path, not inferred from material.",
+    "Light/dark, narrow layout, keyboard focus and disabled/pending/unknown states remain legible; no automatic retry on mount or refresh."
+  ],
+  "ownership": "No new worktree, task, claim or feature write. Manager queues as NOT_TAKEN behind Release safe point; exact literal scopes and registry authority must be settled before implementation.",
+  "method": {
+    "localSkills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "application": "Reuse installed skills already read in this task; inspect existing module responsibility and public typed contracts, preserve a deep command boundary, avoid duplicating state/transport."
+  },
+  "resourceUse": {
+    "projectWrites": 0,
+    "runtime": 0,
+    "PG": 0,
+    "Chrome": 0,
+    "network": 0
+  }
+}

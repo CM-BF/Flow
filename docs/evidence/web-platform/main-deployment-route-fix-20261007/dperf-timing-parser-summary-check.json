@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-07T10:24:07.335Z",
+  "scope": "Metadata parser + single own task readSummary; no aggregate/ledger/PG/HTTP",
+  "pins": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+    },
+    {
+      "path": "apps/execution-dashboard/src/read-model.mjs",
+      "sha256": "1a870415ea9ba9d6e27bbb1fa80f6863c9c15e9c3e666eb528300a3e53a23920"
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "sha256": "88ef69af6b42de2b1f950d6786e4ffe95737f1f22401399c101ee678a6b1b756"
+    },
+    {
+      "path": "plans/templates/status.md",
+      "sha256": "57d81bae9a88c5b977bd2f39b21c23deb19f146d23560f1703c2666e510b5bfc"
+    }
+  ],
+  "parsed": {
+    "errors": [],
+    "timing": {
+      "started": {
+        "state": "unknown",
+        "at": null,
+        "record": "UNKNOWN"
+      },
+      "completed": {
+        "state": "known",
+        "at": "2026-10-07T10:19:14.492Z",
+        "record": "2026-10-07T10:19:14.492Z"
+      },
+      "source": {
+        "state": "declared",
+        "record": "[本次实际核齐结束](../../docs/evidence/wpf-dperf04/main-close-20261007/owner-main-observation.json)；历史创建时间不当开工"
+      },
+      "issues": [
+        "任务开工时间未记录"
+      ],
+      "waiting": ""
+    }
+  },
+  "summary": {
+    "sourceCurrent": true,
+    "timing": {
+      "started": {
+        "state": "unknown",
+        "at": null,
+        "record": "UNKNOWN"
+      },
+      "completed": {
+        "state": "known",
+        "at": "2026-10-07T10:19:14.492Z",
+        "record": "2026-10-07T10:19:14.492Z"
+      },
+      "source": {
+        "state": "declared",
+        "record": "[本次实际核齐结束](../../docs/evidence/wpf-dperf04/main-close-20261007/owner-main-observation.json)；历史创建时间不当开工"
+      },
+      "issues": [
+        "任务开工时间未记录"
+      ]
+    }
+  },
+  "passed": true
+}

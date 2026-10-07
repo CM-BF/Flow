@@ -493,3 +493,17 @@ REQ19真实三App兼容仅排原Release owner：历史fixed7805b7和RELEASE03两
 [本次SVC实际归还与下一交接](../../docs/evidence/web-platform/svc06-return-steer-handoff-20261007/current.json)退休旧offer；Quick原owner b90f已完成main组件metadata并839e v2精确释放，真实App原TODO11未完成，七个旧wrapper通用proof UNKNOWN不漂白。原Release owner随后仅复用三App完整性证据准备原compat方法，SVC06 runner诊断可能改变backendtuple，等最终已审tuple再定actual兼容，不沿旧b2b自动运行或重建第二发布系统。
 
 原Recovery Steer首失败及自有清理获[独立接收](../../docs/evidence/web-platform/steering-diagnostic-release-preparation-20261007/steering-first-actual-review.json)；后继仅首draft等待失败的有界只读观察，原5s/predicate/rethrow与actor/lifecycle不改，已[限定源审](../../docs/evidence/web-platform/steering-diagnostic-release-preparation-20261007/steering-diagnostic-source-review.json)，沿原60s已耗17332/余42668有限段接续，不转旧credit。Release原四scope[设计审](../../docs/evidence/web-platform/steering-diagnostic-release-preparation-20261007/release-fixed-origin-design-review.json)允许合法fresh take后先实现显式输入/proxy/harness/report；最终backendtuple仍必需，未分配任何真实服务验证。Chrome代理argv不配置Node APIRequestContext，禁止page.request/context.request/route.fetch访问61228；Node仅访问自有动态backend，真实Chrome页面relativefetch/response补证，三旧AppBearer与独立Cookie/CSRF分开。
+
+本轮[正式接收/发布与原owner收口](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/current.json)补齐DPERF的main和实际页面入口，限定9own+7readonly/194source；原owner顺序为Release安全点STOP（保38b9写权）→DPERF原claim metadata收口/正常release→回原Release，不以同一worker绕过worktree或写权。管理仅六scope，主索引不另复制业务TODO。READBOUND固定main81b与194登记已收，消费接线仍归REQ43后继。
+
+原MATURE06-04/RECOVERY01采用[route-fix新有限工作段](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/recovery-route-fix-segment.json)：静态证实长寿命hash listener捕获旧session，后创建projection可能缺recovery；先修current-committed callback并保view生命周期、durable-before-HTTP、原key/ownership，再做同document路由与原Steer旅程实际回归。旧90k、150k与Steer60k失败原件/余额全部封闭；新90k实际累计、每次最多60k含15k清理，不挪旧credit。固定源码/集中源审/实际共享窗归还前不运行；同边界原owner自行fresh输入与环境、定位修复→相关复测，段末一次独审。
+
+沿原WPF-001-05/X01-06记录[Mika插件Settings后继输入](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/plugin-settings-followup.json)，NOT_TAKEN，不新增大task。Settings懒挂载既有PluginManagement，中心desiredEnabled与bindingAllowed/reason、精确安装身份可见；Browser extensions独立，enabled不冒loaded/callable。复用公共runtime接口，config/grant若入首片先与db owner对齐纯ACK helper；保409草稿/跨session晚回隔离/singleflight/冻结key-body/UNKNOWN，不用读重试重发写。候选独立树需fresh App范围与原Git供给协调，Release安全点后再定唯一owner，旧released X03权不重开。
+
+X01-06的[固定九源接口研究](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/plugin-runtime-web-interface-research.json)补充：X01 startup已main6aa2d42e96c33b73e511e69e2984b5279ce4eb7e，但四runtime新methods仍原db owner实施。首Web可读config/grants，写它们的ACK codec是独立后继，不能用enable codec代替；首次enable所需targetRunnerId不在material receipt/disabled runtime，须原shared owner提供真实host选择接口。App仍由Recovery占用，候选NOT_TAKEN，不据接口研究抢写或触服务。
+
+原DPERF受控main接收后的[owner元数据收口及b554v5释放](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/dperf-release-receipt.json)已10:19:55.499Z实际完成；78a双端clean且十一scope停写，无产品复测或释放后回写。后继实际App/Settings写权仍需fresh精确交接，现有Release38b9不因临时切换而释放。
+
+GO实核DPERF完成时间展示缺口：作者别名字段未被现有精确三字段合同消费，原高精度+00:00值也不符合任务时间Z/至多毫秒格式。原owner仅新领取plan/evidence两metadata范围修规范字段；开工UNKNOWN不倒填，完成按真实原件以2026-10-07T10:19:14.492Z呈现，原.492580+00:00来源保留。只核known completion/unknown start及预期issue，产品scope、parser、固定审查target与旧结果均不变，修完正常停写释放。
+
+上述时间合同修正已由原owner f47完成，records-only732f先v1正式领取、后v2于10:24:18.890Z释放；[单任务解析与summary检查](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/dperf-timing-parser-summary-check.json)证明完成known/sourceCurrent，开工UNKNOWN及唯一预期issue保留。首检查脚本DTO取值错误与原高精度时间均原样保存，无parser扩展或产品复测。

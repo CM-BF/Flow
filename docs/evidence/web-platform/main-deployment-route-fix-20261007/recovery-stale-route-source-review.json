@@ -1,0 +1,100 @@
+{
+  "at": "2026-10-07T10:05:33.475334+00:00",
+  "reviewer": "root / gpt-6-astra / ultra / independent read-only",
+  "decision": "SOURCE_CONFIRMED_STALE_HASH_LISTENER_CAPTURE_REQUIRES_FIX_AND_REGRESSION",
+  "target": "f0a97719f470e7536c705cc3fac2453b634c5978",
+  "sourcePins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71660,
+      "sha256": "7b891f3bd01e2f8a014c0be0079f4e4c2e892df60f753d5508ec855f6290c4d9"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 24416,
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28678,
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce"
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33220,
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915"
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "bytes": 21485,
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "bytes": 23069,
+      "sha256": "837f71d9d86664ea9a15efb0bf8eecd92cdaad744b2209266650d612b86c946c"
+    }
+  ],
+  "sourceChain": [
+    {
+      "file": "apps/web/src/App.tsx",
+      "lines": "432-464,481-523,810-831",
+      "fact": "ensureView uses lexical session; hashchange followRoute is registered by [client] effect and calls lexical select/newChat. session initializesnull and becomes AppPluginSession later. Listener is not rebound onthat update."
+    },
+    {
+      "file": "apps/web/src/App.tsx",
+      "lines": "825-831",
+      "fact": "Existingviews get recovery binding on[session,authorized,generation]. Laternewview fromoldhashcallback doesnot change those dependencies, so it may staywithout projectionrecovery whilecurrentUI sessionrecoveryexists."
+    },
+    {
+      "file": "apps/web/src/conversations/ConversationThread.tsx",
+      "lines": "178",
+      "fact": "CurrentThread seesconfigured RecoveryWorkspace and begins draft handoff beforeofficialcomposer.send."
+    },
+    {
+      "file": "apps/web/src/conversations/projection.ts",
+      "lines": "314-339",
+      "fact": "Projection dispatch obtainsoptional this.recovery and optionalprepare/dispatch, so missingbinding doesnot stoprealturnHTTP."
+    },
+    {
+      "file": "apps/web/src/recovery/binding.tsx",
+      "lines": "197-202,262-282",
+      "fact": "Whilehandoffexists,changed storesdeferred only. Endhandoff normally happens insideconfiguredcommandport.prepare; missingprojectionport bypasses it."
+    },
+    {
+      "file": "apps/web/src/plugin-integration/steering.tsx",
+      "lines": "110-111",
+      "fact": "Steeringworkspace setDraft mutatesentry andnotifiesrecovery; exportedmaterial usescurrentview/task/turn/message. This notification encounterspendinghandoff above."
+    }
+  ],
+  "actualConsistency": {
+    "firstRun": "recsteer-20261007-094616-1ab0a4",
+    "secondRun": "recsteer-20261007-100004-46e3cb",
+    "observed": "Same-apphashroute to externallyseededconversation, real202turn; correctvisibleinstruction text; correctconversationdraftv4hasempty steering andnoobservedalerts. Secondrawrecords contain2drafts andnooutboxcommand.",
+    "independentActualReview": "/private/tmp/root-recovery-steering-second-actual-review-20261007.json",
+    "causalityLimit": "Staticcontrolflowdefect ispresent; no controlledbefore-afterproductfixexecution yet, so do notclaimuniqueactualcausealreadyproven."
+  },
+  "minimalFixBoundary": [
+    "Have long-livedroute callback dispatchthroughcurrentcommitted select/newChat handlers, without recreatingclient-ownedcatalog/projections. Aprivate stablehandler-ref updated atcommit can fitexistingmodule; owner chooses exact narrowimplementation.",
+    "Do notaddsession/groups/select toexistingeffectdependencieswithout splitting itsdisposal responsibilities: cleanup currentlydisposesallviews,conversations,profiles andcatalog.",
+    "KeepdurablebeforeHTTP handoff,originalidempotency keys,explicitrecoverynoautosend,taskownership/permissiongates. Do not paper overmissingsteering byforcingjournalwritesfromtestorlooseningpredicate."
+  ],
+  "meaningfulRegression": [
+    "Use mountedrealApp aftersessionboot; navigate same-document hash tosecondconversation and ensurecurrentroutinghandler attachesdurablerecovery. Preserveactualnetwork/publicactor scope.",
+    "Verify originalturn hasdurableoutbox record/frozenrequest bound toHTTP, andnewsteeringdraftpersists aftertheturn; fulloriginalSteerrestore/ACKloss/originalretry/nextdraftisolation assertionsremainstrict.",
+    "Considerasserting same-documentnavigation identity explicitly sofullreloadcannotaccidentallyturntestgreen.",
+    "Afocusedstorage-failurebarrier regression should proveprojectioncannot sendwhenconfigureddurablepreparefails; reuseexistingtestsupport ratherthan mirrorrefimplementation."
+  ],
+  "next": "Originalownerwithinexisting21scope claim mayimplementnarrowproductfix+regression preparation; focused source review/appropriatechecks andmanagernewfinite runtimephase afterconcretefix. Currentphase34753/remaining25247 staysclosedbelowparentminimum; noimplicitthirdrun.",
+  "resourceUse": {
+    "runtime": 0,
+    "projectWrites": 0,
+    "PG": 0,
+    "Chrome": 0
+  },
+  "cleanCodeRecord": {
+    "scope": "App route lifetime versus current actions and recovery persistence",
+    "finding": "Oneeffect mixesclient-resource lifetime withmutableUI/sessioncallbacks",
+    "guidance": "Decouplecallbackfreshness fromresource teardown usingexistingmoduleprivateinterface; no newframework."
+  }
+}

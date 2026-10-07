@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07T10:06:11.332392+00:00",
+  "source": "1a6f82a136a1e43213cc58adce96fa92b26ae38b",
+  "oldPid": 96517,
+  "oldListenerAbsent": true,
+  "newPid": 81154,
+  "log": "/tmp/flow-dashboard-194-20261007-1008.log",
+  "personalOperations": 0,
+  "tokenEndpointRead": false,
+  "tabsReloaded": 0,
+  "firstLaunch": {
+    "pid": 80970,
+    "log": "/tmp/flow-dashboard-194-20261007-1007.log",
+    "exit": 1,
+    "reason": "Missing previously configured nonsecret installation binding; rejected before listen"
+  },
+  "bindingSource": "/tmp/flow-dashboard-local-binding-20261007.json",
+  "restoredBinding": true,
+  "completedAt": "2026-10-07T10:06:55.245538+00:00",
+  "rootHTTP": 200,
+  "summaryHTTP": 200,
+  "summaryBytes": 515735,
+  "sourceCount": 194,
+  "declaredKind": "summary",
+  "timingPresent": 194,
+  "accessMetadataEnabled": true,
+  "rootBytes": 8840,
+  "result": "SERVING_NEW_SUMMARY_SOURCE",
+  "limitations": [
+    "HTTP serving only, not new browser/performance acceptance",
+    "No token load/copy or personal service interaction"
+  ],
+  "browserObservation": {
+    "at": "2026-10-07T10:07:09Z",
+    "tool": "CUA IAB",
+    "temporaryTab": 6,
+    "summary": [
+      "作者status摘要与声明关系；现场Git/审查/main按需读取",
+      "全部计划与证据194",
+      "任务开始/完成/历时声明可见",
+      "本机凭据尚未加载"
+    ],
+    "detail": "Clicked I02; independent current-proof rendered with source HEAD1a6f82a1 and actual read interval; later summary refresh retained earlier detail with explicit notice",
+    "userTabsChanged": 0,
+    "credentialLoad": false,
+    "temporaryTabClosed": true
+  }
+}

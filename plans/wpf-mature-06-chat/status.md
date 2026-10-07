@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T09:17:31.629740+00:00；完整草稿第三次选定2/2实际通过并清理归还，限定独审已接受，原两红不改 |
+| 最近更新 | 2026-10-07T10:15:26.274854+00:00；READBOUND正式main/登记已收，Steer旧段失败封存并转原owner窄修源码 |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-06](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -15,7 +15,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 已打开任务详情的实时状态与新时间线、原七组恢复旅程、中心选择、两处提交丢回执与排队丢回执均有选定通过证据；完整草稿含profile、知识与有序文件的恢复/首发/下一稿也已有选定通过证据；Steer慢存储修复有定向证据。旧失败保留，完整恢复功能尚未通过。 |
-| 下一可用交付 | 明确Steer与第二中心剩余验收的真实依赖，再按既有范围安排；消息设置、LAZY和工具全文仍需合法消费接线，模块main不代替真实App验收。 |
+| 下一可用交付 | 修复Steer同页面切换后的草稿恢复绑定，固定源码后做新有限回归；第二中心、真实消息设置、LAZY和工具全文仍需各自交权/实际验收，模块main不代替App通过。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -77,4 +77,6 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 
 随后原同源第三次[实际选定2/2通过](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/current.json)，outer09:10:12.377068结束、09:10:28.080735全部owned清理/env精确删除后已归还Mika；charge11793后150s累计126447/余23553。独立实际审已接受、完整大task不通过，原两FAIL和部分证据不改，owner已27f2515正常push/remote同clean；后续仅只读Steer/第二中心依赖比较，不自动用余量运行。
 
-共享读取上界片仅关联[MATURE06-READBOUND01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds/plans/mature06-client-read-bounds/status.md)，Mika/db_transaction_owner原独立树；[唯一登记请求](../../docs/evidence/web-platform/svc06-return-steer-handoff-20261007/readbound-registration-request.json)待原registry writer接收，不复制实现/TODO/运行进度，不冒MATURE06整体完成。
+共享读取上界片仅关联[MATURE06-READBOUND01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds/plans/mature06-client-read-bounds/status.md)，Mika/db_transaction_owner原独立树；[原登记请求](../../docs/evidence/web-platform/svc06-return-steer-handoff-20261007/readbound-registration-request.json)已由[正式main/194登记回执](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/readbound-main-intake.json)接收，不复制实现/TODO/运行进度，不冒MATURE06整体完成。
+
+原RECOVERY01两次Steer实际失败均清理归还，0SteerPOST/恢复验收未过；原60s段不再消费。原owner沿21scope[修复与新有限回归](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/recovery-route-fix-segment.json)，当前仅source，不增加第二业务status或越权占用App。

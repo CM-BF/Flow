@@ -1,16 +1,16 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T10:03:06.799593+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T10:25:05.401569+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 ## 当前窗口与用户交付
 
-SVC06此前已归还；Steer第二次同段实际仍FAIL，新只读观察未找到Steer draft，0SteerPOST。自有资源于10:01:10.297001Z完整清理并归还Mika，[本次计费与交接](steering-diagnostic-release-preparation-20261007/current.json)保留两次失败及剩25247ms低于启动下限，不自动第三次。Release原owner已新38b9v1精确四范围领取，仅源码实现；最终backendtuple与运行仍待输入。
+[本次当前入口](main-deployment-route-fix-20261007/current.json)：DPERF已正式主线接收并由原operator发布4320摘要/按需详情，原owner78a已metadata收口并b554v5释放。Steer两次失败均已清理，旧段封账；原21scope内仅修旧路由回调捕获问题，实际因果待验证。SVC06新6c0离线构建已10:12:40Z实际归还，build通过不等host通过；后继host仅准备、无预约。Release首类型检查失败保留，窄修后的独立小段类型复验已通过并清理，root限定实际审已接受；不冒真实兼容通过。O16运行已10:20:24归还，但DB/TMP保留仍UNKNOWN；下一SVC06隔离host已接窗、本组重验证等其实际归还，Recovery尚无actual预约；最终后台tuple仍待固定。
 
 当前排程和占用只看[唯一资源记录](resource-window-current.json)；功能检查、review、main与部署分别由各[唯一owner状态](#唯一-owner-与领取)维护，claim仍以D04账本为准。本页不复制一份测试进度或TODO。最新领取版本和精确范围入口见下表，写入或运行前仍须fresh核验。
 
 快速消息设置组件已由原Lead受控接收主线，见[固定接收原件](main-intake-handoff-checkpoint-20261007/quick-lead-main-intake.json)与[只读核对/原owner收口队列](main-intake-handoff-checkpoint-20261007/quick-main-closeout-plan.json)。原W01已b90f封存并在09:45:37.210Z完成[839e v2精确释放](svc06-return-steer-handoff-20261007/quick-release-receipt.json)，六scope停写；通用proof七个既存wrapper UNKNOWN保持，四源main接收为独立事实；真实App/CAS仍是既有TODO11后继，main接收不授另一writer写权。
 
-DPERF固定bc612组合已[独审接受](svc06-window-quick-closeout-20261007/dperf-final-composite-review.json)，metadata9f54已封存并全十一scope停写；[唯一主线接收入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/reentry-20261007/main-intake-readiness.json)已送Mika，随后OriginalLead直接向root确认实际收到并正在受控接收；仍不冒main完成或部署。DPERF本次有限段已实际全部清理归还，结果范围见唯一status；固定权限、资源和清理边界见[集中源码审查](main-intake-handoff-checkpoint-20261007/dperf-followup-source-review.json)，不会把准备或图片数量自动升级为视觉通过。Recovery原owner仅Steer source准备，第二中心未选，不预占PG；其已接受的selected结果不等整体feature完成或原claim释放。
+DPERF固定bc612组合已[正式main接收](main-deployment-route-fix-20261007/dperf-main-intake.json)，9个own产品与7个只读输入的[固定main核对](main-deployment-route-fix-20261007/dperf-fixed-main-review.json)通过。原operator的[发布原件](main-deployment-route-fix-20261007/dashboard-summary-deployment.json)记录旧PID96517停止、新PID81154/source1a6f、194来源摘要与I02详情观察；不是manager新采样或性能验收。W01在Release安全STOP后fresh原b554v4/11完成metadata收口，78a双端clean并[原子释放v5](main-deployment-route-fix-20261007/dperf-release-receipt.json)，十一scope停写；后继须新权属，不能沿旧claim写。其后仅两metadata的时间字段修正已f47封存并[732fv2释放](main-deployment-route-fix-20261007/dperf-timing-release-receipt.json)，[单任务parser/summary](main-deployment-route-fix-20261007/dperf-timing-parser-summary-check.json)显示原完成时刻，开工UNKNOWN保留。READBOUND唯一[来源](/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds/plans/mature06-client-read-bounds/status.md)已main81b并登记194，原请求pending只保历史。
 
 ## 历史安全点：2026-10-07 09:17 消费者复验与归还
 
@@ -89,7 +89,7 @@ Quick前次C的plain和modal都真实m选中，但后续DOM文本读取基线不
 
 [历史21:01:31 D04 观察](web-source-dispatch-take-observation-2101.json)当时核对四个原 claim active、无 overlap；当前 Settings 已按下表释放。
 [21:05:22 同范围补派观察](web-p2-source-dispatch-take-observation-2105.json)保持原 owner 与范围，无 overlap。
-以下是来源指针，不另维护 TODO、检查或 review 状态；此前[选定账本核对](main-intake-handoff-checkpoint-20261007/selected-claims.json)是历史观察；随后Quick v2实际释放、Release新38b9v1四范围已COMMITTED，见下方原子receipt。Manager v3/6、DPERF v4/11、ACCESS v2/3未获新变更回执。新写入和运行前仍须 fresh 核验。
+以下是来源指针，不另维护 TODO、检查或 review 状态；此前[选定账本核对](main-intake-handoff-checkpoint-20261007/selected-claims.json)是历史观察；随后Quick v2实际释放、Release新38b9v1四范围已COMMITTED，见下方原子receipt。DPERF原产品已v5释放，时间合同文案由原owner新732fv1仅两metadata领取修正后已v2释放；Manager v3/6与ACCESS v2/3未获新变更回执。新写入和运行前仍须 fresh 核验。
 
 | 工作 | 唯一 owner / worktree / branch | 原 claim 与唯一 status |
 | --- | --- | --- |
@@ -99,7 +99,7 @@ Quick前次C的plain和modal都真实m选中，但后续DOM文本读取基线不
 | 快速消息设置 | w01_owner；web-message-settings-quick-controls；codex/web-message-settings-quick-controls | 839e466f v2 RELEASED / 原6 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md) · [释放receipt](svc06-return-steer-handoff-20261007/quick-release-receipt.json) |
 | 本机打开Flow/登录凭据 | workspace_panels_owner；dashboard-local-access；codex/dashboard-local-access | 57735ff7 v2 / 3 scopes（README与own plan/evidence；七产品已移出）；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access/plans/wpf-dashboard-local-access/status.md) · [已登记来源请求](dashboard-local-access-intake/registration-request.json) |
 | 任务开始/完成/历时展示 | w01_owner；dashboard-task-timing；codex/dashboard-task-timing | 9a677471 v2 RELEASED / 原6 scopes；[已部署185/完成](dashboard-task-timing-provision/current-intake.json) |
-| 看板摘要与详情 | w01_owner；dashboard-summary-detail；codex/dashboard-summary-detail | b554ddb6 v4 / 11 scopes（组合接线已重新领取，精确literal见账本）；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md) |
+| 看板摘要与详情 | w01_owner；dashboard-summary-detail；codex/dashboard-summary-detail | 732f82cc v2 RELEASED / 原plan+evidence两scope；b554ddb6 v5原11产品范围保持RELEASED；[status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md) |
 | D04自有测试worktree生命周期 | d01_owner；dashboard-coordination；codex/dashboard-coordination | f61d41f5 v1 / 5 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-coordination/plans/d04-coordination/status.md) · [交接](d04-owned-worktree-lifecycle-intake/handoff.json) |
 | 保留真实App兼容后继 | w01_owner；web-release-compatibility；codex/web-release-compatibility | 38b9a7ff v1 ACTIVE / 4 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md) · [新take receipt](steering-diagnostic-release-preparation-20261007/release-successor-take-receipt.json) |
 | 固定架构快照D06 | d01_owner；dashboard-architecture-runtime；codex/dashboard-architecture-runtime | adf9539d v3 RELEASED / 原5 scopes；[唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/plans/d06-architecture-refresh/status.md) · [receipt](architecture-snapshot-0da-intake/take-receipt.json) |

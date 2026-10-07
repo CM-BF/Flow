@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-07T10:25:38.062Z",
+  "parser": "Existing status.mjs only; no aggregate/PG/HTTP",
+  "result": [
+    {
+      "id": "WPF-001",
+      "path": "plans/web-platform/status.md",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "integration",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "看板摘要与按需详情已受控进入主线并发布，旧失败与限定验收范围保留。快速设置组件已入主线；完整草稿恢复的选定旅程已有通过证据，Steer仍在修复。",
+        "next": "看板已收口，规范完成时间已可由单任务摘要显示；后继按新scope领取。Steer修复旧路由回调缺口，固定源码后按新有限段验证。Release隔离兼容工具继续准备，真实验证等待最终后台产物；真实消息设置入口仍待接线。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "todoCount": 36
+    },
+    {
+      "id": "WPF-MATURE-06",
+      "path": "plans/wpf-mature-06-chat/status.md",
+      "errors": [],
+      "human": {
+        "delivery": {
+          "state": "implementation",
+          "source": "explicit"
+        },
+        "phase": "M2",
+        "priority": 1,
+        "output": "已打开任务详情的实时状态与新时间线、原七组恢复旅程、中心选择、两处提交丢回执与排队丢回执均有选定通过证据；完整草稿含profile、知识与有序文件的恢复/首发/下一稿也已有选定通过证据；Steer慢存储修复有定向证据。旧失败保留，完整恢复功能尚未通过。",
+        "next": "修复Steer同页面切换后的草稿恢复绑定，固定源码后做新有限回归；第二中心、真实消息设置、LAZY和工具全文仍需各自交权/实际验收，模块main不代替App通过。",
+        "blocker": {
+          "state": "none",
+          "text": ""
+        },
+        "decision": {
+          "state": "none",
+          "text": ""
+        },
+        "missing": [],
+        "complete": true
+      },
+      "todoCount": 6
+    }
+  ]
+}

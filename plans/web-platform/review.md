@@ -33,3 +33,9 @@ root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0
 2026-10-06：[快速设置fe6当前分层记录](../../docs/evidence/web-platform/message-settings02-fe6-source-preparation/intake.json)明确领取active、分支固定、类型/direct/browser未运行、Root已批准限定源码，[c1静态准备及终态合同已审](../../docs/evidence/web-platform/message-settings02-c1-prepared/root-final-preparation-review.json)、仍无运行准入、未请求集成。三项早期问题仅源码关闭，不继承原Settings01运行证据。
 
 [CHAT05P01消费研究](../../docs/evidence/web-platform/chat05p01-web-consumer-intake/report.md)仅为既有需求输入，无新写权、产品批准或运行证据；180来源已登记与179来源此前实际加载分开。此索引不把当前管理变更扩入旧a5发布批准。
+
+## 2026-10-07 主线接收与发布事实接收
+
+[固定DPERF main核对](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/dperf-fixed-main-review.json)只读核16产品/只读输入与已审bc612逐字一致；Original的[主线原件](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/dperf-main-intake.json)及[部署原件](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/dashboard-summary-deployment.json)分别接收，不追授旧管理target新产品审批。READBOUND[原main接收](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/readbound-main-intake.json)含194正式登记，后到发布观察解除其当时未加载状态。
+
+[Recovery stale-route审查](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/recovery-stale-route-source-review.json)确认静态缺口，不声称两次Steer失败唯一实际因果；新fix/retest尚待固定源及实际资源。管理检查仅parser/JSON/链接/hash与六scope，无全聚合/服务/产品测试。

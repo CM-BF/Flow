@@ -167,3 +167,7 @@ CHAT05后继[九固定源研究](../../docs/evidence/web-platform/composed-consu
 共享selected协议与部署再次分离：LAZY e2b公共client/core已main，但本次实际SVC b2b artifact不含selected能力；Web后继必须按真实backendtuple能力启用并实际验收，legacy兼容保持，不能以静默codec降级假装验收通过。此不改变当前Recovery输入/原35346ms余额，也不阻b2b既定兼容交付。
 
 原REQ43共享读取界限后继只关联[MATURE06-READBOUND01唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds/plans/mature06-client-read-bounds/status.md)，co-lead Mika/owner db_transaction_owner，独立client-read-bounds树与codex分支。公共reader签名保持；当前实现、局部检查、独审与main以其唯一status为准，不复制TODO或替其判通过。[正式登记请求](../../docs/evidence/web-platform/svc06-return-steer-handoff-20261007/readbound-registration-request.json)交原globalregistry owner，实际登记/加载待receipt；本父scope不授Web写client/registry或另取相同工作。
+
+原MATURE06-04的[stale-route静态审查与新有限回归边界](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/recovery-route-fix-segment.json)由RECOVERY01唯一panels执行：长期route handler引用当前已提交回调，不能通过将session/groups重列为整个生命周期effect依赖而重建全部view；保证原durable prepare先于业务HTTP，配置恢复后存储失败仍禁止发送。复验须真实同document hash切换、Steer draft持久化及原ACK/恢复断言。两FAIL和未用旧额度保留；剩余第二中心不混入本段。
+
+READBOUND共享边界已[main81b/正式194登记](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/readbound-main-intake.json)，仍只链接Mika唯一owner状态，不复制其任务/领取或推导本App已消费。

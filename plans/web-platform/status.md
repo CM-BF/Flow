@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T10:03:06.799593+00:00；Steer第二次失败并清理归还，不再自动复跑；Release原owner新四范围领取已提交 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T10:25:05.401569+00:00；看板主线/摘要详情发布已接收，原owner收口后仅文档修正完成时间显示并再次释放；本组无运行 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -20,11 +20,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 快速消息设置组件已入主线，真实消息入口尚未接线。完整草稿的选定恢复旅程已有通过证据；看板组合、时间正文与窄屏补证已获限定独审，旧失败保留。 |
-| 下一可用交付 | 看板固定成果待原Lead接主线；Quick组件已收口，真实App接线待新scope。Steer依据新只读观测定位草稿持久化缺口；Release先实现隔离兼容工具，真实验证等待最终后台产物。 |
+| 当前产出 | 看板摘要与按需详情已受控进入主线并发布，旧失败与限定验收范围保留。快速设置组件已入主线；完整草稿恢复的选定旅程已有通过证据，Steer仍在修复。 |
+| 下一可用交付 | 看板已收口，规范完成时间已可由单任务摘要显示；后继按新scope领取。Steer修复旧路由回调缺口，固定源码后按新有限段验证。Release隔离兼容工具继续准备，真实验证等待最终后台产物；真实消息设置入口仍待接线。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Steer第二次失败后于10:01:10.297001Z完整归还PG/Chrome/临时凭据；余量低于最小启动额度，不开第三次。本组无运行或预约，Release仅新合法四范围源码实现。 |
+| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：本组无PG/Chrome holder；外部SVC06离线构建已于10:12:40Z实际归还，后继host仅准备；O16运行已归还但DB/TMP保留未知；下一SVC06隔离host已接窗，Web重验证等其实际归还。两队隔离local合计上限30MiB（Web9+Mika21），声明不冒实际运行。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -90,7 +90,7 @@
 | --- | --- | --- |
 | WPF管理 | 本worktree，632a7149 v3，仅两管理目录与四Web大task目录 | 管理索引只追溯；普通变化status→dashboard，不构成第三执行层 |
 | ATTACH01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)，ef617d78 v3 released十八scope | 已main fd1322、23批准源同；正式factory6项/8自动启动/无fallback归Lead；ownerc698双端clean全停写后ef617 v3释放 |
-| RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，20a6529a v2 released四scope | 7805/db08已main c450，owner41276 pushclean后停写/release；format2与descriptor绑定，个人发布仍Lead |
+| RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，w01原owner新38b9v1 active四scope | 原20a v2已释放仅历史；新后继两harness及own记录源码准备，最终backendtuple未齐，不启动兼容重段。 |
 | VISUAL01 → MATURE01 | [视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)，原d01_owner，35e5 v3 released，九scope停写 | 已main4391，558895d已push/clean并release；个人产物由SVC04发布，原树只读 |
 | CONTEXTI01 → MATURE03 | [知识App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，原w01_owner，55fe v2 released，二十scope已停写 | 已main df29；fe2b收口后55fe v2 released，原树只读 |
 | STEIRI01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/plans/wpf-steer-i01-integration/status.md)，原w01_owner，bc0ded75 v2 released | 已main f181；8273 push/clean后13scope停写释放，原树只读 |
@@ -179,3 +179,5 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 本次[消费者与资源接收](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/current.json)将Timing首轮失败、Recovery第二红/回执身份修正与SVC实际artifact分开；[三条document原件](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/dashboard-owner-document-check.json)只证明当时管理/DPERF/Recovery唯一owner源逐字可读。所有后继仍原scope与有限段，未知不补为空闲或PASS。
 
 本次[主线接收与当前入口纠正](../../docs/evidence/web-platform/main-intake-handoff-checkpoint-20261007/current.json)仅使用唯一owner状态和D04账本指针：旧DPERF v3/7、ACCESS v1/10及native3时期检查摘要已明确归历史，当前原子版本为v4/11与v2/3，不能沿过时准备派工。Quick受控组件main接收不等真实App/CAS完成，也不自动释放原claim。
+
+本次[正式接收与实际发布原件](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/current.json)分别证明DPERF固定组合main1a6f、4320摘要和I02按需详情可见，以及READBOUND已main81b/登记194。此处只索引canonical，不代替原owner状态或领取账本；不将一次HTTP/浏览器观察泛化为性能通过。
