@@ -4,7 +4,7 @@
 
 Review target commit：d78ffd7c691682c1e78d7a2b7d2617521527e9ca
 
-基线 b79121e1944f10f82a416d98d776c0f55bf9c943；唯一 writer b01_bounded_reads，Mika 独立只读审查。当前范围为queue.test.ts资源调用及自有pg-fixture/types/dependency配置；promotion42c已审predicate零diff。源码准备与真实 PG 结果分开审批。当前无运行结果，0 tests 不算通过。请核 paused 过滤在 LIMIT/rotation 前、锁内 pause 复核未删、竞争/CAS/错误公平性和 fixture 资源边界；不把本轮源审当实际窗口批准。历史db17:31:18 SOURCE_CHANGES_REQUESTED提出后台错误会被清理成功掩盖的1P2；本次修复与7纯用例/focused types已交增量独审，不预填批准。
+基线 b79121e1944f10f82a416d98d776c0f55bf9c943；唯一writer b01_bounded_reads。当前源码、局部修复、两条真实PG结果与selector纯检查已分别独审；以下按实际时间保留各历史阶段，不将早期NOT_RUN冒充当前。原P2均已关闭，原caller FAIL不改。
 
 2026-10-07T16:31:06.487336+00:00：固定源交审；原始源输入与两源hash、原测试全文保留证明见source-checkpoint.json。本轮只能审代码/设计，不批准实际执行或宣称通过。新增用例在文件最前执行/被定向选择时有独立新库，21 paused 超默认20，first scan 精确1ready；原公平/失败/锁内竞争用例全部保留。无 mock 查询镜像，无未经授权 fixture 或产品接口改动。
 
@@ -25,3 +25,5 @@ Review target commit：d78ffd7c691682c1e78d7a2b7d2617521527e9ca
 2026-10-07T20:37:05Z db_transaction_owner SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，固定103232eeab0f861e1ab87f496e9b9f0f1c068965/packet347209c15748e9c008c9472fad57aa59e5a9591d。原root身份P2 CLOSED，0剩余P1/P2；15pure同最终source、284rows/36aliases、原件/closed资源核符。批准严格为SOURCE_PREPARATION_APPROVED，允许排真实窗口候选；actual PG仍CLOSED/NOT_RUN，非产品验收/主线集成。审者零工程/PG/旧TMP访问。详见own rootguard-independent-review.json，无新增复测。
 
 2026-10-07T21:08:19Z db RESULT_FIDELITY_REVIEW_APPROVED，固定9e6af769：两个精确真实PG用例证据/资源关闭可接受，32未选，原callerFAIL保存；只证明竞争本次发生的合法分支。2026-10-07T21:13:07Z db SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPROVED，固定d78ffd7c691682c1e78d7a2b7d2617521527e9ca/7cccfcc4386fe1926fbe5d0c1a0e4913247912eb；selection P2 CLOSED/0剩余P1P2。19pure/最终source及原件不变核符，不授新PG或main。独审JSON见本范围selector-independent-review.json；同一实际运行无需再跑。
+
+2026-10-07T21:55:40.275Z：owner核main `62b76a0ef87faf7f74781f7f95a8d4870b52960d`受控接收与两产品字节一致。复用既有独审和中央回执，未增加第二次技术审查或新运行。

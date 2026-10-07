@@ -2,40 +2,40 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 21:13 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 21:55 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 任务开工时间 | 2026-10-07T16:23:07Z |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 派工后实际 clock；原source段已封存；selector修复段2026-10-07T21:10:25Z起，截止21:18:25Z；任务原始start不重置 |
+| 任务完成时间 | 2026-10-07T21:55:40.275Z |
+| 任务时间来源 | 开工：2026-10-07T16:23:07Z原实际clock；完成：2026-10-07T21:55:40.275Z owner核齐计划四项，见main-receipt.json；main intake为21:47:25.413Z，非任务开始或CPU工时 |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan |
 | Branch | codex/queue-paused-scan |
 | 工作基线 / HEAD | base b79121e1944f10f82a416d98d776c0f55bf9c943；历史fixture a4f041e0/01dfc89；当前source d78ffd7c691682c1e78d7a2b7d2617521527e9ca；promotion仍42c零diff |
-| 工作树dirty状态 | 源已固定；本段metadata提交push后clean STOP，0待launch |
-| 工作分支状态 | integration |
+| 工作树dirty状态 | 产品及历史原件不变；本次main事实metadata提交push后clean STOP，0待launch |
+| 工作分支状态 | delivered |
 | 检查状态 | PASSED d78ffd7c691682c1e78d7a2b7d2617521527e9ca；真实PG2passed/32skipped绑定执行46912（产品字节未再改），原callerexit1/FAIL保留；selector修后19pure通过并独审；资源已CLOSED |
-| 已集成main状态 / HEAD | 本片未集成；固定基线 b79121e1944f10f82a416d98d776c0f55bf9c943 |
+| 已集成main状态 / HEAD | 已集成 62b76a0ef87faf7f74781f7f95a8d4870b52960d；中央受控接收2026-10-07T21:47:25.413Z，两产品与已审target/本树逐字一致，原交付文档97文件零diff；未刷新个人部署 |
 | 实现目标 | d78ffd7c691682c1e78d7a2b7d2617521527e9ca |
 | 实现范围 | apps/server/src/conversation-queue/promotion.ts, apps/server/src/conversation-queue/queue.test.ts, docs/evidence/s01q01-paused-queue/pg-fixture.ts, docs/evidence/s01q01-paused-queue/types.tsconfig.json, docs/evidence/s01q01-paused-queue/dependencies.json, docs/evidence/s01q01-paused-queue/pg-fixture.test.ts, docs/evidence/s01q01-paused-queue/failure-local.py, docs/evidence/s01q01-paused-queue/failure.types.tsconfig.json, docs/evidence/s01q01-paused-queue/failure.vitest.config.ts, docs/evidence/s01q01-paused-queue/entry.py, docs/evidence/s01q01-paused-queue/entry.test.py, docs/evidence/s01q01-paused-queue/queue.vitest.config.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 暂停队列不再挤占扫描批次的两条真实行为已验证，结果选择器修复也已通过独立审查 |
-| 下一可用交付 | 将已审片段受控接入主线 |
+| 当前产出 | 主线已接收暂停队列扫描改进，可运行会话不再被暂停队列挤占扫描批次 |
+| 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；architecture19:31:19批准fixture增量，原P2 CLOSED；db20:37:05批准103232ee源码准备；原唯一P2 CLOSED |
-| 当前claim最后观察 | a8a3b2d7-1bde-438a-9fbf-f81e1c791350 v1 ACTIVE；2026-10-07T21:10:25.971Z fresh ACTIVE；四精确 scope |
+| 当前claim最后观察 | a8a3b2d7-1bde-438a-9fbf-f81e1c791350 v1 ACTIVE；2026-10-07T21:54:55.543Z fresh四scope；本次提交push后全部停写待原子release，不预填已释放 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | S01Q01-01 | completed | b01_bounded_reads | 固定 252 文件/1,237,032B 与 take receipt |
 | S01Q01-02 | completed | b01_bounded_reads | 单 predicate 与两用例源码；原测试业务断言保留；真实新增两例通过 |
 | S01Q01-03 | completed | b01_bounded_reads | 完整queue类型通过；真实PG/HTTP两目标passed/32未选；原callerFAIL保留，修后selector19pure与db独审通过；资源CLOSED，见pg-run与selector-local |
-| S01Q01-04 | in-progress | b01_bounded_reads | 源码/实际结果/selector增量独审完成，主线尚未接收 |
+| S01Q01-04 | completed | b01_bounded_reads | 源码/实际结果/selector独审与主线受控接收全部完成；main-receipt.json；0新run |
 
 ## 同步与限制
 
@@ -84,3 +84,11 @@
 | --- | --- | --- | --- |
 | selector实现/局部检查 | 2026-10-07T21:10:25Z 实际开段clock | 2026-10-07T21:11:35Z fixedpacket/clean现场clock | 单child实际21:11:15.169010→21:11:15.329644；不把整个区间当CPU计算 |
 | selector独立审查 | UNKNOWN（请求未单独取clock，不用commit猜） | 2026-10-07T21:13:07Z db审查消息 | 与owner收口可能重叠，不累计为独立总耗时 |
+
+2026-10-07T21:55:40.275Z：本次metadata段21:51:21Z启动，原截止21:57:21Z不变；短hold前0firstWrite，root21:54:26.702确认facts RETURN解除后开始归档。owner核main62b76a0两产品与source/WT精确一致、原delivery自有plan/evidence零diff。任务全部验收完成，旧实际FAIL及各原raw保留；无新工程/PG/HTTP产品请求/部署。本次只维护唯一status，提交push后停止全部写入，无待写scope；release在停写后另取原子回执放/tmp，释放后不回填。dashboard仅在提交后允许单次读取；失败/过期不猜当前。
+
+## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| Q01-MAIN-META-HOLD | 2026-10-07T21:51:21Z | 2026-10-07T21:54:26.702Z | 资源 | Original facts短hold；actual RETURN后解除 | owner实际开段clock与root转canonical事件；不与其它阶段简单相加 |

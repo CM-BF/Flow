@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-07T21:55:40.275Z",
+  "task": "S01Q01",
+  "kind": "OWNER_MAIN_ACCEPTANCE_AND_COMPLETION",
+  "main": "62b76a0ef87faf7f74781f7f95a8d4870b52960d",
+  "intakeAt": "2026-10-07T21:47:25.413Z",
+  "centralReceipt": "docs/evidence/i02/s01q01-integration-receipt.json",
+  "centralReceiptSha256": "7af7168d224a538a787b55c82298c0e519b373733a7099a458b0ded35415b91c",
+  "source": "d78ffd7c691682c1e78d7a2b7d2617521527e9ca",
+  "delivery": "59a1aff5905e8e2a52daa02cf78dfd736936a604",
+  "sources": [
+    {
+      "path": "apps/server/src/conversation-queue/promotion.ts",
+      "bytes": 4302,
+      "sha256": "353c4d1969cfc16fea4d351efeb644d702adabb0c7e2530a552990e597195a8c"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queue.test.ts",
+      "bytes": 36469,
+      "sha256": "34c405580736ca9371378a108f68d33bba4831d38f56ef80af0af7c82207d6db"
+    }
+  ],
+  "ownerRecordsEqualIntake": true,
+  "taskStartedAt": "2026-10-07T16:23:07Z",
+  "taskCompletedAt": "2026-10-07T21:55:40.275Z",
+  "timeMeaning": "Owner checked all four plan acceptance items after actual controlled main intake; no deployment or active CPU time inferred.",
+  "newEngineeringRuns": 0,
+  "historicalResults": "2 real PG passed /32 skipped; original caller FAIL unchanged; selector19 pure approved separately",
+  "claimLastObserved": {
+    "at": "2026-10-07T21:54:55.543Z",
+    "claimId": "a8a3b2d7-1bde-438a-9fbf-f81e1c791350",
+    "version": 1,
+    "state": "active"
+  },
+  "writing": "Metadata only; stop after commit/push; planned release requires fresh current version and independent receipt, not predeclared released"
+}
