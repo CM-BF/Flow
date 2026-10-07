@@ -1,0 +1,52 @@
+{
+  "pid": 77924,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 310,
+  "observed_bytes": 160,
+  "retained_bytes": 160,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "startedAt": "2026-10-07T16:32:15.855710+00:00",
+  "finishedAt": "2026-10-07T16:32:16.165750+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/personal-health-readonly.mjs",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/personal-health-20261007.json"
+  ],
+  "stdoutBytes": 160,
+  "stdoutSha256": "d5c62043d4ac78e3c06d32208df45b39d6c253114e13456940ef2f11585434de",
+  "stderrBytes": 0,
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "stdoutSafeSummary": {
+    "outcome": "OBSERVED_METADATA_ONLY",
+    "startedAt": "2026-10-07T16:32:15.904Z",
+    "finishedAt": "2026-10-07T16:32:16.143Z",
+    "elapsedMs": 239,
+    "requests": 4,
+    "failure": null
+  },
+  "personalObservation": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/personal-health-20261007.json",
+  "sourceSha256": "fc59d6987f7c53dbf8f0f0b2e76c645b9c5dbbffb15754cd77d4695e0526497c"
+}

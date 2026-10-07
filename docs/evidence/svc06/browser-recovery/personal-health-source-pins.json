@@ -1,0 +1,83 @@
+{
+  "source": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "files": [
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 15083,
+      "sha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a"
+    },
+    {
+      "path": "apps/server/src/task-index.ts",
+      "bytes": 3733,
+      "sha256": "f2c2c472b56b660563c0fce39871af972222bf8b4d9eabe4d2775d0f12797d47"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "path": "apps/server/src/task-read-projection.ts",
+      "bytes": 821,
+      "sha256": "7194976171df9af15552a23d33958c3141178b311f686adc95cb435c30be04b4"
+    },
+    {
+      "path": "apps/server/src/conversations/index.ts",
+      "bytes": 4764,
+      "sha256": "f364399902975501a50afb445158376ec5934380f5913a729946d0b01ac1740a"
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "bytes": 3660,
+      "sha256": "a68d1c75a895f3fc26c4db3fd7df0e14bec0ac5a1cdacdbe88111a4173b495e1"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "bytes": 3319,
+      "sha256": "b81fa9f2d2656512d96906db285669ea85a8019e457fd0c97dc9f79c52ef628e"
+    },
+    {
+      "path": "apps/server/src/runner-maintenance/index.ts",
+      "bytes": 2050,
+      "sha256": "1ebd74749045586d3fa7165dbe4db8ce39daa0ba3ed5a57e719cabaa257c267e"
+    },
+    {
+      "path": "apps/server/src/runner-maintenance/store.ts",
+      "bytes": 6384,
+      "sha256": "4a1dcdb800dd8ccccb669c3f8cb7f3debbbd55a3583f55ff87342f0b9dff8926"
+    },
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a"
+    },
+    {
+      "path": "apps/server/src/browser-session/store.ts",
+      "bytes": 4474,
+      "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 6390,
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087"
+    },
+    {
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "bytes": 1196,
+      "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574"
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "bytes": 3493,
+      "sha256": "7007040bca7a4ef873120313d024a0efc7bd98155fe72d99ce7decda9db43fe3"
+    }
+  ],
+  "readOnlyEndpoints": [
+    "GET /api/health",
+    "GET /api/runners/:id/maintenance",
+    "GET /api/task-index?limit=20",
+    "GET /api/conversations?limit=20"
+  ],
+  "bodyExclusion": "No task snapshot, conversation snapshot, turns, events, details, SSE, logs or direct database reads. Summary titles/requested fields discarded only in memory; no credential serialization.",
+  "basis": "Fixed production code: task-index fixed summary SQL; conversationList maps conversationView; maintenance SELECT-only transaction; owner bearer assertCurrent is SELECT-only."
+}
