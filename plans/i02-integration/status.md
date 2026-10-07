@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:16:52.118Z / main0da0dfcc个人更新证据已接；本批领取资格、204来源及最终部署收口已通过必要组合检查 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:19:49.775Z / main677a93e9已推，CORE已受控接收；204来源14:18:29已实际载入 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main0da0dfcc固定；只应用独审aa741领取差量、最终原件与5c9来源登记 |
-| 工作树dirty状态 | 本批已审固定输入与本次接收记录；两个既有未知__pycache__不纳入 |
+| 工作基线 / HEAD | main677a93e9已接本批产品与固定原件；本次仅实际main/看板状态正常收口 |
+| 工作树dirty状态 | 仅本次实际main/部署状态；两个既有未知__pycache__继续不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 领取资格原5PG独审复用；本批两个直接消费者10/10及focused types exit0，自有普通段3258ms完整归还，0新PG/provider/个人操作 |
-| 已集成main状态 / HEAD | main0da0dfcc已含个人7d1/source6c更新与独审；本批CORE资格和204来源待受控main发布。运行Web仍d629/v3，主线推进不改变个人运行。 |
+| 已集成main状态 / HEAD | main/origin677a93e9已含CORE资格修复与204来源；4320实际204来源已核。个人7d1/source6c、Webd629/v3保持；主线不自动替换运行版本。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 个人后台更新记录已入主线；新旧聊天队列的领取修复已通过接收检查，准备发布。 |
-| 下一可用交付 | 接收已审领取修复并显示两条发布后继；继续交付与当前后台兼容的新网页。 |
+| 当前产出 | 新旧聊天队列的领取修复已进入主线，看板已显示两条独立发布后继。 |
+| 下一可用交付 | 继续接收已审成果，并将聊天恢复与消息设置交付到个人可用版本。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -424,3 +424,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 [唯一实际独审](../../docs/evidence/i02/svc06-personal-preparation/held-continuation-actual-review.json)绑定 acbdc403；七阶段完成、原数据/配置/身份/网页与保留产物不变，实际13:47:33.200098Z开始、13:48:49.163Z归还。原排队任务自然取得新attempt；旧intent结果和完整领取ACK链仍UNKNOWN。operator0query，不代表原用户工作0query。受控接收保留原R1–R4失败，不执行个人操作或重跑已审检查；固定6c部署与后继main分开。
 
 2026-10-07T14:16:52.118Z：CORE新旧队列领取资格按已审5行SQL精确接收，原5PG/67HTTP结果不重跑，当前组合两个无PG直接消费者10项与focused types通过；[唯一接收记录](../../docs/evidence/i02/core-claim-intake.json)绑定原source/raw、204来源登记独审及SVC06已main最终metadata。实际普通段/清理见该记录，未改个人服务、未新增模型。
+
+2026-10-07T14:19:49.775Z：本批main/origin677a93e9 clean已确认；CORE原owner已收到唯一main receipt，后续只在其scope收口/释放。D05实际204来源换载、公共登录元数据200见[部署](../../docs/evidence/d05/personal-successor-live.json)。本次metadata不再运行工程检查、不改变原真实结果或个人服务。
