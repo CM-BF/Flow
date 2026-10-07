@@ -138,7 +138,16 @@ describe.sequential('AV03 real PostgreSQL', () => {
     await clearQueue(); const h = await runner(), t = await material('tool', h), v = await material('verifier', h);
     const tool = await makeBinding(t), verifier = await makeBinding(v);
     const ordinary = await transaction(pool, async c => [await task(c), await task(c)]);
-    const legacy = await request('/api/runner/claim', {}, h.token); expect(legacy.status).toBe(200); expect(legacy.body.task.id).toBe(ordinary[0]);
+    const queueOrder = [tool.b.taskId, verifier.b.taskId, ...ordinary];
+    const queueTimes = ['2000-01-01T00:00:00.000Z', '2000-01-01T00:00:01.000Z', '2000-01-01T00:00:02.000Z', '2000-01-01T00:00:03.000Z'];
+    await transaction(pool, async c => {
+      for (const [index, id] of queueOrder.entries()) await c.query('UPDATE flow.tasks SET created_at=$2::timestamptz WHERE id=$1', [id, queueTimes[index]]);
+    });
+    const ordered = (await pool.query<{ id: string; created_at: Date }>('SELECT id,created_at FROM flow.tasks WHERE id=ANY($1::uuid[]) ORDER BY created_at,id', [queueOrder])).rows;
+    expect(ordered.map(row => row.id)).toEqual(queueOrder);
+    expect(ordered.map(row => row.created_at.toISOString())).toEqual(queueTimes);
+    const legacy = await request('/api/runner/claim', {}, h.token); expect(legacy.status).toBe(200);
+    expect(legacy.body.assignment).toBeTruthy(); expect(legacy.body.assignment.task.id).toBe(ordinary[0]);
     const second = await request('/api/runner/claim-opportunity', { protocol: 'flow.runner-claim.v2', runnerId: h.id, requestId: randomUUID() }, h.token); expect(second.body.assignment.task.id).toBe(ordinary[1]);
     const third = await client(h).pluginRunner.claim({ protocol: 'flow.runner-claim.v3', runnerId: h.id, requestId: randomUUID(), pluginToolExecution: toolCap }); expect(third.state).toBe('assigned'); if (third.state === 'assigned') expect(third.assignment.task.id).toBe(tool.b.taskId);
     const anotherTool = await makeBinding(t); await pool.query("UPDATE flow.tasks SET created_at='2000-01-01' WHERE id=$1", [anotherTool.b.taskId]);
