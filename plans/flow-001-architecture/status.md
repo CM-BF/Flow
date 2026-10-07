@@ -2,8 +2,11 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 01:16 UTC / 只读输入main 05cdc51e9668d8e3b5219440361ee6b8f1b3a549（个人运行源未采样） |
+| 最近更新 / 最近main同步核验 | 2026-10-07T02:49:12.685Z / main943a66bf；本次个人Web恢复实际事实见SVC05H唯一source |
 | Plan | [plan.md](plan.md) |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 整体首次开工历史未核，完整用户验收仍开放；不以本次页面恢复当整体完成 |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
@@ -12,11 +15,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main c3ba1adf已接同af51中心恢复/独立保留核对与X01供给协调；个人af51/accepting v18、Web d629 v3按既有回执保留，本轮未重新采样。准备候选尚缺的运行验证不改绿。 |
+| 已集成main状态 / HEAD | main943a66bf保持；02:45:03UTC同版本Web-only bootstrap一次成功，d629/v3 HTTP200，center/runner af51与accepting v18及用户事实保持；root源码窗口02:45:52UTC恢复main clean。实际部署未升级新功能，根因未解决。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 事务断连保护与终端Claude逐消息设置已审并进入主线；原资源门槛保持，必要局部验证已恢复。个人运行版本不因main前进自动更新。 |
-| 下一可用交付 | 继续Codex普通会话C02、连接恢复/快捷设置的必要验证；并行恢复固定后台产物接线，保留完整双端与真实native验收。每项沿原packet和资源边界。 |
+| 当前产出 | 个人页面已同版本恢复可访问，后台与用户记录保持；SVC07与TUI01G已进入主线。任务时间与普通局部迭代规则收口，展示由Web组沿唯一status接入。 |
+| 下一可用交付 | 继续Codex普通会话、连接恢复与快捷设置必要验证；固定后台产物接线恢复。时间规则发布与看板展示分别验收，不阻聊天关键路径。 |
 | 当前阻塞 | ACTIVE: 远程CI原用户选择仍PENDING；本轮空间观察已越过SVC07原线，本地候选改为逐项fresh准入与串行共享窗口，不再按旧余量整体HOLD。 |
 | 需用户决定 | REQUIRED: OPS-CI01唯一启用选择已由Goal Owner提出，当前PENDING；不重复提问。 |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
@@ -177,3 +180,5 @@ GO报告空间实质回升后，Lead一次fresh df观察Data Available 26,448,42
 fresh canonical SVC07 HEAD1b3e166 clean/pushed，产品e28/HTTP35f原批准输入不变；本队无PG/Chrome运行。已与Mika和Web直接协调单次 SVC07-HTTP-RESOURCE-RECOVERED-20261007：原60s封套/40s工作/15s清理、floor1,207,959,552B和67,108,864B局部预算；须Web确认无实际holder及owner fresh claim/固定inputs/依赖/输出后才launch。Mika复用原worker，准备不符即交回而非预占。SVC07→C02关键路径优先，随后按ready状态共享窗口；0新增provider、不重测旧PG/fake/无关全集，不操作个人服务。当前仅安排恢复，未声称HTTP已运行或通过。02:06:39账本确认本管理claim3cb8/v3 ACTIVE，现时范围一致。
 
 2026-10-07：SVC07固定e28及实际HTTP结果3a94已获独审、main6b531d46接收；TUI01G固定215及局部结果335f已获独审、main8631cafb接收。TUI为51不同用例分轮通过，不含HTTP/真实PTY/browser/provider；全目标未关闭。OPS有限并行规则7a7c不减原门槛。SVC06原03/04由assignment_review恢复正式parser/builder接线，仍需完整自有产物与脱离开发目录的运行证据；个人服务保持原已封存af51/accepting v18/Web d629 v3，未在本轮更新。
+
+2026-10-07T02:49:12.685Z：用户访问恢复为当前已完成事实，唯一源为personal-history-compatibility的web-recovery-d629-20261007/run-20261007T024419Z；原始失败、旧Web退出code1和根因unknown保持。一次CLI968ms/0provider，结果独立限定批准，无用户tab刷新。普通验证窗口已归还，两co-lead按既有fresh规则继续。

@@ -72,3 +72,12 @@ F04首验26,512ms在terminal-request-capture失败，0task；20:59:20另行有�
 ### 限定 source operator 委派
 
 MATURE02C02此次仅新树codex-conversation-continuity由Mika作为受控source operator，从固定eae85567按已核291项/现有精确依赖链接准备，owner仍须fresh原子take。Execution Lead未创建该树；委派不含main、其他树、共享Git配置、个人运行源或共享PG/Chrome窗口。小源码准备与运行余量线分离，不为此新增审批往返。
+
+<a id="bounded-local-iteration"></a>
+## 普通本地实现的连续有界迭代（2026-10-07）
+
+co-lead在既有scope与资源约束内给一个工作段总预算：明确受影响模块/直接消费者、允许的本地动作、累计时间与新增字节/子进程上限，以及必须停下的共享资源、外部副作用或unknown边界。owner可连续修改→局部检查→修失败→定向复测；通过后一次独立review/受控集成。预算未尽、范围与副作用未变的普通迭代无需逐命令准备批准、one-shot许可或结果转录批准；预算不足或范围变化先由co-lead调整，不自动扩大。
+
+复用既有运行器与一份结构化运行记录，记录固定源码、实际选中/通过/失败、每次起止、累计资源、原始输出引用、primary failure与cleanup状态。按风险绑定必要source/直接输入，不重复多套大manifest或复制原raw；失败原件与后续修复分开，未受影响且已通过的检查不重跑。简单纯函数检查不必包上面向副作用operator的全套监督记录，涉及自有子进程时复用OPS14。
+
+真实PG/Chrome/迁移/个人服务仍需必要隔离、fresh身份、准入与恢复审查；未知资源不能自动回收，模型调用不随局部预算新增，已有已消费特殊现场窗口不追溯复开。本段不改变当前共享窗口/并行上限、磁盘门槛、claim、固定target或用户服务控制权。时间与等待仅写唯一status的[时间表](../../plans/AGENTS.md#task-timing)，不建新调度器/第二账本。

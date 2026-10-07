@@ -67,3 +67,7 @@ assignment_review / gpt-6-astra 对固定 `a60614fed842df8aee89a884ca77a7394c28a
 ## 2026-10-07 有限并行规则限定独审
 
 assignment_review / gpt-6-astra：**APPROVED_DOCS，无阻断finding**，target `943ffe55f1de6c6370619fa1eeb35b98fce1a478`、base `cdb38d41666fd54a4898cba3b6bccfee655d9e12`。4份声明文档净增4800B，固定/当前字节一致、2新增相对链接有效；原floor叠加局部新增预算，TUI30s/8MiB与X01真实11tar/32MiB+raw分开，共享资源/可写源/性能测量串行，原禁并跑packet先owner修订复核。历史FAIL/NOT_RUN/CI PENDING不改。仅doc review，0产品检查/PG/服务/provider；本条后续实际接收/运行摘要不扩大工程approval。
+
+## 2026-10-07T02:52:28.328Z 时间契约与局部迭代规则独审
+
+native_center_owner / gpt-6-astra 对固定 `79da82aeb1d1943a04bc81f33bdb78fd2571af79` 相对 main943a 的7文件完整delta：APPROVED_DOCS，无P1/P2。两任务时间+来源、NOT_COMPLETED/UNKNOWN、同snapshot.generatedAt与过期/未知保守语义、阶段分离及原proof不变；普通局部迭代不降低PG/Chrome/个人服务/unknown/模型门槛。恢复描述与已审单次af51/d629事实一致，保留根因unknown、旧exit1与未刷新tab限制。6处新链接/锚有效。reviewer0测试/服务/项目写；此条忠实转录独审结果，不把看板展示或完整OPS验收改绿。
