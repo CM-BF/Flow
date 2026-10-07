@@ -1,0 +1,69 @@
+{
+  "createdAt": "2026-10-07T05:33:00.600378+00:00",
+  "gate": "/private/tmp/recovery-pageauth-admission-6rpmu4he/gate.json",
+  "gateSha256": "db2870cacf0ab5198d65151acc54a34fff1343a117949cde1b33c5f1a6340611",
+  "expiresAt": "2026-10-07T05:39:00.600378+00:00",
+  "run": "recpageauth-20261007-053300-ca1a91",
+  "expectedRunDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recpageauth-20261007-053300-ca1a91",
+  "adminEnv": "/private/tmp/recovery-pageauth-admission-6rpmu4he/admin.env",
+  "adminEnvIdentity": {
+    "device": 16777234,
+    "inode": 123533744,
+    "mode": "0o600",
+    "uid": 501
+  },
+  "directoryMode": "0700",
+  "secretValuesRecorded": false,
+  "inputSource": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7:apps/web/test/web-current-preview.browser.ts line185; approved isolated test admin endpoint",
+  "cleanupResponsibility": "d01_owner after actual terminal removes only this exact env with dev/inode/mode check; retain gate/observation/evidence. If expired/not launched, report and remove env, never reuse.",
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "commandTemplate": {
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+    "environment": {
+      "FLOW_RECOVERY_BROWSER": "1",
+      "FLOW_RECOVERY_GATE": "/private/tmp/recovery-pageauth-admission-6rpmu4he/gate.json",
+      "TSX_DISABLE_CACHE": "1",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "argv": [
+      "/opt/homebrew/opt/node@24/bin/node",
+      "--env-file=/private/tmp/recovery-pageauth-admission-6rpmu4he/admin.env",
+      "--import",
+      "tsx",
+      "apps/web/test/conversation-recovery.browser.ts"
+    ]
+  },
+  "admissionObservation": "/private/tmp/recovery-pageauth-admission-6rpmu4he/admission-observation.json",
+  "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+  "selection": {
+    "journey": "page-auth",
+    "requiredGroups": [
+      "cookieRead",
+      "pageOnlyAuthLoss"
+    ],
+    "notSelectedGroups": [
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn",
+      "csrfOffline",
+      "themes390"
+    ],
+    "notSelectedSubcoverage": [
+      "materialDraft",
+      "cookieSseHandshake"
+    ],
+    "expectedPngCount": 0,
+    "selectedPassedRequires": "Gate/Init/WorkerResult journey equality; exact two ordered required/completed groups; checks.length2; both coverage PASSED; no failure/pageError/cleanupError; parent resources/late stdout/actual exit all successful.",
+    "fullJourneyPassed": false,
+    "fullFeatureReview": "NOT_STARTED",
+    "target": "UNKNOWN",
+    "initializationTiming": "worker entry through fixture/Chrome/context/page ready; excludes parent DB prep and process spawn; import failure before try may yield missing report, never zero successful initialization",
+    "groupTiming": "At most7 actual monotonic records; page-auth UI draft checkpoint setup is included in pageOnlyAuthLoss elapsed. No timing for NOT_SELECTED groups. No performance-improvement claim."
+  },
+  "remainingTotalMs": 35116,
+  "workMs": 20116,
+  "cleanupMs": 15000,
+  "authoritativePriorMs": 54883.199542,
+  "noManagerProductLaunch": true,
+  "outerRequirement": "Capture actual outerexit/stdout/stderr without overwriting prior artifacts; retain late accounting/selection scope and all owned cleanup. No automatic retry."
+}

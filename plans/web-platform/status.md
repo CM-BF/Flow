@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:29:56.950734+00:00；Quick第三次失败已清理归还，Recovery第五仅准备，导航后继已持久 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:33:51.096894+00:00；Recovery page-auth已获明确PG交接并fresh准入，原owner待启动 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -24,7 +24,7 @@
 | 下一可用交付 | 快速设置已有完整键盘诊断，根因待定位；恢复将先验独立的重新认证与页内草稿保留。近期会话与完整标题搜索已纳入工作区后继，尚未实现；本机入口说明文档增量仍待接收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：Quick第三次已失败并完整归还，Web无PG/Chrome holder、gate或预约。SVC08已于05:20:48.327Z归还PG给Mika；Recovery第五仅准备，须明确交接和fresh准入。 |
+| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：Quick第三次已清理归还；Recovery仅认证失效两组的一次PG/HTTP/Chrome准入已交原owner，尚未启动。到期不复用，无自动重试。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
