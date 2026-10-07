@@ -2,27 +2,27 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T12:18:17.653430+00:00 / main4fdd8562；202个唯一来源已实际载入 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:14:23.181Z / main0da0dfcc；204个唯一来源候选，当前4320仍202源，待本批受控发布 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 初始D05完整任务开工无足够明确来源，不由登记或进程替换猜测。各次来源发布时间见独立live回执；本次message-settings-app-live.json只证明实际部署时点。 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
 | 工作分支状态 | in-progress |
-| 已集成 main 状态 | main/origin4fdd8562已含202唯一来源；4320实际202源，消息设置App实施source current/live、人读完整、开工有来源/未完成。公开登录元数据200，未读token或操作个人页面。 |
+| 已集成 main 状态 | main/origin0da0dfcc已含个人后台恢复记录；本次新增SVC06B/SVC09A并将CORE唯一权威迁到当前owner树，尚未main/实际换载。 |
 | 实现目标 | cad1251fdbe8f8b527a78c60cf45adce68e4f534 |
 | 实现范围 | apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/src/server.mjs |
 | 检查状态 | PASSED cad1251fdbe8f8b527a78c60cf45adce68e4f534：局部Node 2/2；45节点源码路径固定基线存在；CUA五视图、980浅色/390深色、键盘/缩放/刷新保持，0模型 |
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 看板已显示真实聊天设置接线的进度、开工时间与后续交付；插件升级等既有来源继续可读。 |
-| 下一可用交付 | 本次来源登记已交付；后续状态由各任务唯一owner更新。 |
+| 当前产出 | 已登记新版网页配套后台和聊天设置接线的真实工作来源，领取修复改由当前负责人状态显示。 |
+| 下一可用交付 | 发布本次来源更新，让看板显示当前实施与已审接收进度。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -258,3 +258,5 @@ Goal Owner独立真实页面验收：默认空→显式加载为掩码→复制�
 2026-10-07T12:01:14.444822+00:00：201来源实际发布[回执](../../docs/evidence/d05/x01-lifecycle-live.json)已保存；初次采样器取顶层省略字段得到null，正确declarations投影已补核并保留原观察。三个source live/current且人读完整；无需再重启，未操作个人服务或用户页面。
 
 2026-10-07T12:15:04.027928+00:00：按新owner首canonical2efead09与fresh claim7e3fbcf1 v1登记WPF-MESSAGESETTINGS03，唯一父MATURE02/Web；真实开工12:11:30.621Z来自owner开始供给事件，检查NOT_RUN/实施中。不复制其状态或改写完成；201→202为源码候选，实际4320仍201直到受控发布。[固定来源](../../docs/evidence/d05/message-settings-app-source.json)。
+
+2026-10-07T14:14:23.181Z：新增SVC06B/SVC09A两个已正式领取且具有唯一三件套的来源，CORE沿原owner-switch迁移至claude-settings-claim-eligibility，未新建重复ID。204来源唯一/三件套/own status shape核对见[本次登记](../../docs/evidence/d05/personal-successor-registry.json)。CORE与SVC09A历史开工UNKNOWN保留；SVC06B已有开工原件但ISO字段格式已交原owner同次修正。这里只登记与权威迁移，不继承产品完成，不操作个人服务；main/实际换载另记。

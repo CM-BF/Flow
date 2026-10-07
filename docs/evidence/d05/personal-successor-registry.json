@@ -1,0 +1,125 @@
+{
+  "at": "2026-10-07T14:14:03.178Z",
+  "kind": "REGISTRY_SOURCE_ONLY",
+  "mainObserved": "0da0dfcc68da42cc38d7c8e982f6b16321118391",
+  "count": 204,
+  "records": [
+    {
+      "id": "SVC06B",
+      "title": "恢复网页配套的固定后台",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+      "branch": "codex/backend-browser-recovery",
+      "planDir": "plans/svc06-browser-recovery",
+      "evidenceDir": "docs/evidence/svc06",
+      "head": "50c03be6135733057550585856ecdcf8ba051d3b",
+      "statusSha256": "f7bc45db5f3e96dd3bc68772aca7c061e9f553cb59ad40900c0d1cfac5c92a9f",
+      "errors": [],
+      "humanMissing": [],
+      "timingIssues": [
+        "任务开工时间不是唯一有效的 ISO UTC 时间"
+      ],
+      "taskLinks": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+          "id": "FLOW-001",
+          "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead",
+          "value": "Execution Lead"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      }
+    },
+    {
+      "id": "SVC09A",
+      "title": "旧聊天与消息设置并行运行",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+      "branch": "codex/personal-message-settings",
+      "planDir": "plans/svc09-message-settings-activation",
+      "evidenceDir": "docs/evidence/svc09",
+      "head": "82acd9a9c091afcf3891b079356b9efa8e0263fe",
+      "statusSha256": "959ed7f6839a9397ee716d20f68910b6dec7cf1e6bbd81d6856acbd4d48b3a50",
+      "errors": [],
+      "humanMissing": [],
+      "timingIssues": [
+        "任务开工时间未记录"
+      ],
+      "taskLinks": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[FLOW-001](../flow-001-architecture/plan.md)",
+          "id": "FLOW-001",
+          "location": "../flow-001-architecture/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "Execution Lead",
+          "value": "Execution Lead"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      }
+    },
+    {
+      "id": "WPF-MATURE-02-CORE",
+      "title": "Claude逐消息设置契约",
+      "role": "工作线",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility",
+      "branch": "codex/claude-settings-claim-eligibility",
+      "planDir": "plans/wpf-mature-02-message-settings-core",
+      "evidenceDir": "docs/evidence/wpf-mature-02-message-settings-core",
+      "head": "ae6a2f2ce7505d0eccb6b0d8ee29654013127545",
+      "statusSha256": "3e457f3ef509d63c041964861cb234e0ccc0b936126de634174f20791bd1dba8",
+      "errors": [],
+      "humanMissing": [],
+      "timingIssues": [
+        "任务开工时间未记录"
+      ],
+      "taskLinks": {
+        "kind": "subtask",
+        "reason": "",
+        "parent": {
+          "state": "known",
+          "record": "[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)",
+          "id": "WPF-MATURE-02",
+          "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md"
+        },
+        "coLead": {
+          "state": "known",
+          "record": "mika",
+          "value": "mika"
+        },
+        "ownId": {
+          "state": "unknown",
+          "record": "",
+          "reason": "未声明"
+        }
+      }
+    }
+  ],
+  "authorityMigration": {
+    "id": "WPF-MATURE-02-CORE",
+    "prior": "claude-message-settings-core",
+    "current": "claude-settings-claim-eligibility",
+    "intake": "docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/owner-switch-intake.json",
+    "oldClaim": "c652bc61-f8a9-4848-a709-978adbb425ed v4 RELEASED",
+    "newClaim": "651c4eb4-ca60-41c3-9702-872c242e12d0 v1 ACTIVE"
+  },
+  "scope": "Registry and current canonical shape only; no product/runtime claim; actual dashboard reload pending."
+}
