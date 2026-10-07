@@ -163,5 +163,42 @@
     "Private bytes are per-round end observations, not a continuously sampled peak.",
     "Entry ownership port and native read-only OS enforcement are trusted composition prerequisites, not furnished by this module.",
     "Unknown tool observation stays unknown after late close; never NativeWriteAuthority.revoked."
+  ],
+  "outerToolObservations": [
+    {
+      "rounds": [
+        "01"
+      ],
+      "toolExitCode": 0
+    },
+    {
+      "rounds": [
+        "02"
+      ],
+      "toolExitCode": 0
+    },
+    {
+      "rounds": [
+        "03",
+        "04"
+      ],
+      "sessionId": 95943,
+      "toolExitCode": 1,
+      "scope": "last command types04; separate results retain tests03 exit0"
+    },
+    {
+      "rounds": [
+        "05"
+      ],
+      "sessionId": 90973,
+      "toolExitCode": 1
+    },
+    {
+      "rounds": [
+        "06"
+      ],
+      "sessionId": 4792,
+      "toolExitCode": 0
+    }
   ]
 }

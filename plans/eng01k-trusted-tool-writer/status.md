@@ -18,7 +18,7 @@
 | 实现范围 | apps/runner/src/engineering/native-tool-writer.ts, apps/runner/src/engineering/native-tool-writer.test.ts, apps/runner/src/engineering/native-tool-policy.ts, apps/runner/src/engineering/native-tool-policy.test.ts, apps/runner/src/native-harness/codex/exchange.ts, apps/runner/src/native-harness/codex/exchange.test.ts |
 | 检查状态 | 23不同分轮（21新+2旧），18/18与8/8；focused types红后0；[原件](../../docs/evidence/eng01k/local/run.json) |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 任务开工时间 | 2026-10-07T07:14:10.652345Z |
+| 任务开工时间 | 2026-10-07T07:14:10.652Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner在原子take07:13:02.112Z后首次创建合同/三件套的实际记录 |
 | 阶段 | M2 |
@@ -41,3 +41,5 @@
 资格选择已由Root统一询问用户，[原ENG01J状态](../../../engineering-native-authority/plans/eng01j-native-write-authority/status.md)是唯一待决记录；此处不重复新决定。provider0/旧locked grant拒绝保持。
 
 2026-10-07T07:25:14.737269Z：六源固定/本片source-ready，原两类型失败原件保留。最后local于07:23:00.388423Z实际归还，本轮6组最终absent/EOF、全部私有根确切清理；0PG/provider/stock。180s过程预算仅用5830ms，不以墙钟编辑时间当运行或等待。当前产品停写保claim待独审；原七scope J产品不变。
+
+时间格式收口：首创建记录原精度07:14:10.652345Z见首canonical7ffb5ca6；顶层按既有parser毫秒精度07:14:10.652Z，不以commit或mtime推开工。
