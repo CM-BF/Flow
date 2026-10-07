@@ -15,7 +15,8 @@ export interface CodexExchangeInput {
 export interface CodexExchangeRecipe<Thread extends { threadId: string } = { threadId: string }> {
   readonly evidence: CodexTurnEvidence;
   readonly startThread: Json;
-  onStream?(delta: CodexStreamDelta): Promise<void>;
+  /** Trusted sink observes cancellation; interrupted delivery has unknown effects, never terminal proof. */
+  onStream?(delta: CodexStreamDelta, signal: AbortSignal): Promise<void>;
   readonly threadMethod?: 'thread/start' | 'thread/resume';
   startTurn(threadId: string): Json;
   readThread(response: Json): Thread;
@@ -37,9 +38,24 @@ export async function runCodexExchange<Thread extends { threadId: string }>(crea
     const deltas = evidence.takeStreamDeltas();
     // Binding and receive can both release evidence; serialize the one downstream sink.
     streamDelivery = streamDelivery.then(async () => {
-      for (const delta of deltas) { signal.throwIfAborted(); if (recipe.onStream) await recipe.onStream(delta); }
+      for (const delta of deltas) {
+        signal.throwIfAborted();
+        if (recipe.onStream) await deliverStream(delta);
+      }
     });
     await streamDelivery;
+  }
+  async function deliverStream(delta: CodexStreamDelta) {
+    const delivery = recipe.onStream!(delta, signal);
+    let abort!: () => void;
+    const interrupted = new Promise<never>((_, reject) => {
+      abort = () => reject(signal.reason ?? new Error('Native stream interrupted.'));
+      signal.addEventListener('abort', abort, { once: true });
+      if (signal.aborted) abort();
+    });
+    // Stop waiting on an uncooperative sink. This does not assert that its effects stopped.
+    try { await Promise.race([delivery, interrupted]); }
+    finally { signal.removeEventListener('abort', abort); }
   }
   function checkTerminal() { if (evidence.observation.state !== 'pending') wake(); }
   try {

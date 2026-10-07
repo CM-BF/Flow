@@ -80,3 +80,31 @@ it('yields a hot ready-notification pump to cancellation without changing the te
     expect(aborted).toBe(true); expect(received).toBeGreaterThanOrEqual(32); expect(closed).toBe(true);
   } finally { clearTimeout(timer); }
 });
+
+it.each(['input-abort', 'deadline'])('does not await a pending stream sink forever after %s', async mode => {
+  const { runCodexExchange } = await import('./exchange.js');
+  const { OrdinaryTurnEvidence } = await import('./evidence.js');
+  const controller = new AbortController(); let first = true, closed = false, sinkCalls = 0;
+  let sinkSignal: AbortSignal | undefined, abortTimer: ReturnType<typeof setTimeout> | undefined;
+  let releaseReceive: ((value: null) => void) | undefined;
+  const close = { reason: 'CLOSED' as const, child: 'confirmed-exited' as const, exitCode: 0, signal: null, remoteEffects: 'unknown' as const };
+  const port: CodexTransport = {
+    ready: Promise.resolve({ userAgent: 'synthetic', platformFamily: 'test', platformOs: 'test' }), closed: Promise.resolve(close),
+    async request(method): Promise<Json> { return method === 'thread/start' ? {} : { turn: { id: 'turn', status: 'inProgress', itemsView: 'full', items: [], error: null } }; },
+    async receive() {
+      if (closed) return null;
+      if (first) { first = false; return { kind: 'notification', method: 'item/agentMessage/delta', params: { threadId: 'thread', turnId: 'turn', itemId: 'item', delta: 'observed' } }; }
+      return new Promise<null>(resolve => { releaseReceive = resolve; });
+    },
+    async respond() { throw Error('No server requests'); },
+    async close() { closed = true; releaseReceive?.(null); return close; }, snapshot() { throw Error('Snapshot unused'); },
+  };
+  try {
+    await expect(runCodexExchange(() => port, { signal: controller.signal, workingDirectory: '/synthetic', async assertOwnership() {} },
+      { wallTimeMs: mode === 'deadline' ? 30 : 500, maxOutputBytes: 1024 }, {
+        evidence: new OrdinaryTurnEvidence(), startThread: {}, startTurn: () => ({}), readThread: () => ({ threadId: 'thread' }), checkCompletion() {}, respond() { throw Error('No server requests'); },
+        async onStream(_, signal) { sinkCalls++; sinkSignal = signal; if (mode === 'input-abort') abortTimer = setTimeout(() => controller.abort(), 5); await new Promise<void>(() => {}); },
+      })).rejects.toMatchObject({ settlement: 'unknown' });
+    expect(sinkCalls).toBe(1); expect(sinkSignal?.aborted).toBe(true); expect(closed).toBe(true);
+  } finally { clearTimeout(abortTimer); await port.close(); }
+});

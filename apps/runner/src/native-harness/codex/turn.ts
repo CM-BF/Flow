@@ -7,7 +7,7 @@ import { readThreadReceipt, resumeThreadRequest, startThreadRequest, startTurnRe
 import { runCodexExchange, type CodexTransportFactory, type CodexExchangeInput } from './exchange.js';
 export type { CodexTransportFactory } from './exchange.js';
 
-export interface OrdinaryCodexTurnInput extends CodexExchangeInput { readonly prompt: string; readonly resumeSessionId?: string; onStream?(delta: CodexStreamDelta): Promise<void> }
+export interface OrdinaryCodexTurnInput extends CodexExchangeInput { readonly prompt: string; readonly resumeSessionId?: string; onStream?(delta: CodexStreamDelta, signal: AbortSignal): Promise<void> }
 /** Runs one ordinary turn without host events, persistence or admission authority. */
 export async function runOrdinaryCodexTurn(profile: CodexExecutionProfileConfiguration, createTransport: CodexTransportFactory, input: OrdinaryCodexTurnInput) {
   const resumedId = input.resumeSessionId;
