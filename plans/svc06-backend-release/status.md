@@ -4,6 +4,9 @@
 | --- | --- |
 | 最近更新 / 最近main同步核验 | 2026-10-07 04:25:09 UTC；局部隔离接缝已审；新root真实host入口待审/未执行 |
 | Plan | [plan.md](plan.md) |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 初次实际开工无可核原件；claim只证明领取，不用本轮host或commit替代。SVC06-03/04/05尚未全部验收；阶段build/host/独审/main分别见下方原记录。 |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
@@ -145,3 +148,10 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07 04:25:09 UTC：新独立根真实宿主入口准备
 
 [入口/边界](../../docs/evidence/svc06/artifact-host-followup/README.md)，局部接缝已[独审](../../docs/evidence/svc06/artifact-host-followup/local-independent-review.json)。新root+新DB，精确e5同卷CoW并逐manifest验；原root/config/state/raw全保留。work120s+cleanup30s、fresh2.5GiB/live1GiB、私有64MiB/raw2MiB不降，新增物理规划578MiB不假定clone免费；现复制/PG/三角色NOT_RUN，准备固定供独审。
+
+## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| SVC06-WAIT-HOST01 | 2026-10-07T03:59:40.000Z | 2026-10-07T04:04:40.248Z | 资源 | 首宿主入口准备获审后等待共享窗口；实际启动结束该等待 | 本status 03:59:40准备批准记录；artifact-host-smoke/host-invocation.json实际开始 |
+| SVC06-WAIT-HOST02 | 2026-10-07T04:26:16.664Z | OPEN | 审查 | 新root后继入口已固定，等待独立审查；真实copy/PG未开始 | 入口d37981b06ec70b9f9e6254b66e0a1b69d7555dc1、delivery b1352784；本次owner交审事件 |
