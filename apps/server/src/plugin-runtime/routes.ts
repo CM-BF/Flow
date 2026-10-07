@@ -5,6 +5,8 @@ import { z } from 'zod';
 import { PLUGIN_RUNTIME_LIMITS, pluginGrantRequestSchema, pluginHostPublicationSchema, pluginRuntimeCommandSchema, pluginToolTaskRequestSchema } from '../../../../packages/contracts/src/plugin-runtime.js';
 import { HttpError, transaction } from '../database.js';
 import { authorizePluginPhase, admitPluginToolTask, changePluginRuntime } from './commands.js';
+import { pluginHostCandidatesQuerySchema } from '../../../../packages/contracts/src/plugin-runtime-hosts.js';
+import { readPluginHostCandidates } from './host-candidates.js';
 import { publishPluginHost, readBinding, readRuntime, type TrustedPluginHostPolicy } from './store.js';
 
 function id(value: string): string {
@@ -39,13 +41,18 @@ export function registerPluginRuntimeRoutes(app: FastifyInstance, pool: Pool, bo
   app.post<{ Params: { id: string } }>('/api/plugins/:id/runtime/commands', { bodyLimit: PLUGIN_RUNTIME_LIMITS.bodyBytes }, async (request, reply) => {
     const input = pluginRuntimeCommandSchema.safeParse(request.body);
     if (!input.success) throw new HttpError(400, 'invalid_plugin_runtime_command', 'Invalid plugin runtime command.');
-    return reply.header('cache-control', 'no-store').send(bounded(await changePluginRuntime(pool, id(request.params.id), input.data, String(request.headers['idempotency-key'] ?? ''))));
+    return reply.header('cache-control', 'no-store').send(bounded(await changePluginRuntime(pool, id(request.params.id), input.data, String(request.headers['idempotency-key'] ?? ''), trustedHostPolicy)));
   });
   app.post<{ Params: { id: string } }>('/api/plugins/:id/tool-tasks', { bodyLimit: PLUGIN_RUNTIME_LIMITS.bodyBytes }, async (request, reply) => {
     const input = pluginToolTaskRequestSchema.safeParse(request.body);
     if (!input.success) throw new HttpError(400, 'invalid_plugin_tool_task', 'Invalid plugin tool task.');
-    const accepted = await admitPluginToolTask(pool, boss, id(request.params.id), input.data, String(request.headers['idempotency-key'] ?? ''));
+    const accepted = await admitPluginToolTask(pool, boss, id(request.params.id), input.data, String(request.headers['idempotency-key'] ?? ''), trustedHostPolicy);
     return reply.header('cache-control', 'no-store').code(201).send(bounded(accepted));
+  });
+  app.get<{ Params: { id: string } }>('/api/plugins/:id/runtime/hosts', async (request, reply) => {
+    const input = pluginHostCandidatesQuerySchema.safeParse(request.query);
+    if (!input.success) throw new HttpError(400, 'invalid_plugin_host_query', 'Select an installed material and a valid candidate cursor.');
+    return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readPluginHostCandidates(client, id(request.params.id), input.data, trustedHostPolicy), true)));
   });
   app.get<{ Params: { id: string } }>('/api/plugins/:id/runtime', async (request, reply) => {
     return reply.header('cache-control', 'no-store').send(bounded(await transaction(pool, client => readRuntime(client, id(request.params.id)), true)));

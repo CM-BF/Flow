@@ -4,6 +4,8 @@ import { PLUGIN_RUNTIME_PROTOCOL, pluginToolBindingSchema, pluginRuntimeViewSche
 import { HttpError, transaction } from '../database.js';
 import { lockRunner } from '../runners.js';
 import { readSnapshot } from '../plugins/storage.js';
+import { loadInstall } from '../plugin-installations/store.js';
+import type { PluginSnapshot } from '../../../../packages/contracts/src/plugins.js';
 
 export interface RuntimeRevision {
   registration_id: string; revision: number; version_id: string; desired_enabled: boolean;
@@ -29,12 +31,33 @@ export async function migratePluginRuntime(pool: Pool): Promise<void> {
 /** Operator-owned synchronous policy; a runner credential alone cannot authorize its material store. */
 export type TrustedPluginHostPolicy = (identity: Readonly<PluginHostIdentity>) => boolean;
 
+export function assertTrustedPluginHost(policy: TrustedPluginHostPolicy | undefined, identity: PluginHostIdentity): void {
+  if (policy?.(Object.freeze({ ...identity })) !== true) throw new HttpError(403, 'plugin_host_not_trusted', 'The operator has not authorized this exact plugin host.');
+}
+
+export async function installedMaterial(client: PoolClient, snapshot: PluginSnapshot, operationId: string, storeId?: string) {
+  const row = await loadInstall(client, operationId);
+  const receipt = row.receipt;
+  if (row.registration_id !== snapshot.installation.id || row.version_id !== snapshot.version.id || (storeId !== undefined && row.store_id !== storeId)
+    || row.status !== 'installed' || !receipt || receipt.schemaVersion !== 1 || receipt.storeId !== row.store_id
+    || !/^[a-f0-9]{64}$/.test(receipt.installationId) || !/^[a-f0-9]{64}$/.test(receipt.treeDigest)
+    || receipt.manifest?.kind !== 'tool' || receipt.manifest.hostApiMajor !== 1 || !receipt.artifact
+    || receipt.artifact.artifactId !== row.artifact_id || receipt.artifact.sha256 !== snapshot.version.declaredSha256
+    || receipt.artifact.name !== snapshot.version.packageName || receipt.artifact.version !== snapshot.version.packageVersion
+    || receipt.artifact.bytes !== row.artifact.bytes || receipt.artifact.integrity !== row.artifact.integrity
+    || receipt.artifact.sha256 !== row.artifact.sha256 || receipt.artifact.artifactId !== row.artifact.artifactId
+    || receipt.artifact.name !== row.artifact.name || receipt.artifact.version !== row.artifact.version) {
+    throw new HttpError(409, 'plugin_material_mismatch', 'The selected version requires its exact installed tool material.');
+  }
+  return receipt;
+}
+
 /** Authenticated runner identity is supplied by the host route; this is not current claim eligibility. */
 export async function publishPluginHost(pool: Pool, runnerId: string, input: PluginHostPublication, policy?: TrustedPluginHostPolicy): Promise<void> {
   const identity = Object.freeze({ ...input, runnerId });
   await transaction(pool, async client => {
     await lockRunner(client, runnerId);
-    if (policy?.(identity) !== true) throw new HttpError(403, 'plugin_host_not_trusted', 'The operator has not authorized this exact plugin host.');
+    assertTrustedPluginHost(policy, identity);
     await client.query('INSERT INTO flow.plugin_runtime_hosts(runner_id,store_id,host_api_major) VALUES($1,$2,$3) ON CONFLICT DO NOTHING', [runnerId, identity.storeId, identity.hostApiMajor]);
     if (!(await client.query('SELECT 1 FROM flow.plugin_runtime_hosts WHERE runner_id=$1 AND store_id=$2 AND host_api_major=$3', [runnerId, identity.storeId, identity.hostApiMajor])).rowCount) {
       throw new HttpError(409, 'plugin_host_conflict', 'A runner cannot change its published material store.');
@@ -47,6 +70,7 @@ export async function latestRuntimeRevision(client: PoolClient, registrationId: 
 export async function assertPluginHost(client: PoolClient, runnerId: string, storeId: string): Promise<void> {
   const runner = await lockRunner(client, runnerId);
   if (runner.maintenance_state && runner.maintenance_state !== 'accepting') throw new HttpError(409, 'plugin_host_unavailable', 'The runner is not accepting new tool tasks.');
+  if (!runner.harnesses.includes('fixture')) throw new HttpError(409, 'plugin_host_unavailable', 'The runner does not accept plugin tool tasks.');
   if (!(await client.query('SELECT 1 FROM flow.plugin_runtime_hosts WHERE runner_id=$1 AND store_id=$2 AND host_api_major=1', [runnerId, storeId])).rowCount) {
     throw new HttpError(409, 'plugin_host_unavailable', 'The exact tool host and material store are not registered.');
   }
