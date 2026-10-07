@@ -45,10 +45,11 @@ const journeyGroups = {
   "created-turn-ack-loss": ["cookieRead", "createdTurnAckLoss"],
   "queue-ack-loss": ["cookieRead", "queueAckLoss"],
   "sse-delivery": ["cookieRead", "sseDelivery"],
+  "complete-draft": ["cookieRead", "completeDraft"],
 } as const;
 type Journey = keyof typeof journeyGroups;
 type Group = (typeof journeyGroups)[Journey][number];
-const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss", "sseDelivery"];
+const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss", "sseDelivery", "completeDraft"];
 function selectedGroups(journey: unknown): readonly Group[] {
   requireThat(typeof journey === "string" && Object.hasOwn(journeyGroups, journey), "An explicit supported journey is required");
   return journeyGroups[journey as Journey];
@@ -65,7 +66,10 @@ type WorkerResult = { journey: Journey; requiredGroups: readonly Group[]; comple
   initialization: InitializationTiming; groupTimings: GroupTiming[];
   pageErrors: string[]; failure: string | null; cleanupErrors: string[]; wire: RecoveryWire[]; coverage: Record<string, string>; bodyLoss: BodyLossObservation[];
   sseDelivery: { baselineCursor: number | null; deliveredCursor: number | null; cancelledTaskId: string | null;
-    externalCancel: { taskId: string; key: string; status: string } | null; readRequests: string[]; trace: RecoverySseTrace | null } };
+    externalCancel: { taskId: string; key: string; status: string } | null; readRequests: string[]; trace: RecoverySseTrace | null };
+  completeDraft: { profile: import("@flow/contracts").ExecutionProfileReference | null; knowledge: import("@flow/contracts").KnowledgeCitation | null;
+    savedRecordId: string | null; conversationId: string | null; preparedPostCount: number | null; restoredPostCount: number | null;
+    verificationOrder: string[]; turnId: string | null; taskId: string | null } };
 function selectionPassed(journey: Journey, result: WorkerResult | undefined): boolean {
   const required = selectedGroups(journey);
   return !!result && result.journey === journey && result.failure === null
@@ -371,6 +375,8 @@ async function worker(init: Init) {
   const checks: string[] = [], pageErrors: string[] = [], cleanupErrors: string[] = [];
   const bodyLoss: BodyLossObservation[] = [], stopObservers: (() => void)[] = [];
   const sseDelivery: WorkerResult["sseDelivery"] = { baselineCursor: null, deliveredCursor: null, cancelledTaskId: null, externalCancel: null, readRequests: [], trace: null };
+  const completeDraft: WorkerResult["completeDraft"] = { profile: null, knowledge: null, savedRecordId: null, conversationId: null,
+    preparedPostCount: null, restoredPostCount: null, verificationOrder: [], turnId: null, taskId: null };
   const initialization: InitializationTiming = { outcome: "RUNNING", startedOffsetMs: 0, endedOffsetMs: null, elapsedMs: null };
   const groupTimings: GroupTiming[] = [];
   let errorBytes = 0;
@@ -381,7 +387,7 @@ async function worker(init: Init) {
   };
   const coverage: Record<string, string> = {
     cookieRead: "NOT_RUN", cookieSseHandshake: "NOT_RUN", cookieSseDelivery: "PENDING: only handshake is asserted", textIntentDraft: "NOT_RUN", materialDraft: "NOT_RUN", sameKeyTurn: "NOT_RUN", crossTabCas: "NOT_RUN",
-    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN", createAckLoss: "NOT_RUN", createdTurnAckLoss: "NOT_RUN", queueAckLoss: "NOT_RUN", sseDelivery: "NOT_RUN",
+    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN", createAckLoss: "NOT_RUN", createdTurnAckLoss: "NOT_RUN", queueAckLoss: "NOT_RUN", sseDelivery: "NOT_RUN", completeDraft: "NOT_RUN",
     createTwoStage: "PENDING: the two CREATE fault points are independent selected journeys", queueSteerRecovery: "PENDING: enqueue selection does not validate promotion or steering",
     profileKnowledgeSteeringDraft: "PENDING: direct/source only", secondCenter: "PENDING: one-center fixture",
   };
@@ -692,6 +698,117 @@ async function worker(init: Init) {
       expect(final.checkpoint).toMatchObject({ conversationId: fixture!.conversationId, queueRevision: request.expectedQueueRevision + 1, item: { id: original.item.id, sequence: original.item.sequence, state: "waiting" } });
       await restoreNextDraft(nextId, next);
     });
+    await run("prepared profile/project and complete draft survive re-auth/restore; explicit verification preserves first-turn material identity", "completeDraft", async () => {
+      const seed = await fixture!.seedCompleteDraft(), original = "Complete recovery draft 中文🙂", next = "Independent draft after complete material send";
+      completeDraft.profile = seed.profile.reference; completeDraft.knowledge = seed.citation;
+      const creations = () => postRows().filter(row => row.path === "/api/conversations");
+      const turns = () => postRows().filter(row => /\/turns$/.test(row.path));
+      const bodyReads = () => fixture!.wire.filter(row => /\/attachments\/[^/]+\/content|\/knowledge\/resolve/.test(row.path)).length;
+      const composer = () => page.locator("[data-composer-view]").filter({ visible: true });
+      const knowledge = () => composer().getByRole("button", { name: "Knowledge", exact: true });
+      const knowledgeDialog = page.getByRole("dialog", { name: "Conversation knowledge", exact: true });
+      const files = () => composer().getByRole("button", { name: "Files", exact: true });
+      const fileDialog = page.getByRole("dialog", { name: "Project text files", exact: true });
+      const searchKnowledge = async () => {
+        await knowledgeDialog.getByRole("textbox", { name: "Search project knowledge", exact: true }).fill(seed.query);
+        await knowledgeDialog.getByRole("button", { name: "Search", exact: true }).click();
+        const hit = knowledgeDialog.getByRole("list", { name: "Knowledge search results", exact: true }).locator("article").filter({ hasText: seed.citation.sourceId });
+        await expect(hit).toHaveCount(1); return hit.getByRole("checkbox");
+      };
+      const closeKnowledge = async () => { await page.keyboard.press("Escape"); await expect(knowledgeDialog).not.toBeVisible(); await expect(knowledge()).toBeFocused(); };
+      const closeFiles = async () => { await page.keyboard.press("Escape"); await expect(fileDialog).not.toBeVisible(); await expect(files()).toBeFocused(); };
+      await page.locator(".flow-workspace-bar").getByRole("button", { name: "New chat", exact: true }).click();
+      await composer().getByRole("button", { name: "Execution profile: Runner default", exact: true }).click();
+      const profiles = page.getByRole("dialog", { name: "Execution profile", exact: true });
+      await profiles.getByRole("button", { name: "Refresh profiles", exact: true }).click();
+      const profileOption = profiles.locator(".ep-option").filter({ hasText: seed.profile.reference.id });
+      await expect(profileOption).toHaveCount(1); await profileOption.getByRole("radio").check();
+      await page.keyboard.press("Escape"); await expect(profiles).not.toBeVisible();
+      await input().fill(original); await knowledge().click();
+      await knowledgeDialog.getByRole("combobox", { name: "Conversation project", exact: true }).selectOption(fixture!.projectId);
+      expect(postRows()).toHaveLength(0);
+      await knowledgeDialog.getByRole("button", { name: "Prepare conversation in project", exact: true }).click();
+      // Preparing may remount the route/dialog. Confirm the actual CREATE before reopening the public material picker.
+      await expect.poll(() => creations()[0]?.responseBody).toBeTruthy();
+      if (await knowledgeDialog.isVisible()) {
+        await expect(knowledgeDialog).toContainText(`Conversation project locked: ${fixture!.projectId}`); await closeKnowledge();
+      }
+      await expect(composer().getByRole("button", { name: `Conversation settings: ${seed.profile.configuration.model}`, exact: true })).toBeVisible();
+      const createdRow = creations()[0]!, creation = conversationCreationSchema.parse(JSON.parse(createdRow.body));
+      expect(creation.projectId).toBe(fixture!.projectId); expect(creation.executionProfile).toEqual(seed.profile.reference);
+      expect(creation.requested).toEqual({ model: seed.profile.configuration.model, thinking: "disabled", tools: "none" });
+      requireThat(createdRow.responseBody, "Prepared conversation needs a complete real CREATE ACK");
+      const created = decodeConversationCreated(JSON.parse(createdRow.responseBody), creation);
+      completeDraft.conversationId = created.conversation.id; expect(created.replayed).toBe(false);
+      expect(turns()).toHaveLength(0); expect(postRows()).toHaveLength(1);
+      await knowledge().click();
+      await expect(knowledgeDialog).toContainText(`Conversation project locked: ${fixture!.projectId}`);
+      await (await searchKnowledge()).check(); await closeKnowledge();
+      await files().click(); await fileDialog.getByRole("button", { name: "Browse files", exact: true }).click();
+      await fileDialog.getByRole("button", { name: "Use saved.txt", exact: true }).click();
+      await fileDialog.getByRole("button", { name: "Use later.txt", exact: true }).click(); await closeFiles();
+      await page.getByRole("radio", { name: "Queue next", exact: true }).check(); await saveDraftThroughUi(original);
+      const selectedDrafts = async () => (await records(page)).filter(record => record.kind === "draft" && record.data?.text === original
+        && Array.isArray(record.data.knowledge) && record.data.knowledge.length === 1 && Array.isArray(record.data.attachments) && record.data.attachments.length === 2 && record.data.intent === "queue");
+      await expect.poll(async () => (await selectedDrafts()).length).toBe(1);
+      const saved = parseRecoveryRecord((await selectedDrafts())[0]); requireThat(saved.kind === "draft", "Expected a complete saved draft");
+      completeDraft.savedRecordId = saved.id;
+      const assertSavedIdentity = (data: unknown) => {
+        expect(data).toMatchObject({ text: original, intent: "queue", projectId: fixture!.projectId,
+          profile: { kind: "configured", profile: { reference: seed.profile.reference, configuration: seed.profile.configuration } },
+          knowledge: [{ title: seed.title, citation: seed.citation }],
+          attachments: [{ name: "saved.txt", metadata: { reference: fixture!.resource.reference } }, { name: "later.txt", metadata: { reference: fixture!.secondResource.reference } }] });
+        expect(object(data).knowledge).toHaveLength(1); expect(object(data).attachments).toHaveLength(2);
+      };
+      assertSavedIdentity(saved.data); expect(saved.owner).toMatchObject({ routeId: `conversation:${created.conversation.id}`, projectId: fixture!.projectId });
+      const baseline = postRows().map(row => ({ path: row.path, key: row.key, body: row.body })), readsBefore = bodyReads();
+      completeDraft.preparedPostCount = baseline.length; expect(readsBefore).toBe(0);
+      await reloadAndReauthenticate();
+      const recovery = await openRecovery(), row = await exactRecordRow(recovery, saved.id);
+      await expect(row).toContainText(original); await expect(row).toContainText("Files: 2"); await expect(row).toContainText("Knowledge: 1");
+      await row.getByRole("button", { name: "Restore without sending", exact: true }).click();
+      await page.keyboard.press("Escape"); await expect(recovery).not.toBeVisible();
+      await expect(input()).toHaveValue(original); await expect(page.getByRole("radio", { name: "Queue next", exact: true })).toBeChecked();
+      assertSavedIdentity((await records(page)).find(record => record.id === saved.id)?.data);
+      expect(postRows().map(value => ({ path: value.path, key: value.key, body: value.body }))).toEqual(baseline);
+      completeDraft.restoredPostCount = postRows().length; expect(bodyReads()).toBe(readsBefore);
+      const chips = input().locator("xpath=ancestor::form").locator(".aui-composer-attachments .aui-attachment-root");
+      await expect(chips).toHaveCount(0);
+      await knowledge().click(); await expect(knowledgeDialog.getByRole("button", { name: `Remove ${seed.title}, version ${seed.citation.version}`, exact: true })).toBeVisible(); await closeKnowledge();
+      await files().click(); await expect(fileDialog.getByRole("region", { name: "Files in this draft" })).toContainText("unverified");
+      // Explicit metadata only, reverse file verification B then A, followed by knowledge search. Never Use/reselect restored materials.
+      for (const name of ["later.txt", "saved.txt"]) {
+        await fileDialog.getByRole("textbox", { name: "Find uploaded files", exact: true }).fill(name);
+        await fileDialog.getByRole("button", { name: "Browse files", exact: true }).click();
+        await expect(fileDialog.getByRole("region", { name: "Files in this draft" }).locator("article").filter({ hasText: name })).toContainText("ready");
+        completeDraft.verificationOrder.push(name);
+      }
+      await closeFiles(); await expect(chips).toHaveCount(2);
+      await page.getByRole("radio", { name: "Send now", exact: true }).check(); await input().press("Enter");
+      await expect(page.getByRole("alert").filter({ hasText: "Verify restored knowledge references" })).toBeVisible();
+      await expect(input()).toHaveValue(original); expect(postRows()).toHaveLength(baseline.length);
+      await knowledge().click(); await expect(await searchKnowledge()).toBeChecked(); completeDraft.verificationOrder.push("knowledge"); await closeKnowledge();
+      expect(bodyReads()).toBe(readsBefore); expect(postRows()).toHaveLength(baseline.length);
+      await input().press("Enter"); await expect.poll(() => turns()[0]?.responseBody).toBeTruthy();
+      expect(creations()).toHaveLength(1); expect(postRows()).toHaveLength(baseline.length + 1);
+      const turnRow = turns()[0]!, requested = conversationTurnSchema.parse(JSON.parse(turnRow.body));
+      await expect.poll(async () => (await records(page)).find(record => record.id === turnRow.key)?.phase).toBe("accepted");
+      expect(turnRow.path).toBe(`/api/conversations/${created.conversation.id}/turns`);
+      expect(requested).toEqual({ expectedRevision: created.conversation.revision, text: original, mode: "follow-up", knowledge: [seed.citation], attachments: [fixture!.resource.reference, fixture!.secondResource.reference] });
+      requireThat(turnRow.responseBody, "The first material turn needs its actual accepted ACK");
+      const accepted = decodeConversationTurnAccepted(JSON.parse(turnRow.responseBody), created.conversation.id, requested);
+      expect(accepted.replayed).toBe(false); expect(accepted.turn.id).not.toBe(""); expect(accepted.turn.task.id).not.toBe("");
+      completeDraft.turnId = accepted.turn.id; completeDraft.taskId = accepted.turn.task.id;
+      await composer().getByRole("button", { name: `Conversation settings: ${seed.profile.configuration.model}`, exact: true }).click();
+      const settings = page.getByRole("dialog", { name: "Conversation settings", exact: true });
+      await settings.getByText("Profile identifiers", { exact: true }).click();
+      for (const value of Object.values(seed.profile.reference)) await expect(settings.getByRole("region", { name: "Requested configuration", exact: true })).toContainText(value);
+      await page.keyboard.press("Escape"); await expect(settings).not.toBeVisible();
+      const nextId = await preserveNextDraft(next), nextDraft = (await records(page)).find(record => record.id === nextId)!;
+      expect(nextDraft.data).toMatchObject({ text: next, projectId: fixture!.projectId, knowledge: [], attachments: [] });
+      expect(postRows()).toHaveLength(baseline.length + 1); expect(bodyReads()).toBe(readsBefore);
+      coverage.profileKnowledgeSteeringDraft = "PARTIAL: prepared profile/project, knowledge and two files; steering draft is not covered";
+    });
     let draftId = "";
     const originalDraftRow = async (dialog: Locator) => {
       expect(draftId).toMatch(/^draft:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i);
@@ -864,7 +981,7 @@ async function worker(init: Init) {
     try { await fixture?.close(); } catch (error) { cleanupErrors.push("fixture: " + text(error)); }
     if (coverage.materialDraft === "NOT_RUN" && coverage.textIntentDraft === "FAILED") coverage.materialDraft = "NOT_COMPLETED";
     sseDelivery.trace = fixture?.sseTrace() ?? null;
-    const result: WorkerResult = { journey: init.journey, requiredGroups, completedGroups, checks, initialization, groupTimings, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage, bodyLoss, sseDelivery };
+    const result: WorkerResult = { journey: init.journey, requiredGroups, completedGroups, checks, initialization, groupTimings, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage, bodyLoss, sseDelivery, completeDraft };
     const raw = JSON.stringify(result, null, 2); requireThat(Buffer.byteLength(raw) <= 2 * 1024 ** 2, "Browser report exceeds reserved bound");
     await writeFile(join(init.directory, "browser.json"), raw, { mode: 0o600 });
     process.send?.({ kind: "result", result }, () => { process.disconnect(); });

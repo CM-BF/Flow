@@ -327,6 +327,7 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
   const measureWire = () => { wireBytes = Buffer.byteLength(JSON.stringify(wire)); assert.ok(wireBytes <= 1024 * 1024, "Fixture wire budget exceeded"); };
   const lifecycle = new AbortController(), bound = AbortSignal.any([signal, lifecycle.signal]);
   let sseTaskId: string | undefined, sseObserver: RecoverySseObserver | undefined;
+  let completeDraftSeeded = false;
   const publicServer = httpServer(async (request, response) => {
     responses.add(response); response.on("close", () => responses.delete(response));
     const path = request.url ?? "/";
@@ -450,6 +451,28 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
     await checkpoint();
     return { url: url + "/?recovery=1", token, wire, resource: resource.resource, secondResource: secondResource.resource, conversationId: conversation.conversation.id, projectId: project.snapshot.project.id, close,
       dropNext(kind: typeof lost) { lost = kind; },
+      async seedCompleteDraft() {
+        assert.equal(completeDraftSeeded, false, "Only one complete-draft publisher is allowed");
+        completeDraftSeeded = true; await checkpoint();
+        // Registration publishes a declaration only: no runner process, claim, heartbeat or provider.
+        // This public API has no signal; the existing whole-worker deadline bounds its await.
+        const registration = await client.registerRunner({ name: "Recovery synthetic profile publisher", harnesses: ["claude"], capacity: 1 });
+        await checkpoint();
+        const publisher = new FlowClient({ baseUrl: center, token: registration.token });
+        const { profile } = await publisher.publishExecutionProfile({ configuration: {
+          harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model: "recovery-complete-draft",
+          thinking: "disabled", permissionMode: "dontAsk", access: "none", requireReadApproval: false,
+          materialScopeDigest: createHash("sha256").update("[]").digest("hex"),
+          limits: { maxTurns: 2, maxBudgetUsd: 0.2, timeoutMs: 60000 },
+        } }, bound);
+        await checkpoint();
+        const title = "Recovery complete knowledge", query = "recoverycomplete", text = "recoverycomplete knowledge 中文🙂";
+        const accepted = await client.createKnowledgeSource(project.snapshot.project.id, { expectedVersion: 0, title, text }, randomUUID(), bound);
+        await checkpoint();
+        const citation = { projectId: project.snapshot.project.id, sourceId: accepted.source.id, version: accepted.version.version,
+          contentDigest: accepted.version.contentDigest, locator: { kind: "utf8-bytes" as const, start: 0, end: Buffer.byteLength(text) } };
+        return { profile, title, query, citation }; // Only public metadata leaves this helper; never the registration token.
+      },
       async seedSseTask() {
         assert.equal(sseTaskId, undefined, "Only one SSE seed task is allowed"); await checkpoint();
         const accepted = await client.submit({ title: "Recovery SSE 中文🙂", prompt: "Observe public cancellation 中文🙂", harness: "fixture" }, randomUUID());
