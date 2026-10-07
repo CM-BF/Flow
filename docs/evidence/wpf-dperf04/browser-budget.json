@@ -1,13 +1,12 @@
 {
   "complete": true,
-  "spentMs": 24464,
+  "spentMs": 33617,
   "limitMs": 60000,
   "cleanupReserveMs": 15000,
-  "run": "links-20261007-084805-5ae2a4",
-  "supervisorResult": "/private/tmp/dperf-c3/result.json",
-  "state": "PASS",
+  "run": "timing-20261007-090052-9b6b73",
+  "supervisorResult": "/private/tmp/dperf-consumers/result.json",
+  "state": "FAILED",
   "stopSignal": null,
-  "reportedParentSpentMs": 24399,
-  "conservativeCharge": "17343 prior + ceil(max outer7120.3628, late7058, parent7056))=24464",
-  "outerActual": "docs/evidence/wpf-dperf04/reentry-20261007/browser-task-links/outer-actual-exit.json"
+  "remainingMs": 26383,
+  "accounting": "ceil(max(actual outer9152.92075, terminal9086, parent9083))=9153; earlier parent budget preserved in browser-timing-first/parent-budget.json"
 }
