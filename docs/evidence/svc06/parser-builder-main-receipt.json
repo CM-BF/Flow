@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-07T03:07:14.940864+00:00",
+  "sourceTarget": "b21890799fe11b8f1937e4b08382c997877f6d53",
+  "delivery": "59c0fccb41e33076d50c5f782683c9f3fd25061e",
+  "main": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+  "remoteMainAtLeadReceipt": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+  "remoteObservation": "Execution Lead receipt; not a new remote fetch",
+  "comparison": [
+    {
+      "path": "package.json",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def",
+      "same": true
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b",
+      "same": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/artifact.test.mjs",
+      "bytes": 4145,
+      "sha256": "4a2016a00525d055e35d6839aba30ced581afeb7dc6f3b26c592bacc77b05de2",
+      "same": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca",
+      "same": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 6852,
+      "sha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62",
+      "same": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "bytes": 6619,
+      "sha256": "e3418512936a8c5335644a114c900ab54d5b159f812cb3e2abc7d1a107ab694d",
+      "same": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+      "bytes": 10065,
+      "sha256": "8910694db7703df55997eec0a68716b17a877705f4c8b0108ecfc23cce1de5ce",
+      "same": true
+    }
+  ],
+  "canonical": {
+    "path": "docs/evidence/i02/svc06-parser-builder-intake.json",
+    "ref": "a2e7803161ffb7e2158eaf3c13531448d2a777b0",
+    "sha256": "278b214d12a30bc87a389e45a0ff181c3d37ae7c0eb9f5c248d711caae394112",
+    "bytes": 1092
+  },
+  "scope": "limited parser/builder delivered; full artifact still NOT_RUN",
+  "newTests": 0
+}
