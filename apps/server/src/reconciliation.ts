@@ -112,7 +112,7 @@ export async function retryReconciled(pool: Pool, boss: PgBoss, taskId: string, 
     const { task, attempt } = await lockExpectedAttempt(client, taskId, input);
     // Generic recovery cannot discard frozen package identity or authorize another invocation.
     if ((await client.query('SELECT 1 FROM flow.plugin_tool_bindings WHERE task_id=$1', [taskId])).rowCount) {
-      throw new HttpError(409, 'plugin_recovery_requires_binding', 'Plugin recovery requires an explicitly preserved binding and side-effect decision.');
+      throw new HttpError(409, 'plugin_recovery_requires_binding', "Generic retry cannot preserve this plugin task's package and configuration. The original task is retained; automatic re-execution is blocked.");
     }
 
     const resolution = (await client.query<AuditRow>(

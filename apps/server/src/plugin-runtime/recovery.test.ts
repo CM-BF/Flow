@@ -28,7 +28,7 @@ function retry() {
   return retryReconciled({} as Pool, {} as PgBoss, fixture.taskId, input, 'owned-key');
 }
 test('generic retry cannot discard a frozen plugin binding or create a fixture replacement', async () => {
-  await expect(retry()).rejects.toMatchObject({ status: 409, code: 'plugin_recovery_requires_binding' });
+  await expect(retry()).rejects.toMatchObject({ status: 409, code: 'plugin_recovery_requires_binding', message: expect.stringContaining('automatic re-execution is blocked') });
   const sql = fixture.queries; expect(sql.findIndex(value => value.includes('plugin_tool_bindings'))).toBeGreaterThan(sql.findIndex(value => value.includes('flow.attempts') && value.includes('FOR UPDATE')));
   expect(sql.some(value => value.startsWith('INSERT') || value.startsWith('UPDATE'))).toBe(false); expect(fixture.wakes).toBe(0); expect(sql.at(-1)).toBe('ROLLBACK');
 });
