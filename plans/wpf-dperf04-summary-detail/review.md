@@ -63,3 +63,7 @@ root授权日期专测维护固定 `1441d86baa40e98f4cb81b82dcc551202973209b`：
 ## 当前组合直接结果与浏览器边界
 
 cfd5 Node9叶+父10/10已由root限定独审接受：[原件](../../docs/evidence/wpf-dperf04/reentry-20261007/root-dperf04-composed-node-actual-review-20261007.json)。首summary实际FAILED，6组/0PNG，完整清理；后继1c1901ebcda1bb9a711fd75684276df009b3e3f8仅被动原生close同步，尚未复验。全片UNKNOWN，不继承直接PASS为browser/main/deploy。
+
+## 当前浏览器阶段结算
+
+summary固定1c190为9组+2PNG PASS，关联固定c989为6组+5PNG PASS，原summary首FAILED保留；actual双次exit0/EOF与owned清理均完整。累计24464ms、余35536ms，本段raw待root独立实际核验。当前08e9ee7e23157268d44bd2fdd460929a4ca5e626仅新增Timing/ACCESS受监督调用适配，NOT_RUN；全片维持UNKNOWN，无main/部署结论。

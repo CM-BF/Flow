@@ -1,6 +1,6 @@
 {
   "state": "SOURCE_READY_NOT_RUN",
-  "implementationTarget": "c989257251713b699d682c77f949db5bf21f29ac",
+  "implementationTarget": "08e9ee7e23157268d44bd2fdd460929a4ca5e626",
   "oldSummaryTarget": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
   "accessTimingInput": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
   "sourceSupplyCommit": "aa9cb2d5ba053dd264645d98819cb1cb60e89b2f",
@@ -68,8 +68,8 @@
     },
     {
       "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
-      "bytes": 33722,
-      "sha256": "9261c43a3cc9ed945595cff037e40ed8296d9f30467e7b93bc2b6c678938d932",
+      "bytes": 34645,
+      "sha256": "54cf28b6dd4afc6e5734a0ceebd4d0c73655ac11a54ee4aa7e5dea00fd2c5ab0",
       "role": "owned-source"
     },
     {
@@ -80,14 +80,14 @@
     },
     {
       "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
-      "bytes": 13126,
-      "sha256": "62912f7dece3c730e2cc466101f98cb1e04adf3a0a81ec7c37f19a8260872fea",
+      "bytes": 13906,
+      "sha256": "c58e1f9410ac22184e3f5f0910c6c3a05e98f8c060b8f8774dab27e48b257616",
       "role": "owned-source"
     },
     {
       "path": "apps/execution-dashboard/test/local-access.browser.mjs",
-      "bytes": 10559,
-      "sha256": "4266ca04c228ef574dbf0b4f2dd9a688e56b8c6abc387ac9c7cc0ba49a959dc8",
+      "bytes": 11227,
+      "sha256": "281d0ff1cb00ddfdee85d7379c22f0e190cc4674f5bcfdf17ee05aad43a48be9",
       "role": "owned-source"
     },
     {
@@ -136,6 +136,6 @@
   "oldNodeRuntimeMs": 3950,
   "browserRuntimeMs": 0,
   "browserBudgetMs": 60000,
-  "runtimeState": "Summary9PASS on1c190; task-links native-close synchronization only NOT_RUN",
-  "previousTarget": "1c1901ebcda1bb9a711fd75684276df009b3e3f8"
+  "runtimeState": "Prior summary9PASS and task-links6PASS; new Timing/ACCESS adapter NOT_RUN",
+  "previousTarget": "c989257251713b699d682c77f949db5bf21f29ac"
 }
