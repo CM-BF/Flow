@@ -62,7 +62,7 @@ if mixed_query:
     ast.parse((HERE/'prepare-run.py').read_text())
     commands = [(NODE, '--test', '--test-reporter=spec', str(HERE/'mixed-query.test.mjs'))]
 output_cap = 131072 if path_contract or mixed_query else 262144
-save('reservation.json', {'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'argv':argv if not (review_fixes or work_environment or retry_arguments or path_contract) else None,'commands':commands,'freeBytes':free,
+save('reservation.json', {'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'argv':argv if not (review_fixes or work_environment or retry_arguments or path_contract or mixed_query) else None,'commands':commands,'freeBytes':free,
   'runtimeBudgetSeconds':20 if path_contract else 10,'rawBytesCap':output_cap,'scratchBytesCap':2097152,'scratch':str(scratch),'dev':before.st_dev,'ino':before.st_ino,
   'pythonAST': 'PASS' if host_guard or review_fixes or work_environment or retry_arguments or path_contract or mixed_query else 'NOT_SELECTED',
   'databaseSchema': {'source': '098b0d51512dfaa04c30ca7cbe103684720fe29f', 'path': 'apps/server/src/database.ts', 'sha256': schema_sha} if mixed_query else None,
