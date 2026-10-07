@@ -12,9 +12,9 @@ status Module 解析顶层三字段，返回 timing（声明、规范 UTC、独�
 
 ## TODO
 
-- [ ] TIMING01-01：严格三字段解析、异常隔离与旧记录兼容。
+- [x] TIMING01-01：严格三字段解析、异常隔离与旧记录兼容。
 - [ ] TIMING01-02：摘要/详情显示时间与同快照历时、失败旧快照降为历史。
-- [ ] TIMING01-03：有界 parser 行为检查，原始失败保留；browser 源码准备。
+- [x] TIMING01-03：有界 parser 行为检查，原始失败保留；browser 源码准备。
 - [ ] TIMING01-04：隔离 browser 验收（另实际窗口），固定独审。
 - [ ] TIMING01-05：Lead 主线接收，本片交付；部署单独记录。
 

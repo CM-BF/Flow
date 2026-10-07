@@ -1,0 +1,185 @@
+{
+  "implementationTarget": "72a9407e2e733479631b9409c36113e8f450b6f1",
+  "base": "18144593a0f210e8d5b9b2c08f4ff62259c07cf5",
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+      "bytes": 8548
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "a7477b523ee7dbb6740628b7b3d4871a62de5e22845d94be45ca86215fe6d945",
+      "bytes": 22669
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "sha256": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d",
+      "bytes": 11861
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "sha256": "8d7c14d28cb16c64fab1c288854961cfdcefc7eab9451f63ece27aff662a2265",
+      "bytes": 10811
+    }
+  ],
+  "protected": [
+    {
+      "path": ".gitignore",
+      "sha256": "677d39b3228b53937e669987421278ac9aa382172aacf8002a7ca7822367bc27"
+    },
+    {
+      "path": "AGENTS.md",
+      "sha256": "a4cd28f20ea9652e66859354a36f3ba9b8c5cda31fbfff37deef22c7802b4ddf"
+    },
+    {
+      "path": "apps/execution-dashboard/README.md",
+      "sha256": "068205346f4e98b1cf8e73c4daa2bd21f3054282f295b76fbba6f2a1091545a3"
+    },
+    {
+      "path": "apps/execution-dashboard/package.json",
+      "sha256": "8492f44ae6f90dd60a76676f84801f1048256abd5c79b708126358731da8d8aa"
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800"
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.css",
+      "sha256": "648b22fde8ee6361d6904cfe9a60254a646141d89e24ccd03e15c19172709780"
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.js",
+      "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4"
+    },
+    {
+      "path": "apps/execution-dashboard/public/index.html",
+      "sha256": "bb1bfbefd5cf80794f658a32b4530bfc28a18d08d09978fb8a8461b69e8a8614"
+    },
+    {
+      "path": "apps/execution-dashboard/public/styles.css",
+      "sha256": "c90e9212ae2ab542232e5bd53c264aadc611beda24fa85e94a82b6b252281c2c"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee"
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/cli.mjs",
+      "sha256": "a3fdc296e1af25050453f253776c0c80b506ae3bfee14ee5384f13bc3425ff87"
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/input.mjs",
+      "sha256": "d950149a4c173dfef82912b207635750ccd3a9c318cebf7d140c18a1c9af2fa1"
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5"
+    },
+    {
+      "path": "apps/execution-dashboard/src/documents.mjs",
+      "sha256": "e7cddf2b66762c728192280d3823ee8df12f2de324307ea31e9bc0ecfd0998a3"
+    },
+    {
+      "path": "apps/execution-dashboard/src/git-snapshot.mjs",
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a"
+    },
+    {
+      "path": "apps/execution-dashboard/src/human.mjs",
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074"
+    },
+    {
+      "path": "apps/execution-dashboard/src/proof.mjs",
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8"
+    },
+    {
+      "path": "apps/execution-dashboard/src/registry.mjs",
+      "sha256": "b110b910f14df5866f39aa3f47b44162aea579be5f65ab0ca77ccedb4ca7b1a0"
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "sha256": "b93a77a17655ac777e07f9edbe0f47738cb34ddfc9dfa63e3099cd7372dc7be4"
+    },
+    {
+      "path": "apps/execution-dashboard/src/task-links.mjs",
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4"
+    },
+    {
+      "path": "apps/execution-dashboard/test/fixture.mjs",
+      "sha256": "2d4bb9ab3f1d51456e4c2b7930f2306496b02bc39c876ff21c270d276bb7f757"
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-links.browser.mjs",
+      "sha256": "6476a888d8b5b0a3d8919653679bb4d19bb6ee261ca5d4fb9be90ee37b88c103"
+    },
+    {
+      "path": "docs/quality/local-validation.md",
+      "sha256": "b07b74207e5e34720adc4773cc73d0cb51bf2d41e3984bf75765562d79b6ebde"
+    },
+    {
+      "path": "package.json",
+      "sha256": "20530cc0d627eb33f8a68d47e43c6dbf4ac2bc1679c01bc2de4e762b7321f20f"
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "sha256": "b3af7284e0f6835650f997e73280c511d1fe26914d1c0ace12804a16cb0f0f7d"
+    },
+    {
+      "path": "plans/README.md",
+      "sha256": "2c90675740bdbb63b388646a11006e481ccbe8116525ac32034cd14e983a8ab3"
+    },
+    {
+      "path": "plans/d01-execution-dashboard/plan.md",
+      "sha256": "7507c21c6879a5fe6ed334d2aa1f14270079386eb6437a409673f65a07dafba9"
+    },
+    {
+      "path": "plans/d01-execution-dashboard/review.md",
+      "sha256": "23765e9c84ebefecff6dcfcf40be5dbd1d367ef06bff233eb61cb5ed9f9fdd71"
+    },
+    {
+      "path": "plans/d01-execution-dashboard/status.md",
+      "sha256": "16ace0aacf77a84b7ccd82459b6320a8c3f2ba3010eb9ef991fe9637968a88e2"
+    },
+    {
+      "path": "plans/templates/plan.md",
+      "sha256": "8ac39aa61957fc076c25c85ad860517d878c05176d4f4cb2bb9e475015005ef4"
+    },
+    {
+      "path": "plans/templates/review.md",
+      "sha256": "42437867857b38237312e2f726dad590a1f09a6d1ea9d4ae4df01db7794bd3d5"
+    },
+    {
+      "path": "plans/templates/status.md",
+      "sha256": "57d81bae9a88c5b977bd2f39b21c23deb19f146d23560f1703c2666e510b5bfc"
+    },
+    {
+      "path": "pnpm-lock.yaml",
+      "sha256": "b15f12ee49a8d9adcfed0e461169e64072776c4a951cf0b091a6afb4ad35f9a2"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65"
+    }
+  ],
+  "parserRecord": [
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/parser-first/result.json",
+      "bytes": 857,
+      "sha256": "56fb74e3d99cc810ad70c53aae4be13704e8a13955d4a4153bc755a2c17bd7dc"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/parser-first/stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-task-timing/parser-first/stdout.log",
+      "bytes": 7070,
+      "sha256": "2161598203b10fe23da43eef06566ed6eac55e23c7bd097aa642987046f3889f"
+    }
+  ],
+  "parserEvidence": "81/81; 70.313125ms Node,169ms parent; only parser/test hashes match actual run",
+  "browser": "NOT_RUN",
+  "review": "NOT_STARTED",
+  "main": "NOT_INTEGRATED"
+}
