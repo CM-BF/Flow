@@ -1,0 +1,152 @@
+{
+  "base": "9816e87a7690d7d36ac25cb8537bc9c8f41364c8",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/lazy-reasoning-reads",
+  "branch": "codex/lazy-reasoning-reads",
+  "files": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 18655,
+      "sha256": "97c72b406c9d97af821a59662daf1ec91588a0ef12c612cfdf9a9a99b28cf348"
+    },
+    {
+      "path": "apps/server/package.json",
+      "bytes": 552,
+      "sha256": "55219b0d08e81fe928ecc85679b1f47f0e496f7e56bf40c71b24b0c131bd079e"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/codex.test.ts",
+      "bytes": 4859,
+      "sha256": "0bb270264817fb37fdf86d94db3a5749ded027e6f685d3176b8c90f61bb901bd"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "bytes": 2339,
+      "sha256": "49fa2798388f39339816ebf9c3a247aade123ad61bb231127a25d4dfec9cd3b7"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/migration.test.ts",
+      "bytes": 3350,
+      "sha256": "dee7ca4b30618f90e1f3c8cff7bcc92cfc94c19e47669d7555cb6bdb01a9c2ff"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/prefix-hash.test.ts",
+      "bytes": 12665,
+      "sha256": "cdfd2f9ba4d056346ee24e80826fb87aeef20b7b2d85e48039722bf91c0f632e"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/public-stream-pg.test.ts",
+      "bytes": 14931,
+      "sha256": "ab036c260a442179cb0f08f12e0c36d822070e4837b03be34e54f26087679937"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "bytes": 6114,
+      "sha256": "5459fe4828791bcc49d4876d91400141f5a5d5085d6dfe799731a547af42da43"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/settlement.ts",
+      "bytes": 5744,
+      "sha256": "03d6220462c337cc6d794fd5c270a4c1e850a0e0e19ce33fadddd52b57e72fc8"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/store.ts",
+      "bytes": 5750,
+      "sha256": "d9a3b8c958849eb755ffd2a47443e4ec054015a95ce4ff9c4d06b3beccb69e37"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/stream.test.ts",
+      "bytes": 24960,
+      "sha256": "e3307e4bbd9eedd903086bd2fd3218d33f35d653a37fea94e623aca330492bff"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/task-head.test.ts",
+      "bytes": 9907,
+      "sha256": "2fc6f6ac9f77a65c609d87a092ec6d47c4286e80e9c2568c2405f81155177d71"
+    },
+    {
+      "path": "docs/quality/local-validation.md",
+      "bytes": 22908,
+      "sha256": "345b31884e4eeb520eeb285d986b68ad8ef8be0d72a6154068b20af185e8b4d7"
+    },
+    {
+      "path": "package.json",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def"
+    },
+    {
+      "path": "packages/client/package.json",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.test.ts",
+      "bytes": 1671,
+      "sha256": "876427e7ded3a95405bb71761b391712753192fbfc666f1b5f395db2272065e0"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "bytes": 6713,
+      "sha256": "3b1a0e6a5780872707743962a71059cde7174bf4eba7320e6ca26d3443bbd49b"
+    },
+    {
+      "path": "packages/interaction/package.json",
+      "bytes": 381,
+      "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa"
+    },
+    {
+      "path": "packages/interaction/src/stream/codex.test.ts",
+      "bytes": 6451,
+      "sha256": "0ec25de34364c6f1fc5d3166ae9de4a7be441af4cf142d7ffbe0289cabfb6878"
+    },
+    {
+      "path": "packages/interaction/src/stream/index.ts",
+      "bytes": 98,
+      "sha256": "a361f4a3953bd6abd4aecee7c05de7d4ec1320238e986157db273a7ed58c2f79"
+    },
+    {
+      "path": "packages/interaction/src/stream/patches.ts",
+      "bytes": 13765,
+      "sha256": "da7bbdfc5a8fd3ea5cf87c17d9e1ec3aa9a9851b1c45a8ba7c043e9ba7eda72c"
+    },
+    {
+      "path": "packages/interaction/src/stream/presentation.test.ts",
+      "bytes": 2033,
+      "sha256": "e754a26ca00dda812d26a2adba291f51952e7f7a256b93f9570b1f4cd91fd13c"
+    },
+    {
+      "path": "packages/interaction/src/stream/presentation.ts",
+      "bytes": 6328,
+      "sha256": "a8d1a8bf51554f5250e99667a2e4cd746cf789e9a00500f9e980e9924b56e087"
+    },
+    {
+      "path": "packages/interaction/src/stream/projection.ts",
+      "bytes": 11315,
+      "sha256": "2b04333c32167b56c3e4d3ee790efff1510e96d72ed207b06790c2b9c638d9a7"
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "bytes": 17734,
+      "sha256": "2a2c768af0a62e6cd7ef7500cbbeadc42eb435d41d29eb8e806142a0072e819e"
+    },
+    {
+      "path": "pnpm-workspace.yaml",
+      "bytes": 40,
+      "sha256": "60ce4d1dbf137701a4683d171391c51662700c2f3e32a7caab8b2efc22540e65"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    }
+  ],
+  "totalBytes": 200978,
+  "verifiedAt": "2026-10-07T07:20:14.993612+00:00",
+  "result": "READY_SOURCE_ONLY",
+  "dependencyLinks": 0,
+  "engineeringRuns": 0
+}

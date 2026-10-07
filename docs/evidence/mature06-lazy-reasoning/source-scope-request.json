@@ -1,0 +1,25 @@
+{
+  "taskId": "MATURE06-LAZY01",
+  "existingMetadata": [
+    "plans/mature06-lazy-reasoning",
+    "docs/evidence/mature06-lazy-reasoning"
+  ],
+  "append": [
+    "packages/contracts/src/assistant-stream.ts",
+    "apps/server/src/assistant-stream/index.ts",
+    "apps/server/src/assistant-stream/queries.ts",
+    "packages/interaction/src/stream/projection.ts",
+    "packages/interaction/src/stream/patches.ts",
+    "packages/interaction/src/stream/presentation.ts",
+    "packages/contracts/src/assistant-stream-selection.test.ts",
+    "apps/server/src/assistant-stream/selection.test.ts",
+    "packages/interaction/src/stream/selection.test.ts"
+  ],
+  "exclusions": [
+    "packages/client/src/index.ts",
+    "packages/contracts/src/index.ts",
+    "Web/App/Thread/Recovery"
+  ],
+  "handoff": "c02-handback-receipt.json",
+  "state": "PROPOSED_NOT_CLAIMED"
+}
