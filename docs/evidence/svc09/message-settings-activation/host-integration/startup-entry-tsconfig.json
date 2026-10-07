@@ -4,7 +4,12 @@
     "noEmit": true,
     "typeRoots": [
       "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types"
-    ]
+    ],
+    "paths": {
+      "pg": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/@types/pg/index.d.ts"
+      ]
+    }
   },
   "include": [
     "../../../../../apps/server/src/main.ts",

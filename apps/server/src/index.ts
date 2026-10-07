@@ -147,7 +147,7 @@ export async function createServer(options: ServerOptions) {
       for (const [name, scan] of [['ready-conversation', scanConversationQueue], ['ready-goal', scanGoalProgressions]] as const) {
         if (closing) break;
         try {
-          const result = await withStartupPhase(startupScan ? options.startupObserver : undefined, name, () => scan(pool, boss));
+          const result = await withStartupPhase<{ errors: readonly unknown[] }>(startupScan ? options.startupObserver : undefined, name, () => scan(pool, boss));
           for (const error of result.errors) app.log.error(error);
         }
         catch (error) { app.log.error(error); }
