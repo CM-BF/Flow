@@ -23,7 +23,7 @@
 
 ## 授权顺序与进程消息
 
-默认 Node fork IPC 在 message listener 前已解析整包，不适合把 listener 的 schema 检查当接收字节上界。选择本 executor 专用的 length-prefixed UTF-8 JSON：parent 写 stdin，child 写独立 fd3；stdout/stderr 只作有限诊断。4-byte unsigned BE 前缀，先检查长度才分配帧缓冲/解码/JSON.parse；fatal UTF-8、strict schema、每方向单在途请求、写背压、不排无界队列。输入是流字节上界，不承诺 OS 单 chunk 分配或整个 Node heap 上界。
+默认 Node fork IPC 在 message listener 前已解析整包，不适合把 listener 的 schema 检查当接收字节上界。选择本 executor 专用的 length-prefixed UTF-8 JSON：parent 写 stdin，child 写独立 fd3；stdout/stderr 只排空并计字节，不作为文本诊断。4-byte unsigned BE 前缀，先检查长度才分配帧缓冲/解码/JSON.parse；fatal UTF-8、strict schema、每方向单在途请求、写背压、不排无界队列。输入是流字节上界，不承诺 OS 单 chunk 分配或整个 Node heap 上界。
 
 所有帧含固定 protocol、私有随机 invocation nonce、单调 sequence 和 binding/invocation/task/attempt/ownerVersion 身份。parent 用自己冻结的原 binding 构造真实授权，不采信 child 传来的新身份。协议只容纳 hello/init、ownership-check/reply、authorize(load/invoke)/reply、result/error、abort；重复/错序/未知字段/截断/多结果拒绝。最多 16 个完整帧/方向，5 次 ownership-check、2 次 authorize；严格顺序沿 host.ts:70–81，不提前批量授权或缓存一个 phase ACK 给下一 phase。parent 每次处理桥接及发送 ACK 前检查 Abort/ownership，worker 收到 ACK 后再过原 host ownership gate。阶段 timeout 沿现请求期限，不以总执行期限延长 authorization 请求。
 
@@ -34,7 +34,7 @@ load 请求前完成资源身份 receipt 持久化；load grant 后才动态 imp
 | init ≤192 KiB | input 原16 KiB UTF-8 最坏 JSON 转义≤96 KiB；configuration 已编码 JSON≤16 KiB；root≤4096 UTF-16 units 最坏≤24 KiB；artifact/UUID/nonce/store/协议与标点保守≤8 KiB，总≤144 KiB。parent 先核原 allowlist，再只发送所选已授权 digest，不复制512项名单。实现必须在真实 encoder 输出复核总长，测试最坏 escape。 |
 | result ≤128 KiB | content 原16 KiB UTF-8 最坏≤96 KiB，加受限 provenance/标点远低于余量；身份必须精确等原 binding/material。 |
 | control ≤4 KiB；每方向总≤256 KiB | 固定短 error code，不跨帧传任意 Error/stack。init/result 特例各仅1帧；message count 与累计字节均硬拒绝，空白也计。 |
-| stdout+stderr 合计≤16 KiB | drain 两管，溢出触发停止并保首失败；不把原 input/config/token 写诊断。不得日志截断后冒完整成功。 |
+| stdout+stderr 合计≤16 KiB | 始终 drain 两管并仅累计字节/EOF；不decode、不保留ring buffer、不落盘、不转发console、不附加到Error/stdout/UI。超过合计上限停止child，只记录固定安全码 `DIAGNOSTIC_OUTPUT_LIMIT`。插件可能console输出input/config，故cap不是保密措施；首片不提供开启正文采集的选项。 |
 
 帧限制覆盖合法现16 KiB工具文本与config。若实现发现合法身份编码超过推导，先修计算/设计，不默删字段或缩小旧 public Interface。
 
@@ -50,11 +50,29 @@ load 请求前完成资源身份 receipt 持久化；load grant 后才动态 imp
 
 初始策略候选为 work≤10s、TERM grace≤1s、KILL grace≤1s、最终记录≤1s（13s 单 invocation 预算），外层 runner shutdown 取其更早期限；不是硬实时或 RSS 限制。只通过本次创建且仍具确定身份的 child handle 发信号，绝不扫描/按任意 PID 杀进程。最窄首片仅纳管 direct child，不以 process group closure 推断逃逸后代不存在；新模式信任前提明确禁止插件创建长期子进程，但当前没有 OS 强制能力，不能据此证明无后代。
 
-`result`、child exit、协议 EOF、stdout/stderr EOF、资源身份及业务 effect 是不同事实。仅有效单结果 + exit0 + 所有捕获 EOF/完整字节 + 确定 direct-child closed + 最后 parent ownership 检查通过，才交回成功结果供原 execution/outbox 使用。若结果已收到但 child 未闭合/清理未知，保留 primary 与资源 identity，返回 unsettled；不提前发布成功。diagnostic 截断/错帧/身份变化/信号失败/最终所有权未知均不能提升为 closed。初始可恢复的观察未知和最终事实分开记录，不吞历史。
+`result`、child exit、协议 EOF、stdout/stderr EOF、资源身份及业务 effect 是不同事实。仅有效单结果 + exit0 + 协议帧完整且各管 EOF/字节计数完整 + 确定 direct-child closed + 最后 parent ownership 检查通过，才交回成功结果供原 execution/outbox 使用。若结果已收到但 child 未闭合/清理未知，保留 primary 与资源 identity，返回 unsettled；不提前发布成功。diagnostic 超限/错帧/身份变化/信号失败/最终所有权未知均不能提升为 closed。初始可恢复的观察未知和最终事实分开记录，不吞历史。
 
 parent cancellation/shutdown/失权会请求 abort 并按有界策略停止自己的 child。load 已获准后即可能有副作用：即使最终确认进程已死，业务仍可能 OUTCOME_UNKNOWN，不能自动换 key/重发/声称撤回。错误/cleanup 次失败不能覆盖原非 Error 失败。无主失败而 cleanup 失败也不能报成功。
 
-parent 硬崩溃/SIGKILL 不保证 child 同时死亡，尤其 child 无限循环时不能依赖 EOF handler。实施要在 load grant 前持久化小型 resource receipt，关联原 admission assignment 与 nonce/启动身份；它只记录资源，不复制业务状态。重启仍由原 journal/outbox决定未知，未闭合 receipt 阻止新模式再次执行该 assignment；不得按裸 PID 自动清理或重放。恢复/确切身份验证是明确后继，不把首片 graceful shutdown 测试充作 crash cleanup 证明。
+parent 硬崩溃/SIGKILL 不保证 child 同时死亡，尤其 child 无限循环时不能依赖 EOF handler。load grant 前的 resource receipt 仅记录纳管资源；业务未知仍由原 journal/outbox决定。首片重启只能有界读取资源事实并拒绝不确定的执行，不能按裸 PID 清理、从 receipt 重建业务成功或重放。完整 crash recovery 为明确后继，不把 graceful shutdown 测试充作其证明。
+
+## Resource receipt 的有限生命周期（P2 修正）
+
+资源记录限于一个既有 runner 私有工作目录下的固定 root，不能由 binding/task 或 child 指定。root、receipts、scratch 都须为 owner uid 的0700真实目录；创建前核绝对规范路径及既有父目录链不含symlink，打开目录用 `O_DIRECTORY|O_NOFOLLOW`，fstat确认类型/uid/mode，保存dev/ino并持有句柄。每次路径操作前后复核根身份，漂移/权限不支持即停止新模式并保UNKNOWN；这是可信同uid进程间的完整性检查，不冒OS强隔离或抵挡恶意同uid ancestor race。
+
+| 项目 | 硬入场界限 / 行为 |
+| --- | --- |
+| receipts数量 | 固定32个slot，包含active、reserved、closed-but-not-removed和unknown；每slot一个≤4096B strict JSON，更新时允许一个同样≤4096B `.next`。另只有一个≤4096B root-owner marker，最多65个regular文件、总encoded JSON≤266240B（260KiB）。无append日志、历史receipt副本或任意文件名。 |
+| 并发与预算预扣 | runner factory串行短临界段检查/预留slot与最坏更新空间，先 `O_CREAT|O_EXCL|O_NOFOLLOW` 创建0600 reservation再spawn；每次spawn都占新slot，重用assignment命中的既有slot只能报原事实、不能重启。正常32槽耗尽拒绝新进程，不排无界等待队列。root-owner marker独占root；存在其他/旧owner marker不按超时/PID猜可抢，显式HOLD。 |
+| 文件安全 | open/read/update前后lstat与opened fstat一致，必须regular、owner uid、0600、`nlink===1`、非symlink、相同dev/ino；最多读4097B发现增长后拒绝parse。`.next`同样wx/NOFOLLOW、有限写+fsync；完成身份核验后原子rename并持久化目录，任何失败保持原/临时计入预算，不能覆盖未知文件。receipt只存固定IDs、slot相对名、nonce、父/child启动身份、phase进度与安全code/终态；无输入/config/token/console正文。 |
+| spawn到授权 | 预留前不创建scratch/child。预留后仅创建该slot的固定scratch目录并记identity；spawn后把确切child身份持久化成功才允许load grant。该更新失败或spawn结果未知，立即停止进一步phase，保reservation，进入UNKNOWN/HOLD；不能因缺PID而释放slot。 |
+| 正常清理与slot复用 | 在确定本纳管child终态、协议完整、各EOF、无cleanup未知后写固定closed资源事实；精确scratch同identity且确切空目录才普通rmdir，再对本次receipt/next做same-identity unlink并fsync目录，最后返还slot。所有原业务结果已交原journal/outbox约束，不靠保存永久receipt获得重放正确性。若清理失败或scratch非空，slot继续占用；不得递归删除或丢失首错。预算满仍允许已经占槽的child停止/上述清理，它们已预留update空间，不要求另拿新槽。 |
+| unknown保留 | 任一生命周期/持久化/身份未知不仅阻同assignment，也使该root停止所有新trusted-process入场；保留现最多32槽和现scratch identity。已有child仍能stop/有限收尾；不自动新建root/换路径绕过HOLD，不轮换删最旧记录。解除须后继明确owner处理和确切资源证明，不能仅删marker。 |
+| 重启读取 | 仅固定receipts目录，流式枚举最多66个entry（多1即超限），不递归、不跟link；只允许65个固定名，逐个4097B检测、累计≤266240B后strict parse。未知entry/type/nlink/owner/identity/超限/malformed/unfinished或旧root-owner均HOLD，原件不改、不扩扫描旧TMP或进程。最多32个scratch目录只读其根lstat身份，不枚举内容。clean退出已删除owner marker且records为空才可创建新marker；不会把既有unknown当空闲。 |
+
+root-owner marker、receipt和scratch identity都是资源事实，**不是**第二admission/业务terminal状态机。receipt的closed只证明本纳管direct child；不改变历史OUTCOME_UNKNOWN/授权key，也不授物理卸载。32槽可正常清理复用，不是终身调用配额。scratch内容、OS磁盘分配、恶意同uid写入及child后代没有硬上界保证；本元数据cap只覆盖受此Module写入的receipt表示，不能冒整个工作目录/RSS/磁盘隔离。
+
+诊断只允许有限安全字段：固定code、字节计数、EOF、exit/身份与耗时。即使包打印输入或配置，parent也只drain/discard，不持久/外显首尾片段、哈希或错误stack；应用 `PluginToolResult.content` 仍是另一个明确授权的结果Interface，不能混同为console诊断。此处字节discard是设计目的，不在receipt伪称raw retained完整。
 
 ## 复用与非目标
 

@@ -42,12 +42,13 @@
 | T1 | 默认旧mode缓存/结果不变；新mode两次顶层counter均从1开始 | 现host直消费者+新真实worker两次；不用随机URL清cache。 |
 | T2 | import hang、同步无限invoke loop分别被期限终止，parent仍能响应，原effect为unknown | process-host.test真实own Node child；观察exit/各EOF/身份，不能只assert reject。 |
 | T3 | load ACK后撤grant、lease loss或abort禁止invoke；未知load/invoke ACK不能重复 | 真实worker+原parent authorization closure；后续专库才证明server权限。 |
-| T4 | oversized/partial frame、坏UTF8/身份/phase/重复result、stdout/stderr overflow与backpressure | 同Interface有限child fixtures；cap先于parse，错误/cleanup保真。 |
+| T4 | oversized/partial frame、坏UTF8/身份/phase/重复result、stdout/stderr overflow与backpressure；console含输入/配置不落任何诊断正文 | 同Interface有限child fixtures；cap先于parse，只drain/计bytes/安全code，错误/cleanup保真。 |
 | T5 | parent graceful shutdown/ownership loss取消自己的child且outbox仍unknown；硬崩溃残留不冒closed | runtime直接consumer+resource receipt；parent SIGKILL恢复作为后继，不自动重试。 |
 | T6 | 环境无token/NODE_OPTIONS/不相关secret；固定cwd/material；不支持平台/缺入口拒绝新mode | 私有config/main与child实际看到的allowlist；不回传secret值。 |
+| T8 | 32槽/count/总bytes拒绝入场，满额仍能停止清理复用；unknown全root HOLD；symlink/hardlink/身份漂移/坏receipt/重启有界读取 | process-host私有FS反例；无递归清理/旧PID探测，不把resource receipt当业务terminal。 |
 | T7 | exact runtime artifact内worker/tsx依赖可在脱离仓库cwd加载并完成一次调用 | Original受控release闭包验证，不能以dev-tsx绿替代。 |
 
-建议最小实施先做 T1–T6 所需单 Module +真实 consumer/private opt-in，并将 T7 作为发布准入必要条件；未完成T7只能局部已验、不能宣称可部署。实现普通local候选20min、单child≤60s/累计≤120s、TMP16MiB/raw512KiB/source-meta2MiB，独立own children≤2同时；每invocation10+1+1+1s策略须在选例数量内分配。fresh资源floor/配对取当时经理更高完整sum，不复用旧窗口。0PG/Chrome/provider；类型只本模块及直接consumer。任何实际child都需后续明确普通段授权，此设计段不运行。
+建议最小实施先做 T1–T6及T8 所需单 Module +真实 consumer/private opt-in，并将 T7 作为发布准入必要条件；未完成T7只能局部已验、不能宣称可部署。实现普通local候选20min、单child≤60s/累计≤120s、TMP16MiB/raw512KiB/source-meta2MiB，插件worker串行最多1个；实际测试supervisor/driver/worker进程树另在准入列明，不能把top-level child数当全进程数；每invocation10+1+1+1s策略须在选例数量内分配。fresh资源floor/配对取当时经理更高完整sum，不复用旧窗口。0PG/Chrome/provider；类型只本模块及直接consumer。任何实际child都需后续明确普通段授权，此设计段不运行。
 
 真实中心最小后继单case复用现公开runner/授权与专库生命周期，只核phase revoke +原pin/unknown不重放，不重跑所有旧plugin PG。release/PG需要分别取得实际窗口与所属owner，预算待固定源码/闭包确定，不在本计划猜测已预约。
 
