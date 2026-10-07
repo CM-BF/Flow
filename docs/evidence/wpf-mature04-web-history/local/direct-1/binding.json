@@ -1,0 +1,68 @@
+{
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+  "head": "4366466e2685e6ac1854246a372931cb51df91c0",
+  "branch": "codex/web-context-history",
+  "declaredDirty": "",
+  "claim": "25d7e029-9334-479e-8872-61090c406e0a",
+  "claimVersion": 1,
+  "live": "/private/tmp/context-history-20261007/direct-1/live.json",
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/ContextHistoryDialog.tsx",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/ContextHistoryDialog.tsx",
+      "bytes": 7509,
+      "sha256": "d9e55366c00c96bcecd41423d825f30af957d2db34b71b67767d3fb3430fce21"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/controller.test.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/controller.test.ts",
+      "bytes": 7915,
+      "sha256": "484400b0adeaef18940cd21fada681b84ad9ffd4f822b4d872406b77ec61ce03"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/controller.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/controller.ts",
+      "bytes": 7252,
+      "sha256": "f04b52b471825041c34c5cd7d6f3bcd805939b4b7fcb147e59bbea85835add64"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/fixture.ts",
+      "bytes": 1741,
+      "sha256": "8af698ee902f92d8a4f63fe80712a4b2ea2dac4783130a7826b728ec105ebc7d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/plugin-integration/context-history.tsx",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/plugin-integration/context-history.tsx",
+      "bytes": 2748,
+      "sha256": "5074fb16ee0a27c9cd5e78db286dbf03f5ae6537215c6b87c5058c019acb742b"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/private/tmp/context-history-20261007/direct-1/sandbox.sb",
+      "realpath": "/private/tmp/context-history-20261007/direct-1/sandbox.sb",
+      "bytes": 172,
+      "sha256": "138cba7dcd2b9caaa252e791cc0adf6b4f490e4cf27f710eef765084c8ef08b4"
+    },
+    {
+      "path": "/private/tmp/context-history-20261007/direct-1/run.py",
+      "realpath": "/private/tmp/context-history-20261007/direct-1/run.py",
+      "bytes": 7606,
+      "sha256": "237a8a08a4afffd53b434faecbcbdcd058c50dc9e9cb9dd79531f59c29ce0896"
+    }
+  ],
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "--test-isolation=none",
+    "--test-concurrency=1",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/controller.test.ts"
+  ],
+  "startFreeBytes": 17479368704,
+  "stopFreeBytes": 17470980096
+}

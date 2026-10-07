@@ -1,0 +1,30 @@
+{
+  "state": "available",
+  "observedAt": "2026-10-07T22:40:20.997Z",
+  "claims": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/web/src/conversation-context-history",
+        "apps/web/src/plugin-integration/context-history.tsx",
+        "docs/evidence/wpf-mature04-web-history"
+      ],
+      "state": "active",
+      "branch": "codex/web-context-history",
+      "origin": "new",
+      "taskId": "MATURE04-05",
+      "worker": "w01_owner",
+      "claimId": "25d7e029-9334-479e-8872-61090c406e0a",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+      "createdAt": "2026-10-07T22:35:02.638Z",
+      "updatedAt": "2026-10-07T22:35:02.638Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "conflicts": [],
+  "projection": "own and all overlapping active claims only"
+}

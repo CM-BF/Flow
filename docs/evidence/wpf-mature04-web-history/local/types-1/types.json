@@ -1,0 +1,186 @@
+{
+  "compilerOptions": {
+    "noEmit": true,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "types": [
+      "node"
+    ],
+    "typeRoots": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/node_modules/@types"
+    ],
+    "baseUrl": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+    "paths": {
+      "@flow/contracts": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/packages/contracts/src/index.ts"
+      ],
+      "@flow/client": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/packages/client/src/index.ts"
+      ],
+      "@flow/protocols": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/packages/protocols/src/index.ts"
+      ],
+      "@flow/interaction": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/packages/interaction/src/index.ts"
+      ],
+      "@flow/interaction/stream": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/packages/interaction/src/stream/index.ts"
+      ],
+      "@flow/interaction/activity": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/packages/interaction/src/activity/index.ts"
+      ],
+      "@flow/interaction/goal": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/packages/interaction/src/goal/index.ts"
+      ],
+      "@flow/plugin-runtime": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/packages/plugin-runtime/src/package-store.ts"
+      ],
+      "@fastify/cors": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors"
+      ],
+      "@fastify/cors/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@fastify+cors@11.3.0/node_modules/@fastify/cors/*"
+      ],
+      "@playwright/test": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test"
+      ],
+      "@playwright/test/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/*"
+      ],
+      "@radix-ui/react-dialog": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog"
+      ],
+      "@radix-ui/react-dialog/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-dialog@1.2.0_@types+react-dom@19.3.0_@types+react@19.3.0__@types+react@19.3.0_2ynrisbyj3gbpsqpwmea6ya7oe/node_modules/@radix-ui/react-dialog/*"
+      ],
+      "@radix-ui/react-slot": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-slot@1.4.0_@types+react@19.3.0_react@19.3.0/node_modules/@radix-ui/react-slot"
+      ],
+      "@radix-ui/react-slot/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@radix-ui+react-slot@1.4.0_@types+react@19.3.0_react@19.3.0/node_modules/@radix-ui/react-slot/*"
+      ],
+      "@tailwindcss/vite": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite"
+      ],
+      "@tailwindcss/vite/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite/*"
+      ],
+      "@vitejs/plugin-react": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react"
+      ],
+      "@vitejs/plugin-react/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react/*"
+      ],
+      "class-variance-authority": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/class-variance-authority@0.7.1/node_modules/class-variance-authority"
+      ],
+      "class-variance-authority/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/class-variance-authority@0.7.1/node_modules/class-variance-authority/*"
+      ],
+      "clsx": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/clsx@2.1.1/node_modules/clsx"
+      ],
+      "clsx/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/clsx@2.1.1/node_modules/clsx/*"
+      ],
+      "fastify": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify"
+      ],
+      "fastify/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/*"
+      ],
+      "lucide-react": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/lucide-react@1.52.0_@types+react@19.3.0_react@19.3.0/node_modules/lucide-react"
+      ],
+      "lucide-react/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/lucide-react@1.52.0_@types+react@19.3.0_react@19.3.0/node_modules/lucide-react/*"
+      ],
+      "npm-package-arg": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg"
+      ],
+      "npm-package-arg/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+npm-package-arg@6.1.4/node_modules/@types/npm-package-arg/*"
+      ],
+      "pacote": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote"
+      ],
+      "pacote/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+pacote@11.1.8/node_modules/@types/pacote/*"
+      ],
+      "pg": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg"
+      ],
+      "pg/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg/*"
+      ],
+      "pg-boss": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss"
+      ],
+      "pg-boss/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/*"
+      ],
+      "react": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+react@19.3.0/node_modules/@types/react"
+      ],
+      "react/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+react@19.3.0/node_modules/@types/react/*"
+      ],
+      "ssri": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri"
+      ],
+      "ssri/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+ssri@7.1.5/node_modules/@types/ssri/*"
+      ],
+      "tailwind-merge": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tailwind-merge@3.7.0/node_modules/tailwind-merge"
+      ],
+      "tailwind-merge/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/tailwind-merge@3.7.0/node_modules/tailwind-merge/*"
+      ],
+      "tar": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar"
+      ],
+      "tar/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/tar@7.5.22/node_modules/tar/*"
+      ],
+      "vite": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite"
+      ],
+      "vite/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/*"
+      ],
+      "zod": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod"
+      ],
+      "zod/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/zod@4.6.5/node_modules/zod/*"
+      ],
+      "react-dom": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+react-dom@19.3.0_@types+react@19.3.0/node_modules/@types/react-dom"
+      ],
+      "react-dom/*": [
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@types+react-dom@19.3.0_@types+react@19.3.0/node_modules/@types/react-dom/*"
+      ]
+    },
+    "target": "ES2023",
+    "module": "ESNext",
+    "moduleResolution": "Bundler",
+    "jsx": "react-jsx",
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "lib": [
+      "ES2023",
+      "DOM",
+      "DOM.Iterable"
+    ]
+  },
+  "files": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/ContextHistoryDialog.tsx",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/controller.test.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/controller.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/conversation-context-history/fixture.ts",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/apps/web/src/plugin-integration/context-history.tsx"
+  ]
+}

@@ -1,0 +1,142 @@
+{
+  "taskId": "MATURE04-05",
+  "parentTask": "WPF-MATURE-04",
+  "managementReference": "WPF-001-09",
+  "phase": "SOURCE_LOCAL_AWAITING_REVIEW",
+  "recordedAt": "2026-10-07T22:42:12.838906+00:00",
+  "sourceTarget": "c5f896333458579b0e0fa65ba2b389e14084a81e",
+  "actualLocalTarget": "4366466e2685e6ac1854246a372931cb51df91c0",
+  "postCheckDelta": "One UI heading now says values unknown when both historical readings are unknown. No controller/type/interface change; not re-executed. Must be included in source review.",
+  "scope": [
+    "apps/web/src/conversation-context-history",
+    "apps/web/src/plugin-integration/context-history.tsx",
+    "docs/evidence/wpf-mature04-web-history"
+  ],
+  "claim": "25d7e029-9334-479e-8872-61090c406e0a",
+  "version": 1,
+  "sourcePins": [
+    {
+      "path": "apps/web/src/conversation-context-history/ContextHistoryDialog.tsx",
+      "bytes": 7641,
+      "sha256": "be9651527123445cdb07c00bb58ddc1d1869230e0a445a99a736aa1938ddd2b7"
+    },
+    {
+      "path": "apps/web/src/conversation-context-history/controller.test.ts",
+      "bytes": 7915,
+      "sha256": "484400b0adeaef18940cd21fada681b84ad9ffd4f822b4d872406b77ec61ce03"
+    },
+    {
+      "path": "apps/web/src/conversation-context-history/controller.ts",
+      "bytes": 7252,
+      "sha256": "f04b52b471825041c34c5cd7d6f3bcd805939b4b7fcb147e59bbea85835add64"
+    },
+    {
+      "path": "apps/web/src/conversation-context-history/fixture.ts",
+      "bytes": 1741,
+      "sha256": "8af698ee902f92d8a4f63fe80712a4b2ea2dac4783130a7826b728ec105ebc7d"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/context-history.tsx",
+      "bytes": 2748,
+      "sha256": "5074fb16ee0a27c9cd5e78db286dbf03f5ae6537215c6b87c5058c019acb742b"
+    }
+  ],
+  "runs": [
+    {
+      "name": "direct-1",
+      "childStartedAt": "2026-10-07T22:40:08.010451+00:00",
+      "finishedAt": "2026-10-07T22:40:08.096210+00:00",
+      "pid": 74097,
+      "exit": 0,
+      "state": "PASSED",
+      "chargeMs": 141,
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true
+      },
+      "streams": {
+        "stdout": {
+          "eof": true,
+          "bytes": 1383,
+          "dropped": 0
+        },
+        "stderr": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        }
+      },
+      "sourceHead": "4366466e2685e6ac1854246a372931cb51df91c0",
+      "terminal": "docs/evidence/wpf-mature04-web-history/local/direct-1/terminal.json",
+      "terminalSha256": "262e462fc0d6ac2a401a279b7c82db38beb1dd8d8b4b705927c5c7d540f4cf35",
+      "consumedFloor": 17479368704,
+      "firstFree": 18009448448,
+      "minFree": 18009444352
+    },
+    {
+      "name": "types-1",
+      "childStartedAt": "2026-10-07T22:40:31.428062+00:00",
+      "finishedAt": "2026-10-07T22:40:32.903285+00:00",
+      "pid": 89237,
+      "exit": 0,
+      "state": "PASSED",
+      "chargeMs": 1656,
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true
+      },
+      "streams": {
+        "stdout": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        },
+        "stderr": {
+          "eof": true,
+          "bytes": 0,
+          "dropped": 0
+        }
+      },
+      "sourceHead": "4366466e2685e6ac1854246a372931cb51df91c0",
+      "terminal": "docs/evidence/wpf-mature04-web-history/local/types-1/terminal.json",
+      "terminalSha256": "ad89350d74449a12e62e93fc68c30c347966d3f88b2f150026c54dbcde5e3624",
+      "consumedFloor": 17479368704,
+      "firstFree": 18009251840,
+      "minFree": 18008449024
+    }
+  ],
+  "budget": {
+    "limitMs": 60000,
+    "perChildMaxMs": 20000,
+    "cleanupPerChildMs": 5000,
+    "usedMs": 1797,
+    "children": 2,
+    "maximumChildren": 4,
+    "state": "CLOSED",
+    "unusedIsNotNewPermission": true
+  },
+  "resourceCorrection": {
+    "messageArrivedAfterSecondReturn": true,
+    "managerPublishedCompleteFloor": 18007851008,
+    "actualConsumedFloorWasStale": true,
+    "historicalBindingsUnchanged": true,
+    "postHocAllObservedFreeAboveCorrectFloor": true,
+    "scope": "Post-hoc comparison only. Do not claim correct complete admission was consumed."
+  },
+  "coverage": [
+    "16 controller cases actual PASS",
+    "affected strict/noUnchecked/noEmit actual PASS",
+    "no mounted App or browser/visual validation",
+    "no provider/current context window or pricing claims"
+  ],
+  "handoffNeeds": [
+    "apps/web/src/App.tsx: private authorized FlowClient reader current check before/after await, exact session/view/conversation/task generation",
+    "apps/web/src/plugin-integration/session.ts: session-owned per-view map, target/host subscriptions, registration, abort/dispose",
+    "apps/web/src/conversations/ConversationThread.tsx: stable view binding wrapper and context surface; no new draft state",
+    "apps/web/src/plugins/types.ts and validation.ts only if original owners adopt new task.context.read capability; ui.layout current plugin only opens UI, never grants reads"
+  ],
+  "parentCanonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency/plans/wpf-mature-04-context-transparency",
+  "appIntegration": "NOT_IMPLEMENTED_OUTSIDE_CLAIM",
+  "browser": "NOT_RUN",
+  "main": "NOT_INTEGRATED"
+}

@@ -1,0 +1,24 @@
+✔ closed configuration makes no read and retains a stable snapshot (0.648583ms)
+✔ one explicit read, zero estimate and distinct historical identity stay unchanged (1.290333ms)
+✔ switching A to B rejects a late A result and does not overlap an abort-ignoring read (0.279917ms)
+✔ hide aborts and makes a late success inert (0.164708ms)
+✔ disable aborts and makes a late success inert (0.165875ms)
+✔ close aborts and makes a late success inert (0.144542ms)
+✔ dispose aborts and makes a late success inert (0.102375ms)
+✔ lifetime aborts and makes a late success inert (0.127291ms)
+✔ plugin aborts and makes a late success inert (0.109541ms)
+✔ authority generation and known attempt changes invalidate the target (0.241959ms)
+✔ no current attempt and no sample are different from zero or unsupported (0.0945ms)
+✔ failure stays error, never healthy unknown; retry is explicit and sanitizes metadata (0.131625ms)
+✔ revocation before or after the await cannot publish a result (0.073583ms)
+✔ task mismatch is rejected without publishing another task's history (0.0635ms)
+✔ detail is lazy, once per sample and cleared by explicit refresh (0.144125ms)
+✔ late detail after hide and mismatched detail cannot leak into another opening (0.131583ms)
+ℹ tests 16
+ℹ suites 0
+ℹ pass 16
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 38.667292
