@@ -125,6 +125,8 @@ export interface MessageSettingsPickerProps {
   onRefresh(): void;
   onLoadMore(): void;
   details?: ExecutionProfilePickerProps["details"];
+  /** Private P01 presentation only; the host still owns C and synchronous CAS. */
+  hostControl?: { opening: symbol | null; close(): void; invoker(): HTMLElement | null };
 }
 
 type SettingsChoice = Immutable<ClaudeTurnSettings>;
@@ -175,7 +177,7 @@ export function beginMessageSettingsEdit(readCurrent: () => Pick<MessageSettings
 
 /** Only local filters/candidate live here. The host remains the sole owner of the applied draft. */
 export function MessageSettingsPicker(props: MessageSettingsPickerProps) {
-  const { catalog, context, value, editable, onRefresh, onLoadMore, details } = props;
+  const { catalog, context, value, editable, onRefresh, onLoadMore, details, hostControl } = props;
   const groupId = useId(), noticeId = useId();
   const dialog = useProfileDialog();
   const [opening, setOpening] = useState<SettingsOpening | null>(null);
@@ -212,13 +214,18 @@ export function MessageSettingsPicker(props: MessageSettingsPickerProps) {
       suppressReturnFocus.current = false;
     } else { setOpening(null); setPending(null); }
     dialog.onOpenChange(next);
+    if (!next) hostControl?.close();
   }
+  useLayoutEffect(() => {
+    if (hostControl?.opening) changeOpen(true);
+    else if (hostControl && dialog.open) changeOpen(false);
+  }, [hostControl?.opening]);
   useLayoutEffect(() => {
     current.current = props;
     const session = activeOpening.current;
     if (session && !session.reconcile()) {
       revoke(); setPending(null); setFeedback("草稿或编辑权限已变化，本次选择已失效；关闭后重新打开，当前草稿未被更改。");
-      if (!editable) { suppressReturnFocus.current = true; setOpening(null); dialog.onOpenChange(false); }
+      if (!editable) { suppressReturnFocus.current = true; setOpening(null); dialog.onOpenChange(false); hostControl?.close(); }
     }
     if (activeOpening.current && available.allowed && pending?.kind === "choice" && !pendingAvailable) {
       setPending(null); setFeedback("候选已不在当前目录中；请重新选择，当前草稿仍保留。");
@@ -249,15 +256,21 @@ export function MessageSettingsPicker(props: MessageSettingsPickerProps) {
   const staleOpening = opening !== null && !opening.isActive();
   return <div className="ep-picker">
     <Dialog open={dialog.open} onOpenChange={changeOpen}>
-      <DialogTrigger asChild><Button ref={trigger} type="button" variant="outline" className="ep-trigger" disabled={!editable} aria-label={`消息设置：${summary}`}>
+      {!hostControl && <DialogTrigger asChild><Button ref={trigger} type="button" variant="outline" className="ep-trigger" disabled={!editable} aria-label={`消息设置：${summary}`}>
         <span>{value?.requested.model ?? "下一条消息设置"}</span><span className="ep-trigger-access">{value ? describeMessageChoice(value.requested) : "不附加"}</span><span aria-hidden="true">⌄</span>
-      </Button></DialogTrigger>
-      <DialogContent className="ep-dialog" onFocusCapture={event => { if (event.target instanceof HTMLElement) focusedControl.current = event.target; }} onCloseAutoFocus={event => {
+      </Button></DialogTrigger>}
+      <DialogContent className="ep-dialog ep-message-dialog" onFocusCapture={event => { if (event.target instanceof HTMLElement) focusedControl.current = event.target; }} onCloseAutoFocus={event => {
+        if (hostControl) {
+          event.preventDefault();
+          const invoker = hostControl.invoker();
+          if (!suppressReturnFocus.current && invoker?.isConnected && invoker.getClientRects().length && !invoker.matches(":disabled")) invoker.focus();
+        }
         if (suppressReturnFocus.current || !trigger.current?.isConnected || trigger.current.disabled || trigger.current.offsetParent === null) event.preventDefault();
         dialog.onCloseAutoFocus(event);
       }}>
         <DialogTitle>下一条消息设置</DialogTitle>
         <DialogDescription>筛选当前会话可用的组合，选择后按“应用”。已发送和排队的消息保持原设置。</DialogDescription>
+        <div className="ep-settings-body">
         <section aria-label="当前草稿已应用设置" style={{ minWidth: 0, overflowWrap: "anywhere" }}><strong>{value?.requested.model ?? "不附加消息设置"}</strong>{value && <p>{describeMessageChoice(value.requested)}</p>}</section>
         <p id={noticeId} ref={notice} tabIndex={-1} role="status" className="ep-notice">{feedback ?? (!editable ? "宿主当前不可编辑。" : !available.allowed ? available.reason : pending?.kind === "choice" && !pendingAvailable ? "候选已不在当前目录中；请重新选择，当前草稿仍保留。" : "筛选和待应用选择不会改变当前草稿。")}</p>
         <div className="ep-directory-actions"><Button type="button" variant="outline" onClick={onRefresh} disabled={catalog.loading}>{catalog.loading ? "正在加载…" : "刷新设置目录"}</Button><span>{catalog.loaded ? `已加载 ${catalog.profiles.length} 项配置${catalog.nextCursor ? "，还有更多" : ""}` : "尚未加载目录"}</span></div>
@@ -278,18 +291,20 @@ export function MessageSettingsPicker(props: MessageSettingsPickerProps) {
           <label className="ep-option"><input type="radio" name={groupId} checked={pending?.kind === "omit"} onChange={() => stage({ kind: "omit" })} /><span><strong>不附加消息设置</strong><small>仅在应用后省略本次设置请求，不代表重置或继承上一条设置。</small></span></label>
           {visible.map(choice => <label className="ep-option" key={claudeTurnSettingsJson(choice)}>
             <input type="radio" name={groupId} checked={pending?.kind === "choice" && sameMessageSettings(pending.value, choice)} onChange={() => stage({ kind: "choice", value: choice })} />
-            <span><strong>{choice.requested.model}</strong><span>{describeMessageChoice(choice.requested)}</span></span>
+            <span><strong>{choice.requested.model}</strong><span>{describeMessageChoice(choice.requested)}</span>{choice.requested.model.length > 48 && <details><summary>完整模型名称</summary><span>{choice.requested.model}</span></details>}</span>
           </label>)}
         </fieldset>
         {available.allowed && visible.length === 0 && <p role="status">没有匹配的已声明组合；清除筛选或调整条件，不会自动替换其他设置。</p>}
         {catalog.loaded && !catalog.loading && choices.length === 0 && <p>当前目录没有可选组合，不会自动生成默认设置。</p>}
         <section aria-label="待应用选择" style={{ minWidth: 0, overflowWrap: "anywhere" }}>{pending?.kind === "choice" ? `${pending.value.requested.model} · ${describeMessageChoice(pending.value.requested)}` : pending?.kind === "omit" ? "不附加消息设置（待应用）" : "尚未选择，不会更改草稿"}</section>
-        <div style={{ display: "flex", flexWrap: "wrap", gap: ".5rem" }}><Button type="button" aria-describedby={noticeId} disabled={!canApply} onClick={() => apply(opening, pending)}>应用</Button><Button type="button" variant="outline" onClick={() => changeOpen(false)}>取消</Button></div>
+
         {catalog.nextCursor && <Button type="button" variant="outline" disabled={!catalog.canLoadMore} onClick={onLoadMore}>加载更多设置</Button>}
         <details className="ep-identities" style={{ minWidth: 0, overflowWrap: "anywhere" }}><summary>配置详情</summary><p>只展示当前授权配置的完整组合。这里是请求意图，实际设置与模型可用性须由执行结果确认。</p>{value && <p>当前配置 {value.profile.id} · Runner {value.profile.runnerId} · 摘要 {value.profile.configDigest}</p>}{details?.(action => {
           if (!opening || activeOpening.current !== opening) return;
           opening.navigate(() => { activeOpening.current = null; setPending(null); dialog.navigate(action); });
         })}</details>
+        </div>
+        <div className="ep-settings-actions"><Button type="button" aria-describedby={noticeId} disabled={!canApply} onClick={() => apply(opening, pending)}>应用</Button><Button type="button" variant="outline" onClick={() => changeOpen(false)}>取消</Button></div>
       </DialogContent>
     </Dialog>
   </div>;
@@ -302,4 +317,11 @@ function QuickFacet({ label, value, options, onChange }: { label: string; value:
 function describeMessageChoice(choice: Immutable<ClaudeTurnSettings["requested"]>): string {
   const effort = choice.effort.kind === "level" ? `力度${effortNames[choice.effort.value]}` : "不请求力度";
   return `${choice.thinking === "adaptive" ? "自适应思考" : "关闭思考"} · ${effort} · ${choice.speed === "fast" ? "快速请求" : "标准速度"}`;
+}
+
+/** Each renderer receives its own public frozen snapshot, never the live composer C. */
+export function MessageSettingsSummary({ value, label }: { value: Immutable<ClaudeTurnSettings> | undefined; label: string }) {
+  return <details className="ep-settings-summary"><summary><span>{label}</span><span className="ep-settings-preview">{value ? `${value.requested.model} · ${describeMessageChoice(value.requested)}` : "not attached"}</span></summary>
+    {value ? <><p>{value.requested.model}</p><p>{describeMessageChoice(value.requested)}</p><p>Profile {value.profile.id} · Runner {value.profile.runnerId} · Digest {value.profile.configDigest}</p><p>Requested only; observed execution may differ or be unavailable.</p></> : <p>No per-message settings were requested. This does not request a reset or infer inherited execution settings.</p>}
+  </details>;
 }

@@ -1,0 +1,15 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true
+  },
+  "include": [],
+  "exclude": [],
+  "files": [
+    "../../../apps/runner/src/plugins/process-host.test.ts",
+    "../../../apps/runner/src/plugins/execution.test.ts",
+    "../../../apps/runner/src/configuration.test.ts",
+    "../../../apps/runner/src/runtime.ts",
+    "../../../apps/runner/src/plugins/process-worker.ts"
+  ]
+}

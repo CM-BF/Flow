@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:19:21.845Z / main677a93e9已推；个人更新已独审/接收，204来源已实际展示 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:56:37.616Z / mainfd9dd5a9b已接MSG03、SVC09A与SVC06B产物/保留工具 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,11 +15,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origin677a93e9已接领取资格修复、个人更新结果和后继来源。个人运行仍固定7d1/source6c、accepting21，Webd629/v3；完整旧领取ACK关联UNKNOWN，未重跑个人操作。 |
+| 已集成main状态 / HEAD | main/originfd9dd5a9b已含消息设置App接线、双槽宿主源与新后台cd27实际产物证据。最后已审个人运行7d1/source6c、accepting21、Webd629/v3；本段未新采个人事实/未部署，完整旧领取ACK关联UNKNOWN。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 个人后台已完成固定版本更新并恢复接单；原会话、任务与页面保留，新的聊天能力正在接入可用版本。 |
-| 下一可用交付 | 交付支持刷新恢复的新网页与配套后台，再完成逐消息设置在个人环境中的接通。 |
+| 当前产出 | 个人后台已恢复接单；刷新恢复的新后台产物和消息设置接线已审并进入主线，实际网页仍待新组合发布。 |
+| 下一可用交付 | 完成最小新网页与固定后台的兼容验证并发布；并行验证逐消息设置的双槽宿主。 |
 | 当前阻塞 | ACTIVE: 工程写入资格仍待既有用户选择；个人更新阻塞已解除，其余聊天验证继续。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
@@ -36,6 +36,7 @@
 | FLOW-001-T04 | pending | Execution Lead | 完整范围见[验收矩阵](full-plan-matrix.md)，尚未完成 |
 | FLOW-001-T04-POOL-01 | pending | Execution Lead（实施owner未领取） | [plan.md](plan.md)的REQ-18插件组合；NOT_RUN，未扩运行预算；关联原SCAN-01 |
 | FLOW-001-T03-RESUME-01 | pending | Execution Lead排期 / 拟原中心owner | [旧会话撤销runner后续接](plan.md#聊天续接原-runner-撤销后的旧会话2026-10-07待复现)；仅固定源码候选，尚未领取或复现，不阻当前发布 |
+| CHAT05P01-06 | pending | Execution Lead / 原端owner | 底层P01/P02已交付；[唯一后继交接](plan.md#chat05-06-完整工具原文已交付底层与下一用户交付)明确SDK/CLI开通及两端共享reader，当前发布与SVC09A优先；无新writer/运行 |
 
 ## 已完成证据与检查
 

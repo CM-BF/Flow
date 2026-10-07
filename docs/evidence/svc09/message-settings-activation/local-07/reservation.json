@@ -1,0 +1,67 @@
+{
+  "at": "2026-10-07T14:26:57.721258+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--experimental-vm-modules",
+    "--test",
+    "--test-reporter=tap",
+    "--test-concurrency=1",
+    "--test-name-pattern=SVC09A aggregate maintenance|SVC09A.*controlled|SVC09A any busy",
+    "tools/personal-preview/maintenance.test.mjs",
+    "tools/personal-preview/startup-diagnostics.test.mjs"
+  ],
+  "head": "8d532613e876d34812554572fb32d46bf582de44",
+  "freeBytes": 21375512576,
+  "priorWorkMs": 3255,
+  "segmentBudgetMs": 240000,
+  "tmpCapBytes": 33554432,
+  "rawCapBytes": 2097152,
+  "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09a-0aafsgpg",
+  "dev": 16777234,
+  "ino": 124195134,
+  "PG": 0,
+  "provider": 0,
+  "browser": 0,
+  "inputs": [
+    {
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "bytes": 26916,
+      "sha256": "eed405bb4df80b285e6047bd4420979823b93e2cdc947fc94c7a1ad6e53cf6f8"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.test.mjs",
+      "bytes": 13446,
+      "sha256": "d4fa4a64baf7f108126258431cadc16ffe232aa9b7fb4b690fba01d884527a3b"
+    },
+    {
+      "path": "tools/personal-preview/runner-slots.mjs",
+      "bytes": 9760,
+      "sha256": "98b73761162c9afd22fc68b097012561a2148a66b14d1275d5ad364e7fbcb458"
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 54654,
+      "sha256": "076cebff493c09dfdaeb0d803979feb9d42b0368b83a56a40e29fc343400b412"
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "bytes": 2784,
+      "sha256": "d65214627c98ec83e53d6b651908d5e6f7438874bbaee5868f240bb26bf9396a"
+    },
+    {
+      "path": "tools/personal-preview/maintenance-host.mjs",
+      "bytes": 12594,
+      "sha256": "9283a215ee4d10abc5563c87b982d21595b7d32fce83254f7d4134e90f984c53"
+    },
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "bytes": 5753,
+      "sha256": "ac13821a2c72956b0f0a3e9afb499f84291fdf3156f62b61f5e4e6b0be97e1c8"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "bytes": 11355,
+      "sha256": "41a21f2595a68167f227a038dc5d54dc18f88439830dfa9e0a1ddc0f5576ca5d"
+    }
+  ]
+}

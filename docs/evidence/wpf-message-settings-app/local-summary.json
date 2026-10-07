@@ -1,0 +1,185 @@
+{
+  "implementationTarget": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+  "scope": "Selected MSG03 private host/receipt/Journal/installed-core checks and explicit-files affected noEmit; not whole Web or mounted App",
+  "budgetMs": 60000,
+  "spentMs": 36212,
+  "remainingMs": 23788,
+  "latestDirect": {
+    "passed": 11,
+    "failed": 0,
+    "notSelected": 57,
+    "selectedTitles": [
+      "MSG03 real App seams freezes A before material await, rotates equal-value ownership, and preserves B through original-key retry",
+      "MSG03 real App seams checks live authority for omit and cannot revive an opening after disable/re-enable",
+      "MSG03 real App seams revokes the old opening on hide and aborts its directory read without replacing C",
+      "MSG03 real App seams keeps legacy absent drafts but rejects malformed settings and freezes valid settings-only drafts",
+      "MSG03 real App seams keeps current complete draft when settings changes during real projection refresh",
+      "MSG03 real App seams keeps current complete draft when omit changes during real projection refresh",
+      "MSG03 real App seams keeps current complete draft when ABA changes during real projection refresh",
+      "MSG03 real App seams preserves B through the real installed core material failure return, keeping A explicit",
+      "MSG03 real App seams preserves B through the real installed core material cancel return, keeping A explicit",
+      "MSG03 real App seams rejects late explicit restore after B changes during an attachment await without overwriting B",
+      "MSG03 real App seams retains exact Queue B across unknown acknowledgement and C changes"
+    ]
+  },
+  "latestType": {
+    "label": "types-5",
+    "actualExit": 0,
+    "chargeMs": 5602
+  },
+  "sourceOnlyAfterFinalType": null,
+  "regularFileLogs": true,
+  "pipeDualEOFClaim": false,
+  "PG": false,
+  "Chrome": false,
+  "network": "sandbox denied",
+  "primaryFailuresKept": [
+    "types-1",
+    "types-2",
+    "direct-1",
+    "direct-3"
+  ],
+  "knownLimitations": [
+    "Core preparation failure/cancel checks use the installed core and production public-API guard with a controlled thread port, not mounted ConversationThread.",
+    "No native browser/real App HTTP/PG or deployment result.",
+    "The simple local caller restores signal handlers after report writing; no claim of signal containment through outer process exit.",
+    "Logical byte polling is not a physical hard quota.",
+    "Local config/runner evolved in the authorized segment. Named backup versions are retained; the latest config is not asserted to be the initial failed configuration."
+  ],
+  "attempts": [
+    {
+      "label": "types-1",
+      "startedAt": "2026-10-07T12:23:27.399026+00:00",
+      "pid": 8203,
+      "actualExit": 2,
+      "chargeMs": 1796,
+      "state": "FAIL",
+      "errors": [
+        "child exit 2"
+      ],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    {
+      "label": "types-2",
+      "startedAt": "2026-10-07T12:24:40.068088+00:00",
+      "pid": 56979,
+      "actualExit": 2,
+      "chargeMs": 5400,
+      "state": "FAIL",
+      "errors": [
+        "child exit 2"
+      ],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    {
+      "label": "direct-1",
+      "startedAt": "2026-10-07T12:25:12.637257+00:00",
+      "pid": 75104,
+      "actualExit": 1,
+      "chargeMs": 2121,
+      "state": "FAIL",
+      "errors": [
+        "child exit 1"
+      ],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    {
+      "label": "direct-2",
+      "startedAt": "2026-10-07T12:27:53.579709+00:00",
+      "pid": 77845,
+      "actualExit": 0,
+      "chargeMs": 2090,
+      "state": "PASS",
+      "errors": [],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    {
+      "label": "types-3",
+      "startedAt": "2026-10-07T12:35:18.869067+00:00",
+      "pid": 63769,
+      "actualExit": 0,
+      "chargeMs": 5301,
+      "state": "PASS",
+      "errors": [],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    {
+      "label": "direct-3",
+      "startedAt": "2026-10-07T12:35:42.730253+00:00",
+      "pid": 79337,
+      "actualExit": -15,
+      "chargeMs": 1920,
+      "state": "FAIL",
+      "errors": [
+        "FileNotFoundError: [Errno 2] No such file or directory: '/private/tmp/msg03-local-e4z906p6/scratch/uoNpzy-nyJfahQiC5odEi/ssr'"
+      ],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    {
+      "label": "direct-4",
+      "startedAt": "2026-10-07T12:36:29.575802+00:00",
+      "pid": 6051,
+      "actualExit": 0,
+      "chargeMs": 2235,
+      "state": "PASS",
+      "errors": [],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    {
+      "label": "direct-5",
+      "startedAt": "2026-10-07T12:40:59.010217+00:00",
+      "pid": 78973,
+      "actualExit": 0,
+      "chargeMs": 2203,
+      "state": "PASS",
+      "errors": [],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    {
+      "label": "types-4",
+      "startedAt": "2026-10-07T12:41:11.901868+00:00",
+      "pid": 84773,
+      "actualExit": 0,
+      "chargeMs": 5576,
+      "state": "PASS",
+      "errors": [],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    {
+      "label": "direct-6",
+      "startedAt": "2026-10-07T12:47:44.272376+00:00",
+      "pid": 35883,
+      "actualExit": 0,
+      "chargeMs": 1968,
+      "state": "PASS",
+      "errors": [],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    },
+    {
+      "label": "types-5",
+      "startedAt": "2026-10-07T12:48:14.496008+00:00",
+      "pid": 54752,
+      "actualExit": 0,
+      "chargeMs": 5602,
+      "state": "PASS",
+      "errors": [],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    }
+  ],
+  "directSourceComposition": {
+    "headDuringRun": "37166dde96f06290d51968c5939ea64f6cebddc3",
+    "changedSourcePins": "direct-6 in segment.json (five product/test deltas plus then-dirty metadata)",
+    "unchangedSources": "Other twelve source files remain fixed37166; final types-5 separately binds all seventeen source bytes."
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "links": 50,
+  "errors": [],
+  "sourcePinsVerified": 17,
+  "target": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+  "parserMainObserved": "ae8500dd534a8ba18673a078c8563f4e3c13034e",
+  "parserFiles": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/human.mjs",
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/task-links.mjs",
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/proof.mjs",
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8"
+    }
+  ],
+  "limits": "Only own status parse/link/source-byte validation; no product checks or runtime. No budget debit."
+}

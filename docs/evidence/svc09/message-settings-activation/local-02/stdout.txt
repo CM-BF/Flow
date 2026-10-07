@@ -1,0 +1,44 @@
+TAP version 13
+# (node:10670) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: SVC09A maintenance drains both immutable slot identities with one operation and distinct keys
+ok 1 - SVC09A maintenance drains both immutable slot identities with one operation and distinct keys
+  ---
+  duration_ms: 4.20675
+  type: 'test'
+  ...
+# (node:10671) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: SVC09A status reports both actual slot processes while catalog and claim remain unknown
+ok 2 - SVC09A status reports both actual slot processes while catalog and claim remain unknown
+  ---
+  duration_ms: 193.715833
+  type: 'test'
+  ...
+# Subtest: SVC09A stop covers both recorded runners and preserves any unknown close
+ok 3 - SVC09A stop covers both recorded runners and preserves any unknown close
+  ---
+  duration_ms: 27.643542
+  type: 'test'
+  ...
+# Subtest: SVC09A unresolved slot registration cannot hide an already recorded runner from stop
+ok 4 - SVC09A unresolved slot registration cannot hide an already recorded runner from stop
+  ---
+  duration_ms: 6.755834
+  type: 'test'
+  ...
+# Subtest: SVC09A settings activation refuses the unqualified legacy runtime before registration or spawn
+ok 5 - SVC09A settings activation refuses the unqualified legacy runtime before registration or spawn
+  ---
+  duration_ms: 4.542375
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 383.962333

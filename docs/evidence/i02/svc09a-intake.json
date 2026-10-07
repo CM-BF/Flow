@@ -1,0 +1,43 @@
+{
+  "task": "I02",
+  "at": "2026-10-07T14:36:26.888Z",
+  "operation": "Exact reviewed SVC09A intake and FLOW tool-body implementation handoff",
+  "base": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+  "source": "8d532613e876d34812554572fb32d46bf582de44",
+  "record": "75489b8f5433fbdc76b4892cc8ae6678bd2141c3",
+  "paths": [
+    "tools/personal-preview/cli.mjs",
+    "tools/personal-preview/environment.mjs",
+    "tools/personal-preview/environment.test.mjs",
+    "tools/personal-preview/maintenance-host.mjs",
+    "tools/personal-preview/maintenance.test.mjs",
+    "tools/personal-preview/preview.mjs",
+    "tools/personal-preview/preview.test.mjs",
+    "tools/personal-preview/runner-slots.mjs",
+    "tools/personal-preview/runner-slots.test.mjs",
+    "tools/personal-preview/startup-diagnostics.mjs",
+    "tools/personal-preview/startup-diagnostics.test.mjs"
+  ],
+  "sourceMatchesRecord": true,
+  "review": "svc09a-source-review.json",
+  "documents": {
+    "target": "e096d5063",
+    "review": "tool-body-handoff-doc-review.json"
+  },
+  "integrationValidation": {
+    "all11BeforeimagesUnchangedBaseToMain": true,
+    "protected38InputsUnchangedAtMain": true,
+    "author33DistinctLatestGreenReused": true,
+    "additionalTests": 0,
+    "reason": "Exact source intake; unchanged direct inputs, no hand conflict or new behavior."
+  },
+  "limits": [
+    "Source and synthetic-file/local consumer acceptance only; actual multi-slot host, PG and personal activation remain untested.",
+    "Future activation requires artifact containing both CORE accepted eligibility and SVC09A, with compatibility and actual runtime proof.",
+    "No change to current personal backend 7d1/source6c or Web d629/v3."
+  ],
+  "ignoredUnknownResources": [
+    "tools/owned-process-supervision/__pycache__",
+    "tools/owned-resource-measurement/__pycache__"
+  ]
+}

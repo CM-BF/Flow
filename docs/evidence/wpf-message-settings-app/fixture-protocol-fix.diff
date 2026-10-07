@@ -1,0 +1,13 @@
+diff --git a/apps/web/test/conversation-recovery.fixture.ts b/apps/web/test/conversation-recovery.fixture.ts
+index ec3ca37d..14046571 100644
+--- a/apps/web/test/conversation-recovery.fixture.ts
++++ b/apps/web/test/conversation-recovery.fixture.ts
+@@ -400,7 +400,7 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
+       const method = request.method ?? "GET", bytes = Buffer.concat(chunks), body = bytes.toString("utf8"), headers: string[] = [];
+       // Native HTTP keeps the public Host while connecting to the owned center port.
+       // Preserve duplicate caller fields too; the center must decide whether they are valid.
+-      const forwarded = new Set(["host", "origin", "sec-fetch-site", "cookie", "authorization", "x-flow-csrf", "content-type", "idempotency-key", "accept", "last-event-id", "x-flow-assistant-stream"]);
++      const forwarded = new Set(["host", "origin", "sec-fetch-site", "cookie", "authorization", "x-flow-csrf", "content-type", "idempotency-key", "accept", "last-event-id", "x-flow-assistant-stream", "x-flow-execution-profile"]);
+       for (let index = 0; index < request.rawHeaders.length; index += 2) {
+         const name = request.rawHeaders[index], value = request.rawHeaders[index + 1];
+         if (name !== undefined && value !== undefined && forwarded.has(name.toLowerCase())) headers.push(name, value);

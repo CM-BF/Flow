@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-07T14:18:43.043020+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--experimental-vm-modules",
+    "--test",
+    "--test-reporter=tap",
+    "--test-concurrency=1",
+    "--test-name-pattern=SVC09A maintenance drains|SVC09A status|SVC09A stop|SVC09A unresolved|SVC09A settings activation",
+    "tools/personal-preview/maintenance.test.mjs",
+    "tools/personal-preview/preview.test.mjs"
+  ],
+  "head": "15f20f1f93ceb607d65255e7ad9da9b73dd9f83b",
+  "freeBytes": 21371985920,
+  "priorWorkMs": 758,
+  "segmentBudgetMs": 240000,
+  "tmpCapBytes": 33554432,
+  "rawCapBytes": 2097152,
+  "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09a-j82i_6bw",
+  "dev": 16777234,
+  "ino": 124189224,
+  "PG": 0,
+  "provider": 0,
+  "browser": 0,
+  "inputs": [
+    {
+      "path": "tools/personal-preview/maintenance.test.mjs",
+      "bytes": 25122,
+      "sha256": "93a67e7df6ac127e18d9c23a6d07f8d03e238f19d3a4176ef4736f9bd6f4fbfe"
+    },
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 66233,
+      "sha256": "a25c3459d62360f413747c19134b7f243bc201c30c89ec83e39b4d330e97d227"
+    }
+  ]
+}

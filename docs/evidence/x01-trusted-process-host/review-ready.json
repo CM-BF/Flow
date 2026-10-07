@@ -1,0 +1,41 @@
+{
+  "task": "X01-TRUSTED-PROCESS-HOST01",
+  "target": "f2884fa869ff231278e8116ddefa0e1029440eca",
+  "preparedAt": "2026-10-07T12:47:14.829Z",
+  "scope": "design-only; no product or execution approval",
+  "files": [
+    {
+      "path": "plans/x01-trusted-process-host/plan.md",
+      "bytes": 6664,
+      "sha256": "3f052f7b53c692a7dd263b7cf2d863d5fdcdf784b0d4f49b980b2a33c4a4ee16"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/interface.md",
+      "bytes": 11137,
+      "sha256": "5a489bf1f9c5a4124c8b18d916202d99d90ef10fe63e5523782bdfc92fcc1286"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/source-inputs.json",
+      "bytes": 3455,
+      "sha256": "c2a9522ea27e8090a25fecbe0f3acdf3dd17f6223ae668a3135fb92299c201c0"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/owner-input.json",
+      "bytes": 3818,
+      "sha256": "27625e9fb74af930beef45943f815e09407bd5621df9ad453e11c12947d724aa"
+    },
+    {
+      "path": "docs/evidence/x01-trusted-process-host/quality.md",
+      "bytes": 1071,
+      "sha256": "788a13b9e4e1f88095ede95fba4aeb77c477812be212ff6da057e57dc5ca232f"
+    }
+  ],
+  "totalBytes": 26145,
+  "requiredReview": [
+    "consumer/authorization authority",
+    "framing and unknown lifecycle",
+    "Node24.20 environment and release closure",
+    "candidate scope/owner and bounded future validation"
+  ],
+  "actualRuns": 0
+}

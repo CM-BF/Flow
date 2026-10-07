@@ -9,7 +9,7 @@ import type { Pool } from "pg";
 import type { Readable } from "node:stream";
 
 export const root = fileURLToPath(new URL("../../../", import.meta.url));
-export const evidence = root + "docs/evidence/wpf-conversation-recovery/";
+export const evidence = root + "docs/evidence/wpf-message-settings-app/";
 type ObservedRecoveryRecord = { id: string; kind: string; phase?: string; version: number; owner: { viewKey: string; routeId: string };
   data?: { text?: string; intent?: string; attachments?: unknown[] }; frozen?: unknown };
 /** Also serialized by page.evaluate: no captured imports, constants or helpers. Never creates schema. */
@@ -58,6 +58,45 @@ export function observeRecoveryRecords(options: { name: string; version: number;
     } catch { completion.finish(Error("Cannot open existing test journal.")); }
   });
 }
+
+/** Fixture-only fault at the public AttachmentAdapter.send boundary. No business HTTP or draft injection.
+ * This module exists only on the isolated test server and retains at most three small observation rows. */
+const materialProbeId = "\0virtual:msg03-material-probe";
+const materialProbeSource = String.raw`
+let armed = null, pending = null, disposed = false;
+const rows = [], ready = [];
+export function observeReady(value) {
+  if (ready.length >= 8 || !value || typeof value.id !== "string" || typeof value.name !== "string" || JSON.stringify(value).length > 1024) throw Error("Material observation bound");
+  ready.push(structuredClone(value));
+}
+export function arm(label) {
+  if (disposed || armed || pending || rows.length >= 3 || !["failure", "cancel", "success"].includes(label)) throw Error("Invalid material probe arm");
+  armed = label;
+}
+export function snapshot() { return { armed, pending: pending !== null, disposed, rows: rows.map(row => ({ ...row })), ready: structuredClone(ready) }; }
+export function settle(outcome) {
+  if (!pending || !["released", "failed"].includes(outcome)) throw Error("No active material preparation");
+  pending(outcome);
+}
+export async function holdValidated(signal) {
+  if (!armed) return;
+  if (disposed || pending) throw Error("Material probe lifetime invalid");
+  const row = { label: armed, outcome: "waiting", originalValidated: true, abortObserved: false, returned: false }; armed = null; rows.push(row);
+  await new Promise((resolve, reject) => {
+    let done = false;
+    const finish = outcome => {
+      if (done) return; done = true; clearTimeout(timer); signal?.removeEventListener("abort", abort); pending = null; row.outcome = outcome;
+      if (outcome === "released") resolve(); else reject(Error("Fixture material preparation " + outcome));
+    };
+    const abort = () => { row.abortObserved = true; if (row.label !== "cancel") finish("aborted"); };
+    const timer = setTimeout(() => finish("timeout"), 10000);
+    pending = finish; signal?.addEventListener("abort", abort, { once: true }); if (signal?.aborted) abort();
+  });
+  row.returned = true;
+}
+export function dispose() { disposed = true; armed = null; pending?.("disposed"); removeEventListener("pagehide", dispose); }
+addEventListener("pagehide", dispose, { once: true });
+`;
 
 export interface RecoveryWire {
   method: string; path: string; key: string | null; body: string; status: number; cookie: boolean; bearer: boolean; csrf: boolean;
@@ -214,6 +253,7 @@ type ConnectionObservation = { phase: "before-marker" | "after-marker"; attempt:
 
 export interface RecoveryFixtureOptions {
   databaseUrl: string;
+  messageSettings?: boolean;
   secondDatabaseUrl?: string;
   directory: string;
   cacheDirectory: string;
@@ -316,7 +356,7 @@ export class RecoveryDatabaseLease {
 /** Real center/auth/HTTP/SSE and actual App, inside the parent's owned worker group.
  * Imports and each startup await are behind the parent's admitted resource/deadline gate. */
 export async function startRecoveryFixture(options: RecoveryFixtureOptions, signal: AbortSignal) {
-  if (process.env.FLOW_RECOVERY_BROWSER !== "1") throw Error("Separate resource admission is required.");
+  if (process.env.FLOW_MSG03_BROWSER !== "1") throw Error("Separate resource admission is required.");
   const checkpoint = async () => { signal.throwIfAborted(); await options.checkpoint(); signal.throwIfAborted(); };
   await checkpoint();
   const [{ Pool }, { createServer: viteServer }, { createServer }, { FlowClient }] = await Promise.all([
@@ -339,7 +379,7 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
   const measureWire = () => { wireBytes = Buffer.byteLength(JSON.stringify(wire)); assert.ok(wireBytes <= 1024 * 1024, "Fixture wire budget exceeded"); };
   const lifecycle = new AbortController(), bound = AbortSignal.any([signal, lifecycle.signal]);
   let sseTaskId: string | undefined, sseObserver: RecoverySseObserver | undefined;
-  let completeDraftSeeded = false;
+  let completeDraftSeeded = false, messageSettingsSeeded = false;
   let steeringSeeded = false;
   const steeringLeaseMs = 60_000;
   const steeringActor = { registered: false, claimRequests: 0, claimed: false, sessionEventRequests: 0,
@@ -360,7 +400,7 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
       const method = request.method ?? "GET", bytes = Buffer.concat(chunks), body = bytes.toString("utf8"), headers: string[] = [];
       // Native HTTP keeps the public Host while connecting to the owned center port.
       // Preserve duplicate caller fields too; the center must decide whether they are valid.
-      const forwarded = new Set(["host", "origin", "sec-fetch-site", "cookie", "authorization", "x-flow-csrf", "content-type", "idempotency-key", "accept", "last-event-id", "x-flow-assistant-stream"]);
+      const forwarded = new Set(["host", "origin", "sec-fetch-site", "cookie", "authorization", "x-flow-csrf", "content-type", "idempotency-key", "accept", "last-event-id", "x-flow-assistant-stream", "x-flow-execution-profile"]);
       for (let index = 0; index < request.rawHeaders.length; index += 2) {
         const name = request.rawHeaders[index], value = request.rawHeaders[index + 1];
         if (name !== undefined && value !== undefined && forwarded.has(name.toLowerCase())) headers.push(name, value);
@@ -538,7 +578,34 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
     const secondText = "Second ordered material";
     const secondResource = await client.uploadAttachment(project.snapshot.project.id, { recoveryScopeId: capabilities.recoveryScopeId, name: "later.txt", mediaType: "text/plain", text: secondText, byteLength: Buffer.byteLength(secondText), contentDigest: createHash("sha256").update(secondText).digest("hex") }, randomUUID());
     await checkpoint();
-    vite = await viteServer({ root: root + "apps/web", configFile: root + "apps/web/vite.config.ts", configLoader: "native", cacheDir: options.cacheDirectory, define: { "import.meta.env.VITE_FLOW_FIXTURE": JSON.stringify("true") }, server: { middlewareMode: true, proxy: {}, hmr: { server: publicServer } }, logLevel: "error" });
+    const materialProbe = options.messageSettings ? [{ name: "msg03-material-preparation", enforce: "pre" as const,
+      resolveId(id: string) { if (id === "virtual:msg03-material-probe") return materialProbeId; },
+      load(id: string) { if (id === materialProbeId) return materialProbeSource; },
+      transform(code: string, id: string) {
+        if (id.split("?")[0] !== root + "apps/web/src/attachments/adapter.ts") return;
+        const declaration = "export function createAttachmentAdapter(";
+        assert.equal(code.split(declaration).length, 2, "Original adapter declaration must match the pinned fixture seam");
+        return { code: `import { holdValidated, observeReady } from "virtual:msg03-material-probe";\n`
+          + code.replace(declaration, "function originalCreateAttachmentAdapter(")
+          + `\nexport function createAttachmentAdapter(input: AttachmentInput): AttachmentAdapter {
+            const original = originalCreateAttachmentAdapter(input);
+            return { ...original, async *add(options) {
+              for await (const attachment of original.add(options)) {
+                if (attachment.status.type === "requires-action") {
+                  const item = input.getSnapshot().items.find(item => item.id === attachment.id);
+                  if (!item?.metadata) throw Error("A real ready upload is required for the material witness");
+                  observeReady({ id: item.id, name: item.name, reference: item.metadata.reference });
+                }
+                yield attachment;
+              }
+            }, async send(attachment, options) {
+              const result = await original.send(attachment, options);
+              await holdValidated(options?.signal); return result;
+            } };
+          }`, map: null };
+      },
+    }] : [];
+    vite = await viteServer({ plugins: materialProbe, root: root + "apps/web", configFile: root + "apps/web/vite.config.ts", configLoader: "native", cacheDir: options.cacheDirectory, define: { "import.meta.env.VITE_FLOW_FIXTURE": JSON.stringify("true") }, server: { middlewareMode: true, proxy: {}, hmr: { server: publicServer } }, logLevel: "error" });
     await checkpoint();
     return { url: url + "/?recovery=1", token, wire, resource: resource.resource, secondResource: secondResource.resource, conversationId: conversation.conversation.id, projectId: project.snapshot.project.id, close,
       dropNext(kind: typeof lost) { lost = kind; },
@@ -602,6 +669,29 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
             }
           },
         };
+      },
+      async seedMessageSettings() {
+        assert.equal(messageSettingsSeeded, false, "One MSG03 synthetic publisher per fixture");
+        messageSettingsSeeded = true; await checkpoint();
+        const { CLAUDE_TURN_SETTINGS_PROTOCOL } = await import("@flow/contracts");
+        const registration = await client.registerRunner({ name: "MSG03 synthetic profile publisher", harnesses: ["claude"], capacity: 1 });
+        await checkpoint();
+        const publisher = new FlowClient({ baseUrl: center, token: registration.token });
+        const choices = ["A", "B", "C"].map(suffix => ({ model: ("msg03-" + "declared-model-".repeat(12)).slice(0, 179) + suffix,
+          thinking: "adaptive" as const, effort: { kind: "level" as const, value: "high" as const }, speed: "standard" as const }));
+        const { profile } = await publisher.publishExecutionProfile({ configuration: {
+          harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model: "msg03-pinned",
+          thinking: "disabled", permissionMode: "dontAsk", access: "none", requireReadApproval: false,
+          materialScopeDigest: createHash("sha256").update("[]").digest("hex"),
+          limits: { maxTurns: 2, maxBudgetUsd: 0.2, timeoutMs: 60000 },
+          turnSettings: { protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, choices },
+        } }, bound);
+        await checkpoint();
+        const created = await client.createConversation({ title: "MSG03 real App", harness: "claude", projectId: project.snapshot.project.id,
+          executionProfile: profile.reference, requested: { model: profile.configuration.model, thinking: "disabled", tools: "none" } }, randomUUID(), bound);
+        await checkpoint();
+        return { conversationId: created.conversation.id, profile: profile.reference,
+          choices: choices.map(requested => ({ protocol: CLAUDE_TURN_SETTINGS_PROTOCOL, profile: profile.reference, requested })) };
       },
       async seedCompleteDraft() {
         assert.equal(completeDraftSeeded, false, "Only one complete-draft publisher is allowed");

@@ -1,0 +1,69 @@
+{
+  "state": "CLOSED_FOURTH_FAILED_REMAINING_BELOW_45000",
+  "id": "MSG03-BROWSER-20261007",
+  "budgetMs": 90000,
+  "spentMs": 51110,
+  "remainingMs": 38890,
+  "perAttemptMaxMs": 60000,
+  "perAttemptMinMs": 45000,
+  "cleanupMs": 30000,
+  "charge": "ceil(max(actual outer elapsed, late parent elapsed, serialized parent elapsed))",
+  "noCreditsFrom": "MSG03 local60s, Recovery all phases, Quick leaf",
+  "selectionOrder": [
+    {
+      "journey": "message-settings-material-return",
+      "requiredGroups": [
+        "cookieRead",
+        "messageSettingsMaterialReturn"
+      ]
+    },
+    {
+      "journey": "message-settings-app",
+      "requiredGroups": [
+        "cookieRead",
+        "messageSettingsApp"
+      ]
+    }
+  ],
+  "oneAttemptOneDBChrome": true,
+  "secondAttempt": "Only if manager continuous boundary granted, actual cleanup complete, current cumulative remaining >=45000; never reset90000. Failed incomplete parent budget requires exact independently accepted reconciliation or STOP.",
+  "outerRaw": "Store actual start/PID, per-stream bounded stdout/stderr/drop counts/EOF, actual exit and monotonic outerelapsed, final exact PID/PGID+sandbox+env facts; keep primary failure and cleanup secondary separate.",
+  "attempts": [
+    {
+      "run": "msg03-material-20261007-132434-03a638",
+      "journey": "message-settings-material-return",
+      "state": "FAIL_INITIALIZATION_ZERO_SELECTED",
+      "chargeMs": 3432,
+      "manifest": "browser-attempts/material-first/manifest.json"
+    },
+    {
+      "run": "msg03-material-20261007-133113-177e00",
+      "journey": "message-settings-material-return",
+      "state": "FAIL_MATERIAL_SELECTION_COOKIE_READ_PASSED",
+      "chargeMs": 15530,
+      "manifest": "browser-attempts/material-second/manifest.json"
+    },
+    {
+      "run": "msg03-material-20261007-133614-91f42f",
+      "journey": "message-settings-material-return",
+      "state": "FAIL_WORKER_UNHANDLED_FILECHOOSER_TIMEOUT_NO_RESULT",
+      "chargeMs": 14804,
+      "manifest": "browser-attempts/material-third/manifest.json",
+      "fixtureReceiptMissing": true
+    },
+    {
+      "run": "msg03-material-20261007-140004-04f4e0",
+      "journey": "message-settings-material-return",
+      "state": "FAIL_CANCEL_DURABLE_B_CONTAINS_HELD_A",
+      "chargeMs": 17344,
+      "manifest": "browser-attempts/material-fourth/manifest.json",
+      "fixtureCleanupConfirmed": true
+    }
+  ],
+  "sourceFixReview": {
+    "source": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+    "path": "source-research/root-msg03-61185-files-precondition-review-20261007.json",
+    "sha256": "09907e84354cc26451605fc5c0f45823209e9a9ae3420da353e7d639717ab554"
+  },
+  "executionDisposition": "CLOSED; remaining38890<45000. No automatic fifth run or message-settings-app launch; no credit transfer. Fourth actual FULL RETURN; third fixture graceful UNKNOWN remains unchanged."
+}

@@ -1,0 +1,178 @@
+{
+  "run": "msg03-material-20261007-140004-04f4e0",
+  "executionHead": "35dcec5983f93037c81d30b642bbb7415223598a",
+  "implementationTarget": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+  "state": "FAIL_CANCEL_DURABLE_B_CONTAINS_HELD_A",
+  "count": 24,
+  "bytes": 46068,
+  "raw": [
+    {
+      "path": "browser-attempts/material-fourth/collector.stdout.jsonl",
+      "original": "/private/tmp/msg03-material-fourth-xsvnlpm1/collector.stdout.jsonl",
+      "bytes": 365,
+      "sha256": "3b4da886480fc3884fa1406e2ef130683757d1421d53392feac564be3b7df1ec"
+    },
+    {
+      "path": "browser-attempts/material-fourth/collector.stderr.log",
+      "original": "/private/tmp/msg03-material-fourth-xsvnlpm1/collector.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "browser-attempts/material-fourth/gate.json",
+      "original": "/private/tmp/msg03-material-fourth-xsvnlpm1/gate.json",
+      "bytes": 3627,
+      "sha256": "55a429c94a6dcc1ad169666597c6ad69800adc4570f33e7f78b18542b795bb67"
+    },
+    {
+      "path": "browser-attempts/material-fourth/admission.json",
+      "original": "/private/tmp/msg03-material-fourth-xsvnlpm1/admission.json",
+      "bytes": 3945,
+      "sha256": "5cccbbf7a778a4ea8f3da7e9253ba6f74fed71d72af3a95b32994c559efd5207"
+    },
+    {
+      "path": "browser-attempts/material-fourth/accounting.json",
+      "original": "/private/tmp/msg03-material-fourth-xsvnlpm1/accounting.json",
+      "bytes": 906,
+      "sha256": "249fdc479d13f4bfc5556ff15cb77289f23f614bc33923fd92b9b85598c8e063"
+    },
+    {
+      "path": "browser-attempts/material-fourth/post-cleanup.json",
+      "original": "/private/tmp/msg03-material-fourth-xsvnlpm1/post-cleanup.json",
+      "bytes": 1848,
+      "sha256": "425f6fa25b27183b30cf73cba6a478e343104330ec7380709290f712e6760444"
+    },
+    {
+      "path": "browser-attempts/material-fourth/exact-process-identity-observation.json",
+      "original": "/private/tmp/msg03-material-fourth-xsvnlpm1/exact-process-identity-observation.json",
+      "bytes": 725,
+      "sha256": "8dcfb1109c4839d1cd0ebef67b736e26fdc4dd79f0fe1125650ced07f2745a91"
+    },
+    {
+      "path": "browser-attempts/material-fourth/admin-env-deletion-receipt.json",
+      "original": "/private/tmp/msg03-material-fourth-xsvnlpm1/admin-env-deletion-receipt.json",
+      "bytes": 457,
+      "sha256": "93aedcd4be95470c485fb7fc2fea6e4412628f22a13a23d8cc1d653624666159"
+    },
+    {
+      "path": "browser-attempts/material-fourth/collector-exec-result.json",
+      "original": "/private/tmp/msg03-material-fourth-xsvnlpm1/collector-exec-result.json",
+      "bytes": 133,
+      "sha256": "ce74fa1cb931dbd4e3b9344935b03e63d33a6b08e7d28ddbb11cfb748200a091"
+    },
+    {
+      "path": "browser-attempts/material-fourth/outer/start.json",
+      "original": "/private/tmp/msg03-material-fourth-xsvnlpm1/outer/start.json",
+      "bytes": 219,
+      "sha256": "0e211cff648fac6c48c42f0799c8debaf9f8ccf7114820064f66c3a2c8ce9ede"
+    },
+    {
+      "path": "browser-attempts/material-fourth/outer/actual-exit.json",
+      "original": "/private/tmp/msg03-material-fourth-xsvnlpm1/outer/actual-exit.json",
+      "bytes": 951,
+      "sha256": "7e82dd485cc77b9ac668b922ce234b8e523db495f0c9bcf3778818ee83f61cb7"
+    },
+    {
+      "path": "browser-attempts/material-fourth/outer/parent.stdout.jsonl",
+      "original": "/private/tmp/msg03-material-fourth-xsvnlpm1/outer/parent.stdout.jsonl",
+      "bytes": 2027,
+      "sha256": "151421b86ad9b70be489da8e38a53c36f1a974a19b82cb3cf74e1a37c1d1f1ec"
+    },
+    {
+      "path": "browser-attempts/material-fourth/outer/parent.stderr.log",
+      "original": "/private/tmp/msg03-material-fourth-xsvnlpm1/outer/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "browser-runs/msg03-material-20261007-140004-04f4e0/browser.json",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-runs/msg03-material-20261007-140004-04f4e0/browser.json",
+      "bytes": 14229,
+      "sha256": "c4486cd66b2148657dea9b6e223d845154eedad2e5b5c1317ca61001f064b1aa"
+    },
+    {
+      "path": "browser-runs/msg03-material-20261007-140004-04f4e0/budget.json",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-runs/msg03-material-20261007-140004-04f4e0/budget.json",
+      "bytes": 244,
+      "sha256": "9832cc4b028fac36bdd5d715fb4997675040898bc233a9634fcc11ff28c55621"
+    },
+    {
+      "path": "browser-runs/msg03-material-20261007-140004-04f4e0/database-cleanup.json",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-runs/msg03-material-20261007-140004-04f4e0/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "7e85364146d3ce53698a0e3e2b90a222614451eb1cbbe727e2cab4e707a3acaf"
+    },
+    {
+      "path": "browser-runs/msg03-material-20261007-140004-04f4e0/database-owner.json",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-runs/msg03-material-20261007-140004-04f4e0/database-owner.json",
+      "bytes": 164,
+      "sha256": "7367b59ee7df6cc4f8fae55b1fb8a718b626408ff997a2f53b7f9b550eb31731"
+    },
+    {
+      "path": "browser-runs/msg03-material-20261007-140004-04f4e0/fixture-cleanup.json",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-runs/msg03-material-20261007-140004-04f4e0/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "80b011a4254b3b6085729f1646cc610d7e1c73f91cd56e4a4b22556789081a1e"
+    },
+    {
+      "path": "browser-runs/msg03-material-20261007-140004-04f4e0/launch-config.json",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-runs/msg03-material-20261007-140004-04f4e0/launch-config.json",
+      "bytes": 1224,
+      "sha256": "cae23faecb139b0332791f0129437ad91107e9aefd09ae95a137b86b5c8fda2e"
+    },
+    {
+      "path": "browser-runs/msg03-material-20261007-140004-04f4e0/process-owner.json",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-runs/msg03-material-20261007-140004-04f4e0/process-owner.json",
+      "bytes": 29,
+      "sha256": "f1ea7e1250ec9453b702548c768180140ed94adf1b7ef0f7affa0b47da8b5253"
+    },
+    {
+      "path": "browser-runs/msg03-material-20261007-140004-04f4e0/process.log",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-runs/msg03-material-20261007-140004-04f4e0/process.log",
+      "bytes": 6844,
+      "sha256": "1086b8639d0b8d00555362b783724d662403eba2dc901d82e53e809af4572e96"
+    },
+    {
+      "path": "browser-runs/msg03-material-20261007-140004-04f4e0/scratch-owner.json",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-runs/msg03-material-20261007-140004-04f4e0/scratch-owner.json",
+      "bytes": 114,
+      "sha256": "bacc9387030d2aa8c68612b004017dff1744311106d704f8ee8ea2b63632df4f"
+    },
+    {
+      "path": "browser-runs/msg03-material-20261007-140004-04f4e0/sources.json",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-runs/msg03-material-20261007-140004-04f4e0/sources.json",
+      "bytes": 3348,
+      "sha256": "263713bba3c3489d753d9b73f020250ae69eb49305d4ad19324d900c5adaaec3"
+    },
+    {
+      "path": "browser-runs/msg03-material-20261007-140004-04f4e0/supervisor.json",
+      "original": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-runs/msg03-material-20261007-140004-04f4e0/supervisor.json",
+      "bytes": 4051,
+      "sha256": "4424f3606f60c8a558dfa8034922ec8bb5deca6e6f37543270d0dc6f0d7e4a7e"
+    }
+  ],
+  "accounting": {
+    "run": "msg03-material-20261007-140004-04f4e0",
+    "actualCollectorExit": 1,
+    "toolSession": 9448,
+    "outerElapsedMs": 17342.747375019826,
+    "outerPostWriteElapsedMs": 17343.143917038105,
+    "parentPostWriteElapsedMs": 16743.564708,
+    "parentBudgetElapsedMs": 16740.399791,
+    "chargeMs": 17344,
+    "phaseSpentMs": 51110,
+    "phaseRemainingMs": 38890,
+    "state": "FAIL_CANCEL_DURABLE_B_CONTAINS_HELD_A",
+    "parentCleanupConfirmed": true,
+    "fixtureCleanupConfirmed": true,
+    "completedGroups": [
+      "cookieRead"
+    ],
+    "materialFailureBranch": "restoredCompleteDraft true; 0 turn/queue POST at recorded checkpoint",
+    "cancelBranch": "visible B text/settings and one chip asserted; persisted B attachments have held A1/A2 before B; failure at pre-late-settlement identity assertion",
+    "laterBranches": "late settlement/explicit cancel A restoration/success/navigation NOT_REACHED",
+    "screenshots": []
+  },
+  "missing": [],
+  "limits": "Whole material group FAIL. Failure subbranch recorded restore, cancel durable identity assertion FAILED before late settle. No PNG. First postcleanup numeric pid field overwritten by state preserved; separate fresh exact observation binds 4 identities. No independent port probe; fixtureclose and process/group absence are the evidence."
+}

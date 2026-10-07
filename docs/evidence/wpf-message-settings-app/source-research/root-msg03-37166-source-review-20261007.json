@@ -1,0 +1,139 @@
+{
+  "at": "2026-10-07T12:46:22.146898+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "decision": "CHANGES_REQUESTED",
+  "reviewKind": "Independent fixed-source review",
+  "target": "37166dde96f06290d51968c5939ea64f6cebddc3",
+  "base": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+  "branch": "codex/web-message-settings-app",
+  "scope": "MSG03 claim7e3fbcf1-befe-4579-9d6c-ee74df6e8c51 v2/19;17 changed App/source/test files",
+  "inputs": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 74182,
+      "sha256": "882feae39d2a3dd95c1a45010e1502b6d0e4c1bdd8c2b5275b2d4eb6e1163f6d"
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "bytes": 2761,
+      "sha256": "b0cafed2fd93f4e34e5e87eeb7f4e5436a44db509d60730fa7eccc7c416c1229"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 29799,
+      "sha256": "2fc85e0dc039fb332b38fec1279fdd11fed6f51a327666921ffd6503c5e011a2"
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "bytes": 8902,
+      "sha256": "a66dcf9b3515791ccabad97f147ad79aafe066235314c8116413ff475343fc98"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28820,
+      "sha256": "e20a387e95689b0f8d532acfd198c433ebd45b13aa6621686c3493f29509bbe2"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "bytes": 9267,
+      "sha256": "8b8f9ba36bc41cd4bac84347de76722a41d1f8e0438a8ba09f5d3b1f9b589ef5"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 17132,
+      "sha256": "210e733fcfb71f548a3d6743cee4d9199b342197d95d883bdb6bc5db99ae1fc9"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "bytes": 13208,
+      "sha256": "8b9e410ff29c7cfbfedb44b701fd9a57a80c47d4069d78ea35cf58171c0bf32d"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 27546,
+      "sha256": "4b18dd562496fa4de82e99afe7659e8262969dbae9db6200a643f5c8e1389d1b"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "bytes": 3942,
+      "sha256": "a7abe82bf1eb53f9ddb286435dc6b2ba1660cfc3af4232fea1e4a5dbcbc11d54"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "bytes": 13346,
+      "sha256": "613f85c2c3b4b18fed7bc312204332f3219714478d002688c6b8a4fa128fdec0"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 23900,
+      "sha256": "06d8a6bc76693c04989eb2c87acd69760782a353dce9d0b3581bad2fe35655e9"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 25852,
+      "sha256": "53083daacf06c9da16d9f7388215e847d5dc5293390a37fd2d36e92ad65e8eab"
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33552,
+      "sha256": "ef7ee9d631a82ae9e2b491d94d5780421166bda5aadf6b586cea24109401c21a"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 126672,
+      "sha256": "497f72980d52884d04296a206e7bda4787fa2c28a7ff4d2dc29a056fcff62adb"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 50694,
+      "sha256": "09d177dea4d9b6abf5bdd65355e2685f9c50857df80c2de0b799e663d276d966"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 85536,
+      "sha256": "c66080ae65ece6de11a61ed35539a6a78396263f226eb22e480d8832243204e8"
+    }
+  ],
+  "findings": [
+    {
+      "id": "MSG03-R1",
+      "priority": "P2",
+      "file": "apps/web/src/conversations/ConversationThread.tsx",
+      "related": "apps/web/src/plugin-integration/message-settings.tsx",
+      "issue": "Held A becomes permanently unrestorable after B changed its settings/intent/profile, even after the user explicitly saves and clears B.",
+      "evidence": "restorePrepared requires current ownership === capture.nextOwnership; applying/omitting settings and intent/profile changes rotate ownership permanently. restoreCaptured additionally requires the generation from original send. Thus same-session reauthentication or explicit cleanup cannot make the destination eligible again.",
+      "impact": "The new guard preserves B but the advertised explicit recovery path cannot restore A in the very changed-B scenario it is meant to support. The current core tests stop at returned callback and held A presence, never invoking production restorePrepared.",
+      "requiredFix": "Start an explicit restore from a verified empty complete destination or a still-untouched retained intent. Bind authority/ownership/generation and full draft lease to that new restore operation; preserve B and recheck after every await. Add a production-path restore success after clear/omit or reauthentication, plus a changed-during-restore rejection.",
+      "ownerResponse": "Owner confirmed no legal UI bypass and is implementing a narrow same-module restore seam; no second editable state store or public contract."
+    },
+    {
+      "id": "MSG03-R2",
+      "priority": "P2",
+      "file": "apps/web/test/conversation-recovery.browser.ts",
+      "line": 1213,
+      "issue": "The light/dark screenshot loop changes media preference but does not change the App theme.",
+      "evidence": "App initializes theme once with initialTheme, then applyTheme sets data-theme/dark class/colorScheme and persisted selection; there is no media-change subscription. page.emulateMedia after mounting does not update that React theme.",
+      "impact": "The dark-named image can still show the light theme, so the loop does not verify the requested two themes.",
+      "requiredFix": "Use the real theme UI as the existing appearance journey does, assert effective data-theme/scheme, and retain the existing per-image512KiB bound before writing PNGs."
+    }
+  ],
+  "acceptanceGap": {
+    "longModels": "Fixture puts A/B/C near the start; it does not exercise models whose visible prefix is identical. Use valid boundary-length models with a shared prefix and differing suffix, retaining full-name inspection and bounded viewport controls. This is a correction to existing long-name acceptance, not a new task."
+  },
+  "positiveFindings": [
+    "App remains sole C owner with opaque nonserialized ownership; per-view bindings hold opening/catalog lifetime rather than a duplicate editable C.",
+    "Capture occurs before official composer detach/material preparation. Outbox and Queue deeply freeze original requested settings and retry their original key/body.",
+    "Public contracts/client matching are used, including rejection of an ACK which adds unrequested settings. Historical turn and Queue render their own frozen settings.",
+    "First-render P01 context and dialog invoker-lifetime fixes are present. New callback seam is limited to AttachmentComposer explicit restore/discard and retains default consumer behavior.",
+    "The actual installed-core failure/cancel guard uses public composer operations in production. Its controlled core tests do not prove mounted Thread or the currently broken explicit restore path.",
+    "Browser entry is isolated to MSG03 output and selector with no Recovery budget inheritance."
+  ],
+  "validation": "Read-only review of immutable Git source and related installed-core/current owner sources. Author reports10 selected direct checks and affected noEmit success; their raw fixed result intake has not been independently accepted in this report. No root tests/imports/PG/browser/provider/service operations.",
+  "cleanCode": {
+    "scope": "App C authority, failure/cancel return, explicit restore lifetime, validated frozen transport and evidence semantics",
+    "findings": "A send-lifetime token was reused as a permanent restore eligibility token; restoring should have its own bounded operation lease. Browser theme evidence must use actual product state.",
+    "fixStatus": "Changes requested to original owner; no implementation edits by reviewer.",
+    "unresolved": "Two findings, long-name acceptance correction and new fixed-source/local/browser evidence."
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "kind": "IN_PROGRESS_SOURCE_RESEARCH_NOT_FIXED_REVIEW",
+  "at": "2026-10-07T12:20:17.349528+00:00",
+  "task": "WPF-MESSAGESETTINGS03",
+  "inputs": [
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "bytes": 10184,
+      "sha256": "6b992193238092d15f7c0d4aba2253279c7f636c8b296d7ce0bc30570e87c36f"
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "bytes": 12209,
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241"
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "bytes": 8788,
+      "sha256": "b1c35948639879bd44c0664955698b77e2ecbd3a9b7abfbd5285babd566d5831"
+    }
+  ],
+  "finding": {
+    "title": "Initial PluginView context can retain empty viewId",
+    "evidence": "New ConversationMessageSettings initializes viewId to empty. MessageSettingsComposer renders PluginView with binding.context() before useLayoutEffect configures it, and wrapper does not subscribe to binding. PluginView retains its context prop; its own host subscription cannot recompute the parent prop. validateContext rejects empty composer viewId.",
+    "impact": "Initial settings extension show can fail and remain failed until an unrelated parent render supplies a new context; later self-refresh is not proof first mount works. This is source inference, not an observed browser failure.",
+    "action": "Build the PluginView composer context from the current render viewId prop, or an equivalent deterministic same-render source inside this owned adapter. Keep shared PluginView unchanged.",
+    "validation": "The existing real App browser acceptance should cover opening settings from first mount without a prior unrelated render or an Extension context alert."
+  },
+  "boundaries": [
+    "Draft source still being edited; no approval/rejection of a fixed implementation.",
+    "No new task or scope, no extra approval gate.",
+    "Manager forwards to existing owner for ordinary implementation fix and natural clean-code record."
+  ],
+  "execution": {
+    "productImports": 0,
+    "test": 0,
+    "PG": 0,
+    "browser": 0,
+    "projectWrites": 0
+  }
+}

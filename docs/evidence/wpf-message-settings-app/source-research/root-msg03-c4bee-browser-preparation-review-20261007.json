@@ -1,0 +1,171 @@
+{
+  "recordedAt": "2026-10-07T13:21:35.922845+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "decision": "APPROVED_SCOPED_C4BEE_DELTA_AND_FIXED_BROWSER_PREPARATION",
+  "findings": [],
+  "sourceCommit": "c4bee7707a273e98ba7b07dc061ec13e78094c2f",
+  "executionHead": "df18594d8b6ebee54d95346416f4ec0459ec56b1",
+  "packet": {
+    "path": "/private/tmp/msg03-browser-prepared-06jw546b/manifest-r2.json",
+    "bytes": 5822,
+    "sha256": "b5e350295b7b59294d88ab67368b4fd1b2ac31896ad553d1725c89b485a22f16"
+  },
+  "fixedOuter": {
+    "path": "/private/tmp/msg03-browser-prepared-06jw546b/capture.py",
+    "bytes": 8891,
+    "sha256": "0eb3b50ab478302ff3ceebdd0361295604be74f00a7ebabe1566a72f3a1d9479"
+  },
+  "priorScopedReview": {
+    "path": "/private/tmp/root-msg03-9c46-mounted-source-local-review-20261007.json",
+    "bytes": 7399,
+    "sha256": "8488fa5656763897bf0b9a3c681ee2b7dacf80ae0db6a81eb5b6c2d928c9c981"
+  },
+  "independentReads": {
+    "implementation17GitAndWorkingTree": [
+      {
+        "path": "apps/web/src/App.tsx",
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/conversation-context/receipts.ts",
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/conversations/outbox.ts",
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/conversations/projection.ts",
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/conversations/queue/commands.ts",
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/conversations/queue/projection.ts",
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/execution-profiles/execution-profiles.css",
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/message-settings.tsx",
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/react.tsx",
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/session.ts",
+        "matches": true
+      },
+      {
+        "path": "apps/web/src/recovery/binding.tsx",
+        "matches": true
+      },
+      {
+        "path": "apps/web/test/conversation-recovery.browser.ts",
+        "matches": true
+      },
+      {
+        "path": "apps/web/test/conversation-recovery.fixture.ts",
+        "matches": true
+      },
+      {
+        "path": "apps/web/test/conversation-recovery.test.ts",
+        "matches": true
+      }
+    ],
+    "preparedFilesMatched": 7,
+    "selectedPinsEarlierRead": 66,
+    "selectedPinMismatches": 0,
+    "entryTypeFilesRechecked": 351,
+    "entryTypeMismatches": 0,
+    "captureAstParse": "PASS without executing",
+    "sentinelSourceRead": {
+      "path": "/private/tmp/msg03-worker-args-0kd1sgji/check.mjs",
+      "bytes": 1835,
+      "sha256": "41c1c33aab7396076c44b1590fb2faa92c12697dc100c40aa5dad0dee9a16b51"
+    },
+    "sentinelResult": {
+      "path": "/private/tmp/msg03-worker-args-0kd1sgji/result.json",
+      "bytes": 573,
+      "sha256": "536f863f3a6e4b7ebfda4a74df8d58ef5b82c5040e82c3136093aecd0f4fab16"
+    }
+  },
+  "runtimeCorrection": {
+    "problem": "Parent Node --env-file was copied via process.execArgv into the worker; deleting only FLOW_RECOVERY_TEST_ADMIN from childEnv did not stop that file from being reread.",
+    "fixedBehavior": "Worker argv explicitly contains only --import tsx, this entry and --worker; launch config records the same whitelist. Parent loader and admin env-file are not inherited.",
+    "actualDummyCheck": {
+      "source": "c4bee7707a273e98ba7b07dc061ec13e78094c2f",
+      "actualExit": 0,
+      "chargeMs": 219,
+      "stdoutEOF": true,
+      "stderrEOF": true,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "errors": [],
+      "oldNegativeAndNewPositive": true,
+      "realAdminRead": false
+    }
+  },
+  "captureReview": [
+    "Whitelisted outer environment, owner0600 non-symlink env path, exclusive output directory, fixed Node/entry command; root did not read an admin value.",
+    "Absolute outer timer starts before spawning TS parent. Work cutoff requests parent TERM and leaves30s cleanup. Final500ms permits parent KILL/reap; unknown child or DB cleanup remains failure, never guessed absent.",
+    "Separate stdout/stderr nonblocking drain, total256KiB retained bound, raw byte/drop counts and per-stream EOF. Actual exit and late errors are independent of early worker success.",
+    "Existing TS parent remains the only DB/worker/Chrome supervisor. Interrupted/deadline paths retain failure; cleanup and exact post-terminal observation required for actual acceptance. No second DB supervisor introduced."
+  ],
+  "nativeBoundary": {
+    "node": {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    "chromeLauncher": {
+      "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "bytes": 367696,
+      "sha256": "764f5f6ee523e6d52caf6e56ce7501e932c4f6e52d06d267887cb7ea70350102"
+    },
+    "chromeBundleVersion": "154.0.8037.99",
+    "scope": "Launcher/version and selected static loader pins; not exhaustive dynamic payload or OS write/egress sandbox verification. Native Chrome sandbox preserved, owned profile/CDP/group, background flags do not imply network isolation."
+  },
+  "existingExecutionBounds": {
+    "phase": "MSG03-BROWSER-20261007",
+    "totalSharedMs": 90000,
+    "perAttemptMinMs": 45000,
+    "perAttemptMaxMs": 60000,
+    "cleanupIncludedMs": 30000,
+    "selectors": [
+      "message-settings-material-return",
+      "message-settings-app"
+    ],
+    "configuredConnectionMaximum": 14,
+    "connectionCountQualification": "configuration sum, not measured peak",
+    "oneDbChromePerAttempt": true,
+    "scratchBytes": 67108864,
+    "retainedEvidenceBytes": 9437184,
+    "minimumFreshFloorBytes": 7492599808,
+    "freshRule": "Use manager latest higher complete sum; old KEEP retained and reserve counted once. No credit borrowed from closed local/Recovery phases."
+  },
+  "currentDisposition": "SOURCE/PREPARATION ACCEPTED; BROWSER NOT_RUN. Original R4 remains sole maintenance window. No gate, env or runtime grant from this review. Manager may dispatch existing owner after actual R4 RETURN with fresh claim/inputs/complete resource floor and sole-holder handoff.",
+  "actualAcceptance": "Both selected journey outputs, actual parent/worker exit, no unexpected signal/error, complete EOF/drop0, owned process/group/port/profile/env absence and marked DB cleanup receipt. Charge ceil(max outer, late parent, serialized parent); second attempt only if remaining>=45000 and complete cleanup. Preserve first failures.",
+  "cleanCode": {
+    "applied": "Reviewed narrow loader correction, sole resource owner, distinct first-error and cleanup evidence, bounded logs, no core or shared API edits. No additional code changes requested.",
+    "remaining": "Mounted behavior, native dynamic startup, actual cleanup, screenshots and personal model availability remain unverified."
+  }
+}

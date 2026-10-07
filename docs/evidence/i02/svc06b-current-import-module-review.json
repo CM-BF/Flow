@@ -1,0 +1,79 @@
+{
+  "kind": "SVC06B_CURRENT_IMPORT_MODULE_REVIEW",
+  "reviewedAt": "2026-10-07T15:11:41.542Z",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "source": "7324a2a0b495eb82e64693ec6d1b8781eb12d8c5",
+  "packet": "ac6c63a71a9af332e3efb69f1e34226ba3ac6129",
+  "resultSha256": "3cc146eacc53e98ad8fd3b8a2932ecfe2bface1411e0119f708ae012123c6dec",
+  "canonical": "backend-browser-recovery/docs/evidence/svc06/browser-recovery/current-migration-interface.md",
+  "bindings": {
+    "checked": 24,
+    "source": 3,
+    "staticClosure": 13,
+    "runtime": 4,
+    "raw": 2,
+    "historicalSourceReconstruction": 2,
+    "mismatches": []
+  },
+  "decision": "APPROVED_CALLABLE_CURRENT_IMPORT_MODULE_AND_LOCAL_DELTA",
+  "findings": [],
+  "validation": {
+    "newDistinct": 6,
+    "selectedAcrossRounds": 7,
+    "passedAcrossRounds": 7,
+    "rounds": [
+      {
+        "file": "current-migration-local-01.json",
+        "selected": 5,
+        "elapsedMs": 117,
+        "rawBytes": 740,
+        "startedAt": "2026-10-07T14:59:11.427237+00:00",
+        "finishedAt": "2026-10-07T14:59:11.546150+00:00",
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+      },
+      {
+        "file": "current-migration-loader-local-02.json",
+        "selected": 2,
+        "elapsedMs": 127,
+        "rawBytes": 360,
+        "startedAt": "2026-10-07T15:05:45.952618+00:00",
+        "finishedAt": "2026-10-07T15:05:46.080818+00:00",
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+      }
+    ],
+    "elapsedMs": 244,
+    "rawBytes": 1100,
+    "retentionEarlierNotRerun": true,
+    "includingRetentionLocalElapsedMs": 5992,
+    "sourceDeltaAfterRound01": "Only loader/import assembly, strict required identity/clone parameter validation and its test additions; original state/store/private/stage guards unchanged. Parameter case rerun in round02, loader case new."
+  },
+  "reviewerExecution": {
+    "tests": 0,
+    "PG": 0,
+    "provider": 0,
+    "personalIO": 0
+  },
+  "reviewScope": [
+    "Existing migration order/locks/no-replace preserved through migrateWithLocks/migrateOnce.",
+    "Current installed7d1 verified before code/pg loading; no old null-backend assumption.",
+    "Existing policy/six private pins/three owned records and complete retained artifact set required.",
+    "Total byte retention and unknown-stage refusal retained; source clone remains own fixed cd27.",
+    "Both immutable raw rounds and exact retrospective source reconstruction truthful; no rerun claim."
+  ],
+  "notApproved": [
+    "Personal fixed instance/supervised invocation is not created; fresh sixfiles/threeprocess records/runnerCAS and full report set still required.",
+    "No actual artifact migration/maintenance/service operation/compatibility proof.",
+    "No old operation/retirement replay or unknown cleanup."
+  ],
+  "remote": "Owner reports two GitHub500 push failures; fixed local clean packet reviewed, no remote equality claimed."
+}

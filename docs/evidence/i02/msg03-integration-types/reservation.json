@@ -1,0 +1,31 @@
+{
+  "startedAt": "2026-10-07T14:44:13.949Z",
+  "base": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+  "source": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+  "purpose": "Single current-main Web type composition; accepted behavior/browser checks not rerun",
+  "limits": {
+    "workSeconds": 45,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "rawBytes": 1048576,
+    "scratchBytes": 8388608
+  },
+  "freeBefore": 20927307776,
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "--incremental",
+    "false",
+    "-p",
+    "apps/web/tsconfig.json"
+  ],
+  "scratch": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-msg03-intake-n0kbn6qv",
+    "dev": 16777234,
+    "ino": 124228540
+  },
+  "providerCalls": 0,
+  "pg": 0,
+  "browser": 0
+}

@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-07T14:38:28.443Z",
+  "taskId": "SVC09A",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [
+    "任务开工时间未记录"
+  ],
+  "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| SVC09A-W01 | UNKNOWN | UNKNOWN | 资源 | 同队组合/入口局部协调期间持续源码准备，精确起止未留；不当作测试耗时 | Lead/assignment协调消息；各轮reservation/cleanup保留实际UTC |\n| SVC09A-W02 | UNKNOWN | 2026-10-07T14:32:40.142Z | 审查 | 已固定源码与原件交唯一独审，现限定批准 | I02 svc09a-source-review.json；首次交审UTC未独立记录 |\n原首次只读子agent被cap拒绝，未重试；本owner继续实施。首轮 reporter 为spec，result计数null，原raw保留20/19/1；派生记录明确纠正口径，不回写旧原件。后续各轮只选新边界/受影响例。临时峰值未采样。完整真实资格、模型与个人部署仍开放。\n最终封包还识别本树 importlib 生成的23,243B OPS14 pyc；核源字节/header/codefilename及exact身份后于14:31:44.022522Z删除，另见[清理回执](../../docs/evidence/svc09/message-settings-activation/generated-cache-cleanup.json)。原7组/fixture收尾原件不改，无追加工程运行。"
+}

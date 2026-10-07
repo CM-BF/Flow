@@ -1,3 +1,4 @@
+import { MessageSettingsSummary } from "../../execution-profiles/ExecutionProfilePicker";
 import { useRef, useState, useSyncExternalStore } from "react";
 import { TERMINAL_STATUSES } from "@flow/contracts";
 import { Button } from "../../components/ui/button";
@@ -53,6 +54,7 @@ export function ConversationQueue({ projection }: { projection: ConversationQueu
               const detail = state.details[item.id], open = expanded.has(item.id);
               return <QueueItem key={item.id}>
                 <QueueItemContent className="line-clamp-2">{item.preview}{item.truncated ? "…" : ""}</QueueItemContent>
+                <MessageSettingsSummary value={item.messageSettings} label="Queued request settings" />
                 <QueueItemActions>
                   <QueueItemAction aria-expanded={open} onClick={() => { const next = new Set(expanded); if (open) next.delete(item.id); else { next.add(item.id); void projection.loadDetail(item.id); } setExpanded(next); }}>{open ? "Hide message" : "Read full message"}</QueueItemAction>
                   <QueueItemAction disabled={Boolean(projection.actionDisabledReason(`item:${item.id}`))} onClick={event => void preserveFocus(event.currentTarget, () => projection.cancelItem(item.id))}>Cancel waiting message</QueueItemAction>
@@ -69,6 +71,7 @@ export function ConversationQueue({ projection }: { projection: ConversationQueu
     {(blocked || state.stale || page?.paused || page?.blocked) && <p role="status" className="flow-queue-status">{blocked ?? (page?.paused ? "Queue paused. Open to continue or manage the current execution." : page?.blocked ? `Waiting: ${page.blocked.replaceAll("-", " ")}. Open the queue for controls.` : "Queue needs refresh. Open the queue to refresh.")}</p>}
     {state.receipts.map(receipt => <section key={receipt.key} aria-label={`${receipt.command.kind} receipt`} className="my-2 rounded border p-3 text-xs">
       <strong>{receipt.command.kind.replaceAll("-", " ")} · {receipt.state === "unknown" ? "Receipt unknown" : receipt.state}</strong>
+      {receipt.command.kind === "enqueue" && <MessageSettingsSummary value={receipt.command.input.messageSettings} label="Frozen queue settings" />}
       {receipt.command.kind === "enqueue" && <pre className="my-1 max-h-24 overflow-y-auto whitespace-pre-wrap break-words">{receipt.command.input.text}</pre>}
       <p role={receipt.state === "rejected" || receipt.state === "unknown" ? "alert" : "status"}>{receipt.message}</p>
       {receipt.state === "unknown" && <><p>The center may have accepted this command. Keep this page open until confirmed; reloading loses this local retry identity. Your next draft is separate.</p><Button type="button" variant="outline" size="sm" disabled={!state.online} onClick={() => void run(() => projection.retry(receipt.key))}>Retry same {receipt.command.kind}</Button></>}

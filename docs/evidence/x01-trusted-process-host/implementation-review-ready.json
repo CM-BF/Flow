@@ -1,0 +1,42 @@
+{
+  "sourceCommit": "af43f7e61395125aed3f0725a9e4305c9e086cdd",
+  "preparedAt": "2026-10-07T13:10:59.985318+00:00",
+  "manifest": "docs/evidence/x01-trusted-process-host/implementation-review-manifest.json",
+  "manifestSha256": "b30f03ceddcc51fe04631de3aeea84e542a7b04cd359cc734876015303cee141",
+  "count": 195,
+  "totalBytes": 929779,
+  "entry": "docs/evidence/x01-trusted-process-host/implementation-notes.md",
+  "claim": {
+    "id": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+    "version": 2,
+    "scopeCount": 14
+  },
+  "review": "NOT_STARTED",
+  "local": {
+    "selectedAndPassed": [
+      11,
+      3
+    ],
+    "distinct": 14,
+    "types": [
+      2,
+      0,
+      0
+    ],
+    "children": 5,
+    "supervisionMs": 30129,
+    "rawBytes": 1718,
+    "resources": "final absent/merged EOF/complete raw/same-inode empty TMP removed; no launch pending"
+  },
+  "limits": [
+    "not an untrusted package sandbox",
+    "runRunner wiring tested with seam mock plus actual execution consumer workers",
+    "T7 exact release artifact NOT_RUN",
+    "no PG/provider/OS runner service/full main verification"
+  ],
+  "sourceHistory": {
+    "originalExecutedVariants": "run-source-bindings.json",
+    "observerOnlyDelta": "process-host-v1.txt compared with fixed source; targeted direct3/type0 after fix"
+  },
+  "ordinaryReturned": true
+}

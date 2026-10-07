@@ -1,0 +1,629 @@
+{
+  "journey": "message-settings-app",
+  "requiredGroups": [
+    "cookieRead",
+    "messageSettingsApp"
+  ],
+  "completedGroups": [
+    "cookieRead",
+    "messageSettingsApp"
+  ],
+  "checks": [
+    "actual browser stores HttpOnly cookie; public cookie-only session read opens original center",
+    "real App message settings bind frozen Send/Queue requests, complete Recovery and native P01 keyboard"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 8183.899875,
+    "elapsedMs": 8183.899875
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 8183.983417,
+      "endedOffsetMs": 9160.768458,
+      "elapsedMs": 976.7850409999992,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "messageSettingsApp",
+      "startedOffsetMs": 9160.787458,
+      "endedOffsetMs": 11745.505417,
+      "elapsedMs": 2584.7179589999996,
+      "outcome": "PASSED"
+    }
+  ],
+  "materialPreparation": [],
+  "pageErrors": [],
+  "failure": null,
+  "cleanupErrors": [],
+  "wire": [
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": false,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/browser-session/connect",
+      "key": null,
+      "body": "{}",
+      "status": 200,
+      "cookie": false,
+      "bearer": true,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/3ab84151-fac0-4ac3-88fb-157b6ff43d65",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/3ab84151-fac0-4ac3-88fb-157b6ff43d65/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/3ab84151-fac0-4ac3-88fb-157b6ff43d65/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/browser-session/connect",
+      "key": null,
+      "body": "{}",
+      "status": 200,
+      "cookie": true,
+      "bearer": true,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/browser-session",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/workspace",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13/turns?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/a1198f54-1369-47ac-85b1-e809abc664a1/attachments/capabilities",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/projects/a1198f54-1369-47ac-85b1-e809abc664a1/attachments?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13/turns",
+      "key": "a9d49f31-c489-40ec-be01-6ab23a9ed3fc:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"MSG03 same text 中文🙂\",\"mode\":\"follow-up\",\"knowledge\":[],\"attachments\":[{\"kind\":\"upload\",\"projectId\":\"a1198f54-1369-47ac-85b1-e809abc664a1\",\"resourceId\":\"e6867c94-e90c-4752-bd8f-f3a7016094c3\",\"version\":1,\"contentDigest\":\"ff01ba237a964180a1a5025b314ffb747505af3a05a40cdeb3c1304606ab416a\"},{\"kind\":\"upload\",\"projectId\":\"a1198f54-1369-47ac-85b1-e809abc664a1\",\"resourceId\":\"9f5b7aa4-2a2e-448b-94d7-67d6d282640a\",\"version\":1,\"contentDigest\":\"f67360001ad8a6cd1c593e4a7f3f4fc4aaf982f9ad2161534de0fdd4dbd7b6b5\"}],\"messageSettings\":{\"protocol\":\"flow.claude-turn-settings.v1\",\"profile\":{\"id\":\"3bf5fd83-f125-4e7b-a102-44040906fd91\",\"runnerId\":\"b39344fd-cab2-4866-b0e4-842a5a6556da\",\"configDigest\":\"fd518c5bb4b52082fcd19628f1227b13e9f62bc991cfbb37866ba1984c56b096\"},\"requested\":{\"model\":\"msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredA\",\"thinking\":\"adaptive\",\"effort\":{\"kind\":\"level\",\"value\":\"high\"},\"speed\":\"standard\"}}}",
+      "status": 202,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true,
+      "responseBody": "{\"conversation\":{\"projectId\":\"a1198f54-1369-47ac-85b1-e809abc664a1\",\"id\":\"f241d805-8783-4190-8179-368303c1ca13\",\"title\":\"MSG03 real App\",\"harness\":\"claude\",\"requested\":{\"model\":\"msg03-pinned\",\"tools\":\"none\",\"thinking\":\"disabled\"},\"executionProfile\":{\"id\":\"3bf5fd83-f125-4e7b-a102-44040906fd91\",\"runnerId\":\"b39344fd-cab2-4866-b0e4-842a5a6556da\",\"configDigest\":\"fd518c5bb4b52082fcd19628f1227b13e9f62bc991cfbb37866ba1984c56b096\"},\"revision\":1,\"createdAt\":\"2026-10-07T14:27:05.711Z\",\"updatedAt\":\"2026-10-07T14:27:07.040Z\"},\"turn\":{\"id\":\"f1e31716-de64-45e6-8ba7-533b8eff7df2\",\"conversationId\":\"f241d805-8783-4190-8179-368303c1ca13\",\"number\":1,\"createdAt\":\"2026-10-07T14:27:07.039Z\",\"context\":{\"id\":\"463f4428-45bf-4e7a-8162-c32725939032\",\"contextDigest\":\"2b5f273d9b06cb93e995b194125e3d98dc60cefef23e835228dfafbafe44461d\",\"executionInputId\":\"6c138910-7f34-424b-a0d7-71d8b490553f\",\"executionInputDigest\":\"5d0702f83d1be1e0ac49535f7aa5d1ecce4013216d953360817249b26e0280ac\",\"templateVersion\":2,\"order\":\"knowledge-then-attachments\",\"sources\":[],\"attachments\":[{\"reference\":{\"kind\":\"upload\",\"projectId\":\"a1198f54-1369-47ac-85b1-e809abc664a1\",\"resourceId\":\"e6867c94-e90c-4752-bd8f-f3a7016094c3\",\"version\":1,\"contentDigest\":\"ff01ba237a964180a1a5025b314ffb747505af3a05a40cdeb3c1304606ab416a\"},\"name\":\"saved.txt\",\"mediaType\":\"text/plain\",\"byteLength\":25},{\"reference\":{\"kind\":\"upload\",\"projectId\":\"a1198f54-1369-47ac-85b1-e809abc664a1\",\"resourceId\":\"9f5b7aa4-2a2e-448b-94d7-67d6d282640a\",\"version\":1,\"contentDigest\":\"f67360001ad8a6cd1c593e4a7f3f4fc4aaf982f9ad2161534de0fdd4dbd7b6b5\"},\"name\":\"later.txt\",\"mediaType\":\"text/plain\",\"byteLength\":23}]},\"messageSettings\":{\"protocol\":\"flow.claude-turn-settings.v1\",\"profile\":{\"id\":\"3bf5fd83-f125-4e7b-a102-44040906fd91\",\"runnerId\":\"b39344fd-cab2-4866-b0e4-842a5a6556da\",\"configDigest\":\"fd518c5bb4b52082fcd19628f1227b13e9f62bc991cfbb37866ba1984c56b096\"},\"requested\":{\"model\":\"msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredA\",\"thinking\":\"adaptive\",\"effort\":{\"kind\":\"level\",\"value\":\"high\"},\"speed\":\"standard\"}},\"user\":{\"role\":\"user\",\"text\":\"MSG03 same text 中文🙂\"},\"task\":{\"id\":\"fac756a5-5c99-410b-aed2-c6db7b7c6e49\",\"title\":\"MSG03 real App\",\"harness\":\"claude\",\"status\":\"queued\",\"verificationStatus\":\"pending\",\"createdAt\":\"2026-10-07T14:27:07.033Z\",\"updatedAt\":\"2026-10-07T14:27:07.033Z\"},\"assistant\":{\"state\":\"pending\",\"reason\":\"execution-pending\"},\"effective\":{\"model\":null,\"thinking\":\"unknown\",\"tools\":\"unknown\",\"source\":null},\"telemetry\":{\"kind\":\"execution\",\"taskId\":\"fac756a5-5c99-410b-aed2-c6db7b7c6e49\",\"title\":\"Execution details\"}},\"replayed\":false}",
+      "responseSha256": "ddf96692afd6dc403aab57fd0c29c8f01b0d121706af9193947f7dcca10f7d34",
+      "fault": {
+        "kind": "truncated-ack-body",
+        "contentLength": 2718,
+        "contentType": "application/json; charset=utf-8",
+        "prefixBytes": 1,
+        "prefixSha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+        "headersFlushed": true,
+        "prefixFlushed": true,
+        "endFlushed": true,
+        "socketClosed": true
+      }
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13/turns",
+      "key": "a9d49f31-c489-40ec-be01-6ab23a9ed3fc:turn",
+      "body": "{\"expectedRevision\":0,\"text\":\"MSG03 same text 中文🙂\",\"mode\":\"follow-up\",\"knowledge\":[],\"attachments\":[{\"kind\":\"upload\",\"projectId\":\"a1198f54-1369-47ac-85b1-e809abc664a1\",\"resourceId\":\"e6867c94-e90c-4752-bd8f-f3a7016094c3\",\"version\":1,\"contentDigest\":\"ff01ba237a964180a1a5025b314ffb747505af3a05a40cdeb3c1304606ab416a\"},{\"kind\":\"upload\",\"projectId\":\"a1198f54-1369-47ac-85b1-e809abc664a1\",\"resourceId\":\"9f5b7aa4-2a2e-448b-94d7-67d6d282640a\",\"version\":1,\"contentDigest\":\"f67360001ad8a6cd1c593e4a7f3f4fc4aaf982f9ad2161534de0fdd4dbd7b6b5\"}],\"messageSettings\":{\"protocol\":\"flow.claude-turn-settings.v1\",\"profile\":{\"id\":\"3bf5fd83-f125-4e7b-a102-44040906fd91\",\"runnerId\":\"b39344fd-cab2-4866-b0e4-842a5a6556da\",\"configDigest\":\"fd518c5bb4b52082fcd19628f1227b13e9f62bc991cfbb37866ba1984c56b096\"},\"requested\":{\"model\":\"msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredA\",\"thinking\":\"adaptive\",\"effort\":{\"kind\":\"level\",\"value\":\"high\"},\"speed\":\"standard\"}}}",
+      "status": 202,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true,
+      "responseBody": "{\"turn\":{\"id\":\"f1e31716-de64-45e6-8ba7-533b8eff7df2\",\"task\":{\"id\":\"fac756a5-5c99-410b-aed2-c6db7b7c6e49\",\"title\":\"MSG03 real App\",\"status\":\"queued\",\"harness\":\"claude\",\"createdAt\":\"2026-10-07T14:27:07.033Z\",\"updatedAt\":\"2026-10-07T14:27:07.033Z\",\"verificationStatus\":\"pending\"},\"user\":{\"role\":\"user\",\"text\":\"MSG03 same text 中文🙂\"},\"number\":1,\"context\":{\"id\":\"463f4428-45bf-4e7a-8162-c32725939032\",\"order\":\"knowledge-then-attachments\",\"sources\":[],\"attachments\":[{\"name\":\"saved.txt\",\"mediaType\":\"text/plain\",\"reference\":{\"kind\":\"upload\",\"version\":1,\"projectId\":\"a1198f54-1369-47ac-85b1-e809abc664a1\",\"resourceId\":\"e6867c94-e90c-4752-bd8f-f3a7016094c3\",\"contentDigest\":\"ff01ba237a964180a1a5025b314ffb747505af3a05a40cdeb3c1304606ab416a\"},\"byteLength\":25},{\"name\":\"later.txt\",\"mediaType\":\"text/plain\",\"reference\":{\"kind\":\"upload\",\"version\":1,\"projectId\":\"a1198f54-1369-47ac-85b1-e809abc664a1\",\"resourceId\":\"9f5b7aa4-2a2e-448b-94d7-67d6d282640a\",\"contentDigest\":\"f67360001ad8a6cd1c593e4a7f3f4fc4aaf982f9ad2161534de0fdd4dbd7b6b5\"},\"byteLength\":23}],\"contextDigest\":\"2b5f273d9b06cb93e995b194125e3d98dc60cefef23e835228dfafbafe44461d\",\"templateVersion\":2,\"executionInputId\":\"6c138910-7f34-424b-a0d7-71d8b490553f\",\"executionInputDigest\":\"5d0702f83d1be1e0ac49535f7aa5d1ecce4013216d953360817249b26e0280ac\"},\"assistant\":{\"state\":\"pending\",\"reason\":\"execution-pending\"},\"createdAt\":\"2026-10-07T14:27:07.039Z\",\"effective\":{\"model\":null,\"tools\":\"unknown\",\"source\":null,\"thinking\":\"unknown\"},\"telemetry\":{\"kind\":\"execution\",\"title\":\"Execution details\",\"taskId\":\"fac756a5-5c99-410b-aed2-c6db7b7c6e49\"},\"conversationId\":\"f241d805-8783-4190-8179-368303c1ca13\",\"messageSettings\":{\"profile\":{\"id\":\"3bf5fd83-f125-4e7b-a102-44040906fd91\",\"runnerId\":\"b39344fd-cab2-4866-b0e4-842a5a6556da\",\"configDigest\":\"fd518c5bb4b52082fcd19628f1227b13e9f62bc991cfbb37866ba1984c56b096\"},\"protocol\":\"flow.claude-turn-settings.v1\",\"requested\":{\"model\":\"msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredA\",\"speed\":\"standard\",\"effort\":{\"kind\":\"level\",\"value\":\"high\"},\"thinking\":\"adaptive\"}}},\"conversation\":{\"id\":\"f241d805-8783-4190-8179-368303c1ca13\",\"title\":\"MSG03 real App\",\"harness\":\"claude\",\"revision\":1,\"createdAt\":\"2026-10-07T14:27:05.711Z\",\"projectId\":\"a1198f54-1369-47ac-85b1-e809abc664a1\",\"requested\":{\"model\":\"msg03-pinned\",\"tools\":\"none\",\"thinking\":\"disabled\"},\"updatedAt\":\"2026-10-07T14:27:07.040Z\",\"executionProfile\":{\"id\":\"3bf5fd83-f125-4e7b-a102-44040906fd91\",\"runnerId\":\"b39344fd-cab2-4866-b0e4-842a5a6556da\",\"configDigest\":\"fd518c5bb4b52082fcd19628f1227b13e9f62bc991cfbb37866ba1984c56b096\"}},\"replayed\":true}",
+      "responseSha256": "c2e97cf002f0a74fd854e16fb62bb191b01d183d7ebd938831feefe04a4a7a9f"
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/fac756a5-5c99-410b-aed2-c6db7b7c6e49",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/fac756a5-5c99-410b-aed2-c6db7b7c6e49/assistant-stream?limit=100",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks?limit=40",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations?limit=50",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/tasks/fac756a5-5c99-410b-aed2-c6db7b7c6e49/stream?after=0",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13/queue",
+      "key": "868f6dd4-e666-4111-a113-86f26952fec0",
+      "body": "{\"expectedQueueRevision\":0,\"knowledge\":[],\"messageSettings\":{\"protocol\":\"flow.claude-turn-settings.v1\",\"profile\":{\"id\":\"3bf5fd83-f125-4e7b-a102-44040906fd91\",\"runnerId\":\"b39344fd-cab2-4866-b0e4-842a5a6556da\",\"configDigest\":\"fd518c5bb4b52082fcd19628f1227b13e9f62bc991cfbb37866ba1984c56b096\"},\"requested\":{\"model\":\"msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredB\",\"thinking\":\"adaptive\",\"effort\":{\"kind\":\"level\",\"value\":\"high\"},\"speed\":\"standard\"}},\"text\":\"MSG03 same text 中文🙂\"}",
+      "status": 202,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true,
+      "responseBody": "{\"conversationId\":\"f241d805-8783-4190-8179-368303c1ca13\",\"queueRevision\":1,\"item\":{\"messageSettings\":{\"protocol\":\"flow.claude-turn-settings.v1\",\"profile\":{\"id\":\"3bf5fd83-f125-4e7b-a102-44040906fd91\",\"runnerId\":\"b39344fd-cab2-4866-b0e4-842a5a6556da\",\"configDigest\":\"fd518c5bb4b52082fcd19628f1227b13e9f62bc991cfbb37866ba1984c56b096\"},\"requested\":{\"model\":\"msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredB\",\"thinking\":\"adaptive\",\"effort\":{\"kind\":\"level\",\"value\":\"high\"},\"speed\":\"standard\"}},\"id\":\"7b04cbbd-55b4-4097-9500-29d62de3fde9\",\"conversationId\":\"f241d805-8783-4190-8179-368303c1ca13\",\"sequence\":1,\"state\":\"waiting\",\"preview\":\"MSG03 same text 中文🙂\",\"truncated\":false,\"promoted\":null,\"createdAt\":\"2026-10-07T14:27:07.370Z\",\"updatedAt\":\"2026-10-07T14:27:07.370Z\"},\"replayed\":false}",
+      "responseSha256": "e52ac1f4322beefe63f83d4815bc8fe8fb146a1e2890edbb1502ade8eb26d57c",
+      "fault": {
+        "kind": "truncated-ack-body",
+        "contentLength": 920,
+        "contentType": "application/json; charset=utf-8",
+        "prefixBytes": 1,
+        "prefixSha256": "021fb596db81e6d02bf3d2586ee3981fe519f275c0ac9ca76bbcf2ebb4097d96",
+        "headersFlushed": true,
+        "prefixFlushed": true,
+        "endFlushed": true,
+        "socketClosed": true
+      }
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "POST",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13/queue",
+      "key": "868f6dd4-e666-4111-a113-86f26952fec0",
+      "body": "{\"expectedQueueRevision\":0,\"knowledge\":[],\"messageSettings\":{\"protocol\":\"flow.claude-turn-settings.v1\",\"profile\":{\"id\":\"3bf5fd83-f125-4e7b-a102-44040906fd91\",\"runnerId\":\"b39344fd-cab2-4866-b0e4-842a5a6556da\",\"configDigest\":\"fd518c5bb4b52082fcd19628f1227b13e9f62bc991cfbb37866ba1984c56b096\"},\"requested\":{\"model\":\"msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredB\",\"thinking\":\"adaptive\",\"effort\":{\"kind\":\"level\",\"value\":\"high\"},\"speed\":\"standard\"}},\"text\":\"MSG03 same text 中文🙂\"}",
+      "status": 202,
+      "cookie": true,
+      "bearer": false,
+      "csrf": true,
+      "responseBody": "{\"item\":{\"id\":\"7b04cbbd-55b4-4097-9500-29d62de3fde9\",\"state\":\"waiting\",\"preview\":\"MSG03 same text 中文🙂\",\"promoted\":null,\"sequence\":1,\"createdAt\":\"2026-10-07T14:27:07.370Z\",\"truncated\":false,\"updatedAt\":\"2026-10-07T14:27:07.370Z\",\"conversationId\":\"f241d805-8783-4190-8179-368303c1ca13\",\"messageSettings\":{\"profile\":{\"id\":\"3bf5fd83-f125-4e7b-a102-44040906fd91\",\"runnerId\":\"b39344fd-cab2-4866-b0e4-842a5a6556da\",\"configDigest\":\"fd518c5bb4b52082fcd19628f1227b13e9f62bc991cfbb37866ba1984c56b096\"},\"protocol\":\"flow.claude-turn-settings.v1\",\"requested\":{\"model\":\"msg03-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declared-model-declaredB\",\"speed\":\"standard\",\"effort\":{\"kind\":\"level\",\"value\":\"high\"},\"thinking\":\"adaptive\"}}},\"queueRevision\":1,\"conversationId\":\"f241d805-8783-4190-8179-368303c1ca13\",\"replayed\":true}",
+      "responseSha256": "acacad0b6fea04c991915fe05b71330f70b3f5e73c476b04cc473ed9fb78c475"
+    },
+    {
+      "method": "GET",
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13/queue?after=0&limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    },
+    {
+      "method": "GET",
+      "path": "/api/execution-profiles?limit=20",
+      "key": null,
+      "body": "",
+      "status": 200,
+      "cookie": true,
+      "bearer": false,
+      "csrf": false
+    }
+  ],
+  "coverage": {
+    "cookieRead": "PASSED",
+    "cookieSseHandshake": "NOT_SELECTED",
+    "cookieSseDelivery": "PENDING: only handshake is asserted",
+    "textIntentDraft": "NOT_SELECTED",
+    "materialDraft": "NOT_SELECTED",
+    "sameKeyTurn": "NOT_SELECTED",
+    "crossTabCas": "NOT_SELECTED",
+    "pageOnlyAuthLoss": "NOT_SELECTED",
+    "csrfOffline": "NOT_SELECTED",
+    "themes390": "NOT_SELECTED",
+    "connectionChoice": "NOT_SELECTED",
+    "createAckLoss": "NOT_SELECTED",
+    "createdTurnAckLoss": "NOT_SELECTED",
+    "queueAckLoss": "NOT_SELECTED",
+    "sseDelivery": "NOT_SELECTED",
+    "completeDraft": "NOT_SELECTED",
+    "steeringRecovery": "NOT_SELECTED",
+    "secondCenterCycle": "NOT_SELECTED",
+    "messageSettingsApp": "PASSED",
+    "messageSettingsMaterialReturn": "NOT_SELECTED",
+    "createTwoStage": "PENDING: the two CREATE fault points are independent selected journeys",
+    "queueSteerRecovery": "PENDING: enqueue selection does not validate promotion or steering",
+    "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+    "secondCenter": "NOT_RUN: real A/B cycle is a separate selected journey; principal-only is controlled"
+  },
+  "bodyLoss": [
+    {
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13/turns",
+      "key": "a9d49f31-c489-40ec-be01-6ab23a9ed3fc:turn",
+      "bodySha256": "69566894ac7a80a82b6549e3ecbfad72990179e9428f7fc0d9fde5abfd08986e",
+      "status": 202,
+      "headers": {
+        "content-length": "2718",
+        "content-type": "application/json; charset=utf-8",
+        "connection": "close",
+        "cache-control": "no-store"
+      },
+      "events": [
+        "request",
+        "response-headers",
+        "requestfailed"
+      ],
+      "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+      "finished": false
+    },
+    {
+      "path": "/api/conversations/f241d805-8783-4190-8179-368303c1ca13/queue",
+      "key": "868f6dd4-e666-4111-a113-86f26952fec0",
+      "bodySha256": "99e1514388b5c9d87c0b2f76976e1f28daef6fbae8dacc8d033db58677927687",
+      "status": 202,
+      "headers": {
+        "content-length": "920",
+        "content-type": "application/json; charset=utf-8",
+        "connection": "close",
+        "cache-control": "no-store"
+      },
+      "events": [
+        "request",
+        "response-headers",
+        "requestfailed"
+      ],
+      "failure": "net::ERR_CONTENT_LENGTH_MISMATCH",
+      "finished": false
+    }
+  ],
+  "sseDelivery": {
+    "baselineCursor": null,
+    "deliveredCursor": null,
+    "cancelledTaskId": null,
+    "externalCancel": null,
+    "readRequests": [],
+    "trace": null
+  },
+  "completeDraft": {
+    "profile": null,
+    "knowledge": null,
+    "savedRecordId": null,
+    "conversationId": null,
+    "preparedPostCount": null,
+    "restoredPostCount": null,
+    "verificationOrder": [],
+    "turnId": null,
+    "taskId": null
+  },
+  "steeringRecovery": {
+    "profile": null,
+    "conversationId": null,
+    "turnId": null,
+    "sameDocumentNavigation": null,
+    "originalTurnReceiptId": null,
+    "actor": null,
+    "draftId": null,
+    "receiptId": null,
+    "commandId": null,
+    "browserPostCounts": [],
+    "draftFailureObservation": null
+  },
+  "secondCenter": {
+    "identities": [],
+    "baseUrl": null,
+    "draftA": null,
+    "draftB": null,
+    "receiptA": null,
+    "lateRead": null
+  }
+}

@@ -1,7 +1,7 @@
 import { RecoveryError, recoveryValue, type CommandRecovery, type CommandRecord } from "../../recovery/journal";
 import { FlowApiError, type FlowClient } from "@flow/client";
 import { conversationContextResponseSchema, conversationQueueEnqueueSchema, conversationQueuePauseSchema, conversationQueueResumeSchema, conversationQueueCancelSchema,
-  type AttachmentReference, type ConversationQueueItem, type ConversationQueueCurrentTurn, type ConversationQueueEnqueue } from "@flow/contracts";
+  assertClaudeTurnSettingsMatch, type ClaudeTurnSettings, type AttachmentReference, type ConversationQueueItem, type ConversationQueueCurrentTurn, type ConversationQueueEnqueue } from "@flow/contracts";
 
 import { assertContextReceiptMatches, freezeMaterialRequest } from "../../conversation-context/receipts";
 import type { FrozenCitation } from "../../conversation-context/selection";
@@ -12,7 +12,7 @@ export function queuePort(client: object): QueuePort | null {
     .every(key => typeof (client as Record<string, unknown>)[key] === "function") ? client as QueuePort : null;
 }
 export type QueueCommand =
-  | { kind: "enqueue"; conversationId: string; input: { expectedQueueRevision: number; text: string; knowledge?: readonly FrozenCitation[]; attachments?: readonly Readonly<AttachmentReference>[] } }
+  | { kind: "enqueue"; conversationId: string; input: { expectedQueueRevision: number; text: string; messageSettings?: Readonly<ClaudeTurnSettings>; knowledge?: readonly FrozenCitation[]; attachments?: readonly Readonly<AttachmentReference>[] } }
   | { kind: "pause"; conversationId: string; input: { expectedQueueRevision: number } }
   | { kind: "resume"; conversationId: string; input: { expectedQueueRevision: number; expectedTaskId: string | null } }
   | { kind: "cancel-item"; conversationId: string; itemId: string; input: { expectedQueueRevision: number } }
@@ -61,6 +61,8 @@ function receiptMessage(command: QueueCommand, value: unknown): string {
     assertQueueItem(item, command.conversationId, command.kind === "cancel-item" ? command.itemId : undefined);
     if (command.kind === "enqueue") {
       if (item.state !== "waiting" || item.sequence !== result.queueRevision || result.queueRevision !== command.input.expectedQueueRevision + 1 || !command.input.text.startsWith(item.preview) || (!item.truncated && item.preview !== command.input.text)) throw Error("Queued message receipt does not match the frozen text.");
+      if (command.input.messageSettings !== undefined) assertClaudeTurnSettingsMatch(command.input.messageSettings, item.messageSettings);
+      else if (item.messageSettings !== undefined) throw Error("Queue receipt added settings that were not requested.");
       assertContextReceiptMatches(command.input.knowledge, item.context, command.input.attachments?.length
         ? { projectId: command.input.attachments[0]!.projectId, attachments: command.input.attachments } : undefined);
       return "Message accepted into the center queue. Current progress comes from the refreshed list.";

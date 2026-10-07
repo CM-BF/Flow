@@ -1,6 +1,6 @@
 # COST-001 可解释的执行成本与预算
 
-状态：in-progress（COST01A首纵向片）。2026-10-06。独立大task，承接[FLOW-001 REQ-09](../flow-001-architecture/plan.md)，co-lead Execution Lead；唯一权威在execution-cost工作树。原依赖首片已具备；2026-10-06在TUI01E接收后提高为下一实施位，与O13及网页恢复并行，不打断现有writer。统一遵循[模块化规则](../../AGENTS.md#modular-design)。
+状态：in-progress（首纵向读口已交付，中心共享预算为下一结果）。独立大task，承接[FLOW-001 REQ-09](../flow-001-architecture/plan.md)，co-lead Execution Lead；唯一权威在execution-cost工作树。原依赖首片已具备；2026-10-06在TUI01E接收后提高为下一实施位，与O13及网页恢复并行，不打断现有writer。统一遵循[模块化规则](../../AGENTS.md#modular-design)。
 
 ## 用户结果与边界
 
@@ -40,10 +40,26 @@
 
 COST001-02补充候选：稳定资料前缀结构toy及明确限制统一见[研究记录](../../docs/evidence/cost01/research.md)。只读来源与字节边界不代表token节省；具体实施待空槽fresh scope，不修改当前context或附件版本，不提高到ENG/TUI/附件前。
 
-## 当前下一可用交付：COST01A
+## 已交付首片：COST01A（历史范围）
 
 唯一子片[COST01A](../../../cost-usage-readout/plans/cost01a-usage-readout/plan.md)承担来源分解与共用轻读口，映射COST001-02/03。首片只复用usage_samples和已有baseline事实，提供普通输入/cache-read/cache-write/output/SDK估算、source语义版本与覆盖原因；不重写旧合计含义，不按模型名猜归因，不将不同provider计数直接相加。没有可核来源版本时保留unknown。共享出口/FlowClient及生产挂载由Execution Lead单写，客户端渲染仍可并行。具体只读projection与必要共享seam由该子片固定Interface后实施；不能新增第二账本。
 
 ## 2026-10-06T14:35:06.228081+00:00 首纵向交付与剩余目标
 
 COST01A已独审并与公共factory、FlowClient和只读CLI进入main59ef2134。共享基线贡献函数由原写入与新投影复用，旧合计未改义；历史缺版本、resume baseline与覆盖不足仍明确unknown。COST001-02/03保留跨来源归一未完边界，04的CLI读取部分已完成，阶段归因与Web/TUI显示、05中心预算未完成。不以首读口将完整大task勾完。
+
+## COST001-05 下一用户结果：多 runner 共享预算受理与在途保留
+
+2026-10-07 管理更新：由 Execution Lead 负责本片规划/接口与后续独立 owner 派工，产品 writer 尚未领取。优先级排在当前新网页发布、消息设置与已有 ready 用户链路后；当前只固化验收，无 PG、负载或 provider 新预算。不是新增大task，也不把已交付分解读口冒充并发预算。
+
+用户为同一范围设置预算后，多 runner 的受理共同消耗可解释的预留；拒绝、在途及结果未知能从同一公开读口理解。复用 `usage_samples` 的已知贡献、累计 baseline/segment 和现 claim/attempt 身份；中心事务是受理与预留唯一权威，客户端和各 runner 不各自维护全局余量。具体持久字段/迁移与小 Interface 在实施前按现 owner scope 冻结，不先造第二账本或配额服务。
+
+| 原子接口责任 | 最小验收与保留语义 |
+| --- | --- |
+| 中心受理/预留 | 同一剩余额度由两个独立 runner 同时竞争，不超出声明的受理/预留界限；同 key 重放、丢 ACK、中心重启不重复占用。身份必须绑定已授权 task/attempt，不能由客户端数字自证。 |
+| usage 对账与释放 | 迟到 usage 按稳定 sample 去重；累计 baseline/reset/resume 缺口不猜减或猜零。断联、超时、cancel 或本地空闲不等于外部已停，unknown 在途不自动退款；明确结算事实与人工恢复边界后才按版本化规则释放。 |
+| 共用轻读口 | Web/TUI/CLI 区分已知贡献、在途预留、未知覆盖及可受理边界；次数/并发限制与估算 USD 分开，保留已交付 readout 的 producerVersion/phaseAttribution 未知。 |
+
+先交 0 模型局部纵向片：两个真实受理消费者、有限专库 race、重复/丢 ACK/重启、迟到 usage/unknown 与既有 baseline/reset 样本。使用当前公开合同及直接消费者，不重复容量全套，不因有本地 SDK 限额宣称中心全局限额。实际 provider 仍须具体新场景/独立预算。
+
+SDK 本地估算、中心可证明的受理/预留规则与最终账户账单是三种口径；不能承诺账户费用绝不越界。当前 adapter 禁止 Agent，未发现由这条研究增加 native 子agent 的事实。固定 SDK 行为与最新文档分开，来源及限制见[研究记录](../../docs/evidence/cost01/research.md#2026-10-07-共享预算与sdk限额边界)。

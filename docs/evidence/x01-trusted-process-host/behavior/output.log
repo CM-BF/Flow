@@ -1,0 +1,17 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host
+
+ ✓ apps/runner/src/plugins/execution.test.ts (17 tests | 11 skipped) 21379ms
+   ✓ trusted worker reaches real execution consumer with fresh module state and unchanged provenance  424ms
+   ✓ trusted worker terminates import hang without pretending effects were rolled back  10117ms
+   ✓ trusted worker terminates invoke hang without pretending effects were rolled back  10088ms
+   ✓ trusted worker does not inherit parent secret and never retains console body  302ms
+ ✓ apps/runner/src/configuration.test.ts (24 tests | 22 skipped) 9ms
+ ✓ apps/runner/src/plugins/process-host.test.ts (3 tests) 728ms
+   ✓ trusted resource count is reusable and full capacity never prevents owned cleanup  709ms
+
+ Test Files  3 passed (3)
+      Tests  11 passed | 33 skipped (44)
+   Start at  06:05:24
+   Duration  22.93s (transform 305ms, setup 0ms, import 567ms, tests 22.12s, environment 0ms)
+

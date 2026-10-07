@@ -2,7 +2,7 @@ import {
   conversationCreationSchema,
   conversationTurnSchema,
   type ConversationCreation,
-  type ConversationTurnAdmission, type AttachmentReference,
+  type ConversationTurnAdmission, type AttachmentReference, type ClaudeTurnSettings,
 } from "@flow/contracts";
 import { recoveryValue, type CommandRecord } from "../recovery/journal";
 import { freezeMaterialRequest } from "../conversation-context/receipts";
@@ -12,6 +12,7 @@ export interface OutgoingConversationTurn {
   conversationId: string | null;
   expectedRevision: number;
   text: string;
+  messageSettings?: Readonly<ClaudeTurnSettings>;
   creation?: ConversationCreation;
   knowledge?: readonly FrozenCitation[];
   attachments?: readonly Readonly<AttachmentReference>[];
@@ -98,6 +99,7 @@ export class ConversationOutbox {
       throw Error("Materials require a fixed conversation project.");
     const request = freezeMaterialRequest(conversationTurnSchema.parse({
       expectedRevision: input.expectedRevision, text: input.text, mode: "follow-up",
+      ...(input.messageSettings === undefined ? {} : { messageSettings: input.messageSettings }),
       ...(input.knowledge !== undefined ? { knowledge: input.knowledge } : {}),
       ...(input.attachments !== undefined ? { attachments: input.attachments } : {}),
     }), creation?.projectId);

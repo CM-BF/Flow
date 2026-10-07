@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-07T13:34:59.773610+00:00",
+  "source": "424c6466bd28a838b91cc490a7b52021202b4d17",
+  "previousSource": "c4bee7707a273e98ba7b07dc061ec13e78094c2f",
+  "changed": [
+    "apps/web/test/conversation-recovery.fixture.ts"
+  ],
+  "diffSha256": "47242fbcba5767a4641f6ab6beaa6dfa7dcdab20d0dfa1603f03aec46ce20ff4",
+  "sourceChain": [
+    {
+      "path": "packages/client/src/index.ts",
+      "lines": "480-486",
+      "fact": "public protocol header request"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "line": 4,
+      "fact": "X-Flow-Execution-Profile"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "lines": "28-38",
+      "fact": "exact single protocol header selects messageSettings directory; fallback legacy"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "line": 403,
+      "fact": "now preserve protocol header through original raw duplicate loop"
+    }
+  ],
+  "actual": "second run saw real directoryGET200 and modelA count0; no failedDOM retained; static proxy omission is verified but sole causal explanation requires related actual retest",
+  "unchanged": "16 other source, original predicates/count/timeouts/UI, actor/lifecycle/resources/caller. No local green rerun."
+}

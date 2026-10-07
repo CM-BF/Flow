@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T14:19:44.279854+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--experimental-vm-modules",
+    "--test",
+    "--test-reporter=tap",
+    "--test-concurrency=1",
+    "--test-name-pattern=SVC09A startup",
+    "tools/personal-preview/preview.test.mjs"
+  ],
+  "head": "15f20f1f93ceb607d65255e7ad9da9b73dd9f83b",
+  "freeBytes": 21369118720,
+  "priorWorkMs": 1182,
+  "segmentBudgetMs": 240000,
+  "tmpCapBytes": 33554432,
+  "rawCapBytes": 2097152,
+  "scratch": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09a-neezvuyt",
+  "dev": 16777234,
+  "ino": 124189650,
+  "PG": 0,
+  "provider": 0,
+  "browser": 0,
+  "inputs": [
+    {
+      "path": "tools/personal-preview/preview.test.mjs",
+      "bytes": 70017,
+      "sha256": "3887ec77d92cf3a5f37f5d78f40b63568ca02552e02adf3d2f2801b2552874f9"
+    }
+  ]
+}

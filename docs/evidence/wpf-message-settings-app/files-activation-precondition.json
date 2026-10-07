@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-07T13:56:05.753Z",
+  "source": "61185e5fa8a0a55e83c2196355249e6f4359a19e",
+  "previousMetadata": "97ed4204deb34d6b49609969e2935d470abd9c64",
+  "changed": [
+    "apps/web/test/conversation-recovery.browser.ts"
+  ],
+  "diffSha256": "91b9f7e825e07a5250463c67957ae2aa781db153f7d9d3d925777e0e3a95395c",
+  "claimObservedAt": "2026-10-07T13:54:50.429Z",
+  "claim": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
+  "version": 2,
+  "exactScopes": 19,
+  "overlap": [],
+  "sourceFinding": "Trusted attachment plugin registration does not itself activate it; closed dialog does not mount the declared context view. Fresh material journey did not use its public Files action before official Add Attachment. This is a reachable missing fixture prerequisite, not proof of the third-run button state or sole failure cause.",
+  "fix": "Once after fresh goto and before the original material loop: real Files click, exact Project text files visible, Escape, dialog hidden and Files focus restored. Then original official Add Attachment/Promise.all chooser and every original assertion.",
+  "unchanged": "Product16other paths; defaulttimeouts/probe/business assertions/actor/parent cleanup/resources/phase unchanged. No forced activation/internal command/direct input bypass.",
+  "validation": "SOURCE_ONLY; no Node/types/tests/PG/Chrome/HTTP; no new gate/env",
+  "review": {
+    "decision": "APPROVED_PUBLIC_FILES_ACTIVATION_PRECONDITION_FIX_NOT_BROWSER_PASS",
+    "path": "source-research/root-msg03-61185-files-precondition-review-20261007.json",
+    "sha256": "09907e84354cc26451605fc5c0f45823209e9a9ae3420da353e7d639717ab554"
+  },
+  "phaseSpentMs": 33766,
+  "phaseRemainingMs": 56234,
+  "executionDisposition": "NO_NEXT; CORE owns next allocation; no runtime by this source segment."
+}

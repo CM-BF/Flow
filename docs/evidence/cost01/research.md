@@ -25,3 +25,11 @@ COST001-02后继可在空槽做一个0模型结构toy：固定合成资料与不
 只读固定maind4a2e0a7中的O08/O10结果，仅取task.usage与worker.result.modelUsage，未读prompt/凭据、未新增调用。O08：legacy input1217/output838、SDK估算0.0318802、incomplete=false；modelUsage另有cacheRead10771/cacheCreation5059。O10：legacy input1403/output272、SDK估算0.0148666、incomplete=false；另有cacheRead2298/cacheCreation2600。这说明旧incomplete并不声明缓存分解完备；旧字段与原回执保留。辅助模型有独立行，但不能仅按模型名赋予协调阶段。
 
 固定来源：`docs/evidence/o08/native-20261006-071420.json`和`docs/evidence/o10/native-0834/result.json`；见本目录usage-observation.json的来源hash与最小字段。GO本轮复核的[官方cost-tracking](https://code.claude.com/docs/en/agent-sdk/cost-tracking)区分main-loop usage与modelUsage全树、resume计数段及错误零值；这是新文档研究输入，采用必须比对本地0.3.290声明/保存事实，不能覆盖其历史未知baseline。TTL随订阅/credit变化仅候选，不转化为当前账单或节省结论。
+
+## 2026-10-07 共享预算与SDK限额边界
+
+本轮 GO 输入及 Lead 只读复核固定 `3c9345df4aec85a37e8a2a155e079db260d515b1`：`usage-readout/projection.ts:49–54` 与 contracts 仍明确 producerVersion=null、phaseAttribution=unavailable；`claude.ts:71–83` 的限额属于单 query，Agent 在禁用工具名单内。本轮没有 provider/认证/配置动作，没有证据将当前调用说成新增子agent。
+
+2026-10-07实际打开[官方 cost tracking](https://code.claude.com/docs/en/agent-sdk/cost-tracking)与[subagent 限额](https://code.claude.com/docs/en/agent-sdk/subagents#cap-subagent-depth-concurrency-and-spend)：SDK美元字段是本地估算；maxBudgetUsd只计当前 query 自身支出，resume历史不占该限额，clear会重新开始；到限结果可以已达到或超过阈值。因此它不是跨 runner 的中心预算或账户硬账单上限。新文档不是固定0.3.290运行证据，现有保存 sample/baseline/unknown 不能据此改写。预算错误结果的 usage/modelUsage 覆盖差异由后续固定版本语义检查确认，不能据缺测释放预留。
+
+沿 COST001-05 的中心原子受理/在途保留与去重对账验收；保持 `usage_samples` 和 claim/attempt 原权威，0模型准备不改变账户额度。复用已安装 find-skills、codebase-design、clean-code：仅按实际共享受理/usage消费者划小接口，状态所有权、未知与释放条件在原计划统一说明，不引新框架。

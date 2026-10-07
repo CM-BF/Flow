@@ -1,0 +1,253 @@
+{
+  "at": "2026-10-07T15:07:37.505Z",
+  "source": "7324a2a0b495eb82e64693ec6d1b8781eb12d8c5",
+  "scope": "current installed 7d1 + c7b preserved; add verified cd27 through original migration protocol; preparation only",
+  "claim": "95f47f5c-7256-44f5-b97b-c20b6756a2cc v4; own plan/evidence only",
+  "sourceBindings": [
+    {
+      "path": "current-migration.mjs",
+      "bytes": 14552,
+      "sha256": "14e5e79613360948a1e212aa31a2c2d523787710fdaba67b18c1f773123ff966",
+      "git": "7324a2a0b495eb82e64693ec6d1b8781eb12d8c5",
+      "gitPath": "docs/evidence/svc06/browser-recovery/current-migration.mjs"
+    },
+    {
+      "path": "current-migration.test.mjs",
+      "bytes": 9940,
+      "sha256": "8a0d5ff6a34ed96f069ad4995a70d4eb368e4906b0acb9095c4a6acd3464d6fc",
+      "git": "7324a2a0b495eb82e64693ec6d1b8781eb12d8c5",
+      "gitPath": "docs/evidence/svc06/browser-recovery/current-migration.test.mjs"
+    },
+    {
+      "path": "retention-validate.py",
+      "bytes": 4803,
+      "sha256": "25bbee5e5f8b6c9236038f82b12bdab801d9b32ded4720103f56e5625670ed23",
+      "git": "7324a2a0b495eb82e64693ec6d1b8781eb12d8c5",
+      "gitPath": "docs/evidence/svc06/browser-recovery/retention-validate.py"
+    }
+  ],
+  "staticClosure": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/index.mjs",
+      "git": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+      "gitPath": "tools/personal-preview/backend-release/index.mjs",
+      "bytes": 7279,
+      "sha256": "2f953d163861860b17257e5ed6da1e50ea495583fa9cb1ab9a62617adcdb558a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/files.mjs",
+      "git": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+      "gitPath": "tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "19bb8c2abdf0c5837942228579b343a28998116981ee9251e2e28e7c34f5dd5f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/node-identity.mjs",
+      "git": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+      "gitPath": "tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/build.mjs",
+      "git": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+      "gitPath": "tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/runtime-installation.mjs",
+      "git": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+      "gitPath": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "bytes": 6646,
+      "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/cache-plan.mjs",
+      "git": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+      "gitPath": "tools/personal-preview/backend-release/cache-plan.mjs",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/dependency-plan.mjs",
+      "git": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+      "gitPath": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "bytes": 10976,
+      "sha256": "bb39c0dd9925ceb7f93638a6411c09d0dbeaa01132c9265c7a0a71c18bd5bdda"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/installation-view.mjs",
+      "git": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+      "gitPath": "tools/personal-preview/backend-release/installation-view.mjs",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/migration-adapter.mjs",
+      "git": "5c29e13a5d251e4fb6b99d7d1277ace85dee24dc",
+      "gitPath": "docs/evidence/svc06/update-diagnostics-candidate/migration-adapter.mjs",
+      "bytes": 14990,
+      "sha256": "82b048813aeedfc2f8f4a9fd83a7cb73dc28083707a38b84e37f73a21d3d4d2a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/procedure.mjs",
+      "git": "fd9dd5a9bfdd67a5397a2833420b1f874511f1d9",
+      "gitPath": "docs/evidence/svc08/flow-host-artifact/personal-adoption/procedure.mjs",
+      "bytes": 5437,
+      "sha256": "a35c57c1ec7b6defb515acc0dd3f7c9c6000fcdde84697e8464d083a0f31221b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.mjs",
+      "git": "fd9dd5a9bfdd67a5397a2833420b1f874511f1d9",
+      "gitPath": "docs/evidence/svc08/flow-host-artifact/personal-adoption/file-readers.mjs",
+      "bytes": 2456,
+      "sha256": "eefb05757f028b1f16e76845ee7430c381217a4b0d8fd775803fc35d088f853a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs",
+      "git": "fd9dd5a9bfdd67a5397a2833420b1f874511f1d9",
+      "gitPath": "docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs",
+      "bytes": 9772,
+      "sha256": "6e89a87292c8c360ea3ee3bcd1563a1d7492e1e8c51b4bbecdc63f3a4581619d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py",
+      "git": "fd9dd5a9bfdd67a5397a2833420b1f874511f1d9",
+      "gitPath": "docs/evidence/svc06/artifact-host-followup/clone-artifact.py",
+      "bytes": 3281,
+      "sha256": "05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6"
+    }
+  ],
+  "oldRuntimeSource": {
+    "git": "fd9dd5a9bfdd67a5397a2833420b1f874511f1d9",
+    "path": "docs/evidence/svc06/update-diagnostics-candidate/migration-inputs.json",
+    "bytes": 31712,
+    "sha256": "f077d544b7eefc313761208f4b7c7d53c9850c8e35671666a9680190f6a607bd"
+  },
+  "nonGitRuntimeReferences": [
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "inheritedSha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "inheritedSha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "inheritedSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/usr/bin/python3",
+      "inheritedSha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "current-migration-local-01.json",
+      "bytes": 2816,
+      "sha256": "12fa5ccbeb5f0d0d676eb74fbe173bb1c34f315f249c9a9f2435a07a870d6455"
+    },
+    {
+      "path": "current-migration-loader-local-02.json",
+      "bytes": 2439,
+      "sha256": "6040b878664d8ddb8e714482eceeaf046ae40aba30481d9f6b81ed9b75e3a65a"
+    }
+  ],
+  "validation": {
+    "newDistinct": 6,
+    "selectedAcrossRounds": 7,
+    "passedAcrossRounds": 7,
+    "rounds": [
+      {
+        "file": "current-migration-local-01.json",
+        "selected": 5,
+        "elapsedMs": 117,
+        "rawBytes": 740,
+        "startedAt": "2026-10-07T14:59:11.427237+00:00",
+        "finishedAt": "2026-10-07T14:59:11.546150+00:00",
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+      },
+      {
+        "file": "current-migration-loader-local-02.json",
+        "selected": 2,
+        "elapsedMs": 127,
+        "rawBytes": 360,
+        "startedAt": "2026-10-07T15:05:45.952618+00:00",
+        "finishedAt": "2026-10-07T15:05:46.080818+00:00",
+        "ownedState": "absent",
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+      }
+    ],
+    "elapsedMs": 244,
+    "rawBytes": 1100,
+    "retentionEarlierNotRerun": true,
+    "includingRetentionLocalElapsedMs": 5992,
+    "sourceDeltaAfterRound01": "Only loader/import assembly, strict required identity/clone parameter validation and its test additions; original state/store/private/stage guards unchanged. Parameter case rerun in round02, loader case new."
+  },
+  "retentionReceipt": {
+    "source": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+    "main": "fd9dd5a9bfdd67a5397a2833420b1f874511f1d9",
+    "reviewGitPath": "docs/evidence/i02/svc06b-retention-review.json",
+    "reviewCopy": {
+      "path": "retention-independent-review.json",
+      "bytes": 3785,
+      "sha256": "2441b495e18c62573267c42bc3f88b4d5d462277a2fa888cdd23b678d04e7d18"
+    },
+    "scopeHandback": {
+      "path": "retention-scope-handback.json",
+      "bytes": 638,
+      "sha256": "ce7886aa3c1bf02d99367cc3c87992a735fe3a5c3eaad49ea2711dfabdccfaf9"
+    }
+  },
+  "executionReadiness": {
+    "module": "FIXED_FOR_REVIEW",
+    "supervisedPersonalInvocation": "NOT_CREATED_OR_RUN",
+    "personalFreshSnapshot": "NOT_READ",
+    "reportSet": "PENDING_WEB_OWNER",
+    "futureContract": "current-migration-interface.md"
+  },
+  "notRun": [
+    "personal file or database reads",
+    "migration clone or rename",
+    "service/maintenance changes",
+    "PG/HTTP/provider",
+    "Web compatibility",
+    "old build/import/tests"
+  ],
+  "cleanCode": {
+    "at": "2026-10-07T15:07:37.505Z",
+    "skills": [
+      "local find-skills discovery reused",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md"
+    ],
+    "method": "one current-state adapter over the existing procedure, locking, readonly runner SQL and no-replace primitive; centralized retention; no second FSM; fixed source and future observation kept separate",
+    "findings": []
+  },
+  "firstRoundSourceRecovery": {
+    "method": "Inverse of subsequent loader/parameter additions, retained only after exact equality to both SHA256 captured in original local-01; not a rerun or a claim that the snapshot existed at run time.",
+    "snapshots": [
+      {
+        "path": "local-01-source-current-migration.mjs.txt",
+        "bytes": 12064,
+        "sha256": "f994b68d495459d87c1a684cdd2b85db8b14ec2b62e8678ae809636ff56bb8f5"
+      },
+      {
+        "path": "local-01-source-current-migration.test.mjs.txt",
+        "bytes": 8168,
+        "sha256": "6064a5ac1d14fdbb15de655cba7f46844bca4995775f71e0c430e3ac418d517c"
+      }
+    ]
+  }
+}

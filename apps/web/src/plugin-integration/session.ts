@@ -1,3 +1,4 @@
+import { ConversationMessageSettings, createMessageSettingsPlugin, type MessageSettingsPort } from "./message-settings";
 import { RecoveryWorkspace, createRecoveryPlugin, type RecoveryHost } from "../recovery/binding";
 import { ConversationAttachments, createAttachmentPlugin, type AttachmentClient } from "./attachments";
 import type { RecoveryStorage } from "../attachments/recovery";
@@ -39,6 +40,7 @@ export interface AppActions {
   task(id: string): TaskSnapshot | null;
   hasDraft(id: string): boolean;
   recovery?: RecoveryHost;
+  messageSettings?: MessageSettingsPort;
   activity?: ActivityReaders;
   knowledge?: KnowledgeReaders;
   stream?: StreamReaders;
@@ -59,6 +61,7 @@ const initialNavigation: NavigationSnapshot = { activeTaskId: null, workspaceTab
 /** One host lifetime per center connection; navigation does not create a new lifetime. */
 export class AppPluginSession {
   readonly id = crypto.randomUUID();
+  private readonly settingsBindings = new Map<string, ConversationMessageSettings>();
   readonly navigation = createStore<NavigationSnapshot>(initialNavigation);
   readonly theme: ReturnType<typeof createStore<ThemeSnapshot>>;
   readonly workspace = createStore<WorkspaceDisplay>(emptyDisplay);
@@ -72,7 +75,7 @@ export class AppPluginSession {
   private readonly recoverySubscriptions = new Map<string, () => void>();
   recoveryMaterials(viewKey: string) {
     const knowledge = this.knowledgeBindings.get(viewKey)?.getSnapshot();
-    return { projectId: knowledge?.projectId ?? null, projectTitle: knowledge?.projectTitle ?? null, knowledge: knowledge?.controller?.getSnapshot().selected ?? [], attachments: this.attachmentBindings.get(viewKey)?.binding.input?.getSnapshot().items ?? [] };
+    return { projectId: knowledge?.projectId ?? null, projectTitle: knowledge?.projectTitle ?? null, knowledge: knowledge?.controller?.getSnapshot().selected ?? [], attachments: this.attachmentBindings.get(viewKey)?.binding.recoveryDraft() ?? [] };
   }
   private readonly lifetime = new AbortController();
   get signal() { return this.lifetime.signal; }
@@ -135,6 +138,12 @@ export class AppPluginSession {
     this.host.register(createActivityPlugin());
     this.host.register(createAssistantStreamPlugin());
     this.host.register(createAttachmentPlugin(viewId => [...this.attachmentBindings.values()].find(({ binding }) => { const context = binding.context(); return context.kind === "composer" && context.viewId === viewId; })?.binding));
+    this.host.register(createMessageSettingsPlugin((viewId, signal) => {
+      const binding = [...this.settingsBindings.values()].find(item => item.context().viewId === viewId);
+      if (!binding) throw Error("This composer has no message settings owner.");
+      binding.open(signal);
+    }));
+    this.host.subscribe(() => this.settingsBindings.forEach(binding => binding.sync()));
     this.host.register(createKnowledgePlugin(viewId => {
       const binding = [...this.knowledgeBindings.values()].find(item => { const context = item.context(); return context.kind === "composer" && context.viewId === viewId; });
       if (!binding) throw Error("Knowledge is not available in this composer.");
@@ -143,7 +152,7 @@ export class AppPluginSession {
     this.recovery.sync();
   }
 
-  updateActions(actions: AppActions) { if (!this.closed) { this.actions = actions; this.recovery.sync(); this.steering.sync(); this.attachmentBindings.forEach(({ binding }) => binding.sync()); } }
+  updateActions(actions: AppActions) { if (!this.closed) { this.actions = actions; this.settingsBindings.forEach(binding => binding.sync()); this.recovery.sync(); this.steering.sync(); this.attachmentBindings.forEach(({ binding }) => binding.sync()); } }
   publishNavigation(next: NavigationSnapshot, context: ResourceContext) {
     if (this.closed) return;
     this.context = context;
@@ -228,6 +237,12 @@ export class AppPluginSession {
     ];
   }
   /** App is the sole final-release authority. Protected bindings are never silently discarded. */
+  closeMessageSettings() { this.settingsBindings.forEach(binding => binding.close()); }
+  messageSettingsBinding(viewKey: string) {
+    let binding = this.settingsBindings.get(viewKey);
+    if (!binding) { binding = new ConversationMessageSettings(viewKey, this, () => this.actions.messageSettings); this.settingsBindings.set(viewKey, binding); }
+    return binding;
+  }
   releaseView(viewKey: string) {
     if (this.getViewProtection(viewKey).length) throw Error("This view still owns local material.");
     const binding = this.knowledgeBindings.get(viewKey);
@@ -236,6 +251,7 @@ export class AppPluginSession {
     this.attachmentBindings.get(viewKey)?.stop(); this.attachmentBindings.delete(viewKey);
     this.steering.closeView(viewKey);
     this.recovery.release(viewKey);
+    this.settingsBindings.get(viewKey)?.dispose(); this.settingsBindings.delete(viewKey);
   }
   canReadKnowledge(identity: KnowledgeIdentity, context: ResourceContext, knowledge: boolean) {
     const binding = this.knowledgeBindings.get(identity.viewKey);
@@ -329,6 +345,7 @@ export class AppPluginSession {
     if (this.closed) return;
     this.closed = true;
     this.lifetime.abort();
+    this.settingsBindings.forEach(binding => binding.dispose()); this.settingsBindings.clear();
     this.steering.dispose();
     this.recovery.dispose();
     this.recoverySubscriptions.forEach(stop => stop()); this.recoverySubscriptions.clear();

@@ -1,0 +1,98 @@
+{
+  "at": "2026-10-07T13:36:14.926321+00:00",
+  "run": "msg03-material-20261007-133614-91f42f",
+  "head": "5ab314c637a5166cd84dd0947e28dd99f5aa9d44",
+  "branch": "codex/web-message-settings-app",
+  "remote": "5ab314c637a5166cd84dd0947e28dd99f5aa9d44",
+  "dirty": "",
+  "claimObservedAt": "2026-10-07T13:36:14.901Z",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/conversation-context/receipts.ts",
+      "apps/web/src/conversations/ConversationThread.tsx",
+      "apps/web/src/conversations/outbox.ts",
+      "apps/web/src/conversations/projection.ts",
+      "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "apps/web/src/conversations/queue/commands.ts",
+      "apps/web/src/conversations/queue/projection.ts",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/execution-profiles.css",
+      "apps/web/src/plugin-integration/message-settings.tsx",
+      "apps/web/src/plugin-integration/react.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/recovery/binding.tsx",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/conversation-recovery.fixture.ts",
+      "apps/web/test/conversation-recovery.test.ts",
+      "docs/evidence/wpf-message-settings-app",
+      "plans/wpf-message-settings-app"
+    ],
+    "state": "active",
+    "branch": "codex/web-message-settings-app",
+    "origin": "new",
+    "taskId": "WPF-MESSAGESETTINGS03",
+    "worker": "workspace_panels_owner",
+    "claimId": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+    "createdAt": "2026-10-07T12:11:44.045Z",
+    "updatedAt": "2026-10-07T12:32:04.114Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlap": [],
+  "checkedPins": 922,
+  "priorRawChecked": 92,
+  "retainedBefore": 572857,
+  "packetBefore": 104767,
+  "freeBefore": 21616033792,
+  "minimumFreeBytes": 7511998464,
+  "sourceReview": {
+    "path": "/private/tmp/root-msg03-c4bee-browser-preparation-review-20261007.json",
+    "realpath": "/private/tmp/root-msg03-c4bee-browser-preparation-review-20261007.json",
+    "bytes": 7396,
+    "sha256": "475e0eb3972eabd62155d7fdbb82576a1ce69acae354adb322a8360b3cbafead"
+  },
+  "packet": {
+    "path": "/private/tmp/msg03-browser-prepared-06jw546b/manifest-r4.json",
+    "realpath": "/private/tmp/msg03-browser-prepared-06jw546b/manifest-r4.json",
+    "bytes": 2876,
+    "sha256": "1e2d81d0ef96741f8920a2b104cf1dacd765da745f20f0f21c4ebba143a53df4"
+  },
+  "adminSource": {
+    "ref": "ef458ff06cf7f12549b4bf3e10fc9b3e4c886ec7",
+    "path": "apps/web/test/web-release-compatibility.fixture.ts",
+    "sourceSha256": "4d37bd07dc4c312d7509fbf367bb07b3d3065a7f0cea7709c7b6ba3ea2c6c355",
+    "valueNotRecorded": true
+  },
+  "envIdentity": {
+    "path": "/private/tmp/msg03-material-retry-a_0cljps/admin.env",
+    "dev": 16777234,
+    "inode": 124166101,
+    "uid": 501,
+    "mode": "0o600"
+  },
+  "gate": {
+    "path": "/private/tmp/msg03-material-retry-a_0cljps/gate.json",
+    "realpath": "/private/tmp/msg03-material-retry-a_0cljps/gate.json",
+    "bytes": 3627,
+    "sha256": "626ccd19418836cb64f5307a40571f974c04698c3ee1c88fa3ef62b95e2028f1"
+  },
+  "collector": {
+    "path": "/private/tmp/msg03-browser-prepared-06jw546b/capture.py",
+    "realpath": "/private/tmp/msg03-browser-prepared-06jw546b/capture.py",
+    "bytes": 8891,
+    "sha256": "0eb3b50ab478302ff3ceebdd0361295604be74f00a7ebabe1566a72f3a1d9479"
+  },
+  "sharedHandoff": "d01 explicit 424c protocol fix material-return NEXT; Mika noheavy/pendinglaunch; fullsum floor7511998464",
+  "phase": {
+    "id": "MSG03-BROWSER-20261007",
+    "budgetMs": 90000,
+    "spentMs": 18962,
+    "cleanupMs": 30000
+  }
+}

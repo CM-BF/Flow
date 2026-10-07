@@ -1,0 +1,52 @@
+{
+  "task": "SVC06B",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "at": "2026-10-07T14:26:01.460Z",
+  "conclusion": "APPROVED_SOURCE_COMPOSITION_AND_BUILD_PREPARATION",
+  "target": "82873e845fc7b1a8bcab5e55713a94c94f1dadce",
+  "artifactSource": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "assemblySource": "6bebf75f24a80b38d821efd3aaf8db24a0d62e2e",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+  "canonical": "docs/evidence/svc06/browser-recovery/build-preparation.json",
+  "canonicalSha256": "4cb1af1f1af57ff91697e199ef3f8e393b8e775479de93f5179cf61ab104cd81",
+  "findings": [],
+  "evidence": {
+    "preparationFilesCurrentAndGit": 10,
+    "runtimeBindings": 17,
+    "artifactSourceBindings": 75,
+    "sqlBindings": 33,
+    "bindingErrors": [],
+    "composition": "Three before-images equal reviewed original base; three leaf and cleanup-support after-images equal 66ca/main7272. Production delta only suppresses stale Logout cookie deletion; exact server revocation remains.",
+    "reviewedInterfaces": [
+      "runFixedArtifact(inputBytes, options) preserves original build/verify/resource semantics; import performs no I/O",
+      "fixed delta pins inherited input and three methods, overrides target/tree/archive and appends three source checks",
+      "external OPS14 owns new session, bounded output/deadline and stop/reap; no personal/detached service",
+      "wx outer destination and exclusive actual-first; failure or unknown retained without re-execution"
+    ],
+    "localEvidence": "validation-01.json: four distinct pure cases pass, 197ms, owned group absent and both EOF, same empty scratch removed; reviewer did not rerun",
+    "rawReview": "Actual selected four test names/exit/EOF/cleanup and artifact namespace NOT_RUN read. Secondary OPS14 failures can only follow a first_failure, so current outer success condition does not hide them."
+  },
+  "actualBuild": "NOT_RUN",
+  "artifactId": "UNKNOWN",
+  "reviewerTests": 0,
+  "providerCalls": 0,
+  "personalOperations": 0,
+  "executionConditions": {
+    "sourcePinned": true,
+    "newNamespaceRequired": true,
+    "workSeconds": 420,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "additionalBudgetBytes": 2317352960,
+    "freshMinimum": "max(original 2.5GiB,3927965696B, latest shared-team floor); actual prior holder and this team local segment must have returned",
+    "liveReserveBytes": 1073741824,
+    "rawBytes": 2097152,
+    "exclusiveBuild": true
+  },
+  "limits": [
+    "Source approval is not artifact, actual host, Web compatibility, deployment or user journey approval.",
+    "Docs cleanup support is not included in the production artifact; no artifact test-suite claim.",
+    "Current personal 7d1/source6c and d629/v3 remain; reviewed SOURCE only contains browser fix, not later settings runner activation.",
+    "Historical failures and retained unknown resources remain unchanged."
+  ]
+}

@@ -534,9 +534,23 @@ O11限定读口已main52eb；下一O12沿同一大目标提供已有goal的连�
 
 后继在CORE/RELEASE收口后的空闲小窗口，沿现SVC06/X01计划核禁用/启用host的真实import边界，再决定最小组合入口按需加载及纯artifact reader/fetcher职责分离。先0PG/0provider、有界import-only，不删功能、不造通用插件框架；迁移完整性、默认禁用、授权和启用失败清理保持。大型release的既有资源门槛不因拆分候选降低，当前writer不被打断。
 
-### CHAT05-06 完整工具原文：下一 ready 交付（2026-10-06 18:56 UTC）
+### CHAT05-06 完整工具原文：已交付底层与下一用户交付
 
-沿既有 CHAT05-06 / REQ-15，不新增大task。当前 mapper 截到65,536B后仅保存前缀与全文hash，不能追回余文；旧历史仍明确 truncated，不能补造可恢复性。此为已知未完成范围，不改原CHAT05批准。当前保留页面兼容与O16安全交付优先，之后由 Execution Lead 负责派工/公共接线，指定 assignment_review 在当前R01正式收口后的首个合适实施槽承担 producer→durable transfer→center immutable body 的窄纵向片；未取得新独立WT/精确claim前不写产品。若O16共用runner接缝尚未释放，先做独立body合同与reader范围，不能双writer。
+2026-10-07安全点核对：CHAT05P01/P02的持久分块传输、授权分页reader和显式单attempt host已交付main f5a13cbe；下述2026-10-06第一片问题/验收作为历史动机保留，不能再把底层未实现当当前阻塞。唯一产品范围与实际结果见[CHAT05P02权威status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/plans/chat05p02-native-activity-body-wiring/status.md)；本次不重跑原44局部例或PG03。
+
+下一用户结果仍归CHAT05P01-06 / REQ15：来源允许的工具输入/结果可由用户展开并分页追回完整原文，默认首屏/SSE不取大正文，旧截断历史继续如实显示。三项实施交接共用已交付reader/descriptor，不另造正文模块或任务权威：
+
+| 原任务下的交接 | 责任与依赖 | 验收边界 |
+| --- | --- | --- |
+| CHAT05P01-06：实际SDK/CLI显式开通 | Execution Lead安排assignment_review；当前SVC06B产物/发布安全收口后ready，先fresh核runner/CLI/公共出口写权，现未领取 | 复用P02 host确认与outbox恢复；原始bytes先持久、final等tail、unknown保留。实际SDK接缝与合成0模型直接消费者分开，真实provider另获预算。 |
+| TUI001-03/08：终端完整正文消费 | Execution Lead安排原TUI owner；SVC09A当前片先收口，依赖同一FlowClient分页合同，现未新增writer | 展开前零正文请求；显式有界分页/完整拼接/取消，不复制Web私有投影；headless与实际PTY证据分别保留。 |
+| WPF-MATURE-06-03：网页完整正文消费 | Web co-lead自主安排原合法owner；新网页/消息设置优先，Lead提供P02固定合同并协调必要共享出口 | 实际展开/下一页可达、默认惰性读取和有界缓存；旧截断/未完整不能冒充可恢复。浏览器验收独立，不作为全部后端串行门禁。 |
+
+以上是一个既有后继的唯一实施交接，产品编写须原子领取后才开始；完整用户验收尚未完成。不是当前SVC06B产物或SVC09A scope的一部分。
+
+2026-10-06 18:56 UTC 原第一片规划：
+
+沿既有 CHAT05-06 / REQ-15，不新增大task。该历史基线的 mapper 截到65,536B后仅保存前缀与全文hash，不能追回余文；旧历史仍明确 truncated，不能补造可恢复性。此为已知未完成范围，不改原CHAT05批准。当前保留页面兼容与O16安全交付优先，之后由 Execution Lead 负责派工/公共接线，指定 assignment_review 在当前R01正式收口后的首个合适实施槽承担 producer→durable transfer→center immutable body 的窄纵向片；未取得新独立WT/精确claim前不写产品。若O16共用runner接缝尚未释放，先做独立body合同与reader范围，不能双writer。
 
 第一片 Interface 明确来源可公开的tool输入/结果原始bytes、body身份/固定digest/完整性状态、字节与块数上限、授权页读取以及取消/错误/资源释放。复用现有outbox、attempt fence和detail授权，受理/重报/崩溃恢复不重复正文，旧attempt不能覆盖；最终完整受理前不得称已保存全文。超过真实保存上限明确拒绝或incomplete，非公开thinking/redacted材料仍不制造正文。首屏与SSE只轻引用，展开前零正文请求。Web/TUI用同一公共引用和分页合同，呈现各自独立，不新建对象存储平台或scheduler。
 

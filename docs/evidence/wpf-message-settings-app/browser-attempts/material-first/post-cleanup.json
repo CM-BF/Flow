@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-07T13:25:48.712292+00:00",
+  "processes": [
+    {
+      "pid": 52761,
+      "process": "ESRCH",
+      "group": "ESRCH"
+    },
+    {
+      "pid": 52865,
+      "process": "ESRCH",
+      "group": "ESRCH"
+    },
+    {
+      "pid": 53177,
+      "process": "ESRCH",
+      "group": "ESRCH"
+    }
+  ],
+  "scratch": "/private/tmp/flow-recovery-browser-CIYPCG",
+  "scratchAbsent": true,
+  "envAbsent": true,
+  "chromeLaunched": false,
+  "ports": "initialization failed before fixture listen/CDP; no launched-port receipt. No port scanning/inference of unrelated ports.",
+  "database": {
+    "database": "flow_recovery_7873d02ed1dd44bea2ec4f8246da8be4",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.8172500000000582,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 1.5537500000000364,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "fixture": {
+    "complete": true,
+    "errors": [],
+    "elapsedMs": 2,
+    "wireBytes": 2,
+    "providerQueries": 0
+  }
+}

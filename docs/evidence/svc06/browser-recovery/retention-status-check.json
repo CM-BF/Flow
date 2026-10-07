@@ -1,0 +1,37 @@
+{
+  "checks": [
+    {
+      "at": "2026-10-07T14:51:06.740Z",
+      "errors": [],
+      "humanMissing": [
+        "当前阻塞"
+      ],
+      "timingIssues": [],
+      "implementation": {
+        "target": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+        "scopes": [
+          "tools/personal-preview/backend-release/files.mjs",
+          "tools/personal-preview/backend-release/index.mjs",
+          "tools/personal-preview/backend-release/artifact.test.mjs"
+        ],
+        "errors": []
+      }
+    },
+    {
+      "at": "2026-10-07T14:51:25.319Z",
+      "errors": [],
+      "humanMissing": [],
+      "timingIssues": [],
+      "implementation": {
+        "target": "203ecae58686b889f39eaef3e1b61d8ffc0bb1cb",
+        "scopes": [
+          "tools/personal-preview/backend-release/files.mjs",
+          "tools/personal-preview/backend-release/index.mjs",
+          "tools/personal-preview/backend-release/artifact.test.mjs"
+        ],
+        "errors": []
+      }
+    }
+  ],
+  "correction": "Added required ACTIVE prefix to existing blocker; first parse retained; no product recheck"
+}

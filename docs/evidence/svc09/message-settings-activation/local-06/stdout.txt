@@ -1,0 +1,38 @@
+TAP version 13
+# (node:99615) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: SVC09A selected runtime qualification failure precedes drain, hold and every service stop
+ok 1 - SVC09A selected runtime qualification failure precedes drain, hold and every service stop
+  ---
+  duration_ms: 13.37675
+  type: 'test'
+  ...
+# (node:99812) ExperimentalWarning: VM Modules is an experimental feature and might change at any time
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: SVC09A startup profile mismatch preserves primary and stops all records created in that start
+ok 2 - SVC09A startup profile mismatch preserves primary and stops all records created in that start
+  ---
+  duration_ms: 242.172667
+  type: 'test'
+  ...
+# Subtest: SVC09A failed new-slot readiness never stops the original three services
+ok 3 - SVC09A failed new-slot readiness never stops the original three services
+  ---
+  duration_ms: 48.215875
+  type: 'test'
+  ...
+# Subtest: SVC09A controlled startup failure identifies settings without weakening legacy public fields
+ok 4 - SVC09A controlled startup failure identifies settings without weakening legacy public fields
+  ---
+  duration_ms: 1.847834
+  type: 'test'
+  ...
+1..4
+# tests 4
+# suites 0
+# pass 4
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 548.759083

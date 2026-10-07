@@ -1,0 +1,89 @@
+{
+  "passed": false,
+  "selectedPassed": false,
+  "fullJourneyPassed": false,
+  "journey": "message-settings-material-return",
+  "requiredGroups": [
+    "cookieRead",
+    "messageSettingsMaterialReturn"
+  ],
+  "completedGroups": [],
+  "initialization": {
+    "outcome": "FAILED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 2308.4380410000003,
+    "elapsedMs": 2308.4380410000003
+  },
+  "groupTimings": [],
+  "acceptanceScope": "selected journey only; full journey remains unverified",
+  "errors": [
+    "ENOENT: no such file or directory, open '/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/packages/storage/migrations/017-goal-graph-runs.sql'",
+    "The selected journey did not complete every required group"
+  ],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_7873d02ed1dd44bea2ec4f8246da8be4",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.8172500000000582,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 1.5537500000000364,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "messageSettingsPhase": {
+    "id": "MSG03-BROWSER-20261007",
+    "budgetMs": 90000,
+    "spentMs": 0,
+    "cleanupMs": 30000
+  },
+  "processIds": [
+    {
+      "pid": 53177,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 21647458304,
+  "peakScratchBytes": 0,
+  "logBytes": 0,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 2757.387084,
+      "scratchBytes": 0,
+      "evidenceBytes": 473670,
+      "freeBytes": 21652721664,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 2760.325667,
+      "scratchBytes": null,
+      "evidenceBytes": 475897,
+      "freeBytes": 21652705280,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}

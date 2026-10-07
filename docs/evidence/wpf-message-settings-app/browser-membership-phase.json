@@ -1,0 +1,71 @@
+{
+  "state": "CLOSED_SELECTED_JOURNEYS_COMPLETE",
+  "id": "MSG03-MEMBERSHIP-FIX-20261007",
+  "budgetMs": 120000,
+  "spentMs": 26368,
+  "remainingMs": 93632,
+  "perAttemptMaxMs": 60000,
+  "perAttemptMinMs": 45000,
+  "cleanupMs": 30000,
+  "runDirectory": "docs/evidence/wpf-message-settings-app/browser-membership-runs",
+  "charge": "ceil(max actual outer incl terminal, late parent, serialized parent))",
+  "selectionOrder": [
+    {
+      "journey": "message-settings-material-return",
+      "requiredGroups": [
+        "cookieRead",
+        "messageSettingsMaterialReturn"
+      ]
+    },
+    {
+      "journey": "message-settings-app",
+      "requiredGroups": [
+        "cookieRead",
+        "messageSettingsApp"
+      ]
+    }
+  ],
+  "attempts": [
+    {
+      "run": "msg03-material-20261007-142356-510653",
+      "journey": "message-settings-material-return",
+      "state": "PASS_SELECTED_2_FULL_RETURN",
+      "chargeMs": 13353,
+      "manifest": "browser-attempts/membership-material/manifest.json"
+    },
+    {
+      "run": "msg03-settings-20261007-142648-6237f8",
+      "journey": "message-settings-app",
+      "state": "PASS_SELECTED_2_FULL_RETURN",
+      "chargeMs": 13015,
+      "manifest": "browser-attempts/membership-settings/manifest.json"
+    }
+  ],
+  "closedNoTransfer": [
+    {
+      "phase": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-phase.json",
+        "bytes": 2874,
+        "sha256": "bd32b2d5808ece143ea2d33c2c4c5ba86957e35b2ce790414b86c3ced2051310",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/browser-phase.json"
+      },
+      "spentMs": 51110,
+      "unusedMs": 38890,
+      "state": "CLOSED"
+    },
+    {
+      "local": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/held-projection-local-20261007/segment.json",
+        "bytes": 14850,
+        "sha256": "6c017e14e420190ed50a2131c4b35892128e606d63df9ede18000edd43817d00",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/docs/evidence/wpf-message-settings-app/held-projection-local-20261007/segment.json"
+      },
+      "spentMs": 14680,
+      "unusedMs": 5320,
+      "state": "CLOSED"
+    }
+  ],
+  "authorization": "d01_owner direct continuation new independent120000ms after c848 seal; preparation only until unique resource handoff",
+  "stopRule": "remaining<45000 OR uncertain cleanup: STOP. No unchanged automatic retry; original failures remain. No previous-phase credit.",
+  "executionDisposition": "Both original selectors completed; no further runtime/NEXT. Unused93632 not a new run authorization."
+}
