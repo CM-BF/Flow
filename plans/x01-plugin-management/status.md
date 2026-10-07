@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T07:22:01.129780+00:00 |
+| 最近更新时间 | 2026-10-07T07:28:50.395253+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -15,19 +15,19 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
-| 工作树 dirty 状态 | semver固定source 4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9；源码/raw停止，metadata封存提交后clean待审 |
-| 工作分支状态 | review |
+| 工作树 dirty 状态 | 43ce6291交审HEAD clean；本次仅归档独审与最小intake，提交后clean |
+| 工作分支状态 | integration |
 | 检查状态 | semver9/9实际材料/loader检查，1tar；首次types语法失败保留，修后types0。原PG/旧tests未重跑 |
-| Review | 中心PG与main已接收；semver源码/结果独审PENDING，semver-review-ready.md |
+| Review | chatui01_owner 2026-10-07T07:23:32Z semver源码/直接结果APPROVED，0P1/P2；正式回执semver-independent-review.json |
 | 已集成 main 状态 / HEAD | 原16领域main5cd；c15五源+center八源main9816e87a7690d7d36ac25cb8537bc9c8f41364c8，67bindings/roottypes0。当前semver尚未main |
 | 实现目标 | 4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9 |
 | 实现范围 | apps/runner/src/plugins/semver-package.test.ts, experiments/plugins/semver-compare, docs/evidence/x01/semver-local.py, docs/evidence/x01/semver-vitest.config.mjs, docs/evidence/x01/semver-tsconfig.json |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 真实semver能力包已通过材料入库、加载、调用和产物验证，固定来源与结果正在独审 |
-| 下一可用交付 | 受控接收已审npm能力包，再接生产runner完整调用链 |
-| 当前阻塞 | NONE: 固定片待独审；当前0actual/待launch |
+| 当前产出 | 真实semver能力包及直接调用验收已独审通过，可受控接入主线 |
+| 下一可用交付 | 先验证新材料安装后旧版本绑定保持，再由共享入口owner交回后接生产runner调用链 |
+| 当前阻塞 | ACTIVE: 生产runner与客户端共享出口由CHAT05P02持有；本段可独立验证版本固定，不阻材料片接收 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -51,7 +51,7 @@
 
 ## Handoff 与看板
 
-计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。原同claim v8已accept到plugin-enable-binding；当前v11为31scope，新增5个claim/journal及8个中心literal，旧15已main源停止写入，host两源此前已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。原同claim v8已accept到plugin-enable-binding；当前v13为32scope，server/index已v12停止并交回；新增semver fixture/test，仍保留5个claim/journal及7个中心literal，旧15已main源停止写入，host两源此前已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
 
 2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
 
@@ -279,3 +279,7 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T07:16:15.389Z：v13 COMMITTED32scope，仅新增semver-package.test.ts与experiments/plugins/semver-compare；server/index已v12交回。semver7.8.5/ISC九个实际输入与esbuild0.28.2已只读固定，无安装/复制node_modules。开始原有界20min能力包段，source/meta≤1MiB/TMP16MiB/raw256KiB/最多4child各60s；当前尚0运行。中心13源main9816保持固定，原输入/raw不改。
 
 2026-10-07T07:22:01.129780+00:00：semver source4fc60b4c0008cdd5664c9f349ea55dc3c7d921b9，9/9及types修后0；最多4顶层全部已用，单tar子进程exit0，五own根确认absent，local已直交C02。首types失败/earlyunknown审计保留，wholeexternalwall不推定。新artifact+source/support固定待独审；主线center13已接、server/index于07:15:18.707Z v12原子交回CHAT05P02，不恢复写权。上游7实际module/ISC及tool固定、0install/network；packagebundle无externalruntimeimports。架构只新增trusted能力包产物，正式基线更新待main接收由Lead负责；fullX01不勾Done。
+
+## 2026-10-07T07:28:50.395253+00:00 semver独审归档与接收
+
+正式独审限定source4fc60b4c/packet43ce6291，7个新source/fixture可受控接收；原28项manifest、失败raw、9例与types不重跑。fresh账本v13 ACTIVE32与本树身份一致。固定main3e4362b08359433620a07b05bd034a25e2dd7c4b仍runRunner v2；CHAT05P02 claimf51cc458 v4持runtime/client/contracts出口，C02 claim8ad6536b v15持main/configuration。下一生产接线按精确handoff顺序，不写他人范围。当前0local/PG/待launch；status_read持本队local。
