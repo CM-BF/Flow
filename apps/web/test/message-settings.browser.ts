@@ -37,7 +37,7 @@ export async function startMessageSettingsFixture(options: { cacheDir: string; a
       vite.middlewares.use((request, response, next) => {
         const url = new URL(request.url ?? "/", "http://fixture");
         if (url.pathname === "/native-select-control") {
-          response.setHeader("content-type", "text/html");
+          response.setHeader("content-type", "text/html; charset=utf-8");
           response.end(`<!doctype html><html lang="zh-CN"><title>Message settings native control</title><label>模型<select data-native-control><option value="">全部模型</option><option value="${model}">${model}</option><option value="fast-model">fast-model</option></select></label></html>`); return;
         }
         if (url.pathname === "/") {
@@ -243,8 +243,9 @@ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<Re
 /** Measurement only. It never replaces the six acceptance groups or mutates a select value. */
 export async function diagnoseMessageSettingsNativeSelect(page: Page, fixture: Awaited<ReturnType<typeof startMessageSettingsFixture>>, evidence: string, workDeadlineMs: number) {
   type Snapshot = { value: string; selectedIndex: number; focused: boolean; connected: boolean; disabled: boolean; open: boolean | "unsupported"; options: { value: string; selected: boolean; disabled: boolean }[] };
+  type PublicDocument = { characterSet: string; selectCount: number; labels: string[]; exactLocatorCount: number };
   type Trace = { state: string; events: { type: string; isTrusted: boolean; phase: string }[]; eventBytes: number; observerErrors: string[]; truncated: boolean; droppedEvents: number };
-  const report: { mode: string; diagnosticComplete: boolean; conclusion: string; arms: { name: string; snapshots: { after: string; value: Snapshot }[]; trace?: Trace; selectedWithNativeEvents?: boolean; failure?: string }[]; pageErrors: string[]; failure?: string } = {
+  const report: { mode: string; diagnosticComplete: boolean; conclusion: string; arms: { name: string; snapshots: { after: string; value: Snapshot }[]; document?: PublicDocument; trace?: Trace; traceFailure?: string; selectedWithNativeEvents?: boolean; failure?: string }[]; pageErrors: string[]; failure?: string } = {
     mode: "native-control", diagnosticComplete: false, conclusion: "INCONCLUSIVE", arms: [], pageErrors: [],
   };
   const onError = (error: Error) => { if (report.pageErrors.length < 8) report.pageErrors.push(error.message.slice(0, 1024)); };
@@ -267,6 +268,17 @@ export async function diagnoseMessageSettingsNativeSelect(page: Page, fixture: A
     const record: (typeof report.arms)[number] = { name, snapshots: [] }; report.arms.push(record);
     const select = modal ? page.getByRole("dialog", { name: "下一条消息设置", exact: true }).getByRole("combobox", { name: "模型", exact: true }) : page.getByRole("combobox", { name: "模型", exact: true });
     try {
+      const publicDocument = await page.evaluate<Omit<PublicDocument, "exactLocatorCount">>(`(() => {
+        const scope = location.pathname === "/native-select-control" ? document : document.querySelector('[role="dialog"]');
+        if (!scope) throw new Error("Expected own diagnostic document or dialog");
+        const selects = Array.from(scope.querySelectorAll("select"));
+        if (selects.length > 8) throw new Error("Diagnostic select count exceeded");
+        return { characterSet: document.characterSet, selectCount: selects.length,
+          labels: selects.map(select => Array.from(select.labels || [], label =>
+            Array.from(label.childNodes).filter(node => node.nodeType === Node.TEXT_NODE).map(node => node.textContent).join("").trim()
+          ).join(" ").slice(0, 192)) };
+      })()`);
+      record.document = { ...publicDocument, exactLocatorCount: await select.count() }; checkpoint();
       await expect(select).toHaveCount(1); await expect(select).toBeEnabled(); await select.focus(); checkpoint();
       record.snapshots.push({ after: "focus", value: await select.evaluate<Snapshot>(snapshotScript) });
       for (const key of keys) {
@@ -276,13 +288,18 @@ export async function diagnoseMessageSettingsNativeSelect(page: Page, fixture: A
       }
     } catch (error) { record.failure = String(error).slice(0, 1024); throw error; }
     finally {
-      const encoded = await page.evaluate<string>('JSON.stringify(globalThis.__msgquickSelectTrace ?? {state:"NOT_CAPTURED"})');
-      assert(Buffer.byteLength(encoded) <= 65536, "Bounded passive trace");
-      const trace: Trace = JSON.parse(encoded); record.trace = trace;
-      assert.equal(trace.state, "INSTALLED"); assert.equal(trace.truncated, false); assert.equal(trace.droppedEvents, 0); assert.deepEqual(trace.observerErrors, []);
-      assert(trace.events.length > 0 && trace.events.length <= 96 && trace.eventBytes <= 49152);
-      const traces = report.arms.flatMap(item => item.trace ? [item.trace] : []);
-      assert(traces.reduce((sum, item) => sum + item.events.length, 0) <= 96 && traces.reduce((sum, item) => sum + item.eventBytes, 0) <= 49152, "Combined diagnostic trace limit");
+      try {
+        const encoded = await page.evaluate<string>('JSON.stringify(globalThis.__msgquickSelectTrace ?? {state:"NOT_CAPTURED"})');
+        assert(Buffer.byteLength(encoded) <= 65536, "Bounded passive trace");
+        const trace: Trace = JSON.parse(encoded); record.trace = trace;
+        assert.equal(trace.state, "INSTALLED"); assert.equal(trace.truncated, false); assert.equal(trace.droppedEvents, 0); assert.deepEqual(trace.observerErrors, []);
+        assert(trace.events.length > 0 && trace.events.length <= 96 && trace.eventBytes <= 49152);
+        const traces = report.arms.flatMap(item => item.trace ? [item.trace] : []);
+        assert(traces.reduce((sum, item) => sum + item.events.length, 0) <= 96 && traces.reduce((sum, item) => sum + item.eventBytes, 0) <= 49152, "Combined diagnostic trace limit");
+      } catch (error) {
+        record.traceFailure = String(error).slice(0, 1024);
+        if (!record.failure) throw error; // Preserve the original precondition/action failure when trace capture also fails.
+      }
     }
     const final = record.snapshots.at(-1)!.value;
     record.selectedWithNativeEvents = final.value === model && final.selectedIndex === 1 &&
