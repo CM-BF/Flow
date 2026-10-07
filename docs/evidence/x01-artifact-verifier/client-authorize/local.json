@@ -1,0 +1,187 @@
+{
+  "attempts": [
+    {
+      "name": "behavior",
+      "startedAt": "2026-10-07T23:16:40.727Z",
+      "endedAt": "2026-10-07T23:16:41.543Z",
+      "wallBeforePersistenceSeconds": 0.8158309169812128,
+      "supervision": {
+        "pid": 12025,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 774,
+        "observed_bytes": 5817,
+        "retained_bytes": 5817,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "dev": 16777234,
+        "ino": 124633305,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "exactAbsence": "ENOENT"
+      },
+      "raw": {
+        "path": "docs/evidence/x01-artifact-verifier/client-authorize/behavior/output.log",
+        "bytes": 5817,
+        "sha256": "bfdbe107e8cf0acb76422782cfe65cf77924c8c3711eb70ec439dd6f609f7c7a"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-artifact-verifier/client-authorize/local.py": "e47bcdda2b4f49dcde5e30fe0f65b4fca77d9b3ee2b1f336879dcf3d45cf8c9a",
+        "docs/evidence/x01-artifact-verifier/client-authorize/vitest.config.mjs": "b32de57164cd17cb63f2bed62d309346418e64af8b8e2be93f14df1078b47d4d",
+        "docs/evidence/x01-artifact-verifier/client-authorize/tsconfig.json": "a54da2d0f8f1d2384412781d4f2caa3b1375ac53133cd88403e67b3b52353aa7",
+        "docs/evidence/x01-artifact-verifier/client-authorize/supply.json": "ae86f3e7be9a2ced2476982c6af996c78834d3d0754f253554ed199ea15d6870",
+        "docs/evidence/x01-artifact-verifier/client-authorize/inputs/packages/client/src/plugin-runner.ts": "04291e846a3fe402ba26c21804b12b020e83ffedb112245bb4b5092aa665032b",
+        "docs/evidence/x01-artifact-verifier/client-authorize/inputs/packages/client/src/plugin-runner.test.ts": "fa5f83345e8e9a96abb62ebb537c9aa99b4cb0a8f526510468195d4e1ed48181"
+      }
+    },
+    {
+      "name": "types",
+      "startedAt": "2026-10-07T23:16:45.268Z",
+      "endedAt": "2026-10-07T23:16:46.382Z",
+      "wallBeforePersistenceSeconds": 1.1143087920499966,
+      "supervision": {
+        "pid": 13844,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 2,
+        "elapsed_ms": 1106,
+        "observed_bytes": 690,
+        "retained_bytes": 690,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "dev": 16777234,
+        "ino": 124633399,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "exactAbsence": "ENOENT"
+      },
+      "raw": {
+        "path": "docs/evidence/x01-artifact-verifier/client-authorize/types/output.log",
+        "bytes": 690,
+        "sha256": "e255726ca35e82ffac33d7b806a56ba0d3b76b6ac58f2a2469b8b3d36da11c05"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-artifact-verifier/client-authorize/local.py": "e47bcdda2b4f49dcde5e30fe0f65b4fca77d9b3ee2b1f336879dcf3d45cf8c9a",
+        "docs/evidence/x01-artifact-verifier/client-authorize/vitest.config.mjs": "b32de57164cd17cb63f2bed62d309346418e64af8b8e2be93f14df1078b47d4d",
+        "docs/evidence/x01-artifact-verifier/client-authorize/tsconfig.json": "a54da2d0f8f1d2384412781d4f2caa3b1375ac53133cd88403e67b3b52353aa7",
+        "docs/evidence/x01-artifact-verifier/client-authorize/supply.json": "ae86f3e7be9a2ced2476982c6af996c78834d3d0754f253554ed199ea15d6870",
+        "docs/evidence/x01-artifact-verifier/client-authorize/inputs/packages/client/src/plugin-runner.ts": "04291e846a3fe402ba26c21804b12b020e83ffedb112245bb4b5092aa665032b",
+        "docs/evidence/x01-artifact-verifier/client-authorize/inputs/packages/client/src/plugin-runner.test.ts": "fa5f83345e8e9a96abb62ebb537c9aa99b4cb0a8f526510468195d4e1ed48181"
+      }
+    },
+    {
+      "name": "types-fix",
+      "startedAt": "2026-10-07T23:17:21.892Z",
+      "endedAt": "2026-10-07T23:17:23.051Z",
+      "wallBeforePersistenceSeconds": 1.158962000044994,
+      "supervision": {
+        "pid": 38877,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1149,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "dev": 16777234,
+        "ino": 124633600,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "exactAbsence": "ENOENT"
+      },
+      "raw": {
+        "path": "docs/evidence/x01-artifact-verifier/client-authorize/types-fix/output.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-artifact-verifier/client-authorize/local.py": "e47bcdda2b4f49dcde5e30fe0f65b4fca77d9b3ee2b1f336879dcf3d45cf8c9a",
+        "docs/evidence/x01-artifact-verifier/client-authorize/vitest.config.mjs": "b32de57164cd17cb63f2bed62d309346418e64af8b8e2be93f14df1078b47d4d",
+        "docs/evidence/x01-artifact-verifier/client-authorize/tsconfig.json": "a54da2d0f8f1d2384412781d4f2caa3b1375ac53133cd88403e67b3b52353aa7",
+        "docs/evidence/x01-artifact-verifier/client-authorize/supply.json": "c19ccf10b0a7e399ddd990a61515e2ea54debfe4534ab6272e1d5546356eaa7f",
+        "docs/evidence/x01-artifact-verifier/client-authorize/inputs/packages/client/src/plugin-runner.ts": "04291e846a3fe402ba26c21804b12b020e83ffedb112245bb4b5092aa665032b",
+        "docs/evidence/x01-artifact-verifier/client-authorize/inputs/packages/client/src/plugin-runner.test.ts": "99d70797bf6c3bab5914cf9ad4c14ac61dbcf89fe2947008ca681921c459f328"
+      }
+    }
+  ]
+}
