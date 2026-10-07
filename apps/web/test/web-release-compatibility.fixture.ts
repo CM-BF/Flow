@@ -6,7 +6,7 @@ import { createServer, request as httpRequest, type Server, type IncomingMessage
 import { isAbsolute, join, relative } from "node:path";
 import { pathToFileURL } from "node:url";
 import type { Socket } from "node:net";
-import type { RunnerEvent, VerificationRule } from "../../../packages/contracts/src/index.js";
+import type { ExecutionProfileConfiguration, RunnerEvent, VerificationRule } from "../../../packages/contracts/src/index.js";
 import type { FlowClient } from "../../../packages/client/src/index.js";
 
 export const hash = (value: string | Buffer) => createHash("sha256").update(value).digest("hex");
@@ -33,7 +33,7 @@ type Runtime = {
   createCenter(options: { databaseUrl: string; ownerToken: string; browserSession: Admission["browserSettings"]; leaseMs: number }): Promise<Center>;
   Client: typeof FlowClient;
   Pool: new (options: { connectionString: string; max: number; connectionTimeoutMillis: number; statement_timeout: number }) => PoolLike;
-  adapterVersion: string;
+  adapterVersion: ExecutionProfileConfiguration["adapterVersion"];
   parseEvent(value: unknown): RunnerEvent;
   verifyText(artifactId: string, content: string, requested?: VerificationRule): unknown;
   releaseAsset(snapshot: LoadedApp["snapshot"], rawPath: string, acceptsHtml?: boolean): Promise<{ bytes: Buffer; path: string } | null>;
