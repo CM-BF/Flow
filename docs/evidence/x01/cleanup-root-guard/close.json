@@ -1,0 +1,79 @@
+{
+  "recordedAt": "2026-10-07T21:45:18.570Z",
+  "segmentStartedAt": "2026-10-07T21:33:00.000Z",
+  "firstWriteAt": "2026-10-07T21:34:02.139Z",
+  "deadline": "2026-10-07T21:48:00.000Z",
+  "source": "1d85f3d3ece70b6e57fbfe96f1cf2ea3538b4183",
+  "localResult": "0b9a444832f76e7a03fc0b1d8bd995a9bdc568a4",
+  "localActualReturn": "2026-10-07T21:34:55.403Z",
+  "selected": 4,
+  "passed": 4,
+  "children": 1,
+  "supervisorMs": 181,
+  "rawBytes": 668,
+  "resourceState": "0activechild/0PG/0HTTP/0pendinglaunch; own testTMP exactENOENT, priorKEEP untouched",
+  "reviews": {
+    "helper": "b01 21:36:02 APPROVED0P1P2",
+    "copies": "b01 21:41:41 APPROVED0P1P2",
+    "VARCoverage": "db 21:44:05 CONFIRMED0newP1P2"
+  },
+  "trees": [
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+      "base": "19e729674b5f61a564bc8e36a11bfd6e82ecb974",
+      "headBeforeFinalParentMetadata": "336b3c5ee734c1424df32acc579b24f769609dfa",
+      "changedFiles": 11,
+      "newOrChangedFullFileBytes": 173677,
+      "dirtyBeforeClose": ""
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+      "base": "f44ac5ba3e85adeebe657df0688966093220acc6",
+      "headBeforeFinalParentMetadata": "7620f18405d13d0dae47ab6b9b38ebd2496b85bc",
+      "changedFiles": 13,
+      "newOrChangedFullFileBytes": 504625,
+      "dirtyBeforeClose": ""
+    },
+    {
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result",
+      "base": "8e9639f3fe0231e5ad2e2bc1eafbd776fa7482c7",
+      "headBeforeFinalParentMetadata": "d407eff55811813df912771a43f8cfb6149db2f5",
+      "changedFiles": 13,
+      "newOrChangedFullFileBytes": 417682,
+      "dirtyBeforeClose": ""
+    }
+  ],
+  "entries": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-pg/r2-ready.json",
+      "bytes": 3173,
+      "sha256": "4b08be0028d37aeb91965b364efc6936928f105e175affd4a7ba0d16c60e860d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av03-pg/pg-isolated-manifest-r2.json",
+      "bytes": 163255,
+      "sha256": "b9456699e3268e89f2ce01e0f03bf3c1011d1f1161ab95efacb582ed938a69e2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/transaction-pg/candidate.json",
+      "bytes": 4815,
+      "sha256": "791ff815fbe49b7ef154209d3de3ea7b75f4b294950caacb9adf4f5ab6fafe9a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/transaction-pg/manifest.json",
+      "bytes": 174649,
+      "sha256": "b54b712ed3c5430d8a5510ad318ccd5ffc6b6227101d8df1671087202fbddf08"
+    }
+  ],
+  "budgetBytes": 4194304,
+  "changedFullFileSnapshotBytes": 1095984,
+  "reservedFinalMetadataUpperBytes": 65536,
+  "temporaryReservationBytesAlreadyReturned": 2097152,
+  "worstDeclaredNewWithMetadataAndTMP": 3258672,
+  "interpretation": "Conservative full changed/new file snapshot plus reserved tail and original boundedTMP; not measured peak, diskblocks, wall or cumulative allocations. Final push completes STOP and remaining future growth becomes0; claims remain held.",
+  "futureStates": {
+    "AV": "READY_CLOSED_CANDIDATE_NOT_OPEN",
+    "VAR": "PREPARED_CLOSED_WAIT_AV_R2"
+  },
+  "history": "AV four archives=f44; VAR two archives=8e963. Only2 rows each helper/caller changed,279/293 unchanged. Original R1 failure, all raw and PG outcomes unchanged."
+}
