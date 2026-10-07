@@ -75,7 +75,7 @@ export class AppPluginSession {
   private readonly recoverySubscriptions = new Map<string, () => void>();
   recoveryMaterials(viewKey: string) {
     const knowledge = this.knowledgeBindings.get(viewKey)?.getSnapshot();
-    return { projectId: knowledge?.projectId ?? null, projectTitle: knowledge?.projectTitle ?? null, knowledge: knowledge?.controller?.getSnapshot().selected ?? [], attachments: this.attachmentBindings.get(viewKey)?.binding.input?.getSnapshot().items ?? [] };
+    return { projectId: knowledge?.projectId ?? null, projectTitle: knowledge?.projectTitle ?? null, knowledge: knowledge?.controller?.getSnapshot().selected ?? [], attachments: this.attachmentBindings.get(viewKey)?.binding.recoveryDraft() ?? [] };
   }
   private readonly lifetime = new AbortController();
   get signal() { return this.lifetime.signal; }

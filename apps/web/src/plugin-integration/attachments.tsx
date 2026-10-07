@@ -57,6 +57,7 @@ export class ConversationAttachments {
   private readonly unbind = new Set<() => void>();
   private readonly ownedUploadKeys = new Set<string>();
   private readonly restoredDraftIds = new Set<string>();
+  private draftSource: { composer: Pick<ComposerRuntime, "getState"> } | null = null;
   private lastReadable = false;
   private lastWritable = false;
   private readonly reconciliationInput: AttachmentInput | null;
@@ -170,6 +171,11 @@ export class ConversationAttachments {
     const transit = new Set(state.inTransit?.flatMap(message => message.attachments.map(item => item.id)) ?? []);
     return this.input?.getSnapshot().items.filter(item => current.has(item.id) || (!held.has(item.id) && !transit.has(item.id))) ?? [];
   }
+  /** Recovery uses the same selection as Send, not the input's held inventory.
+   * Keep unverified selections and current returned/restored IDs in input order. */
+  recoveryDraft(): readonly AttachmentItem[] {
+    return this.draftItems(this.draftSource?.composer.getState() ?? { attachments: [], inTransit: [] });
+  }
   /** Every new Send/Queue crosses this check, even when the composer has zero chips. */
   captureDraft(composer: Pick<ComposerRuntime, "getState">,
     input: Omit<Parameters<ConversationAttachments["capture"]>[0], "ids">, previous: LocalReceipt | null): AttachmentSubmission | undefined {
@@ -200,6 +206,7 @@ export class ConversationAttachments {
   }
   bindComposer(composer: Pick<ComposerRuntime, "getState" | "subscribe">, onPreparationFailed?: (value: AttachmentSubmission, error: Error) => void): () => void {
     if (!this.reconciliationInput) return () => {};
+    const source = { composer }; this.draftSource = source;
     const stop = bindAttachmentComposer(this.reconciliationInput, composer);
     let preparing: AttachmentSubmission | null = null, active = true;
     const watch = composer.subscribe(() => {
@@ -222,6 +229,7 @@ export class ConversationAttachments {
     });
     const release = () => {
       active = false; watch(); stop(); this.unbind.delete(release);
+      if (this.draftSource === source) this.draftSource = null;
       const held = this.state.submission;
       if (held?.state === "preparing") { const error = Error("Composer changed before material handoff. Recover the original draft explicitly."); this.failed(held.value, error); onPreparationFailed?.(held.value, error); }
     };
