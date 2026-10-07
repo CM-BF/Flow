@@ -77,8 +77,235 @@
     "port": "Small optional trusted startup observation port with default original behavior. Reader checks directory and regular0600/nlink1/self identity, role/PID/nonce, <=4096B, fixed phase/code/exit/stderr-metadata fields; never returns stderr text, environment or config.",
     "failure": "Missing/unreadable/changed/foreign record is unknown and cannot replace the readiness primary or skip cleanup.",
     "proofLimit": "Shows producer last phase at the actual pre-stop observation time. Does not reconstruct phase durations or distinguish progress inside server import/listen. Real producer timing would require changing selected runtime and an independently reviewed new artifact, which is outside this proposal.",
-    "requiredDirectConsumers": "Injected same-nonce/foreign-nonce/missing/changed private record and primary+cleanup preservation; shadow loader resolves the exact new reader. No actual host now authorized."
+    "requiredDirectConsumers": "Injected same-nonce/foreign-nonce/missing/changed private record and primary+cleanup preservation; shadow loader resolves the exact new reader. No actual host now authorized.",
+    "state": "INSUFFICIENT_AS_NEXT_ACTUAL_EXPERIMENT",
+    "reason": "A pre-stop snapshot cannot distinguish the startup awaits inside the already-spawned server; do not implement it merely to repeat the whole run."
   },
   "rootCause": "UNKNOWN",
-  "retry": false
+  "retry": false,
+  "serverBoundaryAnalysis": {
+    "at": "2026-10-07T19:37:53.575Z",
+    "readOnlySegmentStartedAt": "2026-10-07T19:30:22Z",
+    "scope": "Fixed source, installed Fastify source and previously saved safe projection only. No second private-body read, PG, service, model or test.",
+    "sources": [
+      {
+        "path": "apps/server/src/main.ts",
+        "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+        "bytes": 2964,
+        "sha256": "8da31946307ac1da338df9ab0ee640e4df2ba534fc04918113b3cbecdd1ef9b9"
+      },
+      {
+        "path": "apps/server/src/index.ts",
+        "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+        "bytes": 15083,
+        "sha256": "cfedccbb04bf1a1f928c10a33ce01ec41cefb65c02b9e1cb8ef72338a9fa378a"
+      },
+      {
+        "path": "apps/server/src/scheduler.ts",
+        "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+        "bytes": 957,
+        "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a"
+      },
+      {
+        "path": "apps/server/src/database.ts",
+        "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+        "bytes": 7789,
+        "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+      },
+      {
+        "path": "apps/server/src/package-fetch-configuration.ts",
+        "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+        "bytes": 2138,
+        "sha256": "ee4a913e2e9dd03d152966f5c58d87b67c59702135ad705aa39e02437c3212d1"
+      },
+      {
+        "path": "apps/server/src/plugin-installation-configuration.ts",
+        "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+        "bytes": 1127,
+        "sha256": "bbbde194876e327867f32724998d8408c1b0ce788ae5462cdfb6578a05ab571e"
+      },
+      {
+        "path": "apps/server/src/browser-session/index.ts",
+        "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+        "bytes": 9640,
+        "sha256": "fb44b7558e38b9fda9c3fd32c4117e069ed56e623ee838744039e8f0039b0f12"
+      },
+      {
+        "path": "apps/server/src/browser-session/store.ts",
+        "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+        "bytes": 4474,
+        "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5"
+      },
+      {
+        "path": "apps/server/src/conversation-queue/promotion.ts",
+        "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+        "bytes": 4279,
+        "sha256": "14681d64c9809ff3059ad6014f281f25d77bcdfa83663f184299ad82b5896646"
+      },
+      {
+        "path": "apps/server/src/goal-progression/advance.ts",
+        "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+        "bytes": 3820,
+        "sha256": "24793fc7b9eeb91bc3bf5ec0bd687431c91f7818171b857b0ce9916ede72f8ee"
+      },
+      {
+        "path": "tools/personal-preview/environment.mjs",
+        "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+        "bytes": 2784,
+        "sha256": "d65214627c98ec83e53d6b651908d5e6f7438874bbaee5868f240bb26bf9396a"
+      }
+    ],
+    "fastify": {
+      "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw/backend-artifacts/2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4/root/apps/server/node_modules/fastify/lib/server.js",
+      "realpath": "/private/tmp/flow-svc09a-artifact-Nf2RTw/backend-artifacts/2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4/root/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/lib/server.js",
+      "bytes": 14233,
+      "sha256": "514f454d947a1d33668d403876fe45acff5e4da245f8f90748ab64d7a8699a54",
+      "fact": "5.12.5 listenPromise awaits this.ready() before server.listen (lib/server.js:276 onwards)."
+    },
+    "fixedRoute": [
+      {
+        "phase": "Node/tsx/static ESM imports",
+        "location": "main.ts imports 1-4",
+        "meaning": "No application producer before module evaluation; existing child-spawn/exit proves process execution, not import completion."
+      },
+      {
+        "phase": "main configuration",
+        "location": "main.ts:6-22",
+        "meaning": "Validate env/port; await package-fetch and plugin-install config; parse steering/browser JSON. The fixed service environment does not forward package-fetch/install config variables, so those two readers return undefined without configuration-file I/O on this recipe."
+      },
+      {
+        "phase": "migrations",
+        "location": "index.ts:75-110",
+        "count": 31,
+        "names": [
+          "migrate",
+          "migrateWorkspace",
+          "migrateProjects",
+          "migrateProtocolDispatch",
+          "migrateGoals",
+          "migrateConversations",
+          "migratePlugins",
+          "migrateAssistantMessages",
+          "migrateExecutionProfiles",
+          "migrateConversationQueue",
+          "migrateGoalToolRuns",
+          "migrateGoalGraphProposals",
+          "migrateKnowledge",
+          "migrateRunnerMaintenance",
+          "migrateConversationContext",
+          "migrateGoalGraphRuns",
+          "migrateNativeActivities",
+          "migrateGoalContext",
+          "migrateAssistantStreams",
+          "migratePackageFetches",
+          "migrateActiveSteering",
+          "migrateNativeHarnessSources",
+          "migrateAttachments",
+          "migrateContextObservationHistory",
+          "migrateBrowserSessions",
+          "migratePluginInstallations",
+          "migratePluginRuntime",
+          "migrateGoalProgressions",
+          "migrateGoalPlanConfirmations",
+          "migrateClaudeMessageSettings",
+          "migrateNativeActivityBodies"
+        ],
+        "meaning": "Sequential real migration functions; base and module transactions acquire the flow-migrations advisory lock, query markers and may read/apply SQL. Fixture setup creates only the owner marker, not these schemas. 5s connect / 10s per statement are not an aggregate startup deadline."
+      },
+      {
+        "phase": "auth/cors/optional worker",
+        "location": "index.ts:111-115",
+        "meaning": "Browser auth may open the identity transaction if configured; app.register(cors) is awaited. Package worker is conditional on the absent packageFetchHost in this recipe."
+      },
+      {
+        "phase": "scheduler",
+        "location": "index.ts:116; scheduler.ts:4-16",
+        "meaning": "Await boss.start(attempts3), createQueue, work registration and queued-task update. These are before createServer returns; no producer success/failure stages currently exist."
+      },
+      {
+        "phase": "routes and initial ready scans",
+        "location": "index.ts:121-203 / main.ts:43",
+        "meaning": "Intervals are installed, and onReady awaits shared scanWork: conversation-queue then goal-progression. Even an empty fixture still runs the candidate SQL. This occurs during Fastify.ready before the socket binds."
+      },
+      {
+        "phase": "listen",
+        "location": "main.ts:43-44 / Fastify lib/server.js:276+",
+        "meaning": "listen also encompasses ready hooks, then actual socket bind. Error cleanup awaits app.close; absence of stderr before a kill cannot classify the pending await."
+      }
+    ],
+    "confirmedFromExisting": "Same child-exit/SIGTERM+0B stderr proves wrapper reached an actual spawned server child and later cleanup stopped it. No new causal attribution to migration, scheduler, import, auth or bind is possible from current records.",
+    "minimumProducer": {
+      "selection": "Instrument the actual server initialization, reuse the existing bounded stderr capture; do not add another wrapper/observer/supervisor.",
+      "interface": "Optional trusted ServerOptions startup observer; one small server startup-progress module projects fixed phase IDs, enter/settled/error, monotonic sequence+elapsed, safe error name and allowlisted OS code or exact five-character SQLSTATE. No messages, SQL, URLs, tokens, env or task content.",
+      "boundaries": [
+        "main-entered (after static imports) / configuration-settled",
+        "each existing migration await using its fixed function-name ID",
+        "authentication / cors / scheduler enter-settled-error",
+        "routes-registered and first onReady conversation/progression scan enter-settled-error",
+        "listen-requested / actual-listening / listen-error before cleanup"
+      ],
+      "boundedOutput": "Opt-in center-only fixed FLOW_STARTUP_DIAGNOSTICS=v1; <=128 events and <=8KiB serialized safe frames for startup, then disable at listening/failure. Existing startup-diagnostics private0600 stderr capture remains its owner with the existing64KiB bound. Producer observation errors cannot change startup or replace primary/cleanup; partial or missing frames remain unknown.",
+      "classification": [
+        "No main-entered: import/pre-entry or observation missing UNKNOWN, not a loader diagnosis",
+        "Entered phase without settled/error before SIGTERM: interrupted/pending at that phase, underlying cause UNKNOWN",
+        "Error frame: classify only exact phase and safe structured code; no text inference",
+        "actual-listening: server socket bind confirmed, parent ownership/health remain separate consumers"
+      ],
+      "scope": [
+        "apps/server/src/main.ts",
+        "apps/server/src/index.ts",
+        "apps/server/src/startup-progress.ts",
+        "apps/server/src/startup-progress.test.ts",
+        "apps/server/src/startup-progress-consumer.test.ts",
+        "tools/personal-preview/environment.mjs",
+        "tools/personal-preview/environment.test.mjs"
+      ],
+      "sourceCompatibility": "Current main has additional X01 main.ts runtime-policy config and index.ts routes/types; preserve them. Do not copy only current main/index into098b: their added imports require a separately reviewed source closure.",
+      "artifactDecision": "A genuinely new producer requires a new reviewed runtime artifact after scope handoff/implementation. 2515 inventory fixes apps/server and environment bytes; controller shadow does not change child runtime, and assertInstallationSource forbids silently substituting a shadow service. No rebuild is authorized or performed now. Existing2515 remains an immutable comparison baseline.",
+      "validation": [
+        "Bounded observer opt-in/off, exact field projection/redaction, truncation, error-before-cleanup and diagnostic-write failure preserving operation semantics",
+        "Direct affected environment pass-through: center-only opt-in, no provider/config value exposure; actual existing private stderr consumer with synthetic safe frames",
+        "Focused affected types/entry import and source-closure check, no PG/model during local preparation",
+        "After independent source review and a newly built fixed artifact: one minimal default start/stop under a new actual window, retaining phases and exact resources; no settings/mixed retry as a diagnostic shortcut"
+      ]
+    },
+    "ownership": {
+      "at": "2026-10-07T19:37:53.575Z",
+      "owners": [
+        {
+          "taskId": "X01",
+          "worker": "architecture_read",
+          "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+          "version": 31,
+          "state": "active",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+          "matched": [
+            "apps/server/src/main.ts"
+          ]
+        },
+        {
+          "taskId": "X01-ARTIFACT-VERIFIER01",
+          "worker": "architecture_read",
+          "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+          "version": 4,
+          "state": "active",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+          "matched": [
+            "apps/server/src/index.ts"
+          ]
+        }
+      ],
+      "writeAuthorized": false,
+      "ownClaim": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v6 owns only plan/evidence; proposed paths are not taken"
+    },
+    "mainComparison": {
+      "target": "c15cdffcbc8b0bd41c09b983b6379474c169474d",
+      "mainTs": "adds readPluginRuntimeConfiguration and pluginRuntimeHostPolicy pass-through (4-line delta)",
+      "indexTs": "adds TrustedPluginHostPolicy option and conditional registerPluginRuntimeRoutes (6-line delta)",
+      "schedulerDatabase": "same fixed bytes versus098b",
+      "startupDiagnosticsAndEnvironment": "same fixed bytes versus098b",
+      "preview": "current contains already-reviewed readiness changes; not the selected child runtime"
+    },
+    "stoppingCondition": "Source-only segment concludes here; scope coordination and artifact choice belong to Lead. No additional probe/repeat to choose a suspected cause."
+  }
 }

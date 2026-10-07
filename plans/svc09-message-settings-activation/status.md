@@ -6,7 +6,7 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T19:25:58.083Z |
+| 更新时间 | 2026-10-07T19:37:53.575Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
@@ -14,7 +14,7 @@
 | 优先级 | 1 |
 | 本片段交付阶段 | review |
 | 当前产出 | 默认启动已实际验证并保留失败：中心未确认监听归属；本次进程和数据库连接已收束，原始诊断已保存。 |
-| 下一可用交付 | 这次最小默认启动结果的独立审查，以及基于已保存直接诊断的有限定位。 |
+| 下一可用交付 | 固定 server 初始化阶段的最小取证方案；共享源码归属与新产物路径由 Lead 协调，尚未实施。 |
 | 当前阻塞 | ACTIVE: 默认中心启动仍未确认监听归属，底层原因未知；完整三角色、双槽与混合任务验收仍开放。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
@@ -135,3 +135,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T19:17:35.003Z：实际FAIL和资源RETURN分开。首错为START_UNCONFIRMED_CHECK_STATUS；末次直接predicate仅证center owner running、listener-query exit1/ownedfalse，health短路未到。唯一center已停止；operator/clone/work/cleanup及outer PID均absent，受监督EOF齐全，独立cleanup的launchAccounted/resourcesClosed=true、连接empty/adminClosed。DB/private保持KEEP，不DROP，不重试。见[原件和限制](../../docs/evidence/svc09/message-settings-activation/host-integration/DEFAULT-HOST-RESULT.md)。固定入口和产物未修改；此次结果待独立审查，任务完整完成仍NOT_COMPLETED。
 
 2026-10-07T19:25:58.083Z：只读后继定位见[有限诊断](../../docs/evidence/svc09/message-settings-activation/host-integration/default-host-diagnostic-readonly.json)。已有同nonce producer最终child-exit/SIGTERM、stderr0B，确定实际server命令已派生；没有server-main进入/监听前阶段记录，不能断言模块加载完成或回填底层根因。最小候选是在原ready失败持久化/停止前读取一次现有受限producer阶段，精确四产品scope需Lead另协调，当前未take/未改产品、未新运行。真正分解producer耗时需实际runtime新证据，不把旁路推断当已证。
+
+2026-10-07T19:37:53.575Z：默认实际结果已获唯一APPROVED/0blocking并main4aba9a705，引用 docs/evidence/i02/svc09a-default-host-result-review.json；仅保真，默认闭环仍FAIL、根因UNKNOWN，原outer UNKNOWN与后置RETURN不改。19:30:22Z开始的有界源码定位已收敛至原[诊断说明](../../docs/evidence/svc09/message-settings-activation/host-integration/default-host-diagnostic-readonly.json)：固定server在监听前串行31个migration、auth/cors、scheduler及Fastify onReady两次扫描；fixture只建owner marker，不能认为已完成server初始化。只加最终producer快照不足，候选改为server实际await边界有界结构事件，复用现私有stderr。main.ts与index.ts分别仍由X01及X01-ARTIFACT-VERIFIER01持有，需合法交接；预计7个exact leaf，未take。真正producer需要后继固定runtime产物，不能绕2515 inventory或覆盖他源；本段0新进程/PG/模型/测试，停止追加探测。
