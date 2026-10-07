@@ -1,6 +1,6 @@
 # X01-ARTIFACT-VERIFIER01 独立设计审查
 
-状态：APPROVED（AV03 journal固定源码与局部结果，非完整AV03）；原设计及后继各审查范围分列。
+状态：FAILED_RESULT_FIDELITY_REVIEW_PENDING（AV03 PG R1）；旧源码/局部/准备批准保留各自范围。
 Review target commit: e746029f6daa5751f59813f5c18012b782824d54
 
 ## 固定输入与审查范围
@@ -50,3 +50,7 @@ chatui01_owner / gpt-6-astra：DESIGN_DELTA_REVIEW_APPROVED，target bc5b68a0e4e
 ## AV03 center 源码与局部结果批准
 
 2026-10-07T16:35:53.000Z，db_transaction_owner/gpt-6-astra，SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2。固定ea3c4599/e978d302/34f434f9，44bindings/223closure/6closedchildren。完整结论在av03-center-independent-approval.json。036实际迁移与真实PG矩阵未运行，非main合并批准/完整AV03；candidate继续NOT_INTEGRATION_READY_PG_REQUIRED。
+
+## AV03 PG R1失败结果待审
+
+2026-10-07T18:26:09.977Z：execution c6ed29f8，固定test4323；beforeAll projects_current_revision FK失败，0selected/5skipped、suiteFAILED/callerFAILED。资源FULL_RETURN18:23:06.969Z与失败分别记录，未重跑。请root只核原件/绑定/失败分类与实际收尾，不转移旧source批准为PG通过。见av03-pg/result-summary-r1.json与后续result-review-ready-r1.json。

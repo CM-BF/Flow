@@ -1,0 +1,17 @@
+{
+  "atObserved": "2026-10-07T18:19:21.379Z",
+  "state": "NOT_LAUNCHED",
+  "source": "exec tool transcript",
+  "outerExit": 1,
+  "toolWallSeconds": 0.043839458,
+  "error": "AssertionError at inline wrapper line4: admission age<55s",
+  "stdout": "",
+  "stderr": "Traceback (most recent call last):\n  File \"<stdin>\", line 4, in <module>\nAssertionError\n",
+  "beforePopen": true,
+  "namespaceAbsent": true,
+  "head": "c6ed29f8c0c36c7937235f06545889e556f03a4d",
+  "dirty": "",
+  "rootRenewal": "18:18 same unique NEXT unconsumed, fresh permitted;18:19 diagnosis notified",
+  "originalAdmissionSha256": "496f2bdb0d4d37499289f11e056606636bc792fc4e2a9689c3dbd5a1f790e4de",
+  "limits": "tool transcript reconstruction marked as such; no PG/child launched"
+}

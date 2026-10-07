@@ -1,0 +1,250 @@
+{
+  "startedAt": "2026-10-07T18:21:48.348665+00:00",
+  "state": "FAILED",
+  "unknown": false,
+  "limits": {
+    "protocol": "flow.x01.verifier-claim-pg.v1",
+    "productCommit": "ea3c4599b00505c950cc34ada8a350082fe76747",
+    "totalSeconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalReserveSeconds": 10,
+    "suites": {
+      "runtime": {
+        "cases": 5,
+        "httpRequests": 160,
+        "connectionsMax": 17
+      }
+    },
+    "httpRequestsMax": 160,
+    "responseBytesPerRequest": 131072,
+    "responseBytesPerSuite": 4194304,
+    "databasesMax": 1,
+    "serialSuites": true,
+    "streamsBytes": 262144,
+    "resultBytes": 131072,
+    "rawBytes": 1048576,
+    "temporaryBytes": 33554432,
+    "temporaryEntries": 4096,
+    "reserveBytes": 1073741824,
+    "runName": "av03-verifier-claim-pg-run-r1",
+    "databaseReserveBytes": 134217728,
+    "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+    "selection": [
+      {
+        "file": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+        "name": "036 rejects unverifiable history atomically and positively backfills compatible old tool writers"
+      },
+      {
+        "file": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+        "name": "036 enforces immutable kind and exact source attempt with deferred mandatory verifier reference"
+      },
+      {
+        "file": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+        "name": "v1 v2 v3 and explicit v4 filter the mixed queue before LIMIT"
+      },
+      {
+        "file": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+        "name": "v4 concurrent receipt identity survives server restart and refuses changed protocol or qualification"
+      },
+      {
+        "file": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+        "name": "source project and grant writer lock fence allocation without attempt or receipt residue"
+      }
+    ],
+    "tasksMax": 32,
+    "attemptsMax": 20,
+    "scope": "036 exact positive kind migration/constraints and synthetic verifier source qualification, real v1-v4 SQL/HTTP/receipt fences; no verifier admission/import/runtime/verdict.",
+    "runnersMax": 10,
+    "fixtureCommit": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+    "metadataRunners": 10,
+    "providerCalls": 0,
+    "registrationsMax": 6
+  },
+  "processes": [
+    {
+      "pid": 33676,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 26,
+      "observed_bytes": 357,
+      "retained_bytes": 357,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "git-preflight",
+      "rawComplete": true
+    },
+    {
+      "pid": 33677,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 1,
+      "elapsed_ms": 2932,
+      "observed_bytes": 69,
+      "retained_bytes": 69,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "vitest",
+      "rawComplete": true
+    }
+  ],
+  "suites": {
+    "runtime": {
+      "window": "16140fbb069b42da85fbe6336a4976ed",
+      "sourceHead": "c6ed29f8c0c36c7937235f06545889e556f03a4d",
+      "suite": "runtime",
+      "database": "flow_x01_28131b96efca40c28de6f855e8ecb5e8",
+      "facts": [
+        {
+          "kind": "bounded-counts",
+          "counts": {
+            "tasks": 0,
+            "attempts": 0,
+            "runners": 0,
+            "registrations": 0
+          },
+          "http": 0,
+          "bytes": 0
+        }
+      ],
+      "cleanup": {
+        "owners": {
+          "startup": true,
+          "server": true
+        },
+        "ownersClosed": true,
+        "poolClosed": true,
+        "adminClosed": true,
+        "createRequested": true,
+        "createAcknowledged": true,
+        "creationReceiptSaved": true,
+        "identity": {
+          "oid": "1344776",
+          "owner": "flow",
+          "marker": "x01:16140fbb069b42da85fbe6336a4976ed:runtime:b698b756-60bd-4437-88bd-eb8c824878e6"
+        },
+        "identityConfirmed": true,
+        "connections": 0,
+        "dropRequested": true,
+        "dropAcknowledged": true,
+        "databaseAbsent": true,
+        "connectionObservations": [
+          {
+            "at": "2026-10-07T18:21:51.267Z",
+            "connections": 0
+          }
+        ]
+      },
+      "listeners": [
+        {
+          "origin": "http://127.0.0.1:50005",
+          "closed": true
+        }
+      ],
+      "httpRequests": 0,
+      "responseBytes": 0,
+      "workUntil": 1791397418348,
+      "cleanupUntil": 1791397478348,
+      "errors": [],
+      "errorCount": 0,
+      "cleanupConfirmed": true,
+      "retainedDatabase": null,
+      "finishedAt": "2026-10-07T18:21:51.347Z"
+    }
+  },
+  "PGMayHaveStarted": true,
+  "retained": [],
+  "temporaryPeak": "UNKNOWN",
+  "window": "16140fbb069b42da85fbe6336a4976ed",
+  "executionHead": "c6ed29f8c0c36c7937235f06545889e556f03a4d",
+  "manifestSha256": "76ea6c70a4dd59544ff2e12b152413abcd1cc1e267bd5ecf765eabd6f47a052f",
+  "temporary": {
+    "path": "/private/tmp/flow-x01-pg-qpe25446",
+    "dev": 16777234,
+    "ino": 124405264,
+    "removed": true,
+    "sampleBytes": 5823,
+    "sampleEntries": 13
+  },
+  "stageCount": 3,
+  "selection": {
+    "numTotalTests": 5,
+    "numPassedTests": 0,
+    "numFailedTests": 0,
+    "numPendingTests": 5,
+    "success": false
+  },
+  "httpRequests": 0,
+  "responseBytes": 0,
+  "unselectedCount": 5,
+  "selectedCount": 0,
+  "exactSelection": false,
+  "allAssertionsPassed": true,
+  "outputBytesBeforeReceipt": {
+    "runtime-created.json": 402,
+    "vitest.json": 2456,
+    "runtime-reservation.json": 406,
+    "runtime-create-request.json": 353,
+    "output.log": 69,
+    "runtime-result.json": 1433,
+    "runtime-stage-1.json": 259,
+    "runtime-stage-2.json": 257,
+    "runtime-stage-3.json": 257,
+    "reservation.json": 285,
+    "launch.json": 188,
+    "preflight.stdout": 357,
+    "admission.json": 3587
+  },
+  "uncapturedStreamBytes": 0,
+  "rawChargeBeforeReceipt": 10309,
+  "completeAccounting": true,
+  "rawBytesBeforeReceipt": 10309,
+  "recordPhase": "before-final-persistence",
+  "endedBeforePersistenceAt": "2026-10-07T18:21:51.378860+00:00",
+  "elapsedBeforePersistence": 3.030279583996162
+}

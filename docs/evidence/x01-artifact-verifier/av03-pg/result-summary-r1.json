@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07T18:26:09.977Z",
+  "state": "FAILED_RESULT_REVIEW_PENDING",
+  "source": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
+  "centerSource": "ea3c4599b00505c950cc34ada8a350082fe76747",
+  "executionHead": "c6ed29f8c0c36c7937235f06545889e556f03a4d",
+  "manifest": "pg-isolated-manifest.json",
+  "manifestSha256": "76ea6c70a4dd59544ff2e12b152413abcd1cc1e267bd5ecf765eabd6f47a052f",
+  "preparedInputs": 281,
+  "preparedChanged": [],
+  "external": 191,
+  "links": 16,
+  "sql": 34,
+  "actualStartedAt": "2026-10-07T18:21:48.308Z",
+  "terminalAt": "2026-10-07T18:21:51.385Z",
+  "fullReturnedAt": "2026-10-07T18:23:06.969Z",
+  "outerExit": 1,
+  "selected": 0,
+  "passed": 0,
+  "failedAssertions": 0,
+  "skipped": 5,
+  "suiteFailed": 1,
+  "suiteError": "insert or update on table \"projects\" violates foreign key constraint \"projects_current_revision\"",
+  "callerState": "FAILED",
+  "callerUnknown": false,
+  "completeAccounting": true,
+  "resources": "FULL_RETURN; no retained DB/TMP/listener/groups",
+  "scope": "beforeAll failed before five actual cases; no positive036/mixed/v4 behavior evidence",
+  "diagnosis": {
+    "test": "apps/server/src/plugin-runtime/verification-pg.test.ts:104",
+    "observation": "beforeAll inserts project revision1 without same-transaction project_revisions row",
+    "constraint": "packages/storage/migrations/004-projects.sql:26 projects_current_revision DEFERRABLE INITIALLY DEFERRED",
+    "meaning": "autocommit INSERT reaches constraint at statement transaction end; test fixture defect, no product patch or rerun performed"
+  },
+  "times": {
+    "outerWallSeconds": 3.0769284589914605,
+    "callerBeforePersistenceSeconds": 3.030279583996162,
+    "callerAfterPersistenceSeconds": 3.0305252500111237,
+    "supervisorMilliseconds": 2958,
+    "wholeMetadataWall": "not test duration"
+  },
+  "unknowns": [
+    "initial EPERM observation preserved",
+    "temporary sample is not peak",
+    "physical DB/WAL peak UNKNOWN"
+  ],
+  "next": "Fix exact project/revision setup in a separately authorized source segment; independent new actual window required. Center remains NOT_INTEGRATION_READY_PG_REQUIRED."
+}

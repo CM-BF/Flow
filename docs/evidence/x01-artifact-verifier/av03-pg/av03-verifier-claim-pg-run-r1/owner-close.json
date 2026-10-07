@@ -1,0 +1,61 @@
+{
+  "observedAt": "2026-10-07T18:23:06.969Z",
+  "state": "FULL_RETURN",
+  "groups": [
+    {
+      "pgid": 33672,
+      "state": "absent"
+    },
+    {
+      "pgid": 33676,
+      "state": "absent"
+    },
+    {
+      "pgid": 33677,
+      "state": "absent"
+    }
+  ],
+  "temporary": {
+    "path": "/private/tmp/flow-x01-pg-qpe25446",
+    "dev": 16777234,
+    "ino": 124405264,
+    "exactLstat": "ENOENT"
+  },
+  "listener": {
+    "port": 50005,
+    "connectEx": 61
+  },
+  "database": {
+    "owners": {
+      "startup": true,
+      "server": true
+    },
+    "ownersClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "createRequested": true,
+    "createAcknowledged": true,
+    "creationReceiptSaved": true,
+    "identity": {
+      "oid": "1344776",
+      "owner": "flow",
+      "marker": "x01:16140fbb069b42da85fbe6336a4976ed:runtime:b698b756-60bd-4437-88bd-eb8c824878e6"
+    },
+    "identityConfirmed": true,
+    "connections": 0,
+    "dropRequested": true,
+    "dropAcknowledged": true,
+    "databaseAbsent": true,
+    "connectionObservations": [
+      {
+        "at": "2026-10-07T18:21:51.267Z",
+        "connections": 0
+      }
+    ]
+  },
+  "sourceWindow": "16140fbb069b42da85fbe6336a4976ed",
+  "originalOutcome": "FAILED beforeAll FK;0selected/5skipped;not retried",
+  "externalOuterWallSeconds": 3.0769284589914605,
+  "callerBeforePersistence": 3.030279583996162,
+  "wholeResourcePeak": "UNKNOWN"
+}

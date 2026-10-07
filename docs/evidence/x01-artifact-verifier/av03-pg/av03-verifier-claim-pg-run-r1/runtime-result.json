@@ -1,0 +1,62 @@
+{
+  "window": "16140fbb069b42da85fbe6336a4976ed",
+  "sourceHead": "c6ed29f8c0c36c7937235f06545889e556f03a4d",
+  "suite": "runtime",
+  "database": "flow_x01_28131b96efca40c28de6f855e8ecb5e8",
+  "facts": [
+    {
+      "kind": "bounded-counts",
+      "counts": {
+        "tasks": 0,
+        "attempts": 0,
+        "runners": 0,
+        "registrations": 0
+      },
+      "http": 0,
+      "bytes": 0
+    }
+  ],
+  "cleanup": {
+    "owners": {
+      "startup": true,
+      "server": true
+    },
+    "ownersClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "createRequested": true,
+    "createAcknowledged": true,
+    "creationReceiptSaved": true,
+    "identity": {
+      "oid": "1344776",
+      "owner": "flow",
+      "marker": "x01:16140fbb069b42da85fbe6336a4976ed:runtime:b698b756-60bd-4437-88bd-eb8c824878e6"
+    },
+    "identityConfirmed": true,
+    "connections": 0,
+    "dropRequested": true,
+    "dropAcknowledged": true,
+    "databaseAbsent": true,
+    "connectionObservations": [
+      {
+        "at": "2026-10-07T18:21:51.267Z",
+        "connections": 0
+      }
+    ]
+  },
+  "listeners": [
+    {
+      "origin": "http://127.0.0.1:50005",
+      "closed": true
+    }
+  ],
+  "httpRequests": 0,
+  "responseBytes": 0,
+  "workUntil": 1791397418348,
+  "cleanupUntil": 1791397478348,
+  "errors": [],
+  "errorCount": 0,
+  "cleanupConfirmed": true,
+  "retainedDatabase": null,
+  "finishedAt": "2026-10-07T18:21:51.347Z"
+}

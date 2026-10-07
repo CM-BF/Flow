@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T17:42:32.193Z / AV02 e271与AV03 journal b791已main，本center片未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T18:26:09.977Z / AV02 e271与journal b791已main；center片NOT_INTEGRATED |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -13,22 +13,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
-| 工作树dirty状态 | P2修复source4323f302已独审通过；当前只绑定metadata，提交push后clean STOP |
+| 工作树dirty状态 | R1原件与失败摘要封存；metadata提交push后clean STOP，产品/准备输入不变 |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN 4323f30268e203ec50e50e7a5a628c6cfcdf5181：当前PG准备修复仅静态；旧center局部及3local仍绑定原source，不复用为修后通过 |
+| 检查状态 | FAILED 4323f30268e203ec50e50e7a5a628c6cfcdf5181：R1 beforeAll外键失败，0selected/0pass/5skipped；资源完整归还；无重跑 |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
-| 实现目标 | ea3c4599b00505c950cc34ada8a350082fe76747（中心v4/客户端ACK局部已验且独审通过，PG准备packet3703ee1d1待审） |
+| 实现目标 | ea3c4599b00505c950cc34ada8a350082fe76747（center局部已审，真实PG R1准备数据失败；未获得真实矩阵通过） |
 | 实现范围 | apps/server/src/index.ts,apps/server/src/plugin-runtime/claim.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/runner-claim-receipts.ts,apps/server/src/runner-claim-routes.test.ts,apps/server/src/runner-claim-routes.ts,apps/server/src/runners.ts,packages/client/src/plugin-runner.test.ts,packages/client/src/plugin-runner.ts,packages/contracts/src/plugin-verification-binding.ts,packages/contracts/src/verifier-runner-claim.test.ts,packages/contracts/src/verifier-runner-claim.ts,packages/storage/migrations/036-plugin-verification-bindings.sql |
 | 阶段 | M2 |
 | 优先级 | 5 |
 | 本片段交付阶段 | review |
-| 当前产出 | 中心领取与客户端确认接缝已局部验证；数据库验收配方两处测试错误已修复并通过限定审查，等待独立数据库窗口 |
-| 下一可用交付 | 在独立窗口验证数据库迁移、混合队列领取资格和重复请求保护 |
-| 当前阻塞 | NONE |
+| 当前产出 | 数据库验收在准备项目数据时失败，五个用例未执行；专库、进程和临时目录已完整归还 |
+| 下一可用交付 | 修正项目与修订记录的测试准备，再验证迁移及领取保护 |
+| 当前阻塞 | ACTIVE: 测试准备缺少项目修订记录，迁移与领取五项验收尚未执行；待窄修后另行验证 |
 | 需用户决定 | NONE |
-| Review | SOURCE_DELTA_REVIEW_APPROVED 4323f30268e203ec50e50e7a5a628c6cfcdf5181，2026-10-07T17:27:40.000Z，原两P2 CLOSED/0剩余；原17:14:12初审保留。真实PG NOT_RUN/NOT_OPEN |
+| Review | FAILED_RESULT_FIDELITY_REVIEW_PENDING；原source/local与准备增量批准保持原范围；本次失败原件待root独审 |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v4 ACTIVE30，16:18:21.003Z追加center/v4十四leaf，含正式分配036；AV02九叶冻结 |
-| 架构影响 | 同一claim/receipt新增显式v4；036独立正向kind与精确来源引用，旧协议LIMIT前排除verifier；新schema和动态SQL未实跑，main图更新待本片接收由Execution Lead核。 |
+| 架构影响 | 同一claim/receipt显式v4与036来源引用；R1仅启动pre036中心后准备数据失败，动态SQL矩阵未实证。主线图更新待本片接收。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -143,3 +143,11 @@ AV03分支交付 2026-10-07T16:06:54.016Z：source e746029f6daa5751f59813f5c1801
 独立审者2026-10-07T17:27:40.000Z批准source4323f30268e203ec50e50e7a5a628c6cfcdf5181，两项P2 CLOSED/0剩余。中间uuid[]类型错误和修正历史保留；最终text[]严格符合tasks.id。17:27测量冻结后未新增写/运行，本次新metadata段2026-10-07T17:40:55.000Z–17:45:55.000Z仅归档批准与绑定。原三local和raw不改，新fixture/test差量全部NOT_RUN，0engineering/PG/HTTP/待launch。
 
 最新唯一PG准备入口：[ready.json](../../docs/evidence/x01-artifact-verifier/av03-pg/ready.json)，source-delta-approval.json记录有限批准。281inputs仅原四row变化，其余277与191external/16links沿固定原包；34SQL。原c3d manifest逐字保留在pg-isolated-manifest-before-p2.json及原Git。READY仅代表准备完成；PG HOLD/NOT_OPEN，必须另有唯一NEXT与fresh实际完整门禁。center产品仍NOT_INTEGRATION_READY_PG_REQUIRED，AV03/AV04完整目标未完成。提交push后STOP，保留a67v4。
+
+## AV03 PG R1实际失败与资源归还
+
+2026-10-07T18:26:09.977Z：唯一实际运行18:21:48.308Z→18:21:51.385Z，outer exit1；beforeAll的projects_current_revision外键失败，0selected/0pass/5skipped，五项业务断言均未执行。原prepared281文件零变化；不改旧local/raw/manifest，不重试。前一18:14 admission在Popen前过期、未启动，已独立保留；root18:18明确同一未消费NEXT可fresh执行。
+
+实际FULL_RETURN18:23:06.969Z：outer33672、git33676、vitest33677精确组absent及mergedEOF；专库OID1344776/owner/marker一致，0conn普通DROP ACK+absence，owner/pool/adminclosed；50005拒连；TMP同dev16777234/ino124405264删除并exactENOENT。首EPERM、峰值/DBWAL物理量UNKNOWN保留。outer3.076928s、caller预保存3.030279584/后保存3.030525250分列。0actual/待launch。
+
+当前阻塞为测试准备项目行缺少同事务对应project_revisions；仅只读定位，修复尚未授权。本次仅结果封存，证据[result-summary-r1.json](../../docs/evidence/x01-artifact-verifier/av03-pg/result-summary-r1.json)。root进行失败忠实性审；center保持NOT_INTEGRATION_READY_PG_REQUIRED，完整AV03/04未完成。新8min metadata段18:23:06.969Z–18:31:06.969Z/1MiB，0工程检查，提交push后STOP。

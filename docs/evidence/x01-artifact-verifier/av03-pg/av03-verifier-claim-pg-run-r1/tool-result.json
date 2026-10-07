@@ -1,0 +1,24 @@
+{
+  "state": "TERMINAL",
+  "startedAt": "2026-10-07T18:21:48.308Z",
+  "pid": 33672,
+  "pgid": 33672,
+  "window": "16140fbb069b42da85fbe6336a4976ed",
+  "admission": "/tmp/flow-av03-pg-r1-admission-16140fbb069b42da85fbe6336a4976ed.json",
+  "admissionSha256": "7109bed568ac70cd4fa0af4c7a6bfeb36e76b813da3e248fefb6278d79c2af63",
+  "floorBytes": 16275210240,
+  "availableBytes": 19525726208,
+  "endedAt": "2026-10-07T18:21:51.385Z",
+  "exitCode": 1,
+  "outerElapsedSeconds": 3.0769284589914605,
+  "stdout": {
+    "path": "/tmp/flow-av03-pg-r1-tool-16140fbb069b42da85fbe6336a4976ed.stdout",
+    "bytes": 550,
+    "sha256": "477190e1aee15109bae9210c6b9ec19454144ea9086662d1ec6e26232583d4bd"
+  },
+  "stderr": {
+    "path": "/tmp/flow-av03-pg-r1-tool-16140fbb069b42da85fbe6336a4976ed.stderr",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+}
