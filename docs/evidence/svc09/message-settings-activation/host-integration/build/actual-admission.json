@@ -1,0 +1,245 @@
+{
+  "kind": "SVC09A_BUILD_ACTUAL_ADMISSION",
+  "at": "2026-10-07T15:13:51.789364Z",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/svc09/message-settings-activation",
+      "plans/svc09-message-settings-activation"
+    ],
+    "state": "active",
+    "branch": "codex/personal-message-settings",
+    "origin": "new",
+    "taskId": "SVC09A",
+    "worker": "native_center_owner",
+    "claimId": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 4,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+    "createdAt": "2026-10-07T14:08:33.408Z",
+    "updatedAt": "2026-10-07T14:37:45.486Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "head": "b3eece742fd8413ace05e5bc8dce4176da5cc025",
+  "preparationSha256": "610653704a8e3c36d01b85a282f94285b3287d80d5886720c1ed3ae5766c79e1",
+  "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+  "tree": "f9f149a4dda976dad500545df1b26f825ac5b59d",
+  "freshBindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/build/entry.mjs",
+      "bytes": 3233,
+      "sha256": "a8dd4ac596e0e728f4fef9283edf51e482e9f216db31e4f85cee43f2f967f5d7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/build/supervise.py",
+      "bytes": 2703,
+      "sha256": "7db4c589a10d2a60df1c248e835288acd4a4e31fe581048051c023f1d79ddebf"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/build/inputs.json",
+      "bytes": 3898,
+      "sha256": "cf79be5795f3f8c7905e8bb45719a7fc704899017cd346876907535fe5f08623"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/build/check.mjs",
+      "bytes": 1491,
+      "sha256": "22d9063b9df6afd0c6fb1e86eba9b09a29ab5e42a79e18f1dfaa23f83b0dcc85"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/build/local-run.py",
+      "bytes": 3095,
+      "sha256": "517ceaa47480bce53c59c7997025fdb43e9bd3772b5dd0dcf6e70c4863c729df"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/build/recipe.md",
+      "bytes": 5203,
+      "sha256": "4321bdd4e061e52802d0cd00271e0e7c367aefd1a7e0958d726e9b717f8bdc85"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/build/local-01/cleanup.json",
+      "bytes": 278,
+      "sha256": "21c7a2a239783caf3867b720db087183d069b61b2864397c93194ccf47f8204c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/build/local-01/reservation.json",
+      "bytes": 1267,
+      "sha256": "468317671524fa9ff6a8ce359ede77f16afd16d5b1c4fc0cd6e6e9acc4bc37af"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/build/local-01/result.json",
+      "bytes": 653,
+      "sha256": "1f5c640aaed8dbdb33b4b9d9ba9eb059851b8c09e137b24786da8ce338d34bfa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/build/local-01/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/build/local-01/stdout.txt",
+      "bytes": 204,
+      "sha256": "22a6608b5c1a5ad83d513959f6ab5a844942e31e1af4789e6bcd5163a1dc6ee2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/inputs.json",
+      "bytes": 40316,
+      "sha256": "a64b558c32656023f7e3e6fcc91ddfb6e0b9b9d451822711763a210e104c59ad"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/source-composition.json",
+      "bytes": 11340,
+      "sha256": "bdd9bd2e5f1e103dbbdae1d21b543a697fbbd664ee1acfe1de6ae67493a58974"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/build-inputs.json",
+      "bytes": 3271,
+      "sha256": "2939fd91fc0e8a715a38e21b6e2af710f5267eb9be0640833ff8a67cd806e368"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/index.mjs",
+      "bytes": 6289,
+      "sha256": "82250fd6d8d86b36f36fbd4afa5e3336e3f821a2696d7f9893972f4edeb195d2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/build.mjs",
+      "bytes": 4891,
+      "sha256": "73774ee3ff54426a663c561b962affe6f84b3925d18bef12fddef708141802ca"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/files.mjs",
+      "bytes": 3480,
+      "sha256": "bf79665ed76e765b248dfb4a9219cd7be019d0afb7b59d4357e31fcbf2b5af61"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/node-identity.mjs",
+      "bytes": 2370,
+      "sha256": "4a8b00c9d2104a4ea34537962c0ec4b5d5dd65bdb3d3ff2ea6b0c54b646fd36a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/runtime-installation.mjs",
+      "bytes": 6646,
+      "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/dependency-plan.mjs",
+      "bytes": 10976,
+      "sha256": "bb39c0dd9925ceb7f93638a6411c09d0dbeaa01132c9265c7a0a71c18bd5bdda"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/installation-view.mjs",
+      "bytes": 1327,
+      "sha256": "3ed913024efff1dc4b0e60584fd1adfb135f330e0d3e87b09831f9342b9997c9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/cache-plan.mjs",
+      "bytes": 3445,
+      "sha256": "412cde07475cd25b8e75b2a69ca2c809fd33c89c340bf63918e6e2dbe55d78eb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/tools/personal-preview/backend-release/clone-store.py",
+      "bytes": 6852,
+      "sha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/package.json",
+      "bytes": 3254,
+      "sha256": "20b8b197cbd10dad245d45e463dfe58e4c8c25a47e24bc4256ad9ab58bf35683"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.js",
+      "bytes": 1769,
+      "sha256": "2d58984e0ae80de4acbd8f009fab332f5ce77d9e1a5f138a3058a0ada6567fb9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/node_modules/.pnpm/yaml@2.9.0/node_modules/yaml/dist/index.d.ts",
+      "bytes": 1394,
+      "sha256": "9f85a1810d42f75e1abb4fc94be585aae1fdac8ae752c76b912d95aef61bf5de"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/node_modules/.svc06-parser-env/project/pnpm-lock.yaml",
+      "bytes": 595,
+      "sha256": "9630fc5d64b85cf1165524268eeac20ae665b0d56f4eb55b3aea3809ef71a095"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/lib/node_modules/pnpm/bin/pnpm.cjs",
+      "bytes": 999,
+      "sha256": "98e6b99a881d64a1cc982c3e60aa260bf02160386b12e74475e06486dc74b090"
+    },
+    {
+      "path": "/opt/homebrew/lib/node_modules/pnpm/dist/pnpm.cjs",
+      "bytes": 8880437,
+      "sha256": "4c319da726786d5535aef95fa78ec5e24f1079382da878a35fa5dd044a7bab96"
+    },
+    {
+      "path": "/opt/homebrew/lib/node_modules/pnpm/package.json",
+      "bytes": 6033,
+      "sha256": "3b20ec7bebaa078d5ae4ab09651b80434a9f1d6446065ad53779ecafdc7f9936"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/update-diagnostics-candidate/build-once/entry.mjs",
+      "bytes": 11839,
+      "sha256": "87c4d1722fa789a5119a78f1fb722d32c9c40a77741dfb9ba8c8378808caa75a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/build-once/runtime-proof.mjs",
+      "bytes": 5080,
+      "sha256": "b0018289ebd85a18754cbdfd3e8f61d4bbfe9092783af4eb81f945bff3ddb352"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "gitSourceCount": 81,
+  "gitSqlCount": 33,
+  "namespaceAbsent": true,
+  "preservedUntracked": "host-integration/host-fixture.mjs (authorized next host preparation; not an input to this build)",
+  "resourceWindow": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/resource-window-current.json",
+    "sha256": "41164897c6faa62259e42ff0dc1d0c8055f02982cccbace6bf1604a39c77923e",
+    "recordedAt": "2026-10-07T15:13:15.465Z",
+    "admission": {
+      "state": "NEXT_RESERVED_NOT_STARTED",
+      "task": "SVC09A",
+      "owner": "Original / native_center_owner",
+      "preparation": "b3eece74",
+      "artifactSource": "098b",
+      "review": "Original preparation APPROVED2026-10-07T15:06:38Z;49runtime/raw+81source+33SQL match as relayed by root",
+      "workSeconds": 420,
+      "cleanup": "Exact already-approved b3ee cleanup/TERM/reap limits unchanged",
+      "additionalPlanningBytes": 2317352960,
+      "minimumFreshFloorBytes": 14069989376,
+      "grantSource": "Root explicit unique handoff relayed2026-10-07T15:09;managercanonical",
+      "condition": "One fresh fixedclaim/source/allpins/ownedidentity/newnamespace/noactualholder/fullsum check; actualfree >= larger completefloor. Exactly one original approved build; no startup inferred from reservation. Operator reports exactSTART/completeRETURN.",
+      "exclusions": "Other engineering child/performance/fullbuild/PG/Chrome held until actualRETURN; source-only preparation may continue; personal naturalservices/tasks untouched",
+      "actualStart": null,
+      "actualReturn": null,
+      "PG": 0,
+      "Chrome": 0,
+      "provider": 0,
+      "personal": 0,
+      "floorUpdate": "New8MiB bounded I01 source supply counted once; preserve consumed gate if already launched and report true historical gate."
+    }
+  },
+  "minimumFreshFloorBytes": 14069989376,
+  "freeBytes": 20804800512,
+  "runtimePolicy": {
+    "workSeconds": 420,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "outerCaptureBytes": 1048576,
+    "existingNamespace": "REFUSE_NO_RETRY"
+  },
+  "PG": 0,
+  "provider": 0,
+  "Chrome": 0,
+  "personal": 0
+}

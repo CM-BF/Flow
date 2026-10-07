@@ -1,0 +1,111 @@
+{
+  "kind": "SVC09A_FIXED_BUILD_RESULT",
+  "recordedAt": "2026-10-07T15:15:59.808352Z",
+  "preparationTarget": "b3eece742fd8413ace05e5bc8dce4176da5cc025",
+  "artifactSource": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+    "manifestDigest": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+    "sourceHead": "098b0d51512dfaa04c30ca7cbe103684720fe29f"
+  },
+  "startedAt": "2026-10-07T15:14:01.726Z",
+  "finishedAt": "2026-10-07T15:14:34.219Z",
+  "returnedAt": "2026-10-07T15:14:38.558644Z",
+  "outerToolExit": 0,
+  "outerToolCompletionChunk": "9ad355",
+  "outerElapsedMs": 32570,
+  "innerElapsedMs": 32492,
+  "groupPid": 42341,
+  "ownedState": "absent",
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "signals": [],
+  "firstFailure": null,
+  "historicalObservations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "retention": "KEEP artifact/root and original stage; no deletion requested or attempted",
+  "rootIdentity": {
+    "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw",
+    "dev": 16777234,
+    "ino": 124240699,
+    "uid": 501,
+    "mode": "0o700"
+  },
+  "privateBindings": [
+    {
+      "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw/backend-artifacts/2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4/manifest.json",
+      "bytes": 3196958,
+      "sha256": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+      "dev": 16777234,
+      "ino": 124267425,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw/owner.json",
+      "bytes": 272,
+      "sha256": "a4d18620a39442aceded22c2d39c25ae42f6d16e90e202e8114761f8550c1592",
+      "dev": 16777234,
+      "ino": 124240701,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw/backend-artifacts/stage-07351e68-1510-4eea-9b9c-01b36ce1a398.json",
+      "bytes": 806,
+      "sha256": "e53d18d74fb42f5ef7b42be32c8edd8fc616907ecbdd1f1aa24f799119488254",
+      "dev": 16777234,
+      "ino": 124267440,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    }
+  ],
+  "sourceFilesVerified": 81,
+  "sqlFilesVerified": 33,
+  "snapshotCount": 271,
+  "importerCount": 7,
+  "raw": {
+    "files": 8,
+    "archiveBytes": 14082,
+    "includingOriginalStageBytes": 14888,
+    "outerCapturedBytes": 4587,
+    "producerBeforeFinalResultBytes": 4586
+  },
+  "inventory": {
+    "logicalBytes": 363908207,
+    "entries": 15630,
+    "manifestBytesIncluded": 367105165,
+    "nodeImages": 20
+  },
+  "minimumSampledFreeBytes": 20357427200,
+  "samples": 65,
+  "physicalPeak": "NOT_MEASURED; shared filesystem samples are not a process or reclaimable peak",
+  "proofScope": "Full fixed artifact verification, exact81source/33SQL, artifact-internal imports and read-only selection only",
+  "host": "NOT_RUN",
+  "runner": "NOT_RUN",
+  "nativeBinaryExecuted": false,
+  "PG": 0,
+  "browser": 0,
+  "provider": 0,
+  "personal": 0,
+  "review": "PENDING_INDEPENDENT_RESULT_REVIEW",
+  "oldFailures": "Original SVC09A fixture failure and other tasks historical FAIL/KEEP preserved; this build first observation EPERM is historical unknown, final OS observation absent."
+}
