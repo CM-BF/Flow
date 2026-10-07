@@ -15,7 +15,7 @@
 - 单调外层总180s：原点起work110s、共同cleanup至170s、最终10s。每HTTP≤8s且夹到共同work期限；分页每次request都扣计数并查截止。3个lease反例原1s租约/4s有界DB锁屏障保持，正常工作估计明显低于110s，但当前没有本片PG时长事实。
 - 2串行随机数据库，理论峰连接runtime17、registry15（server10 + fixture4/3 + admin1，runtime额外boss2）；4个动态loopback listener顺序启停。不是数据库连接实测峰值。fixture自己的query/statement timeout仍保留；cleanup必须同OID/owner/marker、所有owner/pool关闭、0conn、ordinary DROP ACK、absence、admin关闭，不force、不终止他人连接。
 - HTTP实际发起计数上限416，按suite固定分区256+160；包括拒绝/失败请求。原有限注册/循环输入及两分页给足余量，未知循环会被共同时间/计数截断。每响应流128KiB、各suite累计4MiB；只量响应body，不称TCP/HTTP完整wire字节。无第二共享计数文件或产品状态机。
-- 自有TMP32MiB/4096项，结束时有限、不follow symlink的采样；不声称全时硬峰值。已知closed进程、双/合并EOF、匹配launch与两完整DB收据后才可同dev/ino清理；特殊节点、身份/过程/账目未知则KEEP。启动线1GiB reserve+32MiB TMP+1MiB raw+同时运行者完整声明。
+- 自有TMP32MiB/4096项，结束时有限、不follow symlink的采样；不声称全时硬峰值。已知closed进程、双/合并EOF、匹配launch与两完整DB收据后才可同dev/ino清理；特殊节点、身份/过程/账目未知则KEEP。启动线1GiB不可支出收尾reserve+32MiB TMP+1MiB raw+128MiB专库/WAL额外reserve+同时运行者完整声明；无配对时1,242,562,560B。数据库/WAL在TMP外，128MiB是保守预留，不是数据库硬限制或已测值。
 - raw总1MiB：stdout/stderr capture256KiB，Vitest JSON128KiB，8个suite收据各16KiB，preflight32KiB；其余留给reservation/checkpoint/最终report/独立工具wall、CLI8KiB和后续人工结果。持久副本实际求和，未保留stream tail另加，不把同一已保留流再加两次。完整总量未知则不能声称within预算。输出fsync最后尾段不冒充OPS14硬期限保证，外部 `/usr/bin/time -p`/真实tool exit需另保存。
 - 0真实native/SDK/provider、0安装/浏览器。PG资源与实际holder解除后才可授OPEN，普通local通过不开放PG。
 
@@ -26,3 +26,5 @@
 ## 质量与边界
 
 沿既有本地find-skills→codebase-design/clean-code，固定来源复用不安装。资源状态由唯一fixture/OPS14拥有，入口只绑定/核验并保未知；27断言与产品实现ade4不变。对同一beforeAll失败、晚startup、未确认CREATE/DROP、checkpoint损坏、输出截断，结果均保守UNKNOWN/KEEP。所有旧red、StageA HOLD、StageC旧21计数FAIL保持。完整X01仍缺production claim/runtime资格/真实有用npm bundle与公开端到端旅程。
+
+2026-10-07T04:27Z：按Mika补充仅input/caller floor与reservation分项纳入128MiB DB/WAL reserve；旧局部类型/5反例不重跑，其证据绑定e7源。本预算算术增量待同次独审，不产生OPEN。

@@ -158,14 +158,15 @@ def main():
         paired = admission['pairedBytes']
         if type(paired) is not int or paired < 0: raise ValueError('Invalid paired budget')
         free = os.statvfs(ROOT); available = free.f_bavail * free.f_frsize
-        floor = limits['reserveBytes'] + limits['temporaryBytes'] + limits['rawBytes'] + paired
+        if limits['databaseReserveBytes'] != 134217728: raise ValueError('Fixed DB/WAL reserve required')
+        floor = limits['reserveBytes'] + limits['temporaryBytes'] + limits['rawBytes'] + limits['databaseReserveBytes'] + paired
         if available < floor: raise ValueError('Resource floor')
         if digest(read_regular(OPS, 65536)) != OPS_SHA or digest(read_regular(FACTS, 65536)) != FACTS_SHA: raise ValueError('Shared implementation changed')
         ops = load_module('x01_pg_ops', OPS); facts = load_module('x01_pg_facts', FACTS)
         RUN.mkdir(mode=0o700); reserved = True
         item = RUN.lstat(); run_identity = (item.st_dev, item.st_ino)
         write('admission.json', admission_raw)
-        write('reservation.json', {'window': window, 'head': head, 'startedAt': report['startedAt'], 'availableBytes': available, 'floorBytes': floor, 'pairedBytes': paired})
+        write('reservation.json', {'window': window, 'head': head, 'startedAt': report['startedAt'], 'availableBytes': available, 'floorBytes': floor, 'databaseReserveBytes': limits['databaseReserveBytes'], 'pairedBytes': paired})
         report.update(window=window, executionHead=head, manifestSha256=admission['manifestSha256'])
         git = ops.supervise(ops.Launch(('/usr/bin/git', 'status', '--porcelain=v2', '--branch', '--untracked-files=all'), str(ROOT), dict(os.environ), ops.Ownership.NEW_CHILD_SESSION, ops.Capture.MERGED), ops.Policy(3, .25, .75, 32768))
         process, unknown = facts.supervision_facts(git, 'git-preflight'); report['processes'].append(process); report['unknown'] |= unknown

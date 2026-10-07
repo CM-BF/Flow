@@ -28,5 +28,7 @@
   "temporaryBytes": 33554432,
   "temporaryEntries": 4096,
   "reserveBytes": 1073741824,
-  "runName": "enable-binding-stage-c-run-r1"
+  "runName": "enable-binding-stage-c-run-r1",
+  "databaseReserveBytes": 134217728,
+  "databaseReserveScope": "Two serial dedicated DBs and WAL outside owned TMP; conservative extra reserve, not a measured or enforced DB size cap."
 }
