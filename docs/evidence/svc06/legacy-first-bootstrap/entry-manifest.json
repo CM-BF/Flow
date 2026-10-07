@@ -1,0 +1,52 @@
+{
+  "kind": "SVC06_FIRST_LEGACY_BOOTSTRAP_DIRECT_CONSUMER_PREPARATION",
+  "sourceTarget": "PENDING_FIXED_COMMIT",
+  "inheritedInputs": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/diagnostics-host-bootstrap/inputs.json",
+    "bytes": 142654,
+    "sha256": "6caaa42e2dd553c5c3187a3418cba4a4533ed7a9964a955b9a9f52e5d8e923f9"
+  },
+  "entryBindings": [
+    {
+      "path": "entry.mjs",
+      "bytes": 19531,
+      "sha256": "61b0a87d6fc8640eb539a048749b4c06a49a74a7aa7f0f6acc6144e1f3d541b1"
+    },
+    {
+      "path": "journey.mjs",
+      "bytes": 11511,
+      "sha256": "4e4fd7629bef1b2d35878f13aae14c0c743b906568ebbd2f04699f75bb397377"
+    },
+    {
+      "path": "legacy-state.mjs",
+      "bytes": 657,
+      "sha256": "c78b3c63004d0a8d8a131c7bd92c88888963833a1093eef06737fdcdb0ac60aa"
+    },
+    {
+      "path": "legacy-state.test.mjs",
+      "bytes": 1202,
+      "sha256": "943aa4535fbecd8cc9767a6d72b854f756045549d57c1400edabf5e5ffc7e888"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 4568,
+      "sha256": "7f2abe7f6b6b832be03de94ffceeab7e962868ddf85950fc97b64d4b40882875"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 30304,
+      "sha256": "98004690a91335f1263e3b05800500d7f54660af50a245d4a7d62a274db06d65"
+    },
+    {
+      "path": "Interface.md",
+      "bytes": 5595,
+      "sha256": "46a56d456797e52d005b7c064b68c41e0e8ca08ee636d87c0963ad640b69357a"
+    }
+  ],
+  "unchangedSupervisor": {
+    "path": "../diagnostics-host-bootstrap/supervise.py",
+    "sha256": "7f2abe7f6b6b832be03de94ffceeab7e962868ddf85950fc97b64d4b40882875"
+  },
+  "pg": "NOT_RUN",
+  "scope": "Real PG maintenance with owned idle roles; no actual service refresh or App compatibility"
+}

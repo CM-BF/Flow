@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 10:59:21 UTC；main657105接收r2限定结果，候选补固定产物首次维护入口资格限制 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 11:08:47 UTC；main/origin c38fa3a1已接3b68候选（Lead回执）；本段fresh claim v8后实施首次legacy入口直接消费者 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,21 +13,21 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 产品3cb/runtime6c固定；r2结果92a207/a011已审并main657105；文档基线a160，仅既有candidate/status补入口身份核对 |
-| 工作树dirty状态 | 产品/入口/raw停写；仅既有candidate与唯一status，封定后候App接口材料 |
+| 工作基线 / HEAD | 基线3b68f31aef36481620ff1d43d37d9d95d2d7714d；产品/runtime6c与7d1、r2结果固定；只新增自有首次bootstrap fixture |
+| 工作树dirty状态 | own evidence/plan实施中；产品源码/原r1-r2原件停写 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | planning |
+| 本片段交付阶段 | implementation |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | 检查状态 | r2 passed：27→35/两项pre-drain拒绝/三role refresh-resume/历史与pointer-config-profile保留/cookie-CSRF-logout；work155073ms+cleanup540ms，六组stopped/normalDROP；真实App/个人未验 |
-| 已集成main状态 / HEAD | main/origin6571056455be3e4289f162041746420246ac2db4已受控接收a011同范围r2结果与review（Lead回执）；本次自然metadata更新不追新主线SHA。 |
+| 已集成main状态 / HEAD | main657105已收r2结果；main/origin c38fa3a1已收3b68个人候选。首次legacy入口fixture尚未验证/独审/集成。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 隔离环境已完成升级、三项服务刷新恢复和浏览器会话策略检查；历史数据与发布指针保持，资源正常清理。 |
-| 下一可用交付 | 真实 App 报告齐全后，核个人现场并固定受控更新输入；先升级宿主，再维护后台，最后独立发布新页面。 |
-| 当前阻塞 | ACTIVE: 三个保留版本的真实 App 新配置兼容报告待Web交付；个人现场尚未核验，未就绪。 |
+| 当前产出 | 隔离升级与浏览器策略旅程已通过；正在补首次从开发入口采用后台产物的直接验证。 |
+| 下一可用交付 | 固定首次采用用例并独审，在独立数据库核身份拒绝、合法创建和同一维护操作接续。 |
+| 当前阻塞 | ACTIVE: 首次采用用例待检查与独审后排数据库窗口；个人更新仍等三个保留版本的真实App报告及现场核验。 |
 | 需用户决定 | NONE |
-| Review | APPROVED_LIMITED_ISOLATED_HOST_RESULT；Lead独审92a207/a0117，39fixed/current+50private+15copies全符，无P1/P2；真实App/个人仍未验 |
+| Review | 原r2 APPROVED_LIMITED_ISOLATED_HOST_RESULT/main657105保持；首次legacy fixture NOT_STARTED，PG NOT_RUN。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v8，原own两scope加6个启动诊断精确产品literal；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -301,3 +301,7 @@ Lead于10:49:17.625668Z完成[原件review](../../docs/evidence/svc06/diagnostic
 ## 2026-10-07 10:59:21 UTC — 首次维护入口只读资格核对
 
 固定6c的maintainPreview可从7d1产物载入，但在读取bootstrap backendId之前，load/InstallationSource要求该模块根已是实际后台或维护operation选择；仅迁入或Web-only采用不满足。r2自有journey初始化就选7d1后台，故其通过不能证明个人首次bootstrap可跳过root入口。进一步核现root clean70644：30静态相对模块+5SQL/解析输入共35项214145B与6c逐字同，pg/tsx/zod的7入口/metadata同已封7d1库存；候选优先直接调用root公开maintainPreview bootstrap，避免CLI旧runtime转派，不因全main SHA不同切checkout。首次消费者仍未运行、完整运行依赖须fresh绑定；合法operation持久7d1后refresh/resume可走固定产物且不查开发Git。不改state/config凑资格。源码与原raw未变，无import/测试/PG/个人读取/新wrapper；本次仅2文档待窄审，App等待与任务总开工UNKNOWN保持。
+
+## 2026-10-07 11:08:47 UTC：首次采用直接消费者实施
+
+[Interface](../../docs/evidence/svc06/legacy-first-bootstrap/Interface.md) 沿已审7d1/6c与原r2监督、CoW和终态守卫，只补state无backendArtifact时的真实维护入口。3个owned idle角色不是实际服务；不重跑已绿迁移/cookie。当前0PG/provider/个人操作，固定后一次独审。fresh账本available、原v8 active；任务首次开工仍UNKNOWN，App接口等待沿10:44:35.378972Z真实归还来源保持。
