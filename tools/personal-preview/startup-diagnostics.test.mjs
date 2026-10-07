@@ -144,3 +144,25 @@ test('actual child spawn failure retains a controlled system code without exposi
   const record = JSON.parse(await readFile(`${input.stem}.json`));
   assert.equal(record.phase, 'startup-failed'); assert.equal(record.errorCode, 'ENOENT');
 });
+
+test('SVC09A diagnostics refuse arbitrary or undeclared slot keys before output', async t => {
+  const input = await installation(t);
+  await assert.rejects(openStartupDiagnostics({ ...input, recordKey: 'another-runner' }), { code: 'STARTUP_DIAGNOSTICS_UNAVAILABLE' });
+  await writeFile(join(input.directory, 'config.json'), JSON.stringify({ directory: input.directory }), { mode: 0o600 });
+  await assert.rejects(openStartupDiagnostics({ ...input, recordKey: 'runner-settings' }), { code: 'STARTUP_DIAGNOSTICS_UNAVAILABLE' });
+});
+test('SVC09A settings diagnostics bind its declared slot nonce and cannot use the legacy runner identity', async t => {
+  const input = await installation(t);
+  // /tmp can be a platform alias; the installation contract uses the canonical root.
+  const { realpath } = await import('node:fs/promises'); input.directory = await realpath(input.directory);
+  const { registerSettingsSlot } = await import('./runner-slots.mjs');
+  const config = { directory: input.directory, installationId: randomUUID(), runner: { runnerId: randomUUID(), token: 'old' } };
+  await writeFile(join(input.directory, 'config.json'), JSON.stringify(config), { mode: 0o600 });
+  await registerSettingsSlot(config, { format: 1, choices: [{ model: 'claude-sonnet-5-5', thinking: 'disabled', effort: { kind: 'not-requested' }, speed: 'standard' }] }, async () => ({ runnerId: randomUUID(), token: 'new' }));
+  const newNonce = randomUUID(); input.state.processes['runner-settings'] = { pid: input.pid, nonce: newNonce };
+  await writeFile(input.statePath, JSON.stringify(input.state), { mode: 0o600 });
+  await assert.rejects(openStartupDiagnostics({ ...input, recordKey: 'runner-settings' }), { code: 'STARTUP_DIAGNOSTICS_UNAVAILABLE' });
+  const diagnostic = await openStartupDiagnostics({ ...input, recordKey: 'runner-settings', nonce: newNonce }); await diagnostic.finish(null);
+  const raw = JSON.parse(await readFile(join(input.directory, 'startup-diagnostics', `runner-settings-${newNonce}.json`)));
+  assert.equal(raw.role, 'runner'); assert.equal(raw.recordKey, 'runner-settings'); assert.equal(raw.nonce, newNonce);
+});

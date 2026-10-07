@@ -163,13 +163,22 @@ test('an unverified backend descriptor fails before drain and preserves all old 
 
 // Link the complete, unchanged maintenance module to explicit in-memory ports. No PG
 // module, migration, CLI, signal or service is executed by these order/argument checks.
-async function maintenancePorts({ configured = true, prepareFailure = false, selected = null, action = 'bootstrap' } = {}) {
+async function maintenancePorts({ configured = true, prepareFailure = false, selected = null, action = 'bootstrap', settings = false, secondState, active = 0, unknownRecord = null, failCommand = null } = {}) {
   const calls = [];
   const config = { directory: '/synthetic-preview', runner: { runnerId: 'runner', token: 'fixture-only' } };
   const state = { backendArtifact: { artifactId: 'old' }, webHost: { artifact: { artifactId: 'independent-old-web' } }, processes: { center: 'center', runner: 'runner', web: 'web' } };
-  const operation = { operationId: 'operation', phase: 'drain-requested', backendArtifact: selected };
+  const operation = { operationId: 'operation', phase: action === 'resume' ? 'ready-paused' : 'drain-requested', initialVersion: 7, drainKey: 'legacy-drain', holdKey: 'legacy-hold', resumeKey: 'legacy-resume', backendArtifact: selected };
+  const slots = [{ id: 'legacy', key: 'runner', runner: config.runner }];
+  if (settings) {
+    slots.push({ id: 'settings', key: 'runner-settings', runner: { runnerId: 'settings-runner', token: 'settings-fixture' }, configDigest: 'digest' });
+    state.processes['runner-settings'] = 'settings';
+    operation.slots = slots.map(slot => ({ runnerId: slot.runner.runnerId, configDigest: slot.configDigest ?? null, initialVersion: 7, drainKey: slot.id + '-drain', holdKey: slot.id + '-hold', resumeKey: slot.id + '-resume' }));
+  }
   const view = { state: action === 'bootstrap' ? 'accepting' : 'maintenance', version: 7, activeAttempts: 0, operationId: operation.operationId };
+  const views = new Map(slots.map(slot => [slot.runner.runnerId, { ...view, ...(slot.id === 'settings' ? { state: secondState ?? view.state, activeAttempts: active } : {}) }]));
+  const commandReceipts = new Set();
   const ports = {
+    './runner-slots.mjs': { readRunnerSlots: async () => slots, slotServiceKeys: value => ['center', ...value.map(slot => slot.key), 'web'] },
     pg: { Pool: class { async query() { calls.push(['identity']); return { rowCount: 1 }; } async end() { calls.push(['end']); } } },
     './preview.mjs': {
       loadPreviewConfiguration: async () => config,
@@ -181,13 +190,20 @@ async function maintenancePorts({ configured = true, prepareFailure = false, sel
       startPreviewServices: async (...args) => { calls.push(['start', ...args]); },
     },
     './process.mjs': {
-      inspectOwnedProcess: async record => { calls.push(['inspect', record]); return 'running'; },
+      inspectOwnedProcess: async record => { calls.push(['inspect', record]); return record === unknownRecord ? 'unknown' : 'running'; },
       stopOwnedProcess: async record => { calls.push(['stop', record]); return 'stopped'; },
     },
     '../../apps/server/src/runner-maintenance/index.ts': {
       migrateRunnerMaintenance: async () => { calls.push(['migrate']); },
-      readRunnerMaintenance: async () => view,
-      commandRunnerMaintenance: async (...args) => { calls.push(['command', ...args]); },
+      readRunnerMaintenance: async (_pool, runnerId) => ({ ...views.get(runnerId) }),
+      commandRunnerMaintenance: async (...args) => {
+        calls.push(['command', ...args]);
+        const [, runnerId, action, request, key] = args;
+        if (failCommand?.(runnerId, action, request)) throw new Error('synthetic-lost-ACK');
+        if (!commandReceipts.has(key)) {
+          commandReceipts.add(key); const value = views.get(runnerId); value.version++; value.state = { drain: 'draining', hold: 'maintenance', resume: 'accepting' }[action]; value.operationId = request.operationId;
+        }
+      },
     },
     './web-release.mjs': { readWebRelease: async () => ({}) },
     './backend-release/host.mjs': { backendById: async () => selected, backendRuntime: async (...args) => { calls.push(['runtime', ...args]); } },
@@ -202,7 +218,7 @@ async function maintenancePorts({ configured = true, prepareFailure = false, sel
     return new vm.SyntheticModule(Object.keys(values), function () { for (const [name, value] of Object.entries(values)) this.setExport(name, value); }, { context });
   });
   await module.evaluate();
-  return { calls, state, config, run: () => module.namespace.maintainPreview({ directory: config.directory, action, target: selected?.sourceHead ?? '', backendId: action === 'bootstrap' && selected ? selected.artifactId : undefined }) };
+  return { calls, state, config, slots, views, operation, run: () => module.namespace.maintainPreview({ directory: config.directory, action, target: selected?.sourceHead ?? '', backendId: action === 'bootstrap' && selected ? selected.artifactId : undefined }) };
 }
 
 test('SVC09 maintenance bootstrap qualifies the selected backend and independent Web before drain', async () => {
@@ -267,4 +283,48 @@ test('SVC09 CLI qualifies the actual selected maintenance runtime before any chi
     assert.equal(state.exitCode, rejected ? 1 : 0);
     assert.equal(stderr ? JSON.parse(stderr).error : null, rejected ? 'MAINTENANCE_HOST_POLICY_UNSUPPORTED' : null);
   }
+});
+
+test('SVC09A maintenance drains both immutable slot identities with one operation and distinct keys', async () => {
+  const f = await maintenancePorts({ settings: true }); const result = await f.run();
+  const commands = f.calls.filter(call => call[0] === 'command');
+  assert.deepEqual(commands.map(call => call[2]), ['runner', 'settings-runner']);
+  assert.deepEqual(commands.map(call => call[3]), ['drain', 'drain']);
+  assert.equal(new Set(commands.map(call => call[4].operationId)).size, 1);
+  assert.equal(new Set(commands.map(call => call[5])).size, 2);
+  assert.equal(result.slots.length, 2); assert.equal(result.state, 'draining'); assert.equal(result.actualClaim, 'unknown');
+});
+test('SVC09A any busy slot prevents all stops and any hold until its work settles', async () => {
+  const f = await maintenancePorts({ settings: true, action: 'refresh', selected: { sourceHead: 'e'.repeat(40) }, secondState: 'draining', active: 1 });
+  assert.equal((await f.run()).update, 'waiting-for-current-work');
+  assert.equal(f.calls.some(call => ['stop', 'start', 'command'].includes(call[0])), false);
+});
+test('SVC09A holds every drained slot before stopping all four services and starting once', async () => {
+  const f = await maintenancePorts({ settings: true, action: 'refresh', selected: { sourceHead: 'e'.repeat(40) }, secondState: 'draining' });
+  const result = await f.run(); assert.equal(result.update, 'ready-paused');
+  assert.deepEqual(f.calls.filter(call => call[0] === 'stop').map(call => call[1]), ['web', 'settings', 'runner', 'center']);
+  assert.equal(f.calls.filter(call => call[0] === 'start').length, 1);
+  assert.ok(f.calls.findIndex(call => call[0] === 'command') < f.calls.findIndex(call => call[0] === 'stop'));
+});
+test('SVC09A unknown settings process or extra owned record blocks refresh without any stop', async () => {
+  for (const extra of [false, true]) {
+    const f = await maintenancePorts({ settings: true, action: 'refresh', selected: { sourceHead: 'e'.repeat(40) }, unknownRecord: extra ? null : 'settings' });
+    if (extra) f.state.processes.unexpected = 'foreign-record';
+    await assert.rejects(f.run(), { code: 'EXISTING_PROCESSES_UNCONFIRMED' });
+    assert.equal(f.calls.some(call => ['stop', 'start'].includes(call[0])), false);
+  }
+});
+test('SVC09A partial resume retains fixed CAS and keys and cannot report all slots accepting', async () => {
+  let fail = true;
+  const f = await maintenancePorts({ settings: true, action: 'resume', selected: { sourceHead: 'e'.repeat(40) }, failCommand: id => id === 'settings-runner' && fail });
+  await assert.rejects(f.run(), /synthetic-lost-ACK/); assert.equal(f.operation.phase, 'resume-requested');
+  assert.equal(f.views.get('runner').state, 'accepting'); assert.equal(f.views.get('settings-runner').state, 'maintenance');
+  const first = f.calls.filter(call => call[0] === 'command').map(call => [call[2], call[4].version, call[5]]);
+  fail = false; const result = await f.run(); assert.equal(result.state, 'accepting'); assert.equal(result.actualClaim, 'unknown');
+  assert.deepEqual(f.calls.filter(call => call[0] === 'command').slice(2).map(call => [call[2], call[4].version, call[5]]), first);
+});
+test('SVC09A a changed slot set cannot reuse the old single-runner maintenance operation', async () => {
+  const f = await maintenancePorts({ settings: true, action: 'refresh', selected: { sourceHead: 'e'.repeat(40) } }); delete f.operation.slots;
+  await assert.rejects(f.run(), { code: 'MAINTENANCE_SLOT_SET_CHANGED' });
+  assert.equal(f.calls.some(call => ['command', 'stop', 'start'].includes(call[0])), false);
 });
