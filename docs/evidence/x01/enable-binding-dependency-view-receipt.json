@@ -1,0 +1,34 @@
+{
+  "kind": "X01_DEPENDENCY_VIEW_PROVISION",
+  "startedAt": "2026-10-07T00:00:12.408555+00:00",
+  "sourceHead": "2a4a656764fbfca6fba9e43c32387c1e3c23286b",
+  "sourceCommit": "ade4efa0a332f4f1f1cbcd50012ab8881f41a8dc",
+  "requestSha256": "493598a34af50431894e9e316ada9437bda3c57a7b9412e4551da224fcf89878",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+  "claim": {
+    "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "version": 8,
+    "state": "active",
+    "scopeCount": 17,
+    "ledgerObservedAt": "2026-10-06T23:59:35.187Z"
+  },
+  "authority": "Execution Lead via Mika: sole operator for exactly seven links and at most three parents; 64KiB new metadata/receipt budget. Stage A execution floor is not this source-preparation gate.",
+  "operator": "architecture_read / gpt-6-astra",
+  "state": "STOPPED_UNKNOWN",
+  "parents": [],
+  "links": [],
+  "error": {
+    "type": "AssertionError",
+    "errno": null
+  },
+  "copiedBytes": 0,
+  "imports": 0,
+  "install": false,
+  "checks": "NOT_RUN",
+  "executionState": "HOLD",
+  "finishedAt": "2026-10-07T00:00:12.409257+00:00",
+  "linkTargetTextBytes": 0,
+  "createdLinkCount": 0,
+  "createdParentCount": 0,
+  "observedNewAllocatedBytes": 0
+}

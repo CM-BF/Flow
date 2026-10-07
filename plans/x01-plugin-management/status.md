@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 23:56:37 UTC |
+| 最近更新时间 | 2026-10-07 00:01:57 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
@@ -12,9 +12,9 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；产品ade4源码静审成立；当前支持源码043298ef2faeea63a814c2cd524489ab4abe5c73待独审，未main |
-| 工作树 dirty 状态 | 043298ef支持源码固定；当前仅manifest/status/review/quality封包metadata修改，提交后clean；供给overlay属于历史 |
+| 工作树 dirty 状态 | 043298ef支持源码及2a4a交审包固定；本次仅供给收据/status修改，提交后clean；7个ignored链接另有排他供给收据 |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN 当前enable/binding及新薄调用方；0syntax/import/types/tests/build/install/PG/browser/provider；未创建7依赖链接，历史通过不移用 |
+| 检查状态 | NOT_RUN 当前enable/binding及新薄调用方；7个精确依赖链接已供给，0syntax/import/types/tests/build/install/PG/browser/provider；历史通过不移用 |
 | Review | NOT_STARTED 当前043298ef薄调用方及组合准备；ade4产品源码独审保留独立历史字段，0工程检查；[固定清单](../../docs/evidence/x01/enable-binding-caller-manifest.json) |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
 | 实现目标 | 043298ef2faeea63a814c2cd524489ab4abe5c73 |
@@ -23,8 +23,8 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 插件启用与冻结工具任务源码已静审；已准备复用现有进程监督模块的局部验证入口，等待独审与运行准入 |
-| 下一可用交付 | 先验证有限合同与真实自有包执行；中心事务与浏览器另开有界窗口，生产runner调用仍待共享资格与恢复接线 |
-| 当前阻塞 | ACTIVE: 当前可用空间不足既定供给门槛，7个依赖链接未创建；新检查入口待独审及单次资源准入。生产挂载仍待共享claim能力/恢复guard接线 |
+| 下一可用交付 | 获得独审与单次资源窗口后验证合同及真实自有包执行；中心事务与浏览器另开有界窗口，生产runner仍待共享资格与恢复接线 |
+| 当前阻塞 | ACTIVE: 依赖视图已供给，新检查入口待独审与单次执行准入；实际types/tests仍HOLD，生产挂载仍待共享claim能力/恢复guard接线 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -135,3 +135,5 @@
 2026-10-06T23:56:37.116585+00:00：fresh23:53:50.095Z核v8 ACTIVE/17scope未变；新增薄caller源码043298ef，仅复用固定OPS14，不另写监督循环。d12依赖设计于23:45:58被独审通过；本次新支持代码与整体准备包待审，未继承ade4批准。产品15源、原输入/请求/配置均逐字保持。Lead23:45:59看板已读回正确current/source及checks not_run；本次实现目标改完整SHA、范围含所有产品及可执行支持，等待聚合读取新待审状态，不手改parser。架构仅新增验证caller→OPS14依赖，不改变产品runtime/DB/外部包接线。
 
 23:56:51.367558Z：Lead明确本owner为7ignored links唯一operator后，fresh资源1,013,399,552 B低于1,107,296,256 B，未进入供给；[HOLD事实](../../docs/evidence/x01/enable-binding-dependency-view-hold-235651.json)。精确7dest均不存在，0目录/link/依赖复制/安装；未将operator授权当工程运行窗口。保留d12原请求与当前support源码不变。
+
+2026-10-07 00:01:57 UTC：Lead明确7link仅源码准备，1,107,296,256 B仍为运行门槛。fresh23:59:35.187Z核v8/17scope；先前保守预算预检停止且0写目录/link，原1238B STOP收据保留。随后同一sole operator按精确请求exclusive创建7links/3parents，752B target文本，两个@flow均本树；[新供给收据](../../docs/evidence/x01/enable-binding-dependency-view-result.json)。0复制/安装/import/check，运行HOLD。root23:59:46核043的24Git/3external及准入门禁无P1/P2，完整lifecycle独审仍待。
