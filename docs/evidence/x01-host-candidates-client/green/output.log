@@ -1,0 +1,61 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates
+
+ ❯ packages/client/src/plugin-host-candidates.test.ts (13 tests | 1 failed) 24ms
+   ✓ reads one advisory page with duplicate labels, disabled reasons, and unknown runtime facts 19ms
+   ✓ preserves an empty scanned page and follows its opaque cursor only on a separate caller request 1ms
+   ✓ freezes the requested material before awaiting and uses the existing cookie GET transport 0ms
+   ✓ rejects an unverified candidate registration without retry or inferred state 1ms
+   ✓ rejects an unverified candidate material without retry or inferred state 0ms
+   ✓ rejects an unverified candidate duplicate identity without retry or inferred state 0ms
+   ✓ rejects an unverified candidate reversed identity order without retry or inferred state 0ms
+   ✓ rejects an unverified candidate selection reason without retry or inferred state 0ms
+   ✓ rejects an unverified candidate unknown reason without retry or inferred state 0ms
+   ✓ rejects an unverified candidate repeated cursor without retry or inferred state 0ms
+   ✓ rejects an unverified candidate page count without retry or inferred state 1ms
+   ✓ rejects malformed and over-budget success while preserving trusted rejection and cancellation 1ms
+   × rejects invalid input before transport and accepts a full escaped-name page within its finite budget 1ms
+ ✓ apps/cli/src/plugin-host-candidates.test.ts (2 tests) 19ms
+
+⎯⎯⎯⎯⎯⎯⎯ Failed Tests 1 ⎯⎯⎯⎯⎯⎯⎯
+
+ FAIL  packages/client/src/plugin-host-candidates.test.ts > rejects invalid input before transport and accepts a full escaped-name page within its finite budget
+ZodError: [
+  {
+    "origin": "string",
+    "code": "too_small",
+    "minimum": 1,
+    "inclusive": true,
+    "path": [
+      "cursor"
+    ],
+    "message": "Too small: expected string to have >=1 characters"
+  },
+  {
+    "origin": "string",
+    "code": "invalid_format",
+    "format": "regex",
+    "pattern": "/^[A-Za-z0-9_-]+$/",
+    "path": [
+      "cursor"
+    ],
+    "message": "Invalid string: must match pattern /^[A-Za-z0-9_-]+$/"
+  }
+]
+ ❯ FlowClient.pluginHostCandidates packages/client/src/index.ts:537:52
+    535|   pluginHostCandidates(id: string, input: PluginHostCandidatesQuery, s…
+    536|     const registrationId = pluginHostCandidatesPageSchema.shape.regist…
+    537|     const frozen = pluginHostCandidatesQuerySchema.parse(input);
+       |                                                    ^
+    538|     const query = new URLSearchParams({ materialInstallOperationId: fr…
+    539|     if (frozen.cursor !== undefined) query.set('cursor', frozen.cursor…
+ ❯ packages/client/src/plugin-host-candidates.test.ts:56:135
+
+⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯⎯[1/1]⎯
+
+
+ Test Files  1 failed | 1 passed (2)
+      Tests  1 failed | 14 passed (15)
+   Start at  04:01:41
+   Duration  606ms (transform 209ms, setup 0ms, import 396ms, tests 44ms, environment 0ms)
+

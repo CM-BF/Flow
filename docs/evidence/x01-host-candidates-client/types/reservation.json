@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-10-07T11:01:41.896215+00:00",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates/node_modules/typescript/bin/tsc",
+    "--noEmit",
+    "-p",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates/docs/evidence/x01-host-candidates-client/tsconfig.json"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates",
+  "free": 22339186688,
+  "required": 6063390720,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates/docs/evidence/x01-host-candidates-client/types/tmp",
+    "dev": 16777234,
+    "ino": 124067648
+  },
+  "budgets": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288
+  },
+  "tmpMeasurement": "before/after sample; not realtime OS isolation"
+}
