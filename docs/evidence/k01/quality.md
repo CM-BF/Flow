@@ -11,3 +11,5 @@ PG补充由 Root 先 skills.sh 再 npx skills find 发现官方 supabase/agent-s
 2026-10-06 05:25:05 UTC：Mika独立技术review APPROVED ea0c4cba1792dbb498487fb5b6ae47393340b77e，clean-code复核职责/单一authority/复用事务/命名错误语义/无无用抽象通过，正式无blocking finding；未重跑。module验证与生产自动挂载分开、Goal Owner验收接收与Mika独立技术review分开；共享接线/架构由Lead接收后同步。当前停止领域写入等待集成，claim保留。
 
 2026-10-06 05:38:05 UTC：主线接收前最后metadata/clean-code复核：target ea0c4cba1792dbb498487fb5b6ae47393340b77e 是main fb906cb42391971a8b315dbd813f7633927d7265祖先，9实现文件逐字节相同；未改模块Interface/实现/测试，未重跑。依据Lead/Mika main回执只更新交付事实，原31组合/失败与局限全部保留。main具备已集成F01 migrate/register/export，runtime重启与未来REQ-10验收不推断。本owner最终metadata提交后停止所有K01写入，claim待Mika原子release。
+
+2026-10-07 00:14 UTC：REQ-10/K01留存规划。find-skills本地优先，已读find-skills/brainstorming/codebase-design/固定clean-code；实际路径/hash见retention-planning-inputs.json，无安装。按已获GO规划授权使用brainstorming的现状/方案取舍方法，不另建spec或重复审批。clean-code检查：knowledge原文authority与留存保护职责明确，K02/K03仍拥有冻结状态；内部永久标记避免每次冻结无限holder，外部holder/receipt有界；不造通用GC或隐藏TTL释放。锁序/并发为待测推荐，不假称证明；归档与回收、preview与固定引用、旧产品批准与新规划区分。尚待Mika固定文档review；0工程tests/产品PG/模型/实际删除。

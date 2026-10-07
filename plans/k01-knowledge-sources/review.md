@@ -1,4 +1,11 @@
-# K01 独立 review
+# K01 留存规划独立review
+
+状态：NOT_STARTED
+Review target commit：UNKNOWN
+
+本次只审原plan追加K01-07～10、retention-design.md与retention-planning-inputs.json；不批准产品实现、迁移、回收或实际留存变更。固定源码依据c3ba1ad，owner仅两metadata scope。请Mika核单调身份/引用保护/锁序建议、未知回执与v1兼容、容量界限、只读消费者依据、旧31项和main事实未被覆盖，以及后继全部NOT_RUN。无需工程测试或PG。新设计文档结论必须绑定具体提交，与下列历史批准分开。
+
+# K01 原实现独立 review（历史）
 
 状态：APPROVED
 Review target commit：ea0c4cba1792dbb498487fb5b6ae47393340b77e

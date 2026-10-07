@@ -9,7 +9,7 @@
 - [x] K01-05 接收 main 事实；真实生产入口验收由 Lead 独立完成。
 - [ ] K01-06 后继任务继续 REQ-10 hybrid/vector、下游 grant/消费与摘要失效验收；本片交付不关闭该要求。
 
-容量锁定：正文 <=256KiB；project <=128 sources；每 source <=16 retained versions；project retained raw <=64MiB。project 行锁→source 锁→命令幂等锁（operation 含 project/source），同事务插版本/chunks 后切 head；不递增 project.revision。达到容量明确拒绝，不自动删除旧版本。chunk <=4096 UTF8B/至少256B重叠，边界向前对齐、严格推进；每版本至多69块（ordinal0..68），衍生原文字节额外 <=69×4096，与原文总量分别说明。
+原已交付片段容量（历史验收保持有效）：正文 <=256KiB；project <=128 sources；每 source <=16 retained versions；project retained raw <=64MiB。project 行锁→source 锁→命令幂等锁（operation 含 project/source），同事务插版本/chunks 后切 head；不递增 project.revision。达到容量明确拒绝，不自动删除旧版本。chunk <=4096 UTF8B/至少256B重叠，边界向前对齐、严格推进；每版本至多69块（ordinal0..68），衍生原文字节额外 <=69×4096，与原文总量分别说明。
 
 原文不 trim/NFC，CRLF 原样；拒绝 NUL/不成对 surrogate。引用 project/source/version/digest+半开 UTF8 范围；resolve <=4096B且完整 codepoint，旧版可读并给 isCurrent 快照。版本权威不可变，chunks 可重建投影。
 
@@ -18,3 +18,23 @@
 验证只用实际 createServer({automaticQueueScan:false})+listen 前手工 migrate/register，继承原 owner/runner preHandler；最终生产自动 mount 另验。唯一动态 DB/端口、正常 DROP，0模型/云。先一真实红用例，再最小实现；CAS/ACK/restart/rollback/旧引用/字节/权限/精确词/容量并发/预算用明确小矩阵。固定 Node24/pnpm9.15.4/Vitest4.0.18+noEmit；不跑固定库套件。架构 target 为新 knowledge Interface/3表，Lead 接收后同步共享图。
 
 首片来源类型固定 manual text；title创建后固定，publish仅新正文。resolve包含同快照currentVersion；引用仍返回指定旧版原文。
+
+
+## 2026-10-07 留存后继规划（仅metadata授权）
+
+所属大task：[REQ-10](../flow-001-architecture/full-plan-matrix.md)；co-lead Mika；单一owner b01_bounded_reads。基于固定main `c3ba1adfe9374b80a955d45e20310f000fed0310`，原branch不merge/rebase，原K01-01～05/main/31项检查保留，K01-06不关闭。详细输入/方案取舍/未运行验收见[设计证据](../../docs/evidence/k01/retention-design.md)，该文件只解释本计划，不另立权威计划。
+
+- [x] K01-07 核固定基线与真实引用消费者，形成版本身份/留存/固定引用保护的小设计和验收矩阵；独立文档review另记录。
+- [ ] K01-08 后续合法产品scope下实现单调身份、真实保留计数、版本保护与有界受控回收；前进migration编号由Lead协调。
+- [ ] K01-09 后续合法owner协同接通新旧协议、K02/K03、client/Web及context透明度/history codecs；保持未知回执重试原请求和冻结内容。
+- [ ] K01-10 独立专库完成K01-R01～R11的直接行为/并发/预算验证，独立review后受控主线接收；不把规划当已实现。
+
+**本次推荐，未实施：** 身份用JSON number/PG int32正整数，currentVersion作已提交单调高水位；16是实际保留版本数而非编号上限，64MiB/128 sources/256KiB保持有界。原版本全部legacy保守保护；新managed协议区分临时preview/receipt与已持久固定引用。当前head、legacy/unknown、K02/K03内部历史永久保护及外部有界holder不可回收；归档原文仍计容量。只回收经同version锁/FK证明可回收的版本；发布拟定newhead后，确无引用保护的oldhead可成为候选，所有失败保留原head/bytes/receipt。16个durable/legacy/unknown全保护则拒绝，不能承诺旧满源或有限容量下无限发布。
+
+内部保护拟用每version永久标记，外部可释放holder建议每version≤64；新留存命令receipt建议每project≤4096，复用flow.commands且满额拒绝，不额外积累无限tombstone。具体schema、协商字段/endpoint、配额计数索引及前进migration只由后续合法owner落实，当前无产品权限。source identity不删除，历史详情仍读其head；旧citation/digest/冻结正文/执行prompt不重写。
+
+状态所有权保持：knowledge负责原文/身份/保护；K02/K03负责冻结输入与自己的锁，pin在caller事务内向下锁有序version，不能反向再拿project/source；publish/reclaim沿project→source向下。该锁序建议必须用真实竞争测试证明，不能把只读推导当已验。无缺省pin降级、无TTL推定旧引用失效，无通用GC/新broker。
+
+旧客户端/旧中心不得静默切到可回收语义；managed不可回收保证只有pin或内部冻结同事务成立后可声明。需要新能力/协议协商，不能把>16塞入旧v1 history成功DTO或伪报currentVersion16。请求协议选择与body/key一同冻结，send/queue未知ACK重试原请求不变；变协议必须先解决旧未知回执并新建逻辑命令，不能同key改canonical输入。详见设计证据兼容矩阵。
+
+本轮产品验证NOT_RUN；0测试/产品PG/安装/模型/实际历史或留存设置变更。原已交付chunk/raw不可变与保守容量验收继续作为历史事实，不拿新规划覆盖旧验证。
