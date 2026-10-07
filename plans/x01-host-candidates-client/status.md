@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:52:41.728Z |
+| 最近更新时间 | 2026-10-07T12:12:46.202Z |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
@@ -34,7 +34,7 @@
 | X01HOST-01 | completed | db_transaction_owner | 旧ACK/CLI STOP-amend与新take完成 |
 | X01HOST-02 | completed | db_transaction_owner | 既有parseArgs/transport seam已核 |
 | X01HOST-03 | completed | db_transaction_owner | 分轮15distinct通过、finaltypes0 |
-| X01HOST-04 | completed | db_transaction_owner | 独审通过；main-intake.json待接收 |
+| X01HOST-04 | completed | db_transaction_owner | 独审通过；de5475039d73caec631ba2ee64556208dbb1751d已接收，见main-received.json及I02 combined intake |
 
 ## 等待记录
 
