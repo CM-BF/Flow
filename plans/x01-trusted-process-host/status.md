@@ -9,26 +9,26 @@
 | 工作分支状态 | completed |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | integration |
-| 当前产出 | 受信插件独立进程执行源码已进入本地主线；远端同步仍待网络恢复，发布产物未验。 |
-| 下一可用交付 | 确认远端主线接收后再移交两条执行入口；真实发布产物验证仍待后继。 |
-| 当前阻塞 | ACTIVE: 主线推送失败，等待集成负责人恢复远端同步；当前保留产品范围。 |
+| 本片段交付阶段 | delivered |
+| 当前产出 | 受信插件独立进程执行源码已进入远端主线；两条执行入口已正式交回，真实发布产物仍未验。 |
+| 下一可用交付 | 本片段源码已交付；T7真实发布产物验证由发布负责人后继完成。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host |
 | Branch | codex/plugin-trusted-process-host |
 | Base | 4fdd856293a502209d7509ea37da901bbfd89f72 |
-| HEAD | 672cca6fe2c4ccb7136f281b1fc277ef9dfc20cb（本次metadata前已核clean；后继提交仅接收观察） |
-| 工作树dirty状态 | 本次仅status/接收观察metadata；提交后STOP，产品冻结，无运行holder。 |
+| HEAD | 90289185f6e67a3ff5ecf8fb4aee105058c11aef（本次metadata前已核clean；后继仅接收与交权记录） |
+| 工作树dirty状态 | 本段仅接收/status/两leaf交回metadata，提交推送后全写STOP；无运行holder。 |
 | 实现目标 | 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70 |
 | 实现范围 | apps/runner/src/configuration.test.ts,apps/runner/src/configuration.ts,apps/runner/src/plugins/execution.test.ts,apps/runner/src/plugins/execution.ts,apps/runner/src/plugins/process-host.test.ts,apps/runner/src/plugins/process-host.ts,apps/runner/src/plugins/process-protocol.ts,apps/runner/src/plugins/process-resources.ts,apps/runner/src/plugins/process-worker.ts,apps/runner/src/plugins/runtime.test.ts,apps/runner/src/runtime.ts |
 | 检查状态 | PASSED 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70 定向2/2与types0；原14distinct证据继承其固定source，不重跑；PG/release NOT_RUN。 |
 | Review | APPROVED 2026-10-07T13:23:25Z chatui，4dc6f7ee1613e00a82ab5d99412a06f9c799cf70；原唯一P2 CLOSED/0剩余P1P2。 |
-| 已集成main状态 / HEAD | LOCAL_INTEGRATED 13d4327b1a8579cd7e24ca50eff5b9f95e96388d；REMOTE_PENDING，观察origin/main fbad68a68676ad4c74304662192733feeeb17b53；NOT_DEPLOYED。 |
-| 最近更新时间 | 2026-10-07T15:15:50.942Z |
+| 已集成main状态 / HEAD | INTEGRATED 96b424777cd2c66e603157649e5a859ca1b914f6（包含13d本地接收且已远端同步）；NOT_DEPLOYED。 |
+| 最近更新时间 | 2026-10-07T15:26:41.451Z |
 | 任务开工时间 | 2026-10-07T12:38:43.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 实际开读/clock12:38:43；claim12:39:21.479Z另记 |
-| Claim | 8c2f0b78-2aa4-435a-98df-991b9f4b7d15 v2 ACTIVE/14（fresh 2026-10-07T15:15:03.793Z；本段不amend/release） |
+| Claim | 8c2f0b78-2aa4-435a-98df-991b9f4b7d15 v3 ACTIVE/12（2026-10-07T15:26:07.328Z原子amend仅移除execution.ts/execution.test.ts；其余保留） |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -36,7 +36,7 @@
 | X01TP-02 | completed | db_transaction_owner | 最小接口/候选scope与release闭包 |
 | X01TP-03 | completed | db_transaction_owner | 固定e870设计APPROVED，Mika已授首片 |
 | X01TP-04 | completed | db_transaction_owner | 真实worker11/11 + direct3/3，类型0；详细T1–T6/T8有限边界见implementation-notes。 |
-| X01TP-05 | in-progress | db_transaction_owner | 产品已入本地main13d4327b；远端待同步，T7真实发布后继未验。 |
+| X01TP-05 | in-progress | db_transaction_owner | 源码已入远端main96b42477；T7真实发布后继未验，完整TODO保持开放。 |
 
 历史设计阶段：当时授权仅15min设计段12:38:43–12:53:43，source/meta≤2MiB；无工程child/端口/PG/模型/服务预约。仅63782B规则物化，无依赖链接/安装；产品固定Git只读。唯一task-intake待OriginalLead登记，未写registry/生成JSON。结构变化为planned受信process host边；当前不称图或main能力已更新。
 
@@ -47,13 +47,13 @@
 | 实际开工 | 2026-10-07T12:38:43.000Z / owner clock |
 | 分支交付 | 2026-10-07T13:10:59.985318+00:00 / fixed首产品 af43f7e61395125aed3f0725a9e4305c9e086cdd；design旧交付12:47:14.829Z保留 |
 | 独立审查 | 2026-10-07T13:23:25Z / chatui固定4dc6f7ee产品增量批准；设计历史独立保留 |
-| 主线集成 | 2026-10-07T15:10:04.671Z / 中央接收receipt；本地main13d4327b，远端尚待同步 |
+| 主线集成 | 2026-10-07T15:10:04.671Z / 中央接收receipt；远端同步15:22:52.000Z见后继接收记录 |
 | 部署 | NOT_DEPLOYED |
 | 完整完成 | NOT_COMPLETED |
 
 ## 下一步
 
-已审源码已本地主线接收，等待Original提供远端同步成功receipt；claimv2/14保留，产品STOP，不提前交权。来源登记已记录，live为NOT_RELOADED。T7真实artifact仍NOT_RUN，cd27/04da与098b不含本功能；不把main接收当部署或完整任务完成。
+已审源码已远端主线接收，执行入口两leaf永久STOP并从claim移出，后继owner取得新claim后才能写。其余12scope保留且本段结束全写STOP。来源登记已记录，15:24:50.706Z独立live回执确认sourceCurrent/live/issues[]；该回执观察此前status，不冒称本次后继metadata已刷新。T7真实artifact仍NOT_RUN，artifact2515/cd27及历史04da/098b不含本功能；不把main接收当部署或完整任务完成。
 
 ## 计划复审修复段
 
@@ -76,3 +76,11 @@ Mika明确授权：2026-10-07T12:55:40.000Z至13:15:40 UTC，普通child每次�
 ## 本地主线接收观察
 
 2026-10-07T15:15:50.942Z：本段仅metadata。逐核11产品108365B与本地main13d4327b全等，中央receipt及登记事实见[local-main-accepted.json](../../docs/evidence/x01-trusted-process-host/local-main-accepted.json)。远端origin/main仍fbad68a6；Original报告15:13:52推送HTTP500，未称远端已同步。AV02仅execution.ts/execution.test.ts候选交回，待真实remote receipt后另作STOP/amend；本段全部scope不变。完成本次metadata提交后STOP，无工程运行或个人服务操作。
+
+## 远端接收与执行入口交回
+
+2026-10-07T15:26:41.451Z：本段从15:24:48 UTC开始，仅metadata/账本操作。Original15:22:52原子push成功；独立核远端main96b42477包含原11产品108365B，与source4dc逐blob全等；当前main/origin已前进但接收提交仍为祖先。见[remote-main-accepted.json](../../docs/evidence/x01-trusted-process-host/remote-main-accepted.json)。15:13:52 HTTP500及前一本地接收观察原件保留。
+
+15:26:02.190Z永久STOP `apps/runner/src/plugins/execution.ts` 与 `apps/runner/src/plugins/execution.test.ts`；15:26:07.328Z原子amend COMMITTED v2/14→v3/12，原始[回执](../../docs/evidence/x01-trusted-process-host/execution-handback-receipt.json)与[STOP事实](../../docs/evidence/x01-trusted-process-host/execution-handback-stop.json)固定。只交两leaf，未release整claim；AV02接收者需fresh取得写权。本次0产品改动/工程重测/PG/个人服务。clean-code复核区分历史推送失败、远端源码接收、未部署/T7和路径写权，未改旧raw/manifest。
+
+独立dashboard接收观察：Original回执 `dashboard-architecture/docs/evidence/d05/release-plugin-207-live.json`，completedAt2026-10-07T15:24:50.706Z、207sources；本task sourceCurrent/live/nonstale且issues[]，读取的是15:15:50状态。历史NOT_RELOADED仍按原观察保留；本段不启动/重载dashboard。

@@ -1,0 +1,27 @@
+{
+  "taskId": "X01-TRUSTED-PROCESS-HOST01",
+  "stoppedAt": "2026-10-07T15:26:02.190Z",
+  "claimId": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+  "versionBefore": 2,
+  "paths": [
+    "apps/runner/src/plugins/execution.ts",
+    "apps/runner/src/plugins/execution.test.ts"
+  ],
+  "permanentStop": true,
+  "source": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+  "acceptedMain": "96b424777cd2c66e603157649e5a859ca1b914f6",
+  "products": [
+    {
+      "path": "apps/runner/src/plugins/execution.test.ts",
+      "bytes": 16551,
+      "sha256": "85badf82637f3e4e5342cb19cf746ee6622f3e92ec6095cb25bc6e0279d094fe"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "bytes": 5029,
+      "sha256": "3b853b14f0168cbc2b5b9ff17fb1a88e76842d30f2a1d599fca2cc5ef6fb90d5"
+    }
+  ],
+  "condition": "Receiver must fresh take/amend successfully before writing; original owner will not resume these two leaves",
+  "remainingScopeCount": 12
+}
