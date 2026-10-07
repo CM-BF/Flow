@@ -1,0 +1,126 @@
+{
+  "at": "2026-10-07T22:15:02.513Z",
+  "state": "SOURCE_LOCAL_AND_PREPARATION_DELTA_REVIEW_PENDING",
+  "source": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+  "support": "7c76b372405cac2c741b24871e8cb39eaa5f12ec",
+  "target": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+  "rows": [
+    {
+      "path": "packages/storage/migrations/036-plugin-verification-bindings.sql",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 5115,
+      "sha256": "6d47ba7ba8c8addde0ff07bc1f5fb6bf770836896d245c0fc93ee2b5074874be"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 21055,
+      "sha256": "22a440b08d070712051c99ad0ff53b5141619901d5df0377b3a6d26319d29278"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/packages/storage/migrations/036-plugin-verification-bindings.sql",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 5115,
+      "sha256": "6d47ba7ba8c8addde0ff07bc1f5fb6bf770836896d245c0fc93ee2b5074874be"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/inputs/apps/server/src/plugin-runtime/verification-pg.test.ts",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 21055,
+      "sha256": "22a440b08d070712051c99ad0ff53b5141619901d5df0377b3a6d26319d29278"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r3-repair-start.json",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 684,
+      "sha256": "eb9618a0c5271f017d357c747db1f6447c8c943f06bbecf38d542c0c26e402b5"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r3-repair-result.json",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 1505,
+      "sha256": "f16c1bdffefd53c68021b1b6df6604c178cf43620441037f695ed75570cd8463"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r3-local.py",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 4125,
+      "sha256": "c88e9389f68292644ee750d9f9ea4ed4ee9f1e6c537e45ea10ebba52ed8bfa5d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r3-local-strict/reservation.json",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 3327,
+      "sha256": "9955a116d93ec34e04df31ba58bceb4db83daae7b14a012b831868dcd666f633"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r3-local-strict/output.log",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r3-local-strict/result.json",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 2020,
+      "sha256": "35fe5acbc78972a1b911568f9d6700a06585ad2be51e1dd2ef7e92e6e63d446f"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/closure-r3.json",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 91355,
+      "sha256": "d200e3c796fdf8871086e9c085d8965dd97acc3170ae6c1ae7e2a68968f5f37d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-r3-once.py",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 18385,
+      "sha256": "172d4523ab21224aaade97ed323e759deb987e5106ccef1c667ac46e89e4f281"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-input-r3.json",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 2423,
+      "sha256": "47108eb1ada1d360c0dfa07f7f5619ab4afabb7ef6fae69cb632a15639d13e53"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/window-request-r3.json",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 2592,
+      "sha256": "c162b5a7e0540534246ce540c1dcdabfab2f56a1a488bfdb0d876acb18207e92"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/pg-isolated-manifest-r3.json",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 167893,
+      "sha256": "1b5eb0aee36c90dba7d619f6ccea9206a23002bc4db9f73c57c705f4c2316aaf"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r3-invocation.json",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 3094,
+      "sha256": "d90818f095786f65eb8955e1f49b9b17f5b8477252e510e4e907791009333c37"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r3-ready.json",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 1681,
+      "sha256": "d33668122eeb98037534fe520f2b628d2f29adbc75cd40420071a026d27359be"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/av03-pg/r2-result-approval.json",
+      "commit": "d37ff1cb6b8ce11dbf7d706aa7ce54becf4ef7a8",
+      "bytes": 828,
+      "sha256": "0b90fb4a69b1d0575c05b140fdc20910c44036c17aa578a3e0a9f0f8abc647ed"
+    }
+  ],
+  "bindings": 18,
+  "bytes": 352252,
+  "reviewer": "b01_bounded_reads",
+  "scope": "Only036 JSON precedence and first-casefinally/readyguard,one affectedstrict,then7row R3 binding/callerliteral delta. Earlier282/PGclosure semantic approval retained with real R2FAILED. No SQL or lifecycle success inferred.",
+  "checkResult": "strict0 only,PID96897/2280ms/raw0/finalabsent/EOF/TMPsameinodeENOENT",
+  "checkVersion": "Executed mirror3bf matchesfinalead; canonical staging corrected afterrun,notprecommitted canonicalclaim",
+  "actual": "R3NOT_OPEN/NOT_RUN; prior5FAIL preserved",
+  "operator": "Same CORE9af/OPS14/rootguard1d85; only3 namespace/input/manifest literals change",
+  "limits": "12min from22:11:17 to22:23:17,1of2 child used2280/45000ms;2MiB later extended4MiB within stable16MiB, no PG/newreserve"
+}
