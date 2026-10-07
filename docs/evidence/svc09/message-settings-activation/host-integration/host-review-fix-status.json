@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-07T15:44:41.451Z",
+  "scope": "OWN_STATUS_METADATA_ONLY",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [
+    "任务开工时间未记录"
+  ],
+  "parent": {
+    "state": "known",
+    "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+    "id": "FLOW-001",
+    "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+  },
+  "priorCollectorError": {
+    "type": "TypeError",
+    "cause": "Read x.declarations.human instead of the public x.human result. No status/product failure.",
+    "originalToolChunk": "e96fd4",
+    "engineeringTests": 0
+  }
+}

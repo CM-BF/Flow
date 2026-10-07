@@ -25,3 +25,7 @@
 2026-10-07T15:33:08.834Z正常收录：唯一批准 `APPROVED_FIXED_ARTIFACT_BUILD_AND_INTERNAL_IMPORT_RESULT`，review UTC2026-10-07T15:20:05.813Z，I02原件固定main96b424777 / docs/evidence/i02/svc09a-fixed-build-result-review.json。target b5f967240286eed405e9ab6ce3700748e5f1150e，manifest d54be510da0980c1eb9b28b001d59ebf42c9fab6；16新+2继承+3私有/根身份核符，无P1/P2，无重复构建。先前“待审”段均是当时历史，不代表当前仍待该审查。
 
 新的host候选独立待审：源/单份pins/Interface与6新准备原件见host-integration/host-preparation.json。6/6只覆盖reservation字节；其后host-run/host-cleanup两条first-error/unknown分支及host-entry共享计量合同校准明确静态未运行。真实center/PG/slot生命周期与mixed ACK尚未实测，不继承构建或33局部批准。合成Web输入NOT_APP/NOT_PERSONAL；实际宿主窗口由Lead独立安排。
+
+## SVC09A-HOST-P2-01 修复待复审
+
+2026-10-07T15:44:26.777Z：唯一原审查 `REQUEST_CHANGES` 固定main729d33836 / docs/evidence/i02/svc09a-host-preparation-review.json，不复制原件。source ccf7d057659d99be9c5d42fa035af352eaf647cb 完成原OPS14 caller-only独立期限；215+0.5+2与服务/DB未知分开。新5/5定向、402ms/955B、双组absent/双EOF/scratch removed；其余原6/build不重跑。Lead已读delta及raw称结构闭合，正式整体批准等待最终packet绑定，不能提前把实际host/PG标通过。

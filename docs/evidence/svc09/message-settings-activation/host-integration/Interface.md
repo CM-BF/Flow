@@ -34,7 +34,7 @@ artifact模式的maintenance要求已发布Web pointer与report，因此复用�
 
 | Module | 小Interface与所有者 | 依赖方向 |
 | --- | --- | --- |
-| host-run.py | 唯一固定入口 `--execute-host-once`；fresh pins/namespace/free，原clone一次，原OPS14分别监督work/cleanup；不安装、不查询旧资源 | 固定host-inputs + host-preparation引用 → 原clone/OPS14 |
+| host-supervise.py → host-run.py | 唯一入口 `--run-host-once`；原OPS14独立监督整个operator PID，operator内fresh pins/namespace/free、clone/work/cleanup均受原OPS14监督 | 固定host-inputs + host-preparation引用 → 原OPS14/clone |
 | host-fixture.mjs | 全新目录/config/marker/OID/端口与合成Web loader；不复用个人凭据 | 固定artifact的原Web prepare/release/目录合同 |
 | host-entry.mjs / host-records.mjs | work拥有观察Pool和阶段原件，明文异常/凭据不公开；有界目录/DB测量与第一失败/关闭分别记录 | 原OPS-METER、固定artifact入口 → host-consumer |
 | host-consumer.mjs | 默认/显式槽、目录tuple、两槽维护、准确停止native poller | 原preview/maintenance/slots/process → mixed-runner |
@@ -50,17 +50,23 @@ artifact模式的maintenance要求已发布Web pointer与report，因此复用�
 下列为本次候选预算请求，尚未开启实际窗口：
 
 - artifact构建单独沿已审SVC06 builder段：420s work + 0.5s TERM + 2s reap；监督输出≤1MiB/总记录≤2MiB、artifact≤1GiB/100000 entries、原cache/staging与live/fresh预算继承固定原输入，fresh时另计并行实际预算。不能将该时间塞进host段或本次0PG准备。
-- host clone≤20s、work≤180s、cleanup≤30s共享一个215s monotonic准入截止；每次新child扣除已耗时并预留TERM/reap与清理，不足时0child拒绝。此薄caller没有独立硬抢占filesystem I/O的watchdog，pin/fsync/归档阻塞可能超出壁钟；215s是child准入/监督预算，不冒称对任何I/O的硬期限。实际窗口审查须接受此限定或指定复用已有外层期限端口，不能在运行中扩界。raw总≤2MiB、私有fixture增量≤32MiB/4096 entries，另列克隆artifact≤1GiB与PG≤128MiB，保留1GiB reserve并加所有并行已声明占用。artifact只读来源未变，clone/安装不在已开始PG段临时扩张。
+- host clone≤20s、work≤180s、cleanup≤30s仍共享原215s monotonic准入截止，每次新child扣除已耗时并预留清理。新增最薄host-supervise使用原OPS14，独立对整个operator（含pin/fsync/archive）给215s work + 0.5s TERM + 2s reap，caller监督总包217.5s；不是给内部work/cleanup额外时间。外层仅childPidOnly，不取得detached服务所有权；超时/报告缺失记录UNKNOWN_KEEP。外层结果落盘在监督完成后，不能凭outer0/直属PID absent自动归还服务资源；仍需完整phase与全部8身份/DB闭合。raw总≤2MiB、私有fixture增量≤32MiB/4096 entries，另列克隆artifact≤1GiB与PG≤128MiB，保留1GiB reserve并加所有并行已声明占用。artifact只读来源未变，clone/安装不在已开始PG段临时扩张。
 - fresh host最低 `1GiB reserve + 1GiB artifact clone worst-case + 128MiB PG + 32MiB private + 2MiB raw = 2317352960B`，加实际并行预算；所有数量是上界/采样，非原子峰值或物理回收承诺。实际clone可在先行离线段完成并把此部分计入既有保留，但不能因此减少reserve。
 - 动态端口仅127.0.0.1，center/Web各一个；禁止61227/61228，无抢占旧端口。每次HTTP≤3s/≤64KiB，公开调用≤96次（目录最大4页、显式查询有限），runtime admission阶段另限≤15s/两条task/两条attempt/每loop并发1/poll500ms；本片没有对所有服务进程HTTP作全局计数；不得把显式driver计数写成全进程总请求上界。
 - 中心Pool max8 + pg-boss max3；维护max2、fixture观察max1、admin max1。新旧center远端连接收尾可能短暂重叠，按最多26连接 + 16管理余量准入，不只按空闲态15估算。每个观察Pool显式query_timeout/statement_timeout；admin不与非本库连接交互。
-- resident上界按4host wrapper+4actualrole child+work+outer=10，另保既有ps/lsof/Git并行检查最多6个短子进程，总≤16；不启动SDK CLI/nativequery进程、pnpm、Chrome或新的构建进程。若现有实际工具闭包不能满足此边界，先改候选，不运行中扩权。
+- resident上界按4host wrapper+4actualrole child+work+operator+outer supervisor=11，另保既有ps/lsof/Git并行检查最多5个短子进程，总≤16；不启动SDK CLI/nativequery进程、pnpm、Chrome或新的构建进程。若现有实际工具闭包不能满足此边界，先改候选，不运行中扩权。
 - 复用 marker `public.flow_preview_owner`、固定database OID、自建名称 `flow_preview_[24hex]`。业务SQL仅真实注册/发布/claim/维护已有store与本fixture只读核对；不手动填profile、自报catalog或直接分配attempt。由真实scheduler激活两task，不SQL强置dispatch_ready。
 - 完整中心停止后复用 `observeConnections` 的有界远端零连接屏障（≤3s、逐query扣remaining、晚到0拒绝），只有工作owner absent/双EOF、所有登记服务组确停、runRunner在途settled、marker/OID同一、无未决事务/intent/outbox且远端0才normal DROP。先耐久checkpoint，再DROP并核剩余[]；任何unknown保留专库/私有root、不要FORCE/盲删，也不读取旧O16/SVC未知资源。
 - cleanup为独立受监督owner；若work组unknown，仅能对已登记确切服务身份做安全stop，不允许DROP或清除私有材料。首错与cleanup各自保存，outer0不独自代表通过。私有fixture和artifact均KEEP，本入口不提供目录删除；只有满足mayDrop及marker/OID/零连接屏障才normal DROP新专库。token/adminURL/rawconfig永不进入公开raw。work报告写失败依然进入清理，缺该报告拒绝DROP；清理失败不覆盖work的已有原件。
 
 ## 当前交付与实际入口边界
 
-当前组合源码、产物和薄caller已齐，等待一次总体源码/准备审查；PG/host没有启动，`actual-host-once` 尚未创建。唯一实际入口为固定Python调用 `host-run.py --execute-host-once`，仅在另外给定真实窗口后由原owner使用；`FLOW_SVC09A_ADMIN_URL` 必须显式给本机postgres管理库，只存在子进程环境/0600私有配置，不能打印或放公开记录。调用前fresh核原v4 claim、全部源码/runtime pins、artifact root dev/ino、namespace不存在、总合预算和PG26+16余量。新holder或任何unknown均NOT_RUN；失败不重播该namespace。
+当前组合源码、产物和薄caller已齐，等待一次总体源码/准备审查；PG/host没有启动，`actual-host-once` 尚未创建。唯一实际入口为固定Python调用 `host-supervise.py --run-host-once`，由它监督固定 `host-run.py --execute-host-once`，仅在另外给定真实窗口后由原owner使用；`FLOW_SVC09A_ADMIN_URL` 必须显式给本机postgres管理库，只存在子进程环境/0600私有配置，不能打印或放公开记录。调用前fresh核原v4 claim、全部源码/runtime pins、artifact root dev/ino、operator及outer两个namespace均不存在、总合预算和PG26+16余量。新holder或任何unknown均NOT_RUN；失败不重播该namespace。
 
 构建批准不延伸到这次旅程。实际Web是合成loader输入NOT_APP/NOT_PERSONAL；真实read/send是mixed阶段另行断言的中心HTTP行为。旧33局部、CORE5PG、原Web矩阵不重跑。个人激活、Web/TUI新设置与真实账号/provider仍开放；无需新产品scope、监督器或任务执行loop。
+
+## P2独立期限修复 2026-10-07T15:44:26.777Z
+
+原独审 main729d33836 / docs/evidence/i02/svc09a-host-preparation-review.json 的 SVC09A-HOST-P2-01 REQUEST_CHANGES 保留；它是源码边界发现，不是已发生超时。fixed source `ccf7d057659d99be9c5d42fa035af352eaf647cb` 复用OPS14新增caller-only期限，不实现第二监督循环。外层 `host-outer-once` 与内层 `actual-host-once` 任一已存在拒绝重放；缺phase结果只UNKNOWN_KEEP。
+
+15:41:14.524544→15:41:14.929848Z，新增5/5定向检查（2 Node+3 Python），两组累计402ms/raw955B、absent/双EOF/exact空scratch removed。覆盖tiny child模拟fsync阻塞经独立期限终止、保留先前错误输出、正常caller0不证明detached资源清理；另以真实缺失私有文件/注入落盘失败/共享measurement transient样本覆盖此前三文件差量。原6/6与STATIC_ONLY当时记录保留；本轮没有重跑6/build/import或任何PG/host/provider。原件只有[prepare-local-03](prepare-local-03/summary.json)，结果归属和组事实见两case原report。tiny child的PID/期限/EOF由直接测试断言验证，未另复制一套tiny报告。

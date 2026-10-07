@@ -1,0 +1,101 @@
+{
+  "at": "2026-10-07T15:41:14.524544+00:00",
+  "argv": null,
+  "commands": [
+    [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--test",
+      "--test-reporter=spec",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-review-fixes.test.mjs"
+    ],
+    [
+      "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.test.py"
+    ]
+  ],
+  "freeBytes": 20311891968,
+  "runtimeBudgetSeconds": 10,
+  "rawBytesCap": 262144,
+  "scratchBytesCap": 2097152,
+  "scratch": "/private/tmp/flow-svc09a-review-ojurho_0",
+  "dev": 16777234,
+  "ino": 124273345,
+  "pythonAST": "PASS",
+  "inputs": [
+    {
+      "path": "host-consumer.mjs",
+      "bytes": 10040,
+      "sha256": "465bccf0e28a32288d6b095324f827084155260759297d89fb3b335ee8e9297c"
+    },
+    {
+      "path": "mixed-runner.mjs",
+      "bytes": 7581,
+      "sha256": "a9426d00d64743da4ee391f00b1d6ba0b1e0cbc05b07efa9fbcb5f861bde0e90"
+    },
+    {
+      "path": "prepare-check.mjs",
+      "bytes": 1434,
+      "sha256": "e46f0cc08ef85cc64c01934c1692b7d47849af1921b4f9d6cccac3113ede767a"
+    },
+    {
+      "path": "prepare-run.py",
+      "bytes": 4764,
+      "sha256": "323437e6f72098b5422239471fe8e77cc3d7e19808e23ed7a05740fdfe0a8711"
+    },
+    {
+      "path": "host-entry.mjs",
+      "bytes": 4110,
+      "sha256": "9d4cff14e1bf908d92b735568c8a38d0a03cbb2a66a7cd9abf4425711a12eeec"
+    },
+    {
+      "path": "host-fixture.mjs",
+      "bytes": 8739,
+      "sha256": "33756ec9e9f969b32e02ddc0f42c18046a11dcb062afd36333f62e6686b80a64"
+    },
+    {
+      "path": "host-records.mjs",
+      "bytes": 3150,
+      "sha256": "e71acedf9672720491a70772646665b27e9c82907eb32b6c5ea61eda4a9e1951"
+    },
+    {
+      "path": "host-cleanup.mjs",
+      "bytes": 8255,
+      "sha256": "19756770701fad2063e2225154fb38719709a7497a0865957f68038c2a61fee0"
+    },
+    {
+      "path": "host-run.py",
+      "bytes": 8290,
+      "sha256": "4ed0e870873121a531ed921eb48256453153d41d0ab3be1920c0b8af8f467d24"
+    },
+    {
+      "path": "measure-once.py",
+      "bytes": 1243,
+      "sha256": "fce6f5f3859714b8b9991e9c8c66470c9475f46547f815d57d52d82389e4222e"
+    },
+    {
+      "path": "host-prepare.test.mjs",
+      "bytes": 5931,
+      "sha256": "e789b8e49c5c47e8bb653c731cd2526e5a79e570ed3a6eadcb5e28cd1e66273b"
+    },
+    {
+      "path": "host-inputs.json",
+      "bytes": 6374,
+      "sha256": "fcfeeff4dcc58a070cf04b9938944ea0438d9df6a3eda44ded4249bbe8c355e9"
+    },
+    {
+      "path": "host-supervise.py",
+      "bytes": 3759,
+      "sha256": "383a7e5452f29645ab97a55f8829d376b5dce8ea75f482e8a580a4b13d33f128"
+    },
+    {
+      "path": "host-supervise.test.py",
+      "bytes": 4106,
+      "sha256": "557a642571458d0f5bd64df02662dc2dd590eab084260095117a9227fdec5bbb"
+    },
+    {
+      "path": "host-review-fixes.test.mjs",
+      "bytes": 1587,
+      "sha256": "4059aadc72421e473d79b3d9ac34cd865f2d5b51992fc0795ef28bcf28469b02"
+    }
+  ]
+}

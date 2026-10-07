@@ -15,3 +15,9 @@
 6新检查覆盖原始定义导入/私有checkpoint、mayDrop和generation等小Interface；未运行真实artifact入口。合成loader报告不证明App、token或模型资格。每个阶段的资源测量只证明样本/逻辑字节，不承诺物理峰值与强制配额。现无产品写权，范围只原两个own目录。
 
 2026-10-07T15:35:18.732Z：Lead只读指出meter的枚举后消失与identity/I/O unknown不同；已按单一共享Interface去掉额外vanished==0门槛，complete与logical bytes/entries仍严格，原始vanished数字留证。不运行新局部段，列入第三个检查后静态source差量。
+
+## P2修复安全点 2026-10-07T15:44:26.777Z
+
+新host-supervise只组合已审OPS14的CHILD_PID_ONLY/Policy；215+0.5+2明确，原内部期限不扩，独立服务与DB状态仍只看phase记录。两个once namespace不重用。small port只提取已有work_and_cleanup、readWorkDisposition、assertResourceSample，使三个真实调用点可直接注入故障验证，没有改变宿主、DB删除或provider授权。新增5项均通过；此前STATIC_ONLY保持历史，当前差量按本轮原件判定。
+
+原build批准不变，source/原raw无重写。最终固定packet只更新本scope的source与这次raw来源，已审artifact inventory/SQL与runtime不复制。生产路径零修改。
