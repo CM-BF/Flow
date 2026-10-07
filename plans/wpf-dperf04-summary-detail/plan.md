@@ -4,7 +4,7 @@
 
 ## 用户结果与范围
 
-首页先读唯一status源的完整任务摘要；现场Git/proof/文档详情按选择读取，领取账本独立观察。全部信息仍可到达，不把作者声明显示为已核批准，不改变旧/api/snapshot、task-links/human和PG原子领取权威。9 literal见[receipt](../../docs/evidence/wpf-dperf04/claim-receipt.json)。registry/proof/ledger/样式/架构/根依赖均只读。
+首页先读唯一status源的完整任务摘要；现场Git/proof/文档详情按选择读取，领取账本独立观察。全部信息仍可到达，不把作者声明显示为已核批准，不改变旧/api/snapshot、task-links/human和PG原子领取权威。当前11 literal见[v4 receipt](../../docs/evidence/wpf-dperf04/reentry-20261007/amend-receipt.json)；原9及后续7范围属历史。registry/proof/ledger/样式/架构/根依赖均只读。
 
 ## Interface与生命周期
 

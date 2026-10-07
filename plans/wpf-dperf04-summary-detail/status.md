@@ -2,28 +2,28 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-06 21:11:54 UTC |
+| 最近更新时间 | 2026-10-07 08:18:11 UTC |
 | Plan | [plan.md](plan.md) |
 | 单一status owner / model | w01_owner / gpt-6-astra / ultra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail |
 | Branch | codex/dashboard-summary-detail |
-| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / 45f8a185ad0d43543a3c9eca7a29da97ebb31ba9（实现；随后metadata提交另核） |
-| 工作树dirty状态 | 七源码固定已提交；本记录为metadata安全点，提交后双端clean另核 |
+| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / cfd5a53323438709843828d74cab67502801060c（当前组合源码；metadata另核） |
+| 工作树dirty状态 | 当前源码已固定；本次metadata封存后核双端clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
-| 检查状态 | PASSED abd2aff768f97350762b2eaddbe7ae6843902f48；仅Node8/8，browser NOT_RUN |
+| 本片段交付阶段 | implementation |
+| 检查状态 | NOT_RUN 当前ACCESS+TIMING组合；历史abd2 Node8/3950ms保留，browser累计0/60000ms |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 实现目标 | 45f8a185ad0d43543a3c9eca7a29da97ebb31ba9 |
-| 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs |
+| 实现目标 | cfd5a53323438709843828d74cab67502801060c |
+| 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs, apps/execution-dashboard/test/task-timing.browser.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 摘要与详情的直接检查通过；浏览器停止记录补修已获限定源码复审 |
-| 下一可用交付 | 资源与运行窗口就绪后，验收页面阅读和异步响应 |
-| 当前阻塞 | ACTIVE: 等待独立浏览器窗口与实际资源准入 |
+| 当前产出 | 轻摘要与按需详情已组合现有本机连接入口、任务时间声明；等待本次检查与独审 |
+| 下一可用交付 | 核实新组合后交付可接主线的摘要/详情，浏览器与真实加载另验 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN：45f8项目源码与544c父准备补修获限定批准，late-stop P2已关闭，新父精确边界已重绑；browser/全片未验，abd2 Node8/3950ms不变 |
+| Review | [review.md](review.md)，UNKNOWN：当前组合尚未独审；旧限定结论保留为历史 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -116,3 +116,17 @@ root发现原future-clock替换写死2026-10-06。固定后继 `1441d86baa40e98f
 [root源码准备复审](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/root-544c-source-review.json)为APPROVED_SCOPED_LATE_STOP_SOURCE_PREPARATION_NOT_RUN，0blocking，关闭DPERF04-LATE-STOP-FINAL-WRITE；[root新精确边界](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/root-544c-native-boundary-rebind.json)依据原GO授权接受同544c父与077a worker。本段本人核[fresh原9范围](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/approval-scope-observation.json)，仅归档当前结论，旧49859批准/addendum/原候选均保留。
 
 七源码45f8未改，browser0/60000（15000cleanup）、abd2 Node8/3950ms不变；完整feature UNKNOWN/main未接，等待实际资源/调度准入。正常commit/push后只在own/tmp准备artifact中将HEAD对齐最终metadata及真实新boundary pointer，保持PREPARED/no gate；最终TMP binding/manifest哈希由交付回执供管理核，不为准备artifact变化递归提交项目。不运行检查/语法/import/Chrome/PG/HTTP/free。
+
+## 2026-10-07 08:09:54 UTC ACCESS交接后恢复实现
+
+本人fresh观察08:09:13.163Z确认b554ddb6 v3原7scope/唯一owner/无overlap；08:09:31.783Z原子amend已COMMITTED为v4，新增server.mjs、public/app.js、task-timing.browser.mjs、local-access.browser.mjs，总11 literal。[请求/回执](../../docs/evidence/wpf-dperf04/reentry-20261007/amend-receipt.json)和[管理交接](../../docs/evidence/wpf-dperf04/reentry-20261007/manager-reentry.json)原样归档。WT/branch仍原dashboard-summary-detail/codex同名，起点929b706a3bffcc94e31aba32467f88038bd6ea18 clean；不重建/reset。
+
+输入固定main9f314e89b9d4b1b944cca96df0a9fea5a26a51d0；观察当时main已到c5dbdb712e4fae078ddd4bbdbc51c653d77a3192，两者dashboard范围无diff，因此不追movingmain。保handleLocalAccess顺序/私密provider、TIMING字段、summary声明与按需proof分离、旧snapshot兼容、已开DOM/焦点/选区；缺失保护模块先给exact供给清单，不越scope补写。当前仅源码，0PG/Chrome/真实registry/性能采样；旧Node3950与browser0/60000原件不迁移为新组合通过。后续交接是固定新source+直接消费者检查方案给root独审。
+
+## 2026-10-07 08:18:11 UTC 固定组合源码
+
+当前实现 `cfd5a53323438709843828d74cab67502801060c`，输入 main `9f314e89b9d4b1b944cca96df0a9fea5a26a51d0`；[manifest](../../docs/evidence/wpf-dperf04/reentry-20261007/source-manifest.json)列9个own source/test与7个原样供给输入。供给独立commit `aa9cb2d5ba053dd264645d98819cb1cb60e89b2f`，[root原样核验](../../docs/evidence/wpf-dperf04/reentry-20261007/root-source-supply-review.json)。7输入只物化，不授后续内容编辑权。v4总11领取范围见[原子receipt](../../docs/evidence/wpf-dperf04/reentry-20261007/amend-receipt.json)。
+
+[一次相关Node方案](../../docs/evidence/wpf-dperf04/reentry-20261007/validation-proposal.json)：1文件9叶项+父项，2临时Git仓库/2任务，仅自有动态loopback，0PG/Chrome/真实registry；本段尚NOT_RUN。旧3950ms/Node8不迁移到当前源。浏览器仍0/60000ms，无性能根因结论。源码保原snapshot/current proof、ACCESS私有授权顺序及TIMING来源语义；刷新保阅读DOM和选择，等待原文按需读取。
+
+root在运行dashboard的资料入口读到当时own status原字节：[观察](../../docs/evidence/wpf-dperf04/reentry-20261007/root-status-document-observation.json)，仅此入口，不声称wholeUI或重新fresh claim。下次交接：root固定源审与有界直接检查，浏览器资源由co-lead协调；未合main、未部署。

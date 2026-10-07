@@ -2,9 +2,13 @@
 
 **状态：UNKNOWN（部分审查已完成；全片浏览器验收待完成）**
 
-Review target commit：45f8a185ad0d43543a3c9eca7a29da97ebb31ba9
+Review target commit：cfd5a53323438709843828d74cab67502801060c
 
 Base：c837b5dccaea429b0112d1c7e0c752c41334204a
+
+当前 2026-10-07 08:18:11 UTC ACCESS+TIMING组合为待独立审查输入（9个own源/测试+7个固定供给输入），源manifest见 [reentry](../../docs/evidence/wpf-dperf04/reentry-20261007/source-manifest.json)。本次尚未运行直接检查或浏览器，完整feature未批准。以下45f8/544c、abd2 Node均是历史固定对象结论，不能转移到本组合。
+
+## 历史45f8及544c限定审查
 
 原abd2产品/直接检查、b17 wrapper及populated binding的限定独审已完成，原件见下。root于2026-10-06 19:50:25 UTC对本target正式给出APPROVED_SCOPED_LIFECYCLE_SOURCE_AND_PREPARATION_NOT_RUN、0blocking，TAIL/SOFT-STOP仅SOURCE_ADDRESSED；原CHANGES_REQUESTED addendum保留为历史。21:04新增late-stop终态写P2仅重新打开/tmp父准备稿；21:10 root对544c补修限定复审通过并关闭此P2，项目七源不变。作者第二次Node7叶项+父项8/8实际通过，root已独立核原raw/cleanup。浏览器尚未运行，完整片段与main/生产验收未完成；UNKNOWN由现有parser准确表达部分结论，不改parser或冒整体APPROVED。
 

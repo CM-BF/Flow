@@ -1,0 +1,22 @@
+{
+  "requestId": "55b50bbf-3039-48c6-b3d4-f6dfb38f1433",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "claimId": "b554ddb6-094e-46db-90f3-b9e5deb78edb",
+  "version": 3,
+  "scope": [
+    "apps/execution-dashboard/src/aggregate.mjs",
+    "apps/execution-dashboard/src/read-model.mjs",
+    "apps/execution-dashboard/test/summary-detail.browser.mjs",
+    "apps/execution-dashboard/test/summary-detail.test.mjs",
+    "apps/execution-dashboard/test/task-links.browser.mjs",
+    "docs/evidence/wpf-dperf04",
+    "plans/wpf-dperf04-summary-detail",
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/test/task-timing.browser.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs"
+  ]
+}
