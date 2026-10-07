@@ -62,6 +62,120 @@
         "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts": "1e2f37c978aeb7c1939668303cc853e89eaf1b5216fb905988095bdb7480900a",
         "docs/evidence/x01-verifier-admission-result/transaction-pg/fixture.ts": "10dc4cb0d2313789cf10f68298f1b026f67777af31cc0dc8367cfe6fc55f78fc"
       }
+    },
+    {
+      "name": "types-fix",
+      "startedAt": "2026-10-07T21:25:47.272Z",
+      "endedAt": "2026-10-07T21:25:49.331Z",
+      "wallBeforePersistenceSeconds": 2.0582421669969335,
+      "supervision": {
+        "pid": 64945,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 2027,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124529335
+      },
+      "raw": {
+        "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/local-types-fix/output.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-verifier-admission-result/transaction-pg/local.py": "2993ae8f8026783896d9695175990687f521e1288bb8dcd350d1ede7acb9df33",
+        "docs/evidence/x01-verifier-admission-result/transaction-pg/tsconfig.json": "f706d05a6d038e726cabf7b95eef44a364d1a9bcc65fa78b587337bd67866d39",
+        "docs/evidence/x01-verifier-admission-result/transaction-pg/vitest.config.mjs": "71366f90cd487f6f81139b86d224c872fe36af43966d9ddc29f03f72cdaaeb36",
+        "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts": "b73b596bf7550a67f93384ea895b96c11a6f361b90336c17c1d01950a685f4e2",
+        "docs/evidence/x01-verifier-admission-result/transaction-pg/fixture.ts": "10dc4cb0d2313789cf10f68298f1b026f67777af31cc0dc8367cfe6fc55f78fc"
+      }
+    },
+    {
+      "name": "behavior",
+      "startedAt": "2026-10-07T21:26:12.399Z",
+      "endedAt": "2026-10-07T21:26:14.170Z",
+      "wallBeforePersistenceSeconds": 1.7706637079827487,
+      "supervision": {
+        "pid": 80745,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1739,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124529407
+      },
+      "raw": {
+        "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/local-behavior/output.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-verifier-admission-result/transaction-pg/local.py": "2993ae8f8026783896d9695175990687f521e1288bb8dcd350d1ede7acb9df33",
+        "docs/evidence/x01-verifier-admission-result/transaction-pg/tsconfig.json": "f706d05a6d038e726cabf7b95eef44a364d1a9bcc65fa78b587337bd67866d39",
+        "docs/evidence/x01-verifier-admission-result/transaction-pg/vitest.config.mjs": "71366f90cd487f6f81139b86d224c872fe36af43966d9ddc29f03f72cdaaeb36",
+        "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-admission-pg.test.ts": "b73b596bf7550a67f93384ea895b96c11a6f361b90336c17c1d01950a685f4e2",
+        "docs/evidence/x01-verifier-admission-result/transaction-pg/fixture.ts": "10dc4cb0d2313789cf10f68298f1b026f67777af31cc0dc8367cfe6fc55f78fc"
+      }
     }
   ]
 }
