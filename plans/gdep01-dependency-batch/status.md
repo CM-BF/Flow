@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 22:05 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 22:11 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | sub-task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -13,18 +13,18 @@
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-dependency-batch |
 | Branch | codex/goal-dependency-batch |
-| 工作基线 / HEAD | 69a71e3d9888c24c8f7c7a5965487f106c065c17；新增本次metadata |
-| 工作树dirty状态 | 本owner实施中 |
+| 工作基线 / HEAD | base69a71e3d9888c24c8f7c7a5965487f106c065c17；红例3c0697986dfd9456d8afbf322004b97dbd360270；最终target待固定 |
+| 工作树dirty状态 | 本owner最终实现及证据待提交 |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN |
+| 检查状态 | PASSED: 16纯行为与局部noEmit；真实PG/SQL/EXPLAIN NOT_RUN |
 | 已集成main状态 / HEAD | 本片未集成；固定base69a71e3d9888c24c8f7c7a5965487f106c065c17 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/server/src/goals/commands.ts, apps/server/src/goals/dependency-content.ts, apps/server/src/goals/dependency-content.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 正在减少目标执行读取多个短依赖时的数据库往返，保持内容与校验规则 |
-| 下一可用交付 | 可审查的有界批读实现及局部行为证据 |
+| 当前产出 | 多个短依赖已改为一次有界批读，内容与首错顺序的局部行为已验证 |
+| 下一可用交付 | 独立审查后安排真实数据库语义及读取量验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，NOT_STARTED |
@@ -32,8 +32,8 @@
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
-| GDEP01-01 | in-progress | b01_bounded_reads | 单一内部读取Interface实施 |
-| GDEP01-02 | pending | b01_bounded_reads | 纯行为/noEmit未执行 |
+| GDEP01-01 | completed | b01_bounded_reads | 单一内部读取Interface与原commands接线已实现 |
+| GDEP01-02 | completed | b01_bounded_reads | results.md：红1/1→16/16、局部noEmit0；3child完整归还 |
 | GDEP01-03 | pending | b01_bounded_reads | source review与真实PG/EXPLAIN/竞争NOT_RUN |
 | GDEP01-04 | pending | b01_bounded_reads | main未集成 |
 
@@ -48,3 +48,7 @@
 ## 等待记录
 
 当前无已发生等待；真实PG需要后续独立窗口，未排队不虚造等待起点。
+
+## 本段实质事件
+
+22:03:42实际开工；22:04:52.230原子take。22:07:19.148291–19.609501红；22:08:47.931250–48.352341绿；22:09:00.591752–02.082248局部types，0待launch、普通顺位已归还。源/metadata封存不是新工程检查。完整task finish仍NOT_COMPLETED，review/main/真实PG尚未完成。

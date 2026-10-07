@@ -49,6 +49,94 @@
         "docs/evidence/gdep01-dependency-batch/vitest.config.ts": "eae90c4ed70ec06084aa9f49b08755d1283577c943491067dc41b33762cc1db1",
         "docs/evidence/gdep01-dependency-batch/types.tsconfig.json": "810bb777ad02a2baedbbf2c6ae7bf2e0d3a43f5e8b7293d23becb0333dde392f"
       }
+    },
+    {
+      "pid": 34301,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 419,
+      "observed_bytes": 325,
+      "retained_bytes": 325,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "green",
+      "endedAt": "2026-10-07T22:08:48.352341+00:00",
+      "resourceConfirmed": true,
+      "scratchCleanup": "REMOVED_EXACT_ENOENT",
+      "scratchBytes": 81,
+      "rawSha256": "216942b1cc04980d187d352c9059c0b2e89ad73539fc3ddd1dac71c9f93b5ade",
+      "sourceHashes": {
+        "apps/server/src/goals/commands.ts": "4752162fbfeebc2b62a912e8faac857b829ad84345ddb762aff9b4720a85ef42",
+        "apps/server/src/goals/dependency-content.ts": "a472ec64b69a84a2ee0c19a80350035cfb8dd57ebebd7673b77b45135f9865d6",
+        "apps/server/src/goals/dependency-content.test.ts": "a899a4bc74793903c8ecfb9d1c74303c85f1a5503b12ae0c85c7d25791aa986d",
+        "docs/evidence/gdep01-dependency-batch/check.py": "74eb67549ae5392e9024c38427f65049a8b55c219b7e12664f886fc32a22fec0",
+        "docs/evidence/gdep01-dependency-batch/vitest.config.ts": "eae90c4ed70ec06084aa9f49b08755d1283577c943491067dc41b33762cc1db1",
+        "docs/evidence/gdep01-dependency-batch/types.tsconfig.json": "810bb777ad02a2baedbbf2c6ae7bf2e0d3a43f5e8b7293d23becb0333dde392f"
+      }
+    },
+    {
+      "pid": 45082,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 1484,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "types",
+      "endedAt": "2026-10-07T22:09:02.082248+00:00",
+      "resourceConfirmed": true,
+      "scratchCleanup": "REMOVED_EXACT_ENOENT",
+      "scratchBytes": 81,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sourceHashes": {
+        "apps/server/src/goals/commands.ts": "4752162fbfeebc2b62a912e8faac857b829ad84345ddb762aff9b4720a85ef42",
+        "apps/server/src/goals/dependency-content.ts": "a472ec64b69a84a2ee0c19a80350035cfb8dd57ebebd7673b77b45135f9865d6",
+        "apps/server/src/goals/dependency-content.test.ts": "a899a4bc74793903c8ecfb9d1c74303c85f1a5503b12ae0c85c7d25791aa986d",
+        "docs/evidence/gdep01-dependency-batch/check.py": "74eb67549ae5392e9024c38427f65049a8b55c219b7e12664f886fc32a22fec0",
+        "docs/evidence/gdep01-dependency-batch/vitest.config.ts": "eae90c4ed70ec06084aa9f49b08755d1283577c943491067dc41b33762cc1db1",
+        "docs/evidence/gdep01-dependency-batch/types.tsconfig.json": "810bb777ad02a2baedbbf2c6ae7bf2e0d3a43f5e8b7293d23becb0333dde392f"
+      }
     }
   ]
 }
