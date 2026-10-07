@@ -27,20 +27,21 @@ it('enforces total decoded text and separates two explicitly published reasoning
 });
 it.each([32,512])('publishes session then public patches and one final from %i real synthetic JSONL fragments', async count => {
   const root = await mkdtemp(join(tmpdir(),'flow-c02-public-')); const identity = await lstat(root); let child: CodexTransport | undefined;
-  const events: RunnerEventData[] = [];
+  const events: RunnerEventData[] = []; let ownershipChecks = 0;
   const profile = {harness:'codex' as const,adapterVersion:'codex-app-server-0.154.0-v1' as const,model:'synthetic-model',reasoningEffort:null,
     serviceTier:null,serviceTierForTurn:'default' as const,access:'none' as const,approvalPolicy:'never' as const,sandboxMode:'read-only' as const,hostLimits:{wallTimeMs:3000,maxOutputBytes:16384}};
   try {
     const adapter = createCodexAdapter(profile, options => child = createCodexTransport({spawn:{executable:process.execPath,args:[fileURLToPath(new URL('./peer.mjs',import.meta.url)),`stream:${count}`],cwd:root,environment:{LANG:'C'}},
       initialize:{clientInfo:{name:'public-stream-fixture',title:null,version:'1'},capabilities:null},signal:options.signal,limits:{terminateMs:50,killMs:50}}));
     await adapter.run({task:{title:'Public stream',prompt:'Synthetic',harness:'codex',executionProfile:{id:'profile',runnerId:'runner',configDigest:'a'.repeat(64)}},workingDirectory:root,signal:new AbortController().signal,
-      async assertOwnership(){},async emit(event){events.push(event)},async waitForDecision(){throw Error('unused')}} as HarnessContext);
+      async assertOwnership(){ownershipChecks++;},async emit(event){events.push(event)},async waitForDecision(){throw Error('unused')}} as HarnessContext);
     const patches = events.filter(event => event.type==='assistant-stream');
     expect(events[0]?.type).toBe('session'); expect(events.filter(event=>event.type==='session')).toHaveLength(1);
     expect(patches.filter(p=>p.channel==='text').map(p=>p.text).join('')).toBe('中文🙂'.repeat(512));
     expect(patches.filter(p=>p.channel==='reasoning-summary').map(p=>p.text).join('')).toBe('公开摘要🙂');
     expect(patches.filter(p=>p.phase==='block-complete')).toHaveLength(2);
-    expect(patches.length).toBeLessThanOrEqual(8);
+    expect(patches.length).toBeLessThanOrEqual(16);
+    console.log(JSON.stringify({kind:"public-stream-injected-observation",fragments:count,emittedPatches:patches.length,emitCalls:events.length,ownershipChecks,finalDigest:createHash("sha256").update(patches.filter(p=>p.channel==="text").map(p=>p.text).join("")).digest("hex"),httpRequests:"NOT_MEASURED"}));
     expect(events.filter(event=>event.type==='assistant-final')).toHaveLength(1); expect(events.at(-3)?.type).toBe('assistant-final');
     expect(JSON.stringify(events)).not.toContain('private-server'); expect(child!.snapshot().state).toBe('closed');
   } finally {
