@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-07T06:44:33.627214+00:00",
+  "state": "OPEN_ADMISSION_PASSED_TARGET_NOT_STARTED",
+  "holder": "mika/chatui01_owner",
+  "window": "MATURE02C02-CONVERSATION-20261007-R1",
+  "preMetadataHead": "b3f59cb6f31bb5b4f621ab3320d51197f10dceea",
+  "claim": {
+    "id": "8ad6536b-1194-44a4-9078-a92215bec7a2",
+    "version": 12,
+    "scopeCount": 72,
+    "state": "active"
+  },
+  "inputs": {
+    "manifestSha256": "0dd19d82e1b1a37d9400054c866ce52652a56a4276090643e21f63bd5f5cac77",
+    "count": 317,
+    "bytes": 1810789,
+    "external": 2,
+    "links": 20,
+    "outputsAbsent": 10
+  },
+  "freeBefore": 24368545792,
+  "requiredFreeBytes": 4053008384,
+  "pairReserveBytes": 0,
+  "pair": "Root confirmed WebQuick complete cleanup 06:42:28.349391Z; S01 local already closed",
+  "preparationReview": {
+    "reviewer": "db_transaction_owner",
+    "at": "2026-10-07T06:40:56Z",
+    "decision": "DELTA_SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+    "P1": 0,
+    "P2": 0,
+    "source": "e7a130c4341f00b77f2207088ee8e2f9fe8dd4eb",
+    "packet": "b3f59cb6f31bb5b4f621ab3320d51197f10dceea"
+  },
+  "actualPGStarted": false,
+  "preAdmissionFailure": {
+    "phase": "Python stdin decoding before execution",
+    "error": "SyntaxError non-UTF-8",
+    "targetCalls": 0,
+    "filesWritten": 0,
+    "laterShellCommands": "git add failed missing file, commit no changes, push up-to-date; no PG wrapper",
+    "correction": "ASCII-only source; set -e for immediate shell stop"
+  }
+}
