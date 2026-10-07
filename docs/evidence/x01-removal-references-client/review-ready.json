@@ -1,0 +1,18 @@
+{
+  "sourceCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+  "supportCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+  "manifest": "docs/evidence/x01-removal-references-client/review-manifest.json",
+  "manifestSha256": "c81e988bb0caf7e70ce711b9c06a254ed51da369f45b758c3ee8366dc6ae2c5c",
+  "bindings": 115,
+  "bytes": 587959,
+  "importEdges": 245,
+  "claim": "79284ebe-b7dc-4340-a9bb-ed939cb15ade v1/7",
+  "baselineMigration": "2e57 checkpoint on8060 ->676 own delta onmain3b604; backup ref preserved; no product compatibility patch",
+  "local": "oldbase red14fail -> green14pass ->types2/21diagnostics; newbase14pass/types0 +4existingconsumerpass/36unselected; do not sum across baselines",
+  "rawBytes": 13237,
+  "supervisionMs": 6519,
+  "allClosed": true,
+  "actualClosedAt": "2026-10-07T12:28:08.270898Z",
+  "review": "NOT_STARTED",
+  "boundary": "Mock Fetch actualclient/runCli only; no PG/Web/serverauthorization/removal proof"
+}

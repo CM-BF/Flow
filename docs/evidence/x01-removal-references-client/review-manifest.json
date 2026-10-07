@@ -1,0 +1,1681 @@
+{
+  "sourceCommit": "676ed590badb0523ffcbac112ba89ac101f3d1ea",
+  "supportCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+  "base": "3b6046a5f16d740c4f362b415b857bc4e57956cd",
+  "files": [
+    {
+      "path": "apps/cli/package.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 215,
+      "sha256": "d35ba2822f9010e0fd4abbd1777b3be128145fa82c0395f1beefb23a4e386333"
+    },
+    {
+      "path": "apps/cli/src/index.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 30134,
+      "sha256": "29db99392dfe37891c515a0b18e31c2520a88fd2afd45f33c1f0b187a9a8c249"
+    },
+    {
+      "path": "apps/cli/src/json-input.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1194,
+      "sha256": "74dbdad09a3d5287fd11ea59be11d6da800c3b676b266bcdfc689e646804eff7"
+    },
+    {
+      "path": "apps/cli/src/plugin-command-ack.test.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 3382,
+      "sha256": "39ff6186ba434a314a0667175136c5422070126b731d34df5761923a0d6784c6"
+    },
+    {
+      "path": "apps/cli/src/plugin-host-candidates.test.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1834,
+      "sha256": "831fe273a41754125e05ea91718cb28c73ad74ed0513731ca4705b1c495b7de0"
+    },
+    {
+      "path": "apps/cli/src/plugin-removal-references.test.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 2069,
+      "sha256": "217a64008d56f60487c6d42864e32139ff617ba1d84ec8ecdfd1c21ea657c596"
+    },
+    {
+      "path": "apps/cli/src/watch.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 3573,
+      "sha256": "69bd0c2ac53fa795e8f8490576cf68b73a03ae56fadde2c936dc8895b328415e"
+    },
+    {
+      "path": "docs/evidence/x01-cli-commands/fixtures.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 2727,
+      "sha256": "0c0d85c3d68e962dfca95b27ae35e7cf201c0a15c815fc85d4a0a99645385796"
+    },
+    {
+      "path": "docs/evidence/x01-host-candidates-client/fixtures.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1037,
+      "sha256": "2760fb6d1b9a0710047b447dc10af15ecb8dd1b66d1c6de8689f8db2ce2b09e6"
+    },
+    {
+      "path": "docs/evidence/x01-plugin-command-acks/fixtures.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1228,
+      "sha256": "d95a44bf46be153c3fe509ed3de57c2578c17a6e1fdbf5527cd8fc1d0daad8c3"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/baseline-migration-preflight.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 3669,
+      "sha256": "9a8538dd38685850c357e572937df78d635e69e0e85875d5b9a1588e8abe8dc0"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/baseline-migration.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 15403,
+      "sha256": "85f3c4bdd328e7fd6993a92baeb7a2bc1bfa571fb47ee6ae023d9b442a312490"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/caller-initial.txt",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 4262,
+      "sha256": "3b0bd1974088119786a282b0e57f50983e96f2301a82d715bfc6f9722413ceaf"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/claim-take.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 881,
+      "sha256": "3c60648f28c187a64e2ce9e9fcd815320f9da7b0cec3efad7091b2bd6e64b6e4"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/client-interface.md",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1243,
+      "sha256": "e89b6e8414590495f08d72215e9513649a318c38deb670efb1a87a7c8724bbc4"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/consumers/output.log",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 596,
+      "sha256": "61214cb99db9069c9469115febd338d1dfefdbe273cf329aa974445a0eb24001"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/consumers/reservation.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1591,
+      "sha256": "918309a295e3d6fe8be49d487aef17ca0b6b1ecd92d55f7b2d625b63b12ddfa3"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/consumers/result.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1941,
+      "sha256": "345facd9a21e10c985b02937abaf50407500399e975e92a76862c5751d5ce3b7"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/contract-source.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 230,
+      "sha256": "22a230bb2ec1b6b2ed6cf8bb6b2c0cf568bb1fcaa93fe09289c0484b852a7a13"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/dependencies.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1902,
+      "sha256": "ba555d389500b6d62453604309d4d8baad22c33f08b0f0ec606967c4be6bf16d"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/fixtures.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1078,
+      "sha256": "3dd49737c7427d0e0819e20a3dcb237c565468b0f41b62ed35af5f8795df2335"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/green-fix/output.log",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 412,
+      "sha256": "2780a508e6865549e75a57cbaa8da148175d8a89accbe7d8aabd2f9a10f22461"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/green-fix/reservation.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1107,
+      "sha256": "5dccfa11da67b71bb4af903e401add27a08b1a516415d47935510dbf9f40a05d"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/green-fix/result.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1709,
+      "sha256": "227d5d08780f77bad738672f7de986a16d2cb393e74d739f19fe3b7c3e2c5b7d"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/green/output.log",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 412,
+      "sha256": "efcacd676c6385d29455c69b20ca408413c50a9030b8e4eee0d85df3f2ca299c"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/green/reservation.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1103,
+      "sha256": "581a458b3cd1a6f49f7a904c77601c94426d7d5dbbe60838ce4c982147843e66"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/green/result.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1707,
+      "sha256": "bcb48cca0eccaed74f624da29fb983dafe9ed2e7088d2159f82d2bc6da36282d"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/main-shared-preimages.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1182,
+      "sha256": "5f227cf346f3da8e3f46ee022075031282315b4a1759b9c70f91f53a6ffce9c3"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/missing-source-provision.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 3442,
+      "sha256": "bee10af6d6c83229009fa2efb39dbcf47cf756794a4bcc06ac831f8ac3eab389"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/previous-owner-amend.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 749,
+      "sha256": "c0f6003dde4b2f24ee6ad317df554f72725d4e92a5ce8e05f0e8d454ba7f6b8a"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/previous-owner-stop.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 407,
+      "sha256": "93b5b3589b6473dc685511d4f944e8aab28530683c8ea53ba8fdfcabc4abf47b"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/quality.md",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1173,
+      "sha256": "a0e33b16b5bd027076649ecd2e61ea2b291465530e5b9d3481d064224e59c64b"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/red-ack-preimage.txt",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 9257,
+      "sha256": "c301f1f5362f0d89ab60f103dc26c9dd6c7c60cef7fd2a58f6c0936fc04765e6"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/red-cli-preimage.txt",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 29194,
+      "sha256": "efce68a183ac0867a1789cac3e02835f95549d691c5b3a7fb6057fd202866d93"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/red-client-preimage.txt",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 68285,
+      "sha256": "061bab6f09d4f1f946ba8a2a5185faaf457bba7a06c2ce2241ed90a47a30ebba"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/red/output.log",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 8572,
+      "sha256": "9286d9ae77d85cfa794d4bf5bd78e4326e5716d655e6303b29713cbf5b165bdf"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/red/reservation.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1101,
+      "sha256": "a26d14ffd93c781fdc5e28fd8203265d6af4b2ec7e5b418f7002d20d5d17dacb"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/red/result.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1868,
+      "sha256": "6b4fbd4616fd5d0b000c0b17b919dca16fea5447d5f540ffc8776cc3792ba42a"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/run-local.py",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 4912,
+      "sha256": "7b2f2f6280231c8df2b7a9574a1ba2dd9329746f5232e0b422b8bed74ce7a4dd"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/source-provision.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 15600,
+      "sha256": "f654d9421385cb1b0fad563fd21fb2c3822d1bcb6f75cdecd66e26dad667eadc"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/status-setup.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 319,
+      "sha256": "40be0fe7f2725dfae22e580626d2dec50abb3d85d31a7f5953d64af70358f4ef"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/task-intake.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 386,
+      "sha256": "d3f2301ca9295d3eabf936832b6d3494e4aa03488237288dc19cd9f103567b93"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/tsconfig.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 172,
+      "sha256": "90f19343923683cb8db6ea88127792cf6b5a9595a2aa312e12c195007e6e9bd0"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/types-fix/output.log",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/types-fix/reservation.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 970,
+      "sha256": "26376eceb4d2a4017cd2d77101f7d74cacb3712664f57f6faf8a361c80f2cd16"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/types-fix/result.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1703,
+      "sha256": "d820ce02f077c7e91b17b542bd822a5fd6d604b0c6b7935783f8e7061a1950b0"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/types/output.log",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 3245,
+      "sha256": "2edb17eff8a77f257112c4c5197376bf8520d388f5502f50f466feab4c05ea98"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/types/reservation.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 966,
+      "sha256": "f58469ae1566698208f1e23c994104fc30b07fdc2b32f018bd324b97a5128ac8"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/types/result.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1870,
+      "sha256": "cf755bd61b3d1efecbb8635028d4ddfd84c7952865b4262bcf018a9f288750d1"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references-client/vitest.config.mjs",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 120,
+      "sha256": "0dcc011975ae25eb23e85d50e77b4f79584d5232e7f87f7b4bbba16d56a8bd1a"
+    },
+    {
+      "path": "package.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 750,
+      "sha256": "c5f0aad1b2f37f7c07f570f00a5e7cce10c59bb73674b9e21c86eac5113b5def"
+    },
+    {
+      "path": "packages/client/package.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 183,
+      "sha256": "43fe7362ec9d95991552582f05e441e14ceee46ef18c7e50dd557b1aadd0701a"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 15496,
+      "sha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 69246,
+      "sha256": "67ef6ca5902fa5fd4363b5b38db13ddb0e3ca664905cab6c4b1267c52a5850f1"
+    },
+    {
+      "path": "packages/client/src/native-activity-body.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 7574,
+      "sha256": "0b0260a88c92a83cb43f906150e930fe7444e98e1521695605d9f9d3bc04a418"
+    },
+    {
+      "path": "packages/client/src/plugin-command-ack.test.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 7647,
+      "sha256": "2e9d14ab13bd0261904b495a18d298d2dc28aa0a8b9daef7883b0ba552098c38"
+    },
+    {
+      "path": "packages/client/src/plugin-host-candidates.test.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 5598,
+      "sha256": "b7526ef8d8ceba99ebad4eea7599dcfe11bbc7423d0c878b76134c11a65ad0d7"
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 10063,
+      "sha256": "d2d159444dfb9ef1cf491da8ab55ac7eee9432b8887e4f91b540ae13eb140f53"
+    },
+    {
+      "path": "packages/client/src/plugin-removal-references.test.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 5540,
+      "sha256": "835df85a636678100b1e02031ac53d8d20674b4fb9f4c934e5c71215ee1e3b43"
+    },
+    {
+      "path": "packages/client/src/plugin-runner.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 2687,
+      "sha256": "f74365446f988caaec4e1a287608ab48b1a858d488640eafbf17f9606fb8ead9"
+    },
+    {
+      "path": "packages/client/src/response-json.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1298,
+      "sha256": "c51b90db6be12132df0236aabccfce496dab8b835267a23158ff86361784f459"
+    },
+    {
+      "path": "packages/contracts/package.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 168,
+      "sha256": "88c54eeb05525e847c8299ef954e1a5f6f4f14f52d58b35c055f69eb2d088cb6"
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 7453,
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 7985,
+      "sha256": "499aa71e3f8890c292328781c60536f3d2446ac8177116c87670c14310181f67"
+    },
+    {
+      "path": "packages/contracts/src/assistant.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 5785,
+      "sha256": "c56e1a3e9ae82d85f9a0f795789076ec94d36123437901591f96569f64017997"
+    },
+    {
+      "path": "packages/contracts/src/attachments.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 8422,
+      "sha256": "359e2abed66f29d1c61985c54c20213c3db65324cbaf619e2c21560c4b7ecd93"
+    },
+    {
+      "path": "packages/contracts/src/browser-session.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    },
+    {
+      "path": "packages/contracts/src/claude-turn-settings.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 4857,
+      "sha256": "646cd6d72d7a5cdace16209075ab7c2538c9ee7555a89b78b601a81933f681fd"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-event.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 2828,
+      "sha256": "2e28353ef54efaf43c35a9601757b38317c73e76b55026c67f129c5416b91020"
+    },
+    {
+      "path": "packages/contracts/src/context-observation-history.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 3520,
+      "sha256": "8270f00dad9a00697b95d0c42007c58eaa505b9fc7dc3c3480a2c498448f6126"
+    },
+    {
+      "path": "packages/contracts/src/context-transparency.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 7580,
+      "sha256": "9a94c852e7279af4a05804a730974c8419762466e8613240a92b1a5c3e088577"
+    },
+    {
+      "path": "packages/contracts/src/conversation-context.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 9794,
+      "sha256": "4237ae7d64cdff33738ead91e09a08097e5e3750a47b1e631a5f0f0cefb6ba67"
+    },
+    {
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1196,
+      "sha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574"
+    },
+    {
+      "path": "packages/contracts/src/conversation-queue.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 4175,
+      "sha256": "0989f175524197123c0464812510eb871c08b0b66873e1e88753f9b6271c536b"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 7382,
+      "sha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a"
+    },
+    {
+      "path": "packages/contracts/src/engineering-native.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5"
+    },
+    {
+      "path": "packages/contracts/src/engineering-profile.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 2271,
+      "sha256": "7c92c1c63d626b56db8071d57fa54e3362957c7ae88f6f4ffc39243796719836"
+    },
+    {
+      "path": "packages/contracts/src/engineering.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 5378,
+      "sha256": "c439c9dddf32d802331ede8bbbaecd19d0e7921035b888beff1b74f7fb2978b9"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 15006,
+      "sha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7"
+    },
+    {
+      "path": "packages/contracts/src/fixtures.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1211,
+      "sha256": "a88d494b659c413ce6a39e6c342380540e4d97381263434d25235d360cd674c3"
+    },
+    {
+      "path": "packages/contracts/src/goal-context.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1443,
+      "sha256": "719fc94fb075456d8a7408262222b455d47d387d3e2ab78f1907ef5a12fbfc3b"
+    },
+    {
+      "path": "packages/contracts/src/goal-delivery.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 4968,
+      "sha256": "ed2ae445be57919427ab265e9c19b56a17e28ba50aa619b2484a8b2e7db9067f"
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-proposals.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 3734,
+      "sha256": "73fc485a2d06eb4600ae65be4bef96acbdbc373131ef642a4f6c2fcd6b4d7b97"
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-runs.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 6047,
+      "sha256": "1cfc6108a53c34d3b7864170cf6a0393f61d0487c2dc76305502b9a61643d524"
+    },
+    {
+      "path": "packages/contracts/src/goal-native-executions.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 931,
+      "sha256": "2f1a7ff6ea3bd93cd15e043c7e0e8d84b2dfd089683964d2b7b4ebeef6e85b6d"
+    },
+    {
+      "path": "packages/contracts/src/goal-plan-confirmation.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 2388,
+      "sha256": "018da357868d1b5fddc3f0c8a6fd2cc6432ff21caa45b7e60db98bdc9407c23e"
+    },
+    {
+      "path": "packages/contracts/src/goal-progression.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 2915,
+      "sha256": "82d23e7e1da0c8a6d89f779478c113aee497e0563f4f8df6e0e790ed6a78ec10"
+    },
+    {
+      "path": "packages/contracts/src/goal-tool-runs.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 3709,
+      "sha256": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db"
+    },
+    {
+      "path": "packages/contracts/src/goals.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 4940,
+      "sha256": "7be769594bf5239669d54006c6da86574d4a3e065d54b9429b62cc0ef23cf930"
+    },
+    {
+      "path": "packages/contracts/src/harnesses.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 837,
+      "sha256": "e18e6523576eb2c60164ec3534ed34561a263e9787d21331177ee51bc13dcbb1"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1634,
+      "sha256": "e2f8eb100ea4c62c62ff5c76ba1a4898c236c9129ecdfd2d9f8f252413af3440"
+    },
+    {
+      "path": "packages/contracts/src/knowledge.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 4414,
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 6001,
+      "sha256": "bade51d2df5537299b818176b5738cc8ef8438bbd315d06292f078e87a9ee8b9"
+    },
+    {
+      "path": "packages/contracts/src/native-activity.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 3259,
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a"
+    },
+    {
+      "path": "packages/contracts/src/package-artifacts.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 829,
+      "sha256": "b474bb36eed423218e8f97248ced2f6aa76c76641bc7c34e3795644e6b2e8056"
+    },
+    {
+      "path": "packages/contracts/src/plugin-artifact.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 720,
+      "sha256": "7993d31c1ffe4f47365b2a5d641c0efbf2b9b7afa21c335fb5e0c1d2a28053df"
+    },
+    {
+      "path": "packages/contracts/src/plugin-installations.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 2063,
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394"
+    },
+    {
+      "path": "packages/contracts/src/plugin-package-fetches.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 2259,
+      "sha256": "e790d5cf8cb17343f610b11109c158511a0ef299f7b845d0c5b69ecf67d26166"
+    },
+    {
+      "path": "packages/contracts/src/plugin-removal.ts",
+      "sourceCommit": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+      "bytes": 1997,
+      "sha256": "0e54615b4946bb3b1ef6a970ab6c332da0f3597512c44401e4d26eec7935b9bc"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runner-claim.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 4197,
+      "sha256": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime-hosts.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1708,
+      "sha256": "59ad5c6cec92331c53f984625f008bab44ae7a4facb13b9510824ea98a0477aa"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0"
+    },
+    {
+      "path": "packages/contracts/src/plugins.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 4908,
+      "sha256": "656075884d36145ce73c84283bdd26161c4ea65369f326456ffef1e414e6359f"
+    },
+    {
+      "path": "packages/contracts/src/projects.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 3384,
+      "sha256": "60a05fa5996995775a5e0d45b15657868fa676cb99715ec4c3fda8d14cf6b1c0"
+    },
+    {
+      "path": "packages/contracts/src/protocol-dispatch.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 2063,
+      "sha256": "59a23113e3ba16dc278ca3e16d3612812fb33db21de79a9764b596ff769337ea"
+    },
+    {
+      "path": "packages/contracts/src/protocol-task.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 211,
+      "sha256": "9549b7e559808e9ab2985594eaa950a8061abde11262c359ba4b9993521f6e20"
+    },
+    {
+      "path": "packages/contracts/src/reconciliation.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 2903,
+      "sha256": "00ede24b0b2d2f2612fd674e802903562b33f7be1b90dc5ed0a858824faae3a5"
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 3965,
+      "sha256": "67d8dbfa2991426e86b93e74d6443b012e6e1ccee514f8956567dd3c23364a00"
+    },
+    {
+      "path": "packages/contracts/src/runner-maintenance.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1600,
+      "sha256": "fa94507e8951b4ee1d8b0d84f20cd9b3302ef7019a853e2883d2d15ea669b52e"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 7873,
+      "sha256": "4221ce35157cf4ee91e9c391965ffd224b15c03973b67841525276cfc83887a5"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 6390,
+      "sha256": "e2fe543811dbf62f551b6877bd05a351c46d005a8c70d25110120259cb263087"
+    },
+    {
+      "path": "packages/contracts/src/usage-readout.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 2212,
+      "sha256": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5"
+    },
+    {
+      "path": "packages/contracts/src/workspace.ts",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 1472,
+      "sha256": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7"
+    },
+    {
+      "path": "tools/owned-process-supervision/supervise.py",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "tsconfig.json",
+      "sourceCommit": "30ecf66c93829e1440a8afcd1a9cd1e8f7961a11",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    }
+  ],
+  "importEdges": [
+    {
+      "from": "apps/cli/src/plugin-command-ack.test.ts",
+      "to": "apps/cli/src/index.ts"
+    },
+    {
+      "from": "apps/cli/src/plugin-command-ack.test.ts",
+      "to": "docs/evidence/x01-plugin-command-acks/fixtures.ts"
+    },
+    {
+      "from": "docs/evidence/x01-plugin-command-acks/fixtures.ts",
+      "to": "docs/evidence/x01-cli-commands/fixtures.ts"
+    },
+    {
+      "from": "apps/cli/src/index.ts",
+      "to": "packages/contracts/src/plugin-runtime.ts"
+    },
+    {
+      "from": "apps/cli/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "apps/cli/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "apps/cli/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "apps/cli/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "apps/cli/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "apps/cli/src/index.ts",
+      "to": "apps/cli/src/json-input.ts"
+    },
+    {
+      "from": "apps/cli/src/index.ts",
+      "to": "packages/client/src/index.ts"
+    },
+    {
+      "from": "apps/cli/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "apps/cli/src/index.ts",
+      "to": "apps/cli/src/watch.ts"
+    },
+    {
+      "from": "apps/cli/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/runner.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/runner-claim.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/fixtures.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/reconciliation.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/workspace.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/protocol-dispatch.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/harnesses.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/projects.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/goals.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/goal-delivery.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/conversations.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/assistant.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/plugins.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/conversation-queue.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/conversation-context.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/goal-tool-runs.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/goal-graph-proposals.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/runner-maintenance.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/knowledge.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/goal-graph-runs.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/native-activity.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/plugin-package-fetches.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/goal-context.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/assistant-stream.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/active-steering.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/goal-native-executions.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/engineering-profile.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/attachments.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/context-transparency.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/context-observation-event.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/context-observation-history.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/engineering-native.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/browser-session.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/usage-readout.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/plugin-installations.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/goal-progression.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/claude-turn-settings.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/goal-plan-confirmation.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/conversation-harness.ts"
+    },
+    {
+      "from": "packages/contracts/src/index.ts",
+      "to": "packages/contracts/src/native-activity-body.ts"
+    },
+    {
+      "from": "packages/contracts/src/native-activity-body.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/native-activity-body.ts",
+      "to": "packages/contracts/src/native-activity.ts"
+    },
+    {
+      "from": "packages/contracts/src/native-activity.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/tasks.ts",
+      "to": "packages/contracts/src/claude-turn-settings.ts"
+    },
+    {
+      "from": "packages/contracts/src/tasks.ts",
+      "to": "packages/contracts/src/harnesses.ts"
+    },
+    {
+      "from": "packages/contracts/src/tasks.ts",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/tasks.ts",
+      "to": "packages/contracts/src/protocol-task.ts"
+    },
+    {
+      "from": "packages/contracts/src/tasks.ts",
+      "to": "packages/contracts/src/engineering.ts"
+    },
+    {
+      "from": "packages/contracts/src/tasks.ts",
+      "to": "packages/contracts/src/engineering-native.ts"
+    },
+    {
+      "from": "packages/contracts/src/tasks.ts",
+      "to": "packages/contracts/src/harnesses.ts"
+    },
+    {
+      "from": "packages/contracts/src/engineering-native.ts",
+      "to": "packages/contracts/src/engineering-profile.ts"
+    },
+    {
+      "from": "packages/contracts/src/engineering-native.ts",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/engineering-native.ts",
+      "to": "packages/contracts/src/engineering.ts"
+    },
+    {
+      "from": "packages/contracts/src/engineering.ts",
+      "to": "packages/contracts/src/engineering-profile.ts"
+    },
+    {
+      "from": "packages/contracts/src/engineering.ts",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/execution-profiles.ts",
+      "to": "packages/contracts/src/claude-turn-settings.ts"
+    },
+    {
+      "from": "packages/contracts/src/engineering-profile.ts",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-harness.ts",
+      "to": "packages/contracts/src/assistant.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-harness.ts",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/assistant.ts",
+      "to": "packages/contracts/src/claude-turn-settings.ts"
+    },
+    {
+      "from": "packages/contracts/src/assistant.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-plan-confirmation.ts",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-plan-confirmation.ts",
+      "to": "packages/contracts/src/goals.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-plan-confirmation.ts",
+      "to": "packages/contracts/src/goal-graph-proposals.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-plan-confirmation.ts",
+      "to": "packages/contracts/src/projects.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-plan-confirmation.ts",
+      "to": "packages/contracts/src/goal-context.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-plan-confirmation.ts",
+      "to": "packages/contracts/src/goal-progression.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-progression.ts",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-progression.ts",
+      "to": "packages/contracts/src/goals.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-progression.ts",
+      "to": "packages/contracts/src/projects.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-progression.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/projects.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goals.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goals.ts",
+      "to": "packages/contracts/src/goal-context.ts"
+    },
+    {
+      "from": "packages/contracts/src/goals.ts",
+      "to": "packages/contracts/src/projects.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-context.ts",
+      "to": "packages/contracts/src/knowledge.ts"
+    },
+    {
+      "from": "packages/contracts/src/knowledge.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-proposals.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-proposals.ts",
+      "to": "packages/contracts/src/projects.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-proposals.ts",
+      "to": "packages/contracts/src/goals.ts"
+    },
+    {
+      "from": "packages/contracts/src/usage-readout.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/context-observation-history.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/context-observation-history.ts",
+      "to": "packages/contracts/src/knowledge.ts"
+    },
+    {
+      "from": "packages/contracts/src/context-observation-history.ts",
+      "to": "packages/contracts/src/context-transparency.ts"
+    },
+    {
+      "from": "packages/contracts/src/context-transparency.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/context-transparency.ts",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/context-transparency.ts",
+      "to": "packages/contracts/src/knowledge.ts"
+    },
+    {
+      "from": "packages/contracts/src/context-transparency.ts",
+      "to": "packages/contracts/src/harnesses.ts"
+    },
+    {
+      "from": "packages/contracts/src/attachments.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-native-executions.ts",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-native-executions.ts",
+      "to": "packages/contracts/src/goals.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-native-executions.ts",
+      "to": "packages/contracts/src/projects.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-native-executions.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/active-steering.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/active-steering.ts",
+      "to": "packages/contracts/src/runner.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "to": "packages/contracts/src/plugin-artifact.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "to": "packages/contracts/src/goal-graph-runs.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "to": "packages/contracts/src/conversation-context.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "to": "packages/contracts/src/goal-tool-runs.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "to": "packages/contracts/src/active-steering.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "to": "packages/contracts/src/assistant-stream.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "to": "packages/contracts/src/assistant.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "to": "packages/contracts/src/context-observation-event.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "to": "packages/contracts/src/native-activity.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "to": "packages/contracts/src/native-activity-body.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "to": "packages/contracts/src/engineering-native.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "to": "packages/contracts/src/engineering.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/assistant-stream.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-tool-runs.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-tool-runs.ts",
+      "to": "packages/contracts/src/runner.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-tool-runs.ts",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-tool-runs.ts",
+      "to": "packages/contracts/src/goals.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-context.ts",
+      "to": "packages/contracts/src/knowledge.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-context.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-context.ts",
+      "to": "packages/contracts/src/attachments.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-runs.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-runs.ts",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-runs.ts",
+      "to": "packages/contracts/src/runner.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-runs.ts",
+      "to": "packages/contracts/src/projects.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-graph-runs.ts",
+      "to": "packages/contracts/src/goal-graph-proposals.ts"
+    },
+    {
+      "from": "packages/contracts/src/plugin-package-fetches.ts",
+      "to": "packages/contracts/src/package-artifacts.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner-maintenance.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-queue.ts",
+      "to": "packages/contracts/src/claude-turn-settings.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-queue.ts",
+      "to": "packages/contracts/src/attachments.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-queue.ts",
+      "to": "packages/contracts/src/conversation-context.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversation-queue.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/plugins.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversations.ts",
+      "to": "packages/contracts/src/claude-turn-settings.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversations.ts",
+      "to": "packages/contracts/src/attachments.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversations.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversations.ts",
+      "to": "packages/contracts/src/conversation-context.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversations.ts",
+      "to": "packages/contracts/src/execution-profiles.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversations.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/conversations.ts",
+      "to": "packages/contracts/src/assistant.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-delivery.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-delivery.ts",
+      "to": "packages/contracts/src/projects.ts"
+    },
+    {
+      "from": "packages/contracts/src/goal-delivery.ts",
+      "to": "packages/contracts/src/goals.ts"
+    },
+    {
+      "from": "packages/contracts/src/protocol-dispatch.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/protocol-dispatch.ts",
+      "to": "packages/contracts/src/runner.ts"
+    },
+    {
+      "from": "packages/contracts/src/protocol-dispatch.ts",
+      "to": "packages/contracts/src/protocol-task.ts"
+    },
+    {
+      "from": "packages/contracts/src/workspace.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/reconciliation.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/fixtures.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner-claim.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner-claim.ts",
+      "to": "packages/contracts/src/goal-tool-runs.ts"
+    },
+    {
+      "from": "packages/contracts/src/runner-claim.ts",
+      "to": "packages/contracts/src/goal-graph-runs.ts"
+    },
+    {
+      "from": "apps/cli/src/watch.ts",
+      "to": "packages/client/src/index.ts"
+    },
+    {
+      "from": "apps/cli/src/watch.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "apps/cli/src/watch.ts",
+      "to": "apps/cli/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/plugin-removal.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/plugins.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/plugin-runtime-hosts.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/plugin-runtime.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/client/src/plugin-management.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/client/src/plugin-management.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/client/src/response-json.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/client/src/plugin-runner.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/assistant-stream.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/client/src/native-activity-body.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/client/src/native-activity-body.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/client/src/conversation-acknowledgement.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/client/src/conversation-acknowledgement.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/index.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/conversation-acknowledgement.ts",
+      "to": "packages/contracts/src/conversation-harness.ts"
+    },
+    {
+      "from": "packages/client/src/conversation-acknowledgement.ts",
+      "to": "packages/contracts/src/assistant.ts"
+    },
+    {
+      "from": "packages/client/src/conversation-acknowledgement.ts",
+      "to": "packages/contracts/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/native-activity-body.ts",
+      "to": "packages/client/src/response-json.ts"
+    },
+    {
+      "from": "packages/client/src/native-activity-body.ts",
+      "to": "packages/contracts/src/native-activity-body.ts"
+    },
+    {
+      "from": "packages/client/src/plugin-runner.ts",
+      "to": "packages/contracts/src/plugin-runner-claim.ts"
+    },
+    {
+      "from": "packages/client/src/plugin-runner.ts",
+      "to": "packages/contracts/src/plugin-runtime.ts"
+    },
+    {
+      "from": "packages/contracts/src/plugin-runtime.ts",
+      "to": "packages/contracts/src/package-artifacts.ts"
+    },
+    {
+      "from": "packages/contracts/src/plugin-runtime.ts",
+      "to": "packages/contracts/src/plugins.ts"
+    },
+    {
+      "from": "packages/contracts/src/plugin-runtime.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/plugin-runner-claim.ts",
+      "to": "packages/contracts/src/runner-claim.ts"
+    },
+    {
+      "from": "packages/contracts/src/plugin-runner-claim.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/contracts/src/plugin-runner-claim.ts",
+      "to": "packages/contracts/src/plugin-runtime.ts"
+    },
+    {
+      "from": "packages/client/src/plugin-management.ts",
+      "to": "packages/contracts/src/plugin-removal.ts"
+    },
+    {
+      "from": "packages/client/src/plugin-management.ts",
+      "to": "packages/contracts/src/plugin-runtime.ts"
+    },
+    {
+      "from": "packages/client/src/plugin-management.ts",
+      "to": "packages/contracts/src/plugins.ts"
+    },
+    {
+      "from": "packages/client/src/plugin-management.ts",
+      "to": "packages/contracts/src/tasks.ts"
+    },
+    {
+      "from": "packages/client/src/plugin-management.ts",
+      "to": "packages/contracts/src/plugin-runtime-hosts.ts"
+    },
+    {
+      "from": "packages/contracts/src/plugin-runtime-hosts.ts",
+      "to": "packages/contracts/src/plugins.ts"
+    },
+    {
+      "from": "packages/contracts/src/plugin-runtime-hosts.ts",
+      "to": "packages/contracts/src/plugin-runtime.ts"
+    },
+    {
+      "from": "packages/contracts/src/plugin-removal.ts",
+      "to": "packages/contracts/src/plugins.ts"
+    },
+    {
+      "from": "packages/client/src/plugin-command-ack.test.ts",
+      "to": "packages/client/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/plugin-command-ack.test.ts",
+      "to": "docs/evidence/x01-plugin-command-acks/fixtures.ts"
+    },
+    {
+      "from": "apps/cli/src/plugin-host-candidates.test.ts",
+      "to": "apps/cli/src/index.ts"
+    },
+    {
+      "from": "apps/cli/src/plugin-host-candidates.test.ts",
+      "to": "docs/evidence/x01-host-candidates-client/fixtures.ts"
+    },
+    {
+      "from": "packages/client/src/plugin-host-candidates.test.ts",
+      "to": "packages/client/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/plugin-host-candidates.test.ts",
+      "to": "docs/evidence/x01-host-candidates-client/fixtures.ts"
+    },
+    {
+      "from": "apps/cli/src/plugin-removal-references.test.ts",
+      "to": "apps/cli/src/index.ts"
+    },
+    {
+      "from": "apps/cli/src/plugin-removal-references.test.ts",
+      "to": "docs/evidence/x01-removal-references-client/fixtures.ts"
+    },
+    {
+      "from": "packages/client/src/plugin-removal-references.test.ts",
+      "to": "packages/client/src/index.ts"
+    },
+    {
+      "from": "packages/client/src/plugin-removal-references.test.ts",
+      "to": "docs/evidence/x01-removal-references-client/fixtures.ts"
+    }
+  ],
+  "dependencies": "docs/evidence/x01-removal-references-client/dependencies.json",
+  "borrowedContract": "packages/contracts/src/plugin-removal.ts@81a064cb; readonly nonproduct; must land before consumer"
+}
