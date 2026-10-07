@@ -1,0 +1,48 @@
+{
+  "source": "fe8aa55e",
+  "selected": {
+    "client": 16,
+    "host": 5
+  },
+  "passed": 21,
+  "focusedTypesExit": 0,
+  "supervisedMs": 2791,
+  "rawBytes": 660,
+  "cleanup": [
+    {
+      "name": "leaf",
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "tmpRemoved": true,
+      "finalTmpBytes": 226
+    },
+    {
+      "name": "types",
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "tmpRemoved": true,
+      "finalTmpBytes": 0
+    }
+  ],
+  "limitations": [
+    "Leaf ports only: public FlowClient/runtime/factory not yet wired",
+    "No PG/provider/browser/install",
+    "Final temporary metadata sample, not a hard filesystem quota or physical peak"
+  ],
+  "quality": {
+    "at": "2026-10-07 07:16:09 UTC",
+    "skills": [
+      "find-skills",
+      "brainstorming",
+      "codebase-design",
+      "clean-code"
+    ],
+    "application": "One reader owns verification/cursor and one host owns specific confirmation. Reuse authenticated transport/outbox; single in-flight; no retries or scheduler. Removed dummy test cast; named bounded interfaces. No current unresolved leaf finding."
+  }
+}
