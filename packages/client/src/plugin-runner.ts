@@ -27,10 +27,18 @@ export class PluginRunnerClient {
       || !('published' in response) || response.published !== true) throw new Error('Plugin host acknowledgement is unknown.');
   }
 
-  async authorize(input: PluginGrantRequest, key: string, signal?: AbortSignal) {
+  authorize(input: PluginGrantRequest, key: string, signal?: AbortSignal) {
+    return this.authorizePhase('tool', input, key, signal);
+  }
+
+  authorizeVerifier(input: PluginGrantRequest, key: string, signal?: AbortSignal) {
+    return this.authorizePhase('verifier', input, key, signal);
+  }
+
+  private async authorizePhase(kind: 'tool' | 'verifier', input: PluginGrantRequest, key: string, signal?: AbortSignal) {
     const expected = pluginGrantRequestSchema.parse(input);
     if (!/^[a-f0-9]{64}$/.test(key)) throw new Error('Plugin phase requires its stable identity key.');
-    const value = await this.request('/api/runner/plugin-tool/authorize', { method: 'POST', body: JSON.stringify(expected),
+    const value = await this.request(`/api/runner/plugin-${kind}/authorize`, { method: 'POST', body: JSON.stringify(expected),
       headers: { 'Idempotency-Key': key }, signal }, 65_536);
     const receipt = pluginGrantReceiptSchema.parse(value);
     if (receipt.attemptId !== expected.attemptId || receipt.ownerVersion !== expected.ownerVersion
