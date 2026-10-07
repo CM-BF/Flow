@@ -2,6 +2,9 @@
 import datetime, hashlib, importlib.util, json, os, shutil, sys, tempfile, time
 from pathlib import Path
 
+# Imported helpers must not write caches beside source or a shared donor.
+sys.dont_write_bytecode = True
+
 ROOT = Path(__file__).resolve().parents[3]
 EVIDENCE = ROOT / 'docs/evidence/x01'
 RECORD = EVIDENCE / 'center-claim-local.json'
