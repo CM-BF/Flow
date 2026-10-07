@@ -7,7 +7,7 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-07T06:30:52Z；main5cae7a25公开流receipt沿原记录。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T06:38:52.354024+00:00；main5cae7a25公开流receipt沿原记录。 |
 | 阶段 | M2 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,19 +15,19 @@
 | 优先级 | 2 |
 | 本片段交付阶段 | review |
 | 工作分支状态 | in-progress |
-| 当前产出 | Codex会话设置投影修复已独审通过；真实会话两轮、目录和队列的专库验收已准备，类型通过并仅收集6项，待准备独审。 |
+| 当前产出 | 会话专库验收的分页反例已改为确定排序，新增类型检查通过；六个PG用例仍未运行，当前只待这一准备修复增量复审。 |
 | 下一可用交付 | 固定准备包通过独审后，协调一次专用PG/HTTP窗口验证Codex公开会话；当前未开窗。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | 9957639b准备包已核clean；本次仅status过时措辞及共享出口交回条件，最终提交后再核。 |
-| HEAD（最近观察） | 9957639b4a3b4ffcdd7b6efd6505327278bc7ec7（06:28:44 UTC已核origin同clean；随后本次status小增量） |
+| 工作树dirty状态 | e7a130c4源码已固定；当前仅准备绑定与review/status，最终提交后核clean。 |
+| HEAD（最近观察） | e7a130c4341f00b77f2207088ee8e2f9fe8dd4eb（窄修源码固定；当前仅准备绑定/状态小增量，提交后核clean） |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v12 ACTIVE，72 literal；[追加PG test回执](../../docs/evidence/mature02c02/conversation-pg-amend-receipt.json)，035独占不改007。 |
 | 实现目标 | 当前C02-05 conversation协议/目录/批量typed reply；旧公开流2ab3等沿原固定Git。 |
 | 实现范围 | 已审conversation产品23源+7070门禁；新独立PG六case、fixture client选项、原operator有限delta manifest/config/claim/floor接线，不新增provider/框架。 |
-| Review | 7070/d2ae于06:18:46Z获architecture_read SOURCE_AND_LIMITED_RESULT_REVIEW_APPROVED，P2 CLOSED。新PG准备待独审：[入口](../../docs/evidence/mature02c02/conversation-pg-review-ready.json)。 |
+| Review | 7070/d2ae于06:18:46Z获architecture_read SOURCE_AND_LIMITED_RESULT_REVIEW_APPROVED，P2 CLOSED。新PG准备06:34:28Z独审仅1P2（随机分页排序）；固定e7a窄修待增量复审：[入口](../../docs/evidence/mature02c02/conversation-pg-review-ready.json)。 |
 | 检查 | reply窄修red2=1过1失败→green7/7，types0；3工程child+2前置失败=5caller尝试，整体预算不认证，未登记TMP KEEP。新PG准备types0/list6仅收集，2child/双EOF/新TMP清理；PG0，旧36/6PG不重跑。 |
 | main集成 | 首片/loader/main已INTEGRATED@c0e0263dc01b9527293318a644f964bd048e2a86；私有stream已INTEGRATED@8c7f81b3；公开stream已INTEGRATED@5cae7a25（main固定intake；本会话片尚未集成）。 |
 | Dashboard | Lead已登记至178来源；本次修正解析字段，等待下一次正常聚合；不改生成JSON。 |
@@ -44,7 +44,7 @@
 
 ## 当前验证与历史固定记录
 
-当前准备入口：[conversation-pg-window](../../docs/evidence/mature02c02/conversation-pg-window.md)，317输入1810124B/31SQL、27项delta继承固定旧308清单；types0/list6仅收集，PG NOT_OPEN。
+当前准备入口：[conversation-pg-window](../../docs/evidence/mature02c02/conversation-pg-window.md)，317输入1810789B/31SQL、27项delta继承固定旧308清单；types0/list6仅收集，PG NOT_OPEN。
 
 此前已封存公开流入口：[public-stream-pg-window](../../docs/evidence/mature02c02/public-stream-pg-window.md)；308输入1705071B/30SQL/20links/2external，manifest671195…a704。Web co-lead05:32:12准备独审APPROVED/0P1P2，完整原报告可无损解压[固定原件](../../docs/evidence/mature02c02/public-stream-pg-preparation-review.json.gz)，摘要[review](../../docs/evidence/mature02c02/public-stream-pg-preparation-review.json)。该准备批准与本次结果审查分开。新namespace MATURE02C02-PUBLIC-STREAM-20261007-R1；唯一operator复用原120s/14conn/8task/256HTTP/64MiB DB末样本/32MiB TMP/raw32KiB；0provider/native/install。05:41:35 actual已退出；6/6，189HTTP，完整资源收尾并立即归还Web，当前0PG/待launch。
 
@@ -61,3 +61,5 @@
 下一精确交付：当前分支Codex会话policy/typed目录/035已实现并经源码独审，317输入专库准备待独审及新实际窗口；旧六组task/公开流证据不替代conversation验收。
 
 共享出口交回条件：packages/client/src/index.ts、packages/contracts/src/index.ts当前仍由本claim持有。待本会话片真实PG、独审与main receipt完成，明确停止这两literal写入并原子amend移除，不绑定完整native/Web目标。CHAT05P01 [既有接口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/docs/evidence/chat05p01/interface.md)路径已只读确认；其body reader/exports与X01 v3 client需求由合法owner按ready-first串行领取，当前不提前交权。
+
+2026-10-07T06:38:52.354024+00:00 分页准备P2修复：固定e7a130c4，四行顺序为hidden-first/visible/hidden-between/visible，逐页内容+cursor断言；仅新focused types0/1child，0B raw、双EOF/group absent、同inode TMP删除。原list6不重跑、六PG仍NOT_RUN。独审入口[分页delta](../../docs/evidence/mature02c02/conversation-pg-pagination-fix-review-ready.json)，旧失败与UNKNOWN资源不回填。

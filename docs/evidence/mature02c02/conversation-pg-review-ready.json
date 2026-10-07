@@ -1,17 +1,17 @@
 {
-  "recordedAt": "2026-10-07T06:27:45.089507+00:00",
-  "status": "READY_FOR_PREPARATION_REVIEW_NOT_OPEN",
-  "source": "bfcb9b02adb05645a40da5772be5d462711ff5fc",
-  "fixtureSource": "42dece37acb10318499404ad83aba90d216043cf",
+  "recordedAt": "2026-10-07T06:38:52.354024+00:00",
+  "status": "READY_FOR_PAGINATION_P2_DELTA_REVIEW_NOT_OPEN",
+  "source": "e7a130c4341f00b77f2207088ee8e2f9fe8dd4eb",
+  "fixtureSource": "e7a130c4341f00b77f2207088ee8e2f9fe8dd4eb",
   "productFix": "7070b8ad1f76b154083eb4d43d00ace544cd0d02",
   "manifest": {
     "path": "docs/evidence/mature02c02/pg-conversation-source-manifest.json",
     "bytes": 7809,
-    "sha256": "60c8a456bd4e9330d5af463b948c927c523679145a62090935b156becb75ea61"
+    "sha256": "0dd19d82e1b1a37d9400054c866ce52652a56a4276090643e21f63bd5f5cac77"
   },
   "expandedInputs": {
     "count": 317,
-    "bytes": 1810124,
+    "bytes": 1810789,
     "deltaBindings": 27,
     "unchangedInherited": 290,
     "GitWTerrors": [],
@@ -31,13 +31,21 @@
   ],
   "linksVerified": 20,
   "claim": "v12/full72",
-  "local": "conversation-pg-prepare-local.json: types0 + list6 only, 2 children closed; 822B, no PG hooks",
+  "local": "Original types0/list6 preserved; new deterministic fixture focused noEmit0 only, PG0; conversation-pg-pagination-fix-local.json",
   "actualPG": 0,
   "reviewScope": [
-    "new six PG cases (real conversation API/session/typed replies/legacy/native directory/queue)",
-    "fixture conversationClient option only",
-    "existing caller finite manifest inheritance/claim/config/floor delta; original lifecycle and six-selection gate unchanged",
-    "317 expanded bindings,2external,20links,10 new output absence; no old full source rereview"
+    "single six-case fixture delta: four ordered mixed rows with live SQL order precondition and exact per-page results/cursors",
+    "one changed binding over db_transaction_owner 2026-10-07T06:34:28Z reviewed317; original caller/fixture lifecycle/external/links unchanged",
+    "new focused types result and same-inode owned TMP cleanup; no PG cases run"
   ],
-  "oldEvidence": "7070/d2ae raw immutable; old R1 KEEP untouched; unregistered caller root remains KEEP_UNKNOWN; this preparation does not close old resource gaps"
+  "oldEvidence": "7070/d2ae raw immutable; old R1 KEEP untouched; unregistered caller root remains KEEP_UNKNOWN; this preparation does not close old resource gaps",
+  "previousReview": {
+    "reviewer": "db_transaction_owner",
+    "at": "2026-10-07T06:34:28Z",
+    "target": "8848755254d49468c35a9b316bdbdda19700e105",
+    "decision": "CHANGES_REQUESTED",
+    "P1": 0,
+    "P2": 1,
+    "finding": "mixed conversation random UUID ordering did not force hidden-first/hidden-between"
+  }
 }

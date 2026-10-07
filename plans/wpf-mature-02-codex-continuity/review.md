@@ -17,3 +17,7 @@ Target `0ecd917c634d5765ff585693a58bd470e3b76f5b`, base `d2e8c567`; [bindings](.
 ## 2026-10-07T06:28:36.272368+00:00 — reply P2 closed; conversation PG preparation
 
 architecture_read 2026-10-07T06:18:46Z SOURCE_AND_LIMITED_RESULT_REVIEW_APPROVED，source7070/packetd2ae，0剩余P1/P2。限定结果和3工程child/2前置失败/5caller尝试、旧unknown root边界见conversation-adapter-fix-review.json。新PG准备source42de+bfcb：317输入、27delta、31SQL/2external/20links，types0/list6仅收集。准备独审NOT_STARTED/actualNOT_OPEN，唯一入口conversation-pg-review-ready.json。
+
+## 2026-10-07T06:38:52.354024+00:00 — conversation PG pagination correction
+
+db_transaction_owner 06:34:28Z对88487552的317绑定/准备结果复核，CHANGES_REQUESTED唯一P2为随机UUID不能强制hidden-first/between。固定e7a130c4只改该case确定排序和两页cursor断言；新focused types0，不执行PG。其余已审输入/资源门禁不改。增量复审待交，入口conversation-pg-pagination-fix-review-ready.json；不把旧准备审或类型检查当PG通过。

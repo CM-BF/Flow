@@ -1,7 +1,7 @@
 {
   "schema": "flow.c02.pg-conversation-delta.v1",
   "status": "PREPARATION_ONLY_NOT_OPEN",
-  "sourceTarget": "bfcb9b02adb05645a40da5772be5d462711ff5fc",
+  "sourceTarget": "e7a130c4341f00b77f2207088ee8e2f9fe8dd4eb",
   "baseManifest": {
     "path": "docs/evidence/mature02c02/pg-public-stream-source-manifest.json",
     "sha256": "67119534517264f7ea8861a6e683d08d7634923ed6d34b61f0e868b4c2cda704",
@@ -30,8 +30,8 @@
     },
     {
       "path": "apps/server/src/conversations/codex-pg.test.ts",
-      "bytes": 13913,
-      "sha256": "9f69a6ef56ccfc4d430e8e1aaaa0267a51fbafafd571f1368ec465f7a2d96d2e"
+      "bytes": 14578,
+      "sha256": "80bcae732af2133e0bff5d391ee45aeda9a5706c8166ff2a92a336aa00b22602"
     },
     {
       "path": "apps/server/src/conversations/commands.ts",
@@ -145,8 +145,8 @@
     }
   ],
   "count": 317,
-  "bytes": 1810124,
-  "orderedSha256": "b0ed8c6a6f9f613dca8859be75d62f030d26242b060b34ece01831c3daec1fd3",
+  "bytes": 1810789,
+  "orderedSha256": "9ed3ab00f9b93cada2c3456ff3051347aed9102897daf493d3a43f4fbcd1f758",
   "serialization": "path-sorted UTF-8: path TAB decimal-bytes TAB sha256 LF",
   "external": "inherit fixed base two external bindings; verify before spawn",
   "dependencies": "existing dependency-link-request.json exact20 (17 installed +3 same tree), verify before spawn",
@@ -206,5 +206,5 @@
   "actualPG": 0,
   "provider": 0,
   "native": 0,
-  "recordedAt": "2026-10-07T06:26:24.682081+00:00"
+  "recordedAt": "2026-10-07T06:38:52.354024+00:00"
 }
