@@ -1,0 +1,151 @@
+{
+  "at": "2026-10-07T14:50:22.909736+00:00",
+  "summaryCompletedAt": "2026-10-07T14:50:22.957Z",
+  "assignmentsCompletedAt": "2026-10-07T14:50:22.968Z",
+  "sameRegistryFingerprint": true,
+  "registryFingerprint": "4cb7e31e45a7287ad5dbda575bd1aafde6d5e71f59d720b19abcb3251ca93fbc",
+  "tasks": [
+    {
+      "id": "WPF-MESSAGESETTINGS03",
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
+        "digest": "d5b36a8839a8f6ca9405a9834829f2d1e70f3cc7657bbfcae459438fb5842b97",
+        "modifiedAt": "2026-10-07T14:38:13.995Z",
+        "readAt": "2026-10-07T14:50:22.921Z",
+        "declaredUpdatedAt": "2026-10-07T14:38:13.994Z",
+        "stale": false,
+        "ageHours": 0.2024797222222222,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "sourceCurrent": true,
+      "checks": {
+        "state": "passed",
+        "target": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+        "record": "PASSED fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56；两条既有App selector各2/2实际PASS及限定local，原四FAIL保留；不冒未选旅程/完整native四facet键盘/个人目录"
+      },
+      "main": "NOT_INTEGRATED；base c130已有Recovery和受控Picker，尚无本片真实App接线",
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      }
+    },
+    {
+      "id": "WPF-RELEASE01",
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md",
+        "digest": "a20f2bda70b4563a8b25b13ba8ad6601f0886c052c5369c27e1b88b6761c559f",
+        "modifiedAt": "2026-10-07T14:47:33.476Z",
+        "readAt": "2026-10-07T14:50:22.921Z",
+        "declaredUpdatedAt": "2026-10-07T14:47:33.469Z",
+        "stale": false,
+        "ageHours": 0.04707,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "sourceCurrent": true,
+      "checks": {
+        "state": "passed",
+        "target": "8964dc1185f62ed8934c15416e9798929359ab89",
+        "record": "PASSED 8964dc1185f62ed8934c15416e9798929359ab89 仅两harness strict/noEmit；新Cookie实际与浏览器NOT_RUN"
+      },
+      "main": "NOT_INTEGRATED 当前新App后继；历史9658/c3已main e0295747200d7f0616779a712fdfd06691c3708f",
+      "delivery": {
+        "state": "implementation",
+        "source": "explicit"
+      }
+    },
+    {
+      "id": "WPF-001",
+      "source": {
+        "mode": "live",
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/status.md",
+        "digest": "35d8cf3bd321d443279ad1eb08ceb304d85593aa1f96a7090b12b1d59d82fe62",
+        "modifiedAt": "2026-10-07T14:49:10.364Z",
+        "readAt": "2026-10-07T14:50:22.921Z",
+        "declaredUpdatedAt": "2026-10-07T14:49:10.359Z",
+        "stale": false,
+        "ageHours": 0.02015611111111111,
+        "issues": [],
+        "error": null,
+        "frozenCommit": null
+      },
+      "sourceCurrent": true,
+      "checks": {
+        "state": "passed",
+        "target": "a5e500136438b197305339cbe0a5e10a196a4317",
+        "record": "PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批"
+      },
+      "main": "INTEGRATED f181d84b5fb3652d62e2a181acff442d42b3e066：D08/ACTIVITYREAD/STEIRI获审源码相同、owner收口后释放。个人产物及4320部署另计；管理a5发布仍是原时点副本，不继承新产品审批",
+      "delivery": {
+        "state": "integration",
+        "source": "explicit"
+      }
+    }
+  ],
+  "missingSummaryTasks": [
+    "X01-TRUSTED-PROCESS-HOST01",
+    "X01-REMOVAL-REFERENCES-CLIENT"
+  ],
+  "unregisteredAssignments": [
+    {
+      "lead": "mika",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/x01-artifact-verifier",
+        "plans/x01-artifact-verifier"
+      ],
+      "state": "active",
+      "branch": "codex/plugin-artifact-verifier",
+      "origin": "new",
+      "taskId": "X01-ARTIFACT-VERIFIER01",
+      "worker": "architecture_read",
+      "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+      "version": 1,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+      "createdAt": "2026-10-07T14:30:38.019Z",
+      "updatedAt": "2026-10-07T14:30:38.019Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    {
+      "lead": "mika",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/runner/src/configuration.test.ts",
+        "apps/runner/src/configuration.ts",
+        "apps/runner/src/main-concurrency.test.ts",
+        "apps/runner/src/plugins/execution.test.ts",
+        "apps/runner/src/plugins/execution.ts",
+        "apps/runner/src/plugins/process-host.test.ts",
+        "apps/runner/src/plugins/process-host.ts",
+        "apps/runner/src/plugins/process-protocol.ts",
+        "apps/runner/src/plugins/process-resources.ts",
+        "apps/runner/src/plugins/process-worker.ts",
+        "apps/runner/src/plugins/runtime.test.ts",
+        "apps/runner/src/runtime.ts",
+        "docs/evidence/x01-trusted-process-host",
+        "plans/x01-trusted-process-host"
+      ],
+      "state": "active",
+      "branch": "codex/plugin-trusted-process-host",
+      "origin": "new",
+      "taskId": "X01-TRUSTED-PROCESS-HOST01",
+      "worker": "db_transaction_owner",
+      "claimId": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host",
+      "createdAt": "2026-10-07T12:39:21.479Z",
+      "updatedAt": "2026-10-07T12:58:06.882Z",
+      "observedAt": null,
+      "needsVerification": false
+    }
+  ],
+  "limits": "Read-only exact dashboard sample. MSG owner main closeout still in progress; does not supersede fixed main3c9345 evidence. Unregistered claim is visible, not a runtime holder or permission to write registry."
+}

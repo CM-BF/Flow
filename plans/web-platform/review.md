@@ -104,3 +104,6 @@ root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0
 
 
 修后材料[生命周期审](../../docs/evidence/web-platform/release-backend-route-20261007/material-lifecycle-root-review.json)+[业务证据审](../../docs/evidence/web-platform/release-backend-route-20261007/material-business-peer-review.json)限定接受2selected与归还；第二旅程[生命周期/双主题视觉审](../../docs/evidence/web-platform/release-backend-route-20261007/settings-lifecycle-visual-root-review.json)已通过，第二[业务审](../../docs/evidence/web-platform/release-backend-route-20261007/settings-business-peer-review.json)现也限定通过，不扩大为完整功能/main/发布。新段共26368/120k已停止，余93632不新授权。
+
+
+[本批源交权与最小网页检查](../../docs/evidence/web-platform/msg03-main-release-source-handoff-20261007/current.json)接收MSG实际main/release、Release同任务独立7272新取权。root [e0a28限定审](../../docs/evidence/web-platform/msg03-main-release-source-handoff-20261007/release-source-local-root-review.json)核d736/产品1cea、35raw和三attempt：types通过、alias首红保留、单一旧消费者通过，6165/90k CLOSED。未继承为artifact、HTTP/browser、main或个人部署。manager只核自己的scope/parser/链接/hash，不重跑产品；SVC09A预约与真正运行分列，S01READY不等holder。

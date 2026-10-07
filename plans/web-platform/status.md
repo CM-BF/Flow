@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:43:27.781Z；MSG scoped intake及看板passed目标已收，ACCESS同值ISO/释放已确认，后端产物结果通过，Original原作者供给新Web。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T15:10:37.840Z；MSG830bbf7/main3c已收口release20；Release d736/1cea与旧consumer6165ms已获e0a28限定批准，cd074clean后两产品15:10:52正式移出，7d60v2保四scope。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 逐消息设置所选真实旅程与限定独审已通过，固定源码可受控接收；新后端产物已获结果审，个人网页仍旧版本。完成时间显示的小格式问题已由原owner修正并释放。 |
-| 下一可用交付 | 沿原发布链先交付用户能看到的新网页；准备包含修复的新前后端产物与实际Cookie恢复验证，不等待全部插件或聊天设置完成。MSG03已审固定18源沿受控main接收；个人设置目录按原双槽配置后继推进。 |
-| 当前阻塞 | ACTIVE: 新网页唯一待供是包含必要小修的新Web固定产物与旧consumer组合证据，已派原发布作者生产、待明确接受与唯一WT回执；后端新产物已获结果审。真实新pair兼容及个人网页发布尚未完成。 |
+| 当前产出 | 逐消息设置所选真实旅程已审并main3c9345，原写权已释放；最小新Web两文件修复在独立7272基底固定，后端cd27产物结果已审。个人网页仍旧版本。 |
+| 下一可用交付 | W01完成最小新Web artifact准备及固定pair兼容，沿Original发布链应用用户网页；两产品已精确交回，panels61abce36v1合法接续Plugin真实App。共享浮层在下一独立执行位实施，不扩研究。 |
+| 当前阻塞 | ACTIVE: 最小新Web immutable artifact与新pair真实兼容尚待；后端cd27已审、旧消费者source/local已限定批准。个人网页发布与真实设置目录仍未完成。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：MSG两旅程已RETURN/26368ms，余量不再授权；Original04da构建已14:30:45.534Z完整RETURN，新artifact KEEP且结果独审通过，无新heavyNEXT，未来完整floor至少11623661568B，旧KEEP/单reserve/个人自然任务保留。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：SVC09A唯一NEXT RESERVED/尚未START，沿原420s及精确收尾；S01 final32796520 READY_WAITING排后NOT_OPEN。未来完整floor至少14,069,989,376B，全部KEEP/单reserve/个人自然服务保留。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -93,7 +93,7 @@
 | WPF管理 | 本worktree，632a7149 v3，仅两管理目录与四Web大task目录 | 管理索引只追溯；普通变化status→dashboard，不构成第三执行层 |
 | 插件运行时模块 → X01-06 | [唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)；w01，0a9a9b2c v2 exact7已RELEASED | [唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)已实际登记、父X01/原06已确认；模块已main9f0/原7scope已释放；任何后继须合法新取权，App/session未因此接线。 |
 | ATTACH01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)，ef617d78 v3 released十八scope | 已main fd1322、23批准源同；正式factory6项/8自动启动/无fallback归Lead；ownerc698双端clean全停写后ef617 v3释放 |
-| RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，w01原owner；旧38b9v2已released，新27c36b97v1 exact4 active | 旧[e029收口/释放](../../docs/evidence/web-platform/release-main-registry-close-20261007/current.json)保留；新230cb源/types已审，当前供给缺项与后继只见该owner唯一status，不冒新兼容或个人更新。 |
+| RELEASE01 → MATURE01 | [唯一新source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/plans/wpf-release01-product-compatibility/status.md)，w01；旧27cv2 RELEASED，新7d60v2 exact4 ACTIVE | d736/产品1cea及旧consumer6165ms获e0a28限定批准；两产品已精确交回，panels61abce36v1 exact8已正式接续原I01，余四继续artifact/兼容。D05现有task映射由Original切新WT，旧树仅历史。 |
 | VISUAL01 → MATURE01 | [视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)，原d01_owner，35e5 v3 released，九scope停写 | 已main4391，558895d已push/clean并release；个人产物由SVC04发布，原树只读 |
 | CONTEXTI01 → MATURE03 | [知识App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，原w01_owner，55fe v2 released，二十scope已停写 | 已main df29；fe2b收口后55fe v2 released，原树只读 |
 | STEIRI01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/plans/wpf-steer-i01-integration/status.md)，原w01_owner，bc0ded75 v2 released | 已main f181；8273 push/clean后13scope停写释放，原树只读 |
@@ -187,4 +187,4 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 
 本自然批[实际与后继入口](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/personal-maintenance-next.json)保1306首红，新的Release共同source7272只属候选；[D05两来源登记](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/d05-registration-request.json)仍由现合法Original writer处理。
 
-本次[MSG最终接收、看板声明及ACCESS时间收口](../../docs/evidence/web-platform/msg03-final-intake-access-20261007/current.json)均沿原owner唯一status/原子claim：MSG b20仍20 STOP且7e3fv3 active；ACCESS06479完成ISO已可见并e54v2 released。后端cd27结果接受；[Original原发布作者负责新Web](../../docs/evidence/web-platform/msg03-final-intake-access-20261007/new-web-producer-handoff.json)，W01只在既有四范围消费固定新pair。无新runtime或重复检查。
+本次[MSG最终接收、看板声明及ACCESS时间收口](../../docs/evidence/web-platform/msg03-final-intake-access-20261007/current.json)均沿原owner唯一status/原子claim：MSG b20仍20 STOP且7e3fv3 active；ACCESS06479完成ISO已可见并e54v2 released。后端cd27结果接受；[历史Original派工请求](../../docs/evidence/web-platform/msg03-final-intake-access-20261007/new-web-producer-handoff.json)现已由[Web/W01实际承接](../../docs/evidence/web-platform/msg03-main-release-source-handoff-20261007/web-producer-handoff.json)取代，W01只在既有四范围消费固定新pair。无新runtime或重复检查。

@@ -1,0 +1,66 @@
+{
+  "createdAt": "2026-10-07T14:45:27.297159+00:00",
+  "fixedMain": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+  "decision": "SOURCE_RESEARCH_ONLY_NO_MEASURED_BOTTLENECK",
+  "inputs": [
+    {
+      "commit": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+      "path": "apps/web/src/plugins/react.tsx",
+      "bytes": 12209,
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241",
+      "gitBlob": "2af7f577118bb3cba07a4bfb6dcdee165172cb44"
+    },
+    {
+      "commit": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+      "path": "apps/web/src/plugins/host.ts",
+      "bytes": 21387,
+      "sha256": "23d4cebd5a6e3f13f6707628f47dc5ef6c2d86b66cb0c58a10bc3e043baf9cca",
+      "gitBlob": "d97812469d813db74c202825d8bec267ca4fbad8"
+    },
+    {
+      "commit": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+      "path": "apps/web/src/plugins/builtins.ts",
+      "bytes": 2770,
+      "sha256": "baa75a1b9b99b6c1646ab09a093d48660901f82654414888fdc07302c1d25c72",
+      "gitBlob": "cabcd92ed2e4fd52de133e0d4ad81bf71775c845"
+    },
+    {
+      "commit": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+      "path": "apps/web/src/plugins/types.ts",
+      "bytes": 6794,
+      "sha256": "c76b1293f7741798e77920e07dcca105cdc2f5de27fe45f89f81ca34880b7879",
+      "gitBlob": "2fedfc97799938c182d33777ff7672b98252abef"
+    },
+    {
+      "commit": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+      "path": "apps/web/test/plugin-host.test.ts",
+      "bytes": 22382,
+      "sha256": "92767f0fa52c4c4232a579c3f8d979d6ed0b74104932f08166a0412b4833d2dd",
+      "gitBlob": "e38b372aa6a4f2907cc5ee85d6f6b85207154d8f"
+    },
+    {
+      "commit": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+      "path": "apps/web/test/plugin-host.browser.ts",
+      "bytes": 14582,
+      "sha256": "2b9de2637746835332343c496f4f6ed8f8b724cd6941946f35bb1add36aaab82",
+      "gitBlob": "06d8a4210b3ef707f63e6d8a71fae16f7b58ad95"
+    },
+    {
+      "commit": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+      "path": "apps/web/package.json",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7",
+      "gitBlob": "32a3d8b5336aea8346dc24851773ed1ee45a97a4"
+    }
+  ],
+  "report": {
+    "bytes": 4427,
+    "sha256": "248b33cd546b90745ee5bc34eb8dd01291380c074320850c8a2ce663ee8d0614"
+  },
+  "officialSources": [
+    "https://react.dev/reference/react/useSyncExternalStore",
+    "https://react.dev/reference/react/Activity"
+  ],
+  "runtime": "NOT_RUN",
+  "claim": "NOT_TAKEN"
+}

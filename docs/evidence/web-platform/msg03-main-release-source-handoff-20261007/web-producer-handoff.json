@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-07T15:12:45.648Z",
+  "task": "WPF-RELEASE01 / existing REQ19",
+  "state": "SOURCE_LOCAL_APPROVED_PRODUCT_HANDOFF_COMMITTED_ARTIFACT_PREPARATION",
+  "authority": "Original explicitly confirmed via root that Web continues as new Web producer; W01 new claim/source are actual. Original assignment_review consumes the fixed Web descriptor for existing artifact/host update chain. No unresolved producer acceptance.",
+  "producer": "Web / w01_owner",
+  "worktreeCandidate": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+  "branchCandidate": "codex/web-release-recovery",
+  "worktreeCreated": true,
+  "claimTaken": true,
+  "sourceBase": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "minimalPatch": "../release-backend-route-20261007/held-draft-release-minimal.patch",
+  "patchSHA256": "77bc71c1aa001c693ba08b0a56ccf6e3b8faac5824e056663a9c81893882bdc8",
+  "productionOutputHashes": {
+    "apps/web/src/plugin-integration/attachments.tsx": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4",
+    "apps/web/src/plugin-integration/session.ts": "728a08d9e7ba64533da5b0bd9d7fa485f7d1cddefc13554c29101881e9841d9a"
+  },
+  "scopePlan": [
+    "apps/web/test/web-release-compatibility.browser.ts",
+    "apps/web/test/web-release-compatibility.fixture.ts",
+    "docs/evidence/wpf-release01",
+    "plans/wpf-release01-product-compatibility"
+  ],
+  "sequence": [
+    "MSG final830bbf7 clean and all20STOP; fresh release7e3f v4 COMMITTED14:51:24.457Z.",
+    "Old9fde scope STOP,27cv2 release14:50:26.083Z; no oldWT writes. MSG7e3fv4 release14:51:24.457Z verified before new take.",
+    "Source operator provisioned562fixed files/4587757B within16MiB bound. New same-task exact6 take7d60 v1 COMMITTED14:52:41.385Z after fresh global no-conflict observation.",
+    "Apply only reviewed minimal patch to fixed7272, preserve separately pinned8964 harness/history; fix new source and necessary old-consumer/type evidence. Do not substitute fullMSG/currentmain.",
+    "Two production literals returned by fresh7d60v2amend15:10:52.444Z; panels dispatched sameexistingI01 independently. Release retains4harness/records for newartifact/compat.",
+    "New Web artifact and exact-pair compatibility use the existing release chain, fixed inputs/closure/finite budgets and normal fresh resource handoff; no runtime has been granted."
+  ],
+  "registry": "New canonical/source-switch intake fixed; Original sole D05 writer should now switch the existing task to the new WT. Old tree remains history; no duplicate task/generated JSON.",
+  "currentBackend": "cd27/source04da descriptor and result fidelity approved; not deployed, does not include SVC09A246ed.",
+  "runtimeGrant": null,
+  "noSecondProducer": "Original assignment_review must not concurrently create the same new Web candidate after this explicit responsibility handback; canonical/root commentary are the available route.",
+  "oldReleaseClaim": "27c36b97 v2 RELEASED 14:50:26.083Z; old tree no further writes",
+  "claim": "7d60cb91 v2 ACTIVE exact4 after15:10:52.444Z product2amend",
+  "sourceSupplyCommit": "300386e2babce408b85ad5b9732d616782b78097",
+  "ordinaryLocal": "Threeattempts6165/90000 CLOSED;types/direct1selectedPASS andinitialresolverFAIL retained; source/locale0a28APPROVED. No unusedcredit or artifactgrant.",
+  "sourceCommit": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
+  "canonicalCommit": "ddddcf753f722180b514a9866aea458db6f1821e",
+  "sourceSegmentStart": "2026-10-07T14:54:01.259Z",
+  "consumer": "Original assignment_review prepares 7d1→cd27 thin intake; W01 existing Release harness supplies exact new-backend/context compatibility including three retained Web artifacts and new Recovery Web.",
+  "handoffBoundary": "Only7272+minimal b924 Web source, no moving-main rebuild from MSG3c; backendcd27/04da unchanged and excludesSVC09A.",
+  "review": "release-source-local-root-review.json",
+  "productionCommit": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804"
+}

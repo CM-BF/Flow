@@ -1,0 +1,165 @@
+{
+  "at": "2026-10-07T15:00:00.181405+00:00",
+  "decision": "ACCEPTED_FIXED_MSG_DELTA_DESIGN_INPUT",
+  "fixedMain": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "rawInputs": [
+    {
+      "path": "/private/tmp/plugin-app-msg03-delta-f96svnbb/report.md",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/plugin-app-msg03-delta-f96svnbb/pins.json",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/plugin-app-msg03-delta-f96svnbb/main-composition.json",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/plugin-app-msg03-delta-f96svnbb/three-product.diff",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/plugin-app-msg03-delta-f96svnbb/observed-scope-matches.json",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/plugin-app-msg03-delta-f96svnbb/supply-report.md",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/plugin-app-msg03-delta-f96svnbb/supply-manifest.json",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/plugin-app-msg03-delta-f96svnbb/supply-paths.txt",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/plugin-app-msg03-delta-f96svnbb/resolver-reuse.json",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/plugin-app-msg03-delta-f96svnbb/legacy-records-carry.json",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/plugin-app-msg03-delta-f96svnbb/method-pins.json",
+      "matches": true
+    }
+  ],
+  "sourceInputs": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "contentMatch": true,
+      "allThreeBlobsMatch": true,
+      "refs": {
+        "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56": "1cc0057ec2188beacd5632bd358271ed38a3422f",
+        "b20cd84fb68b86aae6c3953cf7d4082a6df98330": "1cc0057ec2188beacd5632bd358271ed38a3422f",
+        "3c9345df4aec85a37e8a2a155e079db260d515b1": "1cc0057ec2188beacd5632bd358271ed38a3422f"
+      }
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "contentMatch": true,
+      "allThreeBlobsMatch": true,
+      "refs": {
+        "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56": "fea4381f15dd9e7a7e74511efe9dd306a2590087",
+        "b20cd84fb68b86aae6c3953cf7d4082a6df98330": "fea4381f15dd9e7a7e74511efe9dd306a2590087",
+        "3c9345df4aec85a37e8a2a155e079db260d515b1": "fea4381f15dd9e7a7e74511efe9dd306a2590087"
+      }
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "contentMatch": true,
+      "allThreeBlobsMatch": true,
+      "refs": {
+        "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56": "6a430efb4c2d48dfffad3a3a50cf69a288d4cc5e",
+        "b20cd84fb68b86aae6c3953cf7d4082a6df98330": "6a430efb4c2d48dfffad3a3a50cf69a288d4cc5e",
+        "3c9345df4aec85a37e8a2a155e079db260d515b1": "6a430efb4c2d48dfffad3a3a50cf69a288d4cc5e"
+      }
+    },
+    {
+      "path": "apps/web/test/plugin-integration.test.ts",
+      "contentMatch": true,
+      "allThreeBlobsMatch": true,
+      "refs": {
+        "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56": "809444943268cb37cd9c17b45427d88892ca4304",
+        "b20cd84fb68b86aae6c3953cf7d4082a6df98330": "809444943268cb37cd9c17b45427d88892ca4304",
+        "3c9345df4aec85a37e8a2a155e079db260d515b1": "809444943268cb37cd9c17b45427d88892ca4304"
+      }
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.browser.ts",
+      "contentMatch": true,
+      "allThreeBlobsMatch": true,
+      "refs": {
+        "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56": "054b7bd5a4f4f5d16d6387dad9d46b8a67a21acc",
+        "b20cd84fb68b86aae6c3953cf7d4082a6df98330": "054b7bd5a4f4f5d16d6387dad9d46b8a67a21acc",
+        "3c9345df4aec85a37e8a2a155e079db260d515b1": "054b7bd5a4f4f5d16d6387dad9d46b8a67a21acc"
+      }
+    },
+    {
+      "path": "apps/web/test/plugin-management-integration.fixture.ts",
+      "contentMatch": true,
+      "allThreeBlobsMatch": true,
+      "refs": {
+        "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56": "c3f6fb56de13033ef7650726c94feecfcd4ccd1f",
+        "b20cd84fb68b86aae6c3953cf7d4082a6df98330": "c3f6fb56de13033ef7650726c94feecfcd4ccd1f",
+        "3c9345df4aec85a37e8a2a155e079db260d515b1": "c3f6fb56de13033ef7650726c94feecfcd4ccd1f"
+      }
+    },
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "contentMatch": true,
+      "allThreeBlobsMatch": true,
+      "refs": {
+        "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56": "5bf5e329c4b8c726622e998271857aad0ac828ce",
+        "b20cd84fb68b86aae6c3953cf7d4082a6df98330": "5bf5e329c4b8c726622e998271857aad0ac828ce",
+        "3c9345df4aec85a37e8a2a155e079db260d515b1": "5bf5e329c4b8c726622e998271857aad0ac828ce"
+      }
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "contentMatch": true,
+      "allThreeBlobsMatch": true,
+      "refs": {
+        "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56": "cc15de4054c82c8f33218635b64a412a50c0bf92",
+        "b20cd84fb68b86aae6c3953cf7d4082a6df98330": "cc15de4054c82c8f33218635b64a412a50c0bf92",
+        "3c9345df4aec85a37e8a2a155e079db260d515b1": "cc15de4054c82c8f33218635b64a412a50c0bf92"
+      }
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "contentMatch": true,
+      "allThreeBlobsMatch": true,
+      "refs": {
+        "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56": "ef436e8a9d1eec5a96c27f229cf170c8d2c19474",
+        "b20cd84fb68b86aae6c3953cf7d4082a6df98330": "ef436e8a9d1eec5a96c27f229cf170c8d2c19474",
+        "3c9345df4aec85a37e8a2a155e079db260d515b1": "ef436e8a9d1eec5a96c27f229cf170c8d2c19474"
+      }
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "contentMatch": true,
+      "allThreeBlobsMatch": true,
+      "refs": {
+        "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56": "863d33df7ac5b8a434102fbbadabe096b4233db9",
+        "b20cd84fb68b86aae6c3953cf7d4082a6df98330": "863d33df7ac5b8a434102fbbadabe096b4233db9",
+        "3c9345df4aec85a37e8a2a155e079db260d515b1": "863d33df7ac5b8a434102fbbadabe096b4233db9"
+      }
+    }
+  ],
+  "blockingFindings": [],
+  "implementationConditions": [
+    "Use integrated3c composition containing both runtime module and MSG source, not oldfcf5 whole tree.",
+    "Current precise claims and worktree provisioning remain manager responsibility; this review creates no take or runtime.",
+    "Reuse existing session-owned controller, live connection authority and epoch; preserve MSG sole draft state/CAS and material membership.",
+    "An extended old FixtureWorkspace/Bearer test alone cannot establish production conversation/Cookie behavior; test mode and actual coverage must be explicit.",
+    "Do not replace all old green module/Recovery journeys with a redundant new matrix; verify changed App seam and targeted draft/auth boundaries."
+  ],
+  "scope": "Three production + three existing tests + original I01 own plan/evidence candidate; no shared contracts or source writes by root.",
+  "independentRuntime": "NOT_RUN",
+  "supplyBoundary": "11 raw pins verified including supply manifest; no execution of221-file closure and no product-provision approval asserted.",
+  "cleanCode": "Read-only interface/state ownership review: existing deep controller remains sole command authority; reject duplicate store/transport and avoid lifetime tied to lazy Settings. No source change."
+}

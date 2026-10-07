@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T15:12:45.648Z",
+  "state": "READY_EXISTING_TASK_SOURCE_SWITCH",
+  "taskId": "WPF-RELEASE01",
+  "owner": "w01_owner",
+  "lead": "external_web_d01_owner",
+  "oldWorktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility",
+  "oldClaim": "27c36b97 v2 RELEASED14:50:26.083Z",
+  "newWorktreeCandidate": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+  "newBranchCandidate": "codex/web-release-recovery",
+  "statusRelative": "plans/wpf-release01-product-compatibility/status.md",
+  "registryWriter": "Original D05 only",
+  "action": "Original sole D05 writer can now switch existing WPF-RELEASE01 to the fixed new canonical. No duplicate task. Old27c v2 released/new7d60 v1 committed; new source and actual segment start declared. Also resolve existing PROCESS/CLIENT missing progress sources using their canonical intakes, not manager-written registry.",
+  "otherExistingMissingSources": [
+    "X01-TRUSTED-PROCESS-HOST01",
+    "X01-REMOVAL-REFERENCES-CLIENT",
+    "X01-ARTIFACT-VERIFIER01"
+  ],
+  "actualObservation": "dashboard-source-observation.json",
+  "newClaim": "7d60cb91-7537-4052-8ba7-0c0aac8eb722 v2 exact4",
+  "committedAt": "2026-10-07T14:52:41.385Z",
+  "newCanonicalCommit": "ddddcf753f722180b514a9866aea458db6f1821e",
+  "newImplementationSource": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
+  "intake": "release-source-switch-intake.json",
+  "currentSource": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
+  "currentMetadata": "cd074992b106ed909ba49eaec4d1bf32b2365361",
+  "verifier": {
+    "status": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/plans/x01-artifact-verifier/status.md",
+    "task": "X01-ARTIFACT-VERIFIER01",
+    "owner": "architecture_read",
+    "lead": "mika",
+    "parent": "X01",
+    "branch": "codex/plugin-artifact-verifier",
+    "claim": "a67ba659-d859-40d6-82c6-2b7333087639 v1 ACTIVE exact2doc STOP",
+    "final": "9710377cddb1f134f79edc3e3fdf740a62ba2494",
+    "design": "bc5b68a0 accepted14:49:38",
+    "observation": "Mika15:01:42.636 assignments/readId38cc20ac/fingerprint4cb7 unregistered; AV01design only, AV02-04 notimplemented/run/main"
+  },
+  "partialHandbackReceipt": "release-product-handback-receipt.json"
+}

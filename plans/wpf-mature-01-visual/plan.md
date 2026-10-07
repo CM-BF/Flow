@@ -100,3 +100,5 @@ GO 对本次两390图的[原MATURE01验收反馈](../../docs/evidence/web-platfo
 原视觉后继已复用[固定共享浮层设计研究](../../docs/evidence/web-platform/release-backend-route-20261007/shared-overlay/report.md)（7源、4本地skill、3primary文档），建议统一Dialog/token层次与正常目录渐进筛选/面向用户文案；保合法组合、Apply/CAS和原焦点语义。overlay scrollbar不能靠stable gutter解决，后续需内侧间距及两种滚动条模式验收；现theme插件仅color白名单，radius/shadow/filter是待设计权限，不是已有能力。此仅原02/04只读输入，未实现，不新取scope或重跑已绿检查。
 
 [共享浮层真实消费者清单](../../docs/evidence/web-platform/msg03-final-intake-access-20261007/shared-overlay-consumers/report.md)将既有设计落实到原02/04候选：固定main六消费文件十一处DialogContent，最少共享Dialog/assistant-ui.css与两既有browser tests四literal，实际Picker/HTTP fixture及App Recovery为代表。MSG内侧滚动留白是另一个CSS精确交权项，不靠外层圆角宣称解决；保插件、焦点和两种滚动条边界。本次只读/NOT_TAKEN/NOT_RUN，未来fresh查重并合法交权；不阻最小网页发布。
+
+GO已明确原共享浮层片进入下一执行位，设计研究停止扩展：新网页发布第一，Plugin实际App继续；W01在产物交Original且Release安全STOP后，按现有VISUAL01/MATURE01独立树与fresh精确范围实施桌面/窄屏统一圆角、轻阴影、适度遮罩，以及正常目录层级/主操作可达。尽量与不重叠Plugin并行，不等其完整完成；必要Picker/CSS要明列范围而非只修外框冒信息层级完成。仅代表性局部验证，保语义/焦点/键盘/reduced-motion，不重跑全业务、不冒个人部署；完整Arc/双主题及扩展材质仍open。无新增agent/task/take，当前发布运行需要仍优先。见[本次执行队列](../../docs/evidence/web-platform/msg03-main-release-source-handoff-20261007/current.json)。

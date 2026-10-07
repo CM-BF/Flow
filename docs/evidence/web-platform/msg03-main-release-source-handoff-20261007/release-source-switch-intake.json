@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-07T14:54:01.259Z",
+  "taskId": "WPF-RELEASE01",
+  "sameTask": true,
+  "owner": "w01_owner",
+  "coLead": "external_web_d01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+  "branch": "codex/web-release-recovery",
+  "base": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "sourceSupplyCommit": "300386e2babce408b85ad5b9732d616782b78097",
+  "previousOwnerHead": "9fde5174b95b81dfe1b789facaf5fef1208a34c0",
+  "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
+  "version": 1,
+  "scope": [
+    "apps/web/src/plugin-integration/attachments.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/test/web-release-compatibility.browser.ts",
+    "apps/web/test/web-release-compatibility.fixture.ts",
+    "docs/evidence/wpf-release01",
+    "plans/wpf-release01-product-compatibility"
+  ],
+  "canonicalStatus": "plans/wpf-release01-product-compatibility/status.md",
+  "previousWorktreeStoppedAndReleased": true,
+  "newWebProducer": "w01_owner / Web co-lead under same Release task",
+  "runtime": "NOT_RUN",
+  "newWebDescriptor": null,
+  "backendDescriptor": "../backend-cd27-supply/result-descriptor.json",
+  "fullTaskStart": "UNKNOWN",
+  "sourceSegmentStart": "2026-10-07T14:54:01.259Z"
+}

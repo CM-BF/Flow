@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T14:24:50.216Z；共享草稿最小修复已获源码/局部审，W01准备旧Web移植；固定前后端产物待供。 |
+| 最近更新 | 2026-10-07T15:12:45.648Z；独立7272最小Web d736/1cea已获限定source/local审，cd27后端已审；W01保四scope准备artifact。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本大task历史首次开工缺独立证据，不以计划创建或本次更新时间回填；整体视觉体验验收尚未完成。 |
@@ -18,8 +18,8 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | 已审前端与恢复入口已合主线；Original held续接已使固定7d1/6c后台accepting v21，个人三服务继续。现网页资产仍d629/v3，新恢复网页未实际发布，不能把后台更新当全部视觉体验完成。 |
-| 下一可用交付 | 沿原发布链优先将包含已审恢复入口的新网页应用到个人预览；先固定相容前后端及真实Cookie恢复证据，不等待全部插件或快速设置验收。MSG03所选真实App与双390图已获限定接受，main接收与个人目录仍分开。 |
-| 当前阻塞 | ACTIVE: 必要草稿修复在旧Web消费组合及新产物尚待核验；后端可采用Original正式审定的04da/6c最小Logout修复组合，后端cd27/source04da descriptor及结果审已到，唯一待供产物是含必要共享小修的新Webdescriptor；已派Original原发布作者负责，等待其明确接受及唯一WT，未启动第二producer。 |
+| 下一可用交付 | 原发布链优先生成最小修复Web并验证固定pair，应用个人网页；Plugin真实App并行源码。下一独立执行位实施已设计共享浮层片，不等待完整Plugin，不再扩研究。 |
+| 当前阻塞 | ACTIVE: 新Web immutable descriptor与固定pair真实Cookie兼容/个人发布尚未完成；后端cd27/04da结果已审，旧Web消费者source/local e0a28已限定通过。W017d60v2保四scope准备产物，两产品已合法移出。个人设置目录与完整视觉目标仍open。 |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-01-visual |
@@ -46,7 +46,7 @@ root10:44–10:45已实际核本大task身份/co-lead与相关子片领取，见
 
 既有01/02 TODO已有[18literal只读提案](../../docs/evidence/web-platform/theme-extension-proposal.json)，不构成take或新产品事实。附件P1优先；后继需固定base、全范围fresh查重、独立树，不能沿VISUAL旧释放范围写入。
 
-真实Web发布兼容由独立[WPF-RELEASE01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)实施，首canonical1eff6e6f7543c7fdf30e5d94cec3c43b148bb764，20a6529a v1四scope；真实新旧App构建/专用PG及fixture runner，0provider/个人发布操作，7805固定已root10:46:30 APPROVED，final db08e7b已正常push/clean，待Lead按同descriptor受控接收；仅真实旧/新App与固定b1c中心fixture兼容，个人发布仍Lead。
+真实Web发布兼容由独立[WPF-RELEASE01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/plans/wpf-release01-product-compatibility/status.md)实施，首canonical1eff6e6f7543c7fdf30e5d94cec3c43b148bb764，20a6529a v1四scope；真实新旧App构建/专用PG及fixture runner，0provider/个人发布操作，7805固定已root10:46:30 APPROVED，final db08e7b已正常push/clean，待Lead按同descriptor受控接收；仅真实旧/新App与固定b1c中心fixture兼容，个人发布仍Lead。
 
 RELEASE01兼容输入已main c450且20a v2释放；后继根严格类型检查发现fixture构建矩阵的noUncheckedIndexedAccess两错，RELEASE02独立base2e71/03323bce v1三scope由w01窄修，runner_owner独立审。不是env/ENG失败，旧定向检查与原browser报告保其真实范围；不重跑旅程或个人发布。[当前接收队列](../../docs/evidence/web-platform/mature-task-handoff.md)。
 
@@ -74,3 +74,5 @@ GO 对本次两390图的[原MATURE01验收反馈](../../docs/evidence/web-platfo
 原视觉后继已复用[固定共享浮层设计研究](../../docs/evidence/web-platform/release-backend-route-20261007/shared-overlay/report.md)（7源、4本地skill、3primary文档），建议统一Dialog/token层次与正常目录渐进筛选/面向用户文案；保合法组合、Apply/CAS和原焦点语义。overlay scrollbar不能靠stable gutter解决，后续需内侧间距及两种滚动条模式验收；现theme插件仅color白名单，radius/shadow/filter是待设计权限，不是已有能力。此仅原02/04只读输入，未实现，不新取scope或重跑已绿检查。
 
 [共享浮层真实消费者清单](../../docs/evidence/web-platform/msg03-final-intake-access-20261007/shared-overlay-consumers/report.md)将既有设计落实到原02/04候选：固定main六消费文件十一处DialogContent，最少共享Dialog/assistant-ui.css与两既有browser tests四literal，实际Picker/HTTP fixture及App Recovery为代表。MSG内侧滚动留白是另一个CSS精确交权项，不靠外层圆角宣称解决；保插件、焦点和两种滚动条边界。本次只读/NOT_TAKEN/NOT_RUN，未来fresh查重并合法交权；不阻最小网页发布。
+
+GO已明确原共享浮层片进入下一执行位，设计研究停止扩展：新网页发布第一，Plugin实际App继续；W01在产物交Original且Release安全STOP后，按现有VISUAL01/MATURE01独立树与fresh精确范围实施桌面/窄屏统一圆角、轻阴影、适度遮罩，以及正常目录层级/主操作可达。尽量与不重叠Plugin并行，不等其完整完成；必要Picker/CSS要明列范围而非只修外框冒信息层级完成。仅代表性局部验证，保语义/焦点/键盘/reduced-motion，不重跑全业务、不冒个人部署；完整Arc/双主题及扩展材质仍open。无新增agent/task/take，当前发布运行需要仍优先。见[本次执行队列](../../docs/evidence/web-platform/msg03-main-release-source-handoff-20261007/current.json)。

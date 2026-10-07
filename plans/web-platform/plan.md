@@ -584,3 +584,5 @@ Original后到明确授权的[04da/6c最小后端路线](../../docs/evidence/web
 
 
 同一REQ19/MSG03后继现由[当前固定包](../../docs/evidence/web-platform/release-backend-route-20261007/current.json)收敛：b924两产品保护小修只通过其源码/消费者局部，W01准备准确旧Web移植，Original04da最小backend正式审定/descriptor尚待。MSG新独立120s mounted阶段复用原两旅程，每次45–60含30cleanup；旧90s/20s均closed不借余量。COREmain/release与D05切源已实际确认；剩余PROCESS/CLIENT登记由Original原D05处理，不新增任务或writer。
+
+既有插件/性能后继接收[固定主线7源只读研究](../../docs/evidence/web-platform/msg03-main-release-source-handoff-20261007/plugin-ui-performance/report.md)：Host已按slot缓存，导航不改registry；React内联subscribe的重订阅与低频全registry通知只是待测候选，没有已测瓶颈，不启动生产优化。隐藏Activity仍可能有低优先级props render，不能写零CPU。本条仅归WPF-001-05与既有性能验收，不新task/take/PASS，不写released PERF源；新网页交付优先。
