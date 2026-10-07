@@ -1,0 +1,51 @@
+{
+  "at": "2026-10-07T04:41:26.427402+00:00",
+  "source": "de0f3dc0afff72931fbc0fc0e1083bb7453fb74f",
+  "baseMain": "a040a364",
+  "budget": {
+    "workSeconds": 45,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "temporaryBytes": 8388608,
+    "outputBytes": 131072
+  },
+  "freshFreeBytes": 25639030784,
+  "result": {
+    "pid": 54667,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 9170,
+    "stdout": "",
+    "stderr": "",
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "temporaryBytes": 0,
+  "temporaryRemoved": true,
+  "PG": 0,
+  "provider": 0,
+  "finishedAt": "2026-10-07T04:41:35.601483+00:00"
+}

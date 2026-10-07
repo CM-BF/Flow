@@ -1,0 +1,59 @@
+{
+  "base": "153a759697e32f3f48f5148e0bb2e5e0a4ae6aa6",
+  "initialSource": "65c97315b151472ea2e606e182dd6d7c9f2d7d00",
+  "fixSource": "de0f3dc0afff72931fbc0fc0e1083bb7453fb74f",
+  "packet": "07aa77114dc03ae09e64d0572a373fa54165b370",
+  "state": "READY_FOR_CONTROLLED_INTAKE",
+  "review": {
+    "at": "2026-10-07T04:20:47Z",
+    "reviewer": "status_read/gpt-6-astra",
+    "source": "de0f3dc0afff72931fbc0fc0e1083bb7453fb74f",
+    "packet": "07aa77114dc03ae09e64d0572a373fa54165b370",
+    "verdict": "SOURCE_AND_DELTA_RESULT_REVIEW_APPROVED",
+    "P1": 0,
+    "P2": 0,
+    "closed": "pending sink cancellation",
+    "scope": "private stream kernel +106 distinct in rounds; no public mount/native/provider",
+    "recordSha256": "a875958bd474993e73aa8d743a22350632170cc026a99bb02e2de7878a5d26a7",
+    "timeLimit": "907s external enclosure cannot certify metadata/Git/tool <=900s; all6 supervised child/cleanup ended04:18:37",
+    "sinkEffects": "UNKNOWN after interrupted wait"
+  },
+  "files": [
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "ref": "65c97315b151472ea2e606e182dd6d7c9f2d7d00",
+      "bytes": 8361,
+      "sha256": "e51986edad382fdf42e5774da855d5fee9127e9715c540eba60600cb91a1cdf4"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.test.ts",
+      "ref": "65c97315b151472ea2e606e182dd6d7c9f2d7d00",
+      "bytes": 5504,
+      "sha256": "94b1f7279d0ff638fea4a4cb683d9df0f4ff73a1502a52b37c43b3e67e58618f"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "ref": "de0f3dc0afff72931fbc0fc0e1083bb7453fb74f",
+      "bytes": 6116,
+      "sha256": "dc8036e14b7395891b61d7723a8b10212fba7ac70f6579093b160c08fd3d756a"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.test.ts",
+      "ref": "de0f3dc0afff72931fbc0fc0e1083bb7453fb74f",
+      "bytes": 10214,
+      "sha256": "9c3a1e7ad1de055540763bcef81be8f5af50189e3bc9fb16c25be1c36d04b8a2"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "ref": "de0f3dc0afff72931fbc0fc0e1083bb7453fb74f",
+      "bytes": 2979,
+      "sha256": "3b938f081f2e1fff4c214b6a8a82691a036de7329f819ec475c5670a62f13e57"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/peer.mjs",
+      "ref": "65c97315b151472ea2e606e182dd6d7c9f2d7d00",
+      "bytes": 7885,
+      "sha256": "d34ed1fc25f55d23342549797507cd52cf421b5273e3af8672d82ef376aa6228"
+    }
+  ]
+}

@@ -322,3 +322,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T04:31:59.010755+00:00：D06固定591组合及babd收口受控接收，exact8预像/目标一致；复用Web独立22direct与5browser/20观察证据，未重跑。三产品源和唯一own记录同步，历史首轮失败保留；固定图仍0da源码快照，不冒当前个人运行能力。
 
 2026-10-07T04:38:50.337581+00:00：受控接收SVC06 b3d固定结果与OPS 485限定文档；[结果独审](../../docs/evidence/i02/svc06-host-followup-result-review.json)、[来源逐文件绑定](../../docs/evidence/i02/svc06-result-ops-intake.json)。0新测试/provider/个人服务操作，main接收不代表默认部署链完成。
+
+2026-10-07T04:41:47.076164+00:00：C02私有流内核6源按原APPROVED de0f受控接收，主线preimage六项全同；[来源与限定审查](../../docs/evidence/i02/codex-stream-controlled-intake.json)、[一次组合类型检查](../../docs/evidence/i02/codex-stream-combination-types.json)exit0/9170ms/组absent。原106项分轮证据直接复用，0PG/provider。公共v2读取/真实Codex/UI均未随此批准。
