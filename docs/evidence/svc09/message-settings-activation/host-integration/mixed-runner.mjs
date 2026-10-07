@@ -6,6 +6,15 @@ import { join } from 'node:path';
 import { lstat, readdir } from 'node:fs/promises';
 import { pathToFileURL } from 'node:url';
 import { setTimeout as delay } from 'node:timers/promises';
+
+export async function readMixedTaskRows(pool, taskIds) {
+  try {
+    return (await pool.query('SELECT t.id,t.submission,t.status,t.current_attempt_id,a.runner_id,a.id AS attempt_id FROM flow.tasks t JOIN flow.attempts a ON a.id=t.current_attempt_id WHERE t.id=ANY($1::text[]) ORDER BY t.id', [taskIds])).rows;
+  } catch (cause) {
+    throw Object.assign(new Error('Mixed task snapshot query failed', { cause }), { code: 'MIXED_TASK_QUERY_FAILED' });
+  }
+}
+
 export async function runMixedConsumer({ root, baseUrl, slots, profiles, choices, http, pool, checkpoint }) {
   const load = path => import(pathToFileURL(join(root, path)).href);
   const { runRunner } = await load('apps/runner/src/runtime.ts');
@@ -95,7 +104,7 @@ export async function runMixedConsumer({ root, baseUrl, slots, profiles, choices
   assert.deepEqual(claimed.map(value => value.slot), ['settings', 'legacy']);
   const admissionStatus = await Promise.all(slots.map(quiescent));
   await checkpoint('mixed-final-admission-status', admissionStatus);
-  const rows = (await pool.query('SELECT t.id,t.submission,t.status,t.current_attempt_id,a.runner_id,a.id AS attempt_id FROM flow.tasks t JOIN flow.attempts a ON a.id=t.current_attempt_id WHERE t.id=ANY($1::uuid[]) ORDER BY t.id', [[tasks.legacy.id, tasks.settings.id]])).rows;
+  const rows = await readMixedTaskRows(pool, [tasks.legacy.id, tasks.settings.id]);
   assert.equal(rows.length, 2);
   for (const id of ['legacy', 'settings']) {
     const row = rows.find(value => value.id === tasks[id].id), slot = slots.find(value => value.id === id);
