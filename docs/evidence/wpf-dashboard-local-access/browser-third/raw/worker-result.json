@@ -1,0 +1,50 @@
+{
+  "state": "FAILED",
+  "workerPid": 69301,
+  "chromePid": 69332,
+  "chromeExit": {
+    "code": 0,
+    "signal": null
+  },
+  "interrupts": [],
+  "cleanupErrors": [],
+  "result": {
+    "state": "FAILED",
+    "checks": [
+      "empty-by-default; keyboard opening/Tab/Escape/focus return; product href only",
+      "390 light/dark with fake-only empty credential screenshots; no dialog horizontal overflow",
+      "load masks; native clipboard success; explicit injected clipboard denial; show/hide clears",
+      "close aborts outstanding read; late response does not restore token; reopen needs explicit load"
+    ],
+    "fakeCredentialOnly": true,
+    "errors": [
+      "expect(received).toBe(expected) // Object.is equality\n\nExpected: \"hidden\"\nReceived: \"visible\"\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate"
+    ],
+    "cleanup": {
+      "context": "closed",
+      "http": "closed"
+    },
+    "visibility": {
+      "before": "visible",
+      "focusEmulationDisabled": true,
+      "afterOwnedTabSwitch": "visible",
+      "windowId": 975387409,
+      "windowStateBefore": "normal",
+      "ownedWindowMinimized": true,
+      "windowRestored": true,
+      "focusEmulationRestored": true,
+      "sessionDetached": true,
+      "otherPageClosed": true
+    },
+    "credentialReadCount": 4
+  },
+  "cdpPort": 53258,
+  "chromeStdoutEOF": true,
+  "chromeStderrEOF": true,
+  "chromeLog": {
+    "observedBytes": 319,
+    "retainedBytes": 319,
+    "truncatedBytes": 0,
+    "finalAfterEOF": true
+  }
+}

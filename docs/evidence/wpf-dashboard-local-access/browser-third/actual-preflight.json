@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-07T03:38:25.430287+00:00",
+  "head": "e970f81a3ef71220dbb394f0447b281cacd37b0a",
+  "branch": "codex/dashboard-local-access",
+  "dirty": false,
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/execution-dashboard/README.md",
+      "apps/execution-dashboard/public/index.html",
+      "apps/execution-dashboard/public/local-access.css",
+      "apps/execution-dashboard/public/local-access.js",
+      "apps/execution-dashboard/src/local-access.mjs",
+      "apps/execution-dashboard/src/server.mjs",
+      "apps/execution-dashboard/test/local-access.browser.mjs",
+      "apps/execution-dashboard/test/local-access.test.mjs",
+      "docs/evidence/wpf-dashboard-local-access",
+      "plans/wpf-dashboard-local-access"
+    ],
+    "state": "active",
+    "branch": "codex/dashboard-local-access",
+    "origin": "new",
+    "taskId": "WPF-DASHBOARD-ACCESS01",
+    "worker": "workspace_panels_owner",
+    "claimId": "57735ff7-d631-4538-9faf-d7ac090837a2",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
+    "createdAt": "2026-10-07T02:52:33.082Z",
+    "updatedAt": "2026-10-07T02:52:33.082Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "conflicts": [],
+  "pinsMatched": 33,
+  "scripts": {
+    "run.py": "b3ec56e7f3d787dec031f981783ef0385df4121197d1eeec2bda60a69846992c",
+    "worker.mjs": "519a76ce9695ecc77c985e006741dc74787512dd14540a1eb70655674b25f2bd"
+  },
+  "freeBytes": 25887838208,
+  "startRequiredBytes": 1378091008,
+  "concurrentLocalAllowanceBytes": 27525120,
+  "limits": {
+    "originalTotalMs": 60000,
+    "previousSpentConservativeMs": 18728,
+    "totalMs": 41272,
+    "workMs": 26272,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608
+  },
+  "authority": "Root exact third heavy handoff after SVC06 actual cleanup; once only, no fourth run.",
+  "latestDeclaredConcurrentLocalBytes": 18087936,
+  "latestConcurrentSource": "Root relayed Mika C02 actual local17.25MiB; retained higher26.25MiB allowance, no additional sampling"
+}

@@ -1,0 +1,18 @@
+{
+  "state": "FAILED",
+  "checks": [
+    "empty-by-default; keyboard opening/Tab/Escape/focus return; product href only",
+    "390 light/dark with fake-only empty credential screenshots; no dialog horizontal overflow",
+    "load masks; native clipboard success; explicit injected clipboard denial; show/hide clears",
+    "close aborts outstanding read; late response does not restore token; reopen needs explicit load"
+  ],
+  "fakeCredentialOnly": true,
+  "errors": [
+    "expect(received).toBe(expected) // Object.is equality\n\nExpected: \"hidden\"\nReceived: \"visible\"\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate"
+  ],
+  "cleanup": {
+    "context": "closed",
+    "http": "closed"
+  },
+  "credentialReadCount": 4
+}

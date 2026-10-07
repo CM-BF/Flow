@@ -1,0 +1,27 @@
+{
+  "state": "PASSED",
+  "syntheticOnly": true,
+  "cases": [
+    {
+      "case": "enoent",
+      "testPassed": true,
+      "expectedParentState": "PASSED",
+      "actualParentExit": 0,
+      "bothEOF": true,
+      "groupAbsent": true,
+      "scratchRemoved": true
+    },
+    {
+      "case": "permission",
+      "testPassed": true,
+      "expectedParentState": "FAILED",
+      "actualParentExit": 1,
+      "bothEOF": true,
+      "groupAbsent": true,
+      "scratchRemoved": true
+    }
+  ],
+  "elapsedMs": 403.83262501563877,
+  "runnerSha256": "88e3ef0f47159abffc3f2ef6ad1f218ba79644c8201f93e3d45740763d5f39d8",
+  "limitations": "Actual parent code with mocked filesystem failure/statvfs and substituted bounded Python child. No Chrome/Node product/import/HTTP/PG/listener. Worker Chrome log finalization source-only, not dynamically tested."
+}

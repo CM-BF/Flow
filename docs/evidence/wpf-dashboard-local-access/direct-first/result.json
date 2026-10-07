@@ -1,0 +1,20 @@
+{
+  "state": "PASSED",
+  "at": "2026-10-07T03:05:42.242621+00:00",
+  "source": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "apps/execution-dashboard/test/local-access.test.mjs"
+  ],
+  "actualExit": 0,
+  "elapsedMs": 184.53429103828967,
+  "budgetMs": 30000,
+  "workLimitMs": 25000,
+  "maxSampledBytes": 2591,
+  "logBytes": 2591,
+  "ownedGroupAbsent": true,
+  "scratchRemoved": true,
+  "errors": [],
+  "limitations": "Sampled logical bytes, no OS quota. Only one Node process and owned dynamic HTTP/config fixture. No personal credentials/PG/Chrome."
+}

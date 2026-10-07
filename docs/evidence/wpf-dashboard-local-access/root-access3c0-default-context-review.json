@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T03:49:52.038179+00:00",
+  "reviewer": "/root independent",
+  "decision": "APPROVED_SOURCE_AND_CALLER_PREPARATION_NOT_RUN",
+  "target": "3c0dda7b7a8887ac763d8a1651231374b0f3356d",
+  "metadata": "d0f6a62f1c4b9dc940f211b32cce4242628e1d26",
+  "errors": [],
+  "appChangedPaths": [
+    "apps/execution-dashboard/test/local-access.browser.mjs"
+  ],
+  "pinsVerified": 33,
+  "scriptPins": {
+    "run.py": "d923251501adcd977052a2327f50c2bdad182f24575825b5337b54303be2a9e7",
+    "worker.mjs": "879cb415aee802299464f2d345f2638bb3793617481a2cdf34224f20b8e65ee9"
+  },
+  "reviewed": [
+    "Fixture explicitly receives ownedDefaultContext, preserves explicit1000x800 viewport and allfiveoriginal assertions; browser.newContext and ineffective cross-sessionfocus overrides removed.",
+    "Caller uses documented connectOverCDP noDefaults:true for freshspawned Chrome/newexclusiveprofile, admits onlyone context and initialabout:blank pages before ownership transfer.",
+    "Defaultcontext.close may close browser; original parent still independently supervises childPGID/actualexit/EOF/finalChrome log and scratchcleanup.",
+    "No productmodule/HTTP/UI/direct35 change; nativehidden before tokenempty remainsmandatory, no visibility attribute/event simulation.",
+    "Parent changes only correspondingremaining14.161work/29.161total offsets and source/head/previous30839 fields. All three original failures retained."
+  ],
+  "limits": {
+    "originalTotalMs": 60000,
+    "previousSpentConservativeMs": 30839,
+    "totalMs": 29161,
+    "workMs": 14161,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608
+  },
+  "cleanCode": "Use one documented browser/context ownership seam instead of layered per-sessionfocus workarounds. No newrunner/framework or productsecurity relaxation.",
+  "runtime": "NOT_RUN; concrete nextsharedheavyhandoff and freshclaim/resources required. This review does not reservewindow.",
+  "requiredActual": [
+    "Actualouterexit and uniquecompletefinalrecord, fivechecks/nativehidden+tokenempty, originalfourbehaviorchecks unchanged but context/lifecycle input changed so one fullfixture run is reasonable.",
+    "Ownwindow/tabrestore, context/http/Chrome/group/EOF/scratchcleanup; no automaticfifthrun.",
+    "Main/deployment/realinstallation remainNOT_RUN."
+  ],
+  "auditNote": "First read-only audit compared allrepositorypaths and correctly saw intervening evidence commits; corrected source attribution to apps only. No product/runtimecheck ran."
+}

@@ -1,0 +1,299 @@
+{
+  "at": "2026-10-07T03:55:16.359510+00:00",
+  "reviewer": "/root independent",
+  "decision": "APPROVED_FIXED_SOURCE_DIRECT35_AND_BROWSER5_COMPOSITION",
+  "target": "366a568f2750777f683941180b665af7c4a3effb",
+  "base": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+  "productTarget": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "browserSourceTarget": "3c0dda7b7a8887ac763d8a1651231374b0f3356d",
+  "executionMetadata": "d0f6a62f1c4b9dc940f211b32cce4242628e1d26",
+  "scope": [
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/src/local-access.mjs",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/public/local-access.js",
+    "apps/execution-dashboard/public/local-access.css",
+    "apps/execution-dashboard/test/local-access.test.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs",
+    "apps/execution-dashboard/README.md",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff"
+  ],
+  "sourcePins": [
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "sha256": "a1cfce71211b02006384a96991ad9e65e2cfeb99f497ad5d7777fe077e10a9ff",
+      "bytes": 4446,
+      "approvedSource": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7"
+    },
+    {
+      "path": "apps/execution-dashboard/src/local-access.mjs",
+      "sha256": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+      "bytes": 7687,
+      "approvedSource": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7"
+    },
+    {
+      "path": "apps/execution-dashboard/public/index.html",
+      "sha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+      "bytes": 8840,
+      "approvedSource": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7"
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.js",
+      "sha256": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+      "bytes": 6064,
+      "approvedSource": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7"
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.css",
+      "sha256": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+      "bytes": 1315,
+      "approvedSource": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7"
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.test.mjs",
+      "sha256": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+      "bytes": 10492,
+      "approvedSource": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7"
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.browser.mjs",
+      "sha256": "c55f6ebc3cb6c4bcaba5ca4f82b8e48abb70bb5624a8d5ec437a99c9d46360d0",
+      "bytes": 9875,
+      "approvedSource": "3c0dda7b7a8887ac763d8a1651231374b0f3356d"
+    }
+  ],
+  "archivedRawVerified": [
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/actual-exit.json",
+      "bytes": 169,
+      "sha256": "50131b24e78f70cff58add6ad9acf584ac25fd21482db98a6d7597371e110417"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/default-context-source.json",
+      "bytes": 2623,
+      "sha256": "9fb604dfb96c693caef8ecbbe91259e8af586021bb9413b251db412c198d2c13"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/final-live.json",
+      "bytes": 1195,
+      "sha256": "14ca0d3771e46bade623ee9e947f36cea677383562032da5f82fc3c8281c9f13"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/fresh-claim.json",
+      "bytes": 1186,
+      "sha256": "b5a827badb7025db115f2d2d0a5a0cd69a2d22d429be540cda0d1d5ec7006709"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/fresh-resource-pins.json",
+      "bytes": 309,
+      "sha256": "87e3e741294ff5a199a876cb746c3eec9bc87e72f619114be18b5538ee7e6a90"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/manifest.json",
+      "bytes": 16889,
+      "sha256": "6786b11f3f0292e94e19107d2f9ab9c56c4748334bb44ef0e56ae9647cd017ec"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/post-cleanup.json",
+      "bytes": 262,
+      "sha256": "fe7ee5977391831869de6f79f70cecb974c0532f006ba741219ab8ddab7681dc"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/preparation.json",
+      "bytes": 1821,
+      "sha256": "6e9d5ef1a96fd67955b58af38e54ee2871453959a80f0d9cf7386312372d6dea"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/390-dark.png",
+      "bytes": 72218,
+      "sha256": "7a45af6e7b11a881c785a12e5b5750e98b13f69b408a81dcec1d72b1d56c57ca"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/390-light.png",
+      "bytes": 75164,
+      "sha256": "b8734895792a052930416ae7a944f6903cba7d0e1a130fbc11efeaadf6909629"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/browser-result.json",
+      "bytes": 832,
+      "sha256": "5ea185a1bdb135572ce1a647642208f0f2b7970aa4872b1b6265ebc33bc3e93c"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/chrome.log",
+      "bytes": 168,
+      "sha256": "10f0eaaaa622802a803d4c59bc9a6969da2ed1f716f37345f2730d9d7f657eb9"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/owned.json",
+      "bytes": 598,
+      "sha256": "9c15c52ff5f690661f4fd02f25262ba961232037db08fcc9a5fb780ee1e010cd"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/parent-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/parent-stdout.log",
+      "bytes": 1314,
+      "sha256": "e20a45866bba1730f0724916d7828479ff5494e5995e2ddc5d458db34dffa3f4"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/result.json",
+      "bytes": 1266,
+      "sha256": "a59136c66f6dbfbe8d44204f84d23becaee7dfa8364ff48459b791cb4f06bf2a"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/worker-result.json",
+      "bytes": 1609,
+      "sha256": "a6ea8ac08229bf236d0b75ee81e219161bd459e7b2de9f5f1c7fea98a22c5f6d"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/report.md",
+      "bytes": 1644,
+      "sha256": "60b26380ad07133d9dd6575789e75f1a617abc4c5887e08a4614e6370c0b0882"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/root-access-third-actual-research.json",
+      "bytes": 3261,
+      "sha256": "ee682bdc9f09c265af54a051166db4171c9958d2e4cb3903786187a9ecd0d4e0"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/root-access-third-preparation-review.json",
+      "bytes": 1675,
+      "sha256": "de6906d3677fa8af02a2e6876f0ea46102b0c53c968185385f58fddac341655b"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.txt",
+      "bytes": 6238,
+      "sha256": "d923251501adcd977052a2327f50c2bdad182f24575825b5337b54303be2a9e7"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff",
+      "bytes": 4986,
+      "sha256": "ad33f2f1996d4e72b48bac04aa79aaad82d571f29b535c460077238857539faa"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout",
+      "bytes": 1340,
+      "sha256": "37468d8f91a256ca7e342929ef79369493bc8c002378c67cb415b12c7b16d018"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.txt",
+      "bytes": 5629,
+      "sha256": "879cb415aee802299464f2d345f2638bb3793617481a2cdf34224f20b8e65ee9"
+    },
+    {
+      "path": "docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff",
+      "bytes": 2768,
+      "sha256": "f9a48970d7bfb9dba3b0dd3ac9370ea1af66a07b4d48941b3c0f64a46148ba52"
+    }
+  ],
+  "archivedBytes": 205164,
+  "actual": {
+    "actualExit": 0,
+    "startedAt": "2026-10-07T03:51:22.328243+00:00",
+    "endedAt": "2026-10-07T03:51:28.565907+00:00",
+    "outerElapsedMs": 6237.586374976672,
+    "parentEarlyElapsedMs": 6202.551040914841,
+    "parentLateElapsedMs": 6203.291374957189,
+    "selectedGroups": 5,
+    "passedGroups": 5,
+    "checks": [
+      "empty-by-default; keyboard opening/Tab/Escape/focus return; product href only",
+      "390 light/dark with fake-only empty credential screenshots; no dialog horizontal overflow",
+      "load masks; native clipboard success; explicit injected clipboard denial; show/hide clears",
+      "close aborts outstanding read; late response does not restore token; reopen needs explicit load",
+      "actual hidden page clears; no credential in browser storage"
+    ],
+    "contextAdmission": {
+      "chromePid": 673,
+      "profile": "/private/tmp/access01-browser-fourth-k3zdae5a/scratch/chrome",
+      "contextCount": 1,
+      "initialPageCount": 1,
+      "onlyInitialAboutBlank": true,
+      "noDefaults": true,
+      "ownership": "fresh PID and exclusive profile created by this worker; default context transferred to fixture"
+    },
+    "visibility": {
+      "before": "visible",
+      "afterOwnedTabSwitch": "hidden",
+      "observedHidden": "hidden",
+      "tokenCleared": true,
+      "sessionDetached": true,
+      "otherPageClosed": true
+    },
+    "cleanup": {
+      "scenario": {
+        "context": "closed",
+        "http": "closed"
+      },
+      "chromeExit": {
+        "code": 0,
+        "signal": null
+      },
+      "chromeStdoutEOF": true,
+      "chromeStderrEOF": true,
+      "parentStdoutEOF": true,
+      "parentStderrEOF": true,
+      "ownedGroupAbsent": true,
+      "scratchRemoved": true,
+      "errors": [],
+      "cleanupErrors": [],
+      "interrupts": [],
+      "postCleanup": {
+        "worker": {
+          "pid": 670,
+          "state": "ABSENT"
+        },
+        "chrome": {
+          "pid": 673,
+          "state": "ABSENT"
+        },
+        "group": "ABSENT",
+        "cdp": {
+          "port": 54379,
+          "connectEx": 61
+        },
+        "scratchAbsent": true,
+        "at": "2026-10-07T03:51:35.626356+00:00"
+      }
+    },
+    "budget": {
+      "totalMs": 60000,
+      "previousConservativeSpentMs": 30839,
+      "thisRoundedUpMs": 6238,
+      "cumulativeConservativeMs": 37077,
+      "remainingConservativeMs": 22923,
+      "actualOuterSumMs": 37074.977417010814,
+      "nextCleanupReserveMs": 15000
+    }
+  },
+  "independentInputs": [
+    "root-access08-source-direct-review.json: six unchanged product/direct sources,35actual tests and README explanation",
+    "root-access3c0-default-context-review.json: browser source/caller preparation",
+    "all26fourthactual/archive/original hashbindings and parent/worker/postcleanup read directly; dual390 PNG visually inspected"
+  ],
+  "screenshots": {
+    "light": "browser-fourth/raw/390-light.png",
+    "dark": "browser-fourth/raw/390-dark.png",
+    "observed": "Empty token, readable focused dialog at390, no horizontal overflow, light/dark visible; fake-only original screenshots."
+  },
+  "blockingFindings": [],
+  "compositionReason": "366a includes actual evidence .diff/.stdout/.stderr files after3c0, which existingproof correctly regards nonmetadata. Explicitly include these original paths in declaration; do not weaken parser, rename archives, or rerun passing checks. Other evidence metadata retains original hashes.",
+  "cleanCode": "Product/provider lifecycle and bounded errors reviewed previously; final test uses one explicit owned default-context seam. Source files unchanged and all original assertions preserved. Measurement/cleanup and failed attempts are distinct facts.",
+  "limits": [
+    "Approval covers isolated fake configuration/HTTP/browser and prior direct35 only; real private installation/server deployment/userlogin NOT_RUN.",
+    "Main integration and publication remain originalLead responsibility. No personal service or tab inspected.",
+    "Three previous failures retained; cumulative37077ms/remaining22923ms is historical balance, no fifth run authorized.",
+    "Archive composition approval is not a new execution; source+81 from Timing not relevant to ACCESS."
+  ]
+}

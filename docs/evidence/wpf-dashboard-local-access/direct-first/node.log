@@ -1,0 +1,43 @@
+✔ default off ignores even malformed installation environment (13.752292ms)
+✔ metadata never reads or serializes credentials; explicit POST reads once with no-store (3.143125ms)
+✔ rejects wrong Host before provider access (0.802959ms)
+✔ rejects same-site other port before provider access (1.186125ms)
+✔ rejects null Origin before provider access (0.781375ms)
+✔ rejects empty Origin before provider access (0.991875ms)
+✔ rejects absent Origin before provider access (0.745084ms)
+✔ rejects absent fetch metadata before provider access (0.892958ms)
+✔ rejects cross-site fetch before provider access (0.762083ms)
+✔ rejects same-site fetch before provider access (0.611334ms)
+✔ rejects navigation before provider access (0.568791ms)
+✔ rejects missing deliberate header before provider access (0.586917ms)
+✔ rejects forwarded spoof before provider access (0.665333ms)
+✔ rejects GET credential before provider access (0.928167ms)
+✔ rejects preflight before provider access (1.273834ms)
+✔ rejects query file selector before provider access (1.01925ms)
+✔ rejects unknown route before provider access (0.763709ms)
+✔ nonloopback peer cannot obtain metadata or token even with exact headers (0.173375ms)
+✔ provider exception and malformed value never escape into HTTP errors (1.239125ms)
+✔ one outstanding read; failure releases the read slot (1.137125ms)
+✔ bound provider projects one credential and accepts a same-installation atomic rotation (4.2695ms)
+✔ provider rejects permissive file with a safe error (1.984417ms)
+✔ provider rejects permissive directory with a safe error (1.074417ms)
+✔ provider rejects symlink file with a safe error (1.202583ms)
+✔ provider rejects hardlinked file with a safe error (1.648583ms)
+✔ provider rejects oversized file with a safe error (2.464125ms)
+✔ provider rejects malformed JSON with a safe error (1.734541ms)
+✔ provider rejects invalid UTF8 with a safe error (1.389125ms)
+✔ provider rejects wrong identity with a safe error (1.159791ms)
+✔ provider rejects wrong repository with a safe error (1.070416ms)
+✔ provider rejects wrong Web port with a safe error (1.309792ms)
+✔ provider rejects wrong declared directory with a safe error (2.122542ms)
+✔ provider rejects invalid token with a safe error (1.103291ms)
+✔ provider rejects replaced directory with a safe error (1.432667ms)
+✔ startup refuses a directory symlink and incomplete opt-in without reading config (1.068084ms)
+ℹ tests 35
+ℹ suites 0
+ℹ pass 35
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 118.73075

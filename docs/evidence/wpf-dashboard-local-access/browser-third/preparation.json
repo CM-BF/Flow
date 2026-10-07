@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-07T03:36:31.703639+00:00",
+  "state": "READY_NOT_RUN_NO_HEAVY_WINDOW",
+  "head": "e970f81a3ef71220dbb394f0447b281cacd37b0a",
+  "implementation": "ccd88577652369e17385a30c9a9a3dfa8e91d966",
+  "originalCaller": {
+    "run.py": "09ac049a54b315d9cca9c10f78ce5209a198da5f644e2174b1d4ef95a42ceb5f",
+    "worker.mjs": "3fcd86a271c265ba45ed074d3a44f1c7f8290f5c7ee779ef149f339cfb30a5dc"
+  },
+  "scriptPins": {
+    "run.py": "b3ec56e7f3d787dec031f981783ef0385df4121197d1eeec2bda60a69846992c",
+    "worker.mjs": "519a76ce9695ecc77c985e006741dc74787512dd14540a1eb70655674b25f2bd"
+  },
+  "manifestSha256": "8bb5c029889c27e3a272743952ba1672ac0360d8a924e6e29454023089389074",
+  "limits": {
+    "originalTotalMs": 60000,
+    "previousSpentConservativeMs": 18728,
+    "totalMs": 41272,
+    "workMs": 26272,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608
+  },
+  "diffs": [
+    "run.py: only all corresponding work/cleanup/report absolute offsets plus source, metadata, prior spent fields. No lifecycle branch change.",
+    "worker.mjs: only work timer37519\u219226272; scenario import and cleanup unchanged."
+  ],
+  "staticCheck": "Python ast.parse only; no run/import/Node/browser/check or resource/process sampling. Source21 and external12 current bytes/realpaths pinned; original15+36 archived artifacts verified unchanged.",
+  "requiredBeforeExecution": [
+    "Explicit new root heavy handoff after SVC06 actual terminal cleanup; no assumed expiry.",
+    "Fresh current HEAD/clean/claim57735v1/exact10 and all declared pins; any metadata-only seal changes require explicit head rebind.",
+    "Fresh actual shared-resource admission including any concurrent local segment, native Chrome permissions and own paths.",
+    "Create only new own scratch/raw after authorization; preserve parent terminal stdout/stderr and actual outer exit. No automatic fourth run."
+  ],
+  "noCurrentRuntimeDirectories": true
+}

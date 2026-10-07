@@ -1,0 +1,11 @@
+--- /private/tmp/access01-browser-followup-jn35famf/worker.mjs
++++ /private/tmp/access01-browser-third-2855hbyp/worker.mjs
+@@ -11,7 +11,7 @@
+ let chromeBytes=0,totalChromeBytes=0;const chunks=[];
+ const stop=signal=>{process.exitCode=1;report.interrupts.push(signal);if(chrome?.pid&&chrome.exitCode===null&&chrome.signalCode===null)chrome.kill('SIGTERM');};
+ process.on('SIGTERM',stop);process.on('SIGINT',stop);
+-const workTimer=setTimeout(()=>stop('work-timeout'),37519);
++const workTimer=setTimeout(()=>stop('work-timeout'),26272);
+ async function bounded(action,ms){let timer;try{return await Promise.race([action(),new Promise((_,reject)=>{timer=setTimeout(()=>reject(new Error('cleanup deadline')),ms);})]);}finally{clearTimeout(timer);}}
+ try {
+  const {chromium,expect}=await import('/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs');

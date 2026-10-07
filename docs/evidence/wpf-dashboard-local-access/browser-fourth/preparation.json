@@ -1,0 +1,35 @@
+{
+  "at": "2026-10-07T03:47:26.777872+00:00",
+  "state": "READY_FOR_SOURCE_REVIEW_NOT_RUN",
+  "head": "d0f6a62f1c4b9dc940f211b32cce4242628e1d26",
+  "implementation": "3c0dda7b7a8887ac763d8a1651231374b0f3356d",
+  "originalCaller": {
+    "run.py": "b3ec56e7f3d787dec031f981783ef0385df4121197d1eeec2bda60a69846992c",
+    "worker.mjs": "519a76ce9695ecc77c985e006741dc74787512dd14540a1eb70655674b25f2bd"
+  },
+  "scriptPins": {
+    "run.py": "d923251501adcd977052a2327f50c2bdad182f24575825b5337b54303be2a9e7",
+    "worker.mjs": "879cb415aee802299464f2d345f2638bb3793617481a2cdf34224f20b8e65ee9"
+  },
+  "manifestSha256": "6786b11f3f0292e94e19107d2f9ab9c56c4748334bb44ef0e56ae9647cd017ec",
+  "limits": {
+    "originalTotalMs": 60000,
+    "previousSpentConservativeMs": 30839,
+    "totalMs": 29161,
+    "workMs": 14161,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608
+  },
+  "delta": [
+    "Parent only source/head/prior spent and corresponding absolute timing offsets; no lifetime branch changes.",
+    "Worker only14161ms worktimer, documented noDefaults:true, explicit single defaultcontext/aboutblank admission and fixture argument. Original Chrome/process/EOF/log cleanup unchanged."
+  ],
+  "sourceVerification": "21source+12external filesystem hashes/realpaths fixed, previous15+36+24 archive raw pins unchanged. Python ASTparse only; no Node/import/check/Chrome/HTTP/PG/free/proc.",
+  "requiredBeforeExecution": [
+    "Root source/caller review, then explicit actual heavy handoff. Preparation does not reserve a window.",
+    "Fresh original10scope claim/currentHEADclean/pins and actual resource admission.",
+    "Only new own scratch/raw after grant; complete outer stdout/stderr/actualexit/elapsed. LateFAIL wins, no automatic fifth run."
+  ],
+  "runtimeDirectoriesExist": false
+}

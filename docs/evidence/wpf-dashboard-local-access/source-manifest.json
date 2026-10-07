@@ -1,0 +1,78 @@
+{
+  "task": "WPF-DASHBOARD-ACCESS01",
+  "base": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
+  "implementation": "366a568f2750777f683941180b665af7c4a3effb",
+  "state": "APPROVED_FIXED_SOURCE_DIRECT35_BROWSER5_COMPOSITION_NOT_MAIN",
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "bytes": 4446,
+      "sha256": "a1cfce71211b02006384a96991ad9e65e2cfeb99f497ad5d7777fe077e10a9ff",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/src/local-access.mjs",
+      "bytes": 7687,
+      "sha256": "353e1f883acc0afac9e61358b70bb468f840cf6a4554d80236fa5c0197958932",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/index.html",
+      "bytes": 8840,
+      "sha256": "91f1d0f0186b201430e5c04f06a7d22fa5379d2bf8a08545314b8fc9bfd943a0",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.js",
+      "bytes": 6064,
+      "sha256": "c74ea6841ead20e3495fa2bc1762f708d7665610cfde9860d13d6996766fa966",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/public/local-access.css",
+      "bytes": 1315,
+      "sha256": "0797be49487ede1d6c865230bc195558512ffc24e3b2789c1323da43600fa707",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.test.mjs",
+      "bytes": 10492,
+      "sha256": "827b3d7ae16f27a72c8fb303d3aa88234010e6f612c6455f66085c29580a0248",
+      "currentEqualsFixed": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/local-access.browser.mjs",
+      "bytes": 9875,
+      "sha256": "c55f6ebc3cb6c4bcaba5ca4f82b8e48abb70bb5624a8d5ec437a99c9d46360d0",
+      "currentEqualsFixed": true
+    }
+  ],
+  "checkEntry": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "apps/execution-dashboard/test/local-access.test.mjs"
+  ],
+  "staticExpectedTests": 35,
+  "imports": "Direct entry imports only local-access.mjs and Node built-ins; no aggregate/pg/browser/personal configuration.",
+  "browserEntry": "checkLocalAccessBrowser({ownedDefaultContext,expect,outputDirectory}); caller transfers only its fresh owned Chrome default context attached with documented noDefaults:true. Fixture sets page viewport explicitly and closes transferred context (which closes that owned browser); caller continues PID/EOF/process cleanup. Five groups unchanged; one actual fourth run passed at execution metadata d0f6a62f1c4b9dc940f211b32cce4242628e1d26.",
+  "runtime": "35direct passed at08ec unchanged dependencies. Browser runs1/2/3 original FAILED4/5 preserved. Run4 source3c0dda/defaultcontext/noDefaults passed5/5 with actual nativehidden+tokenempty, exit0, all owned cleanup; independent fixed366a composition review APPROVED, scope limited to fake/direct35/browser5; main/real installation not verified.",
+  "realInstallation": "NOT_READ_NOT_VERIFIED",
+  "main": "NOT_INTEGRATED",
+  "deployment4320": "NOT_DEPLOYED",
+  "productImplementation": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "browserSourceImplementation": "3c0dda7b7a8887ac763d8a1651231374b0f3356d",
+  "reviewScope": [
+    "apps/execution-dashboard/src/server.mjs",
+    "apps/execution-dashboard/src/local-access.mjs",
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/public/local-access.js",
+    "apps/execution-dashboard/public/local-access.css",
+    "apps/execution-dashboard/test/local-access.test.mjs",
+    "apps/execution-dashboard/test/local-access.browser.mjs",
+    "apps/execution-dashboard/README.md",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout",
+    "docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff"
+  ]
+}

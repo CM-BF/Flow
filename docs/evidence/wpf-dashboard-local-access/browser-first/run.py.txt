@@ -1,0 +1,82 @@
+import os,pathlib,subprocess,json,time,signal,shutil,selectors,datetime
+root=pathlib.Path(__file__).parent;raw=root/'raw';scratch=root/'scratch';start=time.monotonic();errors=[];interrupts=[];process=None;eof={};peaks={'scratch':0,'raw':0};final_free=None
+
+def stop(signum,frame):
+ interrupts.append(signum)
+ if process and process.poll() is None:
+  try:os.killpg(process.pid,signal.SIGTERM)
+  except ProcessLookupError:pass
+signal.signal(signal.SIGTERM,stop);signal.signal(signal.SIGINT,stop)
+def size(directory):
+ total=0
+ for parent,dirs,files in os.walk(directory,onerror=lambda error: (_ for _ in ()).throw(error)):
+  for name in files:
+   try:total+=(pathlib.Path(parent)/name).stat().st_size
+   except FileNotFoundError:pass
+ return total
+
+def sample():
+ global final_free
+ for name,directory in [('scratch',scratch),('raw',raw)]:peaks[name]=max(peaks[name],size(directory))
+ s=os.statvfs(root);final_free=s.f_bavail*s.f_frsize
+ if peaks['scratch']>268435456 or peaks['raw']>8388608 or final_free<1073741824:raise RuntimeError('resource bound')
+selector=selectors.DefaultSelector();handles=[];exit_code=None;absent=False
+try:
+ env={key:os.environ[key] for key in ['PATH','HOME','USER','LOGNAME','SHELL','LANG','LC_ALL'] if key in os.environ}
+ env.update(TMPDIR=str(scratch),TMP=str(scratch),TEMP=str(scratch),XDG_CACHE_HOME=str(scratch),NODE_DISABLE_COMPILE_CACHE='1',TSX_DISABLE_CACHE='1',MAC_CHROMIUM_TMPDIR=str(scratch),BREAKPAD_DUMP_LOCATION=str(scratch/'crashpad'))
+ process=subprocess.Popen(['/opt/homebrew/opt/node@24/bin/node',str(root/'worker.mjs')],stdout=subprocess.PIPE,stderr=subprocess.PIPE,start_new_session=True,env=env,cwd='/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access')
+ for name,stream in [('stdout',process.stdout),('stderr',process.stderr)]:
+  os.set_blocking(stream.fileno(),False);handle=(raw/('parent-'+name+'.log')).open('wb');handles.append(handle);selector.register(stream,selectors.EVENT_READ,(name,handle));eof[name]=False
+ while selector.get_map() or process.poll() is None:
+  elapsed=time.monotonic()-start
+  if elapsed>45 and 'work-timeout' not in errors:
+   errors.append('work-timeout');os.killpg(process.pid,signal.SIGTERM)
+  if elapsed>55:break
+  for key,mask in selector.select(.1):
+   chunk=os.read(key.fileobj.fileno(),65536);name,handle=key.data
+   if chunk:handle.write(chunk);handle.flush()
+   else:eof[name]=True;selector.unregister(key.fileobj);key.fileobj.close()
+  sample()
+ exit_code=process.poll()
+except BaseException as error:errors.append(type(error).__name__+': '+str(error))
+finally:
+ if process:
+  try:
+   os.killpg(process.pid,0);os.killpg(process.pid,signal.SIGTERM)
+   until=min(start+58,time.monotonic()+2)
+   while time.monotonic()<until:
+    try:os.killpg(process.pid,0)
+    except ProcessLookupError:absent=True;break
+    time.sleep(.02)
+   if not absent:
+    os.killpg(process.pid,signal.SIGKILL);errors.append('owned group required SIGKILL')
+    try:process.wait(timeout=max(.1,start+59-time.monotonic()))
+    except subprocess.TimeoutExpired:pass
+  except ProcessLookupError:absent=True
+  except OSError as error:errors.append('group observation '+type(error).__name__)
+  try:exit_code=process.wait(timeout=max(.1,start+59-time.monotonic()))
+  except subprocess.TimeoutExpired:errors.append('worker not reaped')
+  try:os.killpg(process.pid,0)
+  except ProcessLookupError:absent=True
+  except OSError as error:errors.append('group final '+type(error).__name__)
+ for handle in handles:handle.close()
+ selector.close()
+ try:sample()
+ except BaseException as error:errors.append('terminal sample '+type(error).__name__)
+ if absent:
+  try:shutil.rmtree(scratch)
+  except OSError as error:errors.append('scratch cleanup '+type(error).__name__)
+ else:errors.append('owned group unknown/live; scratch retained')
+ elapsed=(time.monotonic()-start)*1000
+ if elapsed>60000:errors.append('duration bound')
+ try:
+  worker=json.load(open(raw/'worker-result.json'))
+  if worker.get('state')!='PASSED' or worker.get('interrupts') or worker.get('cleanupErrors'):errors.append('worker not passed')
+ except BaseException as error:errors.append('worker result unavailable');worker={}
+ if not all(eof.values()) or len(eof)!=2:errors.append('missing EOF')
+ report={'state':'PASSED' if exit_code==0 and not errors and not interrupts else 'FAILED','startedAtApprox':datetime.datetime.fromtimestamp(time.time()-elapsed/1000,datetime.timezone.utc).isoformat(),'actualExit':exit_code,'elapsedMs':elapsed,'ownedGroupAbsent':absent,'scratchRemoved':not scratch.exists(),'stdoutEOF':eof.get('stdout'),'stderrEOF':eof.get('stderr'),'peakSampledLogicalBytes':peaks,'terminalFreeBytes':final_free,'errors':errors,'interrupts':interrupts,'workerState':worker.get('state'),'chromeExit':worker.get('chromeExit'),'checks':worker.get('result',{}).get('checks',[]) if worker.get('result') else [],'limits':{'totalMs':60000,'cleanupReserveMs':15000,'scratchBytes':268435456,'rawBytes':8388608},'source':'08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7','metadata':'058b3f6f754abf2a7e0d6f0d582701f9240ffb2d'}
+ (raw/'result.json').write_text(json.dumps(report,indent=2)+'\n')
+ if size(raw)>8388608 or time.monotonic()-start>60 or interrupts:report['state']='FAILED'
+ report['postWriteElapsedMs']=(time.monotonic()-start)*1000;report['postWriteRawBytes']=size(raw)
+ print(json.dumps(report,indent=2),flush=True)
+ raise SystemExit(0 if report['state']=='PASSED' else 1)

@@ -1,0 +1,267 @@
+{
+  "state": "FAILED_PRESERVED",
+  "source": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "metadataAtRun": "01867830be77b5ce8df34f9c4b57e56ba259f564",
+  "actualExit": 1,
+  "outerElapsedMs": 11246.743666939437,
+  "budget": {
+    "totalMs": 60000,
+    "previousConservativeSpentMs": 7481,
+    "thisRoundedUpMs": 11247,
+    "cumulativeConservativeMs": 18728,
+    "remainingConservativeMs": 41272,
+    "actualOuterSumMs": 18726.850542007014,
+    "nextCleanupReserveMs": 15000
+  },
+  "selectedGroups": 5,
+  "passedGroups": 4,
+  "failure": [
+    "expect(received).toBe(expected) // Object.is equality\n\nExpected: \"hidden\"\nReceived: \"visible\"\n\nCall Log:\n- Timeout 5000ms exceeded while waiting on the predicate"
+  ],
+  "interpretation": "Actual page remained visible while the original fifth group waited for hidden. This proves the visibility precondition was not achieved in this run, not that the product clearing handler failed. No scenario or product change and no automatic retry.",
+  "cleanup": {
+    "context": "closed",
+    "http": "closed",
+    "chromeExit": {
+      "code": 0,
+      "signal": null
+    },
+    "chromeStdoutEOF": true,
+    "chromeStderrEOF": true,
+    "parentStdoutEOF": true,
+    "parentStderrEOF": true,
+    "cleanupErrors": [],
+    "postCleanup": "Exact03:26:34 receipt: worker96582/Chrome96833/PGID96582 absent; CDP52215 refused61; scratch absent."
+  },
+  "chromeLog": {
+    "observedBytes": 319,
+    "retainedBytes": 319,
+    "truncatedBytes": 0,
+    "finalAfterEOF": true
+  },
+  "runtimeAuthority": "Root explicit second heavy handoff after S01/D06 completion; resource window returned immediately after terminal facts, no remaining holder.",
+  "raw": [
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/run.py",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/run.py.txt",
+      "bytes": 6237,
+      "sha256": "09ac049a54b315d9cca9c10f78ce5209a198da5f644e2174b1d4ef95a42ceb5f"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/worker.mjs",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/worker.mjs.txt",
+      "bytes": 4968,
+      "sha256": "3fcd86a271c265ba45ed074d3a44f1c7f8290f5c7ee779ef149f339cfb30a5dc"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/actual-preflight.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/actual-preflight.json",
+      "bytes": 677,
+      "sha256": "bf00ecfa5f6026db45499fb05063b1eed4ac12748223d900647068dee64ff5ac"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/preparation.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/preparation.json",
+      "bytes": 1655,
+      "sha256": "eb83e173a7ee328ce07a996c22fd041a567d324d52423b84ac7a18b9c7a83b26"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/README.md",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/README.md",
+      "bytes": 426,
+      "sha256": "4fcdb01bcd0b326010ba73e1eb5f80256b8fa2b627ea13d129f3bc882782c510"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/actual-exit.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/actual-exit.json",
+      "bytes": 56,
+      "sha256": "1c9a95db7dc750d04a1e9071beb2dcd50671b992fdb01f7d633bec6f775ba819"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/post-cleanup.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/post-cleanup.json",
+      "bytes": 212,
+      "sha256": "1fdfce9004a261f0391531e60485a3b8d92da310c8d075e2c79db907ffe05eb3"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/terminal.stdout",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/terminal.stdout",
+      "bytes": 1301,
+      "sha256": "0989ef087c5bb3e57dc69cc29d3ca76dc334509f78a3e2b33d8622eca4178f2c"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/terminal.stderr",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/terminal.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/run.py.diff",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/run.py.diff",
+      "bytes": 8332,
+      "sha256": "3c0ec72261a070f8c9bc797a8b45244359bd6caab6d542b2ba4f5ce9cd8f9992"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/worker.mjs.diff",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/worker.mjs.diff",
+      "bytes": 4170,
+      "sha256": "f8b7e7e05575202bf0d2bd00e1d302ec5978a541940d582cc09939b7f46b434a"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-check.py",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-check.py.txt",
+      "bytes": 3087,
+      "sha256": "c02025712cecb2173d81249da5d036e98d51bf5d8cbd14c662939fbd5910324c"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-result.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-result.json",
+      "bytes": 843,
+      "sha256": "2994642519714a38b231ea17e4a369502a81445b5b4909051fd9b113bd4d373e"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/raw/390-dark.png",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/raw/390-dark.png",
+      "bytes": 72218,
+      "sha256": "7a45af6e7b11a881c785a12e5b5750e98b13f69b408a81dcec1d72b1d56c57ca"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/raw/390-light.png",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/raw/390-light.png",
+      "bytes": 75157,
+      "sha256": "c4172280c413ade97eb110464dc7f0ebdf565b3a4fec997b208cacbb774a3617"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/raw/browser-result.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/raw/browser-result.json",
+      "bytes": 746,
+      "sha256": "0ffa803a25140679009fd6ab227e0106a5589adb677f5e8c04bbe414786f57ee"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/raw/chrome.log",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/raw/chrome.log",
+      "bytes": 319,
+      "sha256": "49685343c543e413787ac913922286d3fe8b8c6a9306efc92725b4ba6a9ed1f8"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/raw/owned.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/raw/owned.json",
+      "bytes": 610,
+      "sha256": "12ddd2a57253c80af6884409a748da4b9cde05f3695efb100151fe3b1e6bd9cf"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/raw/parent-stderr.log",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/raw/parent-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/raw/parent-stdout.log",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/raw/parent-stdout.log",
+      "bytes": 968,
+      "sha256": "85391fe273ef7569fd00c16eb3d0de339d905095469b746d6a4a5d934617b17a"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/raw/result.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/raw/result.json",
+      "bytes": 1226,
+      "sha256": "9ea7680a7d33a4c5fa0a2b62ea2a9ae82330efb352d2aa5b38460c321cba1da7"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/raw/worker-result.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/raw/worker-result.json",
+      "bytes": 1160,
+      "sha256": "c0642efd0e1d5a70732939afd2125baf06c3debb2e47cc4a89baba46f6a0eea9"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-enoent/raw/parent-stderr.log",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-enoent/raw/parent-stderr.log",
+      "bytes": 22,
+      "sha256": "8bdf0ae6100148711105b0eb785ead213a76c9c1115981a878f34be9e1f58c3f"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-enoent/raw/parent-stdout.log",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-enoent/raw/parent-stdout.log",
+      "bytes": 18,
+      "sha256": "9118bb713b8467705b47faf0e1682ba1e4bcad2dfeb27e96db8bc798b45103c0"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-enoent/raw/result.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-enoent/raw/result.json",
+      "bytes": 767,
+      "sha256": "b735e4ec032cd99a50eb00a298a840224670baa76b1a794d4308d26870ef56df"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-enoent/raw/worker-result.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-enoent/raw/worker-result.json",
+      "bytes": 58,
+      "sha256": "41d39f581b00d81d409edf5d0a78bcf84485afd4e12d405c91f84b73b62b0aaf"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-enoent/run.py",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-enoent/run.py.txt",
+      "bytes": 6186,
+      "sha256": "88e3ef0f47159abffc3f2ef6ad1f218ba79644c8201f93e3d45740763d5f39d8"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-enoent/terminal.stderr",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-enoent/terminal.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-enoent/terminal.stdout",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-enoent/terminal.stdout",
+      "bytes": 838,
+      "sha256": "4cec563891a5146cef29514a2885d5560d36ebaa697bcbc9b47b96908577739e"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-permission/raw/parent-stderr.log",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-permission/raw/parent-stderr.log",
+      "bytes": 22,
+      "sha256": "8bdf0ae6100148711105b0eb785ead213a76c9c1115981a878f34be9e1f58c3f"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-permission/raw/parent-stdout.log",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-permission/raw/parent-stdout.log",
+      "bytes": 18,
+      "sha256": "9118bb713b8467705b47faf0e1682ba1e4bcad2dfeb27e96db8bc798b45103c0"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-permission/raw/result.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-permission/raw/result.json",
+      "bytes": 911,
+      "sha256": "0d75aecd7a5e381c78fb04a018ddd2aa4545d97478e1730a515ef21b6f785bdf"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-permission/raw/worker-result.json",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-permission/raw/worker-result.json",
+      "bytes": 58,
+      "sha256": "41d39f581b00d81d409edf5d0a78bcf84485afd4e12d405c91f84b73b62b0aaf"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-permission/run.py",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-permission/run.py.txt",
+      "bytes": 6186,
+      "sha256": "88e3ef0f47159abffc3f2ef6ad1f218ba79644c8201f93e3d45740763d5f39d8"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-permission/terminal.stderr",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-permission/terminal.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "original": "/private/tmp/access01-browser-followup-jn35famf/synthetic-permission/terminal.stdout",
+      "archived": "docs/evidence/wpf-dashboard-local-access/browser-second/synthetic-permission/terminal.stdout",
+      "bytes": 983,
+      "sha256": "1606c6d14a772ab969e0634ad88914723ae6093cd65b4deba454de8485bf1896"
+    }
+  ],
+  "limitations": [
+    "35direct not repeated; original first browser failure/raw unchanged.",
+    "Synthetic cases are substitutes; later signal assignments remain source-reviewed, not dynamically signalled.",
+    "No personal token/service, user tab, PG, provider, install or real deployment.",
+    "Third browser run requires a separate explicit window; fullfeature not approved."
+  ]
+}

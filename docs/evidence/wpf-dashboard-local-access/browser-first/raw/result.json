@@ -1,0 +1,41 @@
+{
+  "state": "FAILED",
+  "startedAtApprox": "2026-10-07T03:15:00.409095+00:00",
+  "actualExit": 1,
+  "elapsedMs": 7426.494332961738,
+  "ownedGroupAbsent": true,
+  "scratchRemoved": true,
+  "stdoutEOF": false,
+  "stderrEOF": false,
+  "peakSampledLogicalBytes": {
+    "scratch": 12733439,
+    "raw": 149728
+  },
+  "terminalFreeBytes": 26529447936,
+  "errors": [
+    "FileNotFoundError: [Errno 2] No such file or directory: '/private/tmp/access01-browser-run-myrscxp7/scratch/com.google.Chrome.chrome_chrome_Unpacker_BeginUnzipping.Hezc87'",
+    "group observation PermissionError",
+    "worker not passed",
+    "missing EOF"
+  ],
+  "interrupts": [],
+  "workerState": "FAILED",
+  "chromeExit": {
+    "code": null,
+    "signal": "SIGTERM"
+  },
+  "checks": [
+    "empty-by-default; keyboard opening/Tab/Escape/focus return; product href only",
+    "390 light/dark with fake-only empty credential screenshots; no dialog horizontal overflow",
+    "load masks; native clipboard success; explicit injected clipboard denial; show/hide clears",
+    "close aborts outstanding read; late response does not restore token; reopen needs explicit load"
+  ],
+  "limits": {
+    "totalMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608
+  },
+  "source": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "metadata": "058b3f6f754abf2a7e0d6f0d582701f9240ffb2d"
+}
