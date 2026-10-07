@@ -5,16 +5,16 @@
 | 任务 ID | WPF-MESSAGESETTINGS02 |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新时间 | 2026-10-07 05:10:24 UTC |
+| 最近更新时间 | 2026-10-07 05:26:24 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工旧原件尚无可明确认定的实际开工时点，未用claim/commit倒推；完成未发生 |
 | 单一status owner / model | w01_owner / gpt-6-astra |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 快速设置的类型与组合逻辑已验证；验证工具的容量计量修正已通过小范围检查 |
+| 当前产出 | 快速设置的类型与组合逻辑已验证；浏览器键盘选择仍未通过，诊断已完整保存 |
 | 下一可用交付 | 经验证的模型、思考力度与速度快速选择 |
-| 当前阻塞 | ACTIVE: 尚未获得浏览器验收；容量计量修正已核，原模型选择失败原因仍待观察，后继浏览器的精确边界已审，等待实际资源和运行准入 |
+| 当前阻塞 | ACTIVE: 浏览器模型选择仍为空值；按键与选项诊断已保存，根因尚未确定，完整交互验收未通过 |
 | 需用户决定 | NONE |
 | 本片段交付阶段 | review |
 | 工作分支状态 | in-progress |
@@ -25,8 +25,8 @@
 | Dirty | 源固定；metadata 收口后核 clean |
 | 实现目标 | fe6ece131c489c79cf531a184e4cf51209f9c4a0 |
 | 实现范围 | apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/test/message-settings.test.ts, apps/web/test/message-settings.fixture.tsx, apps/web/test/message-settings.browser.ts |
-| 检查状态 | FAILED fe6ece131c489c79cf531a184e4cf51209f9c4a0；browser 两次失败，当前无完成组/PNG/trace证据；先前strict+26direct PASS保留；b3计量helper 5/5 PASS不算浏览器通过，旧37/4不继承 |
-| Review | UNKNOWN（限定源码与strict/26direct证据已审；browser 因计量中断FAILED/owned清理证据已独审接受；b3计量/native准备及helper 5/5 actual原件已限定独审接受，完整行为未批准） |
+| 检查状态 | FAILED fe6ece131c489c79cf531a184e4cf51209f9c4a0；browser 三次失败，当前0完成组/0PNG；b3已完整捕获选框trace；先前strict+26direct PASS保留；b3计量helper 5/5 PASS不算浏览器通过，旧37/4不继承 |
+| Review | UNKNOWN（限定源码与strict/26direct证据已审；b1/b2失败与b3计量/helper/native准备已有独审；b3 browser本次FAILED/trace/owned清理已独审接收，完整行为未批准） |
 | Main | 本片未集成；基线含原受控组件 |
 | Claim | 839e466f-1a3f-4e92-94e1-ece390c32fbf v1 active；本人 live 已核 |
 | Dashboard | Lead 22:12:19 179-source 观察 current/live；本人未采样页面；此前 actual parseStatus errors=[] / 5 TODO；仅解析本任务status，未采页面 |
@@ -38,7 +38,7 @@
 | MSGQUICK-01 | completed | w01_owner | [receipt](../../docs/evidence/wpf-message-settings-quick-controls/take-receipt.json)、[技能](../../docs/evidence/wpf-message-settings-quick-controls/quality.md) |
 | MSGQUICK-02 | completed | w01_owner | 当前授权 tuple + 私有候选 + 同步宿主 CAS |
 | MSGQUICK-03 | completed | w01_owner | 四源固定；validation-proposal（未运行） |
-| MSGQUICK-04 | in-progress | w01_owner | [c2实际strict/26direct通过](../../docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/README.md)；c1原失败保留；[b1首次失败](../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/README.md)与[b2计量中断/清理](../../docs/evidence/wpf-message-settings-quick-controls/b2-browser-20261007/README.md)，browser累计18468ms/余41532ms；[b3计量helper五项通过](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/README.md)，无浏览器续跑 |
+| MSGQUICK-04 | in-progress | w01_owner | [c2实际strict/26direct通过](../../docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/README.md)；c1原失败保留；[b1首次失败](../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/README.md)与[b2计量中断/清理](../../docs/evidence/wpf-message-settings-quick-controls/b2-browser-20261007/README.md)，[b3实际键盘失败/完整诊断](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md)，browser累计30625ms/余29375ms；[b3计量helper五项通过](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/README.md)，无浏览器续跑 |
 | MSGQUICK-05 | pending | w01_owner | 主线独立接收；真实 App/Queue/Recovery 后继不在此范围 |
 
 ## 边界与架构影响
@@ -76,3 +76,9 @@ root确认监督源码的非原子scratch差分计量有缺陷；原样本仅与
 [b3原件](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/README.md)。root源审后唯一授权小检查，实际exit0/47.222083ms/5项通过，stdout525B/stderr0，自有TMP absent/errors[]。直接排除exact scratch代替两次扫描相减；scratch独立计量、64MiB与retained8MiB上限不变。不是Chrome/监控循环/产品行为通过。
 
 浏览器仍两次FAILED，累计18468/余41532ms未变；b1/b2原件、四fe6源、诊断worker、六组/两PNG不动。root已限定接受b3实际helper与精确native准备；本次metadata后只重绑TMP的当前HEAD/state/批准pointer，无gate，后续browser仍需fresh实际准入；当前完整任务NOT_COMPLETED。
+
+## 当前b3浏览器实际失败 2026-10-07 05:26:24 UTC
+
+[b3完整原件](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md)。执行HEAD f9fa9955/产品fe6；actualouterexit1、唯一FAILEDseal/presenthash一致。再次在原模型select值断言失败，0/6组、0PNG；本轮9,529B诊断trace完整捕获10条记录，没有input/change，实际value仍空。不能据此唯一判产品或平台原因；[root本次独审](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/root-failed-actual-review.json)已接受FAILED与清理，非feature通过，无第四次。
+
+worker已正常报告fixture/context关闭，三个ownedgroups及scratch absent、全EOF/0drop/cleanupErrors[]。保守本次12157、累计30625/余29375ms；原parent30563与历史两轮不改。b3 helper5PASS不代browser组，四源/worker/六场景均不动，完整任务NOT_COMPLETED。

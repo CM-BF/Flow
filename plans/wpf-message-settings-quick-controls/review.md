@@ -1,10 +1,10 @@
 # WPF-MESSAGESETTINGS02 独立审查
 
-状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 05:10:24 UTC。
+状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 05:26:24 UTC。
 
 - 当前 Target：fe6ece131c489c79cf531a184e4cf51209f9c4a0；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。root 已完成限定源码复审：APPROVED_SCOPED_SOURCE_ONLY；完整行为不由此通过。
 - 历史已审 Target：35bbe76faa2128d5c1d00711fb2be3b23d54fc4f，root/peer 结论 REQUEST_CHANGES_SCOPED_VALIDATION_GAP。唯一 MSGQUICK-R3 / P2 是验收覆盖缺口，不是已证明产品错误。
-- Scope：Picker 与三项 test/fixture/browser；catalog/selection/public/旧 Picker 行为保护。c1历史strict FAILED保留；当前c2 strict/26direct PASS；b1/b2实际browser FAILED，当前无完成组/PNG/trace证据，完整行为未通过。
+- Scope：Picker 与三项 test/fixture/browser；catalog/selection/public/旧 Picker 行为保护。c1历史strict FAILED保留；当前c2 strict/26direct PASS；b1/b2/b3实际browser FAILED，0完成组/0PNG；b3原生选框诊断已完整捕获，完整行为未通过。
 
 ## 历史源码与准备审查（以下 NOT_RUN 按当时事实保留）
 
@@ -79,3 +79,7 @@ Portable review：**APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN / 0 blocking**�
 [root固定源审](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/root-source-review.json)：SOURCE_DELTA_AND_FIVE_CHECK_LOCAL_PLAN_ACCEPTED_NATIVE_RUNTIME_NOT_ADMITTED；parent dad6ea/worker f099/actual helper 7afe4b。三处retained直接剪枝exact scratch、独立tmp cap/原symlink及error保留、两次FAILED真实carry已审。
 
 [实际原件](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/actual.json) exit0、47.222083ms、5项PASS、ownedtmp absent，单次小检查完成。只验证计量helper，不改b2失败结论或推断精确运行因果；[root实际接收及精确native准备批准](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/root-native-actual-review.json)已到；无Chrome运行准入/产品重测，完整feature仍UNKNOWN。browser18468/41532和原raw不改。
+
+## b3第三次浏览器真实失败 2026-10-07 05:26:24 UTC
+
+[实际原件与保守账](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md)：outerexit1/唯一FAILEDseal、trace hash成立；模型选择未提交，0/6、0PNG。owned三组/scratch absent，fixture/context正常close已捕获，EOF0drop。累计30625/余29375，历史预算不改；[root本次实际独审](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/root-failed-actual-review.json)已接受FAILED/trace/cleanup事实，不是feature PASS，不把native源准备批准当行为通过。

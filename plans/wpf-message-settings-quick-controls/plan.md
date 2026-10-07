@@ -28,7 +28,7 @@ Picker 每次打开建立独立私有存活标记；关闭、取消、详情导�
 
 覆盖 same-tuple 新稿、props lag/旧 callback、换 view、权限撤销、同 token 关闭/详情/unmount/成功后重入；Apply/omit 都不得覆盖新草稿。分页漏旧选、刷新失败、能力过期保 C；A 已发送/B 已排样本不可变；空筛选可退出；大目录只展开当前授权 profile ≤32 组合；390 双主题/180 model/键盘/焦点保持。
 
-当前源码fe6固定；首次c1因固定输入缺失失败保留，Lead供给后c2 strict+26direct实际通过并被root接收。strict/direct累计5119/余24881。b1首组失败、b2因监督计量中断，均无完成组/PNG；browser按外层保守累计18468/余41532，实际进程资源均已归还。PG/构建未运行，旧37/4不继承；未自动重试、不安装或扩大sparse。模块/性能遵循[根规则](../../AGENTS.md#modular-design)。
+当前源码fe6固定；首次c1因固定输入缺失失败保留，Lead供给后c2 strict+26direct实际通过并被root接收。strict/direct累计5119/余24881。b1首组失败、b2因监督计量中断、b3再次原生选框值失败且诊断已捕获，均无完成组/PNG；browser按外层保守累计30625/余29375，实际进程资源均已归还。PG/构建未运行，旧37/4不继承；未自动重试、不安装或扩大sparse。模块/性能遵循[根规则](../../AGENTS.md#modular-design)。
 
 ## 历史 MSGQUICK-04 可移植验证准备 2026-10-06 23:18:53 UTC
 
@@ -57,3 +57,7 @@ MSGQUICK-04 保持开放：strict exit2，direct未运行，已完成自身清�
 ## 计量修正小检查 2026-10-07 05:10:24 UTC
 
 MSGQUICK-04继续开放：[b3实际helper五项检查](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/README.md)单次exit0/47.222083ms，own临时目录清理。root已审最小计量源码，真实browser仍待后继精确准入；不重跑strict26、不追加浏览器预算，不把helper通过作六组/两PNG通过。
+
+## b3实际浏览器后续 2026-10-07 05:26:24 UTC
+
+MSGQUICK-04仍开放：[第三次实际失败及完整诊断](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md)，actualexit1/0组/0PNG。仅保真实证据、正常关闭/owned清理和30625/29375保守账；不改原断言或重试，根因待只读核实。

@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-07T05:20:53.766867+00:00",
+  "pid": 44260,
+  "pgid": 44260,
+  "command": [
+    "python3",
+    "/private/tmp/msgquick-b3/supervisor.py",
+    "--gate",
+    "/private/tmp/msgquick-b3-admission-okeh9ium/gate.json"
+  ],
+  "output": "/private/tmp/msgquick-b3-outer-na_54sb4",
+  "claimObservedAt": "2026-10-07T05:20:53.750Z",
+  "endedAt": "2026-10-07T05:21:05.923599+00:00",
+  "actualExit": 1,
+  "wallMs": 12156.567208003253,
+  "groupAbsent": true,
+  "bothEOF": true,
+  "capturedBytes": {
+    "stdout": 776,
+    "stderr": 0
+  },
+  "receivedBytes": {
+    "stdout": 776,
+    "stderr": 0
+  },
+  "droppedBytes": 0,
+  "outerInterrupted": false,
+  "stdoutSha256": "c84bacd82d601fac5cd10a3a3b09602f870a0e8b3432d6e15d837998c7c3e95f",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}
