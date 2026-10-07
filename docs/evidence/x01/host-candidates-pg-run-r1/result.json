@@ -1,0 +1,212 @@
+{
+  "startedAt": "2026-10-07T11:18:43.842899+00:00",
+  "state": "PASSED",
+  "unknown": false,
+  "limits": {
+    "protocol": "flow.x01.host-candidates-pg.v1",
+    "productCommit": "a2981b71b47d254356152c505ddfff29edd76446",
+    "totalSeconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalReserveSeconds": 10,
+    "suites": {
+      "runtime": {
+        "cases": 1,
+        "httpRequests": 160,
+        "connectionsMax": 17
+      }
+    },
+    "httpRequestsMax": 160,
+    "responseBytesPerRequest": 131072,
+    "responseBytesPerSuite": 4194304,
+    "databasesMax": 1,
+    "serialSuites": true,
+    "streamsBytes": 262144,
+    "resultBytes": 131072,
+    "rawBytes": 1048576,
+    "temporaryBytes": 33554432,
+    "temporaryEntries": 4096,
+    "reserveBytes": 1073741824,
+    "runName": "host-candidates-pg-run-r1",
+    "databaseReserveBytes": 134217728,
+    "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+    "selection": [
+      {
+        "file": "docs/evidence/x01/host-candidates-inputs/apps/server/src/plugin-runtime/runtime.test.ts",
+        "name": "owner host candidates use real SQL pagination and current policy for enable and admission"
+      }
+    ],
+    "tasksMax": 0,
+    "registrationsMax": 1,
+    "attemptsMax": 0,
+    "scope": "One new owner candidate test only; synthetic installed material reuses original fixture, no npm/invoke/provider. Ten old runtime cases remain unselected.",
+    "runnersMax": 45
+  },
+  "processes": [
+    {
+      "pid": 3580,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 44,
+      "observed_bytes": 291,
+      "retained_bytes": 291,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "git-preflight",
+      "rawComplete": true
+    },
+    {
+      "pid": 3581,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 3272,
+      "observed_bytes": 113,
+      "retained_bytes": 113,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "vitest",
+      "rawComplete": true
+    }
+  ],
+  "suites": {
+    "runtime": {
+      "window": "df6f7e3ea1d54289ae89962d2e581ba9",
+      "sourceHead": "0bf7e6c7b040494d26bfb6d0a2b44c750ed68e1c",
+      "suite": "runtime",
+      "database": "flow_x01_649d3e046a824bcf91046281c6663a60",
+      "facts": [
+        {
+          "kind": "host-candidates",
+          "registrations": 1,
+          "runners": 45,
+          "material": "synthetic-terminal-source-only",
+          "tasks": 0
+        }
+      ],
+      "cleanup": {
+        "owners": {
+          "startup": true,
+          "server": true,
+          "boss": true
+        },
+        "ownersClosed": true,
+        "poolClosed": true,
+        "adminClosed": true,
+        "createRequested": true,
+        "createAcknowledged": true,
+        "creationReceiptSaved": true,
+        "identity": {
+          "oid": "1297894",
+          "owner": "flow",
+          "marker": "x01:df6f7e3ea1d54289ae89962d2e581ba9:runtime:7d89f9de-a71f-4ec8-ac46-1f49f27c1a12"
+        },
+        "identityConfirmed": true,
+        "connections": 0,
+        "dropRequested": true,
+        "dropAcknowledged": true,
+        "databaseAbsent": true
+      },
+      "listeners": [
+        {
+          "origin": "http://127.0.0.1:59987",
+          "closed": true
+        }
+      ],
+      "httpRequests": 106,
+      "responseBytes": 26141,
+      "workUntil": 1791372033842,
+      "cleanupUntil": 1791372093842,
+      "errors": [],
+      "errorCount": 0,
+      "cleanupConfirmed": true,
+      "retainedDatabase": null,
+      "finishedAt": "2026-10-07T11:18:47.292Z"
+    }
+  },
+  "PGMayHaveStarted": true,
+  "retained": [],
+  "temporaryPeak": "UNKNOWN",
+  "window": "df6f7e3ea1d54289ae89962d2e581ba9",
+  "executionHead": "0bf7e6c7b040494d26bfb6d0a2b44c750ed68e1c",
+  "manifestSha256": "8756391bccddfc88acaca71ff92a8f306b6489ba12381c0fad4395371c9c37c1",
+  "temporary": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-jr8bo9cl",
+    "dev": 16777234,
+    "ino": 124076296,
+    "removed": true,
+    "sampleBytes": 6535,
+    "sampleEntries": 10
+  },
+  "selection": {
+    "numTotalTests": 11,
+    "numPassedTests": 1,
+    "numFailedTests": 0,
+    "numPendingTests": 10,
+    "success": true
+  },
+  "httpRequests": 106,
+  "responseBytes": 26141,
+  "unselectedCount": 10,
+  "selectedCount": 1,
+  "exactSelection": true,
+  "allAssertionsPassed": true,
+  "outputBytesBeforeReceipt": {
+    "runtime-created.json": 402,
+    "vitest.json": 4030,
+    "runtime-reservation.json": 449,
+    "runtime-create-request.json": 353,
+    "output.log": 113,
+    "runtime-result.json": 1301,
+    "reservation.json": 283,
+    "launch.json": 186,
+    "preflight.stdout": 291,
+    "admission.json": 4695
+  },
+  "uncapturedStreamBytes": 0,
+  "rawChargeBeforeReceipt": 12103,
+  "completeAccounting": true,
+  "rawBytesBeforeReceipt": 12103,
+  "recordPhase": "before-final-persistence",
+  "endedBeforePersistenceAt": "2026-10-07T11:18:47.316577+00:00",
+  "elapsedBeforePersistence": 3.473857625038363
+}

@@ -1,0 +1,58 @@
+{
+  "recordedAt": "2026-10-07T11:20:00.566046+00:00",
+  "executionHead": "0bf7e6c7b040494d26bfb6d0a2b44c750ed68e1c",
+  "argv": [
+    "/opt/homebrew/bin/python3.13",
+    "-B",
+    "docs/evidence/x01/host-candidates-pg-once.py",
+    "--admission",
+    "/private/tmp/flow-x01-host-candidates-open-df6f7e3ea1d54289ae89962d2e581ba9.json",
+    "--sha256",
+    "6f70115789705b4added8949adb2e6007d45856591a20ccf29a8a87006c764f3"
+  ],
+  "toolSession": 91619,
+  "toolChunks": [
+    "b121ac",
+    "b2a036"
+  ],
+  "actualToolExit": 0,
+  "toolWaitSeconds": [
+    0.501278041,
+    6.334e-06
+  ],
+  "toolWaitIsNotWholeWall": true,
+  "externalTime": {
+    "realSeconds": 3.55,
+    "userSeconds": 1.57,
+    "systemSeconds": 0.42
+  },
+  "shellUTC": {
+    "start": "2026-10-07T11:18:43Z",
+    "end": "2026-10-07T11:18:47Z",
+    "precisionSeconds": 1,
+    "conservativeEnvelopeSeconds": 5
+  },
+  "delivery": {
+    "state": "PASSED",
+    "run": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/host-candidates-pg-run-r1",
+    "receiptState": "PASSED",
+    "resultPersistence": "CONFIRMED",
+    "elapsedAfterPersistence": 3.4740749170305207,
+    "withinTotalDeadline": true,
+    "endedAfterPersistenceAt": "2026-10-07T11:18:47.316809+00:00",
+    "retained": [],
+    "temporary": {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-jr8bo9cl",
+      "dev": 16777234,
+      "ino": 124076296,
+      "removed": true,
+      "sampleBytes": 6535,
+      "sampleEntries": 10
+    }
+  },
+  "originalToolOutput": {
+    "path": "docs/evidence/x01/host-candidates-pg-tool-output.log",
+    "bytes": 650,
+    "sha256": "a761fb2c6e216c019947e924053ad3d8e0a83f1f98c80308a5bbb154d2b87278"
+  }
+}
