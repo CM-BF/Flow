@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T16:02:39Z",
+  "recordedAt": "2026-10-07T16:04:49.236Z",
+  "reviewer": "db_transaction_owner / gpt-6-astra",
+  "sourceOfReceipt": "root formal handoff of db independent read-only review",
+  "verdict": "SOURCE_AND_LOCAL_PREPARATION_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "packet": "ca4846244573d5ec2ea879b27abc1b8bfe3c333d",
+  "coreSource": "82095227e5b865139093cc325484c9885f69e805",
+  "callerSource": "8a933df2e71e03aa3e9525649877794777ebdec4",
+  "manifestSha256": "71e9aa3238099124c9eeaaf3dad580752c91b264d937fde76b36c99e647c2409",
+  "bindings": 14,
+  "bindingBytes": 145009,
+  "inputBindings": 93,
+  "inputBytes": 18421447,
+  "compiledFiles": 15,
+  "compiledBytes": 82709,
+  "findings": "Only pg-delivery.js differs between worker closures; same policy/trace/receiver, ABBA ordering, failure/time gates and OPS14 lifecycle preserved. Old compiled/raw unchanged.",
+  "localEvidence": "strict0; pure5/5; caller pure0; 3 closed groups/raw620B; supervision1186ms/caller1325.691ms; whole external UNKNOWN.",
+  "limits": "Preparation only; actual ABBA NOT_RUN_NOT_OPEN. No performance, PG, pool cause, 128 capacity or main conclusion. Reviewer 0 engineering/write/KEEP access.",
+  "claim": {
+    "id": "508f9c85-a27c-4382-bfe9-caca43be4b0e",
+    "version": 3,
+    "scopes": 6,
+    "freshAt": "2026-10-07T16:04:49.236Z",
+    "state": "active",
+    "owner": "status_read"
+  },
+  "logicalBudget": {
+    "baseline": "e4883856fbb054a1965c8b79b593bb225740d38f",
+    "fullCurrentChangedFileBytes": 317942,
+    "ownTmpReservedBytes": 8388608,
+    "rawReservedBytes": 262144,
+    "thisMetadataReserveBytes": 65536,
+    "conservativeTotalBytes": 9034230,
+    "originalCapBytes": 16777216,
+    "note": "Changed files charged at full length; raw may be double-counted conservatively. Same original 16MiB cap, no second reserve/new actual budget."
+  }
+}

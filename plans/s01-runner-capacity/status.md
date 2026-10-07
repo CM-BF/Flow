@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T15:57:23.533Z |
+| 最近更新 | 2026-10-07T16:04:49.236Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,21 +15,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | ABBA source 8a933df2e71e03aa3e9525649877794777ebdec4固定；ordinary及输入metadata封存后核clean/origin，旧actual/compiled不改。 |
+| 工作树dirty状态 | 已审packet ca4846244573d5ec2ea879b27abc1b8bfe3c333d，当前仅正式review/状态收口；最终HEAD由Git读取，提交后核clean/origin。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 82095227e5b865139093cc325484c9885f69e805：strict emit0、新finite plan5/5；后继8a933薄caller四项只读纯核0。仅准备，actual NOT_RUN_NOT_OPEN。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
 | 实现目标 | 8a933df2e71e03aa3e9525649877794777ebdec4 |
 | 实现范围 | experiments/runner-capacity/mixed/delivery-replay-main.ts, experiments/runner-capacity/mixed/delivery-packing.ts, experiments/runner-capacity/mixed/delivery-packing.test.ts, docs/evidence/s01/mixed-ab-preparation/delivery-packing-operator.py, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | delivered |
 | 优先级 | 4 |
-| 当前产出 | 同一聚合策略下的旧新打包对照已备齐，编译及有限调度检查通过；尚未运行四侧实际测量。 |
-| 下一可用交付 | 独立核对旧新仅一处打包差异、输入与收尾门禁，再在单独授权窗口取得比较结果。 |
-| 当前阻塞 | ACTIVE: 本ABBA准备包待独立审查；实际性能窗口尚未开放。 |
+| 当前产出 | 同策略旧新打包对照的准备和局部检查已通过独立审查；尚无四侧实际测量结果。 |
+| 下一可用交付 | 在另行协调的独占窗口完成同轨迹四侧测量，报告开销与完整资源收尾。 |
+| 当前阻塞 | ACTIVE: 实际性能窗口尚未开放；等待现有共享资源排程归还。 |
 | 需用户决定 | NONE |
-| Review | PENDING 8a933df2e71e03aa3e9525649877794777ebdec4 ABBA source/build/local；前片e48815:44:49 APPROVED仅其范围。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T15:39:40Z后fresh身份一致，review期保留。 |
+| Review | APPROVED 8a933df2e71e03aa3e9525649877794777ebdec4；db 2026-10-07T16:02:39Z对ca484624准备/局部结果独审0P1/P2，actual NOT_OPEN。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T16:04:49.236Z fresh本人/WT/branch/范围一致，STOP写入并保留review/运行期claim。 |
 | 架构影响 | 已有parent arm只增加导出/显式workerFile，新四侧plan复用原receiver与OPS14。两worker闭包仅pg-delivery.js不同，原五JS与ESM精确不变；新parent compiled仅作共同调度，0生产pool/SQL变更。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -292,3 +292,9 @@ db14:59:26固定dbada结果APPROVED/0P1P2，正式结论归本任务review首节
 2026-10-07T15:57:23.533Z 本新段安全收口：[唯一ABBA准备入口](../../docs/evidence/s01/mixed-ab-preparation/delivery-packing-ready.md)，14review bindings/93actual input bindings，精确五actual输出均ENOENT。3child已完整RETURN，原ordinary2个主检查于15:50:18.525Z收束，新增已授权第3只读入口核于15:54:53.480Z收束；strict emit0/新5pure全过/新caller四项read-only断言通过，共raw620B（第3为90B），监督1186ms。三组finalabsent/MERGED EOF/无failure-signals-secondary，早期EPERM保留；三TMP同identity采样后删除且owner exactENOENT，末样本非峰值。新JS+ESM82709B已绑定编译receipt和source，旧worker目录不改，所有输入/原件已固定。只有普通准入15.927GB/末次16.175GB，future actual需manager新完整sum与OPEN，不能沿用本段。
 
 应用既有find-skills/codebase-design/clean-code：旧receiver/arm与监督器单一权威，有限ABBA plan具明确停止/序列/时钟语义；新caller仅固定授权输入、已审进程/捕获predicate及自有TMP管理，不拥有PG/admin/用户任务权限。当前仅准备能力，无新CPU/时延结论，个人背景UNKNOWN。原task开工UNKNOWN、六TODO三开放及旧O1FAIL/O2NOT_RUN/所有KEEP不改。
+
+## 2026-10-07T16:04:49.236Z ABBA准备独审收口
+
+db 16:02:39Z批准固定ca484624/core82095227/caller8a933df2，0P1/P2；[canonical READY](../../docs/evidence/s01/mixed-ab-preparation/delivery-packing-ready.md)与[独审回执](../../docs/evidence/s01/mixed-ab-preparation/delivery-packing-independent-review.json)承载限定结论。14bindings145009B、93inputs18421447B、15compiled82709B；strict0/5of5/callerpure0，3进程closed/raw620B，计时口径不合并。旧输入/raw/compiled及性能失败保持。
+
+本段仅metadata、0工程child/PG/actual/重编译；fresh原claimv3/6且ca484624=origin clean后写。原16MiB累计保守计量9034230B，含已变文件全长317942B、TMP8MiB/raw256KiB和本收尾64KiB，未重复新增reserve。应用原本地find-skills/codebase-design/clean-code：核固定来源/批准边界/职责和错误，未新增模块。唯一status继续聚合源，本段未GET、不冒当前HEAD已同步；任务startUNKNOWN/NOT_COMPLETED及开放TODO保持。Paused queue扫描成本只留Mika协调的后继候选链接，不新实现或扩scope。
