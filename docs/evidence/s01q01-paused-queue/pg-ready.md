@@ -1,3 +1,5 @@
+> 历史候选：唯一窗口已于2026-10-07T21:03:03.511Z消费，资源已归还。原两PG用例passed但callerFAIL保留；后继selector修复d78ffd7通过纯验证和独审。下列冻结输入只用于还原原执行，**不是当前源码的新运行许可**。
+
 # S01Q01：两例暂停队列验证候选
 
 SOURCE_PREPARATION_APPROVED；**实际 PG：CLOSED / NOT_RUN**。唯一进度事实源为 [status](../../../plans/s01q01-paused-queue/status.md)，本页只给运行接线，不创建另一状态权威。

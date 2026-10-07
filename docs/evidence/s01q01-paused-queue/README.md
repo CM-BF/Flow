@@ -73,3 +73,9 @@ This command was **not run**. Mika drained engineering before the first launch a
 15/15 caller纯例绑定本次最终可执行字节；包含原11与新4（首删前换根/项间换根/外置sibling准入run接线/树内拒绝）。外置permit合法路径可完成fresh事实核对，测试在private配置/namespace/child之前截断，无真实请求。此前该薄读取NOT_RUN缺口现在由纯mock覆盖，真实PG仍NOT_RUN。fixture13、类型、收集未改未重复。单child 2026-10-07T20:34:06.594010+00:00 FULLRETURN，raw114B、finalabsent/MERGED EOF/ownTMP exactENOENT；初始EPERM观察保持原样，无新failure/signals。
 
 本地find-skills/codebase-design/固定clean-code安全点：删除责任仍单一，check_root仅封装本操作不变量；原错误和UNKNOWN门禁保持，不增加生命周期框架。原各失败/审批/资源口径均保留。新运行输入和CLOSED许可已更新hash，仍须独审与新经理实际窗口。
+
+## 本片验证与selector审结（2026-10-07T21:14:11.497220+00:00）
+
+原[实际结果](pg-run-4799eda499494ac79f211b89ead71ea8/interpretation.json)由db21:08:19忠实性批准：两目标真实PGpassed/32skipped，原callerFAIL仍保留。selector修复 `d78ffd7c691682c1e78d7a2b7d2617521527e9ca` 的[局部记录](selector-local/summary.json)19pure通过，db21:13:07增量批准、P2关闭。只有状态pending/skipped可未选，两个精确目标各一次passed，缺/重/failed/额外executed/unknown/suite失败拒绝。原child/resource判定没改。
+
+源准备/真实PG/纯解释分别绑定不同SHA；没有在新source重跑PG，也不把本次CAS的一种合法分支说成两分支均发生。旧运行input/permit/raw完整冻结，当前候选窗口已消费，后续不能直接复用旧manifest或permit。本片待主线接收，所有工程STOP。

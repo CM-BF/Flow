@@ -2,40 +2,40 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 21:10 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 21:13 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 任务开工时间 | 2026-10-07T16:23:07Z |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 派工后实际 clock；原source段已封存；本段换根P2修复2026-10-07T20:32:48Z起，截止20:42:48Z |
+| 任务时间来源 | 派工后实际 clock；原source段已封存；selector修复段2026-10-07T21:10:25Z起，截止21:18:25Z；任务原始start不重置 |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan |
 | Branch | codex/queue-paused-scan |
-| 工作基线 / HEAD | base b79121e1944f10f82a416d98d776c0f55bf9c943；历史fixture a4f041e0/01dfc89；当前source 103232eeab0f861e1ab87f496e9b9f0f1c068965；promotion仍42c零diff |
+| 工作基线 / HEAD | base b79121e1944f10f82a416d98d776c0f55bf9c943；历史fixture a4f041e0/01dfc89；当前source d78ffd7c691682c1e78d7a2b7d2617521527e9ca；promotion仍42c零diff |
 | 工作树dirty状态 | 源已固定；本段metadata提交push后clean STOP，0待launch |
-| 工作分支状态 | review |
-| 检查状态 | PARTIAL 103232eeab0f861e1ab87f496e9b9f0f1c068965；真实PG2passed/32skipped/0failed；callerexit1/原FAIL保留，资源CLOSED/DB与TMPabsent |
+| 工作分支状态 | integration |
+| 检查状态 | PASSED d78ffd7c691682c1e78d7a2b7d2617521527e9ca；真实PG2passed/32skipped绑定执行46912（产品字节未再改），原callerexit1/FAIL保留；selector修后19pure通过并独审；资源已CLOSED |
 | 已集成main状态 / HEAD | 本片未集成；固定基线 b79121e1944f10f82a416d98d776c0f55bf9c943 |
-| 实现目标 | 103232eeab0f861e1ab87f496e9b9f0f1c068965 |
+| 实现目标 | d78ffd7c691682c1e78d7a2b7d2617521527e9ca |
 | 实现范围 | apps/server/src/conversation-queue/promotion.ts, apps/server/src/conversation-queue/queue.test.ts, docs/evidence/s01q01-paused-queue/pg-fixture.ts, docs/evidence/s01q01-paused-queue/types.tsconfig.json, docs/evidence/s01q01-paused-queue/dependencies.json, docs/evidence/s01q01-paused-queue/pg-fixture.test.ts, docs/evidence/s01q01-paused-queue/failure-local.py, docs/evidence/s01q01-paused-queue/failure.types.tsconfig.json, docs/evidence/s01q01-paused-queue/failure.vitest.config.ts, docs/evidence/s01q01-paused-queue/entry.py, docs/evidence/s01q01-paused-queue/entry.test.py, docs/evidence/s01q01-paused-queue/queue.vitest.config.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 两条暂停扫描真实数据库用例通过，资源已归还；外层选择结果判定存在已定位缺陷 |
-| 下一可用交付 | 修复外层结果选择判定并复核本次原始证据，再完成集成 |
-| 当前阻塞 | ACTIVE: 原caller选择器将32项skipped计入执行数，原运行返回FAIL；新源码修复与结果独审待定 |
+| 当前产出 | 暂停队列不再挤占扫描批次的两条真实行为已验证，结果选择器修复也已通过独立审查 |
+| 下一可用交付 | 将已审片段受控接入主线 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；architecture19:31:19批准fixture增量，原P2 CLOSED；db20:37:05批准103232ee源码准备；原唯一P2 CLOSED |
-| 当前claim最后观察 | a8a3b2d7-1bde-438a-9fbf-f81e1c791350 v1 ACTIVE；2026-10-07T20:32:48.804Z fresh ACTIVE；四精确 scope |
+| 当前claim最后观察 | a8a3b2d7-1bde-438a-9fbf-f81e1c791350 v1 ACTIVE；2026-10-07T21:10:25.971Z fresh ACTIVE；四精确 scope |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | S01Q01-01 | completed | b01_bounded_reads | 固定 252 文件/1,237,032B 与 take receipt |
-| S01Q01-02 | completed | b01_bounded_reads | 单 predicate 与两用例源码；原测试字节完整保留，NOT_RUN |
-| S01Q01-03 | in-progress | b01_bounded_reads | 完整queue类型/两条静态收集/caller纯例已核；实际PG/HTTP NOT_RUN |
-| S01Q01-04 | pending | b01_bounded_reads | 独审/主线未完成 |
+| S01Q01-02 | completed | b01_bounded_reads | 单 predicate 与两用例源码；原测试业务断言保留；真实新增两例通过 |
+| S01Q01-03 | completed | b01_bounded_reads | 完整queue类型通过；真实PG/HTTP两目标passed/32未选；原callerFAIL保留，修后selector19pure与db独审通过；资源CLOSED，见pg-run与selector-local |
+| S01Q01-04 | in-progress | b01_bounded_reads | 源码/实际结果/selector增量独审完成，主线尚未接收 |
 
 ## 同步与限制
 
@@ -77,3 +77,10 @@
 | 本次真实验证 | 2026-10-07T21:03:03.511Z owner.startMs | 2026-10-07T21:03:18Z 完整原件已读确认RETURN | 精确过程时长以OPS14/receipt字段为准；非用commit/mtime推断end |
 
 2026-10-07T21:10:25Z：新8min/new4MiB selector窄修段，fresh9e6af769=origin clean/21:10:25.971Z claimv1匹配。原结果db21:08:19 RESULT_FIDELITY_REVIEW_APPROVED，既知选择器P2 SOURCE_FIX_REQUIRED。仅caller纯JSON解释与原始报告只读反例，≤2child/30s/累计45s/raw256KiB含4MiB；0PG/HTTP/provider，旧actual所有字节冻结。任务原16:23start不重置，截止21:18:25。
+
+2026-10-07T21:14:11.497220+00:00：db21:13:07 SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPROVED，selection P2 CLOSED，0剩余P1/P2；固定source d78ffd7c691682c1e78d7a2b7d2617521527e9ca / packet 7cccfcc4386fe1926fbe5d0c1a0e4913247912eb。原真实PG行为两例及资源证据已由db21:08:19接受，原callerFAIL不改；新19pure只是选择解码与原件只读解释，未重跑PG/类型/fixture。clean-code安全点复核单职责/已知状态白名单/首错和资源门禁保留，无新框架。原runtime与CLOSEDpermit冻结供历史追溯，已消费窗口不可再用，源码修复后不能把旧输入清单当当前执行授权。当前进入integration，任务finish仍NOT_COMPLETED；metadata提交push后STOP/0待launch，claimv1保留待main。
+
+| 本轮阶段 | 有来源起点 | 有来源终点 | 限定 |
+| --- | --- | --- | --- |
+| selector实现/局部检查 | 2026-10-07T21:10:25Z 实际开段clock | 2026-10-07T21:11:35Z fixedpacket/clean现场clock | 单child实际21:11:15.169010→21:11:15.329644；不把整个区间当CPU计算 |
+| selector独立审查 | UNKNOWN（请求未单独取clock，不用commit猜） | 2026-10-07T21:13:07Z db审查消息 | 与owner收口可能重叠，不累计为独立总耗时 |
