@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-07T05:07:57.890452+00:00",
+  "nodeSyntax": {
+    "exitCode": 0,
+    "file": "entry.mjs",
+    "execution": "parse only"
+  },
+  "pythonSyntax": {
+    "file": "supervise.py",
+    "astParse": true,
+    "imported": false
+  },
+  "inputByteChecks": [
+    {
+      "path": "tools/personal-preview/cli.mjs",
+      "fixedAndArtifact": true
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "fixedAndArtifact": true
+    },
+    {
+      "path": "tools/personal-preview/process.mjs",
+      "fixedAndArtifact": true
+    },
+    {
+      "path": "tools/personal-preview/environment.mjs",
+      "fixedAndArtifact": true
+    },
+    {
+      "path": "tools/personal-preview/static-web.mjs",
+      "fixedAndArtifact": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "fixedAndArtifact": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/index.mjs",
+      "fixedAndArtifact": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/files.mjs",
+      "fixedAndArtifact": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/node-identity.mjs",
+      "fixedAndArtifact": true
+    },
+    {
+      "path": "tools/personal-preview/web-artifact.mjs",
+      "fixedAndArtifact": true
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "fixedAndArtifact": true
+    },
+    {
+      "path": "apps/tui/src/task-controls/fixture-cleanup.ts",
+      "fixedAndArtifact": true
+    }
+  ],
+  "fixedCloneAndSupervisorAndTwoTools": true,
+  "webManifestAnd10Files": true,
+  "newRootAbsent": true,
+  "newRuntimeTests": 0,
+  "imports": 0,
+  "PG": 0,
+  "provider": 0,
+  "artifactCopy": 0,
+  "limits": "Known fixed inputs only; complete artifact and runtime acceptance NOT_RUN. No product tests or green build rerun.",
+  "knownResolutionOnly": {
+    "tsxLoaderPgViteEntriesAndPackages": 5,
+    "allWithinFixedArtifact": true,
+    "imports": 0
+  }
+}
