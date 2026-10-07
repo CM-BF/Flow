@@ -17,3 +17,5 @@ PG补充由 Root 先 skills.sh 再 npx skills find 发现官方 supabase/agent-s
 2026-10-07 规划预审修正：Mika指出4096条永久receipt配额会把16瓶颈转成终身命令次数限制，已从推荐方案删除；原flow.commands规则不改，实施前审定该跨模块依赖，本规划不证明整个DB/命令历史永久有界。补ACK未知时不得换协议或新key。仅文档修正，无检查重跑。
 
 规划验收补充：配额只限制新增占用，不可阻断既有holder安全release；R12覆盖满额恢复、release掉ACK原key/body/协议重放、重启与真实存储故障恢复。累计4096不是可接受长期完成方案，已从推荐删除；命令生命周期仍需跨模块审定，不造GC。
+
+2026-10-07 00:17 UTC：db_transaction_owner受Mika委派完成固定fd02eb63的独立只读文档review，DESIGN_REVIEW_APPROVED、0 P1/P2；职责/保护状态所有者/释放实例身份/错误未知语义/有界范围与未证实性能表述已核。owner本次只记录批准，未运行工程tests或PG，无产品写入。规划源冻结，原K01产品证据不修改。

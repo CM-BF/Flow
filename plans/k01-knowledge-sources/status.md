@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 00:16 UTC |
+| 最近更新 | 2026-10-07 00:17 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [REQ-10：版本化知识与授权一致的混合检索](../flow-001-architecture/full-plan-matrix.md) |
 | co-lead | mika |
@@ -23,11 +23,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | planning |
 | 优先级 | 2 |
-| 当前产出 | 既有版本化来源已交付；正在明确持续更新与历史引用保护的留存规则 |
-| 下一可用交付 | 版本留存设计独审后，协调产品与直接消费者实施范围 |
+| 当前产出 | 持续更新与历史引用保护方案已独审，既有版本化来源能力保持不变 |
+| 下一可用交付 | 协调留存产品及直接消费者实施范围，落实持续发布与安全释放 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；旧实现APPROVED，新规划NOT_STARTED |
+| Review | [review.md](review.md)；旧实现APPROVED，新规划DESIGN_REVIEW_APPROVED fd02eb63d0e01d51c390dc5dcf5df8078a6f0063 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -37,7 +37,7 @@
 | K01-04 | completed | b01_bounded_reads / Mika | Mika 05:24:35 UTC APPROVED；31 distinct/noEmit/8库remaining[] |
 | K01-05 | completed | b01_bounded_reads / Lead | [main receipt](../../docs/evidence/k01/main-receipt.json)，fb906cb完整9文件零diff |
 | K01-06 | pending | Goal Owner / 后继任务owner | REQ-10 hybrid/vector、下游grant与消费/失效后继验收仍开放 |
-| K01-07 | completed | b01_bounded_reads / Mika | retention-design.md及固定输入已准备，独立文档review待审 |
+| K01-07 | completed | b01_bounded_reads / Mika | retention-design.md及固定输入；db_transaction_owner于00:16:39 UTC独立文档APPROVED |
 | K01-08 | pending | 后续合法product owner | 身份/留存/保护实现，当前没有产品scope |
 | K01-09 | pending | 后续合法consumer owners | 新旧协议/冻结/ACK/history兼容，需协调现owner |
 | K01-10 | pending | 后续owner / Mika / Lead | K01-R01～R12全部NOT_RUN，独审/集成待后继 |
@@ -65,3 +65,5 @@
 2026-10-07 00:15 UTC：设计固定 fd02eb63d0e01d51c390dc5dcf5df8078a6f0063，仅文档/输入记录；已按Mika预审去除终身4096 receipt上限，明确flow.commands生命周期属实施前跨模块依赖，本片有界证明不包括整个DB。独立文档review NOT_STARTED，原产品31项及历史main接收不改。本次顶表区分当前规划claim与旧released claim，历史main观察不外推为当前c3ba逐字一致。产品验证全部NOT_RUN，未取得产品scope。
 
 2026-10-07 00:16 UTC：当前固定规划target fd02eb63d0e01d51c390dc5dcf5df8078a6f0063 包含满额安全release、不可复用pin实例ID，以及release掉ACK/迟到重放不得误作用于新pin的R12验收；flow.commands生命周期不在本片有界证明范围。单次dashboard读5秒超时，聚合UNKNOWN（retention-planning-dashboard.json），不重试或服务操作。唯一status已更新；新规划待db_transaction_owner独立只读文档review，不沿原产品批准。提交后停写规划源，claim4be228e2 v1保留。
+
+2026-10-07 00:17 UTC：规划独审DESIGN_REVIEW_APPROVED fd02eb63d0e01d51c390dc5dcf5df8078a6f0063，无P1/P2，回执retention-independent-review.json。批准只覆盖3文档；K01-08～10仍pending、产品检查NOT_RUN，flow.commands生命周期与具体schema/协商由后续合法owner在实施前审定。本次仅review/status记录，无重新读取聚合/工程检查；snapshot仍单次超时UNKNOWN。最终metadata提交/推送后停止本次规划全部写入，claim4be228e2 v1保留待Lead协调。
