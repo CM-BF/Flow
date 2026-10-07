@@ -33,3 +33,7 @@ APPROVED_INCREMENTAL_LOCAL_EVIDENCE；唯一reviewer astra_ultra_execution_lead�
 ## 2026-10-07T06:40:19.954945+00:00：原3PG结果 REQUEST_REVIEW
 
 固定c687入口/40af生产、原3行为断言不变。3/3原件与marker/OID/零连接/checkpoint/DROP/组absent/EOF全部保存，见[结果](../../docs/evidence/chat05p01/pg-run-01/RESULT.md)。请仅核新运行事实及绑定，不重跑局部或PG；本次fixture类型未重验，生产挂载/真实provider不在验收范围。
+
+## 2026-10-07T06:48:28.308106+00:00：领域与实际3PG独审 APPROVED，类型修正待组合
+
+原样收[APPROVED_LIMITED_DOMAIN_AND_THREE_PG_EVIDENCE](../../docs/evidence/chat05p01/pg-run-01/independent-review.json)，target8059b7b23a2d98d4c9f3fdfe960142a943314d5f / delivery788bda85；0P1/P2，reviewer0运行。新单文件source fc685e15dfd150df81ad9b13aef7abeb3ae270c2 仅从mapper派生输入类型替代server直接SDK类型import，不改变运行语句与3PG断言；Lead做一次root组合类型复验，不扩大旧类型证据或重跑PG。生产默认开通仍未批准。

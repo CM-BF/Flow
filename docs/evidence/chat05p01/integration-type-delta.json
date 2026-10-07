@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-07T06:48:28.308106+00:00",
+  "source": "fc685e15dfd150df81ad9b13aef7abeb3ae270c2",
+  "base": "788bda855055367b6d78247201db481eba654566",
+  "scope": [
+    "apps/server/src/native-activity-body/body.test.ts"
+  ],
+  "reason": "Execution Lead root integration noEmit reported only TS2307 at direct SDKMessage type import in server test; original evidence I02/chat05p01-integration-types",
+  "change": "Derive NativeActivityMessage as Parameters<typeof nativeActivityObservations>[0]; remove direct SDK type import, retain two existing type assertions with the equivalent mapper input type",
+  "bytes": 8574,
+  "sha256": "c3f5ba6337a94c66fd370b0a3394b52f6496935f1917fe73481e929b969874ac",
+  "staticCheck": "Exact inverse of import/alias substitutions recovers original entire file bytes; no assertion or runtime statement changed",
+  "tests": 0,
+  "types": 0,
+  "PG": 0,
+  "packageLockAliasChanges": 0,
+  "next": "Lead applies this single source and performs one root noEmit; old3PG/28local not rerun",
+  "originalRunManifestUnchanged": "eb242d79ddef88cd0dd430780ff6e96a0e3c356487fc2c0e9b6f361ded41ab65",
+  "domainReviewSha256": "56c76d776808496fd609574802facf40a5e869fb0cb680f7f71d59e88410eecc"
+}

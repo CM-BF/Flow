@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 更新时间 | 2026-10-07T06:40:19.954945+00:00 |
+| 更新时间 | 2026-10-07T06:48:28.308106+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初任务开工无可靠记录，保持UNKNOWN；旧局部05:12原reservation/result；本段PG准备只读核/领取见pg-entry/claim-observation与preparation，不替代最初时间 |
@@ -12,21 +12,21 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 本片段交付阶段 | review |
-| 当前产出 | 工具正文三项真实数据库场景已通过：大材料可按原批次恢复并完整分页取回；专库与夹具已清理，生产开通仍未完成 |
-| 下一可用交付 | 独立核验本次数据库结果，随后处理主线共享输入对齐与正式开通 |
-| 当前阻塞 | ACTIVE: 实际数据库结果待独审；共享生产接线、整体容量和界面后继仍未完成 |
+| 当前产出 | 工具正文领域及三项真实数据库结果已获独审；主线组合发现的单处测试类型依赖已窄修，运行行为和原结果保持 |
+| 下一可用交付 | 主线应用单文件类型修正并复验组合类型，通过后受控接收；正式开通仍为后继 |
+| 当前阻塞 | ACTIVE: 等待主线一次类型复验与受控接收；生产挂载、整体容量和界面后继仍未完成 |
 | 需用户决定 | NONE |
 | 工作树 | /Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body |
 | Branch | codex/native-activity-body |
 | Base | fc3246b307f5436ccecb97f38ccaba10c7a72a5a |
-| HEAD | 8059b7b23a2d98d4c9f3fdfe960142a943314d5f 实际3PG结果已固定待独审；固定c687入口与40af生产未改 |
-| dirty | 仅本次run原件/summary与own status；封包后核clean |
+| HEAD | fc685e15dfd150df81ad9b13aef7abeb3ae270c2；单测试类型修正已固定，本次仅独审归档metadata |
+| dirty | 仅own domain-review/status/type-delta记录，提交后核clean |
 | 工作分支状态 | in-progress |
-| 实现目标 | c687b1b63802298d27396aa4c40bd9075ccb1405 |
+| 实现目标 | fc685e15dfd150df81ad9b13aef7abeb3ae270c2 |
 | 实现范围 | apps/runner/src/claude.ts, apps/runner/src/native-activity-body, apps/runner/src/native-activity/index.ts, apps/runner/src/native-activity/mapper.test.ts, apps/runner/src/outbox.ts, apps/server/src/events.ts, apps/server/src/native-activity-body, packages/contracts/src/native-activity-body.ts, packages/contracts/src/runner.ts, packages/storage/migrations/033-native-activity-bodies.sql |
 | claim | b447f2ce-a4b3-49b0-bcbe-034ff60b73be v1，12literal，2026-10-06T22:17:47.363Z |
-| 检查状态 | PASSED c687：原3PG/3过/0未选、exit0/3461ms、组absent双EOF/专库正常DROP；旧28局部与40af focused0分轮保持，新fixture noEmit NOT_RUN |
-| 独立review | c687入口已限定APPROVED；本次3PG实际结果PENDING，原40af源与f507局部证据批准保持 |
+| 检查状态 | 原3PG/3过/0未选、exit0/3461ms，旧28局部与40af focused0保留；本次只类型别名静态差异核，root复验由Lead执行，未重跑PG/局部/types |
+| 独立review | APPROVED_LIMITED_DOMAIN_AND_THREE_PG_EVIDENCE 8059b7b2/788bda85；单测试类型delta待Lead组合复验，原生产挂载仍未批准 |
 | main集成 | 未集成 |
 | Dashboard | registry180已实际live；TODO表头已纠正待下次聚合 |
 | 架构影响 | 新增工具正文spool与immutable chunk读口；复用原事件事务，架构基线由Lead集成时更新 |
@@ -85,6 +85,10 @@ Web/Mika已由Lead明确交接，当前CHAT05P01持有唯一PG段。fresh原v1/s
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
 | CHAT05P01-W-PG01 | UNKNOWN | 2026-10-07T06:37:51.807947Z | 资源 | 原三项PG等待共享窗口；最早等待起点缺证据。已由Lead明确holder交接并fresh准入，现已解除。 | 06:31:32入口独审、06:32:28 approved-preflight、06:37:51 execution-preflight-01 |
-| CHAT05P01-W-RESULT01 | 2026-10-07T06:41:15.961102+00:00 | OPEN | 审查 | 本次3PG结果封定交唯一独审；后续共享接线与主线接收另按实际事实记录。 | pg-run-01/result-manifest.json、当前owner固定交付 |
+| CHAT05P01-W-RESULT01 | 2026-10-07T06:41:15.961102+00:00 | 2026-10-07T06:43:28.502402+00:00 | 审查 | 本次3PG结果封定交唯一独审；后续共享接线与主线接收另按实际事实记录。 | pg-run-01/result-manifest.json、当前owner固定交付 |
 
 实际执行与等待分开：06:37:51.861095Z reservation至06:37:55.362725Z caller结果；fixture在06:37:55.330Z已持久cleaned，窗口随后实际告Lead归还。不把claim/独审/commit时间当首次任务开工；本次最早资源等待起点UNKNOWN保持。
+
+## 2026-10-07T06:48:28.308106+00:00：领域结果独审接收与组合类型窄修
+
+唯一Lead于2026-10-07T06:43:28.502402+00:00批准原8059结果，18绑定及3PG原件一致，[独审原件](../../docs/evidence/chat05p01/pg-run-01/independent-review.json)已归档。主线组合仅一条server测试直接SDK类型TS2307；本owner在原v1 scope将其改为mapper输入Parameters类型，两个原断言同类型替换，所有JS语句/3PG断言不变。见[固定delta](../../docs/evidence/chat05p01/integration-type-delta.json)。未改依赖/包/lock/alias，原entry/PG manifest不改、不重新消费；0检查运行。Lead应用固定单文件后做一次root noEmit复验，主线尚未宣称接收。
