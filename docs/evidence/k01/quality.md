@@ -33,3 +33,5 @@ PG补充由 Root 先 skills.sh 再 npx skills find 发现官方 supabase/agent-s
 2026-10-07 15:55 UTC：新12分钟metadata/runtime准备沿本地find-skills/codebase-design/固定clean-code，0安装/工程/PG。一次归档k01_query_review 15:50:57Z源码及局部结果批准，不重写旧manifest/raw。运行职责分为已审operator、单DB owner与生产search；静态绑定实际Node/Python、TSX及esbuildhelper、245源码/33动态SQL和17外部/3内部alias，不复制旧KEEP或整个依赖树。凭据只指定合法来源和变量，不记录值/hash。保持单一closed-expired permit，不造新审批工具；明确查询采样数不是总SQL，16MiB caller/2MiB单result与原8MiB/2MiB合计口径的未闭合差异，未来OPEN前必须确认。
 
 2026-10-07 16:10 UTC：预算收口段沿本地find-skills/codebase-design/固定clean-code，单一StorageBudget只负责本次own namespace+record的有界读与准入，不造平台/OS quota。work/persist/parent capture职责分离、错误停止与cleanup继续分开，512KiB/192KiB显式预留；canonical URL拒绝查询覆盖/fragment，并净化原生URL异常避免私有input进入未捕获错误。13纯case与noEmit在a913通过，final URL两处窄限制仅静态核对，精确diff/源版本留证据；没有掩盖未重测差异。零PG/HTTP/provider，旧原件/KEEP不触，独审待固定target。
+
+2026-10-07 16:20 UTC：独审P2已按local find-skills/codebase-design/固定clean-code方法窄修：owned目录身份与可读取计量为一项责任；根lstat及walk onerror避免未知变0，storage_facts仅产出secondary计量事实、不覆盖child/raw/cleanup。定向3+URL1和noEmit已绑定最终可执行源，不再测试后改代码。普通子进程时间上限可按本段15s收紧但不抬旧上限，原OPS14复用；0PG/产品写入，旧失败原件不改。原reviewercap拒绝一次后交Mika，不新增验证/代理循环。

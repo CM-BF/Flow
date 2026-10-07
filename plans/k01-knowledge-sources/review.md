@@ -1,3 +1,10 @@
+# K01-06 owned预算遍历P2窄修（当前）
+
+状态：NOT_STARTED
+Review target commit：a82e44be17a7a31b051bf98400d9553513600542
+
+原budget8020 review为CHANGES_REQUESTED，唯一P2是Python owned root未lstat/os.walk忽略OSError；修后根/遍历异常为UNKNOWN/null bytes/false，保留primary/raw/cleanup/PG KEEP。3定向caller+1URL（3未选）和focused noEmit在771通过，最终所有可执行字节一致、仅README之后追加事实。唯一证据 query-entry-owned-repair-20261007T161534/manifest.json。原reviewer一次直接请求触发工具thread cap，未循环或新建；Mika接固定target窄复审。历史批准不得覆盖本修复，PG NOT_OPEN。
+
 # K01-06 合计预算与URL保护差异（当前）
 
 状态：NOT_STARTED

@@ -12,7 +12,7 @@
     "models": 0,
     "actualNamespaceCreated": false
   },
-  "implementationTarget": "8020d0ba7df93e9131cdb1e334e3141faf8091a5",
+  "implementationTarget": "a82e44be17a7a31b051bf98400d9553513600542",
   "fixedProduct": "3c9345df4aec85a37e8a2a155e079db260d515b1",
   "independentReview": {
     "path": "docs/evidence/k01/query-entry-independent-review.json",
@@ -348,7 +348,7 @@
   "closedPermit": {
     "path": "docs/evidence/k01/query-pg-closed-permit.json",
     "bytes": 3101,
-    "sha256": "b3877b16f8649615e87e87bcc65e271c2641a13e735d39c2b86f5402189d3bbc"
+    "sha256": "85aa56ea7ef8e13050db2b924f4955db1f5fda09f44cd9ba4c0015026659997c"
   },
   "candidateBudget": {
     "totalSeconds": 120,
@@ -423,7 +423,7 @@
       "confirmedUse": "Mika confirmed at this16:02:16 segment authorization; actual value not loaded"
     }
   },
-  "deltaReview": "PENDING: budget/local URL source delta; old e1a source approval retained as history",
+  "deltaReview": "PENDING owned-traversal P2 narrow re-review; initial budget result fidelity accepted, source changes requested",
   "aggregateStorageGate": {
     "localBytes": 8388608,
     "rawBytes": 2097152,
@@ -434,11 +434,17 @@
     "durableWrites": "check exact encoded bytes plus parent reserve before opening wx",
     "parent": "final retained PG scratch + raw + final ledger allowance included",
     "failure": "stop work; cleanup retained; unavailable final result reported as bounded original-failure/cleanup fact to reserved parent capture; never PASS",
-    "validation": "13 synthetic/local tests and noEmit on a913; subsequent empty-fragment + sanitized parse-error restrictions statically inspected only (exact diff). Not actual PG."
+    "validation": "Initial13 cases/noEmit at a913 historical. Final owned-traversal3 + URL1 (3 unselected) + noEmit on771; all executable source matches final. Pure only, no PG.",
+    "unknownAccounting": "Owned root/descendant traversal failure records UNKNOWN/null bytes/false budget while retaining original child/raw/cleanup facts; no fallback zero."
   },
   "budgetDeltaEvidence": {
     "path": "docs/evidence/k01/query-entry-budget-20261007T160216/manifest.json",
     "bytes": 9587,
     "sha256": "e2d4e4eae904da65d84e114273beac8ab1d85bfc392ff94b412031017d5f9311"
+  },
+  "ownedTraversalRepairEvidence": {
+    "path": "docs/evidence/k01/query-entry-owned-repair-20261007T161534/manifest.json",
+    "bytes": 9437,
+    "sha256": "da15e47a4ff66fe0d5956ab491f350245ec9a299d3b5a242b74f1e99007b6df3"
   }
 }
