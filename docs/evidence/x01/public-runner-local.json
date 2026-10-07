@@ -1,0 +1,153 @@
+{
+  "startedAt": "2026-10-07T09:12:13.473618+00:00",
+  "startEpoch": 1791363736.0,
+  "attempts": [
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T09:12:13.475532+00:00",
+      "freeBeforeBytes": 23467311104,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-center-claim-4fcf2tu2",
+        "dev": 16777234,
+        "ino": 123721553,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/public-runner-tsconfig.json"
+      ],
+      "process": {
+        "pid": 15056,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 2327,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T09:12:15.803519+00:00",
+      "elapsedBeforeReceiptSeconds": 2.32761166698765
+    },
+    {
+      "label": "list",
+      "startedAt": "2026-10-07T09:12:38.740022+00:00",
+      "freeBeforeBytes": 23465725952,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-center-claim-qjths97j",
+        "dev": 16777234,
+        "ino": 123721606,
+        "removed": true,
+        "endSample": {
+          "entries": 4,
+          "bytes": 311,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "list",
+        "--config",
+        "docs/evidence/x01/public-runner-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--json=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-center-claim-qjths97j/tests.json"
+      ],
+      "process": {
+        "pid": 31697,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1688,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "list",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "tests.json": [
+        {
+          "name": "public trusted enable and frozen admission execute real semver through runRunner and sourced artifact",
+          "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/public-runner-inputs/apps/server/src/plugin-runtime/public-runner-pg.test.ts"
+        }
+      ],
+      "finishedAt": "2026-10-07T09:12:40.429315+00:00",
+      "elapsedBeforeReceiptSeconds": 1.6884856669930741
+    }
+  ],
+  "unknown": false,
+  "limits": {
+    "segmentSeconds": 1200,
+    "commands": 2,
+    "commandSeconds": 60,
+    "temporaryBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 2097152
+  },
+  "floorBytes": 4072407040,
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "tar": 0,
+  "wholeExternalWall": null,
+  "updatedAt": "2026-10-07T09:12:40.429327+00:00"
+}

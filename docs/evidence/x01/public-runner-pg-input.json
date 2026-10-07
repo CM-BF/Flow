@@ -1,0 +1,42 @@
+{
+  "protocol": "flow.x01.public-runner-pg.v1",
+  "productCommit": "2ea5adfedfe0187a49cde13c769823be753a1496",
+  "totalSeconds": 180,
+  "workSeconds": 110,
+  "cleanupSeconds": 60,
+  "finalReserveSeconds": 10,
+  "suites": {
+    "runtime": {
+      "cases": 1,
+      "httpRequests": 256,
+      "connectionsMax": 17
+    }
+  },
+  "httpRequestsMax": 256,
+  "responseBytesPerRequest": 131072,
+  "responseBytesPerSuite": 4194304,
+  "databasesMax": 1,
+  "serialSuites": true,
+  "streamsBytes": 262144,
+  "resultBytes": 131072,
+  "rawBytes": 1048576,
+  "temporaryBytes": 33554432,
+  "temporaryEntries": 4096,
+  "reserveBytes": 1073741824,
+  "runName": "public-runner-pg-run-r1",
+  "databaseReserveBytes": 134217728,
+  "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+  "selection": [
+    {
+      "file": "docs/evidence/x01/public-runner-inputs/apps/server/src/plugin-runtime/public-runner-pg.test.ts",
+      "name": "public trusted enable and frozen admission execute real semver through runRunner and sourced artifact"
+    }
+  ],
+  "tasksMax": 1,
+  "registrationsMax": 1,
+  "attemptsMax": 1,
+  "scope": "One real public loopback registry/fetch/install/enable/admission/FlowClient-v3/runRunner/npm-semver/artifact chain. No provider, external registry, npm installation, CLI or pin-recovery claim.",
+  "registryRequestsMax": 4,
+  "tarChildrenMax": 1,
+  "listenersMax": 2
+}

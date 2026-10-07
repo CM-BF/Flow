@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T09:00:56.457504+00:00 |
+| 最近更新时间 | 2026-10-07T09:14:26.893230+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -10,24 +10,24 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v20 ACTIVE51scope](../../docs/evidence/x01/runtime-recovery-amend-v20.json)；已正式接收LAZY client/index和generic retry保护范围 |
+| Claim | [v21 ACTIVE52scope](../../docs/evidence/x01/public-runner-amend-v21.json)；新增public-runner-pg.test.ts于09:02:54.938Z原子领取 |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | 新段起点7fe6fc02；固定main b768+LAZY294；当前source2ea5adfe，旧runtime9b已独审 |
-| 工作树 dirty 状态 | source2ea5adfe/result3ae09ac1/packet2c219bca已push clean；本次仅正式独审与intake metadata |
-| 工作分支状态 | integration |
-| 检查状态 | 首strict2原件保留→修后0；6/6新直接行为，最终错误文案只复测2/2（共6distinct）；4child/2109Braw/5exact根absent；server factory仅静态，0PG |
+| 工作基线 / HEAD | 新段2026-10-07T09:02:16Z起；HEAD e4eeec9323f88f0da3557b988d376dc07308bbe4；固定main1e12eaf13a02b45a99dfe126bc182c2ea45a8390+已审own runtime/client |
+| 工作树 dirty 状态 | 本段仅新public-runner测试、完整固定mirror与own支持/metadata；原已审产品未修改 |
+| 工作分支状态 | implementation |
+| 检查状态 | 完整createServer/runRunner类型闭包strict0；精确list1/0hooks/0case执行，两child及两个TMP已闭合；真实PG NOT_OPEN |
 | Review | chatui01_owner 2026-10-07T08:59:36Z SOURCE_AND_LIMITED_LOCAL_RESULT_REVIEW_APPROVED/0P1P2，target2ea5adfe |
 | 已集成 main 状态 / HEAD | 原领域5cd、claim/center9816已main；真实semver+Flow包装pinning已main5b0bef86086a611937e098c78bc542fde6ed9539。来源六源尚待接收；完整public runtime未交付 |
 | 实现目标 | 2ea5adfedfe0187a49cde13c769823be753a1496 |
 | 实现范围 | packages/client/src/index.ts, apps/runner/src/runtime.ts, apps/server/src/index.ts, apps/server/src/reconciliation.ts, packages/client/src/plugin-runner.test.ts, apps/runner/src/plugins/runtime.test.ts, apps/server/src/plugin-runtime/recovery.test.ts |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 插件客户端、运行时和可信中心接线已通过独立审查，待主线组合检查与接收 |
-| 下一可用交付 | 受控接收后验证真实公开运行链；完整插件恢复与CLI受信配置仍开放 |
-| 当前阻塞 | NONE：本片已审待集成；真实HTTP与完整恢复是后继验收，不将当前局部检查当完成 |
+| 当前产出 | 正在准备真实npm插件从公开安装、启用到任务执行和来源产物的一条端到端验收；完整类型检查已通过 |
+| 下一可用交付 | 固定单用例的真实PG入口、资源闭包与独立审查，之后另取得实际窗口 |
+| 当前阻塞 | NONE：准备中；实际PG尚未准入，完整CLI与精确pin恢复仍开放 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -319,3 +319,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T08:56:07.189458+00:00：新source2ea5adfe固定；[Interface](../../docs/evidence/x01/runtime-wiring-interface.md)和[有限结果](../../docs/evidence/x01/runtime-wiring-result.json)记录实际边界。四child于08:51:32.386169Z全部闭合/本队local归还，6distinct通过+2定向重复，0PG/HTTP监听/tar/provider；首types失败保留。完整factory挂载仅静态、实际公共链和pin恢复未验；旧runtime正式批准与来源六源READY不被本片覆盖。架构新增同FlowClient领域消费与可信factory opt-in，main基线待Lead受控更新。v20ACTIVE51保留review/repair。
 
 2026-10-07T09:00:56.457504+00:00：chatui于08:59:36固定2c219bca/2ea5adfe独审APPROVED/0P1P2；[正式回执](../../docs/evidence/x01/runtime-wiring-independent-review.json)及[七源分层窄intake](../../docs/evidence/x01/runtime-wiring-integration-ready.json)已归档。main尚未接收；原9b runtime/domain、LAZY294和来源685是明确前置，不能整文件overlay。fresh09:00:09.267Z v20ACTIVE51未变，当前0工程child/PG/待launch；本20min段至此收尾，保留claim供review/repair。
+
+2026-10-07T09:02:16Z 开始独立20min公开链准备段，v21/52仅追加单新test。原max2×60s/120s、16MiB TMP/512KiB raw；Mika按221TS/1,122,779B完整闭包于本段明确source/meta上限由1改2MiB，其余不变。09:12–09:13 strict0/list1（0hooks、0PG、0tar）实际完成并向status_read归还local。260固定物化文件1,207,575B含33官方SQL与5semver材料；首source-only供给对不存在schema.sql路径拒绝，0物化/0工程child，随后按真实database.ts内联schema+官方迁移完整供给。旧approved wiring及来源5/5原件保持；新PG入口未运行。
