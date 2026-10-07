@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-07T05:33:33.420869+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "471b1d8b7b19d53e7c7e87efc525e9c193c5242e",
+  "delivery": "4eb35b2bf4ec4df4b4b3e731dcd18aa8a3dde785",
+  "manifestSha256": "d23607f7f71677010fde61ee5ba2305f3bcd53734f5c3cf17304d59ba6bbce12",
+  "conclusion": "APPROVED_LIMITED_DARWIN_LAUNCH_AND_R06_MECHANISM",
+  "findings": [],
+  "closed": [
+    "ENG01J-R1-P2-01"
+  ],
+  "checked": {
+    "allFixedCurrentBindings": 148,
+    "installedEntryBindings": 13,
+    "hashMismatches": [],
+    "protectedMainDifferences": [],
+    "completeFiveProductDeltaRead": true,
+    "r1TwoTestDeltaRead": true,
+    "probeConfigurationAndRaw06Through08Read": true,
+    "original01Through05Retained": true
+  },
+  "facts": {
+    "normalVitest": {
+      "passed": 1,
+      "skipped": 3,
+      "canarySpawn": false
+    },
+    "explicitDarwin": {
+      "passed": 4,
+      "skipped": 0,
+      "inheritedHostContent": "P"
+    },
+    "focusedTypesExit": 0,
+    "distinctBehaviorChecks": 4,
+    "newSupervisedMs": 2788,
+    "cumulativeSupervisedMs": 6357,
+    "newRawBytes": 3195,
+    "allEightGroupsAbsentAndEOF": true,
+    "newExactScratchRemoved": true,
+    "outerCommandExitNumeric": null
+  },
+  "limits": [
+    "Actual new supervised child exits0/EOF/absence recorded; wrapper numeric tool exits were not separately retained and remain null.",
+    "Only covered Darwin syscall/file descriptor and actual R06 transport mechanisms; no model qualification, provider network or production grant.",
+    "Stock Codex sandboxed filesystem helper route conditionally conflicts with deny-fork policy; actual fixed native tool route remains untested.",
+    "Child close is not all-writer revoked; writeAccess remains unknown.",
+    "End private-byte observations are not continuous peak or hard quota."
+  ],
+  "reviewerExecution": {
+    "tests": 0,
+    "PG": 0,
+    "provider": 0,
+    "services": 0
+  },
+  "skills": [
+    "local find-skills baseline",
+    "codebase-design Interface/lifecycle",
+    "clean-code responsibility and failures"
+  ]
+}

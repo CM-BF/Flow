@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T05:32:19.996Z |
+| 最近更新 | 2026-10-07T05:34:25.717Z |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -13,7 +13,7 @@
 | 工作基线 / HEAD | ee98e65c147cf2ef28ccf0f519952f60d56e9d4b / 产品 471b1d8b7b19d53e7c7e87efc525e9c193c5242e，R1仅两专测修复，生产三源保持原固定 |
 | 工作树dirty状态 | 本提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 实现目标 | 471b1d8b7b19d53e7c7e87efc525e9c193c5242e |
 | 实现范围 | apps/runner/src/engineering/native-authority.ts, apps/runner/src/engineering/native-authority.test.ts, apps/runner/src/engineering/native-authority-darwin.ts, apps/runner/src/engineering/native-authority-darwin.test.ts, apps/runner/src/engineering/fixtures/native-authority-canary.c |
 | 检查状态 | PASSED 471b1d8b7b19d53e7c7e87efc525e9c193c5242e；4个不同局部检查分轮；R1正常1pass/3skip、显式4/4、focused types0；syscall继承FD缺口保留；[原始记录](../../docs/evidence/eng01j/local/README.md) |
@@ -23,11 +23,11 @@
 | 任务时间来源 | 原子take 2026-10-07T05:06:16.785Z后本owner开始首合同/源码工作，以上为当次记录时间 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已实现受限写入启动层，验证了现有传输关闭额外文件描述符，等待独立审查 |
+| 当前产出 | 受限写入启动层已通过独立审查，等待主线接收 |
 | 下一可用交付 | 交付修复后的宿主验证片段；下一步先核真实文件工具的辅助进程兼容性 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，R1 REQUEST_CHANGES；修复后待独立复审 |
+| Review | APPROVED [review.md](review.md)；限定Darwin启动/R06机制，真实native工具兼容另验 |
 | Claim | b575e07c-483b-4a4e-824e-6dc54e6469e4 v1 active，七literal |
 | 架构影响 | 新Darwin策略/启动层直接复用R06；G/I与C02不变，生产grant未注册。架构基线待本target独审/接收后由Execution Lead更新，分支不当main能力 |
 
@@ -36,7 +36,7 @@
 | ENG01J-01 | completed | native_center_owner | [take](../../docs/evidence/eng01j/take-receipt.json)、[Interface](../../docs/evidence/eng01j/interface.md) |
 | ENG01J-02 | completed | native_center_owner | [真实syscall与FD限制](../../docs/evidence/eng01j/local/README.md)，不推断全IPC |
 | ENG01J-03 | completed | native_center_owner | [实际启动Interface](../../docs/evidence/eng01j/interface.md)，R06直接4例；完整生产grant未实现 |
-| ENG01J-04 | in-progress | native_center_owner | 固定产品/原始结果封包，独立review与main待接 |
+| ENG01J-04 | in-progress | native_center_owner | [限定独审已通过](../../docs/evidence/eng01j/r1-re-review.json)，main待接 |
 
 继承I真实零provider组合已main，但不能提供模型身份或OS停止证明。本片不重复Mika Node/Codex诊断；tiny C只测OS行为，不充当模型写改。
 
@@ -52,3 +52,5 @@
 | ENG01J-W02 | 2026-10-07T05:23:45.538Z | OPEN | 审查 | 本固定源/证据等待唯一独立审查 | 本次作者封包记录；不新增运行 |
 
 R1修复封包 2026-10-07T05:32:19.996Z：[增量检查](../../docs/evidence/eng01j/local/revision-run.json)。未重复syscall/旧全集，原失败不变；stock helper与全禁派生存在条件源码冲突，下一实际兼容事实未执行。
+
+独审转录时间 2026-10-07T05:34:25.717Z，source471b1d8b7b19d53e7c7e87efc525e9c193c5242e / delivery4eb35b2bf4ec4df4b4b3e731dcd18aa8a3dde785；复审关闭唯一P2。148固定路径+13运行入口核对通过，reviewer无新运行，原outer数字exit未另抄存保持null。产品停写保claim，后继仅准备stock helper零query方案，未运行。
