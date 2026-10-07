@@ -47,3 +47,7 @@ b01对同672ce薄caller审查为SOURCE_CHANGES_REQUESTED（1P2/0P1）：继承re
 ## 公开schema400增量批准
 
 2026-10-07T22:42:38.624Z：chatui于22:41:46批准source8eb/result44dc/packetbf4，0P1P2；旧ZodError500缺口已关闭。固定21bindings233883B、11/11注入+types0和资源收据成立；未重跑旧15/5domain或任何PG。限定原件见route-validation/approval.json。
+
+## VAR v2 PG preparation delta — review pending
+
+2026-10-07T22:47:52.673Z：packet bf13df9a89c6ae6475439060e134fd0a6ec1e507，10bindings219314B；仅5输入row与literal caller/namespace、claimv2重绑。既有route8eb/AV ead8修复批准只按原范围引用。待b01在自身actual归还后只读核差量；不是准备批准或PG通过。原manifest/candidate/raw历史不改。

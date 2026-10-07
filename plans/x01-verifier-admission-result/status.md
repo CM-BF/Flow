@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T22:47:06.663Z |
+| 最近更新时间 | 2026-10-07T22:47:52.673Z |
 | 任务开工时间 | 2026-10-07T20:31:27.000Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner本段首次实际clock；25min截止20:56:27Z，包含等待 |
@@ -14,7 +14,7 @@
 | Branch | codex/plugin-verifier-admission-result |
 | 工作基线 / HEAD | 57abdb93b73c697d865cfea5daf52d4f3342e542 / implementation 87fb3d5f301d9aef2865a7cad04fbd98b6234274 |
 | Claim | cb699a7a-bc28-4659-82e6-56f6a0765e6c v2 ACTIVE24；[receipt](../../docs/evidence/x01-verifier-admission-result/route-validation/claim-receipt.json) |
-| 工作树 dirty 状态 | 产品/工程均STOP；仅新版PG输入准备metadata，固定提交push后clean |
+| 工作树 dirty 状态 | 产品/工程/供给均STOP；新版PG准备packet已push，末metadata提交后clean |
 | 工作分支状态 | in-progress（公开输入边界已审；新PG准备绑定待窄审） |
 | 实现目标 | 8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd（公开schema400增量；核心53d保留） |
 | 实现范围 | apps/runner/src/plugins/execution.ts,apps/server/src/events.ts,apps/server/src/plugin-runtime/artifact.ts,apps/server/src/plugin-runtime/commands.ts,apps/server/src/plugin-runtime/store.ts,apps/server/src/plugin-runtime/verification-admission.test.ts,apps/server/src/plugin-runtime/verification-admission.ts,apps/server/src/plugin-runtime/verification-result.test.ts,apps/server/src/plugin-runtime/verification-result.ts,apps/server/src/plugin-runtime/verification-routes.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/plugin-verification-configuration.test.ts,apps/server/src/plugin-verification-configuration.ts,packages/contracts/src/plugin-verification-admission.ts,packages/contracts/src/plugin-verification-event.ts,packages/contracts/src/runner.ts,packages/plugin-runtime/src/verification-input.test.ts,packages/plugin-runtime/src/verification-input.ts |
@@ -95,3 +95,5 @@ D05已确认22:01:36.229Z live211/sourceCurrenttrue/issues[]/stalefalse（dashbo
 ## VAR PG准备v2（未执行）
 
 2026-10-07T22:47:06.663Z：新独立段22:43:26.475Z→22:53:26.475Z，首写22:43:56.326Z，4MiB内仅own evidence供给/metadata，0工程child/PG/HTTP。产品source8ebedd冻结；原d407六份候选/输入/caller/manifest/claim/invocation逐字保留，原raw不改。新[候选](../../docs/evidence/x01-verifier-admission-result/transaction-pg/v2/candidate.json)将295输入的5row重绑（036采用AV R3 ead8，route采用8eb，另claim/input/caller各自v2路径），290原row及191external/16links不变。原五case不改且NOT_RUN；新namespace未创建，180s/17PG只是CLOSED候选。当前等待独立metadata窄审、AV前置main receipt及未来唯一窗口，不能称公开factory或worker已验。
+
+2026-10-07T22:47:52.673Z：VAR v2准备固定packet bf13df9a89c6ae6475439060e134fd0a6ec1e507已push，10个delta绑定219314B；manifest f0c77f4d1335bb9acd459e827ddcddea1de8f42150ee3fa69e33b004b452a141。差量交b01排在其GDEP完整RETURN之后只读审，当前CLOSED_REVIEW_PENDING_WAIT_MAIN_INTAKE。0新child/PG/监听/待launch，新namespace未创建；本树本提交push后STOP，保claimv2。实际增长保守计量见[v2/closed.json](../../docs/evidence/x01-verifier-admission-result/transaction-pg/v2/closed.json)，不冒峰值。

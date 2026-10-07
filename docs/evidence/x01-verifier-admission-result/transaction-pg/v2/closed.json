@@ -1,0 +1,31 @@
+{
+  "stoppedAt": "2026-10-07T22:47:52.673Z",
+  "phase": "SOURCE_METADATA_STOP_REVIEW_PENDING",
+  "packet": "bf13df9a89c6ae6475439060e134fd0a6ec1e507",
+  "start": "2026-10-07T22:43:26.475Z",
+  "deadline": "2026-10-07T22:53:26.475Z",
+  "engineeringChildren": 0,
+  "PG": 0,
+  "listeners": 0,
+  "pendingLaunch": false,
+  "newNamespaceCreated": false,
+  "oldOriginalsHashVerified": {
+    "candidate.json": "791ff815fbe49b7ef154209d3de3ea7b75f4b294950caacb9adf4f5ab6fafe9a",
+    "manifest.json": "b54b712ed3c5430d8a5510ad318ccd5ffc6b6227101d8df1671087202fbddf08",
+    "pg-input.json": "7191bdb351617e940e4576c272c934eebaf828d227947a85c0eb3e67f7f3a3fc",
+    "pg-once.py": "5d320bd5212f55e0eb9d095e33820236a3e5720679dfc31658e79a53d57c1c77",
+    "claim-receipt.json": "b15744326a6e577009e3f6734a444dae9a07afd7e72ab65a983b852626d3f004",
+    "invocation.json": "a2ea19ef25ec4c3f3e731262f94938d6479b41910b1591f0ad98efc4392e7ca0"
+  },
+  "growthAccounting": {
+    "changedFileFullBytesBeforeFinalSeal": 234655,
+    "gitIndexAtomicCopyBytes": 2416897,
+    "finalMetadataTailAllowance": 65536,
+    "plannedChargedUpperBytes": 2717088,
+    "capBytes": 4194304,
+    "peak": "UNKNOWN"
+  },
+  "reviewQueue": "b01 after GDEP exactRETURN/own result sealing; root routes. No second source review or test requested.",
+  "dependency": "AV R3 main receipt NOT_RECEIVED; no actual grant",
+  "skills": "Reused local find-skills/codebase-design/clean-code baseline; metadata names, single authority, historical boundaries, fixed paths and receipt identities checked; no new implementation."
+}
