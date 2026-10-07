@@ -1,6 +1,12 @@
 # WPF-RELEASE01 review
 
-**当前状态：APPROVED 精确pair源码/调用准备；首次actual FAILED已独立核验，不是兼容批准。**
+**当前状态：NOT_STARTED（仅本次场景窄修；没有新增actual）。**
+
+Review target commit：d032a53a62017cc41a3ddf19b316ad1047398fa6。范围：apps/web/test/web-release-compatibility.browser.ts。[c2准备](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-c2/README.md)把UNKNOWN真实reload/显式恢复放在accepted流与迟到logout之前，其他真实行为/报告/清理合同不减。两harness、五prepared与fixedpair pins见[source-preparation](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-c2/source-preparation.json)。待一次窄diff独审，后继actual另独立有界安排。
+
+## 已审历史：pair准备与首实际失败
+
+**当时状态：APPROVED 精确pair源码/调用准备；首次actual FAILED已独立核验，不是兼容批准。**
 
 Review target commit：2f6792ca3f19fcd1d54563531c302937f607c892。范围：apps/web/test/web-release-compatibility.fixture.ts。原browser逐字8964；[源审与native批准、首次失败实际](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md)分层归档。180s段CLOSED56504ms，完整RETURN；旧三App只有阶段完成，reports=null，0正式报告，newApp lateLogout未真正发请求。
 

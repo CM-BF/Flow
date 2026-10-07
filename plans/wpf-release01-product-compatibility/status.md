@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T16:09:01.937Z |
+| 最近更新时间 | 2026-10-07T16:13:46.213Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,20 +10,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery |
 | Branch | codex/web-release-recovery |
 | 工作基线 / HEAD | 固定7272151bb1e3e59e08937dca44949dcdeb42f009；source供给300386e2babce408b85ad5b9732d616782b78097；旧树9fde已释放停写 |
-| 工作树dirty状态 | 本批仅own records封存首失败；两harness未改，两已交回产品持续STOP |
+| 工作树dirty状态 | 本批browser场景窄修d032已固定；仅own records收口，两已交回产品持续STOP |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | FAILED 新pair首次兼容，reports=null/0正式报告；原源码/旧consumer/固定artifact通过仍限历史范围 |
+| 检查状态 | FAILED 2f6792ca3f19fcd1d54563531c302937f607c892 新pair首次兼容，reports=null/0正式报告；原源码/旧consumer/固定artifact通过仍限历史范围 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED 当前新pair harness/compat；两产品窄修已随MSG进入main729d3383635b565aa4131078f80a682cac437526，session保留独立MSG接线 |
-| 实现目标 | 2f6792ca3f19fcd1d54563531c302937f607c892 |
-| 实现范围 | apps/web/test/web-release-compatibility.fixture.ts |
+| 实现目标 | d032a53a62017cc41a3ddf19b316ad1047398fa6 |
+| 实现范围 | apps/web/test/web-release-compatibility.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 新网页产物已生成；新组合首次兼容检查失败，运行资源已完整归还 |
-| 下一可用交付 | 修正未知回执恢复与流观察的测试顺序，固定差量审查后再安排验证 |
-| 当前阻塞 | ACTIVE: 兼容场景在恢复未知回执前等待尚未建立的流；后台迟到登出尚未实际检查 |
+| 当前产出 | 已保留首次兼容失败证据，未知回执恢复后再检查登出的测试顺序已修正 |
+| 下一可用交付 | 完成本次场景差量审查，按新独立窗口验证固定新网页与后台组合 |
+| 当前阻塞 | ACTIVE: 修正后的兼容场景尚未实际验证，四份正式报告仍未生成 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：APPROVED 精确pair源码/调用边界；首actual FAILED及完整RETURN已独立接受，非compat通过 |
+| Review | [review.md](review.md)：NOT_STARTED d032a53a62017cc41a3ddf19b316ad1047398fa6 场景窄修独审；首actual FAILED及完整RETURN已独立接受 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 整体开工UNKNOWN；历史片段完成12:17:59.709Z保前状态；后继领取13:09:33.224Z仅为领取事实，编辑固定来源8964dc1；不以领取或编辑时刻倒填全任务开工 |
@@ -152,3 +152,7 @@ Root 对固定8964两harness与唯一strict实际作正式限定APPROVED、0 fin
 2026-10-07T16:09:01.937Z：[38原件](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md)固定outer1/末terminal一致/完整RETURN16:03:25.267185Z。新180s独立段CLOSED56504ms、未用123496ms不转信用；不是artifact150s余额。旧三App旅程完成但正式reports=null，不能将部分成功导入发布报告。
 
 Root准备源/native批准与失败实际/清理独审已原样归档。newApp原始Error:OPERATION_FAILED未保细节；24条wire无Cookie SSE/stream GET/logout POST。固定源码先在UNKNOWN状态等待SSE，后才显式retry原key/body，说明fixture前置尚未建立；后台04da lateLogout行为NOT_REACHED，未判回归或安全。原parent fixtureCleanup UNKNOWN短路文字不改，fixture原始DB/HTTP清理与full-return independently证实资源已归还。后继仅原两harness窄修获授源码准备，尚无新runtime。
+
+## 当前窄修固定 / 未运行
+
+2026-10-07T16:13:46.213Z：[c2 source准备](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-c2/README.md)固定d032a53a62017cc41a3ddf19b316ad1047398fa6，UNKNOWN实际reload后显式原key恢复先于Cookie SSE与迟到logout。未删旧三App/Cookie/草稿/原key/stream关闭断言，未改backend/App/已交回产品。未运行types或browser；新180s仅提案，原56504账关闭不借。源码集中审待完成；全部prepared5文件逐字沿c1。

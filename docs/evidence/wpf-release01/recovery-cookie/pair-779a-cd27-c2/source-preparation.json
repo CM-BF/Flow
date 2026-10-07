@@ -1,0 +1,92 @@
+{
+  "preparedAt": "2026-10-07T16:13:46.213Z",
+  "sourceTarget": "d032a53a62017cc41a3ddf19b316ad1047398fa6",
+  "previousSource": "2f6792ca3f19fcd1d54563531c302937f607c892",
+  "base": "fb25e2877",
+  "changedLiteral": "apps/web/test/web-release-compatibility.browser.ts",
+  "sources": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 35397,
+      "sha256": "3e9e776b8926d1ab6b96e9df1c97132465430842f737a0f98bdd2707d673b1a6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 36363,
+      "sha256": "374350d84b52b1a2caaf20aab946603671013b44ba38e1e31dd33f95b6fba16d"
+    }
+  ],
+  "packet": "/private/tmp/rel01-recovery-c2",
+  "preparedFive": [
+    {
+      "path": "/private/tmp/rel01-recovery-c2/supervisor.py",
+      "realpath": "/private/tmp/rel01-recovery-c2/supervisor.py",
+      "bytes": 18590,
+      "sha256": "b31b484beb75cfc291a24adca3e24927b2a418eaa147eaaca8a7124d6ef85361"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2/worker.mjs",
+      "realpath": "/private/tmp/rel01-recovery-c2/worker.mjs",
+      "bytes": 5427,
+      "sha256": "fcbe66ed3ca2160ea4658caeff974f18647257824c739c612be05171e7683ae6"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2/inputs.json",
+      "realpath": "/private/tmp/rel01-recovery-c2/inputs.json",
+      "bytes": 7818,
+      "sha256": "d082a1b5dba15f89446902e26e2d98a61bfe0dc05b47f713d4bace642585b161"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2/measure.py",
+      "realpath": "/private/tmp/rel01-recovery-c2/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c2/tsconfig.json",
+      "realpath": "/private/tmp/rel01-recovery-c2/tsconfig.json",
+      "bytes": 433,
+      "sha256": "f316d5da8f22079f133b3d8d3abd1c200947f2048e262028bb00aa4561d40599"
+    }
+  ],
+  "allPreparedBytesUnchanged": true,
+  "state": "NOT_RUN_SOURCE_REVIEW_PENDING",
+  "priorFailure": {
+    "outerExit": 1,
+    "closedChargedMs": 56504,
+    "unusedMs": 123496,
+    "creditTransferred": false
+  },
+  "proposal": {
+    "totalMs": 180000,
+    "cleanupReserveMs": 30000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "databaseWalEstimateBytes": 134217728,
+    "startFreeBytes": 17454858240,
+    "stopFreeBytes": 1207959552,
+    "pgCount": 1,
+    "chromeCount": 1,
+    "providerCount": 0
+  },
+  "stageLabels": [
+    "unknown-reload",
+    "original-retry",
+    "accepted-identity",
+    "running-task",
+    "cookie-stream",
+    "held-response",
+    "old-read-revoked",
+    "old-streams-closed",
+    "reconnect",
+    "release-old-response",
+    "new-session-ready",
+    "draft-restore"
+  ],
+  "publicContractUnchanged": true,
+  "checksRun": [],
+  "tupleUnchanged": true
+}

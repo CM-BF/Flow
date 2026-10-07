@@ -42,3 +42,7 @@
 ## 2026-10-07T16:09:01.937Z 首次新pair实际失败封存/只读归因
 
 复用本地find-skills与clean-code（/Users/citrine/.agents/skills/find-skills/SKILL.md、clean-code/SKILL.md），不安装。实际检查单一职责/错误处理：阶段已知但errorCode统一化使具体deadline不可直接观察；当前保原错误，后继仅有限预定义阶段码，不保存URL/token/body/error.message。原UNKNOWN权威不为测试改写，harness需先用公开恢复再等待真实accepted流。未改生产/调用器/生命周期，未重跑工程检查。首raw及root三审原件逐字归档；reports null与部分旅程分开，原parent cleanupUNKNOWN与独立完整RETURN分开。
+
+## 2026-10-07T16:13:46.213Z c2顺序窄修 clean-code
+
+只改browser单一场景顺序，沿公开Recovery动作建立accepted前置；提取原样restoreSavedDraft避免两处重复。12个literal substep只保存非秘密状态，错误仍保失败；固定tuple、authority、清理与旧三App路径不改。git diff --check与静态控制流/字段核验完成；未运行产品/Node类型/浏览器。错误定位不再把首OPERATION_FAILED猜成实际deadline原件；所有已有失败/greens限原target。
