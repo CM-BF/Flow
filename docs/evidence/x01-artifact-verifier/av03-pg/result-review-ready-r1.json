@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-07T18:28:07.514Z",
+  "state": "FAILED_RESULT_FIDELITY_REVIEW_PENDING",
+  "result": "2f32a3c877c5f2ccb8a283925e032467c4d7a462",
+  "source": "4323f30268e203ec50e50e7a5a628c6cfcdf5181",
+  "centerSource": "ea3c4599b00505c950cc34ada8a350082fe76747",
+  "executionHead": "c6ed29f8c0c36c7937235f06545889e556f03a4d",
+  "manifest": "docs/evidence/x01-artifact-verifier/av03-pg/result-manifest-r1.json",
+  "manifestSha256": "c68c05ef35c7271455678c1710b8e0ee0cca7501e2bba88a247734a1cc3e984a",
+  "manifestBytes": 9373,
+  "bindings": {
+    "resultFiles": 25,
+    "resultBytes": 54997,
+    "requiredFiles": 7,
+    "requiredBytes": 207025
+  },
+  "selected": 0,
+  "passed": 0,
+  "failedAssertions": 0,
+  "skipped": 5,
+  "suiteFailed": 1,
+  "beforeAllError": "projects_current_revision FK",
+  "resourceReturn": "2026-10-07T18:23:06.969Z FULL_RETURN",
+  "actualRetry": false,
+  "reviewer": "Mika/root independent result fidelity only",
+  "scope": "Failed test-fixture setup and actual resource closure; no positive migration/v4 PG result. Prepared source/helper unchanged.",
+  "main": "NOT_INTEGRATION_READY_PG_REQUIRED",
+  "next": "Bounded fixture repair only after new authorization; no R2 grant."
+}
