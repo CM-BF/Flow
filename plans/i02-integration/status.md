@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T11:48:02.617996+00:00 / main7272151b；插件三片组合已审检查通过，接收正常收尾记录 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T11:55:18.446469+00:00 / main99d7fa39；插件三片已main，实际198源与O16只读结论接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,16 +12,16 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main7272151b；固定ACK→HOST→CONSUMER 18行前像逐步一致，16产品/support路径，固定a5e17342组合 |
-| 工作树dirty状态 | 本批固定产品、必要证据与正常收尾metadata；既有未知__pycache__不纳入 |
+| 工作基线 / HEAD | main99d7fa39；本批仅已审来源发布与只读诊断/中心plan收尾 |
+| 工作树dirty状态 | 本批仅固定metadata与接收记录；既有未知__pycache__不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | X01三已审片root noEmit0+3selected/33未选通过；2组absent/双EOF、空TMP按预记录身份移除，0PG/provider；独立接收审无P1/P2。 |
-| 已集成main状态 / HEAD | main7272151b已接中心退出竞态；本批插件命令回执/宿主目录/CLI及SVC/O16/中心正常收尾待fast-forward。个人旧版本与固定7d1候选区别保留。 |
+| 已集成main状态 / HEAD | main99d7fa39已接中心退出竞态、插件命令/宿主目录/CLI及198来源；本批接收实际来源发布与O16源码定位记录。个人旧版本与固定7d1候选区别保留。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 退出竞态已入主线；插件命令回执校验、可用宿主目录与命令行入口已完成组合检查和独立接收审查。 |
+| 当前产出 | 退出竞态、插件命令回执与可用宿主目录已入主线；看板新来源已实际显示。规划登录原因仍未知，已保存有界源码定位。 |
 | 下一可用交付 | 完成保留页面与新版后台的真实兼容并推进个人预览更新；客户端可沿公开插件合同继续接入。 |
 | 当前阻塞 | ACTIVE: 个人新版仍待三个保留页面的真实兼容；最新调用器在沙箱启动前失败并已清理，由Web原owner修复。规划认证原因仍未知，累计三次调用且无第四次授权。 |
 | 需用户决定 | NONE |
@@ -404,3 +404,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 ## Recovery受控接收 2026-10-07T11:29:11.850286+00:00
 
 [唯一接收记录](../../docs/evidence/i02/recovery-intake.json)绑定2f8十九源、15833原证据及Web独立组合审。所有主线输入等于84005基线，精确delta无手工冲突；仅Web noEmit复核组合，0新行为/浏览器/PG/模型。原03/05通过，06的lateLogout中心边界继续开放，不把主线接收写成个人部署或整平台Done。类型检查自有组已absent/EOF，非空1.36MB临时目录按原empty-only条件KEEP，未读取内容或扩删除。
+
+2026-10-07T11:55:18.446469+00:00：独立限定批准后接收[O16源码定位、198来源发布与中心plan收尾](../../docs/evidence/i02/o16-d05-closeout-intake.json)。只核固定前像/字节与字段，不重跑工程或认证；O16无第四次调用，个人发布仍待固定兼容组合。

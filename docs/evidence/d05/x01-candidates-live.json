@@ -1,0 +1,57 @@
+{
+  "startedAt": "2026-10-07T11:50:59.243772+00:00",
+  "source": "99d7fa394949d4d039c3eeb88be937a1721b121d",
+  "oldPid": 94149,
+  "binding": {
+    "directory": "/Users/citrine/.flow-personal",
+    "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+    "productOrigin": "http://127.0.0.1:61228/",
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow"
+  },
+  "state": "CONFIRMED_PUBLIC_HTTP",
+  "personalChanges": 0,
+  "tokenRead": false,
+  "browserActions": 0,
+  "oldConfirmedAbsent": true,
+  "newPid": 86625,
+  "log": "/tmp/flow-dashboard-198-20261007-1151.log",
+  "publicMetadata": {
+    "enabled": true,
+    "productUrl": "http://127.0.0.1:61228/",
+    "centerUrl": "",
+    "centerMode": "web-proxy"
+  },
+  "publicMetadataHttp": 200,
+  "summaryHttp": 200,
+  "summaryBytes": 531091,
+  "summaryCount": 198,
+  "selected": [
+    {
+      "id": "X01-PLUGIN-COMMAND-ACK01",
+      "sourceCurrent": true,
+      "mode": "live",
+      "humanComplete": true,
+      "parent": {
+        "state": "known",
+        "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+        "reason": "",
+        "targetId": "X01",
+        "title": "插件管理计划"
+      }
+    },
+    {
+      "id": "X01-HOST-CANDIDATES-CLIENT01",
+      "sourceCurrent": true,
+      "mode": "live",
+      "humanComplete": true,
+      "parent": {
+        "state": "known",
+        "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+        "reason": "",
+        "targetId": "X01",
+        "title": "插件管理计划"
+      }
+    }
+  ],
+  "completedAt": "2026-10-07T11:50:59.653486+00:00"
+}

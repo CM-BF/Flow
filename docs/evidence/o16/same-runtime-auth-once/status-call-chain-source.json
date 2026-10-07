@@ -1,0 +1,214 @@
+{
+  "kind": "flow.o16.auth-status-public-call-chain.v1",
+  "recordedAt": "2026-10-07T11:47:23.125636+00:00",
+  "inheritedSourceResolution": "source-resolution.json",
+  "nativePath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+  "nativeSHA256": "b8412a3826b2dc8ecb1c0605970c28dea28355de5faa740407dd881acdd40237",
+  "stat": {
+    "dev": 16777234,
+    "ino": 116957779,
+    "bytes": 233260816
+  },
+  "fixedPriorSliceHashesMatch": true,
+  "scope": "Public executable code bytes only; no native execution or user configuration read",
+  "segments": [
+    {
+      "name": "Dc",
+      "byteOffset": 182586650,
+      "bytes": 2000,
+      "sha256": "e686833683d2d0a31715e6a08f99dd99213c57750fa20cdc82fd435dcb79069a",
+      "excerpt": "function Dc(e,n){return{settings:null,errors:[{file:e,path:\"\",message:n,severity:\"fatal\"}],loadState:\"didNotLoad\"}}function zE(e,n,s){if(e.trim()===\"\")return{settings:{},errors:[],loadState:\"loaded\"};let r=ft(e,!1);if(s){if(!N(r))return{settings:null,errors:[qHn(n)],loadState:\"didNotLoad\"};let p=Jc(r),g=Pt(p,n,{skipMcpServerEntryFilter:!0,policySource:!0}),m=[],h=Es(Tc(n,m),n,p).safeParse(p);if(!h.success)return{settings:null,errors:[...g,...vt(h.error,n)],documentHasPolicyContent:!1,loadState:\"didNotLoad\"};return{settings:h.data,errors:[...g,...m],documentHasPolicyContent:Hcs(r,h.data),loadState:\"loaded\"}}let i=Jc(r),d=[...Pc(i,n),...Pt(i,n)],c=cle(i).safeParse(i);if(!c.success){let p=vt(c.error,n);return{settings:null,errors:[...d,...p]}}if(d.some((p)=>p.severity===\"fatal\"))return{settings:null,errors:d};return{settings:c.data,errors:d}}function qHn(e,{userWritable:n=!1}={}){return n?{file:e,path:\"\",message:`Managed settings document (${e}) could not be parsed as a JSON object; none of its settings are in effect. Fix or remove it.`,severity:\"warning\",statusOnly:!0,userWritable:!0}:{file:e,path:\"\",message:\"Managed settings document could not be parsed as a JSON object; none of its settings are in effect. Fix or remove it.\",startupFatal:!0}}function sT(e){let n=Fn(ro(fe(e))),s=fe(we());return n===Fn(s)||n===vS(s)}var Ks;function vS(e){if(Ks?.lexical!==e){let n=ro(e);Ks={lexical:e,physical:Fn(Se(tp(n)??n,kS(e)))}}return Ks.physical}function uVe(e){t(`Broken symlink or missing file encountered for settings.json at path: ${e}`)}function r7(){return{settings:null,errors:[],loadState:\"absent\"}}function xc(e,n){if(Qfr(e,n),j(e))return r7();return{settings:null,errors:[V8t(n,e)],loadState:\"didNotLoad\"}}function V8t(e,n,s=\"file\"){return{file:e,path:\"\",message:`${s===\"directory\"?\"Managed settings drop-in directory\":\"Settings file\"} could not be read: ${n instanceof Error?n.message:String(n)}`,severity:\"fatal\",errorClass:\"unreadable\",...E(n)!==void 0&&{errno:E(n)}}}function y"
+    },
+    {
+      "name": "yf",
+      "byteOffset": 182504620,
+      "bytes": 2000,
+      "sha256": "643f02483bb86956cd456f8d6816dd3fa4aa186356110300abf6cb86ed7c37ce",
+      "excerpt": "function yf(e){if(typeof e!==\"object\"||e===null)return!1;return Object.entries(e).every(([n,s])=>{if(s===void 0)return!0;if(n===\"files\"||n===\"envVars\")return Array.isArray(s)&&s.every((r)=>typeof r===\"object\"&&r!==null&&r.mode===\"deny\");if(n===\"sigv4\")return typeof s===\"object\"&&s!==null&&Object.values(s).every((r)=>r===void 0||r===\"deny\");return n===\"allowPlaintextInject\"&&s===!1})}function _f(e){return Object.keys(e.shellSettings).some(ml)}function ml(e){return L1.some((n)=>e===`policyHelpers.${n}`)}function fl(e){return _f(e)||Object.keys(e.shellSettings).some((n)=>n.startsWith(\"extraKnownMarketplaces[\"))||Te(e).length>0}function hl(e){return e===\"sh\"||e===\"pwsh\"}function Sf(e){return e!==null&&typeof e===\"object\"&&\"interpreter\"in e&&hl(e.interpreter)&&\"script\"in e&&typeof e.script===\"string\"}function RAt(e){return _l(e)?.command}function _l(e){if(e===null||typeof e!==\"object\")return;let{path:n,script:s,interpreter:r,timeoutMs:i,refreshIntervalMs:d}=e,c,p;if(typeof n===\"string\"&&n)c=n;else if(typeof s===\"string\"&&s&&hl(r))c={interpreter:r,script:Sl(s)},p=bf(s);else return;return{command:S([c,i??null,d??null]),scriptSize:p}}function bf(e){return{bytes:Buffer.byteLength(e,\"utf8\"),lines:Ut(e,`\n`)+(e.endsWith(`\n`)?0:1)}}function Sl(e){return Kt(S(e))}function Ef(e){if(typeof e===\"string\")return e||void 0;if(e===null||typeof e!==\"object\"||!(\"command\"in e)||typeof e.command!==\"string\"||!e.command)return;let n=\"args\"in e&&Array.isArray(e.args)?e.args.map(String):[];return S([e.command,...n])}function e7(e){return Wt(e)||e.hasHooks||Te(e).length>0}function Rs(e){return We(bl(e))}function bl(e){return{shellSettings:e.shellSettings,envVars:e.envVars,sandboxSettings:Object.keys(e.sandboxSettings).length>0?e.sandboxSettings:void 0,...el(e),hooks:e.hooks,payloadSlots:Te(e).length>0?Object.fromEntries(Te(e).map(([n,s])=>{let{isolationSettings:r,...i}=s;return[n,{...i,...el(s)}]})):void 0}}function el(e){return Object.keys(e.isolationSettings).length>0?{isolationSettings:e.isol"
+    },
+    {
+      "name": "sCt",
+      "byteOffset": 184821580,
+      "bytes": 900,
+      "sha256": "840e8cc4b7833dfaddd1960330f2f85f09e661c1e6a255b423a37380e25a5d25",
+      "excerpt": "function sCt(e,n){let r=n!==\"none\"&&!mt();return{tokenSource:(e===\"profile\"?!tq():r&&Vcr(e))?\"none\":e,apiKey:r}}function mte(){let{key:e}=FE();return e}function xw(){try{return mte()}catch{return null}}function ZPn(){return yf().source}function yf(e={}){try{return FE(e)}catch{return{key:null,source:\"none\"}}}function wto(){let{key:e,source:n}=yf({skipRetrievingKeyFromApiKeyHelper:!0});return{source:n,fingerprint:e?Kt(e):null}}function yae(){return!hr()&&yf({skipRetrievingKeyFromApiKeyHelper:!0}).source===\"apiKeyHelper\"}var _k=new WeakMap;function Lrs(){let e=ce();return Array.isArray(e.additionalModelOptionsCache)&&typeof e.additionalModelOptionsAnsweredAt===\"number\"}function pG(){let e=ce().additionalModelOptionsCache;if(!Array.isArray(e))return[];let n=_k.get(e);if(n)return n;let r=e.filter((s)=>s!=null&&typeof s===\"object\"&&(typeof s.value===\"string\"||s.value===null)&&typeof s.label==="
+    },
+    {
+      "name": "Vcr",
+      "byteOffset": 184821435,
+      "bytes": 900,
+      "sha256": "84c0d8a5c47253aaa4ff67c29074d21210bc5354e651de74c76ec6221b14b3e4",
+      "excerpt": "function Vcr(e){return e===\"claude.ai\"||e===\"CLAUDE_CODE_OAUTH_TOKEN\"||e===\"CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR\"||e===\"CCR_OAUTH_TOKEN_FILE\"}function sCt(e,n){let r=n!==\"none\"&&!mt();return{tokenSource:(e===\"profile\"?!tq():r&&Vcr(e))?\"none\":e,apiKey:r}}function mte(){let{key:e}=FE();return e}function xw(){try{return mte()}catch{return null}}function ZPn(){return yf().source}function yf(e={}){try{return FE(e)}catch{return{key:null,source:\"none\"}}}function wto(){let{key:e,source:n}=yf({skipRetrievingKeyFromApiKeyHelper:!0});return{source:n,fingerprint:e?Kt(e):null}}function yae(){return!hr()&&yf({skipRetrievingKeyFromApiKeyHelper:!0}).source===\"apiKeyHelper\"}var _k=new WeakMap;function Lrs(){let e=ce();return Array.isArray(e.additionalModelOptionsCache)&&typeof e.additionalModelOptionsAnsweredAt===\"number\"}function pG(){let e=ce().additionalModelOptionsCache;if(!Array.isArray(e))return"
+    },
+    {
+      "name": "Ln",
+      "byteOffset": 181680022,
+      "bytes": 2000,
+      "sha256": "187de72cc6722b9b1104bf756fc42b971484a0449b29a41ddcda8369a893ec4e",
+      "excerpt": "function Ln(e){return this.__data__.has(e)}var nt=Ln;var In=200;function On(e,t){var o=this.__data__;if(o instanceof tit){var r=o.__data__;if(!nit||r.length<In-1)return r.push([e,t]),this.size=++o.size,this;o=this.__data__=new HRt(r)}return o.set(e,t),this.size=o.size,this}var ot=On;function A(e){var t=this.__data__=new tit(e);this.size=t.size}A.prototype.clear=Ze;A.prototype.delete=et;A.prototype.get=tt;A.prototype.has=nt;A.prototype.set=ot;var ALe=A;var En=\"__lodash_hash_undefined__\";function Dn(e){return this.__data__.set(e,En),this}var rt=Dn;function Hn(e){return this.__data__.has(e)}var it=Hn;function H(e){var t=-1,o=e==null?0:e.length;this.__data__=new HRt;while(++t<o)this.add(e[t])}H.prototype.add=H.prototype.push=rt;H.prototype.has=it;var ghr=H;function Bn(e,t){var o=-1,r=e==null?0:e.length;while(++o<r)if(t(e[o],o,e))return!0;return!1}var st=Bn;function Un(e,t){return e.has(t)}var hhr=Un;var _n=1,qn=2;function Wn(e,t,o,r,i,s){var a=o&_n,l=e.length,u=t.length;if(l!=u&&!(a&&u>l))return!1;var p=s.get(e),m=s.get(t);if(p&&m)return p==t&&m==e;var c=-1,f=!0,d=o&qn?new ghr:void 0;s.set(e,t),s.set(t,e);while(++c<l){var g=e[c],v=t[c];if(r)var b=a?r(v,g,c,t,e,s):r(g,v,c,e,t,s);if(b!==void 0){if(b)continue;f=!1;break}if(d){if(!st(t,function(C,x){if(!hhr(d,x)&&(g===C||i(g,C,o,r,s)))return d.push(x)})){f=!1;break}}else if(!(g===v||i(g,v,o,r,s))){f=!1;break}}return s.delete(e),s.delete(t),f}var B=Wn;var Gn=uF.Uint8Array,NXt=Gn;function Nn(e){var t=-1,o=Array(e.size);return e.forEach(function(r,i){o[++t]=[i,r]}),o}var at=Nn;function Kn(e){var t=-1,o=Array(e.size);return e.forEach(function(r){o[++t]=r}),o}var FXt=Kn;var Vn=1,Jn=2,zn=\"[object Boolean]\",Qn=\"[object Date]\",Xn=\"[object Error]\",Yn=\"[object Map]\",$n=\"[object Number]\",Zn=\"[object RegExp]\",eo=\"[object Set]\",to=\"[object String]\",no=\"[object Symbol]\",oo=\"[object ArrayBuffer]\",ro=\"[object DataView]\",lt=Vj?Vj.prototype:void 0,te=lt?lt.valueOf:void 0;function io(e,t,o,r,i,s,a){switch(o){case ro:if(e.byteLength!=t.byteLen"
+    },
+    {
+      "name": "cr",
+      "byteOffset": 181843525,
+      "bytes": 900,
+      "sha256": "79abbbf0316e891160b4283150b5a3dd98449dfc222355c3c9e3c735661156da",
+      "excerpt": "function cr(e){return Ve(e,0)!==null}function Vuo(e){let n=zt(e);if(n.length===0)return e;let r=\"\",s=0;for(let i of n)r+=e.slice(s,i.start)+\"[REDACTED]\",s=i.end;return r+e.slice(s)}function zt(e){let n=e.indexOf(\"-----\");while(n!==-1){while(e.charCodeAt(n+5)===45)n++;if((e.charCodeAt(n+5)|32)===98&&(e.charCodeAt(n+6)|32)===101&&(e.charCodeAt(n+7)|32)===103&&(e.charCodeAt(n+8)|32)===105&&(e.charCodeAt(n+9)|32)===110)break;n=e.indexOf(\"-----\",n+5)}let r=[];if(n===-1)return r;for(let s=Ve(e,n);s;s=Ve(e,s.end))r.push(s);return r}var je=`(?:[\\\\x60'\"\\\\s;]|\\\\\\\\[nr]|$)`,Me=\"(?=[^a-zA-Z0-9_\\\\-+=]|$)\",Wt=\"(?<![a-zA-Z0-9_\\\\-])\";function dr(){return Gt.map(({id:e,confidence:n,source:r,flags:s=\"\",displayRun:i})=>{let o={id:e,confidence:n},a=s.replace(\"g\",\"\")+\"g\";if(n!==\"high\")return{...o,re:new RegExp(r,a)};let l=Vt(r);if(i===void 0)return{...o,re:new RegExp(Wt+l+Me,a)};return{...o,prefilter:new RegE"
+    },
+    {
+      "name": "EX",
+      "byteOffset": 184872372,
+      "bytes": 900,
+      "sha256": "0a0d3c2ff4d192572126ad4c90078d67caafe72a6718c5a27c98c401c4337143",
+      "excerpt": "function EX(){return!Vn()}function A4t(){if(kr())return me(\"policySettings\")?.otelHeadersHelper;return(Xn()||{}).otelHeadersHelper}function tSs(){let e=A4t();if(!e)return!1;let n=me(\"projectSettings\"),r=me(\"localSettings\");return n?.otelHeadersHelper===e||r?.otelHeadersHelper===e}class vn extends Error{kind;exitCode;constructor(e,n,r){super(e);this.kind=n;this.exitCode=r}}function $to(e){return e instanceof vn?e.kind:void 0}var pIn=new z(()=>({cache:null,timestamp:0,inflight:null,lastFailure:null,failed:Ie(),prefetched:!1,repoHelperIgnoredLogged:!1})),mK=1740000;function T4t(){if(!A4t())return null;return pIn.of(F().host).lastFailure}function Vks(){let e=pIn.of(F().host);e.cache=null,e.timestamp=0,e.inflight=null,e.lastFailure=null,e.prefetched=!1}function Uto(e){return pIn.of(F().host).failed.subscribe(e)}function Bto(){if(ve())return;let e=pIn.of(F().host);if(e.prefetched)return;e.pref"
+    },
+    {
+      "name": "gn",
+      "byteOffset": 181752836,
+      "bytes": 2000,
+      "sha256": "87f23785f47245f21c6f1a7da8ad3857ff0425d62761ba8164d854098b37e19d",
+      "excerpt": "function gn(){return new Ye({clock:new Jyr,backgroundHousekeeping:new Xe,launchOptions:new je,settingsSource:new Ue,extensionsConfig:new _e,modelStringsCache:new qe,diagnostics:new We,telemetryHandles:new Ge,credentialSlots:new Ne,mcpProcessWiring:new Ke,requestLatches:new Ve,accountCreditLatches:new Je,proactivity:new Qe})}function qi(e=uho()){return Ihr({host:gn(),id:$Dn()??Zhe(),project:{originalCwd:e,projectRoot:e,cwd:e}})}var y=qi(ifs);function F(){return n()}function n(){return k()?.session??y}function Ls(e){return e.of(y.host)}function h(){let e=k();return e?.session?void 0:e}var k=()=>{return};function YTs(e){k=e}function K(){return h()?.sessionId??n().id}function ze(){let e=h()?.sessionId;if(e)return yo(e);let t=n();return t.identity.mainAgentId(t.id)}function mn(){let e=n();return e.requestJournal.promptIndex()>0||e.sessionScratch.chromeAvailabilityStagesLogged().size>0}function hpo(e={}){let t=n(),o=t.id;t.sessionScratch.forgetPlanSlug(o),t.identity.replaceProjectDir(null);let r=mn();t.requestJournal.replacePromptIndex(0),t.requestJournal.replaceLastCancelledAPIMessageId(null),t.requestJournal.clearLastMainThreadRequest(),t.requestJournal.replaceLastMainRequestId(void 0),t.modelSelection.forgetRefusalFallbackOccurred(),t.sessionFlags.forgetPendingContextCompacted(),t.sessionScratch.replacePendingBranchLinks(),t.sessionScratch.replaceChromeAvailabilityStagesLogged(r);let i=yn(),s=Zhe();return t.costLedger.scopeTo(s),t.update({id:s,...e.setCurrentAsParent&&{parentId:o}}),Sn(t,\"clear\",i),t.id}function Sn(e,t,o){let r=bn.of(e);if(o)r.emit(e.id,t,o);else r.emit(e.id,t)}function vn(e){Cn.of(e).emit(xs(e).originalCwd)}function Zke(){let e=h();return e?e.parentSessionId:n().parentId}function Dy(e,t,o=null,r){let i=n(),s=r?O(i.project,kn(r)):r,a,l=i.parentId;if(i.id!==e){if(i.sessionScratch.forgetPlanSlug(i.id),i.requestJournal.replaceLastCancelledAPIMessageId(null),i.requestJournal.clearLastMainThreadRequest(e),t!==\"fork\")i.requestJournal.replaceLastMainRequestId"
+    },
+    {
+      "name": "YB",
+      "byteOffset": 184891986,
+      "bytes": 900,
+      "sha256": "6ed7908e95918f061e06dda16010915b8fd94fba1b2272fde851046eb19abfa7",
+      "excerpt": "function YB(e){return SDn(e)}function dPn(e){if(typeof e!==\"string\")return[];return e.split(\" \").filter(Boolean)}function Zlr({codeChallenge:e,state:n,port:r,isManual:s,loginWithClaudeAi:g,inferenceOnly:h,orgUUID:b,loginHint:w,loginMethod:A,oauthClient:C}){let x=g?pn().CLAUDE_AI_AUTHORIZE_URL:pn().CONSOLE_AUTHORIZE_URL,M=new URL(x);M.searchParams.append(\"code\",\"true\"),M.searchParams.append(\"client_id\",C?.clientId??pn().CLIENT_ID),M.searchParams.append(\"response_type\",\"code\"),M.searchParams.append(\"redirect_uri\",s?pn().MANUAL_REDIRECT_URL:`http://localhost:${r}/callback`);let L=C?C.scopes:h?[nA]:_uo();if(M.searchParams.append(\"scope\",L.join(\" \")),M.searchParams.append(\"code_challenge\",e),M.searchParams.append(\"code_challenge_method\",\"S256\"),M.searchParams.append(\"state\",n),b)M.searchParams.append(\"orgUUID\",b);if(w)M.searchParams.append(\"login_hint\",w);if(A)M.searchParams.append(\"login_met"
+    },
+    {
+      "name": "qc",
+      "byteOffset": 182189624,
+      "bytes": 2000,
+      "sha256": "4bda8c3d92c3a642ba21518dd8dc6e80594eed4f36a7e9f9a56ecba0128da21d",
+      "excerpt": "function qc(e){if(typeof e!=\"function\")throw TypeError(Xc);return function(){var n=arguments;switch(n.length){case 0:return!e.call(this);case 1:return!e.call(this,n[0]);case 2:return!e.call(this,n[0],n[1]);case 3:return!e.call(this,n[0],n[1],n[2])}return!e.apply(this,n)}}var efr=qc;function Zc(e,n){return Nr(e,efr(oU(n)))}var _i=Zc;function eu(e,n,s,r){var i=e.length,d=s+(r?1:-1);while(r?d--:++d<i)if(n(e[d],d,e))return d;return-1}var Xs=eu;function nu(e){return e!==e}var qs=nu;function ou(e,n,s){var r=s-1,i=e.length;while(++r<i)if(e[r]===n)return r;return-1}var Zs=ou;function su(e,n,s){return n===n?Zs(e,n,s):Xs(e,qs,s)}var Qs=su;function ru(e,n){var s=e==null?0:e.length;return!!s&&Qs(e,n,0)>-1}var er=ru;function iu(e,n,s){var r=-1,i=e==null?0:e.length;while(++r<i)if(s(n,e[r]))return!0;return!1}var tr=iu;function au(){}var Bze=au;var lu=1/0,du=!(xst&&1/FXt(new xst([,-0]))[1]==lu)?Bze:function(e){return new xst(e)},nr=du;var cu=200;function uu(e,n,s){var r=-1,i=er,d=e.length,c=!0,p=[],g=p;if(s)c=!1,i=tr;else if(d>=cu){var m=n?null:nr(e);if(m)return FXt(m);c=!1,i=hhr,g=new ghr}else g=n?[]:p;e:while(++r<d){var h=e[r],y=n?n(h):h;if(h=s||h!==0?h:0,c&&y===y){var _=g.length;while(_--)if(g[_]===y)continue e;if(n)g.push(y);p.push(h)}else if(!i(g,y,s)){if(g!==p)g.push(y);p.push(h)}}return p}var oAt=uu;function pu(e,n){return e&&e.length?oAt(e,oU(n,2)):[]}var Ia=pu;import{join as vl}from\"path\";function N(e){return typeof e===\"object\"&&e!==null&&!Array.isArray(e)}import{isAbsolute as or}from\"path\";var go=\"When managed settings or a --settings file set allowUnsandboxedCommands: false, or managed settings set network.allowManagedDomainsOnly: true\",gu=\"When managed settings or a --settings file set allowUnsandboxedCommands: false, network.deniedDomains \"+\"or a WebFetch(domain:\\u2026) deny rule, when managed settings set network.allowManagedDomainsOnly: true, \"+\"or when managed, --settings or user settings set network.strictAllowlist: true\",mu=\"When managed settings or a --settings "
+    },
+    {
+      "name": "uG",
+      "byteOffset": 184819875,
+      "bytes": 900,
+      "sha256": "0a06f56efe59795c1a1516f7b765069aba69155a6a10ad5a5fb15cdb2e13b369",
+      "excerpt": "function uG(){if(!vr())return!1;return!0}function Fl(){if(uG())return!1;if(a.ANTHROPIC_UNIX_SOCKET)return!!a.CLAUDE_CODE_OAUTH_TOKEN;if(qc())return!1;let e=!Vn(),n=Xn()||{},r=vr()?_g():n.apiKeyHelper,s=Bv(),g;try{g=FE({skipRetrievingKeyFromApiKeyHelper:!0}).source}catch{return!1}let h=g===\"ANTHROPIC_API_KEY\"||g===\"apiKeyHelper\",b=p5(\"CLAUDE_CODE_API_KEY_FILE_DESCRIPTOR\"),w=(s||h)&&!a4t()||(r||b)&&!hr();return!(e||w)}function Dge(e){switch(e){case\"claude.ai\":return\"claude /logout to sign out of claude.ai.\";case\"profile\":return\"Run `ant auth logout`, or remove the active profile under ~/.config/anthropic/configs/.\";case\"apiKeyHelper\":return\"Unset the apiKeyHelper setting.\";case\"CCR_OAUTH_TOKEN_FILE\":return\"This token is injected by the CCR host; check the host session.\";case\"none\":return\"\";default:return`Unset the ${e} environment variable.`}}function Bv(){return nw()?void 0:a.ANTHROPIC_AU"
+    },
+    {
+      "name": "_g",
+      "byteOffset": 182308973,
+      "bytes": 900,
+      "sha256": "ad004f1b4b591b243dca3509201af4c69ac18ad31356962e3de72f8b1149c6b1",
+      "excerpt": "function _g(e){let n=e.trim();return n.includes(\":\")&&uot(n)}function mot(e,n){let s=e.toLowerCase();if(!S5.has(s))return null;if(n.source===\"github\"||n.source===\"git\"&&n.url){if(Rao(n))return null;return`The name '${e}' is reserved for official Anthropic marketplaces. Only repositories from 'github.com/${mn}/' can use this name.`}return`The name '${e}' is reserved for official Anthropic marketplaces and can only be used with GitHub sources from the '${mn}' organization.`}function Rao(e){if(e.source===\"github\"){let n=e.repo??\"\";return!n.includes(\":\")&&uot(n)}return e.source===\"git\"&&e.url!==void 0&&_g(e.url)}var Oe=f(()=>o().startsWith(\"./\")),at=f(()=>Oe().endsWith(\".json\")),Di=f(()=>$e([R(\".\"),Oe()])),xi=f(()=>$e([Oe().refine((e)=>e.endsWith(\".mcpb\")||e.endsWith(\".dxt\"),{message:\"MCPB file path must end with .mcpb or .dxt\"}).describe(\"Path to MCPB file relative to plugin root\"),o().url("
+    },
+    {
+      "name": "a4t",
+      "byteOffset": 184815463,
+      "bytes": 900,
+      "sha256": "4e9e1e1425db20a986d2606ff8b609c1268477a32bd77f886165251f715916a5",
+      "excerpt": "function a4t(){return hr()&&!a.CLAUDE_CODE_HOST_AUTH_ENV_VAR&&a.CLAUDE_CODE_ENTRYPOINT!==\"claude-desktop-3p\"}class Mk{implicitProfileSkippedLogged=!1;profileAuthSelectedLogged=!1}var z_s=new z(()=>new Mk);function FH(e){if(e.implicitProfileSkippedLogged)return;t(`An Anthropic profile (~/.config/anthropic) is configured, but a claude.ai login exists \\u2014 using the claude.ai login. Set ANTHROPIC_PROFILE=<name> to use the profile instead.${\"\"}`,{level:\"warn\"}),queueMicrotask(()=>i(\"tengu_wif_implicit_profile_skipped_stored_login\",{})),e.implicitProfileSkippedLogged=!0}function LH(e){if(e.profileAuthSelectedLogged)return;let n=Hw()??\"profile\";t(`Using Anthropic profile auth (${n}); ${h9t()?\"a claude.ai login (/login) would take precedence over it\":\"this takes precedence over any stored claude.ai login\"}`,{level:\"info\"}),e.profileAuthSelectedLogged=!0}function zcr(e={}){return Boolean(uG()|"
+    },
+    {
+      "name": "SH",
+      "byteOffset": 184052828,
+      "bytes": 900,
+      "sha256": "b34c9ae0a4d94d2ccf838f60e187bed54da2c551ef707a1f2946abed576a83f5",
+      "excerpt": "function SH(){return A0n(),k({envVar:\"CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR\",wellKnownPath:Ykt,label:\"OAuth token\",getCached:f6,setCached:Wj,skipInReviewOrigin:!0})}async function Cpr(e){return await Mso(e),Dso(e)}async function Dso(e){return F({envVar:\"CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR\",wellKnownPath:Ykt,label:\"OAuth token\",getCached:f6,setCached:Wj,credentials:e,skipInReviewOrigin:!0})}function Lrt(){let e=syr();if(e!==void 0)return e;A0n();let n=syr();if(n!==void 0)return n;if(process.env.CLAUDE_BG_AUTH_SNAPSHOT_PATH)return null;let r=a.CLAUDE_CODE_GATEWAY_TOKEN_FILE_DESCRIPTOR,o=r?parseInt(r,10):Number.NaN,s=Number.isNaN(o)||a.CLAUDE_CODE_REMOTE||typeof process.send===\"function\"||!pmr(o)?null:T(o,\"gateway token\");return JDn(s),delete process.env.CLAUDE_CODE_GATEWAY_TOKEN_FILE_DESCRIPTOR,s}function Lte(){return k({envVar:\"CLAUDE_CODE_API_KEY_FILE_DESCRIPTOR\",wellKnownPath:vpr,"
+    },
+    {
+      "name": "hr",
+      "byteOffset": 181685560,
+      "bytes": 900,
+      "sha256": "6fef544f87aa919ebd066907ae0f9db005581fd4820085bc706a8d83306f8d8f",
+      "excerpt": "function hr(e){var t=e&&e.constructor,o=typeof t==\"function\"&&t.prototype||gr;return e===o}var nRt=hr;function mr(e,t){return function(o){return e(t(o))}}var whr=mr;var Sr=whr(Object.keys,Object),kt=Sr;var vr=Object.prototype,yr=vr.hasOwnProperty;function br(e){if(!nRt(e))return kt(e);var t=[];for(var o in Object(e))if(yr.call(e,o)&&o!=\"constructor\")t.push(o);return t}var Ct=br;function kr(e){return e!=null&&P(e.length)&&!ORt(e)}var eye=kr;function Cr(e){return eye(e)?bhr(e):Ct(e)}var Wle=Cr;function xr(e){return yhr(e,Wle,tRt)}var UDn=xr;var Tr=1,Rr=Object.prototype,Ar=Rr.hasOwnProperty;function Pr(e,t,o,r,i,s){var a=o&Tr,l=UDn(e),u=l.length,p=UDn(t),m=p.length;if(u!=m&&!a)return!1;var c=u;while(c--){var f=l[c];if(!(a?f in t:Ar.call(t,f)))return!1}var d=s.get(e),g=s.get(t);if(d&&g)return d==t&&g==e;var v=!0;s.set(e,t),s.set(t,e);var b=a;while(++c<u){f=l[c];var C=e[f],x=t[f];if(r)var $e="
+    },
+    {
+      "name": "Bv",
+      "byteOffset": 184820728,
+      "bytes": 900,
+      "sha256": "e555ab173a278e747adc48bd90b473fdbc65e045ffda1afb0a2767336e18daf1",
+      "excerpt": "function Bv(){return nw()?void 0:a.ANTHROPIC_AUTH_TOKEN}function Dc(){if(uG()){if(_g())return{source:\"apiKeyHelper\",hasToken:!0};return{source:\"none\",hasToken:!1}}if(Bv()&&!a4t())return{source:\"ANTHROPIC_AUTH_TOKEN\",hasToken:!0};if(a.CLAUDE_CODE_OAUTH_TOKEN)return{source:\"CLAUDE_CODE_OAUTH_TOKEN\",hasToken:!0};if(SH()){if(p5(\"CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR\"))return{source:\"CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR\",hasToken:!0};return{source:\"CCR_OAUTH_TOKEN_FILE\",hasToken:!0}}if(_g()&&!hr())return{source:\"apiKeyHelper\",hasToken:!0};if(qc())return{source:\"profile\",hasToken:!0};let r=gn();if(YB(r?.scopes)&&r?.accessToken)return{source:\"claude.ai\",hasToken:!0};return{source:\"none\",hasToken:!1}}function Vcr(e){return e===\"claude.ai\"||e===\"CLAUDE_CODE_OAUTH_TOKEN\"||e===\"CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR\"||e===\"CCR_OAUTH_TOKEN_FILE\"}function sCt(e,n){let r=n!==\"none\"&&!mt();return"
+    },
+    {
+      "name": "auth-status-body",
+      "byteOffset": 208600911,
+      "bytes": 1672,
+      "sha256": "0c61a4b4501002752e481c87cf3754d21627274d70cb1b5483b44e96bfecacc9",
+      "excerpt": "async function fe(u,O,w){let{source:f,hasToken:m}=Dc(),{source:a}=yf(),_=!!process.env.ANTHROPIC_API_KEY&&!nw(),{tokenSource:A}=sCt(f,a),k=Vcr(f)&&A===\"none\",h=Ln(),I=cr(),P=EX(),v=Me()===\"gateway\"&&!mo(),C=!v&&(m||a!==\"none\"||_||P),d=\"none\";if(P)d=v?\"none\":\"third_party\";else if(A===\"claude.ai\")d=\"claude.ai\";else if(A===\"apiKeyHelper\")d=\"api_key_helper\";else if(A!==\"none\")d=\"oauth_token\";else if(a===\"ANTHROPIC_API_KEY\"||_||a===\"/login managed key\")d=\"api_key\";else if(a===\"apiKeyHelper\"&&k)d=\"api_key_helper\";let E;if(O.text){let r=JNe(w),s=r===void 0?void 0:await r,o=XNe([[...fen(s),...men()]]).flat(),p=pen(o).map((g)=>g.label?`${g.label}: ${g.value}`:g.value);if(p.length===0&&_)p.push(\"API key: ANTHROPIC_API_KEY\");if(!C)p.push(v?\"Not logged in. This session uses a Cloud gateway; start `claude` and sign in with /login.\":\"Not logged in. Run claude auth login to authenticate.\");E=e(n,{children:p.join(`\n`)})}else{let r=Me(),s=a!==\"none\"?a:_?\"ANTHROPIC_API_KEY\":null,o={loggedIn:C,authMethod:d,apiProvider:r,analyticsDisabled:Zh(),projectsDirectory:L(),configDirectory:we()},p=V4();if(p)o.forcedLoginMethod=p;let g=Wve();if(g!==void 0)o.allowedProviders=[...g];if(s)o.apiKeySource=s;let T=d===\"api_key\"&&a===\"/login managed key\"?h:void 0;if(d===\"claude.ai\")o.email=h?.emailAddress??null,o.orgId=h?.organizationUuid??null,o.orgName=h?.organizationName??null,o.subscriptionType=I??null;else if(T)o.email=T.emailAddress??null,o.orgId=T.organizationUuid??null,o.orgName=T.organizationName??null;else if(r===\"gateway\")o.email=mo()?.email??null;E=e(n,{children:S(o,null,2)})}y(\"cli_auth_status\"),u.render(e(mx,{children:E})),await u.waitUntilExit(),process.exit(C?0:1)}"
+    }
+  ],
+  "excerptBytes": 32622,
+  "sourceReadElapsedMs": 52,
+  "scanRange": [
+    180000000,
+    210000000
+  ],
+  "nameCollisionNotice": "Minified names repeat across bundled module scopes. Initial first matches Dc/yf/Ln/cr/gn/qc/_g/hr before the auth region are unselected discovery slices, not established auth dependencies. Narrow auth-region definitions below replace those as analytical inputs.",
+  "authRegionSegments": [
+    {
+      "name": "gn",
+      "byteOffset": 184850365,
+      "bytes": 2500,
+      "sha256": "60d06ea689fa4978e22cdbf24ed94786757750871c6a84550d8dc7493fb03c64",
+      "excerpt": "function gn(){if(uG())return null;let e=$ge.of(F().host);if(e.value!==void 0)return e.value;let n=sK();return e.value=n,n}function nMe(){$ge.of(F().host).clear()}function NR(){let e=lA();if(typeof e===\"string\")return e;let n=Gn().read()?.claudeAiOauth?.accessToken;return uA(e,n)}async function Eh(e){let n=lA();if(typeof n===\"string\")return n;let r=(await Gn().readAsync(e))?.claudeAiOauth?.accessToken;return uA(n,r)}function lA(){let e=gn();if(!e?.accessToken)return\"none\";if(a.CLAUDE_CODE_OAUTH_TOKEN)return\"env\";let n=SH();if(n&&(!Bq()||Hd()))return\"fd\";return{bearer:e.accessToken,fdToken:n}}function uA({bearer:e,fdToken:n},r){if(r&&r===e)return\"store\";if(n&&e===n)return\"fd\";return\"none\"}function dA(){if(nMe(),LO(),U())Ske()}function jf(){cG(),Gve(),mk()}function cA(){nMe(),LO(),jf()}function FR(){if(cA(),U())Ske()}function h4t(){if(nMe(),Ti().clear(),nnt(),gte(),ont(),aCt(),cG(),Mge(),U())Ske()}function Wks(){$ge.of(F().host).resetChangeCheck()}async function sIn(e,n){if(!int())return;let r=$ge.of(F().host),s;try{let b=await e.probeCredentials();s=b.state===\"present\"?b.version:void 0}catch(b){t(`Credentials version prime failed: ${l(b)}`,{level:\"error\"})}if(await n?.catch(()=>null),await r.promise?.catch(()=>null),r.promise=null,s!==void 0)r.lastCredentialsVersion=s;let g=aK(e);if(r.promise=g,await g===null){if(s!==void 0)r.lastCredentialsVersion=void 0;if(r.promise===g)r.promise=null}r.value=void 0}async function aK(e){try{let n=(await Gn().readAsync(e))?.claudeAiOauth;return n?.accessToken?n:null}catch(n){return t(`Credentials prime through the store failed (${n instanceof Error?n.name:typeof n})`,{level:\"error\"}),null}}async function fA(e,n){if(U()&&n!==void 0){let s=await n.probeCredentials();if(s.state!==\"present\")return Uf(e,n);if(s.version!==e.lastCredentialsVersion){e.lastCredentialsVersion=s.version,FR(),Lf(e);return}return Sk(e,n)}let r;try{r=(await Kf(Gf(Jb(),\".credentials.json\"))).mtimeMs}catch{return Uf(e,n)}if(r!==e.lastCredentialsMtimeMs){e.lastCredentialsMtimeMs=r,FR(),Lf(e);return}await Sk(e,n)}async function Sk(e,n){try{if(!Vn())return;let r=e.promise?await e.promise.catch(()=>null):e.value;if(r===void 0)return;if(r!==null&&!kl(r))return;let s=Date.now();if(s-e.lastUnusableTokenRecheckAt<WAt)return;if(e.lastUnusableTokenRecheckAt=s,r!==null)e.lastKeychainAccessToken=r.accessToken;await Uf(e,n)}catch(r){c(r)}}function Lf(e){try{e.credentialsChangedOnDisk.emit()}catch(n){c(n)}}function Tto(e,n){return $ge.of(e).credentialsChangedOnDisk.subs"
+    },
+    {
+      "name": "Ln",
+      "byteOffset": 184869783,
+      "bytes": 900,
+      "sha256": "88ac3bf2f0944ab001f59575baf0adf9478e56488bfc042eb6c7d286adbd1dbd",
+      "excerpt": "function Ln(){return Fl()?ce().oauthAccount:void 0}function gD(){if(!Fl())return;return Imo()??void 0}function Sg(){return ce().oauthAccount}var SA=new Set([\"stripe_subscription\",\"stripe_subscription_contracted\",\"stripe_subscription_enterprise_self_serve\",\"aws_marketplace\",\"c4e_consumption_trial\",\"apple_subscription\",\"google_play_subscription\"]);function Z_s(){let e=Ln()?.billingType;if(!mt()||!e)return!1;return SA.has(e)}function AP(){if(a.DISABLE_EXTRA_USAGE_COMMAND)return!1;if(CP()!==null)return!0;return Z_s()}function rCe(){return AP()?fX(\"usage-credits\"):void 0}function idr(){let e=ce().oauthAccount?.organizationRole;return!!e&&[\"admin\",\"billing\",\"owner\",\"primary_owner\"].includes(e)}function cIn(){let e=cr();if(J_()&&(e===\"team\"||e===\"enterprise\"))return Ylr()??(mt()&&idr())?\"turn on usage credits at claude.ai/admin-settings/usage\":\"ask your admin to turn on usage credits\";return`tu"
+    },
+    {
+      "name": "hr",
+      "byteOffset": 184811343,
+      "bytes": 1200,
+      "sha256": "1237f2463126adbe6fdcf9ababb6fedbe50cd9663e18fb0f1f6a2075c06f7aa0",
+      "excerpt": "function hr(){return a.CLAUDE_CODE_REMOTE||Nd()}function Hd(){return a.CLAUDE_CODE_PROVIDER_MANAGED_BY_HOST}function sn(){return Hd()||!1}class QPn extends P{}function i4t(e,n=\"The app may have quit or its credential file is stale \\u2014 restart the desktop app.\"){return new QPn(`${e} credentials are managed by the desktop app, but none are available. ${n}`,\"host-managed provider credentials unavailable \\u2014 restart desktop app\")}function G_s(e){return async()=>{let{accessKeyId:n,secretAccessKey:r,profile:s,configFile:g,credsFile:h}=xk();if(n&&r){let b=a.AWS_SESSION_TOKEN;return async()=>({accessKeyId:n,secretAccessKey:r,...b&&{sessionToken:b}})}if(g||h){if(g){let w=await NH(g,h,s);if(w)return async()=>w}let{fromIni:b}=await import(\"/$bunfs/root/chunk-dwy6e0pg.js\");return b({...s&&{profile:s},configFilepath:g??h,filepath:h??g,ignoreCache:!0})}throw i4t(e,Ok)}}var Ok=\"Background agents and teammates are not supported for this credential kind. Run this from the main session, or switch the desktop app to a profile-based or API-key credential. If this is the main session, restart the desktop app.\";function xk(){return{accessKeyId:a.AWS_ACCESS_KEY_ID,secretAccessKey:a.AWS_SECRET_ACCES"
+    },
+    {
+      "name": "qc",
+      "byteOffset": 184816495,
+      "bytes": 1000,
+      "sha256": "739cb631b4f1f1fa00c91eb5183072721ca9e57740bf5d635fc9c29216258524",
+      "excerpt": "function qc(e={}){if(!ZOn())return!1;if(zcr(e))return!1;let n=e.skipApiKeyHelper?void 0:z_s.of(F().host);if(Hw()===\"profile-implicit\"){let r=gn();if(b4t(r)&&h9t()){if(n)FH(n);return!1}}if(n)LH(n);return!0}function tq(){return mte()===null&&qc()}function rCt(){return Hw()!==\"env-quad\"&&wrt()===\"user_oauth\"&&qc({skipApiKeyHelper:!0})&&yf({skipRetrievingKeyFromApiKeyHelper:!0}).key===null}var V_s=new Set([\"claude-desktop\",\"local-agent\",\"claude-vscode\"]);async function hk(){let e=mo();if(!e||!xH()||e.hostVerdict)return;await Dk(e)}async function bto(){let e=mo();if(!e?.hostVerdict)return;await Dk(e)}async function Dk(e){let n=await q_s(e.url,zrt(),`Bearer ${e.jwt}`),r=mo();if(r!==null&&r.url===e.url)P7({...r,hostVerdict:n})}var UH=\"this machine's managed settings do not name it as the organization's gateway (forceLoginGatewayUrl).\";async function q_s(e,n,r){let s=new URL(e);if(/[?#]/.test(s.href)||s.username||s.password)return{verified:!1,reason:\"the gateway address it was started with car"
+    },
+    {
+      "name": "FE",
+      "byteOffset": 184823964,
+      "bytes": 2100,
+      "sha256": "5ea5a469a9a2f0b2edda6d13ad76e190d8e3dd54039d5221760b6d1b36c07440",
+      "excerpt": "function FE(e={}){if(uG()){if(a.ANTHROPIC_API_KEY)return{key:a.ANTHROPIC_API_KEY,source:\"ANTHROPIC_API_KEY\"};if(_g())return{key:e.skipRetrievingKeyFromApiKeyHelper?null:Kcr(),source:\"apiKeyHelper\"};return{key:null,source:\"none\"}}let n=nw()?void 0:a.ANTHROPIC_API_KEY;if(k7t()&&n)return{key:n,source:\"ANTHROPIC_API_KEY\"};if(Le(!1)){let h=Lte();if(h)return{key:h,source:\"ANTHROPIC_API_KEY\"};if(!n&&!a.CLAUDE_CODE_OAUTH_TOKEN&&!a.CLAUDE_CODE_OAUTH_TOKEN_FILE_DESCRIPTOR&&!SH()&&!a.ANTHROPIC_AUTH_TOKEN&&!qc()&&Vn())throw Error(\"ANTHROPIC_API_KEY, ANTHROPIC_AUTH_TOKEN, CLAUDE_CODE_OAUTH_TOKEN, or WIF env vars (ANTHROPIC_FEDERATION_RULE_ID + ANTHROPIC_ORGANIZATION_ID) required\");if(n)return{key:n,source:\"ANTHROPIC_API_KEY\"};return{key:null,source:\"none\"}}if(n&&dur(aae(n))===\"approved\")return{key:n,source:\"ANTHROPIC_API_KEY\"};let r=Lte();if(r)return{key:r,source:\"ANTHROPIC_API_KEY\"};if(_g()){if(e.skipRetrievingKeyFromApiKeyHelper)return{key:null,source:\"apiKeyHelper\"};return{key:Kcr(),source:\"apiKeyHelper\"}}let g=lCt();if(g)return g;return{key:null,source:\"none\"}}function u4t(){let e=a.ANTHROPIC_API_KEY;if(!e||nw()||!Vn())return;let n=aae(e);return dur(n)===\"new\"?n:void 0}function _g(){if(vr())return me(\"flagSettings\")?.apiKeyHelper;if(Hd())return;return(Xn()||{}).apiKeyHelper}function Ik(){let e=_g();if(!e)return!1;let n=me(\"projectSettings\"),r=me(\"localSettings\");return n?.apiKeyHelper===e||r?.apiKeyHelper===e}function Nge(){if(Hd())return;return(Xn()||{}).awsAuthRefresh}function m6e(){let e=Nge();if(!e)return!1;let n=me(\"projectSettings\"),r=me(\"localSettings\");return n?.awsAuthRefresh===e||r?.awsAuthRefresh===e}function Wf(){if(Hd())return;return(Xn()||{}).awsCredentialExport}function Frs(){let e=Wf();if(!e)return!1;let n=me(\"projectSettings\"),r=me(\"localSettings\");return n?.awsCredentialExport===e||r?.awsCredentialExport===e}function K_s(){let e=a.CLAUDE_CODE_API_KEY_HELPER_TTL_MS;if(e!==void 0){if(e>=0)return e;t(`Found CLAUDE_CODE_API_KEY_HELPER_TTL_MS env var, but it was not a valid number. Got ${e}`,{level:\"error\"})}return RH}var p4t=new z(()=>({cache:null,inflight:nu"
+    },
+    {
+      "name": "SDn",
+      "found": false,
+      "range": [
+        184800000,
+        185100000
+      ]
+    }
+  ],
+  "lastSourceReadAt": "2026-10-07T11:47:45.990868+00:00",
+  "storageRouteSegments": [
+    {
+      "name": "sK",
+      "byteOffset": 184849142,
+      "bytes": 2000,
+      "sha256": "7e17de719164ff89d7030e29678f7660ddfec079a25e37b2151a18f074ea20c5",
+      "excerpt": "function sK(){if(a.CLAUDE_CODE_OAUTH_TOKEN)return{accessToken:a.CLAUDE_CODE_OAUTH_TOKEN,refreshToken:null,expiresAt:null,scopes:vk(),subscriptionType:a.CLAUDE_CODE_SUBSCRIPTION_TYPE||null,rateLimitTier:a.CLAUDE_CODE_RATE_LIMIT_TIER||null};let e=SH(),n=(r)=>({accessToken:r,refreshToken:null,expiresAt:null,scopes:kmo()??vk(iK),subscriptionType:a.CLAUDE_CODE_SUBSCRIPTION_TYPE||null,rateLimitTier:a.CLAUDE_CODE_RATE_LIMIT_TIER||null});if(e&&(!Bq()||Hd()))return n(e);if(sn())return null;try{let g=Gn().read({fromStoreCopy:!0})?.claudeAiOauth;if(g?.accessToken)return g}catch(r){c(r)}if(e)return n(e);return null}class aA{value=void 0;promise=null;lastCredentialsMtimeMs=0;lastCredentialsVersion=void 0;lastKeychainAccessToken=null;lastUnusableTokenRecheckAt=0;lastOwnSavedAccessToken=null;credentialsChangedOnDisk=Ie();pending401Handlers=new Map;pendingRefreshChecks={bare:null,store:null,backend:null};pendingOptedInRefreshChecks={bare:null,store:null,backend:null};clear(){this.value=void 0,this.promise=null}resetChangeCheck(){this.lastCredentialsMtimeMs=0,this.lastCredentialsVersion=void 0,this.lastKeychainAccessToken=null,this.lastUnusableTokenRecheckAt=0,this.lastOwnSavedAccessToken=null}}var $ge=new z(()=>new aA);function gn(){if(uG())return null;let e=$ge.of(F().host);if(e.value!==void 0)return e.value;let n=sK();return e.value=n,n}function nMe(){$ge.of(F().host).clear()}function NR(){let e=lA();if(typeof e===\"string\")return e;let n=Gn().read()?.claudeAiOauth?.accessToken;return uA(e,n)}async function Eh(e){let n=lA();if(typeof n===\"string\")return n;let r=(await Gn().readAsync(e))?.claudeAiOauth?.accessToken;return uA(n,r)}function lA(){let e=gn();if(!e?.accessToken)return\"none\";if(a.CLAUDE_CODE_OAUTH_TOKEN)return\"env\";let n=SH();if(n&&(!Bq()||Hd()))return\"fd\";return{bearer:e.accessToken,fdToken:n}}function uA({bearer:e,fdToken:n},r){if(r&&r===e)return\"store\";if(n&&e===n)return\"fd\";return\"none\"}function dA(){if(nMe(),LO(),U())Ske()}function jf(){cG(),Gve(),mk()}function cA()"
+    },
+    {
+      "name": "SDn",
+      "byteOffset": 181919474,
+      "bytes": 450,
+      "sha256": "e1bdcf140120c37d253d4a4da6e6c50f959362eb86ca54fa4ce01a3ab6c6e7d7",
+      "excerpt": "function SDn(t){return Array.isArray(t)&&t.includes(nA)}var E=\"org:create_api_key\",Hp=\"oauth-2025-04-20\",c=[E,U5],r=[U5,nA,\"user:sessions:claude_code\",\"user:mcp_servers\",\"user:file_upload\"];function fst(){let t=pn(),_=[...r];if(t.PLUGINS_SCOPE_REGISTERED)_.push(pst);return _}function _uo(){return D([...c,...fst()])}var Bke=[\"user:design:read\",\"user:design:write\"],n=[yDn,_Dn];function Xgr(t){if(!Array.isArray(t))return[];let _=n;return t.filter((o"
+    },
+    {
+      "name": "Gn",
+      "byteOffset": 183961054,
+      "bytes": 900,
+      "sha256": "42e1f382e7c5515ffa260b8611f358eaf0be21588a95682a3d940f8a91f7059c",
+      "excerpt": "function Gn(){if(K)return K;return M(b,T)}var me=500;function GN(e,r,a=32000,s=Math.random){let n=Math.round(ok({attempt:e,baseMs:me,capMs:a,jitter:{kind:\"proportional\",ratio:0.25},random:s}));if(r){let o=parseInt(r,10);if(!isNaN(o))return Math.max(o*1000,n)}return n}import{STATUS_CODES as pe}from\"http\";var Zcs=600000;function Smr(e){return e.escalated?e.retryWindowMs:e.firstWindowMs}class BAt extends Error{deadline;sleptMs;code=\"StreamNoResponse\";constructor(e,r){super(\"No response from API within the first-byte window\");this.deadline=e;this.sleptMs=r;this.name=\"StreamNoResponseError\"}}function cYt(e){let r=cU(e,(a)=>a instanceof BAt);return r instanceof BAt?r:void 0}var Qa=\"API Error\",$ot=1000;function Qte(e){if(!(e instanceof At))return!1;let r=e.message??\"\";return e.status===403&&r.includes(\"OAuth token has been revoked\")||e.status===401&&r.includes(\"OAuth access token has been revok"
+    }
+  ],
+  "sourceReadSegmentClosed": true,
+  "conclusionReference": "status-call-chain-conclusion.md",
+  "qualification": "Conditional public source route, not actual credential access or root-cause evidence"
+}

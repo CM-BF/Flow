@@ -1,6 +1,6 @@
 # WPF-CONNECTION01 中心浏览器连接会话
 
-状态：in-progress；创建/更新 2026-10-06；owner native_center_owner / gpt-6-astra，co-lead ExecutionLead。所属大task：[WPF-MATURE-06](../../../web-platform-management/plans/wpf-mature-06-chat/plan.md)，对应06-04；非新大task。遵循[模块规则](../../AGENTS.md#modular-design)。
+状态：completed（中心子片）；创建2026-10-06，更新2026-10-07；owner native_center_owner / gpt-6-astra，co-lead ExecutionLead。所属大task：[WPF-MATURE-06](../../../web-platform-management/plans/wpf-mature-06-chat/plan.md)，对应06-04；非新大task。遵循[模块规则](../../AGENTS.md#modular-design)。
 
 中心拥有持久随机center/principal、有限Cookie会话与HTTP/SSE统一鉴权；readSession/connect/logout只处理连接，logout不cancel。默认未配置unsupported，旧Bearer owner/runner保持。migration028已Lead预留，无共享index/client/export写权。
 
@@ -13,6 +13,8 @@
 
 ## Recovery TODO06 后继：迟到 Logout
 
-- [ ] **WPF-CONNECTION01-05** 精确撤销旧会话且迟到响应不删除新Cookie；4selected与focused types后独审/main。
+- [x] **WPF-CONNECTION01-05** 精确撤销旧会话且迟到响应不删除新Cookie；4selected与focused types后独审/main。
 
 实际续接 2026-10-07T11:33:16.858479+00:00；新claim已take，旧四TODO已main不重开。详见[本片Interface](../../docs/evidence/wpf-connection-session/late-logout/interface.md)。
+
+2026-10-07T11:46:00.003450+00:00：TODO05中心修复与限定直接验证已独审并main7272，见[回执](../../docs/evidence/wpf-connection-session/late-logout/main-receipt.json)。本计划中心子片完成，不替代WPF-MATURE-06完整浏览器恢复验收或个人部署。
