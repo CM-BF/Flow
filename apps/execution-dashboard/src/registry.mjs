@@ -5,6 +5,7 @@ import { fileURLToPath } from 'node:url';
 export const projectRoot = fileURLToPath(new URL('../../../', import.meta.url));
 const roots = '/Users/citrine/Projects/AgentHarness/Flow-worktrees';
 const assignments = [
+  ['WPF-MESSAGESETTINGS03', '聊天消息设置实际接入', '工作线', 'web-message-settings-app', 'wpf-message-settings-app'],
   ['X01-VERSION-LIFECYCLE01', '插件版本升级回滚验收', '工作线', 'plugin-version-lifecycle', 'x01-version-lifecycle'],
   ['X01-REMOVAL-REFERENCES01', '插件材料保留与移除依据', '工作线', 'plugin-removal-references', 'x01-removal-references'],
   ['X01-UPSTREAM-UPGRADE01', '插件上游版本升级', '工作线', 'plugin-upstream-upgrade', 'x01-upstream-upgrade'],
