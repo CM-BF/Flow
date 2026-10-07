@@ -2,11 +2,11 @@
 
 **状态：UNKNOWN（部分审查已完成；全片浏览器验收待完成）**
 
-Review target commit：52cdfbbb177ec9c89651ebde9b82e3a5538f45f0
+Review target commit：98baf552d961ed0fa88ce2cf8bad006002d5986a
 
 Base：c837b5dccaea429b0112d1c7e0c752c41334204a
 
-当前受审目标为 `52cdfbbb177ec9c89651ebde9b82e3a5538f45f0`：原三生产模块保持cfd5，app新增2行queued-close重开保护；后继补close事件同步、真实异步close回归及Timing/ACCESS测试调用适配。后者仍NOT_RUN，但[生命周期限定源码审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-consumers-lifecycle-review.json)已接受。
+当前受审目标为 `98baf552d961ed0fa88ce2cf8bad006002d5986a`：生产保持已验52cdf（其app为cfd5加2行queued-close保护）；当前仅后继3测试视觉入口及45秒独立phase接线，尚待聚焦源码/计量准备审。后者仍NOT_RUN，但[生命周期限定源码审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-consumers-lifecycle-review.json)已接受。
 
 原cfd5的16输入已获[root限定源码独审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-cfd-composition-review.json)，其Node9叶+父10/10/实际outer0与owned清理由[root独立实际报告](../../docs/evidence/wpf-dperf04/reentry-20261007/root-dperf04-composed-node-actual-review-20261007.json)接受。summary首红保留；后继1c190的summary9组和c989的task-links6组由[root实际审查](../../docs/evidence/wpf-dperf04/reentry-20261007/root-summary-links-actual-review.json)限定接受。7张PNG中6张可作当前视觉证据；home-narrow-light底部重复页首带需[独立补证](../../docs/evidence/wpf-dperf04/reentry-20261007/narrow-light-evidence-gap.json)，原因尚未证实，不能宣布全部图视觉通过。Timing首轮FAILED原件已保留；后继52cdf产品保护及真实close重开回归随Timing5组actualPASS，已由[root实际/源码独审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-timing-actual-review.json)限定接受。两图仅详情顶部，不冒时间正文目视。累计browser40551/余19449ms；Timing/ACCESS、main及部署尚未完成，顶层UNKNOWN。
 

@@ -1,6 +1,6 @@
 {
   "state": "SOURCE_READY_NOT_RUN",
-  "implementationTarget": "52cdfbbb177ec9c89651ebde9b82e3a5538f45f0",
+  "implementationTarget": "98baf552d961ed0fa88ce2cf8bad006002d5986a",
   "oldSummaryTarget": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
   "accessTimingInput": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
   "sourceSupplyCommit": "aa9cb2d5ba053dd264645d98819cb1cb60e89b2f",
@@ -68,20 +68,20 @@
     },
     {
       "path": "apps/execution-dashboard/test/summary-detail.browser.mjs",
-      "bytes": 34645,
-      "sha256": "54cf28b6dd4afc6e5734a0ceebd4d0c73655ac11a54ee4aa7e5dea00fd2c5ab0",
+      "bytes": 34832,
+      "sha256": "098cb20090bad55f6bc6dad9878cd49652cbfa6df569ed1a475e3100439d5abb",
       "role": "owned-source"
     },
     {
       "path": "apps/execution-dashboard/test/task-links.browser.mjs",
-      "bytes": 11129,
-      "sha256": "754310776b803e800ef33597980a1c78fffb9742ea1ead2bc3113c22136a6bda",
+      "bytes": 14087,
+      "sha256": "8da86261cd386a46c494c0218cff7b9b11d222d13a5d414298f7440c9546382a",
       "role": "owned-source"
     },
     {
       "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
-      "bytes": 15062,
-      "sha256": "9a0ab360a56f337c988607d948a71b3a4cec723a3795298af8e7badb3eb84493",
+      "bytes": 18159,
+      "sha256": "56ffc1852f75baf5f9fc67948f81fe3aa6d49adfcc71ed07433a890ecc09c8af",
       "role": "owned-source"
     },
     {
@@ -136,6 +136,7 @@
   "oldNodeRuntimeMs": 3950,
   "browserRuntimeMs": 40551,
   "browserBudgetMs": 60000,
-  "runtimeState": "Timing2 actual5/5 plus native queued-close regression and2PNG; summary9/task-links6 prior scoped accepted; ACCESS NOT_RUN and narrow-light visual followup OPEN",
-  "previousTarget": "08e9ee7e23157268d44bd2fdd460929a4ca5e626"
+  "runtimeState": "Old browser phase CLOSED40551/unspent19449; Timing52cdf accepted; current test visual/phase adaptation NOT_RUN, no inherited approval",
+  "previousTarget": "52cdfbbb177ec9c89651ebde9b82e3a5538f45f0",
+  "followupProposedMs": 45000
 }

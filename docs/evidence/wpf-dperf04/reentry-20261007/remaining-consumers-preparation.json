@@ -1,0 +1,42 @@
+{
+  "state": "PREPARED_NOT_RUN",
+  "source": "98baf552d961ed0fa88ce2cf8bad006002d5986a",
+  "packet": "/private/tmp/dperf-f1",
+  "candidateManifestBeforeMetadataSeal": "f7c02d86505e0b84740993b396d8da8c68f2bb903480aaf17fbc972262f21e11",
+  "pins": [
+    {
+      "path": "supervisor.py",
+      "bytes": 26445,
+      "sha256": "d3778771f83d7bcf9e048e3b705b0ba6bc13c5a7271f466b6a2a03910777e6ca"
+    },
+    {
+      "path": "measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "path": "parent.diff",
+      "bytes": 11753,
+      "sha256": "9f610c7246fccab1290acd1856fbe751bdd7551af8aead54d0a27056407ad21c"
+    },
+    {
+      "path": "source.diff",
+      "bytes": 10081,
+      "sha256": "236e975bdfbcb56baf8fc7eb6f7e95d814879476da166b02f6ebef98bb408b6c"
+    },
+    {
+      "path": "binding.json",
+      "bytes": 53465,
+      "sha256": "f9243cc048f094d6f0b273fa7d170ca20de430583afc875cd683067783ed86f1"
+    },
+    {
+      "path": "report.md",
+      "bytes": 3214,
+      "sha256": "19a6b54c98eca843938eda3a2eaa53e191e59b404d5f0e22ac39ae1eb36b8bd7"
+    }
+  ],
+  "nativeBoundaryApproval": null,
+  "adoption": "PARTIAL_RETAINED_ADOPTION",
+  "sourceOnly": true,
+  "note": "Final TMP binding HEAD/manifest will follow this natural metadata commit; executable sources unchanged. No recursive project receipt required."
+}

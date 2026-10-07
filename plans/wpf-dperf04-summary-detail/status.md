@@ -9,21 +9,21 @@
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail |
 | Branch | codex/dashboard-summary-detail |
-| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / 52cdfbbb177ec9c89651ebde9b82e3a5538f45f0（当前固定测试适配；metadata另核） |
-| 工作树dirty状态 | 当前16输入与52cdf固定逐字；app新增2行queued-close保护，其余三生产模块仍同cfd5；提交后核clean |
+| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / 98baf552d961ed0fa88ce2cf8bad006002d5986a（当前后继测试准备；metadata另核） |
+| 工作树dirty状态 | 当前16输入与98baf固定逐字；生产同已验52cdf，后继3测试准备NOT_RUN；提交后核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | cfd5 Node10/10与summary9组、关联6组已独审接受；7图中6图限定视觉接受，窄屏light补证OPEN；首FAIL保留，browser累计40551/余19449ms；Timing修后5组+2图实际PASS、首FAIL保留，ACCESS未运行 |
+| 检查状态 | cfd5 Node10/10与summary9组、关联6组已独审接受；原7图中6图限定视觉接受；Timing2图仅shell；窄light/时间正文补证OPEN；首FAIL保留，旧browser段40551/未用19449已关闭；Timing修后5组+2图实际PASS、首FAIL保留，ACCESS未运行 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 实现目标 | 52cdfbbb177ec9c89651ebde9b82e3a5538f45f0 |
+| 实现目标 | 98baf552d961ed0fa88ce2cf8bad006002d5986a |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs, apps/execution-dashboard/test/task-timing.browser.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 轻摘要、按需详情、阅读保留和任务关联浏览器检查通过；时间5组真实通过并获限定独审；本机入口消费与窄屏light视觉补证仍待完成 |
+| 当前产出 | 轻摘要、按需详情、阅读保留和任务关联浏览器检查通过；时间5组真实通过并获限定独审；剩余本机入口与真实正文/窄light补证入口已准备，待新段复审/资源交接 |
 | 下一可用交付 | 完成Timing/ACCESS及窄屏light补证后交主线接收；已有summary/关联实际证据不迁移到待验项 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，UNKNOWN：源码/Node及summary/关联实际限定已审；Timing/ACCESS接缝源码已审；Timing5组实际PASS已独审，ACCESS未运行；窄屏light视觉补证OPEN |
+| Review | [review.md](review.md)，UNKNOWN：源码/Node及summary/关联实际限定已审；52cdf Timing5组实际限定已审；98baf后继测试/计量准备尚待聚焦审，ACCESS及两视觉补证未运行 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -187,3 +187,9 @@ outer49738/worker54431/Chrome50453各PID和PGID均ESRCH，scratch不存在；con
 剩工作4449ms低于最近两次约5秒启动阶段，故主动完成/交回本段，不启动可预见deadline失败；ACCESS保持NOT_RUN，DPERF04-04浅色首页补图OPEN。没有追加预算、重跑Node、PG或访问真实服务。下一必须明确剩余额度是否足以有效检查；整体审查/main/部署仍分层未完成。
 
 [root Timing实际/源码独审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-timing-actual-review.json)接受52cdf旧close保护及真实事件回归+5组，未反推首失败唯一因果；33raw/32sourcepins与两attempt完整清理核验。旧60s段以spent40551/unspent19449 CLOSED，未用额保历史不做后继credit。后继仅SOURCE_ONLY准备OPS-METER公开helper接入与ACCESS5组、首页窄light及真实时间正文双图；新建议45秒含15秒清理需独立资源交接，当前未运行。
+
+## 后继45秒有限段 SOURCE_ONLY准备
+
+固定 98baf552d961ed0fa88ce2cf8bad006002d5986a 仅3个既有test：明确独立phase45000时钟（旧40551/19449 CLOSED不作credit）、可选Timing正文视口双主题与关联首页单浅色补证；原全9/6/5检查主体保留，不无关重跑。[prepared接口](../../docs/evidence/wpf-dperf04/reentry-20261007/remaining-consumers-preparation.md)与[精确pins](../../docs/evidence/wpf-dperf04/reentry-20261007/remaining-consumers-preparation.json)。新TMP父只剩local-access5组/2图、timingvisual1组/2图、linksvisual1组/1图；当前0/45000、no gate/native新hash待审，不占Chrome/PG。
+
+OPS-METER固定main1e12eaf13 measure.py原字节，只迁移所有retained路径（BASE精确排除scratch+evidence）；root设备/inode pin、unknown失败并保partial/ownedgroup清理后KEEP，禁pycache。scratch原独立64MiB regular logical/allocated测量未改，显式PARTIAL_RETAINED_ADOPTION；特殊Unix socket是源码兼容可能，未实际采样，不放宽公共helper。必要caller实际验证在后继范围执行，未运行helperpytest/Node或采新空间。
