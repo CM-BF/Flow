@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:45:56.833930+00:00；零任务真实三宿主实验已获限定独审并进入main |
+| 最近更新 / 最近main同步核验 | 2026-10-07 07:41:01 UTC；下一更新仅固定源码研究，未采个人事实 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -14,20 +14,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | artifact固定输入 3230becf07b804479ec4dc7ef02fcaff58cc3858；host后继入口 d37981b06ec70b9f9e6254b66e0a1b69d7555dc1 |
-| 工作树dirty状态 | 固定d379入口及e5产物不变；本次只封实际结果/状态，提交后clean |
+| 工作树dirty状态 | 仅下一候选与状态文档；既有产品/raw全停写 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | planning |
 | 实现目标 | d37981b06ec70b9f9e6254b66e0a1b69d7555dc1 |
 | 实现范围 | docs/evidence/svc06/artifact-host-followup/entry.mjs, docs/evidence/svc06/artifact-host-followup/supervise.py, docs/evidence/svc06/artifact-host-followup/clone-artifact.py, docs/evidence/svc06/artifact-host-followup/inputs.json, docs/evidence/svc06/artifact-host-followup/service-boundary.mjs, docs/evidence/svc06/artifact-host-followup/role-bootstrap.mjs |
 | 检查状态 | PASSED d37981b06ec70b9f9e6254b66e0a1b69d7555dc1；一次零任务三宿主/拒读实验与独立清理已获限定独审；原e6ff FAILED保持 |
 | 已集成main状态 / HEAD | INTEGRATED a040a364d426f4f8583fbfc67e5922077ba1f9ac；本实验30固定源/结果绑定逐字相同，[main回执](../../docs/evidence/svc06/artifact-host-followup/main-receipt.json)；不追逐无关metadata主线 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 固定产物的独立目录运行与开发目录隔离已通过验证和独立审查，所有验证进程与数据库已正常收尾。 |
-| 下一可用交付 | 本实验已交付；新版网页宿主产物由SVC08继续准备，完整部署验收另列。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 已明确新后台更新前还需接入浏览器会话配置；现有部署和数据保持不变。 |
+| 下一可用交付 | 受信宿主配置的小接线与固定后台更新候选；新网页等待实际应用产物。 |
+| 当前阻塞 | ACTIVE: 新宿主接线及保留网页与候选后台的兼容证据尚未完成 |
 | 需用户决定 | NONE |
-| Review | APPROVED_FIXED_ZERO_TASK_HOST_RESULT；结果target c59c29e797a8d07081a1f84d9f922bcc8163d4dc，30fixed/17private/10原件，无blocking；默认部署/个人验收不扩大 |
+| Review | 既有零任务host结果APPROVED保持；本次SVC06-05只读候选待Lead核，不代表更新就绪 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用产物host与OPS14，工作和独立收尾两个owner顺序执行，三个detached角色只凭原nonce身份停止；仅本次checkout不可读证据，不新建OS沙箱产品。 |
 
@@ -37,7 +37,7 @@
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
 | SVC06-03 | in-progress | assignment_review | 真实完整artifact构建/import已审；新root三host/拒读实验已限定批准并main，默认部署链不扩大 |
 | SVC06-04 | in-progress | assignment_review / 独立reviewer | 局部检查/构建已审；一次真实host结果已限定批准并main，refresh/resume/旧数据后继open |
-| SVC06-05 | pending | 独立operator | 无个人操作许可 |
+| SVC06-05 | pending | assignment_review | update-4fe-candidate/candidate.md；仅只读准备，个人更新未开启 |
 
 ## 依赖闭包后继（2026-10-06 14:41 UTC）
 
@@ -170,3 +170,7 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 2026-10-07T04:45:56.833930+00:00：本实验主线收口
 
 [唯一main回执](../../docs/evidence/svc06/artifact-host-followup/main-receipt.json)核30固定源/结果与main逐字相同。本片delivered；03/04/05整体仍open，Web显式stop的exit1、旧首FAIL/后续cleanup、原e5及自有副本全部保留。本次只metadata，无新运行或个人采样。
+
+## 下一用户可见更新候选
+
+[最小候选](../../docs/evidence/svc06/update-4fe-candidate/candidate.md)与[固定源码事实](../../docs/evidence/svc06/update-4fe-candidate/fixed-facts.json)。仅原scope只读研究固定4fe与已存SVC08 r3；没有个人probe/构建/PG。识别出真实host未传browserSession策略的接入前置；原refresh三roles停起与独立Web指针保持分别记录。后继薄接线须正式新scope，原历史验收和UNKNOWN不改。
