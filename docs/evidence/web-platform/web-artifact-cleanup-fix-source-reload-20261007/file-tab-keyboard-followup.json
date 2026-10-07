@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-07T15:35:57.571Z",
+  "source": "GO fixed-source finding relayed by root; manager records-only, no runtime reproduction",
+  "fixedMain": "9a815eca7",
+  "productionPath": "apps/web/src/conversations/ConversationThread.tsx",
+  "line": 255,
+  "finding": "@file+Tab precedes defaultPrevented/isComposing/keyCode229 guards and omits modifier exclusions. Installed assistant-ui0.15.23 ComposerInput.tsx:395 invokes consumer onKeyDown before its own IME guard. Attachment fixture guard does not prove actual App consumer.",
+  "mapping": [
+    "WPF-MATURE-03-03",
+    "WPF-MATURE-06-04"
+  ],
+  "acceptance": [
+    "Unmodified @file Tab continues to open the intended attachment action",
+    "Shift+Tab, Ctrl/Alt/Meta modified Tab, already-prevented event and composition/keyCode229 must not intercept focus/open attachments/issue requests",
+    "Preserve Enter/Queue/Steer; targeted actual consumer checks only, no full IME suite rerun"
+  ],
+  "dispatch": "Next lawful owner in independent WT with exact fresh claim and finite local segment. Current fixed Web release and already queued visible shared-overlay slice remain higher priority. No new task or current product write authorization.",
+  "status": "SOURCE_CONTROL_FLOW_FINDING_NOT_RUNTIME_REPRODUCED_NOT_IMPLEMENTED"
+}

@@ -108,3 +108,9 @@ ATTACHI02生产验证准备（12:00）：[只读矩阵](../../docs/evidence/web-
 12:07输入更新：4c模块已正式main1c496，ATTACHI02新树首12 fresh受领，不再等待模块输入。完整生产消费者仍沿原TODO，第二阶段余12需fresh amend；上述验证准备不是已执行结果。
 
 同既有附件预览/键盘窄屏验收补证：ATTACHI02 f82真实合法255 UTF16unit ASCII/中文emoji文件名在浅深390的Picker/恢复动作导致Dialog横溢与焦点不可达（root P2 REQUEST_CHANGES），功能191项不抹掉。仅原任务追加Picker与CSS两literal，0b7fc000 v3/26scope已fresh committed；保持完整名字/aria及语义，visible动作精简/网格换行，定向复验新target后才接收，见[原诊断与领取](../../docs/evidence/web-platform/attachi02-longnames-request-changes.json)。原controller/recovery/adapter未授权修改，不另造视觉task。
+
+### @file 快捷键的实际聊天消费者边界
+
+沿原 MATURE03-03 与 MATURE06-04 键盘验收记录[固定源码发现](../../docs/evidence/web-platform/web-artifact-cleanup-fix-source-reload-20261007/file-tab-keyboard-followup.json)：main9a815eca7 的 ConversationThread 在已有 prevented/IME guard 之前处理 @file+Tab，且未排除修饰键；官方组件先调用消费者 onKeyDown，独立附件 fixture 的正确 guard 不能代替真实 App。此为静态控制流发现，未声称真实 IME 复现。
+
+下一合法 owner 在独立树与精确领取范围内修快捷键判断顺序和边界：普通 @file Tab 保持有效；Shift+Tab、Ctrl/Alt/Meta、已 prevented、composition/keyCode229 不抢焦点、不打开附件、不发请求；保 Enter/Queue/Steer。只测实际消费者受影响路径，不重跑完整 IME 或全库；不重建当前固定 Web 产物、不打断发布，已排用户可见共享浮层片仍优先，不新增大task。

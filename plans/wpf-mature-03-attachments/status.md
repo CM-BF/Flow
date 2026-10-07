@@ -2,7 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T05:05:57.595925+00:00；常用文件能力后继验收登记，未实施 |
+| 最近更新 | 2026-10-07T15:35:57.571Z；材料草稿修复已主线接收；新增真实聊天 @file 键盘边界待后继局部修复 |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 本父任务历史实际开工无独立证据，不从子片commit/claim倒推；整个附件目标尚未完成，子片时间沿各唯一owner记录。 |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-03](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -15,7 +18,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | ATTACHI02 fixed9eec与history修复已main cde6646；owner506958双端clean后0b7f v4释放，完整附件/provider/持久恢复仍开放 |
-| 下一可用交付 | 常用Markdown和代码文件可按明确能力与预算附到当前草稿，并由Send/Queue送达同版本原材料；先核真实消费者接口，优先于附件装饰与插件菜单。恢复与快速设置当前验证失败按原owner处理。 |
+| 下一可用交付 | 常用Markdown和代码文件可按明确能力与预算附到当前草稿，并由Send/Queue送达同版本原材料；先核真实消费者接口，优先于附件装饰与插件菜单。材料草稿保护与逐消息设置所选旅程已完成主线接收；真实聊天 @file 的修饰键/合成事件边界按原03-03安排窄修，不打断固定网页发布。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -29,7 +32,7 @@
 | --- | --- | --- | --- |
 | WPF-MATURE-03-01 | completed | Web co-lead | CONTEXTI01从已授权project创建、cap确认后选引用；Send/Queue ordered tuple到真实HTTP并校ACK；不宣称本地上传完成。 |
 | WPF-MATURE-03-02 | in-progress | Web co-lead | 区分本地上传、已有知识、runner文件的来源/版本/权限/大小类型，绑定当前project/view/connection；timeline只轻引用；常用文件/预算的明确后继见03-07及plan。 |
-| WPF-MATURE-03-03 | in-progress | Web co-lead | 三个入口实际片已审；Picker条目P01覆盖仍开放，须view/project/fixed-ref授权，不套task artifact上下文，见plan。 |
+| WPF-MATURE-03-03 | in-progress | Web co-lead | 三个入口已有已审片；新固定源码发现 @file+Tab 先于IME/prevented判断且未排修饰键，按[计划](plan.md#file-快捷键的实际聊天消费者边界)待实际消费者窄修；尚非运行复现。Picker条目P01覆盖仍开放。 |
 | WPF-MATURE-03-04 | in-progress | Web co-lead | 同一次Send/Queue深冻材料版本/顺序；unknown保原key/payload，预算拒绝保留receipt，ACK不得清新稿/新refs；异步prepare须绑定点击意图/材料与submission代际，仅真实receipt接管后consume；材料真实进入model context。 |
 | WPF-MATURE-03-05 | in-progress | Web co-lead | 双split草稿独立、换连接/close/隐藏/撤权迟到隔离；旧center缺cap阻附件，plain省略attachments字段；旧页读v2只显示正文。类型/大小/授权失败可行动，实际App/HTTP有限矩阵已9eec独审，真实provider/跨reload恢复仍开放；journal异常隔离保raw/unknown和纯文本，cap/namespace按绑定失效，生产宿主有限fixture已审，个人部署另计。 |
 | WPF-MATURE-03-06 | in-progress | Web co-lead | 真实App fixture覆盖入口到执行请求、引用审计与按需详情；provider执行验收另经明确预算，不能拿fixture证明模型收到。 |

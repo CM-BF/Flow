@@ -184,3 +184,9 @@ READBOUND共享边界已[main81b/正式194登记](../../docs/evidence/web-platfo
 
 
 Recovery原03/05已由[Original主线回执](../../docs/evidence/web-platform/release-caller-recovery-main-20261007/recovery-main-intake.json)接入c130精确19源；06 lateLogout中心原后继仍开放。原[panels有限研究](../../docs/evidence/web-platform/release-caller-recovery-main-20261007/late-logout-readonly.md)复用revoke-only方案，只补固定六源与nativecookie/真实延迟headers测试边界；不冒实现批准、不新增Webgate，也不把Connect乱序或客户端擦除视为已解决。
+
+### @file 快捷键的实际聊天消费者边界
+
+沿原 MATURE03-03 与 MATURE06-04 键盘验收记录[固定源码发现](../../docs/evidence/web-platform/web-artifact-cleanup-fix-source-reload-20261007/file-tab-keyboard-followup.json)：main9a815eca7 的 ConversationThread 在已有 prevented/IME guard 之前处理 @file+Tab，且未排除修饰键；官方组件先调用消费者 onKeyDown，独立附件 fixture 的正确 guard 不能代替真实 App。此为静态控制流发现，未声称真实 IME 复现。
+
+下一合法 owner 在独立树与精确领取范围内修快捷键判断顺序和边界：普通 @file Tab 保持有效；Shift+Tab、Ctrl/Alt/Meta、已 prevented、composition/keyCode229 不抢焦点、不打开附件、不发请求；保 Enter/Queue/Steer。只测实际消费者受影响路径，不重跑完整 IME 或全库；不重建当前固定 Web 产物、不打断发布，已排用户可见共享浮层片仍优先，不新增大task。

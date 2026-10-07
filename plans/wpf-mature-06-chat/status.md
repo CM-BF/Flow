@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T11:53:30.205Z；Recovery原01–06有界工程完成、已main并6ff v6释放，整个成熟度目标仍沿各原子片与实际体验推进 |
+| 最近更新 | 2026-10-07T15:35:57.571Z；逐消息草稿/发送/队列/恢复所选旅程已主线接收，键盘边界后继仍开放 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本父任务历史实际开工无独立证据，不从claim/commit倒推；整体目标仍未完成，各子片实际时间只沿唯一owner原件。 |
@@ -18,7 +18,7 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
 | 当前产出 | Recovery固定Web实现/原03–05工程矩阵与06共享合同main交接已完成；唯一owner287947保历史失败和实际/受控范围，不继承为整个成熟度任务通过。 |
-| 下一可用交付 | Recovery原工程已交付并释放；真实聊天设置已沿原MATURE02 TODO11以MSG03独立18范围正式领取，由原owner接入草稿/发送/队列/恢复，唯一进度沿其status。LAZY/工具正文/实际provider等既有后继保持各唯一owner与范围。 |
+| 下一可用交付 | 已审恢复与逐消息设置沿固定网页发布进入用户界面；真实聊天 @file 快捷键补齐修饰键/合成事件边界，不影响原发送、队列和引导操作。LAZY/工具正文/实际provider等后继保持各唯一owner与范围。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -85,3 +85,5 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 共享读取上界片仅关联[MATURE06-READBOUND01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds/plans/mature06-client-read-bounds/status.md)，Mika/db_transaction_owner原独立树；[原登记请求](../../docs/evidence/web-platform/svc06-return-steer-handoff-20261007/readbound-registration-request.json)已由[正式main/194登记回执](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/readbound-main-intake.json)接收，不复制实现/TODO/运行进度，不冒MATURE06整体完成。
 
 **历史Steer修复准备快照：** 原RECOVERY01两次Steer实际失败均清理归还，0SteerPOST/恢复验收未过；原60s段不再消费。原owner沿21scope[修复与新有限回归](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/recovery-route-fix-segment.json)，当前仅source，不增加第二业务status或越权占用App。
+
+原 MATURE06-04 键盘验收新增[实际消费者 @file 边界](plan.md#file-快捷键的实际聊天消费者边界)，仅静态发现/未实现；优先发布与已排视觉片，不冒整个键盘矩阵已验。

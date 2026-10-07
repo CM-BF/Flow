@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T15:20:21.982Z",
-  "state": "NO_HEAVY_HOLDER_S01_FULL_RETURN_K01_ORDINARY_AUTHORIZED",
-  "groupWindowOwnership": "S01 exactFULLRETURN15:18:44.466Z;noheavyholder/NEXT. Mika K01 fixed8c5fa9682/30965v2 existing90sordinary authorized,resumed byownlead;actualSTART notyetreported. W01WebbuildNOT_READY/no grant. Sourcepreparation continues, exclusivebuild waits actualK01 completeRETURN andownfixedreadiness.",
+  "recordedAt": "2026-10-07T15:40:20.183Z",
+  "state": "WEB_ARTIFACT_RESULT_APPROVED_FULL_RETURN_COMPATIBILITY_NOT_RUN",
+  "groupWindowOwnership": "No reported heavy holder or NEXT; Web fullRETURN and result approved. I01 local10834/30000 completeRETURN, source/local review pending. Mika/Original ordinary permissions are not inferred actual children; new exact events authoritative. All KEEP/potential retained.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,9 +407,9 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T15:01:04.868Z",
-    "record": "msg03-main-release-source-handoff-20261007/current.json",
-    "event": "New Web producer source1cea/types+direct consumer complete, first alias failure retained,90s closed6165. Root focused final review/owner seal underway. Plugin source supply ready, awaits exact two-product handback."
+    "at": "2026-10-07T15:38:16.213Z",
+    "record": "web-artifact-cleanup-fix-source-reload-20261007/current.json",
+    "event": "W01 build fullRETURN; fixed new Web descriptor ready for result review/preparation, no compatibility/deployment. I01 resumed existing30s ordinary. Mika and root notified actualreturn."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1199,11 +1199,9 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "NONE_REVIEW_AND_METADATA_ONLY",
-    "phaseMs": 120000,
-    "spentMs": 26368,
-    "unusedMs": 93632,
-    "unusedPermission": false
+    "state": "PREPARING_NOT_RESERVED",
+    "priority": "Newpair compatibility with one PG fixture + one Chrome; I01 browser0PG also requires soleChrome so cannot overlap",
+    "actualPermission": "NONE; new fixed reviewed caller/resources required; no old build credit"
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
   "messageSettingsB4Result": {
@@ -1308,7 +1306,8 @@
   "currentWindowEvidence": "release-backend-route-20261007/msg03-settings-actual.json",
   "webActualHolder": null,
   "webGate": {
-    "state": "BOTH_CONSUMED_CLOSED"
+    "state": "NOT_CREATED_BY_MANAGER_ACTUAL_GATE_OWNER_FRESH_REQUIRED",
+    "historical": "Previous consumed gates remain in original run records"
   },
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": {
@@ -1317,7 +1316,19 @@
     "history": "Prior phase totals and evidence remain in dperf04PreparationEvidence; no new preparation or runtime."
   },
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": null,
+  "webReservation": {
+    "state": "CONSUMED_CLOSED_FULL_RETURN",
+    "owner": "w01_owner",
+    "package": "/private/tmp/release01-web-artifact-prepared-20261007",
+    "manifest": "bad7efe7b62cd1d2ef1e62077bfd3abb321f44c387e6226c1b0a28adc5ee10dc",
+    "totalMs": 150000,
+    "cleanupMs": 30000,
+    "newAllocatedCapBytes": 268435456,
+    "floorBytes": 14414970880,
+    "actualStart": "2026-10-07T15:34:26.957Z",
+    "grantedAt": "2026-10-07T15:34:18.170Z",
+    "actualReturn": "2026-10-07T15:34:52.365620Z"
+  },
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -1778,7 +1789,7 @@
       "at": "2026-10-07T15:14:38.558644Z"
     }
   },
-  "currentIntake": "Release7d60v2exact4/product2returned;panels sameI01 successor61abce36v1exact8 COMMITTED15:12:21.486Z, fixed3csource-only. W01metadata localc2311/remoteoldcd074 due2GitHub500; actualclaimhandoff valid. SVC09A soleNEXT unchanged, noSTART reported.",
+  "currentIntake": "Approved newWeb779/c231 descriptor plus root9242 ready for Original old release chain. Pair with approvedcd27/04da; W01 sameexact4 prepares narrow guard/input delta, compatibility/main/deploy NOT_RUN. D05live207 closed; AV02 ownmerge/amend source-only.",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/webOrdinaryLocal/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants. FutureCompleteFreshFloorBytes/futureFloorEvidence and externalOrdinaryCurrent apply to future fresh composition; do not rewrite consumed historical gates.",
   "readyValidationRule": {
     "source": "Current main local-validation.md, GO explicit PG plus isolated 0PG browser rule",
@@ -1795,32 +1806,55 @@
     "ruleIntake": "release-main-registry-close-20261007/current.json"
   },
   "webOrdinaryLocal": {
-    "state": "ACTUAL_DIRECT_PASS_AND_ENTIRE_ORDINARY_SEGMENT_CLOSED",
-    "owner": "w01_owner",
-    "source": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
-    "run": "direct-2",
-    "outerExit": 0,
-    "childExit": 0,
-    "testFiles": 1,
-    "selected": 1,
-    "passed": 1,
-    "failed": 0,
-    "skipped": 0,
-    "chargeMs": 1505,
-    "returnObservedAt": "2026-10-07T14:59:19.174Z",
-    "processIds": [
-      52711,
-      52713
+    "state": "COMPLETE_RETURN_SOURCE_LOCAL_REVIEW_PENDING",
+    "source": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+    "metadata": "769416a9a7e9f514bf0a2b85ef1cb221d4fad653 actualremoteequalclean",
+    "claim": "61abce36v1exact8",
+    "totalMs": 30000,
+    "perChildMs": 15000,
+    "cleanupMinMs": 5000,
+    "tmpBytes": 8388608,
+    "rawBytes": 1048576,
+    "planningAddedOnce": 9437184,
+    "selected": "4newAppsessionauthoritydirect;old10unselected;affected6source/staticimports noEmit",
+    "boundary": "Same30s cumulative/each15s including5cleanup, direct4 then affected6source noEmit,0networkPGHTTPChromeproviderinstallbuild; actualSTART not yet reported",
+    "spentMs": 10834,
+    "ownerReport": "Actual0child/no gate,30s unusedheldpendingWebactualRETURN;source-only/metadataallowed",
+    "releaseDrainAt": "2026-10-07T15:38:16.213Z",
+    "remainingMs": 19166,
+    "actual": [
+      {
+        "check": "direct-1",
+        "start": "2026-10-07T15:38:02.776650Z",
+        "pid": 60940,
+        "exit": 0,
+        "selected": 4,
+        "passed": 4,
+        "notSelected": 10,
+        "chargeMs": 1596,
+        "closed": "group/scratch absent; regular log not dualEOF"
+      },
+      {
+        "check": "types-1",
+        "start": "2026-10-07T15:38:30.895286Z",
+        "pid": 75571,
+        "exit": 2,
+        "chargeMs": 4556,
+        "failure": "fixture imports two symbols not exported from contracts root; owner narrow fixed module import, no shared export change",
+        "closed": "group/scratch absent"
+      },
+      {
+        "check": "types-2",
+        "start": "2026-10-07T15:39:10.798627Z",
+        "pid": 1759,
+        "exit": 0,
+        "chargeMs": 4682,
+        "closed": "group/scratch absent, empty regular log, errors[]",
+        "delta": "fixture2+/1- imports fixed contract module, other5sources unchanged"
+      }
     ],
-    "processGroupObservation": "All exact PID/PGID ESRCH, scratch absent, regular log writers closed, errors[]",
-    "phaseMs": 90000,
-    "spentMs": 6165,
-    "unusedMs": 83835,
-    "unusedTransfer": false,
-    "raw": "/private/tmp/release01-oldconsumer-local-20261007",
-    "rawCount": 35,
-    "rawLogicalBytes": 1904069,
-    "boundary": "Old-base controlled consumer only; no browser/new artifact/PG/Chrome. Root single source/local review in progress; owner natural seal pending."
+    "phaseState": "CLOSED_NO_UNUSED_CREDIT",
+    "localEvidence": "/private/tmp/i01-runtime-app-local-f8672ie0/segment.json"
   },
   "externalPreviousReturn": {
     "state": "ACTUAL_BUILD_RETURNED_ARTIFACT_KEEP_RESULT_REVIEW_PENDING",
@@ -2036,54 +2070,145 @@
     "wholeFeaturePass": false,
     "businessReview": "release-backend-route-20261007/settings-business-peer-review.json"
   },
-  "futureCompleteFreshFloorBytes": 14338424832,
-  "futureFloorEvidence": "msg03-main-release-source-handoff-20261007/current.json#floorComponents",
+  "futureCompleteFreshFloorBytes": 14414970880,
+  "futureFloorEvidence": "web-artifact-cleanup-fix-source-reload-20261007/current.json#floor",
   "externalOrdinaryCurrent": {
-    "task": "K01",
-    "state": "AUTHORIZED_EXISTING_ORDINARY_SEGMENT_NOT_ACTUAL_START_REPORTED",
-    "source": "8c5fa9682",
-    "claim": "30965v2exact3",
-    "totalMs": 90000,
+    "state": "DRAINED_NO_ACTUAL_ENGINEERING_CHILD_EVER_STARTED",
+    "startedAt": "2026-10-07T15:25:09Z",
+    "until": "2026-10-07T15:45:09Z",
+    "maxChildren": 5,
     "perChildMs": 30000,
-    "maxSerialChildren": 5,
-    "deadlineReported": "2026-10-07T15:21:34Z",
-    "planningBytes": 33554432,
-    "planningAlreadyCounted": true,
-    "PG": 0,
-    "HTTP": 0,
-    "Chrome": 0,
-    "provider": 0,
-    "fullbuild": 0,
-    "condition": "Source/sharedwindowboundsunchanged;actualstart/terminal/return reportedbyowner, elapseddeadlinenotreturn"
+    "cumulativeMs": 90000,
+    "planningBytesAlreadyCounted": 16777216,
+    "boundary": "NoPGChromeprovider/replay/performance. WebREADYdrainstopsnewlaunch,currentchildnormalRETURN;worksegmentstartnotchildSTART.",
+    "confirmedAfter": "2026-10-07T15:30:34Z",
+    "actualChildren": 0,
+    "childResources": "NONE; work segment is not actual child START",
+    "source": "Mika actual drain confirmation via root"
   },
   "externalPreparedCandidate": {
-    "state": "UNIQUE_NEXT_RESERVED_NOT_STARTED",
-    "executionHead": "32796520b07d4eed9f34c7c1db757740b7e20452",
-    "readyReportedAt": "2026-10-07T15:02:30Z",
-    "claim": "508fv3 ACTIVE exact6 STOP",
-    "review": "dbada source/local independently approved; metadata-only final3paths",
-    "outputs": "Five expected output paths absent at2026-10-07T15:00:40.512Z",
-    "canonical": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/docs/evidence/s01/mixed-ab-preparation/delivery-replay-local-ready.md",
-    "futureMs": 60000,
-    "planningBytes": 33554432,
-    "actualHolder": false,
-    "nextGranted": false
+    "state": "S01_ACTUAL_CLOSED_COMPLETE_RETURN_NOT_CURRENT_NEXT",
+    "actualReturn": "2026-10-07T15:18:44.466Z",
+    "futureGrant": null
   },
   "currentActual": {
-    "state": "NO_REPORTED_HEAVY_HOLDER",
-    "at": "2026-10-07T15:20:21.982Z"
+    "state": "NO_HEAVY_HOLDER_OR_NEXT",
+    "lastActualReturn": {
+      "state": "FULL_RETURN_CONFIRMED",
+      "toolOuterStart": "2026-10-07T15:34:26.957Z",
+      "outerPid": 18603,
+      "nodeStart": "2026-10-07T15:34:30.028Z",
+      "nodePid": 19878,
+      "nodePgid": 19878,
+      "freeBeforeBytes": 20317626368,
+      "floorBytes": 14414970880,
+      "fresh": "7d60 v2 exact4 nooverlap, c231 clean, full pins match",
+      "reportedTerminal": "PASS 3756.269ms; real outer exit and exact owned cleanup not yet reported",
+      "source": "W01 actual message; not inferred from prepared state",
+      "actualOuterExit": 0,
+      "returnAt": "2026-10-07T15:34:52.365620Z",
+      "identities": "outer18603 and Node19878 PID+PGID ESRCH",
+      "temporary": "29 exact links, scoped directories and owned node_modules root absent; scratch absent",
+      "logs": "Regular log writers closed, errors[]; not dual-pipe evidence",
+      "artifactDisposition": "KEEP",
+      "conservativeChargeMs": 25241,
+      "chargeBoundary": "Outer observation interval upper bound; not actual build wall. Parent3755.846ms and late3756.269ms preserved separately",
+      "phaseMs": 150000
+    },
+    "at": "2026-10-07T15:38:16.213Z"
   },
   "releaseCandidateCurrent": {
-    "state": "PREPARED_NOT_RUN_UNDER_FOCUSED_BOUNDARY_REVIEW",
+    "state": "APPROVED_FIXED_ARTIFACT_RESULT_AND_FULL_RETURN",
     "source": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
     "product": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
-    "metadata": "cd074992b106ed909ba49eaec4d1bf32b2365361",
+    "metadata": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
     "review": "/private/tmp/root-release01-1cea-source-local-review-20261007.json",
-    "buildGranted": false,
-    "descriptor": null,
+    "buildGranted": true,
+    "descriptor": {
+      "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+      "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+      "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+    },
     "claim": "7d60v2 ACTIVE exact4, two product paths removed15:10:52.444Z",
     "preparedPath": "/private/tmp/release01-web-artifact-prepared-20261007",
     "preparedManifest": "039bf4de2ba98ac83b694f89564fb6c93664aee17ec364f4659780f822bbd052",
-    "newAllocatedCapBytes": 268435456
+    "newAllocatedCapBytes": 268435456,
+    "preparationReview": "web-artifact-cleanup-fix-source-reload-20261007/artifact-preparation-root-review.json",
+    "targetedLocal": {
+      "totalMs": 10000,
+      "tmpCapBytes": 1048576,
+      "includedInExisting256MiB": true,
+      "retainedInsideExisting8MiB": true,
+      "purpose": "PurePythonnormal/replacedcreated-scope cleanup only;no productimports/Node/PGHTTPChrome/nativechecks",
+      "runtimeBuildGrant": false
+    },
+    "targetedLocalActual": {
+      "start": "2026-10-07T15:26:09.795841Z",
+      "end": "2026-10-07T15:26:09.804897Z",
+      "pid": 94638,
+      "outerExit": 0,
+      "cases": 2,
+      "passed": 2,
+      "stdoutBytes": 841,
+      "stderrBytes": 0,
+      "scriptElapsedMs": 9.0697,
+      "conservativeChargeMs": 144,
+      "phaseMs": 10000,
+      "state": "CLOSED",
+      "cleanup": "ExactownedTMPdeleted/PIDfreshESRCH15:26:19;singlePythonnochild/Node/productimports/network",
+      "originalToolWall": "8.833microseconds recordednotcompleteelapsed;do notuseforcharge",
+      "withinExisting256MiB": true
+    },
+    "repairedManifest": "c125863117397a15faa770fc1e79500b4e0f2bc25469efe5d921018aa20928ca",
+    "approval": "artifact-preparation-approved.json",
+    "binding": "60481db12ff4e8e5ea729dc011934a4462ce25851987f44a7e4713beb3b0e996",
+    "manifest": "bad7efe7b62cd1d2ef1e62077bfd3abb321f44c387e6226c1b0a28adc5ee10dc",
+    "preparedFiles": 31,
+    "preparedLogicalBytes": 1781341,
+    "totalMs": 150000,
+    "cleanupMs": 30000,
+    "floorBytes": 14414970880,
+    "buildGrant": true,
+    "grantAt": "2026-10-07T15:34:18.170Z",
+    "actualStart": null,
+    "condition": "One approved fixed build only after immediate fresh claim/source/dependencies/native/namespace/identity/fullsum; no retry or old budget credit. All other engineering launches drained. Actual START/RETURN from owner receipt.",
+    "actual": {
+      "state": "FULL_RETURN_CONFIRMED",
+      "toolOuterStart": "2026-10-07T15:34:26.957Z",
+      "outerPid": 18603,
+      "nodeStart": "2026-10-07T15:34:30.028Z",
+      "nodePid": 19878,
+      "nodePgid": 19878,
+      "freeBeforeBytes": 20317626368,
+      "floorBytes": 14414970880,
+      "fresh": "7d60 v2 exact4 nooverlap, c231 clean, full pins match",
+      "reportedTerminal": "PASS 3756.269ms; real outer exit and exact owned cleanup not yet reported",
+      "source": "W01 actual message; not inferred from prepared state",
+      "actualOuterExit": 0,
+      "returnAt": "2026-10-07T15:34:52.365620Z",
+      "identities": "outer18603 and Node19878 PID+PGID ESRCH",
+      "temporary": "29 exact links, scoped directories and owned node_modules root absent; scratch absent",
+      "logs": "Regular log writers closed, errors[]; not dual-pipe evidence",
+      "artifactDisposition": "KEEP",
+      "conservativeChargeMs": 25241,
+      "chargeBoundary": "Outer observation interval upper bound; not actual build wall. Parent3755.846ms and late3756.269ms preserved separately",
+      "phaseMs": 150000
+    },
+    "descriptorPath": "/private/tmp/release01-web-artifact-prepared-20261007/actual/descriptor.json",
+    "descriptorSha256": "0a39b329f0bcecabcb0124b6f2f95fb3dc23214cb2de766d440f88316e60ad6b",
+    "artifactStore": "/private/tmp/release01-web-artifact-prepared-20261007/actual/artifact-store",
+    "artifactAssets": 10,
+    "artifactBytes": 1700569,
+    "compatibility": "NOT_RUN",
+    "deployment": "NOT_RUN",
+    "runtimePhase": "CLOSED_NO_AUTOMATIC_RETRY",
+    "resultReview": "web-artifact-result-review.json",
+    "resultReviewSha256": "9242b43931346b81adfb1b8405d3b98c6f7da27aa721fae51f61fcf3b48d0b5b",
+    "artifactIdentity": {
+      "dev": 16777234,
+      "ino": 124271607,
+      "uid": 501,
+      "mode": "0700"
+    }
   }
 }

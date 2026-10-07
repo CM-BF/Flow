@@ -1,0 +1,114 @@
+{
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "reviewedAt": "2026-10-07T15:28:45.150738+00:00",
+  "decision": "APPROVED_FIXED_WEB_ARTIFACT_PREPARATION_AFTER_P2_FIX",
+  "priorReview": {
+    "path": "/private/tmp/root-release01-artifact-preparation-review-20261007.json",
+    "bytes": 6585,
+    "sha256": "a8eed5d2030779d6859495777ef607f775f9577e5a6add0891203d9c5736c05f"
+  },
+  "fixed": {
+    "manifest": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/manifest.json",
+      "bytes": 4333,
+      "sha256": "c125863117397a15faa770fc1e79500b4e0f2bc25469efe5d921018aa20928ca"
+    },
+    "parent": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/run.py",
+      "bytes": 12269,
+      "sha256": "a63d9c6ced1a368b946d542c7f33ef4eaa654d2d046d5835c322f5e4e0f362be"
+    },
+    "entry": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/build-entry.mjs",
+      "bytes": 1767,
+      "sha256": "2bcb658cfb49397545d6b99e61d633d281bc4a31fff7d7212563a9e7470f6754"
+    },
+    "inputPins": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/input-pins.json",
+      "bytes": 1630830,
+      "sha256": "7fa9e2469f99243f94519d14bb84ededf36b73a080cd91c2f3ccd24b3e918715"
+    },
+    "binding": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/binding.json",
+      "bytes": 2308,
+      "sha256": "128bf70fbecae109005a6bf041faeaef7c09634e839a97568bbaf8b76f2e3944"
+    },
+    "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+    "productSource": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
+    "approvedProductTarget": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6"
+  },
+  "findingClosure": {
+    "id": "RELEASE-BUILD-P2-01",
+    "state": "CLOSED",
+    "change": "All created scoped directories checked before any unlink; root and exact parent checked immediately before each unlink; final rmdir identity check retained.",
+    "diff": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/dirguard-repair/cleanup-order.diff",
+      "bytes": 1147,
+      "sha256": "ba6db709586a76500ceb253877b6b7f4681b492a4e69e1bce7fb87ebf4149443"
+    },
+    "validation": "Inspected actual parent AST extraction and both real owned-temp cases; normal exact removal passes, replaced same-shaped directory and link dev/ino/target remain untouched. No product import or builder execution.",
+    "result": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/dirguard-repair/check-result.json",
+      "bytes": 866,
+      "sha256": "16384b2dda43758138b955c5c032e3669e4311bfedf98c02b9a292c63cbb695b"
+    },
+    "stdout": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/dirguard-repair/check-stdout.txt",
+      "bytes": 841,
+      "sha256": "9c8188f012f5c630f540093841099a92b07dd3ab13fe89504f923b87fe76ca33"
+    },
+    "stderr": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/dirguard-repair/check-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    "outer": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/dirguard-repair/outer-actual.json",
+      "bytes": 333,
+      "sha256": "3cfbdc0cfb1118e1c5acb0c1ea1b38824580748db0b1eeef0840710e2b4fdf6c"
+    },
+    "cleanup": {
+      "path": "/private/tmp/release01-web-artifact-prepared-20261007/dirguard-repair/cleanup.json",
+      "bytes": 395,
+      "sha256": "f143acca18ef5f80b79c6ebb4ae3387aaf0289b5558d7f0ae29956ed8780b266"
+    },
+    "actualExit": 0,
+    "selected": 2,
+    "passed": 2,
+    "scriptElapsedMs": 9.069708059541881,
+    "conservativeChargeMs": 144,
+    "localSegment": "10000ms CLOSED; unused9856 not transferred",
+    "actualStartedAt": "2026-10-07T15:26:09.795841Z",
+    "actualEndedAt": "2026-10-07T15:26:09.804897Z",
+    "pid": 94638,
+    "laterPidObservation": "ESRCH 2026-10-07T15:26:19.016687Z",
+    "ownedTmpAbsent": true,
+    "limitations": "Cooperative owned lifecycle; separate syscalls do not promise immunity to hostile concurrent rename."
+  },
+  "auditedFacts": [
+    "All26 current manifest entries match exact bytes/hashes; before parent/binding/manifest preserved.",
+    "Product/219source, inputPins, 252packages/13700files and build-entry unchanged from preceding full read-only audit; no repeat test or import.",
+    "Existing prepareWebArtifact+verify remain sole builder/descriptor authority. No override, dependency installation, shared configuration mutation or permission to touch another worktree."
+  ],
+  "routineBindingAllowed": [
+    "Set binding.state to REVIEWED_SOURCE_BOUND; attach this callerReview and actual source review reference.",
+    "Increase floor to latest complete sum, currently at least14364639232 bytes (prior14355202048 plus I01 local9MiB exactly once).",
+    "Seal resulting manifest and supply current same claim7d60v2/exact4, unchanged c231 clean source, new bounded admission expiry/releaseId. These receipt/data-only changes do not call for product retests or another source approval."
+  ],
+  "runtimeConditions": [
+    "Manager d01 coordinates sole NEXT: stop new S01/I01 engineering launches and await actual RETURN of already running local children before Web build. No time-based inferred return.",
+    "One new150000ms total including30000cleanup, exact reviewed parent/entry/default builder, new256MiB envelope counted once; no old budget reuse, unknown cleanup, network, PG, Chrome, provider or personal service.",
+    "Tight fresh claim/pins/owned-namespace ENOENT/free >= latest full sum before actual process; no grant is implied merely by this review.",
+    "Accept only matching immutable descriptor/source/release format, full file verification, actual outer0 plus terminal/result hash, actual group absent, exact link-root/scratch absent and complete regular logs within total wall budget. Preserve FAIL/unknown/raw and retained artifact store."
+  ],
+  "openScope": [
+    "No artifact produced yet.",
+    "Compatibility with cd27/backend04da, real Cookie flows, main intake and personal deployment remain unverified.",
+    "No full-product performance improvement or hermetic all-system-dylib proof."
+  ],
+  "blockingFindings": [],
+  "cleanCode": {
+    "at": "2026-10-07T15:28:45.156561+00:00",
+    "actual": "Ownership checks now precede mutation, existing Module/Interface reused, one focused regression pair; no new framework or unrelated product changes."
+  }
+}

@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:20:48.243Z；SVC09A与S01均实际RETURN；最小Web产物准备与Plugin真实App源码继续，来源迁移由Original D05处理。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T15:38:16.213Z；最小修复网页产物已生成且构建资源完整归还，待新pair兼容与发布；来源迁移实际验证已闭合。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -23,10 +23,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 逐消息设置所选真实旅程已审并main3c9345，原写权已释放；最小新Web两文件修复在独立7272基底固定，后端cd27产物结果已审。个人网页仍旧版本。 |
-| 下一可用交付 | W01完成最小新Web artifact准备及固定pair兼容，沿Original发布链应用用户网页；两产品已精确交回，panels61abce36v1合法接续Plugin真实App。共享浮层在下一独立执行位实施，不扩研究。 |
-| 当前阻塞 | ACTIVE: 最小新Web immutable artifact与新pair真实兼容尚待；后端cd27已审、旧消费者source/local已限定批准。个人网页发布与真实设置目录仍未完成。 |
+| 下一可用交付 | 将最小修复网页与新后端完成真实兼容后沿原发布链应用用户网页；Plugin真实App接线恢复必要局部检查。共享浮层在下一独立执行位实施。 |
+| 当前阻塞 | ACTIVE: 新网页产物已生成，产物结果已独审通过，新pair真实兼容尚待；个人网页发布与真实设置目录仍未完成。 |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：S01已15:18:44.466Z完整RETURN，无heavy holder/NEXT；Mika恢复K01普通段，actualSTART尚未报告，Web排他构建待其实际RETURN与自身READY。未来floor至少14,338,424,832B，全部KEEP/单reserve保留。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Web构建完整归还，当前无heavy holder/NEXT；Plugin原30s普通段恢复。全部KEEP保留，未来完整floor至少14,414,970,880B。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
