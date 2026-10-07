@@ -137,7 +137,11 @@ def main():
         raise SystemExit("SOURCE_HEAD_MISMATCH")
     if subprocess.check_output(["git", "status", "--porcelain"], cwd=WT, timeout=3):
         raise SystemExit("SOURCE_DIRTY")
-    for row in json.loads((EVIDENCE / "pg-slot-request.json").read_text())["inputs"]:
+    input_name = os.environ.get("FLOW_S01P07_PG_INPUT", "pg-slot-request.json")
+    if input_name not in {"pg-slot-request.json", "pg-diagnostic-slot-request.json"}:
+        raise SystemExit("INPUT_NOT_REVIEWED")
+    input_bytes = (EVIDENCE / input_name).read_bytes()
+    for row in json.loads(input_bytes)["inputs"]:
         value = (WT / row["path"]).read_bytes()
         if len(value) != row["bytes"] or hashlib.sha256(value).hexdigest() != row["sha256"]:
             raise SystemExit("FIXED_INPUT_MISMATCH")
@@ -170,6 +174,7 @@ def main():
 
 
     record = {"window": window, "sourceHead": head, "startedAt": started_utc.isoformat(),
+              "inputManifest": {"name": input_name, "sha256": hashlib.sha256(input_bytes).hexdigest()},
               "resourceBefore": free, "resourceGate": 1207959552, "providerCalls": 0}
     if free < 1207959552:
         record.update({"state": "NOT_RUN_RESOURCE", "childStarted": False})

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 03:01:08 UTC |
+| 最近更新 | 2026-10-07T03:09:49Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 现有领取receipt仅证明领取；未用其时间推定首次实际开工。原验收尚未完成，诊断修复段时间见inventory-diagnostic-fix.md，不代替task完成时间。 |
@@ -12,8 +12,8 @@
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery |
 | Branch | codex/runner-claim-recovery |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；8产品源83a0799293057f7472f0329c61e566708b2a2381；PG准备ac3b8532fb23a9c8549c0b32e225a31327bc85f9；本次execution HEAD 03d5543cebffeffa53924addd331e65d764586ce |
-| 工作树dirty状态 | 本修复开始HEAD 16a938a465e49dfaf8a0b1ed1d4356bcc5eaa4b8 clean；仅wrapper/其fake源码与自有metadata，产品/fixture/旧输入和raw冻结 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；8产品源83a0799293057f7472f0329c61e566708b2a2381；诊断已审e3b9a3d5b354b75baaabac9da12a691bb5d54514；R1历史execution HEAD 03d5543cebffeffa53924addd331e65d764586ce；新窗口execution HEAD尚未指定 |
+| 工作树dirty状态 | 本段开始e3b9a3d5b354b75baaabac9da12a691bb5d54514 clean；仅有限输入selector与新绑定/自有metadata，产品/fixture/旧输入和raw冻结 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | 历史85 distinct non-PG、focused strict5 exit0、3 wrapper fake均未重跑。新增诊断4项fake单次4/4 / exit0另列；R1 PG窗口已消费且0条case结果，不记通过或8 skipped。原4组capacity PG单列NOT_RUN |
@@ -23,11 +23,11 @@
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 任务层级 | 子task |
-| 当前产出 | 首次失败原件已获忠实性审查；目录计量首错诊断已补齐并通过4项定向反例，停止和保留规则不变。 |
-| 下一可用交付 | 完成诊断修复独审并固定新运行输入，再在新窗口完成原中心事务验收。 |
-| 当前阻塞 | ACTIVE: R1未得用例结果，具体触发原因无法追溯；诊断修复待独审，旧未知目录继续KEEP。heavy与本次local均已结束，后继PG NOT_OPEN。 |
+| 当前产出 | 首次失败证据与有限首错诊断均已独审通过；原中心事务验收已备新输入，停止和保留规则不变。 |
+| 下一可用交付 | 完成输入选择的小增量复审，在明确新窗口执行原8组中心事务验收。 |
+| 当前阻塞 | ACTIVE: R1未得用例结果，原因仍UNKNOWN；新输入selector待只读复审，PG NOT_OPEN。无本片holder，旧未知目录继续KEEP。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：原产品SOURCE_REVIEW APPROVED，R1 RESULT_FIDELITY_APPROVED；诊断修复4/4待独审，整体VALIDATION_PENDING |
+| Review | [review.md](review.md)：原产品SOURCE_REVIEW APPROVED，R1 RESULT_FIDELITY_APPROVED；e3b9诊断SOURCE/DIAGNOSTIC_RESULT_REVIEW_APPROVED；有限selector增量待审，整体VALIDATION_PENDING |
 | 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 / 18 literal |
 
 | TODO ID | 状态 | Owner | 证据 / 检查 |
@@ -54,8 +54,10 @@ R1实际窗口 `S01P07-PG-20261007-R1`：02:53:11–02:53:12 UTC，外部 time r
 
 R1后[最小诊断修复](../../docs/evidence/s01p07/inventory-diagnostic-fix.md)只补首错phase/errno/计数，4项新fake单次4/4、262.528ms、raw734B，自有空TMP同身份清理。原wrapper输入按历史Git冻结，当前修后wrapper不得沿用旧hash启动；产品、fixture及旧raw不变。
 
+2026-10-07T03:09:49Z：[新窗口输入](../../docs/evidence/s01p07/pg-diagnostic-window-request.md)记录03:07:01Z独立诊断批准；仅为保旧输入增加两固定文件名选择及实际输入SHA记录。原65绑定中63未变、30SQL与24依赖静态核符，未执行新检查或PG。claim仍v2/18 ACTIVE；原manifest/raw原字节保留。下一实际窗口须另给namespace与clean execution HEAD，不以准备替代验证。
+
 ## 等待记录
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
-| S01P07-W01 | 2026-10-07T02:53:12.952049Z | OPEN | 验证失败 | R1结束后未有PG用例结果；诊断修复须独审、定向验证与新窗口 | checks/S01P07-PG-20261007-R1.json finishedAt；inventory-diagnostic-fix.md |
+| S01P07-W01 | 2026-10-07T02:53:12.952049Z | OPEN | 验证失败 | R1结束后未有PG用例结果；诊断独审与定向验证已完成，待新输入增量复审和窗口 | checks/S01P07-PG-20261007-R1.json finishedAt；pg-diagnostic-window-request.md |
