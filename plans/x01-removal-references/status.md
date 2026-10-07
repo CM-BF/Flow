@@ -64,3 +64,5 @@ local所有8groups终态absent/mergedEOF、8ownTMP同identity删除absent；最�
 结果固定packet6c7b2495。一次 followup 原chatui reviewer被实际threadlimit拒绝（未送达），四live槽已核，未重复或另建task绕过；固定结果等待原reviewer恢复，owner此处STOP写入/0actual以腾槽。公共client已审676ed590/f86bed0b，精确81a合同先/同批依赖已核，[唯一client intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client/docs/evidence/x01-removal-references-client/main-intake.json)；不复制其TODO，R2未获审前本片仍待结果审。
 
 2026-10-07T12:50:16.963910+00:00：收到chatui12:47:52限定结果批准，经Mika必要转交归档。[正式批准](../../docs/evidence/x01-removal-references/removal-r2-review-approval.json) / [READY唯一intake](../../docs/evidence/x01-removal-references/main-intake.json)。source81a五路径、fixture1424与R2result0b1e分别绑定，R1原件不改；main7524当前未接本片，consumer676/f86精确合同先或同批，实际集成检查由Original按diff决定。0新检查/PG，claimv1保留；此前review槽等待已解除。
+
+- Intake support closure: `main-intake.json.requiredSupport` pins the reviewed fixture1424 (15702B, SHA67d572ff52dc0580de6074a25e87e054a476c425dd1ff3a6486ad679f9b2f107) and its direct `pg-input.json` read; direct main imports are observed explicitly. Metadata-only, no source/raw/manifest changes or execution.

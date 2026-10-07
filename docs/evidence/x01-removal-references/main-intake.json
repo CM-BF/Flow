@@ -85,11 +85,88 @@
     "observation": "consumerHEAD=origin clean; own contract bytes unchanged"
   },
   "readyAt": "2026-10-07T12:50:16.963910+00:00",
-  "integrationOrder": "Receive backend5 fixed81a rows and exact contract first/samebatch as consumer676ed590 six rows; currentmain preimages freshly checked by operator, narrow routes/client/CLI changes only. Keep all existing main behavior and independent review ranges; no whole-file overlay from old base.",
+  "integrationOrder": "Receive backend5 fixed81a rows plus exact requiredSupport helper1424/JSON68f; exact contract first/samebatch as consumer676ed590 six rows. Fresh main preimages and necessary direct-consumer checks by operator; preserve existing main imports and narrow routes/client/CLI changes, no old-base closure overlay.",
   "mainObservation": {
     "head": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
     "at": "2026-10-07T12:50:16.963910+00:00",
     "state": "NOT_RECEIVED",
     "source": "Current main clean/origin; Mika read-only preimage observation for11 paths; actual application still pending"
+  },
+  "requiredSupport": [
+    {
+      "path": "docs/evidence/x01-removal-references/enable-binding-pg-fixture.ts",
+      "source": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+      "bytes": 15702,
+      "sha256": "67d572ff52dc0580de6074a25e87e054a476c425dd1ff3a6486ad679f9b2f107",
+      "purpose": "PG test direct helper import (.js specifier resolves to .ts)",
+      "mainObservation": {
+        "head": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+        "state": "absent"
+      },
+      "action": "receive-fixed-support"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references/pg-input.json",
+      "source": "68f5575e65f723e2b07b4be3d37adb53a1d56521",
+      "bytes": 1276,
+      "sha256": "fb0c2603e6d2cf1932e8892813169005493b578fe87c3b3d0636ab7a174495f5",
+      "purpose": "Fixture create() reads ./pg-input.json; protocol and HTTP/deadline limits only, historical R1 runName does not launch or select a run",
+      "mainObservation": {
+        "head": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+        "state": "absent"
+      },
+      "action": "receive-fixed-support"
+    }
+  ],
+  "directImportClosure": {
+    "consumer": "apps/server/src/plugin-runtime/removal-references-pg.test.ts",
+    "newProjectImports": "routes.ts is already in rows; helper and its JSON read are the two requiredSupport rows; helper has no additional project imports.",
+    "existingProjectImports": [
+      {
+        "path": "apps/server/src/index.ts",
+        "main": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+        "bytes": 15452,
+        "sha256": "bbb02feaea68447ba91672955e846c0682a9542a9720c8b8cf786ca34694b2c0",
+        "action": "preserve-current-main; no old closure overlay",
+        "matchesPrepared": true
+      },
+      {
+        "path": "apps/server/src/database.ts",
+        "main": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+        "bytes": 7789,
+        "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653",
+        "action": "preserve-current-main; no old closure overlay",
+        "matchesPrepared": false
+      },
+      {
+        "path": "apps/server/src/plugin-runtime/store.ts",
+        "main": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+        "bytes": 9647,
+        "sha256": "6cacfc6111a0d4d2bfb3638779caf85ddb467e9cff7eb12e79a5e93cfb93fae4",
+        "action": "preserve-current-main; no old closure overlay",
+        "matchesPrepared": true
+      },
+      {
+        "path": "packages/contracts/src/plugin-runtime.ts",
+        "main": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+        "bytes": 6201,
+        "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0",
+        "action": "preserve-current-main; no old closure overlay",
+        "matchesPrepared": true
+      }
+    ],
+    "externalImports": [
+      "Node built-ins",
+      "pg 8.23.1 (helper)",
+      "pg-boss 12.37.0 (test)",
+      "vitest 4.0.18 (test)"
+    ],
+    "fixedExecutionClosure": {
+      "path": "docs/evidence/x01-removal-references/pg-r2-manifest.json",
+      "sha256": "2c99bf0f413e462c369b535d9ab2317172bdb031b97a9a170afd843b62dec62e",
+      "purpose": "Historical 301-path execution closure, 62 external and 21 links. Reference for audited R2, not instructions to copy the entire evidence directory or overlay current main."
+    },
+    "runtimeAdmission": "PG execution still requires explicit owned window/head/root and work/cleanup deadlines. Intake/import does not authorize a new run.",
+    "observedAt": "2026-10-07T12:53:38.883260+00:00"
   }
 }
