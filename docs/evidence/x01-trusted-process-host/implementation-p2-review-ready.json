@@ -1,0 +1,34 @@
+{
+  "preparedAt": "2026-10-07T13:21:27.207071+00:00",
+  "sourceCommit": "4dc6f7ee1613e00a82ab5d99412a06f9c799cf70",
+  "previousReview": {
+    "target": "af43f7e61395125aed3f0725a9e4305c9e086cdd",
+    "packet": "e97ff8954a5a6fa0bfdbd5b6c76815ab005ee681",
+    "reviewedAt": "2026-10-07T13:17:06Z",
+    "reviewer": "chatui01_owner",
+    "verdict": "SOURCE_CHANGES_REQUESTED",
+    "P2": 1
+  },
+  "entry": "docs/evidence/x01-trusted-process-host/p2-fix-notes.md",
+  "manifest": "docs/evidence/x01-trusted-process-host/p2-delta-manifest.json",
+  "manifestSha256": "6bbb3d847336f43f1ba2d1816ebe3deb82c544c616b80cd4cba2ad77100e9d65",
+  "count": 14,
+  "totalBytes": 52639,
+  "scope": "Only settlement uncertainty priority and true leftover regression; no old whole-package repeat review requested.",
+  "checks": {
+    "selected": 2,
+    "passed": 2,
+    "unselected": 18,
+    "focusedTypesExit": 0,
+    "children": 2,
+    "rawBytes": 458,
+    "supervisionMs": 2980,
+    "ordinaryReturnedAt": "2026-10-07T13:19:59Z"
+  },
+  "review": "PENDING_DELTA_REVIEW",
+  "limits": [
+    "Only one additional distinct case; control was previously tested",
+    "No PG/provider/OS runner/release artifact/full main",
+    "Parent hard-crash and arbitrary descendants not certified"
+  ]
+}

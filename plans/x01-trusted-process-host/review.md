@@ -16,4 +16,4 @@ Mika在本次恢复消息转述chatui对e870/c349增量 APPROVED /0 remaining P1
 
 2026-10-07T13:20:57.204225+00:00 Owner已固定窄修前准备：2/2真实残留+原clean denial对照，types0。只请求P2增量复审，原审其余无第二finding面继承；未把owner验证当审查通过。
 
-2026-10-07T13:21:27.207071+00:00 窄修target 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70，p2-fix-review-ready固定14增量绑定；当前CHANGES_REQUESTED待chatui关闭P2，无新批准。
+2026-10-07T13:21:27.207071+00:00 窄修target 4dc6f7ee1613e00a82ab5d99412a06f9c799cf70，implementation-p2-review-ready固定14增量绑定；当前CHANGES_REQUESTED待chatui关闭P2，无新批准。
