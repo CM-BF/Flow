@@ -1,0 +1,63 @@
+{
+  "at": "2026-10-07T20:27:25.250422+00:00",
+  "state": "STATIC_CANDIDATE_NOT_BUILT_OR_EXECUTED",
+  "base": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "reviewedMainSource": "de77924faee33bf00d40c272052a762dad04ed1e",
+  "application": "Only host.mjs delta and five exact preview substitution seams; no whole-main blobs",
+  "matches": [
+    {
+      "old": "import { backendRuntime, assertInstallationSource, serviceRuntime, webHostArtifactDescriptor }",
+      "matches": 1
+    },
+    {
+      "old": "async function load(directory, serviceRole = null) {",
+      "matches": 1
+    },
+    {
+      "old": "await assertInstallationSource(config, repository, serviceRole);",
+      "matches": 1
+    },
+    {
+      "old": "  const config = await load(directory, role);",
+      "matches": 1
+    },
+    {
+      "old": "const runtime = await serviceRuntime(config, await privateJson(join(config.directory, 'state.json')), role);",
+      "matches": 1
+    }
+  ],
+  "files": [
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "preimageSha256": "320e6a1d21b0cc7073f3985dace543476ba0672514422b883fb890e2a5d2ca54",
+      "candidateSha256": "35f4b24980faa240013be85e86b2a8c581e68c1fe3c08bac42e91af43f8cc3b4",
+      "candidateBytes": 8924
+    },
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "preimageSha256": "3dc665dea6a62874438fb62c72444ccba18f462c935ac276f5d786fbffe37d11",
+      "candidateSha256": "1a1f1b61b2d271c351b7c566877def413ef5479ca6680d5a4a3461676c8eac9e",
+      "candidateBytes": 48404
+    }
+  ],
+  "newDependencies": [
+    "node:fs constants",
+    "node:fs/promises open",
+    "node:crypto createHash"
+  ],
+  "unchanged": [
+    "04da server/runner application code and package metadata",
+    "04da migrations",
+    "04da host index/files/verifier dependencies",
+    "existing timeout and source identity",
+    "installed cd27 and7d1 artifacts"
+  ],
+  "remaining": [
+    "Current-launch runtime initialization evidence needs authorized producer/observer patch; not part of this candidate",
+    "New immutable artifact built from exact approved composition",
+    "New backend/source/context compatibility reports by original Web owner",
+    "Explicit independent Webhost selection; old7d1 does not inherit this patch",
+    "Fresh same-operation recovery window, no bootstrap/import replay"
+  ],
+  "personalActions": 0
+}
