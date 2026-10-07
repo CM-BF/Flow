@@ -14,7 +14,7 @@
 | Branch | codex/plugin-version-lifecycle |
 | 工作基线 / 实现HEAD | cca4ab7c968598844ca5680140ee7c06ec1dd2f4 / UNKNOWN |
 | 工作树dirty状态 | own准备源码/metadata实施中 |
-| 工作分支状态 | in-progress |
+| 工作分支状态 | in-progress | db_transaction_owner |
 | 本片段交付阶段 | implementation |
 | 检查状态 | NOT_RUN PG；final focused types exit0，collect1（非pass），原首types2保留 |
 | Review | [review.md](review.md)，NOT_STARTED |
@@ -32,11 +32,11 @@
 
 ## TODO
 
-| ID | 状态 | 证据 |
-| --- | --- | --- |
-| X01LIFE-01 | completed | README.md/pg-window.md |
-| X01LIFE-02 | in-progress | types0/collect1，待独审 |
-| X01LIFE-03 | pending | PG NOT_OPEN |
-| X01LIFE-04 | pending | 未交付 |
+| TODO ID | 状态 | Owner | 证据 |
+| --- | --- | --- | --- |
+| X01LIFE-01 | completed | db_transaction_owner | README.md/pg-window.md |
+| X01LIFE-02 | in-progress | db_transaction_owner | types0/collect1，待独审 |
+| X01LIFE-03 | pending | db_transaction_owner | PG NOT_OPEN |
+| X01LIFE-04 | pending | db_transaction_owner | 未交付 |
 
 注册：task-intake由OriginalLead按canonical登记，当前待登记。原X01大目标未完成。
