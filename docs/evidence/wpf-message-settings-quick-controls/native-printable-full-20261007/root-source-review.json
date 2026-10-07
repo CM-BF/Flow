@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-07T07:34:44.823543+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "decision": "ACCEPTED_NATIVE_PRINTABLE_FILTER_SOURCE_AND_AFFECTED_NOEMIT_NOT_BROWSER_PASS",
+  "source": "dde571be8853698f8943f952ddef2c648d2e1294",
+  "baseSource": "d7556b616e018ac985519b08a2954b1810029e05",
+  "sourceFile": "apps/web/test/message-settings.browser.ts",
+  "sourceSha256": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb",
+  "reviewScope": "One changed browser scenario; native printable input for four native filters; all original six behavior assertions remain. External parent lifecycle, Chrome authority, product component and direct/React fixture unchanged.",
+  "inputSemantics": {
+    "approvedAdaptation": "Use fixed CDP browser keyDown(text,key,unmodifiedText)/keyUp for m,自,高,标; real native select typeahead plus original Tab, radio Arrow/Space and Apply Enter. Old literal OS-popup path remains diagnostic history and is not retroactively passed.",
+    "requiredEvidence": [
+      "UTF8 exact options, unique prefix match, enabled/focused/connected closed select before input",
+      "Per-filter one trusted unprevented matching keypress followed by trusted input/change at full value/index1",
+      "Later-frame nonprevented status and unchanged draft-current/zero commits before Apply",
+      "All four selected filters complete, session detached, bounded raw report preserved on failure as partial",
+      "Six functional checks plus actual390 light/dark PNGs, with original semantic assertions and no automatic fallback"
+    ],
+    "notClaimed": [
+      "Physical keyboard or IME acceptance",
+      "macOS native popup Arrow compatibility",
+      "Production App/send/queue/recovery/provider integration"
+    ]
+  },
+  "staticComparisons": {
+    "originalPopupAndCFunctionByteIdentical": true,
+    "sixBehaviorRemainderByteIdenticalExceptAccurateFirstCheckName": true,
+    "unchangedProductDirectReactFixtureFiles": [
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/test/message-settings.test.ts",
+      "apps/web/test/message-settings.fixture.tsx"
+    ],
+    "newInputNoDomEventOrValueAssignment": true,
+    "newSessionTargetsSameFixedFixturePageAndDetachesFinally": true,
+    "newRawMaximumBytes": 65536
+  },
+  "affectedCheck": {
+    "kind": "author actual single browser strict/noUncheckedIndexedAccess noEmit, independently inspected not rerun",
+    "receipt": "/private/tmp/msgquick-unicode-noemit-aohayjza/actual.json",
+    "receiptSha256": "8818ce89c994a3d4c2dcecc62b1f1be548506488193a940f0a1c533c35016d2f",
+    "actual": {
+      "startedAt": "2026-10-07T07:32:35.920509+00:00",
+      "finishedAt": "2026-10-07T07:32:37.195367+00:00",
+      "elapsedMs": 1274.84816708602,
+      "exitCode": 0,
+      "command": [
+        "/usr/bin/sandbox-exec",
+        "-f",
+        "/private/tmp/msgquick-unicode-noemit-aohayjza/sandbox.sb",
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+        "--noEmit",
+        "-p",
+        "/private/tmp/msgquick-unicode-noemit-aohayjza/tsconfig.json"
+      ],
+      "scope": "Only apps/web/test/message-settings.browser.ts strict/noUncheckedIndexedAccess noEmit; no original26 rerun",
+      "pid": 1531,
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "errors": [],
+      "bothEOF": true,
+      "sourceSha256": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb",
+      "node": {
+        "path": "/opt/homebrew/opt/node@24/bin/node",
+        "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+      },
+      "compilerSha256": "2cffde0b8c6760dfb0b5b0382bbb7e00ba6a8b2d981b9205b256a700a481d983",
+      "configSha256": "16d7c9822eb1001efba06817b1f3005687b628f1d71b851ed2f72bebb3eedf5c",
+      "stdoutBytes": 0,
+      "stderrBytes": 0,
+      "limits": {
+        "totalMs": 20000,
+        "cleanupMs": 5000,
+        "scratchBytes": 16777216,
+        "retainedBytes": 1048576
+      },
+      "runs": 1
+    },
+    "rootFreshOwnedProcess": {
+      "pid": 1531,
+      "process": "ESRCH",
+      "group": "ESRCH"
+    },
+    "old26DirectNotRerun": true
+  },
+  "researchBasis": {
+    "path": "/private/tmp/root-msgquick-native-unicode-acceptance-research-20261007.json",
+    "sha256": "637d43fd4d3b3ec80040c0909ddde66afb501984c34ee7e3c1f0054fa8d5f7f3"
+  },
+  "runnerIntakeRequirements": [
+    "One segment source/pins/check-name binding update and include native-filter-inputs.json in runtime raw manifest/seal; routine hash carry is not a new permission gate.",
+    "Keep existing parent process/Chrome ownership and stop/cleanup path byte-identical where not necessary for adding raw provenance.",
+    "Original owner may perform ordinary in-scope cause/fix/related retest within existing finite segment, recording each actual immutable result once; no manager short expiry approval each run.",
+    "Changed safety or acceptance still receives focused review; unknown cleanup or exhausted budget stops."
+  ],
+  "findings": [],
+  "status": "SOURCE_ACCEPTED_RUNTIME_NOT_RUN"
+}

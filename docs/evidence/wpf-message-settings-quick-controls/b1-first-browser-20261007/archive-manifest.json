@@ -1,0 +1,165 @@
+{
+  "run": "msgquick-b1-20261007-0425",
+  "actualSourceHead": "545769dd23a02e1fcc75e3a6fac0707a909e2807",
+  "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "originals": [
+    {
+      "path": "outer/start.json",
+      "source": "/private/tmp/msgquick-b1-outer-di68rhfu/start.json",
+      "bytes": 292,
+      "sha256": "805e950b7587d20d0f4436bc655c54a6614ffc05e6646c599967f040c5e2564b"
+    },
+    {
+      "path": "outer/stdout.txt",
+      "source": "/private/tmp/msgquick-b1-outer-di68rhfu/stdout.txt",
+      "bytes": 649,
+      "sha256": "9de13b5786b1e1c6b284e2f07d03e7038a3e907d916740e4516ca63e722d4318"
+    },
+    {
+      "path": "outer/stderr.txt",
+      "source": "/private/tmp/msgquick-b1-outer-di68rhfu/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outer/actual-exit.json",
+      "source": "/private/tmp/msgquick-b1-outer-di68rhfu/actual-exit.json",
+      "bytes": 717,
+      "sha256": "368d9c30c5818ef4578ccc6e871e27261681e8d13214fed57af497f98e67819c"
+    },
+    {
+      "path": "packet/binding.json",
+      "source": "/private/tmp/msgquick-b1/binding.json",
+      "bytes": 41063,
+      "sha256": "2fc27b8b26c55670b3e11d7e8643d390ce417b27c61f4d1fa05829a8548f364a"
+    },
+    {
+      "path": "packet/manifest.json",
+      "source": "/private/tmp/msgquick-b1/manifest.json",
+      "bytes": 11401,
+      "sha256": "89876dbb5eba0287af6727e05abb881116e177d5d25b739a43d3e1a0df4fd011"
+    },
+    {
+      "path": "packet/result.json",
+      "source": "/private/tmp/msgquick-b1/result.json",
+      "bytes": 75646,
+      "sha256": "ef5f442844cbffe392e669169fa760388354e3666e08a8879f7bd4abb04fe5dc"
+    },
+    {
+      "path": "packet/browser-budget.json",
+      "source": "/private/tmp/msgquick-b1/browser-budget.json",
+      "bytes": 303,
+      "sha256": "6526400ea64616c839bd6b049432ba4cc9b2e558c0bc1c19d4121d9ddb2c67aa"
+    },
+    {
+      "path": "packet/consumed-gate.json",
+      "source": "/private/tmp/msgquick-b1/consumed-gate.json",
+      "bytes": 6560,
+      "sha256": "574ba2b076150cdf102b41a05eabaf3f5e5320bdaef8e065f8b4a4336cd09ca9"
+    },
+    {
+      "path": "packet/child-gate.json",
+      "source": "/private/tmp/msgquick-b1/child-gate.json",
+      "bytes": 7591,
+      "sha256": "acbf7508b89a0268691f4890f1cc7bc8f242792742b40e4c72695becacc549ee"
+    },
+    {
+      "path": "packet/worker.log",
+      "source": "/private/tmp/msgquick-b1/worker.log",
+      "bytes": 52,
+      "sha256": "b5aff1399470c4d26e32116587ddda544ff821a16a636d49da65d1b8fe8fb5eb"
+    },
+    {
+      "path": "raw/chrome.log",
+      "source": "/private/tmp/msgquick-b1/raw/msgquick-b1-20261007-0425/chrome.log",
+      "bytes": 6145,
+      "sha256": "bd6143d2b87e795ce9e97b4b43d6dabdf5f584c7c461958b514f74d77cccb632"
+    },
+    {
+      "path": "raw/browser-results.json",
+      "source": "/private/tmp/msgquick-b1/raw/msgquick-b1-20261007-0425/browser-results.json",
+      "bytes": 2897,
+      "sha256": "e46c9c27328306a1d1f0b71d60d38fbac5ec25943e51a7a2f486cfa699abeb98"
+    },
+    {
+      "path": "raw/owned-chrome.json",
+      "source": "/private/tmp/msgquick-b1/raw/msgquick-b1-20261007-0425/owned-chrome.json",
+      "bytes": 2274,
+      "sha256": "9f7c49fcfea5f022bee206309f6872ace8040ad34beab1f17542bf67bfc945d9"
+    },
+    {
+      "path": "admission-gate.json",
+      "source": "/private/tmp/msgquick-b1-gate-20261007-0425.json",
+      "bytes": 7159,
+      "sha256": "89c0ec105057d3ffa8794028933feedc570e63c4e45ebd1dbdd4ca272563e38a"
+    },
+    {
+      "path": "root-native-preparation-review.json",
+      "source": "/private/tmp/root-msgquick-b1-native-preparation-review.json",
+      "bytes": 3848,
+      "sha256": "b52fdaebc8728de3984da68e1eb2516d5e51c572b7074ec59f03bd867ec84773"
+    },
+    {
+      "path": "root-failed-actual-review.json",
+      "source": "/private/tmp/root-msgquick-b1-failed-actual-review.json",
+      "bytes": 8200,
+      "sha256": "d2593abf4d6ee2be0929da5493ab0c678c094e49b2f095b4c53bb47ddc9ed4b4"
+    }
+  ],
+  "originalCount": 17,
+  "originalBytes": 174797,
+  "products": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 25804,
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb"
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "bytes": 20068,
+      "sha256": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a"
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "bytes": 9510,
+      "sha256": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd"
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 23499,
+      "sha256": "a063b597d0c76627accb92f3992e32c3ed3904da28b19d58197ba6ec80f7450e"
+    }
+  ],
+  "preparedSourcesKeptAtOriginalPaths": [
+    {
+      "path": "/private/tmp/msgquick-b1/supervisor.py",
+      "bytes": 25324,
+      "sha256": "4cfd2d927a8d3908ede1f79d287455dd59e149248432e7f45df5b1baf4ce7c3d",
+      "archivedAsExecutable": false
+    },
+    {
+      "path": "/private/tmp/msgquick-b1/worker.mjs",
+      "bytes": 7149,
+      "sha256": "cb7bce4aa602e0a0cda355dc406f1dcdc8d42874fe51b782fe36996dc8289d44",
+      "archivedAsExecutable": false
+    },
+    {
+      "path": "/private/tmp/msgquick-b1/runtime-tsconfig.json",
+      "bytes": 1620,
+      "sha256": "bc0bd602d32d2a03d122fff259684bee15cfe17a7ea40224cc06c1ffd2a51f18",
+      "archivedAsExecutable": false
+    },
+    {
+      "path": "/private/tmp/msgquick-b1/aliases.json",
+      "bytes": 3483,
+      "sha256": "b1e602aa62b5ebff2006e7ad3aefabea5606c9cf0998e14d5afa7aa8ec4110d4",
+      "archivedAsExecutable": false
+    }
+  ],
+  "rawArchiveOnly": true,
+  "missingArtifactsNotFabricated": [
+    "message-settings-light-390.png",
+    "message-settings-dark-390.png",
+    "runtime-evidence-manifest.json"
+  ]
+}

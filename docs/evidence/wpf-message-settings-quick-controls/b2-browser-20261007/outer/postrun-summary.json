@@ -1,0 +1,199 @@
+{
+  "at": "2026-10-07T04:49:15.770193+00:00",
+  "sourceHead": "3a4dd6dee89a3ea456f31870dd0a126a6efad1c5",
+  "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "actualOuterExit": 1,
+  "toolCaptureExitIsNotSupervisorExit": true,
+  "outcome": "FAILED",
+  "firstFailure": "RuntimeError: Retained evidence reserve exhausted",
+  "workerExitCode": 143,
+  "chromeExit": {
+    "code": 0,
+    "signal": null,
+    "observedAt": "2026-10-07T04:48:10.174468+00:00",
+    "beforeCdpPort": false
+  },
+  "terminal": {
+    "type": "terminal-seal",
+    "terminalContract": "msgquick-browser-v1-external-exit-required",
+    "state": "FAILED",
+    "declaredExitCode": 1,
+    "sealedFiles": {
+      "binding.json": "790668eca675eaa43cf0d4a43d761e28413270ce52e2c572e13525d1c4c7d1e4",
+      "result.json": "5e6c774854099b9fb11971f136b508afbb715403f7a1e654698fb51951b079db",
+      "browser-budget.json": "dae668e8b6e2e293a8c78e6733f8fb43eca60df87500ceeb8ef640258f94ed1f",
+      "runtime-evidence-manifest.json": null,
+      "raw/msgquick-b2-20261007-044744/select-diagnostics.json": null
+    },
+    "cleanup": {
+      "errors": [],
+      "groupAbsent": true,
+      "workerGroupAbsent": true,
+      "chromeGroupAbsent": true,
+      "scratchAbsent": true
+    },
+    "stopping": false,
+    "stopSignal": null,
+    "afterFinalWritesElapsedMs": 6103
+  },
+  "outer": {
+    "startedAt": "2026-10-07T04:48:04.105492+00:00",
+    "pid": 88739,
+    "pgid": 88739,
+    "command": [
+      "python3",
+      "/private/tmp/msgquick-b2/supervisor.py",
+      "--gate",
+      "/private/tmp/msgquick-b2-admission-rijzrvzi/gate.json"
+    ],
+    "output": "/private/tmp/msgquick-b2-outer-017_g6hn",
+    "endedAt": "2026-10-07T04:48:10.247247+00:00",
+    "actualExit": 1,
+    "wallMs": 6141.688499948941,
+    "groupAbsent": true,
+    "bothEOF": true,
+    "capturedBytes": {
+      "stdout": 713,
+      "stderr": 0
+    },
+    "droppedBytes": 0,
+    "outerInterrupted": false,
+    "stdoutSha256": "2d9261bd034a3c3757986a12a81056adb8db8c200ae7dd69d23195740e685c2e",
+    "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "sealHashesMatched": true,
+  "conservativeAccount": {
+    "previous": 12326,
+    "this": 6142,
+    "cumulative": 18468,
+    "remaining": 41532,
+    "total": 60000,
+    "cleanupReservedWithinRemaining": 15000,
+    "basis": "ceil(max(actual outer wallMs, late terminal afterFinalWritesElapsedMs, parent elapsedMs)); prior original observations unchanged"
+  },
+  "rawParentBudget": {
+    "complete": true,
+    "spentMs": 18428,
+    "limitMs": 60000,
+    "cleanupReserveMs": 15000,
+    "run": "msgquick-b2-20261007-044744",
+    "supervisorResult": "/private/tmp/msgquick-b2/result.json",
+    "state": "FAILED",
+    "terminalContract": "msgquick-browser-v1-external-exit-required",
+    "stopSignal": null
+  },
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "workerGroupAbsent": true,
+    "chromeGroupAbsent": true,
+    "scratchAbsent": true
+  },
+  "workerReport": "MISSING; fixtureClosed/contextClosed/actual scenario observations NOT_CAPTURED",
+  "checks": "NOT_CAPTURED; no completed group evidence",
+  "pngs": 0,
+  "selectTrace": "MISSING; no native-select cause observed",
+  "noRetry": true,
+  "retainedSamplingSourceFinding": {
+    "source": "supervisor.py observe_resources",
+    "sourceSha256": "8f3745b15926cf8eb841be558a20c173dfc2534d4e02662808c9edb5c631ff4c",
+    "order": "sample scratch, then sample BASE, then subtract the earlier scratch sample",
+    "limit": 8257536,
+    "breach": [
+      {
+        "phase": "work",
+        "seconds": 5.997,
+        "freeBytes": 25619533824,
+        "scratchLogical": 8625438,
+        "scratchAllocated": 2953216,
+        "retainedBytes": 9549873
+      }
+    ],
+    "lastReaped": {
+      "phase": "after-both-groups-reaped-before-scratch-removal",
+      "seconds": 6.065,
+      "freeBytes": 25603641344,
+      "scratchLogical": 18565918,
+      "scratchAllocated": 18911232,
+      "retainedBytes": 2863935
+    },
+    "scope": "Non-atomic subtraction can include scratch growth as retained data; raw trajectory is consistent. It does not establish 9.5MiB of actual retained evidence or a product failure."
+  },
+  "files": [
+    {
+      "path": "/private/tmp/msgquick-b2/binding.json",
+      "bytes": 41393,
+      "sha256": "790668eca675eaa43cf0d4a43d761e28413270ce52e2c572e13525d1c4c7d1e4"
+    },
+    {
+      "path": "/private/tmp/msgquick-b2/manifest.json",
+      "bytes": 4591,
+      "sha256": "8c1ecf8a5f265721a4c0b1d89cb8feeba85c0b9ef3858f165f4f3ca3accff537"
+    },
+    {
+      "path": "/private/tmp/msgquick-b2/supervisor.py",
+      "bytes": 29976,
+      "sha256": "8f3745b15926cf8eb841be558a20c173dfc2534d4e02662808c9edb5c631ff4c"
+    },
+    {
+      "path": "/private/tmp/msgquick-b2/worker.mjs",
+      "bytes": 12556,
+      "sha256": "f099491c90d612cd5dd37d9cd8b90c44537fb93a53c4634c5e48cfe6b91dd461"
+    },
+    {
+      "path": "/private/tmp/msgquick-b2/prior-evidence.json",
+      "bytes": 8371,
+      "sha256": "1c6524c07772c688b7a14dc2d0a3a0b1d8fd768742864ebd9e9e44d03c53335b"
+    },
+    {
+      "path": "/private/tmp/msgquick-b2/result.json",
+      "bytes": 67002,
+      "sha256": "5e6c774854099b9fb11971f136b508afbb715403f7a1e654698fb51951b079db"
+    },
+    {
+      "path": "/private/tmp/msgquick-b2/browser-budget.json",
+      "bytes": 305,
+      "sha256": "dae668e8b6e2e293a8c78e6733f8fb43eca60df87500ceeb8ef640258f94ed1f"
+    },
+    {
+      "path": "/private/tmp/msgquick-b2/consumed-gate.json",
+      "bytes": 6782,
+      "sha256": "5701811fa370b3bf4c5eb8351aeb1ecadc54677217d093cef8f5c12bbf00418a"
+    },
+    {
+      "path": "/private/tmp/msgquick-b2/worker.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/msgquick-b2-outer-017_g6hn/start.json",
+      "bytes": 297,
+      "sha256": "e94c04d47edd5026dbe67a464c0aed0fd7637b0e981dd6982ab1af5258331048"
+    },
+    {
+      "path": "/private/tmp/msgquick-b2-outer-017_g6hn/actual-exit.json",
+      "bytes": 721,
+      "sha256": "ffd710a5dd82afa79c1cdcc789df33b3a3bcb15e5a0e6cc0ebec90644472d6f1"
+    },
+    {
+      "path": "/private/tmp/msgquick-b2-outer-017_g6hn/stdout.txt",
+      "bytes": 713,
+      "sha256": "2d9261bd034a3c3757986a12a81056adb8db8c200ae7dd69d23195740e685c2e"
+    },
+    {
+      "path": "/private/tmp/msgquick-b2-outer-017_g6hn/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/msgquick-b2/raw/msgquick-b2-20261007-044744/chrome.log",
+      "bytes": 4081,
+      "sha256": "3da4ea742276de6f86597826d4f452997649bb900673872e23272c8e08a66b36"
+    },
+    {
+      "path": "/private/tmp/msgquick-b2/raw/msgquick-b2-20261007-044744/owned-chrome.json",
+      "bytes": 2272,
+      "sha256": "7eae73a0d6fd58530abf4fc1b94de6e1002182a01b98472ceeaad995652c6bf7"
+    }
+  ]
+}

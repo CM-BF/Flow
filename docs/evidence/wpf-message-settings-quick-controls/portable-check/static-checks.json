@@ -1,0 +1,53 @@
+{
+  "observedAt": "2026-10-06T23:17:17.909418+00:00",
+  "state": "PASS",
+  "scope": "Only --check and isolated builtin-only regex helper; no candidate/config/product import or execution; no types/direct/browser/free/proc.",
+  "results": [
+    {
+      "kind": "syntax-only-no-import",
+      "file": "run.mjs",
+      "sourceSha256": "403fcb09b9c3869d27407e543240710307c610dae43618fb8a0662cb65bffbe0",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--check",
+        "docs/evidence/wpf-message-settings-quick-controls/portable-check/run.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "kind": "syntax-only-no-import",
+      "file": "accept.mjs",
+      "sourceSha256": "2a984882181ac85f65353f09cfb5894631819121f24523dcf9d1f3cb26b3bfd7",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--check",
+        "docs/evidence/wpf-message-settings-quick-controls/portable-check/accept.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "kind": "syntax-only-no-import",
+      "file": "vitest.config.mjs",
+      "sourceSha256": "7b7e11c4a4c22a5b569f34aa06245f044166c09b84611bf5bff7bc722838f5da",
+      "command": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "--check",
+        "docs/evidence/wpf-message-settings-quick-controls/portable-check/vitest.config.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "",
+      "stderr": ""
+    },
+    {
+      "kind": "isolated-alias-helper-semantics-no-config-import",
+      "exitCode": 0,
+      "stdout": "{\"state\":\"PASS\",\"kind\":\"isolated-own-regex-expression-only\",\"count\":14,\"results\":[{\"name\":\"react\",\"pattern\":\"^react$\",\"exact\":true,\"rejected\":[\"prefixreact\",\"reactsuffix\",\"react/extra\",\"react.\"]},{\"name\":\"react/jsx-runtime\",\"pattern\":\"^react\\\\/jsx-runtime$\",\"exact\":true,\"rejected\":[\"prefixreact/jsx-runtime\",\"react/jsx-runtimesuffix\",\"react/jsx-runtime/extra\",\"react/jsx-runtime.\",\"react.jsx-runtime\",\"react/jsx.runtime\"]},{\"name\":\"react/jsx-dev-runtime\",\"pattern\":\"^react\\\\/jsx-dev-runtime$\",\"exact\":true,\"rejected\":[\"prefixreact/jsx-dev-runtime\",\"react/jsx-dev-runtimesuffix\",\"react/jsx-dev-runtime/extra\",\"react/jsx-dev-runtime.\",\"react.jsx-dev-runtime\",\"react/jsx.dev-runtime\"]},{\"name\":\"react-dom\",\"pattern\":\"^react-dom$\",\"exact\":true,\"rejected\":[\"prefixreact-dom\",\"react-domsuffix\",\"react-dom/extra\",\"react-dom.\",\"react.dom\"]},{\"name\":\"react-dom/client\",\"pattern\":\"^react-dom\\\\/client$\",\"exact\":true,\"rejected\":[\"prefixreact-dom/client\",\"react-dom/clientsuffix\",\"react-dom/client/extra\",\"react-dom/client.\",\"react-dom.client\",\"react.dom/client\"]},{\"name\":\"@radix-ui/react-dialog\",\"pattern\":\"^@radix-ui\\\\/react-dialog$\",\"exact\":true,\"rejected\":[\"prefix@radix-ui/react-dialog\",\"@radix-ui/react-dialogsuffix\",\"@radix-ui/react-dialog/extra\",\"@radix-ui/react-dialog.\",\"@radix-ui.react-dialog\",\"@radix.ui/react-dialog\"]},{\"name\":\"@radix-ui/react-slot\",\"pattern\":\"^@radix-ui\\\\/react-slot$\",\"exact\":true,\"rejected\":[\"prefix@radix-ui/react-slot\",\"@radix-ui/react-slotsuffix\",\"@radix-ui/react-slot/extra\",\"@radix-ui/react-slot.\",\"@radix-ui.react-slot\",\"@radix.ui/react-slot\"]},{\"name\":\"lucide-react\",\"pattern\":\"^lucide-react$\",\"exact\":true,\"rejected\":[\"prefixlucide-react\",\"lucide-reactsuffix\",\"lucide-react/extra\",\"lucide-react.\",\"lucide.react\"]},{\"name\":\"class-variance-authority\",\"pattern\":\"^class-variance-authority$\",\"exact\":true,\"rejected\":[\"prefixclass-variance-authority\",\"class-variance-authoritysuffix\",\"class-variance-authority/extra\",\"class-variance-authority.\",\"class.variance-authority\"]},{\"name\":\"clsx\",\"pattern\":\"^clsx$\",\"exact\":true,\"rejected\":[\"prefixclsx\",\"clsxsuffix\",\"clsx/extra\",\"clsx.\"]},{\"name\":\"tailwind-merge\",\"pattern\":\"^tailwind-merge$\",\"exact\":true,\"rejected\":[\"prefixtailwind-merge\",\"tailwind-mergesuffix\",\"tailwind-merge/extra\",\"tailwind-merge.\",\"tailwind.merge\"]},{\"name\":\"@flow/client\",\"pattern\":\"^@flow\\\\/client$\",\"exact\":true,\"rejected\":[\"prefix@flow/client\",\"@flow/clientsuffix\",\"@flow/client/extra\",\"@flow/client.\",\"@flow.client\"]},{\"name\":\"@flow/contracts\",\"pattern\":\"^@flow\\\\/contracts$\",\"exact\":true,\"rejected\":[\"prefix@flow/contracts\",\"@flow/contractssuffix\",\"@flow/contracts/extra\",\"@flow/contracts.\",\"@flow.contracts\"]},{\"name\":\"vitest\",\"pattern\":\"^vitest$\",\"exact\":true,\"rejected\":[\"prefixvitest\",\"vitestsuffix\",\"vitest/extra\",\"vitest.\"]}]}\n",
+      "stderr": "",
+      "program": "import assert from 'node:assert/strict';\nimport { readFileSync } from 'node:fs';\nconst source=readFileSync(process.argv[1],'utf8');\nconst declaration=source.match(/^const exact = .+;$/m)?.[0]; assert(declaration);\nconst exact=Function(declaration+' return exact;')();\nconst packages=Function('return '+source.match(/const packages = (\\[[\\s\\S]*?\\]);/)[1])();\nconst names=[...packages,'@flow/client','@flow/contracts','vitest'];\nconst results=[];\nfor(const name of names){\n const pattern=exact(name), wrong=['prefix'+name,name+'suffix',name+'/extra',name+'.'];\n if(name.includes('/'))wrong.push(name.replace('/','.'));\n if(name.includes('-'))wrong.push(name.replace('-','.'));\n assert.equal(pattern.test(name),true); for(const value of wrong)assert.equal(pattern.test(value),false,value);\n results.push({name,pattern:pattern.source,exact:true,rejected:wrong});\n}\nfor(const name of ['pkg.name','pkg+name','pkg[name]']){ assert(exact(name).test(name)); assert(!exact(name).test(name.replace(/[.+\\[\\]]/g,'X'))); }\nconsole.log(JSON.stringify({state:'PASS',kind:'isolated-own-regex-expression-only',count:names.length,results}));\n"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "state": "FAILED_INCONCLUSIVE",
+  "chrome": "154.0.8037.99",
+  "sourceTarget": "a9ec5df40470c20f48171eb8d725c6c39f307b55",
+  "runHead": "0c88e994c8d17f0431e2e9a7084ae8b91869210e",
+  "actualExit": 1,
+  "outerWallMs": 5872.413750039414,
+  "lateTerminalMs": 5831,
+  "parentElapsedMs": 5830,
+  "conservativeChargeMs": 5873,
+  "newSegmentSpentMs": 23322,
+  "newSegmentRemainingMs": 66678,
+  "oldClosedMs": 30625,
+  "oldUnusedCredit": 0,
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "workerGroupAbsent": true,
+    "chromeGroupAbsent": true,
+    "scratchAbsent": true
+  },
+  "diagnostic": "Both owned plain controls complete snapshots with UTF-8/\u6a21\u578b/count1. A DownEnter10 events and B SpaceDownEnter14 events, trusted/no input-change/value empty/index0/focus true/open false. No scenario exception. B prerequisite fails, actual modal NOT_RUN, six groups0, PNG0. Not unique product/platform cause proof."
+}

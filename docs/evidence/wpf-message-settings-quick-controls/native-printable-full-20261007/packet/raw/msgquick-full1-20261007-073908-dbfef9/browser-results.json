@@ -1,0 +1,60 @@
+{
+  "sourceHead": "421e9ee51415a9005e836f25a2a3773388e6ef9e",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb"
+  },
+  "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "startedAt": "2026-10-07T07:39:23.080Z",
+  "workerPid": 46821,
+  "parentPid": 46747,
+  "chromePid": 46751,
+  "chromeProcessGroup": "separate-parent-owned-session",
+  "chromeCleanupOwner": "external-parent-native-sibling",
+  "checks": [
+    "Native CDP printable filters, Tab/radio Arrow/Space/Apply Enter commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots",
+    "No invented cross-product or automatic fallback; incompatible facets have a clear exit; pagination, failed refresh and capability loss preserve applied C",
+    "Actual fixture host CAS rejects lagging-props Apply; same-tuple new draft/view invalidates pending choice and omit; unmount preserves host C (production App remains unbound)",
+    "Details close-before-navigation focus, removed-candidate recovery focus, light/dark390,180-character model and reduced-motion keyboard",
+    "Empty/missing selection retained; 40-profile paging still projects only the authorized32 tuples; legacy creation unchanged; new connection has independent controlled drafts",
+    "Already-applied authorized profile21 absent on page1 retains C/A/B/text and blocks Apply; actual after20 HTTP page exposes only exact profile21 tuples; no automatic write and exactly one explicit post-page Apply"
+  ],
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "outcome": "passed",
+  "pg": 0,
+  "selection": "full",
+  "diagnosticComplete": false,
+  "budgetOwner": "external-parent",
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cdpConnectedAt": "2026-10-07T07:39:28.572Z",
+  "requests": [
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?after=10000000-0000-4000-8000-000000000001&limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?limit=20",
+    "/connection-1/api/execution-profiles?after=10000000-0000-4000-8000-000000000020&limit=20",
+    "/connection-2/api/execution-profiles?limit=20",
+    "/connection-2/api/execution-profiles?after=10000000-0000-4000-8000-000000000020&limit=20",
+    "/connection-2/api/execution-profiles?limit=20",
+    "/connection-2/api/execution-profiles?after=10000000-0000-4000-8000-000000000020&limit=20"
+  ],
+  "limitation": "Independent controlled component + synthetic HTTP catalog; no App/send/queue/recovery/provider integration.",
+  "selectDiagnostics": {
+    "path": "select-diagnostics.json",
+    "bytes": 49219,
+    "sha256": "0ac7782e8012747aa4455a265434e0a731c5b12fddcc380cc228c1829331a45b",
+    "state": "INSTALLED",
+    "truncated": true
+  },
+  "finishedAt": "2026-10-07T07:39:32.777Z",
+  "observedElapsedMs": 9697,
+  "profileCleanupOwner": "external-parent-after-both-process-groups-absent"
+}

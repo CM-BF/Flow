@@ -1,0 +1,78 @@
+{
+  "taskId": "WPF-MESSAGESETTINGS02",
+  "state": "APPROVED_COMPONENT_READY_FOR_LEAD_MAIN_INTAKE",
+  "base": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "sourceTarget": "dde571be8853698f8943f952ddef2c648d2e1294",
+  "testedMetadataHead": "421e9ee51415a9005e836f25a2a3773388e6ef9e",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "branch": "codex/web-message-settings-quick-controls",
+  "implementationScope": [
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/test/message-settings.test.ts",
+    "apps/web/test/message-settings.fixture.tsx",
+    "apps/web/test/message-settings.browser.ts"
+  ],
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb"
+  },
+  "sourceCommitsInOrder": [
+    "3c2e563958bb8f61b0f3dcd0fee70cc420b9a451",
+    "35bbe76faa2128d5c1d00711fb2be3b23d54fc4f",
+    "7615ce4b89e290c42917f91f0a119c14e95e27d8",
+    "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+    "bdf444f13f2963235ab3f1659546d19fc8f5c203",
+    "521a38395c4b9a38613937c83ce44215afc70280",
+    "a9ec5df40470c20f48171eb8d725c6c39f307b55",
+    "ac44d327cdff3180c0dff36c3e199cd47669fc88",
+    "2e71bea91c188c5f13723dace905fe429d83834b",
+    "d7556b616e018ac985519b08a2954b1810029e05",
+    "dde571be8853698f8943f952ddef2c648d2e1294"
+  ],
+  "scopeMeaning": "One production Picker and three controlled test/fixture/browser sources. Evidence scripts are archived reviewed runtime inputs, not extra production code. Lead alone integrates main.",
+  "checks": {
+    "strictAnd26Direct": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/root-actual-review.json",
+    "affectedBrowserNoEmit": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/noemit/actual.json",
+    "fullBrowser": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/actual-summary.json",
+    "fullArchiveManifest": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/archive-manifest.json",
+      "sha256": "60ac0f33b03322de663d049ecea2abf149f3dcfcf69fae9ee886b00831a7d542"
+    },
+    "sourceReview": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-source-review.json",
+    "actualReview": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-actual-review.json",
+      "sha256": "86fa91a12a77d6059fe54d9c977307960841fb45d408c8541808d7ad3a647557",
+      "decision": "APPROVED_SCOPED_COMPONENT_AND_FULL_SIX_FIXTURE_ACTUAL_NOT_PRODUCTION_APP"
+    }
+  },
+  "boundaries": [
+    "Current authorized full tuples only; required opaque ownership and synchronous real fixture host CAS",
+    "Six actual fixture groups /two390PNG; CDP printable trusted browser input, not physical IME/native OS menu",
+    "Old failure/provision/history evidence immutable; no Settings01 result inheritance",
+    "Production App/Send/Queue/Recovery/P01 consumption remains separate TODO11 successor",
+    "No main or personal deployment performed by this owner",
+    "Global later passive trace cap/drop8 preserved; four per-filter acceptance records complete, not full-session event exhaustiveness."
+  ],
+  "budget": {
+    "oldClosedMs": 30625,
+    "newSpentMs": 47496,
+    "newUnusedMs": 42504,
+    "noFurtherRunPlanned": true
+  },
+  "existingTaskFollowups": [
+    {
+      "task": "WPF-MATURE-01",
+      "area": "floating layer presentation",
+      "observation": "180-character stress name repeats in heading and candidate; Apply below initial viewport. Current two screenshots are fixture pressure cases, not all-App failure.",
+      "required": "Reuse existing corner/shadow/material tokens; narrow primary apply/cancel discoverable; normal-label and long-label screenshots."
+    },
+    {
+      "task": "WPF-MATURE-02 / TODO-11",
+      "area": "real host compact quick settings",
+      "required": "Compact model/thinking/effort/speed primary entry; full directory/explanation drill-down; visually bounded long name with full identity inspectable/distinguishable; exact authorized tuple, explicit Apply and draft ownership/live CAS preserved.",
+      "scopeStatus": "Successor not claimed/implemented by this receipt; no new major task"
+    }
+  ]
+}

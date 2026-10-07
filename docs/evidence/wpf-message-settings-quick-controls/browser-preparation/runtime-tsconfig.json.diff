@@ -1,0 +1,15 @@
+--- Settings01-b5-method/runtime-tsconfig.json
++++ Settings02-prepared/runtime-tsconfig.json
+@@ -21,10 +21,10 @@
+         "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/zod@4.6.5/node_modules/zod/index.js"
+       ],
+       "@flow/client": [
+-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/packages/client/src/index.ts"
++        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/packages/client/src/index.ts"
+       ],
+       "@flow/contracts": [
+-        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings/packages/contracts/src/index.ts"
++        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/packages/contracts/src/index.ts"
+       ]
+     }
+   }

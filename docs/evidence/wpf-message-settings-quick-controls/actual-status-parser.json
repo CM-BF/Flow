@@ -1,0 +1,103 @@
+{
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)",
+      "id": "WPF-MATURE-02",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "review",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "四源和 types/direct 检查包已获限定静态批准；独立浏览器准备包待审",
+    "next": "经验证的模型、思考力度与速度快速选择",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+    "scopes": [
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/test/message-settings.test.ts",
+      "apps/web/test/message-settings.fixture.tsx",
+      "apps/web/test/message-settings.browser.ts"
+    ],
+    "errors": []
+  },
+  "taskId": "WPF-MESSAGESETTINGS02",
+  "owner": "w01_owner / gpt-6-astra",
+  "branch": "codex/web-message-settings-quick-controls",
+  "branchState": "in-progress",
+  "updatedAt": "2026-10-06T22:46:47.000Z",
+  "updatedRecord": "2026-10-06 22:46:47 UTC",
+  "todos": [
+    {
+      "id": "MSGQUICK-01",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[receipt](../../docs/evidence/wpf-message-settings-quick-controls/take-receipt.json)、[技能](../../docs/evidence/wpf-message-settings-quick-controls/quality.md)"
+    },
+    {
+      "id": "MSGQUICK-02",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "当前授权 tuple + 私有候选 + 同步宿主 CAS"
+    },
+    {
+      "id": "MSGQUICK-03",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "四源固定；validation-proposal（未运行）"
+    },
+    {
+      "id": "MSGQUICK-04",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "四源与c1静态准备批准；browser packet待审；所有检查未准入"
+    },
+    {
+      "id": "MSGQUICK-05",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "主线独立接收；真实 App/Queue/Recovery 后继不在此范围"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "fe6ece131c489c79cf531a184e4cf51209f9c4a0（固定实现；metadata 单独提交）",
+  "declaredDirty": "",
+  "checks": {
+    "state": "unknown",
+    "target": null,
+    "record": "未提供独立检查状态字段；请打开证据核对具体提交。"
+  },
+  "reviewRecord": "UNKNOWN（fe6四源/c1准备限定批准；浏览器packet待审，所有实际行为检查未运行）",
+  "mainRecord": "",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}

@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-07 06:59:15 UTC",
+  "state": "STATIC_PREVENTION_NOT_REPRODUCED",
+  "source": "2e71bea91c188c5f13723dace905fe429d83834b",
+  "previous": "ac44d327cdff3180c0dff36c3e199cd47669fc88",
+  "scope": "apps/web/test/message-settings.browser.ts:44",
+  "delta": "React fixture / response Content-Type now text/html; charset=utf-8. Actual document.characterSet UTF-8 precondition retained.",
+  "pins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/chunks/node.js",
+      "bytes": 1383675,
+      "sha256": "21d5c6b4fb1013b98b1436e9e2a3bb416c8932343ad42ec293bbf760f51a0131"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@vitejs+plugin-react@6.1.2_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@vitejs/plugin-react/dist/index.js",
+      "bytes": 9936,
+      "sha256": "ef1c54fcb1f85f26688a807f32099ff7cd49027791f0d9d8b9b4baebf0fb87c2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@tailwindcss+vite@4.3.3_vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15_/node_modules/@tailwindcss/vite/dist/index.mjs",
+      "bytes": 8351,
+      "sha256": "f80662823db60a7d2060ae37bedb98ab3a5039a32f9ab88a2a0c9c39e79f4d28"
+    }
+  ],
+  "observations": [
+    {
+      "source": "vite",
+      "lines": "17917-17941",
+      "fact": "createDevHtmlTransformFn composes hooks and returns applyHtmlTransforms; it has no HTTP response object and no blanket charset insertion."
+    },
+    {
+      "source": "vite",
+      "lines": "18088-18100,32030-32066",
+      "fact": "devHtmlHook adds Vite client script; applyHtmlTransforms only applies plugin results/tags; no automatic charset tag injected."
+    },
+    {
+      "source": "react",
+      "lines": "140-148,181-187",
+      "fact": "React HTML hooks add refresh script only, no charset."
+    },
+    {
+      "source": "tailwind",
+      "fact": "This fixed plugin has no transformIndexHtml hook."
+    },
+    {
+      "source": "fixture",
+      "lines": "43-45",
+      "fact": "Custom middleware sets response header and directly ends transformed HTML without using Vite static-file serving. Source HTML contains viewport but no charset meta."
+    }
+  ],
+  "limitation": "Read-only installed-source inspection. The real modal has not reached C preconditions; no runtime encoding failure claimed. No product/runtime/noEmit/26/Chrome/free checks."
+}

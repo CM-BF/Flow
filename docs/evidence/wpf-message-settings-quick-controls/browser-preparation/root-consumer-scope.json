@@ -1,0 +1,106 @@
+{
+  "at": "2026-10-06T22:43:00.727487+00:00",
+  "reviewer": "root",
+  "scope": "Fixed QuickControls browser consumer and acceptance boundaries, before executable packet review",
+  "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "sourcePins": [
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 23499,
+      "sha256": "a063b597d0c76627accb92f3992e32c3ed3904da28b19d58197ba6ec80f7450e"
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "bytes": 9510,
+      "sha256": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 25804,
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "bytes": 2885,
+      "sha256": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934"
+    },
+    {
+      "path": "apps/web/src/themes.ts",
+      "bytes": 1822,
+      "sha256": "f25f0264cb00c798a477b1f7e52fe55c77fbaa7e65c1e0f4d86c8ab728037f1f"
+    },
+    {
+      "path": "apps/web/src/assistant-ui.css",
+      "bytes": 6661,
+      "sha256": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab"
+    },
+    {
+      "path": "apps/web/src/styles.css",
+      "bytes": 13124,
+      "sha256": "52a733934b498c8940c710898f34576c035b37a810bc0b8857600cebe8f8e3c4"
+    },
+    {
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "bytes": 3853,
+      "sha256": "5858040deb7446700c0f4d791fa80507fd7c543c3a91f8634410815726634ec0"
+    },
+    {
+      "path": "apps/web/src/components/ui/button.tsx",
+      "bytes": 1906,
+      "sha256": "225183a39c85425b5a807b082983b21ba8cb337ad76782abd83d65c0a38e698f"
+    },
+    {
+      "path": "apps/web/src/lib/utils.ts",
+      "bytes": 166,
+      "sha256": "64fc84c1be627f0d586fb4ba64d824a1604f44282381f5bae68cdf86e10bb6ec"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 53156,
+      "sha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1512,
+      "sha256": "81128867d5e7e89ed0037d432613884faeb880506611b0f62ee7cbdcdf13c5b9"
+    }
+  ],
+  "scenarioGroups": [
+    "Native Tab/Arrow/Space/Enter filters and explicit Apply commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots",
+    "No invented cross-product or automatic fallback; incompatible facets have a clear exit; pagination, failed refresh and capability loss preserve applied C",
+    "Actual fixture host CAS rejects lagging-props Apply; same-tuple new draft/view invalidates pending choice and omit; unmount preserves host C (production App remains unbound)",
+    "Details close-before-navigation focus, removed-candidate recovery focus, light/dark390,180-character model and reduced-motion keyboard",
+    "Empty/missing selection retained; 40-profile paging still projects only the authorized32 tuples; legacy creation unchanged; new connection has independent controlled drafts",
+    "Already-applied authorized profile21 absent on page1 retains C/A/B/text and blocks Apply; actual after20 HTTP page exposes only exact profile21 tuples; no automatic write and exactly one explicit post-page Apply"
+  ],
+  "expectedGroupCount": 6,
+  "expectedScreenshots": [
+    "message-settings-light-390.png",
+    "message-settings-dark-390.png"
+  ],
+  "publicReadSeam": "Fixture → bound FlowClient.claudeMessageSettingsProfiles → createMessageSettingsCatalog; caller20/actualafter cursor; same profile identity passed to public capture codec. No real center or provider involved.",
+  "renderChain": "Fixture → actual MessageSettingsPicker → Radix Dialog/button/cn; imported execution-profiles.css, assistant-ui.css and styles.css plus themes.ts. assistant-ui.css imports actual Tailwind CSS and tw-animate-css; browser fixture uses React and Tailwind Vite plugins. Node c1 css:false must not be applied to browser.",
+  "themeMotionScope": "Fixture invokes actual applyTheme light/dark; global CSS reduces animations/transitions and picker CSS repeats dialog reduction. Browser source explicitly emulates reduced motion and exercises390 geometry/focus. This is functional-mode and screenshot coverage, not an animation/performance benchmark or full app theme audit.",
+  "sourceLimits": [
+    "The two final screenshots are controlled component dialog evidence; they do not show actual App/send/queue/recovery or complete Thread/Arc/Terminal shell.",
+    "Six result strings must derive from actual completed new function; no historical four-check pass reuse.",
+    "Source dependency observations are local/fixed and not a full transitive binary audit; exact external entries and owned runtime lifecycle still require packet review."
+  ],
+  "nativeBoundary": "Oldb5 method may be reused; its exact old task/claim/cumulative20609/4checks/nativeChrome approval do not transfer. New packet must disclose and bind its boundary; no current runtime grant.",
+  "methods": {
+    "findSkills": "Local installed skills preferred; no installation or network discovery necessary.",
+    "webappTesting": "Read local SKILL.md; applied actual rendered-state expectations, accessible locators, page errors/screenshots and owned cleanup. Existing canonical JS fixture/supervisor retained; no skill helper or browser executed.",
+    "cleanCode": "Reuse real client, catalog, codec and primitive composition; no alternative test implementation or second C state."
+  },
+  "runtime": "NOT_RUN"
+}

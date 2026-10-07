@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-07T06:46:40.213603+00:00",
+  "author": "root / GPT-6 Astra Ultra",
+  "task": "Existing WPF-MESSAGESETTINGS-QUICK keyboard acceptance, no new take",
+  "kind": "PRIMARY_SOURCE_RESEARCH_AND_MATERIALLY_DIFFERENT_DIAGNOSTIC_DESIGN",
+  "actualBasis": {
+    "path": "/private/tmp/root-msgquick-native3-actual-review.json",
+    "sha256": "d4e3a0da1b513a45361c6c46d3b56dcf51df191656d15c43cfe76fd93b047a7c",
+    "observed": "Both plain native controls receive trusted A/B keys and stay empty; no input/change, no modal run."
+  },
+  "findings": [
+    {
+      "source": "bridge",
+      "lines": "433-440",
+      "fact": "Current Chromium macOS Cocoa bridge cancels popup display when its native window is headless.",
+      "limit": "Source explanation consistent with observed --headless=new result, not proof of the exact installed 154.0.8037.99 binary path. Exact tag retrieval failed with HTTP429; no retry or version-match claim."
+    },
+    {
+      "source": "select",
+      "lines": "370-389,539-589",
+      "fact": "Arrow keys on Mac and an initial Space request the popup; normal non-popup arrow selection handling is skipped for the Mac arrow-popup theme.",
+      "limit": "Current upstream source reading only. Existing platform popup navigation remains unverified."
+    },
+    {
+      "source": "element",
+      "lines": "1388-1415,1485-1509",
+      "fact": "A separate native type-ahead handler selects an option by typed prefix and requests input/change dispatch. This suggests a real keyboard path without opening the native popup.",
+      "limit": "Proposed focused ASCII key experiment has not run; no outcome inferred."
+    }
+  ],
+  "design": {
+    "newMeasurement": "One fresh plain native SELECT control then, only if it selects correctly with trusted input+change, the real React modal with the same one-key sequence. Use the existing first nonempty option starting model-, so focus then Playwright keyboard.press(m) targets the same actual long model at index1. No Arrow/Space/Enter in this measurement; no alternate-key retry loop.",
+    "preconditions": "Existing UTF8/header/中文 label/exact count1 and passive actual snapshots; known untouched selectedIndex0 before key; actual connected/enabled/focused select. Compare full expected value and selectedIndex1, trusted keypress/input/change. Passive event recorder must include keypress if missing, without changing events.",
+    "modal": "Only after plain succeeds, open original modal, focus its same actual select and press the same m once. Preserve local-only filters and original C/applied versus sentA/queuedB/right-pane/draft values, noApply, one catalog request, no value assignment, selectOption or synthetic dispatch.",
+    "outcome": "Plain fails => INCONCLUSIVE and do not touch modal. Plain passes/modal fails => controlled modal finding. Both pass => scoped type-ahead keyboard path demonstrated only; not original six groups or screenshot acceptance.",
+    "budget": "Same existing90s finite segment currently23322 spent/66678 remaining; next attempt<=45s including15s cleanup,0PG1Chrome+loopbackfixture64MiBtmp8MiBretained. No headed/LaunchServices/accessibility/OS keystrokes/flags/source permission changes. Fresh exact-source/gate/claim needed; all earlier raw preserved.",
+    "followup": "Any adjustment of full functional journey key helper after successful C must explicitly record the supported keyboard path and leave native popup arrows as a limitation; do not silently label old failed arrow journey passed."
+  },
+  "coordination": "Root supplies read-only design. W01 sole writer of original browser test and own plan/status/evidence; manager handles readiness/gate/dashboard. Recovery uses PG+Chrome and cannot overlap this Chrome diagnostic. No launch now.",
+  "skills": "Previously read local find-skills, webapp-testing and clean-code. Primary Chromium source + official Playwright input docs, no new library or install.",
+  "sources": [
+    {
+      "name": "bridge",
+      "url": "https://raw.githubusercontent.com/chromium/chromium/main/content/app_shim_remote_cocoa/render_widget_host_ns_view_bridge.mm",
+      "path": "/private/tmp/root-chromium-select-source-20261007/bridge.txt",
+      "bytes": 19335,
+      "sha256": "0254288cebdcf2852d9a0afbf25d891e465556787d171b1c5e47f043acb9bc86"
+    },
+    {
+      "name": "select",
+      "url": "https://raw.githubusercontent.com/chromium/chromium/main/third_party/blink/renderer/core/html/forms/select_type.cc",
+      "path": "/private/tmp/root-chromium-select-source-20261007/select.txt",
+      "bytes": 83594,
+      "sha256": "30c3d9adc48a27f0da8f899178217f9d6cb9b7bb8c96575e48c07ce66928b71e"
+    },
+    {
+      "name": "exact-version-bridge",
+      "url": "https://raw.githubusercontent.com/chromium/chromium/154.0.8037.99/content/app_shim_remote_cocoa/render_widget_host_ns_view_bridge.mm",
+      "error": "HTTP Error 429: Too Many Requests"
+    },
+    {
+      "name": "element",
+      "url": "https://raw.githubusercontent.com/chromium/chromium/main/third_party/blink/renderer/core/html/forms/html_select_element.cc",
+      "path": "/private/tmp/root-chromium-select-source-20261007/element.txt",
+      "bytes": 86499,
+      "sha256": "a710c7a961a859db17cc441db5a4c0f29c51fe221c5becb444de2511c1322ff5"
+    }
+  ],
+  "docs": "https://github.com/microsoft/playwright/blob/main/docs/src/input.md",
+  "projectWrites": 0,
+  "newRuntimeTests": 0
+}

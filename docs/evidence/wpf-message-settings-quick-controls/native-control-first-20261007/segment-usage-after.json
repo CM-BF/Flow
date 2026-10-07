@@ -1,0 +1,37 @@
+{
+  "id": "MSGQUICK-NATIVE-CONTROL-CLOSEOUT-20261007",
+  "authorization": {
+    "path": "/private/tmp/root-msgquick-continuous-segment-20261007.json",
+    "sha256": "8c78cd0ceef9950289194e8c7a996582afa3afd627299a88f8f864f82c1fe392"
+  },
+  "historyConservativeMs": 30625,
+  "historyEnvelopeMs": 60000,
+  "unusedHistoryMsNotCredited": 29375,
+  "newSegmentLimitMs": 90000,
+  "singleRunLimitMs": 45000,
+  "cleanupReserveMs": 15000,
+  "actualConservativeSpentMs": 11222,
+  "runs": [
+    {
+      "run": "msgquick-native1-20261007-060926-18698b",
+      "selection": "diagnostic",
+      "packet": "/private/tmp/msgquick-native1",
+      "outer": "/private/tmp/msgquick-native1-outer-mnw15emr",
+      "archiveManifest": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-control-first-20261007/archive-manifest.json",
+      "archiveManifestSha256": "5f40873b62139ad1fa9258dc631cc20a283922ec1e2ac87117d2c98ced770a42",
+      "parentElapsedMs": 11178,
+      "lateTerminalMs": 11182,
+      "outerWallMs": 11221.448166994378,
+      "conservativeChargeMs": 11222,
+      "state": "FAILED",
+      "cleanup": {
+        "errors": [],
+        "groupAbsent": true,
+        "workerGroupAbsent": true,
+        "chromeGroupAbsent": true,
+        "scratchAbsent": true
+      }
+    }
+  ],
+  "accounting": "Append immutable observations; ceil(max actual outer, late terminal, parent). Old 60s envelope stays closed; new actual segment now 11222/90000."
+}

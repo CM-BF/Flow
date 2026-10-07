@@ -1,0 +1,62 @@
+{
+  "state": "PREPARED",
+  "metadataHead": "f7f56fb0c47e1f6292ee4e017f5fe7cdedbf91fd",
+  "diagnosticSourceTarget": "ac44d327cdff3180c0dff36c3e199cd47669fc88",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "3e6a77d8e94b02dba8a8b057750e6baaa4a821d5c7c4ecf4fc59677868a55996"
+  },
+  "prepared": {
+    "README.md": {
+      "bytes": 1749,
+      "sha256": "15a4d6856b625e71f547b5699ce915ffa452fd766bd9529ac1fbf5c9f147b69c"
+    },
+    "aliases.json": {
+      "bytes": 3483,
+      "sha256": "b1e602aa62b5ebff2006e7ad3aefabea5606c9cf0998e14d5afa7aa8ec4110d4"
+    },
+    "binding.json": {
+      "bytes": 43076,
+      "sha256": "ed3ec320db6bc6a5cd846e1c8ca9227a17b797d5435e1ba4693d29e9bf6782f0"
+    },
+    "binding.json.diff": {
+      "bytes": 10030,
+      "sha256": "0e09eef04a3dda3cb0dd03c94309df407a156801f880fc39d17cb0255864afa8"
+    },
+    "prior-evidence.json": {
+      "bytes": 58879,
+      "sha256": "75a4bf7d40ce72a66350f8a054d745c14c4770c03c4ab76fadb0b1497ab8dfb3"
+    },
+    "runtime-tsconfig.json": {
+      "bytes": 1620,
+      "sha256": "bc0bd602d32d2a03d122fff259684bee15cfe17a7ea40224cc06c1ffd2a51f18"
+    },
+    "static-audit.json": {
+      "bytes": 676,
+      "sha256": "35dc3ab59c1431ca711bdf5a205c8f908dba691288ce339d4e3658d4bccfd35a"
+    },
+    "supervisor.py": {
+      "bytes": 39761,
+      "sha256": "74dc93f09425f3d469b5a84f93a1ef8d829f094c48f4b76442cdf492d8b49628"
+    },
+    "supervisor.py.diff": {
+      "bytes": 11227,
+      "sha256": "3809a5d2fd694af7624e7814135f7863e3b7a9ad989dcc446c1755e1e35eae7d"
+    },
+    "worker.mjs": {
+      "bytes": 13789,
+      "sha256": "53d694ac714103a2f7af73386d6054c528956d9f830642e2e76eb07ef0489cfb"
+    },
+    "worker.mjs.diff": {
+      "bytes": 2113,
+      "sha256": "95985391b014af3a79bdacc72463b0f8c12c6f5512e42c135daf25b2a0c55b1a"
+    }
+  },
+  "newSegmentSpentMs": 23322,
+  "newSegmentRemainingMs": 66678,
+  "historyClosedMs": 30625,
+  "nativeChromeBoundaryApproval": null,
+  "gate": null
+}

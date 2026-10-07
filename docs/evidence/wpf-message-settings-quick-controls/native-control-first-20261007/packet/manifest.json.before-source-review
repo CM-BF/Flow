@@ -1,0 +1,70 @@
+{
+  "state": "PREPARED_NOT_RUN",
+  "metadataHead": "1aa73f6dba8f3536b43624659ea8a02529646c03",
+  "diagnosticSourceTarget": "bdf444f13f2963235ab3f1659546d19fc8f5c203",
+  "originalProductTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "3460c012fb690b0eb0cdb0de76f2631cdd8800c01823e200baefb08fccbc00bc"
+  },
+  "prepared": {
+    "binding.json": {
+      "bytes": 41730,
+      "sha256": "ceac37c3482c5fbf37e900dbfe6d73623a0a5af156090c1b9d61f723ca691d75"
+    },
+    "supervisor.py": {
+      "bytes": 35579,
+      "sha256": "c15a24d4db38084dfda4f0aa82f20c571901977e78cdbc71740fbf9a10287d63"
+    },
+    "worker.mjs": {
+      "bytes": 13674,
+      "sha256": "3a521deb334b10748ba220a623cd3be4bee833f3c52953f20d2a4d0aedf5ce49"
+    },
+    "runtime-tsconfig.json": {
+      "bytes": 1620,
+      "sha256": "bc0bd602d32d2a03d122fff259684bee15cfe17a7ea40224cc06c1ffd2a51f18"
+    },
+    "aliases.json": {
+      "bytes": 3483,
+      "sha256": "b1e602aa62b5ebff2006e7ad3aefabea5606c9cf0998e14d5afa7aa8ec4110d4"
+    },
+    "prior-evidence.json": {
+      "bytes": 29917,
+      "sha256": "92b995aca760b2426adf604ba831b02f2c171350a547b0cc08c84a94c16ced0c"
+    },
+    "supervisor.py.diff": {
+      "bytes": 17963,
+      "sha256": "75dbb1f619339acde3bb7fc32c7d944739a3b4251d38dade4ef025423d14b660"
+    },
+    "worker.mjs.diff": {
+      "bytes": 5779,
+      "sha256": "01c55181551834474f9910157d3c7e0071568897bdaad0bf4e445eaa00f04412"
+    },
+    "README.md": {
+      "bytes": 3172,
+      "sha256": "4cfabb28de23fae41df079baaaac03cd1d2bafb40f5d84b1e13bf124869c6cb8"
+    },
+    "static-audit.json": {
+      "bytes": 515,
+      "sha256": "6057b83fb14a45ddc22a46f05865002b00cb49f707368595a8909ca08dffb5ad"
+    }
+  },
+  "segmentUsage": {
+    "path": "/private/tmp/msgquick-native-segment-20261007.json",
+    "sha256": "ebae39aabbe3f62a22daace8fe9619ebaa753bfbdd52623e11557cb503229148"
+  },
+  "segmentAuthorization": {
+    "path": "/private/tmp/root-msgquick-continuous-segment-20261007.json",
+    "sha256": "8c78cd0ceef9950289194e8c7a996582afa3afd627299a88f8f864f82c1fe392"
+  },
+  "newRuntimeMs": 0,
+  "historyConservativeMs": 30625,
+  "newSegmentLimitMs": 90000,
+  "singleRunLimitMs": 45000,
+  "cleanupMs": 15000,
+  "nativeChromeBoundaryApproval": null,
+  "gate": null,
+  "errors": []
+}

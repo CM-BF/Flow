@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-07T05:00:32.792457+00:00",
+  "state": "PREPARED_NOT_RUN",
+  "head": "b44fce2889ab2b9622c45fc7a92ce2237e8507bf",
+  "branch": "codex/web-message-settings-quick-controls",
+  "dirty": "",
+  "product": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "sources": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "a063b597d0c76627accb92f3992e32c3ed3904da28b19d58197ba6ec80f7450e"
+  },
+  "checks": {
+    "allThreeRetainedSitesUseDirectExclusion": true,
+    "noBaseMinusScratchRetainedFormula": true,
+    "temporarySizeIndependent": true,
+    "originalScratchGuardUnchanged": true,
+    "originalRetainedGuardUnchanged": true,
+    "scanErrorsUnchanged": true,
+    "workerByteEqual": true,
+    "priorAllPinsMatch": true,
+    "preparedNoNativeGate": true
+  },
+  "errors": [],
+  "priorFiles": 86,
+  "priorBytes": 1014126,
+  "previousRuntimeMs": 18468,
+  "remainingMs": 41532,
+  "workMs": 26532,
+  "cleanupMs": 15000,
+  "readOnlyOwnCount": 117,
+  "externalEntryCount": 37,
+  "workerSha256": "f099491c90d612cd5dd37d9cd8b90c44537fb93a53c4634c5e48cfe6b91dd461",
+  "parentSha256": "dad6ea555ecdec90b65a677337287980a36369ef2c0567b385c5c34898dfb0b5",
+  "syntheticSha256": "7afe4bfb6ee1cb8e6e9031ab20958692c6b4cfc21ab7f5eeb8a42a05eed99619",
+  "syntheticExecution": "NOT_RUN; no candidate imports or syntax execution",
+  "skills": {
+    "/Users/citrine/.agents/skills/find-skills/SKILL.md": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+    "/Users/citrine/.agents/skills/clean-code/SKILL.md": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+  },
+  "method": "Exact known-file reads and hashes, protected binding equality, text-only call-site/guard inspection. No free/proc/runtime sampling."
+}

@@ -1,0 +1,31 @@
+--- native3/worker.mjs
++++ typeahead1/worker.mjs
+@@ -28,7 +28,7 @@
+ assert(gate.totalMs <= 45000 && gate.totalMs > 15000);
+ assert(gate.previousRuntimeMs + gate.totalMs <= 150000);
+ assert(gate.previousSegmentRuntimeMs + gate.totalMs <= 90000);
+-assert(['diagnostic', 'full'].includes(gate.selection));
++assert(['diagnostic', 'typeahead', 'full'].includes(gate.selection));
+ assert.equal(hardDeadlineMs, startedAtMs + gate.totalMs);
+ assert.equal(workDeadlineMs, hardDeadlineMs - 15000);
+ assert(startedAtMs <= Date.now() && Date.now() < workDeadlineMs);
+@@ -93,7 +93,7 @@
+     if (bytes > state.perEventBytesLimit || state.eventBytes + bytes > state.eventBytesLimit) { state.droppedEvents++; state.truncated = true; return; }
+     state.events.push(entry); state.eventBytes += bytes;
+   }
+-  for (const type of ["focusin", "focusout", "keydown", "keyup", "input", "change"]) {
++  for (const type of ["focusin", "focusout", "keydown", "keypress", "keyup", "input", "change"]) {
+     document.addEventListener(type, event => {
+       try {
+         const target = targetOf(event); if (!target) return;
+@@ -132,8 +132,8 @@
+   page = await context.newPage(); checkpoint();
+   await page.addInitScript({ content: selectObserverSource }); checkpoint();
+   page.on('pageerror', error => { if (report.pageErrors.length < 20) report.pageErrors.push(error.message.slice(0, 4096)); });
+-  if (gate.selection === 'diagnostic') {
+-    const result = await scenario.diagnoseMessageSettingsNativeSelect(page, fixture, output, workDeadlineMs); checkpoint();
++  if (gate.selection === 'diagnostic' || gate.selection === 'typeahead') {
++    const result = await scenario.diagnoseMessageSettingsNativeSelect(page, fixture, output, workDeadlineMs, gate.selection === 'typeahead' ? 'typeahead' : 'popup'); checkpoint();
+     report.diagnosticComplete = result.diagnosticComplete; report.diagnosticConclusion = result.conclusion;
+     report.outcome = result.diagnosticComplete ? 'diagnostic-complete' : 'inconclusive';
+     report.limitation = 'Native-control measurement only; zero of the original six acceptance groups executed.';

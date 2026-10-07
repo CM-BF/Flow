@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-07T07:01:16.455688+00:00",
+  "reviewer": "Web co-lead root / gpt-6-astra ultra",
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "74dc93f09425f3d469b5a84f93a1ef8d829f094c48f4b76442cdf492d8b49628",
+  "workerSha256": "53d694ac714103a2f7af73386d6054c528956d9f830642e2e76eb07ef0489cfb",
+  "source": "2e71bea91c188c5f13723dace905fe429d83834b",
+  "head": "63457cab7ee5c2dae0e37735757764aba0a2f121",
+  "preparedBindingSha256": "1298d85326881ee563999fca97047eef740e77e4911ab6969c60d1b7e93d8a74",
+  "preparedManifestSha256": "959b4f05118839f1d983539388677485ad112238e8b775dcb378aebf9dd7d041",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "26064c93d8ee8a63ef2aeb82dd85e6dd26fe4706b81287da5cf5fbafc3116080"
+  },
+  "reviewScope": "Isolated native typeahead C and React fixture UTF-8 correction; exact changed parent/worker accepted, no runtime executed.",
+  "findings": [],
+  "closedFinding": {
+    "id": "C-FIXTURE-CHARSET",
+    "before": "ac44 requires UTF-8 in both arms but React fixture HTML header omitted charset.",
+    "after": "2e71 declares UTF-8 in the owned / HTML response; C assertions retained.",
+    "classification": "Static prevention, not a reproduced runtime failure."
+  },
+  "reviewed": [
+    "Read full ac44 diff and full diagnostic helper; default popup A/B and original six acceptance body unchanged; three other source hashes unchanged.",
+    "Fresh plain select verifies UTF-8/Chinese label/empty/index0/exact three enabled options/focus/connect; one real m key, actual full value/index1 and trusted keypress/input/change required before same modal action.",
+    "Modal preserves current/sent/queued/right pane snapshots, draft text, zero commits, exactly one catalog read; no assignment/synthetic event/alternative-key loop.",
+    "Worker only adds passive keypress observation and C dispatch within current bounded trace/error policy.",
+    "Parent only extends fixed native3 actual carry and diagnostic mode/arm/seal accounting. Plain failure remains inconclusive nonzero; modal contrast after successful plain remains scoped diagnostic, never original feature PASS.",
+    "Read exact parent/worker diffs; flags, lifecycle, owned processes/profile, cleanup, native boundary, resource caps and external actual-exit/EOF requirements unchanged.",
+    "Verified four Git/current sources, all prepared hashes/lengths, original six function623f254 using the same documented source boundaries, exact clean HEAD, and identical aliases/runtime-tsconfig. Initial review helper used wrong comment boundary and failed before artifact write; corrected extraction verified, no feature test was run."
+  ],
+  "historicalBoundary": {
+    "path": "/private/tmp/root-msgquick-native-diagnostic-boundary-review.json",
+    "sha256": "431cfdb15ac29c7b9597f3056eb9b4dddb8c9c8cf4f475448e37bdd67c2b5b6d"
+  },
+  "segmentAuthorization": {
+    "path": "/private/tmp/root-msgquick-continuous-segment-20261007.json",
+    "sha256": "8c78cd0ceef9950289194e8c7a996582afa3afd627299a88f8f864f82c1fe392"
+  },
+  "limits": {
+    "segmentMs": 90000,
+    "spentMs": 23322,
+    "remainingMs": 66678,
+    "maximumSingleRunMs": 45000,
+    "cleanupReserveMs": 15000,
+    "temporaryBytes": 67108864,
+    "retainedBytes": 8388608,
+    "pg": 0,
+    "providerQueries": 0
+  },
+  "requirementsBeforeRun": [
+    "Manager fresh exact claim/HEAD/inputs/outputs/combined resources and one-use gate. This review reserves no window.",
+    "Preserve all three previous actual failures and accounting; C success is scoped keyboard evidence, not popup Arrow proof or six-group PASS.",
+    "Same-boundary routine rebinding remains manager-owned. Changed lifecycle/acceptance needs targeted review."
+  ],
+  "limitations": [
+    "No C noEmit/direct/browser run, PNG or original six-group acceptance.",
+    "Chromium current-source hypothesis does not prove exact154 binary root cause.",
+    "No personal browser/service or provider run; native Chrome lacks custom outer write/egress containment."
+  ],
+  "cleanCode": {
+    "checked": "Arm helper owns preconditions/snapshot/trace; diagnostic separate from six-group acceptance; primary exceptions and bounds retained.",
+    "changes": "Owner corrected one fixture encoding header; no additional source finding."
+  }
+}

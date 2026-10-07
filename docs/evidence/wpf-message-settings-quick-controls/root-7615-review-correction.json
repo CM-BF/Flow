@@ -1,0 +1,29 @@
+{
+  "at": "2026-10-06T22:31:28.045601+00:00",
+  "reviewer": "root",
+  "target": "7615ce4b89e290c42917f91f0a119c14e95e27d8",
+  "result": "REQUEST_CHANGES_SCOPED_TEST_LOCATOR",
+  "supersedesConclusionOnly": {
+    "path": "/tmp/root-message-settings02-7615-r3-review.json",
+    "sha256": "d3bf93c451b0c6bdc471f240adee3e6b1a6ee615e874665b0f9540633c8e9c53",
+    "reason": "Initial source review missed the modal-hidden ancestor in the new draft observation. Original report retained unchanged; pin/scope and paging logic findings remain useful, but its approval is not the final disposition."
+  },
+  "finding": {
+    "id": "MSGQUICK-R3-LOCATOR",
+    "priority": 2,
+    "path": "apps/web/test/message-settings.browser.ts",
+    "line": 214,
+    "problem": "While modal remains open, left locator is getByRole(region, Pane left) with default hidden exclusion. Pinned Radix DialogContentModal applies hideOthers(content), so the background Pane region becomes inaccessible to this role locator before the after20 step. The intended draft-retention assertion can time out before testing the requested paging transition.",
+    "repair": "Keep the dialog open, exact draft value assertion and all surrounding behavior; use the unique page.getByLabel(Draft left, exact:true) for this read-only background observation, or an explicitly hidden-inclusive unique observation locator. Do not close/reopen, remove the assertion or use first/nth to mask ambiguity."
+  },
+  "evidence": {
+    "dialogSource": "m2-integration pinned @radix-ui/react-dialog/dist/index.mjs",
+    "dialogSha256": "e32c21a189358f22749c171f666bddea31ae2ebe5e8c4d6c5c8aedd3916a04d7",
+    "dialogLines": "163–166",
+    "browserScope": "left declaration74; modal open208; draft assertion214; pagination216; after-close assertion230 unaffected"
+  },
+  "runtime": "NOT_RUN",
+  "productSourceChangeRequired": false,
+  "independentPeerReport": "pending final source-pinned report from workspace_panels_owner",
+  "disposition": "Manager fresh-checked same active six scopes at22:30:23.997Z and dispatched original W01; fixed successor required before final packet binding."
+}

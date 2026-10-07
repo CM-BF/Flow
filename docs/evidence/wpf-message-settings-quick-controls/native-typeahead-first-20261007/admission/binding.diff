@@ -1,0 +1,44 @@
+--- before-binding.json
++++ binding.json
+@@ -1,5 +1,5 @@
+ {
+-  "state": "PREPARED",
++  "state": "REVIEWED_SOURCE_BOUND",
+   "task": "WPF-MESSAGESETTINGS02",
+   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+   "branch": "codex/web-message-settings-quick-controls",
+@@ -354,7 +354,10 @@
+   },
+   "entryPinLimits": "Exact public entries/package metadata; transitive package bytes and Chrome framework are not exhaustively hashed. No runtime or peak verification.",
+   "previousEvidenceBytes": 2841341,
+-  "nativeChromeBoundaryApproval": null,
++  "nativeChromeBoundaryApproval": {
++    "path": "/private/tmp/root-msgquick-typeahead-source-boundary-review.json",
++    "sha256": "596044f4436b438253390ea0f3effcb15bada2006bf8214637f3af39a46d531c"
++  },
+   "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+   "typesDirectEvidence": {
+     "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/root-actual-review.json",
+@@ -426,7 +429,10 @@
+     "cumulativeDirectMs": 5119,
+     "remainingDirectMs": 24881
+   },
+-  "sourceReview": null,
++  "sourceReview": {
++    "path": "/private/tmp/root-msgquick-typeahead-source-boundary-review.json",
++    "sha256": "596044f4436b438253390ea0f3effcb15bada2006bf8214637f3af39a46d531c"
++  },
+   "expectedChecks": [
+     "Native Tab/Arrow/Space/Enter filters and explicit Apply commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots",
+     "No invented cross-product or automatic fallback; incompatible facets have a clear exit; pagination, failed refresh and capability loss preserve applied C",
+@@ -448,9 +454,7 @@
+   },
+   "prerequisiteMeaning": "Old fe6 strict/26direct evidence preserved only for unchanged source/acceptance body; diagnostic entry is new NOT_RUN source. Historical b1-b3 corpus is immutable.",
+   "preparationHold": [
+-    "New C diagnostic source/worker/parent awaiting fixed independent review; PREPARED, no gate.",
+-    "Current head/claim/source/all read-only pins/native inputs and combined free/resources require fresh admission.",
+-    "New segment23322 spent/rem66678; one<=45000 including15000cleanup; old30625 closed, no new credit."
++    "Source/nativeexactaccepted root596; no runtime inferred. One freshuniquegate required; originaloutcomes/cleanup/budgets unchanged."
+   ],
+   "outerEvidenceReserveBytes": 2113536,
+   "selection": "typeahead",

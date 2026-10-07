@@ -1,0 +1,114 @@
+{
+  "recordedAt": "2026-10-07T06:14:38.627584+00:00",
+  "decision": "ACCEPTED_FAILED_INCONCLUSIVE_DIAGNOSTIC_ACTUAL_AND_OWNED_CLEANUP_NOT_FEATURE_PASS",
+  "run": "msgquick-native1-20261007-060926-18698b",
+  "sourceTarget": "bdf444f13f2963235ab3f1659546d19fc8f5c203",
+  "executionHead": "1aa73f6dba8f3536b43624659ea8a02529646c03",
+  "actual": {
+    "start": "2026-10-07T06:12:23.658295+00:00",
+    "end": "2026-10-07T06:12:34.859962+00:00",
+    "exit": 1,
+    "wallMs": 11221.448166994378,
+    "parentLateMs": 11182,
+    "chargeMs": 11222,
+    "newSegmentLimitMs": 90000,
+    "newSegmentRemainingMs": 78778,
+    "oldClosedActualMs": 30625
+  },
+  "diagnosis": {
+    "observed": "First plain A arm failed before any keyboard event: exact Chinese combobox accessible-name lookup resolved zero, so no snapshots or trace events. B and the actual modal were not executed. The finally trace-nonempty assertion became top-level failure while the original locator error remains in arms[0].failure.",
+    "classification": "INCONCLUSIVE about original native select interaction. Not a Quick Picker product failure and not evidence of keyboard focus loss.",
+    "sourceCandidate": "The plain HTTP HTML declares no charset, unlike the Vite page; encoding is a source-supported candidate only because the failed run did not record document.characterSet/decoded label. Declaring UTF-8 and retaining primary errors are a normal narrow diagnostic correction, with no changed functional acceptance."
+  },
+  "coverage": {
+    "originalFunctionalGroupsPassed": 0,
+    "originalFunctionalGroupsRequired": 6,
+    "screenshots": 0,
+    "nativeControlCompleted": false,
+    "publicHttpFixtureOnly": true,
+    "postgres": 0,
+    "provider": 0
+  },
+  "cleanup": {
+    "parentAndWorkerAndChromeGroups": [
+      {
+        "pgid": 56904,
+        "state": "ESRCH"
+      },
+      {
+        "pgid": 57021,
+        "state": "ESRCH"
+      },
+      {
+        "pgid": 56911,
+        "state": "ESRCH"
+      }
+    ],
+    "observedAt": "2026-10-07T06:14:38.628076+00:00",
+    "scratchAbsent": true,
+    "fixtureClosed": true,
+    "contextClosed": true,
+    "errors": [],
+    "pipes": "Outer both EOF; owned Chrome stdout/stderr and worker EOF, closed, zero dropped bytes. Chrome received owned SIGTERM and exited0; no SIGKILL recorded."
+  },
+  "resourceObservation": {
+    "sampleCount": 369,
+    "samplePeakScratchBytes": 20295680,
+    "lastRetainedBytes": 3949085,
+    "minFreeBytes": 24425144320,
+    "limits": "Observed samples, not OS quota or memory peak proof."
+  },
+  "reviewerActions": "Read-only raw/seal/source hash and exact owned-process absence checks. No new browser/HTTP/service/provider execution, no project edits.",
+  "bindings": [
+    {
+      "path": "/private/tmp/msgquick-native1-outer-mnw15emr/start.json",
+      "bytes": 336,
+      "sha256": "da8c3f8e0346d65156bfada36b2a3bce5f5170c3d82008c7b114a29c0859dd11"
+    },
+    {
+      "path": "/private/tmp/msgquick-native1-outer-mnw15emr/actual-exit.json",
+      "bytes": 464,
+      "sha256": "6e9dd2200ac20ed2b17149abfffd6ca939b0436a25816aedf63f632ef76e9c1b"
+    },
+    {
+      "path": "/private/tmp/msgquick-native1-outer-mnw15emr/stdout.txt",
+      "bytes": 985,
+      "sha256": "67df7e67ab6bf5dd252f49669762230909bb46845629f6f2fd4252f29767fd6c"
+    },
+    {
+      "path": "/private/tmp/msgquick-native1-outer-mnw15emr/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/msgquick-native1/result.json",
+      "bytes": 73987,
+      "sha256": "92ae2120670ae682665d0161f99e083e26dbf8331a7475f78eabf4878301315e"
+    },
+    {
+      "path": "/private/tmp/msgquick-native1/browser-budget.json",
+      "bytes": 466,
+      "sha256": "5c0befda35f55f7a193a1434404344e869804dd34662cf0e2d1a19467e2db184"
+    },
+    {
+      "path": "/private/tmp/msgquick-native1/runtime-evidence-manifest.json",
+      "bytes": 1773,
+      "sha256": "0df541cce3ca962e8b22d0a3a8c063d43a698d6c9fb038a2d8dfe25034735356"
+    },
+    {
+      "path": "/private/tmp/msgquick-native1/raw/msgquick-native1-20261007-060926-18698b/native-control.json",
+      "bytes": 1005,
+      "sha256": "38507f4e0966a003a528739421b54de5572a48157b499d086fb4738cc1766836"
+    },
+    {
+      "path": "/private/tmp/msgquick-native1/raw/msgquick-native1-20261007-060926-18698b/browser-results.json",
+      "bytes": 2123,
+      "sha256": "18155fcdcae1855c18f7fb175f18c1ef553c142f6f23afab79d2f0d38769a6b5"
+    },
+    {
+      "path": "/private/tmp/msgquick-native1/raw/msgquick-native1-20261007-060926-18698b/owned-chrome.json",
+      "bytes": 2314,
+      "sha256": "54cc3f6a9ebbc3491e50495c2da132a3c556664775eb95e080c3252fef3096d0"
+    }
+  ]
+}

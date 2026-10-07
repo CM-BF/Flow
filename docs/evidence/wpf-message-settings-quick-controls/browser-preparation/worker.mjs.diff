@@ -1,0 +1,44 @@
+--- Settings01-b5-method/worker.mjs
++++ Settings02-prepared/worker.mjs
+@@ -8,12 +8,12 @@
+ 
+ const base = dirname(fileURLToPath(import.meta.url));
+ const hash = bytes => createHash('sha256').update(bytes).digest('hex');
+-const gatePath = process.env.MESSAGE_SETTINGS_BROWSER_GATE;
++const gatePath = process.env.MSGQUICK_BROWSER_GATE;
+ assert.equal(gatePath, join(base, 'child-gate.json'));
+ const gateStat = await lstat(gatePath);
+ assert(gateStat.isFile() && !gateStat.isSymbolicLink() && gateStat.size < 65536);
+ const gate = JSON.parse(await readFile(gatePath, 'utf8'));
+-assert.equal(gate.mode, 'message-settings-browser');
++assert.equal(gate.mode, 'message-settings-quick-browser');
+ assert.equal(gate.allowRun, true); assert.equal(gate.singleUse, true);
+ assert(Date.parse(gate.expiresAt) > Date.now());
+ const { parentPid, startedAtMs, workDeadlineMs, hardDeadlineMs, scratch, output,
+@@ -37,6 +37,8 @@
+ const binding = JSON.parse(await readFile(join(base, 'binding.json'), 'utf8'));
+ assert.equal(hash(await readFile(join(base, 'binding.json'))), gate.bindingSha256);
+ assert.equal(binding.head, gate.sourceHead);
++assert.equal(binding.task, 'WPF-MESSAGESETTINGS02');
++assert.deepEqual(binding.sources, gate.sourceHashes);
+ const report = { sourceHead: gate.sourceHead, sourceHashes: gate.sourceHashes, implementation: binding.implementation,
+   startedAt: new Date(startedAtMs).toISOString(), workerPid: process.pid, parentPid, chromePid,
+   chromeProcessGroup: 'separate-parent-owned-session', chromeCleanupOwner: chromeOwnership, checks: [], pageErrors: [], cleanupErrors: [], outcome: 'failed', pg: 0,
+@@ -75,7 +77,7 @@
+   page.on('pageerror', error => { if (report.pageErrors.length < 20) report.pageErrors.push(error.message.slice(0, 4096)); });
+   const result = await scenario.checkMessageSettingsPicker(page, fixture, output); checkpoint();
+   report.checks = result.checks; report.requests = result.requests; report.limitation = result.limitation;
+-  assert.deepEqual(result.pageErrors, []); assert.deepEqual(report.pageErrors, []); assert.equal(report.checks.length, 4);
++  assert.deepEqual(result.pageErrors, []); assert.deepEqual(report.pageErrors, []); assert.deepEqual(report.checks, binding.expectedChecks); assert.equal(report.checks.length, 6);
+   report.outcome = 'passed';
+ } catch (error) { report.failure = String(error.stack ?? error).slice(0, 16384); report.outcome = 'failed'; }
+ finally {
+@@ -84,7 +86,7 @@
+   // Pinned Playwright CDP close closes its transport; process signalling belongs solely to the parent.
+   await cleanupStep('CDP disconnect', async () => { if (browser) await browser.close(); });
+   await cleanupStep('Fixture close', async () => { if (fixture) { await fixture.close(); report.fixtureClosed = true; } });
+-  if (!report.contextClosed || !report.fixtureClosed || report.cleanupErrors.length || Date.now() >= hardDeadlineMs) report.outcome = 'failed';
++  if (stopped || !report.contextClosed || !report.fixtureClosed || report.cleanupErrors.length || Date.now() >= hardDeadlineMs) report.outcome = 'failed';
+   report.finishedAt = new Date().toISOString(); report.observedElapsedMs = Date.now() - startedAtMs;
+   report.profileCleanupOwner = 'external-parent-after-both-process-groups-absent';
+   await writeFile(join(output, 'browser-results.json'), JSON.stringify(report, null, 2) + '\n');

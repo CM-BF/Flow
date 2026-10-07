@@ -1,0 +1,58 @@
+{
+  "state": "REVIEWED_SOURCE_BOUND_FRESH_ADMISSION_REQUIRED",
+  "at": "2026-10-07T05:57:15.064921+00:00",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "branch": "codex/web-message-settings-quick-controls",
+  "head": "1aa73f6dba8f3536b43624659ea8a02529646c03",
+  "sourceTarget": "bdf444f13f2963235ab3f1659546d19fc8f5c203",
+  "sourceReview": {
+    "path": "/private/tmp/root-msgquick-native-diagnostic-source-review.json",
+    "sha256": "263ec06a322ecd0dca82835680336cdbd8e030289083814616f40088510702e8"
+  },
+  "nativeBasis": {
+    "path": "/private/tmp/root-msgquick-b3-native-preparation-review.json",
+    "sha256": "c41d68ae35568b9dd4bfbc38004b69a39a6a622ae75c6376fb0767f41b91d9da",
+    "meaning": "Accepted unchanged native authority boundary basis; old exact parent/worker hashes are NOT current executable admission. Current independent exact-hash acceptance still required by preserved supervisor."
+  },
+  "nativeChromeBoundaryApproval": {
+    "path": "/private/tmp/root-msgquick-native-diagnostic-boundary-review.json",
+    "sha256": "431cfdb15ac29c7b9597f3056eb9b4dddb8c9c8cf4f475448e37bdd67c2b5b6d"
+  },
+  "runnerSha256": "c15a24d4db38084dfda4f0aa82f20c571901977e78cdbc71740fbf9a10287d63",
+  "workerSha256": "3a521deb334b10748ba220a623cd3be4bee833f3c52953f20d2a4d0aedf5ce49",
+  "bindingSha256": "df7e1e583294dd7520c02e29d428db27d57232235733d09b58aac96a07d5fa85",
+  "command": "python3 /private/tmp/msgquick-native1/supervisor.py --gate <fresh gate>",
+  "nextAdmissionFields": {
+    "mode": "message-settings-quick-browser",
+    "entry": "message-settings-quick",
+    "selection": "diagnostic",
+    "sourceHead": "1aa73f6dba8f3536b43624659ea8a02529646c03",
+    "sourceHashes": {
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+      "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+      "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+      "apps/web/test/message-settings.browser.ts": "3460c012fb690b0eb0cdb0de76f2631cdd8800c01823e200baefb08fccbc00bc"
+    },
+    "previousRuntimeMs": 30625,
+    "previousSegmentRuntimeMs": 0,
+    "totalMs": 45000,
+    "segmentUsageSha256": "ebae39aabbe3f62a22daace8fe9619ebaa753bfbdd52623e11557cb503229148",
+    "claim": {
+      "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+      "version": 1,
+      "scopeCount": 6,
+      "worker": "w01_owner"
+    },
+    "typesDirectEvidence": "use exact binding marker; applies only original unchanged scope"
+  },
+  "unknown": "No actual diagnostic/browser run; fresh admission still required. Earlier performance and SVC08 holds explicitly returned by original operators.",
+  "runtime": {
+    "newSegmentSpentMs": 0,
+    "newSegmentMaxMs": 90000,
+    "oldClosedMs": 30625,
+    "unusedOldMsNotCredited": 29375,
+    "cleanupReserveMs": 15000
+  },
+  "preparedScriptsChanged": false,
+  "gateCreated": false
+}

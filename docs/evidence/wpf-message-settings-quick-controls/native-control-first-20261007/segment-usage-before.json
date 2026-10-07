@@ -1,0 +1,16 @@
+{
+  "id": "MSGQUICK-NATIVE-CONTROL-CLOSEOUT-20261007",
+  "authorization": {
+    "path": "/private/tmp/root-msgquick-continuous-segment-20261007.json",
+    "sha256": "8c78cd0ceef9950289194e8c7a996582afa3afd627299a88f8f864f82c1fe392"
+  },
+  "historyConservativeMs": 30625,
+  "historyEnvelopeMs": 60000,
+  "unusedHistoryMsNotCredited": 29375,
+  "newSegmentLimitMs": 90000,
+  "singleRunLimitMs": 45000,
+  "cleanupReserveMs": 15000,
+  "actualConservativeSpentMs": 0,
+  "runs": [],
+  "accounting": "Append each original parent/late/outer observation; charge ceil(max outer, late, parent). Do not change old raw. No runtime yet."
+}

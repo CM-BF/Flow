@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-06T22:34:02.645251+00:00",
+  "reviewer": "root",
+  "sourceResult": "APPROVED_SCOPED_SOURCE_ONLY",
+  "sourceTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "metadataRead": "bdfaef9da4b7a786d9e7e2bb50b8c507c339a964",
+  "fixedSources": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "a063b597d0c76627accb92f3992e32c3ed3904da28b19d58197ba6ec80f7450e"
+  },
+  "sourceReviewClosure": {
+    "MSGQUICK-R3": "CLOSED_SOURCE_ONLY, meaningful same-HTTP later-selected-profile journey retained",
+    "MSGQUICK-R3-LOCATOR": "CLOSED_SOURCE_ONLY: single exact page.getByLabel observation under still-open modal; value/requests/identity/commit assertions unchanged"
+  },
+  "initialReviewCorrectionRetained": "/tmp/root-message-settings02-7615-r3-review-correction.json",
+  "packetPath": "/private/tmp/msgquick-checks-c1",
+  "packetState": "PREPARED",
+  "manifestSha256": "3f5e3f905c444e67960fbcb456475a3e7d0bb8aaeab6a5d130431aa97383e9ec",
+  "bindingSha256": "cd3f2fb8beee40bb81005118d3863643472637e103d02573251932a554376aa9",
+  "verified": {
+    "preparedFiles": 9,
+    "sourcePins": 4,
+    "ownReadOnlyPins": 116,
+    "externalPins": 58,
+    "nodePins": 1,
+    "protectedGitInputs": 13
+  },
+  "configs": {
+    "typescript": "Explicit strict/noUncheckedIndexedAccess/noEmit, own public source aliases, real installed declarations, seven explicit files; includes four product/check sources and catalog/selection plus Vite CSS declaration.",
+    "direct": "One actual direct test file using real TSX helper; exact JS aliases, automatic JSX, Node CSS false; no mock helper, install or source copy.",
+    "expectedTests": "26 fixed-source literal expanded names; collection/runtime not executed and counts not inherited from Settings01.",
+    "steps": "Sequential strict noEmit then direct, two required exit0, one file/26 exact passed titles, no skip/todo/fail."
+  },
+  "packetDisposition": "PENDING_TERMINAL_STOP_REVIEW; no execution approval",
+  "budgets": "30s inclusive proposed with5s cleanup,8MiB scratch/2MiB raw; fresh external claim/resource/window gate still absent, proposals are not grants.",
+  "notRun": [
+    "syntax/import",
+    "types",
+    "direct",
+    "browser",
+    "fixture",
+    "build",
+    "provider/PG",
+    "process/free sampling"
+  ],
+  "cleanCode": "Fixed one-line locator repair, source boundaries, exact configuration bindings and packet error/cleanup flow reviewed. Terminal soft-stop finding evaluated separately; do not infer runtime validity."
+}

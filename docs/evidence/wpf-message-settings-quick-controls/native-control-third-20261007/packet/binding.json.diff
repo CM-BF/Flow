@@ -1,0 +1,110 @@
+--- native2/binding.json
++++ native3/binding.json
+@@ -1,9 +1,9 @@
+ {
+-  "state": "REVIEWED_SOURCE_BOUND",
++  "state": "PREPARED",
+   "task": "WPF-MESSAGESETTINGS02",
+   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+   "branch": "codex/web-message-settings-quick-controls",
+-  "head": "753ccd993bc4706d597d4d2c4a82fb24c08c9517",
++  "head": "0c88e994c8d17f0431e2e9a7084ae8b91869210e",
+   "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+   "claim": {
+     "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+@@ -15,7 +15,7 @@
+     "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+     "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+     "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+-    "apps/web/test/message-settings.browser.ts": "00d598df0501919e55052c2b82f1202bde091f968a208ad4e74fdff2f5145226"
++    "apps/web/test/message-settings.browser.ts": "c261949f88dd330eddd42ce53957a2808befc1504f455c44ca490b8c987c8d4a"
+   },
+   "readOnlyDependencies": {
+     "tsconfig.json": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+@@ -128,7 +128,7 @@
+     "packages/contracts/src/tasks.ts": "b56612778d17ed8a1cd9383e5ae945547e04941209acc3b41c1e76d6bd792be7",
+     "packages/contracts/src/usage-readout.ts": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5",
+     "packages/contracts/src/workspace.ts": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7",
+-    "apps/web/test/message-settings.browser.ts": "00d598df0501919e55052c2b82f1202bde091f968a208ad4e74fdff2f5145226",
++    "apps/web/test/message-settings.browser.ts": "c261949f88dd330eddd42ce53957a2808befc1504f455c44ca490b8c987c8d4a",
+     "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+     "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+     "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+@@ -333,7 +333,7 @@
+   "chromeVersion": "154.0.8037.99",
+   "playwrightModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+   "fixtureModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.browser.ts",
+-  "previousRuntimeMs": 41847,
++  "previousRuntimeMs": 48074,
+   "limits": {
+     "totalMs": 150000,
+     "cleanupMs": 15000,
+@@ -346,18 +346,15 @@
+     "maximumSingleRunMs": 45000
+   },
+   "preparedFiles": {
+-    "supervisor.py": "fa45cffcbae58d81c5d148a069ca7586de3bde1308f814737a8bdc64ce581766",
++    "supervisor.py": "7d65c238486ae158853b314c4b4bc5ef9099eb6fe6e9ffa68fe59d60451f2679",
+     "worker.mjs": "3a521deb334b10748ba220a623cd3be4bee833f3c52953f20d2a4d0aedf5ce49",
+     "runtime-tsconfig.json": "bc0bd602d32d2a03d122fff259684bee15cfe17a7ea40224cc06c1ffd2a51f18",
+     "aliases.json": "b1e602aa62b5ebff2006e7ad3aefabea5606c9cf0998e14d5afa7aa8ec4110d4",
+-    "prior-evidence.json": "50ea1214f65ffefec5d5e070a22ec7ec739a190ce6751e8a50d088a2b34c89d1"
++    "prior-evidence.json": "429df8fdc96c40c1ed5a996439345af6dc316ca4562865441859819ac464179e"
+   },
+   "entryPinLimits": "Exact public entries/package metadata; transitive package bytes and Chrome framework are not exhaustively hashed. No runtime or peak verification.",
+-  "previousEvidenceBytes": 1934446,
+-  "nativeChromeBoundaryApproval": {
+-    "path": "/private/tmp/root-msgquick-native2-routine-binding-review.json",
+-    "sha256": "78f9d87ed9c9ab9e280539a7dcd1c7a6611a32ce965929bc857b5652f276d835"
+-  },
++  "previousEvidenceBytes": 2369875,
++  "nativeChromeBoundaryApproval": null,
+   "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+   "typesDirectEvidence": {
+     "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/root-actual-review.json",
+@@ -430,8 +427,9 @@
+     "remainingDirectMs": 24881
+   },
+   "sourceReview": {
+-    "path": "/private/tmp/root-msgquick-native-diagnostic-source-review.json",
+-    "sha256": "263ec06a322ecd0dca82835680336cdbd8e030289083814616f40088510702e8"
++    "path": "/private/tmp/root-msgquick-native2-actual-review.json",
++    "sha256": "c8922db98504683d02dfff783672bb9d3d6b8eabe92a0eb087e2f9c6b9e608f1",
++    "scope": "sourceCorrectionReviewed only; actual failure remains failure"
+   },
+   "expectedChecks": [
+     "Native Tab/Arrow/Space/Enter filters and explicit Apply commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots",
+@@ -462,24 +460,24 @@
+   "selection": "diagnostic",
+   "segmentUsage": {
+     "path": "/private/tmp/msgquick-native-segment-20261007.json",
+-    "sha256": "ada42fc7b393e9df98a7dcc88dbbb2afdff93a04c80322256aaa2633a58ddc35"
++    "sha256": "778561c1fca878496187fffe937c583064848104996d3ef167194ee339a3a070"
+   },
+   "segmentAuthorization": {
+     "path": "/private/tmp/root-msgquick-continuous-segment-20261007.json",
+     "sha256": "8c78cd0ceef9950289194e8c7a996582afa3afd627299a88f8f864f82c1fe392"
+   },
+   "originalAcceptanceFunctionSha256": "623f25499be35adde9899840e8714d72bea674f43a82d479587528cf694c05c9",
+-  "segmentMetadataBytes": 4766,
+-  "diagnosticSourceTarget": "521a38395c4b9a38613937c83ce44215afc70280",
++  "segmentMetadataBytes": 5637,
++  "diagnosticSourceTarget": "a9ec5df40470c20f48171eb8d725c6c39f307b55",
+   "nativeChromeBoundaryReuseEvidence": {
+-    "path": "/private/tmp/root-msgquick-native-diagnostic-boundary-review.json",
+-    "sha256": "431cfdb15ac29c7b9597f3056eb9b4dddb8c9c8cf4f475448e37bdd67c2b5b6d",
+-    "meaning": "Same native authority/lifecycle; only prior-run carry changes parent hash. Exact new hash rebind is required before admission."
++    "path": "/private/tmp/root-msgquick-native2-routine-binding-review.json",
++    "sha256": "78f9d87ed9c9ab9e280539a7dcd1c7a6611a32ce965929bc857b5652f276d835",
++    "meaning": "Same native authority/lifecycle; only fixed two-run carry changes parent hash. Exact routine hash rebind required before admission."
+   },
+   "sourceRepair": {
+-    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-control-followup-preparation/source-manifest.json",
+-    "sha256": "98217fc61785a42c59acd5777b59961e048360115afd34bc1218a90f8b337711",
+-    "meaning": "Same authorized continuous segment: UTF-8 declaration, bounded public pre-key diagnostics, preserve first error. Six acceptance group body and other three source files unchanged. Not a new run PASS."
++    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-control-snapshot-preparation/source-manifest.json",
++    "sha256": "a7180b2171aff3975c4d0011067c03b48dbe57c3c25244864e9847544b86b281",
++    "meaning": "Only snapshotSelect becomes a real closure-free browser callback. Keys, fields, caps and six-group acceptance body unchanged; no runtime PASS."
+   },
+   "runtimeProvenance": {
+     "path": "/private/tmp/msgquick-native2/chrome99-provenance.json",

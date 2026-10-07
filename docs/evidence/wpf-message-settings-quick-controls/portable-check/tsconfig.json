@@ -1,0 +1,29 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false,
+    "strict": true,
+    "noUncheckedIndexedAccess": true,
+    "baseUrl": "../../../..",
+    "paths": {
+      "@flow/client": [
+        "packages/client/src/index.ts"
+      ],
+      "@flow/contracts": [
+        "packages/contracts/src/index.ts"
+      ]
+    }
+  },
+  "files": [
+    "../../../../apps/web/src/execution-profiles/catalog.ts",
+    "../../../../apps/web/src/execution-profiles/selection.ts",
+    "../../../../apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "../../../../apps/web/test/message-settings.test.ts",
+    "../../../../apps/web/test/message-settings.fixture.tsx",
+    "../../../../apps/web/test/message-settings.browser.ts",
+    "../../../../apps/web/node_modules/vite/client.d.ts"
+  ],
+  "include": [],
+  "exclude": []
+}

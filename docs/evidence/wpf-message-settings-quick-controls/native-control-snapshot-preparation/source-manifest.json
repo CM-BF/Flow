@@ -1,0 +1,25 @@
+{
+  "kind": "DIAGNOSTIC_REPAIR_NOT_RUN",
+  "target": "a9ec5df40470c20f48171eb8d725c6c39f307b55",
+  "previousDiagnosticTarget": "521a38395c4b9a38613937c83ce44215afc70280",
+  "productTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "at": "2026-10-07 06:35:02 UTC",
+  "scope": [
+    "apps/web/test/message-settings.browser.ts"
+  ],
+  "sources": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "c261949f88dd330eddd42ce53957a2808befc1504f455c44ca490b8c987c8d4a"
+  },
+  "acceptanceBodySha256": "5ceea80e70e7c941675b89ae3b2d046ece890d4b6b0e9895747c96f458051e87",
+  "unchanged": [
+    "Picker",
+    "direct test",
+    "React fixture",
+    "original six check function body"
+  ],
+  "actualNewSegmentMs": 17449,
+  "remainingNewSegmentMs": 72551
+}

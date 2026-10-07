@@ -1,0 +1,166 @@
+{
+  "at": "2026-10-07T07:45:12.066648+00:00",
+  "reviewer": "/root independent, GPT-6 Astra Ultra",
+  "decision": "APPROVED_SCOPED_COMPONENT_AND_FULL_SIX_FIXTURE_ACTUAL_NOT_PRODUCTION_APP",
+  "blockingFindings": [],
+  "sourceTarget": "dde571be8853698f8943f952ddef2c648d2e1294",
+  "productTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "executionHead": "421e9ee51415a9005e836f25a2a3773388e6ef9e",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb"
+  },
+  "scope": "Four exact Quick component/direct/fixture/browser source paths only; original MATURE02/TODO11 production host remains separate. No main integration or deployment approval.",
+  "priorEvidence": {
+    "productSourceReview": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/root-fe6-source-and-packet-review.json",
+    "unchangedProductStrictAndDirect26": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/root-actual-review.json",
+    "newBrowserSourceAndAffectedNoEmit": {
+      "path": "/private/tmp/root-msgquick-unicode-dde-source-review.json",
+      "sha256": "fe4b6116a2222b15c19afbded7efd73a75907f5701d82b42dd24f9898b583d86"
+    }
+  },
+  "actual": {
+    "run": "msgquick-full1-20261007-073908-dbfef9",
+    "outer": "/private/tmp/msgquick-full1-outer-op_ek6i5",
+    "startedAt": "2026-10-07T07:39:23.045263+00:00",
+    "finishedAt": "2026-10-07T07:39:32.913766+00:00",
+    "exitCode": 0,
+    "state": "PASS",
+    "checks": [
+      "Native CDP printable filters, Tab/radio Arrow/Space/Apply Enter commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots",
+      "No invented cross-product or automatic fallback; incompatible facets have a clear exit; pagination, failed refresh and capability loss preserve applied C",
+      "Actual fixture host CAS rejects lagging-props Apply; same-tuple new draft/view invalidates pending choice and omit; unmount preserves host C (production App remains unbound)",
+      "Details close-before-navigation focus, removed-candidate recovery focus, light/dark390,180-character model and reduced-motion keyboard",
+      "Empty/missing selection retained; 40-profile paging still projects only the authorized32 tuples; legacy creation unchanged; new connection has independent controlled drafts",
+      "Already-applied authorized profile21 absent on page1 retains C/A/B/text and blocks Apply; actual after20 HTTP page exposes only exact profile21 tuples; no automatic write and exactly one explicit post-page Apply"
+    ],
+    "pageErrors": [],
+    "pngCount": 2,
+    "HTTPRequests": 13,
+    "runtimeManifestVerified": 7,
+    "archiveVerified": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/archive-manifest.json",
+      "sha256": "60ac0f33b03322de663d049ecea2abf149f3dcfcf69fae9ee886b00831a7d542",
+      "files": 34,
+      "bytes": 538807
+    },
+    "nativeFilters": [
+      {
+        "label": "模型",
+        "key": "m",
+        "trustedRecords": 10,
+        "beforeIndex": 0,
+        "afterIndex": 1,
+        "complete": true
+      },
+      {
+        "label": "思考",
+        "key": "自",
+        "trustedRecords": 10,
+        "beforeIndex": 0,
+        "afterIndex": 1,
+        "complete": true
+      },
+      {
+        "label": "力度",
+        "key": "高",
+        "trustedRecords": 10,
+        "beforeIndex": 0,
+        "afterIndex": 1,
+        "complete": true
+      },
+      {
+        "label": "速度",
+        "key": "标",
+        "trustedRecords": 10,
+        "beforeIndex": 0,
+        "afterIndex": 1,
+        "complete": true
+      }
+    ],
+    "nativeSessionDetached": true,
+    "latePassiveDiagnostic": {
+      "truncated": true,
+      "droppedEvents": 8,
+      "meaning": "Later capped passive diagnostics are not a complete whole-suite trace. First four filters separately assert nontruncation at each step and retain their complete 40 trusted records. Logs are separately EOF/0 dropped bytes."
+    }
+  },
+  "cleanup": {
+    "fixtureClosed": true,
+    "contextClosed": true,
+    "sealed": {
+      "errors": [],
+      "groupAbsent": true,
+      "workerGroupAbsent": true,
+      "chromeGroupAbsent": true,
+      "scratchAbsent": true
+    },
+    "freshProcessAndGroups": {
+      "46747": {
+        "process": "ESRCH",
+        "group": "ESRCH"
+      },
+      "46751": {
+        "process": "ESRCH",
+        "group": "ESRCH"
+      },
+      "46821": {
+        "process": "ESRCH",
+        "group": "ESRCH"
+      }
+    },
+    "scratchAbsent": true,
+    "workerExit": 0,
+    "chromeExit": 0,
+    "logStreams": {
+      "chrome.stdout": {
+        "receivedBytes": 0,
+        "keptBytes": 0,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      },
+      "chrome.stderr": {
+        "receivedBytes": 6753,
+        "keptBytes": 6753,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      },
+      "worker": {
+        "receivedBytes": 1077,
+        "keptBytes": 1077,
+        "droppedBytes": 0,
+        "eof": true,
+        "closed": true
+      }
+    },
+    "pg": 0,
+    "provider": 0
+  },
+  "usage": {
+    "outerMs": 9868.072332930751,
+    "lateTerminalMs": 9828,
+    "parentMs": 9827,
+    "chargedMs": 9869,
+    "priorMs": 37627,
+    "newSegmentSpentMs": 47496,
+    "remainingMs": 42504,
+    "oldClosedMs": 30625,
+    "rawSerializedTiming": "Preserved unchanged; conservative outer charge is authoritative."
+  },
+  "visualReview": {
+    "basis": "Both actual 390x844 PNGs viewed by root; actual fixture source uses reduced-motion and keyboard checks.",
+    "observed": "Both themes render, selected focus remains visible, long model wraps without horizontal clipping. Vertical scrolling is required.",
+    "followupInExistingMATURE01AndMATURE02TODO11": "Compact current model/thinking/speed entry; limit visual height of duplicate long labels with full identity accessible; keep Apply/Cancel easy to find independently of variable catalogue length; reuse existing radius/shadow/material tokens. Capture normal real labels as well as stress labels. Preserve authorized exact tuple, explicit Apply and ownership CAS. Current fixture PASS is retained; not whole App visual approval."
+  },
+  "limits": [
+    "Synthetic HTTP catalogue and independent controlled component; production App/Send/Queue/Recovery consumer unbound.",
+    "Native trusted CDP printable input is not physical keyboard/IME or macOS popup validation.",
+    "Historical failures and original raw evidence remain unchanged.",
+    "No new engineering run performed by this review; no repeated26 run needed because business/direct/fixture sources unchanged."
+  ],
+  "cleanCode": "Reused fixed product source review; reviewed browser-only input semantics, exact retained six groups, owner routine runner carry/seal delta and explicit cleanup. No new blocking source issue. Visual density improvement belongs to the already planned real host integration."
+}

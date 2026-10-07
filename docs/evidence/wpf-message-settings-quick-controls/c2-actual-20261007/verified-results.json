@@ -1,0 +1,125 @@
+{
+  "verifiedAt": "2026-10-07T03:03:31.666351+00:00",
+  "quick": {
+    "outerExit": 0,
+    "terminal": {
+      "type": "terminal-seal",
+      "terminalContract": "msgquick-terminal-v1-external-exit-required",
+      "state": "PASS",
+      "declaredExitCode": 0,
+      "bindingSha256": "9a200ad44280ad679491c812745366de6c1098b8c4b9e8f31569d4c82b1b2ac3",
+      "result": "/private/tmp/msgquick-checks-c2/result.json",
+      "resultSha256": "48a52f2db5bf99927f2309f36a0a9104690929b391b6e4ea7496aa35ab69ee78",
+      "budgetSha256": "6675c1fc6f6dda11028ce2b37bf6903bd182fec73dbe17b36672f88c7c003bfe",
+      "stepResultsSha256": "4d113b3e75d2b407b98f53d1a3d5fd8cc2269a99453b35a3499d64b0ab551061",
+      "cleanup": {
+        "errors": [],
+        "groupAbsent": true,
+        "scratchAbsent": true
+      },
+      "stopping": false,
+      "stopSignal": null,
+      "afterFinalWritesElapsedMs": 3244
+    },
+    "steps": [
+      {
+        "name": "strict-noEmit",
+        "exitCode": 0,
+        "signal": null,
+        "elapsedMs": 1680
+      },
+      {
+        "name": "direct",
+        "exitCode": 0,
+        "signal": null,
+        "elapsedMs": 1365
+      }
+    ],
+    "direct": {
+      "success": true,
+      "numTotalTests": 26,
+      "numPassedTests": 26,
+      "numFailedTests": 0,
+      "numPendingTests": 0,
+      "numTodoTests": 0
+    },
+    "budget": {
+      "complete": true,
+      "state": "PASS",
+      "spentMs": 5119,
+      "limitMs": 30000,
+      "cleanupReserveMs": 5000,
+      "stopSignal": null,
+      "terminalContract": "msgquick-terminal-v1-external-exit-required",
+      "result": "/private/tmp/msgquick-checks-c2/result.json"
+    },
+    "cleanup": {
+      "errors": [],
+      "groupAbsent": true,
+      "scratchAbsent": true
+    }
+  },
+  "recovery": {
+    "outerExit": 0,
+    "terminal": {
+      "state": "PASS",
+      "result": "/private/tmp/recovery-page-evaluate-once-ew6p5zj7/raw/result.json",
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true,
+        "errors": []
+      },
+      "tmpBytes": 109496,
+      "rawBytes": 6255,
+      "stdoutBytesAlreadyWritten": 0,
+      "terminalCaptureReserveBytes": 16384,
+      "elapsedMs": 281.61499998532236,
+      "softStopSignal": null,
+      "rawBytesIncludingTerminalReserve": 22639,
+      "tmpBytesIncludingTerminalReserve": 125880
+    },
+    "outcomes": [
+      {
+        "name": "old-negative",
+        "state": "PASS",
+        "expectedFailure": {
+          "name": "ReferenceError",
+          "message": "__name is not defined",
+          "stack": "old-page-callback.js:1\n(()=>{const holder=window;const original=IDBDatabase.prototype.transaction;Object.defineProperty(IDBDatabase.prototype,\"transaction\",{configurable:true,writable:true,value:__name(function(...args){const transaction=original.apply(this,args);if(this.name===\"flow.conversation-recovery.v1\"&&args[1]===\"readwrite\")queueMicrotask(()=>transaction.abort());return transaction},\"value\")});holder.recoveryFixtureRestoreIdb=()=>{IDBDatabase.prototype.transaction=original;delete holder.recoveryFixtureRestoreIdb}})()\n                                                                                                                                                                            ^\n\nReferenceError: __name is not defined\n    at old-page-callback.js:1:173\n    at old-page-callback.js:1:506\n    at Script.runInContext (node:vm:149:12)\n    at evaluate (file:///private/tmp/recovery-page-evaluate-once-ew6p5zj7/worker.mjs:34:47)\n    at oldNegative (file:///private/tmp/recovery-page-evaluate-once-ew6p5zj7/worker.mjs:60:5)\n    at async file:///private/tmp/recovery-page-evaluate-once-ew6p5zj7/worker.mjs:121:3"
+        },
+        "transformedSha256": "c8178724e0c7134eaab45a86e4845e102dc89f7d33891d1441fbf42d04f6f204",
+        "serializedSha256": "0f4ba09d580020bc2bd00d0f24fd49c3d38501a36be43c07a9df18dd94aefd1e"
+      },
+      {
+        "name": "new-positive",
+        "state": "PASS",
+        "checks": {
+          "wrapperInstalled": true,
+          "receiverPreserved": true,
+          "argumentsPreserved": true,
+          "returnPreserved": true,
+          "onlyTargetReadwriteAborts": true,
+          "abortDeferred": true,
+          "originalErrorPreserved": true,
+          "noGlobalNameHelper": true,
+          "restored": true,
+          "restoredReadwriteUntouched": true
+        },
+        "transformedSha256": "cf3345dc49b20cb27585b2b3a04b8646448676d6566a4f996a67f60fa4e6c340",
+        "serializedSha256": "66c554b804ebe3432362cbf799617a364a045193ca26f60d7fdbfb37ae2cbdde"
+      }
+    ],
+    "cleanup": {
+      "groupAbsent": true,
+      "scratchAbsent": true,
+      "errors": []
+    },
+    "browserBudgetUntouched": true
+  },
+  "d04": {
+    "outerExit": 0,
+    "stdout": "\u2714 five owned trees use a tiny synthetic repository and leave no owned registration or branch (1372.281459ms)\n\u2714 an owned symlink tmp alias and spaces resolve to the same exact registered identity (377.388667ms)\n\u2714 a real post-checkout failure after Git registration is recovered from the creation intent (822.541709ms)\n\u2714 a locked owned tree retains its root and reports failure while later owned trees are removed (758.903417ms)\n\u2714 non-owned worktree, branch and root sentinel survive and block recursive root removal (602.215583ms)\n\u2139 tests 5\n\u2139 suites 0\n\u2139 pass 5\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 3992.898125\n",
+    "ownedTmpAbsent": true,
+    "pgIntegrationTests": "NOT_RUN"
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "createdAt": "2026-10-07T05:08:11.423920+00:00",
+  "decision": "SOURCE_DELTA_AND_FIVE_CHECK_LOCAL_PLAN_ACCEPTED_NATIVE_RUNTIME_NOT_ADMITTED",
+  "packet": "/private/tmp/msgquick-b3",
+  "manifestSha256": "92eb04fd0042011fb3df5cc2a68097e4152cf928749a31b9033b4e27de3c3e91",
+  "parentSha256": "dad6ea555ecdec90b65a677337287980a36369ef2c0567b385c5c34898dfb0b5",
+  "workerSha256": "f099491c90d612cd5dd37d9cd8b90c44537fb93a53c4634c5e48cfe6b91dd461",
+  "accountingCheckSha256": "7afe4bfb6ee1cb8e6e9031ab20958692c6b4cfc21ab7f5eeb8a42a05eed99619",
+  "bindingSha256": "f365e6d706db0fd019bc5c636fb12189119c7efed1b771b9c68e2097651a69b8",
+  "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "metadataHead": "b44fce2889ab2b9622c45fc7a92ce2237e8507bf",
+  "dirty": false,
+  "verified": {
+    "packetFiles": 20,
+    "sources": 4,
+    "ownInputs": 117,
+    "externalEntries": 37,
+    "node": true,
+    "priorFiles": 86,
+    "priorBytes": 1014126,
+    "errors": []
+  },
+  "findings": [
+    "Retained traversal prunes only exact BASE/scratch in all three call sites; removes mutable-scan subtraction.",
+    "Scratch 64MiB and retained 8MiB including seal reserve remain unchanged; logical bytes and allocated blocks remain distinct.",
+    "Both immutable failed actuals and independent cleanup accepted; carry18468/60000 leaves41532 including15000 cleanup.",
+    "Worker f099, six groups and two screenshot names unchanged. b2 has no trace or browser outcome; absent sealed relative path handled explicitly.",
+    "Synthetic check imports actual helper with main guard and disabled bytecode; five bounded checks use only one owned temp and preserve primary/cleanup failures."
+  ],
+  "localAuthorization": {
+    "command": "python3 /private/tmp/msgquick-b3/accounting-check.py",
+    "wallMs": 5000,
+    "syntheticLogicalBytes": 262144,
+    "combinedOutputBytes": 65536,
+    "projectWrites": false,
+    "network": false,
+    "browser": false,
+    "pg": false,
+    "subprocessesOfSubject": 0,
+    "reuseOriginalOwnerRecord": true
+  },
+  "remaining": [
+    "Actual local check exit0 and five PASS with owned tmp absent not yet observed.",
+    "Changed parent requires exact native boundary acceptance and fresh shared resource admission before any Chrome run.",
+    "Static pin review is not a browser or product pass; polling is not a hard quota."
+  ],
+  "skills": "Previously read local find-skills and clean-code; applied explicit ownership, direct reuse, minimal delta, failure preservation; no reinstall."
+}

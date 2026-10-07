@@ -1,0 +1,141 @@
+{
+  "target": "dde571be8853698f8943f952ddef2c648d2e1294",
+  "base": "d7556b616e018ac985519b08a2954b1810029e05",
+  "products": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb"
+  },
+  "onlyChanged": "apps/web/test/message-settings.browser.ts",
+  "browserRuntime": "NOT_RUN",
+  "noEmitScope": "one affected browser entry and imported type dependencies; not original26/direct/product runtime",
+  "priorDiagnostic": "typeahead2 DIAGNOSTIC_COMPLETE/37627newms/52373remaining; does not prove current four-CDP-filter path",
+  "originalDiagnosticUnchanged": true,
+  "other3SourcesSameFe6": true,
+  "sixBehaviorGroups": 6,
+  "originalPostSelectStatementsSame": true,
+  "accurateFirstCheckLabelChanged": true,
+  "oldAcceptanceHashHistorical": "623f25499be35adde9899840e8714d72bea674f43a82d479587528cf694c05c9",
+  "nativeInputBoundary": "CDP browser-native trusted printable key candidate; no physical OS keyboard/IME/nativepopup claim",
+  "runtimeProof": "native-filter-inputs.json <=65536B; four complete records + sessionDetached; original 6 checks/2PNG required by future actual acceptance",
+  "skills": {
+    "find-skills": {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    "clean-code": {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    "webapp-testing": {
+      "path": "/Users/citrine/.agents/skills/webapp-testing/SKILL.md",
+      "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+    },
+    "brainstorming": {
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608"
+    }
+  },
+  "references": [
+    {
+      "source": "https://chromium.googlesource.com/chromium/src/+/refs/tags/154.0.8037.99/third_party/blink/public/devtools_protocol/domains/Input.pdl",
+      "path": "/private/tmp/root-msgquick-unicode-source-20261007/Input.pdl",
+      "bytes": 14431,
+      "sha256": "5bbc6e23eb17a009da540792bd5f647567e9c81f919081059dff5274a1c66e3d"
+    },
+    {
+      "source": "https://chromium.googlesource.com/chromium/src/+/refs/tags/154.0.8037.99/third_party/blink/renderer/core/html/forms/type_ahead.cc",
+      "path": "/private/tmp/root-msgquick-unicode-source-20261007/type_ahead.cc",
+      "bytes": 4734,
+      "sha256": "207ee93d72bfc1f9bafa746c1d3e79c86f9ed56836353126c28430e671262330"
+    },
+    {
+      "source": "https://chromium.googlesource.com/chromium/src/+/refs/tags/154.0.8037.99/content/browser/devtools/protocol/input_handler.cc",
+      "path": "/private/tmp/root-msgquick-unicode-source-20261007/input_handler.cc",
+      "bytes": 89437,
+      "sha256": "adeeca4fd53cd1719e75d5e274b912ee76013e598802da67718553adfa8786f5"
+    },
+    {
+      "version": "1.63.0",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171",
+      "references": [
+        "21339–21349 key description constrained to installed US layout",
+        "21369–21382 type(nonUS) sends insertText",
+        "35793–35825 Chromium keyboard backend uses Input.dispatchKeyEvent keyDown/text then keyUp; insertText is a different command"
+      ]
+    }
+  ],
+  "noEmitEvidence": [
+    {
+      "path": "noemit/actual.json",
+      "original": "/private/tmp/msgquick-unicode-noemit-aohayjza/actual.json",
+      "bytes": 1426,
+      "sha256": "8818ce89c994a3d4c2dcecc62b1f1be548506488193a940f0a1c533c35016d2f"
+    },
+    {
+      "path": "noemit/sandbox.sb",
+      "original": "/private/tmp/msgquick-unicode-noemit-aohayjza/sandbox.sb",
+      "bytes": 171,
+      "sha256": "b17dfbe6daea4c55b16ff79244c3fc8b1443ddcb56da1e796efba1422cc7d55e"
+    },
+    {
+      "path": "noemit/stderr.txt",
+      "original": "/private/tmp/msgquick-unicode-noemit-aohayjza/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "noemit/stdout.txt",
+      "original": "/private/tmp/msgquick-unicode-noemit-aohayjza/stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "noemit/tsconfig.json",
+      "original": "/private/tmp/msgquick-unicode-noemit-aohayjza/tsconfig.json",
+      "bytes": 5047,
+      "sha256": "16d7c9822eb1001efba06817b1f3005687b628f1d71b851ed2f72bebb3eedf5c"
+    }
+  ],
+  "noEmitActual": {
+    "startedAt": "2026-10-07T07:32:35.920509+00:00",
+    "finishedAt": "2026-10-07T07:32:37.195367+00:00",
+    "elapsedMs": 1274.84816708602,
+    "exitCode": 0,
+    "command": [
+      "/usr/bin/sandbox-exec",
+      "-f",
+      "/private/tmp/msgquick-unicode-noemit-aohayjza/sandbox.sb",
+      "/opt/homebrew/opt/node@24/bin/node",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+      "--noEmit",
+      "-p",
+      "/private/tmp/msgquick-unicode-noemit-aohayjza/tsconfig.json"
+    ],
+    "scope": "Only apps/web/test/message-settings.browser.ts strict/noUncheckedIndexedAccess noEmit; no original26 rerun",
+    "pid": 1531,
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "errors": [],
+    "bothEOF": true,
+    "sourceSha256": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb",
+    "node": {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    "compilerSha256": "2cffde0b8c6760dfb0b5b0382bbb7e00ba6a8b2d981b9205b256a700a481d983",
+    "configSha256": "16d7c9822eb1001efba06817b1f3005687b628f1d71b851ed2f72bebb3eedf5c",
+    "stdoutBytes": 0,
+    "stderrBytes": 0,
+    "limits": {
+      "totalMs": 20000,
+      "cleanupMs": 5000,
+      "scratchBytes": 16777216,
+      "retainedBytes": 1048576
+    },
+    "runs": 1
+  }
+}

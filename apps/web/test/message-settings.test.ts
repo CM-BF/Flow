@@ -12,6 +12,9 @@ import {
   readMessageSettingsProfile, sameMessageSettings, type MessageSettingsContext,
 } from "../src/execution-profiles/selection";
 
+import { beginMessageSettingsEdit, commitMessageSettingsChange, type MessageSettingsDraftAuthority, type MessageSettingsDraftOwnership, type MessageSettingsPickerProps } from "../src/execution-profiles/ExecutionProfilePicker";
+import type { Immutable } from "../src/execution-profiles/selection";
+
 const id = (value: number) => `10000000-0000-4000-8000-${String(value).padStart(12, "0")}`;
 const basic: ClaudeTurnSettings["requested"] = { model: "requested-model", thinking: "adaptive", effort: { kind: "level", value: "high" }, speed: "standard" };
 function entry(number = 1) {
@@ -148,4 +151,111 @@ it("does not route message-settings profiles through the unchanged legacy creati
   expect(() => readDirectoryProfile(entry().profile)).toThrow(/Invalid execution profile/);
   const invalid = entry(); invalid.profile.configuration.activeSteering = { protocol: "flow.active-steering.v1" };
   expect(() => readMessageSettingsProfile(invalid)).toThrow();
+});
+
+// The exact opening and synchronous host commit seams used by the rendered Picker/fixture, not a mock restore.
+function controlledHost() {
+  const initial = setup();
+  let authority: MessageSettingsDraftAuthority = { ...initial, ownership: Symbol("draft one"), editable: true };
+  let applied: Immutable<ClaudeTurnSettings> | undefined = initial.value;
+  let writes = 0, callbacks = 0;
+  let rendered: Pick<MessageSettingsPickerProps, "catalog" | "context" | "value" | "draftOwnership" | "editable" | "onChange"> = { ...initial, value: applied, draftOwnership: authority.ownership, editable: true, onChange };
+  function onChange(next: Immutable<ClaudeTurnSettings> | undefined, expected: MessageSettingsDraftOwnership) {
+    callbacks++;
+    return commitMessageSettingsChange(next, expected, () => authority, frozen => { applied = frozen; writes++; });
+  }
+  return {
+    initial, open: () => beginMessageSettingsEdit(() => rendered),
+    authority: (update: Partial<MessageSettingsDraftAuthority>) => { authority = { ...authority, ...update }; },
+    publish: () => { rendered = { catalog: authority.catalog, context: authority.context, value: applied, draftOwnership: authority.ownership, editable: authority.editable, onChange }; },
+    replaceValue: (value: Immutable<ClaudeTurnSettings> | undefined) => { applied = value; },
+    get: () => ({ applied, writes, callbacks, authority }),
+  };
+}
+
+it.each(["apply", "omit"] as const)("host CAS rejects %s from lagging props even when the new draft has the identical tuple", kind => {
+  const host = controlledHost(), edit = host.open(), before = host.get().applied;
+  host.authority({ ownership: Symbol("same tuple, different draft") }); // Deliberately no publish; old React props still look valid.
+  expect(edit.apply(kind === "omit" ? undefined : host.initial.value)).toEqual({ status: "stale" });
+  expect(host.get()).toMatchObject({ writes: 0, callbacks: 1, applied: before });
+});
+
+it("revokes old Apply and omit after an opening closes, even without a new host token", () => {
+  const host = controlledHost(), first = host.open();
+  const oldApply = first.apply;
+  first.close();
+  const second = host.open();
+  expect(oldApply(undefined)).toEqual({ status: "stale" });
+  expect(oldApply(host.initial.value)).toEqual({ status: "stale" });
+  expect(host.get()).toMatchObject({ writes: 0, callbacks: 0 });
+  expect(second.apply(host.initial.value)).toEqual({ status: "applied" });
+  expect(host.get().writes).toBe(1);
+});
+
+it("consumes an opening before a reentrant host callback and allows exactly one synchronous write", () => {
+  const { catalog, context, value } = setup(), ownership = Symbol("draft"); let writes = 0;
+  let edit!: ReturnType<typeof beginMessageSettingsEdit>;
+  edit = beginMessageSettingsEdit(() => ({ catalog, context, value, draftOwnership: ownership, editable: true,
+    onChange(next, expected) {
+      expect(edit.apply(undefined)).toEqual({ status: "stale" });
+      return commitMessageSettingsChange(next, expected, () => ({ ownership, editable: true, catalog, context }), () => { writes++; });
+    },
+  }));
+  expect(edit.apply(value)).toEqual({ status: "applied" });
+  expect(edit.apply(undefined)).toEqual({ status: "stale" }); expect(writes).toBe(1);
+});
+
+it("checks live edit authority for explicit omit, and live capability/full tuple for a defined selection", () => {
+  const omit = controlledHost(); omit.authority({ editable: false });
+  expect(omit.open().apply(undefined)).toEqual({ status: "unavailable" }); expect(omit.get().writes).toBe(0);
+  const defined = controlledHost(); defined.authority({ context: { ...defined.initial.context, capability: null } });
+  expect(defined.open().apply(defined.initial.value)).toEqual({ status: "unavailable" }); expect(defined.get().writes).toBe(0);
+  // Removing a settings request still works on an editable old-center draft; it is not a capability grant.
+  const oldCenter = controlledHost(); oldCenter.authority({ context: { profile: null, capability: null } });
+  expect(oldCenter.open().apply(undefined)).toEqual({ status: "applied" }); expect(oldCenter.get().applied).toBeUndefined();
+});
+
+it("never resurrects an opening after revoke/restore with the same token and same tuple", () => {
+  const host = controlledHost(), edit = host.open();
+  host.authority({ context: { ...host.initial.context, capability: null } }); host.publish(); expect(edit.reconcile()).toBe(false);
+  host.authority({ context: host.initial.context }); host.publish();
+  expect(edit.apply(host.initial.value)).toEqual({ status: "stale" }); expect(host.get().callbacks).toBe(0);
+  expect(host.open().apply(host.initial.value)).toEqual({ status: "applied" });
+});
+
+it("fences an externally changed controlled value, a new view and independent pane tokens", () => {
+  const host = controlledHost(), old = host.open(); host.replaceValue(undefined); host.publish();
+  expect(old.apply(host.initial.value)).toEqual({ status: "stale" }); expect(host.get().writes).toBe(0);
+  const paneA = controlledHost(), paneB = controlledHost(), expected = paneA.get().authority.ownership;
+  expect(commitMessageSettingsChange(paneA.initial.value, expected, () => paneB.get().authority, () => { throw Error("wrong pane write"); })).toEqual({ status: "stale" });
+  const viewEdit = paneA.open(); paneA.authority({ ownership: Symbol("another view") }); paneA.publish();
+  expect(viewEdit.apply(undefined)).toEqual({ status: "stale" });
+});
+
+it("revalidates pages at commit without clearing C or losing a valid candidate on unrelated pagination", () => {
+  const host = controlledHost(), edit = host.open(), before = host.get().applied;
+  host.authority({ catalog: { ...host.initial.catalog, profiles: [...host.initial.catalog.profiles, readMessageSettingsProfile(entry(2))] } }); host.publish();
+  expect(edit.reconcile()).toBe(true); expect(edit.apply(host.initial.value)).toEqual({ status: "applied" });
+  const next = host.open(); host.authority({ catalog: { ...host.initial.catalog, stale: true, error: "offline" } });
+  expect(next.apply(host.initial.value)).toEqual({ status: "unavailable" });
+  expect(host.get().writes).toBe(1); expect(host.get().applied).toEqual(before);
+  expect(Object.isFrozen(host.get().applied?.requested.effort)).toBe(true);
+});
+
+it("reports an ambiguous host throw after a write without claiming the draft is untouched or retrying", () => {
+  const { catalog, context, value } = setup(), ownership = Symbol("draft"); let writes = 0; let applied: Immutable<ClaudeTurnSettings> | undefined;
+  const edit = beginMessageSettingsEdit(() => ({ catalog, context, value, draftOwnership: ownership, editable: true,
+    onChange(next, expected) { return commitMessageSettingsChange(next, expected, () => ({ catalog, context, ownership, editable: true }), frozen => { applied = frozen; writes++; throw Error("subscriber failed after write"); }); },
+  }));
+  expect(edit.apply(value)).toEqual({ status: "unknown" }); expect(applied).toEqual(value);
+  expect(edit.apply(undefined)).toEqual({ status: "stale" }); expect(writes).toBe(1);
+});
+
+it("a retained details callback cannot navigate or revoke a later opening with the same draft token", () => {
+  const host = controlledHost(), old = host.open(); let navigations = 0;
+  const oldNavigation = old.navigate; old.close(); const current = host.open();
+  expect(oldNavigation(() => { navigations++; current.close(); })).toBe(false);
+  expect(navigations).toBe(0); expect(current.isActive()).toBe(true);
+  expect(current.navigate(() => { navigations++; })).toBe(true);
+  expect(current.apply(undefined)).toEqual({ status: "stale" }); expect(host.get().writes).toBe(0); expect(navigations).toBe(1);
 });

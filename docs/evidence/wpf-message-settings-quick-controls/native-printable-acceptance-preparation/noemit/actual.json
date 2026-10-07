@@ -1,0 +1,39 @@
+{
+  "startedAt": "2026-10-07T07:32:35.920509+00:00",
+  "finishedAt": "2026-10-07T07:32:37.195367+00:00",
+  "elapsedMs": 1274.84816708602,
+  "exitCode": 0,
+  "command": [
+    "/usr/bin/sandbox-exec",
+    "-f",
+    "/private/tmp/msgquick-unicode-noemit-aohayjza/sandbox.sb",
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/lib/tsc.js",
+    "--noEmit",
+    "-p",
+    "/private/tmp/msgquick-unicode-noemit-aohayjza/tsconfig.json"
+  ],
+  "scope": "Only apps/web/test/message-settings.browser.ts strict/noUncheckedIndexedAccess noEmit; no original26 rerun",
+  "pid": 1531,
+  "groupAbsent": true,
+  "scratchAbsent": true,
+  "errors": [],
+  "bothEOF": true,
+  "sourceSha256": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb",
+  "node": {
+    "path": "/opt/homebrew/opt/node@24/bin/node",
+    "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "compilerSha256": "2cffde0b8c6760dfb0b5b0382bbb7e00ba6a8b2d981b9205b256a700a481d983",
+  "configSha256": "16d7c9822eb1001efba06817b1f3005687b628f1d71b851ed2f72bebb3eedf5c",
+  "stdoutBytes": 0,
+  "stderrBytes": 0,
+  "limits": {
+    "totalMs": 20000,
+    "cleanupMs": 5000,
+    "scratchBytes": 16777216,
+    "retainedBytes": 1048576
+  },
+  "runs": 1
+}

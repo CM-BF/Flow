@@ -1,0 +1,25 @@
+{
+  "name": "quick",
+  "command": [
+    "python3",
+    "/private/tmp/msgquick-checks-c2/run.py",
+    "--gate",
+    "/private/tmp/web-local-segment-tvp1bssw/quick-gate.json"
+  ],
+  "startedAt": "2026-10-07T03:03:06.486570+00:00",
+  "endedAt": "2026-10-07T03:03:09.802703+00:00",
+  "pid": 36648,
+  "pgid": 36648,
+  "actualExit": 0,
+  "wallMs": 3316.209459095262,
+  "groupAbsent": true,
+  "bothEOF": true,
+  "capturedBytes": {
+    "stdout": 677,
+    "stderr": 0
+  },
+  "droppedBytes": 0,
+  "outerInterrupted": false,
+  "stdoutSha256": "2a2cc693840b774bfd1ceaea4825c828fdfa8121a40d32a6ff45f63453c3f597",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

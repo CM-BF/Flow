@@ -1,0 +1,38 @@
+{
+  "sourceHead": "1aa73f6dba8f3536b43624659ea8a02529646c03",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "3460c012fb690b0eb0cdb0de76f2631cdd8800c01823e200baefb08fccbc00bc"
+  },
+  "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "startedAt": "2026-10-07T06:12:23.693Z",
+  "workerPid": 57021,
+  "parentPid": 56904,
+  "chromePid": 56911,
+  "chromeProcessGroup": "separate-parent-owned-session",
+  "chromeCleanupOwner": "external-parent-native-sibling",
+  "checks": [],
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "outcome": "failed",
+  "pg": 0,
+  "selection": "diagnostic",
+  "diagnosticComplete": false,
+  "budgetOwner": "external-parent",
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cdpConnectedAt": "2026-10-07T06:12:29.252Z",
+  "failure": "AssertionError [ERR_ASSERTION]: The expression evaluated to a falsy value:\n\n  assert(trace.events.length > 0 && trace.events.length <= 96 && trace.eventBytes <= 49152)\n\n    at arm (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.browser.ts:283:7)\n    at async Module.diagnoseMessageSettingsNativeSelect (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.browser.ts:295:5)\n    at async <anonymous> (/private/tmp/msgquick-native1/worker.mjs:136:20)",
+  "selectDiagnostics": {
+    "path": "select-diagnostics.json",
+    "bytes": 216,
+    "sha256": "b14004daaed818dd396b02d0f798d835e5b3c8f300fe4028dda6a5b889cb18db",
+    "state": "INSTALLED",
+    "truncated": false
+  },
+  "finishedAt": "2026-10-07T06:12:34.419Z",
+  "observedElapsedMs": 10726,
+  "profileCleanupOwner": "external-parent-after-both-process-groups-absent"
+}

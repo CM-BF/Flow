@@ -1,0 +1,25 @@
+{
+  "state": "FAILED_AFTER_NATIVE_SELECTION",
+  "chrome": "154.0.8037.99",
+  "sourceTarget": "2e71bea91c188c5f13723dace905fe429d83834b",
+  "runHead": "63457cab7ee5c2dae0e37735757764aba0a2f121",
+  "actualExit": 1,
+  "outerWallMs": 11754.596166079864,
+  "lateTerminalMs": 11712,
+  "parentElapsedMs": 11709,
+  "conservativeChargeMs": 11755,
+  "newSegmentSpentMs": 35077,
+  "newSegmentRemainingMs": 54923,
+  "oldClosedMs": 30625,
+  "oldUnusedCredit": 0,
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "workerGroupAbsent": true,
+    "chromeGroupAbsent": true,
+    "scratchAbsent": true
+  },
+  "nativeObservation": "Plain C and actual modal C both select exact longmodel/index1 after one m and trusted keypress/input/change; 12 events each. No arrow/popup causation inference.",
+  "failure": "Preserved left-current baseline innerText empty from closed details; toHaveText default DOM text later reads omitted. Original exception retained; remaining draft/commits/catalog assertions not reached, so whole diagnostic stays FAILED/INCONCLUSIVE; six groups0/PNG0.",
+  "sourceCorrection": "d7556b616e018ac985519b08a2954b1810029e05"
+}

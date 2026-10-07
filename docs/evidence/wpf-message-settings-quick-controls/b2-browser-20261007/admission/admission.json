@@ -1,0 +1,58 @@
+{
+  "at": "2026-10-07T04:47:44.924219+00:00",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/test/message-settings.browser.ts",
+      "apps/web/test/message-settings.fixture.tsx",
+      "apps/web/test/message-settings.test.ts",
+      "docs/evidence/wpf-message-settings-quick-controls",
+      "plans/wpf-message-settings-quick-controls"
+    ],
+    "state": "active",
+    "branch": "codex/web-message-settings-quick-controls",
+    "origin": "new",
+    "taskId": "WPF-MESSAGESETTINGS02",
+    "worker": "w01_owner",
+    "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+    "createdAt": "2026-10-06T22:00:19.358Z",
+    "updatedAt": "2026-10-06T22:00:19.358Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "overlaps": [],
+  "head": "3a4dd6dee89a3ea456f31870dd0a126a6efad1c5",
+  "branch": "codex/web-message-settings-quick-controls",
+  "clean": true,
+  "bindingSha256": "790668eca675eaa43cf0d4a43d761e28413270ce52e2c572e13525d1c4c7d1e4",
+  "manifestSha256": "8c1ecf8a5f265721a4c0b1d89cb8feeba85c0b9ef3858f165f4f3ca3accff537",
+  "ownReadonlyCount": 117,
+  "externalCount": 37,
+  "preparedCount": 5,
+  "priorFiles": 41,
+  "priorBytes": 452930,
+  "node": {
+    "path": "/opt/homebrew/opt/node@24/bin/node",
+    "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+  },
+  "availableBytes": 25625055232,
+  "minimumStartBytes": 4053008384,
+  "resourceMeaning": "Single fresh shared-volume observation; not attributable to one team. X01 local CLOSED 04:46:14.713357Z and PG NOT_OPEN per root latest handback; C02 potential local budget conservatively retained18,087,936B, not asserted running. ENG01I prepare/no reservation per root; own dedicated0PG fixture/profile.",
+  "knownConcurrentBudgets": {
+    "conservativeD06ReferenceFloor": 1350565888,
+    "formerSvc06Conservative": 2684354560,
+    "c02PotentialLocalReserve": 18087936
+  },
+  "previousRuntimeMs": 12326,
+  "remainingMs": 47674,
+  "cleanupMs": 15000,
+  "gateCreated": true,
+  "gate": "/private/tmp/msgquick-b2-admission-rijzrvzi/gate.json",
+  "gateSha256": "67ff1346dc6814d297bab1dc07f0d9729deb1ff22c095b12e9a7e3876ad1d1ba"
+}

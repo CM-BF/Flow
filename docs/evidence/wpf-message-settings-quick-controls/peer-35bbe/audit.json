@@ -1,0 +1,149 @@
+{
+  "kind": "READ_ONLY_FIXED_SOURCE_REVIEW_NOT_RUNTIME",
+  "target": "35bbe76faa2128d5c1d00711fb2be3b23d54fc4f",
+  "metadata": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+  "base": "c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "observedHead": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+  "branch": "codex/web-message-settings-quick-controls",
+  "dirty": "",
+  "sources": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+      "bytes": 25804,
+      "manifestMatch": true,
+      "metadataBlobEqual": true
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "sha256": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+      "bytes": 20068,
+      "manifestMatch": true,
+      "metadataBlobEqual": true
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "sha256": "844d10633bdc173f46d1f1bad1d4c1b76a673639747131f6d5541265453b34c5",
+      "bytes": 8993,
+      "manifestMatch": true,
+      "metadataBlobEqual": true
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "sha256": "4fb957f17eaad48a26a1ab81ce1119e793c1d958da9ebadea29c853a392551b2",
+      "bytes": 18843,
+      "manifestMatch": true,
+      "metadataBlobEqual": true
+    }
+  ],
+  "support": [
+    {
+      "path": "AGENTS.md",
+      "revision": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+      "sha256": "42137bac40ba6362c2355e5d707de9e3cf3cdd79435f845b786ee68574e9b0fa",
+      "bytes": 17226
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "revision": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+      "sha256": "16abf33b17b51191c49b4c4b6703c3ea59df132676cacda85184a55a8dabb77c",
+      "bytes": 15077
+    },
+    {
+      "path": "plans/wpf-message-settings-quick-controls/plan.md",
+      "revision": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+      "sha256": "03aa8d9c47a5e4605d1204234c02365922fb4c14f92c1a5fcd9d2bcf1a8bd4a8",
+      "bytes": 3000
+    },
+    {
+      "path": "plans/wpf-message-settings-quick-controls/status.md",
+      "revision": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+      "sha256": "4c73d6d0d8c4bbb9e7ccbefbfe66f78b193cbbce700b00ce52518d201d7ba96a",
+      "bytes": 2769
+    },
+    {
+      "path": "plans/wpf-message-settings-quick-controls/review.md",
+      "revision": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+      "sha256": "12498c468af6cf6a4f9e70e4da40d3409a8ed373e955774cb3f064372db88f71",
+      "bytes": 1550
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-quick-controls/source-manifest.json",
+      "revision": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+      "sha256": "393bc50caba68b476df77d9c60b61e63b25c1b8b9540120b287f7debeab30a42",
+      "bytes": 3659
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-quick-controls/interface.md",
+      "revision": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+      "sha256": "b21e7287c6346cce2d76251640c66b661c4618df1168c3b9ace7e9afb5d2b433",
+      "bytes": 2453
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-quick-controls/quality.md",
+      "revision": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+      "sha256": "a0ddab486712ec968b595043d7c47b7db3b2e26a8101d50a9b23fffcb39dd436",
+      "bytes": 2360
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-quick-controls/early-root-source-review.json",
+      "revision": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+      "sha256": "e0ce3cce9e81bfb6e1eebb52c2e47e5400dd56828d6ea81f9ac08a8bafba46b4",
+      "bytes": 3324
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-quick-controls/validation-proposal.md",
+      "revision": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+      "sha256": "519e13e2f0a259dc570fd4fe929c617ccd5d0aeed29779d251bdc318b5dc3e86",
+      "bytes": 2447
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "revision": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+      "sha256": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+      "bytes": 2885
+    },
+    {
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "revision": "e1cfb3ed932064121bc2410497594972ddabe6a2",
+      "sha256": "5858040deb7446700c0f4d791fa80507fd7c543c3a91f8634410815726634ec0",
+      "bytes": 3853
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/message-settings-quick-controls-provision/request.json",
+      "source": "accepted provision input read-only",
+      "sha256": "0a32465c60de45a64e181938c68acf995856d9624040c6558356cfb67d0d26a1",
+      "bytes": 3423
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/assistant-ui/SKILL.md",
+      "sha256": "20bd24ab58c8d281b329e1df34655c8a6dc0cd56d8a087aff252b37025c6937c"
+    }
+  ],
+  "findings": [
+    {
+      "id": "MSGQUICK-COVERAGE-LATER-PROFILE",
+      "category": "acceptance-source gap, no established product defect",
+      "target": "35bbe76faa2128d5c1d00711fb2be3b23d54fc4f",
+      "locations": {
+        "fixture": "14,81",
+        "browser": "49-55,127-128,180-183",
+        "direct": "34-39,141-147,235-242"
+      },
+      "summary": "Authorized profile is always first-page id1; no initial-absence to later-page availability transition is exercised.",
+      "runtime": "NOT_RUN"
+    }
+  ],
+  "runtime": "NOT_RUN"
+}

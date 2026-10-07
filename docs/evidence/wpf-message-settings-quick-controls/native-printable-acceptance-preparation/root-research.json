@@ -1,0 +1,102 @@
+{
+  "at": "2026-10-07T07:28:38.909767+00:00",
+  "researcher": "root / gpt-6-astra ultra",
+  "task": "WPF-MESSAGE-SETTINGS-QUICK-CONTROLS original six acceptance follow-up; no new task",
+  "state": "READ_ONLY_SOURCE_RESEARCH_NOT_UNICODE_RUNTIME_PROOF",
+  "source": "d7556b616e018ac985519b08a2954b1810029e05",
+  "files": [
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "sha256": "5dfb587b2e76d835763c14ddad387e9abd2aadc3f4ceabdf56e76facf5f6de6a"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb"
+    }
+  ],
+  "primarySources": [
+    {
+      "source": "https://chromium.googlesource.com/chromium/src/+/refs/tags/154.0.8037.99/third_party/blink/public/devtools_protocol/domains/Input.pdl",
+      "path": "/private/tmp/root-msgquick-unicode-source-20261007/Input.pdl",
+      "bytes": 14431,
+      "sha256": "5bbc6e23eb17a009da540792bd5f647567e9c81f919081059dff5274a1c66e3d"
+    },
+    {
+      "source": "https://chromium.googlesource.com/chromium/src/+/refs/tags/154.0.8037.99/third_party/blink/renderer/core/html/forms/type_ahead.cc",
+      "path": "/private/tmp/root-msgquick-unicode-source-20261007/type_ahead.cc",
+      "bytes": 4734,
+      "sha256": "207ee93d72bfc1f9bafa746c1d3e79c86f9ed56836353126c28430e671262330"
+    },
+    {
+      "source": "https://chromium.googlesource.com/chromium/src/+/refs/tags/154.0.8037.99/content/browser/devtools/protocol/input_handler.cc",
+      "path": "/private/tmp/root-msgquick-unicode-source-20261007/input_handler.cc",
+      "bytes": 89437,
+      "sha256": "adeeca4fd53cd1719e75d5e274b912ee76013e598802da67718553adfa8786f5"
+    }
+  ],
+  "installedPlaywright": {
+    "version": "1.63.0",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+    "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171",
+    "references": [
+      "21339–21349 key description constrained to installed US layout",
+      "21369–21382 type(nonUS) sends insertText",
+      "35793–35825 Chromium keyboard backend uses Input.dispatchKeyEvent keyDown/text then keyUp; insertText is a different command"
+    ]
+  },
+  "officialDocumentation": [
+    {
+      "url": "https://playwright.dev/docs/api/class-keyboard",
+      "observation": "insertText/non-US type does not emit keypress; native select typeahead depends on keypress, so generic keyboard.type Chinese is not equivalent."
+    },
+    {
+      "url": "https://chromedevtools.github.io/devtools-protocol/tot/Input/",
+      "observation": "Viewer text limited; exact Chromium tag PDL obtained independently and used as the authoritative protocol declaration."
+    }
+  ],
+  "findings": [
+    {
+      "scope": "Existing native popup path",
+      "basis": "Exact154 MenuListSelectType returns before Home/End/nonpopup keydown handling on Mac; Arrow popup calls native headless bridge that returns nullopt. Do not loop other arrow/Home/End sequences or change product/platform flags solely for tests. Existing actual failures remain."
+    },
+    {
+      "scope": "Unicode key input candidate",
+      "basis": "Exact154 Input PDL97–124 accepts keyDown/keyUp/rawKeyDown/char with text/unmodifiedText/key. InputHandler142–159 converts UTF8 to UTF16;1186–1286 constructs NativeWebKeyboardEvent then injects into focused RenderWidgetHost. TypeAhead59–63 accepts printable keypress and HTMLSelectElement1474–1497 selects matching label and dispatches native input/change. This supports a narrowly scoped CDP keyDown(text=character,key=character), keyUp candidate, not proof it works in current Chrome."
+    },
+    {
+      "scope": "No fake physical keyboard or IME claim",
+      "basis": "CDP automation is browser input used by Playwright, not page-created KeyboardEvent or select value assignment; it still does not test real macOS IME/native OS popup."
+    }
+  ],
+  "recommendedSourceChange": {
+    "goal": "Keep full six behavioral acceptance assertions and real Tab/radio Arrow/Space/Apply Enter while adapting the four closed-select filters to native text typeahead supported in headless Mac. Preserve original popup diagnostic raw and state limitation explicitly.",
+    "candidateKeys": {
+      "model": "m",
+      "thinking": "自",
+      "effort": "高",
+      "speed": "标"
+    },
+    "preconditions": [
+      "Unique focused enabled connected native select",
+      "Exact currently authorized option/value and UTF8 label",
+      "One specified character with no alternative-key or selectOption fallback",
+      "For each filter record trusted nonprevented matching keypress then trusted input/change, exact expected full value and selectedIndex",
+      "No mutation of product options/labels, no DOM-dispatched keyboard/input events, no synthetic value assignment",
+      "All original Apply/C/A/B/other-pane/draft/network/CAS/refresh/390/theme/limit/pagination assertions retained"
+    ],
+    "boundaries": [
+      "Source change to input semantics gets one focused review before first full run. Same runtime ownership/cleanup unchanged.",
+      "Reusable finite segment and single structured record; original owner fixes routine test issues and relevant retests autonomously without each short gate.",
+      "0PG, original dedicated Chrome, no personal browser/provider/install or performance claim.",
+      "If Unicode path is inconclusive stop that acceptance subpart honestly; do not relabel original original popup as passed."
+    ]
+  },
+  "cleanCode": {
+    "at": "2026-10-07T07:28:38.950256+00:00",
+    "scope": "Read-only test architecture review",
+    "finding": "Avoid building another supervisor or changing UI solely to unblock automation. Keep native input helper small and explicit, preserve existing six behavior checks, retain bounded trace and proper CDP-session close.",
+    "unresolved": "Candidate not yet implemented or executed; exact source review and trusted event evidence still required."
+  },
+  "projectEdits": 0,
+  "browserRuns": 0
+}

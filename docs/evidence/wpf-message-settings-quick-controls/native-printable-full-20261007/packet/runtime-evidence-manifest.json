@@ -1,0 +1,55 @@
+{
+  "files": [
+    {
+      "path": "/private/tmp/msgquick-full1/raw/msgquick-full1-20261007-073908-dbfef9/browser-results.json",
+      "bytes": 3574,
+      "sha256": "03a730b18ca2fadb310f290503b8ac01b757573cd1da32ad0a02333577b05636"
+    },
+    {
+      "path": "/private/tmp/msgquick-full1/raw/msgquick-full1-20261007-073908-dbfef9/owned-chrome.json",
+      "bytes": 2302,
+      "sha256": "f91cc172ac96d6d2804e042bd338f9a7b2059bd0aa3db6871ffdd974fb2ed244"
+    },
+    {
+      "path": "/private/tmp/msgquick-full1/raw/msgquick-full1-20261007-073908-dbfef9/chrome.log",
+      "bytes": 6753,
+      "sha256": "2babeb4bb934003462f16e165e4a6d548813fa6a193828b195317d6ecd5816b0"
+    },
+    {
+      "path": "/private/tmp/msgquick-full1/raw/msgquick-full1-20261007-073908-dbfef9/select-diagnostics.json",
+      "bytes": 49219,
+      "sha256": "0ac7782e8012747aa4455a265434e0a731c5b12fddcc380cc228c1829331a45b"
+    },
+    {
+      "path": "/private/tmp/msgquick-full1/raw/msgquick-full1-20261007-073908-dbfef9/native-filter-inputs.json",
+      "bytes": 32490,
+      "sha256": "3c395278ecec96d100e06f7f99338d716fc01e4981eaed54c71ac96e3ec99014"
+    },
+    {
+      "path": "/private/tmp/msgquick-full1/raw/msgquick-full1-20261007-073908-dbfef9/message-settings-light-390.png",
+      "bytes": 60878,
+      "sha256": "937342334ef1640ee3e687033d56cb968fa0f7717986dd2fa815e75499e9cb68"
+    },
+    {
+      "path": "/private/tmp/msgquick-full1/raw/msgquick-full1-20261007-073908-dbfef9/message-settings-dark-390.png",
+      "bytes": 62085,
+      "sha256": "010e55c3a2b8fe2763f09ef40572cc7c3d0e27062ceef5310fe014682be26f65"
+    }
+  ],
+  "selection": "full",
+  "expectedChecks": [
+    "Native CDP printable filters, Tab/radio Arrow/Space/Apply Enter commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots",
+    "No invented cross-product or automatic fallback; incompatible facets have a clear exit; pagination, failed refresh and capability loss preserve applied C",
+    "Actual fixture host CAS rejects lagging-props Apply; same-tuple new draft/view invalidates pending choice and omit; unmount preserves host C (production App remains unbound)",
+    "Details close-before-navigation focus, removed-candidate recovery focus, light/dark390,180-character model and reduced-motion keyboard",
+    "Empty/missing selection retained; 40-profile paging still projects only the authorized32 tuples; legacy creation unchanged; new connection has independent controlled drafts",
+    "Already-applied authorized profile21 absent on page1 retains C/A/B/text and blocks Apply; actual after20 HTTP page exposes only exact profile21 tuples; no automatic write and exactly one explicit post-page Apply"
+  ],
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb"
+  },
+  "sourceHead": "421e9ee51415a9005e836f25a2a3773388e6ef9e"
+}

@@ -1,0 +1,121 @@
+{
+  "state": "PREPARED",
+  "sourceTarget": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "metadataHead": "b44fce2889ab2b9622c45fc7a92ce2237e8507bf",
+  "files": {
+    "README.md": {
+      "bytes": 565,
+      "sha256": "462c155a0339703782a3cbb43541a2728138fe315c2f0401c19a7cb37a1057f7"
+    },
+    "accounting-check.py": {
+      "bytes": 4410,
+      "sha256": "7afe4bfb6ee1cb8e6e9031ab20958692c6b4cfc21ab7f5eeb8a42a05eed99619"
+    },
+    "aliases.json": {
+      "bytes": 3483,
+      "sha256": "b1e602aa62b5ebff2006e7ad3aefabea5606c9cf0998e14d5afa7aa8ec4110d4"
+    },
+    "aliases.json.b2-original": {
+      "bytes": 3483,
+      "sha256": "b1e602aa62b5ebff2006e7ad3aefabea5606c9cf0998e14d5afa7aa8ec4110d4"
+    },
+    "binding.json": {
+      "bytes": 41256,
+      "sha256": "f365e6d706db0fd019bc5c636fb12189119c7efed1b771b9c68e2097651a69b8"
+    },
+    "binding.json.b2-original": {
+      "bytes": 41393,
+      "sha256": "790668eca675eaa43cf0d4a43d761e28413270ce52e2c572e13525d1c4c7d1e4"
+    },
+    "binding.json.diff": {
+      "bytes": 4378,
+      "sha256": "fc5e290973bca69f0ad1489e2ee4946d3df974970d437dfa58cec9139bee0bdd"
+    },
+    "manifest.json.b2-original": {
+      "bytes": 4591,
+      "sha256": "8c1ecf8a5f265721a4c0b1d89cb8feeba85c0b9ef3858f165f4f3ca3accff537"
+    },
+    "prior-evidence.json": {
+      "bytes": 19381,
+      "sha256": "e6570a509fd19c6254c290236f5623ba8e726a148d896c438629132e23742fa6"
+    },
+    "prior-evidence.json.b2-original": {
+      "bytes": 8371,
+      "sha256": "1c6524c07772c688b7a14dc2d0a3a0b1d8fd768742864ebd9e9e44d03c53335b"
+    },
+    "prior-evidence.json.diff": {
+      "bytes": 13330,
+      "sha256": "44d6830818efffbfb92ba27e8c2d8fe88142c1add0cfb22210a468d97e97d811"
+    },
+    "report.md": {
+      "bytes": 5330,
+      "sha256": "3d712368771b1ad6989bafb28669a3dbff59d13c5f7e0ca083d1e15760fae468"
+    },
+    "runtime-tsconfig.json": {
+      "bytes": 1620,
+      "sha256": "bc0bd602d32d2a03d122fff259684bee15cfe17a7ea40224cc06c1ffd2a51f18"
+    },
+    "runtime-tsconfig.json.b2-original": {
+      "bytes": 1620,
+      "sha256": "bc0bd602d32d2a03d122fff259684bee15cfe17a7ea40224cc06c1ffd2a51f18"
+    },
+    "source-audit.json": {
+      "bytes": 2098,
+      "sha256": "55791c4139d8a5aeb18504d0960deadd9187dd57caf101d58b39015e6587a55f"
+    },
+    "supervisor.py": {
+      "bytes": 31412,
+      "sha256": "dad6ea555ecdec90b65a677337287980a36369ef2c0567b385c5c34898dfb0b5"
+    },
+    "supervisor.py.b2-original": {
+      "bytes": 29976,
+      "sha256": "8f3745b15926cf8eb841be558a20c173dfc2534d4e02662808c9edb5c631ff4c"
+    },
+    "supervisor.py.diff": {
+      "bytes": 10055,
+      "sha256": "8c095a23fd5293319211df3fbdb5ba878d521e1a9f338cfd35d5452266f0b06f"
+    },
+    "worker.mjs": {
+      "bytes": 12556,
+      "sha256": "f099491c90d612cd5dd37d9cd8b90c44537fb93a53c4634c5e48cfe6b91dd461"
+    },
+    "worker.mjs.b2-original": {
+      "bytes": 12556,
+      "sha256": "f099491c90d612cd5dd37d9cd8b90c44537fb93a53c4634c5e48cfe6b91dd461"
+    }
+  },
+  "priorFiles": 86,
+  "priorBytes": 1014126,
+  "previousRuntimeMs": 18468,
+  "remainingMs": 41532,
+  "workMs": 26532,
+  "cleanupMs": 15000,
+  "limits": {
+    "totalMs": 60000,
+    "cleanupMs": 15000,
+    "temporaryBytes": 67108864,
+    "retainedBytes": 8388608,
+    "logBytes": 1048576,
+    "startFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688
+  },
+  "outerEvidenceReserveBytes": 2113536,
+  "nativeChromeBoundaryApproval": null,
+  "gate": null,
+  "runtime": "NOT_RUN",
+  "synthetic": "SOURCE_ONLY_NOT_RUN",
+  "readOnlyOwnCount": 117,
+  "externalEntryCount": 37,
+  "expectedChecks": [
+    "Native Tab/Arrow/Space/Enter filters and explicit Apply commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots",
+    "No invented cross-product or automatic fallback; incompatible facets have a clear exit; pagination, failed refresh and capability loss preserve applied C",
+    "Actual fixture host CAS rejects lagging-props Apply; same-tuple new draft/view invalidates pending choice and omit; unmount preserves host C (production App remains unbound)",
+    "Details close-before-navigation focus, removed-candidate recovery focus, light/dark390,180-character model and reduced-motion keyboard",
+    "Empty/missing selection retained; 40-profile paging still projects only the authorized32 tuples; legacy creation unchanged; new connection has independent controlled drafts",
+    "Already-applied authorized profile21 absent on page1 retains C/A/B/text and blocks Apply; actual after20 HTTP page exposes only exact profile21 tuples; no automatic write and exactly one explicit post-page Apply"
+  ],
+  "expectedScreenshots": [
+    "message-settings-light-390.png",
+    "message-settings-dark-390.png"
+  ]
+}

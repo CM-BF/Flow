@@ -1,0 +1,33 @@
+--- before/binding.json
++++ binding.json
+@@ -1,5 +1,5 @@
+ {
+-  "state": "PREPARED",
++  "state": "REVIEWED_SOURCE_BOUND",
+   "task": "WPF-MESSAGESETTINGS02",
+   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+   "branch": "codex/web-message-settings-quick-controls",
+@@ -354,7 +354,10 @@
+   },
+   "entryPinLimits": "Exact public entries/package metadata; transitive package bytes and Chrome framework are not exhaustively hashed. No runtime or peak verification.",
+   "previousEvidenceBytes": 1466235,
+-  "nativeChromeBoundaryApproval": null,
++  "nativeChromeBoundaryApproval": {
++    "path": "/private/tmp/root-msgquick-native-diagnostic-boundary-review.json",
++    "sha256": "431cfdb15ac29c7b9597f3056eb9b4dddb8c9c8cf4f475448e37bdd67c2b5b6d"
++  },
+   "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+   "typesDirectEvidence": {
+     "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/root-actual-review.json",
+@@ -451,9 +454,8 @@
+   },
+   "prerequisiteMeaning": "Old fe6 strict/26direct evidence preserved only for unchanged source/acceptance body; diagnostic entry is new NOT_RUN source. Historical b1-b3 corpus is immutable.",
+   "preparationHold": [
+-    "Source/parent/worker delta approved; exact current native runner/worker acceptance record and fresh resource/window gate still required",
+-    "Mika performance window pending actual return; no Chrome/Node checks or resource sampling",
+-    "New segment remains0/90000ms; max45000ms per run incl15000cleanup; historical unused29375 not credited"
++    "Fresh exactclaim/head/source/deps/output/resource and one-use gate required; source/native reviews accepted.",
++    "Firstdiagnostic45000incl15000cleanup within new90000actual; historical30625closed not credited."
+   ],
+   "outerEvidenceReserveBytes": 2113536,
+   "selection": "diagnostic",

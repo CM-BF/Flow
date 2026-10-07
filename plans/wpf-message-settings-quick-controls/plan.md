@@ -1,0 +1,121 @@
+# WPF-MESSAGESETTINGS02 · 下一条消息快速设置
+
+状态：in-progress。创建/更新：2026-10-06 22:03:41 UTC。唯一 owner：w01_owner / gpt-6-astra；co-lead：Web /root。直接父任务：[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) / TODO-11。
+
+## 目标与已批准范围
+
+在现有受控 Picker 内提供模型、思考、力度、速度筛选及紧凑摘要；只有当前授权 profile 已声明的完整组合可以暂选，明确“应用”后才提交给宿主。筛选不会改变受控草稿，不构造笛卡尔积、默认/最近组合或自动省略。工程身份放详情，requested 不冒 observed。
+
+唯一生产路径为 ExecutionProfilePicker.tsx；同范围三 test/fixture/browser 文件及本计划/证据。catalog、selection、公共 codec、App/Thread/Recovery/queue、依赖只读。旧 ExecutionProfilePicker 保原行为。不新增 store、registry 或第二套授权。
+
+## Interface 与所有权
+
+宿主持有唯一 draft value 和 required opaque ownership token。每次真实同步 onChange 必须核 expected token 与当前宿主 ownership、当前 view/connection/edit authority，再用现有公共 capture 验当前 catalog/capability/full tuple，compare→validate→write 无 await。旧闭包或相同 tuple 不能代表新授权，省略同样核 ownership 和可编辑 authority。
+
+Picker 每次打开建立独立私有存活标记；关闭、取消、详情导航、卸载、成功提交同步撤销旧 Apply/omit。token 改变使当前候选失效，必须重新打开。UI 撤销不替代宿主 CAS。暂存过滤/候选是弹窗私有数据，不是第二份草稿。
+
+生产宿主尚无消费；fixture 用真实同型同步 CAS 验受控接口，不冒 App/Send/Queue/Recovery 联通。
+
+## TODO
+
+- [x] MSGQUICK-01：核准确 worktree、base、live claim，建立唯一三件套与本地技能记录。
+- [x] MSGQUICK-02：快速选择、合法 tuple 投影与 ownership/opening 双层失效实现。
+- [x] MSGQUICK-03：新增直接/fixture/browser 回归源码与精确只读依赖验证提案。
+- [x] MSGQUICK-04：必要检查及完整六组/双390图已通过，固定dde571与独立限定审查完成。
+- [ ] MSGQUICK-05：正式主线接收并收口；TODO-11 真实宿主接线另列后继。
+
+## 验收与限制
+
+覆盖 same-tuple 新稿、props lag/旧 callback、换 view、权限撤销、同 token 关闭/详情/unmount/成功后重入；Apply/omit 都不得覆盖新草稿。分页漏旧选、刷新失败、能力过期保 C；A 已发送/B 已排样本不可变；空筛选可退出；大目录只展开当前授权 profile ≤32 组合；390 双主题/180 model/键盘/焦点保持。
+
+当前目标dde571固定：原fe6业务三源不变，strict/26direct历史PASS，受影响browser noEmit PASS；本次完整六组fixture与双390PNG实际通过、outerexit0/完整seal/ownedcleanup。输入语义源码及本次实际均已root限定批准/0blocking。旧三轮FAIL与后续定位全部保留，新90s段累计47496/余42504；旧30625/unused29375封闭不作credit。MSGQUICK-04已完成，MSGQUICK-05等主线；真实App接线不冒完成。原件见[本次证据](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md)。
+
+## 历史 MSGQUICK-04 可移植验证准备 2026-10-06 23:18:53 UTC
+
+在原证据范围准备专用relative配置与标准Node→TypeScript/Vitest入口，独立接收外层真实退出和cleanup回执；不新增workflow、安装器或通用supervisor。本机资源不足期间仅源码准备，不把文档启用当远程授权。候选与fe6产品分开固定；实际26direct/6browser仍未运行。
+
+2026-10-06 23:21:55 UTC：dc67可移植验证准备已由root/peer限定静态通过，0blocking；MSGQUICK-04继续开放，types/direct/browser均NOT_RUN，本机资源/准入与remote未启用边界不变。原fe6与c1/b1未改。
+
+## 首次 c1 实际检查 2026-10-07 02:28:12 UTC
+
+MSGQUICK-04 保持开放：strict exit2，direct未运行，已完成自身清理并归还窗口。缺失固定source由原provision owner处理；[失败证据](../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/README.md)与实际outer exit/terminal/独审逐字保留，下一次不继承旧gate，累计1875/剩28125ms。
+
+后续供给事实 2026-10-07 02:29:30 UTC：原Lead已仅物化固定HEAD缺件，2388B/hash匹配、347既有产品输入不变；[原件](../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/source-provision-receipt.json)。本次失败不改判，direct/browser仍未运行；后继仅可准备剩余28125ms包，不自动重试。
+
+## 当前有限检查已接收
+
+2026-10-07 03:14:34 UTC：c2 strict0+单文件26/26direct0，外层exit/seal/cleanup真实一致，root独审接受；[原件](../../docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/README.md)。MSGQUICK-04仍需browser，MSGQUICK-05尚未main；没有继承旧Settings01或同段其他任务结果。
+
+## 首次实际浏览器失败与清理
+
+2026-10-07 04:26:38 UTC：唯一b1执行outerexit1，模型select键盘值断言失败；0/6完成组、0/2PNG，无页面异常记录。[原件与界限](../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/README.md)。fixture/context、两个child groups/parent/scratch均清理；外层保守耗时12326、余47674，原parent/terminal早计数保留。MSGQUICK-04保持开放，源码fe6不变，不把actual FAILED写成未运行或改判通过。当前只metadata封存，下一步待独立归因/合法后继，不自动续跑。
+
+## b2实际中断与监督计量后继
+
+2026-10-07 04:48:10 UTC：[b2独审原件](../../docs/evidence/wpf-message-settings-quick-controls/b2-browser-20261007/README.md)接受FAILED与owned清理，正常HTTP/context close字段缺失。MSGQUICK-04继续开放；父非原子scratch差分计量已源码确认，后继仅TMP准备exact-subtree排除，不提升原8MiB或修改产品/六场景/两PNG。累计18468/余41532，无自动第三次。
+
+## 计量修正小检查 2026-10-07 05:10:24 UTC
+
+MSGQUICK-04继续开放：[b3实际helper五项检查](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/README.md)单次exit0/47.222083ms，own临时目录清理。root已审最小计量源码，真实browser仍待后继精确准入；不重跑strict26、不追加浏览器预算，不把helper通过作六组/两PNG通过。
+
+## b3实际浏览器后续 2026-10-07 05:26:24 UTC
+
+MSGQUICK-04仍开放：[第三次实际失败及完整诊断](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md)，actualexit1/0组/0PNG。仅保真实证据、正常关闭/owned清理和30625/29375保守账；不改原断言或重试，根因待只读核实。
+
+## MSGQUICK-04 新有限定位段 2026-10-07 05:47:03 UTC
+
+[明确新授权及诊断接口](../../docs/evidence/wpf-message-settings-quick-controls/native-control-segment-20261007/README.md)。旧三轮60s封套原样闭合；新增≤90s实际、每次≤45s含15s清理，原retained8MiB与scratch64MiB不变。先独审最小诊断delta，保持原六组与产品不动；按plain B实际native选值决定是否进入modal B。当前只source准备，未运行。后续同边界定位→修复→相关验证可在段内连续进行，未知cleanup/授权范围变化停止针对审查；不新增泛化runner或任务。
+
+## Native-control首轮与同段窄修 2026-10-07 06:16:41 UTC
+
+[完整原件与root独审](../../docs/evidence/wpf-message-settings-quick-controls/native-control-first-20261007/README.md)：outer实际exit1，FAILED/INCONCLUSIVE；plain A按键前中文role定位计数0，0/6组/0PNG，B/modal未执行。全部EOF/0drop，fixture/context关闭，parent56904/worker57021/Chrome56911与scratch absent。root只接收失败与清理，不作产品批准。
+
+parent11178/late11182/outer11221.448166994378ms原样；保守本次11222，新段余78778；旧30625/未用29375封闭不追加credit。初始响应缺charset是源码候选原因，不冒原生键盘根因已证。后继诊断源 `521a38395c4b9a38613937c83ce44215afc70280` 仅HTTP UTF-8/预键公开label/count/首异常保留，原六组与三源不变；[新源与准备](../../docs/evidence/wpf-message-settings-quick-controls/native-control-followup-preparation/README.md)。当前第二次未运行，SVC08窗口归还后才fresh准入；任务完成仍NOT_COMPLETED。
+
+## Native-control第二轮与snapshot窄修 2026-10-07 06:35:02 UTC
+
+[本次实际/原件](../../docs/evidence/wpf-message-settings-quick-controls/native-control-second-20261007/README.md)：source521a/HEAD753ccd、Chrome154.0.8037.99；outerexit1/唯一FAILEDseal。UTF-8/公开label模型/count1已实测；plain A10事件无input-change，快照value缺失后TypeError，B/modal未执行、0/6组/0PNG。不能用.99倒推原.98唯一原因。
+
+fixture/context正常关闭，全部EOF/0drop、parent51494/worker53613/Chrome51498及scratch absent。parent6188/late6189/outer6226.722708088346ms原样，本次保守6227，新段累计17449/余72551；旧30625封闭。当前仅修真实函数snapshot调用，后继源a9ec5df40470c20f48171eb8d725c6c39f307b55，原三源/六组字节不变；[窄修准备](../../docs/evidence/wpf-message-settings-quick-controls/native-control-snapshot-preparation/README.md)待同段fresh定向复验。
+
+## Native-control第三轮实际 2026-10-07 06:45:03 UTC
+
+[完整原件与root独审](../../docs/evidence/wpf-message-settings-quick-controls/native-control-third-20261007/README.md)：sourcea9ec/HEAD0c88、Chrome154.0.8037.99；actualouterexit1/唯一FAILEDseal，worker INCONCLUSIVE而无场景exception。两独立plain页UTF-8/模型/count1，A10+B14个可信事件无input/change，逐键快照value空/index0/focusedtrue/openfalse。因plain B未真实选值，actual modal未运行；0/6功能组、0PNG。原键盘验收不削弱，不以该样本认定唯一产品或平台原因，也不回推.98。
+
+fixture/context正常关闭，全日志EOF/0drop，parent15507/worker15534/Chrome15514与scratch/profile absent，资源已实际归还。parent5830/late5831/outer5872.413750039414ms原样；本次保守5873，新90s段累计23322/余66678；旧30625封闭/未用29375不抵扣。root限定接受FAILED/INCONCLUSIVE观测与owned清理，不是feature PASS。源a9ec不变、无第四同样run；完整任务NOT_COMPLETED。
+
+## Native typeahead C 源准备 · 2026-10-07 06:55:52 UTC
+
+新增诊断目标 `ac44d327cdff3180c0dff36c3e199cd47669fc88`，独立源码/packet审查 NOT_STARTED。当前完整feature仍UNKNOWN；原fe6 source及26direct审批不扩到本诊断。见[设计与最小diff](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/README.md)。仅新plain C/native m有因果区分力的输入，成功后同m一次modal；不重跑已失败A/B、不替代原六组。旧actual/账23322+30625原样，runtime0，无新gate。
+
+### C 后继编码前提修正 · 2026-10-07 06:59:15 UTC
+
+诊断目标 `2e71bea91c188c5f13723dace905fe429d83834b`；原ac44保持历史。仅React fixture HTML响应明确UTF-8，C的characterSet断言不弱化。固定Vite transform/插件源码未自动补charset；这次是静态预防、非实际复现。原六组/三产品源/父worker不改，runtime/noEmit/26仍无新增。当前候选待固定审，预算23322/余66678保持。[依据](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/charset-static-review.json)。
+
+## C实际失败接收及DOM文本窄修 · 2026-10-07 07:13:13 UTC
+
+实际source2e71/run63457保持FAILED/INCONCLUSIVE，plain+modal真实m选值成立但后保稿基线断言失败；原六组0/PNG0。root已接受actual/cleanup和d755 `d7556b616e018ac985519b08a2954b1810029e05` SOURCE_ONLY；[原件](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-first-20261007/root-actual-and-fix-review.json)。后继五值textContent+非空只统一观测语义，所有状态断言保留。新段35077/余54923；完整feature仍UNKNOWN，no重复types/direct或实际续跑。
+
+## MSGQUICK-04 C定向诊断完成 · 2026-10-07 07:27:05 UTC
+
+[完整原件及root独审](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-second-20261007/README.md)：固定d755/run2c458，唯一actualexit0+DIAGNOSTIC_COMPLETE seal、6封存hash一致。Chrome154.0.8037.99中plain C与真实modal C各一次m，均目标longmodel/index1、trusted keypress/input/change各12事件。五份保留DOM文本、左右草稿、零提交和单catalog请求全部断言完成；原六组未执行/0PNG，未Apply，不推广为中文按键或popup根因证据。
+
+07:24:00.207591Z→07:24:02.757575Z，outer2549.7872499981895ms/parent与late2507ms原件保持；ceil max计2550，新段累计37627/余52373，旧30625/未用29375封闭。fixture/context已关闭、所有日志EOF/0drop；父89866/worker90396/Chrome90194 signal0均ESRCH，scratch/profile清理，资源已先归还。root限定接受diagnostic complete与cleanup，不批准完整feature。
+
+本次metadata-only，产品三源与原六组函数不改、旧306prior哈希全同，无第二次浏览器/26/noEmit/PG或个人服务操作。W05的未知起点保留，实际解除时点见outer；新W06不虚构开始时间。Main/部署/真实宿主仍未完成，任务完成NOT_COMPLETED。
+
+## 原六组输入语义窄修准备 · 2026-10-07 07:34:33 UTC
+
+source `dde571be8853698f8943f952ddef2c648d2e1294`：[固定diff与合同](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/README.md)。仅首组四native filters改为CDP指定字符m/自/高/标，逐项严格前置/可信keypress-input-change/完整value/index/零提前commit；Tab、radio Arrow/Space、Apply Enter和六组后续断言保留。旧诊断/失败原件、Picker/另两源不动。不是中文IME/OSpopup覆盖，候选中文路径尚未runtime。
+
+受影响单browser noEmit actual exit0/1274.84816708602ms、owned1531/scratchabsent/双EOF，未重跑26/direct/Chrome/PG。源码窄审NOT_STARTED，完整feature仍UNKNOWN；browser新段37627/余52373不变，无新gate/预约。W06等待实际输入语义验收，历史开始UNKNOWN不回填。
+
+## 完整六组实际 · 2026-10-07 07:41:46 UTC
+
+六组/双390图、所有原行为断言已完成，检查已结束并归还资源。本次只自然证据封存，不继续消耗余量；现已独立限定批准，进入主线接收，生产宿主仍为TODO-11后继。
+
+## GO 产品观察与现有后继（本次受控组件检查不改判）
+
+本次两张390图是180字符长名称的压力fixture，顶部摘要与候选完整长名重复占高，Apply在首屏外；不是正常名称/完整App截图，也不据此撤销本次限定6组行为通过。由co-lead在原MATURE01浮层与MATURE02/TODO11真实宿主接线继续：模型/思考力度/速度用紧凑主入口，完整目录和解释下钻；长名限制可见高度但完整身份仍可查看、区分，窄屏应用/取消易找，并复用现有圆角、阴影、材质tokens。后继验收分别保存正常标签与长名称截图。
+
+此后继仍须exact授权tuple、明确Apply、draft ownership/live CAS；不增加自动选择或第二草稿store。当前未领取生产App/浮层范围，co-lead另按已有任务与合法scope组织，不另造大task、不把后继完成反写当前受控组件。

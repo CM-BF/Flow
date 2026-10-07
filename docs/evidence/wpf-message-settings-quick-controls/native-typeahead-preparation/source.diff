@@ -1,0 +1,73 @@
+diff --git a/apps/web/test/message-settings.browser.ts b/apps/web/test/message-settings.browser.ts
+index 7d937d54..8ff41901 100644
+--- a/apps/web/test/message-settings.browser.ts
++++ b/apps/web/test/message-settings.browser.ts
+@@ -241,12 +241,12 @@ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<Re
+ 
+ 
+ /** Measurement only. It never replaces the six acceptance groups or mutates a select value. */
+-export async function diagnoseMessageSettingsNativeSelect(page: Page, fixture: Awaited<ReturnType<typeof startMessageSettingsFixture>>, evidence: string, workDeadlineMs: number) {
++export async function diagnoseMessageSettingsNativeSelect(page: Page, fixture: Awaited<ReturnType<typeof startMessageSettingsFixture>>, evidence: string, workDeadlineMs: number, selection: "popup" | "typeahead" = "popup") {
+   type Snapshot = { value: string; selectedIndex: number; focused: boolean; connected: boolean; disabled: boolean; open: boolean | "unsupported"; options: { value: string; selected: boolean; disabled: boolean }[] };
+   type PublicDocument = { characterSet: string; selectCount: number; labels: string[]; exactLocatorCount: number };
+-  type Trace = { state: string; events: { type: string; isTrusted: boolean; phase: string }[]; eventBytes: number; observerErrors: string[]; truncated: boolean; droppedEvents: number };
++  type Trace = { state: string; events: { type: string; key: string; isTrusted: boolean; defaultPrevented: boolean; phase: string }[]; eventBytes: number; observerErrors: string[]; truncated: boolean; droppedEvents: number };
+   const report: { mode: string; diagnosticComplete: boolean; conclusion: string; arms: { name: string; snapshots: { after: string; value: Snapshot }[]; document?: PublicDocument; trace?: Trace; traceFailure?: string; selectedWithNativeEvents?: boolean; failure?: string }[]; pageErrors: string[]; failure?: string } = {
+-    mode: "native-control", diagnosticComplete: false, conclusion: "INCONCLUSIVE", arms: [], pageErrors: [],
++    mode: selection === "typeahead" ? "native-typeahead-control" : "native-control", diagnosticComplete: false, conclusion: "INCONCLUSIVE", arms: [], pageErrors: [],
+   };
+   const onError = (error: Error) => { if (report.pageErrors.length < 8) report.pageErrors.push(error.message.slice(0, 1024)); };
+   page.on("pageerror", onError);
+@@ -283,6 +283,14 @@ export async function diagnoseMessageSettingsNativeSelect(page: Page, fixture: A
+       record.document = { ...publicDocument, exactLocatorCount: await select.count() }; checkpoint();
+       await expect(select).toHaveCount(1); await expect(select).toBeEnabled(); await select.focus(); checkpoint();
+       record.snapshots.push({ after: "focus", value: await select.evaluate(snapshotSelect) });
++      if (selection === "typeahead") {
++        assert.equal(record.document.characterSet, "UTF-8"); assert(record.document.labels.includes("模型"));
++        const initial = record.snapshots[0]!.value;
++        assert.equal(initial.value, ""); assert.equal(initial.selectedIndex, 0);
++        assert(initial.focused && initial.connected && !initial.disabled);
++        assert.deepEqual(initial.options.map(option => option.value), ["", model, "fast-model"]);
++        assert(initial.options.every(option => !option.disabled));
++      }
+       for (const key of keys) {
+         checkpoint(); await page.keyboard.press(key); checkpoint();
+         await page.evaluate(frameScript); checkpoint();
+@@ -306,14 +314,22 @@ export async function diagnoseMessageSettingsNativeSelect(page: Page, fixture: A
+     const final = record.snapshots.at(-1)!.value;
+     record.selectedWithNativeEvents = final.value === model && final.selectedIndex === 1 &&
+       ["input", "change"].every(type => record.trace!.events.some(event => event.type === type && event.isTrusted && event.phase === "capture"));
++    if (selection === "typeahead") record.selectedWithNativeEvents = record.selectedWithNativeEvents &&
++      record.trace!.events.some(event => event.type === "keypress" && event.key === "m" && event.isTrusted && !event.defaultPrevented && event.phase === "capture");
+     return record.selectedWithNativeEvents;
+   }
+   try {
+     page.setDefaultTimeout(Math.max(1, Math.min(3000, workDeadlineMs - Date.now())));
+-    await page.goto(`${fixture.url}/native-select-control?arm=A`); checkpoint();
+-    await arm("plain-A-ArrowDown-Enter", ["ArrowDown", "Enter"], false);
+-    await page.goto(`${fixture.url}/native-select-control?arm=B`); checkpoint(); // A distinct document, no assigned select value.
+-    const plainSelected = await arm("plain-B-Space-ArrowDown-Enter", ["Space", "ArrowDown", "Enter"], false);
++    let plainSelected: boolean;
++    if (selection === "typeahead") {
++      await page.goto(`${fixture.url}/native-select-control?arm=C`); checkpoint();
++      plainSelected = await arm("plain-C-Typeahead-m", ["m"], false);
++    } else {
++      await page.goto(`${fixture.url}/native-select-control?arm=A`); checkpoint();
++      await arm("plain-A-ArrowDown-Enter", ["ArrowDown", "Enter"], false);
++      await page.goto(`${fixture.url}/native-select-control?arm=B`); checkpoint(); // A distinct document, no assigned select value.
++      plainSelected = await arm("plain-B-Space-ArrowDown-Enter", ["Space", "ArrowDown", "Enter"], false);
++    }
+     if (plainSelected) {
+       await page.goto(fixture.url); checkpoint();
+       const left = page.getByRole("region", { name: "Pane left", exact: true });
+@@ -325,7 +341,9 @@ export async function diagnoseMessageSettingsNativeSelect(page: Page, fixture: A
+       const dialog = page.getByRole("dialog", { name: "下一条消息设置", exact: true });
+       await expect(dialog).toBeVisible(); await dialog.getByRole("button", { name: "刷新设置目录", exact: true }).click();
+       await expect(page.getByTestId("catalog-state")).toContainText("current; 1"); checkpoint();
+-      const actualSelected = await arm("actual-B-Space-ArrowDown-Enter", ["Space", "ArrowDown", "Enter"], true);
++      const actualSelected = selection === "typeahead"
++        ? await arm("actual-C-Typeahead-m", ["m"], true)
++        : await arm("actual-B-Space-ArrowDown-Enter", ["Space", "ArrowDown", "Enter"], true);
+       for (const [id, text] of preserved) await expect(page.getByTestId(id)).toHaveText(text);
+       await expect(page.getByLabel("Draft left", { exact: true })).toHaveValue("诊断仍保留当前草稿");
+       await expect(page.getByTestId("left-commits")).toHaveText("0");

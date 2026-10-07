@@ -1,0 +1,131 @@
+--- native3/binding.json
++++ typeahead1/binding.json
+@@ -1,9 +1,9 @@
+ {
+-  "state": "REVIEWED_SOURCE_BOUND",
++  "state": "PREPARED",
+   "task": "WPF-MESSAGESETTINGS02",
+   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+   "branch": "codex/web-message-settings-quick-controls",
+-  "head": "0c88e994c8d17f0431e2e9a7084ae8b91869210e",
++  "head": "f7f56fb0c47e1f6292ee4e017f5fe7cdedbf91fd",
+   "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+   "claim": {
+     "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+@@ -15,7 +15,7 @@
+     "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+     "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+     "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+-    "apps/web/test/message-settings.browser.ts": "c261949f88dd330eddd42ce53957a2808befc1504f455c44ca490b8c987c8d4a"
++    "apps/web/test/message-settings.browser.ts": "3e6a77d8e94b02dba8a8b057750e6baaa4a821d5c7c4ecf4fc59677868a55996"
+   },
+   "readOnlyDependencies": {
+     "tsconfig.json": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1",
+@@ -128,7 +128,7 @@
+     "packages/contracts/src/tasks.ts": "b56612778d17ed8a1cd9383e5ae945547e04941209acc3b41c1e76d6bd792be7",
+     "packages/contracts/src/usage-readout.ts": "954ae15350dd2c887964379fff08670bd07e01cb62a261f8b370ca57bf612ba5",
+     "packages/contracts/src/workspace.ts": "83fc4cdca4a3926cb59236c3481f323e66bf6e9e260f74067f1371371a8e82f7",
+-    "apps/web/test/message-settings.browser.ts": "c261949f88dd330eddd42ce53957a2808befc1504f455c44ca490b8c987c8d4a",
++    "apps/web/test/message-settings.browser.ts": "3e6a77d8e94b02dba8a8b057750e6baaa4a821d5c7c4ecf4fc59677868a55996",
+     "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+     "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+     "apps/web/src/execution-profiles/catalog.ts": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574",
+@@ -333,7 +333,7 @@
+   "chromeVersion": "154.0.8037.99",
+   "playwrightModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+   "fixtureModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.browser.ts",
+-  "previousRuntimeMs": 48074,
++  "previousRuntimeMs": 53947,
+   "limits": {
+     "totalMs": 150000,
+     "cleanupMs": 15000,
+@@ -346,18 +346,15 @@
+     "maximumSingleRunMs": 45000
+   },
+   "preparedFiles": {
+-    "supervisor.py": "7d65c238486ae158853b314c4b4bc5ef9099eb6fe6e9ffa68fe59d60451f2679",
+-    "worker.mjs": "3a521deb334b10748ba220a623cd3be4bee833f3c52953f20d2a4d0aedf5ce49",
++    "supervisor.py": "74dc93f09425f3d469b5a84f93a1ef8d829f094c48f4b76442cdf492d8b49628",
++    "worker.mjs": "53d694ac714103a2f7af73386d6054c528956d9f830642e2e76eb07ef0489cfb",
+     "runtime-tsconfig.json": "bc0bd602d32d2a03d122fff259684bee15cfe17a7ea40224cc06c1ffd2a51f18",
+     "aliases.json": "b1e602aa62b5ebff2006e7ad3aefabea5606c9cf0998e14d5afa7aa8ec4110d4",
+-    "prior-evidence.json": "429df8fdc96c40c1ed5a996439345af6dc316ca4562865441859819ac464179e"
++    "prior-evidence.json": "75a4bf7d40ce72a66350f8a054d745c14c4770c03c4ab76fadb0b1497ab8dfb3"
+   },
+   "entryPinLimits": "Exact public entries/package metadata; transitive package bytes and Chrome framework are not exhaustively hashed. No runtime or peak verification.",
+-  "previousEvidenceBytes": 2369875,
+-  "nativeChromeBoundaryApproval": {
+-    "path": "/private/tmp/manager-msgquick-native3-routine-binding-review.json",
+-    "sha256": "9f3d7f4dd5c9276916be27a41bb824f258ba5fd37d3a2feeda3326c99c2e8296"
+-  },
++  "previousEvidenceBytes": 2841341,
++  "nativeChromeBoundaryApproval": null,
+   "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+   "typesDirectEvidence": {
+     "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/root-actual-review.json",
+@@ -429,11 +426,7 @@
+     "cumulativeDirectMs": 5119,
+     "remainingDirectMs": 24881
+   },
+-  "sourceReview": {
+-    "path": "/private/tmp/root-msgquick-native2-actual-review.json",
+-    "sha256": "c8922db98504683d02dfff783672bb9d3d6b8eabe92a0eb087e2f9c6b9e608f1",
+-    "scope": "sourceCorrectionReviewed only; actual failure remains failure"
+-  },
++  "sourceReview": null,
+   "expectedChecks": [
+     "Native Tab/Arrow/Space/Enter filters and explicit Apply commit once; staged versus applied labels, guarded omit/Cancel, two panes and immutable A/B snapshots",
+     "No invented cross-product or automatic fallback; incompatible facets have a clear exit; pagination, failed refresh and capability loss preserve applied C",
+@@ -449,38 +442,38 @@
+   "terminalAcceptance": {
+     "contract": "msgquick-browser-v1-external-exit-required",
+     "externalActualExitCode": 0,
+-    "required": "Full mode: original six groups and two PNGs plus exact PASS seal/actual exit0/cleanup. Diagnostic mode: DIAGNOSTIC_COMPLETE seal + actual exit0 + native-control.json + empty original checks + cleanup; never feature PASS. INCONCLUSIVE or incomplete observations stay FAILED/exit1 with actual raw sealed. Disk state alone never sufficient.",
++    "required": "Full: exact six groups and two PNGs + PASS/actualexit0. Popup or typeahead diagnostic: DIAGNOSTIC_COMPLETE/actualexit0 plus complete native-control measurement and cleanup, never featurePASS. Plain no selection -> INCONCLUSIVE/FAILED and no modal. Modal no selection after proven plain -> completed scoped contrast, not featurePASS. All sealed files, full outer stdout/EOF and actual exit must agree.",
+     "boundary": "Cooperative handling ends at final seal before restoring handlers. Later nonzero/missing external exit or mismatched/missing stdout invalidates candidate PASS.",
+     "externalActualExitMeaning": "DIAGNOSTIC_COMPLETE plus exit0 establishes completed measurement only; full PASS still requires original six groups and two PNGs. INCONCLUSIVE exits nonzero. Both require exact seal/EOF/cleanup/actual exit."
+   },
+   "prerequisiteMeaning": "Old fe6 strict/26direct evidence preserved only for unchanged source/acceptance body; diagnostic entry is new NOT_RUN source. Historical b1-b3 corpus is immutable.",
+   "preparationHold": [
+-    "Fresh current claim/head/source/dependencies/outputs/resources and a one-use diagnostic gate required.",
+-    "Manager accepted only routine fixed two-run carry under root78f9/431cf existing authority; source a9 correction accepted in rootc892.",
+-    "New90s actual spent17449/rem72551; single<=45s incl15cleanup. No full six-group PASS inferred."
++    "New C diagnostic source/worker/parent awaiting fixed independent review; PREPARED, no gate.",
++    "Current head/claim/source/all read-only pins/native inputs and combined free/resources require fresh admission.",
++    "New segment23322 spent/rem66678; one<=45000 including15000cleanup; old30625 closed, no new credit."
+   ],
+   "outerEvidenceReserveBytes": 2113536,
+-  "selection": "diagnostic",
++  "selection": "typeahead",
+   "segmentUsage": {
+     "path": "/private/tmp/msgquick-native-segment-20261007.json",
+-    "sha256": "778561c1fca878496187fffe937c583064848104996d3ef167194ee339a3a070"
++    "sha256": "da71694919aeb067a3310a59bd28b94541d7ca5533496014480fa08c0c99a492"
+   },
+   "segmentAuthorization": {
+     "path": "/private/tmp/root-msgquick-continuous-segment-20261007.json",
+     "sha256": "8c78cd0ceef9950289194e8c7a996582afa3afd627299a88f8f864f82c1fe392"
+   },
+   "originalAcceptanceFunctionSha256": "623f25499be35adde9899840e8714d72bea674f43a82d479587528cf694c05c9",
+-  "segmentMetadataBytes": 5637,
+-  "diagnosticSourceTarget": "a9ec5df40470c20f48171eb8d725c6c39f307b55",
++  "segmentMetadataBytes": 6508,
++  "diagnosticSourceTarget": "ac44d327cdff3180c0dff36c3e199cd47669fc88",
+   "nativeChromeBoundaryReuseEvidence": {
+-    "path": "/private/tmp/root-msgquick-native2-routine-binding-review.json",
+-    "sha256": "78f9d87ed9c9ab9e280539a7dcd1c7a6611a32ce965929bc857b5652f276d835",
+-    "meaning": "Same native authority/lifecycle; only fixed two-run carry changes parent hash. Exact routine hash rebind required before admission."
++    "path": "/private/tmp/manager-msgquick-native3-routine-binding-review.json",
++    "sha256": "9f3d7f4dd5c9276916be27a41bb824f258ba5fd37d3a2feeda3326c99c2e8296",
++    "meaning": "Historical authority/lifecycle only; C mode and passive keypress add source semantics, requiring exact new parent/worker acceptance before any gate. No existing approval inherited."
+   },
+   "sourceRepair": {
+-    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-control-snapshot-preparation/source-manifest.json",
+-    "sha256": "a7180b2171aff3975c4d0011067c03b48dbe57c3c25244864e9847544b86b281",
+-    "meaning": "Only snapshotSelect becomes a real closure-free browser callback. Keys, fields, caps and six-group acceptance body unchanged; no runtime PASS."
++    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/source-manifest.json",
++    "sha256": "ccb6cb013ed1813f613982ef81d3736d1dd022d43fa06900c6e87dd75a9dffa0",
++    "meaning": "Optional C only; actual native m key plus trusted keypress/input/change; no full six-group PASS or exact-version popup cause inferred."
+   },
+   "runtimeProvenance": {
+     "path": "/private/tmp/msgquick-native2/chrome99-provenance.json",
