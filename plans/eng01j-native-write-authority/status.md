@@ -13,7 +13,7 @@
 | 工作基线 / HEAD | ee98e65c147cf2ef28ccf0f519952f60d56e9d4b / 新四源 f15dc1cc，原471为已main历史 |
 | 工作树dirty状态 | 本提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 实现目标 | f15dc1cca0e3ec9575a6b0dc0260e7de5725b383；ENG01J-05四源增量，原471已main历史保留 |
 | 实现范围 | apps/runner/src/engineering/native-authority.ts, apps/runner/src/engineering/native-authority.test.ts, apps/runner/src/engineering/native-authority-darwin.ts, apps/runner/src/engineering/native-authority-darwin.test.ts, apps/runner/src/engineering/fixtures/native-authority-canary.c |
 | 检查状态 | 新四源5/5、4旧未选、focused types0；0stock/PG/provider，[本轮](../../docs/evidence/eng01j/helper-host/run.json)。原471四不同检查/原红与限制保持，不合并成一轮 |
@@ -23,11 +23,11 @@
 | 任务时间来源 | 原子take 2026-10-07T05:06:16.785Z后本owner开始首合同/源码工作，以上为当次记录时间 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已实现固定原生文件工具的受限启动准备与结果检查，局部验证通过，等待独立审查 |
-| 下一可用交付 | 审查通过后验证原生工具单文件请求；完整写入者停止仍另验 |
+| 当前产出 | 原生单文件工具准备接口已审并进入主线；正在固定下一次实际调用入口 |
+| 下一可用交付 | 薄调用入口独审后验证一次原生文件请求，完整写入者停止仍另验 |
 | 当前阻塞 | ACTIVE: 已有受限原生初始化正例，但工程文件工具兼容与全部写入者停止尚未闭合，完整工程写入未通过 |
 | 需用户决定 | NONE |
-| Review | PENDING 新四源；[review.md](review.md)保留原471限定APPROVED与历史失败审查 |
+| Review | 四源 APPROVED_LIMITED_STOCK_HELPER_PREPARATION；薄caller待审，[review.md](review.md)保留旧范围 |
 | Claim | b575e07c-483b-4a4e-824e-6dc54e6469e4 v1 active，七literal |
 | 架构影响 | 新Darwin策略/启动层直接复用R06；G/I与C02不变，生产grant未注册。架构基线待本target独审/接收后由Execution Lead更新，分支不当main能力 |
 
@@ -73,3 +73,5 @@ helper一次段结束 2026-10-07T05:42:51.508674+00:00，263ms/outer1/两组abse
 2026-10-07T06:16:08Z：本安全点记录ENG01J-05四源实施中（实际开始先于本记录，精确时间UNKNOWN），已fresh核原七scope/v1与干净fb311基线。复用固定启动正例，R06初始化协议与单行helper协议分开；本片只准备launch，不新增执行器或grant。已授权新局部段≤60s/4MiB仅纯/注入检查，stock实际调用仍NOT_RUN。
 
 2026-10-07T06:21:32.144227+00:00：ENG01J-05四源固定f15dc1cca0e3ec9575a6b0dc0260e7de5725b383，5/5新纯与文件fixture注入检查、4旧未选、focused types0；[run](../../docs/evidence/eng01j/helper-host/run.json)与两轮raw固定。1775ms监督/1820ms含caller、2037B raw，最大末采私有252B，两个owned组absent/双EOF/目录removed。读取fixed native摘要不启动binary；0stock/PG/provider/个人操作。源码停写待独审，真实helper候选[见此](../../docs/evidence/eng01j/helper-host/next-run.md)。原失败、原471批准及main事实不改。
+
+2026-10-07T06:29:51.627056+00:00：新四源f15获[限定独审](../../docs/evidence/eng01j/helper-host/independent-review.json)，105固定/14安装输入与5新/types已核，reviewer0重测。main/origin de1fe7328f65182b88fdb396e617bcf26b9f0135已精确接收f15+ca6；旧C/R06不变。当前产品四源停写，原七scope只在own evidence准备最薄stock caller，真实helper尚未执行。

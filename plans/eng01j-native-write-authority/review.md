@@ -23,3 +23,5 @@ Review target commit: 471b1d8b7b19d53e7c7e87efc525e9c193c5242e
 ## ENG01J-05 新四源待审（2026-10-07T06:21:32.144227+00:00）
 
 固定source f15dc1cca0e3ec9575a6b0dc0260e7de5725b383，5新例/4旧未选+focused types0。只准备受限单行helper启动，不注册G authority，不跑真实helper；[Interface](../../docs/evidence/eng01j/helper-host/interface.md)、[原始检查](../../docs/evidence/eng01j/helper-host/run.json)。本增量尚无独立批准；原471/失败保真审查均保持原范围。
+
+2026-10-07T06:29:51.627056+00:00：f15/ca6 获[APPROVED_LIMITED_STOCK_HELPER_PREPARATION](../../docs/evidence/eng01j/helper-host/independent-review.json)，无P1/P2；105固定/current与14入口相同，0reviewer运行。已main de1fe732；后续薄caller不在本批准内，stock实际0次。
