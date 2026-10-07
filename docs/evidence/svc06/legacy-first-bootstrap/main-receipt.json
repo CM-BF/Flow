@@ -1,0 +1,72 @@
+{
+  "kind": "SVC06_FIRST_ADOPTION_MAIN_RECEIPT",
+  "observedAt": "2026-10-07T11:44:37.221Z",
+  "main": "62e9a83923a3c2996b4ab32610e10e2069828c66",
+  "acceptedDelivery": "5be3154a097451b30ffabb233133a47d546982b5",
+  "source": "ff445959425128876d5dd6abdb719196cc2867e6",
+  "result": "5963f09317f42b4c19ae1e89c0bdf9b1ea52e03b",
+  "intake": {
+    "path": "docs/evidence/i02/adoption-auth-intake.json",
+    "at": "2026-10-07T11:32:50.555840+00:00",
+    "pushTime": "UNKNOWN"
+  },
+  "independentReview": {
+    "path": "docs/evidence/i02/svc06-first-adoption-result-review.json",
+    "decision": "APPROVED_LIMITED_FIRST_ADOPTION_ACTUAL",
+    "bytes": 2000,
+    "sha256": "4479861e89564b31bd9761cd7da5168f1a0282d99c0377c43fc7c733d89dd961",
+    "ownCopySame": true
+  },
+  "verification": {
+    "resultManifestBindings": 28,
+    "samePathFixedMainCurrent": 25,
+    "planAndReviewMainSameAccepted5be": 2,
+    "planAndReviewCurrentPostReviewMetadata": "d112; expected subsequent owner changes",
+    "preparationReview": {
+      "ownerPath": "docs/evidence/svc06/legacy-first-bootstrap/independent-review.json",
+      "mainPath": "docs/evidence/i02/svc06-first-adoption-consumer-review.json",
+      "bytesEqual": true,
+      "ownerPathInMain": false,
+      "pendingIntake": "Existing exact owner copy may be included to close relative links"
+    },
+    "resultManifestMainSame": true
+  },
+  "claim": {
+    "claimId": "3346a60d-0b50-4c73-bf22-9b258f8b1381",
+    "version": 9,
+    "state": "active",
+    "observedAt": "2026-10-07T11:42:51.292Z",
+    "scope": [
+      "docs/evidence/svc06",
+      "plans/svc06-backend-release"
+    ]
+  },
+  "deploymentBoundary": {
+    "candidateArtifact": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "candidateSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "personalFreshReadThisSegment": false,
+    "lastRecordedPersonal": "af51 backend/runner, accepting v18, Web d629 v3 on independent c7b host; historical SVC08 attempt-03, not fresh current observation",
+    "personalUpdateExecuted": false,
+    "open": [
+      "three retained real App compatibility reports",
+      "fresh personal preflight",
+      "SVC06-03/04/05 full acceptance"
+    ]
+  },
+  "checksThisSegment": {
+    "productTests": 0,
+    "PGValidation": 0,
+    "provider": 0,
+    "personalProbes": 0,
+    "statusParse": {
+      "parserSource": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "errors": [],
+      "humanMissing": [],
+      "timingIssues": [
+        "任务开工时间未记录"
+      ],
+      "disposition": "Historical UNKNOWN retained; no guessed start"
+    }
+  },
+  "quality": "Metadata only; existing unique status and immutable results reused, no runtime abstraction or raw rewrite."
+}
