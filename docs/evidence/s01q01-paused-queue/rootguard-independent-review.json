@@ -1,0 +1,12 @@
+{
+  "at": "2026-10-07T20:37:05Z",
+  "reviewer": "db_transaction_owner",
+  "decision": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "source": "103232eeab0f861e1ab87f496e9b9f0f1c068965",
+  "packet": "347209c15748e9c008c9472fad57aa59e5a9591d",
+  "P1": 0,
+  "P2": 0,
+  "closedFinding": "Root identity checked before first deletion/between items/final root removal; replaced root cannot delete original contents before rejection.",
+  "verified": "15pure final-source; 284rows1643266B/36alias; 3source+3raw4691B; PID57399 exit0/absent/MERGED EOF114B and same-identity TMPabsence; supervisor145ms; FULLRETURN20:34:06.594010; no reviewer execution",
+  "boundary": "SOURCE_PREPARATION_APPROVED only; actualPG CLOSED/NOT_RUN; manager single new OPEN and fresh exactclaim/head/clean/input/free/window required; DB/WAL/TMP observations not hard peaks; cooperative path checks not OS isolation"
+}

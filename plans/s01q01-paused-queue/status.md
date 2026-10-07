@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 20:35 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 20:38 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -21,13 +21,13 @@
 | 实现目标 | 103232eeab0f861e1ab87f496e9b9f0f1c068965 |
 | 实现范围 | apps/server/src/conversation-queue/promotion.ts, apps/server/src/conversation-queue/queue.test.ts, docs/evidence/s01q01-paused-queue/pg-fixture.ts, docs/evidence/s01q01-paused-queue/types.tsconfig.json, docs/evidence/s01q01-paused-queue/dependencies.json, docs/evidence/s01q01-paused-queue/pg-fixture.test.ts, docs/evidence/s01q01-paused-queue/failure-local.py, docs/evidence/s01q01-paused-queue/failure.types.tsconfig.json, docs/evidence/s01q01-paused-queue/failure.vitest.config.ts, docs/evidence/s01q01-paused-queue/entry.py, docs/evidence/s01q01-paused-queue/entry.test.py, docs/evidence/s01q01-paused-queue/queue.vitest.config.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 清理前会拒绝被替换的根目录，外置准入输入接线已获纯验证，等待独立复审 |
-| 下一可用交付 | 独审新增准入代码与证据，通过后申请最小真实数据库验证 |
-| 当前阻塞 | ACTIVE: 换根修复与局部结果待独审；实际PG仍CLOSED |
+| 当前产出 | 隔离验证入口已通过独立源码与局部结果审查，可以排队验证两条暂停扫描行为 |
+| 下一可用交付 | 获得唯一新窗口后执行两条真实数据库用例 |
+| 当前阻塞 | ACTIVE: 源准备已审，等待经理唯一新OPEN；实际PG仍CLOSED/NOT_RUN |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；architecture19:31:19批准fixture增量，原P2 CLOSED；db20:03:44批准9d1bc8 CLOSED准备；本次预算增量待审 |
+| Review | [review.md](review.md)；architecture19:31:19批准fixture增量，原P2 CLOSED；db20:37:05批准103232ee源码准备；原唯一P2 CLOSED |
 | 当前claim最后观察 | a8a3b2d7-1bde-438a-9fbf-f81e1c791350 v1 ACTIVE；2026-10-07T20:32:48.804Z fresh ACTIVE；四精确 scope |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -66,3 +66,5 @@
 2026-10-07T20:32:48Z：fresh a4a6841c=origin clean、20:32:48.804Z claima8a3v1四scope。db20:31:58 SOURCE_CHANGES_REQUESTED，唯一P2为sample后根替换symlink可先删子项后才拒绝；原24pure/两types与raw忠实性通过。新10min/new4MiB局部段，仅caller根门禁/外置permit纯mock；≤3child/30s/累计60s/raw512KiB含总额。0PG/HTTP/provider/旧KEEP，复用本地find-skills/codebase-design/固定clean-code。
 
 2026-10-07T20:35:15.546469+00:00：本次实现 103232eeab0f861e1ab87f496e9b9f0f1c068965，15/15纯例绑定最终字节，未改fixture/产品/promotion/旧断言。单child START 2026-10-07T20:34:06.444858+00:00 → FULLRETURN 2026-10-07T20:34:06.594010+00:00，监督145ms/raw114B/finalabsent/MERGED EOF/同身份TMP exactENOENT，无secondary/signals。新完整floor16,620,257,280来自canonical20:33:09.724加本段4MiB一次，free19,277,475,840；0真实PG/HTTP/provider。原1P2修复交独审，owner不自行宣称审查关闭；runtime与CLOSEDpermit更新，原raw冻结。提交push后全STOP/0待launch，claimv1保留，原03/04未完成。
+
+2026-10-07T20:39:04.877196+00:00：新3min/64KiB metadata-only收口，fresh347209c=origin clean；归档db20:37:05 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0剩余P1/P2。原15pure与源103232ee、runtime834873…0381、closed-permit/raw完全不改；SOURCE_PREPARATION_APPROVED。唯一候选[pg-ready](../../docs/evidence/s01q01-paused-queue/pg-ready.md)复用固定manifest，实际仍CLOSED/NOT_RUN，新actual输入/namespace未创建。最终交付消息给literal新packetHEAD供future许可绑定，不做自引用提交。原任务03/04保持开放，main未集成；commit/push后STOP/0待launch，claimv1保留。
