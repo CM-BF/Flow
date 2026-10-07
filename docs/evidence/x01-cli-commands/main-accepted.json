@@ -1,0 +1,48 @@
+{
+  "observedAt": "2026-10-07T10:34:58.819072+00:00",
+  "main": "b67530bb025162629895d11482b5505d4a885c91",
+  "source": "9f5d61a10504536f43adca28096878eb71d7fa52",
+  "delivery": "a85fa4cf0d1efe3ea8f7e0d28f27d067f21e5e0b",
+  "intakePath": "docs/evidence/i02/x01-cli-intake.json",
+  "intakeSha256": "388f921e5ff818e6e258ebb3879c4d4229bef350acd0519571505f834e76573b",
+  "products": [
+    {
+      "path": "apps/cli/src/index.ts",
+      "bytes": 28398,
+      "sha256": "45da8c78d65f5ef367de0c39b15c03f821f4bec54d0a29c3039d007b30e62e6b"
+    },
+    {
+      "path": "apps/cli/src/plugin-runtime.test.ts",
+      "bytes": 3797,
+      "sha256": "a2f28112571f7c700e25b75ee39ae3456489d2ba5f8b7fd04211d7e41a2c8f4d"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 66568,
+      "sha256": "c89b0fabeb461a338d27878086c675bcf9d88479b821718695ba9745d819abe6"
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "bytes": 6240,
+      "sha256": "ab6f2eccaf3460a3829b8abff767da378bb0bfbcf853414c2e7fac452a9e2ead"
+    },
+    {
+      "path": "packages/client/src/plugin-runtime.test.ts",
+      "bytes": 7388,
+      "sha256": "561da6f1debd90d3d6e4870ae8a8c3002dcd9c3f6a91c8a096a6d28f4f794d34"
+    },
+    {
+      "path": "docs/evidence/x01-cli-commands/fixtures.ts",
+      "bytes": 2727,
+      "sha256": "0c0d85c3d68e962dfca95b27ae35e7cf201c0a15c815fc85d4a0a99645385796"
+    }
+  ],
+  "mainCheck": "root noEmit exit0/10066ms via main intake; no owner retest",
+  "stopPaths": [
+    "packages/client/src/index.ts",
+    "packages/client/src/plugin-management.ts"
+  ],
+  "stopAt": "2026-10-07T10:34:58.819072+00:00",
+  "runtimeDeployment": "UNCHANGED; actual195 dashboard reload not yet observed",
+  "remaining": "real PG/server/runner joint journey belongs X01 parent; this local management slice integrated"
+}

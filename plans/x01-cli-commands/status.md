@@ -2,38 +2,38 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T10:26:15.041651+00:00 |
+| 最近更新时间 | 2026-10-07T10:36:15.274361+00:00 |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T10:08:18Z |
-| 任务完成时间 | NOT_COMPLETED |
+| 任务完成时间 | 2026-10-07T10:36:15.274361+00:00 |
 | 任务时间来源 | 实际UTC建树段观察；take COMMITTED10:08:44.048Z |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-cli-commands |
 | Branch | codex/plugin-cli-commands |
 | 工作基线 / 实现HEAD | 1a6f82a136a1e43213cc58adce96fa92b26ae38b / 9f5d61a10504536f43adca28096878eb71d7fa52 |
 | 工作树dirty状态 | 产品/原件冻结；本次唯一metadata提交后clean |
-| 工作分支状态 | integration |
-| 本片段交付阶段 | integration |
+| 工作分支状态 | integrated |
+| 本片段交付阶段 | delivered |
 | 检查状态 | PASSED 9f5d61a10504536f43adca28096878eb71d7fa52：原18/18+P2新增1/1（18未选）、final focusedtypes0；真实PG/HTTP进程NOT_RUN |
 | Review | [review.md](review.md)，APPROVED 2026-10-07T10:25:16Z |
-| 已集成main状态 / HEAD | 本片未集成；基线已含READBOUND81b |
+| 已集成main状态 / HEAD | b67530bb025162629895d11482b5505d4a885c91，六源与9f5逐字一致 |
 | 实现目标 | 9f5d61a10504536f43adca28096878eb71d7fa52 |
 | 实现范围 | apps/cli/src/index.ts,apps/cli/src/plugin-runtime.test.ts,packages/client/src/index.ts,packages/client/src/plugin-management.ts,packages/client/src/plugin-runtime.test.ts,docs/evidence/x01-cli-commands/fixtures.ts |
 | 阶段 | M2 |
-| 当前产出 | 四个管理命令已通过独立审查，可可靠查询与受理；坏回执会明确结果未知 |
-| 下一可用交付 | 主线受控接收；随后与startup共用专库验证真实服务端和Runner |
+| 当前产出 | 四个管理命令已接入主线；坏回执明确结果未知，真实进程联合验收由父任务继续 |
+| 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Claim | 5f33ae20-b204-435a-86cc-8125fce871b7 v1 ACTIVE/7literal |
+| Claim | 5f33ae20-b204-435a-86cc-8125fce871b7 v2 ACTIVE/5literal；index/helper已移出 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
-| X01CLI-01 | done | db_transaction_owner | 现server合同；独立ACK模块 |
-| X01CLI-02 | done | db_transaction_owner | 原parser/readJsonInput |
-| X01CLI-03 | done | db_transaction_owner | red13/1→18/17夹具错误→18/18；types0，4自有进程/TMP闭合 |
-| X01CLI-04 | in-progress | db_transaction_owner | APPROVED 2026-10-07T10:25:16Z |
+| X01CLI-01 | completed | db_transaction_owner | 现server合同；独立ACK模块 |
+| X01CLI-02 | completed | db_transaction_owner | 原parser/readJsonInput |
+| X01CLI-03 | completed | db_transaction_owner | red13/1→18/17夹具错误→18/18；types0，4自有进程/TMP闭合 |
+| X01CLI-04 | completed | db_transaction_owner | APPROVED 2026-10-07T10:25:16Z |
 
 唯一status；新task尚待原Lead登记，未修改registry/生成JSON。预算20min至10:28:18Z；单child60s/累计120s，TMP16MiB/raw512KiB/source-meta2MiB；0PG/Chrome/provider/install。架构影响：四公开owner client方法，依旧唯一transport；main接收时交Mika协调D06。首次private sparse info目录缺失在原新树补齐，0重复worktree/无产品写入早于take。
 
@@ -47,8 +47,10 @@
 | --- | --- |
 | 分支交付时间 | 2026-10-07T10:26:15.041651+00:00，本次固定READY归档UTC观察 |
 | 独立审查时间 | 2026-10-07T10:25:16Z，chatui固定审查回信 |
-| 主线集成时间 | NOT_INTEGRATED |
+| 主线集成时间 | 2026-10-07T10:34:58.819072Z，owner核main b675接收；不是Git提交时刻推测 |
 | 部署时间 | NOT_DEPLOYED |
-| 完整完成时间 | NOT_COMPLETED（本片待main；真实进程后继与whole X01仍开放） |
+| 完整完成时间 | 2026-10-07T10:36:15.274361+00:00，仅本四管理命令片；whole X01与真实进程后继开放 |
 
 10:23:00.786Z fresh账本available，claim5f33ae20 v1 ACTIVE/7scope身份不变。local已归还且无待launch，metadata不占资源holder。唯一注册输入task-intake.json待原Lead登记/正常聚合；未写registry或生成JSON。独审完成安全点复核命名/接口/冻结请求/严格错误字段，无剩余本片修复，产品停止写入并保claim待main。架构后继交Mika协调D06固定三叶source，不冒架构图已更新。
+
+主线接收见main-accepted.json；原I02 dashboard-cli-source-deployment.json记录TODO done不识别，本次仅将真实完成项改为completed，保原部署错误观察。main已195登记/部署事实由I02来源提供，本片不重跑产品。新ACK片已独立claim接收index/helper，本树永不恢复其写入。
