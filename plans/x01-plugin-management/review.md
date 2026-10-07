@@ -1,3 +1,11 @@
+状态：APPROVED（083085四文件窄修及定向local；R2仅namespace准备，实际PG未开启）
+
+Review target commit: 083085f990424cff8a585fbcb46c30fdb8821578
+
+chatui01_owner/gpt-6-astra 2026-10-07T04:50:38Z SOURCE_AND_TARGETED_RESULT_REVIEW_APPROVED/0P1P2；[收据](../../docs/evidence/x01/enable-binding-stage-c-r1-fix-review.json)。77ed仅Mika明确授权的四namespace字面及新输入绑定，未推新行为批准或PG通过。
+
+---
+
 状态：PENDING（Stage C首轮失败后的四文件窄修及定向local；不继承原准备批准）
 
 Review target commit: 083085f990424cff8a585fbcb46c30fdb8821578
