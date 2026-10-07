@@ -6,27 +6,27 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | assignment_review / gpt-6-astra |
-| 更新时间 | 2026-10-07T05:40:53.000811+00:00 |
+| 更新时间 | 2026-10-07T05:47:08.127675+00:00 |
 | 任务开工时间 | 2026-10-07T03:03:21.259Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 本owner以当次fresh ledger时间记录只读界定段已实际开始；03:06:09.781Z take后进入实施，见take-receipt；本片限定验收由独审+main已接收满足，完成时为owner逐hash确认main回执的实际UTC 2026-10-07T03:17:28.292Z；原修复片段于该时完成。部署候选后继实际开始2026-10-07T03:29:12.051Z（fresh ledger观察+owner当次只读开工），新take03:29:21.929Z后只写docs；个人部署/根因未完成 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | review |
-| 当前产出 | 固定网页宿主及隔离运行结果已交付；仅替换网页宿主的个人采用步骤已实现，并完成局部故障检查。 |
-| 下一可用交付 | 独立审查迁入与替换调用层，然后在受管窗口采用固定网页宿主。 |
-| 当前阻塞 | NONE |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 仅替换网页宿主的个人采用步骤已获独立批准；固定产物和隔离运行结果已交付，个人环境尚未改变。 |
+| 下一可用交付 | 在协调窗口内先迁入固定产物，再单次替换网页宿主并核保留事实。 |
+| 当前阻塞 | ACTIVE: 等待共享运行窗口实际交接；收到后先核原准入，失败或未知即停止。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle |
 | Branch | codex/personal-web-connection-lifecycle |
 | Base | a2e7803161ffb7e2158eaf3c13531448d2a777b0；本片四产品preimage固定0967607a9a9c2435282ca7fbba23b6e96df096c4，两只读叶子input-only26d1be6c |
 | Head | 个人采用caller cb2205db380aa9d8bbb6ff42407ac7166d2a073a；当前仅metadata收口，产品仍bad019 |
 | 工作树dirty状态 | caller/source/raw已固定；仅own status元数据，提交后核clean |
-| 工作分支状态 | in-progress；隔离宿主结果已接收，个人采用源码待审 |
+| 工作分支状态 | in-progress；个人采用caller已审待实际窗口，未执行 |
 | 实现目标 | bad019d9691499bed69ae46b6c5d23944709cfe3 |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/backend-release/host.mjs, tools/personal-preview/README.md |
 | Claim | ba1ff3b2-d830-4acf-b84f-be8df92c9c95 v6 active；04:42:47.430Z正式accept，仅own plan/evidence；[receipt](../../docs/evidence/svc08/flow-host-artifact/assignment-accept-receipt.json) |
-| Review | APPROVED_ISOLATED_WEB_HOST_RESULT aa71a7a3855f27b80d7045ec64c0ca644d87156d；[唯一结果独审](../../docs/evidence/svc08/flow-host-artifact/web-host-once/result-independent-review.json)，不含个人采用；原产品/构建独审保持 |
+| Review | APPROVED_PERSONAL_WEB_HOST_ADOPTION_CALLER cb2205db380aa9d8bbb6ff42407ac7166d2a073a；[caller独审](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/caller-independent-review.json)；原APPROVED_ISOLATED_WEB_HOST_RESULT aa71a7a3855f27b80d7045ec64c0ca644d87156d；[唯一结果独审](../../docs/evidence/svc08/flow-host-artifact/web-host-once/result-independent-review.json)，不含个人采用；原产品/构建独审保持 |
 | 检查状态 | PASSED c8542aee8354fcfcdd6fb68aac5279d108548d4b；1场景/7断言/3静态HTTP，work20,735ms+cleanup257ms/双exit0/双EOF/最终组absent；Web显式stop code1原样保留；[结果](../../docs/evidence/svc08/flow-host-artifact/web-host-once/RESULT.md) |
 | 已集成 main 状态 | INTEGRATED 1d49da00450ae078da13ef3e1f7807d0c00f4c3c；26份固定隔离结果/候选及原独审精确接收；固定构建与四产品main422保持；当前个人采用caller尚待独审，个人尚未操作 |
 | 架构影响 | serviceRuntime仅为Web选择独立artifact，pendingWebHost与同journal先行；后台artifact/身份与原授权保持。main422已接；Execution Lead同步宿主基线。无新产物格式/FSM/监督器 |
@@ -120,3 +120,9 @@
 原claim v6 fresh05:32:55.336Z确认后仅own docs实现。沿已接受候选复用原两锁、verify/clone、RENAME_EXCL和OPS14；Web-only无drain/hold/业务DML或任务归零。9个pure/tiny checks、3JS语法入口及Python AST通过，实际05:39:24.469522Z→05:39:24.782849Z/313ms/raw973B；4组absent/双EOF/自有scratch已清。最后仅caller补legacy webHost必须null的保守前置，未重跑无影响9项；该一行源审，不称个人运行。局部已交还native。见[固定候选](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/candidate.md)、[局部记录](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/local-run.json)。迁入/个人读取/HTTP/PG/服务全部NOT_RUN，root工具尚未冻结。
 
 本轮caller固定提交：cb2205db380aa9d8bbb6ff42407ac7166d2a073a；独立审查待接，个人迁入/替换仍NOT_RUN。status标准解析errors/human/timing均[]，初次错误metadata模块路径原样保留status-parse.json。
+
+## 2026-10-07T05:47:08.127675+00:00：个人采用caller独立批准
+
+唯一review于2026-10-07T05:46:18.996142Z确认5source/32runtime/12evidence及9局部原件，无P1/P2；原样归档caller-independent-review.json，SHA c6a21fb3add965c3076d853a021b5739e96576c2a65e56b616d5e7ae2feb45ec。fresh账本05:46:38.842Z仍v6合法两scope。原固定cb2205/manifest不改，个人迁入/替换仍NOT_RUN；阶段migrate/request/replace/post使用同一新exclusive namespace，前段明确成功才后继。root工具短冻结与实际运行窗口由Lead协调；当前不读取个人、不创建执行namespace、不复制或起服务。无新测试。
+
+| SVC08-W04 | 2026-10-07T05:46:38.842Z | OPEN | 资源 | caller已审，等待Lead实际共享运行窗口与工具短冻结 | caller-independent-review + fresh ledger/本owner开始等待记录 |
