@@ -53,3 +53,7 @@ MSGQUICK-04 保持开放：strict exit2，direct未运行，已完成自身清�
 ## b2实际中断与监督计量后继
 
 2026-10-07 04:48:10 UTC：[b2独审原件](../../docs/evidence/wpf-message-settings-quick-controls/b2-browser-20261007/README.md)接受FAILED与owned清理，正常HTTP/context close字段缺失。MSGQUICK-04继续开放；父非原子scratch差分计量已源码确认，后继仅TMP准备exact-subtree排除，不提升原8MiB或修改产品/六场景/两PNG。累计18468/余41532，无自动第三次。
+
+## 计量修正小检查 2026-10-07 05:10:24 UTC
+
+MSGQUICK-04继续开放：[b3实际helper五项检查](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/README.md)单次exit0/47.222083ms，own临时目录清理。root已审最小计量源码，真实browser仍待后继精确准入；不重跑strict26、不追加浏览器预算，不把helper通过作六组/两PNG通过。

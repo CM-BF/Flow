@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS02 独立审查
 
-状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 04:52:57 UTC。
+状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 05:10:24 UTC。
 
 - 当前 Target：fe6ece131c489c79cf531a184e4cf51209f9c4a0；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。root 已完成限定源码复审：APPROVED_SCOPED_SOURCE_ONLY；完整行为不由此通过。
 - 历史已审 Target：35bbe76faa2128d5c1d00711fb2be3b23d54fc4f，root/peer 结论 REQUEST_CHANGES_SCOPED_VALIDATION_GAP。唯一 MSGQUICK-R3 / P2 是验收覆盖缺口，不是已证明产品错误。
@@ -73,3 +73,9 @@ Portable review：**APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN / 0 blocking**�
 [root原件](../../docs/evidence/wpf-message-settings-quick-controls/b2-browser-20261007/root-failed-actual-review.json)：ACCEPTED_FAILED_ACTUAL_AND_OWNED_CLEANUP_NOT_FEATURE_PASS；SHAeea3ef6a637b878ce89a7b30e4b9d6775446332398d39db5ffc34b96e97750be。actualouterexit1，FAILED seal完整/presenthash匹配/null诚实，所有333samples与EOF0drop已核。精确3PGID absent、scratch已清理；worker没有正常HTTP/context关闭报告，保持NOT_CAPTURED。
 
 父scratch-before-BASE差分计量缺陷为源码确认；本次样本只支持一致性，不证明精确原因分配。b2累计保守18468/余41532，旧parent18428保留。观测未到模型选框事件，无产品修复/第三次运行；本片完整feature仍UNKNOWN，TMP后继计量准备需独审。
+
+## b3计量源准备已审与helper实际检查 2026-10-07 05:10:24 UTC
+
+[root固定源审](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/root-source-review.json)：SOURCE_DELTA_AND_FIVE_CHECK_LOCAL_PLAN_ACCEPTED_NATIVE_RUNTIME_NOT_ADMITTED；parent dad6ea/worker f099/actual helper 7afe4b。三处retained直接剪枝exact scratch、独立tmp cap/原symlink及error保留、两次FAILED真实carry已审。
+
+[实际原件](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/actual.json) exit0、47.222083ms、5项PASS、ownedtmp absent，单次小检查完成。只验证计量helper，不改b2失败结论或推断精确运行因果；[root实际接收及精确native准备批准](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/root-native-actual-review.json)已到；无Chrome运行准入/产品重测，完整feature仍UNKNOWN。browser18468/41532和原raw不改。

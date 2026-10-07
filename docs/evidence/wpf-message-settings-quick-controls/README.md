@@ -2,7 +2,7 @@
 
 产品固定fe6ece131c489c79cf531a184e4cf51209f9c4a0，四源限定源码已审。当前[c2实际strict/26direct](c2-actual-20261007/README.md)已由root限定接受：两个子退出0、outer actualexit0+唯一PASS seal/四hash/双EOF0drop，owned groups/scratch清理。累计5119ms/余24881ms。
 
-最新[b2实际计量中断](b2-browser-20261007/README.md)已经root接受FAILED+ownedcleanup事实：outerexit1，trace/browser-results/PNG均未生成，正常HTTP/context close NOT_CAPTURED；全部ownedgroups/EOF/scratch清理。保守累计18468/余41532；原parent预算不回填，原b1/root结论保留。完整browser尚未通过，后继只TMP计量准备、未授第三次。
+最新[b2实际计量中断](b2-browser-20261007/README.md)已经root接受FAILED+ownedcleanup事实：outerexit1，trace/browser-results/PNG均未生成，正常HTTP/context close NOT_CAPTURED；全部ownedgroups/EOF/scratch清理。保守累计18468/余41532；原parent预算不回填，原b1/root结论保留。完整browser尚未通过；[b3计量修正](b3-accounting-20261007/README.md)经root源审并实际五项helper检查PASS，actualexit0/47.222083ms/ownedTMP absent。browser预算不变，未授第三次Chrome。
 
 [c1原失败](c1-first-20261007/README.md)保留：strict2、direct未执行，缺fixedHEAD未物化输入；后续仅原Lead[精确供给](c1-first-20261007/source-provision-receipt.json)，不更改旧失败。
 
@@ -10,4 +10,4 @@
 
 [审查](../../../plans/wpf-message-settings-quick-controls/review.md)、[source manifest](source-manifest.json)、[Interface](interface.md)为当前入口。历史35R3/7615locator/c1终态审查保留；后页profile仍只是browser待验，direct不冒渲染场景通过。
 
-[portable-check](portable-check/README.md)固定dc67为APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN；九候选源不改、远程未启用，本地c2通过不等远程通过。本次只封存b2唯一实际中断raw/更新当前事实，未修改原c1/b1或再次运行检查。
+[portable-check](portable-check/README.md)固定dc67为APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN；九候选源不改、远程未启用，本地c2通过不等远程通过。本次补充b3计量helper有限实证；原c1/b1/b2全部raw及产品四源不动，没有重跑strict26或浏览器。

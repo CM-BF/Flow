@@ -1,0 +1,48 @@
+{
+  "state": "PASS",
+  "startedAt": "2026-10-07T05:09:08.715363+00:00",
+  "endedAt": "2026-10-07T05:09:08.762707+00:00",
+  "wallMs": 47.22208308521658,
+  "actualExit": 0,
+  "timedOut": false,
+  "command": [
+    "python3",
+    "/private/tmp/msgquick-b3/accounting-check.py"
+  ],
+  "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "metadataHead": "b44fce2889ab2b9622c45fc7a92ce2237e8507bf",
+  "parentSha256": "dad6ea555ecdec90b65a677337287980a36369ef2c0567b385c5c34898dfb0b5",
+  "checkSha256": "7afe4bfb6ee1cb8e6e9031ab20958692c6b4cfc21ab7f5eeb8a42a05eed99619",
+  "claim": {
+    "id": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+    "version": 1,
+    "state": "active",
+    "observedAt": "2026-10-07T05:08:43.369Z",
+    "overlaps": []
+  },
+  "stdoutBytes": 525,
+  "stderrBytes": 0,
+  "stdoutSha256": "0002ae0090340c503dcdb8b5d725a6408a180fc7e79af6894307c703206f6d96",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "outcome": {
+    "state": "PASS",
+    "checks": [
+      "exact scratch growth changes temporary usage, not retained logical or allocated bytes",
+      "similarly named directory remains retained",
+      "file and directory symlinks are not followed; scratch is independently measurable",
+      "only the exact owned scratch child can be excluded",
+      "only ENOENT observation errors are transient"
+    ],
+    "errors": [],
+    "ownedTemporaryAbsent": true,
+    "boundary": "Counts only. Production 64MiB/8MiB guards remain a separate fixed-source review; no monitor-loop or Chrome claim."
+  },
+  "newSyntheticTemporaryPaths": [],
+  "temporaryAbsenceBasis": "Actual helper check finally-rmtree assertion plus matching namespace before/after observation; no unrelated temporary paths touched.",
+  "temporaryLogicalBoundary": "Fixed source creates under 80KiB logical payload; authorized cap256KiB. No claimed sampled physical high-water mark.",
+  "browserBudgetUnchanged": {
+    "spentMs": 18468,
+    "remainingMs": 41532
+  },
+  "errors": []
+}

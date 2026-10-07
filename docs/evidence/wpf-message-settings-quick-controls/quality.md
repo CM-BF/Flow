@@ -71,3 +71,9 @@ manager22:35:11 fresh本人窄核原六scope。Root原件确认fe6四源APPROVED
 本人fresh核839ev1原6/唯一owner/nooverlap/HEAD3a4dd6 clean。复用本地find-skills/clean-code/webapp-testing锁定方法，不安装：20原件172219B逐字归档；错误保真分别记录父首错、缺worker结果、正常close未知和ownedgroups已清理，避免把进程清理写成应用正常关闭。原333样本不改，root静态确认计量差分窗口但不冒精确runtime因果。
 
 预算采用max实际outer/late终态/parent后向上取整6142，累计18468/余41532；历史parent18428不回增余量。四fe6与旧包/raw逐hash保持；本段仅文档/证据链接和内容一致性核对，无新产品/parser运行或空间/进程/服务采样。后继源只在独立TMP按原计量cap准备，未获得运行许可。
+
+## b3计量helper安全点 2026-10-07 05:10:24 UTC
+
+沿已读本地find-skills/clean-code实际应用：将可变两遍相减改为exact subtree直接计量，沿用原helper而非复制算法；错误/所有权不变，非ENOENT失败传播。本人05:08:43.369Z fresh原839ev1六scope/nooverlap，b44fce clean/固定hash核齐。root批准后一次小检查actualexit0/47.222083ms/五项PASS，525B+0B输出，ownTMP absent，payload固定少于80KiB逻辑字节；不冒物理峰值、真实Chrome或完整监控测试。
+
+本次只在own证据归档8原件与三件套记录；候选20文件/旧86prior均保持，四fe6/portable可执行源未改。保两次失败与18468/41532浏览器账，计量小检查不扣或回增browser预算。root本次精确native/actual批准已原样归档；真正浏览器仍未发生。按root明确指令，当前metadata提交后仅TMP保旧原件并重绑最终HEAD/state/批准pointer，不改prepared执行源码。无安装、PG、Chrome、strict26重复或free/proc采样。
