@@ -49,8 +49,8 @@
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
-| GDEP01-W01 | 2026-10-07T22:41:02Z | 2026-10-07T22:45:32.728788Z | 资源 | READY候选等待唯一实际PG窗口；实际START解除 | 本status既有READY事件、pg-actual-results.md |
-| GDEP01-W02 | 2026-10-07T22:52:58.088050Z | 2026-10-07T23:47:33.071Z | 其他 | 已审交付STOP后等待主线接收；中央intake观察解除 | owner原交付STOP消息、中央gdep01-approved-intake.json |
+| GDEP01-W01 | 2026-10-07T22:41:02Z | 2026-10-07T22:45:32.728Z | 资源 | READY候选等待唯一实际PG窗口；实际START解除 | 本status既有READY事件、pg-actual-results.md |
+| GDEP01-W02 | 2026-10-07T22:52:58.088Z | 2026-10-07T23:47:33.071Z | 其他 | 已审交付STOP后等待主线接收；中央intake观察解除 | owner原交付STOP消息、中央gdep01-approved-intake.json |
 
 未记录的旧等待起止保留UNKNOWN；source/local、审查及资源等待不合计为有效工时。
 
@@ -105,3 +105,9 @@ main-intake.md列四产品叶/source/base前像与分列checks/review；commands
 本段0工程/PG/HTTP/Chrome/provider/部署；原16pure、8PG和独审复用，所有raw/input/源不改。真实execute/native/progression端到端仍未跑，中央接收按commands同签名import及事务/权限/JSON代码零差判断，不冒全端到端验收。dashboard事实待Root一次读取后自然归档，当前无活动child或待launch。
 
 本次仅own-status parser（主线权威parseStatus）读取：errors=[]、human.missing=[]、timing.issues=[]，父FLOW-001/co-lead mika已解析；非产品检查/非实际聚合证明。
+
+## 首次实际聚合与等待格式修复
+
+Root于2026-10-07T23:55:31.572218Z定向GET GDEP01：HTTP200/7776B，HEAD4730a0c5 clean、branch匹配、consistency matched、stale=false、task.issues=[]、human.complete=true/missing=[]、blocker.none、4TODO completed；当时main107d61927320fb10a8f50d45450da3ffedf7afc8。waitingTable.issues两条时间格式告警原样保留：原六位小数超出declaredInstant允许的1–3位。上表仅按毫秒展示既有时刻；原事件22:45:32.728788Z和22:52:58.088050Z保持在原记录/本段，不反推或改写。
+
+本地修后parser实际包含timing.waitingTable.issues核验；Root另一次定向读取因本修复而允许，产品检查仍0。此前用父ID的404是非目标请求，不代表GDEP01未登记。

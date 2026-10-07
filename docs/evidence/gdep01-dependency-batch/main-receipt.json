@@ -92,5 +92,25 @@
     "gitAndReceiptReserveBytes": 262144,
     "prospectiveUpperBytes": 2624475
   },
-  "dashboard": "Pending root single read after this fixed metadata head; no owner probe."
+  "dashboard": {
+    "observer": "root",
+    "observedAt": "2026-10-07T23:55:31.572218Z",
+    "taskId": "GDEP01",
+    "httpStatus": 200,
+    "responseBytes": 7776,
+    "head": "4730a0c5b66c01dd78b61e95c1c66b4e258f769c",
+    "clean": true,
+    "consistency": "matched",
+    "stale": false,
+    "taskIssues": [],
+    "humanComplete": true,
+    "humanMissing": [],
+    "blocker": "none",
+    "todosCompleted": 4,
+    "waitingTableIssues": [
+      "GDEP01-W01：时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN",
+      "GDEP01-W02：时间须为 ISO UTC、UNKNOWN 或结束列的 OPEN"
+    ],
+    "repair": "Display existing instants at supported millisecond precision; original six-digit event records untouched. Await corrected fixed-head read."
+  }
 }
