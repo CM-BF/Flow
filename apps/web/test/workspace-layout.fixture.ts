@@ -81,10 +81,30 @@ export async function startWorkspaceLayoutFixture(options: { cacheDirectory: str
   fixture.server.removeAllListeners("request");
   const uploads = new Map<string, AttachmentAccepted>(), files = new Map<string, AttachmentMetadata>();
   const reads: { method: string; path: string; bytes: number; bodyRead: boolean; ended: boolean }[] = [];
-  const errors: string[] = [], timers = new Set<ReturnType<typeof setTimeout>>();
-  let cookie: string | undefined, csrf: string | undefined, bodyDelay = 0, bodyInFlight = 0, bodyPeak = 0, bodyBytes = 0, closed = false;
+  const errors: string[] = [];
+  let cookie: string | undefined, csrf: string | undefined, bodyInFlight = 0, bodyPeak = 0, bodyBytes = 0, closed = false;
   let web: Awaited<ReturnType<typeof createViteServer>> | undefined;
-  const later = (operation: () => void) => { const timer = setTimeout(() => { timers.delete(timer); operation(); }, bodyDelay); timers.add(timer); };
+  const observationStart = performance.now();
+  let observationPhase = "connection";
+  const bodyEvents: { sequence: number; elapsedMs: number; event: string; path: string; phase: string; inFlight: number; status?: number }[] = [];
+  const observe = (event: string, path: string, status?: number) => {
+    if (bodyEvents.length >= 128) { if (!errors.includes("Arc body/stream event bound")) errors.push("Arc body/stream event bound"); return; }
+    bodyEvents.push({ sequence: bodyEvents.length + 1, elapsedMs: performance.now() - observationStart, event, path, phase: observationPhase, inFlight: bodyInFlight, status });
+  };
+  let expectedBodies: Set<string> | undefined, releasedBodies = 0;
+  const seenBodies = new Set<string>();
+  const heldBodies = new Map<string, { response: ServerResponse; send: () => void }>();
+  // Count-limited real responses, bounded by the existing whole-worker deadline.
+  // The browser releases one available response at a time; six server arrivals are never a release prerequisite.
+  const bodyResponse = (path: string, response: ServerResponse, send: () => void) => {
+    bodyInFlight++; bodyPeak = Math.max(bodyPeak, bodyInFlight); observe("body-arrive", path);
+    response.once("finish", () => observe("body-finish", path, response.statusCode));
+    response.once("close", () => { bodyInFlight--; if (heldBodies.get(path)?.response === response) heldBodies.delete(path); observe("body-close", path, response.statusCode); });
+    if (!expectedBodies) { send(); return; }
+    assert.ok(expectedBodies.has(path) && !seenBodies.has(path), "One exact body request per identity");
+    assert.ok(heldBodies.size < 6 && seenBodies.size < 6, "Arc body hold bound");
+    seenBodies.add(path); heldBodies.set(path, { response, send }); observe("body-held", path);
+  };
   const json = (response: ServerResponse, value: unknown, status = 200) => { if (!response.destroyed) { response.writeHead(status, { "content-type": "application/json", "cache-control": "no-store" }); response.end(JSON.stringify(value)); } };
   const body = async (request: IncomingMessage) => { const chunks: Buffer[] = []; let bytes = 0;
     for await (const chunk of request) { bytes += chunk.length; if (bytes > 32768) throw Error("Arc request bound"); chunks.push(Buffer.from(chunk)); }
@@ -100,6 +120,11 @@ export async function startWorkspaceLayoutFixture(options: { cacheDirectory: str
       return Reflect.apply(originalEnd, response, [chunk, ...args]);
     }) as typeof response.end;
     response.once("close", () => { row.ended = true; });
+    if (/\/tasks\/[^/]+\/stream$/.test(url.pathname)) {
+      observe("stream-arrive", url.pathname);
+      response.once("finish", () => observe("stream-finish", url.pathname, response.statusCode));
+      response.once("close", () => observe("stream-close", url.pathname, response.statusCode));
+    }
     const ready = () => ({ protocol: "flow.browser-session.v1", state: "ready", centerId: id(1), ownerPrincipalId: id(2), csrfToken: csrf, expiresAt: new Date(Date.now() + 3600000).toISOString() });
     const authenticated = cookie !== undefined && request.headers.cookie?.split(/;\s*/).includes(`flow_arc_fixture=${cookie}`);
     if (url.pathname === "/api/browser-session" && method === "GET") { json(response, authenticated ? ready() : { protocol: "flow.browser-session.v1", state: "unauthenticated" }); return; }
@@ -129,7 +154,7 @@ export async function startWorkspaceLayoutFixture(options: { cacheDirectory: str
       const conversationId = queue[1]!, text = `Waiting ${conversationId} ` + "body ".repeat(240);
       const item = { id: `${conversationId}-queue`, conversationId, sequence: 1, state: "waiting", preview: text.slice(0, 100), truncated: true, promoted: null, createdAt: at, updatedAt: at };
       const value = { conversationId, queueRevision: 1, paused: true, currentTurn: null, blocked: "queue-paused", ...(queue[2] ? { item: { ...item, text } } : { items: [item], nextCursor: null }) };
-      if (queue[2]) { bodyInFlight++; bodyPeak = Math.max(bodyPeak, bodyInFlight); response.once("close", () => { bodyInFlight--; }); later(() => json(response, value)); }
+      if (queue[2]) bodyResponse(url.pathname, response, () => json(response, value));
       else json(response, value); return;
     }
     if (method === "POST" && /\/conversations\/[^/]+\/turns$/.test(url.pathname)) {
@@ -148,11 +173,13 @@ export async function startWorkspaceLayoutFixture(options: { cacheDirectory: str
     }
     const run = () => { if (!response.destroyed) Promise.resolve(handler(request, response)).catch(failed); };
     const failed = (error: unknown) => { if (errors.length < 8) errors.push(String(error).slice(0, 256)); if (response.headersSent) response.destroy(); else json(response, { error: { code: "arc_fixture", message: "Fixture request failed" } }, 500); };
-    if (row.bodyRead) { bodyInFlight++; bodyPeak = Math.max(bodyPeak, bodyInFlight); response.once("close", () => { bodyInFlight--; }); later(run); }
+    if (row.bodyRead) bodyResponse(url.pathname, response, run);
     else run();
   })().catch(error => { if (errors.length < 8) errors.push(String(error).slice(0, 256)); if (response.headersSent) response.destroy(); else json(response, { error: { code: "arc_fixture", message: "Fixture request failed" } }, 500); }); });
   const close = async () => {
-    if (closed) return; closed = true; timers.forEach(clearTimeout); stream.close();
+    if (closed) return; closed = true;
+    for (const { response } of heldBodies.values()) response.destroy();
+    heldBodies.clear(); expectedBodies = undefined; stream.close();
     const results = await Promise.allSettled([web?.close(), fixture.close()]);
     const failures = results.filter(result => result.status === "rejected"); if (failures.length) throw new AggregateError(failures.map(result => result.reason), "Arc HTTP cleanup failed");
   };
@@ -163,6 +190,22 @@ export async function startWorkspaceLayoutFixture(options: { cacheDirectory: str
       define: { "import.meta.env.VITE_FLOW_FIXTURE": JSON.stringify("true") }, server: { host: "127.0.0.1", port: 0, proxy: { "/api": `http://127.0.0.1:${center.port}` } }, logLevel: "error" });
     await web.listen(); const address = web.httpServer!.address(); assert.ok(address && typeof address !== "string");
     return { fixture, stream, streamTasks, profile, choices, reads, errors, uploads, files, ports: [center.port, address.port], url: `http://127.0.0.1:${address.port}`,
-      delayBodies(ms: number) { assert.ok(ms >= 0 && ms <= 2000); bodyDelay = ms; }, bodyMetrics: () => ({ bodyInFlight, bodyPeak, bodyBytes }), close };
+      holdBodyReads(paths: readonly string[]) {
+        assert.ok(!closed && !expectedBodies && bodyInFlight === 0 && seenBodies.size === 0);
+        assert.equal(paths.length, 6); assert.equal(new Set(paths).size, 6);
+        expectedBodies = new Set(paths);
+      },
+      heldBodyPaths: () => [...heldBodies.keys()],
+      releaseNextBody() {
+        const next = heldBodies.entries().next().value; assert.ok(next && expectedBodies && releasedBodies < 6);
+        const [path, held] = next; assert.ok(!held.response.destroyed);
+        heldBodies.delete(path); releasedBodies++; observe("body-release", path); held.send(); return path;
+      },
+      finishBodyReads() {
+        assert.equal(releasedBodies, 6); assert.equal(seenBodies.size, 6);
+        assert.equal(heldBodies.size, 0); assert.equal(bodyInFlight, 0); expectedBodies = undefined;
+      },
+      setObservationPhase(value: string) { observationPhase = value; },
+      bodyEvents, bodyMetrics: () => ({ bodyInFlight, bodyPeak, bodyBytes }), close };
   } catch (error) { try { await close(); } catch (cleanup) { throw new AggregateError([error, cleanup], "Arc setup/cleanup failed"); } throw error; }
 }

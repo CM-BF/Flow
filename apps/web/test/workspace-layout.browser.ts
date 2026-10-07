@@ -1,6 +1,6 @@
 import { writeFile } from "node:fs/promises";
 import { join } from "node:path";
-import { expect, type Browser, type BrowserContext, type Page } from "@playwright/test";
+import { expect, type Browser, type BrowserContext, type Page, type Request as BrowserRequest, type Response as BrowserResponse } from "@playwright/test";
 import { startWorkspaceLayoutFixture } from "./workspace-layout.fixture";
 import type { DraftRecord } from "../src/recovery/journal";
 import { readRecoveryDraft } from "../src/recovery/binding";
@@ -26,6 +26,40 @@ async function draftRecord(page: Page, route: string) {
   return record ? { ...record, data: readRecoveryDraft(record.data) } : null;
 }
 
+/** Passive public request lifecycle; issued does not claim a socket has been acquired. */
+function observeBodyRequests(page: Page, origin: string, expected: readonly string[]) {
+  const started = performance.now(), errors: string[] = [];
+  let phase = "connection";
+  type Row = { id: number; kind: "body" | "stream"; method: string; path: string; issuedMs: number; phase: string; status?: number; finishedMs?: number; failedMs?: number };
+  const rows: Row[] = [], requests = new Map<BrowserRequest, Row>();
+  const events: { sequence: number; elapsedMs: number; phase: string; event: string; path: string; requestId?: number; status?: number }[] = [];
+  const error = (message: string) => { if (errors.length < 8) errors.push(message); };
+  const event = (name: string, path: string, row?: Row) => {
+    if (events.length >= 256) { error("Client read event bound"); return; }
+    events.push({ sequence: events.length + 1, elapsedMs: performance.now() - started, phase, event: name, path, requestId: row?.id, status: row?.status });
+  };
+  const requested = (request: BrowserRequest) => {
+    const url = new URL(request.url()); if (url.origin !== origin) return;
+    const kind = /\/details\/|\/queue\/[^/]+$/.test(url.pathname) ? "body" : /\/tasks\/[^/]+\/stream$/.test(url.pathname) ? "stream" : null;
+    if (!kind) return;
+    if (rows.length >= 64) { error("Client read identity bound"); return; }
+    if (kind === "body" && (request.method() !== "GET" || !expected.includes(url.pathname) || rows.some(row => row.kind === "body" && row.path === url.pathname))) error("Unexpected or duplicate body request");
+    const row: Row = { id: rows.length + 1, kind, method: request.method(), path: url.pathname, issuedMs: performance.now() - started, phase };
+    rows.push(row); requests.set(request, row); event("issued", row.path, row);
+  };
+  const responded = (response: BrowserResponse) => { const row = requests.get(response.request()); if (row) { row.status = response.status(); event("response", row.path, row); } };
+  const finished = (request: BrowserRequest) => { const row = requests.get(request); if (row) { row.finishedMs = performance.now() - started; event("finished", row.path, row); } };
+  const failed = (request: BrowserRequest) => { const row = requests.get(request); if (row) { row.failedMs = performance.now() - started; event("failed", row.path, row); } };
+  page.on("request", requested); page.on("response", responded); page.on("requestfinished", finished); page.on("requestfailed", failed);
+  return {
+    phase(value: string) { phase = value; }, action(value: string) { event(value, ""); },
+    bodies: () => rows.filter(row => row.kind === "body").map(row => ({ ...row })),
+    pending: () => rows.filter(row => row.kind === "body" && row.finishedMs === undefined && row.failedMs === undefined).map(row => row.path),
+    snapshot: () => ({ semantics: "Page issued/response/body-finished/failed; not socket admission", rows: rows.map(row => ({ ...row })), events: events.map(row => ({ ...row })), errors: [...errors], maxRows: 64, maxEvents: 256 }),
+    close() { page.removeListener("request", requested); page.removeListener("response", responded); page.removeListener("requestfinished", finished); page.removeListener("requestfailed", failed); requests.clear(); },
+  };
+}
+
 /** Invoked only by an admitted owned-Chrome caller. No launch/import side effects. */
 export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDirectory, signal }: {
   browser: Browser; outputDirectory: string; cacheDirectory: string; signal: AbortSignal;
@@ -34,16 +68,19 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
     passed: [] as string[], screenshots: [] as string[], observations: {} as Record<string, unknown>, error: null as string | null, cleanupErrors: [] as string[],
     cleanup: { contextClosed: false, httpClosed: false } };
   let fixture: Awaited<ReturnType<typeof startWorkspaceLayoutFixture>> | undefined, context: BrowserContext | undefined;
+  let bodyObserver: ReturnType<typeof observeBodyRequests> | undefined;
   const abort = () => { void context?.close().catch(error => result.cleanupErrors.push(String(error).slice(0, 256))); };
   try {
     signal.throwIfAborted(); fixture = await startWorkspaceLayoutFixture({ cacheDirectory }); signal.throwIfAborted();
     context = await browser.newContext({ viewport: { width: 1500, height: 960 } }); signal.addEventListener("abort", abort, { once: true });
     const page = await context.newPage(); page.setDefaultTimeout(5000);
+    const expectedBodies = [1, 2, 3].flatMap(number => [`/api/conversations/chat-${number}/turns/chat-${number}-turn-1/details/chat-${number}-task-1-reply`, `/api/conversations/chat-${number}/queue/chat-${number}-queue`]);
+    bodyObserver = observeBodyRequests(page, new URL(fixture.url).origin, expectedBodies);
     const pane = (number: number) => page.locator(`.flow-tab-body[id="panel-conversation:chat-${number}"]`);
     const input = (number: number) => pane(number).getByRole("textbox", { name: "Message input", exact: true });
     const tab = (number: number) => page.getByRole("tab", { name: `Conversation ${number}`, exact: true });
     const chooseChat = (number: number) => page.getByRole("navigation", { name: "Conversations", exact: true }).getByRole("button", { name: `Conversation ${number}`, exact: true }).click();
-    const run = async (name: string, operation: () => Promise<void>) => { signal.throwIfAborted(); await operation(); signal.throwIfAborted(); result.passed.push(name); };
+    const run = async (name: string, operation: () => Promise<void>) => { signal.throwIfAborted(); bodyObserver!.phase(name); fixture!.setObservationPhase(name); await operation(); signal.throwIfAborted(); result.passed.push(name); };
     await page.goto(fixture.url + "?recovery=1#conversation=chat-1");
     await expect(page.getByRole("heading", { name: "Connect to Flow", exact: true })).toBeVisible();
     await page.getByLabel("Owner token", { exact: true }).fill("flow-fixture-only"); await page.getByRole("button", { name: "Connect workspace", exact: true }).click();
@@ -80,17 +117,47 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       await expect.poll(() => fixture!.streamTasks.every(task => fixture!.stream.reads.filter(row => row.taskId === task && row.kind === "patches").length >= 11)).toBe(true);
       expect(fixture!.stream.peak).toBeLessThanOrEqual(2);
       const detailReads = () => fixture!.reads.filter(row => row.bodyRead);
-      expect(detailReads()).toHaveLength(0); fixture!.delayBodies(1200);
+      expect(detailReads()).toHaveLength(0); expect(bodyObserver!.bodies()).toHaveLength(0);
+      // Prepare public controls before holding bodies; index/stream requests remain normal.
       for (const number of [1, 2, 3]) {
-        const target = pane(number).locator('[data-slot="aui_assistant-message-root"]').filter({ hasText: "This reply is shortened." });
-        await expect(target).toHaveCount(1); await target.getByRole("button", { name: "Read full reply", exact: true }).click();
+        await expect(pane(number).getByRole("button", { name: "Read full reply", exact: true })).toBeVisible();
         const queue = pane(number).getByRole("region", { name: "Conversation queue", exact: true });
         await queue.getByRole("button", { name: /waiting loaded/ }).click();
-        await queue.getByRole("button", { name: "Read full message", exact: true }).click();
+        await expect(queue.getByRole("button", { name: "Read full message", exact: true })).toBeVisible();
       }
-      await expect.poll(() => fixture!.bodyMetrics().bodyPeak).toBe(6);
-      await expect.poll(() => fixture!.bodyMetrics().bodyInFlight).toBe(0); expect(detailReads()).toHaveLength(6);
-      fixture!.delayBodies(0);
+      fixture!.holdBodyReads(expectedBodies);
+      for (const number of [1, 2, 3]) {
+        bodyObserver!.action(`reply-${number}-begin`);
+        await pane(number).getByRole("button", { name: "Read full reply", exact: true }).click();
+        bodyObserver!.action(`reply-${number}-end`);
+        bodyObserver!.action(`queue-${number}-begin`);
+        await pane(number).getByRole("region", { name: "Conversation queue", exact: true }).getByRole("button", { name: "Read full message", exact: true }).click();
+        bodyObserver!.action(`queue-${number}-end`);
+      }
+      await expect.poll(() => bodyObserver!.pending().sort()).toEqual([...expectedBodies].sort());
+      for (const number of [1, 2, 3]) {
+        await expect(pane(number).getByRole("status").filter({ hasText: /^Loading full reply…$/ })).toBeVisible();
+        await expect(pane(number).getByRole("status").filter({ hasText: /^Loading message…$/ })).toBeVisible();
+      }
+      expect(bodyObserver!.pending().sort()).toEqual([...expectedBodies].sort());
+      const logicalPending = bodyObserver!.bodies(); expect(logicalPending).toHaveLength(6);
+      result.observations.bodyAdmission = { logicalPending, client: bodyObserver!.snapshot(), server: fixture!.bodyMetrics() };
+      // HTTP/1/SSE can use the other sockets. Drain whichever real response is available,
+      // then let transport admit the next request; never wait for six server arrivals.
+      for (let released = 0; released < 6; released++) {
+        await expect.poll(() => fixture!.heldBodyPaths().length).toBeGreaterThan(0);
+        const path = fixture!.releaseNextBody();
+        await expect.poll(() => bodyObserver!.bodies().some(row => row.path === path && row.finishedMs !== undefined)).toBe(true);
+      }
+      await expect.poll(() => fixture!.bodyMetrics().bodyInFlight).toBe(0); fixture!.finishBodyReads();
+      expect(fixture!.bodyMetrics().bodyPeak).toBeLessThanOrEqual(6);
+      expect(detailReads().map(row => row.path).sort()).toEqual([...expectedBodies].sort());
+      for (const row of bodyObserver!.bodies()) { expect(row.status).toBe(200); expect(row.finishedMs).toBeDefined(); expect(row.failedMs).toBeUndefined(); }
+      expect(bodyObserver!.snapshot().errors).toEqual([]);
+      for (const number of [1, 2, 3]) {
+        await expect(pane(number).locator(".flow-reply-detail pre")).toContainText(`long reply ${number}`);
+        await expect(pane(number).getByRole("region", { name: "Conversation queue", exact: true }).locator("pre")).toHaveText(`Waiting chat-${number} ` + "body ".repeat(240));
+      }
       const viewport = pane(1).locator('[data-slot="aui_thread-viewport"]'), anchor = pane(1).getByText("long reply 1", { exact: true });
       await anchor.scrollIntoViewIfNeeded();
       const before = await viewport.evaluate((node, anchor) => {
@@ -107,14 +174,14 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       const position = await anchor.evaluate(node => { const viewport = node.closest('[data-slot="aui_thread-viewport"]')!; return { top: node.getBoundingClientRect().top - viewport.getBoundingClientRect().top, height: viewport.clientHeight }; });
       expect(position.top).toBeGreaterThanOrEqual(-40); expect(position.top).toBeLessThan(position.height);
       await page.getByRole("button", { name: "New workspace", exact: true }).click();
-      const paused = fixture!.stream.reads.length, bodies = detailReads().length;
+      const paused = fixture!.stream.reads.length, bodies = detailReads().length, issuedBodies = bodyObserver!.bodies().length;
       fixture!.streamTasks.forEach(task => fixture!.stream.append(task, " hidden update"));
       await expect(page.locator(".flow-tab-body:not([hidden])")).toHaveCount(0);
       await page.getByRole("tab", { name: "Workspace 1", exact: true }).focus();
       // A bounded browser event turn witnesses that merely focusing a manual tab does not reactivate it.
       await page.keyboard.press("ArrowRight"); await expect(page.getByRole("tab", { name: "Workspace 2", exact: true })).toBeFocused();
-      expect(fixture!.stream.reads).toHaveLength(paused); expect(detailReads()).toHaveLength(bodies);
-      result.observations.bodyReads = { ...fixture!.bodyMetrics(), count: bodies, limit: 6, semantics: "explicit body flights, not all HTTP" };
+      expect(fixture!.stream.reads).toHaveLength(paused); expect(detailReads()).toHaveLength(bodies); expect(bodyObserver!.bodies()).toHaveLength(issuedBodies);
+      result.observations.bodyReads = { ...fixture!.bodyMetrics(), count: bodies, limit: 6, semantics: "six browser-issued and UI-loading logical body reads; server socket concurrency recorded separately" };
       result.observations.streamReads = fixture!.stream.reads.map(row => ({ ...row }));
     });
     await run("prepare-await-stable", async () => {
@@ -219,15 +286,16 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       expect(await draftRecord(page, "conversation:chat-4")).not.toBeNull();
       result.observations.persistedLayout = publicLayout;
     });
-    expect(fixture.errors).toEqual([]); expect(result.passed).toEqual(result.selected);
+    expect(fixture.errors).toEqual([]); expect(bodyObserver!.snapshot().errors).toEqual([]); expect(result.passed).toEqual(result.selected);
   } catch (error) { result.error = error instanceof Error ? error.stack ?? error.message : String(error); }
   finally {
-    signal.removeEventListener("abort", abort);
+    signal.removeEventListener("abort", abort); bodyObserver?.phase("cleanup"); fixture?.setObservationPhase("cleanup");
     const closed = await Promise.allSettled([context?.close(), fixture?.close()]);
     result.cleanup.contextClosed = Boolean(context) && closed[0]!.status === "fulfilled";
     result.cleanup.httpClosed = Boolean(fixture) && closed[1]!.status === "fulfilled";
     for (const item of closed) if (item.status === "rejected") result.cleanupErrors.push(String(item.reason).slice(0, 256));
-    if (fixture) result.observations.http = { reads: fixture.reads, errors: fixture.errors, body: fixture.bodyMetrics(), ports: fixture.ports };
+    if (fixture) result.observations.http = { reads: fixture.reads, errors: fixture.errors, body: fixture.bodyMetrics(), bodyEvents: fixture.bodyEvents, ports: fixture.ports };
+    if (bodyObserver) { result.observations.clientReads = bodyObserver.snapshot(); bodyObserver.close(); }
     await writeFile(join(outputDirectory, "arc-browser.json"), JSON.stringify(result, null, 2));
   }
   if (result.error || result.cleanupErrors.length) throw Error(result.error ?? result.cleanupErrors.join("; "));
