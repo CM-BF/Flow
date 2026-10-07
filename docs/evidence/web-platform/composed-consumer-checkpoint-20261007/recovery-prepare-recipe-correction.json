@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-07T08:12:08.851175+00:00",
+  "kind": "SOURCE_CONFIRMED_CORRECTION_TO_NEXT_JOURNEY_NOT_RUNTIME_RESULT",
+  "supersedesOnly": "Earlier root completeDraft recipe sequencing that could imply selecting knowledge/files on an unprepared draft or sending CREATE together with restored material. Prior boundary actor/resource limits unchanged.",
+  "sourceTarget": "109922a5d4c44216a56f7bc9e025e9b89dcc1ca2",
+  "findings": [
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "lines": "58-71,109-119",
+      "fact": "Knowledge controller exists only after snapshot.conversation.projectId. New-draft project selector exposes the real Prepare conversation in project action, which locks creation settings without sending a turn."
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "lines": "177-190",
+      "fact": "Attachment binding also requires confirmed snapshot.conversation.projectId."
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "lines": "694-724",
+      "fact": "Restore of saved existing conversation refreshes its snapshot, confirms original project, then synchronously prepares and commits knowledge/attachments/profile/draft under restore lease."
+    }
+  ],
+  "revisedJourney": [
+    "Start with a new App draft and explicitly select configured profile and project using real controls.",
+    "Use the existing Prepare conversation in project button. Observe the real CREATE receipt with exact profile id/runnerId/configDigest and project. Assert no turn/model execution. Do not fake an unprepared knowledge controller.",
+    "Within that confirmed project conversation, select real knowledge citation plus two ordered file references, compose text and persist complete draft through existing UI. The initial CREATE is an explicit setup step before the restore mutation baseline.",
+    "Record post-setup business-write baseline; reload/reauthenticate and Restore without sending preserve profile identity, locked project and all ordered material. No new CREATE/turn/queue/steer caused by restore, no body/resolve prefetch; material stays unverified.",
+    "Explicitly verify via public search/metadata without reselection, different verification order. Then explicit Send creates the first real turn with exact saved ordered refs and frozen expected settings; check current conversation still has original profile/project. Keep later draft separate."
+  ],
+  "evidenceScope": "Profile CREATE is verified before draft recovery; material first-turn is verified after recovery. Do not claim one post-restore CREATE atomically carried all materials. No product change is necessary merely to allow materials before existing Prepare contract.",
+  "pins": [
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sha256": "9d7ec59ee2b05e6d44be993989e38026e1c97f166a524125c9da95b9263a84dc"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "sha256": "7b891f3bd01e2f8a014c0be0079f4e4c2e892df60f753d5508ec855f6290c4d9"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sha256": "57c4e83028555ce6e5e9c9cfc212c48413015c5f9f9e70d50a859d7fd0a2e0fa"
+    }
+  ]
+}

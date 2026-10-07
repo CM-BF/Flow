@@ -83,3 +83,5 @@ GO实际截图观察经root准确转述，非用户逐字：[固定组件六组�
 U19具体[只读源研究](../../docs/evidence/web-platform/queue-full6-closeout-20261007/compact-host-source-research.json)固定7源与官方接口：窄屏sm:rounded-lg不能单独供应radius；可变目录将Apply推远。后继评估有界scroll body外的header/footer，长名可限高但键盘/触控可读完整且相似前缀可辨，复用Thread ComposerActions、现registry及host CAS。仅设计输入/未实施或运行，不撤组件6PASS。
 
 U19真实host的[具体接线候选](../../docs/evidence/web-platform/access-sse-host-checkpoint-20261007/message-settings-real-host-design.md)复用Thread ComposerActions与P01现context panel、App唯一C/ownership；Picker仅扩受控presentation，不重新造选择器/slot。实际Send/Queue/Recovery全链与紧凑主操作、正常名/长名/同前缀身份可辨一并验收；当前NOT_TAKEN，原六组只是固定叶组件。
+
+U19/原MATURE02 TODO11补[T3 Code固定参考](../../docs/evidence/web-platform/composed-consumer-checkpoint-20261007/t3-compact-reference.json)：GO给定cfa4f765，原ComposerControl统一sm/xs、focus/disabled及coarse-pointer命中；ComposerSurface的连续表面/theme变量/backdrop fallback仅作为评估输入。复用Flow tokens与主要Apply/Cancel可达，不直接搬复杂clip或theme覆写；实际依赖与MIT归属使用前核，未采用/未新增stack或task。composerSubmission仅validation/dispatch，不能替代Flow持久ACK、Queue、冻结与恢复。正常真实名与压力长名的真实host截图验收保留，原六组通过不撤。

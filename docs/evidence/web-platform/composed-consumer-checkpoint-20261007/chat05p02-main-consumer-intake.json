@@ -1,0 +1,40 @@
+{
+  "source": "Original Execution Lead main handoff relayed by root; interface read-only by manager",
+  "mapping": "Existing REQ43/CHAT05 body disclosure follow-up, not new task",
+  "main": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "canonicalInterface": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body-wiring/docs/evidence/chat05p02/interface.md",
+    "bytes": 16207,
+    "sha256": "900d90da7ea1ed940c91efc133e75787b766df603d599989edbe4fdbdbe1649f"
+  },
+  "readOwnerHead": "f47a38ad237b2515eef45f41c2938057bbbea80c",
+  "api": [
+    "FlowClient.nativeActivityBody(taskId, activityId, signal?)",
+    "FlowClient.nativeActivityBodyPages(descriptor).readNext(signal?)"
+  ],
+  "contract": [
+    "Reader construction performs zero HTTP; explicit readNext requests at most one page.",
+    "Descriptor/completeness separate from light activity metadata; receiving with hasMore=false does not mean complete.",
+    "Reuse the shared reader codec, authority and cross-chunk UTF8 handling; no second decoder/fetch or immediate whole-body render.",
+    "UI uses per-pane/connection identity, abort and aggregate byte budgets; collapse or revocation stops later pages.",
+    "Legacy body absence cannot recover unrecorded old bytes; complete material is not successful tool/task execution."
+  ],
+  "leadReportedActual": {
+    "selected": 2,
+    "passed": 2,
+    "publicBodyBytes": 2225539,
+    "pages": 9,
+    "coverage": "Real PG/HTTP including cross-task and role rejection; zero provider",
+    "runner": "Default off; only explicit single-attempt opt-in"
+  },
+  "webUI": "NOT_TAKEN_NOT_IMPLEMENTED_NOT_RUN",
+  "personalDeployment": "NOT_VERIFIED_BY_THIS_HANDOFF",
+  "next": "After Recovery/Quick ownership safe point, coordinate exact UI consumer scope from this fixed interface; preserve lazy read and previous REQ43 acceptance.",
+  "fixedWebResearch": "chat05p02-fixed-web-research.json",
+  "newExactGaps": [
+    "Shared reader allocates declared raw buffer up to8MiB immediately even with zero HTTP; aggregate admission must reserve before constructor.",
+    "Old collapse only changes expanded row ID and retains projection cache; full-body lifecycle must close/release on collapse, pane/center/authorization changes.",
+    "Old full JSON parse/pretty-print cannot accept full8MiB unbounded DOM; bounded display and two-pane aggregate accounting required.",
+    "Preserve full-contract retrieval instead of silently truncating to the old2MiB cache."
+  ]
+}

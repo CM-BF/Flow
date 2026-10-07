@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T08:11:22.802668+00:00；已打开任务详情的实时状态与新时间线限定通过；完整恢复与真实设置接线仍待收口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T08:31:05.641157+00:00；看板组合直接检查和完整草稿专测本地检查已独审，页面与恢复实际旅程分别待验 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -20,11 +20,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 已打开的任务详情收到实时状态与新时间线，选定检查与清理已独审接受；快速设置组件原六组与双主题截图已获限定批准。完整恢复、真实聊天设置接线及主线发布仍分别待收口，旧失败保留。 |
-| 下一可用交付 | DPERF在已更新的自身范围内组合当前摘要详情接线；消息设置须贯通实际草稿、发送、排队和恢复，再验紧凑入口。完整恢复剩余覆盖沿唯一owner计划推进。 |
+| 当前产出 | 已打开任务详情的实时状态与新时间线已限定通过；看板轻摘要与按需详情的组合直接检查已独审接受。快速设置组件通过保持，完整恢复、真实设置接线和部署仍未完成。 |
+| 下一可用交付 | 验证看板组合页面与准备后的完整草稿材料恢复；真实消息设置继续按已审组合基线和精确交权接入。公开工具全文接口已交付，Web展开消费沿原后继排队。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：任务详情实时事件选定检查与清理已独审接受，本组无holder/gate/预约；下一窗口仍按跨Lead实际交接。 |
+| 资源协调 | [当前来源](../../docs/evidence/web-platform/resource-window-current.json)：本组无PG/Chrome占用或预约；看板直接检查已清理，恢复owner受影响本地检查也已清理归还。其它队伍资源不由本表推断空闲。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -168,6 +168,8 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 
 前一历史[配对归还](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/return.json)记录当时Recovery建聊后提交丢回执2/2、Quick仅C诊断完成，原六组当时未过；随后Queue与原六组的实际结果见下方当前入口。原[Queue自治交接](../../docs/evidence/web-platform/paired-return-owner-segment-20261007/recovery-queue-owner-segment.json)已完成实际消费，不是新的待运行许可。
 
-[当前限定结果与后继](../../docs/evidence/web-platform/queue-full6-closeout-20261007/current.json)：Queue2/2与Quick组件原六组/双图已获独审，原失败不改；Quick真实App/Send/Queue及main另计。[U19弹层紧凑验收](../../docs/evidence/web-platform/queue-full6-closeout-20261007/compact-settings-go-intake.json)归原MATURE01与MATURE02 TODO11，不新大task。[SSE原21scope实施接缝](../../docs/evidence/web-platform/queue-full6-closeout-20261007/recovery-sse-scope-readiness.json)不新增领取或运行。
+历史07:48安全点[限定结果与后继](../../docs/evidence/web-platform/queue-full6-closeout-20261007/current.json)：Queue2/2与Quick组件原六组/双图已获独审，原失败不改；Quick真实App/Send/Queue及main另计。[U19弹层紧凑验收](../../docs/evidence/web-platform/queue-full6-closeout-20261007/compact-settings-go-intake.json)归原MATURE01与MATURE02 TODO11，不新大task。[SSE原21scope实施接缝](../../docs/evidence/web-platform/queue-full6-closeout-20261007/recovery-sse-scope-readiness.json)不新增领取或运行。
 
-本次[ACCESS部分交权与SSE限定通过](../../docs/evidence/web-platform/access-sse-host-checkpoint-20261007/current.json)已按原唯一status/claim事实收敛；[DPERF精确追加候选](../../docs/evidence/web-platform/access-sse-host-checkpoint-20261007/dperf04-reentry.json)已由原owner v4精确amend，后续须组合当前main，不用旧server/app覆盖新功能。[真实设置接线方案](../../docs/evidence/web-platform/access-sse-host-checkpoint-20261007/message-settings-host-followup.json)未take，叶组件通过不等host通过。
+历史08:11安全点[ACCESS部分交权与SSE限定通过](../../docs/evidence/web-platform/access-sse-host-checkpoint-20261007/current.json)已按原唯一status/claim事实收敛；[DPERF精确追加候选](../../docs/evidence/web-platform/access-sse-host-checkpoint-20261007/dperf04-reentry.json)已由原owner v4精确amend，后续须组合当前main，不用旧server/app覆盖新功能。[真实设置接线方案](../../docs/evidence/web-platform/access-sse-host-checkpoint-20261007/message-settings-host-followup.json)未take，叶组件通过不等host通过。
+
+[本次组合实证与依赖收口](../../docs/evidence/web-platform/composed-consumer-checkpoint-20261007/current.json)保留唯一owner状态来源：DPERF七固定输入只供给不扩写权，九叶项加父项实证已限定通过、页面未验；Recovery完整草稿两tests源码和首红修后绿局部检查已获限定独审，真实Prepare旅程尚未运行，未继承旧旅程通过。[REQ19策略输入](../../docs/evidence/web-platform/composed-consumer-checkpoint-20261007/release-policy-consumer-intake.json)与[CHAT05公开正文接口](../../docs/evidence/web-platform/composed-consumer-checkpoint-20261007/chat05p02-main-consumer-intake.json)不构成个人发布或WebUI通过。

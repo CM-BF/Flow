@@ -1,0 +1,99 @@
+{
+  "at": "2026-10-07T08:10:06.480107+00:00",
+  "reviewer": "/root gpt-6-astra ultra",
+  "decision": "APPROVED_FOCUSED_COMPLETE_DRAFT_SYNTHETIC_PUBLISHER_DESIGN_AND_SOURCE_IMPLEMENTATION_NOT_RUNTIME_GRANT",
+  "task": "WPF-RECOVERY01",
+  "owner": "workspace_panels_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
+  "branch": "codex/web-conversation-recovery",
+  "base": "109922a5d4c44216a56f7bc9e025e9b89dcc1ca2",
+  "sourceIntent": [
+    "apps/web/test/conversation-recovery.fixture.ts",
+    "apps/web/test/conversation-recovery.browser.ts"
+  ],
+  "pins": [
+    {
+      "path": "packages/client/src/index.ts",
+      "sha256": "c6bb0e580513ab6cf913f72d2c1c85c16f8d03e5ebe1ea20c631122df9a00483"
+    },
+    {
+      "path": "packages/contracts/src/knowledge.ts",
+      "sha256": "411a5cd8ebdacabc82e8632a29b72e7b565ca0f797f60c06ae3b686b03507f43"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "sha256": "ddab5a3ec79c8c152a1ba0b67ec0be25af0650fb9cd4c7efb5281e8268c24204"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/publication.ts",
+      "sha256": "2ef28420bed9500f6c06a72922fcf52fe72c6f9c8e53048a0fc8dbb20f03d184"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "sha256": "5ee63154a5287679c75867ecd6253150b4a47ec5c2c22cfbfb5c3cda96e6dfb8"
+    },
+    {
+      "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+      "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b"
+    },
+    {
+      "path": "apps/web/src/conversation-context/ContextPicker.tsx",
+      "sha256": "058f8b75af5f31b3852ba733ff09ac05c09b1504d1df3488bf581659090473ee"
+    },
+    {
+      "path": "apps/web/src/conversation-context/controller.ts",
+      "sha256": "2affa3611e0c3c1652299ed01ff4612ee46cecba8e64a0b670132550bd2475d5"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "sha256": "9a56ba34efd52c0d542802da1e48dd168c1ad36abae9554b926386abe7ea2d82"
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915"
+    }
+  ],
+  "actorBoundary": {
+    "newActor": "One synthetic runner registration used only as profile publisher inside existing owned marked database",
+    "publicCommands": [
+      "owner FlowClient.registerRunner({name,harnesses:[claude],capacity:1})",
+      "returned-token FlowClient.publishExecutionProfile for one ordinary Claude configuration",
+      "owner FlowClient.createKnowledgeSource for one tiny version"
+    ],
+    "configuration": "Recognized ordinary Claude execution-profile configuration; access none or configured-readonly as required by existing public material acceptance; no provider probe or claims of availability. Prefer none when supported by unchanged contract.",
+    "forbidden": [
+      "runRunner or native SDK spawn",
+      "claim/heartbeat/report/protocol binding",
+      "provider/model invocation",
+      "second database/server/center",
+      "credential values in evidence",
+      "handwritten IndexedDB or test-only business HTTP response substitution"
+    ],
+    "tokenLifetime": "Runner token remains only fixture worker memory; source records contain runner/profile public identity and digest only. Owned database DROP and worker/fixture termination remove this synthetic actor with existing cleanup.",
+    "registrationCancellation": "Existing registerRunner public API lacks AbortSignal; use existing entire worker process-group deadline and before/after checkpoint. Do not widen shared API or add orphan Promise.race."
+  },
+  "acceptance": [
+    "New App draft chooses actual project and profile, two existing ordered files and one real knowledge citation; capture through existing journal read-only.",
+    "Reload/auth-loss and explicit Restore preserve text/intent/profile id+runner+digest/project/knowledge version+digest+range/file order; no business submission or content/resolve prefetch caused by restore.",
+    "Restored references remain unverified; explicit metadata/search re-verification without reselecting, deliberately differing verification order, then one explicit Send freezes original refs.",
+    "CREATE and initial turn preserve exact applicable profile/material payload and receipt identities; new draft independent.",
+    "Selected cookieRead+completeDraft only; no inherited full-feature pass, promotion/native steering/two-center claims."
+  ],
+  "resourceBoundary": {
+    "sameDatabaseCenterChrome": true,
+    "browserSegmentTotalMs": 150000,
+    "browserSpentMs": 81002,
+    "browserRemainingMs": 68998,
+    "maxSingleBrowserMs": 60000,
+    "cleanupIncludedMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedTotalBytes": 9437184,
+    "startupEvidenceMaximumBytes": 4194304,
+    "perRunEvidenceReserveBytes": 5242880,
+    "existingCombinedFreshFloorBytes": 4054056960,
+    "currentHolder": "Mika LAZY; no reservation or runtime now",
+    "localAffectedTypeCheck": "Existing SSE local20s segment used6284 rounded ms; remaining13716ms may cover one affected Web noEmit in owned bounded local process with original cleanup rules. No repeated observer tests when observer source unchanged. If inadequate, report concrete required delta."
+  },
+  "reviewFlow": "Owner implements within fresh existing21 claim; source/lifecycle new-actor delta reviewed once before first actual. Then same finite scope allows locate/fix/related retest autonomously, no root approval per transient gate. Acquire explicit shared-PG handback and fresh own identity/resources before actual; unknown stops and remains owned. Independent final result review; all raw failures retained.",
+  "persistence": "Original Recovery plan/status/review and evidence; archive SSE actual root receipt at next natural batch. No new task or second status source."
+}

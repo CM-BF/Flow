@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-07T08:13:36.778145+00:00",
+  "scope": "Two bounded ordinary document reads; verifies canonical owner status supply to running dashboard, not full UI/claim freshness/performance benchmark; no full snapshot/private credential endpoint/PG/browser",
+  "checks": [
+    {
+      "task": "WPF-001",
+      "status": 200,
+      "mime": "text/plain; charset=utf-8",
+      "bytes": 30851,
+      "sha256": "2cbbb2a3eb81892929b504d9098e55f347f3815d26d2ff5639dbfcba2e92cf38",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/web-platform/status.md",
+      "sourceStable": true,
+      "matchesOwner": true,
+      "elapsedMs": 30.328
+    },
+    {
+      "task": "WPF-DPERF04",
+      "status": 200,
+      "mime": "text/plain; charset=utf-8",
+      "bytes": 16764,
+      "sha256": "869dce751cc4932f68560c767d15feda7e8ce65cb2c6140774bf52264d881ab6",
+      "source": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md",
+      "sourceStable": true,
+      "matchesOwner": true,
+      "elapsedMs": 2.505
+    }
+  ]
+}

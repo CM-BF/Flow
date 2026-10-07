@@ -1,0 +1,134 @@
+{
+  "at": "2026-10-07T08:28:56.003920+00:00",
+  "kind": "READ_ONLY_RESEARCH_NO_TAKE_NO_RUN",
+  "task": "Original CHAT05 / MATURE04–05 Web native material consumer successor; no new task invented",
+  "fixedMainInput": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "currentMainObserved": "e528d27ae4d2a8a2aa7807471aa8585b81a760c2",
+  "sources": [
+    {
+      "path": "packages/client/src/native-activity-body.ts",
+      "bytes": 8416,
+      "sha256": "fbc8465c2def5a876ea9859bf63813b68db6008bf4e1f613bd0a41f491c4e060"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 57553,
+      "sha256": "a07ceb97fe08dd68625f6c1468a109863bbc44a2a8b366a990ecfbd41c484b2b"
+    },
+    {
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "bytes": 6001,
+      "sha256": "bade51d2df5537299b818176b5738cc8ef8438bbd315d06292f078e87a9ee8b9"
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/projection.ts",
+      "bytes": 8153,
+      "sha256": "383539ceb5735626f2738576e30869eccf820d99d9133ed3076aa838f2b08231"
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+      "bytes": 5777,
+      "sha256": "3438c4dbd5c6cb6ab1c710db0a57126d7cc6644145b5a1957af1256ab0e9ca26"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/activity.tsx",
+      "bytes": 9512,
+      "sha256": "8ad48a26e40bc4462221329fdfe9f1d922af3b21f7dfeaf664e1dd21ddfe6ed2"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 22822,
+      "sha256": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 50767,
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d"
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/tool.tsx",
+      "bytes": 1929,
+      "sha256": "6a5c79cb90e76398576d75fb2dc185d57a68caba643cf6cd1e644207dce0c89d"
+    }
+  ],
+  "method": {
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "application": "Compare existing Module Interface/lifetime with newly integrated shared reader; reuse one codec and existing authorization rather than adding parallel state/transport. Read-only analysis, no installation/product run."
+  },
+  "facts": [
+    {
+      "source": "packages/client/src/native-activity-body.ts constructor",
+      "finding": "nativeActivityBodyPages performs zero HTTP but eagerly allocates descriptor.bytes via Uint8Array, up to 8MiB. Reserve the UI retention budget before constructing, not merely before readNext."
+    },
+    {
+      "source": "packages/client/src/native-activity-body.ts readNext/completeText/close",
+      "finding": "One page at a time, max four chunks; immutable identity and complete digest verified by shared codec. completeText caches another full string only after complete verification; returned page chunks are caller-owned copies. close aborts lifetime and releases held byte/text references; it does not promise physical secure erasure or immediate GC/RSS reduction."
+    },
+    {
+      "source": "apps/web/src/conversation-activity/native/projection.ts",
+      "finding": "Current old-prefix DTO bodies map retains each loaded body until projection disposal. setActive(false)/page change abort work but retain old bodies; no full-material aggregate reservation. Cannot place many 8MiB readers in this cache unchanged."
+    },
+    {
+      "source": "apps/web/src/conversation-activity/native/NativeActivity.tsx",
+      "finding": "Row collapse only clears React expanded ID, does not notify projection to close material. JSON body is eagerly JSON.parse/stringified and mounted in one pre; unsuitable for future full 8MiB material."
+    },
+    {
+      "source": "apps/web/src/plugin-integration/activity.tsx + session.ts + App.tsx",
+      "finding": "Existing connection/view/conversation/turn/task/message identity, visible/live lease and task.activity.read/reference.read authorization already own access. Current bridge still uses legacy client.nativeActivity(id), not the new task/activity descriptor and pages."
+    }
+  ],
+  "consumerDesign": [
+    {
+      "module": "Existing authorized Activity host + one private material controller",
+      "interface": "Explicit open(row), read-next/refresh, close; observable display state. Shared client remains sole codec/cursor/integrity authority.",
+      "ownership": "Host reserves before constructor and wraps every read with current identity/capability checks before and after await; do not hand a raw reusable FlowClient reader to contributed views. Controller releases reader/reservation on row replacement/collapse/page change/pane hidden/offline/logout/center or principal change/plugin capability revoke/dispose."
+    },
+    {
+      "module": "NativeActivity view inside existing assistant-ui Reasoning / AI Elements Tool",
+      "interface": "Display verified status and one bounded text window; explicit load next/current-tail refresh; narrow content details.",
+      "ownership": "Keep tool/task status distinct from material partial/complete/interrupted/legacy. Receiving + hasMore=false is a temporary tail, not a terminal cache. Legacy honestly reports unavailable original tail. Hidden thinking remains redacted."
+    },
+    {
+      "module": "Host-owned aggregate retention admission",
+      "interface": "Small reservation/release seam internal to activity host; no independent authority for business state.",
+      "ownership": "Permit complete retrieval of at least one full-contract 8MiB body; account raw reservation, optional decoded text, caller chunk copies, page transport and DOM window across multiple panes/turns. Numeric aggregate policy is a proposal to validate, not an existing approved limit or a claim of hard JS heap bound. Do not truncate capability to old 2MiB cache."
+    },
+    {
+      "module": "Text presentation",
+      "interface": "Incremental UTF8 decoder for verified pages, or one complete decode after digest; bounded paginated/windowed text.",
+      "ownership": "Do not JSON.parse intermediate pages or every full-prefix update. Avoid automatic huge pretty-print; explicit bounded formatting only. Keep raw integrity distinct from rendering and support split multi-byte UTF8 boundaries."
+    }
+  ],
+  "acceptanceForOriginalSuccessor": [
+    "True App/plugin bridge and two panes, not only standalone reader tests. Unopened list and SSE make zero body requests.",
+    "Explicit open fetches descriptor then page; zero reader allocation before budget admission; two 8MiB descriptors cannot bypass aggregate bound.",
+    "Collapse/switch row/hide pane/revoke/logout cancel current read, close/release and prevent late UI publish or next HTTP; reopen is explicit.",
+    "Receiving tail can later advance via explicit refresh; interrupted/legacy remain truthful.",
+    "Real UTF8 material greater than 2MiB plus contract-size boundary, exact original length/digest through shared reader; no surrogate/byte-boundary corruption.",
+    "Fail/abort/bad page preserves prior committed cursor and readable data; retry explicit; complete material never marks task verified/success.",
+    "Plaintext escaping, narrow screen, keyboard/focus, light/dark and reduced motion through existing registered contribution.",
+    "Record logical reservations and actual render/page limits, distinguish bounded algorithm/source reasoning from measured performance."
+  ],
+  "candidateWriteFamilies": [
+    "apps/web/src/conversation-activity/native: private full-material controller, existing view and projection, focused tests",
+    "apps/web/src/plugin-integration/activity.tsx and session.ts: existing host authorization/lifecycle seam",
+    "apps/web/src/App.tsx: existing FlowClient activity bridge",
+    "existing real App/browser fixture plus own plan/status/review/evidence after exact take"
+  ],
+  "coordination": {
+    "state": "NOT_TAKEN; design input only",
+    "sharedPaths": "App.tsx and plugin-integration/session.ts overlap Recovery/real message-settings host successor. Must coordinate released fixed combined source and exact owner scope before writing. Do not copy old main blobs over newer Recovery.",
+    "statusMeaning": "CHAT05P02 main/PG success proves public body plumbing, not Web UI; original UI successor remains open."
+  },
+  "cleanCodeReview": {
+    "time": "2026-10-07T08:28:56.019871+00:00",
+    "scope": "read-only interface review",
+    "findings": "One shared codec already provides deep protocol behavior. Proposed UI controller should hide lifetime/budget/presentation state; no new codec, catalog, generic capability layer or business authority. Avoid duplicating existing pane/authorization leases.",
+    "fix": "No project edits; actionable consumer gaps recorded with fixed sources.",
+    "unresolved": "Exact combined owner baseline, numeric aggregate reservation and actual UI validation remain successor work."
+  }
+}

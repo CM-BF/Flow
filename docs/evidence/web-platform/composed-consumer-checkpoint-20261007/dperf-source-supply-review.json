@@ -1,0 +1,26 @@
+{
+  "at": "2026-10-07T08:13:59.687770+00:00",
+  "decision": "VERIFIED_SEVEN_FIXED_MAIN_INPUTS_SUPPLY_NOT_PRODUCT_OR_RUNTIME_REVIEW",
+  "target": "aa9cb2d5ba053dd264645d98819cb1cb60e89b2f",
+  "source": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
+  "exactFiles": 7,
+  "sourceBytes": 54807,
+  "sourcePinsMatchSuppliedCommitCurrentAndMain": true,
+  "oldTrackedBackupsMatchOldCommit": 2,
+  "changedPaths": [
+    "apps/execution-dashboard/public/index.html",
+    "apps/execution-dashboard/public/local-access.css",
+    "apps/execution-dashboard/public/local-access.js",
+    "apps/execution-dashboard/src/local-access.mjs",
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/test/local-access.test.mjs",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs",
+    "docs/evidence/wpf-dperf04/reentry-20261007/source-supply-receipt.json"
+  ],
+  "scopeMeaning": "One explicit source-operator supply in originalowner tree; product writer remains claim v4 exact11; no main integration or authority over protected source content",
+  "limitations": [
+    "Owner preserve-dirty claim observed by original operator; root checks exact commit and backup bytes, not a prior live filesystem snapshot.",
+    "No tests/import/PG/Chrome performed by root."
+  ],
+  "followUp": "Originalowner continues summary/detail composition and affected validation; do not rerun unchanged ACCESS/TIMING whole suites solely for this copy."
+}

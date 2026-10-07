@@ -1,18 +1,18 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T08:11:22.802668+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T08:31:05.641157+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 ## 当前窗口与用户交付
 
-**ACCESS七个产品/test路径已正式移出原claim，DPERF不再等待整片释放。** [08:01:16.565Z COMMITTED回执](access-sse-host-checkpoint-20261007/access-partial-receipt.json)使57735v2仅余README+ownplan/evidence，owner cb0d双端clean；不是另一writer自动获权。[DPERF原b554v3七scope](access-sse-host-checkpoint-20261007/dperf04-reentry.json)与929b clean已fresh核，root新入站确认08:09:31.783Z原W01已COMMITTED v4精确追加server/app和Timing/ACCESS两browser，共11scope；现在由其组合当前main的ACCESS/TIMING。不得整文件覆盖或改scope外parser/registry/凭据provider。
+**看板轻摘要与按需详情的当前组合直接检查已通过，页面验收仍待执行。** W01唯一[状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/plans/wpf-dperf04-summary-detail/status.md)对应cfd组合/最终acf8 clean；原v4十一scope保持，aa9七固定9f输入只读供给不扩写权。[组合源码审](composed-consumer-checkpoint-20261007/dperf-composition-review.json)与[九叶项加父项actual审](composed-consumer-checkpoint-20261007/dperf-node-actual-review.json)分别保范围：10/10、exit0、2866ms/新段余27134；旧3950ms独立，ownedNode/动态HTTP及scratch清理完成，不是4320性能、browser/main/部署通过。
 
-**已打开的任务详情收到实时状态与新时间线，选定实证已获限定批准。** Recovery d68/执行1357的[source与局部检查](access-sse-host-checkpoint-20261007/recovery-sse-local-review.json)之后，08:03:40.903729–08:03:51.747236Z真实selected2/2/exit0已[root独审](access-sse-host-checkpoint-20261007/recovery-sse-actual-review.json)接受；08:04:20.506604Z精确确认进程组、scratch、双EOF及0600临时env清理，sharedPG已交还Mika。owner最终109922双端clean，原150s本次charge10844后累计81002/余68998；运行前留存3157504B是历史采样，9MiB总留存/4MiB启动线/floor4054056960仍有效。只证明任务详情TaskProjection交付，不是assistant patch流或完整feature；下一段沿唯一owner与实际跨Lead交接，无本组新gate/预约。
+**完整草稿材料恢复按真实Prepare流程补验。** Panels唯一[状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md)当前fea37两test已聚焦源审，4a609为局部类型窄化后继；17源未变，ownmetadata正封存。[noEmit首红修后绿原件已独审](composed-consumer-checkpoint-20261007/recovery-complete-draft-local-review.json)，局部段累计17647/24000且清理归还；不是浏览器通过，无PG/Chrome或预约。先真实Prepare CREATE确认profile/project且0turn，再加knowledge和有序双file；reload/Restore零业务提交与正文预取，公开复验后首Send保材料。这里的[设计边界](composed-consumer-checkpoint-20261007/recovery-complete-draft-design-boundary.json)和[顺序更正](composed-consumer-checkpoint-20261007/recovery-prepare-recipe-correction.json)与[fea固定源审](composed-consumer-checkpoint-20261007/recovery-complete-draft-fea-source-review.json)分别保边界，不冒浏览器actual；150s仍81002/余68998、64MiBscratch/9MiBretained/4MiBstart。旧SSE、Queue等限定通过保持。
 
-Quick组件原六组与双主题图的限定批准保持，owner7e9f双端clean，原839ev1仍持有范围待main；[四源接收包](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/main-intake.json)仍供原Lead受控接收，真实App/Send/Queue不在该通过范围。
+Quick原六组与双主题图仍仅组件批准，owner7e9f/claim839e保留待受控main；[原四源接收包](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/main-intake.json)不证明真实App/Send/Queue。已有TODO11/U19真实接线与紧凑弹层候选仍NOT_TAKEN；[T3固定外观参考](composed-consumer-checkpoint-20261007/t3-compact-reference.json)只供评估，保唯一App草稿authority、显式Apply和持久ACK/Queue/恢复。
 
-[真实App消息设置设计](access-sse-host-checkpoint-20261007/message-settings-real-host-design.md)已接受方向，12产品+3现有Recovery测试[候选](access-sse-host-checkpoint-20261007/message-settings-host-followup.json)未take。CompleteDraft/App保存恢复、Threadcapture和Send/Queue均需传同一C快照；App每View唯一authority、非持久Symbol/CAS，复用P01 actions/context panel，不加slot/第二store。新稿可保用户显式C但换ownership，omit不冒reset/observed；原leaf26/6不是host通过。须已审Recovery+Quick+currentmain组合与精确scope交权，当前共享/App两owner不被该设计替代。
+[REQ19/SVC09策略输入](composed-consumer-checkpoint-20261007/release-policy-consumer-intake.json)仅原Lead固定接口待交；[CHAT05P02主线正文接口](composed-consumer-checkpoint-20261007/chat05p02-main-consumer-intake.json)可供后继展开consumer，不是WebUI/个人部署验收。本组当前无PG/Chrome holder/gate/预约，后续shared实际交接和原owner有限段自治，不逐runmanager审批。
 
-[root两条plain-text document检查](access-sse-host-checkpoint-20261007/dashboard-owner-source-check.json)实际200且匹配WPF-001/Quick唯一source；首次按JSON解析plain的观察脚本错误另保，非服务失败。未触snapshot/credentials/PG/Chrome，不冒完整liveUI/新claim展示。个人backend af51/v18+Webd629/v3仍须原Lead SVC06-05固定backend4fe33178与三retained兼容，不能把叶组件或main结果当Web-only可用。
+[root两条document检查](composed-consumer-checkpoint-20261007/dashboard-take-document-check.json)实际匹配management282与DPERF当时唯一owner源，不是全UI/claimfresh/性能检查。take、scope与占用继续沿权威账本，本文仅链接一次原owner事实，不创建第二进度表。
 
 ### 已结束的配对准入及更早历史
 

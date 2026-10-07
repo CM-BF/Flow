@@ -1,0 +1,60 @@
+{
+  "at": "2026-10-07T08:27:16.509536+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra / independent read-only",
+  "target": "fea37b408f6bf9d9fcde38afa760b903f38e5cf9",
+  "base": "109922a5d4c44216a56f7bc9e025e9b89dcc1ca2",
+  "decision": "APPROVED_FOCUSED_COMPLETE_DRAFT_SOURCE_FOR_EXISTING_BOUNDED_OWNER_SEGMENT_PENDING_TYPES_AND_UNIQUE_SHARED_PG_HANDOFF",
+  "blockingFindings": [],
+  "verifiedChangedFiles": [
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 36504,
+      "sha256": "394984fd1c26b12046d1a4936f165f9b186fb3023c560a86eaf4f5b0ae7f1618",
+      "blob": "0ec4408a1d52c71a5cb5fdc8ead000ab3a45381b"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 88285,
+      "sha256": "b4e356c03f7a9a8b7a0a1307578d0082cfbcc2df829d753de882642a4033dce2",
+      "blob": "ca8f6ac2b28bb870b0c07c0797a9cc2714f883ed"
+    }
+  ],
+  "productionDeltaFromLastReviewedSseSource": false,
+  "method": [
+    "Read full two-file diff, public fixture creation and cleanup, existing ConversationThread/queue capability path and material/profile picker selectors.",
+    "Confirmed queue availability comes from conversation capabilities (server state queue:true), not execution-profile queue control flag.",
+    "Confirmed material selection requires actual prepared conversation; the test uses real public Prepare CREATE, fixes original profile/project, observes complete ACK and zero turns before draft materials."
+  ],
+  "assertionReview": [
+    "One registered synthetic publisher declares one profile, no runner process/claim/heartbeat/provider; registration token stays within worker memory and is not returned or wire-observed.",
+    "Knowledge is created via existing public API; citation is exact version/digest/UTF8 byte range.",
+    "Real UI chooses original profile/project, adds one knowledge citation and two ordered files, saves queue intent, reloads/reauthenticates and explicitly restores.",
+    "Restore is compared with post-Prepare baseline: no extra business POST and no attachment content or knowledge resolve prefetch.",
+    "Restored references stay unverified; file metadata is explicitly verified B then A without reselection; send remains blocked until explicit knowledge search verification.",
+    "First accepted real turn contains original ordered references and frozen profile is inspected through real settings; a later independent draft has no old materials.",
+    "Existing full journey/selectors, auth/CSRF boundary, parent lifecycle and owned database cleanup remain unchanged."
+  ],
+  "bounds": {
+    "segmentSpentMs": 81002,
+    "segmentRemainingMs": 68998,
+    "singleMaximumMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 9437184,
+    "startupEvidenceBytes": 4194304,
+    "perRunReserveBytes": 5242880
+  },
+  "localRemainingMsAtReview": 13716,
+  "ownerAutonomy": "Once affected noEmit passes and unique shared resource handoff is obtained, owner may locate/fix/related-retest within original claimed paths, lifecycle and remaining finite budget; ordinary scoped fixes do not need per-run root approvals.",
+  "notEstablished": [
+    "Actual browser selected completeDraft has not yet run.",
+    "Does not prove steering, queue promotion, second center, provider execution, complete Recovery feature or main integration.",
+    "Prepared CREATE is separate from later material-bearing turn; no atomic CREATE-with-materials claim."
+  ],
+  "cleanCodeReview": {
+    "scope": "two affected test modules",
+    "findings": "Reused existing fixture, real product controls, public codecs and lifetime; helper is one-shot and returns public identities only. Existing material verification/cleanup logic retained. No duplicate production state or fake IndexedDB writes introduced.",
+    "fixAlreadyApplied": "Preparation order corrected before fixed source review.",
+    "unresolved": "Behavior awaits actual browser run; no source blocker identified."
+  }
+}
