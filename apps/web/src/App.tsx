@@ -787,7 +787,13 @@ function Workspace({
       && entry[1].conversation?.getSnapshot().connection === "live";
   };
   const actions: AppActions = {
-    contextHistory: createContextHistoryPort(client, historyTarget, historyAuthorized),
+    contextHistory: createContextHistoryPort(client, historyTarget, historyAuthorized, (viewKey, listener) => {
+      const view = viewEntry(viewKey)?.[1];
+      const stopTask = view?.projection.subscribe(listener);
+      const stopAuthority = recovery?.session.subscribe(listener);
+      document.addEventListener("visibilitychange", listener);
+      return () => { stopTask?.(); stopAuthority?.(); document.removeEventListener("visibilitychange", listener); };
+    }),
     ...(recoveryHost ? { recovery: recoveryHost } : {}),
     ...(centerRuntime ? { centerRuntime } : {}),
     messageSettings: {

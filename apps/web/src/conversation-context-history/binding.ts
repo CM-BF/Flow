@@ -4,6 +4,7 @@ import { ContextHistoryController, type ContextHistoryReaders, type HistoryTarge
 export interface ContextHistoryPort extends ContextHistoryReaders {
   /** The App's live view identity, not a plugin-supplied resource. */
   target(viewKey: string): HistoryTarget | null;
+  subscribe(viewKey: string, listener: () => void): () => void;
 }
 export function sameHistoryTarget(a: HistoryTarget | null, b: HistoryTarget | null) {
   return a !== null && b !== null && a.connectionId === b.connectionId && a.viewKey === b.viewKey
@@ -12,13 +13,14 @@ export function sameHistoryTarget(a: HistoryTarget | null, b: HistoryTarget | nu
 }
 /** Only the trusted App constructs this port. ui.layout is not a data grant. */
 export function createContextHistoryPort(client: Pick<FlowClient, "contextHistory" | "detail">,
-  target: ContextHistoryPort["target"], authorized: (target: HistoryTarget) => boolean): ContextHistoryPort {
+  target: ContextHistoryPort["target"], authorized: (target: HistoryTarget) => boolean,
+  subscribe: ContextHistoryPort["subscribe"] = () => () => {}): ContextHistoryPort {
   const current = (value: HistoryTarget) => sameHistoryTarget(target(value.viewKey), value) && authorized(value);
   const requireCurrent = (value: HistoryTarget, signal: AbortSignal) => {
     if (signal.aborted || !current(value)) throw Error("This context observation belongs to an unavailable view.");
   };
   return {
-    target, current,
+    target, current, subscribe,
     async history(value, signal) {
       requireCurrent(value, signal);
       const response = await client.contextHistory(value.taskId, signal);

@@ -4,7 +4,7 @@ import { ConversationContextHistory, createContextHistoryPort } from "./binding.
 import type { HistoryTarget } from "./controller.ts";
 import { historyFixture } from "./fixture.ts";
 
-const initial: HistoryTarget = { connectionId: "connection-a", viewKey: "view-a", conversationId: "chat-a", taskId: "task-1", authorityGeneration: 1 };
+const initial: HistoryTarget = { connectionId: "connection-a", viewKey: "view-a", conversationId: "chat-a", taskId: "task-a", authorityGeneration: 1 };
 function deferred<T>() { let resolve!: (value: T) => void; const promise = new Promise<T>(yes => { resolve = yes; }); return { promise, resolve }; }
 const settle = async () => { for (let i = 0; i < 8; i++) await Promise.resolve(); };
 function fixture() {
@@ -54,7 +54,7 @@ test("view release and session lifetime prevent late history publication", async
 test("same-target reconfiguration preserves opening without another read", async () => {
   const h = fixture(); h.binding.open(new AbortController().signal); h.binding.configure("route-a", true); h.binding.sync();
   assert.equal(h.reads(), 1); h.pending.resolve(historyFixture()); await settle();
-  assert.equal(h.binding.controller.getSnapshot().history?.taskId, "task-1"); h.binding.dispose();
+  assert.equal(h.binding.controller.getSnapshot().history?.taskId, "task-a"); h.binding.dispose();
 });
 test("detail requires the same task and known attempt before any request", async () => {
   const h = fixture(), signal = new AbortController().signal;

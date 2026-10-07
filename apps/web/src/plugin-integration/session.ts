@@ -96,6 +96,7 @@ export class AppPluginSession {
   readonly streamBudget = new StreamConnectionBudget();
   readonly dataRenderers: ReturnType<typeof createDataRendererRegistry>;
   private readonly attachmentBindings = new Map<string, { binding: ConversationAttachments; stop(): void }>();
+  private stopHistoryHost: () => void = () => {};
   private readonly contextHistoryBindings = new Map<string, { binding: ConversationContextHistory; stop(): void }>();
   private readonly knowledgeBindings = new Map<string, ConversationKnowledge>();
   private readonly recoverySubscriptions = new Map<string, () => void>();
@@ -175,7 +176,7 @@ export class AppPluginSession {
       if (!item) throw Error("Context is unavailable in this conversation.");
       item.binding.open(signal);
     }));
-    this.host.subscribe(() => this.contextHistoryBindings.forEach(({ binding }) => binding.sync()));
+    this.stopHistoryHost = this.host.subscribe(() => this.contextHistoryBindings.forEach(({ binding }) => binding.sync()));
     this.host.register(createKnowledgePlugin(viewId => {
       const binding = [...this.knowledgeBindings.values()].find(item => { const context = item.context(); return context.kind === "composer" && context.viewId === viewId; });
       if (!binding) throw Error("Knowledge is not available in this composer.");
@@ -313,7 +314,8 @@ export class AppPluginSession {
           && this.host.checkView(CONTEXT_HISTORY_PANEL, { kind: "composer", viewId, isDraft: true }).ok,
       }, () => this.actions.contextHistory);
       const stop = projection.subscribe(binding.sync);
-      item = { binding, stop: () => { stop(); binding.dispose(); } };
+      const stopAuthority = this.actions.contextHistory?.subscribe(viewKey, binding.sync);
+      item = { binding, stop: () => { stop(); stopAuthority?.(); binding.dispose(); } };
       this.contextHistoryBindings.set(viewKey, item);
     }
     return item.binding;
@@ -422,6 +424,7 @@ export class AppPluginSession {
     this.closed = true;
     this.syncCenterRuntime();
     this.lifetime.abort();
+    this.stopHistoryHost();
     this.contextHistoryBindings.forEach(item => item.stop()); this.contextHistoryBindings.clear();
     this.settingsBindings.forEach(binding => binding.dispose()); this.settingsBindings.clear();
     this.steering.dispose();
