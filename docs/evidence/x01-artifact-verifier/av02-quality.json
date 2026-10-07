@@ -1,6 +1,6 @@
 {
-  "at": "2026-10-07T15:36:34.678Z",
-  "source": "d6e0248242ff550ea0268d796371b73e1e8d86b0",
+  "at": "2026-10-07T15:44:21.123Z",
+  "source": "9895181dfd90f18014d80589799f76169e6bd5b2",
   "skills": "Reuse exact hashes/paths in quality.json; no skill/network/install update",
   "actualApplication": [
     "small finite JSON schema and pure trusted algorithm",
@@ -23,17 +23,18 @@
   "manualFindingsFixed": [
     "manifest unknown narrowed with explicit tool/verifier equality",
     "source/key code-unit checks before UTF8 allocation",
-    "fixed configuration and material key order for input digest"
+    "fixed configuration and material key order for input digest",
+    "escaped source can exceed serialized invocation bound before grant; direct regression passed"
   ],
   "remaining": [
-    "local type/behavior NOT_RUN",
+    "types0 and10/10 passed; independent review pending",
     "v4/center authorization/reportEvents completion matrix NOT_IMPLEMENTED",
     "source project authorization is future center responsibility",
     "PROCESS verifier mode/T7 not covered",
     "main acceptance pending independent source review"
   ],
   "resourceDeclaration": {
-    "ordinaryChildren": 0,
+    "ordinaryChildren": 2,
     "TMP": 16777216,
     "raw": 524288,
     "sourceMetadata": 2097152,

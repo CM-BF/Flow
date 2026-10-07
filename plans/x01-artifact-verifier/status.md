@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:39:22.000Z / fixed96b依赖已受控merge6915df6d |
+| 最近更新 / 最近main同步核验 | 2026-10-07T15:44:21.123Z / fixed96b依赖已受控merge6915df6d |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -12,28 +12,28 @@
 | 单一status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
-| 工作基线 / HEAD | fixedmain96b424777cd2c66e603157649e5a859ca1b914f6，依赖merge6915df6d08b392df8e206bac3f9141230b7b3e50；source d6e0248242ff550ea0268d796371b73e1e8d86b0 |
-| 工作树dirty状态 | 产品提交d6e0248已固定；本次status/验证输入metadata尚待封存 |
+| 工作基线 / HEAD | fixedmain96b424777cd2c66e603157649e5a859ca1b914f6，依赖merge6915df6d08b392df8e206bac3f9141230b7b3e50；source 9895181dfd90f18014d80589799f76169e6bd5b2 |
+| 工作树dirty状态 | 产品提交9895181已固定；本次结果metadata待提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | NOT_RUN d6e0248242ff550ea0268d796371b73e1e8d86b0：AV02源码固定，ordinary等待交接；无工程、PG、provider或个人操作 |
+| 检查状态 | PASSED 9895181dfd90f18014d80589799f76169e6bd5b2：10selected10pass/69未选、focused types0；0PG/provider/个人操作 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；AV02依赖为固定main96b424777cd2c66e603157649e5a859ca1b914f6，经merge6915df6d接收，不代表本片main能力 |
-| 实现目标 | d6e0248242ff550ea0268d796371b73e1e8d86b0（AV02源码固定，未验证） |
+| 实现目标 | 9895181dfd90f18014d80589799f76169e6bd5b2（AV02源码固定，未验证） |
 | 实现范围 | packages/contracts/src/plugin-verification.ts,packages/contracts/src/plugin-verification.test.ts,packages/plugin-runtime/src/json-object-verifier.ts,packages/plugin-runtime/src/json-object-verifier.test.ts,packages/plugin-runtime/src/package-store.ts,packages/plugin-runtime/src/package-store.test.ts,apps/runner/src/plugins/host.ts,apps/runner/src/plugins/execution.ts,apps/runner/src/plugins/verifier.test.ts |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 正在接入有限 JSON 验证算法与真实已安装材料宿主；设计已审，产品尚未验证 |
-| 下一可用交付 | 合同、有限算法和真实包执行的首个可独立验证片段 |
+| 本片段交付阶段 | review |
+| 当前产出 | 已接入真实材料的有限 JSON 验证能力，规则或材料变化产生不同身份，伪造通过结果被拒绝；局部验证通过待独审 |
+| 下一可用交付 | 独审后接收本地安装式验证器片段；中心验证任务与显式领取资格仍待实现 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | AV02 source PENDING；设计bc5b于14:49:38 APPROVED/0P1P2不覆盖新源码 |
+| Review | AV02 source/result PENDING；设计bc5b于14:49:38 APPROVED/0P1P2不覆盖新源码 |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v2 ACTIVE12，15:30:49.127Z原子amend，exact10产品+2docscope |
 | 架构影响 | AV02 branch d6e0248：共享安装/host增加显式verifier kind和有限JSON算法消费者；显式领取协议、中心不可变引用与重算仍PLANNED，main图不改 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | AV-01 | completed | architecture_read | bc5b68a0e4e93e50f9258dd617262263d8db3c1f设计增量于14:49:38独审批准，P2已关闭；非产品完成 |
-| AV-02 | in-progress | architecture_read，a67 v2/12 | d6e0248合同/真实host局部实现已固定，类型和行为NOT_RUN |
+| AV-02 | in-progress | architecture_read，a67 v2/12 | 9895181合同/真实host局部实现；types0与10/10，通过后一次独审待结论 |
 | AV-03 | pending | 待合法产品scope与资源window | center/runner纵向及真实PG未实现/未运行 |
 | AV-04 | pending | 待入口与现consumer协调 | 启动/CLI/产品验收未实现/未运行 |
 
@@ -83,3 +83,7 @@ AV02源码已形成：strict JSON规则/请求/结果、有限纯算法、明确
 本片固定源码后ordinary仍待整段放行，未执行类型/行为检查；不会把已有设计批准转移为source批准。真实verifier局部消费者为executePluginVerifier→共享host installed read/import/invoke；尚无center/v4/main runtime分派，PROCESS模式仍只原tool，不冒已支持verifier worker。
 
 本段15:39安全更新：a67 v2/12有效；K01普通检查实际RETURN前不启动本片检查，之后仍按co-lead明确整段放行。新fresh floor下限14,414,970,880B（如经理后到更高完整sum从高），旧KEEP不退；原15:53:22截止不重置。
+
+## AV02 本次实际局部结果
+
+2026-10-07T15:44:21.123Z固定结果：source 9895181dfd90f18014d80589799f76169e6bd5b2；执行HEAD bf81e01f7073cdb3d52086c83bbe28900fce1518。类型0，10选10过、69未选，八个新例加两个直接旧工具/材料consumer。两child合计监督2895ms，原raw21863B，实际child37568/46916均finalabsent/MERGED EOF、无secondary/signals；初始EPERM观测保留。两ownTMP及6fixture已关闭删除、tar47844 close0/null，15:42:55.342Z RETURN后不再launch。末样本非峰值，whole external wall UNKNOWN。0PG/provider/PROCESS worker/个人服务。source/result已固定待一次独审，不能把本地重算当中心独立校验或公开v4链通过。证据[av02-result-summary.json](../../docs/evidence/x01-artifact-verifier/av02-result-summary.json)。

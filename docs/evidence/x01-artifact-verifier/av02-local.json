@@ -1,0 +1,130 @@
+{
+  "attempts": [
+    {
+      "name": "types",
+      "startedAt": "2026-10-07T15:42:37.864Z",
+      "endedAt": "2026-10-07T15:42:39.228Z",
+      "wallBeforePersistenceSeconds": 1.363942165975459,
+      "supervision": {
+        "pid": 37568,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1329,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 0,
+        "endSampleBytes": 0,
+        "dev": 16777234,
+        "ino": 124273828
+      },
+      "raw": {
+        "path": "docs/evidence/x01-artifact-verifier/av02-types/output.log",
+        "bytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-artifact-verifier/av02-local.py": "d1bb36f5cc5a47daf56374fc29781a2154bff2fea6d19a938ef5823a278ab828",
+        "packages/contracts/src/plugin-verification.test.ts": "2270400eabc54281c5cc0832bd96e8aedf08a8d79c73c7380edbdf770b3c0e3f",
+        "packages/plugin-runtime/src/json-object-verifier.test.ts": "e7de43b74d9f0ff5782d2b47d2378ffdb4a5c559e6eb8ccf8ad6ce4a2a09a6c9",
+        "packages/plugin-runtime/src/package-store.test.ts": "3d5c6f73710f936203aae4670f45f08c6ed79abfdabf8f7a25b9ae7ea3ae4a60",
+        "apps/runner/src/plugins/verifier.test.ts": "42da423afdfa5b0c27da6789f6e9929f6a538371f4efb66dcf8a3b45497bf1b4",
+        "apps/runner/src/plugins/execution.test.ts": "85badf82637f3e4e5342cb19cf746ee6622f3e92ec6095cb25bc6e0279d094fe",
+        "apps/runner/src/plugins/host.ts": "85ead88b8ded0cfe08697d88a9fe64a217bff1f74f64b658d40cfac9bbca9c36",
+        "apps/runner/src/plugins/execution.ts": "b47289187b7f4f27824c48b289a7031270f4a0d9209c0043d217a2bdd7760698",
+        "packages/contracts/src/plugin-verification.ts": "385dd464730493447bd9f3d5520d835ff0ae393fdaca5e2d22c2de239c4c35bc",
+        "packages/plugin-runtime/src/json-object-verifier.ts": "feaa7f97e031b046a0b0f81d1a4287f02f19eb07a7ef6fd17a33f42e885d8be3",
+        "packages/plugin-runtime/src/package-store.ts": "15e1b9554d625db5beb74a582ba513f548421c48e705c4865175105fabdf89aa"
+      }
+    },
+    {
+      "name": "behavior",
+      "startedAt": "2026-10-07T15:42:53.743Z",
+      "endedAt": "2026-10-07T15:42:55.342Z",
+      "wallBeforePersistenceSeconds": 1.5985447079874575,
+      "supervision": {
+        "pid": 46916,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1566,
+        "observed_bytes": 21863,
+        "retained_bytes": 21863,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "cleanup": {
+        "knownProcessClosed": true,
+        "removed": true,
+        "retained": null,
+        "endSampleEntries": 3,
+        "endSampleBytes": 1419,
+        "dev": 16777234,
+        "ino": 124273923
+      },
+      "raw": {
+        "path": "docs/evidence/x01-artifact-verifier/av02-behavior/output.log",
+        "bytes": 21863,
+        "sha256": "f74c2fe92d3cac97b14cfa95937fb5979ab3c50df9fe4e79c8571418d9b6a81a"
+      },
+      "sourceHashes": {
+        "docs/evidence/x01-artifact-verifier/av02-local.py": "d1bb36f5cc5a47daf56374fc29781a2154bff2fea6d19a938ef5823a278ab828",
+        "packages/contracts/src/plugin-verification.test.ts": "2270400eabc54281c5cc0832bd96e8aedf08a8d79c73c7380edbdf770b3c0e3f",
+        "packages/plugin-runtime/src/json-object-verifier.test.ts": "e7de43b74d9f0ff5782d2b47d2378ffdb4a5c559e6eb8ccf8ad6ce4a2a09a6c9",
+        "packages/plugin-runtime/src/package-store.test.ts": "3d5c6f73710f936203aae4670f45f08c6ed79abfdabf8f7a25b9ae7ea3ae4a60",
+        "apps/runner/src/plugins/verifier.test.ts": "42da423afdfa5b0c27da6789f6e9929f6a538371f4efb66dcf8a3b45497bf1b4",
+        "apps/runner/src/plugins/execution.test.ts": "85badf82637f3e4e5342cb19cf746ee6622f3e92ec6095cb25bc6e0279d094fe",
+        "apps/runner/src/plugins/host.ts": "85ead88b8ded0cfe08697d88a9fe64a217bff1f74f64b658d40cfac9bbca9c36",
+        "apps/runner/src/plugins/execution.ts": "b47289187b7f4f27824c48b289a7031270f4a0d9209c0043d217a2bdd7760698",
+        "packages/contracts/src/plugin-verification.ts": "385dd464730493447bd9f3d5520d835ff0ae393fdaca5e2d22c2de239c4c35bc",
+        "packages/plugin-runtime/src/json-object-verifier.ts": "feaa7f97e031b046a0b0f81d1a4287f02f19eb07a7ef6fd17a33f42e885d8be3",
+        "packages/plugin-runtime/src/package-store.ts": "15e1b9554d625db5beb74a582ba513f548421c48e705c4865175105fabdf89aa"
+      }
+    }
+  ]
+}
