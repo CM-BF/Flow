@@ -27,7 +27,7 @@
 | 当前阻塞 | ACTIVE: 等待独立数据库验证窗口，中心领取片尚缺五项真实验收通过证据 |
 | 需用户决定 | NONE |
 | Review | SOURCE_DELTA_APPROVED 10bd0219f84c34008a0255bfed282052a91bce7c，2026-10-07T18:37:13.000Z/0P1P2；R1失败忠实性18:30:02批准；R2真实PG未运行 |
-| Claim | a67ba659-d859-40d6-82c6-2b7333087639 v5 ACTIVE29；19:46:46.413Z仅移出server/index.ts，正式STOP交startup observer；其余scope含036保留，AV02九叶冻结 |
+| Claim | a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25；19:46:46.413Z仅移出server/index.ts，正式STOP交startup observer；其余scope含036保留，AV02九叶冻结 |
 | 架构影响 | 同一claim/receipt显式v4与036来源引用；R1仅启动pre036中心后准备数据失败，动态SQL矩阵未实证。主线图更新待本片接收。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
