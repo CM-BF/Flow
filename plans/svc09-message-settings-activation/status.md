@@ -6,31 +6,32 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T22:54:56.380192+00:00 |
+| 更新时间 | 2026-10-07T23:08:52.982117+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 续接修复已通过独审；新运行因磁盘空间不足在启动前停止，服务仍停止。 |
-| 下一可用交付 | 资源条件满足后，在明确的新窗口执行剩余恢复步骤。 |
-| 当前阻塞 | ACTIVE: 最新可用磁盘空间低于受管完整门槛；本次0个人操作，待资源协调。 |
+| 本片段交付阶段 | review |
+| 当前产出 | 个人中心、runner与Web宿主已恢复，当前启动已确认，已恢复接收。 |
+| 下一可用交付 | 独立核对本次恢复结果，再推进新页面发布与完整设置验收。 |
+| 当前阻塞 | ACTIVE: 本次恢复结果待独立审查；新页面与完整设置能力仍未验收。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
 | Head | a93ac5338da5c52303cf4f83d0735d0a61713ee3（window合同修复） |
 | 实现目标 | a93ac5338da5c52303cf4f83d0735d0a61713ee3 |
-| 工作分支状态 | reviewed（准备已批；R2本次NOT_RUN） |
-| 工作树dirty状态 | 执行源与135pins不变；仅本次准入STOP及状态 |
+| 工作分支状态 | review（个人恢复实际通过，原失败保留） |
+| 工作树dirty状态 | 源码不变；本次实际原件与唯一状态收口 |
 | 实现范围 | docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v12；21:00:39.748Z原子归还4产品，仅own范围继续 |
-| Review | APPROVED_LIMITED_REAL_PREPHASE_CONTINUATION_R2_PREPARATION，assignment核e68/a93，0P1/P2；18绑定/135pins与7直接例。 |
-| 检查状态 | 既有7直接通过；本次fresh空间拒绝，0OPS14预检child/0个人PG/0服务动作。 |
-| 验证限制 | R2源码已审不等于实际恢复；namespace/actualinput/outer均未创建。 |
+| Review | R2准备已APPROVED；本次六阶段实际结果待独立保真审查。 |
+| 检查状态 | 六实际phase exit0/176427ms，全部双EOF/absent/无signals；11 transient PID与2观察组ESRCH，健康三role保留。 |
+| 验证限制 | current初始化=true与accepting24已核；实际任务领取NOT_OBSERVED，未提交模型任务、未发布779，不冒完整双槽或Web用户旅程。 |
 | 已集成main状态 | 原canonical续接准备已main ae328cf28；本次实际失败待独审。 |
-| 运行窗口 | 22:52:57.418Z唯一SELECT；22:54:56.380192Z NOT_RUN事实归还。free18002931712B低于floor18018336768B，未重复探测/运行。 |
+| 运行窗口 | 23:03:29.033765Z START；23:06:25.528431Z terminal0；23:07:45.970561Z精确RETURN。新grant适配floor16341663744B，原NOT_RUN保留。 |
+| 部署状态 | 个人backend/Webhost e15/source880060，旧d629页面仍current，release版本3；accepting24；健康三role持续运行。 |
 | 架构影响 | 仅实验策略与薄调用复用现有迁入、维护、历史和OPS14接口；无新产品权限、调度器或监督器。固定旧backend与实际state.source分离，未知结果停步。 |
 | 看板 | 唯一own status如实记录部分迁入与恢复失败；完整双槽/个人settings激活仍开放。 |
 
@@ -201,3 +202,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T22:45:57.059015+00:00：本次window合同已由真实run.main→真实共享execute直接验证，7不同/374ms/985B，详见[唯一局部结果](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/window-contract-result.json)。原完整canonical/冷启动/四App均不重跑。新R2只有精确argv/namespace和必要输入，pending.ready=false，无新grant；已消费两个旧outer与原raw不变。clean-code复核单一executor规则/窄caller责任/受限错误与清理，不新建监督器。
 
 2026-10-07T22:54:56.380192+00:00：新R2已获独审，实际grant完整匹配；同次135pins/claim后fresh空间门拒绝，在任何个人读取/PG/预检工程child/namespace创建前停止。后置空间读仅记录当时free18002931712B，不冒失败时精准采样；原工具只保AssertionError。输入、dispatch与源未改变，NOT_RUN回执已交Lead，等待资源协调，不自动沿旧grant重试。见[唯一STOP](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-r2-admission-stop.json)。
+
+2026-10-07T23:08:52.982117+00:00：同一未消费R2 namespace按23:01:55新grant实际执行，全部六phase完成。个人backend及独立Webhost现为e15，当前runner initialization=true，23:06:09.113Z显式恢复accepting24；原release current d629/v3，779未发布。23:07:45精确RETURN独立确认operator/阶段进程已收束，健康持久三role与3条idle DB连接保留，不把服务当cleanup对象或冒连接零。实际用户任务领取NOT_OBSERVED。原51msFAIL、0child空间STOP与旧KEEP保留。见[唯一结果](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-r2-actual-result.json)。

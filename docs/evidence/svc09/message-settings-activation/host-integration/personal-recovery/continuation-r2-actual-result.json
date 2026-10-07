@@ -1,0 +1,520 @@
+{
+  "at": "2026-10-07T23:08:52.982117+00:00",
+  "source": "a93ac5338da5c52303cf4f83d0735d0a61713ee3",
+  "preparation": "e68a90f2904415e7e690f23a8494c68c28b51205",
+  "resourceMetadataHead": "c6dd63754d2203fd839c3402aea2f9ca26e22296",
+  "outcome": "SAME_OPERATION_PERSONAL_RECOVERY_COMPLETED_LIMITED",
+  "start": "2026-10-07T23:03:29.033765+00:00",
+  "terminal": "2026-10-07T23:06:25.528080+00:00",
+  "return": "2026-10-07T23:07:45.970561+00:00",
+  "outer": {
+    "pid": 88243,
+    "ownership": "childPidOnly",
+    "elapsed_ms": 176427,
+    "exit_code": 0,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent"
+  },
+  "completed": [
+    "fresh",
+    "rebind",
+    "refresh",
+    "checkpoint",
+    "resume",
+    "final"
+  ],
+  "replayed": [],
+  "targetResult": {
+    "outcome": "target-bound",
+    "mutation": "observed-written",
+    "primary": null,
+    "cleanup": [],
+    "maintenance": "held-required",
+    "retry": "not-authorized",
+    "actualClaim": "unknown"
+  },
+  "final": {
+    "outcome": "resumed-confirmed",
+    "phase": "final",
+    "complete": true,
+    "view": {
+      "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "version": 24,
+      "state": "accepting",
+      "operationId": null,
+      "activeAttempts": 0,
+      "uncertainAttempts": 0,
+      "updatedAt": "2026-10-07T23:06:09.113Z",
+      "stopPermitted": false,
+      "provider": "not-probed",
+      "display": "恢复接收"
+    },
+    "processes": {
+      "center": "running",
+      "runner": "running",
+      "web": "running"
+    },
+    "oldGroups": {
+      "center": "absent",
+      "runner": "absent",
+      "web": "absent"
+    },
+    "initialization": true,
+    "stateDigest": "154cb10005a89cdd8b3fa6ff98b9fb78d6a325930024a34458d9d9de75b99f53",
+    "operationDigest": "e70c822f99e79b9f9c0c728f8f47d9553767cbcb8afc2c849142b1e23e2b3775",
+    "actualClaim": "NOT_OBSERVED",
+    "boundary": "Initialization and accepting are separate from a user assignment; no synthetic work was submitted."
+  },
+  "currentPersistentFacts": {
+    "at": "2026-10-07T23:07:45.963Z",
+    "currentStateMatchesFinal": true,
+    "currentOperationMatchesFinal": true,
+    "backend": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+      "manifestDigest": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+      "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488"
+    },
+    "webHost": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+      "manifestDigest": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+      "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488"
+    },
+    "roles": {
+      "center": {
+        "pid": 55424,
+        "group": 55424,
+        "nonce": "dc5002b1-bf33-435a-b07c-0b2fd6dc253f"
+      },
+      "runner": {
+        "pid": 55832,
+        "group": 55832,
+        "nonce": "6f9ffea6-6899-478c-bf0a-8ac36c358a2e"
+      },
+      "web": {
+        "pid": 58412,
+        "group": 58412,
+        "nonce": "784e6b08-7095-4c75-95e5-e8b7bbc223eb"
+      }
+    },
+    "release": {
+      "version": 3,
+      "current": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+    },
+    "view": {
+      "runnerId": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "version": 24,
+      "state": "accepting",
+      "operationId": null,
+      "activeAttempts": 0,
+      "uncertainAttempts": 0,
+      "updatedAt": "2026-10-07T23:06:09.113Z",
+      "stopPermitted": false,
+      "provider": "not-probed",
+      "display": "恢复接收"
+    },
+    "currentInitialization": true,
+    "actualClaim": "NOT_OBSERVED",
+    "database": {
+      "name": "flow_preview_07d6dc6776c8dda8641512aa",
+      "connections": [
+        {
+          "pid": 313566,
+          "application_name": "",
+          "state": "idle",
+          "backend_type": "client backend"
+        },
+        {
+          "pid": 314063,
+          "application_name": "pgboss:8dcd01fc",
+          "state": "idle",
+          "backend_type": "client backend"
+        },
+        {
+          "pid": 314150,
+          "application_name": "",
+          "state": "idle",
+          "backend_type": "client backend"
+        }
+      ],
+      "adminClosed": true,
+      "boundary": "Healthy personal services remain. Total database connections need not be zero; phase processes are independently observed absent."
+    }
+  },
+  "resourceReturn": {
+    "evidence": {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/window-return.json",
+      "bytes": 5468,
+      "sha256": "0514378d1f09357817d7afd4d6f38dd0ea80371cd573237a3b67a0f9f5281f50"
+    },
+    "transientIdentities": [
+      {
+        "id": 81324,
+        "kind": "pid",
+        "state": "absent",
+        "errno": 3
+      },
+      {
+        "id": 88192,
+        "kind": "pid",
+        "state": "absent",
+        "errno": 3
+      },
+      {
+        "id": 88243,
+        "kind": "pid",
+        "state": "absent",
+        "errno": 3
+      },
+      {
+        "id": 81576,
+        "kind": "pid",
+        "state": "absent",
+        "errno": 3
+      },
+      {
+        "id": 61925,
+        "kind": "pid",
+        "state": "absent",
+        "errno": 3
+      },
+      {
+        "id": 88289,
+        "kind": "pid",
+        "state": "absent",
+        "errno": 3
+      },
+      {
+        "id": 2011,
+        "kind": "pid",
+        "state": "absent",
+        "errno": 3
+      },
+      {
+        "id": 17601,
+        "kind": "pid",
+        "state": "absent",
+        "errno": 3
+      },
+      {
+        "id": 69773,
+        "kind": "pid",
+        "state": "absent",
+        "errno": 3
+      },
+      {
+        "id": 82950,
+        "kind": "pid",
+        "state": "absent",
+        "errno": 3
+      },
+      {
+        "id": 96720,
+        "kind": "pid",
+        "state": "absent",
+        "errno": 3
+      },
+      {
+        "id": 81576,
+        "kind": "group",
+        "state": "absent",
+        "errno": 3
+      },
+      {
+        "id": 61925,
+        "kind": "group",
+        "state": "absent",
+        "errno": 3
+      }
+    ],
+    "operatorPendingLaunches": 0,
+    "persistentServices": "Healthy registered roles are retained. Their database connections are not transient cleanup failures. No blanket zero-connection claim.",
+    "personalServicesStoppedByThisCleanup": false
+  },
+  "disposition": "Private/history/audit and all prior FAIL/KEEP retained; no deletion or rollback.",
+  "operatorQueries": 0,
+  "operatorNewTasks": 0,
+  "new779Published": false,
+  "scope": "Same held operation23 -> target e15/backend+Webhost -> current boot initialization -> preserved checkpoint -> accepting24. Four reports/cold original evidence inherited. Current user task claim NOT_OBSERVED; browser verification/new779/dual settings remain outside this result.",
+  "privateEvidence": [
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/checkpoint-intent.json",
+      "bytes": 121,
+      "sha256": "469bbba56ca59ee69f9581eeebd7bf47e7a4363799966fed70643f4aa5b73d07"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/checkpoint-invocation.json",
+      "bytes": 984,
+      "sha256": "482fc15016bdc15c41f5ff4c91270083176922dab6238c466979944298af1e19"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/checkpoint-outer.json",
+      "bytes": 394,
+      "sha256": "729b0fe4f4063e83a01e70703fd895b958de0b4c83e413965558abf923550643"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/checkpoint.json",
+      "bytes": 1712,
+      "sha256": "b1dc7d331cb19b7c553c5c17bf1151f8543bb57d18d806423286e03545d7529e"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/final-intent.json",
+      "bytes": 116,
+      "sha256": "fa9917ad161d5442950e1ef34bb77af95202f67b5e2f42cd9dff185dd782b69e"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/final-invocation.json",
+      "bytes": 974,
+      "sha256": "e04dbbd3707e20f6c1fe61c459f521886a4c1dc60ef102c581daf2018d42fb36"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/final-outer.json",
+      "bytes": 389,
+      "sha256": "ba182b94ffbc3e1e7d4b5ec101829ecdcec3599ec06a51b8ce8dabf7e0c4ef5b"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/final.json",
+      "bytes": 1656,
+      "sha256": "7ad28f5216ebc456c184c836b6560f51980b65720d71cc51d9525c64239e8546"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/fresh-intent.json",
+      "bytes": 116,
+      "sha256": "58fc0d64938c2e7d0ba0f0c3387c474e2361a5b553309c3c3e1da2d5da317c3f"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/fresh-invocation.json",
+      "bytes": 974,
+      "sha256": "6ff13d77882a421fb45e053ad6af974a0b679185dae033777bbeeec1f98a914a"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/fresh-outer.json",
+      "bytes": 389,
+      "sha256": "900332344a1f6977ea3abf3f0bef5315bdada5db1e585abc64242fdcbf674785"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/fresh.json",
+      "bytes": 8789,
+      "sha256": "ecf5bb6d93b41db591d4bf1f50ff6ee6b9a5507386fabdb2709957d70bb7af03"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/history-before-resume.json",
+      "bytes": 27054,
+      "sha256": "ce9191c552754a825e2aad4ca0272d19ecca595d8b4fcafd0da0bc0c78b98884"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/history-before.json",
+      "bytes": 27054,
+      "sha256": "7b2431c0591ae33f7593892b8bd7abdd9f9108428aa37ac7bac20da45d3268bc"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/history-paused.json",
+      "bytes": 27054,
+      "sha256": "67c70153aeff6f8d13e7f9c84989de15263e11981e7c360a264336fa7ae0fa9c"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/maintenance-deadline.json",
+      "bytes": 166,
+      "sha256": "768baebf55eb4b920d7e101a12f4b5aaa6664d4676b89a7b24126de473192d0c"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/rebind-intent.json",
+      "bytes": 117,
+      "sha256": "774e2c653c2234ac58b41d7617ee72867e4d8224e942c4af0b4f75b0146d18c8"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/rebind-invocation.json",
+      "bytes": 976,
+      "sha256": "9a545f88fad85886e6b4f8555f3fb9b6fdb479ac6f9601a67812425f7c3f8b2d"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/rebind-outer.json",
+      "bytes": 389,
+      "sha256": "d447918da5d9d41db7c6942c654613971a354c4451bddcd00b4f3c3bec19d129"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/rebind.json",
+      "bytes": 622,
+      "sha256": "67e0f5f79b9de80add5405614440f66ae75248b613a18bf2590a3f9e0dd082f7"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/refresh-intent.json",
+      "bytes": 118,
+      "sha256": "42be9c0d38930d1b4896d51b61139c881ed971c2a25bb88d38a45bb8c6a6892e"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/refresh-invocation.json",
+      "bytes": 980,
+      "sha256": "1af69fe2060a305e381d5a3f549c89bd4d1fa505e2bf9ecec0cf3b206138173c"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/refresh-outer.json",
+      "bytes": 391,
+      "sha256": "b38048262b5c3e5d991315097e545a2518f9f4f1841951b869853acfbbe534ff"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/refresh.json",
+      "bytes": 455,
+      "sha256": "560f624508ffe925939efa2200af40865edb7f624e9c53df7a448f87bece7cf9"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/reservation.json",
+      "bytes": 283,
+      "sha256": "852007ae51d9b44ef8bcd142d34df6a31cca250f5871dbb622fa2cb4e3c9eb26"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/result.json",
+      "bytes": 178,
+      "sha256": "371b08d01fb69a69227d11d48bde4171e9f24f6177d9a5d7d2344fbf6f58bec5"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/resume-intent.json",
+      "bytes": 117,
+      "sha256": "4ebd6d67e3207d1cbed30892c0d7ba9026970a0f6e1a4b4e78d4ea51e25f9711"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/resume-invocation.json",
+      "bytes": 976,
+      "sha256": "7b4be4f367db672a4c407e752c6beaab5a3448e2bf3d9f34002a9d24bde876ee"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/resume-outer.json",
+      "bytes": 390,
+      "sha256": "c117b746c37252b7ece46d1216cc0f53b30e41f2c71ec73a6a1bb26e723a2ddc"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/resume.json",
+      "bytes": 337,
+      "sha256": "a05931f6653a1ddb520231bb2db9b6792e0043d4c8f1d318079b9c703bb2f2ee"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/target-result.json",
+      "bytes": 581,
+      "sha256": "81c0f99bac89a8bc73838ff1e53858b59c5bfb494feb9e6990e66da35c39a323"
+    }
+  ],
+  "originalCopies": [
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/fresh-outer.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/fresh-outer.json",
+      "sha256": "900332344a1f6977ea3abf3f0bef5315bdada5db1e585abc64242fdcbf674785"
+    },
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/fresh-invocation.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/fresh-invocation.json",
+      "sha256": "6ff13d77882a421fb45e053ad6af974a0b679185dae033777bbeeec1f98a914a"
+    },
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/rebind-outer.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/rebind-outer.json",
+      "sha256": "d447918da5d9d41db7c6942c654613971a354c4451bddcd00b4f3c3bec19d129"
+    },
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/rebind-invocation.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/rebind-invocation.json",
+      "sha256": "9a545f88fad85886e6b4f8555f3fb9b6fdb479ac6f9601a67812425f7c3f8b2d"
+    },
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/refresh-outer.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/refresh-outer.json",
+      "sha256": "b38048262b5c3e5d991315097e545a2518f9f4f1841951b869853acfbbe534ff"
+    },
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/refresh-invocation.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/refresh-invocation.json",
+      "sha256": "1af69fe2060a305e381d5a3f549c89bd4d1fa505e2bf9ecec0cf3b206138173c"
+    },
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/checkpoint-outer.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/checkpoint-outer.json",
+      "sha256": "729b0fe4f4063e83a01e70703fd895b958de0b4c83e413965558abf923550643"
+    },
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/checkpoint-invocation.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/checkpoint-invocation.json",
+      "sha256": "482fc15016bdc15c41f5ff4c91270083176922dab6238c466979944298af1e19"
+    },
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/resume-outer.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/resume-outer.json",
+      "sha256": "c117b746c37252b7ece46d1216cc0f53b30e41f2c71ec73a6a1bb26e723a2ddc"
+    },
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/resume-invocation.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/resume-invocation.json",
+      "sha256": "7b4be4f367db672a4c407e752c6beaab5a3448e2bf3d9f34002a9d24bde876ee"
+    },
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/final-outer.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/final-outer.json",
+      "sha256": "ba182b94ffbc3e1e7d4b5ec101829ecdcec3599ec06a51b8ce8dabf7e0c4ef5b"
+    },
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/final-invocation.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/final-invocation.json",
+      "sha256": "e04dbbd3707e20f6c1fe61c459f521886a4c1dc60ef102c581daf2018d42fb36"
+    },
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/reservation.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/reservation.json",
+      "sha256": "852007ae51d9b44ef8bcd142d34df6a31cca250f5871dbb622fa2cb4e3c9eb26"
+    },
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/maintenance-deadline.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/maintenance-deadline.json",
+      "sha256": "768baebf55eb4b920d7e101a12f4b5aaa6664d4676b89a7b24126de473192d0c"
+    },
+    {
+      "private": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/result.json",
+      "public": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-r2-once/result.json",
+      "sha256": "371b08d01fb69a69227d11d48bde4171e9f24f6177d9a5d7d2344fbf6f58bec5"
+    }
+  ],
+  "resourceOnlyAdaptation": "New explicit admissionSequence2 floor16341663744 superseded historical combined18GB; intrinsic2.5GiB fresh/live1GiB preserved. Earlier0child spaceSTOP unchanged.",
+  "historyPreservation": {
+    "baseline": {
+      "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/history-before.json",
+      "bytes": 27054,
+      "sha256": "7b2431c0591ae33f7593892b8bd7abdd9f9108428aa37ac7bac20da45d3268bc"
+    },
+    "tables": 77,
+    "checks": [
+      {
+        "file": {
+          "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/history-paused.json",
+          "bytes": 27054,
+          "sha256": "67c70153aeff6f8d13e7f9c84989de15263e11981e7c360a264336fa7ae0fa9c"
+        },
+        "tables": 77,
+        "sameIdentity": true,
+        "sameOmittedColumns": true,
+        "sameTableSet": true,
+        "allOriginalColumnsSame": true,
+        "allRowCountsSame": true,
+        "allProjectedDigestsSame": true
+      },
+      {
+        "file": {
+          "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once/history-before-resume.json",
+          "bytes": 27054,
+          "sha256": "ce9191c552754a825e2aad4ca0272d19ecca595d8b4fcafd0da0bc0c78b98884"
+        },
+        "tables": 77,
+        "sameIdentity": true,
+        "sameOmittedColumns": true,
+        "sameTableSet": true,
+        "allOriginalColumnsSame": true,
+        "allRowCountsSame": true,
+        "allProjectedDigestsSame": true
+      }
+    ],
+    "boundary": "Existing public preserveHistory executed with auditAdded0 at checkpoint and immediately before resume. Uses its defined omittedColumns; no body copied. Final boot does not take another history snapshot: after-resume full business preservation NOT_OBSERVED. Active0 is not a substitute."
+  }
+}

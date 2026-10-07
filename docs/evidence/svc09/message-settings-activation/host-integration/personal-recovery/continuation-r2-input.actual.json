@@ -1,0 +1,265 @@
+{
+  "purpose": "SVC06B_SAME_HELD_OPERATION_CONTINUATION",
+  "ready": true,
+  "operationId": "35d5a7ff-5ef7-4938-9584-adb27f5357ff",
+  "version": 23,
+  "requestId": "f8bc587f-9a51-4aea-80f7-60be40ccef84",
+  "runDirectory": "/private/tmp/flow-svc06-held-recovery-e15-continuation-r2-20261007-once",
+  "operationDigest": "acb2889bd5b04b5fc0003e4210c1a945c241ebf647a333abf39c5c0f67827a53",
+  "stateDigest": "01340ee555a8822c54a71ac4892bacd4ecd877ea9cd4992ed4cdd87a5bb784dc",
+  "releaseDigest": "ced7621a45ed8ef1b2bae3a11592650d047559c33b4c1c43f9a9e4c80b77d942",
+  "context": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "reports": [
+    {
+      "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+      "compatibilityId": "41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-461a",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-461a/report.json",
+      "bytes": 791,
+      "sha256": "41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698"
+    },
+    {
+      "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+      "compatibilityId": "6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-caa1",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-caa1/report.json",
+      "bytes": 791,
+      "sha256": "6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117"
+    },
+    {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+      "compatibilityId": "9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-d629",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/retained-d629/report.json",
+      "bytes": 791,
+      "sha256": "9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1"
+    },
+    {
+      "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+      "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+      "compatibilityId": "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c",
+      "directory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/recovery-779a",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/raw/fixture/recovery-779a/report.json",
+      "bytes": 791,
+      "sha256": "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c"
+    }
+  ],
+  "publishNewWeb": false,
+  "providerQueries": 0,
+  "phases": [
+    "fresh",
+    "rebind",
+    "refresh",
+    "checkpoint",
+    "resume",
+    "final"
+  ],
+  "migration": {
+    "installationDirectory": "/Users/citrine/.flow-personal",
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow",
+    "sourceDirectory": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t",
+    "runDirectory": "/private/tmp/flow-svc06-held-recovery-e15-20261007-once-migration",
+    "installationIdentity": {
+      "dev": "16777234",
+      "ino": "117819905"
+    },
+    "sourceDirectoryIdentity": {
+      "dev": "16777234",
+      "ino": "124535526"
+    },
+    "runIdentity": null,
+    "artifact": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+      "manifestDigest": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+      "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488"
+    },
+    "expectedBackendArtifact": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+      "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+      "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+    },
+    "expectedWebHostArtifact": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    "expectedSource": {
+      "head": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+      "dirty": false
+    },
+    "expectedRunner": {
+      "id": "d22f4df2-8242-49f4-a1b4-77f8f08611ef",
+      "maintenance_state": "maintenance",
+      "maintenance_version": 23,
+      "maintenance_operation_id": "35d5a7ff-5ef7-4938-9584-adb27f5357ff"
+    },
+    "retainedArtifacts": [
+      {
+        "policy": "flow.backend-artifact.v1",
+        "artifactId": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+        "manifestDigest": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+        "sourceHead": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+      },
+      {
+        "policy": "flow.backend-artifact.v1",
+        "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+        "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+        "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+      },
+      {
+        "policy": "flow.backend-artifact.v1",
+        "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+        "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+        "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+      }
+    ],
+    "privateFiles": {
+      "browser-session.json": {
+        "dev": "16777234",
+        "ino": "124139868",
+        "bytes": 205,
+        "sha256": "ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a"
+      },
+      "claude.json": {
+        "dev": "16777234",
+        "ino": "117819909",
+        "bytes": 145,
+        "sha256": "b79a5a08590000c6d0c01cb9fd04811f24368947e58c6d399b57a2af9a05f9af"
+      },
+      "config.json": {
+        "dev": "16777234",
+        "ino": "117819925",
+        "bytes": 672,
+        "sha256": "f5a01a80a33b8364316529844334955e359dea4224b72271ab26da798764b7ee"
+      },
+      "maintenance.json": {
+        "dev": "16777234",
+        "ino": "124458071",
+        "bytes": 572,
+        "sha256": "f7d57609881b6cda4c106cb0741ff8850b8b27480b663c3ba853d938e5e609b4"
+      },
+      "state.json": {
+        "dev": "16777234",
+        "ino": "124458345",
+        "bytes": 4321,
+        "sha256": "2b7abddafb589cdd794089d5a43ac204cb83898dd0ecea6cc7b0443d3c108613"
+      },
+      "web-release.json": {
+        "dev": "16777234",
+        "ino": "123210668",
+        "bytes": 1332,
+        "sha256": "a276952f95337e42a9642223fbcb24532676f5c9435cd91218c6525edb16fa03"
+      }
+    },
+    "processDigests": {
+      "center": "874ccdfe33f811537d4c933e504213271d170bd66e27ece029fc3aa0dd6df2c9",
+      "runner": "06b682415cfbecbd124dbbb08e30da6ca6e81a05e9bdf65c30645b9bcfbd2df0",
+      "web": "dd901962b21f73e1deb1c3af79215c0df0f706f2855a498a213d93b3d0d4c93f"
+    },
+    "ports": {
+      "center": 61227,
+      "web": 61228
+    },
+    "python": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "cloneDriver": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py",
+      "sha256": "05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6"
+    },
+    "clone": {
+      "manifestBytes": 3196787,
+      "artifactEntries": 15629,
+      "artifactLogicalBytes": 363874705,
+      "cloneHelperSha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62"
+    },
+    "artifactTotalLogicalBytes": 367071492,
+    "budget": {
+      "freshBytes": 16341663744,
+      "liveBytes": 1073741824,
+      "addedBytes": 536870912,
+      "rawBytes": 2097152
+    }
+  },
+  "evidence": {
+    "freshFacts": {
+      "commit": "4e527c531b118e0d96e3e95fe1b0edc2e11f488e",
+      "path": "fresh-actual-once/facts.json",
+      "sha256": "f86a283fa9a9b71c49bbeb6882d622c5c9baa81e7028d657dfe2519ad887bd30",
+      "at": "2026-10-07T21:53:19.198Z",
+      "finishedAt": "2026-10-07T21:53:24.176Z",
+      "boundary": "Point observation. Effective six-file pins, stopped old roles and sameop/runner23 must match again inside existing migration/target locks. Remote zero connection not observed."
+    },
+    "build": {
+      "commit": "8bea672e52f3528b3bf666ffc7d2375aaab3531f",
+      "manifest": "docs/evidence/svc06/browser-recovery/recovery-build-r2-result-manifest.json",
+      "sha256": "9d10001297d42521115af12f4700280a3b164e5b546724600d1c88cbef9c7d4f"
+    },
+    "cold": {
+      "commit": "81fa3974e09baab151f562074aa1f5c3f8ce4903",
+      "manifest": "docs/evidence/svc06/browser-recovery/recovery-cold-r2-result-manifest.json",
+      "sha256": "4deb802df0e84523209950113c3aff0510a0958be8261762afd56f588a5e7601",
+      "review": "../peer-recovery-cold-r2-review.json",
+      "decision": "APPROVED_LIMITED_REAL_DEFAULT_THREE_ROLE_COLD_RESULT_FIDELITY",
+      "scope": "Default3/current initialization/stop only; no App/personal/task proof",
+      "returnAt": "2026-10-07T22:00:23.226Z"
+    },
+    "fourApps": {
+      "commit": "b4222f7660a8e4a176285ff154c82afd95ba3d98",
+      "intake": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json",
+        "bytes": 17583,
+        "sha256": "905af75b5cb1c1859ba5e482180a65967c1a17127aa059dbef59a0b8cdd11186"
+      },
+      "independentReview": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/root-actual-review.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/root-actual-review.json",
+        "bytes": 13917,
+        "sha256": "2fd4b6446828a98fce80b323d487a296a9490b3ffe80ed43748c23e732e3cdad",
+        "decision": "APPROVED_SCOPED_ACTUAL_RESULT"
+      },
+      "source": "cb3ca8ec7ed4611097a3ab7414f9591526ccd896",
+      "executionHead": "68d7c5bd56f622b7d9f5476560a5cb5e704bf22a",
+      "actual": "PASSED_FORMAL_FOUR_APPS_COMPLETE_RETURN",
+      "scope": "Consumes the unique Web independent acceptance of four exact source880060/context81a8 reports and 16 checks; no duplicate App review or personal-deployment claim."
+    }
+  },
+  "admission": {
+    "actualWindow": "SVC06B-HELD23-E15-CONTINUATION-R2-20261007-ONCE",
+    "latestNewSpawnAt": "2026-10-07T23:05:55.363Z",
+    "completeForwardFloor": 16341663744,
+    "sourceClaims": "Fresh check required before actual; no static flag grants authority",
+    "newNamespaces": "Names selected only; existence/identity check and exclusive creation belong to actual admission",
+    "dispatch": "continuation-r2-dispatch.json (source/input binding only; ready=false rejects execution)",
+    "notReady": []
+  },
+  "predecessor": {
+    "commit": "43448226508158e74356649230198699f0ad2cf1",
+    "manifest": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-result-manifest.json",
+    "completed": [
+      "fresh",
+      "import-artifact",
+      "import-reports"
+    ],
+    "rebind": "identity/MAINTENANCE_TARGET_CHANGED/not-written",
+    "runDirectory": "/private/tmp/flow-svc06-held-recovery-e15-20261007-once",
+    "imports": "Verify exact existing e15 and all four compatibilityIds; never import again.",
+    "canonicalExpected": "Fixed880060 public canonical over prior saved fresh snapshot. Current six pins and sameop23 checked again under existing locks. No current private reread in preparation.",
+    "prePhaseAttempt": {
+      "commit": "99ad558bd1f29d51474ddb1b71c33ff44001b5d9",
+      "manifest": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-actual-result-manifest.json",
+      "phasesStarted": 0,
+      "namespaceCreated": false,
+      "entry": "Consumed; never reuse original continuation outer path or grant."
+    }
+  }
+}

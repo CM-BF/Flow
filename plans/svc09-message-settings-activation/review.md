@@ -123,3 +123,7 @@ Peer cold结果34c610的独立限定结论见own `host-integration/peer-recovery
 ## Window contract continuation R2
 
 Target a93ac5338da5c52303cf4f83d0735d0a61713ee3; two runtime literals plus actual pre-phase direct consumer. Seven selected cases passed; real executor, filesystem persistence and pure OPS14 validation retained, final personal phase blocked. Original 99ad558bd actual failure/RETURN is a separate fidelity review. New pending and dispatch require fresh independent preparation approval and new resource grant. Canonical continuation main receipt ae328cf28 is historical; it does not approve this delta.
+
+## Actual held continuation R2 result
+
+Source a93 / preparation e68 unchanged. Six phases completed, outer176427ms/exit0, exactRETURN23:07:45.970561Z. Independent fidelity review pending; current initialization and accepting24 are distinct from actual task claim NOT_OBSERVED. Backend and Webhost e15; d629 remains published, new779 not published. Healthy personal roles persist; transient PID and tagged observer groups returned. Prior FAIL/KEEP and 0child spaceSTOP remain.
