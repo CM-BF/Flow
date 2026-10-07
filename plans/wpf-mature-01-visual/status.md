@@ -2,7 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T07:48:01.447294+00:00；新增真实快速设置弹层层级验收，原组件通过保留 |
+| 最近更新 | 2026-10-07T13:09:05.661Z；用户可见新网页发布优先与实际已合并/已应用分开 |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 本大task历史首次开工缺独立证据，不以计划创建或本次更新时间回填；整体视觉体验验收尚未完成。 |
 | 任务层级 | 大task |
 | 大task ID | [WPF-MATURE-01](plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
@@ -14,8 +17,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | 新前端发送、排队和回执恢复已完成受控兼容验证并接主线；个人预览已于21:27按受控流程发布af51后台与d629/v3前端，旧版本组合不再是未解依赖。完整视觉体验仍在推进。 |
-| 下一可用交付 | 将已通过的快速设置组件接入真实聊天，收拢长标签与目录解释，确保Apply/Cancel易找；先由原发布owner核后台能力兼容，真实App与完整视觉仍待验收。 |
+| 当前产出 | 已审前端和恢复入口已合主线；用户现有页面仍为旧版连接页，新的固定兼容片不等于已应用新网页。个人维护本次前置失败已归还，完整视觉体验继续推进。 |
+| 下一可用交付 | 沿原发布链优先将包含已审恢复入口的新网页应用到个人预览；先固定相容前后端及真实Cookie恢复证据，不等待全部插件或快速设置验收。MSG03继续真实聊天与窄屏键盘验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
@@ -58,3 +61,5 @@ RELEASE01兼容输入已main c450且20a v2释放；后继根严格类型检查�
 当前发布依据：[原SVC05H final gate](../../docs/evidence/web-platform/checkpoint-0400-20261007/personal-publication-final-gate.json)与[限定来源说明](../../docs/evidence/web-platform/checkpoint-0400-20261007/personal-publication-intake.json)。2026-10-06T21:27:19.199Z published/受控检查通过，保留明确legacy-intent例外，不称所有native idle；个人af51/d629部署不等于全部最新main。2026-10-07T02:44同版本61228恢复另见[实际回执](../../docs/evidence/web-platform/dashboard-task-time-intake/personal-web-recovery-receipt.json)。本父整体TODO、检查NOT_RUN和review NOT_STARTED未改；本次只修过期摘要，不重验产品。
 
 本次当前摘要按既有NONE/ACTIVE合同校准，[三份父status实际元数据解析](../../docs/evidence/web-platform/checkpoint-0400-20261007/parent-human-parser.json)均errors=[]、human.complete=true/missing=[]；不是产品检查或新页面采样。
+
+当前发布优先级见[固定候选与边界](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/visible-web-release-priority.json)：GO只读既有页面仍d629/v3；source7272候选尚缺新immutable前后端产物。6c/7d1旧绿不含lateLogout，不能改标。上文21:27 af51/d629和历史发布准备保原时点，不作为最新main或新网页已应用证明。

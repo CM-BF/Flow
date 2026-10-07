@@ -1,0 +1,215 @@
+{
+  "kind": "REQ19_RELEASE_READONLY_NEXT_VISIBLE_WEB_CANDIDATE",
+  "at": "2026-10-07T13:06:23.319627+00:00",
+  "reviewer": "w01 / GPT-6 Astra Ultra; read-only",
+  "fixedMain": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+  "decision": "SOURCE_CANDIDATE_IDENTIFIED; NEW_ARTIFACT_COMBINATION_NOT_YET_EVIDENCED; NO_RUNTIME_OR_PUBLISH_AUTHORIZATION",
+  "conclusion": "最小已审组合可统一固定 main7272：包含 c130/2f8 新连接页与 Recovery，以及 lateLogout 修复；不等待 MSG03、完整 Plugin 或 Codex/provider 资格。现有绿证据不能合成为新版 immutable Web + 新后台的实际兼容报告。",
+  "candidate": {
+    "preferredWebAndBackendSource": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+    "webIntegratedAt": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
+    "webReviewedTarget": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+    "lateLogoutSource": "66caee46341c91db71a3590bfcd288396b30567a",
+    "lateLogoutProduction": "f5ac8dcade01ebc187be276339a5e94e21111b9f",
+    "newWebArtifactId": null,
+    "newBackendArtifactId": null,
+    "artifactState": "NOT_BUILT_OR_SUPPLIED_IN_THE_BOUNDED_INPUTS; do not relabel existing 7d1",
+    "comparison": "c130 is ancestor of7272; both ancestors of fixed current7524. git diff c130..7272 for apps/web, packages/client/src, packages/contracts/src, pnpm-lock.yaml is empty. Current7524 Web src/config/package remain equal; later direct-shared changes are plugin methods/contracts/tests, not a prerequisite for this release.",
+    "alternative": "If Original needs a newer backend for its own fixed maintenance changes, provide that exact source/artifact as a separate explicit tuple and review its delta; never silently retarget7272 or historical6c reports.",
+    "context": {
+      "format": 1,
+      "publicOrigin": "http://127.0.0.1:61228",
+      "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+    },
+    "settings": "The already supplied cookieOrigin/trustedOrigins sole61228/authEpoch svc09-b2b-20261007 may be reused only if the publishing owner retains that exact normalized policy; a change requires a new context/report binding."
+  },
+  "keySourceFacts": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "lines": "1162-1215,1223+",
+      "fact": "New page says token is only for explicit connection, supports HttpOnly session and identity-gated drafts; submit clears token form state immediately. BrowserWorkspace owns ConnectionSession and browserSession FlowClient. The new connection page still intentionally offers Owner token for explicit reconnect; this release does not promise automatic initial login or a new visual redesign."
+    },
+    {
+      "path": "apps/web/src/connection/session.ts",
+      "lines": "72-118",
+      "fact": "Explicit connect POST then cookie-only GET; no automatic repeated connect. Logout synchronously revokes UI authority; generation prevents old JS continuations changing a later session. This alone cannot prevent an old HTTP Set-Cookie from changing browser cookie storage."
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "lines": "98-111,800-811 at current7524",
+      "fact": "Bearer/bootstrap and browser-session modes are exclusive. Browser writes use current CSRF; requests use credentials include. Historical old Apps remain native Bearer clients."
+    },
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "lines": "109-115",
+      "fact": "6c logout revoked old session AND emitted deleting Set-Cookie.7272 revokes the same token/origin but deliberately emits no deleting Set-Cookie; late response cannot clear a newer connect cookie. This exact production source matches current7524."
+    }
+  ],
+  "existingEvidence": [
+    {
+      "name": "Release c3",
+      "tuple": {
+        "backendSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+        "backendArtifact": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+        "artifactRoot": "/private/tmp/flow-svc06-diagnostics-artifact-Snq8cV",
+        "apps": [
+          "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+          "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+          "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+        ],
+        "context": {
+          "format": 1,
+          "publicOrigin": "http://127.0.0.1:61228",
+          "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+        }
+      },
+      "review": "/private/tmp/root-release-c3-actual-compatibility-review-20261007.json",
+      "sha256": "69e9f80966f076d1a198e3ef1f7393bb6b2ed7b981a102d7610c06f666674fc8",
+      "reuse": "Three retained immutable Apps actually pass four compatibility observations against6c/7d1 and fixedcontext; independent Cookie/CSRF probe and complete cleanup. Method/raw/asset identity evidence reusable.",
+      "cannotClaim": "Does not include7272 backend, new Recovery Web artifact, or current user deployment. Cookie probe is not proof old Apps use Cookie auth.461a format1 has no releaseId."
+    },
+    {
+      "name": "Recovery c130/2f8 composition",
+      "review": "docs/evidence/wpf-conversation-recovery/2f8-composed-feature-root-review.json@7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "reuse": "Approved original03/05 matrix: actual Cookie/read/reload/IDB/draft/CAS/ACK/SSE/reauth/offline, selected a803 cookieRead+Steer and two-center evidence, with fixed source identities. Current Web source equal. Do not re-run all green journeys solely for publication.",
+      "cannotClaim": "Vite/fixture actuals are not a new immutable artifact +7272 real-browser lateLogout combination. Principal-only real rotation and full provider/native capability are not established and are not release prerequisites."
+    },
+    {
+      "name": "lateLogout7272",
+      "review": "docs/evidence/i02/late-logout-review-intake.json@7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "reuse": "Source/direct4 selected+two focused types accepted; held old logout response/newConnect ordering, old authorization/SSE revoke and running task preservation at Node fixture layer.",
+      "cannotClaim": "Explicit limited SQL1..28 fixture, not full35 migrations or browser cookie stack. Existing7d1 excludes fix."
+    }
+  ],
+  "minimumRemaining": [
+    "Original release owner supplies one immutable Web descriptor from7272 (or exact equal c130 Web closure) and one immutable backend descriptor containing7272 logout. Both artifact IDs, root/manifest identity and applicable host/migration acceptance are missing from the bounded supplied candidate, not something this research may invent/build. Existing SVC06 build/host machinery remains the only path.",
+    "Run the new immutable App at exact public origin through the existing restricted owned Chrome proxy to the owned backend: real explicit connect, token field cleared/no saved token, Cookie-only read after reload, confirmed identity/durable draft visible and restore non-sending; exercise real read/send and one strict-prefix ACK loss -> explicit original key/body/turn recovery, plus existing negotiation/SSE observation. This binds the emitted bytes, not just current source.",
+    "Add only the directly affected real-browser logout race: hold the old logout response after actual revoke, connect a new session, then deliver the old response through the real HTTP path; verify actual browser Cookie/new read and authorized write remain valid, old session/SSE invalid, and running task not cancelled. Do not route.fulfill a synthetic cookie result, suppress Set-Cookie, or infer safety from ignored JS continuation. Reuse the center held-response/direct contract and Recovery mounted connection controls; no product authority injection.",
+    "Because planWebRelease/loadReleaseAssets verify EVERY retained App against target backendHead+context, upgrading backend requires newly bound reports for the old three Apps as well as the new App. This is the existing release rule, not a full green regression matrix. The old three can use their unmodified Bearer journey; the new App must report its actual Cookie path separately. Existing6c report IDs cannot be copied/relabelled to7272.",
+    "After these exact reports and artifact admission, only Original uses its existing publish/version-CAS/retention/rollback operation under a separate actual window. Confirm emitted current index/release tuple and visible new connection page afterward through authorized observation; no automatic refresh of existing user tabs. Current user d629/v3 is GO/owner reported input, not independently probed by this review."
+  ],
+  "minimalHarnessSeam": {
+    "reuse": [
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "apps/web/test/conversation-recovery.browser.ts selected assertions",
+      "tools/personal-preview/web-release.mjs existing format2 codec/import/verifier"
+    ],
+    "necessaryDelta": "Current Release fixture loadApps112-122 pins exactly three retained descriptors and10files per artifact; browser174 hard-labels original retained App Bearer and137 uses its Retry UI. Preserve that historical path. A small explicit new-App branch must validate its actual manifest/count bounds and use the Recovery Cookie/recovery controls; do not merely append a fourth descriptor or inherit auth labels. Source owner/scope and affected proof needed before execution, no new framework.",
+    "retention": "Existing policy allows4 artifacts/192MiB and32 reports;3old+1new fits nominal count only. Operator still verifies actual storage slots/assets/report slots, namespace conflicts and complete tuple. No retention deletion authorized."
+  },
+  "networkAndCleanup": "Existing proxy exact61228 maps only owned backend + pinned immutable assets; no DIRECT fallback or request rewrite. Cookie checks use real page-relative fetch/response; page.request/context.request/route.fetch do not inherit Chrome argv proxy and cannot contact61228. Node touches owned backend only. Future actual requires owned Chrome/context/HTTP/PG-marker identity, bounded raw, real exit/EOF and exact cleanup; this report grants none.",
+  "pins": [
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71948,
+      "sha256": "a6843bf0b2831d9a666fb9a030b0d26c6e588709b89c6501a379e914124d6b62"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/web/src/connection/session.ts",
+      "bytes": 8274,
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "packages/client/src/index.ts",
+      "bytes": 66568,
+      "sha256": "c89b0fabeb461a338d27878086c675bcf9d88479b821718695ba9745d819abe6"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "packages/contracts/src/browser-session.ts",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9640,
+      "sha256": "fb44b7558e38b9fda9c3fd32c4117e069ed56e623ee838744039e8f0039b0f12"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 15567,
+      "sha256": "79d4aa13f371cb11d5875f261829bd70f9e6faa535a6fd60e10da6ce9db0d21d"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "tools/personal-preview/web-retention-policy.mjs",
+      "bytes": 1182,
+      "sha256": "5eda7f605849a255cdc470fb6a7e1211f0f8ada2a7eb5f88ef14d6a9a8cdd594"
+    },
+    {
+      "ref": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+      "path": "pnpm-lock.yaml",
+      "bytes": 279429,
+      "sha256": "69d67b5aa24c99f9f8251f5e212c0c42c92647e71157e97f45fedea89d867c3b"
+    },
+    {
+      "ref": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "path": "docs/evidence/i02/retained-app-7d1-intake/receipt.json",
+      "bytes": 3243,
+      "sha256": "c0781c22275ba4bac048de4b0e60f2552a5f2fb7d1155cddca63600d3e7b5c78"
+    },
+    {
+      "ref": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "path": "docs/evidence/i02/recovery-intake.json",
+      "bytes": 1465,
+      "sha256": "d96022ac0dd07558bd10c32928c41368341e1cbc2125d624d8173383ddf6fa04"
+    },
+    {
+      "ref": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "path": "docs/evidence/i02/late-logout-review-intake.json",
+      "bytes": 1991,
+      "sha256": "47e56bab52022eb19ee933e750735dc1e57bc91ad9468c8a97841d89dce3ad7d"
+    },
+    {
+      "ref": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "path": "docs/evidence/i02/recovery-center-alignment-web-review.json",
+      "bytes": 4269,
+      "sha256": "1e89d65635f9232a8808647802685cdaa0d9a627bea04187d76107cd17314adf"
+    },
+    {
+      "ref": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "path": "docs/evidence/wpf-conversation-recovery/2f8-composed-feature-root-review.json",
+      "bytes": 10567,
+      "sha256": "c5444993994d86bcf8523fb558c21fa6946acb005ffe5d7b6bbfd3ee336209eb"
+    },
+    {
+      "ref": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 31937,
+      "sha256": "9d078c59e83bc02d0dee45c7d0ec6c41f8c94e06780495098ce6c79d28ddf86c"
+    },
+    {
+      "ref": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 23305,
+      "sha256": "8d7ef686cbb6cf32b1daa72d692aa5bd4ad9ea4a03a173fc59c1e1bf24d156d7"
+    }
+  ],
+  "skills": {
+    "local": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "application": "Reuse installed methods; separate source/contract/artifact/deployment identities, avoid re-labeling tests and duplicated release mechanisms; inspect exact auth boundary and failure semantics. No skill installation. Local clean-code source header says ClawForge; user-requested global provenance baseline not re-established or changed here."
+  },
+  "limits": {
+    "projectWrites": 0,
+    "productRuntime": 0,
+    "NodeTests": 0,
+    "Chrome": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "personalServiceReads": 0,
+    "privateTokenReads": 0,
+    "assetBuilds": 0,
+    "freshResourceProbes": 0,
+    "output": "one TMP report only",
+    "notGlobalClaim": "No assertion that no other artifact/evidence exists anywhere; bounded fixed sources and named evidence only. Original should provide any newer exact approved tuple if it already exists."
+  }
+}

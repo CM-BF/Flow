@@ -1,0 +1,248 @@
+{
+  "at": "2026-10-07T13:00:23.050454+00:00",
+  "reviewer": "w01_owner / GPT-6 Astra Ultra",
+  "mode": "READ_ONLY_SOURCE_REVIEW_NOT_RUNTIME_EVIDENCE",
+  "target": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
+  "workingTreeObservation": {
+    "headAtRead": "078797a0ada235bbe282e613c783ea967f9b5003",
+    "dirtyOwnerFiles": [
+      "apps/web/src/plugin-integration/react.tsx",
+      "apps/web/test/conversation-recovery.fixture.ts"
+    ],
+    "policy": "Read Git objects at target, not owner moving edits; no project mutation."
+  },
+  "conclusion": "The public composer.cancel path and existing guard are appropriate for the proposed mounted material-await test. No new demonstrated blocking bug established in the fixed return path. A real uploaded requires-action attachment, observable adapter-send barrier and post-cancel late settlement are essential; HTTP ACK hold is a different downstream path.",
+  "facts": [
+    {
+      "claim": "Public cancel reaches the installed DefaultThread core; while preparing it aborts the submission and increments generation. A late adapter promise cannot dispatch the cancelled submission through _prepareSubmission.",
+      "source": [
+        "core dist/runtime/api/composer-runtime.js:106-109",
+        "core dist/runtime/base/default-thread-composer-runtime-core.js:10-25",
+        "core dist/runtime/base/base-composer-runtime-core.js:252-260,353-375"
+      ]
+    },
+    {
+      "claim": "Cancellation immediately returns A ahead of B in installed core; Flow restores the observed B text and removes only A ids absent from observed B. Returning-mask and private remove guard preserve held controller material; callback is guarded by active lifetime and exact captured object.",
+      "source": [
+        "core dist/runtime/base/base-composer-runtime-core.js:382-394",
+        "apps/web/src/plugin-integration/message-settings.tsx:177-202",
+        "apps/web/src/conversations/ConversationThread.tsx:105-109,156-168",
+        "apps/web/src/plugin-integration/attachments.tsx:97-102,201-228"
+      ]
+    },
+    {
+      "claim": "Public File upload yields requires-action and invokes adapter.send; choosing an existing complete file bypasses send altogether. Complete-file-only fixtures cannot prove the intended await/cancel branch.",
+      "source": [
+        "apps/web/src/attachments/adapter.ts:13-25,30-34",
+        "core dist/runtime/base/base-composer-runtime-core.js:199-234",
+        "core dist/runtime/utils/attachment-send-operations.js:15-23"
+      ]
+    },
+    {
+      "claim": "Only actual local receipt handoff consumes material; failure/cancel retains it. Explicit complete-draft restore requires no B text/files or differently owned settings, pre-resolves held files, then rechecks ownership/generation/order around every attachment await.",
+      "source": [
+        "apps/web/src/conversations/ConversationThread.tsx:114-153,169-189,204-227",
+        "apps/web/src/plugin-integration/message-settings.tsx:207-239",
+        "apps/web/src/plugin-integration/attachments.tsx:247-272",
+        "apps/web/src/attachments/controller.ts:265-282"
+      ]
+    }
+  ],
+  "mountedAcceptance": [
+    {
+      "priority": 1,
+      "name": "Prove the material barrier, not a network ACK pause",
+      "steps": [
+        "Upload through the real official composer input until ready requires-action; optionally keep a preceding complete attachment to cover mixed ordered material.",
+        "Wait for fixture wrapper adapter.send entry AND public composer.submission plus preparing UI. Assert zero new turn/enqueue POST or local receipt before releasing that barrier.",
+        "Change next B via real UI (same text/different settings is discriminating; verify other pane unchanged), then fail or click the public preparation-cancel action. The wrapper must preserve original adapter and pass its options, not synthesize the prepared file or call onNew."
+      ],
+      "why": "All-complete branch dispatches synchronously; ACK pause is after onNew/receipt ownership and cannot exercise return guard."
+    },
+    {
+      "priority": 2,
+      "name": "Cancel before late settlement; preserve B twice",
+      "steps": [
+        "On cancel observe original signal.aborted and actual submission absence, then await returned/failed UI plus B preservation. Do not settle old promise first.",
+        "Release the original awaited adapter result only afterward (or reject it) and wait for an explicit wrapper-settled observation. Assert B text/settings/ordered material and opposite pane remain unchanged, old A not sent/enqueued, no additional send invocation.",
+        "A cooperative abort rejection alone is insufficient for late-success coverage. A narrow wrapper may defer the real result already obtained from the actual adapter; core generation protection is the target. No fake value or copied composer implementation."
+      ],
+      "why": "Installed AttachmentSendOperations caches a late real result without rechecking abort, but Base generation gate prevents dispatch; both observations distinguish harmless late resolution from B pollution."
+    },
+    {
+      "priority": 3,
+      "name": "Exact ids/order, explicit restore and cleanup",
+      "steps": [
+        "Before emptying B, click restore and verify a visible rejection with B wholly intact (settings-only B must also block). Then explicitly clear text/files and omit B settings, keeping intent/profile/knowledge consistent with held A.",
+        "Restore A once and assert exact old text, tuple and ordered unique attachment ids/references with no turn/enqueue POST. Repeated restore/normal observer notification must not duplicate chips.",
+        "After successful restore remove one complete chip via the real UI; its draft controller item disappears while held history/other material remains and no center-resource DELETE occurs. Ensure fixture barrier/listeners are disposed when its view/session ends."
+      ],
+      "why": "complete addAttachment appends without id dedup; Flow exact-id checks and held/restored bookkeeping, not core generic dedup, provide safety."
+    }
+  ],
+  "risksAndLimits": [
+    {
+      "risk": "Stale cancel click must not fall through to cancel-running-message semantics",
+      "recommendation": "Render only preparing plus actual submission, subscribe to the public composer state, and recheck both immediately in the click handler. DefaultThread.cancel invokes the non-preparation cancel path if submission has already gone; when runtime supports running cancellation it may also delegate there. This is a proposed-UI guard, not a finding against unimplemented current cancel button.",
+      "source": [
+        "apps/web/src/plugin-integration/react.tsx:264-287",
+        "core dist/runtime/base/default-thread-composer-runtime-core.js:19-25"
+      ]
+    },
+    {
+      "risk": "Same filename is not same attachment identity; no fabricated same-id injection",
+      "recommendation": "Assert exact IDs/ref order through public UI. Existing-resource selection rejects duplicate resource references, complete addAttachment itself appends, and removeAttachment filters all matches by id. Do not claim global same-id safety from count/name-only checks, or manufacture otherwise unreachable duplicate IDs through page JS.",
+      "source": [
+        "apps/web/src/attachments/controller.ts:209-221",
+        "core dist/runtime/base/base-composer-runtime-core.js:463-474,549-578",
+        "apps/web/src/plugin-integration/message-settings.tsx:193-199"
+      ]
+    },
+    {
+      "risk": "Failure removing a returned A chip is an explicit incomplete return",
+      "recommendation": "Do not hide the error or clear held A: bindPreparedDraftReturn keeps capture.returning when a remove rejects, so restore remains guarded. Existing direct tests cover basic failure/cancel and late restore; no mounted result or injected remove-rejection result is claimed by this review.",
+      "source": [
+        "apps/web/src/plugin-integration/message-settings.tsx:195-200",
+        "apps/web/src/conversations/ConversationThread.tsx:169-181",
+        "apps/web/test/conversation-recovery.test.ts:828-881",
+        "apps/web/test/attachment-integration.test.ts:179-226"
+      ]
+    }
+  ],
+  "planAlignment": "MSGAPP-03 requires freeze before material await and same-text/different-settings preservation; MSGAPP-04 complete-draft recovery; MSGAPP-05 real mounted browser remains required. Existing real-core direct tests are useful but do not establish mounted App/UI/HTTP behavior.",
+  "inputs": [
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "sourceCommit": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+      "bytes": 15566,
+      "sha256": "08605b6e7541f50941dcecae8bac4e5707dcb74b5094b0567777062f9b68a395"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "sourceCommit": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+      "bytes": 29338,
+      "sha256": "85f8c353a4bcfbe71bd547106a1b961adfe4e58caa73f742a9b6c568c10c3b72"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "sourceCommit": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+      "bytes": 23900,
+      "sha256": "06d8a6bc76693c04989eb2c87acd69760782a353dce9d0b3581bad2fe35655e9"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "sourceCommit": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+      "bytes": 22929,
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "sourceCommit": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+      "bytes": 25852,
+      "sha256": "53083daacf06c9da16d9f7388215e847d5dc5293390a37fd2d36e92ad65e8eab"
+    },
+    {
+      "path": "apps/web/src/attachments/adapter.ts",
+      "sourceCommit": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+      "bytes": 3138,
+      "sha256": "63ed7357e9affe9681f2cff7a1780edf98f5504f661bef9e2b450d181b3c7eb3"
+    },
+    {
+      "path": "apps/web/src/attachments/controller.ts",
+      "sourceCommit": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+      "bytes": 24682,
+      "sha256": "b8ec695ba6827183f0cca8103cdd1e0e53a58df98b4592017081c924ffb74890"
+    },
+    {
+      "path": "apps/web/src/attachments/AttachmentPicker.tsx",
+      "sourceCommit": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+      "bytes": 7475,
+      "sha256": "31f580820d0c161e016ce13856d47a91638800548f9f4445b1ad17de194e3858"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "sourceCommit": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+      "bytes": 88159,
+      "sha256": "7a1c14398c7445ba8583abd2a876d927d2c0cd39848ceafbda4e12d47b2ac73d"
+    },
+    {
+      "path": "apps/web/test/attachment-integration.test.ts",
+      "sourceCommit": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+      "bytes": 21719,
+      "sha256": "2bad9ac6f6c633298f4eaa8185aa3b0f47c2a9c0bd71bc9b784d7d5de5a9e386"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "sourceCommit": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+      "bytes": 50710,
+      "sha256": "43888810f832f7e7efa58b15659a28533c7ccac6a8872621f841b63d146e3eca"
+    },
+    {
+      "path": "plans/wpf-message-settings-app/plan.md",
+      "sourceCommit": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+      "bytes": 2689,
+      "sha256": "6e8e93506100590b2f3a8b686dce5bcde018a13b069d339a1868ea9c0ba2faca"
+    }
+  ],
+  "installedCore": {
+    "version": "0.3.22",
+    "files": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/package.json",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/package.json",
+        "bytes": 2995,
+        "sha256": "eca9c8f55657de768140bac406c84ac18a94111eeb9f99c8d9f30be17dc07a28"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/base-composer-runtime-core.js",
+        "bytes": 28848,
+        "sha256": "2853a21a0ed892cffbfbb808c4b76c08e3d1eacf103f944162dc49f4bd588ef2"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/default-thread-composer-runtime-core.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/base/default-thread-composer-runtime-core.js",
+        "bytes": 3257,
+        "sha256": "507a851d315f3147036d5128941cb9d0552e67e4cb21f3116964466db666197d"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/utils/attachment-send-operations.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/utils/attachment-send-operations.js",
+        "bytes": 1130,
+        "sha256": "d2ecd0d6888ee54712149856032d9e60dbda14387153dfba77acf269d71c9120"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/api/composer-runtime.js",
+        "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/dist/runtime/api/composer-runtime.js",
+        "bytes": 8147,
+        "sha256": "d3540cc31cdafaf2a752064bc1b620131e76bf6ed38fb7836aefb605ccb88cea"
+      }
+    ]
+  },
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "application": "Used installed local clean-code/webapp-testing references; no discovery network or install."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "application": "Traced one authority/lifetime, cancellation error path and concrete boundary tests; no framework or source changes."
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/webapp-testing/SKILL.md",
+      "application": "Recommended waits for observable state transitions and real DOM/UI actions; no runtime/tools invoked."
+    }
+  ],
+  "notRun": [
+    "Node/import/tests",
+    "Chrome/PG/HTTP",
+    "simulations",
+    "project writes"
+  ],
+  "unproven": [
+    "Mounted cancellation and late material settlement behavior",
+    "New proposed button/fixture wrapper source (owner currently editing)",
+    "All production runtime cancellation configurations"
+  ]
+}

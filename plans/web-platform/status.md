@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T12:58:05.292Z；Plugin最终8b315五源a952已核main-intake，主线接收待Original；MSG03原19scope继续mounted材料故障准备，无新运行 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T13:09:05.661Z；1306实际首红归还、MSG03局部归还；实际新网页优先与原发布源码后继推进，Plugin尚未收到main回执 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 插件运行时模块已完成限定浏览器与双图验收，精确五文件主线清单已交接。真实聊天设置正在补齐mounted材料等待、失败和取消的验收入口。 |
-| 下一可用交付 | Original受控接收Plugin精确五文件，随后原owner收口释放；MSG03固定mounted差量/生命周期后集中审与有限实际窗口。个人可用设置目录仍由原MATURE02配置/发布owner推进。 |
+| 当前产出 | 插件模块已完成限定验收并交主线接收；真实聊天设置正在固定材料失败、取消与恢复的实际页面验证入口。个人维护本次在前置核验失败后归还，已完成阶段不重放。 |
+| 下一可用交付 | 沿原发布链先交付用户能看到的新网页；准备包含修复的新前后端产物与实际Cookie恢复验证，不等待全部插件或聊天设置完成。MSG03固定新差量后集中审查，个人设置目录按原双槽配置后继推进。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：SVC1230、REMOVAL R2、Plugin b2均按实际归还，当前本组无PG/Chrome/local holder或NEXT。Plugin两轮累计19951/60000ms封存，旧FAIL保留；MSG03局部36212/60000ms已归还。下次完整fresh线至少6914834432B及旧KEEP、一份reserve保留。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：1306于13:05:06.750720Z实际失败归还，无重NEXT；MSG03原local53579/60000ms已归还、余量不转browser。Mikaordinary潜在与本组0holder分开；下次fresh至少6914834432B，所有KEEP/单reserve保留。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -184,3 +184,5 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 本次[主线接收与当前入口纠正](../../docs/evidence/web-platform/main-intake-handoff-checkpoint-20261007/current.json)仅使用唯一owner状态和D04账本指针：旧DPERF v3/7、ACCESS v1/10及native3时期检查摘要已明确归历史，当前原子版本为v4/11与v2/3，不能沿过时准备派工。Quick受控组件main接收不等真实App/CAS完成，也不自动释放原claim。
 
 本次[正式接收与实际发布原件](../../docs/evidence/web-platform/main-deployment-route-fix-20261007/current.json)分别证明DPERF固定组合main1a6f、4320摘要和I02按需详情可见，以及READBOUND已main81b/登记194。此处只索引canonical，不代替原owner状态或领取账本；不将一次HTTP/浏览器观察泛化为性能通过。
+
+本自然批[实际与后继入口](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/personal-maintenance-next.json)保1306首红，新的Release共同source7272只属候选；[D05两来源登记](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/d05-registration-request.json)仍由现合法Original writer处理。

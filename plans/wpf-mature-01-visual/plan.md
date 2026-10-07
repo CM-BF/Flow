@@ -45,6 +45,8 @@ VISUAL01固定a8b/交付f708已独审并main4391接收，owner558895d收口且35
 
 ## 已审前端实际预览发布优先级
 
+2026-10-07 13:08 UTC 当前优先级：沿原REQ19/Release发布用户实际可见的新网页，不等待全Plugin/Codex资格或MSG03。原发布owner取[最小共同source7272候选](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/visible-web-release-peer.json)，提供新immutable Web/backend，按变化面补实际Cookie/恢复/迟到logout与retained绑定。当前个人维护不扩目标，首红归还不算Web功能失败；main合并、资产应用、backend宿主替换及个人能力目录分开验收。
+
 2026-10-06 13:37 UTC GO明确要求：恢复主线继续同时，沿既有WPF-RELEASE/SVC独立Web发布机制推进已审稳定前端到实际预览，不能以SVC06大构建或整Recovery完成作前置；0provider、优先现成产物、真实产品兼容，不刷新用户tab/换会话/发送。沿原TODO05，root已批[RELEASE03四literal/180秒](../../docs/evidence/web-platform/release03-current-preview-proposal.json)，直接本大task、w01唯一验证owner，原operator发布；未take。
 
 现9eec10文件hash齐不等SVC format2可发布；既有API实际需正式build，而资源低于2.5GiB且依赖physical增量未知，先保现版本并写解除条件。另actual backend362仍缺已审history v2三行修复，未来须exact362 attachment-only/mixed reportEvents差分；失败则交原backendowner最小已审修复，不把“等SVC06”当笼统阻塞。完整descriptor、兼容四类raw、retained/oldchunk/CAS均沿原工具，无第二发布框架或新的产品写权。

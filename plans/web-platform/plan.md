@@ -561,3 +561,11 @@ Release [c2实际失败独审](../../docs/evidence/web-platform/x01-version-retu
 
 
 [Plugin模块精确main交接](../../docs/evidence/web-platform/plugin-module-main-ready-20261007/request.json)沿原X01-06，原owner8b315/a952仅五产品/test范围、模块六组和双折叠B图已审，main未接不释放七scope；既有实际App与可读host候选仍另接，不重跑模块。原MATURE02个人目录激活的[两槽与leaf权属](../../docs/evidence/web-platform/plugin-module-main-ready-20261007/activation-owner-boundary.json)已路由Mika：保旧身份/会话，opt-in受信choices；runners.ts v28原writer处理LIMIT前资格，preview家族正常新take，当前SVC维护不扩。
+
+## 2026-10-07 13:08 原发布与材料恢复接续
+
+沿既有REQ19/Release及MATURE01 TODO05，优先用户实际可见的新网页，不以完整Plugin/Codex或MSG03通过为前置。复用[固定共同source7272候选](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/visible-web-release-peer.json)，由原发布链供应两个新immutable descriptors；原Release owner fresh原四scope实现显式新App Cookie分支，保三旧App/Bearer四checks与tuple绑定，不覆写旧绿。源、main、Web资产应用、backend宿主及个人目录能力分别记录。
+
+MSG03沿原TODO11/19scope收固定四源与两mounted journey，再集中source/native审及有限实际；当前局部53579/60000ms，旧失败/旧批准范围保持。已有[W01取消语义peer](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/msg03-cancel-peer-review.json)供该批复用，不新增研究层或runtime。
+
+[激活分工](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/activation-assignment-request.json)已由Original接受原CORE/SVC09拆分，parent08/11 b4c已落；actual STOP/amend/take未到，不派重复writer。[D05请求](../../docs/evidence/web-platform/mounted-app-and-personal-maintenance-next-20261007/d05-registration-request.json)交现3a624v6合法writer，不在manager六范围之外写。

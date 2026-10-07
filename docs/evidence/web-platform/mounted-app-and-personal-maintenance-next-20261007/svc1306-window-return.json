@@ -1,0 +1,107 @@
+{
+  "at": "2026-10-07T13:03:23.601113+00:00",
+  "state": "RETURNED_FACTS_READER_FAILURE_BEFORE_MAINTENANCE",
+  "window": "svc06-personal-7d1-20261007-1306",
+  "operator": "assignment_review",
+  "coLead": "astra_ultra_execution_lead",
+  "source": "c36f4a8109c9a75cda42a34aba27f778784f6f14",
+  "delivery": "c36f4a8109c9a75cda42a34aba27f778784f6f14",
+  "review": {
+    "reviewer": "astra_ultra_execution_lead (independent of author)",
+    "decision": "APPROVED_REMAINING_MAINTENANCE_PREPARATION",
+    "remainingFindings": 0,
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/docs/evidence/i02/svc06-personal-preparation/continuation-delta-review.json",
+    "manifestSha256": "85db27d5173eb72aa68498e6f919bf56b9692d56292889ef4294da653b837c0a"
+  },
+  "backendArtifact": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+  "backendSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+  "retainedWeb": "461a/caa1/d629; current d629/version3 unchanged",
+  "installation": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+  "mainAtReservation": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+  "scope": "Only facts/history preflight → original root bootstrap/drain → strict localidle/sameoperation → fixedartifact refresh → paused preservation checkpoint → explicitresume → final; no replay of completed R2 stages",
+  "bounds": {
+    "migrationWorkSeconds": 120,
+    "migrationTermSeconds": 0.5,
+    "migrationReapSeconds": 2,
+    "maintenanceFromDrainSeconds": 900,
+    "newBytes": 536870912,
+    "rawBytes": 2097152,
+    "minimumFreeBytes": 2684354560,
+    "liveReserveBytes": 1073741824,
+    "providerQueries": 0
+  },
+  "sourceFreeze": "No main or dependency mutations to44root/53migration fixed closure during actual. Independent WT source and bounded no-shared-endpoint local work allowed. No other heavy/service/PG/Chrome/performance until returned.",
+  "resourceBasis": "Both co-leads latest direct holder replies confirm0PG/Chrome/install/personal, reserve NEXT for this personal maintenance. Their isolated source/bounded local checks continue only without fixed input/dependency changes. Operator must repeat actual fresh original≥2.5GiB and ownership/input gates before first action.",
+  "preserve": [
+    "DB/user data/tasks/sessions",
+    "ports61227/61228",
+    "config/token/profile/runner identity",
+    "current Web pointer3 and all retained assets/tabs",
+    "all previous FAIL/KEEP/unknown"
+  ],
+  "stops": "Any fresh mismatch/new unsafe work/uncertain ownership or unresolved outcome stops dependent operations and preserves state. No retry, cancel, rollback or journal clearing. No fourthWeb publish or later logout fix claim.",
+  "authority": "Existing GO/user fixed controlled update authorization and autonomous co-lead execution; no new model, budget or permissions",
+  "previousSegments": [
+    {
+      "window": "svc06-personal-7d1-20261007-1224",
+      "outcome": "RETURNED_PRECONDITION_CALLER_FAILURE_BEFORE_PERSONAL_ACCESS",
+      "source": "35e22b6bd5176304f991b8275ee5f170c20b8c06",
+      "raw": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r1/result-manifest.json",
+      "elapsedMs": 51,
+      "exitCode": 1,
+      "code": "OUTPUT_REQUIRED",
+      "personalReads": 0,
+      "personalMutation": 0,
+      "migrationLaunches": 0,
+      "review": "native_center_owner APPROVED_PRECONDITION_FAILURE_FIDELITY; no P1/P2",
+      "scope": "childPidOnly helper absent/dualEOF, not a general process-group proof"
+    },
+    {
+      "window": "svc06-personal-7d1-20261007-1230",
+      "returnedAt": "2026-10-07T12:35:37.013013Z",
+      "outcome": "RETURNED_PARTIAL_COMPLETE_BEFORE_MAINTENANCE",
+      "actual": {
+        "completed": [
+          "artifact migration7d1",
+          "Web host replacement only",
+          "3compatibility imports",
+          "205B browser policy"
+        ],
+        "migrationMs": 23649,
+        "webReplacementMs": 16689,
+        "reportsPolicyMs": 4289,
+        "stopped": "Supplemental history digest reader static CommonJS named-export linking failure,62ms/exit1 before evaluation/SQL",
+        "bootstrap": 0,
+        "refresh": 0,
+        "resume": 0,
+        "operatorProviderQueries": 0,
+        "noReplay": "Completed import/replace/report/policy stages may not be replayed; maintenance has not begun. Original FAIL/KEEP preserved.",
+        "ownerEvidence": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/stop.json"
+      },
+      "review": "I02 partial-actual-review.json APPROVED_PARTIAL_ACTUAL_FIDELITY_NOT_BACKEND_UPDATE"
+    }
+  ],
+  "continuationPlanSha256": "09f8c94cfb5b6c64cd8ee264ceb72ca471236b9b8723935b1922da59f9c0f1d4",
+  "noReplay": [
+    "artifact migration7d1",
+    "Web host replacement",
+    "three C3 report imports",
+    "browserpolicy creation"
+  ],
+  "maintenanceDeadline": "Whole operator independently bounded900s frombeforelaunch, +2sreap; includes bindings/fsync, never resets; missing inner phase receipt UNKNOWN/KEEP; detached services excluded from supervision stop ownership.",
+  "returnedAt": "2026-10-07T13:05:06.750720Z",
+  "actual": {
+    "firstStage": "facts-before",
+    "code": "WEB_COMPATIBILITY_INVALID",
+    "factsMs": 418,
+    "operatorMs": 494,
+    "completed": [],
+    "bootstrap": 0,
+    "refresh": 0,
+    "resume": 0,
+    "operatorProviderQueries": 0,
+    "helperTermination": "operator97737 andfacts97738 childPidOnly absent/dualEOF/no signals",
+    "scope": "No replay of R2; root remains frozen while fixed reader schema mismatch diagnosis is completed",
+    "evidence": "backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3"
+  }
+}

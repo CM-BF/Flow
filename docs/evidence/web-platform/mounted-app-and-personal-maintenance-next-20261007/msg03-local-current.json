@@ -1,0 +1,77 @@
+{
+  "recordedAt": "2026-10-07T13:09:25.288Z",
+  "task": "WPF-MESSAGESETTINGS03",
+  "claim": "7e3f v2 exact19",
+  "state": "FIXED_9C46_SCOPED_SOURCE_LOCAL_APPROVED_BROWSER_PACKET_PENDING",
+  "phaseMs": 60000,
+  "spentMsBeforeCurrent": 42000,
+  "remainingMsBeforeCurrent": 18000,
+  "current": {
+    "name": "types-7",
+    "actualStart": "2026-10-07T13:03:09.317Z",
+    "pidPgid": 23235,
+    "maxMs": 18000,
+    "cleanupMs": 5000,
+    "minimumFreshBytes": 6914834432,
+    "pg": 0,
+    "chrome": 0,
+    "terminal": "EXIT_0",
+    "chargeMs": 5645,
+    "freeBeforeBytes": 21725966336,
+    "cleanup": "PID23235/group/scratch absent; signals/errors[]",
+    "actualReturnTime": "UNKNOWN exact time; owner terminal report received; no inferred time"
+  },
+  "prior": {
+    "probe1": {
+      "actualStart": "2026-10-07T13:01:50.563Z",
+      "pid": 72721,
+      "exit": 0,
+      "checks": 5,
+      "chargeMs": 142,
+      "freeBytes": 21747195904,
+      "gateFloor": 6237454336
+    },
+    "types6": {
+      "actualStart": "2026-10-07T13:01:53.884Z",
+      "pid": 76006,
+      "exit": 0,
+      "chargeMs": 5646,
+      "freeBytes": 21747884032,
+      "gateFloor": 6237454336
+    },
+    "cleanup": "Both groups/scratch absent; probe controlled fixture JS, not mounted App or HTTP"
+  },
+  "floorTiming": "New floor message arrived after both prior attempts spawned/returned; preserve consumed lowerfloor and actualfree values, both numerically above updated6914834432. Subsequent fresh adopts new line.",
+  "sourceChange": "After complete restoration, existing failed submission must retire so differentIDs nextcapture succeeds. New four-source delta not covered by9fc approval.",
+  "browser": "Two real mounted journeys remain NOT_RUN; finalcaller/actor/nativepacket needs one focusedacceptance thenfreshqueue",
+  "spentMs": 53579,
+  "remainingMs": 6421,
+  "currentLocal": 0,
+  "subsequentAttempts": [
+    {
+      "name": "probe-2",
+      "actualStart": "2026-10-07T13:06:03.672990Z",
+      "pidPgid": 36653,
+      "exit": 0,
+      "checks": 6,
+      "chargeMs": 138,
+      "cleanup": "group/scratch absent"
+    },
+    {
+      "name": "types-8",
+      "actualStart": "2026-10-07T13:08:14.802356Z",
+      "pidPgid": 19145,
+      "exit": 0,
+      "chargeMs": 5796,
+      "allowanceMs": 12217,
+      "cleanupMs": 5000,
+      "cleanup": "PID/group/scratch absent;errors[]"
+    }
+  ],
+  "rootReview": {
+    "decision": "APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION",
+    "file": "msg03-mounted-source-local-root-review.json",
+    "sha256": "8488fa5656763897bf0b9a3c681ee2b7dacf80ae0db6a81eb5b6c2d928c9c981",
+    "findings": 0
+  }
+}
