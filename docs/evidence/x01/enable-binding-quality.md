@@ -65,3 +65,7 @@ chatui01_owner独审确认报告终态/失败/审计职责分离，无P1/P2。�
 ## 2026-10-07T03:21:59.672788+00:00 — Stage A原直接消费者实测
 
 沿find-skills与固定clean-code/codebase-design，复用原caller/OPS14，同一段strict→17产品检查一次完成，没有插入collect/预备types或重建封套。原product/caller未修订；先受委派freshledger与合计freegate，再唯一新namespace。17是实际选择通过数，11为真实tar，不称纯fake；three supervisor exits/EOF/末态与fixture十一根和外层TMP分别核明。非零或unknown会保留停止，本次无需修后重测。外层time real、内部monotonic、tool wait各自保留；原HOLD不改绿；source和metadata总新增远低1MiB。本段发现的未验接口仍是boolean/integer/enum单独传包断言、领域PG与production runRunner接线，未以局部通过消除。已独立把local实际归还下个owner，不占等待资源。
+
+## 2026-10-07T03:29:28.739973+00:00 — Stage B精确依赖与直接消费者
+
+采用既有source-only闭包方法与clean-code最小变更原则：195个真实静态输入现已齐备，补14个已安装donor/本树workspace的排他ignored link，没有引入整个Web依赖、安装、共享Git改写或假augmentation。根全部strict/ES2023选项保留，一次noEmit0；没有真实类型问题需要修，故不增加无意义第二遍。运行消费既有OPS14和已审supervision_facts，不创建永久新wrapper；0子应用/PG/provider/Chrome。source/dependency权限只用于absent链接，执行后固定metadata/targets不漂移。结束样本与完整输出、时间口径如实，下一PG尚缺fixture持久身份收据，不以本段通过省略。

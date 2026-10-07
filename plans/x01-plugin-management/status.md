@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T03:27:38.876807+00:00 |
+| 最近更新时间 | 2026-10-07T03:29:28.739973+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -14,20 +14,20 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；产品ade4冻结；caller5fcadf8f；实际执行ebd0e591c6b056e7d3b9460557715bc36eebf31c，尚未main |
-| 工作树 dirty 状态 | 执行前ebd0e591 clean；当前仅本次9raw/单结果/工具观察与own metadata归档，产品和调用方未改；提交后clean |
+| 工作基线 / HEAD | base60ca1942411634843fda14e158f138191b832d8b；产品ade4保持；Stage B执行a1368dfe88b2eab15e405a4fdbcc707c62c96ae2，尚未main |
+| 工作树 dirty 状态 | 执行前a1368dfe clean；本次仅供给/一次checks与own metadata，产品/旧输入未改；交审提交后clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASS Stage A strict0+17/17，11tar与12TMP收束且结果独审APPROVED；Stage B九入口types即将开始，PG未运行 |
-| Review | APPROVED Stage A结果2dd587932aae074adcf8a1e754a80876b0aec291（chatui01_owner 03:26:21UTC，0P1/P2）；Stage B结果未产生 |
+| 检查状态 | PASS Stage A strict0+17/17已独审；Stage B九入口noEmit单次0、0raw、owned absent/TMP absent；PG/Browse NOT_RUN |
+| Review | PENDING Stage B固定结果/精确供给独审；Stage A 2dd587结果已APPROVED |
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
 | 实现目标 | 5fcadf8f1b8084d56670393a8ec07ebfb644015f |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-validation-tsconfig.json, docs/evidence/x01/enable-binding-consumer-tsconfig.json, docs/evidence/x01/enable-binding-validation-vitest.config.mjs, docs/evidence/x01/enable-binding-check-once.py, docs/evidence/x01/enable-binding-launch.py, docs/evidence/x01/enable-binding-caller-ready.md, docs/evidence/x01/enable-binding-ownership.test.py, docs/evidence/x01/enable-binding-stage-a-input-r2.json, docs/evidence/x01/enable-binding-stage-a-r2.md |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 插件合同与真实自有包局部验收已过独审；旧消费者类型检查的精确依赖视图已准备 |
-| 下一可用交付 | 完成九个既有服务器与Web消费者的类型检查；按实际失败仅修原范围 |
-| 当前阻塞 | NONE C02 loader已确认local归还；本段types≤120s/最多3次，PG不开放 |
+| 当前产出 | 插件模块局部验收与九个既有消费者的类型检查均通过；真实数据库及生产执行链仍待验 |
+| 下一可用交付 | 接收类型结果独审，补两组既有PG fixture的持久身份和收尾收据，再安排领域PG/HTTP验收 |
+| 当前阻塞 | ACTIVE: Stage C数据库fixture尚缺受控创建与清理证据，未开放PG；生产claim/runtime接线仍独立待协调 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -170,3 +170,9 @@ Mika将30秒local段正式交本owner；03:19:49.463834Z fresh账本v8 ACTIVE17�
 [单结果/绑定](../../docs/evidence/x01/enable-binding-stage-a-result-r2.json)及[工具原输出](../../docs/evidence/x01/enable-binding-stage-a-tool-r2.json)保留原9raw15301B、全部child/根身份和原CLI；记录自身/工具/外部准入副本共27484B，小于512KiB。12个精确TMP路径03:20:11及最终归档lstat全部absent；32MiB仍是结束采样非硬峰值。local已direct交chatui01_owner接C02，并通知S01 heavy owner核对未来local预算。0PG/Chrome/provider/install/重试。产品ade4、旧HOLD原件、原manifest和7dep供给全不变。boolean/integer/enum实际字符串传包的独立断言仍未覆盖，不借17通过扩称。
 
 2026-10-07T03:27:38.876807+00:00：Stage A结果2dd587获得chatui01_owner于03:26:21UTC独立RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，原件不改。根据Mika授权Stage B source/dependency operator，fresh03:25:23.525647Z核v8 ACTIVE17，source固定2dd587/main安装donor观察3230becf；九入口静态import/export闭包195源1007301B、缺源0。只排他创建14ignored links（含本树@flow/client）/1431B target，[供给单记录](../../docs/evidence/x01/enable-binding-stage-b-dependencies.json)8911B，总10342B≤128KiB；无依赖复制/安装，原7links与产品不改。C02实际资源归还，下面只开始普通local≤120s、TMP16MiB/raw256KiB、最多3次有意义types/fix，Web heavy按完整256MiB+8MiB保守叠加。
+
+## 2026-10-07T03:29:28.739973+00:00 — Stage B类型闭环
+
+[单结构化记录](../../docs/evidence/x01/enable-binding-stage-b-checks.json)：03:28:10.367720Z→03:28:12.682238Z唯一noEmit检查exit0/0raw，PID7937最终absent/mergedEOF、无unknown。原consumer config九入口与根strict/ES2023选项不改，scope外源码0改。TMP16MiB结束采样为空、同inode删除并于03:28:31exactlstat absent；14新link/package metadata执行后无漂移。保守计Web heavy 256MiB+8MiB加本次16MiB/raw256KiB/metadata1MiB及1GiB，freshfree通过；不把工具wait相加当whole wall。local已direct交status_read原types/collect段，本owner无待运行。
+
+Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case（3锁屏障）+旧plugins11是唯一候选，保持原断言和唯一034/30已供官方SQL。现runtime fixture缺CREATE前持久reservation/OID+marker身份与外部可核完整cleanup；旧plugins fixture仍created-after-ACK/直接DROP，须在原领取两test范围窄补，不以类型通过冒充PG安全闭环。领域route仍手动注入trusted policy，不默认mount；实际安装数据是合成terminal metadata，不能称下载/真实runner完成。浏览器两label仅本轮类型覆盖，不因此跑全Chrome旅程。

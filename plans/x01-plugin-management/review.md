@@ -1,3 +1,13 @@
+# X01 Stage B 直接消费者类型与依赖视图
+
+状态：NOT_STARTED（Stage B单次类型结果待独审，Stage C未执行）
+
+Review target commit: a1368dfe88b2eab15e405a4fdbcc707c62c96ae2
+
+[依赖视图](../../docs/evidence/x01/enable-binding-stage-b-dependencies.json)固定2dd源与main3230安装观察：195个静态闭包源/1007301B、缺源0，只新增14ignored exact links含本树@flow/client，target1431B+receipt8911B，0依赖复制/安装。九入口沿[原consumer config](../../docs/evidence/x01/enable-binding-consumer-tsconfig.json)，[单记录](../../docs/evidence/x01/enable-binding-stage-b-checks.json)保一次noEmit0/0raw/唯一进程finalabsent/空TMP同identity删除。产品/旧输入不动，review不重跑检查，也不把静态类型通过扩成PG/生产挂载。
+
+---
+
 # X01 Stage A R2 实际结果
 
 状态：APPROVED（Stage A R2结果忠实性，Stage B尚未验证）
