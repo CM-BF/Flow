@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T05:23:45.538Z",
+  "model": "gpt-6-astra",
+  "skills": [
+    {
+      "name": "find-skills",
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md"
+    },
+    {
+      "name": "codebase-design",
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md"
+    },
+    {
+      "name": "clean-code",
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    },
+    {
+      "name": "brainstorming",
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md"
+    }
+  ],
+  "application": [
+    "Use existing local skill baseline; no installation",
+    "Actual small OS module delegates transport/child lifecycle to R06; no duplicate pump or supervision",
+    "Trusted host input only; model JSON does not authorize policy",
+    "Keep inherited-FD bypass, compile failure and type failure with original raw",
+    "Explicitly separate covered syscalls, child facts and full writeAccess/model qualification"
+  ],
+  "authorReview": {
+    "scope": "five products, local runner, Interface and direct consumers",
+    "namingAndResponsibility": "policy generation / trusted launch ownership / C canary are separate concrete responsibilities",
+    "errorAndCancellation": "fail closed on input/digest/change; one launch only; unknown never becomes grant",
+    "unresolved": [
+      "No full NativeWriteAuthority grant or real model qualification",
+      "No guarantee against untrusted same-uid host racing path-to-exec",
+      "No target file-size quota; actual native tool and all IPC coverage remains future work"
+    ],
+    "independentReview": "PENDING"
+  }
+}

@@ -1,0 +1,148 @@
+{
+  "task": "ENG01J",
+  "recordedAt": "2026-10-07T05:23:45.538Z",
+  "sourceTarget": "324d62267d31273683b4720501a3fbde137225ce",
+  "budget": {
+    "cumulativeSupervisedMs": 30000,
+    "privatePlusRawBytes": 2097152,
+    "freshMinimumBytes": 1107296256
+  },
+  "rounds": [
+    {
+      "round": 1,
+      "sourceRef": "621f060709cbb5364ed7af989e93662458fada61",
+      "outerToolExit": 1,
+      "outerToolChunk": "ee864b",
+      "childExit": 1,
+      "elapsedMs": 240,
+      "rawBytes": 325,
+      "privateBytesAtEnd": 0,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "cleanup": {
+        "scratch": "/private/tmp/eng01j-pm186nmo",
+        "identityMatched": true,
+        "group": "absent",
+        "removed": true,
+        "privateBytesAtEnd": 0
+      },
+      "recordDirectory": "round-01"
+    },
+    {
+      "round": 2,
+      "sourceRef": "27711c1613bb97d41be8f70af769986ceab33268",
+      "outerToolExit": 0,
+      "outerToolChunk": "a3a57b",
+      "childExit": 0,
+      "elapsedMs": 876,
+      "rawBytes": 2786,
+      "privateBytesAtEnd": 35496,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "cleanup": {
+        "scratch": "/private/tmp/eng01j-50zp95h5",
+        "identityMatched": true,
+        "group": "absent",
+        "removed": true,
+        "privateBytesAtEnd": 35496
+      },
+      "recordDirectory": "round-02"
+    },
+    {
+      "round": 3,
+      "sourceRef": "be61b8364f20cf33b955116bf2c6629eba093238",
+      "outerToolExit": 0,
+      "outerToolChunk": "89e997",
+      "childExit": 0,
+      "elapsedMs": 950,
+      "rawBytes": 667,
+      "privateBytesAtEnd": 139373,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "cleanup": {
+        "scratch": "/private/tmp/eng01j-miq3zton",
+        "identityMatched": true,
+        "group": "absent",
+        "removed": true,
+        "privateBytesAtEnd": 139373
+      },
+      "recordDirectory": "round-03"
+    },
+    {
+      "round": 4,
+      "sourceRef": "742365361ffd49bdb4d7f3df8f53ec773d294826",
+      "outerToolExit": 1,
+      "outerToolChunk": "c8bbee",
+      "childExit": 2,
+      "elapsedMs": 759,
+      "rawBytes": 1282,
+      "privateBytesAtEnd": 0,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "cleanup": {
+        "scratch": "/private/tmp/eng01j-w0ok3kuk",
+        "identityMatched": true,
+        "group": "absent",
+        "removed": true,
+        "privateBytesAtEnd": 0
+      },
+      "recordDirectory": "round-04"
+    },
+    {
+      "round": 5,
+      "sourceRef": "324d62267d31273683b4720501a3fbde137225ce",
+      "outerToolExit": 0,
+      "outerToolChunk": "e3b3c5",
+      "childExit": 0,
+      "elapsedMs": 744,
+      "rawBytes": 66,
+      "privateBytesAtEnd": 0,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "cleanup": {
+        "scratch": "/private/tmp/eng01j-qqo67hn7",
+        "identityMatched": true,
+        "group": "absent",
+        "removed": true,
+        "privateBytesAtEnd": 0
+      },
+      "recordDirectory": "round-05"
+    }
+  ],
+  "actual": {
+    "cumulativeSupervisedMs": 3569,
+    "stdoutStderrBytes": 5126,
+    "maxPrivateBytesAtEnd": 139373,
+    "distinctAutomatedTests": 4,
+    "focusedTypesFinalExit": 0,
+    "allFiveGroupsAbsent": true,
+    "allFiveDoubleEof": true,
+    "allFiveExactScratchRemoved": true,
+    "PG": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "install": 0
+  },
+  "toolReceiptProvenance": "outerToolExit/chunk values are faithful transcriptions of this worker conversation tool returns, not compiler stdout; original per-round output files remain unchanged.",
+  "measurementLimits": [
+    "privateBytesAtEnd is an end-checkpoint measurement, not continuous peak enforcement",
+    "Elapsed is sum of supervised calls; it excludes preparation and author evidence packaging",
+    "syscall observation intentionally includes inherited-FD bypass; it is not a full authority PASS",
+    "entrypoint/package runtime bindings are not exhaustive installed-payload hashes"
+  ]
+}

@@ -1,0 +1,34 @@
+{
+  "pid": 74944,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 950,
+  "observed_bytes": 667,
+  "retained_bytes": 667,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "privateBytesAtEnd": 139373,
+  "rawBytes": 667,
+  "cumulativeSupervisedMs": 2066
+}

@@ -1,13 +1,24 @@
-# ENG01J Interface v1 — 关键机制先验
+# ENG01J Interface v1 — 实际 Darwin 受限启动层
 
-父授权沿ENG01I authority-candidate；固定main ee98e65c，独立claim七literal。当前不改native-writer/adapter/runtime/contracts/C02。
+本片新增真实 OS 启动层并直接消费现 R06 transport；固定基线 ee98e65c，原七 literal claim。没有修改 G/I、runtime、contracts 或 C02 pump。下表是本片实际接口，原首合同的完整 authority 接线仍属后继。
 
-先实现纯Darwin策略描述器：可信host给出真实独占scratch内的固定可执行文件和唯一既有calculator文件，生成default-deny profile。只允许初始固定exec、必需系统只读加载及该文件data写；拒绝fork、其他exec、网络、Mach/Unix委托和目录/其他文件改动。路径归属和完整policy覆盖须实际验收，不凭字符串称合格。该策略描述器不是NativeWriteAuthority grant。
+| Module | 输入 / 输出 | 状态、错误与依赖 |
+| --- | --- | --- |
+| createDarwinWriteProfile | host 固定的真实 root、executable、唯一既有 calculator.mjs → default-deny 策略文本 | 纯函数；拒绝非规范路径和 executable/write alias；不能凭该文本称模型合格 |
+| prepareDarwinWriterHost | 受信 host 的私有目录、可执行文件 SHA256、最多 8 个有界参数 → policySha256、createTransport、close | 校真实路径/owner/mode/inode；只在此 host 实例允许一次 launch；实际 R06 拥有 stdio 与 child；无任意 stdio/env/外部 PID 参数 |
+| createTransport | 原 CodexTransportFactory 的 signal / workingDirectory → 原 R06 transport | spawn 前再次核固定身份；取消或失败不另发 launch；初始化、backpressure、close 和子进程观察完全复用 R06 |
+| close | 无参数 → policySha256、child 事实、writeAccess: unknown | 同一实际 transport handle；close 后永久禁止 launch；confirmed-exited 只表直属进程退出，不生成 G 的 revoked / locked-no-fallback grant |
 
-第一段tiny C使用自己的loopback/Unix socket与文件；不读个人目录、外部服务或凭据。测试允许目标写/越界文件/新文件/删除rename/symlink/hardlink/fork/其它exec/自有Unix委托，另测host预开FD。父runner持有生成binary/文件真实身份，默认关闭额外FD；故意继承FD仅用于验证机制缺口，不把它注入生产R06。R06只接stdio pipes、不接外部PID或任意argv/environment。
+Darwin profile 允许固定可执行文件、必要系统动态加载只读、workspace 只读及唯一既有文件 data 写。拒绝 fork、其它可执行文件、网络/Mach lookup 及新建/删除/链接/重命名。固定可执行文件的再次 exec 不产生额外进程。本次 tiny C 验证了列出的有限操作；没有证明任意 IPC、原生插件或全部 native 工具覆盖。
 
-只有限制写入主体集合与所有实际通道经证明，R06持有child的确认退出才可合并为revoked；EOF/group/取消/turn final单独不够。若初步syscall否定关键机制，先固定失败/具体替代，不写空壳authority。若成立再把真实Darwin层接现G.open/close，不复制loop或journal。实际模型来源/no-fallback门禁独立：缺可信证据不能授native生产grant，OS测试仍可直接推进。
+实测的决定性限制：只施加 profile 时，预先打开的 regular FD 可以继续越界写入。因此策略、固定 FD 集合及实际 launch handle 必须共同成立。round-03 的 Node host 先实际写同一 inherited FD；真实 R06 spawn 后 C 访问该编号得到 EBADF，不能把 Python close_fds 当成 R06 证据。R06 固定三条 stdio pipe，未增加传输循环或监督器。
 
-一次普通本队local段累计≤30s（编译/所选syscall/必要修复合计），raw+私有≤2MiB；复用OPS14 newChildSession监督，无PG/Chrome/provider。独占scratch父dev/ino和固定源先记，确认自己的组消失且结果耐久后仅清理自己的scratch。unknown保留，原轮次不覆盖。总外层不以等待fsync作为进程停止条件；无新监督框架。
+输入归属假定是可信 host 私有目录、二进制及参数。当前 stat→exec 使用路径，不能抵御同 uid 的不受信并发宿主改写；不声称 inode 原子执行。二进制有界 hash 读取上限 512MiB、每次 64KiB；策略不限制目标文件增长，文件系统 quota/最终生产资源强制仍未实现。R06 帧/累计输入输出分别 16/32KiB，初始化 2s、TERM/KILL 200/300ms。
 
-技能发现：本地find-skills优先发现 codebase-design / clean-code / brainstorming，已读路径 /Users/citrine/.agents/skills/<name>/SKILL.md。本段为已获明确设计授权的有界机制验证；使用小Interface、职责集中、真实调用验收与原失败保留；无需重复用户确认/安装。clean-code既有sickn33固定基线复用，不反复更新。
+模型身份/no-fallback、实际 Codex binary 的可运行性和 provider 网络尚未验证。当前网络全部拒绝，所以不能直接作为在线 Codex 生产配置。本片提供可运行的实际 OS 机制与真实 transport seam；后继必须将受支持操作和模型来源证据闭合后才实现 G 的 grant/完整停止。无产品 profile 注册，也未消费真实 provider。ENG 完整模型写改与独立接受仍开放。
+
+扩展一个合格生产 host 时，应复用此实际启动层与 G/I 编排，补明确受限 provider 网络/实际二进制和完整 writer 集合证据；不能再加一个只注入 qualified JSON 的包装层。改变 policy 或实际 binary 必须重新覆盖其受影响操作。没有第二 FSM、DB 清理器或 transport。
+
+本轮预算累计 30s / raw+私有资源 2MiB；复用固定 OPS14 newChildSession。实际五轮累计 3569ms、stdout/stderr 5126B；最大结束时私有目录测量 139373B，不冒连续峰值或硬磁盘 quota。每轮先持久结果再按 exact dev/ino + 最终组 absent + 双 EOF 清理，仅自有 scratch。历史 pre-reap EPERM observations 保留，最终 absent 才是当前观察；不把该组事实等同所有写入者撤销。监督器进程期限不等于后续 fsync 的硬实时期限。
+
+技能应用沿本地 find-skills / codebase-design / clean-code / brainstorming；路径 /Users/citrine/.agents/skills/<name>/SKILL.md。本任务已获设计授权，小 Interface、状态唯一所有者、直接真实消费者、错误与原失败保留。没有重复安装技能或引入依赖框架。

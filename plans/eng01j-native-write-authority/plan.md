@@ -5,8 +5,8 @@
 沿已授权[Interface](../../docs/evidence/eng01j/interface.md)，先真实系统调用核关键机制，再决定有限宿主实现；不交空壳永远unsupported实现、不伪造模型资格。
 
 - [x] ENG01J-01：独立树/原子七scope/固定Interface与输入。
-- [ ] ENG01J-02：真实自有syscall证明初始exec、拒派生/越界/委托及继承FD边界，原失败/退出保留。
-- [ ] ENG01J-03：机制成立后最窄实现复用R06/G；不成立则固定具体障碍和替代方向，不堆wrapper。
+- [x] ENG01J-02：真实自有syscall证明初始exec、拒派生/越界/委托及继承FD边界，原失败/退出保留。
+- [x] ENG01J-03：实现受限Darwin启动层复用R06，固定FD风险与直接消费者；未授G完整grant，模型/任意IPC/完整撤销留后继。
 - [ ] ENG01J-04：固定源码/结果独立review与受控接收；真实native模型/网络/用户写改验收仍独立。
 
 遵循根AGENTS模块化、时间与局部连续迭代规则。预算累计≤30s/新raw+私有资源≤2MiB，0PG/Chrome/provider/个人服务；本队local开始/实际清理归还一次通知。未知资源KEEP，不凭group或child close授权后续检查。
