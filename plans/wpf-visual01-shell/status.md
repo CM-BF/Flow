@@ -3,7 +3,7 @@
 | 字段 | 记录 |
 | --- | --- |
 | 任务ID | WPF-VISUAL01 |
-| 最近更新 | 2026-10-07T20:23:57.292Z |
+| 最近更新 | 2026-10-07T20:30:22.727Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra |
@@ -15,8 +15,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 1 |
-| 当前产出 | 恢复对话框的登录读取、窄屏浅深主题和键盘焦点已通过独立验收；消息设置浮层尚未运行 |
-| 下一可用交付 | 由经理排消息设置浮层代表旅程；两消费者完成后交共享浮层主线接收 |
+| 当前产出 | 恢复对话框的登录读取、窄屏浅深主题和键盘焦点已通过限定独立验收；消息设置浮层候选已具备固定运行准备，尚未运行 |
+| 下一可用交付 | 等待经理按个人恢复优先队列安排消息设置浮层单次旅程；完成后交全片独审与主线接收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 任务开工时间 | UNKNOWN |
@@ -74,3 +74,7 @@ Recovery单次60s/30cleanup仅提案：1markedDB/13配置连接、1Chrome、2own
 当前唯一结果入口：[Recovery实际索引](../../docs/evidence/wpf-visual01/shared-overlays/recovery-actual/index.json)。旧准备段所写NOT_RUN/HOLD均为原时点历史，本段actual已闭合；实际源4ca与执行HEADd852固定。
 
 当前exact8在本次正常封存后全部STOP、claim保留；0后继runtime/待launch。GO恢复卡片可读标题与主次动作的后继由原大task另排，未混入本次source或PASS范围。
+
+## Picker最终routine准备
+
+[f3b8源审](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/root-picker-source-review.json)与[经理native限定接受](../../docs/evidence/wpf-visual01/shared-overlays/picker-ready/manager-native-acceptance.json)已绑定。[READY候选](../../docs/evidence/wpf-visual01/shared-overlays/picker-ready/ready.json)仅数据state/head/approval变化，source4ca、parent1147944e、worker4ff84c50及五prepared保持；旧binding/manifest完整保存。90s含15cleanup仍提案，0gate/0runtime，Recovery余额不借用。全部8scope在本次正常seal后STOP、claim保留；实际前仍需经理新窗口与fresh全部输入/完整组合。

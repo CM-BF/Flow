@@ -31,3 +31,7 @@ Picker [f3b8限定源码准备审](../../docs/evidence/wpf-visual01/shared-overl
 ## 当前Recovery选定实际范围
 
 [固定原件](../../docs/evidence/wpf-visual01/shared-overlays/recovery-actual/index.json)及[c666依赖delta审](../../docs/evidence/wpf-visual01/shared-overlays/recovery-actual/root-peer-delta-review.json)。经理已明确同capture/native边界并给唯一60s实际窗；实际exit0，cookieRead/themes390两个选定组通过，双390图/geometry已保存。原六源未变，无再次类型检查，Picker仍未运行；[root独审原件](../../docs/evidence/wpf-visual01/shared-overlays/recovery-actual/root-actual-visual-review.json)已逐28source/19原始runtime文件核对并亲看两PNG，0blocking；只接受当前Recovery窄屏状态/观测滚动条模式，不扩大为完整Recovery、Picker、Arc、main或部署。
+
+## Picker固定候选的当前边界
+
+root f3b8仅source-preparation已批准；经理明确接受固定Node24.20/Chrome154/CDP+Playwright1.63/tsx4.23.15与原prm-b1监督清理合同，[native接受记录](../../docs/evidence/wpf-visual01/shared-overlays/picker-ready/manager-native-acceptance.json)系其直接派工转录。parent/worker/五prepared不变，最终metadataHEAD例行重绑不重复审查。Picker实际/7图仍NOT_RUN，没有gate、额外测试或fullApp批准。

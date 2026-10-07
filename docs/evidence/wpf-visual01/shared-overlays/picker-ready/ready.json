@@ -1,0 +1,85 @@
+{
+  "recordedAt": "2026-10-07T20:29:50.366037+00:00",
+  "task": "WPF-VISUAL01",
+  "state": "READY_CANDIDATE_NOT_ADMITTED",
+  "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "metadataHeadAtBinding": "180f93c4747b02e46664a0b57cf732991626f908",
+  "finalExecutionHead": "TMP binding will be routine-rebound to the clean metadata seal; no source or executable change",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/assistant-ui.css",
+      "apps/web/src/components/ui/dialog.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/execution-profiles.css",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/message-settings.browser.ts",
+      "docs/evidence/wpf-visual01",
+      "plans/wpf-visual01-shell"
+    ],
+    "state": "active",
+    "branch": "codex/web-shared-overlays",
+    "origin": "new",
+    "taskId": "WPF-VISUAL01",
+    "worker": "w01_owner",
+    "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+    "createdAt": "2026-10-07T15:54:19.236Z",
+    "updatedAt": "2026-10-07T15:54:19.236Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-visual01-picker-preparation-review-20261007.json",
+    "sha256": "f3b8b1079ba37d04e747289eb7938dd328b1c765009fdb28766cbb8222e80aa7"
+  },
+  "nativeApproval": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/picker-ready/manager-native-acceptance.json",
+    "sha256": "268fff238a5827cf98d160b3abb522266e40d47668f487d6be97a2ab5adb767d"
+  },
+  "packet": "/private/tmp/vis-picker-b1",
+  "runnableUnchanged": {
+    "parent": "1147944ef31e473f20da95d88ce2bdd73f3a452a48ca986e69eaa9db81a505ae",
+    "worker.mjs": "4ff84c502c105c3ce416cff070cdc293c3180a47a25c7763f1f8073c53def23a",
+    "aliases.json": "251101182e1553fcdae839c4c58b45436a1e8bd7bca93eab565b3df8640f3996",
+    "runtime-tsconfig.json": "6385ce025173b2e5046cf195fef9ff524cacd688df3a1ebd132ff21ca94ff2e3",
+    "sandbox.sb": "875bf7719aac68be4470e758ca98ed08ff9ec8efa64905d3c6f6800a0ccc7020",
+    "measure.py": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+  },
+  "changedBindingKeys": [
+    "state",
+    "head",
+    "nativeChromeBoundaryApproval"
+  ],
+  "expectedBehaviorGroups": 6,
+  "expectedOverlayGroups": 2,
+  "expectedImages": 7,
+  "proposal": {
+    "totalMs": 90000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "pg": 0,
+    "chrome": 1,
+    "nodeWorker": 1,
+    "ownedHTTP": "2 sequential Vite fixtures, never concurrent",
+    "floorBytes": 16663183360,
+    "floorMeaning": "Future complete fresh floor; no actual allocation",
+    "expectedImages": 7,
+    "newVisualImages": 5
+  },
+  "runtime": "NOT_RUN / NO_GRANT",
+  "unchangedClosure": "6 source/222 readonly/37 external remain the accepted f3b8 fixed input set; no rescan or new runtime validation",
+  "createdGate": false,
+  "previousRuntimeMs": 0,
+  "recoveryClosedBudget": "10325/60000 CLOSED, unused49675 not transferable",
+  "segment": {
+    "durationLimitMinutes": 10,
+    "newBytesLimit": 2097152,
+    "scope": "metadata/TMP only"
+  }
+}

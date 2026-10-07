@@ -1,0 +1,38 @@
+{
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "1147944ef31e473f20da95d88ce2bdd73f3a452a48ca986e69eaa9db81a505ae",
+  "workerSha256": "4ff84c502c105c3ce416cff070cdc293c3180a47a25c7763f1f8073c53def23a",
+  "task": "WPF-VISUAL01",
+  "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "acceptedBy": "d01_owner / Web execution manager",
+  "recordedBy": "w01_owner",
+  "recordedAt": "2026-10-07T20:29:50.366037+00:00",
+  "authoritySource": "Direct manager NEW_TASK to w01_owner: final routine READY binding; explicitly accepts fixed native boundary and existing prm-b1 supervision/cleanup contract. This record transcribes that acceptance; it is not independent owner self-approval.",
+  "native": {
+    "node": "24.20.0",
+    "chrome": "154.0.8037.99",
+    "playwright": "1.63.0",
+    "tsx": "4.23.15",
+    "transport": "CDP"
+  },
+  "lifecycle": {
+    "chrome": 1,
+    "nodeWorker": 1,
+    "ownedHttp": "2 sequential fixtures",
+    "pg": 0,
+    "provider": 0,
+    "personalEndpoints": 0,
+    "supervision": "Existing reviewed prm-b1 sibling lifecycle/terminal contract; actual outer exit and complete owned cleanup required"
+  },
+  "proposalOnly": {
+    "totalMs": 90000,
+    "cleanupMs": 15000
+  },
+  "runtimeGranted": false,
+  "sourceReview": {
+    "path": "/private/tmp/root-visual01-picker-preparation-review-20261007.json",
+    "sha256": "f3b8b1079ba37d04e747289eb7938dd328b1c765009fdb28766cbb8222e80aa7"
+  },
+  "beforeActual": "Manager unique window, fresh complete resources/input/claim/namespace and a new explicit gate remain required; personal service recovery takes precedence."
+}

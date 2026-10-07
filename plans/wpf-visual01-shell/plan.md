@@ -51,3 +51,7 @@
 TODO06仍未完成：Picker代表行为、正常/长名称桌面与390图片尚未执行；本次仅当前系统观测滚动条，不证明classic与overlay两OS模式。TODO07仍待全片独审与main接收。两个consumer分别保真，不以Recovery通过代Picker或个人页面恢复。
 
 [root0e1独审](../../docs/evidence/wpf-visual01/shared-overlays/recovery-actual/root-actual-visual-review.json)接受本次选定行为、双主题当前dialog几何/可读性与完整归还，0blocking；不补签未运行Picker或全suite，原TODO06/07仍开放。
+
+### Picker最后准备绑定
+
+原候选源与native边界已分别由root/经理接受，见[ready记录](../../docs/evidence/wpf-visual01/shared-overlays/picker-ready/ready.json)。本10min/2MiB段只固定数据批准和自然metadataHEAD，不改source/runnable或重新扫闭包，不重跑类型。原6行为+2展示组/7PNG均未实际执行，TODO06/07不变；个人恢复优先，90s提案不是运行授权。
