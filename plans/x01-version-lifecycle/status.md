@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:27:52.521Z |
+| 最近更新时间 | 2026-10-07T11:33:37.223Z |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
@@ -55,3 +55,5 @@
 | 主线集成 | NOT_INTEGRATED |
 | 部署 | NOT_DEPLOYED |
 | 完整完成 | NOT_COMPLETED，实际PG/结果独审/main仍待完成 |
+
+2026-10-07T11:33:37.223Z 仅窗口metadata校正：2串行tar、2 loopback动态listener、单in-process public runRunner/capacity2/local concurrency2；工具链Git组/Vitest单fork与按需esbuild子进程明示。新最低5,479,333,888B通过未来admission实际pairedBytes推导落实（最低4,236,771,328B，fresh组合更高则上调），保KEEP来源/allocatedUNKNOWN。源码/manifest/原件无改；0新check/PG/NEXT/OPEN。见pg-window.md。
