@@ -1,0 +1,139 @@
+{
+  "kind": "flow.o16.same-runtime-auth-bindings.v1",
+  "at": "2026-10-07T11:26:21.801160+00:00",
+  "source": "dff8e1f89a24280c3b591944e8010ad7baa515bc",
+  "resultTarget": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+  "bindings": [
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-candidate/local-check.json",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 568,
+      "sha256": "7dada806f332b64cf1c6b6c325cba37bb7b3930c12ac996b35e786ece9110204"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-candidate/prepare.mjs",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 1568,
+      "sha256": "edb5f6bfc745f1706dfdbea0dbf08182933941b437365359365e886a6039db0d"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-candidate/run.py",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 9615,
+      "sha256": "425761f1c3fe1042fc2e772d9f425e5b8ee993dff5ca9bf18cb94e21f8868bd4"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-once/RESULT.md",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 1916,
+      "sha256": "580bbf6eada074088b0fda313291138ad80e424f73ddab19e277f70cc1b7178c"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-once/bytecode-cleanup.json",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 601,
+      "sha256": "62ec2578e11bb26eb3e2d9fbed0fa10bda404780b029658c917e1b13a1d147a9"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-once/cleanup.json",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 271,
+      "sha256": "bf05ba219e3e070ae08cb95217fbb894f55582ac5df764fa653ff76ef2799c19"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-once/native-reservation.json",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 935,
+      "sha256": "abc45858404f5c630628681d47ae5dc2366db305742fd93c12998324b5dabba6"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-once/preparation.json",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 463,
+      "sha256": "6abe89f48190897ba0f96731b4c4e34224ba6bc4c55f83437573580a0bd68589"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-once/prepared.json",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 3372,
+      "sha256": "7623981b83527e5d87aee4a26e758c87db9d1d1d3b42901caa262fa3938d0b45"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-once/reservation.json",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 795,
+      "sha256": "13d27429a1254db1f7421b447402edf827007ad926972b06cf85988590803558"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-once/result.json",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 2245,
+      "sha256": "fee332d0028e4b4e70abcdde7920d197611f3eed8b0c9d4ad10b5ed122369e72"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-once/status-check.json",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 715,
+      "sha256": "903180a14c48872382ecb92a47fb9facce3dc3bacc2c62f66af9604c2167508e"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/review.md",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 12157,
+      "sha256": "bb764a2b2d7ba0496f50227e836b4c5345967ea1aa623e1fb6ae3fb095be7d26"
+    },
+    {
+      "path": "plans/o16-continuous-goal-acceptance/status.md",
+      "fixedRef": "477e5c5feefdd1c8f8f5a187a8712c652fa411b9",
+      "bytes": 20798,
+      "sha256": "5e622eb901ddf80b78682ea24517ddd3e0397c0a48f4d748737a8956d9d38754"
+    }
+  ],
+  "bindingCount": 14,
+  "inherited": [
+    {
+      "path": "docs/evidence/o16/native-plan-20261007-r3/preflight.json",
+      "fixedRef": "8e56205b",
+      "bytes": 5380,
+      "sha256": "a5f885777c37feb560906cd3a2f4cc422c3c9945266b0ff42677c48b0cff149f"
+    },
+    {
+      "path": "docs/evidence/o16/same-runtime-auth-candidate/readonly-inputs.json",
+      "fixedRef": "995c3fc2",
+      "bytes": 7329,
+      "sha256": "c559d3d5e42af4d89d52f57164f609b7831a7439511291b21d5c758f34cc1632"
+    },
+    {
+      "path": "docs/evidence/o16/native-stages/auth-status-once.py",
+      "fixedRef": "8e56205b",
+      "bytes": 6218,
+      "sha256": "292fbba9bee04081c5dd68e1a8e5edf5748f0398eb658e6add62eb4dc4b32bf1"
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/native-environment.mjs",
+      "fixedRef": "49d35d97",
+      "bytes": 8332,
+      "sha256": "c49ee75a6d5b9c79c8be651fe08eed3d6a3cf8819d703f69f034abd222731c54"
+    }
+  ],
+  "installedModules": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-resource-measurement/measure.py",
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    }
+  ],
+  "runtime": "Eight R3 installed pins fully rehashed by caller plus original environment prepare verification; no unchanged copied manifest",
+  "publicStatus": "loggedInfalse/authMethodnone/apiProviderfirstParty; omitted subscriptionType",
+  "nativeStatusCalls": 1,
+  "queryCalls": 0,
+  "SDKQueriesCumulative": 3,
+  "fourthQuery": "NOT_AUTHORIZED",
+  "checks": "3 pure safe_status checks plus Node syntax; no old suites rerun",
+  "cleanup": "two owned groups absent/dual EOF; native initialization427B exact new scratch KEEP; selfcheck own bytecode cleaned; old KEEP untouched",
+  "sensitiveRaw": "279B memory-only, never archived/hashed/emitted",
+  "scope": "Fixed public status route, not SDK query authorization/account logout/model qualification"
+}
