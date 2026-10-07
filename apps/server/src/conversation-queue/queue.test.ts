@@ -66,10 +66,12 @@ it('skips more than a default batch of paused queues without rotating them and s
   expect((await pausedState()).rows).toEqual(before);
   expect(Number((await pool.query('SELECT count(*) FROM flow.conversation_turns WHERE conversation_id=ANY($1::text[])', [pausedIds])).rows[0].count)).toBe(0);
   expect((await request(`/api/conversations/${ready.id}/queue/${waiting.item.id}`)).body.item.state).toBe('promoted');
-  expect((await request(`/api/conversations/${paused[0].id}/queue`)).body).toMatchObject({ paused: true, queueRevision: 2, currentTurn: null, items: [{ state: 'waiting' }] });
+  const resumed = paused[0];
+  if (!resumed) throw new Error('Expected first paused queue');
+  expect((await request(`/api/conversations/${resumed.id}/queue`)).body).toMatchObject({ paused: true, queueRevision: 2, currentTurn: null, items: [{ state: 'waiting' }] });
 
   // Empty explicit resume clears pause; a later enqueue becomes eligible to scan.
-  const resumed = paused[0]; const path = `/api/conversations/${resumed.id}/queue`;
+  const path = `/api/conversations/${resumed.id}/queue`;
   expect((await request(`${path}/${resumed.itemId}/cancel`, { expectedQueueRevision: 2 })).body.queueRevision).toBe(3);
   expect((await request(`${path}/resume`, { expectedQueueRevision: 3, expectedTaskId: null })).body).toMatchObject({ paused: false, queueRevision: 4, promoted: null });
   const next = await enqueueItem(resumed.id, 4, 'Eligible after explicit resume');

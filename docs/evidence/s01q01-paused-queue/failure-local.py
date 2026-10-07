@@ -23,16 +23,21 @@ sys.modules[spec.name] = ops
 spec.loader.exec_module(ops)
 
 label = sys.argv[1]
-assert label in ('red', 'green', 'types', 'types-fixed', 'green-fixed')
+preparation = label.startswith('prepare-')
+if preparation:
+    OUTPUT = EVIDENCE / 'preparation-local'
+    OUTPUT.mkdir(exist_ok=True)
+assert label in ('red', 'green', 'types', 'types-fixed', 'green-fixed', 'prepare-types', 'prepare-collect', 'prepare-caller', 'prepare-types-fixed', 'prepare-collect-fixed', 'prepare-caller-fixed')
 record_path = OUTPUT / 'iterations.json'
 record = json.loads(record_path.read_text()) if record_path.exists() else {'runs': []}
 assert len(record['runs']) < 5 and sum(run['elapsed_ms'] for run in record['runs']) < 60_000
 assert all(run['resourceConfirmed'] for run in record['runs'])
 assert not any(run['label'] == label for run in record['runs'])
 free = shutil.disk_usage(ROOT).free
-assert free >= 17_950_834_688
+floor = 18_520_211_456 if preparation else 17_950_834_688
+assert free >= floor
 started = datetime.datetime.now(datetime.timezone.utc)
-assert started < datetime.datetime(2026, 10, 7, 19, 32, 30, tzinfo=datetime.timezone.utc)
+assert started < datetime.datetime(2026, 10, 7, 19, 53, 50, tzinfo=datetime.timezone.utc) if preparation else started < datetime.datetime(2026, 10, 7, 19, 32, 30, tzinfo=datetime.timezone.utc)
 scratch = Path('/tmp') / ('flow-s01q01-' + uuid.uuid4().hex)
 scratch.mkdir(mode=0o700)
 identity = scratch.stat()
@@ -40,12 +45,16 @@ marker = uuid.uuid4().hex
 (scratch / 'owner.json').write_text(json.dumps({'marker': marker, 'dev': identity.st_dev, 'ino': identity.st_ino}))
 raw_file = (OUTPUT / (label + '.log')).open('xb')
 files = ['pg-fixture.ts', 'pg-fixture.test.ts', 'failure.vitest.config.ts', 'failure.types.tsconfig.json', 'failure-local.py']
+if preparation: files += ['queue.vitest.config.ts', 'entry.py', 'entry.test.py', 'types.tsconfig.json']
 source = {name: hashlib.sha256((EVIDENCE / name).read_bytes()).hexdigest() for name in files}
 argv = [NODE, str(EVIDENCE / 'node_modules/vitest/vitest.mjs'), 'run', '--config', str(EVIDENCE / 'failure.vitest.config.ts'), '--configLoader', 'runner', '--no-cache']
 if label == 'red': argv += ['-t', 'propagates admin failure']
 if label.startswith('types'): argv = [NODE, str(EVIDENCE / 'node_modules/typescript/bin/tsc'), '--noEmit', '--project', str(EVIDENCE / 'failure.types.tsconfig.json')]
+if label.startswith('prepare-types'): argv = [NODE, str(EVIDENCE / 'node_modules/typescript/bin/tsc'), '--noEmit', '--project', str(EVIDENCE / 'types.tsconfig.json')]
+if label.startswith('prepare-collect'): argv = [NODE, str(EVIDENCE / 'node_modules/vitest/vitest.mjs'), 'list', '--config', str(EVIDENCE / 'queue.vitest.config.ts'), '--configLoader', 'runner', '--no-cache', '--json', '-t', '^(' + 'skips more than a default batch of paused queues without rotating them and scans again after explicit resume|keeps pause CAS authoritative when a candidate scan races promotion' + ')$']
+if label.startswith('prepare-caller'): argv = ['/opt/homebrew/bin/python3.13', '-I', '-B', str(EVIDENCE / 'entry.test.py')]
 env = {'PATH': '/opt/homebrew/opt/node@24/bin:/opt/homebrew/bin:/usr/bin:/bin', 'HOME': str(scratch), 'TMPDIR': str(scratch), 'XDG_CACHE_HOME': str(scratch), 'CI': '1', 'NO_COLOR': '1'}
-(OUTPUT / (label + '-started.json')).write_text(json.dumps({'at': started.isoformat(), 'freeBytes': free, 'floorBytes': 17_950_834_688, 'sourceHashes': source, 'scratch': {'path': str(scratch), 'dev': identity.st_dev, 'ino': identity.st_ino, 'marker': marker}}, indent=2) + '\n')
+(OUTPUT / (label + '-started.json')).write_text(json.dumps({'at': started.isoformat(), 'freeBytes': free, 'floorBytes': floor, 'sourceHashes': source, 'scratch': {'path': str(scratch), 'dev': identity.st_dev, 'ino': identity.st_ino, 'marker': marker}}, indent=2) + '\n')
 report = ops.supervise(ops.Launch(tuple(argv), str(ROOT), env, ops.Ownership.NEW_CHILD_SESSION, ops.Capture.MERGED), ops.Policy(24, 2, 4, 262144))
 raw_file.write(report.stdout)
 raw_file.close()
