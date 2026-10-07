@@ -1,0 +1,3 @@
+# ENG01K 独立review
+
+NOT_STARTED。target待固定；base a72181d7a8a195e75129522b218bc2e10ccd1fc3。范围为四native-tool叶子、ownrecords；只读核单写入口、当前权限先于重放、取消封门与真实settle、严格动态工具绑定、原始检查与资源。不得以注入消息当stock调用或把host settled当native grant。所有实际检查目前NOT_RUN。
