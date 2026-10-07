@@ -7,7 +7,7 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-07T08:10:02.824262+00:00；只读固定main9f314e89与历史父07341d46；v16/57 fresh ACTIVE。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T08:20:38.621137+00:00；本次仅准备验收精度补充，固定main来源沿7e0，fresh v16/57 ACTIVE。 |
 | 阶段 | M2 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -23,7 +23,7 @@
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
 | 工作树dirty状态 | 本段仅真实两轮准备与status/quality metadata；产品及旧sealed原件不变，提交后核clean。 |
-| HEAD（最近观察） | b38ecf3fca24b63d788f608557ac21b7f4a0fae1（本段起点origin同clean；本段提交见Git） |
+| HEAD（最近观察） | 7e0f9c2bb08927e41250611ffed2d72807c9b6c5（本段起点origin同clean；本段提交见Git） |
 | claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v16 ACTIVE57。07:34:40.663Z从v15原子移出configuration.ts/.test.ts和main.ts/main-concurrency.test.ts，见[正式回执](../../docs/evidence/mature02c02/runner-launch-handback-receipt.json)；X01须自身fresh amend后写。先前两index/六stream core/exchange/adapter均不重领；sentinel执行v13不改。 |
 | 实现目标 | C02-04真实两轮固定输入/验收准备；本轮不实施或运行native。 |
 | 实现范围 | 仅原计划/证据metadata；复用已main R06/loader，未领取或修改已交回的runner/client路径。 |
@@ -83,3 +83,5 @@
 2026-10-07T07:35:19.344267+00:00 四runner入口移交READY：STOP07:34:33.779954Z，atomic amend07:34:40.663Z/v16；四源owner HEAD=main d5567801，无未交付修改。X01依自身领取再接线，不授权发布/启用插件。仅metadata核验/状态解析，0工程checks/PG/provider。完整native/UI验收仍open。
 
 2026-10-07T08:10:02.824262+00:00 真实两轮准备：[提案](../../docs/evidence/mature02c02/native-two-turn-preparation.md) / [固定来源](../../docs/evidence/mature02c02/native-two-turn-input-facts.json)。ACTUAL_NOT_OPEN，无新模型额度；旧6目录项不证明模型资格，真实native/UI未完成。跨任务独审仅只读，不产生本片检查通过数。
+
+2026-10-07T08:20:38.621137+00:00 C02-04验收精度补充：第二轮须观察实际turn/start输入未由中心重放nonce/首轮正文，并关联thread/resume同thread ID；观察不到则保留证明边界。仅既有transport seam提案，ACTUAL_NOT_OPEN/0额度，不为此启动检查。

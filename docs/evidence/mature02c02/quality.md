@@ -27,3 +27,5 @@
 2026-10-07T07:35:19.344267+00:00 四runner入口移交：复用本地find-skills/codebase-design/clean-code方法，核职责与已集成字节、无pending C02修改，先STOP再v16原子移除，不把完整native/UI未验当持续占用理由。不改产品/旧raw，不新传输或框架；只做文档一致性与status解析。
 
 2026-10-07T08:10:02.824262+00:00 C02-04 metadata安全点：沿已安装find-skills/brainstorming/codebase-design/clean-code固定基线复核，先复用唯一R06/loader和明确host storage，分清请求模型/实际观测/工程资格；无新框架或授权推导。固定main与历史binary来源、不读凭据；文档/链接/JSON检查，不运行工程。原08:03:35起≤8min段包含LAZY/X01优先只读独审，原预算不重置。
+
+2026-10-07T08:20:38.621137+00:00 metadata安全点：区分用户输入与native实际输入责任边界；复用已有transport观察接缝，防中心上下文重建被误认为native持久恢复。不新增wrapper/日志凭据/调用，未核的观测能力明确UNKNOWN；0工程checks/PG/provider。

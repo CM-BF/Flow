@@ -17,7 +17,7 @@
 1. 开窗前冻结一个只读host-owned Codex profile/pin、同一runner身份、durable CODEX_HOME与HOME/TMP的私有目录identity/0700、exact executable hash、唯一两条输入和请求model。账户/launch authority未知、字段错配或ACK未知时0native。首次directory须新建且有正式归属，不能借换目录绕过旧unknown journal/attempt。
 2. 第一轮通过现公开conversation API创建并提交含一次性短nonce的记忆请求。记录已确认conversation/task/attempt/session/native thread绑定；首输出后断开观察客户端只停止观察，后台runner继续。等待真实typed final和中心ACK；记录真实正文UTF-8/hash、公开reasoning仅有则记录。不要将缓冲delta或客户端断开伪作完成。
 3. 由现R06关闭第一个native过程，确认exit/EOF/owned group与writer事实。保留同identity的durable storage，第二轮使用不同attempt cwd、同runner/profile/session。第二输入不包含nonce，要求从上下文给出它；精确prompt与nonce在未来输入固定阶段确定，本文不执行。
-4. 第二个独立native过程必须走thread/resume（excludeTurns=true），returned thread ID必须等于已确认session ID，在turn/start前核验；禁止fallback thread/start、自动重播或unknown后新key。两轮各只有一次turn/start，第二轮应产生正确nonce与typed final，ID/source/pin不得串线。
+4. 第二个独立native过程必须走thread/resume（excludeTurns=true），returned thread ID必须等于已确认session ID，在turn/start前核验；禁止fallback thread/start、自动重播或unknown后新key。两轮各只有一次turn/start，第二轮应产生正确nonce与typed final，ID/source/pin不得串线。 不能只核用户prompt未含nonce：还须沿既有transport证据接缝核第二轮实际turn/start输入，确认中心没有重放/拼回nonce或首轮正文，同时保留实际thread/resume及同thread ID的关联。只记录必要布尔、结构/字节界与受控测试输入核对，不记录凭据或扩大日志。若该边界无法观察，应明确只能证明公开输入/会话结果，不能据此认定native持久续接；不新增wrapper或模型调用补证。
 5. 记录每个过程独立身份、同CODEX_HOME/different cwd、首进程已关闭后才起第二个、请求vs实际模型、文本/可观察reasoning/终态和目录清理结果。这些同时成立才可称真实两轮功能已观察；UI、工程隔离/模型授权与费用事实各自验收。
 
 ## 新预算提案（尚未授权）
