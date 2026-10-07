@@ -1,3 +1,11 @@
+状态：PENDING（新v3领取合同与AdmissionJournal直接消费者；旧领域片已main）
+
+Review target commit: c15c7ddaef1d23a24a550c75a4d151a33be76f81
+
+[固定review入口](../../docs/evidence/x01/plugin-claim-review-ready.md)。新片11/11与focusedtypes0待独审；不继承旧R3批准。
+
+---
+
 状态：APPROVED（R3结果忠实性及16文件领域模块intake；不含生产mount/整X01）
 
 Review target commit: e628dbdfe0e53b27f8d15b2ecfba438f4217e872

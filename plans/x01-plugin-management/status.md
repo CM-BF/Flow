@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T05:33:27.229572+00:00 |
+| 最近更新时间 | 2026-10-07T05:49:27.481231+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -10,24 +10,24 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [enable/binding v8](../../docs/evidence/x01/enable-binding-amend-v8.json)，ACTIVE；14源码+034+两metadata，旧host两源已交回 |
+| Claim | [v9 ACTIVE22scope](../../docs/evidence/x01/plugin-claim-amend-v9.json)；当前新片5literal+原已main15literal+两metadata，旧15源明确停止写入 |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca；source37177aba665fa8d787e40c2a18c4d124bdf819ca；已审结果packet e628dbdfe0e53b27f8d15b2ecfba438f4217e872；本提交仅独审归档，未main |
-| 工作树 dirty 状态 | 本段仅独审/READY/status metadata；commit/push后clean停写，v8占用保留 |
+| 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
+| 工作树 dirty 状态 | 仅封存新片checks/metadata；最终提交推送后clean停写供独审 |
 | 工作分支状态 | in-progress |
-| 检查状态 | StageC R3原27/27实际通过，2DB/205HTTP/资源完整closed；原R1/R2失败均保留 |
-| Review | APPROVED：chatui01_owner 2026-10-07T05:17:35Z，target e628dbdfe0e53b27f8d15b2ecfba438f4217e872；0P1/P2，限定R3结果和16文件intake |
-| 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
-| 实现目标 | 37177aba665fa8d787e40c2a18c4d124bdf819ca |
-| 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-pg-fixture.ts, docs/evidence/x01/enable-binding-pg-vitest.config.mjs, docs/evidence/x01/enable-binding-pg-once.py, docs/evidence/x01/enable-binding-pg-caller.test.py, docs/evidence/x01/enable-binding-pg-input.json |
-| 本片段交付阶段 | implementation |
+| 检查状态 | 新v3合同+journal 11/11、focusedtypes0，0PG；旧领域StageC27已独审并main |
+| Review | 新片 c15c7ddaef1d23a24a550c75a4d151a33be76f81 待独审；旧e628 R3与16-file intake APPROVED且main接收 |
+| 已集成 main 状态 / HEAD | 领域16源/162785B已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a，root/Web组合0、不重跑27；[接收核验](../../docs/evidence/x01/enable-binding-main-receipt.json)。默认mount/v3 claim/runtime仍后继 |
+| 实现目标 | c15c7ddaef1d23a24a550c75a4d151a33be76f81 |
+| 实现范围 | packages/contracts/src/runner-claim.ts, packages/contracts/src/plugin-runner-claim.ts, packages/contracts/src/plugin-runner-claim.test.ts, apps/runner/src/admission-journal.ts, apps/runner/src/admission-plugin-claim.test.ts |
+| 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 领域模块已审待主线接收；正在补齐插件领取资格与重启恢复的持久请求边界 |
-| 下一可用交付 | v3显式插件领取合同与既有AdmissionJournal兼容片，保护未知请求和宿主降级恢复 |
-| 当前阻塞 | ACTIVE: 等待主线受控接收；生产调用链与semver能力仍未接入，当前无运行资源占用 |
+| 当前产出 | 插件领域模块已接入主线；显式领取资格与持久请求恢复片已完成局部验证，待独立审查 |
+| 下一可用交付 | 受控接收v3合同和journal片，再接中心领取过滤、真实runner与现成npm能力 |
+| 当前阻塞 | ACTIVE: 新片独审待处理；共享client/exports/config仍由C02持有，生产领取和执行尚未接入 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -239,3 +239,5 @@ Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case�
 2026-10-07T05:33:27.229572+00:00：fresh核e628=origin clean、claim v8 ACTIVE/17scope。接收chatui05:17:35独审APPROVED并将[唯一集成入口](../../docs/evidence/x01/enable-binding-integration-ready.md)标READY；固定16源/24结果bindings及全部失败原件不改，原intake的pending字段作为封存历史由READY receipt后继。0tests/PG/types/产品扩写；Execution Lead可直接读取最小受控输入。完成本提交/push后停止写入保claim，未main/未完整X01。
 
 2026-10-07T05:42:46.859177+00:00: fresh a6d clean/v8后原子amend到v9 ACTIVE22scope（[回执](../../docs/evidence/x01/plugin-claim-amend-v9.json)），新增5精确literal。仅按fixedmain bf8读取已main S01P07 runner-claim/admission-journal两源作为新片基线；16intake源/既有raw固定不改。新片实现/验证未完成，不继承旧APPROVED；共享C02 index/config/main/tasks和CHAT05 runner.ts未领取不写。
+
+2026-10-07T05:49:27.481231+00:00：新片source c15c7ddaef1d23a24a550c75a4d151a33be76f81 完成types0+11/11，2受监督child/7真实journalfixture/2TMP均完整收束；[ready](../../docs/evidence/x01/plugin-claim-review-ready.md)。C02已明确共享client/index、contracts/index、config/main继续占用，本片避开。旧16域源逐main 5cd64a4d373a2919d0a00affcb2615667aa18d9a Git/WT/hash核符，停止旧源写入而保claim修复期。新v3尚无server/runtime发请求，不将资格合同和journal消费扩大为生产插件可用。架构新增现journal version3持久请求格式；main架构baseline待此片集成由Lead更新。

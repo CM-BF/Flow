@@ -1,0 +1,26 @@
+{
+  "observedAt": "2026-10-07T05:49:27.481231+00:00",
+  "mainCommit": "5cd64a4d373a2919d0a00affcb2615667aa18d9a",
+  "canonical": "docs/evidence/i02/x01-enable-binding-intake.json",
+  "canonicalSha256": "b12dfc0f1b9c357088797a535ded58b8cc1f86d01b290f4b5236a3e5fcd1c1e4",
+  "sourceCommit": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+  "all16GitMainAndOwnerMatch": true,
+  "sourceBytes": 162785,
+  "combination": {
+    "record": "x01-enable-binding-combination/result.json",
+    "root": 0,
+    "web": 0,
+    "elapsedMs": 14907,
+    "allGroupsAbsent": true,
+    "allEOF": true,
+    "PG": 0,
+    "provider": 0,
+    "unchanged27Rerun": false
+  },
+  "limitations": [
+    "X01 domain and 034 only; production mount/v3 claim/runtime caller still open",
+    "ENG01J Darwin/R06 mechanism only; actual Codex helper and all-writer closure separate",
+    "OPS changes new bounded ordinary work segments; historic failures and consumed permits unchanged",
+    "Personal backend af51/accepting18 and Web d629/v3 unchanged"
+  ]
+}
