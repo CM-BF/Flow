@@ -15,3 +15,7 @@ Reviewer: root + workspace_panels_owner 限定独立源码审查，0 blocking
 [root正式审查](../../docs/evidence/d06/snapshot-0da/root-source-review.json)、[root静态审计](../../docs/evidence/d06/snapshot-0da/root-static-audit.json)、[backend peer](../../docs/evidence/d06/snapshot-0da/backend-peer-review.md)原样归档于[review intake](../../docs/evidence/d06/snapshot-0da/review-intake.json)。0 blocking；后继新22direct已实际通过，结果已获[root限定实际接收](../../docs/evidence/d06/snapshot-0da/direct-first-20261007/root-actual-review.json)；所有页面检查仍NOT_RUN，SVG新文案布局仍需适当实际检查。初始candidate的pending状态是送审历史，不回写其固定证据。
 
 [direct-first actual22/22](../../docs/evidence/d06/snapshot-0da/direct-first-20261007/result.json)于2026-10-07执行，原source5124不变；root已独立接受22项实际结果与清理，原源码批准不变；新SVG布局、页面/main/发布仍未验。
+
+## 首次浏览器实际结果待审
+
+[固定5124首轮失败原件](../../docs/evidence/d06/snapshot-0da/browser-first-20261007/index.json)保留2/5完成、8PNG与actualexit1；data图两条edge文字背景bbox失败，其他后续未执行。原限定source及22direct批准不变，页面/main/部署仍未通过；不改renderer或冒新增data唯一根因。03:47:19已完整清理并归还窗口。

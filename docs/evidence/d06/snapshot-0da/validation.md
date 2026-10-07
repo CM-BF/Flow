@@ -13,3 +13,7 @@
 ## 后继浏览器静态准备
 
 [候选入口及固定输入](browser-preparation-20261007/index.json)复用原五图/静态fixture与ACCESS已实证清理套路。五图×两viewport×两theme共20个SVG观察和20张计划截图；含node与edge实际getBBox背景及canvas界限，390允许图内滚动而页面无横溢。源5124不改，实际22不重跑。90s含15s清理/256MiB TMP/8MiB raw仅新固定target提案，不继承旧aeb或其他任务许可。当前无gate/native boundary接受/预约；新caller源码待审、真实渲染全部NOT_RUN。
+
+## 首次页面实测
+
+[原件与逐hash索引](browser-first-20261007/index.json)：runtime/modules两组均完成1280/390与双主题；data/light1280的“回复引用”“本地只读”文字超edge背景（canvas仍内），停止后续并保留8PNG。actualexit1，晚父6674.343333ms、外层6732.224458ms，保守spent6733/余83267；两值原件不改。worker/Chrome、HTTP/context、scratch及EOF收尾完整；没有自动重跑、真实聚合/PG/provider/个人服务访问。独立结果审查和归因待办，不能把前两图通过外推五图。
