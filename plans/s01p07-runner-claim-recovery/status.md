@@ -2,27 +2,27 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 02:49:24 UTC |
+| 最近更新 | 2026-10-07 02:54:01 UTC |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | status_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-claim-recovery |
 | Branch | codex/runner-claim-recovery |
-| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；8产品源83a0799293057f7472f0329c61e566708b2a2381；PG准备ac3b8532fb23a9c8549c0b32e225a31327bc85f9；本次只读核对HEAD 31ece087e01c3691aaa883072ea20d7d39805a90 |
-| 工作树dirty状态 | 本次更新前HEAD 31ece087 clean；本次仅恢复准入metadata，产品/PG输入冻结 |
+| 工作基线 / HEAD | 基线22a0806bc2465e11096949618113833f31766b19；8产品源83a0799293057f7472f0329c61e566708b2a2381；PG准备ac3b8532fb23a9c8549c0b32e225a31327bc85f9；本次execution HEAD 03d5543cebffeffa53924addd331e65d764586ce |
+| 工作树dirty状态 | 执行前03d5543c clean；本次仅新增R1运行证据与metadata，产品/PG输入冻结 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 检查状态 | 85 distinct non-PG分批通过；focused strict5 exit0（含最终PG fixture静态类型）；外层3纯fake另列。原CLI/UUID/types失败原样保留；新8组PG NOT_OPEN / NOT_RUN，原4组capacity PG单列NOT_RUN；本次0测试 |
+| 检查状态 | 历史85 distinct non-PG分批通过、focused strict5 exit0、3 wrapper fake均未重跑。新8组PG的R1窗口已消费：用例结果前TEMP_INVENTORY_UNKNOWN中止，0条case结果，选中数未知，不记通过或8 skipped。原4组capacity PG单列NOT_RUN |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；基线为已供给固定 main 22a0806bc2465e11096949618113833f31766b19 |
 | 实现目标 | 83a0799293057f7472f0329c61e566708b2a2381（8产品源；PG未验） |
 | 实现范围 | apps/server/src/runners.ts, apps/server/src/runner-claim-receipts.ts, apps/server/src/index.ts, apps/runner/src/admission-journal.ts, apps/runner/src/runtime.ts, packages/contracts/src/runner-claim.ts, packages/contracts/src/index.ts, packages/client/src/index.ts |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 任务层级 | 子task |
-| 当前产出 | 空闲复用领取身份与丢响应恢复的非数据库检查已通过；中心事务验证的固定源码、依赖和动态迁移已重新核齐。 |
-| 下一可用交付 | 完成中心事务专库验证，随后补必要容量消费者验收并交独审、推进主线。 |
-| 当前阻塞 | 实现与依赖供应NONE；heavy已归还且无其他预约，仅待本片唯一运行namespace与OPEN、实际local配对预算确认。原4组容量PG仍另列未运行。 |
+| 当前产出 | 非数据库行为证据保持通过；首次中心验证在用例前被临时目录计量门禁中止，运行进程已结束，失败原件与未知目录已保留。 |
+| 下一可用交付 | 定位本次目录计量未知并受控修复验证入口，再完成原中心事务与必要容量消费者验收。 |
+| 当前阻塞 | R1未产生用例结果，TEMP_INVENTORY_UNKNOWN具体原因未定；自有临时根KEEP。heavy实际已结束归还，后继运行须新窗口，无自动重试。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，SOURCE_REVIEW APPROVED / VALIDATION_PENDING |
 | 领取 | [COMMITTED amend](../../docs/evidence/s01p07/claim-amend.json)：9ec4dbc8-b4d3-4e16-801f-caa3a2cd85ac v2 / 18 literal |
@@ -32,8 +32,8 @@
 | S01P07-01 | completed | status_read | [接口](../../docs/evidence/s01p07/interface.md)；协议/职责与直接消费者范围已固定 |
 | S01P07-02 | in-progress | status_read | contract/client/route/中心事务源码已固定，非PG合同/客户端通过，PG待窗 |
 | S01P07-03 | in-progress | status_read | v2 journal/runtime 已接线，新恢复及旧peer直接消费者85不同检查分批通过 |
-| S01P07-04 | in-progress | status_read | [checks](../../docs/evidence/s01p07/checks)：85通过分批；CLI1、UUID2仅定向修后补验；strict修后0，原3类失败保留；0PG/provider |
-| S01P07-05 | pending | status_read | 源审0P1/P2 / PG待窗 / NOT_INTEGRATED |
+| S01P07-04 | in-progress | status_read | [checks](../../docs/evidence/s01p07/checks)：85通过分批与strict0保留；[R1原件](../../docs/evidence/s01p07/pg-run-r1-manifest.json)为fixture证据前中止，未得PG行为结果；0provider |
+| S01P07-05 | pending | status_read | 源审0P1/P2 / PG行为验证未完成 / NOT_INTEGRATED |
 
 ## 架构与登记
 
@@ -46,3 +46,5 @@ CHAT05P01 的[只读接口对照与交接边界](../../docs/evidence/s01p07/chat
 同一接口记录已补“后继聚合资源验收 / 未实现未测”：聚合预算、历史恢复扫描及清理门禁为后继输入，不扩大本片实现或原计划验收。Lead 22:31:37 UTC 的低空间类型 NOT_RUN / NO_HOLDER 仅作历史来源事实，本轮0采样、0检查、0新负载。
 
 2026-10-07 [PG恢复准入](../../docs/evidence/s01p07/pg-window-resumption.md)：fresh claim v2/18 ACTIVE；65固定绑定、30动态SQL、24依赖与231份既有源码闭包无缺失/漂移。原heavy启动线保持，单个有界local若配对则另计完整新增预算；不以旧串行文案默许并跑。此次仅静态核对与一次空间观察，0工程测试/PG/provider，原85非PG、strict5和3fake不重跑。
+
+R1实际窗口 `S01P07-PG-20261007-R1`：02:53:11–02:53:12 UTC，外部 time real 1.00s / exit1；wrapper 0.870s。Vitest PID/PGID97501一次TERM后exit143，双EOF、自有组absent；stdout仅90B横幅，stderr0。fixture receipt及其四个前置记录全部absent；原fixture必须先durable reservation再触DB，未见CREATE证据，未另查询PG，不能声称远端零连接或DROP通过。精确临时根 `flow-s01p07-pg-window-qsnu91s5` 身份仍同reservation，final/sample 1164095B，按unknown保留。原source/manifest不变，未重试；计量错误的具体原因仍未知，不以最后采样成功抹除首fault。外壳及准入事实见同一[运行记录](../../docs/evidence/s01p07/checks/S01P07-PG-20261007-R1.outer.json)。
