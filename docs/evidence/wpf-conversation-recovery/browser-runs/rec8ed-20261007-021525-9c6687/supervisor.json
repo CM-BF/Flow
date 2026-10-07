@@ -1,0 +1,71 @@
+{
+  "passed": false,
+  "errors": [
+    "page.evaluate: ReferenceError: __name is not defined\n    at eval (eval at evaluate (:311:30), <anonymous>:1:172)\n    at UtilityScript.evaluate (<anonymous>:313:16)\n    at UtilityScript.<anonymous> (<anonymous>:1:44)"
+  ],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_b8e66ec6f6ac4d01ac1b472b1ed83837",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.9942080000000715,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 0.8878750000003492,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "processIds": [
+    {
+      "pid": 41985,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 42011,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 26703876096,
+  "peakScratchBytes": 27484221,
+  "logBytes": 6915,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 12798.854625,
+      "scratchBytes": 27484221,
+      "evidenceBytes": 1053430,
+      "freeBytes": 26705936384,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 12838.843459,
+      "scratchBytes": null,
+      "evidenceBytes": 1055139,
+      "freeBytes": 26734280704,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}

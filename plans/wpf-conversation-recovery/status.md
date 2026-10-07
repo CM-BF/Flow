@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-06 21:15:21 UTC |
+| 最近更新 | 2026-10-07 02:17:40 UTC |
 | 所属大task | [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,16 +10,16 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；本段两源checkpoint 8ed2741327779e57d717653d10c2180e1897c26a；其余17源=4d330；metadata HEAD以Git为准 |
-| 工作树dirty状态 | b9957e8d clean独审输入；19源8ed冻结，本次只approval metadata，normalpush后核双端clean |
+| 工作树dirty状态 | execution000a clean；19源8ed未变，本次只封存第三次browser原件/metadata，normalpush后核双端clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 两项P2已获root限定源码批准；原真实browser两次失败保持，完整旅程尚未复验 |
-| 下一可用交付 | 封存metadata后仅在新own/tmp重绑下一浏览器来源与剩余预算，等待单独fresh准入 |
-| 当前阻塞 | ACTIVE: 两项P2仅SOURCE_ADDRESSED，真实材料/焦点/完整恢复及中心旅程未复验 |
+| 当前产出 | 真实材料恢复、跨标签CAS与原键重试已取得局部实证；验证在后续页面授权失效场景中断 |
+| 下一可用交付 | 保留本次原始失败与清理证据，核实页面执行异常后再安排剩余旅程 |
+| 当前阻塞 | ACTIVE: pageOnlyAuthLoss遇page.evaluate异常；后续CSRF/offline与视觉焦点未运行，完整旅程仍未闭合 |
 | 需用户决定 | NONE |
-| 检查状态 | FAILED: 第二次browser strict locator匹配2记录，actualexit1/清理完整；browser晚终态累计25520.435ms；2b01受控50/50原PASS/direct保守9969ms不改，types未新增 |
+| 检查状态 | FAILED: 第三次browser page.evaluate __name未定义，actualexit1/清理完整；前段材料/CAS/同key重试PASS，晚累计38364.050667ms；原50与types范围不变 |
 | 实现目标 | UNKNOWN |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
@@ -33,7 +33,7 @@
 | WPF-RECOVERY01-02 | in-progress | workspace_panels_owner | 原Outbox/Queue/Steer同步receipt屏障与部分恢复受控case已通过；完整真实controller旅程未完成 |
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | P01实际sidebar.footer、cookie连接与完整稿/原controller恢复已有接线；完整Webtypes0，行为尚未完成 |
 | WPF-RECOVERY01-04 | in-progress | workspace_panels_owner | [当前50 direct](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)源绑定2b01单次通过；旧38原范围不变，共用owner helper不冒mounted Workspace/Thread或完整App材料prepare通过 |
-| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [第二次browser失败](../../docs/evidence/wpf-conversation-recovery/browser-second-validation.md)原run rec4d：cookieRead PASS、Restore匹配2行失败、清理完整；首轮原失败与50受控证据保持 |
+| WPF-RECOVERY01-05 | blocked | workspace_panels_owner | [第三次browser失败](../../docs/evidence/wpf-conversation-recovery/browser-third-validation.md)：材料/跨tabCAS/原key重试局部PASS；pageOnlyAuthLoss异常，后续未跑；前三轮原失败与50证据保持 |
 | WPF-RECOVERY01-06 | pending | workspace_panels_owner | 1b8 M1/M2独立源码addressed；完整feature独审NOT_STARTED/main未完成 |
 
 ## 阻塞 / 风险 / 未验证
@@ -241,3 +241,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 Root于2026-10-06T21:13:25.405734+00:00对固定 `8ed2741327779e57d717653d10c2180e1897c26a` 给 [APPROVED_SCOPED_IDENTITY_FOCUS_SOURCE_NOT_RUN](../../docs/evidence/wpf-conversation-recovery/8ed-identity-focus-root-approval.json)，0blocking；RECOVERY-SAVED-RECORD-IDENTITY与RECOVERY-RETURN-FOCUS均SOURCE_ADDRESSED。19source、另17不变、25旧raw40735B、原restore/父监督/keyboard未弱化已独核。原件4386B/SHA7a7f7e5590fc8189b0b4d0f7bec15ef05c53d661fd15f7b2860de491eee2485a原样归档。
 
 这是源码批准，不是新summary/真实focus/nativeIDB/材料/CAS行为通过。完整feature NOT_STARTED/targetUNKNOWN/main未接，原50仍绑定2b01、两次browser失败保留；累计晚终态25520.435ms/余64479.565ms，下一整数total64479含15000cleanup/work49479仅候选。0types/tests/import/HTTP/PG/Chrome/free/newenv/凭据读取。metadata封存后，仅新own/tmp绑定实际最终HEAD、19pin/既有依赖/25raw，保旧4d准备不动；不签gate、不预约窗口。
+
+## 2026-10-07 02:17:40 UTC — 原子集第三次运行封存
+
+[本次验证](../../docs/evidence/wpf-conversation-recovery/browser-third-validation.md)仅run `rec8ed-20261007-021525-9c6687`，execution000a/source8ed，actualexit1。报告cookieRead/握手、textIntent/materialDraft、sameKeyTurn、crossTabCas PASS；pageOnlyAuthLoss因page.evaluate __name未定义失败，后续NOT_RUN。清理全确认并已即时交还窗口。晚累计38364.050667ms、余51635.949333ms，未来整数51635含15s清理，非续跑许可。19源和旧25raw不变；不裁根因，不自行feature批准。

@@ -126,3 +126,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ### 2026-10-06 21:15:21 UTC — 8ed源码复审闭合，真实旅程仍开放
 
 两项P2获[root限定源码批准](../../docs/evidence/wpf-conversation-recovery/8ed-identity-focus-root-approval.json)，完整TODO仍开放。下一准备沿原入口、same-origin既有subset和原90s累计预算，最多64479ms含15000ms清理；只重绑最终metadata/19源/依赖/旧25raw，不创建新wrapper/gate或提前读取admin。0运行，真实browser失败不回填通过。
+
+### 2026-10-07 02:17:40 UTC — -05第三次真实子集仍未闭合
+
+仅原授权run rec8ed，局部cookie/材料恢复/跨tabCAS/原key重试通过，pageOnlyAuthLoss发生page.evaluate异常，后续CSRF/offline/视觉未运行。[原证据](../../docs/evidence/wpf-conversation-recovery/browser-third-validation.md)完整保留；下一步先核失败再独立准入，非自动重试。原完整TODO不勾选，原90秒累计晚终态38364.050667ms，剩51635.949333ms含清理；不改源码或验收要求。

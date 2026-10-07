@@ -6,7 +6,7 @@ Review target commit：UNKNOWN。Base：84005a260dfcb668cd38b09c21564d0754a0f513
 
 可复制只读审查任务：先核本worktree/branch/HEAD/dirty、AGENTS与plan/status；固定实现后完整读scope，检查cookie连接与namespace、同步receipt→strict事务complete/CAS→HTTP、CREATE两阶段、完整草稿和材料、跨tab冲突/unknown原key、P01私有授权、资源/字节预算。按已授权隔离检查，明确作者与独立证据、未验中心/个人服务。所有finding回owner，不写实现。
 
-当前作者局部检查：固定2b01的50 direct PASS，root已独立接受受控证据；历史7cc的38已获root只读接受；首667真实browser失败保留；第二次rec4d亦FAILED（cookieRead PASS、Restore strict匹配2行，textIntentDraft FAILED），因果待核、清理完整；当前types未新增。Blocking findings：完整feature未评估。独立结论：完整feature未审查。当前不表示通过。
+当前作者局部检查：2b01受控50与历史38保持原批准范围；真实browser三次均FAILED，第三次前段cookie/材料/CAS/同key重试局部PASS，pageOnlyAuthLoss的page.evaluate遇__name未定义，后续未跑。前三轮原件保真、第三次清理完整；当前types未新增。完整feature NOT_STARTED/targetUNKNOWN，尚未独审通过。
 
 ## 阶段源码预检（不是最终feature审查）
 
@@ -145,3 +145,7 @@ RECOVERY-SAVED-RECORD-IDENTITY：摘要/时间/intent/材料数和折叠完整ID
 ## 2026-10-06 21:15:21 UTC — 8ed两项P2限定源码批准
 
 [Root原件](../../docs/evidence/wpf-conversation-recovery/8ed-identity-focus-root-approval.json)绑定 `8ed2741327779e57d717653d10c2180e1897c26a` / metadata b9957e8d6cbe542c18a7dd4e856dcb77dd4865e7，APPROVED_SCOPED_IDENTITY_FOCUS_SOURCE_NOT_RUN，0blocking。两项P2均SOURCE_ADDRESSED：exact本地record呈现/定位与原授权代际invoker回焦；原restore/17源/25raw不变，原键盘断言保留。Root0运行，owner本段仅归档，不把source结论扩成浏览器通过。完整feature review NOT_STARTED、target UNKNOWN。原rec4d失败及晚终态预算不改，下一入口只是独立/tmp来源准备。
+
+## 2026-10-07 02:17:40 UTC — 作者第三次真实子集证据待独立核
+
+[原始manifest/验证](../../docs/evidence/wpf-conversation-recovery/browser-third-validation.md)绑定000a/8ed十九源。actualexit1，前段通过与pageOnlyAuthLoss异常分别记录，不把作者运行当root复跑。Root此前两P2源码批准保持源码范围；本次完整行为未通过。所有旧raw、源和直接50证据不变，未修失败或重复运行。
