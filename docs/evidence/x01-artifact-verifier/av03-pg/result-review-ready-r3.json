@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-07T22:25:28.169Z",
+  "state": "RESULT_FIDELITY_REVIEW_PENDING",
+  "result": "d39542aa3db681b3ac631ac50a9d7edabc8a7605",
+  "source": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+  "centerSource": "ea3c4599b00505c950cc34ada8a350082fe76747",
+  "executionHead": "326aab23c19ef8ea0831f6af292de7be02854eee",
+  "manifest": "docs/evidence/x01-artifact-verifier/av03-pg/result-manifest-r3.json",
+  "manifestSha256": "fbc05ad32ff59daebf013d8029635cfe82768b499fc33f90bff1d9bb2898babf",
+  "manifestBytes": 11302,
+  "bindings": {
+    "resultFiles": 29,
+    "resultBytes": 64165,
+    "requiredFiles": 10,
+    "requiredBytes": 276198
+  },
+  "selected": 5,
+  "passed": 5,
+  "failedAssertions": 0,
+  "skipped": 0,
+  "suiteFailed": 0,
+  "resourceReturn": "2026-10-07T22:24:16.952Z FULL_RETURN",
+  "actualRetry": false,
+  "scope": "This R3 exact result and resource closure; old R1/R2 failed immutable. No worker/provider/public admission/verdict/main integration.",
+  "reviewer": "Independent b01 or db; root assigns availability",
+  "main": "RESULT_REVIEW_PENDING",
+  "note": "Initial owner-close pid key overwrite preserved; followup has exact numeric ids and new ESRCH read; tool/result original identify all three groups."
+}
