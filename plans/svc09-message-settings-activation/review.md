@@ -95,3 +95,5 @@ source `233ef91d369e7d7f58bdec8a34f523ed27017639`；claim v7。14新直接例与
 2026-10-07T20:54:31.589982+00:00：维护目标四源 `ddd8a6ff43f55a67ec4db3ac224f5532ef6b3e39` 与22不同/23选择、实际导入原件交待审。第一次断言红保留，未重跑PG或个人；04da patch与主线多槽consumer分开。实际artifact/冷启动/个人恢复不在局部批准范围。
 
 2026-10-07T21:03:59.375794+00:00：held-target四源获唯一限定独审并main 9c2886d95bab48cd69984eb006025c2b0b374db3（I02 svc09a-held-target-review.json），无需复制原报告；v12归还。cold helper 4c0cbcd6ee085c3e7a02e884f9360034c772747a 仅准备与局部证据待审，不包含实际三角色/个人恢复。
+
+2026-10-07T21:06:40.485469+00:00：cold helper source4c0cbcd6/records9c900于21:05:35.456Z获Lead独审APPROVED_LIMITED_FIXED_COLD_HELPER_PORTS，无blocking。唯一原件I02 b00b8b9b0 `docs/evidence/i02/svc09a-cold-helper-ports-review.json`；[固定manifest](../../docs/evidence/svc09/message-settings-activation/host-integration/cold-host-ports-manifest.json)仅绑定原源码和局部事实。限准备/复用ports，不批准尚未固定的调用方、实际artifact冷启动或个人恢复。
