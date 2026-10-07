@@ -1,0 +1,152 @@
+{
+  "timing": {
+    "started": {
+      "state": "unknown",
+      "at": null,
+      "record": "UNKNOWN"
+    },
+    "completed": {
+      "state": "not_completed",
+      "at": null,
+      "record": "NOT_COMPLETED"
+    },
+    "source": {
+      "state": "declared",
+      "record": "整体开工UNKNOWN；本固定pair工程片段核齐交付 2026-10-07T18:33:46.469Z，见[主线收口](../../docs/evidence/wpf-release01/recovery-cookie/main-close-d669/verification.json)；RELEASE01-10后继未实施，整体完成仍NOT_COMPLETED，不用提交/领取时间推定"
+    },
+    "issues": [
+      "任务开工时间未记录"
+    ],
+    "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| RELEASE01-W01 | UNKNOWN | 2026-10-07T11:15:10.520Z | 接口 | 原发布负责人供应最终后台source/artifact与公开会话策略；本次已核齐解除，历史起点未知 | [后台tuple](../../docs/evidence/wpf-release01/fixed-origin/final-backend-tuple-root.json)、[公开设置](../../docs/evidence/wpf-release01/fixed-origin/public-settings-supply-root.json) |\n| RELEASE01-W04 | 2026-10-07T16:02:58.550Z | 2026-10-07T16:22:48.759Z | 验证失败 | 场景缺少Cookie流前置；固定顺序修复与实际验证后解除 | [首实际原件](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md) |\n| RELEASE01-W05 | 2026-10-07T16:22:48.759Z | 2026-10-07T18:01:09.576Z | 验证失败 | 本固定pair的c3四App严格断言已通过并确认完整RETURN；历史HPE唯一根因仍UNKNOWN，不忽略console断言 | [第二实际与诊断](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/README.md) |\n| RELEASE01-W02 | UNKNOWN | 2026-10-07T14:54:01.259Z | 产物供给 | 外部等待结束：管理正式将唯一新Web生产交本组，已合法切树接权；产物尚未生成但为当前实施工作 | [接权](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/source-switch-intake.json) |\n| RELEASE01-W03 | UNKNOWN | 2026-10-07T14:47:33.469Z | 后台供给 | 本次核对已到04da/cd27 descriptor及固定产物限定批准；这里只记录核齐时间，历史等待起点未知 | [后台供给](../../docs/evidence/wpf-release01/recovery-cookie/backend-cd27-supply/README.md) |"
+  },
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md)",
+      "id": "WPF-MATURE-01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "human": {
+    "delivery": {
+      "state": "delivered",
+      "source": "explicit"
+    },
+    "phase": "M2",
+    "priority": 1,
+    "output": "恢复登录新网页的固定四App兼容已通过独审并完成主线接收，发布材料已交Original SVC06B",
+    "next": "本片段已交付；个人发布由Original SVC06B执行，稳定兼容executor为独立后继",
+    "blocker": {
+      "state": "none",
+      "text": ""
+    },
+    "decision": {
+      "state": "none",
+      "text": ""
+    },
+    "missing": [],
+    "complete": true
+  },
+  "implementation": {
+    "target": "d882c9439ee0111268e18766bf13ed02d6fb86e5",
+    "scopes": [
+      "apps/web/test/web-release-compatibility.browser.ts、apps/web/test/web-release-compatibility.fixture.ts"
+    ],
+    "errors": [
+      "实现范围必须为仓库相对 literal 路径，不允许通配符或越界"
+    ]
+  },
+  "taskId": "WPF-RELEASE01",
+  "owner": "w01_owner / gpt-6-astra / ultra",
+  "branch": "codex/web-release-recovery",
+  "branchState": "completed",
+  "updatedAt": "2026-10-07T18:33:46.469Z",
+  "updatedRecord": "2026-10-07T18:33:46.469Z",
+  "todos": [
+    {
+      "id": "RELEASE01-01",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[历史固定构建/清理](../../docs/evidence/wpf-release01/source-manifest.json)"
+    },
+    {
+      "id": "RELEASE01-02",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[历史两App真实兼容](../../docs/evidence/wpf-release01/README.md)"
+    },
+    {
+      "id": "RELEASE01-03",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[历史7805主线接收](../../docs/evidence/wpf-release01/main-source-observation.json)"
+    },
+    {
+      "id": "RELEASE01-04",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，f3d源审及9658类型delta独立接受，strict复验PASS"
+    },
+    {
+      "id": "RELEASE01-05",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[受控caller/完整输入准备](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)已固定，[c2修复与三场景actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md)已固定；native固定边界已独立接受；[c2首次actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2-first/README.md)启动前FAILED/410ms且资源归还，[c3单点修正及语法检查](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/README.md)47ms PASS，集中delta/native已接受；[c3唯一actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/README.md)三App各4项与独立Cookie PASS/完整cleanup，全部首红保留"
+    },
+    {
+      "id": "RELEASE01-06",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[限定实际独审与主线接收](../../docs/evidence/wpf-release01/fixed-origin/main-close/README.md)；个人更新未执行，属于独立发布交付"
+    },
+    {
+      "id": "RELEASE01-07",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[Cookie后继固定源码](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)与[局部检查提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)；SOURCE_FIXED；[strict实际PASS](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)与[root限定批准](../../docs/evidence/wpf-release01/recovery-cookie/root-source-local-review.json)"
+    },
+    {
+      "id": "RELEASE01-08",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[固定新Web+四App实际+main接收](../../docs/evidence/wpf-release01/recovery-cookie/main-close-d669/README.md)；材料交Original发布，个人操作未由本轮执行"
+    },
+    {
+      "id": "RELEASE01-09",
+      "state": "completed",
+      "owner": "w01_owner",
+      "evidence": "[两file固定与必要旧consumer检查](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)：noEmit0/精确1direct0，[集中独审已批准](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/root-source-local-review.json)；非mounted/compat通过"
+    },
+    {
+      "id": "RELEASE01-10",
+      "state": "pending",
+      "owner": "w01_owner",
+      "evidence": "本组合收口后的稳定executor/可信输入分责后继，尚未实施；见[plan.md](plan.md)"
+    }
+  ],
+  "errors": [],
+  "declaredHead": "固定7272151bb1e3e59e08937dca44949dcdeb42f009；source供给300386e2babce408b85ad5b9732d616782b78097；旧树9fde已释放停写",
+  "declaredDirty": "本批仅主线收口metadata；normal push clean后exact4全部STOP，实际释放以账本/管理回执为准",
+  "checks": {
+    "state": "passed",
+    "target": "d882c9439ee0111268e18766bf13ed02d6fb86e5",
+    "record": "PASSED d882c9439ee0111268e18766bf13ed02d6fb86e5 c3 actual outer0 / formal4 reports / 完整RETURN；旧c1 FAILED56504、c2 FAILED26554不改"
+  },
+  "reviewRecord": "[review.md](review.md)：APPROVED d882c9439ee0111268e18766bf13ed02d6fb86e5；固定两harness及四App实际/完整RETURN，main已接收；非个人部署",
+  "mainRecord": "INTEGRATED d669f3acb466f6f11bd6d81c1bffb7ffeedb5010；两harness逐字d882，四App现有证据接收；两产品窄修已随MSG进入main729d；非个人部署",
+  "next": "",
+  "risks": "",
+  "decisions": ""
+}

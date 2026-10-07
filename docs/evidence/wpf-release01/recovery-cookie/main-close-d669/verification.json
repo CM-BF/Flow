@@ -1,0 +1,34 @@
+{
+  "observedAt": "2026-10-07T18:33:46.469Z",
+  "main": "d669f3acb466f6f11bd6d81c1bffb7ffeedb5010",
+  "originMain": "d669f3acb466f6f11bd6d81c1bffb7ffeedb5010",
+  "implementation": "d882c9439ee0111268e18766bf13ed02d6fb86e5",
+  "receipt": {
+    "sourcePath": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/recovery-four-app-intake.json",
+    "bytes": 3457,
+    "sha256": "6e9d92df500b12cc8b1048e03e9a59c61bbed98e538d6d7eb2cd67405897e8eb"
+  },
+  "sourcePins": [
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 37253,
+      "sha256": "4ba1336fe23af52daf755952c1f0f0eafa21d366fc4b150cc15082b9b7fdf6c6",
+      "mainBlob": "51edbb2e181b1ca9503e9a2afc4e13d26fb3a0d8",
+      "equalFixedSourceAndCurrent": true
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 41015,
+      "sha256": "439363338ee464910561dccc9ff26a2dd1139c7d6caa7df67e271f5dfacbf609",
+      "mainBlob": "fd7a6188ddc866a7e453e62317f571f1323150ab",
+      "equalFixedSourceAndCurrent": true
+    }
+  ],
+  "independentActualReviewSha256": "6e24e157b7e0dc9e5200012c269a8d072a8034037846dda9944cb4345a54bc31",
+  "runtimeReexecuted": false,
+  "mainAcceptance": "INTEGRATED_TWO_HARNESSES_AND_EXISTING_FOUR_APP_EVIDENCE",
+  "fixedPairDeliveryCompletedAt": "2026-10-07T18:33:46.469Z",
+  "personalDeployment": "NOT_PERFORMED_BY_THIS_OWNER",
+  "fullTask": "NOT_COMPLETED_STABLE_EXECUTOR_FOLLOWUP_OPEN",
+  "claimBefore": "7d60cb91-7537-4052-8ba7-0c0aac8eb722 v2 exact4; STOP after clean seal; actual release separate ledger receipt"
+}

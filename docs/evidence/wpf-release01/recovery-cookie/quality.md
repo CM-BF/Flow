@@ -68,3 +68,7 @@
 ## 2026-10-07T18:05:42.382Z c3单次formal4验收后复核
 
 沿用find-skills/clean-code已固定方法：agent:false单一连接职责；固定公开入口/原断言/旧失败/精确cleanup分层。没有源码续改、错误吞并、400例外或重复框架。实际4报告均同固定backend/context，新Cookie独立，不将Bearer客户端冒Cookie。旧root-cause UNKNOWN和新登录后UNKNOWN重试未验保留。下一步仅独审原件归档/metadata链接核对，不再运行。
+
+## 2026-10-07T18:33:46.469Z main-close clean-code
+
+沿已读find-skills/clean-code：核固定target、二源哈希、唯一receipt、声明分层与链接；未改harness/报告/历史错误，未重复产品验证。所有历史“当前”段落标为历史时点，页首只承担当前main事实。个人发布/稳定executor保独立后继，无parser改动；完成停止写入后CAS释放，回执不回写已释放目录。

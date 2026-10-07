@@ -1,6 +1,6 @@
 # WPF-RELEASE01 真实产品 Web 发布兼容验证
 
-状态：in-progress（原REQ19新增用户可见Recovery网页后继；前片段工程验证与主线接收完成）；原7805交付保持历史完成。直接父WPF-MATURE-01与co-lead沿唯一status。新后继经合法交权在web-release-recovery固定7272落地两产品，现产品已交回、以exact4继续同任务，不创建第二发布系统。
+状态：固定Recovery网页兼容工程片段已交付并main接收；稳定executor后继未完成；原7805交付保持历史完成。直接父WPF-MATURE-01与co-lead沿唯一status。新后继经合法交权在web-release-recovery固定7272落地两产品，现产品已交回、以exact4继续同任务，不创建第二发布系统。
 
 ## 历史：三保留App固定origin片段
 
@@ -48,7 +48,7 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 ## 历史准备：新版Cookie网页后继（2026-10-07；当前见末尾artifact安全点）
 
 - [x] RELEASE01-07 在原fixture/browser加入首固定7272新版App入口（后继精确pair供给规则见请求），Cookie连接/刷新恢复/原key ACK与迟到logout真实HTTP链；保旧3App/Bearer及4check。
-- [ ] RELEASE01-08 本组供给唯一新Web descriptor，与已到修正后台组成精确输入；有界兼容与集中独审后交原operator发布，不借旧tuple/PASS。
+- [x] RELEASE01-08 本组供给唯一新Web descriptor，与修正后台绑定完成真实四App兼容/独审/main接收，发布材料交原operator；不宣称个人部署已执行。
 - [x] RELEASE01-09 在固定7272应用已审最小共享草稿两file并做直接旧consumer必要验证；不移植完整MSG/Plugin。
 
 [已审只读设计](../../docs/evidence/wpf-release01/recovery-cookie/design-input.json)。旧3报告必须对新backend/context重新产生；新App不伪为Bearer。仅原4scope，0产品检查/PG/Chrome/build/install，缺产物失败关闭。
@@ -69,13 +69,13 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 
 当前d736两产品及定向用例/局部实际已获[root集中APPROVED](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/root-source-local-review.json)，RELEASE01-09完成；两产品STOP并按账本partial amend交回。RELEASE01-08继续唯一producer的固定Web artifact准备，descriptor仍NULL；本地6165ms关闭，无build/PG/Chrome新许可。
 
-## 当前artifact交付安全点
+## 历史时点：artifact交付安全点
 
 [新Web实际](../../docs/evidence/wpf-release01/recovery-cookie/web-artifact-first/README.md)已生成descriptor779a/sourcec231，两产品1cea与批准d736不变。RELEASE01-08保持pending：两descriptors已齐，结果独审已APPROVED，当前需要两harness最小pair guard适配后再真实兼容，不借本次构建或旧三App报告冒通过。资源已归还，无第二build/Chrome/PG预约；独立150s段按外层观察上界25241ms CLOSED。
 
 新pair source2f679及受控caller已[固定准备](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27/README.md)，RELEASE01-08继续pending真实兼容/发布；当前只待集中源/边界审，不重复设计或产品绿检查。
 
-## 当前新 pair 首实际安全点
+## 历史时点：新 pair 首实际安全点
 
 [原件与诊断](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-first/README.md)：source2f679准备已审，首次actual FAILED/完整RETURN，180s CLOSED56504ms、未用123496ms不转。reports=null/0正式报告，RELEASE01-08保持未完成。harness在UNKNOWN原key恢复之前等待Cookie流，需窄修顺序；后台lateLogout NOT_REACHED，不能替后台定性。原三App断言与全部失败保持，不自动重试。
 
@@ -83,17 +83,17 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 
 [c2顺序修复](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-c2/README.md)已固定d032a53a62017cc41a3ddf19b316ad1047398fa6，仅修场景前置，RELEASE01-08仍pending/四正式报告未生成。首红不改，后继需一次新有目的的完整验收，不把历史partial导入正式报告。
 
-## 当前c2实际与诊断边界
+## 历史时点：c2实际与诊断边界
 
 [第二actual](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-second/README.md)FAILED/完整RETURN，26554ms新180s CLOSED。RELEASE01-08仍未完成，reports=null/0正式报告。harness原顺序缺口已走通，新的会话GET HTTP-parser400原因未记录；只准备被动有界clientError观察+新Cookie链diagnosticOnly，不能importReports，不为诊断重跑旧3矩阵。正式4App协议保持，下一actual须独立窗口。无新增产品authority，无后台或App越权修改。
 
 2026-10-07T16:37:19.057Z 现RELEASE01-08内准备独立Cookie诊断入口，固定cdd34c3aff2f12492d6f5a2a5debaf4f80c6cb05。仅public链与被动HTTP元数据，正式四App接受合同和错误断言不变；新90s/strict20s仍proposal，见[候选](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/README.md)。
 
-## 当前诊断源码与必要局部检查已固定
+## 历史时点：诊断源码与必要局部检查已固定
 
 2026-10-07T16:50:24.040Z：RELEASE01-08内的诊断source fc291已获[root集中源码批准](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/root-source-review.json)，native边界已精确绑定；保存字节帽与真实pretty JSON完全一致。必要[strict两actual](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/strict-actual/README.md)首alias红保留/复验绿，2775ms/20s CLOSED。源码未变，不重跑旧绿；原正式兼容失败不改，待独立诊断捕获HTTP错误，90s仍无实际许可。诊断完成不能完成RELEASE01-08或生成四正式报告。
 
-## 当前首次被动诊断实际
+## 历史时点：首次被动诊断实际
 
 [新Cookie诊断原件](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/actual-first/README.md)：17:02:28Z真实开始、outer0/DIAGNOSTIC_COMPLETE，17:03:55Z全部资源已归还。实际捕获HPE_CLOSED_CONNECTION而非零错误，但精确请求关联仍UNKNOWN；不代表四App兼容通过、不导入报告。RELEASE01-08保持未完成。新90s独立14881ms CLOSED/未用75119不转；旧红保持。下一步只基于独审原件决定窄修或更精确诊断，不自动第二次、不扩大发布scope。
 
@@ -110,3 +110,7 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 ## 2026-10-07T18:05:42.382Z 固定pair c3实际完成
 
 [formal4实际与完整归还](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/README.md)通过；[主线接收输入](../../docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/main-intake.json)已获限定实际独审，待Original接收。RELEASE01-08保持in-progress，用户发布未由本轮执行。整个180s已CLOSED，原失败不改。完成本自然封存后exact4 STOP、claim保留；稳定executor分责仍RELEASE01-10后继，不夹入本片。
+
+## 当前交付边界
+
+[固定pair主线收口](../../docs/evidence/wpf-release01/recovery-cookie/main-close-d669/README.md)已完成RELEASE01-08工程交付。原operator持有明确tuple/四正式报告；个人维护另窗口执行。RELEASE01-10稳定executor仍开放，不为隐藏后继勾选或把整体任务完成时间伪造为主线时间。原4scope本批STOP后释放。
