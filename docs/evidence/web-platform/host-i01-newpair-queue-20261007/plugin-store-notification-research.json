@@ -1,0 +1,75 @@
+{
+  "at": "2026-10-07T21:33:04.481328+00:00",
+  "kind": "READ_ONLY_FIXED_SOURCE_RESEARCH",
+  "source": "7e911df40d8c0ff875ac96e0fab36a1a3a253940",
+  "pins": [
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "bytes": 23812,
+      "sha256": "86acad25b862779d812a3a6c6961f22e6424d4bb3a649ed5d0a877c2e0c31470"
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "bytes": 12209,
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 25086,
+      "sha256": "d47002c00baad69c4cff0f205c76f89a4598b7bb7e817e7bb605b96e0d7eb907"
+    }
+  ],
+  "scope": "Existing plugin correctness and performance follow-up; no new task, claim, runtime or implementation. Not a blocker for recovery or prepared Arc product checks.",
+  "findings": [
+    {
+      "id": "diagnostic-notification",
+      "classification": "STATIC_NOTIFICATION_GAP_REPRODUCTION_REQUIRED",
+      "evidence": [
+        "plugins/host.ts:378-384 command rejection calls record and returns without publish.",
+        "plugins/host.ts:625-638 render diagnostic updates the immutable capped diagnostic snapshot without notifying subscribers.",
+        "plugin-integration/react.tsx:171-173 diagnostics subscribes to host.subscribe; :189 displays the captured count/list.",
+        "Activation failure differs: host.ts:174-181 records and then publishes; do not claim every error path misses notification."
+      ],
+      "implication": "An already mounted diagnostics consumer has no host notification for a command/render error until an unrelated publish or render occurs. No browser stale-display reproduction performed.",
+      "acceptance": "Use an already active plugin and a mounted diagnostics consumer; cause one command rejection and one render failure independently. Require eventual visible diagnostic update without changing plugin lifecycle. Preserve capped 100 entries, original action error, no automatic retry/provider call."
+    },
+    {
+      "id": "plugin-view-lifecycle-invalidation",
+      "classification": "PERFORMANCE_HYPOTHESIS_ONLY",
+      "evidence": [
+        "plugins/react.tsx:204 PluginView subscribes to the whole registry snapshot.",
+        "plugins/host.ts:639-673 publish rebuilds the whole registry snapshot and notifies all global listeners; slot snapshots already have separate listeners."
+      ],
+      "implication": "Unrelated plugin lifecycle publication can schedule mounted PluginView renders. There is no measured latency, heap growth or frame-drop result. This concerns plugin lifecycle, not every token/body update.",
+      "acceptance": "Before optimizing, one bounded fixture with two unrelated active plugins should measure render/commit counts during activation/deactivation of one plugin, with visible and hidden panels, while retaining renderer state and immediate revocation. If worthwhile, prefer cached per-plugin snapshots through the existing host; avoid a second registry or blanket memoization."
+    }
+  ],
+  "designConstraints": [
+    "Do not fix diagnostic freshness by globally rebuilding registry and waking every panel on each diagnostic without considering targeted notification.",
+    "A diagnostic-only subscription is a candidate, not an approved implementation. Keep snapshot referential stability until data changes.",
+    "No weakening of disable/unregister/session invalidation, hidden Activity effect pausing, context authorization, or existing slot ownership.",
+    "Future owner must inspect then-current source; this review pins only these three files."
+  ],
+  "primarySource": {
+    "url": "https://react.dev/reference/react/useSyncExternalStore",
+    "accessed": "2026-10-07",
+    "paraphrase": "A store change must notify its subscriber; React compares snapshots with Object.is, and unchanged data should retain a cached snapshot."
+  },
+  "quality": {
+    "skillsApplied": [
+      "find-skills (existing local discovery)",
+      "codebase-design",
+      "clean-code",
+      "vercel-react-best-practices"
+    ],
+    "cleanCodeAt": "2026-10-07T21:33:04.481808+00:00",
+    "notes": "Separated observed control flow from unmeasured UI/performance implications; reused existing ownership/state authority; no speculative new framework. No implementation fixes performed."
+  },
+  "execution": {
+    "projectWrites": 0,
+    "testRuns": 0,
+    "browserRuns": 0,
+    "services": 0,
+    "claims": 0
+  }
+}

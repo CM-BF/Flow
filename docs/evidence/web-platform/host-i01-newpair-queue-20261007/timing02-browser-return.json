@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-07T21:35:45.287742+00:00",
+  "state": "FULLRETURN",
+  "actualExitCode": 0,
+  "terminalState": "PASS",
+  "identities": [
+    {
+      "kind": "PID",
+      "id": 27747,
+      "state": "ABSENT"
+    },
+    {
+      "kind": "PGID",
+      "id": 27747,
+      "state": "ABSENT"
+    },
+    {
+      "kind": "PID",
+      "id": 27767,
+      "state": "ABSENT"
+    },
+    {
+      "kind": "PGID",
+      "id": 27767,
+      "state": "ABSENT"
+    },
+    {
+      "kind": "PID",
+      "id": 27754,
+      "state": "ABSENT"
+    },
+    {
+      "kind": "PGID",
+      "id": 27754,
+      "state": "ABSENT"
+    }
+  ],
+  "scratchAbsent": true,
+  "innerEOFdrop0": true,
+  "outerBothEOF": true,
+  "sealedHashesMatch": true,
+  "chargeMs": 6404,
+  "budgetMs": 60000,
+  "remainingMs": 53596,
+  "noRetryGrant": true,
+  "pg": 0,
+  "phase": "CLOSED",
+  "outerDirectory": "/private/tmp/timing02-browser-actual-tfm8l_gk",
+  "originalParentBudgetMs": 6349,
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "httpAndCdpPorts": [
+    {
+      "port": 63621,
+      "result": 61,
+      "state": "REFUSED"
+    },
+    {
+      "port": 63620,
+      "result": 61,
+      "state": "REFUSED"
+    }
+  ],
+  "portsObservedAt": "2026-10-07T21:36:44.006618+00:00"
+}

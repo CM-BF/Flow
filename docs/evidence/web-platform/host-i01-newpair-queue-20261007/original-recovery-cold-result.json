@@ -1,0 +1,70 @@
+{
+  "recordedAt": "2026-10-07T21:27:49.215Z",
+  "state": "FAILED_ISOLATED_COLD_BEFORE_DEFAULT_START",
+  "callerSource": "32f8d27cb",
+  "preparationDelivery": "4da4041717bb2ab7e9bcfa4b0bae575cf217cf68",
+  "artifactSource": "f37a3612068c7215994750574a7451ede841bcce",
+  "artifactId": "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
+  "journeys": {
+    "selected": 1,
+    "passed": 0
+  },
+  "primary": {
+    "phase": "host-consumer",
+    "name": "TypeError",
+    "code": null
+  },
+  "originalMessageAndStack": "NOT_CAPTURED",
+  "secondaryCleanup": [
+    {
+      "phase": "default-empty-task-query",
+      "sourcePhase": "owned-observation",
+      "name": "Error",
+      "code": "DEFAULT_EMPTY_QUERY_FAILED",
+      "sqlState": "42P01"
+    }
+  ],
+  "operatorElapsedMs": 10993,
+  "cloneWasMechanical": true,
+  "fullRuntimeVerification": "reached work cold-artifact-controller after setup verifier; not inferred from clone stdout",
+  "resources": {
+    "databaseOid": 1354435,
+    "connections": {
+      "state": "empty",
+      "observations": [
+        {
+          "elapsedMs": 2.1731249999999704,
+          "rows": []
+        }
+      ]
+    },
+    "adminClosed": true,
+    "registeredProcesses": [],
+    "launchAccounted": false,
+    "resourcesClosed": false,
+    "mayDrop": false,
+    "retention": "KEEP"
+  },
+  "claimsNotMade": [
+    "default3 ready",
+    "runner initialized",
+    "actual claim",
+    "four-App compatibility",
+    "personal deployment",
+    "logical full cleanup"
+  ],
+  "staticDiagnosis": {
+    "scope": "fixed source-only finding, not an original captured error message",
+    "preview": "f37 preview.mjs load defaults launchRuntime=null and explicitly supplies fourth argument",
+    "host": "f37 host.mjs assertInstallationSource default resolver only applies to undefined; artifact identity branch invokes resolver",
+    "currentMainDifference": "reviewed main/own preview uses resolveRuntime=backendRuntime",
+    "next": "correct composition producer default and direct public-load tests, new artifact/namespace only after review and resource coordination"
+  },
+  "unknownPreserved": [
+    "original TypeError message/stack",
+    "logical launch accounting",
+    "full default lifecycle"
+  ],
+  "operatorProviderCalls": 0,
+  "personalIO": false
+}

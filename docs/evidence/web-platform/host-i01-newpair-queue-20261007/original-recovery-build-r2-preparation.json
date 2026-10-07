@@ -1,0 +1,144 @@
+{
+  "at": "2026-10-07T21:35:58.225Z",
+  "state": "FIXED_R2_BUILD_PREPARATION_NO_ACTUAL_WINDOW",
+  "callerSource": "0c2b89398",
+  "inputSource": "075c82f6e",
+  "artifactSource": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+  "sourceTree": "27cf190b00b3244026952ab85b0d922368676715",
+  "sourceBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/build-supervise.py",
+      "bytes": 2797,
+      "sha256": "4c86e7bb1f91ac6585b61661568fb1e07b399c3520478fc77bff8db49fde5989"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-entry.mjs",
+      "bytes": 4460,
+      "sha256": "fb4156cde5ce05b5c3206d6642703a786a216dd4cec0f2e5340969eaef1b3096"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2-entry.mjs",
+      "bytes": 935,
+      "sha256": "81595eb0f351456242766224a974652e249a5005837a86df0ecc2b974e5036cc"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2-supervise.py",
+      "bytes": 934,
+      "sha256": "b00262b3c2bac32ea4c13483350321988900200f33e1de1e6d0490bfcdc63b55"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2.test.mjs",
+      "bytes": 2179,
+      "sha256": "38717a06000ec4ab52c29c7277f3aec10ab52349ad3c874947afa68883b815fa"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2.test.py",
+      "bytes": 2116,
+      "sha256": "f0cd2c5ec7ca98402614eaae0fccdba254376979f992e1cce02a70ea633de1d7"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2-inputs.json",
+      "bytes": 4531,
+      "sha256": "e2e76f058e2721bad376148f296e1e694bc6938b572702d9b55d7b30c507c7ef"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2-input.test.mjs",
+      "bytes": 1107,
+      "sha256": "ab814504a227927faa9d174926a7f3bbee53289098e778c55bad6cedf3740180"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2-local-reservation.json",
+      "bytes": 2270,
+      "sha256": "151302e0c7f199ddcb4230080efe7a11303df793705aa9b8fe188d40329b04eb"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2-local-1-outer.json",
+      "bytes": 993,
+      "sha256": "7a1e5441c4048c440d095a5e3c998b2a6409d02262298c4ab4f4b243040d4b3f"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2-local-2-outer.json",
+      "bytes": 648,
+      "sha256": "1d5aedc2e4add0a757c31e99b6292a8876cc4178b5549f88c6b78a12e78fc8fa"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2-local-result.json",
+      "bytes": 942,
+      "sha256": "4ff1acc3c5ebe9200ff24a5f803b9c4c3d1bd15908dfe67233494df01836ca82"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2-input-local-reservation.json",
+      "bytes": 1332,
+      "sha256": "4fe0795050523d4716bf6c6a4f119055894b407984572a184e0ba3c90e5f0c59"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2-input-local-outer.json",
+      "bytes": 810,
+      "sha256": "2e8fe69ea3ef6067bf83cc1d0d3734087e81d10aff148e4448c41f4c059ef730"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/recovery-build-r2-input-local-result.json",
+      "bytes": 399,
+      "sha256": "848bdfcf3bd3140f12874c37724e2cc9e3f8d94873d78cbaa74d180803812ce9"
+    }
+  ],
+  "inherited": [
+    {
+      "commit": "cb263ba616a399f52235fe37d42add9a55a956f1",
+      "path": "recovery-build-preparation.json",
+      "sha256": "b953432dcd23b94b11c6821ff05c6b5cd32a8a2cc8bfd18cab387f5afd39dd84",
+      "meaning": "Original reviewed method,17 inherited runtime+5 bound methods,77 source and33 SQL,original offlinebuilder limits; only current explicit source map preview26B correction and successor input/namespace vary"
+    },
+    {
+      "commit": "9e9e5973a919f0ad6e4230ef49ea2e2dcfff8b60",
+      "path": "recovery-resolver-repair-result.json",
+      "sha256": "7e7854535f40169a27ddcaaed45cac79ae123e4a68373ea9a19970662304daff",
+      "meaning": "8 distinct public-load/wrapper cases split5+3; Lead approved and produced fixed childref; not cold proof"
+    }
+  ],
+  "invocation": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-supervise.py",
+    "--execute-fixed-recovery-r2-build"
+  ],
+  "namespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-once",
+  "namespaceAbsentAtPreparation": true,
+  "local": {
+    "cases": 5,
+    "elapsedMs": 332,
+    "rawBytes": 727,
+    "groups": "3 absent/dualEOF/noSignals",
+    "scratch": "3 exactempty removed",
+    "lastReturn": "2026-10-07T21:35:12.225Z",
+    "limits": "original bounded ordinary30s/8MiB/128KiB; no install/build/PG/provider/personal"
+  },
+  "limits": {
+    "workSeconds": 420,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "additionalBytes": 2317352960,
+    "rawBytes": 2097152,
+    "opsCaptureBytes": 1048576,
+    "liveReserveBytes": 1073741824,
+    "minimumOriginalFresh": 3927965696,
+    "freshRule": "max(original, latest complete authorized team floor); added build peak once only"
+  },
+  "forwardPreparationObservation": {
+    "queueAt": "2026-10-07T21:35:29.619Z",
+    "floor": 16846028800,
+    "freeBytes": 18663366656,
+    "newBuildPeak": 2317352960,
+    "candidateIfNotYetAllocated": 19163381760,
+    "actualAdmission": "NOT_GRANTED; resource owner must classify latest once, no autonomous launch"
+  },
+  "unknownRetained": {
+    "firstLocalCapBytes": 8519680,
+    "originalBuildRoot": "KEEP",
+    "firstColdDatabaseAndPrivate": "KEEP; launchAccounted/resourcesClosed false, no full cleanup claim",
+    "noDeletion": true
+  },
+  "coldAndFourApp": "new artifact tuple must pass independently; b692 evidence cannot supply new tuple; old cold namespace never reused",
+  "personal": "NOT_AUTHORIZED_BY_THIS_PREPARATION"
+}

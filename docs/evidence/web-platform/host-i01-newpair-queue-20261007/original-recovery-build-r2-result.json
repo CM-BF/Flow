@@ -1,0 +1,89 @@
+{
+  "startedAt": "2026-10-07T21:41:48.507Z",
+  "source": "880060a317cd99f3f29b41333f6dd7d7f5ab1488",
+  "phase": "artifact-and-imports-passed",
+  "providerCalls": 0,
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "manifestDigest": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488"
+  },
+  "directory": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t",
+  "reservation": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-r2-once/actual-first/reservation.json",
+  "failures": [],
+  "directoryIdentity": {
+    "dev": 16777234,
+    "ino": 124535526
+  },
+  "buildRecord": {
+    "path": "stage-d3fb6b3d-5721-4da9-9231-a1de26b40537.json",
+    "bytes": 806,
+    "sha256": "d1e04ea264028bbfce4eac8019699ac0e7878c49484901146258cdd6032e75e7"
+  },
+  "sqlFilesVerified": 33,
+  "inventory": {
+    "logicalBytes": 363874705,
+    "entries": 15629,
+    "manifestBytesIncluded": 367071492,
+    "nodeImages": 20
+  },
+  "importExit": 0,
+  "runtimeProof": {
+    "importsAndReadOnlySelectionOnly": true,
+    "newPolicyModulesLoaded": true,
+    "startupDiagnosticsLoaded": true,
+    "diagnosticFilesCreated": false,
+    "actualPolicyRead": false,
+    "artifactSourceRepository": "/Users/citrine/Projects/AgentHarness/Flow",
+    "realWebArtifactSelected": true,
+    "centerRunnerSelectionPreserved": true,
+    "wrongSourceRejected": true,
+    "factoryCalls": 0,
+    "runnerCalls": 0,
+    "providerCalls": 0,
+    "sdkVersion": "0.3.290",
+    "nativeBinaryExecuted": false,
+    "nativeBinaryBytes": 233260816,
+    "resolved": {
+      "pgEntry": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/index.js",
+      "sdkEntry": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "nativeMetadata": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/package.json",
+      "nativeBinary": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "viteEntry": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/.pnpm/vite@8.3.2_@types+node@24.19.1_esbuild@0.28.2_jiti@2.7.0_tsx@4.23.15/node_modules/vite/dist/node/index.js",
+      "tsxEntry": "/private/tmp/flow-svc06b-recovery-r2-artifact-NXTN6t/backend-artifacts/e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/root/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs"
+    },
+    "delayedImports": [
+      "apps/server/src/index.ts",
+      "apps/runner/src/runtime.ts",
+      "tools/personal-preview/backend-release/host.mjs",
+      "tools/personal-preview/preview.mjs",
+      "tools/personal-preview/maintenance-host.mjs"
+    ],
+    "developmentCheckoutIsolation": "NO mutation or removal; internal resolution/inventory proof only"
+  },
+  "rawBytesBeforeFinalResult": 4670,
+  "resources": {
+    "initialFree": 18693947392,
+    "minimumFree": 18247540736,
+    "samples": 67,
+    "artifactFileAndManifestLimit": 1073741824,
+    "selectedSeedLogicalBytes": 354552778,
+    "sourceArchiveAllowance": 33554432,
+    "pnpmHomeCacheAllowance": 134217728,
+    "metadataAllowance": 536870912,
+    "rawBytes": 2097152,
+    "liveReserveBytes": 1073741824,
+    "additionalBudgetBytes": 2317352960,
+    "minimumFreeBytes": 3927965696,
+    "selectedSeedAllowance": 536870912,
+    "baseMinimumFreeBytes": 3391094784,
+    "coordinationAllowanceBytes": 536870912,
+    "coordinationAllowanceMeaning": "Conservative planning margin; not a claim that another task is running. At execution, add any actual concurrent allocation exceeding this margin; never lower base reserve.",
+    "physicalPeak": "NOT_MEASURED; sampled filesystem availability includes other writers",
+    "rawLimit": "1MiB outer capture plus bounded copied build-record and import bytes; original producer record can exceed observation threshold and remains preserved on refusal"
+  },
+  "finishedAt": "2026-10-07T21:42:22.016Z",
+  "elapsedMs": 33509,
+  "retention": "KEEP own artifact/root and stage records for later host validation; interrupted/unknown stage or lock is not removed by this entry"
+}

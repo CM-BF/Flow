@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-07T21:33:49.035557+00:00",
+  "kind": "INDEPENDENT_BOUNDED_CLEANUP_SOURCE_REVIEW",
+  "root": "/root gpt-6-astra ultra read-only",
+  "peer": "/root/workspace_panels_owner gpt-6-astra ultra read-only",
+  "rootVerifiedPins": [
+    {
+      "path": "/private/tmp/arc-browser-7e911-xdme2rv7/run.py",
+      "bytes": 10087,
+      "sha256": "78a8d708fea66a825fe4182d362f1de8107c825568d5cd9c1ca422e12ee5b835"
+    },
+    {
+      "path": "/private/tmp/timing02-b1/supervisor.py",
+      "bytes": 26959,
+      "sha256": "b52befed314a62a599891d5e1aff690003c0bf254711ff0ee61302f455785cab"
+    }
+  ],
+  "arc": {
+    "decision": "SOURCE_CHANGES_REQUESTED_P2_ACTUAL_BROWSER_NOT_READY",
+    "evidence": [
+      "run.py:2 creates scratch but stores no scratch/root identity.",
+      "run.py:103-113 allows recursive deletion after owned group absence and cache-link checks, without confirming the scratch directory is the created root."
+    ],
+    "finding": "A replaced scratch root or replaced ancestor can redirect the named cleanup path before deletion; link identity checks do not establish the root identity. Static missing ownership check, not an executed exploit or observed data loss.",
+    "requiredRepair": "Small identity-bound owned-root deletion change. Save identity at creation; reject replacement/symlink/unknown ancestry before destructive work. Preserve process return guards and KEEP on uncertainty. Only fresh temporary samples may be used for later bounded FS counterexamples. Do not touch old KEEP or rerun already-passed product HTTP tests.",
+    "historicalResults": "Prior Arc third HTTP 2 PASS remains unchanged; this review concerns the unrun browser caller."
+  },
+  "timing02": {
+    "decision": "NO_NEW_BLOCKING_FINDING_IN_THIS_LIMITED_SCOPE",
+    "rootVerified": [
+      "supervisor.py:190-194 saves created scratch dev/inode/uid.",
+      "supervisor.py:290-299 requires both groups absent, directory not symlink, same dev/inode/uid and known meter before recursive deletion."
+    ],
+    "peerVerifiedOnly": [
+      "measure.py:124-131 BASE root check and :157-180 fd/no-follow read-only measurement.",
+      "worker:84-93 closes browser context/CDP/fixture, does not remove directories.",
+      "fixture:99 closes server and connections; no database cleanup."
+    ],
+    "limits": [
+      "No concurrent root-swap test executed. The lstat-to-rmtree interval is not an expected-inode-bound deletion primitive and must not be described as race-free.",
+      "EOF failure is reflected in final result failure, but EOF is not itself in the scratch deletion predicate.",
+      "This scoped review is not an actual grant or browser PASS. Existing preparation/native acceptance and manager fresh admission remain separate."
+    ]
+  },
+  "execution": {
+    "projectWrites": 0,
+    "tests": 0,
+    "browser": 0,
+    "services": 0,
+    "oldKeepReadsOrCleanup": 0
+  },
+  "quality": {
+    "cleanCode": "Reviewed ownership interface, destructive error handling and absence/unknown distinction; no unrelated runner rewrite proposed.",
+    "at": "2026-10-07T21:33:49.035911+00:00"
+  }
+}

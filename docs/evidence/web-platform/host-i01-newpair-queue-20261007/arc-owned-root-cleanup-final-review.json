@@ -1,0 +1,90 @@
+{
+  "at": "2026-10-07T21:44:23.184137+00:00",
+  "decision": "APPROVED_FIXED_ARC_OWNED_ROOT_CLEANUP_SOURCE_AND_PURE_FS_RESULTS",
+  "blockingFindings": [],
+  "resolvedFinding": "P2 missing created-root/ancestor identity before Arc browser scratch deletion",
+  "source": {
+    "path": "/private/tmp/arc-browser-owned-cleanup-tp1sri1w/run.py",
+    "bytes": 13757,
+    "sha256": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b"
+  },
+  "reviewedBehavior": [
+    "Created scratch and ancestors use held O_DIRECTORY|O_NOFOLLOW descriptors and recorded dev/inode/uid/type.",
+    "Before destructive operations, the named root and ancestor links are checked against their held descriptors; recursive operations use dir_fd rather than resolving the scratch pathname again.",
+    "Cache-link cleanup uses a separately bound parent chain and retains identity/target checks.",
+    "Incomplete process return/EOF or cleanup uncertainty retains scratch and records failure.",
+    "Deadline checks bound traversal attempts; no second run is inferred from unused time.",
+    "After scratch rmdir, parent chain and nofollow absence are checked before scratchRemoved becomes true. Reappearing name yields UNKNOWN rather than success."
+  ],
+  "unchangedByteComparison": {
+    "worker.mjs": true,
+    "capture.py": true,
+    "binding.json": true
+  },
+  "productScope": "207 source pins,43 external pins,33 resolver links remain in identical binding; no product source mutation by this repair. Four actual browser groups/two PNGs remain NOT_RUN.",
+  "rawManifest": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/browser-cleanup-20261007/final/raw-manifest.json",
+    "bytes": 5981,
+    "sha256": "405553d91a5deeb7909a79b3d2cb8afb57f7d56d81a223a7e818eb70ea048b2f",
+    "rowsCheckedBothSides": 11,
+    "mismatches": []
+  },
+  "pureFilesystemRuns": [
+    {
+      "root": "/private/tmp/arc-owned-fs-check-jy0on4op",
+      "sourceSha256": "204ff24df434bd2dd3bf73c63fd139c0ecb7aa1cc234236efc03cbbfc9d96569",
+      "selectedPass": 6,
+      "childPid": 83267,
+      "startAt": "2026-10-07T21:39:09.969588+00:00",
+      "terminalAt": "2026-10-07T21:39:10.048818+00:00",
+      "fullReturnObservedAt": "2026-10-07T21:40:40.489361+00:00",
+      "innerElapsedMs": 81.78079100000002,
+      "toolWallMs": 314.385417,
+      "chargeMs": 315,
+      "streams": "regular files closed; dualEOF not applicable",
+      "independentOuterMonotonicWall": "NOT_MEASURED",
+      "oldKeepAccess": "NONE"
+    },
+    {
+      "root": "/private/tmp/arc-owned-fs-final-qo6ervta",
+      "sourceSha256": "e74414d9280c28fa08357e83f5cf57d5657025f077bb14ff9954c85e1e64968b",
+      "selectedPass": 7,
+      "childPid": 86349,
+      "startAt": "2026-10-07T21:41:49.629724+00:00",
+      "terminalAt": "2026-10-07T21:41:49.705242+00:00",
+      "fullReturnObservedAt": "2026-10-07T21:42:35.491527+00:00",
+      "innerElapsedMs": 77.86770799999998,
+      "toolWallMs": 248.49695899999998,
+      "chargeMs": 249,
+      "streams": "regular files closed; dualEOF not applicable",
+      "independentOuterMonotonicWall": "NOT_MEASURED",
+      "oldKeepAccess": "NONE"
+    }
+  ],
+  "budget": {
+    "cumulativeChargeMs": 564,
+    "limitMs": 40000,
+    "state": "CLOSED",
+    "unusedNotTransferred": true
+  },
+  "finalChecks": [
+    "normal and nofollow child symlink",
+    "replaced scratch identity KEEP",
+    "ancestor rename plus symlink KEEP",
+    "scratch symlink KEEP",
+    "ancestor swapped during enumeration KEEP before child unlink",
+    "deadline KEEP",
+    "reappearing name reports absence UNKNOWN"
+  ],
+  "acceptanceLimits": [
+    "Fixed source and scoped temporary FS cases only, not proof of arbitrary hostile concurrent replacement safety or atomic deletion.",
+    "First six PASS target204ff; final seven PASS targete744. Preserve both original timings and results.",
+    "No product HTTP/browser replay, DB/provider/personal runtime, or old KEEP access by root.",
+    "No actual browser grant. Existing90s/256MiB scratch/8MiB raw/oneChrome native boundary is unchanged.",
+    "Final executionHead/manifest and historical globalfloor may be rebound as routine data by the owner/manager against the exact same caller hash, product inputs and complete current resource terms; no decrease of intrinsic protection is authorized by this review."
+  ],
+  "quality": {
+    "at": "2026-10-07T21:44:23.184347+00:00",
+    "cleanCode": "Kept cleanup ownership explicit in a small function boundary, inspected exceptions/KEEP/absence reporting and validated actual helper functions via reported AST extraction. No new framework or unrelated behavior requested."
+  }
+}

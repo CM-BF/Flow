@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-07T21:27:13.227533+00:00",
+  "task": "WPF-RELEASE01",
+  "state": "REVIEWED_SOURCE_BOUND_ALL4_STOP",
+  "source": "203ccc2f38d45ee043838383d3ba3056e7e4a435",
+  "head": "f23474847e4ee3a2dc6d0b0a2d2e62ebce703f56",
+  "remote": "f23474847e4ee3a2dc6d0b0a2d2e62ebce703f56",
+  "dirty": "",
+  "binding": {
+    "path": "/private/tmp/rel01-b692-c1/binding.json",
+    "realpath": "/private/tmp/rel01-b692-c1/binding.json",
+    "bytes": 48781,
+    "sha256": "762cf8a8160764ad6336cd501d36bd2c641712a8f1a07376aa6bbb0a891c62c6"
+  },
+  "manifest": {
+    "path": "/private/tmp/rel01-b692-c1/manifest.json",
+    "realpath": "/private/tmp/rel01-b692-c1/manifest.json",
+    "bytes": 5747,
+    "sha256": "f595caf5eb857e51c05b65bd74c1744216eb99aaa0d71391c3a44bcd852b6742"
+  },
+  "claim": {
+    "claimId": "b4d7d7fd-f215-4882-b7f3-2afc133a0365",
+    "version": 1,
+    "worker": "w01_owner",
+    "scope": [
+      "apps/web/test/web-release-compatibility.browser.ts",
+      "apps/web/test/web-release-compatibility.fixture.ts",
+      "docs/evidence/wpf-release01",
+      "plans/wpf-release01-product-compatibility"
+    ]
+  },
+  "unchangedPins": 74,
+  "unchangedPrepared": 5,
+  "unchangedRunnable": 4,
+  "conservativeTailBytesIncluding4KiBMetadataAllowance": 30898,
+  "runtimeGrant": null,
+  "runtime": "NOT_RUN",
+  "engineeringChildren": 0,
+  "http": 0,
+  "pg": 0,
+  "chrome": 0,
+  "gateCreated": false,
+  "sourceStopped": true,
+  "preparationReady": true,
+  "currentForwardOnly": 17879990272,
+  "deadline": "2026-10-07T21:37:11Z"
+}

@@ -1,0 +1,91 @@
+{
+  "kind": "SVC06B_HELD23_READONLY_FRESH_FACTS_INVOCATION",
+  "at": "2026-10-07T21:47:04.997629+00:00",
+  "actualState": "NOT_RUN_NO_PERSONAL_WINDOW_CONSUMED",
+  "purpose": "Point observation only; may precede cold/App reports, never recovery authorization",
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "bytes": 12543,
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "launch": {
+    "argv": [
+      "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "--import",
+      "/Users/citrine/.flow-personal/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/node_modules/tsx/dist/loader.mjs",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/fresh-facts.mjs",
+      "--observe-held-once",
+      "/private/tmp/flow-svc06-held-facts-20261007-once/facts.json"
+    ],
+    "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery",
+    "env": {
+      "PATH": "/opt/homebrew/Cellar/node@24/24.20.0/bin:/usr/bin:/bin:/usr/sbin",
+      "LC_ALL": "C",
+      "PYTHONDONTWRITEBYTECODE": "1",
+      "TSX_DISABLE_CACHE": "1",
+      "NODE_DISABLE_COMPILE_CACHE": "1"
+    },
+    "ownership": "newChildSession"
+  },
+  "policy": {
+    "workSeconds": 27.5,
+    "termGraceSeconds": 0.5,
+    "reapSeconds": 2,
+    "outputLimitBytes": 65536
+  },
+  "limits": {
+    "wholeChildEnvelopeSeconds": 30,
+    "privateBytes": 8388608,
+    "factsBytes": 16384,
+    "singleFileBytes": 65536,
+    "maximumPrivateFileReads": 12,
+    "ownedRoles": [
+      "center",
+      "runner",
+      "web"
+    ],
+    "maximumReadOnlyPGPoolSize": 1,
+    "serviceMutations": 0,
+    "HTTP": 0,
+    "providerQueries": 0
+  },
+  "directPins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/fresh-facts.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/fresh-facts.mjs",
+      "bytes": 7982,
+      "sha256": "41ffa8a5adaeb2f9b126ba0c5294e5a34e557f41b650e815d779f215dc5c1e7a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/policy.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/policy.mjs",
+      "bytes": 9892,
+      "sha256": "45769d204bd1df546868ec42126cd44dc100c7a2aaeeab1c73f1d2d3d5ff0b18"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    }
+  ],
+  "inherited": {
+    "packetCommit": "0be5884cc4937c7bf98dedcab5d072622783e7c1",
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/dependencies.json",
+    "currentMigrationSource": "0004900193a83bdcdf1815d20cf5857fc8d1cdcb",
+    "oldInstalledRuntime": {
+      "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+      "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+      "pinReference": "backend-browser-recovery/current-entry-readonly.json factsPg.manifest plus its fixed artifact inventory; imported runtime must match this installed artifact. No installed bytes read in this preparation."
+    }
+  },
+  "prelaunchRequirements": [
+    "Lead/resource owner grants actual read-only window and complete fresh floor; no personal mutation permission",
+    "Fresh exact claim/current source and all effective static/runtime pins, including old installed tsx loader closure before Node loads it; inherited inventory is provenance, not a new current check",
+    "Operator creates the exact fresh0700 parent with exclusive reservation outside personal installation; bind its dev/ino and refuse output/intent already present",
+    "Reuse OPS14 Launch/Policy once; save original bounded stdout/stderr/report, preserve first failure and unknown; no automatic retry",
+    "Record local pool end separately from any necessary remote connection barrier; do not infer service/DB cleanup from caller PID alone"
+  ],
+  "resultConsumption": "Validate OBSERVED_HELD23_NOT_EXECUTION_AUTHORIZATION, immutable facts hash/identity/time; values only feed later fixed candidate. ready remains false; actual rebind/refresh still require full inputs and independent actual authorization."
+}

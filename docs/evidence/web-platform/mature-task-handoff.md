@@ -1,17 +1,17 @@
 # Web 当前交接与唯一来源
 
-**即时调度 2026-10-07T21:22:32.132Z：actual holder=NONE；唯一NEXT=SVC06B-B692-COLD-INITIALIZATION-20261007-ONCE，Original assignment_review执行已审4da/source32f8与manifest133b。b692/f37a默认3角色/currentnonce初始化，26PG+管理16，215s+.5TERM+2reap（217.5s），0task/provider/Chrome/个人；完整冻结floor17,889,427,456B，新峰值1,244,659,712已计一次不重复。最迟2026-10-07T21:26:32.132Z实际START或明确0child阻点，fresh pins/claim/双namespace/PG闭池后才launch；个人恢复helper不是本cold前置。Arc HTTP两例同轮PASS并完整RETURN，详细请求trace未留存保限定；C4仍准备，个人服务仍停。**
+**即时调度 2026-10-07T21:50:38.189Z：actual holder=NONE。Arc21:49:26.737154Z精确FULLRETURN，首浏览器FAILED0/4、0PNG、Owner token前置超时；四PID/已知两PGID ESRCH、scratch/links absent、context/HTTP closed、双EOF/drop0，12808/90000 CLOSED不重试。唯一NEXT=SVC06B-HELD23-READONLY-FRESH-FACTS-20261007-ONCE，Original native按fixed00dcd/invocation29bc单次30s、max1只读PG/0HTTPChrome/0服务或个人写，仅同op23现况观测，ready恒false；完整冻结floor 15,689,515,008B，最迟2026-10-07T21:54:38.189Z前START或0child。新产物cold/C4仍准备，个人held23三角色停止未恢复。**
 
 **Original 个人恢复两叶已接收：** `assignment_review` 可从 [runtime.ts 固定交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/verifier-extension/approved-handoff.json) 与 [runner main.ts 固定交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/runner-main-handoff-ready.json) 已由Original确认fresh核main18bf前像/全局冲突并自行amend接权，等待窄修固定源而非再次交权确认；具体收方claim版本未报，不猜填。原交方PROCESS d481956、parent f60b393均双端clean/STOP，8c2f v4 ACTIVE11与6dd v33 ACTIVE41已移出对应叶；不得整blob覆盖或把PROCESS四process叶独审冒runtime/T7验收。44811B归Original既有8MiB内512KiB，不另加预算。X01-07 verifier结果子片cb699v1/exact23已实际领取并在原16MiB普通段实施，唯一source登记待原D05；不与个人恢复抢写。
 
 
-**明确候选顺序：** Q01已完整归还，Original固定构建已归还，新的准确四页兼容和个人恢复准备优先。Arc FIFO30、TIMING02浏览器60、Picker90、Arc浏览器90、AV R2 f44ac/v6均未授；个人新产物准确兼容与恢复继续最高优先。实际已启动阶段不被后来准备打断。
+**明确候选顺序：** 新恢复产物的cold/C4形成有效READY后最高优先；准备本身不占actual/NEXT。b692四版本禁止运行，AV R2/Arc浏览器清理身份P2修复待审。TIMING02六组双图已实际通过/独审并封存待main，Picker90仍未运行。
 
 **预算剩余来源对账（不阻构建）：** [现有算术注](host-i01-newpair-queue-20261007/resource-residual-arithmetic-note.json)确认13,440,909,312B已扣R1/R2/R3封存3,462,397,952B，不能再扣；内含两DB规划268,435,456B，其他13,172,473,856B待两lead既有回执逐来源映射。不置零/扫描/删除/重测，也不改变本次冻结build或旧Qgate。
 
-**Original 后继依赖（不取权）：** 既有X01-VERIFIER-RUNTIME01候选五leaf中runtime.ts仍由个人恢复原作者持权；请其源码/独审安全点给出后续STOP→partial amend时机，当前继续写也明确即可。未来db_transaction_owner等VAR固定接口后fresh接权，不触main.ts、不建第二调度器、不碰dirtyVAR，当前0新增长/0claim/0运行。
+**Original 后继依赖（不取权）：** Mika21:23核runtime.ts仍95f47f5c v8/assignment持权，21:24 SVC06B自身7源已STOP；请当前cold安全点明确此literal是否仍需后续写。若不再需写，仅runtime.ts STOP→原version partial amend后给固定receipt；若需保留到C4/cold验收则给明确解除条件。Mika继续VAR准备，不新WT/take、不抢scope、不触main.ts；configuration两叶/AV plugin-runner按各原owner顺序交权。本请求不阻当前恢复。
 
-**Original 个人恢复当前准备：** 已审builder source8a0/deliverycb263，固定ref `codex/svc06b-recovery-runtime` / f37a3612068c7215994750574a7451ede841bcce / tree de843e0fda82600b4d7600c76614c9794c17e3af，仅04da+7已审源码，packages/SQL/晚logout/App合同不变；未生成artifact，不带movingmain插件/slots/DDL。现已21:14:03.021Z实际START；420s work+.5TERM+2reap，完整冻结floor18,933,678,080B。其后461a/caa1/d629/779四页须对新artifact新tuple正式兼容，旧C3不改签、779不重建，个人仍停机。
+**Original 个人恢复当前准备：** 构建已21:14:43.322Z真实RETURN并获独审批准，固定f37a/产物b692保留；后续cold在default start前FAIL，未给三角色/个人恢复PASS。原默认resolver修复在固定源准备，新的产物tuple形成后再更新四页兼容；461a/caa1/d629/779不重建或改签旧报告。个人服务仍停止。
 
 **S01启动交接历史：** 原owner已在截止前18:52:37.342481Z实际spawn，PID/PGID27722，同PID exec固定入口；18:53交接截止不影响已消费的300s实际运行，未撤销或打断；其后已terminal失败并活动资源RETURN，以下当前栏为准。原未报START等待过程保留历史。
 
@@ -29,6 +29,8 @@
 
 **Original 看板原优先级与来源请求：** GO 20:09只读发现 FLOW-001 自身priority仍3，关键服务恢复未进入首屏前三；请原owner核自身明确priority事实，Web管理不代改其status。请D05唯一writer在合法安全点完成已有Arc818B登记请求（c34d v1/exact20，唯一web-workspace-composition status；891f局部独审afb555已到），不新take或第二writer。阻塞阅读排序/紧凑时间沿原WPF001-37/TIMING02后继，个人恢复优先，不抢当前产品scope。
 
+**Original 可接TIMING02交付：** fixed94ed七源、98局部与六组浏览器/双390图已独审通过，owner e2c632 双端clean/all9STOP；[唯一最小main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/main-intake.json) 4786B/SHA3143736002d9bc47130914f98fda37b5dcc2c3bf8c77db4e9624b5e61ca60df5。Original已main2c966接收七源及证据，owner待安全点收口release；registry/live仍未验，不冒部署完成；沿原D05唯一writer登记三源，不重复take。
+
 **Original 唯一D05登记请求（三源合并）：** [当前三条固定映射请求](host-i01-newpair-queue-20261007/pending-source-registration-current.json)给原D05唯一writer：Arc c34dv1与X01 cb699v1/exact23在20:39真实API中均已显示领取，但仍208正常任务外未登记status。X01普通段20:31:27与领取20:32:43.609分开，不推领取前产品修改。后到TIMING02 d26acv1/exact9已20:40:08.317领取、20:41:20.224唯一status开工可读，也在同一请求待登记；不冒20:39快照包含后来的第三claim。不要重复take/新writer；实际mapping变更后再核API。以下Arc原请求保历史来源。  原Arc计划候选已实际领取20scope，唯一status位于 `web-workspace-composition/plans/wpf-workspace-arc/status.md`；请沿[固定登记request](host-i01-newpair-queue-20261007/arc-source-registration-request.json)登记WPF-WORKSPACEARC01→该独立WT/branch，父WPF-MATURE-05。当前awaiting-source-sync，不是未领取；不新增第二writer/手填状态源，实际检查只取原owner当前事实，不从mapping推导通过。
 
 
@@ -37,7 +39,7 @@
 
 **已归还与保留资源：** K01独立恢复消费floor16,065,757,184B，freshfree18,674,704,384B也高于后到16,101,408,768B。前置KeyError发生在supervise/PG之前，0child0PG未消费；只运行一次恢复。固定receipt封存入口随后归档，不为等待seal占窗；DB后台可能增长仍按有限规划保守计。
 
-**当前领取与工作状态：** Release与I01已main/释放；VISUAL已领取STOP，Recovery两项双图PASS，Picker90准备已审未运行。TIMING02独立exact9 SOURCE_STOP，98局部PASS，60秒浏览器候选源码/native已审但未运行；Arc独立exact20 STOP，两次HTTP各自FAIL保留，新FIFO30和四组浏览器90准备已审均未授。Q01资源已归还，真实两PG目标通过但调用器首FAIL保留，窄selector修复待独审。个人服务未恢复。
+**当前领取与工作状态：** Release新claim b4d7v1/exact4已领取STOP，C4原准备审批准但b692依赖阻塞NOT_RUN；I01已main/释放。VISUAL已领取STOP，Recovery两项双图PASS，Picker90未运行。TIMING02 exact9 STOP、98局部与六组浏览器/双390图已PASS并获审，待main/登记。Arc exact20 STOP，第三HTTP两项同轮PASS，旧两FAIL保留；浏览器清理身份P2待修。Q01真实两PG目标通过且selector修复获审，历史callerFAIL保留，main待接。
 **历史两次新检查候选预算（各计一次，最新完整线与授权只看页首）：** I01第二次独立60s保守新增264MiB、Release c2独立180s保守新增201MiB；17,454,858,240+276,824,064+210,763,776=17,942,446,080B未来完整线。旧两个失败阶段均CLOSED，余额不转，已删scratch不改旧原件，保留证据/KEEP不退款。后到R2/c2已消费gate均保持历史。
 
 **预算算术纠偏（不改历史gate）：** [明确更正事件](host-i01-newpair-queue-20261007/host-budget-arithmetic-correction.json)核SVC09A旧host envelope应为1,243,611,136B，原表漏24MiB；原R1 KEEP不退，新R2候选再计独立1,243,611,136B，当时future完整floor为17,454,858,240B。S01已按更高线实际执行并完整归还；R2已实际运行并明确归还，入口前失败及KEEP原件保留；该R2现无NEXT，不自动重试。

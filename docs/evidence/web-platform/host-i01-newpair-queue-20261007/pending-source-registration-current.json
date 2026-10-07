@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-07T20:42:21.668Z",
+  "recordedAt": "2026-10-07T21:32:42.604Z",
   "state": "ORIGINAL_SOLE_D05_MAPPING_PENDING",
   "authority": "Request only; not parallel sourcewriter or generatedprogress. Preserve owner unique status and exactclaim. Do not retake activeclaims.",
   "actualObservation": "Arc/X01 root20:39 API208+2 fixed; laterTIMING02 take20:40:08 andmanager-readownstatus20:41:20/source-switch. No newGET/claimed-live-registration.",
@@ -33,7 +33,9 @@
         "lead": "mika",
         "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result",
         "branch": "codex/plugin-verifier-admission-result",
-        "statusPath": "plans/x01-verifier-admission-result/status.md"
+        "statusPath": "plans/x01-verifier-admission-result/status.md",
+        "planDir": "plans/x01-verifier-admission-result",
+        "evidenceDir": "docs/evidence/x01-verifier-admission-result"
       },
       "parentTask": "X01",
       "claimId": "cb699a7a-bc28-4659-82e6-56f6a0765e6c",
@@ -42,7 +44,8 @@
       "claimCreatedAt": "2026-10-07T20:32:43.609Z",
       "claimReceipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/claim-receipt.json",
       "ordinaryPreparationStart": "2026-10-07T20:31:27Z",
-      "actualProductWriteStart": "NOT_REPORTED; no inference beforetake"
+      "actualProductWriteStart": "NOT_REPORTED; no inference beforetake",
+      "defaultPathWarning": "Do not derive extra01 suffix from lowercasedtaskID; use explicitdirs."
     },
     {
       "taskId": "WPF-DASHBOARD-TIMING02",
@@ -68,5 +71,16 @@
       "history": "ExistingplannedTIMING02, notopeningcompletedTIMING01/DASHSUM01. UIreadlayeralsofulfillsWPF00137tracking."
     }
   ],
-  "requestedAction": "Original D05 writer register three existing unique sources then normalowned reload preservingACCESS; report liveactual sourceCurrent/matchesSource. No registry/services touched byWebmanager. Personalrepair remainspriority."
+  "requestedAction": "Original D05 writer register three existing unique sources then normalowned reload preservingACCESS; report liveactual sourceCurrent/matchesSource. No registry/services touched byWebmanager. Personalrepair remainspriority.",
+  "latestObservation": {
+    "source": "Mika21:19:43 readonly",
+    "main": "3f5ee09f",
+    "registryAuthority": "8e551555 clean",
+    "task": "X01-VERIFIER-ADMISSION-RESULT01",
+    "taskHttpStatus": 404,
+    "responseBytes": 27,
+    "summaryTaskCount": 208,
+    "VARCount": 0,
+    "noNewManagerPoll": true
+  }
 }

@@ -1,0 +1,101 @@
+{
+  "recordedAt": "2026-10-07T21:27:49.215Z",
+  "actualStart": "2026-10-07T21:23:48.339Z",
+  "actualFinished": "2026-10-07T21:23:59.394704Z",
+  "scope": "ACTUAL_CALLER_AND_THREE_SUPERVISED_GROUPS_RETURNED_WITH_RETAINED_RESOURCES",
+  "operator": {
+    "pid": 87034,
+    "ownership": "childPidOnly",
+    "exit_code": 1,
+    "elapsed_ms": 10993,
+    "owned_state": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "signals": []
+  },
+  "groups": [
+    {
+      "phase": "clone",
+      "pid": 87035,
+      "ownership": "newChildSession",
+      "elapsedMs": 4902,
+      "exit": 0,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    },
+    {
+      "phase": "work",
+      "pid": 90633,
+      "ownership": "newChildSession",
+      "elapsedMs": 5455,
+      "exit": 1,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    },
+    {
+      "phase": "cleanup",
+      "pid": 95490,
+      "ownership": "newChildSession",
+      "elapsedMs": 547,
+      "exit": 1,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "signals": []
+    }
+  ],
+  "primary": {
+    "phase": "host-consumer",
+    "name": "TypeError",
+    "code": null
+  },
+  "cleanup": {
+    "purpose": "SVC06B_FIXED_ARTIFACT_COLD_THREE_ROLE",
+    "processes": [],
+    "failures": [
+      {
+        "phase": "default-empty-task-query",
+        "sourcePhase": "owned-observation",
+        "name": "Error",
+        "code": "DEFAULT_EMPTY_QUERY_FAILED",
+        "sqlState": "42P01"
+      }
+    ],
+    "database": "KEEP",
+    "directory": "KEEP",
+    "mayDrop": false,
+    "resourcesClosed": false,
+    "adminClosed": true,
+    "providerCalls": 0,
+    "launchAccounted": false,
+    "connections": {
+      "state": "empty",
+      "observations": [
+        {
+          "elapsedMs": 2.1731249999999704,
+          "rows": []
+        }
+      ]
+    }
+  },
+  "beforeDefaultStartCheckpoint": "ABSENT",
+  "launchObservation": "ABSENT",
+  "coldPassed": false,
+  "privateAndDatabase": "KEEP",
+  "personalIO": false,
+  "providerCalls": 0,
+  "retry": false,
+  "meaning": "Observed caller/groups are absent and database connections empty; launchAccounted/resourcesClosed remain false. No complete cold lifecycle or detached-service closure claimed."
+}

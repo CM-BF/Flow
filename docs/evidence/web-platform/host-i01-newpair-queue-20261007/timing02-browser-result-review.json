@@ -1,0 +1,154 @@
+{
+  "at": "2026-10-07T21:37:20.789043+00:00",
+  "decision": "APPROVED_SCOPED_TIMING02_BROWSER_RESULTS_AND_REPORTED_RETURN",
+  "blockingFindings": [],
+  "source": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+  "executionHead": "9503272922a38f2cd7d163332a83b8139187451f",
+  "checks": {
+    "fourTerminalSealsMatch": true,
+    "fiveRuntimeFilesMatch": true,
+    "exactSixChecks": true,
+    "sourceTupleConsistent": true,
+    "actualOuterExitZero": true,
+    "outerStreamBytesAndHashes": true,
+    "outerDualEOF": true,
+    "innerEOFNoDropped": true,
+    "noReportedErrors": true,
+    "fixtureAndContextClosed": true,
+    "resourceReturnReported": true,
+    "chargedConservativelyWithinWindow": true
+  },
+  "actual": {
+    "startedAt": "2026-10-07T21:35:02.739691+00:00",
+    "finishedAt": "2026-10-07T21:35:09.143432+00:00",
+    "fullReturnConfirmedAt": "2026-10-07T21:35:45.287742+00:00",
+    "innerObservedMs": 6349,
+    "outerElapsedMs": 6403.390166931786,
+    "chargedMs": 6404,
+    "budgetMs": 60000,
+    "remainingClosedNotTransferredMs": 53596,
+    "pidIdentities": [
+      {
+        "kind": "PID",
+        "id": 27747,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PGID",
+        "id": 27747,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PID",
+        "id": 27767,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PGID",
+        "id": 27767,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PID",
+        "id": 27754,
+        "state": "ABSENT"
+      },
+      {
+        "kind": "PGID",
+        "id": 27754,
+        "state": "ABSENT"
+      }
+    ],
+    "pg": 0
+  },
+  "rawEvidence": [
+    {
+      "path": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/browser-results.json",
+      "bytes": 2425,
+      "sha256": "0cc1db986143021b1b0c0668c1196a168be8f4bfca58e707116c161a301dcb85",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/owned-chrome.json",
+      "bytes": 2276,
+      "sha256": "ba979132b5736d1d8d9dd6d0191f587026bb4390c6440856b1e4254a3bf3e958",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/chrome.log",
+      "bytes": 3865,
+      "sha256": "2c08bbd6acd111a04f3a4cc38e442054971052fe0d416749ca41bc09a36078dd",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/task-timing-light-390.png",
+      "bytes": 89718,
+      "sha256": "1ca96633da2bc821b91ab1088ba75f1490ddaf6725a16e3cc1e1e31627219cc7",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/task-timing-dark-390.png",
+      "bytes": 85475,
+      "sha256": "e77659a185aa9fe93f5d7dae078a069544a48822eb3f9e942319013ac12abbc5",
+      "matches": true
+    }
+  ],
+  "terminalSeals": {
+    "binding.json": "5bdd9d304cf1febe19791c899684f8d60af7a70f3ed22f4195d2b49294190bd9",
+    "result.json": "25d7aa492306d1107dbf5fa31f1d9cb6634e5fbd8177d9588184470222944d87",
+    "browser-budget.json": "59b4d070c6b6f1b68af643f369ec485daa29e8d74ce4ac21122f249bdd5fdb19",
+    "runtime-evidence-manifest.json": "957fbbbb55be32abdaf97a169a24454ca2cee93322e4a70f21a75ad4ac66958a"
+  },
+  "outerReceipts": [
+    {
+      "path": "/private/tmp/timing02-browser-actual-tfm8l_gk/outer-result.json",
+      "bytes": 768,
+      "sha256": "46438bd19f1589a758293446b5cac5b9ae74996eee01abf1aeb48a82da8f4e83"
+    },
+    {
+      "path": "/private/tmp/timing02-browser-actual-tfm8l_gk/return-receipt.json",
+      "bytes": 1228,
+      "sha256": "29eabaf62933e0465da2bf8849d0c03f104f1d9eb2c5aa3dde232fd44d0e4078"
+    },
+    {
+      "path": "/private/tmp/timing02-browser-actual-tfm8l_gk/gate.json",
+      "bytes": 3642,
+      "sha256": "f52b6d7285133b2abe2676c623229778748a9249469759755afdc816debc7812"
+    }
+  ],
+  "screenshots": [
+    {
+      "path": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/task-timing-light-390.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "1ca96633da2bc821b91ab1088ba75f1490ddaf6725a16e3cc1e1e31627219cc7"
+    },
+    {
+      "path": "/private/tmp/timing02-b1/raw/timing02-20261007-213502/task-timing-dark-390.png",
+      "width": 390,
+      "height": 844,
+      "sha256": "e77659a185aa9fe93f5d7dae078a069544a48822eb3f9e942319013ac12abbc5"
+    }
+  ],
+  "visualReview": {
+    "performed": "Root viewed both actual 390px screenshots",
+    "observations": [
+      "Light and dark retain readable text and visible keyboard focus on the evidence disclosure.",
+      "Local date/time includes GMT-7 and America/Los_Angeles; UTC original remains in the expanded disclosure.",
+      "Open-ended review wait shows unknown start and unfinished declaration rather than fabricated elapsed wait.",
+      "Within captured modal viewport, columns and wrapped Chinese labels remain bounded; the page is intentionally scrolled to task timing."
+    ],
+    "limitations": "Two static screenshots do not establish every responsive size or every animation behavior."
+  },
+  "scopeLimits": [
+    "Fixture-only parser/UI and six exact browser groups; no actual registry, main proof or deployment verification.",
+    "Resource absence and closure are checked against the original reported receipts; root performed no new PID/PG/service probe.",
+    "No repeated 98-test run or browser invocation.",
+    "Historical local failures remain as recorded. Preparation/native acceptance remains separately pinned; this result does not approve personal runtime rollout."
+  ],
+  "cleanCodeReview": {
+    "at": "2026-10-07T21:37:20.789421+00:00",
+    "scope": "Result/evidence interfaces, honest unknown/wait/time semantics, source/result identity and no duplicate execution",
+    "findings": "No additional blocking result finding; preserve inner 6349ms versus conservative outer 6404ms and terminal versus later full-return confirmation."
+  }
+}
