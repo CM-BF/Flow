@@ -13,10 +13,10 @@ import './style.css';
 declare global {
   interface Window {
     __X03_INPUT__: { centers: string[]; token: string; projectId: string; emptyProjectId: string; runtimeManagement?: boolean };
-    __X03_TEST__: { aborted: number; contextKeys: string[]; holdNextDetail: boolean; detailReady?: boolean; release?: () => void; holdNextRuntimeAck?: boolean; runtimeAckReady?: boolean; runtimeAckDelivered?: boolean; releaseRuntime?: () => void };
+    __X03_TEST__: { runtimeReadCount: number; aborted: number; contextKeys: string[]; holdNextDetail: boolean; detailReady?: boolean; release?: () => void; holdNextRuntimeAck?: boolean; runtimeAckReady?: boolean; runtimeAckDelivered?: boolean; releaseRuntime?: () => void };
   }
 }
-window.__X03_TEST__ = { aborted: 0, contextKeys: [], holdNextDetail: false };
+window.__X03_TEST__ = { runtimeReadCount: 0, aborted: 0, contextKeys: [], holdNextDetail: false };
 function makeHost() {
   const host = new PluginHost({
     navigation: createStore<NavigationSnapshot>({ activeTaskId: null, workspaceTab: 'files', workspaceOpen: false }),
@@ -45,7 +45,11 @@ function App() {
     const epoch = sessionEpoch.current;
     return {
       reader: {
-        pluginRuntime: (id: string, signal?: AbortSignal) => client.pluginRuntime(id, signal),
+        async pluginRuntime(id: string, signal?: AbortSignal) {
+          const result = await client.pluginRuntime(id, signal);
+          window.__X03_TEST__.runtimeReadCount++;
+          return result;
+        },
         pluginMaterialInstalls: (id: string, options: { after?: string; limit?: number }, signal?: AbortSignal) => client.pluginMaterialInstalls(id, options, signal),
       },
       commands: createRuntimeCommandController({ async commandPluginRuntime(id, input, key, signal) {
@@ -83,7 +87,7 @@ function App() {
   }, [client]);
   return <main className="fixture-shell">
     <h1>Isolated plugin management fixture</h1>
-    <p>Real local centers and trusted browser host; this is not the Flow App entry.</p>
+    <p>{window.__X03_INPUT__.runtimeManagement ? 'Synthetic public DTOs over owned HTTP and a real browser host; not the production Flow App or center.' : 'Real local centers and trusted browser host; this is not the Flow App entry.'}</p>
     <nav aria-label="Fixture controls">
       <button onClick={() => setOpen(value => !value)}>{open ? 'Close plugin management' : 'Open plugin management'}</button>
       <button onClick={() => { centerRuntime.commands.revoke(); sessionEpoch.current++; void runtime.dispose(); setCenter(value => 1 - value); }}>Switch center</button>

@@ -4,7 +4,9 @@ import { randomUUID } from 'node:crypto';
 import { mkdir, lstat, writeFile } from 'node:fs/promises';
 import { fileURLToPath } from 'node:url';
 import { chromium, expect, type Page } from '@playwright/test';
-import { createServer as createVite } from 'vite';
+import { createServer as createVite, type AliasOptions } from 'vite';
+import react from '@vitejs/plugin-react';
+import tailwindcss from '@tailwindcss/vite';
 import { FlowClient } from '@flow/client';
 import { type PluginCommand, type PluginSnapshot, type PluginVersionDeclaration } from '@flow/contracts';
 import { createServer as createHttpServer } from 'node:http';
@@ -28,8 +30,13 @@ function runtimeAck(input: PluginRuntimeCommand) {
 }
 
 /** Dedicated public-DTO HTTP fixture. No PG, package execution or production authorization proof. */
-export async function createPluginRuntimeManagementFixture() {
-  const vite = await createVite({ root: fileURLToPath(new URL('../..', import.meta.url)), optimizeDeps: { entries: ['test/plugin-management/fixture/main.tsx'] }, server: { host: '127.0.0.1', port: 0, strictPort: false } });
+export async function createPluginRuntimeManagementFixture(options: { cacheDir: string; aliases: AliasOptions }) {
+  const vite = await createVite({
+    root: fileURLToPath(new URL('../..', import.meta.url)), configFile: false, envDir: false,
+    cacheDir: options.cacheDir, resolve: { alias: options.aliases }, plugins: [react(), tailwindcss()],
+    optimizeDeps: { entries: ['test/plugin-management/fixture/main.tsx'] }, logLevel: 'error',
+    server: { host: '127.0.0.1', port: 0, strictPort: false, proxy: {} },
+  });
   const writes: { center: string; key: string; body: string }[] = [];
   const received = new Map<string, { body: string; acknowledgement: ReturnType<typeof runtimeAck> }>();
   let mode: 'ack' | 'reject' | 'unknown' | 'reject-retry' = 'ack';
@@ -113,7 +120,13 @@ export async function runPluginRuntimeManagementChecks(page: Page, fixture: Awai
   await page.getByRole('button', { name: 'Expand plugin management', exact: true }).click();
   await expect(notice).toContainText('启停结果未知'); await select();
   await expect(panel.getByRole('button', { name: '确认启用', exact: true })).toBeDisabled();
-  await panel.getByRole('button', { name: '刷新启停状态（只读）', exact: true }).click(); await expect(notice).toContainText('启停结果未知');
+  const unknownRefresh = panel.getByRole('button', { name: '刷新启停状态（只读）', exact: true });
+  await expect(unknownRefresh).toBeEnabled();
+  const decodedReads = await page.evaluate(() => window.__X03_TEST__.runtimeReadCount);
+  await unknownRefresh.click();
+  await expect.poll(() => page.evaluate(() => window.__X03_TEST__.runtimeReadCount)).toBe(decodedReads + 1);
+  await expect(unknownRefresh).toBeEnabled();
+  await expect(notice).toContainText('启停结果未知');
   expect(fixture.writes).toHaveLength(2);
   fixture.setMode('reject-retry'); await notice.getByRole('button', { name: '重试原启停命令', exact: true }).click();
   await expect(notice).toContainText('重试返回 409'); expect(fixture.writes).toHaveLength(3); expect(fixture.writes[2]).toEqual(original);
