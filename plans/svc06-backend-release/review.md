@@ -1,3 +1,15 @@
+## 2026-10-07 09:40:22 UTC：r1结果PENDING_RESULT_REVIEW
+
+source344不改；[result-manifest](../../docs/evidence/svc06/b2b-host-policy/result-manifest.json)绑定22结果文件、17私有原件身份/hash、8逐字副本。实际FAIL_AT_DEFAULT_START_CLEANUP_CONFIRMED；首保存错误/缺失detached stderr、runner数值exit未观测与真实helper stopped分别记录。申请native唯一只读结果审，0重跑/新probe；真实宿主/策略/迁移结论不通过，旧准备批准不扩大。
+
+## 2026-10-07 09:35:19 UTC：APPROVED_PREPARATION_ONLY
+
+[唯一原件](../../docs/evidence/svc06/b2b-host-policy/independent-review.json) reviewedAt2026-10-07T09:31:39.196669+00:00，source3444895edf934c5c323639f232ef6fed7d51b022 / delivery5563e011；native_center_owner完整入口/直接消费者与全部声明绑定核同，无P1/P2、0reviewer执行。真实copy/PG/host/三App仍未验。补充[连接账](../../docs/evidence/svc06/b2b-host-policy/CONNECTIONS.md)与只读fresh事实未改变任何被审运行源或预算。
+
+## 2026-10-07 09:29:30 UTC：b2b真实宿主/迁移/策略入口 PENDING
+
+固定 `3444895edf934c5c323639f232ef6fed7d51b022`，[Interface](../../docs/evidence/svc06/b2b-host-policy/Interface.md)与[manifest](../../docs/evidence/svc06/b2b-host-policy/entry-manifest.json)。作者3个pure work-terminal guard、syntax/AST/status检查通过，原件见[局部记录](../../docs/evidence/svc06/b2b-host-policy/LOCAL-RESULT.md)；0PG/host/HTTP/copy/provider/personal。由native_center_owner唯一只读审入口/输入/cleanup，重点work unknown不得DROP、固定af51→c2c/b2b迁移、真实nonce组停止及synthetic loader限制；本条非批准。产品与原build/import不重审、不重跑。
+
 ## 2026-10-07 09:04:18 UTC：固定 b2b 实际结果 PENDING_RESULT_REVIEW
 
 一次离线构建与内部加载完成，产物c2c/固定b2b，原件见[RESULT](../../docs/evidence/svc06/update-b2b-candidate/RESULT.md)。source fbdb不变；作者仅报告真实结果，独立结论待Lead。30,975ms/exit0/组absent双EOF，0PG/provider/个人，兼容/实际更新仍open。
@@ -99,3 +111,7 @@ Review target commit: `87dc292ae2dc8c1357f074ec7bddd41de20108d8`
 Reviewer `native_center_owner / gpt-6-astra`，原件时间 `2026-10-07T02:55:46.413702+00:00`；source `b21890799fe11b8f1937e4b08382c997877f6d53` / delivery `a1f2c658841b7965a128a8936840b6053456eb06`，APPROVED_LIMITED_PARSER_BUILDER，无P1/P2。[原回执](../../docs/evidence/svc06/parser-builder-independent-review.json) SHA1732d140828f1326371949852fae34d6bbffecd5cb2a8b3ed08770116660c0ac；43绑定与11直接输入无差。完整7源已读，目录替换不再进入递归；7不同检查/4轮及两个原失败、EOF/owned absent/tmp清理核验。reviewer0测试/build/install/PG/provider。
 
 完整成品、真实filtered安装、SQL/SDK动态import、独立产物启动与开发树隔离仍NOT_RUN。各轮startedAt/finishedAt未存为UNKNOWN；run记录时间与原elapsed各自保留，不推算。本次仅作者转录唯一批准，全源停止写入。
+
+## 2026-10-07 09:16:46 UTC — b2b结果限定批准与main
+
+Execution Lead独立 `APPROVED_FIXED_ARTIFACT_AND_INTERNAL_LOADING`，target5d40/deliveryb905、原件[review](../../docs/evidence/svc06/update-b2b-candidate/result-independent-review.json)，P1/P2=0。main9b270接收35own路径；新host/迁移/配置、三App/个人仍未验。原build/raw不改、不重跑。

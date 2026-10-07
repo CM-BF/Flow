@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T09:37:40.693168+00:00 / main d022c800；本批接收X01已审runtime/中心接线 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 09:46:27 UTC / main 38110485；接收SVC06失败事实/清理及管理摘要 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,18 +12,18 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main d022c800；八固定产品逐字同2ea5adfe/9b639，四公共路径旧像与已审基线同一 |
+| 工作基线 / HEAD | main 38110485；本批仅SVC06已审准备和真实失败原件、三份管理文档，无新产品源 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 当前组合17/17、根noEmit0、真实createServer入口import0（未调用）；12.445s/800Braw、3组absent/双EOF、临时目录已清理。 |
-| 已集成main状态 / HEAD | main/origin d022c800已接O16分阶段实现；本批接收X01共享client、唯一runner与可信中心接线，原公开插件PG结果另由Mika独审。个人backend af51/v18、Web d629/v3/c7b宿主保持。 |
+| 检查状态 | SVC06准备/真实结果分别由native独审；本批0重跑、0PG、0provider。失败和确认清理分开，未把保存结果当宿主通过。 |
+| 已集成main状态 / HEAD | main/origin 38110485已接X01八产品与当前组合17/17；SVC06新后台runner就绪未证明，本批归档r1失败与正常清理证据。个人backend af51/v18、Web d629/v3/c7b宿主保持。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 固定后台构建、快捷设置组件和分阶段目标实验已合入；插件执行接线通过当前主线直接检查。 |
-| 下一可用交付 | 验证新后台的真实宿主、历史迁移和网页兼容；插件的操作入口与未知副作用恢复仍需后继。 |
-| 当前阻塞 | NONE |
+| 当前产出 | 插件执行接线已进入主线；固定后台的真实启动失败与清理证据已独审，原版本继续服务。 |
+| 下一可用交付 | 补齐后台启动首因诊断后继续验证；保留网页兼容与目标旅程准备同步推进。 |
+| 当前阻塞 | ACTIVE: 新后台尚未确认runner就绪，原owner正在补齐诊断；个人运行版本未变更。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -384,3 +384,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 2026-10-07T09:14:24.661602+00:00：补接独审Quick四固定源与唯一原件，主线原四文件与候选base相同、无手工冲突；当前Codex合同组合Web noEmit0/6121ms、自有组absent/双EOF。见[接收依据](../../docs/evidence/i02/quick-component-intake.json)。原26/6浏览器组未重跑；真实App/Send/Queue/Recovery与个人部署仍未由本片完成。
 
 2026-10-07T09:37:40.693168+00:00：已审插件runtime/domain 9b639与共享接线2ea5按四公共旧像核同后窄接，8产品逐字同固定源；[接收证据](../../docs/evidence/i02/x01-runtime-wiring-intake.json)。17直接检查、根类型和完整中心入口加载均通过，0PG/provider/个人操作；不把factory import当实例/网络验收，CLI和完整pin恢复仍开放。
+
+2026-10-07 09:46:27 UTC：[SVC06结果接收](../../docs/evidence/i02/svc06-b2b-host-intake.json)保存39.646s失败与293ms独立清理，Web未启动、新迁移/策略断言未到达；不重复构建/探针，不推断runner内部首因。管理三文件有独立doc review；未改变原CI/工程授写用户决定。

@@ -525,6 +525,10 @@ O11限定读口已main52eb；下一O12沿同一大目标提供已有goal的连�
 
 固定a89f42ab的observe在updatedAt/watermark变化时从cursor0重新映射；seen仅避免重复发送，events/detail读取仍重做，historyLength=0也因默认artifacts要求扫描。现10k事件/200引用/2MiB界限保留，不称无界泄漏。归原P01/REQ15，与观察取消后继一起：使用真实官方SDK HTTP fixture固定1产物+多次状态/非产物变化，记录events/detail请求数及字节，并核首Task、后继status/artifact updates、重连、水位、权限与unknown可见结果一致；0PG/模型/新依赖，不以无界缓存掩盖成本。官方依据[A2A 1.0规范3.1.6/3.5.2](https://a2a-protocol.org/v1.0.0/specification/)。此为后继设计输入，当前TUI/Claude/兼容发布优先，无新writer或运行。
 
+2026-10-07补充出站方向，仍归REQ-04/P01/P03：GO只读固定d022c800的`apps/runner/src/protocol-dispatch/index.ts`，observe每轮snapshot(historyLength:0)→importArtifacts→默认500ms等待；`materials.ts`的版本receipt去重在下载、拼接与digest之后。P03去history及上段反向bridge检查均不等于已经消除出站重复artifact传输；这是源码推断，未运行容量或token实验。
+
+后继沿本地find-skills/codebase-design，由原协议owner在安全空槽用固定官方SDK、少量有界poll和真实HTTP toy核稳定128KiB产物加状态变化，记录请求数、wire字节、重复hash/import次数及取消/完成发现延迟，再决定有界backoff/jitter或能力声明后的订阅加快照核对。A2A 1.0首Task/后续增量不保证断流无损重放；保留lease/cancel/uncertain不重发、版本、重连和响应字节上限。不造第二scheduler或无界缓存，不宣称token节省/已证100agents瓶颈；NOT_RUN、未领取，不抢当前SVC06/O16。
+
 
 2026-10-06 16:59 UTC REQ-19/SVC06（关联X01）只读研究输入：固定main9314中，server/index静态出口经package-fetch worker/artifact barrel加载pacote，安装routes/commands加载plugin-runtime/tar；只读artifact入口也依赖含resolver的barrel。因此未启用两个可选host的聊天/TUI入口仍需要这些依赖，TUI01F的真实准备清单体现此闭包。当前仅源码耦合事实，没有启动时间/RSS/物理安装节省实测。
 

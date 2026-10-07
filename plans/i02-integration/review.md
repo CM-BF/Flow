@@ -41,3 +41,7 @@ P05源6336由chatui01_owner独审/Mika接受，S01完整源6de、固定结果649
 ## X01 runtime与生产挂载限定接收 2026-10-07T09:37:40.693168+00:00
 
 复用chatui01_owner对9b639/2ea5的独立源码批准，核89+125绑定、四公共preimage和最终8source逐字一致；当前直接17/17、根noEmit0与完整factory import0，三自有进程闭合。未重跑插件原PG，未启provider或个人服务；操作CLI及未知副作用恢复不在本批准。见[唯一intake](../../docs/evidence/i02/x01-runtime-wiring-intake.json)。
+
+## SVC06真实失败记录与同期管理接收 2026-10-07 09:46:27 UTC
+
+Native独审APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE：22固定+17私有身份摘要+8逐字副本，原work FAIL和helper stopped/normalDROP成立；不批准宿主旅程。准备独审与真实结果分开。三管理文件a609获同reviewer限定APPROVED_DOCS，0执行。Lead仅窄copy并核固定源，详见[SVC06 intake](../../docs/evidence/i02/svc06-b2b-host-intake.json)。

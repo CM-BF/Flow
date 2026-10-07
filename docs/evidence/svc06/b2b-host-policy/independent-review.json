@@ -1,0 +1,75 @@
+{
+  "kind": "SVC06_B2B_HOST_POLICY_INDEPENDENT_PREPARATION_REVIEW",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "reviewedAt": "2026-10-07T09:31:39.196669+00:00",
+  "verdict": "APPROVED_PREPARATION_ONLY",
+  "source": "3444895edf934c5c323639f232ef6fed7d51b022",
+  "delivery": "5563e011be806f5ed7fd7c6085f991f2e469c063",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+  "branch": "codex/backend-release",
+  "manifest": {
+    "path": "docs/evidence/svc06/b2b-host-policy/entry-manifest.json",
+    "bytes": 6314,
+    "sha256": "c4d6b61e34e6c0704fa4dc40cc2a1510d18b99a3f84b6295faf0a20d1297495f"
+  },
+  "findings": [],
+  "blockingP1P2": 0,
+  "bindingAudit": {
+    "entryFixedGitAndCurrent": 7,
+    "evidenceFixedGitAndCurrent": 14,
+    "declaredRuntimeCurrentBytesAndSha256": 511,
+    "runtimeSubsetMatchingLegacyAf51Git": 488,
+    "runtimeReadonlyIdentityAndHash": 3,
+    "legacyAliasesIdentityAndRealpath": 4,
+    "artifactDirectSourceAndSqlFixedB2bGitCurrentAndInventory": 41,
+    "artifactSqlFiles": 33,
+    "webDescriptorManifestAndAssetCurrentHashes": 11,
+    "mismatches": 0,
+    "note": "Counts overlap and are not unique-file totals. Reused prior full artifact build/verification evidence; did not rehash or rerun its complete installed inventory."
+  },
+  "readCoverage": [
+    "Full entry.mjs, journey.mjs, supervise.py, work-terminal.mjs/test and Interface; full local caller and raw/report; final metadata-only delta.",
+    "Direct fixed b2b preview/maintenance/process/host/environment/browser-policy seams, old af51 factory/cancel, new factory migration sequence and conversation migration 035."
+  ],
+  "checks": [
+    "Independent cleanup first persists run-bound work-terminal; only newChildSession plus actual ownedState absent and no supervision exception admits subsequent DB ownership/zero-connection checks. Unknown work state cannot authorize DROP even with zero connections.",
+    "Own random DB create intent/OID/marker; old factory close and process-group stop precede normal DROP. Detached roles use recorded nonce/start/command identity with no PID-only fallback; pending/unconfirmed roles remain unknown. Cleanup exceptions are separate and retain resources.",
+    "Old af51 representative cancelled user turn and original columns are bound before b2b factory migrations. Expected versions 1..27 to 1..35 are consistent with 33 SQL files plus inline migrations; no manual route/migration patch. Snapshot explicitly excludes queue_checked_at and does not claim whole-database equality.",
+    "Default missing policy remains unsupported. Invalid policy and absent v2 tuple are rejected before drain; valid private pinned policy is checked through original bootstrap/refresh/resume and actual cookie/CSRF HTTP assertions.",
+    "Synthetic v1/v2 report fixtures are explicitly confined to NON_PRODUCTION_LOADER_FIXTURE and exercise loader/context guards only; never certify three actual Apps, personal compatibility, or deployment readiness.",
+    "Private owner/runner/database credentials and cookie/CSRF values are confined to private files/process environments or in-memory requests; public result retains safe error name/code and identity/digest facts. No personal inputs are read by the reviewer.",
+    "Work 180s and independent cleanup 30s use unchanged OPS14 .5s TERM +2s reap per owner; detached cleanup is separately recorded. This approval is not an actual runtime/peak-space/atomic-snapshot guarantee."
+  ],
+  "authorLocalEvidence": {
+    "selectedDistinct": 3,
+    "passed": 3,
+    "otherChecks": "two JS syntax, Python AST, own status parse",
+    "callerElapsedMs": 229,
+    "rawBytes": 493,
+    "supervisedChildren": 4,
+    "finalOwnedStates": [
+      "absent",
+      "absent",
+      "absent",
+      "absent"
+    ],
+    "dualEofAll": true,
+    "scratchRemoved": true,
+    "historicalUnknownObservationsPreserved": true
+  },
+  "executionByReviewer": {
+    "tests": 0,
+    "imports": 0,
+    "artifactCopies": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "hostStarts": 0,
+    "provider": 0,
+    "personalProbe": 0
+  },
+  "remaining": [
+    "Actual artifact clone/27-to-35 migration/three-role refresh and policy HTTP journey NOT_RUN; requires separately coordinated fresh resource window.",
+    "No browser UI or three real App compatibility approval; synthetic loader checks do not replace Web-owned evidence.",
+    "No personal installation update, credentials authorization or model qualification."
+  ]
+}

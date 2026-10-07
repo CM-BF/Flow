@@ -1,0 +1,71 @@
+{
+  "task": "SVC06",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "reviewedAt": "2026-10-07T09:41:40.007351+00:00",
+  "verdict": "APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE",
+  "source": "3444895edf934c5c323639f232ef6fed7d51b022",
+  "delivery": "c40883d06bc2d5bd4b5ba52f4de77fc0d39eb9b4",
+  "manifest": {
+    "path": "docs/evidence/svc06/b2b-host-policy/result-manifest.json",
+    "bytes": 11951,
+    "sha256": "ac998ba0ee4b14914c45a531dc29405940b9436b0e9538dd8add0798dc443fb8"
+  },
+  "audit": {
+    "fixedGitAndCurrentBindings": 22,
+    "privateRegularIdentityAndHashBindings": 17,
+    "byteExactPublicCopies": 8,
+    "mismatches": [],
+    "overlappingCounts": true,
+    "fullArtifactRehash": false,
+    "preparedInputsReusedFromPriorIndependentReview": true
+  },
+  "actual": {
+    "startedAt": "2026-10-07T09:37:20.428380Z",
+    "workExit": 1,
+    "workMs": 39646,
+    "firstSavedFailure": "START_UNCONFIRMED_CHECK_STATUS",
+    "lastCheckpoint": "start-default-off",
+    "checksObjectEmpty": true,
+    "oldMigrations": "1..27 asserted",
+    "oldFactoryClosed": true,
+    "centerReadyReachedByFixedStartOrdering": true,
+    "runnerIdentityCaptured": true,
+    "runnerReady": "NOT_PROVED",
+    "runnerNumericExit": "NOT_OBSERVED",
+    "web": "NOT_STARTED",
+    "newMigrations1to35Assertion": "NOT_REACHED",
+    "cleanupExit": 0,
+    "cleanupMs": 293,
+    "cleanupFinishedAt": "2026-10-07T09:38:00.412Z",
+    "workGroup27270": "absent / dual EOF",
+    "cleanupGroup54040": "absent / dual EOF",
+    "priorEpermObservations": "retained historical unknown; final absence separately observed",
+    "center41322": "original helper stopped; matching nonce exit0",
+    "runner44310": "original helper stopped; no numeric exit assertion",
+    "databaseOid": 1274706,
+    "drop": "work-terminal absent binding -> owned marker/OID -> bounded connections[] -> durable cleanup checkpoint -> normal DROP -> remaining[]",
+    "forceDrop": false,
+    "privateRunAndArtifact": "retained",
+    "providerCalls": 0,
+    "personalActions": 0,
+    "automaticRetry": false
+  },
+  "limits": [
+    "This approves result fidelity and recorded cleanup, not the host journey or product acceptance.",
+    "Detached stderr was ignored by the fixed original launcher; the inner failure cause cannot be reconstructed from code alone.",
+    "Native migration35/default-off/Web/policy/refresh/resume/HTTP assertions and three actual Apps remain unproved.",
+    "55 work samples show minimum free22451060736 and maximum private3029505; these are non-atomic samples, not exact peaks. Cleanup sampled private3031489 separately.",
+    "Clone regular logical367018355/allocated401944576 and volume delta are not exclusive physical allocation/reclaim proof.",
+    "Preparation source and private synthetic bytes were read or hashed only; no credentials were emitted and no private configuration was copied."
+  ],
+  "findings": [],
+  "reviewerOperations": {
+    "engineeringTests": 0,
+    "imports": 0,
+    "PGProbes": 0,
+    "HTTPProbes": 0,
+    "serviceActions": 0,
+    "provider": 0,
+    "personalReads": 0
+  }
+}

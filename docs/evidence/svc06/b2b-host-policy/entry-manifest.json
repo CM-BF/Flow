@@ -1,0 +1,182 @@
+{
+  "kind": "SVC06_FIXED_B2B_HOST_POLICY_PREPARATION",
+  "createdAt": "2026-10-07T09:27:23.620613+00:00",
+  "sourceTarget": "3444895edf934c5c323639f232ef6fed7d51b022",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
+    "manifestDigest": "c2c695e7da5a3b2efeaaa68bf407dda65c8e8a8afd5413657ab4b98a334509b7",
+    "sourceHead": "b2b5612b2a63106ad0e674ddf12b2e8f96cf3388"
+  },
+  "legacySource": "af51c621696230fbced12227670f014ca73bd8a1",
+  "entryBindings": [
+    {
+      "path": "entry.mjs",
+      "bytes": 16947,
+      "sha256": "ffa3bcdcc2534baa0c32c5942b2cee50ce38b2343f09c3d78ce1cb7bf0e25fe6",
+      "ref": "3444895edf934c5c323639f232ef6fed7d51b022"
+    },
+    {
+      "path": "journey.mjs",
+      "bytes": 18881,
+      "sha256": "3efdd3daa720edbad73cba1e8c851441cffef2f0cbebc2005a18633e746f89ce",
+      "ref": "3444895edf934c5c323639f232ef6fed7d51b022"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 4560,
+      "sha256": "cceb80d4cb22c0aed51f02fcf310522c6b5990a2389b20b29d3d780ba116401d",
+      "ref": "3444895edf934c5c323639f232ef6fed7d51b022"
+    },
+    {
+      "path": "work-terminal.mjs",
+      "bytes": 666,
+      "sha256": "c8c5c1663a19066f8b193a4493e80b9f5056a3e3e9188e515863f1a722cfcecc",
+      "ref": "3444895edf934c5c323639f232ef6fed7d51b022"
+    },
+    {
+      "path": "work-terminal.test.mjs",
+      "bytes": 1273,
+      "sha256": "76f35a924685e411ef4012b2a1009b9e890e06e9b00ce35416cf7eb0691b76c4",
+      "ref": "3444895edf934c5c323639f232ef6fed7d51b022"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 141451,
+      "sha256": "ac0e41e7331ad73f32c21cad316c010cab5b6bcf29c67e44e3e60f61c013f353",
+      "ref": "3444895edf934c5c323639f232ef6fed7d51b022"
+    },
+    {
+      "path": "Interface.md",
+      "bytes": 6800,
+      "sha256": "165cb43301572b2ff724e19781b13d068f980e45550e5054571c1deadb27cdd3",
+      "ref": "3444895edf934c5c323639f232ef6fed7d51b022"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "entry-syntax.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "entry-syntax.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "journey-syntax.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "journey-syntax.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "legacy-dependency-observation.json",
+      "bytes": 3787,
+      "sha256": "984998efe282fc1e8fe2b6181c3629bb73d67c0e42492d48f5cd915616703d9c"
+    },
+    {
+      "path": "legacy-input-observation.json",
+      "bytes": 205563,
+      "sha256": "603224933d8506adadd37c9fd72c37de3de3a21bba5c75291b7ade0836354ad9"
+    },
+    {
+      "path": "legacy-resolve.json",
+      "bytes": 2300,
+      "sha256": "14cd8346f702b8d3c31edd29e786849cb8efc76230961466d4dd4e13b68440da"
+    },
+    {
+      "path": "local-checks.py",
+      "bytes": 4056,
+      "sha256": "400044b0c27650ad17ef53b9e3a5881ffaf7fe6933e65b5b3f054446becb802a"
+    },
+    {
+      "path": "local-result.json",
+      "bytes": 4195,
+      "sha256": "3270e0048983fd29bf08ec3acd7e3684224a248f693a58d47331388e75b7c672"
+    },
+    {
+      "path": "status.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "status.stdout",
+      "bytes": 79,
+      "sha256": "2486ff5527e08cb27b7886fcc0612e9a2329533c82649fc65bc9934dc1021c6a"
+    },
+    {
+      "path": "work-terminal-3.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "work-terminal-3.stdout",
+      "bytes": 414,
+      "sha256": "5ebf25f6defba4ea9ddfb7cff081f7eead6f4b14e7aeed9c554ecaca3561848c"
+    },
+    {
+      "path": "LOCAL-RESULT.md",
+      "bytes": 1127,
+      "sha256": "ae30f5b68d6b2baa43b5549b90378d9adb040ea81d24e7e5a814d6194afa30ec"
+    }
+  ],
+  "fixedRuntimeInputs": 511,
+  "legacyAliases": 4,
+  "readonlyRuntime": [
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "dev": 16777234,
+      "ino": 110837507,
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "dev": 16777234,
+      "ino": 63570890,
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "dev": 16777234,
+      "ino": 123234533,
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "inheritedCloneCaller": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py",
+    "bytes": 3281,
+    "sha256": "05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6"
+  },
+  "resources": {
+    "workSeconds": 180,
+    "cleanupSeconds": 30,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "freshBytes": 2684354560,
+    "liveBytes": 1073741824,
+    "additionalBytes": 67108864,
+    "rawBytes": 2097152,
+    "newArtifactAndPrivateLogicalCap": 434127219,
+    "newPhysicalPlanningBytes": 706740224,
+    "databaseBytes": 100663296
+  },
+  "execution": "NOT_RUN; no PG/copy/host/provider/personal access in preparation",
+  "limits": "Synthetic loader fixtures do not certify App compatibility and never enter a personal candidate."
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 09:20:52 UTC / main 63768046；固定后台构建和快捷设置组件已接收，实际部署仍分开 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 09:43:40 UTC / main 38110485；插件接线已进入主线，个人新版宿主验收未通过 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origin 63768046 已接固定后台产物构建/内部加载证据及快捷设置组件；新产物实际host/迁移和保留App兼容仍在准备，组件尚未接实际聊天入口。个人backend af51/v18、Web d629/v3/c7b宿主保持。 |
+| 已集成main状态 / HEAD | main/origin 38110485已接插件runtime/中心接线、O16分阶段和Quick组件；SVC06固定产物自有host r1停在runner就绪，原资源已清理，实际迁移/网页兼容与个人采用尚未通过。个人backend af51/v18、Web d629/v3/c7b宿主保持。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 新后台已完成固定产物构建，快捷设置组件已合入；工具全文与连续目标的零模型旅程已有证据，个人网页保持原版本。 |
-| 下一可用交付 | 准备固定后台与网页兼容组合，使新版登录恢复进入个人预览；真实模型完整目标与工程交付继续独立验收。 |
-| 当前阻塞 | ACTIVE: 远程验证启用与工程模型授写资格仍待用户决定；这些等待不阻止本地接口验证和新版兼容准备。 |
+| 当前产出 | 插件执行接线、快捷设置组件与目标分阶段实验已合入；个人网页保持原版本，新后台宿主仍在验证。 |
+| 下一可用交付 | 解决后台启动的具体阻塞并验证保留网页兼容，使新版登录恢复能进入个人预览。 |
+| 当前阻塞 | ACTIVE: 新后台在自有环境未确认runner就绪，正在定位；远程验证启用与工程模型授写资格仍待原用户决定。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -215,3 +215,5 @@ SVC06-05 唯一准备 owner 为 assignment_review，候选见 [固定更新方�
 REQ19下一片由assignment_review承担SVC09（尚在原P02安全收口前的只读准备）：受信浏览器策略停服务前校验/实际host传递，加集中count/bytes/report策略，使新Web在保留旧三项资源下有正式第四项发布路径。方案见 [原SVC06候选](/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-4fe-candidate/candidate.md) 与 [集中保留规划](/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-4fe-candidate/retention-next-policy.md)。未take不写产品；未构建新artifact或操作个人服务。后台策略/迁移、旧App真实兼容、新宿主先读三项后第四CAS均保持独立验收。
 
 2026-10-07T08:21:18.665591+00:00：CHAT05P02原两次失败和PG03成功分别封存，真实factory/runRunner注入材料2,225,539B/9页完整一致，0provider；当前主线focused组合types0。ENG01L一次initialize/close已有记录，但原超限outerFAIL不改，后续exact清理独立成功。P02/ENG01L原owner已正式停写归还范围；SVC09由assignment_review实施，O16由原native_center_owner按f5a固定组合准备新旅程，旧FAIL/KEEP不动。证据分别在各唯一status与I02固定接收记录；共享PG于08:12:42归还Mika，本队当前无holder。
+
+2026-10-07T09:43:40.202069+00:00：REQ-04/P01/P03补出站artifact重复读取的源码研究输入，见[原P01成本后继](plan.md#p01增量协议读取成本2026-10-06-1601-utcgo只读输入)。与反向bridge重扫分开；0新writer/实验，NOT_RUN，不阻SVC06与O16。

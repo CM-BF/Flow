@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 09:04:18 UTC；b2b产物实际完成，运行窗已归还；未采个人事实 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 09:40:22 UTC；r1实际启动失败，原组与专库清理确认，结果待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,21 +13,21 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 原owner基线1e7c423ea2c5738d68adf182673803668c47b15d；入口 fbdb93e08a18b6fe21b8750e2ec726388493f8e0；artifact固定main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388 |
-| 工作树dirty状态 | 仅本次结果/raw/状态收口；产品与fbdb入口固定不改 |
+| 工作基线 / HEAD | 原owner基线1e7c423ea2c5738d68adf182673803668c47b15d；当前入口3444895edf934c5c323639f232ef6fed7d51b022；artifact固定main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388 |
+| 工作树dirty状态 | 仅封本次r1原始结果/分析/manifest及own metadata；344入口与产品不改 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 实现目标 | fbdb93e08a18b6fe21b8750e2ec726388493f8e0 |
-| 实现范围 | docs/evidence/svc06/update-b2b-candidate/build-once/entry.mjs, docs/evidence/svc06/update-b2b-candidate/build-once/supervise.py, docs/evidence/svc06/update-b2b-candidate/build-once/runtime-proof.mjs, docs/evidence/svc06/update-b2b-candidate/build-once/inputs.json |
-| 检查状态 | PASSED fbdb93e08a18b6fe21b8750e2ec726388493f8e0；固定b2b一次离线构建与内部加载成功，实际host/配置兼容/个人更新未运行 |
-| 已集成main状态 / HEAD | 原零任务host实验已main a040a364d426f4f8583fbfc67e5922077ba1f9ac；新策略SVC09已main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388；本次c2c构建结果待独审/接收，尚未采用到个人安装 |
+| 实现目标 | 3444895edf934c5c323639f232ef6fed7d51b022 |
+| 实现范围 | docs/evidence/svc06/b2b-host-policy/entry.mjs, docs/evidence/svc06/b2b-host-policy/journey.mjs, docs/evidence/svc06/b2b-host-policy/supervise.py, docs/evidence/svc06/b2b-host-policy/work-terminal.mjs, docs/evidence/svc06/b2b-host-policy/work-terminal.test.mjs, docs/evidence/svc06/b2b-host-policy/inputs.json, docs/evidence/svc06/b2b-host-policy/Interface.md |
+| 检查状态 | FAIL 3444895edf934c5c323639f232ef6fed7d51b022 实际r1停于默认宿主启动；独立cleanup确认，未重试；原3pure guard与构建结果保持 |
+| 已集成main状态 / HEAD | main/origin 9b27005f086c97c13b789020f5f8449d1552bb50 已逐字接收b905的35 own路径；c2c构建/内部加载已限定独审；实际新host/配置/个人更新仍未验 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新的固定后台及网页宿主产物已构建完成，内部依赖与入口加载检查通过。 |
-| 下一可用交付 | 构建结果独审后，验证三个保留页面与新后台及浏览器配置的兼容。 |
-| 当前阻塞 | ACTIVE: 实际构建结果待独审；配置兼容与个人更新仍待验证 |
+| 当前产出 | 已完成旧记录准备与新产物复制；真实启动在runner就绪检查处停止，测试进程和专库已正常清理。 |
+| 下一可用交付 | 审查本轮原始结果，并定位启动就绪失败后准备最小修复；保留旧数据与所有诊断原件。 |
+| 当前阻塞 | ACTIVE: 新宿主尚未完成启动，内部首因未被现有工具保存，需要有界诊断。 |
 | 需用户决定 | NONE |
-| Review | 准备已独审通过；实际c2c产物与加载结果PENDING_RESULT_REVIEW，不代表个人采用完成 |
+| Review | 344准备已APPROVED；r1实际FAIL及cleanup证据PENDING_RESULT_REVIEW，交native_center_owner唯一只读核验 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用原builder/OPS14/SVC08；已main SVC09提供私有策略与固定运行tuple及4项集中retention。此次只准备明确版本产物，不增调度器/状态权威；架构基线待Lead按b2b记录。 |
 
@@ -201,3 +201,35 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 | --- | --- | --- | --- | --- | --- |
 | SVC06-WAIT-B2B-REVIEW | UNKNOWN | 2026-10-07T09:00:20.787410Z | 审查 | 入口独审完成；最初等待时标无单独原件，不用commit时间推算 | update-b2b-candidate/independent-review.json |
 | SVC06-WAIT-B2B-WINDOW | 2026-10-07T09:00:20.787410Z | 2026-10-07T09:01:39.222Z | 资源 | 准备批准后等待实际共享窗口及fresh准入；唯一entry启动结束 | independent-review / execution-preflight / actual-first/reservation |
+
+## 2026-10-07 09:16:46 UTC：构建结果接收与下一自有宿主准备
+
+[唯一结果独审](../../docs/evidence/svc06/update-b2b-candidate/result-independent-review.json)于09:08:56.687153UTC限定批准，20fixed/current+3private+root一致；main9b270逐字接收b905。0重跑。下一[Interface](../../docs/evidence/svc06/b2b-host-policy/Interface.md)只准备固定af51旧数据→c2c真实factory/宿主/策略，不启动PG、不触个人；三真实App兼容仍独立。fresh ledger v7 active双scope已核。
+
+## 2026-10-07 09:29:30 UTC：真实宿主/迁移/策略入口固定待审
+
+固定source `3444895edf934c5c323639f232ef6fed7d51b022`；[单一manifest](../../docs/evidence/svc06/b2b-host-policy/entry-manifest.json)绑定7入口/511固定运行输入/4aliases及原始局部结果。09:26:26.023495Z→09:26:26.231667Z局部3个pure guard通过，2 JS syntax/Python AST/own status通过；4组absent/双EOF、493B raw、scratch正常清理，caller229ms。初始unknown观察原样保留，历史任务start UNKNOWN不补造。
+
+[检查与clean-code边界](../../docs/evidence/svc06/b2b-host-policy/LOCAL-RESULT.md)：work unknown时即使瞬时零连接也不能DROP；独立清理消费持久且绑定本run的组absent证据。新work180s+cleanup30s/.5TERM/2reap是本旅程待审预算，不宣称旧120s已覆盖。真实copy/PG/host/HTTP/provider/personal全部NOT_RUN；synthetic loader材料不能替代三真实App兼容。源停写交native_center_owner唯一独审。
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| SVC06-WAIT-B2B-HOST-REVIEW | 2026-10-07T09:29:30Z | 2026-10-07T09:31:39.196669Z | 审查 | 固定入口/局部证据交唯一独审；实际运行另等共享窗口 | 本次固定交审事件；b2b-host-policy/entry-manifest.json |
+
+## 2026-10-07 09:35:19 UTC：宿主准备已审，等待真实窗口
+
+[原样唯一审查](../../docs/evidence/svc06/b2b-host-policy/independent-review.json)绑定344/5563，APPROVED_PREPARATION_ONLY，无P1/P2。fresh[只读准入](../../docs/evidence/svc06/b2b-host-policy/prewindow-preflight.json)核7入口/511运行输入/3解释器与监督身份/4aliases同，claim v7有效，c2c manifest/source root同，run与outer未消费；free 23,421,153,280B，未将其当未来准入。未运行copy/PG/HTTP/host；协调账本只读查询与fixture分开。
+
+[实际连接容量账](../../docs/evidence/svc06/b2b-host-policy/CONNECTIONS.md)：本成功链保守最大15（business8+boss3+fixture1+maintenance2+helper1），旧新中心严格顺序，cleanup最多2；非总库峰值实测。原work180+cleanup30、fresh2.5GiB/live1GiB、规划674MiB+2MiB raw=676MiB保持。真实App兼容/个人采用仍独立。
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| SVC06-WAIT-B2B-HOST-WINDOW | 2026-10-07T09:31:39.196669Z | 2026-10-07T09:37:20.428380Z | 资源 | 已审入口等待Lead交付实际共享PG窗口；未预占 | b2b-host-policy/independent-review.json；本次执行协调 |
+
+实际共享窗口已接收：2026-10-07T09:37:20.395993+00:00，唯一source344/c4d6，fresh所有固定绑定/claimv7/namespace未用成立，free 23338795008B≥叠加Lead独立9MiB后的2693791744B；集群可用保守93≥本旅程15配置容量。仅本次自有copy/PG/宿主/HTTP策略验证随后启动，个人服务不动；未预判结果。
+
+## 2026-10-07 09:40:22 UTC：r1实际失败与清理确认
+
+[唯一结果](../../docs/evidence/svc06/b2b-host-policy/RESULT.md) / [原件manifest](../../docs/evidence/svc06/b2b-host-policy/result-manifest.json)：09:37:20.428380Z调用；work39,646ms/exit1，最早保存错误START_UNCONFIRMED_CHECK_STATUS，checkpoint start-default-off；旧27迁移/自有turn取消和factory close已完成。center ready后runner身份已捕获，runner ready未完成，Web未启动；旧工具未捕获detached stderr，原因与runner数值exit不猜测。
+
+09:38:00.412Z独立cleanup293ms/exit0；两监督组absent/双EOF、center/runner原helper stopped，center匹配nonce exit0。marker/OID1274706/有界连接[]/normalDROP remaining[]；工作组absence原件先持久。实际窗已归还；原artifact/clone/root/诊断保留、不重放r1。0provider/个人，唯一fixture任务在runner前取消；后继35迁移/配置/HTTP/refresh未验，不将cleanup升格为host成功。当前结果待native独审，局部只读诊断可独立继续，原SVC06-03/04/05全部保持open。

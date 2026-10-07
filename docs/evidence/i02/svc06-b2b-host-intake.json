@@ -1,0 +1,264 @@
+{
+  "at": "2026-10-07T09:45:31.272717+00:00",
+  "mainBefore": "3811048522dcc8a896e7ccf09872389b14bccd63",
+  "source": "3444895edf934c5c323639f232ef6fed7d51b022",
+  "delivery": "c40883d06bc2d5bd4b5ba52f4de77fc0d39eb9b4",
+  "review": "svc06-b2b-host-result-review.json",
+  "verdict": "ACCEPTED_FAILED_RUN_AND_CONFIRMED_CLEANUP",
+  "hostPassed": false,
+  "checksObjectEmpty": true,
+  "firstFailure": "START_UNCONFIRMED_CHECK_STATUS",
+  "copies": [
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/CONNECTIONS.md",
+      "bytes": 2493,
+      "sha256": "353ae934c38b850d09d0c2bebea74f3e34553b28b8ce4f43259acd2ec7fcd239"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/Interface.md",
+      "bytes": 6800,
+      "sha256": "165cb43301572b2ff724e19781b13d068f980e45550e5054571c1deadb27cdd3"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/LOCAL-RESULT.md",
+      "bytes": 1127,
+      "sha256": "ae30f5b68d6b2baa43b5549b90378d9adb040ea81d24e7e5a814d6194afa30ec"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/RESULT.md",
+      "bytes": 1559,
+      "sha256": "ee317ff8d054433d1bf84f72b5ef9e421e104ef1e486d0fd27c650a35f3feab7"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/actual-completion.json",
+      "bytes": 401,
+      "sha256": "9679c791531559e8a1755f336ea5fa5278def2ba25f90f9d08b3d9412bee1910"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/actual-invocation.json",
+      "bytes": 281,
+      "sha256": "d82ea4edb0246911019a3ed19f31fe9388ff749a5c45fc367217db48e9d29682"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/actual-r1/cleanup-checkpoint.json",
+      "bytes": 1013,
+      "sha256": "16f730015f3a1b99e4245d143cd023475343dd505be3119bcbff6a08beb83a3f"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/actual-r1/cleanup-result.json",
+      "bytes": 1068,
+      "sha256": "7f3c77b877f8e9bdf91587d0a0a6c1dc909f7f9e2d6eeda5fb1490d07e3b2fd3"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/actual-r1/clone-result.json",
+      "bytes": 420,
+      "sha256": "7c00f62eaad84cda65da43ebbcb60f07ccae267b299288809e9f7ebcc09bfd34"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/actual-r1/clone-verified.json",
+      "bytes": 387,
+      "sha256": "f4c27a7232157ee3ca21e07b5a490d5320a3d234620a47ef550ae9b41de0eee3"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/actual-r1/reservation.json",
+      "bytes": 565,
+      "sha256": "69ef6a59afc7b5fef50e35173f1a16ef886d3669b706284c38b36b14474a514e"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/actual-r1/state-summary.json",
+      "bytes": 1784,
+      "sha256": "faa644d5bf0eb9dcff21b036fbf972542655afb5c68bae2f547644cd6e8bac72"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/actual-r1/work-checkpoint.json",
+      "bytes": 935,
+      "sha256": "5ec067df9d0f94428b6b708ebd6a576b8b906bc95f67356d7e7b0f3d92d30c31"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/actual-r1/work-result.json",
+      "bytes": 1630,
+      "sha256": "9bfb103972f7fc9093497fa17c120bcb5f810e7862c6f835577a49424aed3cca"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/actual-r1/work-terminal.json",
+      "bytes": 354,
+      "sha256": "5afde835312e29055493e730106fb4cc1783e2e113e63d6ab0bfd68348ac5ff4"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/cluster-preflight.json",
+      "bytes": 423,
+      "sha256": "46033f078b44e28ea00fa0b8dd878e840fede08dc4c197b6d5a7d7caa2dae141"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/entry-manifest.json",
+      "bytes": 6314,
+      "sha256": "c4d6b61e34e6c0704fa4dc40cc2a1510d18b99a3f84b6295faf0a20d1297495f"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/entry-syntax.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/entry-syntax.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/entry.mjs",
+      "bytes": 16947,
+      "sha256": "ffa3bcdcc2534baa0c32c5942b2cee50ce38b2343f09c3d78ce1cb7bf0e25fe6"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/execution-preflight.json",
+      "bytes": 1810,
+      "sha256": "8f8c3e7261e9ca047c36afe47beec1fdee88e694b070edd795b759e024ae29c7"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/host-policy-outer.json",
+      "bytes": 3256,
+      "sha256": "f2a8d1e1f43303535ed4f4e2675476c26d2b3eeedc9bde53f4a712e97b807b20"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/independent-review.json",
+      "bytes": 4475,
+      "sha256": "670c19ec09c0954e0c8bb07e1e0411e06d51dba155a08f077df172b20506bc2b"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/inputs.json",
+      "bytes": 141451,
+      "sha256": "ac0e41e7331ad73f32c21cad316c010cab5b6bcf29c67e44e3e60f61c013f353"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/invocation.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/invocation.stdout",
+      "bytes": 359,
+      "sha256": "198b199aa0db114676b313e5edd0102a7851c5762db7a2ef717b1bc9aaead75c"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/journey-syntax.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/journey-syntax.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/journey.mjs",
+      "bytes": 18881,
+      "sha256": "3efdd3daa720edbad73cba1e8c851441cffef2f0cbebc2005a18633e746f89ce"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/legacy-dependency-observation.json",
+      "bytes": 3787,
+      "sha256": "984998efe282fc1e8fe2b6181c3629bb73d67c0e42492d48f5cd915616703d9c"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/legacy-input-observation.json",
+      "bytes": 205563,
+      "sha256": "603224933d8506adadd37c9fd72c37de3de3a21bba5c75291b7ade0836354ad9"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/legacy-resolve.json",
+      "bytes": 2300,
+      "sha256": "14cd8346f702b8d3c31edd29e786849cb8efc76230961466d4dd4e13b68440da"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/local-checks.py",
+      "bytes": 4056,
+      "sha256": "400044b0c27650ad17ef53b9e3a5881ffaf7fe6933e65b5b3f054446becb802a"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/local-result.json",
+      "bytes": 4195,
+      "sha256": "3270e0048983fd29bf08ec3acd7e3684224a248f693a58d47331388e75b7c672"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/prewindow-preflight.json",
+      "bytes": 2200,
+      "sha256": "bb1ae7151ad94797b2c3acaf3a096463fef18e45ba4c064dc8931a11a763175f"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/result-analysis.json",
+      "bytes": 3441,
+      "sha256": "12e7002ea11010a2cad47ad288f758cde4b2bc22840c31403130a3e7fab54864"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/result-manifest.json",
+      "bytes": 11951,
+      "sha256": "ac998ba0ee4b14914c45a531dc29405940b9436b0e9538dd8add0798dc443fb8"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/status.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/status.stdout",
+      "bytes": 79,
+      "sha256": "2486ff5527e08cb27b7886fcc0612e9a2329533c82649fc65bc9934dc1021c6a"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/supervise.py",
+      "bytes": 4560,
+      "sha256": "cceb80d4cb22c0aed51f02fcf310522c6b5990a2389b20b29d3d780ba116401d"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/work-terminal-3.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/work-terminal-3.stdout",
+      "bytes": 414,
+      "sha256": "5ebf25f6defba4ea9ddfb7cff081f7eead6f4b14e7aeed9c554ecaca3561848c"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/work-terminal.mjs",
+      "bytes": 666,
+      "sha256": "c8c5c1663a19066f8b193a4493e80b9f5056a3e3e9188e515863f1a722cfcecc"
+    },
+    {
+      "path": "docs/evidence/svc06/b2b-host-policy/work-terminal.test.mjs",
+      "bytes": 1273,
+      "sha256": "76f35a924685e411ef4012b2a1009b9e890e06e9b00ce35416cf7eb0691b76c4"
+    },
+    {
+      "path": "plans/svc06-backend-release/plan.md",
+      "bytes": 12294,
+      "sha256": "07baa767110523aba6457074433b5a8eda0101c19bbc933970e39128a558350d"
+    },
+    {
+      "path": "plans/svc06-backend-release/review.md",
+      "bytes": 13928,
+      "sha256": "a620e85dfb2abb7b65d86e6e0bdff706ab38313901e4b6f046f0275f405f35d6"
+    },
+    {
+      "path": "plans/svc06-backend-release/status.md",
+      "bytes": 30112,
+      "sha256": "6e4c85a4d527ae749ed52b718abb23fd7dc1011209f5627728fd0494779608bc"
+    }
+  ],
+  "privateConfigCopied": false,
+  "newRuns": 0,
+  "provider": 0,
+  "personalActions": 0,
+  "remaining": "Runner startup first cause not observed; Web/migrations/policy full assertions unpassed. Subsequent diagnostics under original owner exact claim.",
+  "management": {
+    "source": "a609ba62b901e056c9ddcbf639908f43a8eff36a",
+    "paths": [
+      "plans/flow-001-architecture/plan.md",
+      "plans/flow-001-architecture/status.md",
+      "plans/ops-001-status-review/status.md"
+    ],
+    "reviewer": "native_center_owner / gpt-6-astra",
+    "verdict": "APPROVED_DOCS",
+    "reviewBasis": "Complete three-file delta, source support and relative references; no tests/PG/probe. Pending decisions and preserved host failure remain."
+  }
+}
