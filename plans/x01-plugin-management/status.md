@@ -14,8 +14,8 @@
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base ab5a；source a2981b71b47d254356152c505ddfff29edd76446；support f2848f9d0406222aff54fcfb0c5650147e0ca04b；固定七源与原local/PG准备，元数据待提交 |
-| 工作树 dirty 状态 | 仅本片绑定/状态收口，源码固定供独审 |
+| 工作基线 / HEAD | base ab5a；source a2981b71b47d254356152c505ddfff29edd76446；support f2848f9d0406222aff54fcfb0c5650147e0ca04b；固定七源与local/PG准备；交审packet82cca2124bd7c234f21088cca53adc46f50751f6已push |
+| 工作树 dirty 状态 | 交审packet82cca212核HEAD=origin且clean；本次仅停点字段收口，提交后复核 |
 | 工作分支状态 | review |
 | 检查状态 | PASSED |
 | Review | 初审11:05:20唯一P2已窄修，等待chatui固定增量与准备复审 |
@@ -23,7 +23,7 @@
 | 检查目标 | a2981b71b47d254356152c505ddfff29edd76446 |
 | 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；process验收证据已main221921c0，I02 x01-process-acceptance-intake.json，productDelta=[]；新候选七源未main，不冒latest main全集检查 |
 | 实现目标 | a2981b71b47d254356152c505ddfff29edd76446 |
-| 实现范围 | apps/server/src/plugin-runtime/{commands,store,routes,host-candidates,host-candidates.test,runtime.test}.ts；packages/contracts/src/plugin-runtime-hosts.ts；docs/evidence/x01/host-candidates-*（含Python/配置/固定镜像） |
+| 实现范围 | apps/server/src/plugin-runtime/commands.ts；apps/server/src/plugin-runtime/store.ts；apps/server/src/plugin-runtime/routes.ts；apps/server/src/plugin-runtime/host-candidates.ts；apps/server/src/plugin-runtime/host-candidates.test.ts；apps/server/src/plugin-runtime/runtime.test.ts；packages/contracts/src/plugin-runtime-hosts.ts；docs/evidence/x01/host-candidates-local.py；docs/evidence/x01/host-candidates-pg-once.py；其余固定支持精确字面见376项manifest（含配置及镜像） |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
@@ -367,3 +367,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T11:07:09.165529+00:00：候选源a2981b71b47d254356152c505ddfff29edd76446 / support f2848f9d0406222aff54fcfb0c5650147e0ca04b固定，[唯一交审入口](../../docs/evidence/x01/host-candidates-review-ready.json)。9个实际child，10distinct分轮/最终types0；原首types及route失败保持，新P2只定向1+types，全部ownedabsent/EOF/同inodeTMP清理；11:05:32已直接归还db。新PG单case仅准备，独立180s尚NOT_OPEN，不继承已消费窗口；无PG预约。376绑定/2030211B，65external/21links继承固定闭包；动态SQL/权限影响必须由该新真实PG验证，不把mock当通过。原段10:48:53–11:08:53不重置。架构新增owner候选只读边/当前policy投影，主线图更新待受控接收由Lead负责。
 
 管理ACK依赖仅链接其唯一owner入口：[已审待main ACK](../../../plugin-command-acks/docs/evidence/x01-plugin-command-acks/main-intake.json)，source ae1482fd / delivery e54f57eb，10:50:56 APPROVED；不复制子task状态。本次process验收已由main221921c0正式接收，原997f/23绑定/raw不改。
+
+2026-10-07T11:07:54.580857+00:00：本20min段安全停止写源码/执行，交审packet82cca212已pushclean；chatui实际running正做P2 delta与最终准备复审。manifest SHA8756391bccddfc88acaca71ff92a8f306b6489ba12381c0fad4395371c9c37c1。当前0local/PG/待launch，claimv26保留审查/修复，合同767不变供已独审consumer；若准备批准仍须独立新180s实际窗口，不自行启动。当前差额仅独审结论/后继真实PG，不以本segment延时等待或推定通过。
