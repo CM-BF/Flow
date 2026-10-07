@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 22:51 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 22:52 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -88,3 +88,7 @@ READY_CLOSED封存22:41:02Z→manager选择22:43:38.826Z→actual START22:45:32.
 chatui01_owner只读批准729093d8c09f512cb3e6152708614baf68bea57b，ACTUAL_RESULT_FIDELITY_REVIEW_APPROVED，0 P1/P2；见pg-actual-review.json。13源/36证据34389B/512runtime20alias核符，8/8真实PG与资源事实通过。该结论替代上方本次待审描述，旧原件/manifest不回写。main未集成，完整task finish仍NOT_COMPLETED，GDEP01-04开放；真实public execute/native/progression组合后继由Lead按集成影响处理。
 
 运行资源FULLRETURN已知观察22:48:09.320783Z（精确原caller回执wall未知）；0待launch/0活动PG或工程child，外置9858B公开证据sealedKEEP无未来写入。最终metadata提交pushclean后所有本task写入STOP、claimv2保留待main/review后续，特殊窗口已消费不重跑。
+
+## 主线接收固定入口
+
+main-intake.md列四产品叶/source/base前像与分列checks/review；commands仅同签名import替换，真实execute/native/progression端到端未跑。22:52:17.236558Z fresh f244v2 ACTIVE/exact6。22:51:49.534236Z已在原actual合法尾额归档独审；最后入口使用Root前瞻3MiB封套（含index），不叠cap、不重置已结束actual或任务开始。0新工程/PG/probe；最终pushclean后全部STOP/0待launch，claim保留。
