@@ -20,6 +20,7 @@ let store: TrustedPackageStore;
 let first: InstalledPackageReceipt;
 let second: InstalledPackageReceipt;
 let pinnedBeforeUpgrade: PluginExecutionInput;
+let originalBinding: string;
 
 async function archive(version: string) {
   const directory = join(root.path!, version);
@@ -60,6 +61,7 @@ beforeAll(async () => {
   store = { root: join(root.path, 'store'), storeId: 'x01-semver-pinning', allowedDigests: [oldArchive.artifact.sha256, newArchive.artifact.sha256] };
   first = (await prepareInstalledPackage({ store, ...oldArchive })).receipt;
   pinnedBeforeUpgrade = invocation(first);
+  originalBinding = JSON.stringify(pinnedBeforeUpgrade.binding);
   second = (await prepareInstalledPackage({ store, ...newArchive })).receipt;
 });
 
@@ -77,7 +79,7 @@ afterAll(async () => {
 });
 
 test('new material installation preserves the old frozen binding and both exact release identities', async () => {
-  const snapshot = JSON.stringify(pinnedBeforeUpgrade.binding);
+  expect(JSON.stringify(pinnedBeforeUpgrade.binding)).toBe(originalBinding);
   expect(second.installationId).not.toBe(first.installationId);
   expect(second.treeDigest).not.toBe(first.treeDigest);
   expect(second.artifact.sha256).not.toBe(first.artifact.sha256);
@@ -97,7 +99,7 @@ test('new material installation preserves the old frozen binding and both exact 
     expect((await readInstalledPackage({ store, artifact: receipt.artifact })).receipt).toEqual(receipt);
     observations.push({ release: receipt.artifact.version, phases, artifact: result.artifact, provenance: result.provenance });
   }
-  expect(JSON.stringify(pinnedBeforeUpgrade.binding)).toBe(snapshot);
+  expect(JSON.stringify(pinnedBeforeUpgrade.binding)).toBe(originalBinding);
 });
 
 test('substituting the new artifact into an old material pin fails before either grant', async () => {
