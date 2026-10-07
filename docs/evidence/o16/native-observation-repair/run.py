@@ -21,9 +21,9 @@ def main():
  if free<1076363264:save(out/'not-run.json',{'freeBytes':free,'requiredBytes':1076363264});return 3
  assert hashlib.sha256(SUP.read_bytes()).hexdigest()=='725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d'
  scratch=Path(tempfile.mkdtemp(prefix='flow-o16-observation-',dir='/private/tmp'));initial=scratch.lstat()
- command=[NODE,'--test','--test-concurrency=1']
+ command=[NODE,'--import','tsx','--test','--test-concurrency=1']
  if len(sys.argv)>2:command+=['--test-name-pattern',sys.argv[2]]
- command+=['experiments/continuous-goal-acceptance/query-policy.test.mjs','experiments/continuous-goal-acceptance/query-run.test.mjs','experiments/continuous-goal-acceptance/operator.test.mjs']
+ command+=['experiments/continuous-goal-acceptance/query-run.test.mjs'] if label=='run-02' else ['experiments/continuous-goal-acceptance/query-policy.test.mjs','experiments/continuous-goal-acceptance/query-run.test.mjs','experiments/continuous-goal-acceptance/operator.test.mjs']
  env={'PATH':'/usr/bin:/bin','HOME':str(scratch),'TMPDIR':str(scratch),'TSX_DISABLE_CACHE':'1','NODE_DISABLE_COMPILE_CACHE':'1','PYTHONDONTWRITEBYTECODE':'1'}
  files=[Path(__file__).resolve(),SUP,*[ROOT/'experiments/continuous-goal-acceptance'/name for name in ['config.mjs', 'query-policy.mjs', 'driver.mjs', 'operator-bounds.mjs', 'operator.mjs', 'query-policy.test.mjs', 'query-run.test.mjs', 'operator.test.mjs']]]
  save(out/'reservation.json',{'startedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scratch':str(scratch),'dev':initial.st_dev,'ino':initial.st_ino,'freeBytes':free,'command':command,'bindings':{str(p):hashlib.sha256(p.read_bytes()).hexdigest() for p in files},'PG':0,'provider':0})
