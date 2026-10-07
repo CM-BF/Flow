@@ -1,0 +1,72 @@
+{
+  "at": "2026-10-07T15:55:16.166506+00:00",
+  "finding": "I01-BROWSER-P2-01",
+  "source": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+  "executionHeadPolicy": "Fresh current clean metadata HEAD; preparedHead only historical preparation provenance.",
+  "movedExactly": [
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/plans/wpf-i01-plugin-integration/review.md",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/plans/wpf-i01-plugin-integration/status.md"
+  ],
+  "sourcePins": 219,
+  "externalPins": 42,
+  "fixedGitAndDiskPinErrors": [],
+  "metadataAttributionCorrection": {
+    "review.md": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+    "status.md": "Original preparation working-tree capture; not equal to source49d71 Git blob. Exact original pin retained; no commit attribution inferred."
+  },
+  "unchangedCallers": [
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/run.py",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/run.py",
+      "bytes": 9807,
+      "sha256": "856802523170ca61992165a07deab56d6213a1428f5e2cafc4d58acff52d58e9"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/worker.mjs",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/worker.mjs",
+      "bytes": 4828,
+      "sha256": "89209c0488b77dd9139a7ebd24b0963f1b0819cf0023d686d6e276da5f462722"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/capture.py",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/capture.py",
+      "bytes": 8348,
+      "sha256": "5a7f25b8c86051958d446da67f5b64ea4661712f8f43127da430f8af094d3c8c"
+    }
+  ],
+  "oldInputs": [
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/pre-provenance-fix/binding.json",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/pre-provenance-fix/binding.json",
+      "bytes": 109382,
+      "sha256": "df26701c1914a453b16243eba2147a420761b07b8afbdcad256ddd52f7e7ec90"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/pre-provenance-fix/manifest.json",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/pre-provenance-fix/manifest.json",
+      "bytes": 3225,
+      "sha256": "7c5ee0df31c46548d84479a525ecd747fb73c814eab94baa7cfc010870b455fc"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/pre-provenance-fix/grant-template.json",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/pre-provenance-fix/grant-template.json",
+      "bytes": 401,
+      "sha256": "4e7aeeca6851c6a3650c583621073ec531402653a67da371eb6c0c237fb9d836"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/pre-provenance-fix/README.md",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/pre-provenance-fix/README.md",
+      "bytes": 4326,
+      "sha256": "05d2ee79926414fe42f9168980f2675af158b62df425b248c6a7c216a12185a8"
+    }
+  ],
+  "rootPreparationReview": {
+    "path": "/private/tmp/root-i01-browser-preparation-review-20261007.json",
+    "realpath": "/private/tmp/root-i01-browser-preparation-review-20261007.json",
+    "bytes": 6640,
+    "sha256": "626241dfa1bb8a9e8c35095c762f4f8017fafc5649a56cbf989c39ea0beda95c"
+  },
+  "runtime": "NOT_RUN; static bytes/hash/Git reads only.",
+  "grant": "NONE; template allowRun remains false.",
+  "futureFloorRule": "Fresh actual grant must use manager complete higher sum; last reported minimum16154558464 bytes. No runtime reservation."
+}

@@ -1,5 +1,5 @@
 {
-  "kind": "LOCAL_ACTUAL_COMPLETE_BROWSER_NOT_GRANTED",
+  "kind": "LOCAL_PHASE_CLOSED_ACTUAL_ACCEPTED_BROWSER_NOT_GRANTED",
   "source": "dfa244744ead31cc4cd8a012284c48ccb6dfe38d",
   "totalMsProposed": 30000,
   "perChildMsProposed": 15000,
@@ -34,11 +34,16 @@
     }
   ],
   "resolver": "/private/tmp/plugin-app-msg03-delta-f96svnbb/resolver-reuse.json",
-  "resolverPreparation": "Need own ignored node_modules bounded symlinks to pinned installed third-party package roots; @flow/{client,contracts,interaction} only this fixed WT. No install/copy/otherWT writes. Fresh manifests/entry bytes before execution.",
+  "resolverPreparation": "33 exact readonly ignored links prepared in this WT; @flow/client/contracts/interaction only this WT. No install or package copy; actual pins archived.",
   "runtimeGranted": true,
   "launchAllowedNow": false,
   "spentMs": 10834,
   "futureFreeFloor": 14414970880,
   "preparedRunner": "/private/tmp/i01-runtime-app-local-f8672ie0/run.py",
-  "remainingMs": 19166
+  "remainingMs": 19166,
+  "finalSource": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+  "closedAt": "2026-10-07T15:58:30.585Z",
+  "state": "CLOSED",
+  "unusedMs": 19166,
+  "unusedTransferred": false
 }

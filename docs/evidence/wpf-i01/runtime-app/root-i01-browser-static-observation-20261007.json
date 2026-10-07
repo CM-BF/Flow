@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T15:50:12.404948+00:00",
+  "packet": "/private/tmp/i01-runtime-app-browser-0uch3mbo",
+  "manifestSha256": "7c5ee0df31c46548d84479a525ecd747fb73c814eab94baa7cfc010870b455fc",
+  "bindingSha256": "df26701c1914a453b16243eba2147a420761b07b8afbdcad256ddd52f7e7ec90",
+  "source": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+  "counts": {
+    "packet": 10,
+    "source": 221,
+    "external": 42
+  },
+  "bytes": {
+    "packet": 161013,
+    "source": 2477725,
+    "external": 5385323
+  },
+  "errors": [
+    {
+      "group": "source",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/plans/wpf-i01-plugin-integration/review.md",
+      "error": "disk binding mismatch"
+    },
+    {
+      "group": "source",
+      "path": "plans/wpf-i01-plugin-integration/review.md",
+      "error": "fixed commit mismatch"
+    },
+    {
+      "group": "source",
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/plans/wpf-i01-plugin-integration/status.md",
+      "error": "disk binding mismatch"
+    },
+    {
+      "group": "source",
+      "path": "plans/wpf-i01-plugin-integration/status.md",
+      "error": "fixed commit mismatch"
+    }
+  ],
+  "scope": "Read-only bytes/realpath/fixed Git source and Python AST; no product/candidate imported or executed. External entry/manifest pins only, not full dependency closure."
+}

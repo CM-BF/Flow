@@ -14,13 +14,13 @@
 - [x] **WPF-I01-02** 原P01 host/slots挂载完成，历史target92a保留。
 - [x] **WPF-I01-03** 原局部/浏览器/真实协议验证完成，旧结论不继承。
 - [x] **WPF-I01-04** 原固定target独审/main收口完成，f4335历史保留。
-- [ ] **WPF-I01-05** 既有centerRuntime接入App/session/Settings，live epoch失效与完整草稿保护。
+- [x] **WPF-I01-05** 既有centerRuntime接入App/session/Settings，live epoch失效与完整草稿保护；fixed49d71源码与相关局部独审通过，mounted证明归06。
 - [ ] **WPF-I01-06** 直接消费者回归及真实Conversation/Cookie mounted验收，受控故障/完整清理分别记录。
 - [ ] **WPF-I01-07** 新固定组合独立review与合法main接收，原发布组合不暗换。
 
 ## 当前运行边界
 
-经理SVC09A为唯一NEXT/独占；本段仅source/取权metadata，禁止工程child/PG/Chrome/build/安装。source供给221固定文件2436297B+3历史31374B，≤8MiB，一次计入组合门槛；未来fresh至少14069989376B或当时更高，不是本次runtime许可。必要local到入口就绪后报经理统一授权，不借MSG/Recovery已闭额度。
+原30s普通检查段已完成并CLOSED：4新增direct PASS/10旧未选，affected noEmit首红保留、窄fix后0；保守10834ms，未用19166不转用。root已批准49d71源码/local及固定caller准备。下一为独立一次60s候选（45s工作+15s清理），0PG/1Chrome/2自有HTTP、256MiB scratch/8MiB retained，等待经理在SVC09A及新pair实际RETURN后的唯一交接；当前NOT_RUN/no grant。fresh完整组合取经理最新更高值（本批已知至少16175529984B），不能凭source批准占窗。source供给和历史KEEP不退款；见[准备单入口](../../docs/evidence/wpf-i01/runtime-app/browser-preparation.json)。
 
 ## 历史材料
 

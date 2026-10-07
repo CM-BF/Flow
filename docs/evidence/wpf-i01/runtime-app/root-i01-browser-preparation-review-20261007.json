@@ -1,0 +1,106 @@
+{
+  "at": "2026-10-07T15:50:51.054186+00:00",
+  "reviewer": "/root / gpt-6-astra / ultra",
+  "state": "CHANGES_REQUESTED_PREPARATION_ONLY",
+  "source": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
+  "packet": "/private/tmp/i01-runtime-app-browser-0uch3mbo",
+  "packetManifestSha256": "7c5ee0df31c46548d84479a525ecd747fb73c814eab94baa7cfc010870b455fc",
+  "bindingSha256": "df26701c1914a453b16243eba2147a420761b07b8afbdcad256ddd52f7e7ec90",
+  "files": [
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/binding.json",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/binding.json",
+      "bytes": 109382,
+      "sha256": "df26701c1914a453b16243eba2147a420761b07b8afbdcad256ddd52f7e7ec90"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/grant-template.json",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/grant-template.json",
+      "bytes": 401,
+      "sha256": "4e7aeeca6851c6a3650c583621073ec531402653a67da371eb6c0c237fb9d836"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/run.py",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/run.py",
+      "bytes": 9807,
+      "sha256": "856802523170ca61992165a07deab56d6213a1428f5e2cafc4d58acff52d58e9"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/worker.mjs",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/worker.mjs",
+      "bytes": 4828,
+      "sha256": "89209c0488b77dd9139a7ebd24b0963f1b0819cf0023d686d6e276da5f462722"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/capture.py",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/capture.py",
+      "bytes": 8348,
+      "sha256": "5a7f25b8c86051958d446da67f5b64ea4661712f8f43127da430f8af094d3c8c"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/reuse.json",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/reuse.json",
+      "bytes": 1190,
+      "sha256": "a7a5adcc78bc15ca48aad303316530e500cfc5d23f650cf7eda7f5e06a8182e0"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/README.md",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/README.md",
+      "bytes": 4326,
+      "sha256": "05d2ee79926414fe42f9168980f2675af158b62df425b248c6a7c216a12185a8"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/run.py.diff",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/run.py.diff",
+      "bytes": 12137,
+      "sha256": "fe017f642c41d28db396ab90ace10a271c59a5579e6329f4bda3a555d54147ab"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/worker.mjs.diff",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/worker.mjs.diff",
+      "bytes": 4911,
+      "sha256": "03931a5d90a67f3c327834f8ece1794b0d62f9c24a682929518e77d35bce151a"
+    },
+    {
+      "path": "/private/tmp/i01-runtime-app-browser-0uch3mbo/capture.py.diff",
+      "realpath": "/private/tmp/i01-runtime-app-browser-0uch3mbo/capture.py.diff",
+      "bytes": 5683,
+      "sha256": "28ace3fa99de7cdc0ac3ae58d03102078543810ae299fda17c77e5cce122946e"
+    }
+  ],
+  "observation": {
+    "path": "/private/tmp/root-i01-browser-static-observation-20261007.json",
+    "bytes": 1396,
+    "sha256": "062201114a4b1945ab0e004d4c7ed99fe16856452ba85f7ce752c648b69d7ee0"
+  },
+  "findings": [
+    {
+      "id": "I01-BROWSER-P2-01",
+      "priority": 2,
+      "file": "binding.json sourcePins / run.py fixed input preflight",
+      "problem": "The221 execution pins include plans/wpf-i01-plugin-integration/status.md and review.md at source49d71. Both have changed in the legitimate final metadata commit3c14c3f. Parent hashes current disk for every sourcePin before launching; unchanged product would therefore fail before Node/Chrome even with a fresh clean executionHead.",
+      "fix": "Keep these two historical metadata pins as provenance only, outside execution sourcePins; preserve the original binding/manifest. Pin actual219 fixed execution/source files to49d71 and use fresh clean executionHead for metadata. Refresh dependent binding/manifest/template hashes, do not alter products or rerun local greens.",
+      "evidence": "Read-only static audit reports only these two paths mismatching current disk/fixed source. Other219 source paths and42 external entry/manifest pins match;10 packet files match."
+    }
+  ],
+  "acceptedBoundaries": [
+    "Only checkPluginRuntimeApp is invoked, actual BrowserWorkspace via recovery mode, four exact named groups; old bearer scenario is unselected.",
+    "Fresh native Chrome with exclusive profile and one scenario context; two owned loopback HTTP listeners; no PG/provider/runner or user browser. Native sandbox retained.",
+    "Three caller layers reviewed: passive actual parent exit/dual EOF capture; parent owns worker group and exact cache links/scratch; worker owns Chrome and requires terminal/EOF before log completion. Deadlines and unknown cleanup fail closed, no automatic retry.",
+    "60s outer bound incl15s cleanup,45s work;256MiB scratch plus8MiB retained aggregate,512KiB each two screenshots, bounded streams; full latest candidate floor must be supplied by manager.",
+    "Historical ACCESS/MSG callers are lifecycle provenance only, not evidence I01 has executed.",
+    "Two cache symlink identities verified before deletion; source/.env absence preflight. Installed dependencies only entry/manifest pins, not a full dependency closure audit.",
+    "No independent per-HTTP-port liveness probe; accept only fixture close completion plus actual owned process-group absence, and label that evidentiary limit."
+  ],
+  "resultRules": [
+    "Browser remainsNOT_RUN; source/local20d2 approval unchanged.",
+    "Require actual outer exit0, unique terminalPASS, bothEOF/no output loss, all four named groups, worker/Chrome completion, exact group/cache/scratch post-observation, both screenshot hashes before scoped result acceptance.",
+    "Use final stdout/actual exit together with raw/result.json: late post-write timeout/bytes/signal can downgrade terminal state after raw report write. Never accept rawPASSED alone.",
+    "A stale fixed input or cleanupUNKNOWN stops the phase. No retry or old remaining time reuse implied."
+  ],
+  "cleanCode": {
+    "scope": "caller lifetime/source binding/cleanup/error evidence",
+    "finding": "One preparation blocker: mutable status/review accidentally coupled to fixed executable input pins. Keep metadata provenance separate from product execution identity. No new product blocker found."
+  },
+  "runtimeGranted": false
+}

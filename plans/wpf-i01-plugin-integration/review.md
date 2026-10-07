@@ -1,14 +1,14 @@
 # WPF-I01 当前后继独立 review
 
-状态：NOT_STARTED
+状态：APPROVED（限定源码、相关局部检查与浏览器准备；actual browser NOT_RUN）
 
 Target: `49d71ef87a7af824c90f0e8c662b4677bbbef8a5`；Base: `3c9345df4aec85a37e8a2a155e079db260d515b1`。
 
-唯一入口：[source-manifest](../../docs/evidence/wpf-i01/runtime-app/source-manifest.json)，六source；[implementation checkpoint](../../docs/evidence/wpf-i01/runtime-app/implementation-checkpoint.md)。当前4新增受控direct PASS/10旧未选；六source affected noEmit首exit2与fixture导入窄修后exit0均归档；新0PG Cookie协议浏览器NOT_RUN。原I01/X03/MSG通过仅历史，不外推本App接线。
+唯一源码入口：[source-manifest](../../docs/evidence/wpf-i01/runtime-app/source-manifest.json)，六source。root [source/local正式审](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json) 接受4新增authority direct PASS/10旧未选；affected noEmit首exit2与fixture导入修复后exit0保留，0blocking。实际局部[原件manifest](../../docs/evidence/wpf-i01/runtime-app/local-20261007/manifest.json)已独立核验，非全Web检查或mounted证明。
 
-初步源码笔记：[root dfa源码观察](../../docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-notes-20261007.json)，不作最终source/local批准。实际局部[原件manifest](../../docs/evidence/wpf-i01/runtime-app/local-20261007/manifest.json)待独审。
+Caller [初审](../../docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-review-20261007.json) 的可变metadata执行pin P2，已由[复审](../../docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-approved-20261007.json)关闭。初审把两个metadata均简称at49d的措辞留历史：review旧pin匹配49d，status旧pin仅准备时工作树捕获。当前自然plan更新同原理把其单一pin移historical，root消息明确接受；218执行输入、42外部pin与三caller没有产品/生命周期差量。[当前准备与精确manifest](../../docs/evidence/wpf-i01/runtime-app/browser-preparation.json)。
 
-审查重点：唯一session controller、live namespace/principal/generation/committedactive撤权、懒界面关闭保unknown原key/body、local/center分离、现MSG C/ordered attachment/current/held及focus不受新接线破坏。
+当前仍需经理唯一窗口和fresh claim/clean执行metadataHEAD/固定输入/native身份/完整资源，才可一次60s实际。真实BrowserWorkspace加受控Cookie HTTP不等真实中心session安全、provider、包执行或部署。要求actual outerexit与finalstdout终态、双EOF/drop0和独立exactRETURN；早期raw PASSED不足。fixture关闭与group absence不冒独立逐端口探测。原I01/MSG/runtime叶子通过仅历史。
 
 ## 原始review历史（不作当前批准）
 

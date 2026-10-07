@@ -1,10 +1,10 @@
 {
-  "at": "2026-10-07T15:46:48.463793+00:00",
-  "state": "PREPARED_NOT_RUN_NO_HEAVY_HANDOFF",
+  "at": "2026-10-07T15:58:30.585Z",
+  "state": "APPROVED_PREPARATION_BROWSER_NOT_RUN_NO_MANAGER_HANDOFF",
   "source": "49d71ef87a7af824c90f0e8c662b4677bbbef8a5",
   "packet": "/private/tmp/i01-runtime-app-browser-0uch3mbo/manifest.json",
-  "bytes": 3225,
-  "sha256": "7c5ee0df31c46548d84479a525ecd747fb73c814eab94baa7cfc010870b455fc",
+  "bytes": 6419,
+  "sha256": "bdcdf71cfd0ce0bc20dd91d77f164bdd954be06aa733a038353b8ba565f50070",
   "runtimeGranted": false,
   "budgetProposal": {
     "totalMs": 60000,
@@ -15,11 +15,35 @@
     "minimumFreeBytes": 14691794944
   },
   "notes": [
-    "Old local30s balance is not browser credit",
-    "await concentrated caller review and unique manager handoff",
-    "no realCenterPG/sessionSecurity/provider claim",
-    "No independent individual HTTP port observation; owned fixture/group cleanup remains distinct"
+    "Local30s CLOSED: spent10834, unused19166 not transferable.",
+    "Source/local and caller preparation approved; await sole manager browser handoff after SVC09A then higher-priority Web newpair actualRETURN.",
+    "No real center security, PG/provider, individualHTTPport probe or new browser outcome claimed.",
+    "Require actual outerexit0 plus finalstdout terminal, bothEOF/drop0, exactgroups/cache/scratch and fixtureclose. Raw PASSED alone insufficient."
   ],
-  "latestFutureMinimumFreeBytes": 14708572160,
-  "futureFloorSource": "root update: base14431748096 plus264MiB browser; manager must use fresh higher complete sum; frozen packet prior minimum remains historical and lower than future grant"
+  "latestFutureMinimumFreeBytes": 16175529984,
+  "futureFloorSource": "root/manager latest complete declared floor after AV03/K01 potential; future fresh grant must use latest higher sum, frozen packet minimum remains historical.",
+  "sourceCount": 218,
+  "externalCount": 42,
+  "historicalOwnMetadataCount": 3,
+  "sourceLocalReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/root-i01-runtime-app-source-local-review-20261007.json",
+    "bytes": 8405,
+    "sha256": "20d2ce5e943819bfefd1e64eb9fb78a66a11cf9ceef015b952961e66e84d3253"
+  },
+  "preparationInitialReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-review-20261007.json",
+    "bytes": 6640,
+    "sha256": "626241dfa1bb8a9e8c35095c762f4f8017fafc5649a56cbf989c39ea0beda95c"
+  },
+  "preparationApproval": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/root-i01-browser-preparation-approved-20261007.json",
+    "bytes": 3895,
+    "sha256": "73918579217542b235d934f488eb4f4da739026c747747a446a4de3c5ec95fb2"
+  },
+  "routinePlanProvenanceApproval": "root direct message accepts third exact ownplan provenance move; no caller/product change or new source review needed.",
+  "currentPreparedArchive": "browser-prepared-20261007/manifest.json",
+  "executionMetadata": {
+    "beforeSeal": "3c14c3fcc24b40e6c371470e9e70e06fe7d1d6d6",
+    "policy": "Use the fresh clean metadata HEAD produced by this natural seal and verified local=actual remote. No grant yet; source target stays49d71."
+  }
 }
