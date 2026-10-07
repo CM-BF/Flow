@@ -1,0 +1,31 @@
+{
+  "taskId": "WPF-DASHBOARD-TIMING02",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md)",
+      "id": "D01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "Web /root（执行管理 d01_owner）",
+      "value": "Web /root（执行管理 d01_owner）"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "checks": {
+    "state": "passed",
+    "target": "94ed7d17604dc652ee31ee53c0bba4046fef256d",
+    "record": "PASSED 94ed7d17604dc652ee31ee53c0bba4046fef256d 98项纯回归与本次6组browser PASS；双390图已限定独审通过；首红保留"
+  }
+}
