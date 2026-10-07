@@ -4,6 +4,9 @@
 | --- | --- |
 | 最近更新 / 最近main同步核验 | 2026-10-07T02:49:12.685Z / main943a66bf；本次个人Web恢复实际事实见SVC05H唯一source |
 | Plan | [plan.md](plan.md) |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 整体首次开工历史未核，完整用户验收仍开放；不以本次页面恢复当整体完成 |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |

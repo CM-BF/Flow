@@ -4,6 +4,9 @@
 | --- | --- |
 | 最近更新 / 最近main同步核验 | 2026-10-07T02:49:12.685Z / main943a66bf；本次个人Web恢复实际事实见SVC05H唯一source |
 | Plan | [plan.md](plan.md) |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | OPS整体首次事件缺依据，不能由最新提交推断；开放TODO11/13/15/16见本status |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra |
@@ -413,13 +416,3 @@ X01实际Git预检出现unreaped阶段EPERM后工程17项未启动；不反复�
 
 | OPS-001-16 | in-progress | Execution Lead / Web co-lead展示 | 时间契约与连续局部迭代规则本批待独审；dashboard呈现和活跃owner接入未完成，不把本次docs写成完整交付。 |
 
-## 时间记录
-
-| 事件 | UTC时间 | 来源 | 范围 |
-| --- | --- | --- | --- |
-| started | UNKNOWN | 历史缺首次开工事件 | OPS-001整体首次开始不可由最新提交推断 |
-| branch-delivered | UNKNOWN | 本轮规则待审 | 当前OPS-001-16规则片 |
-| reviewed | UNKNOWN | 未完成 | 当前规则delta |
-| integrated | UNKNOWN | 尚未接收 | 当前规则delta |
-| deployed | UNKNOWN | 不适用规则片 | 看板展示由Web组独立验收 |
-| completed | UNKNOWN | 整体仍开放 | OPS-001-11/13/15/16等未完成 |

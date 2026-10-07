@@ -6,6 +6,9 @@
 | --- | --- |
 | 最近更新 / 最近main同步核验 | 待填写真实UTC时间 |
 | Plan | [plan.md](plan.md) |
+| 任务开工时间 | UNKNOWN |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 模板未执行；owner实际开工时填来源，历史无依据不猜 |
 | 单一status owner / model | 待指定（写入至少Sol） |
 | Worktree | 待填写绝对路径 |
 | Branch | 待核验 |
@@ -27,17 +30,6 @@
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | PLAN-ID-01 | pending | 待指定 | 未执行；使用pending/in-progress/blocked/completed |
-
-## 时间记录
-
-| 事件 | UTC时间 | 来源 | 范围 |
-| --- | --- | --- | --- |
-| started | UNKNOWN | 待真实事件 | 首次实际开工，不能用文档更新时间猜测 |
-| branch-delivered | UNKNOWN | 未发生 | 固定分支交付 |
-| reviewed | UNKNOWN | 未发生 | 固定target及独立结论 |
-| integrated | UNKNOWN | 未发生 | main接收与push |
-| deployed | UNKNOWN | 未发生或不适用 | 实际运行版本 |
-| completed | UNKNOWN | 未完成 | 本task完整验收 |
 
 ## 等待记录
 
