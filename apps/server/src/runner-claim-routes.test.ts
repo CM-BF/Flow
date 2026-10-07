@@ -58,3 +58,42 @@ test('AV03 center production v4 route shares receipt transaction and explicit to
   } finally { await app.close(); }
   expect(app.server.listening).toBe(false);
 });
+
+test('AV03 center verifier assignment traverses production route, locks, source checks and strict ACK', async () => {
+  const { randomUUID, createHash } = await import('node:crypto');
+  const { decodeVerifierRunnerClaimResponse } = await import('../../../packages/contracts/src/verifier-runner-claim.js');
+  const f = new ClaimFixture(), app = Fastify(), original = f.query.bind(f);
+  const source = { taskId: randomUUID(), attemptId: randomUUID(), artifactId: 'source', version: createHash('sha256').update('{"id":1}').digest('hex'), content: '{"id":1}' };
+  const rule = { schemaVersion: 1 as const, algorithmId: 'flow.json-object.required-keys' as const, algorithmVersion: 1 as const, requiredKeys: ['id'] };
+  f.task.submission.prompt = JSON.stringify({ source, rule }); f.binding.inputDigest = createHash('sha256').update(f.task.submission.prompt).digest('hex');
+  const input = { protocol: 'flow.runner-claim.v4' as const, runnerId: f.runnerId, requestId: randomUUID(),
+    pluginVerifierExecution: { bindingProtocol: 'flow.plugin-verification.v1' as const, storeId: 'owned-store', hostApiMajor: 1 as const,
+      algorithms: [{ id: 'flow.json-object.required-keys' as const, version: 1 as const }] } };
+  let permission = true;
+  f.query = async (sql, values = []) => {
+    if (sql.startsWith('SELECT kind FROM flow.plugin_binding_executions')) return { rows: [{ kind: 'verifier' }], rowCount: 1 };
+    if (sql.includes('FROM flow.plugin_verification_references')) return { rows: [{ source_task_id: source.taskId, source_attempt_id: source.attemptId,
+      artifact_id: source.artifactId, artifact_version: source.version, project_id: 'project', rule }], rowCount: 1 };
+    if (sql.includes('FROM flow.project_task_bindings')) return { rows: [{ project_id: 'project', workspace_id: 'personal' }], rowCount: 1 };
+    if (sql.startsWith('SELECT d.content FROM flow.artifacts')) return { rows: [{ content: source.content }], rowCount: 1 };
+    if (sql.includes('FROM flow.plugin_revisions r JOIN flow.plugin_versions')) {
+      const result = await original(sql, values); return { ...result, rows: result.rows.map(row => ({ ...(row as object), grants: permission ? ['verifier'] : [] })) };
+    }
+    // This is a SQL boundary fake, not PostgreSQL eligibility evidence.
+    if (sql.includes('SELECT t.id FROM flow.tasks t')) return { rows: [{ id: f.task.id }], rowCount: 1 };
+    return original(sql, values);
+  };
+  app.decorateRequest('runnerId', f.runnerId);
+  app.setErrorHandler((error, _request, reply) => reply.code(error instanceof HttpError ? error.status : 500).send({ code: error instanceof HttpError ? error.code : 'internal' }));
+  registerRunnerClaimRoutes(app, f.pool, 5000);
+  try {
+    const response = await app.inject({ method: 'POST', url: '/api/runner/claim-opportunity', payload: input });
+    expect(response.statusCode).toBe(200);
+    expect(decodeVerifierRunnerClaimResponse(response.json(), input, 'claim')).toMatchObject({ state: 'assigned', assignment: {
+      pluginVerifierBinding: { executionKind: 'verifier', bindingId: f.binding.bindingId, verification: { projectId: 'project', rule } } } });
+    permission = false;
+    const denied = await app.inject({ method: 'POST', url: '/api/runner/claim-opportunity/status', payload: input });
+    expect(denied.json()).toMatchObject({ state: 'unavailable', identity: response.json().identity }); expect(f.receipts).toHaveLength(1);
+  } finally { await app.close(); }
+  expect(app.server.listening).toBe(false);
+});

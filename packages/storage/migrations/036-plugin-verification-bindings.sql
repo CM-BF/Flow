@@ -39,6 +39,7 @@ CREATE TRIGGER plugin_binding_execution AFTER INSERT ON flow.plugin_tool_binding
 CREATE TRIGGER plugin_binding_executions_immutable BEFORE UPDATE OR DELETE OR TRUNCATE ON flow.plugin_binding_executions
  FOR EACH STATEMENT EXECUTE FUNCTION flow.prevent_plugin_history_mutation();
 
+ALTER TABLE flow.artifacts ADD CONSTRAINT plugin_source_artifact_identity UNIQUE(task_id,attempt_id,artifact_id,version);
 CREATE TABLE flow.plugin_verification_references (
  binding_id text PRIMARY KEY,
  kind text NOT NULL DEFAULT 'verifier' CHECK(kind='verifier'),
@@ -50,8 +51,7 @@ CREATE TABLE flow.plugin_verification_references (
  rule jsonb NOT NULL CHECK(jsonb_typeof(rule)='object' AND octet_length(rule::text)<=8192
    AND rule->>'algorithmId'='flow.json-object.required-keys' AND rule->>'algorithmVersion'='1'),
  FOREIGN KEY(binding_id,kind) REFERENCES flow.plugin_binding_executions(binding_id,kind),
- FOREIGN KEY(source_task_id,artifact_id,artifact_version) REFERENCES flow.artifacts(task_id,artifact_id,version),
- FOREIGN KEY(source_attempt_id) REFERENCES flow.attempts(id)
+ FOREIGN KEY(source_task_id,source_attempt_id,artifact_id,artifact_version) REFERENCES flow.artifacts(task_id,attempt_id,artifact_id,version)
 );
 CREATE TRIGGER plugin_verification_references_immutable BEFORE UPDATE OR DELETE OR TRUNCATE ON flow.plugin_verification_references
  FOR EACH STATEMENT EXECUTE FUNCTION flow.prevent_plugin_history_mutation();
