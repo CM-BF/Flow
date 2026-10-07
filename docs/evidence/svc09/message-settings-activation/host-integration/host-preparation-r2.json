@@ -319,9 +319,9 @@
   "freshAdmission": {
     "required": "Lead actual window after other holder RETURN; fresh claim/all binding hashes/retained root identity/namespace absence/PG maximum-current>=26+16/free>=latest complete combined floor",
     "latestKnownCompleteFloorBytes": 16175529984,
-    "newR2IncrementBytes": 1218445312,
-    "planningFloorWithNewR2Bytes": 17393975296,
-    "floorMeaning": "Planning only; old R1 KEEP retained and new R2 is an additional clone/private/PG/raw budget. Latest actual coordinator higher total wins, no reservation here.",
+    "newR2IncrementBytes": 1243611136,
+    "planningFloorWithNewR2Bytes": 17419141120,
+    "floorMeaning": "Planning only; original retained resources stay in the coordinator total. New R2 adds the actual approved clone1GiB/private32MiB/PG128MiB/raw2MiB bounds once; old window shorthand used8MiB private and is not reused for this increment. Latest actual higher complete total wins; no reservation.",
     "adminInputSource": "Existing /tmp/flow-coordination.env FLOW_COORDINATION_DATABASE_URL; change only pathname to /postgres and validate127.0.0.1, in-memory FLOW_SVC09A_ADMIN_URL, never recordvalue",
     "oldKEEP": {
       "directory": "/private/tmp/flow-svc09a-host-yv1h6s2n",
@@ -330,7 +330,13 @@
       "databaseOid": 1328173,
       "action": "KEEP untouched; no reuse/drop/query of its contents"
     },
-    "deadline": "215s caller work + .5TERM +2reap =217.5s external; no extra service-kill authority"
+    "deadline": "215s caller work + .5TERM +2reap =217.5s external; no extra service-kill authority",
+    "incrementComponents": {
+      "artifactCloneBytes": 1073741824,
+      "privateBytes": 33554432,
+      "PGBytes": 134217728,
+      "rawBytes": 2097152
+    }
   },
   "actualStatus": "NOT_RUN; no new database, clone, listener, native or provider started for R2"
 }
