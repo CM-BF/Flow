@@ -1,0 +1,320 @@
+{
+  "source": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+  "result": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+  "status": "SOURCE_AND_LIMITED_LOCAL_REVIEW_REQUESTED",
+  "bindings": [
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 8508,
+      "sha256": "2c98ac43c07d9c5079215fb8bda65774fe12627ee7862a50d8369e823ac27323"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 9366,
+      "sha256": "4953c00055aa537fb2f4395ed4083532351e019d03fb4b473e08afa8cd843472"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/artifact.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 3279,
+      "sha256": "0ab3718c890dc4f3a05fe72fe664a2cab251e687ad518d420cfa82a1c8483929"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 11458,
+      "sha256": "e7b8e6342b1f2b66a3a1f50c9426fea00707326a7194598cfac0d1decb4ce003"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 10467,
+      "sha256": "175d7548ecc93f8b22cbdc08d1611ad8959fdd5cd5679c743fffba52a2186f1d"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission.test.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 4997,
+      "sha256": "85d12151401720cb927430e89efa8fa713bf17eaa00c44066ad15b65170632dc"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-admission.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 7635,
+      "sha256": "941decfe984dfcfca98017ccf02b270e2443d725c65366e6dcd025c4bb70da51"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-result.test.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 7492,
+      "sha256": "8678a35b1ec2f1c243ebe9cb2937781487bf3924cc0d949ada7ed11380409160"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-result.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 6466,
+      "sha256": "ec566ee0cf45e8be078af3f0afa556e1a4f69e4454593421ec1cbc1eb5d40551"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-routes.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 2718,
+      "sha256": "929ae05b3a44b58e4afbd2a9ae6a28db87fddfc55a05b763698806d2ccd1a35b"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.test.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 4724,
+      "sha256": "7fd6a61c9c9e7ef634e1747d1fb10ba8815af75cf79aa846f3e61d7c6af3b395"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 5971,
+      "sha256": "3a6d4de476f8fcca4a50055266660b685cdfa1015308cc2a7ced5e9d045f7a17"
+    },
+    {
+      "path": "apps/server/src/plugin-verification-configuration.test.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 1239,
+      "sha256": "415972bdd5e5115a5405decff3f1ffdeb0c5d6c496c094eed42d40929ffcd9e2"
+    },
+    {
+      "path": "apps/server/src/plugin-verification-configuration.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 1930,
+      "sha256": "411538951fb85649c30b391a57bb119fde0d2f51d1d883ff3b095c416e225e87"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/claim-receipt.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 2035,
+      "sha256": "b15744326a6e577009e3f6734a444dae9a07afd7e72ab65a983b852626d3f004"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/closure.json",
+      "sourceCommit": "PACKET",
+      "bytes": 67246,
+      "sha256": "3fd5837dd2b980d6098173e8bafd86b5e2d7ab1be138fe477e54c6049b71c0fa"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/external-links.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 4892,
+      "sha256": "6910e3502bcc676e2d2ba63fa7066f998e309deb7a344991022eb2fd3b6a0876"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/forward-resource.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 153533,
+      "sha256": "3f3ec7405d2dafb0b39c9733feb24798eb06f80018e01135c0c6ef5b6a94a0ea"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/interface.md",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 3441,
+      "sha256": "862d4b9355c1556387435d9a01da67c6bc3e2468a9472b4eea42346eaf9f5d55"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local-behavior-fix/output.log",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 5743,
+      "sha256": "6433a48df32068aa83d1b1bb8a8ef5e657e281171d4058be68f993dd3388fcfb"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local-behavior-fix/reservation.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 1217,
+      "sha256": "8d765da5a5fc622f8e7cd4e561792c3f612e5bdb2e07fb4190ddf2da527be53d"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local-behavior/output.log",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 7635,
+      "sha256": "7ba8a112f9baae56417f9d27c12b49b41db386d7f26e15dc10954a6b1de19d5b"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local-behavior/reservation.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 1151,
+      "sha256": "c1c8801c23aface343c2ba83c841f7aed9fe00f1ccc1497947374aa8a93d0015"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local-ledger.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 191681,
+      "sha256": "8fdd04da60b477d1d11adfdd14e6f476c0a0e0bf40e30c5a04da81bfe29f5cdc"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local-types-final/output.log",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 530,
+      "sha256": "1ca20b76afab7bdbd112b6ea9dc7129b5fbb719e48edc6d9ea4ee1051680d68c"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local-types-final/reservation.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 825,
+      "sha256": "07133e0280cb6f22c5169edd11ded079b1d9f6feb7313591c5cf0b899bb5d989"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local-types-fix/output.log",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local-types-fix/reservation.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 823,
+      "sha256": "47d17f79744d44190c6ecbbc6c562161b0e34e7a1d983c2874166c8e36fa81b4"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local-types-verified/output.log",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local-types-verified/reservation.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 828,
+      "sha256": "696906aa96ef7aa88fee719f59f023b34af4934a2da121ddcd638bbfb2f2b914"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local-types/output.log",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 698,
+      "sha256": "9b9b3d21d389d9b91181795598c43d810ed522ec5e5b97e098129d78f8a73198"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local-types/reservation.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 819,
+      "sha256": "29357ee068b6d29bcf68f6ad58320e17ab104bcce55d85a99b16e13d6e7be638"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 20363,
+      "sha256": "ae613a8fcff09ba46beca4e714f4fdc92f9845fac5219f5b5f1180665a48daf3"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/local.py",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 4700,
+      "sha256": "7c8eee27a29bbef1b64b7c87db677a0bf4f627fcb13ad5258aa6334e28fccbf1"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/product-inputs.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 7546,
+      "sha256": "fe32d3d5b66f7a455c007ed9e72715b423a671ed5c70f58586d81277c30517c0"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/provision.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 2371,
+      "sha256": "f6b15911c1a440787e459f6c14eb8a555ad05e2c6c02dd16e0de7af42e6e5408"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/quality.md",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 878,
+      "sha256": "955a94444075e2d17d30d695e3ec93e7521cb6ffcc8a20b305ce8b115462ad67"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/result-summary.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 2227,
+      "sha256": "429d4be78ab59953064cfae47abc43fe7b6ea742f00ad53b018ed4e215f78a7d"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/tsconfig.json",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 938,
+      "sha256": "238158beea479a73380b1005e6dd7308ae0ce1dbc766e42397e50fe160672baf"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/vitest.config.mjs",
+      "sourceCommit": "185636b0ede32b0f67ed6d33af83ab4c51caf04c",
+      "bytes": 419,
+      "sha256": "1053e8ac40c5d3f86a6ff4630f2806539fb9ef21e9909a4376b693ca2934b339"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-admission.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 655,
+      "sha256": "6d96d91bb4abfd87e2fe077885216fb73d759d73573393084ef0bfe3ea3fd72e"
+    },
+    {
+      "path": "packages/contracts/src/plugin-verification-event.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 916,
+      "sha256": "42d3396318ddfaa38e75ad31b70e669ee6551783bcf7b952533fb9bc6b81f819"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 8090,
+      "sha256": "01fcdd8d1d3e19c87b4114451e7e46420bd539a8cd1b59b8e8b60c3d752c88ca"
+    },
+    {
+      "path": "packages/plugin-runtime/src/verification-input.test.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 4613,
+      "sha256": "103f985153b6da6972d4c90559810dafada661a236d9d3fe222634e8d67cf1b7"
+    },
+    {
+      "path": "packages/plugin-runtime/src/verification-input.ts",
+      "sourceCommit": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+      "bytes": 2526,
+      "sha256": "dfc8f2a174d1d5e3a0c5c8323846aa9310f9761ca8eb1488411cc5bbb6209998"
+    }
+  ],
+  "runtime": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/opt/python@3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/node_modules/typescript/bin/tsc",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc",
+      "bytes": 45,
+      "sha256": "8d5fa5bd883fec0979fc2004f1fe1d99aef40570155d550eadc0b03b55513bf0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/node_modules/vitest/vitest.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/vitest.mjs",
+      "bytes": 43,
+      "sha256": "39db22f579acf5639bbb17a261408debbde03f4692c0c439e77e7f13aeba74d6"
+    }
+  ],
+  "mirrorRows": 282,
+  "mirrorBytes": 1325607,
+  "products": 19,
+  "externalPackageLinks": 16,
+  "actualChildren": 6,
+  "tests": "15 distinct across 14/15 and selected3/3; final fake kind:text only typechecked",
+  "types": "2/0/2/0 preserved",
+  "resourceGateLimitation": "first2 stalefloor actually consumed; realfree exceeds currentfullfloor only retrospective; next4 fresh18959564800",
+  "PG": "NOT_RUN",
+  "assembly": "NOT_MOUNTED",
+  "notes": "R1/AV prerequisite remains independent; no source/fixture/TMP service checks in review. No independent reviewer verdict yet."
+}
