@@ -1,0 +1,33 @@
+{
+  "startedAt": "2026-10-07T06:19:45.954213+00:00",
+  "scratch": "/private/tmp/eng01j-helper-check-hvtda7h3",
+  "dev": 16777234,
+  "ino": 123579894,
+  "freeBytes": 24421969920,
+  "previousMs": 0,
+  "mode": "tests",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority/docs/evidence/eng01j/local/vitest.config.mjs",
+    "--reporter=verbose",
+    "-t",
+    "stock helper"
+  ],
+  "source": {
+    "apps/runner/src/engineering/native-authority.ts": "a05b9f5be309d85934ef3e4014a6bbe2aa6844978dfd52f2ae58ee19a5cf3224",
+    "apps/runner/src/engineering/native-authority.test.ts": "1542fdc23fcd664b1950e3d199a4bcaaf0b25f9644579ac2206597e8dab66647",
+    "apps/runner/src/engineering/native-authority-darwin.ts": "6c14b5ccfecbe2b70ab6861655e78bf1f1c78a7e766772a1632073e662b8f332",
+    "apps/runner/src/engineering/native-authority-darwin.test.ts": "c057bdd97f8b315f0546e3deb242b278289a029983f00ca107ac61148dfad2e1",
+    "docs/evidence/eng01j/helper-host/local.py": "6a9f689e0caca27dab5dc945529e2c5df3084a0f4eceb2ba2c863383d89c0b23",
+    "docs/evidence/eng01j/helper-host/startup-input.sb": "ba856d7949bd2d305789995058e4b11edc4df16eb1504d67c3b160a2821b77cf",
+    "tools/owned-process-supervision/supervise.py": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+    "docs/evidence/eng01j/local/vitest.config.mjs": "f0c1d5a053fbfcec4436c1b617efbb384d7c87cd44d17b87ec5845acb0d51380",
+    "docs/evidence/eng01j/local/tsconfig.json": "7b4acafaaa154c11750261de1eba8ebce70c10a45698ba856736f9798030822f"
+  },
+  "nativeStarts": 0,
+  "PG": 0,
+  "provider": 0
+}
