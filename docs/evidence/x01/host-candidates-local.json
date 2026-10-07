@@ -1,0 +1,932 @@
+{
+  "startedAt": "2026-10-07T10:55:12.905598+00:00",
+  "startEpoch": 1791370133.0,
+  "attempts": [
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T10:55:12.907583+00:00",
+      "freeBeforeBytes": 22351732736,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-pptu5uv8",
+        "dev": 16777234,
+        "ino": 124064481,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/host-candidates-tsconfig.json"
+      ],
+      "process": {
+        "pid": 38271,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 2,
+        "elapsed_ms": 1669,
+        "observed_bytes": 1629,
+        "retained_bytes": 1629,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "docs/evidence/x01/host-candidates-inputs/apps/server/src/plugin-runtime/routes.ts(30,18): error TS2339: Property 'runnerId' does not exist on type 'FastifyRequest<RouteGenericInterface, RawServerDefault, IncomingMessage, FastifySchema, FastifyTypeProviderDefault, unknown, FastifyBaseLogger, ResolveFastifyRequestType<...>>'.\ndocs/evidence/x01/host-candidates-inputs/apps/server/src/plugin-runtime/routes.ts(31,43): error TS2339: Property 'runnerId' does not exist on type 'FastifyRequest<RouteGenericInterface, RawServerDefault, IncomingMessage, FastifySchema, FastifyTypeProviderDefault, unknown, FastifyBaseLogger, ResolveFastifyRequestType<...>>'.\ndocs/evidence/x01/host-candidates-inputs/apps/server/src/plugin-runtime/routes.ts(37,18): error TS2339: Property 'runnerId' does not exist on type 'FastifyRequest<RouteGenericInterface, RawServerDefault, IncomingMessage, FastifySchema, FastifyTypeProviderDefault, unknown, FastifyBaseLogger, ResolveFastifyRequestType<...>>'.\ndocs/evidence/x01/host-candidates-inputs/apps/server/src/plugin-runtime/routes.ts(38,62): error TS2339: Property 'runnerId' does not exist on type 'FastifyRequest<RouteGenericInterface, RawServerDefault, IncomingMessage, FastifySchema, FastifyTypeProviderDefault, unknown, FastifyBaseLogger, ResolveFastifyRequestType<...>>'.\ndocs/evidence/x01/process-runner-inputs/apps/server/src/browser-session/index.ts(82,15): error TS2339: Property 'runnerId' does not exist on type 'FastifyRequest<RouteGenericInterface, RawServerDefault, IncomingMessage, FastifySchema, FastifyTypeProviderDefault, unknown, FastifyBaseLogger, ResolveFastifyRequestType<...>>'.\n",
+      "rawBytes": 1629,
+      "rawSha256": "e9da5652d340cfafc086672c1e242e85c6568c2dcbdb1b650810aea318c0cede",
+      "finishedAt": "2026-10-07T10:55:14.578014+00:00",
+      "elapsedBeforeReceiptSeconds": 1.669914957950823
+    },
+    {
+      "label": "tests",
+      "startedAt": "2026-10-07T10:55:37.964818+00:00",
+      "freeBeforeBytes": 22363516928,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-nibfwagx",
+        "dev": 16777234,
+        "ino": 124064589,
+        "removed": true,
+        "endSample": {
+          "entries": 4,
+          "bytes": 5929,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01/host-candidates-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-nibfwagx/tests.json"
+      ],
+      "process": {
+        "pid": 54703,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 1,
+        "elapsed_ms": 5705,
+        "observed_bytes": 117,
+        "retained_bytes": 117,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "tests",
+        "rawComplete": true
+      },
+      "raw": "JSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-nibfwagx/tests.json\n",
+      "rawBytes": 117,
+      "rawSha256": "b3920bc05a06f76b6fb0a670062fb0e9804e02e7b2882e855ddd0a0829bb8164",
+      "tests.json": {
+        "numTotalTestSuites": 1,
+        "numPassedTestSuites": 0,
+        "numFailedTestSuites": 1,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 8,
+        "numPassedTests": 7,
+        "numFailedTests": 1,
+        "numPendingTests": 0,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791370538202,
+        "success": false,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "same readable names retain distinct IDs without claiming liveness or loaded capability",
+                "status": "passed",
+                "title": "same readable names retain distinct IDs without claiming liveness or loaded capability",
+                "duration": 3.3818749999999795,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "trusted incompatible candidates expose finite reasons and revoked records are SQL-excluded",
+                "status": "passed",
+                "title": "trusted incompatible candidates expose finite reasons and revoked records are SQL-excluded",
+                "duration": 0.29154199999999264,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "empty policy-filtered page advances its bounded raw cursor to a later authorized host",
+                "status": "passed",
+                "title": "empty policy-filtered page advances its bounded raw cursor to a later authorized host",
+                "duration": 0.6526670000000081,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "cursor binds registration material and revision; malformed query is rejected",
+                "status": "passed",
+                "title": "cursor binds registration material and revision; malformed query is rejected",
+                "duration": 1.0031249999999545,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "foreign stale failed and inconsistent materials disclose no candidates",
+                "status": "passed",
+                "title": "foreign stale failed and inconsistent materials disclose no candidates",
+                "duration": 0.22354199999995217,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "missing or throwing current policy returns no partial page",
+                "status": "passed",
+                "title": "missing or throwing current policy returns no partial page",
+                "duration": 0.41208299999999554,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "trust removed after publication rejects new enable and admission before mutations",
+                "status": "passed",
+                "title": "trust removed after publication rejects new enable and admission before mutations",
+                "duration": 0.5450420000000236,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "registered route uses real owner role authentication strict query and a no-store read-only transaction",
+                "status": "failed",
+                "title": "registered route uses real owner role authentication strict query and a no-store read-only transaction",
+                "duration": 5005.540290999999,
+                "failureMessages": [
+                  "Error: STACK_TRACE_ERROR\n    at task (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:796:27)\n    at Object.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:823:16)\n    at Object.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:615:28)\n    at chain (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/chunk-tasks.js:9:14)\n    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/host-candidates-inputs/apps/server/src/plugin-runtime/host-candidates.test.ts:88:1\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at VitestModuleEvaluator._runInlinedModule (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/module-evaluator.js:196:4)\n    at VitestModuleRunner.directRequest (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@7.3.6_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vite/dist/node/module-runner.js:1146:59)\n    at VitestModuleRunner.cachedRequest (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@7.3.6_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vite/dist/node/module-runner.js:1053:73)\n    at VitestModuleRunner.import (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vite@7.3.6_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vite/dist/node/module-runner.js:1014:10)\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1385:5\n    at collectTests (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1365:3)\n    at startTests (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:1937:17)\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/chunks/base.CJ0Y4ePK.js:86:26\n    at run (file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/chunks/base.CJ0Y4ePK.js:79:2)"
+                ],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791370538644,
+            "endTime": 1791370543655.5403,
+            "status": "failed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/host-candidates-inputs/apps/server/src/plugin-runtime/host-candidates.test.ts"
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T10:55:43.672696+00:00",
+      "elapsedBeforeReceiptSeconds": 5.706407333025709
+    },
+    {
+      "label": "fix",
+      "startedAt": "2026-10-07T10:56:20.251328+00:00",
+      "freeBeforeBytes": 22359785472,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-2qs0_k0n",
+        "dev": 16777234,
+        "ino": 124064742,
+        "removed": true,
+        "endSample": {
+          "entries": 4,
+          "bytes": 3340,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01/host-candidates-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-2qs0_k0n/tests.json",
+        "--testNamePattern=registered route"
+      ],
+      "process": {
+        "pid": 81418,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 1,
+        "elapsed_ms": 740,
+        "observed_bytes": 117,
+        "retained_bytes": 117,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "fix",
+        "rawComplete": true
+      },
+      "raw": "JSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-2qs0_k0n/tests.json\n",
+      "rawBytes": 117,
+      "rawSha256": "2fe8a1215759343eeb180548429a28e9a0a97c2932b9cfdbbf884764248d8852",
+      "tests.json": {
+        "numTotalTestSuites": 1,
+        "numPassedTestSuites": 0,
+        "numFailedTestSuites": 1,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 8,
+        "numPassedTests": 0,
+        "numFailedTests": 1,
+        "numPendingTests": 7,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791370580478,
+        "success": false,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "same readable names retain distinct IDs without claiming liveness or loaded capability",
+                "status": "skipped",
+                "title": "same readable names retain distinct IDs without claiming liveness or loaded capability",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "trusted incompatible candidates expose finite reasons and revoked records are SQL-excluded",
+                "status": "skipped",
+                "title": "trusted incompatible candidates expose finite reasons and revoked records are SQL-excluded",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "empty policy-filtered page advances its bounded raw cursor to a later authorized host",
+                "status": "skipped",
+                "title": "empty policy-filtered page advances its bounded raw cursor to a later authorized host",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "cursor binds registration material and revision; malformed query is rejected",
+                "status": "skipped",
+                "title": "cursor binds registration material and revision; malformed query is rejected",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "foreign stale failed and inconsistent materials disclose no candidates",
+                "status": "skipped",
+                "title": "foreign stale failed and inconsistent materials disclose no candidates",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "missing or throwing current policy returns no partial page",
+                "status": "skipped",
+                "title": "missing or throwing current policy returns no partial page",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "trust removed after publication rejects new enable and admission before mutations",
+                "status": "skipped",
+                "title": "trust removed after publication rejects new enable and admission before mutations",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "registered route uses real owner role authentication strict query and a no-store read-only transaction",
+                "status": "failed",
+                "title": "registered route uses real owner role authentication strict query and a no-store read-only transaction",
+                "duration": 75.94245799999999,
+                "failureMessages": [
+                  "AssertionError: expected 500 to be 200 // Object.is equality\n    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/host-candidates-inputs/apps/server/src/plugin-runtime/host-candidates.test.ts:102:33\n    at processTicksAndRejections (node:internal/process/task_queues:104:5)\n    at file:///Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@vitest+runner@4.0.18/node_modules/@vitest/runner/dist/index.js:915:20"
+                ],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791370580906,
+            "endTime": 1791370580981.9424,
+            "status": "failed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/host-candidates-inputs/apps/server/src/plugin-runtime/host-candidates.test.ts"
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T10:56:20.993497+00:00",
+      "elapsedBeforeReceiptSeconds": 0.7410094579681754
+    },
+    {
+      "label": "fix",
+      "startedAt": "2026-10-07T10:56:41.220753+00:00",
+      "freeBeforeBytes": 22359474176,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-z_xkluir",
+        "dev": 16777234,
+        "ino": 124064807,
+        "removed": true,
+        "endSample": {
+          "entries": 4,
+          "bytes": 2869,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01/host-candidates-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-z_xkluir/tests.json",
+        "--testNamePattern=registered route"
+      ],
+      "process": {
+        "pid": 94631,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 684,
+        "observed_bytes": 117,
+        "retained_bytes": 117,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "fix",
+        "rawComplete": true
+      },
+      "raw": "JSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-z_xkluir/tests.json\n",
+      "rawBytes": 117,
+      "rawSha256": "6965affe3ae297e1f0002c58a2024b8bef14e011e6b6e400841a43ab54db3071",
+      "tests.json": {
+        "numTotalTestSuites": 1,
+        "numPassedTestSuites": 1,
+        "numFailedTestSuites": 0,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 8,
+        "numPassedTests": 1,
+        "numFailedTests": 0,
+        "numPendingTests": 7,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791370601431,
+        "success": true,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "same readable names retain distinct IDs without claiming liveness or loaded capability",
+                "status": "skipped",
+                "title": "same readable names retain distinct IDs without claiming liveness or loaded capability",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "trusted incompatible candidates expose finite reasons and revoked records are SQL-excluded",
+                "status": "skipped",
+                "title": "trusted incompatible candidates expose finite reasons and revoked records are SQL-excluded",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "empty policy-filtered page advances its bounded raw cursor to a later authorized host",
+                "status": "skipped",
+                "title": "empty policy-filtered page advances its bounded raw cursor to a later authorized host",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "cursor binds registration material and revision; malformed query is rejected",
+                "status": "skipped",
+                "title": "cursor binds registration material and revision; malformed query is rejected",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "foreign stale failed and inconsistent materials disclose no candidates",
+                "status": "skipped",
+                "title": "foreign stale failed and inconsistent materials disclose no candidates",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "missing or throwing current policy returns no partial page",
+                "status": "skipped",
+                "title": "missing or throwing current policy returns no partial page",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "trust removed after publication rejects new enable and admission before mutations",
+                "status": "skipped",
+                "title": "trust removed after publication rejects new enable and admission before mutations",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "registered route uses real owner role authentication strict query and a no-store read-only transaction",
+                "status": "passed",
+                "title": "registered route uses real owner role authentication strict query and a no-store read-only transaction",
+                "duration": 71.11512500000003,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791370601825,
+            "endTime": 1791370601896.1152,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/host-candidates-inputs/apps/server/src/plugin-runtime/host-candidates.test.ts"
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T10:56:41.906079+00:00",
+      "elapsedBeforeReceiptSeconds": 0.6843912089243531
+    },
+    {
+      "label": "fix",
+      "startedAt": "2026-10-07T10:57:19.627293+00:00",
+      "freeBeforeBytes": 22352838656,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-czrftlm8",
+        "dev": 16777234,
+        "ino": 124065301,
+        "removed": true,
+        "endSample": {
+          "entries": 4,
+          "bytes": 3130,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01/host-candidates-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-czrftlm8/tests.json",
+        "--testNamePattern=incompatible acceptance"
+      ],
+      "process": {
+        "pid": 17874,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 730,
+        "observed_bytes": 117,
+        "retained_bytes": 117,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "fix",
+        "rawComplete": true
+      },
+      "raw": "JSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-czrftlm8/tests.json\n",
+      "rawBytes": 117,
+      "rawSha256": "e400c3ce16c25ef492135ec645fa62c88391f83f8756bae8001b8e3cc8cef433",
+      "tests.json": {
+        "numTotalTestSuites": 1,
+        "numPassedTestSuites": 1,
+        "numFailedTestSuites": 0,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 9,
+        "numPassedTests": 1,
+        "numFailedTests": 0,
+        "numPendingTests": 8,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791370639855,
+        "success": true,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "same readable names retain distinct IDs without claiming liveness or loaded capability",
+                "status": "skipped",
+                "title": "same readable names retain distinct IDs without claiming liveness or loaded capability",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "trusted incompatible candidates expose finite reasons and revoked records are SQL-excluded",
+                "status": "skipped",
+                "title": "trusted incompatible candidates expose finite reasons and revoked records are SQL-excluded",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "empty policy-filtered page advances its bounded raw cursor to a later authorized host",
+                "status": "skipped",
+                "title": "empty policy-filtered page advances its bounded raw cursor to a later authorized host",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "cursor binds registration material and revision; malformed query is rejected",
+                "status": "skipped",
+                "title": "cursor binds registration material and revision; malformed query is rejected",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "foreign stale failed and inconsistent materials disclose no candidates",
+                "status": "skipped",
+                "title": "foreign stale failed and inconsistent materials disclose no candidates",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "missing or throwing current policy returns no partial page",
+                "status": "skipped",
+                "title": "missing or throwing current policy returns no partial page",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "trust removed after publication rejects new enable and admission before mutations",
+                "status": "skipped",
+                "title": "trust removed after publication rejects new enable and admission before mutations",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "registered route uses real owner role authentication strict query and a no-store read-only transaction",
+                "status": "skipped",
+                "title": "registered route uses real owner role authentication strict query and a no-store read-only transaction",
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "incompatible acceptance is rechecked even when the caller skips the candidate page",
+                "status": "passed",
+                "title": "incompatible acceptance is rechecked even when the caller skips the candidate page",
+                "duration": 1.645749999999964,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791370640306,
+            "endTime": 1791370640307.6458,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/host-candidates-inputs/apps/server/src/plugin-runtime/host-candidates.test.ts"
+          }
+        ]
+      },
+      "finishedAt": "2026-10-07T10:57:20.358924+00:00",
+      "elapsedBeforeReceiptSeconds": 0.7308312089880928
+    },
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T10:57:43.024252+00:00",
+      "freeBeforeBytes": 22352347136,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-8_u3fu31",
+        "dev": 16777234,
+        "ino": 124065377,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/host-candidates-tsconfig.json"
+      ],
+      "process": {
+        "pid": 31796,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 2,
+        "elapsed_ms": 1977,
+        "observed_bytes": 144,
+        "retained_bytes": 144,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": {
+          "phase": "work",
+          "code": "CHILD_EXIT_NONZERO",
+          "type": "SupervisionFailure",
+          "errno": null,
+          "message": "child exit nonzero"
+        },
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "docs/evidence/x01/host-candidates-inputs/apps/server/src/plugin-runtime/runtime.test.ts(273,33): error TS2554: Expected 2 arguments, but got 1.\n",
+      "rawBytes": 144,
+      "rawSha256": "3a7d3e5a6205e3a8ffafabca82f035b08f15d2d21511908c943a9fb01b90b50a",
+      "finishedAt": "2026-10-07T10:57:45.002947+00:00",
+      "elapsedBeforeReceiptSeconds": 1.9778892080066726
+    },
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T10:58:10.553753+00:00",
+      "freeBeforeBytes": 22352498688,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-host-candidates-7au1rof8",
+        "dev": 16777234,
+        "ino": 124065434,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/host-candidates-tsconfig.json"
+      ],
+      "process": {
+        "pid": 44514,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 4428,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T10:58:14.983738+00:00",
+      "elapsedBeforeReceiptSeconds": 4.428169249906205
+    }
+  ],
+  "unknown": false,
+  "limits": {
+    "segmentSeconds": 1200,
+    "commands": 8,
+    "commandSeconds": 60,
+    "temporaryBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 2097152
+  },
+  "floorBytes": 6100000000,
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "tarPlanned": 0,
+  "wholeExternalWall": null,
+  "updatedAt": "2026-10-07T10:58:14.983751+00:00",
+  "commandLimitClarification": "Original authorization bounds individual<=60s and cumulative<=120s, with no top-level command-count limit. Local selector conservatively caps8. Original failed attempts retained; focused fixes only. Actual count reported separately."
+}

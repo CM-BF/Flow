@@ -1,0 +1,40 @@
+{
+  "protocol": "flow.x01.host-candidates-pg.v1",
+  "productCommit": "7672090bed43f28f88f16bcbd0d0cfa04a0667ac",
+  "totalSeconds": 180,
+  "workSeconds": 110,
+  "cleanupSeconds": 60,
+  "finalReserveSeconds": 10,
+  "suites": {
+    "runtime": {
+      "cases": 1,
+      "httpRequests": 160,
+      "connectionsMax": 17
+    }
+  },
+  "httpRequestsMax": 160,
+  "responseBytesPerRequest": 131072,
+  "responseBytesPerSuite": 4194304,
+  "databasesMax": 1,
+  "serialSuites": true,
+  "streamsBytes": 262144,
+  "resultBytes": 131072,
+  "rawBytes": 1048576,
+  "temporaryBytes": 33554432,
+  "temporaryEntries": 4096,
+  "reserveBytes": 1073741824,
+  "runName": "host-candidates-pg-run-r1",
+  "databaseReserveBytes": 134217728,
+  "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+  "selection": [
+    {
+      "file": "docs/evidence/x01/host-candidates-inputs/apps/server/src/plugin-runtime/runtime.test.ts",
+      "name": "owner host candidates use real SQL pagination and current policy for enable and admission"
+    }
+  ],
+  "tasksMax": 0,
+  "registrationsMax": 1,
+  "attemptsMax": 0,
+  "scope": "One new owner candidate test only; synthetic installed material reuses original fixture, no npm/invoke/provider. Ten old runtime cases remain unselected.",
+  "runnersMax": 45
+}

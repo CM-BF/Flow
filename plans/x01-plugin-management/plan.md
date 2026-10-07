@@ -136,3 +136,5 @@ Goal Owner 已批准 Mika 在 [X03 唯一计划](/Users/citrine/Projects/AgentHa
 X01-04/07 continue through [the existing center/runner process entry](../../docs/evidence/x01/cli-startup-interface.md). Terminal20b report-only recovery is independently reviewed and may integrate now. Operator-owned private-file composition, default-off compatibility and current journal identity precede a separate real process PG acceptance; management CLI/three-end user experience and unknown invocation recovery remain open. No new plan authority or second runner.
 
 2026-10-07T10:46:30Z 当前验收更新：startup与management不再是缺失入口；后继小片以[差距核对](../../docs/evidence/x01/acceptance-gap-20261007.md)为准。02～10原checkbox保持开放。Web两旧literal已正式STOP/amend交回，后续由Web独立owner fresh take；本更新不领取新scope或批准新PG。
+
+2026-10-07 后继用户验收：用户从中心授权候选按已注册可读名称选择执行后端，无需查日志UUID。候选是有限只读提示，启用重新核验授权/材料/配置，不能显示为在线、已加载或可调用证明；[当前接口](../../docs/evidence/x01/host-candidates-interface.md)。归入原X01-02/06，不新增第二管理事实源。

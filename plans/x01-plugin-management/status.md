@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T10:47:17.625248+00:00 |
+| 最近更新时间 | 2026-10-07T10:50:21.324Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -10,24 +10,24 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [v25 ACTIVE58scope](../../docs/evidence/x01/web-runtime-handback-receipt.json)；两Web管理literal已STOP并移出，剩余claim保留 |
+| Claim | [v26 ACTIVE61scope](../../docs/evidence/x01/host-candidates-amend-v26.json)；仅追加三个候选合同/中心叶；两Web路径保持STOP |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | execution4949118f；固定结果997f7d44f78f0db1d001e9e7080559cd7139a7af / packet ea642cff；当前仅正式review/验收差距/handback元数据 |
-| 工作树 dirty 状态 | 本次metadata收口；原actual/source/manifest冻结；提交后以Git实际状态为准 |
-| 工作分支状态 | integration |
-| 检查状态 | 真实进程PG一次1/1；两runner任务-1/+1、4main exit0/双EOF、专库与精确TMP已正常收尾；旧检查不重跑 |
+| 工作树 dirty 状态 | 候选接口实施；原actual/source/manifest冻结 |
+| 工作分支状态 | implementation |
+| 检查状态 | 本候选片NOT_RUN；旧实际结果997f7d44仅其限定范围APPROVED |
 | Review | chatui01_owner 2026-10-07T10:42:21Z RESULT_FIDELITY_REVIEW_APPROVED / 0 P1/P2，绑定997f7d44 / ea642cff |
 | 已集成 main 状态 / HEAD | 领域/claim/semver/provenance已main；runtime9b+wiring2ea已main38110485；terminal20b已main81b4805c；startup c8ba十源已main6aa2d42e；管理CLI9f5三产品已mainb67530bb。10:42实核main2f32f6b27fc79151cd1e9d26e7fb5af70a791505 clean；本次实际验收证据待关联接收，不冒latest main全集检查 |
 | 实现目标 | 997f7d44f78f0db1d001e9e7080559cd7139a7af |
 | 实现范围 | apps/server/src/plugin-runtime/process-runner-pg.test.ts；docs/evidence/x01/process-runner-* |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 真实中心和runner进程通过公开管理命令执行npm能力，正常重启后新任务成功且旧结果不重复 |
-| 下一可用交付 | 本次真实启动与管理旅程证据可供主线关联；下一候选为Web真实运行状态和已有材料启停，交Web原owner独立实施 |
-| 当前阻塞 | NONE：实际PG已归还；当前0PG/local/待launch。Web两个旧占用已正式交回；完整升级/移除/隔离/上下文等验收仍开放 |
+| 当前产出 | 真实启动验收已交付；正在增加按可读名称选择中心授权执行后端的候选接口 |
+| 下一可用交付 | 有界授权后端候选与启用时重新核验，供Web直接选择，避免人工查找UUID |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -359,3 +359,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T10:39:11.276531Z：新process PG-R1一次实际1/1完成。执行4949118f，10:38:43.414168Z主监督spawn28415，10:38:50.153227Z独立delivery PASSED/CONFIRMED；pre-save6.96789575秒、post-save6.96823137秒、外部time7.05秒/工具exit0分列。bootstrap28419/trusted28492/runner28494/29109均真实SIGTERM请求→exit0/双EOF；监督28414/28415 finalabsent/完整mergedEOF，无signals-secondary，历史EPERM仍原样。DB1286138同marker、owners/pool/adminclosed/0conn普通DROPACK+absence；registry56450与两次center56451均closed；TMP16777234/124041347同identity50项50479B样本后removed，exactlstatENOENT。已立即返Mika供Web排下一ready，不等metadata/review占窗。fixture HTTP子集38、management6、registry2/download1、tar28418 close0/null；runner实际总HTTP仍UNKNOWN，不把2048理论数写为测量。两semver任务-1/+1、旧attempt/events/phase/pin无增，属clean post-ACK restart。管理9f三产品已main b675正式事实后到附记，不重写原6aa/9f镜像。
 
 2026-10-07T10:47:17.625248+00:00：metadata验收核对从10:41:57Z开始；[原TODO与矩阵差距](../../docs/evidence/x01/acceptance-gap-20261007.md)保持02～10均未completed。正式[结果独审](../../docs/evidence/x01/process-runner-pg-independent-review.json)与[主线验收入口](../../docs/evidence/x01/process-runner-acceptance-ready.json)固定；[管理main核验](../../docs/evidence/x01/process-runner-management-main.json)不回写执行镜像。两Web路径10:46:23.929Z原子交回至v25/58，不再写入。原运行器、raw、manifest及产品零改、0新检查/资源。架构基线无新增变化，后继UI边由新owner维护；clean-code复核当前/历史分层、单一status与不扩大验收范围。
+
+2026-10-07T10:48:53Z 新20min有界段启动（截止11:08:53Z），[Interface](../../docs/evidence/x01/host-candidates-interface.md)定义授权候选/名称消歧/有限分页/未知能力与enable重验。0PG/新local；db10:47:57实际归还，检查前直接协调。原结果已封存、v25两Web正式交回不恢复写权。Mika10:49:35.124Z实际195源聚合X01 live/current/issues[]；本次将当前阻塞单列NONE，旧自由文本格式不再用于字段。架构新增只读候选边，未集成前不冒main能力。
