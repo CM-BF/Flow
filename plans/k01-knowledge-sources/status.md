@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 17:36 UTC |
+| 最近更新 | 2026-10-07 17:51 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -16,10 +16,10 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | 执行起点3f182ba5c clean；仅封存本次失败/阶段原件，source9c不变 |
-| 工作分支状态 | review（已审source，本次真实诊断FAILED/HOLD待结果窄审） |
+| 工作树dirty状态 | 恢复起点7693dd641 clean；仅封存独立恢复与审查metadata，source9c不变 |
+| 工作分支状态 | review（失败结果忠实性已审；观察器callback接口P2待修，独立恢复回执待审） |
 | 检查状态 | FAILED 9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb；新PG超时/无最终result，原9纯/noEmit仅历史局部范围 |
-| 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本次入口修复未集成。旧首次PG FAILED，修复后真实PG未运行 |
+| 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本次入口修复未集成。两次真实PG均FAILED；各次独立恢复事实分开记录 |
 | 实现目标 | 9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
 | 当前规划基线 / HEAD | 文档起点88bee460c5e0caf762157b3b0934c16093293fe3；本段target c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5；不merge/rebase |
@@ -28,11 +28,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 真实检索金样本与语义阶段已有原件，规模诊断超时，数据库资源仍保留 |
-| 下一可用交付 | 独立核对失败原件，另获授权后确认保留资源状态 |
-| 当前阻塞 | ACTIVE: 诊断超时且数据库连接与清理未知；需独立恢复观测，不自动重跑 |
+| 当前产出 | 检索金样本与语义阶段已有证据；规模诊断仍失败，已确认本次保留数据库身份及零连接快照 |
+| 下一可用交付 | 修复查询观察器的连接接口，再用局部行为证据验证；当前停止实际运行 |
+| 当前阻塞 | ACTIVE: 查询观察器callback接口缺陷待合法后继修复；数据库与临时目录保留，未获新诊断或清理授权 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；源码9c已审；新实际失败结果待窄审 |
+| Review | [review.md](review.md)；失败结果忠实性已审，观察器P2仍OPEN；独立恢复回执待审 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -41,7 +41,7 @@
 | K01-03 | completed | b01_bounded_reads | 12词法样本/实际JSON预算；boundary-extra 2绿 |
 | K01-04 | completed | b01_bounded_reads / Mika | Mika 05:24:35 UTC APPROVED；31 distinct/noEmit/8库remaining[] |
 | K01-05 | completed | b01_bounded_reads / Lead | [main receipt](../../docs/evidence/k01/main-receipt.json)，fb906cb完整9文件零diff |
-| K01-06 | in-progress | b01_bounded_reads / 后继合法owner | 本段只补查询计划诊断准备；[唯一入口](../../docs/evidence/k01/query-plan-diagnostic.md)，产品/PG检查NOT_RUN；hybrid/vector、grant/消费/失效验收仍开放 |
+| K01-06 | in-progress | b01_bounded_reads / 后继合法owner | [唯一入口](../../docs/evidence/k01/query-plan-diagnostic.md)；实际诊断两次FAILED，12gold/语义阶段只构成局部证据；hybrid/vector、grant/消费/失效验收仍开放 |
 | K01-07 | completed | b01_bounded_reads / Mika | 文档独审APPROVED，规划已接收cd6938；[唯一规划main receipt](../../docs/evidence/k01/retention-planning-main-receipt.json) |
 | K01-08 | pending | 后续合法product owner | 身份/留存/保护实现，当前没有产品scope |
 | K01-09 | pending | 后续合法consumer owners | 新旧协议/冻结/ACK/history兼容，需协调现owner |
@@ -144,3 +144,5 @@
 2026-10-07T17:29:04.090046Z：新sole manager许可已收到；freshclaim30965v2/18source/27runtime/245fixed/17+3alias全部吻合，freshfree19,608,182,784≥16,065,495,040B。单独admin准入17:29:04.011154→.090046、available87≥34、poolClosed、PID90815/ownedabsent/完整EOF成立；0数据集改变。新explicit permit仅一次120s=70/40/10，actual START由新ledger定义；旧FAIL/KEEP/许可不改。配置18、0provider/Chrome，原始inputSHA f4255413。
 
 2026-10-07T17:36:21.278772+00:00：新actual17:29:31.938089→terminal17:31:25.093600Z，FAILED/HOLD、0重跑。PID7468/-15/原group absent/MERGED EOF0B；firstDEADLINE_EXCEEDED/SIGTERM sent/secondaryCHILD_EXIT_NONZERO，resourceConfirmed=false不变。[唯一结果入口](../../docs/evidence/k01/query-entry-pg-startup-actual/manifest.json)保18source/11raw/14316B及progress，12gold与semantics已完成但0scale阶段结果，原因UNKNOWN。新DB OID1340630/marker及scratch已有限封存，当前admin/连接未知，保持KEEP，旧KEEP0访问；不声称FULLRETURN。所有工程/PG/供给停止，只封证据交独审；K01-06/08～10仍开放。
+
+2026-10-07T17:50:54.933639+00:00：唯一授权 K01-STARTUP-20261007-RECOVERY-ONCE 实际17:48:38.474189→17:48:38.570227Z，operator/supervisor96ms，PID49562 exit0/final absent/MERGED EOF336B、无first/secondary/signals。精确OID1340630/owner/marker匹配，单次快照connections=0、adminclosed=true；计算与连接独立RETURN，数据库和scratch继续immutable KEEP，原FAILED/HOLD/resourceConfirmed=false不改。紧前脚本字段KeyError发生于supervise/PG/receipt前，0child原错保留；实际只执行一次查询。准入旧floor16,065,757,184B与fresh18,674,704,384B记录于start，后到新floor不回写历史。见[恢复manifest](../../docs/evidence/k01/query-entry-pg-startup-recovery/manifest.json)，review待独立核。Mika17:41:15已批准7693失败结果忠实性（0P1/P2仅归档范围），source callback P2仍OPEN；无工程/源码修复、DROP、KEEP内容访问或重跑。提交push后本段STOP。

@@ -99,3 +99,9 @@ Mika lead（父agent /root）于2026-10-06 05:24:35 UTC完成独立只读技术r
 本次独立review者为Mika委派的db_transaction_owner，只读设计与固定输入；已于2026-10-07 00:16:39 UTC返回DESIGN_REVIEW_APPROVED。当前target fd02eb63d0e01d51c390dc5dcf5df8078a6f0063 已解决预读提及的4096终身receipt上限、满额release及pin实例身份问题，产品检查仍NOT_RUN。
 
 2026-10-07 00:16:39 UTC：db_transaction_owner独立只读 **DESIGN_REVIEW_APPROVED** fd02eb63d0e01d51c390dc5dcf5df8078a6f0063，仅上列3文档，Git目标与WT零diff，无P1/P2。身份/实际留存数分离、legacy/unknown保护、原子旧head候选、单向version锁建议、codec/ACK协商与R01～R12可作后继实施输入；满额release/不可复用pin实例提示已关闭。产品实现/迁移/并发/兼容未验证，flow.commands生命周期与具体schema/协议仍是实施前待审项。见[独审回执](../../docs/evidence/k01/retention-independent-review.json)。
+
+## 2026-10-07 本次诊断失败与独立恢复
+
+Mika于17:41:15Z对固定7693dd641e2da67b7ec8d4cc3ecdf25525f2519a给出FAILURE_RESULT_FIDELITY_APPROVED，归档范围0P1/P2；18source/11raw14316B、20progress与超时/计算闭合事实已核。此结论不批准失败诊断，也不关闭observedSearch callback接口P2。详见query-pg-startup-failure-independent-review.json。
+
+17:48:38唯一单admin恢复取得精确身份、0连接快照和探针闭合；原FAILED/HOLD/resourceConfirmed=false与DB/scratchKEEP不变。恢复回执单独待审，不沿用结果批准。未运行工程测试或再次诊断。

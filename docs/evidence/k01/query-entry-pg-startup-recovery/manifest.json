@@ -1,0 +1,39 @@
+{
+  "logicalId": "K01-STARTUP-20261007-RECOVERY-ONCE",
+  "executionHead": "7693dd641e2da67b7ec8d4cc3ecdf25525f2519a",
+  "source": "9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb",
+  "sealedAt": "2026-10-07T17:50:54.933639+00:00",
+  "evidence": [
+    {
+      "path": "docs/evidence/k01/query-entry-pg-startup-recovery/start.json",
+      "bytes": 2561,
+      "sha256": "0075d96258d7b1b5975204ba5714e204899c3ee182f8f291c21b2fc4f2b89281"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-startup-recovery/recovery.raw",
+      "bytes": 336,
+      "sha256": "b9e33be1d8ef61c8efad51cba30c1c6a3583280176f972a5ad7279d8550cff2a"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-pg-startup-recovery/observation.json",
+      "bytes": 1572,
+      "sha256": "d52723e88a3dcef1b70f1219aae0c9ca104a44a5d1d3d3a4a71b7287b03f4878"
+    }
+  ],
+  "evidenceBytes": 4469,
+  "runtimeInput": {
+    "path": "docs/evidence/k01/query-pg-startup-runtime-inputs.json",
+    "bytes": 39206,
+    "sha256": "f42554136f32263a458c3a4820d520f6f9dbca235dff7e0954b20a2b9e6c0c8a"
+  },
+  "inputChecks": "18 source and 27 runtime path/bytes/hash entries matched before sole probe; fresh claim v2 active; no source/KEEP mutation",
+  "unchangedFailureManifest": {
+    "path": "docs/evidence/k01/query-entry-pg-startup-actual/manifest.json",
+    "bytes": 6004,
+    "sha256": "48eba70b0ab6e356dff8d50b78e79c9248ee4d29198e08fb6bf2295edd1bb39f"
+  },
+  "review": "NOT_STARTED",
+  "scope": "one identity/activity snapshot and own probe closure only; no DROP, continuous-zero guarantee or diagnostic success",
+  "prelaunchFailure": "start.json retains sourceFiles KeyError before supervise/PG/receipt; actual query performed once",
+  "laterFloorMessage": "16,101,408,768B arrived after actual RETURN; original gate unchanged, actual free exceeded both bounds"
+}

@@ -1,0 +1,62 @@
+{
+  "logicalId": "K01-STARTUP-20261007-RECOVERY-ONCE",
+  "startedAt": "2026-10-07T17:48:38.474189+00:00",
+  "endedAt": "2026-10-07T17:48:38.570227+00:00",
+  "operatorElapsedMs": 96,
+  "supervision": {
+    "pid": 49562,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 96,
+    "observed_bytes": 336,
+    "retained_bytes": 336,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "observation": {
+    "startedAt": "2026-10-07T17:48:38.554Z",
+    "endedAt": "2026-10-07T17:48:38.566Z",
+    "elapsedMs": 11.647290999999996,
+    "rows": [
+      {
+        "name": "flow_k01_query_0197b9a66cbf46da91227d662bf983d0",
+        "oid": "1340630",
+        "owner": "flow",
+        "marker": "edd4a2c8-dba4-4c96-a743-293a6c439554",
+        "connections": 0
+      }
+    ],
+    "identityMatched": true,
+    "closed": true,
+    "passed": true,
+    "error": null
+  },
+  "probeClosed": true,
+  "computeAndConnectionsReturned": true,
+  "database": "KNOWN_KEEP_ZERO_CONNECTIONS",
+  "scratch": "immutable KEEP not accessed",
+  "originalDiagnostic": "FAILED/HOLD/resourceConfirmed=false unchanged",
+  "rawBytes": 336,
+  "rawSha256": "b9e33be1d8ef61c8efad51cba30c1c6a3583280176f972a5ad7279d8550cff2a",
+  "noRetry": true
+}

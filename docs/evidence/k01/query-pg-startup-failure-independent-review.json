@@ -1,0 +1,14 @@
+{
+  "reviewer": "Mika / root",
+  "reviewedAt": "2026-10-07T17:41:15Z",
+  "target": "7693dd641e2da67b7ec8d4cc3ecdf25525f2519a",
+  "decision": "FAILURE_RESULT_FIDELITY_APPROVED",
+  "findingsInResultFidelity": {
+    "P1": 0,
+    "P2": 0
+  },
+  "manifestSha256": "48eba70b0ab6e356dff8d50b78e79c9248ee4d29198e08fb6bf2295edd1bb39f",
+  "verified": "18 source, 11 raw 14316B, summary and candidate input; 20 progress lines; 113059ms operator /112934ms supervisor; deadline, TERM, secondary exit and initial EPERM/final absent",
+  "limitations": "12gold/semantics only; zero retained scale does not mean zero attempted SQL; original FAILED/HOLD/resourceConfirmed=false preserved",
+  "sourceFinding": "OPEN P2: observedSearch callback checkout contract dropped; independent static confirmation by db. Not an actual-phase causal proof. No source fix or new PG authorized by this result review."
+}

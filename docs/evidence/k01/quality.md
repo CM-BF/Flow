@@ -43,3 +43,5 @@ PG补充由 Root 先 skills.sh 再 npx skills find 发现官方 supabase/agent-s
 2026-10-07T16:59:48.955881+00:00: 本段复用本地find-skills/codebase-design/固定clean-code，StartupLifecycle仅负责单import→单factory及pending所有权，不造调度器；DiagnosticProgress只追加有限已完成事实/首错，最终汇总仍由run持有；timedQuery明确observer与driver时段。事务/产品/权限未动，保原错误与UNKNOWN，不把超时当取消。实际9纯/noEmit绑定最终源，不重复无关suite；没有执行red或真实PG，独审待db。原FALSE/HOLD/恢复只读事实保持。
 
 2026-10-07T17:07:18.812917+00:00：复用已读find-skills/codebase-design/固定clean-code，仅归档db17:03:37独审与完整候选输入。单一startup所有权、晚启动禁止/未知KEEP、有限首错/进度、三时钟与同一合计预算责任明确；无源码变更/安装/工程/PG。18实验+27runtime实际bindings不凭旧计数，旧preparation与当前事实分离；进度文件在raw2MiB内，reserve是headroom非额外配额。完整import副作用与真实生命周期未外推，首因仍UNKNOWN。
+
+2026-10-07T17:50:54.933639+00:00：沿已读find-skills/codebase-design/固定clean-code，封存第二次失败忠实性审查和独立只读恢复。区分真实API callback/Promise契约缺陷与实际停点未知、计算闭合与资源保留、瞬时0连接与持续状态；首错/原raw不改。唯一SELECT复用已审单admin壳，预启动字段失败0child保留，未改业务/观察器源码或补测试，不新增框架。后继修复必须覆盖固定production transaction真实callback消费者，当前只归档。
