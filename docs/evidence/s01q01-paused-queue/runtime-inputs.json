@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-07T19:51:44.545095+00:00",
-  "sourceTarget": "9d1bc8e1e24c281c834be61300d9522ea859f2cf",
+  "recordedAt": "2026-10-07T20:23:52.494436+00:00",
+  "sourceTarget": "7da2a44608fd92e578863e6d6e39ad18aae98a13",
   "fixedProduct": "b79121e1944f10f82a416d98d776c0f55bf9c943",
   "files": [
     {
@@ -1518,20 +1518,20 @@
     {
       "path": "docs/evidence/s01q01-paused-queue/.source/docs/evidence/s01q01-paused-queue/pg-fixture.ts",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan/docs/evidence/s01q01-paused-queue/.source/docs/evidence/s01q01-paused-queue/pg-fixture.ts",
-      "bytes": 12792,
-      "sha256": "2b32d16a70dc74f9d2bf47c7221300ba305ba3626e4b22c3e8c8d8380bf35945"
+      "bytes": 15061,
+      "sha256": "f9e685b709aacd6c5fd7b3ec7cc06dae33748e9ae8ba7efd49a05713ed116106"
     },
     {
       "path": "docs/evidence/s01q01-paused-queue/entry.py",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan/docs/evidence/s01q01-paused-queue/entry.py",
-      "bytes": 10430,
-      "sha256": "bb47eb7d5385ffa3c77361170ef1bb6f989d83e0ad59ab0e183f5d33bbb3474d"
+      "bytes": 14055,
+      "sha256": "a22992bfd4f92700747e660e6f7bf5d4e1ecd6d594864c8e9b004698ace4e4a7"
     },
     {
       "path": "docs/evidence/s01q01-paused-queue/entry.test.py",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan/docs/evidence/s01q01-paused-queue/entry.test.py",
-      "bytes": 3014,
-      "sha256": "fbad9ea6b5236c9567a3eb41c9022bb4ba8978bee60a57fb050782f9e0f0cf10"
+      "bytes": 6170,
+      "sha256": "449233e7d8500cc6e61f0ceae50ad9240f00139440778de954c19b49be3fcb85"
     },
     {
       "path": "docs/evidence/s01q01-paused-queue/queue.vitest.config.ts",
@@ -1542,14 +1542,14 @@
     {
       "path": "docs/evidence/s01q01-paused-queue/pg-fixture.ts",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan/docs/evidence/s01q01-paused-queue/pg-fixture.ts",
-      "bytes": 12792,
-      "sha256": "2b32d16a70dc74f9d2bf47c7221300ba305ba3626e4b22c3e8c8d8380bf35945"
+      "bytes": 15061,
+      "sha256": "f9e685b709aacd6c5fd7b3ec7cc06dae33748e9ae8ba7efd49a05713ed116106"
     },
     {
       "path": "docs/evidence/s01q01-paused-queue/failure-local.py",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan/docs/evidence/s01q01-paused-queue/failure-local.py",
-      "bytes": 5621,
-      "sha256": "5e81163a04c60a6240cfb4d1037009688a46809f74cecd9c51ad2030b3c3c673"
+      "bytes": 5979,
+      "sha256": "5aa6a296998cf6fea6e4b3c0e32c1572650ec893fb85d74eca9797c710de9678"
     },
     {
       "path": "docs/evidence/s01q01-paused-queue/types.tsconfig.json",
@@ -1700,6 +1700,12 @@
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/bin/tsc",
       "bytes": 45,
       "sha256": "8d5fa5bd883fec0979fc2004f1fe1d99aef40570155d550eadc0b03b55513bf0"
+    },
+    {
+      "path": "/usr/bin/git",
+      "realpath": "/usr/bin/git",
+      "bytes": 118640,
+      "sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9"
     }
   ],
   "aliases": [
@@ -1888,7 +1894,14 @@
     "httpCount": 256,
     "localBytes": 8388608,
     "rawBytes": 2097152,
-    "storageMethod": "All retained run files counted as raw at final sample plus262144 reserve. Transient TMP/live peak not enforced or sampled by this caller. DB size sample is not implemented; historical64MiB proposal must not be presented as enforced."
+    "storageMethod": "Bounded pre-cleanup sample before any removal: combined record+TMP <=8MiB with256KiB receipt reserve; TMP<=4MiB/1024entries; retained evidence<=2MiB. Each scan<=2s within origin+138, identity checked per removal. Not a live peak or OS quota; excess/unknown keeps TMP. DB samples after CREATE, after listen, before DROP;128MiB sample threshold plus separate128MiB planned WAL reserve, neither a hard live peak nor WAL measurement.",
+    "dbSampleLimitBytes": 134217728,
+    "plannedWalReserveBytes": 134217728,
+    "responseBytesPerRequest": 262144,
+    "responseBytesTotal": 2097152,
+    "tmpBytes": 4194304,
+    "tmpEntries": 1024,
+    "totalEntries": 2048
   },
   "invocation": {
     "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan",
@@ -1898,10 +1911,26 @@
       "-B",
       "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan/docs/evidence/s01q01-paused-queue/entry.py",
       "--permit",
-      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan/docs/evidence/s01q01-paused-queue/actual-permit.json"
+      "/tmp/flow-s01q01-<window>-permit.json"
     ],
     "actualPermitExists": false,
-    "record": "pg-run-<permit.window>, exclusive mkdir; none created"
+    "record": "pg-run-<permit.window>, exclusive mkdir; none created",
+    "admission": "/tmp/flow-s01q01-<window>-permit-admission.json",
+    "admissionContract": {
+      "maximumAgeSeconds": 60,
+      "claimId": "a8a3b2d7-1bde-438a-9fbf-f81e1c791350",
+      "version": 1,
+      "state": "ACTIVE",
+      "taskId": "S01Q01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan",
+      "branch": "codex/queue-paused-scan",
+      "head": "actual clean reviewed HEAD",
+      "clean": true,
+      "windowGranted": true,
+      "window": "same permit.window",
+      "resourceTerms": "manager full nonnegative byte terms sum exactly requiredFreeBytes; no omitted shared reserve",
+      "sourceCheck": "three bounded read-only Git commands before any namespace; private config unchanged; facts are cooperative trusted outer admission, not authorization tokens"
+    }
   },
   "privateInput": "Only future explicit FLOW_S01Q01_TEST_ADMIN from authorized fixedGit test fixture source; no value read/hash recorded; no coordinationDB. Canonical loopback/postgres with noquery/fragment enforced.",
   "limitations": [
@@ -1909,6 +1938,8 @@
     "No PG/HTTP/test hooks executed by Vitest list; only2names collected",
     "70work includes loading/create;40cleanup+10childreport+10stop+10parentreceipt; not hard OS guarantees",
     "Package entry metadata bound, not all thirdparty transitive content; two valid internal aliases only",
-    "Storage peak and DB final size remain an explicit actual-admission design gap; do not declare PG READY solely from this packet"
+    "DB/WAL reserve and budget guards need source review and fresh manager sum; no actual PG/HTTP run",
+    "Pure tests cover sampling/admission validators/fixture fake budgets; final external permit-path read seam was static-corrected after last child and has NOT_RUN execution status",
+    "Storage observations reject excess/unknown; do not prove a never-exceeded bound. Hidden factory/boss production limits unchanged."
   ]
 }

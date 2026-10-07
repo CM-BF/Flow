@@ -2,33 +2,33 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 19:53 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 20:24 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 任务开工时间 | 2026-10-07T16:23:07Z |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 派工后实际 clock；原source段已封存；当前完整入口准备段2026-10-07T19:34:55Z起，截止19:54:55Z |
+| 任务时间来源 | 派工后实际 clock；原source段已封存；本段准入补强2026-10-07T20:06:50Z起，截止20:26:50Z |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan |
 | Branch | codex/queue-paused-scan |
 | 工作基线 / HEAD | base b79121e1944f10f82a416d98d776c0f55bf9c943；历史fixture a4f041e0；当前修复 01dfc89e43fb7793bc3d022b05ea34c129755073；promotion仍42c零diff |
-| 工作树dirty状态 | 源码与局部结果已固定；本次仅归档metadata，提交push后STOP/0待launch |
+| 工作树dirty状态 | 源已固定；本段metadata提交push后clean STOP，0待launch |
 | 工作分支状态 | review |
-| 检查状态 | PASSED 9d1bc8e1e24c281c834be61300d9522ea859f2cf；完整queue focusedtypes0、静态收集2条（执行0）、caller7纯例通过；首types失败保留，实际PG/HTTP仍NOT_RUN |
+| 检查状态 | PARTIAL 7da2a44608fd92e578863e6d6e39ad18aae98a13；caller11/fixture13纯例与wholequeue/fixture测试types0；末次permit读取接线NOT_RUN，实际PG/HTTP NOT_RUN |
 | 已集成main状态 / HEAD | 本片未集成；固定基线 b79121e1944f10f82a416d98d776c0f55bf9c943 |
-| 实现目标 | 9d1bc8e1e24c281c834be61300d9522ea859f2cf |
+| 实现目标 | 7da2a44608fd92e578863e6d6e39ad18aae98a13 |
 | 实现范围 | apps/server/src/conversation-queue/promotion.ts, apps/server/src/conversation-queue/queue.test.ts, docs/evidence/s01q01-paused-queue/pg-fixture.ts, docs/evidence/s01q01-paused-queue/types.tsconfig.json, docs/evidence/s01q01-paused-queue/dependencies.json, docs/evidence/s01q01-paused-queue/pg-fixture.test.ts, docs/evidence/s01q01-paused-queue/failure-local.py, docs/evidence/s01q01-paused-queue/failure.types.tsconfig.json, docs/evidence/s01q01-paused-queue/failure.vitest.config.ts, docs/evidence/s01q01-paused-queue/entry.py, docs/evidence/s01q01-paused-queue/entry.test.py, docs/evidence/s01q01-paused-queue/queue.vitest.config.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 已核完整队列类型和两条目标用例的静态收集，未来隔离入口已形成待审候选 |
-| 下一可用交付 | 审查运行入口并补齐实际存储准入条件，再申请独立数据库验证 |
-| 当前阻塞 | ACTIVE: 新入口待独审；DB大小与瞬时存储限制未落实，实际PG仍CLOSED |
+| 当前产出 | 隔离验证入口已补齐清理前存储、数据库采样、响应字节及实时身份门禁，局部检查完成 |
+| 下一可用交付 | 独审新增准入代码与证据，通过后申请最小真实数据库验证 |
+| 当前阻塞 | ACTIVE: 新入口增量待审，实际PG仍CLOSED；末次外部permit读取接线尚未执行 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；architecture19:31:19批准fixture增量，原P2 CLOSED；新caller尚未独审 |
-| 当前claim最后观察 | a8a3b2d7-1bde-438a-9fbf-f81e1c791350 v1 ACTIVE；2026-10-07T19:13:46.146Z fresh ACTIVE；四精确 scope |
+| Review | [review.md](review.md)；architecture19:31:19批准fixture增量，原P2 CLOSED；db20:03:44批准9d1bc8 CLOSED准备；本次预算增量待审 |
+| 当前claim最后观察 | a8a3b2d7-1bde-438a-9fbf-f81e1c791350 v1 ACTIVE；2026-10-07T20:06:50.760Z fresh ACTIVE；四精确 scope |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -56,3 +56,7 @@
 2026-10-07T19:34:55Z：新20min/new8MiB准备段开始，fresh06118de7=origin clean、19:34:55.337Z claima8a3v1四scope。归档architecture19:31:19限定独审；本段最多5child/30s各/累计90s，raw2MiB含于8MiB。仅完整queue类型/静态收集和薄caller纯行为；0PG/HTTP/Chrome/provider/安装/旧TMP探查，K01保持STOP。
 
 2026-10-07T19:53:58.685272+00:00：本段源target 9d1bc8e1e24c281c834be61300d9522ea859f2cf，5child累计监督5180ms/raw1679B，19:46:07.938931Z FULLRETURN，全部finalabsent/MERGED EOF/ownTMP exactENOENT。完整queue types首轮6处空值错误，新增用例加明确首项守卫后exit0；静态list仅2条/执行0；caller7distinct纯例最终通过，旧fixture7不重跑。单份[preparation-local/summary](../../docs/evidence/s01q01-paused-queue/preparation-local/summary.json)与runtime-inputs绑定283文件（252固定产品含33SQL+当前overlay与runtime），17外部alias两入口及2有效内部alias。原第三@flow/client alias实际dangling且闭包无引用，首次静态组包失败后明确排除，不复制补包/冒称全部有效。未来140秒包含70/40/10/10/10且24配置连接，两center另13未选。仅CLOSED候选；DB大小未采、存储只是最终样本不是运行硬限，因此实际准入尚有缺口，不借本段开启PG。当前源码停止，提交push后全部STOP/0待launch，main未集成。
+
+2026-10-07T20:06:50Z：新20min/new8MiB段，fresh ae72652=origin clean、claimv1四scope匹配（20:06:50.760Z）。归档db20:03:44限定审查，0新P1/P2且PG NOT_READY。最多5串行child/30s/累计90s，raw2MiB含总8；0PG/HTTP/Chrome/provider/旧KEEP。技能沿既有本地find-skills/codebase-design/固定clean-code，复用单一caller/fixture，不改promotion与业务断言。
+
+2026-10-07T20:23:52.494436+00:00：本段source 7da2a44608fd92e578863e6d6e39ad18aae98a13，5child监督3714ms/raw3109B，FULLRETURN 2026-10-07T20:19:35.111707+00:00。24distinct pure、2focusedtypes0；初caller因/tmp非canonical测试路径3失败已纠正，原件保留。最后外部permit/read seam静态修复未追加第6child，PARTIAL准确保留；不把采样当peak，不把WAL reserve当实测。claimv1继续保留，产品promotion/业务断言及旧raw零改；本次仅源入口待审，main未集成，原TODO03/04开放。封存push后STOP/0待launch，所有普通工程已归还；无真实PG/HTTP/provider/新actualnamespace。

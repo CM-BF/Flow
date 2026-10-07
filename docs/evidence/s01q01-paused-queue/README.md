@@ -54,3 +54,14 @@ This command was **not run**. Mika drained engineering before the first launch a
 未来唯一argv在runtime-inputs；[许可](closed-permit.json)为CLOSED/过期、实际permit和namespace不存在。候选140秒=70work（含加载/CREATE）+40cleanup+10child结果+10TERM/KILL+10父receipt；共用origin。正常单center24配置连接，两个用例不启第二center，后者另13须另选范围。OPS14仍监督child、fixture仍管理带marker数据库；未知KEEP，无新调度器/observer/强删/重试。
 
 **真实准入尚未完成**：caller将保留目录最终逻辑总量连同receipt预留按raw2MiB校核，外包络8MiB，但不采临时峰值；数据库大小采样未实现，旧64MiB只是历史提案。完整实际预算须独审与经理后继确认，不把本候选当PG READY或已获运行许可。原两条真实PG测试与剩余队列验收仍NOT_RUN。
+
+## 当前准入补强（2026-10-07T20:23:52.494436+00:00）
+
+唯一[本段记录](admission-local/summary.json)绑定 `7da2a44608fd92e578863e6d6e39ad18aae98a13`。db20:03:44对9d1bc8的CLOSED准备与原局部证据批准已归档，实际准入缺项在本段补齐代码，仍需增量独审与经理新窗口。
+
+- 清理前有界扫描record/TMP：总8MiB（含256KiB父回执预留）、TMP4MiB/1024项、总2048项、每次最多2秒并受总origin+138限制；所有对象身份复核后逐项删除，未知/超限KEEP。是安全点观察，不是实时硬配额/峰值证明。保留原first/raw/关闭事实。
+- 已标记DB在created、listen结束与DROP前采pg_database_size；128MiB采样阈值，另规划128MiB WAL储备。后者非WAL测量，前者非峰值；保守实际资源候选至少DB128+WAL128+local8 MiB另加经理共享余量，旧64MiB/90秒不再适用。24配置连接不变；未选双center37。
+- 实际fetch流读取每响应262144B、累计2097152B/最多256次；超限停止新work、保首错并关闭，cleanup receipt载httpCount/httpBytes。正文仍可被业务json/text正常读取。
+- 140秒共同origin70/110/120/130/140不变；future真实permit及fresh ledger/admission放Git树外相邻私有路径，60秒fresh exactclaim/version/scope/HEAD/clean/window/fullresource sum，加本树3条有界Git只读核验。没有读取私有值/创建actual文件。CLOSED候选不能当许可。
+
+纯caller11、fakefixture13及两focusedtypes通过；首caller8/11原失败保留。最后一次child后仅把actual permit/admission改为Git外部相邻文件，避免输入本身让source dirty；这一薄read seam未再执行，不能把历史11例当完整入口重跑。5child actualFULLRETURN 2026-10-07T20:19:35.111707+00:00，无新PG/HTTP/Chrome/provider。命名/职责/错误与重复经本地clean-code/codebase-design安全点复核；不增加资源框架。

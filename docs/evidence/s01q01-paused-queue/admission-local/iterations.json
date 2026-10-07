@@ -1,0 +1,240 @@
+{
+  "runs": [
+    {
+      "pid": 24354,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 1,
+      "elapsed_ms": 155,
+      "observed_bytes": 2672,
+      "retained_bytes": 2672,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "budget-caller",
+      "endedAt": "2026-10-07T20:17:42.034816+00:00",
+      "resourceConfirmed": true,
+      "scratchCleanup": "REMOVED_EXACT_ENOENT",
+      "rawSha256": "4dca4c36751158b8acbd9c31e20f680cc7483ce4fb8cad18c8521c61ad40b221",
+      "sourceHashes": {
+        "pg-fixture.ts": "f9e685b709aacd6c5fd7b3ec7cc06dae33748e9ae8ba7efd49a05713ed116106",
+        "pg-fixture.test.ts": "ad669bf29dcd9700c0694ad1a9552c4b57d1d4118a6d65bfd622ed57da2d788f",
+        "failure.vitest.config.ts": "a30e2b1227eec79af8f35739322a48c851f528159e662e88ac135ca687b1ef94",
+        "failure.types.tsconfig.json": "e6aa6d69012043d3404f0196389a2f8d7024f894efb01e43af7f36007a02e3f5",
+        "failure-local.py": "9b5fc69d8c15bbd4aebb3242cddbbd650c6b18ca182743c9948d1e75e283789b",
+        "queue.vitest.config.ts": "b3d1c04f497df93802b050da57b9ca80edd718fc4f1aeb0902c0e1a10ee380af",
+        "entry.py": "0e4788ba9703f68169eb70041d696e1165d8f87ddf7d9f860c31aa0fbc9600a6",
+        "entry.test.py": "ceac6ce24c49d78312542f6ea054da948d742196a54ce8ea8238fe10b9af2aa9",
+        "types.tsconfig.json": "6e6153505fdac2be0e4aa0b199abb8e5912161c9bf21046255c00bc3bb6358db"
+      }
+    },
+    {
+      "pid": 37500,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 143,
+      "observed_bytes": 110,
+      "retained_bytes": 110,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "budget-caller-fixed",
+      "endedAt": "2026-10-07T20:18:04.456439+00:00",
+      "resourceConfirmed": true,
+      "scratchCleanup": "REMOVED_EXACT_ENOENT",
+      "rawSha256": "4c3b3b2f85f7f81206f2731efca1a5c61f58b2f6c54d820b4003b988757b84ec",
+      "sourceHashes": {
+        "pg-fixture.ts": "f9e685b709aacd6c5fd7b3ec7cc06dae33748e9ae8ba7efd49a05713ed116106",
+        "pg-fixture.test.ts": "ad669bf29dcd9700c0694ad1a9552c4b57d1d4118a6d65bfd622ed57da2d788f",
+        "failure.vitest.config.ts": "a30e2b1227eec79af8f35739322a48c851f528159e662e88ac135ca687b1ef94",
+        "failure.types.tsconfig.json": "e6aa6d69012043d3404f0196389a2f8d7024f894efb01e43af7f36007a02e3f5",
+        "failure-local.py": "9b5fc69d8c15bbd4aebb3242cddbbd650c6b18ca182743c9948d1e75e283789b",
+        "queue.vitest.config.ts": "b3d1c04f497df93802b050da57b9ca80edd718fc4f1aeb0902c0e1a10ee380af",
+        "entry.py": "0e4788ba9703f68169eb70041d696e1165d8f87ddf7d9f860c31aa0fbc9600a6",
+        "entry.test.py": "449233e7d8500cc6e61f0ceae50ad9240f00139440778de954c19b49be3fcb85",
+        "types.tsconfig.json": "6e6153505fdac2be0e4aa0b199abb8e5912161c9bf21046255c00bc3bb6358db"
+      }
+    },
+    {
+      "pid": 39346,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 489,
+      "observed_bytes": 327,
+      "retained_bytes": 327,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "budget-fixture",
+      "endedAt": "2026-10-07T20:18:11.361534+00:00",
+      "resourceConfirmed": true,
+      "scratchCleanup": "REMOVED_EXACT_ENOENT",
+      "rawSha256": "8b17244a91efa5109078148097fd23d7f944850dc7e33f02af00fcee54da6099",
+      "sourceHashes": {
+        "pg-fixture.ts": "f9e685b709aacd6c5fd7b3ec7cc06dae33748e9ae8ba7efd49a05713ed116106",
+        "pg-fixture.test.ts": "ad669bf29dcd9700c0694ad1a9552c4b57d1d4118a6d65bfd622ed57da2d788f",
+        "failure.vitest.config.ts": "a30e2b1227eec79af8f35739322a48c851f528159e662e88ac135ca687b1ef94",
+        "failure.types.tsconfig.json": "e6aa6d69012043d3404f0196389a2f8d7024f894efb01e43af7f36007a02e3f5",
+        "failure-local.py": "9b5fc69d8c15bbd4aebb3242cddbbd650c6b18ca182743c9948d1e75e283789b",
+        "queue.vitest.config.ts": "b3d1c04f497df93802b050da57b9ca80edd718fc4f1aeb0902c0e1a10ee380af",
+        "entry.py": "0e4788ba9703f68169eb70041d696e1165d8f87ddf7d9f860c31aa0fbc9600a6",
+        "entry.test.py": "449233e7d8500cc6e61f0ceae50ad9240f00139440778de954c19b49be3fcb85",
+        "types.tsconfig.json": "6e6153505fdac2be0e4aa0b199abb8e5912161c9bf21046255c00bc3bb6358db"
+      }
+    },
+    {
+      "pid": 45708,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 2165,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "budget-types",
+      "endedAt": "2026-10-07T20:18:20.103118+00:00",
+      "resourceConfirmed": true,
+      "scratchCleanup": "REMOVED_EXACT_ENOENT",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sourceHashes": {
+        "pg-fixture.ts": "f9e685b709aacd6c5fd7b3ec7cc06dae33748e9ae8ba7efd49a05713ed116106",
+        "pg-fixture.test.ts": "ad669bf29dcd9700c0694ad1a9552c4b57d1d4118a6d65bfd622ed57da2d788f",
+        "failure.vitest.config.ts": "a30e2b1227eec79af8f35739322a48c851f528159e662e88ac135ca687b1ef94",
+        "failure.types.tsconfig.json": "e6aa6d69012043d3404f0196389a2f8d7024f894efb01e43af7f36007a02e3f5",
+        "failure-local.py": "9b5fc69d8c15bbd4aebb3242cddbbd650c6b18ca182743c9948d1e75e283789b",
+        "queue.vitest.config.ts": "b3d1c04f497df93802b050da57b9ca80edd718fc4f1aeb0902c0e1a10ee380af",
+        "entry.py": "0e4788ba9703f68169eb70041d696e1165d8f87ddf7d9f860c31aa0fbc9600a6",
+        "entry.test.py": "449233e7d8500cc6e61f0ceae50ad9240f00139440778de954c19b49be3fcb85",
+        "types.tsconfig.json": "6e6153505fdac2be0e4aa0b199abb8e5912161c9bf21046255c00bc3bb6358db"
+      }
+    },
+    {
+      "pid": 93772,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 762,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "budget-types-fixture",
+      "endedAt": "2026-10-07T20:19:35.111707+00:00",
+      "resourceConfirmed": true,
+      "scratchCleanup": "REMOVED_EXACT_ENOENT",
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "sourceHashes": {
+        "pg-fixture.ts": "f9e685b709aacd6c5fd7b3ec7cc06dae33748e9ae8ba7efd49a05713ed116106",
+        "pg-fixture.test.ts": "ad669bf29dcd9700c0694ad1a9552c4b57d1d4118a6d65bfd622ed57da2d788f",
+        "failure.vitest.config.ts": "a30e2b1227eec79af8f35739322a48c851f528159e662e88ac135ca687b1ef94",
+        "failure.types.tsconfig.json": "e6aa6d69012043d3404f0196389a2f8d7024f894efb01e43af7f36007a02e3f5",
+        "failure-local.py": "5aa6a296998cf6fea6e4b3c0e32c1572650ec893fb85d74eca9797c710de9678",
+        "queue.vitest.config.ts": "b3d1c04f497df93802b050da57b9ca80edd718fc4f1aeb0902c0e1a10ee380af",
+        "entry.py": "0e4788ba9703f68169eb70041d696e1165d8f87ddf7d9f860c31aa0fbc9600a6",
+        "entry.test.py": "449233e7d8500cc6e61f0ceae50ad9240f00139440778de954c19b49be3fcb85",
+        "types.tsconfig.json": "6e6153505fdac2be0e4aa0b199abb8e5912161c9bf21046255c00bc3bb6358db"
+      }
+    }
+  ]
+}

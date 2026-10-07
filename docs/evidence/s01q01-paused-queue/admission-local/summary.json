@@ -1,0 +1,134 @@
+{
+  "recordedAt": "2026-10-07T20:23:52.494436+00:00",
+  "sourceTarget": "7da2a44608fd92e578863e6d6e39ad18aae98a13",
+  "base": "ae72652b8d53df6a815a255196719aa2ebf0ab64",
+  "runtimeSha256": "dda4707945557ae8cf5a424f8b88a2274ae910691477b225af68f47d1d4cd52e",
+  "record": "iterations.json",
+  "sources": [
+    {
+      "path": "entry.py",
+      "bytes": 14055,
+      "sha256": "a22992bfd4f92700747e660e6f7bf5d4e1ecd6d594864c8e9b004698ace4e4a7"
+    },
+    {
+      "path": "entry.test.py",
+      "bytes": 6170,
+      "sha256": "449233e7d8500cc6e61f0ceae50ad9240f00139440778de954c19b49be3fcb85"
+    },
+    {
+      "path": "failure-local.py",
+      "bytes": 5979,
+      "sha256": "5aa6a296998cf6fea6e4b3c0e32c1572650ec893fb85d74eca9797c710de9678"
+    },
+    {
+      "path": "pg-fixture.ts",
+      "bytes": 15061,
+      "sha256": "f9e685b709aacd6c5fd7b3ec7cc06dae33748e9ae8ba7efd49a05713ed116106"
+    },
+    {
+      "path": "pg-fixture.test.ts",
+      "bytes": 9023,
+      "sha256": "ad669bf29dcd9700c0694ad1a9552c4b57d1d4118a6d65bfd622ed57da2d788f"
+    },
+    {
+      "path": "failure.vitest.config.ts",
+      "bytes": 195,
+      "sha256": "a30e2b1227eec79af8f35739322a48c851f528159e662e88ac135ca687b1ef94"
+    },
+    {
+      "path": "failure.types.tsconfig.json",
+      "bytes": 124,
+      "sha256": "e6aa6d69012043d3404f0196389a2f8d7024f894efb01e43af7f36007a02e3f5"
+    },
+    {
+      "path": "queue.vitest.config.ts",
+      "bytes": 313,
+      "sha256": "b3d1c04f497df93802b050da57b9ca80edd718fc4f1aeb0902c0e1a10ee380af"
+    },
+    {
+      "path": "types.tsconfig.json",
+      "bytes": 527,
+      "sha256": "6e6153505fdac2be0e4aa0b199abb8e5912161c9bf21046255c00bc3bb6358db"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "budget-caller-fixed-started.json",
+      "bytes": 1149,
+      "sha256": "3ef538a3a42bb7bec840ab9613d74bacbc073bd1691d9af46b10f3037332e799"
+    },
+    {
+      "path": "budget-caller-fixed.log",
+      "bytes": 110,
+      "sha256": "4c3b3b2f85f7f81206f2731efca1a5c61f58b2f6c54d820b4003b988757b84ec"
+    },
+    {
+      "path": "budget-caller-started.json",
+      "bytes": 1149,
+      "sha256": "4aff972f263c68b19a89d50bd70c2b181df37dc95c67778a27590f88911fe2bf"
+    },
+    {
+      "path": "budget-caller.log",
+      "bytes": 2672,
+      "sha256": "4dca4c36751158b8acbd9c31e20f680cc7483ce4fb8cad18c8521c61ad40b221"
+    },
+    {
+      "path": "budget-fixture-started.json",
+      "bytes": 1149,
+      "sha256": "cb5a4ac49ee68c2fd08174bc83a48de869011c4da63b1a80dc98ea7486a6eb35"
+    },
+    {
+      "path": "budget-fixture.log",
+      "bytes": 327,
+      "sha256": "8b17244a91efa5109078148097fd23d7f944850dc7e33f02af00fcee54da6099"
+    },
+    {
+      "path": "budget-types-fixture-started.json",
+      "bytes": 1149,
+      "sha256": "1af90232081f943990e744d1b5480445a138f8f18823d46e9b6970ff5b40d20e"
+    },
+    {
+      "path": "budget-types-fixture.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "budget-types-started.json",
+      "bytes": 1149,
+      "sha256": "53a3798b513824025c9e21f396eeb343c59cdce5b200782cc5e0f4e51180be26"
+    },
+    {
+      "path": "budget-types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "iterations.json",
+      "bytes": 9091,
+      "sha256": "750208da1205ce8d95465860790189feef0e38b6873d1969fbc98e2d5e3f0f85"
+    }
+  ],
+  "checks": {
+    "caller": "first8/11 (3 /tmp canonical path fixture failures), then11/11; exact raw retained",
+    "fixture": "13/13 fake cases including original7 and6 new budget/sample cases",
+    "wholeQueueTypes": "exit0, rootES2023 noEmit",
+    "fixtureTestTypes": "exit0, rootES2023 noEmit",
+    "pg": "NOT_RUN / NOT_OPEN",
+    "distinctPure": 24
+  },
+  "resources": {
+    "children": 5,
+    "supervisorMs": 3714,
+    "rawBytes": 3109,
+    "fullReturn": "2026-10-07T20:19:35.111707+00:00",
+    "allClosed": true,
+    "floor": 18632540160,
+    "noPG": true
+  },
+  "bindingsNotes": [
+    "Final entry differs from tested entry only in actual-permit placement guard/read path: external sibling admission avoids self-dirtying the attested Git tree. This read seam is NOT_RUN; validator/FS logic unchanged.",
+    "Final failure-local differs from first4 runs only by fifth fixture-types command selector; all actual launch hashes retained.",
+    "Whole source closure unchanged except explicit own pg-fixture overlay; promotion/business assertions unchanged.",
+    "No earlier raw or failed run rewritten; local TMP peak unmeasured; cleanup receipts establish identities/absence only."
+  ]
+}
