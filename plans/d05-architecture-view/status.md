@@ -2,14 +2,14 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T15:23:15.789Z / main/origin6982c18ae已接第205来源；本批两来源迁移与两项登记，实际换载未做 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T15:25:12.732Z / main/origine65e148fd；207个唯一来源于15:24:50.706Z已实际载入 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 初始D05完整任务开工无足够明确来源，不由登记或进程替换猜测。各次来源发布时间见独立live回执；本次message-settings-app-live.json只证明实际部署时点。 |
 | Owner / model | Execution Lead / gpt-6-astra ultra |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture |
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
@@ -21,8 +21,8 @@
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 已补齐发布与插件工作的当前负责人来源，已交付读取模块和验证设计也纳入看板登记。 |
-| 下一可用交付 | 完成本次来源限定审查与换载，让看板显示实际正在推进的工作。 |
+| 当前产出 | 看板已显示发布与插件的当前负责人进度，补齐插件读取模块和验证设计来源。 |
+| 下一可用交付 | 本次来源更新已交付；后续进度由各任务唯一负责人维护。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -268,3 +268,5 @@ Goal Owner独立真实页面验收：默认空→显式加载为掩码→复制�
 X01-TRUSTED-PROCESS-HOST01唯一canonical登记源0b70已由assignment_review限定APPROVED，本地main13d4327b1已接；[原登记](../../docs/evidence/d05/trusted-process-source-registration.json)。产品独审4dc6与实际部署分开。GitHub15:10与15:13推送500，未宣称远端同步；4320仍上次204来源，当前未重启/未操作个人页。
 
 2026-10-07T15:23:15.789Z：远端500已解除。现两迁移/两登记仅导航，详见[本次来源](../../docs/evidence/d05/release-plugin-source-switches.json)；旧Release与I01已释放、新原子claim匹配。CLIENT原ISO offset完成字段仍按原owner声明读取，未代改；VERIFIER仅设计交付。实际换载尚未执行。
+
+2026-10-07T15:25:12.732Z：207来源实际换载完成，见[回执](../../docs/evidence/d05/release-plugin-207-live.json)。旧自有10591正常停止/缺席，新55292固定e65e148fd，五选中source均live/issues空；Release/I01实际读取新canonical。公共本机登录元数据仍200/启用，未读token、不刷新个人页，0个人变更。独立导航审查native APPPROVED 36a544409，main/origin已接；历史UNKNOWN保持。
