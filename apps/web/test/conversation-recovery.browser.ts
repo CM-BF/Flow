@@ -5,13 +5,13 @@ import { readFile, writeFile, readdir, lstat, statfs, mkdir, mkdtemp, rm, append
 import { join } from "node:path";
 import { fileURLToPath } from "node:url";
 import type { Browser, Locator, Page, Request, Response } from "@playwright/test";
-import type { RecoveryDatabaseLease, RecoveryWire, startRecoveryFixture } from "./conversation-recovery.fixture";
+import type { RecoveryDatabaseLease, RecoveryWire, RecoverySseTrace, startRecoveryFixture } from "./conversation-recovery.fixture";
 
 // Only built-ins are loaded by the parent before fresh admission, monitoring and durable ownership facts.
 const root = fileURLToPath(new URL("../../../", import.meta.url));
 const evidence = join(root, "docs/evidence/wpf-conversation-recovery");
 // Defensive ceiling: immutable original 90s envelope + separately accounted authorized 150s segment.
-const TOTAL_MS = 240_000, CLEANUP_MS = 15_000, EVIDENCE_BYTES = 8 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
+const TOTAL_MS = 240_000, CLEANUP_MS = 15_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
 const RUN_RETAIN_RESERVE = 5 * 1024 ** 2; // 1MiB logs + <=2MiB report + two <=512KiB images + bounded owner/budget records.
 const START_FREE = 1024 ** 3 + 128 * 1024 ** 2, STOP_FREE = 1024 ** 3 + 64 * 1024 ** 2;
 const sleep = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
@@ -44,10 +44,11 @@ const journeyGroups = {
   "create-ack-loss": ["cookieRead", "createAckLoss"],
   "created-turn-ack-loss": ["cookieRead", "createdTurnAckLoss"],
   "queue-ack-loss": ["cookieRead", "queueAckLoss"],
+  "sse-delivery": ["cookieRead", "sseDelivery"],
 } as const;
 type Journey = keyof typeof journeyGroups;
 type Group = (typeof journeyGroups)[Journey][number];
-const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss"];
+const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss", "sseDelivery"];
 function selectedGroups(journey: unknown): readonly Group[] {
   requireThat(typeof journey === "string" && Object.hasOwn(journeyGroups, journey), "An explicit supported journey is required");
   return journeyGroups[journey as Journey];
@@ -62,7 +63,9 @@ type InitializationTiming = { outcome: "RUNNING" | "PASSED" | "FAILED"; startedO
 type GroupTiming = { group: Group; startedOffsetMs: number; endedOffsetMs: number; elapsedMs: number; outcome: "PASSED" | "FAILED" };
 type WorkerResult = { journey: Journey; requiredGroups: readonly Group[]; completedGroups: Group[]; checks: string[];
   initialization: InitializationTiming; groupTimings: GroupTiming[];
-  pageErrors: string[]; failure: string | null; cleanupErrors: string[]; wire: RecoveryWire[]; coverage: Record<string, string>; bodyLoss: BodyLossObservation[] };
+  pageErrors: string[]; failure: string | null; cleanupErrors: string[]; wire: RecoveryWire[]; coverage: Record<string, string>; bodyLoss: BodyLossObservation[];
+  sseDelivery: { baselineCursor: number | null; deliveredCursor: number | null; cancelledTaskId: string | null;
+    externalCancel: { taskId: string; key: string; status: string } | null; readRequests: string[]; trace: RecoverySseTrace | null } };
 function selectionPassed(journey: Journey, result: WorkerResult | undefined): boolean {
   const required = selectedGroups(journey);
   return !!result && result.journey === journey && result.failure === null
@@ -367,6 +370,7 @@ async function worker(init: Init) {
   const { assertQueueItem } = await import("../src/conversations/queue/commands");
   const checks: string[] = [], pageErrors: string[] = [], cleanupErrors: string[] = [];
   const bodyLoss: BodyLossObservation[] = [], stopObservers: (() => void)[] = [];
+  const sseDelivery: WorkerResult["sseDelivery"] = { baselineCursor: null, deliveredCursor: null, cancelledTaskId: null, externalCancel: null, readRequests: [], trace: null };
   const initialization: InitializationTiming = { outcome: "RUNNING", startedOffsetMs: 0, endedOffsetMs: null, elapsedMs: null };
   const groupTimings: GroupTiming[] = [];
   let errorBytes = 0;
@@ -377,7 +381,7 @@ async function worker(init: Init) {
   };
   const coverage: Record<string, string> = {
     cookieRead: "NOT_RUN", cookieSseHandshake: "NOT_RUN", cookieSseDelivery: "PENDING: only handshake is asserted", textIntentDraft: "NOT_RUN", materialDraft: "NOT_RUN", sameKeyTurn: "NOT_RUN", crossTabCas: "NOT_RUN",
-    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN", createAckLoss: "NOT_RUN", createdTurnAckLoss: "NOT_RUN", queueAckLoss: "NOT_RUN",
+    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN", createAckLoss: "NOT_RUN", createdTurnAckLoss: "NOT_RUN", queueAckLoss: "NOT_RUN", sseDelivery: "NOT_RUN",
     createTwoStage: "PENDING: the two CREATE fault points are independent selected journeys", queueSteerRecovery: "PENDING: enqueue selection does not validate promotion or steering",
     profileKnowledgeSteeringDraft: "PENDING: direct/source only", secondCenter: "PENDING: one-center fixture",
   };
@@ -484,6 +488,45 @@ async function worker(init: Init) {
       await page.getByLabel("Owner token", { exact: true }).fill(fixture!.token); await page.getByRole("button", { name: "Connect workspace", exact: true }).click(); await expect(input()).toBeVisible();
       expect((await context.cookies()).some(cookie => cookie.name.startsWith("flow-session-") && cookie.httpOnly)).toBe(true);
       expect(fixture!.wire.some(row => row.path === "/api/browser-session" && row.cookie && !row.bearer && row.status === 200)).toBe(true);
+    });
+    await run("a second public consumer cancels a queued task; the observing App receives its new timeline through the original SSE only", "sseDelivery", async () => {
+      const task = await fixture!.seedSseTask(), taskPath = `/api/tasks/${task.id}`;
+      sseDelivery.cancelledTaskId = task.id;
+      const onRequest = (request: Request) => {
+        const path = new URL(request.url()).pathname;
+        if (path !== taskPath && path !== `${taskPath}/events`) return;
+        if (sseDelivery.readRequests.length >= 8) { lifetime.abort(Error("SSE witness REST request bound exceeded")); return; }
+        sseDelivery.readRequests.push(`${request.method()} ${path}`);
+      };
+      page.on("request", onRequest); stopObservers.push(() => page.off("request", onRequest));
+      try {
+        await page.goto(fixture!.url + `#task=${task.id}`);
+        await expect(page.getByText("Observe public cancellation 中文🙂", { exact: true })).toBeVisible();
+        await expect(page.getByRole("status").filter({ hasText: /^Live$/ })).toBeVisible();
+        await expect.poll(() => fixture!.sseTrace()?.frames.length ?? 0).toBeGreaterThan(0);
+        const before = fixture!.sseTrace(); requireThat(before, "Missing original task stream witness");
+        expect(before.error).toBeNull(); expect(before.connections).toBe(1); expect(before.detached).toBe(false);
+        const baseline = before.frames.at(-1)!; expect(baseline.status).toBe("queued");
+        sseDelivery.baselineCursor = baseline.nextCursor;
+        // The initial snapshot completed before the stream opened. No later snapshot/events read may explain the new entry.
+        expect(sseDelivery.readRequests).toEqual([`GET ${taskPath}`]);
+        const postsBefore = postRows().length;
+        await expect(page.getByText("Cancelled before execution.", { exact: true })).toHaveCount(0);
+        sseDelivery.externalCancel = await fixture!.cancelSseTask();
+        await expect.poll(() => fixture!.sseTrace()?.frames.some(frame => frame.status === "cancelled"
+          && frame.nextCursor > baseline.nextCursor && frame.entries.some(entry => entry.cursor > baseline.nextCursor
+            && entry.text === "Cancelled before execution.")) ?? false).toBe(true);
+        await expect(page.getByText("Cancelled before execution.", { exact: true })).toBeVisible();
+        const trace = fixture!.stopSseTrace(); requireThat(trace, "Missing completed SSE witness");
+        expect(trace.error).toBeNull(); expect(trace.connections).toBe(1); expect(trace.detached).toBe(true);
+        const delivered = trace.frames.find(frame => frame.status === "cancelled" && frame.entries.some(entry => entry.text === "Cancelled before execution."));
+        requireThat(delivered, "No cancellation entry delivered by the original stream");
+        sseDelivery.deliveredCursor = delivered.nextCursor; sseDelivery.trace = trace;
+        expect(sseDelivery.readRequests).toEqual([`GET ${taskPath}`]); expect(postRows()).toHaveLength(postsBefore);
+        const streams = fixture!.wire.filter(row => new URL(row.path, fixture!.url).pathname === `${taskPath}/stream`);
+        expect(streams).toHaveLength(1); expect(streams[0]).toMatchObject({ method: "GET", status: 200, cookie: true, bearer: false });
+        coverage.cookieSseHandshake = "PASSED"; coverage.cookieSseDelivery = "PASSED: original task stream frame and new App timeline; no REST refill";
+      } finally { page.off("request", onRequest); }
     });
     await run("explicit connection selection survives background cookie reads; only an explicit successful choice returns", "connectionChoice", async () => {
       await saveDraftThroughUi("Retained draft while choosing a center");
@@ -820,7 +863,8 @@ async function worker(init: Init) {
     try { await browser?.close(); } catch (error) { cleanupErrors.push("browser: " + text(error)); }
     try { await fixture?.close(); } catch (error) { cleanupErrors.push("fixture: " + text(error)); }
     if (coverage.materialDraft === "NOT_RUN" && coverage.textIntentDraft === "FAILED") coverage.materialDraft = "NOT_COMPLETED";
-    const result: WorkerResult = { journey: init.journey, requiredGroups, completedGroups, checks, initialization, groupTimings, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage, bodyLoss };
+    sseDelivery.trace = fixture?.sseTrace() ?? null;
+    const result: WorkerResult = { journey: init.journey, requiredGroups, completedGroups, checks, initialization, groupTimings, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage, bodyLoss, sseDelivery };
     const raw = JSON.stringify(result, null, 2); requireThat(Buffer.byteLength(raw) <= 2 * 1024 ** 2, "Browser report exceeds reserved bound");
     await writeFile(join(init.directory, "browser.json"), raw, { mode: 0o600 });
     process.send?.({ kind: "result", result }, () => { process.disconnect(); });

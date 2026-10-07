@@ -6,6 +6,7 @@ import { writeFileSync } from "node:fs";
 import { writeFile } from "node:fs/promises";
 import { join } from "node:path";
 import type { Pool } from "pg";
+import type { Readable } from "node:stream";
 
 export const root = fileURLToPath(new URL("../../../", import.meta.url));
 export const evidence = root + "docs/evidence/wpf-conversation-recovery/";
@@ -66,6 +67,91 @@ export interface RecoveryWire {
 }
 const sha = (bytes: Buffer | string) => createHash("sha256").update(bytes).digest("hex");
 type CommandKind = "turn" | "queue" | "create";
+
+export interface RecoverySseTrace {
+  taskId: string; connections: number; bytes: number; completeFrames: number; pendingBytesUpperBound: number;
+  inputSha256: string; detached: boolean; stoppedBy: string | null; error: string | null;
+  frames: { nextCursor: number; status: string; dataSha256: string; entries: { id: string; cursor: number; text: string | null }[] }[];
+}
+
+/** A passive, bounded witness of the same stream piped to the browser. It never reads ahead or writes. */
+export class RecoverySseObserver {
+  private readonly hash = createHash("sha256");
+  private readonly decoder = new TextDecoder("utf-8", { fatal: true });
+  private line = "";
+  private lines: string[] = [];
+  private skipLf = false;
+  private detach: (() => void) | undefined;
+  private readonly state: RecoverySseTrace;
+  constructor(taskId: string) {
+    this.state = { taskId, connections: 0, bytes: 0, completeFrames: 0, pendingBytesUpperBound: 0,
+      inputSha256: "", detached: true, stoppedBy: null, error: null, frames: [] };
+  }
+  snapshot(): RecoverySseTrace { return { ...this.state, inputSha256: this.hash.copy().digest("hex"), frames: this.state.frames.map(frame => ({ ...frame, entries: frame.entries.map(entry => ({ ...entry })) })) }; }
+  private fail(message: string) { this.state.error ??= message; this.stop("error"); }
+  private acceptFrame() {
+    if (!this.lines.length) return;
+    assert.ok(++this.state.completeFrames <= 4, "SSE witness frame bound exceeded");
+    const data = this.lines.filter(line => line.startsWith("data:")).map(line => line.slice(5).replace(/^ /, "")).join("\n");
+    this.lines = [];
+    if (!data) return; // Comments count toward the byte/frame limits, but are not EventPages.
+    const page = JSON.parse(data);
+    assert.ok(page && page.task?.id === this.state.taskId && typeof page.task.status === "string" && page.task.status.length <= 32);
+    assert.ok(Number.isSafeInteger(page.nextCursor) && page.nextCursor >= 0 && page.reset !== true && Array.isArray(page.entries) && page.entries.length <= 32);
+    assert.ok(page.nextCursor >= (this.state.frames.at(-1)?.nextCursor ?? 0), "SSE cursor moved backwards");
+    const entries = page.entries.map((entry: { id: unknown; cursor: unknown; kind: unknown; text?: unknown }) => {
+      assert.ok(typeof entry.id === "string" && entry.id.length <= 128 && Number.isSafeInteger(entry.cursor) && Number(entry.cursor) > 0 && Number(entry.cursor) <= page.nextCursor);
+      assert.ok(entry.kind === "reference" || entry.kind === "text" && typeof entry.text === "string");
+      return { id: entry.id, cursor: Number(entry.cursor), text: entry.kind === "text" ? entry.text as string : null };
+    });
+    const frames = [...this.state.frames, { nextCursor: page.nextCursor, status: page.task.status, dataSha256: sha(data), entries }];
+    assert.ok(Buffer.byteLength(JSON.stringify({ ...this.state, frames })) + Buffer.byteLength(this.line) + 3 <= 64 * 1024, "SSE witness summary bound exceeded");
+    this.state.frames = frames;
+  }
+  private acceptText(value: string) {
+    for (const character of value) {
+      if (this.skipLf) { this.skipLf = false; if (character === "\n") continue; }
+      if (character === "\r" || character === "\n") {
+        if (this.line) this.lines.push(this.line); else this.acceptFrame();
+        this.line = ""; this.skipLf = character === "\r";
+      } else this.line += character;
+    }
+    // Includes pending decoded text, bounded summaries and the decoder's at most three pending UTF-8 bytes.
+    this.state.pendingBytesUpperBound = Buffer.byteLength(this.line) + Buffer.byteLength(this.lines.join("\n")) + 3;
+    assert.ok(this.state.pendingBytesUpperBound + Buffer.byteLength(JSON.stringify(this.state)) <= 64 * 1024, "SSE witness retained bound exceeded");
+  }
+  attach(source: Readable, signal: AbortSignal) {
+    this.state.connections++;
+    if (this.state.connections !== 1 || this.state.stoppedBy) { this.fail("SSE witness requires one original stream"); return; }
+    const onData = (chunk: Buffer) => {
+      try {
+        assert.ok(Buffer.isBuffer(chunk), "SSE witness requires original bytes");
+        assert.ok(this.state.bytes + chunk.length <= 64 * 1024, "SSE witness input bound exceeded");
+        this.state.bytes += chunk.length; this.hash.update(chunk); this.acceptText(this.decoder.decode(chunk, { stream: true }));
+      } catch { this.fail("SSE witness invalid UTF-8, frame or bound"); }
+    };
+    const onEnd = () => this.stop("end"), onClose = () => this.stop("close");
+    const onError = () => this.fail("SSE witness upstream error"), onAbort = () => this.fail("SSE witness aborted");
+    this.detach = () => {
+      source.off("data", onData); source.off("end", onEnd); source.off("close", onClose); source.off("error", onError);
+      signal.removeEventListener("abort", onAbort); this.state.detached = true; this.detach = undefined;
+    };
+    this.state.detached = false;
+    source.on("data", onData); source.once("end", onEnd); source.once("close", onClose); source.on("error", onError);
+    signal.addEventListener("abort", onAbort, { once: true }); if (signal.aborted) onAbort();
+  }
+  stop(reason = "explicit") {
+    if (this.state.stoppedBy) return;
+    this.state.stoppedBy = reason;
+    try {
+      this.acceptText(this.decoder.decode());
+      this.state.pendingBytesUpperBound = Buffer.byteLength(this.line) + Buffer.byteLength(this.lines.join("\n"));
+      if (this.line || this.lines.length) this.state.error ??= "SSE witness stopped with an incomplete frame";
+    } catch { this.state.error ??= "SSE witness stopped with incomplete UTF-8 or exceeded bound"; }
+    this.line = ""; this.lines = []; this.skipLf = false;
+    this.detach?.();
+  }
+}
 
 /** Buffer only a bounded command ACK, never session credentials or streaming content. */
 async function readAcknowledgement(source: IncomingMessage, kind: CommandKind) {
@@ -240,6 +326,7 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
   let center = "", lost: CommandKind | undefined, wireBytes = 0;
   const measureWire = () => { wireBytes = Buffer.byteLength(JSON.stringify(wire)); assert.ok(wireBytes <= 1024 * 1024, "Fixture wire budget exceeded"); };
   const lifecycle = new AbortController(), bound = AbortSignal.any([signal, lifecycle.signal]);
+  let sseTaskId: string | undefined, sseObserver: RecoverySseObserver | undefined;
   const publicServer = httpServer(async (request, response) => {
     responses.add(response); response.on("close", () => responses.delete(response));
     const path = request.url ?? "/";
@@ -304,6 +391,10 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
             }
             response.writeHead(status);
             source.pipe(response); // SSE and ordinary bodies share backpressure and browser-close cancellation.
+            if (sseObserver && sseTaskId && new URL(path, "http://fixture").pathname === `/api/tasks/${sseTaskId}/stream`) {
+              assert.ok(method === "GET" && status === 200 && /^text\/event-stream(?:;|$)/i.test(source.headers["content-type"] ?? ""));
+              sseObserver.attach(source, bound); // pipe owns flow/backpressure; this listener only observes its bytes.
+            }
           } catch (error) { failed(error instanceof Error ? error : Error(String(error))); }
         });
         // Keep error handlers until these destroyed streams are collected, including late abort errors.
@@ -323,6 +414,7 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
       await save(false);
       try { await operation(); } catch (error) { errors.push(`${name}: ${String(error)}`); }
     };
+    await attempt("SSE witness", async () => { sseObserver?.stop(); if (sseObserver?.snapshot().error) throw Error(sseObserver.snapshot().error!); });
     // No orphaned Promise.race: the parent hard deadline owns/terminates this complete process group.
     lifecycle.abort(); for (const response of responses) response.destroy(); publicServer.closeAllConnections();
     await attempt("vite", async () => { await vite?.close(); });
@@ -358,6 +450,21 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
     await checkpoint();
     return { url: url + "/?recovery=1", token, wire, resource: resource.resource, secondResource: secondResource.resource, conversationId: conversation.conversation.id, projectId: project.snapshot.project.id, close,
       dropNext(kind: typeof lost) { lost = kind; },
+      async seedSseTask() {
+        assert.equal(sseTaskId, undefined, "Only one SSE seed task is allowed"); await checkpoint();
+        const accepted = await client.submit({ title: "Recovery SSE 中文🙂", prompt: "Observe public cancellation 中文🙂", harness: "fixture" }, randomUUID());
+        await checkpoint(); assert.equal(accepted.task.status, "queued");
+        sseTaskId = accepted.task.id; sseObserver = new RecoverySseObserver(sseTaskId);
+        return accepted.task;
+      },
+      async cancelSseTask() {
+        assert.ok(sseTaskId && sseObserver); await checkpoint();
+        const key = randomUUID(), task = await client.cancel(sseTaskId, key, bound);
+        await checkpoint(); assert.equal(task.id, sseTaskId); assert.equal(task.status, "cancelled");
+        return { taskId: task.id, key, status: task.status }; // Public second consumer, never the observing page's POST response.
+      },
+      sseTrace: () => sseObserver?.snapshot() ?? null,
+      stopSseTrace() { sseObserver?.stop(); return sseObserver?.snapshot() ?? null; },
       // Keep the expired row legal under 028's created/expires constraint, even immediately after login.
       expireSessions: () => pool!.query("UPDATE flow.browser_sessions SET created_at=statement_timestamp()-interval '2 seconds', expires_at=statement_timestamp()-interval '1 second'"),
       revokeSessions: () => pool!.query("DELETE FROM flow.browser_sessions"),
