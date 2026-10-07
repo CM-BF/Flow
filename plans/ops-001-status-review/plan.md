@@ -3,7 +3,7 @@
 | 字段 | 内容 |
 | --- | --- |
 | 计划编号 | OPS-001 |
-| 状态 | `completed` |
+| 状态 | `in-progress`；最初规则片已完成，资源/验证后继保留 |
 | 创建日期 / 最近更新 | 2026-10-05 / 2026-10-06 |
 | 父计划 | [FLOW-003](../flow-003-m1-execution/plan.md) |
 | Owner / model | Execution Lead / gpt-6-astra（至少Sol） |
@@ -68,3 +68,7 @@ co-lead→GO每个大task仅允许 **独立blocker数 + Done(1)**。blocker须�
 已停止临时预览不直接解除真实依赖保护。下一有界候选先核 web-workspace-cache：现存 package/生成布局与平台版本能否从本机固定来源逐项恢复，以及当前、冻结执行输入、跨树链接和 donor 消费者；锁文件存在或“可重新安装”不足以证明。只读核对不安装、不删除。若证明成立，再形成精确单树的可回收/恢复方法并独审；若未知则保留并记录缺项。唯一根/.git、plan/status/review 与自有原始证据保持可读，不删除 worktree 或分支，不引新归档平台。此候选不继承既有仅 `.vite` 缓存清理许可。
 
 - [ ] **OPS-001-15** 将既有docs/ci候选收敛成可审核的远程零模型验证片（唯一子任务OPS-CI01）：一个临时Linux job、固定版本、只选2 contracts+1真实PG/Fastify.inject公共handler检查、有界退出/清理。独审后普通docs提交/push，用户最终启用`.github/workflows`后才能运行；不自动扩OAuth权限，不把Linux证据替代本机native/UI/PTY。原本地资源线保持，最多三旧preview收尾后不再新增同类依赖回收批次。
+
+### 2026-10-07 共享执行阻塞收口（原 OPS-001-11/12/15）
+
+采用[固定恢复队列](../../docs/quality/execution-recovery-order-2026-10-07.md)：先 SVC07 必要直接检查与关键用户路径，其他候选维持已有准备/证据。外部条件未改变时停止重复等待/采样，不预占运行窗口；原资源门槛和 CI 唯一用户选择保留。新功能、清理或扩大供给不由本次管理收口授权。

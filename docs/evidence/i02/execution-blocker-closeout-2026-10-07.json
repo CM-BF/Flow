@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-07T00:16:59.190743+00:00",
+  "kind": "OPS_EXECUTION_BLOCKER_DOCS_INTAKE",
+  "source": "13886edc20151d19a6d50fd98cbe63ae358f5677",
+  "base": "c3ba1adfe9374b80a955d45e20310f000fed0310",
+  "files": [
+    {
+      "path": "docs/quality/execution-recovery-order-2026-10-07.md",
+      "bytes": 8969,
+      "sha256": "8d5412d17aea91ceb84b45f20147433e8b73cf95dbe5b1a7f3879ab06792bd80"
+    },
+    {
+      "path": "docs/quality/x01-seven-link-delegation-2026-10-06.json",
+      "bytes": 2957,
+      "sha256": "8b461dc0fb4ad4cda73ccef2e7d1a05dce63c768b6dfd005cfa74e83f4c66b00"
+    },
+    {
+      "path": "plans/flow-001-architecture/status.md",
+      "bytes": 22780,
+      "sha256": "7fd66a8dca6a1778baec93146081f9040dc13ad212d71ab3d6cfe4afc7dfad60"
+    },
+    {
+      "path": "plans/ops-001-status-review/plan.md",
+      "bytes": 10834,
+      "sha256": "b347de83f5253d996ac0ee73feb8ce67add4bb8df2ff576cf3ad5cee8ced3432"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "bytes": 68878,
+      "sha256": "061799d51a7d21a7c24e94452afa2a26d77d2c8eb60f74fe1e2526c0054d2400"
+    }
+  ],
+  "checks": [
+    "exact fixed bytes",
+    "13 canonical/relative links exist",
+    "human ACTIVE/REQUIRED fields",
+    "git diff --check"
+  ],
+  "independentReview": "assignment_review: docs-only no finding; GO C02 queue addition recorded from canonical status",
+  "resourceObservation": "GO 2026-10-07T00:08:27Z 783925248 B; no new probe",
+  "productsChanged": false,
+  "newTests": 0,
+  "personalServiceActions": 0,
+  "providerCalls": 0,
+  "remaining": "Local original gates unmet; remote CI user selection pending; candidate source-only approvals remain limited"
+}
