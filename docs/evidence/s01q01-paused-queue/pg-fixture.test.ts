@@ -4,6 +4,7 @@ import { QueueDatabaseFixture } from './pg-fixture.js';
 type Receipt = { phase: string; facts: Record<string, unknown> };
 const memory = vi.hoisted(() => ({
   receipts: [] as Receipt[], receiptError: undefined as Error | undefined,
+  database: false, marker: '', size: '8192',
   poolClosures: [] as number[], auxCloseError: undefined as Error | undefined,
 }));
 
@@ -27,7 +28,15 @@ vi.mock('pg', async () => {
   const { EventEmitter } = await import('node:events');
   return { Pool: class extends EventEmitter {
     constructor(private readonly options: { max: number }) { super(); }
-    query = vi.fn(async () => ({ rows: [] }));
+    query = vi.fn(async (sql: string) => {
+      if (sql.startsWith('CREATE DATABASE')) memory.database = true;
+      if (sql.startsWith('COMMENT ON DATABASE')) memory.marker = sql.split("'")[1] ?? '';
+      if (sql.startsWith('DROP DATABASE')) memory.database = false;
+      if (sql.includes('pg_database_size')) return { rows: [{ bytes: memory.size }] };
+      if (sql.includes('current_user')) return { rows: [{ owner: 'test' }] };
+      if (sql.includes('pg_stat_activity')) return { rows: [{ count: '0' }] };
+      return { rows: sql.includes('FROM pg_database') && memory.database ? [{ oid: '1', owner: 'test', marker: memory.marker || null }] : [] };
+    });
     end = vi.fn(async () => {
       memory.poolClosures.push(this.options.max);
       if (this.options.max === 10 && memory.auxCloseError) throw memory.auxCloseError;
@@ -37,6 +46,7 @@ vi.mock('pg', async () => {
 vi.mock('pg-boss', async () => {
   const { EventEmitter } = await import('node:events');
   return { PgBoss: class extends EventEmitter {
+    start = vi.fn(async () => undefined);
     stop = vi.fn(async () => undefined);
   } };
 });
@@ -49,7 +59,7 @@ function cleanupReceipt() {
 
 describe('queue fixture background failure and resource closure', () => {
   beforeEach(() => {
-    memory.receipts.length = 0;
+    memory.receipts.length = 0; memory.database = false; memory.marker = ''; memory.size = '8192';
     memory.receiptError = undefined;
     memory.poolClosures.length = 0;
     memory.auxCloseError = undefined;
@@ -60,7 +70,7 @@ describe('queue fixture background failure and resource closure', () => {
     vi.stubEnv('FLOW_S01Q01_PG_WINDOW', 'b'.repeat(32));
     vi.stubEnv('FLOW_S01Q01_TEST_ADMIN', 'postgresql://127.0.0.1/postgres');
   });
-  afterEach(() => { vi.unstubAllEnvs(); });
+  afterEach(() => { vi.unstubAllEnvs(); vi.unstubAllGlobals(); });
 
   it.each([
     ['admin', 'admin-idle'],
@@ -119,6 +129,36 @@ describe('queue fixture background failure and resource closure', () => {
     expect(error).toMatchObject({ message: 'S01Q01_CLEANUP_RECEIPT_UNKNOWN_KEEP', errors: [original, receiptError] });
     expect(fixture.admin.end).toHaveBeenCalledOnce();
     expect(memory.receipts.some(value => value.phase === 'cleanup')).toBe(false);
+  });
+
+  it('samples owned database size at creation and before normal drop', async () => {
+    const fixture = await QueueDatabaseFixture.prepare(); await fixture.create(); await fixture.finish();
+    expect(cleanupReceipt()).toMatchObject({ state: 'CLOSED', databaseSamples: [{ phase: 'created', bytes: 8192 }, { phase: 'before-drop', bytes: 8192 }] });
+  });
+
+  it.each(['134217729', 'unknown'])('preserves failed or unknown database size %s and keeps the database', async size => {
+    memory.size = size; const fixture = await QueueDatabaseFixture.prepare();
+    await expect(fixture.create()).rejects.toThrow(/DATABASE_(SAMPLE_LIMIT|SIZE_UNKNOWN)/);
+    await expect(fixture.finish()).rejects.toThrow('S01Q01_CLEANUP_UNKNOWN_KEEP');
+    expect(cleanupReceipt()).toMatchObject({ state: 'KEEP', cleanupConfirmed: false, verification: 'FAILED' });
+    expect(memory.database).toBe(true);
+  });
+
+  it('counts full bounded HTTP response bytes and preserves the public response', async () => {
+    vi.stubGlobal('fetch', vi.fn(async () => new Response('中', { status: 201 })));
+    const fixture = await QueueDatabaseFixture.prepare(); const response = await fixture.fetch('http://synthetic');
+    expect(response.status).toBe(201); expect(await response.text()).toBe('中'); await fixture.finish();
+    expect(cleanupReceipt()).toMatchObject({ httpCount: 1, httpBytes: 3, state: 'CLOSED' });
+  });
+
+  it.each([262145, 262144])('rejects per-response or aggregate HTTP budget at chunk size %s', async size => {
+    vi.stubGlobal('fetch', vi.fn(async () => new Response(new Uint8Array(size))));
+    const fixture = await QueueDatabaseFixture.prepare();
+    if (size === 262144) for (let i = 0; i < 8; i++) await fixture.fetch('http://synthetic');
+    await expect(fixture.fetch('http://synthetic')).rejects.toThrow('HTTP_BYTES_LIMIT');
+    await expect(fixture.work('after-http-failure', async () => undefined)).rejects.toThrow('HTTP_BYTES_LIMIT');
+    await expect(fixture.finish()).rejects.toThrow('HTTP_BYTES_LIMIT');
+    expect(cleanupReceipt()).toMatchObject({ state: 'CLOSED', verification: 'FAILED' });
   });
 
   it('resolves clean shutdown when no failure was recorded', async () => {

@@ -23,6 +23,8 @@ export class QueueDatabaseFixture {
   private closing = false;
   private receipt = 0;
   private httpCount = 0;
+  private httpBytes = 0;
+  private databaseSamples: { phase: string; bytes: number }[] = [];
   private firstFailure: { phase: string; name: string; code?: string } | undefined;
   private firstError: unknown;
   private created = false;
@@ -90,8 +92,37 @@ export class QueueDatabaseFixture {
   additionalPool() { this.checkWork(); const pool = this.makePool(2); this.extraPools.add(pool); return pool; }
   async fetch(url: string, options: RequestInit = {}) {
     this.checkWork(); if (++this.httpCount > 256) throw new Error('HTTP_COUNT_LIMIT');
+    const controller = new AbortController();
     const deadline = AbortSignal.timeout(Math.max(1, Math.min(8000, this.workUntil - Date.now())));
-    return fetch(url, { ...options, signal: options.signal ? AbortSignal.any([options.signal, deadline]) : deadline });
+    const signal = AbortSignal.any([controller.signal, deadline, ...(options.signal ? [options.signal] : [])]);
+    let reader: ReadableStreamDefaultReader<Uint8Array> | undefined;
+    try {
+      const response = await this.within(fetch(url, { ...options, signal }), this.workUntil);
+      reader = response.body?.getReader(); const chunks: Uint8Array[] = []; let bytes = 0;
+      while (reader) {
+        this.checkWork(); const part = await this.within(reader.read(), this.workUntil);
+        if (part.done) break;
+        bytes += part.value.byteLength; this.httpBytes += part.value.byteLength;
+        if (bytes > 256 * 1024 || this.httpBytes > 2 * 1024 * 1024) throw new Error('HTTP_BYTES_LIMIT');
+        chunks.push(part.value);
+      }
+      return new Response(response.body ? Buffer.concat(chunks) : null, { status: response.status, statusText: response.statusText, headers: response.headers });
+    } catch (error) {
+      this.failure('http-response', error); controller.abort();
+      if (reader) {
+        const cancellation = reader.cancel().catch(() => undefined);
+        this.pending.add(cancellation); cancellation.finally(() => this.pending.delete(cancellation));
+      }
+      throw error;
+    }
+  }
+  async sampleDatabase(phase: string, deadline = this.workUntil) {
+    if (!this.created || !this.durableIdentity) throw new Error('DATABASE_IDENTITY_UNKNOWN');
+    const result = await this.within(this.admin.query('SELECT pg_database_size($1)::text AS bytes', [this.name]), deadline);
+    const bytes = Number(result.rows[0]?.bytes);
+    if (!Number.isSafeInteger(bytes) || bytes < 0 || this.databaseSamples.length >= 8) throw new Error('DATABASE_SIZE_UNKNOWN');
+    this.databaseSamples.push({ phase, bytes });
+    if (bytes > 128 * 1024 * 1024) { const error = new Error('DATABASE_SAMPLE_LIMIT'); this.failure('database-size', error); throw error; }
   }
   private async save(phase: string, facts: unknown) {
     const stat = await lstat(this.root);
@@ -116,6 +147,7 @@ export class QueueDatabaseFixture {
       const marked = await this.readIdentity(); if (!marked || marked.oid !== first.oid || marked.owner !== owner || marked.marker !== this.marker) throw new Error('MARKER_UNKNOWN');
       this.checkWork(); this.identity = marked; await this.save('created', { database: this.name, identity: marked }); this.durableIdentity = true;
     });
+    await this.work('database-created-size', () => this.sampleDatabase('created'));
     await this.work('fixture-boss-start', () => this.boss.start());
   }
   async startServer(factory: () => Promise<FastifyInstance>) {
@@ -127,7 +159,8 @@ export class QueueDatabaseFixture {
     const state = this.servers.get(server); if (!state) throw new Error('SERVER_IDENTITY');
     return this.work('listen', async () => {
       state.settled = false; state.listening = server.listen({ host: '127.0.0.1', port: 0, signal: state.controller.signal });
-      try { return await state.listening; } finally { state.settled = true; }
+      let address: string; try { address = await state.listening; } finally { state.settled = true; }
+      await this.sampleDatabase('listening'); return address;
     });
   }
   async closeServer(server: FastifyInstance) {
@@ -149,6 +182,7 @@ export class QueueDatabaseFixture {
     try {
       const ownersClosed = this.pending.size === 0 && [...this.servers.values()].every(s => s.closed && s.settled) && bossClosed && auxClosed && errors.length === 0;
       if (this.created && this.durableIdentity && ownersClosed) {
+        await this.sampleDatabase('before-drop', this.cleanupUntil);
         for (let i = 0; i < 20 && Date.now() + 5000 < this.cleanupUntil; i++) {
           if (!this.matches(await this.within(this.readIdentity(), this.cleanupUntil))) throw new Error('DATABASE_IDENTITY_CHANGED');
           connections = Number((await this.within(this.admin.query('SELECT count(*) FROM pg_stat_activity WHERE datname=$1', [this.name]), this.cleanupUntil)).rows[0].count);
@@ -163,7 +197,7 @@ export class QueueDatabaseFixture {
     const cleanupConfirmed = !this.pending.size && adminClosed && auxClosed && bossClosed && !errors.length && (!this.requested || absent);
     try {
       await this.save('cleanup', { database: this.name, identity: this.identity, requested: this.requested, created: this.created, durableIdentity: this.durableIdentity,
-        connections, absent, cleanupConfirmed, errors, firstFailure: this.firstFailure,
+        connections, absent, cleanupConfirmed, errors, httpCount: this.httpCount, httpBytes: this.httpBytes, databaseSamples: this.databaseSamples, plannedWalReserveBytes: 128 * 1024 * 1024, firstFailure: this.firstFailure,
         verification: this.firstFailure ? 'FAILED' : 'NO_FAILURE_RECORDED', state: cleanupConfirmed ? 'CLOSED' : 'KEEP' });
     } catch (error) {
       throw new AggregateError(this.firstFailure ? [this.firstError, error] : [error], 'S01Q01_CLEANUP_RECEIPT_UNKNOWN_KEEP');

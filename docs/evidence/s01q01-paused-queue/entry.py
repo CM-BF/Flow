@@ -9,6 +9,7 @@ import os
 from pathlib import Path
 import shutil
 import stat
+import subprocess
 import sys
 import time
 from urllib.parse import urlsplit
@@ -82,21 +83,59 @@ def selected_passed(result):
             and all(test.get('status') == 'passed' for test in tests))
 
 
-def logical_bytes(root):
+def sample_tree(root, deadline, max_bytes, max_entries=2048):
     before = root.lstat()
     if not stat.S_ISDIR(before.st_mode) or root.resolve() != root:
         raise ValueError('NAMESPACE_UNKNOWN')
-    total = 0
+    total, entries = 0, []
     def failed(error): raise error
     for directory, dirs, files in os.walk(root, followlinks=False, onerror=failed):
         for name in dirs + files:
-            item = (Path(directory) / name).lstat()
+            if time.monotonic() >= deadline: raise ValueError('STORAGE_DEADLINE')
+            path = Path(directory) / name; item = path.lstat()
             if stat.S_ISLNK(item.st_mode) or not (stat.S_ISDIR(item.st_mode) or stat.S_ISREG(item.st_mode)):
                 raise ValueError('NAMESPACE_UNKNOWN')
             if stat.S_ISREG(item.st_mode): total += item.st_size
+            entries.append((path, item.st_dev, item.st_ino, stat.S_ISDIR(item.st_mode)))
+            if total > max_bytes or len(entries) > max_entries: raise ValueError('STORAGE_LIMIT')
     after = root.lstat()
     if (before.st_dev, before.st_ino) != (after.st_dev, after.st_ino): raise ValueError('NAMESPACE_CHANGED')
-    return total
+    return {'bytes': total, 'entries': len(entries), 'identity': (before.st_dev, before.st_ino), 'items': entries}
+
+
+def remove_sampled(root, sample, deadline):
+    for path, dev, ino, directory in sorted(sample['items'], key=lambda row: len(row[0].parts), reverse=True):
+        if time.monotonic() >= deadline: raise ValueError('CLEANUP_DEADLINE')
+        current = path.lstat()
+        if (current.st_dev, current.st_ino) != (dev, ino) or stat.S_ISLNK(current.st_mode): raise ValueError('NAMESPACE_CHANGED')
+        if directory: path.rmdir()
+        else: path.unlink()
+    current = root.lstat()
+    if time.monotonic() >= deadline or (current.st_dev, current.st_ino) != sample['identity']: raise ValueError('NAMESPACE_CHANGED')
+    root.rmdir()
+    try: root.lstat()
+    except FileNotFoundError: return 'REMOVED_EXACT_ENOENT'
+    raise ValueError('NAMESPACE_REMAINS')
+
+
+def validate_admission(facts, permit, now, actual_head, branch, dirty):
+    expected = {'claimId': 'a8a3b2d7-1bde-438a-9fbf-f81e1c791350', 'version': 1, 'state': 'ACTIVE',
+                'taskId': 'S01Q01', 'worktree': str(ROOT), 'branch': 'codex/queue-paused-scan'}
+    if any(facts.get(key) != value for key, value in expected.items()): raise ValueError('CLAIM_MISMATCH')
+    age = now - facts.get('observedEpoch', 0)
+    if not 0 <= age <= 60: raise ValueError('ADMISSION_STALE')
+    if facts.get('head') != permit['head'] or actual_head != permit['head'] or branch != expected['branch'] or dirty or facts.get('clean') is not True: raise ValueError('HEAD_OR_DIRTY_MISMATCH')
+    if facts.get('window') != permit['window'] or facts.get('windowGranted') is not True: raise ValueError('WINDOW_NOT_GRANTED')
+    scopes = ['apps/server/src/conversation-queue/promotion.ts', 'apps/server/src/conversation-queue/queue.test.ts', 'docs/evidence/s01q01-paused-queue', 'plans/s01q01-paused-queue']
+    if sorted(facts.get('scopes', [])) != sorted(scopes): raise ValueError('SCOPE_MISMATCH')
+    terms = facts.get('resourceTerms', {})
+    if not terms or any(type(value) is not int or value < 0 for value in terms.values()) or sum(terms.values()) != permit['requiredFreeBytes'] or facts.get('requiredFreeBytes') != permit['requiredFreeBytes']: raise ValueError('RESOURCE_SUM_MISMATCH')
+
+
+def current_git():
+    def read(*args):
+        return subprocess.run(['/usr/bin/git', '-C', str(ROOT), *args], check=True, capture_output=True, text=True, timeout=2, env={'PATH': '/usr/bin:/bin', 'HOME': '/nonexistent', 'GIT_OPTIONAL_LOCKS': '0'}).stdout.strip()
+    return read('rev-parse', 'HEAD'), read('branch', '--show-current'), read('status', '--porcelain', '--untracked-files=normal')
 
 
 def write_new(path, value):
@@ -129,6 +168,10 @@ def run(permit_path):
         raise ValueError('INPUT_MANIFEST_MISMATCH')
     inputs = read_json(input_path, 262144)
     verify_inputs(inputs)
+    # Actual admission files live outside the Git tree: they cannot dirty the source they attest.
+    if not permit_path.is_absolute() or permit_path.resolve().is_relative_to(ROOT): raise ValueError('EXTERNAL_PERMIT_REQUIRED')
+    admission = read_json(permit_path.with_name(permit_path.stem + '-admission.json'), 32768)
+    validate_admission(admission, permit, time.time(), *current_git())
     admin = admin_input(os.environ.get('FLOW_S01Q01_TEST_ADMIN', ''))
     free = shutil.disk_usage(ROOT).free
     if free < permit['requiredFreeBytes']: raise ValueError('FREE_FLOOR')
@@ -164,20 +207,20 @@ def run(permit_path):
     except Exception as error:
         failures.append(type(error).__name__)
     resource_closed = closed and cleanup is not None and cleanup.get('cleanupConfirmed') is True and cleanup.get('state') == 'CLOSED'
-    tmp_state = 'KEEP'
-    if resource_closed:
-        actual = scratch.lstat()
-        if (actual.st_dev, actual.st_ino) == (tmp_identity.st_dev, tmp_identity.st_ino) and stat.S_ISDIR(actual.st_mode):
-            shutil.rmtree(scratch)
-            try: scratch.lstat()
-            except FileNotFoundError: tmp_state = 'REMOVED_EXACT_ENOENT'
-    storage = None
-    try: storage = logical_bytes(record)
+    tmp_state = 'KEEP'; storage = None; tmp_sample = None; budget = False
+    try:
+        # Before deletion: both retained evidence and TMP count towards the envelope.
+        combined = sample_tree(record, min(origin + 138, time.monotonic() + 2), 8 * 1024 * 1024 - 262144)
+        tmp_sample = sample_tree(scratch, min(origin + 138, time.monotonic() + 2), 4 * 1024 * 1024, 1024)
+        if tmp_sample['identity'] != (tmp_identity.st_dev, tmp_identity.st_ino): raise ValueError('TMP_IDENTITY')
+        storage = combined['bytes']
+        budget = storage - tmp_sample['bytes'] + 262144 <= 2 * 1024 * 1024
+        if resource_closed and budget: tmp_state = remove_sampled(scratch, tmp_sample, origin + 138)
     except Exception as error: failures.append(type(error).__name__)
-    # All retained run files count as raw; this final sample is deliberately
-    # stricter than the enclosing 8MiB local envelope, and is not a peak claim.
-    budget = storage is not None and storage + 262144 <= 2 * 1024 * 1024
-    outcome = {'testPassed': passed and report.exit_code == 0, 'resourceClosed': resource_closed, 'scratch': tmp_state, 'cleanup': cleanup, 'secondary': failures, 'logicalBytesBeforeReceipt': storage, 'storageWithinBudget': budget, 'elapsedBeforeReceiptMs': round((time.monotonic() - origin) * 1000), 'limitations': 'Logical final sample only; DB bytes and live peak are not measured by this caller. No retry/extra probe/forced DROP.'}
+    outcome = {'testPassed': passed and report.exit_code == 0, 'resourceClosed': resource_closed, 'scratch': tmp_state, 'cleanup': cleanup, 'secondary': failures,
+      'logicalBytesBeforeCleanup': storage, 'tmpBytesBeforeCleanup': tmp_sample['bytes'] if tmp_sample else None, 'tmpEntries': tmp_sample['entries'] if tmp_sample else None,
+      'storageWithinBudget': budget, 'elapsedBeforeReceiptMs': round((time.monotonic() - origin) * 1000),
+      'limitations': 'Bounded pre-cleanup sample, not live peak or OS quota. DB samples are not peaks; WAL reserve is planning only. No retry/extra probe/forced DROP.'}
     write_new(record / 'result.json', outcome)
     print(json.dumps({'record': str(record), 'testPassed': outcome['testPassed'], 'resourceClosed': resource_closed, 'scratch': tmp_state}), flush=True)
     return 0 if outcome['testPassed'] and resource_closed and tmp_state == 'REMOVED_EXACT_ENOENT' and budget and not failures and time.monotonic() <= origin + 140 else 1
