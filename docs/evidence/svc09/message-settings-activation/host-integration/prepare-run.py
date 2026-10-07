@@ -23,7 +23,7 @@ def save(name, value):
 
 free = shutil.disk_usage(ROOT).free
 assert free >= 1024**3 + 2*1024**2 + 256*1024
-if work_environment: assert free >= 16154558464
+if work_environment: assert free >= 16175529984
 scratch = Path(tempfile.mkdtemp(prefix='flow-svc09a-review-' if review_fixes else 'flow-svc09a-host-preparation-' if host_guard else 'flow-svc09a-prepare-',dir='/private/tmp')); before = scratch.lstat()
 argv = (NODE, '--test', '--test-reporter=spec', str(HERE/'host-prepare.test.mjs')) if host_guard else (NODE, str(HERE/'prepare-check.mjs'))
 inputs = ['host-consumer.mjs','mixed-runner.mjs','prepare-check.mjs','prepare-run.py']
