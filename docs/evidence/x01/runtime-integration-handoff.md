@@ -1,5 +1,17 @@
 # X01 production runner connection — exact handoff
 
+## Current handoff order — 2026-10-07T08:24Z
+
+This dated section supersedes historical ownership/status below; no new write authority or execution window is granted. Main `2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a` contains P02 `f5a13cbe`, plus X01 semver/pinning. Provenance remains the exact six-source narrow intake; its5/5 PG result is independently approved, not public runRunner completion.
+
+1. P02 integration alone does not transfer runtime/server/client/contract exports. Fresh ledger now shows former CHAT05P02 claim `f51cc458-ced9-48ff-a033-97f42483dcf4` v5 RELEASED at2026-10-07T08:20:34.511Z. No formal stopped-writing handback receipt has yet been received by X01 in this segment, and X01 has not amended these literals. Obtain/verify that receipt and current ownership before any writes.
+2. X01 coordinates the next exact `apps/runner/src/runtime.ts` and `apps/server/src/index.ts` integration slice after the formal handback and atomic claim amendment; keep P02 body publication/outbox/read routes and existing Codable/Claude behavior. Reuse the single runtime, admission journal, AttemptControl and EventOutbox; no unconsumed helper or second client/runner.
+3. `packages/client/src/index.ts` goes first to LAZY for its small direct consumer change. After its stable main intake, explicit STOP plus current-version atomic scope removal, X01 can claim that literal. Never claim/write it simultaneously. Contract-index exports require their own fresh exact owner coordination as well.
+4. X01 already holds four startup literals `configuration.ts`, `configuration.test.ts`, `main.ts`, `main-concurrency.test.ts` under `apps/runner/src/` via C02's formal handback. They are scope preparation only: verify latest main/interface and bounded source intake before implementation; do not create idle helpers simply because these paths are available.
+
+The transport/runtime requirements below remain the concrete next interface; old claim-v4/C02-v15 statements are historical. New sender must use a paired current plugin capability: older strict centers reject pluginSource, and persisted events may not be stripped/reformatted on retry. The six-source main intake verifies provenance association, not independent proof of npm execution.
+
+
 Read-only main baseline `3e4362b08359433620a07b05bd034a25e2dd7c4b` at 2026-10-07T07:27Z. This is an implementation request within the existing X01 plan, not a second runner/client or a claim transfer.
 
 Already main: frozen plugin binding/phase grant Module, current v3 center allocation and compact receipts, v3 AdmissionJournal, `executePluginTool`, trusted package store/host. Current `runRunner` still calls v2 `claimOpportunity`/`status` and `journal.opportunity`; it never calls `executePluginTool`. FlowClient has no plugin publication/grant/v3 methods. Server has v3 claim routes but has not mounted plugin runtime management/admission routes. Artifact wire currently has no typed plugin provenance. Real semver input is the separately reviewed source `4fc60b4c`; its injected authorization tests do not close these gaps.

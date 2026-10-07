@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T08:18:57.808104+00:00 |
+| 最近更新时间 | 2026-10-07T08:23:49.955908+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -16,18 +16,18 @@
 | Branch | codex/plugin-enable-binding |
 | 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
 | 工作树 dirty 状态 | 376954ac8a95ca29df13cc84a4e7a3828c489af9 PG准备源固定；2个local检查已实际终态，输入闭包与准备结果已封存，当前提交后clean |
-| 工作分支状态 | review |
+| 工作分支状态 | integration |
 | 检查状态 | 新来源PG五组5/5、56HTTP、1DB全部闭合；原准备/19/9/3不重跑 |
-| Review | 来源六源已07:52:01独审APPROVED/READY；final deadline P2已08:12:25独审关闭；[五组PG准备](../../docs/evidence/x01/artifact-pg-review-ready.md)已批准；唯一R1已执行5/5，实际结果待独审 |
+| Review | 来源六源07:52:01、准备08:12:25、实际PG五组08:19:57均已独审APPROVED/0P1P2；限定各自范围 |
 | 已集成 main 状态 / HEAD | 原领域5cd、claim/center9816已main；真实semver+Flow包装pinning已main5b0bef86086a611937e098c78bc542fde6ed9539。来源六源尚待接收；完整public runtime未交付 |
-| 实现目标 | f3f48929085a07a545b7cfd154d133ca99dcb8a2 |
-| 实现范围 | apps/server/src/plugin-runtime/artifact-pg.test.ts, docs/evidence/x01/artifact-pg-once.py, docs/evidence/x01/artifact-pg-local.py, docs/evidence/x01/artifact-pg-input.json, docs/evidence/x01/artifact-pg-tsconfig.json, docs/evidence/x01/artifact-pg-vitest.config.mjs, docs/evidence/x01/artifact-pg-deadline.test.py |
-| 本片段交付阶段 | review |
+| 实现目标 | 685978f6d6f9552a789e0df10da13df7a0757505 |
+| 实现范围 | apps/runner/src/plugins/execution.ts, apps/server/src/events.ts, apps/server/src/plugin-runtime/artifact.ts, apps/server/src/plugin-runtime/artifact.test.ts, packages/contracts/src/runner.ts, packages/contracts/src/plugin-artifact.ts |
+| 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 插件产物来源关联已完成真实事务验收，重放、拒绝和整批回滚成立；结果待独审 |
-| 下一可用交付 | 完成五组实际结果独审并补入来源接缝主线交付；完整runner公开链仍开放 |
-| 当前阻塞 | ACTIVE: 生产runtime/client由CHAT05P02持有；当前来源事务片可独立交付 |
+| 当前产出 | 插件产物来源关联与真实事务验收已获独审，已准备窄改动主线接收 |
+| 下一可用交付 | 将来源接缝窄改动集成主线；随后按交权顺序接通真实runner公开调用链 |
+| 当前阻塞 | ACTIVE: 后继共享入口待正式交权；client先由LAZY接入后交回。当前来源接缝已可独立集成 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -305,3 +305,5 @@ Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实�
 2026-10-07T08:15:50Z：chatui08:12:25准备增量APPROVED/0P1P2归档，Mika授artifact PG-R1唯一180s；P02已08:12:42实际closed。本owner将在fresh完整claim/cleanHEAD/266inputs/absent/资源门槛通过后排他创建一次准入；此行不是实际RUN，实际结果另留原件。旧7aa/96f证据不改。
 
 2026-10-07T08:18:57.808104+00:00：artifact PG-R1固定result5068c6fa6b1cdfc7766f735a494c771892d7f3c1，5/5、56HTTP、1专库/1监听器/2受监督进程与exactTMP已闭合；08:17:02实际终态后即时归还Mika，0后继launch。原180s与身份/预算不变，pre-save/post-save/externaltime分开；[唯一结果入口](../../docs/evidence/x01/artifact-pg-result-ready.md)待chatui独审。原输入/7aa/96f及19/9/3原件不改，来源六源尚未main、完整public运行链未完成。
+
+2026-10-07T08:23:49.955908+00:00：PG结果chatui08:19:57独审APPROVED归档；[canonical六源窄intake](../../docs/evidence/x01/artifact-provenance-integration-ready.json)关联原六源批准/19局部+新5PG结果与精确cleanup，阶段integration。只读main2a7e004b已含P02f5a13cbe，三直接既有消费者相对d556零diff，原18500B窄patch apply--check0；不是main组合通过，不全文件覆盖native-body/Codex。新账本P02v5 RELEASED08:20:34已观察，正式handback仍待本owner收据且本段不amend；runtime/server随后X01协调、client先LAZY，四启动scope当前仅接线准备。0工程child/新PG，claimv17保留。

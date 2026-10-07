@@ -54,13 +54,39 @@
   ],
   "narrowPatch": "docs/evidence/x01/artifact-provenance-main-delta.patch",
   "patchBase": "ca851c4ebcfac0d6ef9d455dbd444ce3307fc99a",
-  "mainPatchCheck": "docs/evidence/x01/artifact-provenance-main-compatibility.json",
+  "mainPatchCheck": "docs/evidence/x01/artifact-provenance-main-current-compatibility.json",
   "evidence": [
     "docs/evidence/x01/artifact-provenance-manifest.json",
     "docs/evidence/x01/artifact-provenance-local.json",
     "docs/evidence/x01/artifact-provenance-result-summary.json",
-    "docs/evidence/x01/artifact-provenance-interface.md"
+    "docs/evidence/x01/artifact-provenance-interface.md",
+    "docs/evidence/x01/artifact-pg-independent-review.json",
+    "docs/evidence/x01/artifact-pg-result-manifest.json",
+    "docs/evidence/x01/artifact-pg-result-ready.md"
   ],
   "integrationRule": "Apply narrow additive patch; preserve current native-body/Codex. Direct main composition check required. Do not wholesale replace events.ts/runner.ts. No new migration;034 already main.",
-  "remaining": "Actual PG association/rollback then runtime/client qualification and public runRunner."
+  "remaining": "Main direct composition/intake of these exact six source deltas; public v3 client/runtime/startup/trusted enable-load-invoke/semver chain remains open. Actual five-case SQL association/rollback is now independently approved.",
+  "updatedAt": "2026-10-07T08:23:49.955908+00:00",
+  "checkedMain": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+  "originalMainPatchCheck": "docs/evidence/x01/artifact-provenance-main-compatibility.json",
+  "checks": {
+    "local": {
+      "resultCommit": "ddace03ab12edc0bee2bf09b5d047b7f73279e51",
+      "passed": 19,
+      "typesExit": 0,
+      "review": "docs/evidence/x01/artifact-provenance-independent-review.json"
+    },
+    "PG": {
+      "resultCommit": "5068c6fa6b1cdfc7766f735a494c771892d7f3c1",
+      "packetCommit": "7b261e458b45535c7ec57efa78d122bfd637dbc5",
+      "selected": 5,
+      "passed": 5,
+      "HTTP": 56,
+      "resultManifest": "docs/evidence/x01/artifact-pg-result-manifest.json",
+      "manifestSha256": "94ead80d183d0a69b8921f2c8d7d52b32efb34e45b33c2df8f05e2a74f681265",
+      "review": "docs/evidence/x01/artifact-pg-independent-review.json",
+      "actualResourceReturned": true
+    }
+  },
+  "resultEvidenceRule": "Read14 run/tool files referenced by fixed result manifest at5068c6fa; retain original raw. No rerun/overlay of older main source. The optional PG test/support is reproduction evidence at fixed execution14bc, not a new production source overlay."
 }

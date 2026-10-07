@@ -1,0 +1,36 @@
+{
+  "checkedAt": "2026-10-07T08:23:49.955908+00:00",
+  "mainCommit": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+  "mainOrigin": "2a7e004b5ab7ceb2e44903af92aaf251cdda0e8a",
+  "includesP02Commit": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "command": "git apply --check <unchanged artifact-provenance-main-delta.patch>",
+  "exitCode": 0,
+  "stdout": "",
+  "stderr": "",
+  "patchBytes": 18500,
+  "patchSha256": "06dc8b584d5261e9c74e91d20a45b1944c6c31fc72adc8015736935eaf83bbf5",
+  "priorApprovedMain": "d556780129897582f09945c0621aa2ed64fb52f7",
+  "threeExistingConsumersDiffBytes": 0,
+  "existingPreimages": [
+    {
+      "path": "apps/server/src/events.ts",
+      "blob": "3a851812cd28e19bb4bd817dfc7151593180e6c5",
+      "bytes": 8925,
+      "sha256": "01864e94da6a985ba1d0fcb677c66a1692bd125ed5806d9de37ed919d0d5cd9d"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "blob": "f9f888aa355097774df3de86bc5f20f1ad88ebe2",
+      "bytes": 7753,
+      "sha256": "cd987806034ec4ed967fc27229a7e1cd8b81fdfb7c037388c5a5a51615dd5918"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "blob": "60b637ad15eadc641c60a0b91687f56ec3519214",
+      "bytes": 4764,
+      "sha256": "09b410abd6028019e3c74b38ef9596b5f1dd2981c40e9d9306efae6ecab6309d"
+    }
+  ],
+  "mainUnchanged": true,
+  "meaning": "Read-only narrow-patch applicability only; preserve native-body/Codex. No main typecheck/PG/merge performed."
+}
