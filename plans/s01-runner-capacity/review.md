@@ -2,7 +2,7 @@
 
 ## 当前：queue唯一实际失败结果待审
 
-状态 PENDING / RESULT_FIDELITY_REVIEW。Execution `67d0c84d3e8a629d78335b8866173e04d7249e36`；source `375ecccc427acf59d687153903bd032fb6e684bc`。唯一[结果报告](../../docs/evidence/s01/pool-wait-run/report.md)，固定result/manifest由READY给出。O1 FAIL/O2 NOT_RUN、tool1、两个KEEP与活动资源RETURN均原样，要求独立核原raw/部分分母/预算/资源及最小根因，不工程运行或清未知。原准备/pure批准不当实际通过。
+状态 PENDING / RESULT_FIDELITY_REVIEW。Execution `67d0c84d3e8a629d78335b8866173e04d7249e36`；source `375ecccc427acf59d687153903bd032fb6e684bc`。唯一[结果报告](../../docs/evidence/s01/pool-wait-run/report.md)，固定result `bf8813327ca60d645d03e8d9f9218e30d455cd3f`，manifest SHA `a972452a062d5358ee5e366e8d91648d537c0b604ecb8d7a9f105d945e03d75f`，入口 [READY](../../docs/evidence/s01/pool-wait-run/READY.md)。O1 FAIL/O2 NOT_RUN、tool1、两个KEEP与活动资源RETURN均原样，要求独立核原raw/部分分母/预算/资源及最小根因，不工程运行或清未知。原准备/pure批准不当实际通过。
 
 以下均为历史固定目标，不能当本次实际性能结论。
 

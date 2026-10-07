@@ -82,7 +82,7 @@
     "singleCleanupReservePreserved": true,
     "notMeasuredDbWalCap": true
   },
-  "actual": "PG_HTTP_PERFORMANCE_NOT_RUN_NOT_OPEN",
+  "actual": "O1_FAIL_O2_NOT_RUN_WINDOW_CONSUMED",
   "concurrentUserLoad": "Original reported three resident personal services and previously running user task; later state UNKNOWN. Manager must confirm at future handoff; no personal probing/stopping, no assumption of empty machine or controlled equal background between arms.",
   "requiredFutureGates": [
     "named exclusive performance OPEN and exact fresh clean execution HEAD",
@@ -94,5 +94,8 @@
   "currentState": "CONSUMED_O1_FAIL_O2_NOT_RUN_NO_RETRY",
   "currentResult": "docs/evidence/s01/pool-wait-run/report.md",
   "historicalPreparationNote": "Original fields below describe pre-admission only; execution67d0 consumed this window once, active resources RETURN and two roots KEEP.",
-  "historicalState": "CURRENT_READY_FOR_MANAGER_HANDOFF_NOT_OPEN"
+  "historicalState": "CURRENT_READY_FOR_MANAGER_HANDOFF_NOT_OPEN",
+  "historicalActual": "PG_HTTP_PERFORMANCE_NOT_RUN_NOT_OPEN",
+  "actualExecutionHead": "67d0c84d3e8a629d78335b8866173e04d7249e36",
+  "resultTarget": "bf8813327ca60d645d03e8d9f9218e30d455cd3f"
 }
