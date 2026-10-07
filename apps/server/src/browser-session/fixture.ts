@@ -19,6 +19,7 @@ async function availablePort(): Promise<number> {
 export async function createBrowserSessionFixture(pool: Pool, options: {
   ownerToken: string; port?: number; enabled?: boolean; authEpoch?: string;
   cookieOrigin?: string; browserOrigin?: string; onClosing?: () => void; beforeStreamAuthorize?: (count: number, request: FastifyRequest) => Promise<void>;
+  beforeLogoutResponse?: () => Promise<void>;
 }) {
   const port = options.port ?? await availablePort(), address = `http://127.0.0.1:${port}`;
   const browserOrigin = options.browserOrigin ?? address;
@@ -30,6 +31,10 @@ export async function createBrowserSessionFixture(pool: Pool, options: {
   if (authentication.corsOptions) await app.register(cors, authentication.corsOptions);
   app.addHook('preHandler', authentication.authenticate);
   registerBrowserSessionRoutes(app, authentication);
+  app.addHook('onSend', async (request, reply, payload) => {
+    if (request.routeOptions.url === '/api/browser-session/logout' && reply.statusCode === 200) await options.beforeLogoutResponse?.();
+    return payload;
+  });
   registerStreams(app, pool, async request => { streamChecks++; await options.beforeStreamAuthorize?.(streamChecks, request); await authentication.authorizeStream(request); });
   app.addHook('preClose', async () => { options.onClosing?.(); });
   app.get('/api/health', async () => ({ ok: true }));
