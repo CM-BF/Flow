@@ -107,10 +107,50 @@ export async function checkLocalAccessBrowser({ browser, expect, outputDirectory
     report.checks.push('close aborts outstanding read; late response does not restore token; reopen needs explicit load');
 
     await open.click(); await load.click(); await expect(token).toHaveValue(FAKE_TOKEN);
-    const otherPage = await context.newPage(); await otherPage.bringToFront();
-    await expect.poll(() => page.evaluate(() => document.visibilityState)).toBe('hidden');
-    await expect(token).toHaveValue('');
-    await otherPage.close(); await page.bringToFront();
+    const visibility = report.visibility = { before: await page.evaluate(() => document.visibilityState) };
+    const pageSession = await context.newCDPSession(page);
+    let otherPage;
+    let minimizedWindow;
+    try {
+      // Playwright enables focus emulation per page; disable it before testing native visibility.
+      await pageSession.send('Emulation.setFocusEmulationEnabled', { enabled: false });
+      visibility.focusEmulationDisabled = true;
+      otherPage = await context.newPage(); await otherPage.bringToFront();
+      visibility.afterOwnedTabSwitch = await page.evaluate(() => document.visibilityState);
+      if (visibility.afterOwnedTabSwitch !== 'hidden') {
+        // This page-scoped session identifies only the window owned by this isolated browser.
+        minimizedWindow = await pageSession.send('Browser.getWindowForTarget');
+        visibility.windowId = minimizedWindow.windowId;
+        visibility.windowStateBefore = minimizedWindow.bounds.windowState ?? 'normal';
+        await pageSession.send('Browser.setWindowBounds', {
+          windowId: minimizedWindow.windowId, bounds: { windowState: 'minimized' },
+        });
+        visibility.ownedWindowMinimized = true;
+      }
+      await expect.poll(() => page.evaluate(() => document.visibilityState)).toBe('hidden');
+      visibility.observedHidden = await page.evaluate(() => document.visibilityState);
+      await expect(token).toHaveValue('');
+      visibility.tokenCleared = true;
+    } finally {
+      if (minimizedWindow) {
+        try {
+          await pageSession.send('Browser.setWindowBounds', {
+            windowId: minimizedWindow.windowId,
+            bounds: { windowState: minimizedWindow.bounds.windowState ?? 'normal' },
+          });
+          visibility.windowRestored = true;
+        } catch { report.errors.push('visibility check: owned window restoration failed'); }
+      }
+      try {
+        await pageSession.send('Emulation.setFocusEmulationEnabled', { enabled: true });
+        visibility.focusEmulationRestored = true;
+      } catch { report.errors.push('visibility check: focus emulation restoration failed'); }
+      try { await pageSession.detach(); visibility.sessionDetached = true; }
+      catch { report.errors.push('visibility check: page session detach failed'); }
+      try { await otherPage?.close(); visibility.otherPageClosed = true; }
+      catch { report.errors.push('visibility check: owned tab close failed'); }
+    }
+    await page.bringToFront();
     assert.ok(!JSON.stringify(await page.evaluate(() => ({ local: { ...localStorage }, session: { ...sessionStorage } }))).includes(FAKE_TOKEN));
     await page.keyboard.press('Escape');
     report.checks.push('actual hidden page clears; no credential in browser storage');
