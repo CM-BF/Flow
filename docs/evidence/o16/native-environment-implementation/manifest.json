@@ -1,0 +1,818 @@
+{
+  "kind": "flow.o16.native-environment-delta.v1",
+  "at": "2026-10-07T10:11:40.978550+00:00",
+  "source": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+  "deliveryInput": "41d5aa0f06d60be1eabb756fd0f5157f51dff769",
+  "base": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "sourceDigest": "1862e7ea210e03cfcf6ec8f4ef2d17250222ab0d9a9f633f3169b485a85a8453",
+  "environmentDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "counts": {
+    "changedExperimentIncludingReadme": 15,
+    "unchangedExperiment": 19,
+    "protectedProductInputs": 289,
+    "deltaBindings": 60,
+    "aliasesVerifiedBySourceIdentity": 39,
+    "fixedRuntimeInputs": 5,
+    "runBindingsVerified": 175,
+    "variantBindings": 21
+  },
+  "inherited": [
+    {
+      "path": "docs/evidence/o16/native-stages/manifest.json",
+      "bytes": 25117,
+      "sha256": "4d2b2f8b5be0ad092666ccaf38f173413bfd4f8010cd3ad98c1255e837821006"
+    },
+    {
+      "path": "docs/evidence/o16/native-stages/native-environment-manifest.json",
+      "bytes": 2492,
+      "sha256": "e022b1b16e13f8ce5c19f600408fd93af5da91caea948e9f2e6c0afeeecdc3a0"
+    },
+    {
+      "path": "docs/evidence/o16/current-main-entry-preflight.json",
+      "bytes": 68817,
+      "sha256": "ebadc9afcca5749e8ae02b4aac65736c1a2ce72130bf8bc7b114cbc87d935437"
+    },
+    {
+      "path": "docs/evidence/o16/dependency-links.json",
+      "bytes": 20954,
+      "sha256": "3daef629400d35e6f93fbac4fea4149748677c9212f1f86b1a034b6a09800c6f"
+    }
+  ],
+  "supersededExperimentPaths": [
+    "experiments/continuous-goal-acceptance/README.md",
+    "experiments/continuous-goal-acceptance/config.mjs",
+    "experiments/continuous-goal-acceptance/driver.mjs",
+    "experiments/continuous-goal-acceptance/native-environment-fixture.mjs",
+    "experiments/continuous-goal-acceptance/native-environment.mjs",
+    "experiments/continuous-goal-acceptance/native-environment.test.mjs",
+    "experiments/continuous-goal-acceptance/operator.mjs",
+    "experiments/continuous-goal-acceptance/permit.mjs",
+    "experiments/continuous-goal-acceptance/phase-host.mjs",
+    "experiments/continuous-goal-acceptance/query-run.mjs",
+    "experiments/continuous-goal-acceptance/query-run.test.mjs",
+    "experiments/continuous-goal-acceptance/resources.mjs",
+    "experiments/continuous-goal-acceptance/stage-policy.mjs",
+    "experiments/continuous-goal-acceptance/stage-policy.test.mjs",
+    "experiments/continuous-goal-acceptance/worker.mjs"
+  ],
+  "unchangedExperiment": [
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/assignment.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 3744,
+      "sha256": "ef2f38123896adca4862a9951a8b20750c13caf49eeb05ada558a4fde7e18cfe",
+      "blob": "f154805ea8dfa0ab99dd9231a9c2ac408f6de8c3"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/assignment.test.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 3138,
+      "sha256": "4402b4394f4b5a22aadd402bc131111af55bacd5423a4bb8638d9155ec6462db",
+      "blob": "8a4733a230df2b6b2c7bece2adc5961582659648"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/contract.test.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 4823,
+      "sha256": "2b5a9dd21323f354a48c7a4278fdb6e566ea0839ad844d56cf26aaf0e9c87636",
+      "blob": "ab78c62db0aa69dcd7cf8898ec5ff394f8a16bc6"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/decision-checkpoint.test.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 1565,
+      "sha256": "10ca1b2aba2149861d9906a81171188f7992c4085dc0c68c3d8ae4490d4dd065",
+      "blob": "6ac33515b3af20736d4dde1819631d7b24775881"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/decision.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 892,
+      "sha256": "5731378e23c3c90427bb5173603285add473f9cf0dfd233e15abaf6ce10ff224",
+      "blob": "a6bb6a86ec24881a3ad3fffefab40c90adea72cd"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/decision.test.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 3191,
+      "sha256": "98593b744b52be1d88c120377b3efd00cd1bb2d5737d03de2d03f101f0b1f2e0",
+      "blob": "9ded2d5dbc3ba3b25c0eef37791f7c117251807c"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/identity.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 3376,
+      "sha256": "9ed99adddb8a79f337c3d049309be9a75010ebb4aa99c172428cbc854bbb8687",
+      "blob": "f1e48060cc92a07ff5a92ddad3d9fe4a5baeb9a7"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/journey.test.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 1302,
+      "sha256": "b516ed3a90f6da219123d0ca43484655bdd1646907586740a884ca0f24a71ff8",
+      "blob": "71e006ad3e4aa6f6e4af06a8fb5687e33ae88bc9"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 3133,
+      "sha256": "083c788812a586b6649ecd45175edeea8a8ad7479f46b288fbdad08f652380fa",
+      "blob": "6f7264f4218b62ca23688ba9aad52b7fec487930"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/operator-watchdog.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 6215,
+      "sha256": "a435b00561da788baf954a4e82f279f8869c65bfc38fae9ab00e571b977ee410",
+      "blob": "0f342d43bbc7d364b0069f500062f1adb506f736"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/operator-watchdog.test.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 4713,
+      "sha256": "1c92e622a347cbdd6eb98448fae74799914bb29e59b02631d8688f6be44c5e3f",
+      "blob": "63ecb43e48737a01cf11c10681c6b5b048b7f646"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/operator.test.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 2198,
+      "sha256": "3b868f40a083bdbe14bc498c1aa67db98bf4c2350d00c24dc249523b7bd55998",
+      "blob": "5a91f2ee15498e280b31baa4050c4131ef42ab29"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/permit.test.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 5212,
+      "sha256": "f43749bf4fb7912ae661f8380da91ea4e6b16c2f1c105a280bb538f0c1f1d5ab",
+      "blob": "dfefdcad938f0869592e7770e6dec8a569852671"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/proposal.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 3384,
+      "sha256": "092dd765e1e92e300ccebecccd5aa79fe5ca16eadc5a39fa1233014a87c68906",
+      "blob": "5e676ea7c7737e2295c28cf07d2ab398f6e076ce"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/query-policy.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 6784,
+      "sha256": "9065a7f0d5f917ae3dac5d36fd6dbe8a9f2cd699d09663a97231f61024424523",
+      "blob": "9ab09295edcf2c92c25fe18848a83a3d3fcc0eae"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/query-policy.test.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 3464,
+      "sha256": "39c8ee35dc3bab6006b2394d00172bd7eecc0c2fa0e550b84751f18026153e40",
+      "blob": "5fc9649570440931f85d81965298d520f4e564d4"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/records.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 2062,
+      "sha256": "48eddfb0d31010056ce8f7e4aca82f57100c31744e5d58dcccd558ec3f92bfe7",
+      "blob": "e37b162a7b52294a90b7724a09388f64436b1aa1"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/records.test.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 1814,
+      "sha256": "ae5577983b2be25c76f34618602453d64137cd5ff093da4356c30963452a070b",
+      "blob": "e19553560fd174b338d24d7ec0fced1415aa5966"
+    },
+    {
+      "kind": "unchangedExperiment",
+      "path": "experiments/continuous-goal-acceptance/rehearsal.mjs",
+      "fixedRef": "991004cc0c5e8c34331cfd88402c445065a73fdc",
+      "bytes": 4899,
+      "sha256": "e8532741524a347ce091d4160ca7a5e828806d6ec9e7cea5eb9e5d14d4a2722f",
+      "blob": "6bacc7706f35c55239a59f1e8d997476ccd8509b"
+    }
+  ],
+  "bindings": [
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/README.md",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 7847,
+      "sha256": "1ac87d9ea0b2aa5416857eef2d752d0459f6ff43c9dc6a3cde9b9daa21b5591f",
+      "blob": "91d87b77cfa583e3076093b36529f4a36e7a2555"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/config.mjs",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 2905,
+      "sha256": "81f4c5950190c0cbd1ec3cee670aca286cf6a2d7bb886cace8ad2fbe4444f091",
+      "blob": "c35498458d61b3ce5d2eba1dfe23bcf562a074ba"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/driver.mjs",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 19133,
+      "sha256": "5873c26b4f6ed0b042a581ccffba226590bf80386df9b2599799477fd1db4139",
+      "blob": "0680500606bf541c99b14ba3a092e05f2b80db96"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/native-environment-fixture.mjs",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 2162,
+      "sha256": "55398ca8b00ee67f4e876e9c23d215e4a871038864e25eeaed067a90325bbc15",
+      "blob": "7905003eb42a57fc27eac1f1d3c390e3d9ed3e00"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/native-environment.mjs",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 8332,
+      "sha256": "c49ee75a6d5b9c79c8be651fe08eed3d6a3cf8819d703f69f034abd222731c54",
+      "blob": "6f2621464e7fdc067876ffbb0f934e6f98e7d1d9"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/native-environment.test.mjs",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 12447,
+      "sha256": "ca3db76f35ba33c7754c902d9969b4806236bcac63588ad3d3dd1caeecc87642",
+      "blob": "d7b5e8f22b8763ac60fbb1b3f49d7f7b24692253"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/operator.mjs",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 12344,
+      "sha256": "2857e7e6cf7898644aa21acfdd6fc0e4e59b06d23f53c983d48b07674c56e4e5",
+      "blob": "1014c96aa86f2a7d879c2a4762c39adaf4e5889e"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/permit.mjs",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 8494,
+      "sha256": "c6f296f43224a2380a5f03be395745084da400dd232d783b6176aee11ef881d9",
+      "blob": "3edbbdf81fb19043debf868d1b59a70ed02cad57"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/phase-host.mjs",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 6075,
+      "sha256": "4326dc8b57d9d4ea85caec12155a96b261d41d44aa63dcb1a5ca76dfb6702a55",
+      "blob": "a3db57e63e60feb200862cb8f9147fd86fee7592"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/query-run.mjs",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 6495,
+      "sha256": "de468cc25a9beab7b3b2dea6878b1648d577f6e263a4e1abf0b0b3a47a43f55b",
+      "blob": "86b9d06a7f3db881df43829d92b64212d540b26b"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/query-run.test.mjs",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 4590,
+      "sha256": "4b1ea2eff6bd8a8f9e5c6e0a9201e37a7e67d42af0afd19b5876a06a628567c2",
+      "blob": "032d3d1289ec49ade1a709c92149efc44354d28e"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/resources.mjs",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 11072,
+      "sha256": "959bf8215e9aefbda5e5b4f7f9f4c8d6e330a724acf3d6043ac369741bdc4369",
+      "blob": "e923708b4c27974c2a803bbc9e33c378ba0f5b63"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/stage-policy.mjs",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 6411,
+      "sha256": "669eb26fd9e73706e65363872cf963c264ae74410a5a7b43092db0ed503e3da3",
+      "blob": "0b75419c7997b6de93a3c20607fef72b875eb51a"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/stage-policy.test.mjs",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 12700,
+      "sha256": "b2a0127c2c8d21060b6879ecda3ad48bf5a1228392277537bb143e0053c29a05",
+      "blob": "4e324d8d7167a5c1665005f29222d2e983db4ad6"
+    },
+    {
+      "kind": "changedExperiment",
+      "path": "experiments/continuous-goal-acceptance/worker.mjs",
+      "fixedRef": "0cf7e1ba3016b2439c2b383437daa3dff1483299",
+      "bytes": 6142,
+      "sha256": "ca21d0b9bc5514818b72c3890a83a11a70be0377d7a3bbcd17ca30f5f92e5802",
+      "blob": "141ed68ef2730c613ab363c29df5362dce3b3079"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/Interface.md",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 5858,
+      "sha256": "7635e18e58ccb57a0b9cc430f67294f9bb470d09c9841a193ae5ef58e01619a3",
+      "blob": "3737a416e547dfbf1a515e8aa44d746340674b7c"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/fixed-inputs.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 3614,
+      "sha256": "e8d4c9daa18ceaff0d2ba14371b3526985df08d7ce9a75fd2af616f7ad3b592e",
+      "blob": "aee8137b257f1172a34642ed99139a84893a76f9"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/next-run.md",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 4043,
+      "sha256": "1c618ed6d16e0356ac409991aecff5b18be37a84c0a3662476966f3f3fb17f02",
+      "blob": "a985222859694531aa8c1e097662b66cea7d5ff5"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-01/checkpoint.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 764,
+      "sha256": "67f707bb2475b7f56dbcfc38438d0c5461f612b1da3f3305a6535e541fea2578",
+      "blob": "8a948da7c3b49e8db18dbb2957d981ff64bd5fd7"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-01/reservation.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 8275,
+      "sha256": "0f45f7d72c3027dce7a25b5494e6fa23963c2b506509e598345ea5ec05d6fb83",
+      "blob": "b7f1f5280c656c172ae692a04870e85270deafcd"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-01/result.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 836,
+      "sha256": "dfc77a793ec6615934c1f0224320301816f9f71ab2f05af80eeeed89908d58d5",
+      "blob": "977dc442f41a92aa67548d658d922ccb2da0215a"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-01/stderr",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-01/stdout",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 3725,
+      "sha256": "99e5a0c913325309986934f1e9f0286883dc888ed80de0b079449c9d1369f373",
+      "blob": "c0e0263a18a29d697d832695c566e3b5166f43b4"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-02/checkpoint.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 616,
+      "sha256": "2e87d0de420061efb0e5d95b4b9915b2d3b5cb9e29197ec169bd9b5213bf73b5",
+      "blob": "17fd66de7b8efcd4f70aea6af87fad51c7798f4c"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-02/reservation.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 8279,
+      "sha256": "de80e59068fef1ae04379a5bbc5b9aad3c1beeb5e9e9fca4b27877f33bb3670f",
+      "blob": "4a254344bfdc7cb1d9051833b0bc3153a04e4d2a"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-02/result.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 688,
+      "sha256": "ba96d5a13eb08710dcb2d8ca8a5cd941231877fbc2a50b9e8d2f99bef6fd3674",
+      "blob": "541f96bee73a87ef8eb4a95555b631ebdf76f693"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-02/stderr",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-02/stdout",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 632,
+      "sha256": "631a2bb8776ad4025485effbb5e969c55a3ccf1a4b34fd85ba0162052f3fa22d",
+      "blob": "3a66c9736068ac5d54444e65fb9370ce1659c4bc"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-03/checkpoint.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 764,
+      "sha256": "62785809e913942105a4ad18f24e08a7f1dfb4091ea1892c07aa7107bca2e854",
+      "blob": "5f5277360fde308a5c0d910b40feade890c81919"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-03/reservation.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 8224,
+      "sha256": "f3da5a2b4d6486ce712381505193de3da858a26c19928df2aa123735d831067b",
+      "blob": "9a56d7c05bf74ba4c47fce2a9b32de21aa742a2a"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-03/result.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 836,
+      "sha256": "1663922411d3158317759df169ce588527e332048f1af63f093955dc808e6d6d",
+      "blob": "8eaedd9978d12917794874e3c4ead40cdb5c9246"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-03/stderr",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-03/stdout",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 1826,
+      "sha256": "f898ff398b8a3f3f5db5569c0358baf58a343c654a075aecb5e02e7aa3c546ee",
+      "blob": "f4078ea9a35872bcf9b1ae008ba5903c8dcc9a9b"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-04/checkpoint.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 616,
+      "sha256": "38df1d58fe044aa2435ae712d4fe2c161a7715a1cf1ec991abd857822848c30b",
+      "blob": "76646a741dcdbcc8f6248887bcb13ecb4baca075"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-04/reservation.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 8287,
+      "sha256": "d724e2e14c18300464f0050de8e47551b20e0fcd31102373cbc11afda16bca8d",
+      "blob": "e41e6e5c0a9c2e2e92e575235feefa4764547f29"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-04/result.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 688,
+      "sha256": "6dec996af650edffc52f1503b76aad9084397648231e97ef7f3e619fdd15b302",
+      "blob": "22d8363bc4c51d439e4bf260183cf76f24080e95"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-04/stderr",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-04/stdout",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 630,
+      "sha256": "7f8b641651497944b5c2ada8584bbf03655b09c3dfbe1f8db0ccdc34708e56fd",
+      "blob": "e8bc5cd94a7f1d7655dfd4eed949ed6a21c49f9b"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-05/checkpoint.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 616,
+      "sha256": "66864b1cdd81a4463d65a23db2efbfc1a0acc4ec837aedc994406faa72d16f64",
+      "blob": "9d85c2a24228396d309cdc1b7434b9cc08ee1b1c"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-05/reservation.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 8226,
+      "sha256": "ab3c116263f1e30f36f17a9333b14c96b9addea2dbf41c133d0c347af13c3133",
+      "blob": "30ca291f74fb66e3c14cdab2e7fa5888c4886fea"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-05/result.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 688,
+      "sha256": "f93c582b467452871068f5b046e07a53eebbbb77fad0d983157487859b655378",
+      "blob": "9bd9c8bbbb2de6f4ec35b08c3e382e2bd4e79ccd"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-05/stderr",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "blob": "e69de29bb2d1d6434b8b29ae775ad8c2e48c5391"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run-05/stdout",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 394,
+      "sha256": "ab9a461a7dd618385e6620fbb32582efe3e1765a2c3d878daa5f43c8c8e9f0b5",
+      "blob": "333e33ad9ca204350269599aca73704bbc7bdd54"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/run.py",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 4199,
+      "sha256": "73ca1fb97a3fbeb0c418e33640d9e4b5c83f2901ba624ca90dbd8fe41cf000aa",
+      "blob": "0edd2941fdea2f39b4a942924ded43f02ea7b1d6"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/source-variants/50d0c40541bc9bb6d4068deb9beb9445c967efc3bea9becb21ae6ebe92719519.mjs",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 11430,
+      "sha256": "50d0c40541bc9bb6d4068deb9beb9445c967efc3bea9becb21ae6ebe92719519",
+      "blob": "30e78d77409e4d2bb199832558c17459d291be53"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/source-variants/656f971b5d03937bed27abbf16ea4b844e1894a69f836128fb914f0dbc009136.mjs",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 7380,
+      "sha256": "656f971b5d03937bed27abbf16ea4b844e1894a69f836128fb914f0dbc009136",
+      "blob": "05690198fde88b9106a1fdf82cb3db58261ab036"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/source-variants/73eac0bdb0033390d7a9fc21cc4dbd97d150f809aae07bd0e4a12faf3a8b60b5.mjs",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 6401,
+      "sha256": "73eac0bdb0033390d7a9fc21cc4dbd97d150f809aae07bd0e4a12faf3a8b60b5",
+      "blob": "4697c761c0c95e4595c9f0496b099ac5302fd4ef"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/source-variants/82f11e72bfa203875d5177bc04aace8f4dec41192b453c02c5be4924998949af.mjs",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 12022,
+      "sha256": "82f11e72bfa203875d5177bc04aace8f4dec41192b453c02c5be4924998949af",
+      "blob": "eb43cfcf46fa7b996c575e77c28e5321eee3997b"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/source-variants/97159f7fe26041b55002a14d5123cfd532e56fdfbf9cdbf86382e17cd15ed7d0.mjs",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 8932,
+      "sha256": "97159f7fe26041b55002a14d5123cfd532e56fdfbf9cdbf86382e17cd15ed7d0",
+      "blob": "eb509f93bf7ef05f3b4f916e95b97df79626b83f"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/source-variants/9cfc6a60645c6715155b7ff33315c706cff07fa99cf4bfe99649e775c8e669cf.mjs",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 18976,
+      "sha256": "9cfc6a60645c6715155b7ff33315c706cff07fa99cf4bfe99649e775c8e669cf",
+      "blob": "a57bc0503ccd477d2493ce25939a1867c10bb27e"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/source-variants/afc1e6d4ea5546be192a7166474e568a564d0156dbb9dfb8c61a439047f0b66f.mjs",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 11368,
+      "sha256": "afc1e6d4ea5546be192a7166474e568a564d0156dbb9dfb8c61a439047f0b66f",
+      "blob": "6413fc53edc58689df52892b2963032ed72a33e9"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/source-variants/c349435440983e9d217947d97c53da3db645f493bb88f9b2bd7d6176370c9386.mjs",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 10693,
+      "sha256": "c349435440983e9d217947d97c53da3db645f493bb88f9b2bd7d6176370c9386",
+      "blob": "9ea6000afbb12f919ed3f0df9ff3fe59b80dbf24"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/source-variants/ed46b50fb8cc34ce68e57b168c6da8f561bf36a245a1a25357cab2edd18107f6.py",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 4190,
+      "sha256": "ed46b50fb8cc34ce68e57b168c6da8f561bf36a245a1a25357cab2edd18107f6",
+      "blob": "1642492aa5266999b42fdb82cf4a1a9335cd1c39"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/source-variants/faa26f1be23ebd5b3f2acc980990566d45d4acd07148a51601a02e534cc3b1a1.mjs",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 9891,
+      "sha256": "faa26f1be23ebd5b3f2acc980990566d45d4acd07148a51601a02e534cc3b1a1",
+      "blob": "6d95c0a2d7465281c67ba64abe539218fff57020"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/source-variants.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 10404,
+      "sha256": "76bd52d5240067a545e1b5fcb919fef1e5c19ea46c913bd42b8b007f7e4aa06b",
+      "blob": "a0abe1f72a7857e8e547912b573946815ce3759e"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/validation.json",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 2333,
+      "sha256": "b76a443186fe50d4e57e80d30d7e842595c4e1499a6859572b303f3c70f07a64",
+      "blob": "bfcd151bf05178768a88c8b3bf7fdb909aa1f0a7"
+    },
+    {
+      "kind": "authorMetadata",
+      "path": "plans/o16-continuous-goal-acceptance/plan.md",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 4267,
+      "sha256": "550b8d4efdf555ffc11a73971f67dcec5c71f24f96657de50013d2e884fde8e7",
+      "blob": "0932854c8b0f87d20aa70b3678523dfd35efd66b"
+    },
+    {
+      "kind": "authorMetadata",
+      "path": "plans/o16-continuous-goal-acceptance/status.md",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 12018,
+      "sha256": "f202bc3a0f05ae2f8f5177bd04a65f5fd2331259d7a68fa870185742609c3924",
+      "blob": "78a9bdf289cff1b714ac28a03079d8acb2704b39"
+    },
+    {
+      "kind": "authorMetadata",
+      "path": "plans/o16-continuous-goal-acceptance/review.md",
+      "fixedRef": "722c0d645f362fa53ee821b1fe70bf11e74102d4",
+      "bytes": 7057,
+      "sha256": "e7c605c8f3b8dfb34f53e991e640a4de18abbde71f3f4af9fd300468ff9f87e9",
+      "blob": "d2731ab1c8b7a5816b7dd20101d6d49642080e2d"
+    },
+    {
+      "kind": "newEvidence",
+      "path": "docs/evidence/o16/native-environment-implementation/status-check.json",
+      "fixedRef": "41d5aa0f06d60be1eabb756fd0f5157f51dff769",
+      "bytes": 571,
+      "sha256": "3b2f255980ff87c605f886f785b53ca8c40964b490d758280ded6899680efca9",
+      "blob": "e894215098e3c91f5067a057c07ddc9398e4fd2b"
+    }
+  ],
+  "runtimeBindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/package.json",
+      "bytes": 2546,
+      "sha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.mjs",
+      "bytes": 1230597,
+      "sha256": "6a628372e492ad4e2bba08c95862055dd02aaa0786365426f166a60f19f540a2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts",
+      "bytes": 530284,
+      "sha256": "193becad9d69bc4d2ccd22def53fb9bff9e2628e324f7657d9497da9476af541"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/package.json",
+      "bytes": 274,
+      "sha256": "d2cbb0243a4f5fdfe5b11363f704d857579fd86717ea1e6a70cd10065e262261"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk-darwin-arm64@0.3.290/node_modules/@anthropic-ai/claude-agent-sdk-darwin-arm64/claude",
+      "bytes": 233260816,
+      "sha256": "b8412a3826b2dc8ecb1c0605970c28dea28355de5faa740407dd881acdd40237"
+    }
+  ],
+  "validation": {
+    "scope": "injected environment and real adapter/MCP construction, no SDK native process",
+    "distinct": 15,
+    "new": 12,
+    "directExisting": 3,
+    "runs": [
+      {
+        "run": "run-01",
+        "selectedBehaviorCases": 12,
+        "passed": 10,
+        "failed": 2,
+        "emptyFileWrapperPassesExcluded": 0,
+        "childElapsedMs": 2119,
+        "outerElapsedMs": 2156,
+        "rawBytes": 3725,
+        "group": 86820,
+        "finalOwnedState": "absent",
+        "dualEof": true,
+        "scratchRemoved": true,
+        "finishedAt": "2026-10-07T10:00:54.515400+00:00"
+      },
+      {
+        "run": "run-02",
+        "selectedBehaviorCases": 3,
+        "passed": 3,
+        "failed": 0,
+        "emptyFileWrapperPassesExcluded": 2,
+        "childElapsedMs": 1573,
+        "outerElapsedMs": 1600,
+        "rawBytes": 632,
+        "group": 29227,
+        "finalOwnedState": "absent",
+        "dualEof": true,
+        "scratchRemoved": true,
+        "finishedAt": "2026-10-07T10:01:59.606160+00:00"
+      },
+      {
+        "run": "run-03",
+        "selectedBehaviorCases": 1,
+        "passed": 0,
+        "failed": 1,
+        "emptyFileWrapperPassesExcluded": 2,
+        "childElapsedMs": 1480,
+        "outerElapsedMs": 1495,
+        "rawBytes": 1826,
+        "group": 69267,
+        "finalOwnedState": "absent",
+        "dualEof": true,
+        "scratchRemoved": true,
+        "finishedAt": "2026-10-07T10:03:06.772815+00:00"
+      },
+      {
+        "run": "run-04",
+        "selectedBehaviorCases": 3,
+        "passed": 3,
+        "failed": 0,
+        "emptyFileWrapperPassesExcluded": 2,
+        "childElapsedMs": 1512,
+        "outerElapsedMs": 1530,
+        "rawBytes": 630,
+        "group": 93852,
+        "finalOwnedState": "absent",
+        "dualEof": true,
+        "scratchRemoved": true,
+        "finishedAt": "2026-10-07T10:03:47.960525+00:00"
+      },
+      {
+        "run": "run-05",
+        "selectedBehaviorCases": 1,
+        "passed": 1,
+        "failed": 0,
+        "emptyFileWrapperPassesExcluded": 2,
+        "childElapsedMs": 2046,
+        "outerElapsedMs": 2076,
+        "rawBytes": 394,
+        "group": 20246,
+        "finalOwnedState": "absent",
+        "dualEof": true,
+        "scratchRemoved": true,
+        "finishedAt": "2026-10-07T10:08:13.265188+00:00"
+      }
+    ],
+    "childTotalMs": 8730,
+    "outerTotalMs": 8857,
+    "rawBytes": 7207,
+    "PG": 0,
+    "provider": 0,
+    "authCalls": 0,
+    "sdkNativeProcesses": 0,
+    "old16And26Rerun": false
+  },
+  "scope": "Implementation and injected/direct consumers only; real planner NOT_RUN, exact once authorization and PG window not issued; old FAIL/KEEP unmodified"
+}
