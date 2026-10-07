@@ -1,7 +1,7 @@
 import { randomUUID } from 'node:crypto';
 import { setTimeout as sleep } from 'node:timers/promises';
 import { afterAll, beforeAll, beforeEach, expect, it } from 'vitest';
-import { FlowClient } from '@flow/client';
+import { FlowClient } from '../../../packages/client/src/index.js';
 import { nativeExecutionProfileConfigurationJson, type CodexExecutionProfileConfiguration } from '../../../packages/contracts/src/execution-profiles.js';
 import { ContinuityCenterFixture } from '../../../docs/evidence/mature02c02/pg-fixture.js';
 import { sha256 } from './database.js';

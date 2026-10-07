@@ -4,7 +4,7 @@ import { open } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import { join } from 'node:path';
 import { Pool } from 'pg';
-import { FlowClient } from '@flow/client';
+import { FlowClient } from '../../../packages/client/src/index.js';
 import { createServer } from '../../../apps/server/src/index.js';
 
 /** Dedicated public-API fixture; explicit outer window, no model transport or existing service. */
