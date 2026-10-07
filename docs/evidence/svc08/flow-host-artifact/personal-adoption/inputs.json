@@ -1,6 +1,6 @@
 {
   "at": "2026-10-07T05:26:21.358135+00:00",
-  "state": "EXACT_CANDIDATE_NOT_EXECUTED",
+  "state": "RESUME_REQUEST_ONLY_NOT_EXECUTED",
   "repository": "/Users/citrine/Projects/AgentHarness/Flow",
   "installationDirectory": "/Users/citrine/.flow-personal",
   "sourceDirectory": "/private/tmp/flow-svc08-flow-artifact-z5s5tT",
@@ -455,9 +455,9 @@
     "requestReadSeconds": 20
   },
   "pendingBeforeExecution": [
-    "Thin procedural migration/serialization caller must be fixed and reviewed; no new product import command or build.",
-    "Fresh private root/store/target/marker/all retained/owned process/pointer/maintenance/work facts and exclusive request identity.",
-    "Authorized source freeze and shared runtime window; no personal reads or mutations in this preparation."
+    "Read and validate all five exact successful r2 migration records; no migrate/clone/rename replay.",
+    "Fresh original personal identity/preservation/artifact/CAS under existing lock; new exclusive request and operation ID.",
+    "Lead fixed source/parsed dependency freeze and actual shared window."
   ],
   "execution": {
     "personalProbes": 0,
@@ -565,7 +565,52 @@
   "factsModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
   "renameModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/artifact-transfer/import-d629.mjs",
   "python": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
-  "executionDirectory": "/private/tmp/flow-svc08-personal-adoption-20261007-r2",
+  "executionDirectory": "/private/tmp/flow-svc08-personal-adoption-20261007-r3",
   "businessObservation": "read-only, no drain/hold/zero-work or business DML; changed protected table summaries remain unknown concurrent change, never rollback or overwrite",
-  "previousExecutionDirectory": "/private/tmp/flow-svc08-personal-adoption-20261007"
+  "previousExecutionDirectory": "/private/tmp/flow-svc08-personal-adoption-20261007-r2",
+  "completedMigration": {
+    "directory": "/private/tmp/flow-svc08-personal-adoption-20261007-r2",
+    "identity": {
+      "dev": 16777234,
+      "ino": 123555815
+    },
+    "inputSha256": "47287cd13fd8ff38399e8add8f54fcba996573fb971492f4f11a863e5036ea7a",
+    "files": [
+      {
+        "name": "reservation.json",
+        "bytes": 263,
+        "sha256": "548fd80214175ed15c3824330ef108d9212dc6a4a1ca142e5d0e9cd1d783434c",
+        "dev": 16777234,
+        "ino": 123555816
+      },
+      {
+        "name": "migration-result.json",
+        "bytes": 385,
+        "sha256": "915a8d67935cc4a0b8fc46127a6522a43060b281e335b5033f3d433a42978603",
+        "dev": 16777234,
+        "ino": 123571469
+      },
+      {
+        "name": "migration-checkpoint.json",
+        "bytes": 568,
+        "sha256": "41ccef6075e6061737ddc06cf853fafa08ba0efe2350f393583b8ca2e2e05f81",
+        "dev": 16777234,
+        "ino": 123571457
+      },
+      {
+        "name": "migration-before.json",
+        "bytes": 28292,
+        "sha256": "8c1760ce415d73518c71e8ec7681214645c3571ad24eadf4c59a85b6cfc7b441",
+        "dev": 16777234,
+        "ino": 123555823
+      },
+      {
+        "name": "migrate-outer.json",
+        "bytes": 483,
+        "sha256": "657464bf46896adf3383b597f07bf4c0ab37eb177cdefe70564212f39710d2d3",
+        "dev": 16777234,
+        "ino": 123555817
+      }
+    ]
+  }
 }

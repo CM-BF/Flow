@@ -59,10 +59,13 @@ def complete(path):
     info = path.lstat(); assert stat.S_ISREG(info.st_mode) and info.st_uid == os.getuid() and info.st_nlink == 1 and info.st_size < 2 * 1024**2
     value = json.loads(path.read_text())
     assert value['exit_code'] == 0 and value['first_failure'] is None and value['owned_state'] == 'absent' and all(value['eof'].values())
-if phase == 'migrate':
+resume = inputs.get('completedMigration')
+assert not (resume and phase == 'migrate'), 'COMPLETED_MIGRATION_MUST_NOT_REPLAY'
+if resume: assert str(run) != resume['directory']
+if phase == 'migrate' or phase == 'request' and resume:
     os.mkdir(run, 0o700)
     st = run.lstat()
-    durable(run / 'reservation.json', {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'identity': {'dev': st.st_dev, 'ino': st.st_ino}, 'operationId': str(uuid.uuid4()), 'inputSha256': hashlib.sha256((BASE / 'inputs.json').read_bytes()).hexdigest(), 'personalAction': 'not-started'})
+    durable(run / 'reservation.json', {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'identity': {'dev': st.st_dev, 'ino': st.st_ino}, 'operationId': str(uuid.uuid4()), 'inputSha256': hashlib.sha256((BASE / 'inputs.json').read_bytes()).hexdigest(), 'personalAction': 'not-started', 'completedMigrationDirectory': resume['directory'] if resume else None})
 else:
     prior = {'request': 'migrate', 'replace': 'request', 'post': 'replace'}[phase]
     complete(run / (prior + '-outer.json'))
