@@ -77,3 +77,10 @@ chatui01_owner独审确认报告终态/失败/审计职责分离，无P1/P2。�
 ## 2026-10-07T03:42:55.732443+00:00 Stage C局部检查与计数纠正
 
 复用固定OPS14与既有最终状态判定，同一local段顺序types→collect，命令均0。计数断言暴露旧registry it.each误计，不改用例来迁就21，不重复已过工程检查；保留原FAIL和完整stdout名单，另记27=10+17。当前fixture类型有效与可收集已证，不能称PG行为通过。按clean-code实际错误职责，将owner计数错误、业务检查命令成功及资源关闭分别记录。两root精确后核absent，14donor及targets后核不变；local直接归还REQ15。新fixture后续仍需统一工作期限/HTTP计数门禁与实际PG预算，这些是明确未完成项，不假造ready。
+
+
+## 2026-10-07T04:47:12.776946+00:00 Stage C R1窄修工作段
+
+沿已装find-skills选择本地`/Users/citrine/.agents/skills/codebase-design/SKILL.md`与`clean-code/SKILL.md`，无安装；清晰区分registration合同、测试夹具、resource资格和business结果。原合同有限enum没有冒号；仅修fixture及新增精确schema路径反例，保27原场景。资源Module继续OPS14监督，listener资格提取为一个小predicate，允许同端口按顺序复用，拒未知/非loopback/未关闭身份；不引入第二监督或状态权威。接口未改产品，source4文件见083085f9。
+
+原R1 raw/manifest保字节；cleanup明确先核所有原副本+rootidentity、惰性inventory后正常删，UNKNOWN历史不回写。局部仅2新增影响命令，1+4通过；未跑PG或无关A/B/collect/types。错误处理复核：真实unknown仍KEEP，业务失败不等资源未知。当前无新P1/P2自查发现，独审pending；完整production调用链和真实npm bundle仍开放。

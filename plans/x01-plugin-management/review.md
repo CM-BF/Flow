@@ -1,3 +1,11 @@
+状态：PENDING（Stage C首轮失败后的四文件窄修及定向local；不继承原准备批准）
+
+Review target commit: 083085f990424cff8a585fbcb46c30fdb8821578
+
+原R1 27=18pass9fail/UNKNOWN保留；本次schema1+caller4定向通过及两精确旧TMP后续收尾待独审。产品生产源码无改；PG未重跑，旧namespace已消费。
+
+---
+
 状态：APPROVED（仅Stage C固定准备；实际27 PG尚未运行）
 
 Review target commit: 002159b96e98187a050313f2995e199fd2900198

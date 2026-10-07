@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-07T04:44:47.835200+00:00",
+  "authorization": "Mika exact two-root cleanup after independent 04:40:34 resource review; no PG/process probe",
+  "originalExecutionHead": "85b7726e4b0acdaed309020eb0e4e0237be048ed",
+  "originalResult": "27 selected / 18 pass / 9 fail; original UNKNOWN unchanged",
+  "callerSha256": "86dec6bd164e09cbb948ffaa16aa859e53c23cc83b08d59f00e4167b0bca6154",
+  "PGQueries": 0,
+  "newTMP": 0,
+  "roots": [
+    {
+      "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-38ywpnw_",
+      "dev": 16777234,
+      "ino": 123467679,
+      "entries": 15,
+      "sampleBytes": 19577,
+      "removed": true
+    },
+    {
+      "path": "/private/tmp/flow-x01-stagec-outer-wr1yz0br",
+      "dev": 16777234,
+      "ino": 123467536,
+      "entries": 6,
+      "sampleBytes": 2439,
+      "removed": true
+    }
+  ],
+  "state": "CLEANED",
+  "endedBeforePersistenceAt": "2026-10-07T04:44:47.842826+00:00",
+  "elapsedSeconds": 0.02880491700489074
+}
