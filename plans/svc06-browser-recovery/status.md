@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T23:28:58.393Z；Web窄修正确6+1已核，误选检查失败/截断未知保留，实际发布未启动 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T23:33:03.684Z；Web调用窄修已独审通过，等待唯一实际发布窗口；04未知原样保留 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -16,7 +16,7 @@
 | 工作基线 / HEAD | base6c；个人backend/Webhost e15/source880060；本次Web修复source6491c4815cd6daf8f640648d5e8a25a599d8cd92，旧f0及fresh包99c0保留 |
 | 工作树dirty状态 | source6491两文件停写；仅局部04/05原件、一次关联观察及overlay/status封存；恢复135pins无修改 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 实现目标 | 在已恢复的服务上受管发布779网页，保留三旧网页与当前服务/配置；实际发布尚未启动 |
 | 实现范围 | 仅own Web caller及直接测试：外preview锁内复用公开只读维护store和固定Pool，不改运行产物 |
 | 检查状态 | 正确6新+1受影响通过；误选04默认发现/输出限额FAIL与双EOFfalse保留，未捕获范围UNKNOWN；五轮3044ms/观察146861B，所有登记组最终absent；一次74ms关联观察无匹配，不证明全部逃逸后代不存在 |
@@ -24,10 +24,10 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 现有服务已恢复运行。网页发布前的重复加锁问题已修复并通过针对性验证；一次误选检查的失败与未完整捕获范围已保留，新网页尚未发布。 |
-| 下一可用交付 | 完成调用修复及失败边界的最终接收，取得明确窗口后核验并发布新版网页。 |
-| 当前阻塞 | ACTIVE: 调用修复待最终接收和唯一发布窗口；误选检查未知范围由资源owner保留分类，不重试检查。现有三个服务保持运行；owner assignment_review/Execution Lead。 |
+| 下一可用交付 | 在新的独占窗口内核验既有身份和资源，然后受管迁入并发布新版网页。 |
+| 当前阻塞 | ACTIVE: 已审发布调用只待新的唯一现场窗口；owner Execution Lead/Web资源owner。保持0child/0pending，三个现有服务不操作。 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；R2实际结果146654已限定独审通过；Web父目录/canonical/R2路径均已独审。新增迁入嵌套锁P2不由既有注入例覆盖。 |
+| Review | [review.md](review.md)；I02 svc06b-web779-lock-fix-review.json 2026-10-07T23:32:32.438Z APPROVED_LIMITED_WEB_ONLY_CALLER_AND_RESULT_FIDELITY，0 P1/P2；04截断/逃逸UNKNOWN保留。 |
 | Claim | 95f47f5c-7256-44f5-b97b-c20b6756a2cc v8 active；20:34:55.940Z原子amend追加runner runtime/main、直接新专测与startup-diagnostics两路径；精确scope见runner-ready-amend-receipt.json |
 | 架构影响 | 已main有限retention/迁入Interface；本次reader/history可选依赖port及薄调用source6c417850已main72f5758bc，复用原FSM/监督不改运行artifact；架构登记target6c417850、owner Execution Lead |
 
@@ -206,3 +206,5 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T23:22:12.469Z：Web锁冲突在原已授10min/60s检查/2MiB own tmp/raw段内修复，source6491c4815cd6daf8f640648d5e8a25a599d8cd92。复用固定artifact公开readRunnerMaintenance，保持marker、runnerId/token_hash/NOT revoked，Pool从verified artifact package的createRequire加载；不在guard重入preview锁。实际transfer→真实e15锁→新observe→真实公共读事务定向6/6，0PG。首轮稀疏树pg导入失败/次轮fixture目录EEXIST均原件保留；最终23:20:28.763455Z RETURN，累计1079ms/11630B，3组absent/EOF/3exact空scratchremoved。单份[修复overlay](../../docs/evidence/svc06/browser-recovery/recovery-web-lock-fix.json)引用原99c0现场输入/recipe，只有1实际source pin替换，旧产物/恢复135pins/实际namespace未动。当前仅待独审，不提前执行。
 
 2026-10-07T23:28:58.393Z：source6491保持。local04实际23:22:26.935661Z因误argv缺文件触发默认发现，1583ms/exit1、OUTPUT_LIMIT_EXCEEDED/双EOFfalse，原件与未知不改；local05在收到STOP前已完成明确文件/锚定pattern的1/1正常publish消费者，382ms/226B，不能抵消04。23:28:09.135425Z–23:28:09.209736Z按Lead唯一授权一次进程元数据关联观察74ms无匹配，仅说明所列关联条件无匹配；逃逸后代/未捕获效果UNKNOWN。现0child/0pending，不再测试、不操作个人服务。全部见[单一修复overlay](../../docs/evidence/svc06/browser-recovery/recovery-web-lock-fix.json)，ready=false，动态窗口与紧前核验未消费。
+
+2026-10-07T23:33:03.684Z：引用唯一[I02独审](../../../m2-integration/docs/evidence/i02/svc06b-web779-lock-fix-review.json)（2541B/SHA30184090e53a8344343a823c2c356ed8645ab1947a67488aebb90c630a88bda5），绑定source6491/targetdd6；正确6+1有效、04未知不清零，资源owner已接4MiB保守未知。当前仅按既有fixed recipe准备，未使用23:14旧资源快照作许可，actual input/两个namespace未创建；实际迁入与发布仍待新grant。
