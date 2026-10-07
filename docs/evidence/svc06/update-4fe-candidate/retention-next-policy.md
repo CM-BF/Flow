@@ -11,3 +11,11 @@
 实际顺序候选：固定浏览器host配置+集中保留策略→一次一致Flow来源artifact/自有host验证→每个旧Web与新实际backend及明确公开origin/策略组合的兼容证据→fresh安装/报告位置/空间和保留基线→按原maintenance更新后台并保留旧指针→按实际所需受控采用新Web宿主→确认当前三项仍可读→第四个真实App artifact报告齐备后独立CAS。宿主采用和后台升级先后须在固定组合中验明，每阶段持久checkpoint、fresh保留、unknown停止；无业务DML/任务取消/自动回滚。所有普通源码实现可并行准备，真实动作仍按ready-first窗口。旧af51报告不能重标新backend，新报告必须有被测origin/浏览器策略配置的固定来源；若现格式不能表达，先固定最窄有版本的报告输入接缝，不能靠source相同推断cookie配置兼容。
 
 必要直接消费者：原3项metadata/assets原样可读；第4项成功且所有旧namespace仍逐文件可读；第5项/count、bytes、report各自拒绝且指针不变；report tuple/配置不符拒绝；旧count3宿主面对4项的拒绝作为部署顺序反例保留。只运行这些新增/受影响边界，复用既有builder/installed来源，不重跑green构建为规划提供证明。真实四App兼容及个人发布仍OPEN。
+
+## 已存证量级（不替代执行前fresh）
+
+只读r3及此前固定descriptor/报告证据：461a、caa1、d629各10个资产，声明1,442,591 / 1,507,758 / 1,588,311B，共4,538,660B；三个manifest分别1,604 / 1,651 / 1,651B，共4,906B。当前af51指针引用三个报告，每报告1个report+4个check：分别1,866 / 1,866 / 1,630B，共15文件5,362B。完整来源与hash在[量级证据](retained-size-evidence.json)。全安装历史report目录数量/总bytes及未知stage未由r3列全，保持UNKNOWN，不能把三份active报告当全库存。
+
+192MiB retained资产、32 reports原代码已有，候选只把count3演进到4并集中所有消费者边界。单artifact仍64MiB/4096files、单file32MiB、单manifest1MiB、pointer16KiB、report五文件各4KiB不变；32份报告理论payload≤655,360B。现三项加最大合法64MiB第四项为71,647,524B，低于201,326,592B总资产限额；第四项实际大小仍UNKNOWN，不能用此推断新App已经可发布。四manifest理论≤4MiB另计，copy/stage/live空间与实际分配独立预算。
+
+验证成本也分开：当前原始30资产+3manifest+15active report文件有量级证据；loadReleaseAssets仍会逐字校验/哈希资产，并非只读metadata；findWebCompatibility会遍历全部已存报告，32目前是import gate而非任意读取目录先验。新策略集中后须明确read/plan/load/import均受限并保留旧项；真实发布前fresh核全报告count/bytes与配置组合、未知stage、实际空间，绝不删除旧报告或假设TTL能腾位。

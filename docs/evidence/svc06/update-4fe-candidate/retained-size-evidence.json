@@ -1,0 +1,142 @@
+{
+  "at": "2026-10-07T08:08:45.546896+00:00",
+  "mode": "saved-evidence-only; 0 personal reads/HTTP/PG/tests/provider",
+  "sourceBase": "4fe33178b17925d558b5608f1b3c4ae69b3d06d5",
+  "savedSnapshotAt": "2026-10-07T06:17:15.342Z",
+  "artifacts": [
+    {
+      "artifact": {
+        "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "manifestDigest": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5"
+      },
+      "assetFiles": 10,
+      "declaredAssetBytes": 1442591,
+      "manifestFiles": 1,
+      "manifestBytes": 1604,
+      "manifestSha256": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "activeCompatibilityId": "adc587ad334da4136bdc5d364daa933f8b8865f6344ae8b1e04983a423d5d68d",
+      "activeCompatibilityFiles": 5,
+      "activeCompatibilityBytes": 1866,
+      "reportFileBytes": 716,
+      "checkFileBytes": {
+        "read": 292,
+        "send": 276,
+        "recover": 274,
+        "negotiation": 308
+      }
+    },
+    {
+      "artifact": {
+        "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+        "manifestDigest": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe"
+      },
+      "assetFiles": 10,
+      "declaredAssetBytes": 1507758,
+      "manifestFiles": 1,
+      "manifestBytes": 1651,
+      "manifestSha256": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "activeCompatibilityId": "e87ffda1ee15c14c6458849c388c5f217675af4053cb1b64bd052214cee2af0e",
+      "activeCompatibilityFiles": 5,
+      "activeCompatibilityBytes": 1866,
+      "reportFileBytes": 716,
+      "checkFileBytes": {
+        "read": 292,
+        "send": 276,
+        "recover": 274,
+        "negotiation": 308
+      }
+    },
+    {
+      "artifact": {
+        "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+        "manifestDigest": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+      },
+      "assetFiles": 10,
+      "declaredAssetBytes": 1588311,
+      "manifestFiles": 1,
+      "manifestBytes": 1651,
+      "manifestSha256": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "activeCompatibilityId": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9",
+      "activeCompatibilityFiles": 5,
+      "activeCompatibilityBytes": 1630,
+      "reportFileBytes": 646,
+      "checkFileBytes": {
+        "read": 249,
+        "send": 239,
+        "recover": 231,
+        "negotiation": 265
+      }
+    }
+  ],
+  "totals": {
+    "declaredAssetBytes": 4538660,
+    "assetFiles": 30,
+    "manifestFiles": 3,
+    "manifestBytes": 4906,
+    "activeCompatibilityReports": 3,
+    "activeCompatibilityFiles": 15,
+    "activeCompatibilityBytes": 5362
+  },
+  "limits": {
+    "currentArtifactCount": 3,
+    "proposedArtifactCount": 4,
+    "retainedDeclaredAssetBytes": 201326592,
+    "oneArtifactDeclaredAssetBytes": 67108864,
+    "oneAssetBytes": 33554432,
+    "oneArtifactAssetFiles": 4096,
+    "oneManifestBytes": 1048576,
+    "releasePointerBytes": 16384,
+    "committedCompatibilityReports": 32,
+    "filesPerCompatibilityReport": 5,
+    "oneCompatibilityFileBytes": 4096,
+    "worstCase32ReportsPayloadBytes": 655360
+  },
+  "fourthSlot": {
+    "declaredAssetsWithMaximum64MiBCandidate": 71647524,
+    "remainingBefore192MiB": 196787932,
+    "fourthActualBytes": "UNKNOWN; no candidate App descriptor supplied",
+    "largestPossibleAssetFileCountWithOldThreeKept": 4126,
+    "notPhysicalAllocationOrStageBudget": true
+  },
+  "unknown": [
+    "Total historical committed report directories/bytes in installed store not observed in this saved r3 snapshot; active three are not total inventory",
+    "Any orphan stage/unknown resources and current volume free must be fresh checked before actual publish",
+    "Fourth actual Web descriptor and configuration-bound compatibility reports remain pending"
+  ],
+  "meaning": [
+    "192MiB/32reports already exist in current source; only count3\u21924 is proposed capacity expansion, centralization preserves other limits",
+    "Manifest bytes excluded from declared assets; compatibility files and release pointer separate",
+    "loadReleaseAssets verifies and hashes complete retained assets once per pointer/load; this is not a metadata-only cost",
+    "findWebCompatibility scans stored report IDs; 32 is enforced at import today, not a universal read-list bound. Central policy must make consumer checks consistent without deleting old material",
+    "No APFS/physical reclaim claim; fixed saved size permits one <=64MiB fourth asset under192MiB but does not prove fresh publication gates or report slots"
+  ],
+  "sources": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle/docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-03/replacement-after.json",
+      "bytes": 30433,
+      "sha256": "e92a18c91dfa23ccb8f0f244a7dc050d6cf44c016dae48107df85df85d769857",
+      "readKind": "previously sealed project evidence, not live personal path"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-retained-web-compatibility/docs/evidence/svc05-retained-web-compatibility/fixed-manifest.json",
+      "bytes": 225436,
+      "sha256": "1d8d780ce582bb3d219c139b0147b79d84a6edc4ca2d0a73cba325ca9832c649",
+      "readKind": "previously sealed project evidence, not live personal path"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/artifact-transfer/socket-run-manifest.json",
+      "bytes": 11683,
+      "sha256": "f650453c401cdf13dae181a822ddf6c08db68fb53cc79652fe0b4644766c5c53",
+      "readKind": "previously sealed project evidence, not live personal path"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/web-recovery-d629-20261007/independent-bindings.json",
+      "bytes": 12077,
+      "sha256": "66dec8f35378ae12e1bd4010e1f97aed0b20f0576fe0ccf491fe65138aa5706b",
+      "readKind": "previously sealed project evidence, not live personal path"
+    }
+  ]
+}
