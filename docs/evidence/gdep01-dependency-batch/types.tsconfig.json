@@ -1,0 +1,24 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false,
+    "baseUrl": "../../..",
+    "paths": {
+      "@flow/contracts": [
+        "packages/contracts/src/index.ts"
+      ],
+      "@flow/client": [
+        "packages/client/src/index.ts"
+      ],
+      "@flow/plugin-runtime": [
+        "packages/plugin-runtime/src/package-store.ts"
+      ]
+    }
+  },
+  "include": [
+    "../../../apps/server/src/goals/dependency-content.test.ts",
+    "../../../apps/server/src/goals/commands.ts"
+  ],
+  "exclude": []
+}

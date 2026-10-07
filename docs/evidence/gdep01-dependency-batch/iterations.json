@@ -1,0 +1,54 @@
+{
+  "runs": [
+    {
+      "pid": 76915,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 1,
+      "elapsed_ms": 458,
+      "observed_bytes": 1116,
+      "retained_bytes": 1116,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "red",
+      "endedAt": "2026-10-07T22:07:19.609501+00:00",
+      "resourceConfirmed": true,
+      "scratchCleanup": "REMOVED_EXACT_ENOENT",
+      "scratchBytes": 81,
+      "rawSha256": "3ce2feaaaca8e2b0e4d443b0b727bcd2427c37e0d60a8ddeb3ef21ca8f6b3fde",
+      "sourceHashes": {
+        "apps/server/src/goals/commands.ts": "66fc56ff48c46bd9f9ebaac51614985d9f9dbbeec31cf161011dd1ff3813ba32",
+        "apps/server/src/goals/dependency-content.ts": "c1c4522c1eff3f06c354a1965b76d180c6ac505d4ec30292ddebaa31656c04d2",
+        "apps/server/src/goals/dependency-content.test.ts": "f1c9f92dbc4f8e46e6dee3edd10a0ea34c698b2be390194bfd6405d51d2c814a",
+        "docs/evidence/gdep01-dependency-batch/check.py": "74eb67549ae5392e9024c38427f65049a8b55c219b7e12664f886fc32a22fec0",
+        "docs/evidence/gdep01-dependency-batch/vitest.config.ts": "eae90c4ed70ec06084aa9f49b08755d1283577c943491067dc41b33762cc1db1",
+        "docs/evidence/gdep01-dependency-batch/types.tsconfig.json": "810bb777ad02a2baedbbf2c6ae7bf2e0d3a43f5e8b7293d23becb0333dde392f"
+      }
+    }
+  ]
+}
