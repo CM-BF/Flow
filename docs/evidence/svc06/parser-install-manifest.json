@@ -1,12 +1,12 @@
 {
-  "at": "2026-10-07T02:32:16.376032+00:00",
+  "at": "2026-10-07T02:35:45.000421+00:00",
   "execution": "NOT_RUN",
   "scope": "private YAML parser preparation only; no runtime or full artifact",
   "bindings": [
     {
       "path": "docs/evidence/svc06/parser-install.py",
-      "bytes": 8479,
-      "sha256": "32d08b07d1e11b5c61284d24662d53eedef56143a3bb633983fec31865c0b7cf"
+      "bytes": 9977,
+      "sha256": "781668cf15d8d50f56a84abd4c0a7fd5bfa95516b95f0371d9dfc48980f0aa27"
     },
     {
       "path": "docs/evidence/svc06/parser-install-inputs.json",
@@ -32,6 +32,14 @@
       "path": "docs/evidence/svc06/parser-official-metadata.json",
       "bytes": 3716,
       "sha256": "ed36bc66e2b2e87aff5274e3cb197d106add7afb1a7d680444dad667f0d3f103"
+    },
+    {
+      "path": "docs/evidence/svc06/parser-install-supervise.py",
+      "bytes": 1381,
+      "sha256": "2b4feb37aa64d6b2b0fb98164da5d146a61f7f84aa1034284071cc607a10a203"
     }
-  ]
+  ],
+  "entry": "Python3.13 docs/evidence/svc06/parser-install-supervise.py",
+  "deadline": "fixed OPS14 one NEW_CHILD_SESSION; all mutable entry phases and same-group pnpm are supervised for 27s + .5s TERM + 2s reap; outer only emits bounded report after stop",
+  "success": "entry receipt is pending until outer exit0, no failure, owned absent, all EOF complete; unknown namespaces never reused"
 }
