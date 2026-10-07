@@ -108,5 +108,10 @@
     "order": "This exact contract must precede or accompany the separately reviewed client/CLI consumer"
   },
   "mainState": "NOT_YET_RECEIVED",
-  "completeX01": false
+  "completeX01": false,
+  "intakeValidation": {
+    "mainApplyCheckExit": 0,
+    "isMainCombinationTest": false,
+    "metadataDiffCheck": "Patch artifact has six context-blank lines with significant single-space diff prefixes; retained exact git diff bytes, not product trailing whitespace edits."
+  }
 }
