@@ -4,30 +4,30 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:38:13.994Z；main接收仍NOT_INTEGRATED；仅检查/Review标准声明格式更正 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:50:23.195Z；本人核固定main 3c9345df4aec85a37e8a2a155e079db260d515b1 的18源码与7独审原件、合法接收回执 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T12:11:30.621Z |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | owner实际开始本登记实施子片的独立源码供给，见provision.startedAt；不把take自动当开工，未完成 |
+| 任务完成时间 | 2026-10-07T14:50:23.195Z |
+| 任务时间来源 | 开工见provision.startedAt实际源码供给；完成为owner于2026-10-07T14:50:23.195Z核原MSGAPP-01–06全部既定交付已满足，见main-closeout-20261007/verification.json；main回执时间2026-10-07T14:46:12.780Z，不按commit/claim推算 |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app |
 | Branch | codex/web-message-settings-app |
 | 工作基线 / HEAD | c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56（产品b924不变；metadata HEAD见Git） |
-| 工作树dirty状态 | 仅ownmetadata标准检查/Review声明格式与解析核对；18源码不变，normal push clean后全20scope STOP |
-| 工作分支状态 | reviewed |
-| 本片段交付阶段 | integration |
+| 工作树dirty状态 | 本批仅own metadata主线接收/完成记录；18源码不变；提交推送后全20scope STOP，实际clean及release另存外部receipt |
+| 工作分支状态 | integrated |
+| 本片段交付阶段 | delivered |
 | 检查状态 | PASSED fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56；两条既有App selector各2/2实际PASS及限定local，原四FAIL保留；不冒未选旅程/完整native四facet键盘/个人目录 |
-| 已集成main状态 / HEAD | NOT_INTEGRATED；base c130已有Recovery和受控Picker，尚无本片真实App接线 |
+| 已集成main状态 / HEAD | INTEGRATED 3c9345df4aec85a37e8a2a155e079db260d515b1；精确18源码等fcf5；Original主线noEmit exit0/6639ms，未新跑behavior/PG/Chrome/provider |
 | 实现目标 | fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-context/receipts.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/ConversationQueue.tsx, apps/web/src/conversations/queue/commands.ts, apps/web/src/conversations/queue/projection.ts, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/message-settings.tsx, apps/web/src/plugin-integration/react.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/recovery/binding.tsx, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 消息设置随发送、排队和恢复保留快照，材料失败与取消保护新稿；限定实际验收及独立审查通过 |
-| 下一可用交付 | 交主线按精确变更接收；个人可选目录仍由共享owner发布 |
+| 当前产出 | 逐消息设置、发送排队快照与材料恢复已合入主线，原限定验收及独立审查完成 |
+| 下一可用交付 | 本片段已交付；个人可选目录和部署仍由共享owner推进 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | APPROVED fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56；[review.md](review.md)及root最终精确18源接收审；main/个人部署未验 |
-| Claim | 7e3fbcf1-befe-4579-9d6c-ee74df6e8c51 v3 ACTIVE；exact20；14:32:23.789Z fresh身份及全局无overlap |
+| Review | APPROVED fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56；[review.md](review.md)和root最终精确18源接收审；合法main已接，个人目录/部署不外推 |
+| Claim | 封存前观察7e3fbcf1-befe-4579-9d6c-ee74df6e8c51 v3 ACTIVE/exact20，14:48:42.135Z fresh无overlap；提交推送后全20 STOP，经理授权fresh CAS release；释放原件仅外部保存、不回写项目 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -36,7 +36,7 @@
 | MSGAPP-03 | completed | workspace_panels_owner | freeze/原key重试/官方core return保护与历史/Queue requested源码，11定向通过 |
 | MSGAPP-04 | completed | workspace_panels_owner | b924共享投影修复；修后material selected2及message-settings-app完整Recovery实际通过，旧FAIL保留 |
 | MSGAPP-05 | completed | workspace_panels_owner | [local53579/60000](../../docs/evidence/wpf-message-settings-app/mounted-local-summary.json)；probe6PASS/9c46全部17源noEmit0；c4bee参数独立验证；历史11PASS/57未选；现两browser selector各2/2实际通过，归各自原件 |
-| MSGAPP-06 | in-progress | workspace_panels_owner | 37166/9fc历史保留；root最终精确18源组合批准；独审部分完成，合法main待 |
+| MSGAPP-06 | completed | workspace_panels_owner | root c1c340精确18源组合批准；[合法主线回执](../../docs/evidence/wpf-message-settings-app/main-closeout-20261007/msg03-intake.json)及[逐源核验](../../docs/evidence/wpf-message-settings-app/main-closeout-20261007/verification.json)，固定main3c9345 |
 
 ## 等待记录
 
@@ -133,3 +133,9 @@
 ## 当前最终限定接收结论
 
 [root最终组合审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-final-scoped-intake-review-20261007.json) APPROVED_FOR_CONTROLLED_SOURCE_INTAKE_EXACT18；fixed fcf5、18源码，0blocking。03/04/05按已列范围实现和实际完成；06仅独审部分完成，合法main尚未接收。root在main6fd214e观察18处BASE_MATCH；若Release先接两文件最小修复，集成者须重新比较预像/组合，不能盲覆session。任务完成NOT_COMPLETED，非个人部署或全部native四facet键盘批准。
+
+## 最终合法main接收与原任务完成
+
+截至2026-10-07T14:50:23.195Z，原MSGAPP-01–06已完成；实现fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56精确18源码于main 3c9345df4aec85a37e8a2a155e079db260d515b1接收，18路径逐字相等、7独审及最终报告归档相等。Original回执14:46:12.780Z；本owner只核固定Git/原件和本status，不新增产品检查。主线现组合noEmit0/6639ms为Original实证，非owner重跑。
+
+原四FAIL、第三fixture UNKNOWN、各关闭phase未用额度和两条selected实际限制均保留。个人turnSettings目录/provider/部署、完整native四facet键盘与原视觉后继未因main接收变成已验；这些不混作本登记消费者交付。main不改变最小7272+77bc发布候选；其发布source/后端组合归Original。产品18与全部20scope停止写入，CAS release只留外部receipt。

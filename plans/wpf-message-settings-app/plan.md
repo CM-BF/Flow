@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS03 · 真实聊天消息设置
 
-状态：in-progress；开工 2026-10-07T12:11:30.621Z；最近更新 2026-10-07T14:33:50.017982+00:00。
+状态：completed（本登记消费者交付）；开工2026-10-07T12:11:30.621Z；完成2026-10-07T14:50:23.195Z，来源见唯一status及main-closeout。
 所属大task：[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)，既有 TODO11 实施子片；co-lead Web/root，执行管理 d01_owner。唯一owner workspace_panels_owner / gpt-6-astra；本树 codex/web-message-settings-app，固定base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50。
 
 目标：用户在真实聊天入口选择完整模型/思考/速度设置，Send、Queue、已发送记录及草稿恢复保留各自快照。已审组件六组通过不等本片真实App通过。
@@ -16,7 +16,7 @@
 - [x] **MSGAPP-03** Send/Queue材料await前完整freeze、同正文异设置保留、原key重试及历史requested显示。
 - [x] **MSGAPP-04** CompleteDraft/Recovery全链、同步CAS与失效边界；第四mounted暴露持久B混held A；b924共享selector修复已过定向局部和修后两条mounted实际，保留旧FAIL。
 - [x] **MSGAPP-05** 有界受影响direct/types与真实App浏览器验收；证据/失败/cleanup保真。
-- [ ] **MSGAPP-06** 独立review与合法main接收；本分支通过不冒主线/部署。
+- [x] **MSGAPP-06** 独立review与合法main接收；root精确18源批准、main3c9345逐字核同及Original noEmit0，个人部署不外推。
 
 ## 验证与边界
 
@@ -25,7 +25,7 @@
 
 ## 历史实施与验证安全点
 
-以下按原时间保留历史source、等待与失败；当前实现固定fcf5/产品b924，两条原mounted均已实际通过，MSGAPP-06独审已限定批准，合法main待。历史预算与NEXT不延续到当前。
+以下按原时间保留历史source、等待与失败；当前实现固定fcf5/产品b924，两条原mounted均已实际通过，MSGAPP-06独审与合法main3c9345已完成；下文保留当时等待与失败。历史预算与NEXT不延续到当前。
 
 ### 当时固定实现与未验边界
 
@@ -72,3 +72,7 @@ MSGAPP-05第四actual已进入真实材料failure/cancel：failure完整显式�
 MSGAPP-04/05完成依据：修后两个实际selector各2/2，完整草稿/B隔离/显式恢复、P01与冻结SendQueue/history、真实两主题390均按原断言执行。旧四FAIL不追改。新120s累计26368/余93632 CLOSED；06仍须root组合审及合法main，不把个人provider目录跨owner交付冒为本树已部署。
 
 当前MSGAPP-06进展：root最终组合审c1c340批准fcf5精确18源受控接收，review部分完成；main未接，TODO保持开放。个人发布/完整native四facet键盘不由本两selector外推，P3窄屏scrollbar只保原视觉后继。
+
+## 最终接收
+
+原六TODO按本登记范围全部完成，证据见[主线接收核验](../../docs/evidence/wpf-message-settings-app/main-closeout-20261007/verification.json)。个人目录/部署及既有视觉后继归原共享owner，本片不新加provider或未选旅程门槛，也不外推已验。

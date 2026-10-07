@@ -7,7 +7,7 @@ Review target commit: fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56
 
 两条既有selector各2/2 PASS，源/local和业务/生命周期/双图分工审均已接受；具体范围和限制见[唯一入口](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)。材料failure未独验durable空B全快照；设置恢复是主动过期后公开reauth；selectOption不代表完整native四facet键盘。旧四FAIL、第三fixture UNKNOWN保留。新120s累计26368/余93632 CLOSED，当前0holder/NO_NEXT。
 
-[main-intake](../../docs/evidence/wpf-message-settings-app/main-intake.json)列精确预像；06 review部分完成，main/个人目录/provider/部署未接。若先接Release最小2文件补丁，必须重新精确合成，不能整拷MSG session覆盖其它owner。
+[main-intake](../../docs/evidence/wpf-message-settings-app/main-intake.json)保留接收前精确预像；现[Original主线回执](../../docs/evidence/wpf-message-settings-app/main-closeout-20261007/msg03-intake.json)与[owner核验](../../docs/evidence/wpf-message-settings-app/main-closeout-20261007/verification.json)确认main 3c9345df4aec85a37e8a2a155e079db260d515b1精确18源相同，原06完成。个人目录/provider/部署未因接收通过，最小Release组合仍独立。
 
 ## 历史审查与安全点
 

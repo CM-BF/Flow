@@ -1,0 +1,217 @@
+{
+  "main": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "implementation": "fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56",
+  "ownerRecord": "b20cd84fb68b86aae6c3953cf7d4082a6df98330",
+  "mainReceipt": {
+    "path": "docs/evidence/i02/msg03-intake.json",
+    "bytes": 3908,
+    "sha256": "914079221d7b6e4d26cdf4d04f99dae7dc10491ce5eb0eed06450ca6ee14fbd9",
+    "at": "2026-10-07T14:46:12.780Z"
+  },
+  "sources": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 74182,
+      "sha256": "882feae39d2a3dd95c1a45010e1502b6d0e4c1bdd8c2b5275b2d4eb6e1163f6d",
+      "mainBlob": "1cc0057ec2188beacd5632bd358271ed38a3422f",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "bytes": 2761,
+      "sha256": "b0cafed2fd93f4e34e5e87eeb7f4e5436a44db509d60730fa7eccc7c416c1229",
+      "mainBlob": "d0f9a27344a05bfdbcddb90f671f7f4b1e205129",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 29561,
+      "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a",
+      "mainBlob": "cc15de4054c82c8f33218635b64a412a50c0bf92",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "bytes": 8902,
+      "sha256": "a66dcf9b3515791ccabad97f147ad79aafe066235314c8116413ff475343fc98",
+      "mainBlob": "0971cd933ac662d2735e11e15cc82a5cab3333dc",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 28820,
+      "sha256": "e20a387e95689b0f8d532acfd198c433ebd45b13aa6621686c3493f29509bbe2",
+      "mainBlob": "9323ea44044224bd30447eeff4da39b721d96bb8",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "bytes": 9267,
+      "sha256": "8b8f9ba36bc41cd4bac84347de76722a41d1f8e0438a8ba09f5d3b1f9b589ef5",
+      "mainBlob": "a5892a63125039aab6e2321f8b8b7b4856ece6bb",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "bytes": 17132,
+      "sha256": "210e733fcfb71f548a3d6743cee4d9199b342197d95d883bdb6bc5db99ae1fc9",
+      "mainBlob": "26010ea9ae6250a5a04635f4dd5d54c1efdf3195",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "bytes": 13208,
+      "sha256": "8b9e410ff29c7cfbfedb44b701fd9a57a80c47d4069d78ea35cf58171c0bf32d",
+      "mainBlob": "268eadae2744d11a85ac073f1196b148d2339029",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 27546,
+      "sha256": "4b18dd562496fa4de82e99afe7659e8262969dbae9db6200a643f5c8e1389d1b",
+      "mainBlob": "cac888ff5efd7da63749ee8358cbf8aba88fab37",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "bytes": 3942,
+      "sha256": "a7abe82bf1eb53f9ddb286435dc6b2ba1660cfc3af4232fea1e4a5dbcbc11d54",
+      "mainBlob": "341d8b9a28dff1b6d02714920fed372879495b58",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 23456,
+      "sha256": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4",
+      "mainBlob": "ef436e8a9d1eec5a96c27f229cf170c8d2c19474",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/message-settings.tsx",
+      "bytes": 15566,
+      "sha256": "08605b6e7541f50941dcecae8bac4e5707dcb74b5094b0567777062f9b68a395",
+      "mainBlob": "5bf5e329c4b8c726622e998271857aad0ac828ce",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 24400,
+      "sha256": "9462307df41ad9910a5fbc846003f20e8c378350e6f8e4cbdd601c7b3b96d0e7",
+      "mainBlob": "6a430efb4c2d48dfffad3a3a50cf69a288d4cc5e",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 25841,
+      "sha256": "ee591334bfa1d89aa5047a75b896c7f7b263fdc2053d99c12ab7fb709515b3c2",
+      "mainBlob": "fea4381f15dd9e7a7e74511efe9dd306a2590087",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33552,
+      "sha256": "ef7ee9d631a82ae9e2b491d94d5780421166bda5aadf6b586cea24109401c21a",
+      "mainBlob": "863d33df7ac5b8a434102fbbadabe096b4233db9",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 139496,
+      "sha256": "0ffac211bd3d3bd62ea04d17acd307decc5414b9e469e79436093b63d922669b",
+      "mainBlob": "08aa0e50cdc67d851ff3b4e3f30b5612c8c78753",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "bytes": 54903,
+      "sha256": "77b78dc4d67ec3fb10f482cd7c7f52da08bcf9b438239c0ac2f8221aa1d3ae91",
+      "mainBlob": "14046571b1b078dc644238dfd480955236fd4d63",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.test.ts",
+      "bytes": 95881,
+      "sha256": "65249d1197f87f35e38c60d64a33f128442e0eb6a4149a7c579ae8fa2f4b52ce",
+      "mainBlob": "089f201a77a8b2246dfd0482b6978d56f0ebd71f",
+      "sameSource": true,
+      "sameOwnerRecord": true
+    }
+  ],
+  "errors": [],
+  "reviewArchiveChecks": [
+    {
+      "path": "docs/evidence/wpf-message-settings-app/source-research/root-msg03-9c46-mounted-source-local-review-20261007.json",
+      "bytes": 7399,
+      "sha256": "8488fa5656763897bf0b9a3c681ee2b7dacf80ae0db6a81eb5b6c2d928c9c981",
+      "mainEqualsOwner": true
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-app/source-research/root-msg03-b924-membership-source-local-review-20261007.json",
+      "bytes": 9199,
+      "sha256": "b92e4c057655b97dab63fe84907ed211bc71cf7cfe169c53aa221ee00b2dc3ad",
+      "mainEqualsOwner": true
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-app/source-research/root-msg03-membership-phase-preparation-review-20261007.json",
+      "bytes": 4779,
+      "sha256": "f05b526dabca20c46166ead118338d1f8d88e964e5975df0ab647332e2d58193",
+      "mainEqualsOwner": true
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-app/source-research/root-msg03-membership-material-lifecycle-review-20261007.json",
+      "bytes": 9984,
+      "sha256": "5853c399ce0af532ef7cdeda79ecdf2c909d8592f26762873d6d285b66f1c5be",
+      "mainEqualsOwner": true
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-app/source-research/w01-msg03-membership-first-business-review-20261007.json",
+      "bytes": 18492,
+      "sha256": "328f80e535a0033def9d65001e1d01dee6b65c1efe51a9600392228e959ed594",
+      "mainEqualsOwner": true
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-app/source-research/root-msg03-membership-settings-lifecycle-visual-review-20261007.json",
+      "bytes": 13393,
+      "sha256": "fc552156fe109bce2f0c6e034568bc991b69bf0f13b0dc782c12778ee8e299bd",
+      "mainEqualsOwner": true
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-app/source-research/w01-msg03-membership-second-business-review-20261007.json",
+      "bytes": 21788,
+      "sha256": "5399df0bbc600b742d8d086afcc6a0f82d155a3289e13f97951f3e1e049cef66",
+      "mainEqualsOwner": true
+    }
+  ],
+  "observedAt": "2026-10-07T14:50:23.195Z",
+  "finalReview": {
+    "path": "docs/evidence/wpf-message-settings-app/source-research/root-msg03-final-scoped-intake-review-20261007.json",
+    "bytes": 14486,
+    "sha256": "c1c34059c1bab7b41f2d3ccea2ff72ef812720720761373d1b67e19c59a305ed",
+    "mainEqualsOwner": true
+  },
+  "completionSource": "Owner verified final scoped approval and exact eighteen-source main receipt at this actual UTC; not inferred from Git commit time.",
+  "runtimeThisCloseout": {
+    "productChecks": 0,
+    "pg": 0,
+    "chrome": 0,
+    "provider": 0,
+    "servicesChanged": 0
+  }
+}

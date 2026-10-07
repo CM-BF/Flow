@@ -1,8 +1,8 @@
 # MSG03 当前固定审查入口
 
-当前实现 **fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56**（产品成员投影修复 b92470377349dea17a12d0abc244f0fed7992e33），base **c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50**。唯一 WT `web-message-settings-app` / branch `codex/web-message-settings-app`；claim7e3f v3 exact20。原 WPF-MATURE-02 TODO11：**APPROVED_FOR_CONTROLLED_SOURCE_INTAKE_EXACT18；NOT_INTEGRATED**。
+当前实现 **fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56**（产品成员投影修复 b92470377349dea17a12d0abc244f0fed7992e33），base **c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50**。唯一 WT `web-message-settings-app` / branch `codex/web-message-settings-app`；claim7e3f v3 exact20。原 WPF-MATURE-02 TODO11：**APPROVED_FOR_CONTROLLED_SOURCE_INTAKE_EXACT18；INTEGRATED 3c9345df4aec85a37e8a2a155e079db260d515b1**。
 
-[18源manifest](source-manifest.json)是15产品+3test的固定范围；[main-intake](main-intake.json)列逐路径base预像、target Git blob/SHA256与集成限制。其余两个scope仅本计划/证据。本片没有改main、个人服务或共享合同。
+[18源manifest](source-manifest.json)是15产品+3test的固定范围；[main-intake](main-intake.json)列逐路径base预像、target Git blob/SHA256与集成限制。其余两个scope仅本计划/证据。Original合法接收见[main receipt](main-closeout-20261007/msg03-intake.json)与[18源核验](main-closeout-20261007/verification.json)；owner本次未改main、个人服务或共享合同。
 
 ## 实现与修复
 
@@ -31,7 +31,7 @@ failure未单独序列化持久空B全量快照；cancel before/after完整IDB�
 
 [首](browser-attempts/material-first/manifest.json)、[第二](browser-attempts/material-second/manifest.json)、[第三](browser-attempts/material-third/manifest.json)、[第四](browser-attempts/material-fourth/manifest.json)全部FAIL原件不改。第三缺fixture graceful-close报告仍UNKNOWN；第四持久B混held A是真实P2，当前修复通过不回写旧失败。旧90s charge51110/38890封闭；局部20s14680/5320封闭。
 
-[root最终组合审](source-research/root-msg03-final-scoped-intake-review-20261007.json)已批准精确18源受控接收、0blocking；合法main尚待。真实个人turnSettings目录由共享TODO08/11 owner发布，synthetic fixture目录不证明个人能力/provider/native/部署已可用。旧7272最小两文件[patch](held-draft-release-minimal.patch)是独立供给，不能整拷MSG session或继承此组合结果；Release最终backend由Original固定04da及其真实descriptor，须另核移植组合。
+[root最终组合审](source-research/root-msg03-final-scoped-intake-review-20261007.json)已批准精确18源受控接收、0blocking；合法main3c9345已核同接收，原六TODO完成。真实个人turnSettings目录由共享TODO08/11 owner发布，synthetic fixture目录不证明个人能力/provider/native/部署已可用。旧7272最小两文件[patch](held-draft-release-minimal.patch)是独立供给，不能整拷MSG session或继承此组合结果；Release最终backend由Original固定04da及其真实descriptor，须另核移植组合。
 
 非阻断原视觉后继P3：390图scroll thumb靠近Speed右侧，未证pointer/keyboard失败，本批不改源码或重跑。[clean-code记录](quality.md)记录本段安全点。
 

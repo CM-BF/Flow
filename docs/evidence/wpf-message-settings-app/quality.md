@@ -65,3 +65,7 @@ clean-code错误处理复核：原filechooser Promise创建后到click完成前�
 ## 2026-10-07T14:38:13.994Z 看板声明格式更正
 
 经理实际summary发现自然语言PASS未被parseChecks识别；唯一status改为标准PASSED+固定fullSHA，review同APPROVED/Review target commit，不改parser或结果。原限定范围、main未接、个人目录和未选旅程保持；只有ownparse/只读目标summary，不重跑产品。
+
+## 2026-10-07T14:50:23.195Z main合法接收与释放前安全点
+
+复用本地find-skills/clean-code：当前只需文档/固定Git核验，不安装技能。18源码等fcf5/b20/main3c9345，7既有审查输入与最终c1c340报告逐hash相同；不复制产品、不重跑已绿。统一当前入口/任务时间/06完成，原历史FAIL、UNKNOWN、selected限制和个人发布依赖不抹平。完成时间取本owner实际核验，不据commit或claim猜。仅两metadata范围，原20停写后CAS release外置；释放后不补项目记录。
