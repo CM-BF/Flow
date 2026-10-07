@@ -37,15 +37,3 @@ effort 必填 discriminated union：level+固定 SDK 五值，或 not-requested�
 五组直接行为：完整请求/非法与显式 omission；canonical 顺序与不同 effort/speed；缺证据/空策略/非笛卡尔组合；profile 三元身份与 32 条/重复边界；ACK 缺失/篡改与固定请求精确匹配。legacy 文件不改，不能把未跑测试写成 red/green。初始空间不足时未运行。2026-10-06 15:28:41 UTC 两项运行前 fresh 均达到 1GiB+32MiB，使用已授权固定依赖闭包完成单文件5/5与局部strict0；没有PG/build/install/target。
 
 Owner 维护 [status](status.md) 和 [review](review.md)。首leaf验证与独审通过并已main22d5；后继接线source ea276已实施并完成本片合同/注入/真实专库验证，模块职责与精确接口见next-slice-handoff.md，CORE固定独审与main接收已完成，见vertical-main-acceptance.json；没有重跑工程检查。原大task其他验收继续开放。
-
-
-## 2026-10-07 CORE领取资格后继（同task）
-
-旧M02CORE-01至06历史完成范围保留。本轮唯一owner architecture_read，权威WT claude-settings-claim-eligibility；固定main7524。
-
-- M02CORE-CLAIM01：精确移交runners.ts并登记同task权威树。
-- M02CORE-CLAIM02：复用allocateClaim，在LIMIT前排除opt-in Claude runner的无pin/无snapshot任务，保完整后置校验和普通fixture。
-- M02CORE-CLAIM03：准备三个领取协议、同机会重放/lease不续、stale owner与旧session runner pin的真实PG用例；类型/收集/实际PG须后续明确有限段，本轮0执行。
-- M02CORE-CLAIM04：独审、受控main组合与父任务两runner个人启用接口交接；不以SQL片证明provider或个人已可用。
-
-Interface/资源/边界见 [claim-eligibility](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/interface.md)。

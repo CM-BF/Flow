@@ -2,53 +2,29 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 13:10:16 UTC / fixed main 7524a7fa6768ace7e284fc80d7cc25c1407ec2a9 |
+| 最近更新 / 最近main同步核验 | 2026-10-06 17:58:48 UTC / 固定main 8d84d529a0756116bd0fc8bad969d61a6c26248e |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
-| 单一status owner / model | architecture_read / gpt-6-astra |
-| Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility |
-| Branch | codex/claude-settings-claim-eligibility |
-| 工作基线 / HEAD | 7524a7fa6768ace7e284fc80d7cc25c1407ec2a9 / source preparation in progress |
-| 工作树dirty状态 | 本轮 own source/test/metadata；旧CORE WT及历史raw不改 |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 任务开工时间 | UNKNOWN |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 原CORE3e768未记录可证实际任务开工；旧claim时刻不是开始证据。2026-10-07T13:05:32Z仅为clock实测本轮后继工作段起点，不能重置同task历史 |
-| 检查状态 | NOT_RUN：当前0已运行；已获原段内仅types/list两child授权，PG/hooks/provider仍NOT_RUN；旧29项只是已main历史 |
-| 已集成main状态 / HEAD | 历史CORE ea276已main8d84，现基线7524保有；本轮领取资格增量NOT_INTEGRATED |
-| 实现目标 | 领取SQL在LIMIT之前隔离需要消息设置的Claude runner；当前未固定source，未验证 |
-| 实现范围 | apps/server/src/runners.ts, apps/server/src/execution-profiles/message-settings-claim-pg.test.ts |
+| 单一status owner / model | status_read / gpt-6-astra |
+| Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core |
+| Branch | codex/claude-message-settings-core |
+| 工作基线 / HEAD | 70cc4e852365e974cefde30bfad75c7d233985c6 / 收口前 2751b617cb647963dbd07eaa1cdde17c41aa631f clean；source ea276572c3c99fb8400808a93efc69ce530d55a4；本次metadata完整HEAD以Git及外部release收据为准 |
+| 工作树dirty状态 | 收口前clean；本次仅own plan/status/review/quality/main-acceptance metadata；source/raw/旧manifest冻结 |
+| 工作分支状态 | completed |
+| 本片段交付阶段 | delivered |
+| 检查状态 | PASSED：29 distinct分次（16合同+5注入+8PG）、两focused strict0；旧beforeAll失败/资源NOT_RUN保留，真实SDK/provider未运行 |
+| 已集成main状态 / HEAD | INTEGRATED — 8d84d529a0756116bd0fc8bad969d61a6c26248e；owner独核34source fixedGit=mainGit=WT/hash/bytes，0errors |
+| 实现目标 | ea276572c3c99fb8400808a93efc69ce530d55a4，独审APPROVED / INTEGRATED；仅本CORE纵向范围 |
+| 实现范围 | v3 39 literal：contracts、center/queue、Claude adapter、final/context/retry、032与定向tests；F01/client/Web/TUI共享入口另owner |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 正在补齐新旧执行后端共存时的领取资格，避免新设置后端先拿到旧消息再失败 |
-| 下一可用交付 | 固定领取条件和专库用例供独审；随后另段类型/收集与真实PG验证 |
-| 当前阻塞 | NONE |
+| 当前产出 | 本CORE消息设置纵向已审并已集成main；本片段已交付 |
+| 下一可用交付 | 本片段已交付；完整02、真实账户资格和用户端验收由父任务继续协调 |
+| 当前阻塞 | NONE（本CORE片已交付）；provider/账号资格与完整02验收仍未验证 |
 | 需用户决定 | NONE |
-| Review | PENDING：本轮source尚未独审；旧批准范围维持不扩大 |
-| Claim | 651c4eb4-ca60-41c3-9702-872c242e12d0 v1 ACTIVE / 4 literals；take 2026-10-07T13:07:54.544Z |
-
-## 本轮领取资格后继
-
-| TODO ID | 状态 | Owner | 完成证据/检查 |
-| --- | --- | --- | --- |
-| M02CORE-CLAIM01 | completed | architecture_read | X01 runners.ts STOP→v29移出，CORE v1 take；固定base与旧3e768历史复制 |
-| M02CORE-CLAIM02 | in-progress | architecture_read | 同一allocateClaim的LIMIT前小条件；5个prepared case，0执行 |
-| M02CORE-CLAIM03 | pending | architecture_read | 固定source独审、后续必要types/list、真实专库公共认证/SQL验证均待 |
-| M02CORE-CLAIM04 | pending | architecture_read | 受控main接收及SVC09两槽个人激活/用户端验收由父任务协调，本片不改个人配置 |
-
-## 等待记录
-
-本轮13:05:32–13:25:32仅source/preparation；13:12:46 S01实际CLOSED后Mika交普通lane，仅本轮focused types/list两child各≤60s累计≤120s，TMP16MiB/raw512KiB，原13:25:32截止不变；启动前fixedsource/freshfloor。实际专库需personal完整RETURN与新的唯一NEXT，未预约。
-
-## 权威迁移与架构影响
-
-这是同一WPF-MATURE-02-CORE的后继，非新任务。旧owner status_read已RELEASED c652 v4，旧WT3e768 clean；本轮唯一owner/WT如上。Mika已接owner-switch请求，Original登记待回执；新source在聚合登记前UNKNOWN，不能由旧WT覆盖。运行所有者/锁序/DTO/DDL不变，变化仅现有allocation的资格条件。架构基线待main接收后由Original更新，不改共享图。
-
-[本轮Interface与预算](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/interface.md)；[claim receipt](../../docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/claim-receipt.json)。
-
-## 历史已交付状态（3e768固定输入，下列完成项不重开）
+| Review | APPROVED — Mika/root gpt-6-astra，2026-10-06 17:13:34 UTC，target ea276572c3c99fb8400808a93efc69ce530d55a4；0 P1/P2；[receipt](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-independent-review.json) |
+| Claim | c652bc61-f8a9-4848-a709-978adbb425ed v3 ACTIVE/39 literal（释放前fresh核）；本次commit/push后全部停写并提交release请求 6aee0793-2f03-4c59-bcd7-95ef61febc4a，实际结果仅存项目外receipt/协调账本，不预写成功 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |

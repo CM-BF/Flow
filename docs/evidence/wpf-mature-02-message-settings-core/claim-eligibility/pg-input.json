@@ -1,0 +1,22 @@
+{
+  "protocol": "flow.m02.settings-claim-pg.v1",
+  "state": "NOT_OPEN",
+  "totalSeconds": 180,
+  "workSeconds": 110,
+  "cleanupSeconds": 60,
+  "finalSeconds": 10,
+  "suites": {
+    "runtime": {
+      "httpRequests": 160
+    }
+  },
+  "providerCalls": 0,
+  "metadataRunners": 10,
+  "tasks": 13,
+  "attempts": 10,
+  "connections": 16,
+  "tempBytes": 33554432,
+  "rawBytes": 1048576,
+  "databaseWalReserveBytes": 134217728,
+  "nonSpendableCleanupReserveBytes": 1073741824
+}

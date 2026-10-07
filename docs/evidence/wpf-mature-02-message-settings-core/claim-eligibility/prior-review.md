@@ -70,8 +70,3 @@ Root静态发现prepared PG config的`.js`引用在native loader下不存在；�
 ## 当前main接收
 
 2026-10-06 17:58:48 UTC：owner只读核固定main 8d84d529a0756116bd0fc8bad969d61a6c26248e 的[canonical回执](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/message-settings-integration.json)，其CORE34源与本批准target/本WT/hash/bytes一致（239204B，0errors）。[owner核对](../../docs/evidence/wpf-mature-02-message-settings-core/vertical-main-acceptance.json)固定receipt SHA与比较输入。Lead首次root类型exit2及后续兼容修复后的final exit0原样保留，未重跑；旧beforeAll失败和资源NOT_RUN也未改。该接收不扩大原29分轮验证至真实SDK/provider/账号资格或完整02。
-
-
-## 2026-10-07 claim eligibility successor
-
-PENDING。当前source-only准备，0工程检查/PG；历史ea276批准不继承为本轮批准。固定source后独立只读审SQL资格、协议共享/锁序、历史pin种子与资源helper差量。
