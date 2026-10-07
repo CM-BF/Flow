@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-07T14:06:51.998449+00:00",
+  "scope": "Only current changed manager paths, added Markdown links, JSON and indexed archive hashes",
+  "paths": [
+    "docs/evidence/web-platform/mature-task-handoff.md",
+    "docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/archive-index.json",
+    "docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/current.json",
+    "docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/msg03-amend20-receipt.json",
+    "docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/msg03-fourth-failure-root-review.json",
+    "docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/quality.json",
+    "docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/selected-claims.json",
+    "docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/status-validation.json",
+    "docs/evidence/web-platform/resource-window-current.json",
+    "plans/web-platform/plan.md",
+    "plans/web-platform/review.md",
+    "plans/web-platform/status.md",
+    "plans/wpf-mature-01-visual/status.md"
+  ],
+  "links": [
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "msg03-recovery-material-release-impact-20261007/current.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "svc-held1347-core-ready-20261007/req19-current6c-nextweb-peer.json",
+      "exists": true
+    },
+    {
+      "source": "plans/web-platform/plan.md",
+      "target": "../../docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/current.json",
+      "exists": true
+    },
+    {
+      "source": "plans/web-platform/review.md",
+      "target": "../../docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/current.json",
+      "exists": true
+    },
+    {
+      "source": "plans/web-platform/review.md",
+      "target": "../../docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/msg03-fourth-failure-root-review.json",
+      "exists": true
+    }
+  ],
+  "archiveHashes": [
+    {
+      "file": "msg03-amend20-receipt.json",
+      "match": true
+    },
+    {
+      "file": "msg03-fourth-failure-root-review.json",
+      "match": true
+    }
+  ],
+  "errors": []
+}

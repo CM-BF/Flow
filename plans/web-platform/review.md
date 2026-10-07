@@ -90,3 +90,7 @@ root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0
 本批按真实事件收敛：[Original held1347实际归还](../../docs/evidence/web-platform/svc-held1347-core-ready-20261007/svc-held-return.json)与[CORE实际START](../../docs/evidence/web-platform/svc-held1347-core-ready-20261007/core-actual-event.json)分列，不按计划释放。新增[MSG公开Files前置研究](../../docs/evidence/web-platform/svc-held1347-core-ready-20261007/msg03-files-prerequisite-peer.json)仅固定静态证据，第三actual无DOM的唯一根因仍UNKNOWN；原owner已同scope准备小修，未授运行。[Plugin真实App接缝研究](../../docs/evidence/web-platform/svc-held1347-core-ready-20261007/plugin-app-seam-peer.md)只归原后继设计，不把模块完成扩为App验收。
 
 [REQ19当前6c对照答复](../../docs/evidence/web-platform/svc-held1347-core-ready-20261007/req19-current6c-nextweb-peer.json)只接受既有7272共源候选与依赖边界：Cookie API存在不等迟到Logout安全，6c到7272有17 backend差异，两个immutable descriptors仍缺。此处不把source HEAD当产物、报告不替新tuple实际兼容或个人发布。
+
+[7272共享附件投影发布影响HOLD](../../docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/current.json)是后到GO明确的现有验收约束；旧REQ19只读候选报告不自动排除此新缺口。需要固定可达性与最小共享修复证据，不把模块/文本通过扩成附件恢复通过，不新增批准链或临拼第三组合。
+
+[MSG第四实际失败与完整归还独审](../../docs/evidence/web-platform/msg03-recovery-material-release-impact-20261007/msg03-fourth-failure-root-review.json)接受24raw与固定源/流/DB/四PID补观及17344ms计费，非材料组通过；cancel B持久A+B为P2，首pid键覆盖与第三fixtureUNKNOWN均保留。旧phase封闭，合法20scope后的最小消费者修复另核，不继承为浏览器已通过。

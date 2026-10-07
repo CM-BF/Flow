@@ -1,5 +1,7 @@
 # Web 当前交接与唯一来源
 
+**发布候选具体HOLD：7272须先完成附件恢复影响判定。** [当前决定](msg03-recovery-material-release-impact-20261007/current.json)：7272与MSG同附件实现/同allitems恢复投影，现Release仅text/receipt实证不能排除fail/cancel附件串入。若旧候选可达，必须纳最小共享投影修复并重新固定发布source；不能将“不等完整MSG/Plugin”理解为忽略已知污染。原artifact源码/接口准备可继续，两个descriptor仍缺，禁止把7272当无条件ready；不新个人/服务窗口。MSG已合法amend至20scope，原owner修复，S01唯一性能NEXT不变。
+
 **MSG03第四次材料旅程失败并已完整归还。** cancel分支完整B附件断言收到A两文件+B，材料组未通过/无图；failure分支恢复已走到，不能据此勾整组。14:01:00.037466Z精确四PID/PGID与DB/scratch/env清理闭合；原phase51110/余38890低于45s最低限，封账不续跑。当前无验证holder，S01已获唯一性能NEXT待fresh、尚未START；个人服务/自然用户任务保留。[唯一资源来源](resource-window-current.json)。
 
 **Arc后继只读输入已归原计划：** [固定12源报告与六约束/八验收](arc-msg03-ownership-intake-20261007/intake.json)已纳MATURE05-01/02/03/05；保持唯一composer父级、view/draft身份与材料准备状态，可见性统一撤销旧CAS/opening，布局不复制权限。仅未实现设计，不新增task/take或公共接口、不占MSG03十九scope。MSG03最新6a258错误观察差量已[限定批准](arc-msg03-ownership-intake-20261007/msg03-6a258-root-review.json)，原第三缺证及余额不变，仍无NEXT。
@@ -8,7 +10,7 @@
 
 **下一用户可见发布交原产物/发布owner：** [已核只读候选](mounted-app-and-personal-maintenance-next-20261007/visible-web-release-peer.json)固定共同source `7272151bb1e3e59e08937dca44949dcdeb42f009`，还需新的immutable Web与含lateLogout修复的backend descriptors；当前6c/7d1旧报告不能改标。原REQ19/Release沿既有发布链优先推进，不等完整Plugin/Codex资格或MSG03。W01已于13:09:33.224Z[重新原子take27c36b97 v1 exact4](mounted-app-and-personal-maintenance-next-20261007/release-successor-take.json)，在原Release独立树准备最窄新App Cookie分支，旧38b9权保持已释放；新App Cookie/刷新恢复/原key ACK/真实迟到logout与旧三App/Bearer新tuple报告分开，8964源及必要strict已限定通过，browser/compat仍未运行。原owner230cb的[具体供给请求](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/recovery-cookie/supply-request.json)直接交Original原产物链。
 
-**Original 13:57最小新网页请求：** 原REQ19已核最小现有已审候选仍Web/backend同源7272151bb1e3e59e08937dca44949dcdeb42f009，不等MSG/完整Plugin。当前6c有Cookie API，但logout仍清cookie头，迟到响应可清新cookie；Web generation guard不能阻止浏览器存储。6c→7272 backend/src有17差异路径，不能临拼未审第三组合；两个新immutable descriptors仍缺，旧三App对6c的Bearer报告不能当新恢复网页通过。[原W01固定答复](svc-held1347-core-ready-20261007/req19-current6c-nextweb-peer.json)已由root核关键差异；沿已审8964四App同新backend/context检查后才由原version CAS发布。无新artifact预约、不触用户tab。
+**Original 13:57最小新网页请求：** 原REQ19历史最小共源候选为7272151bb1e3e59e08937dca44949dcdeb42f009；现须先满足页首附件影响判定/必要修复，不等待其余MSG或完整Plugin。当前6c有Cookie API，但logout仍清cookie头，迟到响应可清新cookie；Web generation guard不能阻止浏览器存储。6c→7272 backend/src有17差异路径，不能临拼未审第三组合；两个新immutable descriptors仍缺，旧三App对6c的Bearer报告不能当新恢复网页通过。[原W01固定答复](svc-held1347-core-ready-20261007/req19-current6c-nextweb-peer.json)已由root核关键差异；沿已审8964四App同新backend/context检查后才由原version CAS发布。无新artifact预约、不触用户tab。
 
 **原SVC09两槽源码后继：** Original已接受的legacy+settings私有manifest/lifecycle可由原owner并行源码推进，保护自然运行用户任务、旧runner身份/会话；新opt-in runner/profile/digest与精确choices、`flow.claude-turn-settings.v1`目录按原合同。13:53:41旧personal-release-policy/4346仅是旧已交付released来源；如已有后继，请给唯一owner/WT/status，未take则正常fresh领取。此处不推其它authority未开工、不热改配置，个人激活另窗。
 
@@ -24,7 +26,7 @@
 
 **Plugin 模块已main并完成原owner释放。** [固定接收及边界](msg03-mounted-browser-admission-20261007/plugin-main-close-intake.json)记录main/origin `9f0fe5b2c096a49195ff8060d97584de235785d2`五源a952；最终409b30双端clean，七scope STOP后于13:33:10.631Z[0a9v2正式释放](msg03-mounted-browser-admission-20261007/plugin-release-receipt.json)。旧待FF原receipt、失败与SB归档边界保持，不重跑，不冒实际App或个人部署；Release27cv1未释放。
 
-更新：2026-10-07T14:03:28.118Z。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T14:06:19.691Z。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 **MSG03 已领取、登记并实施：** 原MATURE02/TODO11沿[常规source operator规则](message-settings-app-self-provision-20261007/rule-intake.json)，panels在固定c130新独立树完成369源物化及[7e3f v1 exact18原子领取](message-settings-app-self-provision-20261007/msg03-receipt.json)。材料失败恢复所需的单一adapter接缝已于12:32:04.114Z[合法amend v2 exact19](plugin-browser-source-and-msg03-local-20261007/msg03-amend-receipt.json)，只追加 `plugin-integration/react.tsx`，原18保留；[D05正式live回执](release-main-registry-close-20261007/msg03-live-receipt.json)与root12:18:58观察确认唯一sourceCurrent、parent MATURE02及claim匹配；旧登记等待已解除。[原owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md)是唯一进度源。局部结果及固定源码审见[本批索引](svc1230-return-plugin-removal-pair-20261007/current.json)；原失败保留，按已授有限段继续，不再申请逐片供给。
 
