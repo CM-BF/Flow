@@ -607,9 +607,9 @@ async function steeringDeadline(stage: "prepare" | "dispatch" | "accepted") {
   const { journal: store } = journal(), entered = deferred<void>(), release = deferred<void>();
   const durable = store.bind(ns, () => owner, () => true), deadline = new AbortController();
   const port: SteeringPort = {
-    admission: vi.fn(async () => ({ taskId: "task", attemptId: "attempt", ownerVersion: 1, revision: 0, state: "ready", reason: "ready" })),
-    state: vi.fn(async () => ({ taskId: "task", attemptId: "attempt", revision: 0, sealed: false, attemptAvailable: true, commands: [], nextCursor: null })),
-    accept: vi.fn(async input => ({ replayed: false, command: {
+    admission: vi.fn<SteeringPort["admission"]>(async () => ({ taskId: "task", attemptId: "attempt", ownerVersion: 1, revision: 0, state: "ready", reason: "ready" })),
+    state: vi.fn<SteeringPort["state"]>(async () => ({ taskId: "task", attemptId: "attempt", revision: 0, sealed: false, attemptAvailable: true, commands: [], nextCursor: null })),
+    accept: vi.fn<SteeringPort["accept"]>(async input => ({ replayed: false, command: {
       id: "command", taskId: "task", attemptId: input.attemptId, ownerVersion: input.ownerVersion, nativeSessionId: "native", revision: input.expectedRevision + 1,
       userMessageUuid: uuid(80), status: "accepted", receiptRevision: 0, input: { bytes: Buffer.byteLength(input.text), digest: createHash("sha256").update(input.text).digest("hex") },
       createdAt: "2026-10-07T06:00:00Z", updatedAt: "2026-10-07T06:00:00Z",
