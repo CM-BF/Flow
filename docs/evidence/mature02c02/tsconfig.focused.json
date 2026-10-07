@@ -1,0 +1,17 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": { "noEmit": true, "incremental": false },
+  "include": [
+    "../../../packages/contracts/src/codex-session.test.ts",
+    "../../../packages/contracts/src/execution-profiles.test.ts",
+    "../../../apps/runner/src/native-harness/codex/session-storage.test.ts",
+    "../../../apps/runner/src/native-harness/codex/continuity.test.ts",
+    "../../../apps/runner/src/native-harness/codex/adapter.test.ts",
+    "../../../apps/runner/src/native-harness/codex/exchange.test.ts",
+    "../../../apps/runner/src/engineering/native-policy.test.ts",
+    "../../../apps/runner/src/engineering/native-writer.test.ts",
+    "../../../apps/server/src/execution-profiles/store.ts",
+    "../../../apps/server/src/codex-continuity.test.ts"
+  ],
+  "exclude": []
+}

@@ -1,0 +1,56 @@
+{
+  "at": "2026-10-06T21:13:41.798299+00:00",
+  "availableBytes": 1184661504,
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "packages/contracts/src/codex-session.test.ts",
+    "--config",
+    "docs/evidence/mature02c02/vitest.config.mjs",
+    "--configLoader",
+    "native",
+    "--reporter",
+    "verbose"
+  ],
+  "bounds": {
+    "ms": 30000,
+    "rawBytes": 16384,
+    "ownBytes": 33554432
+  },
+  "inputs": [
+    {
+      "path": "packages/contracts/src/codex-session.test.ts",
+      "bytes": 2676,
+      "sha256": "8271bf1eae473c420d18827885ef8e631401ad9cd5aff615a39498ed91381a73"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "bytes": 12150,
+      "sha256": "0fa4b90f93dda8ec024a154b14e4864974b62e2f631d4563e80dffde943cd962"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "bytes": 6428,
+      "sha256": "b56612778d17ed8a1cd9383e5ae945547e04941209acc3b41c1e76d6bd792be7"
+    },
+    {
+      "path": "docs/evidence/mature02c02/vitest.config.mjs",
+      "bytes": 610,
+      "sha256": "7de7ddf8d4aed52d3a379a0983e90b6932400a57f7a052f5278f9ad30495fee1"
+    }
+  ],
+  "owned": [
+    {
+      "path": "/tmp/flow-c02-contract-red-cache",
+      "dev": 16777234,
+      "ino": 123202224
+    },
+    {
+      "path": "/tmp/flow-c02-contract-red-tmp",
+      "dev": 16777234,
+      "ino": 123202225
+    }
+  ],
+  "selected": "3 contract-only tests; no native/PG/provider"
+}

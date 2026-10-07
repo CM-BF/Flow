@@ -1,0 +1,530 @@
+{
+  "schema": "flow.c02.main-local.v1",
+  "startedAt": "2026-10-07T03:38:04.273868+00:00",
+  "monotonicStart": 819055.918395,
+  "headBefore": "519f1b87ff3b41b9a963b6e5dd99c7b117159375",
+  "claimVersion": 4,
+  "limits": {
+    "segmentSeconds": 180,
+    "processes": 4,
+    "perProcessSeconds": 30,
+    "tmpBytes": 16777216,
+    "rawBytes": 262144,
+    "sourceMetadataBytes": 1048576
+  },
+  "runs": [
+    {
+      "name": "types-first",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/node_modules/typescript/bin/tsc",
+        "--project",
+        "docs/evidence/mature02c02/main-tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "startedAt": "2026-10-07T03:38:04.276364+00:00",
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-main-cxt2h3k9",
+        "dev": 16777234,
+        "ino": 123406186
+      },
+      "inputs": [
+        {
+          "path": "apps/runner/src/main.ts",
+          "bytes": 3297,
+          "sha256": "46c06a84f1bde8db92a7df140d1491609877455b84ff6e520d00cc748a46c1fe"
+        },
+        {
+          "path": "apps/runner/src/main-concurrency.test.ts",
+          "bytes": 11273,
+          "sha256": "ada94473fc4288a1d319d793860c88cad21d37482c399264c72ebc019b75872b"
+        },
+        {
+          "path": "apps/runner/src/configuration.ts",
+          "bytes": 6563,
+          "sha256": "13e653329ee203dde84eec4ce7057de27f23f333d9308f14f4cabe4b1cbccd65"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.ts",
+          "bytes": 6064,
+          "sha256": "7388b34f4873aa97b247d97b5310b4a1a12185f59774bf0e63ae37f096b8c2bb"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+          "bytes": 17316,
+          "sha256": "610a040c60a9925a13680ac4542de63a900e0ad1c294bde78dc4e849b190db0f"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-tsconfig.json",
+          "bytes": 330,
+          "sha256": "9a228b8891941e29ddf8f576f0bb9a33860930026c6fd51bff74b1b274e47909"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-vitest.config.mjs",
+          "bytes": 400,
+          "sha256": "4b5b96654ef9c340fd39633ba3735fca55c4a6bf3a5b358d7684036c20b7292e"
+        }
+      ],
+      "supervisorReturnedAt": "2026-10-07T03:38:06.219113+00:00",
+      "pid": 47328,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 2,
+      "elapsed_ms": 1941,
+      "observed_bytes": 515,
+      "retained_bytes": 515,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "docs/evidence/mature02c02/main-types-first.stdout",
+          "bytes": 515,
+          "sha256": "3696210d58d4c89a4863621e53c39fe2afa4601dd081c3945a55ac2e889dfcad"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-types-first.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "resourceComplete": true,
+      "tmpRemoved": true,
+      "tmpSample": {
+        "entries": 3,
+        "logicalBytes": 352,
+        "activePeak": "UNKNOWN"
+      }
+    },
+    {
+      "name": "types-fixed",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/node_modules/typescript/bin/tsc",
+        "--project",
+        "docs/evidence/mature02c02/main-tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "startedAt": "2026-10-07T03:38:14.842571+00:00",
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-main-9nqh3c9j",
+        "dev": 16777234,
+        "ino": 123406254
+      },
+      "inputs": [
+        {
+          "path": "apps/runner/src/main.ts",
+          "bytes": 3297,
+          "sha256": "46c06a84f1bde8db92a7df140d1491609877455b84ff6e520d00cc748a46c1fe"
+        },
+        {
+          "path": "apps/runner/src/main-concurrency.test.ts",
+          "bytes": 11273,
+          "sha256": "ada94473fc4288a1d319d793860c88cad21d37482c399264c72ebc019b75872b"
+        },
+        {
+          "path": "apps/runner/src/configuration.ts",
+          "bytes": 6563,
+          "sha256": "13e653329ee203dde84eec4ce7057de27f23f333d9308f14f4cabe4b1cbccd65"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.ts",
+          "bytes": 6077,
+          "sha256": "791db32294dd90783f55da3d9ac8d4a981c04dfea2c11db0d19957fe7a995075"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+          "bytes": 17316,
+          "sha256": "610a040c60a9925a13680ac4542de63a900e0ad1c294bde78dc4e849b190db0f"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-tsconfig.json",
+          "bytes": 330,
+          "sha256": "9a228b8891941e29ddf8f576f0bb9a33860930026c6fd51bff74b1b274e47909"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-vitest.config.mjs",
+          "bytes": 400,
+          "sha256": "4b5b96654ef9c340fd39633ba3735fca55c4a6bf3a5b358d7684036c20b7292e"
+        }
+      ],
+      "supervisorReturnedAt": "2026-10-07T03:38:16.661781+00:00",
+      "pid": 57289,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1817,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "docs/evidence/mature02c02/main-types-fixed.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-types-fixed.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "resourceComplete": true,
+      "tmpRemoved": true,
+      "tmpSample": {
+        "entries": 3,
+        "logicalBytes": 352,
+        "activePeak": "UNKNOWN"
+      }
+    },
+    {
+      "name": "behavior",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/mature02c02/main-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "-t",
+        "operator recipe|production loader|persistent Codex main entry|runner main concurrency entry|dedicated engineering main entry",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-main-om01nmge/vitest.json"
+      ],
+      "startedAt": "2026-10-07T03:38:16.771056+00:00",
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-main-om01nmge",
+        "dev": 16777234,
+        "ino": 123406265
+      },
+      "inputs": [
+        {
+          "path": "apps/runner/src/main.ts",
+          "bytes": 3297,
+          "sha256": "46c06a84f1bde8db92a7df140d1491609877455b84ff6e520d00cc748a46c1fe"
+        },
+        {
+          "path": "apps/runner/src/main-concurrency.test.ts",
+          "bytes": 11273,
+          "sha256": "ada94473fc4288a1d319d793860c88cad21d37482c399264c72ebc019b75872b"
+        },
+        {
+          "path": "apps/runner/src/configuration.ts",
+          "bytes": 6563,
+          "sha256": "13e653329ee203dde84eec4ce7057de27f23f333d9308f14f4cabe4b1cbccd65"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.ts",
+          "bytes": 6077,
+          "sha256": "791db32294dd90783f55da3d9ac8d4a981c04dfea2c11db0d19957fe7a995075"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+          "bytes": 17316,
+          "sha256": "610a040c60a9925a13680ac4542de63a900e0ad1c294bde78dc4e849b190db0f"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-tsconfig.json",
+          "bytes": 330,
+          "sha256": "9a228b8891941e29ddf8f576f0bb9a33860930026c6fd51bff74b1b274e47909"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-vitest.config.mjs",
+          "bytes": 400,
+          "sha256": "4b5b96654ef9c340fd39633ba3735fca55c4a6bf3a5b358d7684036c20b7292e"
+        }
+      ],
+      "supervisorReturnedAt": "2026-10-07T03:38:17.629522+00:00",
+      "pid": 57887,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 1,
+      "elapsed_ms": 858,
+      "observed_bytes": 107,
+      "retained_bytes": 107,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "docs/evidence/mature02c02/main-behavior.stdout",
+          "bytes": 107,
+          "sha256": "71009819a8cff6505011ab63f1c685ffe42477f54e57919be28ba450489e1358"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-behavior.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-behavior.vitest.json",
+          "bytes": 25273,
+          "sha256": "5753d14e8ea285e4482db3337bb1b8f656fd250eeb19989ecfbdf90cfa0c911a"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-behavior.launch-cleanup.json",
+          "bytes": 776,
+          "sha256": "0aebb31c7daf6fc21ecc20fe4bc93c5763a2ccdf56420d09e0a7ac72e94e31ff"
+        }
+      ],
+      "resourceComplete": true,
+      "tmpRemoved": true,
+      "tmpSample": {
+        "entries": 8,
+        "logicalBytes": 26915,
+        "activePeak": "UNKNOWN"
+      },
+      "selection": {
+        "numTotalTests": 61,
+        "numPassedTests": 36,
+        "numFailedTests": 5,
+        "numPendingTests": 20,
+        "success": false
+      },
+      "fixtureRootsAbsent": 5
+    },
+    {
+      "name": "recipe-delta",
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/mature02c02/main-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "-t",
+        "operator recipe|production loader",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-main-0tkml6p7/vitest.json"
+      ],
+      "startedAt": "2026-10-07T03:38:34.676837+00:00",
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-main-0tkml6p7",
+        "dev": 16777234,
+        "ino": 123406545
+      },
+      "inputs": [
+        {
+          "path": "apps/runner/src/main.ts",
+          "bytes": 3297,
+          "sha256": "46c06a84f1bde8db92a7df140d1491609877455b84ff6e520d00cc748a46c1fe"
+        },
+        {
+          "path": "apps/runner/src/main-concurrency.test.ts",
+          "bytes": 11273,
+          "sha256": "ada94473fc4288a1d319d793860c88cad21d37482c399264c72ebc019b75872b"
+        },
+        {
+          "path": "apps/runner/src/configuration.ts",
+          "bytes": 6563,
+          "sha256": "13e653329ee203dde84eec4ce7057de27f23f333d9308f14f4cabe4b1cbccd65"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.ts",
+          "bytes": 6077,
+          "sha256": "791db32294dd90783f55da3d9ac8d4a981c04dfea2c11db0d19957fe7a995075"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+          "bytes": 17344,
+          "sha256": "1a4a7da2d532311fc3cbadb3868b5663db65bd902e8a78a33f8e7fbe0f4a8a22"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-tsconfig.json",
+          "bytes": 330,
+          "sha256": "9a228b8891941e29ddf8f576f0bb9a33860930026c6fd51bff74b1b274e47909"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-vitest.config.mjs",
+          "bytes": 400,
+          "sha256": "4b5b96654ef9c340fd39633ba3735fca55c4a6bf3a5b358d7684036c20b7292e"
+        }
+      ],
+      "supervisorReturnedAt": "2026-10-07T03:38:35.646808+00:00",
+      "pid": 68555,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 968,
+      "observed_bytes": 107,
+      "retained_bytes": 107,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "docs/evidence/mature02c02/main-recipe-delta.stdout",
+          "bytes": 107,
+          "sha256": "be5b3276d9b816e6460123e3091e568a9f3e582698ae8337033e5fa149002364"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-recipe-delta.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-recipe-delta.vitest.json",
+          "bytes": 18600,
+          "sha256": "26fbcbc1f3becde4cd61c53799707153c803420048156bd62d6560057f4029d3"
+        },
+        {
+          "path": "docs/evidence/mature02c02/main-recipe-delta.launch-cleanup.json",
+          "bytes": 776,
+          "sha256": "3da3b99fccd26de97d98f24aa7461afd9a7388de2468e37b1606835a7e60508a"
+        }
+      ],
+      "resourceComplete": true,
+      "tmpRemoved": true,
+      "tmpSample": {
+        "entries": 8,
+        "logicalBytes": 20228,
+        "activePeak": "UNKNOWN"
+      },
+      "selection": {
+        "numTotalTests": 61,
+        "numPassedTests": 5,
+        "numFailedTests": 0,
+        "numPendingTests": 56,
+        "success": true
+      },
+      "fixtureRootsAbsent": 5
+    }
+  ],
+  "freeBefore": 25887670272,
+  "artifactBytes": 46154,
+  "elapsedBeforePersistence": 31.374347707955167,
+  "observedAt": "2026-10-07T03:38:35.649193+00:00",
+  "toolObservation": {
+    "exits": [
+      {
+        "chunk": "857c3b",
+        "exitCode": 0,
+        "waitSeconds": 2.061702416
+      },
+      {
+        "chunk": "001e56",
+        "exitCode": 0,
+        "waitSeconds": 1.7868317500000002
+      },
+      {
+        "chunk": "57fd53",
+        "exitCode": 0,
+        "waitSeconds": 0.779579792
+      },
+      {
+        "chunk": "03d5c1",
+        "exitCode": 0,
+        "waitSeconds": 0.938444917
+      }
+    ],
+    "wholeExternalWallSeconds": null,
+    "note": "Tool wait durations are not whole external wall. Child exit2/1 remain failures; Python caller exit0 only confirms bounded recording/resource closure."
+  },
+  "localReturnedAt": "2026-10-07T03:39:35.997460+00:00",
+  "localReturnedTo": "architecture_read",
+  "pendingLaunches": false,
+  "distinctBehaviorTests": 41,
+  "limitations": [
+    "41 distinct behavior cases in two rounds:36 pass5 fail, then5 pass56 unselected. Not one 41/41 run.",
+    "First strict overload error fixed with NonNullable; strict then0. Later fixture-only realpath correction did not change production bytes.",
+    "Executable bytes are synthetic and never executed; R06 creation is mocked and produces an injected persistent transport. No native/provider/PG/browser.",
+    "End samples bound visible own TMP, not active peaks; exact roots were identity checked and removed. Historical initial unknown observations remain.",
+    "Old R1/R2 and loader raw/manifests are frozen by their Git refs."
+  ]
+}

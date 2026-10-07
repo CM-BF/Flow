@@ -14,6 +14,7 @@ export interface CodexExchangeInput {
 export interface CodexExchangeRecipe<Thread extends { threadId: string } = { threadId: string }> {
   readonly evidence: CodexTurnEvidence;
   readonly startThread: Json;
+  readonly threadMethod?: 'thread/start' | 'thread/resume';
   startTurn(threadId: string): Json;
   readThread(response: Json): Thread;
   checkCompletion(): void;
@@ -50,7 +51,7 @@ export async function runCodexExchange<Thread extends { threadId: string }>(crea
     })();
     dispatched = true;
     let response;
-    try { response = await connected.request('thread/start', recipe.startThread, { signal }); }
+    try { response = await connected.request(recipe.threadMethod ?? 'thread/start', recipe.startThread, { signal }); }
     catch (error) { if (error instanceof CodexTransportError && error.delivery === 'not-sent') dispatched = false; throw error; }
     const thread = recipe.readThread(response);
     evidence.bindThread(thread.threadId);

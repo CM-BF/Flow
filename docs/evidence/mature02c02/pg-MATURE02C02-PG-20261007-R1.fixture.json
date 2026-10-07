@@ -1,0 +1,77 @@
+{
+  "database": "flow_c02_96f24c55fb214584b17b7b6c126effe3",
+  "window": "MATURE02C02-PG-20261007-R1",
+  "sourceHead": "6dd2ada464690b12e3854c4f7140d05f055d22f5",
+  "nativeProcesses": 0,
+  "providerCalls": 0,
+  "configuredConnectionLimit": 14,
+  "primaryPhases": [
+    "continues through observer disconnect and then restores the same session across two independent transports"
+  ],
+  "cleanupErrors": [],
+  "httpLimit": 256,
+  "port": "63844",
+  "migrations": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    7,
+    8,
+    9,
+    10,
+    11,
+    12,
+    13,
+    14,
+    15,
+    16,
+    17,
+    18,
+    19,
+    20,
+    21,
+    22,
+    23,
+    24,
+    25,
+    26,
+    27,
+    28,
+    29,
+    30,
+    31,
+    32
+  ],
+  "databaseLogicalBytes": 12631063,
+  "roots": [
+    {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-pg-window-fh9k6uax/flow-c02-public-vHq9ej",
+      "dev": 16777234,
+      "ino": 123335709,
+      "state": "removed"
+    }
+  ],
+  "httpRequests": 116,
+  "creationRequested": true,
+  "creationAcknowledged": true,
+  "databaseIdentity": {
+    "oid": "1191467",
+    "marker": "c5fe3018-6374-438c-9232-17b50058a807"
+  },
+  "cleanup": {
+    "startupSettled": true,
+    "runnersClosed": true,
+    "appClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "databaseIdentityConfirmed": true,
+    "connections": 0,
+    "databaseAbsent": true
+  },
+  "retainedDatabase": null,
+  "finishedAt": "2026-10-07T02:28:26.954Z",
+  "cleanupComplete": true
+}

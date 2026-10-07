@@ -1,0 +1,54 @@
+{
+  "at": "2026-10-06T21:26:50.726155+00:00",
+  "claimVersion": 2,
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+    "run",
+    "apps/runner/src/native-harness/codex/adapter.test.ts",
+    "apps/runner/src/native-harness/codex/continuity.test.ts",
+    "--config",
+    "docs/evidence/mature02c02/vitest.delta.config.mjs",
+    "--configLoader",
+    "native",
+    "--reporter",
+    "default",
+    "-t",
+    "actual late peer|closes one transport|does not start|rejects a different profile|does not publish|preserves old ephemeral"
+  ],
+  "availableBytes": 1255886848,
+  "bounds": {
+    "ms": 30000,
+    "rawBytes": 16384,
+    "ownBytes": 33554432
+  },
+  "inputs": [
+    {
+      "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+      "bytes": 10676,
+      "sha256": "b93d0d911fe731cec7563ee7d2d279e82e7a0fe85014d49e55c32f4fcddab50a"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/continuity.test.ts",
+      "bytes": 6460,
+      "sha256": "735e7e17143510260433103698add2d7b16bb3eaf97225a8c6d5d0f1e4f87b16"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/continuity-fixture.ts",
+      "bytes": 5316,
+      "sha256": "3383e8619840ce1c6e30a345982c0da21d05816366964ea53a7c4847c14ded14"
+    }
+  ],
+  "owned": [
+    {
+      "path": "/tmp/flow-c02-delta-cache",
+      "dev": 16777234,
+      "ino": 123210415
+    },
+    {
+      "path": "/tmp/flow-c02-delta-tmp",
+      "dev": 16777234,
+      "ino": 123210416
+    }
+  ]
+}

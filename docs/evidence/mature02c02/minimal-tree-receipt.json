@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-06T21:03:25.556881+00:00",
+  "authorization": "GO one-time MATURE02C02 new-worktree/source operator; Lead confirmed not started",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity",
+  "branch": "codex/codex-conversation-continuity",
+  "base": "eae85567ba5dfb650ba71b473917130f87b5945c",
+  "head": "eae85567ba5dfb650ba71b473917130f87b5945c",
+  "state": "MINIMAL_TREE_CLEAN",
+  "initialFiles": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 17226,
+      "sha256": "42137bac40ba6362c2355e5d707de9e3cf3cdd79435f845b786ee68574e9b0fa"
+    },
+    {
+      "path": "plans/AGENTS.md",
+      "bytes": 15077,
+      "sha256": "16abf33b17b51191c49b4c4b6703c3ea59df132676cacda85184a55a8dabb77c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 108,
+      "sha256": "677d39b3228b53937e669987421278ac9aa382172aacf8002a7ca7822367bc27"
+    }
+  ],
+  "logicalBytes": 32411,
+  "availableBeforeBytes": 1201946624,
+  "availableAfterBytes": 1200533504,
+  "mainBefore": {
+    "mainHead": "e731bc450ac23f5d5b3fc84619faa13bb1cecdd1",
+    "mainIndexSha256": "cebabc1f8d939579cf3834ddf5b4adb90a253752b71b10cb568f7d78f39f71cb",
+    "sharedConfigSha256": "4b1012508b72551e5f7908a2f54b7481114d9c241fa6b024d32e4ecd1e45b3ea"
+  },
+  "mainAfter": {
+    "mainHead": "e731bc450ac23f5d5b3fc84619faa13bb1cecdd1",
+    "mainIndexSha256": "cebabc1f8d939579cf3834ddf5b4adb90a253752b71b10cb568f7d78f39f71cb",
+    "sharedConfigSha256": "4b1012508b72551e5f7908a2f54b7481114d9c241fa6b024d32e4ecd1e45b3ea"
+  },
+  "mainUnchanged": true,
+  "worktreeGitDir": "/Users/citrine/Projects/AgentHarness/Flow/.git/worktrees/codex-conversation-continuity",
+  "installImportPgNativeCalls": 0
+}

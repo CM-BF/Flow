@@ -1,0 +1,28 @@
+{
+  "kind": "C02_EXTERNAL_TOOL_OBSERVATION",
+  "window": "MATURE02C02-PG-20261007-R2",
+  "externalStartUTC": "2026-10-07 03:12:20 UTC",
+  "toolExitObservedUTC": "2026-10-07 03:12:29 UTC",
+  "wholeWallExactSeconds": null,
+  "wholeWallConservativeUpperSeconds": 10,
+  "wholeWallBasis": "Independent UTC second samples before exec and after final exit; +1 second quantization allowance. Wait chunks are not summed as wall time.",
+  "initialChunk": "a7ea1c",
+  "finalChunk": "a2c519",
+  "waitChunkSeconds": [
+    1.001659042,
+    7.084e-06
+  ],
+  "toolExitCode": 0,
+  "initialSafeOutput": "{\"freshFreeBytes\": 26524516352, \"combinedFloorBytes\": 1242046464, \"localReservationBytes\": 34086912}\n",
+  "finalStdout": {
+    "bytes": 2013,
+    "sha256": "fc69acd73f2d0ff1d05e9aa623188a8fe2935b02db6538bb82879038b319e565"
+  },
+  "delivery": {
+    "finalReceiptWritten": true,
+    "elapsedSeconds": 4.361264665999999,
+    "success": true
+  },
+  "heavyHolderReturned": true,
+  "newLaunchesPending": false
+}

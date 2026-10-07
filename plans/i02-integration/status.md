@@ -2,24 +2,24 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T03:48:53.590963+00:00 / main56672e7e；本次计时片窄接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:19:48.023472+00:00 / main422f4b15；本批C02固定接收及两import修复组合检查 |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | mainc0217f46；固定领域与管理source分别窄接收，不整合旧feature分支 |
+| 工作基线 / HEAD | main422f4b15；只接afe3已审24源与92d两import，不混新stream实现 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 已审SVC08/根pg/REQ15产品逐字绑定原target；本次5管理文件精确匹配400ee5e8，复用native独立docs review，0新增工程检查。 |
-| 已集成main状态 / HEAD | mainc0217f46已含SVC08、SVC06根pg、REQ15与185来源登记。个人仍af51/accepting v18、Web d629/v3；artifact实跑结果待限定独审接收，host/部署仍未验。 |
+| 检查状态 | PASSED afe3eb972266c53e867e5db232d53d51d6a666c4 + 92d01931两import；根noEmit exit0/8984ms，自有组absent与tmp清理。前轮缺alias失败保留。 |
+| 已集成main状态 / HEAD | main422f4b15已含S01P07、ACCESS、计时与SVC08选择；C02本批待推送。个人仍af51/accepting v18、Web d629/v3；4320已实际185来源及登录/计时。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 会话批量读取与连接释放修复已进入主线；固定后台产物已实际离线安装与内部加载；任务时间展示的独审交付已受控接收，实际看板更新接续。 |
-| 下一可用交付 | 固定后台产物的实际安装、启动和隔离验证；登录入口与任务时间展示由Web组并行实现。 |
+| 当前产出 | 看板已展示登录入口和任务时间；Codex普通会话的公共接线与恢复模块已完成独审及组合类型检查，正在受控发布。 |
+| 下一可用交付 | 把已审Codex接线发布到主线，继续固定后台宿主验证与工程原生宿主组合。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -309,3 +309,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 [固定输入与逐文件绑定](../../docs/evidence/i02/dashboard-timing-intake.json)：四产品及自有记录保持080e1f0e原文，主线前像同181445；复用Web唯一独审72a与81 parser/5浏览器组，0新增工程检查/模型。实际4320加载新版本是独立部署步骤，个人af51/d629不变。
 
 2026-10-07T04:10:00.787603+00:00：受控接收SVC08 Web-only descriptor选择bad019/0e11，4产品preimage等于main451；81binding/2runtime及完整delta独审APPROVED。9不同局部检查复用原证据，未重跑/构建/个人切换；e5来源限制保留。同步D05实际ACCESS+计时部署575b9及OPS真实host失败状态3f688；细节见svc08-web-selection-intake.json。
+
+2026-10-07T04:19:48.023472+00:00：C02固定afe3/153a受控接收24源；92d两import独审c6e复用，仅这两文件偏离旧target。组合root类型首轮缺client别名失败保留，修后exit0/8984ms、0PG/provider；见[接收](../../docs/evidence/i02/codex-continuity-intake.json)与[修后检查](../../docs/evidence/i02/codex-continuity-import-fix-types.json)。新stream65c/de0不在本批，实际native两轮/UI仍开放。

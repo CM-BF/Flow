@@ -1,0 +1,128 @@
+{
+  "base": "f100b07c5b6dd7dbb870a37fe2827a74a47de2f0",
+  "scope": "4 loader source/test literals + independent loader evidence; old R1/R2 manifests/raw unchanged",
+  "claimVersion": 3,
+  "files": [
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 5430,
+      "sha256": "55e168520c2a99857847862e99a233336618d3fb6ca37982f1cc0d9cc8a909fa"
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 10414,
+      "sha256": "907314670720f49b0dcd6b00bd12d595fc7e60d174a3daa979bd4ab1bddab704"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "bytes": 2374,
+      "sha256": "2cce96dda39ae77476e5e23edf641d54fcfcc17131202c0faae7f106251648ec"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+      "bytes": 10985,
+      "sha256": "f6c40729970d405e48c0c663ce66a0cfe9855f7f58e6f06f85981246be314408"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-behavior-endpoint-delta.launch-cleanup.json",
+      "bytes": 154,
+      "sha256": "ed96aed65fda2c11658525fbdbcaeaf37746f3ddbb8f15b5a72ef3aa246863f8"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-behavior-endpoint-delta.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-behavior-endpoint-delta.stdout",
+      "bytes": 109,
+      "sha256": "b13f4de7162a07b2736999f1b367f76f2b5d177ce55454783d34b557307de919"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-behavior-endpoint-delta.vitest.json",
+      "bytes": 6018,
+      "sha256": "13cffda5fe82100564d22abee73bb55556132a7d16e1e36623cd1d7dad4ad1b3"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-behavior-first.configuration-cleanup.json",
+      "bytes": 3901,
+      "sha256": "dd9ef48e1d40d799effe2413b32561b4b88da1dfe3ad3063500dbebf28bf676d"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-behavior-first.launch-cleanup.json",
+      "bytes": 613,
+      "sha256": "ab53abd15c617e2962fd895597bc661a4d85ffa9c7d26fa1320c97eb88b1100c"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-behavior-first.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-behavior-first.stdout",
+      "bytes": 109,
+      "sha256": "01da63d0b8e07e999d28871014bf964c69921143838b910c65dc0af18efae360"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-behavior-first.vitest.json",
+      "bytes": 13708,
+      "sha256": "48c9b74299e5f7bb3de30d395e3fdc5f7f54b615b6dc221475b66c26551db3c4"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-claim-amend-receipt.json",
+      "bytes": 2041,
+      "sha256": "bc17d2dceaa24145a28d8b892db0ec3dff6aace3ba9767532ba5cb3820b520d1"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-claim-amend-request.json",
+      "bytes": 1536,
+      "sha256": "e1813efb771fe7c0530f3fb4ed3658fb5dadd53c4679192f7d836c9e1466253c"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-interface.md",
+      "bytes": 2243,
+      "sha256": "4d15da09e9469b699a70c042405031448396b500f37c10f87c0152c44758726c"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-local-result.json",
+      "bytes": 11832,
+      "sha256": "a3022c0b64a18bfb537d401ae3da93368224a01b599d958147f53ef87996be23"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-source-provision.json",
+      "bytes": 1374,
+      "sha256": "dc8b993c6b268a4fb34ebb085789babbd487e1b2c3fd703e7642b34da59a6ffe"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-source-request.json",
+      "bytes": 1193,
+      "sha256": "7b1c937b99aefa063b0c3936c69ab5529932950120a74cccf1a170eccd2cd225"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-tsconfig.json",
+      "bytes": 251,
+      "sha256": "40185239e8ba6ab45a3e309dcfe3f96dce17ce7f7bb17377cfef26b1c42de37b"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-types-first.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-types-first.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-vitest.config.mjs",
+      "bytes": 408,
+      "sha256": "e8ebdb095791ad4b60d367a67e0641a61c0dcd63cca2d412e68738346b19d7c7"
+    }
+  ],
+  "totalBytes": 74693,
+  "orderedSha256": "74a7b4e79705120cdf193a103797182df5c01b99b087376c5c9f270336e40936",
+  "checks": "42 distinct in first42(41pass1fail)+narrow1pass19notselected; focused types0; 3 processes only",
+  "realNative": false,
+  "PG": false,
+  "remaining": "main/production recipe and persistent root lifecycle/global notification protocol/conversations/WebTUI remain open"
+}

@@ -18,8 +18,13 @@ export function readThreadReceipt(value: Json) {
 export function readTurnReceipt(value: Json) { return turnReceipt.parse(value).turn; }
 
 export function startThreadRequest(profile: CodexExecutionProfileConfiguration, cwd: string): Json {
-  return { model: profile.model, serviceTier: profile.serviceTier, cwd, ephemeral: true,
+  return { model: profile.model, serviceTier: profile.serviceTier, cwd, ephemeral: profile.sessionPersistence !== 'host-owned',
     approvalPolicy: profile.approvalPolicy, sandbox: profile.sandboxMode };
+}
+
+export function resumeThreadRequest(profile: CodexExecutionProfileConfiguration, cwd: string, threadId: string): Json {
+  return { threadId: nativeId.parse(threadId), model: profile.model, serviceTier: profile.serviceTier, cwd,
+    approvalPolicy: profile.approvalPolicy, sandbox: profile.sandboxMode, excludeTurns: true };
 }
 
 export function startTurnRequest(profile: CodexExecutionProfileConfiguration, cwd: string, threadId: string, prompt: string): Json {

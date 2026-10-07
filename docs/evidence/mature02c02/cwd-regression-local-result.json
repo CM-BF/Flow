@@ -1,0 +1,98 @@
+{
+  "kind": "C02_CWD_REGRESSION_LOCAL_RESULT",
+  "recordedAt": "2026-10-07T02:50:51Z",
+  "sourceCommit": "da6b3de389af21333e5150db0564edef76b979d5",
+  "sourceReview": {
+    "reviewer": "architecture_read/gpt-6-astra",
+    "at": "2026-10-07T02:42:01Z",
+    "result": "SOURCE_REVIEW_APPROVED_VALIDATION_PENDING",
+    "P1": 0,
+    "P2": 0
+  },
+  "attempts": [
+    {
+      "path": "cwd-regression-check.json",
+      "sha256": "baf517c958da177c02e6f0ca571ae21e45bfb54843669bd3067a8c1c00e91c19",
+      "state": "NOT_RUN",
+      "tests": 0,
+      "outerExit": 1,
+      "reason": "System Python 3.9.6 cannot evaluate fixed OPS14 Report PEP604 unions; failure occurred before own root/test spawn."
+    },
+    {
+      "path": "cwd-regression-check-complete.json",
+      "sha256": "96c8efcab7274468d9d37f26a90e04492309b43e5575fc5a5a3cec0021040bef",
+      "state": "EXECUTED_ONCE",
+      "testProcessExit": 0,
+      "outerExit": 1,
+      "outerReason": "ANSI escape sequences made the raw substring selection parser miss the passing summary. Original record is preserved; no test rerun."
+    }
+  ],
+  "correction": {
+    "basis": "ANSI removed only in memory from original retained UTF8 for summary parsing; original raw is unchanged.",
+    "selected": 1,
+    "passed": 1,
+    "failed": 0,
+    "notSelected": 7,
+    "testsActuallyRun": 1,
+    "rawBytes": 1705,
+    "rawSha256": "982e2d626f1690ffcb793cfa9b2cb7d18fce3412b3ae6884b8398fcc7d489640",
+    "result": "PASS_TEST_ONLY",
+    "wrapperResult": "FAIL_SUMMARY_PARSER_CORRECTED_OFFLINE"
+  },
+  "resources": {
+    "pid": 89630,
+    "exitCode": 0,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true
+    },
+    "signals": [],
+    "observedBytes": 1705,
+    "retainedBytes": 1705,
+    "temporary": {
+      "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-cwd-5ffs9p9e",
+      "dev": 16777234,
+      "ino": 123357235,
+      "removed": true,
+      "closedSample": {
+        "entries": 8,
+        "logicalBytes": 907,
+        "allocatedBytes": 8192,
+        "activePeak": "unknown"
+      }
+    },
+    "fixtures": [
+      {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-cwd-5ffs9p9e/tmp/flow-c02-continuity-Yl6Tyc",
+        "dev": 16777234,
+        "ino": 123357322,
+        "absent": true
+      }
+    ],
+    "oldR1KeepRootAccessed": false
+  },
+  "time": {
+    "entryStartedAt": "2026-10-07T02:50:07.017176+00:00",
+    "throughPersistenceFinishedAt": "2026-10-07T02:50:07.971525+00:00",
+    "elapsedThroughPersistenceSeconds": 0.954404583084397,
+    "supervisorMilliseconds": 894,
+    "externalToolExitConfirmedAt": "2026-10-07 02:50:10 UTC",
+    "externalToolExit": 1,
+    "toolWaitSeconds": [
+      1.002533542,
+      6.75e-06
+    ],
+    "wholeToolWallSeconds": null,
+    "limitation": "Tool wait chunks are not whole wall time; no immediately preceding external UTC start was captured. Internal entry/child timings remain separate."
+  },
+  "handoff": {
+    "to": "db_transaction_owner/REQ15",
+    "basis": "All local child/streams/owned temporary resources confirmed closed/removed; no further C02 local run.",
+    "receiverHeadObserved": "011f85d42c315d21755da6739106dbe0dbf7b52d",
+    "receiverDirty": false
+  },
+  "PG": 0,
+  "actualCodex": 0,
+  "provider": 0,
+  "remaining": "Corrected public API PG run needs new prepared inputs/namespace and separate shared window; production loader/conversations/Web/TUI remain pending."
+}
