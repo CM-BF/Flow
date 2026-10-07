@@ -1,0 +1,57 @@
+{
+  "at": "2026-10-07T03:48:00.852561+00:00",
+  "role": "/root read-only research; no project edits",
+  "task": "D01 existing task timing readability successor",
+  "trigger": "GO observed actual Timing light/dark390 screenshots and requested a bounded readability follow-up; current72a remains approved and may integrate/publish first; ACCESS priority.",
+  "evidence": {
+    "baseSource": "72a9407e2e733479631b9409c36113e8f450b6f1",
+    "observedScreenshots": [
+      "/private/tmp/timing-browser-prepared-cdx8wfiq/raw/task-timing-light-390.png",
+      "/private/tmp/timing-browser-prepared-cdx8wfiq/raw/task-timing-dark-390.png"
+    ],
+    "code": "dashboard-task-timing/apps/execution-dashboard/public/app.js timingDetails currently renders provenance, raw times, issues, snapshotUTC, source path and Markdown waiting text directly; status parser retains waiting raw."
+  },
+  "classification": "Bounded presentation follow-up. User has already authorized ongoing feature/UX improvement and persisted planning; no new user permission is needed. No implementation in this report.",
+  "skills": {
+    "find-skills": "Existing local skills preferred; no installation",
+    "frontend-design": "/Users/citrine/.agents/skills/frontend-design/SKILL.md: human wording, hierarchy, less decorative or redundant metadata",
+    "brainstorming": "/Users/citrine/.agents/skills/brainstorming/SKILL.md: context/options/design before code; existing explicit user authorization and plan persistence override repeated approval/no-plan ritual",
+    "codebase-design": "Small derived presentation interface reused by summary and detail; no second state source",
+    "clean-code": "Avoid duplicate elapsed/status rules, broad Markdown renderer and unnecessary framework"
+  },
+  "options": [
+    {
+      "name": "Recommended: concise summary with one expandable evidence section",
+      "why": "Preserves original facts while moving diagnosis/paths away from primary user questions; small change at timing presentation seam."
+    },
+    {
+      "name": "Only shorten existing labels",
+      "whyNot": "Leaves duplicate declarations and raw waiting Markdown dominating the390px first screen."
+    },
+    {
+      "name": "New timeline/status storage",
+      "whyNot": "Creates unnecessary subsystem and risks violating status single authority."
+    }
+  ],
+  "design": {
+    "main": "Show start, completed/not-yet-completed, elapsed including waiting, and understandable waiting reasons; use existing restrained dashboard typography/themes, no new fonts/animation/palette.",
+    "time": "Format validated immutable ISO instants via Intl.DateTimeFormat in explicit resolved viewer time zone; name zone near the section, retain canonical UTC inside evidence. No browser wall-now for elapsed or date-based inference. UTC fallback must be explicit.",
+    "truth": "Missing=未记录/待核对; NOT_COMPLETED=尚未完成, not proof of currently running; stale/frozen/readfailed observations do not advance elapsed. Current branch/review/main states stay separate.",
+    "evidence": "One native details/summary labelled 时间依据 containing exact UTC, owner source text, observation moment, raw waiting text and format issues. Preserve diagnostic access, defaultcollapsed, keyboard usable.",
+    "waiting": "Render known header/rows as a real table with readable reason and start/end; plain-text escaping only, preserve UNKNOWN/OPEN as explicit user-facing states. Do not sum overlapping waits. Malformed rows retain raw evidence and an isolated timing issue instead of guessed facts.",
+    "scopeChoice": "Prefer a small pure derived projection shared by compact cards and details; if parser gains structuredwaiting it remains derived from the same status raw block with existing timing error isolation. Keep current72a frozen until Lead intake. New ownerworktree/claim or formal scope handoff required; source authority and actual source checks decide final literal scope.",
+    "noFeatureExpansion": [
+      "No new editable status/timer/timezone preference store",
+      "No arbitrary Markdown/HTML parser or arbitrary source-link endpoint",
+      "No main/registry/server/service mutation by Web root"
+    ]
+  },
+  "acceptance": [
+    "At390 light/dark, first view answers start/end/elapsed/wait without showing raw sentinel/path/millisecond fields by default.",
+    "Named timezone and DST/cross-day formatting exercised with fixed instants; invalid inputs remainunknown.",
+    "Existing81 timing semantics/5page scenarios preserved through directlyaffected tests, no unrelated suite rerun.",
+    "Readfailed or new snapshot does not replace an open detail or stealfocus; disclosure Enter/Space and table narrowlayout remain usable.",
+    "Hostile waiting text escapes; malformedtable/rawprovenance remaininspectable; no elapsed totals from waitingrows."
+  ],
+  "state": "RESEARCH_READY_NOT_TAKEN_NOT_IMPLEMENTED_NOT_RUN"
+}

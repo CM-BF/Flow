@@ -39,7 +39,7 @@ GO最新明确六项成熟聊天大task，完整用户原话、分工、验收�
 | U11 真实持续对话优先（原Goal Owner反馈经root转交，准确摘要，未提供完整逐字原话） | 用户在49922输入hi后只看到固定英文center/runner/result和Field notes/Verification卡片，要求真实Codex式持续对话；需要模型、thinking/effort、access权限、context、files、语音、发送、消息气泡、queue、steering、tool calls及可展示thinking；正文优先而详情按需 | 真实聊天核心优先于PERF02与工作台装饰；I01既有收尾继续，49922原tab/fixture服务保持且明确演示性质；真实中心能力与契约由主线唯一owner提供，不能用缺少持久conversation/turn/context lineage的任务拼接伪装追问，steering必须active turn/attempt确认生效 |
 | U12 领取与跨Lead协作重申（root准确转述，压缩重申U08，非用户逐字） | take工作在dashboard标清、跨lead防overlap | 复用U08/WPF-REQ-37与现有D04事务claim；确认owner/Lead、worktree/branch、精确写入范围、state/version实际可见，不造第二手填进度或口头抢占 |
 | U13 本机登录入口（GO经root准确转述，非逐字） | 4320提供打开Flow及按需掩码显示/复制登录凭据；真实本机安装验收 | [独立入口请求](../../docs/evidence/web-platform/dashboard-local-access-intake/request.json)；显式local-installation限定、可信固定来源，token不进日志/URL/聚合/Git；唯一operator恢复和发布，不代用户登录/刷新聊天 |
-| U14 任务时间展示（GO经root准确转述，非逐字） | 展示任务开始、完成时间及进行中耗时 | 归已有REQ16/27/37与D01；唯一status明确UTC声明，结束未知不冒进行中，不回填历史；字段/枚举已由Lead固定79da规则并报告入main18144593，[限定合同](../../docs/evidence/web-platform/dashboard-task-time-intake/report.md)已由独立Timing源码72a实施/81parser获审，浏览器与发布另验 |
+| U14 任务时间展示（GO经root准确转述，非逐字） | 展示任务开始、完成时间及进行中耗时 | 归已有REQ16/27/37与D01；唯一status明确UTC声明，结束未知不冒进行中，不回填历史；字段/枚举已由Lead固定79da规则并报告入main18144593，[限定合同](../../docs/evidence/web-platform/dashboard-task-time-intake/report.md)已由独立Timing源码72a实施，parser与5项浏览器实际获审；main/发布另计，后继易读层级沿同U14排队 |
 
 U00 补充执行约束：dashboard 优先尽早交可查看版本；来源映射严格以完整 handoff 的 task→唯一 owner worktree 登记为准；临时样本覆盖状态变化、缺失、空 review、转义与路径限制，真实工作树只读核验，二者证据明确分开。U02 原文保留拼写，实施含义为官方 AI Elements Terminal/FileTree，不伪造PTY或任意文件系统。
 
@@ -139,7 +139,9 @@ GO 既有 REQ17/Web性能与 CHAT06 的[有界测量接口](../../docs/evidence/
 
 原 MSGQUICK-04 的[portable strict→26direct 候选](../../docs/evidence/web-platform/message-settings02-portable-prepared/report.md)已由唯一W01在原六scope的证据目录固定，产品fe6四源不变，portable候选仅获限定静态独审；本地c1随后类型失败/direct未启动，当前原件与已补输入见集中handoff。它复用原真实检查入口，外层CI containment与启用归原owner/GO；本地c1/b1不因此重写或继承远程结果。
 
-U14时间显示实现已收敛到[固定main18144593的独立六scope候选](../../docs/evidence/web-platform/dashboard-task-timing-provision/request.json)，仅status解析/app显示/两专测与own计划证据，直接D01，W01唯一候选owner。DPERF app已正式移出v3，本片仍须独立供给+fresh take；不扩主线规则、aggregate或旧DPERF验证范围。
+U14时间显示已由独立Timing树、9a677v1六scope实现并实际验证；当前72a源及parser/browser限定批准，owner080e已封存主线接收包。main bf7eca登记185不等实际加载，当前获审片继续正常接收，不等待下面后继。[原供给请求](../../docs/evidence/web-platform/dashboard-task-timing-provision/request.json)只保历史，不再称未take。
+
+D01既有U14/REQ16/27/37的[时间信息层级后继](../../docs/evidence/web-platform/dashboard-task-time-intake/readability-followup.json)排队未领取：首屏仅开工、完成或进行中、含等待耗时和可读等待原因；采用简洁本地时间并明确时区。原UTC、来源、格式诊断收进可展开依据；等待表正常排版。保持未知/陈旧真实性和唯一status、不猜历史，不建立第二时间权威；局部验证。ACCESS优先，原72a不回滚、不修改；待原owner受控main收口及合法scope交还后再实施，当前不扩Timing6scope或抢app.js，无新运行预约。
 
 ## 执行顺序与交权规则
 

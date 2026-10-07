@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T03:46:01.611311+00:00",
-  "state": "NO_HEAVY_HOLDER_AFTER_MIKA_S01P07_RETURN",
-  "groupWindowOwnership": "SVC06/ACCESS/Timing and now Mika S01P07 capacity all returned with actual receipts. No Web or Mika heavy holder/reservation. ACCESS source preparation and D06 static browser candidate do not reserve a window.",
+  "recordedAt": "2026-10-07T03:52:21.927621+00:00",
+  "state": "D06_BROWSER_FAILED_CLEANED_RETURNED",
+  "groupWindowOwnership": "D06 actual exit1 after2/5 groups; native worker/Chrome/HTTP/context/scratch cleanup complete. Heavy window returned; no retry or reservation.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,11 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T03:46:01.611311+00:00",
-    "kind": "MIKA_S01P07_ACTUAL_RETURN_NO_CURRENT_HOLDER",
-    "source": "window-actuals-0341-20261007/mika-actual-return.json",
-    "summary": "S01P07 4/4实际通过并完整收尾归还；本组无holder/gate/预约。Timing已封存main-intake，D06仅静态浏览器候选待审，ACCESS只准备修复。"
+    "at": "2026-10-07T03:52:21.927621+00:00",
+    "kind": "D06_ACTUAL_FAILURE_AND_HAND_BACK",
+    "source": "d06-browser-actual-20261007/return.json",
+    "summary": "运行边界/模块图通过；数据图两条连线文字背景bbox失败，2/5组及8PNG保留。owned清理完整，窗口立即归还；无重试/renderer改动。",
+    "attribution": "d06-browser-actual-20261007/attribution.json"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -550,7 +551,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "window-actuals-0341-20261007/mika-actual-return.json",
+  "currentWindowReturn": "d06-browser-actual-20261007/return.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1070,19 +1071,24 @@
       "source": "72a9407e2e733479631b9409c36113e8f450b6f1",
       "actual": "5/5 browser PASS actualexit0, 6410.498ms; exact cleanup03:41:04Z; scoped root accepted.",
       "review": "window-actuals-0341-20261007/timing-browser-review.json",
-      "next": "Owner main-intake seal; registry185 not observed loaded.",
-      "ownerHead": "080e1f0e45966016b24c6cd97b742e6e024977ed"
+      "next": "Integrated; original operator to deploy4320/load185 separately. No actual deployment receipt yet.",
+      "ownerHead": "080e1f0e45966016b24c6cd97b742e6e024977ed",
+      "main": "52fe66693c370aec72dd8a36ed3fa00292e5127b"
     },
     "d06": {
-      "ownerHead": "ba9e9aaaa615709b488ab556b4413224e614c25e",
+      "ownerHead": "cc1f83457f04a02147c854f0503409db1bebb355",
       "source": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
       "packet": "/private/tmp/d06-browser-512-tz5of84t",
-      "state": "SOURCE_REVIEWED_NATIVE_BOUNDARY_ACCEPTED_FRESH_ADMISSION_NEXT",
+      "state": "EXISTING_RENDERER_GEOMETRY_FIX_SOURCE_ONLY",
       "manifestSha256": "7d61f3370c3b9b7e6b54372b1b4d64e5668f2d1747dda383c5c4935289b7f5b1",
-      "proposal": "90s including15s cleanup;256MiB TMP/8MiBraw;5views/20PNG; no grant.",
+      "proposal": "Original90s consumed6733 conservatively;83267ms remains incl15s cleanup. Future run requires independent review/admission.",
       "review": "window-actuals-0341-20261007/d06-browser-preparation-review.json",
       "window": "D06-512-BROWSER-ONCE-20261007",
-      "authority": "Root explicit next exclusive90s after Mika actualreturn; fresh owner/claim/pins/combined resources and one gate still required. No runtime started at this record."
+      "authority": "Original single gate consumed; cleaned and returned. No second run granted.",
+      "actualReceipt": "d06-browser-actual-20261007/return.json",
+      "conservativeSpentMs": 6733,
+      "remainingMs": 83267,
+      "sourceBoundary": "Root fixed diff confirms existing renderer estimate bug; adf953v2 exact5 permits architecture.js only in addition to original4; source fix/review pending."
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1185,7 +1191,7 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "window-actuals-0341-20261007/timing-browser-review.json",
+  "currentWindowEvidence": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/browser-first-20261007/index.json",
   "webActualHolder": null,
   "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
