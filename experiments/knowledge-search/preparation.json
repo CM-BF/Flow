@@ -1,0 +1,130 @@
+{
+  "protocol": "flow.k01.query-diagnostic-preparation.v1",
+  "segmentStartedAt": "2026-10-07T15:01:34Z",
+  "segmentDeadline": "2026-10-07T15:21:34Z",
+  "fixedProduct": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "claim": {
+    "id": "30965e7d-6f0d-42bc-8eb8-cfc99b80ecca",
+    "version": 2
+  },
+  "state": "SOURCE_PREPARATION_NOT_VALIDATED",
+  "childrenStarted": 0,
+  "pure": "NOT_RUN",
+  "types": "NOT_RUN",
+  "pg": "NOT_OPEN",
+  "modelCalls": 0,
+  "staticPreparationFailures": [
+    {
+      "step": "first ad-hoc Git source supply",
+      "actual": "git show missing packages/plugin-runtime/src/index.ts exited 128",
+      "resolution": "read fixed package.json exports; supply materializer resolves src/package-store.ts",
+      "sourceWrittenBeforeFailure": false,
+      "rawLocation": "original tool-call transcript; this is a factual summary, not reconstructed raw stdout"
+    },
+    {
+      "step": "existing dependency links",
+      "actual": "zod not present as root node_modules direct link; script stopped",
+      "resolution": "17 unique existing pnpm package directories recorded; no installation",
+      "partialState": "pg link already existed and was retained",
+      "rawLocation": "original tool-call transcript; no retroactive raw log claim"
+    }
+  ],
+  "supply": {
+    "files": 245,
+    "bytes": 1112251,
+    "dynamicSqlFiles": 33,
+    "dependencies": 17,
+    "sourceImportsExecuted": 0
+  },
+  "resourceDecision": "Mika 15:09: SVC09A owns offline build window; K01 engineering children remain NOT_OPEN until actual RETURN, segment deadline unchanged",
+  "budgets": {
+    "maxSerialChildren": 5,
+    "perChildSeconds": 30,
+    "cumulativeSeconds": 90,
+    "rawBytes": 262144,
+    "ownTmpBytes": 8388608,
+    "preparedLogicalBytes": 33554432,
+    "newSourceMetadataBytes": 2097152
+  },
+  "notes": [
+    "Pure test source preceded implementation but no red test was executed under resource exclusion; no TDD execution pass claimed.",
+    "Static Git source supply and metadata reads are not product imports/engineering child tests.",
+    "No PG/HTTP/browser/provider/runtime lifecycle has been exercised. Source closure is literal-import plus full SQL supply, not executed closure proof.",
+    "Independent new-source review remains required after pure/type checks; prior c2ed approval is design-only."
+  ],
+  "lastStaticInspectionAt": "2026-10-07T15:17:19.841017+00:00",
+  "experimentFiles": [
+    {
+      "path": "experiments/knowledge-search/.gitignore",
+      "bytes": 30,
+      "sha256": "3e8cd047378f70c835bf050d994247ef27e18f0fd4a1190f966e9fc9cf9a9c27"
+    },
+    {
+      "path": "experiments/knowledge-search/README.md",
+      "bytes": 6228,
+      "sha256": "ff0bb561acf5dc99038c81b3f6d7762bfe0da06a7291f372da840415de1752d7"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.test.ts",
+      "bytes": 2390,
+      "sha256": "2a92684c8660fd966369ede94aa1661d6af3b53d987033d5a2031c6c3b0d0d84"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.ts",
+      "bytes": 2816,
+      "sha256": "74784cec7db73db507ca3e37b1820d883a56a9ff07cbada22defd81176f9cd4a"
+    },
+    {
+      "path": "experiments/knowledge-search/dependencies.json",
+      "bytes": 5171,
+      "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.py",
+      "bytes": 7274,
+      "sha256": "15a9ff8e075de5292a67bda1a24be21a0d3982a1b852dc2e38f9f4462a281f88"
+    },
+    {
+      "path": "experiments/knowledge-search/materialize.py",
+      "bytes": 3314,
+      "sha256": "92045f38b3113b06a9bd388d1fba4b2ebf50c3d170fdb9e6db47736d0075ff09"
+    },
+    {
+      "path": "experiments/knowledge-search/measurement.ts",
+      "bytes": 13394,
+      "sha256": "856530a4bc25f011f87126425fc4c1aedaa7ecd8e2ca270ed5872f98d75d3002"
+    },
+    {
+      "path": "experiments/knowledge-search/owned-database.ts",
+      "bytes": 9292,
+      "sha256": "6d64fa0a086bc8f9382a9c2f7da9c8ee5759ecde4f73068d85a0b7f87e153240"
+    },
+    {
+      "path": "experiments/knowledge-search/run.ts",
+      "bytes": 2271,
+      "sha256": "c4895400a8a88754726bbd87e8cc88785f62a112fc41ae1b88bc7d3bc52fe48a"
+    },
+    {
+      "path": "experiments/knowledge-search/source-inputs.json",
+      "bytes": 49602,
+      "sha256": "daab2f8e8a2c0cfeb06994e09ea75f164dfd11d22faefbb6561e07f7b9ad195c"
+    },
+    {
+      "path": "experiments/knowledge-search/types.tsconfig.json",
+      "bytes": 413,
+      "sha256": "379b404f451e0bb9a22af79573fbf2c61ff60106146817bf0ea6a5efacedc80e"
+    },
+    {
+      "path": "experiments/knowledge-search/vitest.config.mjs",
+      "bytes": 173,
+      "sha256": "7362611fefea54c5e2237de2465627930aed18a4ae0875f0c8767746da71ad05"
+    }
+  ],
+  "staticFacts": {
+    "fixedSupplyMismatchPaths": [],
+    "experimentSourceBytes": 102368,
+    "experimentTotalLogicalBytes": 1219537,
+    "engineeringChildren": 0,
+    "importsExecuted": 0
+  }
+}

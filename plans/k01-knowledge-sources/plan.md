@@ -44,3 +44,5 @@
 所属大task仍为本K01，REQ-10为需求来源；本段只在原K01-06内细化，不新增并行计划或关闭hybrid/vector。唯一[诊断入口说明](../../docs/evidence/k01/query-plan-diagnostic.md)绑定只读main `3c9345df4aec85a37e8a2a155e079db260d515b1`，复用12词法金样本与project/current、引用、JSON预算和每source winner。先在未来专库观察现MATERIALIZED+literal/FTS的实际EXPLAIN/扫描节点、returned bytes及分离延迟；GIN存在不证明使用。数据量分别声明当前/历史/foreign chunks，不复用17595历史容量数冒充当前扫描。
 
 当前交付仅小诊断方案，产品/PG/工程检查NOT_RUN；后续建议G金样本+D16/D128有界baseline，独立review后再协调合法scope、单独PG窗口与完整入口生命周期。NOT MATERIALIZED/拆分分支只是假设，不调整SQL/pool、不安装扩展或embedding，不承诺提速。原K01-08～10与R01～12、flow.commands实施前依赖保持不变。
+
+2026-10-07 15:01:34 UTC进入原K01-06的20分钟入口准备段，合法amend只新增experiments/knowledge-search。实现说明及计量口径修订收敛在该目录README.md，c2ed设计保持历史原样：自有诊断/admin语句1.5s/lock0.5s，未改factory business10s/pg-boss配置，统一绝对截止与unknown KEEP独立验证。当前仅源准备；四个纯用例与noEmit待资源排他解除，PG/HTTP仍NOT_OPEN，不据此关闭K01-06/08～10。

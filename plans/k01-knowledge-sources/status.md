@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 14:59 UTC |
+| 最近更新 | 2026-10-07 15:15 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -10,29 +10,29 @@
 | co-lead | mika |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 原K01首次开工缺精确事件证据，不用commit/领取时间猜测；本段实际开始2026-10-07T14:53:11Z，来源clock工具与Mika派工，见下文工作段 |
-| 当前claim / scope | 30965e7d-6f0d-42bc-8eb8-cfc99b80ecca v1 ACTIVE，fresh ledger14:59:12.631Z已核；仅两metadata scope，最终push后STOP，保留后继有限实施准备占用，未release |
+| 任务时间来源 | 原K01首次开工缺精确事件证据，不用commit/领取时间猜测；文档段开始2026-10-07T14:53:11Z，当前实现段开始15:01:34Z、截止15:21:34Z；来源clock与Mika派工 |
+| 当前claim / scope | 30965e7d-6f0d-42bc-8eb8-cfc99b80ecca v2 ACTIVE，15:01:40.433Z COMMITTED amend；原两metadata scope+experiments/knowledge-search |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | c2ed3bb设计源固定；本次仅批准归档metadata，提交后核clean并停止全部写入 |
+| 工作树dirty状态 | 合法实验范围准备中；产品路径及c2ed诊断设计不改 |
 | 工作分支状态 | in-progress（检索诊断设计已审待主线接收；原产品/留存为历史接收，开放验收不变） |
-| 检查状态 | NOT_RUN：本段仅检索诊断准备，0工程测试/产品PG；旧31项仅历史 |
+| 检查状态 | NOT_RUN：源准备已完成；4纯用例/noEmit尚未执行，工程child等待SVC09A actualRETURN；PG/HTTP NOT_OPEN |
 | 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本段检索诊断准备未集成，未运行 |
-| 实现目标 | c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5 |
+| 实现目标 | UNKNOWN |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
 | 当前规划基线 / HEAD | 文档起点88bee460c5e0caf762157b3b0934c16093293fe3；本段target c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5；不merge/rebase |
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
-| 实现范围 | plans/k01-knowledge-sources/plan.md, docs/evidence/k01/query-plan-diagnostic.md |
+| 实现范围 | experiments/knowledge-search |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 检索查询计划诊断方案已通过独立文档审查 |
-| 下一可用交付 | 主线接收诊断方案，再准备符合资源与清理边界的有限专库入口 |
+| 当前产出 | 检索诊断入口和金样本已准备，等待资源条件完成纯检查 |
+| 下一可用交付 | 交付可审入口及纯检查证据；实际数据库测量仍未开放 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；Mika DESIGN_REVIEW_APPROVED c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5，2026-10-07T14:58:07Z；0 P1/P2，仅设计 |
+| Review | [review.md](review.md)；新入口NOT_STARTED；c2ed仅历史设计APPROVED |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -94,3 +94,7 @@
 2026-10-07T14:57:42.144976Z：本段唯一dashboard读取（generatedAt14:57:28.669Z）返回live/current、实际Git4c235e8c clean、claim v1 matchesSource、10TODO及checks not_run/review not_started；但其status内容仍是14:55启动版本（target UNKNOWN），与已提交14:57交付status不同，implementationProof为unknown。该次聚合不是最终target同步成功；原读取保存在/tmp/flow-k01-query-plan-dashboard.json，交Mika后续读取，不在本段轮询/改parser/重启服务。唯一owner文件现已声明完整c2ed3bb target；本次metadata push完成后STOP，独审与main未完成。
 
 2026-10-07T14:59:12Z：按Mika≤5分钟metadata收口授权恢复，fresh ledger确认30965 v1及两scope未变，起点a6a2ecab=origin clean。已归档14:58:07Z独立DESIGN_REVIEW_APPROVED c2ed3bb、0P1/P2；9 bindings/58979B与12金样本、1856chunks/5.5MiB已由review者核验。未来入口必须核aux pool6与center/pg-boss/admin总量、统一绝对deadline/marked DB identity/UNKNOWN保留、实际seed及完整动态迁移闭包（详见review.md）；现fixture不能原样视为运行获准。原设计源/留存/全部开放验收不变，工程/PG检查NOT_RUN、主线接收未完成。未再读取dashboard；最终commit/push后STOP，claim保留、不release。
+
+2026-10-07T15:01:34Z：新20分钟准备段开始，截止15:21:34Z。fresh492a16f=origin clean后amend v2，仅新增experiments/knowledge-search；receipt为docs/evidence/k01/query-entry-amend-receipt.json。S01窗口优先，工程child尚未启动；最多5串行child/各≤30s/累计≤90s。首次静态供给误猜plugin-runtime index被Git拒绝，后按固定package.exports修正；245项/1112251B/33SQL在自有ignored source目录。依赖初次zod顶层缺项，已改精确既有pnpm唯一安装目录链接，无安装/产品改写。实际PG/HTTP/browser/provider均NOT_OPEN。
+
+2026-10-07 15:15 UTC：固定245项/1112251B/33动态SQL输入静态hash一致，17已有依赖metadata及3内部包指向本供给；实验正文/metadata约100KiB、含供给总逻辑约1.22MiB，均在本段预算内。四纯用例与strict noEmit入口已备；0工程child/0产品import/0PG/HTTP/browser。Mika15:09明确SVC09A为唯一离线build owner，S01非active但本工程检查仍排他；仅收到actualRETURN后在本段剩余时间运行，否则固定源STOP。当前无性能/索引/生命周期通过结论，未采dashboard。

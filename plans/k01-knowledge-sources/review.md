@@ -1,3 +1,10 @@
+# K01-06 诊断入口准备（当前）
+
+状态：NOT_STARTED
+Review target commit：UNKNOWN
+
+本段新增experiments/knowledge-search，仅源准备，尚无工程child执行或PG权限。c2ed是下方历史设计批准，不覆盖新entry/lifecycle/measurement。Mika后续须核固定源码、实际纯检查与类型结果、18连接及factory timeout分界、生产SQL捕获、全部动态SQL输入、marked identity/丢ACK保留/OPS14 unknown门禁；尚不能申请实际PG。
+
 # K01-06 查询计划诊断准备独立review
 
 状态：APPROVED
