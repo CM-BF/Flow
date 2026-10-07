@@ -1,9 +1,9 @@
 {
-  "state": "BETWEEN_ATTEMPTS_FULL_RETURN",
+  "state": "CLOSED_SELECTED_JOURNEYS_COMPLETE",
   "id": "MSG03-MEMBERSHIP-FIX-20261007",
   "budgetMs": 120000,
-  "spentMs": 13353,
-  "remainingMs": 106647,
+  "spentMs": 26368,
+  "remainingMs": 93632,
   "perAttemptMaxMs": 60000,
   "perAttemptMinMs": 45000,
   "cleanupMs": 30000,
@@ -32,6 +32,13 @@
       "state": "PASS_SELECTED_2_FULL_RETURN",
       "chargeMs": 13353,
       "manifest": "browser-attempts/membership-material/manifest.json"
+    },
+    {
+      "run": "msg03-settings-20261007-142648-6237f8",
+      "journey": "message-settings-app",
+      "state": "PASS_SELECTED_2_FULL_RETURN",
+      "chargeMs": 13015,
+      "manifest": "browser-attempts/membership-settings/manifest.json"
     }
   ],
   "closedNoTransfer": [
@@ -59,5 +66,6 @@
     }
   ],
   "authorization": "d01_owner direct continuation new independent120000ms after c848 seal; preparation only until unique resource handoff",
-  "stopRule": "remaining<45000 OR uncertain cleanup: STOP. No unchanged automatic retry; original failures remain. No previous-phase credit."
+  "stopRule": "remaining<45000 OR uncertain cleanup: STOP. No unchanged automatic retry; original failures remain. No previous-phase credit.",
+  "executionDisposition": "Both original selectors completed; no further runtime/NEXT. Unused93632 not a new run authorization."
 }

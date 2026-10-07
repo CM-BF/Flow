@@ -4,7 +4,7 @@
 | --- | --- |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:26:23.390536+00:00；fixed c130，不追moving main |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:35:03.236Z；root实核main6fd214eb62f269167f6af4a8390850561dc0d01c的18源BASE_MATCH，仅当时观察 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T12:11:30.621Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,30 +13,30 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app |
 | Branch | codex/web-message-settings-app |
 | 工作基线 / HEAD | c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56（产品b924不变；metadata HEAD见Git） |
-| 工作树dirty状态 | 仅本次actual原件/own metadata封存；18源码fcf5不变，normal push后clean |
-| 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
-| 检查状态 | 修后material-return selected2/2 actual PASS；failure/cancel late settlement/恢复A/success/nav已执行；message-settings-app仍NOT_RUN |
+| 工作树dirty状态 | 本自然批只封存actual/独审/metadata；18源码fcf5不变；normal push clean后全20scope STOP |
+| 工作分支状态 | reviewed |
+| 本片段交付阶段 | integration |
+| 检查状态 | 两条真实App selector各2/2 PASS；源/local、两业务和生命周期/双图独审接受；旧四FAIL保留 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED；base c130已有Recovery和受控Picker，尚无本片真实App接线 |
 | 实现目标 | fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/conversation-context/receipts.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/ConversationQueue.tsx, apps/web/src/conversations/queue/commands.ts, apps/web/src/conversations/queue/projection.ts, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/message-settings.tsx, apps/web/src/plugin-integration/react.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/recovery/binding.tsx, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 材料准备失败或取消后，新稿内容、设置和附件不被旧稿污染，用户可以显式恢复旧稿并继续准备 |
-| 下一可用交付 | 在同一有限阶段验证消息设置页面、回执与双主题窄屏显示 |
-| 当前阻塞 | ACTIVE: 消息设置页面和视觉验收尚未完成 |
+| 当前产出 | 消息设置随发送、排队和恢复保留快照，材料失败与取消保护新稿；限定实际验收及独立审查通过 |
+| 下一可用交付 | 交主线按精确变更接收；个人可选目录仍由共享owner发布 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，IN_PROGRESS；产品b924/source-local及fcf5phase批准；修后材料actual已提供root独审，消息设置仍未验 |
-| Claim | 7e3fbcf1-befe-4579-9d6c-ee74df6e8c51 v3 ACTIVE；exact20；14:05:11.080Z COMMITTED，14:13:18 fresh身份核同 |
+| Review | [review.md](review.md)，APPROVED_FOR_CONTROLLED_SOURCE_INTAKE_EXACT18，固定fcf5；main/个人部署未验 |
+| Claim | 7e3fbcf1-befe-4579-9d6c-ee74df6e8c51 v3 ACTIVE；exact20；14:32:23.789Z fresh身份及全局无overlap |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | MSGAPP-01 | completed | workspace_panels_owner | [provision](../../docs/evidence/wpf-message-settings-app/provision.json)、[take](../../docs/evidence/wpf-message-settings-app/receipt.json) |
-| MSGAPP-02 | completed | workspace_panels_owner | 固定源码私有port/P01；[源码manifest](../../docs/evidence/wpf-message-settings-app/source-manifest.json)，浏览器未验 |
+| MSGAPP-02 | completed | workspace_panels_owner | 固定源码私有port/P01；[源码manifest](../../docs/evidence/wpf-message-settings-app/source-manifest.json)，两条原App实际已验 |
 | MSGAPP-03 | completed | workspace_panels_owner | freeze/原key重试/官方core return保护与历史/Queue requested源码，11定向通过 |
-| MSGAPP-04 | in-progress | workspace_panels_owner | b924修复共享成员投影；定向1 PASS/68未选+noEmit0，原mounted FAIL待复验 |
-| MSGAPP-05 | in-progress | workspace_panels_owner | [local53579/60000](../../docs/evidence/wpf-message-settings-app/mounted-local-summary.json)；probe6PASS/9c46全部17源noEmit0；c4bee参数独立验证；历史11PASS/57未选；两browser场景均未完成 |
-| MSGAPP-06 | in-progress | workspace_panels_owner | 37166/9fc历史保留；9c46限定source/local集中审通过，browser/main未完成 |
+| MSGAPP-04 | completed | workspace_panels_owner | b924共享投影修复；修后material selected2及message-settings-app完整Recovery实际通过，旧FAIL保留 |
+| MSGAPP-05 | completed | workspace_panels_owner | [local53579/60000](../../docs/evidence/wpf-message-settings-app/mounted-local-summary.json)；probe6PASS/9c46全部17源noEmit0；c4bee参数独立验证；历史11PASS/57未选；现两browser selector各2/2实际通过，归各自原件 |
+| MSGAPP-06 | in-progress | workspace_panels_owner | 37166/9fc历史保留；root最终精确18源组合批准；独审部分完成，合法main待 |
 
 ## 等待记录
 
@@ -44,9 +44,13 @@
 
 ## 风险与架构
 
-同一App草稿权威、公有settings codec/原回执/Recovery；不改共享API或新增状态机。完整第三方动态闭包尚未执行；只读351 pins不等runtimePASS。真实App材料A/B、旧opening跨send、Recovery、历史与Queue分别验收；组件六组不能替代。独立源供给不改个人部署，manager已记录12:18:58看板sourceCurrent/parent MATURE02/claim matchesSource；登记不冒产品验收。
+同一App草稿权威、公有settings codec/原回执/Recovery；不改共享API或新增状态机。当前固定动态依赖经两次实际旅程执行；不外推未选路径或全部第三方包。真实App材料A/B、旧opening跨send、Recovery、历史与Queue分别验收；组件六组不能替代。独立源供给不改个人部署，manager已记录12:18:58看板sourceCurrent/parent MATURE02/claim matchesSource；登记不冒产品验收。
 
-## 本次实际检查与限制
+## 历史工作段记录（保留当时状态；当前以顶部和本次实际组合为准）
+
+以下旧阶段的“当前/待/未运行”均只指该安全点，不授予后续运行。
+
+### 当时局部检查与限制
 
 [固定review入口](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)为唯一组合入口；历史9c46的17源/6probe/affected types8见[manifest](../../docs/evidence/wpf-message-settings-app/source-manifest.json)和[新增原件](../../docs/evidence/wpf-message-settings-app/mounted-local-20261007/manifest.json)。local累计53579/60000，未用6421封存；无当前进程或scratch。regular-file日志不称双EOF；首红与旧11PASS/57未选保历史归因。root先实读固定源及TMP实际后签[9c46限定审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-9c46-mounted-source-local-review-20261007.json)，owner随后原样归档。
 
@@ -100,7 +104,7 @@
 
 [root b924集中source/local审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-b924-membership-source-local-review-20261007.json) APPROVED，0 remaining blocking；d576未覆盖unmount的初次绿结果保持历史，b924修复后实际direct2+types2已核。本20s关闭14680/未用5320不挪。仅source/local，mounted两journey与wholefeature/main仍未通过。
 
-## 当前新独立修后页面阶段（仅准备）
+## 历史新独立修后页面准备阶段
 
 经理续派原MSG03两条selector共享新120000ms，spent0/rem120000；每attempt45000–60000，含30000cleanup。旧90s51110/38890与新local20s14680/5320全部CLOSED，不转额度。产品b924与原测试断言不变，fcf5只绑定phase ID/120k、旧账精确hash、新owned run目录；总evidence9MiB仍覆盖旧新所有原件。
 
@@ -108,6 +112,24 @@
 
 ## 修后材料真实验收
 
-[实际原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/membership-material/manifest.json)：14:24:13.838978Z→14:24:27.191771Z，outer/parent0、worker/Chrome0、双EOF/drop0；cookieRead+messageSettingsMaterialReturn两组选定PASS。真实File/official adapter的failure与cancel保护B完整身份，取消后旧adapter实际settled仍无A dispatch；明确清空/omit后恢复完整A，清hold后不同材料可再准备；success/导航已过。0PNG属此selector，不冒第二消息设置/wholefeature。
+[实际原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/membership-material/manifest.json)：14:24:13.838978Z→14:24:27.191771Z，outer/parent0、worker/Chrome0、双EOF/drop0；cookieRead+messageSettingsMaterialReturn两组选定PASS。真实File/official adapter的failure分支验证settings-only B界面/0 chip与0命令；cancel分支验证durable B完整附件身份，旧adapter实际settled后仍相等且无A dispatch；明确清空/omit后恢复完整A，清hold后不同材料可再准备；success/导航已过。0PNG属此selector，不冒第二消息设置/wholefeature。
 
 14:25:14.591164Z exact4 PID/PGID ESRCH、scratch/envabsent，markedDB0conn normalDROP/remaining[]、fixturecomplete/provider0；没有独立端口探针不伪造。ceil最大actual=13353ms，新120phase spent13353/rem106647，旧各phase仍closed；当前无holder，经理已授权同阶段串行第二旅程但须fresh输入/资源/新无冲突。原四FAIL/第三UNKNOWN全保。
+
+## 消息设置真实App实际与本段关闭
+
+[第二selector原件/双图](../../docs/evidence/wpf-message-settings-app/browser-attempts/membership-settings/manifest.json)：14:26:55.840024Z→14:27:08.853985Z，cookieRead+messageSettingsApp selected2/2 PASS。实际P01首次打开/ApplyCancel回焦点、完整Recovery/re-auth、冻结Send丢ACK重试、Queue与history frozenRequested、真实主题按钮切换/390布局和合法180字符共前缀名称原断言均执行；不以组件检查冒App。
+
+14:27:31.462508Z exact4PID/PGID ESRCH、scratch/envabsent、markedDB0conn正常DROP/remaining[]、fixturecomplete/provider0；dualEOF/drop0。charge13015，和材料13353合26368/120000；余93632封存，本段CLOSED/无NEXT。两PNG60312/61805B已实际查看：明暗主题不同，首屏Apply/Cancel可见，完整长名展开在弹窗内部，不以图代断言。无独立端口探针/真实provider/native/个人部署结论。
+
+材料[root生命周期审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-membership-material-lifecycle-review-20261007.json)已批准；业务/第二实际/最终组合review待root完成。本片TODO04/05按实现与原实际验证完成，TODO06独审/main仍开放，完整任务时间NOT_COMPLETED。
+
+第二[root生命周期/双图审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-membership-settings-lifecycle-visual-review-20261007.json)限定APPROVED；W01业务与最终组合结论另行。非阻断原视觉后继：390图scroll thumb靠近Speed右侧，未证pointer/keyboard失败；本批不改产品/不为此重跑，不扩大Arc/contrast验收。
+
+## 当前业务与交付边界
+
+[材料业务独审](../../docs/evidence/wpf-message-settings-app/source-research/w01-msg03-membership-first-business-review-20261007.json)限定接受failure/cancel/restore/success/navigation实际；failure仅settings-only B UI与0chip，cancel才有durable fullref/late equality，不能泛称全矩阵。当前两次所有资源已归还，无NEXT；最终组合报告待，主线与个人发布未验。
+
+## 当前最终限定接收结论
+
+[root最终组合审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-final-scoped-intake-review-20261007.json) APPROVED_FOR_CONTROLLED_SOURCE_INTAKE_EXACT18；fixed fcf5、18源码，0blocking。03/04/05按已列范围实现和实际完成；06仅独审部分完成，合法main尚未接收。root在main6fd214e观察18处BASE_MATCH；若Release先接两文件最小修复，集成者须重新比较预像/组合，不能盲覆session。任务完成NOT_COMPLETED，非个人部署或全部native四facet键盘批准。

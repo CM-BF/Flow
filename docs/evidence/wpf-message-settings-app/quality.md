@@ -53,3 +53,11 @@ clean-code错误处理复核：原filechooser Promise创建后到click完成前�
 ## 2026-10-07T14:26:23.390536+00:00 修后材料actual安全点
 
 沿原单selector/真实public输入/精确身份断言完整执行；失败历史不删，B有序refs/ids不以count代替。source无变化，局部绿不重跑。actual/cleanup与计费分开保真，未独立测端口不冒全端口探针；token仅parent env且exact删除。新ledger13353/120000，下一仅原message-settings-app。
+
+## 2026-10-07T14:29:01.481391+00:00 双journey实际安全点
+
+复用同source、same-runner/真实publicfixture，未重材料或旧local。两图查看确认主题不同、窄屏首屏操作可达/长名可查；原断言与scope分开记录。两次actual计fee取最大outer/late/parent，累计26368，env均exact删/所有ownedgroupsabsent；无portprobe不造记录。最终review待/root按证据集中结论，本段CLOSED。
+
+## 2026-10-07T14:33:50.017982+00:00 当前入口一致性与metadata安全点
+
+复读本地find-skills/clean-code，复用已固定来源、不安装。发现多轮append的旧“当前/NOT_RUN”容易和新实际混淆：集中当前review矩阵、明确旧安全点为历史，源与实际绑定不改。保failure设置空稿界面与cancel完整持久B身份差异，不把主题子检查冒独立themes390。fresh claim v3/exact20且overlap[]，产品18源码不动；仅记录/链接核，不重复绿测试。

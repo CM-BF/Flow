@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS03 · 真实聊天消息设置
 
-状态：in-progress；开工 2026-10-07T12:11:30.621Z；最近更新 2026-10-07T14:03:13.343425+00:00。
+状态：in-progress；开工 2026-10-07T12:11:30.621Z；最近更新 2026-10-07T14:33:50.017982+00:00。
 所属大task：[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)，既有 TODO11 实施子片；co-lead Web/root，执行管理 d01_owner。唯一owner workspace_panels_owner / gpt-6-astra；本树 codex/web-message-settings-app，固定base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50。
 
 目标：用户在真实聊天入口选择完整模型/思考/速度设置，Send、Queue、已发送记录及草稿恢复保留各自快照。已审组件六组通过不等本片真实App通过。
@@ -14,8 +14,8 @@
 - [x] **MSGAPP-01** 固定供给、原18scope领取（后续合法amend为19，再为共享附件投影amend为20）和canonical；[原件](../../docs/evidence/wpf-message-settings-app/receipt.json)。
 - [x] **MSGAPP-02** App ownership/P01宿主接线与紧凑消息设置入口。
 - [x] **MSGAPP-03** Send/Queue材料await前完整freeze、同正文异设置保留、原key重试及历史requested显示。
-- [ ] **MSGAPP-04** CompleteDraft/Recovery全链、同步CAS与失效边界；第四mounted暴露持久B混held A；b924共享selector修复已过定向局部，页面复验待。
-- [ ] **MSGAPP-05** 有界受影响direct/types与真实App浏览器验收；证据/失败/cleanup保真。
+- [x] **MSGAPP-04** CompleteDraft/Recovery全链、同步CAS与失效边界；第四mounted暴露持久B混held A；b924共享selector修复已过定向局部和修后两条mounted实际，保留旧FAIL。
+- [x] **MSGAPP-05** 有界受影响direct/types与真实App浏览器验收；证据/失败/cleanup保真。
 - [ ] **MSGAPP-06** 独立review与合法main接收；本分支通过不冒主线/部署。
 
 ## 验证与边界
@@ -23,7 +23,11 @@
 历史首段local累计60,000ms，每次≤20,000ms含≥5,000ms cleanup；1Node顺序，TMP16MiB/raw2MiB，0network/PG/Chrome/provider/install/build。当前futurefresh组合门槛≥7,515,275,264B或最新完整组合更高值；旧执行门槛保历史。只明确files noEmit与新增/直接受影响选组，不以稀疏include冒wholeWeb。不自动运行旧Recovery browser或旧全绿。
 真实Browser/HTTP/PG后续另按实际资源交接，不读取个人凭据。原Recovery记录只读不改、新输出归本evidence。具体scope见[request](../../docs/evidence/wpf-message-settings-app/request.json)。常规source operator旧等待已由e029现规则与d01授权解除；不新增审批链。
 
-## 本段固定实现与未验边界
+## 历史实施与验证安全点
+
+以下按原时间保留历史source、等待与失败；当前实现固定fcf5/产品b924，两条原mounted均已实际通过，MSGAPP-06独审已限定批准，合法main待。历史预算与NEXT不延续到当前。
+
+### 当时固定实现与未验边界
 
 MSGAPP-02/03 勾选指源码实现；当前组合绑定 b92470377349dea17a12d0abc244f0fed7992e33，不代表独审或浏览器通过。新增 AttachmentComposer 私有可选 restore/discard 接缝已获 v2 exact19；保默认消费者。原 core 的 prepare failure/cancel 自动归还路径已用真实 installed core + 生产 guard 定向检查，完整 mounted App 材料恢复仍属于 MSGAPP-05。
 
@@ -64,3 +68,7 @@ MSGAPP-05第四actual已进入真实材料failure/cancel：failure完整显式�
 ## 修后材料selected实际
 
 [material原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/membership-material/manifest.json) selected2 PASS，scope仅cookieRead+messageSettingsMaterialReturn；原四FAIL不回写。新120phase charge13353/rem106647，完整ownedRETURN，0PNG；第二message-settings-app尚未执行。fcf5预算绑定已获rootf05批准，actual根独审待；不重跑通过材料。
+
+MSGAPP-04/05完成依据：修后两个实际selector各2/2，完整草稿/B隔离/显式恢复、P01与冻结SendQueue/history、真实两主题390均按原断言执行。旧四FAIL不追改。新120s累计26368/余93632 CLOSED；06仍须root组合审及合法main，不把个人provider目录跨owner交付冒为本树已部署。
+
+当前MSGAPP-06进展：root最终组合审c1c340批准fcf5精确18源受控接收，review部分完成；main未接，TODO保持开放。个人发布/完整native四facet键盘不由本两selector外推，P3窄屏scrollbar只保原视觉后继。

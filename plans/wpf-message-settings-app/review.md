@@ -1,6 +1,14 @@
 # WPF-MESSAGESETTINGS03 独立审查
 
-完整feature状态 **IN_PROGRESS**；当前组合 target **fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56** / base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50 /18源码+2metadata。历史固定9c46的[集中审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-9c46-mounted-source-local-review-20261007.json) **APPROVED_SCOPED_SOURCE_AND_LOCAL_PREPARATION**，0findings。当前c4bee参数白名单+具体caller已获root475e限定准备批准；不得把9c46结论套在未审caller。root已核两产品差量、真实adapter late settlement/B完整身份、probe2六PASS与types8全部17pins；材料旅程四次实际FAIL、消息设置旅程NOT_RUN、当前取消持久B投影已修复并经定向局部验证，集中source/local审已通过；页面复验待完成、主线/个人部署未验。
+**APPROVED_FOR_CONTROLLED_SOURCE_INTAKE_EXACT18**，固定组合 **fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56** / base **c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50**，15产品+3test。[root最终组合审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-final-scoped-intake-review-20261007.json)核七审查输入、36 base/target Git对象和当时main6fd214e BASE_MATCH，0blocking。
+
+两条既有selector各2/2 PASS，源/local和业务/生命周期/双图分工审均已接受；具体范围和限制见[唯一入口](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)。材料failure未独验durable空B全快照；设置恢复是主动过期后公开reauth；selectOption不代表完整native四facet键盘。旧四FAIL、第三fixture UNKNOWN保留。新120s累计26368/余93632 CLOSED，当前0holder/NO_NEXT。
+
+[main-intake](../../docs/evidence/wpf-message-settings-app/main-intake.json)列精确预像；06 review部分完成，main/个人目录/provider/部署未接。若先接Release最小2文件补丁，必须重新精确合成，不能整拷MSG session覆盖其它owner。
+
+## 历史审查与安全点
+
+以下保留各固定目标当时结论，不作当前未运行状态或新增运行许可。
 
 旧[37166 CHANGES_REQUESTED](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-37166-source-review-20261007.json)、[9fc0两P2修复批准](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-9fc0-source-local-review-20261007.json)及失败原件保留，旧十一direct不能替新mountedApp。root撤回exact File attachment readiness猜测，不记已证bug；保留有效B身份加强。单一[feature-review-entry](../../docs/evidence/wpf-message-settings-app/feature-review-entry.md)和[当前manifest](../../docs/evidence/wpf-message-settings-app/source-manifest.json)指明源码/实际/未验范围。
 
@@ -51,3 +59,13 @@ fcf5相对b924仅browser7+/5-，collector相对0eb3两行phase守卫；原断言
 ## 修后材料selected实际
 
 [material原件](../../docs/evidence/wpf-message-settings-app/browser-attempts/membership-material/manifest.json) selected2 PASS，scope仅cookieRead+messageSettingsMaterialReturn；原四FAIL不回写。新120phase charge13353/rem106647，完整ownedRETURN，0PNG；第二message-settings-app尚未执行。fcf5预算绑定已获rootf05批准，actual根独审待；不重跑通过材料。
+
+## 两条原mounted实际已完成，最终组合审待
+
+[材料](../../docs/evidence/wpf-message-settings-app/browser-attempts/membership-material/manifest.json)及[消息设置](../../docs/evidence/wpf-message-settings-app/browser-attempts/membership-settings/manifest.json)各2/2PASS、完整ownedRETURN。固定产品b924/父入口fcf5；材料execution dcdca6，消息设置e96325，两图已看。原四FAIL及source/local审不重写，真实个人目录/provider/main/部署没有验。新phase26368/120000 CLOSED；根最终业务/actual组合结论仍IN_PROGRESS，不自评完整PASS。
+
+第二[root生命周期/双图审](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-membership-settings-lifecycle-visual-review-20261007.json)限定APPROVED；W01业务与最终组合结论另行。非阻断原视觉后继：390图scroll thumb靠近Speed右侧，未证pointer/keyboard失败；本批不改产品/不为此重跑，不扩大Arc/contrast验收。
+
+## 当前四份分工独审原件已齐
+
+[材料业务328f](../../docs/evidence/wpf-message-settings-app/source-research/w01-msg03-membership-first-business-review-20261007.json) / [材料生命周期5853](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-membership-material-lifecycle-review-20261007.json) / [设置业务5399](../../docs/evidence/wpf-message-settings-app/source-research/w01-msg03-membership-second-business-review-20261007.json) / [设置生命周期双图fc552](../../docs/evidence/wpf-message-settings-app/source-research/root-msg03-membership-settings-lifecycle-visual-review-20261007.json)全为限定批准、0blocking。原限制随入口保留；没有额外产品检查。

@@ -1,40 +1,38 @@
 # MSG03 当前固定审查入口
 
-当前实现 **fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56**（产品修复固定b924；仅父入口phase差量），base c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50；唯一WT/branch web-message-settings-app / codex/web-message-settings-app；claim7e3f v3 exact20（15产品+3test+2metadata）。原MATURE02 TODO11，完整feature **IN_PROGRESS / NOT_INTEGRATED**。[18固定源码](source-manifest.json)。
+当前实现 **fcf5e8c8335bf5de6fc3b7d74b5b2985d2e91f56**（产品成员投影修复 b92470377349dea17a12d0abc244f0fed7992e33），base **c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50**。唯一 WT `web-message-settings-app` / branch `codex/web-message-settings-app`；claim7e3f v3 exact20。原 WPF-MATURE-02 TODO11：**APPROVED_FOR_CONTROLLED_SOURCE_INTAKE_EXACT18；NOT_INTEGRATED**。
 
-本次899146→b924只有 `attachments.tsx`、`session.ts`、原direct test：Recovery复用真实Send的同一draftItems成员选择。current优先held/inTransit，已卸载端口不读；无port复用现restoredDraftIds，保部分恢复的A，不纳尚未恢复held余项。输入移除不复活，unverified项保持顺序，旧port cleanup不能清新port。没有第二草稿store或重复过滤规则。
+[18源manifest](source-manifest.json)是15产品+3test的固定范围；[main-intake](main-intake.json)列逐路径base预像、target Git blob/SHA256与集成限制。其余两个scope仅本计划/证据。本片没有改main、个人服务或共享合同。
 
-实际第四材料组暴露 durable B含A两文件+B。[第四actual](browser-attempts/material-fourth/manifest.json) / [root失败与RETURN独审](source-research/root-msg03-fourth-actual-failure-review-20261007.json)保持FAIL：cookieRead PASS，failure子分支恢复事实，cancel尚未late settle，后续未跑，无PNG。第三fixture gracefulclose UNKNOWN仍保真。
+## 实现与修复
 
-## 当前修复和局部证据
+App每view唯一C及opaque ownership，复用P01动作/context和官方Thread；Apply同步CAS。官方Send/detach前冻结A并换新稿ownership，材料await期间保留B，即使正文相同或只有设置不同。Send/Queue重试用原key/body；历史turn和Queue显示各自frozen requested。CompleteDraft/Recovery保完整设置及namespace边界，不另造store/FSM。
 
-[修复索引及旧7272最小补丁](held-draft-repair.json)、[新局部14原件](held-projection-local-20261007/manifest.json)。初次d576 1direct+types通过后，root提出held A未discard的unmount反例；b924修复后direct-2 **1PASS/68NOT_SELECTED**，types-2 **exit0/空log**，18sourcepins绑定b924。真实Session→RecoveryWorkspace→Journal受控IDB端口；覆盖B-only持久化、unverified顺序、partial/full current A释放端口仍保留、replacement旧port失效。无真实browser或旧7272 actual重现。
+真实材料失败/取消通过公开composer port保护B；显式Restore绑定本次空目的地lease，而非永久绑定原send世代。只有完整恢复成功才释放held binding。共享附件修复让Recovery与Send复用同一draftItems：current优先held/inTransit，无端口时用既有restoredDraftIds保部分/完整已恢复A；输入移除不复活，未验证项有序，旧端口cleanup不清新端口。
 
-本独立20s local累计14680ms、余5320封存；4精确PID/PGID fresh ESRCH、scratch absent。regular-file日志不称双EOF。当前不再跑局部绿检查。
+## 源码和局部证据
 
-## 既有实现与原件
+- [9c46 source/local审](source-research/root-msg03-9c46-mounted-source-local-review-20261007.json)：旧17源码和6probe/types准备；历史9fc的11PASS/57未选保持其原绑定。
+- [b924 source/local审](source-research/root-msg03-b924-membership-source-local-review-20261007.json)：两产品+1direct实际修复；[14原件](held-projection-local-20261007/manifest.json)，最终1PASS/68未选、affected noEmit0。d576初绿未覆盖unmount反例，b924修复后再验，历史不抹。
+- [worker白名单/caller审](source-research/root-msg03-c4bee-browser-preparation-review-20261007.json)与[f05阶段准备审](source-research/root-msg03-membership-phase-preparation-review-20261007.json)：fcf5仅独立phase/旧账pin/run路径差量，原生命周期和业务断言保留。
 
-App每view唯一C/opaque ownership、P01动作/context、同步CAS；材料await前冻结A/更新新稿ownership，B同正文异settings不被抹。原key/body Send/Queue重试、历史turn/Queue显示自身frozen requested；完整Recovery沿namespace/CAS。官方core自动return用公开port保护B，显式restore使用本次目的地lease；恢复完整A才释放failed hold。
+## 两条真实mounted验收
 
-[9c46 source/local批准](source-research/root-msg03-9c46-mounted-source-local-review-20261007.json)仅旧17源/probe/types；旧37166、9fc、首红均保原文件。c4bee worker参数白名单与[caller集中准备批准](source-research/root-msg03-c4bee-browser-preparation-review-20261007.json)；[61185 public Files前置审](source-research/root-msg03-61185-files-precondition-review-20261007.json)。当前两产品新增修复已获root b92e4c集中source/local批准，不继承历史mounted通过。
+| 固定执行与证据 | 实际范围 | 独立审查 |
+| --- | --- | --- |
+| dcdca6；[材料22原件](browser-attempts/membership-material/manifest.json) | cookieRead+messageSettingsMaterialReturn 2/2 PASS。failure：settings-only B界面/0chip/0命令，拒覆盖B再显式恢复A。cancel：durable B有序完整refs/IDs，真正late adapter settled后整份B仍相等、0A dispatch；清空/omit后完整A准确恢复，释放hold后不同材料可继续准备。success真实202冻结A保B；同document导航关闭旧opening。 | [W01业务328f](source-research/w01-msg03-membership-first-business-review-20261007.json)；[root生命周期5853](source-research/root-msg03-membership-material-lifecycle-review-20261007.json) |
+| e96325；[设置24原件/双图](browser-attempts/membership-settings/manifest.json) | cookieRead+messageSettingsApp 2/2 PASS。首次P01/ApplyCancel回焦点、显式reauth/恢复0自动POST、冻结Send丢ACK原key/body重试、Queue B与live C分离/历史requested、真实主题按钮及390布局/180共前缀长名。 | [root生命周期/双图fc552](source-research/root-msg03-membership-settings-lifecycle-visual-review-20261007.json)；[W01业务5399](source-research/w01-msg03-membership-second-business-review-20261007.json) |
 
-## 未完成的真实验收
+failure未单独序列化持久空B全量快照；cancel before/after完整IDB值由固定运行断言证明，原browser.json没有离线全量快照，不伪称离线再比较。材料中的完整A指该例text/settings/有序AttachmentItem，不替代其他profile/knowledge/steering全矩阵。原独立themes390组未选，第二selector内双主题检查和PNG真实执行；不冒全键盘/对比度/Arc验收。
 
-material-return：修后上述取消/late settle/完整恢复/后续准备/成功/导航已实际selected2PASS；旧四次FAIL不改。
-message-settings-app：首mount P01/ApplyCancel焦点、reload/reauth/显式恢复0自动POST、A丢ACK原key/body重试、Queue frozen B相对live C、历史requested、真实双主题390/180字符同前缀/每PNG≤512KiB，仍NOT_RUN。
+两次outer/parent/worker/Chrome皆0、双EOF/drop0，DB marker/0conn普通DROP、fixtureclose、精确PID/PGID与scratch/env清理闭合；无独立portprobe。新120s阶段13353+13015=**26368ms**，未用93632封存，**CLOSED / NO_NEXT**。旧90s和local各phase均closed，余额不转。
 
-旧两个selector唯一90s phase已CLOSED（spent51110/rem38890<45000），无新gate/env/holder。1DB/1Chrome/14配置连接位、64MiBscratch9MiBretained边界仅历史运行来源，不授权下一launch。
+## 历史失败与限制
 
-真实个人目录由共享TODO08/11 owner发布turnSettings能力后交付，fixture syntheticpublisher不冒个人可用/provider有效。本次不改发布候选、main或用户服务；旧7272只有源码可达性和最小修复供给，实际集成归Release owner。
+[首](browser-attempts/material-first/manifest.json)、[第二](browser-attempts/material-second/manifest.json)、[第三](browser-attempts/material-third/manifest.json)、[第四](browser-attempts/material-fourth/manifest.json)全部FAIL原件不改。第三缺fixture graceful-close报告仍UNKNOWN；第四持久B混held A是真实P2，当前修复通过不回写旧失败。旧90s charge51110/38890封闭；局部20s14680/5320封闭。
 
-[clean-code记录](quality.md)与原TODO保持，不新建任务或扩大门槛。
+[root最终组合审](source-research/root-msg03-final-scoped-intake-review-20261007.json)已批准精确18源受控接收、0blocking；合法main尚待。真实个人turnSettings目录由共享TODO08/11 owner发布，synthetic fixture目录不证明个人能力/provider/native/部署已可用。旧7272最小两文件[patch](held-draft-release-minimal.patch)是独立供给，不能整拷MSG session或继承此组合结果；Release最终backend由Original固定04da及其真实descriptor，须另核移植组合。
 
-[root b924集中审](source-research/root-msg03-b924-membership-source-local-review-20261007.json)已批准本次两产品修复与定向local，0 blocking；新mounted phase仍待经理有限预算/资源交接。Release最终backend改为Original准备04da80692e79e2b7c3f6341c7fa76515a3f719a3（来源root通知），不要求与7272整树同源；本补丁应用后需准确Webconsumer/组合验证，不能冒用MSG检查。
+非阻断原视觉后继P3：390图scroll thumb靠近Speed右侧，未证pointer/keyboard失败，本批不改源码或重跑。[clean-code记录](quality.md)记录本段安全点。
 
-## 新mounted阶段准备
-
-[membership准备](membership-browser-preparation.json)与[新120s单账](browser-membership-phase.json)：0spent，两个既有selector共享，每attempt45–60s含30s cleanup。fcf5仅预算ID/常量/closed旧账pin/run目录；新collector只两个phase guard，原0eb3生命周期未变。此差量尚待focused复核，无gate/env/actual。
-
-## 修后材料actual
-
-[11 native+outer原件](browser-attempts/membership-material/manifest.json)实际2/2PASS、ownedRETURN；执行dcdca6/sourcefcf5。charge13353，新120phase13353/106647；无PNG/未运行message-settings-app。原四FAIL永久保留，当前root实际独审待。[phase准备窄审](source-research/root-msg03-membership-phase-preparation-review-20261007.json)f05已批准；未来entry说明worker应写`--worker`，实际参数从未改。
+第二业务审5399接受四次原key业务请求和真实ACK/replay、B/C当前与A历史。settings-only恢复实际为helper主动expireSessions后公开UI重新认证；不是正常cookie-only reload。390模型选择用selectOption，不冒全native键盘；两图属于所选App组，不冒独立themes390已跑。
