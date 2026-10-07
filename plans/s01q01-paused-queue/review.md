@@ -2,7 +2,7 @@
 
 状态：NOT_STARTED
 
-Review target commit：7da2a44608fd92e578863e6d6e39ad18aae98a13
+Review target commit：103232eeab0f861e1ab87f496e9b9f0f1c068965
 
 基线 b79121e1944f10f82a416d98d776c0f55bf9c943；唯一 writer b01_bounded_reads，Mika 独立只读审查。当前范围为queue.test.ts资源调用及自有pg-fixture/types/dependency配置；promotion42c已审predicate零diff。源码准备与真实 PG 结果分开审批。当前无运行结果，0 tests 不算通过。请核 paused 过滤在 LIMIT/rotation 前、锁内 pause 复核未删、竞争/CAS/错误公平性和 fixture 资源边界；不把本轮源审当实际窗口批准。历史db17:31:18 SOURCE_CHANGES_REQUESTED提出后台错误会被清理成功掩盖的1P2；本次修复与7纯用例/focused types已交增量独审，不预填批准。
 
@@ -19,3 +19,5 @@ Review target commit：7da2a44608fd92e578863e6d6e39ad18aae98a13
 2026-10-07T19:53:58.685272+00:00：新target 9d1bc8e1e24c281c834be61300d9522ea859f2cf待独立source/local审查；唯一新入口preparation-local/summary.json。完整queue严格types+两条静态收集、caller7纯例，0PG。140候选不削70工作/40清理，真实数据库/存储与窗口尚未ready；请核此限制和permit/身份/捕获/失败不变。原review只覆盖01df修复，不沿用为新entry批准。没有再次全库或旧7绿。
 
 2026-10-07T20:03:44Z db_transaction_owner SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，9d1bc8/ae72652，0新P1/P2，仅CLOSED候选/局部证据。实际准入要求的precleanup存储、DB/HTTP预算和freshclaim/head/fullsum在本次实现 7da2a44608fd92e578863e6d6e39ad18aae98a13 待delta独审；canonical admission-local/summary.json。原单predicate和业务断言未改。请特别核最后external permit/read seam（只读静态修、未再运行）与fixed input合计、采样不是peak/UNKNOWN保留、fake资源不等于真实PG。
+
+2026-10-07T20:31:58Z db_transaction_owner SOURCE_CHANGES_REQUESTED，target7da2/a4a，0P1/1P2；remove_sampled观察root替换太晚，结果忠实性其余通过。当前 103232eeab0f861e1ab87f496e9b9f0f1c068965 修为首删前/每项/最后操作前核身份，纯FS反例证明原files保留，外置permit薄read路径也有run纯mock验证。15/15/raw114B/单child归还，canonical rootguard-local/summary.json；请仅此delta独审，真实PG仍CLOSED。

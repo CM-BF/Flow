@@ -2,33 +2,33 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 20:24 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 20:35 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 任务开工时间 | 2026-10-07T16:23:07Z |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 派工后实际 clock；原source段已封存；本段准入补强2026-10-07T20:06:50Z起，截止20:26:50Z |
+| 任务时间来源 | 派工后实际 clock；原source段已封存；本段换根P2修复2026-10-07T20:32:48Z起，截止20:42:48Z |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan |
 | Branch | codex/queue-paused-scan |
-| 工作基线 / HEAD | base b79121e1944f10f82a416d98d776c0f55bf9c943；历史fixture a4f041e0/01dfc89；当前source 7da2a44608fd92e578863e6d6e39ad18aae98a13；promotion仍42c零diff |
+| 工作基线 / HEAD | base b79121e1944f10f82a416d98d776c0f55bf9c943；历史fixture a4f041e0/01dfc89；当前source 103232eeab0f861e1ab87f496e9b9f0f1c068965；promotion仍42c零diff |
 | 工作树dirty状态 | 源已固定；本段metadata提交push后clean STOP，0待launch |
 | 工作分支状态 | review |
-| 检查状态 | PARTIAL 7da2a44608fd92e578863e6d6e39ad18aae98a13；caller11/fixture13纯例与wholequeue/fixture测试types0；末次permit读取接线NOT_RUN，实际PG/HTTP NOT_RUN |
+| 检查状态 | PASSED 103232eeab0f861e1ab87f496e9b9f0f1c068965；15/15受影响caller纯例，外置permit接线由纯mock覆盖；fixture/类型未改未重跑；实际PG/HTTP仍NOT_RUN |
 | 已集成main状态 / HEAD | 本片未集成；固定基线 b79121e1944f10f82a416d98d776c0f55bf9c943 |
-| 实现目标 | 7da2a44608fd92e578863e6d6e39ad18aae98a13 |
+| 实现目标 | 103232eeab0f861e1ab87f496e9b9f0f1c068965 |
 | 实现范围 | apps/server/src/conversation-queue/promotion.ts, apps/server/src/conversation-queue/queue.test.ts, docs/evidence/s01q01-paused-queue/pg-fixture.ts, docs/evidence/s01q01-paused-queue/types.tsconfig.json, docs/evidence/s01q01-paused-queue/dependencies.json, docs/evidence/s01q01-paused-queue/pg-fixture.test.ts, docs/evidence/s01q01-paused-queue/failure-local.py, docs/evidence/s01q01-paused-queue/failure.types.tsconfig.json, docs/evidence/s01q01-paused-queue/failure.vitest.config.ts, docs/evidence/s01q01-paused-queue/entry.py, docs/evidence/s01q01-paused-queue/entry.test.py, docs/evidence/s01q01-paused-queue/queue.vitest.config.ts |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 隔离验证入口已补齐清理前存储、数据库采样、响应字节及实时身份门禁，局部检查完成 |
+| 当前产出 | 清理前会拒绝被替换的根目录，外置准入输入接线已获纯验证，等待独立复审 |
 | 下一可用交付 | 独审新增准入代码与证据，通过后申请最小真实数据库验证 |
-| 当前阻塞 | ACTIVE: 新入口增量待审，实际PG仍CLOSED；末次外部permit读取接线尚未执行 |
+| 当前阻塞 | ACTIVE: 换根修复与局部结果待独审；实际PG仍CLOSED |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；architecture19:31:19批准fixture增量，原P2 CLOSED；db20:03:44批准9d1bc8 CLOSED准备；本次预算增量待审 |
-| 当前claim最后观察 | a8a3b2d7-1bde-438a-9fbf-f81e1c791350 v1 ACTIVE；2026-10-07T20:06:50.760Z fresh ACTIVE；四精确 scope |
+| 当前claim最后观察 | a8a3b2d7-1bde-438a-9fbf-f81e1c791350 v1 ACTIVE；2026-10-07T20:32:48.804Z fresh ACTIVE；四精确 scope |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -62,3 +62,7 @@
 2026-10-07T20:23:52.494436+00:00：本段source 7da2a44608fd92e578863e6d6e39ad18aae98a13，5child监督3714ms/raw3109B，FULLRETURN 2026-10-07T20:19:35.111707+00:00。24distinct pure、2focusedtypes0；初caller因/tmp非canonical测试路径3失败已纠正，原件保留。最后外部permit/read seam静态修复未追加第6child，PARTIAL准确保留；不把采样当peak，不把WAL reserve当实测。claimv1继续保留，产品promotion/业务断言及旧raw零改；本次仅源入口待审，main未集成，原TODO03/04开放。封存push后STOP/0待launch，所有普通工程已归还；无真实PG/HTTP/provider/新actualnamespace。
 
 2026-10-07T20:24:04Z：packet a30b8d16ceab188702e40ba55ab26c80cbe9eb08已push且HEAD=origin clean。收口保守当前changed23文件225311B，三份自有静态编辑脚本29439B已精确删除；工程TMP按5次独立同身份ENOENT回执，未实测瞬时峰值，不伪称总量硬隔离。最终metadata push后全部STOP，新增growth关闭；上限8MiB未用于新工程/实际PG。
+
+2026-10-07T20:32:48Z：fresh a4a6841c=origin clean、20:32:48.804Z claima8a3v1四scope。db20:31:58 SOURCE_CHANGES_REQUESTED，唯一P2为sample后根替换symlink可先删子项后才拒绝；原24pure/两types与raw忠实性通过。新10min/new4MiB局部段，仅caller根门禁/外置permit纯mock；≤3child/30s/累计60s/raw512KiB含总额。0PG/HTTP/provider/旧KEEP，复用本地find-skills/codebase-design/固定clean-code。
+
+2026-10-07T20:35:15.546469+00:00：本次实现 103232eeab0f861e1ab87f496e9b9f0f1c068965，15/15纯例绑定最终字节，未改fixture/产品/promotion/旧断言。单child START 2026-10-07T20:34:06.444858+00:00 → FULLRETURN 2026-10-07T20:34:06.594010+00:00，监督145ms/raw114B/finalabsent/MERGED EOF/同身份TMP exactENOENT，无secondary/signals。新完整floor16,620,257,280来自canonical20:33:09.724加本段4MiB一次，free19,277,475,840；0真实PG/HTTP/provider。原1P2修复交独审，owner不自行宣称审查关闭；runtime与CLOSEDpermit更新，原raw冻结。提交push后全STOP/0待launch，claimv1保留，原03/04未完成。

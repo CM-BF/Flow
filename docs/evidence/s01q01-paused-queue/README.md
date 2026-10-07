@@ -65,3 +65,11 @@ This command was **not run**. Mika drained engineering before the first launch a
 - 140秒共同origin70/110/120/130/140不变；future真实permit及fresh ledger/admission放Git树外相邻私有路径，60秒fresh exactclaim/version/scope/HEAD/clean/window/fullresource sum，加本树3条有界Git只读核验。没有读取私有值/创建actual文件。CLOSED候选不能当许可。
 
 纯caller11、fakefixture13及两focusedtypes通过；首caller8/11原失败保留。最后一次child后仅把actual permit/admission改为Git外部相邻文件，避免输入本身让source dirty；这一薄read seam未再执行，不能把历史11例当完整入口重跑。5child actualFULLRETURN 2026-10-07T20:19:35.111707+00:00，无新PG/HTTP/Chrome/provider。命名/职责/错误与重复经本地clean-code/codebase-design安全点复核；不增加资源框架。
+
+## 换根清理修复与外置准入接线（2026-10-07T20:35:15.546469+00:00）
+
+固定实现 `103232eeab0f861e1ab87f496e9b9f0f1c068965`，唯一[本段记录](rootguard-local/summary.json)。db20:31:58对7da2/a4a的SOURCE_CHANGES_REQUESTED仅1P2：原remove_sampled直到删项后才核root身份。现在在首删前、每项读取前与删除前、最终root.rmdir前核non-symlink目录/canonicalpath/dev/ino与期限。sample后根被rename并换同原目录symlink会在零删除处拒绝；已开始清理后换根也会停止下一项，保留尚未删内容。此为观察到替换时的fail-closed，不声称OS强隔离。
+
+15/15 caller纯例绑定本次最终可执行字节；包含原11与新4（首删前换根/项间换根/外置sibling准入run接线/树内拒绝）。外置permit合法路径可完成fresh事实核对，测试在private配置/namespace/child之前截断，无真实请求。此前该薄读取NOT_RUN缺口现在由纯mock覆盖，真实PG仍NOT_RUN。fixture13、类型、收集未改未重复。单child 2026-10-07T20:34:06.594010+00:00 FULLRETURN，raw114B、finalabsent/MERGED EOF/ownTMP exactENOENT；初始EPERM观察保持原样，无新failure/signals。
+
+本地find-skills/codebase-design/固定clean-code安全点：删除责任仍单一，check_root仅封装本操作不变量；原错误和UNKNOWN门禁保持，不增加生命周期框架。原各失败/审批/资源口径均保留。新运行输入和CLOSED许可已更新hash，仍须独审与新经理实际窗口。

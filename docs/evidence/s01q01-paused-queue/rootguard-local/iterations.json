@@ -1,0 +1,50 @@
+{
+  "runs": [
+    {
+      "pid": 57399,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 145,
+      "observed_bytes": 114,
+      "retained_bytes": 114,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "rootguard-caller",
+      "endedAt": "2026-10-07T20:34:06.594010+00:00",
+      "resourceConfirmed": true,
+      "scratchCleanup": "REMOVED_EXACT_ENOENT",
+      "rawSha256": "975e0425226508b074cb5b4fb8ecbac30d3972e91ff2267af8c7849169c920bb",
+      "sourceHashes": {
+        "pg-fixture.ts": "f9e685b709aacd6c5fd7b3ec7cc06dae33748e9ae8ba7efd49a05713ed116106",
+        "pg-fixture.test.ts": "ad669bf29dcd9700c0694ad1a9552c4b57d1d4118a6d65bfd622ed57da2d788f",
+        "failure.vitest.config.ts": "a30e2b1227eec79af8f35739322a48c851f528159e662e88ac135ca687b1ef94",
+        "failure.types.tsconfig.json": "e6aa6d69012043d3404f0196389a2f8d7024f894efb01e43af7f36007a02e3f5",
+        "failure-local.py": "03ea11aa48031833d5fd9382e42b15e3f861e0ba378bea629718e526350ccbb7",
+        "queue.vitest.config.ts": "b3d1c04f497df93802b050da57b9ca80edd718fc4f1aeb0902c0e1a10ee380af",
+        "entry.py": "3391732a31978250073b1919b259302acd8d051480bf0a9c579d504079c08b3e",
+        "entry.test.py": "503e53d4b61648dee576478f27c5a4b221c04f7e7a453e0284c9a72ef842e29a",
+        "types.tsconfig.json": "6e6153505fdac2be0e4aa0b199abb8e5912161c9bf21046255c00bc3bb6358db"
+      }
+    }
+  ]
+}

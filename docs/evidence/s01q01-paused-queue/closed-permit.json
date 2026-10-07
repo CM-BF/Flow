@@ -7,10 +7,10 @@
     "skips more than a default batch of paused queues without rotating them and scans again after explicit resume",
     "keeps pause CAS authoritative when a candidate scan races promotion"
   ],
-  "head": "7da2a44608fd92e578863e6d6e39ad18aae98a13",
+  "head": "103232eeab0f861e1ab87f496e9b9f0f1c068965",
   "window": "00000000000000000000000000000000",
   "recordName": "pg-run-00000000000000000000000000000000",
-  "inputSha256": "dda4707945557ae8cf5a424f8b88a2274ae910691477b225af68f47d1d4cd52e",
+  "inputSha256": "834873779db710e402bd4a1807a4801d1118378720312dedfc2dce994b500381",
   "requiredFreeBytes": null,
   "authority": "NO_RUNTIME_GRANT; budget/source delta review and fresh manager fullfloor/headroom/window required; actual permits external to Git"
 }

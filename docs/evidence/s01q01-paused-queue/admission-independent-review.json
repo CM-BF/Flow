@@ -1,0 +1,11 @@
+{
+  "at": "2026-10-07T20:31:58Z",
+  "reviewer": "db_transaction_owner",
+  "target": "7da2a44608fd92e578863e6d6e39ad18aae98a13",
+  "packet": "a4a6841c0501a0de6a05290cebe93741278bfc05",
+  "decision": "SOURCE_CHANGES_REQUESTED",
+  "P1": 0,
+  "P2": 1,
+  "finding": "remove_sampled must validate nonsymlink root directory, canonicalpath and sampled dev/ino before first mutation and between items; preserve original contents on replaced-root rejection",
+  "resultFidelity": "approved; old24pure/twoTypes/fivechildren/raw3109 retained; actualPG NOT_OPEN"
+}

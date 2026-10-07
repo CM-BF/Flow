@@ -1,0 +1,69 @@
+{
+  "recordedAt": "2026-10-07T20:35:15.546469+00:00",
+  "sourceTarget": "103232eeab0f861e1ab87f496e9b9f0f1c068965",
+  "base": "a4a6841c0501a0de6a05290cebe93741278bfc05",
+  "runtimeSha256": "834873779db710e402bd4a1807a4801d1118378720312dedfc2dce994b500381",
+  "record": "iterations.json",
+  "sources": [
+    {
+      "path": "entry.py",
+      "bytes": 14311,
+      "sha256": "3391732a31978250073b1919b259302acd8d051480bf0a9c579d504079c08b3e"
+    },
+    {
+      "path": "entry.test.py",
+      "bytes": 10023,
+      "sha256": "503e53d4b61648dee576478f27c5a4b221c04f7e7a453e0284c9a72ef842e29a"
+    },
+    {
+      "path": "failure-local.py",
+      "bytes": 7144,
+      "sha256": "03ea11aa48031833d5fd9382e42b15e3f861e0ba378bea629718e526350ccbb7"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "iterations.json",
+      "bytes": 1801,
+      "sha256": "f2766f86afd80d9ef8e5b05306773f2a876458bbde27553b738db6d44582795e"
+    },
+    {
+      "path": "rootguard-caller-started.json",
+      "bytes": 2776,
+      "sha256": "52feb12fce3b4de03308e667facd11da990acc506b534edcc2ee0fe0bca3dcab"
+    },
+    {
+      "path": "rootguard-caller.log",
+      "bytes": 114,
+      "sha256": "975e0425226508b074cb5b4fb8ecbac30d3972e91ff2267af8c7849169c920bb"
+    }
+  ],
+  "checks": {
+    "callerPure": {
+      "selected": 15,
+      "passed": 15,
+      "exit": 0
+    },
+    "fixtureAndTypes": "not repeated; no TypeScript/fixture changes",
+    "actualPG": "NOT_RUN / CLOSED"
+  },
+  "resources": {
+    "start": "2026-10-07T20:34:06.444858+00:00",
+    "fullReturn": "2026-10-07T20:34:06.594010+00:00",
+    "supervisorMs": 145,
+    "rawBytes": 114,
+    "childPid": 57399,
+    "closed": true,
+    "scratch": "REMOVED_EXACT_ENOENT",
+    "floor": 16620257280,
+    "free": 19277475840,
+    "canonicalAt": "2026-10-07T20:33:09.724Z",
+    "currentActualAtAdmission": null
+  },
+  "sourceMatchesRun": true,
+  "limits": [
+    "No source changes after the test; immutable previous failure/raw preserved.",
+    "Repeated root/path checks catch observed replacement; this is not an OS-enforced exclusion of concurrent filesystem attackers.",
+    "No real PG/HTTP or old KEEP read/delete; only each synthetic TemporaryDirectory under the owned child TMP."
+  ]
+}
