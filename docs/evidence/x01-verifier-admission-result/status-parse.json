@@ -1,0 +1,50 @@
+{
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [],
+  "taskLinks": {
+    "kind": "subtask",
+    "reason": "",
+    "parent": {
+      "state": "known",
+      "record": "[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)",
+      "id": "X01",
+      "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md"
+    },
+    "coLead": {
+      "state": "known",
+      "record": "mika",
+      "value": "mika"
+    },
+    "ownId": {
+      "state": "unknown",
+      "record": "",
+      "reason": "未声明"
+    }
+  },
+  "implementation": {
+    "target": "87fb3d5f301d9aef2865a7cad04fbd98b6234274",
+    "scopes": [
+      "apps/runner/src/plugins/execution.ts",
+      "apps/server/src/events.ts",
+      "apps/server/src/plugin-runtime/artifact.ts",
+      "apps/server/src/plugin-runtime/commands.ts",
+      "apps/server/src/plugin-runtime/store.ts",
+      "apps/server/src/plugin-runtime/verification-admission.test.ts",
+      "apps/server/src/plugin-runtime/verification-admission.ts",
+      "apps/server/src/plugin-runtime/verification-result.test.ts",
+      "apps/server/src/plugin-runtime/verification-result.ts",
+      "apps/server/src/plugin-runtime/verification-routes.ts",
+      "apps/server/src/plugin-runtime/verification.test.ts",
+      "apps/server/src/plugin-runtime/verification.ts",
+      "apps/server/src/plugin-verification-configuration.test.ts",
+      "apps/server/src/plugin-verification-configuration.ts",
+      "packages/contracts/src/plugin-verification-admission.ts",
+      "packages/contracts/src/plugin-verification-event.ts",
+      "packages/contracts/src/runner.ts",
+      "packages/plugin-runtime/src/verification-input.test.ts",
+      "packages/plugin-runtime/src/verification-input.ts"
+    ],
+    "errors": []
+  }
+}
