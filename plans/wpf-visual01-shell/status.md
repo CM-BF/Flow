@@ -3,7 +3,7 @@
 | 字段 | 记录 |
 | --- | --- |
 | 任务ID | WPF-VISUAL01 |
-| 最近更新 | 2026-10-07T18:29:14.875Z |
+| 最近更新 | 2026-10-07T19:16:22.642Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 单一status owner / model | w01_owner / gpt-6-astra ultra |
@@ -15,8 +15,8 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 1 |
-| 当前产出 | 共享浮层与渐进消息设置已完成受影响严格类型检查，首轮问题已窄修；真实桌面与窄屏验收待运行 |
-| 下一可用交付 | 准备消息设置与恢复面板的真实浏览器验收，保留完整身份、主操作与焦点检查 |
+| 当前产出 | 受影响类型与窄修已独审；Picker完整调用候选已固定待集中审，Recovery只读38链接/闭包尚未物化；两者browser NOT_RUN |
+| 下一可用交付 | Picker候选先集中源/native审；Recovery补精确只读链接与运行闭包后独立准入，不等待两者同时ready |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 任务开工时间 | UNKNOWN |
@@ -26,7 +26,7 @@
 | 实现范围 | apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.browser.ts, apps/web/test/message-settings.browser.ts |
 | 检查状态 | PASSED 4ca1deac319afac89f7c0ae5e0142cb9de429a2a；仅4入口affected strict/noUnchecked/noEmit，首FAIL保留；browser/visual NOT_RUN |
 | 已集成main状态 / HEAD | 新共享浮层 NOT_INTEGRATED；原 shell a8b2b22 已 INTEGRATED 4391bbf9f1785212d098ef6aa1c01a0320a003d3 |
-| Review | [review.md](review.md)，preset已f29a限定静态批准；本次类型实际与窄修待root集中审，browser NOT_RUN |
+| Review | [review.md](review.md)，preset已f29a限定静态批准；517678已限定接受4ca guard与类型实际；browser/visual NOT_RUN |
 | D04 claim | acce2727-f3c0-433d-9b06-b802eefb32cb v1 active / exact8，[receipt](../../docs/evidence/wpf-visual01/shared-overlays/take-receipt.json) |
 | 架构影响 | 展示布局与组件私有 disclosure；无新状态权威、契约或服务节点 |
 
@@ -38,7 +38,7 @@
 | WPF-VISUAL01-04 | completed | d01_owner（历史） | 原 main4391 接收及旧 claim v3 released |
 | WPF-VISUAL01-05 | completed | w01_owner | [source switch](../../docs/evidence/wpf-visual01/shared-overlays/source-switch-intake.json) |
 | WPF-VISUAL01-06 | pending | w01_owner | affected types PASSED；真实消费者/browser/visual NOT_RUN |
-| WPF-VISUAL01-07 | pending | root / w01_owner | 固定源码待独审与主线接收 |
+| WPF-VISUAL01-07 | pending | root / w01_owner | 517678类型/窄guard已审；浏览器/视觉及主线接收待完成 |
 
 ## 等待记录
 
@@ -48,10 +48,12 @@
 
 ## 当前安全停点
 
-受影响四入口类型验证已完整结束：首轮 FAILED（真实 HTMLElement 联合类型缺窄化及3包声明映射缺失），最窄修正后第二轮实际 outer0/compiler0。30s段 CLOSED，累计5765ms、未用24235ms不转为后续额度；全部 owned PID/PGID absent、scratch删除、内外EOF/drop0。原8scope本次正常封存后 STOP、claim保留，顺序处理原Release主线metadata。当前无工程进程、PG或Chrome。
+2026-10-07T18:59:24.092616Z 恢复一个20分钟、8MiB上界的source-only准备段。原六源4ca逐hash不变；仅own记录/TMP改动，无依赖复制、链接物化、import、types、HTTP、PG或Chrome。当前自然seal后exact8 STOP，claim保留。
 
-本次 [phase](../../docs/evidence/wpf-visual01/shared-overlays/types-actual/phase.json)、[完整原件索引](../../docs/evidence/wpf-visual01/shared-overlays/types-actual/index.json)与[固定六源](../../docs/evidence/wpf-visual01/shared-overlays/source-manifest.json)。正常/180字符名称5图与真实Recovery2图仍是提案，尚非产物。
+[类型独审原件](../../docs/evidence/wpf-visual01/shared-overlays/types-actual/root-review.json)限定接受HTMLElement guard、声明别名与两次类型实际；5765/30000ms CLOSED，首FAIL和未用24235ms保留，不重绿。f29a的worker与63949逐字结论只针对2d73，4ca guard另由517678审查，不倒改历史。
 
 ## 当前浏览器准备
 
-[统一提案](../../docs/evidence/wpf-visual01/shared-overlays/validation-prepared/proposal.json)。Recovery browser 尚需 own ignored package links/TSX resolver 的受控供给与实际准入，不继承 MSG native/PG 许可。只报告实际观察到的滚动条模式，不冒两个OS模式已验。
+[本次准备报告](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/report.json)及[说明](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/README.md)。Picker私有候选复用既有parent/native边界与六组输入观察，顺序两fixture/context，6行为+2展示组、原2图+新5图，90s含15s清理仅提案；source/native approval为空、无gate/无runtime grant。需独立实际目视，图片数量不等于视觉PASS。
+
+Recovery可信appearance preset保留，当前38个包链接仅exact目标/身份计划，未物化；33个storage SQL输入实际已存在，不列缺件。运行JS/CSS闭包、链接创建/清理身份及独立PG/native输入仍需闭合；browser/2图NOT_RUN。旧提案为历史来源，不将types绿替代浏览器。不宣称两个OS滚动条模式均已验。

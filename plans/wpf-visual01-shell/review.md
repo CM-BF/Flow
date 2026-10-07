@@ -1,6 +1,6 @@
 # WPF-VISUAL01 共享浮层独审
 
-当前结论：**PENDING**（本次source/type实际待集中审；不是全片APPROVED）。target `4ca1deac319afac89f7c0ae5e0142cb9de429a2a`；base 3c9345df4aec85a37e8a2a155e079db260d515b1。
+当前结论：**APPROVED_SCOPED_TYPES / BROWSER_PENDING**（517678仅接受窄guard与affected类型实际；不是全片APPROVED）。target `4ca1deac319afac89f7c0ae5e0142cb9de429a2a`；base 3c9345df4aec85a37e8a2a155e079db260d515b1。
 
 scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.browser.ts, apps/web/test/message-settings.browser.ts。核 shared Dialog 展示而非权威变更、tuple/CAS/Apply/liveness 保留、渐进层级/主操作可达、完整长身份、焦点与两种滚动条边界。四入口affected类型复验PASSED、首FAIL保留；浏览器/视觉目前 NOT_RUN，主线/部署 NOT_INTEGRATED。
 
@@ -15,3 +15,7 @@ scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, ap
 ## 必要类型实际
 
 [两次原件与冻结输入](../../docs/evidence/wpf-visual01/shared-overlays/types-actual/index.json)及[单一累计账](../../docs/evidence/wpf-visual01/shared-overlays/types-actual/phase.json)。首红只有HTMLElement联合类型和精确声明路径问题；新增HTMLElement guard与3个d.ts路径后复验0。原期望、CSS、所有业务断言与运行器生命周期不变。5765/30000ms CLOSED；浏览器与图片仍未验。
+
+## 当前准备安全点
+
+[root517678](../../docs/evidence/wpf-visual01/shared-overlays/types-actual/root-review.json)已原样归档。当前Picker新parent/worker差量仍待集中source/native审，Recovery完整resolver/link supply尚未ready；无新增实际检查。[准备报告](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/report.json)。

@@ -35,3 +35,7 @@
 本次固定源码 4ca1deac319afac89f7c0ae5e0142cb9de429a2a；必要检查方案见[validation proposal](../../docs/evidence/wpf-visual01/shared-overlays/validation-proposal.json)。必要局部30s段已CLOSED累计5765ms，当前全部8scope停写保留；浏览器未获实际段。
 
 后续 parent preset 将 appearance 的任务、账目、输出作为一个受信固定配置，不接收任意 evidence 路径。默认 MSG03 guard 不变；必要 local 与两 browser consumer 提案集中于[准备入口](../../docs/evidence/wpf-visual01/shared-overlays/validation-prepared/proposal.json)，affected types已实际结束；browser仍待准备与实际段。
+
+### 2026-10-07 浏览器准备分阶段
+
+类型与窄guard已root517678接受；Picker固定候选先审/后准入，Recovery只读链接与运行闭包另闭合，二者不互相阻塞。见[准备说明](../../docs/evidence/wpf-visual01/shared-overlays/browser-prepared/README.md)。原TODO06/07保持未完成，未授actual。
