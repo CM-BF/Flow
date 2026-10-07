@@ -1,8 +1,8 @@
-状态：PENDING（中心v3领取入口与局部结果；真实PG未运行）
+状态：APPROVED（仅中心领取源码与局部结果；真实PG未运行）
 
 Review target commit: 436ab4b87a9847b9ef9a05ad100a62dff9cf931d
 
-[最终固定交审入口](../../docs/evidence/x01/center-claim-final-review-ready.json)。旧c15五源批准保持；本片7源及支持代码尚待独审，types0/10通过不是PG/全X01验收。
+[最终固定交审入口](../../docs/evidence/x01/center-claim-final-review-ready.json)。db_transaction_owner/gpt-6-astra，2026-10-07T06:17:38Z，0P1/P2；[独审回执](../../docs/evidence/x01/center-claim-independent-review.json)。旧c15五源批准保持；本片types0/10通过不是PG/全X01验收。后继PG准备是未实现/未运行输入，不能继承本批准。
 
 ---
 

@@ -121,3 +121,5 @@ clean-code/codebase-design安全点：复用既有maintenance公开命令而非�
 本地find-skills/codebase-design/clean-code固定sickn33来源与brainstorming有界设计沿用。新增claim Module集中资格SQL和锁后current grant检查，真实factory只注册原route与既有034，无新endpoint/backdoor/状态表。原allocator/事务/receipt单一权威，v2shape与disable pin语义保留；未知及跨协议冲突不改成empty。固定main callback transaction直接消费，既有OPS14拥有进程监督，未增加轮询/杀进程框架。10局部行为与strict通过，无无意义复测；真实PG仍待验，登记而不推导SQL锁保证。
 
 2026-10-07T06:09:33.346802+00:00 clean-code安全点：本段7中心源维持真实route/allocator与既有锁/transaction职责；cache副作用用caller入口sys.dont_write_bytecode一个标准库开关解决，不另建loader或监督器。两own bytecode73068B精确清理且入源/metadata预算，证据center-claim-bytecode-cleanup.json；这不是TMP全时峰值或共享cache核验。原types0/10结果冻结，支持delta未重跑；真实PG/生产runner仍未验，最终独审PENDING。
+
+2026-10-07T06:22:16.726246+00:00：clean-code安全点仅本次review归档/PG输入。以现createServer、唯一receipt和原专库fixture复用真实职责；不复制DDL、不把SQL fake等同PG。最小新增6组覆盖资格/恢复/锁屏障及直接fence；旧wrapper硬编码v8/2suite/27不可借旧入口直接启动。缺口明确为新test/任务recipe与真实PG，不以准备宣称运行。31SQL及现有source闭包只读核缺项0，0执行/安装；共享client/exports仍C02持有，接口请求已直接确认。

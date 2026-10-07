@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T06:09:33.346802+00:00 |
+| 最近更新时间 | 2026-10-07T06:22:16.726246+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -18,16 +18,16 @@
 | 工作树 dirty 状态 | 封存中心新片源码/local结果；提交push后clean停写供review |
 | 工作分支状态 | in-progress |
 | 检查状态 | 中心片types0/10定向通过（SQL边界fake+真实inject，0PG）；前片11和旧27不重跑 |
-| Review | 中心product 0224e94d1133a72478fdf50380f726bd2ba5922f / support 436ab4b87a9847b9ef9a05ad100a62dff9cf931d 待独审；c15前片APPROVED保持 |
+| Review | product0224/support436 于2026-10-07T06:17:38Z由db_transaction_owner独审APPROVED，真实PG_PENDING；[回执](../../docs/evidence/x01/center-claim-independent-review.json) |
 | 已集成 main 状态 / HEAD | 领域16源/162785B已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a，root/Web组合0、不重跑27；[接收核验](../../docs/evidence/x01/enable-binding-main-receipt.json)。默认mount/v3 claim/runtime仍后继 |
 | 实现目标 | 436ab4b87a9847b9ef9a05ad100a62dff9cf931d |
 | 实现范围 | apps/server/src/index.ts, apps/server/src/runners.ts, apps/server/src/runner-claim-receipts.ts, apps/server/src/runner-claim-routes.ts, apps/server/src/runner-claim-routes.test.ts, apps/server/src/plugin-runtime/claim.ts, apps/server/src/plugin-runtime/claim.test.ts, docs/evidence/x01/center-claim-fixture.ts, docs/evidence/x01/center-claim-local.py, docs/evidence/x01/center-claim-vitest.config.mjs, docs/evidence/x01/center-claim-tsconfig.json |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 中心领取入口已接插件资格与旧runner过滤，局部类型和行为验证通过，待独审及真实专库验证 |
-| 下一可用交付 | 验证中心实际SQL与恢复后接真实runner执行和现成npm能力 |
-| 当前阻塞 | NONE: 固定小片可独审；真实PG尚未运行，需沿共享窗口安排 |
+| 当前产出 | 中心插件领取的源码与局部行为已通过独审，正在补真实数据库与认证入口验证 |
+| 下一可用交付 | 完成独立专库的新领取/恢复/锁等待用例，再接真实runner执行与现成npm能力 |
+| 当前阻塞 | NONE: 专库最小输入已固定，测试与单suite执行接线尚未实现；没有PG运行或预占 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -255,3 +255,5 @@ status_read于2026-10-07T05:52:15.936782Z独立SOURCE_AND_LOCAL_RESULT_REVIEW_AP
 source `0224e94d1133a72478fdf50380f726bd2ba5922f`，新7源/原同一claim v10。两个实际local进程于06:03:32.085299→06:03:49.535124 UTC结束并直接归还C02；types0+10/10，0PG/网络listener。固定main database donor在真实module位置加载、原callback事务实现参与；SQL fake不能替代真实PG过滤/并发保证，下一PG反例明确NOT_RUN。S01性能等待05:59前后仅依据MikaOPEN/06:00:50.057实际归还消息，不推独立壁钟。架构影响：原center启动消耗既有034，原领取路径支持严格v3；runtime/client/phase port未接，基线图待main后Lead更新。
 
 2026-10-07T06:09:33.346802+00:00：中心产品0224冻结，最终支持436ab仅禁止Python导入写bytecode；原local两own证据cache73068B按2MiB源/metadata预算入账并精确清理，原raw不改。最终[26项交审包](../../docs/evidence/x01/center-claim-final-review-ready.json)待独审；types0/10局部通过不重跑，实际PG仍NOT_RUN；v10 ACTIVE30、无实际local/PG占用。
+
+2026-10-07T06:22:16.726246+00:00：fresh v10 ACTIVE30/04cee clean后接收中心源码及local独审0P1/P2，固定[下一PG输入](../../docs/evidence/x01/center-claim-pg-preparation.json)与[六组验收](../../docs/evidence/x01/center-claim-pg-plan.md)：1专库/现有17连接上界/真实认证claim、不重跑旧27。旧236输入234不变、2已审中心源变化、31SQL缺项0；本段0工程检查/import/PG/供给。新PG test/窄recipe尚未写，NOT_EXECUTABLE/NOT_OPEN，source及原raw冻结。C02 P2增量7070/d2ae已只读批准，未知TMP与全部启动尝试口径保留；client/index与contracts/index仍C02 ACTIVE，未交回不写。
