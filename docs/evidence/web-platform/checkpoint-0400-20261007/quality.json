@@ -21,5 +21,13 @@
     "NoChrome/HTTP/PG/provider",
     "Noresource/personalservice sample",
     "No remote/CI/provision"
-  ]
+  ],
+  "followupMetadataCheck": {
+    "at": "2026-10-07T04:07:42.575Z",
+    "artifact": "parent-human-parser.json",
+    "method": "Existing parseStatus calls parseHuman on3modifiedparents",
+    "result": "all statuserrors[]/human.complete=true/missing[]",
+    "reason": "Free text blocker violated explicitNONE/ACTIVE contract; fixedownmetadataonly, notparserguessing",
+    "runtimeBoundary": "OnlymetadataNodefunctioncall, no engineeringtest/aggregate/services/resource sampling"
+  }
 }

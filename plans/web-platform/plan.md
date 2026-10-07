@@ -417,3 +417,5 @@ D01/D06既有后继已按GO/root明确指令在原树推进：[固定0da源码�
 ### U14后继的具体供给与权属边界
 
 TIMING01已于03:56:00.608Z核齐完成、03:49:29Z实际4320/185发布，9a677v2已释放；不在已完成任务追加未完成验收。首屏易读性采用直接D01的独立有界 **WPF-DASHBOARD-TIMING02**，候选owner原W01、独立dashboard-task-timing-readability/codex同名；[固定source供给提案](../../docs/evidence/web-platform/dashboard-task-time-intake/readability-source-proposal.json)38文件599953B/base2f18，未建树/未take。[原owner具体设计](../../docs/evidence/web-platform/dashboard-task-time-intake/owner-readability-design.md)收敛status/app/styles+两定向测试+新ownplan/evidence七literal；04:02:45的五共享产品/test范围无冲突仅时点观察，开工仍需fresh全七scope。新计划TODO01呈现与隔离派生等待、02直接受影响验证、03独审/接收，旧TIMING01完成和历史目标不变。ACCESS真实安装交付优先；此段只规划，0产品写入/运行/预约。
+
+D01既有首屏排序后继观察（GO入站，未复采）：同优先级按ID可能使D04/ENG/OPS长期占前三；仅登记待评估，不立即改排序或另建task，发布优先。

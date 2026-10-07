@@ -16,7 +16,7 @@
 | 优先级 | 1 |
 | 当前产出 | 新前端发送、排队和回执恢复已完成受控兼容验证并接主线；个人预览已于21:27按受控流程发布af51后台与d629/v3前端，旧版本组合不再是未解依赖。完整视觉体验仍在推进。 |
 | 下一可用交付 | 优先完成本机入口真实安装操作验收及草稿恢复、快速设置剩余页面验证；继续收拢普通聊天技术信息，保留错误、待办和可展开依据。 |
-| 当前阻塞 | 预览更新及原旧版本兼容依赖已解除；完整窄屏、键盘焦点、主题扩展和真实长内容视觉验收仍未完成。各子片按唯一owner和实际窗口推进，不继承为整体通过。 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | 实现目标 | UNKNOWN |
 | 实现范围 | plans/wpf-mature-01-visual |
@@ -56,3 +56,5 @@ RELEASE01兼容输入已main c450且20a v2释放；后继根严格类型检查�
 历史验证交接：[发布验证已main收口并释放](../../docs/evidence/web-platform/release03-main-intake.json)，当时个人发布与[两旧产物×af51准备](../../docs/evidence/web-platform/retained-af51-minimal-plan-root.json)交原SVC owner，后续21:27已完成，不能沿该历史段继续判未发布；下方旧运行段均保历史，不代表当前仍待同一次源码或结果审查。
 
 当前发布依据：[原SVC05H final gate](../../docs/evidence/web-platform/checkpoint-0400-20261007/personal-publication-final-gate.json)与[限定来源说明](../../docs/evidence/web-platform/checkpoint-0400-20261007/personal-publication-intake.json)。2026-10-06T21:27:19.199Z published/受控检查通过，保留明确legacy-intent例外，不称所有native idle；个人af51/d629部署不等于全部最新main。2026-10-07T02:44同版本61228恢复另见[实际回执](../../docs/evidence/web-platform/dashboard-task-time-intake/personal-web-recovery-receipt.json)。本父整体TODO、检查NOT_RUN和review NOT_STARTED未改；本次只修过期摘要，不重验产品。
+
+本次当前摘要按既有NONE/ACTIVE合同校准，[三份父status实际元数据解析](../../docs/evidence/web-platform/checkpoint-0400-20261007/parent-human-parser.json)均errors=[]、human.complete=true/missing=[]；不是产品检查或新页面采样。

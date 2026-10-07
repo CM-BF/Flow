@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T04:07:42.575Z",
+  "method": "Existing parseStatus -> parseHuman, three modified owner metadata only; no aggregate/PG/HTTP/browser",
+  "reports": [
+    {
+      "id": "WPF-001",
+      "path": "plans/web-platform/status.md",
+      "errors": [],
+      "humanComplete": true,
+      "humanMissing": [],
+      "blocker": {
+        "state": "active",
+        "text": "SVC06已接重窗口，本组后续浏览器验证等待其实际清理归还；本机入口真实安装与发布完成回执待收。"
+      },
+      "outputChars": 115,
+      "nextChars": 59
+    },
+    {
+      "id": "WPF-MATURE-01",
+      "path": "plans/wpf-mature-01-visual/status.md",
+      "errors": [],
+      "humanComplete": true,
+      "humanMissing": [],
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "outputChars": 86,
+      "nextChars": 60
+    },
+    {
+      "id": "WPF-MATURE-06",
+      "path": "plans/wpf-mature-06-chat/status.md",
+      "errors": [],
+      "humanComplete": true,
+      "humanMissing": [],
+      "blocker": {
+        "state": "active",
+        "text": "剩余真实浏览器验证等待SVC06实际清理归还及本组具体窗口；局部序列化已通过，不再等待local槽。"
+      },
+      "outputChars": 69,
+      "nextChars": 56
+    }
+  ]
+}

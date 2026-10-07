@@ -22,7 +22,7 @@
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；原五图的新主线快照已完成源码更新和限定独审，定向验证已通过，显示和主线接收待验。 |
 | 下一可用交付 | 本机入口已接主线，待真实安装操作与发布完成；架构图修复待窗口复验。已发布的时间展示保持可用，易读性沿独立有界后继排队。 |
-| 当前阻塞 | 本组无运行占用或预约；SVC06已接窗口，待实际归还。本机入口真实安装验收、架构/草稿恢复/快速设置的剩余页面验收尚未完成。 |
+| 当前阻塞 | ACTIVE: SVC06已接重窗口，本组后续浏览器验证等待其实际清理归还；本机入口真实安装与发布完成回执待收。 |
 | 需用户决定 | NONE |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
@@ -158,3 +158,5 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 [本批必要结果与登记交接](../../docs/evidence/web-platform/current-product-checkpoint-20261007/report.md)集中原独审，不新建状态权威，不向GO外发普通进度。
 
 当前运行交接与来源：[实际归还与当前无占用](../../docs/evidence/web-platform/window-actuals-0341-20261007/intake.json)。原SVC06 offer已消费并归还，保留历史；Timing已登记、验证与实际部署加载分别记录。
+
+本次当前摘要按既有NONE/ACTIVE合同校准，[三份父status实际元数据解析](../../docs/evidence/web-platform/checkpoint-0400-20261007/parent-human-parser.json)均errors=[]、human.complete=true/missing=[]；不是产品检查或新页面采样。
