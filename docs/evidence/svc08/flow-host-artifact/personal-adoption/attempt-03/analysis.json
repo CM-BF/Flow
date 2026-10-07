@@ -1,0 +1,206 @@
+{
+  "at": "2026-10-07T06:19:44.403Z",
+  "state": "READY_PRESERVED_PENDING_INDEPENDENT_RESULT_REVIEW",
+  "source": "c20d21b21caba504cd472c4596110fe535980752",
+  "delivery": "dfbb6220e480404c42a9f3f233d79f4292653df4",
+  "run": "/private/tmp/flow-svc08-personal-adoption-20261007-r3",
+  "reservationAt": "2026-10-07T06:16:50.715465+00:00",
+  "requestIntentAt": "2026-10-07T06:17:00.143Z",
+  "postCompletedAt": "2026-10-07T06:17:15.974Z",
+  "originalMigration": "r2 completed; exact five originals verified; not repeated",
+  "phaseReports": {
+    "request": {
+      "pid": 12403,
+      "ownership": "newChildSession",
+      "exit_code": 0,
+      "elapsed_ms": 9450,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    },
+    "replace": {
+      "pid": 21936,
+      "ownership": "childPidOnly",
+      "exit_code": 0,
+      "elapsed_ms": 14905,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "observations": []
+    },
+    "post": {
+      "pid": 29561,
+      "ownership": "newChildSession",
+      "exit_code": 0,
+      "elapsed_ms": 737,
+      "owned_state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    }
+  },
+  "supervisorElapsedSumMs": 25092,
+  "notWholeSessionWall": true,
+  "allEOF": true,
+  "oldWeb": {
+    "pid": 27112,
+    "group": 27112,
+    "postOwnedState": "stopped",
+    "exitObservation": {
+      "at": "2026-10-07T06:17:02.816Z",
+      "code": 1,
+      "signal": null,
+      "nonceMatches": true
+    }
+  },
+  "newWeb": {
+    "pid": 22704,
+    "group": 22704,
+    "identity": "running",
+    "recordSha256": "0fb840f089e5949fccdc07af569813bf5b0418b5e4dff6bf95b0cff0bfe6a79a"
+  },
+  "backend": {
+    "head": "af51c621696230fbced12227670f014ca73bd8a1",
+    "dirty": false
+  },
+  "backendArtifact": null,
+  "webHostArtifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+    "manifestDigest": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+    "sourceHead": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+  },
+  "webRelease": {
+    "current": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "version": 3,
+    "retainedCount": 3
+  },
+  "preservation": {
+    "checks": {
+      "root": true,
+      "identity": true,
+      "source": true,
+      "state": true,
+      "release": true,
+      "retained": true,
+      "center": true,
+      "runner": true,
+      "privateFiles": true,
+      "maintenance": true,
+      "marker": true
+    },
+    "protected": true,
+    "businessObservation": "UNCHANGED",
+    "changedTables": [],
+    "businessWritesByOperator": 0,
+    "actionOnChange": "keep original observations; no rollback, DML, drain or automatic retry"
+  },
+  "tableDigestComparison": {
+    "tables": 64,
+    "rawChanged": [],
+    "protectedChanged": [],
+    "countChanged": [],
+    "declaredOmission": {
+      "conversations": [
+        "queue_checked_at"
+      ]
+    }
+  },
+  "http": [
+    {
+      "path": "/__flow_preview_identity",
+      "status": 200,
+      "bytes": 278,
+      "sha256": "d64c5c174310dc3973b9b0f1966ad5e023be008bf3883742be30158e5f24dbd4"
+    },
+    {
+      "path": "/",
+      "status": 200,
+      "bytes": 950,
+      "sha256": "542c52c4c40abc54a9f6cf30a9f271b93c0ae7e092ef22864f017ce273d91fc3"
+    },
+    {
+      "path": "/assets/PluginManagement-CD55oqRe.js",
+      "status": 200,
+      "bytes": 9854,
+      "sha256": "3c62514146458f0d2f64beadec5f837a3f87b70ce0309a9f9f6363372b1bc447"
+    },
+    {
+      "path": "/__flow_releases/8d8ab520a9d43c7b9dafb22911416ee7/assets/PluginManagement-BD6v6BfC.js",
+      "status": 200,
+      "bytes": 9854,
+      "sha256": "3c8931413324efc58684a6c7b595add63b604cbb22d9705210b8be80795b7cee"
+    },
+    {
+      "path": "/__flow_releases/388371a4972c469b8ace623454594132/assets/PluginManagement-A83k3W8t.js",
+      "status": 200,
+      "bytes": 9854,
+      "sha256": "f6a718118ea8959a74b65825ff773fceb0c98e07a927fc9cb30c31ecfb771ad1"
+    }
+  ],
+  "httpTotalBytes": 30790,
+  "rawStdoutStderrObservedBytes": 279,
+  "privateRegularBytes": 66767,
+  "sampledMinimumFreeBytes": 24426602496,
+  "resourceLimits": "Original 2.5GiB fresh/1GiB live/2MiB raw; samples do not prove atomic physical peak",
+  "actions": {
+    "migration": 0,
+    "clone": 0,
+    "replaceCLI": 1,
+    "provider": 0,
+    "operatorBusinessWrites": 0,
+    "drain": 0,
+    "centerRestart": 0,
+    "runnerRestart": 0,
+    "userTabActions": 0
+  },
+  "retention": "Original r1/r2/r3, c7b source artifact and migrated artifact KEEP; no cleanup or extra probe after post",
+  "limits": [
+    "Five bounded HTTP reads are not browser/App/tab or long-term stability acceptance.",
+    "Old Web matching nonce exit1 on explicit stop stays exit1; no root-cause conclusion.",
+    "request/post supervision initial unknown observations remain unchanged; final owners absent.",
+    "backend stays af51/v18; Web content stays d629/v3; independent Web host executes c7b Flow422."
+  ]
+}

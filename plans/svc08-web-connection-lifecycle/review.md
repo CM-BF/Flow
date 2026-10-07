@@ -1,6 +1,6 @@
 # SVC08 独立 review
 
-状态：APPROVED_LIMITED_RUNTIME_IDENTITY_REPAIR；产物与隔离Web宿主结果已审，个人采用首次入口失败保留，新运行仍未执行。
+状态：r3实际Web-only采用结果PENDING独立审查；准备已批准，原失败保留，长期稳定性与旧tab未验。
 
 Review target commit: bad019d9691499bed69ae46b6c5d23944709cfe3
 
@@ -94,3 +94,13 @@ d95身份修复批准保持；本轮migrate成功、request原FAIL，不扩大�
 Review target commit: 472a2a2e37615838779c91a869165f4ed4967c08。
 
 仅事实提取与5新直接case，原保护比较不改。139ms/560B/2组清理、语法0，见[facts-delta-manifest](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/facts-delta-manifest.json)。原r2结果非通过；只读恢复方案不等于新运行入口批准，不再执行migrate。
+
+## 2026-10-07T06:14:57.995Z：Date/r2限定批准及r3待审
+
+native两份原样报告已归档：r2 `APPROVED_LIMITED_RESULT_FIDELITY_MIGRATED_REQUEST_FAILED`（0f8bf516，15raw+analysis同），Date `APPROVED_LIMITED_PERSISTED_MAINTENANCE_TIME_REPAIR`（472a/72eb，19bindings同）。不改原失败/未执行边界。
+
+r3 Review target commit: c20d21b21caba504cd472c4596110fe535980752；新增5source与5tiny/语法/AST guard原件见[resume manifest](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/resume-request-manifest.json)，等待Execution Lead唯一独审。所有旧产品/身份/Date批准保持限定，个人替换NOT_RUN。
+
+## 2026-10-07T06:19:44.403Z：续接准备独审接收与实际结果待审
+
+Lead唯一批准c20/dfbb `APPROVED_LIMITED_COMPLETED_MIGRATION_CONTINUATION`，60固定/current/runtime+5私有精确原件核同，无P1/P2；原样[报告](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/resume-request-independent-review.json) SHA6295f9e9506acd7a282a129a2464385113ebef65dcbb714cb6b18523824d8a11。实际r3不重做迁入，三阶段/11保护/5HTTP通过原件见[result manifest](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-03/manifest.json)。本次结果PENDING独立review，不把准备批准扩为结果批准；旧Web exit1和原失败/unknown保持。

@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-07T06:24:56.906741+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "target": "3a4f0ce3",
+  "base": "1d07c6a6",
+  "verdict": "APPROVED_DOCS",
+  "P1": 0,
+  "P2": 0,
+  "files": {
+    "plans/flow-001-architecture/status.md": "e41ca5d9067b751a33fb8af1c310f5068e29b527702553abba8182649fa5cfe6",
+    "plans/ops-001-status-review/status.md": "45e5d996eeba583fc4c80f159fac9bb390dcfd240da9841e89953979b78e6944"
+  },
+  "scope": "Two status delta vs fixed SVC08 c382 RESULT; keeps backend/web content vs host, failed history, CI only decision and historical UNKNOWN separate.",
+  "engineeringTests": 0,
+  "source": "Direct independent native_center_owner review message, 2026-10-07; archived by integration owner."
+}

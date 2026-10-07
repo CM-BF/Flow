@@ -8,6 +8,7 @@ import { execFile } from 'node:child_process';
 import { promisify, isDeepStrictEqual } from 'node:util';
 import { sha, safeError, persistedFacts, protectedState, requireFresh, protection, requestFrom, migrateOnce } from './procedure.mjs';
 import { privateBytes as bounded, runtimeBytes as fixed } from './file-readers.mjs';
+import { readCompletedMigration } from './completed-migration.mjs';
 const here = dirname(fileURLToPath(import.meta.url));
 const execute = promisify(execFile);
 let resourceFailure = null;
@@ -118,15 +119,25 @@ async function migrate(mod, input, run) {
   });
 }
 async function request(mod, input, run, operationId) {
-  const migrated = await json(join(run, 'migration-result.json'));
+  const completed = input.completedMigration ? await readCompletedMigration(input.completedMigration, input.artifact) : null;
+  if (completed) {
+    assert.notEqual(operationId, completed.reservation.operationId);
+    await record(join(run, 'completed-migration-verified.json'), { at: new Date().toISOString(), source: input.completedMigration,
+      priorOperationId: completed.reservation.operationId, priorOutcome: completed.result.outcome, newMigrationCalls: 0 });
+  }
+  const migrated = completed?.result ?? await json(join(run, 'migration-result.json'));
   assert.ok(['migrated', 'already-present-exact'].includes(migrated.outcome));
   const config = await mod.preview.loadPreviewConfiguration(input.installationDirectory);
   await mod.preview.withPreviewLock(config, async () => {
+    if (completed) {
+      await directory(join(input.installationDirectory, 'backend-artifacts'), completed.checkpoint.storeIdentity);
+      await mod.backend.verifyBackendArtifact({ directory: input.installationDirectory, artifact: input.artifact });
+    }
     const before = await snapshot(mod, input); await record(join(run, 'replacement-before.json'), before); requireFresh(before, before, input); assert.equal(before.webHost, null);
     const state = await mod.preview.readPreviewJson(join(input.installationDirectory, 'state.json'));
     assert.equal(sha(JSON.stringify(state.processes.web)), before.processes.web.recordSha256);
     await record(join(run, 'old-web-record.json'), state.processes.web);
-    const migrationBefore = await json(join(run, 'migration-before.json'));
+    const migrationBefore = completed?.before ?? await json(join(run, 'migration-before.json'));
     const preserved = protection(migrationBefore, before);
     await record(join(run, 'migration-preservation.json'), preserved); assert.ok(preserved.protected);
     // Concurrent business activity is observed, never blocked or required to become empty.
@@ -181,6 +192,7 @@ async function post(mod, input, run, operationId) {
 export async function main(phase, run) {
   assert.ok(['migrate', 'request', 'post'].includes(phase));
   const input = await json(join(here, 'inputs.json')), reservation = await json(join(run, 'reservation.json'));
+  assert.ok(!(input.completedMigration && phase === 'migrate'), 'COMPLETED_MIGRATION_MUST_NOT_REPLAY');
   assert.equal(run, input.executionDirectory); await directory(run, reservation.identity);
   const mod = await modules(input);
   let minimumFree = await space(input.installationDirectory, input.proposedBudget.freshBytes), samples = 1, activeSample = null;

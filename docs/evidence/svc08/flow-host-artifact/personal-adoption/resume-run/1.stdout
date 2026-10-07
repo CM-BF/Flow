@@ -1,0 +1,13 @@
+✔ the exact complete checkpoint is read without changing its five original files (6.528792ms)
+✔ tampered bytes are refused even when the JSON remains valid (2.981542ms)
+✔ wrong root, wrong file identity and missing original are refused (2.800792ms)
+✔ a failed or incomplete prior supervisor cannot authorize request continuation (7.058416ms)
+✔ unknown migration, wrong artifact and wrong checkpoint phase cannot continue (6.880584ms)
+ℹ tests 5
+ℹ suites 0
+ℹ pass 5
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 78.911417

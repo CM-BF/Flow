@@ -1,0 +1,20 @@
+{
+  "checks": {
+    "root": true,
+    "identity": true,
+    "source": true,
+    "state": true,
+    "release": true,
+    "retained": true,
+    "center": true,
+    "runner": true,
+    "privateFiles": true,
+    "maintenance": true,
+    "marker": true
+  },
+  "protected": true,
+  "businessObservation": "UNCHANGED",
+  "changedTables": [],
+  "businessWritesByOperator": 0,
+  "actionOnChange": "keep original observations; no rollback, DML, drain or automatic retry"
+}

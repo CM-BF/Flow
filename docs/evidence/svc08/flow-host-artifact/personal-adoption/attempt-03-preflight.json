@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-07T06:16:50.640Z",
+  "source": "c20d21b21caba504cd472c4596110fe535980752",
+  "delivery": "dfbb6220e480404c42a9f3f233d79f4292653df4",
+  "reviewSha256": "6295f9e9506acd7a282a129a2464385113ebef65dcbb714cb6b18523824d8a11",
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/svc08",
+      "plans/svc08-web-connection-lifecycle"
+    ],
+    "state": "active",
+    "branch": "codex/personal-web-connection-lifecycle",
+    "origin": "new",
+    "taskId": "SVC08",
+    "worker": "assignment_review",
+    "claimId": "ba1ff3b2-d830-4acf-b84f-be8df92c9c95",
+    "version": 6,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-web-connection-lifecycle",
+    "createdAt": "2026-10-07T03:29:21.929Z",
+    "updatedAt": "2026-10-07T04:42:47.430Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "ledgerAt": "2026-10-07T06:16:28.444Z",
+  "sourceBindingsChecked": [
+    "procedure.mjs",
+    "caller.mjs",
+    "supervise.py",
+    "procedure.test.mjs",
+    "inputs.json",
+    "file-readers.mjs",
+    "file-readers.test.mjs",
+    "facts.test.mjs",
+    "completed-migration.mjs",
+    "completed-migration.test.mjs"
+  ],
+  "newNamespaceAbsent": true,
+  "freeBytes": 24432111616,
+  "freshFloor": 2684354560,
+  "next": "request\u2192replace\u2192post only; no migrate/copy",
+  "priorNamespace": "KEEP",
+  "livePrivateAndRuntimeGates": "fixed original supervisor and caller; never inferred from this metadata preflight"
+}

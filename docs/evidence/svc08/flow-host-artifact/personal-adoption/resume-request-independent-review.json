@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T06:16:02.315179+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "source": "c20d21b21caba504cd472c4596110fe535980752",
+  "delivery": "dfbb6220e480404c42a9f3f233d79f4292653df4",
+  "manifestSha256": "ea46c2e1ca16d305e07900e944b49db6c57949d30fe8f867eec73449b02c0bc0",
+  "conclusion": "APPROVED_LIMITED_COMPLETED_MIGRATION_CONTINUATION",
+  "findings": [],
+  "verified": {
+    "fixedCurrentRuntimeBindings": 60,
+    "originalOwnRecords": 5,
+    "fullDeltaAndTestsRead": true,
+    "r2ResultDateFixApproved": true
+  },
+  "validation": {
+    "selected": 5,
+    "passed": 5,
+    "wallMs": 191,
+    "rawBytes": 645,
+    "groupsAbsent": 3,
+    "bothEOF": true,
+    "scratchRemoved": true,
+    "callerSyntax": 0,
+    "pythonASTAndExactGuard": "passed; no supervisor top-level execution",
+    "cumulativeWithDateMs": 330,
+    "cumulativeRawBytes": 1205,
+    "PG": 0,
+    "personalReads": 0,
+    "HTTP": 0,
+    "provider": 0
+  },
+  "boundaries": [
+    "New exclusive r3 and operation; no replay of migrated/clone/rename; prior failure remains unchanged.",
+    "Original preview lock, full artifact/source and protected fields/CAS verified fresh; same af51/v18, d629/v3, 3 retained.",
+    "Only original request/replace/post, 75s summed child policies (not total wall); unknown stops and keeps originals.",
+    "No center/runner stop, drain/resume, user tab, model, business write or rollback."
+  ],
+  "reviewerRuns": 0,
+  "livePersonalReads": 0
+}

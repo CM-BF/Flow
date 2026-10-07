@@ -1,0 +1,18 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority[39m
+
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority.test.ts[2m > [22mreal R06 factory closes the inherited regular FD and holds the sandboxed writer handle
+ [32m✓[39m apps/runner/src/engineering/native-authority.test.ts[2m > [22mstock helper preparation freezes one request and reports only observed bytes, never revoked[32m 157[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-authority.test.ts[2m > [22mstock helper changed target and aborted handoff consume the one launch[32m 274[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-authority.test.ts[2m > [22mstock helper preparation rejects broad writes and nonprivate state before issuing a spec[32m 1[2mms[22m[39m
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority.test.ts[2m > [22mchanged target identity rejects before transport; wrong executable digest is rejected
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority.test.ts[2m > [22mclosing an unused host permanently prevents launch
+ [2m[90m↓[39m[22m apps/runner/src/engineering/native-authority-darwin.test.ts[2m > [22mpolicy input rejects noncanonical and executable write aliases
+ [32m✓[39m apps/runner/src/engineering/native-authority-darwin.test.ts[2m > [22mstock helper policy separates runtime writes from the single existing workspace file[32m 1[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-authority-darwin.test.ts[2m > [22mstock helper policy rejects altered recipes, overlap, path escapes and control characters[32m 0[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m5 passed[39m[22m[2m | [22m[33m4 skipped[39m[90m (9)[39m
+[2m   Start at [22m 23:19:46
+[2m   Duration [22m 629ms[2m (transform 51ms, setup 0ms, import 72ms, tests 435ms, environment 0ms)[22m
+

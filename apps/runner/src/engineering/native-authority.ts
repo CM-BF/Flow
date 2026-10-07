@@ -1,10 +1,11 @@
 import { createHash } from 'node:crypto';
-import { lstatSync, realpathSync, type Stats } from 'node:fs';
+import { constants, lstatSync, realpathSync, type Stats } from 'node:fs';
 import { open } from 'node:fs/promises';
 import { join } from 'node:path';
+import { pathToFileURL } from 'node:url';
 import { createCodexTransport, type CodexTransport } from '../codex/index.js';
 import type { CodexTransportFactory } from '../native-harness/codex/exchange.js';
-import { createDarwinWriteProfile } from './native-authority-darwin.js';
+import { createDarwinWriteProfile, createStockHelperProfile, STOCK_CODEX, STOCK_CODEX_SHA256 } from './native-authority-darwin.js';
 
 const SANDBOX = '/usr/bin/sandbox-exec';
 const SANDBOX_SHA256 = 'abc5bb136d6b5cce8fa85d789f78e3326c51ca60cae637b2064adfb67a1dcd9a';
@@ -15,6 +16,102 @@ export interface DarwinWriterHostInput {
   readonly executable: string;
   readonly executableSha256: string;
   readonly arguments: readonly string[];
+}
+
+export interface StockHelperInput {
+  /** Trusted host paths; neither path is supplied by a model request. */
+  readonly directory: string;
+  readonly runtimeDirectory: string;
+  readonly startupRecipe: string;
+  readonly contents: Uint8Array;
+}
+export interface StockHelperCompletion {
+  /** Facts from the one supervisor that actually owned the launched child. */
+  readonly exitCode: number | null;
+  readonly ownedState: 'absent' | 'present' | 'unknown';
+  readonly stdoutEof: boolean;
+  readonly stderrEof: boolean;
+  readonly failure: boolean;
+  readonly stdout: string;
+}
+
+function privateDirectory(path: string): Stats {
+  const value = lstatSync(path);
+  if (realpathSync(path) !== path || !value.isDirectory() || value.uid !== process.getuid?.() || (value.mode & 0o077)) {
+    throw Error('Stock helper private directory is invalid.');
+  }
+  return value;
+}
+
+/** Prepare one non-RPC helper launch. No process starts here: R06's initialize
+ * exchange cannot be sent to this one-line protocol. The existing supervisor
+ * caller owns spawn/stop and must supply read-only stdin and no extra FDs. */
+export async function prepareDarwinStockHelper(input: StockHelperInput) {
+  if (process.platform !== 'darwin') throw Error('Darwin stock helper is unavailable.');
+  const contents = Buffer.from(input.contents);
+  if (contents.length > 1024) throw Error('Stock helper write exceeds 1024 bytes.');
+  const { directory, runtimeDirectory } = input;
+  const profile = createStockHelperProfile(input);
+  const directories = [directory, runtimeDirectory, join(runtimeDirectory, 'control'), join(runtimeDirectory, 'state')]
+    .map(path => ({ path, identity: privateDirectory(path) }));
+  const target = join(directory, 'calculator.mjs'), original = ownedFile(target);
+  if (original.size > 65536) throw Error('Stock helper target exceeds 65536 bytes.');
+  const binary = ownedFile(STOCK_CODEX), sandbox = lstatSync(SANDBOX);
+  if (!(binary.mode & 0o111)) throw Error('Stock helper executable is invalid.');
+  await verifyDigest(STOCK_CODEX, STOCK_CODEX_SHA256, 512 * 1024 * 1024);
+  await verifyDigest(SANDBOX, SANDBOX_SHA256, 1024 * 1024);
+  const policySha256 = createHash('sha256').update(profile).digest('hex');
+  const requestLine = JSON.stringify({ operation: 'fs/writeFile', params: {
+    path: pathToFileURL(target).href, dataBase64: contents.toString('base64'), followSymlinks: false, sandbox: null,
+  } }) + '\n';
+  if (Buffer.byteLength(requestLine) > 8192) throw Error('Stock helper request exceeds 8192 bytes.');
+  let taken = false, issued = false;
+  return Object.freeze({
+    policySha256,
+    /** Taking the spec consumes the launch even if validation/abort fails. Never retry an unknown spawn. */
+    takeLaunch(signal: AbortSignal) {
+      if (taken) throw Error('Stock helper launch already taken.');
+      taken = true;
+      signal.throwIfAborted();
+      for (const { path, identity } of directories) {
+        const now = privateDirectory(path);
+        if (now.dev !== identity.dev || now.ino !== identity.ino) throw Error('Stock helper directory changed.');
+      }
+      if (!sameFile(STOCK_CODEX, binary) || !sameFile(SANDBOX, sandbox) || !sameFile(target, original)) {
+        throw Error('Stock helper launch identity changed.');
+      }
+      issued = true;
+      return Object.freeze({ executable: SANDBOX, args: Object.freeze(['-p', profile, STOCK_CODEX, '--codex-run-as-fs-helper']),
+        cwd: directory, environment: Object.freeze({ PATH: '/usr/bin:/bin', LANG: 'C', HOME: join(runtimeDirectory, 'state'),
+          TMPDIR: join(runtimeDirectory, 'state'), CODEX_HOME: join(runtimeDirectory, 'state') }), requestLine,
+        stdin: 'readonly-regular-file' as const, extraDescriptors: 'closed' as const });
+    },
+    /** Observation only, never a grant or proof that every delegated writer stopped.
+     * Errors/partial output/unknown cleanup preserve unknown, including exit-zero error payloads. */
+    async observe(completion: StockHelperCompletion): Promise<{ outcome: 'observed-write' | 'unknown'; writeAccess: 'unknown' }> {
+      const unknown = { outcome: 'unknown', writeAccess: 'unknown' } as const;
+      if (!issued || completion.exitCode !== 0 || completion.ownedState !== 'absent' || completion.failure
+        || !completion.stdoutEof || !completion.stderrEof || Buffer.byteLength(completion.stdout) > 16384) return unknown;
+      try {
+        const reply: unknown = JSON.parse(completion.stdout);
+        if (!reply || typeof reply !== 'object' || !('status' in reply) || reply.status !== 'ok'
+          || !('payload' in reply) || !reply.payload || typeof reply.payload !== 'object'
+          || !('operation' in reply.payload) || reply.payload.operation !== 'fs/writeFile'
+          || !('response' in reply.payload) || !reply.payload.response || typeof reply.payload.response !== 'object'
+          || Array.isArray(reply.payload.response) || Object.keys(reply.payload.response).length !== 0) return unknown;
+        const file = await open(target, constants.O_RDONLY | constants.O_NOFOLLOW);
+        try {
+          const stat = await file.stat();
+          if (!stat.isFile() || stat.dev !== original.dev || stat.ino !== original.ino || stat.nlink !== 1
+            || stat.uid !== original.uid || (stat.mode & 0o022) || stat.size !== contents.length) return unknown;
+          const bytes = Buffer.alloc(contents.length + 1);
+          const { bytesRead } = await file.read(bytes, 0, bytes.length, 0);
+          if (bytesRead !== contents.length || !bytes.subarray(0, bytesRead).equals(contents) || !sameFile(target, stat)) return unknown;
+          return { outcome: 'observed-write', writeAccess: 'unknown' };
+        } finally { await file.close(); }
+      } catch { return unknown; }
+    },
+  });
 }
 export interface DarwinWriterStop {
   readonly policySha256: string;

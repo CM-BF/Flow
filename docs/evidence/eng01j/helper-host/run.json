@@ -1,0 +1,51 @@
+{
+  "sourceTarget": "f15dc1cca0e3ec9575a6b0dc0260e7de5725b383",
+  "startedAt": "2026-10-07T06:19:45.954213+00:00",
+  "finishedAt": "2026-10-07T06:19:51.628819+00:00",
+  "selected": 5,
+  "passed": 5,
+  "oldSkippedOrUnselected": 4,
+  "focusedTypesExit": 0,
+  "supervisedMs": 1775,
+  "elapsedIncludingCallerMs": 1820,
+  "rawBytes": 2037,
+  "maxPrivateEndBytes": 252,
+  "entryExitCodes": [
+    0,
+    0
+  ],
+  "entryExitSource": "Actual tools.exec_command tool responses: tests01 exit_code0/wall0.885190291; types02 exit_code0/wall0.984606416. Supervisor elapsed uses independent monotonic; these are not the same measurement.",
+  "ownedGroups": [
+    {
+      "pid": 17124,
+      "state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "removed": true
+    },
+    {
+      "pid": 19017,
+      "state": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "removed": true
+    }
+  ],
+  "runtimeStarts": {
+    "nodeChecks": 2,
+    "stockCodex": 0,
+    "PG": 0,
+    "browser": 0,
+    "provider": 0
+  },
+  "limits": [
+    "File modifications in tests are injected test effects, not native helper execution.",
+    "Private bytes sampled at end, not continuous peak/hard quota.",
+    "Historical unknown observations do not replace final owned_state; no claim of full writer revocation.",
+    "Whole stock startup/FS behavior and all-writer authority remain NOT_RUN/open."
+  ]
+}

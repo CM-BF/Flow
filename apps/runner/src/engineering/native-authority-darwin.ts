@@ -1,4 +1,43 @@
 import { isAbsolute, dirname, resolve } from 'node:path';
+import { createHash } from 'node:crypto';
+
+export const STOCK_CODEX = '/opt/homebrew/lib/node_modules/@openai/codex/node_modules/@openai/codex-darwin-arm64/vendor/aarch64-apple-darwin/bin/codex';
+export const STOCK_CODEX_SHA256 = '4f85982624b3898c8991cb80c0981b2aa71070e3537046c9a95950318a95afcc';
+export const STOCK_STARTUP_RECIPE_SHA256 = 'ba856d7949bd2d305789995058e4b11edc4df16eb1504d67c3b160a2821b77cf';
+
+/** Fixed Mika e7ff recipe, with its private runtime kept separate from the workspace.
+ * This is a derived compatibility candidate, not a claim that its narrower writes have run. */
+export function createStockHelperProfile(input: { startupRecipe: string; directory: string; runtimeDirectory: string }): string {
+  const { startupRecipe, directory, runtimeDirectory } = input;
+  if (Buffer.byteLength(startupRecipe) !== 17393 || createHash('sha256').update(startupRecipe).digest('hex') !== STOCK_STARTUP_RECIPE_SHA256) {
+    throw Error('Stock helper startup recipe differs.');
+  }
+  for (const path of [directory, runtimeDirectory]) {
+    if (!path.startsWith('/private/tmp/') || resolve(path) !== path || Buffer.byteLength(path) > 4096 || /[\x00-\x1f\x7f]/.test(path)) {
+      throw Error('Stock helper private path is invalid.');
+    }
+  }
+  if (directory === runtimeDirectory || directory.startsWith(runtimeDirectory + '/') || runtimeDirectory.startsWith(directory + '/')) {
+    throw Error('Stock helper runtime overlaps workspace.');
+  }
+  const oldExec = `(allow process-exec
+  (literal "/opt/homebrew/Cellar/node@24/24.20.0/bin/node")
+  (literal "${STOCK_CODEX}")
+)`;
+  // The digest fixes the entire source; this replaces one reviewed block, not arbitrary SBPL parsing.
+  if (startupRecipe.split(oldExec).length !== 2) throw Error('Stock helper executable block differs.');
+  const profile = startupRecipe.replace(oldExec, `(allow process-exec (literal "${STOCK_CODEX}"))`)
+    .replaceAll('(param "ALLOW_ROOT")', JSON.stringify(runtimeDirectory))
+    .replaceAll('(param "DENY_ROOT")', JSON.stringify(runtimeDirectory + '/denied'));
+  const ancestors = new Set<string>();
+  for (const start of [directory, runtimeDirectory]) {
+    for (let path = start; ; path = dirname(path)) { ancestors.add(path); if (path === '/') break; }
+  }
+  return `${profile}\n;; Engineering workspace is not the writable private runtime state tree.\n`
+    + `(allow file-read-metadata ${[...ancestors].map(path => `(literal ${JSON.stringify(path)})`).join(' ')})\n`
+    + `(allow file-read* (subpath ${JSON.stringify(directory)}))\n`
+    + `(allow file-write-data (literal ${JSON.stringify(directory + '/calculator.mjs')}))\n`;
+}
 
 /** A policy candidate, not model qualification or a NativeWriteAuthority grant.
  * The trusted host must bind real paths/inodes and launch with only stdio FDs. */

@@ -1,0 +1,37 @@
+{
+  "pid": 17124,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 919,
+  "observed_bytes": 2037,
+  "retained_bytes": 2037,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "mode": "tests",
+  "privateBytes": 252,
+  "rawBytes": 2037,
+  "identityMatched": true,
+  "cleanupReady": true,
+  "removed": false
+}

@@ -1,0 +1,48 @@
+{
+  "at": "2026-10-07T06:09:19.860707+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "target": "0f8bf516781eeabf86d42c663cbba6a55ef5786c",
+  "verdict": "APPROVED_LIMITED_RESULT_FIDELITY_MIGRATED_REQUEST_FAILED",
+  "P1": 0,
+  "P2": 0,
+  "findings": [],
+  "manifestSha256": "a6e831676654d145e31da18d333b4620302118f4201e56136c2f4d24aa31d4da",
+  "bindingAudit": {
+    "rawFixedAndCurrent": 15,
+    "analysisFixedAndCurrent": 1,
+    "mismatches": [],
+    "privateBindings": "Not freshly read; archived author observations only",
+    "sourceReuse": "d95c249dc6b48848128ca068ea93dfda3494e812 / bfa8a0d051f0e4e2b005681cba0a7fe8d5197f39 previously reviewed; no re-audit of unchanged runtime"
+  },
+  "observed": {
+    "migration": "migrated; checkpoint verified-and-synced before exclusive rename; exit0 / 18379ms",
+    "request": "maintenance protection false; ERR_ASSERTION / exit1 / 624ms",
+    "otherProtectionChecks": 10,
+    "otherChecksTrue": true,
+    "savedMaintenanceRowsEqual": true,
+    "businessObservation": "UNCHANGED",
+    "ownedGroupsAbsent": 2,
+    "dualEOF": true,
+    "signals": [],
+    "CLIReplaceCalls": 0,
+    "postCalls": 0,
+    "serviceStopCalls": 0,
+    "providerCalls": 0,
+    "retained": "Exact migrated artifact and original source/stage/run evidence KEEP; no rollback or retry"
+  },
+  "limits": [
+    "Date-versus-serialized ISO is a supported source-level explanation; no live in-memory object dump was retained, so the review does not promote it to a new observed runtime value.",
+    "Result fidelity approval does not approve successful personal host deployment or authorize retry/cleanup.",
+    "Snapshot equality is bounded to the saved observations; no claim that unrelated concurrent user state could not change.",
+    "Clone allocated blocks are not exclusive physical bytes or a zero-cost/reclaimed-space measurement."
+  ],
+  "reviewerActions": {
+    "tests": 0,
+    "imports": 0,
+    "PG": 0,
+    "HTTP": 0,
+    "provider": 0,
+    "personalReads": 0,
+    "projectWrites": 0
+  }
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T06:07:57Z / main5cae7a25；Codex公开流已接收，SVC08迁入成功但服务替换前停止 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T06:19:44.585953+00:00 / main311e6215；SVC08真实Web宿主采用完成，后台与网页版本保留 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,14 +15,14 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main5cae7a25已接Codex公开流固定delta、原PG结果与27/27直接消费者及root/Web types0。个人af51/accepting v18、Web d629/v3仍由原宿主运行；SVC08 r2仅迁入固定产物，request保护断言失败后replace/post未执行。 |
+| 已集成main状态 / HEAD | main311e6215已接Codex公开流、插件领域及已审SVC caller修复。06:17:15.974Z个人Web宿主实际采用固定c7b产物/source422；后台af51/accepting v18、Web d629/v3及三个retained保持。主线源码、宿主产物和实际产品版本分别记录。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 1 |
-| 当前产出 | Codex公开流与插件启用领域已进入主线。固定网页宿主产物已迁入本机存储；服务替换前的保护比较未通过，原运行环境保持。 |
-| 下一可用交付 | 修复部署事实中日期的持久表示比较后接续原固定网页宿主采用；继续工程真实工具兼容与完整正文公共接线。 |
+| 当前产出 | 个人网页宿主已从固定产物运行，旧网页资源仍可读取，中心和runner保持原运行版本；Codex公开流与插件启用领域已进入主线。 |
+| 下一可用交付 | 完成工具全文的三个数据库场景及公共接线；并行推进原生文件工具兼容、Codex会话和界面恢复验收。 |
 | 当前阻塞 | ACTIVE: [OPS-CI01唯一启用决定](../../../ops-remote-validation/plans/ops-ci01-remote-validation/status.md)仍PENDING，远程CI等待；真实模型工程与完整界面旅程仍开放。当前已有可实施后继，不等待旧磁盘条件。 |
 | 需用户决定 | NONE |
 
@@ -465,3 +465,5 @@ main52fe6669已接72a计时源码，03:49:29Z仅4320自有进程正常换载；1
 2026-10-07T06:03:31.800949+00:00：S01性能05:59:51.473开始、06:00:31.510终态、06:00:50.057最终PG关闭；原operator固定回执表明入口与4child退出、2专库DROP/连接零、journal/export根absent。两co-lead明确下一共享→SVC08；本队接受后唯一assignment按独审d95/bfa新r2执行原固定四阶段，fresh2.5GiB/live1GiB、原tuple/预算与unknown停止不变。仅16root工具及已解析入口短freeze；不会把静默到期当自动清理证明。此刻尚未预报个人采用通过。
 
 2026-10-07T06:06:33Z：SVC08 r2原operator回执：migrate于06:04:16.548Z成功（18,379ms/exit0），request于06:04:26.133Z保护比较失败（624ms/exit1）；两组absent/双EOF、signals[]，replace/post未执行，三个用户服务未停。固定迁入与private原件保留，不重跑成功阶段。共享窗口已直接归还两co-lead、16工具短freeze解除；后继仅存量证据诊断和合法scope局部修复。Date表示差异为当前定位，不能把maintenance=false写成真实维护状态改变。
+
+2026-10-07T06:19:44.585953+00:00：SVC08 r3实际06:16:50.640Z开始，06:17:15.974Z ready-preserved；request9450/replace14905/post737ms，三outer exit0/absent/双EOF，原migrate未重跑。旧Web nonce匹配exit1/stopped原样保留，新Web组运行；11保护true、64表摘要UNCHANGED、5HTTP共30790B全200。backend af51/v18与d629/v3/三个retained不变，0provider/业务DML/用户tab操作。06:17:44Z已把共享窗口归还两co-lead且解除16工具freeze；原r1/r2失败保留。这里只证明本次采用/保留/有限读取，不追认旧故障根因或完整SVC06后台部署。

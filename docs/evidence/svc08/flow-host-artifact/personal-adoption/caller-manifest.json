@@ -1,7 +1,7 @@
 {
   "generatedAt": "2026-10-07T05:58:32.280796+00:00",
-  "state": "DATE_PERSISTENCE_DELTA_PENDING_REVIEW",
-  "base": "0f8bf516781eeabf86d42c663cbba6a55ef5786c",
+  "state": "RESUME_REQUEST_ONLY_PENDING_REVIEW",
+  "base": "72ebf2eee8560541680fd5fb304485f5922f7900",
   "originalManifestSha256": "a0a45ea01ab5435c63c0b37c70cf660e4f0c32774a52b0eea719eb1cef4220e4",
   "sourceBindings": [
     {
@@ -11,13 +11,13 @@
     },
     {
       "path": "caller.mjs",
-      "bytes": 16179,
-      "sha256": "97527d480c42a3c78f7e2eeec5f8a299cc4d3ba61a8a028992158d017ed39691"
+      "bytes": 17125,
+      "sha256": "12d020699010695ac8c7395f29f89559d37eec2662cbe2974db152a8eb1939a9"
     },
     {
       "path": "supervise.py",
-      "bytes": 6638,
-      "sha256": "b4fa4b7024268cf7d6d91cc3f9415d8dd8fe9b3d463f0eb7654c88e1df1f3257"
+      "bytes": 6917,
+      "sha256": "1776b3b7e2165b53d5b542c6b702aadda64d1b14df4b93bea968f44da5a8d48f"
     },
     {
       "path": "procedure.test.mjs",
@@ -26,8 +26,8 @@
     },
     {
       "path": "inputs.json",
-      "bytes": 24716,
-      "sha256": "47287cd13fd8ff38399e8add8f54fcba996573fb971492f4f11a863e5036ea7a"
+      "bytes": 26023,
+      "sha256": "27b610f99db436bc8f6d1dc9e1587dbfe1dcbdba1e13b451f70fb7384cbdb753"
     },
     {
       "path": "file-readers.mjs",
@@ -43,6 +43,16 @@
       "path": "facts.test.mjs",
       "bytes": 3012,
       "sha256": "80ceef1b233dd02c92097dcb367efac63f94e205c3c2595d9b9fdc7e4704cf69"
+    },
+    {
+      "path": "completed-migration.mjs",
+      "bytes": 2384,
+      "sha256": "f1984f2699cfda8b6339815bfa2b5f51b3456b64807fe9da7055fd2ccfe07e60"
+    },
+    {
+      "path": "completed-migration.test.mjs",
+      "bytes": 3978,
+      "sha256": "fc1b8e5121317cae49fe7dd83df5a044ac1a6b792829968b6d2044ac7cf981a6"
     }
   ],
   "runtimeBindings": [
@@ -425,43 +435,53 @@
   ],
   "evidenceBindings": [
     {
-      "path": "facts-delta.md",
-      "bytes": 1890,
-      "sha256": "5eb3f5083ab0e58a951f2e1f381386f62d3b890f25ebd84b573c01b79e146d35"
+      "path": "resume-request.md",
+      "bytes": 2481,
+      "sha256": "30771998412d3db5bab1332083f0bf9acc8cb3f5be463daa125b3dd4f32bbd39"
     },
     {
-      "path": "facts-run.json",
-      "bytes": 3702,
-      "sha256": "f74c10de57da5f60a161025baf0a0af23e7d4f7282e3e44c76cdc0548dc3279c"
+      "path": "resume-run.json",
+      "bytes": 5345,
+      "sha256": "2c24ea0c16191db5aa05df693f6f10c6b4c68c4249bb71adc40b06065f11d42e"
     },
     {
-      "path": "facts-run-cleanup.json",
-      "bytes": 225,
-      "sha256": "a585bce8b1cbb0d694b6e5a632de7a38c8f69e71c6bc1a30e61a16a2a10b544c"
+      "path": "resume-run-cleanup.json",
+      "bytes": 226,
+      "sha256": "9fde6dcba921666dafa259043a96717075af4da34300eae2dfa3cb50d318ed53"
     },
     {
-      "path": "facts-run/1.stdout",
-      "bytes": 560,
-      "sha256": "a21a54031c9af52414d9ce92afaed4b084b9cc9af23d8eecaae925d633d409ef"
+      "path": "resume-run/1.stdout",
+      "bytes": 558,
+      "sha256": "9cf0576e4cb10ebc76729086e5a02200d970d0bf5346cf96127cca28f1efe8d4"
     },
     {
-      "path": "facts-run/1.stderr",
+      "path": "resume-run/1.stderr",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "facts-run/2.stdout",
+      "path": "resume-run/2.stdout",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     },
     {
-      "path": "facts-run/2.stderr",
+      "path": "resume-run/2.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "resume-run/3.stdout",
+      "bytes": 87,
+      "sha256": "548930055581475f1e0307f767c9747da892fd15d8b3aefdc25bbba16e8c0ae9"
+    },
+    {
+      "path": "resume-run/3.stderr",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
     }
   ],
   "personalRetry": false,
   "attempt01Kept": true,
-  "sourceTarget": "472a2a2e37615838779c91a869165f4ed4967c08",
-  "executionBoundary": "r2 consumed; migrated successful, request failed; no personal retry permitted by this source validation; resume-only entry pending"
+  "sourceTarget": "c20d21b21caba504cd472c4596110fe535980752",
+  "executionBoundary": "new r3 request\u2192replace\u2192post only; exact r2 migration five records required; no migrate replay"
 }

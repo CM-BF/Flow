@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T06:03:49.145460+00:00 |
+| 最近更新 | 2026-10-07T06:21:32.144227+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -10,24 +10,24 @@
 | Owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-native-authority |
 | Branch | codex/engineering-native-authority |
-| 工作基线 / HEAD | ee98e65c147cf2ef28ccf0f519952f60d56e9d4b / 产品 471b1d8b7b19d53e7c7e87efc525e9c193c5242e，R1仅两专测修复，生产三源保持原固定 |
+| 工作基线 / HEAD | ee98e65c147cf2ef28ccf0f519952f60d56e9d4b / 新四源 f15dc1cc，原471为已main历史 |
 | 工作树dirty状态 | 本提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | planning |
-| 实现目标 | 471b1d8b7b19d53e7c7e87efc525e9c193c5242e |
+| 本片段交付阶段 | review |
+| 实现目标 | f15dc1cca0e3ec9575a6b0dc0260e7de5725b383；ENG01J-05四源增量，原471已main历史保留 |
 | 实现范围 | apps/runner/src/engineering/native-authority.ts, apps/runner/src/engineering/native-authority.test.ts, apps/runner/src/engineering/native-authority-darwin.ts, apps/runner/src/engineering/native-authority-darwin.test.ts, apps/runner/src/engineering/fixtures/native-authority-canary.c |
-| 检查状态 | PASSED 471b1d8b7b19d53e7c7e87efc525e9c193c5242e；4个不同局部检查分轮；R1正常1pass/3skip、显式4/4、focused types0；syscall继承FD缺口保留；[原始记录](../../docs/evidence/eng01j/local/README.md) |
+| 检查状态 | 新四源5/5、4旧未选、focused types0；0stock/PG/provider，[本轮](../../docs/evidence/eng01j/helper-host/run.json)。原471四不同检查/原红与限制保持，不合并成一轮 |
 | 已集成main状态 / HEAD | bf8b5f1d5f554b3195b04b150821d8262a4daef1 已clean/push；5产品及4eb自有记录逐字接收，独审转录metadata后继另批 |
 | 任务开工时间 | 2026-10-07T05:07:35.705Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原子take 2026-10-07T05:06:16.785Z后本owner开始首合同/源码工作，以上为当次记录时间 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 受限启动层已进入主线；原失败与对照结果已完成限定审查，现已找到可复用的原生启动正例 |
-| 下一可用交付 | 复用已有可启动组合，明确文件工具和全部写入者停止的最小接线方案 |
+| 当前产出 | 已实现固定原生文件工具的受限启动准备与结果检查，局部验证通过，等待独立审查 |
+| 下一可用交付 | 审查通过后验证原生工具单文件请求；完整写入者停止仍另验 |
 | 当前阻塞 | ACTIVE: 已有受限原生初始化正例，但工程文件工具兼容与全部写入者停止尚未闭合，完整工程写入未通过 |
 | 需用户决定 | NONE |
-| Review | APPROVED [review.md](review.md)；限定Darwin启动/R06机制，真实native工具兼容另验 |
+| Review | PENDING 新四源；[review.md](review.md)保留原471限定APPROVED与历史失败审查 |
 | Claim | b575e07c-483b-4a4e-824e-6dc54e6469e4 v1 active，七literal |
 | 架构影响 | 新Darwin策略/启动层直接复用R06；G/I与C02不变，生产grant未注册。架构基线待本target独审/接收后由Execution Lead更新，分支不当main能力 |
 
@@ -50,7 +50,7 @@
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
 | ENG01J-W01 | UNKNOWN | 2026-10-07T05:12:35.137Z | 资源 | 首syscall后让出本队local给CHAT05；实际归还后执行R06与类型，非全部墙钟均等待 | assignment实际清理回执及Lead同刻通知 |
-| ENG01J-W02 | 2026-10-07T05:23:45.538Z | OPEN | 审查 | 本固定源/证据等待唯一独立审查 | 本次作者封包记录；不新增运行 |
+| ENG01J-W02 | 2026-10-07T05:23:45.538Z | 2026-10-07T05:33:33.420869Z | 审查/修复 | 原固定源独审、Vitest入口修复与复审完成；区间不等于纯等待 | r1-re-review.json的at与原封包记录 |
 
 R1修复封包 2026-10-07T05:32:19.996Z：[增量检查](../../docs/evidence/eng01j/local/revision-run.json)。未重复syscall/旧全集，原失败不变；stock helper与全禁派生存在条件源码冲突，下一实际兼容事实未执行。
 
@@ -69,3 +69,7 @@ helper一次段结束 2026-10-07T05:42:51.508674+00:00，263ms/outer1/两组abse
 单许可对照2026-10-07T05:53:45.468385+00:00→2026-10-07T05:53:46.510688+00:00：1043ms/outer1，2个C观察均仍EPERM，机制前提不成立；native0/PG0/provider0，4组absent/双EOF/目录已正常清理。原政策与5生产源均保持；[固定分析](../../docs/evidence/eng01j/stock-helper/pagesize-analysis.json)。新结果待限定独审，无自动扩大许可或重跑。
 
 2026-10-07T06:03:49.145460+00:00：页大小结果获[APPROVED_LIMITED_NEGATIVE_MECHANISM_RESULT](../../docs/evidence/eng01j/stock-helper/pagesize-independent-review.json)，I02主线5cae7a25；73固定+4入口、2C/0helper及原清理已核，0复跑。此负例与Mika早期同类负例重叠，不再逐名加许可。复用其result9b9c1182已获审initialize/catalog正事实完成[一页收敛](../../docs/evidence/eng01j/stock-helper/convergence.md)；本次仅读固定源码与归档，不启动运行。原五产品与所有raw/manifest不改，下一产品改动需明确固定recipe/终止域输入。
+
+2026-10-07T06:16:08Z：本安全点记录ENG01J-05四源实施中（实际开始先于本记录，精确时间UNKNOWN），已fresh核原七scope/v1与干净fb311基线。复用固定启动正例，R06初始化协议与单行helper协议分开；本片只准备launch，不新增执行器或grant。已授权新局部段≤60s/4MiB仅纯/注入检查，stock实际调用仍NOT_RUN。
+
+2026-10-07T06:21:32.144227+00:00：ENG01J-05四源固定f15dc1cca0e3ec9575a6b0dc0260e7de5725b383，5/5新纯与文件fixture注入检查、4旧未选、focused types0；[run](../../docs/evidence/eng01j/helper-host/run.json)与两轮raw固定。1775ms监督/1820ms含caller、2037B raw，最大末采私有252B，两个owned组absent/双EOF/目录removed。读取fixed native摘要不启动binary；0stock/PG/provider/个人操作。源码停写待独审，真实helper候选[见此](../../docs/evidence/eng01j/helper-host/next-run.md)。原失败、原471批准及main事实不改。

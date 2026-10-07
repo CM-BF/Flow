@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:58:47.805722+00:00 / main5cd64a4d；Codex公开流已审组合接收，27/27直接消费者与root/Web types0 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T06:25:25.202799+00:00 / main311e6215；已审SVC08实际采用与ENG helper准备窄接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main5cd64a4d；本批只接固定2ab公开流delta和已审证据/管理记录 |
+| 工作基线 / HEAD | main311e62158186177e344b49d24ed32e335268be1d；本批SVC08仅own records，ENG四源精确delta，OPS两status |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED C02 root/Web types0；27/27直接client/旧Web stream消费者，3组absent/双EOF、临时空目录已移除；原PG6/6不重跑。 |
-| 已集成main状态 / HEAD | main5cd64a4d为本批前基线；下方本次固定接收完成后受控fast-forward。个人af51/v18、d629/v3未变；SVC08首入口在个人读取前失败已保留。 |
+| 检查状态 | PASSED 原ENG新5/5与focused types0，105绑定+14安装入口独审；SVC08三phase原exit0/11保护/64表/5HTTP已核。不重跑历史检查。 |
+| 已集成main状态 / HEAD | main311e6215已含Codex公开流等前批；本批固定差异接收待fast-forward。实际Web宿主已采用c7b/source422；backend af51/v18、网页d629/v3不变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | Codex公开流已完成专库与HTTP验证、独立审查及主线组合检查；插件启用领域和工程机制已进入主线。 |
-| 下一可用交付 | 发布已审公开流；完成个人网页宿主入口修正后采用固定产物，继续工程真实工具兼容与完整正文公共接线。 |
+| 当前产出 | 个人网页宿主已从固定产物运行，原后台、用户数据和保留网页资源保持；原生文件工具的有界准备接口已审。 |
+| 下一可用交付 | 接收工具全文数据库验证结果；推进真实原生文件工具兼容与Codex、界面恢复。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -340,3 +340,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T06:09:38.514193+00:00：窄接OPS父任务CI唯一入口/官方来源链接修正、实际r2窗口止点，及ENG01J启动正例收敛/负例独审记录；各scope前像逐字匹配主线，八个文档与一份接收记录，不改产品或个人运行。见[接收记录](../../docs/evidence/i02/metadata-intake-20261007-0610.json)。
 
 2026-10-07T06:11:48.051045+00:00：SVC08仅窄接原caller身份修复、r2真实结果与日期表示修复。迁入成功/request失败已独审，新的仅request续接仍待固定；不改16生产工具、不声称服务已采用。见[接收记录](../../docs/evidence/i02/svc08-attempt02-intake.json)，本批0工程复跑。
+
+2026-10-07T06:25:25.202799+00:00：受控接收SVC08 c382实际结果、ENG f15四源/ca6封包和OPS3a4限定摘要；[唯一接收](../../docs/evidence/i02/svc08-eng01j-intake-20261007-0628.json)。个人旧Web exit1原样保留，c7b宿主采用不等于旧故障根因或完整SVC06；ENG真实helper未运行且writeAccess仍unknown。
