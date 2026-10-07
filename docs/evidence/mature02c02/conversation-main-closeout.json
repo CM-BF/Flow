@@ -1,0 +1,196 @@
+{
+  "recordedAt": "2026-10-07T07:21:56.779955+00:00",
+  "stage": "INTEGRATED_AND_EIGHT_SCOPE_HANDOFF_COMPLETE",
+  "sourceStage": "metadata-only <=6minutes/128KiB; no engineering checks or PG/provider",
+  "sourceHead": "6c83682ba75a678738b6a12dee2421beab77a1d8",
+  "main": "4fe33178b17925d558b5608f1b3c4ae69b3d06d5",
+  "mainObservedAt": "2026-10-07T07:20:24.759399+00:00",
+  "exactMainPushUTC": "UNKNOWN; receipt records preparation/check times, not exact push. No commit-time inference.",
+  "receipt": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/codex-conversation-intake.json",
+    "bytes": 19836,
+    "sha256": "883736bc02721bd42e5b6a6f6cdbb8210ba95db4814d566aeac6f0ba91c7b1b3",
+    "verifiedChangedRows": 23
+  },
+  "verifiedBindings": [
+    {
+      "path": "apps/server/src/assistant/index.ts",
+      "mainBytes": 1710,
+      "mainSha256": "8816a4603b15c0736dea1c32390fc1d6c0eacec3e4bd3b5845f1fc0a3fd57598",
+      "mode": "existingBatchDependency"
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "mainBytes": 14117,
+      "mainSha256": "e551360b88fb05885906039e4fe631e9a8ba74d40ccffd60ad0e168b2042f18a",
+      "mode": "existingBatchDependency"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/commands.ts",
+      "mainBytes": 3786,
+      "mainSha256": "6bd2fa04238ea210c48694d7f7d9abc940e9f448537ac665233844579256b889",
+      "mode": "exactPreimage"
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "mainBytes": 5731,
+      "mainSha256": "24939768eb9d090762930f4111f7d8efa7c91e379bdc649067c766de57096abe",
+      "mode": "exactPreimage"
+    },
+    {
+      "path": "apps/server/src/conversations/codex.test.ts",
+      "mainBytes": 13926,
+      "mainSha256": "74537fe91037eb809fd7b2c97052a4d0fb8c9262da93cc11d857ff6d0685ce18",
+      "mode": "new"
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "mainBytes": 3418,
+      "mainSha256": "095b6d06d46317100ca140c542bb3131c966c4f5107396e3dfa48d67e3e84afc",
+      "mode": "exactPreimage"
+    },
+    {
+      "path": "apps/server/src/conversations/index.ts",
+      "mainBytes": 4764,
+      "mainSha256": "f364399902975501a50afb445158376ec5934380f5913a729946d0b01ac1740a",
+      "mode": "exactPreimage"
+    },
+    {
+      "path": "apps/server/src/conversations/policy.ts",
+      "mainBytes": 1594,
+      "mainSha256": "f4d72d16aa8367f4173d1683546c3ed24e4896a1b3722a6b80a1f78d9a0ff3df",
+      "mode": "new"
+    },
+    {
+      "path": "apps/server/src/conversations/queries.ts",
+      "mainBytes": 3660,
+      "mainSha256": "a68d1c75a895f3fc26c4db3fd7df0e14bec0ac5a1cdacdbe88111a4173b495e1",
+      "mode": "exactPreimage"
+    },
+    {
+      "path": "apps/server/src/conversations/replies.ts",
+      "mainBytes": 11704,
+      "mainSha256": "21cbeaf853f320eb9cd7c7be5162bcc16c2bda952ee7bd712f8a75911ab6bb98",
+      "mode": "exactPreimage"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "mainBytes": 3319,
+      "mainSha256": "b81fa9f2d2656512d96906db285669ea85a8019e457fd0c97dc9f79c52ef628e",
+      "mode": "exactPreimage"
+    },
+    {
+      "path": "apps/server/src/conversations/turn-read.ts",
+      "mainBytes": 2503,
+      "mainSha256": "7222a117bb397e59eb577706e53eceb9554ca4bb4e2f28a26db9453e0bb69620",
+      "mode": "exactPreimage"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/index.ts",
+      "mainBytes": 3046,
+      "mainSha256": "c4e29d579f2dcfeaa8384f43ed6e4cb41fec461c6bf78091a703cc7e0e2ef418",
+      "mode": "exactPreimage"
+    },
+    {
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "mainBytes": 15414,
+      "mainSha256": "ec366517aa575cb33eb8cd07a0eaabd060c45eaf6cfdb58a6761777d84ce92e2",
+      "mode": "exactPreimage"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "mainBytes": 15496,
+      "mainSha256": "5ab43b4c5a0b8c3c7cae7005768e7f9f06ebbcbda846511c2b0866fd49e960a6",
+      "mode": "exactPreimage"
+    },
+    {
+      "path": "packages/client/src/conversation-codex.test.ts",
+      "mainBytes": 3579,
+      "mainSha256": "e0e1d6bc122a45bda3d72dce890e22ed676ce04143c4ac66b5149e6ce221641c",
+      "mode": "new"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "mainBytes": 56010,
+      "mainSha256": "bf2716c67e6d0cba75959c90ed31053c11bde3969da91fd1d0b6a6ed823352ba",
+      "mode": "cleanThreeWay"
+    },
+    {
+      "path": "packages/contracts/src/conversation-codex.test.ts",
+      "mainBytes": 1921,
+      "mainSha256": "3fa91c105ea677ed09a5264067f90adafffef9c1235d6e200d23ec1c5f01a470",
+      "mode": "new"
+    },
+    {
+      "path": "packages/contracts/src/conversation-harness.ts",
+      "mainBytes": 1196,
+      "mainSha256": "f6cff3060c944434132fa3b30f875a8bf7026e3ef29ace9d48fd34121f581574",
+      "mode": "new"
+    },
+    {
+      "path": "packages/contracts/src/conversations.ts",
+      "mainBytes": 7382,
+      "mainSha256": "410b64a866885c3ec0ca2465cde583dd3c3f3dbded2c43c5fa9628ec569f5c1a",
+      "mode": "exactPreimage"
+    },
+    {
+      "path": "packages/contracts/src/execution-profiles.ts",
+      "mainBytes": 15006,
+      "mainSha256": "4ab495a31e0143ff36a22439f0629ed4c7a484fd26ee1ba3d5b0d36bc15f79b7",
+      "mode": "exactPreimage"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "mainBytes": 1591,
+      "mainSha256": "3cfe7b2c55ad67fe81d1a21e6538133e14bcaea0c21fdc57bb5cc1211eaf919d",
+      "mode": "cleanThreeWay"
+    },
+    {
+      "path": "packages/storage/migrations/035-codex-conversations.sql",
+      "mainBytes": 189,
+      "mainSha256": "9b41d66666ec4a7955e22a66fbf994ce873b9dc2d38bd77dab15648ef52a2b6d",
+      "mode": "new"
+    },
+    {
+      "path": "apps/server/src/conversations/codex-pg.test.ts",
+      "mainBytes": 15057,
+      "mainSha256": "3ead98e121d06118cbc5e311173281c2292a1dbb0583b8720a702927063631d0",
+      "mode": "new"
+    },
+    {
+      "path": "docs/evidence/mature02c02/pg-fixture.ts",
+      "mainBytes": 12008,
+      "mainSha256": "c74495e3dc54543f84e29111e3e42650a48df84ec6af1beac7428b7fe1d427c7",
+      "mode": "exactPreimage"
+    }
+  ],
+  "integrationChecks": {
+    "source": "fixedmain docs/evidence/i02/codex-conversation-intake.json",
+    "typesExit": 0,
+    "typesElapsedMs": 9784,
+    "directPassed": 59,
+    "directScope": "54 legacy/shared ACK +5 profile real HTTP,0PG/provider",
+    "reviewOnlyThisSegment": true,
+    "PGNotRerun": true
+  },
+  "claim": {
+    "before": 14,
+    "after": 15,
+    "remaining": 61,
+    "committedAt": "2026-10-07T07:20:24.899Z",
+    "receipt": "docs/evidence/mature02c02/main-closeout-amend-receipt.json"
+  },
+  "recipients": {
+    "twoIndices": "CHAT05P02 fresh take first; LAZY01 excluded",
+    "sixStreamLeaves": "MATURE06-LAZY01/status_read fresh atomic amend required"
+  },
+  "historicalRuns": "sentinel execution v13 remains fixed; first5/6FAIL/UNKNOWN/KEEP and later1/1/5unselected remain separate",
+  "stillOpen": [
+    "actual native/provider two-turn validation",
+    "Web/TUI full user acceptance",
+    "lazy reasoning implementation under separate owner/task"
+  ],
+  "engineeringChildren": 0,
+  "PG": 0,
+  "provider": 0
+}

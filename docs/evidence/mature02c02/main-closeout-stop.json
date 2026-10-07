@@ -1,0 +1,94 @@
+{
+  "recordedAt": "2026-10-07T07:20:24.759399+00:00",
+  "decision": "STOP_WRITING_EIGHT_EXACT_LEAVES",
+  "owner": "chatui01_owner",
+  "claimId": "8ad6536b-1194-44a4-9078-a92215bec7a2",
+  "beforeVersion": 14,
+  "ownHead": "6c83682ba75a678738b6a12dee2421beab77a1d8",
+  "mainRef": "4fe33178b17925d558b5608f1b3c4ae69b3d06d5",
+  "mainReceipt": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/codex-conversation-intake.json",
+    "bytes": 19836,
+    "sha256": "883736bc02721bd42e5b6a6f6cdbb8210ba95db4814d566aeac6f0ba91c7b1b3",
+    "verifiedChangedRows": 23
+  },
+  "paths": [
+    {
+      "path": "packages/client/src/index.ts",
+      "ownerBytes": 54887,
+      "ownerSha256": "c4a7be6c6bca6e552aa732e9396bc7518e1370f608344e3a56d826562fe51ffc",
+      "mainBytes": 56010,
+      "mainSha256": "bf2716c67e6d0cba75959c90ed31053c11bde3969da91fd1d0b6a6ed823352ba",
+      "sameBytes": false,
+      "recipient": "CHAT05P02 first; no LAZY01 index claim"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "ownerBytes": 1556,
+      "ownerSha256": "b71f139729578e99509f131cd031f07c694e417e3543cbfa5b39471e97c03540",
+      "mainBytes": 1591,
+      "mainSha256": "3cfe7b2c55ad67fe81d1a21e6538133e14bcaea0c21fdc57bb5cc1211eaf919d",
+      "sameBytes": false,
+      "recipient": "CHAT05P02 first; no LAZY01 index claim"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "ownerBytes": 6713,
+      "ownerSha256": "3b1a0e6a5780872707743962a71059cde7174bf4eba7320e6ca26d3443bbd49b",
+      "mainBytes": 6713,
+      "mainSha256": "3b1a0e6a5780872707743962a71059cde7174bf4eba7320e6ca26d3443bbd49b",
+      "sameBytes": true,
+      "recipient": "MATURE06-LAZY01/status_read; fresh atomic take required"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "ownerBytes": 2339,
+      "ownerSha256": "49fa2798388f39339816ebf9c3a247aade123ad61bb231127a25d4dfec9cd3b7",
+      "mainBytes": 2339,
+      "mainSha256": "49fa2798388f39339816ebf9c3a247aade123ad61bb231127a25d4dfec9cd3b7",
+      "sameBytes": true,
+      "recipient": "MATURE06-LAZY01/status_read; fresh atomic take required"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "ownerBytes": 6114,
+      "ownerSha256": "5459fe4828791bcc49d4876d91400141f5a5d5085d6dfe799731a547af42da43",
+      "mainBytes": 6114,
+      "mainSha256": "5459fe4828791bcc49d4876d91400141f5a5d5085d6dfe799731a547af42da43",
+      "sameBytes": true,
+      "recipient": "MATURE06-LAZY01/status_read; fresh atomic take required"
+    },
+    {
+      "path": "packages/interaction/src/stream/projection.ts",
+      "ownerBytes": 11315,
+      "ownerSha256": "2b04333c32167b56c3e4d3ee790efff1510e96d72ed207b06790c2b9c638d9a7",
+      "mainBytes": 11315,
+      "mainSha256": "2b04333c32167b56c3e4d3ee790efff1510e96d72ed207b06790c2b9c638d9a7",
+      "sameBytes": true,
+      "recipient": "MATURE06-LAZY01/status_read; fresh atomic take required"
+    },
+    {
+      "path": "packages/interaction/src/stream/patches.ts",
+      "ownerBytes": 13765,
+      "ownerSha256": "da7bbdfc5a8fd3ea5cf87c17d9e1ec3aa9a9851b1c45a8ba7c043e9ba7eda72c",
+      "mainBytes": 13765,
+      "mainSha256": "da7bbdfc5a8fd3ea5cf87c17d9e1ec3aa9a9851b1c45a8ba7c043e9ba7eda72c",
+      "sameBytes": true,
+      "recipient": "MATURE06-LAZY01/status_read; fresh atomic take required"
+    },
+    {
+      "path": "packages/interaction/src/stream/presentation.ts",
+      "ownerBytes": 6328,
+      "ownerSha256": "a8d1a8bf51554f5250e99667a2e4cd746cf789e9a00500f9e980e9924b56e087",
+      "mainBytes": 6328,
+      "mainSha256": "a8d1a8bf51554f5250e99667a2e4cd746cf789e9a00500f9e980e9924b56e087",
+      "sameBytes": true,
+      "recipient": "MATURE06-LAZY01/status_read; fresh atomic take required"
+    }
+  ],
+  "reason": "Conversation integrated; shared index edits preserved by main three-way receipt. Six public-stream leaves exactly main and no pending C02 edit. No further writes by C02 after STOP.",
+  "runtimeSentinelClaimVersion": 13,
+  "exchangeAlreadyRemoved": true,
+  "provider": 0,
+  "engineeringChildren": 0
+}

@@ -1,6 +1,6 @@
 {
   "recordedAt": "2026-10-07T07:09:24.952958+00:00",
-  "state": "READY_FOR_CONTROLLED_MAIN_INTAKE",
+  "state": "INTEGRATED",
   "owner": "chatui01_owner",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity",
   "branch": "codex/codex-conversation-continuity",
@@ -315,7 +315,7 @@
   ],
   "acceptance": "Six distinct behaviors have passing observations across two actual runs; never relabel prior suite6/6. Real PG/HTTP with injected transport proves conversation workflow, not actual Codex/provider/UI.",
   "mainValidation": "Use main current direct consumers/root types for actual integration. Do not rerun old PG merely for metadata; dynamic SQL/035 evidence already fixed per two runs.",
-  "handoff": "After result review and actual main receipt: stop client/contracts index writes, atomic amend removal, then CHAT05/X01 ready-first own take. Current claim retained; no automatic handoff from this file.",
+  "handoff": "Complete: C02 stopped and atomically removed both shared indices for CHAT05P02 plus six public-stream leaves for LAZY01. Recipients must fresh take; neither old branch index replaces main nor LAZY01 acquires indices.",
   "readyAt": "2026-10-07T07:14:53.275451+00:00",
   "finalResultReview": {
     "path": "docs/evidence/mature02c02/conversation-pg-sentinel-result-review.json",
@@ -326,9 +326,16 @@
     "P2": 0
   },
   "claimNow": {
-    "version": 14,
-    "scopes": 69,
-    "exchangeHandbackReceipt": "docs/evidence/mature02c02/exchange-handback-receipt.json",
+    "version": 15,
+    "scopes": 61,
+    "receipt": "docs/evidence/mature02c02/main-closeout-amend-receipt.json",
     "sentinelRuntimeVersion": 13
+  },
+  "mainReceipt": {
+    "ref": "4fe33178b17925d558b5608f1b3c4ae69b3d06d5",
+    "path": "docs/evidence/i02/codex-conversation-intake.json",
+    "bytes": 19836,
+    "sha256": "883736bc02721bd42e5b6a6f6cdbb8210ba95db4814d566aeac6f0ba91c7b1b3",
+    "observedAt": "2026-10-07T07:20:24.759399+00:00"
   }
 }

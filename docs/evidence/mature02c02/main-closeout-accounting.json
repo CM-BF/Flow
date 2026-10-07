@@ -1,0 +1,64 @@
+{
+  "recordedAt": "2026-10-07T07:21:56.779955+00:00",
+  "stage": "NEW_INDEPENDENT_METADATA_MAIN_CLOSEOUT",
+  "startedAtObservation": "2026-10-07T07:19:46Z",
+  "priorSealedTarget": "6c83682ba75a678738b6a12dee2421beab77a1d8",
+  "priorSealedBytes": 108361,
+  "priorSealUnmodified": true,
+  "bindings": [
+    {
+      "path": "docs/evidence/mature02c02/main-closeout-stop.json",
+      "bytes": 4095,
+      "sha256": "fd8d96336bcf5738561c4a38ab14325ba2c2e1bed79db3c953d91fff2ef6db63"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-closeout-amend-request.json",
+      "bytes": 3446,
+      "sha256": "9ee564699afd9fb0406460832651608dd480a300b8f7ba7b2ddc2bc55bc1f355"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-closeout-amend-receipt.json",
+      "bytes": 3481,
+      "sha256": "a673c8d1142f2f039045e23f97920270cdbd9f3f8e2fab5a3711ff2ac283bf2c"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-main-closeout.json",
+      "bytes": 7154,
+      "sha256": "43ef522a38dbc13ed7cd40f7fc8367856738c310e990b81ca1da3347ee346123"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-main-intake.json",
+      "bytes": 16081,
+      "sha256": "30347ad15100d4f4450309f91ba6f88e9ff2006bac636c79efcbfa40246f517f"
+    },
+    {
+      "path": "docs/evidence/mature02c02/conversation-web-handoff.md",
+      "bytes": 3451,
+      "sha256": "040f9024e4aa2c43877990fa33f611eab848b9e4a395fb585e6565d09747d533"
+    },
+    {
+      "path": "docs/evidence/mature02c02/quality.md",
+      "bytes": 4647,
+      "sha256": "a8e0fe08fdcdf0f231100281104e63cb4a817efd7e5983770724dd0a494cf4e3"
+    },
+    {
+      "path": "plans/wpf-mature-02-codex-continuity/status.md",
+      "bytes": 11972,
+      "sha256": "7fc9bfe4f0a41a9c63bce34da688adcb3d75e971af3a06f243c6a76d951a9281"
+    },
+    {
+      "path": "plans/wpf-mature-02-codex-continuity/review.md",
+      "bytes": 6057,
+      "sha256": "3b080b19e93d47492124b6042458f53e914862bfa1677280a90bce4332bdac27"
+    }
+  ],
+  "accounting": "Full current bytes of all written files conservatively charged to this separate128KiB metadata budget. No old window cap changed.",
+  "fileBytes": 60384,
+  "selfBytes": 2301,
+  "totalBytes": 62685,
+  "remainingBytes": 68387,
+  "capBytes": 131072,
+  "engineeringChildren": 0,
+  "PG": 0,
+  "provider": 0
+}

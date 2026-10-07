@@ -7,31 +7,31 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-07T07:14:53.275451+00:00；本次fresh8ee/origin clean及v13/71，随后原子移交至v14/69；main接收尚待。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:21:56.779955+00:00；main4fe33178与原回执fresh核符，25绑定通过；领取v15/61。 |
 | 阶段 | M2 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次实际开工缺独立明确时点，不用claim/commit/mtime推断；各分段实际时点见证据。 |
 | 优先级 | 2 |
-| 本片段交付阶段 | integration |
-| 工作分支状态 | review-approved |
-| 当前产出 | Codex会话创建、连续两轮、队列与目录读取已分段验证并完成独审，可进入主线接收。 |
-| 下一可用交付 | 按固定差量接入主线，收到main回执后交回client/contracts出口；界面与真实Codex验收继续开放。 |
+| 本片段交付阶段 | delivered |
+| 工作分支状态 | delivered |
+| 当前产出 | Codex会话创建、连续两轮、队列与目录的共享API已集成主线；交付证据为真实PG/HTTP与注入transport，未扩大到真实模型或完整界面。 |
+| 下一可用交付 | 本片段已交付；公共出口与流式读取范围已正式移交，原计划的真实native及Web/TUI验收仍开放。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | 本次仅审查封存/READY/两leaf交权metadata；提交后核clean。 |
-| HEAD（最近观察） | 8ee333315b5cd6a5e00bea8bf45b453e7ba70395（07:13:07核origin同clean；本次后继封存commit见提交） |
-| claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v14 ACTIVE69；exchange.ts/.test已07:13:41.558617Z明确STOP，原子移除committed07:13:41.724Z，见[回执](../../docs/evidence/mature02c02/exchange-handback-receipt.json)。sentinel运行仍v13/71；adapter先前已v13交回。 |
+| 工作树dirty状态 | 当前仅独立main收口/移交metadata；提交后核clean，旧封存账不改。 |
+| HEAD（最近观察） | 6c83682ba75a678738b6a12dee2421beab77a1d8（本段起点origin同clean；收口commit见提交） |
+| claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v15 ACTIVE61。07:20:24.899Z从v14原子移出两index及六stream core，见[回执](../../docs/evidence/mature02c02/main-closeout-amend-receipt.json)；sentinel运行v13/71不回改，exchange/adapter此前已交出。 |
 | 实现目标 | 当前C02-05 conversation协议/目录/批量typed reply；旧公开流2ab3等沿原固定Git。 |
 | 实现范围 | 已审conversation产品23源+7070门禁；新独立PG六case、fixture client选项、原operator有限delta manifest/config/claim/floor接线，不新增provider/框架。 |
 | Review | db_transaction_owner07:11:38Z对69fa结果与8ee最小intake APPROVED/0P1P2，见[正式记录](../../docs/evidence/mature02c02/conversation-pg-sentinel-result-review.json)；source0ecd+7070及bfae/30d原批准继承。 |
 | 检查 | 原conversation R1：6选5过1失败；本次sentinel：1选1过5未选/exit0/3HTTP，PID22298双EOF/group absent，专库与当前TMP完整收尾。旧FAIL/KEEP不回填。 |
-| main集成 | 首片/loader/main已INTEGRATED@c0e0263dc01b9527293318a644f964bd048e2a86；私有stream已INTEGRATED@8c7f81b3；公开stream已INTEGRATED@5cae7a25（main固定intake；本会话片尚未集成）。 |
+| main集成 | conversation已INTEGRATED@4fe33178b17925d558b5608f1b3c4ae69b3d06d5，25绑定/两个index三方保留；[main收口](../../docs/evidence/mature02c02/conversation-main-closeout.json)。此前首片/loader/main@c0e0263d、private stream@8c7f81b3、public stream@5cae7a25。 |
 | Dashboard | Lead已登记至178来源；本次修正解析字段，等待下一次正常聚合；不改生成JSON。 |
-| 架构影响 | 复用现command/CAS/queue/session与同client50项批量投影；新增精确会话协商和native-v2目录，dashboard待固定branch→main后由原owner更新。 |
+| 架构影响 | main复用现command/CAS/queue/session与REQ15同client批量投影；新增会话协商/native-v2目录已集成。dashboard架构固定基线待其合法owner接main4fe，不擅改生成数据。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -39,7 +39,7 @@
 | C02-02 | in-progress | chatui01_owner | 原单FSM start/resume，7项注入通过；旧post-terminal确定化真实交付反例已通过，收据在fixture-delta-* |
 | C02-03 | in-progress | chatui01_owner | 原R1 5/6失败保持；cwd窄修后[R2原六组](../../docs/evidence/mature02c02/pg-MATURE02C02-PG-20261007-R2.report.md)单次6/6通过，跨两注入transport/真实PG公开API结果已独审；0真实Codex/provider，heavy已归还 |
 | C02-04 | in-progress | chatui01_owner | [loader Interface](../../docs/evidence/mature02c02/loader-interface.md)：四源42 distinct分轮/strict0已独审；main两源已v4领取并接入，固定宿主recipe复用唯一R06；41 distinct分轮、生产focused strict0已独审。详见[main Interface](../../docs/evidence/mature02c02/main-interface.md)。生产R06/CODEX_HOME recipe与持续根生命周期、global remote-status和32/512 stream内核已在本次局部段验证，公开流持久化/读取/界面属C02-05后继；真实两轮另窗。 |
-| C02-05 | in-progress | chatui01_owner | 公开stream已main5cae7a25；conversation policy/035/目录/REQ15批量typed reply已在分支实现，0ecd+7070源码已独审，真实专库六例原5/6FAIL，本次仅末项1/1通过，结果已独审；Web/TUI和真实native仍待后继 |
+| C02-05 | in-progress | chatui01_owner | 公开stream已main5cae7a25；conversation policy/035/目录/REQ15批量typed reply已main4fe，0ecd+7070源码已独审，真实专库六例原5/6FAIL，本次仅末项1/1通过，结果已独审；Web/TUI和真实native仍待后继 |
 
 
 ## 当前验证与历史固定记录
@@ -58,9 +58,9 @@
 
 已main5cae7a25：public25源原5219/4ec批准范围叠加2ab3c6ff静默修复，最终字节由执行562d/输入snapshot2a125固定；6组PG结果3e52已独审，不混旧private intake。最后根确认按post-run原件05:42:22.313989Z；早期消息05:41:42是更早lstat，不替原件时点。
 
-下一精确交付：当前分支Codex会话policy/typed目录/035已实现并经源码独审，318输入sentinel已实际1/1，结果独审已通过、等待main接收；旧六组task/公开流证据不替代conversation验收。
+下一精确交付：当前分支Codex会话policy/typed目录/035已实现并经源码独审，318输入sentinel已实际1/1，结果独审已通过且main4fe已接收；旧六组task/公开流证据不替代conversation验收。
 
-共享出口交回条件：packages/client/src/index.ts、packages/contracts/src/index.ts当前仍由本claim持有。待本会话片真实PG、独审与main receipt完成，明确停止这两literal写入并原子amend移除，不绑定完整native/Web目标。CHAT05P01 [既有接口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/docs/evidence/chat05p01/interface.md)路径已只读确认；其body reader/exports与X01 v3 client需求由合法owner按ready-first串行领取，当前不提前交权。
+共享出口已交回：packages/client/src/index.ts、packages/contracts/src/index.ts在main4fe回执核符后正式STOP并随v15原子移除，CHAT05P02须fresh take；不绑定完整native/Web目标。CHAT05P01 [既有接口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-activity-body/docs/evidence/chat05p01/interface.md)路径已只读确认；其body reader/exports与X01 v3 client需求由合法owner按ready-first串行领取，当前不提前交权。
 
 2026-10-07T06:38:52.354024+00:00 分页准备P2修复：固定e7a130c4，四行顺序为hidden-first/visible/hidden-between/visible，逐页内容+cursor断言；仅新focused types0/1child，0B raw、双EOF/group absent、同inode TMP删除。原list6不重跑、六PG仍NOT_RUN。独审入口[分页delta](../../docs/evidence/mature02c02/conversation-pg-pagination-fix-review-ready.json)，旧失败与UNKNOWN资源不回填。
 
@@ -77,3 +77,5 @@
 2026-10-07T07:09:24.952958+00:00 Main intake: [precise path deltas](../../docs/evidence/mature02c02/conversation-main-intake.json), original23bindings + necessary test/fixture delta, result review pending. Never overwrite main S01P08 adapter or shared index additions. Lazy reasoning is only [read-only next-interface input](../../docs/evidence/mature02c02/lazy-reasoning-interface-candidate.md), not a blocker for this intake or planned export handback.
 
 2026-10-07T07:14:53.275451+00:00 READY: [conversation main intake](../../docs/evidence/mature02c02/conversation-main-intake.json) is approved for controlled path-delta integration. No old runner/adapter/stream overwrite; preserve main client/contracts additions. Exchange two-leaf STOP/removal is complete independently of conversation main; ENG01J must fresh take. Client/contracts index remain held until this conversation main receipt, then STOP and atomic removal for CHAT05/X01. No new checks/PG/provider. Lazy candidate remains research.
+
+2026-10-07T07:21:56.779955+00:00 Main closeout complete. First owner-confirmed main integration observation: 2026-10-07T07:20:24.759399+00:00; exact pushUTC UNKNOWN (receipt initialization07:16:41 and finalcheck07:17:07 are not push time). Branch delivery/independent review timestamps stay in their fixed receipts. Deployment/full-completion remainUNKNOWN/NOT_COMPLETED. v15 removal committed07:20:24.899Z. No new product edits/checks/PG/provider.
