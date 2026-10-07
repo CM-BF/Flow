@@ -17,12 +17,12 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-upstream-upgrade |
 | Branch | codex/plugin-upstream-upgrade |
 | Base | 62e9a83923a3c2996b4ab32610e10e2069828c66 |
-| HEAD | 90e131b4a789d526ee3cb2ffac501f26d47e8953 |
-| 工作树dirty状态 | own result/status sealing; product and fixed inputs unchanged |
+| HEAD | 283d58cdba7b77e70140846671ad1ebff7c5dd60 |
+| 工作树dirty状态 | result fixed; only this review handoff metadata |
 | 实现目标 | 9617bda0f25e11214a3f5893337d3bab733173c8 |
 | 实现范围 | experiments/plugins/semver-range-upgrade,apps/runner/src/plugins/semver-upstream-upgrade.test.ts,apps/server/src/plugin-runtime/upstream-version-pg.test.ts,docs/evidence/x01-upstream-upgrade/execute-pg-once.py,docs/evidence/x01-upstream-upgrade/run-pg-preparation.py,docs/evidence/x01-upstream-upgrade/pg-input.json,docs/evidence/x01-upstream-upgrade/pg-tsconfig.json,docs/evidence/x01-upstream-upgrade/pg-vitest.config.mjs |
 | 检查状态 | PASSED 9617bda0f25e11214a3f5893337d3bab733173c8 本次真实中心R1单例1/1；历史本地3/3和same-tree types/list分层保留 |
-| Review | APPROVED source/local/preparation；本次PG结果PENDING_FIXED_REVIEW |
+| Review | APPROVED source/local/preparation；本次PG结果283d58cdba7b77e70140846671ad1ebff7c5dd60 PENDING独审 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
 | 最近更新时间 | 2026-10-07T12:11:21.036Z |
 | 任务开工时间 | 2026-10-07T11:38:39Z |
