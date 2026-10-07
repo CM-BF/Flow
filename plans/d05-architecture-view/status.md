@@ -2,7 +2,7 @@
 
 | 字段 | 值 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T11:40:10.452Z / main51dc0b47；第196个唯一来源已实际载入 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T11:50:59.653486Z / main99d7fa39；198个唯一来源已实际载入 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 初始D05交付记录保留于deployment.json与历史段；没有足够字段证明完整任务起止，不以登记或进程替换时间补造。当前来源发布实采2026-10-07T08:20:31.727602+00:00，见svc09-live.json。 |
@@ -14,14 +14,14 @@
 | Branch | codex/dashboard-architecture |
 | 工作基线 / HEAD | 3773db5d014a6d38d09553acd0a5fe8df900b7c4 / cad1251fdbe8f8b527a78c60cf45adce68e4f534（所审实现；后续metadata另见Git） |
 | 工作分支状态 | in-progress |
-| 已集成 main 状态 | main/origin51dc0b47已含第196个唯一来源；4320实际196源，轻摘要与本机登录公开元数据200，未读取凭据或操作个人产品。 |
+| 已集成 main 状态 | main/origin99d7fa39已含198个唯一来源；4320实际198源，新增两项插件命令/宿主候选的父任务与人读摘要已核；轻摘要与本机登录公开元数据200，未读取凭据或操作个人产品。 |
 | 实现目标 | cad1251fdbe8f8b527a78c60cf45adce68e4f534 |
 | 实现范围 | apps/execution-dashboard/public/architecture.js, apps/execution-dashboard/public/architecture-data.js, apps/execution-dashboard/public/architecture.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/src/server.mjs |
 | 检查状态 | PASSED cad1251fdbe8f8b527a78c60cf45adce68e4f534：局部Node 2/2；45节点源码路径固定基线存在；CUA五视图、980浅色/390深色、键盘/缩放/刷新保持，0模型 |
 | Review | APPROVED：Goal Owner固定cad1251只读源码与实际CUA；未重跑工程测试 |
 | 阶段 | M2 |
 | 优先级 | 4 |
-| 当前产出 | 看板已显示插件启停的真实进度，轻摘要、登录入口与任务时间继续可用。 |
+| 当前产出 | 看板已显示插件命令和可用宿主选择的真实进度，轻摘要、登录入口与任务时间继续可用。 |
 | 下一可用交付 | 本次来源登记已交付；后续状态由各任务唯一owner更新。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -252,3 +252,5 @@ Goal Owner独立真实页面验收：默认空→显式加载为掩码→复制�
 2026-10-07T10:32:08.840473Z—10:32:09.285492Z：按固定main b67530bb正常替换已核自有4320进程，195源实际加载；详细原始回执单份位于 [I02实际发布](../../../m2-integration/docs/evidence/i02/dashboard-cli-source-deployment.json)。X01-CLI当时有TODO状态不可识别提示，已交原owner收口；不由看板猜测，也不将本次登记核对称为产品或视觉复测。个人服务、凭据内容和用户标签未操作。
 
 2026-10-07T11:40:10.452Z：[第196个来源实际回执](../../docs/evidence/d05/plugin-runtime-live.json)确认固定main51dc、旧自有进程已停止、新PID94149，摘要HTTP200/196项，新插件sourceCurrent=true/live且人读字段完整。父任务层级仍unknown，交原Web owner澄清，不让聚合器推断；未跑产品或浏览器检查，未读取token/改个人服务/刷新原tab。当前status经固定main51dc的parseStatus核对。
+
+2026-10-07T11:50:59.653486Z：main99d7fa39的198源已实际发布；新增两项X01 source为live/current、人读完整、父任务已解析。只替换身份已核且正常停止的自有4320进程，未操作个人服务、用户标签或凭据；[实际公开HTTP回执](../../docs/evidence/d05/x01-candidates-live.json)。本次是来源登记落地，不扩大各产品片的原验收范围。
