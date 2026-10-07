@@ -1,0 +1,71 @@
+{
+  "taskId": "X01-PLUGIN-COMMAND-ACK01",
+  "observedAt": "2026-10-07T11:52:41.728505+00:00",
+  "main": "de5475039d73caec631ba2ee64556208dbb1751d",
+  "productIntake": "a5e1734276ef891df2ca47523b5109f0d87f84b9",
+  "canonical": "docs/evidence/i02/x01-candidates-combined-intake.json",
+  "canonicalSha256": "517da57a94a206828650e54952fd18e3d695526b1809ed2f46a2d5ba4dc3c8bb",
+  "intakeUpdatedAt": "2026-10-07T11:48:02.617996+00:00",
+  "rows": [
+    {
+      "path": "packages/client/src/index.ts",
+      "acceptedSource": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "currentFinalSource": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "currentSha256": "061bab6f09d4f1f946ba8a2a5185faaf457bba7a06c2ce2241ed90a47a30ebba",
+      "laterReviewedDelta": true
+    },
+    {
+      "path": "packages/client/src/plugin-management.ts",
+      "acceptedSource": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "currentFinalSource": "bc54d4f3c7f4d34230f5a5c012a75f0b30ca30c5",
+      "currentSha256": "c301f1f5362f0d89ab60f103dc26c9dd6c7c60cef7fd2a58f6c0936fc04765e6",
+      "laterReviewedDelta": true
+    },
+    {
+      "path": "packages/client/src/plugin-command-ack.test.ts",
+      "acceptedSource": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "currentFinalSource": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "currentSha256": "2e9d14ab13bd0261904b495a18d298d2dc28aa0a8b9daef7883b0ba552098c38",
+      "laterReviewedDelta": false
+    },
+    {
+      "path": "apps/cli/src/plugin-command-ack.test.ts",
+      "acceptedSource": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "currentFinalSource": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "currentSha256": "39ff6186ba434a314a0667175136c5422070126b731d34df5761923a0d6784c6",
+      "laterReviewedDelta": false
+    },
+    {
+      "path": "docs/evidence/x01-plugin-command-acks/fixtures.ts",
+      "acceptedSource": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "currentFinalSource": "ae1482fdb498ec367aeeb0f142381ac966d18909",
+      "currentSha256": "d95a44bf46be153c3fe509ed3de57c2578c17a6e1fdbf5527cd8fc1d0daad8c3",
+      "laterReviewedDelta": false
+    }
+  ],
+  "combination": {
+    "path": "x01-candidates-combination/result.json",
+    "rootNoEmitExit": 0,
+    "selected": 3,
+    "passed": 3,
+    "unselected": 33,
+    "milliseconds": 11366,
+    "rawBytes": 506,
+    "twoGroups": "absent/dualEOF/no firstFailure",
+    "scratch": "exact pre-recorded dev/ino empty removed",
+    "PG": 0,
+    "provider": 0
+  },
+  "review": {
+    "reviewer": "assignment_review / gpt-6-astra",
+    "decision": "APPROVED_LIMITED_CONTROLLED_INTAKE",
+    "target": "a5e1734276ef891df2ca47523b5109f0d87f84b9",
+    "findings": [],
+    "rows": 18,
+    "uniqueProductPaths": 16,
+    "receivedPaths": 119,
+    "receivedBytes": 557722,
+    "scope": "Canonical review coverage, sequential preimages, final hashes and necessary support; no new execution or domain re-review."
+  },
+  "limits": "No new tests/PG/provider/runtime. ACK index/helper intentionally extended by reviewed HOST consumer, not required to equal earlier whole blob. Registry/deployment has no new observed receipt."
+}
