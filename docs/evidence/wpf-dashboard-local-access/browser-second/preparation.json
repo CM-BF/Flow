@@ -1,0 +1,29 @@
+{
+  "state": "PREPARED_NOT_RUN_NO_HEAVY_WINDOW",
+  "metadata": "01867830be77b5ce8df34f9c4b57e56ba259f564",
+  "source": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "totalBudgetMs": 60000,
+  "previousConservativeSpentMs": 7481,
+  "remainingMs": 52519,
+  "cleanupReserveMs": 15000,
+  "workMs": 37519,
+  "scriptPins": {
+    "run.py": "09ac049a54b315d9cca9c10f78ce5209a198da5f644e2174b1d4ef95a42ceb5f",
+    "worker.mjs": "3fcd86a271c265ba45ed074d3a44f1c7f8290f5c7ee779ef149f339cfb30a5dc"
+  },
+  "syntheticChecks": {
+    "result": "synthetic-result.json",
+    "cases": 2,
+    "elapsedMs": 403.83262501563877,
+    "testedParentSha": "88e3ef0f47159abffc3f2ef6ad1f218ba79644c8201f93e3d45740763d5f39d8",
+    "laterSourceOnlyDelta": "Parent late-signal also flips an existing report state to FAILED; worker handled signal immediately sets exitCode1. No second synthetic run; those late-seal additions source-only."
+  },
+  "delta": [
+    "os.walk onerror ignores ENOENT only; all other I/O errors remain fatal",
+    "parent exception cleanup continues bounded reading to EOF before closing pipes; primary vs cleanup errors separate",
+    "owned signal errors retained; only ESRCH proves group absence, unknown/live keeps scratch",
+    "Chrome log written after terminal stop and EOF, retained/observed/truncated byte counts recorded",
+    "remaining budget52519; original failure and all original scripts/raw unchanged"
+  ],
+  "limits": "No Chrome/PG/HTTP/listener/product import in synthetic checks. Two controlled Python child checks verified real runner normal ENOENT and permission failure, both tails/EOF/reap/scratch. Chrome worker log finalization unrun."
+}

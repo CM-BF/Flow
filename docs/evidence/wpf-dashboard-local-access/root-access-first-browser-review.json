@@ -1,0 +1,74 @@
+{
+  "at": "2026-10-07T03:17:23.035779+00:00",
+  "reviewer": "/root independent",
+  "target": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
+  "decision": "FAILED_FIRST_BROWSER_RETAINED_RESOURCE_HANDOFF_ACCEPTED",
+  "actualExit": 1,
+  "actualOuterElapsedMs": 7480.106875067577,
+  "confirmedGroups": 4,
+  "totalGroups": 5,
+  "productFailure": "NOT_ESTABLISHED; fifth actual-visibility group interrupted by runner cleanup",
+  "primaryFailure": "FileNotFoundError: [Errno 2] No such file or directory: '/private/tmp/access01-browser-run-myrscxp7/scratch/com.google.Chrome.chrome_chrome_Unpacker_BeginUnzipping.Hezc87'",
+  "cleanupLimits": [
+    "Original parent EOF false and group signal PermissionError preserved.",
+    "Worker reports context/http closed, Chrome SIGTERM and dual EOF.",
+    "Later exact post-cleanup receipt reports owned worker/Chrome/group absent, CDP refused and scratch absent; this audit reads that receipt without resampling services."
+  ],
+  "postCleanup": {
+    "at": "2026-10-07T03:15:28.625238+00:00",
+    "ownedPids": {
+      "worker": "absent",
+      "chrome": "absent"
+    },
+    "workerGroup": "absent",
+    "scratchAbsent": true,
+    "cdpPort": 51434,
+    "cdpConnectResult": 61
+  },
+  "visualReview": "Inspected both actual390px screenshots. Empty token, readable dialog explanation, mask/show/copy affordances disabled before load, visible keyboard focus, no horizontal dialog overflow; light and dark supported. No real credential in images.",
+  "remainingBudgetMs": 52519,
+  "next": "Owner to fix temporary-runner ENOENT race, drain exceptional cleanup output, persist final Chrome logs and count truncation; retain source and all five assertions, no automatic retry or inherited heavy holder.",
+  "pins": [
+    {
+      "path": "/private/tmp/access01-browser-run-myrscxp7/actual-exit.json",
+      "bytes": 55,
+      "sha256": "1bcecd695d9d150f2a1b5b687bd8140941719999bb7e1a61444dd07ed5165845"
+    },
+    {
+      "path": "/private/tmp/access01-browser-run-myrscxp7/terminal.stdout",
+      "bytes": 1456,
+      "sha256": "7a8df2c84ea8c797c527a5bb1d456828e5b0afd4a9234b869966527d3c91a11b"
+    },
+    {
+      "path": "/private/tmp/access01-browser-run-myrscxp7/post-cleanup.json",
+      "bytes": 214,
+      "sha256": "1677d5024c1c2156ef3b37200742ac772bb2bed7250a98ce2b75f27b06b50fa4"
+    },
+    {
+      "path": "/private/tmp/access01-browser-run-myrscxp7/raw/browser-result.json",
+      "bytes": 637,
+      "sha256": "2be9cad7de048441d6fc4d3f435f83476f9dcb1e2961467e95517d7bcbe5a9d4"
+    },
+    {
+      "path": "/private/tmp/access01-browser-run-myrscxp7/raw/worker-result.json",
+      "bytes": 951,
+      "sha256": "728e8107f28b6beb2bc2e404779273f36696c1e2bbc3f15492bc4525d25046b7"
+    },
+    {
+      "path": "/private/tmp/access01-browser-run-myrscxp7/raw/result.json",
+      "bytes": 1383,
+      "sha256": "946a78cc5cfc0cc044e681f61897e083c258ca8c049a4652d01caa30cf7a3996"
+    },
+    {
+      "path": "/private/tmp/access01-browser-run-myrscxp7/raw/390-light.png",
+      "bytes": 75164,
+      "sha256": "b8734895792a052930416ae7a944f6903cba7d0e1a130fbc11efeaadf6909629"
+    },
+    {
+      "path": "/private/tmp/access01-browser-run-myrscxp7/raw/390-dark.png",
+      "bytes": 72218,
+      "sha256": "7a45af6e7b11a881c785a12e5b5750e98b13f69b408a81dcec1d72b1d56c57ca"
+    }
+  ],
+  "sourceApproval": "Previous08ec+35direct scoped approval unchanged; full browser, private installation, main and published4320 remain unverified."
+}

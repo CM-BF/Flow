@@ -2,7 +2,7 @@
   "task": "WPF-DASHBOARD-ACCESS01",
   "base": "943a66bfa5f71f4a5000ff2674ac1973e85e0353",
   "implementation": "08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7",
-  "state": "SOURCE_FIXED_DIRECT35_PASSED_BROWSER_NOT_RUN",
+  "state": "SOURCE_FIXED_DIRECT35_PASSED_BROWSER_FAILED_4_OF_5",
   "sources": [
     {
       "path": "apps/execution-dashboard/src/server.mjs",
@@ -54,8 +54,8 @@
   ],
   "staticExpectedTests": 35,
   "imports": "Direct entry imports only local-access.mjs and Node built-ins; no aggregate/pg/browser/personal configuration.",
-  "browserEntry": "checkLocalAccessBrowser({browser,expect,outputDirectory}) exported from test/local-access.browser.mjs; real server/UI with explicit empty snapshot/fake token. External isolated browser owner supplies Chrome supervision; not yet prepared or run.",
-  "runtime": "35/35 dedicated Node direct PASSED; browser NOT_RUN",
+  "browserEntry": "checkLocalAccessBrowser({browser,expect,outputDirectory}) exported from test/local-access.browser.mjs; real server/UI with explicit empty snapshot/fake token. Two authorized isolated runs are archived separately; same original five groups, both FAILED with four groups passed.",
+  "runtime": "35/35 dedicated Node direct PASSED; browser-first parent accounting interrupted visibility; browser-second actual visibility precondition timed out. No third run.",
   "realInstallation": "NOT_READ_NOT_VERIFIED",
   "main": "NOT_INTEGRATED",
   "deployment4320": "NOT_DEPLOYED"
