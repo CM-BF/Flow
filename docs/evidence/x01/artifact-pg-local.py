@@ -21,13 +21,13 @@ resources = load('x01_claim_resources', EVIDENCE / 'enable-binding-pg-once.py')
 label = sys.argv[1]
 if label not in ('types', 'list'): raise ValueError('Only the two focused consumers are selected')
 now = lambda: datetime.datetime.now(datetime.timezone.utc).isoformat()
-record = json.loads(RECORD.read_text()) if RECORD.exists() else {'startedAt': now(), 'startEpoch': time.time(), 'attempts': [], 'unknown': False,
+record = json.loads(RECORD.read_text()) if RECORD.exists() else {'startedAt': '2026-10-07T07:53:37Z', 'startEpoch': datetime.datetime.fromisoformat('2026-10-07T07:53:37+00:00').timestamp(), 'localStartedAt': now(), 'attempts': [], 'unknown': False,
     'limits': {'segmentSeconds': 900, 'commands': 2, 'commandSeconds': 60, 'temporaryBytes': 16777216, 'rawBytes': 262144, 'sourceMetadataBytes': 1048576},
     'floorBytes': 4071096320, 'PG': 0, 'provider': 0, 'native': 0, 'tar': 0, 'wholeExternalWall': None}
 if record['unknown'] or len(record['attempts']) >= 2 or time.time()-record['startEpoch'] >= 840: raise ValueError('Segment exhausted or unknown')
 free = shutil.disk_usage(ROOT).free
 if free < record['floorBytes']: raise ValueError('Fresh combined floor not met')
-root = Path(tempfile.mkdtemp(prefix='flow-x01-artifact-pg-')); identity = root.lstat(); 
+root = Path(tempfile.mkdtemp(prefix='flow-x01-artifact-pg-')); identity = root.lstat();
 step = {'label': label, 'startedAt': now(), 'freeBeforeBytes': free, 'temporary': {'path': str(root), 'dev': identity.st_dev, 'ino': identity.st_ino, 'removed': False}}
 record['attempts'].append(step)
 RECORD.write_text(json.dumps(record, indent=2)+'\n')
