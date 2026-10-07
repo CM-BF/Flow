@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-07T22:07:27.912Z",
+  "decision": "ACCEPTED_FIXED_E15_COLD_AND_FOUR_APP_EVIDENCE",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "manifestDigest": "e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd",
+    "sourceHead": "880060a317cd99f3f29b41333f6dd7d7f5ab1488"
+  },
+  "cold": {
+    "ownerCommit": "81fa3974e09baab151f562074aa1f5c3f8ce4903",
+    "canonical": "backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2-result-manifest.json",
+    "manifestSha256": "4deb802df0e84523209950113c3aff0510a0958be8261762afd56f588a5e7601",
+    "peerCommit": "355f4706f8bf798543c9cf6dcb98875dec1d2b81",
+    "peerPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/peer-recovery-cold-r2-review.json",
+    "peerSha256": "6de8528a5818ce3022cfffae02cbbabba4751796305cf0b4144d06e09da60d5b",
+    "decision": "APPROVED_LIMITED_REAL_DEFAULT_THREE_ROLE_COLD_RESULT_FIDELITY",
+    "actualStart": "2026-10-07T21:59:12.729Z",
+    "exactReturn": "2026-10-07T22:00:23.226Z",
+    "scope": "Current default3/runner initialized/0task0attempt/explicit stop/known resources closed; DBprivate KEEP; actual claim NO_ASSIGNMENT_OBSERVED"
+  },
+  "fourApps": {
+    "ownerCommit": "b4222f7660a8e4a176285ff154c82afd95ba3d98",
+    "intake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/main-intake.json",
+    "review": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/backend-e15-actual-first/root-actual-review.json",
+      "bytes": 13917,
+      "sha256": "2fd4b6446828a98fce80b323d487a296a9490b3ffe80ed43748c23e732e3cdad"
+    },
+    "decision": "APPROVED_SCOPED_ACTUAL_RESULT",
+    "rawFiles": 58,
+    "rawBytes": 773536,
+    "canonicalBindingsCheckedByLead": 24,
+    "reports": [
+      {
+        "webArtifact": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "compatibilityId": "41580d34c28e56812af28f39380de7b458007d227ac172d8a4d98bdffb3ec698"
+      },
+      {
+        "webArtifact": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "compatibilityId": "6056fec5fb6e7c4ac17acc80cf753aa48ace7bf641e92c78c254c6fa63829117"
+      },
+      {
+        "webArtifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "compatibilityId": "9337b9d2405e2d038eb37a1febb148b82e8685481e21a3d4e80c79a8ab7d17e1"
+      },
+      {
+        "webArtifact": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+        "compatibilityId": "b81567e6c2a471a072f924d6d6f9c5b902d63ae4a8087b2c6c2f8be88dbbc30c"
+      }
+    ],
+    "actualStart": "2026-10-07T21:57:36.662404Z",
+    "exactReturn": "2026-10-07T21:58:28.977667Z",
+    "chargeMs": 27215,
+    "cleanup": "MarkedDB normalDROP; ownPID/PGID absent/EOF, scratchprofile absent, adminclosed",
+    "intakeBinding": {
+      "bytes": 17583,
+      "sha256": "905af75b5cb1c1859ba5e482180a65967c1a17127aa059dbef59a0b8cdd11186"
+    }
+  },
+  "blocking": [],
+  "notYetProven": [
+    "same held personal operation restored",
+    "newWeb published",
+    "new user task native provider success"
+  ],
+  "leadActions": "Read exact fixed reports/checks with current/Git/hash equality and independent review. No engineering re-execution or private directory observation."
+}
