@@ -1,0 +1,41 @@
+{
+  "at": "2026-10-07 08:00:03 UTC",
+  "source": "d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5",
+  "state": "PASS_SCOPED_LOCAL_NOT_BROWSER",
+  "actualCases": 12,
+  "passed": 12,
+  "skipped": 0,
+  "noEmitExit": 0,
+  "elapsedMs": 6283.637208980508,
+  "logBytes": 1146,
+  "sourceTestSha256": "611f265c5c8a0afacd6466a8bbf30398aaeda0decf0d18a126a21ba3c8cc66ed",
+  "files": [
+    {
+      "path": "run.py",
+      "bytes": 3672,
+      "sha256": "6378fd0612de3ef6575c272a48e425e4df70f5e4a200ec720e33a74f5c787b8b"
+    },
+    {
+      "path": "sandbox.sb",
+      "bytes": 158,
+      "sha256": "b537128ae8100eb5cffbe881bb62dd1160b88427bc6678dda226a2f686c4eef2"
+    },
+    {
+      "path": "observer.log",
+      "bytes": 1146,
+      "sha256": "914609a8dbad67c2844259a20bfbff32fef10926f347823790bfd334b6626b4a"
+    },
+    {
+      "path": "types.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "segment.json",
+      "bytes": 1669,
+      "sha256": "44fdd3360aa45f06e5af5b7634d3f9659a460799f491d6ffe734b0247619edd0"
+    }
+  ],
+  "retainedTmpMethod": "Original files copied byte-for-byte before removing this exact own temporary directory; no dependency cache writes allowed.",
+  "temporaryDirectoryRemoved": true
+}

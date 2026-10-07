@@ -1,6 +1,6 @@
 {
   "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
-  "state": "QUEUE_SELECTED_ACTUAL_ACCEPTED_REMAINING_FEATURE_VALIDATION",
+  "state": "SSE_DELIVERY_SOURCE_AND_LOCAL_ACCEPTANCE_READY_NOT_BROWSER_RUN",
   "authorization": {
     "path": "continuous-segment-authorization.json",
     "sha256": "6ea79981213d5df67f1e7ae4c603a90bbf7823daebf53aa15bf85e08f7ed5090"
@@ -17,7 +17,7 @@
     "perAttemptMaximumMs": 60000,
     "cleanupReserveMs": 15000,
     "scratchBytes": 67108864,
-    "totalEvidenceBytes": 8388608,
+    "totalEvidenceBytes": 9437184,
     "logBytes": 1048576,
     "additionalSourceMetadataBytes": 1048576,
     "defensiveCumulativeCeilingMs": 240000
@@ -137,13 +137,13 @@
       "adminEnvDeleted": true
     }
   ],
-  "nextSelection": null,
+  "nextSelection": "sse-delivery",
   "fullFeatureReview": "IN_PROGRESS",
   "noCurrentGate": true,
-  "sourceTarget": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
-  "sourceCheckpoint": "monitor-retirement-checkpoint.json",
+  "sourceTarget": "d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5",
+  "sourceCheckpoint": "sse-delivery-checkpoint.json",
   "chargeRule": "ceil(max(actual outer, late parent, serialized parent)) per attempt; original raw unchanged",
-  "currentReviewTarget": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+  "currentReviewTarget": "d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5",
   "p2FixReview": {
     "path": "55b-p2-fix-root-review.json",
     "sha256": "ed651acec5332c0eeeea56ad5b3cbbeb1b4c8986aaeb2e991043eca255ba70c7",
@@ -158,5 +158,15 @@
     "rootReview": "monitor-retirement-root-review.json",
     "runtime": "continuous-fifth-manifest.json"
   },
-  "nextProposal": "remaining-validation-after-queue.md"
+  "nextProposal": "remaining-validation-after-queue.md",
+  "retainedBoundaryChange": {
+    "at": "2026-10-07 07:56:05 UTC",
+    "authority": "root explicit same-segment grant",
+    "previousBytes": 8388608,
+    "currentBytes": 9437184,
+    "runReserveBytes": 5242880,
+    "startThresholdBytes": 4194304,
+    "combinedFreshFloorBytes": 4054056960
+  },
+  "sseLocalEvidence": "sse-local/manifest.json"
 }

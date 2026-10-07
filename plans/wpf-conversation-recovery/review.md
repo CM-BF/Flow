@@ -1,8 +1,8 @@
 # WPF-RECOVERY01 独立审查
 
-状态：IN_PROGRESS。当前target344f12；原full7/choice/CREATE两故障点/Queue enqueue各有固定源与实际限定独审。Queue 2/2及owned清理已由root接受，promotion/Steer/SSEdelivery/完整材料组合/二中心未验；不自评整体feature通过。
+状态：IN_PROGRESS。当前targetd68b6bc；原full7/choice/CREATE两故障点/Queue enqueue各有固定源与实际限定独审。Queue 2/2及owned清理已由root接受，promotion/Steer/SSEdelivery/完整材料组合/二中心未验；不自评整体feature通过。
 
-Review target commit：`344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
+Review target commit：`d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
 
 固定完整变更/修复/实证入口：[feature-review-entry.md](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)，19源/base/pins明确；当前root审查进行中，不是作者自评。
 
@@ -237,3 +237,11 @@ Root [本轮实际独审](../../docs/evidence/wpf-conversation-recovery/continuo
 ## 2026-10-07 07:43:27 UTC — Queue实际限定独审
 
 [Root原件](../../docs/evidence/wpf-conversation-recovery/continuous-sixth-root-review.json)绑定344f/fafc，核19Git/11raw/原key-body-revision-item-refs、2selected/owned清理，0finding。完整feature IN_PROGRESS、main未接；既有source/local批准和所有历史失败原件不改。
+
+## 2026-10-07 07:56:05 UTC — SSE增量
+
+当前增量target d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5，只有两test；17其他源同344f。新增被动SSE witness/选择及retained一次增量待root聚焦源审，12纯流/真实SSE仍NOT_RUN，不能把Queue已接受范围扩成此场景或fullfeature。
+
+## 2026-10-07 08:00:03 UTC — d68限定源审与纯流实证
+
+[root固定源码审](../../docs/evidence/wpf-conversation-recovery/sse-delivery-root-review.json)0blocking，只有两harness增量。作者实际12/12+Web noEmit0、6283.637ms，见[sse-local](../../docs/evidence/wpf-conversation-recovery/sse-local/manifest.json)。未运行SSE浏览器，不把source或纯stream证据扩大为App事件交付/完整feature批准。
