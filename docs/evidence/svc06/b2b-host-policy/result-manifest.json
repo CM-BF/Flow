@@ -1,0 +1,358 @@
+{
+  "kind": "SVC06_B2B_HOST_POLICY_R1_RESULT",
+  "source": "3444895edf934c5c323639f232ef6fed7d51b022",
+  "entryManifestSha256": "c4d6b61e34e6c0704fa4dc40cc2a1510d18b99a3f84b6295faf0a20d1297495f",
+  "createdAt": "2026-10-07T09:39:51.416194+00:00",
+  "verdict": "FAIL_AT_DEFAULT_START_CLEANUP_CONFIRMED",
+  "bindings": [
+    {
+      "path": "entry-manifest.json",
+      "bytes": 6314,
+      "sha256": "c4d6b61e34e6c0704fa4dc40cc2a1510d18b99a3f84b6295faf0a20d1297495f"
+    },
+    {
+      "path": "independent-review.json",
+      "bytes": 4475,
+      "sha256": "670c19ec09c0954e0c8bb07e1e0411e06d51dba155a08f077df172b20506bc2b"
+    },
+    {
+      "path": "prewindow-preflight.json",
+      "bytes": 2200,
+      "sha256": "bb1ae7151ad94797b2c3acaf3a096463fef18e45ba4c064dc8931a11a763175f"
+    },
+    {
+      "path": "CONNECTIONS.md",
+      "bytes": 2493,
+      "sha256": "353ae934c38b850d09d0c2bebea74f3e34553b28b8ce4f43259acd2ec7fcd239"
+    },
+    {
+      "path": "cluster-preflight.json",
+      "bytes": 423,
+      "sha256": "46033f078b44e28ea00fa0b8dd878e840fede08dc4c197b6d5a7d7caa2dae141"
+    },
+    {
+      "path": "execution-preflight.json",
+      "bytes": 1810,
+      "sha256": "8f8c3e7261e9ca047c36afe47beec1fdee88e694b070edd795b759e024ae29c7"
+    },
+    {
+      "path": "actual-invocation.json",
+      "bytes": 281,
+      "sha256": "d82ea4edb0246911019a3ed19f31fe9388ff749a5c45fc367217db48e9d29682"
+    },
+    {
+      "path": "actual-completion.json",
+      "bytes": 401,
+      "sha256": "9679c791531559e8a1755f336ea5fa5278def2ba25f90f9d08b3d9412bee1910"
+    },
+    {
+      "path": "host-policy-outer.json",
+      "bytes": 3256,
+      "sha256": "f2a8d1e1f43303535ed4f4e2675476c26d2b3eeedc9bde53f4a712e97b807b20"
+    },
+    {
+      "path": "invocation.stdout",
+      "bytes": 359,
+      "sha256": "198b199aa0db114676b313e5edd0102a7851c5762db7a2ef717b1bc9aaead75c"
+    },
+    {
+      "path": "invocation.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "result-analysis.json",
+      "bytes": 3441,
+      "sha256": "12e7002ea11010a2cad47ad288f758cde4b2bc22840c31403130a3e7fab54864"
+    },
+    {
+      "path": "RESULT.md",
+      "bytes": 1559,
+      "sha256": "ee317ff8d054433d1bf84f72b5ef9e421e104ef1e486d0fd27c650a35f3feab7"
+    },
+    {
+      "path": "actual-r1/cleanup-checkpoint.json",
+      "bytes": 1013,
+      "sha256": "16f730015f3a1b99e4245d143cd023475343dd505be3119bcbff6a08beb83a3f"
+    },
+    {
+      "path": "actual-r1/cleanup-result.json",
+      "bytes": 1068,
+      "sha256": "7f3c77b877f8e9bdf91587d0a0a6c1dc909f7f9e2d6eeda5fb1490d07e3b2fd3"
+    },
+    {
+      "path": "actual-r1/clone-result.json",
+      "bytes": 420,
+      "sha256": "7c00f62eaad84cda65da43ebbcb60f07ccae267b299288809e9f7ebcc09bfd34"
+    },
+    {
+      "path": "actual-r1/clone-verified.json",
+      "bytes": 387,
+      "sha256": "f4c27a7232157ee3ca21e07b5a490d5320a3d234620a47ef550ae9b41de0eee3"
+    },
+    {
+      "path": "actual-r1/reservation.json",
+      "bytes": 565,
+      "sha256": "69ef6a59afc7b5fef50e35173f1a16ef886d3669b706284c38b36b14474a514e"
+    },
+    {
+      "path": "actual-r1/state-summary.json",
+      "bytes": 1784,
+      "sha256": "faa644d5bf0eb9dcff21b036fbf972542655afb5c68bae2f547644cd6e8bac72"
+    },
+    {
+      "path": "actual-r1/work-checkpoint.json",
+      "bytes": 935,
+      "sha256": "5ec067df9d0f94428b6b708ebd6a576b8b906bc95f67356d7e7b0f3d92d30c31"
+    },
+    {
+      "path": "actual-r1/work-result.json",
+      "bytes": 1630,
+      "sha256": "9bfb103972f7fc9093497fa17c120bcb5f810e7862c6f835577a49424aed3cca"
+    },
+    {
+      "path": "actual-r1/work-terminal.json",
+      "bytes": 354,
+      "sha256": "5afde835312e29055493e730106fb4cc1783e2e113e63d6ab0bfd68348ac5ff4"
+    }
+  ],
+  "privateOriginals": [
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/reservation.json",
+      "bytes": 565,
+      "sha256": "69ef6a59afc7b5fef50e35173f1a16ef886d3669b706284c38b36b14474a514e",
+      "dev": 16777234,
+      "ino": 123765858,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/clone-result.json",
+      "bytes": 420,
+      "sha256": "7c00f62eaad84cda65da43ebbcb60f07ccae267b299288809e9f7ebcc09bfd34",
+      "dev": 16777234,
+      "ino": 123798430,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/clone-verified.json",
+      "bytes": 387,
+      "sha256": "f4c27a7232157ee3ca21e07b5a490d5320a3d234620a47ef550ae9b41de0eee3",
+      "dev": 16777234,
+      "ino": 123798439,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/work-checkpoint.json",
+      "bytes": 935,
+      "sha256": "5ec067df9d0f94428b6b708ebd6a576b8b906bc95f67356d7e7b0f3d92d30c31",
+      "dev": 16777234,
+      "ino": 123798466,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/work-result.json",
+      "bytes": 1630,
+      "sha256": "9bfb103972f7fc9093497fa17c120bcb5f810e7862c6f835577a49424aed3cca",
+      "dev": 16777234,
+      "ino": 123822290,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/work-terminal.json",
+      "bytes": 354,
+      "sha256": "5afde835312e29055493e730106fb4cc1783e2e113e63d6ab0bfd68348ac5ff4",
+      "dev": 16777234,
+      "ino": 123822291,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/cleanup-checkpoint.json",
+      "bytes": 1013,
+      "sha256": "16f730015f3a1b99e4245d143cd023475343dd505be3119bcbff6a08beb83a3f",
+      "dev": 16777234,
+      "ino": 123822292,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/cleanup-result.json",
+      "bytes": 1068,
+      "sha256": "7f3c77b877f8e9bdf91587d0a0a6c1dc909f7f9e2d6eeda5fb1490d07e3b2fd3",
+      "dev": 16777234,
+      "ino": 123822294,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/state.json",
+      "bytes": 1595,
+      "sha256": "cedeb82d801a4a826f3989cfdcad33896cb0b7fdc43f3f39eee49ae76d93b6c4",
+      "dev": 16777234,
+      "ino": 123822289,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1,
+      "copied": false
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/config.json",
+      "bytes": 671,
+      "sha256": "1943a2bbc37393093988c4c45bfb6468e1565cc12b1989ea0654470feeab9b7d",
+      "dev": 16777234,
+      "ino": 123821794,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1,
+      "copied": false
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/claude.json",
+      "bytes": 174,
+      "sha256": "1711fb04c26bbf4be485350fd0d5efabe649493ce41f03a7e352be901c346c07",
+      "dev": 16777234,
+      "ino": 123798442,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1,
+      "copied": false
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/center-exit.json",
+      "bytes": 104,
+      "sha256": "c49c0f1ec1ce654fa05e777c60e1048b8d6f9224882e0c117bbbdadffacaa776",
+      "dev": 16777234,
+      "ino": 123822288,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1,
+      "copied": false
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/inputs.json",
+      "bytes": 141523,
+      "sha256": "7b0549f247598aaed6522b6cec12d2cf9510a6fb3512db5cc51a82abe87003fe",
+      "dev": 16777234,
+      "ino": 123765881,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1,
+      "copied": false
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/entry.mjs",
+      "bytes": 16947,
+      "sha256": "ffa3bcdcc2534baa0c32c5942b2cee50ce38b2343f09c3d78ce1cb7bf0e25fe6",
+      "dev": 16777234,
+      "ino": 123765902,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1,
+      "copied": false
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/journey.mjs",
+      "bytes": 18881,
+      "sha256": "3efdd3daa720edbad73cba1e8c851441cffef2f0cbebc2005a18633e746f89ce",
+      "dev": 16777234,
+      "ino": 123765916,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1,
+      "copied": false
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/work-terminal.mjs",
+      "bytes": 666,
+      "sha256": "c8c5c1663a19066f8b193a4493e80b9f5056a3e3e9188e515863f1a722cfcecc",
+      "dev": 16777234,
+      "ino": 123765925,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1,
+      "copied": false
+    },
+    {
+      "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/history-before.json",
+      "bytes": 5719,
+      "sha256": "3c3a9f83df22841950a8fffa7fd9d6c62cd4aaa622c8e3873477c0097558767d",
+      "dev": 16777234,
+      "ino": 123798450,
+      "mode": "0o600",
+      "uid": 501,
+      "nlink": 1,
+      "copied": false
+    }
+  ],
+  "byteExactPublicCopies": [
+    {
+      "path": "actual-r1/reservation.json",
+      "bytes": 565,
+      "sha256": "69ef6a59afc7b5fef50e35173f1a16ef886d3669b706284c38b36b14474a514e",
+      "privateSource": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/reservation.json"
+    },
+    {
+      "path": "actual-r1/clone-result.json",
+      "bytes": 420,
+      "sha256": "7c00f62eaad84cda65da43ebbcb60f07ccae267b299288809e9f7ebcc09bfd34",
+      "privateSource": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/clone-result.json"
+    },
+    {
+      "path": "actual-r1/clone-verified.json",
+      "bytes": 387,
+      "sha256": "f4c27a7232157ee3ca21e07b5a490d5320a3d234620a47ef550ae9b41de0eee3",
+      "privateSource": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/clone-verified.json"
+    },
+    {
+      "path": "actual-r1/work-checkpoint.json",
+      "bytes": 935,
+      "sha256": "5ec067df9d0f94428b6b708ebd6a576b8b906bc95f67356d7e7b0f3d92d30c31",
+      "privateSource": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/work-checkpoint.json"
+    },
+    {
+      "path": "actual-r1/work-result.json",
+      "bytes": 1630,
+      "sha256": "9bfb103972f7fc9093497fa17c120bcb5f810e7862c6f835577a49424aed3cca",
+      "privateSource": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/work-result.json"
+    },
+    {
+      "path": "actual-r1/work-terminal.json",
+      "bytes": 354,
+      "sha256": "5afde835312e29055493e730106fb4cc1783e2e113e63d6ab0bfd68348ac5ff4",
+      "privateSource": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/work-terminal.json"
+    },
+    {
+      "path": "actual-r1/cleanup-checkpoint.json",
+      "bytes": 1013,
+      "sha256": "16f730015f3a1b99e4245d143cd023475343dd505be3119bcbff6a08beb83a3f",
+      "privateSource": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/cleanup-checkpoint.json"
+    },
+    {
+      "path": "actual-r1/cleanup-result.json",
+      "bytes": 1068,
+      "sha256": "7f3c77b877f8e9bdf91587d0a0a6c1dc909f7f9e2d6eeda5fb1490d07e3b2fd3",
+      "privateSource": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1/host-policy-once/cleanup-result.json"
+    }
+  ],
+  "runRoot": {
+    "path": "/private/tmp/flow-svc06-b2b-host-policy-20261007-r1",
+    "dev": 16777234,
+    "ino": 123765850
+  },
+  "originalArtifactRetained": true,
+  "noProductChange": true,
+  "noRetry": true
+}

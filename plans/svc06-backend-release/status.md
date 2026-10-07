@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 09:35:19 UTC；source344入口准备独审已批准，实际运行仍待共享窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 09:40:22 UTC；r1实际启动失败，原组与专库清理确认，结果待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -14,20 +14,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
 | 工作基线 / HEAD | 原owner基线1e7c423ea2c5738d68adf182673803668c47b15d；当前入口3444895edf934c5c323639f232ef6fed7d51b022；artifact固定main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388 |
-| 工作树dirty状态 | 仅归档唯一独审、连接账与fresh只读事实；344入口/manifest c4d6/产品零改 |
+| 工作树dirty状态 | 仅封本次r1原始结果/分析/manifest及own metadata；344入口与产品不改 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 实现目标 | 3444895edf934c5c323639f232ef6fed7d51b022 |
 | 实现范围 | docs/evidence/svc06/b2b-host-policy/entry.mjs, docs/evidence/svc06/b2b-host-policy/journey.mjs, docs/evidence/svc06/b2b-host-policy/supervise.py, docs/evidence/svc06/b2b-host-policy/work-terminal.mjs, docs/evidence/svc06/b2b-host-policy/work-terminal.test.mjs, docs/evidence/svc06/b2b-host-policy/inputs.json, docs/evidence/svc06/b2b-host-policy/Interface.md |
-| 检查状态 | PASSED 3444895edf934c5c323639f232ef6fed7d51b022 仅3项纯guard与语法检查；真实copy/PG/宿主/迁移/策略旅程NOT_RUN，原构建结果独立保持 |
+| 检查状态 | FAIL 3444895edf934c5c323639f232ef6fed7d51b022 实际r1停于默认宿主启动；独立cleanup确认，未重试；原3pure guard与构建结果保持 |
 | 已集成main状态 / HEAD | main/origin 9b27005f086c97c13b789020f5f8449d1552bb50 已逐字接收b905的35 own路径；c2c构建/内部加载已限定独审；实际新host/配置/个人更新仍未验 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 固定后台产物及自有宿主验证入口已通过审查，旧记录与登录配置的真实验证待运行。 |
-| 下一可用交付 | 入口独审后验证旧记录保留、真实宿主升级与浏览器登录配置，个人安装保持不动。 |
-| 当前阻塞 | ACTIVE: 等待共享数据库窗口，真实宿主验证尚未开始。 |
+| 当前产出 | 已完成旧记录准备与新产物复制；真实启动在runner就绪检查处停止，测试进程和专库已正常清理。 |
+| 下一可用交付 | 审查本轮原始结果，并定位启动就绪失败后准备最小修复；保留旧数据与所有诊断原件。 |
+| 当前阻塞 | ACTIVE: 新宿主尚未完成启动，内部首因未被现有工具保存，需要有界诊断。 |
 | 需用户决定 | NONE |
-| Review | APPROVED_PREPARATION_ONLY；source3444895e/delivery5563e011，native_center_owner唯一独审0 P1/P2；真实copy/PG/host仍NOT_RUN |
+| Review | 344准备已APPROVED；r1实际FAIL及cleanup证据PENDING_RESULT_REVIEW，交native_center_owner唯一只读核验 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v7，仅own plan/evidence两scope；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 复用原builder/OPS14/SVC08；已main SVC09提供私有策略与固定运行tuple及4项集中retention。此次只准备明确版本产物，不增调度器/状态权威；架构基线待Lead按b2b记录。 |
 
@@ -224,4 +224,12 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 
 | ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
 | --- | --- | --- | --- | --- | --- |
-| SVC06-WAIT-B2B-HOST-WINDOW | 2026-10-07T09:31:39.196669Z | UNKNOWN | 资源 | 已审入口等待Lead交付实际共享PG窗口；未预占 | b2b-host-policy/independent-review.json；本次执行协调 |
+| SVC06-WAIT-B2B-HOST-WINDOW | 2026-10-07T09:31:39.196669Z | 2026-10-07T09:37:20.428380Z | 资源 | 已审入口等待Lead交付实际共享PG窗口；未预占 | b2b-host-policy/independent-review.json；本次执行协调 |
+
+实际共享窗口已接收：2026-10-07T09:37:20.395993+00:00，唯一source344/c4d6，fresh所有固定绑定/claimv7/namespace未用成立，free 23338795008B≥叠加Lead独立9MiB后的2693791744B；集群可用保守93≥本旅程15配置容量。仅本次自有copy/PG/宿主/HTTP策略验证随后启动，个人服务不动；未预判结果。
+
+## 2026-10-07 09:40:22 UTC：r1实际失败与清理确认
+
+[唯一结果](../../docs/evidence/svc06/b2b-host-policy/RESULT.md) / [原件manifest](../../docs/evidence/svc06/b2b-host-policy/result-manifest.json)：09:37:20.428380Z调用；work39,646ms/exit1，最早保存错误START_UNCONFIRMED_CHECK_STATUS，checkpoint start-default-off；旧27迁移/自有turn取消和factory close已完成。center ready后runner身份已捕获，runner ready未完成，Web未启动；旧工具未捕获detached stderr，原因与runner数值exit不猜测。
+
+09:38:00.412Z独立cleanup293ms/exit0；两监督组absent/双EOF、center/runner原helper stopped，center匹配nonce exit0。marker/OID1274706/有界连接[]/normalDROP remaining[]；工作组absence原件先持久。实际窗已归还；原artifact/clone/root/诊断保留、不重放r1。0provider/个人，唯一fixture任务在runner前取消；后继35迁移/配置/HTTP/refresh未验，不将cleanup升格为host成功。当前结果待native独审，局部只读诊断可独立继续，原SVC06-03/04/05全部保持open。

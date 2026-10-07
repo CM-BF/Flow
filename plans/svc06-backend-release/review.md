@@ -1,3 +1,7 @@
+## 2026-10-07 09:40:22 UTC：r1结果PENDING_RESULT_REVIEW
+
+source344不改；[result-manifest](../../docs/evidence/svc06/b2b-host-policy/result-manifest.json)绑定22结果文件、17私有原件身份/hash、8逐字副本。实际FAIL_AT_DEFAULT_START_CLEANUP_CONFIRMED；首保存错误/缺失detached stderr、runner数值exit未观测与真实helper stopped分别记录。申请native唯一只读结果审，0重跑/新probe；真实宿主/策略/迁移结论不通过，旧准备批准不扩大。
+
 ## 2026-10-07 09:35:19 UTC：APPROVED_PREPARATION_ONLY
 
 [唯一原件](../../docs/evidence/svc06/b2b-host-policy/independent-review.json) reviewedAt2026-10-07T09:31:39.196669+00:00，source3444895edf934c5c323639f232ef6fed7d51b022 / delivery5563e011；native_center_owner完整入口/直接消费者与全部声明绑定核同，无P1/P2、0reviewer执行。真实copy/PG/host/三App仍未验。补充[连接账](../../docs/evidence/svc06/b2b-host-policy/CONNECTIONS.md)与只读fresh事实未改变任何被审运行源或预算。

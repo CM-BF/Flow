@@ -1,0 +1,49 @@
+{
+  "startedAt": "2026-10-07T09:38:00.214Z",
+  "processes": {
+    "8a984804-246f-4d0c-876a-2b90243cf7e0": {
+      "role": "runner",
+      "pid": 44310,
+      "group": 44310,
+      "state": "stopped"
+    },
+    "8fa13346-4681-45a6-ad70-ec8d7b6b2883": {
+      "role": "center",
+      "pid": 41322,
+      "group": 41322,
+      "state": "stopped"
+    }
+  },
+  "database": "removed",
+  "failures": [],
+  "artifactRetained": true,
+  "privateRunRetained": true,
+  "exitRecords": {
+    "center": {
+      "at": "2026-10-07T09:38:00.063Z",
+      "nonce": "8fa13346-4681-45a6-ad70-ec8d7b6b2883",
+      "code": 0,
+      "signal": null
+    }
+  },
+  "workWriterAbsent": true,
+  "databaseOid": 1274706,
+  "connections": {
+    "state": "empty",
+    "observations": [
+      {
+        "elapsedMs": 2.1313340000000096,
+        "rows": []
+      }
+    ]
+  },
+  "freeBeforeDrop": 22451081216,
+  "privateBeforeDrop": {
+    "bytes": 3031489,
+    "attempts": 1,
+    "entriesAcrossAttempts": 235,
+    "atomicSnapshot": false
+  },
+  "remaining": [],
+  "finishedAt": "2026-10-07T09:38:00.412Z"
+}

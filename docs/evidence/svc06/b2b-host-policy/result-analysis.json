@@ -1,0 +1,110 @@
+{
+  "verdict": "FAIL_AT_DEFAULT_START_CLEANUP_CONFIRMED",
+  "source": "3444895edf934c5c323639f232ef6fed7d51b022",
+  "deliveryAtLaunch": "d8a1ef8700922053c17fbb4a3d74ed916c32d2b3",
+  "primary": {
+    "name": "Error",
+    "code": "START_UNCONFIRMED_CHECK_STATUS"
+  },
+  "lastCheckpoint": "start-default-off",
+  "provedBeforeFailure": [
+    "c2c cloned and original artifact verifier accepted before/after clone",
+    "Own af51 public conversation/turn/same-key body replay/cancel assertions reached old schema 1..27",
+    "Old factory close returned, cancelled fixture had zero unfinished and attempts; representative digest saved",
+    "New center readiness returned before original startPreviewServices advanced to runner identity capture"
+  ],
+  "notProved": [
+    "runner profile readiness and inner exception cause",
+    "new migration 1..35 assertion",
+    "Web startup, default-off assertion, policy negative guards, refresh/resume, cookie HTTP",
+    "three real App compatibility or personal update"
+  ],
+  "roles": {
+    "center": {
+      "pid": 41322,
+      "group": 41322,
+      "nonce": "8fa13346-4681-45a6-ad70-ec8d7b6b2883",
+      "identityCaptured": true
+    },
+    "runner": {
+      "pid": 44310,
+      "group": 44310,
+      "nonce": "8a984804-246f-4d0c-876a-2b90243cf7e0",
+      "identityCaptured": true
+    }
+  },
+  "webRecordAbsent": true,
+  "cleanup": {
+    "workWriterAbsent": true,
+    "ownedProcesses": {
+      "8a984804-246f-4d0c-876a-2b90243cf7e0": {
+        "role": "runner",
+        "pid": 44310,
+        "group": 44310,
+        "state": "stopped"
+      },
+      "8fa13346-4681-45a6-ad70-ec8d7b6b2883": {
+        "role": "center",
+        "pid": 41322,
+        "group": 41322,
+        "state": "stopped"
+      }
+    },
+    "database": "removed",
+    "databaseOid": 1274706,
+    "connections": {
+      "state": "empty",
+      "observations": [
+        {
+          "elapsedMs": 2.1313340000000096,
+          "rows": []
+        }
+      ]
+    },
+    "remaining": [],
+    "failures": [],
+    "centerExit": {
+      "at": "2026-10-07T09:38:00.063Z",
+      "nonce": "8fa13346-4681-45a6-ad70-ec8d7b6b2883",
+      "code": 0,
+      "signal": null
+    },
+    "runnerNumericExit": "NOT_OBSERVED",
+    "webNumericExit": "NOT_STARTED"
+  },
+  "stderr": {
+    "work": "",
+    "cleanup": "",
+    "detachedServices": "NOT_CAPTURED: fixed process.spawnOwnedProcess and runService both use stdio ignore; no historical stderr is reconstructed"
+  },
+  "resources": {
+    "runtimeSamples": {
+      "samples": 55,
+      "minimumFree": 22451060736,
+      "maximumPrivate": 3029505,
+      "nonAtomic": true
+    },
+    "sampleLimit": "non-atomic observations; no exact physical peak attribution",
+    "clone": {
+      "regularFiles": 12675,
+      "directories": 2209,
+      "internalSymlinks": 742,
+      "regularLogicalBytes": 367018355,
+      "regularAllocatedBytes": 401944576,
+      "cloneFallback": false,
+      "physicalExclusiveBytes": null,
+      "finalManifestVerification": "performed by original verifier immediately after copy",
+      "volumeFreeBefore": 23338110976,
+      "volumeFreeAfter": 23307137024,
+      "volumeDeltaNotExclusiveAttribution": -30973952
+    },
+    "privateRetained": true,
+    "originalArtifactRetained": true
+  },
+  "providerCalls": 0,
+  "tasksCreated": 1,
+  "taskDisposition": "own fixture cancelled before first runner start",
+  "personalActions": 0,
+  "sideEffectsRetried": false,
+  "rawRetained": true
+}
