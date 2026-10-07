@@ -74,7 +74,8 @@ type WorkerResult = { journey: Journey; requiredGroups: readonly Group[]; comple
     verificationOrder: string[]; turnId: string | null; taskId: string | null };
   steeringRecovery: { profile: import("@flow/contracts").ExecutionProfileReference | null; conversationId: string | null;
     turnId: string | null; actor: Awaited<ReturnType<SteeringSeed["activate"]>> | null; draftId: string | null;
-    receiptId: string | null; commandId: string | null; browserPostCounts: number[] } };
+    receiptId: string | null; commandId: string | null; browserPostCounts: number[];
+    draftFailureObservation: { inputMatches: boolean | null; records: unknown[]; recoveryAlerts: string[]; observationError: string | null } | null } };
 function selectionPassed(journey: Journey, result: WorkerResult | undefined): boolean {
   const required = selectedGroups(journey);
   return !!result && result.journey === journey && result.failure === null
@@ -384,7 +385,7 @@ async function worker(init: Init) {
   const completeDraft: WorkerResult["completeDraft"] = { profile: null, knowledge: null, savedRecordId: null, conversationId: null,
     preparedPostCount: null, restoredPostCount: null, verificationOrder: [], turnId: null, taskId: null };
   const steeringRecovery: WorkerResult["steeringRecovery"] = { profile: null, conversationId: null, turnId: null,
-    actor: null, draftId: null, receiptId: null, commandId: null, browserPostCounts: [] };
+    actor: null, draftId: null, receiptId: null, commandId: null, browserPostCounts: [], draftFailureObservation: null };
   const initialization: InitializationTiming = { outcome: "RUNNING", startedOffsetMs: 0, endedOffsetMs: null, elapsedMs: null };
   const groupTimings: GroupTiming[] = [];
   let errorBytes = 0;
@@ -745,7 +746,31 @@ async function worker(init: Init) {
       };
       await openSteering(); await instruction.fill(original);
       await expect(surface.getByRole("button", { name: "Send steering", exact: true })).toBeEnabled();
-      await expect.poll(async () => (await steeringDraft(original))?.id).toBeTruthy();
+      try {
+        await expect(instruction).toHaveValue(original);
+        await expect.poll(async () => (await steeringDraft(original))?.id).toBeTruthy();
+      } catch (error) {
+        // Failure-only observation of this owned fixture. Keep the original assertion/error;
+        // do not save, send, extend its timeout or continue a partially failed journey.
+        const observation = { inputMatches: null as boolean | null, records: [] as unknown[], recoveryAlerts: [] as string[], observationError: null as string | null };
+        steeringRecovery.draftFailureObservation = observation;
+        try {
+          observation.inputMatches = await instruction.inputValue({ timeout: 1000 }) === original;
+          observation.records = (await records(page)).slice(0, 8).map(record => {
+            const data = record.kind === "draft" && record.data ? object(record.data) : {};
+            const steering = Array.isArray(data.steering) ? data.steering : [];
+            return { id: record.id, kind: record.kind, version: record.version, owner: record.owner,
+              steering: steering.slice(0, 8).map(item => { const value = object(item); return {
+                taskId: value.taskId, turnId: value.turnId, messageId: value.messageId,
+                textMatches: value.text === original, textBytes: typeof value.text === "string" ? Buffer.byteLength(value.text) : null,
+              }; }) };
+          });
+          await page.getByRole("button", { name: "Saved drafts and receipts", exact: true }).click({ timeout: 1000 });
+          const dialog = page.getByRole("dialog", { name: "Saved drafts and receipts", exact: true });
+          observation.recoveryAlerts = (await dialog.getByRole("alert").allTextContents()).slice(0, 8).map(value => value.slice(0, 512));
+        } catch (failure) { observation.observationError = text(failure).slice(0, 512); }
+        throw error;
+      }
       const draft = (await steeringDraft(original))!; steeringRecovery.draftId = draft.id;
       const material = object(draft.data).steering;
       expect(material).toEqual([{ taskId: turn.turn.task.id, turnId: turn.turn.id, messageId: expect.any(String), text: original }]);
