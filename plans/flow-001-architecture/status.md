@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-06 23:47:36 UTC / main b178d17a |
+| 最近更新 / 最近main同步核验 | 2026-10-07 00:14 UTC / main c3ba1adfe9374b80a955d45e20310f000fed0310（个人运行源单列） |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | co-lead | Execution Lead / astra_ultra_execution_lead |
@@ -12,12 +12,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/origin b178d17a含远程文档候选与182来源登记。本次个人center按af51同版本单次恢复、8保留检查和独立结果核对通过；runner accepting v18、Web d629 v3不变。恢复记录待本批发布；TUI逐消息设置与完整工具原文仍仅source-only独审。 |
+| 已集成main状态 / HEAD | main c3ba1adf已接同af51中心恢复/独立保留核对与X01供给协调；个人af51/accepting v18、Web d629 v3按既有回执保留，本轮未重新采样。准备候选尚缺的运行验证不改绿。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 个人后台已恢复，原任务、会话、配置和网页保留；终端逐消息设置源码已审，实际验证仍待资源。 |
-| 下一可用交付 | 按资源准入推进终端设置和完整工具原文；发布后继补长期服务监督，远程最小验证等待用户原选择。 |
-| 当前阻塞 | ACTIVE: 本地余量仍低于局部验证线，远程候选未获用户启用选择；真实双端、完整目标、工程与长期自动恢复验收仍开放。 |
+| 当前产出 | 个人后台恢复记录已接收；X01依赖链接已齐。已有候选保持原证据，执行worker已结束重复等待。 |
+| 下一可用交付 | 资源恢复后优先SVC07必要HTTP检查与聊天关键路径，随后按ready队列补局部验证；远程最小片等待原用户选择。 |
+| 当前阻塞 | ACTIVE: GO于00:08:27观测主卷783,925,248B，低于现有运行门槛；CI唯一用户选择PENDING。已归并恢复顺序，不循环采样或占用worker等待。 |
 | 需用户决定 | REQUIRED: OPS-CI01唯一启用选择已由Goal Owner提出，当前PENDING；不重复提问。 |
 | Review | [review.md](review.md)，NOT_STARTED，未获得独立approval |
 
@@ -158,3 +158,5 @@ SVC06依赖选择纯模块87dc已经main，完整固定运行产物仍需2.5GiB�
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | FLOW-001-T04-LIFECYCLE-01 | pending | Execution Lead / 后继assignment_review | 长期服务监督职责已登记，当前仅只读设计；真实主机策略未改，自有0模型验收未运行。 |
+
+2026-10-07 00:14 UTC：现有共享执行阻塞已作一次有界收口，[恢复顺序与解除条件](../../docs/quality/execution-recovery-order-2026-10-07.md)。native_center_owner确认无未完成检查后结束本段；X01七链接既有回执PROVISIONED，未重复供给。各候选原失败/NOT_RUN/限定独审不变，Mika原REQ10/K01规划保持独立。本次无资源或服务探针、测试、清理、CI或新功能。
