@@ -1,0 +1,145 @@
+{
+  "at": "2026-10-07T22:40:22.100Z",
+  "source": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+  "result": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+  "status": "SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING",
+  "bindings": [
+    {
+      "path": "apps/server/src/plugin-runtime/verification-routes.ts",
+      "sourceCommit": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+      "bytes": 3128,
+      "sha256": "32887cd3097ddeb6f1e010aa9a0799659d6fa63620fd49a03760698e26f823d8"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/verification-routes.test.ts",
+      "sourceCommit": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+      "bytes": 8919,
+      "sha256": "bb4083430c152c9703139d1ff48f784f723080d14f0e14fab2226601c7a1d1ef"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/amend-command.json",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 1570,
+      "sha256": "561c6717c6422fe51772730614fdad431d98663f05b451221fb2a49f69740be2"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/claim-receipt.json",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 1816,
+      "sha256": "6fbf86314145df0880d2f05178e861aef4a2486c7aacfd2dfed97627ef33eb05"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/closure.json",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 165123,
+      "sha256": "599e31b503e952f61bb3066369652f854c7b299dcecc121e3e7027e87b5db140"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/inputs/apps/server/src/plugin-runtime/verification-routes.test.ts",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 8919,
+      "sha256": "bb4083430c152c9703139d1ff48f784f723080d14f0e14fab2226601c7a1d1ef"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/inputs/apps/server/src/plugin-runtime/verification-routes.ts",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 3128,
+      "sha256": "32887cd3097ddeb6f1e010aa9a0799659d6fa63620fd49a03760698e26f823d8"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/local-behavior/output.log",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 3664,
+      "sha256": "fc57f71753c10840b85f06583768ef310aa5d5026f01cde6bcd6f598220f4711"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/local-behavior/reservation.json",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 3771,
+      "sha256": "3c477a60fa3ae6bf5ed98121fe900701d340884c5988ded1df5567ec0e25a8e8"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/local-types/output.log",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/local-types/reservation.json",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 3657,
+      "sha256": "5db0d26d2cc19a6400d43b355c8c408086e096ef1bf9cf21bddee06584bd9870"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/local.json",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 4493,
+      "sha256": "5140b805d70f78bc41b70ee67b3c039ddb21a93fed313597026f13efddcfe702"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/local.py",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 5005,
+      "sha256": "32192081490060a9e6ca717743093e3c37b46e21ce012e731c20c1cf03d01dae"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/pg-dependency-delta.json",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 782,
+      "sha256": "39014032e486b67ca4b8ba1216a1799abfd618095a4cb494d14cf72c929ef7cc"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/runtime.json",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 2032,
+      "sha256": "801b893c4a1c644c56382324d9780afd39222886b9e4e42b6ec2fef2f068f1ed"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/start.json",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 484,
+      "sha256": "c5799952efd0bca75645a6f028d90036b4ae11449e36ed12d5b14e39f35a7fa0"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/summary.json",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 2050,
+      "sha256": "9f206bc34941622590e0928f85098f2c7b4b45e0bcb76560709466e9ed83c49f"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/tsconfig.json",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 483,
+      "sha256": "ddcf0828ea54cd8313ea56b428824c7f56f6ff711c3cc65ab74b68375a921204"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/route-validation/vitest.config.mjs",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 419,
+      "sha256": "1053e8ac40c5d3f86a6ff4630f2806539fb9ef21e9909a4376b693ca2934b339"
+    },
+    {
+      "path": "plans/x01-verifier-admission-result/status.md",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 10049,
+      "sha256": "6ef1f0633e0c8d144cadd1d27a89192b3583c4a6e552b5f45d6664452e955710"
+    },
+    {
+      "path": "plans/x01-verifier-admission-result/review.md",
+      "sourceCommit": "44dcbc75aa8329804a20d440e1df34d8f8160f03",
+      "bytes": 4391,
+      "sha256": "87607f05da22a78fe215154a35d0063cf4f9ecbd9538ec765b125dc5dec9e879"
+    }
+  ],
+  "productDelta": [
+    "apps/server/src/plugin-runtime/verification-routes.ts",
+    "apps/server/src/plugin-runtime/verification-routes.test.ts"
+  ],
+  "closure": "closure.json:280 existingfixed symlink targets +2 regular mirrors; originalinputs/PGcandidatebyteunchanged",
+  "runtime": "runtime.json:5 existing fixed runtimes rehashed; existingexternal package links unchanged",
+  "checks": "11selected11passed/types0,2child2299ms/raw3664B,exactownedabsent/EOF/sameinodeTMPcleanup",
+  "scope": "Schema400 and auth contract boundary inject; not factorystartup/actualPG/domain matrix/provider/worker",
+  "oldPG": "Historical fixed d407 remains immutable, futureclaimv2metadata rebind required; current dependency AV R3 passed/reviewed but not yetmain.",
+  "sourceFixedBeforeRun": true,
+  "knownMetadataErrors": "First git add without --sparse rejected staging; no content lost; then explicit --sparse committed. No extra engineering child."
+}
