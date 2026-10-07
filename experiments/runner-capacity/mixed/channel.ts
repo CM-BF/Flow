@@ -1,20 +1,24 @@
 import { CONTRACT, type RunContract } from './contract.js';
 export type RecordValue = { kind: string; [key: string]: unknown };
-export function childReporter(stop: () => void, limits: () => RunContract = () => CONTRACT) {
+export function childReporter(stop: () => void, limits: () => RunContract = () => CONTRACT, messageLimit: () => number = () => limits().responseBytes) {
   let pending = 0; let total = 0; let dropped = 0; let closed = false;
   const send = (value: RecordValue) => {
     const contract = limits();
     const record = { ...value, childMs: performance.now(), pid: process.pid };
     const bytes = Buffer.byteLength(JSON.stringify(record));
     total += bytes;
-    if (closed || bytes > contract.responseBytes || pending + bytes > contract.ipcPendingBytes || total > contract.softBytes) {
-      dropped++; stop(); return;
+    if (closed || bytes > Math.min(contract.responseBytes, messageLimit()) || pending + bytes > contract.ipcPendingBytes || total > contract.softBytes) {
+      dropped++; stop(); return false;
     }
     pending += bytes;
-    try { process.send?.(record, error => { pending -= bytes; if (error) { dropped++; stop(); } }); }
-    catch { pending -= bytes; dropped++; stop(); }
+    try {
+      if (!process.send) throw new Error('ipc_disconnected');
+      process.send(record, error => { pending -= bytes; if (error) { dropped++; stop(); } });
+      return dropped === 0;
+    }
+    catch { pending -= bytes; dropped++; stop(); return false; }
   };
-  return { send, get dropped() { return dropped; }, get pending() { return pending; }, close() { closed = true; } };
+  return { send, get dropped() { return dropped; }, get pending() { return pending; }, get total() { return total; }, close() { closed = true; } };
 }
 export async function abortable<T>(promise: Promise<T>, signal: AbortSignal): Promise<T> {
   signal.throwIfAborted();

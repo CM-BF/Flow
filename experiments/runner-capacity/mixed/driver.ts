@@ -10,6 +10,7 @@ import { beforeDeadline } from './deadline.js';
 import { StreamBytes } from './stream-bytes.js';
 import { ObservationArchive } from './observation-archive.js';
 import { memoryObservation } from './channel.js';
+import { deliveryInput, deliveryReceipt, DELIVERY_BASELINE, type DeliveryInput } from './pg-delivery-bridge.js';
 import { Budget, type BudgetObserver } from './contract.js';
 import { COMPARISON } from './ab-budget.js';
 import { selectRunIdentity, verifyRunSources } from './run-identity.js';
@@ -19,11 +20,14 @@ import { boundedText } from '../http.js';
 import { directoryBytes } from '../evidence.js';
 
 import { validGate, completionAcks, validateWindow, validateFinal, validatePersistentSessions, validateWindowSamples, type Row, type CaseResult } from './proof.js';
-export async function runMixed(windowId: string, target: string, identity?: string, comparison?: { sourceDirectory: string; accounting: BudgetObserver; startedMs: number; deadlineMs: number }) {
+export async function runMixed(windowId: string, target: string, identity?: string, comparison?: { sourceDirectory: string; accounting: BudgetObserver; startedMs: number; deadlineMs: number }, observationDelivery?: DeliveryInput) {
   const startedMs = comparison?.startedMs ?? performance.now();
   const deadlineAt = (offset: number) => Math.min(startedMs + offset, comparison?.deadlineMs ?? Infinity);
   const run = selectRunIdentity(identity);
   const contract = { ...run.contract, base: run.base };
+  const delivery = observationDelivery ? deliveryInput(observationDelivery) : undefined;
+  // New production recipe/output ownership is a separate preparation gate; old A/B cannot opt into this path.
+  if (delivery) { assert.equal(run.base, DELIVERY_BASELINE, 'Delivery requires the fixed current-production recipe.'); assert.equal(contract.cases.length, 1); }
   assert(/^[a-zA-Z0-9-]{8,100}$/.test(windowId), 'A separately authorized window ID is required.');
   const comparing = run.id === 'event-state-A-v1' || run.id === 'event-state-B-v1';
   assert.equal(Boolean(comparison), comparing, 'Comparison inputs require the fixed outer entry.');
@@ -60,8 +64,13 @@ export async function runMixed(windowId: string, target: string, identity?: stri
   const token = randomUUID(); const background = { node: process.version, dependencyBindings: bindings, loadStart: loadavg(), loadEnd: [] as number[] };
   function fail(code: string) { if (!errors.includes(code)) errors.push(code); halt.abort(); }
   function charge(kind: string, bytes: number) { try { budget.charge(kind, bytes); } catch { fail('total_byte_budget_exceeded'); } }
+  const pgReceipt = delivery ? deliveryReceipt(delivery, () => fail('pg_delivery_unknown')) : undefined;
   function work() { if (halt.signal.aborted) throw new Error('mixed_stopped'); budget.work(); }
   function receive(value: Observation) {
+    if (pgReceipt && ['pg-observation', 'pg-observation-chunk', 'pg-delivery-summary'].includes(value.kind)) {
+      if (value.pid !== owned.find(child => child.role === 'center')?.pid) fail('pg_delivery_unowned_source');
+      else pgReceipt.accept(value);
+    }
     try { archive.append({ ...value, phase }); } catch { fail('observation_reservation_or_bound_exceeded'); return; }
     if (typeof value.transferBytes === 'number') charge('runner-http-bodies', value.transferBytes);
     if (value.kind === 'stream-bytes') { charge('center-node-streams', Number(value.delta)); if (value.complete !== true) fail('center_stream_accounting_unknown'); }
@@ -136,10 +145,10 @@ export async function runMixed(windowId: string, target: string, identity?: stri
     const databaseUrl = url.href;
     url.searchParams.set('application_name', 'flow-s01-mixed-observer'); observer = new Pool({ ...options, connectionString: url.href }); observer.on('connect', client => streams.addPgClient(client)); observer.on('error', () => fail('observer_connection_failed'));
     workdir = await mkdtemp(join(tmpdir(), 'flow-s01-mixed-'));
-    center = await launch({ role: 'center', databaseUrl, ownerToken: token, runIdentity: run.id, sourceDirectory: comparison?.sourceDirectory }, owned, receive, charge, Math.min(12000, budget.remainingWorkMs), contract);
+    center = await launch({ role: 'center', databaseUrl, ownerToken: token, runIdentity: run.id, sourceDirectory: comparison?.sourceDirectory, ...(delivery ? { pgDelivery: delivery } : {}) }, owned, receive, charge, Math.min(12000, budget.remainingWorkMs), contract);
     baseUrl = String(center.ready.baseUrl);
     assert(/^http:\/\/127\.0\.0\.1:\d+$/.test(baseUrl), 'Unexpected center endpoint.');
-    runner = await launch({ role: 'runner', runIdentity: run.id, sourceDirectory: comparison?.sourceDirectory }, owned, receive, charge, Math.min(12000, budget.remainingWorkMs), contract);
+    runner = await launch({ role: 'runner', runIdentity: run.id, sourceDirectory: comparison?.sourceDirectory, ...(delivery ? { pgDelivery: delivery } : {}) }, owned, receive, charge, Math.min(12000, budget.remainingWorkMs), contract);
     const pgVersion = (await query(observer, 'SHOW server_version')).rows[0].server_version;
     await evidence('owned-resources.json', { databaseName, workdir, processes: owned.map(p => ({ role: p.role, pid: p.pid })), baseUrl, pgVersion });
     observerLoop = (async () => {
@@ -186,8 +195,12 @@ export async function runMixed(windowId: string, target: string, identity?: stri
       result.gate = latestRows;
       phase = scenario.id + ':window';
       result.measureSentMs = performance.now();
-      await transmit(runner, { kind: 'measure' }, charge, contract);
-      await until(() => records('window-start', result.id).length === 1, performance.now() + contract.requestMs, 'missing_window_start');
+      if (delivery) {
+        await transmit(center, { kind: 'pg-phase', epoch: delivery.epoch, phase: 'measure' }, charge, contract);
+        await until(() => observations.some(value => value.kind === 'pg-phase-ack' && value.epoch === delivery.epoch && value.deliveryPhase === 'measure'), performance.now() + contract.requestMs, 'pg_phase_unknown');
+      }
+      await transmit(runner, { kind: 'measure', ...(delivery ? { epoch: delivery.epoch } : {}) }, charge, contract);
+      await until(() => records('window-start', result.id).length === 1 && (!delivery || records('window-start', result.id)[0]?.epoch === delivery.epoch), performance.now() + contract.requestMs, 'missing_window_start');
       const windowStart = records('window-start', result.id)[0]!.receivedMs;
       let readIndex = 0, nextRead = windowStart, skipped = 0; const reads = new Set<Promise<void>>();
       let cancelled = false; const cancellations: Promise<void>[] = [];
@@ -212,7 +225,12 @@ export async function runMixed(windowId: string, target: string, identity?: stri
         }
         await sleep(5);
       }
+      if (delivery && records('window-end', result.id)[0]?.epoch !== delivery.epoch) throw new Error('runner_epoch_unknown');
       result.windowComplete = true;
+      if (delivery) {
+        await transmit(center, { kind: 'pg-phase', epoch: delivery.epoch, phase: 'after' }, charge, contract);
+        await until(() => observations.some(value => value.kind === 'pg-phase-ack' && value.epoch === delivery.epoch && value.deliveryPhase === 'after'), performance.now() + contract.requestMs, 'pg_phase_unknown');
+      }
       phase = scenario.id + ':settlement';
       const settlementDeadline = records('window-end', result.id)[0]!.receivedMs + contract.settlementMs;
       await Promise.all(cancellations); await Promise.all(reads);
@@ -259,6 +277,7 @@ export async function runMixed(windowId: string, target: string, identity?: stri
       fail('child_cleanup_unknown'); return false;
     }));
     const allChildrenClosed = stopped.every(Boolean);
+    if (pgReceipt && !pgReceipt.complete()) fail('pg_delivery_unknown');
     const drained = await beforeDeadline(deadlineAt(contract.cleanup.drain), async () => {
       await Promise.allSettled([...requests]); await observerLoop;
       if (contract.persistentSessions && allChildrenClosed && observer) {

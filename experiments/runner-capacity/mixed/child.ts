@@ -9,16 +9,19 @@ import { childReporter, abortable, memoryObservation } from './channel.js';
 import { boundedText } from '../http.js';
 import { selectRunIdentity } from './run-identity.js';
 import { requestErrorClass } from './request-error.js';
+import { createClaimObservation } from './claim-observation.js';
+import { centerDelivery, deliveryInput, DELIVERY_ENVELOPE_BYTES, type DeliveryInput } from './pg-delivery-bridge.js';
 import type { HarnessAdapter } from '@flow/contracts';
 
 type Registration = { runnerId: string; token: string; directory: string; slots: number };
 type CaseInput = { kind: 'case'; caseId: string; baseUrl: string; taskIds: string[]; runners: Registration[] };
-type Claim = { taskId: string; attemptId: string; ownerVersion: number; runnerId: string };
 let contract: RunContract = CONTRACT;
 let sourceDirectory: string | undefined;
+let pgDelivery: DeliveryInput | undefined;
+let delivery: ReturnType<typeof centerDelivery> | undefined;
 let stoppedAtMs: number | null = null;
 const shutdown = new AbortController();
-const reporter = childReporter(() => shutdown.abort(), () => contract);
+const reporter = childReporter(() => shutdown.abort(), () => contract, () => pgDelivery ? DELIVERY_ENVELOPE_BYTES : contract.responseBytes);
 const send = reporter.send;
 function stop() { stoppedAtMs ??= performance.now(); shutdown.abort(); }
 process.once('SIGTERM', stop);
@@ -28,18 +31,22 @@ let casePromise: Promise<void> | undefined;
 let measure = deferred<number>();
 let currentCase = '';
 let windowTimer: ReturnType<typeof setTimeout> | undefined;
-process.on('message', (message: { kind?: string }) => {
+process.on('message', (message: { kind?: string; epoch?: unknown; phase?: unknown }) => {
+  if (message.kind === 'pg-phase') delivery?.phase(message.epoch, message.phase);
   if (message.kind === 'stop') stop();
   if (message.kind === 'stop-case') { stoppedAtMs ??= performance.now(); send({ kind: 'stop-case-received', caseId: currentCase, stoppedAtMs }); caseControl?.abort(); }
   if (message.kind === 'measure') {
+    if (pgDelivery && message.epoch !== pgDelivery.epoch) { send({ kind: 'failure', code: 'pg_epoch_unknown' }); process.exitCode = 1; stop(); return; }
+    const epoch = pgDelivery ? { epoch: pgDelivery.epoch } : {};
     const beganMs = performance.now(); measure.resolve(beganMs);
-    send({ kind: 'window-start', caseId: currentCase, beganMs });
-    windowTimer = setTimeout(() => send({ kind: 'window-end', caseId: currentCase, beganMs, endedMs: performance.now() }), contract.caseMs);
+    send({ kind: 'window-start', caseId: currentCase, beganMs, ...epoch });
+    windowTimer = setTimeout(() => send({ kind: 'window-end', caseId: currentCase, beganMs, endedMs: performance.now(), ...epoch }), contract.caseMs);
   }
 });
 async function center(config: { databaseUrl: string; ownerToken: string }) {
   const streams = new StreamBytes(contract.ownedStreams);
-  const observer = observePg(pg.Pool.prototype, event => send({ ...event }), undefined, client => streams.addPgClient(client));
+  delivery = pgDelivery ? centerDelivery(pgDelivery, send, () => { process.exitCode = 1; shutdown.abort(); }) : undefined;
+  const observer = observePg(pg.Pool.prototype, event => delivery ? delivery.record(event) : send({ ...event }), undefined, client => streams.addPgClient(client));
   const sample = () => send({ kind: 'stream-bytes', ...streams.sample() });
   const sampleTimer = setInterval(sample, contract.observationMs);
   let app: Awaited<ReturnType<typeof import('../../../apps/server/src/index.js')['createServer']>> | undefined;
@@ -54,7 +61,7 @@ async function center(config: { databaseUrl: string; ownerToken: string }) {
   } finally {
     clearInterval(sampleTimer);
     try { await app?.close(); }
-    finally { sample(); send({ kind: 'center-settled', observationDropped: observer.dropped }); observer.restore(); }
+    finally { sample(); send({ kind: 'center-settled', observationDropped: observer.dropped }); observer.restore(); delivery?.finish(); }
   }
 }
 async function runCase(input: CaseInput) {
@@ -62,7 +69,8 @@ async function runCase(input: CaseInput) {
   const { createFixtureAdapter } = await import(productionModule(sourceDirectory, 'apps/runner/src/fixture.js')) as typeof import('../../../apps/runner/src/fixture.js');
   caseControl = new AbortController(); measure = deferred<number>(); currentCase = input.caseId;
   const signal = AbortSignal.any([shutdown.signal, caseControl.signal]); stoppedAtMs = null;
-  const claims = new Map<string, Claim>(); const allowed = new Set(input.taskIds);
+  const claimObservation = createClaimObservation(input.taskIds); const claims = claimObservation.claims;
+  let claimCodec: Promise<{ decodeRunnerClaimResponse(value: unknown, request: unknown, operation: 'claim' | 'status'): unknown }> | undefined;
   const originalFetch = globalThis.fetch; let active = 0; let requestOrdinal = 0;
   const emissions = new Map<string, { ordinal: number; startedChildMs: number }>();
   globalThis.fetch = async (target, init) => {
@@ -86,11 +94,17 @@ async function runCase(input: CaseInput) {
       send({ kind: 'runner-http', caseId: input.caseId, path, elapsedMs: performance.now() - start,
         ...identity, status: response.status, settledChildMs: performance.now(), stoppedAtMs, transferBytes: Buffer.byteLength(payload) + Buffer.byteLength(text),
         ...(body.attemptId ? { attemptId: body.attemptId, ownerVersion: body.ownerVersion } : {}) });
-      if (path.endsWith('/claim') && response.ok && parsed.assignment) {
-        const assignment = parsed.assignment; const taskId = assignment.task.id;
-        if (!allowed.has(taskId) || claims.has(taskId)) throw new Error('mixed_claim_identity_conflict');
-        const claim: Claim = { taskId, attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion, runnerId: assignment.attempt.runnerId };
-        claims.set(taskId, claim); send({ kind: 'claim', caseId: input.caseId, ...claim, requestOrdinal: ordinal });
+      if (response.ok) {
+        const v2Claim = path === '/api/runner/claim-opportunity' || path === '/api/runner/claim-opportunity/status';
+        let acknowledged = parsed;
+        if (v2Claim) {
+          // Load the SAME fixed production DTO decoder. Old v1/A-B snapshots never load this module.
+          claimCodec ??= import(productionModule(sourceDirectory, 'packages/contracts/src/runner-claim.js'));
+          acknowledged = (await claimCodec).decodeRunnerClaimResponse(parsed, body, path.endsWith('/status') ? 'status' : 'claim');
+        }
+        const observed = claimObservation.observe(path, body, acknowledged, registration?.runnerId);
+        if (observed) send({ kind: observed.replay ? 'claim-replay' : 'claim', caseId: input.caseId, ...observed.claim,
+          requestOrdinal: ordinal, ...(observed.requestId ? { requestId: observed.requestId } : {}) });
       }
       if (path.endsWith('/heartbeat') && response.ok) send({ kind: 'heartbeat', caseId: input.caseId,
         attemptId: body.attemptId, ownerVersion: body.ownerVersion, action: parsed.action });
@@ -164,10 +178,11 @@ async function runner() {
   await abortable(new Promise<void>(() => {}), shutdown.signal).catch(() => {});
   caseControl?.abort(); await casePromise;
 }
-process.once('message', async (config: { role: string; databaseUrl: string; ownerToken: string; runIdentity?: string; sourceDirectory?: string }) => {
+process.once('message', async (config: { role: string; databaseUrl: string; ownerToken: string; runIdentity?: string; sourceDirectory?: string; pgDelivery?: DeliveryInput }) => {
   if (!['center', 'runner'].includes(config.role)) return;
   contract = selectRunIdentity(config.runIdentity).contract;
   sourceDirectory = config.sourceDirectory;
+  pgDelivery = config.pgDelivery ? deliveryInput(config.pgDelivery) : undefined;
   const memoryTimer = contract.persistentSessions ? setInterval(() => send({ ...memoryObservation(), role: config.role }), contract.memoryIntervalMs) : undefined;
   try { if (config.role === 'center') await center(config); else await runner(); }
   catch { send({ kind: 'failure', code: 'child_failed' }); process.exitCode = 1; }
@@ -176,6 +191,7 @@ process.once('message', async (config: { role: string; databaseUrl: string; owne
     send({ kind: 'child-settled', dropped: reporter.dropped });
     const end = performance.now() + 500;
     while (reporter.pending && performance.now() < end) await sleep(5);
+    if (pgDelivery && (reporter.pending !== 0 || reporter.dropped !== 0)) process.exitCode = 1;
     reporter.close(); process.disconnect?.();
   }
 });

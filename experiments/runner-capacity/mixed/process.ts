@@ -8,7 +8,7 @@ export type Observation = RecordValue & { receivedMs: number; pid: number };
 export async function launch(config: Record<string, unknown>, owned: OwnedProcess[], receive: (value: Observation) => void, charge: (kind: string, bytes: number) => void, timeoutMs: number, contract: RunContract = CONTRACT): Promise<OwnedProcess> {
   const child = fork(fileURLToPath(new URL('./child.ts', import.meta.url)), [], {
     execPath: process.execPath, execArgv: ['--import', 'tsx'],
-    env: { PATH: process.env.PATH, TSX_TSCONFIG_PATH: typeof config.sourceDirectory === 'string' ? join(config.sourceDirectory, 'tsconfig.json') : fileURLToPath(new URL('./tsconfig.json', import.meta.url)) },
+    env: { PATH: process.env.PATH, ...(config.pgDelivery ? { NODE_DISABLE_COMPILE_CACHE: '1', TMPDIR: process.env.TMPDIR, TMP: process.env.TMP, TEMP: process.env.TEMP } : {}), TSX_TSCONFIG_PATH: typeof config.sourceDirectory === 'string' ? join(config.sourceDirectory, 'tsconfig.json') : fileURLToPath(new URL('./tsconfig.json', import.meta.url)) },
     stdio: ['ignore', 'ignore', 'pipe', 'ipc'],
   });
   const ready = deferred<Record<string, unknown>>(); void ready.promise.catch(() => {});

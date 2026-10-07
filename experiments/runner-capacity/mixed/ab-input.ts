@@ -21,7 +21,7 @@ export function verifyPair(a: readonly InputFile[], b: readonly InputFile[]) {
   const changed = [...new Set([...before.keys(), ...after.keys()])].filter(path => before.get(path)?.oid !== after.get(path)?.oid).sort();
   assert.deepEqual(changed, ['apps/server/src/event-state.test.ts', 'apps/server/src/events.ts'], 'unexpected_production_difference');
 }
-export function productionModule(sourceDirectory: string | undefined, path: 'apps/server/src/index.js' | 'apps/runner/src/runtime.js' | 'apps/runner/src/fixture.js') {
+export function productionModule(sourceDirectory: string | undefined, path: 'apps/server/src/index.js' | 'apps/runner/src/runtime.js' | 'apps/runner/src/fixture.js' | 'packages/contracts/src/runner-claim.js') {
   return sourceDirectory ? pathToFileURL(join(sourceDirectory, path)).href : new URL('../../../' + path, import.meta.url).href;
 }
 export async function checkDisk(directory: string, reserveBytes = COMPARISON.totalBytes) {
