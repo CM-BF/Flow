@@ -1,6 +1,6 @@
 # SVC08 独立 review
 
-状态：APPROVED_LIMITED_FLOW_SOURCE_ARTIFACT_AND_INTERNAL_LOADING；产物构建/内部加载已审，真实Web宿主与个人部署仍未验。
+状态：APPROVED_LIMITED_RUNTIME_IDENTITY_REPAIR；产物与隔离Web宿主结果已审，个人采用首次入口失败保留，新运行仍未执行。
 
 Review target commit: bad019d9691499bed69ae46b6c5d23944709cfe3
 
@@ -76,3 +76,11 @@ Execution Lead唯一独审绑定cb2205db380aa9d8bbb6ff42407ac7166d2a073a/deliver
 ## 2026-10-07T05:58:32.280796+00:00 — runtime身份delta待独审
 
 原attempt-01失败保留；5源delta把private和fixed readonly runtime分开，32固定输入显式uid/nlink/devino/realpath。6不同直接case分轮红绿+Python exact reader、语法证据；原9不重跑。审查[delta manifest](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-identity-delta-manifest.json)，不得据此声称个人采用通过；新namespace未创建，无PG/HTTP/个人探测。
+
+## 2026-10-07T06:02:37.947Z — APPROVED_LIMITED_RUNTIME_IDENTITY_REPAIR
+
+Review target commit: d95c249dc6b48848128ca068ea93dfda3494e812；delivery f000217eeb2d397c233cf5a30b6c99c905a4e7a7。
+
+唯一reviewer native_center_owner / gpt-6-astra，2026-10-07T06:01:23.310462Z；[原样回执](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-identity-independent-review.json)，SHA9b1315861829d8099562c07cb6e01bdef35a59afe345ea12f5e44296183340e9；[绑定原件](../../docs/evidence/svc08/flow-host-artifact/personal-adoption/runtime-identity-review-bindings.json)。57bindings一致，无P1/P2；6不同/10次选择分轮、原红、456ms/3253B/6组absent双EOF均核实，0reviewer重跑或个人读取。
+
+只批准身份修复与局部证据；private self/nlink1不变，runtime显式uid/nlink和精确十进制dev/ino、真实路径与字节身份拒绝不符。原attempt-01保持；本审不等于个人采用结果，新r2实际窗口仍由Lead协调。作者接受限定结论，源码停写，无新运行。
