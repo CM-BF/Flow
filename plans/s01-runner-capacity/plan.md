@@ -130,3 +130,5 @@ A/B在上述19:54历史阶段为另一未运行准备片；其后唯一实际窗
 2026-10-07T12:28:56.483Z 方法设计已由chatui01_owner对固定f0f56e80bc4450b4b12f2a1218fefff4ef6e1208独审通过（0 P1/P2），见review；只可进入合法准备，真实运行NOT_OPEN，原六TODO完成状态未变。
 
 2026-10-07T12:37:38.684Z 首片仅新增私有pg-delivery/test，11/11与修后strict0，见[接口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-interface.md)。已固定待独审；当前driver未接，v2/chat轻读/取消与新namespace另按原设计继续准备，不把Module通过当实验完成。
+
+2026-10-07T12:40:13.864Z 私有delivery首片source03164654已独审通过，0 P1/P2；完整driver/新实验未接未跑。剩余v2观测、真实chat轻读/取消按已审设计继续，不重跑11绿，主线接收与未来窗口另如实记录。

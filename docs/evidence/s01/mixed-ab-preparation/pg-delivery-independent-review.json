@@ -1,0 +1,37 @@
+{
+  "reviewedAt": "2026-10-07T12:38:58Z",
+  "reviewer": "chatui01_owner / gpt-6-astra",
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "source": "0316465419025204d7feffc558c2c80bc9374689",
+  "packet": "e5dd74fbf92f015d410ac069051edd70af6687f0",
+  "bindings": {
+    "path": "pg-delivery-review.json",
+    "sha256": "f1d4133a9aec9283d2d7d8c90ca49886e5e97d8fd41639276097b313dfde91e2",
+    "count": 13,
+    "bytes": 37766
+  },
+  "checks": {
+    "tests": {
+      "selected": 11,
+      "passed": 11
+    },
+    "types": [
+      2,
+      0
+    ],
+    "rawBytes": 797,
+    "supervisorElapsedMsSum": 1088,
+    "wholeExternalWall": null
+  },
+  "limits": "Private delivery module and recorded local results only; no v2 driver/chat/cancel recipe, PG, performance, full source-ready, or OPEN. Logical JSON bounds are not heap or IPC ACK guarantees.",
+  "resources": "Three final-owned absent/mergedEOF, observed=retained, signals/secondary empty; first nonzero and early EPERM retained. TMP cleanup supported by original records; reviewer did not access roots.",
+  "nextInvariant": "Driver must preserve local epoch/settle-phase; buffered flush receive time cannot become measure phase.",
+  "reviewerActions": {
+    "writes": 0,
+    "engineeringRuns": 0,
+    "pg": 0,
+    "oldRootReads": 0
+  }
+}

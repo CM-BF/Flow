@@ -2,10 +2,10 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T12:37:38.684Z |
+| 最近更新 | 2026-10-07T12:40:13.864Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 主线集成时间 | 2026-10-07T11:08:24.990292+00:00（接收回执at；固定main f2ccb673已核） |
+| 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
 | 任务时间来源 | 原task实际开工缺可复核时间；本次管理段开始为2026-10-07T05:45:30Z工具UTC，不替代原task开工。原验收仍有开放项。 |
 | 任务层级 | 子task |
 | Plan | [plan.md](plan.md) |
@@ -18,17 +18,17 @@
 | 工作树dirty状态 | source/局部结果已固定，当前仅本plan/status/review收口；旧source/raw/input不变，提交后dirty由Git核对。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 新私有模块11/11；focused types首次2（无输入）→显式files修后0，三原raw797B保持；0PG/性能/旧64重跑。 |
-| 已集成main状态 / HEAD | INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2：本次A/B及idle结果证据已接收；历史mixed/S01P07接收保持。非新的产品性能或provider验收。 |
+| 已集成main状态 / HEAD | NOT_INTEGRATED：当前私有observer模块03164654尚未main。历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2，不受本片改变。 |
 | 实现目标 | 0316465419025204d7feffc558c2c80bc9374689 |
 | 实现范围 | experiments/runner-capacity/mixed/pg-delivery.ts, experiments/runner-capacity/mixed/pg-delivery.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 4 |
-| 当前产出 | 私有观察交付小接口已实现，逐条和有界缓冲的11项直接反例通过；原始类型入口失败保留，修后类型通过。 |
-| 下一可用交付 | 独立审查该小接口与真实局部结果，随后再接当前领取协议、聊天轻读和取消；当前没有性能运行。 |
+| 当前产出 | 有界观察交付小接口及11项直接验证已独审通过；首类型配置失败保留，修后严格类型通过。 |
+| 下一可用交付 | 接入当前领取协议与真实聊天轻读、取消验收；完整性能实验尚未准备或运行。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | observer delivery固定0316465419025204d7feffc558c2c80bc9374689待独审；方法设计f0f56e80已独审通过，历史A/B批准不扩大。 |
+| Review | SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED source03164654 / packete5dd74fb；chatui01_owner，2026-10-07T12:38:58Z，0 P1/P2；只限私有模块及局部结果。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE /5scope；2026-10-07T12:16:51.374748Z只读CLI核owner/WT/branch/全部5范围保持。 |
 | 架构影响 | 本段仅方法设计，生产Module/Interface/FSM/数据库池不改；拟复用原实验观察器的有限delivery策略，不建追踪平台。未来实际实现与架构变化另记录；历史S01P07产品架构事实见其权威status。 |
 
@@ -140,3 +140,9 @@ chatui01_owner于2026-10-07T12:28:07Z对 `f0f56e80bc4450b4b12f2a1218fefff4ef6e12
 source `0316465419025204d7feffc558c2c80bc9374689`；[接口与运行记录](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-interface.md)、[13项固定binding](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-review.json)。只新增pg-delivery及直接test，原observe-pg/child/channel/ab/source/raw未改。11/11；首次types2为根exclude造成零输入，原件保留，专用files入口修后strict0。3子进程12:33:44.131411→12:34:05.853303分轮，累计1088ms不是整个工作段；3末态ownedabsent/mergedEOF、各sameinode TMP清理，early EPERM保留/activepeak与externalwhole未知。普通local已归还db，本片0PG/HTTP/provider/性能/安装。
 
 本段fresh完整声明floor6795821056B包括Original个人窗512MiB+raw2MiB及自身TMP16MiB/raw512KiB/source-meta2MiB；三次实际free均超过21GB，reserve不重计。该运行只限pure模块，不代表性能独占OPEN。clean-code核输入复制、有限错误、chunk及状态所有权，logicalbytes不冒heap或IPC ACK。当前停止源码写待独审；首片没有接driver/v2/chatcancel，新run输出仍需另amend。
+
+### 2026-10-07T12:40:13.864Z 私有模块独审收口
+
+[正式独审](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-independent-review.json)于12:38:58Z绑定source03164654/packete5dd74fb，13bindings37766B全部相符，0 P1/P2。11/11、types首2→0、三raw797B与资源终态批准；不把module批准当完整driver/PG/性能通过。后继必须保center本地epoch/settle计数，不用buffer flush的IPC接收时刻冒充measure。
+
+metadata首push曾timeout；10s有界ls-remote确认远端仍03164654后，同一e5dd74fb重推成功，HEAD=origin/clean于12:39:04Z工具确认。此后本次仅归档review/status，无新工程运行。当前模块尚未main，历史A/B/idle主线事实单独保留；原6TODO仍三完成三开放、task NOT_COMPLETED。当前claim508f v2/all5保留，源码停写；ordinary已12:34:05实际归还。本20min段到此交付，无PG/provider/服务/旧unknown根动作。
