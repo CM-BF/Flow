@@ -85,7 +85,7 @@ function observeClientErrors(server: Server, readPhase: () => DiagnosticPhase) {
       });
       const result = { diagnosticOnly: true, complete: dropped === 0 && !invalidPhase && originalHandlersPreserved,
         limits: { errors: 16, upstreams: 128, bytes: capBytes }, dropped, invalidPhase, originalHandlersPreserved, errors: rows, upstreams };
-      if (Buffer.byteLength(JSON.stringify(result)) > capBytes) return { ...result, complete: false, errors: [], upstreams: [], byteCapExceeded: true };
+      if (Buffer.byteLength(JSON.stringify(result, null, 2) + "\n") > capBytes) return { ...result, complete: false, errors: [], upstreams: [], byteCapExceeded: true };
       return result;
     },
   };
