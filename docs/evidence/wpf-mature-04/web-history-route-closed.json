@@ -1,0 +1,29 @@
+{
+  "startedAt": "2026-10-07T22:49:19.000Z",
+  "sourceMetadataStopAt": "2026-10-07T22:51:11.853Z",
+  "deadline": "2026-10-07T22:55:19.000Z",
+  "claimVersion": 11,
+  "scope": "Only two owned parent metadata directories",
+  "newEngineeringChildren": 0,
+  "PG": 0,
+  "provider": 0,
+  "otherOwnerWrites": 0,
+  "changedFullBytes": 66421,
+  "gitIndexAtomicCopyBytes": 724491,
+  "finalTailAllowance": 16384,
+  "chargedConservativeBytes": 807296,
+  "capBytes": 2097152,
+  "peak": "UNKNOWN",
+  "parser": {
+    "errors": [],
+    "humanMissing": [],
+    "timingIssues": [
+      "任务开工时间未记录"
+    ],
+    "why": "Historical first task clock is UNKNOWN and is not invented from old claim or commit",
+    "waitingIssues": []
+  },
+  "review": "D01 fixed limited module review referenced; no new self approval",
+  "next": "Thin wiring and full original CT01–09 remain open; parent remains sole hand-entered status",
+  "cleanCode": "Verified distinct source/local targets, current vs historical owner route, old immutable evidence, no duplicate status, exact claim/branch and bounded metadata; no product changes."
+}

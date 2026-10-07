@@ -3,13 +3,13 @@
 | 字段 | 内容 |
 | --- | --- |
 | 计划编号 / 状态 | WPF-MATURE-04 / in-progress |
-| 创建日期 / 最近更新 | 2026-10-06 / 2026-10-06 |
+| 创建日期 / 最近更新 | 2026-10-06 / 2026-10-07 |
 | 任务层级 / 大task ID | 大task / [WPF-MATURE-04](plan.md)；本目录为本大task唯一正文，不复制 Web 管理计划 |
 | co-lead / 单一 owner / model | mika / architecture_read / gpt-6-astra（由派发 lead 确认继承模型，满足 Sol 门槛） |
 | 权威 worktree / branch | /Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency / codex/context-transparency |
 | 固定启动基线 | b1c2e39837c2208e6fc2c59a80e16797f26448b5 |
 | 当前阶段 | M2 |
-| 当前写入范围 | plan/evidence及[amend v3](../../docs/evidence/wpf-mature-04/sdk-amend-receipt.json)追加的2个runner纯Adapter新文件；已审4源码固定，不含生产挂载 |
+| 当前写入范围 | parent owner仅plans/wpf-mature-04-context-transparency与docs/evidence/wpf-mature-04（claim v11）；Web产品由W01独立WT合法领取，历史源码均已交回 |
 
 ## 用户结果与已确认边界
 
@@ -54,7 +54,7 @@ GO/用户已授权该方向及规划实施。首片规划已固定，mika随后�
 - [x] **WPF-MATURE-04-02** 确定上下文测量公有合同和精确 writable scope；独立实现 schema/纯投影，覆盖 unknown、不可比、材料版本、模型变化及超限；879c989a594a8f4f266b9a78a885e311c52eca0d，30/30与局部strict noEmit，Mika于09:14:39 UTC独立APPROVED。
 - [ ] **WPF-MATURE-04-03** 实现受 ownership 保护的中心观测持久化与 owner 读取；提供去重/重放/过期/重启/权限证据，保留已有 usage 与全文隔离。
 - [ ] **WPF-MATURE-04-04** 接入受支持 harness 的实际容量/当前窗口/压缩来源与估算方法；unsupported 明确 unknown，唯一压缩 owner 与结果/原文 refs 可追溯。
-- [ ] **WPF-MATURE-04-05** d01 管理的 Web 插件消费中心 Interface，覆盖草稿/执行/换模型/材料变化、过期、超限、双主题/窄屏及按需详情；不重复传全文。
+- [ ] **WPF-MATURE-04-05** d01 管理、w01_owner在web-context-history独立WT实施的 Web 插件消费中心 Interface，覆盖草稿/执行/换模型/材料变化、过期、超限、双主题/窄屏及按需详情；不重复传全文。
 - [ ] **WPF-MATURE-04-06** 完整矩阵、独立 review、必要直接消费者验证、main 集成与 canonical dashboard 事实同步；不以本首片或 fixture 结果替代完整交付。
 
 本次 -01 首片可单独交付；后续 TODO 未达验收不勾选。状态及阻塞唯一来源为[status](status.md)，[review](review.md) 只记录绑定具体提交的独立结论。
@@ -99,3 +99,5 @@ GO/用户已授权该方向及规划实施。首片规划已固定，mika随后�
 2026-10-06 09:26 UTC：e81f200第二片被独立预审判1P2：Query summary无法证明pending draft/queued输入覆盖。最小修复只允许带nativeSessionId的attempt，host仍负责已消费input/history cut，draft/queued估算是后继独立来源；本片26+23=49/49与strict noEmit0。第一片879 approval不受影响，原46历史不算修后结果；新target复审待完成。
 
 2026-10-06 09:30:13 UTC：3ab95d288a91214d03dec719dc6b44024206118a获status_read/gpt-6-astra独立APPROVED（root 09:28 UTC接收），原P2解决。首两片可分别集成；后继中心store仅在证据中固定精确接线请求，需当前ledger与共享owner定scope后实施，不扩claim。
+
+2026-10-07 当前-05路由：c5f896历史Web模块已完成16pure/strict0及D01限定独审；下一薄接线由同W01独立树继续，尚无App/browser/main/部署证据。进度仍唯一取[status](status.md)，固定来源在[路由证据](../../docs/evidence/wpf-mature-04/web-history-route-current.json)。本条不更改任何CT验收条件或勾选开放TODO。

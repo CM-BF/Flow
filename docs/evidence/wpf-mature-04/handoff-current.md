@@ -38,3 +38,13 @@ Lead在ENG01D接口冻结后fresh核账本、受控追加/交接写权，复用�
 **显示边界。** `latest:null` 表示当前attempt没有可用历史sample，不能显示已用0、充足或已完成采样；identity以响应绑定task/attempt/session/profile为准，不把旧attempt样本贴到新attempt。sample的observedAt与中心receivedAt分别显示/保留来源；used与compactionWindow是SDK估算，modelCapacity仍unknown，rawMaxTokens不得标成model硬上限。响应 `current` / `remaining` 均固定unknown/history-only；不要据elapsed、eventSequence、free类别、累计session账单或两个历史值相减制造current/remaining。compression `not-observed` 不是“未发生压缩”。过期/未采样/权限错误显示各自状态，不把网络失败沿用为新鲜结果。
 
 **按需有限内容。** materials仅中心已授权精确citation+bytes或metadata-unavailable，tokens为null；选择了材料不证明已经驻留。默认面板不重传全文，用户展开时使用现有 `FlowClient.detail(sample.detailRef.id, signal)`（index.ts:457）/已有授权引用reader，保留版本/locator/ref，不自行补正文或猜token。producer增量仅令普通显式Claude成功root result后有机会出现历史sample；缺方法/reject/非法值可无样本，pending unknown可保留uncertain。steering/goal/graph、current cut、压缩跟踪及真实SDK可用性均不在本片。消费端无需等待新contract，但具体Web实现/双主题窄屏与真实服务验证仍由d01另领scope。
+
+## 当前Web路由：2026-10-07（取代旧pending快照）
+
+2026-10-07T22:50:51.105Z：WPF-MATURE-04-05已经开工，writer w01_owner，独立WT `/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history`、branch `codex/web-context-history`，claim25d7e029-9334-479e-8872-61090c406e0a v1 exact3，22:35:02.638Z提交。固定源c5f896333458579b0e0fa65ba2b389e14084a81e、delivery bdf6be1fde74c8d02ce7eadbf651fa0da65d33a7；22:50:05.833Z实际观察ac2581637 clean，只是该瞬间事实。
+
+现有controller/UI/plugin模块16pure+strict0（1797ms CLOSED）由D01/root于22:45:15.211Z限定批准，固定[root-module-review.json](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/root-module-review.json)，SHA9a4dd06c29f518972d74eabcb27afbcce965b36f4164fd3947a528144bafc24c。实际测试target4366466与最终c5f896标题增量区分保留。原两stale floor消费不改，只有事后样本高于正确线的观察。
+
+下一接线仍属原-05：App.tsx提供授权FlowClient reader；plugin-integration/session.ts承接唯一view/session状态及取消；ConversationThread.tsx提供稳定入口。App/session22:47:29交回是管理回报；Thread与新exact scope须W01 fresh取得，父metadata不授产品写权。新的薄接线段已获管理安排，当前不得称mounted。继续真实HTTP schema/权限错误、按需详情请求、A→B→A失效、隐藏/关闭/禁用/重连取消及browser键盘/双主题/窄屏验证；不由历史estimate制造current/remaining或压缩证明。
+
+[唯一父status](../../../plans/wpf-mature-04-context-transparency/status.md)维护-05进度；WPF-001-09只引用，W01树只保存自身证据。旧12:15未见UI开工为历史，现由本固定路由取代。完整CT01–09与-03/-04/-05/-06保持开放。

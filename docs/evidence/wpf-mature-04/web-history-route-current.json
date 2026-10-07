@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-07T22:50:05.833Z",
+  "segmentStartedAt": "2026-10-07T22:49:19.000Z",
+  "segmentDeadline": "2026-10-07T22:55:19.000Z",
+  "scope": "Parent metadata only; no product or external owner changes",
+  "ownClaim": {
+    "id": "d3a9be2b-6321-49b5-992b-9e3f9f216f49",
+    "version": 11,
+    "state": "active",
+    "worker": "architecture_read",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/context-transparency",
+    "branch": "codex/context-transparency",
+    "scope": [
+      "docs/evidence/wpf-mature-04",
+      "plans/wpf-mature-04-context-transparency"
+    ],
+    "ledgerObservedAt": "2026-10-07T22:49:27.697Z",
+    "needsVerificationFlag": true,
+    "identityRechecked": true
+  },
+  "web": {
+    "worker": "w01_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history",
+    "branch": "codex/web-context-history",
+    "observedHead": "ac25816373f5199c891c0ae5f6346d28d83dd8b2",
+    "observedDirty": [],
+    "claimAtObservation": {
+      "id": "25d7e029-9334-479e-8872-61090c406e0a",
+      "version": 1,
+      "createdAt": "2026-10-07T22:35:02.638Z",
+      "scope": [
+        "apps/web/src/conversation-context-history",
+        "apps/web/src/plugin-integration/context-history.tsx",
+        "docs/evidence/wpf-mature04-web-history"
+      ]
+    },
+    "fixedSource": "c5f896333458579b0e0fa65ba2b389e14084a81e",
+    "actualLocalSource": "4366466e2685e6ac1854246a372931cb51df91c0",
+    "fixedDelivery": "bdf6be1fde74c8d02ce7eadbf651fa0da65d33a7",
+    "fixedEvidenceCommit": "ac25816373f5199c891c0ae5f6346d28d83dd8b2",
+    "input": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/source-local-review-input.json",
+      "bytes": 5203,
+      "sha256": "eaa49afc2404cee73650a5dd9e44e954074bb86c6b03d8c2e35e15ca29ad86e0"
+    },
+    "review": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/root-module-review.json",
+      "bytes": 6801,
+      "sha256": "9a4dd06c29f518972d74eabcb27afbcce965b36f4164fd3947a528144bafc24c",
+      "at": "2026-10-07T22:45:15.211423+00:00",
+      "decision": "APPROVED_LIMITED_CONTEXT_HISTORY_MODULE_SOURCE_AND_LOCAL_RESULTS"
+    },
+    "local": {
+      "passed": 16,
+      "affectedStrict": 0,
+      "supervisorMs": 1797,
+      "state": "CLOSED",
+      "laterHeadingDelta": "SOURCE_REVIEWED_NOT_RERUN",
+      "staleFloorRetained": true
+    },
+    "thinWiring": "New segment authorized per root; App/session handback reported22:47:29, Thread/fresh writer ownership still prerequisites; no mounted/browser/main/deployment evidence"
+  },
+  "newEngineeringChildren": 0,
+  "PG": 0,
+  "provider": 0,
+  "newProductWrites": 0,
+  "skills": "Reused fixed local find-skills/codebase-design/clean-code: parent owns acceptance/status, child owns source evidence, no second task or progress authority; preserve history/current/remaining and compaction unknowns."
+}
