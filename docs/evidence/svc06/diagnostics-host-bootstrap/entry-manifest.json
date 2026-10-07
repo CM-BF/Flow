@@ -1,0 +1,220 @@
+{
+  "kind": "SVC06_FIXED_INITIAL_BOOTSTRAP_REPAIR_PREPARATION",
+  "createdAt": "2026-10-07T10:35:52.829939+00:00",
+  "sourceTarget": "ea6bd5852c2754f4179bb6da467caf8d6d67a368",
+  "recordsTarget": "be37dfa4270d7a0218410726b26b24d30aaa03f9",
+  "entryBindings": [
+    {
+      "path": "entry.mjs",
+      "bytes": 17827,
+      "sha256": "cca31be9413aa6b7ecb73b4ef8f62aae493872822de1091d4d54bad1254039c5",
+      "ref": "ea6bd5852c2754f4179bb6da467caf8d6d67a368"
+    },
+    {
+      "path": "supervise.py",
+      "bytes": 4568,
+      "sha256": "7f2abe7f6b6b832be03de94ffceeab7e962868ddf85950fc97b64d4b40882875",
+      "ref": "ea6bd5852c2754f4179bb6da467caf8d6d67a368"
+    },
+    {
+      "path": "startup-observer.mjs",
+      "bytes": 6449,
+      "sha256": "13784a6f0ce14f13f9e08fa47d853ecf0353952e29cb6fc4931ff958385cda4c",
+      "ref": "ea6bd5852c2754f4179bb6da467caf8d6d67a368"
+    },
+    {
+      "path": "journey.mjs",
+      "bytes": 18883,
+      "sha256": "9b0236c428baaf5d7616c247a5ca1e46091a7ef8d00b7e0f094e5f8901b40672",
+      "ref": "ea6bd5852c2754f4179bb6da467caf8d6d67a368"
+    },
+    {
+      "path": "inputs.json",
+      "bytes": 142654,
+      "sha256": "6caaa42e2dd553c5c3187a3418cba4a4533ed7a9964a955b9a9f52e5d8e923f9",
+      "ref": "ea6bd5852c2754f4179bb6da467caf8d6d67a368"
+    },
+    {
+      "path": "bootstrap.test.mjs",
+      "bytes": 3899,
+      "sha256": "605fa2a15238f0e9a84827ab764207634e559e57d939c64235928bbf6ce0868c",
+      "ref": "ea6bd5852c2754f4179bb6da467caf8d6d67a368"
+    },
+    {
+      "path": "local-checks.py",
+      "bytes": 3860,
+      "sha256": "89ed5c9d15a9482ec63f9cff06c9d7b683d908bcaf52e9ff4ca64a0378dd4ceb",
+      "ref": "ea6bd5852c2754f4179bb6da467caf8d6d67a368"
+    },
+    {
+      "path": "Interface.md",
+      "bytes": 1667,
+      "sha256": "9593342841b2077fdc649009a236236325f0f9310c16d64ac69d8de663dcd783",
+      "ref": "ea6bd5852c2754f4179bb6da467caf8d6d67a368"
+    }
+  ],
+  "evidenceBindings": [
+    {
+      "path": "README.md",
+      "bytes": 2678,
+      "sha256": "5ca223048b8423dc918c1aada70da73d404e3fbaff977b6365f97d3f00d98845",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "bootstrap-direct-1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "bootstrap-direct-1.stdout",
+      "bytes": 2253,
+      "sha256": "29e8d83f8ee5f44d8e138cf2f0b106c18567f46c6e7f1a158dfd93a09597c4e4",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "delta.json",
+      "bytes": 3177,
+      "sha256": "747732176481913dd53758db38eb3f744938cf24bfa42822cb8ad027ce863149",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "journey-syntax.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "journey-syntax.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "local-input-check.json",
+      "bytes": 1796,
+      "sha256": "a936146efbabe8b15d8b5be117f7c7287afa6b4aa22634731a548740084a8099",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "local-result.json",
+      "bytes": 2541,
+      "sha256": "2da1d3bb0f1e56a2be253616a64f0c2883740007a0116f0336f26d7062797d07",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "local-summary.json",
+      "bytes": 1612,
+      "sha256": "094fdde7cd6daf4f0b15b3a2436677a47871d195c19befb384df0ca754f96a09",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "retry-bootstrap-direct-1.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "retry-bootstrap-direct-1.stdout",
+      "bytes": 203,
+      "sha256": "4f477e6f5ef496159b846698196c8547c3b9bcd0f3ee1fa8c76582349387adad",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "retry-local-result.json",
+      "bytes": 1439,
+      "sha256": "9e58c70a9d1f557cf8a1bd6deaca39ad7ab2b94b22ffc6271af149cf98232fc5",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "status-check.json",
+      "bytes": 275,
+      "sha256": "16955b9f9f4f45677b1b791199a36bcd00730f89ca4e52a61b10db6c60bfc9ce",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "../diagnostics-host-policy/result-independent-review.json",
+      "bytes": 1900,
+      "sha256": "793439100ec327c6f28785df9bc6dc880cd946cfd7333ca3ec1880b9f91bbb22",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "../../../../plans/svc06-backend-release/status.md",
+      "bytes": 36099,
+      "sha256": "e902f7c9ea922e061e39766693a4d2528df368edda8338a2c808b48d351a3cc7",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    },
+    {
+      "path": "../../../../plans/svc06-backend-release/review.md",
+      "bytes": 18846,
+      "sha256": "97d57423eba20b733580f7173cfa09d70f1f175b048794ddaafe29cd484ea819",
+      "ref": "be37dfa4270d7a0218410726b26b24d30aaa03f9"
+    }
+  ],
+  "inheritedPreparation": {
+    "path": "docs/evidence/svc06/diagnostics-host-policy/entry-manifest.json",
+    "bytes": 8171,
+    "sha256": "eb0f8c7c5dd94850d32d60f40d459d71460110733a02e2a2f632cb2ac73b8e9b",
+    "sourceTarget": "6cd5a15c232210f7802482290b8f7b65318fd1ad",
+    "recordsTarget": "83a60a5e551199295e9744100a291e79f4d352d0",
+    "scope": "513 original fixed inputs, 4 aliases, 3 readonly runtime records, terminal/clone and budgets unchanged; changed journey binding in delta.json. No source payload recopied or old matrix rerun."
+  },
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+    "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+  },
+  "namespace": "/private/tmp/flow-svc06-diagnostics-host-policy-20261007-r2",
+  "fixedRuntimeInputs": 514,
+  "unchangedFixedRuntimeInputs": 513,
+  "legacyAliases": 4,
+  "readonlyRuntime": [
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "dev": 16777234,
+      "ino": 110837507,
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "dev": 16777234,
+      "ino": 63570890,
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 52640,
+      "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "dev": 16777234,
+      "ino": 123234533,
+      "uid": 501,
+      "nlink": 1,
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "resources": {
+    "workSeconds": 180,
+    "cleanupSeconds": 30,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "freshBytes": 2684354560,
+    "liveBytes": 1073741824,
+    "additionalBytes": 67108864,
+    "rawBytes": 2097152,
+    "newArtifactAndPrivateLogicalCap": 434150591,
+    "newPhysicalPlanningBytes": 706740224,
+    "databaseBytes": 100663296
+  },
+  "maximumConfiguredConnections": 15,
+  "execution": "NOT_RUN; wait actual PG window and fresh gates; old r1 consumed and immutable",
+  "reviewScope": "One-word fixture action, new namespace/path/hash, direct loader/CAS test plus original red preserved. Product and service lifecycle unchanged. Synthetic reports never real App compatibility."
+}
