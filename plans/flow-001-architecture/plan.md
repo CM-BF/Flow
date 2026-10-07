@@ -604,4 +604,10 @@ GO只读输入绑定main22a0806bc2465e11096949618113833f31766b19：index.ts同�
 
 原O01-05/O16后继另保一个恢复情景：后续目标/约束已更新时，恢复或native compaction后依据中心当前目标版本及输入收据继续，复用已接受产物、不重复已确认副作用，不以最初请求替代当前工作。现O16禁resume的获审scope不因此改写；零模型与真实native语义分别验收，未新授provider预算，不造第二上下文权威。
 
+### 聊天续接：原 runner 撤销后的旧会话（2026-10-07，待复现）
+
+- [ ] **FLOW-001-T03-RESUME-01** 沿原聊天/runner恢复验收，用已有公开HTTP与专库fixture核对“无profile pin的旧Claude会话已有成功turn → 明确撤销原runner → 新key续聊”及正常续聊对照。Execution Lead排期，拟由原中心owner在O16当前片安全收口后承担；尚未领取产品范围或运行，不打断固定后台发布。
+- 固定main `63768046daa048e955670e74c0ce2491f8ba9873` 的 `conversations/admission.ts:40` 对follow-up跳过runner撤销检查；`execution-profiles/store.ts:130–132` 无pin直接返回，`tasks.ts:52` 仅核session存在，`runners.ts:64–100` 仍限定原runner。它们支持“可能受理后无法领取”的静态候选，未证明真实永久排队、生产故障或泄漏。
+- 若复现成立，最小修复应明确告知会话当前无法继续及既有恢复选择；保留旧幂等回执、历史消息、原session/runner归属和锁序，不迁移session、不重置unknown任务。只验证新key拒绝、旧key原回执、正常续聊及直接queue消费者；技术方案与精确scope在fresh账本核对后确定，0模型，不重跑容量或聊天全集。
+
 2026-10-07T08:57:27.268283+00:00 O16零模型公开旅程已独审并main b768接收，1 selected/1 passed/0provider，旧FAIL/KEEP保留。原O16-06下一native片段仍有实施缺口，不仅缺预算：现operator仅rehearse并要求完整independently-accepted与DROP，不能直接在plan后停下复核。排在SVC06实际发布/OPS-METER01收口之后，由原native_center_owner重新fresh领取原三范围，准备一次planner后关闭进程/连接、只保有期限独立复核材料，再依实际proposal确认两children的分阶段候选；复用OPS14/既有SDK循环，固定Claude登录来源、SDK/配置、总写入上限与结束条件。此处只排准备，未启动query/未复用O08/O10预算，真实模型预算仍交具体候选；ENG授写资格决定保持独立。
