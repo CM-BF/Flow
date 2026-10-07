@@ -1,0 +1,25 @@
+# S01 buffered single-arm caller — fixed review entry
+
+State: SOURCE_AND_PURE_RESULT_REVIEW_READY; actual300s/512MiB candidate NOT_OPEN, no PG/HTTP has run. Caller source `ece9241418d0f17c6ef2cfd6e32e5b868ab22273`; selection source `839a1614bb8429922716fb86e8a9ebe6b2972967` approved by root17:06:05Z/0P1P2, [receipt](queue-buffered-independent-review.json). The input's legacy `source` field refers to this approved selection; caller source is separately fixed here and by its bytes in the input. No new selection/source839 change.
+
+[Input](queue-buffered-operator-input.json) SHA `a317b064dd399f929cf600c988c2d4951a2e1cbd498df3d4761f9fcec1e4144b`:123 bindings/12612600B; only six old runtime bindings replaced (ab-driver,ab-sequence,driver,pg-delivery,queue-probe,run-identity), plus new entry/caller. Old121 input file/old caller remain byte-identical. Original exact4fdd tree,675 source/223 runtime/33 dynamic SQL and installed provenance are referenced by the same three fixed closure files; no re-export or raw copy. Fresh current reads of all123 bindings/realpaths returned errors[]. Selected dependency files/metadata do not claim every transitive dependency byte.
+
+## Small Interface and lifecycle
+
+Single fixed `WINDOW=s01-queue-buffered-once`, one entry `queue-buffered-main.ts`, one output root `docs/evidence/s01/pool-wait-run/buffered-single-v1` and five literal caller outputs. Source/header/hash/current clean HEAD/explicit OPEN/complete floor/output absence are checked before spawn. The variant imports unchanged queue helper functions for fixed environment/Git/hash/exclusive durable receipts, and directly calls existing fixed OPS14. It has no supervision loop, DB ownership or remove authority. Supervised Python-I-B writes same-PID checkpoint before execve fixedNode/tsx; node sees only fixed keys+authorized admin, not OPEN/ambient credentials.
+
+Result confirmation requires exactly one A accounting outcome with PASS, receipt.success/resourcesClosed,129 submission count, matching window+target, no errors and removed/nonretained input export. A is budget slot, not old O1 mode. Existing driver source verifies full128/six-second/four-second ACK/final/cancel/journal. Process exit0/finalabsent/exact separateEOF/full observed-retained capture/no failures or unknown signals is additionally required. Failure is FAIL_OR_UNKNOWN/UNKNOWN_RETAIN; no cleanup/delete/retry from this caller. Final persistence remains by299s; stdout flush is followed by a same-origin300s deadline check. Old two-arm caller still recognizes only its own old window and is not modified.
+
+Candidate limits conservatively retain300s/512MiB whole,15s prep, one135s side105work+30cleanup,240MiB side/32MiB common with4MiB final included;129tasks/8192HTTP/13connections, one DB,0provider. First-arm150s remaining gate stays. Outer supervision295absolute+1TERM+1KILL/reap within300 (inherited original policy). Current candidate floor17,537,695,744B = manager observed15,927,083,008 +512MiB experiment+1GiB DB/WAL headroom; the manager's single cleanup reserve is already in its sum and is not added again. These are conservative planning values, not measured DB/WAL hard caps or OPEN; actual manager higher sum/holder/claim/cluster-WAL checks remain necessary.
+
+## Actual pure check
+
+[Single local record](queue-buffered-caller-local.json):5/5 synthetic tests, one Python child29761,17:09:33.741→33.934Z, exit0/finalabsent/MERGED EOF/raw103B/full capture/no first-secondary-signals. Initial EPERM retained; ownTMP same-inode empty sample removed and exact ENOENT observed17:10:16Z. Supervisor142ms/caller193.316ms/toolreported0.2791755s separate; whole-external wall/peak UNKNOWN. No supervisor/PG is invoked inside tests: OPEN poisoning, old/new window separation, strict single complete receipt, unknown process/capture rejection, mocked same-PID exec and late-print failure are covered. Python import covers syntax. Existing13/core/PG/packing checks not repeated.
+
+[Review bindings](queue-buffered-caller-review-manifest.json) bind only this delta and evidence; frozen selection approval remains separate. Actual root and five caller outputs were all exact lstat ENOENT at this preparation observation; must fresh-check at actual admission. Canonical command below is documentation only, not authorization:
+
+```sh
+/usr/bin/env -i PATH=/usr/bin:/bin FLOW_S01_ADMIN_URL="$FLOW_COORDINATION_DATABASE_URL" FLOW_S01_QUEUE_OPEN=s01-queue-buffered-once /opt/homebrew/bin/python3.13 -I -B docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py '<EXACT_EXECUTION_HEAD>' 'a317b064dd399f929cf600c988c2d4951a2e1cbd498df3d4761f9fcec1e4144b' '<FRESH_COMPLETE_FLOOR>'
+```
+
+Private env is loaded only via authorized entry, never echoed. Future result can establish only feasibility of originalburst under buffered strategy; no per-query packing claim, no historical O1/O2 rewrite, no native/provider/SLO claim. User background stays UNKNOWN, not inspected/stopped. Local find-skills/codebase-design/clean-code reuse: one finite application caller reuses helpers and supervisor, explicit unknown/identity/deadline, no new general framework or copied raw.

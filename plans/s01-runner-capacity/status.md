@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T17:07:07.000Z |
+| 最近更新 | 2026-10-07T17:11:33.451Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -22,13 +22,13 @@
 | 实现目标 | 839a1614bb8429922716fb86e8a9ebe6b2972967 |
 | 实现范围 | experiments/runner-capacity/mixed/queue-buffered-main.ts, experiments/runner-capacity/mixed/queue-buffered.test.ts, experiments/runner-capacity/mixed/queue-probe.ts, experiments/runner-capacity/mixed/run-identity.ts, experiments/runner-capacity/mixed/ab-driver.ts, experiments/runner-capacity/mixed/ab-sequence.ts, experiments/runner-capacity/mixed/driver.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 显式 buffered 单臂选择已实现并通过局部行为与类型检查；同步负载和原完整验收保持，准备独立审查。 |
-| 下一可用交付 | 独审单臂入口与局部证据；随后固定有限外层caller和完整实际输入，PG仍未开放。 |
-| 当前阻塞 | ACTIVE: 新入口待独审；实际运行还缺单臂caller/完整输入绑定与新的资源窗口。 |
+| 当前产出 | 显式 buffered 单臂入口已独审通过；独立caller及固定输入已补齐，纯入口5例通过，等待该增量独审。 |
+| 下一可用交付 | 独审有限caller/input后，按真实资源交接决定是否开放单臂PG候选；旧同步负载验收保持。 |
+| 当前阻塞 | ACTIVE: 新caller/input待独审与正式运行窗口，当前0实际holder。 |
 | 需用户决定 | NONE |
-| Review | PENDING 当前单臂选择；历史packing/ABBA/main批准保持独立。 |
+| Review | APPROVED 839a1614bb8429922716fb86e8a9ebe6b2972967选择/13pure/types；新caller增量PENDING。 |
 | 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T16:58Z fresh本人/WT/branch一致。 |
 | 架构影响 | 本片仅实验选择Interface：显式单次buffered复用原runMixed/centerDelivery/完整proof/final/cancel；原A/B默认顺序、产品pool/SQL和生产4fdd不改。 |
 
@@ -344,3 +344,5 @@ db16:18:22Z RESULT_FIDELITY_REVIEW_APPROVED/0P1P2，绑定dfb2105ba6e4f3eaa4512d
 ## 2026-10-07T17:07:07.000Z 独立单臂caller准备
 
 Root于17:06:05Z独审source839a/packet17cb，SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0P1P2，正式回执queue-buffered-independent-review.json。新8分钟至17:15:07Z，新增4MiB含TMP2MiB/raw256KiB，最多3串行child各30s/累计45s；fresh claim508fv3/6本人匹配。仅复用旧OPS14/固定queue operator helpers的新有限variant，冻结旧caller/raw/input不改，0PG/HTTP/Chrome/provider/install/build。经理紧前floor至少15,927,083,008B或更高；actual300s/512MiB与PG/WAL预留仅候选，绝无OPEN。
+
+2026-10-07T17:11:33.451Z caller准备FULLRETURN/STOP：source `ece9241418d0f17c6ef2cfd6e32e5b868ab22273`，[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-caller-ready.md)。新123input/12612600B引用原production675/223/33SQL，六已审leaf替换+两新caller/entry，其余原件不改。纯5/5、1child142ms监督/193.316mscaller、raw103B，资源末态与旧EPERM分别保留；0PG/HTTP/perf。新五输出及root精确absence只为本次准备观察，不当future许可。旧source839批准已归档，caller待一次独审。

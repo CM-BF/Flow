@@ -2,7 +2,7 @@
 
 ## 当前：显式 buffered 单臂选择
 
-PENDING，source `839a1614bb8429922716fb86e8a9ebe6b2972967`；[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-ready.md)。新8/8+共享sequence5/5、focusedtypes0，仅选择/身份/接线与局部结果待独审。实际PG/HTTP仍NOT_RUN_NOT_OPEN，旧caller未配单臂。
+APPROVED 2026-10-07T17:06:05Z root /0P1P2，source `839a1614bb8429922716fb86e8a9ebe6b2972967`；[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-ready.md)。新8/8+共享sequence5/5、focusedtypes0，仅选择/身份/接线与局部结果待独审。实际PG/HTTP仍NOT_RUN_NOT_OPEN，旧caller未配单臂。
 
 ## 历史：同policy packing ABBA准备
 
@@ -294,3 +294,7 @@ main 8e5faabb2f5f4e86cf80044916857680d70912af，assignment_review批准最小pri
 ## 2026-10-07T17:02:46.250Z 显式buffered单臂独审待收
 
 Target `839a1614bb8429922716fb86e8a9ebe6b2972967`；入口 [queue-buffered-ready.md](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-ready.md)，manifest绑定当前选择/接线及完整proof未变证据。新8/8+共享sequence5/5与focusedtypes0，2child完整收尾；独立review PENDING，实际PG/perf NOT_RUN_NOT_OPEN。审查重点：只选buffered、原A/B默认不漂移、固定生产身份与完整验收不被可选选择绕过、失败unknown仍保守。无新生产pool/SQL/调度变更，不把main离线12leaf批准继承成真实center接线。
+
+## 2026-10-07T17:11:33.451Z 单臂caller增量待审
+
+Source `ece9241418d0f17c6ef2cfd6e32e5b868ab22273`；[caller ready](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-caller-ready.md)，选择source839已审；新caller/input+5pure结果PENDING。0PG/实际性能，原FAIL/KEEP/raw与冻结operator/input不变。
