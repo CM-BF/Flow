@@ -13,7 +13,7 @@ import time
 
 ROOT = Path(__file__).resolve().parents[3]
 HERE = ROOT / 'docs/evidence/x01'
-RUN = HERE / 'enable-binding-stage-c-run-r1'
+RUN = HERE / 'enable-binding-stage-c-run-r2'
 NODE = '/opt/homebrew/opt/node@24/bin/node'
 OPS = Path('/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py')
 OPS_SHA = '725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d'
@@ -136,7 +136,7 @@ def child():
 def main():
     # Admission is a fresh co-lead coordination receipt, not a cryptographic authorization scheme.
     if len(sys.argv) != 5 or sys.argv[1] != '--admission' or not Path(sys.argv[2]).is_absolute() or sys.argv[3] != '--sha256' or not re.fullmatch('[a-f0-9]{64}', sys.argv[4]): raise ValueError('Explicit admission path and hash required')
-    started = time.monotonic(); wall = time.time(); limits = json.loads(read_regular(HERE / 'enable-binding-pg-input.json', 8192))
+    started = time.monotonic(); wall = time.time(); limits = json.loads(read_regular(HERE / 'enable-binding-pg-r2-input.json', 8192))
     deadline = started + limits['totalSeconds']; report = {'startedAt': stamp(), 'state': 'HOLD', 'unknown': False, 'limits': limits, 'processes': [], 'suites': {}, 'PGMayHaveStarted': False, 'retained': [], 'temporaryPeak': 'UNKNOWN'}
     written = 0; temporary = None; identity = None; reserved = False; run_identity = None
     def gate(reserve=0):
@@ -160,7 +160,7 @@ def main():
         if not 0 <= age <= 60: raise ValueError('Admission stale')
         head, window = admission['head'], admission['window']
         if not re.fullmatch('[a-f0-9]{40}', head) or not re.fullmatch('[a-f0-9]{32}', window): raise ValueError('Invalid window/head')
-        manifest_raw = read_regular(HERE / 'enable-binding-pg-manifest.json', 524288)
+        manifest_raw = read_regular(HERE / 'enable-binding-pg-r2-manifest.json', 524288)
         if digest(manifest_raw) != admission['manifestSha256']: raise ValueError('Prepared inputs changed')
         manifest = json.loads(manifest_raw)
         for row in manifest['files']:
@@ -189,7 +189,7 @@ def main():
         git = ops.supervise(ops.Launch(('/usr/bin/git', 'status', '--porcelain=v2', '--branch', '--untracked-files=all'), str(ROOT), dict(os.environ), ops.Ownership.NEW_CHILD_SESSION, ops.Capture.MERGED), ops.Policy(3, .25, .75, 32768))
         process, unknown = facts.supervision_facts(git, 'git-preflight'); report['processes'].append(process); report['unknown'] |= unknown
         write('preflight.stdout', git.stdout)
-        lines = git.stdout.decode().splitlines(); other = [line for line in lines if not line.startswith('# ') and not (line.startswith('? docs/evidence/x01/enable-binding-stage-c-run-r1/') and line.rsplit('/', 1)[-1] in {'admission.json', 'reservation.json'})]
+        lines = git.stdout.decode().splitlines(); other = [line for line in lines if not line.startswith('# ') and not (line.startswith('? docs/evidence/x01/enable-binding-stage-c-run-r2/') and line.rsplit('/', 1)[-1] in {'admission.json', 'reservation.json'})]
         if unknown or git.exit_code != 0 or '# branch.oid ' + head not in lines or '# branch.head codex/plugin-enable-binding' not in lines or other: raise ValueError('Working tree not fixed')
         gate(25)
         if time.monotonic() - started >= 15: raise TimeoutError('PG start cutoff')
