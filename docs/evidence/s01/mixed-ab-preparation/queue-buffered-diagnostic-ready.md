@@ -1,6 +1,6 @@
 # S01 single buffered diagnostic candidate
 
-**CLOSED / INPUT_BOUND / ROOT_REVIEW_PENDING / NOT_OPEN.** No future nonce, DB, process, TMP or run directory is reserved. Namespace-only source `3dffa3f0c344767eccc58716343fa1b0a3e0369d`; observer callback repair `84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2` already independently approved against packet86bbdd5eaeb076dc29b6733be437c9ff40ab723a. This candidate is fixed4fdd experimentation, not latest-main capacity.
+**CLOSED / INPUT_BOUND / REVIEW_APPROVED / NOT_OPEN.** No future nonce, DB, process, TMP or run directory is reserved. Namespace-only source `3dffa3f0c344767eccc58716343fa1b0a3e0369d`; observer callback repair `84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2` already independently approved against packet86bbdd5eaeb076dc29b6733be437c9ff40ab723a. This candidate is fixed4fdd experimentation, not latest-main capacity.
 
 ## Question and unaltered acceptance
 
@@ -39,3 +39,9 @@ Same absolute deadlines, success requires exact single PASS plus complete receip
 ## This preparation and required review
 
 Started20:07:39Z/deadline20:19:39Z, source+metadata≤2MiB; only Git/hash/literal/document work,0engineering child/PG/HTTP/performance/TMP access/new output roots. Reused local find-skills/codebase-design/clean-code: stable boundaries and explicit lifecycle ownership, literal data change instead of a duplicated runner. No new tests or reuse of an old grant. Root must review these two literal deltas and six-row rebinding; existing84b5 source/local approval does not automatically approve these new names. Future actual remainsNOT_OPEN and is scheduled separately.
+
+## Namespace/input approval seal
+
+Mika/root 2026-10-07 20:28 UTC（分钟精度）已对source `3dffa3f0c344767eccc58716343fa1b0a3e0369d` / packet `08819a6175ddcedf85c406a2b68e1d18d7c906a4` 独立限定批准0P1/P2：[正式回执](queue-buffered-diagnostic-independent-review.json)。两leaf六literal、123bindings12617081B/6替换117不变、四observer84b5、旧842a和三closure原字节均核符；五新输出和root在审查时absent。原输入SHA `cd39a9395da46eea287f369afd330e810cccc5c672de918c3bdaf8c368a60ff9` 不改。此前本页要求的root限定审现已满足；旧准备记录内PENDING属固定历史，不回写。
+
+Future argv的`<GRANTED_EXACT_PACKET_40SHA>`须替换为本次metadata封存后、owner交付消息报告的完整最终HEAD（不能仍用08819a，也不能在执行时自行选择moving HEAD）。本页command其余参数不变；最终packet由Git/交付回执精确命名，避免文件自包含commit循环。Actual仍CLOSED、无新nonce/输出目录，完整floor仅唯一经理实际授窗时固定。

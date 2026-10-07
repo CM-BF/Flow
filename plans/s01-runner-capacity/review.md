@@ -1,8 +1,8 @@
 # S01 独立审查
 
-## 当前候选：诊断namespace字面量待root复核
+## 当前候选：诊断namespace与输入绑定已审
 
-SOURCE_INPUT_REVIEW_PENDING，source `3dffa3f0c344767eccc58716343fa1b0a3e0369d`；[入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-ready.md)。严格两leaf六字面量与六输入binding替换，无控制流/预算/proof变化；0新工程检查/实际运行。84b5既有独审范围独立保持。
+NAMESPACE_AND_INPUT_BINDING_REVIEW_APPROVED /0P1/P2，Mika/root 2026-10-07 20:28 UTC（分钟精度），packet `08819a6175ddcedf85c406a2b68e1d18d7c906a4` / source `3dffa3f0c344767eccc58716343fa1b0a3e0369d`；[入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-ready.md)。[正式回执](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-independent-review.json)。严格两leaf六字面量；123bindings12617081B/6替换117不变、realpath/hash核符；旧842a与三closure保持，五输出/root absent。无控制流/预算/proof变化；0工程执行/实际运行。84b5既有独审范围独立，actual仍CLOSED，不扩大性能或main批准。
 
 ## 当前：回调背压修复已独审，主线未接收
 

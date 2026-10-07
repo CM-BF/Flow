@@ -1,0 +1,31 @@
+{
+  "verdict": "NAMESPACE_AND_INPUT_BINDING_REVIEW_APPROVED",
+  "reviewer": "Mika / root",
+  "P1": 0,
+  "P2": 0,
+  "reviewTimeAsDelivered": "2026-10-07 20:28 UTC",
+  "timePrecision": "minute; exact reviewer second not supplied",
+  "recordedAt": "2026-10-07T20:31:29.819Z",
+  "source": "3dffa3f0c344767eccc58716343fa1b0a3e0369d",
+  "packet": "08819a6175ddcedf85c406a2b68e1d18d7c906a4",
+  "inputSha256": "cd39a9395da46eea287f369afd330e810cccc5c672de918c3bdaf8c368a60ff9",
+  "bindings": 123,
+  "bindingBytes": 12617081,
+  "changedBindings": 6,
+  "unchangedBindings": 117,
+  "sourceDelta": "two leaves, six literal substitutions only; comparison against6494 exact",
+  "observerSource": "84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2",
+  "verifiedUnchanged": [
+    "historical input842a7e1d8e152337692b884e905bc0b1b97a28090bc244b3bcf11309e0decbc2",
+    "three closure files against fixedc751 Git/hashes"
+  ],
+  "outputs": "five new caller outputs and run root ENOENT at reviewer observation; not a reservation",
+  "boundaries": [
+    "reviewer read-only; no engineering execution",
+    "84b5 source/local approval remains separate",
+    "actual CLOSED/NOT_OPEN; no PG, capacity or main approval",
+    "whole300s/arm135s and original proof remain unchanged; full floor only at new grant"
+  ],
+  "ownerFreshClaimAt": "2026-10-07T20:30:38.725Z",
+  "ownerClaim": "508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE6"
+}

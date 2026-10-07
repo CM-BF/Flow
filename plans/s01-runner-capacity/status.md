@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T20:16:51.514Z |
+| 最近更新 | 2026-10-07T20:31:29.819Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -15,21 +15,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | Namespace字面量源码3dffa3f0c344767eccc58716343fa1b0a3e0369d已固定；当前只封未来候选input/单一准备记录和status，起点6494b35b clean。 |
+| 工作树dirty状态 | 起点08819a6175ddcedf85c406a2b68e1d18d7c906a4 = origin clean；仅正式审查回执/ready/status/review收口，输入与源码原件不变。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2：baseline1复现旧失败；修后16定向+strict0+现child2，四run分开；实际单A仍FAILED，不以pure代容量。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
 | 实现目标 | 3dffa3f0c344767eccc58716343fa1b0a3e0369d |
 | 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py, experiments/runner-capacity/mixed/queue-probe.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | planning |
 | 优先级 | 4 |
-| 当前产出 | 背压修复已审；保留原负载与完整断言的新诊断候选已绑定，窗口及输出独立，待有限字面量复核。原128容量验收仍失败。 |
-| 下一可用交付 | 复核候选绑定后单独协调一次实际诊断；本段不申请或启动运行，诊断可得仍不等于容量通过。 |
-| 当前阻塞 | ACTIVE: 原ACK窗口完整验收未过；新候选CLOSED且未获实际窗口，原FAIL和两个KEEP保留，无holder或待launch。 |
+| 当前产出 | 诊断候选的命名空间和输入绑定已独立审查通过并封存；尚未授予实际窗口，原128容量验收仍失败。 |
+| 下一可用交付 | 获得独立运行授权后执行一次保持原断言的诊断；当前只保留已审候选，不启动PG或新检查。 |
+| 当前阻塞 | ACTIVE: 原完整ACK窗口验收未过；新候选已审但实际CLOSED/NOT_OPEN，无holder、待launch或新nonce。 |
 | 需用户决定 | NONE |
-| Review | 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2 source/local已db19:49:27 APPROVED；新namespace 3dffa3f0c344767eccc58716343fa1b0a3e0369d 及input绑定待root限定复核，不继承性能或main批准。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE/exact6；2026-10-07T20:08:05.994Z本人/WT/branch/scope fresh相符。 |
+| Review | NAMESPACE_AND_INPUT_BINDING_REVIEW_APPROVED，Mika/root 2026-10-07 20:28 UTC，source 3dffa3f0c344767eccc58716343fa1b0a3e0369d / packet 08819a6175ddcedf85c406a2b68e1d18d7c906a4，0P1/P2；84b5 source/local批准独立，不扩展为实际性能或main。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE/exact6；2026-10-07T20:30:38.725Z本人/WT/branch/scope fresh相符；保留至后续。 |
 | 架构影响 | 不新增Interface/调度器；仅已有caller与recipe六个namespace/input路径字面量绑定新候选，原guard/预算/完整proof保持。私有observer本修复未main。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -390,3 +390,9 @@ find-skills复用本地版本，codebase-design让reporter拥有回调/预算、
 本段20:07:39Z起12min/2MiB，0工程child/PG/HTTP/performance/TMP访问/编译。原input-only因固定旧namespace已消费不可执行；root在同段明确授权两leaf六字面量更新，固定3dffa3f0c344767eccc58716343fa1b0a3e0369d，未改控制流。当前[唯一候选入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-ready.md)与input SHAcd39a9395da46eea287f369afd330e810cccc5c672de918c3bdaf8c368a60ff9：123bindings/12617081B，六替换117不变；675固定Git对象/223runtime/33SQL含017/019内存核符，无source导出。新五输出及root仅lstat absent，不创建任何运行nonce或资源。CLOSED_REVIEW_PENDING_NOT_OPEN；完整验收/ACK4s/6s/128/四cancel与原FAIL/2KEEP不变，任务TODO保持开放。futurefloor由经理重算，不把本段source预算当runtime准入。
 
 本段growth封存前63722B，含三新候选文件62670B及两字面量/状态增量；加本说明仍<65KiB/2MiB。parseStatus errors/human.missing=[]，历史开工UNKNOWN是唯一timing issue。0工程测试，fixedGit/hash静态核对不称实际运行或性能通过。commit/push后STOP保claim。
+
+## 2026-10-07T20:31:29.819Z 限定审查收口
+
+本独立metadata段实际20:30:38Z开始、3min/新增64KiB单列，不借旧2MiB。Mika20:28分钟精度NAMESPACE_AND_INPUT_BINDING_REVIEW_APPROVED0P1/P2已归档：[回执](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-diagnostic-independent-review.json)。输入cd39原字节/123bindings/旧raw/manifest/source不改；whole300/arm135、原4s/6s/128断言和两个KEEP保持。0工程child/产品PG/HTTP/TMP访问/新nonce，actual仍CLOSED。最终metadata完整HEAD随Git固定交付，用作未来显式argv候选，授窗才定完整floor。唯一status与ready同步，不新增第二状态源；历史taskstartUNKNOWN和开放TODO不变。沿本地find-skills/codebase-design/clean-code只核阶段、审批范围和固定输入一致性。
+
+本段新增逻辑增长封存前3641B，加本行仍<6KiB/64KiB；commit/push clean后STOP，保claim。
