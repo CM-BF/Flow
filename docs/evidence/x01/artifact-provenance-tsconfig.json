@@ -1,0 +1,5 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": ["../../../apps/server/src/plugin-runtime/artifact.test.ts", "../../../apps/runner/src/plugins/execution.ts"],
+  "exclude": ["../../../node_modules"]
+}

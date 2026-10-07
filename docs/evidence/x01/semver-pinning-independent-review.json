@@ -1,0 +1,23 @@
+{
+  "reviewer": "chatui01_owner/gpt-6-astra",
+  "reviewedAt": "2026-10-07T07:40:53Z",
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "source": "fe826801654c1366a20849fbd2f82d8b36bc01ac",
+  "result": "a87d7478aea4639af0796f86b7bc7885058b7e07",
+  "packet": "ca851c4ebcfac0d6ef9d455dbd444ce3307fc99a",
+  "manifestSha256": "0073589faa0ea0706ca760612061a450810ba558e394435c9206ea835af54d50",
+  "scope": "Two Flow wrapper versions; existing installed-package pin/trust and finite direct results only. Not upstream npm upgrade, center revisions/revoke, production runRunner or full X01.",
+  "checks": {
+    "tests": 3,
+    "passed": 3,
+    "typesExit": 0,
+    "topLevelChildren": 2,
+    "tarChildren": 2,
+    "rawBytes": 116,
+    "wholeExternalWall": null,
+    "activePeak": null
+  },
+  "historicalUnknownObservationsPreserved": true
+}

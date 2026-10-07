@@ -1,0 +1,52 @@
+{
+  "recordedAt": "2026-10-07T07:37:47.077989+00:00",
+  "sourceHandback": {
+    "commit": "b38ecf3fca24b63d788f608557ac21b7f4a0fae1",
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/docs/evidence/mature02c02/runner-launch-handback-receipt.json",
+    "bytes": 3329,
+    "sha256": "0b58346d07a7ec3a5a245b1e86698040cd53d949ec413bc188b08d643c597681",
+    "stoppedWritingAt": "2026-10-07T07:34:33.779954Z",
+    "committedAt": "2026-10-07T07:34:40.663Z"
+  },
+  "newClaim": {
+    "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "version": 15,
+    "scopeCount": 37,
+    "committedAt": "2026-10-07T07:37:46.916Z"
+  },
+  "sourceReadiness": [
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "mainCommit": "d556780129897582f09945c0621aa2ed64fb52f7",
+      "bytes": 6563,
+      "sha256": "13e653329ee203dde84eec4ce7057de27f23f333d9308f14f4cabe4b1cbccd65",
+      "worktreePresent": true,
+      "worktreeMatchesMain": false
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "mainCommit": "d556780129897582f09945c0621aa2ed64fb52f7",
+      "bytes": 10414,
+      "sha256": "907314670720f49b0dcd6b00bd12d595fc7e60d174a3daa979bd4ab1bddab704",
+      "worktreePresent": false,
+      "worktreeMatchesMain": false
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "mainCommit": "d556780129897582f09945c0621aa2ed64fb52f7",
+      "bytes": 3297,
+      "sha256": "46c06a84f1bde8db92a7df140d1491609877455b84ff6e520d00cc748a46c1fe",
+      "worktreePresent": true,
+      "worktreeMatchesMain": false
+    },
+    {
+      "path": "apps/runner/src/main-concurrency.test.ts",
+      "mainCommit": "d556780129897582f09945c0621aa2ed64fb52f7",
+      "bytes": 11273,
+      "sha256": "ada94473fc4288a1d319d793860c88cad21d37482c399264c72ebc019b75872b",
+      "worktreePresent": false,
+      "worktreeMatchesMain": false
+    }
+  ],
+  "boundary": "Rights received only. No files materialized/changed or startup/PG executed. Before future edits, controlled same-path intake must preserve exact current main/C02 source. CHAT05 runtime/client/contracts index remain held by their owner."
+}
