@@ -67,7 +67,7 @@ export function createNativeToolRecipe(options: { model: NativeEngineeringModel;
           signal.addEventListener('abort', seal, { once: true });
           if (signal.aborted) seal();
           let outcome: ToolWriteOutcome;
-          try { outcome = await options.writer.invoke(parsed.data); }
+          try { outcome = await options.writer.invoke(parsed.data, signal); }
           finally { signal.removeEventListener('abort', seal); }
           item.outcome = outcome;
           if (outcome.state === 'written' && !signal.aborted) return { allowed: true, reply: { result: { contentItems: content(outcome), success: true } } };

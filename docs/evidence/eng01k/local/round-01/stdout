@@ -1,0 +1,27 @@
+
+[1m[46m RUN [49m[22m [36mv4.0.18 [39m[90m/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-trusted-tool-writer[39m
+
+ [32m✓[39m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mwrites only the pinned calculator, fsyncs and retains its inode; ACK recovery never writes again[32m 14[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mrejects another body or call id after one admission without an extra write[32m 1[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mreplay rechecks current ownership and cannot reuse a stale lease ACK[32m 0[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mconflicting digest and unexpected path/oversized/base64 input are rejected before writing[32m 1[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mturn mismatch and a changed trusted binding cannot reopen a gate[32m 1[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mclose seals admission before a late ownership check returns[32m 0[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mclose waits for real write settlement and FD close, not native process close[32m 0[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22ma timed out drain remains unknown even after the late operation settles[32m 0[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mpartial write or close errors keep unknown and never replay the operation[32m 0[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mnative cancellation seals before ownership resume and does not claim native revocation[32m 0[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-writer.test.ts[2m > [22mfile port rejects symlinks/hardlinks and detects a path replaced after open[32m 3[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-policy.test.ts[2m > [22mreadonly dynamic recipe accepts only its own successful host receipt and matching terminal item[32m 6[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-policy.test.ts[2m > [22msame native call recovers a lost ACK without a second write[32m 1[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-policy.test.ts[2m > [22mwrong thread, turn, tool or body is denied without using the write port[32m 1[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-policy.test.ts[2m > [22munstarted tool calls and native file/exec approvals cannot acquire host permission[32m 0[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-policy.test.ts[2m > [22mclaimed completion with different content or a second tool item is rejected[32m 0[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-policy.test.ts[2m > [22masync response cancellation seals admission while ownership is still pending[32m 0[2mms[22m[39m
+ [32m✓[39m apps/runner/src/engineering/native-tool-policy.test.ts[2m > [22mold ordinary and file-change recipes remain incapable of accepting dynamic tool writes[32m 0[2mms[22m[39m
+
+[2m Test Files [22m [1m[32m2 passed[39m[22m[90m (2)[39m
+[2m      Tests [22m [1m[32m18 passed[39m[22m[90m (18)[39m
+[2m   Start at [22m 00:18:57
+[2m   Duration [22m 361ms[2m (transform 78ms, setup 0ms, import 200ms, tests 30ms, environment 0ms)[22m
+

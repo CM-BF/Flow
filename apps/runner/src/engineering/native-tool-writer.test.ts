@@ -105,8 +105,17 @@ test('partial write or close errors keep unknown and never replay the operation'
 test('native cancellation seals before ownership resume and does not claim native revocation', async () => {
   const ready = deferred<void>(), m = memory(), abort = new AbortController(), writer = gate(m.target, () => ready.promise, abort.signal);
   const pending = writer.invoke(call()); abort.abort(); ready.resolve();
-  expect((await pending).state).toBe('rejected'); expect(m.writes).toBe(0);
+  expect((await pending).state).toBe('unknown'); expect(m.writes).toBe(0);
   expect((await writer.close(signal())).nativeWriteAccess).toBe('unknown');
+});
+
+test('cancelled observation retains a real pending write until its eventual close', async () => {
+  const writing = deferred<void>(), finish = deferred<void>(), m = memory();
+  const writer = gate({ ...m.target, async replace(bytes) { writing.resolve(); await finish.promise; await m.target.replace(bytes); } });
+  const abort = new AbortController(), pending = writer.invoke(call(), abort.signal); await writing.promise;
+  abort.abort(); expect(await pending).toEqual({ state: 'unknown' }); expect(m.closes).toBe(0);
+  expect((await writer.close(abort.signal)).hostWrite).toBe('unknown'); expect(m.closes).toBe(0);
+  finish.resolve(); expect((await writer.close(signal())).hostWrite).toBe('unknown'); expect(m.closes).toBe(1); expect(m.writes).toBe(1);
 });
 
 test('file port rejects symlinks/hardlinks and detects a path replaced after open', async () => {

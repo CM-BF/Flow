@@ -28,7 +28,9 @@ export interface CodexExchangeRecipe<Thread extends { threadId: string } = { thr
   startTurn(threadId: string): Json;
   readThread(response: Json): Thread;
   checkCompletion(): void;
-  respond(method: string, params: Json): { allowed: boolean; reply: Reply };
+  /** The trusted recipe owns unfinished effects after an unknown reply. Await one response in the
+   * same receive pump; a transport close is not a tool writer's settlement or revocation. */
+  respond(method: string, params: Json, signal: AbortSignal): { allowed: boolean; reply: Reply } | Promise<{ allowed: boolean; reply: Reply }>;
 }
 export async function runCodexExchange<Thread extends { threadId: string }>(createTransport: CodexTransportFactory, input: CodexExchangeInput,
   limits: { wallTimeMs: number; maxOutputBytes: number }, recipe: CodexExchangeRecipe<Thread>) {
@@ -106,7 +108,8 @@ export async function runCodexExchange<Thread extends { threadId: string }>(crea
           if (message === null) break;
           if (++observed % 32 === 0) await yieldToIO(undefined, { signal });
           if (message.kind === 'server-request') {
-            const answer = recipe.respond(message.method, message.params);
+            const answer = await recipe.respond(message.method, message.params, signal);
+            signal.throwIfAborted();
             violated ||= !answer.allowed;
             await connected.respond(message.id, answer.reply);
             if (violated) wake();

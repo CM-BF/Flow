@@ -29,6 +29,7 @@ def main(mode,round_id,*selection):
  command=[NODE,str(I02/'node_modules/vitest/vitest.mjs'),'run','--config',str(HERE/'vitest.config.mjs'),'--reporter=verbose'] if mode=='tests' else [NODE,str(I02/'node_modules/typescript/lib/tsc.js'),'-p',str(HERE/'tsconfig.json')]
  if selection:assert mode=='tests' and len(selection)==1;command+=['-t',selection[0]]
  sources=[ROOT/('apps/runner/src/engineering/'+p) for p in ('native-tool-writer.ts','native-tool-writer.test.ts','native-tool-policy.ts','native-tool-policy.test.ts')]
+ sources += [ROOT/'apps/runner/src/native-harness/codex/exchange.ts',ROOT/'apps/runner/src/native-harness/codex/exchange.test.ts']
  sources += [Path(__file__).resolve(),HERE/'vitest.config.mjs',HERE/'tsconfig.json',SUPERVISOR]
  save(out/'reservation.json',{'startedAt':datetime.datetime.now(datetime.timezone.utc).isoformat(),'scratch':str(scratch),'dev':identity.st_dev,'ino':identity.st_ino,'freeBytes':free,'priorMs':used,'mode':mode,'command':command,'sources':{str(p.relative_to(ROOT)):hashlib.sha256(p.read_bytes()).hexdigest() for p in sources},'provider':0,'PG':0})
  spec=importlib.util.spec_from_file_location('eng01k_supervisor',SUPERVISOR);module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)

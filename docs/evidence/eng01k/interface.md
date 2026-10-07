@@ -6,7 +6,7 @@ writer按固定task/attempt/runner/ownerVersion/lease/baseCommit与目标inode�
 
 每次首次调用与重放均先核当前ownership，异步返回后重新核signal/封门代际；单在途写入。close先同步seal，等待真正write/fsync settle、FD close后只报告host入口settled；超时/读写/close未知返回unknown，不推断已撤销Unix身份所有写能力。晚回调不得重新开放。R06直属close永远不代替gate close。固定inode句柄只更新内容/截短，不改变路径、mode或执行代码；目标regular、nlink1、当前uid，目录canonical，bytes≤2048。遇路径置换或结果无法确认保持unknown。
 
-policy仅声明readOnly native、approval never、固定flow_calculator_update动态工具；预期thread/model/sandbox和每项tool生命周期/参数/回复对应，拒绝fileChange/command/其他server-request。实际OS只读host launch是后继，声明本身不证明强制隔离。experimental dynamicTools输入来自固定0.154源码，生产泵需异步respond接缝；exchange暂仍他人持有，本片只直接调用async recipe并验证既有evidence消费者，不自行复制泵。
+policy仅声明readOnly native、approval never、固定flow_calculator_update动态工具；预期thread/model/sandbox和每项tool生命周期/参数/回复对应，拒绝fileChange/command/其他server-request。实际OS只读host launch是后继，声明本身不证明强制隔离。experimental dynamicTools输入来自固定0.154源码，生产泵需异步respond接缝；exchange已正式交回并由本claim v2取得，仅在现单pump await响应并传既有signal，同步caller兼容。取消返回unknown观察时，真实entry.operation仍由gate持有，close等待它真实settle，不丢在途写入；无新pump。
 
 0provider本片验证：真实私有文件成功/原inode与越界未改；重复/异body/CAS/ownership失效；seal时在途ownership/write/close的晚返回；真实未结操作不能settled；receipt/错误有限且无正文回显；protocol lifecycle/错thread/turn/tool与普通recipe保持。≤180s process、16MiB自有tmp、2MiB原始输出，0PG/browser/provider/personal/install。源准备与checks分开，unknown不自动清理共享资源。
 

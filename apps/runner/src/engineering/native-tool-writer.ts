@@ -66,6 +66,16 @@ export function createTrustedToolWriter(options: { binding: TrustedToolBinding; 
       return rejected('ownership-or-target');
     }
   }
+  function observe(operation: Promise<ToolWriteOutcome>, signal: AbortSignal): Promise<ToolWriteOutcome> {
+    // Stop waiting on cancellation, but retain entry.operation until actual I/O and close settle.
+    // An unknown reply is never permission to release the workspace or mint a revoked grant.
+    return new Promise(resolve => {
+      const abort = () => { seal(); unknown = true; resolve({ state: 'unknown' }); };
+      signal.addEventListener('abort', abort, { once: true });
+      if (signal.aborted) abort();
+      operation.then(value => { signal.removeEventListener('abort', abort); resolve(value); });
+    });
+  }
   return {
     binding,
     seal,
@@ -75,20 +85,21 @@ export function createTrustedToolWriter(options: { binding: TrustedToolBinding; 
       if (sealed || (turn && (turn.threadId !== threadId || turn.turnId !== turnId))) { seal(); throw Error('Tool turn binding differs.'); }
       turn ??= Object.freeze({ threadId, turnId });
     },
-    async invoke(input: { threadId: string; turnId: string; callId: string; arguments: unknown }): Promise<ToolWriteOutcome> {
+    async invoke(input: { threadId: string; turnId: string; callId: string; arguments: unknown }, signal = options.signal): Promise<ToolWriteOutcome> {
       const args = calculatorToolArguments.safeParse(input.arguments);
       if (!args.success || !id.safeParse(input.callId).success) { seal(); return rejected('invalid-request'); }
       if (!turn || turn.threadId !== input.threadId || turn.turnId !== input.turnId) { seal(); return rejected('binding'); }
       if (sealed) return rejected('sealed');
+      if (signal.aborted) { seal(); return { state: 'unknown' }; }
       const body = JSON.stringify(args.data);
       if (entry) {
         if (entry.callId !== input.callId || entry.body !== body) { seal(); return rejected('conflict'); }
-        try { await ownership(); } catch { seal(); return rejected('ownership-or-target'); }
-        return entry.operation; // One memoized outcome, including unknown. Never retry the write on lost ACK.
+        const replay = ownership().then(() => entry!.operation, () => { seal(); return rejected('ownership-or-target'); });
+        return observe(replay, signal); // One memoized outcome. Never retry the write on lost ACK.
       }
       const operation = execute(input.callId, args.data);
       entry = { callId: input.callId, body, operation };
-      return operation;
+      return observe(operation, signal);
     },
     close(signal: AbortSignal): Promise<HostToolClose> {
       seal(); // Synchronous: a late ownership callback cannot reopen admission.

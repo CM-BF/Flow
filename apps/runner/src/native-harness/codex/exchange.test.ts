@@ -4,8 +4,81 @@ import { fileURLToPath } from 'node:url';
 import { join } from 'node:path';
 import { expect, it } from 'vitest';
 import { createCodexTransport } from '../../codex/index.js';
-import type { CodexTransport, Json } from '../../codex/types.js';
+import type { CodexTransport, Inbound, Json, Reply } from '../../codex/types.js';
 import { runOrdinaryCodexTurn } from './turn.js';
+import { createHash } from 'node:crypto';
+import { createTrustedToolWriter } from '../../engineering/native-tool-writer.js';
+import { createNativeToolRecipe } from '../../engineering/native-tool-policy.js';
+import { runCodexExchange } from './exchange.js';
+
+function toolPeer(afterReply: (reply: Reply, push: (frame: Inbound) => void) => void) {
+  const frames: Inbound[] = []; let pending: ((value: Inbound | null) => void) | undefined;
+  let closed = false, receiving = 0, peak = 0, replies = 0;
+  const args = { expectedSha256: createHash('sha256').update('old').digest('hex'), contentsBase64: 'bmV3' };
+  const item = { id: 'call', type: 'dynamicToolCall', tool: 'flow_calculator_update', status: 'inProgress', arguments: args };
+  const close = { reason: 'CLOSED' as const, child: 'confirmed-exited' as const, exitCode: 0, signal: null, remoteEffects: 'unknown' as const };
+  function push(frame: Inbound) { if (pending) { const callback = pending; pending = undefined; callback(frame); } else frames.push(frame); }
+  const port: CodexTransport = {
+    ready: Promise.resolve({ userAgent: 'injected', platformFamily: 'fixture', platformOs: 'fixture' }), closed: Promise.resolve(close),
+    async request(method) {
+      if (method === 'thread/start') return { thread: { id: 'thread' }, model: 'gpt-6-astra', approvalPolicy: 'never', sandbox: { type: 'readOnly', networkAccess: false } };
+      // The real transport's JSONL response and notifications are exercised by the two unchanged consumers below.
+      setImmediate(() => {
+        push({ kind: 'notification', method: 'item/started', params: { threadId: 'thread', turnId: 'turn', item } });
+        push({ kind: 'server-request', id: 10, method: 'item/tool/call', params: { threadId: 'thread', turnId: 'turn', callId: 'call', tool: 'flow_calculator_update', arguments: args } });
+      });
+      return { turn: { id: 'turn', status: 'inProgress', itemsView: 'full', items: [], error: null } };
+    },
+    async receive() {
+      receiving++; peak = Math.max(peak, receiving);
+      try { return closed ? null : frames.shift() ?? await new Promise<Inbound | null>(resolve => { pending = resolve; }); }
+      finally { receiving--; }
+    },
+    async respond(_, reply) { replies++; afterReply(reply, push); },
+    async close() { closed = true; pending?.(null); pending = undefined; return close; }, snapshot() { throw Error('Not used'); },
+  };
+  return { port, item, get peak() { return peak; }, get receiving() { return receiving; }, get replies() { return replies; } };
+}
+
+it('awaits one async host tool response in the existing pump before accepting its final evidence', async () => {
+  let text = 'old', writes = 0, closes = 0;
+  const abort = new AbortController();
+  const writer = createTrustedToolWriter({ binding: { identity: { taskId: 'task', attemptId: 'attempt', runnerId: 'runner', ownerVersion: 1 }, leaseId: '5b647dc2-9b9d-4c5c-9fd3-79a6d1b0a0f8', baseCommit: 'a'.repeat(40), generation: 1 },
+    signal: abort.signal, async assertOwnership() { await new Promise<void>(done => setImmediate(done)); },
+    target: { identity: { path: '/fixture/calculator.mjs', device: '1', inode: '2' }, async read() { return Buffer.from(text); },
+      async replace(bytes) { await new Promise<void>(done => setImmediate(done)); writes++; text = Buffer.from(bytes).toString(); }, async close() { closes++; } } });
+  const peer = toolPeer((reply, push) => {
+    if (!('result' in reply) || !reply.result || typeof reply.result !== 'object' || Array.isArray(reply.result)) throw Error('Missing reply');
+    const item = { ...peer.item, status: 'completed', success: true, contentItems: reply.result.contentItems! };
+    const final = { type: 'agentMessage', id: 'final', phase: 'final_answer', delivery: null, questions: null, text: 'Host updated.' };
+    for (const value of [item, final]) push({ kind: 'notification', method: 'item/completed', params: { threadId: 'thread', turnId: 'turn', completedAtMs: 1, item: value } });
+    push({ kind: 'notification', method: 'turn/completed', params: { threadId: 'thread', turn: { id: 'turn', status: 'completed', error: null, itemsView: 'full', items: [item, final] } } });
+  });
+  try {
+    const result = await runCodexExchange(() => peer.port, { signal: abort.signal, workingDirectory: '/fixture', async assertOwnership() {} },
+      { wallTimeMs: 500, maxOutputBytes: 1024 }, createNativeToolRecipe({ model: 'gpt-6-astra', cwd: '/fixture', prompt: 'Injected tool request', writer }));
+    expect(result.observation.state).toBe('completed'); expect(writes).toBe(1); expect(peer.replies).toBe(1); expect(peer.peak).toBe(1); expect(peer.receiving).toBe(0);
+  } finally { await writer.close(new AbortController().signal); await peer.port.close(); }
+  expect(closes).toBe(1);
+});
+
+it('returns unknown on async tool cancellation while its writer retains the pending effect', async () => {
+  let enter!: () => void, finish!: () => void;
+  const entered = new Promise<void>(done => { enter = done; }), held = new Promise<void>(done => { finish = done; });
+  let text = 'old', writes = 0, closes = 0; const abort = new AbortController();
+  const writer = createTrustedToolWriter({ binding: { identity: { taskId: 'task', attemptId: 'attempt', runnerId: 'runner', ownerVersion: 1 }, leaseId: '5b647dc2-9b9d-4c5c-9fd3-79a6d1b0a0f8', baseCommit: 'a'.repeat(40), generation: 1 },
+    signal: new AbortController().signal, async assertOwnership() {}, target: { identity: { path: '/fixture/calculator.mjs', device: '1', inode: '2' },
+      async read() { return Buffer.from(text); }, async replace(bytes) { enter(); await held; writes++; text = Buffer.from(bytes).toString(); }, async close() { closes++; } } });
+  const peer = toolPeer(() => { throw Error('No success response after abort'); });
+  const result = runCodexExchange(() => peer.port, { signal: abort.signal, workingDirectory: '/fixture', async assertOwnership() {} },
+    { wallTimeMs: 500, maxOutputBytes: 1024 }, createNativeToolRecipe({ model: 'gpt-6-astra', cwd: '/fixture', prompt: 'Injected cancel', writer }));
+  const rejected = expect(result).rejects.toMatchObject({ settlement: 'unknown' });
+  try {
+    await entered; abort.abort(); await rejected; expect(peer.replies).toBe(0); expect(closes).toBe(0); expect(writes).toBe(0);
+    expect((await writer.close(abort.signal)).hostWrite).toBe('unknown');
+  } finally { finish(); await writer.close(new AbortController().signal); await peer.port.close(); }
+  expect(writes).toBe(1); expect(closes).toBe(1); expect(peer.peak).toBe(1); expect(peer.receiving).toBe(0);
+});
 
 it('keeps the extracted ordinary consumer on one receive pump and closes its owned JSONL peer', async () => {
   const directory = await mkdtemp(join(tmpdir(), 'flow-eng01g-exchange-'));

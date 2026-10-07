@@ -1,0 +1,27 @@
+{
+  "startedAt": "2026-10-07T07:19:01.737513+00:00",
+  "scratch": "/private/tmp/eng01k-local-jcv0e0fk",
+  "dev": 16777234,
+  "ino": 123617920,
+  "freeBytes": 24219099136,
+  "priorMs": 691,
+  "mode": "types",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/typescript/lib/tsc.js",
+    "-p",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/engineering-trusted-tool-writer/docs/evidence/eng01k/local/tsconfig.json"
+  ],
+  "sources": {
+    "apps/runner/src/engineering/native-tool-writer.ts": "7a9be8ea36d9e21674318e871040a3c89edd0b9ddf3d188ca543de18eb487360",
+    "apps/runner/src/engineering/native-tool-writer.test.ts": "c7dac4c342139216d1aa8eed63f101121cdcd3f83c966fcbb9f8894f8898baa0",
+    "apps/runner/src/engineering/native-tool-policy.ts": "ff65813b7aa5a7ae27866bedc30835aa557daf523e91337873730935f19bfd2f",
+    "apps/runner/src/engineering/native-tool-policy.test.ts": "f17afae6a193b8897a8f192b99613da4b99aad38a9e64a2b05020e328aac8314",
+    "docs/evidence/eng01k/local/run.py": "f461131f815b12179d6c1e2610f55e805290fdf8d6ae6453e4073c8a7db8ad8a",
+    "docs/evidence/eng01k/local/vitest.config.mjs": "486f0deeda6a2c4465f59c8a8094db92cb8e8557f1883fb78c20e017d2951b05",
+    "docs/evidence/eng01k/local/tsconfig.json": "810ed96b782b6602de0a6d89bb9f5c9a21b6f6759fd9f47f8403b49b2c76192c",
+    "tools/owned-process-supervision/supervise.py": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "provider": 0,
+  "PG": 0
+}
