@@ -1,6 +1,6 @@
 # MATURE04-05 Web history consumer
 
-Stage: SOURCE_LOCAL_AWAITING_REVIEW. This is the existing WPF-MATURE-04 child, managed through WPF-001-09; the parent plan/status remains with Mika/context-transparency. No duplicate parent status is created here.
+Stage: APPROVED_LIMITED_MODULE_SOURCE_AND_LOCAL; THIN_WIRING_NOT_STARTED. This is the existing WPF-MATURE-04 child, managed through WPF-001-09; the parent plan/status remains with Mika/context-transparency. No duplicate parent status is created here.
 
 Actual claim start: 2026-10-07T22:35:02.638Z. Conservative source-segment deadline: 2026-10-07T22:59:17Z. Fixed base: b1291faae260be8d86ada12ff63341d44efc2709. Branch: codex/web-context-history. Claim: 25d7e029-9334-479e-8872-61090c406e0a v1, exactly the new conversation-context-history directory, new plugin binding, and this evidence directory.
 
@@ -15,3 +15,9 @@ Skills: reused local find-skills discovery; clean-code (names, one responsibilit
 Design inputs: /private/tmp/root-context-history-ui-design-20261007.json (d2925d91dbce92f27992da408c6da7e614ca84cd22e5f54970517f8e2eecdd11), /private/tmp/root-context-ai-elements-adaptation-20261007.json (b357ca8ad0765811dfc4c999cc55d9bee6745b06238833c3d29a9a13c8c02fe0). Source supply / take originals: /private/tmp/context-history-20261007.
 
 Current review input: [source-local-review-input.json](source-local-review-input.json). Quality record: [quality.json](quality.json). Final source target: c5f896333458579b0e0fa65ba2b389e14084a81e. Browser/actual App NOT_RUN. The two consumed resource floors were stale: actual samples exceeded the correct line only by post-hoc comparison; originals are preserved. No further local launches are pending.
+
+Root independent review: [root-module-review.json](root-module-review.json), 6801 bytes / SHA256 9a4dd06c29f518972d74eabcb27afbcce965b36f4164fd3947a528144bafc24c. Limited standalone module source/local results approved, zero blocking findings; no mounted App/browser approval. Final unknown-only heading is source-only.
+
+Read-only handoff preimages and minimal wiring: [thin-wiring-preimages.json](thin-wiring-preimages.json). Thread is identical at b129/e611; App and session carry Arc layout/authorization differences. Future integration must preserve Arc and must not copy a whole old App/session blob. App/session handback and fresh Thread ownership remain prerequisites to a later exact-six amend; current exact-three claim is unchanged. No new public task.context.read capability is proposed. With no taskId, the real Context entry must explain that no execution observation exists; an enabled silent no-op is not accepted. Parent status/CT matrix remain exclusively with architecture_read/Mika.
+
+This natural approval tail changes evidence only, with no product edits/checks. Clean-code review: compact typed private port, session-owned lifetime, truthful unknowns and precise dual-baseline evidence; no new authority or framework. All three scopes return to STOP after this metadata seal; follow-up implementation requires the manager’s new segment and lawful handoff.

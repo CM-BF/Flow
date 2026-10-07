@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-07T22:45:15.211423+00:00",
+  "reviewer": "root GPT-6 Astra Ultra read-only independent review",
+  "decision": "APPROVED_LIMITED_CONTEXT_HISTORY_MODULE_SOURCE_AND_LOCAL_RESULTS",
+  "blockingFindings": 0,
+  "sourceTarget": "c5f896333458579b0e0fa65ba2b389e14084a81e",
+  "actualLocalTarget": "4366466e2685e6ac1854246a372931cb51df91c0",
+  "delivery": "bdf6be1fde74c8d02ce7eadbf651fa0da65d33a7",
+  "reviewInput": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-history/docs/evidence/wpf-mature04-web-history/source-local-review-input.json",
+    "bytes": 5203,
+    "sha256": "eaa49afc2404cee73650a5dd9e44e954074bb86c6b03d8c2e35e15ca29ad86e0"
+  },
+  "scope": "Existing MATURE04-05 / WPF-001-09 exact3 new modules and evidence only; no App/session/Thread integration, no complete parent acceptance.",
+  "sourcePinsVerified": [
+    {
+      "path": "apps/web/src/conversation-context-history/ContextHistoryDialog.tsx",
+      "bytes": 7641,
+      "sha256": "be9651527123445cdb07c00bb58ddc1d1869230e0a445a99a736aa1938ddd2b7"
+    },
+    {
+      "path": "apps/web/src/conversation-context-history/controller.test.ts",
+      "bytes": 7915,
+      "sha256": "484400b0adeaef18940cd21fada681b84ad9ffd4f822b4d872406b77ec61ce03"
+    },
+    {
+      "path": "apps/web/src/conversation-context-history/controller.ts",
+      "bytes": 7252,
+      "sha256": "f04b52b471825041c34c5cd7d6f3bcd805939b4b7fcb147e59bbea85835add64"
+    },
+    {
+      "path": "apps/web/src/conversation-context-history/fixture.ts",
+      "bytes": 1741,
+      "sha256": "8af698ee902f92d8a4f63fe80712a4b2ea2dac4783130a7826b728ec105ebc7d"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/context-history.tsx",
+      "bytes": 2748,
+      "sha256": "5074fb16ee0a27c9cd5e78db286dbf03f5ae6537215c6b87c5058c019acb742b"
+    }
+  ],
+  "sourceReview": [
+    "Controller uses a private typed reader port, stable immutable snapshots and one inflight slot; rejects late target/generation results and keeps abort-ignoring operations occupying the slot until settle.",
+    "Close/hide/disable/plugin or session lifetime cancellation clears visible observation and makes late results inert. Before/after reader.current checks complement integration-owned target generation.",
+    "History is labeled as historical; current/remaining and model hard limit remain unknown. No subtraction, cumulative task usage, guessed capacity/pricing, provider inference or zero-for-unknown.",
+    "Details are explicit/lazy, checked against selected sample ref and bounded in the decoded content; this is not a claim that the HTTP transport streams enforce that byte limit.",
+    "Plugin declares ui.layout for UI opening only and closes on its active-generation signal; actual reads require the future private session/owner port. Official Thread is not replaced.",
+    "Final c5f versus checked436 changes only the all-unknown heading; read directly and accepted as text-only source delta, not falsely reported as rerun."
+  ],
+  "actualLocalResults": [
+    {
+      "name": "direct-1",
+      "source": "4366466e2685e6ac1854246a372931cb51df91c0",
+      "exit": 0,
+      "chargeMs": 141,
+      "resultSha256": "9aeb441fc3553248ffbc09e2cefdd51fcb059510967204123ab0b231fd48c967",
+      "budgetSha256": "ae6a1b7dbeb66988ecef2fdd5797846ee079c7d03d84815d5b8d6f73035ee5dd",
+      "stdoutStderrBytes": [
+        1383,
+        0
+      ],
+      "allEOFDropped0": true,
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true
+      },
+      "sampleMinFree": 18009444352
+    },
+    {
+      "name": "types-1",
+      "source": "4366466e2685e6ac1854246a372931cb51df91c0",
+      "exit": 0,
+      "chargeMs": 1656,
+      "resultSha256": "fe770a163bab52b60298e8d2da9b190f070af11c11fee20551683ee9d6538b6c",
+      "budgetSha256": "39e286fbf0c6c087b956b753ed3f03fccedf6d36f03c4027af1d1f87d806ff7d",
+      "stdoutStderrBytes": [
+        0,
+        0
+      ],
+      "allEOFDropped0": true,
+      "cleanup": {
+        "groupAbsent": true,
+        "scratchAbsent": true
+      },
+      "sampleMinFree": 18008449024
+    }
+  ],
+  "checksAccepted": {
+    "controllerTests": 16,
+    "controllerPassed": 16,
+    "failed": 0,
+    "affectedStrictTypesExit": 0,
+    "typesOptions": [
+      "strict",
+      "noUncheckedIndexedAccess",
+      "noEmit"
+    ],
+    "totalChargeMs": 1797,
+    "windowMs": 60000,
+    "state": "CLOSED",
+    "newRunsByRoot": 0
+  },
+  "admissionDeviation": {
+    "consumedFloor": 17479368704,
+    "publishedFloorThen": 18007851008,
+    "incorrectAdmissionSourceRetained": true,
+    "minObservedDirect": 18009444352,
+    "minObservedTypes": 18008449024,
+    "meaning": "Saved samples exceed the then published complete floor. This is retrospective observation only, not correct admission consumption or proof of unsampled continuous free space. No raw receipt was rewritten."
+  },
+  "requiredNextIntegrationAndValidation": [
+    "Manager first obtains exact thin-leaf transfer and fresh claim; one existing session/view authority supplies FlowClient.contextHistory and existing authorized detail reader. No shared contract edits required.",
+    "Wire target/authorization/visibility/plugin-state subscriptions and disposal. Verify A to B to A, hide/show, tab close/reopen, connection replacement and real plugin disable while reads await; model/material draft changes never relabel old historical measurements as current.",
+    "Contract-aligned HTTP fixtures must exercise real FlowClient schema decoding, errors/null/unknown/estimate and lazy detail request counts. Current pure fixture is contract-shaped typed data, not proof of decoding or real-center producer behavior.",
+    "Real mounted browser must prove button/dialog open, explicit refresh, keyboard Escape/focus return/touch, narrow light/dark and reduced motion. Include long unbroken legal model/source values for wrapping; static reading does not establish visual fit.",
+    "Keep full MATURE04 current-cut/hard-limit/remaining/compression/material residence and live producer gates OPEN. No browser/main/real model/real center acceptance here."
+  ],
+  "cleanCode": {
+    "scope": "Five new source modules, 16 tests, thin plugin seam, saved checks; no implementation edits by root",
+    "findings": [
+      "Responsibilities are separated into reader/controller/presentation/plugin binding with explicit history and error names.",
+      "No duplicate draft state, polling loop, arbitrary plugin fetch or dependency installation.",
+      "Future integration can use existing @flow/contracts public exports for type imports, avoiding internal file-path coupling; nonblocking cleanup, not a new execution stage."
+    ],
+    "unresolved": "Actual private authority wiring, browser rendering/interaction and canonical integration remain next work."
+  }
+}

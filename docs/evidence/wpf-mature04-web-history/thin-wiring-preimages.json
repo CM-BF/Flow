@@ -1,0 +1,124 @@
+{
+  "schema": 1,
+  "observedAt": "2026-10-07T22:48:49.179251+00:00",
+  "kind": "READ_ONLY_THIN_WIRING_PREIMAGES_NOT_IMPLEMENTATION",
+  "taskId": "MATURE04-05",
+  "currentClaim": {
+    "claimId": "25d7e029-9334-479e-8872-61090c406e0a",
+    "version": 1,
+    "scopeCount": 3,
+    "futureLeavesNotOwned": [
+      "apps/web/src/App.tsx",
+      "apps/web/src/plugin-integration/session.ts",
+      "apps/web/src/conversations/ConversationThread.tsx"
+    ]
+  },
+  "ownHeadBeforeMetadata": "bdf6be1fde74c8d02ce7eadbf651fa0da65d33a7",
+  "moduleSource": "c5f896333458579b0e0fa65ba2b389e14084a81e",
+  "preimages": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "preimages": [
+        {
+          "commit": "b1291faae260be8d86ada12ff63341d44efc2709",
+          "blob": "b8906afb0dec8fcadcf1adb0a9638e9abfa671ff",
+          "bytes": 74808,
+          "sha256": "7f8dd2c46749971c91a7d19db54c76255a4a02930a902b45d666029252c8ba1e"
+        },
+        {
+          "commit": "e611342f16504444264c5f242859392d82520e32",
+          "blob": "91f706f92e0debadcec68cad31da6b385c8db3fd",
+          "bytes": 83437,
+          "sha256": "80ab282dc3a18e9a6362235352871dd0b71ae2406fa892c8e32081e593a3cadc"
+        }
+      ],
+      "sameBytes": false
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "preimages": [
+        {
+          "commit": "b1291faae260be8d86ada12ff63341d44efc2709",
+          "blob": "06b6b64edb5ef30e0ab9e6141b0ea1028579621f",
+          "bytes": 28667,
+          "sha256": "ebfa3f33860ee478f24808ca47fb6f7e7205fe613411608f0ef0bac58680e85d"
+        },
+        {
+          "commit": "e611342f16504444264c5f242859392d82520e32",
+          "blob": "526114eabd81d82e8abce7eb06a48bfd3b8f061f",
+          "bytes": 29877,
+          "sha256": "370a8671b01fc80e16c36bbe3184e8600fb831d901386430abb0999fcec9e295"
+        }
+      ],
+      "sameBytes": false
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "preimages": [
+        {
+          "commit": "b1291faae260be8d86ada12ff63341d44efc2709",
+          "blob": "cc15de4054c82c8f33218635b64a412a50c0bf92",
+          "bytes": 29561,
+          "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a"
+        },
+        {
+          "commit": "e611342f16504444264c5f242859392d82520e32",
+          "blob": "cc15de4054c82c8f33218635b64a412a50c0bf92",
+          "bytes": 29561,
+          "sha256": "f6051edabe923862257321926694d9c868e788696e4d4f0fe7a6dcb346c1435a"
+        }
+      ],
+      "sameBytes": true
+    }
+  ],
+  "differences": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "finding": "Arc replaces groups with WorkspaceLayout and retains all open composer bodies under one stable keyed view parent; its visibleGroups, page/overview/auth visibility and layout port must survive controlled integration. Do not replace Arc App with the b129 App blob."
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "finding": "Arc adds AppActions.layout, layout invocation capture/commands, and conversation/pane validContext authorization. A private context reader and controller registry must be additive to those changes."
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "finding": "Identical at both fixed baselines. Existing lastTurn, stable viewKey, projection, visible, official runtime, material capture and message-settings wrappers provide the narrow insertion seam."
+    }
+  ],
+  "proposedNarrowWiring": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "proposal": "Add a typed private context-history port beside existing knowledge/activity ports. Use the existing FlowClient history/detail reads with exact session/namespace, authority generation, viewKey, conversation/task ownership and visibility checks before and after awaits. Bind only an available observed attempt; do not invent missing attempt identity. This is an independent b129 patch until Original integrates it with Arc."
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "proposal": "Own one controller/binding per stable viewKey in AppPluginSession; register the existing context plugin and resolve its exact view. Revoke reads on projection/identity/visibility/auth or host disable changes, view release and session disposal. Combine existing session lifetime signal and controller abort; do not create another draft or command authority."
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "proposal": "Use the session binding around the existing official Thread and mount the existing ContextHistory surface at the composer seam. Propagate real task/attempt/visibility state; preserve all composer/material/settings/Recovery handlers and stable view key. No task before any turn must produce an explicit unavailable reason or empty state, not a silent enabled no-op."
+    }
+  ],
+  "permissionBoundary": {
+    "newPublicCapability": false,
+    "uiLayoutIsOnlyEntryNotReadGrant": true,
+    "privateReaderAuthorityRequired": true,
+    "appSessionHandoff": "WAITING_FOR_COMMITTED_PARTIAL_AMEND",
+    "threadOwnership": "NOT_INFERRED; fresh global literal/prefix check required before future amend"
+  },
+  "requiredFutureAcceptance": [
+    "no-turn unavailable reason distinct from latest:null",
+    "visible/hidden/page/host-disable/auth-generation invalidation",
+    "late old history/detail cannot populate another view or reopened session",
+    "real FlowClient schema rejection and typed errors",
+    "real keyboard focus and narrow long-model rendering",
+    "Arc combined stable-parent/move/split lifecycle remains separately unverified"
+  ],
+  "notClaimed": [
+    "mounted App/browser",
+    "Arc plus context integration",
+    "new public capability",
+    "current context occupancy or remaining capacity",
+    "new code or runtime in this metadata tail"
+  ]
+}
