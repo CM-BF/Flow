@@ -2,13 +2,15 @@
 
 **状态：UNKNOWN（部分审查已完成；全片浏览器验收待完成）**
 
-Review target commit：cfd5a53323438709843828d74cab67502801060c
+Review target commit：08e9ee7e23157268d44bd2fdd460929a4ca5e626
 
 Base：c837b5dccaea429b0112d1c7e0c752c41334204a
 
-当前组合固定 `cfd5a53323438709843828d74cab67502801060c` 的16输入已经 [root限定源码独审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-cfd-composition-review.json)通过：0blocking，APPROVED_COMPOSED_SOURCE_AND_BOUNDED_DIRECT_VALIDATION_NOT_RUNTIME_OR_BROWSER_PASS。作者随后只执行一次相关直接检查，9叶+父10/10/outer exit0，[实际封存](../../docs/evidence/wpf-dperf04/reentry-20261007/node-composed/index.json)。实际证据尚待独立核验；真实浏览器与全片仍未批准，因此顶层UNKNOWN。
+当前受审目标为 `08e9ee7e23157268d44bd2fdd460929a4ca5e626`：四生产模块保持cfd5，后继只补原生close事件同步及Timing/ACCESS测试调用适配。后者仍NOT_RUN/待限定源码复审。
 
-当前source manifest为检查前原固定记录，其NOT_RUN保留当时语境；最新实际结论见当前status和上述raw。原45f8/544c、abd2 Node均是历史固定对象结论，不转移到新组合。
+原cfd5的16输入已获[root限定源码独审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-cfd-composition-review.json)，其Node9叶+父10/10/实际outer0与owned清理由[root独立实际报告](../../docs/evidence/wpf-dperf04/reentry-20261007/root-dperf04-composed-node-actual-review-20261007.json)接受。summary首红保留；后继1c190的summary9组+2PNG和c989的task-links6组+5PNG均actualPASS，正在本轮root独立实际核验。累计browser24464/余35536ms；Timing/ACCESS、main及部署尚未完成，顶层UNKNOWN。
+
+[当前16输入manifest](../../docs/evidence/wpf-dperf04/reentry-20261007/browser-source-manifest.json)与各run的固定SHA分开；旧source-manifest和旧审批保留当时NOT_RUN语境，不转移为新target通过。
 
 ## 历史45f8及544c限定审查
 

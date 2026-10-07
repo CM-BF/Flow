@@ -9,8 +9,8 @@
 | co-lead | Web /root（执行管理 d01_owner） |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail |
 | Branch | codex/dashboard-summary-detail |
-| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / cfd5a53323438709843828d74cab67502801060c（当前组合源码；metadata另核） |
-| 工作树dirty状态 | 当前16实现输入与固定cfd5逐字；仅本次证据/状态封存，提交后核clean |
+| 工作基线 / HEAD | c837b5dccaea429b0112d1c7e0c752c41334204a / 08e9ee7e23157268d44bd2fdd460929a4ca5e626（当前固定测试适配；metadata另核） |
+| 工作树dirty状态 | 当前16输入与08e9固定逐字；仅自然metadata封存，提交后核clean；四生产模块仍同cfd5 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | cfd5 Node10/10已独审；summary9组+2图、关联6组+5图实际PASS，首FAIL保留；browser累计24464/余35536ms，Timing/ACCESS适配未运行 |
@@ -35,9 +35,9 @@
 
 本人live核b554ddb6 v1 active/九scope/固定c837，原样[receipt](../../docs/evidence/wpf-dperf04/claim-receipt.json)。首canonical后源码直接实施，不等待登记。新增summary/detail/assignment只读边界；架构固定快照后继由原owner统一维护，本片保护架构文件。旧全snapshot与D04原子写入口不改。
 
-## 检查边界
+## 历史 2026-10-06 检查边界
 
-当前两次Node累计3950ms，第二次7叶项+父项全部通过；不采4320/PG，不安装依赖。GO单次慢响应与静态20ms由管理来源记录，非本worker采样或性能基准。Node/browser预算分别后置；RELEASE真资源窗口到达时安全停点优先切回。
+当时两次Node累计3950ms，第二次7叶项+父项全部通过；不采4320/PG，不安装依赖。GO单次慢响应与静态20ms由管理来源记录，非本worker采样或性能基准。Node/browser预算分别后置；RELEASE真资源窗口到达时安全停点优先切回。
 
 ## 2026-10-06 16:24:08 UTC 固定源码安全点
 
