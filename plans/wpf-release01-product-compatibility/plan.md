@@ -1,6 +1,6 @@
 # WPF-RELEASE01 真实产品 Web 发布兼容验证
 
-状态：in-progress（原REQ19新增用户可见Recovery网页后继；前片段工程验证与主线接收完成）；原7805交付保持历史完成。直接父WPF-MATURE-01与co-lead沿唯一status。新后继复用原四scope，不创建第二发布系统。
+状态：in-progress（原REQ19新增用户可见Recovery网页后继；前片段工程验证与主线接收完成）；原7805交付保持历史完成。直接父WPF-MATURE-01与co-lead沿唯一status。新后继经合法交权在web-release-recovery固定7272以exact6继续同任务，不创建第二发布系统。
 
 ## 历史：三保留App固定origin片段
 
@@ -48,7 +48,8 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 ## 当前：新版Cookie网页后继（2026-10-07）
 
 - [x] RELEASE01-07 在原fixture/browser加入首固定7272新版App入口（后继精确pair供给规则见请求），Cookie连接/刷新恢复/原key ACK与迟到logout真实HTTP链；保旧3App/Bearer及4check。
-- [ ] RELEASE01-08 原发布owner供给新Web与后台descriptor，合法有界实际与集中独审后由其发布；不借旧tuple/PASS。
+- [ ] RELEASE01-08 本组供给唯一新Web descriptor，与已到修正后台组成精确输入；有界兼容与集中独审后交原operator发布，不借旧tuple/PASS。
+- [ ] RELEASE01-09 在固定7272应用已审最小共享草稿两file并做直接旧consumer必要验证；不移植完整MSG/Plugin。
 
 [已审只读设计](../../docs/evidence/wpf-release01/recovery-cookie/design-input.json)。旧3报告必须对新backend/context重新产生；新App不伪为Bearer。仅原4scope，0产品检查/PG/Chrome/build/install，缺产物失败关闭。
 
@@ -59,3 +60,7 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 当前供给决策：04da/6c-base后台不可变descriptor与固定artifact结果已获Original限定批准，见[后台供给](../../docs/evidence/wpf-release01/recovery-cookie/backend-cd27-supply/README.md)。精确7272两file静态移植已获Root批准；只缺原唯一producer的新Web descriptor。RELEASE01-08仍pending：旧consumer实际/新pair兼容/发布未运行；不捆绑整个MSG03/Plugin，不在metadata批改8964 guard。
 
 [两file旧base最小移植准备](../../docs/evidence/wpf-release01/recovery-cookie/held-transplant-preparation/report.md)只在TMP核固定patch/result；RELEASE01-08仍pending。生产两literal仍MSG持有，需原owner移交或Original受控集成，不由Release原4scope擅写。
+
+## 当前执行交接
+
+见[唯一source-switch](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/README.md)。旧树与MSG范围已实际交回，新exact6不包括App/Thread或共享配置/依赖。只应用77bc两file，预计hash802e/728a；必要检查和artifact build仍待有界安排。此前关于Original生产接单与MSG持有范围的文字为历史准备条件，已由本次交权替代。

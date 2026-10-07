@@ -1,5 +1,11 @@
 # WPF-RELEASE01 review
 
+**当前状态：NOT_STARTED（7272旧消费者落地组合待固定/必要检查；不继承MSG实际或8964两harness类型结果）**
+
+当前来源：300386e2babce408b85ad5b9732d616782b78097，后继两产品范围 attachments.tsx/session.ts。精确TMP准备已由Root754608批准，实际应用后提交固定source供集中审；尚无新Web descriptor/compat/build结果。
+
+## 历史：8964后继两harness限定批准
+
 **状态：APPROVED（仅固定源码与必要strict/noEmit；浏览器兼容未运行）**
 
 Review target commit：8964dc1185f62ed8934c15416e9798929359ab89
