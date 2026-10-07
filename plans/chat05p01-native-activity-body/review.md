@@ -25,3 +25,7 @@ APPROVED_INCREMENTAL_LOCAL_EVIDENCE；唯一reviewer astra_ultra_execution_lead�
 ## 2026-10-07T06:29:49.902906+00:00：三PG入口待独立源审
 
 原40af产品与3用例断言不变。本增量仅fixture证据/OID/资源观察及own pg-entry输入/config/OPS14 caller，见[入口](../../docs/evidence/chat05p01/pg-entry/README.md)。REQUEST_REVIEW，实际3PG、新fixture types NOT_RUN；原28局部/类型证据不扩批准。
+
+## 2026-10-07T06:32:28.622506+00:00：APPROVED_LIMITED_THREE_PG_ENTRY
+
+唯一Execution Lead审c687b1b63802298d27396aa4c40bd9075ccb1405，delivery8ae4d7a0，7entry+283input+21alias全同，0P1/P2、reviewer0运行。见[原件](../../docs/evidence/chat05p01/pg-entry/independent-review.json)。仅运行入口准备批准；原3PG、生产挂载、真实provider与完整领域验收不在本批准范围。
