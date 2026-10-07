@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 12:25:24 UTC；C3已main e029，迁入准备已独审；本次只读预检漏参停止、个人未改 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 12:37:38 UTC；main 7524 固定运行闭包；本次迁入/Web宿主/报告/策略完成，维护前观察入口失败停止 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,21 +13,21 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 7afa5d718781e54ae956d613e955554d221ca74e；e4cd为本轮基线；迁入装配 source 5c29e13a5d251e4fb6b99d7d1277ace85dee24dc，本次 only own evidence/plan；产品/已消费入口不改 |
-| 工作树dirty状态 | 本次准备metadata正常提交后clean；无产品、个人安装或运行源修改 |
+| 工作基线 / HEAD | 7d97632c968b9f6566c1b58333ca974bb7e07faa；迁入 source 5c29e13a5d251e4fb6b99d7d1277ace85dee24dc 与产品不改；本次仅 own result/status |
+| 工作树dirty状态 | 本次实际结果/计划正常封存；产品源未变，个人已发生的四阶段见原件，不再声称个人未改 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
-| 检查状态 | r2 passed：27→35/两项pre-drain拒绝/三role refresh-resume/历史与pointer-config-profile保留/cookie-CSRF-logout；work155073ms+cleanup540ms，六组stopped/normalDROP；C3真实App组合已独审，个人更新未验 |
-| 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人更新未发生。 |
+| 检查状态 | 隔离 r2 与 C3 已独审；个人本次迁入/Web-host/3报告/策略完成；维护前只读观察静态链接失败，bootstrap/refresh/resume NOT_RUN |
+| 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人本次迁入/Web-host/报告/策略已发生，后台更新未执行；本轮结果尚待独审/接收。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 保留旧数据的更新流程已有隔离实证，个人安装现状已核对，三份网页兼容结果已独审，迁入调用已独审通过；启动前只读核验因漏传输出路径停止，个人安装未改动。 |
-| 下一可用交付 | 修正只读核验调用，重新取得实际窗口后执行原更新清单。 |
-| 当前阻塞 | ACTIVE: 启动前核验调用遗漏输出路径，已停止并归还窗口；个人更新尚未执行。 |
+| 当前产出 | 新产物和三份兼容报告已迁入，网页宿主已切到新产物；后台保持原版本，维护前数据留存检查失败，更新暂停。 |
+| 下一可用交付 | 修正只读历史摘要入口后，核既有完成阶段并继续后台维护和保留核验。 |
+| 当前阻塞 | ACTIVE: 维护前数据留存检查的模块导入错误；已停止后续并归还窗口，正在修正观察入口。 |
 | 需用户决定 | NONE |
-| Review | 首次采用已APPROVED_LIMITED_FIRST_ADOPTION_ACTUAL/main62e9；e4cd迁入装配P2保留REQUEST_CHANGES；修复source5c29已获native APPROVED_MIGRATION_ADAPTER_AND_PERSONAL_PREPARATION；实际预检漏参停止，无个人动作。 |
+| Review | 迁入 source 5c29 准备独审 APPROVED；本次部分完成及静态链接失败的原始结果待独审，不扩大隔离/C3批准。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -352,3 +352,13 @@ Web正式actual独审随后收到并核SHA69e9f809…；原报告等待结束取
 ## 2026-10-07T12:25:24.759749+00:00：个人窗口启动前停止
 
 窗口svc06-personal-7d1-20261007-1224，fixed source5c29/delivery8825及native唯一准备批准。12:24:20.540207Z原53runtime/3input/4alias/978file/claim9核符，free21,806,919,680B。随后facts主入口遗漏必需output参数，2026-10-07T12:24:35.608129+00:00→2026-10-07T12:24:35.659519+00:00，51ms/exit1 OUTPUT_REQUIRED，在snapshot前停止；owned组absent/双EOF，0个人读写/SQL/迁入/服务/provider。原run和迁入outer未创建，窗口已告Lead归还，未自动重试。此为本operator调用错误，不推断固定artifact/产品失败。证据：[stop](../../docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r1/stop.json) / [原始外层](../../docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r1/fresh-before-outer.json)。
+
+2026-10-07T12:28:26.908779+00:00：仅调用更正准备，已原样归档唯一[migration-independent-review](../../docs/evidence/svc06/update-diagnostics-candidate/migration-independent-review.json)。[invocation-correction](../../docs/evidence/svc06/update-diagnostics-candidate/invocation-correction.json) 固定facts完整输出/摘要区分、replace请求去directory、TSX loader/cwd与bootstrap/refresh/resume位置参数；输出父为新自有0700证据目录，实际迁入namespace仍按5c29不变且未消费。0个人读取/PG/服务/测试，等待Lead新fresh窗口，旧R1失败不改。
+
+2026-10-07T12:29:53.364355+00:00：新窗口svc06-personal-7d1-20261007-1230实际取得；fresh53/3/4alias/978包文件/15真实报告/claim9/空间21,760,802,816B与真实个人快照通过。原4succeeded+1queued、0unfinished/0uncertain与12:00已审基线相同，保留已有queued工作。现开始唯一迁入；后续按每phase持久checkpoint，不代表完整更新已成功。
+
+### 2026-10-07T12:35:37.013013+00:00 个人连续窗口停止
+
+- 本次新产物迁入、Web-only 宿主替换、三份真实兼容报告导入与 205B 私有浏览器策略写入已完成。
+- 维护前只读历史检查在模块链接阶段因 CommonJS `pg/lib/index.js` 的命名导入失败；本检查 0 SQL，尚未调用 bootstrap / refresh / resume，后台仍为此前已观测的 af51。
+- 原始失败与所有已成功阶段保留；不重放迁入、替换、导入或策略创建，不自动回滚。调用者组 absent / 双 EOF，现场后续步骤停止并归还共享窗口。证据：`docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/stop.json`。

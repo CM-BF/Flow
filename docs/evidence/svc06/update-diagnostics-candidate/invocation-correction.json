@@ -1,0 +1,225 @@
+{
+  "recordedAt": "2026-10-07T12:28:26.908779+00:00",
+  "mode": "PREPARATION_ONLY_NO_PERSONAL_READ_OR_OPERATION",
+  "priorFailure": "personal-actual-r1/fresh-before-outer.json preserved; no output argument, no snapshot() invocation",
+  "unchangedMigrationSource": "5c29e13a5d251e4fb6b99d7d1277ace85dee24dc",
+  "unchangedMigrationManifestSha256": "bd7ec874e33255da18fe4913e211c107e4fd949ff6212f2ac53a5c3cfa2f07cb",
+  "evidenceParent": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2",
+    "dev": "16777234",
+    "ino": "124122860",
+    "mode": "0700",
+    "uid": 501
+  },
+  "phases": [
+    {
+      "name": "fresh snapshot",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-history-compatibility/docs/evidence/svc05-history-compatibility/center-recovery-af51/facts.mjs",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/fresh-before.json"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "ownership": "childPidOnly",
+      "seconds": 15,
+      "outputContract": "Helper writes full {outcome,facts} via exclusive0600/fsync; stdout only {outcome,code,output}. Require exit0/absent/allEOF and read exact output; never parse stdout as facts. Parent0700 identity fixed below; pathname must be absent at launch."
+    },
+    {
+      "name": "migration",
+      "argv": [
+        "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/migration-supervise.py",
+        "--execute-fixed-import"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "ownership": "existing fixed supervisor/newChildSession",
+      "seconds": 120,
+      "unchangedInput": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/migration-inputs.json",
+      "namespace": "/private/tmp/flow-svc06-personal-update-20261007-r1",
+      "outer": "/private/tmp/flow-svc06-personal-update-20261007-r1.migration-outer.json"
+    },
+    {
+      "name": "legacy Web-only replace",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+        "web",
+        "replace-host",
+        "--directory",
+        "/Users/citrine/.flow-personal",
+        "--request",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/replace-request.json"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "ownership": "childPidOnly",
+      "seconds": 28,
+      "requestTemplate": {
+        "expectedVersion": 3,
+        "expectedBackendHead": "af51c621696230fbced12227670f014ca73bd8a1",
+        "compatibilityId": "599a5b170693d2fd154f02302545751afa8cd4222bccaa198ece807b81c28fe9",
+        "expectedWebRecordSha256": "0fb840f089e5949fccdc07af569813bf5b0418b5e4dff6bf95b0cff0bfe6a79a",
+        "expectedPointerSha256": "a276952f95337e42a9642223fbcb24532676f5c9435cd91218c6525edb16fa03",
+        "expectedHostSourceDigest": "28c52113cf11e0b059b08e8fe0055b6afc96724948b5168ceda15e28b8bf0c0a",
+        "allowConnectionInterruption": true,
+        "webHostArtifact": {
+          "policy": "flow.backend-artifact.v1",
+          "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+          "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+          "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+        },
+        "operationId": "ALLOCATE_ONCE_AFTER_SUCCESSFUL_MIGRATION_AND_FRESH_CAS"
+      },
+      "gate": "New UUID once; fresh full owned record/pointer/backend/version/hostdigest must match fixed source. CLI request must omit directory (passed only via --directory), and must be self/0600/nofollow/nlink1; no request regeneration after unknown."
+    },
+    {
+      "name": "import compatibility 461a",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+        "web",
+        "import-compatibility",
+        "--directory",
+        "/Users/citrine/.flow-personal",
+        "--report-directory",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-461a"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "ownership": "childPidOnly",
+      "sharedImportPolicySeconds": 30,
+      "expectedCompatibilityId": "ab8d9229b638557d491dd409b9bc0fb7d46a8858835bf38a63a869e254f1bde9"
+    },
+    {
+      "name": "import compatibility caa1",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+        "web",
+        "import-compatibility",
+        "--directory",
+        "/Users/citrine/.flow-personal",
+        "--report-directory",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-caa1"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "ownership": "childPidOnly",
+      "sharedImportPolicySeconds": 30,
+      "expectedCompatibilityId": "16544b18fddeb0135e49cf8791132942b25b795c961de9155e30e0ba12e1a93a"
+    },
+    {
+      "name": "import compatibility d629",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/cli.mjs",
+        "web",
+        "import-compatibility",
+        "--directory",
+        "/Users/citrine/.flow-personal",
+        "--report-directory",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/docs/evidence/wpf-release01/fixed-origin/caller-c3-actual/raw/fixture/retained-d629"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "ownership": "childPidOnly",
+      "sharedImportPolicySeconds": 30,
+      "expectedCompatibilityId": "eb6e8f89332923b51f1cba980454afeab4c5d4b093018f46fd962321a44046c0"
+    },
+    {
+      "name": "private policy",
+      "entry": "Existing preview.loadPreviewConfiguration/withPreviewLock; Node fs open with O_CREAT|O_EXCL|O_NOFOLLOW and mode0600, write the fixed205B, fsync file and parent; readBrowserSessionConfiguration must produce exact context. Do not reuse the config object with a cached missing pin for a later operation. No overwrite/rename/old config or token copy.",
+      "target": "/Users/citrine/.flow-personal/browser-session.json",
+      "policy": {
+        "value": {
+          "format": 1,
+          "installationId": "727db807-5997-45cf-ace2-b5d1fd06f1eb",
+          "browserSession": {
+            "cookieOrigin": "http://127.0.0.1:61228",
+            "trustedOrigins": [
+              "http://127.0.0.1:61228"
+            ],
+            "authEpoch": "svc09-b2b-20261007"
+          }
+        },
+        "bytes": 205,
+        "sha256": "ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a",
+        "serialization": "JSON.stringify(value)+newline, insertion order as recorded",
+        "created": false
+      },
+      "expectedContext": {
+        "format": 1,
+        "publicOrigin": "http://127.0.0.1:61228",
+        "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+      },
+      "sharedImportPolicySeconds": 30,
+      "freshGate": "Verify all3 imported v2 reports/actual new7d1 host qualification and current pointer exactly under preview lock before create; use expectedBackendHead=6c, no source/config substitution."
+    },
+    {
+      "name": "first bootstrap",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--import",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/tsx/dist/loader.mjs",
+        "/Users/citrine/Projects/AgentHarness/Flow/tools/personal-preview/maintenance-host.mjs",
+        "bootstrap",
+        "/Users/citrine/.flow-personal",
+        "",
+        "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920"
+      ],
+      "cwd": "/Users/citrine/Projects/AgentHarness/Flow",
+      "ownership": "childPidOnly",
+      "sharedDrainDeadlineSeconds": 900,
+      "reason": "Direct root same6c public entry, bypass CLI runtime selection; does not prewrite backendArtifact. Persist the returned real operationId and original maintenance file identity."
+    },
+    {
+      "name": "refresh same operation",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--import",
+        "/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/node_modules/tsx/dist/loader.mjs",
+        "/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/maintenance-host.mjs",
+        "refresh",
+        "/Users/citrine/.flow-personal",
+        "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+        ""
+      ],
+      "cwd": "/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root",
+      "ownership": "childPidOnly",
+      "deadline": "strict remaining from first bootstrap start; never reset900s",
+      "gate": "Read actual operation created by bootstrap, require7d1/source6c and sameID; existing FSM handles drain/hold/real3-role stop-start. Any unknown stops; no task cancellation."
+    },
+    {
+      "name": "ready-paused checkpoint",
+      "entry": "Readonly safe hash/count snapshot plus real owned identities/migration/report/context verification; durable checkpoint before explicit resume. Fresh current config/profile/runner identity/DB business data and pointer/retained preserved; known schema and maintenance changes separated.",
+      "deadline": "same remaining900s",
+      "gate": "Do not treat service readiness alone as full preservation. Unexpected business differences remain unknown and no automatic rollback/resume."
+    },
+    {
+      "name": "resume same operation",
+      "argv": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--import",
+        "/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/node_modules/tsx/dist/loader.mjs",
+        "/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root/tools/personal-preview/maintenance-host.mjs",
+        "resume",
+        "/Users/citrine/.flow-personal",
+        "",
+        ""
+      ],
+      "cwd": "/Users/citrine/.flow-personal/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/root",
+      "ownership": "childPidOnly",
+      "deadline": "same remaining900s",
+      "gate": "Only after durable verified ready-paused checkpoint, original operation remains same; one explicit resume. Final safe verification and return, no model/task/App publication."
+    }
+  ],
+  "reviewArchive": {
+    "path": "migration-independent-review.json",
+    "bytes": 2212,
+    "sha256": "3138bb0f19db1cef7800ec68b0bdb15fbb29d5c1693abd6bd9b510968ccc2f03"
+  },
+  "explicitCorrections": [
+    "facts.mjs requires exclusive output path; stdout is summary only",
+    "replace-host CLI rejects directory inside request; pass it solely via --directory",
+    "maintenance direct module imports TypeScript; exact Node --import tsx loader and cwd are required",
+    "bootstrap positional target is empty and backendId fourth; refresh source third; resume no target/backend argument"
+  ],
+  "inputsBasis": "same previously approved44/53/15report bindings; no manifest payload duplication",
+  "runtime": "NOT_RUN; pending new fresh window; original migration namespace unchanged/unconsumed"
+}

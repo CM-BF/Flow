@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-07T12:35:37.013013+00:00",
+  "window": "svc06-personal-7d1-20261007-1230",
+  "outcome": "PARTIAL_COMPLETE_STOPPED_BEFORE_MAINTENANCE",
+  "completed": [
+    "artifact-migration",
+    "legacy-web-host-replacement",
+    "three-compatibility-imports",
+    "private-browser-policy-create"
+  ],
+  "failed": "history-before static module linking",
+  "primary": {
+    "code": "SyntaxError",
+    "cause": "Named export Pool not found from direct CommonJS pg/lib/index.js; failed before program evaluation",
+    "source": "history-before-invocation.json",
+    "raw": "history-before-outer.json"
+  },
+  "maintenanceBootstrapCalls": 0,
+  "refreshCalls": 0,
+  "resumeCalls": 0,
+  "operatorProviderQueries": 0,
+  "historyBeforeSqlQueries": 0,
+  "retry": false,
+  "rollback": false,
+  "cleanup": {
+    "allInvocationOwnedStates": "absent",
+    "allInvocationEof": true,
+    "services": "Retained; last confirmed center/runner unchanged and new7d1 Web running; no post-failure personal probe",
+    "namespace": "KEEP",
+    "artifact": "KEEP",
+    "policy": "KEEP",
+    "reports": "KEEP"
+  },
+  "lastPersonalFacts": "after-replace.json",
+  "lastPolicyFacts": "reports-policy-result.json",
+  "windowReturnedAt": "2026-10-07T12:35:37.013013+00:00"
+}
