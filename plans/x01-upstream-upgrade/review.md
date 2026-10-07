@@ -1,5 +1,9 @@
-状态：NOT_STARTED
+状态：APPROVED（仅本地上游材料/host片；新中心准备尚待审）
 
-Review target commit: UNKNOWN
+Review target commit: 5beb0bb95b77bd20c4d9bcf05297cbdee21abfa9
 
-独立只读核 fixed source、官方 SRI/license 与闭包、生产 host 接线、旧 pin/差异及局部原件。空模板不是通过。
+2026-10-07T11:47:56Z chatui01_owner/gpt-6-astra，SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2。固定packet79bf6667e7fcf986924d34e74519138b04283b8d，214bindings754987B/manifest6e44bf3e93a165eacaf78a30f817a5431ea5a600400859484c758d9cd2565d01。
+
+独核官方metadata/SRI/tar全部53文件及ISC；每个19个静态闭包input/无externalRuntimeImports。上游真实range.js的includePrerelease tilde下界-0改变，与同输入false→true吻合，adapter不按版本伪造。生产prepare/read/import/invoke，旧pin与授权前trust/material反例通过；授权/ownership为注入，不是中心/OS runner证明。四child完整raw2851B、1682ms监督、closed/EOF/同inodeTMP，LICENSE失败与修后3/3保留。原构建来源txt与最终仅license名差异，bundle未重build。0审者工程/import/PG/写/旧TMP。
+
+新PG fixture与recipe不是本approval覆盖；原lifecycle201674语义复用仅继承，新增range差异仍需独审与新窗口。

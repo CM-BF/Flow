@@ -1,0 +1,7 @@
+{
+  "run": "pg-types",
+  "exit": 0,
+  "accepted": false,
+  "reason": "Copied config retained old worktree @flow aliases; first noEmit is not evidence for this same-tree combination. No runtime import/PG occurred. Original config and raw remain.",
+  "fix": "Exact @flow paths now point to this WT; other fixed external SDK declarations unchanged."
+}

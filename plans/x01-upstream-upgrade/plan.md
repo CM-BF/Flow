@@ -12,3 +12,5 @@
 模块：range adapter 只解析 ≤4096 UTF-8 JSON、bounded version/range/boolean 并返回布尔文本；材料/store/授权由现有生产模块拥有，不复制。官方 tar 每份≤256KiB/10s，SRI先验，拒绝逃逸/链接/超额条目。ESBuild0.28.2仅打两个包，禁止安装/脚本。
 
 工作段11:38:39–11:58:39Z；child60s/累计120s、TMP16MiB/raw512KiB/source-meta2MiB；本组local串行，0PG/Chrome/provider。失败与未知保留。
+
+- [ ] X01UP-05 复用已审lifecycle准备真实中心7.8.4→7.8.5→4；独立review后新窗口实际验收。
