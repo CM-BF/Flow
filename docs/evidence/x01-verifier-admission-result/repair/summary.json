@@ -1,0 +1,25 @@
+{
+  "source": "53d50dddcefb5b1e060f45b5a7addd429aa6ec81",
+  "startedAt": "2026-10-07T21:07:19.000Z",
+  "localReturn": "2026-10-07T21:09:24.695Z",
+  "toolReturn": "2026-10-07T21:09:37.000Z",
+  "children": 3,
+  "supervisorMilliseconds": 13473,
+  "rawBytes": 18314,
+  "selectedCases": 3,
+  "behavior": [
+    "first1pass2fail(timeout: fake returnedPromise instead of callback checkout; no authorize lifecycle entered)",
+    "fixed3pass15unselected"
+  ],
+  "types": "affected strict exit0",
+  "allOwnedAbsent": true,
+  "allMergedEOF": true,
+  "allTMPRemoved": true,
+  "floorPerSpawn": "actual latest canonical read each spawn,19199819776 includes repair4MiB; no extra4MiB",
+  "originalLocalAndGates": "immutable",
+  "wholeExternalWall": "UNKNOWN",
+  "PG": "NOT_RUN",
+  "assembly": "NOT_MOUNTED",
+  "review": "DELTA_PENDING",
+  "remaining": "AV prerequisite/real SQL transaction rollback/production trusted mount/v4 runtime and user journey remain open"
+}
