@@ -1,0 +1,5 @@
+{
+  "extends": "../../../tsconfig.json",
+  "include": ["../../../apps/server/src/index.ts", "../../../apps/server/src/plugin-runtime/claim.test.ts", "../../../apps/server/src/runner-claim-routes.test.ts"],
+  "exclude": ["../../../node_modules"]
+}

@@ -1,6 +1,8 @@
 import { migrateGoalPlanConfirmations, registerGoalPlanConfirmationRoutes } from './goal-plan-confirmation/index.js';
 import { migrateGoalProgressions, registerGoalProgressionRoutes, scanGoalProgressions } from './goal-progression/index.js';
 import { registerUsageReadoutRoutes } from './usage-readout/index.js';
+import { migratePluginRuntime } from './plugin-runtime/store.js';
+import { registerRunnerClaimRoutes } from './runner-claim-routes.js';
 import { migratePluginInstallations } from './plugin-installations/migration.js';
 import { registerPluginInstallationRoutes } from './plugin-installations/routes.js';
 import type { PluginInstallHost } from './plugin-installations/commands.js';
@@ -100,6 +102,7 @@ export async function createServer(options: ServerOptions) {
     await migrateContextObservationHistory(pool);
     await migrateBrowserSessions(pool);
     await migratePluginInstallations(pool);
+    await migratePluginRuntime(pool);
     await migrateGoalProgressions(pool);
     await migrateGoalPlanConfirmations(pool);
     await migrateClaudeMessageSettings(pool);
@@ -193,6 +196,7 @@ export async function createServer(options: ServerOptions) {
     return registerRunner(pool, input.data);
   });
   app.post('/api/runner/claim', request => { requireEmptyBody(request.body); return claim(pool, request.runnerId!, leaseMs); });
+  registerRunnerClaimRoutes(app, pool, leaseMs);
   app.post<{ Params: { id: string } }>('/api/runners/:id/revoke', request => { requireEmptyBody(request.body); return revoke(pool, request.params.id); });
   app.post('/api/runner/heartbeat', request => {
     const input = ownershipSchema.safeParse(request.body);
