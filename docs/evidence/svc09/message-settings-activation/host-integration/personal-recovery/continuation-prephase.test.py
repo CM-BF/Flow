@@ -60,7 +60,7 @@ class Boundary(unittest.TestCase):
             if str(value) == self.value['runDirectory']:
                 return self.run
             # PLAN and inherited raw accounting are public, pinned evidence inputs.
-            self.assertTrue(value == plan_path or value == module.BASE / 'personal-actual-r2')
+            self.assertTrue(value in [plan_path, module.BASE / 'personal-actual-r2', original_path(caller.NODE)])
             return value
         def statvfs(value):
             self.assertEqual(str(value), self.value['migration']['installationDirectory'])
