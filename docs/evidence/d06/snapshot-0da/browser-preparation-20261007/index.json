@@ -7,8 +7,8 @@
   "callerFiles": [
     {
       "path": "run.py",
-      "bytes": 7798,
-      "sha256": "91009c578e88cb349959902f4bbdc1e1f497ecf6f696e77da1e088f62e0d175d"
+      "bytes": 7771,
+      "sha256": "351701c89f53f1d94d7008d3b731f746dffa037d4a9cfca46fce792deb451deb"
     },
     {
       "path": "worker.mjs",
@@ -27,8 +27,8 @@
     },
     {
       "path": "run.py.diff",
-      "bytes": 7796,
-      "sha256": "36f0cbeb41ba2be2b5ef43a79cb327ff96b796d92007400bca06dae2b8a10f8e"
+      "bytes": 7769,
+      "sha256": "f8f8f0909c154f86fecfa1e437e842e6af9f214fe94ebd2df235ed97f51c63d0"
     },
     {
       "path": "worker.mjs.diff",
@@ -150,7 +150,7 @@
   "review": "NOT_STARTED for this browser caller; source5124 and actual22 independent approval unchanged.",
   "skills": {
     "findSkills": "Existing local catalog: clean-code and webapp-testing used, no installs.",
-    "cleanCode": "One data-specific scenario + reused owned lifecycle; same-source SVG/UI checks with fixed fact assertions, no renderer or framework changes.",
+    "cleanCode": "One data-specific scenario + reused owned lifecycle; same-source SVG/UI checks with fixed fact assertions, no renderer or framework changes. Final static review removed embedded old metadata SHA from parent result; report reads validated binding.head.",
     "unverified": "Caller JS execution, actual SVG geometry/readability/screenshots, entry transitive resolution and native runtime remain NOT_RUN."
   }
 }
