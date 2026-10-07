@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 12:56:09 UTC；R2部分实际限定独审已归档；续接idle/期限P2窄修及7个定向检查固定待审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 13:02:21 UTC；c36续接准备独审批准；R2四阶段保持，实际维护等待新窗口 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -24,10 +24,10 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 新产物、网页宿主、兼容报告和策略已安装，后台仍保持原版本；维护前观察入口已修正，补齐停旧runner前的本地未知状态门和独立总期限，定向检查通过。 |
-| 下一可用交付 | 审查固定剩余调用后，核既有完成阶段并继续后台维护和保留核验。 |
-| 当前阻塞 | ACTIVE: 剩余维护准备P2修正待独审与新实际窗口；已完成阶段保留，后台维护尚未开始。 |
+| 下一可用交付 | 取得独占窗口并通过现场核验后，继续后台维护和保留核验。 |
+| 当前阻塞 | ACTIVE: 剩余维护准备已获独审，等待新实际窗口；已完成阶段保留，后台维护尚未开始。 |
 | 需用户决定 | NONE |
-| Review | R2 APPROVED_PARTIAL_ACTUAL_FIDELITY_NOT_BACKEND_UPDATE 已归档；旧失败保持。剩余调用旧列摘要已核；0107原P2保持，idle门/独立deadline窄修待增量独审，实际维护未执行。 |
+| Review | R2 APPROVED_PARTIAL_ACTUAL_FIDELITY_NOT_BACKEND_UPDATE 已归档；旧失败保持。剩余维护c36获APPROVED_REMAINING_MAINTENANCE_PREPARATION；0107原P2已闭且原件保留，实际维护未执行。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -371,3 +371,8 @@ Web正式actual独审随后收到并核SHA69e9f809…；原报告等待结束取
 ## 续接准备P2定向修正
 
 2026-10-07T12:56:09.814515Z实际本地检查段结束，来源[单份记录](../../docs/evidence/svc06/update-diagnostics-candidate/continuation-guard-repair/result.json)：5+2定向检查通过、430ms/707B、2组absent/双EOF、scratch空已清；0个人I/O/PG/provider。复用原idle reader及固定历史清单，补同drain operation前后status确认、独立外层900秒和内层缺回执UNKNOWN。原R2四阶段不重放，原0107独审P2保留，当前待此最小delta独审与新现场窗口。最初任务开工UNKNOWN、完整任务NOT_COMPLETED不变。
+
+
+## 剩余维护准备独审接收
+
+2026-10-07T13:02:21.326961Z Execution Lead独立批准固定c36f4a8109c9a75cda42a34aba27f778784f6f14，见[唯一原样review](../../docs/evidence/svc06/update-diagnostics-candidate/continuation-delta-independent-review.json)。23bindings/107654B与8原observer输入已核，P2 idle及whole-operator期限关闭；reviewer0重测/个人I/O。原R2已消费4阶段不重放，bootstrap/refresh/checkpoint/resume仍NOT_RUN，只有新独占窗口与fresh gates符合后才运行。产品/helper源保持c36。

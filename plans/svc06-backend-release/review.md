@@ -196,3 +196,8 @@ Target `ff445959425128876d5dd6abdb719196cc2867e6`，范围仅 [legacy-first-boot
 ## 0107续接准备独审与窄修
 
 原[continuation-review](../../docs/evidence/svc06/update-diagnostics-candidate/continuation-first-independent-review.json)绑定0107：REQUEST_CHANGES，本地idle门1P2及900秒外层期限澄清。原件保留；当前仅补原严格idle reader/固定历史清单/同op确认与独立OPS14外层，5+2零个人I/O检查通过。新delta待Execution Lead独审；无实际后台更新。
+
+
+## c36续接准备增量独审 APPROVED
+
+2026-10-07T13:02:21.326961Z，Execution Lead（非作者）[APPROVED_REMAINING_MAINTENANCE_PREPARATION](../../docs/evidence/svc06/update-diagnostics-candidate/continuation-delta-independent-review.json)，target c36f4a8109c9a75cda42a34aba27f778784f6f14；P2关闭，原0107审查保留。23bindings107654B+8原observer pins核同，7原例430ms，不重测、不个人读取。限定准备批准，实际个人剩余维护仍未运行。
