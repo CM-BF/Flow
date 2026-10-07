@@ -1,8 +1,8 @@
 # WPF-RECOVERY01 固定代码与验收入口
 
-当前唯一组合 target `2f8cc1f61d32f518998a64d0adeec582f85481f2`，base `84005a260dfcb668cd38b09c21564d0754a0f513`；16 个生产文件逐字等 `a80339a463c4a1a1a5a679d9a89ea79b1650340e`，本次只改两 harness 和原 direct test。完整 feature review 为 **IN_PROGRESS**，不是作者自签通过。WT `web-conversation-recovery` / branch `codex/web-conversation-recovery`，原 claim6ff v4/21；[当前19源/blob/SHA及base统计](two-center-checkpoint.json)为精确范围。后置 owner metadata 不替代历史运行 HEAD。
+当前唯一组合 target `2f8cc1f61d32f518998a64d0adeec582f85481f2`，base `84005a260dfcb668cd38b09c21564d0754a0f513`；16 个生产文件逐字等 `a80339a463c4a1a1a5a679d9a89ea79b1650340e`，本次只改两 harness 和原 direct test。独立组合结论为 **APPROVED_WEB_IMPLEMENTATION_AND_ORIGINAL_03_05_EVIDENCE_WITH_SHARED_CONTRACT_HANDOFF**；TODO06共享合同来源与main接收继续IN_PROGRESS，非作者自签/整平台批准。WT `web-conversation-recovery` / branch `codex/web-conversation-recovery`，原 claim6ff v4/21；[当前19源/blob/SHA及base统计](two-center-checkpoint.json)为精确范围。后置 owner metadata 不替代历史运行 HEAD。
 
-[root 集中源码与local审](two-center-source-local-root-review.json)接受当前三文件delta、2项新受控回归与Web noEmit；随后[双中心真实浏览器selected2实际通过](two-center-first-validation.md)，[root本次actual独审](two-center-first-root-review.json)限定接受。当前代码不混入恢复目录美化、C02 stream-v2或其他feature。main/真实安装接收尚未取得新的本片完整回执。
+[root 集中源码与local审](two-center-source-local-root-review.json)接受当前三文件delta、2项新受控回归与Web noEmit；随后[双中心真实浏览器selected2实际通过](two-center-first-validation.md)，[root本次actual独审](two-center-first-root-review.json)限定接受。当前代码不混入恢复目录美化、C02 stream-v2或其他feature。[当前root组合独审](2f8-composed-feature-root-review.json)在原19输入矩阵基础上接受Web实现与原03/05验收；main/真实安装接收尚未取得新的本片完整回执。
 
 ## 模块与authority
 
@@ -44,7 +44,7 @@ ConnectionSession 负责公开cookie身份及撤权代际；Journal 按API baseU
 
 ## 完整验收剩余与边界
 
-原TODO03按App/P01、完整稿与namespace定义已有分层实证，现completed；05仍需最终核对重连等未覆盖边界，actual lateGET只证明abort未交付，同center公开principal旋转无本片测试API、当前只受控证明。TODO06仍需完整feature独立结论与合法main接收。两DB新phase90s实际charge13020/余76980，旧90/150/Steer60/route90全部closed，不借余额；[当前phase](two-center-phase.json)与[连接配置](two-center-connections.json)列实际与配置区别。准备文件的NOT_RUN及SHA是执行前2917历史状态，不替代本轮actualmanifest。
+原TODO03/05按App/P01、完整稿、namespace及原工程矩阵已由[root组合独审](2f8-composed-feature-root-review.json)接受并completed。full7已真实覆盖不reload public reauth与offline→online保稿0POST，不再笼统写重连未验；[19输入逐项矩阵](acceptance05/report.md)是该结论的审前固定材料。actual lateGET只证明abort未交付，同center公开principal旋转无本片测试API、隔离仅受控证明，二者诚实列限制，不新增Web/provider运行门槛。TODO06待原plan13/interface三项中心owner合同（callerOrigin、迟到Clear-Cookie、重复Connect32slot）固定来源对齐及Original合法main/必要集成接收。两DB新phase90s实际charge13020/余76980，旧90/150/Steer60/route90全部closed，不借余额；[当前phase](two-center-phase.json)与[连接配置](two-center-connections.json)列实际与配置区别。准备文件的NOT_RUN及SHA是执行前2917历史状态，不替代本轮actualmanifest。
 
 真正runner/provider consumed/applied、Queue promotion、assistant流协议消费及其他owner公共认证合同保证是跨owner能力/未验依赖，不能临时新增为本Web渲染/触发/缓存片必须启动provider的前置；本片不宣称它们已证。IDB strict是UA耐久hint，不保证断电/用户清库永久保存。
 

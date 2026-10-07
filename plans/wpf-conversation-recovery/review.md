@@ -1,10 +1,14 @@
 # WPF-RECOVERY01 独立审查
 
-状态：**IN_PROGRESS**。当前唯一组合target `2f8cc1f61d32f518998a64d0adeec582f85481f2`，base `84005a260dfcb668cd38b09c21564d0754a0f513`；16生产源与已审a803完全一致，本次三test变更。精确范围见[19源checkpoint](../../docs/evidence/wpf-conversation-recovery/two-center-checkpoint.json)；[单一feature入口](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)统一当前代码、证据矩阵、原P1/P2与未验项。
+状态：**APPROVED_WEB_IMPLEMENTATION_AND_ORIGINAL_03_05_EVIDENCE_WITH_SHARED_CONTRACT_HANDOFF**；06来源对齐与main接收仍IN_PROGRESS。当前唯一组合target `2f8cc1f61d32f518998a64d0adeec582f85481f2`，base `84005a260dfcb668cd38b09c21564d0754a0f513`；16生产源与已审a803完全一致，本次三test变更。精确范围见[19源checkpoint](../../docs/evidence/wpf-conversation-recovery/two-center-checkpoint.json)；[单一feature入口](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)统一当前代码、证据矩阵、原P1/P2与未验项。
 
-[root集中源码与local独审](../../docs/evidence/wpf-conversation-recovery/two-center-source-local-root-review.json)固定2f8，核19pins/13raw40289B、2新增PASS/55未选、Web noEmit0、保守7481/20k及精确清理，0finding。结论只接受source与受控local；随后同origin两真实center实际selected2/2通过，见[actual原件](../../docs/evidence/wpf-conversation-recovery/two-center-first-manifest.json)，已获[root本次限定actual审](../../docs/evidence/wpf-conversation-recovery/two-center-first-root-review.json)通过；完整feature未APPROVED。两DB actor/lease/迟到GET白名单边界已源码审，运行连接配置与新独立phase见[two-center preparation](../../docs/evidence/wpf-conversation-recovery/two-center-preparation.json)。
+[root集中源码与local独审](../../docs/evidence/wpf-conversation-recovery/two-center-source-local-root-review.json)固定2f8，核19pins/13raw40289B、2新增PASS/55未选、Web noEmit0、保守7481/20k及精确清理，0finding。结论只接受source与受控local；随后同origin两真实center实际selected2/2通过，见[actual原件](../../docs/evidence/wpf-conversation-recovery/two-center-first-manifest.json)，已获[root本次限定actual审](../../docs/evidence/wpf-conversation-recovery/two-center-first-root-review.json)通过；此条只接受当时双中心选组，后续组合结论见下文。两DB actor/lease/迟到GET白名单边界已源码审，运行连接配置与新独立phase见[two-center preparation](../../docs/evidence/wpf-conversation-recovery/two-center-preparation.json)。
 
-此前a803真实cookieRead/steeringRecovery selected2与owned清理已[root限定接受](../../docs/evidence/wpf-conversation-recovery/stale-route-first-root-review.json)，current production同源，不重跑；更早full7/CREATE/Queue/SSE/completeDraft各保自己的target/raw。旧五次及后继所有FAIL不回写。main接收与整feature结论仍待合法流程，作者不代独立review自签。
+此前a803真实cookieRead/steeringRecovery selected2与owned清理已[root限定接受](../../docs/evidence/wpf-conversation-recovery/stale-route-first-root-review.json)，current production同源，不重跑；更早full7/CREATE/Queue/SSE/completeDraft各保自己的target/raw。旧五次及后继所有FAIL不回写。本片Web实现与原03/05已获下述独立组合接受；三项中心合同固定来源和main接收继续按06追踪，作者不扩大到整平台批准。
+
+## 2026-10-07 11:15:35 UTC — 当前固定组合结论
+
+[root原文](../../docs/evidence/wpf-conversation-recovery/2f8-composed-feature-root-review.json)10567B/SHAc5444993994d86bcf8523fb558c21fa6946acb005ffe5d7b6bbfd3ee336209eb，核19固定输入及当前19源码；相对原0141完整审14/16生产源未变，App/Steer两delta及后继限定证据复核，0Websourceblocking。03/05原矩阵completed，06仍需中心owner提供callerOrigin/迟到Clear-Cookie/重复Connect32slot固定来源和Original合法main/必要集成接收。既有reauth与offline→online已actual，不再新造泛重连门槛；native应用/promotion/公共rotation等限制不隐式转为本片provider前置。本批仅metadata，旧FAIL与分轮来源保持。
 
 ## 历史固定审查原文（以下按当时时点，不是当前target或待办重置）
 

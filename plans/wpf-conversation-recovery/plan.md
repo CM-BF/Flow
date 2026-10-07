@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 连接、草稿和未决发送恢复
 
-状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 10:33:29 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 11:15:35 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
 
 目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
 
@@ -18,8 +18,8 @@
 - [x] WPF-RECOVERY01-02：四类原controller同步接管和durable barrier，CREATE两阶段及错误/CAS恢复。
 - [x] WPF-RECOVERY01-03：实际App/P01入口、完整草稿/材料和namespace隔离恢复；completeDraft/Steer及双真实center实际，principal-only受控边界单列。
 - [x] WPF-RECOVERY01-04：定向storage/controller直接行为验证与来源hash。
-- [ ] WPF-RECOVERY01-05：真实cookie/HTTP/task-SSE/App各原选组已有actual；最终覆盖核对与明确未验重连边界待独审。旧90/150/Steer60/route90均封账；当前two-center独立90s已13020/余76980，2DB/1Chrome、64MiBscratch/13MiBretained、30s cleanup；无自动后继预约，不重跑旧绿。
-- [ ] WPF-RECOVERY01-06：独立固定审查、修复、push和明确main接收。
+- [x] WPF-RECOVERY01-05：原Web工程验收矩阵已获2f8组合独审接受：full7含同页public reauth/offline→online保稿0POST，后继CREATE两点/Queue/Steer/完整草稿/task SSE/双中心actual与principal-only受控各保来源；不重复绿色。实际lateGET仅abort，未冒公共rotation/模型应用。
+- [ ] WPF-RECOVERY01-06：固定Web实现与03/05独审已通过；待中心owner三项原合同固定来源对齐，以及Original合法main接收/必要集成检查。
 
 ## 验证与资源
 
@@ -288,3 +288,7 @@ Root最终固定a803源码+本次actual local独审已接受，见[原报告](..
 双中心2/2实际与完整owned清理见[原件](../../docs/evidence/wpf-conversation-recovery/two-center-first-manifest.json)。同origin/context/IDB/baseURL，真实A/B两身份往返，unknown原key/body显式回放且两稿恢复均通过；故原03按实际App/完整稿/namespace定义完成。05仍保持精确公共链覆盖核对，旧请求actualabort不能改述迟到成功拒绝，public principal旋转未造；06完整独立结论/main继续。当前2f8/source不变，旧FAIL/计费不变，资源已还、不自动消费76980余量。
 
 2026-10-07 11:07:00 UTC：root双中心actual独审a8c14接受2组/清理，原03完成映射获认可；原件见[独审](../../docs/evidence/wpf-conversation-recovery/two-center-first-root-review.json)。新段spent13020、unused76980不自动再跑，05/06最终未验与main保持。
+
+## 2026-10-07 11:15:35 UTC — 原03/05组合验收收敛
+
+[19固定输入矩阵](../../docs/evidence/wpf-conversation-recovery/acceptance05/report.md)与[root组合原审](../../docs/evidence/wpf-conversation-recovery/2f8-composed-feature-root-review.json)确认原工程验收已齐。05完成不新增运行，保actual/controlled/未验界限；06继续追踪原callerOrigin、迟到Clear-Cookie、重复Connect32slot的中心owner固定来源和合法main接收，不把它们改成新的Web/provider测试。旧90/150/Steer60/route90全部closed；双中心90s spent13020/未用76980不授权新run。产品19与原raw不改。

@@ -1,0 +1,209 @@
+{
+  "at": "2026-10-07T11:14:24.071572+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra / independent read-only",
+  "target": "2f8cc1f61d32f518998a64d0adeec582f85481f2",
+  "base": "84005a260dfcb668cd38b09c21564d0754a0f513",
+  "metadataAtRead": "10b559a58a112eaeb59345a88978b338b75e7ba6",
+  "decision": "APPROVED_WEB_IMPLEMENTATION_AND_ORIGINAL_03_05_EVIDENCE_WITH_SHARED_CONTRACT_HANDOFF",
+  "sourceFindings": [],
+  "webSourceBlockingCount": 0,
+  "meaning": "Accepts this fixed Web recovery implementation and the original engineering evidence matrix for TODO03/05 by composition. Not main/deployment acceptance, not a statement that every cross-owner authentication contract is finalized.",
+  "independentChecks": {
+    "fixedOwnerInputsVerified": 19,
+    "ownerMatrix": {
+      "path": "/private/tmp/recovery05-acceptance-10b559/report.md",
+      "bytes": 6756,
+      "sha256": "2a7bb9a8eaed661cd9ae6663d8ea706029d3f77a66015424111a0566a249b07d"
+    },
+    "ownerPins": {
+      "path": "/private/tmp/recovery05-acceptance-10b559/pins.json",
+      "bytes": 6445,
+      "sha256": "be6bc83f94e8fc967f5c7a021d92b3f7297945a955d6f8b65bab6c65f2de925f"
+    },
+    "currentSource19VerifiedBy": {
+      "path": "/private/tmp/root-recovery-two-center-first-actual-review-20261007.json",
+      "bytes": 18070,
+      "sha256": "a8c14b7b4c5d93c36f57881da295d701ff063a5e88d1b4467ef18d40e32919f4"
+    },
+    "originalFullReview": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
+    "productComparison": [
+      {
+        "path": "apps/web/src/App.tsx",
+        "unchangedFromOriginalFullReview": false
+      },
+      {
+        "path": "apps/web/src/connection/session.ts",
+        "unchangedFromOriginalFullReview": true
+      },
+      {
+        "path": "apps/web/src/recovery/journal.ts",
+        "unchangedFromOriginalFullReview": true
+      },
+      {
+        "path": "apps/web/src/recovery/binding.tsx",
+        "unchangedFromOriginalFullReview": true
+      },
+      {
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "unchangedFromOriginalFullReview": true
+      },
+      {
+        "path": "apps/web/src/conversations/outbox.ts",
+        "unchangedFromOriginalFullReview": true
+      },
+      {
+        "path": "apps/web/src/conversations/projection.ts",
+        "unchangedFromOriginalFullReview": true
+      },
+      {
+        "path": "apps/web/src/conversations/queue/commands.ts",
+        "unchangedFromOriginalFullReview": true
+      },
+      {
+        "path": "apps/web/src/conversation-steering/control.ts",
+        "unchangedFromOriginalFullReview": false
+      },
+      {
+        "path": "apps/web/src/conversation-steering/SteeringControl.tsx",
+        "unchangedFromOriginalFullReview": true
+      },
+      {
+        "path": "apps/web/src/conversation-context/controller.ts",
+        "unchangedFromOriginalFullReview": true
+      },
+      {
+        "path": "apps/web/src/attachments/controller.ts",
+        "unchangedFromOriginalFullReview": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/attachments.tsx",
+        "unchangedFromOriginalFullReview": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/knowledge.tsx",
+        "unchangedFromOriginalFullReview": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/session.ts",
+        "unchangedFromOriginalFullReview": true
+      },
+      {
+        "path": "apps/web/src/plugin-integration/steering.tsx",
+        "unchangedFromOriginalFullReview": true
+      }
+    ],
+    "productDeltaReview": "Only App.tsx and conversation-steering/control.ts differ from the original full19-source review. Root read the complete delta again; 55b chooser/timeout and a803 committed-route fixes have focused source/local and relevant actual evidence. 2f8 adds test/harness changes only.",
+    "additionalReviewPins": [
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/55b-p2-fix-root-review.json",
+        "bytes": 6188,
+        "sha256": "ed651acec5332c0eeeea56ad5b3cbbeb1b4c8986aaeb2e991043eca255ba70c7"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/stale-route-local-root-review.json",
+        "bytes": 20013,
+        "sha256": "12cc44fbb18a7dae8cd5edadd7617ec334d9c0587b6b40b4e18f8a9a7a939440"
+      },
+      {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/two-center-source-local-root-review.json",
+        "bytes": 12096,
+        "sha256": "3232a5e0284b9c3944341b899874042162575c31aae2b5b0edbf4a5d85116c13"
+      }
+    ]
+  },
+  "acceptanceMatrix": [
+    {
+      "criterion": "cookie/realIDB/draft/material/turnloss/crossTabCAS/390themes/keyboard",
+      "evidence": "docs/evidence/wpf-conversation-recovery/continuous-first-root-review.json",
+      "boundary": "actual full7 on0141"
+    },
+    {
+      "criterion": "public reauth without reload/page-only draft and offline→online/0businessPOST",
+      "evidence": "docs/evidence/wpf-conversation-recovery/continuous-first-root-review.json",
+      "boundary": "actual full7; current browser1226–1263 retains assertions"
+    },
+    {
+      "criterion": "explicit center chooser survives background read",
+      "evidence": "docs/evidence/wpf-conversation-recovery/continuous-second-root-review.json",
+      "boundary": "actual; originalSELECTING P2 closed"
+    },
+    {
+      "criterion": "CREATE first ACK loss",
+      "evidence": "docs/evidence/wpf-conversation-recovery/continuous-third-root-review.json",
+      "boundary": "actual originaltwo-stagekeys"
+    },
+    {
+      "criterion": "CREATE checkpoint alreadybound then turnACKloss",
+      "evidence": "docs/evidence/wpf-conversation-recovery/continuous-fifth-root-review.json",
+      "boundary": "actual sameconversation/turn/task"
+    },
+    {
+      "criterion": "Queueenqueueunknown recovery",
+      "evidence": "docs/evidence/wpf-conversation-recovery/continuous-sixth-root-review.json",
+      "boundary": "actual key/revision/item/sequence/fileorder"
+    },
+    {
+      "criterion": "taskSSE realdelivery withoutRESTcatchup",
+      "evidence": "docs/evidence/wpf-conversation-recovery/continuous-seventh-root-review.json",
+      "boundary": "actual taskstream only"
+    },
+    {
+      "criterion": "completeprofile/project/knowledge/two orderedfiles draft",
+      "evidence": "docs/evidence/wpf-conversation-recovery/continuous-tenth-root-review.json",
+      "boundary": "actual Prepare/reload/reauth/explicitRestore/metadata validation"
+    },
+    {
+      "criterion": "Steer original command and nextdraft with late hashview",
+      "evidence": "docs/evidence/wpf-conversation-recovery/stale-route-first-root-review.json",
+      "boundary": "actual publicsyntheticactor/accepted-replayed; notnativeconsume"
+    },
+    {
+      "criterion": "two real centers A→B→A→B",
+      "evidence": "docs/evidence/wpf-conversation-recovery/two-center-first-root-review.json",
+      "boundary": "actual sameorigin/context/IDB; oldread abortedwithoutdelivery"
+    },
+    {
+      "criterion": "samecenter principalonly and ignoreabort stale ready",
+      "evidence": "docs/evidence/wpf-conversation-recovery/two-center-source-local-root-review.json",
+      "boundary": "controlled2 actual local; notpublicrotation"
+    }
+  ],
+  "originalFindingsClosed": [
+    "RECOVERY-FINAL-P2-SELECTING:55b source+actualconnectionchoice",
+    "RECOVERY-FINAL-P2-STEERING-TIMEOUT:55b source+4controlleddeadlinecases",
+    "Later App stale-route closure:a803 source/local+actualsametimeOriginSteer"
+  ],
+  "noNewRuntimeRequiredForThisMatrix": "The current original Web matrix is satisfied with declared actual/controlled levels. Do not repeatedly run generic reconnect or all prior green checks. Historical results retain their source/execution identities rather than being relabeled as one2f8fullrun.",
+  "sharedContractHandoff": [
+    {
+      "topic": "callerOrigin",
+      "owner": "Original Execution Lead / browser-session center owner",
+      "need": "Link the existing fixed center policy conclusion and applicable single-origin/trusted-origins boundary. Existing Web same-origin actual does not settle arbitrary multi-origin semantics."
+    },
+    {
+      "topic": "late Clear-Cookie",
+      "owner": "Original Execution Lead / browser-session center owner",
+      "need": "Provide the fixed server contract for a stale auth/logout response racing a new connect. Client ignored stale continuation is not proof that Set-Cookie cannot affect browser storage."
+    },
+    {
+      "topic": "repeated Connect / 32session capacity",
+      "owner": "Original Execution Lead / browser-session center owner",
+      "need": "Link the fixed capacity/idempotency/reconnect policy and its owner acceptance; no invented automatic connect retry or claim that4realconnects prove32slot behavior."
+    }
+  ],
+  "handoffBasis": "Original plan.md13/interface explicitly retained these three center semantics before final approval; main docs/evidence/d06/snapshot-0da/peer-backend-facts.md also keeps them open. This review adds no Web/provider runtime prerequisite or shared implementation change.",
+  "todoDisposition": {
+    "03": "COMPLETED within recorded App/P01/full-draft/namespace scope",
+    "05": "COMPLETED for original Web engineering evidence matrix with above explicit proof levels",
+    "06": "IN_PROGRESS: retain shared-contract owner source alignment and authorized main/integration acceptance; no fullplatform/perfect claim"
+  },
+  "limits": [
+    "Public principal-only rotation remains unexecuted; controlled isolation evidence is explicit.",
+    "Actual held read abortedwithoutdelivery; late successful stale-response safety is controlled only.",
+    "Queuepromotion/nativeconsumed-applied/assistantstreamv2 and exhaustiveSSEreconnect orders are cross-owner/future capabilities, not secretly new Web acceptance prerequisites.",
+    "Recoverylist readability remains existing nonblocking planned follow-up.",
+    "Strict IDB durability is UA hint; no powerloss/userclear durability guarantee.",
+    "No root product tests or service activity. No gate/env/window or credit transfer; all historical failures retained."
+  ],
+  "cleanCode": "Reviewed single authority, committed event lifetime, async timeout/receipt handling, evidence freshness and bounded responsibility. Prefer the existing composed proof over duplicate runtime or another state system."
+}
