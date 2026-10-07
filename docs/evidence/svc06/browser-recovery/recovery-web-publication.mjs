@@ -70,6 +70,16 @@ async function directory(path) {
   const info = await lstat(path); assert.ok(info.isDirectory() && !info.isSymbolicLink() && info.uid === process.getuid() && (info.mode & 0o777) === 0o700);
   assert.equal(await realpath(path), path); return { dev: String(info.dev), ino: String(info.ino) };
 }
+/** System temporary parent and newly owned output have distinct permission contracts. */
+export async function createOutputDirectory(output) {
+  const parent = dirname(output), info = await lstat(parent);
+  assert.ok(info.isDirectory() && !info.isSymbolicLink()); assert.equal(await realpath(parent), parent);
+  const ownedPrivate = info.uid === process.getuid() && (info.mode & 0o7777) === 0o700;
+  const systemTemporary = parent === '/private/tmp' && info.uid === 0 && (info.mode & 0o7777) === 0o1777;
+  assert.ok(ownedPrivate || systemTemporary, 'UNTRUSTED_OUTPUT_PARENT');
+  await mkdir(output, { mode: 0o700 }); // Exclusive; never adopt an existing directory or symlink.
+  const result = await directory(output); assert.equal(result.dev, String(info.dev)); return result;
+}
 async function modules(input) {
   const verified = await verifyBackendArtifact({ directory: input.installationDirectory, artifact: backend });
   assert.equal(verified.manifest.sourceRepository, input.repository);
@@ -123,7 +133,7 @@ export async function runWebOnly(input, action) {
   assert.equal(receipt.bytes.length, input.finalReceipt.bytes); assert.equal(sha(receipt.bytes), input.finalReceipt.sha256);
   const recovery = JSON.parse(receipt.bytes); assertRecoveryReceipt(recovery);
   const output = action === 'transfer' ? input.runDirectory : input.publicationDirectory;
-  await directory(dirname(output)); await mkdir(output, { mode: 0o700 }); const runIdentity = await directory(output);
+  const runIdentity = await createOutputDirectory(output);
   await record(join(output, 'web-only-intent.json'), { at: new Date().toISOString(), action, artifact, backend });
   try {
     const mod = await modules(input); mod.recovery = recovery; mod.observe = () => observe(input, mod);

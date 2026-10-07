@@ -1,10 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { mkdtemp, realpath, writeFile, lstat, mkdir, rm } from 'node:fs/promises';
+import { mkdtemp, realpath, writeFile, lstat, mkdir, rm, rmdir, chmod, symlink } from 'node:fs/promises';
 import { join } from 'node:path';
 import { tmpdir } from 'node:os';
 import { createHash } from 'node:crypto';
-import { backend, artifact, reports, context, validateInput, assertRecoveryReceipt, assertPublished, publish, runWebOnly } from './recovery-web-publication.mjs';
+import { backend, artifact, reports, context, validateInput, assertRecoveryReceipt, assertPublished, publish, runWebOnly, createOutputDirectory } from './recovery-web-publication.mjs';
 
 const sha = value => createHash('sha256').update(value).digest('hex');
 const fingerprint = value => sha(JSON.stringify(value, (_, current) => current && !Array.isArray(current) && typeof current === 'object'
@@ -99,4 +99,22 @@ test('post-commit unknown stays primary and never triggers rollback or retry', a
 test('a different launch since the recovery receipt is refused before public CAS', async () => {
   await fixture('success', async (value, mod, facts) => { mod.recovery.stateDigest = 'a'.repeat(64);
     await assert.rejects(publish(value, mod), /RECOVERED_LAUNCH_CHANGED/); assert.equal(facts().called, 0); });
+});
+test('actual output creation accepts system sticky parent and refuses namespace reuse', async () => {
+  const output = await realpath(await mkdtemp('/private/tmp/svc06b-web-entry-'));
+  await rmdir(output); let created;
+  try {
+    created = await createOutputDirectory(output);
+    const info = await lstat(output); assert.equal(info.uid, process.getuid()); assert.equal(info.mode & 0o7777, 0o700);
+    assert.deepEqual(created, { dev: String(info.dev), ino: String(info.ino) });
+    await assert.rejects(createOutputDirectory(output), { code: 'EEXIST' });
+  } finally { if (created) { const info = await lstat(output); assert.equal(String(info.dev), created.dev); assert.equal(String(info.ino), created.ino); await rmdir(output); } }
+});
+test('actual output creation rejects writable owned and symlink parents', async () => {
+  const root = await realpath(await mkdtemp(join(tmpdir(), 'web-parent-')));
+  try {
+    const bad = join(root, 'bad'), alias = join(root, 'alias'); await mkdir(bad, { mode: 0o700 }); await chmod(bad, 0o777);
+    await assert.rejects(createOutputDirectory(join(bad, 'output')), /UNTRUSTED_OUTPUT_PARENT/);
+    await symlink(root, alias); await assert.rejects(createOutputDirectory(join(alias, 'output')));
+  } finally { await rm(root, { recursive: true }); }
 });
