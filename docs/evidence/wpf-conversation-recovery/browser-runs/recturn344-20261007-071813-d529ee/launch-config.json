@@ -1,0 +1,33 @@
+{
+  "temp": {
+    "TMPDIR": "/private/tmp/flow-recovery-browser-1YIFG3",
+    "TMP": "/private/tmp/flow-recovery-browser-1YIFG3",
+    "TEMP": "/private/tmp/flow-recovery-browser-1YIFG3",
+    "MAC_CHROMIUM_TMPDIR": "/private/tmp/flow-recovery-browser-1YIFG3",
+    "BREAKPAD_DUMP_LOCATION": "/private/tmp/flow-recovery-browser-1YIFG3/crashpad",
+    "XDG_CACHE_HOME": "/private/tmp/flow-recovery-browser-1YIFG3/cache"
+  },
+  "worker": {
+    "executable": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "selectedArgv": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.browser.ts",
+      "--worker"
+    ],
+    "inheritedRuntimeArguments": "not recorded"
+  },
+  "chrome": {
+    "executable": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+    "argv": [
+      "--headless=new",
+      "--remote-debugging-port=0",
+      "--remote-debugging-address=127.0.0.1",
+      "--user-data-dir=/private/tmp/flow-recovery-browser-1YIFG3/chrome",
+      "--no-first-run",
+      "--no-default-browser-check",
+      "--disable-background-networking",
+      "--disable-component-update",
+      "--disable-sync",
+      "about:blank"
+    ]
+  }
+}

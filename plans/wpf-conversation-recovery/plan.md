@@ -192,3 +192,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ## 2026-10-07 07:13:16 UTC — 原-05生命周期窄修与历史计费
 
 [344f12](../../docs/evidence/wpf-conversation-recovery/monitor-retirement-validation.md)已将monitor正常退休与错误事实分离，并为唯一已独审失败建立exact immutable reconciliation。原worker/业务/selected断言不变；32受控和noEmit完成，真实修后parent尚未跑。新local用5973.709/20000ms，与browser新150k spent47205分列。独审前不恢复PG/Queue，TODO02/05/06保持in-progress。
+
+## 2026-10-07 07:25:47 UTC — 原02/05 CREATE第二故障点实际完成
+
+344f parent窄修后[同选组实际2/2](../../docs/evidence/wpf-conversation-recovery/continuous-fifth-validation.md)已跑通并清理，待本次root独审；两个CREATE故障点各独立actual来源，原失败保留。TODO02/05仍因Queue/SteerHTTP/SSEdelivery/材料完整组合等未验不勾选，06全feature review仍IN_PROGRESS。无新增journey或budget，当前58951/150000、剩91049。

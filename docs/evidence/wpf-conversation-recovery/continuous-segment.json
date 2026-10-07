@@ -1,6 +1,6 @@
 {
   "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
-  "state": "PARENT_REPAIR_ACCEPTED_READY_CREATED_TURN_RETRY_PREPARATION",
+  "state": "CREATED_TURN_RETRY_SELECTED_ACTUAL_ACCEPTED_QUEUE_NOT_RUN",
   "authorization": {
     "path": "continuous-segment-authorization.json",
     "sha256": "6ea79981213d5df67f1e7ae4c603a90bbf7823daebf53aa15bf85e08f7ed5090"
@@ -22,8 +22,8 @@
     "additionalSourceMetadataBytes": 1048576,
     "defensiveCumulativeCeilingMs": 240000
   },
-  "runtimeSpentMs": 47205,
-  "runtimeRemainingMs": 102795,
+  "runtimeSpentMs": 58951,
+  "runtimeRemainingMs": 91049,
   "attempts": [
     {
       "run": "recfull-20261007-055138-6c925b",
@@ -95,15 +95,35 @@
       "fullJourneyPassed": false,
       "independentReview": "continuous-fourth-root-review.json",
       "originalBudgetComplete": false
+    },
+    {
+      "run": "recturn344-20261007-071813-d529ee",
+      "journey": "created-turn-ack-loss",
+      "executionHead": "7c7ee77d42e9af484237d62d30f9bfda4e613d73",
+      "sourceTarget": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+      "manifest": "continuous-fifth-manifest.json",
+      "passedGroups": 2,
+      "selectedPassed": true,
+      "actualExit": 0,
+      "outerActualMs": 11745.105624897406,
+      "parentLateMs": 11230.26425,
+      "serializedParentMs": 11217.659582999999,
+      "chargedMs": 11746,
+      "cleanupComplete": true,
+      "resourceReturnedAt": "2026-10-07T07:24:01.286190+00:00",
+      "fullJourneyPassed": false,
+      "fullFeaturePassed": false,
+      "independentReview": "continuous-fifth-root-review.json",
+      "priorFailedBudgetReconciledNotRewritten": true
     }
   ],
   "nextSelection": null,
   "fullFeatureReview": "IN_PROGRESS",
   "noCurrentGate": true,
-  "sourceTarget": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
-  "sourceCheckpoint": "create-queue-checkpoint.json",
+  "sourceTarget": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
+  "sourceCheckpoint": "monitor-retirement-checkpoint.json",
   "chargeRule": "ceil(max(actual outer, late parent, serialized parent)) per attempt; original raw unchanged",
-  "currentReviewTarget": "67f8fd25a129ef5c8882f07e54de87e20ed24429",
+  "currentReviewTarget": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
   "p2FixReview": {
     "path": "55b-p2-fix-root-review.json",
     "sha256": "ed651acec5332c0eeeea56ad5b3cbbeb1b4c8986aaeb2e991043eca255ba70c7",
@@ -113,8 +133,9 @@
   "parentRepair": {
     "source": "344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5",
     "localEvidence": "monitor-retirement-local/segment.json",
-    "runtimeNotRun": true,
+    "runtimeNotRun": false,
     "failedAttemptReconciliation": "monitor-retirement-reconciliation.json",
-    "rootReview": "monitor-retirement-root-review.json"
+    "rootReview": "monitor-retirement-root-review.json",
+    "runtime": "continuous-fifth-manifest.json"
   }
 }

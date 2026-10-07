@@ -239,3 +239,7 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 ## 2026-10-07 07:13:16 UTC — monitor退休与失败账clean-code
 
 按本地find-skills复用clean-code/codebase-design；只区分timer退役和业务workguard，不引入第二supervisor。命名monitorRetiring/mode表达单一职责，保directcheckpoint与真实exitpoll期限；stop继续记录晚interrupt，清理去重不冒失败已记录。私有priorAttemptCharge隐藏exact失败回执/cleanup/计费检查，不扩大公共接口、不自动修历史JSON。受控测试直接提取实际函数/注册/收尾/扫描，保old负例，避免镜像状态机。32项与noEmit0，6s内退出两自有Node；未运行PG/Chrome，不冒真实复测。旧FAIL与原件不可变，wholefeature/Queue/SteerHTTP等开放。
+
+## 2026-10-07 07:25:47 UTC — 344f实际重试收口clean-code
+
+复用原single-fileparent与worker，不改代码/断言/权限/清理。正常monitor退休与exact失败计费接缝已针对源审，本次实际selected2/2+outer0提供运行证据但不追溯原竞态唯一根因或改旧FAIL。按真实outer最大计费、独立精确组/目录观察、原DB与fixture清理分别记录；无全树/无业务额外probe。控制器/材料身份/下一稿原断言保留，0provider；未选组及完整feature开放。仅owner原件/plan/status/review封存，无新Node工程检查，源19不漂移。
