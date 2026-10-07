@@ -1,0 +1,84 @@
+{
+  "at": "2026-10-07T22:40:21.259355+00:00",
+  "logicalId": "SVC06B-HELD23-E15-CONTINUATION-20261007-ONCE",
+  "identities": [
+    {
+      "id": 81535,
+      "kind": "pid",
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "id": 81545,
+      "kind": "pid",
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "id": 88746,
+      "kind": "pid",
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "id": 88805,
+      "kind": "pid",
+      "state": "absent",
+      "errno": 3
+    },
+    {
+      "id": 81545,
+      "kind": "group",
+      "state": "absent",
+      "errno": 3
+    }
+  ],
+  "operatorReturned": true,
+  "outer": {
+    "pid": 88805,
+    "elapsedMs": 51,
+    "exit": 1,
+    "owned": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "signals": []
+  },
+  "preflight": {
+    "pid": 81545,
+    "elapsedMs": 12444,
+    "exit": 0,
+    "owned": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "poolEndCompleted": true,
+    "remoteConnectionsAfterEnd": "NOT_OBSERVED"
+  },
+  "privateNamespace": {
+    "path": "/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once",
+    "exists": false,
+    "symlink": false
+  },
+  "phaseStarted": false,
+  "newDetachedRoles": 0,
+  "pendingLaunches": 0,
+  "serviceMutationStages": [],
+  "providerQueries": 0,
+  "imports": 0,
+  "remainingStagesNotConsumed": [
+    "fresh",
+    "rebind",
+    "refresh",
+    "checkpoint",
+    "resume",
+    "final"
+  ],
+  "personalServiceState": "No new service action; last tight preflight observed held23 and old roles stopped. Not a new post-run personal probe.",
+  "sourceGate": "Fixed WINDOW does not satisfy inherited execute window prefix; gate precedes run.mkdir and every phase launch. Raw stderr does not retain assertion line.",
+  "disposition": "FAILED_KEEP_NO_RETRY",
+  "priorFailedNamespaces": "UNCHANGED_KEEP",
+  "observedBounds": "Exact owned PIDs and preflight group only; childPidOnly not generalized to service groups."
+}

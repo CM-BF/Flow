@@ -1,0 +1,101 @@
+{
+  "at": "2026-10-07T22:37:56.446997+00:00",
+  "grant": {
+    "logicalId": "SVC06B-HELD23-E15-CONTINUATION-20261007-ONCE",
+    "at": "2026-10-07T22:35:44.039Z",
+    "state": "SELECTED_NOT_STARTED",
+    "latestStart": "2026-10-07T22:39:44.039Z",
+    "owner": "Original/native_center_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+    "source": "e871d17e018461dd1288dba404930a50897b2c24",
+    "delivery": "0b599a9ce5b71b0ab70700cf7ddd28f9bfa705cd",
+    "claim": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v12",
+    "entry": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/run.py --run-remaining-once",
+    "preparationSha256": "72940b492935374605583ad0727c440289396b46564e48a23b96fea10a8d114a",
+    "inputPendingSha256": "1074c512ae5a5c36f4001fc43cdb53159865d295dabb4a9633b554e4d2b8483e",
+    "dispatchSha256": "cf72fa490bb43c6471c462b5af2aa8311c4e3e331dbe9264a7894687bbf6283e",
+    "review": "APPROVED_LIMITED_CANONICAL_UNCONSUMED_CONTINUATION_PREPARATION/0P1P2 byOriginal",
+    "fixedPins": "27bindings148073B/135effectivepins824217B;6direct299ms; managerreadprep/input/dispatch exacthashes",
+    "namespace": "/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once",
+    "phases": [
+      "fresh",
+      "rebind",
+      "refresh",
+      "checkpoint",
+      "resume",
+      "final"
+    ],
+    "notReplayed": [
+      "import-artifact",
+      "import-reports",
+      "bootstrap",
+      "retirement"
+    ],
+    "workSeconds": 900,
+    "termGraceSeconds": 0,
+    "reapSeconds": 2,
+    "addedBytes": 536870912,
+    "rawBytes": 2097152,
+    "liveFloorBytes": 1073741824,
+    "minimumFreshFreeBytes": 18007851008,
+    "minimumPriorProtectedFloor": 17452105728,
+    "configuredPGAndMargin": 42,
+    "provider": 0,
+    "tasks": 0,
+    "publish779": false,
+    "retry": false,
+    "fresh": "Only approvedresourcefields+resultinginputhash; samecall135pins/claimv12/nooverlap/twounusednamespaces/sameop23/sixfiles/old3rolesstopped/alreadyimportede15+exact4reports/PGavailable>=42 andpreflightpoolclosed/free>=18007851008 pluslive1GiB protection. No imports or consumedsteps replay.",
+    "exclusivity": "No concurrentactualPG/Chrome/build/servicewrite/personal operations. Existing countedisolatedordinary source/pure continue without touching frozeninputs/namespaces. Newuncountedgrowth waits actualSTART or explicitSTOP.",
+    "lifecycle": "Report trueSTART immediately then terminal and exactownedRETURN separately. childPidOnly notdetachedstop; healthyrestoredroles persistent personalstate notcleanupabsence. Newstartup deadline only; never interrupt alreadySTART onexpiry."
+  },
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/svc09/message-settings-activation",
+      "plans/svc09-message-settings-activation"
+    ],
+    "state": "active",
+    "branch": "codex/personal-message-settings",
+    "origin": "new",
+    "taskId": "SVC09A",
+    "worker": "native_center_owner",
+    "claimId": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 12,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
+    "createdAt": "2026-10-07T14:08:33.408Z",
+    "updatedAt": "2026-10-07T21:00:39.748Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "head": "dacf4a4f55a5a207c66291b057fa0487638ff2f0",
+  "effectivePins": 135,
+  "preflight": {
+    "oldInventoryVerified": true,
+    "newInstalledInventoryVerified": true,
+    "sixPins": true,
+    "publicCanonical": true,
+    "oldRolesStopped": true,
+    "exactFourReportsVerified": true,
+    "sameHeld23": true,
+    "active": 0,
+    "uncertain": 0,
+    "capacity": {
+      "max": 100,
+      "current": 6,
+      "available": 94
+    },
+    "preflightPoolsClosed": true
+  },
+  "free": 18014277632,
+  "floor": 18007851008,
+  "input": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-input.actual.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-input.actual.json",
+    "bytes": 13113,
+    "sha256": "bee9fb6c19354f7ca0acde32f7441e25970f2a0ec3445d9a54e137d9ddd10f87"
+  },
+  "namespaceAbsent": true,
+  "oldRawChanged": false
+}

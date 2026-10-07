@@ -1,0 +1,87 @@
+{
+  "at": "2026-10-07T22:41:33.513892+00:00",
+  "source": "e871d17e018461dd1288dba404930a50897b2c24",
+  "preparation": "0b599a9ce5b71b0ab70700cf7ddd28f9bfa705cd",
+  "outcome": "FAILED_BEFORE_ANY_PHASE_RUNTIME_RETURNED",
+  "start": "2026-10-07T22:37:56.465903Z",
+  "terminal": "2026-10-07T22:37:56.647208Z",
+  "return": "2026-10-07T22:40:21.259355+00:00",
+  "outer": {
+    "pid": 88805,
+    "ownership": "childPidOnly",
+    "capture": "separate",
+    "exit_code": 1,
+    "elapsed_ms": 51,
+    "stdout": "",
+    "stderr": "{\"outcome\": \"UNKNOWN_KEEP_NO_RETRY\", \"type\": \"AssertionError\"}\n",
+    "observed_bytes": 63,
+    "retained_bytes": 63,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [],
+    "deadlineScope": "Entire operator from launch: bindings, filesystem gates, phase supervision, all save/fsync",
+    "maintenanceConsumers": "Each inner OPS14 launch has its own session. Only each saved phase Report proves its termination; missing report means UNKNOWN/KEEP.",
+    "personalServices": "Not owned or signalled by this outer supervisor; only original public maintenance acts on nonce-bound roles."
+  },
+  "completed": [],
+  "notRun": [
+    "fresh",
+    "rebind",
+    "refresh",
+    "checkpoint",
+    "resume",
+    "final"
+  ],
+  "preflight": {
+    "elapsedMs": 12444,
+    "sixPins": true,
+    "oldAndNewFullInventory": true,
+    "publicCanonical": true,
+    "held23": true,
+    "oldRolesStopped": true,
+    "fourExistingReports": true,
+    "capacity": {
+      "max": 100,
+      "current": 6,
+      "available": 94
+    },
+    "poolsEndCompleted": true,
+    "remoteZeroAfterEnd": "NOT_OBSERVED"
+  },
+  "diagnosis": {
+    "kind": "STATIC_DETERMINISTIC_WINDOW_CONTRACT_MISMATCH",
+    "callerWindow": "svc06-personal-held23-e15-continuation-once",
+    "consumerRule": "assert window.startswith('svc06-personal-7d1-')",
+    "consumer": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.py",
+      "bytes": 7380,
+      "sha256": "f862c5964077b46431d8d446c31978469aecda40994a4340ef7b3b152f30f8ff"
+    },
+    "ordering": "Gate precedes namespace mkdir, phase reservation and every phase child. Raw stderr only AssertionError; assertion source line was not captured.",
+    "limitation": "No runtime stack retained; do not rewrite raw as a more specific observed code."
+  },
+  "newNamespaceCreated": false,
+  "serviceActions": 0,
+  "imports": 0,
+  "providerQueries": 0,
+  "actualClaim": "NOT_OBSERVED",
+  "priorResources": "UNCHANGED_KEEP",
+  "retry": "Not authorized; fixed successor needs new namespace/window",
+  "returnEvidence": {
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/actual-held-continuation-once/window-return.json",
+    "bytes": 2001,
+    "sha256": "47fe6e5a4d3c852864d906f6e91ce5cc601df1ec754b03756706586ceb98de92"
+  }
+}

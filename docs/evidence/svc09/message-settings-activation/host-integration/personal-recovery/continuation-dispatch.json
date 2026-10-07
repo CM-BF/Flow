@@ -36,10 +36,10 @@
     "sha256": "b283f5e364594595b43c780f3d9fb45be00d7dd756eb37f5655dd0b641a0fd2a"
   },
   "input": {
-    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-input.pending.json",
-    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-input.pending.json",
-    "bytes": 13130,
-    "sha256": "1074c512ae5a5c36f4001fc43cdb53159865d295dabb4a9633b554e4d2b8483e"
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-input.actual.json",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-input.actual.json",
+    "bytes": 13113,
+    "sha256": "bee9fb6c19354f7ca0acde32f7441e25970f2a0ec3445d9a54e137d9ddd10f87"
   },
   "bindings": [
     {
@@ -476,9 +476,9 @@
     }
   ],
   "admission": {
-    "state": "NOT_SELECTED",
-    "window": null,
-    "completeForwardFloor": null,
+    "state": "SELECTED_ONCE",
+    "window": "SVC06B-HELD23-E15-CONTINUATION-20261007-ONCE",
+    "completeForwardFloor": 18007851008,
     "sourceInputsReadyForReview": true,
     "allowedFinalInputChanges": [
       "ready",

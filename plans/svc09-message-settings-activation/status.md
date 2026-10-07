@@ -6,31 +6,31 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T22:34:17Z |
+| 更新时间 | 2026-10-07T22:41:33.513892+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | implementation |
-| 当前产出 | 恢复调用的摘要修复及剩余阶段已通过独立审查，服务仍停止。 |
-| 下一可用交付 | 等待新运行窗口后，只续目标切换、启动检查与恢复。 |
-| 当前阻塞 | ACTIVE: 等待新的独占个人恢复窗口；旧许可已消费，当前无待启动进程。 |
+| 当前产出 | 恢复续接在进入阶段前失败，运行资源已归还，个人服务仍停止。 |
+| 下一可用交付 | 修正执行器窗口名称合同，并验证真实首阶段前装配。 |
+| 当前阻塞 | ACTIVE: 续接入口装配不兼容；源码修复与直接检查后需新受审窗口。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
 | Head | e871d17e018461dd1288dba404930a50897b2c24（公共canonical/六阶段） |
 | 实现目标 | e871d17e018461dd1288dba404930a50897b2c24 |
-| 工作分支状态 | reviewed（0b599/e871固定，等待实际新窗口） |
-| 工作树dirty状态 | 源码与135pins冻结；仅本次批准及等待状态正常收口 |
+| 工作分支状态 | implementation（保留实际失败，修复窗口合同） |
+| 工作树dirty状态 | 仅own结果与状态；实际执行源尚未改 |
 | 实现范围 | docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v12；21:00:39.748Z原子归还4产品，仅own范围继续 |
 | Review | APPROVED_LIMITED_CANONICAL_UNCONSUMED_CONTINUATION_PREPARATION，assignment独立核0b599/e871，0P1/P2；27bindings148073B/135effective824217B。 |
 | 检查状态 | 6不同/6选择通过，299ms/733B，3组absent双EOF、2exact空scratchremoved；0PG/服务/个人/provider。 |
-| 验证限制 | 个人仅新产物/报告迁入完成；rebind not-written，refresh/resume未运行。新续接无实际grant。 |
-| 已集成main状态 | 实际失败保真已main e8e1313a4；本次窄修与新续接尚未集成。 |
-| 运行窗口 | 旧段22:20:13.131180Z精确RETURN；新等待22:34:17Z始，来源Lead协调请求。新logical SVC06B-HELD23-E15-CONTINUATION-20261007-ONCE尚未SELECT，无pending launch。 |
+| 验证限制 | 本次0phase/0服务动作；原已迁入产物/报告保留。预检pool.end不冒远端连接零。 |
+| 已集成main状态 | 原canonical续接准备已main ae328cf28；本次实际失败待独审。 |
+| 运行窗口 | 22:37:56.465903Z START；22:37:56.647208Z terminal；22:40:21.259355Z RETURN。新private namespace未创建、无pending。 |
 | 架构影响 | 仅实验策略与薄调用复用现有迁入、维护、历史和OPS14接口；无新产品权限、调度器或监督器。固定旧backend与实际state.source分离，未知结果停步。 |
 | 看板 | 唯一own status如实记录部分迁入与恢复失败；完整双槽/个人settings激活仍开放。 |
 
@@ -58,6 +58,9 @@
 | SVC09A-W11 | 2026-10-07T20:06:52.758952Z | 2026-10-07T20:13:35.898Z | 审查/接口 | 五 leaf 已获限定批准并main；两真实入口已原子交权，随后是实际实现/检查，不算纯等待 | I02 svc09a-startup-progress-review.json；claim v8 amend回执 |
 | SVC09A-W12 | 2026-10-07T20:34:53.035420Z | 2026-10-07T20:36:30.514Z | 审查 | 实际入口接线已获唯一限定批准；真实host未安排，不预占运行资源 | startup-entry-result.json；本次source8daa |
 | SVC09A-W13 | 2026-10-07T21:37:48.007Z | 2026-10-07T21:39:50.246Z | 审查 | 恢复调用源码/局部证据已获限定独审；后续cold/四报告/dispatch仍须齐备，不预占actual窗口 | personal-recovery/result.json；source42a2；Lead新source880060消息 |
+
+| SVC09A-W14 | 2026-10-07T22:34:17Z | 2026-10-07T22:37:56.465903Z | 资源 | 新唯一窗口及fresh通过后实际START | continuation actual start.json |
+| SVC09A-W15 | 2026-10-07T22:37:56.647208Z | OPEN | 验证失败 | 执行器窗口名称合同不匹配；修复真实装配，原FAIL保留 | continuation-actual-result.json |
 
 原首次只读子agent被cap拒绝，未重试；本owner继续实施。首轮 reporter 为spec，result计数null，原raw保留20/19/1；派生记录明确纠正口径，不回写旧原件。后续各轮只选新边界/受影响例。临时峰值未采样。完整真实资格、模型与个人部署仍开放。
 
@@ -192,3 +195,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T22:32:44.468Z：e871三执行源停止；新六phase已删除两个已消费import动作。真实公共canonical与880060同字节；旧expected摘要和原件不改。4 Node+1 Python原件231ms，后置继承dispatch装配只补1例68ms，135有效公开pin核同，仅最后execute替换。新input.ready=false/window和floor空，当前无child。clean-code安全点核单一序列化权威与原维护/监督器复用；旧toy仅同步purpose/namespace两literal，不算新增绿。metadata首个Python文本写入因编码解析0写退出，状态解析仍保其当时事实；本次重新正常写状态，非工程检查失败。
 
 2026-10-07T22:34:17Z：assignment已正式限定批准0b599/e871，0P1/P2。135pins与执行源停止写入；Lead同刻请求新唯一恢复窗口，实际等待从本事件开始，尚未SELECT。旧grant不复用、不进入任何import/bootstrap/hold/retirement。仅后续准入资源字段可按新grant绑定，完整任务仍开放。
+
+2026-10-07T22:41:33.513892+00:00：续接实际首错为outer CHILD_EXIT_NONZERO、inner AssertionError；原51ms/0phase不回填具体runtime断言行。固定源码证明WINDOW不符继承execute前缀规则，且新namespace未创建。四PID及预检组absent/EOF完整，窗口已RETURN；原服务无本次动作。新工作段开始修复真实装配，不重复个人运行。见[唯一结果](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-actual-result.json)。
