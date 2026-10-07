@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 09:59:03 UTC；r1限定失败证据已main，诊断19distinct局部完成待独审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 10:07:16 UTC；诊断独审批准，新固定版本产物入口已备，未运行 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,23 +13,23 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 诊断前像b2b；固定实现 3cb0be8f57467a0ed4703119e68a96cd8f8e560e；后续仅封证据，旧artifact c2c/r1保持 |
-| 工作树dirty状态 | 产品全停写；仅封最终manifest/原始结果与own metadata |
+| 工作基线 / HEAD | 产品source3cb0be8f / deliveryfc02bc61已独审；Lead固定runtime source6c0fdcda8858aac33489c48c1948e902dd6a3d7e（父b2b仅四源变更）；own后继docs准备中 |
+| 工作树dirty状态 | 产品停写；仅新diagnostics artifact候选/入口/绑定及own metadata |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
-| 检查状态 | PASS 3cb0be8f57467a0ed4703119e68a96cd8f8e560e；19 distinct分轮（14+4+3选择含2重叠），preview syntax0/status parser0；2777ms，4252B raw，5组absent/双EOF/tmp removed；原host FAIL保持 |
+| 检查状态 | 诊断19 distinct分轮已独审APPROVED；2777ms/4252B/5组清理不重跑；新6c完整build/import NOT_RUN，旧c2c/r1原件保持 |
 | 已集成main状态 / HEAD | main/origin 8c2ae379 已接r1失败/cleanup47 own文件及I02复核（Lead回执）；旧c2c build/import批准保持，新诊断尚未集成 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 启动失败现在保留具体阶段与有界私有错误输出，直接检查通过；旧宿主失败和清理证据保持。 |
-| 下一可用交付 | 完成本诊断小片独审，再用新固定产物继续真实宿主验证。 |
-| 当前阻塞 | ACTIVE: 诊断小片待独审，真实宿主验收尚未重新执行。 |
+| 当前产出 | 启动诊断已审通过；已准备带诊断的新版本构建入口，旧启动失败记录完整保留。 |
+| 下一可用交付 | 运行固定新版本构建，再依据新诊断继续宿主验证。 |
+| 当前阻塞 | ACTIVE: 新产物入口待收审及共享构建窗口；真实宿主和配置验收仍未完成。 |
 | 需用户决定 | NONE |
-| Review | 新诊断PENDING_READONLY_REVIEW，由Execution Lead唯一审；r1限定失败证据已APPROVED并main8c2ae379 |
+| Review | source3cb/fc02获Execution Lead唯一APPROVED，0P1/P2；新build-once入口固定待只读核差量 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v8，原own两scope加6个启动诊断精确产品literal；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
-| 架构影响 | 新增小型私有启动诊断Module；生命周期与TERM仍归原process，公开只受控摘要；实际宿主与后台产物不在本局部检查范围。 |
+| 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -37,7 +37,7 @@
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
 | SVC06-03 | in-progress | assignment_review | 真实完整artifact构建/import已审；新root三host/拒读实验已限定批准并main，默认部署链不扩大 |
 | SVC06-04 | in-progress | assignment_review / 独立reviewer | 局部检查/构建已审；一次真实host结果已限定批准并main，refresh/resume/旧数据后继open |
-| SVC06-05 | in-progress | assignment_review | update-b2b-candidate/candidate.md；新宿主接线已main，固定产物/三App配置兼容/个人更新仍未验 |
+| SVC06-05 | in-progress | assignment_review | update-diagnostics-candidate/candidate.md；固定6c新诊断产物未运行，三App配置兼容/个人更新仍未验 |
 
 ## 依赖闭包后继（2026-10-06 14:41 UTC）
 
@@ -243,3 +243,14 @@ r1结果已native限定APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE，�
 source `3cb0be8f57467a0ed4703119e68a96cd8f8e560e`，claim v8在先fresh原子领取，b2b四产品前像受控供给。[Interface](../../docs/evidence/svc06/startup-diagnostics/Interface.md) / [完整范围](../../docs/evidence/svc06/startup-diagnostics/README.md) / [唯一运行记录](../../docs/evidence/svc06/startup-diagnostics/local-runs.json)。实际09:55:54.220Z至09:56:06.154Z首段和09:57:58.943Z定向结束，均为原件时间；累计2777ms/4252B，19distinct、21选择分轮，5组absent/EOF、5exact scratch空后removed。补充spawn系统code是收口修复，只跑1新+2直接受影响，旧18未重跑。原未知开工时间不改；无PG/host/build/provider/个人读取。
 
 产品四源全停写，独审待Execution Lead；原r1失败与数值runner退出未观测仍在main8c2ae379，不因局部检查而转绿。03/04/05继续open。
+
+## 2026-10-07 10:07:16 UTC — 诊断批准与新固定产物准备
+
+[独审原件](../../docs/evidence/svc06/startup-diagnostics/independent-review.json) recordedAt2026-10-07T10:03:27.064114Z，source3cb/fc02、43+5绑定与19distinct原raw一致，P1/P2=0，reviewer0重跑。Lead固定6c0fdcda为b2b的唯一诊断四源子版本，其余Git blob不变，不以moving main构建。
+
+[最新候选](../../docs/evidence/svc06/update-diagnostics-candidate/candidate.md) / [唯一入口](../../docs/evidence/svc06/update-diagnostics-candidate/build-once/README.md)复用原420+.5+2与fresh3,927,965,696B规划。72source/17runtime、14依赖声明/33SQL及271cache index核同；只读准备，无新reservation/copy/install/PG/provider/个人动作。旧c2c与r1冻结，新entry尚NOT_RUN。
+
+| 等待ID | 开始 | 结束 | 类别 | 说明 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| SVC06-WAIT-DIAGNOSTICS-REVIEW | UNKNOWN | 2026-10-07T10:03:27.064114Z | 审查 | 四源小片独审已完成；精确提交交接时标无单独原件，起点不推算 | startup-diagnostics/independent-review.json |
+| SVC06-WAIT-DIAGNOSTICS-BUILD | 2026-10-07T10:07:16.216390+00:00 | UNKNOWN | 资源 | 当前新入口就绪，等Lead实际共享窗口，未预占；首次记时不冒任务开工 | update-diagnostics-candidate/preparation-checks.json |

@@ -92,3 +92,7 @@ rootpg已main3230，原局部批准不扩。唯一[执行入口](../../docs/evid
 ## 2026-10-07 08:57:48 UTC：原SVC06-05继续固定候选
 
 SVC09已main b2b5612b2a63106ad0e674ddf12b2e8f96cf3388，复用其受信policy/预停服务资格/配置报告tuple/集中保留边界；[最新候选](../../docs/evidence/svc06/update-b2b-candidate/candidate.md)取代旧4fe作为下一实际输入，旧记录不改。只在本v7 own两scope准备固定Flow-source薄入口，顺序为legacy先新Webhost→三retained真实v2新tuple→新backend+policy→第四App独立CAS。当前仅准备/元数据观察，实际构建与后继验收仍open，不扩原03/04/05完成范围。
+
+## 2026-10-07 10:07:16 UTC — 诊断版本后继
+
+[当前候选](../../docs/evidence/svc06/update-diagnostics-candidate/candidate.md)固定6c0fdcda（b2b仅四个已审诊断文件差异）。原b2b/c2c成功构建与r1宿主FAIL分开保留；下一新namespace构建沿原已审builder与预算，host根据有界私有阶段/stderr证据定位，不盲重放已消费run。03/04/05仍open，实际三retained新tuple兼容与个人顺序不省略。

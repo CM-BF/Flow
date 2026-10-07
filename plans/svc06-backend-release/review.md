@@ -129,3 +129,7 @@ Execution Lead独立 `APPROVED_FIXED_ARTIFACT_AND_INTERNAL_LOADING`，target5d40
 Target `3cb0be8f57467a0ed4703119e68a96cd8f8e560e`，对b2b四产品差量；preview/其直接专测、新startup-diagnostics/专测。process两文件保持字节不改，原身份/TERM两例复验。19distinct分轮、2777ms、5owned组absent/双EOF、5scratch removed，原raw见[startup-diagnostics](../../docs/evidence/svc06/startup-diagnostics/README.md)。本作者clean-code复核完成：诊断只拥有私有证据与受控摘要，不拥有spawn/停止决策；无重复监督器/FSM。唯一reviewer Execution Lead，状态NOT_STARTED，不能扩大此前r1结果批准。
 
 审查重点：首错与secondary分离、nonce身份与private保护、64KiB后继续drain、真实child退出不被记录错误掩盖、原ready10s/detach/stop不变、新模块纳入Web/maintenance资格。未执行真实PG/新artifact/host或个人更新。
+
+## 2026-10-07 10:07:16 UTC — 启动诊断唯一批准转录
+
+Execution Lead独立APPROVED source3cb0be8f57467a0ed4703119e68a96cd8f8e560e / deliveryfc02bc6176d59d8d06f1c9d1acc9fffa4f885975，0P1/P2；[原件](../../docs/evidence/svc06/startup-diagnostics/independent-review.json)43+5绑定与原raw核同，0重测。本批准仅源码/局部，r1真实FAIL不改。后继6c固定source由Lead提供，新的build-once差量准备待审，不继承旧artifact结果。
