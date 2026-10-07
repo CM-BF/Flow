@@ -1,5 +1,7 @@
 # WPF-WORKSPACEARC01 Review
 
-IN_PROGRESS `fe7f18d564baaea7ed3ec87bedf49bd805cbdf10`。原891f source/local与7097准备[1491报告](../../docs/evidence/wpf-workspace-arc/root-arc-runtime-preparation-review-20261007.json)已APPROVED，非actual通过。唯一HTTP实际7097/96d00是1PASS/1FAIL/11未选，3408ms CLOSED，regularlogs/ownedRETURN，首红[原件](../../docs/evidence/wpf-workspace-arc/http-first-20261007/manifest.json)不改。
+IN_PROGRESS `fe7f18d564baaea7ed3ec87bedf49bd805cbdf10`。root[7b962](../../docs/evidence/wpf-workspace-arc/root-arc-http-waiter-fix-review-20261007.json)已APPROVED窄test修复、types3096与原caller；不是HTTP通过。
 
-当前fe7f仅修累计read采样前置和补真正queued-dispose；其余17源码/test不变。真实HTTP响应barrier保status/header/body，失败finally释放；单changed test+staticimports noEmit0/3096ms CLOSED20s。新HTTP候选未运行/未授权，固定差量待root集中审。browser4/PNG/main仍未完成；原13绿不重跑、不借任何旧余额。
+第二HTTP实际1PASS/1FAIL/11未选：hidden/queued-dispose通过，backlog test65批次次序失败；2652/30000 CLOSED，旧3408首FAIL保留，不拼跨轮全绿。[第二原件](../../docs/evidence/wpf-workspace-arc/http-second-20261007/manifest.json)及[有界静态归因](../../docs/evidence/wpf-workspace-arc/http-second-20261007/static-triage.md)待root actual审。Node/组/scratch精确归还，regularlogs不称双EOF，无portprobe。
+
+产品未改；0第三HTTP/0browsergrant。browser4/PNG/main未完成，原13local与两次types限定绿不外推；所有旧预算CLOSED不转。

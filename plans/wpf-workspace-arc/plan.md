@@ -26,3 +26,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 2026-10-07T20:15:52.827442Z 准备检查点：原source/local已独审批准；复用I01 absolute-deadline parent/worker/capture，HTTP2独立30s、browser4一次90s均仅proposal。原主题组内加reduce偏好+可见布局computed styles观察，非全App无动画声明。所有原组与长transcript锚点/真实prepare-await保留；0actual，候选一次集中审后经理派窗。
 
 2026-10-07T20:42:30.368488Z：仅test修复瞬态累计读取前置为两真实HTTP响应barrier，并在队列占用中dispose第三pane；保hidden后重新可见、第三新增读取0/peer前進/peak2。新HTTP候选等待独立30s实际窗口，旧30s已封。
+
+2026-10-07T20:50:23.889173Z：第二独立HTTP2652ms后整体FAIL；hidden/queued-dispose已实际通过，backlog次序断言失败，保首轮相反结果。下一步仅固定实际证据/窄静态归因，无自动运行或放宽验收。

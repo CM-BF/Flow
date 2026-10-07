@@ -11,3 +11,5 @@
 2026-10-07T20:15:52.827442Z：复用已读find-skills/brainstorming/assistant-ui/codebase-design/clean-code，未安装。实际复核调用器单一进程组所有权、绝对总deadline/双EOF/晚期exit、byte累计无差分竞态、required四名不信任空列表；HTTP独立两名与fixture afterEach清理、regular logs不冒EOF。发现适配点：Arc返回passed名称数组不同I01 checks，已在worker及parent分别对固定enum核同；fixture close是否创建不能由optional fulfilled空值冒真，显式Boolean(context/fixture)记录。Python ast仅静态解析无调用；browser新TS noEmit0/4683ms，runtime未验。无产品源或旧失败变更。
 
 2026-10-07T20:42:30.368488Z：clean-code实际复核：相同server只观察指定task的原end参数，不改业务结果；barrier仅两个响应、1s到达、finally/afterEach释放；没有额外store/通用supervisor。纠正采样累计数冒并发窗口、完成后dispose冒queued关闭两处测试缺口；未判产品withdraw缺陷。类型0/3096，0新HTTP。
+
+2026-10-07T20:50:23.889173Z：clean-code实际检查本次错误与结果分层：原两case独立fixture，afterEach与组收尾无错误；childexit1/selectedFAIL不包装成产品唯一缺陷。提出eligibility与inflight的最窄证据缺口，不加新framework/不改源码/不重复绿。

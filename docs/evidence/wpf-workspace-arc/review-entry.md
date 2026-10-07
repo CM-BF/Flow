@@ -17,3 +17,5 @@ HTTP2与browser4全部NOT_RUN。[runtime proposal](runtime-proposal.json)不是g
 Current source `7097c4d1cc429ee87e507a2210f2e9cceac99b56` (one browser file delta from891f; other17 exact). Root source/local approval afb5559 retained. New affected noEmit0,4683ms/20s CLOSED; no original13rerun. Prepared HTTP2 and originalbrowser4 are NOT_RUN/NOT_GRANTED. Reduced-motion observation belongs to refresh-theme only. [Entry](runtime-preparation-20261007/entry.json), [source/local review](root-arc-source-local-review-20261007.json).
 
 2026-10-07T20:42:30.368488Z：当前固定source fe7f18d564baaea7ed3ec87bedf49bd805cbdf10，原source/caller审批与首HTTPFAIL保留。见[窄修入口](http-waiter-fix-20261007/entry.json)。唯一修改test，修后HTTP与browser未运行；source/actual层级不混写。
+
+2026-10-07T20:50:23.889173Z：第二HTTP原件见[manifest](http-second-20261007/manifest.json)：修后hiddenPASS/backlogFAIL，2652CLOSED。source仍fe7，0额外runtime，当前整体FAILED/待根actual与归因。
