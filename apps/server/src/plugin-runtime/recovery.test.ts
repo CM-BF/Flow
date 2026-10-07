@@ -24,7 +24,7 @@ vi.mock('../tasks.js', () => ({
 beforeEach(() => { fixture.bound = true; fixture.queries = []; fixture.wakes = 0; fixture.taskId = randomUUID(); fixture.attemptId = randomUUID(); fixture.runnerId = randomUUID(); });
 function retry() {
   const input: ReconciliationRetry = { attemptId: fixture.attemptId, ownerVersion: 1, resolutionId: randomUUID(),
-    safety: { strategy: 'no-side-effects', evidence: 'Operator confirmed no side effects' } };
+    safety: { strategy: 'no-side-effects', evidence: { explanation: 'Operator confirmed no side effects', references: [] } } };
   return retryReconciled({} as Pool, {} as PgBoss, fixture.taskId, input, 'owned-key');
 }
 test('generic retry cannot discard a frozen plugin binding or create a fixture replacement', async () => {
