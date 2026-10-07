@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T10:18:31.933175+00:00 / main dea9f100；看板摘要已部署，插件启动配置与规划私有环境已受控接收 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T10:24:36.769323+00:00 / main dea9f100；规划首段已消费1次并停止，后台隔离启动入口已审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,8 +22,8 @@
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
 | 当前产出 | 看板先显示进度摘要，打开任务再读取核验详情；登录与计时保留。插件启动配置已合入，新固定后台产物已构建成功。 |
-| 下一可用交付 | 用新产物定位并验证后台启动；受限规划首段与网页兼容准备按实际资源顺序推进。 |
-| 当前阻塞 | ACTIVE: 新后台的独立启动与保留页面兼容仍待验证；远程验证启用和工程模型授写资格各等待原用户决定。 |
+| 下一可用交付 | 验证固定后台启动及保留页面兼容；规划首段未取得计划，先依据已保存声明差异完成零模型修正。 |
+| 当前阻塞 | ACTIVE: 新后台的独立启动与保留页面兼容仍待验证；规划首段在运行声明核验停止，尚无计划结果；远程验证和工程授写资格保持原待决。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -500,4 +500,6 @@ SVC06-05 唯一准备 owner 为 assignment_review，候选见 [固定更新方�
 
 2026-10-07T09:43:40.202069+00:00：SVC06自有宿主r1于09:37:20启动、09:38:00.412Z清理完成并归还PG段；runner就绪FAIL与normalDROP/已知组stopped分开，未变更个人服务。[唯一SVC状态](../../../backend-release/plans/svc06-backend-release/status.md)及其b2b-host-policy记录为权威。原operator在精确scope下补首因/阶段诊断，不重复构建或盲重跑；三队local与隔离PG规则不变。I02当前插件组合17/17、types/import绿仅是直接消费者，真实PG由原X01 owner独审。
 
-2026-10-07T10:18:31.933175+00:00：看板实际部署与X01/O16固定接收见主线I02的 [dashboard-summary-deployment.json](../../docs/evidence/i02/dashboard-summary-deployment.json)、[x01-startup-intake.json](../../docs/evidence/i02/x01-startup-intake.json) 和 [o16-native-environment-review.json](../../docs/evidence/i02/o16-native-environment-review.json)。SVC06离线构建10:12:06.871→10:12:40.145Z完成并归还；原未知/失败均保留。O16已分配新首段1query许可，仍须原owner fresh gate后一次执行，尚未在本条声明已消费；host只准备，两队隔离local申报30MiB。无个人更新。
+2026-10-07T10:18:31.933175+00:00：看板实际部署与X01/O16固定接收见主线I02的 [dashboard-summary-deployment.json](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/dashboard-summary-deployment.json)、[x01-startup-intake.json](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/x01-startup-intake.json) 和 [o16-native-environment-review.json](/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/i02/o16-native-environment-review.json)。SVC06离线构建10:12:06.871→10:12:40.145Z完成并归还；原未知/失败均保留。O16已分配新首段1query许可，仍须原owner fresh gate后一次执行，尚未在本条声明已消费；host只准备，两队隔离local申报30MiB。无个人更新。
+
+2026-10-07T10:24:36.769323+00:00：OPS-001-16补[固定输入必要来源](../../docs/quality/local-validation.md#fixed-input-provenance)方法，真实组合逐来源绑定、Git blob按需读取，raw/非Git输入保留一份；不改既有审查/冻结包。首个产品小片的重复文件/字节对照仍待实际采用。O16首段SDK entry1、init1、无result/usage，费用未知；10:20:24自有两组absent、专库连接空后归还，原DB/tmp KEEP。唯一[O16状态](../../../continuous-native-goal-acceptance/plans/o16-continuous-goal-acceptance/status.md)维护原始失败与后续修正，不消费第二次模型预算。
