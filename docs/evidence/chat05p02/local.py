@@ -19,6 +19,7 @@ spec = importlib.util.spec_from_file_location('chat05p02_ops14', MODULE)
 ops = importlib.util.module_from_spec(spec); sys.modules[spec.name] = ops; spec.loader.exec_module(ops)
 NODE = '/opt/homebrew/Cellar/node@24/24.20.0/bin/node'
 COMMANDS = {
+    'material': [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', 'docs/evidence/chat05p02/pg-repair/config.mjs'],
     'leaf': [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', 'docs/evidence/chat05p02/local.config.mjs'],
     'types': [NODE, str(ROOT / 'node_modules/typescript/bin/tsc'), '--project', 'docs/evidence/chat05p02/focused-tsconfig.json', '--pretty', 'false'],
     'wiring': [NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', 'docs/evidence/chat05p02/local.config.mjs', '-t', 'public FlowClient|public client original|actual runtime legacy|blocks new claims|admitted attempt unresolved|retains body envelopes'],

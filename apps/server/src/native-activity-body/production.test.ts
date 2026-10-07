@@ -14,8 +14,10 @@ beforeAll(async () => {
 afterAll(async () => {if(fixture)await fixture.close();});
 function material(content: Buffer, sessionId: string): NativeActivityBodyInput {
   const prefix=content.subarray(0,65536).toString(),sha256=createHash('sha256').update(content).digest('hex');
-  return{content,activity:{type:'native-activity',activityId:createHash('sha256').update(sessionId).digest('hex'),nativeSessionId:sessionId,
-    source:'claude.sdk.message',sourceMessageId:randomUUID(),nativeMessageId:null,blockIndex:0,parentToolUseId:null,kind:'tool',phase:'input-ready',toolUseId:'tool',toolName:'Read',
+  const sourceMessageId=randomUUID();
+  const activityId=createHash('sha256').update(JSON.stringify([sessionId,sourceMessageId,0,'tool'])).digest('hex');
+  return{content,activity:{type:'native-activity',activityId,nativeSessionId:sessionId,
+    source:'claude.sdk.message',sourceMessageId,nativeMessageId:null,blockIndex:0,parentToolUseId:null,kind:'tool',phase:'input-ready',toolUseId:'tool',toolName:'Read',
     body:{content:prefix,originalBytes:content.length,sha256,truncated:content.length>Buffer.byteLength(prefix),mediaType:'text/plain'}}};
 }
 
@@ -54,16 +56,18 @@ it('uses real runRunner confirmation, outbox and FlowClient paging for over 2MiB
   // This direct material is SDK-public UTF8, not the provider HTTP stream or hidden reasoning.
   input.activity.body!.content=content.subarray(0,65535).toString();
   expect(content.length).toBeGreaterThan(2*1024*1024);
-  const stop=new AbortController();let calls=0;
+  const stop=new AbortController();let calls=0,adapterFailure:unknown,runnerFailure:unknown;
+  const notices:string[]=[];fixture.facts.runnerNotices=notices;
   const running=runRunner({baseUrl:fixture.baseUrl(),token:registration.token,workingDirectory:fixture.directory,signal:stop.signal,
-    nativeActivityBodies:true,pollIntervalMs:20,requestTimeoutMs:5000,adapters:[{name:'fixture',version:'public-material',async run(context){
+    nativeActivityBodies:true,pollIntervalMs:20,requestTimeoutMs:5000,onNotice(notice){if(notices.length<16)notices.push(notice.type);},adapters:[{name:'fixture',version:'public-material',async run(context){
       calls++;expect(context.activityBodies).toBeDefined();await context.emit({type:'session',nativeSessionId:input.activity.nativeSessionId,adapterVersion:'fixture'});
-      await context.activityBodies!.publish(input);
+      try {await context.activityBodies!.publish(input);}
+      catch(error){adapterFailure=error;throw error;}
     }}]});
-  void running.catch(()=>undefined);
+  void running.catch(error=>{runnerFailure=error;});
   try{
     const deadline=performance.now()+30000;let state='';
-    while(performance.now()<deadline){state=(await owner.show(accepted.task.id)).status;if(state==='succeeded'||state==='failed'||state==='uncertain')break;await delay(20);}
+    while(performance.now()<deadline){if(adapterFailure!==undefined)throw adapterFailure;if(runnerFailure!==undefined)throw runnerFailure;state=(await owner.show(accepted.task.id)).status;if(state==='succeeded'||state==='failed'||state==='uncertain')break;await delay(20);}
     expect(state).toBe('succeeded');expect(calls).toBe(1);
   }finally{stop.abort();await running;}
   const descriptor=await owner.nativeActivityBody(accepted.task.id,input.activity.activityId),reader=owner.nativeActivityBodyPages(descriptor);

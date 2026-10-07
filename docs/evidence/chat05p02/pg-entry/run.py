@@ -12,8 +12,11 @@ sys.dont_write_bytecode = True
 START = time.monotonic()
 ROOT = Path(__file__).resolve().parents[4]
 BASE = ROOT / 'docs/evidence/chat05p02/pg-entry'
-RUN = ROOT / 'docs/evidence/chat05p02/pg-run-01'
-INPUT = json.loads((BASE / 'inputs.json').read_text())
+assert sys.argv[1:] in ([], ['repair-02']), 'Only the fixed original or repair-02 entry is supported'
+REPAIR = sys.argv[1:] == ['repair-02']
+INPUT_BASE = BASE.parent / 'pg-repair' if REPAIR else BASE
+RUN = BASE.parent / ('pg-run-02' if REPAIR else 'pg-run-01')
+INPUT = json.loads((INPUT_BASE / 'inputs.json').read_text())
 
 
 def now():
@@ -89,7 +92,7 @@ os.mkdir(RUN / 'tmp', 0o700)
 temp = (RUN / 'tmp').lstat()
 reservation = {'startedAt': now(), 'source': INPUT['productSource'], 'selected': INPUT['selected'],
                'freshFreeBytes': available, 'budget': INPUT['budget'], 'PG': 1, 'provider': 0,
-               'tmp': {'dev': temp.st_dev, 'ino': temp.st_ino}, 'inputsSha256': digest(BASE / 'inputs.json')}
+               'tmp': {'dev': temp.st_dev, 'ino': temp.st_ino}, 'inputsSha256': digest(INPUT_BASE / 'inputs.json')}
 durable(RUN / 'reservation.json', reservation)
 module = Path(INPUT['supervisor'])
 spec = importlib.util.spec_from_file_location('chat05_pg_ops14', module)
@@ -99,9 +102,9 @@ env = {'PATH': '/opt/homebrew/opt/node@24/bin:/usr/bin:/bin:/usr/sbin', 'HOME': 
        'FLOW_TEST_CACHE_DIR': str(RUN / 'tmp/cache'), 'TSX_DISABLE_CACHE': '1',
        'NODE_DISABLE_COMPILE_CACHE': '1', 'PYTHONDONTWRITEBYTECODE': '1',
        'FLOW_CHAT05P02_PG_WINDOW': 'authorized', 'FLOW_CHAT05P02_PG_ALLOWANCE_BYTES': str(96 * 1024**2),
-       'FLOW_CHAT05P02_PG_EVIDENCE': 'docs/evidence/chat05p02/pg-run-01/fixture.jsonl'}
+       'FLOW_CHAT05P02_PG_EVIDENCE': str((RUN / 'fixture.jsonl').relative_to(ROOT))}
 command = (INPUT['node'], str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config',
-           str(BASE / 'config.mjs'), 'apps/server/src/native-activity-body/production.test.ts')
+           str(INPUT_BASE / ('pg.config.mjs' if REPAIR else 'config.mjs')), 'apps/server/src/native-activity-body/production.test.ts')
 # The entire suite, including its normal afterAll, fits inside the original 90 s.
 # Timeout stops only this owned session. It does not imply database cleanup.
 remaining = min(90, 100 - (time.monotonic() - START))

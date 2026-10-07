@@ -73,6 +73,13 @@ export async function bodyFixture(options?: { mode: 'production'; evidencePath: 
       await migrateNativeActivityBodies(pool);
       if(!app.hasRoute({method:'GET',url:'/api/tasks/:taskId/native-activities/:activityId/body'})) registerNativeActivityBodyRoutes(app,pool);
     }
+    if(production) {
+      const errors:unknown[]=Array.isArray(facts.httpErrors)?facts.httpErrors:[];facts.httpErrors=errors;
+      app.addHook('onError',async(request,reply,error)=>{
+        // Metadata only: keep the first bounded route errors, never request bodies or credentials.
+        if(errors.length<16)errors.push({request:requests,route:request.routeOptions.url??null,status:error.statusCode??reply.statusCode,name:error.name,code:error.code??null});
+      });
+    }
     app.addHook('onRequest',async()=>{if(production)assert(++requests<=256&&performance.now()-started<90_000,'Production HTTP work bound.');await reserve();});
     app.addHook('onSend',async(request,reply)=>{
       if(dropReply&&request.url==='/api/runner/events'&&reply.statusCode===200) {dropReply=false;facts.droppedAcceptedAck=true;reply.raw.destroy();}
