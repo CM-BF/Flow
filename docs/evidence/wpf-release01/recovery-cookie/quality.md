@@ -60,3 +60,7 @@
 ## 2026-10-07T17:24:30.531Z one-request代理候选 / clean-code
 
 沿本地find-skills/clean-code：把连接策略放在单一httpRequest构造处，与已声明Connection:close一致；仅一个标准boolean选项，不新Agent池、observer框架或私有authority。静态比较browser逐字fc291，fixture只1+/1-；原formal5prepared逐字c2。所有旧错误/UNKNOWN/报告和budget保留；不将端口tuple相关性冒因果证明。当前K01测量drain，0工程child/PG/Chrome/free采样；无必要例行重跑已绿strict。只文本/hash/JSON/链接检查，实际修复效果未验证。
+
+## 2026-10-07T17:49:58.767Z 有界metadata收口
+
+沿用本地find-skills/clean-code方法，仅核命名、当前/历史范围、失败与未运行边界、固定链接。归档独立源审，五prepared及产品/source tuple不改；未运行工程检查、协调CLI或资源采样。旧failure保真，c3仅REVIEWED_SOURCE_BOUND，无actual grant。当前无新增代码复杂度或错误吞并。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T17:24:30.531Z |
+| 最近更新时间 | 2026-10-07T17:49:58.767Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,7 +10,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery |
 | Branch | codex/web-release-recovery |
 | 工作基线 / HEAD | 固定7272151bb1e3e59e08937dca44949dcdeb42f009；source供给300386e2babce408b85ad5b9732d616782b78097；旧树9fde已释放停写 |
-| 工作树dirty状态 | 本批仅 agent:false 窄候选与准备metadata；正常push clean后原四scope STOP、claim7d60v2保留 |
+| 工作树dirty状态 | 本批仅归档限定源审与准备绑定metadata；正常push clean后原四scope STOP、claim7d60v2保留 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | FAILED d032a53a62017cc41a3ddf19b316ad1047398fa6 c2 actual exit1 / asset-observation，reports=null；首c1 FAILED56504保持，types/oldconsumer/artifact仅历史范围 |
@@ -21,11 +21,11 @@
 | 实现范围 | apps/web/test/web-release-compatibility.browser.ts、apps/web/test/web-release-compatibility.fixture.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已形成单次上游连接策略修正候选；原兼容失败保留，尚未复验 |
-| 下一可用交付 | 固定单行差量与原四App调用包集中审查，随后按独立新窗口验证 |
-| 当前阻塞 | ACTIVE: 原HTTP400根因仍未知；连接策略候选待审/未运行，正式四报告仍null |
+| 当前产出 | d882单次连接策略源与复用c3准备已独审批准；原兼容失败保留，c3尚未运行 |
+| 下一可用交付 | 由d01安排新独立180s窗口与fresh准入，执行原四App兼容；当前无actual grant |
+| 当前阻塞 | ACTIVE: 原HTTP400根因仍未知；连接策略源码/准备已审，实际兼容未复验，正式四报告仍null |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：NOT_STARTED d882c9439ee0111268e18766bf13ed02d6fb86e5 新单行候选；fc291源码/strict及诊断完整RETURN历史限定已审 |
+| Review | [review.md](review.md)：APPROVED d882c9439ee0111268e18766bf13ed02d6fb86e5 仅固定源码与复用准备；不含c3 runtime/四App兼容，历史失败与诊断限定不变 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 整体开工UNKNOWN；历史片段完成12:17:59.709Z保前状态；后继领取13:09:33.224Z仅为领取事实，编辑固定来源8964dc1；不以领取或编辑时刻倒填全任务开工 |

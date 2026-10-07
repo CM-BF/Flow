@@ -1,0 +1,86 @@
+{
+  "at": "2026-10-07T17:27:23.590298+00:00",
+  "reviewer": "root gpt-6-astra ultra",
+  "decision": "APPROVED_FOCUSED_SOURCE_AND_REUSED_PREPARATION_NOT_RUNTIME",
+  "blockingFindings": [],
+  "target": "d882c9439ee0111268e18766bf13ed02d6fb86e5",
+  "metadataHeadObserved": "1f0cce00a500651a69b6ac9a57124dd164b46abb",
+  "dirtyObserved": false,
+  "sourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 41015,
+      "sha256": "439363338ee464910561dccc9ff26a2dd1139c7d6caa7df67e271f5dfacbf609"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/apps/web/test/web-release-compatibility.browser.ts",
+      "bytes": 37253,
+      "sha256": "4ba1336fe23af52daf755952c1f0f0eafa21d366fc4b150cc15082b9b7fdf6c6"
+    }
+  ],
+  "packetPins": [
+    {
+      "path": "/private/tmp/rel01-recovery-c3/binding.json",
+      "bytes": 47098,
+      "sha256": "b32a61b1f312f12666f7d21a94af952c5ae77222a79f38cef9b6c408abcbfc95"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c3/manifest.json",
+      "bytes": 4101,
+      "sha256": "a01efa12e7b2a7e70835385c0db2f817bf7c96c7cbe7d93f551a1f5e417fbe76"
+    }
+  ],
+  "preparedUnchangedFromFormalC2": {
+    "supervisor.py": true,
+    "worker.mjs": true,
+    "measure.py": true,
+    "tsconfig.json": true,
+    "inputs.json": true
+  },
+  "checkedPacketFileCount": 16,
+  "preparedPins": [
+    {
+      "path": "/private/tmp/rel01-recovery-c3/supervisor.py",
+      "bytes": 18590,
+      "sha256": "b31b484beb75cfc291a24adca3e24927b2a418eaa147eaaca8a7124d6ef85361"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c3/worker.mjs",
+      "bytes": 5427,
+      "sha256": "fcbe66ed3ca2160ea4658caeff974f18647257824c739c612be05171e7683ae6"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c3/measure.py",
+      "bytes": 8979,
+      "sha256": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c3/tsconfig.json",
+      "bytes": 433,
+      "sha256": "f316d5da8f22079f133b3d8d3abd1c200947f2048e262028bb00aa4561d40599"
+    },
+    {
+      "path": "/private/tmp/rel01-recovery-c3/inputs.json",
+      "bytes": 7818,
+      "sha256": "d082a1b5dba15f89446902e26e2d98a61bfe0dc05b47f713d4bace642585b161"
+    }
+  ],
+  "actualReview": [
+    "Exact fc291→d882 fixture change is one agent:false RequestOptions field; browser byte-identical. Existing per-request Connection:close intent retained; globalAgent untouched.",
+    "No request header/body/Cookie/Host/Origin/CSRF change, no ACK fault/key/task/lateLogout assertion modification or blanket HTTP400 allowance.",
+    "Formal worker calls runRecoveryReleaseCompatibility; existing parent requires actual passed=true, four results and four reports after cleanup. Diagnostic-only evidence cannot satisfy it.",
+    "Five prepared inputs/native sources are byte-identical to previously accepted formal c2; 74 source pins are not re-scanned here. 13+ packet files verified against final manifest.",
+    "Metadata state remains PREPARED_NOT_REVIEWED_NOT_ADMITTED until owner attaches review; no gate or actual start implied. Fresh manager full composition supersedes historical baseline at launch."
+  ],
+  "cleanCode": {
+    "scope": "single fixture delta and task entry selection",
+    "findings": "Uses standard one-request option instead of a new agent lifecycle or global mutation; existing responsibility and error handling preserved; no extra abstraction needed.",
+    "unresolved": "Causal attribution remains UNKNOWN pending actual full compatibility."
+  },
+  "validation": "Static reads only. No product imports, compiler, PG/admin, Chrome, process or disk probes, build, install, artifact inventory sweep, or runtime tests.",
+  "limits": [
+    "Old formal c1/c2 failures and diagnostic result remain immutable and closed; no unused time credit.",
+    "New formal four-App phase proposal 180000ms including30000ms cleanup needs fresh manager grant after K01 exclusivity.",
+    "Passing fixture candidate would not prove all production persistent-connection behavior; server source remains another owner scope."
+  ]
+}

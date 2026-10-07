@@ -1,10 +1,12 @@
 # WPF-RELEASE01 review
 
-**当前状态：NOT_STARTED，新连接策略单行候选待集中审；未运行。**
+**当前状态：APPROVED，仅固定连接策略源码与复用c3准备；c3未运行，正式四App兼容仍FAILED。**
 
 Review target commit：d882c9439ee0111268e18766bf13ed02d6fb86e5。范围：apps/web/test/web-release-compatibility.browser.ts、apps/web/test/web-release-compatibility.fixture.ts。
 
 [固定差量/输入](../../docs/evidence/wpf-release01/recovery-cookie/connection-policy-candidate/README.md)：仅fixture的native httpRequest增加agent:false，与原Connection:close一致。browser逐字fc291；formal4父/worker/计量/输入配置逐字c2。原console400严格断言、Cookie/ACK/key/body/task/lateLogout及清理不变。此为具源码依据的候选，不宣称唯一根因或修复已验证。没有新runtime/green或实际报告。
+
+[Root限定独审](../../docs/evidence/wpf-release01/recovery-cookie/connection-policy-candidate/root-source-preparation-review.json)结论 APPROVED_FOCUSED_SOURCE_AND_REUSED_PREPARATION_NOT_RUNTIME，0blocking。TMP binding现为REVIEWED_SOURCE_BOUND；native边界仍复用7bfb988，五prepared/source tuple不改。实际须d01新窗口/fresh完整准入，不从审查推导运行授权。
 
 ## 历史：fc291诊断源码、必要strict与首次诊断实际
 

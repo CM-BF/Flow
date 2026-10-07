@@ -1,6 +1,6 @@
 # Release recovery c3 — connection policy candidate
 
-PREPARED / NOT REVIEWED / NO ACTUAL GRANT. Source d882c9439ee0111268e18766bf13ed02d6fb86e5.
+REVIEWED_SOURCE_BOUND / SOURCE AND REUSED PREPARATION APPROVED / NO ACTUAL GRANT. Source d882c9439ee0111268e18766bf13ed02d6fb86e5.
 
 Only fixture native httpRequest gains agent:false, matching its existing Connection:close. It is a candidate, not a demonstrated unique root cause. Old formal failures and diagnostic evidence remain immutable.
 
@@ -11,3 +11,5 @@ Proposed fresh independent 180000ms including30000cleanup, 1DB/12configured conn
 Node cannot connect to personal61228; real Chrome requests use exact restricted owned proxy. Original chrome native sandbox and lack of custom outer egress sandbox remain accurately documented. No Node/product check, PG, Chrome, HTTP, resource sampling or build was started.
 
 来源：[root研究](root-policy-research.json)、[peer研究](peer-policy-research.json)。[单行diff](fixture.diff)、[准备提案](proposal.json)、[固定pins](source-pins.json)。
+
+Root review 8b311b5d accepted the fixed source and reused preparation only; no new runtime or formal compatibility report. Runtime admission remains with d01.

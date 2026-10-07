@@ -102,3 +102,7 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 ## 连接策略候选与正式验收接续
 
 2026-10-07T17:24:30.531Z：首parser诊断已完整捕获HPE_CLOSED_CONNECTION，但端口tuple多义不能证明具体请求/唯一因果。复用[既有HTTP转发接缝](../../docs/evidence/wpf-release01/recovery-cookie/connection-policy-candidate/README.md)，只显式one-request agent；不改globalAgent/产品或放宽400。固定779/cd27不重build。后继正式四App必须新完整actual和四报告/cleanup；不导入历史partial或把diagnosticComplete当兼容绿。原稳定executor后继仍在本轮完成之后。
+
+## 2026-10-07T17:49:58.767Z c3准备限定批准
+
+[Root源审](../../docs/evidence/wpf-release01/recovery-cookie/connection-policy-candidate/root-source-preparation-review.json)批准d882源码与复用准备。RELEASE01-08仍pending；c3无运行授权，旧formal失败/reports=null保持。等待d01新窗口与fresh准入，不重跑types/build。
