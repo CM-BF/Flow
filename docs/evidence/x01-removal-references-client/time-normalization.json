@@ -1,0 +1,70 @@
+{
+  "taskId": "X01-REMOVAL-REFERENCES-CLIENT",
+  "kind": "metadata_time_normalization",
+  "startedAt": "2026-10-07T16:05:56Z",
+  "base": "8010b40fcc72be0bb3be5fbcaa2ee9c3a4ed96b5",
+  "originalEvent": "2026-10-07T13:28:41.273991+00:00",
+  "displayEvent": "2026-10-07T13:28:41.273Z",
+  "fields": [
+    "最近更新时间",
+    "任务完成时间",
+    "主线集成",
+    "完整完成"
+  ],
+  "precisionPolicy": "Existing event rendered to millisecond UTC Z; original microsecond evidence preserved, no newly inferred event.",
+  "beforeStatusSha256": "ac997f549311780815472bdb622c73f89cb5bb78b0d189d154c45bc8f112ac67",
+  "afterStatusSha256": "0c533e051ec55b3c42c85ef4afcbd6412cf600d84f3f14cf6cddc8302b8ad4d8",
+  "claimTake": {
+    "requestId": "bde70a26-97d4-4923-a31b-b844fcdabbf7",
+    "action": "take",
+    "committedAt": "2026-10-07T16:06:12.935Z",
+    "claim": {
+      "claimId": "10826605-d80f-4bdc-9205-350826969a76",
+      "version": 1,
+      "taskId": "X01-REMOVAL-REFERENCES-CLIENT",
+      "lead": "mika",
+      "worker": "db_transaction_owner",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client",
+      "branch": "codex/plugin-removal-references-client",
+      "scope": [
+        "docs/evidence/x01-removal-references-client/time-normalization.json",
+        "plans/x01-removal-references-client/status.md"
+      ],
+      "role": "writer",
+      "state": "active",
+      "next": null,
+      "origin": "new",
+      "observedAt": null,
+      "updatedAt": "2026-10-07T16:06:12.935Z",
+      "createdAt": "2026-10-07T16:06:12.935Z"
+    }
+  },
+  "parser": {
+    "errors": [],
+    "humanMissing": [],
+    "timingIssues": [],
+    "updatedAt": "2026-10-07T13:28:41.273Z",
+    "completed": {
+      "state": "known",
+      "at": "2026-10-07T13:28:41.273Z",
+      "record": "2026-10-07T13:28:41.273Z"
+    },
+    "checks": "passed",
+    "exit": 0,
+    "elapsedSeconds": 0.05046479101292789,
+    "stderrBytes": 0,
+    "parserSourceSha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+  },
+  "quality": {
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "/Users/citrine/.agents/skills/codebase-design/SKILL.md"
+    ],
+    "method": "Existing local baseline; explicit four-field transformation, preserve historical source, one owner/status authority.",
+    "scope": "Only two claimed metadata leaves; no products/raw/main receipts changed.",
+    "openIssues": []
+  },
+  "deployment": "UNCHANGED_UNKNOWN",
+  "dashboard": "Owner status parser check only; no live refresh claim."
+}

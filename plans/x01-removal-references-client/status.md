@@ -24,11 +24,11 @@
 | 检查状态 | PASSED 676ed590badb0523ffcbac112ba89ac101f3d1ea 新main基线14/14、focusedtypes0、既有直接消费者4/4（36未选）；旧基线失败保留 |
 | Review | APPROVED 2026-10-07T12:30:38Z chatui01_owner，0P1/P2 |
 | 已集成main状态 / HEAD | INTEGRATED 9f0fe5b2c096a49195ff8060d97584de235785d2；6项逐bytes/hash与固定source一致。 |
-| 最近更新时间 | 2026-10-07T13:28:41.273991+00:00 |
+| 最近更新时间 | 2026-10-07T13:28:41.273Z |
 | 任务开工时间 | 2026-10-07T12:16:18Z |
-| 任务完成时间 | 2026-10-07T13:28:41.273991+00:00 |
+| 任务完成时间 | 2026-10-07T13:28:41.273Z |
 | 任务时间来源 | owner actual开工；main9f0固定Git/原intake在本次时点实核，完成时刻为验收收口；不拿commit时间猜整合时刻。 |
-| Claim | 79284ebe-b7dc-4340-a9bb-ed939cb15ade v1 ACTIVE/7（13:27:43 fresh观察）；提交STOP后release，最新以ledger/external receipt为准。 |
+| Claim | 时间格式修正10826605-d80f-4bdc-9205-350826969a76 v1 ACTIVE/2（2026-10-07T16:06:12.935Z COMMITTED）；旧79284ebe v2已RELEASED。提交后全STOP并release，最新以ledger/external receipt为准。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -47,10 +47,12 @@
 | 实际开工 | 2026-10-07T12:16:18Z / owner status-setup |
 | 分支交付 | 2026-10-07T12:31:57.115Z / 已审source676及packet4971 |
 | 独立审查 | 2026-10-07T12:30:38Z / chatui固定packet4971 |
-| 主线集成 | 2026-10-07T13:28:41.273991+00:00 / 本次固定main9f0 Git观察；原stage receipt12:57:09.017220并非实际main时刻。 |
+| 主线集成 | 2026-10-07T13:28:41.273Z / 本次固定main9f0 Git观察；原stage receipt12:57:09.017220并非实际main时刻。 |
 | 部署 | UNKNOWN |
-| 完整完成 | 2026-10-07T13:28:41.273991+00:00 / 三TODO验收完成；部署仍UNKNOWN。 |
+| 完整完成 | 2026-10-07T13:28:41.273Z / 三TODO验收完成；部署仍UNKNOWN。 |
 
 2026-10-07T12:31:57.115Z READY：固定产品676、准备/结果packet4971已独审0P1/P2；唯一main-intake.json保main3b604三前像，仅五产品/测试及本feature fixture，不覆盖81a合同。登记仍由OriginalLead维护，任务原本完整接收TODO未勾完成；本ordinary已结束，后继0工程运行/待launch，保claim待main。source与结果范围无新增API/FSM，架构后继已在canonical指向Lead按接收基线更新client/CLI query边。
 
 2026-10-07T13:28:41.273991+00:00 MAIN收口：main-acceptance.json精确六项118130B及后端contract0e546…已在main9f0，同批组合strict0/2932ms由Original记录，owner0重跑。原旧8060/迁3b604/初失败及所有raw不改。metadata提交push后全STOP，release回执只存外部，释放后不回填本status。部署及父X01不因此完成。
+
+时间展示规范化：四个展示字段采用毫秒Z，原事件精度 2026-10-07T13:28:41.273991+00:00 保留于上述MAIN历史与time-normalization.json；未改变完成事件、验收或部署事实。此次metadata修正来源和解析检查独立记录，不以修正时间覆盖原完成时间。
