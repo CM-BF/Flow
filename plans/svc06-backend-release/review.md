@@ -1,3 +1,7 @@
+## 2026-10-07 11:27:03 UTC：首次采用实际结果 PENDING_RESULT_REVIEW
+
+source ff445/185ab原准备批准不变；本次[RESULT](../../docs/evidence/svc06/legacy-first-bootstrap/RESULT.md)单例passed/5checks，35086ms+373ms、normalDROP与3idle组stopped。只审原件真实性/限定消费者，不批准真实App或个人更新；作者不自审。产品与入口停写，原unknown和历史失败均保留。
+
 ## r1结果限定事实批准；新启动诊断实现中
 
 [唯一独审原件](../../docs/evidence/svc06/b2b-host-policy/result-independent-review.json)绑定c408，22+17+8全核；APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE，无P1/P2、0重跑。原hostFAIL保持。新启动诊断尚未审，不扩大旧准备/结果批准。

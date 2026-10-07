@@ -1,0 +1,105 @@
+{
+  "startedAt": "2026-10-07T11:27:03.355Z",
+  "processes": {
+    "e7f9c1f0-4ee6-4fd9-bc57-c9ed1e365213": {
+      "role": "web",
+      "pid": 98320,
+      "group": 98320,
+      "state": "stopped"
+    },
+    "b867844a-c591-42b3-b72d-58cd6255a219": {
+      "role": "runner",
+      "pid": 98313,
+      "group": 98313,
+      "state": "stopped"
+    },
+    "6857f4d4-710c-4f82-843e-3be0d91dff11": {
+      "role": "center",
+      "pid": 98306,
+      "group": 98306,
+      "state": "stopped"
+    }
+  },
+  "database": "owned-and-empty",
+  "failures": [],
+  "artifactRetained": true,
+  "privateRunRetained": true,
+  "startupObservation": {
+    "state": "partial-unknown",
+    "at": "2026-10-07T11:27:03.465Z",
+    "primary": null,
+    "roles": [
+      {
+        "role": "center",
+        "nonce": "6857f4d4-710c-4f82-843e-3be0d91dff11",
+        "pid": 98306,
+        "phase": null,
+        "errorCode": null,
+        "exit": "NOT_OBSERVED",
+        "stderr": null,
+        "observation": {
+          "state": "not-observed",
+          "code": "ENOENT"
+        }
+      },
+      {
+        "role": "runner",
+        "nonce": "b867844a-c591-42b3-b72d-58cd6255a219",
+        "pid": 98313,
+        "phase": null,
+        "errorCode": null,
+        "exit": "NOT_OBSERVED",
+        "stderr": null,
+        "observation": {
+          "state": "not-observed",
+          "code": "ENOENT"
+        }
+      },
+      {
+        "role": "web",
+        "nonce": "e7f9c1f0-4ee6-4fd9-bc57-c9ed1e365213",
+        "pid": 98320,
+        "phase": null,
+        "errorCode": null,
+        "exit": "NOT_OBSERVED",
+        "stderr": null,
+        "observation": {
+          "state": "not-observed",
+          "code": "ENOENT"
+        }
+      }
+    ],
+    "observations": [
+      {
+        "source": "generation-before-refresh.json",
+        "state": "not-observed",
+        "code": "ENOENT"
+      },
+      {
+        "source": "generation-2.json",
+        "state": "not-observed",
+        "code": "ENOENT"
+      }
+    ],
+    "stderrPolicy": "Private original retained; public metadata only; at most 64KiB per nonce"
+  },
+  "exitRecords": {},
+  "workWriterAbsent": true,
+  "databaseOid": 1299961,
+  "connections": {
+    "state": "empty",
+    "observations": [
+      {
+        "elapsedMs": 1.994416000000001,
+        "rows": []
+      }
+    ]
+  },
+  "freeBeforeDrop": 22081957888,
+  "privateBeforeDrop": {
+    "bytes": 1831077,
+    "attempts": 1,
+    "entriesAcrossAttempts": 52,
+    "atomicSnapshot": false
+  }
+}

@@ -1,0 +1,341 @@
+{
+  "startedAt": "2026-10-07T11:26:28.127Z",
+  "reservationAt": "2026-10-07T11:26:28.719Z",
+  "workStartedAt": "2026-10-07T11:26:42.197Z",
+  "workFinishedAt": "2026-10-07T11:27:03.256Z",
+  "cleanupFinishedAt": "2026-10-07T11:27:03.610Z",
+  "outerReturnedAt": "2026-10-07T11:27:03.659Z",
+  "workElapsedMs": 35086,
+  "cleanupElapsedMs": 373,
+  "primaryFailure": null,
+  "cleanupFailures": [],
+  "supervisionErrors": {},
+  "ownedGroupsAbsent": 2,
+  "ownedIdleRolesStopped": 3,
+  "database": "normal DROP; remaining=[]",
+  "providerCalls": 0,
+  "personalOperations": 0,
+  "review": "PENDING_RESULT_REVIEW",
+  "privateOriginals": [
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/cleanup-checkpoint.json",
+      "bytes": 2473,
+      "sha256": "15393c61311dd083db73cf47be19d56aae398aa06ec0d5270f1008c0bd72ea32",
+      "dev": 16777234,
+      "ino": 124094847,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/cleanup-result.json",
+      "bytes": 2528,
+      "sha256": "97bcfb8ab0fbdc158417b6fa25bdaca89c0482e1fe2a520005669d35cfbd7a4b",
+      "dev": 16777234,
+      "ino": 124094848,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/cleanup-startup-observation.json",
+      "bytes": 1338,
+      "sha256": "817405875cb5ff7bedcc9397906bf35428cf5361b7923523643d38e196fb9a6e",
+      "dev": 16777234,
+      "ino": 124094846,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/clone-result.json",
+      "bytes": 419,
+      "sha256": "e6e272aaa5918369ad06e3980ca696106f55a383b01e986ed9ee89ac54fbec78",
+      "dev": 16777234,
+      "ino": 124094741,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/clone-verified.json",
+      "bytes": 387,
+      "sha256": "adce96acc78dc67f38209044675fd3ac1a66eb6278e56dd517bd22ac11495612",
+      "dev": 16777234,
+      "ino": 124094749,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/entry.mjs",
+      "bytes": 19486,
+      "sha256": "ca4f8a252f8efbfa6d2fd80c6f6a4f5498c408fec5d1ce69b163b360887d7bae",
+      "dev": 16777234,
+      "ino": 124079065,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/generation-1.json",
+      "bytes": 1113,
+      "sha256": "8faa3e1ef7037ee4145c842d8f821d3e352235fb3320acad493263313b4cbcdd",
+      "dev": 16777234,
+      "ino": 124094763,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/idle-role.mjs",
+      "bytes": 68,
+      "sha256": "b099b5232dd278a165b59133fe6d4e18b67752bd341a2d88569b5c50ca7f4740",
+      "dev": 16777234,
+      "ino": 124094755,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/inputs.json",
+      "bytes": 183429,
+      "sha256": "d5876ef69c76967532dd6b8b1c223425ba7ec43e6d8930896a7f63adfa90283a",
+      "dev": 16777234,
+      "ino": 124079064,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/journey.mjs",
+      "bytes": 11511,
+      "sha256": "4e4fd7629bef1b2d35878f13aae14c0c743b906568ebbd2f04699f75bb397377",
+      "dev": 16777234,
+      "ino": 124079067,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/legacy-state.mjs",
+      "bytes": 657,
+      "sha256": "c78b3c63004d0a8d8a131c7bd92c88888963833a1093eef06737fdcdb0ac60aa",
+      "dev": 16777234,
+      "ino": 124079069,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/reservation.json",
+      "bytes": 565,
+      "sha256": "94534379abbb29164a5b2df31161a96f04cf0dd89a317840903b237c6d44e670",
+      "dev": 16777234,
+      "ino": 124079063,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/startup-observer.mjs",
+      "bytes": 6449,
+      "sha256": "13784a6f0ce14f13f9e08fa47d853ecf0353952e29cb6fc4931ff958385cda4c",
+      "dev": 16777234,
+      "ino": 124079066,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/work-checkpoint.json",
+      "bytes": 2184,
+      "sha256": "bc296795e74aaff9cb51ab858e58dd8410f1b43026245c98867ca8725312320b",
+      "dev": 16777234,
+      "ino": 124094842,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/work-result.json",
+      "bytes": 4244,
+      "sha256": "e2f55002ab9f22cd794332fb89acbff5836f73bdf5620e895724b9af1fa5d846",
+      "dev": 16777234,
+      "ino": 124094844,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/work-startup-observation.json",
+      "bytes": 1338,
+      "sha256": "bff5d63fda02ba750af3a5e27c40c87e23514161a3abb2d6cfdd2df256ba5f00",
+      "dev": 16777234,
+      "ino": 124094843,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/work-terminal.json",
+      "bytes": 372,
+      "sha256": "275571bd702bc5b72299ea2e347e2b5dd28bbad181b3613a38a62b5358567553",
+      "dev": 16777234,
+      "ino": 124094845,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/work-terminal.mjs",
+      "bytes": 666,
+      "sha256": "c8c5c1663a19066f8b193a4493e80b9f5056a3e3e9188e515863f1a722cfcecc",
+      "dev": 16777234,
+      "ino": 124079068,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/config.json",
+      "bytes": 742,
+      "sha256": "16ca6ffd3cf149d89dd6a3d3c1fb3a0935cbf1abc6b4defae6ba5e63e5d078f6",
+      "dev": 16777234,
+      "ino": 124094754,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600",
+      "bodyNotPublished": true
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/state.json",
+      "bytes": 1458,
+      "sha256": "4fb548bf89a5c93bbfeeeea2fb13c5c4cc3202d1132c251fa41019b6b4991e84",
+      "dev": 16777234,
+      "ino": 124094762,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600",
+      "bodyNotPublished": true
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/maintenance.json",
+      "bytes": 578,
+      "sha256": "c0e178e31fc227708c3d13bdee8efc2b971719e5748ecff496343bed8138d0fd",
+      "dev": 16777234,
+      "ino": 124094815,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600",
+      "bodyNotPublished": true
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/web-release.json",
+      "bytes": 620,
+      "sha256": "cc0e36226da65fd817a4248247c6f1dbadfd784c5c580648da72cd19e90362c2",
+      "dev": 16777234,
+      "ino": 124094796,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600",
+      "bodyNotPublished": true
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/backend-artifacts/7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920/manifest.json",
+      "bytes": 3196606,
+      "sha256": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "dev": 16777234,
+      "ino": 124094740,
+      "uid": 501,
+      "nlink": 1,
+      "mode": "0o600"
+    }
+  ],
+  "retainedDirectories": [
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1",
+      "dev": 16777234,
+      "ino": 124079061,
+      "uid": 501,
+      "mode": "0o700",
+      "retained": true
+    },
+    {
+      "path": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once",
+      "dev": 16777234,
+      "ino": 124079062,
+      "uid": 501,
+      "mode": "0o700",
+      "retained": true
+    }
+  ],
+  "copies": [
+    {
+      "source": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/reservation.json",
+      "copy": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/reservation.json",
+      "bytes": 565,
+      "sha256": "94534379abbb29164a5b2df31161a96f04cf0dd89a317840903b237c6d44e670"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/clone-result.json",
+      "copy": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/clone-result.json",
+      "bytes": 419,
+      "sha256": "e6e272aaa5918369ad06e3980ca696106f55a383b01e986ed9ee89ac54fbec78"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/clone-verified.json",
+      "copy": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/clone-verified.json",
+      "bytes": 387,
+      "sha256": "adce96acc78dc67f38209044675fd3ac1a66eb6278e56dd517bd22ac11495612"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/generation-1.json",
+      "copy": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/generation-1.json",
+      "bytes": 1113,
+      "sha256": "8faa3e1ef7037ee4145c842d8f821d3e352235fb3320acad493263313b4cbcdd"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/work-checkpoint.json",
+      "copy": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/work-checkpoint.json",
+      "bytes": 2184,
+      "sha256": "bc296795e74aaff9cb51ab858e58dd8410f1b43026245c98867ca8725312320b"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/work-result.json",
+      "copy": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/work-result.json",
+      "bytes": 4244,
+      "sha256": "e2f55002ab9f22cd794332fb89acbff5836f73bdf5620e895724b9af1fa5d846"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/work-startup-observation.json",
+      "copy": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/work-startup-observation.json",
+      "bytes": 1338,
+      "sha256": "bff5d63fda02ba750af3a5e27c40c87e23514161a3abb2d6cfdd2df256ba5f00"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/work-terminal.json",
+      "copy": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/work-terminal.json",
+      "bytes": 372,
+      "sha256": "275571bd702bc5b72299ea2e347e2b5dd28bbad181b3613a38a62b5358567553"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/cleanup-checkpoint.json",
+      "copy": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/cleanup-checkpoint.json",
+      "bytes": 2473,
+      "sha256": "15393c61311dd083db73cf47be19d56aae398aa06ec0d5270f1008c0bd72ea32"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/cleanup-result.json",
+      "copy": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/cleanup-result.json",
+      "bytes": 2528,
+      "sha256": "97bcfb8ab0fbdc158417b6fa25bdaca89c0482e1fe2a520005669d35cfbd7a4b"
+    },
+    {
+      "source": "/private/tmp/flow-svc06-legacy-first-bootstrap-20261007-r1/legacy-first-bootstrap-once/cleanup-startup-observation.json",
+      "copy": "docs/evidence/svc06/legacy-first-bootstrap/actual-r1/cleanup-startup-observation.json",
+      "bytes": 1338,
+      "sha256": "817405875cb5ff7bedcc9397906bf35428cf5361b7923523643d38e196fb9a6e"
+    }
+  ]
+}
