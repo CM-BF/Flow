@@ -27,7 +27,7 @@ record = json.loads(RECORD.read_text()) if RECORD.exists() else {'startedAt': no
 if record['unknown'] or len(record['attempts']) >= 2 or time.time()-record['startEpoch'] >= 1140: raise ValueError('Segment exhausted or unknown')
 free = shutil.disk_usage(ROOT).free
 if free < record['floorBytes']: raise ValueError('Fresh combined floor not met')
-root = Path(tempfile.mkdtemp(prefix='flow-x01-center-claim-')); identity = root.lstat(); 
+root = Path(tempfile.mkdtemp(prefix='flow-x01-center-claim-')); identity = root.lstat();
 step = {'label': label, 'startedAt': now(), 'freeBeforeBytes': free, 'temporary': {'path': str(root), 'dev': identity.st_dev, 'ino': identity.st_ino, 'removed': False}}
 record['attempts'].append(step)
 RECORD.write_text(json.dumps(record, indent=2)+'\n')
