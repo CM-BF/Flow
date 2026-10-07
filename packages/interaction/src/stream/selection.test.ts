@@ -1,5 +1,5 @@
 import {createHash} from 'node:crypto';
-import {expect,it} from 'vitest';
+import {expect,it,vi} from 'vitest';
 import type {AssistantStreamData,AssistantStreamPatch,AssistantStreamReference,AssistantStreamBlock,AssistantStreamPage,AssistantStreamSelectedPage,AssistantStreamSelectedPatchPage,AssistantStreamSelection} from '../../../contracts/src/assistant-stream.js';
 import {assistantStreamIdentity} from '../../../contracts/src/assistant-stream.js';
 import type {ConversationTurn} from '@flow/contracts';
@@ -79,4 +79,22 @@ it('refreshes newer late-open metadata once and seeds only the verified snapshot
  f.port.readBlock=async()=>newer;
  f.port.readMetadata=async()=>{metadataReads++;return metadataReads===1?f.metadata:{...f.metadata,blocks:[newer,f.text.ref]};};
  const p=new ConversationStreamProjection(scope,f.port);try{p.updateHost(host());await p.refresh();await p.openReasoning(f.reason.ref.id);expect(metadataReads).toBe(2);expect(p.getSnapshot().selections?.[0]?.error).toBeNull();expect(f.calls.at(-1)?.after).toBe(5);expect(p.getSnapshot().patches?.cursor).toBe(3);}finally{p.dispose();}
+});
+
+it('keeps text advancing twice while a reasoning read is pending and drops its closed late result',async()=>{
+ const f=fixture();f.text.ref.phase='streaming';f.text.ref.status='streaming';f.text.patch.phase='streaming';
+ let release!:(value:AssistantStreamBlock)=>void;let signal:AbortSignal|undefined;
+ f.port.readBlock=async(_id,s)=>{signal=s;return new Promise(resolve=>{release=resolve;});};
+ f.port.readSelectedPatches=async o=>{
+  if(o.selection.kind==='block')throw Error('Pending GET cannot advance to patches');
+  const revision=o.after===0?1:o.after===3?2:3,content='Answer'+'!'.repeat(revision-1);
+  return page(o.selection,[{...f.text.patch,revision,sequence:revision*2+1,eventId:'event'+revision,text:revision===1?'Answer':'!',fromBytes:revision===1?0:Buffer.byteLength(content)-1,prefixDigest:digest(content)}],o.after);
+ };
+ const p=new ConversationStreamProjection(scope,f.port);try{p.updateHost(host());await p.refresh();const open=p.openReasoning(f.reason.ref.id);const refresh=async()=>{let timer:ReturnType<typeof setTimeout>|undefined;try{await Promise.race([p.refresh(),new Promise<never>((_,reject)=>{timer=setTimeout(()=>reject(Error('Text was blocked by optional reasoning')),200);})]);}finally{clearTimeout(timer);}};await refresh();expect(p.getSnapshot().patches?.cursor).toBe(5);await refresh();expect(p.getSnapshot().patches?.cursor).toBe(7);p.closeReasoning(f.reason.ref.id);await open;expect(signal?.aborted).toBe(true);release(f.reason.snapshot);await Promise.resolve();expect(p.getSnapshot().selections).toEqual([]);}finally{p.dispose();}
+});
+it('marks a retained disclosure deadline as a finite error instead of retrying hasMore',async()=>{
+ const controls:AbortController[]=[];const timeout=vi.spyOn(AbortSignal,'timeout').mockImplementation(()=>{const c=new AbortController();controls.push(c);return c.signal;});
+ const f=fixture();let blockReads=0;
+ f.port.readSelectedPatches=async o=>{if(o.selection.kind==='text')return page(o.selection,o.after===0?[f.text.patch]:[],o.after);blockReads++;if(blockReads>1)return new Promise(()=>{});return {...page(o.selection,[{...f.reason.patch,text:'续',revision:2,fromBytes:f.reason.ref.bytes,sequence:4,eventId:'event4',prefixDigest:digest(f.reason.snapshot.content+'续')}],o.after),hasMore:true};};
+ const p=new ConversationStreamProjection(scope,f.port);try{p.updateHost(host());await p.refresh();await p.openReasoning(f.reason.ref.id);const second=p.openReasoning(f.reason.ref.id);controls.at(-1)!.abort(new DOMException('Disclosure deadline','TimeoutError'));await second;expect(p.getSnapshot().selections?.[0]?.error).toContain('deadline');await p.refresh();expect(blockReads).toBe(2);}finally{p.dispose();timeout.mockRestore();}
 });

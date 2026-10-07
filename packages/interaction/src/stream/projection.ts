@@ -192,7 +192,7 @@ export class ConversationStreamProjection {
     for(const [id,entry] of this.disclosures) {
       const reference=metadata.blocks.find(ref=>ref.id===id);
       if(!reference || identity(reference)!==identity(entry.reference)) { this.closeReasoning(id); continue; }
-      await this.readDisclosure(id,entry,false);
+      void this.readDisclosure(id,entry,false);
       if(!this.current(generation) || signal.aborted) return;
     }
   }
@@ -237,7 +237,8 @@ export class ConversationStreamProjection {
     if(entry.flight)return entry.flight;
     if(entry.error && !explicit)return Promise.resolve();
     const generation=this.generation,signal=AbortSignal.any([this.lifetime.signal,entry.controller.signal,AbortSignal.timeout(15000)]);
-    const current=()=>this.current(generation)&&!signal.aborted&&this.disclosures.get(id)===entry;
+    const retained=()=>this.current(generation)&&this.disclosures.get(id)===entry;
+    const current=()=>retained()&&!signal.aborted;
     const flight=(async()=>{
       entry.error=null;
       let state=entry.state;
@@ -274,7 +275,7 @@ export class ConversationStreamProjection {
         this.publishSelections();
         if(!entry.hasMore)break;
       }
-    })().catch(error=>{if(current()){entry.error=errorMessage(error);entry.hasMore=false;}}).finally(()=>{
+    })().catch(error=>{if(retained()){entry.error=errorMessage(error);entry.hasMore=false;}}).finally(()=>{
       if(this.disclosures.get(id)!==entry || entry.flight!==flight)return;
       entry.flight=undefined;this.publishSelections();if(entry.hasMore&&!entry.error)this.schedule();
     });
