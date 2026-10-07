@@ -10,6 +10,7 @@ import { setTimeout as sleep } from 'node:timers/promises';
 import { Pool } from 'pg';
 import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess, ownsListener } from './process.mjs';
 import { baseServiceEnvironment, serviceEnvironment } from './environment.mjs';
+import { WEB_RETENTION_POLICY } from './web-retention-policy.mjs';
 import { pinnedBrowserSessionConfiguration, browserSessionLaunchEnvironment, readBrowserSessionLaunch } from './browser-session-configuration.mjs';
 import { prepareWebArtifact, verifyWebArtifact } from './web-artifact.mjs';
 
@@ -275,6 +276,7 @@ export async function runService(directory, role) {
 export { load as loadPreviewConfiguration, privateJson as readPreviewJson, save as savePreviewJson, locked as withPreviewLock, assertMarker as assertPreviewMarker };
 export async function preparePreviewWeb(config, target) {
   const browser = await pinnedBrowserSessionConfiguration(config);
+  if (browser.context !== null) await assertWebHostPolicyRuntime(config, await privateJson(join(config.directory, 'state.json')));
   const head = target ?? (await execute('git', ['-C', config.repository, 'rev-parse', 'HEAD'], { timeout: 1000 })).stdout.trim();
   const release = await readWebRelease(config.directory);
   if (release) {
@@ -286,7 +288,8 @@ export async function preparePreviewWeb(config, target) {
   return prepareWebArtifact({ directory: config.directory, repository: config.repository, target: head });
 }
 export async function startPreviewServices(config, state, preparedArtifact, selectedBackend = state.backendArtifact) {
-  await pinnedBrowserSessionConfiguration(config);
+  const browser = await pinnedBrowserSessionConfiguration(config);
+  if (browser.context !== null) await assertWebHostPolicyRuntime(config, { ...state, backendArtifact: selectedBackend });
   await assertWebHostSettled(config, state);
   const runtime = await backendRuntime(config, selectedBackend);
   const webRuntime = await serviceRuntime(config, { ...state, backendArtifact: selectedBackend }, 'web');
@@ -391,6 +394,17 @@ async function hostSource(config, state, resolveRuntime = serviceRuntime) {
   return { policy: 'flow.web-host-source.v1', location, digest: sha256(JSON.stringify({ location, files })), files };
 }
 /** Local read only: no DB, process probe, or state creation. This is host-source identity, not artifact identity. */
+/** Exact reviewed implementation qualification, not a version or self-reported capability. */
+async function assertWebHostPolicyRuntime(config, state, runtime = serviceRuntime) {
+  try {
+    const selected = await hostSource(config, state, runtime);
+    for (const item of selected.files) {
+      const expected = await boundedHostBytes(join(repository, 'tools/personal-preview', item.path));
+      if (expected.length !== item.bytes || sha256(expected) !== item.sha256) fail('WEB_HOST_POLICY_UNSUPPORTED');
+    }
+    return selected;
+  } catch { fail('WEB_HOST_POLICY_UNSUPPORTED'); }
+}
 export async function inspectPreviewWebHostSource({ directory, webHostArtifact }) {
   const config = await load(directory);
   const state = await privateJson(join(directory, 'state.json'));
@@ -501,6 +515,7 @@ export function createWebHostReplacement({ marker = assertMarker, processes = we
       if (release.compatibilityIds[artifact.artifactId] !== request.compatibilityId) fail('WEB_COMPATIBILITY_INVALID');
       await loadReleaseAssets({ directory: config.directory, release, expectedBackendHead: request.expectedBackendHead, expectedContext: browser.context });
       const selectedState = request.webHostArtifact ? { ...state, pendingWebHost: { artifact: request.webHostArtifact } } : state;
+      if (browser.context !== null) await assertWebHostPolicyRuntime(config, selectedState, runtime);
       const source = await hostSource(config, selectedState, runtime);
       if (source.digest !== request.expectedHostSourceDigest) fail('WEB_HOST_SOURCE_CHANGED');
       const processState = await processes.inspect(state.processes.web);
@@ -552,6 +567,7 @@ export async function bootstrapPreviewWeb({ directory, expectedVersion, expected
     await assertWebBackend(config, state, expectedBackendHead);
     const previous = await readWebRelease(directory);
     if (expectedVersion !== (previous?.version ?? 0)) fail('WEB_RELEASE_VERSION_CONFLICT');
+    if ((await pinnedBrowserSessionConfiguration(config)).context !== null) await assertWebHostPolicyRuntime(config, state);
     const artifact = previous ? currentWebArtifact(previous) : state.webArtifact;
     await assertReleaseCompatibility(expectedBackendHead, previous?.artifacts ?? [artifact], config);
     const release = previous ?? await planWebRelease({ directory, artifact, action: 'bootstrap', expectedVersion, backendHead: expectedBackendHead, compatibilityId, expectedContext: (await pinnedBrowserSessionConfiguration(config)).context });
@@ -581,6 +597,7 @@ async function changePreviewWeb({ directory, artifact, expectedVersion, expected
     await assertWebBackend(config, state, expectedBackendHead);
     const previous = await readWebRelease(directory);
     if (!previous) fail('WEB_RELEASE_BOOTSTRAP_REQUIRED');
+    if ((await pinnedBrowserSessionConfiguration(config)).context !== null || previous.artifacts.length >= WEB_RETENTION_POLICY.artifacts - 1) await assertWebHostPolicyRuntime(config, state);
     if (!await ownsListener(state.processes.web, config.webPort) || !await webIdentity(config, currentWebArtifact(previous), previous.version, expectedBackendHead)) fail('WEB_RELEASE_HOST_UNCONFIRMED');
     await assertReleaseCompatibility(expectedBackendHead, [...previous.artifacts, artifact], config);
     const release = await planWebRelease({ directory, artifact, expectedVersion, action, backendHead: expectedBackendHead, compatibilityId, expectedContext: (await pinnedBrowserSessionConfiguration(config)).context });
@@ -599,7 +616,13 @@ export function rollbackPreviewWeb(options) { return changePreviewWeb(options, '
 export async function preparePreviewRelease({ directory, target, releaseId }) {
   if (!/^[a-f0-9]{32}$/.test(releaseId ?? '')) fail('WEB_RELEASE_NAMESPACE_INVALID');
   const config = await load(directory);
-  return locked(config, () => prepareWebArtifact({ directory, repository: config.repository, target, releaseId }));
+  return locked(config, async () => {
+    const release = await readWebRelease(directory);
+    if ((await pinnedBrowserSessionConfiguration(config)).context !== null || release?.artifacts.length >= WEB_RETENTION_POLICY.artifacts - 1) {
+      await assertWebHostPolicyRuntime(config, await privateJson(join(directory, 'state.json')));
+    }
+    return prepareWebArtifact({ directory, repository: config.repository, target, releaseId });
+  });
 }
 export async function importPreviewCompatibility({ directory, reportDirectory }) {
   const config = await load(directory);

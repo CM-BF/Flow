@@ -22,3 +22,9 @@
 pointer只决定current/retained集合及CAS版本；其中backendHead/compatibilityIds记录发布时证明，旧字节不自动重写。configured prepare/host显式提供实际backendHead与规范context，load为全体retained查找并核同一运行tuple的v2报告，返回verifiedTuple（含本次IDs），静态snapshot固定这个tuple。无context沿legacy旧pointer证明；缺任一新报告或wrongtuple停在stop前。publish/rollback继续显式CAS并保存新证明，不自动改历史。
 
 启动三roles时父host从selected backend/current固定目标取head；Web-only从已owned state.source.head取head，绝不使用独立Webhost artifact.sourceHead。白名单owned wrapper传非秘密head与策略pin；runService通过原nonce/PID验证后重核pin，受信serviceEnvironment才生成center设置与Web运行tuple。静态identity返回已验证的非秘密tuple；configured ready不得仅凭旧artifact identity误认为已启用新配置。此实验/单元入口不代表旧宿主实际已升级。
+
+## 开启前宿主能力与真实准备入口
+
+web-artifact prepare已纳入同一count策略，包括私有committed store的复用与新slot；实际Vite build仍默认原入口/预算，新增受信constructor build port仅直接消费者小文件验证，不从CLI请求接收回调。
+
+已存在独立Webhost选择时，backend refresh不会自动更新它。configured prepare、启动和replace在stop前验证最终所选Webhost的完整10工具闭包逐字等当前受审operator闭包，不以文件名/版本字符串/自报能力证明支持。新count4准备/发布同样先检查该宿主；最小实际顺序为policy缺失legacy时先受控替换到新host（保原3/pointer/后台），再新backend+已验证policy/context。当前只实现/局部证明，不执行该顺序。旧c7b不被静默当新策略宿主。

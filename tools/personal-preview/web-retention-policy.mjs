@@ -13,3 +13,7 @@ export function committedReportIds(names, reserveNew = false) {
   if (ids.length + (reserveNew ? 1 : 0) > WEB_RETENTION_POLICY.reports) fail('WEB_COMPATIBILITY_BUDGET_EXCEEDED');
   return ids;
 }
+
+export function assertArtifactStorageSlots(count, reserveNew = false) {
+  if (!Number.isSafeInteger(count) || count < 0 || count + (reserveNew ? 1 : 0) > WEB_RETENTION_POLICY.artifacts) fail('WEB_ARTIFACT_STORAGE_BUDGET_EXCEEDED');
+}
