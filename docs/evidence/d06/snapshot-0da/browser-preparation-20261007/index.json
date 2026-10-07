@@ -1,0 +1,156 @@
+{
+  "at": "2026-10-07T03:44:22.300593+00:00",
+  "state": "STATIC_CANDIDATE_READY_FOR_REVIEW_NOT_RUN",
+  "source": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+  "preparedAtOwnerHead": "cff46b8dff4c48d4f241c4ece5b427f3dffa5bd7",
+  "temporaryPacket": "/private/tmp/d06-browser-512-tz5of84t",
+  "callerFiles": [
+    {
+      "path": "run.py",
+      "bytes": 7771,
+      "sha256": "351701c89f53f1d94d7008d3b731f746dffa037d4a9cfca46fce792deb451deb"
+    },
+    {
+      "path": "worker.mjs",
+      "bytes": 4553,
+      "sha256": "17c0412af26776733dc5f7b84924f9673ee73ce842b7e754d662d2ca7f2347d1"
+    },
+    {
+      "path": "scenario.mjs",
+      "bytes": 10488,
+      "sha256": "1cc45f2b391070a855596956214b0d88ea3935f5054da767d410d191adc3be5c"
+    },
+    {
+      "path": "README.md",
+      "bytes": 3283,
+      "sha256": "2b7f3643fefc4425b0fdcf265af7bf3f7535dee6787970285013bddf4eceddbf"
+    },
+    {
+      "path": "run.py.diff",
+      "bytes": 7769,
+      "sha256": "f8f8f0909c154f86fecfa1e437e842e6af9f214fe94ebd2df235ed97f51c63d0"
+    },
+    {
+      "path": "worker.mjs.diff",
+      "bytes": 3436,
+      "sha256": "6ce1c206465736eb560ae0646058f457a9cb6b222119caebefae1a986b0a1e7b"
+    }
+  ],
+  "fixedInputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/public/index.html",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/public/index.html",
+      "bytes": 6397,
+      "sha256": "bb1bfbefd5cf80794f658a32b4530bfc28a18d08d09978fb8a8461b69e8a8614"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/public/app.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/public/app.js",
+      "bytes": 17177,
+      "sha256": "93fd539d958ba2cbd8cbdfd5451195dd1c7f3fba740091f0d663c0fbaf15d2e9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/public/styles.css",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/public/styles.css",
+      "bytes": 8947,
+      "sha256": "c90e9212ae2ab542232e5bd53c264aadc611beda24fa85e94a82b6b252281c2c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/public/architecture.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/public/architecture.js",
+      "bytes": 7689,
+      "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/public/architecture-data.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/public/architecture-data.js",
+      "bytes": 44076,
+      "sha256": "7ccc2ca80760a4050f09a2d7bdbbaf04884395ff945ae0cda887d9d6a1e12d78"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/public/architecture.css",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/public/architecture.css",
+      "bytes": 4082,
+      "sha256": "648b22fde8ee6361d6904cfe9a60254a646141d89e24ccd03e15c19172709780"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/test/architecture.test.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/test/architecture.test.mjs",
+      "bytes": 32645,
+      "sha256": "a8650e9c391efdf5dfa60defbe421bd0789138a62fc76c34252e0b5d2ea27149"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+      "bytes": 679,
+      "sha256": "ec8997c2e5cea26befc76e7bf990750e96babb16977673a9ff3b5c0575d01e48"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/package.json",
+      "bytes": 754,
+      "sha256": "5587f932b8979b6889654b60e3c28aeb7ca0abbac00eec8c176c939a16149536"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "bytes": 367696,
+      "sha256": "ccffd5c5fe77ba3212e07c2c69091f8048b73c396b4647ecaa150e1e01a04954"
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "realpath": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "bytes": 18856,
+      "sha256": "89dd2f1a7b8a46a153603197c416dab4078d47d499785422ba5286d4f39b2e69"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/playwright/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "bytes": 1359,
+      "sha256": "8bc2ddebe8d9b051b9ecb87d62c6c63877e59d08617f32c3215681ca8bb70998"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.mjs",
+      "bytes": 704,
+      "sha256": "a0f5715ea22354f922791a9c53dc012d5d5c067ff9cc4cd35ffb7cd272071a9f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/node_modules/playwright-core/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "bytes": 876,
+      "sha256": "f061c58427e47e843e26d201f0a57076c734e57c734ecbbd87d4a23b7a20db9b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.mjs",
+      "bytes": 1063,
+      "sha256": "3d36e2132d3c8b62397d23f0bb4177336aaee503203ae2a2c90fbeb5bf3317dd"
+    }
+  ],
+  "limitsProposal": {
+    "totalMs": 90000,
+    "workMs": 75000,
+    "cleanupMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608,
+    "startFloorBytes": 1350565888,
+    "stopFloorBytes": 1073741824
+  },
+  "expectedChecks": 5,
+  "expectedPngs": 20,
+  "operationalBinding": "Temporary binding/manifest will bind the final metadata HEAD once after seal; no recursive project ACK. Before actual run fresh claims/pins/owner clean/resource/native boundary/window and manager gate required.",
+  "validation": "Python AST static parse only; no Node/import/runtime/Chrome/PG/free scan. Prior22 direct accepted and not rerun.",
+  "review": "NOT_STARTED for this browser caller; source5124 and actual22 independent approval unchanged.",
+  "skills": {
+    "findSkills": "Existing local catalog: clean-code and webapp-testing used, no installs.",
+    "cleanCode": "One data-specific scenario + reused owned lifecycle; same-source SVG/UI checks with fixed fact assertions, no renderer or framework changes. Final static review removed embedded old metadata SHA from parent result; report reads validated binding.head.",
+    "unverified": "Caller JS execution, actual SVG geometry/readability/screenshots, entry transitive resolution and native runtime remain NOT_RUN."
+  }
+}

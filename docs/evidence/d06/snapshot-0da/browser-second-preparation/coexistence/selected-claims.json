@@ -1,0 +1,56 @@
+{
+  "observedAt": "2026-10-07T04:13:18.855Z",
+  "claims": [
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "apps/execution-dashboard/public/architecture-data.js",
+        "apps/execution-dashboard/public/architecture.js",
+        "apps/execution-dashboard/test/architecture.test.mjs",
+        "docs/evidence/d06",
+        "plans/d06-architecture-refresh"
+      ],
+      "state": "active",
+      "branch": "codex/dashboard-architecture-runtime",
+      "origin": "new",
+      "taskId": "D06",
+      "worker": "d01_owner",
+      "claimId": "adf9539d-0d42-49b8-961b-f5195a4c10e9",
+      "version": 2,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+      "createdAt": "2026-10-06T23:36:04.842Z",
+      "updatedAt": "2026-10-07T03:51:56.566Z",
+      "observedAt": null,
+      "needsVerification": false
+    },
+    {
+      "lead": "external_web_d01_owner",
+      "next": null,
+      "role": "writer",
+      "scope": [
+        "docs/evidence/web-platform",
+        "plans/web-platform",
+        "plans/wpf-mature-01-visual",
+        "plans/wpf-mature-03-attachments",
+        "plans/wpf-mature-05-workspace",
+        "plans/wpf-mature-06-chat"
+      ],
+      "state": "active",
+      "branch": "codex/web-platform-management",
+      "origin": "migration",
+      "taskId": "WPF-001",
+      "worker": "external_web_d01_owner",
+      "claimId": "632a7149-e812-4ddb-b342-99572c554cc5",
+      "version": 3,
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management",
+      "createdAt": "2026-10-06T02:48:43.295Z",
+      "updatedAt": "2026-10-06T08:56:20.186Z",
+      "observedAt": "2026-10-06T02:48:42.000Z",
+      "needsVerification": false
+    }
+  ],
+  "exactLiteralConflicts": [],
+  "firstReadNote": "Earlier successful list used wrong local filter key id; no rights inferred from its empty selection. This read uses claimId."
+}

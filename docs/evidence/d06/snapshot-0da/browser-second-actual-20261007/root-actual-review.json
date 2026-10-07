@@ -1,0 +1,306 @@
+{
+  "at": "2026-10-07T04:21:59.078903+00:00",
+  "reviewer": "/root independent",
+  "decision": "ACCEPTED_SCOPED_BROWSER_ACTUAL",
+  "source": "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d",
+  "dataSource": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+  "runHead": "72167e26510388d28d9306225a9e30f9819b03ac",
+  "priorPreparationReview": "23dbe66564c724e55c6fde7967ab938de5b7d1969454459a306099a48a3bc9bd",
+  "actual": {
+    "startedAt": "2026-10-07T04:19:25.412665+00:00",
+    "finishedAt": "2026-10-07T04:19:34.292856+00:00",
+    "pid": 79887,
+    "actualExit": 0,
+    "wallMs": 8879.763292032294,
+    "stdoutBytes": 1375,
+    "stderrBytes": 0,
+    "outerRetainedBytesBeforeExitRecord": 4264,
+    "outerCaptureReserveBytes": 65536
+  },
+  "observations": {
+    "groups": 5,
+    "views": [
+      "runtime",
+      "modules",
+      "data",
+      "states",
+      "dependencies"
+    ],
+    "widths": [
+      1280,
+      390
+    ],
+    "themes": [
+      "light",
+      "dark"
+    ],
+    "combinations": 20,
+    "edgesObserved": 200,
+    "textOutsideBackgroundOrCanvas": 0,
+    "nodeOutsideCanvas": 0,
+    "pageOverflow": 0,
+    "screenshots": 20,
+    "pageErrors": [],
+    "externalRequests": [],
+    "keyboardAndSourceAssertions": "Original unchanged scenario completed for all5 views; reported5 exact checks match worker/browser/parent."
+  },
+  "visualInspection": [
+    "data-1280-light.png",
+    "data-390-dark.png",
+    "states-1280-dark.png",
+    "dependencies-390-light.png",
+    "runtime-390-light.png",
+    "modules-1280-dark.png"
+  ],
+  "visualNotes": "Representative all5views, both themes and widths inspected. Diagram intentionally uses local scrolling; document width remains bounded. Details/source links readable. Screens reflect selected node scrolled into view, not necessarily entire graph at once.",
+  "cleanup": {
+    "at": "2026-10-07T04:19:53.053937+00:00",
+    "actualWindowReturned": true,
+    "actualExit": 0,
+    "startedAt": "2026-10-07T04:19:25.412665+00:00",
+    "finishedAt": "2026-10-07T04:19:34.292856+00:00",
+    "outerMs": 8879.763292032294,
+    "lateParentMs": 8817.920083063655,
+    "spentConservativeMs": 8880,
+    "previousSpentMs": 6733,
+    "cumulativeSpentMs": 15613,
+    "remainingMs": 74387,
+    "remainingIsNotPermission": true,
+    "actualGroups": 5,
+    "observations": 20,
+    "pngs": 20,
+    "ownedChecks": {
+      "workerPid": {
+        "pid": 80013,
+        "state": "absent"
+      },
+      "chromePid": {
+        "pid": 80234,
+        "state": "absent"
+      },
+      "workerGroup": {
+        "pgid": 80013,
+        "state": "absent"
+      }
+    },
+    "chromeExit": {
+      "code": 0,
+      "signal": null
+    },
+    "doubleParentEOF": true,
+    "doubleChromeEOF": true,
+    "httpClosed": true,
+    "contextClosed": true,
+    "scratchAbsent": true,
+    "errors": [],
+    "resourceSampling": "Only approved parent sample; postcheck only exact owned PIDs/group, no external processes or service sampling."
+  },
+  "budget": {
+    "originalMs": 90000,
+    "firstFailedMs": 6733,
+    "secondActualChargedMs": 8880,
+    "cumulativeMs": 15613,
+    "remainingMs": 74387,
+    "remainingIsNotNewPermission": true,
+    "firstRawBytes": 1386844,
+    "secondRawOuterBytes": 3312453,
+    "combinedRawOuterBytes": 4699297,
+    "limitBytes": 8388608
+  },
+  "oldFailure": "Original first browser2/5 and eightPNG retained; failedlabels 回复引用/本地只读 now fit measured SVG backgrounds, no assertion weakened.",
+  "limits": [
+    "Static controlled HTTP fixture/empty dashboard snapshot, zero PostgreSQL and no real center/personaltab/service.",
+    "Fixed architecture snapshot0da869f7; not current live topology or proof of runtime integrations.",
+    "Original22direct checks retained for reviewed data source; no needless rerun after renderer-only fix.",
+    "Main integration/deployment pending; browser result does not imply either."
+  ],
+  "files": [
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/browser-results.json",
+      "bytes": 46360,
+      "sha256": "5255aee07b85ed4930ac9bfa3548dc5d17a8192665aed7d4a3c21e18934a62f7"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/chrome.log",
+      "bytes": 319,
+      "sha256": "2b27a22ce528f06bc219797943516626e108e8259bf27b469370f991632205f1"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/data-1280-dark.png",
+      "bytes": 182714,
+      "sha256": "905f6acd271dc67137e35c11d89d5ebcea826dabf97232a683188305aad108a0"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/data-1280-light.png",
+      "bytes": 179814,
+      "sha256": "b2a24592c2ee155035fe24ce028de1a2a6705b89b42b31d640f69aa7394cdd08"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/data-390-dark.png",
+      "bytes": 132411,
+      "sha256": "af5db766c84fc03d69d93585fa9900baca5a70ff549cddf8c270b1ffbf7a9193"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/data-390-light.png",
+      "bytes": 126951,
+      "sha256": "d7cebd3e97f063c95bc694f1a0c0455ba558acfa6ee23254e6b0a8babfb8644d"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/dependencies-1280-dark.png",
+      "bytes": 141794,
+      "sha256": "2bf89429b1fb73d800d8974930c8418bce55e4b95e304fcce058bf0a7e5de5e7"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/dependencies-1280-light.png",
+      "bytes": 138012,
+      "sha256": "93452b52e0fd95ce79b82b20030e5b831a264b7b87f4a4b87baa696654df912a"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/dependencies-390-dark.png",
+      "bytes": 109191,
+      "sha256": "214940a2c5d5c8505cf21aafe1a696894eadd61bd2e96e32d6a6b51956a014e2"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/dependencies-390-light.png",
+      "bytes": 104991,
+      "sha256": "9e2a542e9643a3682ed5ea8df27d6e6370f84e3d26d7d4be1f898ec5b13bdd78"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/modules-1280-dark.png",
+      "bytes": 229066,
+      "sha256": "3b4d20d50165555e2eceaf16d29e42a339206c378c6fc23c53402abeac77caf5"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/modules-1280-light.png",
+      "bytes": 226396,
+      "sha256": "1ea2b1107697edf87ce4f69a4a4bcdfc1efd384e2abf29cfd81d02303fbf539b"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/modules-390-dark.png",
+      "bytes": 145906,
+      "sha256": "3b8ed35549ce5aa80f6c8499481c6a9376e0231ac0346622eeb32b400d13d1a4"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/modules-390-light.png",
+      "bytes": 140655,
+      "sha256": "7f0fc8bd6835edeaea493004479f7d3648a6e880599de828bc84c50c5ede6599"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/owned.json",
+      "bytes": 574,
+      "sha256": "a58fc58b2fe56f410d9d5e0e9065b2e47a7d2af1788b1c751aa9c73a359044fb"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/parent-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/parent-stdout.log",
+      "bytes": 28589,
+      "sha256": "57e4971f5123c5ebbf5745e1f42206fff77f34f9fda9ec1f3a26522e11b47dcc"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/result.json",
+      "bytes": 1187,
+      "sha256": "679e2d08763510d01bc62dc5cb06e4c50433366b09b5009c681c4917d13a8c83"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/runtime-1280-dark.png",
+      "bytes": 175115,
+      "sha256": "16692b3140fa3180589a048e36832ef4846389f5de65030f133a48900643aa88"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/runtime-1280-light.png",
+      "bytes": 170232,
+      "sha256": "8ba87f95872775ba59e9b756dd28104c40bc2f1d30e0e2e31341412c91062ab4"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/runtime-390-dark.png",
+      "bytes": 123856,
+      "sha256": "d28b557a5346e53e7540be1644c2fc34dad6131c7578fbb5ab133a37d852d2ce"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/runtime-390-light.png",
+      "bytes": 118482,
+      "sha256": "583e896e49531dcf3a90233a5fc489be644f22ea4ea429b2a4f5af3e1845cf91"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/states-1280-dark.png",
+      "bytes": 208098,
+      "sha256": "dc6f7a25ee2c074b5f52ae523c695cd144c93003f5be56db4a3dd300a17fe3b1"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/states-1280-light.png",
+      "bytes": 205204,
+      "sha256": "df224e35e7de126ded00d0dd5c10013ad7cb5424cf737754bb03698867c2ea1e"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/states-390-dark.png",
+      "bytes": 163035,
+      "sha256": "27a39a62f64b407b76b7b1648cae2c42e18d5c6158af51aa18d4169e711117c9"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/states-390-light.png",
+      "bytes": 158701,
+      "sha256": "948696b6654a1f116e14008b72e108e285df63c15cf5b8ff423a75c96397142a"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/raw/worker-result.json",
+      "bytes": 50238,
+      "sha256": "6cb3b5122b68e41d314fd910847fe975f9c687c9cd4f5d69070b1b24de4c7c4a"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/outer/actual-exit.json",
+      "bytes": 298,
+      "sha256": "87fc1f8d065e0721814fb247de32cc4e071c9f9d0b8e10e96974042b7643122d"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/outer/admission.json",
+      "bytes": 2616,
+      "sha256": "0d59f5a83eff33731fad58206f23bf23ae51957a782caf4c031b33dc8087f6ea"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/outer/parent.json",
+      "bytes": 64,
+      "sha256": "966120ce8af38d0b9367dae12dc6a04a635da7dd09de7e9e08afc00f5e6429c3"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/outer/started.json",
+      "bytes": 209,
+      "sha256": "743354d24735d0cc30b9ae3e79f0694f910d112040228bcddb467d280968f10c"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/outer/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/outer/stdout.txt",
+      "bytes": 1375,
+      "sha256": "395e8134259af6faeb7ebfc675721a580b5e7bc12da9d54557e297bb01311db8"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/return.json",
+      "bytes": 1046,
+      "sha256": "33811d142dbb315855191da7bc8360aa3d2ef55f806b391d2e2e191db476d6cd"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/binding.json",
+      "bytes": 20787,
+      "sha256": "efe87e6430fbf2df9542abe8052315f00ab737d3d19dffcc3072b860dad68565"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/manifest.json",
+      "bytes": 4364,
+      "sha256": "211fd9c65b70dc6b071b7055a196aa078c38e08e84c69c6bbd8f88cc1effce95"
+    },
+    {
+      "path": "/private/tmp/d06-browser-a28e-4mmyk_zp/admission-contract.json",
+      "bytes": 3558,
+      "sha256": "06d461948fe7f9559c94b8518e0f336b78f038a4645e4ad4fbdb0d4fb0cdb3b7"
+    }
+  ],
+  "cleanCode": "Read original-sized renderer delta, preserves bounded read-then-write SVG measurement and existing scenario. No generic framework introduced; failure evidence and original allowance retained.",
+  "blockingFindings": []
+}

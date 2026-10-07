@@ -1,16 +1,12 @@
-# D06 固定 aeb 架构快照独立审查
+# D06 固定五图与连线显示组合审查
 
 状态: APPROVED
-Review target commit: 6570ef7e896d29040961247f46aa62dc4e466284
-Base commit: 631173ab1c1ffa3ae7d4636f0ea8c941e2c1943f
-Reviewer: workspace_panels_owner / gpt-6-astra ultra
-Review at: 2026-10-06 12:52:31 UTC
-Blocking findings: 0
+Review target commit: 591f5fe96d85c3497f33f1b7f0fb99d955a984dc
+Base commit: 6d05ec467581e85d21d5532fd29a2bebd1411b41
+Reviewer: root independent; 0 blocking; source/data + targeted direct + actual browser + exact8 composition
 
-Root已读candidate/README、独立audit/log并fresh核e771 clean，正式接受本独审结论。审查者未实现本片，全读五source/Interface/证据；106固定来源SHA、171精确行、五source target/current/browser一致、七保护文件=base，scope外0、产品diffcheck0、target后产品零差。[原审计](../../docs/evidence/d06/snapshot-aeb/independent-audit.json)。
+[root组合独审](../../docs/evidence/d06/snapshot-0da/root-composition-review.json)绑定完整交付：三产品路径 architecture-data.js、architecture.js、architecture.test.mjs，以及现主线parser视作nonmetadata的五个原准备脚本/diff。24份base/target/main blob/hash与八预像已独核；不把renderer单commit冒成完整数据交付，也未放宽parser。
 
-独立Node24.20.0运行 architecture.test.mjs **18/18 PASS、0skip、2711.836583ms**，[原日志](../../docs/evidence/d06/snapshot-aeb/independent-tests.log)。核goal统一reader/controller、TUI/Web共享ACK/stream/activity、026/027与附件材料缺口、工程fixture/native authority/checker/receipt职责、Codex single exchange与默认CLI限制。
+证据链：5124固定策展源码与22direct；a28e仅renderer真实SVG bbox修复；[第二browser实际5/5独审](../../docs/evidence/d06/snapshot-0da/browser-second-actual-20261007/root-actual-review.json)核20观察/200edge fit、20PNG/宽窄双主题、键盘和固定source下钻、实际outer0及完整owned清理。旧首轮失败原件与6733历史耗时保留；累计15613/余74387ms不是重跑许可。
 
-实际目视既有390浅深和modules-bottom-light截图；保原42%最小zoom局部滚动。没有重跑作者9.034s browser/领域/PG/provider/个人服务/4320。浏览器行为和cleanup为作者证据复核，不能归因独立重跑。baseline12:43为源码策展时点、12:46自动hash审计时点不同且明确。独立审计helper最初范围分类错误后纠正，原audit保留说明，不是产品finding。
-
-源码固定aeb不等个人部署。原2c审批只见[历史](../../docs/evidence/d06/snapshot-aeb/previous-review.md)，不替代本批。五source固定，主线接收尚未发生；6cad v1保留回修权，产品停写。
+[唯一main intake](../../docs/evidence/d06/snapshot-0da/main-intake.json)供原Lead受控接收，main/真实4320部署尚未完成。本次final metadata只绑定已审组合；运行HEAD72167与最终ownerHEAD分列，不追改原gate。原[source审查全文](../../docs/evidence/d06/snapshot-0da/renderer-review-before-composition.txt)作为历史保存。

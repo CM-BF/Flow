@@ -1,0 +1,252 @@
+{
+  "recordedAt": "2026-10-06T23:36:46.333846+00:00",
+  "kind": "READ_ONLY_D06_FIXED_MAIN_CURATION_INPUT",
+  "main": "0da869f7bad98771177472539b5a192365c15117",
+  "facts": [
+    {
+      "id": "browser-auth-vs-web-mount",
+      "charts": [
+        "runtime.web",
+        "runtime.center",
+        "modules.web",
+        "modules.client"
+      ],
+      "fact": "FlowClient explicitly selects exactly one Bearer or cookie/CSRF mode; browser connect/read/logout and HTTP/SSE auth share the same transport. Current App still constructs Bearer client with token in page memory. Cookie-capable backend/client does not prove Web login/reload recovery mounted.",
+      "anchors": [
+        "packages/client/src/index.ts:51-83",
+        "packages/client/src/index.ts:639-650",
+        "apps/web/src/App.tsx:1015-1027",
+        "apps/web/src/App.tsx:1095-1098"
+      ]
+    },
+    {
+      "id": "actual-attachment-mount",
+      "charts": [
+        "runtime.web",
+        "modules.web",
+        "modules.context",
+        "modules.host"
+      ],
+      "fact": "Current App supplies the private owner attachment host and bounded upload-identity journal; ConversationThread binds attachment adapter to real official runtime and passes captured attachments into actual Send/Queue. Old aeb graph statements that App attachment hookup is absent are stale. Upload recovery identities do not restore full draft automatically; live personal deployment is separately pinned.",
+      "anchors": [
+        "apps/web/src/App.tsx:633-643",
+        "apps/web/src/App.tsx:704",
+        "apps/web/src/conversations/ConversationThread.tsx:75-99",
+        "apps/web/src/conversations/ConversationThread.tsx:100-156"
+      ]
+    },
+    {
+      "id": "official-thread-and-shared-authority",
+      "charts": [
+        "runtime.web",
+        "modules.web",
+        "modules.interaction",
+        "dependencies.react"
+      ],
+      "fact": "ConversationThread imports official elements Thread and useExternalStoreRuntime, binds authoritative stream messageRepository, and mounts attachment adapter. Shared interaction/stream is re-exported by Web projection; client owns validated ACK decoding. This is presentation/observation authority, not an execution scheduler.",
+      "anchors": [
+        "apps/web/src/conversations/ConversationThread.tsx:5-8",
+        "apps/web/src/conversations/ConversationThread.tsx:97-99",
+        "apps/web/src/components/assistant-ui/elements/thread.aui.tsx:29-46",
+        "apps/web/src/conversation-stream/projection.ts:1-2"
+      ]
+    },
+    {
+      "id": "tui-conversation-controls",
+      "charts": [
+        "runtime.tui",
+        "modules.tui",
+        "modules.interaction",
+        "states.cancel"
+      ],
+      "fact": "TUI main passes same FlowClient to interaction controller as client/observe/queue/taskControl; explicit queue list/pause/resume/cancel displayed task commands exist. Before mutation local intent is saved; recovery replays original key. Queue pause affects later promotion; cancel ACK is not proof execution stopped; disconnect/quit ends observation only.",
+      "anchors": [
+        "apps/tui/src/main.tsx:26-52",
+        "packages/interaction/src/commands.ts:31-53",
+        "packages/interaction/src/controller.ts:90-121",
+        "packages/interaction/src/controller.ts:201-235"
+      ]
+    },
+    {
+      "id": "tui-goal-client",
+      "charts": [
+        "runtime.tui",
+        "modules.goals",
+        "modules.tui",
+        "modules.interaction"
+      ],
+      "fact": "TUI --goal creates goal terminal/store and GoalScreen, sharing @flow/interaction/goal. Plan/state/history and detail reads are explicit; decision/cancel/command/recover exist; ordinary goal text remains local draft. Current GoalSessionPort/command union contains goal/project/graph-plan/native-execute/decision/cancel, not progression authorization or plan-confirmation. Presence of center030/031/client methods must not be drawn as full TUI autonomous workflow.",
+      "anchors": [
+        "apps/tui/src/main.tsx:13-47",
+        "apps/tui/src/goal/commands.ts:1-17",
+        "apps/tui/src/goal/terminal.ts:9-43",
+        "packages/interaction/src/goal/commands.ts:11-18",
+        "packages/interaction/src/goal/types.ts:12-17",
+        "packages/interaction/src/goal/types.ts:34-35"
+      ]
+    },
+    {
+      "id": "per-message-settings-layers",
+      "charts": [
+        "modules.profiles",
+        "modules.conversations",
+        "runtime.claude"
+      ],
+      "fact": "MessageSettingsPicker controlled component exists in ExecutionProfilePicker source at fixed main; actual ConversationThread still mounts creation-profile picker and calls existing send/queue signatures without a messageSettings captured value. Differentiate center/runner/client032 implementation from actual Web host integration and QuickControls successor. TUI01G source215 also remains unintegrated.",
+      "anchors": [
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx:89-140",
+        "apps/web/src/conversations/ConversationThread.tsx:56-62",
+        "apps/web/src/conversations/ConversationThread.tsx:109-112",
+        "apps/web/src/conversations/ConversationThread.tsx:207-211",
+        "packages/client/src/index.ts:385-390",
+        "packages/client/src/index.ts:521-523"
+      ]
+    }
+  ],
+  "sourcePins": [
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 50767,
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 22770,
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c"
+    },
+    {
+      "path": "apps/web/src/components/assistant-ui/elements/thread.aui.tsx",
+      "bytes": 32735,
+      "sha256": "4d663d07bc7cde0ea85838686ef5e627004fb75ed882c3bde2ef586242d17f14"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 14325,
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/catalog.ts",
+      "bytes": 5649,
+      "sha256": "7bfa94040c91ae83bb9b8ba48b02cc242aa35768f5b65e8c1c84e6f67da92574"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 22822,
+      "sha256": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/projection.ts",
+      "bytes": 207,
+      "sha256": "c8ac83d12411021949d12dedb342669555b33987b162734d3ff51c55fa37119a"
+    },
+    {
+      "path": "apps/web/src/conversations/outbox.ts",
+      "bytes": 5323,
+      "sha256": "c04ce0116aefafe026dff18bf54d0e0336965d077defdc2537aa9a34e9b88085"
+    },
+    {
+      "path": "apps/web/src/components/workspace/WorkspacePanels.tsx",
+      "bytes": 9167,
+      "sha256": "b52f33859f969c6b5751acf5c98d042a265562c168ab2c21107074ef33417861"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "bytes": 4161,
+      "sha256": "449124145caf472daa0c6349420cc365bb3816719cffb47ef464f099f741b892"
+    },
+    {
+      "path": "apps/tui/src/goal/commands.ts",
+      "bytes": 5210,
+      "sha256": "eea58c676a7b0bf50a52925db82952e8d9241c2ca1794ceb4387907b8c587fea"
+    },
+    {
+      "path": "apps/tui/src/goal/terminal.ts",
+      "bytes": 7722,
+      "sha256": "5c8eaafd8a033d89a011b683a84cf1d7daf2cec3c85f2a94ea4bc7ba6adabdbe"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 53156,
+      "sha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277"
+    },
+    {
+      "path": "packages/interaction/package.json",
+      "bytes": 381,
+      "sha256": "ae2ceda7b6602207551b33e925b8e77e3bd317ed1883f127ba6f88eecbe6c7aa"
+    },
+    {
+      "path": "packages/interaction/src/commands.ts",
+      "bytes": 6131,
+      "sha256": "dff891136914fca2774faf199f3181fe3667c4055d7dab6a2c5e5ac30983e0e8"
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 22678,
+      "sha256": "2214199346f91f0fb91230e1dc694f704a664362682ff054399cdbc16141fa0b"
+    },
+    {
+      "path": "packages/interaction/src/goal/commands.ts",
+      "bytes": 7354,
+      "sha256": "17fadb855b12a59e9c134f748f2cf0cb8400139fc66bee9ade5f2caf69d77e99"
+    },
+    {
+      "path": "packages/interaction/src/goal/types.ts",
+      "bytes": 3194,
+      "sha256": "5f9f7f0ca5f8494333a3b656514b3289b9c0100e28909db5908cfd7fd15ad530"
+    },
+    {
+      "path": "packages/interaction/src/stream/index.ts",
+      "bytes": 98,
+      "sha256": "a361f4a3953bd6abd4aecee7c05de7d4ec1320238e986157db273a7ed58c2f79"
+    }
+  ],
+  "unintegratedTUI01G": {
+    "source": "215063fb4667fc394a07417d608b075fa1188d92",
+    "mergeBaseIsAncestorExit": 1,
+    "newSubtreeAbsentFromMain": true,
+    "statusPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-message-settings/plans/tui01g-message-settings/status.md",
+    "statusSha256": "80cddfb8ad1777b47f2b3a708c6bd12968eb500bb18f3274d0b4f8037a14e14f",
+    "statusBytes": 2771,
+    "meaning": "Owner reports SOURCE_APPROVED_PENDING_VALIDATION / NOT_RUN / NOT_INTEGRATED; source settings subtree absent at fixed main. Ancestor result alone is not the evidence."
+  },
+  "personalDeployment": {
+    "evidencePath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/resource-window-current.json",
+    "evidenceProperty": "latestPersonalPublication",
+    "reportedAt": "2026-10-06T21:27:19Z",
+    "reported": {
+      "backend": "af51c621696230fbced12227670f014ca73bd8a1",
+      "acceptingVersion": 18,
+      "webArtifact": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "webCurrentVersion": 3,
+      "retainedArtifacts": 3,
+      "queries": 0,
+      "tabs": 0
+    },
+    "distinction": "af51 is backend Git commit; d629 is 64-character Web artifact digest, not a commit; owner report only, no new personal HTTP/browser/service observation. Neither equals fixed main."
+  },
+  "validation": "Static Git/text/sha256 read only; no product Node/import/tests/HTTP/browser/PG/provider. Initial guessed Thread and MessageSettings paths absent; final pins use actual imported elements/thread.aui.tsx and in-file MessageSettingsPicker. No implementation files changed.",
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "cleanCode": {
+    "scope": "Fixed source responsibilities and truthful graph wording",
+    "findings": "Stale attachment-not-mounted and bearer-only-library claims must be corrected; keep client capabilities, actual host mounting, acceptance and deployment distinct. Retain original module interfaces and five-view renderer; no extra graph framework.",
+    "unresolved": "D04 fresh read ECONNREFUSED reported by manager; no new writer claim yet, so this report is not an implementation candidate or runtime verification."
+  }
+}

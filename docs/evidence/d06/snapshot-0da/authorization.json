@@ -1,0 +1,21 @@
+{
+  "at": "2026-10-06T23:37:17Z",
+  "source": "Root relay of explicit GO authorization in current thread",
+  "task": "D06",
+  "fixedMain": "0da869f7bad98771177472539b5a192365c15117",
+  "worktreeBase": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+  "scope": [
+    "apps/execution-dashboard/public/architecture-data.js",
+    "apps/execution-dashboard/test/architecture.test.mjs",
+    "docs/evidence/d06",
+    "plans/d06-architecture-refresh"
+  ],
+  "decision": "Reuse original D06 authoritative worktree; no new tree, reset, dependency copying or shared Git configuration changes. Update existing five-view data and source assertions only.",
+  "limits": [
+    "Renderer/CSS/server remain unchanged.",
+    "Product Node, browser, PG, Chrome and all runtime checks NOT_RUN; separate admission required.",
+    "First coordination list returned ECONNREFUSED before take. One authorized bounded recheck succeeded, then atomic take committed. No service restart or repeated polling.",
+    "Preserve historical aeb approval and tests. New source snapshot does not inherit their checks.",
+    "Separate fixed main capability from Lead personal backend af51 and Web artifact d629; keep X01 enable-binding/TUI01G215/S01P07/CHAT05 nonintegrated work explicit."
+  ]
+}

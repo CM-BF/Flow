@@ -1,0 +1,45 @@
+{
+  "state": "ADMITTED",
+  "window": "D06-512-BROWSER-ONCE-20261007",
+  "at": "2026-10-07T03:46:53.647389+00:00",
+  "bindingSha256": "a94b771b79fce0e4a80edc464fbf76e19825712672d854bcc4cda37186c33a5c",
+  "budgetMs": 90000,
+  "scratchBytes": 268435456,
+  "rawBytes": 8388608,
+  "nativeBoundaryAccepted": true,
+  "nativeBoundaryEvidence": {
+    "path": "/private/tmp/root-d06-browser-preparation-review.json",
+    "sha256": "b5df5985516630757c676bb42f9a24e9ec165431bfb1f9721bfa15001f0cba52"
+  },
+  "expiresEpoch": 1791344933.647557,
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/execution-dashboard/public/architecture-data.js",
+      "apps/execution-dashboard/test/architecture.test.mjs",
+      "docs/evidence/d06",
+      "plans/d06-architecture-refresh"
+    ],
+    "state": "active",
+    "branch": "codex/dashboard-architecture-runtime",
+    "origin": "new",
+    "taskId": "D06",
+    "worker": "d01_owner",
+    "claimId": "adf9539d-0d42-49b8-961b-f5195a4c10e9",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+    "createdAt": "2026-10-06T23:36:04.842Z",
+    "updatedAt": "2026-10-06T23:36:04.842Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "source": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+  "head": "ba9e9aaaa615709b488ab556b4413224e614c25e",
+  "freshFreeBytes": 25920339968,
+  "combinedStartFloorBytes": 1368653824,
+  "otherLocalAllowanceBytes": 18087936,
+  "previousRuntimeMs": 0,
+  "execution": "one fixed caller; no automatic retry/PG/provider/personal service; include outer captured output in8MiB receipt"
+}

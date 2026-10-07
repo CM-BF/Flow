@@ -1,0 +1,23 @@
+{
+  "at": "2026-10-07T04:15:02.185429+00:00",
+  "method": "Existing local find-skills/clean-code method reused; no installation. Bounded metadata and hash audit only.",
+  "scope": "D06 own plan/status/review/evidence plus existing unconsumed TMP packet metadata; no product source changes.",
+  "checks": {
+    "priorPinReads": 46,
+    "sourceCommit": "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d",
+    "parentWorkerScenarioUnchanged": true,
+    "oldPacketMetadataPreserved": "/private/tmp/d06-browser-a28e-4mmyk_zp/before-coexistence-admission",
+    "gateAbsent": true,
+    "combinedFloorArithmetic": 4053008384
+  },
+  "cleanCode": "Keep resource accounting in one explicit outer-admission contract; retain mature lifecycle unchanged. Separate retained external resources, source approval and actual runtime; remove stale wait-for-cleanup wording without rewriting history.",
+  "notRun": [
+    "browser",
+    "Node product tests",
+    "HTTP",
+    "PG",
+    "resource sample",
+    "process sampling"
+  ],
+  "unresolved": "Actual a28e geometry and second browser outcome not verified; revision review and fresh admission pending."
+}

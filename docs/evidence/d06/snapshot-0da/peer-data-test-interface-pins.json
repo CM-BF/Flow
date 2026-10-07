@@ -1,0 +1,100 @@
+{
+  "observedAt": "2026-10-06T23:37:16.526930+00:00",
+  "fixedCommit": "0da869f7bad98771177472539b5a192365c15117",
+  "mode": "READ_ONLY_GIT_OBJECTS_NOT_RUN",
+  "sourcePins": [
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800",
+      "bytes": 41828,
+      "lines": 153
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture.test.mjs",
+      "sha256": "1cccd582ff3a53c7f1e7583fa810f2c03e366bec19963eb8bd62c4f5e0af2c98",
+      "bytes": 23045,
+      "lines": 306
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/source-audit.mjs",
+      "sha256": "9778ced323329503a7803e29ea75af8dc88dbe5964585a8f25f54ad70909bd37",
+      "bytes": 11328,
+      "lines": 98
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.js",
+      "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4",
+      "bytes": 7689,
+      "lines": 106
+    },
+    {
+      "path": "apps/execution-dashboard/public/architecture.css",
+      "sha256": "648b22fde8ee6361d6904cfe9a60254a646141d89e24ccd03e15c19172709780",
+      "bytes": 4082,
+      "lines": 41
+    },
+    {
+      "path": "apps/execution-dashboard/src/server.mjs",
+      "sha256": "b93a77a17655ac777e07f9edbe0f47738cb34ddfc9dfa63e3099cd7372dc7be4",
+      "bytes": 4034,
+      "lines": 60
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee",
+      "bytes": 7025,
+      "lines": 89
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5",
+      "bytes": 7058,
+      "lines": 97
+    },
+    {
+      "path": "apps/execution-dashboard/package.json",
+      "sha256": "8492f44ae6f90dd60a76676f84801f1048256abd5c79b708126358731da8d8aa",
+      "bytes": 362,
+      "lines": 17
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/browser-check.mjs",
+      "sha256": "bbaf8bac952ad7152dd9c915d1f859f66f4ef18beff21f2c3052f9ca806a4ce1",
+      "bytes": 9367,
+      "lines": 109
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/validation.md",
+      "sha256": "b54d5cdbed33540f2e851637fc3b1c6c9e4c7fe4db3b982aaa3633287bfc5e78",
+      "bytes": 2297,
+      "lines": 13
+    }
+  ],
+  "skills": [
+    {
+      "name": "find-skills",
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "application": "Reused installed local skills; no discovery network or installation."
+    },
+    {
+      "name": "codebase-design",
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "application": "Read data Interface through the unchanged renderer and existing checks; keep refresh localized."
+    },
+    {
+      "name": "clean-code",
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "application": "Separate source facts from runtime claims, retain precise failures/history, avoid a new graph or runner."
+    }
+  ],
+  "reportSha256": "d944d1fedf16cfbc96dedc7b5ea510dd1b794a70297536a3daf82aed1bf17c5f",
+  "limits": [
+    "No project writes",
+    "No Node/import/test/browser/PG/service/free/proc",
+    "Domain refresh conclusions remain with root and panels; report concerns existing Interface and checks",
+    "Old 18 Node / 5 view results not rerun or inherited"
+  ]
+}

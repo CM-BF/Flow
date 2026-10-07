@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-07T03:42:20.296328+00:00",
+  "state": "PREPARED_NOT_RUN",
+  "binding": {
+    "path": "/private/tmp/d06-browser-512-tz5of84t/binding.json",
+    "realpath": "/private/tmp/d06-browser-512-tz5of84t/binding.json",
+    "bytes": 8450,
+    "sha256": "a94b771b79fce0e4a80edc464fbf76e19825712672d854bcc4cda37186c33a5c"
+  },
+  "prepared": [
+    {
+      "path": "/private/tmp/d06-browser-512-tz5of84t/run.py",
+      "realpath": "/private/tmp/d06-browser-512-tz5of84t/run.py",
+      "bytes": 7771,
+      "sha256": "351701c89f53f1d94d7008d3b731f746dffa037d4a9cfca46fce792deb451deb"
+    },
+    {
+      "path": "/private/tmp/d06-browser-512-tz5of84t/worker.mjs",
+      "realpath": "/private/tmp/d06-browser-512-tz5of84t/worker.mjs",
+      "bytes": 4553,
+      "sha256": "17c0412af26776733dc5f7b84924f9673ee73ce842b7e754d662d2ca7f2347d1"
+    },
+    {
+      "path": "/private/tmp/d06-browser-512-tz5of84t/scenario.mjs",
+      "realpath": "/private/tmp/d06-browser-512-tz5of84t/scenario.mjs",
+      "bytes": 10488,
+      "sha256": "1cc45f2b391070a855596956214b0d88ea3935f5054da767d410d191adc3be5c"
+    },
+    {
+      "path": "/private/tmp/d06-browser-512-tz5of84t/README.md",
+      "realpath": "/private/tmp/d06-browser-512-tz5of84t/README.md",
+      "bytes": 3283,
+      "sha256": "2b7f3643fefc4425b0fdcf265af7bf3f7535dee6787970285013bddf4eceddbf"
+    },
+    {
+      "path": "/private/tmp/d06-browser-512-tz5of84t/run.py.diff",
+      "realpath": "/private/tmp/d06-browser-512-tz5of84t/run.py.diff",
+      "bytes": 7769,
+      "sha256": "f8f8f0909c154f86fecfa1e437e842e6af9f214fe94ebd2df235ed97f51c63d0"
+    },
+    {
+      "path": "/private/tmp/d06-browser-512-tz5of84t/worker.mjs.diff",
+      "realpath": "/private/tmp/d06-browser-512-tz5of84t/worker.mjs.diff",
+      "bytes": 3436,
+      "sha256": "6ce1c206465736eb560ae0646058f457a9cb6b222119caebefae1a986b0a1e7b"
+    }
+  ],
+  "provenance": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-aeb/browser-check.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-aeb/browser-check.mjs",
+      "bytes": 9367,
+      "sha256": "bbaf8bac952ad7152dd9c915d1f859f66f4ef18beff21f2c3052f9ca806a4ce1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/test/architecture-viewport.browser.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/apps/execution-dashboard/test/architecture-viewport.browser.mjs",
+      "bytes": 10764,
+      "sha256": "923432c06413699e089434c387574ee2b363b32f94dc6afeebd1d1a87188fbdc"
+    },
+    {
+      "path": "/private/tmp/access01-browser-followup-jn35famf/run.py",
+      "realpath": "/private/tmp/access01-browser-followup-jn35famf/run.py",
+      "bytes": 6237,
+      "sha256": "09ac049a54b315d9cca9c10f78ce5209a198da5f644e2174b1d4ef95a42ceb5f"
+    },
+    {
+      "path": "/private/tmp/access01-browser-followup-jn35famf/worker.mjs",
+      "realpath": "/private/tmp/access01-browser-followup-jn35famf/worker.mjs",
+      "bytes": 4968,
+      "sha256": "3fcd86a271c265ba45ed074d3a44f1c7f8290f5c7ee779ef149f339cfb30a5dc"
+    }
+  ],
+  "checks": "Only Python ast.parse + hash/source reads; candidate never executed.",
+  "bytes": 45804,
+  "metadataHead": "ba9e9aaaa615709b488ab556b4413224e614c25e"
+}

@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-07T04:18:34.831105+00:00",
+  "decision": "APPROVED_ADMISSION_REVISION_NATIVE_BOUNDARY_NOT_RUN",
+  "reviewer": "/root",
+  "source": "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d",
+  "head": "72167e26510388d28d9306225a9e30f9819b03ac",
+  "bindingSha256": "efe87e6430fbf2df9542abe8052315f00ab737d3d19dffcc3072b860dad68565",
+  "manifestSha256": "211fd9c65b70dc6b071b7055a196aa078c38e08e84c69c6bbd8f88cc1effce95",
+  "admissionContractSha256": "06d461948fe7f9559c94b8518e0f336b78f038a4645e4ad4fbdb0d4fb0cdb3b7",
+  "priorPreparationReview": {
+    "path": "/private/tmp/root-d06-a28e-second-preparation-review.json",
+    "sha256": "d528c1848b6af201440a4cc5c92efef382256255892ef7a2d7f6bf5873d205b0"
+  },
+  "verified": {
+    "all38PinsAnd8PreparedFiles": true,
+    "headLocalRemoteEqualClean": true,
+    "appDiffFromReviewedRendererEmpty": true,
+    "changedBindingKeys": [
+      "head",
+      "admissionRevision"
+    ],
+    "scriptsScenarioAnd38PinsByteIdentical": true,
+    "limitsUnchanged": true,
+    "runtimeEntriesAbsent": true,
+    "svc06ActualCleanupReceiptHashMatches": true
+  },
+  "nativeBoundary": "Exact same parent/worker/scenario accepted as prior d528; native Chrome sandbox, exclusive owned profile/group, zero PG, no personal services/tabs; no claim of custom OS write/egress containment.",
+  "startupCombinedFloorBytes": 4053008384,
+  "timeBudget": {
+    "originalTotalMs": 90000,
+    "spentMs": 6733,
+    "remainingMs": 83267,
+    "workMs": 68267,
+    "cleanupMs": 15000
+  },
+  "gateRequirements": [
+    "Fresh exact claim v2/head/pins/clean/output-absence check",
+    "Fresh shared-volume available bytes >=4053008384, with sample time/path/components bound to admission and one-use gate",
+    "Gate must explicitly bind this native approval and manifest/contract hashes",
+    "One second actual run only; preserve first failure, actual exit/result/EOF/owned process/HTTP/scratch cleanup; no automatic third run",
+    "Notify resource return immediately on actual cleanup before waiting for archive/commit"
+  ],
+  "reviewFindings": [],
+  "cleanCode": "No duplicated lifecycle runner or assertion changes; outer stricter admission reuses existing one-use gate and preserves earlier evidence/budgets.",
+  "runtime": "NOT_RUN; approval is scoped readiness, not actual pass or reservation"
+}

@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-07T04:23:02.830644+00:00",
+  "base": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+  "sourceCommits": [
+    "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+    "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d"
+  ],
+  "exactScope": [
+    "apps/execution-dashboard/public/architecture-data.js",
+    "apps/execution-dashboard/public/architecture.js",
+    "apps/execution-dashboard/test/architecture.test.mjs",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/run.py.diff",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/scenario.mjs",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs",
+    "docs/evidence/d06/snapshot-0da/browser-preparation-20261007/worker.mjs.diff"
+  ],
+  "meaning": "Current main proof.mjs metadata extension policy excludes .py/.mjs/.diff, so these five already-reviewed evidence files remain explicit composition scope. No parser relaxation. This actual-evidence seal becomes the fixed composite target; final own metadata may follow."
+}

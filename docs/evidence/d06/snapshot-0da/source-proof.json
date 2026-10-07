@@ -1,0 +1,2959 @@
+{
+  "state": "STATIC_SOURCE_INSPECTION_ONLY",
+  "observedAt": "2026-10-06T23:46:30.014251+00:00",
+  "fixedMain": "0da869f7bad98771177472539b5a192365c15117",
+  "worktreeBase": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+  "implementationTarget": "recorded by outer candidate manifest after commit",
+  "productFiles": [
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "bytes": 44076,
+      "sha256": "7ccc2ca80760a4050f09a2d7bdbbaf04884395ff945ae0cda887d9d6a1e12d78"
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture.test.mjs",
+      "bytes": 32645,
+      "sha256": "a8650e9c391efdf5dfa60defbe421bd0789138a62fc76c34252e0b5d2ea27149"
+    }
+  ],
+  "graphInterface": {
+    "sameFiveViews": true,
+    "nodeCount": 83,
+    "uniqueNodeSources": 64,
+    "idsCoordinatesKindsUnchanged": true,
+    "nonNodeSkeletonEqualsBase": true,
+    "changedNodes": [
+      {
+        "node": "runtime.web",
+        "fields": [
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "runtime.tui",
+        "fields": [
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "runtime.center",
+        "fields": [
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "runtime.runner",
+        "fields": [
+          "locality"
+        ]
+      },
+      {
+        "node": "runtime.verifier",
+        "fields": [
+          "description"
+        ]
+      },
+      {
+        "node": "runtime.claude",
+        "fields": [
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "runtime.codex",
+        "fields": [
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.web",
+        "fields": [
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.server",
+        "fields": [
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.client",
+        "fields": [
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.goals",
+        "fields": [
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.conversations",
+        "fields": [
+          "description",
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.plugins",
+        "fields": [
+          "subtitle",
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.host",
+        "fields": [
+          "description"
+        ]
+      },
+      {
+        "node": "modules.profiles",
+        "fields": [
+          "subtitle",
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.proposals",
+        "fields": [
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.context",
+        "fields": [
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.activity",
+        "fields": [
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.tui",
+        "fields": [
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.interaction",
+        "fields": [
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.nativehost",
+        "fields": [
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.workspace",
+        "fields": [
+          "description",
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.nativewriter",
+        "fields": [
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.checker",
+        "fields": [
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "modules.nextbackend",
+        "fields": [
+          "label",
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "data.task",
+        "fields": [
+          "description",
+          "locality"
+        ]
+      },
+      {
+        "node": "data.extensions",
+        "fields": [
+          "subtitle",
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "data.fetchstate",
+        "fields": [
+          "label",
+          "subtitle",
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "data.history",
+        "fields": [
+          "source",
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "states.cancel",
+        "fields": [
+          "description",
+          "locality"
+        ]
+      },
+      {
+        "node": "states.newtask",
+        "fields": [
+          "description"
+        ]
+      },
+      {
+        "node": "states.passed",
+        "fields": [
+          "description",
+          "seam",
+          "locality"
+        ]
+      },
+      {
+        "node": "dependencies.domain",
+        "fields": [
+          "locality"
+        ]
+      },
+      {
+        "node": "dependencies.react",
+        "fields": [
+          "description",
+          "locality"
+        ]
+      }
+    ],
+    "protectedInputsUnchanged": [
+      {
+        "path": "apps/execution-dashboard/public/architecture.js",
+        "bytes": 7689,
+        "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4",
+        "equalsBranchBase": true,
+        "equalsFixedMain": true
+      },
+      {
+        "path": "apps/execution-dashboard/public/architecture.css",
+        "bytes": 4082,
+        "sha256": "648b22fde8ee6361d6904cfe9a60254a646141d89e24ccd03e15c19172709780",
+        "equalsBranchBase": true,
+        "equalsFixedMain": true
+      },
+      {
+        "path": "apps/execution-dashboard/public/index.html",
+        "bytes": 6397,
+        "sha256": "bb1bfbefd5cf80794f658a32b4530bfc28a18d08d09978fb8a8461b69e8a8614",
+        "equalsBranchBase": true,
+        "equalsFixedMain": true
+      },
+      {
+        "path": "apps/execution-dashboard/src/server.mjs",
+        "bytes": 4034,
+        "sha256": "b93a77a17655ac777e07f9edbe0f47738cb34ddfc9dfa63e3099cd7372dc7be4",
+        "equalsBranchBase": true,
+        "equalsFixedMain": true
+      },
+      {
+        "path": "apps/execution-dashboard/src/registry.mjs",
+        "bytes": 16528,
+        "sha256": "3120e3a3658d693efb966c4156eed518cfeab6a84b82b0e4d40457b3bb6b6d7f",
+        "equalsBranchBase": true,
+        "equalsFixedMain": false
+      }
+    ]
+  },
+  "fixedSourcePins": [
+    {
+      "path": "apps/cli/src/index.ts",
+      "bytes": 26573,
+      "sha256": "59213e5987492581bde26dd4040bc5729b747d6614e418532884e1c334824449"
+    },
+    {
+      "path": "apps/execution-dashboard/src/aggregate.mjs",
+      "bytes": 7025,
+      "sha256": "3e12b36de43f71eead31fd7052b98077cec03d071e07fc1c910b8a85cafa15ee"
+    },
+    {
+      "path": "apps/execution-dashboard/src/coordination/ledger.mjs",
+      "bytes": 7058,
+      "sha256": "983de5cf870b71fb25374f840f218b32d8fae31bfa80e67fa52d5945ba0294d5"
+    },
+    {
+      "path": "apps/runner/package.json",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9"
+    },
+    {
+      "path": "apps/runner/src/active-steering/host.ts",
+      "bytes": 7143,
+      "sha256": "72f6d236f3b295e32f9d63365f7976017b0305faa254cb89ae1a06abeac66923"
+    },
+    {
+      "path": "apps/runner/src/claude-message-settings.ts",
+      "bytes": 2363,
+      "sha256": "6d351ed73d2b66666a63cf7c50e16c9f1a990a9d5e9ab6955ac722b337fedd50"
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 24363,
+      "sha256": "1bb8c725411943fb0c517b855f2d51579ef156c374cf39727f702db8412a1e7f"
+    },
+    {
+      "path": "apps/runner/src/concurrency-configuration.ts",
+      "bytes": 598,
+      "sha256": "9fb5a2d2550c286fdc3231105436f109e26546bca260b86717622a5a5158e4b3"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 4568,
+      "sha256": "9af30deaa9387c77ac8a537dcc00d0e17ae586390a64c1e5cc03074bb3c84baa"
+    },
+    {
+      "path": "apps/runner/src/engineering/calculator-receipt.ts",
+      "bytes": 3858,
+      "sha256": "b646267790c9c3f362c77845aac1b0cab8977ce51dc19759d19aba020700db54"
+    },
+    {
+      "path": "apps/runner/src/engineering/native-writer.ts",
+      "bytes": 5521,
+      "sha256": "08039226f4e75cf5c54ab54ed0dacfb55410303abbc93bb0f8354a4eaaacd270"
+    },
+    {
+      "path": "apps/runner/src/engineering/setup.ts",
+      "bytes": 6695,
+      "sha256": "e8a35ac85c0c048ce2abaafb513562e4b87f31906d6eb24e6ca150ab182cb6ce"
+    },
+    {
+      "path": "apps/runner/src/engineering/workspace.ts",
+      "bytes": 12205,
+      "sha256": "8036f2038889670b5f9ab253c085b8b6ae9df00707a1355b62f8c5d743b76e5d"
+    },
+    {
+      "path": "apps/runner/src/goal-graph-tools/bind.ts",
+      "bytes": 1572,
+      "sha256": "baaf80c665d5304d097557663d7f575bedece8101d27588fd756662b0985804c"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 2477,
+      "sha256": "f193f56044f6d42bbde17aa274d49d48bf32b7d78d8e5bb81313f6edd899f214"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "bytes": 4520,
+      "sha256": "d55636b7160917ec377e02fc0c862a9b881398a46489507dc09685d92f89488a"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "bytes": 851,
+      "sha256": "03575f0f86fdb1b15ceb9298fac13add895b5f92b5a80165ba2e13019639205a"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "bytes": 757,
+      "sha256": "e3e32c49f81f665c90093c50c59913756f74a2ea4bfc261dbdc2afd06dfc3aef"
+    },
+    {
+      "path": "apps/runner/src/native-harness/descriptor.ts",
+      "bytes": 1064,
+      "sha256": "f767b065f557e3aca5494575789d35745ceb0cacf2a3bd53d67c662d49dd77dd"
+    },
+    {
+      "path": "apps/runner/src/plugins/host.ts",
+      "bytes": 6177,
+      "sha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f"
+    },
+    {
+      "path": "apps/runner/src/protocol-dispatch/index.ts",
+      "bytes": 8396,
+      "sha256": "771642a3a5bc54981c43a2ede864c6daaaac62a491ea23aea7c779990aaf7e51"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14698,
+      "sha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0"
+    },
+    {
+      "path": "apps/server/package.json",
+      "bytes": 552,
+      "sha256": "55219b0d08e81fe928ecc85679b1f47f0e496f7e56bf40c71b24b0c131bd079e"
+    },
+    {
+      "path": "apps/server/src/active-steering-configuration.ts",
+      "bytes": 319,
+      "sha256": "8138cd0125132b8a680a0842dad40d573c2f1a4832ab7af7cb0a59ba0dacb09d"
+    },
+    {
+      "path": "apps/server/src/active-steering/index.ts",
+      "bytes": 4109,
+      "sha256": "ed1b9aff63601aadd81796f83ccc448e6722f2bfacdc216b93e3f75a4a6241bd"
+    },
+    {
+      "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+      "bytes": 2196,
+      "sha256": "d3f9709ea1c65a30752f0f2dc737b8292bac4d35e009ae22392ee10293105244"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/index.ts",
+      "bytes": 2061,
+      "sha256": "a261c1e787b450f6d9c1fcaacca3e6d0bb421ade8fdbb142273466e301c29a34"
+    },
+    {
+      "path": "apps/server/src/assistant-stream/queries.ts",
+      "bytes": 5368,
+      "sha256": "e8987ea10d90c16c61dbaf043b5ed32192ce184f4fd7a20a84659b653e22d7f5"
+    },
+    {
+      "path": "apps/server/src/assistant/store.ts",
+      "bytes": 12390,
+      "sha256": "990a19e7816b1a8b47c78f906b905e6f71b5a1806226a27241b6559fb619be15"
+    },
+    {
+      "path": "apps/server/src/attachments/index.ts",
+      "bytes": 5023,
+      "sha256": "91d739d031e0f2b8bea58594562b3d6bbbde104f4f960757cb61ea654ea57516"
+    },
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a"
+    },
+    {
+      "path": "apps/server/src/commands.ts",
+      "bytes": 2316,
+      "sha256": "8657b4cc49b7fa25866af69a1303eada074d0f993072837affd8a90f92a144d7"
+    },
+    {
+      "path": "apps/server/src/context-transparency/migration.ts",
+      "bytes": 781,
+      "sha256": "46892e1704d3ab6ebe191be1d7b08d7cac2a93b5eb3c7bc0725875b50de07e5c"
+    },
+    {
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 11494,
+      "sha256": "0d203aab9ba58988d4ab7078218e9741d8ae1dbcacbaadf280d6d25212b685d5"
+    },
+    {
+      "path": "apps/server/src/conversation-context/store.ts",
+      "bytes": 14160,
+      "sha256": "5b92bab9b90e86f7ba68dd049d2d4a8d90396c5af66125dd09cfd90f585103c6"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/controls.ts",
+      "bytes": 3089,
+      "sha256": "ec67151a82096f45128f9a4731f52be021968dd6f2289186e38523d6d42c8852"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queries.ts",
+      "bytes": 2404,
+      "sha256": "d9c9e02017f66ddfc8b2b61c97f95c8fb933f63eb4d759d2260078eff936aba8"
+    },
+    {
+      "path": "apps/server/src/conversations/admission.ts",
+      "bytes": 5515,
+      "sha256": "8cf8b9b1b75d96f434fd31634f34259807c96ea65021a6a725d87e48da36ea1b"
+    },
+    {
+      "path": "apps/server/src/conversations/commands.ts",
+      "bytes": 3834,
+      "sha256": "23ca95111095034336733111c48d035fa5890a5e6aa928f6b59beb81657bb631"
+    },
+    {
+      "path": "apps/server/src/conversations/message-settings.ts",
+      "bytes": 2728,
+      "sha256": "411e7c0f1343acf0481e9950e9b6721cc28fe00743e36714911d68c6b67b919c"
+    },
+    {
+      "path": "apps/server/src/conversations/state.ts",
+      "bytes": 4173,
+      "sha256": "d98272700f1f73de98cdce0f2aeaa09328089a70cc3236b3d94bafcfd06b7c32"
+    },
+    {
+      "path": "apps/server/src/database.ts",
+      "bytes": 6424,
+      "sha256": "30f5e2e799005aeb046472e18770cdcd0464f93394cd79a6a2b5ac2a9f751ba8"
+    },
+    {
+      "path": "apps/server/src/engineering/native-profile.ts",
+      "bytes": 3712,
+      "sha256": "ec6360e5df4870fd2f9eb4eb8f6a23f9b9916ef4b3e4c6e0e8be5b4bca874569"
+    },
+    {
+      "path": "apps/server/src/engineering/native-verification.ts",
+      "bytes": 4211,
+      "sha256": "8ee043fffa72fe441dab970cfc4fa9ea97733cf8fcacfe33d57c921f65d24bc2"
+    },
+    {
+      "path": "apps/server/src/engineering/verification.ts",
+      "bytes": 4249,
+      "sha256": "70546ca36bf70a83a8584c638a8f273180cc9b30490726ad5cb4bb853254c7cc"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "bytes": 8529,
+      "sha256": "270065bc93cb5c5aeb306ffd3329ea122e6ee00eec6ba1808628694b1f7a1e02"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "bytes": 4145,
+      "sha256": "4e72f704166ee57b28764b1da57ed54db89dd61c1d5e1bbd68580e9aa0d7b550"
+    },
+    {
+      "path": "apps/server/src/goal-delivery/index.ts",
+      "bytes": 2120,
+      "sha256": "df68185b3229b606084fc775a0cda8716e421ca5b4214a902fcbf2b7dbeb9a1d"
+    },
+    {
+      "path": "apps/server/src/goal-graph-proposals/index.ts",
+      "bytes": 2430,
+      "sha256": "a8a6fea7f7436df17ca6bc59d902aec7d068af2bbec99c14fac676a928aa966b"
+    },
+    {
+      "path": "apps/server/src/goal-graph-proposals/store.ts",
+      "bytes": 9383,
+      "sha256": "322778d4a57a32ff35ee9f75e30b287ffc6062313e04ef7e202e30f92053bd8a"
+    },
+    {
+      "path": "apps/server/src/goal-graph-runs/runner.ts",
+      "bytes": 8237,
+      "sha256": "01b2abaf6729ce6fd9eabf5a4f3f51b35a8b89f24737ce1619ce548b96e09e26"
+    },
+    {
+      "path": "apps/server/src/goal-plan-confirmation/store.ts",
+      "bytes": 6857,
+      "sha256": "3f4013289d5438f468acf9821e422c4e01d52f16f1a23ab08f8a555620dc5da8"
+    },
+    {
+      "path": "apps/server/src/goal-progression/advance.ts",
+      "bytes": 3820,
+      "sha256": "24793fc7b9eeb91bc3bf5ec0bd687431c91f7818171b857b0ce9916ede72f8ee"
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "bytes": 14578,
+      "sha256": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99"
+    },
+    {
+      "path": "apps/server/src/knowledge/search.ts",
+      "bytes": 3360,
+      "sha256": "e300061702e4557e5fc09c06f6dfdb43d0d1ef9c7b76db30330c4958f72ffb42"
+    },
+    {
+      "path": "apps/server/src/knowledge/storage.ts",
+      "bytes": 10068,
+      "sha256": "72d2cc8663a9d077367e4ce04cf1fdb7a17ed7966ae1f380e12905212abccd21"
+    },
+    {
+      "path": "apps/server/src/m2-workspace.ts",
+      "bytes": 6752,
+      "sha256": "e1653357b06f16e016c898b54b210b3f53af76557ca8a8498fb53c47eb1f7e78"
+    },
+    {
+      "path": "apps/server/src/main.ts",
+      "bytes": 2964,
+      "sha256": "8da31946307ac1da338df9ab0ee640e4df2ba534fc04918113b3cbecdd1ef9b9"
+    },
+    {
+      "path": "apps/server/src/native-activity/store.ts",
+      "bytes": 8230,
+      "sha256": "33d86d709452bc5546f1f8aa44c9832826f58607299574e2682b11afb69b43e4"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/index.ts",
+      "bytes": 2641,
+      "sha256": "12701ce1dfbe9ba5317ceaf6d9b7c16ee3903a89f6a99841c385d97f8578c07c"
+    },
+    {
+      "path": "apps/server/src/package-artifacts/storage.ts",
+      "bytes": 4464,
+      "sha256": "827ea2d17247d027e14673848ed7d744c6142a27811e72413cdabb23cb1b30c2"
+    },
+    {
+      "path": "apps/server/src/plugin-package-fetches/worker.ts",
+      "bytes": 7428,
+      "sha256": "e19833a4d2ed168327b2ea870734c8fab3fd4968f3d4c0398a64e5022586f648"
+    },
+    {
+      "path": "apps/server/src/plugins/index.ts",
+      "bytes": 4058,
+      "sha256": "f3e73d03bab521bdcae419817f844bd8c36d6be0090d3f0ac260f16aae5f1c1c"
+    },
+    {
+      "path": "apps/server/src/reconciliation.ts",
+      "bytes": 11824,
+      "sha256": "ad3184092d86c16cb2ef6e45e3ecfb98dadafd964e8180dc8971a25e080843a7"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "bytes": 12580,
+      "sha256": "1e8f72cf66427d9f57a7ed8d66d2ab566713aa0ee492317351801fa77a4474c3"
+    },
+    {
+      "path": "apps/server/src/scheduler.ts",
+      "bytes": 957,
+      "sha256": "e7414df7cb05afbcf7205db030ee5825a9da0793c4c5ce2c237abba69a38aa0a"
+    },
+    {
+      "path": "apps/server/src/shutdown/index.ts",
+      "bytes": 1327,
+      "sha256": "26b5afc5018f1a63a69d10c5bc451602d11df87f17183a32f87f1cbf7396de10"
+    },
+    {
+      "path": "apps/server/src/tasks.ts",
+      "bytes": 6621,
+      "sha256": "eb49e822b01da67a02fda26800253f29b7c64df0f3b5b68076aab918b11ee64e"
+    },
+    {
+      "path": "apps/server/src/timeline.ts",
+      "bytes": 658,
+      "sha256": "f947d154067b1e4bc1bce10bc67b136b21c5a267b93cf25de2eee368cd7d19e5"
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "bytes": 4161,
+      "sha256": "449124145caf472daa0c6349420cc365bb3816719cffb47ef464f099f741b892"
+    },
+    {
+      "path": "apps/web/README.md",
+      "bytes": 5766,
+      "sha256": "a10fe9d1ee4f73a7dea00110b370bd6b08df8aa111cd7c4c8af6383aa5d66bc8"
+    },
+    {
+      "path": "apps/web/package.json",
+      "bytes": 1367,
+      "sha256": "f3031abe438463b3393a60fb30c44dc311ac403358bcccc61c39ebd48d3ec6f7"
+    },
+    {
+      "path": "apps/web/src/App.tsx",
+      "bytes": 50767,
+      "sha256": "8fb5b1381ea3a65d52cc4bfc76341ecb9cec2c735c13258805c148b6922a819d"
+    },
+    {
+      "path": "apps/web/src/conversation-activity/native/projection.ts",
+      "bytes": 8153,
+      "sha256": "383539ceb5735626f2738576e30869eccf820d99d9133ed3076aa838f2b08231"
+    },
+    {
+      "path": "apps/web/src/conversation-context/receipts.ts",
+      "bytes": 2254,
+      "sha256": "80181137b92cba56e35bc376fe43d23882a52346da175b9cbec4ec45f73e7072"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/messages.ts",
+      "bytes": 1934,
+      "sha256": "45c7c0f1f4bb4049764cae6dad7436e2a2c457948bca2b6880fb75d7aff5bef7"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/projection.ts",
+      "bytes": 207,
+      "sha256": "c8ac83d12411021949d12dedb342669555b33987b162734d3ff51c55fa37119a"
+    },
+    {
+      "path": "apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 22770,
+      "sha256": "e1e98f00c2450224e2ce619c8a8d8a9a03b844361bee627df25b07b89cfe004c"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "bytes": 24648,
+      "sha256": "50ab77de33452456d30097b20529e5220b23f52910e183acad8e4c871b2406db"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/ConversationQueue.tsx",
+      "bytes": 8924,
+      "sha256": "b435794fac3c4f5006919f6f07e440b21ffa829aa2be41ee7f4d70b7072505d1"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 14325,
+      "sha256": "0827e03594de0925b90416224f3fffd65d4deb1d16c20d7609d08d5e1874b7ee"
+    },
+    {
+      "path": "apps/web/src/execution-profiles/selection.ts",
+      "bytes": 9174,
+      "sha256": "c7aa36efdfac386129f5179068b40664d96cbc6177abe88c950839acbe770558"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/data-renderers.ts",
+      "bytes": 3507,
+      "sha256": "868d7915f6d95eacdb6d7a1e647e5873a1987c84ee84cf7abe46d69e61a4b8e6"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "bytes": 12925,
+      "sha256": "8a325158037cb0d2c59cd6b5c86630a0fe6495feb4195b254c1fd58673c83298"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 23725,
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 22822,
+      "sha256": "523ab83fbc8e3ddde16f01c84962aabb39662c48d9cdd56a469f1398e40bcb38"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/steering.tsx",
+      "bytes": 18510,
+      "sha256": "b7c180fe00e97272aa48e7fd0e0b76e28234f4483b01bfd796518d4ff94f87c9"
+    },
+    {
+      "path": "packages/client/src/conversation-acknowledgement.ts",
+      "bytes": 14330,
+      "sha256": "12f48987eb28472b9f21263931398b665b4d2004f2855f2d62aca660ac9fc0b2"
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "bytes": 53156,
+      "sha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277"
+    },
+    {
+      "path": "packages/contracts/src/active-steering.ts",
+      "bytes": 7453,
+      "sha256": "0f19a1c0683f9b557209f75b751604c37fb616c2128245905880ea3038c30311"
+    },
+    {
+      "path": "packages/contracts/src/assistant-stream.ts",
+      "bytes": 4993,
+      "sha256": "dc0f91d5c1e1a85137eb65380a3d303553fadce56f1cb0f0dd8ba4b44bee8382"
+    },
+    {
+      "path": "packages/contracts/src/browser-session.ts",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    },
+    {
+      "path": "packages/contracts/src/engineering-native.ts",
+      "bytes": 6307,
+      "sha256": "f198bf5504e3b71bba65e93e80d19a246b64a49c623f7ff3e819a5e7339752a5"
+    },
+    {
+      "path": "packages/contracts/src/index.ts",
+      "bytes": 1512,
+      "sha256": "81128867d5e7e89ed0037d432613884faeb880506611b0f62ee7cbdcdf13c5b9"
+    },
+    {
+      "path": "packages/contracts/src/native-activity.ts",
+      "bytes": 3259,
+      "sha256": "15e7a6696b3952ec74bb9959b3b23ef53a51d4a8d743d4e22c164a3bcd10459a"
+    },
+    {
+      "path": "packages/interaction/src/commands.ts",
+      "bytes": 6131,
+      "sha256": "dff891136914fca2774faf199f3181fe3667c4055d7dab6a2c5e5ac30983e0e8"
+    },
+    {
+      "path": "packages/interaction/src/controller.ts",
+      "bytes": 22678,
+      "sha256": "2214199346f91f0fb91230e1dc694f704a664362682ff054399cdbc16141fa0b"
+    },
+    {
+      "path": "packages/interaction/src/goal/index.ts",
+      "bytes": 12626,
+      "sha256": "fa77a60fee9c06513969ffa634a6e41832687157770f9894069ea7f902256741"
+    },
+    {
+      "path": "packages/interaction/src/goal/types.ts",
+      "bytes": 3194,
+      "sha256": "5f9f7f0ca5f8494333a3b656514b3289b9c0100e28909db5908cfd7fd15ad530"
+    },
+    {
+      "path": "packages/interaction/src/types.ts",
+      "bytes": 2645,
+      "sha256": "3cfcb54ddd03737a6aaa6e471c6ed67b32b30f0fa93cf2efb9f53ce8902ced4b"
+    },
+    {
+      "path": "packages/protocols/package.json",
+      "bytes": 366,
+      "sha256": "f6a8155b462edf0ccfb39b20c8344576d1ec27f647c11e0e229c52e895867294"
+    },
+    {
+      "path": "packages/protocols/src/index.ts",
+      "bytes": 167,
+      "sha256": "0747ae484303c1042148d28bacfd9817cdd2d94795c60e3c690b92dfff394e85"
+    },
+    {
+      "path": "packages/storage/migrations/004-projects.sql",
+      "bytes": 1918,
+      "sha256": "a2f744c164d08168a3aa40584597b62375f3bfb30dbb7ec73348aa01b6633e07"
+    },
+    {
+      "path": "packages/storage/migrations/020-native-activity.sql",
+      "bytes": 970,
+      "sha256": "4b7d1e031f94e9178120218e34c59a12715d2330282033ef9968cf97dd6578c6"
+    },
+    {
+      "path": "packages/storage/migrations/022-assistant-stream.sql",
+      "bytes": 1865,
+      "sha256": "1976f0a093cab0ace0c6e82917d1f124694fbd6f66b679065aa400c826e90e48"
+    },
+    {
+      "path": "packages/storage/migrations/023-plugin-package-fetches.sql",
+      "bytes": 2975,
+      "sha256": "709eed00d46817b52b8767fb52dea8db02af7f3e413af269f7bef7dbeb0612c9"
+    },
+    {
+      "path": "packages/storage/migrations/024-active-steering.sql",
+      "bytes": 1998,
+      "sha256": "551e54f031591dc22b129cb66097132e94cd3f0828441d60acf6248fac555fac"
+    },
+    {
+      "path": "packages/storage/migrations/026-attachment-resources.sql",
+      "bytes": 2994,
+      "sha256": "3c0aaec5f592951d3fe1784df6eb4a59caef44784c4d4015cb6f53d17309018d"
+    },
+    {
+      "path": "packages/storage/migrations/028-browser-sessions.sql",
+      "bytes": 875,
+      "sha256": "b1f8d61acbd6692186bd544421b110926c94311556395e39ad09936c7b2498d1"
+    },
+    {
+      "path": "packages/storage/migrations/029-plugin-material-installs.sql",
+      "bytes": 4435,
+      "sha256": "8713dab5cb3c3169b9f8c71b6e5a2ab81cf2065818bc3a24add3a0400a8d90ea"
+    },
+    {
+      "path": "packages/storage/migrations/032-claude-message-settings.sql",
+      "bytes": 3892,
+      "sha256": "97673f4ce120cb26f55f35881977810e516199b97cd8a1fe9fea2ebd24b5c9ed"
+    },
+    {
+      "path": "plans/flow-001-architecture/plan.md",
+      "bytes": 57798,
+      "sha256": "a39f59e9440b578bc28e917437c24a15aa7c2b21ef82cbfb55d5e6052e0da4d3"
+    },
+    {
+      "path": "plans/flow-002-provider-harness/plan.md",
+      "bytes": 25334,
+      "sha256": "086a6a11d4bcaada8a56345a9742d35a75f2ffb2faecc16ae305b2236bc6cd5c"
+    },
+    {
+      "path": "plans/templates/status.md",
+      "bytes": 2378,
+      "sha256": "285b484f43d1cc55f802356fafcdb891443f9bdcadb7f4b0b10f0f0c37632bfb"
+    },
+    {
+      "path": "plans/x01-plugin-management/plan.md",
+      "bytes": 18514,
+      "sha256": "c00b8f855a293203ba7bed64e613701bc6c403729f1b9911079fcdff6ce027b7"
+    },
+    {
+      "path": "tools/personal-preview/web-release.mjs",
+      "bytes": 12759,
+      "sha256": "98044797b6ab87bea02d390217c669c8594ae62b010a840d5c97f5d597df1674"
+    }
+  ],
+  "limitedStaticRegexAnchorComparison": {
+    "count": 157,
+    "items": [
+      {
+        "testName": "fixed snapshot separates integrated Web and center capabilities from later UI work",
+        "path": "apps/web/src/App.tsx",
+        "regexLiteral": "ConversationThread",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "fixed snapshot separates integrated Web and center capabilities from later UI work",
+        "path": "apps/web/src/plugin-integration/react.tsx",
+        "regexLiteral": "import\\(\"\\.\\.\\/plugin-management\\/PluginManagement\"\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "fixed snapshot separates integrated Web and center capabilities from later UI work",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "ConversationQueue projection=\\{projection.queue\\}",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "fixed snapshot separates integrated Web and center capabilities from later UI work",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "runtime.thread.composer.send\\(\\{ startRun: intent !== \"queue\" \\}\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "fixed snapshot separates integrated Web and center capabilities from later UI work",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "ExecutionProfilePicker",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "fixed snapshot separates integrated Web and center capabilities from later UI work",
+        "path": "apps/server/src/conversations/admission.ts",
+        "regexLiteral": "flow\\.conversation_turns",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "integrated queue and graph proposal descriptions preserve explicit admission and application",
+        "path": "apps/server/src/conversation-queue/queries.ts",
+        "regexLiteral": "state='waiting' AND sequence>\\$2",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "integrated queue and graph proposal descriptions preserve explicit admission and application",
+        "path": "apps/server/src/conversation-queue/queries.ts",
+        "regexLiteral": "queueRevision: conversation.queue_revision",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "integrated queue and graph proposal descriptions preserve explicit admission and application",
+        "path": "apps/server/src/conversations/admission.ts",
+        "regexLiteral": "conversation_resume_unavailable",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "integrated queue and graph proposal descriptions preserve explicit admission and application",
+        "path": "apps/server/src/conversation-queue/controls.ts",
+        "regexLiteral": "loadConversation\\(client, conversationId, true\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "integrated queue and graph proposal descriptions preserve explicit admission and application",
+        "path": "apps/server/src/conversation-queue/controls.ts",
+        "regexLiteral": "expectedTaskId",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "integrated queue and graph proposal descriptions preserve explicit admission and application",
+        "path": "apps/server/src/goal-graph-proposals/store.ts",
+        "regexLiteral": "proposal_mismatch",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "integrated queue and graph proposal descriptions preserve explicit admission and application",
+        "path": "apps/server/src/goal-graph-proposals/store.ts",
+        "regexLiteral": "stale_project_revision",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "integrated queue and graph proposal descriptions preserve explicit admission and application",
+        "path": "apps/server/src/goal-graph-proposals/store.ts",
+        "regexLiteral": "applyProjectCommand",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "integrated queue and graph proposal descriptions preserve explicit admission and application",
+        "path": "apps/server/src/goal-graph-proposals/index.ts",
+        "regexLiteral": "014-goal-graph-proposals.sql",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+        "path": "apps/runner/src/protocol-dispatch/index.ts",
+        "regexLiteral": "returnImmediately: true, historyLength: 0",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+        "path": "apps/runner/src/protocol-dispatch/index.ts",
+        "regexLiteral": "peer.snapshot\\(\\{ id: state.intent.remoteTaskId!, historyLength: 0 \\}",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+        "path": "apps/runner/src/protocol-dispatch/index.ts",
+        "regexLiteral": "unsupported interaction or reconciliation",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+        "path": "apps/runner/src/protocol-dispatch/index.ts",
+        "regexLiteral": "client.protocolUncertain",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+        "path": "apps/runner/src/runtime.ts",
+        "regexLiteral": "const completion = execute\\(assignment",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+        "path": "apps/runner/src/runtime.ts",
+        "regexLiteral": "const active = new Map",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+        "path": "apps/runner/src/runtime.ts",
+        "regexLiteral": "active.size >= \\(options.maxConcurrentAttempts \\?\\? 1\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+        "path": "apps/runner/src/runtime.ts",
+        "regexLiteral": "journal.unresolved\\(new Set\\(active.keys\\(\\)\\)\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+        "path": "apps/runner/src/concurrency-configuration.ts",
+        "regexLiteral": "raw === undefined \\? 1",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+        "path": "apps/runner/src/concurrency-configuration.ts",
+        "regexLiteral": "limit > 16",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+        "path": "apps/runner/src/concurrency-configuration.ts",
+        "regexLiteral": "mode === 'a2a' && limit !== 1",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+        "path": "apps/runner/src/main.ts",
+        "regexLiteral": "FLOW_RUNNER_MAX_CONCURRENT_ATTEMPTS",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+        "path": "apps/server/src/shutdown/index.ts",
+        "regexLiteral": "unacknowledged outcomes unknown",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/server/src/knowledge/search.ts",
+        "regexLiteral": "v.version=s.current_version",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/server/src/knowledge/search.ts",
+        "regexLiteral": "WHERE s.project_id=\\$1",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/server/src/knowledge/search.ts",
+        "regexLiteral": "plainto_tsquery\\('simple'",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/server/src/knowledge/search.ts",
+        "regexLiteral": "locator: \\{ kind: 'utf8-bytes'",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/server/src/conversation-context/store.ts",
+        "regexLiteral": "resolveCitationsInTransaction\\(client, projectId, citations\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/server/src/conversation-context/store.ts",
+        "regexLiteral": "conversation_execution_inputs",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/server/src/conversation-context/store.ts",
+        "regexLiteral": "input.conversation_id !== conversationId",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/server/src/conversation-context/store.ts",
+        "regexLiteral": "WHERE id=\\$1 AND conversation_id=\\$2",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/web/src/conversations/projection.ts",
+        "regexLiteral": "projectId: value.projectId",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "<KnowledgeComposer",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "knowledge.capture\\(\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "projection.queue.enqueue\\(captured.text, captured.selection.knowledge, captured.material\\?\\.capture.attachments\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "projection.send\\(captured.text, captured.creation, captured.selection.knowledge, captured.material\\?\\.capture.attachments\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "projection.prepare\\(creation\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/web/src/plugin-integration/knowledge.tsx",
+        "regexLiteral": "controller\\?\\.freeze\\(\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/web/src/plugin-integration/knowledge.tsx",
+        "regexLiteral": "selected",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+        "path": "apps/web/src/conversation-context/receipts.ts",
+        "regexLiteral": "assertContextReceiptMatches",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "graph run authority and native graph tools retain separate purposes and bounded commands",
+        "path": "apps/server/src/goal-graph-runs/runner.ts",
+        "regexLiteral": "withRunnerAuthority",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "graph run authority and native graph tools retain separate purposes and bounded commands",
+        "path": "apps/server/src/goal-graph-runs/runner.ts",
+        "regexLiteral": "maxApplications === 0",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "graph run authority and native graph tools retain separate purposes and bounded commands",
+        "path": "apps/server/src/goal-graph-runs/runner.ts",
+        "regexLiteral": "commandInTransaction",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "graph run authority and native graph tools retain separate purposes and bounded commands",
+        "path": "apps/server/src/goal-graph-runs/runner.ts",
+        "regexLiteral": "stale_project_revision",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "graph run authority and native graph tools retain separate purposes and bounded commands",
+        "path": "apps/runner/src/goal-graph-tools/bind.ts",
+        "regexLiteral": "assertNativeGrant",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "graph run authority and native graph tools retain separate purposes and bounded commands",
+        "path": "apps/runner/src/goal-graph-tools/bind.ts",
+        "regexLiteral": "ownedCalls",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "graph run authority and native graph tools retain separate purposes and bounded commands",
+        "path": "apps/runner/src/runtime.ts",
+        "regexLiteral": "bindGraphToolCapability",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "graph run authority and native graph tools retain separate purposes and bounded commands",
+        "path": "apps/runner/src/claude.ts",
+        "regexLiteral": "options.goalTools && options.goalGraphTools",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "graph run authority and native graph tools retain separate purposes and bounded commands",
+        "path": "apps/web/src/execution-profiles/selection.ts",
+        "regexLiteral": "configured-readonly",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "package download is opt-in durable work and does not install or execute plugins",
+        "path": "apps/server/src/index.ts",
+        "regexLiteral": "if \\(options.packageFetchHost\\) packageWorker = await startPackageFetchWorker",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "package download is opt-in durable work and does not install or execute plugins",
+        "path": "apps/server/src/index.ts",
+        "regexLiteral": "if \\(options.packageFetchHost\\) registerPackageFetchRoutes",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "package download is opt-in durable work and does not install or execute plugins",
+        "path": "apps/server/src/main.ts",
+        "regexLiteral": "FLOW_PACKAGE_FETCH_CONFIG",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "package download is opt-in durable work and does not install or execute plugins",
+        "path": "apps/server/src/plugin-package-fetches/worker.ts",
+        "regexLiteral": "pg_try_advisory_lock",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "package download is opt-in durable work and does not install or execute plugins",
+        "path": "apps/server/src/plugin-package-fetches/worker.ts",
+        "regexLiteral": "await pool.connect\\(\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "package download is opt-in durable work and does not install or execute plugins",
+        "path": "apps/server/src/plugin-package-fetches/worker.ts",
+        "regexLiteral": "job.recovery[\\s\\S]*readPackageArtifact",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "package download is opt-in durable work and does not install or execute plugins",
+        "path": "apps/server/src/package-artifacts/storage.ts",
+        "regexLiteral": "verifier.digest\\(\\).toString\\(\\) !== integrity",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "typed activity, renderer, streaming and steering are mounted in the same official Thread",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "<ConversationDataRenderers",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "typed activity, renderer, streaming and steering are mounted in the same official Thread",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "<ConversationActivities",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "typed activity, renderer, streaming and steering are mounted in the same official Thread",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "<ConversationStreams",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "typed activity, renderer, streaming and steering are mounted in the same official Thread",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "<ConversationSteering",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "typed activity, renderer, streaming and steering are mounted in the same official Thread",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "messageRepository: streamState.repository",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "typed activity, renderer, streaming and steering are mounted in the same official Thread",
+        "path": "apps/web/src/conversation-stream/messages.ts",
+        "regexLiteral": "streamConversationMessages",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "typed activity, renderer, streaming and steering are mounted in the same official Thread",
+        "path": "packages/contracts/src/native-activity.ts",
+        "regexLiteral": "65_536",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "typed activity, renderer, streaming and steering are mounted in the same official Thread",
+        "path": "packages/contracts/src/native-activity.ts",
+        "regexLiteral": "truncated body is only a UTF-8 prefix",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "typed activity, renderer, streaming and steering are mounted in the same official Thread",
+        "path": "packages/contracts/src/native-activity.ts",
+        "regexLiteral": "phase: z.enum\\(\\['observed', 'redacted', 'input-ready', 'running', 'succeeded', 'failed'\\]\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "typed activity, renderer, streaming and steering are mounted in the same official Thread",
+        "path": "apps/server/src/native-activity/store.ts",
+        "regexLiteral": "unresolved && ended\\?'unknown'",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "assistant patches have explicit negotiation and durable settlement, not a task success signal",
+        "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+        "regexLiteral": "assistantStreamReadable !== true",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "assistant patches have explicit negotiation and durable settlement, not a task success signal",
+        "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+        "regexLiteral": "supported = rawHeaders\\[index \\+ 1\\] === 'patch-v1'",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "assistant patches have explicit negotiation and durable settlement, not a task success signal",
+        "path": "apps/server/src/assistant-stream-compatibility/index.ts",
+        "regexLiteral": "return count === 1 && supported",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "assistant patches have explicit negotiation and durable settlement, not a task success signal",
+        "path": "apps/server/src/conversations/state.ts",
+        "regexLiteral": "liveAssistantText: false",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "assistant patches have explicit negotiation and durable settlement, not a task success signal",
+        "path": "packages/client/src/index.ts",
+        "regexLiteral": "X-Flow-Assistant-Stream",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "assistant patches have explicit negotiation and durable settlement, not a task success signal",
+        "path": "packages/contracts/src/assistant-stream.ts",
+        "regexLiteral": "ASSISTANT_PATCH_BYTES = 8192",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "assistant patches have explicit negotiation and durable settlement, not a task success signal",
+        "path": "packages/contracts/src/assistant-stream.ts",
+        "regexLiteral": "ASSISTANT_ATTEMPT_BYTES = 1048576",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "assistant patches have explicit negotiation and durable settlement, not a task success signal",
+        "path": "packages/contracts/src/assistant-stream.ts",
+        "regexLiteral": "block-complete is a native block observation, NOT a successful Flow turn",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "assistant patches have explicit negotiation and durable settlement, not a task success signal",
+        "path": "apps/server/src/assistant-stream/queries.ts",
+        "regexLiteral": "sequence>\\$3 ORDER BY sequence",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "assistant patches have explicit negotiation and durable settlement, not a task success signal",
+        "path": "apps/server/src/assistant-stream/queries.ts",
+        "regexLiteral": "patches.at\\(-1\\)\\?\\.sequence\\?\\?after",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "steering UI is mounted but defaults off and requires explicit trusted center and runner configuration",
+        "path": "apps/server/src/index.ts",
+        "regexLiteral": "acceptCommands: options.activeSteering === true",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "steering UI is mounted but defaults off and requires explicit trusted center and runner configuration",
+        "path": "apps/server/src/main.ts",
+        "regexLiteral": "parseActiveSteeringConfiguration\\(process.env.FLOW_ACTIVE_STEERING\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "steering UI is mounted but defaults off and requires explicit trusted center and runner configuration",
+        "path": "apps/server/src/active-steering-configuration.ts",
+        "regexLiteral": "raw === undefined \\|\\| raw === '0'",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "steering UI is mounted but defaults off and requires explicit trusted center and runner configuration",
+        "path": "apps/runner/src/runtime.ts",
+        "regexLiteral": "if \\(options.activeSteering && adapter.name === 'claude'\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "steering UI is mounted but defaults off and requires explicit trusted center and runner configuration",
+        "path": "apps/runner/src/main.ts",
+        "regexLiteral": "activeSteering: loaded.activeSteering",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "steering UI is mounted but defaults off and requires explicit trusted center and runner configuration",
+        "path": "apps/runner/src/configuration.ts",
+        "regexLiteral": "activeSteering: false",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "steering UI is mounted but defaults off and requires explicit trusted center and runner configuration",
+        "path": "apps/runner/src/configuration.ts",
+        "regexLiteral": "configured.descriptor.ports.steering === 'flow.active-steering.v1'",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "steering UI is mounted but defaults off and requires explicit trusted center and runner configuration",
+        "path": "apps/runner/src/claude.ts",
+        "regexLiteral": "if \\(context.steering\\) steering = new NativeSteeringHost",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "steering UI is mounted but defaults off and requires explicit trusted center and runner configuration",
+        "path": "packages/contracts/src/active-steering.ts",
+        "regexLiteral": "type SteeringStatus = 'accepted' \\| 'received' \\| 'observed-consumed' \\| 'rejected' \\| 'unknown'",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "steering UI is mounted but defaults off and requires explicit trusted center and runner configuration",
+        "path": "packages/contracts/src/active-steering.ts",
+        "regexLiteral": "never independent proof of model compliance",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "steering UI is mounted but defaults off and requires explicit trusted center and runner configuration",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "<ConversationSteering",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "steering UI is mounted but defaults off and requires explicit trusted center and runner configuration",
+        "path": "apps/web/src/plugin-integration/steering.tsx",
+        "regexLiteral": "steeringAdmission",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "TUI and Codex source exists with explicit limits; production loader is not guessed from the adapter",
+        "path": "apps/tui/src/main.tsx",
+        "regexLiteral": "createInteractionController",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "TUI and Codex source exists with explicit limits; production loader is not guessed from the adapter",
+        "path": "apps/tui/src/main.tsx",
+        "regexLiteral": "FlowClient",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "TUI and Codex source exists with explicit limits; production loader is not guessed from the adapter",
+        "path": "packages/interaction/src/controller.ts",
+        "regexLiteral": "recover",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "TUI and Codex source exists with explicit limits; production loader is not guessed from the adapter",
+        "path": "apps/runner/src/native-harness/codex/index.ts",
+        "regexLiteral": "createTransport: CodexTransportFactory",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "TUI and Codex source exists with explicit limits; production loader is not guessed from the adapter",
+        "path": "apps/runner/src/native-harness/codex/index.ts",
+        "regexLiteral": "describeNativeHarness",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "TUI and Codex source exists with explicit limits; production loader is not guessed from the adapter",
+        "path": "apps/runner/src/configuration.ts",
+        "regexLiteral": "configureClaudeHarness",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "TUI and Codex source exists with explicit limits; production loader is not guessed from the adapter",
+        "path": "apps/runner/src/configuration.ts",
+        "regexLiteral": "loadSelectedRunnerConfiguration",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "TUI and Codex source exists with explicit limits; production loader is not guessed from the adapter",
+        "path": "apps/runner/src/configuration.ts",
+        "regexLiteral": "configureCodexLaunch",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "TUI and Codex source exists with explicit limits; production loader is not guessed from the adapter",
+        "path": "apps/runner/src/main.ts",
+        "regexLiteral": "loadRunnerConfiguration\\(process.env.FLOW_CLAUDE_MATERIALS_FILE\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "TUI and Codex source exists with explicit limits; production loader is not guessed from the adapter",
+        "path": "tools/personal-preview/web-release.mjs",
+        "regexLiteral": "verifyWebArtifact",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "unified goal reader and shared interaction controller do not create a second scheduler",
+        "path": "apps/server/src/goal-delivery/index.ts",
+        "regexLiteral": "true\\);",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "unified goal reader and shared interaction controller do not create a second scheduler",
+        "path": "packages/interaction/src/goal/index.ts",
+        "regexLiteral": "createGoalSession",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "unified goal reader and shared interaction controller do not create a second scheduler",
+        "path": "packages/interaction/src/goal/index.ts",
+        "regexLiteral": "recover",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "unified goal reader and shared interaction controller do not create a second scheduler",
+        "path": "apps/web/src/conversation-stream/projection.ts",
+        "regexLiteral": "@flow\\/interaction\\/stream",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "unified goal reader and shared interaction controller do not create a second scheduler",
+        "path": "apps/web/src/conversation-activity/native/projection.ts",
+        "regexLiteral": "@flow\\/interaction\\/activity",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "unified goal reader and shared interaction controller do not create a second scheduler",
+        "path": "packages/client/src/conversation-acknowledgement.ts",
+        "regexLiteral": "parseAttachmentContextReceipt",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "unified goal reader and shared interaction controller do not create a second scheduler",
+        "path": "apps/tui/src/main.tsx",
+        "regexLiteral": "createGoalTerminal\\(\\{ client, connectionId, goalId",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "unified goal reader and shared interaction controller do not create a second scheduler",
+        "path": "apps/tui/src/main.tsx",
+        "regexLiteral": "<GoalScreen controller=\\{goal\\}",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "unified goal reader and shared interaction controller do not create a second scheduler",
+        "path": "apps/tui/src/main.tsx",
+        "regexLiteral": "queue: client, taskControl: client",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "attachment and context history persistence have different identities and readiness limits",
+        "path": "apps/server/src/attachments/index.ts",
+        "regexLiteral": "026-attachment-resources.sql",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "attachment and context history persistence have different identities and readiness limits",
+        "path": "apps/server/src/context-transparency/migration.ts",
+        "regexLiteral": "027-context-observation-history.sql",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "attachment and context history persistence have different identities and readiness limits",
+        "path": "apps/server/src/conversation-context/store.ts",
+        "regexLiteral": "templateVersion: 2",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "attachment and context history persistence have different identities and readiness limits",
+        "path": "apps/server/src/conversation-context/store.ts",
+        "regexLiteral": "freezeAttachments",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "attachment and context history persistence have different identities and readiness limits",
+        "path": "apps/server/src/context-transparency/store.ts",
+        "regexLiteral": "ORDER BY c.event_sequence DESC LIMIT 1",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "attachment and context history persistence have different identities and readiness limits",
+        "path": "apps/server/src/context-transparency/store.ts",
+        "regexLiteral": "reason: 'history-only'",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "attachment and context history persistence have different identities and readiness limits",
+        "path": "apps/server/src/context-transparency/store.ts",
+        "regexLiteral": "if \\(context.templateVersion === 2\\) return \\{ executionInputDigest: context.executionInputDigest,",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "attachment and context history persistence have different identities and readiness limits",
+        "path": "apps/server/src/context-transparency/store.ts",
+        "regexLiteral": "materialRevisionDigest: null, materials: \\{ state: 'unknown', reason: 'metadata-unavailable' \\}",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "attachment and context history persistence have different identities and readiness limits",
+        "path": "apps/server/src/context-transparency/store.ts",
+        "regexLiteral": "state: 'known', sources: context.sources.map",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "apps/runner/src/main.ts",
+        "regexLiteral": "FLOW_ENGINEERING_SETUP_FILE",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "apps/runner/src/engineering/setup.ts",
+        "regexLiteral": "engineering-fixture",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "apps/runner/src/engineering/native-writer.ts",
+        "regexLiteral": "NativeWriteAuthority",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "apps/runner/src/engineering/native-writer.ts",
+        "regexLiteral": "locked-no-fallback",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "apps/runner/src/engineering/calculator-receipt.ts",
+        "regexLiteral": "not-attested",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "apps/server/src/engineering/verification.ts",
+        "regexLiteral": "engineeringReceiptSchema.parse",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "apps/server/src/evidence.ts",
+        "regexLiteral": "flow.engineering.native",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "apps/server/src/engineering/verification.ts",
+        "regexLiteral": "task.submission.engineering\\?\\.protocol === 'flow.engineering.v2'",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "apps/server/src/engineering/verification.ts",
+        "regexLiteral": "await assertNativeEngineeringVerification\\(client, task, attemptId, event, content\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "apps/server/src/engineering/verification.ts",
+        "regexLiteral": "artifact_version=\\$3",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "packages/contracts/src/engineering-native.ts",
+        "regexLiteral": "flow.engineering.native-receipt.v1",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "apps/server/src/engineering/native-profile.ts",
+        "regexLiteral": "host-qualification-required",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "apps/server/src/runners.ts",
+        "regexLiteral": "engineering-native",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "apps/runner/src/engineering/setup.ts",
+        "regexLiteral": "writeFile\\(join\\(directory, 'calculator.mjs'\\), recipe.fixedSource\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "engineering fixture, native write authority, trusted checker and center receipt are separate",
+        "path": "apps/runner/src/native-harness/codex/launch.ts",
+        "regexLiteral": "if \\(!createTransport\\) throw new Error",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "browser authentication capability and actual App bearer mounting remain distinct",
+        "path": "packages/client/src/index.ts",
+        "regexLiteral": "credentials: this.csrfToken \\? 'include' : 'omit'",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "browser authentication capability and actual App bearer mounting remain distinct",
+        "path": "packages/client/src/index.ts",
+        "regexLiteral": "headers.set\\(BROWSER_SESSION_CSRF_HEADER, csrf\\)",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "browser authentication capability and actual App bearer mounting remain distinct",
+        "path": "packages/contracts/src/browser-session.ts",
+        "regexLiteral": "X-Flow-CSRF",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "browser authentication capability and actual App bearer mounting remain distinct",
+        "path": "apps/web/src/App.tsx",
+        "regexLiteral": "new FlowClient\\(\\{ baseUrl, token, assistantStreamProtocol",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "browser authentication capability and actual App bearer mounting remain distinct",
+        "path": "apps/server/src/browser-session/index.ts",
+        "regexLiteral": "cookieOrigin",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "browser authentication capability and actual App bearer mounting remain distinct",
+        "path": "apps/server/src/browser-session/index.ts",
+        "regexLiteral": "trustedOrigins",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "static installation and host phase authorization do not imply the unintegrated enable chain",
+        "path": "apps/server/src/index.ts",
+        "regexLiteral": "if \\(options.pluginInstallHost\\) registerPluginInstallationRoutes",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "static installation and host phase authorization do not imply the unintegrated enable chain",
+        "path": "apps/runner/src/plugins/host.ts",
+        "regexLiteral": "OUTCOME_UNKNOWN",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "owner confirmation and bounded progression reuse the existing center authorities",
+        "path": "apps/server/src/goal-progression/advance.ts",
+        "regexLiteral": "limit > 20",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "owner confirmation and bounded progression reuse the existing center authorities",
+        "path": "apps/server/src/goal-progression/advance.ts",
+        "regexLiteral": "await executeGoalNode\\(",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "owner confirmation and bounded progression reuse the existing center authorities",
+        "path": "apps/server/src/goal-progression/advance.ts",
+        "regexLiteral": "halted",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "owner confirmation and bounded progression reuse the existing center authorities",
+        "path": "apps/server/src/goal-plan-confirmation/store.ts",
+        "regexLiteral": "proposal\\.proposal_digest !== input\\.proposalDigest",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "owner confirmation and bounded progression reuse the existing center authorities",
+        "path": "apps/server/src/goal-plan-confirmation/store.ts",
+        "regexLiteral": "applyProposalInTransaction",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "owner confirmation and bounded progression reuse the existing center authorities",
+        "path": "apps/server/src/goal-plan-confirmation/store.ts",
+        "regexLiteral": "authorizeProgressionInTransaction",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "frozen Claude message settings are distinct from the real Web host and unintegrated TUI settings",
+        "path": "apps/server/src/conversations/message-settings.ts",
+        "regexLiteral": "checkClaudeTurnSettingsAllowed\\(snapshot",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "frozen Claude message settings are distinct from the real Web host and unintegrated TUI settings",
+        "path": "apps/server/src/conversations/message-settings.ts",
+        "regexLiteral": "message_settings_profile_mismatch",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "frozen Claude message settings are distinct from the real Web host and unintegrated TUI settings",
+        "path": "apps/server/src/conversations/message-settings.ts",
+        "regexLiteral": "message_settings_resume_unsupported",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "frozen Claude message settings are distinct from the real Web host and unintegrated TUI settings",
+        "path": "apps/runner/src/claude-message-settings.ts",
+        "regexLiteral": "requested",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "frozen Claude message settings are distinct from the real Web host and unintegrated TUI settings",
+        "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "regexLiteral": "export function MessageSettingsPicker",
+        "expected": "match",
+        "matchedExpected": true
+      },
+      {
+        "testName": "frozen Claude message settings are distinct from the real Web host and unintegrated TUI settings",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "MessageSettingsPicker",
+        "expected": "doesNotMatch",
+        "matchedExpected": true
+      },
+      {
+        "testName": "frozen Claude message settings are distinct from the real Web host and unintegrated TUI settings",
+        "path": "apps/web/src/conversations/ConversationThread.tsx",
+        "regexLiteral": "projection.send\\(captured.text, captured.creation, captured.selection.knowledge, captured.material\\?\\.capture.attachments\\)",
+        "expected": "match",
+        "matchedExpected": true
+      }
+    ],
+    "errors": [],
+    "limit": "Python comparison of recognized literal source regex anchors only; not execution of JS syntax, test bodies, assertions over graphs, HTTP or Node imports."
+  },
+  "historicalEvidenceUnchanged": [
+    {
+      "path": "docs/evidence/d06/browser-check.mjs",
+      "bytes": 3738,
+      "sha256": "3abd0ea9631aa4421eac849c9f8948f3233344fb77c93234af191eb764b65646"
+    },
+    {
+      "path": "docs/evidence/d06/browser-checks.json",
+      "bytes": 1415,
+      "sha256": "b1d12abd41b0de3d917c22c19123496b3dd422420c8673a1a42542f7ddcbfe54"
+    },
+    {
+      "path": "docs/evidence/d06/context/README.md",
+      "bytes": 2878,
+      "sha256": "81362c56c3f9d6aeede3f8f34adb795bd75184acd19d01b4bfc53782a2050773"
+    },
+    {
+      "path": "docs/evidence/d06/context/browser-check.mjs",
+      "bytes": 5970,
+      "sha256": "a7723ef896a8bdeeedce0e7fa323a1bf1221967b3fd8678cd1d0f420735cdcbf"
+    },
+    {
+      "path": "docs/evidence/d06/context/browser-checks.json",
+      "bytes": 3117,
+      "sha256": "c2fc6bf03924bbea6611b32f057aaa38be9a5f9d30177babdbb771d6d4b34235"
+    },
+    {
+      "path": "docs/evidence/d06/context/browser.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/d06/context/dashboard-excerpt.json",
+      "bytes": 9448,
+      "sha256": "8754cf409ba6b5b04bac8336159ed7840dcd5d2b2aa3f8865c404ff8442bbece"
+    },
+    {
+      "path": "docs/evidence/d06/context/data-dark-narrow.png",
+      "bytes": 120897,
+      "sha256": "a4623d847cea63141a8f7469c15e12905519fc8e072f7dc6710c4ed7a4d68b84"
+    },
+    {
+      "path": "docs/evidence/d06/context/data-dark.png",
+      "bytes": 176567,
+      "sha256": "b5fffd252b71467d3a46282d983dfb77fc6f70790e7868300b8f76302109317d"
+    },
+    {
+      "path": "docs/evidence/d06/context/data-light-narrow.png",
+      "bytes": 115390,
+      "sha256": "5f37e9bb3b607fbe4bba69a62f05d93e2376b323fd1cc22e993996dba71d9d20"
+    },
+    {
+      "path": "docs/evidence/d06/context/direct.log",
+      "bytes": 1172,
+      "sha256": "6b56eaf535ab8f673e6ae33239b8b45abd1ed516e1cf070688e294f181a61634"
+    },
+    {
+      "path": "docs/evidence/d06/context/first-direct.log",
+      "bytes": 23517,
+      "sha256": "47493cf175deab9184fdbf8afcdb64aef17f157c9bb282f410d4d7f772b35e26"
+    },
+    {
+      "path": "docs/evidence/d06/context/historical-eb-plan.txt",
+      "bytes": 3165,
+      "sha256": "0229b762a6f83303683f310d0251f879680a0ae48c745426c977fd1dda376771"
+    },
+    {
+      "path": "docs/evidence/d06/context/historical-eb-review.txt",
+      "bytes": 3306,
+      "sha256": "6dfc8e405039dab03e988a540deb143ab780800c15c66f4ad731c21dbc9f0486"
+    },
+    {
+      "path": "docs/evidence/d06/context/historical-eb-status.txt",
+      "bytes": 4062,
+      "sha256": "ca81e369d873153ca47b9e85ed9746647c2c1160b83611becc7888a3d9239b87"
+    },
+    {
+      "path": "docs/evidence/d06/context/history.md",
+      "bytes": 581,
+      "sha256": "b0c15fabbda7806cb66b4f8f07c883f8ce81bf9410e88587f70cdbd97e7a85cc"
+    },
+    {
+      "path": "docs/evidence/d06/context/modules-light.png",
+      "bytes": 210625,
+      "sha256": "0a3518be7ade4a0dc96d2a74817282cda4970b5df621c0a4ac9255c034e31639"
+    },
+    {
+      "path": "docs/evidence/d06/context/preview.mjs",
+      "bytes": 717,
+      "sha256": "c139f0fd91b3150e2f08a76b677c03c953bf8bd209a1da0303a37e16c2c13742"
+    },
+    {
+      "path": "docs/evidence/d06/context/quality.md",
+      "bytes": 2937,
+      "sha256": "49d2d9bfee014ac7f4b33fc1121510541ea8d1f4cda95a2ab4630e528b5b827e"
+    },
+    {
+      "path": "docs/evidence/d06/context/review-fix-direct.log",
+      "bytes": 1166,
+      "sha256": "dd16314a0f4547f0615d4933b425775ebc868e6b503c2edbbaf8f1f463a44fed"
+    },
+    {
+      "path": "docs/evidence/d06/context/source-audit-before-review.json",
+      "bytes": 23007,
+      "sha256": "d21a5130a9bcaa199808f889c3c11656aa77862ef3f80800e564d3a3a26fc217"
+    },
+    {
+      "path": "docs/evidence/d06/context/source-audit.json",
+      "bytes": 22945,
+      "sha256": "839c93e6658df9b80377c34c08d8079155f50ec8fdaaf9f7463e5c9384a438d5"
+    },
+    {
+      "path": "docs/evidence/d06/context/source-audit.mjs",
+      "bytes": 4439,
+      "sha256": "47a4bad86b2e071534f6c24a5362dbaaaa8d87df86492610305ab1fa5bcde627"
+    },
+    {
+      "path": "docs/evidence/d06/context/source-binding-before-review.json",
+      "bytes": 3019,
+      "sha256": "cb3835fd4be1cbaa2a6fbb76c488c7b14d9fc723e249e95aaafe2b0d116f8839"
+    },
+    {
+      "path": "docs/evidence/d06/context/source-binding.json",
+      "bytes": 4227,
+      "sha256": "bc94290ff76a6ffb9be50b67c4bc91edb4024f2f1905e942cfb8e54629d4559a"
+    },
+    {
+      "path": "docs/evidence/d06/context/states-dark.png",
+      "bytes": 186605,
+      "sha256": "4dc5c9634790babe5e5598b0b1149c7ee9aef6197b864eb58d033f012accda71"
+    },
+    {
+      "path": "docs/evidence/d06/context/states-light.png",
+      "bytes": 186378,
+      "sha256": "8ff5f8cc10c1e12e1d5dd3d18a0de6fde6936629a27c36f9ddd8934c9767f154"
+    },
+    {
+      "path": "docs/evidence/d06/context/status-parser.json",
+      "bytes": 2694,
+      "sha256": "04786864bd79367574da4dd6b85629727a2bb57eb73f6a25a4f12654e3880470"
+    },
+    {
+      "path": "docs/evidence/d06/context/take-receipt.json",
+      "bytes": 723,
+      "sha256": "c4ba9ea76218142854ca7c2c4082efa0a676c0b0e2f53a6674389a03b8c3d02f"
+    },
+    {
+      "path": "docs/evidence/d06/context/validation.md",
+      "bytes": 3614,
+      "sha256": "62a3989c95633114944b1de2f8b75ede50d8c3782ad752b1378399170ba9ed54"
+    },
+    {
+      "path": "docs/evidence/d06/current/README.md",
+      "bytes": 6455,
+      "sha256": "fd61a659baad84bbd1c46e471f7e8146ae29337ae2051b57f56fa1e27ae81bbe"
+    },
+    {
+      "path": "docs/evidence/d06/current/browser-check.mjs",
+      "bytes": 4450,
+      "sha256": "0741b0fb92be795412ea9f2e4deb75a8c24f2e42f815697d4ceae1dd8984af2f"
+    },
+    {
+      "path": "docs/evidence/d06/current/browser-checks.json",
+      "bytes": 1403,
+      "sha256": "bbb8a56b1d8c48dd1d8dc1e55b1e594df52efa86dd509783cc9f4661b71e556f"
+    },
+    {
+      "path": "docs/evidence/d06/current/browser-output.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/d06/current/data-dark-narrow.png",
+      "bytes": 117111,
+      "sha256": "1ed5563c4602adc6955b121bf4494c8e57e567b0a9a163373aabc2c1e9e8e751"
+    },
+    {
+      "path": "docs/evidence/d06/current/data-dark.png",
+      "bytes": 168207,
+      "sha256": "148cdb0abc34efcea3baecc65cecf3333c7c4c79d8f159f0784cfb795925866f"
+    },
+    {
+      "path": "docs/evidence/d06/current/data-light-narrow.png",
+      "bytes": 111559,
+      "sha256": "bbcd6d81997510bf7ffb0c9342be1182ec0d3762c5de918d00a7b7036c33fbf7"
+    },
+    {
+      "path": "docs/evidence/d06/current/fixed-source-audit.json",
+      "bytes": 19089,
+      "sha256": "b8005cbedd9fd9bfec2a9467a710bf40599770169b01aa14862d44ef58cb2b27"
+    },
+    {
+      "path": "docs/evidence/d06/current/historical-8f-plan.txt",
+      "bytes": 3794,
+      "sha256": "7e003d55d83f08e7cf645258ba22cf24ba3a3335aa2d57c8a262c41054947160"
+    },
+    {
+      "path": "docs/evidence/d06/current/historical-8f-review.txt",
+      "bytes": 3030,
+      "sha256": "2bb22a184aac18f0b234da3f2ca08bf7d9fbf7cc1818d696460174662ab581b0"
+    },
+    {
+      "path": "docs/evidence/d06/current/historical-8f-status.txt",
+      "bytes": 4038,
+      "sha256": "5dc0f3ddfe23a206ce3a1bcf990adcaf426a38b1487a036a7704cc967944f00b"
+    },
+    {
+      "path": "docs/evidence/d06/current/historical-index.md",
+      "bytes": 656,
+      "sha256": "c7d0755a63551c3d19914f76e32af0102890577746367647b34186c25b079d86"
+    },
+    {
+      "path": "docs/evidence/d06/current/initial-missing-dependency.txt",
+      "bytes": 1464,
+      "sha256": "6283b3efa82422fd22cc19246e7d662c545aee6d57450043a557de4c1d5cc0ed"
+    },
+    {
+      "path": "docs/evidence/d06/current/initial-source-location.txt",
+      "bytes": 9125,
+      "sha256": "a518b04502febd551dd465a269981ad62e3816473f4ef33a11fec8ca6be902d1"
+    },
+    {
+      "path": "docs/evidence/d06/current/install.txt",
+      "bytes": 597,
+      "sha256": "4a753814cc353ed382851a500e448f75ddc3165e42b365342431d6dfa654c99b"
+    },
+    {
+      "path": "docs/evidence/d06/current/modules-light.png",
+      "bytes": 182761,
+      "sha256": "06bb85e2060ce7b167d245ee68ed72b447b0c1c92f72d7ac15d82081f412bfee"
+    },
+    {
+      "path": "docs/evidence/d06/current/node-tests.txt",
+      "bytes": 861,
+      "sha256": "dd5b48bd81ab06bb5b74e52dd387f7b94a1a6b32b25548403f8411064ed44445"
+    },
+    {
+      "path": "docs/evidence/d06/current/quality.md",
+      "bytes": 3702,
+      "sha256": "fe253379d105189115515963ea40a1df1e97e6e78b2892fe2fc2904ad088c47e"
+    },
+    {
+      "path": "docs/evidence/d06/current/review-fix-browser-output.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/d06/current/review-fix-browser.json",
+      "bytes": 658,
+      "sha256": "8f4fadc2d6ebd137a7852cba72bf5c306bbbe0c7386a6d3bdf19b10b750160ff"
+    },
+    {
+      "path": "docs/evidence/d06/current/review-fix-check.mjs",
+      "bytes": 2404,
+      "sha256": "e38b5b28b554fba03bbc8f37fe05144f8b2f2ba520b7ec44d9ac89a2cf48dbc4"
+    },
+    {
+      "path": "docs/evidence/d06/current/review-fix-modules-dark-narrow.png",
+      "bytes": 132590,
+      "sha256": "6bc4dda8adf3e584749b0ced89b5127bf1c1899dad1ebf01973d09ef580effb0"
+    },
+    {
+      "path": "docs/evidence/d06/current/review-fix-modules-light.png",
+      "bytes": 192759,
+      "sha256": "b12553291ba92b86fa586f57a9ee13a754a2998ba4a4a0269bd481b93f204cfa"
+    },
+    {
+      "path": "docs/evidence/d06/current/review-fix-node-tests.txt",
+      "bytes": 859,
+      "sha256": "51c91733db99b333e78f91034310702084cca57d8bd6a3c583a4f50680759495"
+    },
+    {
+      "path": "docs/evidence/d06/current/review-fix-svg-read-failure.txt",
+      "bytes": 419,
+      "sha256": "6f599f53fd9767fb8c57477b8532d61416a9473fe99f12114b9444191bc27b82"
+    },
+    {
+      "path": "docs/evidence/d06/current/source-binding.json",
+      "bytes": 2450,
+      "sha256": "76c084e68d74a5be95527a0e27ffe3dbf693f76a58d46e240ca7d8b523dac99f"
+    },
+    {
+      "path": "docs/evidence/d06/current/states-dark.png",
+      "bytes": 186990,
+      "sha256": "387a75ee6ae4849cca12d92f17be81bdb2ae1051cc76612e87c33ab32b52f8b0"
+    },
+    {
+      "path": "docs/evidence/d06/current/states-light.png",
+      "bytes": 186550,
+      "sha256": "58b166eeed51b41e6852d69895fd1a8b5fa61dc83895a31ad9376a24e3ffd3fe"
+    },
+    {
+      "path": "docs/evidence/d06/current/take-receipt.json",
+      "bytes": 773,
+      "sha256": "3ae9b085f981577e7398d0d96c9e751f2f452e643ca6146cd076e4b68f726232"
+    },
+    {
+      "path": "docs/evidence/d06/d05-release-receipt.json",
+      "bytes": 741,
+      "sha256": "132ec79d78d2758ccda9e04c9bfa75886dd55cd92195b8e63b4de6b31b999c31"
+    },
+    {
+      "path": "docs/evidence/d06/dashboard-observation.json",
+      "bytes": 9153,
+      "sha256": "2e4876b84d54dbf746686f1a2c09e211f0b63a8038b95b657cc8c3087ac1ca7d"
+    },
+    {
+      "path": "docs/evidence/d06/data-dark-narrow.png",
+      "bytes": 113264,
+      "sha256": "150dcafd9355ebd6861238ac815acd209eae8c644377b15b48bb4cb2915113db"
+    },
+    {
+      "path": "docs/evidence/d06/data-dark.png",
+      "bytes": 164365,
+      "sha256": "bf605a08c49df4ede05872e5e1b81cb5ed55881ce7ab218c82897178791c51c2"
+    },
+    {
+      "path": "docs/evidence/d06/data-light-narrow.png",
+      "bytes": 107973,
+      "sha256": "ef25431a1a66880a27a694c6bc326c01deed6a6eb0b996ad2a2a6ee81fe84ed9"
+    },
+    {
+      "path": "docs/evidence/d06/modules-light.png",
+      "bytes": 149213,
+      "sha256": "7bed482e77955d38f9f15e5d4f85bbe4ea24a16f2f4449ae84846046c09f49e6"
+    },
+    {
+      "path": "docs/evidence/d06/node-tests.txt",
+      "bytes": 645,
+      "sha256": "e586d8c904c81c5c43ca74d2c4ac96551f08ce281487a7e27b3b4e6e39bb11c4"
+    },
+    {
+      "path": "docs/evidence/d06/preview.mjs",
+      "bytes": 474,
+      "sha256": "1513adad96d85e826e7358c3d4d724a286d2f5b2e2ab35b0fd349ac892435ab2"
+    },
+    {
+      "path": "docs/evidence/d06/quality.md",
+      "bytes": 3735,
+      "sha256": "c05c8e4d85e6498d36a940c90d8fabf0114ccd748d70dbbddf5531458ae559b5"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/README.md",
+      "bytes": 2156,
+      "sha256": "0d22c7be773ad31d4472d583b42288b6405593924b3845c52b308f8f760dda4d"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/browser-check.mjs",
+      "bytes": 7502,
+      "sha256": "9709c468d44d1fe8e637b73d853f1224a0a5fc2868f932e678140df35d04aabf"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/browser-checks.json",
+      "bytes": 3837,
+      "sha256": "24f86e17c743e9eaa2a55f43446f850ced0b14e87633bb6f9b94a598c4ce2918"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/checks.json",
+      "bytes": 2958,
+      "sha256": "b8440b8d2123e23be1d1accfd85494443a8b38a1ca626d4a1c173a99eb893ede"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/data-dark-narrow.png",
+      "bytes": 124218,
+      "sha256": "7f14bf160daf5053046bbd0b431b220bb09e1a9407a53544a81e44dfde1db9b7"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/data-dark.png",
+      "bytes": 172529,
+      "sha256": "180e65ff383d46accc2cd64d6c3674fdcd4b315f0a3a4be526391df474675ae6"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/data-light-narrow.png",
+      "bytes": 118970,
+      "sha256": "8b64aa4295695b38768f8ea7822f48028f416f76c290edf9e75eb26f0a530899"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/direct.log",
+      "bytes": 1765,
+      "sha256": "1d47720764a3fc91c5053e33a2c0bf1f3c9de5cb4b687e468b2674513f0293f8"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/final-browser.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/final-direct.log",
+      "bytes": 1765,
+      "sha256": "9f7c7723d326e6dda30dddac39130f6487632cc73651286c8a5dae5c022f5773"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/final-source-audit.log",
+      "bytes": 101,
+      "sha256": "29f1aa594605d1cb50955e1a2dd119c0ea84e6988de45e5e79f3bc1d6fdd9990"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/first-browser-checks.json",
+      "bytes": 2806,
+      "sha256": "6f233d5fc1ad86bd5e148018f555e6f06d2da3418b4378d94b8403225534105a"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/first-browser.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/first-direct.log",
+      "bytes": 3449,
+      "sha256": "cf78b6bed908c9165c0bc6b4c29c1debe489c496a4b11554f68120d38085a570"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/first-source-audit.log",
+      "bytes": 679,
+      "sha256": "2388dd24fbcf9b811541245225859e781804bd4d62194423f0b8b6bb54d9d0a6"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/historical-stream-plan.txt",
+      "bytes": 1844,
+      "sha256": "79a2b80850373914d4ba60b9e04f66c4fe30aa50df8ef81fccec93f084a6a71e"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/historical-stream-review.txt",
+      "bytes": 2366,
+      "sha256": "0dfe465ee372e9b35688ac22ae14058051455fab4fa7b872df945cc12f9796ef"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/historical-stream-status.txt",
+      "bytes": 3184,
+      "sha256": "4847fd43c486e50bc6745a779ec24fd16596862a14568bb2d59f8738149ceaa9"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/history.md",
+      "bytes": 561,
+      "sha256": "a1fb2ed597fb5dc1a96f1eaaa483631aa49ed422889ce5344a330d38845ed136"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/independent-node24.log",
+      "bytes": 1759,
+      "sha256": "2cb9dbd2c14189c81e8461599fd959e1bcafb5b33328229d07c3af2caf7d1029"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/independent-review.json",
+      "bytes": 1016,
+      "sha256": "01c186e32c46cd0c286c417fe385f3ee90e262db9a06a8c5eee1d0b101401b9e"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/install.log",
+      "bytes": 718,
+      "sha256": "b1dc9e4d1b8b100904790f07a75d262edf21be766ed616d3c91ea1d219b827dc"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/main-receipt.json",
+      "bytes": 1121,
+      "sha256": "2e58717683b7962c7c958f442aae78fd3454d7238c973ce7469f1feb98e0f0e4"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/metadata-check.json",
+      "bytes": 2838,
+      "sha256": "c7dc51249659d7c4af0594e822cd0a6607434ab9d70ccf39431420877591bfe8"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/modules-bottom-light.png",
+      "bytes": 204284,
+      "sha256": "9df4e34a77c44c0336e5ff933ddc715681dee88f835eb23050e798314a2c9a34"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/modules-light.png",
+      "bytes": 205094,
+      "sha256": "b34de33d1f26224ec8ad8ebcfe75d0c69eca01ba571efceb4345e47d94ebe63e"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/parent-authority.json",
+      "bytes": 552,
+      "sha256": "afbf824cc6680611fe1c4891b6d8e3dfe00f5598d349c4bc691e65d1f4a13390"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/parser.json",
+      "bytes": 3453,
+      "sha256": "66b42e95d6676a9df64457a0adc2e339885d4fdbe42aea94c8caf780b033b5d0"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/pre-wording-browser-checks.json",
+      "bytes": 3568,
+      "sha256": "8067cd443f5f98a4a70980bbfa9690465d1ae3e25b640bb3658b9414457f4284"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/pre-wording-direct.log",
+      "bytes": 1768,
+      "sha256": "a9056341749967a3f1705836c31c9a9273d33eb025e678d2dc6eac4ebeb38963"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/preflight-ledger.json",
+      "bytes": 85587,
+      "sha256": "809a50dab45732b60494650c4647a60abd5f82d91b4234e9445ed1b22455106d"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/preview.mjs",
+      "bytes": 717,
+      "sha256": "4ed4303abf13cb719db8f1a30ced5666fab1ba636fae09473951fc8830736e02"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/quality.md",
+      "bytes": 2853,
+      "sha256": "8d3bf4354302ae2ecfd6fca8432591f63d96c59a80af29e30569cc38f4d6b3c3"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/runtime-light.png",
+      "bytes": 158804,
+      "sha256": "3b98b76c97d880ab5c72846e6380381d7197d8a34350246e9fdcba7cd143134c"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/skills.json",
+      "bytes": 1146,
+      "sha256": "1f681109b4154e4c4aebe161d559c161990b5f85ffece4e89539e2ac8bb5e87d"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/source-audit.json",
+      "bytes": 39904,
+      "sha256": "51086d27299c1c8cd9b44dc9192c557b810908b01ad8369feb18ea0b2f79d09b"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/source-audit.log",
+      "bytes": 101,
+      "sha256": "29f1aa594605d1cb50955e1a2dd119c0ea84e6988de45e5e79f3bc1d6fdd9990"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/source-audit.mjs",
+      "bytes": 8539,
+      "sha256": "e11e138c8ef2844725b378b50328adb9544c6cf4e621dde9351e26a287b33d83"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/source-binding.json",
+      "bytes": 3839,
+      "sha256": "4c4599e9b411bcf82a3b251550959d91b41ab0a5b3a4b29bf361f33b6023d55c"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/states-dark.png",
+      "bytes": 184124,
+      "sha256": "5170f1139335d1160559ab034a99e264d6173f240d0464ee7e97722699de59ce"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/states-light.png",
+      "bytes": 185256,
+      "sha256": "5b5154e697ebd966e44e0f3e1396be520b548700eaa0819e0cac20a6b213f843"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/take-receipt.json",
+      "bytes": 715,
+      "sha256": "68036e307bb9b4757f1c78dd443b007af41580b7de6338afa0b963cadd63ef7d"
+    },
+    {
+      "path": "docs/evidence/d06/runtime/validation.md",
+      "bytes": 2754,
+      "sha256": "8805d2a4dc099c40ff974e2c4699727a399d8710f16f59f6d07ecc28a8fd92e8"
+    },
+    {
+      "path": "docs/evidence/d06/skills.json",
+      "bytes": 939,
+      "sha256": "e519861a2a885ee5d6f2f1af38f8c56c61cadb0aa5f186cebd64d9fd991e5c31"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/README.md",
+      "bytes": 1990,
+      "sha256": "3925bab93832a0976d82241843f0d6156d46703bca82c8d5b7c2fbf46fea5986"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/authorization.md",
+      "bytes": 2160,
+      "sha256": "f4fe6bb6fae74405abff3d8217ed6918d7428fd27742f794e9223c00fa592771"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/browser-check.mjs",
+      "bytes": 9367,
+      "sha256": "bbaf8bac952ad7152dd9c915d1f859f66f4ef18beff21f2c3052f9ca806a4ce1"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/browser-checks.json",
+      "bytes": 2967,
+      "sha256": "43a5aa4b2d2ea2b7836b882e98a810066a8c3384d5881b40daf444961a670dc7"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/browser.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/candidate.json",
+      "bytes": 3661,
+      "sha256": "0b58acd20cc54160337262a77fabcef43b4ed5f66d982d08ed9bec7060a8f22b"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/data-dark-narrow.png",
+      "bytes": 123135,
+      "sha256": "769eb3117f59dcfc7941dc1dbccff31c9f02cb4e9bdc38efc2ae0f82b85f6b9f"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/data-dark.png",
+      "bytes": 169309,
+      "sha256": "748a884d6142f1e1613a4de46581dc78f820d4ebe2e3891f34c71b2917d1eebc"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/data-light-narrow.png",
+      "bytes": 117723,
+      "sha256": "e077e66cfe09de9faad5cf966613b5907ddb52f6fb7bdb8568eeed644d2af740"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/delivery-parser.json",
+      "bytes": 1886,
+      "sha256": "fd308354d82c87a15c939562976c948ab8482b112397f79527cbd3766981a1a6"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/independent-audit.json",
+      "bytes": 3353,
+      "sha256": "07e7046ccddfcb472fe2a9a2a2eb3d6d8fb52eea2f3b7b37bc664bbd8a6f191f"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/independent-tests.log",
+      "bytes": 2087,
+      "sha256": "e96d09854b99f39fb9a47eca4576718c126384fbeef4309ee514d5777be86fd1"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/interface.md",
+      "bytes": 1327,
+      "sha256": "87298a15eed849ef68e0c524d6f34df9fd3eb0f79c7f13b324fb37a7d28f5be0"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/links.json",
+      "bytes": 35,
+      "sha256": "2cee3ec232e5ae09ae38f8df7fc5e77dee9f75ef48a6222e5379c9fbde1dd25c"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/main-intake-receipt.json",
+      "bytes": 5072,
+      "sha256": "0538b101935f0469888b255ef2a487cdd61bcc5abb06b2827e897c214dc2cf89"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/main-observation.json",
+      "bytes": 2931,
+      "sha256": "65ef6b381e548b089086f1ee1911593b742ba69945fa3e02b67317c170482879"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/modules-bottom-light.png",
+      "bytes": 211421,
+      "sha256": "db39e80ed8bc774ee4fe7f36cca40d6edfc6621f60b87bc7032dcd6d4681eabb"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/modules-light.png",
+      "bytes": 205136,
+      "sha256": "3a967904a0f7947f45303db7ec5842343b8a1971a675421ed9055925203a9b60"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/node-final.log",
+      "bytes": 2092,
+      "sha256": "ff87cc3848d4ec45eb5578a0e73853cb306e6f419756970d7e8c1cd1c4c97dd9"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/node-first.log",
+      "bytes": 35222,
+      "sha256": "9f7f28ef04d45a59e2fddbff2ff89109215828f18036ebe9b4736dddf137109d"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/peer-source-review.json",
+      "bytes": 1697,
+      "sha256": "14884efd8a62f2c468c965b23d1a35f19256288016767f68d112f543d310abd4"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/preview.mjs",
+      "bytes": 1771,
+      "sha256": "3e4389f4c8237fc97f003e0ab9b7da16de433569aa6a7db4140f33ed85294963"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/previous-plan.md",
+      "bytes": 1903,
+      "sha256": "eeee6c927a413b92be7e153ee535e71a17d455381c4120c366391d905a822218"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/previous-release-receipt.json",
+      "bytes": 734,
+      "sha256": "d39a1a325a0103484e5d55d07bc74d2fbc32253207dc5e0f3527464e87270e91"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/previous-review.md",
+      "bytes": 2745,
+      "sha256": "d711050ebf1c7ecc18968648d1688f07135aefb470299d966fcdcd79c0f0ec6d"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/previous-status.md",
+      "bytes": 3058,
+      "sha256": "31d92b55d6bb3ace9880ef8bd1d7c02708521526266ac04faefbd2e9442e1f2a"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/quality.json",
+      "bytes": 3650,
+      "sha256": "9247a9ffb9c5969ddbdb8842c7baa4d53748245cb85ce9f1299a4f937aad7557"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/runtime-light.png",
+      "bytes": 162745,
+      "sha256": "767ae4fb7586488f95ac83796f1237ca2ae8a14815aa68f3c4bf4d13ee356eed"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/service-owner-observation.json",
+      "bytes": 1387,
+      "sha256": "205bfd429aa5812ee0b02e69614fedeb046ec31928f4727284c0ebe6bf41e503"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/source-audit.json",
+      "bytes": 59771,
+      "sha256": "103a33b4d6f1f9cfc2521b0d8c4d2475fe649642e8f5b1d9206f5658af73e99a"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/source-audit.mjs",
+      "bytes": 11328,
+      "sha256": "9778ced323329503a7803e29ea75af8dc88dbe5964585a8f25f54ad70909bd37"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/source-first.log",
+      "bytes": 102,
+      "sha256": "1dcefebcfd4f2a3296a034a9708f86324b383c1952b5de4196e2ad76743eb694"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/states-dark.png",
+      "bytes": 194403,
+      "sha256": "e3b7b94204c58efed50d49e357348b6f4d82aeacdeb5090048afc29fc883c9c1"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/states-light.png",
+      "bytes": 195720,
+      "sha256": "fd20e52a24892f72d63389cd708c5dfd3585d2272eb3758887d3af2b6fb967d2"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/take-receipt.json",
+      "bytes": 721,
+      "sha256": "a0e9fff76d1c14d85b98cea10a71bbd5a7335a75443113f0f35ddde7a3775661"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/take-request.json",
+      "bytes": 510,
+      "sha256": "c11f14236f5cd7f43333f7f60fe13a2c891db7b6e09945268914a2b8f91ebbdd"
+    },
+    {
+      "path": "docs/evidence/d06/snapshot-aeb/validation.md",
+      "bytes": 2848,
+      "sha256": "044986b15fef31799af5cd4c580022d2798a2902413f25fe0de488e2dcd02dec"
+    },
+    {
+      "path": "docs/evidence/d06/source-review-check.json",
+      "bytes": 343,
+      "sha256": "e52f2550bac628c0f63274c6306c32c3c14ce18545aa05bcde8ebe1720e4c099"
+    },
+    {
+      "path": "docs/evidence/d06/states-dark.png",
+      "bytes": 183359,
+      "sha256": "1ea34bfa3c86bd8d2a0d05ad64662ef1587056951497345aae138ec34a94371b"
+    },
+    {
+      "path": "docs/evidence/d06/states-light.png",
+      "bytes": 183023,
+      "sha256": "7d5746cb6c57ac1a463a47115f34c612e7f425e82f515013e63bf29bf61182fe"
+    },
+    {
+      "path": "docs/evidence/d06/stream/README.md",
+      "bytes": 2527,
+      "sha256": "806b28cfe30fd8d0c5834af92c0a3c576ac60c634c81663a2eddab60c9bba13c"
+    },
+    {
+      "path": "docs/evidence/d06/stream/browser-check.mjs",
+      "bytes": 6009,
+      "sha256": "3764046816231be993e3e98de12ca3bd41286975ce5b3c3c6534706b8961f7ed"
+    },
+    {
+      "path": "docs/evidence/d06/stream/browser-checks.json",
+      "bytes": 2741,
+      "sha256": "2a5e704bd36712124f39430d8184433b8fb13e37bd03a9a4a69421916cb597e6"
+    },
+    {
+      "path": "docs/evidence/d06/stream/browser-final.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/d06/stream/browser-first.log",
+      "bytes": 1495,
+      "sha256": "108c0cd7a7deb0ac83492e0ec2d07fd072a9ee2605cb93310804716632a23898"
+    },
+    {
+      "path": "docs/evidence/d06/stream/data-dark-narrow.png",
+      "bytes": 124830,
+      "sha256": "c0219494cdb9a9c8a61239c0516bf18ccedfc4c42ff02533ff8e16b52ff63e8e"
+    },
+    {
+      "path": "docs/evidence/d06/stream/data-dark.png",
+      "bytes": 185690,
+      "sha256": "a37c699a899c243d7ce1382e1fab44920dac239189e6e1ad40d1df165efad620"
+    },
+    {
+      "path": "docs/evidence/d06/stream/data-light-narrow.png",
+      "bytes": 119294,
+      "sha256": "553f19358cf5f0ecc118fd7ea84abc221702462040d4a12d6aa83fbcae508a55"
+    },
+    {
+      "path": "docs/evidence/d06/stream/direct-first.log",
+      "bytes": 1506,
+      "sha256": "2996a796fd5ee79088b729d47cc9aee15baacd77508e7ebdc7a208ac0e3d9220"
+    },
+    {
+      "path": "docs/evidence/d06/stream/historical-115b-plan.txt",
+      "bytes": 3029,
+      "sha256": "36ead9c43f2da8fa6d879ee6794688b2d36ece57c664eea7c0b3010ab874ef60"
+    },
+    {
+      "path": "docs/evidence/d06/stream/historical-115b-review.txt",
+      "bytes": 2944,
+      "sha256": "3594876961c1b465397e24b4c730d3fbf459e1016c2eb94326ccddc416ab0af1"
+    },
+    {
+      "path": "docs/evidence/d06/stream/historical-115b-status.txt",
+      "bytes": 4971,
+      "sha256": "29fe96895cc97c1d7fb33a96088e7e5d90cbbbef0be3fcb8bae45a51ecb4cc92"
+    },
+    {
+      "path": "docs/evidence/d06/stream/history.md",
+      "bytes": 436,
+      "sha256": "0a4d889c4b6ed55b632842413cbda90d9c9fa4be597d89c20c323ef686a1ab3d"
+    },
+    {
+      "path": "docs/evidence/d06/stream/install.log",
+      "bytes": 657,
+      "sha256": "2760975d2012d588ff10c9f08dc8bd5903dd724ba5751f3810895dc51f50aaf8"
+    },
+    {
+      "path": "docs/evidence/d06/stream/modules-light.png",
+      "bytes": 233113,
+      "sha256": "c0ff6e654986ad7e72ca47ac4c18bc8987c1830d1779ee46bcaaf76f32773134"
+    },
+    {
+      "path": "docs/evidence/d06/stream/preflight-ledger.json",
+      "bytes": 60410,
+      "sha256": "ae66e77ce0a484532600421b25082806e6de497f7d05b50882706ce2f0c7a44e"
+    },
+    {
+      "path": "docs/evidence/d06/stream/preview.mjs",
+      "bytes": 717,
+      "sha256": "05765f74a2c7847d69ff26866a25b340ecab5954b35688f0cbe47c75ac9afd24"
+    },
+    {
+      "path": "docs/evidence/d06/stream/quality.md",
+      "bytes": 2336,
+      "sha256": "2604f6c7c75e5cdcf27edd883497af3f4452c9a30e5a3c7b48d5aec91fa9694e"
+    },
+    {
+      "path": "docs/evidence/d06/stream/skills.json",
+      "bytes": 1404,
+      "sha256": "fa85e9be86c7e178504806b6289ecc611ec2e53c780ef47d396cd7466bf0cd09"
+    },
+    {
+      "path": "docs/evidence/d06/stream/source-audit.json",
+      "bytes": 30949,
+      "sha256": "0be4f95a878df1c27c375bf8b437fa14d0af1ce35e27bd1fab9d8dcaf4a781f6"
+    },
+    {
+      "path": "docs/evidence/d06/stream/source-audit.mjs",
+      "bytes": 6573,
+      "sha256": "a057466f755364acc33f8801dec1952d0a4c910dd3e694a45d24272e1960db09"
+    },
+    {
+      "path": "docs/evidence/d06/stream/source-binding.json",
+      "bytes": 2853,
+      "sha256": "6a7cc2ab6899bdbb9c9915b3c9cad8448c9650e976087135831f7d84d78796f8"
+    },
+    {
+      "path": "docs/evidence/d06/stream/source-first.log",
+      "bytes": 100,
+      "sha256": "13c1b18b4362e8d84f6bf38451ec6bed9cc33846401e38cc6400968b48aa93b3"
+    },
+    {
+      "path": "docs/evidence/d06/stream/states-dark.png",
+      "bytes": 187106,
+      "sha256": "4a57ac2416b8500d11e62a74dffaeca46105c45f9f208c958d81aca83b1d855c"
+    },
+    {
+      "path": "docs/evidence/d06/stream/states-light.png",
+      "bytes": 186628,
+      "sha256": "81b2f9dd1852488ddfe685661b384ddf37fb885f2570e435a355ea1375fdace8"
+    },
+    {
+      "path": "docs/evidence/d06/stream/status-parser.json",
+      "bytes": 3132,
+      "sha256": "8a013e13c13500eeeb93d3250f473c338f558e6c115ebd09f3e2822e4f969636"
+    },
+    {
+      "path": "docs/evidence/d06/stream/take-receipt.json",
+      "bytes": 715,
+      "sha256": "730562abfc63b4677cf22f80db9d8a620afb73804871718fcd6a550216fa9b3b"
+    },
+    {
+      "path": "docs/evidence/d06/stream/validation.md",
+      "bytes": 1527,
+      "sha256": "a0b5f38984e0f254a159e2025396ff7687909914450756217052d272b93e38d6"
+    },
+    {
+      "path": "docs/evidence/d06/take-receipt.json",
+      "bytes": 718,
+      "sha256": "c17bad6191c81ab74fa41857e0374c6a3b785c13462f10017bfd9960da2219c7"
+    },
+    {
+      "path": "docs/evidence/d06/validation.md",
+      "bytes": 4658,
+      "sha256": "975d06b2f82a85353881f69acf3440684e2750214caea202355d871d37465d09"
+    }
+  ],
+  "exactAbsentPaths": [
+    "packages/contracts/src/plugin-runtime.ts",
+    "packages/contracts/src/native-activity-body.ts",
+    "apps/server/src/plugin-runtime/",
+    "packages/interaction/src/message-settings/"
+  ],
+  "directTests": {
+    "staticNames": [
+      "curated architecture cites existing files at its fixed source commit and valid graph nodes",
+      "architecture static assets stay within existing read-only loopback server policy",
+      "fixed snapshot separates integrated Web and center capabilities from later UI work",
+      "integrated queue and graph proposal descriptions preserve explicit admission and application",
+      "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+      "state graph covers every active completed outcome and uncertain route without reviving the old task",
+      "current PG content and assistant provenance never become an implemented blob edge",
+      "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+      "graph run authority and native graph tools retain separate purposes and bounded commands",
+      "package download is opt-in durable work and does not install or execute plugins",
+      "typed activity, renderer, streaming and steering are mounted in the same official Thread",
+      "assistant patches have explicit negotiation and durable settlement, not a task success signal",
+      "steering UI is mounted but defaults off and requires explicit trusted center and runner configuration",
+      "TUI and Codex source exists with explicit limits; production loader is not guessed from the adapter",
+      "task verification summary is not a per-artifact engineering approval or a deployment receipt",
+      "unified goal reader and shared interaction controller do not create a second scheduler",
+      "attachment and context history persistence have different identities and readiness limits",
+      "engineering fixture, native write authority, trusted checker and center receipt are separate",
+      "browser authentication capability and actual App bearer mounting remain distinct",
+      "static installation and host phase authorization do not imply the unintegrated enable chain",
+      "owner confirmation and bounded progression reuse the existing center authorities",
+      "frozen Claude message settings are distinct from the real Web host and unintegrated TUI settings"
+    ],
+    "state": "NOT_RUN",
+    "requires": "Node resolution of pg through server/aggregate/ledger and one random loopback static server; no actual snapshot or PG query intended"
+  },
+  "browser": "NOT_RUN; historical snapshot-aeb checks/raw are unchanged and cannot validate this target",
+  "limits": [
+    "No product Node/import/test/HTTP/PG/Chrome/provider or resource sampling.",
+    "Source pins bind fixed Git objects, not running deployments.",
+    "No new browser/runtime wrapper prepared. Registry is unchanged from branch base, not identical to fixed main registry."
+  ]
+}

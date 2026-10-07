@@ -1,0 +1,41 @@
+{
+  "state": "FAILED",
+  "startedAtApprox": "2026-10-07T03:47:12.780927+00:00",
+  "actualExit": 1,
+  "elapsedMs": 6673.574292100966,
+  "ownedGroupAbsent": true,
+  "scratchRemoved": true,
+  "stdoutEOF": true,
+  "stderrEOF": true,
+  "peakSampledLogicalBytes": {
+    "scratch": 12762152,
+    "raw": 1384442
+  },
+  "terminalFreeBytes": 25879351296,
+  "errors": [
+    "worker not passed"
+  ],
+  "cleanupErrors": [],
+  "discardedOutputBytes": 0,
+  "interrupts": [],
+  "workerState": "FAILED",
+  "chromeExit": {
+    "code": 0,
+    "signal": null
+  },
+  "checks": [
+    "runtime: fixed labels/edges, 1280+390, light+dark, keyboard+source",
+    "modules: fixed labels/edges, 1280+390, light+dark, keyboard+source"
+  ],
+  "limits": {
+    "totalMs": 90000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608
+  },
+  "source": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+  "metadata": "ba9e9aaaa615709b488ab556b4413224e614c25e",
+  "previousSpentConservativeMs": 0,
+  "postWriteElapsedMs": 6674.343332997523,
+  "postWriteRawBytes": 1385430
+}

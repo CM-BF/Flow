@@ -1,0 +1,372 @@
+{
+  "observedAt": "2026-10-06T23:48:19.531711+00:00",
+  "target": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+  "base": "6d05ec467581e85d21d5532fd29a2bebd1411b41",
+  "fixedMain": "0da869f7bad98771177472539b5a192365c15117",
+  "state": "ROOT_STATIC_FACT_AND_DIFF_REVIEW_IN_PROGRESS",
+  "productFiles": [
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "bytes": 44076,
+      "sha256": "7ccc2ca80760a4050f09a2d7bdbbaf04884395ff945ae0cda887d9d6a1e12d78",
+      "matchesFixedTarget": true
+    },
+    {
+      "path": "apps/execution-dashboard/test/architecture.test.mjs",
+      "bytes": 32645,
+      "sha256": "a8650e9c391efdf5dfa60defbe421bd0789138a62fc76c34252e0b5d2ea27149",
+      "matchesFixedTarget": true
+    }
+  ],
+  "sourceProof": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime/docs/evidence/d06/snapshot-0da/source-proof.json",
+    "bytes": 112888,
+    "sha256": "9ba89a8062643ae9ef7041656d571383110019edf9d77e2ca2eff8e45edc9cb1"
+  },
+  "fixedSourcePinsVerified": 116,
+  "errors": [],
+  "nodeCount": 83,
+  "changedNodes": [
+    {
+      "view": "runtime",
+      "id": "web",
+      "changedFields": [
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "runtime",
+      "id": "tui",
+      "changedFields": [
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "runtime",
+      "id": "center",
+      "changedFields": [
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "runtime",
+      "id": "runner",
+      "changedFields": [
+        "locality"
+      ]
+    },
+    {
+      "view": "runtime",
+      "id": "verifier",
+      "changedFields": [
+        "description"
+      ]
+    },
+    {
+      "view": "runtime",
+      "id": "claude",
+      "changedFields": [
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "runtime",
+      "id": "codex",
+      "changedFields": [
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "web",
+      "changedFields": [
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "server",
+      "changedFields": [
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "client",
+      "changedFields": [
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "goals",
+      "changedFields": [
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "conversations",
+      "changedFields": [
+        "description",
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "plugins",
+      "changedFields": [
+        "subtitle",
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "host",
+      "changedFields": [
+        "description"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "profiles",
+      "changedFields": [
+        "subtitle",
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "proposals",
+      "changedFields": [
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "context",
+      "changedFields": [
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "activity",
+      "changedFields": [
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "tui",
+      "changedFields": [
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "interaction",
+      "changedFields": [
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "nativehost",
+      "changedFields": [
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "workspace",
+      "changedFields": [
+        "description",
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "nativewriter",
+      "changedFields": [
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "checker",
+      "changedFields": [
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "modules",
+      "id": "nextbackend",
+      "changedFields": [
+        "label",
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "data",
+      "id": "task",
+      "changedFields": [
+        "description",
+        "locality"
+      ]
+    },
+    {
+      "view": "data",
+      "id": "extensions",
+      "changedFields": [
+        "subtitle",
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "data",
+      "id": "fetchstate",
+      "changedFields": [
+        "label",
+        "subtitle",
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "data",
+      "id": "history",
+      "changedFields": [
+        "source",
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "states",
+      "id": "cancel",
+      "changedFields": [
+        "description",
+        "locality"
+      ]
+    },
+    {
+      "view": "states",
+      "id": "newtask",
+      "changedFields": [
+        "description"
+      ]
+    },
+    {
+      "view": "states",
+      "id": "passed",
+      "changedFields": [
+        "description",
+        "seam",
+        "locality"
+      ]
+    },
+    {
+      "view": "dependencies",
+      "id": "domain",
+      "changedFields": [
+        "locality"
+      ]
+    },
+    {
+      "view": "dependencies",
+      "id": "react",
+      "changedFields": [
+        "description",
+        "locality"
+      ]
+    }
+  ],
+  "idsPositionsKindsUnchanged": true,
+  "nonNodeSkeletonExceptBaselineUnchanged": true,
+  "candidateChangedPaths": [
+    "apps/execution-dashboard/public/architecture-data.js",
+    "apps/execution-dashboard/test/architecture.test.mjs"
+  ],
+  "historicalGitBlobsUnchanged": 182,
+  "absentPathsVerified": [
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "absent": true
+    },
+    {
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "absent": true
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/",
+      "absent": true
+    },
+    {
+      "path": "packages/interaction/src/message-settings/",
+      "absent": true
+    }
+  ],
+  "staticDirectTestNames": [
+    "curated architecture cites existing files at its fixed source commit and valid graph nodes",
+    "architecture static assets stay within existing read-only loopback server policy",
+    "fixed snapshot separates integrated Web and center capabilities from later UI work",
+    "integrated queue and graph proposal descriptions preserve explicit admission and application",
+    "native concurrency is locally bounded and unknown claims block admission; shutdown is not safe cancellation",
+    "state graph covers every active completed outcome and uncertain route without reviving the old task",
+    "current PG content and assistant provenance never become an implemented blob edge",
+    "Web knowledge is explicit project selection and frozen citations, not automatic file material",
+    "graph run authority and native graph tools retain separate purposes and bounded commands",
+    "package download is opt-in durable work and does not install or execute plugins",
+    "typed activity, renderer, streaming and steering are mounted in the same official Thread",
+    "assistant patches have explicit negotiation and durable settlement, not a task success signal",
+    "steering UI is mounted but defaults off and requires explicit trusted center and runner configuration",
+    "TUI and Codex source exists with explicit limits; production loader is not guessed from the adapter",
+    "task verification summary is not a per-artifact engineering approval or a deployment receipt",
+    "unified goal reader and shared interaction controller do not create a second scheduler",
+    "attachment and context history persistence have different identities and readiness limits",
+    "engineering fixture, native write authority, trusted checker and center receipt are separate",
+    "browser authentication capability and actual App bearer mounting remain distinct",
+    "static installation and host phase authorization do not imply the unintegrated enable chain",
+    "owner confirmation and bounded progression reuse the existing center authorities",
+    "frozen Claude message settings are distinct from the real Web host and unintegrated TUI settings"
+  ],
+  "actualDirectTests": "NOT_RUN",
+  "browser": "NOT_RUN",
+  "parserLimit": "Python literal-only node call inspection is not JavaScript parsing, import or execution; unchanged SVG geometry does not prove new label layout.",
+  "independentReviewStatus": "Semantic review and peer confirmation pending; no feature approval or runtime result claimed."
+}

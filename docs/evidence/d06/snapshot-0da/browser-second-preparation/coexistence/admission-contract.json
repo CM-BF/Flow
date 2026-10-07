@@ -1,0 +1,80 @@
+{
+  "recordedAt": "2026-10-07T04:15:54.437389+00:00",
+  "state": "REVISION_PREPARED_NOT_REVIEWED_NOT_RUN",
+  "task": "D06",
+  "packet": "/private/tmp/d06-browser-a28e-4mmyk_zp",
+  "source": "a28e8dac9ab3bd56231c13a0b090e986cc69eb0d",
+  "authority": "Root explicitly assigns next isolated zero-PG D06 window after Lead SVC06 actual cleanup04:13:44.010Z. Revised packet review and fresh admission required; keep earlier conservative coexistence floor rather than reducing it.",
+  "mikaLocal": {
+    "conservativeReserveBytes": 18087936,
+    "meaning": "C02 actual cleaned04:11:49.742Z; next X01 only source preparation9,699,328B. Retain former larger allowance, no current local execution asserted."
+  },
+  "originalD06FloorBytes": 1350565888,
+  "startupCombinedFloorBytes": 4053008384,
+  "enforcement": "Trusted manager outer admission must obtain a fresh shared-volume available-bytes observation immediately before creating the one gate; reject below combined floor. Record sample value/time/path and all three terms in admission and actual outer receipt. Existing parent independently enforces its original floor and lifecycle; no new runner.",
+  "requiredFreshAdmissionFields": [
+    "observedAt",
+    "availableBytes",
+    "resourcePath",
+    "startupCombinedFloorBytes",
+    "componentBudgets",
+    "bindingSha256",
+    "admissionContractSha256",
+    "currentOwnerHead",
+    "claimId",
+    "claimVersion",
+    "nativeBoundaryAccepted",
+    "expiresEpoch",
+    "budgetMs",
+    "scratchBytes",
+    "rawBytes"
+  ],
+  "requiredGateTruth": {
+    "availableBytesGte": 4053008384,
+    "currentOwnerHead": "rebind after this one metadata commit",
+    "claimId": "adf9539d-0d42-49b8-961b-f5195a4c10e9",
+    "claimVersion": 2,
+    "budgetMs": 83267,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608
+  },
+  "limitsUnchanged": {
+    "totalMs": 83267,
+    "workMs": 68267,
+    "cleanupMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608,
+    "startFloorBytes": 1350565888,
+    "stopFloorBytes": 1073741824
+  },
+  "historicalSpendMs": 6733,
+  "review": "Root revision review required before any fresh gate; prior d528 source/native preparation accepted, preserved.",
+  "runtime": {
+    "gateCreated": false,
+    "reservation": false,
+    "resourceSample": null,
+    "executed": false,
+    "coexistenceOccurred": false
+  },
+  "acceptance": "Original five views × two widths × two themes, 20 PNGs, all geometry/keyboard/source assertions unchanged. Actual outer exit, final report, EOF, owned groups and scratch cleanup must agree.",
+  "historicalRetainedExternal": {
+    "owner": "Lead SVC06",
+    "actual": "First 04:04:40–46 host-smoke failed on sandbox /bin/ps denial; center group and dedicated DB retained for exact cleanup; PG not returned.",
+    "conservativeReserveBytes": 2684354560
+  },
+  "svc06Current": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-smoke/cleanup-followup-outer.json",
+    "sha256": "4e848c9d838bb7a8e91d511885a7fd87deabb26cb94d19e8e0a51f2eafdaf588",
+    "actualFinishedAt": "2026-10-07T04:13:44.010Z",
+    "outerExit": 0,
+    "elapsedMs": 672,
+    "childPid": 79973,
+    "doubleEOF": true,
+    "ownedAbsent": true,
+    "center": "stopped",
+    "database": "removed",
+    "remaining": [],
+    "authority": "Lead actual receipt relayed by root; manager read this fixed outer receipt only, no service/resource resample."
+  },
+  "svc06ConservativeAllowanceBytes": 2684354560
+}

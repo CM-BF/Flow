@@ -1,0 +1,145 @@
+{
+  "at": "2026-10-07T03:48:45.913970+00:00",
+  "state": "FAILED_EVIDENCE_SEALED_PENDING_INDEPENDENT_RESULT_REVIEW",
+  "source": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+  "runHead": "ba9e9aaaa615709b488ab556b4413224e614c25e",
+  "selected": 5,
+  "passed": 2,
+  "failed": "data/light/1280 edge labels outside backgrounds",
+  "screenshots": 8,
+  "actualExit": 1,
+  "budget": {
+    "outerMs": 6732.224458013661,
+    "lateParentMs": 6674.343332997523,
+    "conservativeSpentMs": 6733,
+    "remainingMs": 83267,
+    "meaning": "Use ceil(max outer/latestparent); no next-run permission."
+  },
+  "runtimeRawAndOuterBytes": 1386844,
+  "archivePins": [
+    {
+      "path": "raw/browser-results.json",
+      "bytes": 19652,
+      "sha256": "6d61c60b25cd7bc616dfbdc14be4709bfcb203f9e35c65d2b0da95c1dc801dee"
+    },
+    {
+      "path": "raw/chrome.log",
+      "bytes": 168,
+      "sha256": "8a826dd876004a5750d19d034348e403d2c5ed802497fef6c079102b19d43133"
+    },
+    {
+      "path": "raw/modules-1280-dark.png",
+      "bytes": 229092,
+      "sha256": "bd752405af5d9cd50da9818998bfd9b01129987d6d655226356eccfa892b1d59"
+    },
+    {
+      "path": "raw/modules-1280-light.png",
+      "bytes": 226382,
+      "sha256": "0d4b1eddebc4683ca48eb67c8d219f4feb9c2be8b8155c20a36fddb67bdb2aeb"
+    },
+    {
+      "path": "raw/modules-390-dark.png",
+      "bytes": 145923,
+      "sha256": "7d127db17d8c5b8f1604d6c0c7372f4c83c5c2e5fdeb15b90bb41a3847847e9e"
+    },
+    {
+      "path": "raw/modules-390-light.png",
+      "bytes": 140669,
+      "sha256": "2ddd6d71f47d5fb6a74f4a05a11abb7dae6812bbf1d10f1bdf9812465d839b49"
+    },
+    {
+      "path": "raw/owned.json",
+      "bytes": 570,
+      "sha256": "031f9d7975671f956b5f502d852fdf125dc3a38e76c730c5127146aea823a541"
+    },
+    {
+      "path": "raw/parent-stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "raw/parent-stdout.log",
+      "bytes": 12572,
+      "sha256": "57cbdb4ff495711ae270954ce7e8e1186ffd40550343c332ad2d943e94f0e06c"
+    },
+    {
+      "path": "raw/result.json",
+      "bytes": 988,
+      "sha256": "980bf01a16b21bd2fd221ba432cbe4477b0644623fde1e7e191307497f5930cb"
+    },
+    {
+      "path": "raw/runtime-1280-dark.png",
+      "bytes": 175186,
+      "sha256": "641e8f8c3b1bb275f14a95876f5bf9cb4f53dbd1dd644fbbd69f39ee2d078506"
+    },
+    {
+      "path": "raw/runtime-1280-light.png",
+      "bytes": 170420,
+      "sha256": "c55a7089e2e0dbc87b6e61f4fb5c0129eebc5d0c3b2347ad165f1053aa48109b"
+    },
+    {
+      "path": "raw/runtime-390-dark.png",
+      "bytes": 123862,
+      "sha256": "e08c65f280cac963bdac7356a8be1940d916482b9d4cdd187a3d4cace0cc3633"
+    },
+    {
+      "path": "raw/runtime-390-light.png",
+      "bytes": 118460,
+      "sha256": "9facf15e96280f3e4d884cd5a80d930d95d0efe1313251b3afb5fd0ff563f769"
+    },
+    {
+      "path": "raw/worker-result.json",
+      "bytes": 21486,
+      "sha256": "8f722f23db874116b6dcbb16f5885f4c1d5fe098203f651734c7991927bd694b"
+    },
+    {
+      "path": "outer/actual-exit.json",
+      "bytes": 229,
+      "sha256": "60b83623e2891c90a2889b9143202f0a70eba71462eccb9a9801b76bd7cd2fd6"
+    },
+    {
+      "path": "outer/started.json",
+      "bytes": 122,
+      "sha256": "0e792ad353f7cc238ff9cce01594e17984726bcb20dc9c31547645845985a3d8"
+    },
+    {
+      "path": "outer/stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "outer/stdout.txt",
+      "bytes": 1063,
+      "sha256": "5a2740c136dd520115e4479d8a9b829a08040e537cd14adc67c6bb5cfebc2ec8"
+    },
+    {
+      "path": "gate.json",
+      "bytes": 1684,
+      "sha256": "b91a3a8c76adaf97b76f29fef1ebb523b8034653c8d692d24832c1dc0e0ebbff"
+    },
+    {
+      "path": "consumed.json",
+      "bytes": 102,
+      "sha256": "60c42475376f7cc94c0931b6629fae5dbc5aba32f35b5622827b9c594b5dc92a"
+    },
+    {
+      "path": "binding.json",
+      "bytes": 8450,
+      "sha256": "a94b771b79fce0e4a80edc464fbf76e19825712672d854bcc4cda37186c33a5c"
+    },
+    {
+      "path": "manifest.json",
+      "bytes": 3472,
+      "sha256": "7d61f3370c3b9b7e6b54372b1b4d64e5668f2d1747dda383c5c4935289b7f5b1"
+    },
+    {
+      "path": "return.json",
+      "bytes": 1136,
+      "sha256": "bf8cb7cb2a3a3747b9391763282ec79ea7fd3bf1ab0e35591c03e4bbba089ecc"
+    }
+  ],
+  "cleanup": "worker65294/Chrome65535 exit0/allOwnedGroupAbsent/HTTP/context closed/scratch absent/EOF0drop, errors[]",
+  "attribution": "回复引用 and 本地只读 edge labels; canvas bounds passed. No renderer/source change; independent attribution pending.",
+  "checksNotRun": "states/dependencies plus final fixed-fact postloop; data did not finish; no rerun of original22.",
+  "quality": "Python JSON/hash/links/diff only; screenshots unmodified; product2source bytes unchanged; independent actual review pending."
+}

@@ -1,0 +1,435 @@
+{
+  "state": "READ_ONLY_FIXED_SOURCE_FACTS_NOT_RUNTIME_APPROVAL",
+  "main": "0da869f7bad98771177472539b5a192365c15117",
+  "oldSnapshot": "aeb764e5d2c2ec043ae8673cde2724f5330db2ab",
+  "projectPins": [
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "AGENTS.md",
+      "bytes": 17226,
+      "sha256": "42137bac40ba6362c2355e5d707de9e3cf3cdd79435f845b786ee68574e9b0fa"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/index.ts",
+      "bytes": 14578,
+      "sha256": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/main.ts",
+      "bytes": 2964,
+      "sha256": "8da31946307ac1da338df9ab0ee640e4df2ba534fc04918113b3cbecdd1ef9b9"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/browser-session/store.ts",
+      "bytes": 4474,
+      "sha256": "8fea251438d040ee49b5978bf132e3408b5ff9acce6483b97a3d4fbb67c7bae5"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "packages/contracts/src/browser-session.ts",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/streams.ts",
+      "bytes": 2780,
+      "sha256": "be74745d814b211eeee848ec0e8421a033dcff55a77c1439fa5278b0ae15fa7c"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/plugin-installations/routes.ts",
+      "bytes": 6527,
+      "sha256": "8931b177ace5ff0ecff7a14d799c629979e33f63b5cfc3d4bb88c72355c2269c"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/plugin-installations/commands.ts",
+      "bytes": 11568,
+      "sha256": "829bef240c694be86f8f9fef0808d81586a2f624607ed41d238065bde3bcee89"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/runner/src/plugins/host.ts",
+      "bytes": 6177,
+      "sha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/goal-progression/index.ts",
+      "bytes": 2385,
+      "sha256": "deb89a24c6c3ba1f7ce0968689f5501124b5cd4d987370899dddef50b9172165"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/goal-progression/advance.ts",
+      "bytes": 3820,
+      "sha256": "24793fc7b9eeb91bc3bf5ec0bd687431c91f7818171b857b0ce9916ede72f8ee"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/goal-progression/store.ts",
+      "bytes": 11079,
+      "sha256": "d307d41b2df5a5922fa3bb1a25c965d5ca4ad30585c998cc72a49e5fcc129bd0"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/goal-plan-confirmation/index.ts",
+      "bytes": 1737,
+      "sha256": "4f97e159514078e65b4eb1aea4bfab5ffcaed2ede392a6c3302016cac32c5f1e"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/goal-plan-confirmation/store.ts",
+      "bytes": 6857,
+      "sha256": "3f4013289d5438f468acf9821e422c4e01d52f16f1a23ab08f8a555620dc5da8"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/conversations/message-settings.ts",
+      "bytes": 2728,
+      "sha256": "411e7c0f1343acf0481e9950e9b6721cc28fe00743e36714911d68c6b67b919c"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/execution-profiles/store.ts",
+      "bytes": 13611,
+      "sha256": "90acdc1b0c34b242f31db8ba4ba99a3d0998b3cf00f01a127dfb56794bb06d9d"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/runner/src/claude-message-settings.ts",
+      "bytes": 2363,
+      "sha256": "6d351ed73d2b66666a63cf7c50e16c9f1a990a9d5e9ab6955ac722b337fedd50"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 24363,
+      "sha256": "1bb8c725411943fb0c517b855f2d51579ef156c374cf39727f702db8412a1e7f"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/runner/package.json",
+      "bytes": 466,
+      "sha256": "5f0b19d08daedd4c8e818d6bfcbf23e35361561232b93c6bbb777db1cc56fbd9"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/native-activity/index.ts",
+      "bytes": 1459,
+      "sha256": "81b7ec57e00b503db18402121d7e41fb8c140346d46c5a5614efda64efa94250"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 11494,
+      "sha256": "0d203aab9ba58988d4ab7078218e9741d8ae1dbcacbaadf280d6d25212b685d5"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/context-transparency/routes.ts",
+      "bytes": 996,
+      "sha256": "8c0aeb0268819b339f957d1ffcfd75fd2804ca89017fad8962bb7c81b9c4ed01"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/context-transparency/attachment-history.test.ts",
+      "bytes": 12618,
+      "sha256": "4ae5fb30df18062159c3de1ec86e59d2db77f147e88d65a2dfb2b3582d50d96b"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "packages/storage/migrations/028-browser-sessions.sql",
+      "bytes": 875,
+      "sha256": "b1f8d61acbd6692186bd544421b110926c94311556395e39ad09936c7b2498d1"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "packages/storage/migrations/029-plugin-material-installs.sql",
+      "bytes": 4435,
+      "sha256": "8713dab5cb3c3169b9f8c71b6e5a2ab81cf2065818bc3a24add3a0400a8d90ea"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "packages/storage/migrations/030-goal-progression.sql",
+      "bytes": 4315,
+      "sha256": "0a6a7c0f09729b53da704e188d19167bd907b8180fad8b7f3d761c4a39609737"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "packages/storage/migrations/031-goal-plan-confirmations.sql",
+      "bytes": 2279,
+      "sha256": "a0d688470a30f26a03e7cdfc1146f5cb424625ae94d59857ce8403561f832606"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "packages/storage/migrations/032-claude-message-settings.sql",
+      "bytes": 3892,
+      "sha256": "97673f4ce120cb26f55f35881977810e516199b97cd8a1fe9fea2ebd24b5c9ed"
+    },
+    {
+      "ref": "37cf1c28d8dd1e45fe1bb3cadda1c6658aac5f56",
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "bytes": 4193,
+      "sha256": "a8b024a50b09fc380683f34277f257688d4574c973a6dfac728f388cdc41632d"
+    },
+    {
+      "ref": "37cf1c28d8dd1e45fe1bb3cadda1c6658aac5f56",
+      "path": "docs/evidence/x01/enable-binding-interface.md",
+      "bytes": 3692,
+      "sha256": "130e51cef42716864d68d23ff734890e7eb084d962974b6297f82e0af643a8e2"
+    },
+    {
+      "ref": "83a0799293057f7472f0329c61e566708b2a2381",
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 15713,
+      "sha256": "8246b50d9aef92040fdea40e7ba854b2f9b4ae16b513fa2126faea1eb270a583"
+    },
+    {
+      "ref": "83a0799293057f7472f0329c61e566708b2a2381",
+      "path": "docs/evidence/s01p07/interface.md",
+      "bytes": 5263,
+      "sha256": "bc34c29a6c52a67e478036483bca92e475c510ed4483f9c6ebda2ae2c013305e"
+    },
+    {
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "path": "apps/server/src/native-activity-body/index.ts",
+      "bytes": 1914,
+      "sha256": "df6162150507f7754777bd0ce74862ec0cef20207b5f70e204a3c60ee61bd859"
+    },
+    {
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "bytes": 3091,
+      "sha256": "bc0545b5ddd1f1972a0370c556a627555ef78530b2e0dd08da3f5febf7894e4e"
+    },
+    {
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "path": "docs/evidence/chat05p01/interface.md",
+      "bytes": 3230,
+      "sha256": "b8b5210625e1acc6c5315efd8c7bc0704e1f3bb93c1a61551fd4a43bda88263b"
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/runner/src/runtime.ts",
+      "bytes": 14698,
+      "sha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0"
+    }
+  ],
+  "branchAncestry": [
+    {
+      "feature": "X01",
+      "ref": "37cf1c28d8dd1e45fe1bb3cadda1c6658aac5f56",
+      "main": "0da869f7bad98771177472539b5a192365c15117",
+      "isAncestor": false,
+      "commandExit": 1,
+      "mergeBase": "60ca1942411634843fda14e158f138191b832d8b"
+    },
+    {
+      "feature": "S01P07",
+      "ref": "83a0799293057f7472f0329c61e566708b2a2381",
+      "main": "0da869f7bad98771177472539b5a192365c15117",
+      "isAncestor": false,
+      "commandExit": 1,
+      "mergeBase": "22a0806bc2465e11096949618113833f31766b19"
+    },
+    {
+      "feature": "CHAT05P01",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "main": "0da869f7bad98771177472539b5a192365c15117",
+      "isAncestor": false,
+      "commandExit": 1,
+      "mergeBase": "fc3246b307f5436ccecb97f38ccaba10c7a72a5a"
+    }
+  ],
+  "absentBranchInterfaces": [
+    {
+      "path": "apps/server/src/plugin-runtime",
+      "presentInFixedMain": false,
+      "lsTree": ""
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "presentInFixedMain": false,
+      "lsTree": ""
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "presentInFixedMain": false,
+      "lsTree": ""
+    },
+    {
+      "path": "apps/server/src/native-activity-body",
+      "presentInFixedMain": false,
+      "lsTree": ""
+    },
+    {
+      "path": "packages/contracts/src/native-activity-body.ts",
+      "presentInFixedMain": false,
+      "lsTree": ""
+    }
+  ],
+  "historical16PinReadback": [
+    {
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800",
+      "currentSha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800",
+      "same": true
+    },
+    {
+      "path": "apps/server/src/index.ts",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99",
+      "currentSha256": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99",
+      "same": true
+    },
+    {
+      "path": "apps/server/src/browser-session/index.ts",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a",
+      "currentSha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a",
+      "same": true
+    },
+    {
+      "path": "packages/client/src/index.ts",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277",
+      "currentSha256": "afe6b2d9645655a4e7c8e37a51d20e42cc683c63d86a6314281703f25d953277",
+      "same": true
+    },
+    {
+      "path": "apps/server/src/plugin-installations/routes.ts",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "8931b177ace5ff0ecff7a14d799c629979e33f63b5cfc3d4bb88c72355c2269c",
+      "currentSha256": "8931b177ace5ff0ecff7a14d799c629979e33f63b5cfc3d4bb88c72355c2269c",
+      "same": true
+    },
+    {
+      "path": "apps/runner/src/plugins/host.ts",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f",
+      "currentSha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f",
+      "same": true
+    },
+    {
+      "path": "apps/server/src/goal-progression/index.ts",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "deb89a24c6c3ba1f7ce0968689f5501124b5cd4d987370899dddef50b9172165",
+      "currentSha256": "deb89a24c6c3ba1f7ce0968689f5501124b5cd4d987370899dddef50b9172165",
+      "same": true
+    },
+    {
+      "path": "apps/server/src/goal-plan-confirmation/index.ts",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "4f97e159514078e65b4eb1aea4bfab5ffcaed2ede392a6c3302016cac32c5f1e",
+      "currentSha256": "4f97e159514078e65b4eb1aea4bfab5ffcaed2ede392a6c3302016cac32c5f1e",
+      "same": true
+    },
+    {
+      "path": "apps/server/src/conversations/message-settings.ts",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "411e7c0f1343acf0481e9950e9b6721cc28fe00743e36714911d68c6b67b919c",
+      "currentSha256": "411e7c0f1343acf0481e9950e9b6721cc28fe00743e36714911d68c6b67b919c",
+      "same": true
+    },
+    {
+      "path": "apps/runner/src/claude-message-settings.ts",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "6d351ed73d2b66666a63cf7c50e16c9f1a990a9d5e9ab6955ac722b337fedd50",
+      "currentSha256": "6d351ed73d2b66666a63cf7c50e16c9f1a990a9d5e9ab6955ac722b337fedd50",
+      "same": true
+    },
+    {
+      "path": "apps/tui/src/main.tsx",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "449124145caf472daa0c6349420cc365bb3816719cffb47ef464f099f741b892",
+      "currentSha256": "449124145caf472daa0c6349420cc365bb3816719cffb47ef464f099f741b892",
+      "same": true
+    },
+    {
+      "path": "packages/storage/migrations/028-browser-sessions.sql",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "b1f8d61acbd6692186bd544421b110926c94311556395e39ad09936c7b2498d1",
+      "currentSha256": "b1f8d61acbd6692186bd544421b110926c94311556395e39ad09936c7b2498d1",
+      "same": true
+    },
+    {
+      "path": "packages/storage/migrations/029-plugin-material-installs.sql",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "8713dab5cb3c3169b9f8c71b6e5a2ab81cf2065818bc3a24add3a0400a8d90ea",
+      "currentSha256": "8713dab5cb3c3169b9f8c71b6e5a2ab81cf2065818bc3a24add3a0400a8d90ea",
+      "same": true
+    },
+    {
+      "path": "packages/storage/migrations/030-goal-progression.sql",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "0a6a7c0f09729b53da704e188d19167bd907b8180fad8b7f3d761c4a39609737",
+      "currentSha256": "0a6a7c0f09729b53da704e188d19167bd907b8180fad8b7f3d761c4a39609737",
+      "same": true
+    },
+    {
+      "path": "packages/storage/migrations/031-goal-plan-confirmations.sql",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "a0d688470a30f26a03e7cdfc1146f5cb424625ae94d59857ce8403561f832606",
+      "currentSha256": "a0d688470a30f26a03e7cdfc1146f5cb424625ae94d59857ce8403561f832606",
+      "same": true
+    },
+    {
+      "path": "packages/storage/migrations/032-claude-message-settings.sql",
+      "oldRef": "f3358439ef9871b4573a42b4b5962d7c7fd0a332",
+      "oldSha256": "97673f4ce120cb26f55f35881977810e516199b97cd8a1fe9fea2ebd24b5c9ed",
+      "currentSha256": "97673f4ce120cb26f55f35881977810e516199b97cd8a1fe9fea2ebd24b5c9ed",
+      "same": true
+    }
+  ],
+  "webHistoryReferenceSearch": {
+    "patterns": "contextHistory|context-observation-history|ContextHistory",
+    "scope": "apps/web/src",
+    "exit": 1,
+    "matches": "",
+    "meaning": "No direct named consumer reference found; not a dynamic UI proof."
+  },
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "actions": {
+    "projectWrites": 0,
+    "imports": 0,
+    "tests": 0,
+    "HTTP": 0,
+    "PG": 0,
+    "browser": 0,
+    "provider": 0,
+    "resourceSampling": 0,
+    "claim": 0
+  },
+  "role": "workspace_panels_owner is readonly peer; D06 curator/owner is d01_owner.",
+  "runnerRuntimeComparison": {
+    "path": "apps/runner/src/runtime.ts",
+    "mainSha256": "23e6fce26bd2ac53e103debb79360857ad55d1b685b98b2094e678921690a2d0",
+    "s01p07Sha256": "8246b50d9aef92040fdea40e7ba854b2f9b4ae16b513fa2126faea1eb270a583",
+    "same": false
+  }
+}

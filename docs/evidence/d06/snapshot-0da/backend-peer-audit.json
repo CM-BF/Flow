@@ -1,0 +1,172 @@
+{
+  "state": "NO_BLOCKING_ASSIGNED_BACKEND_SOURCE_SCOPE_NOT_RUN",
+  "target": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+  "metadata": "2022ed4352e2d8ac903b6065493626b5853473c5",
+  "fixedMain": "0da869f7bad98771177472539b5a192365c15117",
+  "scope": "architecture-data backend/PG/runner statements and relevant source-proof anchors only",
+  "reviewedPins": [
+    {
+      "ref": "5124e6cea1edd3437f765ff67aa13386ae845bfa",
+      "path": "apps/execution-dashboard/public/architecture-data.js",
+      "bytes": 44076,
+      "sha256": "7ccc2ca80760a4050f09a2d7bdbbaf04884395ff945ae0cda887d9d6a1e12d78"
+    },
+    {
+      "ref": "2022ed4352e2d8ac903b6065493626b5853473c5",
+      "path": "docs/evidence/d06/snapshot-0da/source-proof.json",
+      "bytes": 112888,
+      "sha256": "9ba89a8062643ae9ef7041656d571383110019edf9d77e2ca2eff8e45edc9cb1"
+    }
+  ],
+  "relevantProofPinChecks": [
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/runner/src/claude-message-settings.ts",
+      "bytes": 2363,
+      "sha256": "6d351ed73d2b66666a63cf7c50e16c9f1a990a9d5e9ab6955ac722b337fedd50",
+      "matchesProof": true
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/runner/src/claude.ts",
+      "bytes": 24363,
+      "sha256": "1bb8c725411943fb0c517b855f2d51579ef156c374cf39727f702db8412a1e7f",
+      "matchesProof": true
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/runner/src/plugins/host.ts",
+      "bytes": 6177,
+      "sha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f",
+      "matchesProof": true
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/browser-session/index.ts",
+      "bytes": 9561,
+      "sha256": "332c4c91ce07c59f1c9b41102b06ee2b931b192e0e6bba306249535cb89fd15a",
+      "matchesProof": true
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/context-transparency/store.ts",
+      "bytes": 11494,
+      "sha256": "0d203aab9ba58988d4ab7078218e9741d8ae1dbcacbaadf280d6d25212b685d5",
+      "matchesProof": true
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/conversations/message-settings.ts",
+      "bytes": 2728,
+      "sha256": "411e7c0f1343acf0481e9950e9b6721cc28fe00743e36714911d68c6b67b919c",
+      "matchesProof": true
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/goal-plan-confirmation/store.ts",
+      "bytes": 6857,
+      "sha256": "3f4013289d5438f468acf9821e422c4e01d52f16f1a23ab08f8a555620dc5da8",
+      "matchesProof": true
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/goal-progression/advance.ts",
+      "bytes": 3820,
+      "sha256": "24793fc7b9eeb91bc3bf5ec0bd687431c91f7818171b857b0ce9916ede72f8ee",
+      "matchesProof": true
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "apps/server/src/index.ts",
+      "bytes": 14578,
+      "sha256": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99",
+      "matchesProof": true
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "packages/contracts/src/browser-session.ts",
+      "bytes": 1095,
+      "sha256": "766148783d7ea6cba0c61193096f09eaef3d7670eced26a0ee7339a66c784c30",
+      "matchesProof": true
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "packages/storage/migrations/028-browser-sessions.sql",
+      "bytes": 875,
+      "sha256": "b1f8d61acbd6692186bd544421b110926c94311556395e39ad09936c7b2498d1",
+      "matchesProof": true
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "packages/storage/migrations/029-plugin-material-installs.sql",
+      "bytes": 4435,
+      "sha256": "8713dab5cb3c3169b9f8c71b6e5a2ab81cf2065818bc3a24add3a0400a8d90ea",
+      "matchesProof": true
+    },
+    {
+      "ref": "0da869f7bad98771177472539b5a192365c15117",
+      "path": "packages/storage/migrations/032-claude-message-settings.sql",
+      "bytes": 3892,
+      "sha256": "97673f4ce120cb26f55f35881977810e516199b97cd8a1fe9fea2ebd24b5c9ed",
+      "matchesProof": true
+    }
+  ],
+  "priorEvidenceReuse": [
+    {
+      "ref": "2022ed4352e2d8ac903b6065493626b5853473c5",
+      "path": "docs/evidence/d06/snapshot-0da/peer-backend-facts.md",
+      "bytes": 8020,
+      "sha256": "29458bb896705d2805861d7fd0e66eafe2066b8b8a7adeea74d13fc58cf8b632",
+      "matchesOriginal": true
+    },
+    {
+      "ref": "2022ed4352e2d8ac903b6065493626b5853473c5",
+      "path": "docs/evidence/d06/snapshot-0da/peer-backend-pins.json",
+      "bytes": 16959,
+      "sha256": "389b2450a8bb5faa450062b89c906f111d1d055d7c21473ab02617b56ba00d8b",
+      "matchesOriginal": true
+    }
+  ],
+  "branchAncestryReused": [
+    {
+      "feature": "X01",
+      "ref": "37cf1c28d8dd1e45fe1bb3cadda1c6658aac5f56",
+      "main": "0da869f7bad98771177472539b5a192365c15117",
+      "isAncestor": false,
+      "commandExit": 1,
+      "mergeBase": "60ca1942411634843fda14e158f138191b832d8b"
+    },
+    {
+      "feature": "S01P07",
+      "ref": "83a0799293057f7472f0329c61e566708b2a2381",
+      "main": "0da869f7bad98771177472539b5a192365c15117",
+      "isAncestor": false,
+      "commandExit": 1,
+      "mergeBase": "22a0806bc2465e11096949618113833f31766b19"
+    },
+    {
+      "feature": "CHAT05P01",
+      "ref": "40af6d9071c621707971fd983a85dd9145f065fd",
+      "main": "0da869f7bad98771177472539b5a192365c15117",
+      "isAncestor": false,
+      "commandExit": 1,
+      "mergeBase": "fc3246b307f5436ccecb97f38ccaba10c7a72a5a"
+    }
+  ],
+  "skillsReused": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    }
+  ],
+  "proofLimit": "Python comparison of recognized literal source regex anchors only; not execution of JS syntax, test bodies, assertions over graphs, HTTP or Node imports.",
+  "runtime": "NOT_RUN; no Node/product import/test/HTTP/PG/Chrome/provider or deployment observation"
+}

@@ -1,0 +1,62 @@
+{
+  "gate": "/private/tmp/d06-browser-a28e-4mmyk_zp/gate.json",
+  "gateSha256": "fd82be3679acfe6222b255eb7eafad4836126d774baf1c083a14e56929bd7043",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/execution-dashboard/public/architecture-data.js",
+      "apps/execution-dashboard/public/architecture.js",
+      "apps/execution-dashboard/test/architecture.test.mjs",
+      "docs/evidence/d06",
+      "plans/d06-architecture-refresh"
+    ],
+    "state": "active",
+    "branch": "codex/dashboard-architecture-runtime",
+    "origin": "new",
+    "taskId": "D06",
+    "worker": "d01_owner",
+    "claimId": "adf9539d-0d42-49b8-961b-f5195a4c10e9",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-architecture-runtime",
+    "createdAt": "2026-10-06T23:36:04.842Z",
+    "updatedAt": "2026-10-07T03:51:56.566Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "freshGate": {
+    "state": "ADMITTED",
+    "window": "D06-A28E-BROWSER-SECOND-20261007",
+    "at": "2026-10-07T04:19:15.017856+00:00",
+    "observedAt": "2026-10-07T04:19:15.017856+00:00",
+    "availableBytes": 25674764288,
+    "resourcePath": "/private/tmp/d06-browser-a28e-4mmyk_zp",
+    "startupCombinedFloorBytes": 4053008384,
+    "componentBudgets": {
+      "originalD06FloorBytes": 1350565888,
+      "formerSVC06ConservativeBytes": 2684354560,
+      "mikaLocalConservativeBytes": 18087936
+    },
+    "externalActualState": "SVC06 actualcleanup04:13:44.010Z; C02 cleaned04:11:49.742Z; no actual overlap asserted, higher budgets conservatively retained",
+    "bindingSha256": "efe87e6430fbf2df9542abe8052315f00ab737d3d19dffcc3072b860dad68565",
+    "manifestSha256": "211fd9c65b70dc6b071b7055a196aa078c38e08e84c69c6bbd8f88cc1effce95",
+    "admissionContractSha256": "06d461948fe7f9559c94b8518e0f336b78f038a4645e4ad4fbdb0d4fb0cdb3b7",
+    "nativeBoundaryReview": {
+      "path": "/private/tmp/root-d06-a28e-admission-revision-review.json",
+      "sha256": "23dbe66564c724e55c6fde7967ab938de5b7d1969454459a306099a48a3bc9bd"
+    },
+    "nativeBoundaryAccepted": true,
+    "budgetMs": 83267,
+    "previousSpentMs": 6733,
+    "cleanupMs": 15000,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608,
+    "currentOwnerHead": "72167e26510388d28d9306225a9e30f9819b03ac",
+    "claimId": "adf9539d-0d42-49b8-961b-f5195a4c10e9",
+    "claimVersion": 2,
+    "claimObservedAt": "2026-10-07T04:19:15.003Z",
+    "expiresEpoch": 1791346875.018336,
+    "scope": "Single original all5views/20PNG;0PG/provider/personal; no automatic third run"
+  }
+}
