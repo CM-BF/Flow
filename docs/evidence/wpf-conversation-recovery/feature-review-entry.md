@@ -1,6 +1,7 @@
 # 固定代码审查入口：WPF-RECOVERY01
 
-当前组合target `344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5`，完整feature `IN_PROGRESS`。本次仅原browser parent退休/明确失败计费接缝，18其他源同67f8；[19pin/delta](monitor-retirement-checkpoint.json)、[32定向/noEmit实证](monitor-retirement-validation.md)，[root针对lifecycle独审](monitor-retirement-root-review.json)已接受。first-create2/2实际PASS保原绑定；created-turn原整体FAIL/worker2组通过/owned清理事实保留；344f本轮重试actual2/2/exit0已获root独立限定接受，Queue本轮2/2/exit0与owned清理已获[root限定接受](continuous-sixth-root-review.json)，不是promotion/Steer/fullfeature。
+当前组合target `d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5`；17其他源同344f，只原两harness增加有界SSE旁路与选择。完整featureIN_PROGRESS。[增量源码/17源引用](sse-delivery-checkpoint.json)、[source审](sse-delivery-root-review.json)、[12pure+WebnoEmit实证](sse-local/manifest.json)及[独立local审](sse-local-root-review.json)；[本次任务详情SSE实际2/2](continuous-seventh-validation.md)待结果独审。原full7/choice/CREATE两点/Queue入队各保持绑定和通过，旧FAIL不改。
+
 ## 55b已审基线与原证据（历史固定）
 
 **Review target `55b4917e732d11d5e5f660f9c22a1022d7094015`；base `84005a260dfcb668cd38b09c21564d0754a0f513`；完整feature review `IN_PROGRESS`（55b两P2修复与局部实证已独审接受；chooser实际2/2及owned清理已独立限定接受）。** 本文件准备实际独立代码审查，不是作者自评通过。WT/branch：web-conversation-recovery / codex/web-conversation-recovery。当前19源码与target逐字一致，后置改动仅owner记录；源已冻结。
@@ -37,7 +38,7 @@
 
 ## 残留验收/风险
 
-CREATE两故障点及Queue enqueue现各有真实选组通过；Queue promotion/SteerHTTP、完整profile+knowledge+steering材料、二中心与变principal、SSE正文delivery仍未验；旧uploadjournal跨tabCAS/历史metadata隔离不在本片修复声明。三中心语义caller-Origin/迟到ClearCookie/repeatedConnect槽位由共享owner处理，本片不伪造auth保证。IDBstrict是UA耐久hint，不称断电/删库永久保证。主线/真实个人部署未集成验证。
+CREATE两故障点及Queue enqueue现各有真实选组通过；Queue promotion/SteerHTTP、完整profile+knowledge+steering材料、二中心与变principal仍未验；任务详情SSE本次已见实际delivery，conversation/assistant流与全部重连仍未验；旧uploadjournal跨tabCAS/历史metadata隔离不在本片修复声明。三中心语义caller-Origin/迟到ClearCookie/repeatedConnect槽位由共享owner处理，本片不伪造auth保证。IDBstrict是UA耐久hint，不称断电/删库永久保证。主线/真实个人部署未集成验证。
 
 GO新可用性验收归原03/05：恢复目录主层改用获准轻metadata标题/摘要/本地Intl时间，UUID/精确UTC留details，不预取正文；空text不判重复/自动删稿，保unknown/key/材料语义。仅后继记录，不阻当前固定代码审查或把这轮图片改成新产品FAIL。
 

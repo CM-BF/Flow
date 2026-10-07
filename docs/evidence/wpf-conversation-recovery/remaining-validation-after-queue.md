@@ -1,6 +1,6 @@
-# 原完整恢复验收：Queue后最小次序候选（只读）
+# 原完整恢复验收：Queue后的候选与实际进展（原TODO）
 
-固定344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5；归RECOVERY01-03/05和原MATURE06，不新task/claim。Queue enqueue selected已通过，不冒promotion/Steer/全feature。下面仅候选，0新增运行，不自动扩大本段资源。
+以下最初提案固定344f12cc9407a1cce8d17e2d9371cf8d0fb9a4b5；后续实际见文末，归RECOVERY01-03/05和原MATURE06，不新task/claim。Queue enqueue selected已通过，不冒promotion/Steer/全feature。下面仅候选，0新增运行，不自动扩大本段资源。
 
 **下一最小用户结果：另一公开消费者取消任务后，已打开的App任务页通过真实SSE出现取消时间线，无刷新/无任务正文预取。** 优先于第二中心，因为能复用同一个markedDB/center/Chrome、0runner/model/provider。
 
@@ -51,3 +51,13 @@
   }
 ]
 ```
+
+## 2026-10-07 08:04 UTC — SSE已经实际补齐，下一最小提案
+
+原下一项现已在d68完成selected2/2：任务详情原streamcursor0→1+可见取消timeline，无REST补读/页面POST，见[实际原件](continuous-seventh-validation.md)；不是assistant流/本页Cancel/完整重连。此前3MiB线是历史，当前root一次授权9MiB总/4MiB启动/5MiB单run预留；本段运行累计81002/余68998，无当前holder或可重用gate。
+
+接下来仍优先原RECOVERY01-03/05完整草稿：**真实新稿选择配置profile+knowledge与原双文件，reload/显式Restore保完整identity、0业务POST/0正文预取，再显式验证材料后Send核原refs。** [Root固定10pin前提](complete-draft-prerequisites-root.json)已逐一核仍等本树：公开createKnowledgeSource供不可变version/digest；公开registerRunner→返回token→publishExecutionProfile供目录。这将增加一个明确synthetic publisher身份，但不启动runner/claim/heartbeat/provider，不得沿SSE的“0runner actor”描述。唯一DB/center/browser可承载，生命周期与权限增量需先固定两test差异作一次聚焦审；现只读设计，未注册或发HTTP。
+
+最小选择cookieRead+completeDraft；所有种子仅public client，新的draft因既有conversation profile已锁定，不能手写IDB/强制按钮。两file+一knowledge总计3≤4，保原顺序并在Restore后保持unverified；显式metadata验证而非重新Use，以不同验证顺序检查完整接管。真实首CREATE/turn应携原profile id/runner/digest和knowledge ref及两个file refs；下一稿独立。可先不加knowledge v2、promotion/nativeSteer或二center，不能把这一组扩大为这些验收。
+
+精确后继范围仍原fixture/browser+ownrecords；若实际UI暴露产品缺陷在合法21内由原owner修，超范围先报精确路径。资源预算不重置，不承诺一次完成；新的publisher身份/公开目录前置是需要聚焦审核的真实边界，未授权本段自行运行。二center新增独立authority/服务与Steer合法attempt/native身份继续分列，不用BrowserContext数量或mock业务HTTP替代。

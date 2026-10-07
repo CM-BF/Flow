@@ -1,0 +1,103 @@
+{
+  "passed": true,
+  "selectedPassed": true,
+  "fullJourneyPassed": false,
+  "journey": "sse-delivery",
+  "requiredGroups": [
+    "cookieRead",
+    "sseDelivery"
+  ],
+  "completedGroups": [
+    "cookieRead",
+    "sseDelivery"
+  ],
+  "initialization": {
+    "outcome": "PASSED",
+    "startedOffsetMs": 0,
+    "endedOffsetMs": 7862.610625,
+    "elapsedMs": 7862.610625
+  },
+  "groupTimings": [
+    {
+      "group": "cookieRead",
+      "startedOffsetMs": 7862.7025,
+      "endedOffsetMs": 8954.748,
+      "elapsedMs": 1092.0454999999993,
+      "outcome": "PASSED"
+    },
+    {
+      "group": "sseDelivery",
+      "startedOffsetMs": 8954.7615,
+      "endedOffsetMs": 9436.568916,
+      "elapsedMs": 481.80741599999965,
+      "outcome": "PASSED"
+    }
+  ],
+  "acceptanceScope": "selected journey only; full journey remains unverified",
+  "errors": [],
+  "cleanupErrors": [],
+  "databaseCleanup": {
+    "database": "flow_recovery_11b0835a63db4fb39c4d580c74fa0d81",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.5976250000003347,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 0.8658750000013242,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "processIds": [
+    {
+      "pid": 82831,
+      "exitCode": 0,
+      "signalCode": null
+    },
+    {
+      "pid": 82837,
+      "exitCode": 0,
+      "signalCode": null
+    }
+  ],
+  "interruptionRequested": false,
+  "allOwnedGroupsAbsent": true,
+  "minimumFreeBytes": 24140693504,
+  "peakScratchBytes": 26394697,
+  "logBytes": 3499,
+  "scratchRemoved": true,
+  "terminal": [
+    {
+      "phase": "after-reap-before-removal",
+      "elapsedMs": 10158.841917,
+      "scratchBytes": 26394697,
+      "evidenceBytes": 3171458,
+      "freeBytes": 24140693504,
+      "errors": []
+    },
+    {
+      "phase": "after-initial-report-and-budget",
+      "elapsedMs": 10219.560958,
+      "scratchBytes": null,
+      "evidenceBytes": 3173756,
+      "freeBytes": 24167596032,
+      "errors": []
+    }
+  ],
+  "attribution": "Timing begins after preflight; terminal observations include report writes. Shared-volume samples are not hard quotas or exclusively attributable allocation",
+  "providerQueries": 0
+}

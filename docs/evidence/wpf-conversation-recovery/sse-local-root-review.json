@@ -1,0 +1,59 @@
+{
+  "at": "2026-10-07T08:00:40.011509+00:00",
+  "reviewer": "/root independent",
+  "decision": "ACCEPTED_SSE_OBSERVER_12_AND_WEB_NOEMIT_LOCAL_ACTUAL_NOT_SSE_RUNTIME",
+  "source": "d68b6bc722fb3d65dd79d34cdbc1c91ac22354e5",
+  "sourceReview": "523ff63f77ba2b58a2a75be1682c74cac1289555811022d8d53df1a8b956223a",
+  "checks": [
+    {
+      "label": "observer",
+      "pid": 9724,
+      "exitCode": 0,
+      "fresh": {
+        "process": "ESRCH",
+        "group": "ESRCH"
+      },
+      "logBytes": 1146,
+      "logSha256": "914609a8dbad67c2844259a20bfbff32fef10926f347823790bfd334b6626b4a"
+    },
+    {
+      "label": "types",
+      "pid": 9887,
+      "exitCode": 0,
+      "fresh": {
+        "process": "ESRCH",
+        "group": "ESRCH"
+      },
+      "logBytes": 0,
+      "logSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "observer": "12/12 exact planned groups,0failed/skipped/cancelled/todo",
+  "types": "Whole Web --noEmit exit0 using existing config and declarations; includes affected two test files, not product runtime.",
+  "sourceIntegrity": "Two fixed source pins and separately approved observer-check hash still exact.",
+  "execution": {
+    "startedAt": "2026-10-07T07:58:54.711741+00:00",
+    "elapsedMs": 6283.637208980508,
+    "budgetMs": 20000,
+    "cleanupReserveMs": 5000,
+    "rawPath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/sse-local",
+    "segmentSha256": "44fdd3360aa45f06e5af5b7634d3f9659a460799f491d6ffe734b0247619edd0",
+    "logs": "Redirected regular files; Popen wait completed and with-file closed; no pipe/dual-EOF claim. Fresh exact child groups absent.",
+    "originalTMP": "/private/tmp/recovery-sse-local-8osx3_jp",
+    "originalTMPAbsent": true,
+    "archiveObservation": "Root first read original segment/log/run.py before owner normal archive/removal; repeat hash/fresh PID check used canonical archived raw.",
+    "network": "denied by read sandbox policy",
+    "projectWrites": "denied by read sandbox policy",
+    "PG": 0,
+    "Chrome": 0,
+    "HTTP": 0,
+    "provider": 0
+  },
+  "runtimeBudget": "No deduction from PG/browser150s segment; remaining79842ms unchanged.",
+  "limits": [
+    "No browser/SSE delivery runtime pass yet.",
+    "Other Recovery acceptance still incomplete; no main/deployment claim.",
+    "Source/runtime adapter semantics unchanged since focused review; no further repeated local checks required absent a change."
+  ],
+  "cleanCode": "Reviewed actual helper import, bounded standalone test runner, full12meaningful stream cases and source hashes; no blocking issue. File-log format correctly distinguished from prior pipe-based browser receipts."
+}
