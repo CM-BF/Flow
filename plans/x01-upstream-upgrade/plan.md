@@ -13,4 +13,4 @@
 
 工作段11:38:39–11:58:39Z；child60s/累计120s、TMP16MiB/raw512KiB/source-meta2MiB；本组local串行，0PG/Chrome/provider。失败与未知保留。
 
-- [ ] X01UP-05 复用已审lifecycle准备真实中心7.8.4→7.8.5→4；独立review后新窗口实际验收。
+- [x] X01UP-05 复用已审lifecycle准备真实中心7.8.4→7.8.5→4；独立review后新窗口实际验收。
