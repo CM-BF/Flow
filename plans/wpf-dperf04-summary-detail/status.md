@@ -13,13 +13,13 @@
 | 工作树dirty状态 | 当前16实现输入与固定cfd5逐字；仅本次证据/状态封存，提交后核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 检查状态 | cfd5 Node10/10已独审；summary browser首轮FAILED，6组已到达、0图，保守8258/余51742ms；后继仅测试同步修复未复验 |
+| 检查状态 | cfd5 Node10/10已独审；summary第二轮9组/双390图PASS，首FAIL保留；browser累计17343/余42657ms，关联/Timing/ACCESS待验 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED |
-| 实现目标 | 1c1901ebcda1bb9a711fd75684276df009b3e3f8 |
+| 实现目标 | c989257251713b699d682c77f949db5bf21f29ac |
 | 实现范围 | apps/execution-dashboard/src/read-model.mjs, apps/execution-dashboard/src/aggregate.mjs, apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/public/app.js, apps/execution-dashboard/test/summary-detail.test.mjs, apps/execution-dashboard/test/summary-detail.browser.mjs, apps/execution-dashboard/test/task-links.browser.mjs, apps/execution-dashboard/test/task-timing.browser.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/src/status.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/public/index.html, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/status-timestamps.test.mjs |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 轻摘要与按需详情的直接检查已通过；浏览器发现关闭详情后的焦点检查尚未等待原生关闭事件，正在相关复验 |
+| 当前产出 | 轻摘要、按需详情和后台刷新阅读保留的实际浏览器检查通过，正在核验任务关联与直接消费者 |
 | 下一可用交付 | 完成组合浏览器验收后交主线接收；当前实际浏览器尚未运行 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -146,3 +146,7 @@ outer55631及Node PGID55755实际signal0均ABSENT，scratch无、cleanup errors[
 只改同test的被动close事件观察：等待产品原生close listener结算，记录实际焦点目标，保原精确activeElement断言。不改产品、不用sleep、延长timeout或降低期望；未先归为产品错误。摘要优先，关联/Timing/ACCESS仍待按真实余量执行，任何未执行项不继承旧Node结果。
 
 clean-code：同一个scanner精确剪枝owned scratch，避免两遍非原子相减；cap/lifecycle/权限保持。复用已装find-skills/clean-code/codebase-design/webapp-testing，方法与hash在私有准备记录，未安装依赖。Node实际root报告已原样归档；当前claim b554 v4/11范围未变。
+
+## 组合summary第二轮实际
+
+固定1c190 / actual6963627，原生close被动事件结算后原精确T02headline焦点通过；9组/双390截图、outer0/唯一PASS终态/完整EOF/drop0与所有owned清理完成。[原件](../../docs/evidence/wpf-dperf04/reentry-20261007/browser-summary-second/index.json)。实际9084.5586ms计9085，累计17343/余42657；首轮所有raw保留。task-links同类原生close已作同样有界事件等待，保五次Escape、两精确return焦点断言，未运行不称通过。

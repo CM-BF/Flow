@@ -1,6 +1,6 @@
 {
   "state": "SOURCE_READY_NOT_RUN",
-  "implementationTarget": "1c1901ebcda1bb9a711fd75684276df009b3e3f8",
+  "implementationTarget": "c989257251713b699d682c77f949db5bf21f29ac",
   "oldSummaryTarget": "45f8a185ad0d43543a3c9eca7a29da97ebb31ba9",
   "accessTimingInput": "9f314e89b9d4b1b944cca96df0a9fea5a26a51d0",
   "sourceSupplyCommit": "aa9cb2d5ba053dd264645d98819cb1cb60e89b2f",
@@ -74,8 +74,8 @@
     },
     {
       "path": "apps/execution-dashboard/test/task-links.browser.mjs",
-      "bytes": 10845,
-      "sha256": "908ba011b4eed8255b598f3b01c15ae7e40b7e671e44257da665bdf26352f712",
+      "bytes": 11129,
+      "sha256": "754310776b803e800ef33597980a1c78fffb9742ea1ead2bc3113c22136a6bda",
       "role": "owned-source"
     },
     {
@@ -136,6 +136,6 @@
   "oldNodeRuntimeMs": 3950,
   "browserRuntimeMs": 0,
   "browserBudgetMs": 60000,
-  "runtimeState": "First summary failed on cfd5; this native-close synchronization correction NOT_RUN",
-  "previousTarget": "cfd5a53323438709843828d74cab67502801060c"
+  "runtimeState": "Summary9PASS on1c190; task-links native-close synchronization only NOT_RUN",
+  "previousTarget": "1c1901ebcda1bb9a711fd75684276df009b3e3f8"
 }
