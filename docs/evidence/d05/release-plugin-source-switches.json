@@ -1,0 +1,53 @@
+{
+  "at": "2026-10-07T15:23:15.789Z",
+  "scope": "Existing source navigation only",
+  "input": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/release-source-switch-svc09a-return-20261007/d05-current-source-switches.json",
+  "registryBeforeSha256": "723878b04e08068fcf80587927066a6b1d1900f516e404aec60fadddb583d0ce",
+  "registryAfterSha256": "0f597e024f8108da0352b500d04dfcb6849192a07a258c2bc0a401be0e1700e3",
+  "changes": [
+    {
+      "task": "WPF-RELEASE01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+      "branch": "codex/web-release-recovery",
+      "head": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+      "status": "plans/wpf-release01-product-compatibility/status.md",
+      "threeFilesExist": true,
+      "claim": "7d60cb91 v2 active"
+    },
+    {
+      "task": "WPF-I01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app",
+      "branch": "codex/web-plugin-runtime-app",
+      "head": "391416dddd7c70fb379e5e01dd31dc5cefcda7df",
+      "status": "plans/wpf-i01-plugin-integration/status.md",
+      "threeFilesExist": true,
+      "claim": "61abce36 v1 active"
+    },
+    {
+      "task": "X01-REMOVAL-REFERENCES-CLIENT",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references-client",
+      "branch": "codex/plugin-removal-references-client",
+      "head": "8010b40fcc72be0bb3be5fbcaa2ee9c3a4ed96b5",
+      "status": "plans/x01-removal-references-client/status.md",
+      "threeFilesExist": true,
+      "claim": "79284ebe v2 released"
+    },
+    {
+      "task": "X01-ARTIFACT-VERIFIER01",
+      "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+      "branch": "codex/plugin-artifact-verifier",
+      "head": "9710377cddb1f134f79edc3e3fdf740a62ba2494",
+      "status": "plans/x01-artifact-verifier/status.md",
+      "threeFilesExist": true,
+      "claim": "a67ba659 v1 active doc-only"
+    }
+  ],
+  "existingProcess": "Already registered; not duplicated",
+  "semantics": "Existing Release and I01 task IDs switch authority after old releases/new committed claims. New registry entries consume canonical client delivered status and verifier design-only status; no product completion inferred.",
+  "actualReload": "NOT_RUN",
+  "tests": 0,
+  "PGTests": 0,
+  "provider": 0,
+  "personalChanges": 0,
+  "review": "PENDING"
+}
