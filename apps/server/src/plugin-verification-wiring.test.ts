@@ -78,7 +78,9 @@ afterEach(async () => { for (const app of apps.splice(0)) await app.close(); vi.
 test('factory keeps verifier routes disabled by default and rejects a partial explicit policy', async () => {
   const app = await factory();
   expect((await app.inject({ method: 'POST', url: `/api/plugins/${registration}/verification-tasks`, headers: ownerHeaders, payload: admission })).statusCode).toBe(404);
-  expect((await app.inject({ method: 'POST', url: '/api/runner/plugin-verifier/authorize', headers: runnerHeaders, payload: grant })).statusCode).toBe(404);
+  expect(app.hasRoute({ method: 'POST', url: '/api/runner/plugin-verifier/authorize' })).toBe(false);
+  expect((await app.inject({ method: 'POST', url: '/api/runner/plugin-verifier/authorize', headers: ownerHeaders, payload: grant })).statusCode).toBe(404);
+  expect((await app.inject({ method: 'POST', url: '/api/runner/plugin-verifier/authorize', headers: runnerHeaders, payload: grant })).statusCode).toBe(403);
   await expect(factory({ pluginVerifierPolicy: algorithms })).rejects.toThrow('host policy');
   expect(domain.admit).not.toHaveBeenCalled(); expect(domain.authorize).not.toHaveBeenCalled();
 });
