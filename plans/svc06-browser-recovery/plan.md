@@ -15,17 +15,21 @@
 | 来源组合 | 6c基线+66ca三leaf/cleanup支持→独立04da候选 | 原239前像及main7272后像逐blob一致，不纳moving main |
 | 既有backend builder | 固定候选Git、原lock/精确cache/pnpm→新content-addressed artifact | offline/frozen/copy/ignore scripts，旧420s监督与空间界限不降低 |
 | 构建调用入口 | 已审prepare/verify+内部解析proof→独立结果 | 复用OPS14与原入口小参数接缝；不复制安装器或状态机 |
-| Web兼容 | 新backend descriptor/source+旧三retained及新7272网页 | 由原Web owner做真实App/cookie场景；旧C3/6c不当新组合通过 |
+| Web兼容 | 新backend descriptor/source+旧三retained及原Web owner固定的新网页 | 由原Web owner做真实App/cookie场景；旧C3/6c不当新组合通过 |
 
 ## 验收与TODO
 
 - [x] **SVC06B-01** 独立树/claim、精确前后像和来源组合固定，唯一status登记。
 - [x] **SVC06B-02** 固定可执行build proposal、实际依赖/资源边界及必要零副作用入口检查，独立review。
 - [x] **SVC06B-03** 取得真实共享窗口后一次新artifact构建/校验/内部加载，保存独立结果与unknown，禁止自动重放。
-- [ ] **SVC06B-04** 将准确descriptor/source交Web原owner完成三retained与新网页组合证据，受控接收；个人发布须后续单独固定门禁与窗口。
+- [ ] **SVC06B-04** 将准确descriptor/source交Web原owner完成三retained与新网页组合证据，受控接收；补齐有限backend保留工具及受管更新候选，个人发布须后续单独固定门禁与窗口。
 
-普通local累计≤120s、scratch16MiB/raw2MiB、同时≤4自有child；当前0PG/Chrome/provider/个人服务。完整构建未开窗，原420+.5+2与fresh>=2.5GiB及所有并发/保留总预算中更严格者、live1GiB、raw2MiB保持。无资源holder不等于自动许可构建。
+- [ ] **SVC06B-05** 集中backend count≤4/总2GiB/单项1GiB策略，prepare最大预留与verified import实际字节分判；直接消费者及独审，不改已审cd27。
+
+原entry普通local累计≤120s、scratch16MiB/raw2MiB、同时≤4自有child；当前0PG/Chrome/provider/个人服务。完整构建已一次完成并归还，后继完整构建仍需原420+.5+2与fresh>=2.5GiB及所有并发/保留总预算中更严格者、live1GiB、raw2MiB保持。无资源holder不等于自动许可构建。
 
 原4个选中PG/2focused types不重跑；本片来源组合不能代替新artifact或真实cookie兼容。旧source支持Module只有独立函数无导入；专测.js解析至受审.ts，保持原字节。架构只固定发布source组合，生产Interface无新增；后继图由Lead按新artifact实际身份登记。
 
 [单份来源记录](../../docs/evidence/svc06/browser-recovery/source.json)；[status](status.md)；[review](review.md)。
+
+后继有限retention工具已于2026-10-07T14:44:35.053Z原子amend；仅三exact产品+own两目录，局部另授≤60s/8MiBtmp/1MiBraw，0PG/build/个人/provider。原browser/support/build-entry停写交回。[受管更新候选](../../docs/evidence/svc06/browser-recovery/managed-update-candidate.md)分别列manifest兼容、工具政策、迁入装配缺件和实际运行门禁。

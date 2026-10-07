@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-07T14:44:07.032Z",
+  "purpose": "fixed historical sizing and managed-update preparation; no current personal observation",
+  "mainReceipt": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+  "review": {
+    "path": "actual-independent-review.json",
+    "sha256": "7ac98113ba1359bbe4c288fba90acd4a3b177ce22888df9be13c022deb285566",
+    "at": "2026-10-07T14:37:48.376Z",
+    "conclusion": "APPROVED_FIXED_ARTIFACT_RESULT_FIDELITY"
+  },
+  "docWorkStartObservedAt": "2026-10-07T14:42:28Z",
+  "docWorkStartSource": "clock tool observed time after initial current record reads; earliest read start UNKNOWN",
+  "historySourceBindings": [
+    {
+      "git": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+      "path": "docs/evidence/svc08/flow-host-artifact/build-once/actual-first/result.json",
+      "bytes": 4646,
+      "sha256": "9e88ba4276cf2c917182df9fdcd275253c77b68288d28fe10a77ce3420136ba3"
+    },
+    {
+      "git": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+      "path": "docs/evidence/svc08/flow-host-artifact/personal-adoption/attempt-02/clone-result.json",
+      "bytes": 300,
+      "sha256": "67488c894f53965b9cdaeb4163db37b4fe3bee3205dea2f51bfda98791d82ebe"
+    },
+    {
+      "git": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/migration-inputs.json",
+      "bytes": 31712,
+      "sha256": "f077d544b7eefc313761208f4b7c7d53c9850c8e35671666a9680190f6a607bd"
+    },
+    {
+      "git": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r2/migration-raw/clone-result.json",
+      "bytes": 300,
+      "sha256": "3c606dacb5683affd4397fe7d5da46ade6236b6befee5f088a8d6b287b251ab9"
+    },
+    {
+      "git": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-held-continuation-r1/final.json",
+      "bytes": 2866,
+      "sha256": "91bfae6e769f19c227ad39a8ad54113bdae2b32bb84f3f918351deea4f6b8071"
+    },
+    {
+      "git": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+      "path": "docs/evidence/svc06/browser-recovery/actual-first/result.json",
+      "bytes": 5034,
+      "sha256": "2821fef8d7d448820d53749ede31530180c7450d02717dd43494c14c2474a84f"
+    },
+    {
+      "git": "b37e404da18d8b63a5b38ad20cf55850a9781dd5",
+      "path": "docs/evidence/d05/personal-successor-live.json",
+      "bytes": 12243,
+      "sha256": "ba56950e59743603657929fdc7debc59276a6b5f896bfe23d9d8157736995a2e"
+    }
+  ],
+  "artifacts": [
+    {
+      "descriptor": {
+        "policy": "flow.backend-artifact.v1",
+        "artifactId": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+        "manifestDigest": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+        "sourceHead": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+      },
+      "inventoryBytes": 363136427,
+      "manifestBytes": 3182109,
+      "totalLogicalBytes": 366318536
+    },
+    {
+      "descriptor": {
+        "policy": "flow.backend-artifact.v1",
+        "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+        "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+        "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+      },
+      "manifestBytes": 3196606,
+      "totalLogicalBytes": 367041727
+    },
+    {
+      "descriptor": {
+        "policy": "flow.backend-artifact.v1",
+        "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+        "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+        "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+      },
+      "inventoryBytes": 363849010,
+      "manifestBytes": 3196606,
+      "totalLogicalBytes": 367045616
+    }
+  ],
+  "retention": {
+    "currentCountLimit": 2,
+    "proposedCountLimit": 4,
+    "singleArtifactBytes": 1073741824,
+    "aggregateBytes": 2147483648,
+    "threeHistoricalLogicalBytes": 1100405879,
+    "remainingLogicalBytes": 1047077769,
+    "existingTwoPlusBuildWorstCaseBytes": 1807102087,
+    "physicalExclusiveBytes": null,
+    "currentPersonalCountAndBytes": "NOT_OBSERVED; fresh required",
+    "fourthSlotPurpose": "separate SVC09 settings successor; independent artifact and bytes qualification; not included in cd27"
+  },
+  "sourceDelta": {
+    "base": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+    "target": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+    "paths": [
+      "tools/personal-preview",
+      "package.json",
+      "pnpm-lock.yaml",
+      "pnpm-workspace.yaml",
+      "packages/storage/migrations"
+    ],
+    "changedPaths": [],
+    "method": "git diff --name-only fixed refs; no import"
+  },
+  "dashboard": {
+    "at": "2026-10-07T14:18:29.212Z",
+    "summaryCount": 204,
+    "source": "docs/evidence/d05/personal-successor-live.json",
+    "method": "saved actual receipt only; no HTTP"
+  },
+  "runtimeOrProductChanges": 0,
+  "personalIO": 0,
+  "providerCalls": 0,
+  "engineeringTests": 0,
+  "claimReceipt": "retention-amend-receipt.json"
+}
