@@ -336,3 +336,5 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T05:45:30.858706+00:00：[X01窄接收](../../docs/evidence/i02/x01-enable-binding-intake.json)固定37177的16source/support共162785B对原main均base相同且接收后逐hash一致；034唯一新增，008/029保持。复用Mika独审27/27结果，0PG重跑；本批root/Web组合类型0、所有组absent/双EOF。OPS四文档a9f独立APPROVED_DOCS及ENG01J bd344五metadata同步，不覆盖他组或旧产品blob。下一动作main快进；生产插件挂载、个人网页采用仍未发生。
 
 2026-10-07T05:58:47.805722+00:00：C02公开流2ab3c6ff的25文件按2b3差异接收，24文件逐字同target，client干净三方合并保留主线S01P07；新增已审PG专测与d2e8 canonical证据。原340固定source/raw核同（最终status/review后继单列），6/6/189HTTP限定注入transport，未重跑。集成16.332s、root/Web types0、27/27直接消费者、3组absent/双EOF/tmp空已删，见[codex intake](../../docs/evidence/i02/codex-public-stream-intake.json)。同批收已审OPS acd911、SVC08首入口失败b35、ENG01J三轮诊断结果4f15；不把负例/准备当部署或真实工程通过。
+
+2026-10-07T06:09:38.514193+00:00：窄接OPS父任务CI唯一入口/官方来源链接修正、实际r2窗口止点，及ENG01J启动正例收敛/负例独审记录；各scope前像逐字匹配主线，八个文档与一份接收记录，不改产品或个人运行。见[接收记录](../../docs/evidence/i02/metadata-intake-20261007-0610.json)。

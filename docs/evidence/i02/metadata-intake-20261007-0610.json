@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T06:09:38.514193+00:00",
+  "type": "docs-only narrow intake",
+  "base": "5cae7a25a7af723f9d9bae2666daeafbee004c8f",
+  "inputs": [
+    {
+      "source": "1d07c6a6a74c2b9c56e814e2771f455ab320fe98",
+      "paths": [
+        "plans/flow-001-architecture/status.md",
+        "plans/flow-002-provider-harness/plan.md",
+        "plans/ops-001-status-review/status.md"
+      ]
+    },
+    {
+      "source": "fb31164b15846befeaeaa812ee125d59a678f89f",
+      "paths": [
+        "docs/evidence/eng01j/stock-helper/convergence.md",
+        "docs/evidence/eng01j/stock-helper/pagesize-independent-review.json",
+        "plans/eng01j-native-write-authority/plan.md",
+        "plans/eng01j-native-write-authority/review.md",
+        "plans/eng01j-native-write-authority/status.md"
+      ]
+    }
+  ],
+  "reviews": {
+    "OPS": "native_center_owner APPROVED_DOCS all deltas through1d07; errors/human missing empty; historical timing unknown retained",
+    "ENG": "Execution Lead reviewed 5-file delta and complete convergence; no product change or new grant; historic negative result review identical to I02 copy"
+  },
+  "engineeringRuns": 0,
+  "personalActions": 0
+}
