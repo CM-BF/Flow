@@ -1,13 +1,13 @@
 {
   "ready": false,
   "missing": [
-    "official04da-retained-reports-and-review",
     "current-personal-six-files-and-three-owned-records",
     "current-runner-CAS-and-marker",
     "fresh-directory-identities",
     "exclusive-new-window-and-namespaces",
     "complete-fixed-runtime-pins-and-latest-team-resource-floor",
-    "official-report-import-arguments"
+    "fixed-web779-transfer-and-publication-entry-review",
+    "post-maintenance-Web-phase-fresh-inputs"
   ],
   "window": null,
   "runDirectory": null,
@@ -112,7 +112,11 @@
     "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
   },
   "policyPin": null,
-  "reportIds": null,
+  "reportIds": [
+    "fc5cf4912f24af8ed476b972b7cfdb21403abb59f3576bdfd3fed24e5d77eced",
+    "15350e797fd6bffd32a34e7fb9b28a8e546cc020a1a65168348220310a056251",
+    "366c4a4225d4e3ea334ea7788b67fa45f7928a36614d3e858d565187b4dacfb6"
+  ],
   "initialVersion": null,
   "runnerId": null,
   "runnerDirectoryIdentity": null,
@@ -135,5 +139,64 @@
   "supervisor": {
     "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
     "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "webPublication": {
+    "ready": false,
+    "sourceDirectory": "/private/tmp/release01-web-artifact-prepared-20261007/actual/artifact-store",
+    "artifact": {
+      "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+      "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+      "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+    },
+    "artifactFiles": 10,
+    "assetBytes": 1700569,
+    "manifestBytes": 1651,
+    "releaseId": "52a261e294324a11aead58a554f547db",
+    "reportDirectories": [
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/fc5cf4912f24af8ed476b972b7cfdb21403abb59f3576bdfd3fed24e5d77eced",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/15350e797fd6bffd32a34e7fb9b28a8e546cc020a1a65168348220310a056251",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/366c4a4225d4e3ea334ea7788b67fa45f7928a36614d3e858d565187b4dacfb6",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/raw/fixture/compatibility-state/web-compatibility/071d928d67f93e59b0e05a20280cda5a6d3d9249ec7428a61484c804e56179f7"
+    ],
+    "expectedCurrent": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+    "expectedVersion": 3,
+    "request": {
+      "artifact": {
+        "artifactId": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+        "sourceHead": "c2311b6bd44a2a8e73e3b066be5f12bc8b153b37",
+        "manifestDigest": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+      },
+      "expectedVersion": 3,
+      "expectedBackendHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+      "compatibilityId": "071d928d67f93e59b0e05a20280cda5a6d3d9249ec7428a61484c804e56179f7"
+    },
+    "expectedAfter": {
+      "version": 4,
+      "current": "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4",
+      "retainedIds": [
+        "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+        "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+        "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+        "779acd5b8177dac2331f2552334e10d05032a7e9ce23550016ad2bfbabdb2df4"
+      ]
+    },
+    "requestPath": null,
+    "transferInput": null,
+    "boundary": "3 retained reports remain the backend contract. Publish is a separate public CAS only after its resumed-confirmed receipt and fresh identity/pointer evidence. No automatic rebase or rollback.",
+    "transferOuter": null,
+    "actions": {
+      "import-retained-reports": {
+        "directory": null,
+        "outer": null
+      },
+      "import-new-report": {
+        "directory": null,
+        "outer": null
+      },
+      "publish-web": {
+        "directory": null,
+        "outer": null
+      }
+    }
   }
 }

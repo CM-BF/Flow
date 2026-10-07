@@ -80,7 +80,8 @@ def verify_pins(plan):
     for row in plan['pins']: verify_file(row)
     verify_readonly()
     required = [str(HERE / name) for name in ('current-operator.py', 'current-import.mjs', 'current-maintenance.mjs',
-                'current-migration.mjs', 'runner-idle.mjs', 'current-entry-readonly.json')]
+                'current-migration.mjs', 'runner-idle.mjs', 'current-entry-readonly.json',
+                'current-web-transfer.mjs', 'current-web-actions.mjs', 'managed-update-inputs.json')]
     required += [str(HERE.parent.parent / 'svc05-history-compatibility/release-operation/runner-files.mjs'),
                  str(HERE.parent / 'update-diagnostics-candidate/history-projection.mjs')]
     required += [str(OLD / name) for name in ('maintenance-continuation.py', 'maintenance-continuation.json', 'maintenance-supervise.py')]
@@ -130,6 +131,24 @@ def save_report(path, work):
     return 0 if complete else 1
 
 
+def web_invocation(plan, action, path, digest):
+    publication = plan['webPublication']
+    if action == '--execute-fixed-web-import':
+        value = publication['transferInput']
+        assert value and Path(value['path']).is_absolute()
+        target = plan['migration']['artifact']
+        argv = [NODE, str(HERE / 'current-web-transfer.mjs'), action, value['path'], value['sha256']]
+        outer = publication['transferOuter']
+    else:
+        phase = {'--execute-fixed-retained-reports': 'import-retained-reports',
+                 '--execute-fixed-new-report': 'import-new-report', '--execute-fixed-web-publish': 'publish-web'}[action]
+        target = plan['migration']['expectedBackendArtifact' if phase == 'import-retained-reports' else 'artifact']
+        argv = [NODE, str(HERE / 'current-web-actions.mjs'), phase, path, digest]
+        outer = publication['actions'][phase]['outer']
+    root = Path(plan['migration']['installationDirectory']) / 'backend-artifacts' / target['artifactId'] / 'root'
+    return [argv[0], '--import', str(root / 'node_modules/tsx/dist/loader.mjs'), *argv[1:]], str(root), outer
+
+
 def main(argv):
     assert len(argv) in (4, 5), 'EXACT_INVOCATION_REQUIRED'
     action, path, digest, window = argv[:4]
@@ -146,6 +165,21 @@ def main(argv):
         return 0
     assert len(argv) == 4
     outer = load(OLD / 'maintenance-supervise.py', 'svc06b_existing_outer'); ops = outer.supervisor()
+    if action in ('--execute-fixed-web-import', '--execute-fixed-retained-reports', '--execute-fixed-new-report', '--execute-fixed-web-publish'):
+        command, cwd, output = web_invocation(plan, action, path, digest)
+        if action != '--execute-fixed-retained-reports':
+            selected = plan['webPublication']['transferInput']
+            web_input = read_plan(selected['path'], selected['sha256'])
+            assert web_input['finalReceipt']['path'] == str(Path(plan['runDirectory']) / 'final.json')
+            assert web_input['expectedBackendArtifact'] == plan['migration']['artifact']
+            assert web_input['expectedWebHostArtifact'] == plan['migration']['expectedWebHostArtifact']
+            assert web_input['budget'] == {key: plan['migration']['budget'][key] for key in ('freshBytes', 'liveBytes', 'rawBytes', 'addedBytes')}
+        def execute_web():
+            report = ops.supervise(ops.Launch(tuple(command), cwd, env, ops.Ownership.NEW_CHILD_SESSION), ops.Policy(30, .5, 2, 65536))
+            result = dict(vars(report))
+            for name in ('stdout', 'stderr'): result[name] = getattr(report, name).decode('utf8', 'replace')
+            return result
+        return save_report(output, execute_web)
     if action == '--execute-fixed-maintenance':
         maintenance_plan(plan, path, digest)
         return save_report(plan['maintenanceOuter'], lambda: outer.supervise_operator(ops,
@@ -158,7 +192,7 @@ def main(argv):
     def execute_import():
         report = ops.supervise(ops.Launch((NODE, str(HERE / 'current-import.mjs'), '--execute-fixed-import',
             plan['migrationInput']['path'], plan['migrationInput']['sha256']), str(HERE), env, ops.Ownership.NEW_CHILD_SESSION),
-            ops.Policy(120, .5, 2, 2097152))
+            ops.Policy(120, .5, 2, 1048576))
         result = dict(vars(report))
         for name in ('stdout', 'stderr'): result[name] = getattr(report, name).decode('utf8', 'replace')
         return result
