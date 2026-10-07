@@ -1,0 +1,44 @@
+{
+  "authorization": "Mika extra admission only, one admin connection and single query, 5s total; not a diagnostic retry",
+  "prelaunchFailure": {
+    "at": "2026-10-07T16:43Z",
+    "type": "FileNotFoundError",
+    "path": "materialized source/apps/server/src/knowledge/fixture.ts (not in runtime import closure)",
+    "children": 0,
+    "pgConnections": 0,
+    "resolution": "read fixed Git fixture expression under same authorized private source; no value/hash output"
+  },
+  "actual": {
+    "startedAt": "2026-10-07T16:44:19.265684Z",
+    "endedAt": "2026-10-07T16:44:19.361814Z",
+    "pid": 56907,
+    "exit": 0,
+    "ownedState": "absent",
+    "capture": "merged",
+    "eof": {
+      "stdout": true
+    },
+    "first": null,
+    "secondary": [],
+    "signals": [],
+    "closed": true,
+    "query": {
+      "startedAt": "2026-10-07T16:44:19.346Z",
+      "endedAt": "2026-10-07T16:44:19.357Z",
+      "elapsedMs": 10.890041000000004,
+      "maximum": 100,
+      "occupiedIncludingSelf": 9,
+      "reserved": 3,
+      "availableConservative": 88,
+      "required": 34,
+      "configured": 18,
+      "sharedReserve": 16,
+      "poolClosed": true,
+      "passed": true
+    }
+  },
+  "runtimeBindingsVerified": 27,
+  "preflight": "query-pg-first-preflight.json",
+  "mainDiagnostic": "NOT_STARTED at authorization record; entry ledger defines actual start",
+  "modelCalls": 0
+}
