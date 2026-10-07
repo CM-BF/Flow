@@ -22,9 +22,9 @@ const RECOVERY_WEB_ARTIFACT: Artifact = {
 };
 const RECOVERY_BACKEND_ARTIFACT: Artifact & { policy: "flow.backend-artifact.v1" } = {
   policy: "flow.backend-artifact.v1",
-  artifactId: "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
-  sourceHead: "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
-  manifestDigest: "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+  artifactId: "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
+  sourceHead: "f37a3612068c7215994750574a7451ede841bcce",
+  manifestDigest: "b69296ade85aa19a767a28ab53a25ddd7e37841538f0120b346bc8f03f45810d",
 };
 export type RecoveryAdmission = Admission & { recoveryApp: AppInput };
 export type PublicContext = { format: 1; publicOrigin: string; policySha256: string };
