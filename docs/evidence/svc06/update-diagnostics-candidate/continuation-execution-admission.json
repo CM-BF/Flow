@@ -1,0 +1,24 @@
+{
+  "at": "2026-10-07T13:05:02.157476+00:00",
+  "window": "svc06-personal-7d1-20261007-1306",
+  "windowRecordSha256": "940ba8eb91466a3d2c2c4bf81c7e1c82f36e8f4a7bd8b6ec43c865cd04a25931",
+  "source": "c36f4a8109c9a75cda42a34aba27f778784f6f14",
+  "planSha256": "09f8c94cfb5b6c64cd8ee264ceb72ca471236b9b8723935b1922da59f9c0f1d4",
+  "manifestSha256": "85db27d5173eb72aa68498e6f919bf56b9692d56292889ef4294da653b837c0a",
+  "claim": {
+    "id": "3346a60d-0b50-4c73-bf22-9b258f8b1381",
+    "version": 9,
+    "state": "active",
+    "observedAt": "2026-10-07T13:04:46.351914+00:00"
+  },
+  "freeBytes": 21723918336,
+  "namespaceAbsent": true,
+  "outerAbsent": true,
+  "stagesNotReplayed": [
+    "migration",
+    "webHostReplacement",
+    "compatibilityImports",
+    "policyWrite"
+  ],
+  "actualOperator": "about-to-start; exact start captured by reservation/outer"
+}

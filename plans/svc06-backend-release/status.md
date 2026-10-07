@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 13:02:21 UTC；c36续接准备独审批准；R2四阶段保持，实际维护等待新窗口 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 13:05:06 UTC；R3只读兼容门失败并归还；后台维护仍未开始 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -23,9 +23,9 @@
 | 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人本次迁入/Web-host/报告/策略已发生，后台更新未执行；R2部分结果已限定独审，main接收待Lead；剩余维护尚未运行。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新产物、网页宿主、兼容报告和策略已安装，后台仍保持原版本；维护前观察入口已修正，补齐停旧runner前的本地未知状态门和独立总期限，定向检查通过。 |
-| 下一可用交付 | 取得独占窗口并通过现场核验后，继续后台维护和保留核验。 |
-| 当前阻塞 | ACTIVE: 剩余维护准备已获独审，等待新实际窗口；已完成阶段保留，后台维护尚未开始。 |
+| 当前产出 | 新产物、网页宿主、兼容报告和策略已安装，后台仍保持原版本；本次只读门禁发现旧观察器不能读取已导入的新格式报告，失败原件保留，后台维护未开始。 |
+| 下一可用交付 | 修正观察器的兼容读取接缝并独审后，继续尚未开始的后台维护。 |
+| 当前阻塞 | ACTIVE: 本次只读兼容观察失败，窗口已归还；待读取接缝修正和复审，已完成四阶段不重放。 |
 | 需用户决定 | NONE |
 | Review | R2 APPROVED_PARTIAL_ACTUAL_FIDELITY_NOT_BACKEND_UPDATE 已归档；旧失败保持。剩余维护c36获APPROVED_REMAINING_MAINTENANCE_PREPARATION；0107原P2已闭且原件保留，实际维护未执行。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
@@ -376,3 +376,13 @@ Web正式actual独审随后收到并核SHA69e9f809…；原报告等待结束取
 ## 剩余维护准备独审接收
 
 2026-10-07T13:02:21.326961Z Execution Lead独立批准固定c36f4a8109c9a75cda42a34aba27f778784f6f14，见[唯一原样review](../../docs/evidence/svc06/update-diagnostics-candidate/continuation-delta-independent-review.json)。23bindings/107654B与8原observer输入已核，P2 idle及whole-operator期限关闭；reviewer0重测/个人I/O。原R2已消费4阶段不重放，bootstrap/refresh/checkpoint/resume仍NOT_RUN，只有新独占窗口与fresh gates符合后才运行。产品/helper源保持c36。
+
+
+## 本次剩余维护实际段
+
+2026-10-07T13:05:02.157476+00:00 获唯一窗口svc06-personal-7d1-20261007-1306；fresh账本v9 active、固定c36/plan09f8/manifest85db与root7524一致，free 21723918336B，新run/outer未存在。下一仅原固定入口执行facts→preflight→history→bootstrap→idle→refresh→checkpoint→resume；实际开始与终态以本次reservation/outer为准。
+
+
+## R3现场只读门停止与归还
+
+2026-10-07T13:05:06.328778Z reservation，13:05:06.750720Z stop，来源[唯一结果](../../docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r3/RESULT.md)及原raw。facts-before418ms报WEB_COMPATIBILITY_INVALID，whole-operator494ms；两PID各自absent/双EOF/无signals，completed[]，0产品SQL/维护调用/provider。facts已发生个人只读，但完整snapshot失败；旧reader只认format1与已导入C3 format2冲突，不判App不兼容。原R2四阶段未重放，所有raw/namespaceKEEP，独立结果审查待Lead。
