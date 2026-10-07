@@ -11,7 +11,7 @@ import { calculatorExecutionIdentitySchema } from './calculator-receipt.js';
 import { createCodexEngineeringWriter, type NativeWriteAuthority, type NativeWriteBinding } from './native-writer.js';
 import { executeEngineeringWriter } from './writer.js';
 import { digest } from './resources.js';
-import type { SyntheticProject } from './workspace.js';
+import type { EngineeringWorkspace, SyntheticProject } from './workspace.js';
 
 export interface NativeEngineeringSetup {
   project: SyntheticProject;
@@ -41,7 +41,9 @@ export function createNativeEngineeringAdapter(setup: NativeEngineeringSetup): H
     if (invoked.has(key) || invoked.size >= 8) throw new NativeExecutionError('unknown');
     await ownership(context);
     invoked.add(key);
-    const workspace = await project.acquire();
+    let workspace: EngineeringWorkspace;
+    try { workspace = await project.acquire(); }
+    catch { throw new NativeExecutionError('unknown'); }
     let release = false;
     try {
       await ownership(context);

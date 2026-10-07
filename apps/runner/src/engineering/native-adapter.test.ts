@@ -111,6 +111,18 @@ it.each(['ordinary', 'pin', 'runner', 'checker'])('rejects %s assignment before 
   await expect(api.adapter.run(api.context)).rejects.toMatchObject({ settlement: 'settled' });
   expect(api.workspaces).toHaveLength(0); expect(api.counts.opens).toBe(0);
 });
+it('retains an acquired lease when acquisition acknowledgement is unknown without starting a writer', async () => {
+  const api = await setup(); let acquisitions = 0;
+  const adapter = createNativeEngineeringAdapter({ ...api, project: { ...api.project, async acquire() {
+    acquisitions++; const workspace = await api.project.acquire(); api.workspaces.push(workspace);
+    throw Error('Acquired lease but response is unknown.');
+  } } });
+  await expect(adapter.run(api.context)).rejects.toMatchObject({ settlement: 'unknown' });
+  await expect(adapter.run(api.context)).rejects.toMatchObject({ settlement: 'unknown' });
+  await expect(api.project.acquire()).rejects.toThrow();
+  expect(acquisitions).toBe(1); expect(api.counts).toEqual({ opens: 0, closes: 0, snapshots: 0, releases: 0 });
+  expect(api.events).toHaveLength(0);
+});
 it('publishes the exact shared native receipt only after writer revocation and a full stable capture', async () => {
   const api = await setup(); await api.adapter.run(api.context);
   const artifact = api.events.find(event => event.type === 'artifact')!;
