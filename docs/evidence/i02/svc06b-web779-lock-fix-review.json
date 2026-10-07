@@ -1,0 +1,28 @@
+{
+  "at": "2026-10-07T23:32:32.438Z",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_WEB_ONLY_CALLER_AND_RESULT_FIDELITY",
+  "blockingP1P2": 0,
+  "source": "6491c4815cd6daf8f640648d5e8a25a599d8cd92",
+  "target": "dd6ddc3ff8a1e89a507367deada36bdb3d51b1a7",
+  "overlay": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+    "path": "docs/evidence/svc06/browser-recovery/recovery-web-lock-fix.json",
+    "bytes": 20517,
+    "sha256": "83dcde0bb5ef7ca5f4353b33bae2ad29b1d59698df741829d4a2cce2f1418703",
+    "checkedBindings": 21
+  },
+  "verified": [
+    "Non-reentrant transfer lock remains owned by existing transfer module. Observe now uses fixed artifact public readRunnerMaintenance, exact runner token/revocation identity and bounded read-only Pool; no second lock acquisition.",
+    "Correct local03 six cases and local05 one existing actual publish case passed against real transfer/public lock/public maintenance reader with external database injected. Test recipe05 explicitly binds absolute file and selection.",
+    "All 21 overlay/inherited bindings match exact size/digest/dev/ino; source two files equal fixed6491; target clean and remote equal. Only publication leaf pin changes in inherited source closure; artifact e15/880060 and four reports unchanged.",
+    "Current scoped claims available at23:32:16.634Z. Actual transfer/publish NOT_RUN and ready false."
+  ],
+  "limits": [
+    "local04 omitted explicit test file and entered default discovery: FAIL/output limit, dual EOF false,3933 observed bytes unretained and later actions UNKNOWN. local05 does not erase that failure.",
+    "Registered group35560 ended; one authorized74ms process metadata observation found no matching association predicates. Escaped descendants and uncaptured effects remain UNKNOWN; no blanket zero PG/provider/personal claim. Unknown budget retained by resource owner.",
+    "Review does not grant a resource holder or prove current personal identity. Before the first action, bind the new resource window and same-call exact pins/complete artifact/current boot/accepting24/namespaces/floor; no identity rebase.",
+    "One transfer, then only its confirmed receipt permits one public CAS d629/v3 to779/v4. Any mismatch/unknown stops, no retry or rollback. Persistent services, existing tabs/data/config and retained artifacts preserved; actual user assignment NOT_OBSERVED.",
+    "No reviewer tests, private original reads, PG or personal service operations."
+  ]
+}
