@@ -1,8 +1,8 @@
 # S01 独立审查
 
-## 当前：回调背压修复待独审
+## 当前：回调背压修复已独审，主线未接收
 
-SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING，固定源码 `84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2`；[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-ready.md)。有限callback排干/首错/单packer，baseline1、修后16/strict0、existing child2分轮；0实际PG/性能，不改原actualFAIL。
+SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED /0P1/P2，db_transaction_owner/gpt-6-astra，2026-10-07T19:49:27Z（root转达）。固定packet `86bbdd5eaeb076dc29b6733be437c9ff40ab723a` / 源码 `84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2`；[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-ready.md)。[正式独审回执](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-independent-review.json)。20bindings186154B/四run76sourcehash与有限旧变体核符；单500ms绝对deadline、回调背压、1MiB上限和远端receipt语义成立。baseline1、修后16/strict0、existing child2分轮可信；0审者工程/PG，不改原actualFAIL/2KEEP，未批准性能或main。
 
 ## 当前：单 buffered 臂实际失败结果
 

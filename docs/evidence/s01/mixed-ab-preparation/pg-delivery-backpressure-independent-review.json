@@ -1,0 +1,30 @@
+{
+  "verdict": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "reviewer": "db_transaction_owner",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-07T19:49:27Z",
+  "receivedVia": "root forwarded exact verdict after reviewer direct message hit tool thread cap",
+  "source": "84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2",
+  "packet": "86bbdd5eaeb076dc29b6733be437c9ff40ab723a",
+  "manifestSha256": "925a2f4ccfef42c1db0552ae97c6b200efc069d30a02467b42546583f8ce3330",
+  "bindings": 20,
+  "bindingBytes": 186154,
+  "runSourceHashes": 76,
+  "P1": 0,
+  "P2": 0,
+  "approvedScope": [
+    "one 500ms absolute deadline, callback backpressure, unchanged1MiB pending cap and remote receipt authority",
+    "baseline1 expected failure, fixed16, strict0, existing child2 in separate runs",
+    "four run source/raw and finite historical variants match; resource closure receipts faithful"
+  ],
+  "exclusions": [
+    "prior single-A remains FAIL/UNKNOWN_RETAIN and two KEEP retained",
+    "not performance approval, main integration, new runtime input or PG permission",
+    "ACK4s and complete128 capacity still not passed"
+  ],
+  "ownerRecordedAt": "2026-10-07T19:54:20.651Z",
+  "ownerFreshClaimAt": "2026-10-07T19:52:20.392Z",
+  "claimId": "508f9c85-a27c-4382-bfe9-caca43be4b0e",
+  "claimVersion": 3,
+  "ownerRole": "metadata seal only; no engineering child/PG/HTTP/TMP access"
+}

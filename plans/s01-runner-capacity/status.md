@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T19:38:05.237Z |
+| 最近更新 | 2026-10-07T19:54:20.651Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | 2026-10-07T16:47:09.000Z |
@@ -15,21 +15,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 背压修复源码已固定84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2；当前只封单记录/manifest/status，最终packet由Git读取。 |
+| 工作树dirty状态 | 本段起点86bbdd5eaeb076dc29b6733be437c9ff40ab723a = origin clean；仅独审回执与本status/review封存，实验源和原件零改动。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2：baseline1复现旧失败；修后16定向+strict0+现child2，四run分开；实际单A仍FAILED，不以pure代容量。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
 | 实现目标 | 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2 |
 | 实现范围 | experiments/runner-capacity/mixed/channel.ts, experiments/runner-capacity/mixed/child.ts, experiments/runner-capacity/mixed/pg-delivery.ts, experiments/runner-capacity/mixed/pg-delivery-bridge.ts, experiments/runner-capacity/mixed/pg-delivery-backpressure.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | integration |
 | 优先级 | 4 |
-| 当前产出 | 观察交付已改为有限回调排干并通过局部检查，正在独立审查；原容量运行仍失败，活动资源已归还，两个未知目录继续保留。 |
-| 下一可用交付 | 独立审查背压修复与有限反例；通过后才准备新的实际输入，不沿用已消费的性能窗口。 |
-| 当前阻塞 | ACTIVE: 原128同步负载完整验收仍未过；背压修复待独立审查，无实际holder或待启动检查。 |
+| 当前产出 | 观察交付背压修复已通过独立源码与局部结果审查，主线尚未接收；原容量运行仍失败，活动资源已归还，两个未知目录继续保留。 |
+| 下一可用交付 | 先确定基于完整观察交付的有限时延诊断，再按真实证据推进容量验收；当前不准备或启动新的PG运行。 |
+| 当前阻塞 | ACTIVE: 原128同步负载的完整ACK窗口验收仍未通过；背压修复已审且未集成，无实际资源holder或待启动检查。 |
 | 需用户决定 | NONE |
-| Review | SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2；前actual d6ce1e9ca1a8b3ecc86bd087399785cb87d99aae 已db19:14:33忠实性批准，非实验通过。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE/exact6；2026-10-07T19:19:13.341Z本人/WT/branch fresh核符，0take/amend。 |
+| Review | SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED 84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2 / packet 86bbdd5eaeb076dc29b6733be437c9ff40ab723a，db_transaction_owner 2026-10-07T19:49:27Z，0P1/P2（root转达）；原actual仅失败忠实性获准，不是容量通过。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE/exact6；2026-10-07T19:52:20.392Z fresh本人/WT/branch/六scope相符；本段0take/amend/release，继续保留。 |
 | 架构影响 | 本次在私有observer/reporter边界增加有限异步结束交付与首错事实；保持packing/字节上限及driver完整receipt权威。原offline main范围不扩大。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -374,3 +374,13 @@ Root于17:06:05Z独审source839a/packet17cb，SOURCE_AND_LOCAL_RESULT_REVIEW_APP
 [唯一交审入口](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-ready.md)。原同步8000条延迟callback反例证明pending门槛确实拒绝；修复保持1MiB pending/4MiB retention/64KiB envelope及原ACK4s。新8+直接packing4+seam4=16pass，focusedstrict0，真实现child空闲停止2pass；baseline另1，不称最终23全集。4raw2922B/4top-level groups最终absent/MERGED EOF/无signals-secondary，早期EPERM保留；4sameidentityTMP已删，实际最后19:33:01.365Z归还。4083ms仅监督累计、wholeexternalwall/activepeakUNKNOWN。最末bridge仅删除重复不可达guard，其余source与修后检查字节一致。原实际失败/raw/input/compiled/两KEEP未改未读。
 
 find-skills复用本地版本，codebase-design让reporter拥有回调/预算、packer单一、bridge拥有summary、driver拥有完整接收；clean-code核首错/取消/一次finish及无额外queue。此单一status供dashboard聚合，未重复GET。实际工程0PG/HTTP/provider/性能，4checks收口后0待launch。Root补充ACK时延线索仅后继：三不足4s由真实串行ACK和6s边界触发，不能证明pool原因；本片不修改负载/证明。
+
+## 2026-10-07T19:54:20.651Z 背压独审接收与停止写入
+
+本metadata段实际19:51:51Z开始、上限5分钟/新增128KiB。db19:49:27固定source84b5cdee11b71dc9b1b7fd37bdfdddae9d94efb2 / packet86bbdd5eaeb076dc29b6733be437c9ff40ab723a 独审0P1/P2；20bindings186154B、四run76sourcehash与有限旧变体相符。正式[回执](../../docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-independent-review.json)记root转达来源。源码/局部结果批准不改原单A FAIL/innerprocessClosed=false/UNKNOWN_RETAIN、2KEEP或ACK4s；未集成本修复，main仅旧8e5faabb范围。0工程child/PG/HTTP/TMP访问，未改运行输入/raw/compiled/旧manifest。六TODO状态不变，task开工UNKNOWN仍保留；唯一status供已登记dashboard读取，不新增第二状态源/GET。
+
+仅后继只读线索（root提供，owner未独立复算）：707个eligible emit按attempt+ordinal+ownerVersion与唯一eventACK及区间内events HTTP matched、unmatched0；按总和加权preRequest18.89%、HTTP观测79.93%、postResponse1.18%。pre不是已证fs时间，HTTP含client/eventloop/网络/server而非PG耗时。此线索支持先细分请求区间，不推pool根因、不放宽4s/6s，也不构成新实验设计或运行许可。
+
+质量：复用本地find-skills/codebase-design/固定clean-code，区分源码批准、局部实证、实际FAIL、main事实与未来诊断；首屏已去掉陈旧“修复待审”，不勾开放容量TODO。原交审ready/manifest按86bb固定历史保留，当前批准以本status/review和独审回执为准。
+
+本段封存前计量：三metadata文件新增逻辑增长3533B，计此说明后仍<4KiB/128KiB；旧manifest SHA925a2f4ccfef42c1db0552ae97c6b200efc069d30a02467b42546583f8ce3330不变。主线parseStatus errors/human.missing均[]；唯一timing issue仍为历史task开工未记录，未补造。当前无源码/工程动作，commit/push后STOP并保claim。
