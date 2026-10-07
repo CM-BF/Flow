@@ -4,11 +4,22 @@
 
 ## 固定调用消费者
 
-[maintenance-continuation.json](maintenance-continuation.json) 是唯一参数表；[maintenance-continuation.py](maintenance-continuation.py) 按固定顺序调用现 OPS14，逐阶段持久原始 Report。没有新的服务管理/维护状态机。实际命令为固定 Python3.13 + `maintenance-continuation.py --execute-fixed-maintenance <Lead实际窗口ID>`；当前仅准备，真实执行须 Lead 已协调新窗口与 fresh claim/输入/资源事实。
+[maintenance-continuation.json](maintenance-continuation.json) 是唯一参数表；[maintenance-continuation.py](maintenance-continuation.py) 按固定顺序调用现 OPS14，逐阶段持久原始 Report。没有新的服务管理/维护状态机。实际命令为固定 Python3.13 + `maintenance-supervise.py --execute-fixed-maintenance <Lead实际窗口ID>`，原样外层stdout重定向至参数表固定的全新exclusive0600 `personal-maintenance-r3-outer.json`；不得预建run目录或覆盖输出；当前仅准备，真实执行须 Lead 已协调新窗口与 fresh claim/输入/资源事实。
 
 顺序是 facts-before（原 helper 必带全新 absolute exclusive output）→只读 preflight→history-before→root公开 bootstrap→真实 operation 读取→产物公开 refresh→facts-paused/history-paused→持久保护 checkpoint→产物一次 resume→facts-final/final。维护三个命令的 Node / `--import tsx` / module / cwd / 四个位置参数均在参数表固定，实际 root入口仍同6c；产物入口只有真实 bootstrap 已建立 operation 后才调用。不经旧CLI选择，不预填 backendArtifact。每个事实文件都读完整持久内容，不拿 stdout 摘要当 facts。
 
-12个调用均复用 OPS14 childPidOnly；detached三角色只由原公有工具操作。900秒共享工作截止从 bootstrap 调用前记录，不因 refresh/resume 重置；每次 work 使用总剩余额、保留2秒reap。持久化先于下一动作，若错误/unknown/期限不足立即 STOP_KEEP_NO_RETRY；若持久化本身未知，不推断任何阶段完成。普通旧角色就绪/停止界限不增，原>=2.5GiB fresh/live1GiB、新增512MiB/总raw2MiB保持，阶段 capture64KiB。迁入已占367,041,727逻辑B，后继无大copy，不将APFS clone节省当预算保证。临启动仍核当下其他并行声明和原最大15配置连接。
+12个调用仍复用 OPS14 childPidOnly，原公开工具独占 detached 三角色的操作。新增极薄 [maintenance-supervise.py](maintenance-supervise.py) 只加载固定已审 OPS14，再以 childPidOnly 独立监督整个 Python operator。900秒从 operator **启动前**计时，比旧 bootstrap 起计时更严格，涵盖所有动态 bindings、空间检查、记录 save/fsync 和阶段调用；不会在 bootstrap/refresh/resume 重置。固定监督模块加载发生在任何 operator/个人操作之前，若该前置自身卡住，尚未发起操作；外层停止决定不依赖 operator 的写盘，也不等待结果文件 fsync。外层原始 Report 的持久化在停止决定后完成，不能以持久化完成时间冒充停止期限。
+
+内层每阶段 work ≤ sharedDeadline−now−7s（2秒reap+5秒独立外层余量），写 invocation/fsync 后再次扣时再启动，不足即停止。外层900秒+0TERM+2reap只针对其亲自创建的 operator PID。**OPS14 即使 childPidOnly 也 start_new_session=True**，因此每个内层 Node 是独立session；外层 absent/EOF不证明它们全部停止。正常阶段必须有其自身 exit0/absent/双EOF；外层超时、异常或缺失阶段回执，一律维护consumer UNKNOWN/KEEP，禁止后续动作/重试，不能猜杀旧或新三个detached个人角色。已发出的维护调用若终态缺失，副作用同样UNKNOWN，不自动重发/回滚。
+
+原>=2.5GiB fresh/live1GiB、新增512MiB/总raw2MiB保持，内外 capture各64KiB；总raw检查预留含外层capture。迁入已占367,041,727逻辑B，后继无大copy，不将APFS clone节省当预算保证。临启动仍核当下其他并行声明和原最大15配置连接。
+
+## 停旧runner前的本地空闲门
+
+0107独审 [原件](continuation-first-independent-review.json) 的P2保留。现在 operation 阶段复用原已审 `release-operation/runner-files.mjs`，不导入或调用任何 intent-retirement 写模块。其真实 af51 namespace为 SHA256(`http://127.0.0.1:61227`)，根/namespace dev+ino+uid以及历史4文件/idle admission哈希来自已保存16-resumed/retirement-request **元数据**；8个新增只读依赖/证据pin在参数表，非本轮个人fresh观察。
+
+bootstrap结果必须同真实op、draining/v19/active0/uncertain0；原 public status 在观察前后再核同五字段，state与maintenance文件仍同。原reader严格v1 `{version:1,inFlight:null,assignments:[]}`、250ms/512entries/256files/32MiB观察界不变；完整样本必须匹配已保存5文件清单与140B/哈希，故任意 pending-events、uncertain-events、pending/confirmed-final-proposal、额外tmp或陌生文件一律拒绝。正常新历史变化也保守停核，不清记录、不追认、不要求排队任务归零。fixed namespace目录前后身份一致。通过的完整安全样本持久在 operation.json，然后才允许 refresh；这是同drain空闲窗口内的有界非原子观察，不声称OS锁住runner文件。
+
 
 ## 为什么增加旧列摘要
 
@@ -27,3 +38,7 @@ R2首错是直接对 CommonJS pg/lib/index.js 使用命名导入Pool；ESM linke
 精确R2保护事实、当前7d1库存fullverify、已替换7d1 Web-host、固定三份v2报告与策略完整pin必须仍一致；原后台af51/v18、runner与用户任务无新不安全变化才进入bootstrap。根入口53runtime沿原审核；目标产物逐manifest验证而非仅存在即通过。所有后继输出使用全新 personal-maintenance-r3，不能复用R1/R2或已消费维护步骤。最终实际操作前仍由Lead协调唯一共享窗口，不在此准备中读取个人现场。
 
 质量安全点：仅修实际调用消费者与保留观察，复用公有维护FSM、原facts与OPS14；命名/单一职责/错误停止/有界输出已复核。第一轮89ms仅早期CJS解析差量（源hash在其invocation），最终helper由后续487ms实际入口导入检查覆盖；不将第一轮当最终完整快照SQL验证。真实SQL与剩余个人维护均未执行。
+
+## P2修正的定向检查
+
+[continuation-guard-repair/result.json](continuation-guard-repair/result.json)：2026-10-07T12:56:09.382108Z→12:56:09.814515Z，5个原reader+精确inventory文件fixture、2个独立deadline toy通过；430ms/707B raw，2外组absent/双EOF、exact scratch空并删除。未知事件/最终提案、历史缺失变化、错误身份/namespace、非idle/v2均拒绝；阻塞operator由外层停止，持久化延误后拒绝启动下一phase。0个人I/O/PG/HTTP/provider。原31/487ms与R2已完成阶段未重跑；此处不是实际900秒或个人维护验收。

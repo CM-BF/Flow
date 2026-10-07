@@ -191,3 +191,8 @@ Target `ff445959425128876d5dd6abdb719196cc2867e6`，范围仅 [legacy-first-boot
 旧 e4cd0bf2da3a52d7bb0facab6cfc70c671b605d4 为 REQUEST_CHANGES（P2：仅procedure ports、旧private caller要求webHost null，缺本次可调用装配）。source 30ce7eac3405e654007abdf7a7a2ff05854200d6 补固定c7b→7d1实际ports与原clone/no-replace/双锁、完整验证；原9纯用例通过不替代个人部署。唯一 reviewer native_center_owner 待固定包增量审；原44entry/15C3reports已核范围不重审，所有旧失败/unknown不改。
 
 迁入修复中第二个P2（native静态审）：30ce新增runner查询未限定schema；最终 5c29e13a5d251e4fb6b99d7d1277ace85dee24dc 只修flow.runners与真实Pool port接缝，新增1直接纯例通过、不重跑原9、不访问PG。原finding保留，固定delta仍待native唯一复审。
+
+
+## 0107续接准备独审与窄修
+
+原[continuation-review](../../docs/evidence/svc06/update-diagnostics-candidate/continuation-first-independent-review.json)绑定0107：REQUEST_CHANGES，本地idle门1P2及900秒外层期限澄清。原件保留；当前仅补原严格idle reader/固定历史清单/同op确认与独立OPS14外层，5+2零个人I/O检查通过。新delta待Execution Lead独审；无实际后台更新。

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 12:47:40 UTC；R2部分实际限定独审已归档；剩余维护调用组装与零I/O消费者固定待审 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 12:56:09 UTC；R2部分实际限定独审已归档；续接idle/期限P2窄修及7个定向检查固定待审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -20,14 +20,14 @@
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | 检查状态 | 隔离 r2 与 C3 已独审；个人本次迁入/Web-host/3报告/策略完成；维护前只读观察静态链接失败，bootstrap/refresh/resume NOT_RUN |
-| 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人本次迁入/Web-host/报告/策略已发生，后台更新未执行；本轮结果尚待独审/接收。 |
+| 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人本次迁入/Web-host/报告/策略已发生，后台更新未执行；R2部分结果已限定独审，main接收待Lead；剩余维护尚未运行。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 新产物、网页宿主、兼容报告和策略已安装，后台仍保持原版本；维护前观察入口已修正并通过零连接加载检查。 |
+| 当前产出 | 新产物、网页宿主、兼容报告和策略已安装，后台仍保持原版本；维护前观察入口已修正，补齐停旧runner前的本地未知状态门和独立总期限，定向检查通过。 |
 | 下一可用交付 | 审查固定剩余调用后，核既有完成阶段并继续后台维护和保留核验。 |
-| 当前阻塞 | ACTIVE: 剩余维护调用待独审与新实际窗口；已完成阶段保留，后台维护尚未开始。 |
+| 当前阻塞 | ACTIVE: 剩余维护准备P2修正待独审与新实际窗口；已完成阶段保留，后台维护尚未开始。 |
 | 需用户决定 | NONE |
-| Review | R2 APPROVED_PARTIAL_ACTUAL_FIDELITY_NOT_BACKEND_UPDATE 已归档；旧失败保持。剩余调用/旧列摘要修复待独审，实际维护未执行。 |
+| Review | R2 APPROVED_PARTIAL_ACTUAL_FIDELITY_NOT_BACKEND_UPDATE 已归档；旧失败保持。剩余调用旧列摘要已核；0107原P2保持，idle门/独立deadline窄修待增量独审，实际维护未执行。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -366,3 +366,8 @@ Web正式actual独审随后收到并核SHA69e9f809…；原报告等待结束取
 ## 2026-10-07 12:47:40 UTC：R2结果已审，剩余维护入口固定
 
 [唯一差量说明](../../docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.md)绑定小helper与结构化参数；最终0个人I/O的实际Node/tsx导入/参数检查31+487ms，先前CJS构造89ms，3组absent/双EOF，无tmp、PG或维护调用。原R2四阶段不可重放；新namespace只续接bootstrap/refresh/checkpoint/resume，仍待独审/真实窗口。任务总开工UNKNOWN不改。
+
+
+## 续接准备P2定向修正
+
+2026-10-07T12:56:09.814515Z实际本地检查段结束，来源[单份记录](../../docs/evidence/svc06/update-diagnostics-candidate/continuation-guard-repair/result.json)：5+2定向检查通过、430ms/707B、2组absent/双EOF、scratch空已清；0个人I/O/PG/provider。复用原idle reader及固定历史清单，补同drain operation前后status确认、独立外层900秒和内层缺回执UNKNOWN。原R2四阶段不重放，原0107独审P2保留，当前待此最小delta独审与新现场窗口。最初任务开工UNKNOWN、完整任务NOT_COMPLETED不变。

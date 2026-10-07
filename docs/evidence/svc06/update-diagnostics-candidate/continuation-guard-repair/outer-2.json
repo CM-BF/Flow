@@ -1,0 +1,33 @@
+{
+  "pid": 55671,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 228,
+  "stdout": "PASS whole-operator blocking bounded independently; no detached-group claim\nPASS expired allowance refuses launch after simulated persistence delay\n",
+  "stderr": "",
+  "observed_bytes": 148,
+  "retained_bytes": 148,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

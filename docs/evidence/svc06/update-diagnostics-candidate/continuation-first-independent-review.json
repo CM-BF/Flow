@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-07T12:50:46.859321+00:00",
+  "reviewer": "astra_ultra_execution_lead (gpt-6-astra), independent of author assignment_review",
+  "target": "0107daee84d2e8234e35ab500a593b61af159f96",
+  "decision": "REQUEST_CHANGES_PREPARATION_ONLY",
+  "verifiedBindings": 15,
+  "verifiedBytes": 78572,
+  "manifestSha256": "aab97e9cf46822bcecd85528fc73e4ba89058a1c320d6ab29cb4edf5089a92ab",
+  "findings": [
+    {
+      "id": "SVC06-CONT-P2-01",
+      "priority": "P2",
+      "path": "docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.mjs",
+      "lines": [
+        71,
+        81
+      ],
+      "issue": "Operation gate checks durable center maintenance and owned processes, but not the local admission/outbox/final-proposal idle condition explicitly retained by candidate.md:61 before refresh stops the old runner.",
+      "required": "Reuse the reviewed bounded installation-local observer and exact schema after drain/active0 before refresh. Preserve unknown/originals; do not clear records or relax idle."
+    }
+  ],
+  "deadlineClarification": "The Python caller persistence/fsync is not itself covered by each supervised child deadline. Author must bind the existing independent supervisor around the caller for the same 900-second maintenance bound, excluding detached personal services from its stop ownership. No new supervisor framework.",
+  "verifiedScope": [
+    "All 15 bound current files equal fixed Git bytes/hash; original R2 result binding preserved",
+    "Read complete three helper/consumer sources and structured 12 phases",
+    "Actual Node/tsx import and empty Pool/argument evidence 89+31+487ms, 762B raw, 3 final absent/dual EOF; earlier EPERM observation preserved",
+    "Read original public maintenance bootstrap/refresh/resume, facts, artifact source selection, and additive migration statements",
+    "No copy/replace/import/policy-write entry in continuation; R2 completed stages must never replay"
+  ],
+  "reviewerActions": {
+    "tests": 0,
+    "personalIO": 0,
+    "PGEngineering": 0,
+    "serviceActions": 0,
+    "providerQueries": 0
+  },
+  "actualContinuation": "NOT_RUN",
+  "next": "Original author narrow repair and fixed delta; no heavy window reserved."
+}

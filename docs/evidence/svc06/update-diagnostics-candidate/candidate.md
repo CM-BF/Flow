@@ -94,3 +94,8 @@ r2确实直接载入该函数，但[固定journey](../diagnostics-host-bootstrap
 局部原9个纯接口用例 9/9，103ms；增量独审发现只读 Pool 未设search_path，已限定 `flow.runners` 并补真实Pool port直接用例1/1、103ms（原9不重跑）。合计10different/206ms，两owned组 absent/双EOF，两空exact scratch已removed；Python supervisor仅AST语法检查。测试覆盖精确c7b/拒绝错误身份、第二槽保留、双锁与真实procedure排序、已存在不重复制、copy/rename unknown停止、前后保护拒绝、primary/secondary以及marker失败不打开store。未实际复制7d1、未触个人/PG/HTTP/build/App/provider。C3真实三App已审证据现由 main `e0295747200d7f0616779a712fdfd06691c3708f` 接收；原两层失败、旧unknown及真实个人未部署的界限不变。
 
 原30ce只读查询P2作为静态finding保留；没有真实PG失败或个人动作。最终source `5c29e13a5d251e4fb6b99d7d1277ace85dee24dc`，新直接例覆盖SQL/参数、max1和connect/statement/query超时、成功/行不匹配/query失败/关闭也失败时primary保留；仅本实际I/O port新增可测试接缝，不改原流程顺序。
+
+
+### 续接准备P2收口（固定0107后继）
+
+原[独审](continuation-first-independent-review.json)指出本地idle门缺失；[剩余维护入口](maintenance-continuation.md)现复用严格v1原reader+已存证namespace/全历史哈希，在同drain/active0前后确认后才允许refresh。独立外层900秒从operator启动前覆盖bindings/持久化；内层独立session缺回执仍UNKNOWN/KEEP，绝不由外层absent猜三角色已停。原R2四阶段、原失败与原件全部冻结；本次只是零个人I/O准备修正，真实新窗口尚未运行。

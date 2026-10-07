@@ -1,0 +1,33 @@
+{
+  "pid": 55529,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 202,
+  "stdout": "\u2714 real original reader plus fixed full inventory accepts idle without changing bytes (17.606333ms)\n\u2714 pending events, uncertain events and pending/confirmed finals are all refused (19.706875ms)\n\u2714 changed or missing historical bytes fail the pinned complete inventory (6.039ms)\n\u2714 fixed installation identity and exact namespace cannot be substituted (2.733792ms)\n\u2714 real observer refuses non-idle v1 and unreviewed version2 (6.385083ms)\n\u2139 tests 5\n\u2139 suites 0\n\u2139 pass 5\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 156.299125\n",
+  "stderr": "",
+  "observed_bytes": 559,
+  "retained_bytes": 559,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

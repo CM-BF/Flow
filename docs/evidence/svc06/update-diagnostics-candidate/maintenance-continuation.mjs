@@ -1,6 +1,6 @@
 // Thin read-only gates around the existing public maintenance entrypoints; no service mutation here.
 import assert from 'node:assert/strict';
-import { readFile } from 'node:fs/promises';
+import { readFile, lstat } from 'node:fs/promises';
 import { createHash } from 'node:crypto';
 import { fileURLToPath } from 'node:url';
 import { join, dirname } from 'node:path';
@@ -68,6 +68,31 @@ async function preflight(plan, run) {
   return { outcome: 'preflight-confirmed', artifact: descriptor, tuple: checked.tuple, policyPin: checked.policyPin, completedStagesReplayed: 0 };
 }
 
+// No retirement exception: only strict v1 idle plus the exact previously retained files.
+export function assertRunnerIdle(sample, expected) {
+  same({ dev: sample.dev, ino: sample.ino, uid: sample.uid }, expected.identity);
+  assert.equal(sample.admission?.idle, true, 'LOCAL_ADMISSION_NOT_IDLE');
+  assert.equal(sample.admission.path, expected.namespace + '/admission.json');
+  same(sample.files, expected.files); assert.equal(sample.totalBytes, expected.totalBytes);
+}
+
+async function localIdle(plan) {
+  const expected = plan.runnerIdle;
+  assert.equal(expected.root, join(plan.directory, 'runner'));
+  assert.equal(expected.namespace, sha(expected.baseUrl));
+  const namespace = join(expected.root, expected.namespace);
+  const identity = async () => {
+    const value = await lstat(namespace);
+    assert.ok(value.isDirectory() && !value.isSymbolicLink() && value.uid === process.getuid());
+    same({ dev: value.dev, ino: value.ino, uid: value.uid }, expected.namespaceIdentity);
+  };
+  await identity();
+  const { runnerFiles } = await import(expected.module);
+  const observation = await runnerFiles(expected.root, expected.baseUrl);
+  assertRunnerIdle(observation, expected); await identity();
+  return observation;
+}
+
 async function operation(plan, run) {
   const outer = await json(join(run, 'bootstrap-outer.json')), view = JSON.parse(outer.stdout);
   const op = await readPreviewJson(join(plan.directory, 'maintenance.json'));
@@ -78,7 +103,17 @@ async function operation(plan, run) {
   const state = await readPreviewJson(join(plan.directory, 'state.json'));
   assert.equal(state.backendArtifact ?? null, null);
   for (const record of Object.values(state.processes)) assert.equal(await inspectOwnedProcess(record), 'running');
-  return { outcome: 'real-operation-confirmed', operationId: op.operationId, initialVersion: op.initialVersion, backendArtifact: op.backendArtifact, phase: op.phase };
+  const config = await loadPreviewConfiguration(plan.directory);
+  assert.equal(config.runner.runnerId, plan.runnerId); assert.equal('http://127.0.0.1:' + config.centerPort, plan.runnerIdle.baseUrl);
+  const { maintainPreview } = await import(plan.rootMaintenanceModule);
+  const freshView = await maintainPreview({ directory: plan.directory, action: 'status' });
+  for (const key of ['operationId', 'state', 'version', 'activeAttempts', 'uncertainAttempts']) same(freshView[key], view[key]);
+  const native = await localIdle(plan);
+  const finalView = await maintainPreview({ directory: plan.directory, action: 'status' });
+  for (const key of ['operationId', 'state', 'version', 'activeAttempts', 'uncertainAttempts']) same(finalView[key], freshView[key]);
+  same(await readPreviewJson(join(plan.directory, 'maintenance.json')), op);
+  same(await readPreviewJson(join(plan.directory, 'state.json')), state);
+  return { native, freshView, finalView, localIdleBoundary: 'Non-atomic read-only observation after same-operation drain active=0, before public refresh; any unknown stops. No journal repair or task cancellation.', outcome: 'real-operation-confirmed', operationId: op.operationId, initialVersion: op.initialVersion, backendArtifact: op.backendArtifact, phase: op.phase };
 }
 
 async function checkpoint(plan, run, final = false) {
