@@ -1,33 +1,42 @@
 {
-  "recordedAt": "2026-10-07T03:10:25.538000+00:00",
-  "source": "Execution Lead NEW_TASK approval received in this worker conversation; author transcription, not a new independent review",
-  "reviewer": "astra_ultra_execution_lead",
-  "author": "assignment_review",
-  "result": "APPROVED_LIMITED_HOST_TOOL_CLOSURE",
+  "at": "2026-10-07T03:10:14.555510+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_HOST_TOOL_CLOSURE",
   "sourceTarget": "2affec4cc7a899082cbf48fce5bbd0f77293676c",
   "delivery": "9380f3734e2d901e896e46aa3231fe125a1e962b",
-  "manifestSha256": "47fccd3354af26b0b99940d23942e588edad8232489ab66b36529a4e997c256f",
-  "reportedReview": {
-    "fullSourceDiff": 4,
-    "bindings": 51,
-    "fixedCurrentBytesHash": "all match",
-    "findingsP1P2": [],
-    "distinctChecks": 8,
-    "red": 2,
-    "greenRounds": [
-      7,
-      1
-    ],
-    "ownedGroupCleanup": 4,
-    "reviewerTests": 0,
-    "reviewerInstall": 0
+  "manifestSHA256": "47fccd3354af26b0b99940d23942e588edad8232489ab66b36529a4e997c256f",
+  "bindings": {
+    "source": 4,
+    "protectedDirectInput": 12,
+    "fixedMainSelectionInput": 16,
+    "installedParser": 4,
+    "runtimeInput": 1,
+    "evidence": 14,
+    "fixedAndApplicableCurrentMatch": true
   },
-  "approvalScope": "fixed tsx/Vite sources and peer closure, staging production projection/source bytes restoration and provenance record",
-  "excluded": [
-    "actual filtered install",
-    "runtime resolve",
-    "complete artifact",
-    "PG",
-    "personal deployment"
+  "reviewScope": [
+    "Complete four-file delta and selector traversal/staging consumer",
+    "Fixed tsx and Vite declaration identity, full peer key and optional platform traversal",
+    "Temporary root production projection, unchanged Web importer and exact source restoration",
+    "Source/raw/inputs bytes and SHA256; original red and subsequent selected results; owned group/tmp cleanup"
+  ],
+  "evidence": {
+    "differentChecks": 8,
+    "selectedExecutions": 10,
+    "rounds": 4,
+    "supervisedMs": 656,
+    "rawBytes": 10059,
+    "fixedMainSelection": "a2e7803161ffb7e2158eaf3c13531448d2a777b0: seven importers, 271 snapshots, exit0; not an installation",
+    "finalOwnedGroups": "absent",
+    "tmpRemaining": []
+  },
+  "findings": [],
+  "checksByReviewer": 0,
+  "providerCalls": 0,
+  "limits": [
+    "Approval covers selector and staging/record only.",
+    "Actual selected cache closure, frozen filtered installation, runtime resolution, complete artifact and host journey NOT_RUN.",
+    "No personal service or deployment approval.",
+    "Historical initial group observation is preserved; final absence was separately observed."
   ]
 }
