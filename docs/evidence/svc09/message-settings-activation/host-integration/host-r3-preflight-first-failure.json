@@ -1,0 +1,10 @@
+{
+  "at": "2026-10-07T16:33:02.410989Z",
+  "phase": "prelaunch-window-label",
+  "type": "AssertionError",
+  "expectedLabel": "SVC09A_R3_UNIQUE_NEXT_WEB_I01_SOURCE_DIAGNOSIS",
+  "observedLabel": "R3_UNIQUE_NEXT_K01_READY_WAITING",
+  "meaning": "Authority changed only queue status; same sole R3 NEXT and no actual holder. Strict old label refused before host spawn. PG readonly preflight separately ran and closed; original PG receipt preserved.",
+  "hostLaunches": 0,
+  "namespacesCreated": 0
+}

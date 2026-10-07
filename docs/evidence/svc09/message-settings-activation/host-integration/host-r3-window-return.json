@@ -1,0 +1,67 @@
+{
+  "kind": "SVC09A_R3_ACTUAL_RUNTIME_RETURN_WITH_KEEP",
+  "at": "2026-10-07T16:36:44.486680Z",
+  "actualStart": "2026-10-07T16:33:21.000Z",
+  "outerFinishedAt": "2026-10-07T16:35:51.826185Z",
+  "outerElapsedMs": 150659,
+  "outerExit": 1,
+  "operatorOwnedState": "absent",
+  "work": {
+    "exit": 1,
+    "ownedState": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "firstFailure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    }
+  },
+  "primary": {
+    "phase": "host-consumer",
+    "name": "UnknownError",
+    "code": null
+  },
+  "cleanup": {
+    "registeredGenerations": 8,
+    "allReportedStopped": true,
+    "fullGenerationsStopped": true,
+    "workComplete": false,
+    "mayDrop": false,
+    "cleanupConfirmed": false,
+    "failures": []
+  },
+  "exactProcessObservation": {
+    "identities": 13,
+    "allAbsent": true,
+    "at": "2026-10-07T16:36:25.490651Z"
+  },
+  "mixedLoops": {
+    "loopsSettled": true,
+    "errors": [
+      null,
+      null
+    ],
+    "notices": []
+  },
+  "database": {
+    "name": "flow_preview_f70e668ce816943331c94a9c",
+    "oid": 1334399,
+    "connections": [],
+    "adminClosed": true,
+    "disposition": "KEEP_NO_DROP"
+  },
+  "privateDirectory": "/private/tmp/flow-svc09a-host-fbx6jvav",
+  "privateDisposition": "KEEP",
+  "runtimeReturned": true,
+  "overallResult": "FAILED_NOT_HOST_PASS",
+  "providerCalls": 0,
+  "personalIO": 0,
+  "automaticRetry": false,
+  "oldR1R2": "Untouched KEEP",
+  "scope": "All actual own identities stopped/absent and this DB has zero connections; outcome does not become PASS and resources remain retained."
+}

@@ -6,31 +6,31 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T16:24:21.318911Z |
+| 更新时间 | 2026-10-07T16:38:40.299811Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | review |
-| 当前产出 | 隔离临时路径合同已修正，真实生成目录通过三个直接入口；两次宿主失败原件完整保留。 |
-| 下一可用交付 | 第三轮隔离宿主候选待独审与实际窗口；双槽生命周期及混合队列旅程仍未验。 |
-| 当前阻塞 | ACTIVE: 修复与新入口待独审，第三轮实际窗口尚未授权；不得重用两次已消费入口。 |
+| 当前产出 | 双槽已完成隔离启动、维护和恢复，两类任务各被正确领取；最后混合断言失败，资源已停止并保留材料。 |
+| 下一可用交付 | 第三轮结果保真独审与最小SQL合同修复；完整旅程及个人激活仍未验。 |
+| 当前阻塞 | ACTIVE: 最后断言使用的任务ID类型与固定数据库定义不符；原运行只保存未知错误，需窄修和独审，禁止自动重投。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
 | Head | 路径合同 source c6b9b084c350a631e8abeb910492fb2a858eee5a；R2 result 14f9baed0f7eca7fa9b0084402fb825cecd7ebd1。 |
 | 实现目标 | 8d532613e876d34812554572fb32d46bf582de44 |
-| 工作分支状态 | in-progress（产品已main停写；own路径合同/R3候选待审） |
+| 工作分支状态 | in-progress（产品已main停写；R3实际失败证据待审，后继SQL静态候选） |
 | 工作树dirty状态 | 本次仅own plan/evidence准备；提交后以Git状态核对，产品全停写并已归还 |
 | 实现范围 | tools/personal-preview/cli.mjs, tools/personal-preview/environment.mjs, tools/personal-preview/environment.test.mjs, tools/personal-preview/maintenance-host.mjs, tools/personal-preview/maintenance.test.mjs, tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/runner-slots.mjs, tools/personal-preview/runner-slots.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v4；11产品/测试literal于14:37:45.486Z原子归还，仅保留own plan/evidence；[回执](../../docs/evidence/svc09/message-settings-activation/product-return-receipt.json) |
-| Review | R2失败保真已获APPROVED_LIMITED_R2_FAILURE_FIDELITY并main f0aa5c50e；路径合同/R3准备待唯一窄审。 |
+| Review | R3准备已独审main38ec8fd80；本次实际FAIL/RETURN/KEEP等待唯一结果审查。 |
 | 检查状态 | 7轮44选择/33不同，最终33不同均通过；原1次夹具失败保留。3444ms/11838B，7组absent/双EOF/exactscratchremoved；[原始与派生口径](../../docs/evidence/svc09/message-settings-activation/validation-summary.json) |
-| 验证限制 | R2机械clone通过但后续完整verifier未到达；private input/work setup、宿主、mixed、App/个人/provider未验。 |
+| 验证限制 | R3双槽生命周期与分别领取有原件；最终SQL/完整mixed结论未通过。observed model/account/native资格、真实App/个人仍未验。 |
 | 已集成main状态 | 246ed0f52ca0ec3078f0cd8bddc48c655501a711；main commit UTC2026-10-07T14:36:33Z，Lead已确认main/origin clean。11产品与已审source逐字同；[收据](../../docs/evidence/svc09/message-settings-activation/main-receipt.json)。旧7d1/6c和新cd27/04da均不是设置双槽产物。 |
-| 运行窗口 | R2 operator reservation 2026-10-07T16:15:44.617161Z，16:15:48.486779Z outer结束；16:16:36.884252Z actual RETURN。无fixture DB/服务，private KEEP；R1不动。 |
+| 运行窗口 | R3 16:33:21.000Z START；16:35:51.819021Z operator finished；16:36:44.486680Z runtime RETURN，8generation stopped/13 PID及组absent/DB连接[]，DB/private KEEP。 |
 | 架构影响 | 同一宿主锁与维护CAS内有限legacy/settings二槽已main；工程dashboard架构基线更新由Execution Lead协调，真实部署未发生 |
 | 看板 | 首canonical已登记；本status记录源码片段已main，不声称实际双槽部署 |
 
@@ -51,7 +51,7 @@
 | SVC09A-W04 | 2026-10-07T15:37:00.000Z | 2026-10-07T15:45:43.000Z | 审查 | 独立期限修复与5定向已获最终复审；期间有实际源码/检查，不当作纯资源等待 | I02 svc09a-host-preparation-review.json 与prepare-local-03原件 |
 | SVC09A-W05 | 2026-10-07T15:46:59.000Z | 2026-10-07T15:56:01.614895Z | 资源 | 窗口/floor与PG余量现已fresh满足，等待以本次START事件结束；此前仅只读准备 | Lead安排及host-fresh-readiness.json |
 | SVC09A-W06 | 2026-10-07T16:15:48.486779Z | 2026-10-07T16:23:00.380534Z | 验证失败 | R2输入路径合同不匹配；本次源码修复与直接消费者完成，期间含实施，不是纯资源等待 | host-r2-result-analysis.json；prepare-local-06/07 |
-| SVC09A-W07 | 2026-10-07T16:24:21.318911Z | OPEN | 审查 | 新合同/R3候选固定后唯一窄审；实际窗口另协调，不预占 | host-path-contract-result.json；host-preparation-r3.json |
+| SVC09A-W07 | 2026-10-07T16:24:21.318911Z | 2026-10-07T16:33:21.000Z | 审查 | 新合同/R3候选固定后唯一窄审；实际窗口另协调，不预占 | host-path-contract-result.json；host-preparation-r3.json |
 
 原首次只读子agent被cap拒绝，未重试；本owner继续实施。首轮 reporter 为spec，result计数null，原raw保留20/19/1；派生记录明确纠正口径，不回写旧原件。后续各轮只选新边界/受影响例。临时峰值未采样。完整真实资格、模型与个人部署仍开放。
 
@@ -96,3 +96,7 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T16:17:44.230352Z：R2已封[失败结果](../../docs/evidence/svc09/message-settings-activation/host-integration/HOST-R2-RESULT.md)，新运行3,953ms。tempfile合法下划线未被入口接受；在input/setup之前拒绝，无fixture DB/服务产生。4PID/组已核absent并RETURN，private KEEP。下一仅有界路径合同修复，不复用已消费R2，不重投host。
 
 2026-10-07T16:24:21.318911Z：原R2失败保真已独审并main f0aa5c50e，唯一原件`docs/evidence/i02/svc09a-host-r2-result-review.json`，不复制。14绑定/2继承，读取输入前拒绝、第三guard静态、runtime verification NOT_RUN、原FAIL/KEEP不改。路径合同新片c6b9b084c350a631e8abeb910492fb2a858eee5a，真实mkdtemp→三个实际consumer，6不同最终绿/7次选择，原1夹具失败与raw保留。3组absent/双EOF/2exact空scratchremoved，16:23:00.380534Z RETURN；当前仅封准备，无实际R3/PG/provider。
+
+2026-10-07T16:33:21.000Z：R3准备唯一独审APPROVED/main38ec8fd80，原件`docs/evidence/i02/svc09a-host-r3-preparation-review.json`。fresh19执行/6runtime/2继承/17记录均符、claimv4/4artifact+2KEEP身份同，最新completefloor19363266560B/free20131233792B，PG100/11/89≥42且预检pool关闭。权威队列标签更新导致原prelaunch断言停止的记录保留；同一次未消费入口重核新标签后START，未生成第二旅程。actual结果待原固定operator收尾，旧KEEP不动。
+
+2026-10-07T16:38:40.299811Z：R3原件见[结果](../../docs/evidence/svc09/message-settings-activation/host-integration/HOST-R3-RESULT.md)，原1次旅程与FAIL/KEEP完整保留。实际8generation完整生命周期、两类注入adapter正确领取、loop/journal关闭已存；最后SQL尚未给全程PASS。独立清理已停止全部实际generation，13 exact PID/组absent、库OID1334399连接[]/adminclose；16:36:44.486680Z归还窗口。静态识别末尾text任务ID对uuid[]不相容，实际SQLSTATE未保留，不追认首因。未修源、未重试。

@@ -43,3 +43,7 @@ R1 d11e512d1获唯一`APPROVED_LIMITED_FAILED_HOST_RESULT_FIDELITY`，引用main
 2026-10-07T16:24:21.318911Z：R2固定14f9baed0f7eca7fa9b0084402fb825cecd7ebd1获唯一APPROVED_LIMITED_R2_FAILURE_FIDELITY/noP1P2，main f0aa5c50e，原件`docs/evidence/i02/svc09a-host-r2-result-review.json`；不重抄原件，不把结果保真当host通过。
 
 新source c6b9b084c350a631e8abeb910492fb2a858eee5a统一临时路径Interface并加固定R3namespace；6不同（3新路径+3受影响参数）最终绿、7选择、355ms/2361B、3组absent/双EOF/2空scratch删除。原夹具漏sourceHead红保留，已绿2例未重跑。真实mkdtemp直接消费者覆盖，不改生成器或产品/产物。候选待唯一窄审与新actual窗口；原R1/R2不可重投。
+
+## R3实际结果待审
+
+2026-10-07T16:38:40.299811Z：准备源c6b9/delivery40e92获唯一APPROVED_FIXED_R3_HOST_PREPARATION/main38ec8fd80。实际一次outer150659ms失败，原UnknownError/code null保留；双槽生命周期/分别领取已保存，但最终SQL未通过。8generation停止、13 PID/组absent、DB连接[]与KEEP分开。结果包待唯一保真审查，不继承准备批准，不授权重投。

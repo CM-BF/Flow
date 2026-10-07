@@ -1,0 +1,39 @@
+{
+  "pid": 26053,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 1,
+  "elapsed_ms": 282,
+  "stdout": "{\"processes\":[{\"role\":\"center\",\"pid\":37058,\"nonce\":\"449ef792-198b-4afe-8ac0-4f752db68535\",\"state\":\"stopped\"},{\"role\":\"runner\",\"pid\":39829,\"nonce\":\"39f2f92b-4642-485a-bec6-ab9def4eb0f1\",\"state\":\"stopped\"},{\"role\":\"web\",\"pid\":50171,\"nonce\":\"304854ab-e8ab-46b7-8b82-f25f3bc458f3\",\"state\":\"stopped\"},{\"role\":\"runner-settings\",\"pid\":66724,\"nonce\":\"d150e9c4-d491-4eb5-b61a-f636de3a5326\",\"state\":\"stopped\"},{\"role\":\"center\",\"pid\":2492,\"nonce\":\"53c64c55-0696-4750-baf5-df72aa803208\",\"state\":\"stopped\"},{\"role\":\"runner\",\"pid\":9155,\"nonce\":\"ec937840-6ad2-481e-93e3-e5fb62c2dc1c\",\"state\":\"stopped\"},{\"role\":\"runner-settings\",\"pid\":9175,\"nonce\":\"c8b4c8f3-86e1-43bc-8f10-0673209d9470\",\"state\":\"stopped\"},{\"role\":\"web\",\"pid\":9195,\"nonce\":\"d1a7bc4e-45c6-4bd6-9d46-32e67ac9dc8b\",\"state\":\"stopped\"}],\"failures\":[],\"database\":\"KEEP\",\"directory\":\"KEEP\",\"providerCalls\":0,\"mayDrop\":false,\"cleanupConfirmed\":false}\n",
+  "stderr": "",
+  "observed_bytes": 894,
+  "retained_bytes": 894,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

@@ -1,0 +1,157 @@
+{
+  "kind": "SVC09A_R3_FAILED_HOST_RESULT_ANALYSIS",
+  "at": "2026-10-07T16:38:40.299811Z",
+  "sourceTarget": "c6b9b084c350a631e8abeb910492fb2a858eee5a",
+  "preparationDelivery": "40e92ec7160bf2f4e9c950f288cf3fa4b601a7b1",
+  "artifact": {
+    "policy": "flow.backend-artifact.v1",
+    "artifactId": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+    "manifestDigest": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+    "sourceHead": "098b0d51512dfaa04c30ca7cbe103684720fe29f"
+  },
+  "overall": "FAIL_WITH_PRESERVED_UNKNOWN_PRIMARY_AND_KEEP",
+  "actualStart": "2026-10-07T16:33:21.000Z",
+  "outerFinishedAt": "2026-10-07T16:35:51.826185Z",
+  "runtimeReturnAt": "2026-10-07T16:36:44.486680Z",
+  "outerElapsedMs": 150659,
+  "workElapsedMs": 146499,
+  "cleanupElapsedMs": 282,
+  "originalPrimary": {
+    "phase": "host-consumer",
+    "name": "UnknownError",
+    "code": null
+  },
+  "counts": {
+    "selectedJourneys": 1,
+    "providerCalls": 0,
+    "syntheticTasksSubmitted": 2,
+    "injectedAdapterClaims": 2,
+    "registeredHostGenerations": 8,
+    "supervisedReports": 4,
+    "rawStreamBytes": 2082
+  },
+  "observedPhases": [
+    {
+      "phase": "database-create-intent",
+      "at": "2026-10-07T16:33:28.307Z"
+    },
+    {
+      "phase": "pg-capacity",
+      "at": "2026-10-07T16:33:28.372Z"
+    },
+    {
+      "phase": "database-created",
+      "at": "2026-10-07T16:33:28.438Z"
+    },
+    {
+      "phase": "database-marked",
+      "at": "2026-10-07T16:33:28.497Z"
+    },
+    {
+      "phase": "setup-pool-closure",
+      "at": "2026-10-07T16:33:28.542Z"
+    },
+    {
+      "phase": "synthetic-web-loader",
+      "at": "2026-10-07T16:33:28.872Z"
+    },
+    {
+      "phase": "before-start",
+      "at": "2026-10-07T16:33:37.458Z"
+    },
+    {
+      "phase": "default-legacy",
+      "at": "2026-10-07T16:34:22.545Z"
+    },
+    {
+      "phase": "settings-published",
+      "at": "2026-10-07T16:34:40.556Z"
+    },
+    {
+      "phase": "both-draining",
+      "at": "2026-10-07T16:34:52.348Z"
+    },
+    {
+      "phase": "both-refreshed-held",
+      "at": "2026-10-07T16:35:44.149Z"
+    },
+    {
+      "phase": "both-resumed",
+      "at": "2026-10-07T16:35:49.147Z"
+    },
+    {
+      "phase": "native-pollers-stopped",
+      "at": "2026-10-07T16:35:49.314Z"
+    },
+    {
+      "phase": "mixed-initial-admission-status",
+      "at": "2026-10-07T16:35:49.584Z"
+    },
+    {
+      "phase": "mixed-submit-intents",
+      "at": "2026-10-07T16:35:49.638Z"
+    },
+    {
+      "phase": "mixed-legacy-accepted",
+      "at": "2026-10-07T16:35:49.713Z"
+    },
+    {
+      "phase": "mixed-settings-accepted",
+      "at": "2026-10-07T16:35:49.780Z"
+    },
+    {
+      "phase": "mixed-settings-claimed",
+      "at": "2026-10-07T16:35:50.965Z"
+    },
+    {
+      "phase": "mixed-legacy-claimed",
+      "at": "2026-10-07T16:35:51.189Z"
+    },
+    {
+      "phase": "mixed-loop-closure",
+      "at": "2026-10-07T16:35:51.397Z"
+    },
+    {
+      "phase": "mixed-final-admission-status",
+      "at": "2026-10-07T16:35:51.494Z"
+    },
+    {
+      "phase": "work-closure",
+      "at": "2026-10-07T16:35:51.506Z"
+    }
+  ],
+  "supported": [
+    "Default legacy-only slot identity and existing config hashes were checked.",
+    "Explicit settings slot/profile/config digest and immutable directory tuple were published through actual host.",
+    "Both slots drained, held, refreshed into four new role identities and resumed accepting.",
+    "Both native-capable pollers were stopped before two synthetic submissions.",
+    "Each original runRunner using only injected HarnessAdapter claimed its correct task through actual center HTTP/PG; requested settings recorded, observed model unknown.",
+    "Both loop promises settled without captured errors; final admission journal opportunity status was missing for each runner.",
+    "Independent cleanup reported all eight actual host generations stopped; later exact13 PID/PGID observations absent and own database connections empty/admin closed."
+  ],
+  "notEstablished": [
+    "Complete mixed final SQL assertion/whole host journey PASS.",
+    "Fresh provider/account/model qualification or native query execution.",
+    "Personal deployment, real Web App compatibility or actual user task execution.",
+    "DROP eligibility: workComplete false keeps DB/private; neither original failure nor cleanupConfirmed=false is changed."
+  ],
+  "resources": {
+    "maxSampledPrivateLogicalBytes": 1869128,
+    "maxSampledPrivateAllocatedBytes": 2752512,
+    "maxSampledEntries": 417,
+    "maxSampledDatabaseBytes": 12860439,
+    "minSampledFreeBytes": 20084211712,
+    "meaning": "checkpoint samples only; excludes separately retained artifact clone; no atomic/peak/physical-reclaim claim"
+  },
+  "cleanupReference": "host-r3-window-return.json",
+  "preflightFailure": "host-r3-preflight-first-failure.json preserves stale exact queue-label rejection before launch; separately completed readonly PG observation retained. Only one host launch occurred.",
+  "staticFollowup": {
+    "status": "CONFIRMED_SOURCE_CONTRACT_MISMATCH_NOT_RECORDED_SQLSTATE",
+    "caller": "mixed-runner.mjs final SELECT uses t.id=ANY($1::uuid[])",
+    "schema": "098b0d51512dfaa04c30ca7cbe103684720fe29f:apps/server/src/database.ts:66-94 defines flow.tasks.id/current_attempt_id and flow.attempts.id as text",
+    "relationToRun": "Last saved checkpoint is mixed-final-admission-status immediately before SELECT in fixed source. Consistent with failure location, but original sanitized error omitted precise name/code. Do not backfill SQLSTATE or mark original primary proved.",
+    "next": "Own caller-only text[] correction and direct consumer verification under separate bounded local implementation; no retry/PG authorization from this result."
+  },
+  "privateRecords": "Owned private root and clone retained; no secret/config values copied to public records.",
+  "oldR1R2": "All original records/DB/private KEEP unchanged."
+}

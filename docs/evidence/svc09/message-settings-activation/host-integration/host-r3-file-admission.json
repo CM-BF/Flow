@@ -1,0 +1,50 @@
+{
+  "kind": "SVC09A_R3_FRESH_FILE_ADMISSION",
+  "at": "2026-10-07T16:33:02.410611Z",
+  "source": "c6b9b084c350a631e8abeb910492fb2a858eee5a",
+  "delivery": "40e92ec7160bf2f4e9c950f288cf3fa4b601a7b1",
+  "preparation": {
+    "path": "host-preparation-r3.json",
+    "bytes": 31178,
+    "sha256": "d17e168f280f7cb2f18ba57347fcdb16895336063b774b9191ea7545607e7b8c"
+  },
+  "claim": {
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 4,
+    "state": "active",
+    "freshAt": "2026-10-07T16:31:17.384Z"
+  },
+  "pins": {
+    "execution": 19,
+    "runtime": 6,
+    "inherited": 2,
+    "evidence": 17,
+    "mismatches": 0,
+    "retainedArtifactIdentities": 4,
+    "oldKEEPDirectoryIdentities": 2
+  },
+  "windowInputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/resource-window-current.json",
+      "sha256": "594b3dead10fdf412754d3db5a1bc3780b1db9a6a6a94d9af2dc1f9f7b472131",
+      "state": "R3_UNIQUE_NEXT_K01_READY_WAITING",
+      "at": "2026-10-07T16:32:18.548Z"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
+      "sha256": "4b0fb92232c118078d869f379e02bc6e15769540486bdce020b208e940e1cb1d",
+      "state": "R3_UNIQUE_NEXT_K01_READY_WAITING",
+      "at": "2026-10-07T16:32:18.548Z"
+    }
+  ],
+  "minimumCompleteFloorBytes": 19363266560,
+  "observedFreeBytes": 20131336192,
+  "newNamespacesAbsent": true,
+  "review": "main38ec8fd80/docs/evidence/i02/svc09a-host-r3-preparation-review.json",
+  "actualStatus": "FILES_ADMITTED_WITH_UNCONSUMED_NAMESPACES",
+  "entry": [
+    "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+    "--run-host-r3-once"
+  ]
+}

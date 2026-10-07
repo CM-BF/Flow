@@ -1,0 +1,39 @@
+{
+  "pid": 23611,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 1,
+  "elapsed_ms": 146499,
+  "stdout": "{\"phase\":\"host-consumer\",\"primary\":{\"phase\":\"host-consumer\",\"name\":\"UnknownError\",\"code\":null},\"cleanupFailures\":[],\"workComplete\":false,\"providerCalls\":0,\"cleanup\":\"PENDING_INDEPENDENT_OWNER\",\"privateDirectory\":\"KEEP\"}\n",
+  "stderr": "",
+  "observed_bytes": 220,
+  "retained_bytes": 220,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}
