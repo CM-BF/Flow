@@ -64,12 +64,16 @@ export function observeRecoveryRecords(options: { name: string; version: number;
 const materialProbeId = "\0virtual:msg03-material-probe";
 const materialProbeSource = String.raw`
 let armed = null, pending = null, disposed = false;
-const rows = [];
+const rows = [], ready = [];
+export function observeReady(value) {
+  if (ready.length >= 8 || !value || typeof value.id !== "string" || typeof value.name !== "string" || JSON.stringify(value).length > 1024) throw Error("Material observation bound");
+  ready.push(structuredClone(value));
+}
 export function arm(label) {
   if (disposed || armed || pending || rows.length >= 3 || !["failure", "cancel", "success"].includes(label)) throw Error("Invalid material probe arm");
   armed = label;
 }
-export function snapshot() { return { armed, pending: pending !== null, disposed, rows: rows.map(row => ({ ...row })) }; }
+export function snapshot() { return { armed, pending: pending !== null, disposed, rows: rows.map(row => ({ ...row })), ready: structuredClone(ready) }; }
 export function settle(outcome) {
   if (!pending || !["released", "failed"].includes(outcome)) throw Error("No active material preparation");
   pending(outcome);
@@ -581,11 +585,20 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
         if (id.split("?")[0] !== root + "apps/web/src/attachments/adapter.ts") return;
         const declaration = "export function createAttachmentAdapter(";
         assert.equal(code.split(declaration).length, 2, "Original adapter declaration must match the pinned fixture seam");
-        return { code: `import { holdValidated } from "virtual:msg03-material-probe";\n`
+        return { code: `import { holdValidated, observeReady } from "virtual:msg03-material-probe";\n`
           + code.replace(declaration, "function originalCreateAttachmentAdapter(")
           + `\nexport function createAttachmentAdapter(input: AttachmentInput): AttachmentAdapter {
             const original = originalCreateAttachmentAdapter(input);
-            return { ...original, async send(attachment, options) {
+            return { ...original, async *add(options) {
+              for await (const attachment of original.add(options)) {
+                if (attachment.status.type === "requires-action") {
+                  const item = input.getSnapshot().items.find(item => item.id === attachment.id);
+                  if (!item?.metadata) throw Error("A real ready upload is required for the material witness");
+                  observeReady({ id: item.id, name: item.name, reference: item.metadata.reference });
+                }
+                yield attachment;
+              }
+            }, async send(attachment, options) {
               const result = await original.send(attachment, options);
               await holdValidated(options?.signal); return result;
             } };

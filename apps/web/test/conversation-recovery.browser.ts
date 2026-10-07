@@ -1160,6 +1160,8 @@ async function worker(init: Init) {
         const choosing = page.waitForEvent("filechooser"); await composer().getByRole("button", { name: "Add Attachment", exact: true }).click();
         await (await choosing).setFiles({ name, mimeType: "text/plain", buffer: Buffer.from(`Fixture file ${name}`) });
         await expect(composer().getByRole("button", { name: "File attachment", exact: true })).toHaveCount(name === "held-b.txt" ? 1 : name === "held-2.txt" ? 2 : 1);
+        const ready = (await probe("snapshot")).ready.filter((item: { name: string }) => item.name === name).at(-1);
+        requireThat(ready?.id && ready.reference, "Real adapter upload identity required"); return ready;
       };
       const probe = async (operation: "arm" | "settle" | "snapshot" | "dispose", value?: string) => page.evaluate(async ({ operation, value }) => {
         const url = "/@id/__x00__virtual:msg03-material-probe", module = await import(url);
@@ -1180,7 +1182,11 @@ async function worker(init: Init) {
           await expect.poll(async () => (await probe("snapshot")).pending).toBe(true);
           await expect(input()).toHaveValue(""); await expect(composer().locator(".aui-composer-attachments > *")).toHaveCount(0);
           await apply(b); const nextText = mode === "failure" ? "" : original; await input().fill(nextText);
-          if (mode === "cancel") await upload("held-b.txt");
+          const nextMaterial = mode === "cancel" ? await upload("held-b.txt") : undefined;
+          if (nextMaterial) {
+            await composer().getByRole("button", { name: "File attachment", exact: true }).focus();
+            await expect(page.getByRole("tooltip")).toHaveText("held-b.txt");
+          }
           if (mode === "failure") await probe("settle", "failed");
           else await page.getByRole("button", { name: "Cancel material preparation", exact: true }).click();
           const held = page.getByRole("region", { name: "Unsent material recovery", exact: true });
@@ -1190,11 +1196,17 @@ async function worker(init: Init) {
           await expect(composer().getByRole("button", { name: "File attachment", exact: true })).toHaveCount(nextFiles);
           expect(business()).toHaveLength(posts);
           if (mode === "cancel") {
+            const savedB = async () => (await records(page)).find(record => record.kind === "draft" && record.owner.routeId === `conversation:${seed.conversationId}`
+              && object(record.data).text === nextText && JSON.stringify(object(record.data).messageSettings) === JSON.stringify(b));
+            const identities = (data: unknown) => (object(data).attachments as unknown[]).map(item => ({ id: object(item).id, name: object(item).name, reference: object(object(item).metadata).reference }));
+            await expect.poll(async () => { const row = await savedB(); return row ? identities(row.data) : []; }).toEqual([nextMaterial]);
+            const beforeLate = structuredClone((await savedB())!.data);
             // Core cancellation returned A already. The adapter deliberately ignores abort until this late real settlement.
             expect((await probe("snapshot")).rows.at(-1).abortObserved).toBe(true);
             await probe("settle", "released"); await expect.poll(async () => (await probe("snapshot")).rows.at(-1).returned).toBe(true);
             await expect(input()).toHaveValue(nextText); await expect(applied()).toContainText(b.requested.model);
             await expect(composer().getByRole("button", { name: "File attachment", exact: true })).toHaveCount(1); expect(business()).toHaveLength(posts);
+            await expect.poll(async () => (await savedB())?.data).toEqual(beforeLate);
           }
           // The production restore button must reject both settings-only B and same-text/file B.
           await held.getByRole("button", { name: "Restore into an empty draft", exact: true }).click();
@@ -1221,7 +1233,7 @@ async function worker(init: Init) {
           expect(fixture!.wire.filter(row => row.method === "DELETE")).toHaveLength(0);
         }
         // Success also waits in the actual adapter, before onNew: B is independent before any HTTP turn.
-        await apply(a); await input().fill(original); await upload("held-1.txt"); await probe("arm", "success");
+        await apply(a); await input().fill(original); await upload("held-1.txt"); await expect(composer().getByRole("button", { name: "Send message", exact: true })).toBeEnabled(); await probe("arm", "success");
         await input().press("Enter"); await expect.poll(async () => (await probe("snapshot")).pending).toBe(true);
         expect(business()).toHaveLength(0); await apply(b); await input().fill(original); await probe("settle", "released");
         await expect.poll(() => business().length).toBe(1); expect(conversationTurnSchema.parse(JSON.parse(business()[0]!.body)).messageSettings).toEqual(a);
