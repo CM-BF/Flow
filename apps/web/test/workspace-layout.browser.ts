@@ -31,7 +31,8 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
   browser: Browser; outputDirectory: string; cacheDirectory: string; signal: AbortSignal;
 }) {
   const result = { startedAt: new Date().toISOString(), selected: ["layout-navigation", "three-pane-reads", "prepare-await-stable", "refresh-theme"],
-    passed: [] as string[], screenshots: [] as string[], observations: {} as Record<string, unknown>, error: null as string | null, cleanupErrors: [] as string[] };
+    passed: [] as string[], screenshots: [] as string[], observations: {} as Record<string, unknown>, error: null as string | null, cleanupErrors: [] as string[],
+    cleanup: { contextClosed: false, httpClosed: false } };
   let fixture: Awaited<ReturnType<typeof startWorkspaceLayoutFixture>> | undefined, context: BrowserContext | undefined;
   const abort = () => { void context?.close().catch(error => result.cleanupErrors.push(String(error).slice(0, 256))); };
   try {
@@ -153,6 +154,8 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       result.observations.material = { key: sent.key, frozen: request, nextDraft: saved.data, probe: observed };
     });
     await run("refresh-theme", async () => {
+      await page.emulateMedia({ reducedMotion: "reduce" });
+      expect(await page.evaluate(() => matchMedia("(prefers-reduced-motion: reduce)").matches)).toBe(true);
       const closeFromPlugin = async () => {
         const owner = page.locator('.flow-tab').filter({ has: tab(4) });
         await owner.getByRole("button", { name: "More actions", exact: true }).click();
@@ -174,6 +177,16 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
       // Empty workspace close has a deterministic adjacent focus, no nested button or reordered draft owner.
       await page.getByRole("button", { name: "New workspace", exact: true }).click(); await page.getByRole("button", { name: "Close Workspace 3", exact: true }).click();
       await expect(workspace2).toBeFocused();
+      const motion = await page.locator('.flow-tab-body:not([hidden]), .flow-tab, [role="separator"]').evaluateAll(nodes => nodes.map(node => {
+        const style = getComputedStyle(node);
+        return { animationName: style.animationName, animationDuration: style.animationDuration, transitionDuration: style.transitionDuration };
+      }));
+      expect(motion.length).toBeGreaterThan(0);
+      for (const style of motion) {
+        expect(style.animationName === "none" || style.animationDuration.split(",").every(value => parseFloat(value) === 0)).toBe(true);
+        expect(style.transitionDuration.split(",").every(value => parseFloat(value) === 0)).toBe(true);
+      }
+      result.observations.reducedMotion = { preference: "reduce", layoutStyles: motion, scope: "Visible panes, tabs and separators; protected-close and workspace keyboard actions above ran with reduced motion." };
       await page.setViewportSize({ width: 390, height: 844 });
       for (const scheme of ["light", "dark"] as const) {
         const current = await page.locator("html").getAttribute("data-theme"); if (current !== scheme) await page.getByRole("button", { name: `Use ${scheme} theme`, exact: true }).click();
@@ -196,6 +209,8 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
   finally {
     signal.removeEventListener("abort", abort);
     const closed = await Promise.allSettled([context?.close(), fixture?.close()]);
+    result.cleanup.contextClosed = Boolean(context) && closed[0]!.status === "fulfilled";
+    result.cleanup.httpClosed = Boolean(fixture) && closed[1]!.status === "fulfilled";
     for (const item of closed) if (item.status === "rejected") result.cleanupErrors.push(String(item.reason).slice(0, 256));
     if (fixture) result.observations.http = { reads: fixture.reads, errors: fixture.errors, body: fixture.bodyMetrics(), ports: fixture.ports };
     await writeFile(join(outputDirectory, "arc-browser.json"), JSON.stringify(result, null, 2));
