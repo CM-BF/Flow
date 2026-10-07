@@ -1,0 +1,136 @@
+{
+  "recordedAt": "2026-10-07T12:44:47.553047+00:00",
+  "executionHead": "8060fdbf7c60df430ad10eac39e99ef8db3e8dfc",
+  "productSource": "81a064cb9f65da4b82bd2df042c4e5414f451811",
+  "fixtureSource": "1424e7eaaf9a737249c5bdd5eac636685950d649",
+  "state": "PASSED_RESULT_REVIEW_PENDING",
+  "selected": 1,
+  "passed": 1,
+  "suiteSuccess": true,
+  "httpRequests": 59,
+  "responseBytes": 78054,
+  "processes": [
+    {
+      "pid": 71761,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 26,
+      "observed_bytes": 343,
+      "retained_bytes": 343,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "git-preflight",
+      "rawComplete": true
+    },
+    {
+      "pid": 71789,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 3208,
+      "observed_bytes": 113,
+      "retained_bytes": 113,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "vitest",
+      "rawComplete": true
+    }
+  ],
+  "cleanup": {
+    "owners": {
+      "startup": true,
+      "server": true,
+      "boss": true
+    },
+    "ownersClosed": true,
+    "poolClosed": true,
+    "adminClosed": true,
+    "createRequested": true,
+    "createAcknowledged": true,
+    "creationReceiptSaved": true,
+    "identity": {
+      "oid": "1310256",
+      "owner": "flow",
+      "marker": "x01:fca58812170d49aa8db35017fb6c1af6:runtime:e4645804-ed2c-481f-8191-c766fd0f5838"
+    },
+    "identityConfirmed": true,
+    "connections": 0,
+    "dropRequested": true,
+    "dropAcknowledged": true,
+    "databaseAbsent": true,
+    "connectionObservations": [
+      {
+        "at": "2026-10-07T12:43:32.912Z",
+        "connections": 0
+      }
+    ]
+  },
+  "listeners": [
+    {
+      "origin": "http://127.0.0.1:51485",
+      "closed": true
+    }
+  ],
+  "temporary": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-z0q54cxk",
+    "dev": 16777234,
+    "ino": 124144597,
+    "removed": true,
+    "sampleBytes": 3503,
+    "sampleEntries": 10
+  },
+  "elapsedBeforePersistence": 3.3281756669748574,
+  "elapsedAfterPersistence": 3.328439624980092,
+  "resultPersistence": "CONFIRMED",
+  "withinTotalDeadline": true,
+  "timeRealSeconds": 3.37,
+  "limits": "Independent once-only180s/1markedDB17conn/43tasks1syntheticattempt/160HTTP/32MiBTMP/1MiBraw/128MiBDBWAL+1GiBcleanup; admission actualfloor6895435776/free21805223936 includes full declared pairs and retained padding.",
+  "scope": "Bounded reference SQL/owner HTTP only; synthetic installed metadata, no npm/OS runner/physical deletion/host-release proof.",
+  "cleanupObservation": "First connection observation0; R2 does not prove which backend caused R1 connection1 or a 1-to-0 wait in this actual run.",
+  "unknownLimits": [
+    "historical initial EPERM retained",
+    "active TMP peak unmeasured",
+    "DB/WAL physical bytes unmeasured",
+    "whole external wall unknown"
+  ],
+  "review": "PENDING"
+}

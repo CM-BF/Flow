@@ -1,0 +1,62 @@
+{
+  "at": "2026-10-07T12:47:47.786378+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "task": "WPF-PLUGIN-RUNTIME01",
+  "source": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+  "branch": "codex/web-plugin-runtime-management",
+  "claim": {
+    "claimId": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+    "version": 1,
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "scope": [
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/src/plugin-management/runtime-command.ts",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-runtime-command.test.ts",
+      "docs/evidence/wpf-plugin-runtime-management",
+      "plans/wpf-plugin-runtime-management"
+    ]
+  },
+  "runnerSha256": "4c599b49dd20e874d9a33d2c821638166e524d185d65e3fef2212790815dfc8b",
+  "workerSha256": "2b4b94857ca7ebe0d52fb0ea5513273f2ffa30d89b285d0b9f31a5bc4fed93f4",
+  "preparedBinding": {
+    "path": "/private/tmp/prm-b2/binding.json",
+    "bytes": 73440,
+    "sha256": "b6ffe06e34aa06019871f05b2763f3ecf4c108544a61c4c9a03494e5e5f18544"
+  },
+  "preparedManifest": {
+    "path": "/private/tmp/prm-b2/manifest.json",
+    "bytes": 2347,
+    "sha256": "282e1b0d61805d0b8c6f9474d9fe899d31a93ac8ca84f2a97e8bc68f49bc2e0a"
+  },
+  "inputAudit": {
+    "path": "/private/tmp/root-plugin-browser-b2-input-audit-20261007.json",
+    "bytes": 1107,
+    "sha256": "abeffa86cc2b34ce56bedaa3408a9b90568863b98575b704f8fa7f47705ec7a6"
+  },
+  "priorFailureReview": {
+    "path": "/private/tmp/root-plugin-browser-b1-failure-review-20261007.json",
+    "bytes": 4673,
+    "sha256": "10c3076961302622e4b757871b073b22c448345f5f1e3c57d2bd297e3bc5d246"
+  },
+  "actualExecution": "NOT_RUN",
+  "findings": [],
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "scope": "Exact b2 parent and unchanged worker; one bounded remaining47615ms standalone Plugin browser attempt, same native sibling authority as independently reviewed b1.",
+  "priorBoundaryReview": {
+    "path": "/private/tmp/root-plugin-browser-b1-native-boundary-20261007.json",
+    "bytes": 3129,
+    "sha256": "fab6fe8da2be3855b5fe7c73e642bc14404a6f8ba74a37b52c377af6a70e657e"
+  },
+  "authorityDelta": "None. Parent diff only validates previous failed run and computes carried cumulative charge; no process, filesystem, network, profile or cleanup authority expanded.",
+  "acceptedLimitations": [
+    "Chrome retains its built-in sandbox but has no custom outer filesystem/egress sandbox. Local fixture isolation and flags do not guarantee OS network confinement.",
+    "Node remains sandboxed to loopback and own scratch/output; Chrome uses a fresh profile and is independently owned/reaped by parent. No existing user browser or personal backend is targeted.",
+    "Actual exit0, unique matching terminal and complete owned cleanup are mandatory; source/native acceptance alone is not successful execution."
+  ],
+  "activation": "Existing manager fresh gate and actual resource handoff required. Preparation currently has no runtime markers. This report does not create a gate or a browser."
+}

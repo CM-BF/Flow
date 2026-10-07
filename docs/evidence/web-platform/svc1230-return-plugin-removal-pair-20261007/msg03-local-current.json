@@ -1,0 +1,40 @@
+{
+  "recordedAt": "2026-10-07T12:50:06.357Z",
+  "source": "Owner actual messages; fixed9fc source delta review pending",
+  "task": "WPF-MESSAGESETTINGS03",
+  "sourceShort": "9fc0fb8a48cb15ae35b4529013f25362d11a1efc",
+  "claim": "7e3fbcf1 v2 exact19",
+  "state": "FIXED_SOURCE_LOCAL_ACCEPTED_NO_RUNTIME",
+  "phaseMs": 60000,
+  "spentMs": 36212,
+  "remainingMs": 23788,
+  "currentLocal": 0,
+  "lastDirect": {
+    "name": "direct-6",
+    "actualStart": "2026-10-07T12:47:44.272376Z",
+    "pidPgid": 35883,
+    "exit": 0,
+    "passed": 11,
+    "notSelected": 57,
+    "chargeMs": 1968,
+    "groupAbsent": true,
+    "scratchAbsent": true
+  },
+  "lastTypes": {
+    "name": "types-5",
+    "actualStart": "2026-10-07T12:48:14.496008Z",
+    "pidPgid": 54752,
+    "exit": 0,
+    "chargeMs": 5602,
+    "groupAbsent": true,
+    "scratchAbsent": true,
+    "scope": "Affected explicit files only"
+  },
+  "priorFailures": "Configuration/types/test-contract and direct-3 sampler ENOENT failures preserved; no retrospective PASS",
+  "reviewFinding": "Held A restore must acquire current explicit complete-draft lease/CAS; original send ownership/generation must not permanently block restoration after B settings or reconnect. Existing real-core cases have not yet proved actual restorePrepared closure. Same19 scope, no second store.",
+  "browser": "NOT_RUN",
+  "runtimeNext": "Owner normal seal then bounded actual App preparation; no browser/PG grant",
+  "sourceReview": "APPROVED_SCOPED_9FC_SOURCE_AND_LOCAL_BROWSER_NOT_RUN",
+  "sourceReviewRecord": "msg03-9fc0-source-local-root-review.json",
+  "additionalFinding": "Browser emulateMedia alone does not change actual App theme; use existing App theme UI/effective-theme assertion, preserve original long same-prefix/390px/512KiB limits."
+}

@@ -1,0 +1,112 @@
+{
+  "at": "2026-10-07T12:41:18.165883+00:00",
+  "actualExit": 1,
+  "terminalState": "FAILED",
+  "terminalHashesMatch": true,
+  "terminalCount": 1,
+  "chargeMs": 12385,
+  "remainingMs": 47615,
+  "parentBudgetMsHistorical": 12297,
+  "terminalLateMs": 12298,
+  "outerActualMs": 12384.425707976334,
+  "identities": [
+    {
+      "kind": "PID",
+      "id": 64185,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 64185,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 68672,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 68672,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 64678,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 64678,
+      "state": "ABSENT_ESRCH"
+    }
+  ],
+  "ports": [
+    {
+      "host": "127.0.0.1",
+      "port": 51215,
+      "connectEx": 61,
+      "state": "REFUSED"
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 51224,
+      "connectEx": 61,
+      "state": "REFUSED"
+    },
+    {
+      "host": "127.0.0.1",
+      "port": 51225,
+      "connectEx": 61,
+      "state": "REFUSED"
+    }
+  ],
+  "scratchAbsent": true,
+  "profileAbsent": true,
+  "workerFixtureClosed": true,
+  "workerContextClosed": true,
+  "innerStreams": {
+    "chrome.stdout": {
+      "receivedBytes": 0,
+      "keptBytes": 0,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "chrome.stderr": {
+      "receivedBytes": 6335,
+      "keptBytes": 6335,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    },
+    "worker": {
+      "receivedBytes": 52,
+      "keptBytes": 52,
+      "droppedBytes": 0,
+      "eof": true,
+      "closed": true
+    }
+  },
+  "outerStreams": {
+    "stdout": {
+      "received": 655,
+      "kept": 655,
+      "dropped": 0,
+      "eof": true
+    },
+    "stderr": {
+      "received": 0,
+      "kept": 0,
+      "dropped": 0,
+      "eof": true
+    }
+  },
+  "cleanupErrors": [],
+  "reportedChecks": 0,
+  "PNGs": 0,
+  "failureLocation": "browser.ts:159 toBeFocused after refresh activation",
+  "rawPacket": "/private/tmp/prm-b1",
+  "rawOuter": "/private/tmp/prm-b1-actual-d5uxxivt",
+  "completeReturn": true
+}

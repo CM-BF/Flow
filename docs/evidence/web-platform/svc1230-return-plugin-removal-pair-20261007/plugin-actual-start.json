@@ -1,0 +1,21 @@
+{
+  "event": "ACTUAL_START",
+  "actualStart": "2026-10-07T12:40:36.824929Z",
+  "task": "WPF-PLUGIN-RUNTIME01",
+  "head": "b888930f2e5b92da21dfe984e3c1bc37313c70bb",
+  "source": "0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+  "outerPidPgid": 64185,
+  "capturePid": 63984,
+  "gatePath": "/private/tmp/prm-b1-actual-d5uxxivt/gate.json",
+  "gateSha256": "6697c1ea07fabd40a567e1a9bbe5fec1fe9a8ff49a1809b017fbc03506a21cf5",
+  "freshFreeBytes": 21792931840,
+  "minimumFreshBytes": 6895435776,
+  "bounds": {
+    "totalMs": 60000,
+    "cleanupMs": 15000,
+    "pg": 0,
+    "chrome": 1,
+    "ownedHttp": 2
+  },
+  "evidence": "Owner actual start report; gate bytes hash only manager read; no terminal/cleanup yet"
+}

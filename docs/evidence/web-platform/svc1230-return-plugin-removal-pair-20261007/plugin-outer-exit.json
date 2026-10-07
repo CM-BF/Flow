@@ -1,0 +1,42 @@
+{
+  "startedAt": "2026-10-07T12:40:36.824929+00:00",
+  "outerPid": 64185,
+  "outerPgid": 64185,
+  "capturePid": 63984,
+  "command": [
+    "python3",
+    "/private/tmp/prm-b1/supervisor.py",
+    "--gate",
+    "/private/tmp/prm-b1-actual-d5uxxivt/gate.json"
+  ],
+  "streamCapBytes": 165398,
+  "finishedAt": "2026-10-07T12:40:49.209107+00:00",
+  "actualExitCode": 1,
+  "actualElapsedMs": 12384.425707976334,
+  "ceilActualElapsedMs": 12385,
+  "streams": {
+    "stdout": {
+      "received": 655,
+      "kept": 655,
+      "dropped": 0,
+      "eof": true
+    },
+    "stderr": {
+      "received": 0,
+      "kept": 0,
+      "dropped": 0,
+      "eof": true
+    }
+  },
+  "forced": [],
+  "files": {
+    "outer-stdout.txt": {
+      "bytes": 655,
+      "sha256": "88530c4bc4ed36cf4273610461e8f053bdeda3d7a8ee77649d4687156181f7f3"
+    },
+    "outer-stderr.txt": {
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "at": "2026-10-07T12:52:00.993226+00:00",
+  "reviewer": "root / GPT-6 Astra Ultra",
+  "decision": "APPROVED_SCOPED_BROWSER_VISUAL_AND_COMPLETE_RETURN",
+  "implementation": "a952ae81fefd3a82c9dfe42067048bcf2702d1c3",
+  "executionHead": "756fde2afffc8131f485857e8a65300145b11be3",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management",
+  "branch": "codex/web-plugin-runtime-management",
+  "claim": {
+    "claimId": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072",
+    "version": 1,
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner",
+    "scope": [
+      "apps/web/src/plugin-management/PluginManagement.tsx",
+      "apps/web/src/plugin-management/runtime-command.ts",
+      "apps/web/test/plugin-management/browser.ts",
+      "apps/web/test/plugin-management/fixture/main.tsx",
+      "apps/web/test/plugin-runtime-command.test.ts",
+      "docs/evidence/wpf-plugin-runtime-management",
+      "plans/wpf-plugin-runtime-management"
+    ]
+  },
+  "findings": [],
+  "priorSourceReview": {
+    "path": "/private/tmp/root-plugin-browser-b2-source-review-20261007.json",
+    "bytes": 4322,
+    "sha256": "b31da9fb58ddff4f1331a8752fcfbc847f37c6a54c911f8c1bd4dc97f602a779"
+  },
+  "evidence": [
+    {
+      "path": "/private/tmp/prm-b2-actual-5uwo692b/outer-start.json",
+      "bytes": 290,
+      "sha256": "594a5246722765668336fb69fe85acefed9d4676fbab2fb4c2e6b0c3a87a8703"
+    },
+    {
+      "path": "/private/tmp/prm-b2-actual-5uwo692b/outer-exit.json",
+      "bytes": 960,
+      "sha256": "9831830068876b5283578ee765236d84d371316170fb1c5cc6be997936a942ce"
+    },
+    {
+      "path": "/private/tmp/prm-b2-actual-5uwo692b/outer-stdout.txt",
+      "bytes": 714,
+      "sha256": "b742d45fc7e1a5910c2fe7a9d4449481c2c8245c40cf7192811f347c81fcb0de"
+    },
+    {
+      "path": "/private/tmp/prm-b2-actual-5uwo692b/outer-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/prm-b2-actual-5uwo692b/return-receipt.json",
+      "bytes": 3193,
+      "sha256": "41fab2b6e1e51cd3dabf215118858980b35c752ee65a1bfefd8575676852a59c"
+    },
+    {
+      "path": "/private/tmp/prm-b2/binding.json",
+      "bytes": 73769,
+      "sha256": "da9be6fccf52d199cd37d2f1a0f35aa1e978c83bc7aa8b595baf517fc9b32e68"
+    },
+    {
+      "path": "/private/tmp/prm-b2/result.json",
+      "bytes": 68382,
+      "sha256": "acc907ce1b1583d52541237e56954013674732f2bad35084020df2a7cb889b38"
+    },
+    {
+      "path": "/private/tmp/prm-b2/browser-budget.json",
+      "bytes": 309,
+      "sha256": "dfafd0c9a1e52647e35a2c55a5d5d321ce5955376767738d5f7d369835f51dcf"
+    },
+    {
+      "path": "/private/tmp/prm-b2/runtime-evidence-manifest.json",
+      "bytes": 2291,
+      "sha256": "8568fbeab252ecdfbbb96a57689f8b853720498d6848e62a58f72b997b3b8265"
+    }
+  ],
+  "runtimeFiles": [
+    {
+      "path": "/private/tmp/prm-b2/raw/plugin-b2-20261007-124936-c6dcf5/browser-results.json",
+      "bytes": 4366,
+      "sha256": "201beac865954927fb7a5c334a352682820a34d5ccc8cf637a1af86c4c2a0c5c"
+    },
+    {
+      "path": "/private/tmp/prm-b2/raw/plugin-b2-20261007-124936-c6dcf5/owned-chrome.json",
+      "bytes": 2236,
+      "sha256": "33a89c689c44315784b78a163d84972bc30705413f0719b243df0049d1527343"
+    },
+    {
+      "path": "/private/tmp/prm-b2/raw/plugin-b2-20261007-124936-c6dcf5/chrome.log",
+      "bytes": 5924,
+      "sha256": "a304acc7ed9dc40a15e5460666f21ad5bc23d81125c97bcef1d9a9de849d3375"
+    },
+    {
+      "path": "/private/tmp/prm-b2/raw/plugin-b2-20261007-124936-c6dcf5/plugin-runtime-light-390.png",
+      "bytes": 62250,
+      "sha256": "427b8d527ce0cb3f1091350371619eb841ef6dd5a50014ed6fe5d100d1715bbc"
+    },
+    {
+      "path": "/private/tmp/prm-b2/raw/plugin-b2-20261007-124936-c6dcf5/plugin-runtime-dark-390.png",
+      "bytes": 61806,
+      "sha256": "37119c6da7ea4700dea1a0031dce9d10aea0cde5e52c276796a85b12a0fbfe10"
+    }
+  ],
+  "checks": [
+    "initial typed409 preserves the command draft",
+    "UNKNOWN survives lazy close/collapse, successful read and rejected original retry",
+    "later same-revision HTTP observation overrides historical ready ACK without another write",
+    "only original accepted replay resolves UNKNOWN; explicit disable uses a new identity",
+    "decoded old-session ACK cannot replace the new center state",
+    "bounded fixture keyboard refresh and two 390px themes; not production Settings"
+  ],
+  "actualVerification": [
+    "Actual external exit0 and one matching PASS terminal verified; all four sealed artifacts and all five runtime-manifest files independently hash/size match.",
+    "All five own source hashes bind the executed metadata HEAD to immutable producta952. The worker reports exactly the six expected checks, no page errors, context/fixture closed and no cleanup errors.",
+    "Same UNKNOWN command key/body survives two retries and read refresh; explicit disable uses a new identity. Late A acknowledgement cannot replace B in the controlled DTO fixture.",
+    "Keyboard read waits for decoded HTTP count+1 and settled state, then retains original natural focus assertion. No refocusing workaround.",
+    "Full return receipt records outer/worker/native Chrome exact PID+PGID absent, all three owned ports refused, scratch/profile absent, three inner and two outer EOF streams with zero dropped bytes. Reviewed evidence only; root did not make a second process/port probe."
+  ],
+  "timing": {
+    "firstFailedChargeMs": 12385,
+    "currentActualOuterMs": 7565.776166971773,
+    "currentChargeMs": 7566,
+    "cumulativeChargeMs": 19951,
+    "unusedMs": 40049,
+    "parentHistoricalCumulativeMs": 19864,
+    "terminalCurrentLateMs": 7480,
+    "completeReturnAt": "2026-10-07T12:50:25.968903+00:00",
+    "unusedMeaning": "Unused allowance is not permission or a reason to repeat successful checks."
+  },
+  "visualReview": {
+    "method": "Both original PNGs opened and visually inspected with view_image, plus PNG dimensions/hash verification.",
+    "images": [
+      {
+        "path": "/private/tmp/prm-b2/raw/plugin-b2-20261007-124936-c6dcf5/plugin-runtime-light-390.png",
+        "bytes": 62250,
+        "sha256": "427b8d527ce0cb3f1091350371619eb841ef6dd5a50014ed6fe5d100d1715bbc",
+        "width": 390,
+        "height": 844
+      },
+      {
+        "path": "/private/tmp/prm-b2/raw/plugin-b2-20261007-124936-c6dcf5/plugin-runtime-dark-390.png",
+        "bytes": 61806,
+        "sha256": "37119c6da7ea4700dea1a0031dce9d10aea0cde5e52c276796a85b12a0fbfe10",
+        "width": 390,
+        "height": 844
+      }
+    ],
+    "observed": [
+      "Both390x844 images render the same collapsed advanced-identity Center B state in visibly distinct light and dark themes.",
+      "Runtime facts, reason field, action controls, registration history and page navigation fit the viewport; the reported no-horizontal-overflow assertion passed.",
+      "The light screenshot visibly retains a focus ring on the runtime refresh control. The dark screenshot follows a theme-toggle interaction; it is not separate evidence of a second dark keyboard-focus run.",
+      "Unknown/unbound/not-enabled facts stay explicit. Text and boundaries remain readable in this captured state."
+    ],
+    "notCovered": [
+      "Top-level registry overview and expanded long identifiers are outside the captured viewport/state.",
+      "Production App Settings/session integration, real two-center/principal isolation, full theme/accessibility matrix and contrast ratios were not verified by these two images."
+    ]
+  },
+  "scope": "Actual native browser plus controlled public DTO HTTP and real FlowClient codecs, zero PG/provider. Approved standalone management-module journey, not real backend runtime loading, complete plugin platform, deployment or main integration.",
+  "history": "First b1 focus failure and its empty aggregate checks/zero images remain FAILED and unchanged. The b2 pass does not rewrite that record. Existing15direct/earlier strict remain separately scoped to their original source inputs.",
+  "cleanCode": {
+    "scope": "Read-only refresh focus consistency, unchanged controller boundaries and evidence truthfulness",
+    "verifiedFix": "Guarded aria-disabled refresh avoids native-disabled focus loss; original assertion now passes.",
+    "unresolved": "Full production App wiring and future host-candidate/removal-reference surfaces remain their own planned work."
+  },
+  "handoff": "Owner may archive these immutable results/images/review and complete normal plan/status/review/intake metadata. No further run, source change, new main integration or claim release is granted by this review."
+}

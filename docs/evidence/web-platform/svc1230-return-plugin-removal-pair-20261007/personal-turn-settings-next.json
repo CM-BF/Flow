@@ -1,0 +1,167 @@
+{
+  "recordedAt": "2026-10-07T12:54:19.409Z",
+  "task": "Original MATURE02 TODO08/11; not a new task layer",
+  "goal": "Personal install must expose actual available per-message model/thinking/fast choices, not merely installed backend or MSG03 controls",
+  "source": "GO via root/Mika; static main7524 preview singleClaude/no turnSettings report not independently re-run here",
+  "consumerOwner": "MSG03/workspace_panels_owner/7e3fv2exact19",
+  "parentOwner": "chatui01_owner/Mika/0dd97484v6 only canonical parent plan/evidence; manager lacks write scope",
+  "sourceObservation": "2026-10-07T12:53:26.025Z",
+  "literalAndDirectoryPrefixClaimMatches": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "active": [],
+      "history": [
+        {
+          "taskId": "SVC01",
+          "worker": "runner_owner",
+          "lead": "astra_ultra_execution_lead",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-preview",
+          "claimId": "ee36d51f-2010-473e-88e6-4146510c1834",
+          "version": 4,
+          "state": "released",
+          "updatedAt": "2026-10-06T04:39:53.803Z"
+        },
+        {
+          "taskId": "SVC02",
+          "worker": "assignment_review",
+          "lead": "astra_ultra_execution_lead",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+          "claimId": "d582c0ca-4812-45da-978b-2ad91b403140",
+          "version": 2,
+          "state": "released",
+          "updatedAt": "2026-10-06T07:49:19.561Z"
+        },
+        {
+          "taskId": "SVC02",
+          "worker": "runner_owner",
+          "lead": "astra_ultra_execution_lead",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/preview-refresh",
+          "claimId": "e8a8767c-4387-4c03-93a6-02153bb491c4",
+          "version": 3,
+          "state": "released",
+          "updatedAt": "2026-10-06T06:54:39.033Z"
+        },
+        {
+          "taskId": "SVC03",
+          "worker": "runner_owner",
+          "lead": "astra_ultra_execution_lead",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/static-preview",
+          "claimId": "a38e95d6-2975-4b52-8cac-9eb584175f7b",
+          "version": 2,
+          "state": "released",
+          "updatedAt": "2026-10-06T09:00:34.360Z"
+        },
+        {
+          "taskId": "SVC09",
+          "worker": "assignment_review",
+          "lead": "astra_ultra_execution_lead",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-release-policy",
+          "claimId": "1a2b634b-f88e-41e1-ada2-e912abe52672",
+          "version": 5,
+          "state": "released",
+          "updatedAt": "2026-10-07T08:47:20.436Z"
+        }
+      ]
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "active": [],
+      "history": [
+        {
+          "taskId": "CHAT06",
+          "worker": "runner_owner",
+          "lead": "astra_ultra_execution_lead",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-assistant-stream",
+          "claimId": "62987833-3fa3-491e-ba0d-21dae383b24c",
+          "version": 2,
+          "state": "released",
+          "updatedAt": "2026-10-06T07:10:22.967Z"
+        },
+        {
+          "taskId": "CHAT08",
+          "worker": "runner_owner",
+          "lead": "astra_ultra_execution_lead",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-active-steering",
+          "claimId": "2f7b66e3-a18c-40df-a5f9-7d5977a4618e",
+          "version": 3,
+          "state": "released",
+          "updatedAt": "2026-10-06T08:01:39.451Z"
+        },
+        {
+          "taskId": "O04",
+          "worker": "assignment_review",
+          "lead": "astra_ultra_execution_lead",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/native-goal-execution",
+          "claimId": "19e81eda-5795-45a7-8f1f-a0d9c0c94326",
+          "version": 2,
+          "state": "released",
+          "updatedAt": "2026-10-06T05:08:30.180Z"
+        },
+        {
+          "taskId": "WPF-MATURE-02-CORE",
+          "worker": "status_read",
+          "lead": "mika",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+          "claimId": "c652bc61-f8a9-4848-a709-978adbb425ed",
+          "version": 4,
+          "state": "released",
+          "updatedAt": "2026-10-06T17:59:12.649Z"
+        }
+      ]
+    },
+    {
+      "path": "apps/runner/src/native-harness/claude.ts",
+      "active": [],
+      "history": [
+        {
+          "taskId": "WPF-MATURE-02-CORE",
+          "worker": "status_read",
+          "lead": "mika",
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-message-settings-core",
+          "claimId": "c652bc61-f8a9-4848-a709-978adbb425ed",
+          "version": 4,
+          "state": "released",
+          "updatedAt": "2026-10-06T17:59:12.649Z"
+        }
+      ]
+    },
+    {
+      "path": "plans/wpf-mature-02-harness-capabilities",
+      "active": [
+        {
+          "lead": "mika",
+          "next": null,
+          "role": "writer",
+          "scope": [
+            "docs/evidence/wpf-mature-02",
+            "experiments/codex-app-server-conformance",
+            "plans/wpf-mature-02-harness-capabilities"
+          ],
+          "state": "active",
+          "branch": "codex/claude-codex-capabilities",
+          "origin": "new",
+          "taskId": "WPF-MATURE-02",
+          "worker": "chatui01_owner",
+          "claimId": "0dd97484-f0ce-4738-8075-505bd5e2541a",
+          "version": 6,
+          "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities",
+          "createdAt": "2026-10-06T08:59:56.664Z",
+          "updatedAt": "2026-10-06T15:43:03.052Z",
+          "observedAt": null,
+          "needsVerification": false
+        }
+      ],
+      "history": []
+    }
+  ],
+  "existingAttachment": "MATURE02 CORE trusted turnSettings capability publication and SVC09 profile/manifest/personal release contract; MSG03 remains real Web consumer",
+  "next": "Mika bounded interface/activation research and Original shared configuration coordination; fresh lawful take required for inactive shared leaves",
+  "constraints": [
+    "New opt-in profile/runner identity preserves old sessions/history; no hot mutation",
+    "Current SVC06 fixed maintenance configuration unchanged",
+    "Claude first; no dependence on Codex engineering qualification",
+    "0-model config→catalog→Web/TUI proof, separate bounded provider verification later; no borrowing R02/O16",
+    "No manager generated registry or parent-plan writes"
+  ],
+  "state": "REQUIRED_PERSONAL_DELIVERY_DEPENDENCY_NOT_IMPLEMENTED"
+}

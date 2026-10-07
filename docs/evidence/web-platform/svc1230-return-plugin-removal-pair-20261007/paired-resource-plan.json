@@ -1,0 +1,69 @@
+{
+  "at": "2026-10-07T12:38:51.925Z",
+  "state": "NEXT_ASSIGNED_NOT_ACTUAL",
+  "sourceRule": "Current local-validation PG plus isolated0PG browser; personal1230 actual fully returned; new personal remainder not assigned",
+  "budget": {
+    "minimumFreshBytes": 6895435776,
+    "calculation": "6,795,821,056 carried conservative floor +73MiB Plugin +22MiB MSG03 potential =6,895,435,776; use higher actual full sum if new declarations/KEEP. Some prior potentials may be counted twice conservatively; these are planning floors, not measured peak or physical quota.",
+    "carryFloorBytes": 6795821056,
+    "pluginBrowser": {
+      "scratch": 67108864,
+      "retainedIncludingOuter": 8388608,
+      "metadata": 1048576,
+      "total": 76546048
+    },
+    "msg03Potential": {
+      "tmp": 16777216,
+      "raw": 2097152,
+      "sourceLogical": 4194304,
+      "total": 23068672
+    },
+    "mikaOrdinaryEnvelopeBytes": 22020096,
+    "removalR2": {
+      "tmp": 33554432,
+      "raw": 1048576,
+      "dbWalPlanning": 134217728,
+      "connections": 17,
+      "totalBeforeReserve": 168820736
+    },
+    "cleanupReserve": "One original1GiB reserve remains in carried floor; no second reserve added or spendable twice",
+    "retained": "All prior C02/O16/main-types KEEP plus personal1230 namespace/artifact/policy/reports remain; RETURN does not delete or clear those bytes",
+    "actualFreeSample": "Each owner must immediately sample before its real launch; manager did not sample"
+  },
+  "removal": {
+    "task": "X01-REMOVAL-REFERENCES01",
+    "head": "8060fdbf7c60df430ad10eac39e99ef8db3e8dfc",
+    "claim": "04e46691-f4fd-46cc-808c-59c391dfd015 v1 exact7",
+    "manifest": "2c99bf0f413e462c369b535d9ab2317172bdb031b97a9a170afd843b62dec62e",
+    "totalMs": 180000,
+    "workMs": 110000,
+    "cleanupMs": 60000,
+    "finalMs": 10000,
+    "pg": 1,
+    "connections": 17,
+    "chrome": 0,
+    "listeners": 1,
+    "once": true
+  },
+  "plugin": {
+    "task": "WPF-PLUGIN-RUNTIME01",
+    "head": "b888930f2e5b92da21dfe984e3c1bc37313c70bb",
+    "source": "0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+    "claim": "0a9a9b2c-7cf2-4c07-b07e-14b398ef7072 v1 exact7",
+    "binding": "321f49c31b8e4dbc3de11c6e224d8e1c5ea04dd4a4b784205ecc0e7fbac67ab7",
+    "manifest": "449db36f4faa8fae38ecbd87ad34714d9a502a10f4c3709eceb5c536856d7702",
+    "totalMs": 60000,
+    "cleanupMs": 15000,
+    "pg": 0,
+    "chrome": 1,
+    "nodeWorkerGroup": 1,
+    "dynamicListeners": 2,
+    "once": true
+  },
+  "isolation": [
+    "DistinctWT/write scope, unique run/scratch/cache/outputs; only fixed donor inputs read-only",
+    "REMOVAL owns1markedDB anddynamiccenter port; Plugin pureDTO ownedHTTP2dynamic ports, never realPG/center/personal",
+    "Single Chrome/profile total; no provider/install/performance/personal operations",
+    "Owner immediatefresh claims/head/pins/rootidentity/newrun/free and actualreturn with allowned exit/EOF/cleanup; unknown holds only exactaffected resource"
+  ]
+}

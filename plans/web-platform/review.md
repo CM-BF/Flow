@@ -64,3 +64,12 @@ root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0
 
 
 [Plugin browser包管理绑定核对](../../docs/evidence/web-platform/plugin-browser-source-and-msg03-local-20261007/plugin-handoff-binding-check.json)仅确认0bc源码/0c43 clean与具名binding/manifest，不替root源码与native边界集中审。[MSG03局部实际](../../docs/evidence/web-platform/plugin-browser-source-and-msg03-local-20261007/msg03-local-events.json)保配置首红、类型首红和测试契约修正后8/8通过，整片尚未验收；core材料失败/cancel研究是静态输入而非新增通过证据。
+
+
+本批[Plugin b1独立失败/清理核验](../../docs/evidence/web-platform/svc1230-return-plugin-removal-pair-20261007/plugin-b1-failure-root-review.json)接受实际outer1、0reported checks/0PNG和完整owned归还，未批准产品通过；12385ms计费与剩47615保留。刷新disabled/reenable机制与失焦一致，但无逐时trace，不声称唯一实际原因。[MSG03 37166固定源审](../../docs/evidence/web-platform/svc1230-return-plugin-removal-pair-20261007/msg03-37166-source-root-review.json)为CHANGES_REQUESTED两P2，受影响types与定向10项通过只保原范围；显式恢复闭环与真实App主题证据由同19scope后继修正。外组[REMOVAL R2回执](../../docs/evidence/web-platform/svc1230-return-plugin-removal-pair-20261007/removal-r2-owner-close.json)仅用于资源实际归还，结果独审仍由原Lead负责，不借本管理检查升级其产品结论。
+
+
+同批[MSG03 9fc修复及局部独审](../../docs/evidence/web-platform/svc1230-return-plugin-removal-pair-20261007/msg03-9fc0-source-local-root-review.json)关闭37166两P2，确认17类型pins/5delta directpins、11PASS/57未选及child0，累计36212/60000；不冒mounted App或视觉实际。[Plugin b2完整归还](../../docs/evidence/web-platform/svc1230-return-plugin-removal-pair-20261007/plugin-b2-return-receipt.json)确认outer0/原6checks/两PNG/三组与端口、流、fixture、scratch闭合；最终实际/目视批准以root新结果为准，首FAIL原件不变。
+
+
+[Plugin b2实际与视觉独审](../../docs/evidence/web-platform/svc1230-return-plugin-removal-pair-20261007/plugin-b2-actual-visual-root-review.json)现已APPROVED_SCOPED_BROWSER_VISUAL_AND_COMPLETE_RETURN，0findings；图像限定双390×844折叠B状态，非真实App或全部长UUID输入状态。累计19951/60000封账，b1FAIL原样；MSG03及个人配置目录交付不继承模块通过。

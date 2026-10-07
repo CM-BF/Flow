@@ -552,3 +552,9 @@ Release [c2实际失败独审](../../docs/evidence/web-platform/x01-version-retu
 原TODO11真实App接线的新增[静态返回路径研究](../../docs/evidence/web-platform/plugin-browser-source-and-msg03-local-20261007/msg03-material-return-research.json)指出官方composer准备失败/cancel可绕过onNew回填A正文附件到B；原owner在已领取ConversationThread/private adapter内保A显式恢复并保护settings-only B，不改shared core、不建第二store/FSM。该推断不是已复现browser失败，direct成功不能替代失败路径验收。Plugin仅沿原X01-06模块准备[六组browser固定包](../../docs/evidence/web-platform/plugin-browser-source-and-msg03-local-20261007/plugin-handoff.json)，真实App/session仍归MSG03；source-only不借个人重窗运行。
 
 该完整草稿恢复接缝的实际范围补正已[7e3f v2 exact19 COMMITTED](../../docs/evidence/web-platform/plugin-browser-source-and-msg03-local-20261007/msg03-amend-receipt.json)：只追加已有AttachmentComposer的typed可选restore/discard入口，默认旧consumer行为不变；先amend再编辑，不新增任务/局部信用或借共享模块写权。
+
+
+本次自然批按[实际归还链](../../docs/evidence/web-platform/svc1230-return-plugin-removal-pair-20261007/current.json)解除Original个人1230排他并完成PG/独立0PG浏览器配对；运行失败与清理分开，未用额度不转移。原TODO11新增验收澄清：保住B之后，held A必须可经本次显式恢复的完整draft lease/CAS恢复，不能永久绑定旧send ownership或重连前generation；真实双主题须通过App现有主题入口并核effective theme，emulateMedia不能代替。原X01-06刷新按钮用现有aria-disabled与pending防重复模式保自然键盘焦点，不删除原焦点断言，不以首轮未报告的前五组补PASS；两项均原owner同scope修复，不新增任务、store或测试框架。
+
+
+原MATURE02 TODO08/11新增明确个人可用交付依赖见[当前leaf与owner核对](../../docs/evidence/web-platform/svc1230-return-plugin-removal-pair-20261007/personal-turn-settings-next.json)：MSG03真实接线和backend部署不等于可信turnSettings目录已发布。Mika协调原CORE/preview配置/发布leaf与唯一parent chatui01_owner，panels只写MSG03自身下一交付；本管理六scope不含parent，不代写。新opt-in身份保旧session/history，当前SVC06维护不扩；Claude先0模型配置→目录→Web/TUI，provider后验独立小段，不借R02/O16，不新增大task或第二发布体系。

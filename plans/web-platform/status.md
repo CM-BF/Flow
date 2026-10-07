@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T12:30:16.754Z；Plugin模块浏览器固定包待集中审，MSG03定向局部8项通过但材料失败/取消分支仍在修复；Original个人窗口已换1230新有限段 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T12:54:19.409Z；Plugin六组与限定双图已获实际独审、完整归还；MSG03源码/local已封存，真实App与个人可用目录仍下一交付 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 固定后台兼容已主线收口；真实聊天设置接线的定向局部检查通过一组，正在处理材料准备失败和取消时保护新草稿的边界。插件模块浏览器源码与输入包已固定。 |
-| 下一可用交付 | MSG03补齐失败、取消与新草稿设置隔离；Plugin固定浏览器包集中审后按个人窗口实际归还安排。原三App兼容结果不重复运行。 |
+| 当前产出 | 插件模块浏览器六组复验通过，两390px折叠B截图已获限定目视接受；真实聊天设置的完整恢复闭环和主题验收源码已修复，11项定向及受影响类型检查获独审接受。 |
+| 下一可用交付 | Plugin原owner归档限定实际/视觉审并封存；MSG03已078797封存9fc源码/局部，准备真实App验收。个人可用目录另需原MATURE02可信turnSettings配置/发布，不能以接线和backend部署代替。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Original个人更新1230新段保留排他，尚未收到START/完整RETURN；其他PG/Chrome暂停。MSG03隔离local当前已归还，累计11407/60000ms，原失败保留；同段源码修复继续。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：SVC1230、REMOVAL R2、Plugin b2均按实际归还，当前无PG/Chrome/local holder或NEXT。Plugin两轮累计19951/60000ms封存，旧FAIL保留；MSG03局部36212/60000ms已归还。完整fresh线至少6895435776B及旧KEEP、一份reserve保留。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -91,9 +91,9 @@
 | 工作 | 唯一来源 / 写权 | 当前下一步 |
 | --- | --- | --- |
 | WPF管理 | 本worktree，632a7149 v3，仅两管理目录与四Web大task目录 | 管理索引只追溯；普通变化status→dashboard，不构成第三执行层 |
-| 插件运行时模块 → X01-06 | [唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)；w01，0a9a9b2c v1 exact7已COMMITTED | [精确登记入口](../../docs/evidence/web-platform/recovery-second-center-preparation-20261007/plugin-registration-request.json)待Original接收；领取与页面实际加载分开，App/session未交权。 |
+| 插件运行时模块 → X01-06 | [唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)；w01，0a9a9b2c v1 exact7已COMMITTED | [唯一owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md)已实际登记、父X01/原06已确认；模块后继沿原7scope，App/session不在其写权内。 |
 | ATTACH01 → MATURE03 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/attachment-resources/plans/wpf-attach01-resources/status.md)，ef617d78 v3 released十八scope | 已main fd1322、23批准源同；正式factory6项/8自动启动/无fallback归Lead；ownerc698双端clean全停写后ef617 v3释放 |
-| RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，w01原owner新38b9v1 active四scope | 原20a v2仅历史。固定7d1/source6c与SVC限定结果已审；三个非秘密配置已[正式供给](../../docs/evidence/web-platform/recovery-two-center-actual-20261007/release-public-settings-supply.json)，仍需自有caller/完整输入，未READY/不占重窗。 |
+| RELEASE01 → MATURE01 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-compatibility/plans/wpf-release01-product-compatibility/status.md)，w01原owner38b9v2 released四scope | [e029主线与原owner58562收口/释放](../../docs/evidence/web-platform/release-main-registry-close-20261007/current.json)已完成；实际兼容与后续个人更新分别计，不再预占caller窗口。 |
 | VISUAL01 → MATURE01 | [视觉source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell/plans/wpf-visual01-shell/status.md)，原d01_owner，35e5 v3 released，九scope停写 | 已main4391，558895d已push/clean并release；个人产物由SVC04发布，原树只读 |
 | CONTEXTI01 → MATURE03 | [知识App source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-context-integration/plans/wpf-context-i01-integration/status.md)，原w01_owner，55fe v2 released，二十scope已停写 | 已main df29；fe2b收口后55fe v2 released，原树只读 |
 | STEIRI01 → MATURE06 | [source](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-steering-integration/plans/wpf-steer-i01-integration/status.md)，原w01_owner，bc0ded75 v2 released | 已main f181；8273 push/clean后13scope停写释放，原树只读 |
