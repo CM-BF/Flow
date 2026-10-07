@@ -46,6 +46,12 @@ def report_value(report):
 def terminated(report):
     return report.owned_state == 'absent' and all(report.eof.values())
 
+def work_environment(directory):
+    # The existing process owner resolves the macOS listener tool by name.
+    return {'PATH': '/opt/homebrew/opt/node@24/bin:/usr/bin:/bin:/usr/sbin', 'HOME': str(directory / 'home'),
+        'TMPDIR': str(directory / 'tmp'), 'CLAUDE_CONFIG_DIR': str(directory / 'home'),
+        'PYTHONDONTWRITEBYTECODE': '1', 'TSX_DISABLE_CACHE': '1', 'NODE_DISABLE_COMPILE_CACHE': '1'}
+
 def work_and_cleanup(child, node, namespace, directory, result, write=save):
     work = child([*node, str(HERE / 'host-entry.mjs'), '--work-once', str(directory / 'input.json')], 180, 32, 131072)
     result['work'] = {'exit': work.exit_code, 'ownedState': work.owned_state, 'eof': work.eof, 'firstFailure': work.first_failure}
@@ -95,9 +101,7 @@ def main(argv):
         'directoryIdentity': {'dev': str(identity.st_dev), 'ino': str(identity.st_ino)}}
     save(directory / 'input.json', value)
     save(namespace / 'owned-root.json', {'directory': str(directory), 'identity': value['directoryIdentity'], 'retention': 'KEEP'})
-    env = {'PATH': '/opt/homebrew/opt/node@24/bin:/usr/bin:/bin', 'HOME': str(directory / 'home'),
-        'TMPDIR': str(directory / 'tmp'), 'CLAUDE_CONFIG_DIR': str(directory / 'home'),
-        'PYTHONDONTWRITEBYTECODE': '1', 'TSX_DISABLE_CACHE': '1', 'NODE_DISABLE_COMPILE_CACHE': '1'}
+    env = work_environment(directory)
     def child(argv, seconds, reserve, output_bytes):
         available = min(seconds, deadline - time.monotonic() - reserve - 2.5)
         assert available > 0, 'NO_CHILD_TIME_REMAINING'

@@ -10,10 +10,11 @@ MODULE = ROOT / 'tools/owned-process-supervision/supervise.py'
 assert hashlib.sha256(MODULE.read_bytes()).hexdigest() == '725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d'
 spec = importlib.util.spec_from_file_location('svc09a_prepare_ops14', MODULE)
 ops = importlib.util.module_from_spec(spec); sys.modules[spec.name] = ops; spec.loader.exec_module(ops)
-assert sys.argv[1:] in ([], ['--host-guard'], ['--review-fixes'])
+assert sys.argv[1:] in ([], ['--host-guard'], ['--review-fixes'], ['--work-environment'])
 host_guard = sys.argv[1:] == ['--host-guard']
 review_fixes = sys.argv[1:] == ['--review-fixes']
-run = HERE / ('prepare-local-03' if review_fixes else 'prepare-local-02' if host_guard else 'prepare-local-01'); run.mkdir()
+work_environment = sys.argv[1:] == ['--work-environment']
+run = HERE / ('prepare-local-04' if work_environment else 'prepare-local-03' if review_fixes else 'prepare-local-02' if host_guard else 'prepare-local-01'); run.mkdir()
 
 def save(name, value):
     data = value if isinstance(value, bytes) else (json.dumps(value, indent=2) + '\n').encode()
@@ -22,6 +23,7 @@ def save(name, value):
 
 free = shutil.disk_usage(ROOT).free
 assert free >= 1024**3 + 2*1024**2 + 256*1024
+if work_environment: assert free >= 16154558464
 scratch = Path(tempfile.mkdtemp(prefix='flow-svc09a-review-' if review_fixes else 'flow-svc09a-host-preparation-' if host_guard else 'flow-svc09a-prepare-',dir='/private/tmp')); before = scratch.lstat()
 argv = (NODE, '--test', '--test-reporter=spec', str(HERE/'host-prepare.test.mjs')) if host_guard else (NODE, str(HERE/'prepare-check.mjs'))
 inputs = ['host-consumer.mjs','mixed-runner.mjs','prepare-check.mjs','prepare-run.py']
@@ -31,9 +33,16 @@ if host_guard or review_fixes:
     for name in ['host-run.py','measure-once.py'] + (['host-supervise.py','host-supervise.test.py'] if review_fixes else []):
         ast.parse((HERE/name).read_text())
 commands = [(NODE, '--test', '--test-reporter=spec', str(HERE/'host-review-fixes.test.mjs')), (sys.executable, str(HERE/'host-supervise.test.py'))] if review_fixes else [argv]
-save('reservation.json', {'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'argv':argv if not review_fixes else None,'commands':commands,'freeBytes':free,
+if work_environment:
+    inputs = ['host-run.py', 'host-supervise.py', 'host-supervise.test.py', 'prepare-run.py', 'host-inputs.json']
+    for name in inputs:
+        if name.endswith('.py'): ast.parse((HERE/name).read_text())
+    commands = [(sys.executable, str(HERE/'host-supervise.test.py'),
+        'OperatorBoundary.test_work_environment_resolves_actual_listener_tool_missing_from_old_path',
+        'OperatorBoundary.test_work_environment_keeps_private_paths_and_does_not_inherit_credentials')]
+save('reservation.json', {'at':datetime.datetime.now(datetime.timezone.utc).isoformat(),'argv':argv if not review_fixes and not work_environment else None,'commands':commands,'freeBytes':free,
   'runtimeBudgetSeconds':10,'rawBytesCap':262144,'scratchBytesCap':2097152,'scratch':str(scratch),'dev':before.st_dev,'ino':before.st_ino,
-  'pythonAST': 'PASS' if host_guard or review_fixes else 'NOT_SELECTED',
+  'pythonAST': 'PASS' if host_guard or review_fixes or work_environment else 'NOT_SELECTED',
   'inputs':[{'path':n,'bytes':(HERE/n).stat().st_size,'sha256':hashlib.sha256((HERE/n).read_bytes()).hexdigest()} for n in inputs]})
 reports=[]
 for index, command in enumerate(commands):

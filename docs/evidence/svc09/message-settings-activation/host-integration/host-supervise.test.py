@@ -3,9 +3,11 @@ import importlib.util
 import json
 import os
 from pathlib import Path
+import shutil
 import stat
 import sys
 import unittest
+from unittest.mock import patch
 sys.dont_write_bytecode = True
 HERE = Path(__file__).resolve().parent
 
@@ -23,6 +25,27 @@ ops = outer.load_supervisor(fixed['supervisor'])
 
 
 class OperatorBoundary(unittest.TestCase):
+    def test_work_environment_resolves_actual_listener_tool_missing_from_old_path(self):
+        previous = '/opt/homebrew/opt/node@24/bin:/usr/bin:/bin'
+        self.assertIsNone(shutil.which('lsof', path=previous))
+        environment = operator.work_environment(Path('/synthetic/owned'))
+        self.assertEqual(shutil.which('lsof', path=environment['PATH']), '/usr/sbin/lsof')
+        self.assertEqual(environment['PATH'], previous + ':/usr/sbin')
+        self.assertEqual(shutil.which('ps', path=environment['PATH']), '/bin/ps')
+
+    def test_work_environment_keeps_private_paths_and_does_not_inherit_credentials(self):
+        with patch.dict(os.environ, {'HOME': '/unowned/home', 'PATH': '/unowned/bin',
+                'FLOW_SVC09A_ADMIN_URL': 'synthetic-only', 'ANTHROPIC_API_KEY': 'synthetic-only'}, clear=True):
+            environment = operator.work_environment(Path('/synthetic/owned'))
+        self.assertEqual(set(environment), {'PATH', 'HOME', 'TMPDIR', 'CLAUDE_CONFIG_DIR',
+            'PYTHONDONTWRITEBYTECODE', 'TSX_DISABLE_CACHE', 'NODE_DISABLE_COMPILE_CACHE'})
+        self.assertEqual(environment['HOME'], '/synthetic/owned/home')
+        self.assertEqual(environment['TMPDIR'], '/synthetic/owned/tmp')
+        self.assertEqual(environment['CLAUDE_CONFIG_DIR'], environment['HOME'])
+        self.assertEqual(environment['PYTHONDONTWRITEBYTECODE'], '1')
+        self.assertEqual(environment['TSX_DISABLE_CACHE'], '1')
+        self.assertEqual(environment['NODE_DISABLE_COMPILE_CACHE'], '1')
+
     def test_caller_deadline_covers_persistence_stall_and_retains_primary_output(self):
         scratch = Path(os.environ['FLOW_SVC09A_PREPARE_SCRATCH'])
         self.assertTrue(str(scratch).startswith('/private/tmp/flow-svc09a-review-'))
