@@ -19,8 +19,8 @@
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 839a1614bb8429922716fb86e8a9ebe6b2972967：新选择8/8+受影响sequence5/5，focused types0；2children完整RETURN，非PG通过。 |
 | 已集成main状态 / HEAD | INTEGRATED 8e5faabb2f5f4e86cf80044916857680d70912af：仅primary12/72498B私有离线packing/replay闭包。optional center/runner接线未接；历史A/B/idle为f2ccb673，整体S01未完成。 |
-| 实现目标 | 839a1614bb8429922716fb86e8a9ebe6b2972967 |
-| 实现范围 | experiments/runner-capacity/mixed/queue-buffered-main.ts, experiments/runner-capacity/mixed/queue-buffered.test.ts, experiments/runner-capacity/mixed/queue-probe.ts, experiments/runner-capacity/mixed/run-identity.ts, experiments/runner-capacity/mixed/ab-driver.ts, experiments/runner-capacity/mixed/ab-sequence.ts, experiments/runner-capacity/mixed/driver.ts |
+| 实现目标 | ece9241418d0f17c6ef2cfd6e32e5b868ab22273 |
+| 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.py, docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator.test.py, docs/evidence/s01/mixed-ab-preparation/queue-buffered-operator-input.json, docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py |
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 4 |

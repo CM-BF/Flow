@@ -1,8 +1,12 @@
 # S01 独立审查
 
-## 当前：显式 buffered 单臂选择
+## 当前：单臂caller/input与pure结果
 
-APPROVED 2026-10-07T17:06:05Z root /0P1P2，source `839a1614bb8429922716fb86e8a9ebe6b2972967`；[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-ready.md)。新8/8+共享sequence5/5、focusedtypes0，仅选择/身份/接线与局部结果待独审。实际PG/HTTP仍NOT_RUN_NOT_OPEN，旧caller未配单臂。
+PENDING，source `ece9241418d0f17c6ef2cfd6e32e5b868ab22273`；[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-caller-ready.md)。仅新finite variant/input与5pure；0PG/HTTP/性能，旧operator冻结。
+
+## 已审：显式 buffered 单臂选择
+
+APPROVED 2026-10-07T17:06:05Z root /0P1P2，source `839a1614bb8429922716fb86e8a9ebe6b2972967`；[唯一入口](../../docs/evidence/s01/mixed-ab-preparation/queue-buffered-ready.md)。新8/8+共享sequence5/5、focusedtypes0，root固定source/局部结果独审0P1P2。实际PG/HTTP仍NOT_RUN_NOT_OPEN；新caller增量见当前段。
 
 ## 历史：同policy packing ABBA准备
 
