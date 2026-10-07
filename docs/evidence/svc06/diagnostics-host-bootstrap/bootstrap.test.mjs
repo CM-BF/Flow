@@ -21,6 +21,7 @@ test('initial bootstrap keeps real report guards and subsequent release CAS', as
     await writeFile(join(at, 'manifest.json'), manifest, { mode: 0o600 }); await writeFile(join(at, 'dist/index.html'), html, { mode: 0o600 });
     const initial = { directory, artifact, backendHead: input.artifact.sourceHead, expectedVersion: 0 };
     await assert.rejects(planWebRelease({ ...initial, action: 'publish' }), { code: 'WEB_RELEASE_BOOTSTRAP_REQUIRED' });
+    await mkdir(join(directory, 'web-compatibility'), { mode: 0o700 });
     await assert.rejects(planWebRelease({ ...initial, action: 'bootstrap' }), { code: 'WEB_COMPATIBILITY_REQUIRED' });
     assert.equal(await readWebRelease(directory), null);
     const reportDirectory = join(directory, 'NON_PRODUCTION_LOADER_FIXTURE'); await mkdir(reportDirectory, { mode: 0o700 });
