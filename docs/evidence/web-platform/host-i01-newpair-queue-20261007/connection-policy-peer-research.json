@@ -1,0 +1,89 @@
+{
+  "at": "2026-10-07T17:14:13.969Z",
+  "owner": "workspace_panels_owner / independent Release research",
+  "decision": "Parser-close violation observed. Transport-policy mismatch is a concrete candidate, not proven sole cause. Keep diagnostic reports:null/passed:false and HTTP400 failure.",
+  "scope": "Six code/identity sources: four pinned below plus official Node vendored parser and llhttp generator. Bounded sanitized raw and official docs. No project edit/import/test/productHTTP/PG/browser/provider; no Cookie values/rawPacket; no runtime authority.",
+  "fixedLocalInputs": [
+    {
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "commit": "fc2916c275efe86203d91ec33656ea9871eac42a",
+      "bytes": 41001,
+      "sha256": "798d58bb61e2c30420425bd59c62f1aeccec3374fe9ce08ebba91d941403c187"
+    },
+    {
+      "path": "apps/web/test/web-release-compatibility.browser.ts",
+      "commit": "fc2916c275efe86203d91ec33656ea9871eac42a",
+      "bytes": 37253,
+      "sha256": "4ba1336fe23af52daf755952c1f0f0eafa21d366fc4b150cc15082b9b7fdf6c6"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/include/node/node_version.h",
+      "bytes": 4247,
+      "sha256": "60ebf5f2ed30034c897df39ac163918b7b84e4f82a68355af7b6466922768ee1"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/fastify.js",
+      "bytes": 34573,
+      "sha256": "31a0ebd3ee5fd9f525ccb37c312e3b94757cf53bfa481f41ee364ce75d83c0ae"
+    }
+  ],
+  "officialReferences": {
+    "nodeHttp": "https://nodejs.org/download/release/v24.20.0/docs/api/http.html",
+    "nodeParser": "https://raw.githubusercontent.com/nodejs/node/v24.20.0/deps/llhttp/src/llhttp.c",
+    "llhttpExplanation": "https://raw.githubusercontent.com/nodejs/llhttp/main/src/llhttp/http.ts",
+    "fastifyDocs": "https://fastify.dev/docs/v5.6.x/Reference/Server/#clienterrorhandler"
+  },
+  "rawDirectory": "/private/tmp/rel01-recovery-diagnostic-c1/raw/release-cookie-diagnostic-20261007-170156-52e561/fixture",
+  "rawPins": [
+    {
+      "name": "http-client-errors.json",
+      "bytes": 10207,
+      "sha256": "4637255679ec9231742f3d573e4152de5fed66b46e9273d63d9101ce38cad213"
+    },
+    {
+      "name": "browser-results.json",
+      "bytes": 14232,
+      "sha256": "0a1daed91a3de71834983a482a55bb197416bb5e6e5b0818284da6b358484756"
+    },
+    {
+      "name": "all-wire.json",
+      "bytes": 61309,
+      "sha256": "7c46dffbf529a99718ca361150f42a67e49267999c016ef29b9f47ae4b4d91d0"
+    }
+  ],
+  "observed": [
+    "One HPE_CLOSED_CONNECTION, bytesParsed1, elapsed7112ms, late-logout/reconnect; connectionId29, client60741 -> server60655. Limits16errors/128upstreams/32768bytes, dropped0, originalHandlersPreserved=true.",
+    "Two exact-tuple candidates: wire26 at6800ms durable-retry/original-retry, GET /api/tasks/<own-task>/stream?after=1 status200; wire34 at7111ms late-logout/reconnect, GET /api/browser-session status400. UNKNOWN/wireIndex:null is correct. No client socket-object/generation identity was captured.",
+    "Browser diagnosticOnly=true/diagnosticComplete=true/reports:null/passed:false. Reached recovery/logout observations are not compatibility PASS. Root independently reviews return; not repeated here."
+  ],
+  "semantics": [
+    "Node24.20 vendored llhttp.c7056-7085 reports Data after `Connection: close` from closed parser state. llhttp generator1029-1047 explains CR/LF allowance and rejection of other data in strict closed state; mutable main is explanatory, not installed-source pin. Logical parser closure does not prove TCP already closed. No leniency change justified.",
+    "Node24.20 HTTP docs: bytesParsed counts parsed packet bytes, not whole request/Cookie length or the downstream one-byte ACK fault. clientError has no request/response object. Default globalAgent enables keepAlive and five-second timeout. agent:false creates a one-use agent avoiding reuse; request.reusedSocket exposes reuse.",
+    "Installed Fastify5.12.5 fastify.js453/918 installs its default handler.963-1002: ignore ECONNRESET/destroyed socket; timeout408, overflow431, otherwise400; write if writable then destroy(err). HPE_CLOSED_CONNECTION is not the reset branch. Original observer leaves these handlers intact. Older5.6 docs are context, not exact5.12 proof."
+  ],
+  "fixedSeam": [
+    "fixture42-90 tracks server socket IDs but joins upstreams by ports only; current phase is not causal attribution. Multiple matches remain UNKNOWN.",
+    "fixture229-234 removes hop-by-hop headers;299 forces upstream Connection:close;309 httpRequest has no agent, using default globalAgent.314-318 maintains response backpressure.352 downstream close destroys owned upstream and resolves forwarding. These facts alone do not prove bad reuse.",
+    "fixture235-254 strict-prefix ACK loss ends downstream browser socket after complete real JSON. The center parser error is on a different transport leg; bytesParsed1 does not associate them.",
+    "browser128-168 waits old SSE closure, reloads/reconnects while holding a completed logout response before headers, then releases and checks cookie/new session. This supplies chronology, not TCP generation.",
+    "Root-supplied fixed fact, not a seventh reread: backend04da80692e79e2b7c3f6341c7fa76515a3f719a3 apps/server/src/streams.ts50 hardcodes SSE Connection:keep-alive. Its combination with request close/implicit pooled agent merits isolation; actual response Connection/reusedSocket not recorded."
+  ],
+  "limits": [
+    "Same tuple/311ms spacing cannot prove same TCP generation, which request triggered error, Cookie/CSRF fault, Node regression, or unique product root cause. A keep-alive/close mismatch makes reuse timing plausible, not proven.",
+    "No rawPacket/header/body dump: potential credentials. Node not executed for research; installed node_version.h24.20.0 plus matching official tag, not fresh runtime probe. No broad HPE allowlist, ignored400 or unchanged automatic retry."
+  ],
+  "next": [
+    "Original Release owner can consider fixture309 agent:false, matching its explicit one-request Connection:close policy. Preserve real HTTP, ACK fault, unknown reload/no-autoPOST, key/body/turn/task and logout assertions, close/backpressure/errors. No globalAgent mutation/new pool. This isolates fixture transport and does not retrospectively prove sole cause.",
+    "For precise causality, extend only bounded observer: WeakMap clientSocketId, request.reusedSocket, wireIndex; socket connect/end/close/error and downstream-close/upstream-destroy reason; server connection lifetime plus safe request ordinal/method/path. Match generation/lifetime, not ports alone. Keep UNKNOWN if incomplete.",
+    "Only record Connection enum(close/keep-alive/absent), incoming.complete and event times; include fields in existing16/128/32KiB bounds. No rawPacket/Cookie/Set-Cookie values/bodies. No runtime authorized by this report.",
+    "Product streams honoring request close is original server/shared-owner scope, outside Web four-test authority. Needs exact product delta/relevant validation; do not silently fix it here. Later fixture-isolated green is not proof of all production persistent-connection behavior."
+  ],
+  "cleanCode": {
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md"
+    ],
+    "applied": "Reused installed discovery/error-handling method; separated evidence/inference, bounded observer single responsibility, preserved original errors, ownership and failures. No new framework, install, code or tests."
+  },
+  "state": "RESEARCH_COMPLETE_STOP"
+}

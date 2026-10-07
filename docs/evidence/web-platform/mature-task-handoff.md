@@ -1,10 +1,12 @@
 # Web 当前交接与唯一来源
 
-**即时调度 2026-10-07T17:06:16.444Z：新网页诊断17:02:28.596973Z实际开始，17:03:55.066182Z确切归还；捕获HPE_CLOSED_CONNECTION，诊断证据已独审通过；具体因果仍UNKNOWN，正式四版本兼容仍FAILED/reports=null，不发布。当前actual holder=NONE；Original原native owner获SVC09A R4唯一NEXT，单次217.5s、fresh floor15,907,160,064B，尚未START。I01四组真实界面检查/双图已独审通过并封存，已由Original精确合入main，原owner正在收口释放。**
+**即时调度 2026-10-07T17:14:11.784Z：R4已17:10:57.626406Z确切runtimeRETURN，结果FAILED/DB和private KEEP，原失败不改；当前actual holder=NONE。下一公平队列选Mika K01已READY的120s测量候选，先三队ordinary排干，目前未授运行。W01确认0child、panels/I01已release；Original已确认排干；现仅待Mika新S01Q实际drain。I01 main5592与61abv2释放已完成。**
 
-**当前预算组合：** 13,440,909,312剩余未分类保守上界＋K01保留DB规划134,217,728＋R4自身峰值1,243,611,136＋Mika当前普通5,242,880＋诊断待自然封存增长上界9,437,184＋一次reserve1,073,741,824＝15,907,160,064B。I01已seal/STOP，原封存上界不再属于未来增长；诊断DB/scratch确清不叠旧201MiB全cap。原gate/失败/时间保真，DB规划非硬峰值，见[唯一账本](resource-window-current.json)。
+**下一准入过渡组合：** 13,440,909,312残余保守未知＋旧K01保留DB134,217,728＋R4 KEEP待原lead分类暂留1,243,611,136＋新K01候选142,606,336＋S01Q新源码8,388,608＋Release最小连接策略源码4,194,304＋Arc既有片源码准备16,777,216＋一次reserve1,073,741,824＝16,064,446,464B。R4完整cap只作待分类保守上界，非永久累计；其已消费15,927,083,008B保持。K01含真实SQL计时，工程child须排干，不把此测量隔离泛化为全部PG/浏览器规则，见[唯一账本](resource-window-current.json)。
 
-**当前领取与工作状态：** Release7d60v2/exact4保留，诊断结果已限定独审通过并完整归还，待自然封存，不自动重试；I01 61abv1/exact8保留且全STOP，六源已main5592，原owner收口释放中；VISUAL accev1/exact8保留且STOP、工程NOT_RUN。D05 208已实际同步VISUAL/S01Q01，各唯一claim匹配；领取、停止写入和实际运行分别记录。
+**候选队列（未授NEXT）：** Mika K01启动路径后继固定bca6/9c802、inputs f4255413已READY，单次120s/18PG/0Chrome；142,606,336B候选峰值仅选中时进入前瞻组合。R4已确切RETURN，现等待三队ordinary排干后统一fresh准入，permit仍CLOSED/无namespace，不凭READY启动。
+
+**当前领取与工作状态：** Release7d60v2/exact4保留，诊断结果已限定独审通过并完整归还，待自然封存，不自动重试；I01六源已main5592，原owner ded404双端clean、八scope STOP后已61abv2正式释放；VISUAL accev1/exact8保留且STOP、工程NOT_RUN。D05 208已实际同步VISUAL/S01Q01，各唯一claim匹配；领取、停止写入和实际运行分别记录。
 **历史两次新检查候选预算（各计一次，最新完整线与授权只看页首）：** I01第二次独立60s保守新增264MiB、Release c2独立180s保守新增201MiB；17,454,858,240+276,824,064+210,763,776=17,942,446,080B未来完整线。旧两个失败阶段均CLOSED，余额不转，已删scratch不改旧原件，保留证据/KEEP不退款。后到R2/c2已消费gate均保持历史。
 
 **预算算术纠偏（不改历史gate）：** [明确更正事件](host-i01-newpair-queue-20261007/host-budget-arithmetic-correction.json)核SVC09A旧host envelope应为1,243,611,136B，原表漏24MiB；原R1 KEEP不退，新R2候选再计独立1,243,611,136B，当时future完整floor为17,454,858,240B。S01已按更高线实际执行并完整归还；R2已实际运行并明确归还，入口前失败及KEEP原件保留；该R2现无NEXT，不自动重试。
@@ -27,6 +29,8 @@
 
 **既有附件条目动作后继：** [固定七源设计输入](host-i01-newpair-queue-20261007/attachment-action-report.md)已归WPF-001-05/REQ22–23/MATURE03-03，先项目行与实际草稿行，同一成员/版本/权限边界；I01交权后先核controller的preview signal接口，再合法最小实施。未take/未运行，不抢当前接入或发布。
 
+**新网页当前精确源码后继：** [固定研究](host-i01-newpair-queue-20261007/connection-policy-source-research.json)与[独立peer](host-i01-newpair-queue-20261007/connection-policy-peer-research.json)支持原fixture native httpRequest单点agent:false候选，以匹配既有Connection:close意图；W01先VISUAL安全STOP再回原Release4scope源码准备。保持400拒绝/Cookie/ACK/原keybody/lateLogout全部断言，两个tuple关联仍UNKNOWN，不改公共合同或globalAgent，不重建779/cd27。正式四版本需后续新单次阶段，当前未授；产品SSE连接close语义另交Original原serverowner。
+
 **原REQ19后继已登记：** [稳定兼容执行器与可信版本输入](host-i01-newpair-queue-20261007/stable-compatibility-executor-followup.json)归现WPF-RELEASE01/W01，本轮收口后与Original OPS-001-14/16复用工作协调；当前779-cd27包冻结，不迁移、不重复绿。新pair仍要真实compat，错tuple报告拒绝；不新平台或额外大task。
 
 **D05 来源切换已实际闭合：** [固定迁移请求](release-source-switch-svc09a-return-20261007/d05-current-source-switches.json)由Original唯一writer完成，15:24:50.706正常reload后[root独立双API核验](web-artifact-cleanup-fix-source-reload-20261007/dashboard-207-verified.json)确认207来源/相同1cfc指纹：Release与I01新WT、PROCESS/CLIENT/VERIFIER均present/current，四activeclaim matchesSource=true、所选未登记为空；CLIENT已释放不伪active。不再请求登记、重载或重复读取。PROCESS源码已remote main96b，但T7/个人部署仍另计；后继两leaf交权按原ownerfresh回执，非dashboard自动授予。
@@ -43,7 +47,7 @@
 
 **历史SVC09两槽源码后继（当前实际运行及KEEP以页首为准）：** Original已接受的legacy+settings私有manifest/lifecycle可由原owner并行源码推进，保护自然运行用户任务、旧runner身份/会话；新opt-in runner/profile/digest与精确choices、`flow.claude-turn-settings.v1`目录按原合同。13:53:41旧personal-release-policy/4346仅是旧已交付released来源；如已有后继，请给唯一owner/WT/status，未take则正常fresh领取。此处不推其它authority未开工、不热改配置，个人激活另窗。
 
-**插件真实App接收入口：** 原panels已在独立树完成真实App接线，四组受控HTTP真实界面检查与双图[独审通过](host-i01-newpair-queue-20261007/i01-third-result-review.json)，[唯一main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/main-intake.json)固定source5438e375a92f47c1a68d81aeed172a1bfdf05962，final11a9ba5df03f154d1414650f28fa76f8b402f5a4双端clean、exact8全STOP。Original已实际精确接收3产品+3test到main/origin5592f9d83f43dc1b1026fdfcbeaaeed7f07f71e3，主线收据为docs/evidence/i02/i01-runtime-app-intake.json；原owner一次metadata收口再freshCASrelease，当前claim仍保留，不重测。真实中心安全/runner/个人部署未验。[当前前像只读观察](host-i01-newpair-queue-20261007/i01-main-preimage-review.json)不替代接收时fresh。
+**插件真实App接收入口：** 原panels已在独立树完成真实App接线，四组受控HTTP真实界面检查与双图[独审通过](host-i01-newpair-queue-20261007/i01-third-result-review.json)，[唯一main-intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-app/docs/evidence/wpf-i01/runtime-app/main-intake.json)固定source5438e375a92f47c1a68d81aeed172a1bfdf05962，final11a9ba5df03f154d1414650f28fa76f8b402f5a4双端clean、exact8全STOP。Original已实际精确接收3产品+3test到main/origin5592f9d83f43dc1b1026fdfcbeaaeed7f07f71e3，主线收据为docs/evidence/i02/i01-runtime-app-intake.json；原owner ded404cca9d2daaaf5e0288096d4431f2aa509e3双端clean，完成核验17:10:04.144Z、开始UNKNOWN；全8STOP后17:11:49.694Z [freshCAS正式release](host-i01-newpair-queue-20261007/i01-main-release-receipt.json)，61abv2已释放，不重测。真实中心安全/runner/个人部署未验。[当前前像只读观察](host-i01-newpair-queue-20261007/i01-main-preimage-review.json)不替代接收时fresh。
 
 **历史PROCESS T7供发布链复用（不作当前CORE排程）：** [只读供给输入](svc-held1347-core-ready-20261007/process-t7-release-input.json)可并入下一本来需要的新backend artifact验证；真实factory/worker/脱repo调用及grant/result/EOF/slot证明仍未验，import-only不算T7。不新增builder改写、artifact窗或权限链，不影响当前CORE唯一NEXT。
 

@@ -1,39 +1,18 @@
 {
-  "at": "2026-10-07T17:08:41.814057+00:00",
+  "at": "2026-10-07T17:20:29.439030+00:00",
   "scope": "Only current changed manager paths, added Markdown links, JSON and indexed archive hashes",
   "paths": [
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/archive-index.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-controller-seam-peer.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/cookie-diagnostic-result-review.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/cookie-diagnostic-return-receipt.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/cookie-diagnostic-strict-result-review.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/connection-policy-peer-research.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/connection-policy-source-research.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-208-source-switch-verified.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-blocker-source-input.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-current-claims-observation.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-user-summary-confirmed.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-main-preimage-review.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-third-accounting.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-third-post-cleanup.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-third-result-review.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-third-tool-exit.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/k01-independent-recovery-observation.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/manager-diagnostic-return-claims.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/manager-human-summary-observation.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/i01-main-release-receipt.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/metadata-validation.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/official-quote-mapping-peer.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/official-thread-action-research.json",
     "docs/evidence/web-platform/host-i01-newpair-queue-20261007/quality-record.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/status-validation.json",
-    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/visual-source-switch-request.json",
+    "docs/evidence/web-platform/host-i01-newpair-queue-20261007/svc09a-r4-host-window-return.json",
     "docs/evidence/web-platform/mature-task-handoff.md",
     "docs/evidence/web-platform/resource-window-current.json",
-    "plans/web-platform/plan.md",
-    "plans/web-platform/status.md",
-    "plans/wpf-mature-03-attachments/plan.md",
-    "plans/wpf-mature-06-chat/plan.md",
-    "plans/wpf-mature-06-chat/status.md"
+    "plans/web-platform/status.md"
   ],
   "links": [
     {
@@ -43,17 +22,12 @@
     },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/visual-take-receipt.json",
+      "target": "host-i01-newpair-queue-20261007/connection-policy-source-research.json",
       "exists": true
     },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/dashboard-208-source-switch-verified.json",
-      "exists": true
-    },
-    {
-      "source": "docs/evidence/web-platform/mature-task-handoff.md",
-      "target": "host-i01-newpair-queue-20261007/visual-source-switch-request.json",
+      "target": "host-i01-newpair-queue-20261007/connection-policy-peer-research.json",
       "exists": true
     },
     {
@@ -68,62 +42,17 @@
     },
     {
       "source": "docs/evidence/web-platform/mature-task-handoff.md",
+      "target": "host-i01-newpair-queue-20261007/i01-main-release-receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/web-platform/mature-task-handoff.md",
       "target": "host-i01-newpair-queue-20261007/i01-main-preimage-review.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/plan.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/plan.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/plan.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json",
       "exists": true
     },
     {
       "source": "plans/web-platform/status.md",
       "target": "../../docs/evidence/web-platform/resource-window-current.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/status.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-human-followup.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/status.md",
-      "target": "../../docs/evidence/web-platform/release-caller-recovery-main-20261007/recovery-main-intake.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/status.md",
-      "target": "../../docs/evidence/web-platform/x01-version-return-20261007/recovery-late-logout-main-consumer-intake.json",
-      "exists": true
-    },
-    {
-      "source": "plans/web-platform/status.md",
-      "target": "../../docs/evidence/web-platform/release-c3-actual-admission-20261007/recovery-final-release-receipt.json",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-03-attachments/plan.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/attachment-controller-seam-peer.json",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-06-chat/plan.md",
-      "target": "../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/official-thread-action-research.json",
-      "exists": true
-    },
-    {
-      "source": "plans/wpf-mature-06-chat/status.md",
-      "target": "plan.md",
       "exists": true
     }
   ],
@@ -342,6 +271,22 @@
     },
     {
       "file": "attachment-controller-seam-peer.json",
+      "match": true
+    },
+    {
+      "file": "i01-main-release-receipt.json",
+      "match": true
+    },
+    {
+      "file": "svc09a-r4-host-window-return.json",
+      "match": true
+    },
+    {
+      "file": "connection-policy-source-research.json",
+      "match": true
+    },
+    {
+      "file": "connection-policy-peer-research.json",
       "match": true
     }
   ],

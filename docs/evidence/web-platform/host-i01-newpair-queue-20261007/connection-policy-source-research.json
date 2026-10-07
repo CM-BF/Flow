@@ -1,0 +1,47 @@
+{
+  "createdAt": "2026-10-07T17:14:17.498718+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "state": "READ_ONLY_CONNECTION_POLICY_DESIGN_INPUT_NOT_ROOT_CAUSE_OR_FIX_APPROVAL",
+  "sourcePins": [
+    {
+      "commit": "fc2916c275efe86203d91ec33656ea9871eac42a",
+      "path": "apps/web/test/web-release-compatibility.fixture.ts",
+      "bytes": 41001,
+      "sha256": "798d58bb61e2c30420425bd59c62f1aeccec3374fe9ce08ebba91d941403c187"
+    },
+    {
+      "commit": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+      "path": "apps/server/src/streams.ts",
+      "bytes": 2780,
+      "sha256": "be74745d814b211eeee848ec0e8421a033dcff55a77c1439fa5278b0ae15fa7c"
+    }
+  ],
+  "actualEvidence": "root-release01-cookie-diagnostic-result-review-20261007.json / d8ba604bd7518f9a965fe56c62f591436c54ae09278b1ab4dd17ffb683682695",
+  "observed": [
+    "fc291 fixture299 sets every upstream request Connection:close;309 calls native httpRequest without agent option.",
+    "04da backend streams.ts50 explicitly emits Connection:keep-alive for SSE.",
+    "Actual upstream endpoint60741→60655 appears at wire26 task SSE200/6800ms and wire34 browser-session400/7111ms; parser error HPE_CLOSED_CONNECTION/bytesParsed1 at7112ms; retained association remainsUNKNOWN."
+  ],
+  "references": [
+    {
+      "url": "https://nodejs.org/docs/latest-v24.x/api/http.html#class-httpagent",
+      "versionSeen": "v24.21.0 current documentation; actual runtime24.20.0 not silently substituted",
+      "supports": "httpRequest defaults to globalAgent; agent:false uses an agent for one request and avoids connection reuse. request.reusedSocket reports whether a request used a reused socket."
+    },
+    {
+      "url": "https://www.rfc-editor.org/rfc/rfc9112.html#section-9.6",
+      "supports": "A client sending the close option must not issue another request on that connection and closes after the final response. The receiving server must initiate closure after its final response and must not process another request on that connection."
+    }
+  ],
+  "inference": "This exact close-request/keep-alive-response/default-pool combination is a concrete transport-lifetime hypothesis worth isolating. Same endpoint tuple and timing alone still do not prove same socket generation or causal identity. No production security, Cookie/session correctness or complete parser cause conclusion follows.",
+  "boundedNext": [
+    "Prefer resolving the fixture native transport policy in its already-owned test scope. A one-request native agent is a small candidate consistent with the explicit Connection:close intent; do not weaken error checks or alter the public Host/Origin/Cookie/CSRF/body routing. It needs relevant evidence before being called a fix.",
+    "If extra observation is needed, capture a local weak-map socket lifetime ordinal, reusedSocket boolean and enum-only Connection policy at the upstream request/response, bounded within the existing physical32KiB diagnostic cap. No raw header/body/packet/Cookie capture; no second generic tracing system.",
+    "Keep a separate source handoff for the real SSE owner: check whether forcing response keep-alive after a close request lets the native socket remain open or conflicts with parser state. A fixture one-shot change must not be represented as proving the backend follows all close semantics.",
+    "Use an existing narrow owned regression or controlled single-stage validation; no broad retries or automatic response acceptance. Full four-app compatibility is a separate fresh execution of the same immutable779/cd27 pair after the source delta is reviewed. No artifact rebuild is implied."
+  ],
+  "ownership": "Root only researches; W01 test fixture exact4 claim remains held but is currently STOP while owner performs VISUAL source-only preparation. Manager serializes feature switching. Backend streams belongs to Original Lead; no scope expansion granted by this note.",
+  "preserved": "Original c1/c2FAILED, diagnosticDIAGNOSTIC_COMPLETE/reportsnull and exact returns stay unchanged. Do not allow-list400, disable native parser error handling or retry state-changing requests to mask the symptom.",
+  "cleanCode": "Keep connection policy at the proxy construction point, authority and request semantics unchanged, error evidence separate from compatibility results. Avoid a new transport/controller abstraction for one native option.",
+  "limits": "No project writes, product imports, tests, HTTP/PG/browser runtime or new claim. This is an implementation candidate and narrower observation design, not a demonstrated repair."
+}
