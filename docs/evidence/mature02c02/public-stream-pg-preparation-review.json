@@ -1,0 +1,40 @@
+{
+  "at": "2026-10-07T05:32:12.726517+00:00",
+  "decision": "APPROVED_NARROW_PUBLIC_STREAM_PG_PREPARATION_NOT_ACTUAL",
+  "reviewer": "Flow Web co-lead /root, independent from C02 writer",
+  "target": "2a125afa10530753e7b2dc69f4ba93c2eab91bbc",
+  "preparedSource": "4520a06e42ae7945ba6a2485ab1dabcb3a9113cb",
+  "packet": "77e7dc8c3d5b5657c7dd9dcc956f25282f8c5ec5",
+  "base": "69de41a7dbc937b980f542a35ba70a0a91a7248f",
+  "manifestSha256": "67119534517264f7ea8861a6e683d08d7634923ed6d34b61f0e868b4c2cda704",
+  "scope": [
+    "apps/server/src/assistant-stream/public-stream-pg.test.ts",
+    "docs/evidence/mature02c02/public-stream-transport.ts",
+    "docs/evidence/mature02c02/pg-fixture.ts readClient addition only",
+    "docs/evidence/mature02c02/execute-pg-once.py fixed third manifest/config/receipt selection only",
+    "fixed input manifest, config, six-case collection/type evidence and existing cleanup boundary"
+  ],
+  "findings": [],
+  "blockingP1": 0,
+  "blockingP2": 0,
+  "conditions": [
+    "Fresh unchanged execution HEAD/308inputs/2external/20links/fullclaimv9 and tenabsent outputs",
+    "Explicit shared PG resource handoff and fresh combined reserve; WebRecovery has first ready short segment per Mika, C02 not open until actual return",
+    "Existing command once under original120s60work50fixture10outer and declared capacity; preserve actual failures, late stdout/actual exit and owned cleanup",
+    "Archive actual selected6/pass count, bytes/request/durablepatch counts and resource limits without converting simulation to native/provider evidence"
+  ],
+  "limitations": [
+    "This root review does not reapprove earlier25production sources or rerun historical93+15 tests; relies on prior bound independent review for those.",
+    "Live full prefix before completion is proved by proposed assertions; an explicit first-fragment observation is not separately asserted.",
+    "Static prep cannot establish PG/HTTP success, actual timing, runtime peak or private/native end-to-end behavior.",
+    "No project write/import/hooks/test/PG/Chrome run by root; no admin credential contents read."
+  ],
+  "original": {
+    "path": "docs/evidence/mature02c02/public-stream-pg-preparation-review.json.gz",
+    "encoding": "gzip; decompression returns original bytes exactly",
+    "uncompressedBytes": 40491,
+    "uncompressedSha256": "10983061f4767abbe782ac474efc0221ec7a171d82cc7ce93ae893ab3a86a25c",
+    "storedBytes": 5248,
+    "storedSha256": "85ba58be261c3a7598ca77d18a27b579ee87b99be93fd9fa9ae5be10444c9199"
+  }
+}
