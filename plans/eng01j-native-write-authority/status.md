@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T06:03:49.145460+00:00 |
+| 最近更新 | 2026-10-07T06:16:08Z |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -13,7 +13,7 @@
 | 工作基线 / HEAD | ee98e65c147cf2ef28ccf0f519952f60d56e9d4b / 产品 471b1d8b7b19d53e7c7e87efc525e9c193c5242e，R1仅两专测修复，生产三源保持原固定 |
 | 工作树dirty状态 | 本提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | planning |
+| 本片段交付阶段 | implementation |
 | 实现目标 | 471b1d8b7b19d53e7c7e87efc525e9c193c5242e |
 | 实现范围 | apps/runner/src/engineering/native-authority.ts, apps/runner/src/engineering/native-authority.test.ts, apps/runner/src/engineering/native-authority-darwin.ts, apps/runner/src/engineering/native-authority-darwin.test.ts, apps/runner/src/engineering/fixtures/native-authority-canary.c |
 | 检查状态 | PASSED 471b1d8b7b19d53e7c7e87efc525e9c193c5242e；4个不同局部检查分轮；R1正常1pass/3skip、显式4/4、focused types0；syscall继承FD缺口保留；[原始记录](../../docs/evidence/eng01j/local/README.md) |
@@ -24,7 +24,7 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 受限启动层已进入主线；原失败与对照结果已完成限定审查，现已找到可复用的原生启动正例 |
-| 下一可用交付 | 复用已有可启动组合，明确文件工具和全部写入者停止的最小接线方案 |
+| 下一可用交付 | 固定原生单文件工具的受限启动材料与结果检查接口；真实调用另验 |
 | 当前阻塞 | ACTIVE: 已有受限原生初始化正例，但工程文件工具兼容与全部写入者停止尚未闭合，完整工程写入未通过 |
 | 需用户决定 | NONE |
 | Review | APPROVED [review.md](review.md)；限定Darwin启动/R06机制，真实native工具兼容另验 |
@@ -69,3 +69,5 @@ helper一次段结束 2026-10-07T05:42:51.508674+00:00，263ms/outer1/两组abse
 单许可对照2026-10-07T05:53:45.468385+00:00→2026-10-07T05:53:46.510688+00:00：1043ms/outer1，2个C观察均仍EPERM，机制前提不成立；native0/PG0/provider0，4组absent/双EOF/目录已正常清理。原政策与5生产源均保持；[固定分析](../../docs/evidence/eng01j/stock-helper/pagesize-analysis.json)。新结果待限定独审，无自动扩大许可或重跑。
 
 2026-10-07T06:03:49.145460+00:00：页大小结果获[APPROVED_LIMITED_NEGATIVE_MECHANISM_RESULT](../../docs/evidence/eng01j/stock-helper/pagesize-independent-review.json)，I02主线5cae7a25；73固定+4入口、2C/0helper及原清理已核，0复跑。此负例与Mika早期同类负例重叠，不再逐名加许可。复用其result9b9c1182已获审initialize/catalog正事实完成[一页收敛](../../docs/evidence/eng01j/stock-helper/convergence.md)；本次仅读固定源码与归档，不启动运行。原五产品与所有raw/manifest不改，下一产品改动需明确固定recipe/终止域输入。
+
+2026-10-07T06:16:08Z：本安全点记录ENG01J-05四源实施中（实际开始先于本记录，精确时间UNKNOWN），已fresh核原七scope/v1与干净fb311基线。复用固定启动正例，R06初始化协议与单行helper协议分开；本片只准备launch，不新增执行器或grant。已授权新局部段≤60s/4MiB仅纯/注入检查，stock实际调用仍NOT_RUN。

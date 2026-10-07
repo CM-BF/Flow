@@ -1,9 +1,9 @@
 import assert from 'node:assert/strict';
 import { createHash } from 'node:crypto';
-import { copyFileSync, fstatSync, mkdtempSync, readFileSync, writeFileSync, writeSync } from 'node:fs';
+import { copyFileSync, fstatSync, mkdirSync, mkdtempSync, readFileSync, renameSync, writeFileSync, writeSync } from 'node:fs';
 import { join } from 'node:path';
 import { test } from 'vitest';
-import { prepareDarwinWriterHost } from './native-authority.js';
+import { prepareDarwinWriterHost, prepareDarwinStockHelper, type StockHelperCompletion } from './native-authority.js';
 
 const root = process.env.FLOW_ENG01J_SCRATCH;
 const binary = process.env.FLOW_ENG01J_CANARY;
@@ -41,6 +41,66 @@ test.skipIf(!canRun)('real R06 factory closes the inherited regular FD and holds
     assert.equal(stopped.writeAccess, 'unknown'); // No model/all-delegation qualification was granted.
     assert.deepEqual(await host.close(), stopped);
   }
+});
+
+const helperScratch = process.env.FLOW_ENG01J_HELPER_SCRATCH;
+const prepareHelper = process.platform === 'darwin' && process.env.FLOW_ENG01J_HELPER_PREPARE === '1' && Boolean(helperScratch);
+function helperFixture() {
+  assert.ok(helperScratch);
+  const directory = mkdtempSync(join(helperScratch, 'workspace-'));
+  const runtimeDirectory = mkdtempSync(join(helperScratch, 'runtime-'));
+  for (const child of ['control', 'state']) mkdirSync(join(runtimeDirectory, child), { mode: 0o700 });
+  writeFileSync(join(directory, 'calculator.mjs'), '0', { mode: 0o600 });
+  const startupRecipe = readFileSync(new URL('../../../../docs/evidence/eng01j/helper-host/startup-input.sb', import.meta.url), 'utf8');
+  return { directory, runtimeDirectory, startupRecipe, contents: Buffer.from('X') };
+}
+const helperSuccess: StockHelperCompletion = { exitCode: 0, ownedState: 'absent', stdoutEof: true, stderrEof: true,
+  failure: false, stdout: '{"status":"ok","payload":{"operation":"fs/writeFile","response":{}}}\n' };
+
+test.skipIf(!prepareHelper)('stock helper preparation freezes one request and reports only observed bytes, never revoked', async () => {
+  const input = helperFixture(), host = await prepareDarwinStockHelper(input);
+  const unknown = { outcome: 'unknown', writeAccess: 'unknown' };
+  assert.deepEqual(await host.observe(helperSuccess), unknown); // No launch spec issued.
+  input.contents[0] = 89;
+  const launch = host.takeLaunch(new AbortController().signal);
+  assert.equal(launch.args.at(-1), '--codex-run-as-fs-helper');
+  assert.equal(launch.executable, '/usr/bin/sandbox-exec');
+  assert.equal(launch.stdin, 'readonly-regular-file'); assert.equal(launch.extraDescriptors, 'closed');
+  const request = JSON.parse(launch.requestLine);
+  assert.deepEqual(request, { operation: 'fs/writeFile', params: { path: new URL('file://' + input.directory + '/calculator.mjs').href,
+    dataBase64: 'WA==', followSymlinks: false, sandbox: null } });
+  assert.ok(!launch.requestLine.includes('initialize'));
+  assert.equal(launch.environment.CODEX_HOME, join(input.runtimeDirectory, 'state'));
+  assert.throws(() => host.takeLaunch(new AbortController().signal));
+  assert.deepEqual(await host.observe(helperSuccess), unknown); // Exit zero does not prove the write.
+  writeFileSync(join(input.directory, 'calculator.mjs'), 'X'); // Explicit injected helper effect, no native invocation.
+  for (const completion of [{ ...helperSuccess, failure: true }, { ...helperSuccess, exitCode: 1 },
+    { ...helperSuccess, ownedState: 'unknown' as const }, { ...helperSuccess, stdoutEof: false },
+    { ...helperSuccess, stderrEof: false }, { ...helperSuccess, stdout: '{"status":"error"}' },
+    { ...helperSuccess, stdout: helperSuccess.stdout + helperSuccess.stdout },
+    { ...helperSuccess, stdout: 'x'.repeat(16385) }]) assert.deepEqual(await host.observe(completion), unknown);
+  assert.deepEqual(await host.observe(helperSuccess), { outcome: 'observed-write', writeAccess: 'unknown' });
+  renameSync(join(input.directory, 'calculator.mjs'), join(input.directory, 'original'));
+  writeFileSync(join(input.directory, 'calculator.mjs'), 'X', { mode: 0o600 });
+  assert.deepEqual(await host.observe(helperSuccess), unknown); // Same bytes in a substituted inode are insufficient.
+});
+
+test.skipIf(!prepareHelper)('stock helper changed target and aborted handoff consume the one launch', async () => {
+  const changed = helperFixture(), host = await prepareDarwinStockHelper(changed);
+  writeFileSync(join(changed.directory, 'calculator.mjs'), 'changed');
+  assert.throws(() => host.takeLaunch(new AbortController().signal));
+  assert.throws(() => host.takeLaunch(new AbortController().signal));
+  const unused = await prepareDarwinStockHelper(helperFixture()), abort = new AbortController(); abort.abort();
+  assert.throws(() => unused.takeLaunch(abort.signal));
+  assert.throws(() => unused.takeLaunch(new AbortController().signal));
+  assert.deepEqual(await unused.observe(helperSuccess), { outcome: 'unknown', writeAccess: 'unknown' });
+});
+
+test.skipIf(!prepareHelper)('stock helper preparation rejects broad writes and nonprivate state before issuing a spec', async () => {
+  const input = helperFixture();
+  await assert.rejects(prepareDarwinStockHelper({ ...input, contents: Buffer.alloc(1025) }));
+  await assert.rejects(prepareDarwinStockHelper({ ...input, runtimeDirectory: input.directory }));
+  await assert.rejects(prepareDarwinStockHelper({ ...input, runtimeDirectory: '/private/tmp/eng01j-missing-runtime' }));
 });
 
 test.skipIf(!canRun)('changed target identity rejects before transport; wrong executable digest is rejected', async () => {
