@@ -6,27 +6,27 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T15:44:26.777Z |
+| 更新时间 | 2026-10-07T15:48:33.400Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | review |
-| 当前产出 | 新组合产物已通过独立审查；隔离双槽宿主旅程的入口与收尾候选已准备，等待总体审查。 |
-| 下一可用交付 | 在专用安装中验证两槽登记、目录、维护与混合领取；真实运行须另协调窗口。 |
-| 当前阻塞 | ACTIVE: 宿主候选的独立期限修复已完成定向检查，等待整体复审与真实窗口；个人激活未执行。 |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 隔离双槽宿主旅程准备已通过独立复审；固定产物和入口已就绪，个人安装保持不变。 |
+| 下一可用交付 | 等待受控窗口后执行一次隔离宿主旅程，验证两槽生命周期与真实中心领取。 |
+| 当前阻塞 | ACTIVE: 等待真实PG/宿主窗口及现场合计资源门槛；尚未克隆、建库或启动服务。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
-| Head | 本次host source/manifest固定提交见host-integration/host-preparation.json；前置产物结果d54be510 |
+| Head | 宿主fixed source ccf7d057659d99be9c5d42fa035af352eaf647cb；批准packet bc8999dbab2dfa36d1c25adcf05b5b14da40032c；本次仅own状态/准入准备metadata。 |
 | 实现目标 | 8d532613e876d34812554572fb32d46bf582de44 |
 | 工作分支状态 | in-progress（已main源码不变，SVC09A-04隔离宿主准备） |
 | 工作树dirty状态 | 本次仅own plan/evidence准备；提交后以Git状态核对，产品全停写并已归还 |
 | 实现范围 | tools/personal-preview/cli.mjs, tools/personal-preview/environment.mjs, tools/personal-preview/environment.test.mjs, tools/personal-preview/maintenance-host.mjs, tools/personal-preview/maintenance.test.mjs, tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/runner-slots.mjs, tools/personal-preview/runner-slots.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v4；11产品/测试literal于14:37:45.486Z原子归还，仅保留own plan/evidence；[回执](../../docs/evidence/svc09/message-settings-activation/product-return-receipt.json) |
-| Review | 源码与局部消费者已main；固定产物结果2026-10-07T15:20:05.813Z获APPROVED_FIXED_ARTIFACT_BUILD_AND_INTERNAL_IMPORT_RESULT；新host候选待审。 |
+| Review | APPROVED_FIXED_HOST_PREPARATION；2026-10-07T15:45:43.000Z / Execution Lead；main24c824035的I02/svc09a-host-preparation-delta-review.json，P2已闭合；真实旅程未运行。 |
 | 检查状态 | 7轮44选择/33不同，最终33不同均通过；原1次夹具失败保留。3444ms/11838B，7组absent/双EOF/exactscratchremoved；[原始与派生口径](../../docs/evidence/svc09/message-settings-activation/validation-summary.json) |
 | 验证限制 | 原33为注入端口/自有文件；artifact只构建/内部import通过。准备原6及本次5均为0PG/host/provider；实际注册、维护、mixed领取和个人激活NOT_RUN。 |
 | 已集成main状态 | 246ed0f52ca0ec3078f0cd8bddc48c655501a711；main commit UTC2026-10-07T14:36:33Z，Lead已确认main/origin clean。11产品与已审source逐字同；[收据](../../docs/evidence/svc09/message-settings-activation/main-receipt.json)。旧7d1/6c和新cd27/04da均不是设置双槽产物。 |
@@ -39,7 +39,7 @@
 | SVC09A-01 | completed | native_center_owner | source 8d532613e876d34812554572fb32d46bf582de44 / Interface |
 | SVC09A-02 | completed | native_center_owner / Execution Lead | 局部原件与独立限定批准已main；原失败保留 |
 | SVC09A-03 | completed | Execution Lead | main246ed0f / 原11源精确接收，无新测试 |
-| SVC09A-04 | in-progress | native_center_owner / Execution Lead | [组合产物结果](../../docs/evidence/svc09/message-settings-activation/host-integration/build/RESULT.md)已独审；source098b/artifact2515已生成；新host候选待审，host/个人/双端/provider仍开放 |
+| SVC09A-04 | in-progress | native_center_owner / Execution Lead | [组合产物结果](../../docs/evidence/svc09/message-settings-activation/host-integration/build/RESULT.md)已独审；source098b/artifact2515已生成；新host候选已审，待实际窗口；host/个人/双端/provider仍开放 |
 
 ## 等待记录
 
@@ -48,7 +48,8 @@
 | SVC09A-W01 | UNKNOWN | UNKNOWN | 资源 | 同队组合/入口局部协调期间持续源码准备，精确起止未留；不当作测试耗时 | Lead/assignment协调消息；各轮reservation/cleanup保留实际UTC |
 | SVC09A-W02 | UNKNOWN | 2026-10-07T14:32:40.142Z | 审查 | 已固定源码与原件交唯一独审，现限定批准 | I02 svc09a-source-review.json；首次交审UTC未独立记录 |
 | SVC09A-W03 | 2026-10-07T14:39:51.563Z | 2026-10-07T15:13:51.789364Z | 接口 | 15路径assembly及产物准备/窗口现已具备；期间并行own消费者设计，不当作工程耗时 | Lead协调消息与build/actual-admission.json |
-| SVC09A-W04 | 2026-10-07T15:37:00.000Z | UNKNOWN | 审查 | 独立审查要求补operator独立期限；已完成修复与5定向例，等待固定包复审；期间有实际源码/检查，不当作纯资源等待 | I02 svc09a-host-preparation-review.json 与prepare-local-03原件 |
+| SVC09A-W04 | 2026-10-07T15:37:00.000Z | 2026-10-07T15:45:43.000Z | 审查 | 独立期限修复与5定向已获最终复审；期间有实际源码/检查，不当作纯资源等待 | I02 svc09a-host-preparation-review.json 与prepare-local-03原件 |
+| SVC09A-W05 | 2026-10-07T15:46:59.000Z | UNKNOWN | 资源 | 已批准候选等待真实PG/宿主窗口与现场floor；未预占、未clone/建库/启动；期间只读准备准入材料 | Lead安排及host-fresh-readiness.json |
 
 原首次只读子agent被cap拒绝，未重试；本owner继续实施。首轮 reporter 为spec，result计数null，原raw保留20/19/1；派生记录明确纠正口径，不回写旧原件。后续各轮只选新边界/受影响例。临时峰值未采样。完整真实资格、模型与个人部署仍开放。
 
@@ -77,3 +78,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 ## 独立期限P2修复
 
 2026-10-07T15:44:26.777Z：唯一 REQUEST_CHANGES（main729d33836，SVC09A-HOST-P2-01）已在原own scope修复。新入口host-supervise复用OPS14独立监督整个operator，215s+0.5s TERM+2s reap；只拥有caller PID，缺服务phase证明继续UNKNOWN_KEEP，不能自动归还共享资源。source ccf7d057659d99be9c5d42fa035af352eaf647cb；5/5新定向、402ms/955B、两组收尾与same-identity空scratch删除如实。此前原6/6与STATIC_ONLY是历史，未回写；本轮不重跑build/import。最终packet待一次复审；不预占PG/host。
+
+2026-10-07T15:48:33.400Z：唯一APPROVED_FIXED_HOST_PREPARATION已收，P2闭合，引用主线24c824035原件不复制。准入前16source/6runtime及原KEEP根/3文件身份核符，两个once namespace不存在；[现场准备](../../docs/evidence/svc09/message-settings-activation/host-integration/host-fresh-readiness.json)明确尚无actual window/latest floor/PG采样，不能当运行准入。217.5s caller外限及独立服务/DB UNKNOWN_KEEP边界不变。

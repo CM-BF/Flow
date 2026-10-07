@@ -29,3 +29,5 @@
 ## SVC09A-HOST-P2-01 修复待复审
 
 2026-10-07T15:44:26.777Z：唯一原审查 `REQUEST_CHANGES` 固定main729d33836 / docs/evidence/i02/svc09a-host-preparation-review.json，不复制原件。source ccf7d057659d99be9c5d42fa035af352eaf647cb 完成原OPS14 caller-only独立期限；215+0.5+2与服务/DB未知分开。新5/5定向、402ms/955B、双组absent/双EOF/scratch removed；其余原6/build不重跑。Lead已读delta及raw称结构闭合，正式整体批准等待最终packet绑定，不能提前把实际host/PG标通过。
+
+2026-10-07T15:48:33.400Z：最终唯一复审已在main24c824035 / docs/evidence/i02/svc09a-host-preparation-delta-review.json，结论APPROVED_FIXED_HOST_PREPARATION，无未解P1/P2；source ccf7d、packet bc8999及16source/19evidence/2继承/6runtime均核符。原P2/STATIC_ONLY和旧raw不改。此批准只含准备与局部证据，实际host/PG未运行；下一仅fresh窗口后执行同一固定入口，不重build/import。

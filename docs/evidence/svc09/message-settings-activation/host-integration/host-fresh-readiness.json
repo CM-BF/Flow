@@ -1,0 +1,114 @@
+{
+  "kind": "SVC09A_HOST_READINESS_BEFORE_ACTUAL_WINDOW",
+  "at": "2026-10-07T15:48:06.962Z",
+  "state": "WAIT_WINDOW_NO_RESERVATION",
+  "claim": {
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 4,
+    "state": "active",
+    "freshReadAt": "2026-10-07T15:46:59Z",
+    "scope": [
+      "docs/evidence/svc09/message-settings-activation",
+      "plans/svc09-message-settings-activation"
+    ]
+  },
+  "preparation": {
+    "fixedRef": "bc8999dbab2dfa36d1c25adcf05b5b14da40032c",
+    "path": "host-preparation.json",
+    "bytes": 29453,
+    "sha256": "facbe315b491f6e87e248dd95157ee625f7aed9d12c844bf6d8baf10d76aab5f"
+  },
+  "source": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
+  "review": {
+    "fixedRef": "24c82403571c3a95a7c3c6f5849adcb143ffda5b",
+    "path": "docs/evidence/i02/svc09a-host-preparation-delta-review.json",
+    "at": "2026-10-07T15:45:43.000Z",
+    "decision": "APPROVED_FIXED_HOST_PREPARATION"
+  },
+  "entry": {
+    "argv": [
+      "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+      "--run-host-once"
+    ],
+    "namespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-outer-once",
+    "permission": "NOT_GRANTED_BY_THIS_PACKET; separate real PG/host window required",
+    "selectedJourneys": 1,
+    "providerCalls": 0,
+    "operatorNamespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once"
+  },
+  "freshFilePins": {
+    "source": 16,
+    "runtime": 6,
+    "mismatches": 0,
+    "noArtifactInventoryRehash": true
+  },
+  "namespaces": {
+    "outer": "absent",
+    "operator": "absent"
+  },
+  "retainedOwnInputs": [
+    {
+      "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw",
+      "dev": "16777234",
+      "ino": "124240699",
+      "uid": 501,
+      "mode": "0o700",
+      "bytes": null,
+      "disposition": "KEEP_UNCHANGED"
+    },
+    {
+      "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw/backend-artifacts/2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4/manifest.json",
+      "dev": "16777234",
+      "ino": "124267425",
+      "uid": 501,
+      "mode": "0o600",
+      "bytes": 3196958,
+      "disposition": "KEEP_UNCHANGED"
+    },
+    {
+      "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw/owner.json",
+      "dev": "16777234",
+      "ino": "124240701",
+      "uid": 501,
+      "mode": "0o600",
+      "bytes": 272,
+      "disposition": "KEEP_UNCHANGED"
+    },
+    {
+      "path": "/private/tmp/flow-svc09a-artifact-Nf2RTw/backend-artifacts/stage-07351e68-1510-4eea-9b9c-01b36ce1a398.json",
+      "dev": "16777234",
+      "ino": "124267440",
+      "uid": 501,
+      "mode": "0o600",
+      "bytes": 806,
+      "disposition": "KEEP_UNCHANGED"
+    }
+  ],
+  "keptArtifactLogicalBytesIncludingManifest": 367105165,
+  "space": {
+    "candidateBaseFloorBytes": 2317352960,
+    "latestCoordinatedFloorBytes": null,
+    "sampledFreeBytes": 20338741248,
+    "sampleMeaning": "Read-only pre-window sample; not admission. Existing KEEP occupies this filesystem already and is not treated as released or newly allocated twice. Actual all-holder budget/floor must be freshly supplied."
+  },
+  "PG": {
+    "ownPeakConnections": 26,
+    "managementMargin": 16,
+    "currentCapacity": "NOT_QUERIED_BEFORE_WINDOW",
+    "createdDatabases": 0
+  },
+  "adminInput": {
+    "environmentName": "FLOW_SVC09A_ADMIN_URL",
+    "requiredRoute": "127.0.0.1/postgres",
+    "publicLoaderProvenance": "Awaiting existing fixture owner public loading recipe; no value requested or recorded."
+  },
+  "notPerformed": [
+    "artifact clone",
+    "database creation or connection",
+    "host launch",
+    "provider/native call",
+    "personal IO",
+    "build/import repeat"
+  ]
+}
