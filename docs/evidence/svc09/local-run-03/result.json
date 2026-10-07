@@ -1,0 +1,134 @@
+{
+  "startedAt": "2026-10-07T08:32:07.109365+00:00",
+  "priorSupervisedMs": 4479,
+  "priorRawBytes": 46031,
+  "commands": [
+    {
+      "name": "artifact-slot",
+      "startedAt": "2026-10-07T08:32:07.109920+00:00",
+      "freeBefore": 24062791680,
+      "requiredFree": 1092616192,
+      "command": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--test",
+        "--test-name-pattern=SVC09",
+        "tools/personal-preview/web-artifact.test.mjs"
+      ],
+      "supervision": {
+        "pid": 387,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 730,
+        "observed_bytes": 226,
+        "retained_bytes": 226,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "rawBytes": 226,
+      "finishedAt": "2026-10-07T08:32:07.840792+00:00",
+      "tmpPath": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09-artifact-slot-t_q3fo61",
+      "tmpIdentity": {
+        "dev": 16777234,
+        "ino": 123658967
+      },
+      "finalSample": {
+        "bytes": 0,
+        "files": [],
+        "directories": [],
+        "free": 24062713856,
+        "sampleOnly": true
+      },
+      "status": "PASSED",
+      "tmpRemoved": true
+    },
+    {
+      "name": "host-policy",
+      "startedAt": "2026-10-07T08:32:07.841760+00:00",
+      "freeBefore": 24062709760,
+      "requiredFree": 1092616192,
+      "command": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--test",
+        "--test-name-pattern=SVC09",
+        "tools/personal-preview/preview.test.mjs"
+      ],
+      "supervision": {
+        "pid": 465,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 690,
+        "observed_bytes": 1861,
+        "retained_bytes": 1861,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "rawBytes": 1861,
+      "finishedAt": "2026-10-07T08:32:08.532440+00:00",
+      "tmpPath": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09-host-policy-a0bo2o8k",
+      "tmpIdentity": {
+        "dev": 16777234,
+        "ino": 123659096
+      },
+      "finalSample": {
+        "bytes": 0,
+        "files": [],
+        "directories": [],
+        "free": 24061779968,
+        "sampleOnly": true
+      },
+      "status": "PASSED",
+      "tmpRemoved": true
+    }
+  ],
+  "callerSha256": "c817afdb456fa0a42d678b049139d0c5bbb5ab225060981ee3874701c2fdfa1a",
+  "PG": 0,
+  "provider": 0,
+  "browser": 0,
+  "finishedAt": "2026-10-07T08:32:08.534186+00:00",
+  "supervisedTotalMs": 1420,
+  "cumulativeSupervisedMs": 5899,
+  "cumulativeRawBytes": 48118,
+  "observationLimit": "Final metadata sample only, not instantaneous disk peak; pure cases allocate bounded in-memory buffers. OPS14 bounds actual processes and raw."
+}

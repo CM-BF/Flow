@@ -1,0 +1,16 @@
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09-host-policy-a0bo2o8k/flow-svc08-host-C1pTLi","dev":16777234,"ino":123659097,"cleaned":true,"bytes":8601,"calls":{"marker":1,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC09 invalid browser policy and missing configured reports stop before any marker or service action (75.457542ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09-host-policy-a0bo2o8k/flow-svc08-host-kPwqr7","dev":16777234,"ino":123659138,"cleaned":true,"bytes":8601,"calls":{"marker":0,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC09 prepare rechecks the same policy pin before a changed file can trigger a build or stop (43.026833ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09-host-policy-a0bo2o8k/flow-svc08-host-nTwSXI","dev":16777234,"ino":123659177,"cleaned":true,"bytes":123301,"calls":{"marker":1,"stop":1,"spawn":1,"ready":1,"stoppedRoles":["web"]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC09 configured host uses actual backend tuple with all new reports while retaining the old pointer (230.188042ms)
+SVC08_HOST_FIXTURE {"directory":"/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09-host-policy-a0bo2o8k/flow-svc08-host-1N60Dq","dev":16777234,"ino":123659268,"cleaned":true,"bytes":120343,"calls":{"marker":1,"stop":0,"spawn":0,"ready":0,"stoppedRoles":[]},"realProcessOperations":0,"PG":0,"provider":0}
+✔ SVC09 old independently selected Web implementation is refused before stopping any role (184.684666ms)
+ℹ tests 4
+ℹ suites 0
+ℹ pass 4
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 648.460625

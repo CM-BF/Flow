@@ -1,0 +1,58 @@
+{
+  "name": "snapshot",
+  "startedAt": "2026-10-07T08:28:24.986455+00:00",
+  "freeBefore": 24065286144,
+  "requiredFree": 1092616192,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-name-pattern=SVC09",
+    "tools/personal-preview/static-web.test.mjs"
+  ],
+  "supervision": {
+    "pid": 69537,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 105,
+    "observed_bytes": 219,
+    "retained_bytes": 219,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "rawBytes": 219,
+  "finishedAt": "2026-10-07T08:28:25.091495+00:00",
+  "tmpPath": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09-snapshot-94yhmsv5",
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123657537
+  },
+  "finalSample": {
+    "bytes": 0,
+    "files": [],
+    "directories": [],
+    "free": 24065269760,
+    "sampleOnly": true
+  },
+  "status": "PASSED"
+}

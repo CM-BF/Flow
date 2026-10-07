@@ -1,6 +1,6 @@
 # SVC09 Interface
 
-固定base5b0bef86；12个产品literal和own plan/evidence由claim1a2b634b v1唯一持有。复用既有preview锁、environment白名单、Web artifact校验/发布CAS，不修改后端auth规则、用户任务、SDK或调度器。
+固定base5b0bef86；17个产品literal和own plan/evidence由claim1a2b634b v4唯一持有。复用既有preview锁、environment白名单、Web artifact校验/发布CAS，不修改后端auth规则、用户任务、SDK或调度器。
 
 | Module | 输入/输出与所有权 | 错误、生命周期与依赖 |
 | --- | --- | --- |
@@ -28,3 +28,12 @@ pointer只决定current/retained集合及CAS版本；其中backendHead/compatibi
 web-artifact prepare已纳入同一count策略，包括私有committed store的复用与新slot；实际Vite build仍默认原入口/预算，新增受信constructor build port仅直接消费者小文件验证，不从CLI请求接收回调。
 
 已存在独立Webhost选择时，backend refresh不会自动更新它。configured prepare、启动和replace在stop前验证最终所选Webhost的完整10工具闭包逐字等当前受审operator闭包，不以文件名/版本字符串/自报能力证明支持。新count4准备/发布同样先检查该宿主；最小实际顺序为policy缺失legacy时先受控替换到新host（保原3/pointer/后台），再新backend+已验证policy/context。当前只实现/局部证明，不执行该顺序。旧c7b不被静默当新策略宿主。
+
+
+## 维护入口的实际选中身份
+
+bootstrap在任何maintenance迁移/drain之前将选定backend descriptor穿透prepare；Web选择仍遵守pendingWebHost/webHost优先级，不把新backend当独立Webhost已更新。configured legacy无backend descriptor时同样前置资格与全部tuple，CLI传入的空target规范为未指定后读取固定repository head。refresh和start沿同descriptor再次检查，再进入原stop顺序，不复制维护FSM。
+
+CLI原maintenanceRuntime解析后、spawn之前调用同一工具资格Module：configured策略或已保留第四项时，选中的维护runtime必须与当前受审operator完整11工具（Web10+maintenance-host）逐字同。旧backend artifact不能借自己的旧maintenance-host绕新drain门；缺policy/原三项legacy继续原选择。此处是可信host固定源码资格，不是服务器自报cap，也不是文件名存在即可支持。
+
+部署顺序仍须后继固定实际产物和兼容报告：先legacy模式安装/采用新宿主保原三项，再受审backend+私有策略+全部v2 tuple，最后独立第四CAS。旧artifact不重写；有不匹配便拒绝，不先停服务赌readiness。whole-module VM用例仅在链接时提供内存PG/process ports，执行原完整模块源码，证明顺序/参数及no-spawn；不声称真实PG锁/迁移/宿主安装已运行。

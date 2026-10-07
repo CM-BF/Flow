@@ -1,0 +1,76 @@
+{
+  "startedAt": "2026-10-07T08:40:46.230007+00:00",
+  "priorSupervisedMs": 6910,
+  "priorRawBytes": 51348,
+  "commands": [
+    {
+      "name": "maintenance-policy",
+      "startedAt": "2026-10-07T08:40:46.230758+00:00",
+      "freeBefore": 24044498944,
+      "requiredFree": 1092616192,
+      "command": [
+        "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+        "--experimental-vm-modules",
+        "--test",
+        "--test-name-pattern=SVC09",
+        "tools/personal-preview/maintenance.test.mjs"
+      ],
+      "supervision": {
+        "pid": 86786,
+        "ownership": "newChildSession",
+        "capture": "separate",
+        "exit_code": 0,
+        "elapsed_ms": 146,
+        "observed_bytes": 611,
+        "retained_bytes": 611,
+        "eof": {
+          "stdout": true,
+          "stderr": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ]
+      },
+      "rawBytes": 611,
+      "finishedAt": "2026-10-07T08:40:46.378172+00:00",
+      "tmpPath": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09-maintenance-policy-yfy6x9va",
+      "tmpIdentity": {
+        "dev": 16777234,
+        "ino": 123665188
+      },
+      "finalSample": {
+        "bytes": 0,
+        "files": [],
+        "directories": [],
+        "free": 24044802048,
+        "sampleOnly": true
+      },
+      "status": "PASSED",
+      "tmpRemoved": true
+    }
+  ],
+  "callerSha256": "9c0aeda36b95a635738430a74ab4d379ec8f15d36d59d1618deb35cd0da247ea",
+  "PG": 0,
+  "provider": 0,
+  "browser": 0,
+  "finishedAt": "2026-10-07T08:40:46.379030+00:00",
+  "supervisedTotalMs": 146,
+  "cumulativeSupervisedMs": 7056,
+  "cumulativeRawBytes": 51959,
+  "observationLimit": "Final metadata sample only, not instantaneous disk peak; pure cases allocate bounded in-memory buffers. OPS14 bounds actual processes and raw."
+}

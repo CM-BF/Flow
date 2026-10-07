@@ -1,0 +1,59 @@
+{
+  "name": "maintenance-policy",
+  "startedAt": "2026-10-07T08:39:56.060263+00:00",
+  "freeBefore": 24054587392,
+  "requiredFree": 1092616192,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--experimental-vm-modules",
+    "--test",
+    "--test-name-pattern=SVC09",
+    "tools/personal-preview/maintenance.test.mjs"
+  ],
+  "supervision": {
+    "pid": 57900,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 172,
+    "observed_bytes": 611,
+    "retained_bytes": 611,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "rawBytes": 611,
+  "finishedAt": "2026-10-07T08:39:56.233314+00:00",
+  "tmpPath": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09-maintenance-policy-hyb7ghsf",
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123664579
+  },
+  "finalSample": {
+    "bytes": 0,
+    "files": [],
+    "directories": [],
+    "free": 24054530048,
+    "sampleOnly": true
+  },
+  "status": "PASSED"
+}

@@ -1,0 +1,56 @@
+{
+  "name": "release",
+  "startedAt": "2026-10-07T08:27:53.030727+00:00",
+  "freeBefore": 24064151552,
+  "requiredFree": 1092616192,
+  "command": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "tools/personal-preview/web-release.test.mjs"
+  ],
+  "supervision": {
+    "pid": 50068,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 1306,
+    "observed_bytes": 1136,
+    "retained_bytes": 1136,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "rawBytes": 1136,
+  "finishedAt": "2026-10-07T08:27:54.336866+00:00",
+  "tmpIdentity": {
+    "dev": 16777234,
+    "ino": 123655337
+  },
+  "finalSample": {
+    "bytes": 0,
+    "files": [],
+    "directories": [],
+    "free": 24064225280,
+    "sampleOnly": true
+  },
+  "status": "PASSED"
+}
