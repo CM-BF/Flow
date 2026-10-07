@@ -1,15 +1,28 @@
 {
-  "state": "AWAITING_ORIGINAL_ARTIFACT_SUPPLY_NO_RUNTIME_RESERVATION",
+  "state": "BACKEND_DESCRIPTOR_RECEIVED_AWAITING_NEW_WEB_NO_RUNTIME_RESERVATION",
   "task": "WPF-RELEASE01 / REQ19",
   "owner": "Original artifact/release owner via d01",
   "consumerSource": "8964dc1185f62ed8934c15416e9798929359ab89",
   "newWeb": {
     "descriptor": null,
-    "required": "Real format2 immutable artifactId/sourceHead/manifestDigest/releaseId + artifactRoot and exact root/dist identities + manifest pin. Final fixed Web includes only necessary complete-draft protection delta once independently approved; do not bundle all MSG03/Plugin or claim pending b924 approved."
+    "required": "Original sole producer supplies a real format2 immutable artifactId/sourceHead/manifestDigest/releaseId, artifactRoot/root/dist identities and manifest pin. Minimal7272+two-file draft-protection transplant is statically approved; its old-consumer execution and artifact remain unverified. No full MSG03/Plugin bundle."
   },
   "correctedBackend": {
-    "descriptor": null,
-    "required": "Original formally reviewed immutable backend with required lateLogout contract; authorized 04da / 6c-base candidate is acceptable after source review, not only common-source 7272. Supply exact artifact directory/root/sourceTree/Node and complete admitted runtime pins. Uncorrected 6c/7d1 cannot substitute."
+    "descriptor": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+      "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+      "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+    },
+    "required": "Descriptor and fixed artifact generation/internal-loading result accepted. Future compatibility admission still verifies this exact root/runtime closure; no closure rescan or factory/PROCESS T7/host validation performed by this metadata batch.",
+    "descriptorEvidence": "backend-cd27-supply/result-descriptor.json",
+    "descriptorSha256": "27fdb3bb7e4f51850579c5cc9df625fa90cb9cdece4b61ef24f23f4e7f9473b4",
+    "artifactRoot": "/private/tmp/flow-svc06b-artifact-IhwFGS",
+    "retention": "KEEP",
+    "resultReview": "backend-cd27-supply/independent-result-review.json",
+    "resultReviewSha256": "7ac98113ba1359bbe4c288fba90acd4a3b177ce22888df9be13c022deb285566",
+    "reviewTarget": "a6adfd5970aa77c2440f8eeb89b285ed90bae565",
+    "reviewDecision": "APPROVED_FIXED_ARTIFACT_RESULT_FIDELITY"
   },
   "publicContext": {
     "format": 1,
@@ -17,19 +30,24 @@
     "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
   },
   "retainedApps": "The exact existing three immutable Apps and their Bearer path remain; their four-check reports must be newly produced against the same newly supplied backend/context. Historical 6c reports cannot be relabelled.",
-  "nextAfterSupply": "Original supplies reviewed corrected-backend and necessary fixed-Web descriptors; update exact pair guard/caller inputs only then. Old three App four-check reports must be newly bound to that same new backend/context. No browser before actual complete input and lawful finite handoff.",
+  "nextAfterSupply": "Only newWeb immutable descriptor/final source remains missing. Original sole producer is assigned through assignment_review; acceptance/unique WT receipt still awaited. Once the fixed Web arrives, minimally update8964 exact Web/backend guards and owned caller for that pair, then seek actual compatibility admission. No second producer or old6c fallback.",
   "visiblePublish": "Original publication action not performed by this owner; current source approval is not main/deployment/compatibility approval.",
-  "updatedAt": "2026-10-07T14:24:19.223Z",
+  "updatedAt": "2026-10-07T14:47:33.469Z",
   "historicalCommonSource": "7272151bb1e3e59e08937dca44949dcdeb42f009",
   "sourceSelection": {
-    "state": "ORIGINAL_AUTHORIZED_CANDIDATE_AWAITING_SOURCE_REVIEW_AND_ARTIFACTS",
+    "state": "BACKEND_FIXED_ARTIFACT_RESULT_APPROVED_AWAITING_WEB",
     "authority": "d01 owner dispatch 2026-10-07: Original expressly authorized independent SVC06B / 6c-base lateLogout composition; supersedes former no-third-composition research constraint.",
     "requirement": "Reviewed lateLogout public contract is mandatory; identical Web/backend sourceHead is not a supply requirement. Exact independently fixed pair and contract evidence must be supplied, then consumer input guards updated and reviewed for that pair.",
     "webBaseCandidate": "7272151bb1e3e59e08937dca44949dcdeb42f009",
     "webFinalSource": null,
     "backendCandidateSource": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
     "backendBaseSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
-    "backendSourceReview": null,
+    "backendSourceReview": {
+      "target": "a6adfd5970aa77c2440f8eeb89b285ed90bae565",
+      "path": "backend-cd27-supply/independent-result-review.json",
+      "sha256": "7ac98113ba1359bbe4c288fba90acd4a3b177ce22888df9be13c022deb285566",
+      "conclusion": "APPROVED_FIXED_ARTIFACT_RESULT_FIDELITY"
+    },
     "runtimeGrant": null
   },
   "consumerAdmission": {
@@ -38,13 +56,23 @@
     "next": "When both actual descriptors and final source reviews arrive, minimally bind the exact accepted Web/backend pair, assess affected inputs, then prepare lawful compatibility execution. No inferred descriptor or runtime."
   },
   "sharedDraftFix": {
-    "state": "MSG_SOURCE_AND_CONTROLLED_LOCAL_APPROVED_OLD_BASE_TRANSPLANT_NOT_RUN",
+    "state": "MSG_SOURCE_LOCAL_AND_EXACT_STATIC_TRANSPLANT_APPROVED_OLD_CONSUMER_NOT_RUN",
     "sourceTarget": "b92470377349dea17a12d0abc244f0fed7992e33",
     "delivery": "c848024a20ac59182360d31c7e0087828bca018d",
     "sourceReviewSha256": "b92e4c057655b97dab63fe84907ed211bc71cf7cfe169c53aa221ee00b2dc3ad",
     "patchSha256": "77bc71c1aa001c693ba08b0a56ccf6e3b8faac5824e056663a9c81893882bdc8",
     "staticTransplantManifest": "held-transplant-preparation/manifest.json",
     "finalWebSource": null,
-    "scope": "Only two-file current-draft membership projection delta; no full MSG03/Plugin session copy. Old-base consumer/type/mounted/artifact/compat remain unverified."
+    "scope": "Only two-file current-draft membership projection delta; static7272 composition approved. Old-base consumer/type/mounted/artifact/compat remain unverified; no whole MSG03/Plugin session copy.",
+    "staticTransplantReview": "backend-cd27-supply/minimal-transplant-root-review.json",
+    "staticTransplantReviewSha256": "754608bb83cc86a67c0274286b69b67d302b78f975daa290aa0fc3a2c0005b2e"
+  },
+  "boundaries": {
+    "svc09AHostMain246edIncluded": false,
+    "factoryCalls": 0,
+    "processT7": "NOT_PROVEN",
+    "oldConsumerExecution": "NOT_RUN",
+    "newPairCompatibility": "NOT_RUN",
+    "personalDeployment": "NOT_RUN"
   }
 }

@@ -34,12 +34,16 @@
 
 ## 正式独审与下一供给
 
-[Root原件](root-source-local-review.json)固定8964两source和本次strict实际，decision为APPROVED_SCOPED_SOURCE_AND_NECESSARY_TYPES_ONLY，0 findings；不是browser或发布批准。[最小供给请求](supply-request.json)给d01/Original，当前两个descriptor均未提供。正常metadata封存后全四scope STOP，claim保留，不重复strict/旧source研究。
+[Root原件](root-source-local-review.json)固定8964两source和本次strict实际，decision为APPROVED_SCOPED_SOURCE_AND_NECESSARY_TYPES_ONLY，0 findings；不是browser或发布批准。[最小供给请求](supply-request.json)给d01/Original，修正后台descriptor现已供给，仅newWeb descriptor尚缺。正常metadata封存后全四scope STOP，claim保留，不重复strict/旧source研究。
 
-## 供给校准记录
+## 历史14:16供给校准记录
 
 见[supply-request](supply-request.json)、[原请求历史](supply-request-before-04da.json)及[校准与质量记录](supply-calibration.json)。04da候选包含3个server产品/测试文件62增6删，另78行fixture-cleanup支持档案；授权候选不等正式源审或artifact。新Web只纳必需且获批的完整草稿保护delta；b924现已获MSG限定source/local批准，旧base移植/真实artifact/compat不能据此记通过。两个descriptor均NULL，无gate或运行。
 
-## 最小Web移植准备（非产品运行）
+## 最小Web移植准备（已获静态独审，非产品运行）
 
 [报告](held-transplant-preparation/report.md)和[manifest](held-transplant-preparation/manifest.json)固定7272的两file TMP结果；MSG source/local原审单独归档。Release生产两harness不变，最终pair仍未知；待精确源/descriptor到齐才拆分共源guard，既有安全/生命周期/四check不放宽。
+
+## 当前后台已供应
+
+见[后台descriptor与Original审](backend-cd27-supply/README.md)。04da/CD27/IhwFGS固定产物生成与内部加载接受；仅新Web仍缺。Root754608精确两file静态移植已批准，但旧consumer/新Web/新pair实际尚未验证。8964共源guard不变，最终pair到齐后才改；无新runtime许可。

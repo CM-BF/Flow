@@ -6,9 +6,9 @@ Review target commit：8964dc1185f62ed8934c15416e9798929359ab89
 
 范围：apps/web/test/web-release-compatibility.fixture.ts、apps/web/test/web-release-compatibility.browser.ts。
 
-[固定源码与输入](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)、[接口/生命周期差量](../../docs/evidence/wpf-release01/recovery-cookie/README.md)及[必要局部提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)与[strict实际](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)经[root独立审查](../../docs/evidence/wpf-release01/recovery-cookie/root-source-local-review.json)正式 APPROVED_SCOPED_SOURCE_AND_NECESSARY_TYPES_ONLY，0 findings。旧三份兼容证据不迁移到后继新后台；新descriptor尚未供给。browser/immutable compatibility NOT_RUN，新主线接收及用户可见发布未完成。
+[固定源码与输入](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)、[接口/生命周期差量](../../docs/evidence/wpf-release01/recovery-cookie/README.md)及[必要局部提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)与[strict实际](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)经[root独立审查](../../docs/evidence/wpf-release01/recovery-cookie/root-source-local-review.json)正式 APPROVED_SCOPED_SOURCE_AND_NECESSARY_TYPES_ONLY，0 findings。旧三份兼容证据不迁移到后继新后台；修正后台descriptor已供给，仅newWeb descriptor尚缺。browser/immutable compatibility NOT_RUN，新主线接收及用户可见发布未完成。
 
-当前供给政策：[请求](../../docs/evidence/wpf-release01/recovery-cookie/supply-request.json)已按Original新授权接受经正式审定的04da/6c最小后台候选，不再强制7272共源；该候选源审/新artifact仍待；Web草稿小修已获MSG限定源码/局部批准，旧base移植组合仍待验证。本页8964批准只覆盖既有两harness/strict，不批准04da或新的精确pair；b924另有MSG限定审，不能迁移成旧base actual。两个descriptor继续NULL，运行与发布均未授权。
+当前供给政策：[请求](../../docs/evidence/wpf-release01/recovery-cookie/supply-request.json)已绑定04da/CD27后台descriptor及[Original固定产物限定审](../../docs/evidence/wpf-release01/recovery-cookie/backend-cd27-supply/independent-result-review.json)。[Root静态移植批准](../../docs/evidence/wpf-release01/recovery-cookie/backend-cd27-supply/minimal-transplant-root-review.json)支持精确7272两file准备；oldconsumer实际/新Web artifact/新paircompat仍未验。8964本页批准仍只覆盖两harness/strict，不迁移为新pair运行批准；newWeb descriptor继续NULL。后台factoryCalls=0，不含SVC09A hostmain246ed，不冒PROCESS T7/用户部署。
 
 ## 历史：9658 三保留 App 兼容性批准及 main 接收
 
