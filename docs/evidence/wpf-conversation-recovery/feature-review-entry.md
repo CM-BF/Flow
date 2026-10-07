@@ -1,6 +1,6 @@
 # 固定代码审查入口：WPF-RECOVERY01
 
-**Review target `55b4917e732d11d5e5f660f9c22a1022d7094015`；base `84005a260dfcb668cd38b09c21564d0754a0f513`；完整feature review `IN_PROGRESS`（55b两P2修复与局部实证已独审接受；chooser实际待验）。** 本文件准备实际独立代码审查，不是作者自评通过。WT/branch：web-conversation-recovery / codex/web-conversation-recovery。当前19源码与target逐字一致，后置改动仅owner记录；源已冻结。
+**Review target `55b4917e732d11d5e5f660f9c22a1022d7094015`；base `84005a260dfcb668cd38b09c21564d0754a0f513`；完整feature review `IN_PROGRESS`（55b两P2修复与局部实证已独审接受；chooser实际2/2及owned清理已独立限定接受）。** 本文件准备实际独立代码审查，不是作者自评通过。WT/branch：web-conversation-recovery / codex/web-conversation-recovery。当前19源码与target逐字一致，后置改动仅owner记录；源已冻结。
 
 [精确19文件/每文件SHA与Git blob/统计](feature-review-manifest.json)：16个产品源+3个专测/fixture，共3205新增/133删除；范围仅原claim21中的19literal和两own目录，target相对base无范围外路径。源包含App实际消费者、ConnectionSession、唯一Journal/P01 binding及原Outbox/Queue/Steer authority，不是孤立框架。无server/shared contract/依赖/lock写入。证据目录/plan记录随metadata提交；原raw不能被编辑或当代码。
 
@@ -44,9 +44,13 @@ GO新可用性验收归原03/05：恢复目录主层改用获准轻metadata标�
 
 [0141 root完整源审](0141-feature-root-review.json)与[peer复核](0141-feature-peer-review/report.md)均确认两项P2。当前固定修复只改App、Steer control与原browser/direct两文件，其他15源同0141。
 
-- SELECTING：显式选择意图独立于背景ready；成功的用户Connect/Check existing才结束当前选择，迟到操作受本地revision与effect清理保护。新增独立`connection-choice`旅程复用真实App/public cookie读，验证输入保留、显式返回与0业务POST；**browser NOT_RUN**。原full7原顺序/断言保持。
+- SELECTING：显式选择意图独立于背景ready；成功的用户Connect/Check existing才结束当前选择，迟到操作受本地revision与effect清理保护。新增独立`connection-choice`旅程复用真实App/public cookie读，验证输入保留、显式返回与0业务POST；**browser connection-choice 实际2/2 PASS，见[原件](continuous-second-validation.md)，本次已获root限定实际证据接受**。原full7原顺序/断言保持。
 - STEERING-TIMEOUT：同generation在写前屏障deadline进入原键unknown/locallyBlocked，0HTTP且可显式重试；已解码ACK且accepted checkpoint提交后不因deadline降级，旧generation仍不发布并可显式Restore对账。
 - [新增定向局部检查](final-p2-local-index.json)：ecce548四个受控case PASS，旧50 NOT_SELECTED。初noEmit两处mock签名宽化红原样保留；55b只补3处SteeringPort类型泛型，noEmit exit0，运行行为无改。仅受控IDB/端口，不冒mountedApp或真Steer HTTP。
-- 新普通local段累计实际13221.340917ms，保守charge13222/30000，0PG/Chrome/HTTP。browser新150s段仍13134/150000，剩136866；没有当前gate或重跑权限。
+- 新普通local段累计实际13221.340917ms，保守charge13222/30000，0PG/Chrome/HTTP。browser新150s段累计24589/150000，剩125411；没有未消费gate，有限段已授权但每次须实际交接与fresh输入。
 
 [55b正式限定复审](55b-p2-fix-root-review.json)已接受两P2源码修复及定向local证据，0新增finding；全文的0141 CHANGES_REQUESTED与待复审描述保原历史来源。完整feature仍IN_PROGRESS，不自评APPROVED。
+
+[connection-choice实际回归](continuous-second-validation.md)绑定55b/执行0a661，2/2 selected PASS；原full7绑定0141不重跑，当前新增结果已获root限定实际证据接受。
+
+[root choice实际审](continuous-second-root-review.json)关闭SELECTING的定向实际验收；STEERING-TIMEOUT保4受控case限度，整体review仍IN_PROGRESS，无真实Steer HTTP/主线集成声明。

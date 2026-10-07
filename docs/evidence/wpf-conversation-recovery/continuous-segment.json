@@ -1,6 +1,6 @@
 {
   "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
-  "state": "ORIGINAL_FULL_SEVEN_SCOPED_EVIDENCE_ACCEPTED",
+  "state": "FULL7_AND_CONNECTION_CHOICE_SCOPED_EVIDENCE_ACCEPTED",
   "authorization": {
     "path": "continuous-segment-authorization.json",
     "sha256": "6ea79981213d5df67f1e7ae4c603a90bbf7823daebf53aa15bf85e08f7ed5090"
@@ -22,8 +22,8 @@
     "additionalSourceMetadataBytes": 1048576,
     "defensiveCumulativeCeilingMs": 240000
   },
-  "runtimeSpentMs": 13134,
-  "runtimeRemainingMs": 136866,
+  "runtimeSpentMs": 24589,
+  "runtimeRemainingMs": 125411,
   "attempts": [
     {
       "run": "recfull-20261007-055138-6c925b",
@@ -39,19 +39,37 @@
       "cleanupComplete": true,
       "resourceReturnedAt": "2026-10-07T05:52:24.761068+00:00",
       "fullFeaturePassed": false
+    },
+    {
+      "run": "recchoice-20261007-062152-1a98e5",
+      "journey": "connection-choice",
+      "executionHead": "0a661aa558840453ed3e0646db30b1073b5398ca",
+      "sourceTarget": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "manifest": "continuous-second-manifest.json",
+      "passedGroups": 2,
+      "actualExit": 0,
+      "parentLateMs": 10806.272125,
+      "outerActualMs": 11454.569749999791,
+      "serializedParentMs": 10798.397,
+      "chargedMs": 11455,
+      "cleanupComplete": true,
+      "resourceReturnedAt": "2026-10-07T06:23:33.001283+00:00",
+      "fullFeaturePassed": false,
+      "fullJourneyPassed": false,
+      "independentReview": "continuous-second-root-review.json"
     }
   ],
-  "nextSelection": "connection-choice",
+  "nextSelection": null,
   "fullFeatureReview": "IN_PROGRESS",
   "noCurrentGate": true,
-  "sourceTarget": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
-  "sourceCheckpoint": "expiry-fixture-checkpoint.json",
+  "sourceTarget": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+  "sourceCheckpoint": "feature-review-manifest.json",
   "chargeRule": "ceil(max(actual outer, late parent, serialized parent)) per attempt; original raw unchanged",
   "currentReviewTarget": "55b4917e732d11d5e5f660f9c22a1022d7094015",
   "p2FixReview": {
     "path": "55b-p2-fix-root-review.json",
     "sha256": "ed651acec5332c0eeeea56ad5b3cbbeb1b4c8986aaeb2e991043eca255ba70c7",
     "scope": "two P2 source fixes and targeted local evidence only",
-    "connectionChoiceActual": "NOT_RUN"
+    "connectionChoiceActual": "ACCEPTED_SCOPED_2_OF_2"
   }
 }

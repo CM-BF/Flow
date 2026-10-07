@@ -1,0 +1,45 @@
+{
+  "state": "PREPARED_NOT_RUN",
+  "files": [
+    {
+      "name": "manifest.json",
+      "bytes": 72587,
+      "sha256": "e91b0852f78cdd725b393249fd1a8a407ba55ac070011e43f8b734c2f28813e2"
+    },
+    {
+      "name": "remaining-validation-order.md",
+      "bytes": 5653,
+      "sha256": "d246147673e7ba40f15bf8e839004ce9313899563e177d94a22fff4b0d1e48aa"
+    },
+    {
+      "name": "remaining-validation-pins.json",
+      "bytes": 2805,
+      "sha256": "4540a042a7b527176d1583c263e3d8f8882c774953ba756b83196ea7b270c4d2"
+    },
+    {
+      "name": "report.md",
+      "bytes": 2666,
+      "sha256": "d0cb988d902f547b03b379cb093607b87ff716205b17993dd84820cba28a318d"
+    },
+    {
+      "name": "source-minimal.diff",
+      "bytes": 22643,
+      "sha256": "4f6f2493145e9969a6390952af6bd2c257760494cc4334301b121052219a3b8b"
+    },
+    {
+      "name": "chrome-patch-provenance.json",
+      "bytes": 1938,
+      "sha256": "bac7c4e1b96d10f902838448ff77ee9990fd5102a6c248e9d851883efc179fdd"
+    },
+    {
+      "name": "chrome-runtime-revision.diff",
+      "bytes": 2267,
+      "sha256": "606e39eb33d45a659b74001012299c59156d31980dd9b33fea9243503b270bff"
+    }
+  ],
+  "totalBytes": 110559,
+  "noGate": true,
+  "noAdminEnvironment": true,
+  "noRuntime": true,
+  "runtimeRevision": "SamebundleChrome.99 only; before-chrome-154-99 originalpinsretained"
+}

@@ -168,3 +168,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ## 2026-10-07 06:09:00 UTC — 完整源审两P2修复（原02/03/04/05/06）
 
 固定0141正式review CHANGES_REQUESTED；当前55b沿原App选择意图和Steer command authority窄修，新增4受控deadlinecase已过、noEmit修窄化后0，真实connection-choice两组待原有限段准入。原full7保持历史PASS，不重跑；完整CREATE/QueueSteer/材料/SSEdelivery/二中心仍未覆盖。当前工程target见status，不以未验后继把已实现片退回UNKNOWN。
+
+## 2026-10-07 06:25:21 UTC — 原03/05/06 connection-choice 验收进展
+
+[真实两组验证](../../docs/evidence/wpf-conversation-recovery/continuous-second-validation.md)通过背景read与用户选择意图区分，原稿保留/显式返回、0业务POST；当前只为55b两P2补真实App回归，不勾选尚缺CREATE/QueueSteer/SSEdelivery/二中心的完整TODO。新150s段累计24589、余125411，后继按已有有限段与实际输入安排，不复用gate。

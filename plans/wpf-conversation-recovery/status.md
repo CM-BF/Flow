@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 06:10:15 UTC |
+| 最近更新 | 2026-10-07 06:26:09 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工：原计划创建/领取记录不能证明首次实际工作时点，缺可靠UTC事件，不按commit或claim推算。完成：owner确认完整真实恢复验收尚未完成。 |
@@ -13,21 +13,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery |
 | Branch | codex/web-conversation-recovery |
 | 工作基线 / HEAD | base84005a260dfcb668cd38b09c21564d0754a0f513；当前两P2修复 55b4917e732d11d5e5f660f9c22a1022d7094015；相对0141仅4源；metadata HEAD以Git为准 |
-| 工作树dirty状态 | 19源固定55b4917e；本批检查/own记录封存后核clean |
+| 工作树dirty状态 | 19源固定55b4917e；本批仅真实connection-choice原件与owner记录，提交后核clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 已验证刷新恢复双文件草稿、原键重试及认证失效保稿 |
-| 下一可用交付 | 验证切换中心表单保持，并完成两项审查修复的复核 |
+| 当前产出 | 已验证刷新恢复原稿，以及切换中心时保留输入和原稿 |
+| 下一可用交付 | 补验新聊天两阶段与队列恢复，推进完整交付审查 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 检查状态 | 原full7实际PASS/exit0/双EOF/owned清理完成，执行765ab/源0141；新150s段保守计13134ms/余136866。旧五FAIL与64134.08675ms封套原样；SSEdelivery/CREATE/QueueSteer/完整材料与二中心待验 |
+| 检查状态 | 原full7实际PASS绑定765ab/0141；新增connection-choice真实2/2 PASS绑定0a661/55b，exit0/双EOF/owned清理。新150s段累计24589ms/余125411；旧五FAIL与64134.08675封套不改；其余验收缺项保持 |
 | 实现目标 | 55b4917e732d11d5e5f660f9c22a1022d7094015 |
 | 实现范围 | apps/web/src/App.tsx, apps/web/src/attachments/controller.ts, apps/web/src/connection/session.ts, apps/web/src/conversation-context/controller.ts, apps/web/src/conversation-steering/SteeringControl.tsx, apps/web/src/conversation-steering/control.ts, apps/web/src/conversations/ConversationThread.tsx, apps/web/src/conversations/outbox.ts, apps/web/src/conversations/projection.ts, apps/web/src/conversations/queue/commands.ts, apps/web/src/plugin-integration/attachments.tsx, apps/web/src/plugin-integration/knowledge.tsx, apps/web/src/plugin-integration/session.ts, apps/web/src/plugin-integration/steering.tsx, apps/web/src/recovery/binding.tsx, apps/web/src/recovery/journal.ts, apps/web/test/conversation-recovery.browser.ts, apps/web/test/conversation-recovery.fixture.ts, apps/web/test/conversation-recovery.test.ts |
 | 已集成main状态 / HEAD | 本片正在实现/未集成；输入main 84005a260dfcb668cd38b09c21564d0754a0f513 |
-| Review | [review.md](review.md)，IN_PROGRESS（55b两P2源修复和定向实证已独审接受；connection-choice实际待验）；固定19源入口 [feature-review-entry](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md) |
-| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；本段本人安全CLI核active/owner/WT/branch、overlap=[]，见final-p2-claim-observation（06:02:12.724Z）；不等资源准入 |
+| Review | [review.md](review.md)，IN_PROGRESS（55b两P2源/local已独审；connection-choice实际2/2及owned清理已独立限定接受）；固定19源入口 [feature-review-entry](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md) |
+| 领取 | 6ff988b2-c8cc-4c05-ae12-b3d7af87f2ab v4 / 原21；manager06:21:52.014038Z fresh核active/owner/WT/branch、overlap=[]，本人执行前核原件；见continuous-second-admission/observation.json |
 | 架构影响 | 新ConnectionSession/Journal与P01私有binding沿原controllers接管；固定实现后交D06后继更新队列，不改图 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -37,7 +37,7 @@
 | WPF-RECOVERY01-03 | in-progress | workspace_panels_owner | 实际App/P01入口、text/intent/双文件原refs与namespace授权保护已接线并由full7部分验证；完整profile/knowledge/steering和二中心待验 |
 | WPF-RECOVERY01-04 | completed | workspace_panels_owner | [50受控storage/controller实际检查](../../docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md)及source hashes完成；不冒完整mountedApp/真实IDB全部边界 |
 | WPF-RECOVERY01-05 | in-progress | workspace_panels_owner | [原full7实际PASS](../../docs/evidence/wpf-conversation-recovery/continuous-first-validation.md)，原五FAIL保真；SSEdelivery/CREATE/QueueSteer等原验收尚未全部完成 |
-| WPF-RECOVERY01-06 | pending | workspace_panels_owner | 限定源码/证据审查已多轮；完整feature target0141固定/独审进行中/main未接 |
+| WPF-RECOVERY01-06 | pending | workspace_panels_owner | 限定源码/证据审查已多轮；完整feature target55b固定/独审进行中/main未接 |
 
 ## 阻塞 / 风险 / 未验证
 
@@ -310,3 +310,9 @@ GO实际看双390图后的原验收补充：恢复目录默认显示可读标题
 ## 2026-10-07 06:10:15 UTC — 两P2修复限定独审接受
 
 [55b正式root结论](../../docs/evidence/wpf-conversation-recovery/55b-p2-fix-root-review.json)：ACCEPTED_TWO_P2_SOURCE_FIXES_AND_TARGETED_LOCAL_EVIDENCE_NOT_WHOLE_FEATURE/0新增finding。完整review转IN_PROGRESS，两P2源码addressed；connection-choice NOT_RUN，旧0141 full7 PASS保原绑定。未重复检查，无当前holder/新gate，source55b冻结；原先CHANGES_REQUESTED保历史。
+
+## 2026-10-07 06:25:21 UTC — connection-choice 两组实际通过
+
+[本次原件/限定范围](../../docs/evidence/wpf-conversation-recovery/continuous-second-validation.md)：执行0a661/源55b，选择cookieRead+connectionChoice实际2/2 PASS；背景cookie成功读不关闭用户选择表单，显式返回恢复原稿，0业务POST。outer0/双EOF、markedDB0conn正常DROP与双group/scratch清理完成。新段保守charge11455/累计24589/余125411；完整feature IN_PROGRESS，六原组本轮NOT_SELECTED，原full7/五FAIL不改。无源码变化，不重复4/50direct或types。
+
+2026-10-07 06:26:09 UTC Root独立[实际证据审](../../docs/evidence/wpf-conversation-recovery/continuous-second-root-review.json)接受本轮selected2/2与owned清理，0新增finding；SELECTING源码+真实定向验收addressed，STEERING-TIMEOUT仍为已审4受控case，不冒真实Steer HTTP。完整feature IN_PROGRESS/main未接，原full7/五FAIL继续原绑定。

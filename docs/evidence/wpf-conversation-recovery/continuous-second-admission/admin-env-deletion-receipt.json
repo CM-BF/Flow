@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-07T06:24:46.393030+00:00",
+  "state": "REMOVED_EXACT_AFTER_ACTUAL_TERMINAL",
+  "path": "/private/tmp/recovery-choice-admission-4be1hkih/admin.env",
+  "identity": {
+    "device": 16777234,
+    "inode": 123580200,
+    "uid": 501,
+    "mode": "0600"
+  },
+  "secretContentRead": false,
+  "exactLstatAbsentAfter": true,
+  "run": "recchoice-20261007-062152-1a98e5",
+  "receiptChecks": "actual0/dualEOF; original markedDB0conn/normalDROP/absence; fixturecomplete; exactoriginalgroupESRCH/scratchabsent. No repeatedliveprocess/PG/port probe.",
+  "sourcePins": [
+    {
+      "path": "/private/tmp/recovery-choice-parent-rt4xwp3a/actual-exit.json",
+      "sha256": "374520dc4d283440b30c07829bfdb8036dceb832d2fa7afec3d2445b5c365df0"
+    },
+    {
+      "path": "/private/tmp/recovery-choice-parent-rt4xwp3a/post-cleanup-observation.json",
+      "sha256": "67dad19f500528bf4b798f69f55694623d2b9519bd1592f0948f107795045e0f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/database-cleanup.json",
+      "sha256": "09d627b64ee661d1c076a610f2d6373d9f2548659ee39766f3d76a6743d382c5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/recchoice-20261007-062152-1a98e5/fixture-cleanup.json",
+      "sha256": "35f722570ffc2c36e47e528f15cf137cf4bead4cbd77dd509dec688dba60094f"
+    }
+  ]
+}

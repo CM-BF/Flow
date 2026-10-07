@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 独立审查
 
-状态：IN_PROGRESS。55b两P2源码修复/定向4case与类型证据已独审接受，connection-choice实际待验；不是整个feature批准。
+状态：IN_PROGRESS。55b两P2源码修复/定向4case与类型证据已独审接受，connection-choice实际2/2及owned清理已独立限定接受；不是整个feature批准。
 
 Review target commit：`55b4917e732d11d5e5f660f9c22a1022d7094015`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
 
@@ -197,3 +197,9 @@ Root已开始固定0141相对base84005完整差异审查；当前有连接选择
 ## 2026-10-07 06:10:15 UTC — 55b限定复审
 
 [原始报告](../../docs/evidence/wpf-conversation-recovery/55b-p2-fix-root-review.json) SHA256 `ed651acec5332c0eeeea56ad5b3cbbeb1b4c8986aaeb2e991043eca255ba70c7`，两P2 SOURCE_ADDRESSED/0新增finding。Root独立核4PASS/50未跑、两次types/源pins，未重跑检查或观察过去PID。完整review IN_PROGRESS，chooser实际NOT_RUN；旧0141 full7实证不扩至新分支。
+
+## 2026-10-07 06:25:21 UTC — 作者connection-choice实际证据
+
+固定55b/执行0a661，[原件](../../docs/evidence/wpf-conversation-recovery/continuous-second-validation.md)2/2 selected PASS、actualexit0/双EOF/owned清理完整，等待root本次独立实际审查；不把作者结果当整体feature批准。旧0141 full7、两P2源/local限定复审与所有FAIL保持原绑定，未重跑旧绿。
+
+2026-10-07 06:26:09 UTC Root独立[实际证据审](../../docs/evidence/wpf-conversation-recovery/continuous-second-root-review.json)接受本轮selected2/2与owned清理，0新增finding；SELECTING源码+真实定向验收addressed，STEERING-TIMEOUT仍为已审4受控case，不冒真实Steer HTTP。完整feature IN_PROGRESS/main未接，原full7/五FAIL继续原绑定。

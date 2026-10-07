@@ -224,5 +224,22 @@
     "sha256": "ed651acec5332c0eeeea56ad5b3cbbeb1b4c8986aaeb2e991043eca255ba70c7",
     "scope": "two P2 source fixes and targeted local evidence only",
     "connectionChoiceActual": "NOT_RUN"
+  },
+  "connectionChoiceActual": {
+    "executionHead": "0a661aa558840453ed3e0646db30b1073b5398ca",
+    "sourceTarget": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+    "run": "recchoice-20261007-062152-1a98e5",
+    "selectedPassed": true,
+    "fullJourneyPassed": false,
+    "groups": [
+      "cookieRead",
+      "connectionChoice"
+    ],
+    "validation": "continuous-second-validation.md",
+    "independentReview": {
+      "path": "continuous-second-root-review.json",
+      "sha256": "106e4a61e8ccbe2b0426a474fe3996a3a67fe9cba8a1c0c6df526fdcb0d26f01",
+      "decision": "ACCEPTED_SCOPED_CONNECTION_CHOICE_ACTUAL_AND_OWNED_CLEANUP_NOT_WHOLE_FEATURE"
+    }
   }
 }

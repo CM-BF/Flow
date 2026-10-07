@@ -1,0 +1,252 @@
+diff --git a/apps/web/src/App.tsx b/apps/web/src/App.tsx
+index 0334de34..d14d2550 100644
+--- a/apps/web/src/App.tsx
++++ b/apps/web/src/App.tsx
+@@ -1225,19 +1225,26 @@ function BrowserWorkspace({ theme, onTheme }: { theme: Theme; onTheme: (theme: T
+   const [retentionBlocked, setRetentionBlocked] = useState(false);
+   const [selecting, setSelecting] = useState(false), [error, setError] = useState<string>();
+   const channel = useRef<BroadcastChannel | null>(null);
+-  const connectIntent = useRef<{ session: ConnectionSession; token: string } | null>(null);
++  const selectionRevision = useRef(0);
++  const connectIntent = useRef<{ session: ConnectionSession; token: string; revision: number } | null>(null);
+   const client = useMemo(() => new FlowClient({ baseUrl: connection.getSnapshot().address, browserSession: { csrfToken: connection.csrfToken }, assistantStreamProtocol: "patch-v1" }), [connection]);
+   useEffect(() => {
+     const online = () => connection.setOnline(navigator.onLine);
+     const wake = () => { if (document.visibilityState === "visible") void connection.read(); };
++    let current = true;
+     online();
+     const explicit = connectIntent.current;
+-    if (explicit?.session === connection) { connectIntent.current = null; void connection.connect(explicit.token).finally(() => channel.current?.postMessage(connection.getSnapshot().address)).catch(failure => setError(String(failure))); }
++    if (explicit?.session === connection) {
++      connectIntent.current = null;
++      void connection.connect(explicit.token).then(() => {
++        if (current && explicit.revision === selectionRevision.current && connection.getSnapshot().phase === "ready") setSelecting(false);
++      }).finally(() => channel.current?.postMessage(connection.getSnapshot().address)).catch(failure => { if (current && explicit.revision === selectionRevision.current) setError(String(failure)); });
++    }
+     else void connection.read();
+     window.addEventListener("online", online); window.addEventListener("offline", online); window.addEventListener("pageshow", wake); window.addEventListener("focus", wake);
+     document.addEventListener("visibilitychange", wake);
+     if (typeof BroadcastChannel !== "undefined") { const bus = new BroadcastChannel("flow.browser-session-observation.v1"); channel.current = bus; bus.onmessage = event => { if (event.data === connection.getSnapshot().address) void connection.read(); }; }
+-    return () => { window.removeEventListener("online", online); window.removeEventListener("offline", online); window.removeEventListener("pageshow", wake); window.removeEventListener("focus", wake); document.removeEventListener("visibilitychange", wake); channel.current?.close(); channel.current = null; connection.setOnline(false); };
++    return () => { current = false; window.removeEventListener("online", online); window.removeEventListener("offline", online); window.removeEventListener("pageshow", wake); window.removeEventListener("focus", wake); document.removeEventListener("visibilitychange", wake); channel.current?.close(); channel.current = null; connection.setOnline(false); };
+   }, [connection]);
+   useEffect(() => {
+     if (state.phase !== "ready" || !state.identity) return;
+@@ -1250,7 +1257,7 @@ function BrowserWorkspace({ theme, onTheme }: { theme: Theme; onTheme: (theme: T
+       }
+       if (!current || !connection.authorized(identity)) return;
+       setRetained(previous => previous && namespaceKey(previous.namespace) === namespaceKey(identity) ? previous : { namespace: identity, session: connection, client });
+-      setRetentionBlocked(false); setSelecting(false);
++      setRetentionBlocked(false);
+     })().catch(() => { if (current) { setRetentionBlocked(true); setError("Previous page-only work is retained but hidden. Reconnect its original center to resolve saving, or explicitly discard that unsaved work. Saved journal records are not removed."); } });
+     return () => { current = false; };
+   }, [state.phase, state.identity, connection, client, retained]);
+@@ -1258,20 +1265,27 @@ function BrowserWorkspace({ theme, onTheme }: { theme: Theme; onTheme: (theme: T
+   useEffect(() => () => { for (const value of connections.current) value.dispose(); void journal.close(); }, [journal]);
+   const ready = !!retained && state.phase === "ready" && !!state.identity && retained.session === connection && namespaceKey(state.identity) === namespaceKey(retained.namespace) && !selecting;
+   const connect = async (address: string, token: string) => {
++    const revision = ++selectionRevision.current;
+     setError(undefined);
+     try {
+       const canonical = recoveryAddress(address, location.href);
+       localStorage.setItem(CENTER_CHOICE, canonical); // URL only, never token, principal, CSRF or body.
+       let target = connection;
+-      if (canonical !== state.address) { target = retained?.session.getSnapshot().address === canonical ? retained.session : new ConnectionSession(canonical); connections.current.add(target); connectIntent.current = { session: target, token }; setConnection(target); return; }
++      if (canonical !== state.address) { target = retained?.session.getSnapshot().address === canonical ? retained.session : new ConnectionSession(canonical); connections.current.add(target); connectIntent.current = { session: target, token, revision }; setConnection(target); return; }
+       await target.connect(token); channel.current?.postMessage(canonical);
+-    } catch (failure) { setError(failure instanceof Error ? failure.message : "The connection could not be opened."); }
++      if (revision === selectionRevision.current && target.getSnapshot().phase === "ready") setSelecting(false);
++    } catch (failure) { if (revision === selectionRevision.current) setError(failure instanceof Error ? failure.message : "The connection could not be opened."); }
++  };
++  const readSelected = async () => {
++    const revision = ++selectionRevision.current;
++    await connection.read();
++    if (revision === selectionRevision.current && connection.getSnapshot().phase === "ready") setSelecting(false);
+   };
+   return <>
+-    {!ready && <Connection key={state.address} address={state.address} phase={state.phase} error={error ?? state.error} onConnect={(address, token) => { void connect(address, token); }} onRead={() => { setSelecting(false); void connection.read(); }}
++    {!ready && <Connection key={state.address} address={state.address} phase={state.phase} error={error ?? state.error} onConnect={(address, token) => { void connect(address, token); }} onRead={() => { void readSelected(); }}
+       {...(state.phase === "ready" ? { onLogout: () => { void connection.logout().finally(() => channel.current?.postMessage(state.address)).catch(failure => setError(String(failure))); } } : {})}
+       {...(retentionBlocked ? { onDiscardRetained: () => { if (window.confirm("Discard the previous workspace's unsaved page-only drafts and local state? Its saved journal records stay intact. This does not cancel any center task.")) { setRetained(null); setRetentionBlocked(false); setError(undefined); } } } : {})} />}
+-    {retained && <div hidden={!ready}><Workspace key={namespaceKey(retained.namespace)} client={retained.client} recovery={{ session: retained.session, namespace: retained.namespace, journal }} active={ready} onRecoveryGuard={registerGuard} onDisconnect={() => setSelecting(true)} theme={theme} onTheme={onTheme} /></div>}
++    {retained && <div hidden={!ready}><Workspace key={namespaceKey(retained.namespace)} client={retained.client} recovery={{ session: retained.session, namespace: retained.namespace, journal }} active={ready} onRecoveryGuard={registerGuard} onDisconnect={() => { selectionRevision.current++; setSelecting(true); }} theme={theme} onTheme={onTheme} /></div>}
+   </>;
+ }
+ function FixtureWorkspace({ theme, onTheme }: { theme: Theme; onTheme: (theme: Theme) => void }) {
+diff --git a/apps/web/src/conversation-steering/control.ts b/apps/web/src/conversation-steering/control.ts
+index 2d8ceb0f..3ab69d68 100644
+--- a/apps/web/src/conversation-steering/control.ts
++++ b/apps/web/src/conversation-steering/control.ts
+@@ -262,23 +262,30 @@ class Control implements SteeringControl {
+     let sent = false;
+     try {
+       if (await textDigest(receipt.input.text) !== receipt.digest) invalid();
+-      if (generation !== this.generation || signal.aborted || !this.allowed()) return;
++      if (generation !== this.generation || !this.allowed()) return;
++      signal.throwIfAborted();
+       await recovery?.prepare({ id: receipt.key, domain: "steering", slot: `steering:${this.identity.taskId}`, frozen: recoveryValue({ key: receipt.key, taskId: this.identity.taskId, input: receipt.input, bytes: receipt.bytes, digest: receipt.digest }), expectedVersion: receipt.recoveryVersion, explicitRetry });
++      if (generation !== this.generation || !this.allowed()) return;
++      signal.throwIfAborted();
+       await recovery?.dispatch(receipt.key);
+-      if (generation !== this.generation || signal.aborted || !this.allowed()) return;
++      if (generation !== this.generation || !this.allowed()) return;
++      signal.throwIfAborted();
+       sent = true;
+       const raw = object(await request(() => this.port.accept(receipt.input, receipt.key, signal), signal)); boolean(raw.replayed);
+       const command = reference(raw.command, this.identity.taskId, receipt.input.attemptId);
+       if (command.ownerVersion !== receipt.input.ownerVersion || command.revision !== receipt.input.expectedRevision + 1 || command.input.bytes !== receipt.bytes || command.input.digest !== receipt.digest) invalid();
+       if (receipt.command && !sameCommand(receipt.command, command)) invalid();
+-      if (generation !== this.generation || signal.aborted || !this.allowed()) return;
++      if (generation !== this.generation || !this.allowed()) return;
++      signal.throwIfAborted();
+       const merged = mergeCommand(this.commands, command);
+       await recovery?.checkpoint(receipt.key, { phase: "accepted", data: recoveryValue(merged) });
+-      if (generation !== this.generation || signal.aborted || !this.allowed()) return;
++      // A deadline cannot invalidate an already decoded ACK and committed accepted checkpoint.
++      // Authority revocation still owns the stale continuation; explicit Restore can reconcile it.
++      if (generation !== this.generation || !this.allowed()) return;
+       this.receipts.set(receipt.key, Object.freeze({ ...receipt, phase: "accepted", locallyBlocked: false, command: merged, error: undefined }));
+     } catch (error) {
+       if (generation !== this.generation) return;
+-      const localBlocked = !sent && error instanceof RecoveryError;
++      const localBlocked = !sent && (error instanceof RecoveryError || signal.aborted);
+       const unknown = receipt.everUnknown || localBlocked || !rejection(error);
+       this.receipts.set(receipt.key, Object.freeze({ ...receipt, phase: unknown ? "unknown" : "rejected", everUnknown: receipt.everUnknown || (!localBlocked && unknown), locallyBlocked: localBlocked, error: localBlocked ? `Not sent: local recovery is blocked. Retry this original instruction after resolving storage. ${message(error)}` : message(error) }));
+       if (!(error instanceof RecoveryError)) { try { await recovery?.checkpoint(receipt.key, { phase: unknown ? "unknown" : "rejected" }); } catch { /* Keep original keys and the conservative dispatching checkpoint. */ } }
+diff --git a/apps/web/test/conversation-recovery.browser.ts b/apps/web/test/conversation-recovery.browser.ts
+index feb0f0b4..75891289 100644
+--- a/apps/web/test/conversation-recovery.browser.ts
++++ b/apps/web/test/conversation-recovery.browser.ts
+@@ -40,9 +40,11 @@ const journeyGroups = {
+   "page-auth": ["cookieRead", "pageOnlyAuthLoss"],
+   "csrf-offline": ["cookieRead", "csrfOffline"],
+   appearance: ["cookieRead", "themes390"],
++  "connection-choice": ["cookieRead", "connectionChoice"],
+ } as const;
+ type Journey = keyof typeof journeyGroups;
+-type Group = (typeof journeyGroups)["full"][number];
++type Group = (typeof journeyGroups)[Journey][number];
++const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice"];
+ function selectedGroups(journey: unknown): readonly Group[] {
+   requireThat(typeof journey === "string" && Object.hasOwn(journeyGroups, journey), "An explicit supported journey is required");
+   return journeyGroups[journey as Journey];
+@@ -323,11 +325,11 @@ async function worker(init: Init) {
+   };
+   const coverage: Record<string, string> = {
+     cookieRead: "NOT_RUN", cookieSseHandshake: "NOT_RUN", cookieSseDelivery: "PENDING: only handshake is asserted", textIntentDraft: "NOT_RUN", materialDraft: "NOT_RUN", sameKeyTurn: "NOT_RUN", crossTabCas: "NOT_RUN",
+-    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN",
++    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN",
+     createTwoStage: "PENDING: direct/source only", queueSteerRecovery: "PENDING: direct/source only",
+     profileKnowledgeSteeringDraft: "PENDING: direct/source only", secondCenter: "PENDING: one-center fixture",
+   };
+-  for (const key of journeyGroups.full) if (!requiredGroups.includes(key)) coverage[key] = "NOT_SELECTED";
++  for (const key of allGroups) if (!requiredGroups.includes(key)) coverage[key] = "NOT_SELECTED";
+   if (!requiredGroups.includes("textIntentDraft")) coverage.materialDraft = "NOT_SELECTED";
+   if (!requiredGroups.includes("sameKeyTurn")) coverage.cookieSseHandshake = "NOT_SELECTED";
+   const lifetime = new AbortController();
+@@ -430,6 +432,28 @@ async function worker(init: Init) {
+       expect((await context.cookies()).some(cookie => cookie.name.startsWith("flow-session-") && cookie.httpOnly)).toBe(true);
+       expect(fixture!.wire.some(row => row.path === "/api/browser-session" && row.cookie && !row.bearer && row.status === 200)).toBe(true);
+     });
++    await run("explicit connection selection survives background cookie reads; only an explicit successful choice returns", "connectionChoice", async () => {
++      await saveDraftThroughUi("Retained draft while choosing a center");
++      const posts = postRows().length, chooser = page.getByRole("heading", { name: "Connect to Flow", exact: true });
++      await page.getByRole("button", { name: "Change connection", exact: true }).click(); await expect(chooser).toBeVisible();
++      const url = page.getByLabel("Center URL", { exact: true }), token = page.getByLabel("Owner token", { exact: true });
++      const candidate = new URL("/candidate-not-contacted", fixture!.url).href;
++      await url.fill(candidate); await token.fill("local-fixture-candidate-token");
++      const observed = page.waitForResponse(response => new URL(response.url()).pathname === "/api/browser-session" && response.request().method() === "GET" && response.status() === 200);
++      await page.evaluate(() => window.dispatchEvent(new Event("focus")));
++      await (await observed).finished();
++      // Wait for the successful session read's React paint without exposing private controller state.
++      await page.evaluate(() => new Promise<void>(resolve => requestAnimationFrame(() => requestAnimationFrame(() => resolve()))));
++      await expect(chooser).toBeVisible(); await expect(url).toHaveValue(candidate); await expect(token).toHaveValue("local-fixture-candidate-token");
++      expect(postRows()).toHaveLength(posts);
++      await page.getByRole("button", { name: "Check existing browser session", exact: true }).click();
++      await expect(input()).toHaveValue("Retained draft while choosing a center"); await expect(chooser).not.toBeVisible();
++      await page.getByRole("button", { name: "Change connection", exact: true }).click(); await expect(chooser).toBeVisible();
++      await url.fill(new URL(fixture!.url).origin); await token.fill(fixture!.token);
++      await page.getByRole("button", { name: "Connect workspace", exact: true }).click();
++      await expect(input()).toHaveValue("Retained draft while choosing a center"); await expect(chooser).not.toBeVisible();
++      expect(postRows()).toHaveLength(posts);
++    });
+     let draftId = "";
+     const originalDraftRow = async (dialog: Locator) => {
+       expect(draftId).toMatch(/^draft:[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i);
+diff --git a/apps/web/test/conversation-recovery.test.ts b/apps/web/test/conversation-recovery.test.ts
+index 93cd1155..0ae57468 100644
+--- a/apps/web/test/conversation-recovery.test.ts
++++ b/apps/web/test/conversation-recovery.test.ts
+@@ -1,4 +1,6 @@
+ import { afterEach, describe, expect, it, vi } from "vitest";
++import { createHash } from "node:crypto";
++import { createSteeringControl, type SteeringPort } from "../src/conversation-steering/control";
+ import { FlowClient } from "@flow/client";
+ import type { BrowserSessionReady, ConversationSnapshot } from "@flow/contracts";
+ import { ConnectionSession, type SessionClientFactory } from "../src/connection/session";
+@@ -598,3 +600,65 @@ describe("connection and original authority consumers", () => {
+     controller.remove(citation); controller.restore([{ title: "Source", citation }]); await controller.expand(citation); expect(resolve).toHaveBeenCalledTimes(2); expect(controller.freeze()).toEqual([citation]);
+   });
+ });
++
++
++/** Current-generation deadlines with actual control + journal; only storage completion and HTTP are controlled. */
++async function steeringDeadline(stage: "prepare" | "dispatch" | "accepted") {
++  const { journal: store } = journal(), entered = deferred<void>(), release = deferred<void>();
++  const durable = store.bind(ns, () => owner, () => true), deadline = new AbortController();
++  const port: SteeringPort = {
++    admission: vi.fn<SteeringPort["admission"]>(async () => ({ taskId: "task", attemptId: "attempt", ownerVersion: 1, revision: 0, state: "ready", reason: "ready" })),
++    state: vi.fn<SteeringPort["state"]>(async () => ({ taskId: "task", attemptId: "attempt", revision: 0, sealed: false, attemptAvailable: true, commands: [], nextCursor: null })),
++    accept: vi.fn<SteeringPort["accept"]>(async input => ({ replayed: false, command: {
++      id: "command", taskId: "task", attemptId: input.attemptId, ownerVersion: input.ownerVersion, nativeSessionId: "native", revision: input.expectedRevision + 1,
++      userMessageUuid: uuid(80), status: "accepted", receiptRevision: 0, input: { bytes: Buffer.byteLength(input.text), digest: createHash("sha256").update(input.text).digest("hex") },
++      createdAt: "2026-10-07T06:00:00Z", updatedAt: "2026-10-07T06:00:00Z",
++    } })),
++  };
++  const control = createSteeringControl({ connectionScope: "owned-center", taskId: "task" }, port);
++  cleanup.push(() => control.dispose());
++  let held = false;
++  const hold = async (point: typeof stage) => { if (point === stage && !held) { held = true; entered.resolve(); await release.promise; } };
++  control.configureRecovery({
++    prepare: async value => { await durable.prepare(value); await hold("prepare"); },
++    dispatch: async (key, step) => { await durable.dispatch(key, step); await hold("dispatch"); },
++    checkpoint: async (key, value) => { await durable.checkpoint(key, value); if (value.phase === "accepted") await hold("accepted"); },
++    dismiss: durable.dismiss,
++  });
++  control.updateGate({ visible: true, online: true, authorized: true }); await control.refresh();
++  const timeout = vi.spyOn(AbortSignal, "timeout").mockImplementationOnce(() => deadline.signal); cleanup.push(() => { timeout.mockRestore(); });
++  expect(await control.submit("原 steering instruction 中文🙂")).toBe(true); await entered.promise;
++  const receipt = control.getSnapshot().receipts[0]!;
++  const record = async () => (await store.list(ns)).find(value => value.kind === "command") as CommandRecord;
++  return { control, port, release, receipt, record, expire: () => deadline.abort(new DOMException("Steering deadline elapsed", "TimeoutError")) };
++}
++describe("Recovery P2 steering durable deadline", () => {
++  it.each(["prepare", "dispatch"] as const)("settles a %s deadline as not sent and explicitly retries the exact key/input", async stage => {
++    const f = await steeringDeadline(stage); f.expire(); f.release.resolve();
++    await vi.waitFor(async () => expect(await f.record()).toMatchObject({ phase: "unknown" }));
++    await vi.waitFor(() => expect(f.control.getSnapshot()).toMatchObject({ loading: false, receipts: [{ key: f.receipt.key, input: f.receipt.input, phase: "unknown", locallyBlocked: true }] }));
++    expect(f.port.accept).not.toHaveBeenCalled();
++    expect(f.control.retry(f.receipt.key)).toBe(true);
++    await vi.waitFor(() => expect(f.control.getSnapshot().receipts[0]?.phase).toBe("accepted"));
++    expect(f.port.accept).toHaveBeenCalledTimes(1);
++    expect(vi.mocked(f.port.accept).mock.calls[0]!.slice(0, 2)).toEqual([f.receipt.input, f.receipt.key]);
++    expect(await f.record()).toMatchObject({ id: f.receipt.key, phase: "accepted", frozen: { key: f.receipt.key, input: f.receipt.input } });
++  });
++  it("keeps a committed accepted checkpoint after its deadline without downgrading or resending", async () => {
++    const f = await steeringDeadline("accepted"), accepted = await f.record();
++    expect(accepted.phase).toBe("accepted"); f.expire(); f.release.resolve();
++    await vi.waitFor(() => expect(f.control.getSnapshot().receipts[0]).toMatchObject({ key: f.receipt.key, phase: "accepted", command: accepted.checkpoint }));
++    expect(await f.record()).toEqual(accepted); expect(f.control.retry(f.receipt.key)).toBe(false);
++    f.control.restore(accepted); expect(f.port.accept).toHaveBeenCalledTimes(1);
++  });
++  it("ignores a late accepted continuation after revocation and reconciles only on explicit same-key Restore", async () => {
++    const f = await steeringDeadline("accepted"), accepted = await f.record();
++    f.control.updateGate({ visible: true, online: true, authorized: false }); f.release.resolve();
++    await vi.waitFor(() => expect(f.control.getSnapshot().receipts[0]?.phase).toBe("unknown"));
++    expect(f.control.retry(f.receipt.key)).toBe(false); expect(await f.record()).toEqual(accepted);
++    expect(f.control.getSnapshot().receipts[0]?.phase).toBe("unknown");
++    f.control.updateGate({ visible: true, online: true, authorized: true }); f.control.restore(accepted);
++    expect(f.control.getSnapshot().receipts[0]).toMatchObject({ key: f.receipt.key, phase: "accepted", command: accepted.checkpoint });
++    expect(f.port.accept).toHaveBeenCalledTimes(1);
++  });
++});

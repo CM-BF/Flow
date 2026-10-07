@@ -229,3 +229,9 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 复用本地find-skills/clean-code/codebase-design；本次bounded设计直接对应已批准两P2，不安装技能/不造框架。App区分用户选择意图与authready观察，revision不进入持久namespace；Steer区分stale-generation、写前deadline与durableaccepted，保持原authority/key。检查命名/单一职责/错误收口/重复/接口：未引入新公有API或state store，保留原full7断言；新增4case覆盖慢prepare/dispatch、accepted延迟及撤权，旧50未重跑。类型首红为mock字符串宽化，改用原SteeringPort签名后noEmit0。新browser选择映射保持Gate→Init→Worker→parent一致；mounted chooser待真实验证，类型和受控测试不能替代。原始局部日志无numericPGID，清理结论来自同一inline父的ESRCH判断，不能冒独立进程审计。
 
 2026-10-07 06:10:15 UTC：55b正式限定复审已归档，0新增finding。源码未再修改/无新检查；临时scratch已删除，原raw保留。剩余chooser实际验收另需真实资源交接，不把静态修复或4控制测试代替它。
+
+## 2026-10-07 06:25:21 UTC — connection-choice 原入口实证与收口
+
+应用本地find-skills/clean-code/webapp-testing：复用已审parent/worker和有限selection，未新建监督层、公开协议或重复业务authority。当前真实行为与输入前提/清理分列，selected PASS不冒full7或feature；较晚outer最大计费且不改早raw。Chrome同installed bundle小版本更新仅重绑native来源，旧.98历史保持。19源冻结，原78raw逐hash保真；无direct/types重复。未解决项仍是原未覆盖CREATE/QueueSteer/profileknowledge/SSEdelivery/二中心和可读性后继，本次不混入实现。
+
+2026-10-07 06:26:09 UTC Root本次实际审原件已原样归档；admin exact删除回执独立保存。scope/19固定源码/78历史raw静态核对无改，Git diffcheck0；本批不运行额外parser或工程检查，不自签整体APPROVED。

@@ -1,0 +1,72 @@
+{
+  "state": "READ_ONLY_DESIGN_NOT_RUN",
+  "source": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+  "sources": [
+    {
+      "path": "apps/web/test/conversation-recovery.fixture.ts",
+      "commit": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "bytes": 27168,
+      "sha256": "c24ebd04196994b0e51a4fa39bcecff2828ebbe59da567bb7b9c29fac3ee100f"
+    },
+    {
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "commit": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "bytes": 54468,
+      "sha256": "809ba44244fe545cc2ded96536820a58b5b6a2a05d51488a37db75ffa5caf66b"
+    },
+    {
+      "path": "apps/web/src/conversations/projection.ts",
+      "commit": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "bytes": 28678,
+      "sha256": "ec28ad81b4961b288bda739b1bd768f9b757739546fc12c5c7a6de517b693fce"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/projection.ts",
+      "commit": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "bytes": 13034,
+      "sha256": "652fe3a4ef22ed4b17d00981090a42213a91a23fc9a21290679e7c9b4ae44f65"
+    },
+    {
+      "path": "apps/web/src/conversations/queue/commands.ts",
+      "commit": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "bytes": 16768,
+      "sha256": "ef567a39e8f4cb11d3123613337b531668cfda754de3c1c9603a9c7f46f0d446"
+    },
+    {
+      "path": "apps/web/src/conversation-steering/control.ts",
+      "commit": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "bytes": 24377,
+      "sha256": "5cf411df4d8bb3298ae71132d6225f1d512f6b6c8e7ccbd79bb8ddf768a60f58"
+    },
+    {
+      "path": "apps/web/src/projection.ts",
+      "commit": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "bytes": 11004,
+      "sha256": "5d515fc8318f6eae0401c7e37ebd4ce34b8edecc65ef3f091d4e9133af1eceb7"
+    },
+    {
+      "path": "apps/web/src/conversation-stream/host.ts",
+      "commit": "55b4917e732d11d5e5f660f9c22a1022d7094015",
+      "bytes": 14766,
+      "sha256": "506efd942fb3f47831db7e1c381616132c1e2ffd6798f2c6c3bc5e22f10b6848"
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "source": "existing local version; no install/update"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "source": "existing local version; no install/update"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/webapp-testing/SKILL.md",
+      "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2",
+      "source": "existing local version; no install/update"
+    }
+  ],
+  "note": "No backend API or runtime checked; conditional setup requirements remain open."
+}
