@@ -71,3 +71,8 @@ root于2026-10-07T18:30:02.000Z批准result2f32/packet77d失败忠实性，0P1P2
 ## R2 actual 失败忠实性待审
 
 2026-10-07T22:07:53.362Z：source10bd/execute7620，5选0过5失败；原窗口和source原件不变。资源FULL_RETURN22:06:17.330Z；独立review仅请求核失败分类、精确输入与收尾，不给036/v4通过或新OPEN。入口av03-pg/result-summary-r2.json，后续固定manifest/packet。
+
+
+## R2失败独审与R3增量待审
+
+2026-10-07T22:16:15.887Z：db22:10:07 FAILED_RESULT_FIDELITY_REVIEW_APPROVED，31bindings325180B，真实5FAIL/完整资源RETURN，原结果不变。R3源码ead8db7e仅036 JSON运算优先级与首例finally/ready前置；既有约束和五例保留。唯一strict0不证明SQL；b01独审入口av03-pg/r3-review-ready.json@65394d960，完整准备尚未批准，未来实际需新manager NEXT。
