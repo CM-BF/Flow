@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 17:52 UTC |
+| 最近更新 | 2026-10-07 17:59 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -16,8 +16,8 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | 本段起点01626e1bc=origin clean；实验observer局部修复中，原产品/旧原件不变 |
-| 工作分支状态 | review（失败结果忠实性已审；观察器callback接口P2待修，独立恢复回执待审） |
+| 工作树dirty状态 | 本段实现与局部结果已固定待独审；原产品/245供给/旧原件不变 |
+| 工作分支状态 | review（观察器局部修复与直接消费者通过，待独立增量审查；真实PG仍未重跑） |
 | 检查状态 | FAILED 9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb；新PG超时/无最终result，原9纯/noEmit仅历史局部范围 |
 | 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本次入口修复未集成。两次真实PG均FAILED；各次独立恢复事实分开记录 |
 | 实现目标 | 9c802db4d3d859bcfb0b335b30f27f4bd4e9d3fb |
@@ -26,13 +26,13 @@
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
 | 实现范围 | experiments/knowledge-search |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 检索金样本与语义阶段已有证据；规模诊断仍失败，已确认本次保留数据库身份及零连接快照 |
-| 下一可用交付 | 修复查询观察器的连接接口，再用局部行为证据验证；当前停止实际运行 |
-| 当前阻塞 | ACTIVE: 查询观察器callback接口缺陷待合法后继修复；数据库与临时目录保留，未获新诊断或清理授权 |
+| 当前产出 | 已修复诊断观察器的连接接口，局部行为和类型检查通过；规模诊断仍未重新执行 |
+| 下一可用交付 | 独立审查这次接口修复，再完善失败收尾候选；新数据库诊断尚未开放 |
+| 当前阻塞 | ACTIVE: 修复待独审、实际PG验证待新窗口；原数据库与临时目录仍保留，不自动清理或重跑 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；失败结果忠实性已审，观察器P2仍OPEN；独立恢复回执待审 |
+| Review | [review.md](review.md)；失败与独立恢复忠实性已审；callback P2修复待独立复核 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -148,3 +148,5 @@
 2026-10-07T17:50:54.933639+00:00：唯一授权 K01-STARTUP-20261007-RECOVERY-ONCE 实际17:48:38.474189→17:48:38.570227Z，operator/supervisor96ms，PID49562 exit0/final absent/MERGED EOF336B、无first/secondary/signals。精确OID1340630/owner/marker匹配，单次快照connections=0、adminclosed=true；计算与连接独立RETURN，数据库和scratch继续immutable KEEP，原FAILED/HOLD/resourceConfirmed=false不改。紧前脚本字段KeyError发生于supervise/PG/receipt前，0child原错保留；实际只执行一次查询。准入旧floor16,065,757,184B与fresh18,674,704,384B记录于start，后到新floor不回写历史。见[恢复manifest](../../docs/evidence/k01/query-entry-pg-startup-recovery/manifest.json)，review待独立核。Mika17:41:15已批准7693失败结果忠实性（0P1/P2仅归档范围），source callback P2仍OPEN；无工程/源码修复、DROP、KEEP内容访问或重跑。提交push后本段STOP。
 
 2026-10-07T17:52:02Z：新独立15分钟callback修复段开始，截止18:07:02Z；Mika授权new8MiB（TMP4MiB/raw512KiB均包含）、最多3串行child/各30s/累计60s，仅新直接消费者纯行为与focusednoEmit。原claim30965v2范围不变，起点01626e1bc=origin clean。生产transaction callback/Promise checkout契约由root+db静态确认P2；本段只修experiment observer，不改固定245产品/SQL，不访问KEEP，不开PG/HTTP/provider。首次准入floor16,109,797,376B或后到更高值；原PG窗口已消费，不能复用。
+
+2026-10-07T17:59:17.206014+00:00：本段直接consumer纯7/7与focusednoEmit exit0，2个child监督累计2346ms/operator2525ms，raw524B；实际RETURN17:57:05.675212Z。PID51290/76752均finalabsent/MERGED EOF、无first/secondary/signals，各自TMP同身份删除并lstat absence；初EPERM观察保留。紧前manager更高floor16,298,278,912在第二child前写入同record，首已消费gate不倒改。实际execution be725761abc9329868eb70caf60bb33b008da34c与final可执行字节相同，后继只README更新结果表述；未重复旧纯矩阵，0PG/HTTP/provider/KEEP访问。接口真实复用固定production transaction、callback成功/error/同步借出error监听、query失败ROLLBACK/release、Promise与第三release参数，源码未扩产品。后继K01-06失败收尾预算设计由db只读输入，留下一合法段，不在本15分钟内扩大。当前新launchSTOP、独立增量review待db。

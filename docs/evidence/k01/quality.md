@@ -45,3 +45,5 @@ PG补充由 Root 先 skills.sh 再 npx skills find 发现官方 supabase/agent-s
 2026-10-07T17:07:18.812917+00:00：复用已读find-skills/codebase-design/固定clean-code，仅归档db17:03:37独审与完整候选输入。单一startup所有权、晚启动禁止/未知KEEP、有限首错/进度、三时钟与同一合计预算责任明确；无源码变更/安装/工程/PG。18实验+27runtime实际bindings不凭旧计数，旧preparation与当前事实分离；进度文件在raw2MiB内，reserve是headroom非额外配额。完整import副作用与真实生命周期未外推，首因仍UNKNOWN。
 
 2026-10-07T17:50:54.933639+00:00：沿已读find-skills/codebase-design/固定clean-code，封存第二次失败忠实性审查和独立只读恢复。区分真实API callback/Promise契约缺陷与实际停点未知、计算闭合与资源保留、瞬时0连接与持续状态；首错/原raw不改。唯一SELECT复用已审单admin壳，预启动字段失败0child保留，未改业务/观察器源码或补测试，不新增框架。后继修复必须覆盖固定production transaction真实callback消费者，当前只归档。
+
+2026-10-07T17:59:17.206014+00:00：callback修复沿本地find-skills/codebase-design/固定clean-code：observingPool是实际诊断唯一查询包装边界，extract用于真实consumer测试，不复制业务transaction/SQL；同时保callback及Promise checkout语义、同步error-listener窗口、真实client方法this与release所有权。7例直接调用fixed transaction，失败原对象/rollback/discard有明确断言，不测SQL字符串镜像。计时guard仍在driver区间外，新增12个有限start阶段不复制result且不抬64/768KiB。命名/职责/错误保真/重复及必要复杂度复核无新问题；未运行PG、不推测历史卡点。原failure/recovery及245产品供给未改，独审待固定commit。
