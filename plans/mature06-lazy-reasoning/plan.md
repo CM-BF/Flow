@@ -5,7 +5,7 @@
 目标：默认持续正文和完整轻metadata，折叠reasoning正文网络0字节；显式展开后首次verified GET和活跃增量。保持来源/游标/身份、v1/v2兼容、取消和final语义，有限累计resident缓存。设计与边界见[Interface](../../docs/evidence/mature06-lazy-reasoning/interface.md)。
 
 - [x] LAZY01-01 固定base、独立树、metadata领取与小Interface。
-- [ ] LAZY01-02 正式领取六core/三tests后实现选择协商与单projection生命周期。
+- [x] LAZY01-02 正式领取六core/三tests后实现选择协商与单projection生命周期。
 - [ ] LAZY01-03 必要局部行为/strict及独立review，不以mock代HTTP字节证明。
 - [ ] LAZY01-04 client共享接线与受控专库HTTP验收；Web owner衔接明确。
 - [ ] LAZY01-05 受控main接收与dashboard/架构事实同步。
