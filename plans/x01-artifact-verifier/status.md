@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T23:20:06.807Z / AV02 e271与journal b791已main；center/client后继未收到main receipt |
+| 最近更新 / 最近main同步核验 | 2026-10-07T23:23:30.197Z / AV02 e271与journal b791已main；center/client后继未收到main receipt |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -13,20 +13,20 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier |
 | Branch | codex/plugin-artifact-verifier |
 | 工作基线 / HEAD | 依赖固定main96b/merge6915；受影响既有叶供给337060ab；center source ea3c4599b00505c950cc34ada8a350082fe76747 |
-| 工作树dirty状态 | 新client两叶与结果固定，工程STOP；本次packet提交push后clean待独审 |
+| 工作树dirty状态 | 新client两叶与结果固定、独审通过；本次仅批准归档，commit/push后clean STOP，保claim |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 90c23219b88357497c04a9ac3a0297863e66fb60：authorizeVerifier新10+旧phase1实际11/11、8未选；strict2→仅类型标注→0；behavior实际b65，末类型改动未重跑 |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
-| 实现目标 | 90c23219b88357497c04a9ac3a0297863e66fb60：客户端verifier phase薄接口，局部已验待独审；原ea3/ead8接收不改 |
+| 实现目标 | 90c23219b88357497c04a9ac3a0297863e66fb60：客户端verifier phase薄接口，局部已验且独审通过；原ea3/ead8接收不改 |
 | 实现范围 | packages/client/src/plugin-runner.ts,packages/client/src/plugin-runner.test.ts（本client增量；旧ea3/ead8精确接收范围保存在其固定intake） |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 验证器可复用现有请求入口申请执行授权，客户端兼容与坏回执门禁局部已验 |
-| 下一可用交付 | 客户端薄接口待独审；已审中心领取片仍等待主线接收 |
+| 本片段交付阶段 | integration |
+| 当前产出 | 验证器执行授权的客户端接口已通过局部验证与独审，等待主线接收 |
+| 下一可用交付 | 先接收已审中心领取片，再接收客户端薄接口；完整执行链仍待后继验收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | PENDING 90c23219b88357497c04a9ac3a0297863e66fb60：新client已交b01只读独审；旧R3实际结果与source批准独立保留 |
+| Review | APPROVED 90c23219b88357497c04a9ac3a0297863e66fb60：b01 2026-10-07T23:20:37.443Z，0P1/P2；限定client局部/source，旧R3批准独立保留 |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25；actual前fresh全账本核身份/无重叠；已移出leaf继续STOP |
 | 架构影响 | 同一claim/receipt显式v4与036来源引用；R3已证明有限动态SQL矩阵，完整运行时与公开产物验证仍OPEN；主线图待接收 |
 
@@ -34,7 +34,7 @@
 | --- | --- | --- | --- |
 | AV-01 | completed | architecture_read | bc5b68a0e4e93e50f9258dd617262263d8db3c1f设计增量于14:49:38独审批准，P2已关闭；非产品完成 |
 | AV-02 | completed | architecture_read | 9895181/e662于15:49:31独审批准；AV02已main e271fb21，完整父功能未完成 |
-| AV-03 | in-progress | architecture_read，a67v6 | journal四叶已main；center/v4局部已验且独审通过，真实SQL与完整生产链仍OPEN |
+| AV-03 | in-progress | architecture_read，a67v6 | journal四叶已main；center/v4实际R3五例通过且独审，client phase局部已审；center/client待main，完整生产链仍OPEN |
 | AV-04 | pending | 待入口与现consumer协调 | 启动/CLI/产品验收未实现/未运行 |
 
 ## 本轮工作段与时间
@@ -42,6 +42,11 @@
 新设计段2026-10-07T14:29:36.000Z–14:44:36.000Z，文档≤256KiB。当前0工程child/0业务PG/0provider/0服务/0待launch；协调账本读/take与metadata解析不当工程验收。设计分支交付时间 2026-10-07T14:39:36.981Z，target 35cbad4a90920cb10d8afdaa5d418ea4975c8028；该初次交付时独审/主线集成/部署尚未发生；后续独审事件见下表。PROCESS待接收/真实制品边界不以此设计解除。
 
 ## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| AV-W01 | UNKNOWN | UNKNOWN | 资源 | AV02源码固定后等待ordinary lane；历史缺完整起止，保留原叙述 | 本段15:38:56串行安排记录 |
+| AV-W02 | 2026-10-07T23:19:24.000Z | 2026-10-07T23:20:37.443Z | 审查 | 客户端固定包独立审查已结束 | client-authorize/approval.json及实际dispatch |
 
 AV02源码固定后等待本组ordinary lane；15:38:56收到K01→AV→S01串行安排。此前准备/源码不占工程lane；当前0工程child/待launch，等待时长计入本段壁钟。
 
@@ -211,3 +216,7 @@ R2独立namespace av03-verifier-claim-pg-run-r2；仅candidate，NOT_OPEN/NOT_RU
 2026-10-07T23:14:20.000Z起，截止23:29:20.000Z；首写23:15:07.527Z。fresh a67v6/25无冲突，产品仅plugin-runner.ts/.test.ts；以private authorizePhase复用旧工具的parse/key/65,536B/五项ACK身份校验，仅固定endpoint选择。FlowClient单一request不变，0新增fetch/retry/fallback；无runtime/server/VAR295/R3输入改动。4MiB含index副本/供给/TMP/raw，至多3child各20s（含5s清理）累计45s；原source/index入口字节以独立供给固定，不复制旧闭包。当前未运行局部检查。
 
 2026-10-07T23:19:20.320Z：client运行source b65c765d/最终纯类型test90c23219，11实际selected全过（新10+旧直接phase1）、8未选；首strict2四隐式any原raw保留，仅显式回调类型后strict0。三个child末absent/MERGED EOF，3TMP同inode空rmdir/exactENOENT；监督3029ms/raw6507B，23:17:23.051Z FULL_RETURN。3次都紧读canonical完整sum11702763520且free足够，本4MiB只计一次。0PG/监听/provider/待launch，旧R3封件/VAR输入不写，独立[client review-ready](../../docs/evidence/x01-artifact-verifier/client-authorize/review-ready.json)。clean-code核单一小Interface/固定endpoint/错误与取消/no retry及直接消费者；保留原ACK五身份，不复制领域授权。
+
+## Client 授权接口独审与接收顺序
+
+2026-10-07T23:23:30.197Z：b01于2026-10-07T23:20:37.443Z批准b65运行源/90c类型修正/ee1d固定包，0P1/P2。11/11与strict2→0分列，末四类型注解未重跑行为；旧首错与原件不改。唯一[两叶intake](../../docs/evidence/x01-artifact-verifier/client-authorize/main-intake.json)明确先原AV ea3/ead8、2fec startup assembly及两precursor，再本client b65+90c；当前main receipt未收到，不改原R3 intake。clean-code复核固定endpoint、小private Interface、ACK/取消/错误与旧tool兼容；无新增领域规则或资源所有者。本段全部工程已23:17:23.051Z归还，归档后STOP、0待写/0待launch、无未来写入余额，4MiB由lead归还规划额度，不声称物理回收。完整AV03/AV04/X01仍OPEN。

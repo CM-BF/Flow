@@ -1,5 +1,5 @@
 {
-  "state": "REVIEW_PENDING_NOT_INTEGRATION_READY",
+  "state": "REVIEW_APPROVED_READY_AFTER_AV_PREREQUISITE_INTAKE",
   "source": "90c23219b88357497c04a9ac3a0297863e66fb60",
   "rows": [
     {
@@ -30,7 +30,35 @@
     }
   ],
   "dependsOn": "Prior AV center ea3/ead8 controlled intake first or samebatch; current mainreceipt not received. Do not overwrite existing ea3/ead8 intake or use whole branch.",
-  "review": "review-ready.json pending",
-  "tests": "Exact11 phaseclient +focused strict0; oldR3 actual not reused as proof for newmethod",
-  "scope": "Only these two newly changed product/test leaves. Any main preimage drift requires current owner coordination, no wholeblob oldrestore."
+  "review": {
+    "path": "docs/evidence/x01-artifact-verifier/client-authorize/approval.json",
+    "packet": "ee1d14d0aebfb6e8ffa0367e6926f91c5880b757",
+    "reviewedAt": "2026-10-07T23:20:37.443872Z",
+    "decision": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+    "P1": 0,
+    "P2": 0
+  },
+  "tests": "11 selected/11 passed (10 new +1 old phase consumer),8 unselected; strict2 original retained then final strict0. Final four test type annotations not behavior-rerun. No PG/server/worker proof.",
+  "scope": "Only these two newly changed product/test leaves. Any main preimage drift requires current owner coordination, no wholeblob oldrestore.",
+  "updatedAt": "2026-10-07T23:23:30.197Z",
+  "runtimeSource": "b65c765d021dc7f59f9523b720f9b3d062b14206",
+  "finalTestSource": "90c23219b88357497c04a9ac3a0297863e66fb60",
+  "mainReceipt": "NOT_RECEIVED",
+  "integrationOrder": [
+    {
+      "step": 1,
+      "scope": "Existing AV center and SQL intake plus two already authorized verification.ts/.test.ts precursor leaves",
+      "source": "ea3c4599b00505c950cc34ada8a350082fe76747",
+      "sqlAndPGRepair": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+      "startupAssemblyDelta": "2fec9c6ee7ac97686534291fa7421747c86f7bcf",
+      "note": "Use existing fixed intake and current assembly owner; preserve startup observer. No changes to original R3 intake/source pins or VAR worktree."
+    },
+    {
+      "step": 2,
+      "scope": "Only the two rows below",
+      "runtimeSource": "b65c765d021dc7f59f9523b720f9b3d062b14206",
+      "finalTestSource": "90c23219b88357497c04a9ac3a0297863e66fb60",
+      "rule": "Require exact ea3 preimages below, or equivalent reviewed delta applied by current owner after drift review. Do not restore old whole files over intervening changes."
+    }
+  ]
 }

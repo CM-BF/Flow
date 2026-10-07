@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-07T23:23:54.621Z",
+  "state": "REVIEW_APPROVED_SOURCE_ENGINEERING_STOP",
+  "runtimeSource": "b65c765d021dc7f59f9523b720f9b3d062b14206",
+  "finalTestSource": "90c23219b88357497c04a9ac3a0297863e66fb60",
+  "result": "3ab36ca3f6c3bc4566b7401201fcbd55f07bf515",
+  "packet": "ee1d14d0aebfb6e8ffa0367e6926f91c5880b757",
+  "approval": "approval.json",
+  "intake": "main-intake.json",
+  "claim": "a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25",
+  "review": {
+    "at": "2026-10-07T23:20:37.443872Z",
+    "decision": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+    "P1": 0,
+    "P2": 0
+  },
+  "fullReturn": "2026-10-07T23:17:23.051Z",
+  "children": 3,
+  "actualPG": 0,
+  "HTTPListener": 0,
+  "provider": 0,
+  "retainedTemporary": [],
+  "pendingLaunch": false,
+  "futureWriteBalance": 0,
+  "historicalR3InputDiff": [],
+  "reviewBindingsVerified": 19,
+  "metadataShape": {
+    "errors": [],
+    "humanMissing": [],
+    "timingIssues": [],
+    "waitingIssues": []
+  },
+  "growth": {
+    "changedFileFullBytes": 377306,
+    "indexAtomicCopyBytes": 2394607,
+    "thisReceiptAndIndexMarginBytes": 32768,
+    "conservativeChargedBytes": 2804681,
+    "capBytes": 4194304,
+    "peak": "UNKNOWN"
+  },
+  "closure": "Final metadata commit/push follows this receipt; no further source/check/metadata work authorized after STOP. Returning future4MiB is planning, not physical reclamation."
+}

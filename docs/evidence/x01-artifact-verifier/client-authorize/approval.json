@@ -1,0 +1,49 @@
+{
+  "reviewedAt": "2026-10-07T23:20:37.443872Z",
+  "archivedAt": "2026-10-07T23:23:30.197Z",
+  "reviewer": "b01_bounded_reads",
+  "model": "gpt-6-astra",
+  "decision": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "runtimeSource": "b65c765d021dc7f59f9523b720f9b3d062b14206",
+  "finalTestSource": "90c23219b88357497c04a9ac3a0297863e66fb60",
+  "result": "3ab36ca3f6c3bc4566b7401201fcbd55f07bf515",
+  "packet": "ee1d14d0aebfb6e8ffa0367e6926f91c5880b757",
+  "bindings": {
+    "count": 19,
+    "bytes": 284435,
+    "supplyFiles": 223,
+    "runtimePins": 8,
+    "allDeclaredGitAndWTMatched": true
+  },
+  "findings": "No P1/P2. Closed tool|verifier phase helper preserves old tool parsing, stable64hex key, 65536-byte bound, five ACK identity checks, same FlowClient request owner, auth, cancellation and typed error. No fetch/retry/fallback or implicit authorization on unknown ACK.",
+  "actual": {
+    "selected": 11,
+    "passed": 11,
+    "unselected": 8,
+    "newDistinct": 10,
+    "oldDirectConsumer": 1,
+    "typesExits": [
+      2,
+      0
+    ],
+    "children": 3,
+    "supervisorMs": 3029,
+    "rawBytes": 6507,
+    "fullReturn": "2026-10-07T23:17:23.051Z",
+    "allFinalAbsentAndMergedEOF": true,
+    "signals": [],
+    "secondaryFailures": [],
+    "retainedTemporary": []
+  },
+  "limits": [
+    "Behavior ran runtime b65c and pre-type-annotation test; final 90c only four explicit TypeScript annotations, final behavior not rerun.",
+    "Original strict failure, first NONZERO and EPERM observations preserved.",
+    "TMP identity/empty/rmdir/ENOENT supported by owner receipts; reviewer did not access TMP.",
+    "Each actual floor11702763520 equals current terms with4MiB once; free passed.",
+    "Old R3 inputs/raw unchanged. Approval is mock-fetch/local-types/source only, not server/PG/factory/worker/main.",
+    "Reviewer ran no engineering/import/PG/write/TMP/KEEP operation."
+  ],
+  "quality": "Reused installed find-skills/codebase-design/clean-code baseline; single small phase interface, no copied domain rules, explicit unknown ACK/cancel/error boundaries, direct old tool consumer retained."
+}
