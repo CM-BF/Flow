@@ -15,3 +15,7 @@
 构建仍未运行。既有`tools/personal-preview/web-artifact.mjs:prepareWebArtifact`以真实cleanHEAD/lock/toolchain构建及校验全dist；本树尚无builder用的node_modules解析，测试只用了TMP只读aliases。后续须供应受控外部依赖resolver，@flow必须指本树，不能整借donor @flow指向其他源码；不得安装或自建第二builder。
 
 clean-code：复用唯一membership selector与真实旧session getter；无复制authority/store。实际发现并修复一个验证resolver漏项，保首红。源码/局部结果待独立集中review，artifact/新pair/发布未验。
+
+Root集中独审已[APPROVED](root-source-local-review.json)，固定d736三scope；源码与必要local范围通过不替代build/browser/immutablecompat。两生产literal已STOP，精确账本移出回执另列。
+
+两产品[STOP声明](product-handback-stop.json)与[实际amend](product-handback-receipt.json)：v2仅保两harness和两records；不恢复已交回产品写权。

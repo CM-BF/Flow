@@ -1,0 +1,502 @@
+{
+  "at": "2026-10-07T15:02:48.558250+00:00",
+  "decision": "APPROVED_MINIMAL7272_SOURCE_AND_CONTROLLED_OLD_CONSUMER_LOCAL",
+  "blockingFindings": [],
+  "task": "WPF-RELEASE01",
+  "base": "7272151bb1e3e59e08937dca44949dcdeb42f009",
+  "source": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
+  "reviewScope": "Exact2 product transplant and fresh affected noEmit/single controlled legacy-consumer membership case; source usable for fixed artifact preparation, not artifact/HTTP/browser/main/deployment acceptance.",
+  "sourcePins": [
+    {
+      "commit": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 23456,
+      "sha256": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4",
+      "blob": "ef436e8a9d1eec5a96c27f229cf170c8d2c19474"
+    },
+    {
+      "commit": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 24592,
+      "sha256": "728a08d9e7ba64533da5b0bd9d7fa485f7d1cddefc13554c29101881e9841d9a",
+      "blob": "88c30f0cf534519a2464b53b94c6b53e9a49e81f"
+    }
+  ],
+  "sourceDelta": "Only attachments.tsx and session.ts differ in apps/web/src from7272;12 additions/4 deletions. Byte-identical to previously reviewed77bc patch output802e/728a. Two retained harness files equal8964 and still carry old7272 common-source guards.",
+  "priorStaticReview": {
+    "path": "/private/tmp/root-release01-minimal-transplant-source-review-20261007.json",
+    "sha256": "754608bb83cc86a67c0274286b69b67d302b78f975daa290aa0fc3a2c0005b2e"
+  },
+  "selectedTest": {
+    "path": "docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/oldconsumer-material.test.ts",
+    "bytes": 12295,
+    "sha256": "365f14793127406d1e2317ba1d10b08b4cc48f12509aefa8257d47f4e7a1f22e",
+    "caseBodyBytes": 7588,
+    "expectExpressions": 16,
+    "sameCaseBodyAs": "c848024a20ac59182360d31c7e0087828bca018d:apps/web/test/conversation-recovery.test.ts",
+    "coverage": [
+      "Production7272-combination AppPluginSession→Recovery journal using deterministic transaction port.",
+      "HeldA remains inventory; savedB contains only B; invalid draft item remains ordered.",
+      "Partial/full explicit A restore survives no composer port; inTransit excludes detached A while current attachment wins.",
+      "Late old binding cleanup cannot clear replacement; no reads of released composer; no forbidden body/upload/business request."
+    ],
+    "limitations": [
+      "Controlled IDB port and composer stub, no native browser cancellation or real browser IDB.",
+      "One exact case passed; not the full legacy suite or full MSG03 browser coverage."
+    ]
+  },
+  "testConfigurationChange": "Only added existing @flow/interaction/activity alias to exact new worktree interaction source; no assertion or product change between direct1 anddirect2. Alias/config fixed raw supplied, no source from MSG product imported.",
+  "attempts": [
+    {
+      "label": "types-1",
+      "source": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
+      "pins": 273,
+      "gitBindingsVerified": 219,
+      "gitBindingMismatches": [],
+      "outer": {
+        "startedAt": "2026-10-07T14:57:04.208914+00:00",
+        "endedAt": "2026-10-07T14:57:07.052194+00:00",
+        "outerPid": 88263,
+        "actualExit": 0,
+        "elapsedMs": 2843.215583008714,
+        "chargeMs": 2844,
+        "stdoutBytes": 108377,
+        "stderrBytes": 0
+      },
+      "result": {
+        "state": "PASS",
+        "actualExit": 0,
+        "errors": [],
+        "signals": [],
+        "groupAbsent": true,
+        "scratchAbsent": true,
+        "scratchBytes": 0,
+        "retainedBytes": 300110,
+        "freeBefore": 20901449728,
+        "freeAfter": 20901097472,
+        "regularLogWritersClosed": true,
+        "selection": null,
+        "network": "sandbox denied",
+        "projectWrites": "sandbox denied",
+        "PG": false,
+        "Chrome": false
+      },
+      "return": {
+        "at": "2026-10-07T14:57:34.084838+00:00",
+        "actualExit": 0,
+        "childExit": 0,
+        "errors": [],
+        "identities": {
+          "88263/PID": "ESRCH",
+          "88263/PGID": "ESRCH",
+          "88265/PID": "ESRCH",
+          "88265/PGID": "ESRCH"
+        },
+        "scratchAbsent": true,
+        "stdoutBytes": 108377,
+        "stderrBytes": 0,
+        "regularLogWritersClosed": true,
+        "chargeMs": 2844,
+        "spentMs": 2844,
+        "remainingMs": 87156
+      }
+    },
+    {
+      "label": "direct-1",
+      "source": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
+      "pins": 273,
+      "gitBindingsVerified": 219,
+      "gitBindingMismatches": [],
+      "outer": {
+        "startedAt": "2026-10-07T14:57:55.565909+00:00",
+        "endedAt": "2026-10-07T14:57:57.381703+00:00",
+        "outerPid": 20966,
+        "actualExit": 1,
+        "elapsedMs": 1815.7478749053553,
+        "chargeMs": 1816,
+        "stdoutBytes": 108648,
+        "stderrBytes": 0
+      },
+      "result": {
+        "state": "FAIL",
+        "actualExit": 1,
+        "errors": [
+          "child exit 1"
+        ],
+        "signals": [],
+        "groupAbsent": true,
+        "scratchAbsent": true,
+        "scratchBytes": 0,
+        "retainedBytes": 916466,
+        "freeBefore": 20898353152,
+        "freeAfter": 20898312192,
+        "regularLogWritersClosed": true,
+        "selection": null,
+        "network": "sandbox denied",
+        "projectWrites": "sandbox denied",
+        "PG": false,
+        "Chrome": false
+      },
+      "return": {
+        "at": "2026-10-07T14:58:17.938705+00:00",
+        "actualExit": 1,
+        "childExit": 1,
+        "identities": {
+          "20966/PID": "ESRCH",
+          "20966/PGID": "ESRCH",
+          "21008/PID": "ESRCH",
+          "21008/PGID": "ESRCH"
+        },
+        "scratchAbsent": true,
+        "chargeMs": 1816,
+        "spentMs": 4660,
+        "remainingMs": 85340
+      }
+    },
+    {
+      "label": "direct-2",
+      "source": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
+      "pins": 273,
+      "gitBindingsVerified": 219,
+      "gitBindingMismatches": [],
+      "outer": {
+        "startedAt": "2026-10-07T14:58:46.816328+00:00",
+        "endedAt": "2026-10-07T14:58:48.320917+00:00",
+        "outerPid": 52711,
+        "actualExit": 0,
+        "elapsedMs": 1504.5524169690907,
+        "chargeMs": 1505,
+        "stdoutBytes": 108864,
+        "stderrBytes": 0
+      },
+      "result": {
+        "state": "PASS",
+        "actualExit": 0,
+        "errors": [],
+        "signals": [],
+        "groupAbsent": true,
+        "scratchAbsent": true,
+        "scratchBytes": 0,
+        "retainedBytes": 1544863,
+        "freeBefore": 20899246080,
+        "freeAfter": 20899102720,
+        "regularLogWritersClosed": true,
+        "selection": {
+          "passed": 1,
+          "failed": 0,
+          "notSelected": 0,
+          "selectedTitles": [
+            "RELEASE01 old consumer material membership persists only B while holding A, but keeps current returns, unverified order and explicit A restoration"
+          ]
+        },
+        "network": "sandbox denied",
+        "projectWrites": "sandbox denied",
+        "PG": false,
+        "Chrome": false
+      },
+      "return": {
+        "at": "2026-10-07T14:59:19.174234+00:00",
+        "actualExit": 0,
+        "childExit": 0,
+        "errors": [],
+        "selection": {
+          "passed": 1,
+          "failed": 0,
+          "notSelected": 0,
+          "selectedTitles": [
+            "RELEASE01 old consumer material membership persists only B while holding A, but keeps current returns, unverified order and explicit A restoration"
+          ]
+        },
+        "identities": {
+          "52711/PID": "ESRCH",
+          "52711/PGID": "ESRCH",
+          "52713/PID": "ESRCH",
+          "52713/PGID": "ESRCH"
+        },
+        "scratchAbsent": true,
+        "stdoutBytes": 108864,
+        "stderrBytes": 0,
+        "regularLogWritersClosed": true,
+        "chargeMs": 1505,
+        "spentMs": 6165,
+        "remainingMs": 83835
+      }
+    }
+  ],
+  "phase": {
+    "state": "CLOSED",
+    "budgetMs": 90000,
+    "chargedMs": 6165,
+    "unusedMs": 83835,
+    "unusedIsNewAuthorization": false
+  },
+  "rawIndex": {
+    "path": "/private/tmp/release01-oldconsumer-local-20261007/index.json",
+    "bytes": 5926,
+    "sha256": "4aab1eee925f8009462691e67f9d363c8a9b67b1c590203845a0b2e4d4b79b3b"
+  },
+  "rawPins": [
+    {
+      "path": "caller-provenance.json",
+      "bytes": 432,
+      "sha256": "bca5a701ecedc3fe8cfd124d54370c0d6eeb5a28f3cb89f45a0f9d23beb1e1c2",
+      "matches": true
+    },
+    {
+      "path": "commands.json",
+      "bytes": 788,
+      "sha256": "378359d6feee3ba9160ef996539cdf906ec24148b9e1fe8049ed72944a9a7ffb",
+      "matches": true
+    },
+    {
+      "path": "dependency-pins.json",
+      "bytes": 16765,
+      "sha256": "1c1346d7b80951b828793c95a7ae127c1d932000bca244b60986a303880b99fe",
+      "matches": true
+    },
+    {
+      "path": "direct-1-claim.json",
+      "bytes": 183492,
+      "sha256": "55639d2f252748532ab80cb42d1bf5524ed86af36dcb69e6781555fa9ab0e281",
+      "matches": true
+    },
+    {
+      "path": "direct-1-outer.json",
+      "bytes": 243,
+      "sha256": "be3bf879a1160a2a10eab73ee44a90b701c614f6b5093fd5281962d967512f1a",
+      "matches": true
+    },
+    {
+      "path": "direct-1-outer.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matches": true
+    },
+    {
+      "path": "direct-1-outer.stdout",
+      "bytes": 108648,
+      "sha256": "148853e0754ca8854fb5c8b7933abf9b3cc5d43b3cc30bb042658fc363b88f7d",
+      "matches": true
+    },
+    {
+      "path": "direct-1-preflight.json",
+      "bytes": 74523,
+      "sha256": "b2ed467df657001f7725c23cbcc2ac8a19ec29ad0d9bb5a70ae99aa1f109af4f",
+      "matches": true
+    },
+    {
+      "path": "direct-1-result.json",
+      "bytes": 120863,
+      "sha256": "7044a468a77b8c5cbc8c8a5c469a5e49779ab6d67aa5baf13c5027e89e8e2646",
+      "matches": true
+    },
+    {
+      "path": "direct-1-return.json",
+      "bytes": 300,
+      "sha256": "a6fef99cf2e3bacaad63881e4b9fcade984127a8e86b9e7b3b5fd34698bc0f9a",
+      "matches": true
+    },
+    {
+      "path": "direct-1.json",
+      "bytes": 954,
+      "sha256": "b5f5ada62448c329bc1ea868c3c994fb1c9c2271be26f6f7e34a69cb906a6ef4",
+      "matches": true
+    },
+    {
+      "path": "direct-1.log",
+      "bytes": 87,
+      "sha256": "7f80b6d4666d7b6d55491863d2ca77ff1bb16c14ec4ec20c305b89170634ee94",
+      "matches": true
+    },
+    {
+      "path": "direct-2-claim.json",
+      "bytes": 183991,
+      "sha256": "7e67becec6b25b28d353b517529d76ac91fb578987e6c88f1615ad4172dd4892",
+      "matches": true
+    },
+    {
+      "path": "direct-2-outer.json",
+      "bytes": 243,
+      "sha256": "1299cddeda7cf4e28b0c8ba1b02e0d9e3ffb58a23ae2ae5df549b1cb9104d60a",
+      "matches": true
+    },
+    {
+      "path": "direct-2-outer.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matches": true
+    },
+    {
+      "path": "direct-2-outer.stdout",
+      "bytes": 108864,
+      "sha256": "efe98bdc4a279dfdba1c2c73aac8fe223c768368b575a208279519c2a2907a02",
+      "matches": true
+    },
+    {
+      "path": "direct-2-preflight.json",
+      "bytes": 74523,
+      "sha256": "fef6d16c1ea4b8c65b3cf46abcadca2567cd5dc69a7dcfba8c4e2b666ba51013",
+      "matches": true
+    },
+    {
+      "path": "direct-2-result.json",
+      "bytes": 121105,
+      "sha256": "6bca5e1d35f53722805ae5faf70328da4fb44f9bdaea595781bff219e94bd5a8",
+      "matches": true
+    },
+    {
+      "path": "direct-2-return.json",
+      "bytes": 659,
+      "sha256": "42b456686ff26d646bd1dd08263121c924f9b9390863330d346cdc5697e2af35",
+      "matches": true
+    },
+    {
+      "path": "direct-2.json",
+      "bytes": 1182,
+      "sha256": "9f7157215c2caa1610cd2aff6b4c363428279f30fd253677c382ed4fccf4a9dc",
+      "matches": true
+    },
+    {
+      "path": "direct-2.log",
+      "bytes": 87,
+      "sha256": "d2a3dc65e1b3a2ecbc72e1d98ec9ae3f58419bb822eb7bfa4def71ccc503dedd",
+      "matches": true
+    },
+    {
+      "path": "run.py",
+      "bytes": 5809,
+      "sha256": "8ace7650df20094498354b04077e920589da420a3dde637554d93e63fe661e1a",
+      "matches": true
+    },
+    {
+      "path": "sandbox.sb",
+      "bytes": 167,
+      "sha256": "3f19ea8a63c11580e9374bea735e457fa4f4f3756b90486b4c0fe5fad1db306b",
+      "matches": true
+    },
+    {
+      "path": "segment.json",
+      "bytes": 384460,
+      "sha256": "06a601679b8dad0c837569e2293f8e45e9f29253190a129e8ad99a2eae54191e",
+      "matches": true
+    },
+    {
+      "path": "types-1-claim.json",
+      "bytes": 183492,
+      "sha256": "87e71ae3e70940c039d053474bde6ab5c65955a49c0dfdfffcb0ff436ec4a360",
+      "matches": true
+    },
+    {
+      "path": "types-1-outer.json",
+      "bytes": 242,
+      "sha256": "e1d9cf810d7f898ca1d1e7eceee28eb5a5f62d67d1807af47e5200dc763e8915",
+      "matches": true
+    },
+    {
+      "path": "types-1-outer.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matches": true
+    },
+    {
+      "path": "types-1-outer.stdout",
+      "bytes": 108377,
+      "sha256": "549036016d9f5ffe5dda4c9c220a72eb442434c3dc0de1efc0c377293e1072b7",
+      "matches": true
+    },
+    {
+      "path": "types-1-preflight.json",
+      "bytes": 74499,
+      "sha256": "230a54b00005cc3e598c08ec0dc805c28f8583a60c38bcb79ba8cbaf84bd4eb3",
+      "matches": true
+    },
+    {
+      "path": "types-1-result.json",
+      "bytes": 120557,
+      "sha256": "e99cae212f99cf3ee8346e8412cb02f13a02ed208eac773f2c71277bb9ef9f22",
+      "matches": true
+    },
+    {
+      "path": "types-1-return.json",
+      "bytes": 396,
+      "sha256": "5dbd1601f4c2c6fbd9b7a1b067a3a71853b1e65a6726bd9acb31392d921e6da5",
+      "matches": true
+    },
+    {
+      "path": "types-1.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "matches": true
+    },
+    {
+      "path": "types.json",
+      "bytes": 7481,
+      "sha256": "268b8ccf48431e3f399a574b9e07a5b9c6616b7d20cfbba570ca27e4f72b6d98",
+      "matches": true
+    },
+    {
+      "path": "vitest.config.before-direct-2.mjs",
+      "bytes": 10318,
+      "sha256": "45d32ec6b4b503f6a360ff970544b2e6ed855dbb549121e957b4058112aac87c",
+      "matches": true
+    },
+    {
+      "path": "vitest.config.mjs",
+      "bytes": 10522,
+      "sha256": "c36aebf3ba02dfc74e94352fbe2797ba754b4b3dd1f5d65abe899c1e4b08aa69",
+      "matches": true
+    }
+  ],
+  "verificationNotes": [
+    "35 raw bytes/hashes verified. Each attempt219 own source files independently matched fixed1cea Git; selected evidence test fixedsha matched actual pin.",
+    "Affected noEmit covers2product plus selected test/import closure, not an all-project recheck.",
+    "Initial direct1 failed import with zero selected tests and remains FAIL, not silently relabeled.",
+    "3 own outer/Node groups and scratch absence evidenced by fixed returned records; root did not run or probe current reused PIDs.",
+    "Regular-file output closure is the recorded mechanism, not invented pipe EOF evidence.",
+    "No project implementation edits or product/test/import execution by reviewer."
+  ],
+  "next": [
+    "Owner record this scoped approval and actual local results at fixed source; metadata SHA changes need no product rerun.",
+    "After normal source seal/STOP, manager may formally amend out2 production paths for Plugin App owner; immutable build reads remain legal.",
+    "New artifact descriptor then fixed separate Web/backend source guards and original4App compatibility remain required."
+  ],
+  "cleanCode": {
+    "at": "2026-10-07T15:02:48.558828+00:00",
+    "scope": "Minimal source diff, single reused scenario, resolver-only repair and bounded-result review",
+    "findings": "Single shared draft selector retained; identity-guarded release remains; no duplicate membership logic or new product transport/store. Existing run.py unused is_probe is inherited harmless local helper detail, not a blocker or reason for extra source work.",
+    "fixes": "No reviewer code edits; initial alias omission corrected by owner; no unresolved blocking finding."
+  },
+  "reviewedSourceTarget": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
+  "ownerMetadata": "cd074992b106ed909ba49eaec4d1bf32b2365361",
+  "sealedThreeInputs": [
+    {
+      "commit": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
+      "metadata": "cd074992b106ed909ba49eaec4d1bf32b2365361",
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 23456,
+      "sha256": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4",
+      "matchesTestedInput": true,
+      "metadataSame": true
+    },
+    {
+      "commit": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
+      "metadata": "cd074992b106ed909ba49eaec4d1bf32b2365361",
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 24592,
+      "sha256": "728a08d9e7ba64533da5b0bd9d7fa485f7d1cddefc13554c29101881e9841d9a",
+      "matchesTestedInput": true,
+      "metadataSame": true
+    },
+    {
+      "commit": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
+      "metadata": "cd074992b106ed909ba49eaec4d1bf32b2365361",
+      "path": "docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/oldconsumer-material.test.ts",
+      "bytes": 12295,
+      "sha256": "365f14793127406d1e2317ba1d10b08b4cc48f12509aefa8257d47f4e7a1f22e",
+      "matchesTestedInput": true,
+      "metadataSame": true
+    }
+  ],
+  "sourceSealNote": "Owner source target d736 adds the exact tested own-evidence case. Product implementation remains1cea; all3 bound inputs match runtime and metadata cd074. No new product run needed.",
+  "productionChangedSinceRun": []
+}

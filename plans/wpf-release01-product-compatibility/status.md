@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T15:01:36.362Z |
+| 最近更新时间 | 2026-10-07T15:10:42.258Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,9 +10,9 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery |
 | Branch | codex/web-release-recovery |
 | 工作基线 / HEAD | 固定7272151bb1e3e59e08937dca44949dcdeb42f009；source供给300386e2babce408b85ad5b9732d616782b78097；旧树9fde已释放停写 |
-| 工作树dirty状态 | 两产品与定向旧consumer场景已固定；本批仅证据收口，pushclean后停止六scope写入，待产品交回/后继准备 |
+| 工作树dirty状态 | 两产品与定向旧consumer场景已固定并获独审；两产品STOP，当前仅own records收口及只读产物准备 |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 检查状态 | PASSED 当前旧consumer affected noEmit与精确1个受控membership case；首resolverFAIL保留；browser/build/compat未运行 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED 当前新App后继；历史9658/c3已main e0295747200d7f0616779a712fdfd06691c3708f |
 | 实现目标 | d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6 |
@@ -20,14 +20,14 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 新版网页最小草稿隔离修复已在旧消费者落地，必要类型与定向回归通过；修正后台已供齐 |
-| 下一可用交付 | 集中独审两文件及局部结果，交回产品写权；以固定源码和只读依赖准备唯一新网页产物 |
+| 下一可用交付 | 交回已审两产品写权；以固定源码和只读依赖准备唯一新网页产物 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：NOT_STARTED 当前固定旧consumer source+实际集中审；历史TMP静态准备已批准 |
+| Review | [review.md](review.md)：APPROVED 固定d736源码与必要局部实际；build/browser/新pair兼容未验 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 整体开工UNKNOWN；历史片段完成12:17:59.709Z保前状态；后继领取13:09:33.224Z仅为领取事实，编辑固定来源8964dc1；不以领取或编辑时刻倒填全任务开工 |
-| 领取 | 7d60cb91-7537-4052-8ba7-0c0aac8eb722 v1 exact6，COMMITTED 2026-10-07T14:52:41.385Z；旧27c v2已released |
+| 领取 | 7d60cb91-7537-4052-8ba7-0c0aac8eb722 v2 exact4，amend COMMITTED 2026-10-07T15:10:52.444Z；两产品STOP/移出，旧27c v2已released |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -39,7 +39,7 @@
 | RELEASE01-06 | completed | w01_owner | [限定实际独审与主线接收](../../docs/evidence/wpf-release01/fixed-origin/main-close/README.md)；个人更新未执行，属于独立发布交付 |
 | RELEASE01-07 | completed | w01_owner | [Cookie后继固定源码](../../docs/evidence/wpf-release01/recovery-cookie/source-manifest.json)与[局部检查提案](../../docs/evidence/wpf-release01/recovery-cookie/local-check-proposal.json)；SOURCE_FIXED；[strict实际PASS](../../docs/evidence/wpf-release01/recovery-cookie/strict-actual/README.md)与[root限定批准](../../docs/evidence/wpf-release01/recovery-cookie/root-source-local-review.json) |
 | RELEASE01-08 | pending | w01_owner | [同任务唯一新Web生产接权](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/README.md)；后台已到，新Web产物/新pair兼容/发布未完成 |
-| RELEASE01-09 | completed | w01_owner | [两file固定与必要旧consumer检查](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)：noEmit0/精确1direct0，独立集中审待完成；非mounted/compat通过 |
+| RELEASE01-09 | completed | w01_owner | [两file固定与必要旧consumer检查](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)：noEmit0/精确1direct0，[集中独审已批准](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/root-source-local-review.json)；非mounted/compat通过 |
 
 ## 等待记录
 
@@ -51,7 +51,7 @@
 
 ## 边界与交接
 
-当前新树exact6唯一writer，旧Release四scope已释放停写；其他Quick/DPERF/RELEASE03保持停止写入。不启动PG/Chrome/HTTP/build/install，不访问个人61228。61228只允许后继受控Chrome页面流量经精确代理；page.request/context.request/route.fetch/Node fetch不可用于该origin。三旧App原生Bearer与独立Cookie/CSRF补证分开，format1不补releaseId。
+当前新树exact4唯一writer（两harness+本任务records），两产品已STOP并原子移出；旧Release四scope已释放停写；其他Quick/DPERF/RELEASE03保持停止写入。不启动PG/Chrome/HTTP/build/install，不访问个人61228。61228只允许后继受控Chrome页面流量经精确代理；page.request/context.request/route.fetch/Node fetch不可用于该origin。三旧App原生Bearer与独立Cookie/CSRF补证分开，format1不补releaseId。
 
 唯一status仍供原source登记读取；未自行请求dashboard服务。架构影响仅受控验证接口/owned proxy，不改产品或共享契约；最终固定target交co-lead独审后由原Lead判断是否更新固定架构视图。历史状态原件见[previous-status](../../docs/evidence/wpf-release01/fixed-origin/previous-status.md)。
 
@@ -121,12 +121,16 @@ Root 对固定8964两harness与唯一strict实际作正式限定APPROVED、0 fin
 
 仅新Web descriptor尚缺，Original assignment_review soleproducer已派工但接受/唯一WT回执待到；Release不创建第二producer、不写MSG产品。8964两个harness/guard保持原字节，本批只更新owner记录，未运行产品检查/资源采样/构建。正常pushclean后全四scope STOP，claim27c36v1保留等待实际pair。
 
-## 当前同任务唯一来源切换
+## 历史：同任务唯一来源切换
 
 2026-10-07T14:54:01.259Z：[source-switch intake](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/source-switch-intake.json)记录新树/固定base/供给/新claim；旧27c四scope与MSG20均实际释放后才take exact6。当前可独立推进最小两file源码，不再等待Original接单。完整任务开工仍UNKNOWN/完成NOT_COMPLETED；本时间仅source段实际开工。生产patch尚待本段应用，当前无工程运行。
 
-## 当前最小产品落地与普通检查安全点
+## 历史：最小产品落地与普通检查安全点
 
 2026-10-07T15:01:36.362Z：[固定source/证据](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)。产品source1cea/验证target d736；只有attachments/session两file12+/4-，值802e/728a逐字已审准备，8964harness不改。新90s本地段CLOSED6165ms：noEmit通过，首direct0selected的resolver失败保留，补本树activity映射后单真实旧consumer场景通过。所有owned进程组/scratch清理、regular日志完整，无PG/Chrome/HTTP/build/provider。
 
 本组唯一newWeb producer，descriptor尚NULL，但现为实施任务而非等待外部接单；已供后台cd27/04da不包含SVC09A host修复且factoryCalls0，非PROCESS T7。独审/新Web构建/新pair兼容/发布分别待完成，不迁移任何旧绿。当前六scope正常seal后STOP保claim；两产品将先交回供主线集成，后继harness/ownerrecords按fresh amend保留。
+
+## 当前：源码批准与产品停写交回
+
+2026-10-07T15:10:42.258Z：Root [d736集中审原件](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/root-source-local-review.json)已核两产品/定向用例/35原始记录，APPROVED、0blocking。产品1cea保持802e/728a，两literal自本安全点明确STOP，后继仅保留两harness及本任务records写权；[账本actual amend回执](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/product-handback-receipt.json)确认15:10:52.444Z v2仅保exact4。原90s段CLOSED6165/未用83835不转credit，首resolverFAIL不改。新Web产物仍NULL，build/compat/主线与用户可见部署均未完成；既有prepareWebArtifact只做固定输入和有界调用准备，没有运行预约。

@@ -1,10 +1,10 @@
 # WPF-RELEASE01 review
 
-**当前状态：NOT_STARTED（7272旧消费者固定源码与必要检查已完成，待集中独审；不继承MSG实际或8964类型结果）**
+**当前状态：APPROVED（固定7272旧消费者最小源码与必要局部检查；不包含产物构建、浏览器兼容或部署）**
 
 当前 Review target commit：d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6。范围：apps/web/src/plugin-integration/attachments.tsx、apps/web/src/plugin-integration/session.ts、docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/oldconsumer-material.test.ts。
 
-[固定源码与actual](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)：精确patch落地，affected noEmit0/单case actual0、首resolverFAIL保留，6165ms CLOSED及完整清理。待root集中独立审；不以作者检查冒approval。无新Web descriptor/compat/build/用户部署。
+[固定源码与actual](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)：精确patch落地，affected noEmit0/单case actual0、首resolverFAIL保留，6165ms CLOSED及完整清理。经[root集中独立审查](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/root-source-local-review.json)APPROVED，0blocking；两产品hash802e/728a与35原件固定相符。无新Web descriptor/compat/build/用户部署。
 
 ## 历史：8964后继两harness限定批准
 

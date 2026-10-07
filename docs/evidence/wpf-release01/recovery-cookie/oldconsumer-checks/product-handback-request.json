@@ -1,0 +1,16 @@
+{
+  "action": "amend",
+  "requestId": "fca38d58-21d1-402b-a94e-62ccc086cc09",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "claimId": "7d60cb91-7537-4052-8ba7-0c0aac8eb722",
+  "version": 1,
+  "scope": [
+    "apps/web/test/web-release-compatibility.browser.ts",
+    "apps/web/test/web-release-compatibility.fixture.ts",
+    "docs/evidence/wpf-release01",
+    "plans/wpf-release01-product-compatibility"
+  ]
+}

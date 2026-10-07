@@ -1,0 +1,33 @@
+{
+  "taskId": "WPF-RELEASE01",
+  "owner": "w01_owner",
+  "stoppedAt": "2026-10-07T15:10:42.258Z",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery",
+  "branch": "codex/web-release-recovery",
+  "headBeforeMetadata": "cd074992b106ed909ba49eaec4d1bf32b2365361",
+  "sourceTarget": "d736547e1bd5a7acc256dd0c4c863d5a2bbe2fb6",
+  "productCommit": "1cea1ce62ea2c10eaeb8fccdb35fe6f5d81aa804",
+  "stoppedWriting": true,
+  "removedScope": [
+    "apps/web/src/plugin-integration/attachments.tsx",
+    "apps/web/src/plugin-integration/session.ts"
+  ],
+  "retainedScope": [
+    "apps/web/test/web-release-compatibility.browser.ts",
+    "apps/web/test/web-release-compatibility.fixture.ts",
+    "docs/evidence/wpf-release01",
+    "plans/wpf-release01-product-compatibility"
+  ],
+  "productPins": [
+    {
+      "path": "apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 23456,
+      "sha256": "802e2666543e63b79c199cda03a0cf868f081b637983bcd19270b867d123e5b4"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/session.ts",
+      "bytes": 24592,
+      "sha256": "728a08d9e7ba64533da5b0bd9d7fa485f7d1cddefc13554c29101881e9841d9a"
+    }
+  ]
+}

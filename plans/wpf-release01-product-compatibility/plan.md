@@ -66,3 +66,5 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 见[唯一source-switch](../../docs/evidence/wpf-release01/recovery-cookie/source-switch/README.md)。旧树与MSG范围已实际交回，新exact6不包括App/Thread或共享配置/依赖。只应用77bc两file，预计hash802e/728a；必要检查和artifact build仍待有界安排。此前关于Original生产接单与MSG持有范围的文字为历史准备条件，已由本次交权替代。
 
 本次仅两file与旧consumer定向检查已完成，见[实际证据](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/README.md)。RELEASE01-08的独审/新artifact/兼容/发布继续开放；本地普通段6165ms关闭，未用余额不是新运行许可。
+
+当前d736两产品及定向用例/局部实际已获[root集中APPROVED](../../docs/evidence/wpf-release01/recovery-cookie/oldconsumer-checks/root-source-local-review.json)，RELEASE01-09完成；两产品STOP并按账本partial amend交回。RELEASE01-08继续唯一producer的固定Web artifact准备，descriptor仍NULL；本地6165ms关闭，无build/PG/Chrome新许可。

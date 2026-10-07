@@ -26,3 +26,7 @@
 ## 2026-10-07T14:24:19.223Z 最小移植只读/TMP准备
 
 复用find-skills/clean-code：固定c848 Git补丁来源，静态TMP应用旧7272两个blob，结果hash比对；session只替换一处projection调用，避免复制MSG authority。Current优先与无port restored fallback沿已审单一selector。区分MSG局部批准和旧base尚未验证，不改生产，不run/import。生产范围仍MSG v3；两descriptors=NULL、旧8964guard真实保留。必要权属与后继affected checks在报告；本批仅metadata链接/Git/hash核对。
+
+## 2026-10-07T15:10:42.258Z 固定旧consumer审查收口
+
+复用已安装find-skills与clean-code，核归档原件字节/hash、三scope独审target与两产品STOP，清除当前页首待独审旧文；历史正文保留并标历史。当前仅metadata，无工程运行/依赖修改/资源采样。产物复用既有prepareWebArtifact，不新增codec或发布体系；实际artifact尚NULL。
