@@ -2,6 +2,7 @@
 import assert from "node:assert/strict";
 import { fileURLToPath } from "node:url";
 import { join } from "node:path";
+import { writeFile } from "node:fs/promises";
 import { expect, type Page } from "@playwright/test";
 import { createServer, type AliasOptions } from "vite";
 import react from "@vitejs/plugin-react";
@@ -35,6 +36,10 @@ export async function startMessageSettingsFixture(options: { cacheDir: string; a
     plugins: [react(), tailwindcss(), { name: "message-settings-http-fixture", configureServer(vite) {
       vite.middlewares.use((request, response, next) => {
         const url = new URL(request.url ?? "/", "http://fixture");
+        if (url.pathname === "/native-select-control") {
+          response.setHeader("content-type", "text/html");
+          response.end(`<!doctype html><html lang="zh-CN"><title>Message settings native control</title><label>模型<select data-native-control><option value="">全部模型</option><option value="${model}">${model}</option><option value="fast-model">fast-model</option></select></label></html>`); return;
+        }
         if (url.pathname === "/") {
           response.setHeader("content-type", "text/html");
           void vite.transformIndexHtml("/", '<!doctype html><html lang="zh-CN"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Message settings fixture</title><div id="root"></div><script type="module" src="/test/message-settings.fixture.tsx"></script></html>').then(html => response.end(html), next); return;
@@ -232,4 +237,89 @@ export async function checkMessageSettingsPicker(page: Page, fixture: Awaited<Re
     assert.deepEqual(errors, []);
     return { checks, pageErrors: errors, requests: fixture.requests, limitation: "Independent controlled component + synthetic HTTP catalog; no App/send/queue/recovery/provider integration." };
   } finally { page.off("pageerror", onError); }
+}
+
+
+/** Measurement only. It never replaces the six acceptance groups or mutates a select value. */
+export async function diagnoseMessageSettingsNativeSelect(page: Page, fixture: Awaited<ReturnType<typeof startMessageSettingsFixture>>, evidence: string, workDeadlineMs: number) {
+  type Snapshot = { value: string; selectedIndex: number; focused: boolean; connected: boolean; disabled: boolean; open: boolean | "unsupported"; options: { value: string; selected: boolean; disabled: boolean }[] };
+  type Trace = { state: string; events: { type: string; isTrusted: boolean; phase: string }[]; eventBytes: number; observerErrors: string[]; truncated: boolean; droppedEvents: number };
+  const report: { mode: string; diagnosticComplete: boolean; conclusion: string; arms: { name: string; snapshots: { after: string; value: Snapshot }[]; trace?: Trace; selectedWithNativeEvents?: boolean; failure?: string }[]; pageErrors: string[]; failure?: string } = {
+    mode: "native-control", diagnosticComplete: false, conclusion: "INCONCLUSIVE", arms: [], pageErrors: [],
+  };
+  const onError = (error: Error) => { if (report.pageErrors.length < 8) report.pageErrors.push(error.message.slice(0, 1024)); };
+  page.on("pageerror", onError);
+  const checkpoint = () => { assert(Date.now() < workDeadlineMs, "Diagnostic work deadline"); };
+  const snapshotScript = `(select) => {
+    if (!(select instanceof HTMLSelectElement) || select.options.length > 8) throw new Error("Expected bounded native select");
+    let open = "unsupported"; try { if (CSS.supports("selector(:open)")) open = select.matches(":open"); } catch {}
+    return { value: select.value, selectedIndex: select.selectedIndex, focused: document.activeElement === select,
+      connected: select.isConnected, disabled: select.matches(":disabled"), open,
+      options: Array.from(select.options, option => ({ value: option.value, selected: option.selected, disabled: option.disabled })) };
+  }`;
+  // A frame is an observation boundary, not a claim that the OS popup is ready. No sleep or generated input.
+  const frameScript = `new Promise((resolve, reject) => {
+    const timeout = setTimeout(() => reject(new Error("Diagnostic animation-frame observation expired")), 1000);
+    requestAnimationFrame(() => { clearTimeout(timeout); resolve(true); });
+  })`;
+  async function arm(name: string, keys: readonly string[], modal: boolean) {
+    checkpoint();
+    const record: (typeof report.arms)[number] = { name, snapshots: [] }; report.arms.push(record);
+    const select = modal ? page.getByRole("dialog", { name: "下一条消息设置", exact: true }).getByRole("combobox", { name: "模型", exact: true }) : page.getByRole("combobox", { name: "模型", exact: true });
+    try {
+      await expect(select).toHaveCount(1); await expect(select).toBeEnabled(); await select.focus(); checkpoint();
+      record.snapshots.push({ after: "focus", value: await select.evaluate<Snapshot>(snapshotScript) });
+      for (const key of keys) {
+        checkpoint(); await page.keyboard.press(key); checkpoint();
+        await page.evaluate(frameScript); checkpoint();
+        record.snapshots.push({ after: key, value: await select.evaluate<Snapshot>(snapshotScript) });
+      }
+    } catch (error) { record.failure = String(error).slice(0, 1024); throw error; }
+    finally {
+      const encoded = await page.evaluate<string>('JSON.stringify(globalThis.__msgquickSelectTrace ?? {state:"NOT_CAPTURED"})');
+      assert(Buffer.byteLength(encoded) <= 65536, "Bounded passive trace");
+      const trace: Trace = JSON.parse(encoded); record.trace = trace;
+      assert.equal(trace.state, "INSTALLED"); assert.equal(trace.truncated, false); assert.equal(trace.droppedEvents, 0); assert.deepEqual(trace.observerErrors, []);
+      assert(trace.events.length > 0 && trace.events.length <= 96 && trace.eventBytes <= 49152);
+      const traces = report.arms.flatMap(item => item.trace ? [item.trace] : []);
+      assert(traces.reduce((sum, item) => sum + item.events.length, 0) <= 96 && traces.reduce((sum, item) => sum + item.eventBytes, 0) <= 49152, "Combined diagnostic trace limit");
+    }
+    const final = record.snapshots.at(-1)!.value;
+    record.selectedWithNativeEvents = final.value === model && final.selectedIndex === 1 &&
+      ["input", "change"].every(type => record.trace!.events.some(event => event.type === type && event.isTrusted && event.phase === "capture"));
+    return record.selectedWithNativeEvents;
+  }
+  try {
+    page.setDefaultTimeout(Math.max(1, Math.min(3000, workDeadlineMs - Date.now())));
+    await page.goto(`${fixture.url}/native-select-control?arm=A`); checkpoint();
+    await arm("plain-A-ArrowDown-Enter", ["ArrowDown", "Enter"], false);
+    await page.goto(`${fixture.url}/native-select-control?arm=B`); checkpoint(); // A distinct document, no assigned select value.
+    const plainSelected = await arm("plain-B-Space-ArrowDown-Enter", ["Space", "ArrowDown", "Enter"], false);
+    if (plainSelected) {
+      await page.goto(fixture.url); checkpoint();
+      const left = page.getByRole("region", { name: "Pane left", exact: true });
+      await expect(page.getByTestId("catalog-state")).toContainText("stale; 0"); assert.equal(fixture.requests.length, 0);
+      const preserved = new Map<string, string>();
+      for (const id of ["left-current", "left-sent", "left-queued", "right-current", "left-commits"]) preserved.set(id, await page.getByTestId(id).innerText());
+      await left.getByLabel("Draft left", { exact: true }).fill("诊断仍保留当前草稿");
+      await left.getByRole("button", { name: /^消息设置：/ }).click();
+      const dialog = page.getByRole("dialog", { name: "下一条消息设置", exact: true });
+      await expect(dialog).toBeVisible(); await dialog.getByRole("button", { name: "刷新设置目录", exact: true }).click();
+      await expect(page.getByTestId("catalog-state")).toContainText("current; 1"); checkpoint();
+      const actualSelected = await arm("actual-B-Space-ArrowDown-Enter", ["Space", "ArrowDown", "Enter"], true);
+      for (const [id, text] of preserved) await expect(page.getByTestId(id)).toHaveText(text);
+      await expect(page.getByLabel("Draft left", { exact: true })).toHaveValue("诊断仍保留当前草稿");
+      await expect(page.getByTestId("left-commits")).toHaveText("0");
+      assert.equal(fixture.requests.length, 1); assert.deepEqual(report.pageErrors, []); checkpoint();
+      report.diagnosticComplete = true;
+      report.conclusion = actualSelected ? "SAME_NATIVE_SEQUENCE_SELECTS_IN_CONTROL_AND_MODAL" : "CONTROL_SELECTS_MODAL_DOES_NOT";
+    }
+  } catch (error) { report.failure = String(error).slice(0, 2048); throw error; }
+  finally {
+    page.off("pageerror", onError);
+    const encoded = JSON.stringify(report) + "\n";
+    assert(Buffer.byteLength(encoded) <= 65536, "Bounded full diagnostic report");
+    await writeFile(join(evidence, "native-control.json"), encoded);
+  }
+  return report;
 }
