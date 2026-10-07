@@ -41,7 +41,7 @@ export async function startMessageSettingsFixture(options: { cacheDir: string; a
           response.end(`<!doctype html><html lang="zh-CN"><title>Message settings native control</title><label>模型<select data-native-control><option value="">全部模型</option><option value="${model}">${model}</option><option value="fast-model">fast-model</option></select></label></html>`); return;
         }
         if (url.pathname === "/") {
-          response.setHeader("content-type", "text/html");
+          response.setHeader("content-type", "text/html; charset=utf-8");
           void vite.transformIndexHtml("/", '<!doctype html><html lang="zh-CN"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Message settings fixture</title><div id="root"></div><script type="module" src="/test/message-settings.fixture.tsx"></script></html>').then(html => response.end(html), next); return;
         }
         if (!/^\/connection-\d+\/api\/execution-profiles$/.test(url.pathname)) return next();
