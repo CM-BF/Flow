@@ -1,0 +1,65 @@
+{
+  "at": "2026-10-07T04:42:37.173886+00:00",
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "8f3745b15926cf8eb841be558a20c173dfc2534d4e02662808c9edb5c631ff4c",
+  "workerSha256": "f099491c90d612cd5dd37d9cd8b90c44537fb93a53c4634c5e48cfe6b91dd461",
+  "reviewScope": "Exact b2 passive select diagnostics, preserved native boundary, prior accounting and preparation only; NOT_RUN",
+  "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "head": "3a4dd6dee89a3ea456f31870dd0a126a6efad1c5",
+  "preparedBindingSha256": "6eb6c243462a4107fbb502b037533a0bcc471628012ae9ec7f82d56b8594a89e",
+  "preparedManifestSha256": "b2494fbbca5c8ad5e86e0168af1232f3e02a7a5a1cd839449808e0d06cf7aaa5",
+  "priorEvidenceManifestSha256": "1c6524c07772c688b7a14dc2d0a3a0b1d8fd768742864ebd9e9e44d03c53335b",
+  "pinVerification": {
+    "manifestFiles": 18,
+    "ownReadOnlyFiles": 117,
+    "externalFiles": 37,
+    "sourceFiles": 4,
+    "node": true,
+    "prerequisites": true,
+    "cleanExpectedBranchHead": true,
+    "priorClosedInventory": true,
+    "priorFiles": 41,
+    "priorBytes": 452930
+  },
+  "budget": {
+    "previousRuntimeMs": 12326,
+    "remainingMs": 47674,
+    "workMs": 32674,
+    "cleanupMs": 15000,
+    "originalTotalMs": 60000,
+    "retainedBytes": 8388608,
+    "previousEvidenceBytes": 452930,
+    "outerCaptureReserveBytes": 2113536
+  },
+  "reviewed": [
+    "Only literal page init observation is added. Exact fixture/dialog/fieldset/label selectors match fixed QuickFacet JSX; top-level loopback page only. Passive event capture and later-frame reads do not press keys, set value/focus, cancel defaults or replace original assertions.",
+    "Trace bounded to 96 events,49152 event bytes,6144 per-event bytes,8 options and65536 serialized bytes; explicit truncation/errors/missing observations. This is an observer and not proof of exact native default-action timing.",
+    "Finally reads through a literal string before context close within existing cleanup reserve, preserves original scenario error, and seals trace on failure. A read timeout is a cleanup failure; later cleanup remains necessary.",
+    "Exact b1 failed actual,41 prior files and independent d259 review carry12326ms. Hash checks now start inside remaining time. Original source, six scenario checks, two screenshots and c2 strict/direct pointer remain unchanged.",
+    "Native Chrome remains a separately parent-owned session/profile under native sandbox, without custom outer write/egress containment. Accepted for this exact local fixture; Node worker retains its existing sandbox. No personal tabs/profiles/service credentials.",
+    "Parent retains one-use gate, owned-only group cleanup, dualEOF, scratch absence and exact terminal seals plus actual outer exit. Both success and failure require actual external capture; disk or declared PASS alone insufficient."
+  ],
+  "requirementsBeforeRun": [
+    "In this unconsumed b2 packet preserve prepared binding/manifest and set state REVIEWED_SOURCE_BOUND plus this exact approval pointer; no parent/worker/source/scenario changes.",
+    "Fresh exact claim839e466f-1a3f-4e92-94e1-ece390c32fbf v1/six scopes, branch/head/source/readonly and prerequisite pins, clean tree/output absence, cross-lead window and shared-volume floor must be checked by manager.",
+    "Fresh external one-use gate binds updated packet and this review; this review grants no slot reservation.",
+    "Run at most this one attempt, capture actual outer exit/stdout/stderr, return actual cleanup and conservative elapsed charge. No automatic retry or budget reset."
+  ],
+  "limitations": [
+    "No runtime/import/syntax or Chrome/PG/HTTP execution by reviewer.",
+    "No native-select cause established until actual observation; fixture checks do not prove production integration.",
+    "Polling is observed resource enforcement, not hard OS quota; entry pins are not an exhaustive transitive/native dependency inventory.",
+    "Native background suppression is not OS egress containment."
+  ],
+  "cleanCode": {
+    "skills": [
+      "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "/Users/citrine/.agents/skills/webapp-testing/SKILL.md"
+    ],
+    "applied": "Local existing skills, no reinstall; observation/action separation, unchanged business assertions, bounded data, explicit missing states and original error retention. Existing lifecycle reused; no new generic framework.",
+    "findings": []
+  },
+  "runtime": "NOT_RUN"
+}

@@ -1,0 +1,20 @@
+{
+  "recordedAt": "2026-10-07T04:38:26.484692+00:00",
+  "state": "EXTERNAL_X01_ACTUAL_RUN_WEB_NO_HOLDER_OR_RESERVATION",
+  "groupWindowOwnership": "Mika X01 actual PG RUN after04:37:25.761Z fresh; wait actualcleanup. Web0PG/Chrome/local/gate/reservation; no automatic concurrent heavy run.",
+  "latestCoordination": {
+    "at": "2026-10-07T04:38:26.484692+00:00",
+    "kind": "X01_ACTUAL_RUN_D06_RELEASED_WEB_IDLE",
+    "source": "d06-main-closeout-20261007/current.json",
+    "summary": "X01实际PG已启动，等待真实cleanup；Web无holder/预约。D06已主线及静态资产发布、v3释放。Quick b2只TMP准备。"
+  },
+  "externalCurrentAdmission": {
+    "owner": "Mika X01",
+    "state": "ACTUAL_RUN",
+    "source": "d06-main-closeout-20261007/current.json",
+    "freshAt": "2026-10-07T04:37:25.761Z",
+    "cleanup": "PENDING_ACTUAL_RECEIPT",
+    "noElapsedHandoff": true
+  },
+  "currentIntake": "d06-main-closeout-20261007/current.json"
+}

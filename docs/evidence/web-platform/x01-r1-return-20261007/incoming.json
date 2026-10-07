@@ -1,0 +1,81 @@
+{
+  "recordedAt": "2026-10-07T04:42:56.979042+00:00",
+  "source": {
+    "kind": "Root delegated concrete incoming receipt",
+    "independentReader": "db_transaction_owner",
+    "independentReadAt": "2026-10-07T04:40:34Z",
+    "managerActions": "No new service/process/resource sampling; no product test or cleanup"
+  },
+  "x01": {
+    "run": "X01 R1",
+    "terminalAt": "2026-10-07T04:37:58.269Z",
+    "vitestExit": 1,
+    "selected": 27,
+    "passed": 18,
+    "failed": 9,
+    "ownedGroupAbsent": true,
+    "mergedEOF": true,
+    "signals": 0,
+    "databaseCleanup": "Two exact databases: OID/marker checked, zero connections, ordinary DROP ACK and absence; app/pool/admin closed",
+    "listenersClosed": 3,
+    "receiptLimitation": "Caller expected exactly2 listeners; runtime did not restart and only1 appeared at that receipt point. Overstrong condition retained as UNKNOWN; this does not erase actual failures or change original receipt.",
+    "currentProcesses": {
+      "pg": 0,
+      "chrome": 0,
+      "children": 0,
+      "pendingLaunch": 0
+    },
+    "newOpen": false,
+    "heavyHandoff": "Independent original-evidence read confirms all owned processes absent/EOF plus DB/listener cleanup; heavy window returned",
+    "retained": {
+      "state": "KEEP_NOT_FULL_CLEAN",
+      "tmpName": "flow-x01-pg-38ywpnw_",
+      "device": 16777234,
+      "inode": 123467679,
+      "outer": "KEEP",
+      "size": "UNKNOWN",
+      "peak": "UNKNOWN"
+    },
+    "next": "New fixture/caller local repair not fixed/reviewed/OPEN; no new PG reservation",
+    "fixedOriginalEvidenceRefAsReported": "56a968a"
+  },
+  "web": {
+    "holder": null,
+    "gate": null,
+    "reservation": false,
+    "quickB2": "Root accepted exact static native/source preparation; reviewed binding sealed, no gate/free sample/runtime. Actual admission is immediately before original-owner execution.",
+    "panels": "Only Recovery own timing fields plus fixed C02v2 consumer read-only seam/plan; no browser/PG"
+  },
+  "c02FixedInput": {
+    "worktree": "codex-conversation-continuity",
+    "source": "9e212e503575f8f8d6d45b4cb38032f6ec604de9",
+    "cleanupRefAsReported": "6cbe91ff",
+    "path": "docs/evidence/mature02c02/public-stream-next.md",
+    "packetRefAsReported": "d5273fb7",
+    "state": "SOURCE_REVIEW_PENDING",
+    "meaning": "Input for existing consumer handoff only; no UI implementation, new writer scope, or contract approval inferred"
+  },
+  "historicalFailurePreservation": "All original failed results and UNKNOWN remain unchanged; receipt handback is not test approval or complete TMP cleanup",
+  "quickB2": {
+    "nativeReview": "quick-b2-native-review.json",
+    "readiness": "quick-b2-ready.json",
+    "bindingSha256": "790668eca675eaa43cf0d4a43d761e28413270ce52e2c572e13525d1c4c7d1e4",
+    "manifestSha256": "8c1ecf8a5f265721a4c0b1d89cb8feeba85c0b9ef3858f165f4f3ca3accff537",
+    "state": "REVIEWED_SOURCE_BOUND_NOT_RUN_NO_GATE"
+  },
+  "resourceRuleUpdate": {
+    "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",
+    "fixedRuleCommit": "bb99223ad73690a25b0ebb251d69cd6d770a2a21",
+    "path": "docs/quality/local-validation.md#ready-validation",
+    "rule": "At most1 actual PG/migration/shared-service plus1 completely isolated0PG browser, or artifact+browser; not artifact+PG+browser triple. Each team1local remains. Exactprofile/dynamicfixture/cache/output independent; no realcenter/PG in browser; all active declared budgets plus one common reserve; unknown/shared dependencies and performance still exclusive.",
+    "application": "Quickb2 dedicated0PG fixture can proceed after immediate ownfresh checks; preparing ENG PG is not an actual holder or reason to wait. No gate/run granted by this metadata."
+  },
+  "nextPgHandoff": {
+    "source": "Mika concrete coordination relayed by root; direct v2 tool rejected, no retry",
+    "state": "ORIGINAL_LEAD_ENG01I_IF_READY_NEXT_PG_OFFER_NOT_RUN",
+    "x01": "No new OPEN; local repair only",
+    "c02": "Source local segment only;0PG reservation",
+    "quick": "Separate dedicated0PG browser under bb992 rule, no artificial wait for preparing PG",
+    "requires": "OriginalLead own fixed review/fresh gate and actualRUN receipt; no holder inferred"
+  }
+}

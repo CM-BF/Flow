@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:37:53.387420+00:00；D06主线/资产发布收口与领取释放，SVC06实际归还；本组未采服务 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T04:42:56.979042+00:00；X01重窗口实际归还与保留证据边界入站；仅管理事实更新，未采服务 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -24,6 +24,7 @@
 | 下一可用交付 | 本机打开Flow与凭据入口已发布，并完成主动加载、复制和关闭观察；本机入口剩一项说明文档增量待接收；快速设置首次页面检查未通过，原owner仅准备有界事件观察以定位键盘选择问题。窄屏图文可读性作为后继改进保留。时间展示易读性沿独立有界后继排队。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
+| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：X01重窗口已归还，原失败与保留证据不改；本组无holder/gate/预约，Quick后继准备已独审，实际准入未打开 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |
@@ -73,11 +74,11 @@
 
 已审设计输入：[快速设置双重生命周期门禁](../../docs/evidence/web-platform/message-settings-ownership-interface/root-review.json)已收敛；[新组件唯一source](../../docs/evidence/web-platform/message-settings-quick-controls-provision/registration-request.json)已六scope领取；[固定源码与179来源实际登记](../../docs/evidence/web-platform/message-settings02-35-source-intake/report.md)已接收，[fe6源码与c1静态准备已审](../../docs/evidence/web-platform/message-settings02-c1-prepared/report.md)由原owner负责，真实host接线仍需后继交权。
 
-[远程 CI 消费边界](../../docs/evidence/web-platform/ops-ci01-web-consumer-intake/report.md)已归原 TODO11：没有触发 CI 或新增 writer，QuickControls旧类型失败保留；本次c2类型与26direct实际通过，浏览器仍未运行，原 owner status 保持唯一功能事实源。
+[远程 CI 消费边界](../../docs/evidence/web-platform/ops-ci01-web-consumer-intake/report.md)已归原 TODO11：没有触发 CI 或新增 writer，QuickControls旧类型失败保留；该记录时c2类型与26direct已通过、浏览器尚未运行是历史；当前b1首次浏览器已FAILED并清理、b2仅审定准备，见页首及原owner唯一status。
 
 [portable候选交付](../../docs/evidence/web-platform/message-settings02-portable-prepared/report.md)与[REQ17/CHAT06测量接口](../../docs/evidence/web-platform/req17-chat06-measurement-interface/report.md)沿现有验收推进，未新增运行或claim；性能全部未测量。
 
-[D06原树源码后继](../../docs/evidence/web-platform/architecture-snapshot-0da-intake/report.md)保原领取历史；当前adf9539d v2五范围，5124数据22direct已通过、a28e连线背景修复源码获审，页面复验待当前并存准入；功能事实见D06唯一status。
+[D06原树源码后继](../../docs/evidence/web-platform/architecture-snapshot-0da-intake/report.md)保原领取历史；当时adf9539d v2五范围及页面待准入均为历史；当前完整组合591已main/资产发布，v3已释放，见[D06收口](../../docs/evidence/web-platform/d06-main-closeout-20261007/current.json)及唯一status。
 
 [活动累计缓存覆盖输入](../../docs/evidence/web-platform/activity-cache-total-bound/report.md)已归原MATURE05-05/06-03，已获本次文档限定批准；仅补验收，不新增产品实现、运行阻塞或许可。两大task的唯一status维护对应条目。
 
@@ -149,15 +150,15 @@ MATURE02仍链接Mika唯一plan/TODO-11：[原固定公共输入研究](../../do
 
 本轮真实检查：[Quick c1首类型失败/完整清理与供给缺项](../../docs/evidence/web-platform/message-settings02-c1-actual/report.md)；[Recovery8ed失败及9835限定源码审](../../docs/evidence/web-platform/recovery01-8ed-actual/root-actual-and-source-review.json)。两项终态已归窗，不自动接续验证。
 
-[D04测试自有worktree后继](../../docs/evidence/web-platform/d04-owned-worktree-lifecycle-intake/handoff.json)在原树新精确领取并完成fa6f源码限定独审；真实pureGit检查仍待独立准入。新4320本机“打开Flow/登录凭据”入口正由panels只读收敛最窄路径与root可信边界，新独立树已十scope领取并由panels实施，不占旧Recovery/Quick范围。
+[D04测试自有worktree后继](../../docs/evidence/web-platform/d04-owned-worktree-lifecycle-intake/handoff.json)在原树新精确领取并完成fa6f源码限定独审；当时pureGit待准入是历史，五项实际通过已有独审；当时ACCESS只读/实施状态亦为历史，当前已发布、仅README增量待接，见页首与唯一owner，不覆盖旧Recovery/Quick范围。
 
 本轮新输入：[任务时间单源合同与Lead有界工作段规则](../../docs/evidence/web-platform/dashboard-task-time-intake/report.md)；仅管理追溯/已接受提案，未改产品或历史owner时间。字段/枚举与规则由Lead统一，普通局部检查不再逐条建立审批链；凭据入口的真实服务/Chrome仍保必要隔离。当前领取精确变化见[同批fresh摘要](../../docs/evidence/web-platform/dashboard-task-time-intake/fresh-selected-claims.json)，DPERF已v3七scope，不复用原server/app权。
 
-时间显示沿已有D01/REQ16/27/37：[当前唯一source登记入口](../../docs/evidence/web-platform/dashboard-task-timing-provision/current-intake.json)已固定156b49d/72a、9a677v1六scope及81parser批准；登记请求待Lead正常接收，实际加载未知。ACCESS实际183来源live/current已确认；该登记不等入口功能已发布。
+时间显示沿已有D01/REQ16/27/37：[当前唯一source登记入口](../../docs/evidence/web-platform/dashboard-task-timing-provision/current-intake.json)已固定156b49d/72a、9a677v1六scope及81parser批准；当时登记待接/加载未知及ACCESS183快照仅为历史；Timing现已main/185实际部署并完成释放，ACCESS已实际opt-in发布，均见页首实际receipt，不把旧登记状态当当前。
 
 [本批必要结果与登记交接](../../docs/evidence/web-platform/current-product-checkpoint-20261007/report.md)集中原独审，不新建状态权威，不向GO外发普通进度。
 
-当前运行交接与来源：[实际归还与当前无占用](../../docs/evidence/web-platform/window-actuals-0341-20261007/intake.json)。原SVC06 offer已消费并归还，保留历史；Timing已登记、验证与实际部署加载分别记录。
+历史03:41运行交接来源：[当时实际归还与无占用](../../docs/evidence/web-platform/window-actuals-0341-20261007/intake.json)；当前窗口只看页首资源协调链接。原SVC06 offer已消费并归还，保留历史；Timing已登记、验证与实际部署加载分别记录。
 
 本次当前摘要按既有NONE/ACTIVE合同校准，[三份父status实际元数据解析](../../docs/evidence/web-platform/checkpoint-0400-20261007/parent-human-parser.json)均errors=[]、human.complete=true/missing=[]；不是产品检查或新页面采样。
 

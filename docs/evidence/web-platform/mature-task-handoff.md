@@ -1,10 +1,10 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T04:37:53.387420+00:00。本页只作协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准，不另造手填take状态。
+更新：2026-10-07T04:42:56.979042+00:00。本页只作协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准，不另造手填take状态。
 
 ## 当前窗口与用户交付
 
-**Web现无heavy/local holder、gate或预约。** [Quick唯一首次页面检查实际归还](quick-b1-actual-20261007/return.json)：04:26:26–38 outerexit1，第一组键盘选择模型仍为空而失败，0checks/0PNG；fixture/context/Chrome/两owned group/scratch均清理，Mika已获归还。原strict+26通过和c1失败不变；browser保守累计12326/余47674，不自动二跑。D06更早实际归还且已接主线。SVC06已04:32:08.205Z实际清理；Mika X01已在04:37:25.761Z fresh后实际启动原27项PG旅程，等待真实cleanup，不按预计时长交接；本组不争占。
+**Web现无heavy/local holder、gate或预约。** [Quick唯一首次页面检查实际归还](quick-b1-actual-20261007/return.json)：04:26:26–38 outerexit1，第一组键盘选择模型仍为空而失败，0checks/0PNG；fixture/context/Chrome/两owned group/scratch均清理，Mika已获归还。原strict+26通过和c1失败不变；browser保守累计12326/余47674，不自动二跑。D06更早实际归还且已接主线。SVC06已04:32:08.205Z实际清理；[X01 R1重窗口已实际归还](x01-r1-return-20261007/incoming.json)：04:37:58终态18过9败/exit1，04:40:34独立原件核对支持owned process、两DB与三listener收尾。caller过强条件的UNKNOWN及exact TMP/outer仍KEEP，大小/峰值未知，不称全部清理。本组仍无gate/预约；[Quick b2精确准备已独审接受](x01-r1-return-20261007/quick-b2-native-review.json)，[原包状态绑定与即将执行时的准入条件](x01-r1-return-20261007/quick-b2-ready.json)已齐，未启动。
 
 **任务时间展示已接主线并部署。** [原Lead实际发布和owner完成回执](checkpoint-0400-20261007/timing-main-close.json)记录03:49:29Z的4320/source52fe/185来源；03:56:00.608Z任务核齐完成，owner4b78双端clean、[9a677v2已释放](checkpoint-0400-20261007/timing-release.json)。原183快照与未部署准备都是历史。首屏易读性是独立有界TIMING02候选，见下，不重开已完成的TIMING01或复用旧写权。
 
@@ -113,3 +113,9 @@ D06的5/5仅几何/键盘/来源下钻；[390默认阅读后继](d06-second-actu
 [C02公开stream v2具体消费交接](quick-b1-actual-20261007/c02-public-stream-consumer-handoff.json)：Recovery唯一owner panels/7440/6ffv4原21保持；App与fixture现明确patch-v1，ConversationStreams是Provider。真正messages映射在Recovery原范围外，待C02固定合同与public-stream-next入口后fresh协调精确owner/scope，复用projectBodySegments并保source/channel/未知。当前不写UI、不交还App/Thread、不抢共享contract；此canonical为对co-lead具体请求的正常回应。
 
 [Quick原失败独审](d06-main-closeout-20261007/quick-b1-failed-review.json)已接受真实失败与清理；owner3a4双端clean。后继仅独立TMP b2观察/carry准备，不修改四fe6或原b1，无运行授权。[C02接缝只读研究](d06-main-closeout-20261007/c02-stream-research.json)归原CHAT06映射，固定合同与新scope交接前不写UI。
+
+[C02固定v2消费者输入](x01-r1-return-20261007/incoming.json)为source9e212e503575f8f8d6d45b4cb38032f6ec604de9、public-stream-next.md/packetd5273fb7（入站短标识），源码独审待；panels仅自身Recovery时间字段与只读seam/plan，不写UI或启动浏览器/PG。
+
+[新有限并行规则](x01-r1-return-20261007/incoming.json)允许一个实际PG重旅程与完全独立0PG浏览器按隔离及合计预算并行；不推导artifact+PG+browser三重，不改变unknown/共享依赖/性能排他。原各队一local和当前人员上限保持；Quick b2不因仅准备中的ENG PG空等，实际gate仅即将执行时fresh生成。
+
+**下一PG具体交接供原Lead读取：** X01原重窗已归还且其新修复未fixed/独审/OPEN，C02仅source局部0PG。ENG01I若先ready可按自己的固定审查与fresh接下一PG，无需等待X01准备；此为offer，未收到ENG实际RUN。Quick独立0PG可依bb992规则另行fresh，不与准备状态互相占位。
