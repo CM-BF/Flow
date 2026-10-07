@@ -1,7 +1,7 @@
 # K01 留存规划独立review
 
 状态：NOT_STARTED
-Review target commit：UNKNOWN
+Review target commit：fd02eb63d0e01d51c390dc5dcf5df8078a6f0063
 
 本次只审原plan追加K01-07～10、retention-design.md与retention-planning-inputs.json；不批准产品实现、迁移、回收或实际留存变更。固定源码依据c3ba1ad，owner仅两metadata scope。请Mika核单调身份/引用保护/锁序建议、未知回执与v1兼容、容量界限、只读消费者依据、旧31项和main事实未被覆盖，以及后继全部NOT_RUN。无需工程测试或PG。新设计文档结论必须绑定具体提交，与下列历史批准分开。
 
@@ -21,3 +21,5 @@ Mika lead（父agent /root）于2026-10-06 05:24:35 UTC完成独立只读技术r
 批准范围仅本固定9文件模块/fixture：实际createServer手工挂模块，不等生产自动挂载；ACK只取消响应body不是任意TCP故障矩阵；12样本不泛化召回/性能。hybrid/vector、下游grant与失效保留开放。共享生产入口/client由Execution Lead接线并独立小delta验证；架构模块/3表由Lead同步。
 
 2026-10-06 05:38:05 UTC：main fb906cb42391971a8b315dbd813f7633927d7265 已接收固定target，完整9实现文件零diff；批准范围未扩张，无源码新差异、无测试重跑。见main-receipt.json；后继REQ-10仍开放。
+
+本次追加独立review者为Mika委派的db_transaction_owner，只读设计与固定输入；正式结论待回执。当前target fd02eb63d0e01d51c390dc5dcf5df8078a6f0063 已解决预读提及的4096终身receipt上限、满额release及pin实例身份问题，产品检查仍NOT_RUN。
