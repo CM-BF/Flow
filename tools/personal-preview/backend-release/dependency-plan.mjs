@@ -8,6 +8,7 @@ const roots = ['apps/server', 'apps/runner'];
 // These are executable host requirements, not permission to install their whole workspace.
 const hostToolSources = [
   { name: 'tsx', importer: '.', packageName: 'flow', dependencyKind: 'devDependencies' },
+  { name: 'pg', importer: '.', packageName: 'flow', dependencyKind: 'devDependencies' },
   { name: 'vite', importer: 'apps/web', packageName: '@flow/web', dependencyKind: 'devDependencies' },
 ];
 const has = (record, key) => Object.hasOwn(record, key);

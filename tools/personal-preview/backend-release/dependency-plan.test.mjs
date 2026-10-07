@@ -6,7 +6,7 @@ const entry = version => ({ specifier: version, version });
 const integrity = `sha512-${Buffer.alloc(64, 1).toString('base64')}`;
 function fixture() {
   const manifests = {
-    '.': { name: 'flow', packageManager: 'pnpm@9.15.4', devDependencies: { tsx: '4.23.15', test: '1.0.0' } },
+    '.': { name: 'flow', packageManager: 'pnpm@9.15.4', devDependencies: { tsx: '4.23.15', pg: '8.23.1', test: '1.0.0' } },
     'apps/server': { name: '@flow/server', dependencies: { '@flow/contracts': 'workspace:*', server: '1.0.0' } },
     'apps/runner': { name: '@flow/runner', dependencies: { '@flow/contracts': 'workspace:*', sdk: '1.0.0' } },
     'packages/contracts': { name: '@flow/contracts', dependencies: { shared: '1.0.0' } },
@@ -14,13 +14,13 @@ function fixture() {
   };
   const link = { specifier: 'workspace:*', version: 'link:../../packages/contracts' };
   const lock = { lockfileVersion: '9.0', settings: { autoInstallPeers: true, excludeLinksFromLockfile: false }, importers: {
-    '.': { devDependencies: { tsx: entry('4.23.15'), test: entry('1.0.0') } },
+    '.': { devDependencies: { tsx: entry('4.23.15'), pg: entry('8.23.1'), test: entry('1.0.0') } },
     'apps/server': { dependencies: { '@flow/contracts': link, server: entry('1.0.0') } },
     'apps/runner': { dependencies: { '@flow/contracts': link, sdk: entry('1.0.0') } },
     'packages/contracts': { dependencies: { shared: entry('1.0.0') } },
     'apps/web': { dependencies: { browser: entry('1.0.0') }, devDependencies: { vite: entry('8.3.2') } },
   }, packages: {}, snapshots: {} };
-  for (const key of ['tsx@4.23.15', 'vite@8.3.2', 'test@1.0.0', 'server@1.0.0', 'sdk@1.0.0', 'shared@1.0.0', 'browser@1.0.0']) {
+  for (const key of ['pg@8.23.1', 'tsx@4.23.15', 'vite@8.3.2', 'test@1.0.0', 'server@1.0.0', 'sdk@1.0.0', 'shared@1.0.0', 'browser@1.0.0']) {
     lock.packages[key] = { resolution: { integrity } }; lock.snapshots[key] = {};
   }
   return { lock, manifests, host: { os: 'darwin', cpu: 'arm64', libc: null }, pnpmVersion: '9.15.4' };
@@ -30,7 +30,7 @@ test('selects backend production workspaces and explicit host tools without sele
   const input = fixture(), before = JSON.stringify(input);
   const plan = runtimeDependencyPlan(input);
   assert.deepEqual(plan.importers, ['.', 'apps/runner', 'apps/server', 'packages/contracts']);
-  assert.deepEqual(plan.snapshots, ['sdk@1.0.0', 'server@1.0.0', 'shared@1.0.0', 'tsx@4.23.15', 'vite@8.3.2']);
+  assert.deepEqual(plan.snapshots, ['pg@8.23.1', 'sdk@1.0.0', 'server@1.0.0', 'shared@1.0.0', 'tsx@4.23.15', 'vite@8.3.2']);
   assert.equal(plan.installationLock.importers['.'].devDependencies.tsx, undefined);
   assert.deepEqual(plan.installationLock.importers['.'].dependencies.tsx, entry('4.23.15'));
   assert.equal(plan.installationManifest.dependencies.tsx, '4.23.15');
@@ -38,6 +38,7 @@ test('selects backend production workspaces and explicit host tools without sele
   assert.equal(plan.installationManifest.dependencies.vite, '8.3.2');
   assert.deepEqual(plan.hostTools, [
     { name: 'tsx', importer: '.', dependencyKind: 'devDependencies', specifier: '4.23.15', version: '4.23.15' },
+    { name: 'pg', importer: '.', dependencyKind: 'devDependencies', specifier: '8.23.1', version: '8.23.1' },
     { name: 'vite', importer: 'apps/web', dependencyKind: 'devDependencies', specifier: '8.3.2', version: '8.3.2' },
   ]);
   assert.equal(plan.installationManifest.devDependencies.test, '1.0.0');
@@ -120,7 +121,7 @@ test('handles a dependency cycle without looping and rejects oversized input bef
   const input = fixture();
   input.lock.snapshots['sdk@1.0.0'].dependencies = { server: '1.0.0' };
   input.lock.snapshots['server@1.0.0'].dependencies = { sdk: '1.0.0' };
-  assert.equal(runtimeDependencyPlan(input).snapshots.length, 5);
+  assert.equal(runtimeDependencyPlan(input).snapshots.length, 6);
   input.manifests['.'].description = 'x'.repeat(4 * 1024 ** 2);
   assert.throws(() => runtimeDependencyPlan(input), { code: 'BACKEND_LOCK_BUDGET' });
 });
@@ -136,4 +137,21 @@ test('prepares deterministic staging bytes and detects any installer mutation be
   assert.throws(() => verifyInstallationView(plan, { ...view, lock: JSON.stringify(altered) }), { code: 'BACKEND_INSTALLATION_VIEW_CHANGED' });
   assert.throws(() => verifyInstallationView(plan, { ...view, manifest: '{}' }), { code: 'BACKEND_INSTALLATION_VIEW_CHANGED' });
   assert.throws(() => verifyInstallationView(plan, { ...view, lock: '{' }), { code: 'BACKEND_INSTALLATION_VIEW_INVALID' });
+});
+
+// Root tools cannot resolve a dependency installed only for apps/server.
+test('root host pg is explicitly projected from its fixed declaration and missing or changed source fails closed', () => {
+  const input = fixture(), before = JSON.stringify(input);
+  const plan = runtimeDependencyPlan(input);
+  assert.deepEqual(plan.installationLock.importers['.'].dependencies.pg, entry('8.23.1'));
+  assert.equal(plan.installationManifest.dependencies.pg, '8.23.1');
+  assert.equal(plan.installationManifest.devDependencies.pg, undefined);
+  assert.equal(plan.installationLock.importers['.'].devDependencies.pg, undefined);
+  assert.equal(plan.snapshots.filter(key => key === 'pg@8.23.1').length, 1);
+  assert.equal(plan.installationManifest.devDependencies.test, '1.0.0');
+  assert.equal(JSON.stringify(input), before);
+  delete input.lock.importers['.'].devDependencies.pg;
+  assert.throws(() => runtimeDependencyPlan(input), { code: 'BACKEND_MANIFEST_LOCK_MISMATCH' });
+  const changed = fixture(); changed.manifests['.'].devDependencies.pg = '9.0.0';
+  assert.throws(() => runtimeDependencyPlan(changed), { code: 'BACKEND_MANIFEST_LOCK_MISMATCH' });
 });
