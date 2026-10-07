@@ -13,7 +13,7 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition |
 | Branch | codex/web-workspace-composition |
 | 工作基线 / HEAD | base f8853d4731eb6229337279079c24617c97d4f56b / source 7e911df40d8c0ff875ac96e0fab36a1a3a253940；metadata随后seal |
-| 工作树dirty状态 | 7e911 test已固定STOP；仅own metadata封存，0child |
+| 工作树dirty状态 | 本次正常seal后全20 STOP保claim；0child/无HTTP或browsergrant |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
 | 检查状态 | FAILED fe7f18d564baaea7ed3ec87bedf49bd805cbdf10；修后HTTP1PASS/1FAIL/11未选，2652ms；两轮分别保留，browser4 NOT_RUN |
