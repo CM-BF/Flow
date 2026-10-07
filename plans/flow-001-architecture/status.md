@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T13:50:56.237072+00:00 / mainae850已推；个人7d1/6c更新与恢复已实际完成，限定结果待独审封存 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T14:19:21.845Z / main677a93e9已推；个人更新已独审/接收，204来源已实际展示 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,11 +15,11 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | main/originae850；个人后台已使用固定7d1/6c产物、accepting/v21。Web资产d629/v3、旧会话/排队/配置保留；原排队任务在resume后自然running。完整领取ACK关联UNKNOWN。 |
+| 已集成main状态 / HEAD | main/origin677a93e9已接领取资格修复、个人更新结果和后继来源。个人运行仍固定7d1/source6c、accepting21，Webd629/v3；完整旧领取ACK关联UNKNOWN，未重跑个人操作。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 当前产出 | 个人后台已更新并恢复接单，原排队任务自然转为运行；旧会话、配置和页面版本保留。 |
-| 下一可用交付 | 完成新版聊天界面与当前后台的实际联动，让用户使用已合入的恢复与消息设置能力。 |
+| 当前产出 | 个人后台已完成固定版本更新并恢复接单；原会话、任务与页面保留，新的聊天能力正在接入可用版本。 |
+| 下一可用交付 | 交付支持刷新恢复的新网页与配套后台，再完成逐消息设置在个人环境中的接通。 |
 | 当前阻塞 | ACTIVE: 工程写入资格仍待既有用户选择；个人更新阻塞已解除，其余聊天验证继续。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
@@ -237,3 +237,5 @@ Recovery十九源已main c13042ba，Web既有03/05独审和一次组合类型检
 ## 2026-10-07 13:48 UTC：个人更新实际收尾
 
 个人后台已更新并恢复接单；原queued用户任务在既存最终快照中自然running。完整领取ACK关联仍UNKNOWN，不完成整体FLOW验收。实际时间、保留边界与原件链接见[OPS本次收尾](../ops-001-status-review/status.md#2026-10-07-1348-utc个人更新实际收尾)及[SVC06唯一状态](../../../backend-release/plans/svc06-backend-release/status.md)，不另复制全部技术回执。
+
+2026-10-07T14:19:21.845Z：个人更新实际结果已独审并main0da0收口，原排队任务自然执行与旧领取关联UNKNOWN保持限定；本批main677a精确接已审CORE领取差量，原5PG不重复，仅两个直接消费者10项/类型通过。SVC06B原assignment准备最小lateLogout固定产物，SVC09A原native owner实现有限两槽生命周期，两条独立树/claim已登记；Web最小草稿材料保护由原团队修复后重新固定候选。4320实际204来源见D05 [部署回执](../../../dashboard-architecture/docs/evidence/d05/personal-successor-live.json)，未触个人服务或新模型。
