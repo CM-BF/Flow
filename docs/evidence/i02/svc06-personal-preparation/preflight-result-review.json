@@ -1,0 +1,32 @@
+{
+  "recordedAt": "2026-10-07T12:29:16.102622+00:00",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "target": "35e22b6bd5176304f991b8275ee5f170c20b8c06",
+  "decision": "APPROVED_PRECONDITION_FAILURE_FIDELITY",
+  "findings": [],
+  "manifest": {
+    "path": "docs/evidence/svc06/update-diagnostics-candidate/personal-actual-r1/result-manifest.json",
+    "bytes": 1077,
+    "sha256": "ca83327d497ed2f3c2957265555b52aa282d35219789f84c0e1df522116042e5"
+  },
+  "verified": {
+    "boundFiles": 5,
+    "bytes": 7430,
+    "fixedAndCurrentEqual": true,
+    "helperBytes": 8740,
+    "helperSha256": "c9f928932098d361faed34acbd9d7d4635dcd42c922898c39b5839463002f5ca",
+    "elapsedMs": 51,
+    "exitCode": 1,
+    "stderrBytes": 456,
+    "bothEof": true,
+    "signals": [],
+    "secondary": []
+  },
+  "conclusion": "Missing argv[2] throws OUTPUT_REQUIRED before snapshot/SQL; reviewed static imports have no personal I/O or spawn. childPidOnly helper absent is not generic process-group proof. No personal access/mutation/migration. Original failure retained; not product failure.",
+  "reviewerActions": {
+    "tests": 0,
+    "personalProbes": 0,
+    "PG": 0
+  },
+  "continuation": "Correct operator invocation only: fixed Node, same helper, fresh exclusive absolute output in verified private preparation directory; do not precreate file or migration namespace; parse full facts from durable output, not stdout summary. New coordinated bounded segment under existing authorization; no product change or repeat preparation review."
+}

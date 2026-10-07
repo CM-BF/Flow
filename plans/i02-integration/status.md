@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T12:17:26.273047+00:00 / main3b6046a5；本批接已审真实上游版本旅程与消息设置唯一来源 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T12:29:51.809776+00:00 / main7524a7fa固定；本分支接已审迁入准备和前置失败，尚未发布main |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,7 +12,7 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main3b6046a5；本批198个X01固定文件与D05三文件登记 |
+| 工作基线 / HEAD | main7524a7fa；本批18个SVC固定文件与本次接收原件，个人窗口中不改变root |
 | 工作树dirty状态 | 仅已审固定输入与本次接收记录；两个既有未知__pycache__不纳入 |
 | 工作分支状态 | in-progress |
 | 检查状态 | X01原local3/3及真实中心1/1分层获审；当前两新test noEmit0/2363ms，0PG/Chrome/provider重跑。三旧App原兼容独审保持。 |
@@ -21,9 +21,9 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 当前产出 | 插件真实上游版本升级回滚证据完成接收；正在将消息设置接入实际聊天，唯一来源已登记为202候选。 |
-| 下一可用交付 | 固定迁入入口窄补复审后，更新个人后台并保留现有页面和任务；消息设置App由原Web owner并行实施。 |
-| 当前阻塞 | ACTIVE: 个人后台更新清单正在独立审查，实际更新须与既有运行窗口协调；规划认证原因仍未知，三次调用已封存。 |
+| 当前产出 | 插件版本升级回滚证据已接收，聊天设置接线来源已在实际看板登记；个人后台的更新入口已审，原操作者正在重新核验现场。 |
+| 下一可用交付 | 接收并独立核验个人后台更新结果，保留现有页面和任务；消息设置App由原Web owner并行实施。 |
+| 当前阻塞 | ACTIVE: 个人后台更新尚未完成；首次前置调用缺参已保留并更正，原操作者按受控流程接续。规划认证原因仍未知，三次调用已封存。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -410,3 +410,5 @@ X01 五个已审claim/journal源与八个中心源按固定输入接收，所有
 2026-10-07T11:58:29.799277+00:00：插件版本回滚单例及固定证据51文件已完成独立intake审查，见[x01-version-lifecycle-intake](../../docs/evidence/i02/x01-version-lifecycle-intake.json)。主线直接接口已核兼容，无额外PG/types重复检查；原100 HTTP的固定基线旅程不提升为当前main重跑、上游版本升级或长期容量结论。
 
 2026-10-07T12:00:04.010758+00:00：插件版本回滚51文件已main183aba3a；[201来源与后继/正常收口接收](../../docs/evidence/i02/x01-lifecycle-navigation-intake.json)仅导航与metadata。三App实际兼容已通过但独审仍pending，个人服务未改变。
+
+2026-10-07T12:29:51.809776+00:00：已审迁入入口5c29/delivery8825及前置失败35e22在本I02隔离接收，[单份回执](../../docs/evidence/i02/svc06-personal-preparation/receipt.json)共18固定文件248100B；主线root7524保持固定，待个人运行归还后发布。原10定向用例和两次独立限定审查保留，Lead未重测。旧r1漏输出参数在snapshot/SQL前退出，childPidOnly helper absent不冒通用组证明，0个人动作；新1230段由唯一原operator继续，未将准备当部署。

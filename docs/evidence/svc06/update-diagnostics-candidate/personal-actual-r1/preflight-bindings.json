@@ -1,0 +1,39 @@
+{
+  "at": "2026-10-07T12:24:20.540207+00:00",
+  "window": "svc06-personal-7d1-20261007-1224",
+  "source": "5c29e13a5d251e4fb6b99d7d1277ace85dee24dc",
+  "delivery": "8825109e3f016553ff3750f94ec26bd1a26de9a3",
+  "manifestSha256": "bd7ec874e33255da18fe4913e211c107e4fd949ff6212f2ac53a5c3cfa2f07cb",
+  "runtimePins": 53,
+  "extraInputPins": 3,
+  "aliases": 4,
+  "packageFiles": 978,
+  "packageBytes": 6609996,
+  "freeBytes": 21806919680,
+  "newNamespaceAbsent": true,
+  "claim": {
+    "lead": "astra_ultra_execution_lead",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "docs/evidence/svc06",
+      "plans/svc06-backend-release"
+    ],
+    "state": "active",
+    "branch": "codex/backend-release",
+    "origin": "new",
+    "taskId": "SVC06",
+    "worker": "assignment_review",
+    "claimId": "3346a60d-0b50-4c73-bf22-9b258f8b1381",
+    "version": 9,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release",
+    "createdAt": "2026-10-06T12:42:47.489Z",
+    "updatedAt": "2026-10-07T11:32:29.601Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "claimObservedAt": "2026-10-07T12:24:20.516Z",
+  "personalMutation": false,
+  "review": "APPROVED_MIGRATION_ADAPTER_AND_PERSONAL_PREPARATION, native_center_owner final message",
+  "gate": "fixed inputs and ledger passed; personal snapshot follows"
+}

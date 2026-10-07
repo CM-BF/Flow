@@ -1,0 +1,36 @@
+{
+  "recordedAt": "2026-10-07T12:25:24.759749+00:00",
+  "window": "svc06-personal-7d1-20261007-1224",
+  "outcome": "STOPPED_BEFORE_PERSONAL_READ_OR_MUTATION",
+  "primary": {
+    "phase": "read-only preflight helper entry",
+    "code": "OUTPUT_REQUIRED",
+    "cause": "operator omitted required output pathname; fixed facts.mjs rejects before snapshot()",
+    "sourceLine": 112
+  },
+  "report": {
+    "exit_code": 1,
+    "elapsed_ms": 51,
+    "owned_state": "absent",
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    }
+  },
+  "personalReads": 0,
+  "sqlCalls": 0,
+  "migrationLaunches": 0,
+  "serviceOperations": 0,
+  "providerQueries": 0,
+  "namespaceExists": false,
+  "migrationOuterExists": false,
+  "retry": false,
+  "disposition": "Preserve this original failure. Shared window returned to Lead. Correct read-only API requires one explicit exclusive output pathname; any continuation requires fresh coordination under existing authorization."
+}

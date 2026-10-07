@@ -177,3 +177,9 @@ Target `ff445959425128876d5dd6abdb719196cc2867e6`，范围仅 [legacy-first-boot
 ### 首次采用准备独审接收
 
 2026-10-07T11:18:46.472543+00:00，Lead独立`APPROVED_PREPARATION_AND_LOCAL_ONLY`，target ff445959425128876d5dd6abdb719196cc2867e6 / delivery185ab067ef610df9976e38b877aab72755125705，无P1/P2。[原样review](../../docs/evidence/svc06/legacy-first-bootstrap/independent-review.json)；3owned idle限定、原2.5GiB/4连接与unknown KEEP不变。PG NOT_RUN，真实App与个人仍未验，不扩大原r2或产品批准。
+
+## 迁入调用装配独立增量待审
+
+旧 e4cd0bf2da3a52d7bb0facab6cfc70c671b605d4 为 REQUEST_CHANGES（P2：仅procedure ports、旧private caller要求webHost null，缺本次可调用装配）。source 30ce7eac3405e654007abdf7a7a2ff05854200d6 补固定c7b→7d1实际ports与原clone/no-replace/双锁、完整验证；原9纯用例通过不替代个人部署。唯一 reviewer native_center_owner 待固定包增量审；原44entry/15C3reports已核范围不重审，所有旧失败/unknown不改。
+
+迁入修复中第二个P2（native静态审）：30ce新增runner查询未限定schema；最终 5c29e13a5d251e4fb6b99d7d1277ace85dee24dc 只修flow.runners与真实Pool port接缝，新增1直接纯例通过、不重跑原9、不访问PG。原finding保留，固定delta仍待native唯一复审。

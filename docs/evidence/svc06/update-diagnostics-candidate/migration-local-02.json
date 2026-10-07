@@ -1,0 +1,48 @@
+{
+  "startedAt": "2026-10-07T12:20:36.618749+00:00",
+  "finishedAt": "2026-10-07T12:20:36.722081+00:00",
+  "source": "5c29e13a",
+  "selectedPattern": "actual runner port",
+  "selected": 1,
+  "prior9": "not selected; unchanged behavior",
+  "report": {
+    "pid": 446,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 103,
+    "stdout": "\u2714 actual runner port qualifies flow.runners, bounds one pool and preserves closure on each outcome (1.751667ms)\n\u2139 tests 1\n\u2139 suites 0\n\u2139 pass 1\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 54.044917\n",
+    "stderr": "",
+    "observed_bytes": 228,
+    "retained_bytes": 228,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "scratch": {
+    "path": "/private/tmp/flow-svc06-migration-local-20261007-r2",
+    "dev": 16777234,
+    "ino": 124120126,
+    "bytes": 0,
+    "cleanup": "removed-empty"
+  }
+}
