@@ -346,7 +346,7 @@ export async function runService(directory, recordKey) {
     // This path is before child spawn, or after its observed exit. Never abandon a running child for a logging failure.
     let diagnosticError;
     if (diagnostic) { try { await diagnostic.finish(null, error); } catch (secondary) { diagnosticError = startupErrorCode(secondary); } }
-    try { await save(join(config.directory, `${recordKey}-startup-failure.json`), { nonce, ...startupFailure(error, role, phase), ...(diagnosticError ? { diagnosticError } : {}) }); } catch { /* The primary error remains authoritative when evidence cannot be saved. */ }
+    try { await save(join(config.directory, `${recordKey}-startup-failure.json`), { nonce, ...startupFailure(error, role, phase, recordKey), ...(diagnosticError ? { diagnosticError } : {}) }); } catch { /* The primary error remains authoritative when evidence cannot be saved. */ }
     throw error;
   } finally { process.off('SIGTERM', stop); process.off('SIGINT', stop); }
 

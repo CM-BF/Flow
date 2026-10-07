@@ -51,6 +51,7 @@ async function viewsFor(pool, slots) {
 function summary(slots, views) {
   if (slots.length === 1) return views[0];
   return { ...views[0], state: views.every(view => view.state === views[0].state) ? views[0].state : 'mixed', activeAttempts: views.reduce((n, view) => n + view.activeAttempts, 0),
+    uncertainAttempts: views.reduce((n, view) => n + view.uncertainAttempts, 0),
     slots: slots.map((slot, index) => ({ slot: slot.id, runnerId: slot.runner.runnerId, ...views[index] })), actualClaim: 'unknown' };
 }
 function commandsFor(operation, slots) {

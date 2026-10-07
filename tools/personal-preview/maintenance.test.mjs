@@ -174,7 +174,7 @@ async function maintenancePorts({ configured = true, prepareFailure = false, sel
     state.processes['runner-settings'] = 'settings';
     operation.slots = slots.map(slot => ({ runnerId: slot.runner.runnerId, configDigest: slot.configDigest ?? null, initialVersion: 7, drainKey: slot.id + '-drain', holdKey: slot.id + '-hold', resumeKey: slot.id + '-resume' }));
   }
-  const view = { state: action === 'bootstrap' ? 'accepting' : 'maintenance', version: 7, activeAttempts: 0, operationId: operation.operationId };
+  const view = { state: action === 'bootstrap' ? 'accepting' : 'maintenance', version: 7, activeAttempts: 0, uncertainAttempts: 0, operationId: operation.operationId };
   const views = new Map(slots.map(slot => [slot.runner.runnerId, { ...view, ...(slot.id === 'settings' ? { state: secondState ?? view.state, activeAttempts: active } : {}) }]));
   const commandReceipts = new Set();
   const ports = {
@@ -298,6 +298,16 @@ test('SVC09A any busy slot prevents all stops and any hold until its work settle
   const f = await maintenancePorts({ settings: true, action: 'refresh', selected: { sourceHead: 'e'.repeat(40) }, secondState: 'draining', active: 1 });
   assert.equal((await f.run()).update, 'waiting-for-current-work');
   assert.equal(f.calls.some(call => ['stop', 'start', 'command'].includes(call[0])), false);
+});
+test('SVC09A aggregate maintenance preserves uncertainty from either slot', async () => {
+  const f = await maintenancePorts({ settings: true, action: 'status' });
+  f.views.get('runner').activeAttempts = 1;
+  f.views.get('settings-runner').activeAttempts = 2;
+  f.views.get('settings-runner').uncertainAttempts = 2;
+  const result = await f.run();
+  assert.equal(result.activeAttempts, 3); assert.equal(result.uncertainAttempts, 2);
+  assert.equal(result.slots[1].uncertainAttempts, 2); assert.equal(result.actualClaim, 'unknown');
+  assert.equal(f.calls.some(call => ['command', 'stop', 'start'].includes(call[0])), false);
 });
 test('SVC09A holds every drained slot before stopping all four services and starting once', async () => {
   const f = await maintenancePorts({ settings: true, action: 'refresh', selected: { sourceHead: 'e'.repeat(40) }, secondState: 'draining' });
