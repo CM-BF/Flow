@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T03:24:51.840815+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_ROOT_PG_CLOSURE",
+  "sourceTarget": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+  "delivery": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+  "manifestSHA256": "c7c63e3bd0cf75ad0620b05a6db0e6973ab848bf21d4475044e65e27289d4532",
+  "bindings": {
+    "source": 3,
+    "directInput": 10,
+    "evidence": 11,
+    "fixedAndCurrentExact": true
+  },
+  "reviewScope": [
+    "Complete one-line host-source addition and two direct-consumer test deltas",
+    "Root pg uses exact source manifest/lock declaration, traverses original selected package graph, and is projected only in staging; original bytes restored",
+    "Original red and three selected green checks, fixed-lock selection, bounded owned process/tmp cleanup"
+  ],
+  "evidence": {
+    "differentChecks": 3,
+    "redSelected": 1,
+    "greenSelected": 3,
+    "fixedSourceSelection": "8c80a7105cf442783e83184a14e34c8da08ebe16 / 7 importers / 271 snapshots, not installation",
+    "rounds": 3,
+    "supervisedMs": 677,
+    "rawBytes": 9028,
+    "finalOwnedGroups": "absent",
+    "tmpRemaining": []
+  },
+  "findings": [],
+  "checksByReviewer": 0,
+  "providerCalls": 0,
+  "limits": [
+    "Selector and staging approval only; actual offline installation/artifact/runtime imports remain NOT_RUN.",
+    "No personal service or deployment authorization.",
+    "Old 8c input does not include this new product source; full artifact must bind a consistent reviewed main containing this delta."
+  ]
+}

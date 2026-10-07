@@ -1,0 +1,33 @@
+{
+  "at": "2026-10-07 03:22:06 UTC",
+  "main": "8c80a7105cf442783e83184a14e34c8da08ebe16",
+  "source": "2affec4cc7a899082cbf48fce5bbd0f77293676c",
+  "intake": "m2-integration/docs/evidence/i02/svc06-host-tools-intake.json",
+  "checks": "metadata only; no repeated product checks",
+  "files": [
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "bytes": 10887,
+      "sha256": "1ed90368b61d4cf1854e3a592d3d12401fa0aa7ed5087ca0976dfdafb31de6de",
+      "equal": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.test.mjs",
+      "bytes": 10512,
+      "sha256": "8c279176e8b04ca30e3f4357e86601a7109b22081f071de204595a2fd737b0be",
+      "equal": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.mjs",
+      "bytes": 6646,
+      "sha256": "6a62890e6704fa15ae7b2d54b44d2b54ef276411f4c2452e0919adc3aedd089a",
+      "equal": true
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+      "bytes": 10613,
+      "sha256": "0794086c527e9e8d26cdf985b59f42412b1a1a37935a3ef97bdaef4ca24cb09c",
+      "equal": true
+    }
+  ]
+}

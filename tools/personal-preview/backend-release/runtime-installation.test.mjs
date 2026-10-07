@@ -20,19 +20,19 @@ async function fixture() {
   const root = join(stage, 'root'), seed = join(stage, 'seed');
   await mkdir(root); await mkdir(seed);
   const lock = { lockfileVersion: '9.0', settings: { autoInstallPeers: true, excludeLinksFromLockfile: false }, importers: {
-    '.': { devDependencies: { tsx: entry('4.23.15') } },
+    '.': { devDependencies: { tsx: entry('4.23.15'), pg: entry('8.23.1') } },
     'apps/server': { dependencies: { server: entry('1.0.0') } },
     'apps/runner': { dependencies: { sdk: entry('1.0.0') } },
     'apps/web': { dependencies: { browser: entry('1.0.0') }, devDependencies: { vite: entry('8.3.2') } },
   }, packages: {}, snapshots: {} };
   const manifests = {
-    '.': { name: 'flow', packageManager: 'pnpm@9.15.4', devDependencies: { tsx: '4.23.15' } },
+    '.': { name: 'flow', packageManager: 'pnpm@9.15.4', devDependencies: { tsx: '4.23.15', pg: '8.23.1' } },
     'apps/server': { name: '@flow/server', dependencies: { server: '1.0.0' } },
     'apps/runner': { name: '@flow/runner', dependencies: { sdk: '1.0.0' } },
     'apps/web': { name: '@flow/web', dependencies: { browser: '1.0.0' }, devDependencies: { vite: '8.3.2' } },
   };
   const indexes = [];
-  for (const [name, version] of [['server', '1.0.0'], ['sdk', '1.0.0'], ['tsx', '4.23.15'], ['vite', '8.3.2'], ['browser', '1.0.0']]) {
+  for (const [name, version] of [['server', '1.0.0'], ['sdk', '1.0.0'], ['tsx', '4.23.15'], ['pg', '8.23.1'], ['vite', '8.3.2'], ['browser', '1.0.0']]) {
     const integrity = sri(`tarball identity: ${name}`), hex = Buffer.from(integrity.slice(7), 'base64').toString('hex');
     lock.packages[`${name}@${version}`] = { resolution: { integrity } };
     lock.snapshots[`${name}@${version}`] = {};
@@ -68,10 +68,12 @@ test('staging selects backend and host tool cache without UI packages and restor
     const sourcePaths = ['package.json', 'pnpm-lock.yaml', 'apps/web/package.json'];
     const before = await Promise.all(sourcePaths.map(path => readFile(join(input.root, path), 'utf8')));
     const prepared = await prepareRuntimeInstallation(input);
-    assert.deepEqual(prepared.plan.snapshots, ['sdk@1.0.0', 'server@1.0.0', 'tsx@4.23.15', 'vite@8.3.2']);
-    assert.equal(prepared.cache.files.length, 8);
+    assert.deepEqual(prepared.plan.snapshots, ['pg@8.23.1', 'sdk@1.0.0', 'server@1.0.0', 'tsx@4.23.15', 'vite@8.3.2']);
+    assert.equal(prepared.cache.files.length, 10);
     assert.equal(JSON.parse(await readFile(join(input.root, 'package.json'), 'utf8')).dependencies.tsx, '4.23.15');
     assert.equal(JSON.parse(await readFile(join(input.root, 'package.json'), 'utf8')).dependencies.vite, '8.3.2');
+    assert.equal(JSON.parse(await readFile(join(input.root, 'package.json'), 'utf8')).dependencies.pg, '8.23.1');
+    assert.equal(JSON.parse(await readFile(join(input.root, 'package.json'), 'utf8')).devDependencies.pg, undefined);
     assert.ok(!prepared.record.importers.includes('apps/web'));
     assert.equal(await readFile(join(input.root, 'apps/web/package.json'), 'utf8'), before[2]);
     assert.deepEqual(prepared.record.hostTools, prepared.plan.hostTools);
@@ -117,7 +119,7 @@ test('selected clone verifies exact content and ignores unrelated cache paths wi
     await symlink('/does-not-exist', join(input.seed, 'unrelated'));
     const target = join(input.stage, 'copy');
     const result = JSON.parse((await clone(input.seed, target, prepared.cloneManifest)).stdout);
-    assert.equal(result.selectedFiles, 8);
+    assert.equal(result.selectedFiles, 10);
     assert.equal(result.integrityVerified, true);
     assert.deepEqual(await readdir(target), ['files']);
     for (const file of prepared.cache.files) {

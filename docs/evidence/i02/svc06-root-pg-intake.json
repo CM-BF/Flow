@@ -1,0 +1,127 @@
+{
+  "at": "2026-10-07T03:25:07.355890+00:00",
+  "mainBefore": "15847da4b4aa00d42bd3e25b9bf88ea046bb19a8",
+  "sourceTarget": "893324703fe35c3b9fca1dbfbec96bdd6b4405fa",
+  "delivery": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+  "review": "svc06-root-pg-independent-review.json",
+  "sourcePreimages": "All three exactly match reviewed base82b/currentmain158",
+  "checks": "Reused original local three checks and independent review; no repeated tests/install/PG/provider. TUI parent metadata only replaces stale disk hold with original open acceptance.",
+  "fullArtifact": "NOT_RUN",
+  "personalRuntime": "Unchanged af51 / accepting v18 / Web d629 v3",
+  "files": [
+    {
+      "path": "docs/evidence/svc06/host-tools-main-receipt.json",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 1178,
+      "sha256": "e99e15f21ec050d93f96b49451f582005e3a916891d98c9124f5e5c83adeb0f1"
+    },
+    {
+      "path": "docs/evidence/svc06/root-pg-checks.md",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 2011,
+      "sha256": "f18654dd0f35225513659a54331df3437b8a5bece30238dab225b990c0936f8a"
+    },
+    {
+      "path": "docs/evidence/svc06/root-pg-manifest.json",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 7060,
+      "sha256": "c7c63e3bd0cf75ad0620b05a6db0e6973ab848bf21d4475044e65e27289d4532"
+    },
+    {
+      "path": "docs/evidence/svc06/root-pg-validation/check.py",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 4939,
+      "sha256": "8c661c48b572a2d43ce1e98c5d85d41e15d339c9283e2e1b53c276530a79ccb9"
+    },
+    {
+      "path": "docs/evidence/svc06/root-pg-validation/fixed-source-selection.mjs",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 2501,
+      "sha256": "853d17ef6fbe3950abb3ca79f4cc2e16352a547aa9de5a8812e4eb92d9fd14f7"
+    },
+    {
+      "path": "docs/evidence/svc06/root-pg-validation/fixed-source/stderr.txt",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/root-pg-validation/fixed-source/stdout.txt",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 7327,
+      "sha256": "782d4d659eab59f4dd907553c9e6917d8d764fca8b73be85a3367f6f530f4de6"
+    },
+    {
+      "path": "docs/evidence/svc06/root-pg-validation/green/stderr.txt",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/root-pg-validation/green/stdout.txt",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 465,
+      "sha256": "610585582d0ef9bf3c1b93c68cf17bfbf06143d1fbe00f3bfa049bd5cfc61c9f"
+    },
+    {
+      "path": "docs/evidence/svc06/root-pg-validation/red/stderr.txt",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc06/root-pg-validation/red/stdout.txt",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 1236,
+      "sha256": "88d999a6e87460b1a08263d3f85b50245bb02a6da45c9da38f506820154f6ab6"
+    },
+    {
+      "path": "docs/evidence/svc06/root-pg-validation/run.json",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 9277,
+      "sha256": "9c1084eae17f4da6f855713c4b6d8c1b8cec2fbde809f007cdb163a66be822a6"
+    },
+    {
+      "path": "plans/svc06-backend-release/plan.md",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 9834,
+      "sha256": "159921db6ac1bf4c53c03fb964a8b9aea02dd7b55a2ca3c9c3c3f3975af0a118"
+    },
+    {
+      "path": "plans/svc06-backend-release/review.md",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 5677,
+      "sha256": "626b92460620ff146db9719bba5265040445bb2ab8335d9e0abeaa26bd47e334"
+    },
+    {
+      "path": "plans/svc06-backend-release/status.md",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 11074,
+      "sha256": "360415d06a2ba8522950f4e42c70686fda6b6c98d99299f6b196401b58bea22b"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.mjs",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 10976,
+      "sha256": "bb39c0dd9925ceb7f93638a6411c09d0dbeaa01132c9265c7a0a71c18bd5bdda"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/dependency-plan.test.mjs",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 11836,
+      "sha256": "1c0d92e94d188db47b51fa5288e086697625c6a6da62eec83bad2b348f4a155a"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime-installation.test.mjs",
+      "fixedRef": "b7dc5292334a0546ca626c7b2ee5ea4cf2f18100",
+      "bytes": 10913,
+      "sha256": "4c063092ac035c321fb6209b5218154809240de041ba3c3e1f9c7b8db76af27c"
+    },
+    {
+      "path": "plans/tui01-terminal-client/status.md",
+      "fixedRef": "1d357145e887631f6de550258243a2b35d323bc2",
+      "bytes": 9987,
+      "sha256": "a0f721baab0d0addb4400282fb726979a759ff694b43bccbda23deee2ddf9e22"
+    }
+  ]
+}
