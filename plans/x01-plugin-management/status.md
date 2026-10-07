@@ -22,11 +22,11 @@
 | 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
 | 实现目标 | 37177aba665fa8d787e40c2a18c4d124bdf819ca |
 | 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-pg-fixture.ts, docs/evidence/x01/enable-binding-pg-vitest.config.mjs, docs/evidence/x01/enable-binding-pg-once.py, docs/evidence/x01/enable-binding-pg-caller.test.py, docs/evidence/x01/enable-binding-pg-input.json |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | implementation |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 插件启用、冻结绑定与逐阶段授权的领域模块已通过验收和独立审查，可受控接入主线 |
-| 下一可用交付 | 主线接收固定领域模块；生产runner接线和真实现成npm能力随后继续 |
+| 当前产出 | 领域模块已审待主线接收；正在补齐插件领取资格与重启恢复的持久请求边界 |
+| 下一可用交付 | v3显式插件领取合同与既有AdmissionJournal兼容片，保护未知请求和宿主降级恢复 |
 | 当前阻塞 | ACTIVE: 等待主线受控接收；生产调用链与semver能力仍未接入，当前无运行资源占用 |
 | 需用户决定 | NONE |
 
@@ -237,3 +237,5 @@ Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case�
 2026-10-07T05:14:26.740103+00:00：R3结果固定2ee9fa44，24bindings/20raw28750B与16source162785B的最小main intake待独审；原27一次27/27，原R1/R2失败不改。fresh账本v8 ACTIVE/17scope无变，当前0运行/0待launch。PG已实际归还，按Mika新队列明确SVC08 assignment为next-ready并已直接通知Web co-lead；C02无PG holder不阻其准入。owner在最终packet提交/push后停止写入保留claim，下一由chatui只读结果审。
 
 2026-10-07T05:33:27.229572+00:00：fresh核e628=origin clean、claim v8 ACTIVE/17scope。接收chatui05:17:35独审APPROVED并将[唯一集成入口](../../docs/evidence/x01/enable-binding-integration-ready.md)标READY；固定16源/24结果bindings及全部失败原件不改，原intake的pending字段作为封存历史由READY receipt后继。0tests/PG/types/产品扩写；Execution Lead可直接读取最小受控输入。完成本提交/push后停止写入保claim，未main/未完整X01。
+
+2026-10-07T05:42:46.859177+00:00: fresh a6d clean/v8后原子amend到v9 ACTIVE22scope（[回执](../../docs/evidence/x01/plugin-claim-amend-v9.json)），新增5精确literal。仅按fixedmain bf8读取已main S01P07 runner-claim/admission-journal两源作为新片基线；16intake源/既有raw固定不改。新片实现/验证未完成，不继承旧APPROVED；共享C02 index/config/main/tasks和CHAT05 runner.ts未领取不写。

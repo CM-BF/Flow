@@ -1,0 +1,18 @@
+{
+  "fixedMain": "bf8b5f1d5f554b3195b04b150821d8262a4daef1",
+  "files": [
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "commit": "bf8b5f1d5f554b3195b04b150821d8262a4daef1",
+      "bytes": 3958,
+      "sha256": "15ab790ab835a17467c161e49bf7f1843a2f3604f63748559ee3bc4f5bfc89ce"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "commit": "bf8b5f1d5f554b3195b04b150821d8262a4daef1",
+      "bytes": 7646,
+      "sha256": "ba88071c84bf924814cbf7ebd3fff79f2516a3b969fbc37d4b01f5e55d115dab"
+    }
+  ],
+  "reason": "These newly claimed literals consume the already-integrated S01P07 base; no other current-main file is overwritten."
+}
