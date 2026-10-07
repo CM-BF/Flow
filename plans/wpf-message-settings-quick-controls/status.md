@@ -5,16 +5,16 @@
 | 任务 ID | WPF-MESSAGESETTINGS02 |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新时间 | 2026-10-07 06:45:03 UTC |
+| 最近更新时间 | 2026-10-07 06:55:52 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工旧原件尚无可明确认定的实际开工时点，未用claim/commit倒推；完成未发生 |
 | 单一status owner / model | w01_owner / gpt-6-astra |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 快速设置的类型与组合逻辑已验证；两条原生键盘序列已在独立控制页观测，但都未选中，真实弹窗对照尚未启动 |
+| 当前产出 | 快速设置的类型与组合逻辑已验证；已准备另一条原生键盘对照路径，待独立审查与实际验证 |
 | 下一可用交付 | 经验证的模型、思考力度与速度快速选择 |
-| 当前阻塞 | ACTIVE: 两种键盘序列在独立原生控制页均未选值；需要明确后续对照前提，完整交互验收仍未通过 |
+| 当前阻塞 | ACTIVE: 两种键盘序列在独立控制页均未选值；新typeahead对照已固定但未运行，完整交互仍未通过 |
 | 需用户决定 | NONE |
 | 本片段交付阶段 | review |
 | 工作分支状态 | in-progress |
@@ -117,3 +117,7 @@ fixture/context正常关闭，全日志EOF/0drop，parent15507/worker15534/Chrom
 | MSGQUICK-W04 | UNKNOWN | OPEN | 验证失败 | 两条原生序列均未让独立控制页选值，真实modal对照前提未成立；责任方w01_owner/root，解除条件为有依据的不同对照输入与合法后继；不重复同样run或以selectOption替代键盘验收。 | [native3实际观测/独审](../../docs/evidence/wpf-message-settings-quick-controls/native-control-third-20261007/root-actual-review.json)；等待实际起点不能由失败时间自动推算 |
 
 等待表仅消费已有事件；各段起点UNKNOWN，不累计相加、不据此扣除净工时，OPEN仅表示本owner明确仍待解除。
+
+## Native typeahead C 当前准备 · 2026-10-07 06:55:52 UTC
+
+诊断source `ac44d327cdff3180c0dff36c3e199cd47669fc88`、[精确范围/来源](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/source-manifest.json)。只C一次m/可信原生事件后modal；旧A/B和六组不变。源码/父worker待独审，NOT_RUN，无noEmit或26重复；runtime新段仍23322、余66678，旧30625闭合。当前资料仅支持独立typeahead假设，不证明Chrome154根因；无gate/窗口预约。等待W04仍OPEN，开始UNKNOWN不补造；固定源码不等解除验证等待。

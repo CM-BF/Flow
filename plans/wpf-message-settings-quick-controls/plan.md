@@ -83,3 +83,7 @@ fixture/context正常关闭，全部EOF/0drop、parent51494/worker53613/Chrome51
 [完整原件与root独审](../../docs/evidence/wpf-message-settings-quick-controls/native-control-third-20261007/README.md)：sourcea9ec/HEAD0c88、Chrome154.0.8037.99；actualouterexit1/唯一FAILEDseal，worker INCONCLUSIVE而无场景exception。两独立plain页UTF-8/模型/count1，A10+B14个可信事件无input/change，逐键快照value空/index0/focusedtrue/openfalse。因plain B未真实选值，actual modal未运行；0/6功能组、0PNG。原键盘验收不削弱，不以该样本认定唯一产品或平台原因，也不回推.98。
 
 fixture/context正常关闭，全日志EOF/0drop，parent15507/worker15534/Chrome15514与scratch/profile absent，资源已实际归还。parent5830/late5831/outer5872.413750039414ms原样；本次保守5873，新90s段累计23322/余66678；旧30625封闭/未用29375不抵扣。root限定接受FAILED/INCONCLUSIVE观测与owned清理，不是feature PASS。源a9ec不变、无第四同样run；完整任务NOT_COMPLETED。
+
+## Native typeahead C 源准备 · 2026-10-07 06:55:52 UTC
+
+新增诊断目标 `ac44d327cdff3180c0dff36c3e199cd47669fc88`，独立源码/packet审查 NOT_STARTED。当前完整feature仍UNKNOWN；原fe6 source及26direct审批不扩到本诊断。见[设计与最小diff](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/README.md)。仅新plain C/native m有因果区分力的输入，成功后同m一次modal；不重跑已失败A/B、不替代原六组。旧actual/账23322+30625原样，runtime0，无新gate。
