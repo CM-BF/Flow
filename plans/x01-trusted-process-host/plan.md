@@ -1,10 +1,10 @@
 # X01-TRUSTED-PROCESS-HOST01 — 受信插件进程生命周期
 
-创建/更新：2026-10-07。状态：in-progress（design only）。父任务：[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)，追溯 X01-04/05/07；co-lead Mika；owner db_transaction_owner / gpt-6-astra。唯一状态见 [status.md](status.md)，独审见 [review.md](review.md)。
+创建/更新：2026-10-07。状态：in-progress（首产品局部已验，待独审）。父任务：[X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md)，追溯 X01-04/05/07；co-lead Mika；owner db_transaction_owner / gpt-6-astra。唯一状态见 [status.md](status.md)，独审见 [review.md](review.md)。
 
 ## 结果与范围
 
-为真实 `executePluginTool` consumer 设计 opt-in、每 invocation 新进程的受信 host。保留父授权/ownership/outbox唯一权威，并能准确区分 child 终止与业务未知。完整 Interface、合法 byte cap、取消/发布/平台语义在 [interface.md](../../docs/evidence/x01-trusted-process-host/interface.md)。当前没有产品/工程检查授权；设计通过后由 Mika 决定最小实现片。
+为真实 `executePluginTool` consumer 设计 opt-in、每 invocation 新进程的受信 host。保留父授权/ownership/outbox唯一权威，并能准确区分 child 终止与业务未知。完整 Interface、合法 byte cap、取消/发布/平台语义在 [interface.md](../../docs/evidence/x01-trusted-process-host/interface.md)。原设计阶段无工程运行；Mika随后授首片，当前产品/验证范围见末节。
 
 固定base4fdd；现main产品默认in-process不变。新模式不是第三方安全沙箱；不完成全X01隔离/升级/卸载目标。原来的受信材料与公开能力只作固定源码输入，不继承为新模式执行证据。
 
@@ -12,11 +12,11 @@
 
 - [x] **X01TP-01** 固定真实consumer、Node24.20、release闭包与当前scope owners，记录现有证据和未知。
 - [x] **X01TP-02** 固定最小Interface、身份/双phase/未知与资源语义、产品候选literal及验收预算。
-- [ ] **X01TP-03** 独立只读计划review无P1/P2，交Mika决定实现及跨owner手回；本TODO不意味着产品已实现。
+- [x] **X01TP-03** 独立只读计划review无P1/P2，交Mika决定实现及跨owner手回；本TODO不意味着产品已实现。
 
-## 候选产品范围（未领取）
+## 原设计候选产品范围（12:39历史观察）
 
-以下是下一实施片的最大候选清单，真正 take/amend 前需按最终设计缩到必要 literal；现在 metadata claim 不能写这些文件。
+以下保留原设计候选；12:58本claim已v2/14正式接回七leaf并领取五newleaf，release test不在领取范围。
 
 | exact literal | 职责 / 2026-10-07T12:39:21.334Z owner观察 |
 | --- | --- |
@@ -57,3 +57,12 @@
 输入清单 [source-inputs.json](../../docs/evidence/x01-trusted-process-host/source-inputs.json)、claim/provision/owner原件在同目录。find-skills本地匹配Node/TS/进程Interface；应用brainstorming比较独立进程/OS沙箱、codebase-design将实现集中一个Module、clean-code核命名/错误权威/重复与资源释放。路径和实际复核见 quality.md；无新技能安装。
 
 本design交付条件仅为三TODO有固定输入和独立review。产品/main/部署均未发生，计划通过不勾父X01-04/05/07。架构变更候选是 runner→process host→worker→既有host，实施接收后由相应owner更新已核架构视图；当前仅planned。
+
+## Mika授权首实施（2026-10-07）
+
+设计e870两P2已独审关闭。首片追加稳定TODO：
+
+- [x] **X01TP-04** 在正式scope移交后实现process host/worker、资源receipt和真实executePluginTool/private opt-in纵向接线；T1–T6/T8按本段边界验证。
+- [ ] **X01TP-05** 固定产品+真实局部结果，独立实现审查并交主线；T7仍交Original release owner后继，不冒可部署全验。
+
+为落实已审32槽FS身份与回收单一职责，最大候选追加一个私有leaf `apps/runner/src/plugins/process-resources.ts`，须先amend成功。它不提供一般文件/进程恢复平台；资源factory需要明确close（runner finally调用）以清除正常owner marker，原invoke Interface仍不变。

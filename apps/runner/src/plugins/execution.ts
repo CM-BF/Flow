@@ -1,7 +1,7 @@
 import type { TrustedPackageStore } from '@flow/plugin-runtime';
 import type { Ownership, TaskSubmission, RunnerEventData } from '@flow/contracts';
 import { isPersistablePluginText, pluginToolBindingSchema, pluginGrantReceiptSchema, type PluginToolBinding, type PluginGrantRequest, type PluginGrantReceipt } from '../../../../packages/contracts/src/plugin-runtime.js';
-import { invokeInstalledTool, PluginToolError, type PluginToolResult } from './host.js';
+import { invokeInstalledTool, PluginToolError, type PluginToolResult, type PluginToolInput } from './host.js';
 import { textDigest, verifyText } from '../verifier.js';
 
 /** Transport supplies this only when an authorization request may have committed without an ACK. */
@@ -21,6 +21,8 @@ export interface PluginExecutionInput {
   runnerId: string;
   store: TrustedPackageStore;
   signal: AbortSignal;
+  /** Trusted local execution seam; omitted preserves the in-process host. */
+  invokeTool?(input: PluginToolInput): Promise<PluginToolResult>;
   assertOwnership(): void | Promise<void>;
   /** One request per phase, with a stable key supplied by the existing runtime transport. No retry here. */
   authorize(request: PluginGrantRequest): Promise<PluginGrantReceipt>;
@@ -40,7 +42,7 @@ export async function executePluginTool(input: PluginExecutionInput): Promise<Pl
     || task.engineering || task.resumeSessionId || task.messageSettings) throw new PluginToolError('BINDING_MISMATCH');
   const verification = task.verification ? { ...task.verification } : undefined;
   try {
-    const result = await invokeInstalledTool({ store: input.store, input: prompt, signal: input.signal, assertOwnership: input.assertOwnership,
+    const result = await (input.invokeTool ?? invokeInstalledTool)({ store: input.store, input: prompt, signal: input.signal, assertOwnership: input.assertOwnership,
       binding: { bindingId: binding.bindingId, invocationId: binding.invocationId, taskId: binding.taskId, ...ownership,
         material: { installationId: binding.materialId, storeId: binding.storeId, artifact: binding.artifact, treeDigest: binding.treeDigest },
         configuration: Object.fromEntries(Object.entries(binding.configuration).map(([key, value]) => [key, String(value)])) },

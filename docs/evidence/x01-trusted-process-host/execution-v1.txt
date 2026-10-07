@@ -177,17 +177,3 @@ test('trusted worker preserves ownership loss before it can invoke', async () =>
     await expect(executePluginTool(input)).rejects.toBe(lost);
   });
 });
-
-test('trusted direct parent abort settles the owned worker without claiming rollback', async () => {
-  await withProcess(() => `export const hostApiMajor=1;export function invoke(){return 'never'}`, async input => {
-    const abort = new AbortController(); input.signal = abort.signal;
-    input.authorize = async request => { if (request.phase === 'load') abort.abort(); return receipt(input, request); };
-    await expect(executePluginTool(input)).rejects.toBeInstanceOf(PluginExecutionUnsettled);
-  });
-});
-test('trusted direct diagnostic overflow discards text and retains uncertain business outcome', async () => {
-  await withProcess(() => `export const hostApiMajor=1;export function invoke(){process.stdout.write('PRIVATE'.repeat(4000));while(true){}}`, async (input, facts) => {
-    await expect(executePluginTool(input)).rejects.toBeInstanceOf(PluginExecutionUnsettled);
-    expect(facts[0]!.diagnosticBytes).toBeGreaterThan(16384); expect(JSON.stringify(facts)).not.toContain('PRIVATE');
-  });
-});

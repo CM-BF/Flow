@@ -18,6 +18,12 @@ vi.mock('node:fs/promises', async importOriginal => {
     return fs.unlink(path);
   } };
 });
+const processState = vi.hoisted(() => ({ invokes: 0, closes: 0, roots: [] as string[] }));
+vi.mock('./process-host.js', async () => ({ createTrustedProcessHost: async ({ resourceRoot }: { resourceRoot: string }) => {
+  processState.roots.push(resourceRoot);
+  return { invoke: async (input: import('./host.js').PluginToolInput) => { processState.invokes++; return (await import('./host.js')).invokeInstalledTool(input); },
+    close: async () => { processState.closes++; } };
+} }));
 const state = vi.hoisted(() => ({ invokes: 0, unknown: false, checkPersisted: async () => {} }));
 vi.mock('./host.js', async importOriginal => {
   const actual = await importOriginal<typeof import('./host.js')>();
@@ -190,4 +196,13 @@ test('terminal owner-fenced replay retains original bytes and admission without 
   expect(await restartTerminal(f, true)).toEqual([JSON.parse(saved)]);
   expect(await readFile(join(f.directory, textDigest(f.identity.attemptId), 'uncertain-events.json'), 'utf8')).toBe(saved);
   expect((await AdmissionJournal.open(f.directory)).unresolved(new Set())).toBe(true); expect(state.invokes).toBe(1);
+});
+
+test('trusted direct runtime opt-in selects the process host and closes it after original outbox completion', async () => {
+  processState.invokes = 0; processState.closes = 0; processState.roots = [];
+  const f = await fixture(); f.options.pluginExecution!.executionMode = 'trusted-process'; await runRunner(f.options);
+  expect(processState.invokes).toBe(1); expect(processState.closes).toBe(1);
+  expect(processState.roots).toEqual([join(await (await import('node:fs/promises')).realpath(f.directory), 'plugin-process')]);
+  expect(f.reports.flatMap(batch => batch.events.map(event => event.type))).toEqual(['artifact', 'verification', 'completed']);
+  expect((await AdmissionJournal.open(f.directory)).unresolved(new Set())).toBe(false);
 });

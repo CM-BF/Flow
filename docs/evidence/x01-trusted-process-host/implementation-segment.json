@@ -1,0 +1,43 @@
+{
+  "startedAt": "2026-10-07T12:55:40.000Z",
+  "deadline": "2026-10-07T13:15:40.000Z",
+  "sourceBase": "4fdd856293a502209d7509ea37da901bbfd89f72",
+  "currentMainObservation": "7524a7fa6768ace7e284fc80d7cc25c1407ec2a9",
+  "sharedSevenDiff": "empty",
+  "budgets": {
+    "childSeconds": 60,
+    "cumulativeSeconds": 120,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 2097152,
+    "minimumFloorBytes": 6914834432
+  },
+  "productClaim": {
+    "claimId": "8c2f0b78-2aa4-435a-98df-991b9f4b7d15",
+    "version": 2,
+    "scopeCount": 14,
+    "committedAt": "2026-10-07T12:58:06.882Z"
+  },
+  "actualRuns": 5,
+  "localGateFloorBytes": 7500000000,
+  "ordinaryReturnedAt": "2026-10-07T13:10:15.304149+00:00",
+  "supervisionElapsedMs": 30129,
+  "rawBytes": 1718,
+  "selected": {
+    "behavior": 11,
+    "direct": 3
+  },
+  "passes": {
+    "behavior": 11,
+    "direct": 3
+  },
+  "testDistinct": 14,
+  "types": {
+    "initial": 2,
+    "fixed": 0,
+    "final": 0
+  },
+  "resourceFacts": "5 owned groups final absent, merged EOF, complete raw, five same-inode empty TMP removals; no pending launch",
+  "measurement": "Per-supervisor elapsed; excludes interpreter and final persistence. TMP final empty sample is not a peak/hard OS quota.",
+  "coverage": "Real executePluginTool+worker; runtime process selection uses a seam mock. No real center/OS runner/release artifact/PG/provider."
+}
