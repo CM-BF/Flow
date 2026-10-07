@@ -1,8 +1,8 @@
 # 固定代码审查入口：WPF-RECOVERY01
 
-**Review target `0141cf4f23032ce206b7eaf0a19729c966ca4751`；base `84005a260dfcb668cd38b09c21564d0754a0f513`；完整feature review `IN_PROGRESS`（root已开始固定源码审，结论待出）。** 本文件准备实际独立代码审查，不是作者自评通过。WT/branch：web-conversation-recovery / codex/web-conversation-recovery。当前19源码与target逐字一致，后置改动仅owner记录；源已冻结。
+**Review target `55b4917e732d11d5e5f660f9c22a1022d7094015`；base `84005a260dfcb668cd38b09c21564d0754a0f513`；完整feature review `CHANGES_REQUESTED`（0141正式两P2；当前固定修复供复审）。** 本文件准备实际独立代码审查，不是作者自评通过。WT/branch：web-conversation-recovery / codex/web-conversation-recovery。当前19源码与target逐字一致，后置改动仅owner记录；源已冻结。
 
-[精确19文件/每文件SHA与Git blob/统计](feature-review-manifest.json)：16个产品源+3个专测/fixture，共3095新增/132删除；范围仅原claim21中的19literal和两own目录，target相对base无范围外路径。源包含App实际消费者、ConnectionSession、唯一Journal/P01 binding及原Outbox/Queue/Steer authority，不是孤立框架。无server/shared contract/依赖/lock写入。证据目录/plan记录随metadata提交；原raw不能被编辑或当代码。
+[精确19文件/每文件SHA与Git blob/统计](feature-review-manifest.json)：16个产品源+3个专测/fixture，共3205新增/133删除；范围仅原claim21中的19literal和两own目录，target相对base无范围外路径。源包含App实际消费者、ConnectionSession、唯一Journal/P01 binding及原Outbox/Queue/Steer authority，不是孤立框架。无server/shared contract/依赖/lock写入。证据目录/plan记录随metadata提交；原raw不能被编辑或当代码。
 
 ## 已实现Interface及原authority
 
@@ -38,8 +38,13 @@
 
 GO新可用性验收归原03/05：恢复目录主层改用获准轻metadata标题/摘要/本地Intl时间，UUID/精确UTC留details，不预取正文；空text不判重复/自动删稿，保unknown/key/材料语义。仅后继记录，不阻当前固定代码审查或把这轮图片改成新产品FAIL。
 
-独立review应以此固定19源/base读取实际代码，核修复证据与未验边界后给结论；作者不提前标APPROVED，root已开始固定源码审，现review为IN_PROGRESS，最终结论待出。
+独立review应以此固定19源/base读取实际代码，核修复证据与未验边界后给结论；作者不提前标APPROVED，0141正式review为CHANGES_REQUESTED，当前两个修复供独立增量复审。
 
-## 当前独立审查中的候选（未实复现，未改源）
+## 正式两P2修复与新增验证
 
-Root指出一个P2候选：App.tsx BrowserWorkspace约1233的ready effect每次identity对象变化会setSelecting(false)；用户Change connection打开表单后，后台focus/pageshow/visibility触发read成功可能关闭正在编辑的中心选择。候选尚未浏览器复现，root继续核连接意图/保稿分支后集中给正式finding；本批不改源码、不加测，原full7结果不改。
+[0141 root完整源审](0141-feature-root-review.json)与[peer复核](0141-feature-peer-review/report.md)均确认两项P2。当前固定修复只改App、Steer control与原browser/direct两文件，其他15源同0141。
+
+- SELECTING：显式选择意图独立于背景ready；成功的用户Connect/Check existing才结束当前选择，迟到操作受本地revision与effect清理保护。新增独立`connection-choice`旅程复用真实App/public cookie读，验证输入保留、显式返回与0业务POST；**browser NOT_RUN**。原full7原顺序/断言保持。
+- STEERING-TIMEOUT：同generation在写前屏障deadline进入原键unknown/locallyBlocked，0HTTP且可显式重试；已解码ACK且accepted checkpoint提交后不因deadline降级，旧generation仍不发布并可显式Restore对账。
+- [新增定向局部检查](final-p2-local-index.json)：ecce548四个受控case PASS，旧50 NOT_SELECTED。初noEmit两处mock签名宽化红原样保留；55b只补3处SteeringPort类型泛型，noEmit exit0，运行行为无改。仅受控IDB/端口，不冒mountedApp或真Steer HTTP。
+- 新普通local段累计实际13221.340917ms，保守charge13222/30000，0PG/Chrome/HTTP。browser新150s段仍13134/150000，剩136866；没有当前gate或重跑权限。

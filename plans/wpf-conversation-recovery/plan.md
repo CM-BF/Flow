@@ -164,3 +164,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ### 原MATURE01/06恢复目录可读性后继（GO实际图示验收）
 
 沿RECOVERY01-03/05现范围记录，不阻本轮full7限定接收：默认用获准轻metadata标题/有界内容摘要、本地Intl时间和紧凑层级帮助区分记录；精确record/conversation身份与UTC保留details。未知标题诚实fallback，禁止预取聊天正文；空text不证明重复、无用或可删除，保files/knowledge/intent/unknown/原key语义，不自动合并/删除/重发。后继按本地web-design-guidelines/Arc方向做固定设计再实施，本批不改UI、不新增任务层级。
+
+## 2026-10-07 06:09:00 UTC — 完整源审两P2修复（原02/03/04/05/06）
+
+固定0141正式review CHANGES_REQUESTED；当前55b沿原App选择意图和Steer command authority窄修，新增4受控deadlinecase已过、noEmit修窄化后0，真实connection-choice两组待原有限段准入。原full7保持历史PASS，不重跑；完整CREATE/QueueSteer/材料/SSEdelivery/二中心仍未覆盖。当前工程target见status，不以未验后继把已实现片退回UNKNOWN。

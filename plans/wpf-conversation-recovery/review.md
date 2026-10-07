@@ -1,14 +1,14 @@
 # WPF-RECOVERY01 独立审查
 
-状态：IN_PROGRESS（root已开始固定0141完整源码审，正式结论待出）。
+状态：CHANGES_REQUESTED。Root完整固定0141审查提出两项P2：显式中心选择被背景read关闭、Steer存储屏障跨deadline后卡sending；本批原21内窄修，原full7实证不变。
 
-Review target commit：`0141cf4f23032ce206b7eaf0a19729c966ca4751`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
+Review target commit：`55b4917e732d11d5e5f660f9c22a1022d7094015`。Base：84005a260dfcb668cd38b09c21564d0754a0f513。当前scope为[receipt](../../docs/evidence/wpf-conversation-recovery/take-receipt.json)的21literal；完整实现必须含真实App/P01消费者和四类原controller，不以独立journal通过代替交付。
 
 固定完整变更/修复/实证入口：[feature-review-entry.md](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)，19源/base/pins明确；当前root审查进行中，不是作者自评。
 
 可复制只读审查任务：先核本worktree/branch/HEAD/dirty、AGENTS与plan/status；固定实现后完整读scope，检查cookie连接与namespace、同步receipt→strict事务complete/CAS→HTTP、CREATE两阶段、完整草稿和材料、跨tab冲突/unknown原key、P01私有授权、资源/字节预算。按已授权隔离检查，明确作者与独立证据、未验中心/个人服务。所有finding回owner，不写实现。
 
-当前作者检查：原50受控/119选择回调/types/serialization10保原绑定；旧五次browser FAIL与各自部分PASS不变。新有限段首run在765ab/0141原full7实际PASS、exit0/双EOF/owned清理和双390图已保存，已获root限定实际证据接受；原full7不覆盖SSEdelivery、CREATE/QueueSteer、完整profile/knowledge/steering与二中心。完整feature NOT_STARTED；当前工程target已固定0141，main未接。
+当前作者检查：原50受控/119选择回调/types/serialization10保原绑定；旧五次browser FAIL与各自部分PASS不变。新有限段首run在765ab/0141原full7实际PASS、exit0/双EOF/owned清理和双390图已保存，已获root限定实际证据接受；原full7不覆盖SSEdelivery、CREATE/QueueSteer、完整profile/knowledge/steering与二中心。完整feature正式0141结论CHANGES_REQUESTED；当前55b修复供复审，main未接。
 
 ## 阶段源码预检（不是最终feature审查）
 
@@ -189,3 +189,7 @@ Root固定 `1bc4f20b9257b294adcadd6b68b1b9e015e04e86` 的[独立报告](../../do
 [0141 root源审](../../docs/evidence/wpf-conversation-recovery/0141-expiry-root-review.json)限定批准fixture时间对/防御ceiling。其后[full7实际](../../docs/evidence/wpf-conversation-recovery/continuous-first-validation.md)已通过，作者未将其当完整feature独审；[Root限定实际审](../../docs/evidence/wpf-conversation-recovery/continuous-first-root-review.json)已原样归档：ACCEPTED_SCOPED_FULL7_ACTUAL_AND_OWNED_CLEANUP_NOT_WHOLE_FEATURE，0findings；不是完整feature独审。真实未覆盖范围见上文，旧所有FAIL/raw保持，0盲复跑。
 
 Root已开始固定0141相对base84005完整差异审查；当前有连接选择被后台ready身份回调关闭的P2候选（未实复现，正式finding待root集中结论）。作者保持19源码冻结，不新增验证；原full7受限实证仍有效。
+
+## 2026-10-07 06:09:00 UTC — 正式两P2修复回执
+
+原完整0141审查：[root](../../docs/evidence/wpf-conversation-recovery/0141-feature-root-review.json)/[peer](../../docs/evidence/wpf-conversation-recovery/0141-feature-peer-review/report.md)。当前target`55b4917e732d11d5e5f660f9c22a1022d7094015`，四源最小delta；SELECTING/STEERING-TIMEOUT源码addressed，定向4PASS+类型exit0（原红保留）。accepted deadline保持knownaccepted、旧generation忽略；connection-choice只测试源未实际运行。状态CHANGES_REQUESTED直到独立复审收口，不因4PASS冒整个feature批准。

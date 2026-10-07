@@ -1,18 +1,18 @@
 {
-  "preparedAt": "2026-10-07 06:09:00 UTC",
+  "preparedAt": "2026-10-07T05:58:47.414232+00:00",
   "base": "84005a260dfcb668cd38b09c21564d0754a0f513",
-  "target": "55b4917e732d11d5e5f660f9c22a1022d7094015",
-  "featureReview": "CHANGES_REQUESTED / P2 source fixes awaiting independent delta review and mounted chooser validation",
+  "target": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
+  "featureReview": "IN_PROGRESS",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery",
   "branch": "codex/web-conversation-recovery",
   "exactImplementationPaths": [
     {
       "path": "apps/web/src/App.tsx",
-      "added": 260,
+      "added": 246,
       "deleted": 63,
-      "bytes": 71660,
-      "sha256": "7b891f3bd01e2f8a014c0be0079f4e4c2e892df60f753d5508ec855f6290c4d9",
-      "targetBlob": "d14d2550f622775e234118b155b941007030ff74"
+      "bytes": 70874,
+      "sha256": "67218f6d868b180f9c64bd3b5c418c96dacac3e79040e6b88c36fc70c5b9130f",
+      "targetBlob": "0334de34f6ffe4c6d61a5cbd5b8c3807679c1b2f"
     },
     {
       "path": "apps/web/src/attachments/controller.ts",
@@ -48,11 +48,11 @@
     },
     {
       "path": "apps/web/src/conversation-steering/control.ts",
-      "added": 50,
-      "deleted": 9,
-      "bytes": 24377,
-      "sha256": "5cf411df4d8bb3298ae71132d6225f1d512f6b6c8e7ccbd79bb8ddf768a60f58",
-      "targetBlob": "3ab69d68b11f525e6b0f8a26e2f59674f258e98e"
+      "added": 42,
+      "deleted": 8,
+      "bytes": 24040,
+      "sha256": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+      "targetBlob": "2d8ceb0f8c863903ddb05b3132bb15c3b5443d08"
     },
     {
       "path": "apps/web/src/conversations/ConversationThread.tsx",
@@ -136,11 +136,11 @@
     },
     {
       "path": "apps/web/test/conversation-recovery.browser.ts",
-      "added": 642,
+      "added": 618,
       "deleted": 0,
-      "bytes": 54468,
-      "sha256": "809ba44244fe545cc2ded96536820a58b5b6a2a05d51488a37db75ffa5caf66b",
-      "targetBlob": "7589128980f21de35bd3d44b40b405cd7d21e36d"
+      "bytes": 52099,
+      "sha256": "25f6efb1c70112ea5a611cc8c920bf9eb808d636cdc7e9c16b864df4874a6a58",
+      "targetBlob": "feb0f0b4e3d79144ffe466c4b05da9c4703ae418"
     },
     {
       "path": "apps/web/test/conversation-recovery.fixture.ts",
@@ -152,43 +152,43 @@
     },
     {
       "path": "apps/web/test/conversation-recovery.test.ts",
-      "added": 664,
+      "added": 600,
       "deleted": 0,
-      "bytes": 65658,
-      "sha256": "8956e69fe2b3b44f0b3a047bcbcc28679bf849cc4940825ef04f6501e509990b",
-      "targetBlob": "0ae5746825a1607b579c4f74d8b1ae8850bdd999"
+      "bytes": 60306,
+      "sha256": "620430470ad39d22052273a608cde06d64b40ccd27a237e7e064e567d601d157",
+      "targetBlob": "93cd1155a74d1f4053ed4bde56d02e39395d2575"
     }
   ],
   "summary": {
     "files": 19,
-    "productSources": 16,
-    "dedicatedValidationSources": 3,
-    "added": 3205,
-    "deleted": 133
+    "sourceFiles": 16,
+    "testHarnessFiles": 3,
+    "added": 3095,
+    "deleted": 132
   },
   "ownerEvidenceScopes": [
     "plans/wpf-conversation-recovery",
     "docs/evidence/wpf-conversation-recovery"
   ],
   "allTargetChangedPathsOutsideClaim": [],
-  "ownerRecordFilesAtTarget": 398,
+  "ownerRecordFilesAtTarget": 369,
   "direct50": {
     "fixedSource": "2b01eb6ff345175f7073c4e57125f5eecfd52cac",
     "changedPathsSinceRun": [
-      "apps/web/src/App.tsx",
-      "apps/web/src/conversation-steering/control.ts",
       "apps/web/src/recovery/binding.tsx",
       "apps/web/test/conversation-recovery.browser.ts",
-      "apps/web/test/conversation-recovery.fixture.ts",
-      "apps/web/test/conversation-recovery.test.ts"
+      "apps/web/test/conversation-recovery.fixture.ts"
     ],
-    "scope": "50 actual controlled cases fixed at2b01. Later binding/UI/control and harness/test deltas keep their separate validation; no retroactive current-target claim."
+    "scope": "50 actual controlled cases; test file/source authorities source-bound at2b01; later binding presentation and harness changes not retrospectively attributed to that run"
   },
   "latestTypes": {
-    "target": "55b4917e732d11d5e5f660f9c22a1022d7094015",
-    "exit": 0,
-    "evidence": "final-p2-local/types-fixed.log",
-    "initialRedRetained": "final-p2-local/types.log"
+    "fixedSource": "dd6645b7f3ea84d758705684190c094ad3c87460",
+    "currentDeltaSincePass": [
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/conversation-recovery.fixture.ts"
+    ],
+    "evidence": "journey-selection-local/result-2.json",
+    "notRerun": "Query-string/constant-only final change per co-lead authorization"
   },
   "full7Actual": {
     "executionHead": "765ab362945b93b66487cadd8e0b54e9ee233bcf",
@@ -198,25 +198,10 @@
   },
   "earlierFailures": 5,
   "main": "NOT_INTEGRATED",
-  "formal0141Review": {
-    "path": "0141-feature-root-review.json",
-    "decision": "CHANGES_REQUESTED",
-    "findings": [
-      "RECOVERY-FINAL-P2-SELECTING",
-      "RECOVERY-FINAL-P2-STEERING-TIMEOUT"
-    ]
-  },
-  "p2Fixes": {
-    "target": "55b4917e732d11d5e5f660f9c22a1022d7094015",
-    "deltaFrom": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
-    "paths": [
-      "apps/web/src/App.tsx",
-      "apps/web/src/conversation-steering/control.ts",
-      "apps/web/test/conversation-recovery.browser.ts",
-      "apps/web/test/conversation-recovery.test.ts"
-    ],
-    "directLocalIndex": "final-p2-local-index.json",
-    "connectionChoiceActual": "NOT_RUN",
-    "fullSevenPriorUnchanged": true
+  "openReviewCandidate": {
+    "source": "root fixed0141 read-only review",
+    "path": "apps/web/src/App.tsx",
+    "subject": "Background ready identity may close explicit connection selection",
+    "state": "CANDIDATE_NOT_RUNTIME_REPRODUCED"
   }
 }

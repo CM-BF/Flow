@@ -41,10 +41,11 @@
       "fullFeaturePassed": false
     }
   ],
-  "nextSelection": null,
-  "fullFeatureReview": "NOT_STARTED",
+  "nextSelection": "connection-choice",
+  "fullFeatureReview": "CHANGES_REQUESTED",
   "noCurrentGate": true,
   "sourceTarget": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
   "sourceCheckpoint": "expiry-fixture-checkpoint.json",
-  "chargeRule": "ceil(max(actual outer, late parent, serialized parent)) per attempt; original raw unchanged"
+  "chargeRule": "ceil(max(actual outer, late parent, serialized parent)) per attempt; original raw unchanged",
+  "currentReviewTarget": "55b4917e732d11d5e5f660f9c22a1022d7094015"
 }

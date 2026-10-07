@@ -1,0 +1,35 @@
+{
+  "target": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
+  "base": "84005a260dfcb668cd38b09c21564d0754a0f513",
+  "mode": "FIXED_SOURCE_ONLY_NOT_RUN",
+  "sources": {
+    "apps/web/src/App.tsx": {
+      "sha256": "67218f6d868b180f9c64bd3b5c418c96dacac3e79040e6b88c36fc70c5b9130f",
+      "bytes": 70874
+    },
+    "apps/web/src/connection/session.ts": {
+      "sha256": "add2e1484461f397ff667da8d1176a86dc426948d0baccf2279b213caa869fca",
+      "bytes": 8274
+    },
+    "apps/web/src/conversation-steering/control.ts": {
+      "sha256": "7bf713b2862f6196ac1386b965e58bb7793f2d7efc060f92e77f1a572fcf1370",
+      "bytes": 24040
+    },
+    "apps/web/src/recovery/binding.tsx": {
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+      "bytes": 33220
+    },
+    "apps/web/src/recovery/journal.ts": {
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67",
+      "bytes": 21485
+    },
+    "apps/web/test/conversation-steering.test.ts": {
+      "sha256": "6c277dfb07d5335bbb3738cf8d5e78a9caee1e5339ca7f662ae58b96e89c3d1f",
+      "bytes": 15138
+    },
+    "apps/web/test/conversation-recovery.test.ts": {
+      "sha256": "620430470ad39d22052273a608cde06d64b40ccd27a237e7e064e567d601d157",
+      "bytes": 60306
+    }
+  }
+}

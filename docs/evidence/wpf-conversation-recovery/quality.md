@@ -223,3 +223,7 @@ Root本轮独立接受原件已逐字归档，SHA bdb69ec6bbcb4005672baeb57eb60c
 修复保持在fixture合法故障输入，不放宽公开鉴权/noPOST/稿文/材料/ref/CAS断言；原single-fileparent与有限journey/计量接口复用，无新wrapper/store/公有协议。实际7组及初始化分开计时，不把worker初始化冒全启动成本或性能改进；newsegment统一保守max/ceil，原早raw与旧90k不重写。两个390截图已实际查看，真实目录行/折叠身份/滚动与焦点有证据。当前plan首页旧source-only/90s禁止语句标历史并指新段；TODO01/04有定义对应事实才完成，其他验收缺口明确。无新产品修复/复测，completefeature仍未审。
 
 当前正式审查target已收敛0141，root审进行中；其中连接选择意图候选尚未runtime复现，源冻结。主线own-status-parse依据已读，但S01当前排他检查限制，故本次不执行Node/parser；只做静态来源/字段及gitdiff核对，未冒parser通过。
+
+## 2026-10-07 06:09:00 UTC — final P2 bounded clean-code review
+
+复用本地find-skills/clean-code/codebase-design；本次bounded设计直接对应已批准两P2，不安装技能/不造框架。App区分用户选择意图与authready观察，revision不进入持久namespace；Steer区分stale-generation、写前deadline与durableaccepted，保持原authority/key。检查命名/单一职责/错误收口/重复/接口：未引入新公有API或state store，保留原full7断言；新增4case覆盖慢prepare/dispatch、accepted延迟及撤权，旧50未重跑。类型首红为mock字符串宽化，改用原SteeringPort签名后noEmit0。新browser选择映射保持Gate→Init→Worker→parent一致；mounted chooser待真实验证，类型和受控测试不能替代。原始局部日志无numericPGID，清理结论来自同一inline父的ESRCH判断，不能冒独立进程审计。
