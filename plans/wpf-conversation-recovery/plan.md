@@ -16,9 +16,9 @@
 
 - [x] WPF-RECOVERY01-01：固定输入、合法scope和唯一canonical；实现有界ConnectionSession/Journal。
 - [x] WPF-RECOVERY01-02：四类原controller同步接管和durable barrier，CREATE两阶段及错误/CAS恢复。
-- [ ] WPF-RECOVERY01-03：实际App/P01入口、完整草稿/材料和namespace隔离恢复。
+- [x] WPF-RECOVERY01-03：实际App/P01入口、完整草稿/材料和namespace隔离恢复；completeDraft/Steer及双真实center实际，principal-only受控边界单列。
 - [x] WPF-RECOVERY01-04：定向storage/controller直接行为验证与来源hash。
-- [ ] WPF-RECOVERY01-05：资源允许后真实cookie/HTTP/SSE/App旅程；旧90s封套关闭保留，150s后继段已126447/unused23553封账；旧Steer独立60s段已34753/余25247封闭（小于入口30s，不再开）；新route-fix独立90s段spent15119/余74881（Steer selected2实际通过，无自动续跑），按各段授权独立计费，每次≤60s含≥15s清理、总证据≤9MiB（SSE已授权增量）、1PG+1Chrome、0provider/个人服务。
+- [ ] WPF-RECOVERY01-05：真实cookie/HTTP/task-SSE/App各原选组已有actual；最终覆盖核对与明确未验重连边界待独审。旧90/150/Steer60/route90均封账；当前two-center独立90s已13020/余76980，2DB/1Chrome、64MiBscratch/13MiBretained、30s cleanup；无自动后继预约，不重跑旧绿。
 - [ ] WPF-RECOVERY01-06：独立固定审查、修复、push和明确main接收。
 
 ## 验证与资源
@@ -282,3 +282,9 @@ Root最终固定a803源码+本次actual local独审已接受，见[原报告](..
 原TODO03/05按已批准方案固定2f8：同origin proxy逐request固定A/B，双lease独立db-a/db-b且allSettled清理，A unknown原key回放与双方explicitRestore、迟到GET只按真实aborted/delivered分类；生产源码未改。principal-only真实Journal/ConnectionSession加controlledtransport两case通过，Web noEmit0，13raw/7481ms已清理。集中审root3232限定接受，浏览器selected2仍NOT_RUN。
 
 新phase90候选60work+30cleanup、2DB/1Chrome/64MiBscratch/13MiBretained/start4/run9，133MiB增量一次声明；配置25运行连接位+2清理marker预留，不把2DB当2条连接。旧route90spent15119/unused74881封闭不转。运行前最少条件、现entry与新sourcepins见[preparation](../../docs/evidence/wpf-conversation-recovery/two-center-preparation.json)，不增加task层/runner框架，不预占共享窗。
+
+## 2026-10-07 11:06:26 UTC — 原03实际实现验收收敛
+
+双中心2/2实际与完整owned清理见[原件](../../docs/evidence/wpf-conversation-recovery/two-center-first-manifest.json)。同origin/context/IDB/baseURL，真实A/B两身份往返，unknown原key/body显式回放且两稿恢复均通过；故原03按实际App/完整稿/namespace定义完成。05仍保持精确公共链覆盖核对，旧请求actualabort不能改述迟到成功拒绝，public principal旋转未造；06完整独立结论/main继续。当前2f8/source不变，旧FAIL/计费不变，资源已还、不自动消费76980余量。
+
+2026-10-07 11:07:00 UTC：root双中心actual独审a8c14接受2组/清理，原03完成映射获认可；原件见[独审](../../docs/evidence/wpf-conversation-recovery/two-center-first-root-review.json)。新段spent13020、unused76980不自动再跑，05/06最终未验与main保持。

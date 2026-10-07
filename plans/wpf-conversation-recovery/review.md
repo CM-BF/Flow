@@ -2,7 +2,7 @@
 
 状态：**IN_PROGRESS**。当前唯一组合target `2f8cc1f61d32f518998a64d0adeec582f85481f2`，base `84005a260dfcb668cd38b09c21564d0754a0f513`；16生产源与已审a803完全一致，本次三test变更。精确范围见[19源checkpoint](../../docs/evidence/wpf-conversation-recovery/two-center-checkpoint.json)；[单一feature入口](../../docs/evidence/wpf-conversation-recovery/feature-review-entry.md)统一当前代码、证据矩阵、原P1/P2与未验项。
 
-[root集中源码与local独审](../../docs/evidence/wpf-conversation-recovery/two-center-source-local-root-review.json)固定2f8，核19pins/13raw40289B、2新增PASS/55未选、Web noEmit0、保守7481/20k及精确清理，0finding。结论只接受source与受控local；同origin两真实center浏览器NOT_RUN、完整feature未APPROVED。两DB actor/lease/迟到GET白名单边界已源码审，运行连接配置与新独立phase见[two-center preparation](../../docs/evidence/wpf-conversation-recovery/two-center-preparation.json)。
+[root集中源码与local独审](../../docs/evidence/wpf-conversation-recovery/two-center-source-local-root-review.json)固定2f8，核19pins/13raw40289B、2新增PASS/55未选、Web noEmit0、保守7481/20k及精确清理，0finding。结论只接受source与受控local；随后同origin两真实center实际selected2/2通过，见[actual原件](../../docs/evidence/wpf-conversation-recovery/two-center-first-manifest.json)，已获[root本次限定actual审](../../docs/evidence/wpf-conversation-recovery/two-center-first-root-review.json)通过；完整feature未APPROVED。两DB actor/lease/迟到GET白名单边界已源码审，运行连接配置与新独立phase见[two-center preparation](../../docs/evidence/wpf-conversation-recovery/two-center-preparation.json)。
 
 此前a803真实cookieRead/steeringRecovery selected2与owned清理已[root限定接受](../../docs/evidence/wpf-conversation-recovery/stale-route-first-root-review.json)，current production同源，不重跑；更早full7/CREATE/Queue/SSE/completeDraft各保自己的target/raw。旧五次及后继所有FAIL不回写。main接收与整feature结论仍待合法流程，作者不代独立review自签。
 
@@ -279,3 +279,11 @@ Root固定54952/0f4b审[原报告](../../docs/evidence/wpf-conversation-recovery
 ## 2026-10-07 10:58:25 UTC — 2f8集中审与local原件归档
 
 当前source/local结论和限制已在页首校准；original root3232原样归档。未启动两DB/browser、未建gate/env，旧phase封账、受控principal和真实center证明区分。下一执行由管理实际窗口与完整组合准入，非重新求同源码逐项批准。
+
+## 2026-10-07 11:06:26 UTC — 双真实中心actual等待本次限定独审
+
+source2f8/执行29173698，[13raw与10outer](../../docs/evidence/wpf-conversation-recovery/two-center-first-manifest.json)保持原字节；actualexit0、selected2、A两次同key/body202与最后B显式Restore，lateGET仅abortedWithoutDelivery。双库独立marker/zero/normalDROP、精确PID/group/scratch/env清理已完成。作者据事实记录PASS，不自评完整feature。root source/local原审3232保持原限度，不回填为浏览器审。
+
+## 2026-10-07 11:07:00 UTC — 双中心actual独立限定接受
+
+[root原件](../../docs/evidence/wpf-conversation-recovery/two-center-first-root-review.json) 18070B/SHAa8c14b7b4c5d93c36f57881da295d701ff063a5e88d1b4467ef18d40e32919f4，0finding。13raw41127B+10outer14175B/source19、同原key/body/turn/task回放与B隔离、4PID/3PGID和双库清理逐核。原manifest c317保审前字节不回填状态；接受事实仅由本记录/phase引用。只2组actual，abortedWithoutDelivery限度保持，不是wholefeature/main批准；03按原定义完成，05/06未满足继续。

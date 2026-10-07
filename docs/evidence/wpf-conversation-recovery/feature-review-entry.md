@@ -2,7 +2,7 @@
 
 当前唯一组合 target `2f8cc1f61d32f518998a64d0adeec582f85481f2`，base `84005a260dfcb668cd38b09c21564d0754a0f513`；16 个生产文件逐字等 `a80339a463c4a1a1a5a679d9a89ea79b1650340e`，本次只改两 harness 和原 direct test。完整 feature review 为 **IN_PROGRESS**，不是作者自签通过。WT `web-conversation-recovery` / branch `codex/web-conversation-recovery`，原 claim6ff v4/21；[当前19源/blob/SHA及base统计](two-center-checkpoint.json)为精确范围。后置 owner metadata 不替代历史运行 HEAD。
 
-[root 集中源码与local审](two-center-source-local-root-review.json)接受当前三文件delta、2项新受控回归与Web noEmit；双中心真实浏览器 **NOT_RUN**。当前代码不混入恢复目录美化、C02 stream-v2或其他feature。main/真实安装接收尚未取得新的本片完整回执。
+[root 集中源码与local审](two-center-source-local-root-review.json)接受当前三文件delta、2项新受控回归与Web noEmit；随后[双中心真实浏览器selected2实际通过](two-center-first-validation.md)，[root本次actual独审](two-center-first-root-review.json)限定接受。当前代码不混入恢复目录美化、C02 stream-v2或其他feature。main/真实安装接收尚未取得新的本片完整回执。
 
 ## 模块与authority
 
@@ -25,7 +25,7 @@ ConnectionSession 负责公开cookie身份及撤权代际；Journal 按API baseU
 | Steer草稿/unknown ACK/同页晚view | [sourcea803/execd06](stale-route-first-validation.md)、[root实际审](stale-route-first-root-review.json) | selected2/2实际PASS：同document/timeOrigin、原turn durable记录、public synthetic actor真实claim/session、两Steer同key/body/command回放及下一稿；不冒native消费或应用 |
 | Steer慢存储跨deadline | [55b定向4case](final-p2-local-index.json) | 4受控PASS，旧50未选；晚accepted不降级，未发送屏障超时可重试 |
 | 同baseURL/center只变principal；忽略abort迟到ready | [当前2f8 local](two-center-local/cleanup-receipt.json)、[root审](two-center-source-local-root-review.json) | 新2PASS/55未选，真实ConnectionSession/Journal/privateRecovery加受控transport；不冒公共principal rotation |
-| 双真实center A→B→A→B | [设计](two-center-design-root-review.json)、[固定准备](two-center-preparation.json) | 源审通过，2DB浏览器尚未运行；actual lateGET将区分abortedWithoutDelivery与deliveredRejected |
+| 双真实center A→B→A→B | [设计](two-center-design-root-review.json)、[固定准备](two-center-preparation.json) | [2f8/exec2917 selected2实际PASS](two-center-first-validation.md)、[root限定接受](two-center-first-root-review.json)，actual lateGET=abortedWithoutDelivery；不冒deliveredRejected |
 
 最新受影响Web noEmit为本次2f8，exit0；两新case+types保守charge7481/20000。原direct50/119/旧绿旅程没有重跑，不能称所有历史checks在同一target一次执行。16生产源与a803一致以Git blob证明；各后继harness检查分别绑定自己的target。
 
@@ -44,7 +44,7 @@ ConnectionSession 负责公开cookie身份及撤权代际；Journal 按API baseU
 
 ## 完整验收剩余与边界
 
-原TODO03/05尚需本次双真实center隔离实际、迟到请求实际分类，以及按原要求核对尚缺的重连边界；同center公开principal旋转无本片测试API，当前只受控证明。TODO06仍需完整feature独立结论与合法main接收。两DB新phase90s候选只从自身0已用扣费，旧90/150/Steer60/route90全部closed，不借余额；[新phase](two-center-phase.json)和[连接配置](two-center-connections.json)清楚列源约束/未运行。
+原TODO03按App/P01、完整稿与namespace定义已有分层实证，现completed；05仍需最终核对重连等未覆盖边界，actual lateGET只证明abort未交付，同center公开principal旋转无本片测试API、当前只受控证明。TODO06仍需完整feature独立结论与合法main接收。两DB新phase90s实际charge13020/余76980，旧90/150/Steer60/route90全部closed，不借余额；[当前phase](two-center-phase.json)与[连接配置](two-center-connections.json)列实际与配置区别。准备文件的NOT_RUN及SHA是执行前2917历史状态，不替代本轮actualmanifest。
 
 真正runner/provider consumed/applied、Queue promotion、assistant流协议消费及其他owner公共认证合同保证是跨owner能力/未验依赖，不能临时新增为本Web渲染/触发/缓存片必须启动provider的前置；本片不宣称它们已证。IDB strict是UA耐久hint，不保证断电/用户清库永久保存。
 
