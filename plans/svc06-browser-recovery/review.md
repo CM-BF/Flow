@@ -53,3 +53,7 @@ Lead于2026-10-07T15:11:41.542Z对7324/ac6给出APPROVED_CALLABLE_CURRENT_IMPORT
 ## Runner initialization 独审接收
 
 2026-10-07T20:53:40.546Z，Lead唯一 APPROVED_LIMITED_CURRENT_CHILD_INITIALIZATION，source77b489/delivery1520，36绑定+5runtime及25不同检查/原红/KEEP已核。main/origin770bd2c05已接七authored源；[原件](../../../m2-integration/docs/evidence/i02/svc06b-runner-initialization-review.json)。只证明当前child初始化接缝，非冷启动/部署/实际领取通过；不重测。
+
+## 恢复R2构建已审、冷启动差量待审
+
+2026-10-07T21:49:09.569Z：native_center_owner对fixed8bea给出APPROVED_LIMITED_FIXED_RECOVERY_R2_ARTIFACT_BUILD_RESULT，0blocking，未重跑/未全inventory复哈希；准确e15/source880060与内部import通过，不含cold/四App/个人恢复。新冷启动source aedb2e582f55ede91522305652f138e06dd4033b 与17+6固定绑定、2Node+1Python/179ms407B见[manifest](../../docs/evidence/svc06/browser-recovery/recovery-cold-r2-manifest.json)。独立delta审查待Lead，作者自查不作批准；actual NOT_RUN。

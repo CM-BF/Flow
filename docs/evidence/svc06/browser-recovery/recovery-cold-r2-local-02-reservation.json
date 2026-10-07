@@ -1,0 +1,73 @@
+{
+  "at": "2026-10-07T21:47:54.852Z",
+  "source": "aedb2e582",
+  "queueAt": "2026-10-07T21:47:48.334Z",
+  "queueSha256": "70d9264bd879c0de993e16728acb385bc6a82f0942a31d2d5d611e3597513f16",
+  "freeBytes": 18285772800,
+  "minimumFreshBytes": 15953690624,
+  "limits": {
+    "seconds": 10,
+    "scratchBytes": 8388608,
+    "rawBytes": 65536
+  },
+  "scratch": {
+    "path": "/private/tmp/svc06b-cold-r2-local-3cz_vqpd",
+    "dev": 16777234,
+    "ino": 124564175
+  },
+  "argv": [
+    "/opt/homebrew/opt/python@3.13/bin/python3.13",
+    "-B",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2.test.py"
+  ],
+  "bindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-entry.mjs",
+      "bytes": 1976,
+      "sha256": "7692a18eae331a3f387116d4112a1d06cdf78f3bd8b7780d48347f60aedd2a43"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-run.py",
+      "bytes": 2942,
+      "sha256": "530f78ded733cdacdf4c770dad58306e7da6c6b0ffb0b210feae1f5b7f59b1e2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2-entry.mjs",
+      "bytes": 842,
+      "sha256": "534b3a6b1fe20887e089e7c33f0fdb29fef9d5ec1fd555a8abb641d64fc2284c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2-run.py",
+      "bytes": 764,
+      "sha256": "94bdaef02bcee0cdf782b474b782623f6724515f4dfbfe30e15c099c17bea205"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2-inputs.json",
+      "bytes": 6105,
+      "sha256": "364d6123356237cba1e20ccb4e2ca580b8f386a3332fbfe49ab069833a649626"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2-preparation.json",
+      "bytes": 11541,
+      "sha256": "0e4b4ab8af89cd48c1bedecae15982fba45538e9790b0fb9c9d19f65903cdcb2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2-dispatch.json",
+      "bytes": 2328,
+      "sha256": "364ab4ab37ef0c64fc91e510fd726720793becd8722a1aa998019eb7c748f021"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2.test.mjs",
+      "bytes": 1195,
+      "sha256": "598cbc9c0817550ed3bc96587520837d8cba7467c307e1f87fd1ab60d9bedfd8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-cold-r2.test.py",
+      "bytes": 2388,
+      "sha256": "c968ad03ff91d2fd3c9a9631bd7b3ad772e17ea5095cca41d8d1da117283f188"
+    }
+  ],
+  "pg": 0,
+  "personal": 0,
+  "provider": 0
+}

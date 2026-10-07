@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T21:43:14.068Z；新恢复产物e15d/source880060已构建通过并实际归还，待结果独审及新三角色冷启动/四App兼容 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:49:09.569Z；新恢复产物e15d/source880060构建结果已获限定独审；新冷启动参数及3直接例已固定，待准备独审/实际窗口与四App兼容 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -24,7 +24,7 @@
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 新版后台与四个网页的兼容已验证，新网页的受管迁入和发布调用已通过独审。新版网页尚未发布；本次后台维护在网页就绪处失败，当前三个服务已停止，正优先恢复可用性。 |
-| 下一可用交付 | 修正恢复组合的默认配置读取参数，再用新固定产物验证三服务冷启动和网页兼容，之后沿原维护操作恢复服务并发布新版网页。 |
+| 下一可用交付 | 修正后的恢复产物已构建并通过独审；接下来验证三个服务的真实冷启动和四个网页兼容，之后沿原维护操作恢复服务并发布新版网页。 |
 | 当前阻塞 | ACTIVE: 个人服务当前已停止，维护门保持关闭；责任为本服务owner与Lead，需完成新固定宿主、冷启动/兼容和受审恢复路径。禁止盲重试或自动回滚。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；artifact/retention/迁入与current入口均已独审/main；current-entry-independent-review仅准备批准，不当现场ready |
@@ -174,3 +174,5 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T21:41:48.409Z：R2恢复artifact ACTUAL START，source880060/d95b固定15绑定+77source/33SQL及继承runtime核同，claimv8、unused namespace与fresh 18693791744 B≥17977442304 B符合。仅一次420+.5+2 offline build/import，0PG/host/provider/个人；见recovery-build-r2-actual-admission.json。
 
 2026-10-07T21:43:14.068Z：R2实际build于21:42:22.040Z RETURN，group85438 absent/双EOF/exit0、33569ms/nullfirstFailure。新artifact e15dd368379a2be90b3c0c9d083cf27f9c26770e425e60e8cf078a127c9f15dd/source880060，33SQL与内部加载通过，root KEEP供后继；[唯一结果manifest](../../docs/evidence/svc06/browser-recovery/recovery-build-r2-result-manifest.json)。0PG/host/provider/个人；新产物不等于cold/兼容/个人恢复通过。原b692、首次cold TypeError/42P01/KEEP、首local未知8519680B全部保持。
+
+2026-10-07T21:49:09.569Z：R2 build fixed8bea已由native_center_owner限定APPROVED（9source/10raw/7实际source/33SQL，0重跑）；构建结果审查等待结束。冷启动R2 source aedb2e582f55ede91522305652f138e06dd4033b、新17执行/6runtime及准确新namespace见[单份准备](../../docs/evidence/svc06/browser-recovery/recovery-cold-r2-manifest.json)。21:47:54.745Z→21:47:54.927Z本队纯局部段2Node+1Python通过，179ms/407B、两组absent/双EOF/无signals、两个exact空scratchremoved，0PG/服务/个人/provider。现在无local/heavy holder；真实cold与4App仍未运行，本次准备独审等待起点为本条实际封存时间。旧b692 FAIL/KEEP及原unknown保持。
