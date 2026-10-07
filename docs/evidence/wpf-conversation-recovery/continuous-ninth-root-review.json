@@ -1,0 +1,174 @@
+{
+  "decision": "FAILED_ACTUAL_CLEANUP_VERIFIED_ROUTINE_TEST_FIX_REVIEWED",
+  "reviewedAt": "2026-10-07T08:56:49.107993+00:00",
+  "reviewer": "root / gpt-6-astra ultra / independent read-only",
+  "executionHead": "ad4a91380d045efdcc68506a041c052382a4d03c",
+  "executedSource": "bc3e06315bc80542547c11fa69adabda3fe62b79",
+  "fixSource": "2e7203ea01eb069a9d5e6f24e8ce9e1640c83112",
+  "rawIndex": {
+    "path": "/private/tmp/recovery-complete-retry-owner-6tv8427e/raw-index.json",
+    "sha256": "3bf26a5cc9ffc45b2093e893188c70376d43004f0e3ed43884482590f6021f47",
+    "filesVerified": 20
+  },
+  "actual": {
+    "run": "reccomplete-20261007-085326-1e2645",
+    "startedAt": "2026-10-07T08:53:51.068497+00:00",
+    "endedAt": "2026-10-07T08:54:09.044204+00:00",
+    "actualExit": 1,
+    "outerElapsedMs": 17975.395667017438,
+    "parentPid": 59001,
+    "outerPid": 58786,
+    "stdoutEof": true,
+    "stderrEof": true,
+    "streamBytes": {
+      "stdout": {
+        "eof": true,
+        "bytes": 829
+      },
+      "stderr": {
+        "eof": true,
+        "bytes": 0
+      }
+    },
+    "outerErrors": []
+  },
+  "accounting": {
+    "run": "reccomplete-20261007-085326-1e2645",
+    "previousSpentMs": 96678,
+    "chargeMs": 17976,
+    "spentMs": 114654,
+    "remainingMs": 35346,
+    "outerMs": 17975.395667017438,
+    "lateParentMs": 17390.568917,
+    "serializedParentMs": 17377.452042,
+    "rule": "ceil(max outer,late,parent)); oldraw immutable"
+  },
+  "freshProcesses": [
+    {
+      "id": 59001,
+      "kind": "pid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 59001,
+      "kind": "group",
+      "state": "ESRCH"
+    },
+    {
+      "id": 58786,
+      "kind": "pid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 58786,
+      "kind": "group",
+      "state": "ESRCH"
+    },
+    {
+      "id": 59557,
+      "kind": "pid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 59557,
+      "kind": "group",
+      "state": "ESRCH"
+    },
+    {
+      "id": 62605,
+      "kind": "pid",
+      "state": "ESRCH"
+    },
+    {
+      "id": 62605,
+      "kind": "group",
+      "state": "ESRCH"
+    }
+  ],
+  "scratchAbsent": true,
+  "adminEnvAbsent": true,
+  "dbCleanup": {
+    "database": "flow_recovery_1fde2742ecb34a5da870c14eff214315",
+    "attempted": true,
+    "confirmed": true,
+    "markerWritten": true,
+    "remaining": [],
+    "connections": 0,
+    "removed": true,
+    "errors": [],
+    "observations": [
+      {
+        "phase": "before-marker",
+        "attempt": 1,
+        "elapsedMs": 1.9353329999976268,
+        "total": 0,
+        "sessions": []
+      },
+      {
+        "phase": "after-marker",
+        "attempt": 1,
+        "elapsedMs": 0.781542000000627,
+        "total": 0,
+        "sessions": []
+      }
+    ]
+  },
+  "fixtureCleanup": {
+    "complete": true,
+    "errors": [],
+    "elapsedMs": 25,
+    "wireBytes": 12738,
+    "providerQueries": 0
+  },
+  "partialEvidence": {
+    "completedGroups": [
+      "cookieRead"
+    ],
+    "completeDraft": {
+      "profile": {
+        "id": "eb1bf557-fd0d-4801-bf1a-65aca0cdf026",
+        "runnerId": "2b20b74e-0696-4ec4-8d38-7ca8b9d4a33a",
+        "configDigest": "3ebf10ecfc3f9c2ac75f3e0d2b6dc9b7e82970443879d6af5b04fcfc7994dc45"
+      },
+      "knowledge": {
+        "projectId": "7a72003b-40b0-46bf-98f2-cb8e9344dd21",
+        "sourceId": "fa7b9a36-6f1e-4ddc-8dd0-5e29df303a98",
+        "version": 1,
+        "contentDigest": "4bafae7a1e90814c2f15c6f5e57e6c0a1f6c75d8d14a86142aed8fe555118e80",
+        "locator": {
+          "kind": "utf8-bytes",
+          "start": 0,
+          "end": 37
+        }
+      },
+      "savedRecordId": "draft:4b64e03f-10b8-40fc-9af2-c074a3be5046",
+      "conversationId": "4c5d97e3-90b9-4e6b-9b74-1e4fddf21a30",
+      "preparedPostCount": 1,
+      "restoredPostCount": 1,
+      "verificationOrder": [
+        "later.txt",
+        "saved.txt",
+        "knowledge"
+      ],
+      "turnId": null,
+      "taskId": null
+    },
+    "turnPostCount": 1,
+    "turnStatus": 202,
+    "frozenKnowledgeMatches": true,
+    "orderedAttachmentsMatchAck": true,
+    "profileMatches": true,
+    "pageErrors": []
+  },
+  "finding": "Browser receipt lookup used record.id===turnRow.key. Outbox begin freezes id UUID and turnKey `${id}:turn`; journal persists command.id. The recorded 202 demonstrates request admission but selected completeDraft group remains FAILED because exact receipt/final settings/next draft assertions were not reached.",
+  "fixReview": "Read complete 2e7203e test-only diff plus production outbox.begin and journal.prepare. Match parsed command/outbox by frozen.turnKey exactly and require unique match; retain accepted phase; strengthen exact frozen request and ACK checkpoint identities. No product, timeout, parent or permissions change. Same finite-owner routine correction; NOT_ACTUALLY_RETESTED.",
+  "limits": [
+    "No completeDraft selected pass.",
+    "No full journey, Steer, queue promotion, second center, provider or deployment evidence.",
+    "Cleanup receipt independently checked against raw and fresh process/path absence; no new database query by root."
+  ],
+  "cleanCode": {
+    "skill": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+    "applied": "Reviewed domain-specific receipt identity rather than string suffix tricks or first accepted record. Preserve raw failure and distinguish partial wire acceptance from group completion."
+  }
+}

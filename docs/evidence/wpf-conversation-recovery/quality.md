@@ -277,3 +277,7 @@ find-skills本地优先复用clean-code/codebase-design/webapp-testing，无安�
 ### 2026-10-07 08:44:43 UTC — completeDraft locator clean-code安全点
 
 复用已读本地find-skills/clean-code/codebase-design/webapp-testing，无安装。真实首红揭示测试Interface错位：plugin-integration/react.tsx:122仅actions span，ConversationThread.tsx:56配置header由thread.aui.tsx:273–276放在Composer前。固定bc3e06315bc80542547c11fa69adabda3fe62b79分清configuration与actions的单一职责，仅用唯一visible匹配/count1，未用first/nth掩盖歧义；profile/settings三处统一同小locator，Files/Knowledge仍原slot。错误原件/独审不回写，未加sleep/timeout/移除断言/产品测试开关；0新runtime，git diff --check0。保remaining53322且DPERF未归还不launch。
+
+### 2026-10-07 08:57:10 UTC — receipt身份错误clean-code复核
+
+实际第二红+wire202证明测试把HTTP幂等key与journal receipt id错误等同。复用已读clean-code/codebase-design原则保原权威：按parseRecoveryRecord/kind/domain/frozen.turnKey选唯一记录，完整frozen.request和accepted checkpoint核同；不strip后缀猜ID，不any accepted，不删除断言或拉长timeout。源码2e7203ea01eb069a9d5e6f24e8ce9e1640c83112仅browser12+/1-、18不变；git diff --check0，无新runtime/noEmit。原红和首root漏查保持，完整draft只列已到步骤，后续profile/nextdraft仍未完成。

@@ -1,6 +1,6 @@
 # WPF-RECOVERY01 连接、草稿和未决发送恢复
 
-状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 08:44:43 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
+状态：in-progress。创建：2026-10-06 13:49 UTC；更新：2026-10-07 08:57:10 UTC。直接父任务 [WPF-MATURE-06](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md)，沿原06-04，不建立第三执行层。唯一owner workspace_panels_owner / gpt-6-astra ultra；co-lead Web /root。
 
 目标：真实App在有效会话刷新后恢复同一中心的草稿和原未决命令身份；重新认证不自动发送，退出不取消中心任务。遵循[模块规则](../../AGENTS.md#modular-design)。
 
@@ -220,3 +220,7 @@ Root[限定设计](../../docs/evidence/wpf-conversation-recovery/saved-record-id
 ### 2026-10-07 08:44:43 UTC — 完整草稿首红与同段定位修复
 
 RECOVERY01-03/05首轮实际只到cookie连接，profile locator错把header当actions后代而超时；保留[失败与清理原件](../../docs/evidence/wpf-conversation-recovery/continuous-eighth-manifest.json)。同scope唯一browser修复`bc3e06315bc80542547c11fa69adabda3fe62b79`保完整原断言/timeout，不改生产UI或降验收。新段spent96678/rem53322含15s清理，DPERF归还后fresh同选2；本轮没有复测、没有重跑旧绿检查，完整材料验收仍开放。
+
+### 2026-10-07 08:57:10 UTC — 完整草稿第二红与原receipt身份
+
+RECOVERY01-03/05实际已到Prepare/材料恢复后首turn202，测试查Journal accepted时混淆receipt id和HTTP turnKey而FAIL。只browser修为完整frozen.turnKey/原request/ACK checkpoint精确身份；保原断言和timeout。当前`2e7203ea01eb069a9d5e6f24e8ce9e1640c83112`未复测；150s段114654/余35346含15清理，原红/预算/资源清理均保真，真实后继需sharedholder归还。

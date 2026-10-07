@@ -1,6 +1,6 @@
 {
   "id": "RECOVERY-EXPIRY-FULL-CLOSEOUT-20261007",
-  "state": "COMPLETE_DRAFT_FIRST_FAILED_LOCATOR_FIXED_NOT_RETESTED",
+  "state": "COMPLETE_DRAFT_SECOND_FAILED_RECEIPT_LOOKUP_FIXED_NOT_RETESTED",
   "authorization": {
     "path": "continuous-segment-authorization.json",
     "sha256": "6ea79981213d5df67f1e7ae4c603a90bbf7823daebf53aa15bf85e08f7ed5090"
@@ -22,8 +22,8 @@
     "additionalSourceMetadataBytes": 1048576,
     "defensiveCumulativeCeilingMs": 240000
   },
-  "runtimeSpentMs": 96678,
-  "runtimeRemainingMs": 53322,
+  "runtimeSpentMs": 114654,
+  "runtimeRemainingMs": 35346,
   "attempts": [
     {
       "run": "recfull-20261007-055138-6c925b",
@@ -174,25 +174,45 @@
       "fullFeaturePassed": false,
       "independentReview": "continuous-eighth-root-review.json",
       "adminEnvDeleted": true
+    },
+    {
+      "run": "reccomplete-20261007-085326-1e2645",
+      "journey": "complete-draft",
+      "executionHead": "ad4a91380d045efdcc68506a041c052382a4d03c",
+      "sourceTarget": "bc3e06315bc80542547c11fa69adabda3fe62b79",
+      "manifest": "continuous-ninth-manifest.json",
+      "passedGroups": 1,
+      "selectedPassed": false,
+      "actualExit": 1,
+      "outerActualMs": 17975.395667017438,
+      "parentLateMs": 17390.568917,
+      "serializedParentMs": 17377.452042,
+      "chargedMs": 17976,
+      "cleanupComplete": true,
+      "resourceReturnedAt": "2026-10-07T08:54:22.329732+00:00",
+      "fullJourneyPassed": false,
+      "fullFeaturePassed": false,
+      "adminEnvDeleted": true,
+      "independentReview": "continuous-ninth-root-review.json"
     }
   ],
   "nextSelection": {
     "journey": "complete-draft",
-    "source": "bc3e06315bc80542547c11fa69adabda3fe62b79",
-    "state": "LOCATOR_FIXED_NOT_RETESTED",
+    "source": "2e7203ea01eb069a9d5e6f24e8ce9e1640c83112",
+    "state": "RECEIPT_LOOKUP_FIXED_NOT_RETESTED",
     "requiredGroups": [
       "cookieRead",
       "completeDraft"
     ],
-    "sourceReview": "Root read bc3e eight-line delta against actual ConversationThread header; no new source blocker, runtime pending; final actual review will include delta",
+    "sourceReview": "Root inspected complete2e7203 delta/outbox.begin/journal.prepare: no source blocker, actual still pending",
     "localValidation": "complete-draft-checkpoint.json"
   },
   "fullFeatureReview": "IN_PROGRESS",
   "noCurrentGate": true,
-  "sourceTarget": "bc3e06315bc80542547c11fa69adabda3fe62b79",
-  "sourceCheckpoint": "complete-draft-locator-checkpoint.json",
+  "sourceTarget": "2e7203ea01eb069a9d5e6f24e8ce9e1640c83112",
+  "sourceCheckpoint": "complete-draft-receipt-checkpoint.json",
   "chargeRule": "ceil(max(actual outer, late parent, serialized parent)) per attempt; original raw unchanged",
-  "currentReviewTarget": "bc3e06315bc80542547c11fa69adabda3fe62b79",
+  "currentReviewTarget": "2e7203ea01eb069a9d5e6f24e8ce9e1640c83112",
   "p2FixReview": {
     "path": "55b-p2-fix-root-review.json",
     "sha256": "ed651acec5332c0eeeea56ad5b3cbbeb1b4c8986aaeb2e991043eca255ba70c7",

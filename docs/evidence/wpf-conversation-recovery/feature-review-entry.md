@@ -1,6 +1,6 @@
 # 固定代码审查入口：WPF-RECOVERY01
 
-当前组合target `bc3e06315bc80542547c11fa69adabda3fe62b79`；[locator最小delta/18源引用](complete-draft-locator-checkpoint.json)。complete-draft首轮[FAIL与完整清理](continuous-eighth-validation.md)已独审：仅cookieRead通过，profile locator选错actions容器，尚无CREATE/turn；本fix仅真实header定位5+/3-，原断言/timeout不变、未复测。原新actor source和fixed noEmit认可保原绑定，不冒browser通过。完整feature IN_PROGRESS，原full7/choice/CREATE两点/Queue/任务详情SSE与旧失败均不改。
+当前组合target `2e7203ea01eb069a9d5e6f24e8ce9e1640c83112`；[receipt最小delta/18源引用](complete-draft-receipt-checkpoint.json)。[第二红原件](continuous-ninth-validation.md)：cookieRead通过，真实Prepare/完整恢复/首turn202到达，但测试receipt id与frozen turnKey混淆导致整体FAIL。当前精确唯一outbox映射及accepted/request/checkpoint断言固定未复测；首红与所有旧绿实证保绑定。完整feature IN_PROGRESS，不把202局部事实当selected或fullfeature通过。
 
 ## 55b已审基线与原证据（历史固定）
 
