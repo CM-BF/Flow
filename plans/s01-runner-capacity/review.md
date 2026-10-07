@@ -1,6 +1,12 @@
 # S01 独立审查
 
-## 当前：queue唯一实际失败结果独审通过
+## 当前：观察交付策略诊断源码与局部结果
+
+**SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED / 0 P1/P2**，db_transaction_owner / gpt-6-astra，2026-10-07T14:59:26Z。source `d28166e81bcdbb9fb537b40144f7be07a2539130`，result `dbada7cc04cf152124ffc108760828d4d2c83a88`，execution `9365f91a8aba12aea17dd19710343edb382dc5c8`。唯一[当前READY](../../docs/evidence/s01/mixed-ab-preparation/delivery-replay-local-ready.md)。31bindings142910B逐Git=WT/len/SHA/regular/mode核符，manifest0fcd584c0729a0064e100a1e66c73b530d47d765b450a1eca469ae08071c7fdc；源码/config/input-v2从source→execution→result未改。
+
+独审确认真实caller4/4、strict/noEmitOnError emit0、TS8/8，3raw633B与observed/retained一致；3PID exit0/finalabsent/MERGED EOF、无first/secondary/signals、原EPERM观察保留。compile5项、tests18项精确prior输出绑定成立，后项启动前外tool实际exit0已观察。6JS+ESM39381B/manifest cf4fba750a7ea148398efe95c392d8cbf66154b9668eabbe45d0b345b7bcfdfb 与实际compiler/input/source相符；静态actual闭包仅Node builtin/六JS，fork execArgv=[]。此为生成物与局部结果批准，**不是实际3Node或两策略运行已观测**。监督1327ms、time-p/工具时钟分列，wholeexternal/peak UNKNOWN；旧失败/KEEP不改，actual60s replay NOT_RUN_NOT_OPEN。审者0工程运行/import/项目写/PG/KEEP访问，owner精确TMPabsence仅作为owner历史事实保留。
+
+## 历史：queue唯一实际失败结果独审通过
 
 状态 RESULT_FIDELITY_REVIEW_APPROVED /0P1/P2，db_transaction_owner/gpt-6-astra，2026-10-07T14:15:51Z；[正式回执](../../docs/evidence/s01/pool-wait-run/result-review.json)。仅失败结果忠实性，O1 FAIL/O2 NOT_RUN不改。Execution `67d0c84d3e8a629d78335b8866173e04d7249e36`；source `375ecccc427acf59d687153903bd032fb6e684bc`。唯一[结果报告](../../docs/evidence/s01/pool-wait-run/report.md)，固定result `bf8813327ca60d645d03e8d9f9218e30d455cd3f`，manifest SHA `a972452a062d5358ee5e366e8d91648d537c0b604ecb8d7a9f105d945e03d75f`，入口 [READY](../../docs/evidence/s01/pool-wait-run/READY.md)。O1 FAIL/O2 NOT_RUN、tool1、两个KEEP与活动资源RETURN均原样，要求独立核原raw/部分分母/预算/资源及最小根因，不工程运行或清未知。原准备/pure批准不当实际通过。
 

@@ -1,6 +1,6 @@
 # S01 delivery replay：当前局部结果与后继入口
 
-2026-10-07T14:56:51.621Z。源码 **d28166e81bcdbb9fb537b40144f7be07a2539130**；局部执行 **9365f91a8aba12aea17dd19710343edb382dc5c8**。db源码窄复审APPROVED，原唯一P2 CLOSED；本结果待一次独审。claim508f v3/full6继续持有，source STOP；**实际replay NOT_RUN_NOT_OPEN**。
+2026-10-07T14:56:51.621Z。源码 **d28166e81bcdbb9fb537b40144f7be07a2539130**；局部执行 **9365f91a8aba12aea17dd19710343edb382dc5c8**。db于2026-10-07T14:59:26Z完成SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0P1P2，固定result dbada7cc04cf152124ffc108760828d4d2c83a88；原P2 CLOSED。claim508f v3/full6继续持有，source STOP；**实际replay NOT_RUN_NOT_OPEN**。
 
 ## 本次实际范围
 
@@ -19,3 +19,17 @@
 本命令未授权执行。新replay五outputs仍absent；需要独审接受后单独明确60s/32MiB独占诊断窗口和fresh完整sum/身份/输入/outputs。原caller whole60/work45+TERM2/reap3、unknownKEEP、phase/ordinal/64KiB完整JSON、两arm语义等价和收齐/drain不变。它比较同2048轨迹下完整交付策略成本，buffered含聚合与不同信息粒度；不是纯IPC、wire字节、原pool原因、128容量/SLO或提速保证。
 
 普通段于14:55:01实际RETURN，无PG/HTTP/provider/Chrome/待launch；新授权在14:52:51起，旧source-only快照与预算历史不回写。总新增16MiB及source/meta512KiB+trace2MiB分账见local质量记录。旧43MiB不重读、旧KEEP不访问。未来ordinary/replay不得根据本次资源回执擅自重开。
+
+## 已审最终调度候选（15:00 metadata seal）
+
+正式独审归 `plans/s01-runner-capacity/review.md` 首节；31bindings142910B与原生成manifest/raw不改。准备已完成，**唯一缺项为明确独占运行窗口及届时fresh准入**。本READY所在本次最终clean/pushed提交作为调度execution候选，确切40SHA随Git封存回执交lead；实际调用必须传该固定SHA，不读取moving HEAD自行选择。
+
+2026-10-07T15:00:40.512Z以下五个精确literal逐一lstat ENOENT（不是未来准入替代）：
+
+- `docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-replay-r1-reservation.json`
+- `docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-replay-r1-spawn.json`
+- `docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-replay-r1-root.json`
+- `docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-replay-r1.raw`
+- `docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-replay-r1.json`
+
+claim508fv3/full6于15:00:22Z核身份/范围不变。候选新增32MiB按manager现完整floor至少11710693376B或更高freshsum；历史input最低数不改，不因普通local RETURN减旧KEEP或重复reserve。个人用户负载仍UNKNOWN，未探测/停止；60s/32MiB独立replay未获授权，本片无待launch。此次只3份metadata收口，未改source/manifest/raw/编译物，未再运行任何工程检查。

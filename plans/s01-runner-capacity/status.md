@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T14:56:51.621Z |
+| 最近更新 | 2026-10-07T15:01:46.354Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,21 +15,21 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 本段源码d28166e81bcdbb9fb537b40144f7be07a2539130未再改；实际局部结果/生成JS及封存metadata待同次commit/push后核clean。 |
+| 工作树dirty状态 | source与局部结果均已独审；本次仅status/review/READY收口，提交后核clean作为未来固定执行HEAD。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | PASSED 9365f91a8aba12aea17dd19710343edb382dc5c8：caller4/4、fixed tsc strict/emit0、直接TS8/8，3child已RETURN；非实际性能replay。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
 | 实现目标 | d28166e81bcdbb9fb537b40144f7be07a2539130 |
 | 实现范围 | experiments/runner-capacity/mixed/delivery-replay-main.ts, docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.py, docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.test.py, docs/evidence/s01/mixed-ab-preparation/delivery-replay-emit-tsconfig.json |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 诊断入口已通过局部安全和语义检查，直接JS输入已生成；尚未进行性能诊断。 |
-| 下一可用交付 | 完成本次固定源码与结果独审，再按独立窗口执行两策略诊断。 |
-| 当前阻塞 | ACTIVE：本次局部结果待独审；实际replay尚未开放，不能据局部通过推断原性能根因。 |
+| 当前产出 | 诊断入口、直接JS输入及局部检查已独立验收，可交付有限两策略诊断。 |
+| 下一可用交付 | 等待明确独占窗口后执行一次诊断，分别报告成本、计量完整性与资源收尾。 |
+| 当前阻塞 | ACTIVE：等待经理明确独占replay窗口；当前无PG/性能运行授权。 |
 | 需用户决定 | NONE |
-| Review | db于2026-10-07 14:54 UTC对固定d281窄源码APPROVED，原P2 CLOSED/0剩余；本3项局部结果待一次fidelity独审。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T14:53:01Z fresh完整身份匹配，范围未改。 |
+| Review | APPROVED d28166e81bcdbb9fb537b40144f7be07a2539130 / result dbada7cc04cf152124ffc108760828d4d2c83a88；db于2026-10-07T14:59:26Z SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0P1P2，实际replay未跑。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T15:00:22Z fresh完整身份匹配，保留review/运行期占用。 |
 | 架构影响 | 私有replay已生成固定tsc六JS+ESM；实际入口Node直启及fork execArgv=[]，静态运行依赖仅Node builtin/六相对JS。实际进程数/策略成本未运行；无生产pool/SQL/服务变化。 |
 
 | TODO ID | 状态 | Owner | 证据 |
@@ -262,3 +262,7 @@ GO/Mika新方向只落小[delivery-strategy-replay设计](../../docs/evidence/s0
 ### 普通局部实际收尾
 
 14:54:34.376Z caller START，随后compile与TS顺序执行，14:55:01Z精确三TMP lstat ENOENT且实际RETURN；无待launch。PID91136/98295/3046均exit0/finalabsent/MERGED EOF，signals/secondary/first空，历史早期EPERM观察保留。三raw633B，supervisor累计1327ms不冒整段wall；time-p各0.54/0.96/0.86s。编译六JS+ESM共39381B，manifest SHA cf4fba750a7ea148398efe95c392d8cbf66154b9668eabbe45d0b345b7bcfdfb。各mode freshfloor11677138944B；当前余量不能当未来许可。唯一当前入口[delivery-replay-local-ready.md](../../docs/evidence/s01/mixed-ab-preparation/delivery-replay-local-ready.md)，单记录delivery-replay-local-segment.json。actual replay NOT_RUN_NOT_OPEN，原失败/raw/KEEP不改。
+
+### 2026-10-07 15:00 独审收口
+
+db14:59:26固定dbada结果APPROVED/0P1P2，正式结论归本任务review首节。15:00:40.512Z仅精确lstat确认新replay五输出均ENOENT；未访问任何旧KEEP/个人负载。候选60s/32MiB仍NOT_OPEN；调度floor至少11710693376B或经理更高完整sum，个人用户负载UNKNOWN，单cleanupreserve与旧KEEP不退。旧输入最低线保留历史，本封存提交的clean exactHEAD才可供未来单次授权；不采用moving HEAD。本5min段0工程检查/编译/PG/网络，元数据STOP后保claim。
