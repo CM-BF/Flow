@@ -1,0 +1,13 @@
+
+ RUN  v4.0.18 /Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-message-settings
+
+ ✓ packages/interaction/src/message-settings/controller.test.ts (8 tests) 16ms
+ ✓ packages/interaction/src/message-settings/index.test.ts (3 tests) 9ms
+ ❯ apps/tui/src/message-settings.test.tsx (1 test | 1 failed) 1095ms
+   × Ink consumes the shared selection and shows unknown observations without inventing effective thinking 1095ms
+
+ Test Files  1 failed | 2 passed (3)
+      Tests  1 failed | 11 passed (12)
+   Start at  19:14:41
+   Duration  2.89s (transform 266ms, setup 0ms, import 1.48s, tests 1.12s, environment 0ms)
+

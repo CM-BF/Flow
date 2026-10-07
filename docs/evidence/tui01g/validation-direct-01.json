@@ -1,0 +1,80 @@
+{
+  "pid": 27735,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 1,
+  "elapsed_ms": 3356,
+  "observed_bytes": 5876,
+  "retained_bytes": 5876,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "stdout": {
+    "path": "docs/evidence/tui01g/validation-direct-01-stdout.log",
+    "bytes": 932,
+    "sha256": "80f0bcecdb8eec9d02c77d9bc6a0794f188ae2df83c2caac4fa1372e9770d77f"
+  },
+  "stderr": {
+    "path": "docs/evidence/tui01g/validation-direct-01-stderr.log",
+    "bytes": 4944,
+    "sha256": "0523af6c64c89ddd2030e43f8384ff12daf995e726918fd524010c0c09a44b45"
+  },
+  "at": "2026-10-07T02:15:29.037267+00:00",
+  "group": "direct",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "docs/evidence/tui01g/vitest.config.mts",
+    "packages/interaction/src/controller.test.ts",
+    "packages/interaction/src/queue-control/controller.test.ts",
+    "packages/interaction/src/task-control/controller.test.ts",
+    "apps/tui/src/terminal.test.ts"
+  ],
+  "cwd": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-message-settings",
+  "freeBefore": 26749227008,
+  "rawBefore": 3375,
+  "supervisor": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+  "supervisorSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+  "bounds": {
+    "workSeconds": 27,
+    "termSeconds": 0.5,
+    "killSeconds": 2,
+    "combinedOutputBytes": 262144,
+    "rawAndCacheBytes": 8388608
+  },
+  "providerCalls": 0,
+  "PG": 0,
+  "Chrome": 0,
+  "PTY": 0,
+  "cacheBytesAfter": 730,
+  "combinedRawAndCacheAfter": 9981,
+  "freeAfter": 26749210624,
+  "resourceBoundMet": true
+}

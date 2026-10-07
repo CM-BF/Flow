@@ -12,7 +12,7 @@
 
 - [x] TUI01G-01：精确范围交接、唯一计划及 Interface 固定。
 - [x] TUI01G-02：有限目录选择、冻结发送和 requested/observed/unknown 展示。
-- [ ] TUI01G-03：定向合同/controller 与终端直接消费者检查；运行门槛不足如实 NOT_RUN。
+- [x] TUI01G-03：定向合同/controller 与终端直接消费者检查；原资源 NOT_RUN 与首次依赖失败保留，51 个不同用例分轮通过、focused types 通过。
 - [ ] TUI01G-04：独立审查及受控 main 接收。
 
 ## 验收与限制
