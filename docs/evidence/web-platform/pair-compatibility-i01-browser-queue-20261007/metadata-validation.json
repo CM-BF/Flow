@@ -1,0 +1,31 @@
+{
+  "at": "2026-10-07T15:45:09.565458+00:00",
+  "scope": "Only current changed manager paths, added Markdown links, JSON and indexed archive hashes",
+  "paths": [
+    "docs/evidence/web-platform/mature-task-handoff.md",
+    "docs/evidence/web-platform/pair-compatibility-i01-browser-queue-20261007/archive-index.json",
+    "docs/evidence/web-platform/pair-compatibility-i01-browser-queue-20261007/current.json",
+    "docs/evidence/web-platform/pair-compatibility-i01-browser-queue-20261007/manager-claim.json",
+    "docs/evidence/web-platform/pair-compatibility-i01-browser-queue-20261007/quality.json",
+    "docs/evidence/web-platform/pair-compatibility-i01-browser-queue-20261007/shared-overlay-execution-slot.json",
+    "docs/evidence/web-platform/pair-compatibility-i01-browser-queue-20261007/status-validation.json",
+    "docs/evidence/web-platform/resource-window-current.json",
+    "plans/web-platform/status.md",
+    "plans/wpf-mature-01-visual/plan.md",
+    "plans/wpf-mature-01-visual/status.md"
+  ],
+  "links": [
+    {
+      "source": "plans/web-platform/status.md",
+      "target": "../../docs/evidence/web-platform/resource-window-current.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-mature-01-visual/plan.md",
+      "target": "../../docs/evidence/web-platform/pair-compatibility-i01-browser-queue-20261007/shared-overlay-execution-slot.json",
+      "exists": true
+    }
+  ],
+  "archiveHashes": [],
+  "errors": []
+}

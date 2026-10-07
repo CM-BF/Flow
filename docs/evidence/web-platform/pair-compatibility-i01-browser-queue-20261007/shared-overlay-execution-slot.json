@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-07T15:44:05.004Z",
+  "taskId": "WPF-VISUAL01",
+  "parent": "WPF-MATURE-01",
+  "todos": [
+    "WPF-MATURE-01-02",
+    "WPF-MATURE-01-04"
+  ],
+  "owner": "w01_owner after current Release compatibility fixed package safeSTOP",
+  "state": "NEXT_SOURCE_SLOT_CANDIDATE_NOT_TAKEN_NOT_PROVISIONED",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+  "branch": "codex/web-shared-overlays",
+  "fixedBase": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "reason": "Includes already integrated MSG real App consumer; no moving-main requirement",
+  "scope": [
+    "apps/web/src/components/ui/dialog.tsx",
+    "apps/web/src/assistant-ui.css",
+    "apps/web/src/execution-profiles/execution-profiles.css",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/test/message-settings.browser.ts",
+    "apps/web/test/conversation-recovery.browser.ts",
+    "plans/wpf-visual01-shell",
+    "docs/evidence/wpf-visual01"
+  ],
+  "freshCandidateObservation": {
+    "ledgerAt": "2026-10-07T15:42:39.004Z",
+    "activeIntersections": [],
+    "oldClaim": "35e5e5b9-2227-4cfb-bb7a-51249678c9ad v3 RELEASED",
+    "targetBranchAndTree": "absent at read-only check; must fresh again at provisioning/take"
+  },
+  "delivery": [
+    "Shared desktop and narrow rounded corners/light shadow/moderate overlay",
+    "Normal catalog progressive hierarchy, actions reachable, user wording",
+    "Inner gutter and both scrollbar modes assessed explicitly, not inferred from outer styles"
+  ],
+  "preserve": [
+    "Focus return/keyboard/reduced-motion, existing tuple/Apply/CAS semantics",
+    "Theme plugin current color-only contract; no invented radius/shadow plugin permission",
+    "No App/Thread/session/attachments authority or dependency changes"
+  ],
+  "validation": "Two existing real representative consumers (Picker/ownedHTTP and AppRecovery, optional actual Files via same public entry); scoped source/local then finite actual browser; no allbusiness rerun",
+  "method": "Use already read frontend-design/clean-code and accepted design/consumer reports; no new design research. Source closure/readonly resolver and exact logical cap required before self-provision, then atomic take. Same existing task source-switch goes Original D05 only after actual newcanonical.",
+  "resource": "No current runtime or budget/reservation; Release actual needs first, nonoverlap Plugin may continue."
+}
