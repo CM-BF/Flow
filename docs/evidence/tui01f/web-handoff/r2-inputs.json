@@ -1,0 +1,104 @@
+{
+  "kind": "flow.tui01f04.r2.inputs.v1",
+  "windowId": "flow-tui01f04-20261007-r2",
+  "sourceDigest": "b157e0692813f2e4f092e9873485da36dff2e79031f34f8d7f41c2275d469eb9",
+  "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel",
+  "inherit": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/input-request.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/input-request.json",
+      "bytes": 181094,
+      "sha256": "98a84072d34db7a56f641f8d5067a2f0f34455f17b2dc7ed1ec25f9ff7c692a9",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/helper-inputs.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/docs/evidence/tui01f/web-handoff/helper-inputs.json",
+      "bytes": 120012,
+      "sha256": "60e6a709087eb644e2697206d8f8404b8368eec17c810f553f047989d3d4f44e",
+      "uid": 501,
+      "nlink": 1
+    }
+  ],
+  "own": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/apps/tui/src/task-controls/fixture.ts",
+      "bytes": 27145,
+      "sha256": "c61dd3175258ee0b4be8809edb2075b8a79f8b1e750027217c6c2d1c4e091bbe",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/journey.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/journey.ts",
+      "bytes": 28785,
+      "sha256": "11961c79fb35e89b498d3818aef8e89a7ae9190cc5c1ea09a9ab67f336c00b2b",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/preview.ts",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/preview.ts",
+      "bytes": 11413,
+      "sha256": "f9efce39984f28195c25a682a95f8a03ca28d3cb35298fc72b9b6b6c3d284611",
+      "uid": 501,
+      "nlink": 1
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/terminal.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/tui-task-cancel/experiments/tui-web-control-handoff/terminal.py",
+      "bytes": 8928,
+      "sha256": "f2d39195b95e9f89bcf77504f5158fca9caad999731e448479723c6accfd5201",
+      "uid": 501,
+      "nlink": 1
+    }
+  ],
+  "node": {
+    "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "bytes": 50320,
+    "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba",
+    "uid": 501,
+    "nlink": 1,
+    "logicalPath": "/opt/homebrew/opt/node@24/bin/node"
+  },
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+    "realpath": "/Users/citrine/Projects/AgentHarness/Flow/tools/owned-process-supervision/supervise.py",
+    "bytes": 12543,
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+    "uid": 501,
+    "nlink": 1
+  },
+  "python": {
+    "path": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "realpath": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "bytes": 52640,
+    "sha256": "f6ec6ad29d65dcb9609fb93f9e9a114d8f654b020cbe8d925f7f01d3bc2ce44b",
+    "uid": 501,
+    "nlink": 1,
+    "logicalPath": "/opt/homebrew/bin/python3.13"
+  },
+  "terminalPython": {
+    "path": "/usr/bin/python3",
+    "realpath": "/usr/bin/python3",
+    "bytes": 118640,
+    "sha256": "b8763cf250e607a778bb4603cecb5b90338814d0a3dfcba0d57b1de242f610e9",
+    "uid": 0,
+    "nlink": 78
+  },
+  "limits": {
+    "workSeconds": 150,
+    "termSeconds": 0.5,
+    "reapSeconds": 2,
+    "outputBytes": 65536,
+    "innerWorkMs": 90000,
+    "innerTotalMs": 150000,
+    "stageRawBytes": 4194304,
+    "privateBytes": 16777216
+  },
+  "actual": "NOT_RUN",
+  "scope": "Fixed af51 backend/d629 Web/ec30 TUI; not new779/currentmain user acceptance"
+}
