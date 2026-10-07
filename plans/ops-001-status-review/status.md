@@ -16,7 +16,7 @@
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
 | 已集成main状态 / HEAD | main/originc0217f46已接SVC06根pg、REQ15批量读取、SVC08最小连接释放和185来源登记。个人仍af51/accepting v18、d629/v3；CI用户选择保持PENDING。 |
-| Review | [review.md](review.md)：历史固定批准保持；dd7538三队局部段与e65628新树自助增量分别获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
+| Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
