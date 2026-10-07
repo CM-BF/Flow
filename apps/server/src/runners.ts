@@ -1,9 +1,13 @@
+import { RUNNER_CLAIM_PROTOCOL, runnerClaimRequestSchema, type RunnerIdentity, type RunnerClaimRequest, type RunnerClaimReceipt, type RunnerClaimResponse } from '../../../packages/contracts/src/runner-claim.js';
 import { goalExecutionInputForTask } from './goal-context/index.js';
 import { executionInputForTask } from './conversation-context/store.js';
 import { assertTaskExecutionProfile } from './execution-profiles/store.js';
 import { randomBytes, randomUUID } from 'node:crypto';
 import type { Pool, PoolClient } from 'pg';
-import { RUNNER_CLAIM_PROTOCOL, runnerClaimRequestSchema, type RunnerIdentity, type RunnerClaimRequest, type RunnerClaimReceipt, type RunnerClaimResponse, type ClaimedTask, type AttemptView, type ClaimResponse, type Ownership, type RegisterRunner, type RunnerRegistration, type HeartbeatResponse, type DecisionAnswer } from '@flow/contracts';
+import { type ClaimedTask, type AttemptView, type ClaimResponse, type Ownership, type RegisterRunner, type RunnerRegistration, type HeartbeatResponse, type DecisionAnswer } from '@flow/contracts';
+import { pluginRunnerClaimRequestSchema, pluginRunnerClaimResponseSchema, type PluginRunnerClaimRequest, type PluginRunnerClaimResponse, type PluginToolExecution } from '../../../packages/contracts/src/plugin-runner-claim.js';
+import type { PluginToolBinding } from '../../../packages/contracts/src/plugin-runtime.js';
+import { claimPluginBinding, pluginClaimEligibilitySql } from './plugin-runtime/claim.js';
 import { readClaimReceipt, saveClaimReceipt } from './runner-claim-receipts.js';
 import { HttpError, sha256, transaction } from './database.js';
 import { loadTask, type TaskRecord } from './tasks.js';
@@ -51,7 +55,7 @@ export async function claim(pool: Pool, runnerId: string, leaseMs: number): Prom
 }
 
 /** Both protocols enter with the same exclusive runner lock and transaction. */
-async function allocateClaim(client: PoolClient, runner: RunnerRecord, leaseMs: number): Promise<ClaimResponse> {
+async function allocateClaim(client: PoolClient, runner: RunnerRecord, leaseMs: number, qualification?: PluginToolExecution): Promise<ClaimResponse> {
   const runnerId = runner.id;
   if (runner.maintenance_state && runner.maintenance_state !== 'accepting') return { assignment: null, remainingLeaseMs: 0 };
   const busy = await client.query<{ count: number }>("SELECT count(*)::integer AS count FROM flow.attempts WHERE runner_id=$1 AND completed_at IS NULL", [runnerId]);
@@ -80,7 +84,8 @@ async function allocateClaim(client: PoolClient, runner: RunnerRecord, leaseMs: 
       (t.submission->'executionProfile'->>'runnerId'=$2 AND EXISTS
         (SELECT 1 FROM flow.goal_graph_runs g WHERE g.task_id=t.id AND g.mode='claude' AND g.revoked_at IS NULL)))
     AND (t.submission->>'resumeSessionId' IS NULL OR (s.runner_id=$2 AND s.active_task_id IS NULL))
-    ORDER BY t.created_at,t.id FOR UPDATE OF t SKIP LOCKED LIMIT 1`, [runner.harnesses, runnerId]);
+    ${pluginClaimEligibilitySql}
+    ORDER BY t.created_at,t.id FOR UPDATE OF t SKIP LOCKED LIMIT 1`, [runner.harnesses, runnerId, qualification?.storeId ?? null, qualification?.hostApiMajor ?? null]);
   if (!result.rows[0]) return { assignment: null, remainingLeaseMs: 0 };
   const task = await loadTask(client, result.rows[0].id);
   if (task.submission.engineering && (task.submission.harness !== (task.submission.engineering.protocol === 'flow.engineering.v1' ? 'fixture' : 'codex') || task.submission.engineering.targetRunnerId !== runnerId)) {
@@ -94,18 +99,19 @@ async function allocateClaim(client: PoolClient, runner: RunnerRecord, leaseMs: 
     const session = await client.query('UPDATE flow.sessions SET active_task_id=$3 WHERE id=$1 AND harness=$2 AND runner_id=$4 AND active_task_id IS NULL RETURNING id', [task.submission.resumeSessionId, task.submission.harness, task.id, runnerId]);
     if (!session.rowCount) return { assignment: null, remainingLeaseMs: 0 };
   }
+  const binding = await claimPluginBinding(client, task, runnerId, qualification);
   const id = randomUUID();
   const inserted = await client.query<AttemptRecord>("INSERT INTO flow.attempts(id,task_id,runner_id,owner_version,lease_expires_at) VALUES($1,$2,$3,$4,clock_timestamp()+$5 * interval '1 millisecond') RETURNING *", [id, task.id, runnerId, task.owner_version + 1, leaseMs]);
   await client.query("UPDATE flow.tasks SET status='running',current_attempt_id=$2,owner_version=owner_version+1,updated_at=clock_timestamp() WHERE id=$1", [task.id, id]);
-  return { assignment: await assignmentForTask(client, task, inserted.rows[0]!, goalRun, graphRun), remainingLeaseMs: leaseMs };
+  return { assignment: await assignmentForTask(client, task, inserted.rows[0]!, goalRun, graphRun, binding), remainingLeaseMs: leaseMs };
 }
 
 type ToolRun = { id: string; version: 1; mode: string };
-async function assignmentForTask(client: PoolClient, task: TaskRecord, attempt: AttemptRecord, goalRun?: ToolRun, graphRun?: ToolRun): Promise<ClaimedTask> {
+async function assignmentForTask(client: PoolClient, task: TaskRecord, attempt: AttemptRecord, goalRun?: ToolRun, graphRun?: ToolRun, binding?: PluginToolBinding): Promise<ClaimedTask> {
   const executionInput = await executionInputForTask(client, task.id, task.submission.prompt);
   const goalInput = await goalExecutionInputForTask(client, task.id, task.submission.prompt);
   const privatePrompt = goalInput?.prompt ?? executionInput?.prompt;
-  return { ...(executionInput ? { conversationContext: executionInput.context } : {}), attempt: attemptView(attempt),
+  return { ...(binding ? { pluginToolBinding: binding } : {}), ...(executionInput ? { conversationContext: executionInput.context } : {}), attempt: attemptView(attempt),
     task: { ...task.submission, id: task.id, ...(privatePrompt !== undefined ? { prompt: privatePrompt } : {}) },
     ...(goalRun?.mode === 'claude' ? { goalToolRun: { id: goalRun.id, version: goalRun.version } } : {}),
     ...(graphRun?.mode === 'claude' ? { goalGraphRun: { id: graphRun.id, version: graphRun.version } } : {}) };
@@ -115,37 +121,48 @@ export async function runnerIdentity(pool: Pool, runnerId: string): Promise<Runn
   return transaction(pool, async client => { await lockRunner(client, runnerId); return { protocol: RUNNER_CLAIM_PROTOCOL, runnerId }; });
 }
 
-export async function claimOpportunity(pool: Pool, runnerId: string, input: RunnerClaimRequest, leaseMs: number): Promise<RunnerClaimResponse> {
+type OpportunityRequest = RunnerClaimRequest | PluginRunnerClaimRequest;
+type OpportunityResponse = RunnerClaimResponse | PluginRunnerClaimResponse;
+export function claimOpportunity(pool: Pool, runnerId: string, input: RunnerClaimRequest, leaseMs: number): Promise<RunnerClaimResponse>;
+export function claimOpportunity(pool: Pool, runnerId: string, input: PluginRunnerClaimRequest, leaseMs: number): Promise<PluginRunnerClaimResponse>;
+export function claimOpportunity(pool: Pool, runnerId: string, input: OpportunityRequest, leaseMs: number): Promise<OpportunityResponse>;
+export async function claimOpportunity(pool: Pool, runnerId: string, input: OpportunityRequest, leaseMs: number): Promise<OpportunityResponse> {
+  const request = parseClaimRunner(input, runnerId); // Detach before the asynchronous runner lock.
   return transaction(pool, async client => {
     const runner = await lockRunner(client, runnerId);
-    assertClaimRunner(input, runnerId);
-    const previous = await readClaimReceipt(client, input);
-    if (previous) return readCurrentAssignment(client, input, previous);
-    const allocated = await allocateClaim(client, runner, leaseMs);
-    if (!allocated.assignment) return { ...input, state: 'empty' };
+    const previous = await readClaimReceipt(client, request);
+    if (previous) return readCurrentAssignment(client, request, previous);
+    const qualification = request.protocol === 'flow.runner-claim.v3' ? request.pluginToolExecution : undefined;
+    const allocated = await allocateClaim(client, runner, leaseMs, qualification);
+    if (!allocated.assignment) return { ...request, state: 'empty' };
     const { task, attempt } = allocated.assignment;
     const identity = { taskId: task.id, attemptId: attempt.id, runnerId, ownerVersion: attempt.ownerVersion };
-    await saveClaimReceipt(client, input, identity);
-    return readCurrentAssignment(client, input, identity);
+    await saveClaimReceipt(client, request, identity);
+    return readCurrentAssignment(client, request, identity);
   });
 }
 
 /** Business read only; ordinary transaction permits the locks required for consistent current fencing. */
-export async function claimOpportunityStatus(pool: Pool, runnerId: string, input: RunnerClaimRequest): Promise<RunnerClaimResponse> {
+export function claimOpportunityStatus(pool: Pool, runnerId: string, input: RunnerClaimRequest): Promise<RunnerClaimResponse>;
+export function claimOpportunityStatus(pool: Pool, runnerId: string, input: PluginRunnerClaimRequest): Promise<PluginRunnerClaimResponse>;
+export function claimOpportunityStatus(pool: Pool, runnerId: string, input: OpportunityRequest): Promise<OpportunityResponse>;
+export async function claimOpportunityStatus(pool: Pool, runnerId: string, input: OpportunityRequest): Promise<OpportunityResponse> {
+  const request = parseClaimRunner(input, runnerId);
   return transaction(pool, async client => {
     await lockRunner(client, runnerId);
-    assertClaimRunner(input, runnerId);
-    const identity = await readClaimReceipt(client, input);
-    return identity ? readCurrentAssignment(client, input, identity) : { ...input, state: 'missing' };
+    const identity = await readClaimReceipt(client, request);
+    return identity ? readCurrentAssignment(client, request, identity) : { ...request, state: 'missing' };
   });
 }
 
-function assertClaimRunner(input: RunnerClaimRequest, runnerId: string): void {
-  if (!runnerClaimRequestSchema.safeParse(input).success) throw new HttpError(400, 'invalid_claim_opportunity', 'Invalid claim opportunity.');
-  if (input.runnerId !== runnerId) throw new HttpError(403, 'claim_runner_mismatch', 'The opportunity belongs to another runner identity.');
+function parseClaimRunner(input: OpportunityRequest, runnerId: string): OpportunityRequest {
+  const parsed = runnerClaimRequestSchema.or(pluginRunnerClaimRequestSchema).safeParse(input);
+  if (!parsed.success) throw new HttpError(400, 'invalid_claim_opportunity', 'Invalid claim opportunity.');
+  if (parsed.data.runnerId !== runnerId) throw new HttpError(403, 'claim_runner_mismatch', 'The opportunity belongs to another runner identity.');
+  return parsed.data;
 }
 
-async function readCurrentAssignment(client: PoolClient, input: RunnerClaimRequest, identity: RunnerClaimReceipt): Promise<RunnerClaimResponse> {
+async function readCurrentAssignment(client: PoolClient, input: OpportunityRequest, identity: RunnerClaimReceipt): Promise<OpportunityResponse> {
   const unavailable = { ...input, state: 'unavailable' as const, identity, reason: 'not-executable' as const };
   // The caller already holds runner; preserve runner -> task -> attempt even for historical receipts.
   const task = (await client.query<TaskRecord>('SELECT * FROM flow.tasks WHERE id=$1 FOR UPDATE', [identity.taskId])).rows[0];
@@ -162,11 +179,15 @@ async function readCurrentAssignment(client: PoolClient, input: RunnerClaimReque
   if (task.submission.resumeSessionId && !(await client.query(
     'SELECT 1 FROM flow.sessions WHERE id=$1 AND harness=$2 AND runner_id=$3 AND active_task_id=$4',
     [task.submission.resumeSessionId, task.submission.harness, input.runnerId, task.id])).rowCount) return unavailable;
-  const assignment = await assignmentForTask(client, task, attempt, goalRun, graphRun);
+  let binding: PluginToolBinding | undefined;
+  try { binding = await claimPluginBinding(client, task, input.runnerId, input.protocol === 'flow.runner-claim.v3' ? input.pluginToolExecution : undefined); }
+  catch (error) { if (error instanceof HttpError && error.code === 'plugin_claim_unavailable') return unavailable; throw error; }
+  const assignment = await assignmentForTask(client, task, attempt, goalRun, graphRun, binding);
   const remainingLeaseMs = (await client.query<{ remaining_ms: number }>(
     'SELECT floor(EXTRACT(EPOCH FROM ($1::timestamptz-clock_timestamp()))*1000)::double precision AS remaining_ms', [attempt.lease_expires_at])).rows[0]!.remaining_ms;
   if (!Number.isSafeInteger(remainingLeaseMs) || remainingLeaseMs <= 0 || remainingLeaseMs > 300000) return unavailable;
-  return { ...input, state: 'assigned', identity, assignment, remainingLeaseMs };
+  const response = { ...input, state: 'assigned' as const, identity, assignment, remainingLeaseMs };
+  return input.protocol === 'flow.runner-claim.v3' ? pluginRunnerClaimResponseSchema.parse(response) : response;
 }
 export async function heartbeat(pool: Pool, runnerId: string, ownership: Ownership, leaseMs: number): Promise<HeartbeatResponse> {
   return transaction(pool, async client => {

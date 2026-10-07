@@ -1,0 +1,289 @@
+{
+  "sourceCommit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+  "validationCommit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+  "baseMain": "5cd64a4d373a2919d0a00affcb2615667aa18d9a",
+  "recordedAt": "2026-10-07T06:09:33.346802+00:00",
+  "review": "PENDING",
+  "scope": "Center production route/allocation wiring and local fidelity; actual PostgreSQL remains NOT_RUN",
+  "files": [
+    {
+      "path": "apps/server/src/index.ts",
+      "commit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+      "blob": "72b265b59185bccbe67764a42139073e4cdd6620",
+      "role": "source",
+      "bytes": 14801,
+      "sha256": "20618181046c716deb5987fd4d61a2c766413c3ea058894760ea47c02cfc9071"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "commit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+      "blob": "0148eeb30ebde7f259fb559bc0dc9142216ea4d2",
+      "role": "source",
+      "bytes": 20183,
+      "sha256": "d2e47bc20887e24d9200cd70ea6ddd94881677565cc980b536ff2d4b7c69ff67"
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.ts",
+      "commit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+      "blob": "7d2052d6c00b362e49028921c76804b6d72832fc",
+      "role": "source",
+      "bytes": 2477,
+      "sha256": "8f5db0d1f4125de77575a45d191b0d45ad5881f8335751135ac22e2c63beee50"
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.ts",
+      "commit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+      "blob": "12cd004b78f7187c0a0f29a2214de646a65de551",
+      "role": "source",
+      "bytes": 1277,
+      "sha256": "65c05f002eb3f429444235157d5a9745ded0c94bc4698aba98e673efcbb0483c"
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.test.ts",
+      "commit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+      "blob": "960dfcb2e6002aa3aa99d1daeaba52234c1064db",
+      "role": "source",
+      "bytes": 2486,
+      "sha256": "59661d2480b3129d687d093f833e62420ad04615007394148c87c8dd906406e3"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim.ts",
+      "commit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+      "blob": "0d5b7405613956e9469ab5c6fbdf2136de315849",
+      "role": "source",
+      "bytes": 2773,
+      "sha256": "4236e8241296ac5ebf53bd254bdfe0e849d8905e693c64bae4c0cc888c7efb15"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim.test.ts",
+      "commit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+      "blob": "1b544ac83c49ce2d6ca7df39a1839f104535bc2a",
+      "role": "source",
+      "bytes": 6528,
+      "sha256": "d2e97ab9b88d48e773044e88a50fc237c1c29cfbbe3fce892e1de5de342a6883"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-amend-v10.json",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "43e1c50b965c1970de7544c15a40ef91274dad52",
+      "role": "support",
+      "bytes": 1794,
+      "sha256": "5db140cb222012f377d72d12a1bc49f30cfd52eff0d2d221e5702d9815128bca"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-base.json",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "3d6844813cbacd11cd8fca42f7e583891b8f9184",
+      "role": "support",
+      "bytes": 992,
+      "sha256": "6c66c6b16f244ea07d2beacb3588d92202ef3c9176ea55f5fd8e64c2df4ddaf6"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-database.ts",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "af89fcd73ae817ba7ce0a68fc01f77b7ed78e9ed",
+      "role": "support",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-fixture.ts",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "583fd7f54b486f1eff5ea8eff496bd45f05285ed",
+      "role": "support",
+      "bytes": 6948,
+      "sha256": "8cf7af7b025fdc49660870beffb5705a335892f3bde29a6d4c9d134bad3ca224"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-interface.md",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "b9f1b324ee30694b79aa4799bb4b0dbaae61df5d",
+      "role": "support",
+      "bytes": 4009,
+      "sha256": "51d61492a892051ecd54f2478f55d1c63efdfb3607aacf4dc053beed0e526a43"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-local.py",
+      "commit": "436ab4b87a9847b9ef9a05ad100a62dff9cf931d",
+      "blob": "69a3d0abbd19a7f2ce1cbee0fef78b231e8c378c",
+      "role": "support",
+      "bytes": 4823,
+      "sha256": "4538b43e357fe986bcb1277719b04a86b28f5c251983e7eba8399bcf8f666731"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-source-supply.json",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "25cea1c1298135cec93f41ce93cf3abd9d9809ab",
+      "role": "support",
+      "bytes": 133,
+      "sha256": "618114ecbb82ba5ff5476d75578a2523c3e0f91938ffd81295d970158b1cbc58"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-tsconfig.json",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "6ddb4b99a88daec9aa6b803d3984e0287a564492",
+      "role": "support",
+      "bytes": 247,
+      "sha256": "3335f7a5ac0b52c3ad9a65fd118d01b58ee7037eaa9ee15f5ff9cced61ff2a79"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-vitest.config.mjs",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "7de8d6cbae8944328283cf21fe828af3c51e2230",
+      "role": "support",
+      "bytes": 1221,
+      "sha256": "6f0d389f74a26d5b6c24dbbf395e9cb7c7fedd397315c6fb4a477ebab5c799cb"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-review-ready.md",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "7ff5ac4ab632e1e58192c6c9fc78c96eab7acf6a",
+      "role": "support",
+      "bytes": 1999,
+      "sha256": "b3b6781f0a5acc88dedf724a5ed9142513fff8e4ba0679a909373fda86f87fbd"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-local.json",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "6482866cbb1db7ec0602aefcd4574951828e95ce",
+      "role": "raw",
+      "bytes": 12486,
+      "sha256": "c3a5033f7e0f6bf7a5d9cedb8db588d5a6fa813769911801670e2f36f7c65cbb"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "f87898f22d4f09ea378758524808a17ec84fc3ce",
+      "role": "readonly",
+      "bytes": 7455,
+      "sha256": "454c6142b4d95ec55c75187a801808a4dd224ba610ce3441880e0763fac805f2"
+    },
+    {
+      "path": "apps/server/src/plugins/storage.ts",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "71e7cb2b00ba198d0337752693f6ef8114800674",
+      "role": "readonly",
+      "bytes": 4657,
+      "sha256": "0765794a5bb2470c5b469c47b5fa38c2db07a44cf0ae5041765336962a1aa3c9"
+    },
+    {
+      "path": "packages/storage/migrations/034-plugin-runtime.sql",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "6939466d1802ada95d4889c83d42374cc1b8903c",
+      "role": "readonly",
+      "bytes": 6572,
+      "sha256": "8d3cc77265c7ee621ee5da5aacb402615054e4f234cc65cf430f0dc7bc7e7f9d"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "5ac6a731b93f10c4e981aa74924a4e0ef45b2682",
+      "role": "readonly",
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runner-claim.ts",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "682c4c675c43feb01fc1b1e74ca3454cdab099b1",
+      "role": "readonly",
+      "bytes": 4197,
+      "sha256": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824"
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "92851f3e7fe72f8e52f5431d2e1928735e06db01",
+      "role": "readonly",
+      "bytes": 3965,
+      "sha256": "67d8dbfa2991426e86b93e74d6443b012e6e1ccee514f8956567dd3c23364a00"
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.test.ts",
+      "commit": "98fad94caf4d705318fe955e3493cd3aa4025056",
+      "blob": "ad047a9358832a9ec2c6c84d60c9e1ed0eb6efea",
+      "role": "readonly",
+      "bytes": 13057,
+      "sha256": "59338c88937c37e7f996f7b29c4e44f27ee1512d13026ccf363c960e6f9ceb22"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-bytecode-cleanup.json",
+      "commit": "436ab4b87a9847b9ef9a05ad100a62dff9cf931d",
+      "blob": "ebb2ab93d5bfc5896d17d79a6b04b59265b12cb4",
+      "role": "support",
+      "bytes": 1201,
+      "sha256": "762c2eb1651a68e7c2fa5e2875284f6cf9af4ccb9e11405b233351c8e6bb91f9"
+    }
+  ],
+  "external": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "bytes": 3620,
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/package.json",
+      "bytes": 5513,
+      "sha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/zod/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/pg/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "bytes": 1668,
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/fastify/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/fastify@5.12.5/node_modules/fastify/package.json",
+      "bytes": 6973,
+      "sha256": "e3757c52e771fe055fd9c19731057f5dc6c10f1d4944da8093fc957a21bbd9aa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/@types/node/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/package.json",
+      "bytes": 4068,
+      "sha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/@types/pg/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+pg@8.23.1/node_modules/@types/pg/package.json",
+      "bytes": 1089,
+      "sha256": "d122ef1e1bdb760edd5cff70d39597b9b3ae757c80e829bc297cd34fb7f01bd3"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "gitBytes": 140271,
+  "gitCount": 26,
+  "previousUnchanged": {
+    "contractSource": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+    "domainSource": "37177aba665fa8d787e40c2a18c4d124bdf819ca",
+    "testsNotRepeated": "11 journal/27 PG/A/B/65"
+  },
+  "limits": [
+    "SQL-boundary fake does not execute PostgreSQL or prove isolation",
+    "No production runner/client v3 port or semver bundle",
+    "Whole external wall UNKNOWN; final samples are not peak"
+  ],
+  "finalSupportCommit": "436ab4b87a9847b9ef9a05ad100a62dff9cf931d",
+  "sealedPriorPacket": "614e9836e437f6b32aaaf13b38d9119746ec193d",
+  "supportDelta": "sys.dont_write_bytecode before imports; 73068B own bytecode accounted and exact-cleaned, original validation/raw unchanged; not rerun"
+}

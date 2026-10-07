@@ -13,7 +13,7 @@ export const runnerClaimReceiptSchema = z.strictObject({ taskId: idSchema, attem
 export type RunnerClaimReceipt = z.infer<typeof runnerClaimReceiptSchema>;
 
 const digest = z.string().regex(/^[a-f0-9]{64}$/);
-const claimedTaskSchema = z.strictObject({
+export const claimedTaskSchema = z.strictObject({
   attempt: z.strictObject({ id: idSchema, runnerId: idSchema, ownerVersion: z.number().int().positive().max(Number.MAX_SAFE_INTEGER),
     leaseExpiresAt: z.iso.datetime(), nativeSessionId: idSchema.optional() }),
   // Both existing private-input builders enforce the same 16,000 code-unit limit.

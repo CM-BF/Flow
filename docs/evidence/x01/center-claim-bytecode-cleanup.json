@@ -1,0 +1,31 @@
+{
+  "recordedAt": "2026-10-07T06:07:04.490946+00:00",
+  "origin": "Original clean precheck state, Python import side-effect in this own evidence directory; not part of TMP end samples",
+  "root": {
+    "path": "docs/evidence/x01/__pycache__",
+    "dev": 16777234,
+    "ino": 123555641,
+    "removed": true,
+    "absent": true
+  },
+  "files": [
+    {
+      "path": "docs/evidence/x01/__pycache__/enable-binding-pg-once.cpython-313.pyc",
+      "dev": 16777234,
+      "ino": 123555643,
+      "bytes": 37775,
+      "sha256": "7f2f3747482f08b9712f9e24ebca5172fc76c64489c5cd4a8e0a4146dcb84280"
+    },
+    {
+      "path": "docs/evidence/x01/__pycache__/enable-binding-check-once.cpython-313.pyc",
+      "dev": 16777234,
+      "ino": 123555642,
+      "bytes": 35293,
+      "sha256": "7ed3831b1b54f18fa1b1fcc17532b3275d4cd2f4ed73acfe86c380743b81745c"
+    }
+  ],
+  "logicalBytes": 73068,
+  "budget": "Counted in source/metadata2MiB allowance, not hidden in raw or claimed as TMP peak",
+  "scope": "Only these two current own files; no shared supervisor cache cleanup or global cache scan",
+  "followup": "Set sys.dont_write_bytecode before every module load in this caller; product/tests unchanged; no rerun"
+}

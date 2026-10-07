@@ -1,0 +1,111 @@
+{
+  "recordedAt": "2026-10-07T07:03:56.558586+00:00",
+  "state": "READY",
+  "sourceCommit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+  "testCommit": "967803365239cacdfc15b16bf6f4b2b3d7d92eed",
+  "resultCommit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/index.ts",
+      "commit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+      "blob": "72b265b59185bccbe67764a42139073e4cdd6620",
+      "role": "source",
+      "bytes": 14801,
+      "sha256": "20618181046c716deb5987fd4d61a2c766413c3ea058894760ea47c02cfc9071"
+    },
+    {
+      "path": "apps/server/src/runners.ts",
+      "commit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+      "blob": "0148eeb30ebde7f259fb559bc0dc9142216ea4d2",
+      "role": "source",
+      "bytes": 20183,
+      "sha256": "d2e47bc20887e24d9200cd70ea6ddd94881677565cc980b536ff2d4b7c69ff67"
+    },
+    {
+      "path": "apps/server/src/runner-claim-receipts.ts",
+      "commit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+      "blob": "7d2052d6c00b362e49028921c76804b6d72832fc",
+      "role": "source",
+      "bytes": 2477,
+      "sha256": "8f5db0d1f4125de77575a45d191b0d45ad5881f8335751135ac22e2c63beee50"
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.ts",
+      "commit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+      "blob": "12cd004b78f7187c0a0f29a2214de646a65de551",
+      "role": "source",
+      "bytes": 1277,
+      "sha256": "65c05f002eb3f429444235157d5a9745ded0c94bc4698aba98e673efcbb0483c"
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.test.ts",
+      "commit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+      "blob": "960dfcb2e6002aa3aa99d1daeaba52234c1064db",
+      "role": "source",
+      "bytes": 2486,
+      "sha256": "59661d2480b3129d687d093f833e62420ad04615007394148c87c8dd906406e3"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim.ts",
+      "commit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+      "blob": "0d5b7405613956e9469ab5c6fbdf2136de315849",
+      "role": "source",
+      "bytes": 2773,
+      "sha256": "4236e8241296ac5ebf53bd254bdfe0e849d8905e693c64bae4c0cc888c7efb15"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim.test.ts",
+      "commit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+      "blob": "1b544ac83c49ce2d6ca7df39a1839f104535bc2a",
+      "role": "source",
+      "bytes": 6528,
+      "sha256": "d2e97ab9b88d48e773044e88a50fc237c1c29cfbbe3fce892e1de5de342a6883"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+      "commit": "967803365239cacdfc15b16bf6f4b2b3d7d92eed",
+      "blob": "dd7198c968b96069584325c4e8a5d7c245141a3a",
+      "role": "source/test",
+      "bytes": 22990,
+      "sha256": "b73b10f0aff5c9f36c404a43c0fd5896024fccab5097a697ed7d0f103de1a98e"
+    }
+  ],
+  "sourceCount": 8,
+  "sourceBytes": 73515,
+  "prerequisites": {
+    "domain16": "Already main5cd64a4d373a2919d0a00affcb2615667aa18d9a; do not copy older branch versions over main",
+    "claimJournal5": "Separate fixed c15 intake: docs/evidence/x01/plugin-claim-integration-ready.json; confirm controlled reception or apply its exact reviewed five blobs first",
+    "storage": "Existing official034 only; no new DDL",
+    "databaseDonor": "Actual checks used fixed main5cd/SVC07 database bytes277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653 at original module identity"
+  },
+  "reviews": [
+    "docs/evidence/x01/center-claim-independent-review.json",
+    "docs/evidence/x01/center-claim-pg-independent-review.json"
+  ],
+  "resultManifest": {
+    "path": "docs/evidence/x01/center-claim-pg-result-manifest.json",
+    "bytes": 8285,
+    "sha256": "0ba2851cfcdb77e37d16999904abddb53ed60834e558286f436aa9e92aa1824c"
+  },
+  "reproductionInputs": "docs/evidence/x01/center-claim-pg-manifest.json binds fixture/config/dynamic31SQL/252files/27external/21links; retain only explicit dependencies/evidence, not old product copies or installed dependencies",
+  "constraints": [
+    "Actual createServer runner routes/migration034 are connected; plugin management/admission factory mount remains separate.",
+    "Compare apps/server/src/index.ts and runners.ts against current main; any conflict/new behavior goes back to owner, no blind whole-file overwrite.",
+    "No client/index.ts, contracts/index.ts, runner configuration/main/runtime or unrelated current owner source is authorized by this intake.",
+    "After main receipt: stop server/index.ts writing then atomic amend removes that literal for CHAT05P01; keep rest of claim for repair/full-runtime successor.",
+    "PG6/6 is real center SQL/HTTP evidence, not actual production runner/plugin package or semver capability.",
+    "Do not rerun old27/local10/journal11 merely to accept this intake."
+  ],
+  "mainIntegrated": false,
+  "reviewState": "APPROVED",
+  "resultReview": {
+    "path": "docs/evidence/x01/center-claim-pg-result-independent-review.json",
+    "reviewedAt": "2026-10-07T07:06:23Z",
+    "reviewer": "db_transaction_owner",
+    "resultCommit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+    "packetCommit": "b3fa09dfd3e9fec0ea330eac783e4d90be7e6050",
+    "P1": 0,
+    "P2": 0
+  },
+  "intakeReadyAt": "2026-10-07T07:08:38.232210+00:00"
+}

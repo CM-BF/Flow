@@ -1,0 +1,138 @@
+{
+  "recordedAt": "2026-10-07T06:21:20.259560+00:00",
+  "state": "FIXED_DESIGN_INPUT_NOT_EXECUTABLE",
+  "actualPG": "NOT_OPEN_NOT_RUN",
+  "sourceReview": "center-claim-independent-review.json",
+  "productCommit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+  "supportCommit": "436ab4b87a9847b9ef9a05ad100a62dff9cf931d",
+  "existingPacket": "04cee06eb6437be154fcb58947206ae6913bdf20",
+  "existingInputReference": "docs/evidence/x01/enable-binding-pg-r3-manifest.json",
+  "existingInputs": {
+    "count": 236,
+    "missing": [],
+    "unchanged": 234,
+    "changedCurrentRows": [
+      {
+        "path": "apps/server/src/index.ts",
+        "priorSha256": "40029fb35eeea4f889934333c1c7a561ca986b5c3a4202be242f213c225afa99",
+        "bytes": 14801,
+        "sha256": "20618181046c716deb5987fd4d61a2c766413c3ea058894760ea47c02cfc9071"
+      },
+      {
+        "path": "apps/server/src/runners.ts",
+        "priorSha256": "1e8f72cf66427d9f57a7ed8d66d2ab566713aa0ee492317351801fa77a4474c3",
+        "bytes": 20183,
+        "sha256": "d2e47bc20887e24d9200cd70ea6ddd94881677565cc980b536ff2d4b7c69ff67"
+      }
+    ],
+    "officialSqlCount": 31,
+    "oldConsumedRunNeverReused": true
+  },
+  "additionalAndResourceBindings": [
+    {
+      "path": "apps/server/src/runner-claim-receipts.ts",
+      "commit": "04cee06eb6437be154fcb58947206ae6913bdf20",
+      "blob": "7d2052d6c00b362e49028921c76804b6d72832fc",
+      "bytes": 2477,
+      "sha256": "8f5db0d1f4125de77575a45d191b0d45ad5881f8335751135ac22e2c63beee50"
+    },
+    {
+      "path": "apps/server/src/runner-claim-routes.ts",
+      "commit": "04cee06eb6437be154fcb58947206ae6913bdf20",
+      "blob": "12cd004b78f7187c0a0f29a2214de646a65de551",
+      "bytes": 1277,
+      "sha256": "65c05f002eb3f429444235157d5a9745ded0c94bc4698aba98e673efcbb0483c"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim.ts",
+      "commit": "04cee06eb6437be154fcb58947206ae6913bdf20",
+      "blob": "0d5b7405613956e9469ab5c6fbdf2136de315849",
+      "bytes": 2773,
+      "sha256": "4236e8241296ac5ebf53bd254bdfe0e849d8905e693c64bae4c0cc888c7efb15"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runner-claim.ts",
+      "commit": "04cee06eb6437be154fcb58947206ae6913bdf20",
+      "blob": "682c4c675c43feb01fc1b1e74ca3454cdab099b1",
+      "bytes": 4197,
+      "sha256": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824"
+    },
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "commit": "04cee06eb6437be154fcb58947206ae6913bdf20",
+      "blob": "92851f3e7fe72f8e52f5431d2e1928735e06db01",
+      "bytes": 3965,
+      "sha256": "67d8dbfa2991426e86b93e74d6443b012e6e1ccee514f8956567dd3c23364a00"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-database.ts",
+      "commit": "04cee06eb6437be154fcb58947206ae6913bdf20",
+      "blob": "af89fcd73ae817ba7ce0a68fc01f77b7ed78e9ed",
+      "bytes": 7789,
+      "sha256": "277ab00876c0b904168b4d3f1b2dc2b3221761bb27cb0a8b5e2618e7aa0f5653"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-fixture.ts",
+      "commit": "04cee06eb6437be154fcb58947206ae6913bdf20",
+      "blob": "2faf5fe4ea73c123101a47c8fecfc901608eb16f",
+      "bytes": 14525,
+      "sha256": "65c583f65371e4cfc6f778ebd0f0a69b1a5c9672b17619a57349bc5a57a8367a"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-once.py",
+      "commit": "04cee06eb6437be154fcb58947206ae6913bdf20",
+      "blob": "f0e97c7935409ae555f71daf493da00732e42aec",
+      "bytes": 20706,
+      "sha256": "86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-input.json",
+      "commit": "04cee06eb6437be154fcb58947206ae6913bdf20",
+      "blob": "1bf3ea2c6c1bce0e480d4362832dbb3973561dbf",
+      "bytes": 952,
+      "sha256": "ccc3097797ac1adf4080351cd5d7f0739b7e53e99858dd1764275a019f50cb06"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-vitest.config.mjs",
+      "commit": "04cee06eb6437be154fcb58947206ae6913bdf20",
+      "blob": "7de8d6cbae8944328283cf21fe828af3c51e2230",
+      "bytes": 1221,
+      "sha256": "6f0d389f74a26d5b6c24dbbf395e9cb7c7fedd397315c6fb4a477ebab5c799cb"
+    }
+  ],
+  "plannedOwnFiles": [
+    "docs/evidence/x01/center-claim-pg.test.ts",
+    "docs/evidence/x01/center-claim-pg-vitest.config.mjs",
+    "docs/evidence/x01/center-claim-pg-once.py"
+  ],
+  "notCreated": "PG test and task-specific invocation recipe not yet implemented; no executable readiness or OPEN is claimed. Existing resource Module remains unchanged.",
+  "proposedLimits": {
+    "caseGroups": 6,
+    "databases": 1,
+    "maxLiveConnections": 17,
+    "maxTasks": 24,
+    "maxRegisteredPlugins": 8,
+    "httpRequests": 256,
+    "perResponseBytes": 131072,
+    "suiteResponseBytes": 4194304,
+    "seconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalReserveSeconds": 10,
+    "TMPBytes": 33554432,
+    "TMPEntries": 4096,
+    "rawBytes": 1048576,
+    "DBWALReserveBytes": 134217728,
+    "nonSpendableReserveBytes": 1073741824,
+    "baseFloorBytes": 1242562560,
+    "pairedActualBudget": "Add every actual concurrent declaration; proposed reserves do not prove hard DB/TMP peaks."
+  },
+  "dependencyProvision": "No new links/install/copies. Existing21 links/27 external metadata reused only after fresh verification; external metadata is not a recursive runtime hash.",
+  "lockBarrier": "Writer uses own PoolClient BEGIN + loadInstallation(true) + existing appendPluginRevision to stage revoked grant; concurrent authenticated claim sees old committed grant then waits registration lock. Observe exact DB+blocking PID via pg_blocking_pids/pg_locks under 3s bounded loop, COMMIT writer, require409 and zero attempt/receipt; always settle pending HTTP and rollback/release blocker before fixture cleanup. No production hooks or timing-only proof.",
+  "reviewBeforePG": [
+    "New actual case names/count and bounds",
+    "Task-specific single-suite recipe/admission/namespace delta",
+    "No legacy27 selection; fixed main database donor marker and31 official SQL",
+    "Real resource handoff, current claim10, clean executionHEAD, unique absent namespace and fresh combined floor"
+  ]
+}

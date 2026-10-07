@@ -1,0 +1,150 @@
+{
+  "at": "2026-10-07T07:12:02.108822+00:00",
+  "baseMain": "a72181d7a8a195e75129522b218bc2e10ccd1fc3",
+  "x01Delivery": "fdba6dcbedadb07360f734974062bcd81dd2a007",
+  "x01ApprovedSource": [
+    "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+    "0224e94d1133a72478fdf50380f726bd2ba5922f"
+  ],
+  "sourceCount": 13,
+  "approvedBasePreimagesMatch": true,
+  "manifestChecks": [
+    {
+      "manifest": "plugin-claim-manifest.json",
+      "bindings": 22,
+      "mismatches": []
+    },
+    {
+      "manifest": "center-claim-final-manifest.json",
+      "bindings": 26,
+      "mismatches": []
+    },
+    {
+      "manifest": "center-claim-pg-result-manifest.json",
+      "bindings": 19,
+      "mismatches": []
+    }
+  ],
+  "productTestsRepeated": 0,
+  "provider": 0,
+  "integrationTypes": {
+    "pid": 67327,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 9897,
+    "observed_bytes": 0,
+    "retained_bytes": 0,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ],
+    "finishedAt": "2026-10-07T07:12:27.176137+00:00",
+    "passed": true
+  },
+  "files": [
+    "packages/contracts/src/runner-claim.ts",
+    "packages/contracts/src/plugin-runner-claim.ts",
+    "packages/contracts/src/plugin-runner-claim.test.ts",
+    "apps/runner/src/admission-journal.ts",
+    "apps/runner/src/admission-plugin-claim.test.ts",
+    "apps/server/src/index.ts",
+    "apps/server/src/runners.ts",
+    "apps/server/src/runner-claim-receipts.ts",
+    "apps/server/src/runner-claim-routes.ts",
+    "apps/server/src/runner-claim-routes.test.ts",
+    "apps/server/src/plugin-runtime/claim.ts",
+    "apps/server/src/plugin-runtime/claim.test.ts",
+    "apps/server/src/plugin-runtime/claim-pg.test.ts",
+    "docs/evidence/x01/center-claim-amend-v10.json",
+    "docs/evidence/x01/center-claim-base.json",
+    "docs/evidence/x01/center-claim-bytecode-cleanup.json",
+    "docs/evidence/x01/center-claim-database.ts",
+    "docs/evidence/x01/center-claim-final-manifest.json",
+    "docs/evidence/x01/center-claim-final-review-ready.json",
+    "docs/evidence/x01/center-claim-fixture.ts",
+    "docs/evidence/x01/center-claim-independent-review.json",
+    "docs/evidence/x01/center-claim-integration-ready.json",
+    "docs/evidence/x01/center-claim-interface.md",
+    "docs/evidence/x01/center-claim-local.json",
+    "docs/evidence/x01/center-claim-local.py",
+    "docs/evidence/x01/center-claim-manifest.json",
+    "docs/evidence/x01/center-claim-pg-amend-v11.json",
+    "docs/evidence/x01/center-claim-pg-caller.test.py",
+    "docs/evidence/x01/center-claim-pg-cleanup-fix.json",
+    "docs/evidence/x01/center-claim-pg-independent-review.json",
+    "docs/evidence/x01/center-claim-pg-input.json",
+    "docs/evidence/x01/center-claim-pg-local-summary.json",
+    "docs/evidence/x01/center-claim-pg-local.json",
+    "docs/evidence/x01/center-claim-pg-local.py",
+    "docs/evidence/x01/center-claim-pg-manifest.json",
+    "docs/evidence/x01/center-claim-pg-once.py",
+    "docs/evidence/x01/center-claim-pg-plan.md",
+    "docs/evidence/x01/center-claim-pg-preparation.json",
+    "docs/evidence/x01/center-claim-pg-ready.md",
+    "docs/evidence/x01/center-claim-pg-result-independent-review.json",
+    "docs/evidence/x01/center-claim-pg-result-manifest.json",
+    "docs/evidence/x01/center-claim-pg-result-ready.md",
+    "docs/evidence/x01/center-claim-pg-result.md",
+    "docs/evidence/x01/center-claim-pg-run-r1/admission.json",
+    "docs/evidence/x01/center-claim-pg-run-r1/launch.json",
+    "docs/evidence/x01/center-claim-pg-run-r1/output.log",
+    "docs/evidence/x01/center-claim-pg-run-r1/preflight.stdout",
+    "docs/evidence/x01/center-claim-pg-run-r1/reservation.json",
+    "docs/evidence/x01/center-claim-pg-run-r1/result.json",
+    "docs/evidence/x01/center-claim-pg-run-r1/runtime-create-request.json",
+    "docs/evidence/x01/center-claim-pg-run-r1/runtime-created.json",
+    "docs/evidence/x01/center-claim-pg-run-r1/runtime-reservation.json",
+    "docs/evidence/x01/center-claim-pg-run-r1/runtime-result.json",
+    "docs/evidence/x01/center-claim-pg-run-r1/tool-observation.json",
+    "docs/evidence/x01/center-claim-pg-run-r1/vitest.json",
+    "docs/evidence/x01/center-claim-pg-tsconfig.json",
+    "docs/evidence/x01/center-claim-pg-vitest.config.mjs",
+    "docs/evidence/x01/center-claim-review-ready.md",
+    "docs/evidence/x01/center-claim-source-supply.json",
+    "docs/evidence/x01/center-claim-tsconfig.json",
+    "docs/evidence/x01/center-claim-vitest.config.mjs",
+    "docs/evidence/x01/plugin-claim-amend-v9.json",
+    "docs/evidence/x01/plugin-claim-base.json",
+    "docs/evidence/x01/plugin-claim-independent-review.json",
+    "docs/evidence/x01/plugin-claim-integration-ready.json",
+    "docs/evidence/x01/plugin-claim-interface.md",
+    "docs/evidence/x01/plugin-claim-local.json",
+    "docs/evidence/x01/plugin-claim-local.py",
+    "docs/evidence/x01/plugin-claim-manifest.json",
+    "docs/evidence/x01/plugin-claim-review-ready.md",
+    "docs/evidence/x01/plugin-claim-tsconfig.json",
+    "docs/evidence/x01/plugin-claim-vitest.config.mjs",
+    "plans/x01-plugin-management/candidate-inputs.md",
+    "plans/x01-plugin-management/plan.md",
+    "plans/x01-plugin-management/review.md",
+    "plans/x01-plugin-management/status.md",
+    "apps/execution-dashboard/src/registry.mjs",
+    "docs/evidence/d05/chat05p02-s01p08-registration.json",
+    "plans/d05-architecture-view/status.md"
+  ],
+  "limits": [
+    "Center claim SQL/HTTP + local journal contract only; runtime/client/plugin package full path remains open",
+    "No private service operation",
+    "No overwrite of old X01 domain product blobs"
+  ],
+  "verdict": "APPROVED_FOR_CONTROLLED_MAIN"
+}

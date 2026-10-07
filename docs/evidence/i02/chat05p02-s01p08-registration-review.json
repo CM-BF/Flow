@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-07T07:12:02.108822+00:00",
+  "target": "0b27528ac50729b96e595bf375ecd0dbc73a071a",
+  "base": "5152f32a56772cd5638a77721368debf306d70e1",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "verdict": "APPROVED_DOCS_REGISTRATION_ONLY",
+  "P1": 0,
+  "P2": 0,
+  "files": [
+    "apps/execution-dashboard/src/registry.mjs",
+    "docs/evidence/d05/chat05p02-s01p08-registration.json",
+    "plans/d05-architecture-view/status.md"
+  ],
+  "bindings": 6,
+  "candidateSources": 188,
+  "oldActualSources": 186,
+  "reviewerTests": 0,
+  "reviewerWrites": 0,
+  "note": "Exact three-file diff, paths/branch/evidence and six fixed docs verified. Current status and live deployment remain separate."
+}

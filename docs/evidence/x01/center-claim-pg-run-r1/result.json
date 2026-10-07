@@ -1,0 +1,287 @@
+{
+  "startedAt": "2026-10-07T06:58:40.476848+00:00",
+  "state": "PASSED",
+  "unknown": false,
+  "limits": {
+    "protocol": "flow.x01.center-claim-pg.v1",
+    "productCommit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+    "totalSeconds": 180,
+    "workSeconds": 110,
+    "cleanupSeconds": 60,
+    "finalReserveSeconds": 10,
+    "suites": {
+      "runtime": {
+        "cases": 6,
+        "httpRequests": 256,
+        "connectionsMax": 17
+      }
+    },
+    "httpRequestsMax": 256,
+    "responseBytesPerRequest": 131072,
+    "responseBytesPerSuite": 4194304,
+    "databasesMax": 1,
+    "serialSuites": true,
+    "streamsBytes": 262144,
+    "resultBytes": 131072,
+    "rawBytes": 1048576,
+    "temporaryBytes": 33554432,
+    "temporaryEntries": 4096,
+    "reserveBytes": 1073741824,
+    "runName": "center-claim-pg-run-r1",
+    "databaseReserveBytes": 134217728,
+    "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+    "selection": [
+      {
+        "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+        "name": "legacy and v2 filter plugin tasks before LIMIT while v3 requires the exact live host"
+      },
+      {
+        "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+        "name": "concurrent v3 replay is one allocation and conflicts across both protocol namespaces"
+      },
+      {
+        "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+        "name": "restart recovers the same pin without renewing its lease and preserves capacity and session fences"
+      },
+      {
+        "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+        "name": "registration lock waiter observes committed grant revocation before creating attempt or receipt"
+      },
+      {
+        "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+        "name": "accepted pin survives config and disable but live grant and runner revocation deny recovery and phases"
+      },
+      {
+        "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+        "name": "saved receipts preserve cancel and maintenance semantics but expire or stale owners are unavailable"
+      }
+    ]
+  },
+  "processes": [
+    {
+      "pid": 90063,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 45,
+      "observed_bytes": 285,
+      "retained_bytes": 285,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "git-preflight",
+      "rawComplete": true
+    },
+    {
+      "pid": 90064,
+      "ownership": "newChildSession",
+      "capture": "merged",
+      "exit_code": 0,
+      "elapsed_ms": 8556,
+      "observed_bytes": 144,
+      "retained_bytes": 144,
+      "eof": {
+        "stdout": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "label": "vitest",
+      "rawComplete": true
+    }
+  ],
+  "suites": {
+    "runtime": {
+      "window": "879094b24fe746629dbf483fbea371ea",
+      "sourceHead": "2b9e07dccdc76da8a4304997fb08cd5e7e5e73ae",
+      "suite": "runtime",
+      "database": "flow_x01_759fdf3e45764ef9a66de68a71f39354",
+      "facts": [
+        {
+          "kind": "sql-before-limit",
+          "legacy": true,
+          "plugin": "a1bffb3f-7daa-42cc-b538-6926283a32bf",
+          "ordinary": "94a3de70-aa63-4940-bab0-c3a22fed0e37",
+          "claimed": {
+            "taskId": "a1bffb3f-7daa-42cc-b538-6926283a32bf",
+            "attemptId": "24bdaee1-d297-40e0-abf3-2e14399467cf",
+            "runnerId": "3b627056-35f4-42f6-8de4-0ef84520b56c",
+            "ownerVersion": 1
+          }
+        },
+        {
+          "kind": "sql-before-limit",
+          "legacy": false,
+          "plugin": "14c96fe2-1ed2-4f28-ae4a-9fb893086e2a",
+          "ordinary": "8d450542-6292-46d2-b1e5-e76498833c4a",
+          "claimed": {
+            "taskId": "14c96fe2-1ed2-4f28-ae4a-9fb893086e2a",
+            "attemptId": "25227d90-800c-4b20-9afb-72a9a1af833d",
+            "runnerId": "cb4497f0-ca96-4b4f-8c65-42a2914cc52e",
+            "ownerVersion": 1
+          }
+        },
+        {
+          "kind": "concurrent-receipt",
+          "identity": {
+            "taskId": "2900bfd4-b691-4927-964d-f72837d43560",
+            "attemptId": "155ef4e4-7fa3-4807-beba-eb187fad4d26",
+            "runnerId": "8cad07fb-6f9f-443a-9967-2e3c2f3a7c51",
+            "ownerVersion": 1
+          },
+          "namespacesConflictBothDirections": true
+        },
+        {
+          "kind": "restart-and-fences",
+          "identity": {
+            "taskId": "f7e899c0-9af8-4642-a1ff-4499ffd823aa",
+            "attemptId": "d5d90757-d04f-4409-baa6-0d968d315565",
+            "runnerId": "c1b90f7b-6127-43e2-be0a-10b119436430",
+            "ownerVersion": 1
+          },
+          "lease": "2026-10-07T07:03:46.418Z",
+          "sessionId": "4568f0e0-3391-4798-ac58-17855b4f3782",
+          "listeners": 2
+        },
+        {
+          "kind": "registration-barrier",
+          "blockerPid": 96390,
+          "waiterPid": 96419,
+          "grantCommitted": true,
+          "noAttemptOrReceipt": true
+        },
+        {
+          "kind": "barrier-client-closed",
+          "rolledBack": true,
+          "primaryFailed": false,
+          "cleanupErrors": []
+        },
+        {
+          "kind": "bounded-fixture-counts",
+          "counts": {
+            "tasks": 12,
+            "registrations": 7
+          }
+        }
+      ],
+      "cleanup": {
+        "owners": {
+          "startup": true,
+          "server": true,
+          "boss": true
+        },
+        "ownersClosed": true,
+        "poolClosed": true,
+        "adminClosed": true,
+        "createRequested": true,
+        "createAcknowledged": true,
+        "creationReceiptSaved": true,
+        "identity": {
+          "oid": "1242229",
+          "owner": "flow",
+          "marker": "x01:879094b24fe746629dbf483fbea371ea:runtime:4266a3e6-c554-4d51-a136-325248b9ce44"
+        },
+        "identityConfirmed": true,
+        "connections": 0,
+        "dropRequested": true,
+        "dropAcknowledged": true,
+        "databaseAbsent": true
+      },
+      "listeners": [
+        {
+          "origin": "http://127.0.0.1:53800",
+          "closed": true
+        },
+        {
+          "origin": "http://127.0.0.1:53814",
+          "closed": true
+        }
+      ],
+      "httpRequests": 107,
+      "responseBytes": 86515,
+      "workUntil": 1791356430476,
+      "cleanupUntil": 1791356490476,
+      "errors": [],
+      "errorCount": 0,
+      "cleanupConfirmed": true,
+      "retainedDatabase": null,
+      "finishedAt": "2026-10-07T06:58:49.154Z"
+    }
+  },
+  "PGMayHaveStarted": true,
+  "retained": [],
+  "temporaryPeak": "UNKNOWN",
+  "window": "879094b24fe746629dbf483fbea371ea",
+  "executionHead": "2b9e07dccdc76da8a4304997fb08cd5e7e5e73ae",
+  "manifestSha256": "8ff85ec0a07ffa5c8c624714320bd07f728a7fa1ede74991954631602bfa1dc1",
+  "temporary": {
+    "path": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-pg-dc_p9nm4",
+    "dev": 16777234,
+    "ino": 123603683,
+    "removed": true,
+    "sampleBytes": 7006,
+    "sampleEntries": 10
+  },
+  "selection": {
+    "numTotalTests": 6,
+    "numPassedTests": 6,
+    "numFailedTests": 0,
+    "numPendingTests": 0,
+    "success": true
+  },
+  "httpRequests": 107,
+  "responseBytes": 86515,
+  "exactSelection": true,
+  "allAssertionsPassed": true,
+  "endedBeforePersistenceAt": "2026-10-07T06:58:49.193344+00:00",
+  "elapsedBeforePersistence": 8.71655995794572,
+  "outputBytesBeforeReceipt": {
+    "runtime-created.json": 402,
+    "vitest.json": 2591,
+    "runtime-reservation.json": 450,
+    "runtime-create-request.json": 353,
+    "output.log": 144,
+    "runtime-result.json": 3210,
+    "reservation.json": 282,
+    "launch.json": 188,
+    "preflight.stdout": 285,
+    "admission.json": 2822
+  },
+  "uncapturedStreamBytes": 0,
+  "rawChargeBeforeReceipt": 10727,
+  "completeAccounting": true,
+  "rawBytesBeforeReceipt": 10727
+}

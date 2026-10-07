@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T05:33:27.229572+00:00 |
+| 最近更新时间 | 2026-10-07T07:08:38.232210+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 原X01首次实际开工证据尚未确定，不以claim/提交时间补造；本次后继准备从2026-10-07T03:11:58.466Z fresh核验开始 |
@@ -10,24 +10,24 @@
 | 任务层级 | 大task |
 | 大task ID | [X01](plan.md) |
 | co-lead | mika |
-| Claim | [enable/binding v8](../../docs/evidence/x01/enable-binding-amend-v8.json)，ACTIVE；14源码+034+两metadata，旧host两源已交回 |
+| Claim | [v11 ACTIVE31scope](../../docs/evidence/x01/center-claim-pg-amend-v11.json)；在v10基础仅新增claim-pg.test.ts，c15五源与旧已审源保持固定 |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding |
 | Branch | codex/plugin-enable-binding |
-| 工作基线 / HEAD | base60ca；source37177aba665fa8d787e40c2a18c4d124bdf819ca；已审结果packet e628dbdfe0e53b27f8d15b2ecfba438f4217e872；本提交仅独审归档，未main |
-| 工作树 dirty 状态 | 本段仅独审/READY/status metadata；commit/push后clean停写，v8占用保留 |
-| 工作分支状态 | in-progress |
-| 检查状态 | StageC R3原27/27实际通过，2DB/205HTTP/资源完整closed；原R1/R2失败均保留 |
-| Review | APPROVED：chatui01_owner 2026-10-07T05:17:35Z，target e628dbdfe0e53b27f8d15b2ecfba438f4217e872；0P1/P2，限定R3结果和16文件intake |
-| 已集成 main 状态 / HEAD | host e682两源已main fe1b362f72dd2a1f0c4efaaf812d1a38ed0a6e8d，接收点7810cbf1461f60710a3aad29f86c7b2378aaa32e含中心安装production接线；[接收核验](../../docs/evidence/x01/host-gates-main-acceptance.md)。center a578/029、leaf bf3378+依赖f635已接收 |
-| 实现目标 | 37177aba665fa8d787e40c2a18c4d124bdf819ca |
-| 实现范围 | packages/contracts/src/plugin-runtime.ts, packages/contracts/src/plugin-runtime.test.ts, packages/contracts/src/plugins.ts, apps/server/src/plugins/storage.ts, apps/server/src/plugins/commands.ts, apps/server/src/plugins/plugins.test.ts, apps/server/src/plugin-runtime/store.ts, apps/server/src/plugin-runtime/commands.ts, apps/server/src/plugin-runtime/routes.ts, apps/server/src/plugin-runtime/runtime.test.ts, apps/runner/src/plugins/execution.ts, apps/runner/src/plugins/execution.test.ts, apps/web/src/plugin-management/PluginManagement.tsx, apps/web/test/plugin-management/browser.ts, packages/storage/migrations/034-plugin-runtime.sql, docs/evidence/x01/enable-binding-pg-fixture.ts, docs/evidence/x01/enable-binding-pg-vitest.config.mjs, docs/evidence/x01/enable-binding-pg-once.py, docs/evidence/x01/enable-binding-pg-caller.test.py, docs/evidence/x01/enable-binding-pg-input.json |
+| 工作基线 / HEAD | 原base60ca；新claim/journal片消费main bf8两源，source c15c7ddaef1d23a24a550c75a4d151a33be76f81；旧16源已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a |
+| 工作树 dirty 状态 | 仅归档已审PG与READY intake；提交push后clean，源码/原始结果冻结 |
+| 工作分支状态 | approved |
+| 检查状态 | 中心实际PG6/6/107HTTP；完整资源收尾已独审。未重跑旧27/10/11 |
+| Review | db_transaction_owner 07:06:23Z APPROVED/0P1P2，fixed result05dd4050/packetb3fa09df；center-claim-pg-result-independent-review.json |
+| 已集成 main 状态 / HEAD | 领域16源/162785B已main 5cd64a4d373a2919d0a00affcb2615667aa18d9a，root/Web组合0、不重跑27；[接收核验](../../docs/evidence/x01/enable-binding-main-receipt.json)。默认mount/v3 claim/runtime仍后继 |
+| 实现目标 | 967803365239cacdfc15b16bf6f4b2b3d7d92eed |
+| 实现范围 | apps/server/src/plugin-runtime/claim-pg.test.ts, docs/evidence/x01/center-claim-pg-once.py, docs/evidence/x01/center-claim-pg-local.py, docs/evidence/x01/center-claim-pg-caller.test.py, docs/evidence/x01/center-claim-pg-vitest.config.mjs, docs/evidence/x01/center-claim-pg-tsconfig.json |
 | 本片段交付阶段 | integration |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 插件启用、冻结绑定与逐阶段授权的领域模块已通过验收和独立审查，可受控接入主线 |
-| 下一可用交付 | 主线接收固定领域模块；生产runner接线和真实现成npm能力随后继续 |
-| 当前阻塞 | ACTIVE: 等待主线受控接收；生产调用链与semver能力仍未接入，当前无运行资源占用 |
+| 当前产出 | 中心真实领取与恢复验收已获独立批准，等待受控主线接收 |
+| 下一可用交付 | 受控接收中心领取片并交回共享入口；随后继续生产runner与真实npm能力 |
+| 当前阻塞 | NONE: 中心片READY待集成；当前0实际资源持有/待launch |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 证据 / 依赖 |
@@ -51,7 +51,7 @@
 
 ## Handoff 与看板
 
-计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。当前同claim v8已accept到plugin-enable-binding，17scope为14源码+034+两metadata；host两源已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
+计划小交付已获 Goal Owner 独立只读 plan-only APPROVED；交 Lead 登记全局索引/registry/REQ-11～13。本 status 是唯一手填进度；本段状态已通过只读parseStatus聚合，无解析错误，不据此声称生产页面已刷新。旧D04 claim04c5de3f v2已released；原6ddedc73 v5/旧树host两源属于历史。原同claim v8已accept到plugin-enable-binding；当前v11为31scope，新增5个claim/journal及8个中心literal，旧15已main源停止写入，host两源此前已交回。Lead在main93a92c918b29126b6761b02258cef523906eca94完成canonical迁移，4320于23:14:39.075实采181源、X01 implementation/current、issues[]，旧树无重复登记。本status仍是唯一手填事实源。
 
 2026-10-06 04:04 UTC：重新读回 X01 active v1、工作树 clean 后补 X03 只读子段。沿用唯一 plan/status；已审计划 target 不变，本补充未自授产品批准。主线可能已有后继集成，本次未更新历史 main 观察值。
 
@@ -237,3 +237,39 @@ Stage C沿原分层验收，不新增大manifest：真实runtime.test原10case�
 2026-10-07T05:14:26.740103+00:00：R3结果固定2ee9fa44，24bindings/20raw28750B与16source162785B的最小main intake待独审；原27一次27/27，原R1/R2失败不改。fresh账本v8 ACTIVE/17scope无变，当前0运行/0待launch。PG已实际归还，按Mika新队列明确SVC08 assignment为next-ready并已直接通知Web co-lead；C02无PG holder不阻其准入。owner在最终packet提交/push后停止写入保留claim，下一由chatui只读结果审。
 
 2026-10-07T05:33:27.229572+00:00：fresh核e628=origin clean、claim v8 ACTIVE/17scope。接收chatui05:17:35独审APPROVED并将[唯一集成入口](../../docs/evidence/x01/enable-binding-integration-ready.md)标READY；固定16源/24结果bindings及全部失败原件不改，原intake的pending字段作为封存历史由READY receipt后继。0tests/PG/types/产品扩写；Execution Lead可直接读取最小受控输入。完成本提交/push后停止写入保claim，未main/未完整X01。
+
+2026-10-07T05:42:46.859177+00:00: fresh a6d clean/v8后原子amend到v9 ACTIVE22scope（[回执](../../docs/evidence/x01/plugin-claim-amend-v9.json)），新增5精确literal。仅按fixedmain bf8读取已main S01P07 runner-claim/admission-journal两源作为新片基线；16intake源/既有raw固定不改。新片实现/验证未完成，不继承旧APPROVED；共享C02 index/config/main/tasks和CHAT05 runner.ts未领取不写。
+
+2026-10-07T05:49:27.481231+00:00：新片source c15c7ddaef1d23a24a550c75a4d151a33be76f81 完成types0+11/11，2受监督child/7真实journalfixture/2TMP均完整收束；[ready](../../docs/evidence/x01/plugin-claim-review-ready.md)。C02已明确共享client/index、contracts/index、config/main继续占用，本片避开。旧16域源逐main 5cd64a4d373a2919d0a00affcb2615667aa18d9a Git/WT/hash核符，停止旧源写入而保claim修复期。新v3尚无server/runtime发请求，不将资格合同和journal消费扩大为生产插件可用。架构新增现journal version3持久请求格式；main架构baseline待此片集成由Lead更新。
+
+
+## 2026-10-07T05:54:11.464595+00:00 v3合同与journal独审归档
+
+status_read于2026-10-07T05:52:15.936782Z独立SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，target `c15c7ddaef1d23a24a550c75a4d151a33be76f81` / packet `cfdade05a428c5bee721910d604259d5deff8791`，0P1/P2；[独审收据](../../docs/evidence/x01/plugin-claim-independent-review.json)、[五源READY输入](../../docs/evidence/x01/plugin-claim-integration-ready.json)。manifest/raw/5源保持固定，11/11与types0不重跑；fresh账本v9 ACTIVE22scope，保留review/集成修复期。当前片未main，完整X01未完成。架构影响：同一AdmissionJournal新增显式协议版本与host资格持久身份，中心/运行器仍未接v3；集成后固定基线图待Execution Lead核main target更新，不改共享图。旧16领域main5cd事实保持。
+
+
+中心领取段启动：固定main5cd四个当前入口/回执源码，新增8literal原子amend v10 COMMITTED 2026-10-07T05:57:01.914Z。当前只source，S01性能独占准备中，0新checks/PG；复用既有allocator、事务与flow.commands，不建第二领取状态权威。当前实现目标c15仍是已审前片，新中心尚未固定，不能继承批准。
+
+## 2026-10-07T06:05:13.906868+00:00 中心真实领取入口固定交审
+
+source `0224e94d1133a72478fdf50380f726bd2ba5922f`，新7源/原同一claim v10。两个实际local进程于06:03:32.085299→06:03:49.535124 UTC结束并直接归还C02；types0+10/10，0PG/网络listener。固定main database donor在真实module位置加载、原callback事务实现参与；SQL fake不能替代真实PG过滤/并发保证，下一PG反例明确NOT_RUN。S01性能等待05:59前后仅依据MikaOPEN/06:00:50.057实际归还消息，不推独立壁钟。架构影响：原center启动消耗既有034，原领取路径支持严格v3；runtime/client/phase port未接，基线图待main后Lead更新。
+
+2026-10-07T06:09:33.346802+00:00：中心产品0224冻结，最终支持436ab仅禁止Python导入写bytecode；原local两own证据cache73068B按2MiB源/metadata预算入账并精确清理，原raw不改。最终[26项交审包](../../docs/evidence/x01/center-claim-final-review-ready.json)待独审；types0/10局部通过不重跑，实际PG仍NOT_RUN；v10 ACTIVE30、无实际local/PG占用。
+
+2026-10-07T06:22:16.726246+00:00：fresh v10 ACTIVE30/04cee clean后接收中心源码及local独审0P1/P2，固定[下一PG输入](../../docs/evidence/x01/center-claim-pg-preparation.json)与[六组验收](../../docs/evidence/x01/center-claim-pg-plan.md)：1专库/现有17连接上界/真实认证claim、不重跑旧27。旧236输入234不变、2已审中心源变化、31SQL缺项0；本段0工程检查/import/PG/供给。新PG test/窄recipe尚未写，NOT_EXECUTABLE/NOT_OPEN，source及原raw冻结。C02 P2增量7070/d2ae已只读批准，未知TMP与全部启动尝试口径保留；client/index与contracts/index仍C02 ACTIVE，未交回不写。
+
+2026-10-07T06:24:42.608Z：v10→v11原子amend新增唯一claim-pg.test.ts；六组已批设计开始实施，复用原fixture/31SQL/OPS14；本段≤20min、最多4普通child各60s、TMP8MiB/raw256KiB/source-meta1MiB，实际PG未开。
+
+2026-10-07T06:30:10Z：真实claim-PG准备source74e187/support24c668；06:29:15.856至06:29:41.936三local子进程全部closed/TMP同inode清理，raw387B，types0/collect6（未执行hooks）/纯资格2过，whole外部时长UNKNOWN。实际PG仍NOT_OPEN。中心片真实PG/独审/main receipt后，server/index.ts出口明确停写并amend交回CHAT05P01，不以fullruntime/semver未完成长期占出口。C02两共享出口仍待其本片main后交回。
+
+2026-10-07T06:33:04.254059+00:00：交审准备manifest252项/1,269,357B、31SQL/27external/21links逐实际Git/WT核符；三个普通local进程已归还，无待launch/PGholder。source74e187/support24c668固定，输入/原件及新namespace保持，等待唯一peer准备审。完整X01继续开放。
+
+2026-10-07T06:40:24.234000+00:00：原review唯一P2窄修source967803，primaryFailed布尔与原异常直传，ROLLBACK/release失败只作为secondary，原27/6行为断言未删。仅静态核控制流/类型组合，0新types/test/PG/资源持有；原types0/list6/pure2保原件不当本增量运行。manifest仅替换test一row，其余251与27external/21links原样。
+
+2026-10-07T06:57:17.081483+00:00：恢复既有六组ready段；fresh v11/full31及252 inputs/27external/21links errors[]，新run-r1 absent。已向Web co-lead发送实际交接请求。原budget180s/base1242562560B保留，额外保守旧C02KEEP33685504B及其他actual并跑完整声明，尚未生成新gate/未actual。
+
+## 2026-10-07T07:02:55.733878+00:00 — 中心真实领取 PG R1 已收尾
+
+Fresh07:01:33.351Z账本确认v11 ACTIVE31/身份未变。执行2b9e07dc，实际06:58:40.476848→06:58:49.193344（final persistence前），time real8.89s；六组原选择6/6，107HTTP、12tasks/7registrations，两个监督进程、一个markedDB/零连接普通DROPabsence、两个listener与同inodeTMP均确认收尾。历史EPERM审计保留、unknown=false；[原件与边界](../../docs/evidence/x01/center-claim-pg-result.md)。PG实际已直接交回Web/C02知悉，metadata不占窗口。旧准备/raw/源/依赖不变，不跑额外检查。结果忠实性待独审；中心片与c15尚无新main receipt。完成接收后立即STOP并部分amend交回server/index.ts给CHAT05，不等待完整runtime/semver。架构影响仍原v3 center资格/双namespace receipt，不新增运行权威；全X01未完成。
+
+2026-10-07T07:08:38.232210+00:00：fresh07:07:24.414Z核v11 ACTIVE31/唯一树未变；归档db于07:06:23对05dd结果/b3fa包的APPROVED，19bindings157495B/12raw22173B、6/6/107HTTP与资源及时钟边界均通过。中心8源[READY intake](../../docs/evidence/x01/center-claim-integration-ready.json)保持原blob，旧c15五源独立前置、16领域已main事实不覆盖；main接收尚未发生。PG已归还、不等待metadata/review占资源；本段0工程child/PG，只四metadata≤96KiB。main receipt后立即STOP并原子amend交回server/index.ts给CHAT05，不绑定完整X01后继；当前不提前释放。应用原本地技能核命名/职责/错误与收尾证据，架构影响仍原center v3入口，dashboard基线接收后由Lead更新。

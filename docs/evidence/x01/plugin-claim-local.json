@@ -1,0 +1,393 @@
+{
+  "startedAt": "2026-10-07T05:47:16.644993+00:00",
+  "startEpoch": 1791352036.6452491,
+  "attempts": [
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T05:47:16.646720+00:00",
+      "freeBeforeBytes": 24564432896,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-plugin-claim-nyr1lkuq",
+        "dev": 16777234,
+        "ino": 123540146,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/plugin-claim-tsconfig.json"
+      ],
+      "process": {
+        "pid": 71096,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1239,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T05:47:17.886339+00:00",
+      "elapsedBeforeReceiptSeconds": 1.2392922081053257
+    },
+    {
+      "label": "tests",
+      "startedAt": "2026-10-07T05:47:33.234665+00:00",
+      "freeBeforeBytes": 24564768768,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-plugin-claim-kaid7hj5",
+        "dev": 16777234,
+        "ino": 123540169,
+        "removed": true,
+        "endSample": {
+          "entries": 5,
+          "bytes": 5353,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/x01/plugin-claim-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-plugin-claim-kaid7hj5/tests.json"
+      ],
+      "process": {
+        "pid": 79885,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 938,
+        "observed_bytes": 114,
+        "retained_bytes": 114,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "tests",
+        "rawComplete": true
+      },
+      "raw": "JSON report written to /var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-plugin-claim-kaid7hj5/tests.json\n",
+      "rawBytes": 114,
+      "rawSha256": "dc8c6258f2e8dd59b405d25671c0859038f01c19ab0c5c42a2ec706e31f06e3a",
+      "tests.json": {
+        "numTotalTestSuites": 2,
+        "numPassedTestSuites": 2,
+        "numFailedTestSuites": 0,
+        "numPendingTestSuites": 0,
+        "numTotalTests": 11,
+        "numPassedTests": 11,
+        "numFailedTests": 0,
+        "numPendingTests": 0,
+        "numTodoTests": 0,
+        "snapshot": {
+          "added": 0,
+          "failure": false,
+          "filesAdded": 0,
+          "filesRemoved": 0,
+          "filesRemovedList": [],
+          "filesUnmatched": 0,
+          "filesUpdated": 0,
+          "matched": 0,
+          "total": 0,
+          "unchecked": 0,
+          "uncheckedKeysByFile": [],
+          "unmatched": 0,
+          "updated": 0,
+          "didUpdate": false
+        },
+        "startTime": 1791352053454,
+        "success": true,
+        "testResults": [
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "persists the complete v3 request and reuses it without empty-poll writes across restart",
+                "status": "passed",
+                "title": "persists the complete v3 request and reuses it without empty-poll writes across restart",
+                "duration": 16.78687500000001,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "downgrade, changed runner or changed current host preserve the unknown original key",
+                "status": "passed",
+                "title": "downgrade, changed runner or changed current host preserve the unknown original key",
+                "duration": 12.500666999999964,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "v2 and uncertain v1 cannot silently become v3 opportunities",
+                "status": "passed",
+                "title": "v2 and uncertain v1 cannot silently become v3 opportunities",
+                "duration": 18.981042000000002,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "atomic acceptance retains the assignment and same qualification under the next key",
+                "status": "passed",
+                "title": "atomic acceptance retains the assignment and same qualification under the next key",
+                "duration": 41.304959,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "failed durable acceptance leaves the original request on disk and never reports it accepted",
+                "status": "passed",
+                "title": "failed durable acceptance leaves the original request on disk and never reports it accepted",
+                "duration": 10.918792000000053,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "v2 callers still accept and complete a durable assignment with their original API",
+                "status": "passed",
+                "title": "v2 callers still accept and complete a durable assignment with their original API",
+                "duration": 28.01591700000006,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791352053889,
+            "endTime": 1791352054017.0159,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/runner/src/admission-plugin-claim.test.ts"
+          },
+          {
+            "assertionResults": [
+              {
+                "ancestorTitles": [],
+                "fullName": "v3 is explicit and v2 strict readers keep their exact request and response shape",
+                "status": "passed",
+                "title": "v3 is explicit and v2 strict readers keep their exact request and response shape",
+                "duration": 2.923334000000011,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "a plugin assignment binds task, attempt, owner, runner and exact current host tuple",
+                "status": "passed",
+                "title": "a plugin assignment binds task, attempt, owner, runner and exact current host tuple",
+                "duration": 3.5898750000000064,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "bound tools cannot carry another executor or private-input authority",
+                "status": "passed",
+                "title": "bound tools cannot carry another executor or private-input authority",
+                "duration": 0.7850830000000002,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "opted-in requests still accept ordinary tasks while legacy readers reject a binding",
+                "status": "passed",
+                "title": "opted-in requests still accept ordinary tasks while legacy readers reject a binding",
+                "duration": 0.5534999999999997,
+                "failureMessages": [],
+                "meta": {}
+              },
+              {
+                "ancestorTitles": [],
+                "fullName": "mismatched ACK and wrong-operation states remain errors rather than definite emptiness",
+                "status": "passed",
+                "title": "mismatched ACK and wrong-operation states remain errors rather than definite emptiness",
+                "duration": 1.2298329999999993,
+                "failureMessages": [],
+                "meta": {}
+              }
+            ],
+            "startTime": 1791352054154,
+            "endTime": 1791352054163.2297,
+            "status": "passed",
+            "message": "",
+            "name": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/packages/contracts/src/plugin-runner-claim.test.ts"
+          }
+        ]
+      },
+      "fixtures.json": {
+        "roots": [
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-plugin-claim-kaid7hj5/tmp/flow-plugin-admission-dts91f",
+            "dev": 16777234,
+            "ino": 123540228,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-plugin-claim-kaid7hj5/tmp/flow-plugin-admission-JCUvH5",
+            "dev": 16777234,
+            "ino": 123540230,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-plugin-claim-kaid7hj5/tmp/flow-plugin-admission-4TD3fw",
+            "dev": 16777234,
+            "ino": 123540232,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-plugin-claim-kaid7hj5/tmp/flow-plugin-admission-8bbDOA",
+            "dev": 16777234,
+            "ino": 123540234,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-plugin-claim-kaid7hj5/tmp/flow-plugin-admission-Pd9IFV",
+            "dev": 16777234,
+            "ino": 123540236,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-plugin-claim-kaid7hj5/tmp/flow-plugin-admission-nbjeVV",
+            "dev": 16777234,
+            "ino": 123540241,
+            "removed": true
+          },
+          {
+            "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-plugin-claim-kaid7hj5/tmp/flow-plugin-admission-gydsks",
+            "dev": 16777234,
+            "ino": 123540244,
+            "removed": true
+          }
+        ],
+        "absent": [
+          true,
+          true,
+          true,
+          true,
+          true,
+          true,
+          true
+        ]
+      },
+      "finishedAt": "2026-10-07T05:47:34.174345+00:00",
+      "elapsedBeforeReceiptSeconds": 0.939211165998131
+    }
+  ],
+  "unknown": false,
+  "limits": {
+    "segmentSeconds": 900,
+    "commands": 6,
+    "commandSeconds": 60,
+    "temporaryBytes": 16777216,
+    "rawBytes": 524288,
+    "sourceMetadataBytes": 2097152
+  },
+  "floorBytes": 4072407040,
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "tar": 0,
+  "wholeExternalWall": null,
+  "updatedAt": "2026-10-07T05:47:34.174361+00:00",
+  "postSourceAttribution": {
+    "checkedAt": "2026-10-07T05:49:27.481231+00:00",
+    "sourceCommit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+    "files": [
+      {
+        "path": "packages/contracts/src/runner-claim.ts",
+        "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+        "bytes": 3965,
+        "sha256": "67d8dbfa2991426e86b93e74d6443b012e6e1ccee514f8956567dd3c23364a00"
+      },
+      {
+        "path": "packages/contracts/src/plugin-runner-claim.ts",
+        "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+        "bytes": 4197,
+        "sha256": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824"
+      },
+      {
+        "path": "packages/contracts/src/plugin-runner-claim.test.ts",
+        "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+        "bytes": 6094,
+        "sha256": "be0401f4ea46302c92c69c199eb71e6903f217d3b731ee042ac495744d0ff02f"
+      },
+      {
+        "path": "apps/runner/src/admission-journal.ts",
+        "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+        "bytes": 10960,
+        "sha256": "d7e4ab5c440f13c5ef543f476421331d79899a971fdf2a1f7a54ec5efb5da2b3"
+      },
+      {
+        "path": "apps/runner/src/admission-plugin-claim.test.ts",
+        "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+        "bytes": 6811,
+        "sha256": "329c22ee967b32a25c072fc05920a4349931a90137898860960bcaed94006545"
+      }
+    ],
+    "note": "These source files were committed before the two commands and are still byte-equal to their fixed Git blobs; this postcheck is not represented as a pre-spawn input manifest."
+  },
+  "finished": true,
+  "pendingLaunches": false,
+  "localReturnedAt": "2026-10-07T05:49:27.481231+00:00",
+  "totalPipeBytes": 114,
+  "resultArtifactBytes": 5353
+}

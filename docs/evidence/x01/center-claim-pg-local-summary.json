@@ -1,0 +1,54 @@
+{
+  "recordedAt": "2026-10-07T06:31:01.335628+00:00",
+  "sourceCommit": "74e1872714372a8da4af2833d163db1cd8e57e4f",
+  "supportCommit": "24c66822e09a90754604d70a877b89aa1f4febef",
+  "record": "center-claim-pg-local.json",
+  "types": {
+    "exit": 0
+  },
+  "PGCollection": {
+    "selectedNames": [
+      {
+        "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+        "name": "legacy and v2 filter plugin tasks before LIMIT while v3 requires the exact live host"
+      },
+      {
+        "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+        "name": "concurrent v3 replay is one allocation and conflicts across both protocol namespaces"
+      },
+      {
+        "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+        "name": "restart recovers the same pin without renewing its lease and preserves capacity and session fences"
+      },
+      {
+        "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+        "name": "registration lock waiter observes committed grant revocation before creating attempt or receipt"
+      },
+      {
+        "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+        "name": "accepted pin survives config and disable but live grant and runner revocation deny recovery and phases"
+      },
+      {
+        "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+        "name": "saved receipts preserve cancel and maintenance semantics but expire or stale owners are unavailable"
+      }
+    ],
+    "count": 6,
+    "executedCases": 0,
+    "hooks": 0,
+    "PG": 0
+  },
+  "pureQualification": {
+    "selected": 2,
+    "passed": 2
+  },
+  "childCount": 3,
+  "rawBytes": 387,
+  "wholeExternalWall": null,
+  "temporaryPeak": "NOT_MEASURED_END_SAMPLES_ONLY",
+  "finalOwnedAbsent": true,
+  "knownTemporaryRemoved": true,
+  "historicalUnknownObservationsPreserved": true,
+  "actualPG": "NOT_OPEN_NOT_RUN",
+  "sharedExitHandoff": "After center PG/main receipt, apps/server/src/index.ts will stop writing and be atomically handed back for CHAT05P01. Not held for full runtime/semver."
+}

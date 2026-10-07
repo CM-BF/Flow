@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T06:54:38.345442+00:00 / mainf39a5dfe；CHAT05领域与ENG单helper限定结果已接收，管理事实随本批发布 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T07:12:27.176137+00:00 / main a72181d7已接S01P08；本批X01中心claim与188来源候选已审类型通过，待当前提交快进 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | mainf39a5dfea0a33ef55631cb7e29291deca6d4e0d2；本批仅两个已审父status与I02收口记录 |
+| 工作基线 / HEAD | main a72181d7a8a195e75129522b218bc2e10ccd1fc3；仅X01已审13源/自身记录与D05两来源登记 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | CHAT05原3PG/3过/3461ms、18绑定及清理独审；类型依赖P2已窄修关闭，组合root noEmit exit0/9991ms。ENG单stock成功/574ms仅机制范围；不重跑PG或旧矩阵。 |
-| 已集成main状态 / HEAD | main/origin f39a5dfea0a33ef55631cb7e29291deca6d4e0d2已接CHAT05十八源及ENG新实验记录，组合类型通过；公共body挂载/运行时仍待后继。个人backend af51/v18、网页d629/v3与c7b宿主不变。 |
+| 检查状态 | X01固定67 bindings与批准base前像一致；原PG6/6和既有局部独审保留，组合root noEmit exit0/9897ms。D05三文件独立文档审查通过；0新增PG/provider。 |
+| 已集成main状态 / HEAD | main/origin a72181d7已接CHAT05领域、ENG单helper记录与S01P08；当前X01窄批已审待快进。个人backend af51/v18、网页d629/v3与c7b宿主不变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 大于单包上限的工具材料已可在数据库场景中恢复和完整分页读取；原生文件工具完成一次受限写入验证，完整工程执行仍开放。 |
-| 下一可用交付 | 接入工具全文公共读取与运行时；继续原生工程宿主与Codex、界面恢复验收。 |
+| 当前产出 | 工具全文领域和流片所有权检查优化已进入主线；插件领取现在具备经过数据库验证的中心接线，完整插件执行仍待后继。 |
+| 下一可用交付 | 发布已审插件领取接线和看板来源，接入工具全文公共读取与运行时；继续Codex和界面恢复验收。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
@@ -346,3 +346,7 @@ X03/O02/D06独立批准片段已受控合入本分支，源码与获审target精
 2026-10-07T06:54:38.345442+00:00：主线f39完成受控接收；本批父状态5f70两文件获assignment独立文档APPROVED，逐字接收，0产品重测。CHAT05产品停写并准备公共接线，范围交回以原owner实际receipt为准；ENG单helper不升级为完整native authority。
 
 2026-10-07T07:04:43.041048+00:00：S01P08已审e3d28f96的adapter一个授权检查移位及新直接消费者接收，前像完整匹配，21manifest绑定全部相同；87闭包仅已审CHAT05 outbox/DTO增量，直接adapter/control/turn不变。root noEmit0/9633ms，无行为/容量重跑。固定输入见[接收记录](../../docs/evidence/i02/s01p08-intake.json)。不宣称真实延迟或native容量收益。
+
+## X01 / 新来源窄接收 2026-10-07T07:12:02.108822+00:00
+
+X01 五个已审claim/journal源与八个中心源按固定输入接收，所有既有路径与批准base同blob；未重复领域或PG检查。根组合类型检查exit0/9897ms，未重复既有领域/PG检查。D05两来源登记由native_center_owner只读APPROVED，候选188，实际运行仍186直至发布。证据：[X01 intake](../../docs/evidence/i02/x01-claim-intake.json)、[登记独审](../../docs/evidence/i02/chat05p02-s01p08-registration-review.json)。

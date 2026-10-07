@@ -1,3 +1,59 @@
+状态：APPROVED（中心六组真实PG结果忠实性与最小intake；未main/非完整X01）
+
+Review target commit: 05dd405074fce86a5e9142f20278bd41e27e1e24
+
+db_transaction_owner于2026-10-07T07:06:23Z独审0P1/P2，[正式回执](../../docs/evidence/x01/center-claim-pg-result-independent-review.json)。19bindings/6过6与资源收尾、原始时钟口径核符；[中心8源READY](../../docs/evidence/x01/center-claim-integration-ready.json)依赖已审c15五源，受控main接收另记。历史PENDING与原manifest/raw逐字保留。
+
+---
+
+状态：PENDING（中心六组真实PG结果忠实性；源码/准备批准保持）
+
+Review target commit: 05dd405074fce86a5e9142f20278bd41e27e1e24
+
+本次执行6/6、107HTTP与资源全部收尾；[结果入口](../../docs/evidence/x01/center-claim-pg-result.md)。[固定结果清单](../../docs/evidence/x01/center-claim-pg-result-manifest.json)与最小intake已绑定。不授下一窗口/完整X01通过。
+
+---
+
+状态：APPROVED（六组center-claim PG准备；实际结果未运行）
+
+Review target commit: 967803365239cacdfc15b16bf6f4b2b3d7d92eed
+
+db_transaction_owner独审0P1/P2/原cleanup P2 CLOSED；Mika06:56:03转交，原独审精确UTC未给不推测。[回执](../../docs/evidence/x01/center-claim-pg-independent-review.json)。本批准不等实际PG/production runner或semver验收。
+
+---
+
+状态：PENDING（PG锁屏障主失败保留窄修，等待原reviewer增量复审）
+
+Review target commit: 967803365239cacdfc15b16bf6f4b2b3d7d92eed
+
+原f9d1f13准备独审06:37:52报告唯一P2：cleanup覆盖主失败。当前只改一test的catch/finally；[固定增量](../../docs/evidence/x01/center-claim-pg-cleanup-fix.json)。其余六组/252绑定语义及旧检查无需重跑；本增量0工程检查/PG。
+
+---
+
+状态：PENDING（新六组真实PG准备；旧中心源码/local批准保持）
+
+Review target commit: 24c66822e09a90754604d70a877b89aa1f4febef
+
+[唯一交审入口](../../docs/evidence/x01/center-claim-pg-ready.md)。test74e187/support24c668；types0/list6/纯配方2过，0PG。准备源码/资源接线待独审，不继承旧0224/436a的批准。
+
+---
+
+状态：APPROVED（仅中心领取源码与局部结果；真实PG未运行）
+
+Review target commit: 436ab4b87a9847b9ef9a05ad100a62dff9cf931d
+
+[最终固定交审入口](../../docs/evidence/x01/center-claim-final-review-ready.json)。db_transaction_owner/gpt-6-astra，2026-10-07T06:17:38Z，0P1/P2；[独审回执](../../docs/evidence/x01/center-claim-independent-review.json)。旧c15五源批准保持；本片types0/10通过不是PG/全X01验收。后继PG准备是未实现/未运行输入，不能继承本批准。
+
+---
+
+状态：APPROVED（仅v3领取合同与AdmissionJournal及局部结果；未接生产v3领取/执行）
+
+Review target commit: c15c7ddaef1d23a24a550c75a4d151a33be76f81
+
+status_read/gpt-6-astra，2026-10-07T05:52:15.936782Z，0P1/P2。[独审回执](../../docs/evidence/x01/plugin-claim-independent-review.json)、[READY输入](../../docs/evidence/x01/plugin-claim-integration-ready.json)。5源/22bindings与6external核符，11/11及types0；原unknown审计/时钟限制保留。生产server/client/runtime与完整X01未覆盖。
+
+---
+
 状态：APPROVED（R3结果忠实性及16文件领域模块intake；不含生产mount/整X01）
 
 Review target commit: e628dbdfe0e53b27f8d15b2ecfba438f4217e872
@@ -252,3 +308,7 @@ chatui01_owner/gpt-6-astra于2026-10-07 03:34:23 UTC，对d17abf426151f0f3d03a93
 ## 2026-10-07T03:42:55.732443+00:00 Stage C局部结果待审
 
 固定资源源码1e48ebf3，执行37e4f169；types和collect真实exit0，但owner断言错误地期待21而得到27，完整首record保留最终FAIL/exit1。实际名单为runtime10+registry17（旧it.each展开），未新增/删除行为、0PG/body；没有重跑。两监督末态/EOF及TMP身份清理确认，当前只请求一次源码+结果独审；实际PG仍未开放。原计数文档纠正是准备口径，不是修改失败raw或已有预算。
+
+## Center claim PG preparation (new, pending)
+
+2026-10-07T06:32Z: test74e187/support24c668 prepared, local types0/list6/pure2 pass. Independent review PENDING; actual PG NOT_OPEN. Canonical [ready](../../docs/evidence/x01/center-claim-pg-ready.md). Existing0224/436a source approval does not approve this new fixture/caller.

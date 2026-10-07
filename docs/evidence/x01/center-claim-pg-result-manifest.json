@@ -1,0 +1,187 @@
+{
+  "recordedAt": "2026-10-07T07:03:56.558586+00:00",
+  "state": "RESULT_REVIEW_PENDING",
+  "resultCommit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+  "executionHead": "2b9e07dccdc76da8a4304997fb08cd5e7e5e73ae",
+  "productCommit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+  "testCommit": "967803365239cacdfc15b16bf6f4b2b3d7d92eed",
+  "window": "879094b24fe746629dbf483fbea371ea",
+  "files": [
+    {
+      "path": "docs/evidence/x01/center-claim-pg-run-r1/admission.json",
+      "commit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+      "blob": "5e99a1935a6bf017d866e5fc2e65e0c82f7fc758",
+      "role": "raw/tool",
+      "bytes": 2822,
+      "sha256": "d748794fe28aab044ea28b94f2292138c762c52962730c70e926ff67d941a271"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-run-r1/launch.json",
+      "commit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+      "blob": "7034ba4be66f6dcde5255c72f472847aa9cb579d",
+      "role": "raw/tool",
+      "bytes": 188,
+      "sha256": "ee621365e444c271dfa7766f753e240edb3a6c66597c3ff01b929094d0625a5f"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-run-r1/output.log",
+      "commit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+      "blob": "d809fc4a7397e1a33942ac0a51f67ab67f42bd84",
+      "role": "raw/tool",
+      "bytes": 144,
+      "sha256": "cd0d4cdf06cd6366039697e2a2ca676d66437068878885de67f6e56a7118e075"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-run-r1/preflight.stdout",
+      "commit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+      "blob": "77396a56fd6c04b7c53fb9a4ce7e055eae5cf263",
+      "role": "raw/tool",
+      "bytes": 285,
+      "sha256": "9aa2f23e57d48d58531c75e920d740142fc9b4b59f3a888b767f4cf37c5d569c"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-run-r1/reservation.json",
+      "commit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+      "blob": "338f8a705a57d5991d71f76d9d12a1e9a27b8b44",
+      "role": "raw/tool",
+      "bytes": 282,
+      "sha256": "d45e1a4e936f83bb96aac2918638870021799d7206779e45ec7f1495739743f1"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-run-r1/result.json",
+      "commit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+      "blob": "126278047008abe986741efd724686c734dd3489",
+      "role": "raw/tool",
+      "bytes": 8572,
+      "sha256": "aecbb6470733bc4b8dff1c4f1084d7fe116636fcf42353dd3a73ad860541a266"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-run-r1/runtime-create-request.json",
+      "commit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+      "blob": "cf39bceb4f95716041742527f44a92f660f54409",
+      "role": "raw/tool",
+      "bytes": 353,
+      "sha256": "8a46da62b049008574cc81ca1835d9ca9d628bcc387d057a991677869df8c126"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-run-r1/runtime-created.json",
+      "commit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+      "blob": "11962c167824c0e74695f5b0e6c6914ffe35c619",
+      "role": "raw/tool",
+      "bytes": 402,
+      "sha256": "8c8eed6710b3cce89e90ad7c48f8e045730ca1becfdf79fa803e9c45803c39ed"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-run-r1/runtime-reservation.json",
+      "commit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+      "blob": "93fbca73948d2b42ef1be10fac6a513f0386a33e",
+      "role": "raw/tool",
+      "bytes": 450,
+      "sha256": "7dd77b19af3e823f947a397d8c488df40566cc8fd5d537e9f188ab197f56b1d2"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-run-r1/runtime-result.json",
+      "commit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+      "blob": "d003677c875ccd6f0958b2f5247704e1bef459af",
+      "role": "raw/tool",
+      "bytes": 3210,
+      "sha256": "a12e2e208da8417f4863d0c7f3a88b49a379c68ba6a6365e28bc8873421326af"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-run-r1/tool-observation.json",
+      "commit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+      "blob": "4279fad4274fbbdf424298b33146f491a0de296a",
+      "role": "raw/tool",
+      "bytes": 2874,
+      "sha256": "1e0a188a69c31c4833b4810b28531d4efaa742976d3dbb6b4dc87a141afaa681"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-run-r1/vitest.json",
+      "commit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+      "blob": "404a9c97d710a3552c575d016e91f9ba60f61e12",
+      "role": "raw/tool",
+      "bytes": 2591,
+      "sha256": "2f60f48206e79e3354031d20f9dd8d7ad22845792690c648ac739fdf00fbb73a"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-result.md",
+      "commit": "05dd405074fce86a5e9142f20278bd41e27e1e24",
+      "blob": "7875b50ea1a743eaa34240579531549a4ca64242",
+      "role": "result-report",
+      "bytes": 4537,
+      "sha256": "0c962f73c757d92f81188eec709f54c9da9db975ad24ef2d2de12d8cd7017ca7"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+      "commit": "2b9e07dccdc76da8a4304997fb08cd5e7e5e73ae",
+      "blob": "dd7198c968b96069584325c4e8a5d7c245141a3a",
+      "role": "fixed-input",
+      "bytes": 22990,
+      "sha256": "b73b10f0aff5c9f36c404a43c0fd5896024fccab5097a697ed7d0f103de1a98e"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-manifest.json",
+      "commit": "2b9e07dccdc76da8a4304997fb08cd5e7e5e73ae",
+      "blob": "6451ecbf01a9f2282dfb8b957bcb20c947a30d67",
+      "role": "fixed-input",
+      "bytes": 90764,
+      "sha256": "8ff85ec0a07ffa5c8c624714320bd07f728a7fa1ede74991954631602bfa1dc1"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-input.json",
+      "commit": "2b9e07dccdc76da8a4304997fb08cd5e7e5e73ae",
+      "blob": "a7230d5a55404d7e23cb9b1dd7f7ac08b360eca4",
+      "role": "fixed-input",
+      "bytes": 1961,
+      "sha256": "a5f22964c665b19c753c4967f07fdbaf4a71ae8397db1d2be351768c72cc4b7a"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-pg-independent-review.json",
+      "commit": "2b9e07dccdc76da8a4304997fb08cd5e7e5e73ae",
+      "blob": "9e797cf7b2442edd9a3ff4ff6a6980a40ecca711",
+      "role": "fixed-input",
+      "bytes": 873,
+      "sha256": "a4665d98ec57894d618bdbf651c1416c0213a969fde8e5fff7bd848245e95c9b"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-final-manifest.json",
+      "commit": "2b9e07dccdc76da8a4304997fb08cd5e7e5e73ae",
+      "blob": "23abef902ed280d09a436f7e8d2f0274387e6096",
+      "role": "fixed-input",
+      "bytes": 12798,
+      "sha256": "7e3fb79f480c104cb2756d776fdc66e98c879455a9fe1b7f57839389a613a40a"
+    },
+    {
+      "path": "docs/evidence/x01/center-claim-independent-review.json",
+      "commit": "2b9e07dccdc76da8a4304997fb08cd5e7e5e73ae",
+      "blob": "f6c018da2caa03a94623b08d67a884e1270214aa",
+      "role": "fixed-input",
+      "bytes": 1399,
+      "sha256": "4f2fbb91a21f5a6db3fc635a89606540dcbcfda242fb92e0fa8bc6dee48e5d9d"
+    }
+  ],
+  "summary": {
+    "bindings": 19,
+    "boundBytes": 157495,
+    "rawAndToolFiles": 12,
+    "rawAndToolBytes": 22173,
+    "callerRawBytes": 19299,
+    "toolTranscriptionBytes": 2874,
+    "externalAdmissionCopyBytes": 2822,
+    "selection": {
+      "selected": 6,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0
+    },
+    "httpRequests": 107,
+    "responseBytes": 86515,
+    "taskCount": 12,
+    "registrationCount": 7
+  },
+  "accounting": "Bound fixed inputs are historical bytes, not new run output. All 12 output/tool files are included once; external admission original is a separate retained 2822B copy. Manifest/report/intake are new owner metadata, not execution stream. Temporary sample is not a whole-time peak; DB/WAL is a reserve, not a hard measured cap.",
+  "timing": "Caller8.71655995794572s before persistence; time real8.89s through wrapper exit; outerUTC06:58:40→49 gives conservative≤10s. Tool waits are separate.",
+  "resources": "Two supervised groups final absent/merged EOF; one OID+marker DB normalDROP/absence/zero connections; two actual listenersclosed; exact ownTMP removed and owner lstatabsent. Shared resource return already delivered directly to Web before sealing. No new probes or cleanup.",
+  "limits": "Only six center claim PostgreSQL/HTTP cases; source unchanged. No production plugin-management mount, trusted runtime/client dispatch, native/provider, actual package/semver or whole X01 completion.",
+  "selfHash": "Not recursively hashed; Git packet commit binds this file."
+}

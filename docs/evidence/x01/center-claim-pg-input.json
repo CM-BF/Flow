@@ -1,0 +1,55 @@
+{
+  "protocol": "flow.x01.center-claim-pg.v1",
+  "productCommit": "0224e94d1133a72478fdf50380f726bd2ba5922f",
+  "totalSeconds": 180,
+  "workSeconds": 110,
+  "cleanupSeconds": 60,
+  "finalReserveSeconds": 10,
+  "suites": {
+    "runtime": {
+      "cases": 6,
+      "httpRequests": 256,
+      "connectionsMax": 17
+    }
+  },
+  "httpRequestsMax": 256,
+  "responseBytesPerRequest": 131072,
+  "responseBytesPerSuite": 4194304,
+  "databasesMax": 1,
+  "serialSuites": true,
+  "streamsBytes": 262144,
+  "resultBytes": 131072,
+  "rawBytes": 1048576,
+  "temporaryBytes": 33554432,
+  "temporaryEntries": 4096,
+  "reserveBytes": 1073741824,
+  "runName": "center-claim-pg-run-r1",
+  "databaseReserveBytes": 134217728,
+  "databaseReserveScope": "One marked dedicated database/WAL; reserve only, not a measured hard cap.",
+  "selection": [
+    {
+      "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+      "name": "legacy and v2 filter plugin tasks before LIMIT while v3 requires the exact live host"
+    },
+    {
+      "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+      "name": "concurrent v3 replay is one allocation and conflicts across both protocol namespaces"
+    },
+    {
+      "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+      "name": "restart recovers the same pin without renewing its lease and preserves capacity and session fences"
+    },
+    {
+      "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+      "name": "registration lock waiter observes committed grant revocation before creating attempt or receipt"
+    },
+    {
+      "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+      "name": "accepted pin survives config and disable but live grant and runner revocation deny recovery and phases"
+    },
+    {
+      "file": "apps/server/src/plugin-runtime/claim-pg.test.ts",
+      "name": "saved receipts preserve cancel and maintenance semantics but expire or stale owners are unavailable"
+    }
+  ]
+}

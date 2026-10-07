@@ -1,0 +1,232 @@
+{
+  "startedAt": "2026-10-07T06:29:15.856876+00:00",
+  "startEpoch": 1791354555.8573902,
+  "attempts": [
+    {
+      "label": "types",
+      "startedAt": "2026-10-07T06:29:15.858534+00:00",
+      "freeBeforeBytes": 24389156864,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-center-claim-v9n1sm_6",
+        "dev": 16777234,
+        "ino": 123584676,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/bin/tsc",
+        "--noEmit",
+        "-p",
+        "docs/evidence/x01/center-claim-pg-tsconfig.json"
+      ],
+      "process": {
+        "pid": 52469,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 2117,
+        "observed_bytes": 0,
+        "retained_bytes": 0,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "types",
+        "rawComplete": true
+      },
+      "raw": "",
+      "rawBytes": 0,
+      "rawSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "finishedAt": "2026-10-07T06:29:17.976043+00:00",
+      "elapsedBeforeReceiptSeconds": 2.1171936669852585
+    },
+    {
+      "label": "list",
+      "startedAt": "2026-10-07T06:29:28.177802+00:00",
+      "freeBeforeBytes": 24389312512,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-center-claim-x12ldpgc",
+        "dev": 16777234,
+        "ino": 123584717,
+        "removed": true,
+        "endSample": {
+          "entries": 4,
+          "bytes": 1530,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/vitest.mjs",
+        "list",
+        "--config",
+        "docs/evidence/x01/center-claim-pg-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--json=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-center-claim-x12ldpgc/tests.json"
+      ],
+      "process": {
+        "pid": 57432,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 1672,
+        "observed_bytes": 31,
+        "retained_bytes": 31,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "list",
+        "rawComplete": true
+      },
+      "raw": "X01_FIXED_MAIN_DATABASE_LOADED\n",
+      "rawBytes": 31,
+      "rawSha256": "4b2fec85337e3eae52831130fd074b8b942827b746ba3da2af4df6141b53f73b",
+      "tests.json": [
+        {
+          "name": "legacy and v2 filter plugin tasks before LIMIT while v3 requires the exact live host",
+          "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/claim-pg.test.ts"
+        },
+        {
+          "name": "concurrent v3 replay is one allocation and conflicts across both protocol namespaces",
+          "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/claim-pg.test.ts"
+        },
+        {
+          "name": "restart recovers the same pin without renewing its lease and preserves capacity and session fences",
+          "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/claim-pg.test.ts"
+        },
+        {
+          "name": "registration lock waiter observes committed grant revocation before creating attempt or receipt",
+          "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/claim-pg.test.ts"
+        },
+        {
+          "name": "accepted pin survives config and disable but live grant and runner revocation deny recovery and phases",
+          "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/claim-pg.test.ts"
+        },
+        {
+          "name": "saved receipts preserve cancel and maintenance semantics but expire or stale owners are unavailable",
+          "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/apps/server/src/plugin-runtime/claim-pg.test.ts"
+        }
+      ],
+      "finishedAt": "2026-10-07T06:29:29.851277+00:00",
+      "elapsedBeforeReceiptSeconds": 1.6727670840919018
+    },
+    {
+      "label": "qualification",
+      "startedAt": "2026-10-07T06:29:41.870281+00:00",
+      "freeBeforeBytes": 24388706304,
+      "temporary": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-x01-center-claim-hio9jlmz",
+        "dev": 16777234,
+        "ino": 123584936,
+        "removed": true,
+        "endSample": {
+          "entries": 3,
+          "bytes": 0,
+          "wholePeakProven": false
+        },
+        "absent": true
+      },
+      "argv": [
+        "/opt/homebrew/opt/python@3.13/bin/python3.13",
+        "-B",
+        "docs/evidence/x01/center-claim-pg-caller.test.py"
+      ],
+      "process": {
+        "pid": 68987,
+        "ownership": "newChildSession",
+        "capture": "merged",
+        "exit_code": 0,
+        "elapsed_ms": 65,
+        "observed_bytes": 356,
+        "retained_bytes": 356,
+        "eof": {
+          "stdout": true
+        },
+        "first_failure": null,
+        "secondary_failures": [],
+        "signals": [],
+        "owned_state": "absent",
+        "observations": [
+          {
+            "state": "unknown",
+            "errno": 1
+          },
+          {
+            "state": "absent",
+            "errno": null
+          },
+          {
+            "state": "absent",
+            "errno": null
+          }
+        ],
+        "label": "qualification",
+        "rawComplete": true
+      },
+      "raw": "test_fixed_selection_and_budget (__main__.SingleSuiteRecipe.test_fixed_selection_and_budget) ... ok\ntest_single_actual_listener_and_marked_database_are_required (__main__.SingleSuiteRecipe.test_single_actual_listener_and_marked_database_are_required) ... ok\n\n----------------------------------------------------------------------\nRan 2 tests in 0.001s\n\nOK\n",
+      "rawBytes": 356,
+      "rawSha256": "98b4181c4860f015da38c8aaf507dc3d1f2b62169756a1621e189c3a6181552d",
+      "finishedAt": "2026-10-07T06:29:41.936567+00:00",
+      "elapsedBeforeReceiptSeconds": 0.06553295801859349
+    }
+  ],
+  "unknown": false,
+  "limits": {
+    "segmentSeconds": 1200,
+    "commands": 4,
+    "commandSeconds": 60,
+    "temporaryBytes": 8388608,
+    "rawBytes": 262144,
+    "sourceMetadataBytes": 1048576
+  },
+  "floorBytes": 4062707712,
+  "PG": 0,
+  "provider": 0,
+  "native": 0,
+  "tar": 0,
+  "wholeExternalWall": null,
+  "updatedAt": "2026-10-07T06:29:41.936578+00:00"
+}

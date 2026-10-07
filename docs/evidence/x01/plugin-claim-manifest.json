@@ -1,0 +1,239 @@
+{
+  "sourceCommit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+  "validationCommit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+  "baseMain": "bf8b5f1d5f554b3195b04b150821d8262a4daef1",
+  "recordedAt": "2026-10-07T05:50:07.712449+00:00",
+  "review": "PENDING",
+  "scope": "Explicit plugin v3 claim contract and existing AdmissionJournal; no activated production transport/runtime",
+  "files": [
+    {
+      "path": "packages/contracts/src/runner-claim.ts",
+      "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+      "blob": "92851f3e7fe72f8e52f5431d2e1928735e06db01",
+      "role": "source",
+      "bytes": 3965,
+      "sha256": "67d8dbfa2991426e86b93e74d6443b012e6e1ccee514f8956567dd3c23364a00"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runner-claim.ts",
+      "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+      "blob": "682c4c675c43feb01fc1b1e74ca3454cdab099b1",
+      "role": "source",
+      "bytes": 4197,
+      "sha256": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runner-claim.test.ts",
+      "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+      "blob": "d9a8c9c1605475e1ff7e78ecc7c6fba0abf1846d",
+      "role": "source",
+      "bytes": 6094,
+      "sha256": "be0401f4ea46302c92c69c199eb71e6903f217d3b731ee042ac495744d0ff02f"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+      "blob": "02119f49bae73cae2c27d10472b08edbeb8712fa",
+      "role": "source",
+      "bytes": 10960,
+      "sha256": "d7e4ab5c440f13c5ef543f476421331d79899a971fdf2a1f7a54ec5efb5da2b3"
+    },
+    {
+      "path": "apps/runner/src/admission-plugin-claim.test.ts",
+      "commit": "c15c7ddaef1d23a24a550c75a4d151a33be76f81",
+      "blob": "1c8c0cb854cb32f7cdefbf417fe9b44eb148e947",
+      "role": "source",
+      "bytes": 6811,
+      "sha256": "329c22ee967b32a25c072fc05920a4349931a90137898860960bcaed94006545"
+    },
+    {
+      "path": "docs/evidence/x01/plugin-claim-base.json",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "465fc2c58654b3f34fee61b050452bd3620239e7",
+      "role": "support",
+      "bytes": 674,
+      "sha256": "e39e3d42d77c0714ebe9a891a0e6c9f5911547dd335fd2306212d14403e304dc"
+    },
+    {
+      "path": "docs/evidence/x01/plugin-claim-amend-v9.json",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "9190915ab5874b1d469e25c4e80fa1eba0528bac",
+      "role": "support",
+      "bytes": 1470,
+      "sha256": "63d84cbeade746ad7f073b4d18a33933491a96f1dec55ce6e71a529b950e471c"
+    },
+    {
+      "path": "docs/evidence/x01/plugin-claim-interface.md",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "d0d56f33b739dd0366cc80b89c10cf5af6b8f8d4",
+      "role": "support",
+      "bytes": 3899,
+      "sha256": "ae6851081ff9c2f431b970e4e3ea1990385384d31339ab39a750ef73b46e28b7"
+    },
+    {
+      "path": "docs/evidence/x01/plugin-claim-tsconfig.json",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "15769bfe29857bb37761c812cd0c942409f49579",
+      "role": "support",
+      "bytes": 219,
+      "sha256": "a480bdbc38ebf9cf781f4f7b20e2ff63fdd7874bbe28a8a2f4b61f6690e4976b"
+    },
+    {
+      "path": "docs/evidence/x01/plugin-claim-vitest.config.mjs",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "923806dc2e30974c5f494635d4c25e73de2f06f7",
+      "role": "support",
+      "bytes": 495,
+      "sha256": "4f5cf79b72a7a8ae27edf29bdfc5c41a69cfd751afe167fc80be1b291e4f7392"
+    },
+    {
+      "path": "docs/evidence/x01/plugin-claim-local.py",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "23e78557eca2d95dc7d4da8863755df79225f18a",
+      "role": "support",
+      "bytes": 4717,
+      "sha256": "0610b1dafbc18ace5280e834c8bb2fdb0d32d2388510451612ac7576402cfa88"
+    },
+    {
+      "path": "docs/evidence/x01/plugin-claim-review-ready.md",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "fd29a72c70f504448b78afb98107b600146b762d",
+      "role": "support",
+      "bytes": 2174,
+      "sha256": "469a76c53fe16f6017986bd3218be55bdfd7f937f32aa41e0d9e384c5105543b"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-main-receipt.json",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "da7f8a2ade23719e018ba7f881ba0e8be7538286",
+      "role": "support",
+      "bytes": 1014,
+      "sha256": "e3629d2883c296ad74b63762d662d10123b3f2c900e351cb7528e43cec211c4a"
+    },
+    {
+      "path": "docs/evidence/x01/plugin-claim-local.json",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "7b012c1dd79a5192921d377bc0e617e5b3e85162",
+      "role": "raw",
+      "bytes": 14351,
+      "sha256": "90cf7a63665fc9ff033599997e5527e12d710785e0be0c1bc7d91b9026864450"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "5ac6a731b93f10c4e981aa74924a4e0ef45b2682",
+      "role": "readonly",
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0"
+    },
+    {
+      "path": "packages/contracts/src/tasks.ts",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "62bf5e58fa7ce4cb464c4025ba5100bba4e09be3",
+      "role": "readonly",
+      "bytes": 6428,
+      "sha256": "b56612778d17ed8a1cd9383e5ae945547e04941209acc3b41c1e76d6bd792be7"
+    },
+    {
+      "path": "packages/contracts/src/goal-tool-runs.ts",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "183fb544b08cc5f1e00584f5f7f5266ec1417c49",
+      "role": "readonly",
+      "bytes": 3709,
+      "sha256": "8634be59be59db10789878823059d7fb14959ddf8453eb1cf43dcbffd29321db"
+    },
+    {
+      "path": "packages/contracts/src/goal-graph-runs.ts",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "fff78c080cac6e4dee24ef2df92538d6715ecc7f",
+      "role": "readonly",
+      "bytes": 6047,
+      "sha256": "1cfc6108a53c34d3b7864170cf6a0393f61d0487c2dc76305502b9a61643d524"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "28e7864cb1137601879ecbe0f65926100bc75721",
+      "role": "readonly",
+      "bytes": 5640,
+      "sha256": "24b27d690e84071cad1cc4d12c9704216a00110b3352be8dc3b5858a18f15652"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-check-once.py",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "af3dbd86bc2839ac1eabbf6f615dbfac09309b8b",
+      "role": "readonly",
+      "bytes": 20307,
+      "sha256": "cfe2b708c762752926f1f24899120fd802ea97e80bc115fabcea12c0b3a3847a"
+    },
+    {
+      "path": "docs/evidence/x01/enable-binding-pg-once.py",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "f0e97c7935409ae555f71daf493da00732e42aec",
+      "role": "readonly",
+      "bytes": 20706,
+      "sha256": "86a98a35bfc7fb3a0c3cd01645fa6d48dd3873812b22be7c2236999626417a56"
+    },
+    {
+      "path": "tsconfig.json",
+      "commit": "bc88b70ab403bec17463a3d7e59c88c1e0c3ae05",
+      "blob": "835349029f0f4a864538ec6bc3917d911e9a9713",
+      "role": "readonly",
+      "bytes": 614,
+      "sha256": "105e978d2cee02714a65d4c9d12d766b1701c6488d89de8b9670c499762379d1"
+    }
+  ],
+  "bindings": 22,
+  "bytes": 130692,
+  "external": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/typescript/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/typescript@5.9.3/node_modules/typescript/package.json",
+      "bytes": 3620,
+      "sha256": "822ef7ca6452205657b6288b066481ecf508bfbf43455d715cf7d3ec457561e6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/vitest/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/package.json",
+      "bytes": 5513,
+      "sha256": "d83c63a3391f403a6dce4793c90e9d9d02faf113c7ed8d77b424e59f48ef8328"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/zod/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/zod@4.6.5/node_modules/zod/package.json",
+      "bytes": 4142,
+      "sha256": "a046ed85fa09571dba539fee9ef236152d12dabd1f229b014ec3bd2ebaad9000"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/node_modules/@types/node/package.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@types+node@24.19.1/node_modules/@types/node/package.json",
+      "bytes": 4068,
+      "sha256": "6e6bedd46e6541dce6fedbf7570c499a97476e1517123f0bdae4621dab023978"
+    }
+  ],
+  "checks": {
+    "selected": 11,
+    "passed": 11,
+    "typesExit": 0,
+    "commands": 2,
+    "PG": 0,
+    "tar": 0,
+    "provider": 0,
+    "native": 0
+  },
+  "baselineDelta": "runner-claim.ts only exports existing claimedTaskSchema; admission-journal.ts uses direct contract imports and adds one durable v3 request variant; three new product/test files",
+  "integrationBoundary": "C02 client/index,contracts/index,configuration/main/tasks and CHAT05 runner.ts remain externally owned; not edited",
+  "prior16IntakeUnchanged": true
+}
