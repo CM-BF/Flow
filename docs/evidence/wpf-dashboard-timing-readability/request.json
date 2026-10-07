@@ -1,0 +1,23 @@
+{
+  "requestId": "timing02-af23c8ca-4656-4db2-a157-49ce70d939db",
+  "actor": {
+    "lead": "external_web_d01_owner",
+    "worker": "w01_owner"
+  },
+  "taskId": "WPF-DASHBOARD-TIMING02",
+  "role": "writer",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability",
+  "branch": "codex/dashboard-task-timing-readability",
+  "scope": [
+    "apps/execution-dashboard/src/status.mjs",
+    "apps/execution-dashboard/src/human.mjs",
+    "apps/execution-dashboard/public/app.js",
+    "apps/execution-dashboard/public/styles.css",
+    "apps/execution-dashboard/test/status-timestamps.test.mjs",
+    "apps/execution-dashboard/test/human-summary.test.mjs",
+    "apps/execution-dashboard/test/task-timing.browser.mjs",
+    "plans/wpf-dashboard-timing-readability",
+    "docs/evidence/wpf-dashboard-timing-readability"
+  ],
+  "origin": "new"
+}
