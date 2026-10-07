@@ -210,8 +210,7 @@ test('active load-authorized A keeps its pin across B and rollback C with explic
   const bVersion = versions.body.versions.find((value: { packageVersion: string }) => value.packageVersion === '1.0.1').id as string;
   const selected = await command({ kind: 'select-version', versionId: bVersion });
   expect(selected).toMatchObject({ configuration: {}, grants: [], configurationStatus: 'incomplete' });
-  await expect(runnerClient.pluginRunner.authorize({ ...aLoad, phase: 'invoke' },
-    createHash('sha256').update(JSON.stringify([runnerId, a.bindingId, a.invocationId, aLoad.attemptId, aLoad.ownerVersion, 'invoke'])).digest('hex'))).rejects.toMatchObject({ status: 403, code: 'plugin_tool_grant_required' });
+  await expect(runnerClient.pluginRunner.authorize({ ...aLoad, phase: 'invoke' }, randomUUID())).rejects.toMatchObject({ status: 403, code: 'plugin_tool_grant_required' });
   expect((await phaseRows()).map(row => row.phase)).toEqual(['load']);
   expect((await fixture.pool.query("SELECT count(*)::int AS count FROM flow.details WHERE task_id=$1 AND kind='artifact'", [a.taskId])).rows[0].count).toBe(0);
   const bMaterial = await install(bVersion, '1.0.1'); await enable(bMaterial, false);
