@@ -27,10 +27,7 @@ export function checkQueryOptions(input, mode, phase) {
 export function oneShotQueryInput(input) {
   requireValue(input?.options && input.options.resume === undefined && input.options.continue === undefined
     && input.options.sessionStore === undefined && input.options.forkSession === undefined);
-  // The existing decision recorder wraps hook functions; give it private matcher arrays as well.
-  const hooks = input.options.hooks && Object.fromEntries(Object.entries(input.options.hooks).map(([event, matchers]) =>
-    [event, matchers.map(matcher => ({ ...matcher, hooks: [...matcher.hooks] }))]));
-  return { ...input, options: { ...input.options, hooks, persistSession: false } };
+  return { ...input, options: { ...input.options, persistSession: false } };
 }
 
 /** The original adapter remains the sole stream consumer. This decorates that same iterator and its close. */
@@ -44,7 +41,7 @@ export function createObservedQuery({ mode, phase, reservation, getBinding, nati
       && !seenTasks.has(binding.assignment.taskId) && !seenSlots.has(binding.slot) && seenSlots.size < PHASE_LIMITS[phase].queries);
     seenTasks.add(binding.assignment.taskId); seenSlots.add(binding.slot);
     const row = { binding: structuredClone(binding), requested, entry: 'not-started', closed: false, observation: null };
-    report.queries.push(row); recordHostDecisions(prepared, row);
+    report.queries.push(row); recordHostDecisions(input, row);
     const observed = createQueryObservation(phase);
     let original, closed = false;
     const stream = Object.assign((async function* () {

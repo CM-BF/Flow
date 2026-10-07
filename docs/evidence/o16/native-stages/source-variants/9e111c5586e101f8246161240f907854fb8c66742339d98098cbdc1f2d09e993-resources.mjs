@@ -23,16 +23,6 @@ async function assertDirectory(value) {
   const current = await lstat(value.path);
   assert(current.isDirectory() && !current.isSymbolicLink() && current.dev === value.dev && current.ino === value.ino);
 }
-/** No database or server work before the fixed review packet is validated and exclusively consumed. */
-export async function claimPausedResources(output, source, facts, stage) {
-  await assertDirectory(facts.directory);
-  const receipt = await readRecord(join(output, 'pause.json'));
-  const state = await readRecord(join(facts.directory.path, 'journey.json'));
-  const report = await readRecord(join(output, stageSpec(receipt.phase).file), 262_144);
-  validatePause(receipt, { run: output.split('/').at(-1), phase: stage, sourceDigest: source.digest, state, report, resources: facts });
-  await writeRecord(join(output, `pause-consumed-${receipt.phase}.json`), { receipt, continuedAt: new Date().toISOString() }, { exclusive: true });
-  return receipt;
-}
 /** Owns only a random marked DB and its recorded dev/ino temporary directory. No existing service is reconfigured. */
 export async function privateCenter(output, source, { resume = false, stage } = {}) {
   const gate = await resourceGate(), file = join(output, 'resources.json');
@@ -41,7 +31,14 @@ export async function privateCenter(output, source, { resume = false, stage } = 
   assert(facts.kind === 'flow.o16.private-resources.v1' && /^flow_o16_[a-f0-9]{32}$/.test(facts.database)
     && /^[a-f0-9-]{36}$/.test(facts.marker) && facts.sourceDigest === source.digest && !facts.databaseDropped);
   // Validate review material before creating a pool or reconnecting. A partial claim stays consumed.
-  const review = resume ? await claimPausedResources(output, source, facts, stage) : undefined;
+  if (resume) {
+    await assertDirectory(facts.directory);
+    const receipt = await readRecord(join(output, 'pause.json'));
+    const state = await readRecord(join(facts.directory.path, 'journey.json'));
+    const report = await readRecord(join(output, stageSpec(receipt.phase).file), 262_144);
+    validatePause(receipt, { run: output.split('/').at(-1), phase: stage, sourceDigest: source.digest, state, report, resources: facts });
+    await writeRecord(join(output, `pause-consumed-${receipt.phase}.json`), { receipt, continuedAt: new Date().toISOString() }, { exclusive: true });
+  }
   const checkpoint = async phase => { facts.phase = phase; await writeRecord(file, facts); };
   if (!resume) await writeRecord(file, facts, { exclusive: true }); // File and parent sync precede CREATE.
   const admin = new Pool({ connectionString: ADMIN, ...LIMITS });
@@ -70,7 +67,6 @@ export async function privateCenter(output, source, { resume = false, stage } = 
     facts.serverClosed = true; client = undefined; await checkpoint('server-closed');
   }
   async function start(automaticQueueScan) {
-    if (review) assert(Date.now() < Date.parse(review.reviewUntil), 'Review expired before center restart; retain resources.');
     assert(!app && typeof automaticQueueScan === 'boolean'); await ownership(); facts.serverClosed = false;
     await checkpoint('before-center-start');
     app = await createServer({ databaseUrl, ownerToken: credentials.ownerToken, leaseMs: 20000, automaticQueueScan });
@@ -85,7 +81,6 @@ export async function privateCenter(output, source, { resume = false, stage } = 
       if (row.state === 'stopped') continue; // Do not probe old, already-settled PID identities after a pause.
       try { process.kill(-row.pgid, 0); row.state = 'present'; }
       catch (error) { row.state = error.code === 'ESRCH' ? 'stopped' : 'unknown'; }
-      if (facts.workerProcess?.pgid === row.pgid) facts.workerProcess = { ...row };
       if (row.state !== 'stopped') errors.push('worker-process-group-unconfirmed');
     }
     try { await stopServer(); } catch { errors.push('center-close-unconfirmed'); }

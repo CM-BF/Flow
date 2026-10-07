@@ -1,0 +1,34 @@
+✔ the actual acceptance and current/history become durable before irreversible cleanup (0.83875ms)
+✔ a failed decision checkpoint still closes the center while preserving its database and directory (0.313709ms)
+✔ acceptance uses observed accepted CAS and preserves a rejection before independent cleanup failure (61.89875ms)
+✔ pause binds actual proposal, profile, source, state, report and resource closure (3.488875ms)
+✔ expiry, clock reversal and wrong next phase refuse without any cleanup action (0.181041ms)
+✔ unclosed server, pool, worker, connections and a cleanup failure cannot produce a pause (0.34525ms)
+✔ operator reports a verified pause separately from accepted-and-destroyed completion (0.112958ms)
+✔ each phase has a distinct reservation and STOP path but shares one aggregate evidence namespace (0.307291ms)
+✔ native operation refuses before source loading, permits, allocation or child startup while inputs are unresolved (0.457708ms)
+✔ a durable primary failure survives disposal and finish failures in the saved report (23.157208ms)
+✔ checkpoint failure still closes resources, prevents destruction and never publishes a pause (0.24125ms)
+✔ successful stage persists its result then closes before the final durable pause (0.153292ms)
+✔ exclusive pause consumption retains a prior record and refuses duplicate continuation (5.422667ms)
+✔ restore and store options fail before a query slot or injected transport is touched (0.481792ms)
+✖ the actual injected query receives persistSession false with the original hooks, abort and iterator (12.441ms)
+ℹ tests 15
+ℹ suites 0
+ℹ pass 14
+ℹ fail 1
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 2121.217125
+
+✖ failing tests:
+
+test at experiments/continuous-goal-acceptance/stage-policy.test.mjs:112:1
+✖ the actual injected query receives persistSession false with the original hooks, abort and iterator (12.441ms)
+  Error: Unknown host gate configuration
+      at recordHostDecisions (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/native-graph-acceptance/guard.mjs:86:99)
+      at file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/query-run.mjs:44:31
+      at TestContext.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/stage-policy.test.mjs:125:20)
+      at async Test.run (node:internal/test_runner/test:1404:7)
+      at async Test.processPendingSubtests (node:internal/test_runner/test:969:7)

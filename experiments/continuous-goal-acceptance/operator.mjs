@@ -10,6 +10,7 @@ import { readRecord, writeRecord } from './records.mjs';
 import { sourceIdentity, ROOT } from './identity.mjs';
 import { BOUNDS, runPaths, measureRun } from './operator-bounds.mjs';
 import { startTotalDeadline } from './operator-watchdog.mjs';
+import { stageSpec, stagePassed, assertNativeReady } from './stage-policy.mjs';
 
 function signalGroup(pgid, signal) {
   assert(Number.isSafeInteger(pgid) && pgid > 1);
@@ -71,18 +72,39 @@ export async function supervise({ child, sample, persist, markStop, outputFailur
   } finally { clearTimeout(watchdog); clearTimeout(cleanupKillTimer); }
 }
 
-export async function operate() {
+export function operationArguments(args) {
+  if (args.length === 1 && args[0] === '--rehearse') return { phase: 'rehearse' };
+  const [flag, run, file] = args, phase = flag?.slice(2);
+  assert(args.length === 3 && flag === `--${phase}` && ['plan', 'confirm', 'children', 'decide'].includes(phase));
+  runPaths(run, phase); assert(typeof file === 'string' && file.length > 0);
+  return { phase, run, file: resolve(file) };
+}
+export async function operate({ phase = 'rehearse', run: selectedRun, file } = {}) {
+  const spec = stageSpec(phase);
+  if (['plan', 'children'].includes(phase)) assertNativeReady('native');
   assert.equal(process.env.FLOW_O16_PG_WINDOW, 'approved-one-shot');
   const identity = await sourceIdentity(), space = await statfs(ROOT); assert(space.bavail * space.bsize >= BOUNDS.startBytes);
-  const run = `rehearsal-${randomUUID()}`, paths = runPaths(run); await mkdir(paths.operator, { recursive: true, mode: 0o700 });
+  const run = selectedRun ?? `rehearsal-${randomUUID()}`, paths = runPaths(run, phase);
+  if (phase === 'plan' || phase === 'rehearse') {
+    await mkdir(join(paths.operatorRoot, '..'), { recursive: true, mode: 0o700 });
+    await mkdir(paths.operatorRoot, { mode: 0o700 }); // Existing namespace is never reused, including partial prior reservations.
+    await assert.rejects(lstat(paths.evidence), { code: 'ENOENT' });
+  } else {
+    const info = await lstat(paths.operatorRoot); assert(info.isDirectory() && !info.isSymbolicLink());
+  }
+  if (phase !== 'rehearse') await mkdir(paths.operator, { mode: 0o700 });
   await writeRecord(join(paths.operator, 'reservation.json'), { kind: 'flow.o16.operator.v1', run, sourceDigest: identity.digest,
-    base: identity.base, startedAt: new Date().toISOString(), bounds: BOUNDS, outcome: 'unknown', provider: 0 }, { exclusive: true });
+    base: identity.base, phase, startedAt: new Date().toISOString(), bounds: BOUNDS, outcome: 'unknown',
+    nativeQueries: phase === 'rehearse' || phase === 'confirm' || phase === 'decide' ? 0 : 'not-started' }, { exclusive: true });
   const watchdog = await startTotalDeadline({ directory: paths.operator, run, sourceDigest: identity.digest });
   await writeRecord(join(paths.operator, 'watchdog.json'), { pid: watchdog.pid, deadline: watchdog.deadline, state: 'armed' }, { exclusive: true });
   const handles = ['stdout.txt', 'stderr.txt'].map(name => openSync(join(paths.operator, name), 'wx', 0o600));
   let raw = 0, written = 0, outputFailed = false;
-  const child = spawn(process.execPath, ['--import', 'tsx', '--test', '--test-concurrency=1', 'experiments/continuous-goal-acceptance/journey.test.mjs'],
-    { cwd: ROOT, detached: true, stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env, FLOW_O16_RUN: run, TSX_DISABLE_CACHE: '1' } });
+  const args = phase === 'rehearse'
+    ? ['--import', 'tsx', '--test', '--test-concurrency=1', 'experiments/continuous-goal-acceptance/journey.test.mjs']
+    : ['--import', 'tsx', 'experiments/continuous-goal-acceptance/driver.mjs', phase, run, file];
+  const child = spawn(process.execPath, args,
+    { cwd: ROOT, detached: true, stdio: ['ignore', 'pipe', 'pipe'], env: { ...process.env, FLOW_O16_RUN: run, FLOW_O16_OPERATOR_PHASE: phase, TSX_DISABLE_CACHE: '1' } });
   const capture = index => chunk => {
     raw += chunk.length; if (raw > BOUNDS.rawBytes) outputFailed = true;
     const piece = chunk.subarray(0, Math.max(0, BOUNDS.rawBytes - written));
@@ -105,7 +127,7 @@ export async function operate() {
         let resources;
         try { resources = await readRecord(join(paths.evidence, 'resources.json')); } catch (error) { if (error.code !== 'ENOENT') throw error; }
         if (resources) assert.equal(resources.sourceDigest, identity.digest);
-        const groups = (resources?.workerProcesses ?? []).map(row => row.pgid);
+        const groups = (resources?.workerProcesses ?? []).filter(row => row.state !== 'stopped').map(row => row.pgid);
         await watchdog.register(groups);
         let directory = resources?.directoryRemoved ? undefined : resources?.directory;
         if (directory && resources?.databaseDropped && resources.phase === 'before-owned-directory-remove') {
@@ -117,23 +139,26 @@ export async function operate() {
       } });
     await boundedRead(pipesClosed, 1000).catch(() => { outputFailed = true; });
   } finally { for (const fd of handles) { fsyncSync(fd); closeSync(fd); } }
-  const final = await readRecord(join(paths.evidence, 'decision.json')).catch(() => null);
-  const metrics = await measureRun(run).catch(() => null);
-  const passed = !outputFailed && result.outcome === 'processes-complete' && metrics && final?.outcome === 'independently-accepted'
-    && final.resources.databaseDropped === true && final.resources.directoryRemoved === true && final.resources.errors.length === 0;
-  const summary = { run, sourceDigest: identity.digest, outcome: passed ? 'rehearsal-passed' : 'unknown-retain', selected: 1,
-    process: result, capturedRawBytes: raw, retainedRawBytes: written, finalMetrics: metrics, nativeQueryCalls: 0 };
+  const final = await readRecord(join(paths.evidence, spec.file), 262_144).catch(() => null);
+  const pause = spec.next ? await readRecord(join(paths.evidence, 'pause.json')).catch(() => null) : undefined;
+  const directory = final?.resources?.directoryRemoved ? undefined : final?.resources?.directory;
+  const metrics = await measureRun(run, directory).catch(() => null);
+  const passed = !outputFailed && result.outcome === 'processes-complete' && metrics && stagePassed(phase, final, pause);
+  const success = phase === 'rehearse' ? 'rehearsal-passed' : spec.next ? 'stage-paused' : 'decision-settled';
+  const summary = { run, phase, sourceDigest: identity.digest, outcome: passed ? success : 'unknown-retain', selected: 1,
+    process: result, capturedRawBytes: raw, retainedRawBytes: written, finalMetrics: metrics,
+    nativeQueryCalls: final?.nativeQueryCalls ?? 'unknown', pause: pause ?? null };
   const summaryBytes = Buffer.byteLength(JSON.stringify(summary, null, 2) + '\n');
   if (!metrics || metrics.rawBytes + summaryBytes > BOUNDS.rawBytes) summary.outcome = 'unknown-retain';
   await writeRecord(join(paths.operator, 'result.json'), summary);
-  const finalMeasurement = await measureRun(run).catch(() => null);
+  const finalMeasurement = await measureRun(run, directory).catch(() => null);
   if (!finalMeasurement) { summary.outcome = 'unknown-retain'; await writeRecord(join(paths.operator, 'result.json'), summary); }
   await watchdog.complete(); // No timer disarm: a later parent I/O stall remains covered until actual process exit.
   process.stdout.write(JSON.stringify({ run, outcome: summary.outcome, operator: paths.operator }) + '\n');
-  if (summary.outcome !== 'rehearsal-passed') process.exitCode = 1;
+  if (summary.outcome !== success) process.exitCode = 1;
   return summary;
 }
 if (process.argv[1] && resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {
-  try { assert.deepEqual(process.argv.slice(2), ['--rehearse']); await operate(); }
+  try { await operate(operationArguments(process.argv.slice(2))); }
   catch { process.stderr.write('O16 operator refused or retained an unknown run; inspect its durable reservation.\n'); process.exitCode = 1; }
 }

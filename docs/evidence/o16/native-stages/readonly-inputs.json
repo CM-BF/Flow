@@ -1,0 +1,153 @@
+{
+  "at": "2026-10-07T09:03:45.791848+00:00",
+  "experimentHead": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+  "productBase": "f5a13cbed6b75151f34e6924ec7e10c8894acf48",
+  "source": [
+    {
+      "path": "experiments/continuous-goal-acceptance/operator.mjs",
+      "fixedRef": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "bytes": 9802,
+      "sha256": "a780db267d687ffb7a790e1150c808b0eefbda0e6635417d217cab133886d318",
+      "currentMaterialized": true
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/driver.mjs",
+      "fixedRef": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "bytes": 18266,
+      "sha256": "bfdbffbfbe6d5616651d5597a038923be18cfb3911e520d521ed0dc06592a6e1",
+      "currentMaterialized": true
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator-bounds.mjs",
+      "fixedRef": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "bytes": 2882,
+      "sha256": "39e1ce5e1eaa1e06a1d746abe0030e90a7d8131081a042b88d4c09efa12fb216",
+      "currentMaterialized": true
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/operator-watchdog.mjs",
+      "fixedRef": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "bytes": 6215,
+      "sha256": "a435b00561da788baf954a4e82f279f8869c65bfc38fae9ab00e571b977ee410",
+      "currentMaterialized": true
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/resources.mjs",
+      "fixedRef": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "bytes": 8929,
+      "sha256": "b3b55b8c33390b1f756d115bf95a0a7a2a24ab6bc53c7e6f51554f3f2fe75f80",
+      "currentMaterialized": true
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/phase-host.mjs",
+      "fixedRef": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "bytes": 5230,
+      "sha256": "f36f3ec8358d96b5e6c11f920afb93995247ca71308b614d27d5adc8f965e8e3",
+      "currentMaterialized": true
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/config.mjs",
+      "fixedRef": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "bytes": 2887,
+      "sha256": "f0c197614bde54a89e01615153c10685944e07ef9c542d6eac2bc8b76c0f167c",
+      "currentMaterialized": true
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/permit.mjs",
+      "fixedRef": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "bytes": 7628,
+      "sha256": "01732329f315e0213ffda1c61a4b422afdd225abe44ae328bc3390d3908831ae",
+      "currentMaterialized": true
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/query-run.mjs",
+      "fixedRef": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "bytes": 4864,
+      "sha256": "9b586487228cd6b85d12121a61e521b3b0b5572b5dfd9a630565f7e2cf1bb256",
+      "currentMaterialized": true
+    },
+    {
+      "path": "experiments/continuous-goal-acceptance/query-policy.mjs",
+      "fixedRef": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "bytes": 6784,
+      "sha256": "9065a7f0d5f917ae3dac5d36fd6dbe8a9f2cd699d09663a97231f61024424523",
+      "currentMaterialized": true
+    },
+    {
+      "path": "apps/runner/src/claude.ts",
+      "fixedRef": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "bytes": 24739,
+      "sha256": "f9c111f94cd2a2d59e6c27cbede8e454efa3936a1e223afd38721d9fef973962",
+      "currentMaterialized": true
+    },
+    {
+      "path": "docs/evidence/o10/native-0834-report.md",
+      "fixedRef": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "bytes": 2694,
+      "sha256": "7c1b372ecfc9140aa66437ebd20581187d365ee990bd4f3c3f153997146d5637",
+      "currentMaterialized": false
+    },
+    {
+      "path": "docs/evidence/o10/interface.md",
+      "fixedRef": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "bytes": 1265,
+      "sha256": "f7f4575c219fad173ae72710c278d73ad3902693e40c21498f589bade9dc5531",
+      "currentMaterialized": false
+    },
+    {
+      "path": "docs/evidence/o08/managed-baseline.md",
+      "fixedRef": "23d0821bf0b7d432d143aceafbf75c273c6b83ea",
+      "bytes": 3349,
+      "sha256": "317eb0ce51ba9519a564596bf01fe49fda158e50544d7e9fa960a4e076c325e1",
+      "currentMaterialized": false
+    }
+  ],
+  "installedMetadata": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/node_modules/tsx",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "name": "tsx",
+      "version": "4.23.15",
+      "packageBytes": 1663,
+      "packageSha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c",
+      "imported": false
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/runner/node_modules/@anthropic-ai/claude-agent-sdk",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk",
+      "name": "@anthropic-ai/claude-agent-sdk",
+      "version": "0.3.290",
+      "packageBytes": 2546,
+      "packageSha256": "ab573b2052ad648ff3871ad0ae792a8900df4caae716d4d9279895ddb04ceef3",
+      "imported": false
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/apps/runner/node_modules/@modelcontextprotocol/sdk",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@modelcontextprotocol+sdk@1.32.1_zod@4.6.5/node_modules/@modelcontextprotocol/sdk",
+      "name": "@modelcontextprotocol/sdk",
+      "version": "1.32.1",
+      "packageBytes": 6511,
+      "packageSha256": "0216319ea53177f7ed419d660b2f52ccc7e3327e57f9ee2ef03225ff543aeae4",
+      "imported": false
+    }
+  ],
+  "query": 0,
+  "authCalls": 0,
+  "privateConfigRead": false,
+  "PG": 0,
+  "installedDeclarations": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-shared-foundation/node_modules/.pnpm/@anthropic-ai+claude-agent-sdk@0.3.290_@anthropic-ai+sdk@0.131.0_zod@4.6.5__@modelcontextprot_qzqoiskwjgbes3l4fvedsmb7w4/node_modules/@anthropic-ai/claude-agent-sdk/sdk.d.ts",
+    "bytes": 530284,
+    "sha256": "193becad9d69bc4d2ccd22def53fb9bff9e2628e324f7657d9497da9476af541",
+    "readLines": [
+      "1810-1847"
+    ],
+    "meaning": "persistSession false disables persisted/resumable session transcript; SessionStore mirrors local writes and conflicts with false; not a promise of no other SDK writes."
+  },
+  "publicDocumentation": {
+    "url": "https://code.claude.com/docs/en/agent-sdk/session-storage",
+    "title": "Persist sessions to external storage",
+    "readAt": "2026-10-07T09:04:33.203133+00:00",
+    "notes": "Official current documentation agrees with fixed declarations: store mirrors local transcript; it is not a replacement for local writing. Read only; no sample execution."
+  }
+}

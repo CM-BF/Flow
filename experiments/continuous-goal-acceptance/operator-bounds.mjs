@@ -2,12 +2,16 @@ import assert from 'node:assert/strict';
 import { lstat, readdir, statfs } from 'node:fs/promises';
 import { join } from 'node:path';
 import { fileURLToPath } from 'node:url';
+import { stageSpec } from './stage-policy.mjs';
 export const BOUNDS = Object.freeze({ workMs: 120000, cleanupMs: 30000, rawBytes: 2 * 1024 ** 2, runtimeBytes: 8 * 1024 ** 2,
   reserveBytes: 1024 ** 3, startBytes: 1024 ** 3 + 128 * 1024 ** 2 });
-export function runPaths(run) {
+export function runPaths(run, phase = 'rehearse') {
+  stageSpec(phase);
   assert(/^[a-z0-9][a-z0-9-]{3,63}$/.test(run));
   const root = fileURLToPath(new URL('../../docs/evidence/o16/', import.meta.url));
-  return { evidence: join(root, 'runs', run), operator: join(root, 'operators', run), stop: join(root, 'operators', run, 'STOP.json') };
+  const operatorRoot = join(root, 'operators', run);
+  const operator = phase === 'rehearse' ? operatorRoot : join(operatorRoot, phase);
+  return { evidence: join(root, 'runs', run), operatorRoot, operator, stop: join(operator, 'STOP.json') };
 }
 async function size(path, maxEntries, maxDepth, limit, missing = false) {
   let bytes = 0, entries = 0;
@@ -23,7 +27,7 @@ async function size(path, maxEntries, maxDepth, limit, missing = false) {
 export async function measureRun(run, directory) {
   const paths = runPaths(run), space = await statfs(new URL('../../', import.meta.url));
   const freeBytes = space.bavail * space.bsize; assert(freeBytes >= BOUNDS.reserveBytes, 'Live reserve crossed.');
-  const [evidence, operator] = await Promise.all([size(paths.evidence, 512, 8, BOUNDS.rawBytes, true), size(paths.operator, 64, 3, BOUNDS.rawBytes)]);
+  const [evidence, operator] = await Promise.all([size(paths.evidence, 512, 8, BOUNDS.rawBytes, true), size(paths.operatorRoot, 256, 5, BOUNDS.rawBytes)]);
   const rawBytes = evidence.bytes + operator.bytes; assert(rawBytes <= BOUNDS.rawBytes, 'Combined stdout/stderr/stage evidence ceiling crossed.');
   let runtime = { bytes: 0, entries: 0 };
   if (directory) {
@@ -34,7 +38,7 @@ export async function measureRun(run, directory) {
   return { freeBytes, rawBytes, runtimeBytes: runtime.bytes, runtimeEntries: runtime.entries };
 }
 export async function assertCleanupBudget(run, directory) {
-  const paths = runPaths(run);
+  const paths = runPaths(run, process.env.FLOW_O16_OPERATOR_PHASE ?? 'rehearse');
   assert(process.env.FLOW_O16_STOPPED !== '1', 'Operator requested stop; retain resources.');
   await lstat(join(paths.operator, 'reservation.json')); // No unsupervised destruction from direct driver invocation.
   const stopped = await lstat(paths.stop).then(() => true, error => { if (error.code === 'ENOENT') return false; throw error; });

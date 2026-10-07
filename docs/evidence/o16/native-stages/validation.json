@@ -1,0 +1,114 @@
+{
+  "kind": "flow.o16.native-stages.local.v1",
+  "at": "2026-10-07T09:20:42.554308+00:00",
+  "runs": [
+    {
+      "directory": "docs/evidence/o16/native-stages/run-01",
+      "selectedCases": 15,
+      "passedCases": 14,
+      "failedCases": 1,
+      "emptyFileWrappersNotCounted": 0,
+      "frameworkReportedPass": 14,
+      "childElapsedMs": 2170,
+      "callerElapsedMs": 2213,
+      "rawBytes": 2647,
+      "exitCode": 1,
+      "group": 24939,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "removed": true,
+      "finalPrivateBytes": 0,
+      "finishedAt": "2026-10-07T09:15:17.604780+00:00"
+    },
+    {
+      "directory": "docs/evidence/o16/native-stages/run-02",
+      "selectedCases": 5,
+      "passedCases": 5,
+      "failedCases": 0,
+      "emptyFileWrappersNotCounted": 2,
+      "frameworkReportedPass": 7,
+      "childElapsedMs": 2350,
+      "callerElapsedMs": 2380,
+      "rawBytes": 819,
+      "exitCode": 0,
+      "group": 66283,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "removed": true,
+      "finalPrivateBytes": 0,
+      "finishedAt": "2026-10-07T09:16:25.281450+00:00"
+    },
+    {
+      "directory": "docs/evidence/o16/native-stages/run-03",
+      "selectedCases": 2,
+      "passedCases": 2,
+      "failedCases": 0,
+      "emptyFileWrappersNotCounted": 0,
+      "frameworkReportedPass": 2,
+      "childElapsedMs": 1047,
+      "callerElapsedMs": 1081,
+      "rawBytes": 331,
+      "exitCode": 0,
+      "group": 3102,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "removed": true,
+      "finalPrivateBytes": 0,
+      "finishedAt": "2026-10-07T09:17:26.890652+00:00"
+    },
+    {
+      "directory": "docs/evidence/o16/native-stages/run-04",
+      "selectedCases": 1,
+      "passedCases": 1,
+      "failedCases": 0,
+      "emptyFileWrappersNotCounted": 0,
+      "frameworkReportedPass": 1,
+      "childElapsedMs": 1651,
+      "callerElapsedMs": 1688,
+      "rawBytes": 246,
+      "exitCode": 0,
+      "group": 68138,
+      "ownedState": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "removed": true,
+      "finalPrivateBytes": 0,
+      "finishedAt": "2026-10-07T09:19:15.788441+00:00"
+    }
+  ],
+  "distinctCases": 16,
+  "newCases": 13,
+  "changedOldDirectConsumers": 3,
+  "cumulativeChildMs": 7218,
+  "cumulativeCallerMs": 7362,
+  "rawBytes": 4043,
+  "result": "all-16-distinct-green-across-rounds",
+  "preservedFailure": "run-01: 14 pass / 1 fail; new injected fixture lacked PreToolUse matcher. No production relaxation.",
+  "selectionCaveat": "run-02 Node reported 7 passes: 5 selected cases and 2 files with no matching tests. The empty file wrappers are not counted. Later targeted commands include only the relevant file.",
+  "limits": {
+    "processCumulativeMs": 180000,
+    "tmpBytes": 16777216,
+    "rawBytes": 2097152
+  },
+  "notMeasured": "Transient fixture high-water is not derived from final zero bytes; only bounded synthetic records were written.",
+  "PG": 0,
+  "SDKQuery": 0,
+  "provider": 0,
+  "auth": 0,
+  "browser": 0,
+  "personalReads": 0,
+  "old26Rerun": false,
+  "guardedUnknown": "Native login source and remaining SDK write locations unresolved; native denied before resources.",
+  "sourceAfterLastRun": "Only resource fact alias is copied from the just-observed worker row, so workerProcess and workerProcesses no longer contradict; no process/permission semantics changed."
+}

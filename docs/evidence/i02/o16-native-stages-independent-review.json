@@ -1,0 +1,64 @@
+{
+  "kind": "flow.o16.staged-delta.independent-review.v1",
+  "reviewedAt": "2026-10-07T09:27:34.488514+00:00",
+  "reviewer": "Execution Lead / gpt-6-astra",
+  "target": "5a45c8919f1c0c5cecf0111609ec111d784553c1",
+  "delivery": "78df3980d04182976b4dc445e6cb4d32d8bd5901",
+  "decision": "APPROVED_STAGED_IMPLEMENTATION_AND_LOCAL_EVIDENCE",
+  "P1": 0,
+  "P2": 0,
+  "manifest": {
+    "path": "docs/evidence/o16/native-stages/manifest.json",
+    "bytes": 25117,
+    "sha256": "4d2b2f8b5be0ad092666ccaf38f173413bfd4f8010cd3ad98c1255e837821006"
+  },
+  "independentChecks": {
+    "fullDeltaReadFiles": 10,
+    "fixedDeltaBindings": 52,
+    "inheritedProductInputs": 289,
+    "unchangedExperiment": 21,
+    "installedAliases": 39,
+    "runtimeAnchors": 3,
+    "preSpawnBindings": 128,
+    "archivedExactVariantsMatched": 13,
+    "errors": []
+  },
+  "findings": [
+    "Stage policy owns pause binding/expiry and first-error settlement; resources module retains DB/directory ownership and destructive actions.",
+    "Pause binds actual proposal/profiles/source/full state/report/resource closure; duplicate, expiry, wrong phase or changed material refuses before connecting. Unknown consumed records are retained.",
+    "Primary error persists before shutdown; checkpoint/dispose/finish errors prevent destruction and preserve first failure. No new process supervisor or SDK iterator.",
+    "Native operator/plan/phase-host/worker remain hard refused until actual login source and remaining SDK writes are fixed. Injected query coverage is not provider execution.",
+    "Experiment-only persistSession false preserves original adapter input/hooks and abort; ordinary adapter and all289 product inputs unchanged.",
+    "Final source-only workerProcess alias copies the just-observed row; no changed group probe or outcome rule."
+  ],
+  "authorEvidence": {
+    "distinct": 16,
+    "new": 13,
+    "affectedExisting": 3,
+    "rounds": [
+      "14 pass/1 fail",
+      "5 selected pass; 2 empty-file wrappers excluded",
+      "2 pass",
+      "1 pass"
+    ],
+    "childMs": 7218,
+    "rawBytes": 4043,
+    "groupsAbsent": 4,
+    "directoriesRemoved": 4,
+    "historicalFailurePreserved": true,
+    "preReapEpermObservationsPreserved": true
+  },
+  "reviewerExecution": {
+    "tests": 0,
+    "PG": 0,
+    "SDK": 0,
+    "auth": 0,
+    "provider": 0
+  },
+  "limitations": [
+    "Not a PG stage or actual native journey approval.",
+    "Native authorization inputs and a new concrete planner/child budget remain open.",
+    "Recorded groups/closure do not prove all escaped descendants stopped or engineering write qualification.",
+    "Old O08/O10 grants, old26 checks and old FAIL/KEEP remain unchanged."
+  ]
+}

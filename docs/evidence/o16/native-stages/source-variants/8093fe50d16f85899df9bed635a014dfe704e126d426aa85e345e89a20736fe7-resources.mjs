@@ -85,7 +85,6 @@ export async function privateCenter(output, source, { resume = false, stage } = 
       if (row.state === 'stopped') continue; // Do not probe old, already-settled PID identities after a pause.
       try { process.kill(-row.pgid, 0); row.state = 'present'; }
       catch (error) { row.state = error.code === 'ESRCH' ? 'stopped' : 'unknown'; }
-      if (facts.workerProcess?.pgid === row.pgid) facts.workerProcess = { ...row };
       if (row.state !== 'stopped') errors.push('worker-process-group-unconfirmed');
     }
     try { await stopServer(); } catch { errors.push('center-close-unconfirmed'); }

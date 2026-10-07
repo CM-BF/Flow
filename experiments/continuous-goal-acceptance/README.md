@@ -83,3 +83,7 @@ acceptance uses O12's normal durable command path in dependency order.
 - O12 cannot issue confirm-inputs or a rejection command. This consumer calls the existing public
   confirmation method directly. Unknown intake/planner/acceptance evidence is retained, not
   repaired by inventing requests; extra recovery UX remains outside this experiment.
+
+## 分阶段暂停准备
+
+O16-06 接口及实际分轮验证见[单一阶段说明](../../docs/evidence/o16/native-stages/README.md)。operator沿原watchdog提供有限phase入口；pause绑定实际提案/配置/源码/资源关闭，期限后只拒绝继续，不自动清理。当前native登录/其它SDK写入输入未固定，入口明确拒绝，不能以命令存在当模型许可。原已消费run不复用，旧raw/失败保留。

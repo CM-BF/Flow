@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T09:08:56.687153+00:00 / main 1e12eaf1；固定后台产物结果限定独审通过 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T09:27:34.488514+00:00 / main 63768046；O16分阶段实验与FLOW后继记录限定接收 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -12,17 +12,17 @@
 | 单一status owner / model | Execution Lead / gpt-6-astra ultra |
 | Worktree | `/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration` |
 | Branch | `codex/m2-integration` |
-| 工作基线 / HEAD | main 1e12eaf1；本批仅固定后台产物记录和已审管理metadata，无产品源变化 |
+| 工作基线 / HEAD | main 63768046；本批仅O16实验/自有记录及已审FLOW管理文档，无生产源变化 |
 | 工作树dirty状态 | 候选固定输入与组合证据提交后 clean |
 | 工作分支状态 | in-progress |
-| 检查状态 | 本批0工程重跑；固定后台产物20绑定及3保留私有文件身份/hash核同，outer与耐久结果相同；原LAZY/X01组合3/3及strict0保留。 |
-| 已集成main状态 / HEAD | main/origin 1e12eaf1已接资源计量模块及193来源登记；本次固定后台产物结果正受控接收，个人部署未变。 |
+| 检查状态 | O16固定52绑定/289产品/21实验/39alias/3runtime/128轮前绑定核同，16不同局部用例分轮证据复核；本次0工程重跑。 |
+| 已集成main状态 / HEAD | main/origin 63768046已接固定后台构建证据和快捷设置组件；本次O16分阶段实验受控接收，真实PG/native阶段与个人部署未变。 |
 | Review | [review.md](review.md)，组件及共享接线各自APPROVED；未冒充完整M2自然语言验收 |
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 2 |
-| 当前产出 | 新版后台已构建成固定产物并验证内部依赖加载，真实宿主与新旧网页兼容性继续验证。 |
-| 下一可用交付 | 固定后台产物与网页兼容组合继续准备；前端接入按需读取并独立验收。 |
+| 当前产出 | 固定后台构建与快捷设置组件已进入主线；目标旅程分阶段暂停、复核与续接的局部实现已通过独立审查。 |
+| 下一可用交付 | 验证固定后台的真实宿主、历史迁移和网页兼容；目标旅程继续补实际登录与写入范围，再申请独立模型预算。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 
