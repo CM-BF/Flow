@@ -1,0 +1,62 @@
+{
+  "startedAt": "2026-10-07T14:47:18.970038+00:00",
+  "argv": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--test",
+    "--test-concurrency=1",
+    "--test-name-pattern=^retention ",
+    "tools/personal-preview/backend-release/artifact.test.mjs"
+  ],
+  "freshFreeBytes": 20906729472,
+  "timeRemainingSeconds": 60,
+  "scratch": {
+    "path": "/private/tmp/flow-svc06b-retention-qucqe5hz",
+    "dev": 16777234,
+    "ino": 124229647
+  },
+  "source": {
+    "tools/personal-preview/backend-release/files.mjs": "19bb8c2abdf0c5837942228579b343a28998116981ee9251e2e28e7c34f5dd5f",
+    "tools/personal-preview/backend-release/index.mjs": "2f953d163861860b17257e5ed6da1e50ea495583fa9cb1ab9a62617adcdb558a",
+    "tools/personal-preview/backend-release/artifact.test.mjs": "c3db62e3fdefda33b1c321446b1a2581ebb109f948c6789e7447f4f9a7feb3b6"
+  },
+  "providerCalls": 0,
+  "pgCalls": 0,
+  "buildCalls": 0,
+  "personalIO": 0,
+  "report": {
+    "pid": 11744,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 5748,
+    "stdout": "\u2714 retention keeps the three historical artifacts and admits a bounded fourth, never a fifth (1.062042ms)\n\u2714 retention separates maximum build reservation from verified import bytes (0.107917ms)\n\u2714 retention retains exact aggregate and single-artifact byte limits (0.106167ms)\n\u2714 retention rejects unknown quantities and unrecognized admission modes (0.199375ms)\n\u2714 retention public prepare reads four unchanged legacy manifests and rejects a fifth before build (5643.6595ms)\n\u2139 tests 5\n\u2139 suites 0\n\u2139 pass 5\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 5700.780125\n",
+    "stderr": "",
+    "observed_bytes": 597,
+    "retained_bytes": 597,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "remaining": [],
+  "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY",
+  "finishedAt": "2026-10-07T14:47:24.721588+00:00"
+}

@@ -1,0 +1,57 @@
+{
+  "task": "SVC06B",
+  "at": "2026-10-07T14:37:48.376Z",
+  "reviewer": "native_center_owner / gpt-6-astra",
+  "conclusion": "APPROVED_FIXED_ARTIFACT_RESULT_FIDELITY",
+  "target": "a6adfd5970aa77c2440f8eeb89b285ed90bae565",
+  "manifest": {
+    "path": "docs/evidence/svc06/browser-recovery/result-manifest.json",
+    "bytes": 7530,
+    "sha256": "ffd2603393c64c12608e03a5b21487d1e5ac4fe6a61510cc4af5747f8381893d"
+  },
+  "preparationReview": "svc06b-preparation-review.json",
+  "source": "04da80692e79e2b7c3f6341c7fa76515a3f719a3",
+  "findings": [],
+  "bindings": {
+    "source": 10,
+    "raw": 10,
+    "private": 3,
+    "rootIdentity": true,
+    "fixedAndCurrentMatch": true,
+    "artifactManifestBytes": 3196606,
+    "artifactManifestSha256": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+    "threeLateLogoutLeavesMatchFixedGitAndArtifact": true,
+    "wholeDependencyClosureRehashed": false
+  },
+  "result": {
+    "elapsedMs": 33158,
+    "exitCode": 0,
+    "pid": 45951,
+    "finalGroup": "absent",
+    "dualEof": true,
+    "firstFailure": null,
+    "signals": [],
+    "outerStdoutEqualsDurableResult": true,
+    "preReapEpermObservation": "retained, not reinterpreted as absent",
+    "sqlFiles": 33,
+    "snapshots": 271,
+    "importers": 7,
+    "rawBytes": 16634,
+    "rawIncludingOriginalStage": 17440
+  },
+  "retention": "Successful artifact/root/owner/stage intentionally kept for Web compatibility; old failures and unknown resources unchanged.",
+  "reviewerTests": 0,
+  "providerCalls": 0,
+  "personalOperations": 0,
+  "limits": [
+    "Approves fixed artifact generation, validation and internal loading only.",
+    "No real host, runner, PG migration, three-App compatibility or personal deployment demonstrated.",
+    "Artifact source does not include later SVC09A host; message-settings activation remains a separate successor."
+  ],
+  "handoff": {
+    "to": "Web co-lead",
+    "descriptor": "docs/evidence/svc06/browser-recovery/actual-first/result-descriptor.json",
+    "root": "/private/tmp/flow-svc06b-artifact-IhwFGS",
+    "at": "2026-10-07T14:37:48.376Z"
+  }
+}

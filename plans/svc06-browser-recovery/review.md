@@ -8,6 +8,12 @@
 - 新证据validation-01：4/4，197ms总段；271 index、17 runtime只读核对相同，payload未重新hash。真实构建/安装/SDK调用/个人操作均0。
 - 交审范围与固定字节见build-preparation.json；真实artifact和新Web/cookie组合仍NOT_RUN。
 
-## 实际构建结果待审
+## 实际构建结果已审
 
-固定artifact cd27/source04da，原监督33158ms/exit0/组absent/双EOF，result与outer原始stdout相同；33SQL/内部解析通过。result-manifest.json绑定20本片fixed/source+raw及3个保留私有原件/root身份。实际结果独审PENDING，真实Web/host/个人仍未验；不继承准备批准。
+固定artifact cd27/source04da，原监督33158ms/exit0/组absent/双EOF，result与outer原始stdout相同；33SQL/内部解析通过。result-manifest.json绑定20本片fixed/source+raw及3个保留私有原件/root身份。实际结果由native_center_owner限定APPROVED_FIXED_ARTIFACT_RESULT_FIDELITY，2026-10-07T14:37:48.376Z；主线b37e404da18d8b63a5b38ad20cf55850a9781dd5已接。唯一原件docs/evidence/i02/svc06b-actual-result-review.json，本树[原字节副本](../../docs/evidence/svc06/browser-recovery/actual-independent-review.json)。0重测，真实Web/host/个人仍未验。
+
+当前新增retention工具/受管更新候选单独待审；不把已审artifact结果扩为本次新工具或个人执行批准。
+
+## 本轮retention工具待审
+
+Source `203ecae58686b889f39eaef3e1b61d8ffc0bb1cb`，只有files/index/artifact.test三exact产品；容量count4、单产物1GiB、合计2GiB。5/5直接例，5748ms/597B，原4例未选，group absent/双EOF/空tmp同身份清理；完整原件与3源前后像见[retention-result.json](../../docs/evidence/svc06/browser-recovery/retention-result.json)。没有build、PG、个人、provider或新迁入实际。已审cd27/04da无改动，managed-update-candidate为后继准备，不继承成部署批准。
