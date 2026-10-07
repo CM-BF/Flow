@@ -28,6 +28,21 @@
 | --- | --- | --- | --- |
 | PLAN-ID-01 | pending | 待指定 | 未执行；使用pending/in-progress/blocked/completed |
 
+## 时间记录
+
+| 事件 | UTC时间 | 来源 | 范围 |
+| --- | --- | --- | --- |
+| started | UNKNOWN | 待真实事件 | 首次实际开工，不能用文档更新时间猜测 |
+| branch-delivered | UNKNOWN | 未发生 | 固定分支交付 |
+| reviewed | UNKNOWN | 未发生 | 固定target及独立结论 |
+| integrated | UNKNOWN | 未发生 | main接收与push |
+| deployed | UNKNOWN | 未发生或不适用 | 实际运行版本 |
+| completed | UNKNOWN | 未完成 | 本task完整验收 |
+
+## 等待记录
+
+尚无已记录等待事件；发生时使用 `ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源` 表。未知时间写UNKNOWN，未结束写OPEN；不按每轮更新制造等待。见[时间契约](../AGENTS.md#task-timing)。
+
 ## 已完成与检查
 
 真实commit、检查命令/环境/输出、证据路径与未执行项分别记录。

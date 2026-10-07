@@ -76,3 +76,5 @@ co-lead→GO每个大task仅允许 **独立blocker数 + Done(1)**。blocker须�
 ### 2026-10-07 共享执行阻塞收口（原 OPS-001-11/12/15）
 
 采用[固定恢复队列](../../docs/quality/execution-recovery-order-2026-10-07.md)：先 SVC07 必要直接检查与关键用户路径，其他候选维持已有准备/证据。外部条件未改变时停止重复等待/采样，不预占运行窗口；原资源门槛和 CI 唯一用户选择保留。新功能、清理或扩大供给不由本次管理收口授权。
+
+- [ ] **OPS-001-16** 用户任务时间与局部迭代：沿[plans时间契约](../AGENTS.md#task-timing)在当前活跃/后续新status记录可追溯开工、各交付阶段及等待，dashboard实际显示进行中壁钟耗时；历史未知不猜。普通本地修复按[有界连续迭代](../../docs/quality/local-validation.md#bounded-local-iteration)收敛记录/审批开销。规则、Web展示与实际活跃任务接入分别验收，当前规则发布不冒充看板已实现。
