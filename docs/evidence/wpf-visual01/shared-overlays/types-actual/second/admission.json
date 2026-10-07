@@ -1,0 +1,64 @@
+{
+  "at": "2026-10-07T18:20:21.959643+00:00",
+  "head": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/assistant-ui.css",
+      "apps/web/src/components/ui/dialog.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/execution-profiles.css",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/message-settings.browser.ts",
+      "docs/evidence/wpf-visual01",
+      "plans/wpf-visual01-shell"
+    ],
+    "state": "active",
+    "branch": "codex/web-shared-overlays",
+    "origin": "new",
+    "taskId": "WPF-VISUAL01",
+    "worker": "w01_owner",
+    "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+    "createdAt": "2026-10-07T15:54:19.236Z",
+    "updatedAt": "2026-10-07T15:54:19.236Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "pins": 279,
+  "floorBytes": 16266821632,
+  "availableBytes": 19526651904,
+  "phaseTotalMs": 30000,
+  "priorSpentMs": 2745,
+  "remainingBeforeMs": 27255,
+  "attemptMaxMs": 20000,
+  "cleanupMs": 5000,
+  "runner": {
+    "path": "/private/tmp/visual01-types-second-df4qrklf/run.py",
+    "realpath": "/private/tmp/visual01-types-second-df4qrklf/run.py",
+    "bytes": 7811,
+    "sha256": "851b9d53f9dd2d2c1889ced5ff5ff6557db217689d33c9273f76620f900ee76d"
+  },
+  "binding": {
+    "path": "/private/tmp/visual01-types-second-df4qrklf/binding.json",
+    "realpath": "/private/tmp/visual01-types-second-df4qrklf/binding.json",
+    "bytes": 127751,
+    "sha256": "1100b71c875584705f053729bf14bab2869ea85b72bfbeb39dee79abdb8746cd"
+  },
+  "config": {
+    "path": "/private/tmp/visual01-types-second-df4qrklf/types.json",
+    "realpath": "/private/tmp/visual01-types-second-df4qrklf/types.json",
+    "bytes": 11191,
+    "sha256": "7f13534d02c6ca62defc5abda5987e09fecb57f46ffe7f23e79ddb3dbe36a695"
+  },
+  "delta": "One real HTMLElement guard; exact three readonly package declaration paths; no assertion/runtime/lifecycle changes",
+  "freshImmediatelyBeforeLaunch": {
+    "at": "2026-10-07T18:25:07.799043+00:00",
+    "availableBytes": 19527200768,
+    "claimVersion": 1
+  }
+}

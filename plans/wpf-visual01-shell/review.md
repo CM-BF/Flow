@@ -1,8 +1,8 @@
 # WPF-VISUAL01 共享浮层独审
 
-当前结论：**NOT_STARTED**。target `2d73da15b41f115ec815f38b565fb4d80fd1b6fb`；base 3c9345df4aec85a37e8a2a155e079db260d515b1。
+当前结论：**PENDING**（本次source/type实际待集中审；不是全片APPROVED）。target `4ca1deac319afac89f7c0ae5e0142cb9de429a2a`；base 3c9345df4aec85a37e8a2a155e079db260d515b1。
 
-scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.browser.ts, apps/web/test/message-settings.browser.ts。核 shared Dialog 展示而非权威变更、tuple/CAS/Apply/liveness 保留、渐进层级/主操作可达、完整长身份、焦点与两种滚动条边界。工程/浏览器/视觉目前 NOT_RUN，主线/部署 NOT_INTEGRATED。
+scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/src/execution-profiles/execution-profiles.css, apps/web/test/conversation-recovery.browser.ts, apps/web/test/message-settings.browser.ts。核 shared Dialog 展示而非权威变更、tuple/CAS/Apply/liveness 保留、渐进层级/主操作可达、完整长身份、焦点与两种滚动条边界。四入口affected类型复验PASSED、首FAIL保留；浏览器/视觉目前 NOT_RUN，主线/部署 NOT_INTEGRATED。
 
 独审者先核固定 Git target、实际文件 hash 和本次检查原件，再区分 source / local / browser / visual / main / deployment；禁止继承历史 a8 绿项。原 APPROVED 历史见[historical review](../../docs/evidence/wpf-visual01/shared-overlays/historical-review.md)。
 
@@ -10,4 +10,8 @@ scope：apps/web/src/assistant-ui.css, apps/web/src/components/ui/dialog.tsx, ap
 
 ## 本次 preset 源码差量
 
-旧六源的[root source notes](../../docs/evidence/wpf-visual01/shared-overlays/root-source-notes.json)为 SOURCE_NOTES/无 blocking，不是最终 APPROVED。当前新增 parent preset 静态限定 appearance、自有 evidence/runs、独立60s/30s清理，保默认MSG与全部worker断言。该差量独审与 noEmit/browser 仍 NOT_RUN；[保存核对](../../docs/evidence/wpf-visual01/shared-overlays/validation-prepared/static-preservation.json)。
+旧六源的[root source notes](../../docs/evidence/wpf-visual01/shared-overlays/root-source-notes.json)为 SOURCE_NOTES/无 blocking，不是最终 APPROVED。当前新增 parent preset 静态限定 appearance、自有 evidence/runs、独立60s/30s清理，保默认MSG与全部worker断言。该preset差量已获 [f29a限定静态审](../../docs/evidence/wpf-visual01/shared-overlays/validation-prepared/root-preset-review.json)；affected noEmit已实际通过，browser仍NOT_RUN；[保存核对](../../docs/evidence/wpf-visual01/shared-overlays/validation-prepared/static-preservation.json)。
+
+## 必要类型实际
+
+[两次原件与冻结输入](../../docs/evidence/wpf-visual01/shared-overlays/types-actual/index.json)及[单一累计账](../../docs/evidence/wpf-visual01/shared-overlays/types-actual/phase.json)。首红只有HTMLElement联合类型和精确声明路径问题；新增HTMLElement guard与3个d.ts路径后复验0。原期望、CSS、所有业务断言与运行器生命周期不变。5765/30000ms CLOSED；浏览器与图片仍未验。

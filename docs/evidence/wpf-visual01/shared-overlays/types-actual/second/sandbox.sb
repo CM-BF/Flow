@@ -1,0 +1,5 @@
+(version 1)
+(allow default)
+(deny file-write*)
+(allow file-write* (subpath "/private/tmp/visual01-types-second-df4qrklf/scratch") (literal "/dev/null"))
+(deny network*)

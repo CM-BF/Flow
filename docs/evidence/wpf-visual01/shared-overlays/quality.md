@@ -7,3 +7,7 @@
 ## 2026-10-07T17:17:40.496Z preset / 受影响 noEmit 准备
 
 复用本地 find-skills/frontend-design/brainstorming/clean-code（同 skills.json 固定来源）；已接受设计直接执行，未再安装或创设审批层。实际发现：Recovery 入口输出/phase硬绑定MSG，会越写权且拒绝appearance；改为两个固定preset一起约束 task/output/phase/selection，并将flag传到原worker。文本核worker和全部断言逐字未变、其他五源未变；未造第二draft/plugin权威。复用既有compiler父，仅exact8 scope guard改变；类型真实解析尚未运行。静态配置先前两次文件路径枚举发现需尊重package.exports及保留多点文件名，已修配置生成；不计为工程检查。当前无 local/PG/Chrome/free/proc采样。
+
+## 2026-10-07T18:29:14.875Z affected types 段末 clean-code
+
+复用本地find-skills/clean-code及既有固定技能来源（skills.json）；无安装。核错误处理和接口：真实HTML限定前置明确失败，不用类型断言绕过offsetWidth；只把3个现有包映射到其真实声明入口，不补假export、不复制依赖。四入口strict/noUnchecked/noEmit第二次实际通过，首失败完整保留；运行器、断言及产品逻辑不改。无新通用框架。浏览器/视觉/两个OS滚动模式未验，留原TODO06。

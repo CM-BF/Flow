@@ -28,10 +28,10 @@
 
 ## 验证与未验范围
 
-本段 source-only，工程检查、PG、Chrome、构建均 NOT_RUN。固定实现后提交一个有界局部检查方案，不重跑无关业务。真实 scrollbar 模式和图片可读性待实际观察；不以几何数值/截图存在冒视觉通过。不改官方 Thread、完整 Arc pane 管理或任何 draft/plugin 权威。
+四入口 affected strict/noUnchecked/noEmit 已实际通过，首轮失败保留；PG、Chrome、构建及真实浏览器验收均 NOT_RUN。不重跑无关业务。真实 scrollbar 模式和图片可读性待实际观察；不以几何数值/截图存在冒视觉通过。不改官方 Thread、完整 Arc pane 管理或任何 draft/plugin 权威。
 
 历史原计划/结果见[历史 plan](../../docs/evidence/wpf-visual01/shared-overlays/historical-plan.md)、[历史 status](../../docs/evidence/wpf-visual01/shared-overlays/historical-status.md)。模块化与性能方法遵循[根规则](../../AGENTS.md#modular-design)。
 
-本次固定源码 2d73da15b41f115ec815f38b565fb4d80fd1b6fb；必要检查方案见[validation proposal](../../docs/evidence/wpf-visual01/shared-overlays/validation-proposal.json)。尚无工程/浏览器实际许可，当前全部8scope停写保留待审。
+本次固定源码 4ca1deac319afac89f7c0ae5e0142cb9de429a2a；必要检查方案见[validation proposal](../../docs/evidence/wpf-visual01/shared-overlays/validation-proposal.json)。必要局部30s段已CLOSED累计5765ms，当前全部8scope停写保留；浏览器未获实际段。
 
-后续 parent preset 将 appearance 的任务、账目、输出作为一个受信固定配置，不接收任意 evidence 路径。默认 MSG03 guard 不变；必要 local 与两 browser consumer 提案集中于[准备入口](../../docs/evidence/wpf-visual01/shared-overlays/validation-prepared/proposal.json)，暂未获运行段。
+后续 parent preset 将 appearance 的任务、账目、输出作为一个受信固定配置，不接收任意 evidence 路径。默认 MSG03 guard 不变；必要 local 与两 browser consumer 提案集中于[准备入口](../../docs/evidence/wpf-visual01/shared-overlays/validation-prepared/proposal.json)，affected types已实际结束；browser仍待准备与实际段。

@@ -1,0 +1,36 @@
+{
+  "authorization": "VISUAL-AFFECTED-TYPES-20261007-ONCE",
+  "state": "CLOSED",
+  "scope": "four affected entry strict/noUncheckedIndexedAccess/noEmit only",
+  "attempts": [
+    {
+      "name": "first",
+      "source": "2d73da15b41f115ec815f38b565fb4d80fd1b6fb",
+      "head": "b4129dfae1057d3eaa0b37c14799b56cd3cab05e",
+      "state": "FAILED",
+      "outerExit": 1,
+      "compilerExit": 2,
+      "chargeMs": 2745,
+      "raw": "first/"
+    },
+    {
+      "name": "second",
+      "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+      "head": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+      "state": "PASSED",
+      "outerExit": 0,
+      "compilerExit": 0,
+      "chargeMs": 3020,
+      "raw": "second/"
+    }
+  ],
+  "totalMs": 30000,
+  "spentMs": 5765,
+  "unusedMs": 24235,
+  "unusedCreditTransferred": false,
+  "returnAt": "2026-10-07T18:25:58.676713Z",
+  "browser": "NOT_RUN",
+  "visual": "NOT_RUN",
+  "productRuntime": "NOT_RUN",
+  "fix": "HTMLElement narrowing before offsetWidth; exact readonly declaration paths for vite, @vitejs/plugin-react and @tailwindcss/vite; no runtime/expectation/lifecycle change"
+}

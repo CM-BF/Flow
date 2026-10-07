@@ -1,0 +1,34 @@
+{
+  "returnedAt": "2026-10-07T18:18:20.078708+00:00",
+  "state": "FAILED",
+  "chargeMs": 2745,
+  "phaseTotalMs": 30000,
+  "remainingMs": 27255,
+  "identities": [
+    {
+      "kind": "PID",
+      "id": 52884,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 52884,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PID",
+      "id": 52888,
+      "state": "ABSENT_ESRCH"
+    },
+    {
+      "kind": "PGID",
+      "id": 52888,
+      "state": "ABSENT_ESRCH"
+    }
+  ],
+  "scratchAbsent": true,
+  "innerEOFDrop0": true,
+  "outerEOFDrop0": true,
+  "childExit": 2,
+  "outerExit": 1
+}

@@ -1,0 +1,61 @@
+{
+  "at": "2026-10-07T18:16:38.248Z",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+  "head": "b4129dfae1057d3eaa0b37c14799b56cd3cab05e",
+  "source": "2d73da15b41f115ec815f38b565fb4d80fd1b6fb",
+  "claim": {
+    "lead": "external_web_d01_owner",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/web/src/assistant-ui.css",
+      "apps/web/src/components/ui/dialog.tsx",
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/src/execution-profiles/execution-profiles.css",
+      "apps/web/test/conversation-recovery.browser.ts",
+      "apps/web/test/message-settings.browser.ts",
+      "docs/evidence/wpf-visual01",
+      "plans/wpf-visual01-shell"
+    ],
+    "state": "active",
+    "branch": "codex/web-shared-overlays",
+    "origin": "new",
+    "taskId": "WPF-VISUAL01",
+    "worker": "w01_owner",
+    "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+    "version": 1,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+    "createdAt": "2026-10-07T15:54:19.236Z",
+    "updatedAt": "2026-10-07T15:54:19.236Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "floorBytes": 16266821632,
+  "availableBytes": 19530014720,
+  "pins": 276,
+  "phaseTotalMs": 30000,
+  "priorSpentMs": 0,
+  "attemptMaxMs": 20000,
+  "cleanupMs": 5000,
+  "tmpBytes": 8388608,
+  "retainedBytes": 1048576,
+  "metadataBytes": 1048576,
+  "runner": {
+    "path": "/private/tmp/visual01-types-first-ygw09t5t/run.py",
+    "realpath": "/private/tmp/visual01-types-first-ygw09t5t/run.py",
+    "bytes": 7811,
+    "sha256": "851b9d53f9dd2d2c1889ced5ff5ff6557db217689d33c9273f76620f900ee76d"
+  },
+  "binding": {
+    "path": "/private/tmp/visual01-types-first-ygw09t5t/binding.json",
+    "realpath": "/private/tmp/visual01-types-first-ygw09t5t/binding.json",
+    "bytes": 125895,
+    "sha256": "fb78ef91c1da4c852baff69150d5930d14fdc6886b5edb3b39eba97f638919ea"
+  },
+  "config": {
+    "path": "/private/tmp/visual01-types-first-ygw09t5t/types.json",
+    "realpath": "/private/tmp/visual01-types-first-ygw09t5t/types.json",
+    "bytes": 11137,
+    "sha256": "a78fb28b0e71a9e633268254a002b817831c564e74beeab023ad87123bea32e4"
+  }
+}
