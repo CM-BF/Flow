@@ -1,0 +1,36 @@
+{
+  "at": "2026-10-07T00:02:41.250222+00:00",
+  "inputs": [
+    {
+      "path": "docs/quality/x01-seven-link-delegation-2026-10-06.json",
+      "source": "7d82456d04970af028475f6b27524fe2da69efe3",
+      "bytes": 2410,
+      "sha256": "71a35d85ef4328e5adef5e9fb23bd25885db116170074914265a0e1bce8fd1c8"
+    },
+    {
+      "path": "docs/quality/x01-seven-link-request-review-2026-10-06.json",
+      "source": "7d82456d04970af028475f6b27524fe2da69efe3",
+      "bytes": 18025,
+      "sha256": "0a36d10c35f80dc66ccc908d00bac892d3219d1aa114f698caa257aa37c29fb6"
+    },
+    {
+      "path": "docs/quality/local-validation.md",
+      "source": "7d82456d04970af028475f6b27524fe2da69efe3",
+      "bytes": 9604,
+      "sha256": "eb4805fca4a062766b2051edd828b90707e92b16af4d18bcc9f76fe7692bd7e0"
+    },
+    {
+      "path": "plans/ops-001-status-review/status.md",
+      "source": "7d82456d04970af028475f6b27524fe2da69efe3",
+      "bytes": 68387,
+      "sha256": "2886506468b6ab90b2f73ba1ad67c5c095b7b3bce769db311ff073a2357b7811"
+    }
+  ],
+  "outcome": "EXCLUSIVE_SUPPLY_DELEGATED",
+  "operator": "Mika / architecture_read original X01 owner",
+  "supplyResult": "owner canonical pending; no success presumed",
+  "testsRun": 0,
+  "providerQueries": 0,
+  "dependencyCopies": 0,
+  "mainProductChanges": 0
+}
