@@ -1,6 +1,6 @@
 {
   "at": "2026-10-07T13:18:20.030532+00:00",
-  "state": "RESERVED_FIXED_REMAINING_MAINTENANCE",
+  "state": "RETURNED_DRAINED_LOCAL_ADMISSION_UNKNOWN",
   "window": "svc06-personal-7d1-20261007-1320",
   "operator": "assignment_review",
   "coLead": "astra_ultra_execution_lead",
@@ -109,5 +109,35 @@
     "browserpolicy creation"
   ],
   "maintenanceDeadline": "Whole operator independently bounded900s frombeforelaunch, +2sreap; includes bindings/fsync, never resets; missing inner phase receipt UNKNOWN/KEEP; detached services excluded from supervision stop ownership.",
-  "helperTarget": "c51bffb4f91a33eeb16d637449c0618cc99040e8"
+  "helperTarget": "c51bffb4f91a33eeb16d637449c0618cc99040e8",
+  "returnedAt": "2026-10-07T13:19:54.167135Z",
+  "actual": {
+    "completed": [
+      "facts-before",
+      "preflight",
+      "history-before",
+      "bootstrap"
+    ],
+    "operatorMs": 21477,
+    "code": "RUNNER_ADMISSION_NOT_IDLE",
+    "phase": "operation",
+    "operationMs": 348,
+    "runnerState": "draining",
+    "runnerVersion": 19,
+    "operationId": "e6550b3c-1f67-4c2c-869d-e84d5e838113",
+    "activeAttempts": 0,
+    "uncertainAttempts": 0,
+    "hold": 0,
+    "refresh": 0,
+    "resume": 0,
+    "final": 0,
+    "operatorProviderQueries": 0,
+    "termination": "operator51100 + all5 started phase PIDs absent/dualEOF; no signals/pending invocations",
+    "evidence": "backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4",
+    "notKnown": "Post-idle status not reached; strict idle error did not retain classification; no inference of empty journal or current accepting."
+  },
+  "sourceFreezeRelease": {
+    "at": "2026-10-07T13:25:40.733428+00:00",
+    "reason": "R4 actual window returned and all owned operator/phase direct PIDs absent. New remediation is preparation only. Approved plugin intake has zero overlap with43 pinned root files; fixed7d1/6c artifact/dependencies unchanged. Next actual must explicitly bind current source/pins, not replayR4."
+  }
 }
