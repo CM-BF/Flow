@@ -1,0 +1,30 @@
+{
+  "state": "SOURCE_PREPARED_NEEDS_FOCUSED_REVIEW_NO_ACTUAL_GRANT",
+  "source": "d882c9439ee0111268e18766bf13ed02d6fb86e5",
+  "packet": "/private/tmp/rel01-recovery-c3",
+  "entry": [
+    "python3",
+    "/private/tmp/rel01-recovery-c3/supervisor.py",
+    "--gate",
+    "<fresh unique gate>"
+  ],
+  "selection": "FORMAL_FOUR_APPS",
+  "totalMs": 180000,
+  "cleanupMs": 30000,
+  "workerNodeGroups": 1,
+  "chromeGroups": 1,
+  "databases": 1,
+  "configuredConnections": 12,
+  "scratchBytes": 67108864,
+  "databaseWALPlanningBytes": 134217728,
+  "retainedBytesIncluding256KiBOuter": 8388608,
+  "metadataBytes": 1048576,
+  "phaseBudgetCreditFromHistory": 0,
+  "exactPair": "web779/c231 + backendcd27/04da + policy81a8",
+  "assets": "3 retained immutable original Bearer Apps plus new immutable Cookie App; same backend/context, four reports only after complete cleanup/import verification",
+  "preserved": "Original UNKNOWN reload then explicit original key/body, accepted turn/task, Cookie SSE, held old logout headers/new cookie assertions; no blanket400 exception, no protocol/ACK change",
+  "network": "Chrome only exact public origin through own restricted dynamic proxy; Node only owned dynamic backend, deny personal61228, no page.request/context.request/route.fetch; no provider/install/build/personal service",
+  "native": "Parent/worker unchanged and existing exact native acceptance retained; source candidate and fresh actual remain not authorized by that historical acceptance",
+  "closure": "0 new descriptor/rebuild/dependency install/copy; only existing input pointers. Future fresh root identities/native/input hashes/full verifier and manager complete resource sum required.",
+  "typecheck": "Not repeated for one documented standard boolean RequestOptions field; previous fc291 affected strict source boundary remains historical, no new PASS claimed."
+}

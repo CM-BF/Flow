@@ -56,3 +56,7 @@
 复用本地find-skills、brainstorming bounded、clean-code：已有root/manager明确批准窄诊断设计，无新平台或审批层。实际两harness增加可选观察与具名diagnostic入口；不复制public链、formal assertions或report codec。观察职责只读，原handler拥有错误与socket处理；原消费包不改。纯文本核formal console/check段和importReports逐字保持；Python仅AST检查候选parent。类型/浏览器均NOT_RUN，必要类型提案已列。未解决：原400具体code/连接因果未观察，snapshot关联不足保UNKNOWN。技能路径/来源沿既有基线，不重装。
 
 2026-10-07T16:40:47.350Z clean-code窄复核：诊断限额原用compact JSON，实际pretty+newline可超32KiB；已单行统一序列化表达式，保原cap与失败关闭，不加重复serializer/helper。仅静态文本核，0工程检查。
+
+## 2026-10-07T17:24:30.531Z one-request代理候选 / clean-code
+
+沿本地find-skills/clean-code：把连接策略放在单一httpRequest构造处，与已声明Connection:close一致；仅一个标准boolean选项，不新Agent池、observer框架或私有authority。静态比较browser逐字fc291，fixture只1+/1-；原formal5prepared逐字c2。所有旧错误/UNKNOWN/报告和budget保留；不将端口tuple相关性冒因果证明。当前K01测量drain，0工程child/PG/Chrome/free采样；无必要例行重跑已绿strict。只文本/hash/JSON/链接检查，实际修复效果未验证。

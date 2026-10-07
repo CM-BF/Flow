@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T17:08:12.340Z |
+| 最近更新时间 | 2026-10-07T17:24:30.531Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -10,22 +10,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery |
 | Branch | codex/web-release-recovery |
 | 工作基线 / HEAD | 固定7272151bb1e3e59e08937dca44949dcdeb42f009；source供给300386e2babce408b85ad5b9732d616782b78097；旧树9fde已释放停写 |
-| 工作树dirty状态 | 本批仅fc291诊断实际/独审metadata封存；正常push clean后原四scope STOP，claim7d60v2保留 |
+| 工作树dirty状态 | 本批仅 agent:false 窄候选与准备metadata；正常push clean后原四scope STOP、claim7d60v2保留 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
 | 检查状态 | FAILED d032a53a62017cc41a3ddf19b316ad1047398fa6 c2 actual exit1 / asset-observation，reports=null；首c1 FAILED56504保持，types/oldconsumer/artifact仅历史范围 |
 | 诊断实际 | DIAGNOSTIC_COMPLETE fc2916c275efe86203d91ec33656ea9871eac42a；outer0，17:02:28.596973Z START，17:03:55.066182Z完整RETURN；14881/90000ms CLOSED，1条clientError/关联UNKNOWN，passed=false/reports=null |
 | 必要局部检查 | PASSED fc2916c275efe86203d91ec33656ea9871eac42a strict/noEmit复验exit0；首resolver FAIL1125ms保留，复验1650ms，独立20s累计2775ms CLOSED；不替代四App兼容 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED 当前新pair harness/compat；两产品窄修已随MSG进入main729d3383635b565aa4131078f80a682cac437526，session保留独立MSG接线 |
-| 实现目标 | fc2916c275efe86203d91ec33656ea9871eac42a |
+| 实现目标 | d882c9439ee0111268e18766bf13ed02d6fb86e5 |
 | 实现范围 | apps/web/test/web-release-compatibility.browser.ts、apps/web/test/web-release-compatibility.fixture.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 诊断已捕获连接关闭后的HTTP解析错误，具体请求关联仍未知；资源已归还 |
-| 下一可用交付 | 按原始HTTP错误及连接时序研究最窄修复；正式兼容与发布仍待验证 |
-| 当前阻塞 | ACTIVE: 已捕获HPE_CLOSED_CONNECTION，但与具体请求的关联未知；四正式报告仍为null |
+| 当前产出 | 已形成单次上游连接策略修正候选；原兼容失败保留，尚未复验 |
+| 下一可用交付 | 固定单行差量与原四App调用包集中审查，随后按独立新窗口验证 |
+| 当前阻塞 | ACTIVE: 原HTTP400根因仍未知；连接策略候选待审/未运行，正式四报告仍null |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)：APPROVED fc2916c275efe86203d91ec33656ea9871eac42a 仅源码/native/必要strict；首次诊断捕获与完整RETURN已独立ACCEPTED，非兼容批准 |
+| Review | [review.md](review.md)：NOT_STARTED d882c9439ee0111268e18766bf13ed02d6fb86e5 新单行候选；fc291源码/strict及诊断完整RETURN历史限定已审 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 整体开工UNKNOWN；历史片段完成12:17:59.709Z保前状态；后继领取13:09:33.224Z仅为领取事实，编辑固定来源8964dc1；不以领取或编辑时刻倒填全任务开工 |
@@ -191,3 +191,11 @@ Root准备源/native批准与失败实际/清理独审已原样归档。newApp�
 [32原件已逐字归档](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/actual-first/README.md)，包含12runtime原件186051B、父终态与实际outer观察。outer50337/worker50421/Chrome57021各PID和PGID fresh ESRCH，markedDB正常DROP、center/proxy closed、全部EOF/drop0、scratch/profile与exact身份admin输入已删除。新90s一次段CLOSED14881ms、未用75119ms不转信用，不自动第二次。当前没有本owner运行进程或待launch。
 
 [root独立结果审](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/actual-first/root-actual-review.json)已接受诊断捕获完整与FULLRETURN，不是compatibility批准。原400/UNKNOWN关联与正式FAILED保持；本批normal seal后四scope STOP、7d60v2保留，无新运行。
+
+## 当前连接策略窄修（2026-10-07T17:20:01.065Z）
+
+在已领 fixture 的单次 upstream httpRequest 增加 `agent:false`，与其既有 `Connection:close` 一致。未改 globalAgent/Cookie/ACK/key-body/task/lateLogout/400 断言；根因仍 UNKNOWN。正式四 App 仍 FAILED、reports=null，诊断完整捕获不算兼容通过。当前仅源码/新 formal4 准备，0工程child/无运行授权；VISUAL已安全STOP。
+
+## 当前 formal c3 源码安全点
+
+2026-10-07T17:24:30.531Z：[连接策略候选](../../docs/evidence/wpf-release01/recovery-cookie/connection-policy-candidate/README.md)固定 d882c9439ee0111268e18766bf13ed02d6fb86e5，仅原proxy的 `httpRequest` 增 `agent:false`。5个formal prepared文件逐字c2，旧input/tuple/协议不变，完整4App验收不将诊断或旧阶段提升为正式报告。新180s含30cleanup是提案，无NEXT/gate/运行授权；source+records+TMP增长<4MiB，未重build/strict/依赖扫描或采资源。未来fresh完整资源分类由管理协调，历史账全部CLOSED不转credit。正常push clean后原exact4 STOP。

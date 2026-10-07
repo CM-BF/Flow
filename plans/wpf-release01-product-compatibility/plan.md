@@ -98,3 +98,7 @@ c3唯一实际已完成三App各四项与独立Cookie检查，actual exit0/23495
 [新Cookie诊断原件](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/actual-first/README.md)：17:02:28Z真实开始、outer0/DIAGNOSTIC_COMPLETE，17:03:55Z全部资源已归还。实际捕获HPE_CLOSED_CONNECTION而非零错误，但精确请求关联仍UNKNOWN；不代表四App兼容通过、不导入报告。RELEASE01-08保持未完成。新90s独立14881ms CLOSED/未用75119不转；旧红保持。下一步只基于独审原件决定窄修或更精确诊断，不自动第二次、不扩大发布scope。
 
 首次诊断actual经[root独立接受](../../docs/evidence/wpf-release01/recovery-cookie/cookie-parser-diagnostic/actual-first/root-actual-review.json)，1条错误与关联UNKNOWN保真，未给compatibility批准。保RELEASE01-08未完成；当前停写等既有只读原因研究，不新actual或重建。
+
+## 连接策略候选与正式验收接续
+
+2026-10-07T17:24:30.531Z：首parser诊断已完整捕获HPE_CLOSED_CONNECTION，但端口tuple多义不能证明具体请求/唯一因果。复用[既有HTTP转发接缝](../../docs/evidence/wpf-release01/recovery-cookie/connection-policy-candidate/README.md)，只显式one-request agent；不改globalAgent/产品或放宽400。固定779/cd27不重build。后继正式四App必须新完整actual和四报告/cleanup；不导入历史partial或把diagnosticComplete当兼容绿。原稳定executor后继仍在本轮完成之后。
