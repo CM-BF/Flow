@@ -1,0 +1,167 @@
+{
+  "source": "b6feabeb451d59cdc84c3386b2a20c97befe2db6",
+  "base": "47354f92fed41eafbc5b03e3841ffe446dd65b61",
+  "sources": [
+    {
+      "path": "experiments/knowledge-search/.gitignore",
+      "bytes": 41,
+      "sha256": "ccc5ecbc791e88118155b803c40b672cfe11611f2eed99125aacc3e8f5639301"
+    },
+    {
+      "path": "experiments/knowledge-search/README.md",
+      "bytes": 18858,
+      "sha256": "074a332d5dd629aec8f4dca75020e275f08507451305b3dd39c55c387f23404d"
+    },
+    {
+      "path": "experiments/knowledge-search/budget.test.ts",
+      "bytes": 3294,
+      "sha256": "9f99d62b6cd31885d1d296bc8c6618c0aecc76379aab189f83e476b2eff67134"
+    },
+    {
+      "path": "experiments/knowledge-search/budget.ts",
+      "bytes": 2582,
+      "sha256": "2877ab676c9612706b0df5d02789bc67dc012747fdc316d6710c5dee8389d266"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.test.ts",
+      "bytes": 2390,
+      "sha256": "2a92684c8660fd966369ede94aa1661d6af3b53d987033d5a2031c6c3b0d0d84"
+    },
+    {
+      "path": "experiments/knowledge-search/corpus.ts",
+      "bytes": 2816,
+      "sha256": "74784cec7db73db507ca3e37b1820d883a56a9ff07cbada22defd81176f9cd4a"
+    },
+    {
+      "path": "experiments/knowledge-search/dependencies.json",
+      "bytes": 5171,
+      "sha256": "c0452877fde7ff4da073a5ab4c19b8ed6c268363be4eedf5900a44fd8803ecfd"
+    },
+    {
+      "path": "experiments/knowledge-search/diagnostic.ts",
+      "bytes": 1780,
+      "sha256": "9055a2f18c4913a6f0c47a4d04356ec2b362233894bc37764311569823b011a9"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.py",
+      "bytes": 27781,
+      "sha256": "654c526b10d3f8831f831d7b712a3c98e3979f054bd78d25920355b7c994a434"
+    },
+    {
+      "path": "experiments/knowledge-search/entry.test.py",
+      "bytes": 8726,
+      "sha256": "61970b1519ee5cae42015ec43aefd3a0c82f903d7e7f473a2b19bb398f1b5b97"
+    },
+    {
+      "path": "experiments/knowledge-search/listen.test.ts",
+      "bytes": 7558,
+      "sha256": "c967710500d368818ef3a06e696555e1424dae7c2729d93f512b9ae2c6515040"
+    },
+    {
+      "path": "experiments/knowledge-search/materialize.py",
+      "bytes": 3314,
+      "sha256": "92045f38b3113b06a9bd388d1fba4b2ebf50c3d170fdb9e6db47736d0075ff09"
+    },
+    {
+      "path": "experiments/knowledge-search/measurement.ts",
+      "bytes": 13199,
+      "sha256": "fbdfbd8b567e53515e17e5b0288433d5649efbac4a2059cc2f43df11e2da7f54"
+    },
+    {
+      "path": "experiments/knowledge-search/observing-pool.test.ts",
+      "bytes": 5872,
+      "sha256": "48017536803b8a0c2565f0c3a8fec0459cbd2eea34f5220cde9e24b47905b9ab"
+    },
+    {
+      "path": "experiments/knowledge-search/observing-pool.ts",
+      "bytes": 2063,
+      "sha256": "007a10aa4f3bf8f730e87451447be9c25bbfc0087f3099fec227f588d369110e"
+    },
+    {
+      "path": "experiments/knowledge-search/owned-database.ts",
+      "bytes": 12696,
+      "sha256": "cfb15591d51beee2f52bb57fb003f3a4ddae26e771a3037f3b50456740e10a55"
+    },
+    {
+      "path": "experiments/knowledge-search/owned-db-observation.mjs",
+      "bytes": 3701,
+      "sha256": "cdd749b95d42d9e356e940c1bc65ba4e3b6d1d2a0d585c77b835a8442a7e2283"
+    },
+    {
+      "path": "experiments/knowledge-search/owned-db-observation.test.mjs",
+      "bytes": 3147,
+      "sha256": "194ee818bc4f5bd7fa465f04a246ffc9171756322b2f244e92e7bc513c084329"
+    },
+    {
+      "path": "experiments/knowledge-search/postflight.test.py",
+      "bytes": 7939,
+      "sha256": "85e9be6fe246cfbf372f06532b34395ac74eb4b6f9ddbb281d525100f9bc12eb"
+    },
+    {
+      "path": "experiments/knowledge-search/preparation.json",
+      "bytes": 4918,
+      "sha256": "24bb1bbbba1757d654f266aa7f53048c222c58f29116be00bd2eccae8635d105"
+    },
+    {
+      "path": "experiments/knowledge-search/run.ts",
+      "bytes": 3785,
+      "sha256": "45579666023f4f15204c0e9dad318e967ea76931778a3d92595d7b302b683067"
+    },
+    {
+      "path": "experiments/knowledge-search/source-inputs.json",
+      "bytes": 49602,
+      "sha256": "daab2f8e8a2c0cfeb06994e09ea75f164dfd11d22faefbb6561e07f7b9ad195c"
+    },
+    {
+      "path": "experiments/knowledge-search/types.tsconfig.json",
+      "bytes": 413,
+      "sha256": "379b404f451e0bb9a22af79573fbf2c61ff60106146817bf0ea6a5efacedc80e"
+    },
+    {
+      "path": "experiments/knowledge-search/vitest.config.mjs",
+      "bytes": 268,
+      "sha256": "00e228e82854ae84e4bf66c1b04cee6095611080a0893c70f324907d694d0255"
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/k01/query-entry-postflight-20261007T181324/iterations.jsonl",
+      "bytes": 14423,
+      "sha256": "2d8e10dea488b96750d4cf84585067aae2a6a2c45e40ae253466cae37e69963c"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-postflight-20261007T181324/check-01.raw",
+      "bytes": 110,
+      "sha256": "6e679d5456cba512f2b8b1c3c9ae6615236e2c39906d5b7d801f822cb25ae512"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-postflight-20261007T181324/check-02.raw",
+      "bytes": 110,
+      "sha256": "85ca96fb207a9acf727b042ed3fd6fdb6890b8cc0d45810393b27db424a95d19"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-postflight-20261007T181324/check-03.raw",
+      "bytes": 530,
+      "sha256": "5d6c1203c8ac6cfe62f9d832f2f3caf327c94c5903132f6707b4a70d0fe5bfb7"
+    },
+    {
+      "path": "docs/evidence/k01/query-entry-postflight-permit.json",
+      "bytes": 666,
+      "sha256": "61b93ba13bfd3e4d82e40f55efdc77e2669238b26d6ef126e3cf42fa55c49a71"
+    }
+  ],
+  "summary": {
+    "path": "docs/evidence/k01/query-entry-postflight-20261007T181324/summary.json",
+    "bytes": 1285,
+    "sha256": "b5c7b470e042c22b9411f9cc29b5e2c4dabb7c7f3fa5ae979c3768e5b26f8dc3"
+  },
+  "fixedOps14": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/owned-process-supervision/tools/owned-process-supervision/supervise.py",
+    "bytes": 12543,
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  },
+  "verifiedExecutionBindings": "all three original started source snapshots match target/current executable source bytes; no executable modifications after checks",
+  "originals": "prior PG failure/recovery/callback evidence unchanged; no old KEEP read",
+  "review": "NOT_STARTED",
+  "noNewPG": true
+}

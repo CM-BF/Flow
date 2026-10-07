@@ -47,3 +47,5 @@ PG补充由 Root 先 skills.sh 再 npx skills find 发现官方 supabase/agent-s
 2026-10-07T17:50:54.933639+00:00：沿已读find-skills/codebase-design/固定clean-code，封存第二次失败忠实性审查和独立只读恢复。区分真实API callback/Promise契约缺陷与实际停点未知、计算闭合与资源保留、瞬时0连接与持续状态；首错/原raw不改。唯一SELECT复用已审单admin壳，预启动字段失败0child保留，未改业务/观察器源码或补测试，不新增框架。后继修复必须覆盖固定production transaction真实callback消费者，当前只归档。
 
 2026-10-07T17:59:17.206014+00:00：callback修复沿本地find-skills/codebase-design/固定clean-code：observingPool是实际诊断唯一查询包装边界，extract用于真实consumer测试，不复制业务transaction/SQL；同时保callback及Promise checkout语义、同步error-listener窗口、真实client方法this与release所有权。7例直接调用fixed transaction，失败原对象/rollback/discard有明确断言，不测SQL字符串镜像。计时guard仍在driver区间外，新增12个有限start阶段不复制result且不抬64/768KiB。命名/职责/错误保真/重复及必要复杂度复核无新问题；未运行PG、不推测历史卡点。原failure/recovery及245产品供给未改，独审待固定commit。
+
+2026-10-07T18:30:21.443816+00:00：沿已读find-skills/codebase-design/固定clean-code，现caller仍单一owner复用OPS14，不新增supervisor/调度器；小observer只做一条精确绑定SELECT和finally关闭，原错误与close错误分开；primary测量、进程闭合、DB快照及storage/time分别记录。150s按共同origin，预检不重置时钟，缺身份/读错/预算/未知signal都不发probe，exclusive意图禁止重试。源检查与29行为用例覆盖真实新责任，没有为取得绿删除原gold/scale或重写旧失败。Python/MJS实际执行绑定一致，无TS改动/noEmit未重跑，0PG/模型/KEEP访问。独审待固定target；真实生命周期与总窗不外推。

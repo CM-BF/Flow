@@ -1,0 +1,32 @@
+{
+  "source": "b6feabeb451d59cdc84c3386b2a20c97befe2db6",
+  "executionSource": "b6feabeb451d59cdc84c3386b2a20c97befe2db6",
+  "actualLocalStart": "2026-10-07T18:25:56.556425+00:00",
+  "actualReturn": "2026-10-07T18:26:24.696182+00:00",
+  "selectedPassed": {
+    "postflightSynthetic": 11,
+    "affectedExistingCaller": 11,
+    "readonlyObserverFakePool": 7,
+    "distinct": 29
+  },
+  "children": 3,
+  "supervisionMs": 762,
+  "operatorMs": 1039,
+  "rawBytes": 750,
+  "allChildrenKnownClosed": true,
+  "allOwnedScratchRemoved": true,
+  "typecheck": "NOT_RUN: no TypeScript source/config change in this delta; new MJS syntax exercised by Vitest, Python by unittest. Prior noEmit is historical only.",
+  "pg": 0,
+  "http": 0,
+  "provider": 0,
+  "noOldKeepAccess": true,
+  "actualPg": "NOT_OPEN; old two FAILED and independent recovery snapshots unchanged",
+  "logicalAccounting": {
+    "changedTrackedFileBytes": 97172,
+    "runRecordBytes": 15839,
+    "removedScratchLogicalBytes": 759,
+    "newCap": 16777216,
+    "note": "tracked changed bytes conservatively count complete files; original retained artifacts excluded from new allocation, not inspected"
+  },
+  "candidate": "future150s common origin70/110/120/130/140/150; needs reviewed complete input bindings and new manager grant"
+}

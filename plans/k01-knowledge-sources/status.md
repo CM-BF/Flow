@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 17:59 UTC |
+| 最近更新 | 2026-10-07 18:30 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -17,19 +17,19 @@
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
 | 工作树dirty状态 | 本段实现与局部结果已固定待独审；原产品/245供给/旧原件不变 |
-| 工作分支状态 | review（观察器局部修复与直接消费者通过，待独立增量审查；真实PG仍未重跑） |
-| 检查状态 | PASSED 47354f92fed41eafbc5b03e3841ffe446dd65b61；本段7纯/noEmit通过。真实PG历史两次FAILED；当前修复未实跑 |
+| 工作分支状态 | review（同窗收尾源与局部结果待独审；callback修复已独审，实际PG不沿用批准） |
+| 检查状态 | PASSED b6feabeb451d59cdc84c3386b2a20c97befe2db6；本段29纯用例通过；无TS改动未重跑noEmit。真实PG历史两次FAILED，当前新候选未实跑 |
 | 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本次入口修复未集成。两次真实PG均FAILED；各次独立恢复事实分开记录 |
-| 实现目标 | 47354f92fed41eafbc5b03e3841ffe446dd65b61 |
+| 实现目标 | b6feabeb451d59cdc84c3386b2a20c97befe2db6 |
 | 历史产品目标 | ea0c4cba1792dbb498487fb5b6ae47393340b77e；APPROVED，原31检查/main事实保留 |
 | 当前规划基线 / HEAD | 文档起点88bee460c5e0caf762157b3b0934c16093293fe3；本段target c2ed3bb76387ce3e4c22ab8e8adf82b4a0791bd5；不merge/rebase |
 | 本次只读产品输入 | 3c9345df4aec85a37e8a2a155e079db260d515b1；2026-10-07 14:53 UTC固定main，Git只读 |
 | 实现范围 | experiments/knowledge-search |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 已修复诊断观察器的连接接口，局部行为和类型检查通过；规模诊断仍未重新执行 |
-| 下一可用交付 | 独立审查这次接口修复，再完善失败收尾候选；新数据库诊断尚未开放 |
+| 当前产出 | 失败后的独立资源观察已纳入有界入口，局部行为通过；真实数据库诊断仍未重新开放 |
+| 下一可用交付 | 独立审查同窗收尾入口，再绑定未来运行输入与新窗口；现阶段停止实际运行 |
 | 当前阻塞 | ACTIVE: 修复待独审、实际PG验证待新窗口；原数据库与临时目录仍保留，不自动清理或重跑 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；失败与独立恢复忠实性已审；callback P2修复待独立复核 |
@@ -152,3 +152,5 @@
 2026-10-07T17:59:17.206014+00:00：本段直接consumer纯7/7与focusednoEmit exit0，2个child监督累计2346ms/operator2525ms，raw524B；实际RETURN17:57:05.675212Z。PID51290/76752均finalabsent/MERGED EOF、无first/secondary/signals，各自TMP同身份删除并lstat absence；初EPERM观察保留。紧前manager更高floor16,298,278,912在第二child前写入同record，首已消费gate不倒改。实际execution be725761abc9329868eb70caf60bb33b008da34c与final可执行字节相同，后继只README更新结果表述；未重复旧纯矩阵，0PG/HTTP/provider/KEEP访问。接口真实复用固定production transaction、callback成功/error/同步借出error监听、query失败ROLLBACK/release、Promise与第三release参数，源码未扩产品。后继K01-06失败收尾预算设计由db只读输入，留下一合法段，不在本15分钟内扩大。当前新launchSTOP、独立增量review待db。
 
 2026-10-07T18:13:24Z：新20分钟同窗失败收尾段开始，截止18:33:24Z；Mika授权new16MiB（TMP8/raw1MiB包含），≤4串行child/每30s/累计90s，仅pure及必要focusedtypes，0PG/HTTP/Chrome/provider/install/旧KEEP读写。fresh b5de40a8=origin clean/claim30965v2三scope已核。未来150s候选使用同origin70/110/120/130/140/150截止，测量FAIL与计算终态/独立DB快照分离；本段不消费真实PG许可。callback修复47354已于18:12:26由Mika独审SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED，0P1/P2，7pure/types0/原始两child闭合已核；历史两次真实PG失败因果仍UNKNOWN。
+
+2026-10-07T18:30:21.443816+00:00：同窗收尾源b6feabeb451d59cdc84c3386b2a20c97befe2db6固定，29个纯用例分11新postflight/11直接影响旧caller/7只读observer假pool通过，3child监督762ms/operator1039ms/raw750B，actualFULLRETURN18:26:24.696182Z。三owned group finalabsent/MERGED EOF完整/无first-secondary-signals，三ownTMP同身份REMOVED/absent；初EPERM观察仍保留。只修改Python/MJS，无TS变化故不重跑noEmit，历史noEmit不称本轮证据。新150s候选使用同origin70/110/120/130/140/150，原primary失败/原件先持久化，计算确定终态且本次marked identity与预算皆已知时才允许一次单adminSELECT；无DROP/terminate/旧KEEP读取。未来完整输入绑定、真实PG/失败注入生命周期、窗口仍待后继，旧12gold/scale要求未减少，K01-06/08～10保持开放。单份证据query-entry-postflight-20261007T181324/manifest.json，待独立review。提交push后本段STOP，无待launchchild。
