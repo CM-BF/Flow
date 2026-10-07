@@ -1,0 +1,45 @@
+{
+  "kind": "OWNER_READ_ONLY_FIXED_RECEIPT_PROJECTION_AND_README_BYTE_VERIFICATION",
+  "observedAt": "2026-10-07 11:19:00 UTC",
+  "task": "WPF-DASHBOARD-ACCESS01",
+  "mainCommit": "f2ccb6738e37da87ae0f642652f8cf9bb596f4c2",
+  "sourceReceipt": {
+    "commit": "f2ccb6738e37da87ae0f642652f8cf9bb596f4c2",
+    "path": "docs/evidence/i02/approved-backlog-receipt-20261007-1109.json",
+    "gitBlob": "63f26bf6866045c36ba5e21fb65214ea8b53ba29",
+    "bytes": 24153,
+    "sha256": "e27babe20f04221ec0d09b56593e33e16d710d73a0391537dd45300284116f2a",
+    "projectionOnly": true
+  },
+  "originalReceiptAt": "2026-10-07T11:08:24.990292+00:00",
+  "verdict": "RECEIVED_FIXED_ALREADY_INDEPENDENTLY_APPROVED_INPUTS",
+  "taskReceipt": {
+    "target": "53723697a796a1346164c4cddc82ab99baf168ea",
+    "scope": "reviewed README ownership/signature/status correction only",
+    "review": "dashboard-local-access/docs/evidence/wpf-dashboard-local-access/root-access537-doc-composition-review.json"
+  },
+  "readmeBinding": {
+    "originCommit": "53723697a796a1346164c4cddc82ab99baf168ea",
+    "path": "apps/execution-dashboard/README.md",
+    "mode": "100644",
+    "bytes": 15592,
+    "sha256": "acc4297c517c5ed02dc175d3456be9fa1524076291e38d480f8c1084d3a47a93"
+  },
+  "readmeVerification": {
+    "refs": [
+      "f2ccb6738e37da87ae0f642652f8cf9bb596f4c2",
+      "53723697a796a1346164c4cddc82ab99baf168ea",
+      "cb0dca62d20a3e4b8d91699190a94a7704ffc19b"
+    ],
+    "bytes": 15592,
+    "sha256": "acc4297c517c5ed02dc175d3456be9fa1524076291e38d480f8c1084d3a47a93",
+    "gitBlob": "4060d5e1be54d9cc0915ad800f930375d43072dd",
+    "allBytesEqual": true
+  },
+  "originalProductMain": "451bf2ed1c0c3d7688073c8d060629f064044dc2",
+  "deploymentReceipt": "docs/evidence/wpf-dashboard-local-access/product-partial-handoff/deployment-receipt.json",
+  "deploymentSha256": "d1c237ade2940c4de0d1b28a4d04ac8e649a1b69126c4eed511b2b3db8c4e208",
+  "runtime": false,
+  "personalServiceOrCredentialsRead": false,
+  "scope": "Only current own metadata. README and seven handed-back product/test paths unchanged. Main receipt does not imply this owner reran checks or inspected a token."
+}

@@ -31,3 +31,7 @@
 固定main8c92七产品/test源逐字等获审537与本树；实际启用归因原operator/GO回执，不复测或读取token。原claim57735经currentv1 CAS到v2，仅保README与ownplan/evidence三scope，七scope已停写移出；完整批准target537/exact12与原35/5不变，README增量仍待main。见[部分移交原件](product-partial-handoff/index.json)。
 
 本地find-skills/clean-code沿已读方法检查事实来源、当前/历史措辞、责任边界与范围；修正已发布但旧status仍称未验收据的陈旧表述，无产品/测试/parser运行。读取公开管理receipt不含token值；未把移出scope当另一owner已take，未把入口可用当已登录/发消息。
+
+## 2026-10-07 11:19:00 UTC — README主线事实收口
+
+复用已读本地find-skills/clean-code，核本树AGENTS/计划规则及fresh57735v2三scope，顺序完成Recovery后才写本树。按来源/责任/当前历史分离更新plan/status/review/intake；fixedf2ccb README与537/owner字节同，原部署原件非秘密且owner不触服务。消除当前README待main/部署未验的陈旧入口措辞，保用户登录/发消息限制。0产品测试/parser/HTTP/PG/Chrome/free/凭据读取，七移交scope与README不改；所有新改限own记录。

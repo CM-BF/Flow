@@ -2,39 +2,39 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 08:02:04 UTC |
+| 最近更新 | 2026-10-07 11:19:00 UTC |
 | 任务开工时间 | 2026-10-07T02:53:01Z |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 开工：owner实际开始此已派实现段时 clock.curr_time 返回UTC；take时间单独保留，不冒开工。完成：未完成 |
+| 任务完成时间 | 2026-10-07 11:19:00 UTC |
+| 任务时间来源 | 开工：owner实际开始时clock.curr_time返回UTC，不由take推算。完成：owner于本字段所记UTC核对Original固定main收据及README三方字节，确认原01–04交付证据齐；此为本片收口时点，不冒实际部署时点。 |
 | 单一status owner / model | workspace_panels_owner / gpt-6-astra |
 | 所属大task | [D01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/execution-dashboard/plans/d01-execution-dashboard/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | integration |
-| 当前产出 | 本机Flow入口已进入主线并由原发布者启用；README修正待接收 |
-| 下一可用交付 | 接收README单文件修正；产品路径已交回供后续维护 |
+| 本片段交付阶段 | delivered |
+| 当前产出 | 本机Flow入口、按需连接资料及当前使用说明均已交付并进入主线 |
+| 下一可用交付 | 本片段已交付 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access |
 | Branch | codex/dashboard-local-access |
-| 工作基线 / HEAD | 943a66bfa5f71f4a5000ff2674ac1973e85e0353；获审组合 53723697a796a1346164c4cddc82ab99baf168ea；产品08ec/测试3c0/执行d0f6原身份保留；本次仅主线/部署来源与七产品路径部分交权metadata封存 |
-| 工作树dirty状态 | 七产品/test源停写且已移出claim；本次仅三metadata scope封存，最终clean以Git回执为准 |
-| 工作分支状态 | in-progress / approved / waiting-main |
+| 工作基线 / HEAD | base943a66bfa5f71f4a5000ff2674ac1973e85e0353；获审537/exact12、产品08ec/测试3c0/执行d0f6原身份保留；本批仅README main接收来源与own metadata |
+| 工作树dirty状态 | 本批仅原三metadata scope；README与七已交回产品/test不变，最终clean以Git回执为准 |
+| 工作分支状态 | completed / approved / integrated |
 | 实现目标 | 53723697a796a1346164c4cddc82ab99baf168ea |
 | 实现范围 | apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/index.html, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/README.md, docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff, docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr, docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout, docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff |
 | 检查状态 | PASSED 3c0dda7b7a8887ac763d8a1651231374b0f3356d：第四次browser实际5/5、exit0、原生hidden后token清空、owned清理完整；08ec之35direct保留不重跑；前三次FAILED保留；真实安装启用/按需读取由原发布者与GO回执确认；本owner未新运行，登录/发消息未验 |
-| Review | APPROVED 53723697a796a1346164c4cddc82ab99baf168ea；固定12literal/README纠正+原direct35/fake browser5组合批准，ACCESS-R3 CLOSED；原366已main并有实际启用回执；README537待main，真实登录/发消息未验 |
-| 已集成main状态 / HEAD | 原集成451bf2ed1c0c3d7688073c8d060629f064044dc2；本次固定main8c92e64520ba7496b507d08cb4abe9c8d83e37a1七产品/test源逐字等537及本树；README537增量待main回执 |
+| Review | APPROVED 53723697a796a1346164c4cddc82ab99baf168ea / exact12；原direct35/fakebrowser5及README修正组合批准，原366和README537均已main；实际启用有原来源回执，用户登录/发消息未验 |
+| 已集成main状态 / HEAD | 原产品451bf2ed1c0c3d7688073c8d060629f064044dc2；README537于fixed main f2ccb6738e37da87ae0f642652f8cf9bb596f4c2 接收，三方字节同/无重测，见readme-main-receipt.json |
 | Dashboard 同步 | 首a6fb已由manager核并转READY_FOR_LEAD_INTAKE；实际登记/聚合待回执 |
-| Claim | 57735ff7-d631-4538-9faf-d7ac090837a2 v2；08:01:16.565Z atomic amend移出已停写七产品/test scope，只保README+ownplan/evidence三literal |
+| Claim | 57735ff7-d631-4538-9faf-d7ac090837a2 v2；11:16:43.138140Z fresh仅README+ownplan/evidence三literal/唯一owner/overlap[]；本批seal后全三scope停写待manager fresh CAS release，七产品scope保持无写权 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | ACCESS01-01 | completed | workspace_panels_owner | provider/HTTP已实现，35direct通过且限定独审接受 |
 | ACCESS01-02 | completed | workspace_panels_owner | browser第四次5/5，原生hidden→token空/显隐复制/键盘焦点/双主题390独立实证审通过 |
 | ACCESS01-03 | completed | workspace_panels_owner | 35direct通过；第四次browser5/5；原三失败/早晚计时保留；60s保守累计37077/余22923ms含15s清理，无第五次许可 |
-| ACCESS01-04 | in-progress | workspace_panels_owner | 固定537/原12literal组合独审通过；README当前Interface已纠正；原366已main且真实启用有来源回执，七产品scope已合法部分交回；README537增量待接收 |
+| ACCESS01-04 | completed | workspace_panels_owner | 固定537/exact12独审通过；原366产品main451bf2、README537 mainf2ccb接收字节同；原operator/GO部署与按需操作回执保限度，七源已交回 |
 
 ## 已完成与检查
 
@@ -46,7 +46,7 @@
 
 ## 下一步与 handoff
 
-3c0d源码和第四caller已获root限定审查；第四次使用自有默认context/noDefaults实际5/5通过并完整归还资源。现已原样归档root组合批准并准备main-intake；不运行第五次/不重复direct。原366已由Lead接入main451bf2，README537增量待接收；4320真实启用现有原operator回执，04:04 metadata200/显式opt-in、04:08私有读取200/no-store/内存匹配；GO另有masked/copy/close观察，均仅来源归因。本owner不读取凭据/操作服务，不推实际登录或发消息。架构新增按需本机凭据Interface，登记D06待更新。
+3c0d源码和第四caller已获root限定审查；第四次使用自有默认context/noDefaults实际5/5通过并完整归还资源。现已原样归档root组合批准并准备main-intake；不运行第五次/不重复direct。原366已由Lead接入main451bf2，README537现已有fixedmainf2ccb接收及三方字节证明；4320真实启用现有原operator回执，04:04 metadata200/显式opt-in、04:08私有读取200/no-store/内存匹配；GO另有masked/copy/close观察，均仅来源归因。本owner不读取凭据/操作服务，不推实际登录或发消息。架构新增按需本机凭据Interface，登记D06待更新。
 
 ## 等待记录
 
@@ -127,3 +127,7 @@ GO实际页面发现“当前阻塞”使用了 `NONE；说明`，现human parse
 [原件与pins](../../docs/evidence/wpf-dashboard-local-access/product-partial-handoff/index.json)：本人正常CLI fresh v1原10/overlap[]、269a clean；07:56 root来源核与本次固定main8c92七文件逐字核一致。先明确停写七scope，再于08:01:16.565Z current-version CAS amend为v2只保README与own两目录。没有释放整个claim；七已交出范围不再修改，后继owner须fresh take。
 
 部署回执来自管理固定Git原件，原发布者显式启用4320/local-installation，非本owner新观察。原35direct/第四5fake与前三FAIL、37077/余22923均不变；没有重跑测试/服务/凭据读取。README537尚无main接收回执，因此本片未标完整完成。
+
+## 2026-10-07 11:19:00 UTC — 原README增量接收，ACCESS四TODO完成
+
+[本次来源核验](../../docs/evidence/wpf-dashboard-local-access/readme-main-receipt.json)只投影Original固定收据的ACCESS一项与README绑定，并记录完整原件hash/Git blob；未把投影当原件全文。mainf2ccb/获审537/currentowner README15592B完全相同。先前“README待main”是当时状态，现04完成；本片任务收口，不扩大成用户登录/发消息或整平台完成。0新runtime/工程检查/凭据或服务读取，产品与旧raw保持。全三scope停写，释放由manager fresh CAS办理。

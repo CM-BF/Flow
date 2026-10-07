@@ -1,6 +1,6 @@
 {
   "task": "WPF-DASHBOARD-ACCESS01",
-  "state": "ORIGINAL366_IN_MAIN_README537_DELTA_READY",
+  "state": "PRODUCT_AND_README_MAIN_ACCEPTED_DEPLOYMENT_RECEIPT_RECORDED",
   "at": "2026-10-07 04:03:48 UTC",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-local-access",
   "branch": "codex/dashboard-local-access",
@@ -406,7 +406,7 @@
     "docs/evidence/wpf-dashboard-local-access/browser-fourth/raw/390-dark.png"
   ],
   "deployment": {
-    "state": "PENDING_LEAD_REPORTED_PREPARING_NO_COMPLETION_RECEIPT",
+    "state": "SOURCE_RECORDED_ORIGINAL_OPERATOR_AND_GO_ACCEPTANCE",
     "operator": "Original Execution Lead/service operator",
     "node": "Node24.20+",
     "entry": "/opt/homebrew/opt/node@24/bin/node apps/execution-dashboard/src/server.mjs",
@@ -424,21 +424,22 @@
     ],
     "bindingSource": "Original installation operator supplies verified nonsecret fixed installation identity and actual installed repository; never substitute this feature worktree. No token/config content is recorded here.",
     "default": "Disabled. Remote/enterprise remains disabled. No automatic login, product tab refresh, center/runner restart or arbitrary file API.",
-    "verificationBoundary": "Current proof is synthetic config/dynamic HTTP/fake token/owned browser. Actual installation credential loading/clipboard and publication remain unverified. Avoid token-visible DOM/screenshot/trace/networkbody/log capture.",
-    "tabPolicy": "Retain existing4320 tab; original operator handles necessary source update/service publication, validate in a new owned tab. No changes to user product tabs."
+    "verificationBoundary": "Original operator records deployed metadata200/explicitoptin and private-read200/no-store/in-memory match; GO records masked load/copy feedback/close reset. This owner only reads the non-secret receipt. No token value/clipboard readback/product login/message/new personal runtime observation.",
+    "tabPolicy": "Retain existing4320 tab; original operator handles necessary source update/service publication, validate in a new owned tab. No changes to user product tabs.",
+    "receipt": "docs/evidence/wpf-dashboard-local-access/product-partial-handoff/deployment-receipt.json"
   },
   "currentBrowserInterface": "checkLocalAccessBrowser({ownedDefaultContext,expect,outputDirectory}); caller freshly spawns owned Chrome PID with exclusive profile, attaches via public noDefaults:true, verifies one default context/initial blank page and explicitly transfers it. Fixture sets viewport and closes transferred context/own HTTP; caller retains actual PID/EOF/group/tmp/budget supervision. Current README matches this fixed interface; no shared/user browser is admitted.",
   "skillsAndQuality": "Local find-skills/clean-code/codebase-design/webapp-testing reused; no install. Provider owns bounded trusted-file/error handling, UI transienttoken lifecycle, caller nativebrowser ownership. Final metadata checks exact scope/source/raw/preimage consistency; no new product execution.",
   "unverified": [
-    "README537 incremental main intake",
-    "4320 publication completion",
-    "real installation enablement and credential flow",
-    "user login"
+    "User product login or message sending (outside this entry/credential-delivery task)",
+    "Actual clipboard token bytes were not read back; original GO observation only records Copy displayed copied",
+    "No new personal runtime observation by this owner"
   ],
   "claim": {
     "id": "57735ff7-d631-4538-9faf-d7ac090837a2",
-    "version": 1,
-    "state": "Active at04:02:35 narrow observation; owner stops all ten scopes after final push pending originalLead controlled intake/handoff/release."
+    "version": 2,
+    "observedAt": "2026-10-07T11:16:43.138140+00:00",
+    "state": "Active exactthree metadata scopes observed; all three stop writing after this seal pending manager fresh CAS release. Seven product scopes already removed at08:01."
   },
   "previousApprovedComposition": "366a568f2750777f683941180b665af7c4a3effb",
   "reviewHistory": [
@@ -457,19 +458,19 @@
     "changedPath": "apps/execution-dashboard/README.md",
     "change": "Current documented test status and ownedDefaultContext invocation corrected; no product/test/runtime changes."
   },
-  "mainReceipt": "docs/evidence/wpf-dashboard-local-access/main-initial-receipt.json",
-  "main": "451bf2ed1c0c3d7688073c8d060629f064044dc2",
-  "remainingProductIntakePaths": [
-    "apps/execution-dashboard/README.md"
-  ],
-  "remainingProductDelta": {
+  "mainReceipt": "docs/evidence/wpf-dashboard-local-access/readme-main-receipt.json",
+  "main": "f2ccb6738e37da87ae0f642652f8cf9bb596f4c2",
+  "remainingProductIntakePaths": [],
+  "productIntakePathsPurpose": "Historical exact product scope. Original366 integrated at451bf2; README537 now received at fixedf2ccb. No remaining product intake path.",
+  "currentReceiptAt": "2026-10-07 11:19:00 UTC",
+  "initialMainReceipt": "docs/evidence/wpf-dashboard-local-access/main-initial-receipt.json",
+  "acceptedReadmeDelta": {
     "commit": "53723697a796a1346164c4cddc82ab99baf168ea",
     "parent": "a12defc50562251c3415f2ea344250f9afece7da",
     "onlyProductPath": "apps/execution-dashboard/README.md",
     "mainPreimageSha256": "5cca704df9e7897929ff6e37e894712a6d289319644fbe01e52811f00b4a7956",
     "targetSha256": "acc4297c517c5ed02dc175d3456be9fa1524076291e38d480f8c1084d3a47a93",
     "targetBlob": "4060d5e1be54d9cc0915ad800f930375d43072dd",
-    "instruction": "Apply only README diff for537 plus current owner approval/status/evidence metadata. Original seven source/test paths and prior README are already integrated; do not recopy all eight product paths."
-  },
-  "productIntakePathsPurpose": "Historical original full eight-path intake already satisfied at451bf2 for366; only remainingProductIntakePaths now require product intake."
+    "instruction": "Received at fixed main f2ccb6738e37da87ae0f642652f8cf9bb596f4c2; exact README bytes match approved537/currentowner. No further product copy or runtime is requested."
+  }
 }

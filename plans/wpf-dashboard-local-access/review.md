@@ -8,7 +8,7 @@ Base：943a66bfa5f71f4a5000ff2674ac1973e85e0353
 
 Review scope：apps/execution-dashboard/src/server.mjs, apps/execution-dashboard/src/local-access.mjs, apps/execution-dashboard/public/index.html, apps/execution-dashboard/public/local-access.js, apps/execution-dashboard/public/local-access.css, apps/execution-dashboard/test/local-access.test.mjs, apps/execution-dashboard/test/local-access.browser.mjs, apps/execution-dashboard/README.md, docs/evidence/wpf-dashboard-local-access/browser-fourth/run.py.diff, docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stderr, docs/evidence/wpf-dashboard-local-access/browser-fourth/terminal.stdout, docs/evidence/wpf-dashboard-local-access/browser-fourth/worker.mjs.diff
 
-限定结论：root独立审核固定组合53723697（README窄修，原366a实证组合保留），APPROVED / 0 blocking，仅synthetic direct35与fake-only真实browser5及所列源码/证据。六产品/direct源==08ec、browser==3c0，实际运行head仍d0f6。原366已main451bf2，README537尚待main；4320发布、真实安装启用与用户登录未验，完整用户交付仍开放。
+限定结论：root独立审核固定组合53723697（README窄修，原366a实证组合保留），APPROVED / 0 blocking，仅synthetic direct35与fake-only真实browser5及所列源码/证据。六产品/direct源==08ec、browser==3c0，实际运行head仍d0f6。原366已main451bf2，README537已mainf2ccb且三方字节同；4320实际启用/原tab保留与按需凭据操作由原operator/GO非秘密回执证明。本片01–04交付闭合，用户登录/发消息仍未验且不冒为本片行为。
 
 独立原件：[README composition review](../../docs/evidence/wpf-dashboard-local-access/root-access537-doc-composition-review.json)与[原366a runtime composition review](../../docs/evidence/wpf-dashboard-local-access/root-access3c0-browser-actual-review.json)。前三次失败/原始时长和清理证据全部保留；37077ms已耗/22923ms余额不是第五次许可。
 
@@ -18,7 +18,7 @@ Review scope：apps/execution-dashboard/src/server.mjs, apps/execution-dashboard
 
 可复制review任务：先核权威WT/branch/head/dirty与固定source manifest，读取AGENTS/Interface、完整diff；复核凭据不会到旧server error.message回显，provider只读唯一已绑定安装config，UI请求迟到及Clipboard拒绝真实可达。检查仅实际运行证据，不将fake sentinel结果推成个人部署。按固定commit给severity/blocking/限制，修复交owner；不写项目。
 
-作者回应/修复：待固定候选。Review通过不代表已集成或用户实际可用。
+作者回应/修复：源码与README P2均已固定修复并获独审；当前main/部署来源见上文。以下首canonical及分轮检查为历史，不重置当前交付。
 
 ## 第一源码 checkpoint
 
@@ -79,3 +79,7 @@ Root于03:55:16.359510Z完成固定366a组合审查，26第四次原件/归档/G
 固定main8c92七产品/test源逐字等获审537与本树；实际启用归因原operator/GO回执，不复测或读取token。原claim57735经currentv1 CAS到v2，仅保README与ownplan/evidence三scope，七scope已停写移出；完整批准target537/exact12与原35/5不变，README增量仍待main。见[部分移交原件](../../docs/evidence/wpf-dashboard-local-access/product-partial-handoff/index.json)。
 
 本地find-skills/clean-code沿已读方法检查事实来源、当前/历史措辞、责任边界与范围；修正已发布但旧status仍称未验收据的陈旧表述，无产品/测试/parser运行。读取公开管理receipt不含token值；未把移出scope当另一owner已take，未把入口可用当已登录/发消息。
+
+## 2026-10-07 11:19:00 UTC — 已批准README主线接收
+
+[main收据核验](../../docs/evidence/wpf-dashboard-local-access/readme-main-receipt.json)记录fixedf2ccb的Original接收与README全字节同537/owner。只更新交付事实，不新增或扩大root限定源码/runtime批准，旧三次失败与真实安装operator/GO来源边界保留；没有token/clipboard读取或产品重测。
