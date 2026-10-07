@@ -2,7 +2,7 @@ import { loadEngineeringRunner } from './engineering/launch.js';
 import { loadCodexProductionRunnerConfiguration, loadRunnerConfiguration } from './configuration.js';
 import { parseRunnerConcurrency } from './concurrency-configuration.js';
 import { guardExecutionProfile, publishExecutionProfile } from './execution-profiles.js';
-import { runRunner } from './runtime.js';
+import { runRunner, type RunnerNotice } from './runtime.js';
 import { loadProtocolEndpoints, runProtocolRunner } from './protocol-dispatch/index.js';
 
 const shutdown = new AbortController();
@@ -24,7 +24,12 @@ try {
     token: process.env.FLOW_RUNNER_TOKEN ?? '',
     workingDirectory: process.env.FLOW_RUNNER_WORKDIR ?? '',
     signal: shutdown.signal,
-    onNotice: (notice: unknown) => process.stderr.write(`${JSON.stringify(notice)}\n`),
+    onNotice: (notice: RunnerNotice | { type: 'protocol-uncertain'; attemptId?: string }) => {
+      if (notice.type === 'runtime-initialized') {
+        // Only the service parent creates this private channel; SDK output is not a readiness input.
+        try { process.send?.({ protocol: 'flow.runner-startup.v1', type: notice.type, runnerId: notice.runnerId }, () => {}); } catch { /* Missing observation remains unknown to the parent. */ }
+      } else process.stderr.write(`${JSON.stringify(notice)}\n`);
+    },
   };
   if (codexSelected) {
     const loaded = await loadCodexProductionRunnerConfiguration({ ...common, codexManifestFile: codexManifestFile!, launchManifestFile: launchManifestFile! });

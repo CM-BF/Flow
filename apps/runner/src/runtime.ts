@@ -14,7 +14,8 @@ import { EventOutbox, EventStorageError, replayPending, reportBatch } from './ou
 import { NativeExecutionError, type NativeExecutionSettlement } from './native-harness/settlement.js';
 import { NativeActivityBodyHost } from './native-activity-body/host.js';
 
-export interface RunnerNotice { type: 'connection-lost' | 'ownership-lost' | 'adapter-failed' | 'events-retained' | 'admission-blocked' | 'recovery-waiting'; attemptId?: string }
+export type RunnerNotice = { type: 'connection-lost' | 'ownership-lost' | 'adapter-failed' | 'events-retained' | 'admission-blocked' | 'recovery-waiting'; attemptId?: string }
+  | { type: 'runtime-initialized'; runnerId: string; attemptId?: never };
 export interface RunnerOptions {
   baseUrl: string;
   token: string;
@@ -51,7 +52,7 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
   const active = new Map<string, Promise<void>>();
   const wakeup = new AttemptWakeup(options.signal, options.pollIntervalMs ?? 500);
   let recoveryPending = true, disconnected = false, blockedNotice = false, waitingNotice = false;
-  let runnerId: string | undefined, queryOpportunity = true;
+  let runnerId: string | undefined, queryOpportunity = true, initialized = false;
   function failed(error: unknown) {
     if (error instanceof EventStorageError || isHostAuthenticationError(error)) stop(error);
     else if (!options.signal.aborted) {
@@ -94,6 +95,12 @@ export async function runRunner(input: RunnerOptions): Promise<void> {
         const opportunity = journal.opportunity;
         if (!opportunity) throw new AdmissionStorageError(new Error('No runner-bound opportunity exists.'));
         if (options.signal.aborted || recoveryPending) continue;
+        if (!initialized) {
+          initialized = true;
+          // This attests local initialization, never center admission or an actual claim.
+          try { options.onNotice?.({ type: 'runtime-initialized', runnerId }); } catch { /* Observer failure cannot alter execution or replace its primary error. */ }
+          if (options.signal.aborted) continue;
+        }
         let requestedAt = performance.now();
         let response = queryOpportunity ? await client.claimOpportunityStatus(opportunity, requestSignal(options)) : undefined;
         if (!response || response.state === 'missing') {

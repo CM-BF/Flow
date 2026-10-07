@@ -10,12 +10,12 @@ import { setTimeout as sleep } from 'node:timers/promises';
 import { Pool } from 'pg';
 import { spawnOwnedProcess, inspectOwnedProcess, stopOwnedProcess, ownsListener } from './process.mjs';
 import { baseServiceEnvironment, serviceEnvironment } from './environment.mjs';
-import { openStartupDiagnostics, observeStartupChild, preserveStartupFailure, publicStartupFailure, startupFailure, startupErrorCode } from './startup-diagnostics.mjs';
+import { readRunnerInitialization, openStartupDiagnostics, observeStartupChild, preserveStartupFailure, publicStartupFailure, startupFailure, startupErrorCode } from './startup-diagnostics.mjs';
 import { WEB_RETENTION_POLICY } from './web-retention-policy.mjs';
 import { pinnedBrowserSessionConfiguration, browserSessionLaunchEnvironment, readBrowserSessionLaunch } from './browser-session-configuration.mjs';
 import { prepareWebArtifact, verifyWebArtifact } from './web-artifact.mjs';
 
-import { backendRuntime, assertInstallationSource, serviceRuntime, webHostArtifactDescriptor } from './backend-release/host.mjs';
+import { backendRuntime, assertInstallationSource, serviceRuntime, webHostArtifactDescriptor, createLaunchRuntimeResolver } from './backend-release/host.mjs';
 import { prepareBackendArtifact } from './backend-release/index.mjs';
 import { readWebRelease, currentWebArtifact, planWebRelease, commitWebRelease, findWebCompatibility, importWebCompatibility, loadReleaseAssets } from './web-release.mjs';
 
@@ -52,12 +52,12 @@ async function directoryPath(input) {
   await outsideGit(actual);
   return actual;
 }
-async function load(directory, serviceRole = null) {
+async function load(directory, serviceRole = null, launchRuntime = null) {
   const path = await directoryPath(directory);
   const config = await privateJson(join(path, 'config.json'));
   if (config.format !== 1 || config.directory !== path || typeof config.repository !== 'string'
     || !/^flow_preview_[a-f0-9]{24}$/.test(config.databaseName) || !/^[a-f0-9-]{36}$/.test(config.installationId)) fail('CONFIGURATION_IDENTITY_MISMATCH');
-  await assertInstallationSource(config, repository, serviceRole);
+  await assertInstallationSource(config, repository, serviceRole, launchRuntime);
   const url = new URL(config.databaseUrl);
   const admin = new URL(config.adminUrl);
   if (url.pathname !== `/${config.databaseName}` || !['postgres:', 'postgresql:'].includes(admin.protocol) || admin.hostname !== '127.0.0.1' || admin.pathname !== '/postgres'
@@ -161,7 +161,7 @@ async function waitReady(config, role, record, artifact, expectedBackendHead) {
   const deadline = Date.now() + 10_000;
   do {
     if (await inspectOwnedProcess(record) !== 'running') fail('SERVICE_EXITED_DURING_START');
-    if (role === 'runner') { if (await configuredProfile(config)) return; }
+    if (role === 'runner') { if (await readRunnerInitialization({ directory: config.directory, recordKey: role, record, runnerId: config.runner?.runnerId }) && await configuredProfile(config)) return; }
     else if (await ownsListener(record, role === 'center' ? config.centerPort : config.webPort)
       && (role === 'center' ? await reachable(`http://127.0.0.1:${config.centerPort}/api/health`) : await webIdentity(config, artifact, (await readWebRelease(config.directory))?.version, expectedBackendHead))) return;
     await sleep(50);
@@ -235,7 +235,9 @@ export async function stopPreview({ directory }) {
 /** Private child entry: credentials stay in its environment and never appear in arguments or output. */
 export async function runService(directory, role) {
   if (!roles.includes(role)) fail('UNKNOWN_SERVICE');
-  const config = await load(directory, role);
+  const launchRuntime = createLaunchRuntimeResolver();
+  const config = await load(directory, role, launchRuntime);
+  launchRuntime.seal();
   const nonce = process.argv.find(value => value.startsWith('--flow-preview='))?.slice('--flow-preview='.length);
   const deadline = Date.now() + 2000;
   let owned = false;
@@ -256,7 +258,7 @@ export async function runService(directory, role) {
     const browser = await readBrowserSessionLaunch(config);
     const env = serviceEnvironment(role, config, process.env, browser.settings, process.env.FLOW_PREVIEW_WEB_BACKEND_HEAD ?? null);
     await stage('runtime');
-    const runtime = await serviceRuntime(config, await privateJson(join(config.directory, 'state.json')), role);
+    const runtime = await serviceRuntime(config, await privateJson(join(config.directory, 'state.json')), role, launchRuntime);
     let args; let cwd = runtime.root;
     if (role === 'center') args = ['--import', 'tsx', 'apps/server/src/main.ts'];
     else if (role === 'runner') args = ['--import', 'tsx', 'apps/runner/src/main.ts'];
@@ -270,9 +272,9 @@ export async function runService(directory, role) {
         String(config.webPort), String(config.centerPort), artifact.artifactId, artifact.sourceHead, artifact.manifestDigest];
     }
     await stage('child-spawn');
-    child = spawn(process.execPath, args, { cwd, env, stdio: ['ignore', 'ignore', 'pipe'] });
+    child = spawn(process.execPath, args, { cwd, env, stdio: role === 'runner' ? ['ignore', 'ignore', 'pipe', 'ipc'] : ['ignore', 'ignore', 'pipe'] });
     process.on('SIGTERM', stop); process.on('SIGINT', stop);
-    const result = await observeStartupChild(child, diagnostic);
+    const result = await observeStartupChild(child, diagnostic, role === 'runner' ? { runnerId: config.runner.runnerId } : {});
     diagnostic = null;
     await save(join(config.directory, `${role}-exit.json`), { at: new Date().toISOString(), nonce, ...result });
     process.exitCode = result.code ?? (stopping ? 0 : 1);
