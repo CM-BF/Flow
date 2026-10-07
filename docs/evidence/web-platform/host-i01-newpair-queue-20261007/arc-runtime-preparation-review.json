@@ -1,0 +1,181 @@
+{
+  "reviewer": "root / gpt-6-astra ultra",
+  "recordedAt": "2026-10-07T20:32:47.322542+00:00",
+  "decision": "APPROVED_SOURCE_DELTA_LOCAL_TYPES_AND_PREPARED_CALLERS_ONLY",
+  "findings": [],
+  "blockingP1P2": 0,
+  "notRuntimeAdmission": true,
+  "source": "7097c4d1cc429ee87e507a2210f2e9cceac99b56",
+  "executionMetadataHead": "96d00b0f8b61a6007dd7964e3d964c39828a10f1",
+  "branch": "codex/web-workspace-composition",
+  "clean": true,
+  "trackingRemoteEqual": true,
+  "claim": "c34d95d1-af01-4325-bcd5-77ba9dd28379 v1 retained exact20",
+  "priorSourceLocalReview": {
+    "path": "/private/tmp/root-arc-source-local-review-20261007.json",
+    "bytes": 7088,
+    "sha256": "afb5559ca7a628c8d3281306173b30a149361ec46ff229f97c1321eb4749e15d"
+  },
+  "checkedInputs": {
+    "path": "/private/tmp/root-arc-runtime-preparation-input-check-20261007.json",
+    "bytes": 1065,
+    "sha256": "dc68baeb979a2b366d108201245554a7de7227dbaf6ea9fb8cd742cc783f5378"
+  },
+  "packetManifest": {
+    "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/manifest.json",
+    "bytes": 6833,
+    "sha256": "7e4be770c3ffcaa059297ef368e79b68647bfd888c18172000b4f51302b18382"
+  },
+  "binding": {
+    "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/binding.json",
+    "bytes": 145780,
+    "sha256": "d3a966fa23785bce73676af01050a53ba2dca19ce3faba7e46e14940d5d308e3"
+  },
+  "callers": [
+    {
+      "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/capture.py",
+      "bytes": 8351,
+      "sha256": "e2fb2ea2a4abd442ef90793a818d3f99216ebd046a72ff39798da7b90956ad12"
+    },
+    {
+      "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/run.py",
+      "bytes": 10087,
+      "sha256": "78a8d708fea66a825fe4182d362f1de8107c825568d5cd9c1ca422e12ee5b835"
+    },
+    {
+      "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/worker.mjs",
+      "bytes": 5014,
+      "sha256": "1285aec8eaf2f1f26e71643fc9f610ee45ebd278d707db7c4213c7126ec21778"
+    },
+    {
+      "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/http/run.py",
+      "bytes": 6728,
+      "sha256": "8c0179cc1b6f0162a47b9972fdc03e041dd69c54e9eacfefee0f94070bc5b9e2"
+    }
+  ],
+  "sourceDelta": {
+    "changedProductOrTestPaths": [
+      "apps/web/test/workspace-layout.browser.ts"
+    ],
+    "other17ScopedSourcePaths": "unchanged from reviewed 891f source",
+    "changes": [
+      "refresh-theme group emulates prefers-reduced-motion: reduce and runs public workspace/close actions under that mode",
+      "records and checks computed animation/transition values only for visible panes, workspace tabs and separators; existing shared CSS implements zero-duration/no-animation behavior",
+      "scenario records contextClosed and httpClosed from actual cleanup allSettled outcomes; parent requires both true"
+    ],
+    "notClaimed": "whole-app reduced-motion compliance"
+  },
+  "localTypes": {
+    "receipt": {
+      "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/local/segment.json",
+      "bytes": 3575,
+      "sha256": "017fda024c072e3647351d0c3b1f30740b57d4ed298a7a1bebb90bf8ad729864"
+    },
+    "cleanup": {
+      "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/local/exact-cleanup.json",
+      "bytes": 142,
+      "sha256": "e6973fc7cd9b65c4a6ab04c6af1a16d7ce7429536c79fd1f78d347b6403e119c"
+    },
+    "actualExit": 0,
+    "logBytes": 0,
+    "chargedMs": 4683,
+    "allocatedMs": 20000,
+    "phase": "CLOSED",
+    "unusedNotTransferred": true,
+    "pidAndGroup30692": "ESRCH in owner exact cleanup receipt, no new root process probe",
+    "scratchAbsent": true,
+    "rootRanChecks": false,
+    "prior13GreenTests": "not rerun for browser-only delta"
+  },
+  "inputVerification": {
+    "counts": {
+      "manifest": {
+        "count": 24,
+        "bytes": 217638
+      },
+      "sourcePins": {
+        "count": 207,
+        "bytes": 1905577
+      },
+      "externalPins": {
+        "count": 43,
+        "bytes": 5437963
+      },
+      "httpToolPins": {
+        "count": 4,
+        "bytes": 6024
+      },
+      "originalCallers": {
+        "count": 3,
+        "bytes": 22983
+      },
+      "resolverLinks": 33
+    },
+    "failures": [],
+    "all207DeclaredSourceBytes": "disk equals source commit 7097 and each declared hash/realpath/size",
+    "fourSavedDiffs": "regenerated exact hunks match; three reuse I01 callers, HTTP reuses own prior bounded runner",
+    "resolverVerification": "33 exact symlink targets;30 external manifests plus3 internal source-pinned workspaces",
+    "scopeLimitation": "43 external pins bind selected package/native/runtime entries, not every transitive installed dependency payload; do not describe as a recursively verified package closure"
+  },
+  "browserCandidate": {
+    "state": "PREPARED_NOT_RUN_NOT_GRANTED",
+    "budgetMs": 90000,
+    "workMs": 60000,
+    "cleanupMs": 30000,
+    "scratchBytes": 268435456,
+    "retainedBytes": 8388608,
+    "PG": 0,
+    "Chrome": 1,
+    "dynamicHTTPServers": 2,
+    "requiredGroups": [
+      "layout-navigation",
+      "three-pane-reads",
+      "prepare-await-stable",
+      "refresh-theme"
+    ],
+    "reviewedBehavior": [
+      "single fixed-source entry, fresh unexpired binding/HEAD/clean gate and complete manager floor before launch",
+      "fresh owned Chrome process and profile/CDP, explicit own context; no personal browser/session/DB/provider",
+      "selected and passed arrays must exactly equal all four group names; scenario/worker/cleanup errors and dropped output fail",
+      "work deadline reserves cleanup; signal parent, drain actual stdout/stderr, preserve late errors, reap exact owned group or retain UNKNOWN resources",
+      "identity-checked cache symlinks and scratch cleanup only after owned group absent; context and both fixture listeners require reported closure",
+      "outer actual exit and final stdout required; early result.json alone is insufficient; independent exact RETURN observation still required after actual"
+    ],
+    "nativeIdentity": "prepared entry pins verified; active execution requires manager native acceptance and fresh candidate-specific grant",
+    "selectedBrowserAssertions": "prior review covers three-pane reading, FIFO lease bound, stable identity during pending attachment prepare, public protected-close cancellation/confirmation, retained pane contents, keyboard navigation, two themes, 390px and reload without send"
+  },
+  "httpCandidate": {
+    "state": "PREPARED_NOT_RUN_NOT_GRANTED",
+    "budgetMs": 30000,
+    "workMs": 20000,
+    "cleanupMs": 10000,
+    "scratchBytes": 8388608,
+    "retainedBytes": 1048576,
+    "PG": 0,
+    "Chrome": 0,
+    "HTTP": "one loopback fixture at a time; two selected cases",
+    "requiredNames": [
+      "Arc FIFO yields complete four-page batches repeatedly to a late third pane under backlog",
+      "Arc removes hidden or closed FIFO waiters without retaining a reserved lease"
+    ],
+    "reviewedBehavior": [
+      "fresh binding/hash, declared tool/source/resolver identity, clean execution HEAD and unspent single-use phase required",
+      "sandbox permits loopback only and writes only own HTTP packet; native config loader and no-cache avoid project writes",
+      "exact two successful named assertions required, not regex selection count alone",
+      "work deadline/interrupt sends TERM then KILL/reap within same total phase, records group absence and scratch cleanup",
+      "test fixture afterEach closes its own hosts, projection, session, streams and HTTP server; regular-file logs are not dual EOF evidence",
+      "nonzero exit, output bounds, resource/cleanup error or late signal fails"
+    ],
+    "proposalFloor": "binding minimum is a lower bound; actual gate must include latest complete manager floor. Existing historical consumed gates stay immutable."
+  },
+  "cleanCodeReview": {
+    "scope": "new browser assertion delta and reused bounded callers",
+    "findingsAndDisposition": [
+      "Responsibility remains separated: capture records outer exit, parent owns worker/group/cache/scratch, scenario owns context/HTTP. No added duplicate runtime supervisor.",
+      "New reduced-motion assertions are scoped to layout elements; error handling records actual cleanup rather than assuming closure.",
+      "No additional implementation refactor or green-test repetition justified in this preparation-only review."
+    ],
+    "unresolved": "actual HTTP/browser results and screenshots remain NOT_RUN"
+  },
+  "next": "Manager may stage either distinct candidate under ready-first resource rules; personal service repair stays highest priority. This review creates no grant, process, HTTP listener, browser context or PG. No retry or transfer of prior local/Recovery allowance."
+}

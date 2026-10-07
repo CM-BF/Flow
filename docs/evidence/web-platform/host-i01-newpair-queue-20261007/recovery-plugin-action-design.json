@@ -1,0 +1,81 @@
+{
+  "recordedAt": "2026-10-07T20:34:54.261311+00:00",
+  "researcher": "root / gpt-6-astra ultra",
+  "kind": "existing REQ22/23 and MATURE06-04 plugin-surface follow-up; design input only",
+  "fixedSource": "7097c4d1cc429ee87e507a2210f2e9cceac99b56",
+  "files": [
+    {
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33552,
+      "sha256": "ef7ee9d631a82ae9e2b491d94d5780421166bda5aadf6b586cea24109401c21a"
+    },
+    {
+      "path": "apps/web/src/recovery/journal.ts",
+      "bytes": 21485,
+      "sha256": "bb5c5713aefe4d9beaa58441bd2c0dadc46ca50dcb1ebcf97fbf5d0ee9c1ec67"
+    },
+    {
+      "path": "apps/web/src/plugins/types.ts",
+      "bytes": 7594,
+      "sha256": "86c8a2dabf7705ad465f1414de6fac2d571a088c45e06b3f711c5680e774ee89"
+    },
+    {
+      "path": "apps/web/src/plugins/host.ts",
+      "bytes": 23812,
+      "sha256": "86acad25b862779d812a3a6c6961f22e6424d4bb3a649ed5d0a877c2e0c31470"
+    },
+    {
+      "path": "apps/web/src/plugins/validation.ts",
+      "bytes": 9254,
+      "sha256": "0cdc8752a81a35577c957c3ba883e033ce573b10c4e571f531b811f2efb3bdd4"
+    },
+    {
+      "path": "apps/web/src/plugins/react.tsx",
+      "bytes": 12209,
+      "sha256": "ba4a0cfe21a34db074e229e813e2bfe2d8b1479c779ab2f3c0c0c5a1db2aa241"
+    },
+    {
+      "path": "apps/web/src/plugin-integration/layout.ts",
+      "bytes": 4039,
+      "sha256": "f5d234224b7fcd32e9a55a91ac4196bb2e8b30b66d501ae0cec811a44695dc1c"
+    }
+  ],
+  "priorCoverage": "docs/evidence/web-platform/recovery01-plugin-surface-coverage-82d78.json",
+  "existingBehavior": [
+    "createRecoveryPlugin declares a real lazy sidebar.footer command with ui.navigate; RecoverySurface still renders refresh/restore/retry/remove as private direct callbacks. This is not full internal extension coverage.",
+    "RecoveryWorkspace.restore re-reads a current namespace record at exact id+version, holds per-view restore state and checks generation/current draft identity around awaits and synchronous apply.",
+    "RecoveryWorkspace.dismiss preserves confirmation and distinguishes local record removal from center cancellation; only accepted/rejected command records expose remove UI.",
+    "Arc adds host-private pre-activation LayoutInvocation and preserves its cancellation through modal commit; this is a useful lifecycle pattern, not an existing recovery-record authorization capability.",
+    "P01 is explicitly trusted same-realm. Manifest validation and command leases are lifecycle/authority checks; this proposal does not claim a sandbox for untrusted JavaScript."
+  ],
+  "candidate": {
+    "presentation": "One focused record-action extension surface and the existing dialog header/action area as needed; reuse ExtensionSlot and declared builtin commands. Do not add a generic arbitrary DOM insertion API or duplicate journal/store. Final slot names belong to existing plugin owner/interface review.",
+    "resource": "Minimal discriminated recovery-record context: opaque host-owned record reference/version and record kind/phase only when needed for presentation. No raw journal, full namespace inventory, credentials, draft body, attachments or executable callbacks in plugin arguments. Dialog epoch/generation and current record membership remain host-private.",
+    "capabilities": "Do not let ui.navigate, ui.layout or clipboard.write imply restore, original-request retry or local deletion. Define explicit least-authority command permissions with plugin co-lead, or keep mutating builtins private until that seam is defined; extension rendering alone does not complete mutating extensibility.",
+    "execution": "Capture original authorized dialog/record epoch before lazy activation. Check current namespace, exact record version, plugin activation, dialog epoch and capability after awaits and immediately before private mutation. Delegate to existing workspace methods and their restore lease/CAS instead of reproducing journal operations.",
+    "confirmation": "Any extension-triggered retry/remove retains required explicit user action and current confirmation. Carry revocation through deferred confirmation rather than consuming a lease when the dialog merely opens.",
+    "semantics": "Restore never auto-sends; retry preserves original id/key/body and current receipt rules; local removal never cancels center work. Preserve current draft and pending/unknown protection. Extension unload/re-enable and dialog close/reopen must not revive an old callback.",
+    "ux": "Align builtin primary Restore with existing GO Recovery hierarchy follow-up; refresh and identity details remain secondary. Preserve safe title fallback and explicit unavailable states. Do not couple visual-only changes to a broad plugin API rewrite."
+  },
+  "acceptance": [
+    "Sample contribution appears only for its authorized record kind/phase; one click addresses that exact id/version rather than focused/current fallback.",
+    "Open record A, hold lazy activation, refresh changes version or close/reopen dialog, then settle: old action performs zero restore/retry/delete.",
+    "Disable/re-enable plugin, switch authenticated namespace away/back or replace owner while held: old callback stays invalid; a fresh action still works.",
+    "Open removal/unknown retry confirmation, invalidate the invocation before confirmation: zero mutation; a current explicit confirmation performs at most one original action.",
+    "Restore while a same-pane next draft changes or material handoff remains pending preserves new draft/settings/order and original unknown journal identity.",
+    "Keyboard/390/two-theme rendering uses same action order and legitimate return focus; record action mounting does not eagerly load bodies or perform business POST.",
+    "Disabling a sample contribution does not remove the trusted baseline recovery behavior; disabling the recovery feature itself follows its existing deliberate product policy."
+  ],
+  "scopeAndSequencing": [
+    "Existing MATURE06-04 and REQ22/23 only; no new large task, claim or status source.",
+    "Current VISUAL01 exact8 and Arc exact20 remain unchanged; do not take App/P01/recovery leaves while original owners retain claims.",
+    "After Arc intake and legal handoff, plugin co-lead and recovery owner freeze one minimal shared interface, then assign unique worktree/leaf ownership and ordinary acceptance checks.",
+    "This static proposal does not block scoped Recovery appearance PASS, invent a regression, authorize native/runtime work or assert full plugin completion."
+  ],
+  "cleanCodeApplication": {
+    "method": "Deepen the existing recovery authority boundary; contribution declarations route to one private implementation, no repeated record validation/store ownership. Keep action permissions and presentation context explicit.",
+    "unresolved": "Exact capability/slot API and runtime interaction results require owner implementation and independent review."
+  },
+  "projectWrites": 0,
+  "runtimeChecks": 0
+}

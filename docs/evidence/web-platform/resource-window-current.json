@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T20:29:04.134Z",
-  "state": "NO_ACTUAL_HOLDER_PERSONAL_RECOVERY_PRIORITY",
-  "groupWindowOwnership": "No actual heavy holder or granted NEXT. VISUAL Recovery selected2 PASS and exact FULLRETURN20:15:46; user personal service still NOT_RESUMED. Original recovery READY has highest priority.",
+  "recordedAt": "2026-10-07T20:50:06.776Z",
+  "state": "NO_ACTUAL_HOLDER_ARC_SECOND_HTTP_FAILED_RETURN_PERSONAL_PRIORITY",
+  "groupWindowOwnership": "No actualheavyholder/NEXT. Arc HTTP singleattempt failed/exactownedRETURN; personalrepairREADY highestpriority. Allisolatedordinary/source maycontinue.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,9 +407,9 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T20:23:37.284Z",
-    "event": "Manager read exact Recovery RETURN; release heavy window now, no second NEXT. Personal service still stopped; original recovery readiness required before next personal actual. Isolated ordinary remains permitted.",
-    "record": "host-i01-newpair-queue-20261007/current.json"
+    "at": "2026-10-07T20:49:27.615Z",
+    "event": "SecondArcHTTP actual1PASS1FAIL/2652CLOSED and exactownedRETURN personallyverified; release window immediately. No nextheavy selected.",
+    "record": "docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json"
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1781,7 +1781,7 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": "DEFAULT_THREE_ROLE_HOST_UNIQUE_NEXT",
-  "currentIntake": "Approved Web779/c231 + backendcd27/04da fixed artifact pair. Both compatibility attempts FAILED with null reports; complete resources returned. I01 second reviewed browser phase is sole NEXT. No deployment authorization.",
+  "currentIntake": "Personal service remains stopped. Fixed original repair build source preparation notREADY. Arc waiter HTTP selected30s is sole NEXT; browser90/Picker90/longPG stay CLOSED.",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/webOrdinaryLocal/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants. FutureCompleteFreshFloorBytes/futureFloorEvidence and externalOrdinaryCurrent apply to future fresh composition; do not rewrite consumed historical gates.",
   "readyValidationRule": {
     "source": "Current main local-validation.md, GO explicit PG plus isolated 0PG browser rule",
@@ -1959,63 +1959,55 @@
     "limits": "No newcookiejar/Connectgeneralrace/installation claims; source6c release unchanged"
   },
   "lastWebActual": {
-    "logicalId": "VISUAL-RECOVERY-APPEARANCE-20261007-ONCE",
-    "state": "SELECTED_PASS_FULL_RETURN_APPROVED",
-    "grantedAt": "2026-10-07T20:05:29.034Z",
-    "owner": "w01_owner",
-    "worktree": "web-shared-overlays",
-    "branch": "codex/web-shared-overlays",
-    "claim": "acce2727 v1 exact8",
-    "head": "d85257e067eb96888f2b26479625b86572869995",
-    "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
-    "packet": "/private/tmp/vis-recovery-b1",
-    "manifestSha256": "d2ce2a4e6e881e4bc5326cc29c9bb28e6348ebbc2c0fa07ce38735bb16c616af",
-    "bindingSha256": "593b408d7cd9cf04a865e80968742db0dd35f81798e424ee939079830a4a33b0",
-    "phaseMs": 60000,
-    "cleanupIncludedMs": 30000,
-    "peakGrowthBytes": 212860928,
-    "minimumFreshFreeBytes": 18632540160,
-    "PG": 13,
-    "pgManagementAllowance": 16,
-    "Chrome": 1,
-    "dynamicHTTP": 2,
+    "logicalId": "ARC-FIFO-HTTP-WAITER-20261007-ONCE",
+    "state": "FAILED_CLOSED_EXACT_OWNED_RETURN",
+    "grantedAt": "2026-10-07T20:47:25.460Z",
+    "owner": "workspace_panels_owner",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+    "claim": "c34d95d1-af01-4325-bcd5-77ba9dd28379 v1 exact20",
+    "executionHead": "09e4dc4a2aee758190d22a11ff67398d77aef958",
+    "source": "fe7f18d564baaea7ed3ec87bedf49bd805cbdf10",
+    "packet": "/private/tmp/arc-http-waiter-retry-1favc0g8",
+    "manifestSha256": "28e2988a79a608ac36bc7d3e1c905a3ea3f8207ffc437d675eae6222f36ab57f",
+    "bindingSha256": "0be8991d837181e194350339133a338182fa340c4099fd05298dd6d57d9ebd80",
+    "callerSha256": "8c0179cc1b6f0162a47b9972fdc03e041dd69c54e9eacfefee0f94070bc5b9e2",
+    "sourceReview": "arc-http-waiter-fix-review.json",
+    "nativeAcceptance": "Same reviewed unchanged boundedHTTP caller8c0179/oneNodeandownloopbackfixture, selectedoriginaltwoFIFOcases. No new source or native protocol delta.",
+    "phaseMs": 30000,
+    "workMs": 20000,
+    "cleanupMs": 10000,
+    "scratchBytes": 8388608,
+    "rawAndMetadataBytes": 1048576,
+    "completeMinimumFreeBytes": 18959564800,
+    "PG": 0,
+    "Chrome": 0,
     "provider": 0,
-    "personalEndpoint": 0,
-    "scope": "Only --visual-appearance cookieRead/themes390 andtwo390PNGs plusgeometry; no MSGjourneys or Picker",
-    "nativeBoundaryAcceptance": "Manager explicitly accepts fixed parent --visual-appearance and reviewedcapture34dd,knownNode+worker+Chrome lifecycle/onefixtureDB/twoownedHTTP/nativeidentities, exact0600 admin handling and source-preset restrictions under rootabb32/c666/f29a and rootshort-window instruction. No inheritedMSG/time grant. Owner routine records this acceptance; executablebytes unchanged.",
-    "preflight": "Fresh exactclaim/head/614own/412roots18616files/38links/native/exactnewnamespaces andfree>=fixed latestminimum; PGavailable>=13+16 withclosedobservationpool, noactiveheavy. Routine binding budget/nativeacceptance only, no repeatedsourceapproval. Stopif any mismatch/unknown.",
-    "priority": "Original permits isolated<=60s journey after completepersonal resourceRETURN. Personalrepair highestpriority when actuallyREADY; if suchREADY arrives before thisspawn stopunconsumed andyield, ifalreadyspawned finishownedcleanup andreturnpromptly. No waitformetadata sealing.",
-    "returnRule": "Singleattempt, noautomaticretry/unusedtimecredit. ActualSTART then terminal and exactPIDPGID/EOF/DBmarkerOID+normalDROP/admin/HTTP/Chrome/scratch/envreturn; unknownHOLD. No independentpersonalservice action.",
-    "contractFreeze": {
-      "at": "2026-10-07T20:10:17.421Z",
-      "floorBytes": 18632540160,
-      "until": "actualSTART or explicit unconsumedSTOP",
-      "rule": "One final synchronization of already-open Mikaordinary; no newsource/callerreview, no secondgrant. Laterunstartedgrowthqueues, existinglegalworkcontinues. Alreadyspawnedgate/time not rewritten.",
-      "state": "CONSUMED_IMMUTABLE"
-    },
-    "actualStart": "2026-10-07T20:13:37.668772Z",
-    "actualTerminal": "2026-10-07T20:13:47.992588Z",
-    "actualReturn": "2026-10-07T20:15:46.418134Z",
-    "run": "visual-rec-20261007-200858-7d7129",
-    "outerPid": 64539,
-    "parentPid": 64799,
-    "consumedFloorBytes": 18632540160,
-    "freshFreeBytes": 19303784448,
-    "chargeMs": 10325,
-    "phaseState": "CLOSED",
-    "unusedMs": 49675,
+    "personal": 0,
+    "scope": "Only fixedtwo FIFO HTTP cases, no browser4 or repeated13pure/typechecks. One serial Node and only samegroup necessaryhelpers/ownedloopbackfixture.",
+    "fresh": "09e4clean=actualremote/fe7/c34dv1exact20/nooverlap/207source43external4tools33resolver/manifestallmatch; no personalREADYreceivedbeforeactualspawn",
+    "priority": "Original repair currently source-only/notREADY/no pendinglaunch. If it reports READY before spawn, STOP0child and return unconsumed grant; already-started30s finishes cleanup normally.",
+    "latestNewSpawnAt": "2026-10-07T20:50:25.460Z",
+    "boundary": "Report actualSTART promptly or exact0child/blocker by latestNewSpawnAt; no launch after boundary without explicit handoff. No second run/automaticretry. True terminal and exactownedRETURN independent, regularlogs not dualEOF.",
+    "metadata": "Do not block launch on approval archive/commit. Archive review with actual outcome in same natural seal; update unique status after cleanpreflight.",
+    "actualStart": "2026-10-07T20:48:14.529496Z",
+    "pid": 7418,
+    "pgid": 7418,
+    "consumedFloorBytes": 18959564800,
+    "freshFreeBytes": 19221929984,
+    "actualReturn": "2026-10-07T20:48:31.490133Z",
+    "exit": 1,
+    "spentMs": 2652,
+    "unusedMs": 27348,
     "unusedTransferred": false,
-    "selectedPassed": true,
-    "fullJourneyPassed": false,
-    "receipt": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/visual01-recovery-admission-34pv19fc/return-receipt.json",
-    "receiptSha256": "de99e16b7518e7100d3feab8e1aa0b8f62d606ce4283f7683eaaa7e42dbb924d",
-    "receiptManagerRead": true,
-    "closure": "Four exact PID/PGID ESRCH; scratch ENOENT; marked DB connections0/normalDROP/remaining[]; fixture complete/errors[]; outer dualEOF/drop0; exact0600admin removed. Prepared38links KEEP, not active scratch.",
-    "review": "/private/tmp/root-visual01-recovery-actual-review-20261007.json",
-    "reviewSha256": "0e1de30920953fb2ef7b3ec62a482714b6b401464659883d5a11a04c2cef5576",
-    "reviewScope": "cookieRead/themes390 and light/dark390PNG only; Picker NOT_RUN"
+    "result": "1PASS hidden/queueddispose;1FAIL backlogfairness peer-second-batch-before-third at test65;11NOT_SELECTED. Earlieroppositecasepass retained separately, notcombinedoverallPASS.",
+    "closure": "7418 PID/PGID ESRCH/scratchabsent;actualtool1;regularfilelogs,notdualEOF,noindependentportprobe,afterEachnohookerrors",
+    "receipt": "/private/tmp/arc-http-waiter-retry-1favc0g8/http/post-cleanup.json",
+    "receiptSha256": "1ad3ec438e887425c3670145b2d89701e81197b0a780219c204403ffe9875bd6",
+    "callerFreeBeforeBytes": 19221913600,
+    "reportedPreflightFreeBytes": 19221929984,
+    "rawTopLevelState": "Preserve original NOT_GRANTED proposal label; actual attempts/grant separately establish singleconsumed CLOSED run"
   },
-  "futureCompleteFreshFloorBytes": 18396479488,
+  "futureCompleteFreshFloorBytes": 18955370496,
   "futureFloorEvidence": "host-i01-newpair-queue-20261007/current.json#forwardAdmission",
   "externalOrdinaryCurrent": {
     "state": "KCALLER_ALL_ENGINEERING_RETURNED_METADATA_NOT_STOP",
@@ -2271,8 +2263,8 @@
     "newArcSourceGrowthBytes": 16777216
   },
   "forwardAdmission": {
-    "state": "FUTURE_CLASSIFIED_NO_GRANTED_NEXT",
-    "at": "2026-10-07T20:29:04.134Z",
+    "state": "NO_ACTUAL_HOLDER_NO_NEXT_PERSONAL_PRIORITY",
+    "at": "2026-10-07T20:50:06.776Z",
     "termsBytes": {
       "residualUnknown": 13440909312,
       "priorK01Db": 134217728,
@@ -2289,8 +2281,8 @@
       "S01UnknownRetainedScratchPotential": 536870912,
       "VisualBrowserPreparationSource": 0,
       "S01NewOfflineSeal": 0,
-      "defaultHostKeepPendingClassification": 1244659712,
-      "selectedSVC06BPersonalPublication": 540016640,
+      "defaultHostKeepPendingClassification": 0,
+      "selectedSVC06BPersonalPublication": 0,
       "MikaQ01NewOrdinary": 0,
       "MikaS01NewOrdinary": 0,
       "MikaPROCESSNewOrdinary": 0,
@@ -2300,13 +2292,24 @@
       "ArcNextSourcePreparationAndAffectedTypes": 0,
       "MikaS01NewReviewStatusSeal": 0,
       "selectedVisualRecoveryAppearance": 0,
-      "MikaQ01ThirdOrdinary": 8388608,
-      "MikaS01DiagnosticCandidateMetadata": 2097152,
-      "VisualPickerReadyMetadata": 2097152
+      "MikaQ01ThirdOrdinary": 0,
+      "MikaS01DiagnosticCandidateMetadata": 0,
+      "VisualPickerReadyMetadata": 0,
+      "MikaVerifierAdmissionResultProposedOrdinary": 16777216,
+      "MikaS01ApprovalArchiveMetadata": 0,
+      "MikaQ01CleanupRepairOrdinary": 0,
+      "selectedArcHTTP30": 0,
+      "MikaProcessMainReceiptMetadata": 0,
+      "ArcHTTPFailureSourceFix": 0,
+      "MikaQ01ReviewReadyMetadata": 0,
+      "DashboardTiming02OrdinarySource": 16777216,
+      "OriginalRecoveryFixedBuildCandidate": 2317352960,
+      "selectedArcHTTPWaiter30": 1048576,
+      "ArcSecondHTTPNarrowOrdinary": 4194304
     },
-    "minimumFreshFreeBytes": 18396479488,
-    "formula": "13440909312 + 134217728 + 134217728 + 1243611136 + 0 + 0 + 35651584 + 0 + 1073741824 + 0 + 0 + 0 + 536870912 + 0 + 0 + 1244659712 + 540016640 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 0 + 8388608 + 2097152 + 2097152 = 18396479488",
-    "method": "Fresh available space must cover still-possible growth, explicitly bounded unknown/KEEP and selected next peak plus one reserve. Sealed immutable inputs are already reflected in available space; no permanent oldcaps. Recovery actual and evidence now sealed180f93; no future growth from its closed203MiB envelope. New Picker READY metadata2MiB is separately bounded, no runtime grant. Arc96d00 preparation is sealed STOP. All unresolved oldKEEP and personal515MiB remain conservative pending original classification. New512KiB runner handoff is inside Original existing SVC06B8MiB, not an additional term. Future nextcandidate peak must be separately selected; this calculation grants no runtime.",
+    "minimumFreshFreeBytes": 18955370496,
+    "formula": "13440909312 + 134217728 + 134217728 + 1243611136 + 35651584 + 1073741824 + 536870912 + 16777216 + 16777216 + 2317352960 + 1048576 + 4194304 = 18955370496",
+    "method": "Fresh free covers all listed remaining/unknown growth, this selected9MiB peak, and exactly one reserve. Finished immutable retained stock is not duplicated as a future phasecap. Original build2,317,352,960 remains a candidate peak once, not a reservation. All historical consumed gates unchanged.",
     "classificationEvents": [
       {
         "at": "2026-10-07T19:43:30.272Z",
@@ -2447,10 +2450,183 @@
         "beforeBytes": 0,
         "afterBytes": 2097152,
         "basis": "New10min ordinary metadata/TMP only finalPicker native/source-review routinebinding and normal seal; no runtime/gate/source change. Separate from closedRecovery."
+      },
+      {
+        "at": "2026-10-07T20:31:52.788Z",
+        "term": "defaultHostKeepPendingClassification",
+        "beforeBytes": 1244659712,
+        "afterBytes": 0,
+        "basis": "Original authoritative classification after19:17:35 formalRETURN and later own groups/listener/DB connectionsclosed; no growthwriter/pendinglaunch. DB/private retained stock, not futurephasepeak. I02 svc09a-default-host-result-review.json/canonical52d95; no new probe.",
+        "rule": "Futuregrowth only; no historical credit/refund, KEEP deletion or changed consumedgate. Other unknown residual unchanged."
+      },
+      {
+        "at": "2026-10-07T20:31:52.788Z",
+        "term": "selectedSVC06BPersonalPublication",
+        "beforeBytes": 540016640,
+        "afterBytes": 0,
+        "basis": "Original authoritative classification:19:51 three oldgroupsESRCH/three newrolesstopped/no listener/poolclosed;19:55 diagnosticabsent;20:02 historypoolclosed. No writer/pendinglaunch. Retained stock, not future515MiB phasepeak. I02 svc06b-personal-partial-result-review.json/canonical52d95; user NOT_RESUMED unchanged.",
+        "rule": "Futuregrowth only; no historical credit/refund, KEEP deletion or changed consumedgate. Other unknown residual unchanged."
+      },
+      {
+        "at": "2026-10-07T20:31:52.788Z",
+        "term": "MikaQ01ThirdOrdinary",
+        "beforeBytes": 8388608,
+        "afterBytes": 0,
+        "basis": "Mika originalowner:5child3714ms/raw3109B allRETURN/STOP;225KiBsealed+29KiBremoved. Last externalpermission wiring NOT_RUN/PARTIAL, notallchecksPASS.",
+        "rule": "Futuregrowth only; no historical credit/refund, KEEP deletion or changed consumedgate. Other unknown residual unchanged."
+      },
+      {
+        "at": "2026-10-07T20:31:52.788Z",
+        "term": "MikaS01DiagnosticCandidateMetadata",
+        "beforeBytes": 2097152,
+        "afterBytes": 0,
+        "basis": "Mika originalowner:2MiB segment sealed<65KiB/0child; candidate08819a limitedreview20:28 PASS butPG NOT_RUN.",
+        "rule": "Futuregrowth only; no historical credit/refund, KEEP deletion or changed consumedgate. Other unknown residual unchanged."
+      },
+      {
+        "at": "2026-10-07T20:31:52.788Z",
+        "term": "MikaVerifierAdmissionResultProposedOrdinary",
+        "beforeBytes": 0,
+        "afterBytes": 16777216,
+        "basis": "Proposed existingX01-07 child25min16MiB source/local, no heavy. Parent5+AV4 exactleaves must STOP/amend before receiver fresh take. No currentclaim/start inferred.",
+        "rule": "Futuregrowth only; no historical credit/refund, KEEP deletion or changed consumedgate. Other unknown residual unchanged."
+      },
+      {
+        "at": "2026-10-07T20:33:09.724Z",
+        "term": "VisualPickerReadyMetadata",
+        "beforeBytes": 2097152,
+        "afterBytes": 0,
+        "basis": "Fixed dcbd7a remoteequal/clean/all8STOP from personally-read039918 final receipt. Candidate READY,90s NOT_GRANTED/0gate. Parent/worker/fiveprepared unchanged; new109790Bsealed."
+      },
+      {
+        "at": "2026-10-07T20:33:09.724Z",
+        "term": "MikaS01ApprovalArchiveMetadata",
+        "beforeBytes": 0,
+        "afterBytes": 65536,
+        "basis": "New3min64KiB only approval/status archival by Mika originalowner; old2MiBclosed,0PG/engineering. Independent new sourcegrowth once, no historicalgatechange."
+      },
+      {
+        "at": "2026-10-07T20:34:48.450Z",
+        "term": "MikaS01ApprovalArchiveMetadata",
+        "beforeBytes": 65536,
+        "afterBytes": 0,
+        "basis": "Fixed4cb21543a415022e5c495532b803e842435ef364 remoteequal/cleanSTOP,3748Bfourmetadata; original64KiBphaseclosed,nochildren. Candidate4cb215+cd39 actualPGNOT_RUN."
+      },
+      {
+        "at": "2026-10-07T20:34:48.450Z",
+        "term": "MikaQ01CleanupRepairOrdinary",
+        "beforeBytes": 0,
+        "afterBytes": 4194304,
+        "basis": "Mika new10min4MiB cleanup root-identity P2 repair/pure2counterexample+externalpermitmock,<=3serial30/cum60,raw512KiB included,0PGHTTPprovider. Old8MiB sealed remains0."
+      },
+      {
+        "at": "2026-10-07T20:34:48.450Z",
+        "term": "selectedArcHTTP30",
+        "beforeBytes": 0,
+        "afterBytes": 9437184,
+        "basis": "Single new30s20work10cleanup HTTP2 candidate;8MiBscratch+1MiBretained includesmetadata.0PG/Chrome/provider/personal; root1491prepapproved. No priorphasebudget transfer."
+      },
+      {
+        "at": "2026-10-07T20:36:10.388Z",
+        "term": "MikaProcessMainReceiptMetadata",
+        "beforeBytes": 0,
+        "afterBytes": 65536,
+        "basis": "Mika new3min64KiB only PROCESS mainreceipt/handback metadata. Post-ARCgrant newgrowth: if notyetstarted deferuntil ArcactualSTART, do not move same frozen16629628928 contract; noengineerPG."
+      },
+      {
+        "at": "2026-10-07T20:36:47.067Z",
+        "term": "MikaProcessMainReceiptMetadata",
+        "beforeBytes": 65536,
+        "afterBytes": 0,
+        "basis": "Corrected arrival order: actualmetadataSTART20:33:57 preceded Arcgrant20:34:48;STOP20:35:26, fixed862f0a025314de757a9310c521036adbbeb22828 clean/28276B/0child. No pending growth; oldqueued inference superseded."
+      },
+      {
+        "at": "2026-10-07T20:36:47.067Z",
+        "term": "MikaQ01CleanupRepairOrdinary",
+        "beforeBytes": 4194304,
+        "afterBytes": 0,
+        "basis": "Fixedsource103232ee/packet347209c cleanSTOP20:35:26;15purePASS/145ms/raw114B, actualFULLRETURN20:34:06.594010/exactTMPENOENT.194522Bsealed, readonlyreviewonly; actualPGNOT_RUN."
+      },
+      {
+        "at": "2026-10-07T20:37:26.258Z",
+        "term": "selectedArcHTTP30",
+        "beforeBytes": 9437184,
+        "afterBytes": 1048576,
+        "basis": "Managerread post-cleanup exactPIDPGIDabsent/scratchabsent, remove8MiB scratchfuture; retain1MiB originalevidence/metadataseal. Failed30sCLOSED unusedno credit."
+      },
+      {
+        "at": "2026-10-07T20:37:26.258Z",
+        "term": "ArcHTTPFailureSourceFix",
+        "beforeBytes": 0,
+        "afterBytes": 8388608,
+        "basis": "New20min8MiB exact20 source/metadata-only diagnosisandnarrowfix; optionalaffectedtypes<=20scumulative1Node0network/HTTPPGChrome; no secondHTTPgrant."
+      },
+      {
+        "at": "2026-10-07T20:39:54.145Z",
+        "term": "MikaQ01ReviewReadyMetadata",
+        "beforeBytes": 0,
+        "afterBytes": 65536,
+        "basis": "New3min64KiB only finalreview/pgreadyarchive. Source103232ee/347209c source/localP2closed20:37:05; PGNOT_RUN/candidate140snotgranted. Old4MiBclosed."
+      },
+      {
+        "at": "2026-10-07T20:39:54.145Z",
+        "term": "DashboardTiming02OrdinarySource",
+        "beforeBytes": 0,
+        "afterBytes": 16777216,
+        "basis": "ExistingTIMING02 + originalWPF00137 samefrontseam, W01 independentWT/exact9 after freshsource/scopeCAS,25min16MiB allinclusive/TMP8raw1; necessarypure<=60s3serial20inc5cleanup,0HTTPPGChrome/build. Noactualclaim/start yet."
+      },
+      {
+        "at": "2026-10-07T20:40:57.783Z",
+        "term": "MikaQ01ReviewReadyMetadata",
+        "beforeBytes": 65536,
+        "afterBytes": 0,
+        "basis": "Fixed46912dfdf1fcdaa17484809b21b55e216ab83b95 cleanSTOP20:39:15;4metadata21834B/0child. Futurepermit exact46912, noactualPGgrant."
+      },
+      {
+        "at": "2026-10-07T20:42:45.714Z",
+        "term": "OriginalRecoveryFixedBuildCandidate",
+        "beforeBytes": 0,
+        "afterBytes": 2317352960,
+        "basis": "Original newrecovery fixedsource buildpreparation candidate, notREADY/no pendinglaunch. ReuseexistingSVC06Bbuilder420swork; newpeak2,317,352,960 includes1GiBfinal/installsamecopy+seed512MiB/private128MiB/meta512MiB etc, original2.5GiB/1GiBcleanup512MiBcoordinationconditions unchanged. No inheritedwindow, nooldKEEPdeletion."
+      },
+      {
+        "at": "2026-10-07T20:47:25.460Z",
+        "term": "selectedArcHTTP30",
+        "beforeBytes": 1048576,
+        "afterBytes": 0,
+        "basis": "Firstfailed HTTP exactgroup/scratchRETURN and09e4dc4a metadata sealedSTOP; old1MiB evidencecap no futuregrowth, rawimmutable retained."
+      },
+      {
+        "at": "2026-10-07T20:47:25.460Z",
+        "term": "ArcHTTPFailureSourceFix",
+        "beforeBytes": 8388608,
+        "afterBytes": 0,
+        "basis": "Fixedfe7f18d/09e4dc4a remoteequalcleanSTOP;267893B sealed; newtypes3096msCLOSED and exactgroup/scratchabsent."
+      },
+      {
+        "at": "2026-10-07T20:47:25.460Z",
+        "term": "selectedArcHTTPWaiter30",
+        "beforeBytes": 0,
+        "afterBytes": 9437184,
+        "basis": "New independent selected30s HTTP2,8MiBscratch+1MiBraw/metadataseal; original3408ms failedphaseCLOSED with no transfer."
+      },
+      {
+        "at": "2026-10-07T20:49:27.615Z",
+        "term": "selectedArcHTTPWaiter30",
+        "beforeBytes": 9437184,
+        "afterBytes": 1048576,
+        "basis": "Managerpersonallyread279Bexactpostcleanup+3791Bsegment:7418group/scratchabsent. Remove8MiBscratchgrowth only; keep1MiBraw/metadata natural seal, originalFAILunchanged."
+      },
+      {
+        "at": "2026-10-07T20:50:06.776Z",
+        "term": "ArcSecondHTTPNarrowOrdinary",
+        "beforeBytes": 0,
+        "afterBytes": 4194304,
+        "basis": "New10min4MiB existingexact20 boundedraw/source/test diagnosis and necessarychangedtypes<=20s,0HTTPPGChrome. Source/reviewtailmetadata withinenvelope, noHTTPretrygrant."
       }
     ],
     "currentWindowConservativeFrozenFloorBytes": null,
-    "frozenFloorExplanation": "Historical VISUAL consumed18632540160 and personal18518114304 remain immutable in actual records. No current unconsumed frozenwindow."
+    "frozenFloorExplanation": "SecondArcHTTP consumed18,959,564,800 andclosed2652ms; noactivecontractfreeze orgrantedNEXT. Futureonly no historicalrewrite."
   },
   "originalOrdinaryCurrent": {
     "state": "ACTUAL_CHECKS_RETURNED_SEAL_PENDING",

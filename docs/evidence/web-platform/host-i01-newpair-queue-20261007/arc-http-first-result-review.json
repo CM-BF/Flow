@@ -1,0 +1,84 @@
+{
+  "reviewer": "root / gpt-6-astra ultra",
+  "at": "2026-10-07T20:38:04.134020+00:00",
+  "decision": "ACCEPT_ACTUAL_PARTIAL_FAILURE_AND_RESOURCE_RETURN_NOT_FEATURE_PASS",
+  "source": "7097c4d1cc429ee87e507a2210f2e9cceac99b56",
+  "executionHead": "96d00b0f8b61a6007dd7964e3d964c39828a10f1",
+  "logicalRun": "ARC-FIFO-HTTP-20261007-ONCE",
+  "actualStart": "2026-10-07T20:36:11.197384+00:00",
+  "actualExit": 1,
+  "chargedMs": 3408,
+  "allocatedMs": 30000,
+  "phase": "CLOSED",
+  "unusedNotTransferred": true,
+  "results": [
+    {
+      "title": "Arc FIFO yields complete four-page batches repeatedly to a late third pane under backlog",
+      "status": "passed",
+      "durationMs": 340.2480840000003,
+      "failure": []
+    },
+    {
+      "title": "Arc removes hidden or closed FIFO waiters without retaining a reserved lease",
+      "status": "failed",
+      "durationMs": 1016.136125,
+      "failure": [
+        "AssertionError: expected [ …(6) ] to have a length of 2 but got 6\n    at Proxy.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@vitest+expect@4.0.18/node_modules/@vitest/expect/dist/index.js:1322:20)\n    at Proxy.<anonymous> (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/@vitest+expect@4.0.18/node_modules/@vitest/expect/dist/index.js:1090:14)\n    at Proxy.methodWrapper (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/chai@6.3.0/node_modules/chai/index.js:1737:25)\n    at /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/test/conversation-stream-integration.test.ts:50:47\n    at Timeout.checkCallback (file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/vitest@4.0.18_@opentelemetry+api@1.9.1_@types+node@24.19.1_jiti@2.7.0_lightningcss@1.33.0_tsx@4.23.15/node_modules/vitest/dist/chunks/vi.2VT5v0um.js:3634:20)\n    at listOnTimeout (node:internal/timers:685:17)\n    at processTimers (node:internal/timers:618:7)"
+      ]
+    }
+  ],
+  "notSelected": 11,
+  "artifacts": [
+    {
+      "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/http/segment.json",
+      "bytes": 3788,
+      "sha256": "6034a0b94146f814b7206d3d37ccdf51cfb317f9d7a145d4a74a4c3bc66a45d9"
+    },
+    {
+      "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/http/direct-1.json",
+      "bytes": 6305,
+      "sha256": "33a87afc562a8287011c2e92da286a06d3515ccf591e413248781ae96f9ed014"
+    },
+    {
+      "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/http/direct-1.outer.log",
+      "bytes": 3204,
+      "sha256": "5760ee171b9a839a93d72fccee403564964b0ca7835be11e47b26caa52c10800"
+    },
+    {
+      "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/http/direct-1.log",
+      "bytes": 88,
+      "sha256": "e70a9f155e69714863b0f28eeecc2968e1650e15100362a6982bf7e1f78ce934"
+    },
+    {
+      "path": "/private/tmp/arc-runtime-preparation-0xrqtd0l/http/post-cleanup.json",
+      "bytes": 266,
+      "sha256": "64cedc0f247d0be56798f579926cd87b4fabbe31aa98e37a9b163d43739ecd6c"
+    }
+  ],
+  "interpretation": {
+    "passed": "Continuous-backlog four-page batches repeatedly let a late third pane advance with two-lease peak/cache assertions. Only this selected HTTP fixture path is covered.",
+    "failed": "Hidden/closed waiter case failed at line50 before setVisible(false): reads array expected length2, actual6. The failure does not establish a product withdraw bug, nor does it validate hidden/closed waiter release.",
+    "staticCauseCandidate": "Fixture reads contain both metadata and patch requests; response delay35ms and polling for an exact transient total2 can miss that state. A controlled real HTTP response barrier should establish occupied two leases and waiting third before mutation, preserving actual consumer. This is a static timing explanation, not an additional runtime reproduction.",
+    "additionalCoverageGap": "Current dispose occurs after third pane finished loading; it checks no new reads after disposal but not disposing a currently queued waiter. Include true queued-dispose behavior in the same authorized scope.",
+    "doNotWeaken": "Do not replace equals2 with >=2 or inflate sleep/delay as acceptance; preserve third zero-read, surviving peer progress and peak<=2 assertions."
+  },
+  "resourceReturn": {
+    "receipt": {
+      "observedAt": "2026-10-07T20:36:27.433733+00:00",
+      "exactPIDAndGroup": {
+        "37390": "ESRCH",
+        "-37390": "ESRCH"
+      },
+      "scratchAbsent": true,
+      "regularFileLogs": true,
+      "dualEOFClaimed": false,
+      "independentPortProbe": false,
+      "PG": 0,
+      "Chrome": 0
+    },
+    "scope": "Exact recorded PID and same PGID37390 ESRCH; own scratch absent. Fixture afterEach completed without hook error. PG/Chrome absent by design. Regular file logs do not prove dual pipe EOF, and no independent port probe was performed.",
+    "rootFreshProcessOrPortProbe": false
+  },
+  "evidenceCaveat": "segment top-level original proposal label NOT_GRANTED remains historical; actual attempt, manager fresh grant, START and exit establish consumption. Record current phase CLOSED in owner/canonical without rewriting original raw evidence.",
+  "next": "Manager has assigned original owner a separate ordinary same-scope fix; no automatic HTTP retry, browser run, old-time transfer or new source claimant. Re-review actual narrow delta, then new candidate and phase if ready; personal service restoration remains highest priority."
+}

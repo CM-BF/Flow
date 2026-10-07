@@ -149,3 +149,5 @@ I01实际App接线已main5592且61abv2于17:11:49.694Z正式释放。现由原pa
 ### 原Arc片的可访问性验收补充（2026-10-07）
 
 在现有20范围内，沿[固定补充输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-accessibility-followup.json)核手动激活tab、关闭后的邻项焦点、可达close/menu、separator键盘与指针同clamp，以及隐藏视图的授权和效果清理。保持紧凑密度时检查实际点击区；不以图标视觉尺寸替代命中区。实验性tabs-actions和仍未完成最终示例审查的splitter文档保其适用限制，不据此增功能或框架。尚未运行真实检查，不构成完整视觉或合规结论。
+
+Arc首实际HTTP两项的[独立失败结果审查](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/arc-http-first-result-review.json)保留：持续积压下晚来第三pane公平性通过，隐藏/关闭case在建立两lease占用前的累计read计数前置失败，未到withdraw验收。原作者仅同test用真实响应barrier固定两lease/第三排队并覆盖queued-dispose，必要types已通过；HTTP新phase尚未运行，原3408ms失败与完整ownedRETURN不改，不以放宽计数或增加delay代替行为验收。

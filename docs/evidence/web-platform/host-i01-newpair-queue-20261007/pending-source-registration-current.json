@@ -1,0 +1,72 @@
+{
+  "recordedAt": "2026-10-07T20:42:21.668Z",
+  "state": "ORIGINAL_SOLE_D05_MAPPING_PENDING",
+  "authority": "Request only; not parallel sourcewriter or generatedprogress. Preserve owner unique status and exactclaim. Do not retake activeclaims.",
+  "actualObservation": "Arc/X01 root20:39 API208+2 fixed; laterTIMING02 take20:40:08 andmanager-readownstatus20:41:20/source-switch. No newGET/claimed-live-registration.",
+  "requests": [
+    {
+      "taskId": "WPF-WORKSPACEARC01",
+      "source": {
+        "owner": "workspace_panels_owner",
+        "model": "gpt-6-astra",
+        "lead": "external_web_d01_owner",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition",
+        "branch": "codex/web-workspace-composition",
+        "statusPath": "plans/wpf-workspace-arc/status.md"
+      },
+      "parentTask": "WPF-MATURE-05",
+      "claimId": "c34d95d1-af01-4325-bcd5-77ba9dd28379",
+      "claimVersion": 1,
+      "scopeCount": 20,
+      "canonicalIntake": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/docs/evidence/wpf-workspace-arc/source-switch-intake.json",
+        "bytes": 818,
+        "sha256": "96b2eb35c0a08be546b1b2a965dabb9fe8355b862e3cf4f0455b7b191e9a14ad"
+      },
+      "originalRequest": "arc-source-registration-request.json"
+    },
+    {
+      "taskId": "X01-VERIFIER-ADMISSION-RESULT01",
+      "source": {
+        "owner": "architecture_read",
+        "model": "gpt-6-astra",
+        "lead": "mika",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result",
+        "branch": "codex/plugin-verifier-admission-result",
+        "statusPath": "plans/x01-verifier-admission-result/status.md"
+      },
+      "parentTask": "X01",
+      "claimId": "cb699a7a-bc28-4659-82e6-56f6a0765e6c",
+      "claimVersion": 1,
+      "scopeCount": 23,
+      "claimCreatedAt": "2026-10-07T20:32:43.609Z",
+      "claimReceipt": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-verifier-admission-result/docs/evidence/x01-verifier-admission-result/claim-receipt.json",
+      "ordinaryPreparationStart": "2026-10-07T20:31:27Z",
+      "actualProductWriteStart": "NOT_REPORTED; no inference beforetake"
+    },
+    {
+      "taskId": "WPF-DASHBOARD-TIMING02",
+      "source": {
+        "owner": "w01_owner",
+        "model": "gpt-6-astra",
+        "lead": "external_web_d01_owner",
+        "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability",
+        "branch": "codex/dashboard-task-timing-readability",
+        "statusPath": "plans/wpf-dashboard-timing-readability/status.md"
+      },
+      "parentTask": "D01",
+      "claimId": "d26ac1d8-edf1-413d-ae67-68ce807e9fca",
+      "claimVersion": 1,
+      "scopeCount": 9,
+      "claimCreatedAt": "2026-10-07T20:40:08.317Z",
+      "ownerImplementationStart": "2026-10-07T20:41:20.224Z",
+      "canonicalIntake": {
+        "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing-readability/docs/evidence/wpf-dashboard-timing-readability/source-switch.json",
+        "bytes": 1648,
+        "sha256": "dfe371b7b085da92f045cc37fe54a6157409ef40fde6828f27b309035bbb165f"
+      },
+      "history": "ExistingplannedTIMING02, notopeningcompletedTIMING01/DASHSUM01. UIreadlayeralsofulfillsWPF00137tracking."
+    }
+  ],
+  "requestedAction": "Original D05 writer register three existing unique sources then normalowned reload preservingACCESS; report liveactual sourceCurrent/matchesSource. No registry/services touched byWebmanager. Personalrepair remainspriority."
+}

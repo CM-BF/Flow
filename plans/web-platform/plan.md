@@ -604,3 +604,5 @@ GO 2026-10-07 20:09 对实际4320与固定c29的只读观察：human.mjs 的 blo
 先由原D05唯一writer在合法安全点完成已有Arc来源登记，Original owner自行核FLOW priority事实；本组不改其status/registry。UI实施等待现有owner空槽，使用独立worktree、fresh精确claim和受影响局部验证，复用现37 parent.state===known的关系规则及TIMING02既有计划，不另建同义task，不阻个人恢复。
 
 上述首屏排序验收复用[固定源码与六类定向输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/dashboard-first-screen-priority-research.json)：打乱registry仍按owner priority稳定、关键词不影响、tie/unknown确定、父子事实独立、精确UTC可下钻、Arc领取到来源登记转换。只纳原37/TIMING02，不新增task或当前产品写权。
+
+2026-10-07现空闲W01顺序恢复既有TIMING02，并在相同阅读层承接原WPF001-37；独立dashboard-task-timing-readability树/分支，候选exact9为status/human/app/styles、status-timestamps/human-summary/task-timing三个既有测试及唯一新TIMING02计划/证据目录。与原七范围相比仅加human和对应summary test，原因是owner priority的既有helper入口需直接验证。原scope仍须fresh全局冲突和原子take，不继承旧已releasedclaim；当前25min16MiB普通源段/必要pure累计60s，浏览器未授。用户可用性摘要由原owner供给，Original FLOW priority与D05 Arc来源仍原writer负责，UI不推断或改写源事实。

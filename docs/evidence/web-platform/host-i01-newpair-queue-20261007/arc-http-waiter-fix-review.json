@@ -1,0 +1,99 @@
+{
+  "reviewer": "root / gpt-6-astra ultra",
+  "at": "2026-10-07T20:44:00.619331+00:00",
+  "decision": "APPROVED_TEST_ONLY_FIX_LOCAL_TYPES_AND_UNCHANGED_HTTP_CALLER_CANDIDATE",
+  "blockingFindings": [],
+  "source": "fe7f18d564baaea7ed3ec87bedf49bd805cbdf10",
+  "metadataHead": "09e4dc4a2aee758190d22a11ff67398d77aef958",
+  "remote": "09e4dc4a2aee758190d22a11ff67398d77aef958",
+  "dirty": "",
+  "packetManifest": {
+    "path": "/private/tmp/arc-http-waiter-retry-1favc0g8/manifest.json",
+    "bytes": 2326,
+    "sha256": "28e2988a79a608ac36bc7d3e1c905a3ea3f8207ffc437d675eae6222f36ab57f"
+  },
+  "binding": {
+    "path": "/private/tmp/arc-http-waiter-retry-1favc0g8/binding.json",
+    "bytes": 145772,
+    "sha256": "0be8991d837181e194350339133a338182fa340c4099fd05298dd6d57d9ebd80"
+  },
+  "caller": {
+    "path": "/private/tmp/arc-http-waiter-retry-1favc0g8/http/run.py",
+    "bytes": 6728,
+    "sha256": "8c0179cc1b6f0162a47b9972fdc03e041dd69c54e9eacfefee0f94070bc5b9e2"
+  },
+  "inputVerification": {
+    "manifestFiles": 8,
+    "manifestBytes": 158577,
+    "issues": [],
+    "sourcePins": 207,
+    "changedSourcePins": [
+      "apps/web/test/conversation-stream-integration.test.ts"
+    ],
+    "unchangedExternalEntryPins": 43,
+    "unchangedResolverLinks": 33,
+    "httpToolPins": 4,
+    "httpCallerByteEqual": true,
+    "vitestConfigByteEqual": true,
+    "sandboxDelta": "literal own new output directory only",
+    "remaining17SourcePaths": "git source delta only test; no product code change"
+  },
+  "sourceReasoning": [
+    "Observed old FAIL was before hide on a polling-sensitive exact cumulative count; new helper waits for two actual response bodies instead of a transient count.",
+    "prepend request observer holds only the first original response end for each of two selected peer tasks. Original response status/headers/body/end args remain unchanged; actual FlowClient and stream host run normally.",
+    "Barrier has a1s arrival bound and release in finally/afterEach; observer is removed and original end restored on release. No artificial product success, >= assertion or longer delay.",
+    "First blocked two-lease interval hides third and requires no third HTTP, then verifies showing it can load.",
+    "Second blocked peer interval makes third visible, lets its real queued pump run, verifies queued work/no extra HTTP, then disposes it; peer later receives a real new patch and peak stays<=2.",
+    "Only this controlled test changed. No assertion about actual runtime success before a fresh run."
+  ],
+  "localTypes": {
+    "segment": {
+      "path": "/private/tmp/arc-http-waiter-fix-local-b9k4_t2z/segment.json",
+      "bytes": 3577,
+      "sha256": "c44d0caacda5edce2bbc38b72303d63a08bdba2246afdc7b77d7d58809f3b5ed"
+    },
+    "return": {
+      "path": "/private/tmp/arc-http-waiter-fix-local-b9k4_t2z/post-cleanup.json",
+      "bytes": 170,
+      "sha256": "df0e8a517b16b400b2e9b74df3b583b7b0828ad34ba63d70dbb42b298c77337d"
+    },
+    "actualExit": 0,
+    "chargeMs": 3096,
+    "totalMs": 20000,
+    "logBytes": 0,
+    "exactPIDAndGroup3524": "ESRCH per exact receipt; scratch absent",
+    "unused": "not transferred or authorized for later checks"
+  },
+  "oldActual": {
+    "review": {
+      "path": "/private/tmp/root-arc-http-first-result-review-20261007.json",
+      "bytes": 5603,
+      "sha256": "074229cd74f73ba9d7d0dcbe56a89fab49b625abb8550c856ca256078248dd6f"
+    },
+    "state": "CLOSED",
+    "chargeMs": 3408,
+    "unusedMs": 26592,
+    "passed": 1,
+    "failed": 1,
+    "notSelected": 11,
+    "historyPreserved": true
+  },
+  "newCandidate": {
+    "state": "PREPARED_NOT_RUN_NOT_GRANTED",
+    "totalMs": 30000,
+    "workMs": 20000,
+    "cleanupMs": 10000,
+    "scratchBytes": 8388608,
+    "retainedBytes": 1048576,
+    "PG": 0,
+    "Chrome": 0,
+    "selection": "same exact two HTTP acceptance cases",
+    "requiredNext": "manager fresh complete floor/native/current clean execution HEAD and one new grant; no unused transfer or automatic retry"
+  },
+  "browser": "Existing old packet source pin is now historical after this test change; routine source binding refresh required before future browser run. No new browser approval or90s grant.",
+  "cleanCode": {
+    "checked": "named response barrier has one responsibility, keeps original endpoint semantics and cleanup ownership, and eliminates transient timing assumption without broad product changes",
+    "unresolved": "actual repaired HTTP result; no repeat of previous unrelated green checks"
+  },
+  "rootRuntimeExecutions": 0
+}

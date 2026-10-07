@@ -210,3 +210,5 @@ Recovery原03/05已由[Original主线回执](../../docs/evidence/web-platform/re
 原 MATURE06-04 身份恢复后继另保留[canonical adoption 静态研究](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/canonical-adoption-research.json)：固定f885/891f共有的 accepted(oldId,id) 在目标 canonical view/draft 已存在时可能覆盖该草稿，rename可能产生重复route。候选时序为 CREATE 已持久但 ACK 迟到或丢失、目录另开 canonical 写入B、原A随后回执或重试；必须先用既有真实App/ACK-loss fixture复现。当前标 REPRODUCTION_REQUIRED，非 Arc 新回归或本轮阻断；保完整草稿与原 key/body，不增重复task或并行App writer。
 
 原 MATURE06 恢复体验后继复用同一[草稿内容层级输入](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/recovery-content-hierarchy-followup.json)：安全名称不可得时用中性标签，不跨身份查名；保不自动发送、未决命令原key/body重试、删除边界和草稿/命令状态区分。仅直接消费者局部验收，个人恢复优先，不重复原完整矩阵。
+
+原 MATURE06-04 / REQ22–23 的恢复记录插件动作后继接收[固定Arc7097七源设计](../../docs/evidence/web-platform/host-i01-newpair-queue-20261007/recovery-plugin-action-design.json)：最小record动作context与独立权限，复用私有restore lease/CAS；lazy activation或确认期间关闭重开、disable ABA后旧回调不可复活，不将raw journal或完整draft作为插件参数。后继真实sample验证版本/namespace变化、确认撤销与草稿保护；不新增task或当前VISUAL8/Arc20写权，不倒改已通过appearance结论，个人恢复优先。

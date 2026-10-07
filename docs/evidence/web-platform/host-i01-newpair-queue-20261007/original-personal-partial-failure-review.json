@@ -1,0 +1,82 @@
+{
+  "recordedAt": "2026-10-07T20:03:38.273Z",
+  "task": "SVC06B",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "decision": "APPROVED_LIMITED_PARTIAL_UPDATE_FAILURE_RECORD",
+  "blockingFindings": [],
+  "source": "520d3cb7bdb352a1462d83c214e63c8a47c218f4",
+  "resultTarget": "52d95f507c61d1b686345eb73ab91421edf0fa50",
+  "canonical": "backend-browser-recovery/docs/evidence/svc06/browser-recovery/personal-current-result-manifest.json",
+  "manifest": {
+    "bytes": 24490,
+    "sha256": "28b584be2b073f6ffdcfd1ced412055258d93eabca3ecf43e8e0afbbc0696b58",
+    "bindings": 49,
+    "boundBytes": 220310,
+    "allBindingsAndResultFixedCurrentMatch": true
+  },
+  "read": [
+    "Fixed/current size/hash of49 records plus result; real migration/report/maintenance outer records, bootstrap and strict idle, failure/registered-role diagnostics, result and current-runtime cost records.",
+    "No private stderr body, credentials or user content read; no actual probes or replays by reviewer."
+  ],
+  "actual": {
+    "start": "2026-10-07T19:43:39.755Z",
+    "refreshFailure": "2026-10-07T19:47:21.167Z",
+    "outerReturn": "2026-10-07T19:48:31.241Z",
+    "completed": [
+      "cd27-import",
+      "three-retained-reports",
+      "facts-before",
+      "preflight",
+      "history-before",
+      "bootstrap",
+      "operation-strict-idle"
+    ],
+    "migrationMs": 30519,
+    "reportsMs": 13097,
+    "maintenanceOperatorMs": 114242,
+    "refreshMs": 58210,
+    "primary": "START_UNCONFIRMED_CHECK_STATUS",
+    "savedFailure": {
+      "role": "web",
+      "phase": "ready",
+      "code": "SERVICE_START_UNCONFIRMED"
+    },
+    "laterPhases": "NOT_RUN",
+    "resumed": false,
+    "webPublished": false,
+    "operatorQueries": 0
+  },
+  "postFailureObservation": {
+    "at": "2026-10-07T19:51:09.047Z",
+    "maintenanceState": "maintenance",
+    "version": 23,
+    "operationId": "35d5a7ff-5ef7-4938-9584-adb27f5357ff",
+    "phase": "starting",
+    "registeredRoles": "all stopped",
+    "oldGroups": "all absent/ESRCH",
+    "centerWebListeners": false,
+    "poolClosed": true,
+    "backendSelected": "cd27/04da",
+    "finalSuccessSourceField": "still6c; not current running-source proof",
+    "webPointer": "d629/version3 unchanged",
+    "availability": "personal center/runner/Web unavailable at this observation"
+  },
+  "readOnlyCost": {
+    "endedAt": "2026-10-07T19:55:22.549Z",
+    "backendRuntimeMs": 4589,
+    "webServiceRuntimeMs": 3878,
+    "totalMs": 8528,
+    "bytes": 492,
+    "exactRootsAndDescriptorsMatched": true,
+    "owned": "absent / dualEOF / no signals",
+    "meaning": "Current full-verification cost only, not retrospective root cause."
+  },
+  "limits": [
+    "Outcome is PARTIAL_UPDATE_FAILED_SERVICES_STOPPED, not zero side effects or successful deployment.",
+    "Before history has77 tables; complete after-preservation was NOT_RUN. No assertion of unchanged task/queue business effects from absent listener.",
+    "Old profile/PID is insufficient evidence of current runner readiness. Actual claim recovery remains NOT_VERIFIED.",
+    "Original floor prelaunch refusal retained, one actual import. Original failures/KEEP, selected artifact/reports and operation remain preserved.",
+    "No retry, rollback, journal retirement, new runtime/artifact or service restart is approved by this result review."
+  ],
+  "next": "Original owner implements separately reviewed single-launch verification reuse/readiness evidence, preserving current identities; recovery takes priority over new publication."
+}

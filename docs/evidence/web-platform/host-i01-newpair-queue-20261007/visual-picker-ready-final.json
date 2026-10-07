@@ -1,0 +1,42 @@
+{
+  "recordedAt": "2026-10-07T20:31:10.512596+00:00",
+  "state": "READY_CANDIDATE_NOT_ADMITTED",
+  "head": "dcbd7a798b3cea6f2fae3ab7c7484bd2d0c56749",
+  "remoteHead": "dcbd7a798b3cea6f2fae3ab7c7484bd2d0c56749",
+  "dirty": "",
+  "branch": "codex/web-shared-overlays",
+  "source": "4ca1deac319afac89f7c0ae5e0142cb9de429a2a",
+  "packet": "/private/tmp/vis-picker-b1",
+  "bindingSha256": "ef09360fa7f617b828c8039e430517150ed5f51b68375c043566ae29aa60df04",
+  "manifestSha256": "6c5ad08ec2427fe5bb729b2498ea8c3db649d3ad35665a5f7e470f854197ee48",
+  "nativeApproval": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/picker-ready/manager-native-acceptance.json",
+    "sha256": "268fff238a5827cf98d160b3abb522266e40d47668f487d6be97a2ab5adb767d"
+  },
+  "sourceReview": {
+    "path": "/private/tmp/root-visual01-picker-preparation-review-20261007.json",
+    "sha256": "f3b8b1079ba37d04e747289eb7938dd328b1c765009fdb28766cbb8222e80aa7"
+  },
+  "finalRoutineDelta": {
+    "key": "head",
+    "from": "180f93c4747b02e46664a0b57cf732991626f908",
+    "to": "dcbd7a798b3cea6f2fae3ab7c7484bd2d0c56749"
+  },
+  "parentSha256": "1147944ef31e473f20da95d88ce2bdd73f3a452a48ca986e69eaa9db81a505ae",
+  "workerSha256": "4ff84c502c105c3ce416cff070cdc293c3180a47a25c7763f1f8073c53def23a",
+  "preparedFilesUnchanged": {
+    "worker.mjs": "4ff84c502c105c3ce416cff070cdc293c3180a47a25c7763f1f8073c53def23a",
+    "aliases.json": "251101182e1553fcdae839c4c58b45436a1e8bd7bca93eab565b3df8640f3996",
+    "runtime-tsconfig.json": "6385ce025173b2e5046cf195fef9ff524cacd688df3a1ebd132ff21ca94ff2e3",
+    "sandbox.sb": "875bf7719aac68be4470e758ca98ed08ff9ec8efa64905d3c6f6800a0ccc7020",
+    "measure.py": "52b92553302378ed44ec38550a02cb15b1d644d274547959fabed344f35e9d08"
+  },
+  "previousRuntimeMs": 0,
+  "runtimeGranted": false,
+  "gateCreated": false,
+  "ownEightScopes": "STOP",
+  "claim": "acce2727-f3c0-433d-9b06-b802eefb32cb v1 ACTIVE retained",
+  "segmentGrowthUpperBoundBytes": 2097152,
+  "canonicalReady": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays/docs/evidence/wpf-visual01/shared-overlays/picker-ready/ready.json",
+  "note": "This segment only changed metadata/TMP approvals and head; no source/dependency rescan, engineering check, resource sample or browser/HTTP/PG runtime. The read-only coordination list and single own-status parser are metadata operations."
+}

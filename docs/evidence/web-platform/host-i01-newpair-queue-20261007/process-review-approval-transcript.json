@@ -1,0 +1,44 @@
+{
+  "recordedAt": "2026-10-07T20:28:33.852Z",
+  "recordType": "EXISTING_REVIEW_MESSAGE_TRANSCRIPTION_NOT_NEW_REVIEW",
+  "reviewer": "chatui01_owner",
+  "model": "gpt-6-astra",
+  "reviewedAt": "2026-10-07T19:42:43.000Z",
+  "decision": "SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED",
+  "P1": 0,
+  "P2": 0,
+  "source": "abc0736dfbfe4c3dcbdd11d73e9386573ef565db",
+  "packet": "3fcdf665a1110907418b277726a86415adf0fcfe",
+  "manifest": "docs/evidence/x01-trusted-process-host/verifier-extension/review-manifest.json",
+  "manifestSha256": "253d88faba3c6c06cd5eaff8ade46d1d13a33f3a13ae09c9c87ab471ef857f80",
+  "bindings": 46,
+  "bindingBytes": 211580,
+  "messageProvenance": "Existing chatui review forwarded by Mika (/root), received 19:43 and explicitly reaffirmed in this 20:26 metadata assignment. This record transcribes that verdict; owner did not perform a new independent review.",
+  "forwardedExcerpt": "PROCESS独审已到：chatui19:42:43 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED0P1P2，abc0736/source3fcdf665packet，46bindings211580B、7新+3旧10distinct分轮/首fixturefail/两定向/两types0、5groups+10workers三EOF与8fixture/5TMP原receipt均可信；限4叶与local，不含runtime/center/T7/main。",
+  "localEvidence": {
+    "distinct": 10,
+    "new": 7,
+    "directOld": 3,
+    "typesExitCodes": [
+      0,
+      0
+    ],
+    "children": 5,
+    "supervisionMs": 6407,
+    "rawBytes": 3708,
+    "returnAt": "2026-10-07T19:35:26.901Z",
+    "originalFixtureFailurePreserved": true,
+    "historicalEPERMPreserved": true,
+    "wholeToolWall": "UNKNOWN",
+    "peak": "UNKNOWN"
+  },
+  "notValidated": [
+    "runRunner verifier dispatch",
+    "center authorization/verdict/completion gate",
+    "T7 actual release artifact",
+    "main integration of this extension",
+    "deployment",
+    "PG"
+  ],
+  "ownerActions": "No new engineering run, product edit or old raw/manifest change."
+}

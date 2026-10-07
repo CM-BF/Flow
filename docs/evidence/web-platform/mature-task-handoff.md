@@ -1,6 +1,13 @@
 # Web 当前交接与唯一来源
 
-**即时调度 2026-10-07T20:23:37.284Z：actual holder=NONE，NEXT=NONE。Recovery 在20:13:37.668772Z启动，20:15:46.418134Z精确FULLRETURN，选定cookieRead/themes390两项及两张390图已独审通过；10325/60000ms CLOSED，无续跑。经理已亲读PID/PGID、DB正常DROP/0连接、HTTP、scratch与admin归还回执。Picker仍NOT_RUN；Arc仅已封存候选待审。个人用户服务仍全停、maintenance23/同op35d5a7ff，d629/v3未变，未恢复接单或发布779；Original窄修真实READY后最高优先，不自动继承任何窗口。普通隔离source/local可继续，所有历史消费gate保持。**
+**即时调度 2026-10-07T20:49:27.615Z：actual holder=NONE，NEXT=NONE。Arc第二HTTP实际1PASS/1FAIL，2652/30000ms CLOSED；20:48:31.490133Z Node/PGID7418及scratch精确归还，经理已亲读回执。隐藏/排队关闭组通过，backlog公平性组另一个前置断言失败，两轮结果分别保留，不能拼成整体PASS。当前future 18,955,370,496B（含Arc新10min/4MiB窄普通诊断，0HTTP/PG/Chrome）；已消费18,959,564,800B不改。TIMING02普通98/98通过、首红保留/两次473ms，0工程child。个人服务仍停，Original固定修复build未READY；就绪后最高优先。**
+
+**Original 个人恢复两叶已接收：** `assignment_review` 可从 [runtime.ts 固定交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/verifier-extension/approved-handoff.json) 与 [runner main.ts 固定交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/docs/evidence/x01/runner-main-handoff-ready.json) 已由Original确认fresh核main18bf前像/全局冲突并自行amend接权，等待窄修固定源而非再次交权确认；具体收方claim版本未报，不猜填。原交方PROCESS d481956、parent f60b393均双端clean/STOP，8c2f v4 ACTIVE11与6dd v33 ACTIVE41已移出对应叶；不得整blob覆盖或把PROCESS四process叶独审冒runtime/T7验收。44811B归Original既有8MiB内512KiB，不另加预算。X01-07 verifier结果子片cb699v1/exact23已实际领取并在原16MiB普通段实施，唯一source登记待原D05；不与个人恢复抢写。
+
+
+**Original 后继依赖（不取权）：** 既有X01-VERIFIER-RUNTIME01候选五leaf中runtime.ts仍由个人恢复原作者持权；请其源码/独审安全点给出后续STOP→partial amend时机，当前继续写也明确即可。未来db_transaction_owner等VAR固定接口后fresh接权，不触main.ts、不建第二调度器、不碰dirtyVAR，当前0新增长/0claim/0运行。
+
+**Original 个人恢复当前准备：** 窄修de779已main57ab；下一产物只组合固定04da、两host接缝与当前runner初始化证据，旧cd27/7d1不改，不带moving-main插件/slots/DDL或PROCESS3d6。779网页不重建，新后台tuple须补三保留网页及779的准确兼容报告。当前0build/个人launch pending，maintenance23仍停；新fixedsource build候选峰值2,317,352,960B已计一次，420s work复用原builder，尚未READY/未授权；准备不预占NEXT，真实READY后恢复最高优先。
 
 **S01启动交接历史：** 原owner已在截止前18:52:37.342481Z实际spawn，PID/PGID27722，同PID exec固定入口；18:53交接截止不影响已消费的300s实际运行，未撤销或打断；其后已terminal失败并活动资源RETURN，以下当前栏为准。原未报START等待过程保留历史。
 
@@ -14,11 +21,11 @@
 
 **Original 新网页可接收：** c3的四正式版本报告已[独立批准](host-i01-newpair-queue-20261007/compatibility-c3-four-app-result-review.json)，固定 `cd27/04da + 779/c231 + policy81a8` 不等SVC09A双槽；固定[W01最小供给交接](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-release-recovery/docs/evidence/wpf-release01/recovery-cookie/pair-779a-cd27-third/main-intake.json)已齐（15,220B/SHA29004c44…32bdd），含四canonical正式报告及16check pins、两descriptor和原SVC06B接收目标；经理已核四报告本体hash，现正式交Original `assignment_review` 在 `backend-browser-recovery/docs/evidence/svc06/browser-recovery` 的既有SVC06B接收流程；Original已明确接受此职责，producer final8dfb双端clean。AV03本次已失败并完整归还，个人发布实际操作仍沿Original自身既有准入，不跨lead执行。旧两次FAIL与诊断证据原样保留，当前尚未个人部署。
 
-**Original 原源码交权与窄接收：** 原 `native_center_owner` 可按[唯一两叶交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/startup-observer-handoff-ready.json)（SHA5f3954c4…20f）fresh take后实施 startup observer；main.ts/index.ts已原子移出，index未main两行patch必须窄合并保留，禁止整blob覆盖。PROCESS四叶[verifier-extension入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/verifier-extension/review-ready.json)已Mika独审，sourceabc0736/packet3fcdf供Original正常main批；个人排他期间不build，不另授PG。详见[current](host-i01-newpair-queue-20261007/current.json)，Web管理不操作其他owner树。
+**Original 历史startup observer交权与窄接收入口：** 原 `native_center_owner` 可按[唯一两叶交权入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/startup-observer-handoff-ready.json)（SHA5f3954c4…20f）fresh take后实施 startup observer；main.ts/index.ts已原子移出，index未main两行patch必须窄合并保留，禁止整blob覆盖。PROCESS四叶现已main/origin3d6e0f546；历史[verifier-extension入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-trusted-process-host/docs/evidence/x01-trusted-process-host/verifier-extension/review-ready.json)已Mika独审，sourceabc0736/packet3fcdf供Original正常main批；个人排他期间不build，不另授PG。详见[current](host-i01-newpair-queue-20261007/current.json)，Web管理不操作其他owner树。
 
 **Original 看板原优先级与来源请求：** GO 20:09只读发现 FLOW-001 自身priority仍3，关键服务恢复未进入首屏前三；请原owner核自身明确priority事实，Web管理不代改其status。请D05唯一writer在合法安全点完成已有Arc818B登记请求（c34d v1/exact20，唯一web-workspace-composition status；891f局部独审afb555已到），不新take或第二writer。阻塞阅读排序/紧凑时间沿原WPF001-37/TIMING02后继，个人恢复优先，不抢当前产品scope。
 
-**Original 唯一D05登记请求：** 原Arc计划候选已实际领取20scope，唯一status位于 `web-workspace-composition/plans/wpf-workspace-arc/status.md`；请沿[固定登记request](host-i01-newpair-queue-20261007/arc-source-registration-request.json)登记WPF-WORKSPACEARC01→该独立WT/branch，父WPF-MATURE-05。当前awaiting-source-sync，不是未领取；不新增第二writer/手填状态源，工程NOT_RUN保持。
+**Original 唯一D05登记请求（三源合并）：** [当前三条固定映射请求](host-i01-newpair-queue-20261007/pending-source-registration-current.json)给原D05唯一writer：Arc c34dv1与X01 cb699v1/exact23在20:39真实API中均已显示领取，但仍208正常任务外未登记status。X01普通段20:31:27与领取20:32:43.609分开，不推领取前产品修改。后到TIMING02 d26acv1/exact9已20:40:08.317领取、20:41:20.224唯一status开工可读，也在同一请求待登记；不冒20:39快照包含后来的第三claim。不要重复take/新writer；实际mapping变更后再核API。以下Arc原请求保历史来源。  原Arc计划候选已实际领取20scope，唯一status位于 `web-workspace-composition/plans/wpf-workspace-arc/status.md`；请沿[固定登记request](host-i01-newpair-queue-20261007/arc-source-registration-request.json)登记WPF-WORKSPACEARC01→该独立WT/branch，父WPF-MATURE-05。当前awaiting-source-sync，不是未领取；不新增第二writer/手填状态源，实际检查只取原owner当前事实，不从mapping推导通过。
 
 
 
@@ -26,7 +33,7 @@
 
 **已归还与保留资源：** K01独立恢复消费floor16,065,757,184B，freshfree18,674,704,384B也高于后到16,101,408,768B。前置KeyError发生在supervise/PG之前，0child0PG未消费；只运行一次恢复。固定receipt封存入口随后归档，不为等待seal占窗；DB后台可能增长仍按有限规划保守计。
 
-**当前领取与工作状态：** Release已验证并main/释放，个人恢复待Original；VISUAL accev1/exact8保留，Recovery两项及双图PASS并归还，Picker未运行，作者自然封存。Arc c34dv1/exact20保留，13定向例及affected types通过，最新reduced-motion候选96d00封存，HTTP2/browser4未运行待审；I01已main/释放。领取、源码STOP、实际运行与用户服务状态分别记录。
+**当前领取与工作状态：** Release已验证/main/释放；VISUAL accev1/exact8源码STOP，Recovery两项双图PASS，Picker90 READY未运行。W01在独立TIMING02 d26acv1/exact9实施，局部98/98通过、首红保留，浏览器未运行。Arc c34dv1/exact20保留，两次HTTP各1PASS/1FAIL分别封闭，第二次资源已归还，现原scope窄普通诊断；浏览器4组未运行。I01已main/释放。个人服务未恢复；领取、源码工作、运行和用户可用性分别记录。
 **历史两次新检查候选预算（各计一次，最新完整线与授权只看页首）：** I01第二次独立60s保守新增264MiB、Release c2独立180s保守新增201MiB；17,454,858,240+276,824,064+210,763,776=17,942,446,080B未来完整线。旧两个失败阶段均CLOSED，余额不转，已删scratch不改旧原件，保留证据/KEEP不退款。后到R2/c2已消费gate均保持历史。
 
 **预算算术纠偏（不改历史gate）：** [明确更正事件](host-i01-newpair-queue-20261007/host-budget-arithmetic-correction.json)核SVC09A旧host envelope应为1,243,611,136B，原表漏24MiB；原R1 KEEP不退，新R2候选再计独立1,243,611,136B，当时future完整floor为17,454,858,240B。S01已按更高线实际执行并完整归还；R2已实际运行并明确归还，入口前失败及KEEP原件保留；该R2现无NEXT，不自动重试。
@@ -335,3 +342,5 @@ MSG材料[生命周期](release-backend-route-20261007/material-lifecycle-root-r
 
 
 **AV02 基线操作已由Mika本组指派：** [既有交权顺序](web-artifact-cleanup-fix-source-reload-20261007/current.json#AV02Request)在自有干净971037/doc19树受控合入固定96b，冲突STOP、不手改未claim。PROCESS两execution叶已15:26:07.328正式移出，AV仍需原子扩10才写产品。Original不要并行操作该WT；如已动则停核，避免双operator。当前只源码、无运行。
+
+**既有看板易读性后继已派普通段：** W01顺序从已STOP的VISUAL转原TIMING02，在独立dashboard-task-timing-readability/codex同名fresh exact9并原子领取后才写，25min/16MiB source/local，0HTTP/PG/Chrome。同一阅读层承接WPF001-37优先级与显式关系分组，不重开已完成TIMING01/DASHSUM01。实际take20:40:08.317 d26acv1/exact9、原作者开工20:41:20.224，唯一status已可读；尚无工程检查或browser运行，待D05正常source登记。个人恢复和既有产品scope优先。

@@ -1,0 +1,77 @@
+{
+  "at": "2026-10-07T20:29:29.522Z",
+  "state": "STOPPED_AND_REMOVED_RECEIVER_FRESH_TAKE_REQUIRED",
+  "taskId": "X01",
+  "owner": "architecture_read",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding",
+  "branch": "codex/plugin-enable-binding",
+  "sourcePath": "apps/runner/src/main.ts",
+  "mainPreimage": {
+    "commit": "18bf17ea26cacb4a12cd89f962b455f6688f729d",
+    "bytes": 3710,
+    "sha256": "e64fff552e2ea225c739fb8af21db25726b5b05e5573fd6f2ec16a26c3964c60",
+    "blob": "e9273a9f63aaeea06079261b70024455144b7325"
+  },
+  "parentPreimage": {
+    "commit": "32e9153f1e4b9dbd950f36f61ebbb80f30770cae",
+    "equalsMain": true,
+    "pendingSourceDelta": false
+  },
+  "stoppedWritingAt": "2026-10-07T20:29:04.157Z",
+  "amend": {
+    "claimId": "6ddedc73-f019-4073-b421-d23d3dc8dedd",
+    "fromVersion": 32,
+    "version": 33,
+    "scopeCount": 41,
+    "committedAt": "2026-10-07T20:29:04.252Z",
+    "removed": [
+      "apps/runner/src/main.ts"
+    ],
+    "allOtherScopesUnchanged": true
+  },
+  "receiver": {
+    "lead": "Original Execution Lead",
+    "worker": "assignment_review",
+    "condition": "Fresh atomic take COMMITTED before any write"
+  },
+  "requiredPreservation": [
+    "FLOW_PLUGIN_EXECUTION_CONFIG explicit opt-in and ordinary-native-only guard before publication",
+    "loadPluginExecutionConfiguration and same runRunner pluginExecution port",
+    "Codex/engineering/A2A branch isolation, concurrency, original SIGINT/SIGTERM AbortController and listener cleanup"
+  ],
+  "bindings": [
+    {
+      "path": "docs/evidence/x01/runner-main-handback-ledger.json",
+      "bytes": 2815,
+      "sha256": "2d7530b0dff0269b9384784fcb10f0b189be25c3e42e204347823c615aa8393e"
+    },
+    {
+      "path": "docs/evidence/x01/runner-main-handback-stop.json",
+      "bytes": 1550,
+      "sha256": "8f4292edbfee6c553071df0c489622f949ee3341ec3326724834919d4bc23227"
+    },
+    {
+      "path": "docs/evidence/x01/runner-main-handback-command.json",
+      "bytes": 2311,
+      "sha256": "3476ca3ea54a6dfbe5ad256315d1b09927fbf0f5131c4837117d7713bad60b19"
+    },
+    {
+      "path": "docs/evidence/x01/runner-main-handback-receipt.json",
+      "bytes": 2422,
+      "sha256": "6dda4986267169bacc2445102c4646812a8a65555b1284688879c334efaec924"
+    },
+    {
+      "path": "docs/evidence/x01/runner-main-handoff-metadata-check.json",
+      "bytes": 463,
+      "sha256": "d384d1200feea3b9f61ef8cf077758acf89036b4b02fbabdbc2850af78683aa4"
+    }
+  ],
+  "budget": {
+    "startedAt": "2026-10-07T20:26:32.000Z",
+    "deadline": "2026-10-07T20:34:32.000Z",
+    "maxNewLogicalBytes": 262144,
+    "accounting": "Part of already declared combined two-owner 512KiB within SVC06B ordinary8MiB; no new reservation"
+  },
+  "scope": "Metadata and coordination only; no product writes, engineering tests, product PG, personal actions or new feature scope.",
+  "quality": "Exact single-leaf removal and preimage equality verified; no pending parent product delta. Status parser errors/humanMissing empty; original UNKNOWN task-start timing issue retained unchanged."
+}
