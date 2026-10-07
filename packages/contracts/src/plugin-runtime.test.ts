@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import { pluginCommandSchema } from './plugins.js';
+import { pluginCommandSchema, pluginRegistrationSchema } from './plugins.js';
 import { PLUGIN_RUNTIME_PROTOCOL, pluginGrantReceiptSchema, pluginHostPublicationSchema, pluginRuntimeCommandSchema,
   pluginRuntimeViewSchema, pluginToolBindingSchema, pluginToolTaskRequestSchema } from './plugin-runtime.js';
 
@@ -10,6 +10,18 @@ const binding = { protocol: PLUGIN_RUNTIME_PROTOCOL, bindingId: id, invocationId
   materialInstallOperationId: id, targetRunnerId: id, storeId: 'owned-store', materialId: 'a'.repeat(64), treeDigest: 'b'.repeat(64),
   hostApiMajor: 1, artifact: { artifactId: id, name: 'owned-tool', version: '1.0.0', integrity: 'sha512-' + 'a'.repeat(86) + '==', bytes: 123, sha256: 'c'.repeat(64) },
   configuration: {}, inputDigest: 'd'.repeat(64), createdAt: '2026-10-06T23:00:00.000Z' };
+
+test('runtime fixture registration uses the existing finite enum alphabet', () => {
+  const registration = (values: string[]) => ({ scope: { workspaceId: 'personal', projectId: null }, version: {
+    packageName: `flow-binding-${id}`, packageVersion: '1.0.0', source: 'npm', declaredSha256: 'a'.repeat(64), license: 'MIT', hostApiMajor: 1,
+    capabilities: ['tool'], publicConfiguration: [{ key: 'prefix', kind: 'enum', required: true, values }] } });
+  const invalid = pluginRegistrationSchema.safeParse(registration(['v1:', 'v2:']));
+  expect(invalid.success).toBe(false);
+  if (!invalid.success) expect(invalid.error.issues.map(issue => issue.path)).toEqual([
+    ['version', 'publicConfiguration', 0, 'values', 0], ['version', 'publicConfiguration', 0, 'values', 1],
+  ]);
+  expect(pluginRegistrationSchema.parse(registration(['v1', 'v2']))).toEqual(registration(['v1', 'v2']));
+});
 
 test('new runtime commands do not extend the legacy mutation codec', () => {
   const enable = { ...base, change: { kind: 'enable', materialInstallOperationId: id, targetRunnerId: id, storeId: 'owned-store' } };

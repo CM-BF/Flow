@@ -1,6 +1,7 @@
 """Pure qualification checks: no database, process launch, listener, or provider."""
 import copy
 import importlib.util
+import json
 import os
 from pathlib import Path
 import tempfile
@@ -22,7 +23,33 @@ class ResourceQualification(unittest.TestCase):
         cleanup.update(identity=identity, connections=0, owners=dict(startup=True, server=True, boss=True))
         return {name: dict(common, **value) for name, value in {
             'reservation': {}, 'create-request': dict(owner='flow', marker='x01:owned'), 'created': dict(identity=identity),
-            'result': dict(cleanup=cleanup, cleanupConfirmed=True, retainedDatabase=None, errors=[], errorCount=0, listeners=[dict(closed=True), dict(closed=True)])}.items()}
+            'result': dict(cleanup=cleanup, cleanupConfirmed=True, retainedDatabase=None, errors=[], errorCount=0,
+                           listeners=[dict(origin='http://127.0.0.1:58421', closed=True), dict(origin='http://127.0.0.1:58438', closed=True)])}.items()}
+
+    def test_actual_listener_count_does_not_require_a_success_path_restart(self):
+        rows = self.records()
+        rows['result']['listeners'] = rows['result']['listeners'][:1]
+        self.assertTrue(caller.suite_confirmed('runtime', rows, 'a' * 32, 'b' * 40))
+        # A later instance may reuse the same dynamic port after the first has closed.
+        rows['result']['listeners'] *= 2
+        self.assertTrue(caller.suite_confirmed('runtime', rows, 'a' * 32, 'b' * 40))
+        for invalid in [[], [{}], [dict(closed=True)], [dict(origin='http://127.0.0.1:58421', closed=False)],
+                        [dict(origin='http://127.0.0.1:65536', closed=True)], [dict(origin='http://other:58421', closed=True)]]:
+            rows['result']['listeners'] = invalid
+            self.assertFalse(caller.suite_confirmed('runtime', rows, 'a' * 32, 'b' * 40), invalid)
+
+    def test_sealed_r1_actual_receipts_confirm_resources_without_changing_failed_cases(self):
+        here = Path(__file__).parent
+        for suite, directory in [('runtime', 'enable-binding-stage-c-run-r1'),
+                                 ('registry', 'enable-binding-stage-c-run-r1-postflight')]:
+            rows = {name: json.loads((here / directory / f'{suite}-{name}.json').read_bytes())
+                    for name in ['reservation', 'create-request', 'created', 'result']}
+            self.assertTrue(caller.suite_confirmed(suite, rows, rows['reservation']['window'], rows['reservation']['sourceHead']))
+        tests = json.loads((here / 'enable-binding-stage-c-run-r1-postflight/vitest.json').read_bytes())
+        self.assertEqual((tests['numTotalTests'], tests['numPassedTests'], tests['numFailedTests']), (27, 18, 9))
+        original = json.loads((here / 'enable-binding-stage-c-run-r1/result.json').read_bytes())
+        self.assertEqual(original['state'], 'UNKNOWN')
+        self.assertTrue(original['unknown'])
 
     def test_complete_matching_receipts_are_required(self):
         rows = self.records()

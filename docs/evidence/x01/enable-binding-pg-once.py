@@ -108,7 +108,19 @@ def suite_confirmed(name, rows, window, head):
             and all(cleanup[key] is True for key in ['poolClosed', 'adminClosed', 'createRequested', 'createAcknowledged', 'creationReceiptSaved', 'identityConfirmed', 'dropRequested', 'dropAcknowledged', 'databaseAbsent'])
             and cleanup['connections'] == 0 and result['cleanupConfirmed'] is True and result['retainedDatabase'] is None
             and result['errors'] == [] and result['errorCount'] == 0
-            and len(result['listeners']) == 2 and all(row['closed'] is True for row in result['listeners']))
+            and listeners_closed(result['listeners']))
+
+
+def listeners_closed(listeners):
+    # Early assertion failure can skip the planned restart; qualify actual instances only.
+    if not isinstance(listeners, list) or not listeners: return False
+    for listener in listeners:
+        if not isinstance(listener, dict) or listener.get('closed') is not True: return False
+        origin = listener.get('origin')
+        if not isinstance(origin, str): return False
+        match = re.fullmatch(r'http://127\.0\.0\.1:([1-9][0-9]{0,4})', origin)
+        if match is None or int(match[1]) > 65535: return False
+    return True
 
 
 def child():

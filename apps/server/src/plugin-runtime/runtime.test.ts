@@ -67,7 +67,7 @@ async function fixture() {
   const name = `flow-binding-${randomUUID()}`;
   const registered = await request('/api/plugins', { scope: { workspaceId: 'personal', projectId: null }, version: {
     packageName: name, packageVersion: '1.0.0', source: 'npm', declaredSha256: 'a'.repeat(64), license: 'MIT', hostApiMajor: 1,
-    capabilities: ['tool'], publicConfiguration: [{ key: 'prefix', kind: 'enum', required: true, values: ['v1:', 'v2:'] }] } });
+    capabilities: ['tool'], publicConfiguration: [{ key: 'prefix', kind: 'enum', required: true, values: ['v1', 'v2'] }] } });
   expect(registered.status).toBe(201);
   const registrationId: string = registered.body.snapshot.installation.id; const versionId: string = registered.body.snapshot.version.id;
   const runner = await request('/api/runners', { name: 'Plugin test host', harnesses: ['fixture'], capacity: 1 });
@@ -91,7 +91,7 @@ async function fixture() {
     [materialId, registrationId, versionId, fetchId, fetchAttempt, artifactId, JSON.stringify(artifact), 'd'.repeat(64), randomUUID(), JSON.stringify(receipt)]);
   });
   const command = async (expectedRevision: number, change: unknown) => request(`/api/plugins/${registrationId}/commands`, { expectedRevision, reason: 'Fixture registry change', change });
-  expect((await command(1, { kind: 'configure', values: { prefix: 'v1:' } })).status).toBe(200);
+  expect((await command(1, { kind: 'configure', values: { prefix: 'v1' } })).status).toBe(200);
   expect((await command(2, { kind: 'set-grants', capabilities: ['tool'] })).status).toBe(200);
   const enable = { expectedRevision: 3, reason: 'Enable exact material', change: { kind: 'enable', materialInstallOperationId: materialId, targetRunnerId: runnerId, storeId: 'test-material' } };
   return { registrationId, versionId, runnerId, token, materialId, enable, command };
@@ -134,7 +134,7 @@ test('host publication requires an exact operator tuple before the first immutab
 test('enable advances the same revision, preserves old operation readback and replays the original receipt', async () => {
   const f = await fixture(); const path = `/api/plugins/${f.registrationId}/runtime/commands`; const key = randomUUID();
   const result = await request(path, f.enable, key);
-  expect(result.status).toBe(200); expect(result.body).toMatchObject({ snapshot: { revision: 4, configuration: { prefix: 'v1:' }, grants: ['tool'] }, operation: { kind: 'enable', beforeRevision: 3, afterRevision: 4 }, runtime: { bindingAllowed: true, loaded: 'unknown', callable: 'unknown' } });
+  expect(result.status).toBe(200); expect(result.body).toMatchObject({ snapshot: { revision: 4, configuration: { prefix: 'v1' }, grants: ['tool'] }, operation: { kind: 'enable', beforeRevision: 3, afterRevision: 4 }, runtime: { bindingAllowed: true, loaded: 'unknown', callable: 'unknown' } });
   expect((await request(path, f.enable, key)).body).toEqual({ ...result.body, replayed: true });
   expect((await request(path, { ...f.enable, reason: 'Different' }, key)).status).toBe(409);
   const disabled = await request(path, { expectedRevision: 4, reason: 'No new tasks', change: { kind: 'disable' } });
@@ -162,14 +162,14 @@ test('configuration changes invalidate new bindings while an accepted binding an
   const f = await enabled(); const input = { expectedRevision: 4, title: 'Frozen task', input: 'before' }; const key = randomUUID(); const path = `/api/plugins/${f.registrationId}/tool-tasks`;
   const accepted = await request(path, input, key); expect(accepted.status).toBe(201);
   const binding = accepted.body.binding;
-  expect((await f.command(4, { kind: 'configure', values: { prefix: 'v2:' } })).status).toBe(200);
+  expect((await f.command(4, { kind: 'configure', values: { prefix: 'v2' } })).status).toBe(200);
   expect((await request(`/api/plugins/${f.registrationId}/runtime`)).body).toMatchObject({ currentRevision: 5, enabledRevision: 4, bindingAllowed: false, reason: 'revision-changed' });
   expect((await request(path, { ...input, expectedRevision: 5 })).status).toBe(409);
   expect((await request(`/api/plugins/${f.registrationId}/runtime/commands`, { expectedRevision: 5, reason: 'Stop new binding', change: { kind: 'disable' } })).status).toBe(200);
   await closeApp(); await boss!.stop({ graceful: true, timeout: 5000 }); await openApp();
   expect((await request(path, input, key)).body).toEqual({ ...accepted.body, replayed: true });
   const read = await request(`/api/tasks/${binding.taskId}/plugin-binding`);
-  expect(read.body).toEqual(binding); expect(read.headers.get('cache-control')).toBe('no-store'); expect(read.body.configuration).toEqual({ prefix: 'v1:' });
+  expect(read.body).toEqual(binding); expect(read.headers.get('cache-control')).toBe('no-store'); expect(read.body.configuration).toEqual({ prefix: 'v1' });
 });
 test('phase replay rechecks grant/fence and changing key cannot authorize a second package action', async () => {
   const f = await enabled(); const { binding } = await bound(f); const identity = await active(f, binding); const path = '/api/runner/plugin-tool/authorize'; const key = randomUUID();
