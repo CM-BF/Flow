@@ -2,13 +2,13 @@
   "errors": [],
   "human": {
     "delivery": {
-      "state": "review",
+      "state": "implementation",
       "source": "explicit"
     },
     "phase": "M2",
     "priority": 2,
-    "output": "查询功能与独立收尾证据已审；夹具新增有界连接复核通过局部检查，等待增量审查",
-    "next": "独审夹具收尾增量，明确本片接收范围；不自动重跑真实用例",
+    "output": "查询真实用例及独立收尾证据已审，有限连接复核改进也已通过独审，新的验收准备已固定",
+    "next": "等待独立资源窗口验证完整收尾，再按真实证据受控接收；不复用旧窗口",
     "blocker": {
       "state": "none",
       "text": ""

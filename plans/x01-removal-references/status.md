@@ -7,27 +7,27 @@
 | co-lead | Mika |
 | 单一 status owner / model | architecture_read / gpt-6-astra |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 2 |
-| 最近更新时间 | 2026-10-07T12:07:39.685166+00:00 |
+| 最近更新时间 | 2026-10-07T12:11:38.756191+00:00 |
 | 任务开工时间 | 2026-10-07T11:36:23Z |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 工具UTC实际开工；20min至11:56:23Z，等待计入；此项原准备时间记录；R1已实际执行并另收尾 |
 | 分支交付时间 | 2026-10-07T11:48:51.650207+00:00 |
-| 当前产出 | 查询功能与独立收尾证据已审；夹具新增有界连接复核通过局部检查，等待增量审查 |
-| 下一可用交付 | 独审夹具收尾增量，明确本片接收范围；不自动重跑真实用例 |
+| 当前产出 | 查询真实用例及独立收尾证据已审，有限连接复核改进也已通过独审，新的验收准备已固定 |
+| 下一可用交付 | 等待独立资源窗口验证完整收尾，再按真实证据受控接收；不复用旧窗口 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-removal-references |
 | branch | codex/plugin-removal-references |
 | 工作基线 / HEAD | 81a064cb9f65da4b82bd2df042c4e5414f451811；base a4ebb279dd8613497cf9757ac187c3df923d5b37（HOST已审后像，非main） |
 | 工作树 dirty 状态 | clean；仅独审交接metadata收口，源码/原件固定 |
-| 工作分支状态 | review |
+| 工作分支状态 | implementation |
 | claim | 04e46691-f4fd-46cc-808c-59c391dfd015 v1 ACTIVE7 |
 | 实现目标 | 81a064cb9f65da4b82bd2df042c4e5414f451811 |
 | 实现范围 | apps/server/src/plugin-runtime/routes.ts,apps/server/src/plugin-runtime/removal-references.ts,apps/server/src/plugin-runtime/removal-references.test.ts,apps/server/src/plugin-runtime/removal-references-pg.test.ts,packages/contracts/src/plugin-removal.ts |
 | 检查状态 | FAILED 5bd9ab34f08b64a8774ad1a05d83ca065a532ee3：PG1case passed但afterAll失败，callerUNKNOWN/KEEP；原local8/types0保持 |
-| Review | 11:53源码/准备APPROVED；12:04:43 FAILED_RESULT_FIDELITY_AND_SEPARATE_CLEANUP_REVIEW_APPROVED/0P1P2；新fixture有限等待delta待审 |
+| Review | 11:53原source/准备APPROVED；12:04:43失败结果+独立cleanupAPPROVED；12:09:17 fixture1424/4ff增量APPROVED，均0P1/P2；R2未运行 |
 | 已集成 main 状态 | 本片未接收；HOST/ACK/consumer已main de5475039d73caec631ba2ee64556208dbb1751d，主线I02 x01-candidates-combined-intake.json已只读核；不重置本片固定base、不冒本片main通过 |
 
 | TODO ID | 状态 | owner | 证据 |
@@ -55,3 +55,5 @@ local所有8groups终态absent/mergedEOF、8ownTMP同identity删除absent；最�
 2026-10-07T12:07:39.685166+00:00：新独立10min修复段12:04:51至12:14:51，freshclaimv1/7；仅自有evidence fixture+直接回归。新增6纯mock例首fake缺on失败→补fake后6/6，focusedtypes0；3child所有finalabsent/mergedEOF，3ownTMP同identity删除absent，0PG/HTTP/待launch；原8direct/原实际1case均未重跑。[新Interface](../../docs/evidence/x01-removal-references/cleanup-fix-interface.md) / [local](../../docs/evidence/x01-removal-references/cleanup-local.json)。R1结果有限独审见[批准](../../docs/evidence/x01-removal-references/removal-r1-review-approval.json)。
 
 固定fixture增量source 1424e7eaaf9a737249c5bdd5eac636685950d649；[增量交审入口](../../docs/evidence/x01-removal-references/cleanup-fix-review-ready.json)。仅原297输入中的fixturecopy改变，原manifest保持历史，不再作为当前新窗可执行输入；若后来获授R2须新namespace/绑定，当前NOT_OPEN。
+
+2026-10-07T12:11:38.756191+00:00：12:09:17 fixture增量独审0P1/P2已归档；仅绑定新R2namespace/caller/input/manifest，301pins、62external、21links。原R1297manifest/raw完全不动；R2无admission、无NEXT、无actual。Original后台更新下一排他窗口优先，本片不预占。[R2入口](../../docs/evidence/x01-removal-references/pg-r2-ready.md)。本10min段无新PG，0active/0待launch；inflight后继只读分析按Mika优先级延后。
