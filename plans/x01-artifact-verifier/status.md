@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 优先级 | 5 |
 | 本片段交付阶段 | review |
-| 当前产出 | 已明确安装式 JSON 产物验证的有限能力、独立判定与恢复边界 |
-| 下一可用交付 | 固定设计独审后，可按真实职责领取最小合同与宿主片段 |
+| 当前产出 | 设计已补齐成功、已知失败、确认取消和未知结果的不同完成条件 |
+| 下一可用交付 | 完成设计增量复审，再按真实职责领取最小合同与宿主片段 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，PENDING；设计target 35cbad4a90920cb10d8afdaa5d418ea4975c8028，不表示源码或功能通过 |
+| Review | [review.md](review.md)，CHANGES_REQUESTED 35cbad4a90920cb10d8afdaa5d418ea4975c8028；本次设计窄修待增量复审，不表示源码或功能通过 |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v1 ACTIVE，仅两文档目录；14:34:18.144Z fresh available |
 | 架构影响 | PLANNED：安装kind、显式领取协议、不可变产物引用与中心重算；main图未改，产品target固定后交Execution Lead |
 
@@ -52,3 +52,5 @@
 固定入口：[design-review-ready.json](../../docs/evidence/x01-artifact-verifier/design-review-ready.json)。本包push后STOP/保留文档claim等待独审；不得开始产品实现。
 
 设计独审派发：2026-10-07T14:40:12.757Z，一次followup_task因agent thread limit reached未启动；不重试，review仍PENDING。仅归档此元数据后STOP/FINAL腾槽，完整任务未完成；见[review-dispatch.json](../../docs/evidence/x01-artifact-verifier/review-dispatch.json)。
+
+设计初审14:42:49为CHANGES_REQUESTED/1P2；本次新段14:44:00–14:52:00仅修文档，完成矩阵及两项实施前约束已修，待独立增量审，不自称已关闭。source/product/工程运行均0；旧设计包与审查历史保留。

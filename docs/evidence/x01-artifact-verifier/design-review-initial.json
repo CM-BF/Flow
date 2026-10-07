@@ -1,0 +1,15 @@
+{
+  "reviewedAt": "2026-10-07T14:42:49.000Z",
+  "reviewer": "chatui01_owner/gpt-6-astra",
+  "relayedBy": "root",
+  "target": "35cbad4a90920cb10d8afdaa5d418ea4975c8028",
+  "conclusion": "DESIGN_CHANGES_REQUESTED",
+  "P1": 0,
+  "P2": 1,
+  "finding": "Requiring verdict for every completed blocks settled pre-load failure and clean cancellation.",
+  "nonBlockingConstraints": [
+    "positive immutable kind independent of ref presence",
+    "source project from project_task_bindings and applicable conversation authority; reject missing/conflict"
+  ],
+  "bindingScope": "8 design bindings49202B/19 baseline; no product review or execution"
+}

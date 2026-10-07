@@ -28,11 +28,11 @@
 
 ## 3. Admission、冻结身份与数据库
 
-拟 owner `POST /api/plugins/:id/verification-tasks`，请求含 expectedRevision、sourceTaskId/sourceAttemptId/artifactId/version、rule、reason；stable key 沿现命令头/receipt，不发明第二幂等存储。source tuple 精确指向该 attempt 已保存 artifact，version 必须等正文 UTF8 SHA256。源 project 在中心查出：project scoped verifier只能验证同 project；workspace scoped须在同一已有 owner 授权 workspace。不能由调用者提供 project/store 身份绕过现授权。
+拟 owner `POST /api/plugins/:id/verification-tasks`，请求含 expectedRevision、sourceTaskId/sourceAttemptId/artifactId/version、rule、reason；stable key 沿现命令头/receipt，不发明第二幂等存储。source tuple 精确指向该 attempt 已保存 artifact，version 必须等正文 UTF8 SHA256。源 project 不在 TaskRecord 上猜取：从 `flow.project_task_bindings(task_id→project_id)` 及适用的 `flow.conversation_turns(task_id→conversation_id)→flow.conversations.project_id` 核对当前权威关系，再由 `flow.projects.workspace_id` 解析 workspace。首片只接受至少一条明确的非空项目关系；两条都存在须一致，conversation 存在但其 project 未绑定也不按普通 task 兜底。关系缺失、冲突、dangling 或无法证明同 workspace 一律拒绝（409 source_scope_unresolved / 403 source_scope_mismatch），不猜 personal/default，也不信 caller 传 project。project scoped verifier 必须同 project，workspace scoped 必须在同一已有 owner 授权 workspace。把本次解析的 project/workspace 和关联依据随 immutable source ref 冻结；后续换绑不能把旧结果套到新项目。它是原文来源授权前置，不是另建项目/会话状态权威。
 
 中心先在原 TX 核当前权限/runner/current trusted policy/精确安装关联及 CAS；随后读取精确来源并构建输入，再 acceptTask 与 binding/ref 原子写入。沿现 runner→registration 锁序；新增来源/ref只读在这些锁后，事件接收不得反向取得 runner/registration 锁。固定 SQL/锁顺序必须在后继 review 与真实 PG 证明，不从本设计宣称无死锁。source行消失/内容digest漂移/不完整来源均拒绝，不能拿 latest 顶替。
 
-**存储候选**：复用034的 task单binding/attempt phase关联，不改034历史。新增一张不可变 verification-ref 扩展表，以 bindingId唯一，包含 exact source tuple/contentDigest、canonical rule/digest、algorithmId/version、verifier材料身份关联；在同TX与binding创建。无扩展行的历史binding仍只代表tool；有扩展行必须走verifier合同，缺扩展行/关联不全不得降级。新增 migration 必须给来源 artifact 现有 unique/FK/不可变约束做实核后分配编号，尚未领取或预定编号；这是实施前置，不是已经成立的 schema。
+**存储候选**：复用034的 task单binding/attempt phase关联，不改034历史。新增一张不可变 verification-ref 扩展表，以 bindingId唯一，包含 exact source tuple/contentDigest、canonical rule/digest、algorithmId/version、verifier材料身份关联；在同TX与binding创建。**kind 必须是独立于 verification-ref 存在性的正向持久身份**：安装时保存的 immutable manifest.kind 经材料校验后，写入 binding 的 immutable execution-kind tag，且与真实 receipt/material identity 一致。新 verifier binding 必须在同 TX 有 verifier tag+完整 ref；任何缺 tag、缺 ref、kind/receipt 不一致都 fail closed，禁止按 ref 缺席推 tool。历史 tool 兼容只能基于既有 immutable installed manifest 明确 kind=tool 的逐项证据，由新增迁移/受控读适配形成可信 tool 身份；未知历史材料不默认 tool。后继迁移须明确持久 tag、ref 必需性约束及旧 writer 并存策略；不能给所有新插入默认 tool 来掩盖漏写。v1/v2/v3 的排除条件读正向 kind 身份及完整性，而不只 LEFT JOIN ref IS NULL。新增 migration 必须给来源 artifact 现有 unique/FK/不可变约束做实核后分配编号，尚未领取或预定编号；这是实施前置，不是已经成立的 schema。
 
 公共 verifier binding 使用新 `flow.plugin-verification.v1` 显式 projection，复用既有完整材料/配置/target/attempt规则，新增kind=verifier及source/rule/algorithm引用。**不向旧 strict flow.plugin-runtime.v1 对象偷偷添字段，也不改历史receipt正文。** 已有 runtime enable 将安装kind转到对应 grant/算法校验；tool-task入口必须明确拒绝verifier材料，verification-task入口明确拒绝tool材料。共享合法校验在一个领域函数，不复制installedMaterial/授权FSM。
 
@@ -40,7 +40,7 @@
 
 ## 4. 资格与恢复：明确新协议，不扩大 v3
 
-拟 `flow.runner-claim.v4`：保留 runnerId/requestId，并显式有限 `pluginVerifierExecution{bindingProtocol:'flow.plugin-verification.v1',storeId,hostApiMajor:1,algorithms:[{id,version}]}`；若该runner仍支持tool，另外明确旧tool能力，不能由verifier推断。完整request在首次await前 strict parse/detach，protocol/key/全cap进入现journal和receipt持久身份。v1/v2/v3在SQL ORDER/LIMIT之前排除 verification-ref binding；v4也先筛kind/algorithm/store/target/current verifier grant，再锁后复核。普通任务和旧session owner fence原样。
+拟 `flow.runner-claim.v4`：保留 runnerId/requestId，并显式有限 `pluginVerifierExecution{bindingProtocol:'flow.plugin-verification.v1',storeId,hostApiMajor:1,algorithms:[{id,version}]}`；若该runner仍支持tool，另外明确旧tool能力，不能由verifier推断。完整request在首次await前 strict parse/detach，protocol/key/全cap进入现journal和receipt持久身份。v1/v2/v3在SQL ORDER/LIMIT之前依据正向持久 kind 排除 verifier 和身份/ref不完整的binding；不能由ref缺席默许tool。v4也先筛kind/algorithm/store/target/current verifier grant与完整ref，再锁后复核。普通任务和旧session owner fence原样。
 
 只有真正clean的旧v1 journal可按显式启动能力选择v4；已有v2/v3 request/assignment/unknown不自动升级，也不能换工作目录或key掩盖未决状态。相同runner/key跨协议或改资格冲突；empty保原key，status missing才原request claim；任意ACK未知不降级、不换key。assignment+nextkey先 durable 后执行。v4新增是实质兼容面，codec/journal/server/client/runtime必须在同纵向片完成，不能把独立schema通过称生产领取已接入。
 
@@ -50,9 +50,19 @@ phase仍为load/invoke且每binding/invocation只一对，沿当前attempt/owner
 
 ## 5. 独立重算、完成与错误
 
-verifier输出是strict有限结果JSON，不接受任意passed/任意verifierId。runtime拥有completed产生权，插件无权生成event ID/sequence/owner。用现terminal bundle一次持久 result artifact+新typed verification+completed。新verification事件带 frozen reference身份、领域inputDigest、算法/规则digest、verdict；center依ref取原文重算并比较完整有限结果。若报错/假passed/错身份，原reportEvents事务回滚artifact/detail/timeline/runner_event/ACK前缀；不留下部分通过。普通flow.text/engineering走原路径。
+verifier输出是strict有限结果JSON，不接受任意passed/任意verifierId。runtime拥有completed产生权，插件无权生成event ID/sequence/owner。产生了可报告 verdict 时，用现terminal bundle一次持久 result artifact+新typed verification+completed；未产生 verdict 的已知失败/确认取消按下表沿现 completed-only 路径，不能伪造结果包。新verification事件带 frozen reference身份、领域inputDigest、算法/规则digest、verdict；center依ref取原文重算并比较完整有限结果。若报错/假passed/错身份，原reportEvents事务回滚artifact/detail/timeline/runner_event/ACK前缀；不留下部分通过。普通flow.text/engineering走原路径。
 
-新结果artifact只属于verification任务，正文可为canonical有限verdict，不冒充source原文；新增verification分支验证其自身artifact与冻结foreign source两者，不放宽现`verifyArtifact`对legacy当前task/attempt的限制。完成门禁由中心**从该binding/ref判定必须有新verifier验证结果**，不能省略pluginSource/verification或改发flow.text然后completed绕过。真实failed verdict可保存并以failed完成；passed完成需center已确认passed。若提出的现completed语义不能直接表达此条件，后继必须明确改其直接consumer，不能只加event codec。
+新结果artifact只属于verification任务，正文可为canonical有限verdict，不冒充source原文；新增verification分支验证其自身artifact与冻结foreign source两者，不放宽现`verifyArtifact`对legacy当前task/attempt的限制。中心先从正向 kind 与冻结 ref 确认这是 verifier 任务，再按 outcome 与已知执行结算状态应用下列矩阵；不是对所有 completed 一律要求 verdict。任何已提交 verdict 都必须经过同一来源/phase/独立重算校验，不能以 failed/cancelled 绕过对已报结果的校验。
+
+| 执行结算与请求 outcome | 中心接收条件 / verification 状态 | runner / 恢复责任 |
+| --- | --- | --- |
+| succeeded | 必须有本attempt完整且中心重算一致的 passed、结果artifact和两phase关联；省略或换成flow.text均拒绝 | 固定terminal bundle；原ACK→journal.complete→outbox删除 |
+| 得到 failed verdict，报告 failed | 必须有中心重算一致的真实failed及完整结果身份；不能用普通执行error捏造missing-required-keys | 同一终态持久包，失败结果可读；源任务与源产物不变 |
+| 未得到verdict，但已知失败（例如load前明确授权拒绝）→ failed | 可沿既有completed-only接收，verification保持未验证，不制造failed verifier结果；原owner/lease/event fence仍必需 | 必须是现runtime可确认settled的失败，不把unknown异常归类于此；不需凭空补load/invoke记录 |
+| 未得到verdict，确认执行/资源已闭合的取消 → cancelled | 可沿既有completed-only接收，verification保持未验证；源task/产物不改 | 取消请求或signal本身不证明闭合。沿既有可信runtime/host结算事实，未完成资源不能走本行 |
+| 执行、资源、授权ACK或报告ACK任一未知 | 不产生新的completed，也不补造verdict；若原终态已持久，仅允许原字节重放恢复ACK | 保留journal/原身份；禁止重invoke、新key或用failed/cancelled强行清理 |
+
+若verdict已产生但完成前取消，已报verdict仍必须重算一致；task取消不把passed结果变成task succeeded。后继必须在现 `events.ts` completed消费者实现这张矩阵，并保留 `runtime.ts:308–323` settled失败/确认取消的合法路径。center验证结果不等于独立验证宿主已退出；资源结算由现可信宿主/PROCESS证据承担，未具备该证据时只能UNKNOWN。
 
 错误：输入/rule格式400；源不存在404（不泄漏未授权身份）；超界413；revision/source/pin/replay冲突409；当前无权限403；传输/ACK解码/已确认phase但结果未知保持UNKNOWN，不用普通failed掩盖。用户只读source/ref不能被当作新执行/删材料授权。
 

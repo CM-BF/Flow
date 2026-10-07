@@ -60,3 +60,7 @@
 2. 产品进入时fresh currentmain与上述own/shared paths；旧X01父和PROCESS各自STOP部分literal→amend→本任务take，不release整个parent。
 3. 第一片真实local；第二片固定operator+唯一PG；第三片真实启动/CLI/现consumer。每片必要差量独审及窄intake，不要求先全库重构或全局pluginframework。
 4. registry/task登记/架构图由Execution Lead：本新增subtask唯一status路径见本目录plan，图目前仅planned，未经产品实现不画成main运行事实。
+
+## 14:44 设计增量的实施前约束
+
+正向 immutable execution-kind 及来源项目关系不得在后继实现中省略。新增migration须实核034现immutable trigger、安装manifest关联及新旧writer并存，再确定tag/ref约束，不能从ref缺席推tool。来源只读依赖 `packages/storage/migrations/004-projects.sql`、`packages/storage/migrations/007-conversations.sql`、`packages/storage/migrations/018-conversation-context.sql`、`apps/server/src/projects/commands.ts`、`apps/server/src/conversations/state.ts`；本片不需修改这些既有状态owner。若实现需改其锁/关系语义，须另提精确scope而非从此设计获取写权。

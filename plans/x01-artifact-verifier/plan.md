@@ -39,10 +39,12 @@
 | AV-C | 恶意包报告假 passed / 错 source/version/inputDigest / 错 phase owner → reportEvents 整批回滚，ACK 前缀不前进 | 真 PG/HTTP，不能仅 SQL fake；NOT_RUN |
 | AV-D | 不支持 verifier 的 v1/v2/v3 runner，队列前部 verifier 后部普通任务 → SQL LIMIT 前跳过，旧任务仍可领取；显式 v4 才领匹配算法/store/runner | 真 PG mixed queue + journal 完整 ACK；NOT_RUN |
 | AV-E | 同 key 更换协议/资格/规则/来源 → conflict；ACK 未知 → 原 key/body/assignment 保留，重启只重报 durable 终态，不重 invoke | journal/outbox 实际 FS + PG；NOT_RUN |
-| AV-F | 撤 verifier grant/runner revoke/旧 owner/取消 → 下一 phase 拒绝；disable 仅挡新绑定，已 pin 不改；迟到新事件 fenced，已确认 exact replay 仍幂等 | 真 PG/受控 host；NOT_RUN |
+| AV-F | 撤 verifier grant/runner revoke/旧 owner/取消 → 下一 phase 拒绝；load前已知拒绝可无verdict failed，确认资源闭合取消可无verdict cancelled且保持未验证，unknown不得completed；disable不改旧pin，迟到事件fenced/exact replay幂等 | 真 PG/受控 host；NOT_RUN |
 | AV-G | 超长正文/规则/序列化输入 → 413/400 无 task/binding/audit 残余；失败 verdict不改源任务/旧产物 | codec + PG 事务；NOT_RUN |
-| AV-H | 实际 CLI/启动选择显式 verifier 能力，旧 session/journal 不被重置；用户可读指定来源及通过/失败理由 | 实际入口/有限产品消费，Web writer另协调；NOT_RUN |
+| AV-H | 实际 CLI/启动选择显式 verifier 能力，旧 session/journal 不重置；用户能区分中心确认的失败结果、未验证的执行失败/取消与UNKNOWN，不伪造failed verdict；成功不能省略verification | 实际入口/有限产品消费，Web writer另协调；NOT_RUN |
 
 ## 实施解除条件与非目标
 
 本轮没有产品写权。后继须按当前版本部分 handback/take，先处理 PROCESS 正在持有的 runtime/execution 以及 X01 父合同/center 叶，迁移槽另协调。文档 reviewer 可以要求设计窄修，不因此启动实现或工程检查。不能声称第三方包 sandbox、host release、物理卸载、任意未知副作用恢复、个人部署或完整 X01 已完成。
+
+2026-10-07设计窄修：按14:42:49独审P2补完成矩阵；同时要求独立正向持久kind及project_task_bindings/适用conversation来源授权，缺失/冲突拒绝。新migration编号/FK仍待合法领取，产品全部NOT_RUN。
