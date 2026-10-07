@@ -1,0 +1,30 @@
+{
+  "at": "2026-10-07T12:29:35.352Z",
+  "source": "Owner actual reports; no manager product run",
+  "phase": {
+    "state": "MSG03_DIRECT2_RETURNED_SAME_FINITE_PHASE_SOURCE_FIX",
+    "task": "WPF-MESSAGESETTINGS03",
+    "owner": "workspace_panels_owner",
+    "currentLocal": 0,
+    "totalMs": 60000,
+    "tmpBytes": 16777216,
+    "rawBytes": 2097152,
+    "sourceLogicalPlanningBytes": 4194304,
+    "minimumFreshBytes": 6237454336,
+    "spentMs": 11407,
+    "remainingMs": 48593,
+    "lastAttempt": {
+      "name": "direct-2",
+      "actualStart": "2026-10-07T12:27:53.580Z",
+      "nodePgid": 77845,
+      "exitCode": 0,
+      "selectedPassed": 8,
+      "notSelected": 57,
+      "chargeMs": 2090,
+      "cleanup": "PID/PGID absent and scratch absent per owner; regular child.log, not pipe/dualEOF proof",
+      "boundary": "Existing affected direct scope only; material preparation-failure/cancel restoration of A into B still source diagnosis and not proved by this run"
+    },
+    "priorFailures": "types-1 config1796; types-2 two narrow type issues5400; direct-1 actual5/8, three tests assumed rejection instead of Restore state error; all prior owned cleanup complete per owner",
+    "record": "plugin-browser-source-and-msg03-local-20261007/msg03-local-events.json"
+  }
+}

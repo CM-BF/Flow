@@ -6,7 +6,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T12:24:44.228Z；Release已主线收口并释放，MSG03进度源已登记；Original个人固定更新保留下一排他窗口，尚未报实际启动 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T12:30:16.754Z；Plugin模块浏览器固定包待集中审，MSG03定向局部8项通过但材料失败/取消分支仍在修复；Original个人窗口已换1230新有限段 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -22,11 +22,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
-| 当前产出 | 三份保留App的固定后台兼容验证已入主线并完成收口；真实聊天消息设置正在原owner独立树实施，看板已显示其进度。插件定向实证已通过，浏览器仍在准备。 |
-| 下一可用交付 | 原TODO11完成真实App草稿、发送、队列和恢复接线；插件继续独立模块浏览器准备。个人后台更新由原发布负责人执行，当前保留窗口不等于已启动。 |
+| 当前产出 | 固定后台兼容已主线收口；真实聊天设置接线的定向局部检查通过一组，正在处理材料准备失败和取消时保护新草稿的边界。插件模块浏览器源码与输入包已固定。 |
+| 下一可用交付 | MSG03补齐失败、取消与新草稿设置隔离；Plugin固定浏览器包集中审后按个人窗口实际归还安排。原三App兼容结果不重复运行。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Original已保留个人固定更新排他窗，等待实际START/完整RETURN；其他PG/Chrome暂停。MSG03仅隔离普通local，首轮配置失败1796ms已清理归还、同段继续。 |
+| 资源协调 | [唯一当前来源](../../docs/evidence/web-platform/resource-window-current.json)：Original个人更新1230新段保留排他，尚未收到START/完整RETURN；其他PG/Chrome暂停。MSG03隔离local当前已归还，累计11407/60000ms，原失败保留；同段源码修复继续。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

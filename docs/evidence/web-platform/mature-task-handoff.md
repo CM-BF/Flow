@@ -1,8 +1,8 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T12:24:44.228Z。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T12:30:16.754Z。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
-**MSG03 已领取、登记并实施：** 原MATURE02/TODO11沿[常规source operator规则](message-settings-app-self-provision-20261007/rule-intake.json)，panels在固定c130新独立树完成369源物化及[7e3f v1 exact18原子领取](message-settings-app-self-provision-20261007/msg03-receipt.json)。[D05正式live回执](release-main-registry-close-20261007/msg03-live-receipt.json)与root12:18:58观察确认唯一sourceCurrent、parent MATURE02及claim匹配；旧登记等待已解除。[原owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md)是唯一进度源。普通局部首轮仅配置查找失败，未宣称产品类型已过；按已授有限段继续，不再申请逐片供给。
+**MSG03 已领取、登记并实施：** 原MATURE02/TODO11沿[常规source operator规则](message-settings-app-self-provision-20261007/rule-intake.json)，panels在固定c130新独立树完成369源物化及[7e3f v1 exact18原子领取](message-settings-app-self-provision-20261007/msg03-receipt.json)。材料失败恢复所需的单一adapter接缝已于12:32:04.114Z[合法amend v2 exact19](plugin-browser-source-and-msg03-local-20261007/msg03-amend-receipt.json)，只追加 `plugin-integration/react.tsx`，原18保留；[D05正式live回执](release-main-registry-close-20261007/msg03-live-receipt.json)与root12:18:58观察确认唯一sourceCurrent、parent MATURE02及claim匹配；旧登记等待已解除。[原owner状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md)是唯一进度源。普通局部首轮仅配置查找失败，未宣称产品类型已过；按已授有限段继续，不再申请逐片供给。
 
 **三 App 固定兼容片已收口：** [精确c3接收入口](release-c3-actual-admission-20261007/main-intake.json)及root69e9限定实际审保持固定6c/7d1/context。主线e029已接收，原owner最终58562 clean并于12:18:30.761Z[释放38b9 v2四scope](release-main-registry-close-20261007/release-receipt.json)。这不等于个人更新已完成，也不把后续中心fix加入固定兼容tuple。
 
@@ -10,7 +10,7 @@
 
 ## 当前窗口与用户交付
 
-**当前唯一资源交接：** Original已明确[保留个人固定更新窗口](release-main-registry-close-20261007/personal-update-reservation.json) `svc06-personal-7d1-20261007-1224`，fresh后才实际START；尚未收到START，不按计划时间释放。此窗口禁止其他PG/Chrome/安装/性能/服务旅程，MSG03隔离普通local可继续。UPSTREAM12:10:09.681464已完整归还并[进入4fdd主线](release-main-registry-close-20261007/upstream-main-intake.json)，REMOVAL R2 ready后置无NEXT。后续普通PG与独立0PG浏览器可依[新规则](release-main-registry-close-20261007/parallel-browser-rule.txt)和完整预算配对，但不覆盖本次个人服务排他声明；Plugin目前只source准备。所有旧KEEP仍保留。
+**当前唯一资源交接：** Original首1224段因facts调用缺output参数而在snapshot前51ms退出，0个人访问/PG/迁入，原失败独审保留。原operator已接[1230新有限个人窗口](plugin-browser-source-and-msg03-local-20261007/original-personal-window-source.json)，固定7d1/6c/原身份、维护从drain900s；fresh后才START，未收到START或完整RETURN，不按计划时刻放窗。此窗口禁止其他PG/Chrome/安装/性能/服务，MSG03隔离普通local可继续。其[定向实际](plugin-browser-source-and-msg03-local-20261007/msg03-local-events.json)最新8/8通过、57未选，累计11407/60000且owned已清理；材料准备失败/cancel回填路径尚未被该通过覆盖。[Plugin固定包](plugin-browser-source-and-msg03-local-20261007/plugin-handoff.json)0bc/0c43待root集中source/native审，无gate或Chrome运行；REMOVAL R2仍ready后置无NEXT。普通PG与0PG浏览器配对规则不覆盖本次个人服务排他。
 
 [本次当前入口](release-caller-recovery-main-20261007/current.json)：Original bootstrap已按原件11:26:28.127启动、11:27:03.659Z清理归还；随后X01 VERSION LIFECYCLE已实际11:34:20.882389启动、11:34:41.853508 exact归还；[实际原件](x01-version-return-20261007/current.json)区分delivery与收尾复核，彼时无新NEXT，当前以本节actual行和resource-current为准。Release c1固定包经集中审存在scratch所有权P1/漏boss3连接P2，原W01 c2修复及3场景局部实际已获[集中接受](x01-version-return-20261007/release-c2-delta-review.json)，native固定边界已接受；最终1e5f/c2绑定后已执行一次，[实际失败/清理](x01-version-return-20261007/release-c2-failed-cleanup-accounting.json)在Node前被sandbox语法拒绝，0Chrome/fixture未入、410ms封账并11:44:37.704120归还，不自动重跑。插件direct-only新r4调用器已固定61a7并获[源码审](release-c3-actual-admission-20261007/root-plugin-direct-r4-source-review.json)，[20s/5cleanup普通local](release-c3-actual-admission-20261007/plugin-r4-local-segment.json)已实际outer0/15exactPASS并12:08:23.129744Z[完整归还](release-c3-actual-admission-20261007/plugin-r4-cleanup-accounting.json)，882ms封账、[独立结果审已通过](message-settings-app-self-provision-20261007/plugin-r4-actual-review.json)；旧30082/30k父FAIL保持。原各owner状态/claim与后续实际资源均沿下面唯一指针，不在此维护第二验收矩阵。
 

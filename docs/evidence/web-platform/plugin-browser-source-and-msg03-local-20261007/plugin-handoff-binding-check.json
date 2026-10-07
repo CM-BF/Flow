@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-07T12:29:35.352Z",
+  "head": "0c43aa03ead5caaf26d1b622f4fa0e5cacd33a7b",
+  "source": "0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+  "remoteEqualCleanObserved": true,
+  "checks": [
+    {
+      "path": "/private/tmp/prm-b1/binding.json",
+      "bytes": 63408,
+      "sha256": "f1cc130e88866448887f7e6b9eb52891836bde6743fd3e62a18a2eb2ead4f765"
+    },
+    {
+      "path": "/private/tmp/prm-b1/manifest.json",
+      "bytes": 1889,
+      "sha256": "91a6bb61b4ad8a89af59ea29b67d8a01bd4e2cc2c9c1d98c2155b032b51310ef"
+    }
+  ],
+  "scope": "Manager named handoff binding only; root performs source/native review; no execution or re-verification of entire dependency closure"
+}

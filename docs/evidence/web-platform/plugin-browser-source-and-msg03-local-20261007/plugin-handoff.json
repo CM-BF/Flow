@@ -1,0 +1,43 @@
+{
+  "at": "2026-10-07T12:27:04.888321+00:00",
+  "source": "0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+  "head": "0c43aa03ead5caaf26d1b622f4fa0e5cacd33a7b",
+  "branch": "codex/web-plugin-runtime-management",
+  "state": "PREPARED_NOT_RUN",
+  "binding": {
+    "path": "/private/tmp/prm-b1/binding.json",
+    "sha256": "f1cc130e88866448887f7e6b9eb52891836bde6743fd3e62a18a2eb2ead4f765"
+  },
+  "manifest": {
+    "path": "/private/tmp/prm-b1/manifest.json",
+    "sha256": "91a6bb61b4ad8a89af59ea29b67d8a01bd4e2cc2c9c1d98c2155b032b51310ef"
+  },
+  "parentSha256": "671b19b8b884ea76ad25dfb2eb6bd67a5fb32c7904a54d48cd46d2e371bf123b",
+  "workerSha256": "2b4b94857ca7ebe0d52fb0ea5513273f2ffa30d89b285d0b9f31a5bc4fed93f4",
+  "routineDelta": {
+    "head": {
+      "before": "0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+      "after": "0c43aa03ead5caaf26d1b622f4fa0e5cacd33a7b"
+    },
+    "sourceAndRunnableUnchanged": true
+  },
+  "sourceReview": null,
+  "nativeBoundaryApproval": null,
+  "gate": null,
+  "projectScopes": "STOP; claim retained",
+  "runtime": "NOT_RUN; personal-service reservation honored",
+  "command": "python3 /private/tmp/prm-b1/supervisor.py --gate <future-fresh-gate.json>",
+  "proposal": {
+    "totalMs": 60000,
+    "cleanupReserveMs": 15000,
+    "scratchBytes": 67108864,
+    "retainedBytes": 8388608,
+    "metadataBytes": 1048576,
+    "pg": 0,
+    "chrome": 1,
+    "nodeWorker": 1,
+    "ownedHTTP": 2,
+    "floorBytes": 6199705600,
+    "floorMeaning": "Historical conservative floor only; future complete fresh combination may be higher. Personal service exclusive reservation currently blocks runtime. No grant."
+  }
+}

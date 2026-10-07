@@ -1,0 +1,41 @@
+{
+  "kind": "IN_PROGRESS_SOURCE_RESEARCH_NOT_FIXED_REVIEW",
+  "task": "WPF-MESSAGESETTINGS03",
+  "at": "2026-10-07T12:28:06.623126+00:00",
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/node_modules/.pnpm/@assistant-ui+core@0.3.22_@assistant-ui+store@0.3.16_@assistant-ui+tap@0.9.20_@types+react@19_wo7aay7wru6vfrwtftg2sxofru/node_modules/@assistant-ui/core/src/runtime/base/base-composer-runtime-core.ts",
+      "bytes": 39362,
+      "sha256": "6de137d5c36d9b4278b2363e5e797afddd3ebf9520060783c67cdc26c1831719"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/apps/web/src/conversations/ConversationThread.tsx",
+      "bytes": 25744,
+      "sha256": "d223489b4bcf95388a961381ebac61bf5f5d5c4d5a180977c6481874a5787d90"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/apps/web/src/plugin-integration/attachments.tsx",
+      "bytes": 22929,
+      "sha256": "3f7c850c2d5bed92a55f0330d9c277042a3c2935870c38784753fb45397d96f4"
+    }
+  ],
+  "finding": {
+    "title": "Official material-failure return bypasses new settings ownership protection",
+    "evidence": [
+      "Core prepare rejection calls _returnSubmissionToDraft at397-400; cancellation calls _returnToDraft at551-556; detached composer _returnToDraft at564-582 prepends captured submission text and merges attachments into whatever draft now exists.",
+      "Attachment binding callback runs after the core restored-draft notification; it reports failure/cancel without invoking onNew.",
+      "Current new ownership guard only protects ConversationThread.onNew catch. Its bindComposer preparation-failed callback clears pending/handoff but does not distinguish settings-only B from old A."
+    ],
+    "impact": "After A detaches while materials prepare, B can hold different settings with empty or equal text. A prepare failure/cancel may prepend A text/files into B while retaining B settings. This is inferred from installed source and current draft changes, not a browser-observed failure.",
+    "action": "Existing owner should keep failed A explicitly recoverable without silently modifying B, using the current owned ConversationThread/private settings boundary and real composer API. Do not patch shared core or broaden shared attachment scope without coordination. Do not create a second independently editable draft store/FSM.",
+    "validation": "Use actual installed runtime in existing real App preparation-failure and explicit-cancel cases, including settings-only B and equal-text/different-settings B. Existing manual deferred-success/outbox checks cannot prove this path."
+  },
+  "execution": {
+    "productImports": 0,
+    "test": 0,
+    "PG": 0,
+    "browser": 0,
+    "projectWrites": 0
+  },
+  "reviewState": "No fixed implementation decision. Forwarded through manager for current ordinary implementation fix."
+}

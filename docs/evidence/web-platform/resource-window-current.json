@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T12:24:44.228Z",
-  "state": "ORIGINAL_PERSONAL_UPDATE_RESERVED_NOT_STARTED_EXCLUSIVE",
-  "groupWindowOwnership": "Original explicitly reserved svc06-personal-7d1-20261007-1224 for assignment_review; fresh admission required, no actual START received. Personal update excludes other PG/Chrome/install/performance/service windows. Separate WT source and isolated ordinary local may continue. Web has no heavy holder or Chrome launch. Prior UPSTREAM fully returned; all old KEEP unchanged.",
+  "recordedAt": "2026-10-07T12:32:42.666Z",
+  "state": "ORIGINAL_PERSONAL_1230_EXCLUSIVE_MSG03_ORDINARY_LOCAL",
+  "groupWindowOwnership": "Original personal1230 new finite window holds explicit exclusivity until actual complete RETURN; prior1224 failed51ms before snapshot with no personal/PG/import effects. No Web PG/Chrome. MSG03 direct-2 exited0 and owned cleanup returned; local cumulative11407/60000, no current local process reported. Source fix for core material-failure/cancel return pending. Prior KEEP preserved.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -1216,11 +1216,16 @@
   },
   "nextWebReady": {
     "task": "WPF-PLUGIN-RUNTIME01",
-    "state": "SOURCE_ONLY_BROWSER_PREPARATION_NOT_RUNTIME_READY",
+    "state": "PREPARED_WAITING_ROOT_SOURCE_NATIVE_REVIEW_PERSONAL_EXCLUSIVE",
     "owner": "w01_owner",
     "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-plugin-runtime-management/plans/wpf-plugin-runtime-management/status.md",
     "runtimeReservation": null,
-    "previousReleaseClosure": "release-main-registry-close-20261007/current.json"
+    "previousReleaseClosure": "release-main-registry-close-20261007/current.json",
+    "source": "0bc393de593fd9d057efa08cd6d4ff261f99b24f",
+    "ownerHead": "0c43aa03ead5caaf26d1b622f4fa0e5cacd33a7b",
+    "handoff": "/private/tmp/prm-b1/final-handoff.json",
+    "claim": "0a9a9b2c v1 exact7",
+    "proposal": "60s incl15cleanup/0PG1Chrome1Node2HTTP/64scratch8retained1meta; floor must use fresh complete sum, historical6199705600 not current grant"
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
   "messageSettingsB4Result": {
@@ -1425,10 +1430,28 @@
     "ruleIntake": "message-settings-app-self-provision-20261007/rule-intake.json"
   },
   "latestMikaQueueIntake": {
-    "source": "Root relay of latest Lead/Mika coordination, no Web resample",
-    "previousActualReturns": "SVC07 PASS cleanup; C02 heavy returned per root; Quick c1 FAILED cleanup; immutable receipts remain under existing history",
-    "current": "Prior Mika local/heavy and Lead SVC06 ended per Root/Lead incoming. Latest ordinary-local rule is max1/team,max3 globally; old sole-local wait superseded. No inferred heavy grant.",
-    "webReservation": false
+    "observedAt": "2026-10-07T12:33:55.287Z",
+    "source": "Mika message relayed by root; external source/main facts not manager-executed tests",
+    "clientRemoval": {
+      "head": "f86bed0b991ffad88583630084fdbfa6f95d1a7b",
+      "state": "READY_SOURCE_AND_LOCAL_REVIEW_APPROVED_NOT_MAIN",
+      "claim": "79284 v1 exact7 per relay",
+      "intake": "6 rows/118130B, requires contract81a prior or same integration",
+      "boundary": "mockFetch/local is not PG/Web/removal actual; not a Web writer grant"
+    },
+    "upstream": {
+      "main": "4fdd856293a502209d7509ea37da901bbfd89f72",
+      "ownerFinal": "2b4c0ca8 (reported short hash)",
+      "claim": "5e6eba8c-5838-42c5-9455-f5112ca05e47",
+      "version": 3,
+      "state": "RELEASED",
+      "committedAt": "2026-10-07T12:31:13.248Z",
+      "receipt": "/tmp/x01-upstream-release-stopped-20261007-1231-receipt.json"
+    },
+    "ordinaryLocalDeclaredBytes": 22020096,
+    "newHeavyOrNext": false,
+    "webReservation": false,
+    "personalWindow": "Original1230 exclusive; no actual RETURN received"
   },
   "opsWorkspaceCacheDependencies": {
     "state": "EXACT_PAYLOAD_RETIRED_NOT_RUNTIME_READY",
@@ -1706,10 +1729,10 @@
   "externalCurrentAdmission": {
     "task": "SVC06 personal fixed update",
     "operator": "Original Lead / assignment_review",
-    "window": "svc06-personal-7d1-20261007-1224",
-    "state": "RESERVED_NOT_STARTED",
-    "source": "5c29 (Original supplied short source; no guessed full hash)",
-    "delivery": "8825109e (Original supplied short delivery)",
+    "window": "svc06-personal-7d1-20261007-1230",
+    "state": "RESERVED_NEW_SEGMENT_AFTER_PRECONDITION_FAILURE_FRESH_GATES_REQUIRED",
+    "source": "5c29e13a5d251e4fb6b99d7d1277ace85dee24dc",
+    "delivery": "8825109e3f016553ff3750f94ec26bd1a26de9a3",
     "nativeReview": "APPROVED per Original direct inbound via root",
     "backendSource": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
     "artifact": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
@@ -1719,7 +1742,24 @@
     "queryAllowance": 0,
     "drainLimit": "15 minutes from drain per Original; not inferred runtime completion",
     "restriction": "No other PG, Chrome, installation, performance or service run while this explicit personal window holds. Isolated ordinary local/source only may continue. Generic PG plus 0PG browser pairing does not override this window.",
-    "record": "release-main-registry-close-20261007/personal-update-reservation.json"
+    "record": "plugin-browser-source-and-msg03-local-20261007/original-personal-window-source.json",
+    "failure": null,
+    "declaredBytes": 536870912,
+    "previousFailedWindow": "plugin-browser-source-and-msg03-local-20261007/personal-1224-failed-source.json",
+    "canonicalSource": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/docs/quality/local-validation-svc06-personal-window-20261007.json",
+    "maintenanceFromDrainMs": 900000,
+    "bounds": {
+      "migrationWorkSeconds": 120,
+      "migrationTermSeconds": 0.5,
+      "migrationReapSeconds": 2,
+      "maintenanceFromDrainSeconds": 900,
+      "newBytes": 536870912,
+      "rawBytes": 2097152,
+      "minimumFreeBytes": 2684354560,
+      "liveReserveBytes": 1073741824,
+      "providerQueries": 0
+    },
+    "recordSha256": "5d955a443948c0d80f51cf6dfbec0198842a62eab6370c405a65ee5372ab01b2"
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1729,9 +1769,9 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": {
-    "state": "ORIGINAL_PERSONAL_UPDATE_EXCLUSIVE_RESERVED",
+    "state": "ORIGINAL_PERSONAL_NEW_FINITE_WINDOW_EXCLUSIVE",
     "reservation": true,
-    "window": "svc06-personal-7d1-20261007-1224",
+    "window": "svc06-personal-7d1-20261007-1230",
     "actualStart": null,
     "removalR2": "READY_QUEUED_NO_NEXT_NO_LAUNCH until actual Original complete return",
     "pluginBrowser": "SOURCE_ONLY_NOT_AUTHORIZED_TO_LAUNCH",
@@ -1754,7 +1794,7 @@
     "ruleIntake": "release-main-registry-close-20261007/current.json"
   },
   "webOrdinaryLocal": {
-    "state": "MSG03_TYPES1_CONFIG_FAILED_RETURNED_SAME_FINITE_PHASE_CONTINUES",
+    "state": "MSG03_DIRECT2_RETURNED_SAME_FINITE_PHASE_SOURCE_FIX",
     "task": "WPF-MESSAGESETTINGS03",
     "owner": "workspace_panels_owner",
     "currentLocal": 0,
@@ -1763,18 +1803,21 @@
     "rawBytes": 2097152,
     "sourceLogicalPlanningBytes": 4194304,
     "minimumFreshBytes": 6237454336,
-    "spentMs": 1796,
-    "remainingMs": 58204,
+    "spentMs": 11407,
+    "remainingMs": 48593,
     "lastAttempt": {
-      "name": "types-1",
-      "actualStart": "2026-10-07T12:23:27.399026Z",
-      "nodePgid": 8203,
-      "exitCode": 2,
-      "chargeMs": 1796,
-      "cleanup": "Owner reports group absent and exact scratch removed",
-      "failure": "Sparse check config vite/client resolution relative to TMP; no product type conclusion",
-      "record": "release-main-registry-close-20261007/msg03-local-events.json"
-    }
+      "name": "direct-2",
+      "actualStart": "2026-10-07T12:27:53.580Z",
+      "nodePgid": 77845,
+      "exitCode": 0,
+      "selectedPassed": 8,
+      "notSelected": 57,
+      "chargeMs": 2090,
+      "cleanup": "PID/PGID absent and scratch absent per owner; regular child.log, not pipe/dualEOF proof",
+      "boundary": "Existing affected direct scope only; material preparation-failure/cancel restoration of A into B still source diagnosis and not proved by this run"
+    },
+    "priorFailures": "types-1 config1796; types-2 two narrow type issues5400; direct-1 actual5/8, three tests assumed rejection instead of Restore state error; all prior owned cleanup complete per owner",
+    "record": "plugin-browser-source-and-msg03-local-20261007/msg03-local-events.json"
   },
   "externalPreviousReturn": {
     "task": "X01-UPSTREAM-UPGRADE01",
@@ -1794,7 +1837,7 @@
   "quickAppSourceProvision": {
     "state": "PROVISIONED_CLAIM_COMMITTED_IMPLEMENTING",
     "request": "message-settings-app-source-request/request.json",
-    "scopeCount": 18,
+    "scopeCount": 19,
     "base": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
     "authority": "Currentmain source-operator; old one-time permission prerequisite superseded",
     "runtimeReservation": null,
@@ -1809,9 +1852,9 @@
     "ruleIntake": "message-settings-app-self-provision-20261007/rule-intake.json",
     "claim": {
       "id": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
-      "version": 1,
-      "scopeCount": 18,
-      "committedAt": "2026-10-07T12:11:44.045Z"
+      "version": 2,
+      "scopeCount": 19,
+      "committedAt": "2026-10-07T12:32:04.114Z"
     },
     "receipt": "message-settings-app-self-provision-20261007/msg03-receipt.json",
     "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
@@ -1819,7 +1862,9 @@
     "firstCanonicalHead": "2efead09ed9767990cb9dadf01980f6d9200e42c",
     "registrationRequest": "message-settings-app-self-provision-20261007/msg03-source-registration.json",
     "registrationReceipt": "release-main-registry-close-20261007/msg03-live-receipt.json",
-    "registrationObservedAt": "2026-10-07T12:18:58Z"
+    "registrationObservedAt": "2026-10-07T12:18:58Z",
+    "scopeFollowup": "plugin-browser-source-and-msg03-local-20261007/msg03-restore-seam-scope-proposal.json",
+    "latestAmendReceipt": "plugin-browser-source-and-msg03-local-20261007/msg03-amend-receipt.json"
   },
   "recoveryFinalClosure": {
     "ownerHead": "2879477536796656227e67a0cd53641af73cb305",

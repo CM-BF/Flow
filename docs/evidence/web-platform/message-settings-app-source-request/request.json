@@ -10,25 +10,26 @@
   "base": "c13042ba7e74733d8c68cc05bd1b2d7cb5bbaa50",
   "writeScope": [
     "apps/web/src/App.tsx",
-    "apps/web/src/conversations/ConversationThread.tsx",
-    "apps/web/src/conversations/projection.ts",
-    "apps/web/src/conversations/outbox.ts",
-    "apps/web/src/conversations/queue/projection.ts",
-    "apps/web/src/conversations/queue/commands.ts",
     "apps/web/src/conversation-context/receipts.ts",
-    "apps/web/src/recovery/binding.tsx",
-    "apps/web/src/plugin-integration/session.ts",
-    "apps/web/src/plugin-integration/message-settings.tsx",
+    "apps/web/src/conversations/ConversationThread.tsx",
+    "apps/web/src/conversations/outbox.ts",
+    "apps/web/src/conversations/projection.ts",
+    "apps/web/src/conversations/queue/ConversationQueue.tsx",
+    "apps/web/src/conversations/queue/commands.ts",
+    "apps/web/src/conversations/queue/projection.ts",
     "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
     "apps/web/src/execution-profiles/execution-profiles.css",
-    "apps/web/test/conversation-recovery.test.ts",
-    "apps/web/test/conversation-recovery.fixture.ts",
+    "apps/web/src/plugin-integration/message-settings.tsx",
+    "apps/web/src/plugin-integration/react.tsx",
+    "apps/web/src/plugin-integration/session.ts",
+    "apps/web/src/recovery/binding.tsx",
     "apps/web/test/conversation-recovery.browser.ts",
-    "apps/web/src/conversations/queue/ConversationQueue.tsx",
-    "plans/wpf-message-settings-app",
-    "docs/evidence/wpf-message-settings-app"
+    "apps/web/test/conversation-recovery.fixture.ts",
+    "apps/web/test/conversation-recovery.test.ts",
+    "docs/evidence/wpf-message-settings-app",
+    "plans/wpf-message-settings-app"
   ],
-  "scopeCount": 18,
+  "scopeCount": 19,
   "originalLeadActionRequested": "No permission required. Original visibility only: panels is soleoperator for target; if actual conflicting provision exists report exactidentity, no duplicate operator.",
   "sourceRules": [
     "First quantify complete fixed transitive source supply and resolver closure against c130; direct43 front is not complete execution closure",
@@ -59,10 +60,10 @@
       "thirdPartyResolver": "43 candidatepackages exist; readonlymanifest/entry closure finalization proceeds withoutimport/installation; not runtimePASS"
     }
   },
-  "scopeCorrection": "ConversationQueue.tsx8924B moved fromreadonly towrite to render each queueditem frozenrequested; original15code/test becomes16code/test plus2metadata. No newselector/slot/store/TaskThread write.",
+  "scopeCorrection": "Initial Queue display gap supplied before original18 take; latest +react.tsx complete-draft restore/discard seam legally amended to19 after fresh nooverlap; shared core/attachments module unchanged",
   "resource": "SOURCE_ONLY; no PG/Chrome reservation. Release criticalpath proceeds independently.",
   "transport": "Canonical file intentionally published for Original proactive reading; direct app-server refusal persists, not claimed delivered by message.",
-  "updatedAt": "2026-10-07T11:59:06.643Z",
+  "updatedAt": "2026-10-07T12:32:55.288Z",
   "latestReadOnlySupply": {
     "observedAt": "2026-10-07T12:07:40.403Z",
     "report": "resolver-completion-report.md",
@@ -97,13 +98,25 @@
     "ordinaryAutonomy": "sameboundary fix/retest withinbudget no percommand approval"
   },
   "claim": {
+    "id": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
+    "version": 2,
+    "scopeCount": 19,
+    "committedAt": "2026-10-07T12:32:04.114Z"
+  },
+  "provisionReceipt": "../message-settings-app-self-provision-20261007/msg03-provision.json",
+  "takeReceipt": "../message-settings-app-self-provision-20261007/msg03-receipt.json",
+  "sourceStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
+  "registration": "REGISTERED_SOURCE_CURRENT_PARENT_MATURE02_KNOWN",
+  "firstCanonicalHead": "2efead09ed9767990cb9dadf01980f6d9200e42c",
+  "registrationRequest": "../message-settings-app-self-provision-20261007/msg03-source-registration.json",
+  "registrationReceipt": "../release-main-registry-close-20261007/msg03-live-receipt.json",
+  "latestScopeAmend": {
     "claimId": "7e3fbcf1-befe-4579-9d6c-ee74df6e8c51",
-    "version": 1,
-    "taskId": "WPF-MESSAGESETTINGS03",
-    "lead": "external_web_d01_owner",
-    "worker": "workspace_panels_owner",
-    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app",
-    "branch": "codex/web-message-settings-app",
+    "version": 2,
+    "count": 19,
+    "addedLiteral": "apps/web/src/plugin-integration/react.tsx",
+    "committedAt": "2026-10-07T12:32:04.114Z",
+    "receipt": "../plugin-browser-source-and-msg03-local-20261007/msg03-amend-receipt.json",
     "scope": [
       "apps/web/src/App.tsx",
       "apps/web/src/conversation-context/receipts.ts",
@@ -116,6 +129,7 @@
       "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
       "apps/web/src/execution-profiles/execution-profiles.css",
       "apps/web/src/plugin-integration/message-settings.tsx",
+      "apps/web/src/plugin-integration/react.tsx",
       "apps/web/src/plugin-integration/session.ts",
       "apps/web/src/recovery/binding.tsx",
       "apps/web/test/conversation-recovery.browser.ts",
@@ -124,19 +138,6 @@
       "docs/evidence/wpf-message-settings-app",
       "plans/wpf-message-settings-app"
     ],
-    "role": "writer",
-    "state": "active",
-    "next": null,
-    "origin": "new",
-    "observedAt": null,
-    "updatedAt": "2026-10-07T12:11:44.045Z",
-    "createdAt": "2026-10-07T12:11:44.045Z"
-  },
-  "provisionReceipt": "../message-settings-app-self-provision-20261007/msg03-provision.json",
-  "takeReceipt": "../message-settings-app-self-provision-20261007/msg03-receipt.json",
-  "sourceStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-app/plans/wpf-message-settings-app/status.md",
-  "registration": "REGISTERED_SOURCE_CURRENT_PARENT_MATURE02_KNOWN",
-  "firstCanonicalHead": "2efead09ed9767990cb9dadf01980f6d9200e42c",
-  "registrationRequest": "../message-settings-app-self-provision-20261007/msg03-source-registration.json",
-  "registrationReceipt": "../release-main-registry-close-20261007/msg03-live-receipt.json"
+    "reason": "Existing AttachmentComposer optional complete-draft restore/discard seam; original TODO11 only"
+  }
 }

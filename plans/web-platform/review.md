@@ -61,3 +61,6 @@ root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0
 ## 2026-10-07 Release交付与MSG03登记收口
 
 [本批固定回执](../../docs/evidence/web-platform/release-main-registry-close-20261007/current.json)仅核既有Release主线接收、原owner停写释放及MSG03唯一source实际登记；未新增产品测试或继承旧管理target批准。PG与独立浏览器规则只应用未来同边界准备，本次Original个人更新仍排他。首MSG03配置检查失败和真实清理保留，未冒产品类型通过。
+
+
+[Plugin browser包管理绑定核对](../../docs/evidence/web-platform/plugin-browser-source-and-msg03-local-20261007/plugin-handoff-binding-check.json)仅确认0bc源码/0c43 clean与具名binding/manifest，不替root源码与native边界集中审。[MSG03局部实际](../../docs/evidence/web-platform/plugin-browser-source-and-msg03-local-20261007/msg03-local-events.json)保配置首红、类型首红和测试契约修正后8/8通过，整片尚未验收；core材料失败/cancel研究是静态输入而非新增通过证据。

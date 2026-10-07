@@ -547,3 +547,8 @@ Release [c2实际失败独审](../../docs/evidence/web-platform/x01-version-retu
 
 
 2026-10-07 本轮[主线收口与登记回执](../../docs/evidence/web-platform/release-main-registry-close-20261007/current.json)：Release e029/owner58562已完成并释放四scope，MSG03领取和唯一source登记均已确认，沿原MATURE02/TODO11实现，无新增任务层。Plugin沿X01-06准备原模块browser，真实App/session仍属MSG03。普通PG与完全独立0PG浏览器可按当前主线规则fresh组合，但Original本次个人更新明确排他，准备不冒actual。Mika REMOVAL client后继只source/ordinarylocal，接口尚未固定；REMOVAL R2 READY后置，均不新占Web写权或重窗口。
+
+
+原TODO11真实App接线的新增[静态返回路径研究](../../docs/evidence/web-platform/plugin-browser-source-and-msg03-local-20261007/msg03-material-return-research.json)指出官方composer准备失败/cancel可绕过onNew回填A正文附件到B；原owner在已领取ConversationThread/private adapter内保A显式恢复并保护settings-only B，不改shared core、不建第二store/FSM。该推断不是已复现browser失败，direct成功不能替代失败路径验收。Plugin仅沿原X01-06模块准备[六组browser固定包](../../docs/evidence/web-platform/plugin-browser-source-and-msg03-local-20261007/plugin-handoff.json)，真实App/session仍归MSG03；source-only不借个人重窗运行。
+
+该完整草稿恢复接缝的实际范围补正已[7e3f v2 exact19 COMMITTED](../../docs/evidence/web-platform/plugin-browser-source-and-msg03-local-20261007/msg03-amend-receipt.json)：只追加已有AttachmentComposer的typed可选restore/discard入口，默认旧consumer行为不变；先amend再编辑，不新增任务/局部信用或借共享模块写权。
