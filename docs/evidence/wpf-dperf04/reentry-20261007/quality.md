@@ -29,3 +29,9 @@ Timing2 actual5/5: actual native close event delivered before new detail asserti
 Followup source98baf: preserve all accepted behavioral bodies, add explicit visual-only dispatch and exact output expectations rather than rerun green groups. Shared public OPS-METER exact bytes used for three retained callsites only; known scratch policy remains explicit. No source imports/runtime/helper tests. Initial text count expected4 was corrected to3 after reading all callsites; no product check claimed. Unknown observation keeps partial issue and owned cleanup/KEEP; permissions unchanged. Fixed raw and failed budgets remain immutable.
 
 2026-10-07 09:25 UTC：复用find-skills/clean-code/webapp-testing既有方法；核公共helper仅三retained入口、unknown保失败/KEEP与原scratch独立cap；ACCESS真实5组PASS，函数/资源事实与视觉独审分开。不改生产、不重跑既有Node，旧失败/预算原件不改。
+
+## 2026-10-07 09:30 UTC 有限段最终clean-code复核
+
+复用本地find-skills/clean-code/codebase-design/webapp-testing；单一预算写者、明确各消费者fixture/context关闭责任、原验收不复制，不创建新框架。全部retained三callsite复用固定公共helper，scratch独立policy保留；实际complete没有被扩大为其他caller/特殊文件兼容证明。三轮原结果/早晚clock均保，charge取max向上取整；功能、截图目视、根因、main/部署分层。修正文档中当前ACCESS未运行/旧阶段余量等过时表述；非metadata档案不隐藏，交root独立闭包审。没有生产源码变更、重复Node/浏览器/PG。未解决产品finding：本段无；最终proof范围/main与真实服务验证仍开放。
+
+Canonical-only check at2026-10-07T09:31:56.429014Z: existing parseStatus/reviewState, actualexit0/50.269417ms, errors[]/4TODO,106links all resolve, no tmp/PG/Chrome/product suite. Current reviewUNKNOWN reflects pending composite source-archive scope only; root reports already accept scoped behavior and five supplemental visuals.

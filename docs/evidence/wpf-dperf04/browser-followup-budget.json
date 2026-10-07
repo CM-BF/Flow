@@ -1,16 +1,19 @@
 {
   "phase": "remaining-consumers-20261007",
   "closedPriorRuntimeMs": 40551,
-  "historicalTotalMs": 54879,
+  "historicalTotalMs": 60934,
   "complete": true,
-  "spentMs": 14328,
+  "spentMs": 20383,
   "limitMs": 45000,
   "cleanupReserveMs": 15000,
-  "run": "timingvisual-20261007-092540-c4c486",
-  "supervisorResult": "/private/tmp/dperf-f2/result.json",
+  "run": "linksvisual-20261007-092714-38989a",
+  "supervisorResult": "/private/tmp/dperf-f3/result.json",
   "state": "PASS",
   "stopSignal": null,
-  "remainingMs": 30672,
-  "accounting": "7045 + ceil(max(outer7282.365416,late7223,parent7219)) = 14328; original files unchanged",
-  "actualOuter": "/private/tmp/dperf-f2-outer/actual-exit.json"
+  "remainingMs": 24617,
+  "unspentMs": 24617,
+  "phaseState": "CLOSED",
+  "closedAt": "2026-10-07T09:27:27.329009Z",
+  "accounting": "14328 + ceil(max(outer6054.425208,late5972,parent5968)) = 20383; original files unchanged",
+  "actualOuter": "/private/tmp/dperf-f3-outer/actual-exit.json"
 }

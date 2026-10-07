@@ -1,0 +1,59 @@
+{
+  "phase": "remaining-consumers-20261007",
+  "state": "CLOSED",
+  "source": "98baf552d961ed0fa88ce2cf8bad006002d5986a",
+  "productSource": "52cdfbbb177ec9c89651ebde9b82e3a5538f45f0",
+  "budgetMs": 45000,
+  "spentMs": 20383,
+  "unspentMs": 24617,
+  "priorPhase": {
+    "spentMs": 40551,
+    "unspentMs": 19449,
+    "state": "CLOSED"
+  },
+  "historicalBrowserSpentMs": 60934,
+  "actualRuns": [
+    {
+      "run": "access-20261007-092338-82d16f",
+      "actualHead": "6e92f36be29f48928c93f1ecc5253afde1ea6465",
+      "chargeMs": 7045,
+      "checks": 5,
+      "png": 2,
+      "index": "browser-followup-access/index.json",
+      "rootReview": "root-access-actual-review.json"
+    },
+    {
+      "run": "timingvisual-20261007-092540-c4c486",
+      "actualHead": "bdc4d0a394695f98a149b21c7b0150a14f2d226e",
+      "chargeMs": 7283,
+      "checks": 1,
+      "png": 2,
+      "index": "browser-followup-timingvisual/index.json",
+      "rootReview": "root-timing-visual-actual-review.json"
+    },
+    {
+      "run": "linksvisual-20261007-092714-38989a",
+      "actualHead": "091e4250a0a2a801c27eeb01146738165a444769",
+      "chargeMs": 6055,
+      "checks": 1,
+      "png": 1,
+      "index": "browser-followup-linksvisual/index.json",
+      "rootReview": "root-links-visual-actual-review.json"
+    }
+  ],
+  "cleanup": {
+    "allOwnedGroupsAbsent": true,
+    "allScratchAbsent": true,
+    "allCapturedStreamsEof": true,
+    "droppedBytes": 0,
+    "allContextHttpFixtureClosed": true
+  },
+  "measurement": "PARTIAL_RETAINED_ADOPTION; one actual caller in three runs; public retained helper complete/unknown[]; original scratch scanner unchanged. Not two callers/scratch migration.",
+  "boundaries": [
+    "No real registry/4320/PG/provider/personal services",
+    "No production performance result",
+    "No main integration/deployment",
+    "Original failed runs/raw/screenshots unchanged",
+    "All five new PNGs accepted in scoped root reports; no cause claim about original anomalous light image."
+  ]
+}

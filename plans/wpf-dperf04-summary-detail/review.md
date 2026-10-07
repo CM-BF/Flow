@@ -1,16 +1,24 @@
 # WPF-DPERF04 独立审查
 
-**状态：UNKNOWN（部分审查已完成；全片浏览器验收待完成）**
+**状态：UNKNOWN（各限定source/actual已批准；最终composite非metadata档案闭包待独立确认，main/部署未发生）**
 
 Review target commit：98baf552d961ed0fa88ce2cf8bad006002d5986a
 
 Base：c837b5dccaea429b0112d1c7e0c752c41334204a
 
-当前受审目标为 `98baf552d961ed0fa88ce2cf8bad006002d5986a`：生产保持已验52cdf（其app为cfd5加2行queued-close保护）；当前仅后继3测试视觉入口及45秒独立phase接线，已由[root集中审查](../../docs/evidence/wpf-dperf04/reentry-20261007/root-followup-source-review.json)限定接受，ACCESS实际5/5及两图已[root限定接受](../../docs/evidence/wpf-dperf04/reentry-20261007/root-access-actual-review.json)，Timing正文1组/2图实际PASS待目视，Links浅色补图未运行；[生命周期限定源码审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-consumers-lifecycle-review.json)已接受。
+当前16产品/保护输入逐字固定98baf，生产同52cdf（原组合cfd5加真实queued-close保护）。[固定manifest](../../docs/evidence/wpf-dperf04/reentry-20261007/browser-source-manifest.json)；[最终档案精确scope](../../docs/evidence/wpf-dperf04/reentry-20261007/final-composite-source-closure.json)。本次实际操作.py/.sb/.diff归档按原字节保留，现proof会视为非metadata；作者不隐藏、不改parser、不自行批准最终compositeSHA。Root随后针对最终seal一次闭包核验，当前UNKNOWN是该边界，不否定已完成实际验收。
 
-原cfd5的16输入已获[root限定源码独审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-cfd-composition-review.json)，其Node9叶+父10/10/实际outer0与owned清理由[root独立实际报告](../../docs/evidence/wpf-dperf04/reentry-20261007/root-dperf04-composed-node-actual-review-20261007.json)接受。summary首红保留；后继1c190的summary9组和c989的task-links6组由[root实际审查](../../docs/evidence/wpf-dperf04/reentry-20261007/root-summary-links-actual-review.json)限定接受。7张PNG中6张可作当前视觉证据；home-narrow-light底部重复页首带需[独立补证](../../docs/evidence/wpf-dperf04/reentry-20261007/narrow-light-evidence-gap.json)，原因尚未证实，不能宣布全部图视觉通过。Timing首轮FAILED原件已保留；后继52cdf产品保护及真实close重开回归随Timing5组actualPASS，已由[root实际/源码独审](../../docs/evidence/wpf-dperf04/reentry-20261007/root-timing-actual-review.json)限定接受。两图仅详情顶部，不冒时间正文目视。旧browser40551/未用19449 CLOSED；新段累计14328/余30672，完整视觉/main及部署尚未完成，顶层UNKNOWN。
+## 当前已完成独立审查
 
-[当前16输入manifest](../../docs/evidence/wpf-dperf04/reentry-20261007/browser-source-manifest.json)与各run的固定SHA分开；旧source-manifest和旧审批保留当时NOT_RUN语境，不转移为新target通过。
+- [组合源码](../../docs/evidence/wpf-dperf04/reentry-20261007/root-cfd-composition-review.json)及[Node10/10](../../docs/evidence/wpf-dperf04/reentry-20261007/root-dperf04-composed-node-actual-review-20261007.json)：固定source、actualexit与清理。
+- [Summary/Links](../../docs/evidence/wpf-dperf04/reentry-20261007/root-summary-links-actual-review.json)：9+6功能，7原图中6限定视觉接受，原首红/异常light保留。
+- [Timing保护及原5组](../../docs/evidence/wpf-dperf04/reentry-20261007/root-timing-actual-review.json)：真实queued native close后新detail仍有效；首红不追溯定因，原两图仅shell。
+- [后继源码/native/helper准备](../../docs/evidence/wpf-dperf04/reentry-20261007/root-followup-source-review.json)：98baf及d377parent/helper，仅retained部分采用。
+- [ACCESS5/两图](../../docs/evidence/wpf-dperf04/reentry-20261007/root-access-actual-review.json)：fake-only HTTP、default context实际清理。
+- [时间正文一组/双图](../../docs/evidence/wpf-dperf04/reentry-20261007/root-timing-visual-actual-review.json)：可见heading、2h、UTC、尚未完成与来源；不重复计算原5组。
+- [首页窄light一组/新图](../../docs/evidence/wpf-dperf04/reentry-20261007/root-links-visual-actual-review.json)：单topbar可读，旧重复带原图与未知成因不改；不冒首屏展示全部关系。
+
+当前各限定审查0新增blocking。新phase20383/未用24617及旧40551/19449均CLOSED，完整EOF/0drop/所有owned清理；未用额度不触发新检查。尚未验证：真实registry185/生产速度、main/部署，以及公共helper scratch/第二caller迁移。执行索引与具体来源见[phase](../../docs/evidence/wpf-dperf04/reentry-20261007/followup-phase-completion.json)。
 
 ## 历史45f8及544c限定审查
 
@@ -58,14 +66,14 @@ root授权日期专测维护固定 `1441d86baa40e98f4cb81b82dcc551202973209b`：
 
 [root late-stop addendum](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/root-addendum.json)为SOURCE_PREPARATION_REOPENED_FOR_LATE_STOP。新parent SHA `544c11c8f0ff95c78f683299ab6f2758cc7f5d1de2d2fabab9af83be62f4bd4c`，[diff](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/late-stop.diff)/[说明](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/report.md)。独审请核handler立即失效、持久结果与实际退出判据、最终写期间迟到stop的有界补写和终态stdout，原outerfinally/双group清理/worker/预算不变；仅源码，不执行。当前未独立关闭此P2，全片仍UNKNOWN/browserNOT_RUN。GO[旧精确边界接受](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/previous-exact-native-boundary-acceptance.json)真实存在，但不能直接授权新parent字节，待root按既有授权重绑。
 
-## 2026-10-06 21:11:54 UTC 当前限定结论
+## 历史 2026-10-06 21:11:54 UTC 当时限定结论
 
 [root544c复审](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/root-544c-source-review.json)限定APPROVED/0blocking，late-stop P2 CLOSED；原45f8七源与worker不变。[新精确边界接受](../../docs/evidence/wpf-dperf04/browser-late-stop-repair/root-544c-native-boundary-rebind.json)已真实签发。root的AST/pins核对归其独审，作者没有复跑；browserNOT_RUN，全片UNKNOWN/main未集成。只待实际调度/资源freshgate，现TMP仍PREPARED，提交后的metadataHEAD重绑不提供运行权。
 
-## 当前组合直接结果与浏览器边界
+## 历史组合直接结果与当时浏览器边界
 
 cfd5 Node9叶+父10/10已由root限定独审接受：[原件](../../docs/evidence/wpf-dperf04/reentry-20261007/root-dperf04-composed-node-actual-review-20261007.json)。首summary实际FAILED，6组/0PNG，完整清理；后继1c1901ebcda1bb9a711fd75684276df009b3e3f8仅被动原生close同步，尚未复验。全片UNKNOWN，不继承直接PASS为browser/main/deploy。
 
-## 当前浏览器阶段结算
+## 历史浏览器中途结算
 
 summary固定1c190为9组+2PNG PASS，关联固定c989为6组+5PNG PASS，原summary首FAILED保留；actual双次exit0/EOF与owned清理均完整。累计24464ms、余35536ms，本段raw待root独立实际核验。当前52cdfbbb177ec9c89651ebde9b82e3a5538f45f0仅新增Timing/ACCESS受监督调用适配，NOT_RUN；全片维持UNKNOWN，无main/部署结论。
