@@ -1,5 +1,5 @@
 {
-  "recordedAt": "2026-10-07T05:29:56.950734+00:00",
+  "recordedAt": "2026-10-07T05:31:13.172504+00:00",
   "state": "QUICK_B3_FAILED_CLEANED_RETURNED_RECOVERY_PAGE_AUTH_PREPARED",
   "groupWindowOwnership": "Web no actual PG/Chrome holder, gate or reservation. Quick b3 failed and exact owned cleanup completed. SVC08 actual PG returned to Mika05:20:48.327Z; C02 preparation NOT_OPEN in latest incoming. Recovery fifth page-auth is prepared, not admitted.",
   "release03": {
@@ -1173,7 +1173,7 @@
       "ownerHead": "5e629909fb96bebe703ab75670daa9e67ab29979",
       "source": "dd6645b7f3ea84d758705684190c094ad3c87460",
       "packet": "/private/tmp/recovery-browser-fifth-pageauth-kz1s68_n",
-      "state": "FIFTH_PAGE_AUTH_STATIC_PREPARED_NOT_ADMITTED",
+      "state": "FIFTH_PAGE_AUTH_PREPARATION_APPROVED_NOT_ADMITTED",
       "budget": {
         "authoritativePreviousMs": 38364.050667,
         "thisLateMs": 16519.148875,
@@ -1185,7 +1185,7 @@
         "earlierOriginalBudgetPreserved": true
       },
       "runtime": "Fourth PG+HTTP+Chrome attempt consumed and actual cleaned; no current holder/gate/reservation.",
-      "next": "Need exact current PG handoff plus preparation acceptance before new env/gate; four old failures and original budget retained.",
+      "next": "Root static packet approved; explicit PG handoff/current resource authority plus freshclaim/pins/input/free and single gate remain required. No env/gate/reservation created.",
       "review": "quick-b2-return-20261007/recovery-fourth-preparation-review.json",
       "admission": {
         "handoff": "recovery-admission-handoff.json",
@@ -1211,7 +1211,7 @@
         "otherGroups": "NOT_SELECTED",
         "fullJourneyPassed": false
       },
-      "preparationReview": "PENDING_ROOT_STATIC_PACKET_ACCEPTANCE"
+      "preparationReview": "quick-b3-return-navigation-20261007/recovery-pageauth-preparation-review.json"
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",

@@ -1,0 +1,734 @@
+{
+  "at": "2026-10-07T05:30:33.911270+00:00",
+  "decision": "APPROVED_PREPARATION_ONLY_FRESH_ADMISSION_REQUIRED",
+  "source": "dd6645b7f3ea84d758705684190c094ad3c87460",
+  "metadata": "5e629909fb96bebe703ab75670daa9e67ab29979",
+  "manifestSha256": "5b95e1d1b9cd5bc47ac753e5141532caf2de898b5c9b4cd25107fbc97c33a0f2",
+  "packetSha256": "f7ce502798bc67bdf18885e51dea082fc9bb1c210491875b1e8aed67adf698ba",
+  "state": {
+    "head": "5e629909fb96bebe703ab75670daa9e67ab29979",
+    "branch": "codex/web-conversation-recovery",
+    "status": ""
+  },
+  "checks": [
+    {
+      "path": "/private/tmp/recovery-browser-fifth-pageauth-kz1s68_n/manifest.json",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/recovery-browser-fifth-pageauth-kz1s68_n/preparation-delta.json",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/recovery-browser-fifth-pageauth-kz1s68_n/report.md",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/recovery-browser-fifth-pageauth-kz1s68_n/root-source-review.json",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/recovery-browser-fifth-pageauth-kz1s68_n/source-minimal.diff",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/App.tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/attachments/controller.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/connection/session.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/conversation-context/controller.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/conversation-steering/SteeringControl.tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/conversation-steering/control.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/conversations/ConversationThread.tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/conversations/outbox.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/conversations/projection.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/conversations/queue/commands.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/plugin-integration/attachments.tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/plugin-integration/knowledge.tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/plugin-integration/session.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/plugin-integration/steering.tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/recovery/binding.tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/src/recovery/journal.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.browser.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.fixture.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/test/conversation-recovery.test.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/index.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/browser-session/index.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/server/src/browser-session/store.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/contracts/src/browser-session.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/client/src/index.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/vite.config.ts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/package.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/package.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/pnpm-lock.yaml",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/tsx",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/@playwright/test",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/fastify",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg-boss",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/@fastify/cors",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/zod",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/vite",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/@flow/client",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/packages/client/node_modules/@flow/contracts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/@flow/contracts",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/tsx/dist/loader.mjs",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/@playwright/test/index.mjs",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/node_modules/pg/lib/index.js",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/apps/web/node_modules/vite/dist/node/index.js",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/package.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/package.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright@1.63.0/node_modules/playwright/index.mjs",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-attachment-production/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "matches": true
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "matches": true
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "matches": true
+    },
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "matches": true
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/browser.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/budget.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/database-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/database-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/fixture-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/process-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/process.log",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/scratch-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/sources.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/supervisor.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/browser.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/budget.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/database-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/database-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/fixture-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/launch-config.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/process-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/process.log",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/scratch-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/sources.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/supervisor.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/actual-exit.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/gate.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/parent.stderr.log",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-second-parent/parent.stdout.jsonl",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/browser.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/budget.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/database-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/database-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/fixture-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/launch-config.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/process-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/process.log",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/scratch-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/sources.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/supervisor.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/actual-exit.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/admission.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/claim-observation.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/gate.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/parent.stderr.log",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/parent.stdout.jsonl",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-third-parent/pins-check.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/browser.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/budget.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/database-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/database-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/fixture-cleanup.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/launch-config.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/process-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/process.log",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/scratch-owner.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/sources.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/supervisor.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec4d-20261006-205056-a30d13/budget.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec667-20261006-180030-f86542/budget.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec8ed-20261007-021525-9c6687/budget.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/budget.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-parent/actual-exit.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-parent/archive-claim-observation.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-parent/parent-pid.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-parent/parent.stderr.log",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-parent/parent.stdout.jsonl",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-parent/post-cleanup-observation.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-parent/start.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-admission/handoff.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-admission/gate.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-admission/admission-observation.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-admission/admin-env-deletion-receipt.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-preparation/claim-observation.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-preparation/manifest.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-preparation/packet-files.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-preparation/preparation-delta.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-preparation/report.md",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-preparation/source-minimal.diff",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-root-review.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-preparation-root-review.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/serialization-check/root-recovery-rec8ed-actual-and-9835-review.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/serialization-check/root-recovery9835-serialization-preparation-review.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/serialization-check/root-web-local-segment-20261007-review.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/direct-fourth-manifest.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/direct-fourth-validation.md",
+      "matches": true
+    },
+    {
+      "path": "/private/tmp/recovery-browser-fifth-pageauth-kz1s68_n/root-source-review.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/journey-selection-checkpoint.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/journey-selection-local/index.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/1bc-focus-precondition-root-review.json",
+      "matches": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-fourth-root-review.json",
+      "matches": true
+    },
+    {
+      "path": "git-state",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/App.tsx",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/attachments/controller.ts",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/connection/session.ts",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/conversation-context/controller.ts",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/conversation-steering/SteeringControl.tsx",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/conversation-steering/control.ts",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/conversations/ConversationThread.tsx",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/conversations/outbox.ts",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/conversations/projection.ts",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/conversations/queue/commands.ts",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/plugin-integration/attachments.tsx",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/plugin-integration/knowledge.tsx",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/plugin-integration/session.ts",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/plugin-integration/steering.tsx",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/recovery/binding.tsx",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/src/recovery/journal.ts",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/test/conversation-recovery.browser.ts",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/test/conversation-recovery.fixture.ts",
+      "matches": true
+    },
+    {
+      "path": "fixed-source:apps/web/test/conversation-recovery.test.ts",
+      "matches": true
+    }
+  ],
+  "selection": {
+    "journey": "page-auth",
+    "requiredGroups": [
+      "cookieRead",
+      "pageOnlyAuthLoss"
+    ],
+    "notSelectedGroups": [
+      "textIntentDraft",
+      "crossTabCas",
+      "sameKeyTurn",
+      "csrfOffline",
+      "themes390"
+    ],
+    "notSelectedSubcoverage": [
+      "materialDraft",
+      "cookieSseHandshake"
+    ],
+    "expectedPngCount": 0,
+    "selectedPassedRequires": "Gate/Init/WorkerResult journey equality; exact two ordered required/completed groups; checks.length2; both coverage PASSED; no failure/pageError/cleanupError; parent resources/late stdout/actual exit all successful.",
+    "fullJourneyPassed": false,
+    "fullFeatureReview": "NOT_STARTED",
+    "target": "UNKNOWN",
+    "initializationTiming": "worker entry through fixture/Chrome/context/page ready; excludes parent DB prep and process spawn; import failure before try may yield missing report, never zero successful initialization",
+    "groupTiming": "At most7 actual monotonic records; page-auth UI draft checkpoint setup is included in pageOnlyAuthLoss elapsed. No timing for NOT_SELECTED groups. No performance-improvement claim."
+  },
+  "budget": {
+    "totalOriginalMs": 90000,
+    "serializedPriorMs": 54871.435167,
+    "authoritativeLateSpentMs": 54883.199542,
+    "nextMaxIntegerTotalMs": 35116,
+    "cleanupReserveMs": 15000,
+    "nextMaxWorkMs": 20116,
+    "scratchBytes": 67108864,
+    "evidenceBytes": 8388608,
+    "perRunRetainReserveBytes": 5242880,
+    "logBytes": 1048576,
+    "startFreeBytes": 1207959552,
+    "stopFreeBytes": 1140850688,
+    "retainedLogicalEvidenceBytes": 1433695,
+    "headroomBeforeRunReserveBytes": 1712033,
+    "resourceSample": false
+  },
+  "reviewed": [
+    "Existing single-file supervisor + IPC worker preserved; prior independent source review c7b00e applies unchanged.",
+    "Explicit page-auth gate binds exactly cookieRead/pageOnlyAuthLoss; authentic UI durable setup and owned fixture database/context. No material/CSRF/theme pass inferred.",
+    "Four prior failures, 54 raw files and late total54883.199542 retained; fresh total capped35116 including15000cleanup.",
+    "19 sources plus nine public inputs, eleven package realpaths/versions and eleven runtime files, Node and Chrome metadata matched; not a full transitive closure or runtime availability claim.",
+    "No new runner, adminenv, gate, resource sampling or reservation."
+  ],
+  "admissionRequired": [
+    "Fresh exact21 claim ownership/no overlap and unchanged pins/clean HEAD",
+    "Explicit cross-lead actual PG/HTTP/Chrome handoff and combined budget/free-space check",
+    "Single-use expiring gate journey page-auth,totalMs<=35116; new controlled admin env only from approved source, never personal config",
+    "Existing parent run once, retain stdout/stderr/actual exit/late accounting and all owned cleanup evidence"
+  ],
+  "limitations": [
+    "Preparation approval is not runtime, feature, main integration or deployment approval.",
+    "Original gate minimum is30000ms; later scenarios cannot be assumed to fit the residual historical envelope.",
+    "Native Chrome capability boundary remains as previously accepted; no extra sandbox claim."
+  ],
+  "fullFeatureReview": "NOT_STARTED",
+  "noProjectChanges": true,
+  "noRuntime": true
+}

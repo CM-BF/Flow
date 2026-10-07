@@ -42,7 +42,7 @@
     },
     "packet": "/private/tmp/recovery-browser-fifth-pageauth-kz1s68_n",
     "manifestSha256": "5b95e1d1b9cd5bc47ac753e5141532caf2de898b5c9b4cd25107fbc97c33a0f2",
-    "packetReview": "Root preparation review pending incoming; source review alone is not gate.",
+    "packetReview": "recovery-pageauth-preparation-review.json",
     "journey": "page-auth",
     "requiredGroups": [
       "cookieRead",
@@ -56,7 +56,8 @@
     "gate": null,
     "adminEnv": null,
     "reservation": false,
-    "next": "Need exact current PG handoff plus preparation acceptance before new env/gate; four old failures and original budget retained."
+    "next": "Static preparation accepted after initial batch seal. Need explicit actual shared PG handoff and fresh admission before adminenv/gate; neither created. Current C02 PG state cannot be inferred from preparation.",
+    "preparationDecision": "APPROVED_PREPARATION_ONLY_FRESH_ADMISSION_REQUIRED"
   },
   "svc08": {
     "state": "ACTUAL_PG_RETURNED_TO_MIKA",
