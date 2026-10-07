@@ -21,3 +21,9 @@ Review target commit：`1e4eb135d3517cc42aa260cbadccd0cdf001f076`。7源码+READ
 固定 `08ec1cf4a439dc60d3b96cc0da9d9fd152d690f7` 修正root两P2说明：实际对话框与README说明Flow管理凭据≠Claude/Codex订阅；README明确file UID只核服务端文件身份，本机原生进程可伪造headers，不声称HTTP caller OS认证。原Module/权限策略未扩大。
 
 35/35 Node专用direct实际通过，原始记录在 direct-first；当前独立review仍NOT_STARTED，等待root绑定该target结论。真实browser/安装与部署NOT_RUN，不能由35direct冒全功能批准。
+
+## 独立限定审查与浏览器失败
+
+Root原件 `docs/evidence/wpf-dashboard-local-access/root-source-direct-review.json`：08ec源码+35direct APPROVED_SCOPED，两P2 CLOSED；不包含浏览器/真实安装/部署。
+
+浏览器唯一实际run于03:15完成，FAILED：父监督采样短命目录ENOENT中断，前四组通过/第五组未完成，原错误/图片/终态/清理全部封存 browser-first。不更改产品或原五组断言。下一步仅修/tmp运行者ENOENT/异常drain，另有新heavy交接才重跑；完整feature NOT_STARTED。
