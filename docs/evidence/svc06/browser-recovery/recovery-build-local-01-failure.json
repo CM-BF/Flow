@@ -1,0 +1,20 @@
+{
+  "at": "2026-10-07T21:06:22.446731+00:00",
+  "state": "CALLER_SUMMARY_FAILURE_RAW_NOT_PERSISTED",
+  "reservation": "recovery-build-local-01-reservation.json",
+  "primary": {
+    "name": "KeyError",
+    "field": "stdout_bytes",
+    "phase": "post-test raw-byte total"
+  },
+  "originalToolOutput": "Traceback (most recent call last): File \"<stdin>\", line 25, in <module>; File \"<stdin>\", line 25, in <genexpr>; KeyError: stdout_bytes",
+  "limits": "Two 10s work + .5TERM +2reap invocations maximum; charge conservative25s due missing child reports",
+  "sourceChanged": false,
+  "testResult": "UNKNOWN_NOT_CREDITED",
+  "childIdentitiesAndRaw": "NOT_PERSISTED",
+  "scratch": "UNKNOWN_NO_CLEANUP_CLAIM",
+  "pg": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "build": 0
+}

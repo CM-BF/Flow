@@ -1,0 +1,131 @@
+{
+  "startedAt": "2026-10-07T21:06:22.484835+00:00",
+  "floor": 19208339456,
+  "freeBytes": 19230859264,
+  "sourceBindings": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/build-supervise.py",
+      "bytes": 2797,
+      "sha256": "4c86e7bb1f91ac6585b61661568fb1e07b399c3520478fc77bff8db49fde5989"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-supervise.py",
+      "bytes": 991,
+      "sha256": "10031a0b529a6bef64f314d00ed20d876a5836c4967f1c06dc830d4fda53cde9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-entry.mjs",
+      "bytes": 4352,
+      "sha256": "af297cb6c74372fe5d45673b54f6c3b88e47d37a54444a791da5cbb6a5957263"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build-inputs.json",
+      "bytes": 4311,
+      "sha256": "c6280171555e69db4649688c67578a7a7d19752a7c26cb9f0db1b0fe29489b5d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build.test.mjs",
+      "bytes": 1753,
+      "sha256": "0463ddaf65f5360b8deebb85735e6ec1eea51177a661811b36b9caa49e543697"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/recovery-build.test.py",
+      "bytes": 3103,
+      "sha256": "fd9c4c980df7be87a267e1bd2b236ac7c045d7867e6f0ffb4053846fde327b0d"
+    }
+  ],
+  "reports": [
+    {
+      "pid": 13568,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 100,
+      "stdout": "\u2714 fixed recovery input replaces exact source assertions and retains inherited dependency/resource bounds (6.699292ms)\n\u2714 recovery entry rejects wrong action before build or reservation (0.439916ms)\n\u2139 tests 2\n\u2139 suites 0\n\u2139 pass 2\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 55.584792\n",
+      "stderr": "",
+      "observed_bytes": 315,
+      "retained_bytes": 315,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    },
+    {
+      "pid": 13570,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 61,
+      "stdout": "{\"raw\": \"/private/tmp/svc06b-recovery-check-2-ojbei0_h/recovery-build-5x65ada8/repo/docs/evidence/svc06/browser-recovery/recovery-build-once/outer-report.json\", \"exit_code\": 0, \"owned_state\": \"absent\", \"eof\": {\"stdout\": true, \"stderr\": true}, \"first_failure\": null, \"elapsed_ms\": 0}\n",
+      "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.005s\n\nOK\n",
+      "observed_bytes": 383,
+      "retained_bytes": 383,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ]
+    }
+  ],
+  "scratch": [
+    {
+      "path": "/private/tmp/svc06b-recovery-check-1-ma6_ner5",
+      "dev": 16777234,
+      "ino": 124481744,
+      "bytes": 0,
+      "entries": 0,
+      "disposition": "REMOVED_EXACT_EMPTY"
+    },
+    {
+      "path": "/private/tmp/svc06b-recovery-check-2-ojbei0_h",
+      "dev": 16777234,
+      "ino": 124481747,
+      "bytes": 0,
+      "entries": 0,
+      "disposition": "REMOVED_EXACT_EMPTY"
+    }
+  ],
+  "pg": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "build": 0,
+  "passed": true,
+  "returnedAt": "2026-10-07T21:06:22.648534+00:00",
+  "elapsedMs": 161,
+  "rawBytes": 698
+}

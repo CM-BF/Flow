@@ -1,0 +1,33 @@
+{
+  "pid": 13570,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 61,
+  "stdout": "{\"raw\": \"/private/tmp/svc06b-recovery-check-2-ojbei0_h/recovery-build-5x65ada8/repo/docs/evidence/svc06/browser-recovery/recovery-build-once/outer-report.json\", \"exit_code\": 0, \"owned_state\": \"absent\", \"eof\": {\"stdout\": true, \"stderr\": true}, \"first_failure\": null, \"elapsed_ms\": 0}\n",
+  "stderr": "..\n----------------------------------------------------------------------\nRan 2 tests in 0.005s\n\nOK\n",
+  "observed_bytes": 383,
+  "retained_bytes": 383,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ]
+}

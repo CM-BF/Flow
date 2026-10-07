@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T20:51:34.773Z；本次初始化证据已固定待独审，个人服务操作未重启 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T21:07:40.572Z；新恢复固定source与构建入口已准备，待独审/实际构建窗口 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | 2026-10-07T14:07:49.426Z |
 | 任务完成时间 | NOT_COMPLETED |
@@ -17,14 +17,14 @@
 | 工作树dirty状态 | 原已消费实际原件不变；本次7 authored源停写，fixed57ab只读依赖供给与04da静态候选分列 |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | review |
-| 实现目标 | 单launch runtime复用source de77924faee33bf00d40c272052a762dad04ed1e 已独审/main57ab；当前 child IPC 初始化正证据 source 77b489ea545bae1939f64f4669aeaa3f84816b01 待独审；原520执行/52d95失败原件冻结 |
+| 实现目标 | 单launch runtime复用source de77924faee33bf00d40c272052a762dad04ed1e 已独审/main57ab；当前 child IPC 初始化正证据 source 77b489ea545bae1939f64f4669aeaa3f84816b01 已独审/main770bd2c05；原520执行/52d95失败原件冻结 |
 | 实现范围 | 本次runner runtime/main/直接专测、preview两文件、startup diagnostics两文件；相对fixed57ab的精确7path；恢复候选只移必要04da差量 |
 | 检查状态 | 本次25 distinct最终绿/focused types0；8轮8042ms/raw7634B，组均absent/双EOF，3空scratch移除/5派生cache共2715904B KEEP；两装配红保留。0PG/服务/个人/provider。原绿不重跑 |
 | 已集成main状态 / HEAD | artifact cd27结果已main b37e404da18d8b63a5b38ad20cf55850a9781dd5；retention203ec三产品已独审并main fd9dd5a9bfdd67a5397a2833420b1f874511f1d9；当前迁入Module已独审并main96b424777；本次薄入口source6c417850已独审并main72f5758bcd5e0e58f290f1197e70ad77e2f7c61d，新网页四App兼容已获Web独审/main9281447a3；新增Web薄调用独审已main089a6e460；本次cd27迁入/三报告/新维护操作已发生；refresh启动未确认，未resume/未发布Web |
 | 阶段 | M2 |
 | 优先级 | 2 |
 | 当前产出 | 新版后台与四个网页的兼容已验证，新网页的受管迁入和发布调用已通过独审。新版网页尚未发布；本次后台维护在网页就绪处失败，当前三个服务已停止，正优先恢复可用性。 |
-| 下一可用交付 | 启动重复校验修复已接收；当前初始化证据待独审，再组合受管恢复入口并验证新宿主冷启动和网页兼容，恢复服务后发布新版网页。 |
+| 下一可用交付 | 启动重复校验修复已接收；初始化证据已接收；正在组合受管恢复入口，再验证新宿主冷启动和网页兼容，恢复服务后发布新版网页。 |
 | 当前阻塞 | ACTIVE: 个人服务当前已停止，维护门保持关闭；责任为本服务owner与Lead，需完成新固定宿主、冷启动/兼容和受审恢复路径。禁止盲重试或自动回滚。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)；artifact/retention/迁入与current入口均已独审/main；current-entry-independent-review仅准备批准，不当现场ready |
@@ -148,3 +148,7 @@ native_center_owner随后确认本队普通local已RETURN（7轮3444ms/7组absen
 2026-10-07T20:34:55.940Z：runner-ready 实施段从原子amend实际成功开始。复用已审 runtime reuse/main57ab；仅本次child越过本地初始化guard的正IPC证据可补充旧profile，初始化与中心accepting/实际领取分开。当前0个人操作、0构建、0PG/provider；新恢复artifact待本片与原维护目标切换接口固定，不能改旧产物。
 
 2026-10-07T20:51:34.773Z：runner-ready source 77b489ea545bae1939f64f4669aeaa3f84816b01 固定待独审；检查实际段20:43:14.909360Z→20:49:13.482717Z已RETURN。本片25 distinct最终绿，原两装配失败/五cache KEEP保留；[结果](../../docs/evidence/svc06/browser-recovery/runner-ready-result.json)/[Interface](../../docs/evidence/svc06/browser-recovery/runner-ready-interface.md)。单launch复用已获Lead独审并main57ab（I02 svc06b-runtime-reuse-review.json）。当前仅源码/记录，恢复artifact/cold startup/4App新tuple/个人同op23续接均未执行。实际领取无新证据必须单列NO_ASSIGNMENT_OBSERVED。
+
+2026-10-07T20:59:44.336Z：新恢复组合准备开始，原初始化小片独审等待结束：Lead APPROVED_LIMITED_CURRENT_CHILD_INITIALIZATION，main/origin770bd2c05已精确接收七源；唯一[I02 review](../../../m2-integration/docs/evidence/i02/svc06b-runner-initialization-review.json)。delivery1520aeb09正常push已返回成功。恢复只组合04da与必要七个运行源，维护目标模块ddd8/be5由原owner独审交接；新source/产物尚未构建。原owner正补冷启动fixture显式port，本任务写薄consumer；0新个人I/O/PG/服务。状态事实仍sameop23/all stopped，实际领取未观察。
+
+2026-10-07T21:07:40.572Z：恢复source f37a/tree de843由Lead按a8f七路径精确生成；build-only入口source8a0c2739固定，见[构建准备](../../docs/evidence/svc06/browser-recovery/recovery-build-preparation.json)。2Node+2Python直接例161ms/698B，21:06:22.648534Z归还，两组absent/双EOF/两exact空scratchremoved；首轮后置汇总KeyError缺子报告，UNKNOWN保留并保守扣25s，不计绿/清理。当前未创建recovery-build-once，真实build仍等唯一共享窗口；cold helper4c0cbc已独审，薄consumer另准备，不把build就绪当冷启动或个人恢复批准。
