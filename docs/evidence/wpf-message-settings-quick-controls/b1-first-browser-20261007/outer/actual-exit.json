@@ -1,0 +1,25 @@
+{
+  "startedAt": "2026-10-07T04:26:26.011693+00:00",
+  "pid": 27230,
+  "pgid": 27230,
+  "command": [
+    "python3",
+    "/private/tmp/msgquick-b1/supervisor.py",
+    "--gate",
+    "/private/tmp/msgquick-b1-gate-20261007-0425.json"
+  ],
+  "output": "/private/tmp/msgquick-b1-outer-di68rhfu",
+  "endedAt": "2026-10-07T04:26:38.337230+00:00",
+  "actualExit": 1,
+  "wallMs": 12325.373167055659,
+  "groupAbsent": true,
+  "bothEOF": true,
+  "capturedBytes": {
+    "stdout": 649,
+    "stderr": 0
+  },
+  "droppedBytes": 0,
+  "outerInterrupted": false,
+  "stdoutSha256": "9de13b5786b1e1c6b284e2f07d03e7038a3e907d916740e4516ca63e722d4318",
+  "stderrSha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

@@ -1,0 +1,38 @@
+{
+  "kind": "outer-conservative-browser-account",
+  "run": "msgquick-b1-20261007-0425",
+  "rule": "ceil(max(actual outer wall, after-final-writes terminal, parent budget)); original observations unchanged",
+  "original": {
+    "outerWallMs": 12325.373167055659,
+    "terminalAfterFinalWritesElapsedMs": 12284,
+    "parentSpentMs": 12282
+  },
+  "previousBrowserRuntimeMs": 0,
+  "accountedBrowserRuntimeMs": 12326,
+  "cumulativeBrowserRuntimeMs": 12326,
+  "limitMs": 60000,
+  "remainingBrowserMs": 47674,
+  "futureCleanupReserveMs": 15000,
+  "remainingWorkAllowanceMs": 32674,
+  "futureRunAuthorized": false,
+  "directBudgetUnchanged": {
+    "cumulativeMs": 5119,
+    "remainingMs": 24881
+  },
+  "missingExpectedArtifacts": [
+    "message-settings-light-390.png",
+    "message-settings-dark-390.png",
+    "runtime-evidence-manifest.json"
+  ],
+  "outcome": "FAILED",
+  "completedBrowserGroups": 0,
+  "actualOuterExit": 1,
+  "sealHashesMatched": true,
+  "cleanup": {
+    "errors": [],
+    "groupAbsent": true,
+    "workerGroupAbsent": true,
+    "chromeGroupAbsent": true,
+    "scratchAbsent": true
+  }
+}
