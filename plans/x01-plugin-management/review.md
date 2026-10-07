@@ -1,3 +1,11 @@
+# X01 review
+
+状态：PENDING（真实进程联合验收准备；PG NOT_OPEN）
+
+Review target commit: e6bfab16c1b783406729b0a4deb4f3c7e720446f
+
+本次仅process-runner新test/实际入口镜像/薄caller与准备结果；既有已审片结论保留后文。
+
 状态：APPROVED（startup十源及有限局部结果；真实CLI进程未验）
 
 Review target commit: c8ba6bcb98f697b222cc972d517ea2891dcd8d71
