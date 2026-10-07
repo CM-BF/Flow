@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "kind": "runtime input candidate, no execution grant",
-  "recordedAt": "2026-10-07T16:08:34.401892+00:00",
+  "recordedAt": "2026-10-07T16:30:15.342251+00:00",
   "preparationSegment": {
     "startedAt": "2026-10-07T15:55:02Z",
     "deadline": "2026-10-07T16:07:02Z",
@@ -423,7 +423,13 @@
       "confirmedUse": "Mika confirmed at this16:02:16 segment authorization; actual value not loaded"
     }
   },
-  "deltaReview": "PENDING owned-traversal P2 narrow re-review; initial budget result fidelity accepted, source changes requested",
+  "deltaReview": {
+    "decision": "SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPROVED",
+    "target": "a82e44be17a7a31b051bf98400d9553513600542",
+    "reviewedAt": "2026-10-07T16:22:26Z",
+    "receipt": "docs/evidence/k01/query-entry-owned-independent-review.json",
+    "limitations": "source/local-result approval only; PG NOT_OPEN"
+  },
   "aggregateStorageGate": {
     "localBytes": 8388608,
     "rawBytes": 2097152,

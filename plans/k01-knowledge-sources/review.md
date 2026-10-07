@@ -1,11 +1,18 @@
+# K01-06 最终窄复审（当前）
+
+状态：APPROVED
+Review target commit：a82e44be17a7a31b051bf98400d9553513600542
+
+2026-10-07T16:22:26Z，Mika委派 db_transaction_owner 独立只读 SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPROVED；owned-root P2 CLOSED，0剩余P1/P2，限本增量。现场db7e0351=origin clean；17source/5evidence及3执行源绑定吻合，3 owned+1 URL（3未选）/noEmit0；3010ms为operator累计、监督实际2751ms，不冒整段壁钟。根与遍历错误保留UNKNOWN/null/false、原primary/raw/scratch仍保真，旧HOLD/KEEP不改。审者0工程/import/PG/写。完整[独审回执](../../docs/evidence/k01/query-entry-owned-independent-review.json)。当前源码准备可交下一窗口评估，PG仍NOT_OPEN；此前完整入口e1a与预算结果历史保留下方，不把局部合成用例称真实PG生命周期通过。
+
 # K01-06 owned预算遍历P2窄修（当前）
 
-状态：NOT_STARTED
+状态：APPROVED
 Review target commit：a82e44be17a7a31b051bf98400d9553513600542
 
 原budget8020 review为CHANGES_REQUESTED，唯一P2是Python owned root未lstat/os.walk忽略OSError；修后根/遍历异常为UNKNOWN/null bytes/false，保留primary/raw/cleanup/PG KEEP。3定向caller+1URL（3未选）和focused noEmit在771通过，最终所有可执行字节一致、仅README之后追加事实。唯一证据 query-entry-owned-repair-20261007T161534/manifest.json。原reviewer一次直接请求触发工具thread cap，未循环或新建；Mika接固定target窄复审。历史批准不得覆盖本修复，PG NOT_OPEN。
 
-# K01-06 合计预算与URL保护差异（当前）
+# K01-06 合计预算与URL保护差异（历史待修版本）
 
 状态：NOT_STARTED
 Review target commit：8020d0ba7df93e9131cdb1e334e3141faf8091a5

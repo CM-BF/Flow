@@ -1,0 +1,42 @@
+{
+  "reviewedAt": "2026-10-07T16:22:26Z",
+  "reviewer": "db_transaction_owner (Mika delegated independent reviewer)",
+  "model": "gpt-6-astra",
+  "decision": "SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPROVED",
+  "target": "a82e44be17a7a31b051bf98400d9553513600542",
+  "packet": "db7e0351c23a409c62c1fb45de59c7e2f00c36b2",
+  "executionSource": "771854ece1d5b2a4a6f14c06667b12a3bde8b4c6",
+  "p1": 0,
+  "p2": 0,
+  "closedFinding": "owned root/traversal unknown could be accepted as zero or partial byte count",
+  "manifestSha256": "da15e47a4ff66fe0d5956ab491f350245ec9a299d3b5a242b74f1e99007b6df3",
+  "verified": "17 source + 5 evidence =22 bindings/157613B, all Git=WT; all executable bytes equal execution and final; later README only",
+  "checks": {
+    "ownedCases": 3,
+    "urlCases": 1,
+    "urlUnselected": 3,
+    "noEmitExit": 0,
+    "children": 3,
+    "rawBytes": 679,
+    "operatorElapsedMs": 3010,
+    "supervisorElapsedMs": 2751,
+    "returnAt": "2026-10-07T16:17:20.190555Z",
+    "cleanup": "all final absent/MERGED EOF/full raw/no first-secondary-signals; owned scratch exact REMOVED/absent"
+  },
+  "scope": "owned lstat/realpath/walk onerror, secondary measurement preserves primary/raw/KEEP, bare URL fragment and sanitized parse error; no new platform",
+  "limits": [
+    "reviewer ran zero tests/import/PG/HTTP/write",
+    "preparation and synthetic local evidence only; actual PG remains NOT_OPEN",
+    "old HOLD and KEEP unchanged",
+    "no future query plan, performance or lifecycle result claimed"
+  ],
+  "recordedAt": "2026-10-07T16:30:15.342251+00:00",
+  "metadataBudget": {
+    "baseline": "5e8226e17439d558370d4993866c71989874709d",
+    "conservativeFullChangedFilesBytes": 151203,
+    "recordedRemovedScratchBytesSum": 759,
+    "limitBytes": 1048576,
+    "newEngineeringChildren": 0,
+    "note": "full current changed files conservatively charged, no source re-materialization/new scratch; previous raw preserved"
+  }
+}

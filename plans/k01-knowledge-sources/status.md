@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07 16:19 UTC |
+| 最近更新 | 2026-10-07 16:30 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 大task |
 | 大task ID | [K01](plan.md) |
@@ -10,14 +10,14 @@
 | co-lead | mika |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 原K01首次开工缺精确事件证据，不用commit/领取时间猜测；文档段开始2026-10-07T14:53:11Z，旧实现/修复段已封存；当前P2窄修段16:15:34Z–16:23:34Z；前段均封存；来源clock与Mika派工 |
+| 任务时间来源 | 原K01首次开工缺精确事件证据，不用commit/领取时间猜测；文档段开始2026-10-07T14:53:11Z，旧实现/修复段已封存；P2窄修段16:15:34Z–16:23:34Z已封存；当前16:29:15Z起≤3分钟仅批准归档；来源clock与Mika派工 |
 | 当前claim / scope | 30965e7d-6f0d-42bc-8eb8-cfc99b80ecca v2 ACTIVE，15:01:40.433Z COMMITTED amend；原两metadata scope+experiments/knowledge-search |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra；lead mika |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/knowledge-source-store |
 | Branch | codex/knowledge-source-store |
 | 原实现工作基线 / HEAD | base 1f59f8261d191ba65edb27ce53fe7ef32c20fc5f；接口 fe014a118fa92abb7403ce9e67218995533644f9；实现HEAD ea0c4cba1792dbb498487fb5b6ae47393340b77e |
-| 工作树dirty状态 | 最终delta metadata待commit/push；起点5e8226e174=origin clean，旧e1a原件/KEEP不改；提交后STOP |
-| 工作分支状态 | review（入口/局部结果已审；future runtime绑定候选待核，历史与开放验收不变） |
+| 工作树dirty状态 | 本次metadata起点db7e0351=origin clean；批准归档后commit/push STOP，旧源/raw/KEEP不改 |
+| 工作分支状态 | review（源码与局部结果已审；候选就绪，真实PG窗口NOT_OPEN） |
 | 检查状态 | PASSED a82e44be17a7a31b051bf98400d9553513600542；定向owned遍历3+URL1（3未选）、focused noEmit0；全部可执行源与运行时一致，PG NOT_OPEN |
 | 已集成main状态 / HEAD | 历史留存规划已接收cd6938fdd50f297cdb4d652d3b38464d1de0b311；本段入口准备未集成；仅纯检查已运行，PG未运行 |
 | 实现目标 | a82e44be17a7a31b051bf98400d9553513600542 |
@@ -28,11 +28,11 @@
 | 阶段 | M2 |
 | 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 诊断预算已在目录缺失、类型异常或读取失败时拒绝验收，并保留原错误与清理事实 |
-| 下一可用交付 | 完成这处读取失败保护的窄复审，再排真实诊断窗口 |
+| 当前产出 | 检索诊断入口与预算保护已独审，等待隔离数据库窗口验证真实查询计划 |
+| 下一可用交付 | 在明确隔离窗口执行一次真实检索诊断 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)；e1a历史入口/局部结果APPROVED；当前预算delta待审，PG NOT_OPEN |
+| Review | [review.md](review.md)；a82e44be17a7a31b051bf98400d9553513600542 APPROVED；PG NOT_OPEN |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -120,3 +120,5 @@
 2026-10-07T16:15:34Z：新≤8分钟P2修复段开始、截止16:23:34Z；fresh5e8226e=origin clean、16:15:34.767Z live CLI确认claim30965v2三scope。独审8020d0ba指出owned root未lstat与os.walk默认忽略OSError会误收0/partial总量；当前仅窄修根/遍历failclosed和保留child primary/raw/cleanup事实。新定向missing/file/symlink/scandir/原failure保真及URL空fragment/parse净化用例，≤4child/15s各/35s累计/new≤1MiB；floor17943494656B。S01 FULLRETURN后ordinary已授权空闲，PG/HTTP/provider始终0。旧raw/review结论原样保留，新target待固定/独审。
 
 2026-10-07T16:17:20.190555Z：P2窄修检查actual FULLRETURN；3定向caller覆盖missing/file/root-symlink、descendant scandir拒绝、owned嵌套计量与原primary/raw/KEEP保真，URL1项补空fragment/parse净化（3项未选），focused noEmit exit0。3child全部closed/final absent/MERGED EOF完整/无first-secondary-signal fault，3TMP exact归还；所有可执行字节绑定771854ece且之后未改，仅README记录变化。实际读数未知为null/UNKNOWN/预算false，原child first failure不被覆盖，不把坏根当0。唯一[本段manifest](../../docs/evidence/k01/query-entry-owned-repair-20261007T161534/manifest.json)保存初P2及修复/原始结果，旧13与e1a结果不重写。ordinary已让给AV03，STOP新launch。直接请求原reviewer一次被thread cap拒绝，不循环/新建，交Mika路由窄复审；PG permit仍CLOSED/expired/reviewed=false。最终commit/push后本段全部STOP，claim30965v2保留。
+
+2026-10-07T16:30:15.342251+00:00：fresh claim30965v2三scope及db7=origin clean后，顺序metadata-only归档db_transaction_owner 16:22:26独审批准/0P1P2；当前target a82及已执行字节不变。预算归档增量按原P2≤1MiB剩余额度核算，未重物化source或访问旧KEEP；结果见独审回执。runtime候选reviewed=true但permit仍CLOSED/expired、requiredFreeBytes=null、无namespace/预约。候选120s=70work+40cleanup+10receipt、max configured18、DB128MiB末sample/local8MiB/raw2MiB，实际floor由未来manager fresh供给，不据历史free准入。0工程child/PG/HTTP/资源探针。提交push后全部K01 STOP，原开放TODO不关闭。
