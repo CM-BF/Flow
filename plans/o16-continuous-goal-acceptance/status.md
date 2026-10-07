@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T11:24:29.914Z |
+| 最近更新 | 2026-10-07T11:25:52.629Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -11,11 +11,11 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance |
 | Branch | codex/continuous-native-goal-acceptance |
 | 基线 | 当前验收f5a13cbed6b75151f34e6924ec7e10c8894acf48；原8bd为历史基线 |
-| HEAD | 诊断source49d已main fb647700；R3结果固定中，源码不变 |
+| HEAD | 实验诊断source49d仍main；同runtime auth caller dff8e1f8 / 一次结果封存中 |
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
 | 工作分支状态 | in-progress |
-| 检查状态 | R3实际1SDK/累计3、4帧，assistant.error authentication_failed；outer1/26170ms；3组absent/连接[]，新旧DB/tmp KEEP。SDK估价0与账户费用UNKNOWN分开；旧检查未重跑。 |
-| Review | R3已APPROVED_LIMITED_FAILED_RESULT_FIDELITY/main f68dbb71；同runtime公开auth状态薄caller实施，结果未运行 |
+| 检查状态 | 同runtime auth一次：loggedIn=false/authMethodnone，native174ms/exit1；准备+实际1085ms，两组absent/双EOF/无signals，私有427B KEEP。3纯自检+syntax0，0query；真实SDK仍累计3。 |
+| Review | R3结果已限定独审/main f68dbb71；同runtime公开状态结果待独立限定审查 |
 | 实现目标 | 49d35d97e2d5d529d34dc29458ed2d95f2474909 |
 | 实现范围 | experiments/continuous-goal-acceptance |
 | 已集成main状态 | 诊断49d main fb647700；R3固定失败8e/8d已main f68dbb71，限定忠实性独审在I02 o16-native-r3-result-review.json；289产品仍f5a，无重测。 |
@@ -23,11 +23,11 @@
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 第三次规划仍未形成提案；本次已保存明确的认证错误声明和受限私有诊断，所有登记进程与连接已关闭。 |
-| 下一可用交付 | 仅一次同原生版本与私有环境的公开认证状态诊断，白名单结果与收尾后独立审查；不调用模型。 |
-| 当前阻塞 | ACTIVE: 原生规划报告认证失败，三次额度已用完；现有证据不能确定具体认证来源，保留资源并停止新请求。 |
+| 当前产出 | 同版本私有环境的公开状态未识别登录来源，已保存白名单结果与收尾事实；没有新增模型请求。 |
+| 下一可用交付 | 完成本次限定独审，并只读明确私有环境与既有认证来源解析的差异。 |
+| 当前阻塞 | ACTIVE: 规划报告认证失败，同环境状态也未识别来源；实际来源差异尚未定位，三次模型额度已用完。 |
 | 需用户决定 | NONE |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
@@ -123,3 +123,5 @@
 2026-10-07T11:16:00.396Z：R3[实际原件与限定结果](../../docs/evidence/o16/native-plan-20261007-r3/RESULT.md)已封：本次SDK1/累计3，frame3明确authentication_failed；647B受限诊断已耐久，正文不复制公开。SDK估价0不当账单费用；原R1/R2不追认同因。11:14:22.783Z三组ESRCH/目标连接[]/observerpoolclosed后归还；DB/tmp KEEP，0第四次/登录/凭据读取或清理。待结果独审。
 
 2026-10-07T11:24:29.914Z：R3失败结果已限定独审并main f68dbb71；引用唯一I02 review，不复制第二原件。同runtime认证状态候选已获Lead连续段授权，现薄caller只复用白名单/OPS14/原env，3纯例与syntax通过；真实auth子段尚未开始。将只执行SDK内2.1.290 auth status --json，不query/login/凭据读取或换路；原累计3/费用UNKNOWN/KEEP不变。
+
+2026-10-07T11:25:52.629Z：同runtime[公开认证状态](../../docs/evidence/o16/same-runtime-auth-once/RESULT.md)仅一次，loggedIn=false/authMethodnone，原生exit1不是认证通过。11:24:40.634148Z两组absent/双EOF后归还local；新私有427B材料按原empty-only规则KEEP，原stdout/stderr不保存/hash/外发。原SDK3/无第四次，旧KEEP与R3失败不改。待一次结果独审；后继仅源码归因，不让用户盲目重新登录。

@@ -1,0 +1,71 @@
+{
+  "recordedAt": "2026-10-07T11:25:52.629Z",
+  "sourceCaller": "dff8e1f8",
+  "outerTool": {
+    "sessionId": 8257,
+    "initialChunk": "7c8884",
+    "completionChunk": "f83f90",
+    "exitCode": 0
+  },
+  "nativeCalls": 1,
+  "SDKQueryCalls": 0,
+  "SDKQueriesCumulative": 3,
+  "fourthQuery": "NOT_AUTHORIZED",
+  "publicStatus": {
+    "loggedIn": false,
+    "authMethod": "none",
+    "apiProvider": "firstParty"
+  },
+  "state": "OBSERVED_NO_AUTH_SOURCE_IN_FIXED_PRIVATE_RECIPE",
+  "nativeExitCode": 1,
+  "supervisorFirstFailure": {
+    "phase": "work",
+    "code": "CHILD_EXIT_NONZERO",
+    "type": "SupervisionFailure",
+    "errno": null,
+    "message": "child exit nonzero"
+  },
+  "interpretation": "exit1 agrees with fixed native authStatus loggedIn=false; first_failure remains original, not authentication success",
+  "nativeMs": 174,
+  "totalPreparationAndRunMs": 1085,
+  "private": {
+    "scratch": {
+      "path": "/private/tmp/flow-o16-sdk-status-6ua0dkar",
+      "dev": 16777234,
+      "ino": 124078391
+    },
+    "measurement": {
+      "state": "complete",
+      "logical_bytes": 427,
+      "allocated_bytes": 8192,
+      "entries": 7,
+      "regular_files": 2,
+      "directories": 6,
+      "symlinks": 0,
+      "vanished_entries": 0,
+      "elapsed_seconds": 0.0003196250181645155,
+      "issueCode": null
+    },
+    "retention": "KEEP; no private content read; no recursive deletion authority added"
+  },
+  "preparedSourceDigest": "c6d957f101c1084a1298c8c933d81ee898bfe94a5faa0f4e3d19139d5d056816",
+  "preparedRecipeDigest": "4111341d2a26aac0b95c72deb2c571415b0d893ffad23d81d0fbaaaf8e518659",
+  "sourceFiles": 324,
+  "aliases": 39,
+  "closed": {
+    "preparation": "absent",
+    "native": "absent",
+    "dualEOF": true,
+    "signals": []
+  },
+  "rawSensitiveOutput": {
+    "observedBytes": 279,
+    "archived": false,
+    "hashed": false,
+    "printed": false
+  },
+  "scope": "Status resolver only; no native query/authentication refresh success/model qualification or account logout inferred",
+  "readiness": "Next only fixed source reasoning; no credential read/copy/export/login or alternate route repeat authorized",
+  "oldResources": "All original FAIL/KEEP unaffected",
+  "review": "PENDING_INDEPENDENT_LIMITED_RESULT_REVIEW"
+}
