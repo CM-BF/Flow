@@ -32,4 +32,6 @@
 - `docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-replay-r1.raw`
 - `docs/evidence/s01/mixed-ab-preparation/delivery-replay-v2-replay-r1.json`
 
-claim508fv3/full6于15:00:22Z核身份/范围不变。候选新增32MiB按manager现完整floor至少11710693376B或更高freshsum；历史input最低数不改，不因普通local RETURN减旧KEEP或重复reserve。个人用户负载仍UNKNOWN，未探测/停止；60s/32MiB独立replay未获授权，本片无待launch。此次只3份metadata收口，未改source/manifest/raw/编译物，未再运行任何工程检查。
+claim508fv3/full6于15:00:22Z核身份/范围不变。候选新增32MiB按manager现完整floor至少11744247808B或更高freshsum；历史input最低数不改，不因普通local RETURN减旧KEEP或重复reserve。个人用户负载仍UNKNOWN，未探测/停止；60s/32MiB独立replay未获授权，本片无待launch。此次只3份metadata收口，未改source/manifest/raw/编译物，未再运行任何工程检查。
+
+15:02资源输入更新：Web普通local已14:59:19.174 RETURN，K01潜在32MiB加入上述候选floor；K01工程child明确为本性能段暂停。此为声明预算与历史交接，不是本任务OPEN，仍以manager明确授权和实际fresh更高sum为准。
