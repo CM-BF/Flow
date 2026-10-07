@@ -128,3 +128,99 @@ test('old first update remains old even when main sync is newer', () => {
 test('future timestamp is preserved for the unchanged aggregate policy to evaluate', () => {
   assert.equal(parseStatus(status('2099-10-06T16:10:36.850746+00:00'), 'T01').updatedAt, '2099-10-06T16:10:36.850Z');
 });
+
+function taskTiming(rows, suffix = '') {
+  const table = rows.map(([key, value]) => `| ${key} | ${value} |`).join('\n');
+  return parseStatus(status('2026-10-07T03:00:00Z').replace('## TODO', `${table}\n\n## TODO`) + suffix, 'T01');
+}
+const timingRows = [
+  ['任务开工时间', '2026-10-07T01:00:00.125Z'],
+  ['任务完成时间', 'NOT_COMPLETED'],
+  ['任务时间来源', '开工：[本人实际开始记录](../../evidence/start.json)；完成：未发生'],
+];
+
+test('task timing has its own whole-field contract and preserves owner provenance', () => {
+  const parsed = taskTiming(timingRows);
+  assert.deepEqual(parsed.timing.started, { state: 'known', at: '2026-10-07T01:00:00.125Z', record: timingRows[0][1] });
+  assert.deepEqual(parsed.timing.completed, { state: 'not_completed', at: null, record: 'NOT_COMPLETED' });
+  assert.deepEqual(parsed.timing.source, { state: 'declared', record: timingRows[2][1] });
+  assert.deepEqual(parsed.timing.issues, []);
+  assert.deepEqual(parsed.errors, []);
+  assert.equal(parsed.updatedAt, '2026-10-07T03:00:00.000Z');
+});
+
+test('missing optional task timing leaves legacy status and progress intact', () => {
+  const parsed = taskTiming([]);
+  assert.equal(parsed.timing.started.state, 'unknown');
+  assert.equal(parsed.timing.completed.state, 'unknown');
+  assert.equal(parsed.timing.source.state, 'unknown');
+  assert.deepEqual(parsed.errors, []);
+  assert.equal(parsed.todos.length, 1);
+  assert.equal(parsed.owner, 'timestamp-owner');
+  assert.equal(parsed.checks.state, 'not_run');
+  assert.equal(parsed.reviewRecord, 'NOT_STARTED');
+  assert.equal(parsed.mainRecord, '尚未集成');
+});
+
+for (const input of ['UNKNOWN', '', '2026-10-07T01:00:00', '2026-10-07 01:00 UTC', '2026-10-07T01:00:00+01:00', '2026-02-29T01:00:00Z', '2026-10-07T24:00:00Z', '2026-10-07T01:00:00Z later 2026-10-07T02:00:00Z', 'opened 2026-10-07T01:00:00Z']) {
+  test(`invalid task start ${input || '(empty)'} cannot be rescued by update or another date`, () => {
+    const parsed = taskTiming(timingRows.map(row => row[0] === '任务开工时间' ? [row[0], input] : row));
+    assert.equal(parsed.timing.started.state, 'unknown');
+    assert.equal(parsed.timing.started.at, null);
+    assert.ok(parsed.timing.issues.length > 0);
+    assert.equal(parsed.timing.completed.state, 'not_completed');
+    assert.deepEqual(parsed.errors, []);
+    assert.equal(parsed.updatedAt, '2026-10-07T03:00:00.000Z');
+  });
+}
+
+for (const key of ['任务开工时间', '任务完成时间', '任务时间来源']) {
+  test(`duplicate ${key} is isolated from legacy errors and cannot choose last value`, () => {
+    const parsed = taskTiming([...timingRows, [key, '2026-10-07T02:00:00Z']]);
+    assert.ok(parsed.timing.issues.some(issue => issue.includes('重复')));
+    assert.deepEqual(parsed.errors, []);
+    const field = key === '任务开工时间' ? 'started' : key === '任务完成时间' ? 'completed' : 'source';
+    assert.equal(parsed.timing[field].state, 'unknown');
+    assert.equal(parsed.todos[0].state, 'pending');
+  });
+}
+
+test('known completion preserves seconds precision; reversed interval is a timing-only issue', () => {
+  const valid = taskTiming(timingRows.map(row => row[0] === '任务完成时间' ? [row[0], '2026-10-07T02:00:00Z'] : row));
+  assert.equal(valid.timing.completed.at, '2026-10-07T02:00:00.000Z');
+  assert.deepEqual(valid.timing.issues, []);
+  const reversed = taskTiming(timingRows.map(row => row[0] === '任务完成时间' ? [row[0], '2026-10-07T00:00:00Z'] : row));
+  assert.equal(reversed.timing.completed.state, 'known');
+  assert.ok(reversed.timing.issues.includes('任务完成时间早于开工时间'));
+  assert.deepEqual(reversed.errors, []);
+});
+
+test('UNKNOWN end is distinct from NOT_COMPLETED and source absence does not authorize timing', () => {
+  const parsed = taskTiming([timingRows[0], ['任务完成时间', 'UNKNOWN']]);
+  assert.equal(parsed.timing.completed.state, 'unknown');
+  assert.equal(parsed.timing.source.state, 'unknown');
+  assert.deepEqual(parsed.errors, []);
+});
+
+test('completion alone, future declarations and branch completion never supply a start', () => {
+  const parsed = taskTiming([['任务完成时间', '2099-10-07T02:00:00Z'], timingRows[2]]);
+  assert.equal(parsed.timing.started.at, null);
+  assert.equal(parsed.timing.completed.at, '2099-10-07T02:00:00.000Z');
+  assert.deepEqual(parsed.errors, []);
+  const branchComplete = parseStatus(status('2026-10-07T03:00:00Z').replace('| 工作分支状态 | in-progress |', '| 工作分支状态 | completed |'), 'T01');
+  assert.equal(branchComplete.timing.completed.state, 'unknown');
+});
+
+test('waiting records remain source text, including OPEN/UNKNOWN and overlapping intervals', () => {
+  const waiting = '## 等待记录\n| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| --- | --- | --- | --- | --- | --- |\n| WAIT01 | 2026-10-07T01:10:00Z | OPEN | 资源 | 等待可用窗口 | 原记录A |\n| WAIT02 | UNKNOWN | OPEN | 审查 | 待独审 | 原记录B |\n';
+  const parsed = taskTiming(timingRows, waiting);
+  assert.ok(parsed.timing.waiting.includes('WAIT01'));
+  assert.ok(parsed.timing.waiting.includes('UNKNOWN'));
+  assert.ok(!Object.hasOwn(parsed.timing, 'netWorkMs'));
+  assert.deepEqual(parsed.errors, []);
+});
+
+test('ordinary duplicated status fields retain existing errors', () => {
+  const parsed = taskTiming([['Branch', 'codex/conflict']]);
+  assert.deepEqual(parsed.errors, ['重复字段：Branch']);
+});

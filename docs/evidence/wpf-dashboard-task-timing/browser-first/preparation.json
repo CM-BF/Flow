@@ -1,0 +1,256 @@
+{
+  "state": "PREPARED_NOT_RUN_NO_HEAVY_WINDOW",
+  "task": "WPF-DASHBOARD-TIMING01",
+  "owner": "/root/w01_owner",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing",
+  "branch": "codex/dashboard-task-timing",
+  "source": "72a9407e2e733479631b9409c36113e8f450b6f1",
+  "metadata": "156b49d33d08a0d47521f8a231684050d648f9c2",
+  "claim": {
+    "id": "9a677471-191a-4cd8-ae03-b588524cbf1e",
+    "version": 1,
+    "authority": "Existing Timing scope; this preparation writes only owned private tmp"
+  },
+  "preparedAt": "2026-10-07T03:31:58.074011+00:00",
+  "runtimeGate": null,
+  "browserResult": "NOT_RUN",
+  "expectedChecks": [
+    "Explicit task start/end and inclusive elapsed; branch completion never ends the task",
+    "Unknown, missing provenance, future, reverse, stale and frozen observations do not advance",
+    "Read failure marks open timing historical without replacing the dialog or stealing focus",
+    "New snapshot updates cards; an open detail retains its original observation until explicitly reopened",
+    "Both 390px themes preserve UTC/source/wait text, keyboard access and bounded layout"
+  ],
+  "expectedScreenshots": [
+    "task-timing-light-390.png",
+    "task-timing-dark-390.png"
+  ],
+  "limits": {
+    "totalMs": 60000,
+    "workMs": 45000,
+    "cleanupReserveMs": 15000,
+    "previousRuntimeMs": 0,
+    "scratchBytes": 268435456,
+    "rawBytes": 8388608,
+    "sampledFreeFloorBytes": 1073741824
+  },
+  "prepared": [
+    {
+      "path": "/private/tmp/timing-browser-prepared-cdx8wfiq/run.py",
+      "realpath": "/private/tmp/timing-browser-prepared-cdx8wfiq/run.py",
+      "bytes": 6219,
+      "sha256": "e5b131153db6ee92cc92c17ca7a4a6200d0d367bf8d3703bc6138dc0944f868f"
+    },
+    {
+      "path": "/private/tmp/timing-browser-prepared-cdx8wfiq/worker.mjs",
+      "realpath": "/private/tmp/timing-browser-prepared-cdx8wfiq/worker.mjs",
+      "bytes": 5396,
+      "sha256": "b88dbb5d0b3650ed83d2852b1cfb245371b373df0fe842f7a879851c047f45c4"
+    },
+    {
+      "path": "/private/tmp/timing-browser-prepared-cdx8wfiq/caller-adapter.diff",
+      "realpath": "/private/tmp/timing-browser-prepared-cdx8wfiq/caller-adapter.diff",
+      "bytes": 10919,
+      "sha256": "9b9c6cba8a0e8da460ca11541d25c3f3e799c63db4597025a5b3355b26dcd3bc"
+    }
+  ],
+  "reusedCaller": [
+    {
+      "path": "/private/tmp/access01-browser-followup-jn35famf/run.py",
+      "realpath": "/private/tmp/access01-browser-followup-jn35famf/run.py",
+      "bytes": 6237,
+      "sha256": "09ac049a54b315d9cca9c10f78ce5209a198da5f644e2174b1d4ef95a42ceb5f"
+    },
+    {
+      "path": "/private/tmp/access01-browser-followup-jn35famf/worker.mjs",
+      "realpath": "/private/tmp/access01-browser-followup-jn35famf/worker.mjs",
+      "bytes": 4968,
+      "sha256": "3fcd86a271c265ba45ed074d3a44f1c7f8290f5c7ee779ef149f339cfb30a5dc"
+    }
+  ],
+  "sourcePins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/test/task-timing.browser.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/test/task-timing.browser.mjs",
+      "bytes": 10811,
+      "sha256": "8d7c14d28cb16c64fab1c288854961cfdcefc7eab9451f63ece27aff662a2265"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/src/status.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/src/status.mjs",
+      "bytes": 8548,
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/src/human.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/src/human.mjs",
+      "bytes": 4459,
+      "sha256": "cbf16ad2fae13f3cfb667590b74ce8068073b49c50b38c4bfe308bf71e351074"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/src/task-links.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/src/task-links.mjs",
+      "bytes": 5903,
+      "sha256": "b3d72ae64b1a3cf9abdd5546b4988c6a885f0a9a83a9d4919e13eb3dce1a87f4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/src/proof.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/src/proof.mjs",
+      "bytes": 6883,
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/src/git-snapshot.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/src/git-snapshot.mjs",
+      "bytes": 2396,
+      "sha256": "b6952a543bdfb92135fb055528c1269c0ef50ac161ca6bfdf3803084e788928a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/public/index.html",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/public/index.html",
+      "bytes": 6397,
+      "sha256": "bb1bfbefd5cf80794f658a32b4530bfc28a18d08d09978fb8a8461b69e8a8614"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/public/app.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/public/app.js",
+      "bytes": 22669,
+      "sha256": "a7477b523ee7dbb6740628b7b3d4871a62de5e22845d94be45ca86215fe6d945"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/public/styles.css",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/public/styles.css",
+      "bytes": 8947,
+      "sha256": "c90e9212ae2ab542232e5bd53c264aadc611beda24fa85e94a82b6b252281c2c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/public/architecture.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/public/architecture.js",
+      "bytes": 7689,
+      "sha256": "c98efa1d6cb0c5c278789ad8fc36bf35e0bf5a920a3e0919908cc47f192a3dc4"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/public/architecture-data.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/public/architecture-data.js",
+      "bytes": 41828,
+      "sha256": "dcaf11662c1ad53a6576fede0eb5b2dc39b2b02bcac809101a9fb8635b92a800"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/public/architecture.css",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing/apps/execution-dashboard/public/architecture.css",
+      "bytes": 4082,
+      "sha256": "648b22fde8ee6361d6904cfe9a60254a646141d89e24ccd03e15c19172709780"
+    }
+  ],
+  "productPins": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+      "bytes": 8548
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "a7477b523ee7dbb6740628b7b3d4871a62de5e22845d94be45ca86215fe6d945",
+      "bytes": 22669
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "sha256": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d",
+      "bytes": 11861
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "sha256": "8d7c14d28cb16c64fab1c288854961cfdcefc7eab9451f63ece27aff662a2265",
+      "bytes": 10811
+    }
+  ],
+  "externalPins": [
+    {
+      "path": "/opt/homebrew/opt/node@24/bin/node",
+      "exists": true,
+      "realpath": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "exists": true,
+      "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "bytes": 367696,
+      "sha256": "ccffd5c5fe77ba3212e07c2c69091f8048b73c396b4647ecaa150e1e01a04954"
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "exists": true,
+      "realpath": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "bytes": 18856,
+      "sha256": "89dd2f1a7b8a46a153603197c416dab4078d47d499785422ba5286d4f39b2e69"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "exists": true,
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/package.json",
+      "bytes": 876,
+      "sha256": "f061c58427e47e843e26d201f0a57076c734e57c734ecbbd87d4a23b7a20db9b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.mjs",
+      "exists": true,
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.mjs",
+      "bytes": 1063,
+      "sha256": "3d36e2132d3c8b62397d23f0bb4177336aaee503203ae2a2c90fbeb5bf3317dd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.js",
+      "exists": true,
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/index.js",
+      "bytes": 697,
+      "sha256": "a58fb2cec4293e7dcf73c58a179898a4f3986666451a19da4e731fa3af63265b"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "exists": true,
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/coreBundle.js",
+      "bytes": 3477183,
+      "sha256": "549070af3acabb3efcc4f55bfe6210f9f7c2fcf633cf7eaa59bfe60719969171"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/bootstrap.js",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/playwright-core@1.63.0/node_modules/playwright-core/lib/bootstrap.js",
+      "exists": true,
+      "bytes": 3481,
+      "sha256": "4637f4dbfef9cfc01baeb5f5d2cb63fa0901522c96915ea2227290558d27123e"
+    }
+  ],
+  "skills": [
+    {
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "realpath": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "bytes": 5472,
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "realpath": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "bytes": 4835,
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317"
+    },
+    {
+      "path": "/Users/citrine/.agents/skills/webapp-testing/SKILL.md",
+      "realpath": "/Users/citrine/.agents/skills/webapp-testing/SKILL.md",
+      "bytes": 3913,
+      "sha256": "51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2"
+    }
+  ],
+  "executionCommand": "python3 /private/tmp/timing-browser-prepared-cdx8wfiq/run.py",
+  "boundary": "Future explicit heavy handoff only; native Chrome sandbox retained. Chrome and HTTP fixture inherit one owned Node worker PGID. No custom outer filesystem/egress sandbox; no claim of equivalence with sandboxed Node callers. No PG/registry/provider/personal service; own profile/CDP/random fixture loopback only.",
+  "reception": "Require actual outer exit 0, full unique terminal stdout PASSED, worker exit 0, ownedGroupAbsent/scratchRemoved true, both EOF true, discardedOutputBytes 0, errors/cleanupErrors/interrupts empty, worker fixture.closed true, Chrome exit+EOF facts, exact 5 checks, exact 2 PNG names and no pageErrors. Preserve raw result pre-postwrite and final terminal fields separately; disk PASS alone is insufficient.",
+  "limitations": [
+    "Polling gives sampled logical sizes/free floor, not hard physical quotas or isolation of other processes.",
+    "No runtime, import, syntax experiment, process/space sampling or dependency installation performed.",
+    "Source and external hash observation is preparation time only; actual admission must verify fixed identities and current owned empty output before one use.",
+    "Original ACCESS caller and all raw evidence unchanged; its fifth visibility scenario and prior budget/results are not inherited.",
+    "Reduced motion is a deterministic functional mode, not a performance measurement.",
+    "Timing source registration registry185 from Lead is not evidence that live dashboard185 has loaded it."
+  ]
+}

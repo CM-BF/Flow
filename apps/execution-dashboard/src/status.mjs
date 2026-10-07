@@ -18,6 +18,10 @@ function parseUtcUpdate(record) {
   if (start < 0) return null;
   const match = primary.slice(start).match(/^(\d{4})-(\d{2})-(\d{2})[ T](\d{2}):(\d{2})(?::(\d{2})(?:\.(\d+))?)?\s*(?:UTC|Z|\+00:00)(?![\w.+:/-])/);
   if (!match) return null;
+  return utcParts(match);
+}
+
+function utcParts(match) {
   const [, yearText, monthText, dayText, hourText, minuteText, secondText = '0', fraction = ''] = match;
   const [year, month, day, hour, minute, second] = [yearText, monthText, dayText, hourText, minuteText, secondText].map(Number);
   if (month < 1 || month > 12 || day < 1 || day > 31 || hour > 24 || minute > 59 || second > 59) return null;
@@ -30,6 +34,33 @@ function parseUtcUpdate(record) {
   const milliseconds = Number(fraction.slice(0, 3).padEnd(3, '0'));
   date.setUTCHours(hour, minute, second, milliseconds);
   return Number.isFinite(date.getTime()) ? date.toISOString() : null;
+}
+
+const timingKeys = new Set(['任务开工时间', '任务完成时间', '任务时间来源']);
+
+function parseTaskTiming(fieldRows, waiting) {
+  const issues = [];
+  function record(key) {
+    const matches = fieldRows.filter(([name]) => normaliseKey(name) === key);
+    if (matches.length > 1) issues.push(`${key}重复，无法确定唯一声明`);
+    return { value: matches.map(([, value]) => plain(value)).join('\n'), unique: matches.length === 1 };
+  }
+  function instant(key, allowIncomplete = false) {
+    const { value, unique } = record(key);
+    if (unique && allowIncomplete && value === 'NOT_COMPLETED') return { state: 'not_completed', at: null, record: value };
+    // The new task contract is an entire ISO UTC field, not an update sentence.
+    const match = unique && value.match(/^(\d{4})-(\d{2})-(\d{2})T(\d{2}):(\d{2}):(\d{2})(?:\.(\d{1,3}))?Z$/);
+    const at = match && Number(match[4]) < 24 ? utcParts(match) : null;
+    if (!at) issues.push(`${key}${!value || value === 'UNKNOWN' ? '未记录' : '不是唯一有效的 ISO UTC 时间'}`);
+    return { state: at ? 'known' : 'unknown', at: at || null, record: value };
+  }
+  const started = instant('任务开工时间');
+  const completed = instant('任务完成时间', true);
+  const provenance = record('任务时间来源');
+  const sourceKnown = provenance.unique && Boolean(provenance.value) && provenance.value !== 'UNKNOWN';
+  if (!sourceKnown) issues.push('任务时间来源未知');
+  if (started.at && completed.at && completed.at < started.at) issues.push('任务完成时间早于开工时间');
+  return { started, completed, source: { state: sourceKnown ? 'declared' : 'unknown', record: provenance.value }, issues, waiting };
 }
 
 export function parseStatus(markdown, taskId) {
@@ -51,7 +82,7 @@ export function parseStatus(markdown, taskId) {
       else if (!section && row.length >= 2 && !['字段', 'Field'].includes(row[0])) {
         fieldRows.push([row[0], row.slice(1).join(' | ')]);
         const key = normaliseKey(row[0]);
-        if (Object.hasOwn(fields, key)) errors.push(`重复字段：${row[0]}`);
+        if (Object.hasOwn(fields, key) && !timingKeys.has(key)) errors.push(`重复字段：${row[0]}`);
         fields[key] = row.slice(1).join(' | ');
       }
     }
@@ -73,6 +104,7 @@ export function parseStatus(markdown, taskId) {
   if (!todos.length) errors.push('缺少 TODO 状态表');
   if (todos.some(todo => !/^[A-Z][A-Z0-9-]*\d[A-Z0-9-]*$/.test(todo.id))) errors.push('TODO ID 格式未知');
   return {
+    timing: parseTaskTiming(fieldRows, (sections['等待记录'] ?? []).join('\n')),
     taskLinks: parseTaskLinks(taskId, fieldRows),
     human: parseHuman(field), implementation: parseImplementation(plain(field(/^实现目标$/)), field(/^实现范围$/)),
     taskId, owner: plain(owner), branch: plain(branch), branchState: plain(branchState),

@@ -1,0 +1,86 @@
+{
+  "taskId": "WPF-DASHBOARD-TIMING01",
+  "parent": "D01",
+  "owner": "w01_owner",
+  "coLead": "Web /root",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-task-timing",
+  "branch": "codex/dashboard-task-timing",
+  "claim": {
+    "id": "9a677471-191a-4cd8-ae03-b588524cbf1e",
+    "version": 1,
+    "scope": "existing six literal retained pending main"
+  },
+  "base": "18144593a0f210e8d5b9b2c08f4ff62259c07cf5",
+  "implementationCommit": "72a9407e2e733479631b9409c36113e8f450b6f1",
+  "runtimeMetadataCommit": "156b49d33d08a0d47521f8a231684050d648f9c2",
+  "metadataCommit": "resolve this committed main-intake.json owner HEAD; no moving product inputs",
+  "sources": [
+    {
+      "path": "apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef",
+      "bytes": 8548
+    },
+    {
+      "path": "apps/execution-dashboard/public/app.js",
+      "sha256": "a7477b523ee7dbb6740628b7b3d4871a62de5e22845d94be45ca86215fe6d945",
+      "bytes": 22669
+    },
+    {
+      "path": "apps/execution-dashboard/test/status-timestamps.test.mjs",
+      "sha256": "77266867d432d0f63635333742446c24a4f52041a9bc81bf9be09b348acc419d",
+      "bytes": 11861
+    },
+    {
+      "path": "apps/execution-dashboard/test/task-timing.browser.mjs",
+      "sha256": "8d7c14d28cb16c64fab1c288854961cfdcefc7eab9451f63ece27aff662a2265",
+      "bytes": 10811
+    }
+  ],
+  "review": {
+    "state": "APPROVED_SCOPED",
+    "target": "72a9407e2e733479631b9409c36113e8f450b6f1",
+    "sourceParser": "root-72a-source-parser-review.json",
+    "browserActual": "root-72a-browser-actual-review.json",
+    "browserActualSha256": "006e6137230becc7f78f149616d7369b05f1316e7dfd55561d8e3bc50b38e96f"
+  },
+  "validation": {
+    "parser": {
+      "passed": 81,
+      "failed": 0,
+      "skipped": 0,
+      "raw": "parser-first/result.json",
+      "repeated": false
+    },
+    "browser": {
+      "passedGroups": 5,
+      "screenshots": 2,
+      "raw": "browser-first/archive.json",
+      "actualOuterExit": 0,
+      "outerElapsedMs": 6410.498125012964,
+      "chargedMs": 6411,
+      "remainingMs": 53589,
+      "runtimeCount": 1,
+      "cleanup": {
+        "worker39858Absent": true,
+        "chrome40008Absent": true,
+        "group39858Absent": true,
+        "fixtureClosed": true,
+        "scratchAbsent": true,
+        "stdoutEOF": true,
+        "stderrEOF": true,
+        "discardedBytes": 0,
+        "errors": []
+      }
+    },
+    "ownerMetadataParser": "browser-first-status-parser.json"
+  },
+  "intakeBoundary": [
+    "Only four declared source files; own evidence/plan may accompany source as reviewed provenance.",
+    "No DPERF unfinished app/server copied, no registry/server/aggregate/CSS changes.",
+    "Fixture uses real parser/UI with synthetic owner/Git/snapshot; no PG/provider/real registry or personal service.",
+    "Main integration and actual registry185 load/deployment NOT_RUN; first canonical registration185 is Lead-sourced only.",
+    "Task completion NOT_COMPLETED until declared task acceptance/main reception; no branch-to-full-completion inference.",
+    "Original source manifest NOT_STARTED and old browser preparation NOT_RUN are historical and retained; current owner status/review hold the new conclusion.",
+    "No additional runtime or automatic retry authorized by unused time."
+  ]
+}
