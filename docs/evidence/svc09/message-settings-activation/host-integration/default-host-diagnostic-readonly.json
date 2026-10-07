@@ -1,0 +1,84 @@
+{
+  "kind": "SVC09A_DEFAULT_HOST_READONLY_DIAGNOSTIC",
+  "at": "2026-10-07T19:25:58.083Z",
+  "resultTarget": "039559e0d3e5726b6d1b46e141559b5496a9b420",
+  "scope": "Existing own synthetic records and fixed public source only. No new PG/process/auth/model/installation/personal access. Original result is unchanged.",
+  "privateEvidence": {
+    "root": "/private/tmp/flow-svc09a-host-no7xu3pz",
+    "rootIdentity": {
+      "dev": "16777234",
+      "ino": "124420522"
+    },
+    "relativePath": "startup-diagnostics/center-6f5723a9-b1fd-42ef-9e78-7c6d9afbacfc.json",
+    "bytes": 330,
+    "sha256": "05f1acdb867f066dd504b45fa40760a7efb70d01fc9da011e17c59ecd93d6cf7",
+    "projection": {
+      "format": 1,
+      "role": "center",
+      "nonce": "6f5723a9-b1fd-42ef-9e78-7c6d9afbacfc",
+      "pid": 48884,
+      "phase": "child-exit",
+      "at": "2026-10-07T19:16:38.103Z",
+      "exit": {
+        "code": null,
+        "signal": "SIGTERM"
+      },
+      "stderr": {
+        "bytes": 0,
+        "observedBytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "truncated": false,
+        "complete": true
+      }
+    },
+    "stderrStat": {
+      "bytes": 0,
+      "dev": "16777234",
+      "ino": "124436345",
+      "bodyRead": false
+    },
+    "startupFailureFile": {
+      "relativePath": "center-startup-failure.json",
+      "observation": "ENOENT"
+    }
+  },
+  "sources": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+      "bytes": 54654,
+      "sha256": "076cebff493c09dfdaeb0d803979feb9d42b0368b83a56a40e29fc343400b412"
+    },
+    {
+      "path": "tools/personal-preview/startup-diagnostics.mjs",
+      "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+      "bytes": 11355,
+      "sha256": "41a21f2595a68167f227a038dc5d54dc18f88439830dfa9e0a1ddc0f5576ca5d"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "source": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+      "bytes": 4368,
+      "sha256": "320e6a1d21b0cc7073f3985dace543476ba0672514422b883fb890e2a5d2ca54"
+    }
+  ],
+  "confirmed": "The same nonce/PID wrapper reached child-exit with SIGTERM and zero captured stderr. The fixed runService chain passed its load/marker/policy/serviceRuntime path and spawned the actual server command before observed exit. The controller still did not establish an owned listener at its last predicate; health remained unobserved.",
+  "missing": "Producer stages overwrite one record. No durable child-spawn start time or server-main entered/listen stage exists. Child-spawn success does not prove module-load completion, and final SIGTERM is the controller cleanup, not the original startup cause. Missing startup-failure.json alone is not proof of no error.",
+  "nextSmallOption": {
+    "purpose": "Before controller cleanup, preserve one bounded snapshot of the existing same-nonce producer record alongside the failed predicate.",
+    "exactProposedScopes": [
+      "tools/personal-preview/preview.mjs",
+      "tools/personal-preview/preview.test.mjs",
+      "tools/personal-preview/startup-diagnostics.mjs",
+      "tools/personal-preview/startup-diagnostics.test.mjs"
+    ],
+    "ownership": "Not taken; all current product paths released. Lead must coordinate any future write.",
+    "reuse": "Existing waitReady failure persistence and private startup record, one observation only, no second supervisor. Fixed driver can consume new controller/reader while selected2515 runtime remains unchanged.",
+    "port": "Small optional trusted startup observation port with default original behavior. Reader checks directory and regular0600/nlink1/self identity, role/PID/nonce, <=4096B, fixed phase/code/exit/stderr-metadata fields; never returns stderr text, environment or config.",
+    "failure": "Missing/unreadable/changed/foreign record is unknown and cannot replace the readiness primary or skip cleanup.",
+    "proofLimit": "Shows producer last phase at the actual pre-stop observation time. Does not reconstruct phase durations or distinguish progress inside server import/listen. Real producer timing would require changing selected runtime and an independently reviewed new artifact, which is outside this proposal.",
+    "requiredDirectConsumers": "Injected same-nonce/foreign-nonce/missing/changed private record and primary+cleanup preservation; shadow loader resolves the exact new reader. No actual host now authorized."
+  },
+  "rootCause": "UNKNOWN",
+  "retry": false
+}

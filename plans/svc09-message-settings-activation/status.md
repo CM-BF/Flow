@@ -6,7 +6,7 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T19:20:39.057Z |
+| 更新时间 | 2026-10-07T19:25:58.083Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
@@ -133,3 +133,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T19:16:09.120Z：原窗口19:04:52.076Z唯一选择后，fresh claim v6、22执行/19记录/6runtime与固定准备和controller闭包吻合，两新namespace不存在；free19427762176B ≥完整floor17908891648B，PG100/10/90可用≥42且预检pool关闭。一次固定入口创建新目录和标记DB，0模型/个人。
 
 2026-10-07T19:17:35.003Z：实际FAIL和资源RETURN分开。首错为START_UNCONFIRMED_CHECK_STATUS；末次直接predicate仅证center owner running、listener-query exit1/ownedfalse，health短路未到。唯一center已停止；operator/clone/work/cleanup及outer PID均absent，受监督EOF齐全，独立cleanup的launchAccounted/resourcesClosed=true、连接empty/adminClosed。DB/private保持KEEP，不DROP，不重试。见[原件和限制](../../docs/evidence/svc09/message-settings-activation/host-integration/DEFAULT-HOST-RESULT.md)。固定入口和产物未修改；此次结果待独立审查，任务完整完成仍NOT_COMPLETED。
+
+2026-10-07T19:25:58.083Z：只读后继定位见[有限诊断](../../docs/evidence/svc09/message-settings-activation/host-integration/default-host-diagnostic-readonly.json)。已有同nonce producer最终child-exit/SIGTERM、stderr0B，确定实际server命令已派生；没有server-main进入/监听前阶段记录，不能断言模块加载完成或回填底层根因。最小候选是在原ready失败持久化/停止前读取一次现有受限producer阶段，精确四产品scope需Lead另协调，当前未take/未改产品、未新运行。真正分解producer耗时需实际runtime新证据，不把旁路推断当已证。
