@@ -1,0 +1,44 @@
+{
+  "at": "2026-10-07T16:51:24.998Z",
+  "state": "APPROVED_FIXED_R4_HOST_PREPARATION",
+  "reviewer": "assignment_review",
+  "P1": 0,
+  "P2": 0,
+  "source": "9c73411578f2cf6552a8696511dc2af2402436da",
+  "delivery": "fb3bd1b7d3fdb5c8c5b250fd2e0ae40cf919ae2c",
+  "manifest": "docs/evidence/svc09/message-settings-activation/host-integration/host-preparation-r4.json",
+  "manifestBytes": 21786,
+  "manifestSha256": "d38a5bfd4c211c24b34cb170adc4256a4207d2f0bfff1456e274337ce0915ae2",
+  "bindings": {
+    "newOrReferenced": 24,
+    "bytes": 138375,
+    "synthesizedExecution": 19,
+    "executionBytes": 415174,
+    "publicRuntimeVerified": 5,
+    "privateArtifactManifest": "Sixth runtime pin inherited from approved fixed input; not reread by reviewer"
+  },
+  "review": "Complete7-source delta read. text[] matches fixed098b schema; final/ACK/tuple assertions and bounded SQLSTATE/phase without cause content remain. R4 isolated namespaces absent and exact argv; R1-R3 unchanged, no reuse.",
+  "localEvidence": {
+    "distinct": 8,
+    "selected": 8,
+    "new": 5,
+    "affected": 3,
+    "elapsedMs": 256,
+    "rawBytes": 1337,
+    "groups": 2,
+    "closure": "absent/dualEOF; two exact empty scratch removed"
+  },
+  "bounds": {
+    "outerMs": 217500,
+    "cloneBytes": 1073741824,
+    "privateBytes": 33554432,
+    "pgBytes": 134217728,
+    "rawBytes": 2097152
+  },
+  "limitations": [
+    "Preparation only; no actual host PASS/personal deployment or run grant",
+    "Candidate19372703744B arithmetic is not the actual next floor; latest selected-candidate budget and sole holder required",
+    "Unknown outcome/KEEP and original R3 code:null remain"
+  ],
+  "actions": "Read-only independent review, no repeated tests/PG/services/provider/personal or private-original access. Fixed raw/provenance remains once in original owner Git."
+}
