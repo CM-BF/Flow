@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 21:03 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 21:10 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
@@ -75,3 +75,5 @@
 | --- | --- | --- | --- |
 | 本次共享窗口等待 | 2026-10-07T20:39:15Z READY/STOP消息 | 2026-10-07T21:03:03.511Z entry owner.startMs | 仅此次实际事件，不重置原任务start；等待/计算/修复/review重叠不简单相加 |
 | 本次真实验证 | 2026-10-07T21:03:03.511Z owner.startMs | 2026-10-07T21:03:18Z 完整原件已读确认RETURN | 精确过程时长以OPS14/receipt字段为准；非用commit/mtime推断end |
+
+2026-10-07T21:10:25Z：新8min/new4MiB selector窄修段，fresh9e6af769=origin clean/21:10:25.971Z claimv1匹配。原结果db21:08:19 RESULT_FIDELITY_REVIEW_APPROVED，既知选择器P2 SOURCE_FIX_REQUIRED。仅caller纯JSON解释与原始报告只读反例，≤2child/30s/累计45s/raw256KiB含4MiB；0PG/HTTP/provider，旧actual所有字节冻结。任务原16:23start不重置，截止21:18:25。
