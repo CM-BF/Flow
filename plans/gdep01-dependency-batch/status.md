@@ -2,44 +2,44 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 22:40 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 22:49 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 任务开工时间 | 2026-10-07T22:03:42Z |
 | 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | owner clock工具实际开始；原首段/准备段已封存，均非commit/claim反推；当前metadata段22:39:43→22:45:43Z |
+| 任务时间来源 | owner clock工具实际开始；原首段/准备段已封存，均非commit/claim反推；各实际事件见下方；本次PG22:45:32.728788Z启动 |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-dependency-batch |
 | Branch | codex/goal-dependency-batch |
 | 工作基线 / HEAD | base69a71e3d9888c24c8f7c7a5965487f106c065c17；红例3c0697986dfd9456d8afbf322004b97dbd360270；source e1b02772853d08cf1069bc16a8b47b7ca717f633 |
-| 工作树dirty状态 | STOP；PG准备source bcbce5cca9dbe4b8d504e0b06deed40f0039f765，最终metadata提交后clean |
-| 工作分支状态 | implementation |
-| 检查状态 | PASSED: 原16pure；本段新PG类型0/精确8收集0执行；真实PG/SQL/EXPLAIN NOT_RUN |
+| 工作树dirty状态 | 产品/运行源STOP；仅本次actual结果/metadata封存，提交后clean |
+| 工作分支状态 | review |
+| 检查状态 | PASSED: 原16pure/types0；本次真实PG精确8/8，SQL/EXPLAIN/回滚与项目锁竞争通过 |
 | 已集成main状态 / HEAD | 本片未集成；固定base69a71e3d9888c24c8f7c7a5965487f106c065c17 |
 | 实现目标 | bcbce5cca9dbe4b8d504e0b06deed40f0039f765（PG准备；原product e1b0277字节未改） |
 | 实现范围 | apps/server/src/goals/commands.ts, apps/server/src/goals/dependency-content.ts, apps/server/src/goals/dependency-content.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | implementation |
+| 本片段交付阶段 | review |
 | 优先级 | 2 |
-| 当前产出 | 多个短依赖的有界批读及专库验证准备已通过独立审查，等待真实数据库验收 |
-| 下一可用交付 | 取得专库窗口后验证真实SQL、正文返回量与事务边界 |
-| 当前阻塞 | WAITING_RESOURCE: 真实数据库验收尚无独立运行窗口；由Mika协调，源码与局部检查已就绪 |
+| 当前产出 | 多个短依赖已在真实数据库中验证为一次有界读取，正文及错误顺序保持一致 |
+| 下一可用交付 | 完成真实结果独立审查并接入主线 |
+| 当前阻塞 | NONE: 本次真实结果待独立审查；主线尚未接收 |
 | 需用户决定 | NONE |
-| Review | [review.md](review.md)，SOURCE_AND_LOCAL_RESULT_AND_PG_PREPARATION_REVIEW_APPROVED，22:38:30Z |
+| Review | [review.md](review.md)，源/局部/准备APPROVED；本次actual结果待审 |
 | Claim | f2442a2f-357e-42d5-bb3d-da1c261684ab v2 ACTIVE；22:17:28.747Z AMEND COMMITTED，exact6（新增dependency-content.pg.test.ts） |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
 | GDEP01-01 | completed | b01_bounded_reads | 单一内部读取Interface与原commands接线已实现 |
 | GDEP01-02 | completed | b01_bounded_reads | results.md：红1/1→16/16、局部noEmit0；3child完整归还 |
-| GDEP01-03 | pending | b01_bounded_reads | source/local/PG准备独审均批准；真实PG/EXPLAIN/竞争NOT_RUN |
+| GDEP01-03 | completed | b01_bounded_reads | 源/准备独审通过；pg-actual-review-ready.json：真实8/8、SQL/字节/EXPLAIN/事务与项目锁竞争已验，结果独审待审 |
 | GDEP01-04 | pending | b01_bounded_reads | main未集成 |
 
 ## 当前权限与时间
 
-当前仅metadata收口，22:39:43Z实际开始、22:45:43Z截止，新增≤3MiB含自身index原子临时副本；0工程child/PG/listener/provider。历史source/local 8MiB与PG准备4MiB段已STOP关闭，不转余额。原始setup前置失败仍在source-supply.json。
+历史metadata段22:39:43Z开始、22:41收口；本次已消费唯一PG grant，所有运行已停止，仅在授权local8MiB内封原件/状态。历史source/local 8MiB与PG准备4MiB段已STOP关闭，不转余额。原始setup前置失败仍在source-supply.json。
 
 ## 架构影响 / Dashboard
 
@@ -74,3 +74,11 @@ PG准备target bcbce5cca9dbe4b8d504e0b06deed40f0039f765；唯一pg-review-ready.
 新段实际22:39:43Z开始，22:39:51.226Z fresh ledger核f244…v2 ACTIVE/exact6、本树98f3 clean。归档db22:38:30Z独审（pg-preparation-review.json），唯一排队入口pg-queue-ready.md；未修改source/512输入/closed-permit/raw。READY_CLOSED：3configured PG，headroom至少19且预检admin已关闭；未来140秒主体，DB128+WAL128分别规划、local8含raw2，候选本身264MiB，不另叠manager单reserve。main未集成，task finish NOT_COMPLETED。当前0child/0待launch；提交push后STOP，claim保留。
 
 本段量核：metadata整文件上界16396B + index临时2290030B + Git/最后回执预留131072B = 2437498B < 3145728B。原18绑定逐hash未变；0工程child/PG/待launch，本段future增长于最终pushclean STOP关闭。
+
+## 真实PG单次执行与收尾
+
+READY_CLOSED封存22:41:02Z→manager选择22:43:38.826Z→actual START22:45:32.728788Z；原task22:03:42起点不变。预检、主进程、DB收尾、后续组absence、证据归档各口径见pg-actual-results.md，不相加当有效工时。8选8通过；原pure16不重跑，main未集成，task finish NOT_COMPLETED。
+
+完整原件绑定pg-actual-review-ready.json，runtime512/20alias及13审查源未变。outer terminal22:45:34.364426Z，DB cleanup receipt22:45:34.309Z；精确TMP删除/caller回执wall未知；后续outer PID/PGID ESRCH22:47:04.910696Z。实际scratch REMOVED_EXACT_ENOENT；外置公开许可10件9858B SEALED_PUBLIC_RECEIPTS_KEEP无未来写入、同字节已归档。0当前child/PG/listener/待launch；旧closed许可与历史原件不改。
+
+本次结果待只读独审，主线集成仍开放。DB样本不是峰值，WAL仅规划，EXPLAIN不证明加速；真实公开execute/native/progression最终组合未执行，交Lead按实际集成影响决定。

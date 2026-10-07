@@ -45,3 +45,7 @@
 ## 22:40 metadata安全点
 
 沿已读find-skills/codebase-design/固定sickn33 bdacd76 clean-code。归档真正独审，明确候选Interface的3连接+16管理余量与DB128/WAL128分别规划，避免把样本当峰值或把外部package绑定当完整执行闭包。复用唯一runtime-inputs、closed许可、原raw，不复制新manifest或运行任何工程check。本段只有metadata，原程序字节不改；main/PG验收仍开放。
+
+## 22:49 实跑封存安全点
+
+沿已读find-skills/codebase-design/固定clean-code方法，只核结果与单一事实源。执行源13件及512输入/20alias事后逐bytes/hash/realpath无差；不修SQL/测试或新跑检查。保留原caller/probe/owner事实与初EPERM、区分实际资源闭合及后续确认/封包时刻；不将单计划sample称吞吐或速度收益。直接SQL种子及API组合未验的范围明确，main待接收。

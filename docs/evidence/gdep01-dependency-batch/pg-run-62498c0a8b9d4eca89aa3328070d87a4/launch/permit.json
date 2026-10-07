@@ -1,0 +1,23 @@
+{
+  "state": "OPEN",
+  "reviewed": true,
+  "totalSeconds": 140,
+  "expiresEpoch": 1791413274.728257,
+  "testNames": [
+    "reads 199 ordered short dependencies once and records the actual SQL plan",
+    "keeps zero-query empty input and exact duplicate ordinals",
+    "includes the 48000-byte boundary and its complete crossing row",
+    "bounds returned legal content by 48000 plus one complete 1MiB artifact",
+    "preserves UTF16 sizing without normalizing Unicode or line endings",
+    "requires each of the four binding identities",
+    "preserves missing hash and length first-error order",
+    "rolls back caller writes and retains the existing project lock boundary"
+  ],
+  "head": "850d61376373eb59df8afdf6004ef7dda030bd10",
+  "window": "62498c0a8b9d4eca89aa3328070d87a4",
+  "recordName": "pg-run-62498c0a8b9d4eca89aa3328070d87a4",
+  "inputSha256": "1dc843902fe2f3b1e5727104828180618e1c1b785161314a017b7f4d3bdd2e54",
+  "requiredFreeBytes": 17756192768,
+  "authority": "D01 selectedWindows exact grant 2026-10-07T22:43:38.826Z",
+  "logicalId": "GDEP01-DEPENDENCY-BATCH-PG-20261007-ONCE"
+}

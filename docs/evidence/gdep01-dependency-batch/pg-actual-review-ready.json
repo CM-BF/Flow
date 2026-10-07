@@ -1,0 +1,267 @@
+{
+  "at": "2026-10-07T22:49:18.386070+00:00",
+  "executionHead": "850d61376373eb59df8afdf6004ef7dda030bd10",
+  "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+  "runtimeInputSha256": "1dc843902fe2f3b1e5727104828180618e1c1b785161314a017b7f4d3bdd2e54",
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "bytes": 13111,
+      "sha256": "4752162fbfeebc2b62a912e8faac857b829ad84345ddb762aff9b4720a85ef42"
+    },
+    {
+      "path": "apps/server/src/goals/dependency-content.ts",
+      "bytes": 2658,
+      "sha256": "a472ec64b69a84a2ee0c19a80350035cfb8dd57ebebd7673b77b45135f9865d6"
+    },
+    {
+      "path": "apps/server/src/goals/dependency-content.test.ts",
+      "bytes": 6988,
+      "sha256": "a899a4bc74793903c8ecfb9d1c74303c85f1a5503b12ae0c85c7d25791aa986d"
+    },
+    {
+      "path": "apps/server/src/goals/dependency-content.pg.test.ts",
+      "bytes": 10967,
+      "sha256": "7e3facdf9b70aaccd418b53514b67fa65a0cd49569d96171e52b22eb07343995"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-fixture.ts",
+      "bytes": 11166,
+      "sha256": "ef9664ce14762e9cf29199d3f85e265af5dabc57310c328e99a1ba453117f4a9"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-entry.py",
+      "bytes": 15527,
+      "sha256": "b3eb09e0a8e8b9b0a2ca1fcab2e9a5ab66b70f1b96756d90b7ca64a5a47b3352"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg.vitest.config.ts",
+      "bytes": 267,
+      "sha256": "89e72c53303f02fe7a6f4e5fde82c794b926de9a9bb86086704c68c549dbb78b"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-types.tsconfig.json",
+      "bytes": 628,
+      "sha256": "9b4cfd17510716c56264fb7199aca4d756f08af09650acc0d0a7ebb2faf415e0"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/check.py",
+      "bytes": 5769,
+      "sha256": "78e337ead4746957154e75245d252dde075eced4c3a84b9eb8c39e9d6dd56131"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-runtime-inputs.json",
+      "bytes": 171092,
+      "sha256": "1dc843902fe2f3b1e5727104828180618e1c1b785161314a017b7f4d3bdd2e54"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-closed-permit.json",
+      "bytes": 1132,
+      "sha256": "8afdf1217844ce4a8821ff628f1b60647fd8f6915e87495df8776b5dca1ffc16"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-provenance.json",
+      "bytes": 966,
+      "sha256": "4d0fbe03bce6e817c04ca1d705655c7b0de47df228ed8597bbc57b2a03d36e55"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-preparation.md",
+      "bytes": 5280,
+      "sha256": "882d656b6780a973017f696bbb844217d63be2ed6664ac5d8e74f745b3338a00"
+    }
+  ],
+  "rawEvidence": [
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/01-reserved.json",
+      "bytes": 188,
+      "sha256": "fc7c007bea4926e1c17d96d1614dd13f25d5a4d9495d77ad4dd4434110a38aad"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/02-create.json",
+      "bytes": 62,
+      "sha256": "27d2533917bc85aa72cc56a396884cabf375d5142b68dc8a2941e2ff4f073dcc"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/03-create-requested.json",
+      "bytes": 199,
+      "sha256": "c389a9cf54562b72fc768284e674454dc24f57a251886e91332971a97cb9005b"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/04-created.json",
+      "bytes": 219,
+      "sha256": "ee25700aaecb85d432e8483cdef1ab6d7ece776cb2cb408c51c38e3f4ef53741"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/05-database-created-size.json",
+      "bytes": 77,
+      "sha256": "022eb73d83cf0d120f1bf41d3579cb89756e1a10478fb981bf154fc60b92a541"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/06-migrate.json",
+      "bytes": 63,
+      "sha256": "a86fc20d51197c19aa2764e62b4f06907d40fb2cb676b95e36f67dfb14a7d890"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/07-short-199.json",
+      "bytes": 65,
+      "sha256": "c38bc1a33c209ee64d7a7fd50f9610472077fc093c9e7595554089b7ef18251f"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/08-short-199-plan.json",
+      "bytes": 8393,
+      "sha256": "1b40488de88107b3efcc3b4b6d6651ea1d5e4fa95751c57c09c398d95464f119"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/09-empty-duplicates.json",
+      "bytes": 72,
+      "sha256": "8f5b0a5e53aa62412541cd608151a59fcedc5ea70ab675e5d2b9ab7de8ae4002"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/10-byte-boundary.json",
+      "bytes": 69,
+      "sha256": "e78641eefe7c8f86be4ca1b3922b14434abb9d43050b1cee0882abfd150678d9"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/11-byte-boundary-result.json",
+      "bytes": 116,
+      "sha256": "ee5a84e9d9006f511614de4c8ddef0ddad353ce16cdcf66b27ca5c3b4e39c582"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/12-crossing-large.json",
+      "bytes": 70,
+      "sha256": "2ce243449b92c4ea1c5ad848d7ad68f8ec362018a252389d1f65e6e0f97773b3"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/13-large-boundary-result.json",
+      "bytes": 119,
+      "sha256": "a7e2ededab40658fa4d636c75d13edbbdaa12d32e643fb0536e7eb289157bff4"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/14-unicode.json",
+      "bytes": 63,
+      "sha256": "d327d1b160349039fad8cc9e131d7da73c53795af95ec24bb1848adcade22b97"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/15-four-keys.json",
+      "bytes": 65,
+      "sha256": "58ff03bc4ddf5de4e69f5b57183036134693076f9c301ca1ea1a77085b0d8839"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/16-first-error.json",
+      "bytes": 67,
+      "sha256": "b291658a9f73e8ef07a56061254b6825a5ba07b5e1db21e964e4a84cd445adfe"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/17-transaction-lock.json",
+      "bytes": 72,
+      "sha256": "49df91cdaf68aa2f5f5a94c72302a314ef59e762e9bac6a26299b40bf3cd5799"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/dependency/18-cleanup.json",
+      "bytes": 568,
+      "sha256": "d8622759b1c2511dbf92c8853e2be9d14db85c0faee66878c135a56edbf79b16"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/launch/outer-start.json",
+      "bytes": 481,
+      "sha256": "615d44d0568e38c6467f3685fa0134d5670bec19dbb20a19450a7c6d111e34df"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/launch/outer-terminal.json",
+      "bytes": 139,
+      "sha256": "22b169917537218651402404e5f308476f39995aded9cf9bd600828d891ee366"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/launch/outer.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/launch/outer.stdout",
+      "bytes": 245,
+      "sha256": "177b512196dbe59784df0e5f50ae95148b85d5a6de2018985b4955b723df31d4"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/launch/permit-admission.json",
+      "bytes": 3878,
+      "sha256": "2bd4edd405297b519dbeddbffa199df8cbc08632ac071bfb1923ae936ca3f06d"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/launch/permit.json",
+      "bytes": 1097,
+      "sha256": "6415c9eabd5897dd1255a74dc9ec858e3ffb53fdc834481cf80d957ef26f45aa"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/launch/preflight-process.json",
+      "bytes": 492,
+      "sha256": "76e37daf062f9163223a71d6dd6398897b43e427c087b6baa9702713ece069e0"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/launch/preflight.json",
+      "bytes": 181,
+      "sha256": "de1e8cbafbe2170979497e2d0cbbeaf841a19996fb3a78ea76677e588b1b6ae7"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/launch/preflight.log",
+      "bytes": 148,
+      "sha256": "7a81c71f0d965e36eb430d69ca6b36f693c4b051a3777e36b9b7656defa32317"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/launch/reservation.json",
+      "bytes": 3197,
+      "sha256": "d64384322d368262a3b51ea95938312d0fa9e5788704dadb5b648ca309994803"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/owner.json",
+      "bytes": 248,
+      "sha256": "41c665ec107757125e75a4b6408a7c71c64bd0bbfbbcdb08d35834ecad1b2793"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/process.json",
+      "bytes": 494,
+      "sha256": "821a5abede9d334cd4b554cf541a1f0bcab5d07fcdebbeda328ef674ed0b33e9"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/raw.log",
+      "bytes": 187,
+      "sha256": "ee0ec3f91a479986010db64d2394e61b04ffa301ad766ab5b653d36aafbd0fe5"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/result.json",
+      "bytes": 1163,
+      "sha256": "f687c798d2d3d524214b647e327b75bdc0812da0f144db9372f601ce7dc97b8b"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/return-followup.json",
+      "bytes": 3301,
+      "sha256": "81bd3b9ff4cf7cb02f77c230af8ccd0f87e97d19b2bdc8823990df2e9882989e"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-run-62498c0a8b9d4eca89aa3328070d87a4/vitest.json",
+      "bytes": 2719,
+      "sha256": "e2d5c61b44dee2e20242a6e0fa1c64cefb6250d95e504f9d7a7a509186258b53"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-actual-summary.json",
+      "bytes": 3446,
+      "sha256": "e75189a3de46dcfba467c8b44cc72025403da4997ee8c6a6d5fd3af8acd4f8c7"
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-actual-results.md",
+      "bytes": 2426,
+      "sha256": "f98b5a26a08528914a2437b1942f3c02f05bb535d3a93eee8105119738cec7c8"
+    }
+  ],
+  "selected": 8,
+  "passed": 8,
+  "review": "NOT_STARTED: actual result fidelity",
+  "limitations": [
+    "Three DB samples are not storage peaks; WAL128MiB is planning, not observed WAL volume.",
+    "One EXPLAIN ANALYZE BUFFERS TIMING OFF is SQL-plan evidence, not a speed comparison or production latency claim.",
+    "PG seeds use controlled direct SQL; public runner artifact admission was not tested.",
+    "execute/native/progression public consumers and final JSON prompt16k were not rerun; unchanged commands source and prior focused types only.",
+    "Existing process reports preserve initial readonly EPERM then final absent; no signals/faults.",
+    "Known resource-return facts precede later archival confirmation; no inferred exact scratch-cleanup wall or total on-time archival claim.",
+    "No actual rerun; old local logs and closed permit remain immutable."
+  ]
+}

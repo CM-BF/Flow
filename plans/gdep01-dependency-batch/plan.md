@@ -7,7 +7,7 @@
 
 - [x] **GDEP01-01** 单一dependencyContent(client, orderedBindings)读取Interface；空数组零查询，多项单次元数据ordinal窗口查询。按taskId/artifactId/version/detailId四键LEFT JOIN，选取此前累计UTF8<=48000B的行，完整正文留Node逐项sha256与UTF16累计16000。命令原事务/权限/CAS/项目锁/最终JSON限制不改。
 - [x] **GDEP01-02** 有界纯行为与直接consumer局部noEmit；查询数、排序/重复/缺失/hash坏与大小首错、Unicode和原输入输出保真。纯fake不冒SQL执行证明。
-- [ ] **GDEP01-03** 独立source review与真实PG有限验收（待新窗口）：真实SQL、48000等值/首跨界、最多199短项、四键错配、输出字节与EXPLAIN、同项目竞争。0provider，尚NOT_RUN。
+- [x] **GDEP01-03** 独立source review与真实PG有限验收：本次精确8/8，真实SQL、48000等值/首跨界、199短项、四键错配、输出字节与EXPLAIN、同项目竞争通过。0provider；结果忠实性独审待审，main及完整消费者接收保留GDEP01-04。
 - [ ] **GDEP01-04** 受控main集成与真实验收收口。
 
 ## 已确认设计与Interface

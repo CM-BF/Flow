@@ -1,0 +1,63 @@
+{
+  "logicalId": "GDEP01-DEPENDENCY-BATCH-PG-20261007-ONCE",
+  "at": "2026-10-07T22:45:32.633442+00:00",
+  "window": "62498c0a8b9d4eca89aa3328070d87a4",
+  "head": "850d61376373eb59df8afdf6004ef7dda030bd10",
+  "floor": 17756192768,
+  "free": 18019733504,
+  "identity": {
+    "dev": 16777234,
+    "ino": 124623274
+  },
+  "grant": {
+    "logicalId": "GDEP01-DEPENDENCY-BATCH-PG-20261007-ONCE",
+    "at": "2026-10-07T22:43:38.826Z",
+    "state": "SELECTED_NOT_STARTED",
+    "latestStart": "2026-10-07T22:47:38.826Z",
+    "owner": "Mika/b01",
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-dependency-batch",
+    "branch": "codex/goal-dependency-batch",
+    "executionHEAD": "850d61376373eb59df8afdf6004ef7dda030bd10",
+    "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+    "originalPacket": "98f3ed267102c25d98bb735a46a58306ee70ed64",
+    "claim": "f2442a2f-357e-42d5-bb3d-da1c261684ab v2 exact6",
+    "readyEntry": "docs/evidence/gdep01-dependency-batch/pg-queue-ready.md",
+    "runtimeInputsSha256": "1dc843902fe2f3b1e5727104828180618e1c1b785161314a017b7f4d3bdd2e54",
+    "inputCount": 512,
+    "aliases": 20,
+    "review": "db22:38:30 APPROVED/0P1P2; manager read fixedready/inputhash/review and cleanexecutionHEAD",
+    "externalAdminPreflight": {
+      "attempts": 1,
+      "seconds": 10,
+      "adminConnections": 1,
+      "requiredAvailable": 19,
+      "poolFinallyClosedBeforeActual": true,
+      "actualClockRecordedSeparately": true,
+      "captureBytesMaximum": 65536,
+      "captureIncludedInLocal8MiB": true
+    },
+    "mainSeconds": 140,
+    "partsSeconds": {
+      "work": 70,
+      "cleanup": 40,
+      "childResult": 10,
+      "OPS14stop": 10,
+      "parentReceipt": 10
+    },
+    "configuredPG": 3,
+    "markedDatabases": 1,
+    "HTTP": 0,
+    "Chrome": 0,
+    "provider": 0,
+    "localBytes": 8388608,
+    "databaseSampleBytes": 134217728,
+    "walPlanningBytes": 134217728,
+    "minimumFreshFreeBytes": 17756192768,
+    "managerSampleFreeBytes": 18039574528,
+    "fresh": "Samecall literalHEAD850d/clean/branch/claimv2 exact6/nooverlap/512pins20aliases/new32hex namespace/admission<=60s/complete terms/free; one independent adminpreflight>=19 and poolclosed. Operator records true START then terminal then exact owned RETURN separately. DB/WAL sampled/planned not hardpeak.",
+    "execution": "Only existing reviewed caller/exact8 names and complete argv. External permit binds exacthead/random32hex/admission; oldCLOSED permit unchanged. No code/script changes or further preparation as launch condition.",
+    "priority": "No actual/reservation after personal continuation exactRETURN. If new personal READY arrives before main spawn, close preflight and report explicit NOT_RUN/0child before any selection transfer; never stop an alreadySTARTed GDEP.",
+    "failClosed": "Unknown CREATE/identity/owner/conn/cleanup/output/budget => FAIL/KEEP, no FORCE/signals-to-foreign/automatic retry. Newspawn afterlatest forbidden; actual beforelatest continues boundedly.",
+    "budgetRule": "Countcandidate once, reserveonce; no previousphase time/gate borrowing. Existing counted context/Mika/Arcordinary may continue without fixedinput changes."
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "at": "2026-10-07T22:49:18.386070+00:00",
+  "executionHead": "850d61376373eb59df8afdf6004ef7dda030bd10",
+  "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+  "logicalId": "GDEP01-DEPENDENCY-BATCH-PG-20261007-ONCE",
+  "window": "62498c0a8b9d4eca89aa3328070d87a4",
+  "outcome": "PASSED",
+  "selected": 8,
+  "passed": 8,
+  "failed": 0,
+  "titles": [
+    "reads 199 ordered short dependencies once and records the actual SQL plan",
+    "keeps zero-query empty input and exact duplicate ordinals",
+    "includes the 48000-byte boundary and its complete crossing row",
+    "bounds returned legal content by 48000 plus one complete 1MiB artifact",
+    "preserves UTF16 sizing without normalizing Unicode or line endings",
+    "requires each of the four binding identities",
+    "preserves missing hash and length first-error order",
+    "rolls back caller writes and retains the existing project lock boundary"
+  ],
+  "sourceVerification": {
+    "files": 512,
+    "aliases": 20,
+    "errors": [],
+    "reviewedSourceFiles": 13,
+    "unchangedAgainstExecution": true
+  },
+  "queryFacts": {
+    "shortDependencyCount": 199,
+    "shortBatchQueries": 1,
+    "shortDecodedContentUtf8Bytes": 3870,
+    "boundaryRows": 3,
+    "boundaryDecodedContentUtf8Bytes": 48001,
+    "largeBoundaryRows": 2,
+    "largeBoundaryDecodedContentUtf8Bytes": 1096576,
+    "explainPlanningMs": 0.143,
+    "explainExecutionMs": 0.482
+  },
+  "timing": {
+    "preflightOwnerStart": "2026-10-07T22:45:32.666545Z",
+    "preflightSupervisorMs": 61,
+    "preflightInternalStart": "2026-10-07T22:45:32.710Z",
+    "preflightInternalEnd": "2026-10-07T22:45:32.722Z",
+    "outerStart": "2026-10-07T22:45:32.728788Z",
+    "callerOriginMs": 1791413132770,
+    "actualSupervisorMs": 1500,
+    "callerElapsedBeforeReceiptMs": 1587,
+    "databaseCleanupReceipt": "2026-10-07T22:45:34.309Z",
+    "outerTerminal": "2026-10-07T22:45:34.364426Z",
+    "outerAbsentFollowup": "2026-10-07T22:47:04.910696Z",
+    "archivalConfirmation": "2026-10-07T22:48:09.320783Z",
+    "exactCallerReceiptWall": "UNKNOWN"
+  },
+  "resources": {
+    "configuredPg": 3,
+    "headroom": 91,
+    "requiredHeadroom": 19,
+    "preflightAdminClosed": true,
+    "dbOid": "1362819",
+    "dbConnectionsAtCleanup": 0,
+    "dbAbsent": true,
+    "scratch": "REMOVED_EXACT_ENOENT",
+    "outerPid": 87472,
+    "primaryPid": 87611,
+    "preflightPid": 87406,
+    "allObservedClosed": true,
+    "http": 0,
+    "provider": 0,
+    "futureLaunches": 0,
+    "rawProcessBytes": 580,
+    "externalSealedReceiptBytes": 9858,
+    "dbSamples": [
+      7602703,
+      8969239,
+      8969239
+    ],
+    "walReservedBytes": 134217728
+  },
+  "limitations": [
+    "Three DB samples are not storage peaks; WAL128MiB is planning, not observed WAL volume.",
+    "One EXPLAIN ANALYZE BUFFERS TIMING OFF is SQL-plan evidence, not a speed comparison or production latency claim.",
+    "PG seeds use controlled direct SQL; public runner artifact admission was not tested.",
+    "execute/native/progression public consumers and final JSON prompt16k were not rerun; unchanged commands source and prior focused types only.",
+    "Existing process reports preserve initial readonly EPERM then final absent; no signals/faults.",
+    "Known resource-return facts precede later archival confirmation; no inferred exact scratch-cleanup wall or total on-time archival claim.",
+    "No actual rerun; old local logs and closed permit remain immutable."
+  ]
+}
