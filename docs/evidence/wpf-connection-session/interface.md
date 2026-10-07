@@ -6,7 +6,7 @@
 
 `POST /api/browser-session/connect` body `{}`，**显式owner Bearer** +受信Origin → BrowserSessionReady + HttpOnly随机Cookie。无Bearer或runner拒绝；已有Cookie不代替connect身份。最多32个有效session，超额409不驱逐；绝对8小时，无GET滑动续期。
 
-`POST /api/browser-session/logout` body `{}`，有效Cookie+受信Origin+`X-Flow-CSRF` → unauthenticated +清Cookie。只撤销当前连接，不取消任何任务。其他Cookie写请求也要求该CSRF header；浏览器HTTP/watch都使用credentials include。
+`POST /api/browser-session/logout` body `{}`，有效Cookie+受信Origin+`X-Flow-CSRF` → unauthenticated，只在服务端精确撤销请求中的连接，不发送删除Set-Cookie，以免迟到响应清除后建连接。旧无效Cookie可能残留至原期限或下一Connect覆盖；GET不会恢复其身份，写/SSE继续拒绝，不取消任何任务。其他Cookie写请求也要求该CSRF header；浏览器HTTP/watch都使用credentials include。
 
 所有显式非法Authorization在Cookie之前401，合法runner只可访问原/api/runner/。旧无Cookie owner/runner Bearer不要求浏览器Origin/CSRF，行为保持。
 
@@ -46,3 +46,5 @@ DTO与factory ports已实现；本模块自有fixture真实Fastify+HTTP+PG组合
 | streams | 现观察循环/背压/关闭 | 注入authorize；不拥有登录FSM、不撤销任务 |
 
 生命周期：生产宿主先执行028再打开auth store，再注册唯一hook/routes/stream授权。关闭不创建新observer；expiry/revoke每read与publish前重核。认证端口失败即HTTP拒绝/SSE关闭；没有把响应未收到解释成logout已执行。connect响应丢失可能留下一个至多8h的会话并占32限额，不自动重试/驱逐。health与OPTIONS沿原公开例外，其他被鉴权请求显式非法Authorization无cookie fallback。中心HTTP实例重建和独立Node进程重启均实测；shared生产挂载另审。
+
+2026-10-07 lateLogout后继：上述不清Cookie合同为source f5ac8dca候选，4selected当前待PG窗口/独审/main；原582f/22历史使用清Cookie行为，不追写旧验收。见[本片Interface](late-logout/interface.md)。

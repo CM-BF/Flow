@@ -10,13 +10,13 @@
 | Owner / model | native_center_owner / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/browser-connection-session |
 | Branch | codex/browser-connection-session |
-| 工作基线 / HEAD | 原239b6a818d5c0380842aa61120bf308bb9846df3；本片preimage与main c13042ba逐字同 |
+| 工作基线 / HEAD | 原239b6a818d5c0380842aa61120bf308bb9846df3；source f5ac8dca，preimage与main c13042ba同 |
 | 工作树dirty状态 | 本metadata提交后clean |
 | 工作分支状态 | in-progress |
 | 本片段交付阶段 | implementation |
-| 实现目标 | UNKNOWN |
+| 实现目标 | f5ac8dcade01ebc187be276339a5e94e21111b9f |
 | 实现范围 | packages/contracts/src/browser-session.ts, apps/server/src/browser-session/index.ts, apps/server/src/browser-session/store.ts, apps/server/src/browser-session/session.test.ts, apps/server/src/browser-session/fixture.ts, apps/server/src/streams.ts, packages/storage/migrations/028-browser-sessions.sql |
-| 检查状态 | 原582f的22不同分轮保持历史；新race/3直接消费者及focused types NOT_RUN |
+| 检查状态 | focused types0/1753ms，组absent双EOF/空TMP removed；4selected PG待窗口，原22不重复 |
 | 已集成main状态 / HEAD | 已集成 84005a260dfcb668cd38b09c21564d0754a0f513 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -44,3 +44,9 @@ Lead登记来源；本次parseStatus/reviewState核对见parser.json。中心模
 HTTPS header策略不证明当前HTTP createServer反向代理/TLS可用；先交受信loopback，trustProxy/Forwarded不扩展。独审7源/71binding；本片已集成main；Web Cookie验收仍开放。
 
 2026-10-07T11:33:16.858479+00:00：新take后原scope实施Recovery TODO06中心竞态；原owner停止写与released账本已核。3源preimage/7中心域源与固定main相同，无shared写者；不改store/028/streams/产物或个人服务。
+
+## 等待记录
+
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| CONNECTION-W01 | 2026-10-07T11:34:48.040044Z | OPEN | 资源 | 已固定4selected入口与类型结果；等待Lead当前PG holder/合计容量核对，不预占 | late-logout/types-01/operation-report.json与窗口请求 |
