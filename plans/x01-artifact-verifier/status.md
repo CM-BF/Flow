@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T22:36:22.656Z / AV02 e271与journal b791已main；center未集成 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T23:20:06.807Z / AV02 e271与journal b791已main；center/client后继未收到main receipt |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | mika |
@@ -18,7 +18,7 @@
 | 检查状态 | PASSED 90c23219b88357497c04a9ac3a0297863e66fb60：authorizeVerifier新10+旧phase1实际11/11、8未选；strict2→仅类型标注→0；behavior实际b65，末类型改动未重跑 |
 | 已集成main状态 / HEAD | AV02九源已main e271fb2116ee1838b63a064b5e28f58a8724d27e；AV03 journal四叶已main b79121e19；当前center片NOT_INTEGRATED；不代表个人部署 |
 | 实现目标 | 90c23219b88357497c04a9ac3a0297863e66fb60：客户端verifier phase薄接口，局部已验待独审；原ea3/ead8接收不改 |
-| 实现范围 | apps/server/src/index.ts,apps/server/src/plugin-runtime/claim.ts,apps/server/src/plugin-runtime/verification.test.ts,apps/server/src/plugin-runtime/verification.ts,apps/server/src/runner-claim-receipts.ts,apps/server/src/runner-claim-routes.test.ts,apps/server/src/runner-claim-routes.ts,apps/server/src/runners.ts,packages/client/src/plugin-runner.test.ts,packages/client/src/plugin-runner.ts,packages/contracts/src/plugin-verification-binding.ts,packages/contracts/src/verifier-runner-claim.test.ts,packages/contracts/src/verifier-runner-claim.ts,packages/storage/migrations/036-plugin-verification-bindings.sql |
+| 实现范围 | packages/client/src/plugin-runner.ts,packages/client/src/plugin-runner.test.ts（本client增量；旧ea3/ead8精确接收范围保存在其固定intake） |
 | 阶段 | M2 |
 | 优先级 | 5 |
 | 本片段交付阶段 | implementation |
@@ -26,7 +26,7 @@
 | 下一可用交付 | 客户端薄接口待独审；已审中心领取片仍等待主线接收 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| Review | 新client SOURCE_AND_LOCAL_RESULT_REVIEW_PENDING；旧R3实际结果与source批准独立保留 |
+| Review | PENDING 90c23219b88357497c04a9ac3a0297863e66fb60：新client已交b01只读独审；旧R3实际结果与source批准独立保留 |
 | Claim | a67ba659-d859-40d6-82c6-2b7333087639 v6 ACTIVE25；actual前fresh全账本核身份/无重叠；已移出leaf继续STOP |
 | 架构影响 | 同一claim/receipt显式v4与036来源引用；R3已证明有限动态SQL矩阵，完整运行时与公开产物验证仍OPEN；主线图待接收 |
 
