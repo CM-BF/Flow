@@ -34,7 +34,7 @@ function privateText(frame, secrets) {
     truncated ||= frame.errors.length > 16;
     fields.errors = frame.errors.slice(0, 16).map(text);
   }
-  const present = typeof frame.result === 'string' || (Array.isArray(frame.errors) && frame.errors.some(v => typeof v === 'string'));
+  const present = typeof frame.result === 'string' && frame.result.length > 0 || (Array.isArray(frame.errors) && frame.errors.some(v => typeof v === 'string' && v.length > 0));
   return { fields, present, truncated, state: !present || invalid || truncated ? 'unknown' : 'recorded',
     constraint: invalid ? 'invalid-or-oversized-text' : truncated ? 'text-limit' : !present ? 'missing-text' : null };
 }

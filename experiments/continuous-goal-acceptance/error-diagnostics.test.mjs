@@ -47,7 +47,7 @@ test('diagnostic: success subtype plus is_error persists private text before pub
   assert.equal(r.report.nativeQueryCalls, 0); assert.equal(r.row.closed, true);
 }));
 test('diagnostic: missing invalid and over-bound body remains unknown with explicit limits', async () => fixture(async (root, record) => {
-  const variants = [{ result: undefined, errors: undefined }, { result: {}, errors: [23] }, { result: 'x'.repeat(9000), errors: [] },
+  const variants = [{ result: undefined, errors: undefined }, { result: '', errors: [] }, { result: {}, errors: [23] }, { result: 'x'.repeat(9000), errors: [] },
     { result: 'x'.repeat(262145), errors: [] }, { result: undefined, errors: Array(17).fill('e') }];
   for (const [i, delta] of variants.entries()) {
     const saved = await record({ ...errorFrame(), ...delta }, { ...binding, assignment: { ...binding.assignment, taskId: `task-${i}` } });
@@ -91,4 +91,7 @@ test('diagnostic: structured SDK error sources are bounded and never guessed fro
   assert.deepEqual(observation.sdkErrors[2].error, { state: 'unknown', value: null });
   assert.deepEqual(observation.result.apiErrorStatus, { state: 'reported', value: 401 });
   assert(!JSON.stringify(r.report).includes('secret-unrecognized-enum')); assert(!JSON.stringify(r.report).includes('secret-status'));
+  const bounded = await run(errorFrame(), undefined, undefined, init(), Array(20).fill(messages[0]));
+  assert.equal(bounded.row.observation.sdkErrors.length, 16); assert.equal(bounded.row.observation.sdkErrorsOmitted, 4);
+  assert.deepEqual(bounded.row.observation.result.apiErrorStatus, { state: 'unknown', value: null });
 }));
