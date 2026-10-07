@@ -87,7 +87,7 @@ test('AV03 center v4 unknown ACK and cancellation do not resend', async () => {
       algorithms: [{ id: 'flow.json-object.required-keys' as const, version: 1 as const }] } };
   const transport = vi.fn<PluginJsonRequest>(async () => ({ ...input, state: 'empty' }));
   await expect(new PluginRunnerClient(transport).statusVerifier(input)).rejects.toThrow(); expect(transport).toHaveBeenCalledTimes(1);
-  const abort = new AbortController(); transport.mockImplementation(async (_path, init) => {
+  const abort = new AbortController(); transport.mockImplementation(async (_path: string, init: RequestInit) => {
     expect(init.signal).toBe(abort.signal); throw new DOMException('Cancelled', 'AbortError');
   }); abort.abort();
   await expect(new PluginRunnerClient(transport).claimVerifier(input, abort.signal)).rejects.toMatchObject({ name: 'AbortError' });
@@ -102,7 +102,7 @@ const phaseReceipt = (input: ReturnType<typeof phaseInput> | (Omit<ReturnType<ty
 
 test.each([
   ['tool', 'load'], ['tool', 'invoke'], ['verifier', 'load'], ['verifier', 'invoke'],
-] as const)('verifier phase client preserves %s %s endpoint key and receipt through FlowClient', async (kind, phase) => {
+] as const)('verifier phase client preserves %s %s endpoint key and receipt through FlowClient', async (kind: 'tool' | 'verifier', phase: 'load' | 'invoke') => {
   const input = { ...phaseInput(), phase }, receipt = phaseReceipt(input), key = 'd'.repeat(64);
   const fetch = vi.fn(async (_url: unknown, _init?: RequestInit) => new Response(JSON.stringify(receipt), { status: 200 })); vi.stubGlobal('fetch', fetch);
   const client = new FlowClient({ baseUrl: 'http://fixture.invalid', token: 'runner-token' });
