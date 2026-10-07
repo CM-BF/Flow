@@ -1,3 +1,4 @@
+import { CONVERSATION_HEADER, NATIVE_CONVERSATION_VERSION, NATIVE_EXECUTION_PROFILE_V2, nativeExecutionProfileCatalogV2PageSchema, type NativeExecutionProfileCatalogV2Page } from '@flow/contracts';
 import type { GoalPlanConfirmation, GoalPlanConfirmationResult } from '@flow/contracts';
 import type { PluginInstallRequest, PluginInstallCommand, PluginInstallAccepted, PluginMaterialInstall, PluginInstallList, PluginInstallHistory } from '@flow/contracts';
 import type { GoalProgressionAuthorization, GoalProgressionRevocation, GoalProgressionResult, GoalProgressionSnapshot } from '@flow/contracts';
@@ -45,6 +46,7 @@ export class FlowApiError extends Error {
 interface ClientConnectionOptions {
   baseUrl: string;
   /** Opt-in to the read protocol only; no promise that a runner/provider emits partial text. */
+  conversationProtocol?: typeof NATIVE_CONVERSATION_VERSION;
   assistantStreamProtocol?: 'patch-v1' | 'patch-v2';
 }
 
@@ -58,6 +60,7 @@ export class FlowClient {
   private readonly baseUrl: string;
   private readonly token: string | undefined;
   private readonly csrfToken: (() => string | undefined) | undefined;
+  private readonly conversationProtocol: typeof NATIVE_CONVERSATION_VERSION | undefined;
   private readonly assistantStreamProtocol: 'patch-v1' | 'patch-v2' | undefined;
 
   constructor(options: ClientOptions) {
@@ -66,6 +69,7 @@ export class FlowClient {
     this.token = options.token;
     this.csrfToken = options.browserSession?.csrfToken;
     this.assistantStreamProtocol = options.assistantStreamProtocol;
+    this.conversationProtocol = options.conversationProtocol;
   }
 
   async browserSession(signal?: AbortSignal): Promise<BrowserSessionRead> {
@@ -379,6 +383,13 @@ export class FlowClient {
       signal, headers: { [EXECUTION_PROFILE_HEADER]: NATIVE_EXECUTION_PROFILE_VERSION },
     }));
   }
+  async nativeConversationProfiles(options: { after?: string; limit?: number } = {}, signal?: AbortSignal): Promise<NativeExecutionProfileCatalogV2Page> {
+    const query = new URLSearchParams();
+    for (const name of ['after', 'limit'] as const) if (options[name] !== undefined) query.set(name, String(options[name]));
+    return nativeExecutionProfileCatalogV2PageSchema.parse(await this.request<unknown>(`/api/execution-profiles${query.size ? `?${query}` : ''}`, {
+      signal, headers: { [EXECUTION_PROFILE_HEADER]: NATIVE_EXECUTION_PROFILE_V2 },
+    }));
+  }
   publishExecutionProfile(input: ExecutionProfilePublication, signal?: AbortSignal): Promise<ExecutionProfilePublished> {
     return this.request('/api/runner/execution-profile', { method: 'POST', body: JSON.stringify(input), signal });
   }
@@ -519,8 +530,8 @@ export class FlowClient {
   async enqueueConversationTurn(id: string, input: ConversationQueueEnqueue, key: string, signal?: AbortSignal): Promise<ConversationQueueAccepted> {
     const body = JSON.stringify(input); const frozen = JSON.parse(body) as ConversationQueueEnqueue;
     const path = `/api/conversations/${encodeURIComponent(id)}/queue`;
-    if (frozen.messageSettings === undefined) return this.request(path, { method: 'POST', body, headers: { 'Idempotency-Key': key }, signal });
-    return decodeConversationQueueAccepted(await this.conversationAcknowledgement(path, body, key, signal), id, frozen);
+    if (frozen.messageSettings === undefined && !this.conversationProtocol) return this.request(path, { method: 'POST', body, headers: { 'Idempotency-Key': key }, signal });
+    return decodeConversationQueueAccepted(await this.conversationAcknowledgement(path, body, key, signal), id, frozen, this.conversationProtocol === NATIVE_CONVERSATION_VERSION);
   }
   conversationQueue(id: string, options: { after?: number; limit?: number } = {}, signal?: AbortSignal): Promise<ConversationQueuePage> {
     const query = new URLSearchParams();
@@ -651,6 +662,9 @@ export class FlowClient {
   }
 
   private async request<T>(path: string, init: RequestInit = {}, loginToken?: string): Promise<T> {
+    if (this.conversationProtocol && (path === '/api/conversations' || path.startsWith('/api/conversations/') || path.startsWith('/api/conversations?'))) {
+      const headers = new Headers(init.headers); headers.set(CONVERSATION_HEADER, this.conversationProtocol); init = { ...init, headers };
+    }
     const response = await fetch(`${this.baseUrl}${path}`, this.transportInit({ ...init, signal: init.signal ?? AbortSignal.timeout(15_000) }, loginToken));
     await assertResponse(response);
     return response.json() as Promise<T>;

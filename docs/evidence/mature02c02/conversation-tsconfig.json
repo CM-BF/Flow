@@ -1,0 +1,18 @@
+{
+  "extends": "../../../tsconfig.json",
+  "compilerOptions": {
+    "noEmit": true,
+    "incremental": false
+  },
+  "include": [
+    "../../../packages/contracts/src/conversation-codex.test.ts",
+    "../../../packages/client/src/conversation-codex.test.ts",
+    "../../../apps/server/src/conversations/codex.test.ts",
+    "../../../apps/server/src/conversations/index.ts",
+    "../../../apps/server/src/conversation-queue/index.ts",
+    "../../../apps/server/src/execution-profiles/index.ts",
+    "../../../apps/server/src/index.ts",
+    "../../../packages/contracts/src/execution-profiles.test.ts"
+  ],
+  "exclude": []
+}

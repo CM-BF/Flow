@@ -7,31 +7,31 @@
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | mika |
 | 单一status owner / model | chatui01_owner / gpt-6-astra |
-| 最近更新 / 最近main同步核验 | 2026-10-07T05:47:41.964939+00:00；本公开流尚未main，旧集成沿固定记录。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T06:03:28.848717+00:00；main5cae7a25公开流receipt已核。 |
 | 阶段 | M2 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次实际开工缺独立明确时点，不用claim/commit/mtime推断；各分段实际时点见证据。 |
 | 优先级 | 2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | review |
 | 工作分支状态 | in-progress |
-| 当前产出 | 公开流已通过专用数据库与HTTP的持久化、权限、旧客户端兼容、断连及取消验证；固定结果已独立审查通过，待主线接收。界面由原owner接线。 |
-| 下一可用交付 | 本公开流片已审待主线；随后接Codex conversations admission→typed reply/目录，复用有限harness policy与REQ15批量接口，Web三处v2由原UI owner接线。 |
+| 当前产出 | Codex 会话创建、持续会话profile目录、原session后续提交与typed reply已接入现有模块，36个分轮局部用例及类型检查通过；待独审和真实会话数据库验收。 |
+| 下一可用交付 | 会话片源码独审后准备专库验证迁移、两轮HTTP/队列与旧目录兼容；Web/TUI由原owner消费既定接口。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity |
 | Branch | codex/codex-conversation-continuity |
 | 工作基线 / HEAD | eae85567ba5dfb650ba71b473917130f87b5945c |
-| 工作树dirty状态 | fixed结果3e52daf7 clean；本次仅限定独审seal/status，产品/输入/原件保持。 |
-| HEAD（最近观察） | 3e52daf785aadb2618b73fb081c2d1c20a6508d3（结果fixed clean） |
-| claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v9 ACTIVE，52 literal；fresh读取仍同owner/branch；[精确receipt](../../docs/evidence/mature02c02/public-stream-pg-amend-receipt.json) |
-| 实现目标 | 公开流2ab3c6ff（独审通过）；PG测试准备4520a06e42ae7945ba6a2485ab1dabcb3a9113cb；历史连续性首片413420a1等按各自intake保留。 |
-| 实现范围 | 公开流25路径及到期delta沿各固定审查；新PG仅新增assistant-stream/public-stream-pg.test.ts，复用own fixture/operator/config，claim v9/52。 |
-| Review | Web co-lead05:45:21独立接受结果3e52daf7，0P1/P2。public源/静默修复原独审沿固定refs；native/provider/UI及完整conversation仍未验。 |
-| 检查 | 当前公开流真实HTTP/PG6/6、tool0、189HTTP及完整清理；原types/collect与全部首失败保留。旧连续性R1 5/6失败/KEEP、R2 6/6；loader/main/private/public局部结果见下方固定索引，未重跑。 |
-| main集成 | 首片/loader/main已INTEGRATED@c0e0263dc01b9527293318a644f964bd048e2a86；私有stream已INTEGRATED@8c7f81b3；新public stream尚NOT_INTEGRATED。 |
+| 工作树dirty状态 | 本段conversation源码/证据待提交；旧公开流和PG原件未改。 |
+| HEAD（最近观察） | d2e8c567eea8eee40a68dd921557a1dbd9e18b27（本段提交前） |
+| claim | 8ad6536b-1194-44a4-9078-a92215bec7a2 v11 ACTIVE，71 literal；[精确receipt](../../docs/evidence/mature02c02/conversation-batch-amend-receipt.json)。035只追加，不改007。 |
+| 实现目标 | 当前C02-05 conversation协议/目录/批量typed reply；旧公开流2ab3等沿原固定Git。 |
+| 实现范围 | 有限harness policy、conversation routes/admission/queue、typed reply与客户端codec、native-v2目录、035增量CHECK；main5cd的REQ15六模块明确intake，不恢复N+1。 |
+| Review | 当前会话片NOT_STARTED；旧公开流/PG独审保持APPROVED，主线5cae7a25已接收。 |
+| 检查 | 新局部分17+19共36 distinct通过；strict首2修后0，4child终态/EOF/TMP闭合，原失败保留。新PG/迁移0执行；旧6PG不重跑。 |
+| main集成 | 首片/loader/main已INTEGRATED@c0e0263dc01b9527293318a644f964bd048e2a86；私有stream已INTEGRATED@8c7f81b3；公开stream已INTEGRATED@5cae7a25（main固定intake；本会话片尚未集成）。 |
 | Dashboard | Lead已登记至178来源；本次修正解析字段，等待下一次正常聚合；不改生成JSON。 |
-| 架构影响 | 复用单receive pump/outbox与公共patch writer；patch-v2有限来源协商、中心SQL读取过滤和共享Host协议代际。新增已审main基线由dashboard owner登记；public仍branch/pending。 |
+| 架构影响 | 复用现command/CAS/queue/session与同client50项批量投影；新增精确会话协商和native-v2目录，dashboard待固定branch→main后由原owner更新。 |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |

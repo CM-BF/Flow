@@ -2,7 +2,7 @@ import { CLAUDE_TURN_SETTINGS_PROTOCOL } from '../../../../packages/contracts/sr
 import { readFile } from 'node:fs/promises';
 import type { FastifyInstance } from 'fastify';
 import type { Pool } from 'pg';
-import { nativeExecutionProfilePublicationSchema, executionProfileReferenceSchema, EXECUTION_PROFILE_HEADER, EXECUTION_PROFILE_STEERING_VERSION, NATIVE_EXECUTION_PROFILE_VERSION } from '../../../../packages/contracts/src/execution-profiles.js';
+import { nativeExecutionProfilePublicationSchema, executionProfileReferenceSchema, EXECUTION_PROFILE_HEADER, EXECUTION_PROFILE_STEERING_VERSION, NATIVE_EXECUTION_PROFILE_VERSION, NATIVE_EXECUTION_PROFILE_V2 } from '../../../../packages/contracts/src/execution-profiles.js';
 import { HttpError, transaction } from '../database.js';
 import { integerQuery } from '../queries.js';
 import { listProfiles, listNativeProfiles, listClaudeMessageSettingsProfiles, publishProfile } from './store.js';
@@ -30,6 +30,7 @@ export function registerExecutionProfileRoutes(app: FastifyInstance, pool: Pool)
     if (occurrences === 1 && request.headers[header] === CLAUDE_TURN_SETTINGS_PROTOCOL) {
       return listClaudeMessageSettingsProfiles(pool, after, integerQuery(limit, 20, 100, 1));
     }
+    if (occurrences === 1 && request.headers[header] === NATIVE_EXECUTION_PROFILE_V2) return listNativeProfiles(pool, after, integerQuery(limit, 20, 100, 1), 'native-v2');
     if (occurrences === 1 && request.headers[header] === NATIVE_EXECUTION_PROFILE_VERSION) {
       return listNativeProfiles(pool, after, integerQuery(limit, 20, 100, 1));
     }

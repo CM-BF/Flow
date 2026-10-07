@@ -105,17 +105,43 @@ export async function readAssistantFinal(client: PoolClient, taskId: string, att
 }
 export type AssistantFinalPreview = (Omit<Extract<AssistantMessage, { source: 'claude.sdk.result' }>, 'content'>
   | Omit<Extract<AssistantMessage, { source: 'codex.app-server.agent-message' }>, 'content'>) & { text: string; truncated: boolean };
-/** Validate the entire stored UTF-8 body at read time, transferring only its bounded prefix. */
+export interface AssistantFinalBinding { taskId: string; attemptId: string }
+export type AssistantFinalPreviewResult = { preview: AssistantFinalPreview | null; error?: never } | { error: HttpError; preview?: never };
+interface PreviewRow extends MessageRow { binding_index: string | number; prefix: string | null; has_more: boolean | null; digest: string | null }
+function finalPreview(row: PreviewRow): AssistantFinalPreview {
+  if (row.prefix === null || row.digest !== row.content_digest) throw new HttpError(409, 'assistant_content_mismatch', 'The stored assistant content no longer matches its source digest.');
+  // PostgreSQL counts Unicode characters; preserve the UTF-16 boundary after transfer.
+  const text = row.prefix.slice(0, 4000).replace(/[\uD800-\uDBFF]$/, '');
+  return { ...settingsReference(row), text, truncated: Boolean(row.has_more) || text.length < row.prefix.length };
+}
+/** Same-client read, at most 50 paired bindings; results retain input order and isolate known validation errors.
+ * PostgreSQL still reads/hashes the entire UTF-8 body; only its prefix crosses the connection. */
+export async function readAssistantFinalPreviews(client: PoolClient, bindings: readonly AssistantFinalBinding[]): Promise<AssistantFinalPreviewResult[]> {
+  if (bindings.length > 50) throw new HttpError(400, 'assistant_preview_batch_limit', 'At most 50 assistant previews can be read together.');
+  if (!bindings.length) return [];
+  const rows = (await client.query<PreviewRow>(`SELECT request.binding_index,${columns.split(',').map(column => `m.${column}`).join(',')},m.settings,
+    left(d.content,4000) AS prefix, char_length(d.content)>4000 AS has_more,
+    encode(sha256(convert_to(d.content,'UTF8')),'hex') AS digest
+    FROM unnest($1::text[],$2::text[]) WITH ORDINALITY AS request(task_id,attempt_id,binding_index)
+    JOIN flow.assistant_messages m ON m.task_id=request.task_id AND m.attempt_id=request.attempt_id
+    LEFT JOIN flow.details d ON d.id=m.detail_id AND d.task_id=m.task_id AND d.attempt_id=m.attempt_id`,
+  [bindings.map(binding => binding.taskId), bindings.map(binding => binding.attemptId)])).rows;
+  const byIndex = new Map(rows.map(row => [Number(row.binding_index) - 1, row]));
+  return bindings.map((_, index) => {
+    const row = byIndex.get(index);
+    if (!row) return { preview: null };
+    try { return { preview: finalPreview(row) }; }
+    catch (error) {
+      if (error instanceof HttpError && ['assistant_content_mismatch', 'assistant_identity', 'assistant_source_mismatch'].includes(error.code)) return { error };
+      throw error;
+    }
+  });
+}
+/** Preserve the single-item throwing interface through the same validation/projection path. */
 export async function readAssistantFinalPreview(client: PoolClient, taskId: string, attemptId: string): Promise<AssistantFinalPreview | null> {
-  const row = (await client.query<MessageRow>(`SELECT ${columns},settings FROM flow.assistant_messages WHERE task_id=$1 AND attempt_id=$2`, [taskId, attemptId])).rows[0];
-  if (!row) return null;
-  const detail = (await client.query<{ prefix: string; has_more: boolean; digest: string }>(`SELECT left(content,4000) AS prefix, char_length(content)>4000 AS has_more,
-    encode(sha256(convert_to(content,'UTF8')),'hex') AS digest
-    FROM flow.details WHERE id=$1 AND task_id=$2 AND attempt_id=$3`, [row.detail_id, row.task_id, row.attempt_id])).rows[0];
-  if (!detail || detail.digest !== row.content_digest) throw new HttpError(409, 'assistant_content_mismatch', 'The stored assistant content no longer matches its source digest.');
-  // PostgreSQL counts Unicode characters; keep the existing UTF-16 preview boundary after transfer.
-  const text = detail.prefix.slice(0, 4000).replace(/[\uD800-\uDBFF]$/, '');
-  return { ...settingsReference(row), text, truncated: detail.has_more || text.length < detail.prefix.length };
+  const result = (await readAssistantFinalPreviews(client, [{ taskId, attemptId }]))[0]!;
+  if (result.error) throw result.error;
+  return result.preview;
 }
 export async function assistantMessage(pool: Pool, messageId: string): Promise<AssistantMessage> {
   return transaction(pool, async client => {

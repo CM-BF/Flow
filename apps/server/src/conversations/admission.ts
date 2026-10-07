@@ -14,7 +14,7 @@ import { conversationView, lastTurn, loadConversation, turnView, type Conversati
 /** Caller owns the conversation lock for admission; reads use a repeatable read snapshot. */
 export async function prepareTurnAdmission(client: PoolClient, conversation: ConversationRow, text: string, mode: 'follow-up' | 'automatic-queue' | 'explicit-queue', lock = true, messageSettings?: ClaudeTurnSettings): Promise<TaskSubmission> {
   const resumeSessionId = await continuationSession(client, conversation, mode, lock);
-  const input: TaskSubmission = { title: conversation.title, harness: 'claude', prompt: text,
+  const input: TaskSubmission = { title: conversation.title, harness: conversation.harness, prompt: text,
     ...(conversation.execution_profile ? { executionProfile: conversation.execution_profile } : {}), ...(resumeSessionId ? { resumeSessionId } : {}),
     ...(messageSettings ? { messageSettings } : {}) };
   await assertTaskExecutionProfile(client, input);
@@ -27,6 +27,7 @@ async function continuationSession(client: PoolClient, conversation: Conversatio
   let resumeSessionId: string | undefined;
   if (previous) {
     const task = await loadTask(client, previous.task_id, lock);
+    if (task.submission.harness !== conversation.harness) throw new HttpError(409, 'conversation_resume_unavailable', 'The previous task does not match this conversation harness.');
     if (automatic && ['failed', 'cancelled', 'uncertain'].includes(task.status)) {
       throw new HttpError(409, `conversation_previous_${task.status}`, 'Automatic queue promotion requires a successful previous turn.');
     }
@@ -61,5 +62,5 @@ export async function acceptConversationTurn(client: PoolClient, boss: PgBoss, c
   await bindExecutionInput(client, task.id, contextInputId, conversation.id);
   const row = (await client.query<TurnRow>('INSERT INTO flow.conversation_turns(id,conversation_id,number,task_id,user_text,conversation_input_id) VALUES($1,$2,$3,$4,$5,$6) RETURNING *', [randomUUID(), conversation.id, conversation.revision + 1, task.id, input.prompt, contextInputId ?? null])).rows[0]!;
   await client.query('UPDATE flow.conversations SET revision=revision+1,updated_at=clock_timestamp() WHERE id=$1', [conversation.id]);
-  return { conversation: conversationView(await loadConversation(client, conversation.id)), turn: await turnView(client, row) };
+  return { conversation: conversationView(await loadConversation(client, conversation.id)), turn: await turnView(client, row, conversation.harness) };
 }

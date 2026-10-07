@@ -171,3 +171,37 @@ export const claudeMessageSettingsCatalogPageSchema = z.strictObject({
   }
 });
 export type ClaudeMessageSettingsCatalogPage = z.infer<typeof claudeMessageSettingsCatalogPageSchema>;
+
+/** A new codec advertises host-owned sessions without breaking strict native-v1 readers. */
+export const NATIVE_EXECUTION_PROFILE_V2 = 'native-v2';
+export const NATIVE_EXECUTION_PROFILE_CATALOG_V2 = 'flow.native-execution-profile-catalog.v2';
+/** One configured-capability projection shared by the strict codec and center directory. */
+export function nativeConversationCapability(config: NativeExecutionProfileConfiguration) {
+  if (config.harness === 'codex') return config.sessionPersistence === 'host-owned'
+    ? { state: 'native-conversation' as const, protocol: 'native-v1' as const, capabilitySource: 'conversation-response' as const }
+    : { state: 'unsupported' as const, reason: 'session-persistence-unsupported' as const };
+  return config.access === 'goal-tools' || config.access === 'goal-graph-tools'
+    ? { state: 'unsupported' as const, reason: 'profile-purpose-not-supported' as const }
+    : { state: 'existing-claude-contract' as const, capabilitySource: 'conversation-response' as const };
+}
+export const nativeExecutionProfileCatalogV2EntrySchema = z.strictObject({ profile: catalogProfileSchema,
+  conversation: z.union([
+    z.strictObject({ state: z.literal('existing-claude-contract'), capabilitySource: z.literal('conversation-response') }),
+    z.strictObject({ state: z.literal('native-conversation'), protocol: z.literal('native-v1'), capabilitySource: z.literal('conversation-response') }),
+    z.strictObject({ state: z.literal('unsupported'), reason: z.enum(['session-persistence-unsupported', 'profile-purpose-not-supported']) }),
+  ]),
+}).superRefine(({ profile, conversation }, context) => {
+  const config = profile.configuration;
+  const expected = nativeConversationCapability(config);
+  if (conversation.state !== expected.state || conversation.state === 'unsupported' && expected.state === 'unsupported' && conversation.reason !== expected.reason
+    || profile.model.value !== config.model || config.harness === 'claude' && config.turnSettings) {
+    context.addIssue({ code: 'custom', message: 'Catalog capability must match the exact configured profile.' });
+  }
+});
+export const nativeExecutionProfileCatalogV2PageSchema = z.strictObject({ protocol: z.literal(NATIVE_EXECUTION_PROFILE_CATALOG_V2),
+  profiles: z.array(nativeExecutionProfileCatalogV2EntrySchema).max(100), nextCursor: executionProfileReferenceSchema.shape.id.nullable(),
+}).superRefine((page, context) => {
+  const ids = page.profiles.map(entry => entry.profile.reference.id);
+  if (new Set(ids).size !== ids.length || page.nextCursor !== null && page.nextCursor !== ids.at(-1)) context.addIssue({ code: 'custom', message: 'Invalid catalog page identity or cursor.' });
+});
+export type NativeExecutionProfileCatalogV2Page = z.infer<typeof nativeExecutionProfileCatalogV2PageSchema>;

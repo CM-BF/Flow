@@ -1,3 +1,4 @@
+import { assertConversationProfile } from './policy.js';
 import { requireExecutionProfile } from '../execution-profiles/store.js';
 import { freezeContext } from '../conversation-context/store.js';
 import { loadProject } from '../projects/storage.js';
@@ -14,11 +15,7 @@ export async function createConversation(pool: Pool, input: ConversationCreation
   const result = await command(pool, 'conversation.create', key, input, async client => {
     const profile = input.executionProfile ? await requireExecutionProfile(client, input.executionProfile) : undefined;
     if (profile && profile.configuration.harness !== input.harness) throw new HttpError(409, 'profile_harness_mismatch', 'The selected profile does not support this conversation harness.');
-    const requestedModelSupported = input.requested.model === 'runner-default' || input.requested.model === profile?.configuration.model;
-    const requestedToolsSupported = input.requested.tools === 'configured-readonly' || profile?.configuration.access === 'none';
-    if (!requestedModelSupported || input.requested.thinking !== 'disabled' || !requestedToolsSupported) {
-      throw new HttpError(409, 'conversation_settings_unsupported', 'The selected configuration cannot fulfill these requested controls.');
-    }
+    assertConversationProfile(input, profile);
     const id = randomUUID();
     if (input.projectId) await loadProject(client, input.projectId);
     await client.query('INSERT INTO flow.conversations(id,title,harness,requested,execution_profile,project_id) VALUES($1,$2,$3,$4,$5,$6)', [id, input.title, input.harness, input.requested, profile?.reference ?? null, input.projectId ?? null]);
