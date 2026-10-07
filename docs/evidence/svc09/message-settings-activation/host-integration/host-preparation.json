@@ -1,7 +1,7 @@
 {
   "kind": "SVC09A_REAL_HOST_PREPARATION",
-  "at": "2026-10-07T15:35:37.445Z",
-  "sourceTarget": "39a8e06b84165d9279a90379ec2b37e203194abc",
+  "at": "2026-10-07T15:45:18.870Z",
+  "sourceTarget": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings",
   "branch": "codex/personal-message-settings",
   "claim": {
@@ -17,20 +17,21 @@
   "entry": {
     "argv": [
       "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
-      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-run.py",
-      "--execute-host-once"
+      "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+      "--run-host-once"
     ],
-    "namespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once",
+    "namespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-outer-once",
     "permission": "NOT_GRANTED_BY_THIS_PACKET; separate real PG/host window required",
     "selectedJourneys": 1,
-    "providerCalls": 0
+    "providerCalls": 0,
+    "operatorNamespace": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once"
   },
   "bindings": [
     {
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-consumer.mjs",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-consumer.mjs",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/host-consumer.mjs",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
       "bytes": 10040,
       "sha256": "465bccf0e28a32288d6b095324f827084155260759297d89fb3b335ee8e9297c"
     },
@@ -38,7 +39,7 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/mixed-runner.mjs",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/mixed-runner.mjs",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/mixed-runner.mjs",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
       "bytes": 7581,
       "sha256": "a9426d00d64743da4ee391f00b1d6ba0b1e0cbc05b07efa9fbcb5f861bde0e90"
     },
@@ -46,15 +47,15 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-entry.mjs",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-entry.mjs",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/host-entry.mjs",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
-      "bytes": 3966,
-      "sha256": "6b4ea49ef5dfa2c00e90ab631402ba6fa63411106604906083e9ad5c1d3d44e2"
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
+      "bytes": 4110,
+      "sha256": "9d4cff14e1bf908d92b735568c8a38d0a03cbb2a66a7cd9abf4425711a12eeec"
     },
     {
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-fixture.mjs",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-fixture.mjs",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/host-fixture.mjs",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
       "bytes": 8739,
       "sha256": "33756ec9e9f969b32e02ddc0f42c18046a11dcb062afd36333f62e6686b80a64"
     },
@@ -62,7 +63,7 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-records.mjs",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-records.mjs",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/host-records.mjs",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
       "bytes": 3150,
       "sha256": "e71acedf9672720491a70772646665b27e9c82907eb32b6c5ea61eda4a9e1951"
     },
@@ -70,23 +71,23 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-cleanup.mjs",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-cleanup.mjs",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/host-cleanup.mjs",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
-      "bytes": 8148,
-      "sha256": "5c3b647645e993bfc0ec1b6adcd757ca925e943748a355163be769e86242cb61"
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
+      "bytes": 8255,
+      "sha256": "19756770701fad2063e2225154fb38719709a7497a0865957f68038c2a61fee0"
     },
     {
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-run.py",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-run.py",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/host-run.py",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
-      "bytes": 8085,
-      "sha256": "1f8e39b5fbb51497070e8b1c597f1d4d6cebafbcac3cfeb4d054249718217854"
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
+      "bytes": 8290,
+      "sha256": "4ed0e870873121a531ed921eb48256453153d41d0ab3be1920c0b8af8f467d24"
     },
     {
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/measure-once.py",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/measure-once.py",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/measure-once.py",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
       "bytes": 1243,
       "sha256": "fce6f5f3859714b8b9991e9c8c66470c9475f46547f815d57d52d82389e4222e"
     },
@@ -94,15 +95,15 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-inputs.json",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-inputs.json",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/host-inputs.json",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
-      "bytes": 6236,
-      "sha256": "84218b46d858b7f94fb9c79446b7e7a9dfc4336380faaeea506ff14aff13961c"
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
+      "bytes": 6374,
+      "sha256": "fcfeeff4dcc58a070cf04b9938944ea0438d9df6a3eda44ded4249bbe8c355e9"
     },
     {
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/source-composition.json",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/source-composition.json",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/source-composition.json",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
       "bytes": 11340,
       "sha256": "bdd9bd2e5f1e103dbbdae1d21b543a697fbbd664ee1acfe1de6ae67493a58974"
     },
@@ -110,7 +111,7 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-prepare.test.mjs",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-prepare.test.mjs",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/host-prepare.test.mjs",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
       "bytes": 5931,
       "sha256": "e789b8e49c5c47e8bb653c731cd2526e5a79e570ed3a6eadcb5e28cd1e66273b"
     },
@@ -118,7 +119,7 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-check.mjs",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-check.mjs",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-check.mjs",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
       "bytes": 1434,
       "sha256": "e46f0cc08ef85cc64c01934c1692b7d47849af1921b4f9d6cccac3113ede767a"
     },
@@ -126,9 +127,33 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-run.py",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-run.py",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-run.py",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
-      "bytes": 3723,
-      "sha256": "70cd50741aa3ae0155db2b9757360323f46f6b9d13b4d63f1c2757b171b0deba"
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
+      "bytes": 4764,
+      "sha256": "323437e6f72098b5422239471fe8e77cc3d7e19808e23ed7a05740fdfe0a8711"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+      "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
+      "bytes": 3759,
+      "sha256": "383a7e5452f29645ab97a55f8829d376b5dce8ea75f482e8a580a4b13d33f128"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.test.py",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.test.py",
+      "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.test.py",
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
+      "bytes": 4106,
+      "sha256": "557a642571458d0f5bd64df02662dc2dd590eab084260095117a9227fdec5bbb"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-review-fixes.test.mjs",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-review-fixes.test.mjs",
+      "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/host-review-fixes.test.mjs",
+      "fixedRef": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
+      "bytes": 1587,
+      "sha256": "4059aadc72421e473d79b3d9ac34cd865f2d5b51992fc0795ef28bcf28469b02"
     }
   ],
   "evidenceBindings": [
@@ -136,23 +161,23 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/Interface.md",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/Interface.md",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/Interface.md",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
-      "bytes": 14104,
-      "sha256": "12cce5cec767c245bdfdc6efd9b0bb357b2272cd375141a886417164eb5341d7"
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
+      "bytes": 15513,
+      "sha256": "2f8a5fb9ad02adf85863dd3f26afee6f5e945be1270de44a2833046a6c373885"
     },
     {
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/quality.md",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/quality.md",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/quality.md",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
-      "bytes": 2534,
-      "sha256": "8385ff50ca877de060ebe86d6c3e3358dff6b23c6f9eaf93d3365cc626111c5a"
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
+      "bytes": 3238,
+      "sha256": "1ac33af69106399cbdc3cf5f50582232441bea411a9a5bb01db89206d5a04015"
     },
     {
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-preparation-evidence.json",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-preparation-evidence.json",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/host-preparation-evidence.json",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
       "bytes": 2406,
       "sha256": "cfefb907c542a151b8cec37ea45ea14f0e3e119a12ed6cc7f55e2c252dea6b26"
     },
@@ -160,7 +185,7 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-status-parse.json",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-status-parse.json",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/host-status-parse.json",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
       "bytes": 642,
       "sha256": "5f7f2f54723ab1f698e579c4018ab79f1ccfe09cf1cb6c99232d0886a275e639"
     },
@@ -168,7 +193,7 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/reservation.json",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/reservation.json",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/reservation.json",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
       "bytes": 2400,
       "sha256": "bbd2d3b24a96e1c794813ae43c90c994644a69dd6847ce859f02e911d2a83466"
     },
@@ -176,7 +201,7 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/result.json",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/result.json",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/result.json",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
       "bytes": 653,
       "sha256": "1f18a161de59d534e734faa83f4d626640856c07d07ef633c5673ae2a857e378"
     },
@@ -184,7 +209,7 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/cleanup.json",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/cleanup.json",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/cleanup.json",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
       "bytes": 281,
       "sha256": "86dfb6f134af4f95c3dfbf8030f84a53bc89a4ddc68de2331b3359c75a4a671a"
     },
@@ -192,7 +217,7 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/stdout.txt",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/stdout.txt",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/stdout.txt",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
       "bytes": 698,
       "sha256": "84050d2720fbc63dc3bf0c4c2e98c800cb9a60251d579ea2fae5048674a9166b"
     },
@@ -200,9 +225,89 @@
       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/stderr.txt",
       "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/stderr.txt",
       "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-02/stderr.txt",
-      "fixedRef": "39a8e06b84165d9279a90379ec2b37e203194abc",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
       "bytes": 0,
       "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case01-result.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case01-result.json",
+      "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case01-result.json",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
+      "bytes": 653,
+      "sha256": "f7ac357e3ce3e701b7ce4a6bc59e63e15ed1a22d06add2c2359853bc597c040c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case01-stderr.txt",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case01-stderr.txt",
+      "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case01-stderr.txt",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case01-stdout.txt",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case01-stdout.txt",
+      "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case01-stdout.txt",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
+      "bytes": 332,
+      "sha256": "db02173bce7364b66cb3257a5e7c9963f2e4b01fb8e7eec600b48f27b8dae11d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case02-result.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case02-result.json",
+      "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case02-result.json",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
+      "bytes": 654,
+      "sha256": "0625ae0cf6bc7b526a5cb45af3d40b575e36d254ff9ff5f0d62517787e43f112"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case02-stderr.txt",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case02-stderr.txt",
+      "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case02-stderr.txt",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
+      "bytes": 623,
+      "sha256": "725ac8102667d9d340d69dd45e2b53b1f723fa1feb3c3d7b6a514a6ff383bfde"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case02-stdout.txt",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case02-stdout.txt",
+      "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/case02-stdout.txt",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/cleanup.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/cleanup.json",
+      "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/cleanup.json",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
+      "bytes": 343,
+      "sha256": "ad05b7eda223995993b5d6f5e34c8849c4cbc4de0cb95025a541441a28242c40"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/reservation.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/reservation.json",
+      "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/reservation.json",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
+      "bytes": 3146,
+      "sha256": "ac752391ece3d7723959467f553613c6938c3564faba2948f4cbef1f27b72216"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/summary.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/summary.json",
+      "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/prepare-local-03/summary.json",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
+      "bytes": 399,
+      "sha256": "76546faa46c8b6b5742ee67b383de0571e480bb858889bc139b094cefe8c240d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-review-fix-status.json",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-review-fix-status.json",
+      "gitPath": "docs/evidence/svc09/message-settings-activation/host-integration/host-review-fix-status.json",
+      "fixedRef": "ccab469bd61bcf99c3937f815fc46f20c9339720",
+      "bytes": 638,
+      "sha256": "efdb072f454c139b20a49c258c6d08ce9609299b6ecce767430c96e04e3219de"
     }
   ],
   "inherited": [
@@ -242,8 +347,9 @@
       "host-run.py",
       "host-cleanup.mjs"
     ],
-    "validation": "STATIC_ONLY_NOT_EXECUTED",
-    "meaning": "Work record persistence failure still attempts independent service cleanup; missing work disposition is unknown and forbids DROP; host entry retains vanished count and uses shared measurement complete/bytes/entries semantics. Original 6 pass do not claim these new branches ran."
+    "validation": "Covered by three new direct consumers in fixed ccf7d plus two new outer-deadline/resource-scope cases. Original STATIC_ONLY record remains in 12a3 and I02 review.",
+    "meaning": "Work record persistence failure still attempts independent service cleanup; missing work disposition is unknown and forbids DROP; host entry retains vanished count and uses shared measurement complete/bytes/entries semantics. Original 6 pass do not claim these new branches ran.",
+    "historicalValidation": "STATIC_ONLY_NOT_EXECUTED"
   },
   "limits": {
     "cloneSeconds": 20,
@@ -258,20 +364,58 @@
     "PGBytes": 134217728,
     "PGConnectionsPeak": 26,
     "PGManagementMargin": 16,
-    "residentProcesses": 10,
+    "residentProcesses": 11,
     "totalWithTransientProcesses": 16,
     "explicitHTTPRequests": 96,
     "mixedTasks": 2,
     "mixedAttempts": 2,
-    "nativeQueries": 0
+    "nativeQueries": 0,
+    "outerOperatorWorkSeconds": 215,
+    "outerTermSeconds": 0.5,
+    "outerReapSeconds": 2,
+    "totalSupervisedEnvelopeSeconds": 217.5
   },
-  "deadlineMeaning": "One monotonic child-admission/supervision deadline with preparation/time and cleanup reserve deducted. Filesystem pin/fsync/archive I/O has no separate hard watchdog; this remains an explicit pre-execution review condition, not a hidden hard-wall claim.",
+  "deadlineMeaning": "The existing OPS14 supervises the entire operator with childPidOnly: work 215s + TERM .5s + reap 2s. Internal clone/work/cleanup still share the original 215s deadline, not extra time. Caller absence/exit0 cannot establish detached services or database closure; missing phase evidence is UNKNOWN_KEEP, no automatic retry or window return.",
   "noExecutionFacts": {
     "hostPG": "NOT_RUN",
     "actualNamespaceAbsent": true,
     "personalIO": 0,
     "nativeQueries": 0,
-    "newBuildsSinceApprovedResult": 0
+    "newBuildsSinceApprovedResult": 0,
+    "outerNamespaceAbsent": true
   },
-  "acceptanceBoundary": "Real host registration/publication and all-slot lifecycle plus actual center claim/ACK using existing runRunner and injected adapter only. Synthetic loader is NOT_APP and NOT_PERSONAL. Eight generation identities and independent closure/DROP conditions required; unknown KEEP; catalog/PID never model entitlement or native actual claim."
+  "acceptanceBoundary": "Real host registration/publication and all-slot lifecycle plus actual center claim/ACK using existing runRunner and injected adapter only. Synthetic loader is NOT_APP and NOT_PERSONAL. Eight generation identities and independent closure/DROP conditions required; unknown KEEP; catalog/PID never model entitlement or native actual claim.",
+  "resultTarget": "ccab469bd61bcf99c3937f815fc46f20c9339720",
+  "reviewFix": {
+    "finding": "SVC09A-HOST-P2-01",
+    "originalReview": {
+      "gitPath": "docs/evidence/i02/svc09a-host-preparation-review.json",
+      "fixedRef": "729d3383635b565aa4131078f80a682cac437526",
+      "decision": "REQUEST_CHANGES"
+    },
+    "selected": 5,
+    "passed": 5,
+    "failed": 0,
+    "rounds": 1,
+    "groups": 2,
+    "elapsedMs": 402,
+    "rawBytes": 955,
+    "returnedAt": "2026-10-07T15:41:14.929848Z",
+    "ownedState": "absent",
+    "dualEOF": true,
+    "scratch": "exact empty directory removed",
+    "tests": [
+      "2 Node direct consumers",
+      "3 Python cases including tiny persistence-stall child and caller-only closure scope"
+    ],
+    "notRepeated": [
+      "original six preparation cases",
+      "artifact build/import",
+      "33 module cases",
+      "CORE PG matrix"
+    ],
+    "PG": 0,
+    "host": 0,
+    "provider": 0
+  }
 }
