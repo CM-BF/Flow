@@ -28,3 +28,23 @@ it('matches the canonical mapper identity while preserving one sourceMessageId p
   expect(first.activity.sourceMessageId).not.toBe(second.activity.sourceMessageId);
   expect(first.activity.activityId).not.toBe(second.activity.activityId);
 });
+
+it('preserves the primary work error when runner cleanup also rejects', async () => {
+  const registration = ast.statements.find(node => ts.isExpressionStatement(node)
+    && ts.isCallExpression(node.expression) && node.expression.arguments[0]?.getText(ast).includes('uses real runRunner'));
+  if (!registration || !ts.isExpressionStatement(registration) || !ts.isCallExpression(registration.expression)) throw new Error('Missing production case.');
+  const callback = registration.expression.arguments[1];
+  if (!callback || !ts.isArrowFunction(callback) || !ts.isBlock(callback.body)) throw new Error('Missing production callback.');
+  const work = callback.body.statements.find(node => ts.isTryStatement(node) && node.finallyBlock?.getText(ast).includes('stop.abort()'));
+  if (!work) throw new Error('Missing work/cleanup boundary.');
+  const boundary = ts.transpileModule(`(async()=>{let primary:unknown,failed=false;${work.getText(ast)};if(failed)throw primary;})()`,
+    { compilerOptions: { target: ts.ScriptTarget.ES2022 } }).outputText;
+  const primary = new Error('test work failure'), secondary = Object.assign(new Error('test cleanup failure'), { code: 'CLEANUP_TEST' });
+  const running = Promise.reject(secondary); void running.catch(() => undefined);
+  const fixture = { facts: {} };
+  const result = runInNewContext(boundary, { Error, performance, adapterFailure: undefined, runnerFailure: undefined,
+    owner: { show: async () => { throw primary; } }, accepted: { task: { id: 'task' } }, delay: async () => {},
+    expect, calls: 1, running, stop: new AbortController(), fixture }, { timeout: 1000 });
+  await expect(result).rejects.toBe(primary);
+  expect(fixture.facts).toEqual({ runnerCleanupError: { name: 'Error', code: 'CLEANUP_TEST' } });
+});

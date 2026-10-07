@@ -65,11 +65,21 @@ it('uses real runRunner confirmation, outbox and FlowClient paging for over 2MiB
       catch(error){adapterFailure=error;throw error;}
     }}]});
   void running.catch(error=>{runnerFailure=error;});
+  let primary:unknown,failed=false;
   try{
     const deadline=performance.now()+30000;let state='';
     while(performance.now()<deadline){if(adapterFailure!==undefined)throw adapterFailure;if(runnerFailure!==undefined)throw runnerFailure;state=(await owner.show(accepted.task.id)).status;if(state==='succeeded'||state==='failed'||state==='uncertain')break;await delay(20);}
     expect(state).toBe('succeeded');expect(calls).toBe(1);
-  }finally{stop.abort();await running;}
+  }catch(error){primary=error;failed=true;}
+  finally{
+    stop.abort();
+    try{await running;}catch(error){
+      if(!failed){primary=error;failed=true;}
+      else fixture.facts.runnerCleanupError={name:error instanceof Error?error.name:'unknown',
+        code:error&&typeof error==='object'&&'code'in error&&(typeof error.code==='string'||typeof error.code==='number')?String(error.code).slice(0,80):null};
+    }
+  }
+  if(failed)throw primary;
   const descriptor=await owner.nativeActivityBody(accepted.task.id,input.activity.activityId),reader=owner.nativeActivityBodyPages(descriptor);
   const chunks:Uint8Array[]=[];let requests=0;
   try{
