@@ -1,0 +1,29 @@
+--- a/tools/personal-preview/preview.mjs
++++ b/tools/personal-preview/preview.mjs
+@@ -52,7 +52,7 @@
+   await outsideGit(actual);
+   return actual;
+ }
+-async function load(directory, serviceRole = null, launchRuntime = null) {
++async function load(directory, serviceRole = null, launchRuntime = backendRuntime) {
+   const path = await directoryPath(directory);
+   const config = await privateJson(join(path, 'config.json'));
+   if (config.format !== 1 || config.directory !== path || typeof config.repository !== 'string'
+@@ -236,7 +236,7 @@
+ export async function runService(directory, role) {
+   if (!roles.includes(role)) fail('UNKNOWN_SERVICE');
+   const launchRuntime = createLaunchRuntimeResolver();
+-  const config = await load(directory, role, launchRuntime);
++  const config = await load(directory, role, launchRuntime.resolve);
+   launchRuntime.seal();
+   const nonce = process.argv.find(value => value.startsWith('--flow-preview='))?.slice('--flow-preview='.length);
+   const deadline = Date.now() + 2000;
+@@ -258,7 +258,7 @@
+     const browser = await readBrowserSessionLaunch(config);
+     const env = serviceEnvironment(role, config, process.env, browser.settings, process.env.FLOW_PREVIEW_WEB_BACKEND_HEAD ?? null);
+     await stage('runtime');
+-    const runtime = await serviceRuntime(config, await privateJson(join(config.directory, 'state.json')), role, launchRuntime);
++    const runtime = await serviceRuntime(config, await privateJson(join(config.directory, 'state.json')), role, launchRuntime.resolve);
+     let args; let cwd = runtime.root;
+     if (role === 'center') args = ['--import', 'tsx', 'apps/server/src/main.ts'];
+     else if (role === 'runner') args = ['--import', 'tsx', 'apps/runner/src/main.ts'];
