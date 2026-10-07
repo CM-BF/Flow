@@ -422,6 +422,20 @@ test('SVC08 replace-host validates noncurrent retained files before touching Web
   });
 });
 
+test('SVC08 replace-host validates exact retained report and backend bindings before touching Web', async () => {
+  await hostReplacementFixture(async f => {
+    const noncurrent = f.release.artifacts[0].artifactId;
+    const changed = { ...f.release, compatibilityIds: { ...f.release.compatibilityIds, [noncurrent]: '0'.repeat(64) } };
+    await f.json('web-release.json', changed);
+    const pointerDigest = async () => f.hash(await readFile(join(f.directory, 'web-release.json')));
+    await assert.rejects(f.replace({ ...f.request, expectedPointerSha256: await pointerDigest() }), { code: 'WEB_COMPATIBILITY_INVALID' });
+    assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+    await f.json('web-release.json', { ...f.release, backendHead: '0'.repeat(40) });
+    await assert.rejects(f.replace({ ...f.request, expectedPointerSha256: await pointerDigest() }), { code: 'WEB_BACKEND_SOURCE_MISMATCH' });
+    assert.equal(f.calls.stop, 0); assert.equal(f.calls.spawn, 0);
+  });
+});
+
 
 test('SVC08 replace-host CLI rejects extra request authority before any real marker or process port', async () => {
   await hostReplacementFixture(async f => {

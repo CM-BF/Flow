@@ -29,6 +29,9 @@ def main():
     label = sys.argv[1]
     if label not in ('first', 'repair', 'direct'):
         raise ValueError('EXPLICIT_ROUND_REQUIRED')
+    selection = {'first': ('SVC08 replace-host', 9),
+                 'repair': ('SVC08 replace-host validates exact retained report', 1),
+                 'direct': ('SVC08 replace-host (validates exact retained report|preserves legacy af51|validates noncurrent retained files)', 3)}[label]
     free = shutil.disk_usage(ROOT).free
     if free < 1107296256:
         raise RuntimeError('RESOURCE_NOT_ADMITTED')
@@ -42,13 +45,13 @@ def main():
     scratch = Path(tempfile.mkdtemp(prefix='flow-svc08-host-segment-')).resolve()
     identity = scratch.stat()
     reservation = {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'round': label, 'scratch': str(scratch), 'scratchDev': identity.st_dev, 'scratchIno': identity.st_ino,
-                   'freeBytes': free, 'sources': bindings, 'selectedPlanned': 9, 'legacyPgNotSelected': 6, 'rawBytesMax': 262144,
+                   'freeBytes': free, 'sources': bindings, 'selectedPlanned': selection[1], 'selection': selection[0], 'legacyPgNotSelected': 6, 'rawBytesMax': 262144,
                    'tmpBytesMax': 16777216, 'PG': 0, 'Chrome': 0, 'provider': 0,
                    'policy': {'work': 20, 'term': .5, 'reap': 2, 'parent': 24.5}}
     write(HERE/f'{label}-reservation.json', (json.dumps(reservation, indent=2)+'\n').encode())
     spec = importlib.util.spec_from_file_location('svc08_supervisor', ROOT/'tools/owned-process-supervision/supervise.py')
     module = importlib.util.module_from_spec(spec); sys.modules[spec.name] = module; spec.loader.exec_module(module)
-    report = module.supervise(module.Launch((NODE, '--test', '--test-name-pattern=SVC08 replace-host', 'tools/personal-preview/preview.test.mjs'), str(ROOT),
+    report = module.supervise(module.Launch((NODE, '--test', '--test-name-pattern='+selection[0], 'tools/personal-preview/preview.test.mjs'), str(ROOT),
                               {'PATH': '/usr/bin:/bin', 'HOME': str(HERE), 'NO_COLOR': '1',
                                'TMPDIR': str(scratch)}, module.Ownership.NEW_CHILD_SESSION),
                               module.Policy(20, .5, 2, 131072))
