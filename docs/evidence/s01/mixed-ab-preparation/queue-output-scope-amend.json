@@ -1,0 +1,17 @@
+{
+  "requestId": "s01-pool-wait-output-scope-20261007-133341-v1",
+  "claimId": "508f9c85-a27c-4382-bfe9-caca43be4b0e",
+  "version": 2,
+  "actor": {
+    "lead": "mika",
+    "worker": "status_read"
+  },
+  "scope": [
+    "docs/evidence/s01/idle-claim-cost",
+    "docs/evidence/s01/mixed-ab-preparation",
+    "docs/evidence/s01/mixed-ab-run",
+    "docs/evidence/s01/pool-wait-run",
+    "experiments/runner-capacity/mixed",
+    "plans/s01-runner-capacity"
+  ]
+}

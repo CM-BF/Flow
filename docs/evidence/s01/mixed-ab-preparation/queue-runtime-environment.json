@@ -1,0 +1,279 @@
+{
+  "runtime": [
+    {
+      "path": "node_modules/pg/package.json",
+      "bytes": 1668,
+      "sha256": "b1e53333a3d0c2c47c49a5cb919d221135dc03145df740925b899bc2baacc435",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg@8.23.1/node_modules/pg/package.json",
+      "match": true
+    },
+    {
+      "path": "node_modules/pg/lib/client.js",
+      "bytes": 25715,
+      "sha256": "ad6aa93c26b0bf26db1f2ebe74216212790a04c41af5585c63760f9fa8322a32",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/client.js",
+      "match": true
+    },
+    {
+      "path": "node_modules/pg/lib/connection.js",
+      "bytes": 6399,
+      "sha256": "f93e914bf408657f2301393489da561a5a464e9c30f4f51b681b18a21a5f1c84",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/connection.js",
+      "match": true
+    },
+    {
+      "path": "node_modules/pg/lib/stream.js",
+      "bytes": 2132,
+      "sha256": "0bd4001775301604ddf7c94152e05f6f30a9354876717bdae2ab636d00eb12ba",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg@8.23.1/node_modules/pg/lib/stream.js",
+      "match": true
+    },
+    {
+      "path": "node_modules/pg-boss/package.json",
+      "bytes": 4103,
+      "sha256": "05ede1fafaa01597024bf6db1eff09fa13c9b6542e389355923416412ab9d0d0",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg-boss/package.json",
+      "match": true
+    },
+    {
+      "path": "node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js",
+      "bytes": 14460,
+      "sha256": "6f304776edaabde2954cbf8c4366fa6d9512bfba0e408e78cc56b3c46c69d058",
+      "realpath": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg-pool@3.14.0_pg@8.23.1/node_modules/pg-pool/index.js",
+      "match": true
+    }
+  ],
+  "errors": [],
+  "loader": [
+    {
+      "package": "tsx",
+      "version": "4.23.15",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx",
+      "packageJsonBytes": 1663,
+      "packageJsonSha256": "ab5f14c4251638844ade3905d3cfc52fc1c833644694d655a05f6d0ca746b83c",
+      "exports": {
+        "./package.json": "./package.json",
+        ".": "./dist/loader.mjs",
+        "./patch-repl": "./dist/patch-repl.cjs",
+        "./cjs": "./dist/cjs/index.cjs",
+        "./cjs/api": {
+          "import": {
+            "types": "./dist/cjs/api/index.d.mts",
+            "default": "./dist/cjs/api/index.mjs"
+          },
+          "require": {
+            "types": "./dist/cjs/api/index.d.cts",
+            "default": "./dist/cjs/api/index.cjs"
+          }
+        },
+        "./esm": "./dist/esm/index.mjs",
+        "./esm/api": {
+          "import": {
+            "types": "./dist/esm/api/index.d.mts",
+            "default": "./dist/esm/api/index.mjs"
+          },
+          "require": {
+            "types": "./dist/esm/api/index.d.cts",
+            "default": "./dist/esm/api/index.cjs"
+          }
+        },
+        "./cli": "./dist/cli.mjs",
+        "./suppress-warnings": "./dist/suppress-warnings.cjs",
+        "./preflight": "./dist/preflight.cjs",
+        "./repl": "./dist/repl.mjs"
+      },
+      "main": null,
+      "dependencies": {
+        "esbuild": "~0.28.0"
+      }
+    },
+    {
+      "package": "esbuild",
+      "version": "0.28.2",
+      "root": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild",
+      "packageJsonBytes": 3980,
+      "packageJsonSha256": "9d0bc453f4e791553c4cc2298ba023b409241fd9801e494741666eb0f6051490",
+      "exports": null,
+      "main": "lib/main.js",
+      "dependencies": {}
+    }
+  ],
+  "pgPrototype": {
+    "driver": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg@8.23.1/node_modules/pg",
+    "boss": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/pg-boss@12.37.0_@opentelemetry+api@1.9.1/node_modules/pg",
+    "same": true
+  },
+  "currentPreparationBytes": 1035897,
+  "notRequiredPackages": [
+    {
+      "package": "get-tsconfig",
+      "reason": "tsx4.23.15 manifest declares only esbuild; no separate dependency required."
+    },
+    {
+      "package": "resolve-pkg-maps",
+      "reason": "tsx4.23.15 manifest declares only esbuild; no separate dependency required."
+    }
+  ],
+  "loaderFiles": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/api/index.cjs",
+      "bytes": 442,
+      "sha256": "8cd3fa8b91b0bef84f763f0b0505e4dd522967893c0fde51fe2ad395f30f1619"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/api/index.d.cts",
+      "bytes": 1030,
+      "sha256": "18a6455f90fa14342c99f831031bbb7ca903690d3a1f0003d957854d0831d997"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/api/index.d.mts",
+      "bytes": 1030,
+      "sha256": "18a6455f90fa14342c99f831031bbb7ca903690d3a1f0003d957854d0831d997"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/api/index.mjs",
+      "bytes": 487,
+      "sha256": "7d3e6a7d5bc5c33675221a5439762f8d0094cd157bfefbfaaceb0ac9be966172"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cjs/index.cjs",
+      "bytes": 332,
+      "sha256": "97a9d7b9d959f9528c46660beedcef69adc1ae29c71948b1e695860511a711d5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/cli.mjs",
+      "bytes": 124418,
+      "sha256": "8690135061bc49d187143493b82d26a09b7fb71d6dd817d2242cc9dc52506de9"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/client-XItNFmsq.cjs",
+      "bytes": 834,
+      "sha256": "cc72bed2d57324f12318efdc804772a2de18a3deb836ab1d63bdc493ad542113"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/api/index.cjs",
+      "bytes": 16770,
+      "sha256": "4c09cef408c1915365cda5d1769cb61a8ee0b05c6a4f57c44e6d9bffaacb5cb5"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/api/index.d.cts",
+      "bytes": 1079,
+      "sha256": "800928ec427376cde9efffbfba8667fdd3893b68fdea6c22abc19d44eb2e6efa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/api/index.d.mts",
+      "bytes": 1079,
+      "sha256": "800928ec427376cde9efffbfba8667fdd3893b68fdea6c22abc19d44eb2e6efa"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/api/index.mjs",
+      "bytes": 1001,
+      "sha256": "abee15f23172ead6a5f709908677ac4be5989fe1140ea7275dd35f597623493c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/esm/index.mjs",
+      "bytes": 675,
+      "sha256": "a57842a725ba112ab029d3a0748f4ba5dc7b7a38bc9d38e7c4985af36aaa3c84"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-Bqjv9TxC.mjs",
+      "bytes": 1272,
+      "sha256": "180e6425aa9ba5716e9141cc049a7ee5367c7127b03b81aea22612ef04d425ba"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/index-DE3OBZuV.mjs",
+      "bytes": 55651,
+      "sha256": "2e0d42c5a8b65e752ce2fc27d95d382f463e419e12a5ad397b481c705c65fbf2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CGfpMDSb.cjs",
+      "bytes": 13515,
+      "sha256": "e35faacc23082bc2ad2e1d47896932d804914edee932642558fa55098124ac12"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/lexer-CanA6ArK.mjs",
+      "bytes": 13462,
+      "sha256": "e12988f68fd477e488d99c23aae1a9f5be78719e8c0b055642340b25a76e621a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+      "bytes": 604,
+      "sha256": "17e2a92c5f1f70065b01c65d5ee9ac260839d4fc0ea78fdbb4db7b1155ccd32f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/package-Dj0mHsMt.mjs",
+      "bytes": 32,
+      "sha256": "20f38ff0210e4f838032714d0590012e4fb82ad4095c8930652a13b37420cd80"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/patch-repl.cjs",
+      "bytes": 506,
+      "sha256": "33f5f6755270054783f4c568d0d48d4a79fecde965ec6f91ca27f0f949ba6da6"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/preflight.cjs",
+      "bytes": 1061,
+      "sha256": "853ed9c14711bb11333f3a53803965149509bac4bc515492707f73c83ed9193d"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-B1c7OH6V.cjs",
+      "bytes": 94753,
+      "sha256": "dcda008e1b6774abe04d6e7f0c783804e88046691c44615510b628167e5e5179"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/register-nyXW-TH3.mjs",
+      "bytes": 21001,
+      "sha256": "45628eebec60ddb365201377158bbace219ffd8cf5edab1bcde6b8f7f14b0574"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/repl.mjs",
+      "bytes": 738,
+      "sha256": "dad3f9708f4eceb99a5885f9c41b03b01bf30db1418514d7b1dc0637f45cdc21"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CBjy4Foe.mjs",
+      "bytes": 39218,
+      "sha256": "b1156f2ecff29ef55801df8f4e1d9b34a5eae32e04dfcf3b8c2557fe191264c2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/require-CVaYn9z3.cjs",
+      "bytes": 474,
+      "sha256": "a29a3db7a21cfd665df96d4cb800b527139903df6e6c52c206f944e854ab59d0"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/suppress-warnings.cjs",
+      "bytes": 497,
+      "sha256": "028063d20bd49083f03a0b1ed4f7a3d55fac1f64f5aca0e58e1ec61601f20ee7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/temporary-directory-Du7LpLp9.mjs",
+      "bytes": 782,
+      "sha256": "cb94c0a5d95542df12c0393e2bb5221ab0977bb80df2d031498cda3dbfdfcef7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.d.ts",
+      "bytes": 23551,
+      "sha256": "e078310f23f0ccfa28a6ac81b5fad81f27150e921f92ab6e648caab42e2d9a14"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/esbuild@0.28.2/node_modules/esbuild/lib/main.js",
+      "bytes": 97463,
+      "sha256": "61ec0ba144ff93f4bf0e96ad6fab6f430ede0aa13e27ace8063ed63ba416b3cd"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe/node_modules/.pnpm/@esbuild+darwin-arm64@0.28.2/node_modules/@esbuild/darwin-arm64/bin/esbuild",
+      "bytes": 10590882,
+      "sha256": "10b6243df618d374bb2d5c9cfbe7052e1405f6aa4e53a6164f11a91b9f2e1384"
+    },
+    {
+      "path": "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+      "bytes": 50320,
+      "sha256": "ee2a4493dc9e1bd0cf10f6a1aa773d0452054e2cb179b461f4d60cef66bd01ba"
+    }
+  ],
+  "platform": "darwin-arm64",
+  "transitiveScope": "tsx dist and esbuild JS/native binary plus Node binary pinned; production third-party package manifests and pnpm lock pinned, not every third-party transitive byte.",
+  "analysisNotes": [
+    "First source-only metadata inventory tried nonexistent root node_modules/esbuild; corrected to already resolved tsx sibling binding, no install/link change or engineering execution."
+  ]
+}

@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T13:30:48Z |
+| 最近更新 | 2026-10-07T13:43:41.265Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | 源码f722e28678e9e9af0e631af7539e1c6f70adf7c9已停写；本次仅归档正式独审，metadata提交后核clean。 |
+| 工作树dirty状态 | 新外壳de6af442b03533d48e5cdca7b9d6e2bde4229f2f已固定；本轮输入/范围/状态封存后核clean。 |
 | 工作分支状态 | in-progress |
 | 检查状态 | 本窄修3 selected/3 pass/14未选与focused strict0，2raw457B；旧6/9/11 distinct分轮及首红独立保留，不相加。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
-| 实现目标 | f722e28678e9e9af0e631af7539e1c6f70adf7c9 |
-| 实现范围 | experiments/runner-capacity/mixed/queue-probe.ts, experiments/runner-capacity/mixed/queue-chat.ts, experiments/runner-capacity/mixed/queue-proof.ts, experiments/runner-capacity/mixed/queue-journal.ts, experiments/runner-capacity/mixed/queue-main.ts, experiments/runner-capacity/mixed/queue-probe.test.ts, experiments/runner-capacity/mixed/claim-observation.ts, experiments/runner-capacity/mixed/driver.ts, experiments/runner-capacity/mixed/child.ts |
+| 实现目标 | de6af442b03533d48e5cdca7b9d6e2bde4229f2f |
+| 实现范围 | docs/evidence/s01/mixed-ab-preparation/queue-operator.py, experiments/runner-capacity/mixed/process.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | delivered |
+| 本片段交付阶段 | review |
 | 优先级 | 4 |
-| 当前产出 | 本片段已交付：聊天完整回复来源校验修复经独审通过，局部检查及资源收尾证据已确认。 |
-| 下一可用交付 | 继续准备真实对照实验的完整生产输入、输出范围和资源门禁；尚未进行新性能运行。 |
-| 当前阻塞 | ACTIVE：完整运行输入、动态SQL/外层监督和新输出范围仍未就绪，真实性能窗口未开放。 |
+| 当前产出 | 已补齐固定实验输入、迁移文件与外层调用，下一次运行的输出范围已领取；准备包待窄审。 |
+| 下一可用交付 | 完成外层门禁的独立审查和必要纯反例后，提交一次真实对照实验的运行条件。 |
+| 当前阻塞 | ACTIVE：新增外层调用尚未验证；真实性能窗口与最新完整资源合计未授权。 |
 | 需用户决定 | NONE |
-| Review | SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPROVED：chatui01_owner，2026-10-07T13:30:23Z，sourcef722e28678e9e9af0e631af7539e1c6f70adf7c9/packeta180eeb3，legacy DTO P2 CLOSED，0P1/P2。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v2 ACTIVE /5scope；2026-10-07T13:30:48Z本段fresh CLI核self/WT/branch/all5相符；保review/main期，pool-wait-run未领取未创建。 |
-| 架构影响 | 私有配方复用同outer/driver/child/监督；增加public合成聊天、有限交付策略身份与同钟取消证明。生产pool/SQL/协议不变，未增加新运行平台；当前源码未main。 |
+| Review | 原f722e28678e9e9af0e631af7539e1c6f70adf7c9于13:30:23Z独审通过；新增de6af外壳/缓存delta与本输入清单PENDING，只读审后另申请必要纯检查。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T13:34:26.938Z原子追加pool-wait-run，原五scope不变，输出目录尚未创建。 |
+| 架构影响 | 复用OPS14监督及原driver/child资源权威；新增同PID checkpoint→exec薄caller与固定输入清单，生产pool/SQL不变。当前新实验未main/未运行。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -186,3 +186,15 @@ find-skills/codebase-design/clean-code质量结果见入口，私有实验模块
 ## 2026-10-07T13:30:48Z 独审接收
 
 chatui于13:30:23Z对fixed f722/a180给SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPROVED，legacy来源P2 CLOSED、0P1/P2，见[正式回执](../../docs/evidence/s01/mixed-ab-preparation/queue-chat-fix-independent-review.json)。10bindings/59839B、3pass/14未选/strict0、457B原件及两组/TMP关闭均忠实；初EPERM、监督累计2484ms与wholewall/peak UNKNOWN保留。本次仅metadata，不再工程运行/PG/旧根访问；原CHANGES_REQUESTED/raw/source/manifest保持。通过不把新recipe变为READY或OPEN，也不表示main接收。claim继续保留，整体S01开放TODO不变。
+
+## 2026-10-07T13:33:41Z 运行输入准备实际开工
+
+15分钟source-only段至13:48:41Z，原HEAD0d01d7111918f2081ac5aa7d4693e45d8efe1023 clean/origin、fresh claim508f v2全部5scope本人一致。仅固定production4fdd运行闭包/动态SQL/既有外层caller与输出范围，不工程check/import产品/PG/HTTP/性能/Chrome/provider/安装。输出scope先当前version原子amend，未成功不写该目录；不存在运行授权。旧批准/raw不动，仍复用find-skills/codebase-design/clean-code原方法，不另建实验框架。
+
+## 2026-10-07T13:43:41.265Z 完整运行准备待窄审
+
+本段13:33:41Z开始，fresh0d01clean/原v2五scope后原子追加输出v3；[唯一准备入口](../../docs/evidence/s01/mixed-ab-preparation/queue-preparation-ready.md)。675导出superset/223保守AST源/33外部SQL及动态017/019齐备；16依赖manifest、6runtime、31loader绑定。只做Git对象/静态AST解析与metadata，没有产品import/导出、工程test/PG/HTTP/provider。新外壳de6af与其pure反例尚未审/运行，NOT_READY/NOT_OPEN；最新候选资源不沿用历史线。
+
+固定source/meta新增不足2MiB；clean-code复核单一监督/资源所有者、首次错误与UNKNOWN保留，未来source导出/运行须新许可。原raw/已审45包保持；taskstartUNKNOWN、六TODO及历史main不变。dashboard仅更新本唯一status，不新GET；11:57旧来源观察不冒本次同步。
+
+2026-10-07T13:43:53Z 状态校验：现有parseStatus errors=[]/human.missing=[]/implementation.errors=[]；timing仅原任务开工UNKNOWN提示，不补造。新增caller若已请求launch后异常保持FAIL_OR_UNKNOWN，不把可能spawn记NOT_RUN。此静态修订未执行入口；本段0工程测试/PG/HTTP/服务。
