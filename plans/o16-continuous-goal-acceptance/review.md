@@ -1,8 +1,8 @@
 # O16 独立审查
 
-状态：source ff266已获APPROVED_LIMITED_ZERO_MODEL_DELTA，candidate8cda已获限定准备批准；R2实际失败结果待独立真实性审查。历史零模型/环境/分阶段批准范围不升级为真实规划成功。
+状态：R2结果54bf/d82f已获APPROVED_LIMITED_RESULT并main f7864f88。当前私有错误诊断source49d待独立审查，不能继承旧源批准；累计2请求均失败，无第三次授权。
 
-当前 Review target commit：R2结果固定提交见result-manifest；行为source ff266d1ddc3adf3f89012095b4ff446367c3fb7e / candidate8cda。
+当前 Review target commit：49d35d97e2d5d529d34dc29458ed2d95f2474909（诊断5源/测试），固定证据见private-error-diagnostics/delta-manifest。
 
 作者 native_center_owner / gpt-6-astra，独立reviewer astra_ultra_execution_lead / gpt-6-astra。范围仅三literal中的实验实现与证据；当前Interface不是产品/模型批准。
 
@@ -57,3 +57,9 @@ Lead10:37:40Z独审ff266/9e15/2841，APPROVED_LIMITED_ZERO_MODEL_DELTA，无P1/P
 ## 2026-10-07T10:54:03.571119Z R2实际失败待独立审查
 
 [候选独审原件](../../docs/evidence/o16/native-plan-20261007-r2/independent-review.json)不替代实际结果。[R2原件](../../docs/evidence/o16/native-plan-20261007-r2/RESULT.md)本次SDK1/累计2、init声明通过、4帧/isError:true，无成功proposal/pause。SDK报告0与账户及旧费UNKNOWN分开。上游错误正文未保存，不能猜首因。关闭事实与KEEP分开；作者未自批，交assignment唯一结果审查，0重跑、无第三次许可。
+
+## 2026-10-07T11:01:55.642771Z R2结果已审与诊断后继交审
+
+[原样独审](../../docs/evidence/o16/native-plan-20261007-r2/result-independent-review.json)核R2 28bindings+继承candidate，APPROVED_LIMITED_RESULT/noP1P2，mainf7864f88；只批准失败忠实性，不能称规划成功。
+
+新诊断source49d仅5源/测试（3原观察/worker+2新模块/专测）；[Interface](../../docs/evidence/o16/private-error-diagnostics/Interface.md)和[局部结果](../../docs/evidence/o16/private-error-diagnostics/RESULT.md)待唯一独审。重点私有0600/限界/固定目录身份、SDK结构字段白名单、第一异常不被诊断或cleanup覆盖、无正文保持unknown、原error仍拒绝。7 different/3轮/14选择，5fixture红保留；0PG/SDK/provider/认证，无新query许可。

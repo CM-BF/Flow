@@ -1,0 +1,28 @@
+{
+  "startedAt": "2026-10-07T10:59:12.481902+00:00",
+  "scratch": "/private/tmp/flow-o16-diagnostic-z16ey_qe",
+  "dev": 16777234,
+  "ino": 124066722,
+  "freeBytes": 22350733312,
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "--import",
+    "tsx",
+    "--test",
+    "--test-concurrency=1",
+    "experiments/continuous-goal-acceptance/error-diagnostics.test.mjs"
+  ],
+  "bindings": {
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/docs/evidence/o16/private-error-diagnostics/run.py": "a1524c3aea4e87ca755252bed701b1cd7c2a11186faad016c98f7a1db9901c5f",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.mjs": "55526a6c5112de5eee7d35a99a26181a0ef5cf8d2200eb9e17e58b5734576154",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/error-diagnostics.test.mjs": "684dd40d71a66dac72f58d9eb8f8a759d69a5654ca6338b884aef7c782c6eaf8",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/query-policy.mjs": "a70966ea499024b192f2f8cb28336fba15b9347e8879816cca8fd39d8e55b07b",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/query-run.mjs": "066471dbf652330ce740281872121366ad645d7ccb22777d38e224882ba3d71d",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/worker.mjs": "d9956c0022f346324ca0de3f47e39a2d26b3271680b47c81f1ca53657a7db2bd",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/records.mjs": "48eddfb0d31010056ce8f7e4aca82f57100c31744e5d58dcccd558ec3f92bfe7",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance/experiments/continuous-goal-acceptance/stage-policy.mjs": "669eb26fd9e73706e65363872cf963c264ae74410a5a7b43092db0ed503e3da3"
+  },
+  "PG": 0,
+  "provider": 0
+}

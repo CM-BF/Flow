@@ -1,0 +1,35 @@
+{
+  "verdict": "APPROVED_LIMITED_RESULT",
+  "reviewedAt": "2026-10-07T10:58:53.778713+00:00",
+  "reviewer": "assignment_review/gpt-6-astra",
+  "recordedBy": "astra_ultra_execution_lead",
+  "target": "54bf2131e535d59333adbf02954e119ee3f7bb63",
+  "delivery": "d82f5058cf7742e00ee139f637e8423af62cdf96",
+  "manifest": {
+    "bytes": 8874,
+    "sha256": "9e99d31580a56abea29bdc68bd052dad5af3fcb2165b394dbae151988120badf"
+  },
+  "bindings": {
+    "fixedAndCurrentCount": 28,
+    "bytes": 72776,
+    "inheritedCandidateBytes": 4326,
+    "inheritedCandidateSha256": "95704131e570295ab7070899fafc942e3555d787021341aff64f5cb78461bbe1",
+    "rawFiles": 14,
+    "rawBytes": 16181
+  },
+  "findings": [],
+  "accepted": [
+    "One actual SDK entry this run; cumulative2; init matches fixed declaration, four frames; subtype success with isError true is valid SDK shape and was rejected by observer",
+    "26177ms operator duration, outer whole wall clock not independently recorded",
+    "Fresh free22722310144 >=1405091840; available87 connections >=12+16; bounded observed raw/runtime, no zero-system-write guarantee",
+    "Server/admin/workers closed at10:48:13.149Z; follow-up at10:49:10.010Z confirms3registeredgroups ESRCH, exact marker/OID1290288 and target connections empty; observer closed",
+    "DB/tmpKEEP, noDROP/rm; original pending and final durable observations preserved"
+  ],
+  "limits": [
+    "SDK-reported cost0 does not establish account0; first/cumulative account costUNKNOWN",
+    "Fixed query-policy only projected result and phase-host ignored stdio; result/errors absent, upstream causeUNKNOWN; not attributed to account/auth/provider/model",
+    "No successful proposal/pause/confirm/apply/children proved; empty hostToolDecisions/reads not complete center-audit proof of zero actions",
+    "paused-owned-resources is not successful fifteen-minute pause; original failures and KEEP preserved; third query not authorized",
+    "Author successor code not reviewed; reviewer0tests/SDK/PG/credentials/personal/project writes"
+  ]
+}
