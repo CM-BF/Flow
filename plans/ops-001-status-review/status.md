@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T14:56:37.616Z / mainfd9dd5a9b已接MSG03、SVC09A与SVC06B产物/保留工具 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T15:21:55.897Z / main/origin96b424777；插件宿主/当前迁入模块接收，固定双槽后台产物结果独审已收口 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,15 +15,15 @@
 | 工作基线 / 本记录核验时HEAD | 原服务恢复完成；远程验证准备已接收，X01唯一新树已正式领取并实施；各子任务按固定源独立维护 |
 | 工作树dirty状态 | 仅本次管理与已发生资源/交接事实；提交后clean |
 | 工作分支状态 | in-progress；原已交付规则与独立review边界保留 |
-| 已集成main状态 / HEAD | main/originfd9dd5a9b已含消息设置App接线、双槽宿主源与新后台cd27实际产物证据。最后已审个人运行7d1/source6c、accepting21、Webd629/v3；本段未新采个人事实/未部署，完整旧领取ACK关联UNKNOWN。 |
+| 已集成main状态 / HEAD | main/origin96b424777已含已审插件进程宿主、消息设置App接线、双槽宿主源及后台保留策略；远端推送错误已解除。最后已审个人7d1/source6c、accepting21、Webd629/v3保持；本段未新采个人事实或部署。 |
 | Review | [review.md](review.md)：历史固定批准保持；e18be25a隔离artifact/0PG浏览器调度增量获native限定APPROVED_DOCS，无P1/P2，0工程重测。 |
 
 | 阶段 | M2 |
 | 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 已审消息设置接线与后台保留工具已进入主线，发布准备和独立宿主验证正并行推进。 |
+| 当前产出 | 新网页配套后台与消息设置后台产物已备妥；网页兼容验证和双槽宿主验证由原团队并行收口。 |
 | 下一可用交付 | 收口固定网页与后台组合，把已审能力交到用户可访问的页面；继续按实际依赖及时接收成果。 |
-| 当前阻塞 | ACTIVE: 远程验证启用仍待既有用户选择；本地验证与产品交付可以继续。 |
+| 当前阻塞 | ACTIVE: 远程验证启用仍待既有用户选择；本地发布准备和独立验证继续。 |
 | 需用户决定 | NONE |
 
 ## TODO状态（与plan稳定ID逐项对应）
@@ -543,3 +543,7 @@ Recovery十九源已main c13042ba，Web既有03/05独审和一次组合类型检
 唯一operator原7phase于13:47:33.200098Z启动、13:48:49.163Z归还，75,906ms；同operation完成hold20/精确intent退役/固定后台refresh/旧组确停/保留checkpoint/显式resume21。此为个人部署事实，不是完整FLOW验收；原intent的HTTP结果仍UNKNOWN，不造ACK。原queued任务在最后已存快照中自然running，operator0query，未采完整requestId→中心receipt→本地assignment关联。原失败和私有备份保留。依据：[SVC06唯一状态](../../../backend-release/plans/svc06-backend-release/status.md)与[本次固定窗口及实际回执](../../docs/quality/local-validation-svc06-personal-window-20261007.json)。共享窗口已归还，用户新运行任务保持。
 
 2026-10-07T14:19:21.845Z：个人更新实际结果已独审并main0da0收口，原排队任务自然执行与旧领取关联UNKNOWN保持限定；本批main677a精确接已审CORE领取差量，原5PG不重复，仅两个直接消费者10项/类型通过。SVC06B原assignment准备最小lateLogout固定产物，SVC09A原native owner实现有限两槽生命周期，两条独立树/claim已登记；Web最小草稿材料保护由原团队修复后重新固定候选。4320实际204来源见D05 [部署回执](../../../dashboard-architecture/docs/evidence/d05/personal-successor-live.json)，未触个人服务或新模型。
+
+## 2026-10-07T15:21:55.897Z 发布准备与接收事实
+
+受信插件宿主已审源码已接main/origin96b424777，原500推送失败保留且本次已解除；精确接收范围见[I02记录](../../../m2-integration/docs/evidence/i02/x01-trusted-process-host-intake.json)。双槽后台固定098b产物构建实际15:14:01.726Z→15:14:34.219Z、15:14:38.558644Z完整归还，15:20限定独审通过，仍非宿主或个人部署验收；复用[构建结果审查](../../../m2-integration/docs/evidence/i02/svc09a-fixed-build-result-review.json)，不重复原始记录。S01随后独占已于15:18:44.466Z完整归还，当前K01普通局部段由Mika管理；本队迁入reader准备继续，heavy不因准备预占。新网页仍绑定cd27/04da，后续逐消息设置绑定2515/098b，各自兼容证据与个人操作另验。
