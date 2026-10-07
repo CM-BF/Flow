@@ -632,3 +632,13 @@ GO只读输入绑定main22a0806bc2465e11096949618113833f31766b19：index.ts同�
 承接既有runner资源生命周期验收。GO只读输入绑定main `7524a7fa6768ace7e284fc80d7cc25c1407ec2a9`：`apps/runner/src/claude.ts:55,216–235`在每次attempt（包括续聊）复制配置的materialFiles到新的materials目录；`runtime.ts:218`隔离attempt目录，所核结束路径未见退役，复制在adapter的try/finally之前。单次32×1MiB不等于跨attempt总量有界。这是源码候选，非已测磁盘原因、全部外部回收不存在或token浪费结论。
 
 后继用户结果是长期材料保留/回收有明确owner与界限，重复及失败不持续堆积；沿原Claude adapter/runner生命周期选择最小接口，不新增大task或泛化缓存。排在当前个人发布、已ready聊天之后，尚未领取/NOT_RUN、不增加运行预算。先以零模型小例核相同材料两次续聊、复制中途失败、已确认结束与unknown保留的文件数/实际bytes，核旧native引用仍可用。已确认且符合保留策略才退役，不能在finally统一删除、不动用户或未知材料；单次、并发与历史累计口径分别记录。
+
+## 2026-10-07 协议等待终止与材料保真（REQ-04 / P01 / P02）
+
+排在当前个人发布和已ready聊天之后，沿原协议任务细分，不新建大task。GO与有界只读reviewer核固定main7524：A2A bridge在waiting仍轮询；锁定SDK1.3.0对INPUT_REQUIRED结束观察队列，AUTH_REQUIRED行为不同。后继以真实官方SDK的有限HTTP fixture验证INPUT_REQUIRED本次观察结束、原远端任务可继续及后台独立性；仅此状态，不泛化binding违规。[A2A 1.0 streaming及任务交互](https://a2a-protocol.org/v1.0.0/specification/#117-streaming)的章节措辞差异应在测试边界注明。
+
+同固定源码的protocol-dispatch/materials.ts把多个text Part插换行并保存text/plain，合并文本digest不保各Part MIME。后继合同须明确多Part/非plain MIME的保真或显式拒绝，不能冒充原始交付材料；覆盖同内容不同MIME及多Part结果。两项均源码确认的验收缺口、NOT_RUN，当前无新增writer/运行/provider预算；P03的historyLength0及已排读取取消/重复传输后继不重复。
+
+## 2026-10-07 工具目录延迟加载研究（REQ-08 / COST001后继）
+
+GO已查一手文档：[Anthropic tool search](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool)、[tool caching](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching)、[Claude Code MCP tool search](https://code.claude.com/docs/en/mcp#scale-with-mcp-tool-search)。API defer_loading延后模型上下文加载，但仍提交全部工具定义，不能称请求字节已减少；原生MCP发现另有配置/回退，不能将API字段直接用于SDK。固定0.3.290/native2.1.290支持未验。未来大目录优先复用harness发现，保Flow授权/稳定工具身份，分别量目录和wire字节、输入/缓存、发现往返与成功；小目录不预设收益、不套官方比例。本条仅研究归档，无新探针/依赖/预算，当前7524显式工具名单与goalMount不改。
