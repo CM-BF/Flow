@@ -1,3 +1,11 @@
+状态：PENDING（runtime/domain四源与11直接行为待独审）
+
+Review target commit: 9b639f79367a118562da4fe7c8d977173a488200
+
+固定packet c178d0672365fec42d3c3c3f4faf3a32bf2fddfe，已直接followup chatui且确认running（先完成LAZY审查）。[固定入口](../../docs/evidence/x01/runtime-public-review-ready.json)；types首红保留、修后0与11/11不自动代表批准。当前共享FlowClient index、显式server mount/recovery保护、CLI仍未接，不把注入package host等同真实npm公开调用链。旧来源六源+5PG APPROVED/intake独立保留。
+
+---
+
 状态：APPROVED（来源六源与五组真实PG结果各自限定批准；待main窄集成）
 
 Review target commit: 685978f6d6f9552a789e0df10da13df7a0757505
