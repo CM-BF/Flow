@@ -1,0 +1,43 @@
+{
+  "state": "PASSED",
+  "startedAt": "2026-10-07T11:35:30.548384+00:00",
+  "pid": 21271,
+  "pgid": 21202,
+  "checks": [
+    {
+      "name": "preexisting sentinel is KEEP, not adopted or removed",
+      "passed": true
+    },
+    {
+      "name": "this invocation exact created directory is removed",
+      "passed": true
+    },
+    {
+      "name": "replacement identity and moved original both survive subject cleanup",
+      "passed": true
+    }
+  ],
+  "errors": [],
+  "budget": {
+    "totalMs": 15000,
+    "cleanupReserveMs": 5000,
+    "tmpBytes": 8388608,
+    "rawBytes": 1048576
+  },
+  "subjectMainCalled": false,
+  "children": 0,
+  "network": 0,
+  "ownedTmp": {
+    "path": "/private/tmp/rel01-c2-scratch-guj7rfp8",
+    "dev": 16777234,
+    "ino": 124099281,
+    "uid": 501
+  },
+  "syntheticBytes": {
+    "logical": 30,
+    "allocated": 12288
+  },
+  "ownedTmpAbsent": true,
+  "finishedAt": "2026-10-07T11:35:30.602857+00:00",
+  "elapsedMs": 54.48595900088549
+}

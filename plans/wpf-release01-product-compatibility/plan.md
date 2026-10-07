@@ -26,3 +26,5 @@
 当前：9658源码delta已独立接受，必要strict复验exit0/904ms；原首红不改。RELEASE01-05的最终tuple/公开策略已核齐，caller源码准备已固定待集中审查与实际准入；三App真实兼容仍NOT_RUN，不把类型检查当四check通过。四scope本批seal后停写，38b9v1保留，无运行预约。
 
 当前可审调用准备：[资源、真实网络与清理合同](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)。重用既有fixture/report codec与DPERF自有双组生命周期；延迟Chrome握手仅为取得真实owned代理端口，不新增发布平台。标准Python语法和文本/pin核验是静态准备，非产品行为通过。
+
+调用器c2准备已处理独立审查的目录ownership/P1与pg-boss连接声明/P2，真实helper三边界小额检查通过；详见[c2当前记录](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md)。三App运行仍在RELEASE01-05未完成项，原c1及全部历史错误保留。

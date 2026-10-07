@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:26:29.682Z |
+| 最近更新时间 | 2026-10-07T11:36:43.807Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -19,7 +19,7 @@
 | 实现范围 | apps/web/test/web-release-compatibility.fixture.ts, apps/web/test/web-release-compatibility.browser.ts |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 最终后台与公开会话策略已核齐，验证入口类型检查已通过；三App受控调用器准备已固定，尚未实跑 |
+| 当前产出 | 最终后台与公开会话策略已核齐；调用器已修复临时目录清理边界，三项局部检查通过，三App兼容尚未实跑 |
 | 下一可用交付 | 集中独审受控调用器与完整输入包，再安排三份保留App的真实兼容验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
@@ -35,7 +35,7 @@
 | RELEASE01-02 | completed | w01_owner | [历史两App真实兼容](../../docs/evidence/wpf-release01/README.md) |
 | RELEASE01-03 | completed | w01_owner | [历史7805主线接收](../../docs/evidence/wpf-release01/main-source-observation.json) |
 | RELEASE01-04 | completed | w01_owner | [固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，f3d源审及9658类型delta独立接受，strict复验PASS |
-| RELEASE01-05 | pending | w01_owner | [受控caller/完整输入准备](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)已固定，native边界及运行预算待独审/准入；三App四项compat仍NOT_RUN，首红保留 |
+| RELEASE01-05 | pending | w01_owner | [受控caller/完整输入准备](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)已固定，[c2修复与三场景actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md)已固定；native边界/预算待复审准入；三App四项compat仍NOT_RUN，首红保留 |
 | RELEASE01-06 | pending | w01_owner | 后继最终delta独审/主线接收；个人发布仍由原发布operator执行 |
 
 ## 等待记录
@@ -65,3 +65,7 @@
 owned Chrome/HTTP proxy/backend生命周期caller与完整输入现已形成固定准备稿；[入口/资源/网络/清理合同](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)及[精确pins](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/source-pins.json)供一次集中独审。最终SVC r2正式限定接收[原件](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/final-backend-result-review.json)已纳入输入。没有runtime grant/预约，compat仍NOT_RUN。不重编三App/backend，不复测旧types。总任务开工UNKNOWN不以本段10:01时间替代，总完成NOT_COMPLETED。
 
 本批安全点：caller PREPARED/native approval=null；新180s含30s清理只是proposal，64MiB scratch/8MiB retained/1MiB metadata与PG128MiB规划估算均待真实组合准入。未运行Node/Chrome/PG/HTTP、未采空间。四scope正常seal后STOP、claim38b9v1保留；TMP最终HEAD绑定不触发重复项目提交。
+
+## 当前 c2 调用器修复安全点
+
+2026-10-07T11:36:43.807Z：独立c1审查指出preexisting scratch误删路径及pg-boss额外3连接；原c1完整保留。[原审](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/c1-root-review.json)与[c2精确源/实际](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/source-pins.json)分开。仅TMP父新增exclusive创建/dev+ino+uid身份守卫，旧目录或替换目录KEEP；真实helpers三场景一次3/3 PASS，outer0/charge244ms/精确TMP清理。新15s局部段关闭，未用14756ms不转重验证信用。池配置上限校准12=app8+boss3+fixture1、notifyfalse；不是实际并发峰值。候选floor按管理新组合6190268416B，actual仍须更高完整sum；180s/64MiB/8MiB为未授运行proposal。产品两harness/type/raw不改，c2 native复审待完成；本批seal后STOP原四scope保claim。

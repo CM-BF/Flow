@@ -6,3 +6,5 @@
 - /Users/citrine/.agents/skills/find-skills/SKILL.md: SHA256 c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f；使用已安装本地版本，来源版本沿既有全局基线，未安装/更新。
 - /Users/citrine/.agents/skills/clean-code/SKILL.md: SHA256 3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317；使用已安装本地版本，来源版本沿既有全局基线，未安装/更新。
 - /Users/citrine/.agents/skills/webapp-testing/SKILL.md: SHA256 51b7349e77ec63b7744a6f63647e7566a0b4d2e301121cc10e8c2113af6556a2；使用已安装本地版本，来源版本沿既有全局基线，未安装/更新。
+
+2026-10-07T11:36:43.807Z clean-code安全点：按独立finding将scratch创建/回收分为两个实际小函数，共用明确ownership数据，避免finally把无子进程等同目录所有权。c2三场景直接调用真实helper而非镜像实现，3/3/exit0，旧preexist/replaced内容保留直到测试自身根目录清理。连接预算计入fixed scheduler独立boss池，保持规划上限与实测峰值分离；未引通用框架/未改产品/未重跑strict或三App。
