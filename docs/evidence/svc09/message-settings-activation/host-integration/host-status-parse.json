@@ -1,0 +1,17 @@
+{
+  "at": "2026-10-07T15:33:50.740Z",
+  "kind": "OWN_STATUS_METADATA_ONLY",
+  "errors": [],
+  "humanMissing": [],
+  "timingIssues": [
+    "任务开工时间未记录"
+  ],
+  "parent": {
+    "state": "known",
+    "record": "[FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md)",
+    "id": "FLOW-001",
+    "location": "../../../plan-status-review/plans/flow-001-architecture/plan.md"
+  },
+  "parentPathExists": true,
+  "projectionCorrection": "Initial collector looked in declarations.taskLinks rather than result.taskLinks and printed null. This was a collector field lookup error, not a parent declaration failure."
+}

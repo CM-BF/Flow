@@ -46,9 +46,9 @@ export async function runHostConsumer({ input, checkpoint, pool }) {
       headers: { authorization: `Bearer ${config.ownerToken}`, ...(body === undefined ? {} : { 'content-type': 'application/json', 'idempotency-key': key }),
         ...(settings ? { 'X-Flow-Execution-Profile': 'flow.claude-turn-settings.v1' } : {}) },
       body: body === undefined ? undefined : JSON.stringify(body), signal: AbortSignal.timeout(3000), redirect: 'error' });
-    assert.equal(response.status, expected, `HTTP_STATUS_${path.split('?')[0]}`);
     const reader = response.body.getReader(); const chunks = []; let bytes = 0;
-    try { for (;;) { const next = await reader.read(); if (next.done) break; bytes += next.value.length;
+    try { assert.equal(response.status, expected, `HTTP_STATUS_${path.split('?')[0]}`);
+      for (;;) { const next = await reader.read(); if (next.done) break; bytes += next.value.length;
       if (bytes > 65536) fail('HOST_HTTP_BODY_LIMIT'); chunks.push(next.value); } }
     finally { await reader.cancel(); }
     return JSON.parse(Buffer.concat(chunks).toString('utf8'));

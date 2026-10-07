@@ -1,0 +1,64 @@
+{
+  "kind": "SVC09A_HOST_PREPARATION_LOCAL_EVIDENCE",
+  "at": "2026-10-07T15:33:08.834Z",
+  "actual": {
+    "selected": 6,
+    "passed": 6,
+    "failed": 0,
+    "elapsedMs": 122,
+    "rawBytes": 698,
+    "pythonASTFiles": 2,
+    "ownedState": "absent",
+    "dualEOF": true,
+    "scratch": "exact empty directory removed",
+    "returnedAt": "2026-10-07T15:26:30.517468Z",
+    "PG": 0,
+    "provider": 0,
+    "artifactRuntimeImported": false
+  },
+  "originals": "prepare-local-02/",
+  "unchangedSinceChecks": [
+    "host-consumer.mjs",
+    "mixed-runner.mjs",
+    "prepare-check.mjs",
+    "prepare-run.py",
+    "host-entry.mjs",
+    "host-fixture.mjs",
+    "host-records.mjs",
+    "measure-once.py",
+    "host-prepare.test.mjs",
+    "host-inputs.json"
+  ],
+  "postCheckChanges": [
+    {
+      "path": "host-cleanup.mjs",
+      "tested": {
+        "path": "host-cleanup.mjs",
+        "bytes": 8020,
+        "sha256": "aec534a25eaac9db3c2f30f870ea3d89cd741ef8fc4450da658421b9dad6fb59"
+      },
+      "final": {
+        "path": "host-cleanup.mjs",
+        "bytes": 8148,
+        "sha256": "5c3b647645e993bfc0ec1b6adcd757ca925e943748a355163be769e86242cb61"
+      }
+    },
+    {
+      "path": "host-run.py",
+      "tested": {
+        "path": "host-run.py",
+        "bytes": 7746,
+        "sha256": "d4ed937820fa218f3341fb79cf520ec29b9c150a2fbf65352b7fcf411bf931e1"
+      },
+      "final": {
+        "path": "host-run.py",
+        "bytes": 8085,
+        "sha256": "1f8e39b5fbb51497070e8b1c597f1d4d6cebafbcac3cfeb4d054249718217854"
+      }
+    }
+  ],
+  "postCheckValidation": "STATIC_ONLY_NOT_EXECUTED: work record failure still proceeds to cleanup; absent work disposition makes DROP false. No rerun while Web owns the priority window.",
+  "historicalTests": "33 original module cases, 5 CORE PG cases and original build/import not repeated.",
+  "actualHost": "NOT_RUN",
+  "originalObservations": "Initial EPERM/unknown preserved; final two absent and dual EOF observed."
+}

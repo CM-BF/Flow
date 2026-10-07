@@ -2,13 +2,13 @@
 
 本候选沿 FLOW-001/REQ19 与 MATURE02 TODO08/11，只准备隔离安装中的零模型集成。原模块/33不同局部例已审并 main246；本候选没有运行 host、HTTP、PG、SDK/native、浏览器或个人操作。历史任务开工仍 UNKNOWN；本次准备的第一次保留观察为 2026-10-07T14:39:51.563Z，14:44:58.126Z fresh claim 为原 v4 两个 own 目录。
 
-## 选定源码与供给缺项
+## 固定源码与已审产物
 
-优先采用 [source-composition.json](source-composition.json)：已审 `04da80692e79e2b7c3f6341c7fa76515a3f719a3` 为底，精确替换来自 main246 的11个 SVC09A 产品/测试和 `apps/server/src/runners.ts`，再加已审203ec的 backend-release files.mjs/index.mjs/artifact.test.mjs 三路径（count4、单1GiB/总2GiB不变）。其中 runners.ts 精确为已审 CORE 的 LIMIT 前资格过滤。其余 source 全部保持04da，不冒称等于main246。当前没有创建 assembly，也没有改既有 cd27；需要 Lead 受控生成这15路径的固定组合提交。owner v4仅 own plan/evidence，不自行修改或领取产品。
+优先采用 [source-composition.json](source-composition.json)：已审 `04da80692e79e2b7c3f6341c7fa76515a3f719a3` 为底，精确替换来自 main246 的11个 SVC09A 产品/测试和 `apps/server/src/runners.ts`，再加已审203ec的 backend-release files.mjs/index.mjs/artifact.test.mjs 三路径（count4、单1GiB/总2GiB不变）。其中 runners.ts 精确为已审 CORE 的 LIMIT 前资格过滤。其余 source 全部保持04da，不冒称等于main246。Lead已受控生成并固定 assembly `098b0d51512dfaa04c30ca7cbe103684720fe29f`（tree `f9f149a4dda976dad500545df1b26f825ac5b59d`），没有改既有 cd27。owner v4仅 own plan/evidence，不自行修改或领取产品。
 
 33个既有宿主直接输入、7个依赖manifest/lock及整个 migration 树在04da/246逐blob相同。`configuration.ts/main.ts` 后续差量是显式plugin配置；普通Claude manifest→configuration/publisher/guard接口在04da已具备；本候选不启用plugin、activeSteering、nativeActivityBodies或其他新分支。`runRunner` 的 adapters、AbortSignal、poll/heartbeat/requestTimeout接缝在04da存在；它与该底的 client/contracts/outbox/admission-journal整体消费，不拼入main后续plugin v3或新outbox半套。发布/目录/messageSettings/maintenance的合同不需更新。实际组合兼容性仍由下一真实消费者验证，静态同字节不冒实测。
 
-现有 SVC06 builder 从 Flow 仓库的固定Git提交 archive；不移动工作checkout，不修改manifest来源、不把cd27重标成新产物。投影归档1000文件/7,897,181逻辑B，仍使用原 archive roots。复用固定SVC06B build-inputs 对6c原输入的继承方式，新增仅assembly target/tree/15个替换pin；锁文件、runtime importer/cache选择未变。新的实际 descriptor、完整 inventory 验证与该15路径哈希必须到位后才可 host 准入。当前 artifact字段为空是未供给，不能用纯JSON声明通过 `backendRuntime`。
+现有 SVC06 builder 从 Flow 仓库的固定Git提交 archive；不移动工作checkout，不修改manifest来源、不把cd27重标成新产物。投影归档1000文件/7,897,181逻辑B，仍使用原 archive roots。复用固定SVC06B build-inputs 对6c原输入的继承方式，新增仅assembly target/tree/15个替换pin；锁文件、runtime importer/cache选择未变。原builder一次实际构建已完成：artifact `2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4`，逻辑总量367105165B，33SQL/81source/271snapshots。15:20:05.813Z获独立限定批准，见[原结果manifest](build/result-manifest.json)及主线 `docs/evidence/i02/svc09a-fixed-build-result-review.json`。原artifact/root/stage KEEP。本入口仍须重新验证克隆的完整inventory、sourceRepository与15路径字节，不能由JSON声明或已有build批准跳过实际宿主检查。
 
 ## 唯一旅程与实际调用点
 
@@ -32,24 +32,35 @@ artifact模式的maintenance要求已发布Web pointer与report，因此复用�
 
 ## 薄入口与所有者边界
 
-当前 own evidence已写 `host-consumer.mjs`（实际host work消费者）与 `mixed-runner.mjs`（同runRunner的唯一注入adapter接缝）；随后仅补 `host-entry.mjs`（fixture setup/cleanup）和 `host-run.py`（OPS14薄调用），不写产品或共享fixture。固定输入复用前置manifest/Git源，旧raw一份保留；准备材料不是运行许可。
+| Module | 小Interface与所有者 | 依赖方向 |
+| --- | --- | --- |
+| host-run.py | 唯一固定入口 `--execute-host-once`；fresh pins/namespace/free，原clone一次，原OPS14分别监督work/cleanup；不安装、不查询旧资源 | 固定host-inputs + host-preparation引用 → 原clone/OPS14 |
+| host-fixture.mjs | 全新目录/config/marker/OID/端口与合成Web loader；不复用个人凭据 | 固定artifact的原Web prepare/release/目录合同 |
+| host-entry.mjs / host-records.mjs | work拥有观察Pool和阶段原件，明文异常/凭据不公开；有界目录/DB测量与第一失败/关闭分别记录 | 原OPS-METER、固定artifact入口 → host-consumer |
+| host-consumer.mjs | 默认/显式槽、目录tuple、两槽维护、准确停止native poller | 原preview/maintenance/slots/process → mixed-runner |
+| mixed-runner.mjs | 仅注入HarnessAdapter.run；原runRunner拥有HTTP claim、heartbeat、outbox和ACK | 同一artifact runtime/client/contracts/guard/journal |
+| host-cleanup.mjs | 原process模块停止全部已登记generation，严格mayDrop决定；未知只KEEP | 工作原件+state → 同一process/observeConnections/PG marker |
 
-旧SVC06 entry/cleanup只能处理center/runner/web且自己的输入namespace固定，不能原样运行到本片。只复用其已审来源/端口/固定artifact clone方法、既有 process模块与OPS14；新薄caller须完整登记 `runner-settings` 及所有generation。不能通过不完整cleanup读回结果就声称全部停止。原entry/supervisor不复制或修改，不将其既有成功覆盖这次未运行入口。当前两个work模块不含top-level产品import/PG/进程动作，可做纯导入/参数拒绝检查；完整outer/setup/cleanup入口必须在assembly/descriptor固定后再绑定，不能仅调用work函数冒RUN_READY。
+这些文件均无顶层artifact产品import/PG/监听动作。定义导入可测，但不得单独运行work或cleanup规避唯一入口。固定输入通过同一 `host-preparation.json` 绑定，不复制完整artifact/81源清单。原SVC06三角色cleanup不直接用于本片，四种角色完整登记；默认键与settings键白名单固定。任何未声明角色、缺失/身份变更、未闭合异步资源拒绝DROP。
+
+原6个纯/自有小文件准备例在15:26:30.391102Z选择，6/6、122ms/698B、两Python AST、组absent/双EOF、15:26:30.517468Z exact空scratch删除。[原reservation](prepare-local-02/reservation.json)固定检查时字节。[validation范围](host-preparation-evidence.json)明确其后仅两文件收尾分支变化：work报告持久失败仍尝试独立cleanup；缺失work disposition成为unknown而不DROP。这两分支尚未重新运行；遵循当时Web优先窗口只封源/只读审查，不把先前绿例扩大至新字节。
 
 ## 预算、动态 SQL 与结束条件
 
 下列为本次候选预算请求，尚未开启实际窗口：
 
-- artifact构建单独沿已审SVC06 builder段：420s work + 0.5s TERM + 2s reap；监督输出≤64KiB/总记录≤2MiB、artifact≤1GiB/100000 entries、原cache/staging与live/fresh预算继承固定原输入，fresh时另计并行实际预算。不能将该时间塞进host段或本次0PG准备。
-- host 180s work + 30s cleanup，独立总截止215s包含监督TERM/reap/落盘，准备耗时扣除；不足最低收尾余量时0child拒绝。raw总≤2MiB、私有fixture增量≤32MiB/4096 entries，另列克隆artifact≤1GiB与PG≤128MiB，保留1GiB reserve并加所有并行已声明占用。artifact只读来源未变，clone/安装不在已开始PG段临时扩张。
+- artifact构建单独沿已审SVC06 builder段：420s work + 0.5s TERM + 2s reap；监督输出≤1MiB/总记录≤2MiB、artifact≤1GiB/100000 entries、原cache/staging与live/fresh预算继承固定原输入，fresh时另计并行实际预算。不能将该时间塞进host段或本次0PG准备。
+- host clone≤20s、work≤180s、cleanup≤30s共享一个215s monotonic准入截止；每次新child扣除已耗时并预留TERM/reap与清理，不足时0child拒绝。此薄caller没有独立硬抢占filesystem I/O的watchdog，pin/fsync/归档阻塞可能超出壁钟；215s是child准入/监督预算，不冒称对任何I/O的硬期限。实际窗口审查须接受此限定或指定复用已有外层期限端口，不能在运行中扩界。raw总≤2MiB、私有fixture增量≤32MiB/4096 entries，另列克隆artifact≤1GiB与PG≤128MiB，保留1GiB reserve并加所有并行已声明占用。artifact只读来源未变，clone/安装不在已开始PG段临时扩张。
 - fresh host最低 `1GiB reserve + 1GiB artifact clone worst-case + 128MiB PG + 32MiB private + 2MiB raw = 2317352960B`，加实际并行预算；所有数量是上界/采样，非原子峰值或物理回收承诺。实际clone可在先行离线段完成并把此部分计入既有保留，但不能因此减少reserve。
 - 动态端口仅127.0.0.1，center/Web各一个；禁止61227/61228，无抢占旧端口。每次HTTP≤3s/≤64KiB，公开调用≤96次（目录最大4页、显式查询有限），runtime admission阶段另限≤15s/两条task/两条attempt/每loop并发1/poll500ms；本片没有对所有服务进程HTTP作全局计数；不得把显式driver计数写成全进程总请求上界。
 - 中心Pool max8 + pg-boss max3；维护max2、fixture观察max1、admin max1。新旧center远端连接收尾可能短暂重叠，按最多26连接 + 16管理余量准入，不只按空闲态15估算。每个观察Pool显式query_timeout/statement_timeout；admin不与非本库连接交互。
 - resident上界按4host wrapper+4actualrole child+work+outer=10，另保既有ps/lsof/Git并行检查最多6个短子进程，总≤16；不启动SDK CLI/nativequery进程、pnpm、Chrome或新的构建进程。若现有实际工具闭包不能满足此边界，先改候选，不运行中扩权。
 - 复用 marker `public.flow_preview_owner`、固定database OID、自建名称 `flow_preview_[24hex]`。业务SQL仅真实注册/发布/claim/维护已有store与本fixture只读核对；不手动填profile、自报catalog或直接分配attempt。由真实scheduler激活两task，不SQL强置dispatch_ready。
 - 完整中心停止后复用 `observeConnections` 的有界远端零连接屏障（≤3s、逐query扣remaining、晚到0拒绝），只有工作owner absent/双EOF、所有登记服务组确停、runRunner在途settled、marker/OID同一、无未决事务/intent/outbox且远端0才normal DROP。先耐久checkpoint，再DROP并核剩余[]；任何unknown保留专库/私有root、不要FORCE/盲删，也不读取旧O16/SVC未知资源。
-- cleanup为独立受监督owner；若work组unknown，仅能对已登记确切服务身份做安全stop，不允许DROP或清除私有材料。首错与cleanup各自保存，outer0不独自代表通过。所有原件在exact fixture删除前保存hash/bytes与公开脱敏摘要；token/adminURL/rawconfig永不进入公开raw。
+- cleanup为独立受监督owner；若work组unknown，仅能对已登记确切服务身份做安全stop，不允许DROP或清除私有材料。首错与cleanup各自保存，outer0不独自代表通过。私有fixture和artifact均KEEP，本入口不提供目录删除；只有满足mayDrop及marker/OID/零连接屏障才normal DROP新专库。token/adminURL/rawconfig永不进入公开raw。work报告写失败依然进入清理，缺该报告拒绝DROP；清理失败不覆盖work的已有原件。
 
-## 当前交付与下一个固定入口
+## 当前交付与实际入口边界
 
-本次给出来源组合、两个work消费者与有限旅程；assembly commit/新artifact、薄caller最终可执行输入和实际PG准入均尚缺，不称 RUN_READY。唯一需要的额外源码动作是Lead受控组合上述15已审路径；不需要新的产品修改或共享runtime scope。当前work定义导入与3个参数拒绝检查已完成：49ms/216B，组absent/双EOF/exact空scratch removed。只证明准备入口可加载与pre-I/O拒绝，不证明实际host语义。新artifact有独审descriptor后，owner沿现两目录补齐outer/setup/cleanup和实际参数绑定，随后一次完整候选独审再安排实际PG/host。普通33例、CORE5PG、Web矩阵不会因此重跑。个人激活与真实跨端/账号/provider保持开放。
+当前组合源码、产物和薄caller已齐，等待一次总体源码/准备审查；PG/host没有启动，`actual-host-once` 尚未创建。唯一实际入口为固定Python调用 `host-run.py --execute-host-once`，仅在另外给定真实窗口后由原owner使用；`FLOW_SVC09A_ADMIN_URL` 必须显式给本机postgres管理库，只存在子进程环境/0600私有配置，不能打印或放公开记录。调用前fresh核原v4 claim、全部源码/runtime pins、artifact root dev/ino、namespace不存在、总合预算和PG26+16余量。新holder或任何unknown均NOT_RUN；失败不重播该namespace。
+
+构建批准不延伸到这次旅程。实际Web是合成loader输入NOT_APP/NOT_PERSONAL；真实read/send是mixed阶段另行断言的中心HTTP行为。旧33局部、CORE5PG、原Web矩阵不重跑。个人激活、Web/TUI新设置与真实账号/provider仍开放；无需新产品scope、监督器或任务执行loop。

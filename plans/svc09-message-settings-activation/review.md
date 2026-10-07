@@ -19,3 +19,9 @@
 ## 固定构建准备与实际结果
 
 2026-10-07：Lead已对b3ee准备完整读审，49项runtime/raw/组合绑定与81源/33SQL一致，2新局部/AST及原收尾吻合，无P1/P2；批准限准备。随后原唯一入口实际构建通过，source098b/artifact2515；[结果](../../docs/evidence/svc09/message-settings-activation/host-integration/build/RESULT.md)待唯一独立结果审查，不能继承准备批准。actual host/PG/个人未执行；原局部失败/KEEP保留。
+
+## 本轮固定产物独立批准与host候选待审
+
+2026-10-07T15:33:08.834Z正常收录：唯一批准 `APPROVED_FIXED_ARTIFACT_BUILD_AND_INTERNAL_IMPORT_RESULT`，review UTC2026-10-07T15:20:05.813Z，I02原件固定main96b424777 / docs/evidence/i02/svc09a-fixed-build-result-review.json。target b5f967240286eed405e9ab6ce3700748e5f1150e，manifest d54be510da0980c1eb9b28b001d59ebf42c9fab6；16新+2继承+3私有/根身份核符，无P1/P2，无重复构建。先前“待审”段均是当时历史，不代表当前仍待该审查。
+
+新的host候选独立待审：源/单份pins/Interface与6新准备原件见host-integration/host-preparation.json。6/6只覆盖reservation字节；其后host-run与host-cleanup两条first-error/unknown分支明确静态未运行。真实center/PG/slot生命周期与mixed ACK尚未实测，不继承构建或33局部批准。合成Web输入NOT_APP/NOT_PERSONAL；实际宿主窗口由Lead独立安排。

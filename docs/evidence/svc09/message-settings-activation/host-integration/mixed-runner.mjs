@@ -23,7 +23,7 @@ export async function runMixedConsumer({ root, baseUrl, slots, profiles, choices
     const entries = await readdir(directory); assert.ok(entries.length <= 4);
     for (const entry of entries) {
       if (entry === 'admission.json') continue;
-      assert.match(entry, /^[a-f0-9-]{36}$/);
+      assert.match(entry, /^[a-f0-9]{64}$/); // Fixed runtime hashes the attempt UUID for its local directory.
       const path = join(directory, entry), info = await lstat(path);
       assert.ok(info.isDirectory() && !info.isSymbolicLink());
       const files = await readdir(path); assert.ok(files.length <= 8);

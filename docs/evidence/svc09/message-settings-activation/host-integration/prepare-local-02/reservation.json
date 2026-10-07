@@ -1,0 +1,79 @@
+{
+  "at": "2026-10-07T15:26:30.391102+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-reporter=spec",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-prepare.test.mjs"
+  ],
+  "freeBytes": 20374253568,
+  "runtimeBudgetSeconds": 10,
+  "rawBytesCap": 262144,
+  "scratchBytesCap": 2097152,
+  "scratch": "/private/tmp/flow-svc09a-host-preparation-fluty530",
+  "dev": 16777234,
+  "ino": 124269981,
+  "pythonAST": "PASS",
+  "inputs": [
+    {
+      "path": "host-consumer.mjs",
+      "bytes": 10040,
+      "sha256": "465bccf0e28a32288d6b095324f827084155260759297d89fb3b335ee8e9297c"
+    },
+    {
+      "path": "mixed-runner.mjs",
+      "bytes": 7581,
+      "sha256": "a9426d00d64743da4ee391f00b1d6ba0b1e0cbc05b07efa9fbcb5f861bde0e90"
+    },
+    {
+      "path": "prepare-check.mjs",
+      "bytes": 1434,
+      "sha256": "e46f0cc08ef85cc64c01934c1692b7d47849af1921b4f9d6cccac3113ede767a"
+    },
+    {
+      "path": "prepare-run.py",
+      "bytes": 3723,
+      "sha256": "70cd50741aa3ae0155db2b9757360323f46f6b9d13b4d63f1c2757b171b0deba"
+    },
+    {
+      "path": "host-entry.mjs",
+      "bytes": 3973,
+      "sha256": "980a3b6a49e0e5f990b89dfc55699dc01d0e600db63f7e114f2bb06b3e8579f3"
+    },
+    {
+      "path": "host-fixture.mjs",
+      "bytes": 8739,
+      "sha256": "33756ec9e9f969b32e02ddc0f42c18046a11dcb062afd36333f62e6686b80a64"
+    },
+    {
+      "path": "host-records.mjs",
+      "bytes": 3150,
+      "sha256": "e71acedf9672720491a70772646665b27e9c82907eb32b6c5ea61eda4a9e1951"
+    },
+    {
+      "path": "host-cleanup.mjs",
+      "bytes": 8020,
+      "sha256": "aec534a25eaac9db3c2f30f870ea3d89cd741ef8fc4450da658421b9dad6fb59"
+    },
+    {
+      "path": "host-run.py",
+      "bytes": 7746,
+      "sha256": "d4ed937820fa218f3341fb79cf520ec29b9c150a2fbf65352b7fcf411bf931e1"
+    },
+    {
+      "path": "measure-once.py",
+      "bytes": 1243,
+      "sha256": "fce6f5f3859714b8b9991e9c8c66470c9475f46547f815d57d52d82389e4222e"
+    },
+    {
+      "path": "host-prepare.test.mjs",
+      "bytes": 5931,
+      "sha256": "e789b8e49c5c47e8bb653c731cd2526e5a79e570ed3a6eadcb5e28cd1e66273b"
+    },
+    {
+      "path": "host-inputs.json",
+      "bytes": 6236,
+      "sha256": "84218b46d858b7f94fb9c79446b7e7a9dfc4336380faaeea506ff14aff13961c"
+    }
+  ]
+}
