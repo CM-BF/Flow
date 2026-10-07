@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T05:50:48.448496+00:00",
-  "state": "SVC08_WINDOW_ACCEPTED_RECOVERY_ADMITTED_NOT_STARTED_WAITING_RESOURCE",
-  "groupWindowOwnership": "Original Execution Lead accepted unique SVC08 window; actual launch timestamp not reported. Web has no actual holder/gate/reservation. Recovery unlaunched admission withdrawn pending explicit return and fresh admission.",
+  "recordedAt": "2026-10-07T05:52:25.444218+00:00",
+  "state": "RECOVERY_NEW_FINITE_SEGMENT_FIRST_FULL_ADMITTED_NOT_STARTED",
+  "groupWindowOwnership": "SVC08 explicitly returned after guard refusal with no personal/PG/HTTP/store/service action; root granted next Recovery window. Fresh new admission, original owner not yet reported actual start.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T05:50:48.448496+00:00",
-    "kind": "EXPLICIT_SHARED_WINDOW_REASSIGNED_BEFORE_RECOVERY_LAUNCH",
-    "source": "continuous-validation-segments-20261007/resource-reassignment.json",
-    "summary": "SVC08 accepted unique window before Recovery launch. Original 05:46:32 gate retained as unconsumed history, no reuse/extension; exact unused admin.env removed without content read. Recovery waits actual return then fresh admission."
+    "at": "2026-10-07T05:52:25.444218+00:00",
+    "kind": "SVC08_ACTUAL_RETURN_NEW_RECOVERY_ADMISSION",
+    "source": "continuous-validation-segments-20261007/svc08-return-recovery-renewed.json",
+    "summary": "SVC08 explicitly returned; old dm3 admission/env withdrawn, new unique first-full gate afterfresh173pins+19Git/claim/head and24553443328>=4053008384. Not manager launched."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -1088,6 +1088,11 @@
         "summary": "FormalLead rulea9f1fb74 permits bounded continuous same-scope/safety/acceptance fix/retest segments. Fresh765ab362/0141/6ffv4/173pins+19Git and available24567570432>=4053008384; firstfull60000incl15000cleanup. Old90k/5FAIL/64134.08675 immutable, nooldremainingcredit."
       },
       "meaning": "Historical unconsumed admission; superseded by explicit SVC08 handoff before owner launch."
+    },
+    {
+      "at": "2026-10-07T05:50:48.448496+00:00",
+      "state": "SVC08_WINDOW_ACCEPTED_RECOVERY_ADMITTED_NOT_STARTED_WAITING_RESOURCE",
+      "source": "continuous-validation-segments-20261007/resource-reassignment.json"
     }
   ],
   "dperf05Pure": {
@@ -1135,7 +1140,7 @@
     "bindingRecord": "native-chrome-boundary-binding.json"
   },
   "nextWebReady": {
-    "state": "RECOVERY_WAITING_RESOURCE_QUICK_SOURCE_DELTA_APPROVED_NOT_RUN",
+    "state": "RECOVERY_FIRST_FULL_FRESH_ADMITTED_QUICK_SOURCE_APPROVED_NOT_RUN",
     "access": {
       "ownerHead": "269a8566e9b09018fb2e87440a8d96b4c14cf75a",
       "state": "MAIN_ACCEPTED_DEPLOYED185_LOCAL_CREDENTIAL_UI_OBSERVED",
@@ -1232,7 +1237,7 @@
       "ownerHead": "765ab362945b93b66487cadd8e0b54e9ee233bcf",
       "source": "0141cf4f23032ce206b7eaf0a19729c966ca4751",
       "packet": "/private/tmp/recovery-continuous-full-ready-pkyqyonj/handoff-delta.json",
-      "state": "ADMITTED_NOT_STARTED_WAITING_RESOURCE",
+      "state": "NEW150S_SEGMENT_FIRST_FULL_ADMITTED_NOT_STARTED",
       "budget": {
         "priorLateMs": 54883.199542,
         "thisLateMs": 9250.887208,
@@ -1256,28 +1261,25 @@
         "outerWallMsSeparate": 9881.697250064462,
         "state": "HISTORICAL_90K_ENVELOPE_CLOSED_IMMUTABLE_NO_NEW_CREDIT"
       },
-      "runtime": "Zero new-segment runtime; original unconsumed admission superseded by SVC08 window reassignment.",
-      "next": "Wait explicit actual SVC08 handback, then fresh claim/source/resource and new exact adminenv/gate; no automatic renewal or launch.",
+      "runtime": "No new-segment actual start reported; new unique firstfull60000 incl15000cleanup afterexplicitSVC08return.",
+      "next": "Original owner executes from renewed handoff; report actual start and terminal/cleanup immediately. No oldgate reuse.",
       "review": "quick-b2-return-20261007/recovery-fourth-preparation-review.json",
       "admission": {
-        "state": "WITHDRAWN_UNCONSUMED_WAITING_RESOURCE",
-        "handoff": "continuous-validation-segments-20261007/recovery-handoff.json",
-        "gate": "/private/tmp/recovery-continuous-admission-dm3egjxs/gate.json",
-        "gateSha256": "56d3e409e39e29d00ccc412772a297f8397430a58b3424e0715a45b468aacdaa",
-        "expiresAt": "2026-10-07T05:52:32.901509+00:00",
-        "run": "recfull-20261007-054632-0263a4",
-        "adminEnv": "/private/tmp/recovery-continuous-admission-dm3egjxs/admin.env",
+        "state": "ADMITTED_NOT_STARTED",
+        "handoff": "continuous-validation-segments-20261007/recovery-renewed-handoff.json",
+        "gate": "/private/tmp/recovery-continuous-admission-_f2cv0m2/gate.json",
+        "gateSha256": "3a3782ff56f1528ea55be377ce990da511910c3563930d364e801de45072e036",
+        "expiresAt": "2026-10-07T05:57:38.376664+00:00",
+        "run": "recfull-20261007-055138-6c925b",
+        "adminEnv": "/private/tmp/recovery-continuous-admission-_f2cv0m2/admin.env",
         "adminEnvIdentity": {
           "device": 16777234,
-          "inode": 123539887,
+          "inode": 123541171,
           "mode": "0o600",
           "uid": 501
         },
         "adminEnvDeletionOwner": "d01_owner",
-        "gateReusable": false,
-        "adminEnvState": "REMOVED_EXACT_UNUSED",
-        "withdrawal": "continuous-validation-segments-20261007/resource-reassignment.json",
-        "deletionReceipt": "continuous-validation-segments-20261007/unused-admin-env-deletion-receipt.json"
+        "previousWithdrawnAdmission": "continuous-validation-segments-20261007/resource-reassignment.json"
       },
       "actualReceipt": "recovery-pageauth-return-20261007/return.json",
       "sourceReview": "continuous-validation-segments-20261007/recovery-source-review.json",
@@ -1420,13 +1422,13 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "continuous-validation-segments-20261007/resource-reassignment.json",
+  "currentWindowEvidence": "continuous-validation-segments-20261007/recovery-renewed-observation.json",
   "webActualHolder": null,
-  "webGate": null,
+  "webGate": "/private/tmp/recovery-continuous-admission-_f2cv0m2/gate.json",
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": "544c limited source/preparation approved, final929b HEAD and newboundary/pins verified; PREPARED NOTRUN, no gate/holder/reservation",
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": false,
+  "webReservation": true,
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -1752,11 +1754,12 @@
     "receipt": "dashboard-task-time-intake/dperf-app-receipt.json"
   },
   "externalCurrentAdmission": {
-    "owner": "SVC08 / Original Execution Lead",
-    "state": "WINDOW_ACCEPTED_ACTUAL_START_NOT_REPORTED",
-    "actualStartedAt": null,
-    "scope": "Personal Web-only two actions and observation, approximately <=200s, as relayed by root; no manager service action.",
-    "source": "continuous-validation-segments-20261007/resource-reassignment.json"
+    "owner": null,
+    "state": "SVC08_EXPLICITLY_RETURNED_RECOVERY_NEXT",
+    "actualReturnTimestamp": "UNKNOWN_NOT_PROVIDED",
+    "reportedWorkAt": "2026-10-07T05:49:01.811Z",
+    "receipt": "b35fc741; guard refusal/all serviceactions0/owned34255absent/dualEOF viaRoot",
+    "source": "continuous-validation-segments-20261007/svc08-return-recovery-renewed.json"
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -1766,9 +1769,9 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": [
-    "Wait Original Lead actual SVC08 handback; Recovery new finite segment remains ready, no active Web gate/reservation."
+    "Recovery owner actual terminal and cleanup immediately return window; next same-segment run requires fresh actual resource coordination."
   ],
-  "currentIntake": "continuous-validation-segments-20261007/resource-reassignment.json",
+  "currentIntake": "continuous-validation-segments-20261007/svc08-return-recovery-renewed.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",

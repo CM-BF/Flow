@@ -1,0 +1,19 @@
+{
+  "recordedAt": "2026-10-07T05:52:25.444218+00:00",
+  "kind": "SVC08_ACTUAL_RETURN_NEW_RECOVERY_ADMISSION",
+  "source": "Original Execution Lead actual receipt via root: SVC08 migrate05:49:01.811Z/60ms guard refusal, personal/PG/HTTP/store/service actions0;34255absent/dualEOF;failureb35fc741,remaining3stagesnotcalled. Root explicitly grants nextRecoverywindow.",
+  "oldAdmission": "dm3egjxs withdrawn; exactenvremoved; no gate reuse",
+  "webState": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+  "actualStartedAt": null,
+  "handoff": "recovery-renewed-handoff.json",
+  "gateSha256": "3a3782ff56f1528ea55be377ce990da511910c3563930d364e801de45072e036",
+  "expiresAt": "2026-10-07T05:57:38.376664+00:00",
+  "newSegment": {
+    "totalActualMs": 150000,
+    "spentMs": 0,
+    "thisRunTotalMs": 60000,
+    "cleanupMs": 15000
+  },
+  "historicalSpentMs": 64134.08675,
+  "managerLaunch": false
+}

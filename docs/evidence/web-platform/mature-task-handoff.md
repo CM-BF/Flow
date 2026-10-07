@@ -1,10 +1,10 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T05:50:48.448496+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T05:52:25.444218+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 ## 当前窗口与用户交付
 
-**当前窗口由SVC08原Lead接收，Recovery未启动并等待资源。** [最新明确交接](continuous-validation-segments-20261007/resource-reassignment.json)记Mika改序、Original Lead已接唯一窗口；实际启动时间未提供，不冒运行。Recovery 05:46:32准入原件保留但不得续期或复用；原owner未被唤醒、运行目录不存在，[本次未用adminenv已按exact身份删除](continuous-validation-segments-20261007/unused-admin-env-deletion-receipt.json)，未读内容。本组无实际PG/Chrome holder、gate或预约；等SVC08明确实际归还后再fresh准入。
+**SVC08已明确实际归还，Recovery原owner接下一窗口，尚无实际启动回执。** [最新真实交接](continuous-validation-segments-20261007/svc08-return-recovery-renewed.json)保SVC08 guard拒绝/全部服务动作0及owned组收尾；[新的fresh准入](continuous-validation-segments-20261007/recovery-renewed-handoff.json)固定765ab/0141，full7单次60s含15s清理，新150s累计0。旧dm3 gate与原件保留但已撤销、旧env已删除；新gate到期05:57:38.376664Z，不是续旧gate。新env仅按路径使用，manager按exact身份收尾删除。本组actual holder尚null，原owner实际启动后再记录。
 
 [正式Lead规则a9f1fb74](continuous-validation-segments-20261007/formal-rule-excerpt.md)允许已授权普通自有0provider验证采用有限连续段：Recovery新150s actual总额/每次60s含15s，Quick新90s/每次45s含15s；旧90/60封套与所有失败不变、未用旧余量不转入。相同安全/验收边界可由原owner连续修复、相关复测，通过后一次独审；每次真实holder、输入、组合资源、唯一gate与完整cleanup不省。Quick原生控件诊断源码及最小runner delta已[独审接受](continuous-validation-segments-20261007/quick-diagnostic-source-review.json)，尚无实际运行、gate或预约；既有新90s授权不等当前窗口。
 
