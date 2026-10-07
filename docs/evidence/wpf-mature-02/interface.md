@@ -4,6 +4,8 @@ Owner chatui01_owner；co-lead mika；大task [WPF-MATURE-02](../../../plans/wpf
 
 ## Lead当前可行动请求
 
+- 2026-10-07T14:03:38.056Z 当前路由核验：CORE 唯一 owner 为 architecture_read，权威树 `claude-settings-claim-eligibility` / `codex/claude-settings-claim-eligibility`，fresh HEAD `ae6a2f2ce7505d0eccb6b0d8ee29654013127545` clean；[当前CORE唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/plans/wpf-mature-02-message-settings-core/status.md)及[窄main intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-intake.json)为当前来源。`aa74137d84cd7acc45ec23c2ff22128ce944a410` 五行领取资格 SQL 已获真实专库 5/5、67 HTTP 和 2026-10-07T13:59:19.000Z 独立结果忠实性批准；intake READY，但 NOT_INTEGRATED。历史 ea276 / main8d84 与旧 CORE handoff 保留，不让旧树覆盖当前 owner。D05 owner-switch 登记尚待，未确认 live 聚合已经切换。
+
 - **本次已取得Codex目录，单次窗口已消费并归还。** [结果忠实性已批准](native-remote-status/result-review.json)：1native完成初始化，1次model/list得到6models且未分页；固定remote-control通知校验后继续。已受控关闭/完整stdio/两own根清理，私有原件KEEP；[实际结束与holder归还](native-remote-status/execution-tool.json)。无待launch、无重试；账号、实际模型/推理/tier、网络/账单与全部writer仍unknown。后续纯归档不占Lead个人发布时段。
 
 - **原生目录观察已执行并归还运行时段，目录仍未取得。** [本次固定结果](native-catalog-observation/run-report.md)：ready=true/1次model-list；收到已知但不允许继续的 `remoteControl/status/changed`，按原规则停止。1目标已受控关闭、完整stdio和本次两root清理确认，私有原件KEEP；[双审忠实失败收据](native-catalog-observation/result-review.json)。既有授权消费后不重试/扩表；此前[准入错误及更正](native-catalog-observation/preflight-correction.json)不回写。

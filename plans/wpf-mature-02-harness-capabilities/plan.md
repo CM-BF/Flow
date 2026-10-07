@@ -102,3 +102,7 @@ GO明确优先Claude逐消息设置，按TODO-10产品core→TODO-11共享consum
 2026-10-06 17:16：TODO-03进入[真实native目录一次观察设计](../../docs/evidence/wpf-mature-02/native-catalog-probe/README.md)，GO授权准备，复用R06与原policy、最多1目标/45s/0turn；实际NOT_OPEN。ClaudeCORE已获限定批准，共享consumer/UI与完整能力验收继续推进，不以目录替代资格。
 
 2026-10-07T13:00:23.336Z：TODO08/11按 GO 要求补齐个人安装激活与真实选择验收；Claude 零模型接线先行，Codex writer/账号资格独立保持开放。本轮仅父 metadata，现 SVC06 维护与个人激活/模型后验窗口分开，不扩大旧运行额度。
+
+2026-10-07T14:03:38.056Z 当前路由核验：CORE 唯一 owner 为 architecture_read，权威树 `claude-settings-claim-eligibility` / `codex/claude-settings-claim-eligibility`，fresh HEAD `ae6a2f2ce7505d0eccb6b0d8ee29654013127545` clean；[当前CORE唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/plans/wpf-mature-02-message-settings-core/status.md)及[窄main intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-intake.json)为当前来源。`aa74137d84cd7acc45ec23c2ff22128ce944a410` 五行领取资格 SQL 已获真实专库 5/5、67 HTTP 和 2026-10-07T13:59:19.000Z 独立结果忠实性批准；intake READY，但 NOT_INTEGRATED。历史 ea276 / main8d84 与旧 CORE handoff 保留，不让旧树覆盖当前 owner。D05 owner-switch 登记尚待，未确认 live 聚合已经切换。
+
+2026-10-07T14:03:38.056Z TODO08/11继续开放：原个人维护已 RETURN，不再作为当前等待；下一交付仍为个人两槽激活、精确目录与 Web/TUI 真正可选可用，再独立 provider 后验。仅同步依赖路由，不复制 CORE TODO，也不扩大已消费 Codex/维护窗口。

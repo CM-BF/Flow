@@ -21,8 +21,14 @@
 
 ## 交权与时序
 
-本补充由 Mika 本轮明确交付要求及其转交 architecture_read 两槽建议收敛；向原作者直接取结论一次遭 threadlimit，未重试/新建任务。可审方向写入原 TODO08/11，不冒称作者已批准实现。Original Lead 新 take 共享配置后才实施；现 SVC06 原配置/剩余维护不扩、不重放，个人激活在其收尾后另安排真实窗口。Web/TUI 仍归原 owner。本父只维护验收与依赖，子进度读取各自 status，不复制第二状态库。
+本补充由 Mika 本轮明确交付要求及其转交 architecture_read 两槽建议收敛；向原作者直接取结论一次遭 threadlimit，未重试/新建任务。可审方向写入原 TODO08/11，不冒称作者已批准实现。Original Lead 新 take 共享配置后才实施；原 SVC06 维护已于 2026-10-07T13:48:49.000Z RETURN（Mika 转交 Original 事实），不再等待该收尾；个人激活仍须另安排真实窗口，不重放旧维护。Web/TUI 仍归原 owner。本父只维护验收与依赖，子进度读取各自 status，不复制第二状态库。
 
 ## 本片质量与证据边界
 
 本地 find-skills 已匹配 codebase-design/clean-code，沿 `quality.json` 固定 sickn33@bdacd76 来源，无安装。检查单一生命周期 owner、小 Interface、默认兼容、错误/unknown、资格过滤与有限 choices；只读当前 main 的配置和领取源码。0工程检查/PG/browser/provider/服务/私有配置读取。目录9b9c的6个模型与已收 C02 API/流片仍按原固定证据解释；此文不证明个人激活、实际模型资格或完整 WPF-MATURE-02 完成。架构影响为 planned 两槽组合，待合法产品 owner 的固定实现后由 Lead 更新基线。
+
+## 当前依赖更新
+
+2026-10-07T14:03:38.056Z 当前路由核验：CORE 唯一 owner 为 architecture_read，权威树 `claude-settings-claim-eligibility` / `codex/claude-settings-claim-eligibility`，fresh HEAD `ae6a2f2ce7505d0eccb6b0d8ee29654013127545` clean；[当前CORE唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/plans/wpf-mature-02-message-settings-core/status.md)及[窄main intake](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-settings-claim-eligibility/docs/evidence/wpf-mature-02-message-settings-core/claim-eligibility/main-intake.json)为当前来源。`aa74137d84cd7acc45ec23c2ff22128ce944a410` 五行领取资格 SQL 已获真实专库 5/5、67 HTTP 和 2026-10-07T13:59:19.000Z 独立结果忠实性批准；intake READY，但 NOT_INTEGRATED。历史 ea276 / main8d84 与旧 CORE handoff 保留，不让旧树覆盖当前 owner。D05 owner-switch 登记尚待，未确认 live 聚合已经切换。
+
+2026-10-07T14:03:38.056Z 个人安装状态仍为 PERSONAL_SETTINGS_NOT_ACTIVATED。7d1/source6c accepting v21、Web d629 v3仅作为已归还维护的部署观察；原用户任务后续 UNKNOWN，不推断完成或重放。上述第3项 mixed queue 源码/真实专库门禁已由 CORE 完成，当前待主线接收，个人安装与跨端组合仍须实测；其余两槽、目录、Web/TUI 和独立 provider 验收不因本片完成。
