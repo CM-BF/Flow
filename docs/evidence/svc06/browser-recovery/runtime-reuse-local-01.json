@@ -1,0 +1,78 @@
+{
+  "startedAt": "2026-10-07T20:16:27.767782+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-concurrency=1",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/runtime.test.mjs"
+  ],
+  "pins": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 56790,
+      "sha256": "bff62b40af387e3f9eab18cfe6337165ab780dc199fc5332b40607212d43a721"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 8924,
+      "sha256": "35f4b24980faa240013be85e86b2a8c581e68c1fe3c08bac42e91af43f8cc3b4"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime.test.mjs",
+      "bytes": 9089,
+      "sha256": "d95d7a5c35f5f0d75abceea4a93c8c22028608aef4e3c4ffe7648103dc2e08a8"
+    }
+  ],
+  "opsSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+  "freeBytes": 19308150784,
+  "floorBytes": 18641059840,
+  "scratch": {
+    "path": "/private/tmp/svc06b-runtime-5eeynhfm",
+    "dev": 16777234,
+    "ino": 124466770
+  },
+  "budget": {
+    "cumulativeSeconds": 120,
+    "tmpBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "pg": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "report": {
+    "pid": 72501,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 0,
+    "elapsed_ms": 1398,
+    "stdout": "\u2714 source authentication and runtime stage share one full verification for this launch (7.572542ms)\n\u2714 pending source fallback is bounded and independent web selects its own artifact (5.566042ms)\n\u2714 sealed descriptor and installation namespace changes fail before new verification (4.21475ms)\n\u2714 changed manifest bytes and same-byte replaced manifest both reject reuse (4.246167ms)\n\u2714 replaced root, symbolic root and private permission changes reject reuse (4.143208ms)\n\u2714 mutation while full verification runs is rejected and failure is terminal (2.877083ms)\n\u2714 one inflight only and at most two authentication candidates (3.335791ms)\n\u2714 legacy source authentication and late first artifact resolution keep their original paths (2.242542ms)\n\u2714 real full artifact verifier is called once across source and service consumers (1266.831625ms)\n\u2139 tests 9\n\u2139 suites 0\n\u2139 pass 9\n\u2139 fail 0\n\u2139 cancelled 0\n\u2139 skipped 0\n\u2139 todo 0\n\u2139 duration_ms 1355.170375\n",
+    "stderr": "",
+    "observed_bytes": 966,
+    "retained_bytes": 966,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "finishedAt": "2026-10-07T20:16:29.167101+00:00",
+  "remaining": [],
+  "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+}

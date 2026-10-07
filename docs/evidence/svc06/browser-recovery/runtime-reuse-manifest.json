@@ -1,0 +1,119 @@
+{
+  "format": 1,
+  "recordedAt": "2026-10-07T20:24:49.887415+00:00",
+  "sourceCommit": "de77924faee33bf00d40c272052a762dad04ed1e",
+  "mainPreimage": "c29c2bbb0d9f1548cf54bcb78e0cd3b4a8e5b6c4",
+  "onlyIntegrationProducts": [
+    "tools/personal-preview/preview.mjs",
+    "tools/personal-preview/backend-release/host.mjs",
+    "tools/personal-preview/backend-release/runtime.test.mjs"
+  ],
+  "readonlyMainSuppliers": "runtime-reuse-readonly.json: exact c29; NOT overwrite targets for integration",
+  "bindings": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 56790,
+      "sha256": "bff62b40af387e3f9eab18cfe6337165ab780dc199fc5332b40607212d43a721"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 8924,
+      "sha256": "35f4b24980faa240013be85e86b2a8c581e68c1fe3c08bac42e91af43f8cc3b4"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime.test.mjs",
+      "bytes": 9089,
+      "sha256": "d95d7a5c35f5f0d75abceea4a93c8c22028608aef4e3c4ffe7648103dc2e08a8"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-amend-receipt.json",
+      "bytes": 1031,
+      "sha256": "57f5f5414b2c6886ededeb7925b1805936f44686b02f0a8172f691d5d895a45e"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-amend-request.json",
+      "bytes": 746,
+      "sha256": "7dfbcfd872a802b4dc26b02b8a20224553920a7da2c8914f952023cf1300f0b1"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-import.mjs",
+      "bytes": 1166,
+      "sha256": "37558e09fc3e78bd88097d09370017bb948856523637c6e538dc54f74dec469a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-inputs.json",
+      "bytes": 4316,
+      "sha256": "2251264119529d86c7d62d2e6cd2661d07c2dfc76de6ded141ec4a3079317802"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-interface.md",
+      "bytes": 5170,
+      "sha256": "236c01421588625d9175e4fec760fcc64db6a1d66b61c621dfb254315d8d2a54"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-local-01-reservation.json",
+      "bytes": 1261,
+      "sha256": "80e095a4f9639d9317ba5130908958cfffddfeae30c99b6f5e55b02225f9c60d"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-local-01.json",
+      "bytes": 3036,
+      "sha256": "b407923ff9d0f05902da68f296aaa371d50c268e01bd2efeea7ae27d70a647be"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-local-02-reservation.json",
+      "bytes": 1033,
+      "sha256": "fa65a4df0cfadf256eeeecf352cbac025279e7f5e062dd5a754f1703d37e269a"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-local-02.json",
+      "bytes": 3292,
+      "sha256": "bd47c9d29dea57d6f0f43e83098f6a9f0349aba03763cebccde549e6f8b244fd"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-local-03-reservation.json",
+      "bytes": 1033,
+      "sha256": "afddbf9b9bd1d7bba0d609ef1c9ecc3f04b89b557ba6e48bbca1fd9391030a29"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-local-03.json",
+      "bytes": 2765,
+      "sha256": "dc0d5d7c15e3216b477716f721170a7bff69b641544fa8ab3e07d9ff299d7df4"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-local-04-reservation.json",
+      "bytes": 1086,
+      "sha256": "238bbfca0c72a5be2be1d5cd61d42243c9081545c55e7133bf28c1fbfb1ffe91"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-local-04.json",
+      "bytes": 1978,
+      "sha256": "0a6465b88b412312c436f3a94f4d2042da2a7b9bdf05b95ca33845481fb77747"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-preimages.json",
+      "bytes": 753,
+      "sha256": "5eb719e342180f6ad09e3fc1c07d6e92095a8fd861076ee90ccf1481abeb679b"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-readonly.json",
+      "bytes": 1024,
+      "sha256": "fff063c444d35077019800de0fa6d70749675816c0e526de8371f0cadbe2eb1e"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/runtime-reuse-result.json",
+      "bytes": 712,
+      "sha256": "f431c137a8abc26cc4e8c952b293f35fcf7a2504a1a9ff19fb1463ef8fdd11db"
+    },
+    {
+      "path": "docs/evidence/svc06/browser-recovery/history-after-failure-outer.json",
+      "bytes": 2866,
+      "sha256": "adf45dbf264fe774916821189b847370cb5dbb65b7dd3ff0628e6268bda162e7"
+    }
+  ],
+  "localResult": "runtime-reuse-result.json",
+  "review": "PENDING",
+  "build": "NOT_RUN",
+  "personalRecovery": "NOT_RUN",
+  "runtimeIdentityLimits": "Managed immutable artifacts only; root/manifest pins do not prove absence of adversarial descendant mutation."
+}

@@ -1,0 +1,69 @@
+{
+  "startedAt": "2026-10-07T20:19:53.499725+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--permission",
+    "--allow-fs-read=/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery",
+    "--allow-fs-read=/Users/citrine/Projects/AgentHarness/Flow/package.json",
+    "--allow-fs-read=/private/tmp/flow-svc06b-artifact-IhwFGS/backend-artifacts/cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b/root/node_modules",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/runtime-reuse-import.mjs"
+  ],
+  "sourceSha256": "767d8bc34a7161bf38143c390b73b368c63f633ce5ac3dcd0bbd9cb936316ffb",
+  "freeBytes": 19305824256,
+  "scratch": {
+    "path": "/private/tmp/svc06b-runtime-import-ong8etzp",
+    "dev": 16777234,
+    "ino": 124467533
+  },
+  "previousMs": 1443,
+  "budget": {
+    "cumulativeSeconds": 120,
+    "tmpBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "pg": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "report": {
+    "pid": 6127,
+    "ownership": "newChildSession",
+    "capture": "separate",
+    "exit_code": 1,
+    "elapsed_ms": 60,
+    "stdout": "",
+    "stderr": "file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/preview.mjs:11\nimport { Pool } from 'pg';\n         ^^^^\nSyntaxError: Named export 'Pool' not found. The requested module 'pg' is a CommonJS module, which may not support all module.exports as named exports.\nCommonJS modules can always be imported via the default export, for example using:\n\nimport pkg from 'pg';\nconst { Pool } = pkg;\n\n    at #asyncInstantiate (node:internal/modules/esm/module_job:455:21)\n    at async ModuleJob.run (node:internal/modules/esm/module_job:553:5)\n    at async node:internal/modules/esm/loader:647:26\n    at async file:///Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/docs/evidence/svc06/browser-recovery/runtime-reuse-import.mjs:10:19\n\nNode.js v24.20.0\n",
+    "observed_bytes": 822,
+    "retained_bytes": 822,
+    "eof": {
+      "stdout": true,
+      "stderr": true
+    },
+    "first_failure": {
+      "phase": "work",
+      "code": "CHILD_EXIT_NONZERO",
+      "type": "SupervisionFailure",
+      "errno": null,
+      "message": "child exit nonzero"
+    },
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "finishedAt": "2026-10-07T20:19:53.560340+00:00",
+  "remaining": [],
+  "cleanup": "REMOVED_SAME_EMPTY_DIRECTORY"
+}

@@ -1,0 +1,34 @@
+{
+  "pid": 38195,
+  "ownership": "newChildSession",
+  "capture": "separate",
+  "exit_code": 0,
+  "elapsed_ms": 4447,
+  "stdout": "{\"at\":\"2026-10-07T20:02:40.328Z\",\"kind\":\"READONLY_OLD_COLUMNS_HASH_COMPARISON\",\"tableCount\":77,\"changed\":[{\"name\":\"runner_maintenance_audit\",\"before\":{\"name\":\"runner_maintenance_audit\",\"columns\":[\"ordinal\",\"id\",\"runner_id\",\"request_id\",\"digest\",\"result\"],\"count\":21,\"digest\":\"070f5b575beb30f963dd5e441bd01381\",\"row_hashes\":[\"01d6e28529aa79b3119805c69ebdc56f\",\"367fb3815af89e3613e682ebbf379a23\",\"3c0a8b57f30a935238ebafdef6b1d7d2\",\"3fc61d805408225a1df58e5b2e31bab0\",\"48fc9098baa1ad6bd85accf9b15b4a35\",\"4f6b53c35f93055f8632d68b9f7e5b1c\",\"52d4e7746b8dcbf225d346e167b2ccea\",\"674b87d56951cb5c4595647b1591a2a5\",\"6928b1c5fe1d3b73418eb4c244a1d830\",\"77dad86ada0d75193a3fdb8073133411\",\"77e479bbc3f8d91ac1edf242c8357353\",\"7a7a7607e71f9ae827d1c4417228e3e3\",\"7a93b89d9405b417a71c56f521e493e2\",\"864ee0855238ec5fb478ed73aa092546\",\"a577806974d96202fc48709259a02dc3\",\"b835273731923921bb9dd9a484800a9d\",\"b9dda06e435adab770046de3555145c4\",\"d16b53b96239a4ca4233d2cef7ec405c\",\"ddc228362eac5a1960582917895456e8\",\"e9843e7e2161771c16cf148ae1cae56e\",\"f29cfd66255e6a99a86c09a9a7ae2b5e\"]},\"after\":{\"name\":\"runner_maintenance_audit\",\"columns\":[\"ordinal\",\"id\",\"runner_id\",\"request_id\",\"digest\",\"result\"],\"count\":23,\"digest\":\"0312c20960f438f5703bada77beadb7f\",\"row_hashes\":[\"01d6e28529aa79b3119805c69ebdc56f\",\"04a2593e69501a1061a63a6c926cd483\",\"367fb3815af89e3613e682ebbf379a23\",\"3c0a8b57f30a935238ebafdef6b1d7d2\",\"3fc61d805408225a1df58e5b2e31bab0\",\"48fc9098baa1ad6bd85accf9b15b4a35\",\"4f6b53c35f93055f8632d68b9f7e5b1c\",\"52d4e7746b8dcbf225d346e167b2ccea\",\"674b87d56951cb5c4595647b1591a2a5\",\"6928b1c5fe1d3b73418eb4c244a1d830\",\"77dad86ada0d75193a3fdb8073133411\",\"77e479bbc3f8d91ac1edf242c8357353\",\"7a7a7607e71f9ae827d1c4417228e3e3\",\"7a93b89d9405b417a71c56f521e493e2\",\"864ee0855238ec5fb478ed73aa092546\",\"a577806974d96202fc48709259a02dc3\",\"b835273731923921bb9dd9a484800a9d\",\"b9dda06e435adab770046de3555145c4\",\"d16b53b96239a4ca4233d2cef7ec405c\",\"ddc228362eac5a1960582917895456e8\",\"e7b3a9c89a62e5895fa99d30e5ffc51e\",\"e9843e7e2161771c16cf148ae1cae56e\",\"f29cfd66255e6a99a86c09a9a7ae2b5e\"]}}],\"operatorQuery\":0,\"userContentRecorded\":false}\n",
+  "stderr": "",
+  "observed_bytes": 2099,
+  "retained_bytes": 2099,
+  "eof": {
+    "stdout": true,
+    "stderr": true
+  },
+  "first_failure": null,
+  "secondary_failures": [],
+  "signals": [],
+  "owned_state": "absent",
+  "observations": [
+    {
+      "state": "unknown",
+      "errno": 1
+    },
+    {
+      "state": "absent",
+      "errno": null
+    },
+    {
+      "state": "absent",
+      "errno": null
+    }
+  ],
+  "finishedAt": "2026-10-07T20:02:40.361563+00:00"
+}

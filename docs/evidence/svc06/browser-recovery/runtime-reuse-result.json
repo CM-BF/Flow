@@ -1,0 +1,26 @@
+{
+  "recordedAt": "2026-10-07T20:23:51.276Z",
+  "state": "SOURCE_AND_LOCAL_READY_FOR_REVIEW",
+  "tests": {
+    "distinct": 9,
+    "passed": 9,
+    "realPreviewImport": "PASS",
+    "preservedFixtureFailures": [
+      "local02 relative module path",
+      "local03 pg CJS selected instead of declared ESM import"
+    ],
+    "productionRetested": false
+  },
+  "elapsedMs": 1613,
+  "rawBytes": 3266,
+  "finishedAt": "2026-10-07T20:21:01.676045+00:00",
+  "allGroupsAbsent": true,
+  "allDualEOF": true,
+  "allScratchRemoved": true,
+  "pg": 0,
+  "provider": 0,
+  "personalIO": 0,
+  "review": "PENDING",
+  "runtimeApplication": "NOT_BUILT_NOT_DEPLOYED",
+  "readinessGap": "SEPARATE_RUNTIME_INITIALIZED_PROOF_REQUIRED"
+}

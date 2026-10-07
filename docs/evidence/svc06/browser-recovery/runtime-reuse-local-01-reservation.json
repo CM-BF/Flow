@@ -1,0 +1,42 @@
+{
+  "startedAt": "2026-10-07T20:16:27.767782+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--test",
+    "--test-concurrency=1",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-browser-recovery/tools/personal-preview/backend-release/runtime.test.mjs"
+  ],
+  "pins": [
+    {
+      "path": "tools/personal-preview/preview.mjs",
+      "bytes": 56790,
+      "sha256": "bff62b40af387e3f9eab18cfe6337165ab780dc199fc5332b40607212d43a721"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/host.mjs",
+      "bytes": 8924,
+      "sha256": "35f4b24980faa240013be85e86b2a8c581e68c1fe3c08bac42e91af43f8cc3b4"
+    },
+    {
+      "path": "tools/personal-preview/backend-release/runtime.test.mjs",
+      "bytes": 9089,
+      "sha256": "d95d7a5c35f5f0d75abceea4a93c8c22028608aef4e3c4ffe7648103dc2e08a8"
+    }
+  ],
+  "opsSha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d",
+  "freeBytes": 19308150784,
+  "floorBytes": 18641059840,
+  "scratch": {
+    "path": "/private/tmp/svc06b-runtime-5eeynhfm",
+    "dev": 16777234,
+    "ino": 124466770
+  },
+  "budget": {
+    "cumulativeSeconds": 120,
+    "tmpBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "pg": 0,
+  "provider": 0,
+  "personalIO": 0
+}
