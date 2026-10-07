@@ -1,0 +1,68 @@
+--- before/binding.json
++++ current/binding.json
+@@ -1,5 +1,5 @@
+ {
+-  "state": "PREPARED",
++  "state": "REVIEWED_SOURCE_BOUND",
+   "task": "WPF-MESSAGESETTINGS02",
+   "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+   "branch": "codex/web-message-settings-quick-controls",
+@@ -235,12 +235,12 @@
+     {
+       "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+       "realpath": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+-      "sha256": "ccffd5c5fe77ba3212e07c2c69091f8048b73c396b4647ecaa150e1e01a04954"
++      "sha256": "764f5f6ee523e6d52caf6e56ce7501e932c4f6e52d06d267887cb7ea70350102"
+     },
+     {
+       "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+       "realpath": "/Applications/Google Chrome.app/Contents/Info.plist",
+-      "sha256": "89dd2f1a7b8a46a153603197c416dab4078d47d499785422ba5286d4f39b2e69"
++      "sha256": "9f98b0da3cced7d981b77b8560e80947f36b81fd263bae538b83829990598f0a"
+     },
+     {
+       "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/react@19.3.0/node_modules/react/package.json",
+@@ -330,7 +330,7 @@
+   },
+   "tsxLoader": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/tsx@4.23.15/node_modules/tsx/dist/loader.mjs",
+   "chrome": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+-  "chromeVersion": "154.0.8037.98",
++  "chromeVersion": "154.0.8037.99",
+   "playwrightModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/node_modules/.pnpm/@playwright+test@1.63.0/node_modules/@playwright/test/index.mjs",
+   "fixtureModule": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.browser.ts",
+   "previousRuntimeMs": 41847,
+@@ -354,7 +354,10 @@
+   },
+   "entryPinLimits": "Exact public entries/package metadata; transitive package bytes and Chrome framework are not exhaustively hashed. No runtime or peak verification.",
+   "previousEvidenceBytes": 1934446,
+-  "nativeChromeBoundaryApproval": null,
++  "nativeChromeBoundaryApproval": {
++    "path": "/private/tmp/root-msgquick-native2-routine-binding-review.json",
++    "sha256": "78f9d87ed9c9ab9e280539a7dcd1c7a6611a32ce965929bc857b5652f276d835"
++  },
+   "authorityBoundary": "native-chrome-sibling-without-custom-outer-write-or-egress-sandbox",
+   "typesDirectEvidence": {
+     "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/root-actual-review.json",
+@@ -451,8 +454,9 @@
+   },
+   "prerequisiteMeaning": "Old fe6 strict/26direct evidence preserved only for unchanged source/acceptance body; diagnostic entry is new NOT_RUN source. Historical b1-b3 corpus is immutable.",
+   "preparationHold": [
+-    "Fresh exactclaim/head/source/deps/output/resource and one-use gate required; source/native reviews accepted.",
+-    "Firstdiagnostic45000incl15000cleanup within new90000actual; historical30625closed not credited."
++    "Fresh exact claim/head/source/dependencies/output absence/resource and a one-use diagnostic gate are required.",
++    "Same native authority; routine current runner and worker binding accepted by root78f9.",
++    "One diagnostic <=45000ms including15000ms cleanup; new90s spent11222/remaining78778; old30625 closed."
+   ],
+   "outerEvidenceReserveBytes": 2113536,
+   "selection": "diagnostic",
+@@ -476,5 +480,10 @@
+     "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-control-followup-preparation/source-manifest.json",
+     "sha256": "98217fc61785a42c59acd5777b59961e048360115afd34bc1218a90f8b337711",
+     "meaning": "Same authorized continuous segment: UTF-8 declaration, bounded public pre-key diagnostics, preserve first error. Six acceptance group body and other three source files unchanged. Not a new run PASS."
++  },
++  "runtimeProvenance": {
++    "path": "/private/tmp/msgquick-native2/chrome99-provenance.json",
++    "meaning": "Only two physical native input pins updated; original .98 preparation preserved; installed patch cause unknown.",
++    "sha256": "b824372e40de408f23f3b5b7766cf55a81eb2f615b3e63fee4e14fd668a2e29d"
+   }
+ }

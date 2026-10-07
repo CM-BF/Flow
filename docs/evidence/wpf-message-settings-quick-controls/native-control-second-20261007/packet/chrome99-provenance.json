@@ -1,0 +1,49 @@
+{
+  "at": "2026-10-07T06:28:05.400517+00:00",
+  "classification": "Routine unconsumed native-input provenance revision; root explicit same installed bundle patch authority, no new capabilities.",
+  "previousVersion": "154.0.8037.98",
+  "currentVersion": "154.0.8037.99",
+  "changeCause": "UNKNOWN",
+  "pins": [
+    {
+      "path": "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome",
+      "beforeSha256": "ccffd5c5fe77ba3212e07c2c69091f8048b73c396b4647ecaa150e1e01a04954",
+      "afterSha256": "764f5f6ee523e6d52caf6e56ce7501e932c4f6e52d06d267887cb7ea70350102",
+      "bytes": 367696
+    },
+    {
+      "path": "/Applications/Google Chrome.app/Contents/Info.plist",
+      "beforeSha256": "89dd2f1a7b8a46a153603197c416dab4078d47d499785422ba5286d4f39b2e69",
+      "afterSha256": "9f98b0da3cced7d981b77b8560e80947f36b81fd263bae538b83829990598f0a",
+      "bytes": 18856
+    }
+  ],
+  "currentSignature": {
+    "identifier": "com.google.Chrome",
+    "team": "EQHXZ8M8AV",
+    "authority": "Developer ID Application: Google LLC (EQHXZ8M8AV)",
+    "codesignDisplayExit": 0
+  },
+  "historicalSignatureDump": "Not present; no exhaustive old-signature comparison claimed.",
+  "unchanged": [
+    "source4",
+    "parent",
+    "worker",
+    "flags",
+    "permission",
+    "lifecycle",
+    "cleanup",
+    "acceptance",
+    "prior178files",
+    "budget"
+  ],
+  "historicalRuns": "Remain bound to Chrome .98; .99 not inferred as cause or fix for native keyboard failures.",
+  "review": {
+    "path": "/private/tmp/root-msgquick-native2-routine-binding-review.json",
+    "sha256": "78f9d87ed9c9ab9e280539a7dcd1c7a6611a32ce965929bc857b5652f276d835"
+  },
+  "before": {
+    "bindingSha256": "12c86615d0e06ed47e3fe71c781790a63bc06bbb355018401579a6b3df67218b",
+    "manifestSha256": "9102848e83a35aac81e70c4aa75f72d95dd14da02bdf018e614d1fe811b48075"
+  }
+}

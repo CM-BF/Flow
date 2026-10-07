@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS02 独立审查
 
-状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 06:16:41 UTC。
+状态：UNKNOWN（完整行为未验）。更新时间：2026-10-07 06:35:02 UTC。
 
 - 当前 Target：fe6ece131c489c79cf531a184e4cf51209f9c4a0；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。root 已完成限定源码复审：APPROVED_SCOPED_SOURCE_ONLY；完整行为不由此通过。
 - 历史已审 Target：35bbe76faa2128d5c1d00711fb2be3b23d54fc4f，root/peer 结论 REQUEST_CHANGES_SCOPED_VALIDATION_GAP。唯一 MSGQUICK-R3 / P2 是验收覆盖缺口，不是已证明产品错误。
@@ -95,3 +95,11 @@ Target `bdf444f13f2963235ab3f1659546d19fc8f5c203` 的browser单文件追加及 `
 parent11178/late11182/outer11221.448166994378ms原样；保守本次11222，新段余78778；旧30625/未用29375封闭不追加credit。初始响应缺charset是源码候选原因，不冒原生键盘根因已证。后继诊断源 `521a38395c4b9a38613937c83ce44215afc70280` 仅HTTP UTF-8/预键公开label/count/首异常保留，原六组与三源不变；[新源与准备](../../docs/evidence/wpf-message-settings-quick-controls/native-control-followup-preparation/README.md)。当前第二次未运行，SVC08窗口归还后才fresh准入；任务完成仍NOT_COMPLETED。
 
 [root本轮actual原件](../../docs/evidence/wpf-message-settings-quick-controls/native-control-first-20261007/root-actual-review.json)接受失败及清理；后继源尚未复验，整体UNKNOWN。
+
+## Native-control第二轮与snapshot窄修 2026-10-07 06:35:02 UTC
+
+[本次实际/原件](../../docs/evidence/wpf-message-settings-quick-controls/native-control-second-20261007/README.md)：source521a/HEAD753ccd、Chrome154.0.8037.99；outerexit1/唯一FAILEDseal。UTF-8/公开label模型/count1已实测；plain A10事件无input-change，快照value缺失后TypeError，B/modal未执行、0/6组/0PNG。不能用.99倒推原.98唯一原因。
+
+fixture/context正常关闭，全部EOF/0drop、parent51494/worker53613/Chrome51498及scratch absent。parent6188/late6189/outer6226.722708088346ms原样，本次保守6227，新段累计17449/余72551；旧30625封闭。当前仅修真实函数snapshot调用，后继源a9ec5df40470c20f48171eb8d725c6c39f307b55，原三源/六组字节不变；[窄修准备](../../docs/evidence/wpf-message-settings-quick-controls/native-control-snapshot-preparation/README.md)待同段fresh定向复验。
+
+[root native2独立原件](../../docs/evidence/wpf-message-settings-quick-controls/native-control-second-20261007/root-actual-review.json)已接收FAILED/INCONCLUSIVE+cleanup，并接受a9ec5df40470c20f48171eb8d725c6c39f307b55同边界source窄修；并未运行新修或批准完整feature。

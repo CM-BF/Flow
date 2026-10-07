@@ -71,3 +71,9 @@ MSGQUICK-04仍开放：[第三次实际失败及完整诊断](../../docs/evidenc
 [完整原件与root独审](../../docs/evidence/wpf-message-settings-quick-controls/native-control-first-20261007/README.md)：outer实际exit1，FAILED/INCONCLUSIVE；plain A按键前中文role定位计数0，0/6组/0PNG，B/modal未执行。全部EOF/0drop，fixture/context关闭，parent56904/worker57021/Chrome56911与scratch absent。root只接收失败与清理，不作产品批准。
 
 parent11178/late11182/outer11221.448166994378ms原样；保守本次11222，新段余78778；旧30625/未用29375封闭不追加credit。初始响应缺charset是源码候选原因，不冒原生键盘根因已证。后继诊断源 `521a38395c4b9a38613937c83ce44215afc70280` 仅HTTP UTF-8/预键公开label/count/首异常保留，原六组与三源不变；[新源与准备](../../docs/evidence/wpf-message-settings-quick-controls/native-control-followup-preparation/README.md)。当前第二次未运行，SVC08窗口归还后才fresh准入；任务完成仍NOT_COMPLETED。
+
+## Native-control第二轮与snapshot窄修 2026-10-07 06:35:02 UTC
+
+[本次实际/原件](../../docs/evidence/wpf-message-settings-quick-controls/native-control-second-20261007/README.md)：source521a/HEAD753ccd、Chrome154.0.8037.99；outerexit1/唯一FAILEDseal。UTF-8/公开label模型/count1已实测；plain A10事件无input-change，快照value缺失后TypeError，B/modal未执行、0/6组/0PNG。不能用.99倒推原.98唯一原因。
+
+fixture/context正常关闭，全部EOF/0drop、parent51494/worker53613/Chrome51498及scratch absent。parent6188/late6189/outer6226.722708088346ms原样，本次保守6227，新段累计17449/余72551；旧30625封闭。当前仅修真实函数snapshot调用，后继源a9ec5df40470c20f48171eb8d725c6c39f307b55，原三源/六组字节不变；[窄修准备](../../docs/evidence/wpf-message-settings-quick-controls/native-control-snapshot-preparation/README.md)待同段fresh定向复验。

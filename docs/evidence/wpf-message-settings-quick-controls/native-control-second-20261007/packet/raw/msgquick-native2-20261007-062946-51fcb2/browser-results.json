@@ -1,0 +1,38 @@
+{
+  "sourceHead": "753ccd993bc4706d597d4d2c4a82fb24c08c9517",
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "00d598df0501919e55052c2b82f1202bde091f968a208ad4e74fdff2f5145226"
+  },
+  "implementation": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
+  "startedAt": "2026-10-07T06:32:06.325Z",
+  "workerPid": 53613,
+  "parentPid": 51494,
+  "chromePid": 51498,
+  "chromeProcessGroup": "separate-parent-owned-session",
+  "chromeCleanupOwner": "external-parent-native-sibling",
+  "checks": [],
+  "pageErrors": [],
+  "cleanupErrors": [],
+  "outcome": "failed",
+  "pg": 0,
+  "selection": "diagnostic",
+  "diagnosticComplete": false,
+  "budgetOwner": "external-parent",
+  "fixtureClosed": true,
+  "contextClosed": true,
+  "cdpConnectedAt": "2026-10-07T06:32:12.107Z",
+  "failure": "TypeError: Cannot read properties of undefined (reading 'value')\n    at arm (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.browser.ts:305:45)\n    at async Module.diagnoseMessageSettingsNativeSelect (/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/apps/web/test/message-settings.browser.ts:312:5)\n    at async <anonymous> (/private/tmp/msgquick-native2/worker.mjs:136:20)",
+  "selectDiagnostics": {
+    "path": "select-diagnostics.json",
+    "bytes": 9575,
+    "sha256": "df918a884c03e32417228fac2738f3366fb61c5137509792c692ab9671af5765",
+    "state": "INSTALLED",
+    "truncated": false
+  },
+  "finishedAt": "2026-10-07T06:32:12.358Z",
+  "observedElapsedMs": 6033,
+  "profileCleanupOwner": "external-parent-after-both-process-groups-absent"
+}

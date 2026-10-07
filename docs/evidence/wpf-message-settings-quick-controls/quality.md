@@ -95,3 +95,9 @@ outeractualexit1/单一FAILEDseal/trace hash与null manifest一致；两PNG缺�
 本人live核839e v1原6/branchHEAD1aa73f6 clean与source/prepared/readonly/external+Node，沿原gate一次执行。复用已读本地find-skills/clean-code/webapp-testing，不安装：公开诊断与产品动作分离；先错误保真，原finally覆盖的顶层错误不回改原件。受控HTML显式UTF-8；预键公开字符集/label/count仅自有fixture/dialog、8select/192字符上限；保原true native键序及六组函数逐字，0selectOption/value赋值/sleep。
 
 全日志EOF/0drop、真实outerexit1与seal匹配、所有presenthash逐核；exact三PGID signal0 absent、scratch absent，原run耗时多口径保留，11222取最大向上。未把编码候选或缺定位推成Picker故障；三产品源未改、原raw完整。当前源与后继包未复验，SVC08持窗期间只离线准备。
+
+## 2026-10-07 06:35:02 UTC Native2实际与snapshot修正
+
+沿已读find-skills/clean-code/webapp-testing方法，执行前fresh本人claim/identity/所有pins及.99物理输入；原.98字节与历史结果保留。外层actualexit1/唯一seal/完整EOF与清理先归还，再正常封存。预算取最大6227累计17449，不把parent17410回增余时。
+
+实际快照value缺失，已装Playwright代码证实字符串按expression处理；局部改真正无闭包函数、保8options与观察字段，for-loop避免嵌套序列化helper。原六组函数逐字相同，原三源保持，不能凭plain A样本归产品故障或跨Chrome版本唯一原因。第二轮仍失败，无额外strict/direct/产品修改；保所有raw，后继仅同段routine carry与freshgate。

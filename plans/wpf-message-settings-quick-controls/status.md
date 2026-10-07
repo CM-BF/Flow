@@ -5,16 +5,16 @@
 | 任务 ID | WPF-MESSAGESETTINGS02 |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新时间 | 2026-10-07 06:16:41 UTC |
+| 最近更新时间 | 2026-10-07 06:35:02 UTC |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 开工旧原件尚无可明确认定的实际开工时点，未用claim/commit倒推；完成未发生 |
 | 单一status owner / model | w01_owner / gpt-6-astra |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 快速设置的类型与组合逻辑已验证；原生键盘对照首轮未进入按键，已修诊断页编码声明并保留首错误 |
+| 当前产出 | 快速设置的类型与组合逻辑已验证；对照已捕获真实按键，已修诊断快照读取，等待完整对照 |
 | 下一可用交付 | 经验证的模型、思考力度与速度快速选择 |
-| 当前阻塞 | ACTIVE: 模型键盘选择根因未定；修正后的对照待共享窗口归还及fresh准入，完整交互验收未通过 |
+| 当前阻塞 | ACTIVE: 模型原生键盘选择根因待完整对照；快照调用窄修待同段定向复验，完整交互验收未通过 |
 | 需用户决定 | NONE |
 | 本片段交付阶段 | review |
 | 工作分支状态 | in-progress |
@@ -25,7 +25,7 @@
 | Dirty | 源固定；metadata 收口后核 clean |
 | 实现目标 | fe6ece131c489c79cf531a184e4cf51209f9c4a0 |
 | 实现范围 | apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/test/message-settings.test.ts, apps/web/test/message-settings.fixture.tsx, apps/web/test/message-settings.browser.ts |
-| 检查状态 | FAILED fe6ece131c489c79cf531a184e4cf51209f9c4a0；原browser三次失败，新增native对照首轮FAILED/INCONCLUSIVE、按键前定位失败；当前0完成组/0PNG；b3已完整捕获选框trace；先前strict+26direct PASS保留；b3计量helper 5/5 PASS不算浏览器通过，旧37/4不继承 |
+| 检查状态 | FAILED fe6ece131c489c79cf531a184e4cf51209f9c4a0；原browser三次失败，新增native对照两轮FAILED/INCONCLUSIVE：首轮定位失败、次轮快照调用失败；当前0完成组/0PNG；b3已完整捕获选框trace；先前strict+26direct PASS保留；b3计量helper 5/5 PASS不算浏览器通过，旧37/4不继承 |
 | Review | UNKNOWN（限定源码与strict/26direct证据已审；b1/b2失败与b3计量/helper/native准备已有独审；b3及native1 FAILED/owned清理已独审接收；后继诊断修正尚未复验，完整行为未批准） |
 | Main | 本片未集成；基线含原受控组件 |
 | Claim | 839e466f-1a3f-4e92-94e1-ece390c32fbf v1 active；本人 live 已核 |
@@ -38,7 +38,7 @@
 | MSGQUICK-01 | completed | w01_owner | [receipt](../../docs/evidence/wpf-message-settings-quick-controls/take-receipt.json)、[技能](../../docs/evidence/wpf-message-settings-quick-controls/quality.md) |
 | MSGQUICK-02 | completed | w01_owner | 当前授权 tuple + 私有候选 + 同步宿主 CAS |
 | MSGQUICK-03 | completed | w01_owner | 四源固定；validation-proposal（未运行） |
-| MSGQUICK-04 | in-progress | w01_owner | [c2实际strict/26direct通过](../../docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/README.md)；c1原失败保留；[b1首次失败](../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/README.md)与[b2计量中断/清理](../../docs/evidence/wpf-message-settings-quick-controls/b2-browser-20261007/README.md)，[b3实际键盘失败/完整诊断](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md)，旧browser历史累计30625ms/未用29375ms封闭；新定位段11222/90000ms、余78778ms；[b3计量helper五项通过](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/README.md)，无浏览器续跑 |
+| MSGQUICK-04 | in-progress | w01_owner | [c2实际strict/26direct通过](../../docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/README.md)；c1原失败保留；[b1首次失败](../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/README.md)与[b2计量中断/清理](../../docs/evidence/wpf-message-settings-quick-controls/b2-browser-20261007/README.md)，[b3实际键盘失败/完整诊断](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md)，旧browser历史累计30625ms/未用29375ms封闭；新定位段17449/90000ms、余72551ms；[b3计量helper五项通过](../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/README.md)，无浏览器续跑 |
 | MSGQUICK-05 | pending | w01_owner | 主线独立接收；真实 App/Queue/Recovery 后继不在此范围 |
 
 ## 边界与架构影响
@@ -92,3 +92,11 @@ worker已正常报告fixture/context关闭，三个ownedgroups及scratch absent�
 [完整原件与root独审](../../docs/evidence/wpf-message-settings-quick-controls/native-control-first-20261007/README.md)：outer实际exit1，FAILED/INCONCLUSIVE；plain A按键前中文role定位计数0，0/6组/0PNG，B/modal未执行。全部EOF/0drop，fixture/context关闭，parent56904/worker57021/Chrome56911与scratch absent。root只接收失败与清理，不作产品批准。
 
 parent11178/late11182/outer11221.448166994378ms原样；保守本次11222，新段余78778；旧30625/未用29375封闭不追加credit。初始响应缺charset是源码候选原因，不冒原生键盘根因已证。后继诊断源 `521a38395c4b9a38613937c83ce44215afc70280` 仅HTTP UTF-8/预键公开label/count/首异常保留，原六组与三源不变；[新源与准备](../../docs/evidence/wpf-message-settings-quick-controls/native-control-followup-preparation/README.md)。当前第二次未运行，SVC08窗口归还后才fresh准入；任务完成仍NOT_COMPLETED。
+
+## Native-control第二轮与snapshot窄修 2026-10-07 06:35:02 UTC
+
+[本次实际/原件](../../docs/evidence/wpf-message-settings-quick-controls/native-control-second-20261007/README.md)：source521a/HEAD753ccd、Chrome154.0.8037.99；outerexit1/唯一FAILEDseal。UTF-8/公开label模型/count1已实测；plain A10事件无input-change，快照value缺失后TypeError，B/modal未执行、0/6组/0PNG。不能用.99倒推原.98唯一原因。
+
+fixture/context正常关闭，全部EOF/0drop、parent51494/worker53613/Chrome51498及scratch absent。parent6188/late6189/outer6226.722708088346ms原样，本次保守6227，新段累计17449/余72551；旧30625封闭。当前仅修真实函数snapshot调用，后继源a9ec5df40470c20f48171eb8d725c6c39f307b55，原三源/六组字节不变；[窄修准备](../../docs/evidence/wpf-message-settings-quick-controls/native-control-snapshot-preparation/README.md)待同段fresh定向复验。
+
+[root native2独立原件](../../docs/evidence/wpf-message-settings-quick-controls/native-control-second-20261007/root-actual-review.json)已接收FAILED/INCONCLUSIVE+cleanup，并接受a9ec5df40470c20f48171eb8d725c6c39f307b55同边界source窄修；并未运行新修或批准完整feature。
