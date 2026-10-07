@@ -1,0 +1,174 @@
+{
+  "sourceCommit": "afe3eb972266c53e867e5db232d53d51d6a666c4",
+  "base": "519f1b87ff3b41b9a963b6e5dd99c7b117159375",
+  "scope": "C02-04 main/operator recipe seam and local evidence; not real native/provider or conversation UI",
+  "files": [
+    {
+      "path": "apps/runner/src/codex/index.ts",
+      "bytes": 14128,
+      "sha256": "f189cc8c9cd56f707448aa95e4753331afb80019d11929d052007ca9686d8fdc"
+    },
+    {
+      "path": "apps/runner/src/codex/options.ts",
+      "bytes": 3850,
+      "sha256": "b5bc2bfab727426f526430aa1d250f65ccb8e99e0ce31b5ad7fa98cc15e97843"
+    },
+    {
+      "path": "apps/runner/src/codex/types.ts",
+      "bytes": 3203,
+      "sha256": "5b79487a410574442183cbb2a63c6dc61ceb415ffbdbb2dd3aa99b8781df5828"
+    },
+    {
+      "path": "apps/runner/src/configuration.test.ts",
+      "bytes": 10414,
+      "sha256": "907314670720f49b0dcd6b00bd12d595fc7e60d174a3daa979bd4ab1bddab704"
+    },
+    {
+      "path": "apps/runner/src/configuration.ts",
+      "bytes": 6563,
+      "sha256": "13e653329ee203dde84eec4ce7057de27f23f333d9308f14f4cabe4b1cbccd65"
+    },
+    {
+      "path": "apps/runner/src/execution-profiles.ts",
+      "bytes": 5186,
+      "sha256": "484d5bcb44f5e2b69b44a0189b25f4d6114f034c9add8deead587590ac462c8f"
+    },
+    {
+      "path": "apps/runner/src/main-concurrency.test.ts",
+      "bytes": 11273,
+      "sha256": "ada94473fc4288a1d319d793860c88cad21d37482c399264c72ebc019b75872b"
+    },
+    {
+      "path": "apps/runner/src/main.ts",
+      "bytes": 3297,
+      "sha256": "46c06a84f1bde8db92a7df140d1491609877455b84ff6e520d00cc748a46c1fe"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/index.ts",
+      "bytes": 1109,
+      "sha256": "4c480609b0724a20459911f379dbfe63e2875c34b344ef1cc3e95a724aff18c6"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+      "bytes": 17344,
+      "sha256": "1a4a7da2d532311fc3cbadb3868b5663db65bd902e8a78a33f8e7fbe0f4a8a22"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/launch.ts",
+      "bytes": 6077,
+      "sha256": "791db32294dd90783f55da3d9ac8d4a981c04dfea2c11db0d19957fe7a995075"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/session-storage.ts",
+      "bytes": 3899,
+      "sha256": "68d2d7a40980af68e2682dc9cfa759472014f171fd1ef4a63f9787229fdfb407"
+    },
+    {
+      "path": "docs/evidence/mature02c02/loader-independent-review.json",
+      "bytes": 522,
+      "sha256": "ef478250ba2a3b7abfd60625ad4357f1a357e90266c3646da57fce2aa0531863"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-behavior.launch-cleanup.json",
+      "bytes": 776,
+      "sha256": "0aebb31c7daf6fc21ecc20fe4bc93c5763a2ccdf56420d09e0a7ac72e94e31ff"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-behavior.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-behavior.stdout",
+      "bytes": 107,
+      "sha256": "71009819a8cff6505011ab63f1c685ffe42477f54e57919be28ba450489e1358"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-behavior.vitest.json",
+      "bytes": 25273,
+      "sha256": "5753d14e8ea285e4482db3337bb1b8f656fd250eeb19989ecfbdf90cfa0c911a"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-claim-amend-receipt.json",
+      "bytes": 2124,
+      "sha256": "a84ad13d9b9c9396901a3324c0ed902f8b9c75f0b6c16af4990feb6995fe3516"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-claim-amend-request.json",
+      "bytes": 1615,
+      "sha256": "131f4111ddf6649c4e9e1c6f83b38ea7dacec5c7fe45547c0a04d3cbf2261431"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-interface.md",
+      "bytes": 2378,
+      "sha256": "8a6e4c2a2496570111fc6dffe0b565e6978b984c5fd5f35e08e2d6577d2c6170"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-local-result.json",
+      "bytes": 17183,
+      "sha256": "d225ac00f7d28bce49e422424f816cbc65f1ce8b8b3d37a256e826fc690cf014"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-recipe-delta.launch-cleanup.json",
+      "bytes": 776,
+      "sha256": "3da3b99fccd26de97d98f24aa7461afd9a7388de2468e37b1606835a7e60508a"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-recipe-delta.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-recipe-delta.stdout",
+      "bytes": 107,
+      "sha256": "be5b3276d9b816e6460123e3091e568a9f3e582698ae8337033e5fa149002364"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-recipe-delta.vitest.json",
+      "bytes": 18600,
+      "sha256": "26fbcbc1f3becde4cd61c53799707153c803420048156bd62d6560057f4029d3"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-source-provision.json",
+      "bytes": 5747,
+      "sha256": "c4f40279c7ef451bac2602d588c345bbb77ee23a51ed8471f92e51bbb979705e"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-source-request.json",
+      "bytes": 5431,
+      "sha256": "b2c9e420c11d906a619b0134a41ff540c94bd8221e750f3927d728469f3abfb0"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-tsconfig.json",
+      "bytes": 330,
+      "sha256": "9a228b8891941e29ddf8f576f0bb9a33860930026c6fd51bff74b1b274e47909"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-types-first.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-types-first.stdout",
+      "bytes": 515,
+      "sha256": "3696210d58d4c89a4863621e53c39fe2afa4601dd081c3945a55ac2e889dfcad"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-types-fixed.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-types-fixed.stdout",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/mature02c02/main-vitest.config.mjs",
+      "bytes": 400,
+      "sha256": "4b5b96654ef9c340fd39633ba3735fca55c4a6bf3a5b358d7684036c20b7292e"
+    }
+  ],
+  "totalBytes": 168227,
+  "orderedSha256": "f394e40a10c6c88887c230b8d5326c1de6da519a08a11bc13cf1d01151216e9c"
+}
