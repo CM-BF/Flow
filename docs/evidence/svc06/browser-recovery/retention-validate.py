@@ -24,6 +24,9 @@ def main(argv):
         'admission-port': ('^admission port ', 'docs/evidence/svc05-history-compatibility/release-operation/admission-preservation.test.mjs'),
         'history-port': ('^history port ', str(HERE / 'history-port.test.mjs')),
         'history-port-projection': ('^history port uses ', str(HERE / 'history-port.test.mjs')),
+        'current-entry': ('^current entry ', str(HERE / 'current-entry.test.mjs')),
+        'current-entry-import': ('', str(HERE / 'current-entry-load.mjs')),
+        'current-entry-python': ('', str(HERE / 'current-operator.test.py')),
     }
     if mode not in selections:
         raise ValueError('EXACT_LOCAL_SELECTION_REQUIRED')
@@ -56,14 +59,26 @@ def main(argv):
     pattern, path = selections[mode]
     command = ('/opt/homebrew/opt/node@24/bin/node', '--test', '--test-concurrency=1',
                '--test-name-pattern=' + pattern, path)
-    sources = ['tools/personal-preview/backend-release/files.mjs', 'tools/personal-preview/backend-release/index.mjs',
-               'tools/personal-preview/backend-release/artifact.test.mjs'] if mode == 'retention' else (
-        ['docs/evidence/svc06/browser-recovery/current-migration.mjs', 'docs/evidence/svc06/browser-recovery/current-migration.test.mjs'] if mode.startswith('current-migration') else (
-        ['docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs',
-         'docs/evidence/svc05-history-compatibility/release-operation/admission-preservation.test.mjs',
-         'docs/evidence/svc06/browser-recovery/runner-idle.mjs'] if mode == 'admission-port' else [
-         'docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs',
-         'docs/evidence/svc06/browser-recovery/history-port.test.mjs']))
+    groups = {
+        'retention': ['tools/personal-preview/backend-release/' + name for name in ('files.mjs', 'index.mjs', 'artifact.test.mjs')],
+        'current-migration': ['docs/evidence/svc06/browser-recovery/' + name for name in ('current-migration.mjs', 'current-migration.test.mjs')],
+        'admission-port': ['docs/evidence/svc05-history-compatibility/release-operation/runner-files.mjs',
+            'docs/evidence/svc05-history-compatibility/release-operation/admission-preservation.test.mjs',
+            'docs/evidence/svc06/browser-recovery/runner-idle.mjs'],
+        'history-port': ['docs/evidence/svc06/update-diagnostics-candidate/history-projection.mjs',
+            'docs/evidence/svc06/browser-recovery/history-port.test.mjs'],
+        'current-entry': ['docs/evidence/svc06/browser-recovery/' + name for name in ('current-import.mjs',
+            'current-maintenance.mjs', 'current-operator.py', 'current-update-template.json',
+            'current-entry.test.mjs', 'current-entry-load.mjs', 'current-operator.test.py', 'current-entry-readonly.json')],
+    }
+    group = next(key for key in groups if mode.startswith(key))
+    sources = groups[group]
+    if mode == 'current-entry-import':
+        command = ('/opt/homebrew/opt/node@24/bin/node', '--permission',
+            '--allow-fs-read=/Users/citrine/Projects/AgentHarness/Flow-worktrees',
+            '--allow-fs-read=/Users/citrine/Projects/AgentHarness/Flow/package.json', path)
+    elif mode == 'current-entry-python':
+        command = (sys.executable, path)
     record = {'startedAt': datetime.now(timezone.utc).isoformat(), 'argv': command,
               'freshFreeBytes': free, 'timeRemainingSeconds': remaining,
               'scratch': {'path': str(scratch), 'dev': identity.st_dev, 'ino': identity.st_ino},

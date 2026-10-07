@@ -1,0 +1,139 @@
+{
+  "ready": false,
+  "missing": [
+    "official04da-retained-reports-and-review",
+    "current-personal-six-files-and-three-owned-records",
+    "current-runner-CAS-and-marker",
+    "fresh-directory-identities",
+    "exclusive-new-window-and-namespaces",
+    "complete-fixed-runtime-pins-and-latest-team-resource-floor",
+    "official-report-import-arguments"
+  ],
+  "window": null,
+  "runDirectory": null,
+  "migrationOuter": null,
+  "maintenanceOuter": null,
+  "migrationInput": null,
+  "migration": {
+    "ready": false,
+    "installationDirectory": "/Users/citrine/.flow-personal",
+    "sourceDirectory": "/private/tmp/flow-svc06b-artifact-IhwFGS",
+    "runDirectory": null,
+    "repository": "/Users/citrine/Projects/AgentHarness/Flow",
+    "installationIdentity": null,
+    "sourceDirectoryIdentity": null,
+    "runIdentity": null,
+    "python": "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "cloneDriver": {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/artifact-host-followup/clone-artifact.py",
+      "sha256": "05d19da5726ab251dcb3635bfc51514fd06c3c288e773913ba4ee427b587d3f6"
+    },
+    "artifact": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+      "manifestDigest": "cd27b441d9e95c0e972bc6a502c74d1f22dc0041f0398c7f099f4a1372bcab6b",
+      "sourceHead": "04da80692e79e2b7c3f6341c7fa76515a3f719a3"
+    },
+    "expectedBackendArtifact": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    "expectedWebHostArtifact": {
+      "policy": "flow.backend-artifact.v1",
+      "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+      "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+    },
+    "expectedSource": {
+      "head": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e",
+      "dirty": false
+    },
+    "expectedRunner": {
+      "id": null,
+      "maintenance_state": "accepting",
+      "maintenance_version": null,
+      "maintenance_operation_id": null
+    },
+    "retainedArtifacts": [
+      {
+        "policy": "flow.backend-artifact.v1",
+        "artifactId": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+        "manifestDigest": "c7b85f49cf077460402083cfed577b034a19d256c8592020115d28512060542d",
+        "sourceHead": "422f4b150e5801d6010e5bbd6b53574e35384f87"
+      },
+      {
+        "policy": "flow.backend-artifact.v1",
+        "artifactId": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+        "manifestDigest": "7d1a3928feb84fd1e5f503ec41aeae635bdefb4b9da5f47b50fb6824ec048920",
+        "sourceHead": "6c0fdcda8858aac33489c48c1948e902dd6a3d7e"
+      }
+    ],
+    "privateFiles": {
+      "browser-session.json": {
+        "dev": null,
+        "ino": null,
+        "bytes": 205,
+        "sha256": "ce38dbfa3b79b6cef3a18aadab0974ffc1860e256a5ecdc59f93396255c39f4a"
+      },
+      "claude.json": null,
+      "config.json": null,
+      "maintenance.json": null,
+      "state.json": null,
+      "web-release.json": null
+    },
+    "processDigests": {
+      "center": null,
+      "runner": null,
+      "web": null
+    },
+    "ports": {
+      "center": 61227,
+      "web": 61228
+    },
+    "artifactTotalLogicalBytes": 367045616,
+    "clone": {
+      "manifestBytes": 3196606,
+      "artifactEntries": 15628,
+      "artifactLogicalBytes": 363849010,
+      "cloneHelperSha256": "c4911f0fc50009639a12fb8f24617916b1b8f2f116f0ba6ba7c55e74693cad62"
+    },
+    "budget": {
+      "freshBytes": 2684354560,
+      "liveBytes": 1073741824,
+      "addedBytes": 536870912,
+      "rawBytes": 2097152
+    }
+  },
+  "context": {
+    "format": 1,
+    "publicOrigin": "http://127.0.0.1:61228",
+    "policySha256": "81a8abe98d6541c34d07b15611e773f9bd4b53f8c6785bbaaab6e3dd03b3d638"
+  },
+  "policyPin": null,
+  "reportIds": null,
+  "initialVersion": null,
+  "runnerId": null,
+  "runnerDirectoryIdentity": null,
+  "retainedWebIds": [
+    "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+    "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+    "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88"
+  ],
+  "budget": {
+    "freshBytes": 2684354560,
+    "liveBytes": 1073741824,
+    "rawBytes": 2097152,
+    "perPhaseOutputBytes": 65536,
+    "inheritedExecutorPriorRawBytes": 119396,
+    "inheritedExecutorCaptureReserveBytes": 393216,
+    "newMaintenanceRunAvailableBeforeReserveBytes": 1977756,
+    "newMaintenanceRunAvailableAfterReserveBytes": 1584540
+  },
+  "pins": null,
+  "supervisor": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+    "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+  }
+}
