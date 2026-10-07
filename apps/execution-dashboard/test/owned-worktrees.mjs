@@ -44,15 +44,20 @@ async function exists(value) {
 // Private fixture: every linked tree belongs to a tiny repository created here,
 // never to Flow. The caller may only place its own request files in inputs.
 export async function createOwnedWorktrees(parent = tmpdir()) {
-  const root = await realpath(await mkdtemp(path.join(parent, 'flow-claims-test-')));
-  const rootIdentity = await lstat(root);
-  const repository = path.join(root, 'repository');
-  const inputs = path.join(root, 'inputs');
+  const createdRoot = await mkdtemp(path.join(parent, 'flow-claims-test-'));
+  let root;
+  let rootIdentity;
+  let repository;
+  let inputs;
   const owned = [];
   let disposed = false;
   let initialHead;
   let commonDirectory;
   try {
+    root = await realpath(createdRoot);
+    rootIdentity = await lstat(root);
+    repository = path.join(root, 'repository');
+    inputs = path.join(root, 'inputs');
     await mkdir(repository);
     await mkdir(inputs);
     await git(repository, 'init', '--initial-branch=fixture-main');
@@ -63,7 +68,7 @@ export async function createOwnedWorktrees(parent = tmpdir()) {
     initialHead = await git(repository, 'rev-parse', 'HEAD');
     commonDirectory = await realpath(path.join(repository, '.git'));
   } catch (error) {
-    try { await rm(root, { recursive: true }); }
+    try { await rm(createdRoot, { recursive: true }); }
     catch (cleanupError) { throw new AggregateError([error, cleanupError], 'Fixture initialization and cleanup failed', { cause: error }); }
     throw error;
   }
