@@ -4,6 +4,7 @@
 | --- | --- |
 | 大task ID | WPF-MATURE-03 |
 | 状态 | in-progress；完整验收未完成 |
+| 最近更新 | 2026-10-07T05:05:57.595925+00:00；补常用文件能力的用户验收，未实施 |
 | co-lead | Web /root（执行管理 d01_owner） |
 | 优先级 | P1 |
 | 唯一来源 | 本目录plan/status/review，管理worktree合法claim v3；不另填聚合进度 |
@@ -23,11 +24,20 @@ CONTEXT01选择模块736ef和CONTEXT02深冻/ACK guard5e821已main；K01/K02提�
 ## 稳定TODO与完整验收
 
 - [x] **WPF-MATURE-03-01** 完成已有知识实际UI子任务：CONTEXTI01从已授权project创建、cap确认后选引用；Send/Queue ordered tuple到真实HTTP并校ACK；不宣称本地上传完成。
-- [ ] **WPF-MATURE-03-02** 冻结附件与文件公共接口：区分本地上传、已有知识、runner文件的来源/版本/权限/大小类型，绑定当前project/view/connection；timeline只轻引用。
+- [ ] **WPF-MATURE-03-02** 冻结附件与文件公共接口：区分本地上传、已有知识、runner文件的来源/版本/权限/大小类型，绑定当前project/view/connection；timeline只轻引用；实用Markdown/代码文件与可配置预算的具体后继由03-07验收。
 - [ ] **WPF-MATURE-03-03** 实现按钮拖放与@file：三个入口可发现；键盘替代drag；搜索有界且可取消，预览正文按需，删除只影响当前草稿。REQ22–23的Files入口之外，条目动作须后继接现P01单一registry并核view/project/fixed-ref，不用task artifact上下文冒充上传引用；[coverage证据](../../docs/evidence/web-platform/attachment-plugin-coverage-9eec.json)。
 - [ ] **WPF-MATURE-03-04** 保证发送与重试身份：同一次Send/Queue深冻材料版本/顺序；unknown保原key/payload，预算拒绝保留receipt，ACK不得清新稿/新refs；异步attachment prepare期间点击意图/材料与submission/view/project/generation绑定，切delivery或新refs不改变旧提交，仅真实receipt接管后consume；材料真实进入model context。
 - [ ] **WPF-MATURE-03-05** 验证多窗口与失败恢复：双split草稿独立、换连接/close/隐藏/撤权迟到隔离；不支持中心明确plaintext路径；类型/大小/授权失败可行动；journal拒绝/损坏保raw及unknown身份且纯文本仍可用，cap/namespace旧缓存按绑定生命周期失效，不凭URL复用授权。
 - [ ] **WPF-MATURE-03-06** 完成实际旅程验收：真实App fixture覆盖入口到执行请求、引用审计与按需详情；provider执行验收另经明确预算，不能拿fixture证明模型收到。
+- [ ] **WPF-MATURE-03-07** 落实03-02的常用文件能力后继：按实际能力声明支持Markdown/代码文本，显式可配置上传与总context预算；区分授权workspace/runner文件和中心上传资源，选择后固定版本经Send/Queue到实际runner保持原材料。使用本项目一份>8KiB Markdown与一份源文件验证，格式/上限/实现先按真实消费者冻结；当前仅需求与只读接口准备，不继承旧已完成结果。
+
+## 常用文件能力后继（GO转述，尚未实施）
+
+[本次来源与验收边界](../../docs/evidence/web-platform/recovery-fourth-return-20261007/attachment-practical-files-requirement.json)映射原03-02与明确后继03-07。GO据main短标识ef3a6de8报告现text-v1仅.txt，单文件和总内容为8192 UTF8B；其举本项目AGENTS.md 18655B及ConversationThread.tsx 22770B作为日常文件无法附的实例。这是GO经root转述的源码观察，非本管理者实测，也未读取或上传这些文件。
+
+用户结果是常用Markdown与代码文本按真实能力声明可用；具体格式、大小上限与配置由真实消费者细化，不能只增大常量。分别定义上传存储字节预算、模型上下文预算和正文惰性读取，复用已有storage/context/附件Interface。@file须区分经授权workspace/runner文件和中心上传资源；选后冻结版本/顺序/身份，Send与Queue的实际runner读取保持原材料。timeline仍只有轻引用，不塞路径或整段正文，不造第二上传体系，不把上传目录冒充实时文件系统。
+
+未来已知验收材料是一份本项目>8KiB Markdown和一份源文件；保原按钮/drag/键盘、跨pane草稿隔离、unknown重试、Recovery与provider unsupported验收。当前只登记计划并准备只读接口，未授provider或个人文件读取/上传。Recovery/Quick本次实际终态先封存；此实用能力后继优先于附件装饰或插件菜单coverage，共享backend范围与原Lead按实际claim协调，不等全部Web完成。原子片已完成历史与本大task未完成状态均不改变。
 
 ## 验证与交付规则
 

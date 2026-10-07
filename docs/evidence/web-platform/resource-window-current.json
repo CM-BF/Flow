@@ -1,7 +1,7 @@
 {
-  "recordedAt": "2026-10-07T05:00:09.075191+00:00",
-  "state": "X01_R2_ACTUAL_RETURNED_RECOVERY_ADMITTED_NOT_STARTED",
-  "groupWindowOwnership": "X01 R2 actual cleanup ended04:57:04.132561Z and explicitly handed PG to Recovery. Fresh Recovery gate ready for originalowner; no Web process started, no other PG/Chrome holder reported. This is a short execution handoff, not actualRUN.",
+  "recordedAt": "2026-10-07T05:03:57.276219+00:00",
+  "state": "RECOVERY_FOURTH_FAILED_CLEANED_RETURNED_WEB_NO_HOLDER",
+  "groupWindowOwnership": "Recovery fourth actual FAILED/exit1; original worker/Chrome exited0, two owned groups and scratch absent, marked DB ordinary cleanup confirmed. Exact adminenv deleted05:02:41Z. Web0PG/Chrome/local holder/gate/reservation; no automatic fifth run.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
     "run": "app1750-20261006-175014-344a04",
@@ -407,10 +407,10 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T05:00:09.075191+00:00",
-    "kind": "X01_R2_ACTUAL_RETURN_RECOVERY_FRESH_ADMISSION_OWNER_HANDOFF",
-    "source": "quick-b2-return-20261007/incoming.json",
-    "summary": "X01R2 26pass/1fail with complete owned process/DB/listener/TMP cleanup handed PG to Recovery. Original claim/head/pins and onefresh combinedfloor passed; gate expires05:05:12Z. Originalowner launch pending; manager does not launch product. Quickb3 TMP only."
+    "at": "2026-10-07T05:03:57.276219+00:00",
+    "kind": "RECOVERY_FOURTH_ACTUAL_FAILURE_CLEANUP_ENV_DELETE_WINDOW_RETURN",
+    "source": "recovery-fourth-return-20261007/return.json",
+    "summary": "cookieRead passed; saved.txt tooltip timed out in textIntentDraft, later groups incomplete/not run and0PNG. Actual owned cleanup accepted for handoff; env exactdeleted. Conservative late cumulative54883.199542, remaining35116.800458. Root independent feature review pending; no automatic retry."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -550,7 +550,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "quick-b2-return-20261007/incoming.json",
+  "currentWindowReturn": "recovery-fourth-return-20261007/return.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1015,6 +1015,13 @@
       "state": "X01_R1_HEAVY_RETURNED_RETAINED_EVIDENCE_KEEP_WEB_NO_GRANT",
       "historicalFields": "quick-b2-return-20261007/previous-current-fields.json",
       "supersededBy": "quick-b2-return-20261007/incoming.json"
+    },
+    {
+      "recordedAt": "2026-10-07T05:00:09.075191+00:00",
+      "state": "X01_R2_ACTUAL_RETURNED_RECOVERY_ADMITTED_NOT_STARTED",
+      "source": "quick-b2-return-20261007/incoming.json",
+      "gate": "/private/tmp/recovery-fourth-admission-c7oo_y3a/gate.json",
+      "meaning": "Consumed Recovery admission; actual failure and cleanup supersede this scheduling state."
     }
   ],
   "dperf05Pure": {
@@ -1144,14 +1151,19 @@
       "ownerHead": "4c0852e6295e64216c8f3b34cfc626db08f06beb",
       "source": "9835e7488dd9b0b44b3afbc285336defdd739e98",
       "packet": "/private/tmp/recovery-browser-fourth9835-m6k6wgf0",
-      "state": "ADMITTED_NOT_STARTED_OWNER_HANDOFF",
+      "state": "FOURTH_CONSUMED_FAILED_CLEANED_ACTUAL_REVIEW_PENDING",
       "budget": {
-        "cumulativeMs": 38364.050667,
-        "nextIntegerTotalMs": 51635,
-        "cleanupIncludedMs": 15000
+        "authoritativePreviousMs": 38364.050667,
+        "thisLateMs": 16519.148875,
+        "cumulativeMs": 54883.199542,
+        "remainingMs": 35116.800458,
+        "nextMaxIntegerTotalMs": 35116,
+        "cleanupIncludedMs": 15000,
+        "originalBudgetElapsedMs": 16515.184833,
+        "earlierOriginalBudgetPreserved": true
       },
-      "runtime": "Original PG+HTTP+Chrome, not independent0PG. No adminenv/gate/reservation or launch created.",
-      "next": "Original panels owner executes once before gate expiry with original command; actual terminal/owned cleanup first, then manager removes exact adminenv and returns window. No automatic retry.",
+      "runtime": "Fourth PG+HTTP+Chrome attempt consumed and actual cleaned; no current holder/gate/reservation.",
+      "next": "Originalowner preserves failed actual evidence, source unchanged pending root review/diagnosis. Remaining budget alone is not new permission.",
       "review": "quick-b2-return-20261007/recovery-fourth-preparation-review.json",
       "admission": {
         "handoff": "recovery-admission-handoff.json",
@@ -1161,8 +1173,11 @@
         "expiresAt": "2026-10-07T05:05:12.543262+00:00",
         "run": "rec9835-20261007-045912-724895",
         "adminEnv": "/private/tmp/recovery-fourth-admission-c7oo_y3a/admin.env",
-        "actualStart": "NOT_STARTED"
-      }
+        "actualStart": "2026-10-07T05:01:10.504Z",
+        "state": "HISTORICAL_CONSUMED_GATE_ENV_DELETED",
+        "envDeletion": "recovery-fourth-return-20261007/admin-env-deletion-receipt.json"
+      },
+      "actualReceipt": "recovery-fourth-return-20261007/return.json"
     }
   },
   "messageSettingsB4Admission": "message-settings-b4-admission.json",
@@ -1265,13 +1280,13 @@
   "recovery4dResult": "recovery01-4d-window-return.json",
   "recovery4dEvidenceReview": "recovery01-4d-actual/root-runtime-review.json",
   "recovery4dFinding": "8ed limitedsource approved, owner000a clean, next8ed declaredpins+rootpreparation reviewed; actual browser remains oldFAIL/no newruntime",
-  "currentWindowEvidence": "quick-b2-return-20261007/quick-b2-failed-review.json",
+  "currentWindowEvidence": "recovery-fourth-return-20261007/return.json",
   "webActualHolder": null,
-  "webGate": "/private/tmp/recovery-fourth-admission-c7oo_y3a/gate.json",
+  "webGate": null,
   "recoveryIdentityDispatch": "recovery01-rec4d-identity-design/dispatch.json",
   "dperf04CurrentPreparation": "544c limited source/preparation approved, final929b HEAD and newboundary/pins verified; PREPARED NOTRUN, no gate/holder/reservation",
   "dperf04PreparationEvidence": "dperf04-544c-prepared/final-binding-verification.json",
-  "webReservation": true,
+  "webReservation": false,
   "recoveryIdentityCandidate": "recovery01-next8ed-prepared/manager-verification.json",
   "latestPersonalPublication": {
     "recordedAt": "2026-10-06T21:28:49.564681+00:00",
@@ -1538,7 +1553,7 @@
     "managerResourceSample": false,
     "noFurtherCandidateAuthorized": true
   },
-  "currentCoordinationAudit": "quick-b2-return-20261007/recovery-admission-observation.json",
+  "currentCoordinationAudit": "recovery-fourth-return-20261007/manager-claim.json",
   "latestLeadResourceIntake": {
     "evidence": "resource-restored-svc07-handoff.json",
     "source": "Lead incoming through root",
@@ -1611,7 +1626,7 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": [],
-  "currentIntake": "quick-b2-return-20261007/incoming.json",
+  "currentIntake": "recovery-fourth-return-20261007/return.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",

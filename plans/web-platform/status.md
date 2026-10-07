@@ -4,7 +4,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T04:56:55.072389+00:00；快速设置第二次页面验证终态、ENG归还与SVC08后继交接入站；仅管理事实更新，未采服务 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T05:03:57.276219+00:00；草稿恢复第四次实际失败、owned清理和私有输入删除已记录；未复采服务 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -21,10 +21,10 @@
 | 本片段交付阶段 | integration |
 | 优先级 | 1 |
 | 当前产出 | 稳定前端的发送、排队和丢回执恢复已通过兼容验收并接入主线；逐消息设置受控组件通过类型、定向行为和4项页面检查后已接入主线；看板时间格式修复已接入主线；架构图固定快照和连线显示修复已接入主线并提供新资产；几何与键盘验收通过，窄屏默认阅读体验留作后继。 |
-| 下一可用交付 | 本机打开Flow与凭据入口已发布，剩说明文档增量待接收；快速设置的类型和组合行为已验证，页面验证被临时文件计量中断，原owner正修验证工具以继续定位键盘选择问题。草稿恢复的下一页面旅程准备已审，即将交由原owner执行已准入的恢复旅程。窄屏图文与时间展示易读性作为后继保留。 |
+| 下一可用交付 | 本机入口已发布，剩说明文档增量待接收；快速设置正修验证工具以继续定位键盘选择问题。草稿恢复页面检查停在附件提示未出现，原owner保留失败等待诊断。窄屏图文与时间展示易读性作为后继保留。 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：本组、ENG、SVC08及X01窗口已实际归还；恢复旅程fresh准入已交原owner，尚未启动。本组暂无实际holder，短时gate与交接见当前窗口。 |
+| 资源协调 | [当前窗口来源](../../docs/evidence/web-platform/resource-window-current.json)：草稿恢复第四次检查已结束并清理，私有输入已精确删除；本组无PG/Chrome/local holder、gate或预约，无自动重试。 |
 | 实现目标 | a5e500136438b197305339cbe0a5e10a196a4317 |
 | 实现范围 | plans/web-platform/plan.md,docs/evidence/web-platform/research.md,docs/evidence/web-platform/publication/README.md |
 | 检查状态 | PASSED a5e500136438b197305339cbe0a5e10a196a4317；管理parser原发布27TODO/0errors、32md384links发布overlay相对断链0、U00–U12/REQ01–45齐、diffcheck0；仅文档检查，不继承c075审批 |

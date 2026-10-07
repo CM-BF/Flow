@@ -1,0 +1,144 @@
+{
+  "recordedAt": "2026-10-07T05:03:57.276219+00:00",
+  "state": "FAILED_CLEANED_RETURNED",
+  "run": "rec9835-20261007-045912-724895",
+  "executionHead": "4c0852e6295e64216c8f3b34cfc626db08f06beb",
+  "source": "9835e7488dd9b0b44b3afbc285336defdd739e98",
+  "actualExit": 1,
+  "runStartedAt": "2026-10-07T05:01:10.504Z",
+  "lateElapsedMs": 16519.148875,
+  "coverage": {
+    "cookieRead": "PASSED",
+    "cookieSseHandshake": "NOT_RUN",
+    "cookieSseDelivery": "PENDING: only handshake is asserted",
+    "textIntentDraft": "FAILED",
+    "materialDraft": "NOT_COMPLETED",
+    "sameKeyTurn": "NOT_RUN",
+    "crossTabCas": "NOT_RUN",
+    "pageOnlyAuthLoss": "NOT_RUN",
+    "csrfOffline": "NOT_RUN",
+    "themes390": "NOT_RUN",
+    "createTwoStage": "PENDING: direct/source only",
+    "queueSteerRecovery": "PENDING: direct/source only",
+    "profileKnowledgeSteeringDraft": "PENDING: direct/source only",
+    "secondCenter": "PENDING: one-center fixture"
+  },
+  "checksPassed": 1,
+  "pngCount": 0,
+  "pageErrors": [],
+  "failure": "textIntentDraft: getByRole(tooltip) saved.txt absent after5s. This run does not prove a root cause or product-wide failure.",
+  "rawDirectory": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895",
+  "outer": "/private/tmp/recovery-rec9835-fourth-parent",
+  "rawCount": 11,
+  "rawBytes": 21906,
+  "sourceReceipts": [
+    {
+      "path": "/private/tmp/recovery-rec9835-fourth-parent/actual-exit.json",
+      "bytes": 15,
+      "sha256": "ca4b50a6aabd8c09a9998c501233e663a1a779dee115f77beed1cc4e481ab5c3"
+    },
+    {
+      "path": "/private/tmp/recovery-rec9835-fourth-parent/parent.stdout.jsonl",
+      "bytes": 753,
+      "sha256": "264c286386be8cd4a968e3664a4a0616ec97b6afc0ee769af931420eba5bbb76"
+    },
+    {
+      "path": "/private/tmp/recovery-rec9835-fourth-parent/parent.stderr.log",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "/private/tmp/recovery-rec9835-fourth-parent/post-cleanup-observation.json",
+      "bytes": 2296,
+      "sha256": "0471816a3f5cbd7810fee502524f19964c131dc4decbd4cc8a224bb6e4bba460"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/supervisor.json",
+      "bytes": 1926,
+      "sha256": "3e212d6e35d4c36e7ae4af84e6223c95b6dd8fd9fe2a0fda0d65d8256abded2c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "008d687ccd9b8eddf8654e8adebfc1bd7a76a2b626ea232b81952a413f919d2f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "dda77418d5cf73b9938b4aacfb132205c56864b5481efd7f063eed3d12c3d7b2"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/budget.json",
+      "bytes": 208,
+      "sha256": "139a823e02f36c47db87ece3eca6b0b1c26d37d29d49e1adb94021eb10f24677"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/browser.json",
+      "bytes": 8168,
+      "sha256": "386a8ff54f7f01f46d7eef540d147b32d9bb9adbf07f11205a5ad9ac4f51bfe4"
+    }
+  ],
+  "cleanup": {
+    "evidenceReadOnly": true,
+    "ownedWorker": 46595,
+    "ownedChrome": 49362,
+    "childExits": [
+      0,
+      0
+    ],
+    "supervisorAllOwnedGroupsAbsent": true,
+    "ownerExactObservationAt": "2026-10-07T05:02:08.082350+00:00",
+    "ownerExactStates": [
+      {
+        "pgid": 46595,
+        "state": "ABSENT_ESRCH",
+        "reportedExitCode": 0
+      },
+      {
+        "pgid": 49362,
+        "state": "ABSENT_ESRCH",
+        "reportedExitCode": 0
+      }
+    ],
+    "scratchAbsent": true,
+    "database": "flow_recovery_62522adcc1694021ac8d27d7c5e96de3",
+    "databaseConfirmedRemoved": true,
+    "databaseConnectionObservations": [
+      0,
+      0
+    ],
+    "remaining": [],
+    "fixtureComplete": true,
+    "errors": [],
+    "limits": "No new process,port,PG or free probe by manager. Child-close/original fixture cleanup and outer terminal are the evidence; no separate per-stream EOF or port-absence artifact was created."
+  },
+  "adminEnvDeletion": {
+    "receipt": "admin-env-deletion-receipt.json",
+    "at": "2026-10-07T05:02:41.226093+00:00",
+    "deleted": true,
+    "exactLstatAbsent": true,
+    "contentRead": false,
+    "onlyExactFile": true
+  },
+  "budget": {
+    "authoritativePreviousMs": 38364.050667,
+    "thisLateMs": 16519.148875,
+    "cumulativeMs": 54883.199542,
+    "remainingMs": 35116.800458,
+    "nextMaxIntegerTotalMs": 35116,
+    "cleanupIncludedMs": 15000,
+    "originalBudgetElapsedMs": 16515.184833,
+    "earlierOriginalBudgetPreserved": true
+  },
+  "independentReview": "Root actual review pending at this manager receipt; no feature approval inferred.",
+  "resourceReturn": {
+    "webPgHolder": null,
+    "webChromeHolder": null,
+    "webLocalHolder": null,
+    "gate": null,
+    "reservation": false,
+    "rootNotifiedImmediatelyAfterEnvDeletion": true,
+    "automaticFifthAttempt": false
+  },
+  "next": "Originalowner preserves failed actual evidence, source unchanged pending root review/diagnosis. Remaining budget alone is not new permission."
+}

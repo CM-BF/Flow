@@ -1,0 +1,50 @@
+{
+  "at": "2026-10-07T05:02:41.226093+00:00",
+  "action": "DELETE_EXACT_ADMIN_ENV_AFTER_ACTUAL_TERMINAL",
+  "path": "/private/tmp/recovery-fourth-admission-c7oo_y3a/admin.env",
+  "identity": {
+    "device": 16777234,
+    "inode": 123504210,
+    "mode": "0o600",
+    "uid": 501
+  },
+  "contentRead": false,
+  "deleted": true,
+  "exactLstatAbsent": true,
+  "retained": [
+    "gate.json",
+    "handoff.json",
+    "admission-observation.json"
+  ],
+  "actualExit": 1,
+  "run": "rec9835-20261007-045912-724895",
+  "window": "FAILED_CLEANED_RETURNED",
+  "sourceReceipts": [
+    {
+      "path": "/private/tmp/recovery-rec9835-fourth-parent/actual-exit.json",
+      "bytes": 15,
+      "sha256": "ca4b50a6aabd8c09a9998c501233e663a1a779dee115f77beed1cc4e481ab5c3"
+    },
+    {
+      "path": "/private/tmp/recovery-rec9835-fourth-parent/post-cleanup-observation.json",
+      "bytes": 2296,
+      "sha256": "0471816a3f5cbd7810fee502524f19964c131dc4decbd4cc8a224bb6e4bba460"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/supervisor.json",
+      "bytes": 1926,
+      "sha256": "3e212d6e35d4c36e7ae4af84e6223c95b6dd8fd9fe2a0fda0d65d8256abded2c"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/database-cleanup.json",
+      "bytes": 516,
+      "sha256": "008d687ccd9b8eddf8654e8adebfc1bd7a76a2b626ea232b81952a413f919d2f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/docs/evidence/wpf-conversation-recovery/browser-runs/rec9835-20261007-045912-724895/fixture-cleanup.json",
+      "bytes": 102,
+      "sha256": "dda77418d5cf73b9938b4aacfb132205c56864b5481efd7f063eed3d12c3d7b2"
+    }
+  ],
+  "noNewProbeOrRuntime": true
+}

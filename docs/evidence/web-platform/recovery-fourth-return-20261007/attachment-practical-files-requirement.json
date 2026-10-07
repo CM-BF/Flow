@@ -1,0 +1,37 @@
+{
+  "recordedAt": "2026-10-07T05:05:57.595925+00:00",
+  "source": "GO explicit user-acceptance requirement relayed by root; accurate summary, not claimed verbatim user quotation.",
+  "mapping": [
+    "WPF-MATURE-03-02",
+    "WPF-MATURE-03-07",
+    "U15"
+  ],
+  "state": "REQUIREMENT_AND_READONLY_INTERFACE_PREPARATION_ONLY",
+  "reportedObservation": {
+    "mainShort": "ef3a6de8",
+    "capability": "text-v1 only .txt,8192 UTF8 bytes per file and total content",
+    "examples": [
+      {
+        "name": "AGENTS.md",
+        "reportedBytes": 18655
+      },
+      {
+        "name": "ConversationThread.tsx",
+        "reportedBytes": 22770
+      }
+    ],
+    "attribution": "GO source observation relayed by root; manager did not measure/read/upload these files."
+  },
+  "userResult": "Common Markdown and code text can be attached according to actual advertised capabilities; upload bytes and model-context budgets are explicit/configurable; selected version and original material persist through Send/Queue to actual runner.",
+  "acceptance": [
+    "One project Markdown file greater than8KiB and one project source file are future known acceptance materials; exact formats/limits/configuration arise from actual consumer contract, not simply raising a constant.",
+    "@file distinguishes authorized workspace/runner files from center uploaded resources, including source/version/access authority.",
+    "Reuse storage/context/attachment interface; separate stored upload byte budget, model context budget and lazy content read. No second upload system, no upload directory falsely presented as a live filesystem.",
+    "Freeze selected version/order/material identity through actual Send and Queue consumption by runner; timeline carries lightweight references, not paths or entire bodies.",
+    "Retain button/drag/keyboard, cross-pane draft isolation, unknown same-identity retry, Recovery and provider-unsupported checks; do not discard established constraints."
+  ],
+  "priority": "After current Recovery/Quick terminal work, practical file capability precedes attachment decoration or plugin-menu coverage. Shared backend scopes coordinate with original Lead; do not wait for all Web work.",
+  "authorizationBoundary": "Metadata registration and read-only interface preparation only. No product implementation, provider call, personal file read/upload, new task/worktree/claim or runtime authorized by this record.",
+  "implementationOwner": "Web co-lead coordinates existing suitable owner after fixed consumer/scope review; no writer assigned or claim amended by this batch.",
+  "sourceReview": "Root real-interface readonly verification pending; this is not product validation or a larger limit selected."
+}
