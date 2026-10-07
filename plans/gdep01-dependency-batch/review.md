@@ -26,3 +26,7 @@ db_transaction_owner：SOURCE_AND_LOCAL_RESULT_AND_PG_PREPARATION_REVIEW_APPROVE
 ## 2026-10-07T22:50:25Z 真实结果独审批准
 
 chatui01_owner/gpt-6-astra：ACTUAL_RESULT_FIDELITY_REVIEW_APPROVED，0 P1/P2，固定729093d8c09f512cb3e6152708614baf68bea57b。原完整结论归档pg-actual-review.json；13源/36证据34389B、512runtime20alias核符，真实8/8及已观察资源闭合通过。此节替代上一历史待审声明。批准不扩main、公开runner写入/native/progression/final JSON16k组合或速度；保留精确回执wall UNKNOWN与SEALED_PUBLIC_RECEIPTS_KEEP边界。审者0工程/PG/写/TMP访问。
+
+## 主线精确接收（非新增review或检查）
+
+main fe26cc936d3d645cd102035a1885394c1a48f680已按中央gdep01-approved-intake.json接收四产品/test叶及直接pg-fixture，共五路径44890B。owner以固定Git/source/WT逐字核符，复用已有独审；没有重跑或扩大review范围。接收来源/时间/限制见main-receipt.json。

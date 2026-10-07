@@ -2,30 +2,30 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 22:52 UTC |
+| 最近更新 / 最近main同步核验 | 2026-10-07 23:53 UTC |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | mika |
 | 任务开工时间 | 2026-10-07T22:03:42Z |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | owner clock工具实际开始；原首段/准备段已封存，均非commit/claim反推；各实际事件见下方；本次PG22:45:32.728788Z启动 |
+| 任务完成时间 | 2026-10-07T23:53:56.155Z |
+| 任务时间来源 | 开工：owner clock实际22:03:42Z；完成：2026-10-07T23:53:56.155Z owner核完既定验收及中央主线收据。main intake观察23:47:33.071Z，main提交精确wall UNKNOWN；非有效工时/非部署时间。见main-receipt.json |
 | 单一status owner / model | b01_bounded_reads / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/goal-dependency-batch |
 | Branch | codex/goal-dependency-batch |
 | 工作基线 / HEAD | base69a71e3d9888c24c8f7c7a5965487f106c065c17；红例3c0697986dfd9456d8afbf322004b97dbd360270；source e1b02772853d08cf1069bc16a8b47b7ca717f633 |
-| 工作树dirty状态 | 产品/运行源STOP；本次actual结果及独审已封存，最终提交push后clean |
-| 工作分支状态 | integration |
+| 工作树dirty状态 | 产品/运行源保持STOP；仅本次主线接收metadata，提交push后clean；少量尾额待root单次聚合事实 |
+| 工作分支状态 | completed |
 | 检查状态 | PASSED: 原16pure/types0；本次真实PG精确8/8，SQL/EXPLAIN/回滚与项目锁竞争通过 |
-| 已集成main状态 / HEAD | 本片未集成；固定base69a71e3d9888c24c8f7c7a5965487f106c065c17 |
+| 已集成main状态 / HEAD | 已集成fe26cc936d3d645cd102035a1885394c1a48f680；中央接收观察2026-10-07T23:47:33.071Z，owner五路径44890B零差核验见main-receipt.json |
 | 实现目标 | bcbce5cca9dbe4b8d504e0b06deed40f0039f765（PG准备；原product e1b0277字节未改） |
 | 实现范围 | apps/server/src/goals/commands.ts, apps/server/src/goals/dependency-content.ts, apps/server/src/goals/dependency-content.test.ts |
 | 阶段 | M2 |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 优先级 | 2 |
-| 当前产出 | 多个短依赖已在真实数据库中验证为一次有界读取，正文及错误顺序保持一致 |
-| 下一可用交付 | 将已验证的依赖批读接入主线 |
-| 当前阻塞 | NONE: 已审待主线接收 |
+| 当前产出 | 主线已使用一次有界读取取得多个短依赖，保持正文、绑定和错误顺序 |
+| 下一可用交付 | 本片段已交付 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，源/局部/准备及ACTUAL_RESULT_FIDELITY_REVIEW_APPROVED，2026-10-07T22:50:25Z |
 | Claim | f2442a2f-357e-42d5-bb3d-da1c261684ab v2 ACTIVE；22:17:28.747Z AMEND COMMITTED，exact6（新增dependency-content.pg.test.ts） |
@@ -35,7 +35,7 @@
 | GDEP01-01 | completed | b01_bounded_reads | 单一内部读取Interface与原commands接线已实现 |
 | GDEP01-02 | completed | b01_bounded_reads | results.md：红1/1→16/16、局部noEmit0；3child完整归还 |
 | GDEP01-03 | completed | b01_bounded_reads | 源/准备独审通过；pg-actual-review-ready.json：真实8/8、SQL/字节/EXPLAIN/事务与项目锁竞争已验，结果独审已批准 |
-| GDEP01-04 | pending | b01_bounded_reads | main未集成 |
+| GDEP01-04 | completed | b01_bounded_reads | main fe26受控接收；5paths44890B与已审源相同，复用16pure/8PG/独审，0重跑；main-receipt.json |
 
 ## 当前权限与时间
 
@@ -43,11 +43,16 @@
 
 ## 架构影响 / Dashboard
 
-新增目标模块内部依赖正文读取Interface，调用者/事务/锁不变；不新增服务/连接/迁移/外部依赖。Lead在实际集成时登记内部读取变化即可。D05 GDEP01待登记；唯一status，不写全局registry。
+新增目标模块内部依赖正文读取Interface，调用者/事务/锁不变；不新增服务/连接/迁移/外部依赖。Lead在实际集成时登记内部读取变化即可。D05 GDEP01登记由Original进行（纯parse三件套/212唯一source已由Root转述）；本段等待Root单次实际聚合核验，当前未声称sourceCurrent通过。唯一status，不写全局registry。
 
 ## 等待记录
 
-22:39:43Z起本次归档READY_CLOSED候选；排队/actual开始由后续真实manager事件记录，不推测此前等待或重置原任务起点。
+| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |
+| --- | --- | --- | --- | --- | --- |
+| GDEP01-W01 | 2026-10-07T22:41:02Z | 2026-10-07T22:45:32.728788Z | 资源 | READY候选等待唯一实际PG窗口；实际START解除 | 本status既有READY事件、pg-actual-results.md |
+| GDEP01-W02 | 2026-10-07T22:52:58.088050Z | 2026-10-07T23:47:33.071Z | 其他 | 已审交付STOP后等待主线接收；中央intake观察解除 | owner原交付STOP消息、中央gdep01-approved-intake.json |
+
+未记录的旧等待起止保留UNKNOWN；source/local、审查及资源等待不合计为有效工时。
 
 ## 本段实质事件
 
@@ -92,3 +97,11 @@ chatui01_owner只读批准729093d8c09f512cb3e6152708614baf68bea57b，ACTUAL_RESU
 ## 主线接收固定入口
 
 main-intake.md列四产品叶/source/base前像与分列checks/review；commands仅同签名import替换，真实execute/native/progression端到端未跑。22:52:17.236558Z fresh f244v2 ACTIVE/exact6。22:51:49.534236Z已在原actual合法尾额归档独审；最后入口使用Root前瞻3MiB封套（含index），不叠cap、不重置已结束actual或任务开始。0新工程/PG/probe；最终pushclean后全部STOP/0待launch，claim保留。
+
+## 主线接收与本task完成（当前事实）
+
+2026-10-07T23:53:56.155Z：本段实际23:52:24Z开始、截止00:02:24Z（2026-10-08），新的3MiB封套含index临时副本；fresh f244v2 ACTIVE/exact6，保留claim不release。main fe26五路径44890B与bcbc/本树逐字匹配；中央收据23:47:33.071Z只作为接收观察，不冒main commit时间。既定GDEP01-01至04完成；上方各段NOT_COMPLETED/未集成/待审均为当时历史，当前由此节和顶表替代。
+
+本段0工程/PG/HTTP/Chrome/provider/部署；原16pure、8PG和独审复用，所有raw/input/源不改。真实execute/native/progression端到端仍未跑，中央接收按commands同签名import及事务/权限/JSON代码零差判断，不冒全端到端验收。dashboard事实待Root一次读取后自然归档，当前无活动child或待launch。
+
+本次仅own-status parser（主线权威parseStatus）读取：errors=[]、human.missing=[]、timing.issues=[]，父FLOW-001/co-lead mika已解析；非产品检查/非实际聚合证明。

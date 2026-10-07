@@ -1,0 +1,96 @@
+{
+  "observedAt": "2026-10-07T23:53:56.155Z",
+  "decision": "OWNER_CONFIRMED_APPROVED_MAIN_INTAKE",
+  "main": "fe26cc936d3d645cd102035a1885394c1a48f680",
+  "mainCommitExactWall": "UNKNOWN",
+  "centralReceipt": {
+    "path": "docs/evidence/i02/gdep01-approved-intake.json",
+    "at": "2026-10-07T23:47:33.071Z",
+    "bytes": 4429,
+    "sha256": "07395c6e1841807a9c5d32404e9d538090318128cf0f3b8be7c3f5d673eeb2dd"
+  },
+  "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+  "rows": [
+    {
+      "path": "apps/server/src/goals/commands.ts",
+      "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+      "bytes": 13111,
+      "sha256": "4752162fbfeebc2b62a912e8faac857b829ad84345ddb762aff9b4720a85ef42",
+      "preimage": {
+        "commit": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
+        "exists": true,
+        "sha256": "66fc56ff48c46bd9f9ebaac51614985d9f9dbbeec31cf161011dd1ff3813ba32"
+      }
+    },
+    {
+      "path": "apps/server/src/goals/dependency-content.ts",
+      "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+      "bytes": 2658,
+      "sha256": "a472ec64b69a84a2ee0c19a80350035cfb8dd57ebebd7673b77b45135f9865d6",
+      "preimage": {
+        "commit": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
+        "exists": false,
+        "sha256": null
+      }
+    },
+    {
+      "path": "apps/server/src/goals/dependency-content.test.ts",
+      "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+      "bytes": 6988,
+      "sha256": "a899a4bc74793903c8ecfb9d1c74303c85f1a5503b12ae0c85c7d25791aa986d",
+      "preimage": {
+        "commit": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
+        "exists": false,
+        "sha256": null
+      }
+    },
+    {
+      "path": "apps/server/src/goals/dependency-content.pg.test.ts",
+      "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+      "bytes": 10967,
+      "sha256": "7e3facdf9b70aaccd418b53514b67fa65a0cd49569d96171e52b22eb07343995",
+      "preimage": {
+        "commit": "69a71e3d9888c24c8f7c7a5965487f106c065c17",
+        "exists": false,
+        "sha256": null
+      }
+    },
+    {
+      "path": "docs/evidence/gdep01-dependency-batch/pg-fixture.ts",
+      "source": "bcbce5cca9dbe4b8d504e0b06deed40f0039f765",
+      "preimage": {
+        "exists": false,
+        "sha256": null
+      },
+      "bytes": 11166,
+      "sha256": "ef9664ce14762e9cf29199d3f85e265af5dabc57310c328e99a1ba453117f4a9"
+    }
+  ],
+  "comparison": "All five source/main/canonical worktree bytes match; 44890 bytes. Selective intake, not source-commit ancestry.",
+  "newEngineeringRuns": 0,
+  "claimLastObserved": {
+    "claimId": "f2442a2f-357e-42d5-bb3d-da1c261684ab",
+    "version": 2,
+    "state": "active",
+    "scopeCount": 6,
+    "action": "Retain; no release authorized."
+  },
+  "taskStart": "2026-10-07T22:03:42Z",
+  "taskCompleted": "2026-10-07T23:53:56.155Z",
+  "completionMeaning": "Owner confirms this registered subtask acceptance and main intake; no personal deployment or public execute/native/progression end-to-end claim.",
+  "validationReuse": "16 pure checks, commands transitive types, 8 real PG checks and result review reused; 0 new engineering tests/PG/provider/service actions.",
+  "limits": [
+    "No public execute/native/progression end-to-end or performance claim.",
+    "PG fixture remains explicitly gated; ordinary full-suite invocation not claimed working.",
+    "Original raw/failures remain once in canonical fixed Git; no copy of 512 runtime inputs.",
+    "No automatic personal deployment."
+  ],
+  "budget": {
+    "newCapBytes": 3145728,
+    "indexAtomicTemporaryBytes": 2296795,
+    "metadataUpperBytes": 65536,
+    "gitAndReceiptReserveBytes": 262144,
+    "prospectiveUpperBytes": 2624475
+  },
+  "dashboard": "Pending root single read after this fixed metadata head; no owner probe."
+}

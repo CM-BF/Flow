@@ -1,6 +1,6 @@
 # GDEP01 主线接收入口
 
-候选已完成源码、局部及单次真实PG结果独审；main 尚未集成。唯一owner b01_bounded_reads / co-lead mika；权威branch codex/goal-dependency-batch。整task开工2026-10-07T22:03:42Z，完整完成仍NOT_COMPLETED。
+候选已完成源码、局部及单次真实PG结果独审；现已由main fe26cc936d3d645cd102035a1885394c1a48f680精确接收，当前回执见main-receipt.json。唯一owner b01_bounded_reads / co-lead mika；权威branch codex/goal-dependency-batch。整task开工2026-10-07T22:03:42Z，完整完成以当前status的owner核验时刻为准；下方接收前原事实保留为历史。
 
 产品源 `bcbce5cca9dbe4b8d504e0b06deed40f0039f765`（原product `e1b02772853d08cf1069bc16a8b47b7ca717f633` 未改），实际执行 `850d61376373eb59df8afdf6004ef7dda030bd10`；结果审查绑定 `729093d8c09f512cb3e6152708614baf68bea57b`，批准归档 `f74e10e710a41ceac66de6f4f44c22712e1b8da2`。本入口最终metadata HEAD由交付消息给出，不自引用提交。
 
