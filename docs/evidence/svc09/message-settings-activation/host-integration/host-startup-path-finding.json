@@ -1,0 +1,24 @@
+{
+  "kind": "SVC09A_READONLY_STARTUP_PATH_FINDING",
+  "at": "2026-10-07T16:00:31.689821Z",
+  "basis": "fixed caller/actual artifact source plus public filesystem metadata; no new service or command probe",
+  "workPATH": "/opt/homebrew/opt/node@24/bin:/usr/bin:/bin",
+  "consumer": {
+    "path": "tools/personal-preview/process.mjs",
+    "artifactSource": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+    "operation": "ownsListener -> execFile(lsof) -> catch returns false"
+  },
+  "lsof": {
+    "path": "/usr/sbin/lsof",
+    "bytes": 306768,
+    "sha256": "b1b9151bbc56f4749890dbe4e533af9a4f8700240ad431a6c9ddf70fe137c165"
+  },
+  "absentPaths": [
+    "/opt/homebrew/opt/node@24/bin/lsof",
+    "/usr/bin/lsof",
+    "/bin/lsof"
+  ],
+  "conclusion": "The fixed fixture PATH cannot resolve the required lsof executable. This is a deterministic caller dependency omission. The original loop did not persist individual lsof errors, so it does not retrospectively prove every observed ready failure cause.",
+  "proposedDelta": "Add only /usr/sbin to the owned fixture work PATH, retain provider isolation and all lifecycle/cleanup rules. Pure direct resolution test; no actual host retry until fixed review/new window.",
+  "originalResultUnchanged": true
+}

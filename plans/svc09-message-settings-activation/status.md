@@ -6,16 +6,16 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T15:48:33.400Z |
+| 更新时间 | 2026-10-07T16:00:31.689821Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 本片段交付阶段 | implementation |
-| 当前产出 | 隔离双槽宿主旅程准备已通过独立复审；固定产物和入口已就绪，个人安装保持不变。 |
-| 下一可用交付 | 等待受控窗口后执行一次隔离宿主旅程，验证两槽生命周期与真实中心领取。 |
-| 当前阻塞 | ACTIVE: 等待真实PG/宿主窗口及现场合计资源门槛；尚未克隆、建库或启动服务。 |
+| 当前产出 | 隔离宿主首次启动失败；所有实际自有进程和连接已结束，失败原件与专用数据保留。 |
+| 下一可用交付 | 修复已定位的隔离入口工具路径遗漏，完成定向验证后交独审；真实双槽旅程仍待后继。 |
+| 当前阻塞 | ACTIVE: center就绪未确认，双槽与mixed领取未进入；原DB/私有目录KEEP，禁止复用本次已消费入口。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
@@ -26,11 +26,11 @@
 | 工作树dirty状态 | 本次仅own plan/evidence准备；提交后以Git状态核对，产品全停写并已归还 |
 | 实现范围 | tools/personal-preview/cli.mjs, tools/personal-preview/environment.mjs, tools/personal-preview/environment.test.mjs, tools/personal-preview/maintenance-host.mjs, tools/personal-preview/maintenance.test.mjs, tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/runner-slots.mjs, tools/personal-preview/runner-slots.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v4；11产品/测试literal于14:37:45.486Z原子归还，仅保留own plan/evidence；[回执](../../docs/evidence/svc09/message-settings-activation/product-return-receipt.json) |
-| Review | APPROVED_FIXED_HOST_PREPARATION；2026-10-07T15:45:43.000Z / Execution Lead；main24c824035的I02/svc09a-host-preparation-delta-review.json，P2已闭合；真实旅程未运行。 |
+| Review | 准备APPROVED；本次实际失败及运行资源归还待唯一结果独审，原准备P2与修复历史保留。 |
 | 检查状态 | 7轮44选择/33不同，最终33不同均通过；原1次夹具失败保留。3444ms/11838B，7组absent/双EOF/exactscratchremoved；[原始与派生口径](../../docs/evidence/svc09/message-settings-activation/validation-summary.json) |
-| 验证限制 | 原33为注入端口/自有文件；artifact只构建/内部import通过。准备原6及本次5均为0PG/host/provider；实际注册、维护、mixed领取和个人激活NOT_RUN。 |
+| 验证限制 | 本次仅clone/新DB marker/合成Web loader与center启动尝试；runner/settings/web未启动。完整宿主/mixed/App/个人/provider仍未验。 |
 | 已集成main状态 | 246ed0f52ca0ec3078f0cd8bddc48c655501a711；main commit UTC2026-10-07T14:36:33Z，Lead已确认main/origin clean。11产品与已审source逐字同；[收据](../../docs/evidence/svc09/message-settings-activation/main-receipt.json)。旧7d1/6c和新cd27/04da均不是设置双槽产物。 |
-| 运行窗口 | 2026-10-07T15:41:14.929848Z本队local已RETURN；新5定向402ms/955B、两组absent/双EOF/exact空scratch removed。原6与build不重跑；actual PG/host未开始。 |
+| 运行窗口 | 15:56:17.907028Z operator reservation，15:56:50.387351Z结束；15:58:29.899259Z实际运行RETURN，DB/private KEEP，0provider。 |
 | 架构影响 | 同一宿主锁与维护CAS内有限legacy/settings二槽已main；工程dashboard架构基线更新由Execution Lead协调，真实部署未发生 |
 | 看板 | 首canonical已登记；本status记录源码片段已main，不声称实际双槽部署 |
 
@@ -49,7 +49,7 @@
 | SVC09A-W02 | UNKNOWN | 2026-10-07T14:32:40.142Z | 审查 | 已固定源码与原件交唯一独审，现限定批准 | I02 svc09a-source-review.json；首次交审UTC未独立记录 |
 | SVC09A-W03 | 2026-10-07T14:39:51.563Z | 2026-10-07T15:13:51.789364Z | 接口 | 15路径assembly及产物准备/窗口现已具备；期间并行own消费者设计，不当作工程耗时 | Lead协调消息与build/actual-admission.json |
 | SVC09A-W04 | 2026-10-07T15:37:00.000Z | 2026-10-07T15:45:43.000Z | 审查 | 独立期限修复与5定向已获最终复审；期间有实际源码/检查，不当作纯资源等待 | I02 svc09a-host-preparation-review.json 与prepare-local-03原件 |
-| SVC09A-W05 | 2026-10-07T15:46:59.000Z | UNKNOWN | 资源 | 已批准候选等待真实PG/宿主窗口与现场floor；未预占、未clone/建库/启动；期间只读准备准入材料 | Lead安排及host-fresh-readiness.json |
+| SVC09A-W05 | 2026-10-07T15:46:59.000Z | 2026-10-07T15:56:01.614895Z | 资源 | 窗口/floor与PG余量现已fresh满足，等待以本次START事件结束；此前仅只读准备 | Lead安排及host-fresh-readiness.json |
 
 原首次只读子agent被cap拒绝，未重试；本owner继续实施。首轮 reporter 为spec，result计数null，原raw保留20/19/1；派生记录明确纠正口径，不回写旧原件。后续各轮只选新边界/受影响例。临时峰值未采样。完整真实资格、模型与个人部署仍开放。
 
@@ -80,3 +80,7 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T15:44:26.777Z：唯一 REQUEST_CHANGES（main729d33836，SVC09A-HOST-P2-01）已在原own scope修复。新入口host-supervise复用OPS14独立监督整个operator，215s+0.5s TERM+2s reap；只拥有caller PID，缺服务phase证明继续UNKNOWN_KEEP，不能自动归还共享资源。source ccf7d057659d99be9c5d42fa035af352eaf647cb；5/5新定向、402ms/955B、两组收尾与same-identity空scratch删除如实。此前原6/6与STATIC_ONLY是历史，未回写；本轮不重跑build/import。最终packet待一次复审；不预占PG/host。
 
 2026-10-07T15:48:33.400Z：唯一APPROVED_FIXED_HOST_PREPARATION已收，P2闭合，引用主线24c824035原件不复制。准入前16source/6runtime及原KEEP根/3文件身份核符，两个once namespace不存在；[现场准备](../../docs/evidence/svc09/message-settings-activation/host-integration/host-fresh-readiness.json)明确尚无actual window/latest floor/PG采样，不能当运行准入。217.5s caller外限及独立服务/DB UNKNOWN_KEEP边界不变。
+
+2026-10-07T15:56:01.614895Z：唯一已审host入口实际准入，完整floor16154558464B；free20270743552B，PG100上限/10已用/90可用，满足26+16。fixed16源/6runtime与4KEEP身份一致，2namespace不存在；0个人/provider/build。见[准入](../../docs/evidence/svc09/message-settings-activation/host-integration/host-actual-admission.json)，结果尚未判定。
+
+2026-10-07T16:00:31.689821Z：R1原件封存见[失败结果](../../docs/evidence/svc09/message-settings-activation/host-integration/HOST-RESULT.md)。公共系统工具`/usr/sbin/lsof`不在fixture工作PATH是已核入口缺项；原ready循环未保存单次exec错误，不能倒造原运行首因。依原授权只修own caller与直接例，不改产物/个人/产品；新实际旅程需独审及另协调窗口。

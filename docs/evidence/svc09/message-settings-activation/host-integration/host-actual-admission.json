@@ -1,0 +1,77 @@
+{
+  "kind": "SVC09A_ACTUAL_HOST_ADMISSION",
+  "at": "2026-10-07T15:56:01.614895Z",
+  "event": "START_AUTHORIZED_ENTRY",
+  "source": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
+  "preparation": {
+    "fixedRef": "bc8999dbab2dfa36d1c25adcf05b5b14da40032c",
+    "path": "host-preparation.json",
+    "bytes": 29453,
+    "sha256": "facbe315b491f6e87e248dd95157ee625f7aed9d12c844bf6d8baf10d76aab5f"
+  },
+  "review": {
+    "fixedRef": "24c82403571c3a95a7c3c6f5849adcb143ffda5b",
+    "path": "docs/evidence/i02/svc09a-host-preparation-delta-review.json",
+    "at": "2026-10-07T15:45:43.000Z",
+    "decision": "APPROVED_FIXED_HOST_PREPARATION"
+  },
+  "claim": {
+    "id": "8f4071a0-afd5-47bf-b9d0-ba611d87a7b0",
+    "version": 4,
+    "freshAt": "2026-10-07T15:55:14.851Z",
+    "state": "active",
+    "scopes": [
+      "docs/evidence/svc09/message-settings-activation",
+      "plans/svc09-message-settings-activation"
+    ]
+  },
+  "windowInputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/resource-window-current.json",
+      "sha256": "3ae8fd73684fcbf21c45e7f00352bc4ebf9fd81b143ead862c242e2fce9a6992",
+      "at": "2026-10-07T15:52:51.612Z",
+      "state": "SVC09A_SOLE_NEXT_RESERVED_NOT_STARTED"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/docs/evidence/web-platform/host-i01-newpair-queue-20261007/current.json",
+      "sha256": "e52231c7bf0c82ce3c1a8ff96ad41f0b907ebb533d5cfa3d9e82be1eece32b14",
+      "at": "2026-10-07T15:52:51.612Z",
+      "state": "SVC09A_SOLE_NEXT_RESERVED_NOT_STARTED"
+    }
+  ],
+  "floorBytes": 16154558464,
+  "freeBytes": 20270743552,
+  "pins": {
+    "sources": 16,
+    "runtime": 6,
+    "mismatches": 0,
+    "retainedIdentities": 4
+  },
+  "namespacesAbsent": true,
+  "PG": {
+    "at": "2026-10-07T15:55:34.551Z",
+    "maximum": 100,
+    "observedConnections": 10,
+    "available": 90,
+    "ownPeak": 26,
+    "managementMargin": 16,
+    "preflightPoolClosed": true
+  },
+  "adminSource": {
+    "file": "/tmp/flow-coordination.env",
+    "key": "FLOW_COORDINATION_DATABASE_URL",
+    "transformation": "URL.pathname=/postgres; require127.0.0.1; in-memory FLOW_SVC09A_ADMIN_URL only",
+    "valuePersisted": false
+  },
+  "entry": [
+    "/opt/homebrew/Cellar/python@3.13/3.13.3_1/Frameworks/Python.framework/Versions/3.13/bin/python3.13",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/host-supervise.py",
+    "--run-host-once"
+  ],
+  "outerSeconds": 217.5,
+  "selectedJourneys": 1,
+  "providerCalls": 0,
+  "personalIO": 0,
+  "builds": 0,
+  "oldKEEP": "unchanged"
+}

@@ -1,0 +1,66 @@
+{
+  "kind": "SVC09A_HOST_R1_FAILED_RESULT",
+  "at": "2026-10-07T16:00:31.689821Z",
+  "source": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
+  "preparation": "bc8999dbab2dfa36d1c25adcf05b5b14da40032c",
+  "artifactId": "2515a9069f07f1c6253e4eeb647ec3a105bca1fa3c9561f7bb11dca195bc3bd4",
+  "artifactSource": "098b0d51512dfaa04c30ca7cbe103684720fe29f",
+  "selectedJourneys": 1,
+  "passedJourneys": 0,
+  "admissionAt": "2026-10-07T15:56:01.614895Z",
+  "operatorReservationAt": "2026-10-07T15:56:17.907028Z",
+  "outerFinishedAt": "2026-10-07T15:56:50.387351Z",
+  "outerElapsedMs": 32568,
+  "outerExit": 1,
+  "primary": {
+    "phase": "host-consumer",
+    "code": "START_UNCONFIRMED_CHECK_STATUS",
+    "storedInner": {
+      "role": "center",
+      "phase": "ready",
+      "code": "SERVICE_START_UNCONFIRMED",
+      "at": "2026-10-07T15:56:50.179Z"
+    }
+  },
+  "observedScope": {
+    "clone": "PASS",
+    "ownedDBMarker": "created",
+    "syntheticWeb": "loader-only; NOT_APP/NOT_PERSONAL",
+    "actualCenter": "spawned, readiness unconfirmed, stopped",
+    "runner": "NOT_STARTED",
+    "settings": "NOT_STARTED",
+    "web": "NOT_STARTED",
+    "mixedTasks": 0,
+    "mixedAttempts": 0,
+    "providerCalls": 0
+  },
+  "rawOutput": {
+    "phaseReportsObservedBytes": 744,
+    "phaseReportsRetainedBytes": 744,
+    "outerObservedBytes": 686,
+    "note": "Outer stdout repeats structured phase summary; counts are separate capture streams, not distinct facts."
+  },
+  "closure": {
+    "operatorOwned": "caller PID only, absent/dualEOF/no signals",
+    "phaseGroups": "clone/work/cleanup absent/dualEOF/no signals; early EPERM observations preserved",
+    "actuallyRegisteredServices": 1,
+    "centerStopped": true,
+    "centerExitCode": 0,
+    "centerStderrBytes": 0,
+    "pendingRecords": 0,
+    "postFailureConnections": [],
+    "postFailureAdminClosed": true,
+    "runtimeReturnAt": "2026-10-07T15:58:29.899259Z",
+    "DB": "KEEP",
+    "privateDirectory": "KEEP",
+    "originalMayDrop": false,
+    "originalCleanupConfirmed": false,
+    "originalComplete": false
+  },
+  "limitations": [
+    "No two-slot lifecycle, registry/publication, mixed claim or App/personal validation completed.",
+    "The original success-only DROP gate remains false; runtime return is distinct from deleting retained storage.",
+    "No host retry, provider call, personal IO or artifact rebuild.",
+    "No lsof execution result was captured by the original ready loop; startup cause remains unconfirmed beyond the saved ready failure."
+  ]
+}

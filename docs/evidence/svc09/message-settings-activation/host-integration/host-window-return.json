@@ -1,0 +1,102 @@
+{
+  "kind": "SVC09A_FAILED_JOURNEY_RESOURCE_RETURN",
+  "at": "2026-10-07T15:58:29.899259Z",
+  "actualOuterFinishedAt": "2026-10-07T15:56:50.387351Z",
+  "primary": {
+    "code": "START_UNCONFIRMED_CHECK_STATUS",
+    "inner": {
+      "role": "center",
+      "phase": "ready",
+      "code": "SERVICE_START_UNCONFIRMED",
+      "at": "2026-10-07T15:56:50.179Z"
+    }
+  },
+  "runtimeReturned": true,
+  "allActuallyRegisteredServicesStopped": true,
+  "actuallyRegisteredRoles": [
+    "center"
+  ],
+  "pendingRecords": [],
+  "notStarted": [
+    "runner",
+    "runner-settings",
+    "web"
+  ],
+  "processObservations": [
+    {
+      "pid": 70999,
+      "pidReturncode": 1,
+      "pidRows": "",
+      "groupReturncode": 1,
+      "groupRows": "",
+      "stderrBytes": 0
+    },
+    {
+      "pid": 75420,
+      "pidReturncode": 1,
+      "pidRows": "",
+      "groupReturncode": 1,
+      "groupRows": "",
+      "stderrBytes": 0
+    },
+    {
+      "pid": 92024,
+      "pidReturncode": 1,
+      "pidRows": "",
+      "groupReturncode": 1,
+      "groupRows": "",
+      "stderrBytes": 0
+    },
+    {
+      "pid": 86509,
+      "pidReturncode": 1,
+      "pidRows": "",
+      "groupReturncode": 1,
+      "groupRows": "",
+      "stderrBytes": 0
+    }
+  ],
+  "closureEvidence": {
+    "operatorScope": "childPidOnly; not service evidence",
+    "workAndCleanupGroups": "absent with dualEOF in original OPS14 reports",
+    "center": {
+      "at": "2026-10-07T15:56:50.224Z",
+      "nonce": "92594e61-3a03-4b19-b906-169f8897a0e8",
+      "code": 0,
+      "signal": null,
+      "stderr": {
+        "bytes": 0,
+        "observedBytes": 0,
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "truncated": false,
+        "complete": true
+      }
+    },
+    "stateStartCleanup": [
+      {
+        "role": "center",
+        "state": "stopped"
+      }
+    ],
+    "stateStartEvidenceErrors": []
+  },
+  "database": {
+    "name": "flow_preview_b24408498cd58b4b45ba2328",
+    "oid": 1328173,
+    "connections": [],
+    "adminPoolClosed": true,
+    "disposition": "KEEP_NO_DROP"
+  },
+  "privateDirectory": {
+    "path": "/private/tmp/flow-svc09a-host-yv1h6s2n",
+    "dev": "16777234",
+    "ino": "124278793",
+    "disposition": "KEEP"
+  },
+  "originalCleanupConfirmed": false,
+  "originalMayDrop": false,
+  "distinction": "Only one actual center was started; eight generations were the unachieved success condition, not eight live processes. No original failure rewritten. Runtime window returned, retained bytes/db remain in future floor.",
+  "providerCalls": 0,
+  "operatorReplays": 0,
+  "personalIO": 0
+}

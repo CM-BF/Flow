@@ -1,0 +1,177 @@
+{
+  "kind": "SVC09A_HOST_R1_RESULT_BINDINGS",
+  "at": "2026-10-07T16:00:31.689821Z",
+  "source": "ccf7d057659d99be9c5d42fa035af352eaf647cb",
+  "preparation": {
+    "target": "bc8999dbab2dfa36d1c25adcf05b5b14da40032c",
+    "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-preparation.json",
+    "bytes": 29453,
+    "sha256": "facbe315b491f6e87e248dd95157ee625f7aed9d12c844bf6d8baf10d76aab5f"
+  },
+  "inheritedBuildResult": {
+    "path": "build/result-manifest.json",
+    "bytes": 7819,
+    "sha256": "329422ddc4a4c663c103c62834e7c19d888fe1a645cf9908971a2db648baf888"
+  },
+  "bindings": [
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-actual-admission.json",
+      "bytes": 2723,
+      "sha256": "eb9ae0650bbd02579cb5c483d454aff7a346fb9fa5b31274dee5c93fe031e31a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-post-failure-database.json",
+      "bytes": 394,
+      "sha256": "bf7d215f7218406221978df64f391dcbbd1ea25467443c382f3e479f74034c1c"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-window-return.json",
+      "bytes": 2608,
+      "sha256": "8eb6b15c24f8a46dee7535017431da44ad4bdf50156cb1a6490671d96162475d"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-result-analysis.json",
+      "bytes": 2509,
+      "sha256": "a03fe22b646260c03905628d7d6de9360fb15f1ca62d1f25ff312d4b143e294b"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/HOST-RESULT.md",
+      "bytes": 1053,
+      "sha256": "7e3ce2f11fbcb6001be286388ba879337dc4f4d125ad38a3ee75709d9a8aa636"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-startup-path-finding.json",
+      "bytes": 1248,
+      "sha256": "80726e7adb08df3a362b7e4ec611b7c6785fcf67225804bb669e1a25981c0437"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/host-outer-once/outer-report.json",
+      "bytes": 1948,
+      "sha256": "9fb2cf3326318cbe09d24f06531db838878ccefff0d05c56921a619be8fe963e"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/cleanup-outer.json",
+      "bytes": 946,
+      "sha256": "f7925158203740906af8cc4cded30eaeb542b4521b359aa51a6e216265f66483"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/clone-outer.json",
+      "bytes": 849,
+      "sha256": "98dea9bac6c18fc098941f0e9e5072bfb1df5e261060a5630ddbbbb9aa573e48"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/failure-center-exit.json",
+      "bytes": 253,
+      "sha256": "a47ff206466201a919c2a768ff23368e8bc20b5494f7df116fe285178a984d2a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/failure-startup-center-92594e61-3a03-4b19-b906-169f8897a0e8.json",
+      "bytes": 322,
+      "sha256": "bb4cbc6cb1dadf7315e0fc5ab8960ba2d16a5068f166e4d2a754f26eb43b4859"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/failure-startup-center-92594e61-3a03-4b19-b906-169f8897a0e8.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/failure-state.json",
+      "bytes": 1287,
+      "sha256": "07d5b8e533a8501a9c421686316970379309ce028f16637c1cd400662c29eba9"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/owned-root.json",
+      "bytes": 150,
+      "sha256": "c7423b1916ce9eba248d0283b92853be33032c8390c5b3f31de872569da07a67"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/records/cleanup-01-registered-processes-stopped.json",
+      "bytes": 277,
+      "sha256": "4ebd0467a4f692b5c881cf18a21a1ab0917f1560e12a112e8bb807d795a00a12"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/records/cleanup-02-drop-admission.json",
+      "bytes": 172,
+      "sha256": "03d22d0b62726a6ec720d0b821684534c61e7abb0516be3f90775ec44f807fd5"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/records/cleanup-03-cleanup-disposition.json",
+      "bytes": 309,
+      "sha256": "610328dfd25885ed9ede175b7dc30d46e746ba584d9de1aa0e9f704be21e9508"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/records/cleanup-result.json",
+      "bytes": 221,
+      "sha256": "75d6320d5d1a50756407a0943c6f197c73bc21dc20da5f0986ba5ca9d4c22657"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/records/work-01-database-create-intent.json",
+      "bytes": 637,
+      "sha256": "ed687ab2130fec428237e33a8c1860ceeef70bc6f3a481b0a323d0832ef99d55"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/records/work-02-pg-capacity.json",
+      "bytes": 454,
+      "sha256": "2ba2a12b85ebfa826a7bba12573273617ff556dba7f25c74c724dec4bf523adc"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/records/work-03-database-created.json",
+      "bytes": 619,
+      "sha256": "cfd87ebd5b98ad2897d9cf053342183225f14250773b9099ab372978339f6dfa"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/records/work-04-database-marked.json",
+      "bytes": 619,
+      "sha256": "a6287aaf47481076cffb9041b3b292dc74b771e78e5edf5660752426fc4769cf"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/records/work-05-setup-pool-closure.json",
+      "bytes": 464,
+      "sha256": "1ec174323abe7ad226cfe4440ba10e5be56107902cadd2aa0545a8fda6afa6a4"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/records/work-06-synthetic-web-loader.json",
+      "bytes": 908,
+      "sha256": "6cae80e5380a9acd4502f184dad0907ddccaa59ce88a4e6f5923b5198999a5aa"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/records/work-07-before-start.json",
+      "bytes": 572,
+      "sha256": "d5ef62fd631b5839f2cf9283319300d78005118f05a5322c432bc2ea4e623496"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/records/work-08-work-closure.json",
+      "bytes": 322,
+      "sha256": "6aa74cabe548a7e99f54a8fe7e86913e00f7c0026e223e146d309a3b992505a0"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/records/work-outer.json",
+      "bytes": 323,
+      "sha256": "fa4883f571d83992aaec304bfdc97c92c7a282b6a559d3cb616f022fb321fbf0"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/records/work-result.json",
+      "bytes": 241,
+      "sha256": "03a330a0ff82d48f5692c5d11d39bc8e40219422a62cbb40c40600b14ea6ae5a"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/reservation.json",
+      "bytes": 1170,
+      "sha256": "1e5819c4846e3e73447807185117432da9127483faee3f41a0fbada98427dd7e"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/result.json",
+      "bytes": 854,
+      "sha256": "022391f48ca86962e1f134c7b4789531a5c02e55621985aee1bc2923674b7f5c"
+    },
+    {
+      "path": "docs/evidence/svc09/message-settings-activation/host-integration/actual-host-once/work-outer.json",
+      "bytes": 968,
+      "sha256": "799dd68f6f6b9112a354f93a8d27fde67bbc3bed681af4d6861719b6f5c32b53"
+    }
+  ],
+  "count": 31,
+  "bytes": 25420,
+  "oldRawUnmodified": true,
+  "noWholeArtifactRehash": true
+}
