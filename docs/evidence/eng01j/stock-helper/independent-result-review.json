@@ -1,0 +1,42 @@
+{
+  "at": "2026-10-07T05:48:53.111538+00:00",
+  "reviewer": "astra_ultra_execution_lead / gpt-6-astra",
+  "target": "24ef5be77fcc0bfb4ee32fa98c53d653c2920427",
+  "result": "b632c2d9ef544ecc59b78f36dd786bcdae051a13",
+  "manifestSha256": "866f607e1686e031d1b9e164cb212e6e03cf6ec66f2bb8e0572a39abf97446d2",
+  "conclusion": "APPROVED_RESULT_FIDELITY_FAILED_NATIVE_STARTUP",
+  "findings": [],
+  "verified": {
+    "fixedCurrentBindings": 44,
+    "installedEntries": 2,
+    "hashErrors": [],
+    "originalUnchanged": 21,
+    "completeEntryAndRawRead": true
+  },
+  "facts": {
+    "originalPreExecFailure": "SHIM_FD_LIMIT_UNKNOWN/native0",
+    "newFDControl": true,
+    "newNativeLaunches": 1,
+    "newNativeExit": -6,
+    "semanticCases": 0,
+    "secondHelper": "NOT_RUN",
+    "rawGuardPageDiagnostic": "Rust std stack_overflow.rs526/EINVAL; root cause unknown",
+    "elapsedMs": [
+      263,
+      467
+    ],
+    "cleanup": "Both checkpoints durable before exact owned scratch removal; five groups total absent and dualEOF"
+  },
+  "limits": [
+    "FD control proves composed OPS14→shim→dummy descriptor result, not which layer independently closed an inherited FD.",
+    "Native initial exec failed before confirmed helper result; not proof every stock route is incompatible or one specific policy rule caused failure.",
+    "No production policy/grant change, no provider/app-server or user service operation.",
+    "Only local diagnosis candidate follows; no automatic replay, sandbox disabling or permission expansion."
+  ],
+  "reviewerExecution": {
+    "tests": 0,
+    "PG": 0,
+    "provider": 0,
+    "personalOperations": 0
+  }
+}

@@ -26,3 +26,9 @@
 ## 新段实际结果（2026-10-07T05:46:27.702748+00:00）
 
 source 24ef5be77fcc0bfb4ee32fa98c53d653c2920427，outer1、467ms，FD对照PASS。固定binary已真实启动，但Rust初始化报告guard page allocation EINVAL并SIGABRT（-6），stdout空；不能确认已处理helper请求。第二helper未启；两个文件仍0。3组最终absent/双EOF，raw1468B，私有末采1199B，先checkpoint再exact目录删除。这里只证明原策略下该固定binary本次初始化失败，具体原因未知；不将其直接归因某条sandbox规则、不修改原5产品、不自动重跑。[分析](fd-fix-analysis.json)/[原件](run-fd-fix/result.json)。
+
+## 单名称页大小对照新段
+
+Lead已授权`--run-pagesize`：exclusive run-pagesize目录，总15秒（所有准备/编译/渲染/子进程/收尾共用同截止），原64KiB raw/1MiB scratch/fresh门槛不变。原run-once/run-fd-fix未改。只改本evidence入口，生产policy零变；新增policy唯一行为许可为`sysctl-read`精确`hw.pagesize`。禁网络/派生/其它exec及写入范围全部保留。
+
+实际执行顺序：一次tiny C编译≤2秒，一次Node渲染C/native两份基础policy≤1.5秒；C在原策略/单许可策略各≤1秒输出sysconf/getpagesize+errno。只有双查询由EPERM/EACCES下-1恢复为相同正2次幂页大小，才进入最多2个stock helper（每项≤3秒，首失败即停）。末2秒给证据/清理，每次另扣.5秒TERM/reap；未启动部分不补跑。各原始输出预算4+8+1+1+20+20=54KiB；总raw64KiB，私有目录末采如实，不冒硬配额。

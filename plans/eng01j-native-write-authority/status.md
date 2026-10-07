@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T05:46:27.702748+00:00 |
+| 最近更新 | 2026-10-07T05:53:34.722046+00:00 |
 | Plan | [plan.md](plan.md) |
 | 任务层级 | 子task |
 | 所属大task | [ENG-001](../../../engineering-delivery/plans/eng01-engineering-delivery/plan.md) |
@@ -13,7 +13,7 @@
 | 工作基线 / HEAD | ee98e65c147cf2ef28ccf0f519952f60d56e9d4b / 产品 471b1d8b7b19d53e7c7e87efc525e9c193c5242e，R1仅两专测修复，生产三源保持原固定 |
 | 工作树dirty状态 | 本提交后clean |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 实现目标 | 471b1d8b7b19d53e7c7e87efc525e9c193c5242e |
 | 实现范围 | apps/runner/src/engineering/native-authority.ts, apps/runner/src/engineering/native-authority.test.ts, apps/runner/src/engineering/native-authority-darwin.ts, apps/runner/src/engineering/native-authority-darwin.test.ts, apps/runner/src/engineering/fixtures/native-authority-canary.c |
 | 检查状态 | PASSED 471b1d8b7b19d53e7c7e87efc525e9c193c5242e；4个不同局部检查分轮；R1正常1pass/3skip、显式4/4、focused types0；syscall继承FD缺口保留；[原始记录](../../docs/evidence/eng01j/local/README.md) |
@@ -63,3 +63,5 @@ stock helper 后继实施开始 2026-10-07T05:41:51.405470+00:00；Lead已授权
 helper一次段结束 2026-10-07T05:42:51.508674+00:00，263ms/outer1/两组absent，原raw与checkpoint见[结果](../../docs/evidence/eng01j/stock-helper/result-analysis.json)。首失败发生在shim，native helper0次；不复投，不据此推断native兼容。全部私有资源正常收尾。本次封包时间2026-10-07T05:43:52.515343+00:00。
 
 新有限段 2026-10-07T05:45:25.228184+00:00→2026-10-07T05:45:25.694891+00:00，467ms/outer1/nativeSIGABRT；FD对照通过，helper语义结果0个，第二项未执行。3组absent/双EOF、checkpoint后exact目录正常删除；原263ms前置失败保持，0PG/provider。没有具体policy归因或完整native工程验收。后继结果封包2026-10-07T05:46:27.702748+00:00。
+
+2026-10-07T05:53:02.370229+00:00：两轮结果获独立APPROVED_RESULT_FIDELITY_FAILED_NATIVE_STARTUP，只确认原失败/清理保真。Lead授权原evidence新15秒页大小只读对照段，若对照不成立/首stock失败即停；原5产品不改，仍无真实app-server/writeAuthority验收。

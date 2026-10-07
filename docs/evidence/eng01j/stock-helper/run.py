@@ -97,18 +97,19 @@ print(json.dumps({'extraFdAbsent':absent,'stdinReadonly':fcntl.fcntl(0,fcntl.F_G
     os.execve('/usr/bin/sandbox-exec', ('/usr/bin/sandbox-exec', '-f', str(scratch/'policy.sb'), str(BINARY), '--codex-run-as-fs-helper'), dict(os.environ))
 
 
-def run(fixed_fd=False):
+def run(fixed_fd=False, pagesize=False):
     started = time.monotonic()
     # No persistence in the deadline handler. OPS14 receives the remaining work
     # budget; this guard bounds parent preparation/reporting too. Unknown keeps.
     def deadline(_signum, _frame):
         os._exit(124)
     signal.signal(signal.SIGALRM, deadline)
-    signal.setitimer(signal.ITIMER_REAL, 10)
-    out = HERE / ('run-fd-fix' if fixed_fd else 'run-once')
+    total_seconds = 15 if pagesize else 10
+    signal.setitimer(signal.ITIMER_REAL, total_seconds)
+    out = HERE / ('run-pagesize' if pagesize else 'run-fd-fix' if fixed_fd else 'run-once')
     out.mkdir()  # exclusive; never replays this invocation
     summary = {'startedAt': utc(), 'providerCalls': 0, 'PG': 0, 'cases': [], 'primaryFailure': None,
-               'cleanup': {'state': 'unknown', 'removed': False}, 'limits': {'totalSeconds':10,'rawBytes':65536,'scratchBytes':1048576}}
+               'cleanup': {'state': 'unknown', 'removed': False}, 'limits': {'totalSeconds':total_seconds,'rawBytes':65536,'scratchBytes':1048576}}
     scratch = None
     identity = None
     reports = []
@@ -119,6 +120,8 @@ def run(fixed_fd=False):
             summary['primaryFailure'] = {'code':'NOT_RUN_RESOURCE_GATE', 'freeBytes':free}
             return finish(out, summary, started)
         inputs = {str(p): {'bytes':p.stat().st_size, 'sha256':digest(p)} for p in EXPECTED}
+        if pagesize:
+            inputs[str(HERE/'page-size.c')] = {'bytes':(HERE/'page-size.c').stat().st_size,'sha256':digest(HERE/'page-size.c')}
         if any(inputs[str(p)]['sha256'] != expected for p, expected in EXPECTED.items()):
             raise RuntimeError('FIXED_INPUT_CHANGED')
         binary_identity = file_identity(BINARY)
@@ -141,7 +144,7 @@ def run(fixed_fd=False):
         def invoke(label, argv, limit, maximum):
             # Leave two seconds for final durable reporting/cleanup, and .5s for
             # this module's TERM/reap. No child starts after the total allowance.
-            remaining = started + 7.5 - time.monotonic()
+            remaining = started + total_seconds - 2.5 - time.monotonic()
             if remaining <= 0.1:
                 raise RuntimeError('NO_CHILD_BUDGET_REMAINING')
             report = module.supervise(module.Launch(tuple(argv), str(scratch), env, module.Ownership.NEW_CHILD_SESSION),
@@ -174,8 +177,38 @@ def run(fixed_fd=False):
             if not summary['fdControl']['passed']:
                 raise RuntimeError('FD_CONTROL_FAILED')
 
-        render = "import {createDarwinWriteProfile} from " + json.dumps(POLICY.as_uri()) + "; process.stdout.write(createDarwinWriteProfile({root:process.argv[1],executable:process.argv[2],writableFile:process.argv[1]+'/calculator.mjs'}));"
-        policy = invoke('policy', (NODE, '--input-type=module', '-e', render, str(scratch), str(BINARY)), 4096, 1.5)
+        if pagesize:
+            canary = scratch/'page-size'
+            invoke('compile', ('/Library/Developer/CommandLineTools/usr/bin/clang','-isysroot','/Library/Developer/CommandLineTools/SDKs/MacOSX26.0.sdk','-std=c11','-Wall','-Wextra','-Werror','-Os','-fno-modules',str(HERE/'page-size.c'),'-o',str(canary)), 4096, 2)
+            render = "import {createDarwinWriteProfile as profile} from " + json.dumps(POLICY.as_uri()) + "; const make = executable => profile({root:process.argv[1],executable,writableFile:process.argv[1]+'/calculator.mjs'}); process.stdout.write(JSON.stringify({control:make(process.argv[2]),native:make(process.argv[3])}));"
+            policies = json.loads(invoke('policy', (NODE,'--input-type=module','-e',render,str(scratch),str(canary),str(BINARY)), 8192, 1.5))
+            permission = b'(allow sysctl-read (sysctl-name "hw.pagesize"))\n'
+            values = {}
+            for label, addition in [('pagesize-base',b''),('pagesize-read',permission)]:
+                profile = policies['control'].encode()+addition
+                path = scratch/(label+'.sb')
+                persist(path, profile)
+                persist(out/(label+'.sb'), profile)
+                value = json.loads(invoke(label, ('/usr/bin/sandbox-exec','-f',str(path),str(canary)), 1024, 1))
+                values[label] = value
+                persist(out/(label+'.facts.json'), value)
+            before, after = values['pagesize-base'], values['pagesize-read']
+            size = after.get('sysconf')
+            supported = (before.get('sysconf') == -1 and before.get('getpagesize') == -1
+                         and before.get('sysconfErrno') in (errno.EPERM,errno.EACCES)
+                         and before.get('getpagesizeErrno') in (errno.EPERM,errno.EACCES)
+                         and type(size) is int and 0 < size <= 1048576 and size & (size-1) == 0
+                         and after.get('getpagesize') == size
+                         and after.get('sysconfErrno') == 0 and after.get('getpagesizeErrno') == 0)
+            summary['pageSizeControl'] = {'supported':supported,'values':values,'onlyPermissionAdded':permission.decode().strip()}
+            persist(out/'pagesize-control.json', summary['pageSizeControl'])
+            if not supported:
+                raise RuntimeError('PAGE_SIZE_HYPOTHESIS_NOT_SUPPORTED')
+            policy = policies['native'].encode()+permission
+            persist(out/'native-base-policy.sb',policies['native'].encode())
+        else:
+            render = "import {createDarwinWriteProfile} from " + json.dumps(POLICY.as_uri()) + "; process.stdout.write(createDarwinWriteProfile({root:process.argv[1],executable:process.argv[2],writableFile:process.argv[1]+'/calculator.mjs'}));"
+            policy = invoke('policy', (NODE, '--input-type=module', '-e', render, str(scratch), str(BINARY)), 4096, 1.5)
         persist(scratch/'policy.sb', policy)
         persist(out/'policy.sb', policy)
         for label, filename, expected_status in [('allowed','calculator.mjs','ok'),('denied','baseline.txt','error')]:
@@ -235,8 +268,8 @@ def finish(out, summary, started):
 
 
 if __name__ == '__main__':
-    if sys.argv[1:] in (['--run'], ['--run-fd-fix']):
-        raise SystemExit(run(sys.argv[1] == '--run-fd-fix'))
+    if sys.argv[1:] in (['--run'], ['--run-fd-fix'], ['--run-pagesize']):
+        raise SystemExit(run(sys.argv[1] == '--run-fd-fix', sys.argv[1] == '--run-pagesize'))
     if len(sys.argv) == 5 and sys.argv[1] == 'exec-dummy':
         exec_only(Path(sys.argv[2]), Path(sys.argv[3]), int(sys.argv[4]))
     if len(sys.argv) == 4 and sys.argv[1] == 'exec-only':
