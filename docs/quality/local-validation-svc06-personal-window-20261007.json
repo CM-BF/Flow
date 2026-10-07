@@ -135,5 +135,9 @@
     "termination": "operator51100 + all5 started phase PIDs absent/dualEOF; no signals/pending invocations",
     "evidence": "backend-release/docs/evidence/svc06/update-diagnostics-candidate/personal-maintenance-r4",
     "notKnown": "Post-idle status not reached; strict idle error did not retain classification; no inference of empty journal or current accepting."
+  },
+  "sourceFreezeRelease": {
+    "at": "2026-10-07T13:25:40.733428+00:00",
+    "reason": "R4 actual window returned and all owned operator/phase direct PIDs absent. New remediation is preparation only. Approved plugin intake has zero overlap with43 pinned root files; fixed7d1/6c artifact/dependencies unchanged. Next actual must explicitly bind current source/pins, not replayR4."
   }
 }
