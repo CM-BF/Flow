@@ -87,43 +87,55 @@ export function createPgDelivery(options: DeliveryOptions) {
     return { mode, epoch, phase, closed, known: failure === null, failure, observed, counts: { ...counts },
       retainedBytes, outputMessages, outputBytes, sampleCount: samples.length, sqlGroups: totals.size };
   }
+  // A single lazy packer serves synchronous offline callers and callback-paced IPC.
+  function* chunks(): Generator<DeliveryMessage> {
+    if (mode !== 'buffered' || failure) return;
+    let ordinal = 0;
+    let chunk: Extract<DeliveryMessage, { kind: 'pg-observation-chunk' }> = { kind: 'pg-observation-chunk', epoch, ordinal: ordinal++, samples: [], sql: [] };
+    let chunkBytes = jsonBytes(chunk);
+    function* append(array: 'samples' | 'sql', entry: Sample | SqlTotal): Generator<DeliveryMessage> {
+      const bytes = jsonBytes(entry);
+      if (chunkBytes + bytes + (chunk[array].length ? 1 : 0) > limits.chunk) {
+        if (chunk.samples.length || chunk.sql.length) yield chunk;
+        if (failure) return;
+        chunk = { kind: 'pg-observation-chunk', epoch, ordinal: ordinal++, samples: [], sql: [] };
+        chunkBytes = jsonBytes(chunk);
+      }
+      const added = bytes + (chunk[array].length ? 1 : 0);
+      if (chunkBytes + added > limits.chunk) { invalidate('chunk_limit'); return; }
+      chunkBytes += added;
+      if (array === 'samples') chunk.samples.push(entry as Sample);
+      else chunk.sql.push(entry as SqlTotal);
+    }
+    for (const sample of samples) { yield* append('samples', sample); if (failure) return; }
+    for (const total of totals.values()) { yield* append('sql', { ...total }); if (failure) return; }
+    if (chunk.samples.length || chunk.sql.length) yield chunk;
+  }
+  let finishing: Promise<ReturnType<typeof status>> | undefined;
   function finish() {
     if (closed) return status();
     closed = true;
-    if (mode === 'buffered' && !failure) {
-      let ordinal = 0;
-      let chunk: Extract<DeliveryMessage, { kind: 'pg-observation-chunk' }> = { kind: 'pg-observation-chunk', epoch, ordinal: ordinal++, samples: [], sql: [] };
-      let chunkBytes = jsonBytes(chunk);
-      const flush = () => {
-        if (!chunk.samples.length && !chunk.sql.length) return true;
-        if (!send(chunk)) return false;
-        chunk = { kind: 'pg-observation-chunk', epoch, ordinal: ordinal++, samples: [], sql: [] };
-        chunkBytes = jsonBytes(chunk); return true;
-      };
-      const reserveEntry = (array: 'samples' | 'sql', bytes: number) => {
-        // Arrays add only their encoded entries and commas to the encoded empty envelope.
-        let added = bytes + (chunk[array].length ? 1 : 0);
-        if (chunkBytes + added > limits.chunk) {
-          if (!flush()) return false;
-          added = bytes + (chunk[array].length ? 1 : 0);
-        }
-        if (chunkBytes + added > limits.chunk) { invalidate('chunk_limit'); return false; }
-        chunkBytes += added; return true;
-      };
-      for (const sample of samples) {
-        if (!reserveEntry('samples', jsonBytes(sample))) break;
-        chunk.samples.push(sample);
-      }
-      if (!failure) for (const total of totals.values()) {
-        const entry = { ...total };
-        if (!reserveEntry('sql', jsonBytes(entry))) break;
-        chunk.sql.push(entry);
-      }
-      if (!failure) flush();
-    }
+    for (const chunk of chunks()) if (!send(chunk)) break;
     return status();
   }
-  return { record, finish, status, setPhase(next: DeliveryPhase) {
+  function finishAsync(emitAsync: (message: DeliveryMessage) => Promise<boolean>) {
+    if (finishing) return finishing;
+    if (closed) return Promise.resolve(status());
+    closed = true;
+    finishing = (async () => {
+      for (const chunk of chunks()) {
+        const bytes = jsonBytes(chunk); // Always validate the actual complete encoded envelope.
+        if (bytes > limits.chunk) { invalidate('chunk_limit'); break; }
+        try {
+          if (await emitAsync(chunk) !== true) { invalidate('sink_unknown'); break; }
+          outputMessages++; outputBytes += bytes;
+        } catch { invalidate('sink_unknown'); break; }
+      }
+      return status();
+    })();
+    return finishing;
+  }
+  return { record, finish, finishAsync, status, setPhase(next: DeliveryPhase) {
     if (closed) { invalidate('closed'); return; }
     if (!PHASES.includes(next) || PHASES.indexOf(next) < PHASES.indexOf(phase)) { invalidate('phase_order'); return; }
     phase = next;

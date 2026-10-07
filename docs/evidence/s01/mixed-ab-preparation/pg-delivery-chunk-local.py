@@ -23,16 +23,20 @@ if helper.digest(helper.OPS)[1] != helper.OPS_SHA:
     raise ValueError('supervisor_changed')
 owned = load('s01_chunk_owned', helper.OPS)
 kind = sys.argv[1]
+backpressure = kind in ('backpressure-baseline', 'backpressure-tests', 'backpressure-types', 'backpressure-child')
 caller = kind == 'buffered-caller'
 buffered = kind in ('buffered-tests', 'buffered-types')
 packing = kind in ('packing-compile', 'packing-tests')
-if kind not in ('direct', 'boundary', 'types', 'packing-compile', 'packing-tests', 'buffered-tests', 'buffered-types', 'buffered-caller'):
+if not backpressure and kind not in ('direct', 'boundary', 'types', 'packing-compile', 'packing-tests', 'buffered-tests', 'buffered-types', 'buffered-caller'):
     raise ValueError('fixed_mode')
-started = time.monotonic(); end = started + 30
-stem = 'queue-buffered-caller' if caller else 'queue-buffered' if buffered else 'delivery-packing' if packing else 'pg-delivery-chunk'
+started = time.monotonic(); end = started + (40 if backpressure else 30)
+stem = 'pg-delivery-backpressure' if backpressure else 'queue-buffered-caller' if caller else 'queue-buffered' if buffered else 'delivery-packing' if packing else 'pg-delivery-chunk'
 path = HERE / (stem + '-local.json')
 record = json.loads(path.read_text()) if path.exists() else {'startedAt': '2026-10-07T15:25:09.000Z', 'deadline': '2026-10-07T15:45:09.000Z', 'runs': [],
     'limits': {'children': 5, 'wholeEachSeconds': 30, 'cumulativeSeconds': 90, 'rawBytes': 262144, 'tmpBytes': 8388608, 'newBytes': 16777216}, 'wholeExternalWall': None}
+if backpressure and not path.exists():
+    record.update({'startedAt':'2026-10-07T19:18:14.000Z','deadline':'2026-10-07T19:43:14.000Z'})
+    record['limits'].update({'children':6,'wholeEachSeconds':40,'cumulativeSeconds':150,'rawBytes':2097152,'tmpBytes':8388608,'newBytes':16777216})
 if caller and not path.exists():
     record.update({'startedAt':'2026-10-07T17:07:07.000Z','deadline':'2026-10-07T17:15:07.000Z'})
     record['limits'].update({'children':3,'cumulativeSeconds':45,'rawBytes':262144,'tmpBytes':2097152,'newBytes':4194304})
@@ -52,7 +56,7 @@ number = len(record['runs']) + 1
 raw_path = HERE / f'{stem}-{number}.raw'
 if not helper.absent(raw_path):
     raise ValueError('raw_exists')
-run = {'kind': kind, 'number': number, 'startedAt': helper.utc(), 'floorBytes': 15927083008 if caller else 14950858752 if buffered else 15927017472 if packing else 14414970880, 'source': {}}
+run = {'kind': kind, 'number': number, 'startedAt': helper.utc(), 'floorBytes': 18490851328 if backpressure else 15927083008 if caller else 14950858752 if buffered else 15927017472 if packing else 14414970880, 'source': {}}
 for relative in ('experiments/runner-capacity/mixed/pg-delivery.ts', 'experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts',
     'experiments/runner-capacity/mixed/pg-delivery.test.ts', 'experiments/runner-capacity/mixed/delivery-replay.test.ts',
     'experiments/runner-capacity/mixed/pg-delivery-bridge.ts', 'experiments/runner-capacity/mixed/delivery-replay.ts',
@@ -60,6 +64,9 @@ for relative in ('experiments/runner-capacity/mixed/pg-delivery.ts', 'experiment
     'docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-tsconfig.json', 'docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-vitest.config.mjs',
     'docs/evidence/s01/mixed-ab-preparation/pg-delivery-chunk-local.py', 'docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.py', 'tsconfig.json'):
     size, sha = helper.digest(ROOT / relative); run['source'][relative] = {'bytes': size, 'sha256': sha}
+if backpressure:
+    for relative in ('experiments/runner-capacity/mixed/pg-delivery-backpressure.test.ts','experiments/runner-capacity/mixed/pg-delivery-wiring.test.ts','experiments/runner-capacity/mixed/child.ts','docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-vitest.config.mjs','docs/evidence/s01/mixed-ab-preparation/pg-delivery-backpressure-tsconfig.json'):
+        size,sha=helper.digest(ROOT/relative);run['source'][relative]={'bytes':size,'sha256':sha}
 if packing:
     for relative in ('experiments/runner-capacity/mixed/delivery-packing.ts','experiments/runner-capacity/mixed/delivery-packing.test.ts','experiments/runner-capacity/mixed/delivery-replay-main.ts','docs/evidence/s01/mixed-ab-preparation/delivery-packing-tsconfig.json','docs/evidence/s01/mixed-ab-preparation/delivery-packing-vitest.config.mjs'):
         size, sha = helper.digest(ROOT / relative); run['source'][relative] = {'bytes':size,'sha256':sha}
@@ -80,12 +87,14 @@ for item in json.loads((HERE / 'delivery-replay-input-v2.json').read_text())['fi
 vfs = os.statvfs(ROOT); run['freeBytes'] = vfs.f_bavail * vfs.f_frsize
 if run['freeBytes'] < run['floorBytes']:
     raise ValueError('free_space')
-tmp = Path(tempfile.mkdtemp(prefix='flow-s01-buffered-caller-' if caller else 'flow-s01-buffered-local-' if buffered else 'flow-s01-packing-local-' if packing else 'flow-s01-chunk-local-', dir='/tmp')); identity = tmp.lstat()
+tmp = Path(tempfile.mkdtemp(prefix='flow-s01-backpressure-' if backpressure else 'flow-s01-buffered-caller-' if caller else 'flow-s01-buffered-local-' if buffered else 'flow-s01-packing-local-' if packing else 'flow-s01-chunk-local-', dir='/tmp')); identity = tmp.lstat()
 run['tmp'] = {'path': str(tmp), 'dev': identity.st_dev, 'ino': identity.st_ino, 'removed': False}
 record['runs'].append(run); path.write_text(json.dumps(record, indent=2) + '\n')
 env = helper.environment(tmp); env['FLOW_S01_DELIVERY_TMP'] = str(tmp / 'cache')
 run['head'] = subprocess.check_output(['/usr/bin/git', 'rev-parse', 'HEAD'], cwd=ROOT, env=env).decode().strip()
-if caller:
+if backpressure:
+    argv = [helper.NODE,str(ROOT/'node_modules/typescript/bin/tsc'),'--noEmit','-p',str(HERE/'pg-delivery-backpressure-tsconfig.json')] if kind == 'backpressure-types' else [helper.NODE,str(ROOT/'node_modules/vitest/vitest.mjs'),'run','--config',str(HERE/'pg-delivery-backpressure-vitest.config.mjs'),'--configLoader','native','-t', 'reproduces synchronous' if kind == 'backpressure-baseline' else 'real existing child launch' if kind == 'backpressure-child' else 'callback backpressure|actual center/reporter|full envelope cap|missing, partial|idle child|chunk packing']
+elif caller:
     argv=[helper.PYTHON,'-I','-B',str(HERE/'queue-buffered-operator.test.py')]
 elif buffered:
     argv = [helper.NODE, str(ROOT / 'node_modules/typescript/bin/tsc'), '--noEmit', '-p', str(HERE / 'queue-buffered-tsconfig.json')] if kind == 'buffered-types' else [helper.NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', str(HERE / 'queue-buffered-vitest.config.mjs'), '--configLoader', 'native']
@@ -100,7 +109,7 @@ else:
     argv = [helper.NODE, str(ROOT / 'node_modules/vitest/vitest.mjs'), 'run', '--config', str(HERE / 'pg-delivery-chunk-vitest.config.mjs'), '--configLoader', 'native', '-t', pattern]
 run['argv'] = argv
 path.write_text(json.dumps(record, indent=2) + '\n')
-work = min(24, end - time.monotonic() - 5, record['limits']['cumulativeSeconds'] - sum(r.get('elapsedMs', 0) for r in record['runs']) / 1000 - 5)
+work = min(34 if backpressure else 24, end - time.monotonic() - 5, record['limits']['cumulativeSeconds'] - sum(r.get('elapsedMs', 0) for r in record['runs']) / 1000 - 5)
 if work <= 0:
     raise TimeoutError('no_work_margin_keep_tmp')
 report = owned.supervise(owned.Launch(tuple(argv), str(ROOT), env, owned.Ownership.NEW_CHILD_SESSION, owned.Capture.MERGED), owned.Policy(work, .5, 1, 32768))

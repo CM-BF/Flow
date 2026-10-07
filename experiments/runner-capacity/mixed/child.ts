@@ -21,11 +21,13 @@ let pgDelivery: DeliveryInput | undefined;
 let delivery: ReturnType<typeof centerDelivery> | undefined;
 let stoppedAtMs: number | null = null;
 const shutdown = new AbortController();
+const deliveryAbort = new AbortController();
+let deliveryDeadline: number | undefined;
 const reporter = childReporter(() => shutdown.abort(), () => contract, () => pgDelivery ? DELIVERY_ENVELOPE_BYTES : contract.responseBytes);
 const send = reporter.send;
 function stop() { stoppedAtMs ??= performance.now(); shutdown.abort(); }
-process.once('SIGTERM', stop);
-process.once('disconnect', stop);
+process.once('SIGTERM', () => { deliveryAbort.abort(); stop(); });
+process.once('disconnect', () => { deliveryAbort.abort(); stop(); });
 let caseControl: AbortController | undefined;
 let casePromise: Promise<void> | undefined;
 let measure = deferred<number>();
@@ -66,7 +68,14 @@ async function center(config: { databaseUrl: string; ownerToken: string }) {
   } finally {
     clearInterval(sampleTimer);
     try { await app?.close(); }
-    finally { sample(); send({ kind: 'center-settled', observationDropped: observer.dropped }); observer.restore(); delivery?.finish(); }
+    finally {
+      sample(); send({ kind: 'center-settled', observationDropped: observer.dropped }); observer.restore();
+      if (delivery) {
+        // The existing 500ms IPC drain allowance now covers flush plus final callbacks.
+        deliveryDeadline = performance.now() + 500;
+        await delivery.finishAsync(message => reporter.sendAsync(message, { deadlineMs: deliveryDeadline!, signal: deliveryAbort.signal }));
+      }
+    }
   }
 }
 async function runCase(input: CaseInput) {
@@ -202,9 +211,11 @@ process.once('message', async (config: { role: string; databaseUrl: string; owne
   catch { send({ kind: 'failure', code: 'child_failed' }); process.exitCode = 1; }
   finally {
     clearInterval(memoryTimer); if (contract.persistentSessions) send({ ...memoryObservation(), role: config.role });
-    send({ kind: 'child-settled', dropped: reporter.dropped });
-    const end = performance.now() + 500;
-    while (reporter.pending && performance.now() < end) await sleep(5);
+    send({ kind: 'child-settled', dropped: reporter.dropped, firstFailure: reporter.firstFailure });
+    const end = deliveryDeadline ?? performance.now() + 500;
+    if (pgDelivery) {
+      if (!await reporter.drain({ deadlineMs: end, signal: deliveryAbort.signal })) process.exitCode = 1;
+    } else while (reporter.pending && performance.now() < end) await sleep(5);
     if (pgDelivery && (reporter.pending !== 0 || reporter.dropped !== 0)) process.exitCode = 1;
     reporter.close(); process.disconnect?.();
   }

@@ -13,13 +13,28 @@ export function centerDelivery(input: DeliveryInput, send: (message: RecordValue
   const delivery = createPgDelivery({ ...config, emit: send, invalidate: fail,
     limits: { chunkBytes: DELIVERY_ENVELOPE_BYTES - 256 } }); // Includes margin for reporter pid/childMs; actual cap is checked again.
   let finished = false;
+  let finishing: Promise<ReturnType<typeof delivery.status>> | undefined;
   return { record: delivery.record, phase(epoch: unknown, next: unknown) {
     if (epoch !== config.epoch || !['measure', 'after'].includes(String(next))) { fail(); return; }
     delivery.setPhase(next as DeliveryPhase);
     if (!delivery.status().known || !send({ kind: 'pg-phase-ack', epoch, deliveryPhase: next, localPhaseAtMs: performance.now() })) fail();
+  }, finishAsync(sendAsync: (message: RecordValue) => Promise<boolean>) {
+    if (finishing) return finishing;
+    if (finished) return Promise.resolve(delivery.status());
+    finished = true;
+    finishing = (async () => {
+      const summary = await delivery.finishAsync(sendAsync);
+      if (!summary.known) { fail(); return summary; }
+      try {
+        if (await sendAsync({ kind: 'pg-delivery-summary', ...summary, deliveryPhase: summary.phase })) return summary;
+      } catch { /* Transport failure leaves the receiver authoritative and incomplete. */ }
+      fail();
+      return { ...summary, known: false, failure: 'sink_unknown' as const };
+    })();
+    return finishing;
   }, finish() {
+    if (finished) return delivery.status();
     const summary = delivery.finish();
-    if (finished) return summary;
     finished = true;
     if (!summary.known || !send({ kind: 'pg-delivery-summary', ...summary, deliveryPhase: summary.phase })) fail();
     return summary;
