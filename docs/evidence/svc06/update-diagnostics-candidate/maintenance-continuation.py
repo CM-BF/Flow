@@ -51,12 +51,12 @@ def phase_budget(step, deadline):
     return remaining
 
 
-def execute(window, deadline):
+def execute(window, deadline, *, plan=PLAN, verify=bindings, validate=invocations):
     assert 0 < deadline - time.monotonic() <= 900, 'SHARED_DEADLINE_EXPIRED'
-    inputs = bindings(); invocations()
+    inputs = verify(); validate()
     assert window.startswith('svc06-personal-7d1-')
-    run = Path(PLAN['runDirectory']); assert not run.exists() and not run.is_symlink()
-    usage = os.statvfs(PLAN['directory']); assert usage.f_bavail * usage.f_frsize >= PLAN['budget']['freshBytes']
+    run = Path(plan['runDirectory']); assert not run.exists() and not run.is_symlink()
+    usage = os.statvfs(plan['directory']); assert usage.f_bavail * usage.f_frsize >= plan['budget']['freshBytes']
     run.mkdir(mode=0o700)
     def save(name, value):
         fd = os.open(run / name, os.O_WRONLY | os.O_CREAT | os.O_EXCL | os.O_NOFOLLOW, 0o600)
@@ -67,23 +67,23 @@ def execute(window, deadline):
         finally: os.close(parent)
     spec = importlib.util.spec_from_file_location('svc06_continuation_ops14', inputs['supervisor']['path'])
     ops = importlib.util.module_from_spec(spec); sys.modules[spec.name] = ops; spec.loader.exec_module(ops)
-    env = {'PATH': str(Path(PLAN['node']).parent) + ':/usr/bin:/bin:/usr/sbin', 'LC_ALL': 'C', 'PYTHONDONTWRITEBYTECODE': '1', 'TSX_DISABLE_CACHE': '1'}
-    save('reservation.json', {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'window': window, 'planSha256': hashlib.sha256((BASE / 'maintenance-continuation.json').read_bytes()).hexdigest(), 'runIdentity': {'dev': str(run.stat().st_dev), 'ino': str(run.stat().st_ino)}, 'completedStagesNeverReplayed': True})
+    env = {'PATH': str(Path(plan['node']).parent) + ':/usr/bin:/bin:/usr/sbin', 'LC_ALL': 'C', 'PYTHONDONTWRITEBYTECODE': '1', 'TSX_DISABLE_CACHE': '1'}
+    save('reservation.json', {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(), 'window': window, 'planSha256': hashlib.sha256(Path(plan.get('planPath', BASE / 'maintenance-continuation.json')).read_bytes()).hexdigest(), 'runIdentity': {'dev': str(run.stat().st_dev), 'ino': str(run.stat().st_ino)}, 'completedStagesNeverReplayed': True})
     save('maintenance-deadline.json', {'monotonicDeadline': deadline, 'seconds': 900, 'origin': 'Independent outer launch before bindings; not reset at bootstrap', 'innerFinishReserveSeconds': 5})
     completed = []; phase = 'before-first-observation'
     try:
-        for step in PLAN['steps']:
+        for step in plan['steps']:
             phase = step['name']
-            usage = os.statvfs(PLAN['directory']); assert usage.f_bavail * usage.f_frsize >= PLAN['budget']['liveBytes']
+            usage = os.statvfs(plan['directory']); assert usage.f_bavail * usage.f_frsize >= plan['budget']['liveBytes']
             # Reserve room for one bounded capture plus two bounded observation documents.
             total = sum(path.stat().st_size for path in run.iterdir() if path.is_file())
             prior = sum(path.stat().st_size for path in (BASE / 'personal-actual-r2').rglob('*') if path.is_file())
-            assert total + prior + 393216 <= PLAN['budget']['rawBytes']
+            assert total + prior + 393216 <= plan['budget']['rawBytes']
             remaining = phase_budget(step, deadline)
             save(phase + '-invocation.json', {'at': datetime.datetime.now(datetime.timezone.utc).isoformat(), **step, 'remainingWorkSeconds': remaining})
             # fsync may consume time: never launch using the earlier saved allowance.
             remaining = phase_budget(step, deadline)
-            report = ops.supervise(ops.Launch(tuple(step['argv']), step['cwd'], env, ops.Ownership.CHILD_PID_ONLY), ops.Policy(remaining, 0, 2, PLAN['budget']['perPhaseOutputBytes']))
+            report = ops.supervise(ops.Launch(tuple(step['argv']), step['cwd'], env, ops.Ownership.CHILD_PID_ONLY), ops.Policy(remaining, 0, 2, plan['budget']['perPhaseOutputBytes']))
             value = dict(vars(report)); value['stdout'] = report.stdout.decode('utf8', 'replace'); value['stderr'] = report.stderr.decode('utf8', 'replace')
             save(phase + '-outer.json', value)
             complete = report.exit_code == 0 and report.first_failure is None and report.owned_state == 'absent' and all(report.eof.values())

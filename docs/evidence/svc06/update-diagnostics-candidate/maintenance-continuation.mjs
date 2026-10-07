@@ -18,12 +18,12 @@ const sha = bytes => createHash('sha256').update(bytes).digest('hex');
 const same = assert.deepEqual;
 const facts = async (run, name) => { const value = await json(join(run, name)); assert.equal(value.outcome, 'observed'); return value.facts; };
 
-export function compareHistory(before, after, auditAdded) {
+export function compareHistory(before, after, auditAdded, migrationsAdded = 8) {
   same(after.identity, before.identity); same(after.omittedColumns, before.omittedColumns);
   assert.equal(after.tables.length, before.tables.length);
   for (const prior of before.tables) {
     const current = after.tables.find(table => table.name === prior.name); assert.ok(current); same(current.columns, prior.columns);
-    const expectedAdded = prior.name === 'migrations' ? 8 : prior.name === 'runner_maintenance_audit' ? auditAdded : 0;
+    const expectedAdded = prior.name === 'migrations' ? migrationsAdded : prior.name === 'runner_maintenance_audit' ? auditAdded : 0;
     assert.equal(current.count, prior.count + expectedAdded, 'ROW_COUNT_CHANGED:' + prior.name);
     if (expectedAdded) {
       const remaining = [...current.row_hashes];
@@ -33,7 +33,7 @@ export function compareHistory(before, after, auditAdded) {
   }
 }
 
-async function configuredTuple(plan) {
+export async function configuredTuple(plan) {
   const config = await loadPreviewConfiguration(plan.directory);
   const browser = await readBrowserSessionConfiguration(config);
   same(browser.context, plan.context); assert.equal(browser.pin.file.sha256, plan.policySha256);
@@ -45,7 +45,7 @@ async function configuredTuple(plan) {
   return { config, tuple: loaded.verifiedTuple, policyPin: browser.pin };
 }
 
-function invariantFacts(before, after) {
+export function invariantFacts(before, after) {
   for (const key of ['rootIdentity', 'identity', 'release', 'retained']) same(after[key], before[key]);
   for (const name of ['config.json', 'claude.json', 'web-release.json']) same(after.files[name], before.files[name]);
   assert.ok(after.database.markerMatched && after.database.runnerIdentityMatched);
@@ -116,7 +116,7 @@ async function operation(plan, run) {
   return { native, freshView, finalView, localIdleBoundary: 'Non-atomic read-only observation after same-operation drain active=0, before public refresh; any unknown stops. No journal repair or task cancellation.', outcome: 'real-operation-confirmed', operationId: op.operationId, initialVersion: op.initialVersion, backendArtifact: op.backendArtifact, phase: op.phase };
 }
 
-async function checkpoint(plan, run, final = false) {
+export async function checkpoint(plan, run, final = false) {
   const before = await facts(run, 'facts-before.json'), current = await facts(run, final ? 'facts-final.json' : 'facts-paused.json');
   invariantFacts(before, current); assert.equal(current.runtimeSource.head, plan.artifact.sourceHead); assert.equal(current.runtimeSource.dirty, false);
   const captured = await json(join(run, 'operation.json')), op = await readPreviewJson(join(plan.directory, 'maintenance.json'));
