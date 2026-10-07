@@ -10,8 +10,8 @@ import type { RecoveryDatabaseLease, RecoveryWire, RecoverySseTrace, startRecove
 // Only built-ins are loaded by the parent before fresh admission, monitoring and durable ownership facts.
 const root = fileURLToPath(new URL("../../../", import.meta.url));
 const evidence = join(root, "docs/evidence/wpf-conversation-recovery");
-// Defensive ceiling: immutable original 90s envelope + separately accounted authorized 150s segment.
-const TOTAL_MS = 240_000, CLEANUP_MS = 15_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
+// Defensive ceiling only: closed 90s + closed 150s + separately admitted <=60s steering phase.
+const TOTAL_MS = 300_000, CLEANUP_MS = 15_000, EVIDENCE_BYTES = 9 * 1024 ** 2, LOG_BYTES = 1024 ** 2;
 const RUN_RETAIN_RESERVE = 5 * 1024 ** 2; // 1MiB logs + <=2MiB report + two <=512KiB images + bounded owner/budget records.
 const START_FREE = 1024 ** 3 + 128 * 1024 ** 2, STOP_FREE = 1024 ** 3 + 64 * 1024 ** 2;
 const sleep = (ms: number) => new Promise<void>(resolve => setTimeout(resolve, ms));
@@ -46,10 +46,11 @@ const journeyGroups = {
   "queue-ack-loss": ["cookieRead", "queueAckLoss"],
   "sse-delivery": ["cookieRead", "sseDelivery"],
   "complete-draft": ["cookieRead", "completeDraft"],
+  "steering-recovery": ["cookieRead", "steeringRecovery"],
 } as const;
 type Journey = keyof typeof journeyGroups;
 type Group = (typeof journeyGroups)[Journey][number];
-const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss", "sseDelivery", "completeDraft"];
+const allGroups: readonly Group[] = [...journeyGroups.full, "connectionChoice", "createAckLoss", "createdTurnAckLoss", "queueAckLoss", "sseDelivery", "completeDraft", "steeringRecovery"];
 function selectedGroups(journey: unknown): readonly Group[] {
   requireThat(typeof journey === "string" && Object.hasOwn(journeyGroups, journey), "An explicit supported journey is required");
   return journeyGroups[journey as Journey];
@@ -62,6 +63,7 @@ type BodyLossObservation = { path: string | null; key: string | null; bodySha256
   headers: Record<string, string>; events: string[]; failure: string | null; finished: boolean };
 type InitializationTiming = { outcome: "RUNNING" | "PASSED" | "FAILED"; startedOffsetMs: 0; endedOffsetMs: number | null; elapsedMs: number | null };
 type GroupTiming = { group: Group; startedOffsetMs: number; endedOffsetMs: number; elapsedMs: number; outcome: "PASSED" | "FAILED" };
+type SteeringSeed = Awaited<ReturnType<Awaited<ReturnType<typeof startRecoveryFixture>>["seedSteeringConversation"]>>;
 type WorkerResult = { journey: Journey; requiredGroups: readonly Group[]; completedGroups: Group[]; checks: string[];
   initialization: InitializationTiming; groupTimings: GroupTiming[];
   pageErrors: string[]; failure: string | null; cleanupErrors: string[]; wire: RecoveryWire[]; coverage: Record<string, string>; bodyLoss: BodyLossObservation[];
@@ -69,7 +71,10 @@ type WorkerResult = { journey: Journey; requiredGroups: readonly Group[]; comple
     externalCancel: { taskId: string; key: string; status: string } | null; readRequests: string[]; trace: RecoverySseTrace | null };
   completeDraft: { profile: import("@flow/contracts").ExecutionProfileReference | null; knowledge: import("@flow/contracts").KnowledgeCitation | null;
     savedRecordId: string | null; conversationId: string | null; preparedPostCount: number | null; restoredPostCount: number | null;
-    verificationOrder: string[]; turnId: string | null; taskId: string | null } };
+    verificationOrder: string[]; turnId: string | null; taskId: string | null };
+  steeringRecovery: { profile: import("@flow/contracts").ExecutionProfileReference | null; conversationId: string | null;
+    turnId: string | null; actor: Awaited<ReturnType<SteeringSeed["activate"]>> | null; draftId: string | null;
+    receiptId: string | null; commandId: string | null; browserPostCounts: number[] } };
 function selectionPassed(journey: Journey, result: WorkerResult | undefined): boolean {
   const required = selectedGroups(journey);
   return !!result && result.journey === journey && result.failure === null
@@ -120,6 +125,7 @@ async function supervisor() {
   requireThat(gate.allowRun === true && /^[a-z0-9-]{1,48}$/.test(gate.run), "Invalid one-run gate");
   requireThat(Date.parse(gate.expiresAt) > Date.now(), "Admission expired");
   requireThat(Number.isFinite(gate.totalMs) && gate.totalMs >= 30_000 && gate.totalMs <= TOTAL_MS, "Invalid admitted time budget");
+  if (gate.journey === "steering-recovery") requireThat(gate.totalMs <= 60_000, "Steering phase requires a <=60s attempt including cleanup");
   requireThat(gate.minimumFreeBytes >= START_FREE && Number.isFinite(gate.minimumFreeBytes), "Browser start margin must be explicitly admitted");
   requireThat(Number.isSafeInteger(gate.maxScratchBytes) && gate.maxScratchBytes > 0 && gate.maxScratchBytes <= 64 * 1024 ** 2, "Scratch requires an explicit <=64MiB bound");
   requireThat(await realpath(gate.scratchParent) === "/private/tmp", "Scratch must use the explicitly admitted local tmp parent");
@@ -369,7 +375,7 @@ async function worker(init: Init) {
     return result.records; // Missing/pending remains empty for the existing strict draft poll; malformed rejects.
   };
   const { decodeConversationCreated, decodeConversationTurnAccepted, assertConversationContextMatches } = await import("@flow/client");
-  const { conversationCreationSchema, conversationTurnSchema, conversationQueueEnqueueSchema } = await import("@flow/contracts");
+  const { conversationCreationSchema, conversationTurnSchema, conversationQueueEnqueueSchema, steeringCommandSchema } = await import("@flow/contracts");
   const { parseRecoveryRecord } = await import("../src/recovery/journal");
   const { assertQueueItem } = await import("../src/conversations/queue/commands");
   const checks: string[] = [], pageErrors: string[] = [], cleanupErrors: string[] = [];
@@ -377,6 +383,8 @@ async function worker(init: Init) {
   const sseDelivery: WorkerResult["sseDelivery"] = { baselineCursor: null, deliveredCursor: null, cancelledTaskId: null, externalCancel: null, readRequests: [], trace: null };
   const completeDraft: WorkerResult["completeDraft"] = { profile: null, knowledge: null, savedRecordId: null, conversationId: null,
     preparedPostCount: null, restoredPostCount: null, verificationOrder: [], turnId: null, taskId: null };
+  const steeringRecovery: WorkerResult["steeringRecovery"] = { profile: null, conversationId: null, turnId: null,
+    actor: null, draftId: null, receiptId: null, commandId: null, browserPostCounts: [] };
   const initialization: InitializationTiming = { outcome: "RUNNING", startedOffsetMs: 0, endedOffsetMs: null, elapsedMs: null };
   const groupTimings: GroupTiming[] = [];
   let errorBytes = 0;
@@ -387,7 +395,7 @@ async function worker(init: Init) {
   };
   const coverage: Record<string, string> = {
     cookieRead: "NOT_RUN", cookieSseHandshake: "NOT_RUN", cookieSseDelivery: "PENDING: only handshake is asserted", textIntentDraft: "NOT_RUN", materialDraft: "NOT_RUN", sameKeyTurn: "NOT_RUN", crossTabCas: "NOT_RUN",
-    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN", createAckLoss: "NOT_RUN", createdTurnAckLoss: "NOT_RUN", queueAckLoss: "NOT_RUN", sseDelivery: "NOT_RUN", completeDraft: "NOT_RUN",
+    pageOnlyAuthLoss: "NOT_RUN", csrfOffline: "NOT_RUN", themes390: "NOT_RUN", connectionChoice: "NOT_RUN", createAckLoss: "NOT_RUN", createdTurnAckLoss: "NOT_RUN", queueAckLoss: "NOT_RUN", sseDelivery: "NOT_RUN", completeDraft: "NOT_RUN", steeringRecovery: "NOT_RUN",
     createTwoStage: "PENDING: the two CREATE fault points are independent selected journeys", queueSteerRecovery: "PENDING: enqueue selection does not validate promotion or steering",
     profileKnowledgeSteeringDraft: "PENDING: direct/source only", secondCenter: "PENDING: one-center fixture",
   };
@@ -461,7 +469,8 @@ async function worker(init: Init) {
     };
   };
   try {
-    fixture = await startRecoveryFixture({ databaseUrl: init.databaseUrl, directory: init.directory, cacheDirectory: join(init.scratch, "vite-cache"), checkpoint }, lifetime.signal);
+    fixture = await startRecoveryFixture({ databaseUrl: init.databaseUrl, directory: init.directory, cacheDirectory: join(init.scratch, "vite-cache"), checkpoint,
+      ...(init.journey === "steering-recovery" ? { steering: { workDeadline: init.workDeadline } } : {}) }, lifetime.signal);
     await checkpoint();
     const endpoint = await new Promise<string>((resolve, reject) => {
       const aborted = () => { process.off("message", onMessage); reject(lifetime.signal.reason); };
@@ -697,6 +706,99 @@ async function worker(init: Init) {
       const final = await savedCommand("queue"); expect(final.frozen).toEqual(saved.frozen);
       expect(final.checkpoint).toMatchObject({ conversationId: fixture!.conversationId, queueRevision: request.expectedQueueRevision + 1, item: { id: original.item.id, sequence: original.item.sequence, state: "waiting" } });
       await restoreNextDraft(nextId, next);
+    });
+    await run("a synthetic protocol attempt receives the same restored steering command; its next draft stays separate", "steeringRecovery", async () => {
+      const seed = await fixture!.seedSteeringConversation();
+      steeringRecovery.profile = seed.profile.reference; steeringRecovery.conversationId = seed.conversationId;
+      await page.goto(fixture!.url + `#conversation=${seed.conversationId}`); await expect(input()).toBeVisible();
+      const prompt = "Original turn for steering recovery", original = "Restored steering instruction 中文🙂", next = "Next steering draft stays separate";
+      const turns = () => postRows().filter(row => row.path === `/api/conversations/${seed.conversationId}/turns`);
+      await input().fill(prompt); await input().press("Enter");
+      await expect.poll(() => turns()[0]?.responseBody).toBeTruthy(); expect(turns()).toHaveLength(1);
+      const turnRow = turns()[0]!; requireThat(turnRow.responseBody, "Original turn ACK required before claiming");
+      const turn = decodeConversationTurnAccepted(JSON.parse(turnRow.responseBody), seed.conversationId, conversationTurnSchema.parse(JSON.parse(turnRow.body)));
+      expect(turn.replayed).toBe(false); steeringRecovery.turnId = turn.turn.id;
+      const actor = await seed.activate(turn.turn.task.id); steeringRecovery.actor = actor;
+      expect(actor.observations).toMatchObject({ registered: true, claimed: true, sessionEventRequests: 1, heartbeatRequests: 0, runnerReceiptRequests: 0, providerQueries: 0 });
+      const surface = page.getByRole("region", { name: "Running task steering", exact: true });
+      const instruction = surface.getByLabel("Additional instruction", { exact: true });
+      const guide = page.getByRole("button", { name: "Guide running task", exact: true });
+      const openSteering = async () => {
+        await expect(guide).toHaveCount(1); await guide.click(); await expect(surface).toBeVisible();
+        await expect(surface).toHaveAttribute("data-steering-task", turn.turn.task.id);
+      };
+      const steeringDraft = async (value: string) => {
+        const matches = (await records(page)).filter(record => {
+          if (record.kind !== "draft" || !record.data || !Array.isArray(object(record.data).steering)) return false;
+          return (object(record.data).steering as unknown[]).some(item => {
+            const draft = object(item); return draft.taskId === turn.turn.task.id && draft.turnId === turn.turn.id && draft.text === value;
+          });
+        });
+        expect(matches.length).toBeLessThanOrEqual(1); return matches[0];
+      };
+      const restoreSteeringDraft = async (id: string, value: string) => {
+        const before = postRows().length, dialog = await openRecovery(), row = await exactRecordRow(dialog, id);
+        await row.getByRole("button", { name: "Restore without sending", exact: true }).click();
+        await page.keyboard.press("Escape"); await expect(dialog).not.toBeVisible();
+        await expect(page.getByRole("button", { name: "Saved drafts and receipts", exact: true })).toBeFocused();
+        await openSteering(); await expect(instruction).toHaveValue(value); expect(postRows()).toHaveLength(before);
+      };
+      await openSteering(); await instruction.fill(original);
+      await expect(surface.getByRole("button", { name: "Send steering", exact: true })).toBeEnabled();
+      await expect.poll(async () => (await steeringDraft(original))?.id).toBeTruthy();
+      const draft = (await steeringDraft(original))!; steeringRecovery.draftId = draft.id;
+      const material = object(draft.data).steering;
+      expect(material).toEqual([{ taskId: turn.turn.task.id, turnId: turn.turn.id, messageId: expect.any(String), text: original }]);
+      const before = postRows().length; steeringRecovery.browserPostCounts.push(before);
+      await reloadAndReauthenticate(); await restoreSteeringDraft(draft.id, original);
+      expect(object((await steeringDraft(original))!.data).steering).toEqual(material);
+      expect(postRows()).toHaveLength(before); steeringRecovery.browserPostCounts.push(postRows().length);
+      const path = `/api/tasks/${turn.turn.task.id}/steering`, commands = () => postRows().filter(row => row.path === path);
+      const confirmBodyLoss = observeAckBodyLoss(page, path, "text", original);
+      fixture!.dropNext("steering"); await surface.getByRole("button", { name: "Send steering", exact: true }).click();
+      await expect(surface.getByRole("status").filter({ hasText: /^Acceptance unknown$/ })).toBeVisible();
+      expect(commands()).toHaveLength(1); const first = commands()[0]!; await confirmBodyLoss(first);
+      requireThat(first.key && first.responseBody, "Original steering key and full upstream ACK required");
+      const savedSteering = async () => {
+        const matches = (await records(page)).map(parseRecoveryRecord).filter(record => record.kind === "command" && record.domain === "steering");
+        expect(matches).toHaveLength(1); const record = matches[0]!;
+        requireThat(record.kind === "command" && record.domain === "steering" && record.id === first.key, "Exact steering receipt identity required"); return record;
+      };
+      await expect.poll(async () => (await savedSteering()).phase).toBe("unknown");
+      const receipt = await savedSteering(), frozen = object(receipt.frozen), requested = steeringCommandSchema.parse(JSON.parse(first.body));
+      steeringRecovery.receiptId = receipt.id;
+      expect(requested).toEqual({ attemptId: actor.attemptId, ownerVersion: actor.ownerVersion, expectedRevision: actor.admission.revision, text: original });
+      expect(frozen).toEqual({ key: first.key, taskId: turn.turn.task.id, input: requested, bytes: Buffer.byteLength(original), digest: digest(original) });
+      const accepted = object(JSON.parse(first.responseBody)), command = object(accepted.command);
+      expect(accepted.replayed).toBe(false); expect(first.status).toBe(202);
+      expect(command).toMatchObject({ taskId: turn.turn.task.id, attemptId: actor.attemptId, ownerVersion: actor.ownerVersion,
+        nativeSessionId: actor.nativeSessionId, revision: requested.expectedRevision + 1, status: "accepted", receiptRevision: 0,
+        input: { bytes: Buffer.byteLength(original), digest: digest(original) } });
+      expect(command.id).toMatch(/^[a-f0-9-]{36}$/i); expect(command.userMessageUuid).toMatch(/^[a-f0-9-]{36}$/i);
+      steeringRecovery.commandId = String(command.id);
+      await instruction.fill(next); await expect.poll(async () => (await steeringDraft(next))?.id).toBe(draft.id);
+      const nextMaterial = object((await steeringDraft(next))!.data).steering;
+      await reloadAndReauthenticate(); await restoreSteeringDraft(draft.id, next);
+      const dialog = await openRecovery(), row = await exactRecordRow(dialog, receipt.id);
+      await expect(row).toContainText("steering receipt · unknown");
+      await row.getByRole("button", { name: "Restore without sending", exact: true }).click();
+      await page.keyboard.press("Escape"); await expect(dialog).not.toBeVisible();
+      await expect(surface).toBeVisible(); await expect(instruction).toHaveValue(next);
+      expect(commands()).toHaveLength(1); expect(postRows()).toHaveLength(before + 1);
+      steeringRecovery.browserPostCounts.push(postRows().length);
+      await surface.getByRole("button", { name: "Retry original command", exact: true }).click();
+      await expect.poll(async () => (await savedSteering()).phase).toBe("accepted");
+      await expect(surface.getByRole("status").filter({ hasText: /^Accepted by center$/ })).toBeVisible();
+      expect(commands()).toHaveLength(2); const replay = commands()[1]!;
+      expect({ key: replay.key, body: replay.body, status: replay.status }).toEqual({ key: first.key, body: first.body, status: 202 });
+      requireThat(replay.responseBody, "Replay requires the genuine center ACK");
+      expect(JSON.parse(replay.responseBody)).toEqual({ command, replayed: true });
+      const resolved = await savedSteering(); expect(resolved.frozen).toEqual(frozen); expect(resolved.checkpoint).toEqual(command);
+      await expect(instruction).toHaveValue(next); expect(object((await steeringDraft(next))!.data).steering).toEqual(nextMaterial);
+      expect(turns()).toHaveLength(1); expect(postRows()).toHaveLength(before + 2); steeringRecovery.browserPostCounts.push(postRows().length);
+      expect(postRows().some(row => /\/runner\/steering\/(?:receipts|finalize)/.test(row.path))).toBe(false);
+      coverage.queueSteerRecovery = "PARTIAL: real steering accepted/replay with a synthetic session; no promotion or native application";
+      coverage.profileKnowledgeSteeringDraft = "PARTIAL: steering draft and next draft; profile/knowledge/files remain separate completed evidence";
     });
     await run("prepared profile/project and complete draft survive re-auth/restore; explicit verification preserves first-turn material identity", "completeDraft", async () => {
       const seed = await fixture!.seedCompleteDraft(), original = "Complete recovery draft 中文🙂", next = "Independent draft after complete material send";
@@ -997,7 +1099,7 @@ async function worker(init: Init) {
     try { await fixture?.close(); } catch (error) { cleanupErrors.push("fixture: " + text(error)); }
     if (coverage.materialDraft === "NOT_RUN" && coverage.textIntentDraft === "FAILED") coverage.materialDraft = "NOT_COMPLETED";
     sseDelivery.trace = fixture?.sseTrace() ?? null;
-    const result: WorkerResult = { journey: init.journey, requiredGroups, completedGroups, checks, initialization, groupTimings, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage, bodyLoss, sseDelivery, completeDraft };
+    const result: WorkerResult = { journey: init.journey, requiredGroups, completedGroups, checks, initialization, groupTimings, pageErrors, failure, cleanupErrors, wire: fixture?.wire ?? [], coverage, bodyLoss, sseDelivery, completeDraft, steeringRecovery };
     const raw = JSON.stringify(result, null, 2); requireThat(Buffer.byteLength(raw) <= 2 * 1024 ** 2, "Browser report exceeds reserved bound");
     await writeFile(join(init.directory, "browser.json"), raw, { mode: 0o600 });
     process.send?.({ kind: "result", result }, () => { process.disconnect(); });

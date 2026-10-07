@@ -66,7 +66,7 @@ export interface RecoveryWire {
     headersFlushed: boolean; prefixFlushed: boolean; endFlushed: boolean; socketClosed: boolean; error?: string };
 }
 const sha = (bytes: Buffer | string) => createHash("sha256").update(bytes).digest("hex");
-type CommandKind = "turn" | "queue" | "create";
+type CommandKind = "turn" | "queue" | "create" | "steering";
 
 export interface RecoverySseTrace {
   taskId: string; connections: number; bytes: number; completeFrames: number; pendingBytesUpperBound: number;
@@ -169,7 +169,7 @@ async function readAcknowledgement(source: IncomingMessage, kind: CommandKind) {
   assert.ok(bytes.equals(Buffer.from(bytes.toString("utf8"))), "ACK must be valid UTF8");
   const ack: unknown = JSON.parse(bytes.toString("utf8"));
   assert.ok(ack && typeof ack === "object" && !Array.isArray(ack));
-  const identity = (ack as Record<string, unknown>)[kind === "turn" ? "turn" : kind === "queue" ? "item" : "conversation"];
+  const identity = (ack as Record<string, unknown>)[kind === "turn" ? "turn" : kind === "queue" ? "item" : kind === "steering" ? "command" : "conversation"];
   assert.ok(identity && typeof identity === "object" && "id" in identity && typeof identity.id === "string", "Real accepted identity required");
   return { bytes, contentType };
 }
@@ -215,6 +215,7 @@ export interface RecoveryFixtureOptions {
   directory: string;
   cacheDirectory: string;
   checkpoint(): Promise<void>;
+  steering?: { workDeadline: number };
 }
 
 /** Parent-owned DB lease. Attempt/confirmation/marker facts survive a killed or hung worker.
@@ -328,6 +329,10 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
   const lifecycle = new AbortController(), bound = AbortSignal.any([signal, lifecycle.signal]);
   let sseTaskId: string | undefined, sseObserver: RecoverySseObserver | undefined;
   let completeDraftSeeded = false;
+  let steeringSeeded = false;
+  const steeringLeaseMs = 60_000;
+  const steeringActor = { registered: false, claimRequests: 0, claimed: false, sessionEventRequests: 0,
+    heartbeatRequests: 0, runnerReceiptRequests: 0, providerQueries: 0 };
   const publicServer = httpServer(async (request, response) => {
     responses.add(response); response.on("close", () => responses.delete(response));
     const path = request.url ?? "/";
@@ -365,7 +370,8 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
             if (status === undefined) throw Error("Fixture upstream has no HTTP status.");
             const row: RecoveryWire = { method, path, key: typeof request.headers["idempotency-key"] === "string" ? request.headers["idempotency-key"] : null, body, status, cookie: request.headers.cookie !== undefined, bearer: request.headers.authorization !== undefined, csrf: request.headers["x-flow-csrf"] !== undefined };
             wire.push(row); measureWire();
-            const kind = /\/turns$/.test(path) ? "turn" : /\/queue$/.test(path) ? "queue" : path === "/api/conversations" ? "create" : undefined;
+            const kind = /\/turns$/.test(path) ? "turn" : /\/queue$/.test(path) ? "queue" : path === "/api/conversations" ? "create"
+              : /^\/api\/tasks\/[^/]+\/steering$/.test(path) ? "steering" : undefined;
             if (method === "POST" && status >= 200 && status < 300 && kind) {
               const inject = lost === kind; if (inject) lost = undefined;
               const operation = (async () => {
@@ -410,7 +416,8 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
   let closing: Promise<void> | undefined;
   const close = () => closing ??= (async () => {
     const began = Date.now(), errors: string[] = [];
-    const save = (complete: boolean) => writeFile(join(options.directory, "fixture-cleanup.json"), JSON.stringify({ complete, errors, elapsedMs: Date.now() - began, wireBytes, providerQueries: 0 }, null, 2));
+    const save = (complete: boolean) => writeFile(join(options.directory, "fixture-cleanup.json"), JSON.stringify({ complete, errors, elapsedMs: Date.now() - began, wireBytes, providerQueries: 0,
+      ...(options.steering ? { steeringActor } : {}) }, null, 2));
     const attempt = async (name: string, operation: () => Promise<unknown>) => {
       await save(false);
       try { await operation(); } catch (error) { errors.push(`${name}: ${String(error)}`); }
@@ -432,7 +439,13 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
     await checkpoint();
     const address = publicServer.address(); if (!address || typeof address === "string") throw Error("No fixture address.");
     const url = `http://127.0.0.1:${address.port}`;
-    app = await createServer({ databaseUrl: options.databaseUrl, ownerToken: token, automaticQueueScan: false, browserSession: { cookieOrigin: url, trustedOrigins: [url], authEpoch: "recovery-fixture-v1" } });
+    if (options.steering) {
+      const remaining = options.steering.workDeadline - Date.now();
+      assert.ok(Number.isFinite(remaining) && remaining > 0 && remaining <= steeringLeaseMs - 15_000, "Steering needs the selected <=60s attempt with its 15s cleanup reserve");
+    }
+    app = await createServer({ databaseUrl: options.databaseUrl, ownerToken: token, automaticQueueScan: false,
+      ...(options.steering ? { activeSteering: true, leaseMs: steeringLeaseMs } : {}),
+      browserSession: { cookieOrigin: url, trustedOrigins: [url], authEpoch: "recovery-fixture-v1" } });
     await checkpoint();
     center = await app.listen({ host: "127.0.0.1", port: 0 }); await checkpoint();
     const client = new FlowClient({ baseUrl: center, token });
@@ -451,6 +464,55 @@ export async function startRecoveryFixture(options: RecoveryFixtureOptions, sign
     await checkpoint();
     return { url: url + "/?recovery=1", token, wire, resource: resource.resource, secondResource: secondResource.resource, conversationId: conversation.conversation.id, projectId: project.snapshot.project.id, close,
       dropNext(kind: typeof lost) { lost = kind; },
+      async seedSteeringConversation() {
+        assert.ok(options.steering, "Steering actor requires the explicit selected journey");
+        assert.equal(steeringSeeded, false, "Only one synthetic steering actor is allowed");
+        steeringSeeded = true; await checkpoint();
+        // Public protocol actor only. Its token stays in this closure; no runner/SDK process or provider is started.
+        const registration = await client.registerRunner({ name: "Recovery synthetic steering protocol actor", harnesses: ["claude"], capacity: 1 });
+        steeringActor.registered = true; await checkpoint();
+        const actor = new FlowClient({ baseUrl: center, token: registration.token });
+        const { profile } = await actor.publishExecutionProfile({ configuration: {
+          harness: "claude", adapterVersion: "claude-sdk-0.3.290-v2", model: "recovery-steering",
+          thinking: "disabled", permissionMode: "dontAsk", access: "none", requireReadApproval: false,
+          materialScopeDigest: sha("[]"), activeSteering: { protocol: "flow.active-steering.v1" },
+          limits: { maxTurns: 2, maxBudgetUsd: 0.2, timeoutMs: 60000 },
+        } }, bound);
+        await checkpoint();
+        const created = await client.createConversation({ title: "Recovery steering conversation", harness: "claude",
+          executionProfile: profile.reference, projectId: project.snapshot.project.id,
+          requested: { model: profile.configuration.model, thinking: "disabled", tools: "none" } }, randomUUID(), bound);
+        await checkpoint();
+        let activationStarted = false;
+        return { profile, conversationId: created.conversation.id,
+          async activate(taskId: string) {
+            assert.equal(activationStarted, false, "The protocol actor may claim only one attempt"); activationStarted = true;
+            const until = Math.min(options.steering!.workDeadline, Date.now() + 5000);
+            for (;;) {
+              await checkpoint(); assert.ok(Date.now() < until && steeringActor.claimRequests < 50, "Public claim readiness deadline");
+              const started = performance.now(); steeringActor.claimRequests++;
+              const claimed = await actor.claim(AbortSignal.any([bound, AbortSignal.timeout(Math.max(1, until - Date.now()))]));
+              await checkpoint(); assert.ok(Date.now() < until, "Public claim readiness deadline");
+              if (!claimed.assignment) { await new Promise(resolve => setTimeout(resolve, 100)); continue; }
+              steeringActor.claimed = true;
+              const { assignment } = claimed;
+              assert.equal(assignment.task.id, taskId); assert.deepEqual(assignment.task.executionProfile, profile.reference);
+              assert.equal(claimed.remainingLeaseMs, steeringLeaseMs);
+              const remainingLeaseMs = claimed.remainingLeaseMs - (performance.now() - started);
+              assert.ok(remainingLeaseMs > options.steering!.workDeadline - Date.now(), "Claim lease must cover the remaining work without heartbeat");
+              const ownership = { attemptId: assignment.attempt.id, ownerVersion: assignment.attempt.ownerVersion }, nativeSessionId = randomUUID();
+              steeringActor.sessionEventRequests++;
+              const acknowledged = await actor.report({ ...ownership, events: [{ id: randomUUID(), sequence: 1, type: "session",
+                nativeSessionId, adapterVersion: "claude-sdk-0.3.290-v2" }] }, bound);
+              await checkpoint(); assert.deepEqual(acknowledged, { accepted: 1, lastSequence: 1 });
+              const admission = await client.steeringAdmission(taskId, { attemptId: ownership.attemptId }, bound);
+              await checkpoint(); assert.ok(admission.state === "ready"); assert.equal(admission.ownerVersion, ownership.ownerVersion);
+              return { ...ownership, nativeSessionId, admission, remainingLeaseMs, leaseMs: steeringLeaseMs,
+                protocolActor: "synthetic-session-event" as const, observations: { ...steeringActor } };
+            }
+          },
+        };
+      },
       async seedCompleteDraft() {
         assert.equal(completeDraftSeeded, false, "Only one complete-draft publisher is allowed");
         completeDraftSeeded = true; await checkpoint();
