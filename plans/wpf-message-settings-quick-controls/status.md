@@ -5,30 +5,30 @@
 | 任务 ID | WPF-MESSAGESETTINGS02 |
 | 所属大task | [WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
-| 最近更新时间 | 2026-10-07 07:46:07 UTC |
+| 最近更新时间 | 2026-10-07 09:43:00 UTC |
 | 任务开工时间 | UNKNOWN |
-| 任务完成时间 | NOT_COMPLETED |
-| 任务时间来源 | 开工旧原件尚无可明确认定的实际开工时点，未用claim/commit倒推；完成未发生 |
+| 任务完成时间 | 2026-10-07T09:43:00.996Z |
+| 任务时间来源 | 开工 UNKNOWN：旧原件无实际开工时点，不用 claim/commit 倒推；完成为本次限定组件主线接收核齐时点，见 [核验原件](../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/verification.json)，不代表 MATURE02/TODO11 全目标完成 |
 | 单一status owner / model | w01_owner / gpt-6-astra |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 当前产出 | 模型、思考力度与速度快速选择已完成组件验收和独立审查，原稿及已发送和排队样本保持不变 |
-| 下一可用交付 | 受控快速设置组件的主线接收；真实消息入口按原后继接线 |
-| 当前阻塞 | WAITING: 本片已审，等待主线接收；生产App入口及紧凑浮层展示仍是原任务后继 |
+| 当前产出 | 模型、思考力度与速度快速选择组件已验收并进入主线，保留原稿及已发送、排队样本隔离 |
+| 下一可用交付 | 本片段已交付；真实消息入口与紧凑浮层按原 MATURE02/TODO11 后继接线 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
-| 本片段交付阶段 | integration |
+| 本片段交付阶段 | delivered |
 | 工作分支状态 | delivered |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls |
 | Branch | codex/web-message-settings-quick-controls |
 | Base | c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05 |
 | HEAD | dde571be8853698f8943f952ddef2c648d2e1294（四筛选框字符键验收源；metadata单独） |
-| Dirty | 本次元数据提交后核双端clean；四源码逐字等于已审目标 |
+| 工作树dirty状态 | 本次仅自有记录；提交并核双端 clean 后停写，四源码与固定目标及主线逐字同 |
 | 实现目标 | dde571be8853698f8943f952ddef2c648d2e1294 |
 | 实现范围 | apps/web/src/execution-profiles/ExecutionProfilePicker.tsx, apps/web/test/message-settings.test.ts, apps/web/test/message-settings.fixture.tsx, apps/web/test/message-settings.browser.ts |
-| 检查状态 | PASS dde571 六组fixture+双390PNG、actualexit0/完整seal/ownedcleanup；单browser noEmit1274.848ms，原fe6 strict/26direct按未变业务源保留，全部历史FAIL不改 |
+| 检查状态 | PASSED dde571be8853698f8943f952ddef2c648d2e1294（限定组件：6/6 fixture、双390PNG、outer exit0/seal/owned cleanup；受影响 browser noEmit及原fe6 strict/26direct各保其范围；main独立Web noEmit 0/6121ms，旧失败不改） |
 | Review | APPROVED dde571be8853698f8943f952ddef2c648d2e1294（限定受控组件及完整六组fixture；非生产App接线） |
-| Main | 本片未集成；基线含原受控组件 |
-| Claim | 839e466f-1a3f-4e92-94e1-ece390c32fbf v1 active；本人 live 已核 |
+| 已集成main状态 / HEAD | INTEGRATED 63768046daa048e955670e74c0ce2491f8ba9873；[Lead接收原件](../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/lead-intake.json)；四源与 dde571/原owner/当前逐字同，未宣称生产App接线或部署 |
+| Claim | 839e466f-1a3f-4e92-94e1-ece390c32fbf v1：本次 fresh 核 active/本人原六范围/无 overlap；完成提交并停写后释放，实际状态以账本及管理释放回执为准 |
 | Dashboard | Lead 22:12:19 179-source 观察 current/live；本人未采样页面；此前 actual parseStatus errors=[] / 5 TODO；仅解析本任务status，未采页面 |
 
 ## TODO 状态
@@ -39,17 +39,23 @@
 | MSGQUICK-02 | completed | w01_owner | 当前授权 tuple + 私有候选 + 同步宿主 CAS |
 | MSGQUICK-03 | completed | w01_owner | 四源固定；validation-proposal（未运行） |
 | MSGQUICK-04 | completed | w01_owner | [root限定组件/完整六组独审](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-actual-review.json)，6/6+2PNG、单browser noEmit、原strict/26direct；全部旧FAIL保留，新段47496/余42504，原30625闭合 |
-| MSGQUICK-05 | pending | w01_owner | 主线独立接收；真实 App/Queue/Recovery 后继不在此范围 |
+| MSGQUICK-05 | completed | w01_owner | [固定main接收及核验](../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md)；仅组件交付，真实 App/Send/Queue/Recovery/P01、紧凑host仍属原TODO11后继 |
+
+## 当前主线接收与停止写入
+
+本片段的五项 TODO 已完成，主线接收固定于 `63768046daa048e955670e74c0ce2491f8ba9873`；[原件/四源核齐](../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md)。本次仅归档 Lead 已执行的 Web noEmit 0/6121ms，原 result 的初次 unknown 观察和最终 group absent/双 EOF 完整保留；没有重跑 strict、26 direct、6 browser 或任何服务。完成时间表示这个限定片段核齐，不推断实际工时或完整 MATURE02 完成。
+
+生产 App/Send/Queue/Recovery/P01 真实接线、紧凑主入口和普通/长名称对照截图仍在原 TODO11 后继；不以组件 fixture 代替。完成并停止原六范围写入，实际 claim 释放以账本/管理回执为准，释放后不补写本树。
 
 ## 边界与架构影响
 
 仅受控组件接口变化：required opaque draft token 与同步 onChange 结果；真实宿主需消费 live CAS。无生产 App 接线，无新存储/公开协议/注册表。详情扩展保持窄 callback。c1失败后原Lead补齐固定输入，管理c2实际strict/26direct通过；owner没有扩大sparse/安装。可移植候选只负责标准工具与证据一致性，远程隔离/清理由未来CI owner承担，未创建workflow或运行授权。
 
-## 当前验证候选（与产品目标分开）
+## 历史可移植验证候选（与当前产品目标分开）
 
-候选 `dc67b3410c12f321d62a1565145e184b52b0ca84`，仅 [portable-check](../../docs/evidence/wpf-message-settings-quick-controls/portable-check/README.md)。117固定输入/相对配置/标准工具、严格26名称/两个真实子退出/独立cleanup receipt；语法及隔离alias表达式有限静态检查通过。产品仍fe6；portable自身未运行/未启用远程。其独审 APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN / 0 blocking 不覆盖本机运行。本机c1首次strict失败保留；c2实际strict/26direct通过；b1/b2实际browser均失败，portable自身仍未运行。
+候选 `dc67b3410c12f321d62a1565145e184b52b0ca84`，仅 [portable-check](../../docs/evidence/wpf-message-settings-quick-controls/portable-check/README.md)。117固定输入/相对配置/标准工具、严格26名称/两个真实子退出/独立cleanup receipt；语法及隔离alias表达式有限静态检查通过。该候选当时绑定产品 fe6；当前组件为 dde571。portable 自身未运行/未启用远程。其独审 APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN / 0 blocking 不覆盖本机运行。本机c1首次strict失败保留；c2实际strict/26direct通过；b1/b2实际browser均失败，portable自身仍未运行。
 
-## 历史首次实际检查与供给（当时事实）
+## 历史首次实际检查与供给（以下按各时点事实保留，页首为当前结论）
 
 执行 HEAD `60ffa4365abf6185a4138507067fe8c75f97aa3a`；[原件与独审](../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/README.md)。外层实际exit1、唯一FAILED seal、strict exit2；direct未执行，browser未运行。已清理own PGID/scratch并归还窗口。晚终态1875ms计入累计，剩28125ms；早预算1874/28126仅历史原件。原Lead已仅物化 `packages/contracts/src/goal-plan-confirmation.ts` 的固定2388B输入，实际HEAD60ffa/347既有产品输入不变，见[供给原件](../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/source-provision-receipt.json)。owner未补公共路径、未续跑；供给不等检查PASS，后续仍须新输入pin/实际HEAD绑定与准入。剩余包仅允许静态准备，b1仍未获准入。
 
@@ -65,7 +71,7 @@
 
 fixture/context均关闭，parent27230、worker31548、Chrome27442及scratch均清理；所有日志EOF/0drop，cleanupErrors[]，窗口已归还。原parent12282ms/late12284原样保留；按外层真实12325.373ms向上取整，**browser累计12326ms/余47674ms**。strict/direct原累计5119/余24881独立保留。未自动重试，四产品源/旧raw/候选均未改。完整浏览器、主线与真实宿主仍未通过，任务完成保持NOT_COMPLETED。
 
-## 当前b2浏览器计量中断 2026-10-07 04:48:10 UTC
+## 历史b2浏览器计量中断 2026-10-07 04:48:10 UTC
 
 [b2原件/独审](../../docs/evidence/wpf-message-settings-quick-controls/b2-browser-20261007/README.md)。执行HEAD3a4dd6/产品fe6；outer实际exit1/唯一FAILEDseal及present hash/null一致。父首错保留证据容量超限，worker143；没有browser-results、trace或PNG，HTTP/context正常关闭字段NOT_CAPTURED，不补造true。parent88739/worker88871/Chrome88743 groups与scratch已清理，全EOF/0drop，root独立核3group absent。
 
@@ -77,7 +83,7 @@ root确认监督源码的非原子scratch差分计量有缺陷；原样本仅与
 
 浏览器仍两次FAILED，累计18468/余41532ms未变；b1/b2原件、四fe6源、诊断worker、六组/两PNG不动。root已限定接受b3实际helper与精确native准备；本次metadata后只重绑TMP的当前HEAD/state/批准pointer，无gate，后续browser仍需fresh实际准入；当前完整任务NOT_COMPLETED。
 
-## 当前b3浏览器实际失败 2026-10-07 05:26:24 UTC
+## 历史b3浏览器实际失败 2026-10-07 05:26:24 UTC
 
 [b3完整原件](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md)。执行HEAD f9fa9955/产品fe6；actualouterexit1、唯一FAILEDseal/presenthash一致。再次在原模型select值断言失败，0/6组、0PNG；本轮9,529B诊断trace完整捕获10条记录，没有input/change，实际value仍空。不能据此唯一判产品或平台原因；[root本次独审](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/root-failed-actual-review.json)已接受FAILED与清理，非feature通过，无第四次。
 
@@ -117,10 +123,11 @@ fixture/context正常关闭，全日志EOF/0drop，parent15507/worker15534/Chrom
 | MSGQUICK-W04 | UNKNOWN | 2026-10-07T07:11:44.274841+00:00 | 验证失败 | 两条原生序列均未让独立控制页选值，真实modal对照前提未成立；责任方w01_owner/root，解除条件为有依据的不同对照输入与合法后继；不重复同样run或以selectOption替代键盘验收。 | [native3实际观测/独审](../../docs/evidence/wpf-message-settings-quick-controls/native-control-third-20261007/root-actual-review.json)；等待实际起点不能由失败时间自动推算；解除依据为C实际native选值且root本次限定接收时点 |
 | MSGQUICK-W05 | UNKNOWN | 2026-10-07T07:24:02.757575Z | 验证失败 | C选值后保稿基线读取差异，责任w01_owner/Web管理；本次固定DOM文本定向验证完成解除。历史开始未知，不从失败时间倒推。 | [C第二次实际退出/保稿完成](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-second-20261007/actual-summary.json) |
 | MSGQUICK-W06 | UNKNOWN | 2026-10-07T07:39:32.913766Z | 验证前提 | 四筛选框真实字符键/完整六组已完成；责任w01_owner，实际验证前提已解除。历史起点未知，不推断净工时；独审和主线另列。 | [actual exit0与完整原件](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md) |
+| MSGQUICK-W07 | UNKNOWN | 2026-10-07T09:43:00.996Z | 主线接收 | 责任方 Execution Lead / w01_owner；解除条件为 Lead 固定main接收及本次四源/原件核齐，已满足。历史等待起点缺证据，不从分支交付倒推。 | [主线核验](../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/verification.json) |
 
 等待表仅消费已有事件；各段起点UNKNOWN，不累计相加、不据此扣除净工时，OPEN仅表示本owner明确仍待解除。
 
-## Native typeahead C 当前准备 · 2026-10-07 06:55:52 UTC
+## 历史 Native typeahead C 当时准备 · 2026-10-07 06:55:52 UTC
 
 诊断source `ac44d327cdff3180c0dff36c3e199cd47669fc88`、[精确范围/来源](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/source-manifest.json)。只C一次m/可信原生事件后modal；旧A/B和六组不变。源码/父worker待独审，NOT_RUN，无noEmit或26重复；runtime新段仍23322、余66678，旧30625闭合。当前资料仅支持独立typeahead假设，不证明Chrome154根因；无gate/窗口预约。等待W04仍OPEN，开始UNKNOWN不补造；固定源码不等解除验证等待。
 

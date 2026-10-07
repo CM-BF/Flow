@@ -1,0 +1,90 @@
+{
+  "verifiedAt": "2026-10-07T09:43:00.996Z",
+  "kind": "metadata-only fixed-main reception verification",
+  "taskId": "WPF-MESSAGESETTINGS02",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls",
+  "branch": "codex/web-message-settings-quick-controls",
+  "ownerHead": "7e9f0582a88e2ede7e10576a420a47970575d2cf",
+  "productTarget": "dde571be8853698f8943f952ddef2c648d2e1294",
+  "mainHead": "63768046daa048e955670e74c0ce2491f8ba9873",
+  "sourceScope": [
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/test/message-settings.browser.ts",
+    "apps/web/test/message-settings.fixture.tsx",
+    "apps/web/test/message-settings.test.ts"
+  ],
+  "sources": [
+    {
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 25804,
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+      "fixedTargetOwnerMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 40905,
+      "sha256": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb",
+      "fixedTargetOwnerMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/test/message-settings.fixture.tsx",
+      "bytes": 9510,
+      "sha256": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+      "fixedTargetOwnerMainCurrentEqual": true
+    },
+    {
+      "path": "apps/web/test/message-settings.test.ts",
+      "bytes": 20068,
+      "sha256": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+      "fixedTargetOwnerMainCurrentEqual": true
+    }
+  ],
+  "receipt": {
+    "source": "docs/evidence/i02/quick-component-intake.json",
+    "main": "63768046daa048e955670e74c0ce2491f8ba9873",
+    "bytes": 3720,
+    "sha256": "3805cae01660f3b80b0af9f285d07afaad65ed8bb2997da5c58a28c2f20b6a63"
+  },
+  "mainTypecheck": {
+    "exitCode": 0,
+    "elapsedMs": 6121,
+    "result": "result.json",
+    "preservesInitialUnknownObservation": true,
+    "noChecksRepeatedByOwner": true
+  },
+  "claimObservedAt": "2026-10-07T09:42:28.971Z",
+  "claimId": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+  "claimVersion": 1,
+  "overlaps": [],
+  "initialWorktreeClean": true,
+  "completionScope": "controlled component main reception only; production App/Send/Queue/Recovery/P01 and compact host are MATURE02/TODO11 follow-up",
+  "deployment": "NOT_RUN / not claimed",
+  "checksThisSegment": "metadata/parser/proof/link/diff only; no engineering tests, service or browser",
+  "artifacts": [
+    {
+      "path": "lead-intake.json",
+      "bytes": 3720,
+      "sha256": "3805cae01660f3b80b0af9f285d07afaad65ed8bb2997da5c58a28c2f20b6a63"
+    },
+    {
+      "path": "reservation.json",
+      "bytes": 363,
+      "sha256": "815f441c10fe741443077a2ce628c7621dc08080ed9befdd0a91e1dcefaa2231"
+    },
+    {
+      "path": "result.json",
+      "bytes": 544,
+      "sha256": "4361374303dae3c750b152f5a72894b138ee7f55efc2aa77453db56b36d2b452"
+    },
+    {
+      "path": "stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "stdout.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ]
+}

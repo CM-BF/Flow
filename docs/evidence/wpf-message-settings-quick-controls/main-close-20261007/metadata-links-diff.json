@@ -1,0 +1,761 @@
+{
+  "at": "2026-10-07T09:44:50.974572+00:00",
+  "scope": "metadata only",
+  "linkCount": 139,
+  "errors": [],
+  "diffCheckExit": 0,
+  "changed": [
+    "docs/evidence/wpf-message-settings-quick-controls/README.md",
+    "docs/evidence/wpf-message-settings-quick-controls/quality.md",
+    "plans/wpf-message-settings-quick-controls/plan.md",
+    "plans/wpf-message-settings-quick-controls/review.md",
+    "plans/wpf-message-settings-quick-controls/status.md"
+  ],
+  "untracked": [
+    "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md",
+    "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/claim-observation.json",
+    "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/lead-intake.json",
+    "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/metadata-parser-proof.json",
+    "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/quality.json",
+    "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/reservation.json",
+    "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/result.json",
+    "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/stderr.txt",
+    "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/stdout.txt",
+    "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/verification.json"
+  ],
+  "links": [
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/source-provision-receipt.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b2-browser-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-segment-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-first-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-followup-preparation/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-second-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-snapshot-preparation/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-third-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/charset-static-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-first-20261007/root-actual-and-fix-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-second-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/plan.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/verification.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/lead-intake.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/take-receipt.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/quality.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/portable-check/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/source-provision-receipt.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b2-browser-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/root-failed-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-segment-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-first-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-followup-preparation/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-second-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-snapshot-preparation/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-second-20261007/root-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-third-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-first-20261007/admission/handoff.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-second-20261007/admission/handoff.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-third-20261007/admission/handoff.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-third-20261007/root-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-second-20261007/actual-summary.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/verification.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/source-manifest.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/charset-static-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-first-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-text-preparation/source-manifest.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-second-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/status.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/main-intake.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-source-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/main-intake.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/root-35bbe-source-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/peer-35bbe/report.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/peer-35bbe/audit.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/source-manifest.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/interface.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/validation-proposal.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/root-fe6-source-and-packet-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/root-7615-review-correction.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/root-c1-packet-terminal-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/peer-c1-terminal-review.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/root-c1-final-preparation-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/browser-preparation/report.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/root-browser-consumer-scope.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/root-b1-preparation-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/portable-candidate-manifest.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/root-dc67-portable-preparation-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/peer-dc67-portable-failure-review.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/root-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/archive-manifest.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/source-provision-receipt.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/root-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/root-native-preparation-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/root-failed-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b2-browser-20261007/root-failed-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/root-source-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/actual.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b3-accounting-20261007/root-native-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/root-failed-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-segment-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-first-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-followup-preparation/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-first-20261007/root-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-second-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-snapshot-preparation/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-second-20261007/root-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-control-third-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/README.md",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-preparation/charset-static-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-first-20261007/root-actual-and-fix-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-second-20261007/root-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "plans/wpf-message-settings-quick-controls/review.md",
+      "target": "../../docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "native-printable-full-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "native-printable-full-20261007/root-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "main-close-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "c2-actual-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "native-typeahead-second-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "b3-browser-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "b2-browser-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "b3-accounting-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "c1-first-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "c1-first-20261007/source-provision-receipt.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "b1-first-browser-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "browser-preparation/report.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "../../../plans/wpf-message-settings-quick-controls/review.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "source-manifest.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "interface.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "portable-check/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "b3-browser-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "native-typeahead-preparation/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "native-typeahead-first-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "native-typeahead-text-preparation/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "native-typeahead-second-20261007/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "target": "native-printable-acceptance-preparation/README.md",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/quality.md",
+      "target": "main-close-20261007/quality.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md",
+      "target": "verification.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md",
+      "target": "lead-intake.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md",
+      "target": "result.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md",
+      "target": "reservation.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md",
+      "target": "stdout.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md",
+      "target": "stderr.txt",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md",
+      "target": "../native-printable-full-20261007/root-actual-review.json",
+      "exists": true
+    },
+    {
+      "source": "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md",
+      "target": "../c2-actual-20261007/README.md",
+      "exists": true
+    }
+  ],
+  "fixedHistoricalProofOutside": [
+    {
+      "path": "docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/noemit/sandbox.sb",
+      "sha256": "b17dfbe6daea4c55b16ff79244c3fc8b1443ddcb56da1e796efba1422cc7d55e",
+      "unchangedFromOwner7e9": true
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/source.diff",
+      "sha256": "f8e6ea5970327d69a8cd23be9edbe5a985052aebe650b1d9cd463e7bea530e1c",
+      "unchangedFromOwner7e9": true
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/binding.diff",
+      "sha256": "888e779aa9ea1151f77aefe321f3af12111ecb2288fb3aada99486805445042d",
+      "unchangedFromOwner7e9": true
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/sandbox.sb",
+      "sha256": "7839738e48a151cf08f36bb810a5763f17270d79754dbf8a41c5037fea518544",
+      "unchangedFromOwner7e9": true
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/supervisor.diff",
+      "sha256": "869b3072d4a79b4d73473822b79e45f302683ab483058f07729e356395b42226",
+      "unchangedFromOwner7e9": true
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/supervisor.py",
+      "sha256": "b454173c7393d7597e154bbab9da7eb9d628ea6dcfba73c6904a2b2e01869b1f",
+      "unchangedFromOwner7e9": true
+    },
+    {
+      "path": "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/worker.mjs",
+      "sha256": "53d694ac714103a2f7af73386d6054c528956d9f830642e2e76eb07ef0489cfb",
+      "unchangedFromOwner7e9": true
+    }
+  ],
+  "productChanges": []
+}

@@ -1,15 +1,16 @@
 # WPF-MESSAGESETTINGS02 独立审查
 
-状态：APPROVED。更新时间：2026-10-07 07:46:07 UTC。
+状态：APPROVED。更新时间：2026-10-07 09:43:00 UTC。
 
-- Target：dde571be8853698f8943f952ddef2c648d2e1294；base c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。
+- Review target commit：dde571be8853698f8943f952ddef2c648d2e1294
+- Base：c8e2e9e56af4c3dd2975253e9e374f9ec3e09e05。
 - Scope：apps/web/src/execution-profiles/ExecutionProfilePicker.tsx；apps/web/test/message-settings.test.ts；apps/web/test/message-settings.fixture.tsx；apps/web/test/message-settings.browser.ts。
 - [root正式实际结论](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-actual-review.json)：APPROVED_SCOPED_COMPONENT_AND_FULL_SIX_FIXTURE_ACTUAL_NOT_PRODUCTION_APP，0 blocking。原输入语义[source审](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-source-review.json)及单browser noEmit、原fe6 strict/26direct各按范围保留。
 - 实际：outerexit0/唯一PASSseal，6/6fixture组、Light/Dark390两PNG、四个native字符键完整可信事件和owned清理。34原件与7runtime/4source已独立核。全局后续passive trace达cap/drop8，不冒全程完整trace；四filter各10条验收记录完整。
-- 限制：CDP printable可信浏览器输入，不是physical IME或OS-popup验收。两图是180字符压力fixture；紧凑主入口/完整身份下钻/主操作可见性列原MATURE01和MATURE02 TODO11后继。生产App/Send/Queue/Recovery/P01接线、main及部署未完成。
-- 当前：[主线接收包](../../docs/evidence/wpf-message-settings-quick-controls/main-intake.json)，仅四源；原旧FAIL和诊断从不改写为PASS，MSGQUICK-05仍待接收。
+- 限制：CDP printable可信浏览器输入，不是physical IME或OS-popup验收。两图是180字符压力fixture；紧凑主入口/完整身份下钻/主操作可见性列原MATURE01和MATURE02 TODO11后继。生产 App/Send/Queue/Recovery/P01 接线及部署未验；受控组件 main 已接收，不能把后继边界冒完成。
+- 当前：[原主线接收包](../../docs/evidence/wpf-message-settings-quick-controls/main-intake.json)的四源已进入 `63768046daa048e955670e74c0ce2491f8ba9873`；[Lead正式接收及本人核验](../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md)，MSGQUICK-05完成。原旧FAIL和诊断不改判，作者未追加源审/工程运行。
 
-## 历史源码与准备审查（以下 NOT_RUN 按当时事实保留）
+## 历史源码与准备审查（以下全部按当时事实保留，只有页首为当前结论）
 
 ## 独立原件与作者回应
 
@@ -71,7 +72,7 @@ Portable review：**APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN / 0 blocking**�
 
 [root本次实际独审原件](../../docs/evidence/wpf-message-settings-quick-controls/b1-first-browser-20261007/root-failed-actual-review.json)：ACCEPTED_FAILED_ACTUAL_AND_CLEANUP_NOT_FEATURE_PASS；8200B / d2593abf4d6ee2be0929da5493ab0c678c094e49b2f095b4c53bb47ddc9ed4b4。接受FAILED+完整清理事实，0/6与0PNG/缺manifest原样成立，保守12326/余47674；非feature PASS、无续跑授权。
 
-## 当前b2 actual · 2026-10-07 04:48:10 UTC
+## 历史b2 actual · 2026-10-07 04:48:10 UTC
 
 [root原件](../../docs/evidence/wpf-message-settings-quick-controls/b2-browser-20261007/root-failed-actual-review.json)：ACCEPTED_FAILED_ACTUAL_AND_OWNED_CLEANUP_NOT_FEATURE_PASS；SHAeea3ef6a637b878ce89a7b30e4b9d6775446332398d39db5ffc34b96e97750be。actualouterexit1，FAILED seal完整/presenthash匹配/null诚实，所有333samples与EOF0drop已核。精确3PGID absent、scratch已清理；worker没有正常HTTP/context关闭报告，保持NOT_CAPTURED。
 
@@ -87,7 +88,7 @@ Portable review：**APPROVED_SCOPED_PORTABLE_PREPARATION_NOT_RUN / 0 blocking**�
 
 [实际原件与保守账](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/README.md)：outerexit1/唯一FAILEDseal、trace hash成立；模型选择未提交，0/6、0PNG。owned三组/scratch absent，fixture/context正常close已捕获，EOF0drop。累计30625/余29375，历史预算不改；[root本次实际独审](../../docs/evidence/wpf-message-settings-quick-controls/b3-browser-20261007/root-failed-actual-review.json)已接受FAILED/trace/cleanup事实，不是feature PASS，不把native源准备批准当行为通过。
 
-## 新诊断准备候选（NOT_STARTED / NOT_RUN）
+## 历史新诊断准备候选（当时 NOT_STARTED / NOT_RUN）
 
 Target `bdf444f13f2963235ab3f1659546d19fc8f5c203` 的browser单文件追加及 `/private/tmp/msgquick-native1` parent/worker最小delta待root独审，原fe6源码批准不能自动覆盖新增诊断。三业务文件与原六组函数字节不变；strict/26实际证据保留其原范围，新entry无执行证据。详见[准备接口/新旧预算](../../docs/evidence/wpf-message-settings-quick-controls/native-control-segment-20261007/README.md)。当前无gate/native接受，完整feature UNKNOWN。
 

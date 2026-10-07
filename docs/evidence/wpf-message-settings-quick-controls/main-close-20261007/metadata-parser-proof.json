@@ -1,0 +1,232 @@
+{
+  "at": "2026-10-07T09:44:22.231Z",
+  "scope": "Own metadata/parser/proof only; no aggregation/product test/runtime",
+  "elapsedMs": 71.009375,
+  "inputs": {
+    "statusSha256": "3d065ae256a4d95478f644cb05cf4c0f2d281c84e89302633762b1bb92caade8",
+    "reviewSha256": "1447f377c6c4bc2486f427d36c00778795ffbcbc8604e33dc131a63d3900bef3"
+  },
+  "parserPins": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/status.mjs",
+      "sha256": "4eafd635647a5a5657e536dec721ec6bfd6b51ce65f3327c22ad7994f4cde7ef"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/apps/execution-dashboard/src/proof.mjs",
+      "sha256": "73ef7ef56ec424dc6758523c18a0f65ce03608ef934432b942a0f2e8acc7a9e8"
+    }
+  ],
+  "status": {
+    "timing": {
+      "started": {
+        "state": "unknown",
+        "at": null,
+        "record": "UNKNOWN"
+      },
+      "completed": {
+        "state": "known",
+        "at": "2026-10-07T09:43:00.996Z",
+        "record": "2026-10-07T09:43:00.996Z"
+      },
+      "source": {
+        "state": "declared",
+        "record": "开工 UNKNOWN：旧原件无实际开工时点，不用 claim/commit 倒推；完成为本次限定组件主线接收核齐时点，见 [核验原件](../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/verification.json)，不代表 MATURE02/TODO11 全目标完成"
+      },
+      "issues": [
+        "任务开工时间未记录"
+      ],
+      "waiting": "| ID | 开始UTC | 结束UTC | 类别 | 原因与解除条件 | 来源 |\n| MSGQUICK-W01 | UNKNOWN | 2026-10-07T06:09:26.617854Z | 资源 | native1启动前等待独立Chrome与前持有方实际归还；责任方Web管理/root，解除条件为实际归还及fresh gate。历史起点缺证据，不补为claim或当前时点。 | [native1明确准入](../../docs/evidence/wpf-message-settings-quick-controls/native-control-first-20261007/admission/handoff.json)；此为准入解除时点，不是任务完成 |\n| MSGQUICK-W02 | UNKNOWN | 2026-10-07T06:29:46.323945Z | 资源 | native2启动前等待SVC08/更早ready的Recovery独占窗口结束；责任方Web管理/root，解除条件为实际归还及fresh gate；本行不推断整个两run间隔均为等待。 | [native2明确准入](../../docs/evidence/wpf-message-settings-quick-controls/native-control-second-20261007/admission/handoff.json)；历史起点未知 |\n| MSGQUICK-W03 | UNKNOWN | 2026-10-07T06:41:35.677679Z | 资源 | native3启动前等待调度/组合预算核实；责任方d01_owner，解除条件为无第二Chrome且fresh事实gate。C02当时仅计划，不宣称实际运行。 | [native3明确准入](../../docs/evidence/wpf-message-settings-quick-controls/native-control-third-20261007/admission/handoff.json)；历史起点未知 |\n| MSGQUICK-W04 | UNKNOWN | 2026-10-07T07:11:44.274841+00:00 | 验证失败 | 两条原生序列均未让独立控制页选值，真实modal对照前提未成立；责任方w01_owner/root，解除条件为有依据的不同对照输入与合法后继；不重复同样run或以selectOption替代键盘验收。 | [native3实际观测/独审](../../docs/evidence/wpf-message-settings-quick-controls/native-control-third-20261007/root-actual-review.json)；等待实际起点不能由失败时间自动推算；解除依据为C实际native选值且root本次限定接收时点 |\n| MSGQUICK-W05 | UNKNOWN | 2026-10-07T07:24:02.757575Z | 验证失败 | C选值后保稿基线读取差异，责任w01_owner/Web管理；本次固定DOM文本定向验证完成解除。历史开始未知，不从失败时间倒推。 | [C第二次实际退出/保稿完成](../../docs/evidence/wpf-message-settings-quick-controls/native-typeahead-second-20261007/actual-summary.json) |\n| MSGQUICK-W06 | UNKNOWN | 2026-10-07T07:39:32.913766Z | 验证前提 | 四筛选框真实字符键/完整六组已完成；责任w01_owner，实际验证前提已解除。历史起点未知，不推断净工时；独审和主线另列。 | [actual exit0与完整原件](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md) |\n| MSGQUICK-W07 | UNKNOWN | 2026-10-07T09:43:00.996Z | 主线接收 | 责任方 Execution Lead / w01_owner；解除条件为 Lead 固定main接收及本次四源/原件核齐，已满足。历史等待起点缺证据，不从分支交付倒推。 | [主线核验](../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/verification.json) |\n等待表仅消费已有事件；各段起点UNKNOWN，不累计相加、不据此扣除净工时，OPEN仅表示本owner明确仍待解除。"
+    },
+    "taskLinks": {
+      "kind": "subtask",
+      "reason": "",
+      "parent": {
+        "state": "known",
+        "record": "[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md)",
+        "id": "WPF-MATURE-02",
+        "location": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md"
+      },
+      "coLead": {
+        "state": "known",
+        "record": "Web /root（执行管理 d01_owner）",
+        "value": "Web /root（执行管理 d01_owner）"
+      },
+      "ownId": {
+        "state": "unknown",
+        "record": "",
+        "reason": "未声明"
+      }
+    },
+    "human": {
+      "delivery": {
+        "state": "delivered",
+        "source": "explicit"
+      },
+      "phase": "M2",
+      "priority": 1,
+      "output": "模型、思考力度与速度快速选择组件已验收并进入主线，保留原稿及已发送、排队样本隔离",
+      "next": "本片段已交付；真实消息入口与紧凑浮层按原 MATURE02/TODO11 后继接线",
+      "blocker": {
+        "state": "none",
+        "text": ""
+      },
+      "decision": {
+        "state": "none",
+        "text": ""
+      },
+      "missing": [],
+      "complete": true
+    },
+    "implementation": {
+      "target": "dde571be8853698f8943f952ddef2c648d2e1294",
+      "scopes": [
+        "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+        "apps/web/test/message-settings.test.ts",
+        "apps/web/test/message-settings.fixture.tsx",
+        "apps/web/test/message-settings.browser.ts"
+      ],
+      "errors": []
+    },
+    "taskId": "WPF-MESSAGESETTINGS02",
+    "owner": "w01_owner / gpt-6-astra",
+    "branch": "codex/web-message-settings-quick-controls",
+    "branchState": "delivered",
+    "updatedAt": "2026-10-07T09:43:00.000Z",
+    "updatedRecord": "2026-10-07 09:43:00 UTC",
+    "todos": [
+      {
+        "id": "MSGQUICK-01",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[receipt](../../docs/evidence/wpf-message-settings-quick-controls/take-receipt.json)、[技能](../../docs/evidence/wpf-message-settings-quick-controls/quality.md)"
+      },
+      {
+        "id": "MSGQUICK-02",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "当前授权 tuple + 私有候选 + 同步宿主 CAS"
+      },
+      {
+        "id": "MSGQUICK-03",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "四源固定；validation-proposal（未运行）"
+      },
+      {
+        "id": "MSGQUICK-04",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[root限定组件/完整六组独审](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-actual-review.json)，6/6+2PNG、单browser noEmit、原strict/26direct；全部旧FAIL保留，新段47496/余42504，原30625闭合"
+      },
+      {
+        "id": "MSGQUICK-05",
+        "state": "completed",
+        "owner": "w01_owner",
+        "evidence": "[固定main接收及核验](../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md)；仅组件交付，真实 App/Send/Queue/Recovery/P01、紧凑host仍属原TODO11后继"
+      }
+    ],
+    "errors": [],
+    "declaredHead": "dde571be8853698f8943f952ddef2c648d2e1294（四筛选框字符键验收源；metadata单独）",
+    "declaredDirty": "本次仅自有记录；提交并核双端 clean 后停写，四源码与固定目标及主线逐字同",
+    "checks": {
+      "state": "passed",
+      "target": "dde571be8853698f8943f952ddef2c648d2e1294",
+      "record": "PASSED dde571be8853698f8943f952ddef2c648d2e1294（限定组件：6/6 fixture、双390PNG、outer exit0/seal/owned cleanup；受影响 browser noEmit及原fe6 strict/26direct各保其范围；main独立Web noEmit 0/6121ms，旧失败不改）"
+    },
+    "reviewRecord": "APPROVED dde571be8853698f8943f952ddef2c648d2e1294（限定受控组件及完整六组fixture；非生产App接线）",
+    "mainRecord": "INTEGRATED 63768046daa048e955670e74c0ce2491f8ba9873；[Lead接收原件](../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/lead-intake.json)；四源与 dde571/原owner/当前逐字同，未宣称生产App接线或部署",
+    "next": "",
+    "risks": "",
+    "decisions": ""
+  },
+  "review": {
+    "state": "approved",
+    "record": "APPROVED。更新时间：2026-10-07 09:43:00 UTC。",
+    "target": "dde571be8853698f8943f952ddef2c648d2e1294"
+  },
+  "implementationProof": {
+    "target": "dde571be8853698f8943f952ddef2c648d2e1294",
+    "head": "7e9f0582a88e2ede7e10576a420a47970575d2cf",
+    "scopes": [
+      "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "apps/web/test/message-settings.test.ts",
+      "apps/web/test/message-settings.fixture.tsx",
+      "apps/web/test/message-settings.browser.ts"
+    ],
+    "observedAt": "2026-10-07T09:44:22.164Z",
+    "state": "unknown",
+    "implementationChanges": [],
+    "outsideChanges": [
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/noemit/sandbox.sb",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/source.diff",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/binding.diff",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/sandbox.sb",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/supervisor.diff",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/supervisor.py",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/worker.mjs"
+    ],
+    "metadataChanges": [
+      "docs/evidence/wpf-message-settings-quick-controls/README.md",
+      "docs/evidence/wpf-message-settings-quick-controls/main-intake.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/README.md",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/launch-claim.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/noemit/actual.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/noemit/stderr.txt",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/noemit/stdout.txt",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/noemit/tsconfig.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/root-research.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-acceptance-preparation/source-manifest.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/actual-summary.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/archive-manifest.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/claim-observation.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/metadata-parser.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/metadata-static-check.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/outer/actual-exit.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/outer/postrun.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/outer/start.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/outer/stderr.txt",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/outer/stdout.txt",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/README.md",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/admission.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/aliases.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/binding.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/browser-budget.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/child-gate.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/consumed-gate.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/gate.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/manifest.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/prior-evidence.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/raw/msgquick-full1-20261007-073908-dbfef9/browser-results.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/raw/msgquick-full1-20261007-073908-dbfef9/chrome.log",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/raw/msgquick-full1-20261007-073908-dbfef9/message-settings-dark-390.png",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/raw/msgquick-full1-20261007-073908-dbfef9/message-settings-light-390.png",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/raw/msgquick-full1-20261007-073908-dbfef9/native-filter-inputs.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/raw/msgquick-full1-20261007-073908-dbfef9/owned-chrome.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/raw/msgquick-full1-20261007-073908-dbfef9/select-diagnostics.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/result.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/routine-boundary-binding.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/runtime-evidence-manifest.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/runtime-tsconfig.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/packet/worker.log",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-actual-review.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-source-review.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/segment-usage-after.json",
+      "docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/segment-usage-before.json",
+      "docs/evidence/wpf-message-settings-quick-controls/quality.md",
+      "plans/wpf-message-settings-quick-controls/plan.md",
+      "plans/wpf-message-settings-quick-controls/review.md",
+      "plans/wpf-message-settings-quick-controls/status.md",
+      "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md",
+      "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/claim-observation.json",
+      "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/lead-intake.json",
+      "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/quality.json",
+      "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/reservation.json",
+      "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/result.json",
+      "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/stderr.txt",
+      "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/stdout.txt",
+      "docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/verification.json"
+    ],
+    "reason": "范围外存在非 metadata 变化，需 owner 核对实现范围"
+  }
+}

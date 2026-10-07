@@ -1,6 +1,6 @@
 # WPF-MESSAGESETTINGS02 · 下一条消息快速设置
 
-状态：in-progress。创建/更新：2026-10-06 22:03:41 UTC。唯一 owner：w01_owner / gpt-6-astra；co-lead：Web /root。直接父任务：[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) / TODO-11。
+状态：completed（限定受控组件交付）。创建：2026-10-06 22:03:41 UTC；更新：2026-10-07 09:43:00 UTC。唯一 owner：w01_owner / gpt-6-astra；co-lead：Web /root。直接父任务：[WPF-MATURE-02](/Users/citrine/Projects/AgentHarness/Flow-worktrees/claude-codex-capabilities/plans/wpf-mature-02-harness-capabilities/plan.md) / TODO-11。
 
 ## 目标与已批准范围
 
@@ -22,13 +22,19 @@ Picker 每次打开建立独立私有存活标记；关闭、取消、详情导�
 - [x] MSGQUICK-02：快速选择、合法 tuple 投影与 ownership/opening 双层失效实现。
 - [x] MSGQUICK-03：新增直接/fixture/browser 回归源码与精确只读依赖验证提案。
 - [x] MSGQUICK-04：必要检查及完整六组/双390图已通过，固定dde571与独立限定审查完成。
-- [ ] MSGQUICK-05：正式主线接收并收口；TODO-11 真实宿主接线另列后继。
+- [x] MSGQUICK-05：固定 main63768046 正式接收并完成本片段收口；TODO-11 真实宿主接线另列后继。
 
 ## 验收与限制
 
 覆盖 same-tuple 新稿、props lag/旧 callback、换 view、权限撤销、同 token 关闭/详情/unmount/成功后重入；Apply/omit 都不得覆盖新草稿。分页漏旧选、刷新失败、能力过期保 C；A 已发送/B 已排样本不可变；空筛选可退出；大目录只展开当前授权 profile ≤32 组合；390 双主题/180 model/键盘/焦点保持。
 
-当前目标dde571固定：原fe6业务三源不变，strict/26direct历史PASS，受影响browser noEmit PASS；本次完整六组fixture与双390PNG实际通过、outerexit0/完整seal/ownedcleanup。输入语义源码及本次实际均已root限定批准/0blocking。旧三轮FAIL与后续定位全部保留，新90s段累计47496/余42504；旧30625/unused29375封闭不作credit。MSGQUICK-04已完成，MSGQUICK-05等主线；真实App接线不冒完成。原件见[本次证据](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md)。
+当前目标dde571固定：原fe6业务三源不变，strict/26direct历史PASS，受影响browser noEmit PASS；本次完整六组fixture与双390PNG实际通过、outerexit0/完整seal/ownedcleanup。输入语义源码及本次实际均已root限定批准/0blocking。旧三轮FAIL与后续定位全部保留，新90s段累计47496/余42504；旧30625/unused29375封闭不作credit。MSGQUICK-04/05已完成，[固定main接收原件](../../docs/evidence/wpf-message-settings-quick-controls/main-close-20261007/README.md)和四源核齐已归档；真实App接线不冒完成。原件见[本次证据](../../docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/README.md)。
+
+## 本片段完成及后继边界
+
+完成时间 `2026-10-07T09:43:00.996Z` 为本次主线接收条件实际核齐时点；开工仍 UNKNOWN，不倒推。固定 main `63768046daa048e955670e74c0ce2491f8ba9873` 含本片四源，Lead 实际 current Web noEmit exit0/6121ms，最终 owned group absent/双 EOF，初次 unknown 原件保留。作者本次只做 metadata/parser/proof/link/diff 核对，不重跑产品。原六范围提交后停写并以账本释放回执交接；未修改已审实现。
+
+原 MATURE02/TODO11 的 App/Send/Queue/Recovery/P01 接线和紧凑入口仍开放。GO 的紧凑模型/思考/速度入口、完整目录/解释下钻、有界长名称、可见的主提交/取消与材质 tokens，以及普通/长名称截图，是既有后继验收，不计入本组件已完成范围。
 
 ## 历史 MSGQUICK-04 可移植验证准备 2026-10-06 23:18:53 UTC
 
@@ -42,7 +48,7 @@ MSGQUICK-04 保持开放：strict exit2，direct未运行，已完成自身清�
 
 后续供给事实 2026-10-07 02:29:30 UTC：原Lead已仅物化固定HEAD缺件，2388B/hash匹配、347既有产品输入不变；[原件](../../docs/evidence/wpf-message-settings-quick-controls/c1-first-20261007/source-provision-receipt.json)。本次失败不改判，direct/browser仍未运行；后继仅可准备剩余28125ms包，不自动重试。
 
-## 当前有限检查已接收
+## 历史有限检查已接收（当时事实）
 
 2026-10-07 03:14:34 UTC：c2 strict0+单文件26/26direct0，外层exit/seal/cleanup真实一致，root独审接受；[原件](../../docs/evidence/wpf-message-settings-quick-controls/c2-actual-20261007/README.md)。MSGQUICK-04仍需browser，MSGQUICK-05尚未main；没有继承旧Settings01或同段其他任务结果。
 

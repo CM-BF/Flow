@@ -142,3 +142,7 @@ find-skills优先复用本地clean-code/webapp-testing（本段只读复核，�
 首个full run成功，不存在为过测试降低断言。6/6+2PNG与4个字符键事件实际通过；原failed诊断和旧预算全留。终态阅读脚本首个只读尝试用 owned-chrome.json 的不存在 pid 字段发生KeyError，未运行产品/改raw；立即按实际 chromePid 字段核三group并保存postrun，这仅readback字段修正。截图目视长model换行、横向无裁切/内部纵向滚动；不扩大到真实App、physical IME或OS-popup。root限定组件/full-six actual独审已收/0blocking；main接收另行，完整task NOT_COMPLETED。
 
 本段最终记录：owner单status解析 errors=[]/5TODO；34原件/345prior/4fixed sources与链接检查0错。收到GO观察后仅登记现有MATURE01/02后继，不动已验产品。正式actual审已原样归档，后续全局trace drop8明确保留，不说全程无事件丢弃。完成后只正常push/双端clean并停止写入，claim保留待main。
+
+## 2026-10-07 09:43:00 UTC · 主线接收 metadata 收口
+
+复用本地 find-skills / clean-code，hash 与实际应用见 [quality.json](main-close-20261007/quality.json)。校正当前 WAITING/未集成与 TODO05，保历史失败、初次 unknown、组件/真实宿主边界；统一当前结论，未编辑四产品、未扩大 review 范围、未重跑工程检查。

@@ -1,0 +1,70 @@
+{
+  "at": "2026-10-07T09:14:24.661602+00:00",
+  "task": "I02",
+  "integrationBase": "9b27005f086c97c13b789020f5f8449d1552bb50",
+  "sourceTarget": "dde571be8853698f8943f952ddef2c648d2e1294",
+  "metadataTarget": "7e9f0582a88e2ede7e10576a420a47970575d2cf",
+  "scope": [
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/test/message-settings.test.ts",
+    "apps/web/test/message-settings.fixture.tsx",
+    "apps/web/test/message-settings.browser.ts"
+  ],
+  "sourceHashes": {
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+    "apps/web/test/message-settings.test.ts": "ee8c9e783a2c03e9f7a2d5a145d4007a349b6c4c8f62b330db4abf86bb9bd61a",
+    "apps/web/test/message-settings.fixture.tsx": "6e4f8c50160ad2ee8ba28d1f3acf1433a0dcd5735cb4495d1483a37b755375cd",
+    "apps/web/test/message-settings.browser.ts": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb"
+  },
+  "originalReview": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/native-printable-full-20261007/root-actual-review.json",
+    "sha256": "86fa91a12a77d6059fe54d9c977307960841fb45d408c8541808d7ad3a647557",
+    "decision": "APPROVED_SCOPED_COMPONENT_AND_FULL_SIX_FIXTURE_ACTUAL_NOT_PRODUCTION_APP"
+  },
+  "verdict": "ACCEPTED_APPROVED_COMPONENT_WITH_CURRENT_WEB_TYPECHECK",
+  "sourceBindingsVerified": 4,
+  "rawArchiveFilesVerified": 34,
+  "rawArchiveBytes": 538807,
+  "mainSourceEqualsApprovedBaseBeforeApply": true,
+  "dependencyReview": {
+    "sameAtTargetAndMain": [
+      "execution-profiles/catalog.ts",
+      "execution-profiles/selection.ts",
+      "execution-profiles/execution-profiles.css",
+      "components/ui/button.tsx",
+      "components/ui/dialog.tsx",
+      "conversations/ConversationThread.tsx",
+      "apps/web/package.json",
+      "apps/web/tsconfig.json",
+      "contracts/claude-turn-settings.ts"
+    ],
+    "knownChanges": "Current contracts add Codex types/capability codec; root manifest adds yaml. Necessary current Web noEmit performed. MessageSettingsPicker production consumer still absent; legacy ExecutionProfilePicker contract unchanged."
+  },
+  "newDirectCheck": {
+    "command": "fixed Node24 tsc --noEmit -p apps/web/tsconfig.json --incremental false",
+    "exit": 0,
+    "elapsedMs": 6121,
+    "group": 73300,
+    "finalState": "absent",
+    "dualEOF": true,
+    "observedBytes": 0,
+    "testsRepeated": 0,
+    "PG": 0,
+    "browser": 0,
+    "provider": 0,
+    "raw": "quick-component-intake/result.json"
+  },
+  "limits": [
+    "Current authorized full tuples only; required opaque ownership and synchronous real fixture host CAS",
+    "Six actual fixture groups /two390PNG; CDP printable trusted browser input, not physical IME/native OS menu",
+    "Old failure/provision/history evidence immutable; no Settings01 result inheritance",
+    "Production App/Send/Queue/Recovery/P01 consumption remains separate TODO11 successor",
+    "No main or personal deployment performed by this owner",
+    "Global later passive trace cap/drop8 preserved; four per-filter acceptance records complete, not full-session event exhaustiveness."
+  ],
+  "notes": [
+    "Required draft ownership/live synchronous CAS carried in approved component and controlled fixture. Actual App/Send/Queue/Recovery integration remains separate.",
+    "Six original fixture groups and two390px images remain original Web independent evidence, not rerun or claimed production App acceptance.",
+    "Original failures and historical raw preserved in original authority and fixed Git metadata. No personal deployment."
+  ]
+}
