@@ -1,0 +1,30 @@
+{
+  "startedAt": "2026-10-07T15:42:53.743Z",
+  "command": [
+    "/opt/homebrew/opt/node@24/bin/node",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/node_modules/vitest/vitest.mjs",
+    "run",
+    "--config",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av02-vitest.config.mjs",
+    "--no-cache",
+    "packages/contracts/src/plugin-verification.test.ts",
+    "packages/plugin-runtime/src/json-object-verifier.test.ts",
+    "packages/plugin-runtime/src/package-store.test.ts",
+    "apps/runner/src/plugins/verifier.test.ts",
+    "apps/runner/src/plugins/execution.test.ts",
+    "-t",
+    "AV02|real installed tool returns ordinary|a real npm fixture is installed once",
+    "--reporter=json"
+  ],
+  "floor": 14414970880,
+  "free": 20346773504,
+  "tmp": {
+    "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier/docs/evidence/x01-artifact-verifier/av02-behavior/tmp",
+    "dev": 16777234,
+    "ino": 124273923
+  },
+  "maxSeconds": 30,
+  "cumulativeMaxSeconds": 120,
+  "rawMaxBytes": 524288,
+  "tmpMaxBytes": 16777216
+}

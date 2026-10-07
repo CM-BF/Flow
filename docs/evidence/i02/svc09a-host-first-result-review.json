@@ -1,0 +1,37 @@
+{
+  "reviewedAt": "2026-10-07T16:02:06.918Z",
+  "reviewer": "assignment_review / gpt-6-astra",
+  "target": "d11e512d16181a3d4fbc0167fee0183fc3e17c5c",
+  "manifest": "docs/evidence/svc09/message-settings-activation/host-integration/host-result-manifest.json",
+  "manifestBytes": 8245,
+  "manifestSha256": "602d12c8ec56c683e5618e0eed4254a6f14a01929ff5a73d0d2403aab33f0a99",
+  "decision": "APPROVED_LIMITED_FAILED_HOST_RESULT_FIDELITY",
+  "findings": [],
+  "bindings": 31,
+  "bindingBytes": 25420,
+  "inherited": 2,
+  "actual": {
+    "selected": 1,
+    "passed": 0,
+    "outerMs": 32568,
+    "primary": "START_UNCONFIRMED_CHECK_STATUS / center ready",
+    "startedRoles": [
+      "center"
+    ],
+    "notStarted": [
+      "runner",
+      "runner-settings",
+      "web"
+    ],
+    "runtimeReturn": "2026-10-07T15:58:29.899259Z",
+    "provider": 0,
+    "personalIO": 0,
+    "database": "KEEP",
+    "privateDirectory": "KEEP"
+  },
+  "assessment": "Supervised caller and work/cleanup groups absent with required EOF; detached center separately bound and stopped/exit0. Exact dedicated DB connection observation empty/admin closed. Original mayDrop=false/cleanupConfirmed=false preserved. PATH absence is static diagnosis, not fabricated runtime cause.",
+  "rawProvenance": "31 originals remain once in canonical personal-message-settings worktree and pushed fixed Git target; no copied second payload.",
+  "reviewerTests": 0,
+  "reviewerPG": 0,
+  "doesNotApprove": "Any retry, source diagnostics delta or completed host/product journey."
+}

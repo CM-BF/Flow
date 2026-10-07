@@ -1,0 +1,65 @@
+{
+  "taskId": "X01-ARTIFACT-VERIFIER01",
+  "designTarget": "35cbad4a90920cb10d8afdaa5d418ea4975c8028",
+  "base": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+  "at": "2026-10-07T14:39:36.981Z",
+  "state": "DESIGN_REVIEW_READY",
+  "scope": "design only, not source approval or product implementation",
+  "rows": [
+    {
+      "path": "plans/x01-artifact-verifier/plan.md",
+      "commit": "35cbad4a90920cb10d8afdaa5d418ea4975c8028",
+      "bytes": 5776,
+      "sha256": "35acc4813f79e1b1d33c73779caa7f6f38e4007059680b32a28bbe805978cf8d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/interface.md",
+      "commit": "35cbad4a90920cb10d8afdaa5d418ea4975c8028",
+      "bytes": 13026,
+      "sha256": "b04d735c31fb54cf2cdb21a6263dae836d54ae7453a0de404667ce1a5218d14d"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/scope-and-dependencies.md",
+      "commit": "35cbad4a90920cb10d8afdaa5d418ea4975c8028",
+      "bytes": 6490,
+      "sha256": "2c1738c6f12ec4f6f6273d1afae59a96af662ef3160c1d6222672781af0654c7"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/quality.json",
+      "commit": "35cbad4a90920cb10d8afdaa5d418ea4975c8028",
+      "bytes": 2160,
+      "sha256": "180692f12711b04207584135d28a1861064e85487db0a00794ccb71ff9f38f10"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/baseline.json",
+      "commit": "35cbad4a90920cb10d8afdaa5d418ea4975c8028",
+      "bytes": 4657,
+      "sha256": "087cc9375da016752149595cb82c2571b5c5da7ab14c1970220a4de5e8f46804"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/owner-snapshot.json",
+      "commit": "35cbad4a90920cb10d8afdaa5d418ea4975c8028",
+      "bytes": 15007,
+      "sha256": "8f3f2e53e2838ffb5353e2883e376182fc7f3477b4643a71f73aeb1e37eb74b4"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/claim-receipt.json",
+      "commit": "35cbad4a90920cb10d8afdaa5d418ea4975c8028",
+      "bytes": 625,
+      "sha256": "f2b42917ba883fbe9e0a3207e52c0976f7146f276455d69dfe435b1645defbab"
+    },
+    {
+      "path": "docs/evidence/x01-artifact-verifier/provision.json",
+      "commit": "35cbad4a90920cb10d8afdaa5d418ea4975c8028",
+      "bytes": 1461,
+      "sha256": "e39a844ffbd1209dec02cb0cea94f08bd13d1fdab628b602e2186dc956637c97"
+    }
+  ],
+  "productDelta": [],
+  "checks": "metadata parseStatus shape only; 0 engineering tests/PG/provider",
+  "actualResourceState": "0 holders, 0 pending launch",
+  "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+  "claimVersion": 1,
+  "writeStoppedAfterPacket": true,
+  "implementationRequires": "fresh literal scope handbacks/take and separately authorized implementation segment"
+}

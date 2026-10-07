@@ -1,0 +1,52 @@
+{
+  "at": "2026-10-07T14:37:00.000Z",
+  "stack": "TypeScript contracts/server/runner/package host and PostgreSQL identity design; docs only",
+  "discovery": "Local matching skills already installed; no network/install. Architectural brainstorming classification, alternatives and independent design review; interface/state ownership and bounded failure lifecycles.",
+  "skills": [
+    {
+      "name": "find-skills",
+      "path": "/Users/citrine/.agents/skills/find-skills/SKILL.md",
+      "sha256": "c00eeea0e13e74fe4a9d84ba0a8542205a1b736d65f13134fe1a6647eb14976f",
+      "bytes": 5472
+    },
+    {
+      "name": "brainstorming",
+      "path": "/Users/citrine/.agents/skills/brainstorming/SKILL.md",
+      "sha256": "74edf03ea6d24ef53db48677b93558d14a979bdf052ca3f57ecdca0c66791608",
+      "bytes": 15456
+    },
+    {
+      "name": "codebase-design",
+      "path": "/Users/citrine/.agents/skills/codebase-design/SKILL.md",
+      "sha256": "2c20617f87ec8af6a434859f381b2f061a69b530444e74eb39e78bb016a6d1e2",
+      "bytes": 6446
+    },
+    {
+      "name": "clean-code",
+      "path": "/Users/citrine/.agents/skills/clean-code/SKILL.md",
+      "sha256": "3c4115e1bc0ead5b023d9cc2c4f79f3a9273bfd363ae5c7eb11cf67f0096f317",
+      "bytes": 4835
+    }
+  ],
+  "cleanCodeProvenance": "User baseline sickn33/agentic-awesome-skills reused; current installed file frontmatter names ClawForge. Record exact bytes rather than assert an unverified upstream commit; no reinstall or update.",
+  "applied": [
+    "separate finite algorithm from trust/admission/state",
+    "preserve shared state authority and existing request/phase/outbox loops",
+    "explicit completion gate prevents omitted-verification bypass",
+    "domain digest separate from existing task input hash",
+    "literal scope and current owners; no arbitrary file-count cap"
+  ],
+  "checks": {
+    "productModified": false,
+    "engineeringChildren": 0,
+    "businessPG": 0,
+    "provider": 0,
+    "privateConfigurationRead": false,
+    "installed": false
+  },
+  "limitations": [
+    "design only",
+    "new schema/claim protocol not implemented",
+    "performance/PG/provider/PROCESS T7 not proven"
+  ]
+}

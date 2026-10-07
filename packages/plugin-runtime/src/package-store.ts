@@ -27,7 +27,7 @@ export interface InstalledPackageReceipt {
   installationId: string;
   storeId: string;
   artifact: PackageArtifactIdentity;
-  manifest: { schemaVersion: 1; hostApiMajor: 1; kind: 'tool'; entrypoint: string };
+  manifest: { schemaVersion: 1; hostApiMajor: 1; kind: 'tool' | 'verifier'; entrypoint: string };
   files: readonly { path: string; bytes: number; sha256: string }[];
   treeDigest: string;
 }
@@ -178,11 +178,11 @@ function contents(files: Map<string, Buffer>, artifact: PackageArtifactIdentity)
   const forbidden = ['scripts', 'dependencies', 'devDependencies', 'peerDependencies', 'optionalDependencies', 'bundledDependencies', 'bundleDependencies'];
   if (pkg.name !== artifact.name || pkg.version !== artifact.version || pkg.type !== 'module' || forbidden.some(key => key in pkg)) fail('MANIFEST_REJECTED');
   if (Object.keys(manifest).sort().join(',') !== 'entrypoint,hostApiMajor,kind,schemaVersion' || manifest.schemaVersion !== 1 || manifest.hostApiMajor !== 1
-    || manifest.kind !== 'tool' || typeof manifest.entrypoint !== 'string' || !manifest.entrypoint.endsWith('.mjs')) fail('MANIFEST_REJECTED');
+    || (manifest.kind !== 'tool' && manifest.kind !== 'verifier') || typeof manifest.entrypoint !== 'string' || !manifest.entrypoint.endsWith('.mjs')) fail('MANIFEST_REJECTED');
   packagePath('package/' + manifest.entrypoint);
   if (!files.has(manifest.entrypoint)) fail('MANIFEST_REJECTED');
   for (const path of files.keys()) for (const other of files.keys()) if (other.startsWith(path + '/')) fail('ARCHIVE_REJECTED');
-  return { files, manifest: { schemaVersion: 1, hostApiMajor: 1, kind: 'tool', entrypoint: manifest.entrypoint } };
+  return { files, manifest: { schemaVersion: 1, hostApiMajor: 1, kind: manifest.kind, entrypoint: manifest.entrypoint } };
 }
 function receipt(c: Context, material: Contents): InstalledPackageReceipt {
   const files = [...material.files].map(([path, data]) => ({ path, bytes: data.length, sha256: hash(data) })).sort((a, b) => a.path < b.path ? -1 : a.path > b.path ? 1 : 0);

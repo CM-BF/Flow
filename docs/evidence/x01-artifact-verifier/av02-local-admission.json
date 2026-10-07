@@ -1,0 +1,45 @@
+{
+  "at": "2026-10-07T15:42:25.000Z",
+  "claim": {
+    "lead": "mika",
+    "next": null,
+    "role": "writer",
+    "scope": [
+      "apps/runner/src/plugins/execution.test.ts",
+      "apps/runner/src/plugins/execution.ts",
+      "apps/runner/src/plugins/host.ts",
+      "apps/runner/src/plugins/verifier.test.ts",
+      "docs/evidence/x01-artifact-verifier",
+      "packages/contracts/src/plugin-verification.test.ts",
+      "packages/contracts/src/plugin-verification.ts",
+      "packages/plugin-runtime/src/json-object-verifier.test.ts",
+      "packages/plugin-runtime/src/json-object-verifier.ts",
+      "packages/plugin-runtime/src/package-store.test.ts",
+      "packages/plugin-runtime/src/package-store.ts",
+      "plans/x01-artifact-verifier"
+    ],
+    "state": "active",
+    "branch": "codex/plugin-artifact-verifier",
+    "origin": "new",
+    "taskId": "X01-ARTIFACT-VERIFIER01",
+    "worker": "architecture_read",
+    "claimId": "a67ba659-d859-40d6-82c6-2b7333087639",
+    "version": 2,
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-artifact-verifier",
+    "createdAt": "2026-10-07T14:30:38.019Z",
+    "updatedAt": "2026-10-07T15:30:49.127Z",
+    "observedAt": null,
+    "needsVerification": false
+  },
+  "head": "bf81e01f7073cdb3d52086c83bbe28900fce1518",
+  "floor": 14414970880,
+  "free": 20342968320,
+  "budget": {
+    "childSeconds": 30,
+    "cumulativeSeconds": 120,
+    "maxChildren": 6,
+    "tmpBytes": 16777216,
+    "rawBytes": 524288
+  },
+  "resourceBasis": "root S01 actual FULLRETURN; current manager floor includes all valid KEEP/potential and one cleanup reserve; K01 waiting; no PG/Chrome/provider"
+}

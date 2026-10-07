@@ -1,0 +1,37 @@
+{
+  "at": "2026-10-07T16:02:06.918Z",
+  "task": "X01-ARTIFACT-VERIFIER01 / AV02",
+  "source": "9895181dfd90f18014d80589799f76169e6bd5b2",
+  "result": "e662b028b9d1b633701ad08a68c79c2b76415f94",
+  "packet": "b77a80739992752f76712505a00e355986758e66",
+  "approvalMetadata": "a90c18255633f2771f9033eed516f509d561b67d",
+  "independentReview": "docs/evidence/x01-artifact-verifier/av02-independent-approval.json",
+  "decision": "ACCEPT_REVIEWED_LOCAL_INSTALLED_VERIFIER",
+  "mainPreimage": "0f690ca7b",
+  "fixedPacketBindings": 34,
+  "fixedExecutionBindings": 73,
+  "executionNonProductDifferencesAgainstMain": 0,
+  "productCount": 9,
+  "supportCount": 44,
+  "product": [
+    "apps/runner/src/plugins/execution.ts",
+    "apps/runner/src/plugins/host.ts",
+    "apps/runner/src/plugins/verifier.test.ts",
+    "packages/contracts/src/plugin-verification.test.ts",
+    "packages/contracts/src/plugin-verification.ts",
+    "packages/plugin-runtime/src/json-object-verifier.test.ts",
+    "packages/plugin-runtime/src/json-object-verifier.ts",
+    "packages/plugin-runtime/src/package-store.test.ts",
+    "packages/plugin-runtime/src/package-store.ts"
+  ],
+  "requiredExistingSupport": 4,
+  "localEvidence": {
+    "types": 0,
+    "passed": 10,
+    "selected": 10,
+    "unselected": 69,
+    "PG": 0
+  },
+  "integrationChecks": "All nine main preimages match96b or are absent as declared; all73 fixed execution bindings validated, every nonproduct input matches main. Exact nine reviewed blobs restored; no conflict or new consumer delta, no repeated tests. PROCESS unchanged.",
+  "boundary": "AV03 future journal/contracts not included; no center/v4/PROCESS verifier dispatch/PG/personal deployment. Current frozen cd27 and2515 artifacts unchanged."
+}

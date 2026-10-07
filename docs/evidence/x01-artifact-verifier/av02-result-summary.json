@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-07T15:44:21.123Z",
+  "source": "9895181dfd90f18014d80589799f76169e6bd5b2",
+  "executionHead": "bf81e01f7073cdb3d52086c83bbe28900fce1518",
+  "state": "LOCAL_PASSED_REVIEW_PENDING",
+  "typesExit": 0,
+  "selection": {
+    "selected": 10,
+    "passed": 10,
+    "unselected": 69,
+    "titles": [
+      "AV02 JSON object rule distinguishes parsing, object shape and own required keys",
+      "AV02 rule v2 requires a new field and never reuses the old passed verdict",
+      "a real npm fixture is installed once and independently read with exact identity after restart",
+      "AV02 static verifier kind is retained and unknown manifest kinds remain rejected",
+      "AV02 strict bounded rule detaches, canonicalizes keys and rejects unsupported algorithms",
+      "AV02 source and result codecs reject excess bytes, undeclared fields and forged verdict shapes",
+      "real installed tool returns ordinary artifact/flow.text with exact frozen provenance and phase order",
+      "AV02 real verifier A/B materials keep exact provenance and changed rules cannot reuse passed identity",
+      "AV02 fake passed and verifier-as-tool are rejected through real installed consumers",
+      "AV02 untrusted material/source and unknown phase preserve explicit failure boundaries"
+    ]
+  },
+  "resources": {
+    "supervisedChildren": 2,
+    "supervisionMilliseconds": 2895,
+    "rawBytes": 21863,
+    "wholeExternalWall": "UNKNOWN",
+    "peak": "UNKNOWN",
+    "initialEPERM": "Preserved in both observations; final absent is distinct",
+    "ownedTMPs": 2,
+    "fixtureRoots": 6,
+    "tarChildren": [
+      {
+        "pid": 47844,
+        "exitCode": 0,
+        "signal": null
+      }
+    ],
+    "returnedAt": "2026-10-07T15:42:55.342Z",
+    "PG": 0,
+    "provider": 0,
+    "PROCESSWorkerInvocations": 0
+  },
+  "boundary": "Real Flow-owned verifier packages through prepare/read/import/invoke. Local recomputation only; center approval/v4/production dispatch and PROCESS verifier mode absent. No installed upstream npm provenance."
+}

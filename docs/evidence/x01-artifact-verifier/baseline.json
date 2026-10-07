@@ -1,0 +1,120 @@
+{
+  "base": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+  "scope": "read-only design evidence, no behavior execution",
+  "rows": [
+    {
+      "path": "packages/contracts/src/plugin-runtime.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 6201,
+      "sha256": "9c7f9010e1341a14e874e670867ec8f326fafa2d59f4fde075c9ed74dc7e8ef0"
+    },
+    {
+      "path": "packages/contracts/src/plugin-runner-claim.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 4197,
+      "sha256": "9802867374b6f637205ea8e10fb0caf636e96c0e3eab25a6a443075d7b9ac824"
+    },
+    {
+      "path": "packages/contracts/src/runner.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 7873,
+      "sha256": "4221ce35157cf4ee91e9c391965ffd224b15c03973b67841525276cfc83887a5"
+    },
+    {
+      "path": "packages/contracts/src/plugins.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 4908,
+      "sha256": "656075884d36145ce73c84283bdd26161c4ea65369f326456ffef1e414e6359f"
+    },
+    {
+      "path": "packages/storage/migrations/034-plugin-runtime.sql",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 6572,
+      "sha256": "8d3cc77265c7ee621ee5da5aacb402615054e4f234cc65cf430f0dc7bc7e7f9d"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/commands.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 9868,
+      "sha256": "17037fa7d32b47be49b09d36aa8662ee7f29ca56230c9222aa88912d40959d83"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/store.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 9647,
+      "sha256": "6cacfc6111a0d4d2bfb3638779caf85ddb467e9cff7eb12e79a5e93cfb93fae4"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/claim.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 2773,
+      "sha256": "4236e8241296ac5ebf53bd254bdfe0e849d8905e693c64bae4c0cc888c7efb15"
+    },
+    {
+      "path": "apps/server/src/plugin-runtime/routes.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 5824,
+      "sha256": "89f15587c2a6ec5ee67afd08ae99b7e65206ddbf2d0ba7f5708d0ef3332ffadc"
+    },
+    {
+      "path": "apps/server/src/evidence.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 4145,
+      "sha256": "4e72f704166ee57b28764b1da57ed54db89dd61c1d5e1bbd68580e9aa0d7b550"
+    },
+    {
+      "path": "apps/server/src/events.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 8959,
+      "sha256": "fa3734adabdd4b996bd6d8e25aefa8fd737c282d544b5998b3f4f2b98f0ae425"
+    },
+    {
+      "path": "apps/server/src/engineering/verification.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 4249,
+      "sha256": "70546ca36bf70a83a8584c638a8f273180cc9b30490726ad5cb4bb853254c7cc"
+    },
+    {
+      "path": "apps/runner/src/plugins/execution.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 4841,
+      "sha256": "90da81464352d87e0bae125ae7e443bb9b2f40de930063cbc0564be75715b4e3"
+    },
+    {
+      "path": "apps/runner/src/plugins/host.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 6177,
+      "sha256": "bd203bea97d01e72cfc0059868fd6f4e0f1cdaeae06250da6328bc8629fe613f"
+    },
+    {
+      "path": "apps/runner/src/runtime.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 21786,
+      "sha256": "d920809370179c5d1c663e612ac119573ef01c005243d9ac0ca10fa96cbe30c8"
+    },
+    {
+      "path": "apps/runner/src/admission-journal.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 10960,
+      "sha256": "d7e4ab5c440f13c5ef543f476421331d79899a971fdf2a1f7a54ec5efb5da2b3"
+    },
+    {
+      "path": "apps/runner/src/outbox.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 9711,
+      "sha256": "2ed7dbb40ec75797c0d340880383444ba12a265d678c6919ad4733eec8b51ef4"
+    },
+    {
+      "path": "packages/plugin-runtime/src/package-store.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 17555,
+      "sha256": "d2bb866b09611025fb82ec80c77503ef864901c7da09288cb84991120b4a1b88"
+    },
+    {
+      "path": "packages/contracts/src/plugin-installations.ts",
+      "sourceCommit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "bytes": 2063,
+      "sha256": "36229fb92c62d004fc4b0655e4c5f5a35eef1f51d2760be3f09c158dc423a394"
+    }
+  ]
+}
