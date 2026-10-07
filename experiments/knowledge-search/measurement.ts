@@ -1,12 +1,13 @@
 import assert from 'node:assert/strict';
 import { createHash, randomUUID } from 'node:crypto';
 import { performance } from 'node:perf_hooks';
-import type { Pool, PoolClient, QueryResult } from 'pg';
+import type { Pool, PoolClient } from 'pg';
 import { chunks } from './source/apps/server/src/knowledge/text.js';
 import { searchSources } from './source/apps/server/src/knowledge/search.js';
 import { counts, goldenCases, scaleSources, sourceId, type SourceSeed } from './corpus.js';
 import { OwnedDatabase } from './owned-database.js';
 import { timedQuery } from './diagnostic.js';
+import { observingPool, type QueryObservation } from './observing-pool.js';
 const digest = (text: string) => createHash('sha256').update(text).digest('hex');
 export async function measure(database: OwnedDatabase, baseUrl: string, evidence: Record<string, unknown>) {
   const pool = database.auxiliary!;
@@ -88,29 +89,17 @@ export async function measure(database: OwnedDatabase, baseUrl: string, evidence
   observations.push(semanticResult); await database.checkpoint('semantics-completed', semanticResult);
 
   async function observedSearch(projectId: string, query: string) {
-    const records: { text: string; values: unknown[]; clientEndToEndMs: number; clientSqlRoundTripMs?: number; observerBeforeQueryMs?: number; rows: number; decodedJsonBytes: number; error?: string }[] = [];
-    const observingPool = new Proxy(pool, { get(target, property) {
-      if (property === 'connect') return async () => {
-        const client = await target.connect();
-        return new Proxy(client, { get(c, key) {
-          if (key === 'query') return async (text: string, values: unknown[] = []) => {
-            const at = performance.now();
-            try { const { value: result, ...timing } = await timedQuery(() => { database.requireWork(); }, () => c.query(text, values) as Promise<QueryResult>); records.push({ text, values, ...timing, rows: result.rowCount ?? 0, decodedJsonBytes: Buffer.byteLength(JSON.stringify(result.rows)) }); return result; }
-            catch (error) { records.push({ text, values, clientEndToEndMs: performance.now() - at, rows: 0, decodedJsonBytes: 0, error: 'QUERY_FAILED' }); throw error; }
-          };
-          const value = Reflect.get(c, key); return typeof value === 'function' ? value.bind(c) : value;
-        } }) as PoolClient;
-      };
-      const value = Reflect.get(target, property); return typeof value === 'function' ? value.bind(target) : value;
-    } }) as Pool;
+    const records: QueryObservation[] = [];
+    const observed = observingPool(pool, () => { database.requireWork(); }, records);
     evidence.lastProductionQueryRecords = records;
-    const value = await searchSources(observingPool, projectId, query, 20);
+    const value = await searchSources(observed, projectId, query, 20);
     const sql = records.find(row => row.text.startsWith('WITH current_chunks AS MATERIALIZED'));
     assert.ok(sql, 'Production query capture missing');
     return { value, records, sql };
   }
   for (const size of [16, 128] as const) {
     evidence.activeStep = 'seed:' + size;
+    await database.checkpoint('scale-seed-started', { size });
     const projectId = await project(), other = await project();
     await seed(projectId, scaleSources(size, size === 16 ? 1000 : 2000));
     await seed(other, scaleSources(16, size === 16 ? 4000 : 5000).map(s => ({ ...s, versions: [s.versions[1]!.replace('ready', 'other')] })));
@@ -118,6 +107,7 @@ export async function measure(database: OwnedDatabase, baseUrl: string, evidence
     for (const query of ['知识', 'READY', '%value_\\', 'alpha beta', 'NO_SUCH_TOKEN_72931']) {
       evidence.activeStep = 'query:' + size + ':' + query;
       database.requireWork();
+      await database.checkpoint('observed-search-started', { size, query });
       const measured = await observedSearch(projectId, query);
       const publicResult = await search(projectId, query); assert.deepEqual(publicResult, measured.value);
       const explain = (await executeQuery(pool, 'EXPLAIN (ANALYZE, BUFFERS, VERBOSE, FORMAT JSON, TIMING OFF) ' + measured.sql.text, measured.sql.values)).rows;

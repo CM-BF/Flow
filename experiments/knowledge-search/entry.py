@@ -172,7 +172,7 @@ def open_record(permit):
     return folder,ledger,finished,len(started)+1
 
 def main():
-    parser=argparse.ArgumentParser();parser.add_argument('mode',choices=['caller','pure','types','pg']);parser.add_argument('--permit',required=True,type=Path);parser.add_argument('--case',choices=['caller','listener','budget','owned-budget','url'],default='caller')
+    parser=argparse.ArgumentParser();parser.add_argument('mode',choices=['caller','pure','types','pg']);parser.add_argument('--permit',required=True,type=Path);parser.add_argument('--case',choices=['caller','listener','budget','owned-budget','url','observer'],default='caller')
     args=parser.parse_args()
     if sys.version_info<(3,10):raise ValueError('OPS14 requires Python >=3.10 before any reservation')
     started=time.time();started_mono=time.monotonic();permit=json.loads(args.permit.read_text());permit['_sha']=sha(args.permit)
@@ -198,7 +198,8 @@ def main():
     spec=importlib.util.spec_from_file_location('k01_ops14',SUPERVISOR);module=importlib.util.module_from_spec(spec);sys.modules[spec.name]=module;spec.loader.exec_module(module)
     source_files=[{'path':p.name,'bytes':p.stat().st_size,'sha256':sha(p)} for p in sorted(ROOT.iterdir()) if p.is_file() and p.suffix in ('.py','.ts','.mjs','.json')]
     scratch_name='k01-'+uuid.uuid4().hex
-    if args.mode=='caller' and args.case in ('listener','budget','url'):argv=[str(NODE),str(ROOT/'node_modules/vitest/vitest.mjs'),'run',('listen.test.ts' if args.case=='listener' else 'budget.test.ts'),'--config',str(ROOT/'vitest.config.mjs'),'--no-cache']
+    if args.mode=='caller' and args.case=='observer':argv=[str(NODE),str(ROOT/'node_modules/vitest/vitest.mjs'),'run','observing-pool.test.ts','--config',str(ROOT/'vitest.config.mjs'),'--no-cache']
+    elif args.mode=='caller' and args.case in ('listener','budget','url'):argv=[str(NODE),str(ROOT/'node_modules/vitest/vitest.mjs'),'run',('listen.test.ts' if args.case=='listener' else 'budget.test.ts'),'--config',str(ROOT/'vitest.config.mjs'),'--no-cache']
     elif args.mode=='caller' and args.case=='owned-budget':argv=[sys.executable,'-I','-B',str(ROOT/'entry.test.py'),'EntryTests.test_owned_budget_counts_nested_names_and_rejects_symlinks','EntryTests.test_owned_root_and_scandir_fail_closed','EntryTests.test_measurement_failure_preserves_child_and_cleanup_facts']
     elif args.mode=='caller':argv=[sys.executable,'-I','-B',str(ROOT/'entry.test.py')]
     elif args.mode=='pg':argv=[str(NODE),'--import','tsx',str(ROOT/'run.ts')]
