@@ -1,0 +1,46 @@
+{
+  "at": "2026-10-07T12:03:53.545689+00:00",
+  "task": "X01-REMOVAL-REFERENCES01",
+  "execution": "5bd9ab34f08b64a8774ad1a05d83ca065a532ee3",
+  "result": "26424caeb0658d10279bd222a242c194e37f6f21",
+  "resultPacket": "38220874f71275fbd88a5b5448e05d71a90ddeec",
+  "cleanup": "0509c52bcdf5c1abd46133777de9efd6b4e08cb8",
+  "state": "CASE_PASS_SUITE_FAIL_ORIGINAL_UNKNOWN; SEPARATE_CLEANUP_RETURN",
+  "resultManifest": "docs/evidence/x01-removal-references/removal-r1-output-manifest.json",
+  "extraBindings": [
+    {
+      "path": "docs/evidence/x01-removal-references/removal-r1-cleanup-only.py",
+      "commit": "0509c52bcdf5c1abd46133777de9efd6b4e08cb8",
+      "bytes": 6309,
+      "sha256": "caa26ca7e342fe96e1aff54e8ea6cee901b0c81133e3560b0acfa79b7b5506e6"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references/removal-r1-cleanup-only.json",
+      "commit": "0509c52bcdf5c1abd46133777de9efd6b4e08cb8",
+      "bytes": 3051,
+      "sha256": "4c334b1b56cd64b82b3900c4145715308456684b2004eea6b6521ea452e2a401"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references/removal-r1-cleanup-delivery.json",
+      "commit": "0509c52bcdf5c1abd46133777de9efd6b4e08cb8",
+      "bytes": 689,
+      "sha256": "1a100eb3c5df9ac034db7ddcfd51ac74449cb2a20b71c7d4b3de88e09dd3505c"
+    },
+    {
+      "path": "docs/evidence/x01-removal-references/removal-r1-output-manifest.json",
+      "commit": "0509c52bcdf5c1abd46133777de9efd6b4e08cb8",
+      "bytes": 5676,
+      "sha256": "187cc2c728def9de6d195aa4d7b83104497aa98a3e7e7a83eec2a78b91285bbb"
+    }
+  ],
+  "preparedPathsUnchanged": 297,
+  "changes": [],
+  "review": "PENDING",
+  "selected": 1,
+  "passed": 1,
+  "suiteSuccess": false,
+  "originalCaller": "UNKNOWN",
+  "cleanupState": "RETURN",
+  "cause": "Original one connection has no backend identity snapshot. Follow-up zero does not prove exact connection origin or cause.",
+  "boundary": "Synthetic installed material/43 task references; no npm/OS runner/physical material deletion. No retry performed."
+}
