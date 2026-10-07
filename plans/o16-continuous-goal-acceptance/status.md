@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T10:35:51.413710Z |
+| 最近更新 | 2026-10-07T10:40:15.916715Z |
 | Plan | [plan.md](plan.md) |
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | 任务层级 | 子task |
@@ -11,24 +11,24 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/continuous-native-goal-acceptance |
 | Branch | codex/continuous-native-goal-acceptance |
 | 基线 | 当前验收f5a13cbed6b75151f34e6924ec7e10c8894acf48；原8bd为历史基线 |
-| HEAD | 修复 source ff266d1d / caller 9e15c726，7 新不同直接例分轮已绿待独审；真实首段失败保留 |
+| HEAD | source ff266d1d / caller9e15 / 原交付2841已限定独审；新首段预算已授，未消费permit已固定，待实际窗口 |
 | Claim | 55c4e833-bd78-44d4-ba07-e18cd75f00b4 v1 active，2026-10-07T09:00:26.182Z新take原三scope；旧f72已released；[新receipt](../../docs/evidence/o16/native-stages/take-receipt.json) |
 | 工作分支状态 | in-progress |
-| 检查状态 | 本次 7 新不同直接例分两轮通过；首轮 5 绿 + 文件加载失败，补原 loader 后仅 2/2；监督 695ms/raw2525B，两组 absent/双EOF/scratch removed。0PG/SDK native import/auth/provider，旧15/16/26未重跑。真实首段仍1SDK/init1，费用UNKNOWN。 |
-| Review | 真实首段限定结果忠实性已获 Lead 批准（非规划成功）；本次零模型源码修复待唯一独审 |
+| 检查状态 | 7新不同局部例分两轮通过，首轮loader失败保留；本段未重测。新身份只读322文件/39alias/3SDK字节一致，0SDK进程/auth/provider/产品PG。原真实首段1SDK/init1、费用UNKNOWN。 |
+| Review | APPROVED_LIMITED_ZERO_MODEL_DELTA（10:37:40Z）；真实首段仅结果忠实性批准，非规划成功 |
 | 实现目标 | ff266d1ddc3adf3f89012095b4ff446367c3fb7e |
 | 实现范围 | experiments/continuous-goal-acceptance |
-| 已集成main状态 | d022c8003fc4bd8ba560f1a039411ed098186659 main/origin受控接收216 own路径，与78df逐字同；原产品f5a不变，0重测；b768零模型公开旅程批准独立保留 |
+| 已集成main状态 | main650d230d已接d5e首段失败证据与限定结果独审；环境与289产品来源仍按固定记录。ff266零模型修复已审待Lead窄接，不将候选当实际运行。 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 历史首次开工未留独立可核UTC，原claim时间不冒开工；当前续接实际记录见2026-10-07T08:17:45Z段与current-main-resumption。 |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | planning |
 | 优先级 | 2 |
-| 当前产出 | 已补齐失败调用计数与资源未知记录，并为私有环境固定声明名单；局部检查通过，等待独立审查。 |
-| 下一可用交付 | 交付本次最小修复与原始检查证据；下一真实规划需新授权。 |
-| 当前阻塞 | ACTIVE: 真实提案尚未产生；原许可已消费，本次局部修复不授权第二次请求。 |
-| 需用户决定 | NONE |
+| 当前产出 | 私有声明与失败记录修复已通过独立审查；下一首段已绑定新源码与相同资源边界。 |
+| 下一可用交付 | 提交固定首段候选与一次材料，待实际窗口及fresh准入后运行。 |
+| 当前阻塞 | ACTIVE: 新增一次规划预算已授，等待实际资源窗口；原采样首因仍未知，未启动第二次请求。 |
+| 需用户决定 | NONE（新预算已明确；实际窗口由Execution Lead协调） |
 
 | TODO ID | 状态 | Owner | 完成证据/检查 |
 | --- | --- | --- | --- |
@@ -58,6 +58,8 @@
 | O16-W05 | 2026-10-07T09:23:10.054477Z | 2026-10-07T09:27:34.488514Z | 独立审查 | 固定分阶段实现与原始局部证据已通过限定独审 | native-stages/independent-review.json |
 | O16-W06 | 2026-10-07T10:10:59.813650Z | 2026-10-07T10:16:07.879Z | 独立审查 | 环境delta审查，非资源等待 | native-environment-implementation/independent-review.json |
 | O16-W07 | 2026-10-07T10:18:33.342Z | 2026-10-07T10:19:10.652Z | 启动核对 | 新许可/固定输入/连接余量预检，非query耗时 | native-plan-20261007-1018/operation-input.json与operator reservation |
+| O16-W08 | 2026-10-07T10:37:40.706472Z | 2026-10-07T10:41:31.796604Z | 用户 | 修复独审通过后候选准备；原费用许可已消费，等待新GO预算；候选准备可并行，结束为本地收录新授权时刻，不冒GO决策发生时刻 | 独审原件与本次candidate |
+| O16-W09 | 2026-10-07T10:41:31.796604Z | OPEN | 资源 | 全新预算已授，固定候选/permit后等Lead实际holder归还与fresh资源；未预占窗口 | native-plan-r2-candidate/candidate.json与native-plan-20261007-r2/authorization-preparation.json |
 
 2026-10-07T08:23:56.323Z：Lead固定f5a后受控物化实际289输入（244源/33SQL/12配置）与新guard343bd436；所有旧原件不改，只有config/identity两实验源必要变更。原26检查未重跑，实际加载尚未执行，新的PG许可未授。
 
@@ -93,3 +95,8 @@
 2026-10-07T10:33:06.831797Z：实际结果已获 Lead 限定忠实性批准（非规划成功）；fresh55c4v1/clean d5e 后进入最小零模型修复。修私有声明策略与失败计数/计量记录，原 raw/FAIL/KEEP 不改；[本片 Interface](../../docs/evidence/o16/native-observation-repair/Interface.md)。本次新段60s/512KiB raw/2MiB tmp，仅相关注入/纯测，禁止 SDK/auth/provider/PG 与第二 query。
 
 2026-10-07T10:35:51.413710Z：本次修复已固定 `ff266d1ddc3adf3f89012095b4ff446367c3fb7e`，7 新不同例分轮通过，[原始结果](../../docs/evidence/o16/native-observation-repair/RESULT.md)。首轮 loader 文件失败保留，仅补未执行2例；产品未因测试失败修改。10:34:07.897Z 两组/目录实际收尾并归还 local。原 query/native/PG 0；此前真实失败/费用未知/DB与tmp KEEP不动，source待独审。
+
+2026-10-07T10:40:15.916715Z：唯一限定独审[原件](../../docs/evidence/o16/native-observation-repair/independent-review.json)已归档，source保持ff266。开始准备[新首段候选](../../docs/evidence/o16/native-plan-r2-candidate/README.md)，只读身份/固定字节，无SDK/认证/query/旧资源操作。当前等待全新预算与窗口，不复用旧once材料；新诊断仅增加可见性，未宣称旧测量首因解决。
+
+
+2026-10-07T10:41:31.796604Z：GO新授权 `O16-GO-PLANNER-R2-20261007` 已由Lead明确转达，新增仅1planner/同模型4turn/SDK$.20/query90s；[一次材料](../../docs/evidence/o16/native-plan-20261007-r2/authorization-preparation.json)已耐久，尚无operator reservation/SDK入口/PG分配。当前仅等Mika X01→SVC r2后Lead实际准入，个人/Web/X01优先；旧SDK1费用UNKNOWN与资源KEEP不变。

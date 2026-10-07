@@ -49,3 +49,7 @@ Lead10:16:07Z完成独审，无P1/P2；[原样报告](../../docs/evidence/o16/na
 ## 2026-10-07T10:35:51.413710Z 私有声明与失败可观测性修复待审
 
 真实首段 89a/d5e 已获 Lead APPROVED_RESULT 限定忠实性结论，仍为失败，无提案/成功pause、费用未知、资源KEEP。新修复 source `ff266d1ddc3adf3f89012095b4ff446367c3fb7e` / caller `9e15c7261a0e73267fe60dfd901617ad54abdf36`：5行为源+3专测；[Interface](../../docs/evidence/o16/native-observation-repair/Interface.md)与[原始分轮结果](../../docs/evidence/o16/native-observation-repair/validation.json)。7新不同局部例分两轮、首文件加载红保留，0PG/SDK native import/auth/provider。不重复旧15/16/26，不改普通adapter/预算/停止/清理权限；作者未自批，固定差量交Lead唯一独审。
+
+## 2026-10-07T10:40:15.916715Z 失败可观测性唯一限定批准与新候选
+
+Lead10:37:40Z独审ff266/9e15/2841，APPROVED_LIMITED_ZERO_MODEL_DELTA，无P1/P2；[原样JSON](../../docs/evidence/o16/native-observation-repair/independent-review.json)核25差量/继承+3runtime、7新不同例与首loader红，reviewer0执行。批准不覆盖真实规划、费用或原测量根因。新首段只读候选绑定新sourceDigest/原环境/独立namespace，待全新GO预算与排期，不生成permit或SDK进程。
