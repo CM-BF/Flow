@@ -19,15 +19,15 @@
 | 本片段交付阶段 | review |
 | 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
-| 检查状态 | r2 passed：27→35/两项pre-drain拒绝/三role refresh-resume/历史与pointer-config-profile保留/cookie-CSRF-logout；work155073ms+cleanup540ms，六组stopped/normalDROP；真实App/个人未验 |
+| 检查状态 | r2 passed：27→35/两项pre-drain拒绝/三role refresh-resume/历史与pointer-config-profile保留/cookie-CSRF-logout；work155073ms+cleanup540ms，六组stopped/normalDROP；C3真实App组合已独审，个人更新未验 |
 | 已集成main状态 / HEAD | main 62e9a83923a3c2996b4ab32610e10e2069828c66 已接首次采用实际5be与I02唯一结果独审；25同路径原件、1准备review等字节路径映射、2计划为5be接收版本。r2已main657105、候选已mainc38；7d1/6c仅候选与隔离验收，个人更新未发生。 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 保留旧数据的更新流程已有隔离实证，个人安装现状已核对，三份网页兼容结果已独审，个人更新清单已固定待审。 |
+| 当前产出 | 保留旧数据的更新流程已有隔离实证，个人安装现状已核对，三份网页兼容结果已独审，正补齐个人更新清单的迁入调用。 |
 | 下一可用交付 | 审定一次后台与网页宿主更新清单，在明确运行窗口按原维护流程执行。 |
-| 当前阻塞 | ACTIVE: 等待个人更新清单审查与现有清理独占窗口归还。 |
+| 当前阻塞 | ACTIVE: 迁入调用接线正做定向检查，完成独审后由Lead交真实运行窗口。 |
 | 需用户决定 | NONE |
-| Review | 首次采用已APPROVED_LIMITED_FIRST_ADOPTION_ACTUAL/main62e9；当前个人更新候选待独审，未操作个人服务。 |
+| Review | 首次采用已APPROVED_LIMITED_FIRST_ADOPTION_ACTUAL/main62e9；e4cd迁入装配P2保留REQUEST_CHANGES；本段薄adapter修复中，未操作个人服务。 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v9 active，仅自有docs/evidence/svc06与plans/svc06-backend-release；6稳定诊断产品literal已原子交回。 |
 | 架构影响 | 已审诊断Module与原process停止边界分开；新构建复用既有builder/OPS14，只有四源码与入口数据变化，未扩依赖/SQL/运行权限。 |
 
@@ -37,7 +37,7 @@
 | SVC06-02 | completed | assignment_review | accept/amend receipt；Interface |
 | SVC06-03 | in-progress | assignment_review | 真实完整artifact构建/import已审；新root三host/拒读实验已限定批准并main，默认部署链不扩大 |
 | SVC06-04 | in-progress | assignment_review / 独立reviewer | 局部检查/构建已审；一次真实host结果已限定批准并main，refresh/resume/旧数据后继open |
-| SVC06-05 | in-progress | assignment_review | update-diagnostics-candidate/candidate.md；固定6c新诊断产物build/import已限定独审；r1宿主失败已审，r2实际策略旅程通过且限定独审并main657105，三App配置兼容/个人仍未验 |
+| SVC06-05 | in-progress | assignment_review | update-diagnostics-candidate/candidate.md；固定6c新诊断产物build/import已限定独审；r1宿主失败已审，r2实际策略旅程通过且限定独审并main657105，C3三App配置兼容已独审；个人仍未验 |
 
 ## 依赖闭包后继（2026-10-06 14:41 UTC）
 
@@ -340,3 +340,7 @@ Lead于2026-10-07T11:18:46.472543+00:00独审 [唯一原件](../../docs/evidence
 [当前一次执行清单](../../docs/evidence/svc06/update-diagnostics-candidate/candidate.md)复用原迁入/no-replace、Web replacement与首次root→同op artifact维护入口。7d1尚未迁入、browser policy absent；当前0HTTP/个人写/停止启动/构建/provider。36 Git+8显式输入及15包978文件均匹配固定来源，不把未来fresh门禁当已通过。准备汇总首次遇relativePath缺省，仅metadata处理失败，按显式非Git row修正保留事实；未改变个人状态/原结果。clean-code/codebase-design复核采用小Interface/单份记录，0新operator或FSM。SVC06-03/04/05保持open，任务总开工UNKNOWN。
 
 Web正式actual独审随后收到并核SHA69e9f809…；原报告等待结束取review原件11:59:06.606725 UTC。当前仅个人清单待本Lead独审及共享窗口实际归还；12:01:55 X01 cleanup-only仍exclusive，未占窗口/无个人操作。候选context保持6c/7d1/81a8，不将后来lateLogout纳入已验证tuple。
+
+## 2026-10-07：迁入调用装配窄修（个人未执行）
+
+实际实施起点 2026-10-07T12:17:57.080177+00:00；fresh ledger 2026-10-07T12:12:36.796Z 确认 v9 原双scope。e4cd REQUEST_CHANGES P2：旧private migrate不接受已存在c7b、procedure仅ports，不作为可执行入口。新增本次固定adapter复用原procedure、clone-driver/no-replace和双锁，c7b/af51/null backend、5私有文件与实际owned身份必须fresh保持。C3已审资料已main e0295747200d7f0616779a712fdfd06691c3708f；本段没有个人读取/写入、PG/HTTP/SDK/provider或build/App重跑。局部定向预算累计≤30s、tmp≤8MiB、raw≤128KiB，9纯用例+语法待运行；实际迁入120+.5+2使用单一NEW_CHILD_SESSION，copy/rename同组，现仍NOT_RUN。
