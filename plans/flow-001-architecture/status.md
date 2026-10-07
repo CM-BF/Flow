@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07T23:40:41.160Z / mainc414c0d0d；5719实际发布结果限定独审通过：779/v4及旧d629各一版本资源HTTP核同；个人e15/currentinit/accepting24、3roles保留，实际用户任务领取NOT_OBSERVED。 |
+| 最近更新 / 最近main同步核验 | 2026-10-07T23:50:19.691Z / mainfe26cc936；个人Web779/v4已发布，AV中心/client与GDEP固定已审源码已接收；TUI01F本轮准备23:43:59Z开始，未持实际浏览器/PG窗口。 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -15,12 +15,12 @@
 | 工作基线 / 本记录核验时HEAD | main32c371d；本权威管理树历史基线不变，当前仅汇总metadata |
 | 工作树dirty状态 | 本次汇总metadata提交 |
 | 工作分支状态 | in-progress；M1完成，长期整体工程持续推进 |
-| 已集成main状态 / HEAD | mainc414c0d0d已接收锁修复独审；个人现场e15/880060、current initialization/accepting24，Web779/v4于23:36:06确认。5719结果独审通过，源码接收与部署分列，不冒完整聊天通过。 |
+| 已集成main状态 / HEAD | main97353接收实际Web779结果及AV中心/client；fe26接收GDEP四产品叶与直接fixture。个人仍e15/880060、accepting24，Web779/v4；源码接收不自动部署或证明新用户任务领取。 |
 | 阶段 | M2 |
 | 优先级 | 3 |
 | 当前产出 | 个人服务已恢复，新版网页已发布并完成限定核对。旧页面资源保留，中心和执行器未因这次网页发布重启。 |
-| 下一可用交付 | 接收已审的共享验证接口，继续真实聊天与双端接续验收。 |
-| 当前阻塞 | ACTIVE: 个人恢复和网页发布已完成；真实用户任务领取、完整双端接续与工程模型资格仍各按原验收开放。 |
+| 下一可用交付 | 完成终端与网页交替操作同一会话的实际验收，并继续接入已审的聊天与插件能力。 |
+| 当前阻塞 | ACTIVE: 完整双端聊天仍待实际验收；工程写入模型资格仍待原决定，当前可并行推进零模型工作。 |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)：REQ-18插件组合规划限定APPROVED_DOCS；全FLOW-001及产品容量未获整体approval |
 
@@ -34,7 +34,7 @@
 | FLOW-001-T02 | completed | Execution Lead | [M1系统旅程](../../docs/evidence/i01/m1-system.md)与独立review已通过，main14fea3d已集成 |
 | FLOW-001-T03 | in-progress | Execution Lead | 完整范围见[验收矩阵](full-plan-matrix.md)，尚未完成 |
 | FLOW-001-T04 | pending | Execution Lead | 完整范围见[验收矩阵](full-plan-matrix.md)，尚未完成 |
-| FLOW-001-T04-DEPENDENCY-READ-01 | pending | Execution Lead排期，产品owner未领取 | 固定9a815源码推导的依赖串行读候选；当前未测，见plan同ID；个人发布/消息设置/S01当前修复优先 |
+| FLOW-001-T04-DEPENDENCY-READ-01 | completed | b01_bounded_reads / Mika；Lead接收 | GDEP01固定bcbce5已mainfe26cc936，16pure/8真实PG独审通过；199依赖一次读取、原错误顺序和项目锁边界已验，不冒完整execute/native/progression或性能结论 |
 | FLOW-001-T04-POOL-01 | pending | Execution Lead（实施owner未领取） | [plan.md](plan.md)的REQ-18插件组合；NOT_RUN，未扩运行预算；关联原SCAN-01 |
 | FLOW-001-T03-RESUME-01 | pending | Execution Lead排期 / 拟原中心owner | [旧会话撤销runner后续接](plan.md#聊天续接原-runner-撤销后的旧会话2026-10-07待复现)；仅固定源码候选，尚未领取或复现，不阻当前发布 |
 | FLOW-001-T03-QUEUE-ACK-01 | pending | Execution Lead与Web协调，产品writer未领取 | Web/TUI矛盾队列回执的共享纯规则与两消费者，当前仅源码发现/NOT_RUN，个人发布和默认宿主定位优先 |
@@ -282,3 +282,5 @@ R4固定结果a4a2d98/delivery307d4f05获独立限定批准，首错仍为默认
 2026-10-07T22:20:43.000Z：本次恢复22:17:23.713320Z实际开始、22:18:46.870374Z终止，22:20:13.131180Z完整归还。产物/四报告已导入；rebind返回identity/MAINTENANCE_TARGET_CHANGED、mutation=not-written，未到refresh/checkpoint/resume，0新服务/provider/网页发布。旧失败与KEEP保留，既有操作23不重放；仅原owner继续有界首因定位。唯一原件与后继见[恢复owner status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/plans/svc09-message-settings-activation/status.md)，不以本次caller失败否定既有隔离冷启动/兼容证据。
 
 2026-10-07T22:41:45.537Z：续接实际START22:37:56.465903Z、entry exit22:37:56.647208Z，outer51ms；真实executor窗口名前置不符，未到phase，未创建新私有namespace。22:40:21.259Z准确RETURN，四自有PID及预检组absent、EOF/signals[]/pending0，预检两pool.end完成而远端零连接NOT_OBSERVED。原作者修复、独立review核完整真实调用链；旧产物/报告迁入和FAIL/KEEP不变，0新模型/任务/服务动作。唯一原件见[恢复owner](../../../personal-message-settings/plans/svc09-message-settings-activation/status.md)，不把本次失败归作资源等待。
+
+2026-10-07T23:50:19.691Z：恢复后的安全接收已消费AV03中心/client（main97353）及GDEP01（mainfe26），没有新工程重测或个人操作。GDEP只接5必要路径44890B与单份Git来源回执，原512运行输入/历史raw仍在canonical，未复制到main；非Git峰值或APFS节省测量。TUI01F owner于23:43:59Z恢复原双端旅程准备，原首FAIL/cleanup保持，已给一个连续有界local段；未来真实PTY/浏览器与headless证据分列。登记和own-status解析只核自身字段，历史首次UNKNOWN不补猜。

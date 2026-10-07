@@ -657,9 +657,9 @@ GO只读输入绑定main22a0806bc2465e11096949618113833f31766b19：index.ts同�
 
 GO已查一手文档：[Anthropic tool search](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-search-tool)、[tool caching](https://platform.claude.com/docs/en/agents-and-tools/tool-use/tool-use-with-prompt-caching)、[Claude Code MCP tool search](https://code.claude.com/docs/en/mcp#scale-with-mcp-tool-search)。API defer_loading延后模型上下文加载，但仍提交全部工具定义，不能称请求字节已减少；原生MCP发现另有配置/回退，不能将API字段直接用于SDK。固定0.3.290/native2.1.290支持未验。未来大目录优先复用harness发现，保Flow授权/稳定工具身份，分别量目录和wire字节、输入/缓存、发现往返与成功；小目录不预设收益、不套官方比例。本条仅研究归档，无新探针/依赖/预算，当前7524显式工具名单与goalMount不改。
 
-### REQ-18 / S01：执行受理的依赖批量读取（2026-10-07，待测）
+### REQ-18 / S01：执行受理的依赖批量读取（2026-10-07，限定片已交付）
 
-- [ ] **FLOW-001-T04-DEPENDENCY-READ-01** 沿原目标执行与容量验收，减少同项目执行受理在写锁内读取许多短依赖时的数据库往返。Execution Lead排期；原中心owner为后继候选，尚未领取产品范围，当前仅归档静态输入、NOT_RUN。个人新版、消息设置接通和S01当前编码修复先交付。
+- [x] **FLOW-001-T04-DEPENDENCY-READ-01** 限定依赖批读片已交付：GDEP01 owner b01_bounded_reads / Mika，固定bcbce5源码于mainfe26cc936接收。16pure及8真实PG独审证明199短依赖一次有界查询、原输入/首错/项目锁与回滚边界；[唯一接收及原件引用](../../../m2-integration/docs/evidence/i02/gdep01-approved-intake.json)。完整公开execute/native/progression与整体性能不在此完成范围。
 - GO只读输入固定main `9a815eca7`：`apps/server/src/goals/commands.ts:96–107` 的dependencyContent逐项await产物；execute/native合同最多199依赖，applyGoalCommand→loadState(...,true)已持项目行锁。16k输入上限限制最终内容，不能限制许多短依赖的查询次数。此为源码推导，不是199个agent、已测延迟或生产饥饿结论；与会话页N+1属于不同直接消费者。
 - 最小候选先核一次批量读取与旧输入逐字等价：保顺序、精确task/artifact/version/detail绑定、hash、整单预算、事务/授权与未知拒绝；不移开既有锁、不以同连接Promise.all假并行、不新增第二缓存。先局部查询次数/输入等价，再在合适隔离窗口做有限PG同项目竞争，0provider，不重复128容量全集。
 - 与既有SCAN-01、POOL-01关联但不替代：本项负责执行受理依赖查询，前两项分别负责扫描锁隔离与插件宿主连接占用。官方行锁语义参考[PostgreSQL explicit locking](https://www.postgresql.org/docs/current/explicit-locking.html#LOCKING-ROWS)；采用前以实际固定版本核验。
