@@ -93,6 +93,27 @@ export async function checkWorkspaceLayout({ browser, outputDirectory, cacheDire
     const desktopPath = join(outputDirectory, "arc-desktop-ready.png"); await writeFile(desktopPath, desktop);
     result.observations.desktopStage = { stage: "connected-before-layout-actions", path: desktopPath, bytes: desktop.length, viewport: page.viewportSize(), at: new Date().toISOString() };
     await run("layout-navigation", async () => {
+      const navigation = page.locator(".flow-arc-workspace-tabs");
+      const navigationBox = async () => navigation.evaluate(node => {
+        const style = getComputedStyle(node), rect = node.getBoundingClientRect();
+        const contentHeight = Math.max(...[...node.children].map(child => child.getBoundingClientRect().height));
+        return { top: rect.top, height: rect.height, flexGrow: style.flexGrow,
+          naturalHeight: contentHeight + parseFloat(style.paddingTop) + parseFloat(style.paddingBottom) + parseFloat(style.borderTopWidth) + parseFloat(style.borderBottomWidth) };
+      });
+      const beforePanel = await navigationBox();
+      expect(beforePanel.flexGrow).toBe("0"); expect(beforePanel.height).toBeLessThanOrEqual(beforePanel.naturalHeight + 1);
+      await page.getByRole("button", { name: "Toggle workspace panel", exact: true }).click();
+      const side = page.getByRole("complementary", { name: "Task workspace", exact: true }); await expect(side).toBeVisible();
+      const sideTabs = side.getByRole("tablist", { name: "Workspace panels", exact: true });
+      await expect(sideTabs).toHaveCSS("flex-grow", "1");
+      await side.getByRole("tab", { name: "Terminal", exact: true }).click();
+      await expect(side.getByRole("tab", { name: "Terminal", exact: true })).toHaveAttribute("aria-selected", "true");
+      const openPanel = await navigationBox(); expect(Math.abs(openPanel.height - beforePanel.height)).toBeLessThanOrEqual(1);
+      expect(Math.abs(openPanel.top - beforePanel.top)).toBeLessThanOrEqual(1);
+      await side.getByRole("button", { name: "Close workspace", exact: true }).click(); await expect(side).toBeHidden();
+      const closedPanel = await navigationBox(); expect(Math.abs(closedPanel.height - beforePanel.height)).toBeLessThanOrEqual(1);
+      expect(Math.abs(closedPanel.top - beforePanel.top)).toBeLessThanOrEqual(1);
+      result.observations.workspaceNamespace = { beforePanel, openPanel, closedPanel, rightTab: "Terminal", scope: "Arc navigation stays intrinsic; right Workspace panels keeps its own flex rule" };
       await chooseChat(2); await chooseChat(3);
       await tab(1).focus(); await tab(1).press("ArrowRight"); await expect(tab(2)).toBeFocused(); await expect(tab(3)).toHaveAttribute("aria-selected", "true");
       await tab(2).press("Enter"); await expect(tab(2)).toHaveAttribute("aria-selected", "true");

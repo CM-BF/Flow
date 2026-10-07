@@ -15,7 +15,7 @@ function focusTab(event: KeyboardEvent<HTMLButtonElement>) {
 export function WorkspaceTabs({ layout, onSelect, onAdd, onClose }: {
   layout: WorkspaceLayout; onSelect(id: string): void; onAdd(): void; onClose(id: string): void;
 }) {
-  return <div className="flow-workspace-tabs">
+  return <div className="flow-arc-workspace-tabs">
     <div role="tablist" aria-label="Workspaces">{layout.tabs.map(tab => <span key={tab.id}>
       <button role="tab" id={`workspace-tab-${tab.id}`} aria-controls="workspace-panes"
         aria-selected={layout.activeTabId === tab.id} tabIndex={layout.activeTabId === tab.id ? 0 : -1}

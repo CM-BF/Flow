@@ -67,7 +67,7 @@ export async function startWorkspaceLayoutFixture(options: { cacheDirectory: str
     materialScopeDigest: "a".repeat(64), turnSettings: { protocol: "flow.claude-turn-settings.v1", choices }, limits: { maxTurns: 1, maxBudgetUsd: .01, timeoutMs: 1000 },
   };
   const profile: ClaudeMessageSettingsExecutionProfile = { reference: { id: id(4), runnerId: id(5), configDigest: hash(JSON.stringify(configuration)) }, configuration,
-    source: "runner-configured", availability: "not-probed", model: { value: "arc-A", resolvedModel: null, displayName: "Arc fixture profile", description: "Synthetic public projection; no runner registration or execution", providerCapabilities: "unknown" },
+    source: "runner-configured", availability: "not-probed", model: { value: "arc-A", resolvedModel: null, displayName: "arc-A", description: "Synthetic public projection; no runner registration or execution", providerCapabilities: "unknown" },
     controls: { access: "configured-policy", queue: false, steer: false, messageSettings: { protocol: "flow.claude-turn-settings.v1", choices: "configuration.turnSettings.choices" } }, createdAt: at };
   for (const chat of fixture.chats.values()) {
     chat.snapshot.conversation = { ...chat.snapshot.conversation, projectId, executionProfile: profile.reference };
