@@ -1,0 +1,15 @@
+{
+  "at": "2026-10-07T21:13:07Z",
+  "reviewer": "db_transaction_owner",
+  "model": "gpt-6-astra",
+  "decision": "SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPROVED",
+  "source": "d78ffd7c691682c1e78d7a2b7d2617521527e9ca",
+  "packet": "7cccfcc4386fe1926fbe5d0c1a0e4913247912eb",
+  "summarySha256": "fce67a956c122fce5ac37f7ca82041be1c71ff66a4302c6929f8ea970b043b91",
+  "P1": 0,
+  "P2": 0,
+  "closedFinding": "selected_passed selection decoder",
+  "verified": "3source+3raw hash/bytes;9run bindings;19pure (old15+4 new methods), PID246/157ms/raw118B/finalabsent/MERGED EOF/TMPsameidentityabsence; originalactual/runtime/closed-permit zeroDiff",
+  "limits": "OriginalPG2pass/32skipped/callerFAIL immutable. Pure offline reinterpretation is not a newPG run. No newactual/main granted.",
+  "reviewerExecution": "none"
+}

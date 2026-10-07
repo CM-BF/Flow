@@ -1,0 +1,86 @@
+# S01Q01 状态
+
+| 字段 | 记录 |
+| --- | --- |
+| 最近更新 / 最近main同步核验 | 2026-10-07 21:13 UTC |
+| Plan | [plan.md](plan.md) |
+| 任务层级 | 子task |
+| 所属大task | [FLOW-001](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plan-status-review/plans/flow-001-architecture/plan.md) |
+| co-lead | mika |
+| 任务开工时间 | 2026-10-07T16:23:07Z |
+| 任务完成时间 | NOT_COMPLETED |
+| 任务时间来源 | 派工后实际 clock；原source段已封存；selector修复段2026-10-07T21:10:25Z起，截止21:18:25Z；任务原始start不重置 |
+| 单一status owner / model | b01_bounded_reads / gpt-6-astra ultra |
+| Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan |
+| Branch | codex/queue-paused-scan |
+| 工作基线 / HEAD | base b79121e1944f10f82a416d98d776c0f55bf9c943；历史fixture a4f041e0/01dfc89；当前source d78ffd7c691682c1e78d7a2b7d2617521527e9ca；promotion仍42c零diff |
+| 工作树dirty状态 | 源已固定；本段metadata提交push后clean STOP，0待launch |
+| 工作分支状态 | integration |
+| 检查状态 | PASSED d78ffd7c691682c1e78d7a2b7d2617521527e9ca；真实PG2passed/32skipped绑定执行46912（产品字节未再改），原callerexit1/FAIL保留；selector修后19pure通过并独审；资源已CLOSED |
+| 已集成main状态 / HEAD | 本片未集成；固定基线 b79121e1944f10f82a416d98d776c0f55bf9c943 |
+| 实现目标 | d78ffd7c691682c1e78d7a2b7d2617521527e9ca |
+| 实现范围 | apps/server/src/conversation-queue/promotion.ts, apps/server/src/conversation-queue/queue.test.ts, docs/evidence/s01q01-paused-queue/pg-fixture.ts, docs/evidence/s01q01-paused-queue/types.tsconfig.json, docs/evidence/s01q01-paused-queue/dependencies.json, docs/evidence/s01q01-paused-queue/pg-fixture.test.ts, docs/evidence/s01q01-paused-queue/failure-local.py, docs/evidence/s01q01-paused-queue/failure.types.tsconfig.json, docs/evidence/s01q01-paused-queue/failure.vitest.config.ts, docs/evidence/s01q01-paused-queue/entry.py, docs/evidence/s01q01-paused-queue/entry.test.py, docs/evidence/s01q01-paused-queue/queue.vitest.config.ts |
+| 阶段 | M2 |
+| 本片段交付阶段 | integration |
+| 优先级 | 2 |
+| 当前产出 | 暂停队列不再挤占扫描批次的两条真实行为已验证，结果选择器修复也已通过独立审查 |
+| 下一可用交付 | 将已审片段受控接入主线 |
+| 当前阻塞 | NONE |
+| 需用户决定 | NONE |
+| Review | [review.md](review.md)；architecture19:31:19批准fixture增量，原P2 CLOSED；db20:37:05批准103232ee源码准备；原唯一P2 CLOSED |
+| 当前claim最后观察 | a8a3b2d7-1bde-438a-9fbf-f81e1c791350 v1 ACTIVE；2026-10-07T21:10:25.971Z fresh ACTIVE；四精确 scope |
+
+| TODO ID | 状态 | Owner | 完成证据/检查 |
+| --- | --- | --- | --- |
+| S01Q01-01 | completed | b01_bounded_reads | 固定 252 文件/1,237,032B 与 take receipt |
+| S01Q01-02 | completed | b01_bounded_reads | 单 predicate 与两用例源码；原测试业务断言保留；真实新增两例通过 |
+| S01Q01-03 | completed | b01_bounded_reads | 完整queue类型通过；真实PG/HTTP两目标passed/32未选；原callerFAIL保留，修后selector19pure与db独审通过；资源CLOSED，见pg-run与selector-local |
+| S01Q01-04 | in-progress | b01_bounded_reads | 源码/实际结果/selector增量独审完成，主线尚未接收 |
+
+## 同步与限制
+
+[唯一证据入口](../../docs/evidence/s01q01-paused-queue/README.md)。不改现有服务/数据库/产品权限。Mika确认D05已main e5ecd07bc登记，17:02:13.739聚合source current/issues[]/claim matchesSource；本段不重复HTTP探针。旧 CHAT04 已 release 的权限未复用。架构 Interface/FSM 无变化，仅扫描候选选择；Lead 集成时可按本片目标记录，未修改全局架构图。
+
+2026-10-07T16:28:45.176704+00:00：源码安全停点；两新增真实PG用例与单predicate已固定准备，原整个测试文件除插入用例外逐字保留；尚未运行或类型检查。初始静态定位误查010-conversations.sql/control.ts不存在，随后由实际007-conversations.sql和index导出路径核正，非工程检查失败。临时停写本树以顺序归档已获授权K01 review metadata；本段截止不延长。
+
+2026-10-07T16:31:06.487336+00:00：从K01 metadata停写点顺序回本树，仅固定源码target与审查交接；source 42c6c8cf81d3d648fc3477109e66db6c843aefe3，base至target仅promotion候选增加NOT paused及queue.test插入2用例，原测试所有字节保留。源码准备已交付但本片产品未验收；0工程child/PG/HTTP/Chrome/provider，类型/测试/聚合NOT_RUN。未来fixture24连接为配置上限、当前未提供marked/deadline安全入口，后继不能直接把原suite当已准入；待Mika独审与有限PG入口/窗口。整个原15min段于本次metadata push后提前STOP，不借剩余时间新增工作。
+
+2026-10-07T17:14:28.638819+00:00：新15min/new8MiB段启动，fresh claim a8a3b2d7 v1 ACTIVE4scope；复用本地find-skills/brainstorming/codebase-design/clean-code固定sickn33 bdacd76。既有设计授权不重复审批。≤3child/30s/cum60s；0PG/HTTP listener/Chrome/provider/install/build。原队列测试业务断言保留；24配置连接、two-center另13，后继按实际选择申报。
+
+2026-10-07T17:24:19.246181+00:00：本段source checkpoint a4f041e0b15b32e6a9b7493869f47341be5e0f19，fixture已转S01Q01专用marked DB/阶段与证据，原CHAT04 latest-resource/cleanup无写入。252固定输入1,237,032B+当前覆盖供给约1.252MiB、17existing外包/3内部alias；全部业务assertions经六项资源调用归一后与42c原body逐字一致。旧两用例/所有断言未删，predicate未改。17:17:38实际DRAIN，0engineer child/0PID/PGID/EOF/新TMP，不存在可声称通过的零测试。当前source类型/收集/合成生命周期/PG均NOT_RUN；own-status parser因后到全组停止launch未执行，保持原正式聚合17:02历史事实，未新采看板。已知资源配置24，two-center另13；120s=70+40+10仅future候选，futurecaller/精确storage/runtime绑定仍待核。源码和metadata提交push后全STOP，claimv1保留；不借原段余额新launch。
+
+2026-10-07T19:13:26Z：新20分钟/new8MiB SOURCE-ONLY段，fresh0aa0102=origin clean、19:13:46.146Z claimv1四scope匹配。仅自有fixture/故障用例及metadata；产品promotion/queue断言不改。复用本地find-skills/brainstorming/codebase-design/固定clean-code与TDD行为设计方法，已授权窄修不重复审批；0工程child/PG/HTTP/provider/namespace或TMP探查。缺失fixture-config.json只属只读路径猜测失败，未启动工程或写文件。
+
+2026-10-07T19:27:05.171494+00:00：按Mika后到授权在原20分钟内完成连续0PG ordinary迭代；源target 01dfc89e43fb7793bc3d022b05ea34c129755073。原fixture定向红1失败/6未选，修后首轮3/7（Proxy非spy的测试错误），仅修外部fake后7/7及focused fixture types0。4child累计监督2145ms/raw5115B；19:22:32.454554Z actualFULLRETURN，全部finalabsent/MERGED EOF/原字节完整/无secondary或signals，自有TMP原dev/ino/marker核符后exact lstat ENOENT。前两gate17,934,057,472、后两17,950,834,688分别保存，历史不改；不存在真实PG/HTTP资源。唯一[局部入口](../../docs/evidence/s01q01-paused-queue/failure-local/summary.json)，一份iterations记录。产品两文件/旧业务断言不变；scratch峰值未采，不冒称硬隔离预算证明。工程全部STOP，余下独审与main/PG未完成，未关闭原TODO。
+
+2026-10-07T19:34:55Z：新20min/new8MiB准备段开始，fresh06118de7=origin clean、19:34:55.337Z claima8a3v1四scope。归档architecture19:31:19限定独审；本段最多5child/30s各/累计90s，raw2MiB含于8MiB。仅完整queue类型/静态收集和薄caller纯行为；0PG/HTTP/Chrome/provider/安装/旧TMP探查，K01保持STOP。
+
+2026-10-07T19:53:58.685272+00:00：本段源target 9d1bc8e1e24c281c834be61300d9522ea859f2cf，5child累计监督5180ms/raw1679B，19:46:07.938931Z FULLRETURN，全部finalabsent/MERGED EOF/ownTMP exactENOENT。完整queue types首轮6处空值错误，新增用例加明确首项守卫后exit0；静态list仅2条/执行0；caller7distinct纯例最终通过，旧fixture7不重跑。单份[preparation-local/summary](../../docs/evidence/s01q01-paused-queue/preparation-local/summary.json)与runtime-inputs绑定283文件（252固定产品含33SQL+当前overlay与runtime），17外部alias两入口及2有效内部alias。原第三@flow/client alias实际dangling且闭包无引用，首次静态组包失败后明确排除，不复制补包/冒称全部有效。未来140秒包含70/40/10/10/10且24配置连接，两center另13未选。仅CLOSED候选；DB大小未采、存储只是最终样本不是运行硬限，因此实际准入尚有缺口，不借本段开启PG。当前源码停止，提交push后全部STOP/0待launch，main未集成。
+
+2026-10-07T20:06:50Z：新20min/new8MiB段，fresh ae72652=origin clean、claimv1四scope匹配（20:06:50.760Z）。归档db20:03:44限定审查，0新P1/P2且PG NOT_READY。最多5串行child/30s/累计90s，raw2MiB含总8；0PG/HTTP/Chrome/provider/旧KEEP。技能沿既有本地find-skills/codebase-design/固定clean-code，复用单一caller/fixture，不改promotion与业务断言。
+
+2026-10-07T20:23:52.494436+00:00：本段source 7da2a44608fd92e578863e6d6e39ad18aae98a13，5child监督3714ms/raw3109B，FULLRETURN 2026-10-07T20:19:35.111707+00:00。24distinct pure、2focusedtypes0；初caller因/tmp非canonical测试路径3失败已纠正，原件保留。最后外部permit/read seam静态修复未追加第6child，PARTIAL准确保留；不把采样当peak，不把WAL reserve当实测。claimv1继续保留，产品promotion/业务断言及旧raw零改；本次仅源入口待审，main未集成，原TODO03/04开放。封存push后STOP/0待launch，所有普通工程已归还；无真实PG/HTTP/provider/新actualnamespace。
+
+2026-10-07T20:24:04Z：packet a30b8d16ceab188702e40ba55ab26c80cbe9eb08已push且HEAD=origin clean。收口保守当前changed23文件225311B，三份自有静态编辑脚本29439B已精确删除；工程TMP按5次独立同身份ENOENT回执，未实测瞬时峰值，不伪称总量硬隔离。最终metadata push后全部STOP，新增growth关闭；上限8MiB未用于新工程/实际PG。
+
+2026-10-07T20:32:48Z：fresh a4a6841c=origin clean、20:32:48.804Z claima8a3v1四scope。db20:31:58 SOURCE_CHANGES_REQUESTED，唯一P2为sample后根替换symlink可先删子项后才拒绝；原24pure/两types与raw忠实性通过。新10min/new4MiB局部段，仅caller根门禁/外置permit纯mock；≤3child/30s/累计60s/raw512KiB含总额。0PG/HTTP/provider/旧KEEP，复用本地find-skills/codebase-design/固定clean-code。
+
+2026-10-07T20:35:15.546469+00:00：本次实现 103232eeab0f861e1ab87f496e9b9f0f1c068965，15/15纯例绑定最终字节，未改fixture/产品/promotion/旧断言。单child START 2026-10-07T20:34:06.444858+00:00 → FULLRETURN 2026-10-07T20:34:06.594010+00:00，监督145ms/raw114B/finalabsent/MERGED EOF/同身份TMP exactENOENT，无secondary/signals。新完整floor16,620,257,280来自canonical20:33:09.724加本段4MiB一次，free19,277,475,840；0真实PG/HTTP/provider。原1P2修复交独审，owner不自行宣称审查关闭；runtime与CLOSEDpermit更新，原raw冻结。提交push后全STOP/0待launch，claimv1保留，原03/04未完成。
+
+2026-10-07T20:39:04.877196+00:00：新3min/64KiB metadata-only收口，fresh347209c=origin clean；归档db20:37:05 SOURCE_AND_LOCAL_RESULT_REVIEW_APPROVED/0剩余P1/P2。原15pure与源103232ee、runtime834873…0381、closed-permit/raw完全不改；SOURCE_PREPARATION_APPROVED。唯一候选[pg-ready](../../docs/evidence/s01q01-paused-queue/pg-ready.md)复用固定manifest，实际仍CLOSED/NOT_RUN，新actual输入/namespace未创建。最终交付消息给literal新packetHEAD供future许可绑定，不做自引用提交。原任务03/04保持开放，main未集成；commit/push后STOP/0待launch，claimv1保留。
+
+2026-10-07T21:04:52.098180+00:00：D01唯一OPEN Q01-PAUSED-QUEUE-PG-20261007-ONCE已消费，fixed46912/input834873不变。actual entry origin2026-10-07T21:03:03.511Z；operatorPID83753/child83774；监督2867ms，receipt前2944ms，完整回执确认RETURN21:03:18Z（不把推算当实际end）。原两个精确业务用例passed，32未选skipped；caller只排pending导致原testPassed=false/exit1，此FAIL不改不重跑。DB identityOID1352368/owner/marker吻合、connections0/普通DROP absent/adminclosed，listener门禁与全部owner关闭确认，TMP exactENOENT/无pending。HTTP76/27448B，DBsamples7602703/12516375/12770327，非峰值。唯一结果[interpretation](../../docs/evidence/s01q01-paused-queue/pg-run-4799eda499494ac79f211b89ead71ea8/interpretation.json)与原件manifest；post284/36bindings一致。source/pure review与实际结果分开，main未集成/完整任务未完成，STOP无新launch。
+
+| 等待/阶段 | 实际起点与来源 | 实际终点与来源 | 限定 |
+| --- | --- | --- | --- |
+| 本次共享窗口等待 | 2026-10-07T20:39:15Z READY/STOP消息 | 2026-10-07T21:03:03.511Z entry owner.startMs | 仅此次实际事件，不重置原任务start；等待/计算/修复/review重叠不简单相加 |
+| 本次真实验证 | 2026-10-07T21:03:03.511Z owner.startMs | 2026-10-07T21:03:18Z 完整原件已读确认RETURN | 精确过程时长以OPS14/receipt字段为准；非用commit/mtime推断end |
+
+2026-10-07T21:10:25Z：新8min/new4MiB selector窄修段，fresh9e6af769=origin clean/21:10:25.971Z claimv1匹配。原结果db21:08:19 RESULT_FIDELITY_REVIEW_APPROVED，既知选择器P2 SOURCE_FIX_REQUIRED。仅caller纯JSON解释与原始报告只读反例，≤2child/30s/累计45s/raw256KiB含4MiB；0PG/HTTP/provider，旧actual所有字节冻结。任务原16:23start不重置，截止21:18:25。
+
+2026-10-07T21:14:11.497220+00:00：db21:13:07 SOURCE_AND_DELTA_LOCAL_RESULT_REVIEW_APPROVED，selection P2 CLOSED，0剩余P1/P2；固定source d78ffd7c691682c1e78d7a2b7d2617521527e9ca / packet 7cccfcc4386fe1926fbe5d0c1a0e4913247912eb。原真实PG行为两例及资源证据已由db21:08:19接受，原callerFAIL不改；新19pure只是选择解码与原件只读解释，未重跑PG/类型/fixture。clean-code安全点复核单职责/已知状态白名单/首错和资源门禁保留，无新框架。原runtime与CLOSEDpermit冻结供历史追溯，已消费窗口不可再用，源码修复后不能把旧输入清单当当前执行授权。当前进入integration，任务finish仍NOT_COMPLETED；metadata提交push后STOP/0待launch，claimv1保留待main。
+
+| 本轮阶段 | 有来源起点 | 有来源终点 | 限定 |
+| --- | --- | --- | --- |
+| selector实现/局部检查 | 2026-10-07T21:10:25Z 实际开段clock | 2026-10-07T21:11:35Z fixedpacket/clean现场clock | 单child实际21:11:15.169010→21:11:15.329644；不把整个区间当CPU计算 |
+| selector独立审查 | UNKNOWN（请求未单独取clock，不用commit猜） | 2026-10-07T21:13:07Z db审查消息 | 与owner收口可能重叠，不累计为独立总耗时 |

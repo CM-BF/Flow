@@ -1,0 +1,29 @@
+{
+  "recordedAt": "2026-10-07T16:28:45.176704+00:00",
+  "base": "b79121e1944f10f82a416d98d776c0f55bf9c943",
+  "sourceFiles": [
+    {
+      "path": "apps/server/src/conversation-queue/promotion.ts",
+      "bytes": 4302,
+      "sha256": "353c4d1969cfc16fea4d351efeb644d702adabb0c7e2530a552990e597195a8c"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queue.test.ts",
+      "bytes": 37527,
+      "sha256": "70def33e27fc8010a49b9972f4fd091083c9e2767715c4e3ad421730c7292665"
+    }
+  ],
+  "originalQueueTestPreserved": true,
+  "originalQueueTestSha256": "fe0a6906844efeab7c31ec0f26da3af29ecb59775a26b428366100c567175ab6",
+  "newBehaviorCases": 2,
+  "actualTests": "NOT_RUN",
+  "engineeringChildren": 0,
+  "pgHttp": "NOT_RUN",
+  "staticFacts": [
+    "queue_paused boolean NOT NULL default false in 011",
+    "conversation IDs text in 007",
+    "predicate added before ORDER/LIMIT/rotation",
+    "locked promoteReady pause guard unchanged"
+  ],
+  "logicalTrackedWorkingBytes": 1301071
+}

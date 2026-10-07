@@ -1,0 +1,47 @@
+{
+  "at": "2026-10-07T21:47:25.413Z",
+  "kind": "CONTROLLED_APPROVED_INTAKE",
+  "task": "S01Q01",
+  "source": "d78ffd7c691682c1e78d7a2b7d2617521527e9ca",
+  "delivery": "59a1aff5905e8e2a52daa02cf78dfd736936a604",
+  "priorMain": "2c96618a1",
+  "claimObservation": "2026-10-07T21:47:06.173Z",
+  "claim": "a8a3b2d7-1bde-438a-9fbf-f81e1c791350 v1 active exact4; owner STOP",
+  "sources": [
+    {
+      "path": "apps/server/src/conversation-queue/promotion.ts",
+      "bytes": 4302,
+      "sha256": "353c4d1969cfc16fea4d351efeb644d702adabb0c7e2530a552990e597195a8c"
+    },
+    {
+      "path": "apps/server/src/conversation-queue/queue.test.ts",
+      "bytes": 36469,
+      "sha256": "34c405580736ca9371378a108f68d33bba4831d38f56ef80af0af7c82207d6db"
+    }
+  ],
+  "comparison": "Prior main equals reviewed base for both product/test paths; received bytes equal d78 and canonical. No manual product merge.",
+  "reviews": [
+    "42c original predicate source approval",
+    "01df error propagation delta approval",
+    "103232ee resource guard source approval",
+    "9e6af769 two real PG targets fidelity approved at21:08:19Z",
+    "d78 selector repair19pure independently approved at21:13:07Z"
+  ],
+  "validationReused": {
+    "pgPassed": 2,
+    "notSelected": 32,
+    "historicalCaller": "FAIL preserved; repaired result interpreter does not rerun or change original report",
+    "selectorPurePassed": 19,
+    "newRuns": 0
+  },
+  "ownerRecords": {
+    "files": 97,
+    "bytes": 417289
+  },
+  "limits": [
+    "Paused filter is before candidate limit/rotation; lock-level pause verification preserved.",
+    "Two observed public PG behaviors only, not general lock fairness or capacity proof.",
+    "No personal deployment, provider, database operation or product test repeated."
+  ],
+  "cleanCode": "Minimal domain predicate, existing admission/locks remain authority. Existing raw failures and result interpretation retained separately."
+}

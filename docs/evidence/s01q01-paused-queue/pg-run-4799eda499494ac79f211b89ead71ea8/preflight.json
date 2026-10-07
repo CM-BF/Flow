@@ -1,0 +1,44 @@
+{
+  "logicalId": "Q01-PAUSED-QUEUE-PG-20261007-ONCE",
+  "program": "const {Pool}=require(\"/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan/docs/evidence/s01q01-paused-queue/node_modules/pg\");const pool=new Pool({connectionString:process.env.FLOW_S01Q01_TEST_ADMIN,max:1,connectionTimeoutMillis:1000,statement_timeout:1500,query_timeout:1800});let result,closed=false,error=null;(async()=>{try{const r=await pool.query(\"SELECT current_setting('max_connections')::int AS maximum,(SELECT count(*)::int FROM pg_stat_activity) AS occupied\");result=r.rows[0]}catch(e){error={name:e.name,code:e.code}}finally{try{await pool.end();closed=true}catch(e){error={name:e.name,code:e.code}}}console.log(JSON.stringify({result,closed,error}));if(error||!closed)process.exitCode=1})()",
+  "process": {
+    "pid": 83767,
+    "ownership": "newChildSession",
+    "capture": "merged",
+    "exit_code": 0,
+    "elapsed_ms": 58,
+    "observed_bytes": 67,
+    "retained_bytes": 67,
+    "eof": {
+      "stdout": true
+    },
+    "first_failure": null,
+    "secondary_failures": [],
+    "signals": [],
+    "owned_state": "absent",
+    "observations": [
+      {
+        "state": "unknown",
+        "errno": 1
+      },
+      {
+        "state": "absent",
+        "errno": null
+      },
+      {
+        "state": "absent",
+        "errno": null
+      }
+    ]
+  },
+  "observation": {
+    "result": {
+      "maximum": 100,
+      "occupied": 6
+    },
+    "closed": true,
+    "error": null
+  },
+  "raw": "{\"result\":{\"maximum\":100,\"occupied\":6},\"closed\":true,\"error\":null}\n",
+  "at": "2026-10-07T21:03:03.415284+00:00"
+}

@@ -1,0 +1,56 @@
+{
+  "recordedAt": "2026-10-07T21:11:30.535237+00:00",
+  "sourceTarget": "d78ffd7c691682c1e78d7a2b7d2617521527e9ca",
+  "base": "9e6af7690e17dcfc8969cd30cb7b67f554b31ccf",
+  "sources": [
+    {
+      "path": "entry.py",
+      "bytes": 15033,
+      "sha256": "6223228a526c9275bdd1196d359f1c57e26ac0ec0f9bbf22fab12dc2cdab50ee"
+    },
+    {
+      "path": "entry.test.py",
+      "bytes": 12499,
+      "sha256": "1bf8f423b259135fba4880bf72a9d39e58812ad67f7aa6ce06dd123bd5297781"
+    },
+    {
+      "path": "failure-local.py",
+      "bytes": 7470,
+      "sha256": "5ff1e9220c4754b346521e845cff5d98e8e77cc45fabb1c789155cbbc87047f7"
+    }
+  ],
+  "evidence": [
+    {
+      "path": "selector-local/iterations.json",
+      "bytes": 1798,
+      "sha256": "55a29cfc987e2c7afd15a5056f4b0f9db5fce749193c37293688746400b85e32"
+    },
+    {
+      "path": "selector-local/selector-caller-started.json",
+      "bytes": 6946,
+      "sha256": "60c1aabb08dd20170a738b260f1dcb3f9a9bcbffb1ed792eb10ba415300ae8c0"
+    },
+    {
+      "path": "selector-local/selector-caller.log",
+      "bytes": 118,
+      "sha256": "3a23405a755a7d6d9ad22267d1635b62fbc421d698b4ebf041393d18ba32585f"
+    }
+  ],
+  "tests": {
+    "selected": 19,
+    "passed": 19,
+    "exit": 0,
+    "originalActualReplayed": false,
+    "readOnlyDecodeOfOriginal": "true only as interpretation; old result testPassed=false and bytes unchanged"
+  },
+  "resources": {
+    "pid": 246,
+    "supervisorMs": 157,
+    "rawBytes": 118,
+    "fullReturn": "2026-10-07T21:11:15.329644+00:00",
+    "resourceConfirmed": true,
+    "scratch": "REMOVED_EXACT_ENOENT"
+  },
+  "finalSourcesMatchRun": true,
+  "actual": "NO_NEW_PG_HTTP; original2passed/32skipped/callerFAIL unchanged; oldruntime/candidate not rebound"
+}

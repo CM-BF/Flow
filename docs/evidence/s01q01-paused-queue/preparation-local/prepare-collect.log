@@ -1,0 +1,10 @@
+[
+  {
+    "name": "skips more than a default batch of paused queues without rotating them and scans again after explicit resume",
+    "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan/docs/evidence/s01q01-paused-queue/.source/apps/server/src/conversation-queue/queue.test.ts"
+  },
+  {
+    "name": "keeps pause CAS authoritative when a candidate scan races promotion",
+    "file": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/queue-paused-scan/docs/evidence/s01q01-paused-queue/.source/apps/server/src/conversation-queue/queue.test.ts"
+  }
+]

@@ -1,0 +1,46 @@
+{
+  "testPassed": false,
+  "resourceClosed": true,
+  "scratch": "REMOVED_EXACT_ENOENT",
+  "cleanup": {
+    "database": "flow_s01q01_60595ad67b6e4a279faded7833d160ab",
+    "identity": {
+      "oid": "1352368",
+      "owner": "flow",
+      "marker": "s01q01:870e6c1e-dc20-4343-89e7-e0af4d1e478c"
+    },
+    "requested": true,
+    "created": true,
+    "durableIdentity": true,
+    "connections": 0,
+    "absent": true,
+    "cleanupConfirmed": true,
+    "errors": [],
+    "httpCount": 76,
+    "httpBytes": 27448,
+    "databaseSamples": [
+      {
+        "phase": "created",
+        "bytes": 7602703
+      },
+      {
+        "phase": "listening",
+        "bytes": 12516375
+      },
+      {
+        "phase": "before-drop",
+        "bytes": 12770327
+      }
+    ],
+    "plannedWalReserveBytes": 134217728,
+    "verification": "NO_FAILURE_RECORDED",
+    "state": "CLOSED"
+  },
+  "secondary": [],
+  "logicalBytesBeforeCleanup": 12580,
+  "tmpBytesBeforeCleanup": 0,
+  "tmpEntries": 0,
+  "storageWithinBudget": true,
+  "elapsedBeforeReceiptMs": 2944,
+  "limitations": "Bounded pre-cleanup sample, not live peak or OS quota. DB samples are not peaks; WAL reserve is planning only. No retry/extra probe/forced DROP."
+}
