@@ -1,3 +1,5 @@
+当前 actual：`c1db812ca9377117af73eb692b75fd263d9ae2c3` / execution`ebcd746e8e74881395e61f43ab444de48b62a51c`，**FAILED1/4、0PNG**。仅layout-navigation通过；body observer误分类Vite模块导致three-pane前置失败，后两组未达。9145/90000 CLOSED/余80855不转；精确FULLRETURN23:20:56.284820Z。[本轮failure-review-input](body-flight-actual-20261007/failure-review-input.json)，[b189结果保真审](body-flight-actual-20261007/root-arc-body-flight-failed-result-review-20261007.json)APPROVED仅失败证据/RETURN，产品验收仍FAILED。source/preparation c839批准和旧两browser失败各保原范围。
+
 # Arc 固定实现与必要验证入口
 
 当前组合 `c1db812ca9377117af73eb692b75fd263d9ae2c3`，限定source/preparation APPROVED，见[root c839](body-flight-measurement-20261007/root-arc-body-flight-source-preparation-review-20261007.json)；claim v2 exact18，App/session只读固定供给。新[测量差量入口](body-flight-measurement-20261007/entry.json)，207执行源仅两test变、205其余/43外部/33resolver/三caller不变；六逻辑pending+六loading与实际serverpeak分层，不从HTTP1容量推产品bug。新browser未运行，首fa06 noEmit0/3494，第二容量拒绝0child。完整来源审计见[resource-audit](body-flight-measurement-20261007/resource-audit.json)。以下“当前”皆历史固定目标。

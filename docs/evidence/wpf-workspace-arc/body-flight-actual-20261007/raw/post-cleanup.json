@@ -1,0 +1,76 @@
+{
+  "at": "2026-10-07T23:20:56.284820+00:00",
+  "run": "arc-body-flight-20261007-231959",
+  "observations": [
+    {
+      "kind": "pid",
+      "id": 39624,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 40460,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 40566,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pid",
+      "id": 41691,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 40460,
+      "state": "ESRCH"
+    },
+    {
+      "kind": "pgid",
+      "id": 40566,
+      "state": "ESRCH"
+    }
+  ],
+  "paths": [
+    {
+      "path": "/private/tmp/arc-browser-body-flight-final-l652q_zu/scratch",
+      "absent": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite",
+      "absent": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-workspace-composition/apps/web/node_modules/.vite-temp",
+      "absent": true
+    }
+  ],
+  "scenarioCleanup": {
+    "contextClosed": true,
+    "httpClosed": true
+  },
+  "scenarioCleanupErrors": [],
+  "parentCleanupErrors": [],
+  "parentOwnedGroupAbsent": true,
+  "scratchRemoved": true,
+  "outerStreams": {
+    "stdout": {
+      "EOF": true,
+      "droppedBytes": 0
+    },
+    "stderr": {
+      "EOF": true,
+      "droppedBytes": 0
+    }
+  },
+  "workerResultNull": true,
+  "chromeEOF": {
+    "stdout": true,
+    "stderr": true
+  },
+  "PG": false,
+  "independentPortProbe": false,
+  "fullOwnedReturn": true
+}

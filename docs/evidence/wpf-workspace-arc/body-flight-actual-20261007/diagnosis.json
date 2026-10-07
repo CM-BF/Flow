@@ -1,0 +1,19 @@
+{
+  "at": "2026-10-07T23:22:31.454351+00:00",
+  "source": "c1db812ca9377117af73eb692b75fd263d9ae2c3",
+  "actual": "FAILED1/4/0PNG, passed raw layout-navigation only",
+  "location": "apps/web/test/workspace-layout.browser.ts:43 classifier; :120 zero body precondition",
+  "observed": "Four same-origin Vite GET /src/conversations/queue/{commands.ts,projection.ts,ConversationQueue.tsx,queue-elements.tsx} classified as body during connection; all status200/finished. Real fixture bodyRead count0 at failure.",
+  "staticCause": "Unanchored /queue/[^/]+$ branch accepts Vite module paths. Same-origin filter is not an API pathname constraint.",
+  "notObserved": [
+    "six actual UI body actions",
+    "six logical pending",
+    "six full bodies",
+    "material prepare-await group",
+    "refresh-theme group",
+    "any PNG"
+  ],
+  "futureCandidate": "Anchor real /api endpoint structures for details, queue item body and task stream, while retaining unexpected/duplicate actual API rejection; not expected.includes-only filtering. Requires new authorized source segment; no code changed.",
+  "earlyReportCorrection": "Initial oral0/4 followed parent checks[]; raw passed array establishes1/4. Parent worker.resultnull/scenarioUNKNOWN is preserved, raw scenario context/httpClosed true is separate.",
+  "noNewRun": true
+}

@@ -47,3 +47,5 @@ exact20见[原子领取](../../docs/evidence/wpf-workspace-arc/take-receipt.json
 ## 2026-10-07T22:55:33.351554+00:00 原03/04/05验收测量修正
 
 六真实公共UI动作与六exact GET的浏览器issued/response/finished/failed记录有帽，六visible loading证明逻辑pending；真实HTTP逐个释放已经到达的response，不等待六server同时到达。serverpeak单列≤6，最终六200/全部正文精确完成/无额外body、隐藏无新增。保材料await、滚动anchor、Merge/max3、主题四组原验收，不扩大产品/超时。claim v2移出App/session，仅两test与ownrecords本段写；root正文prompt混淆已修为完整130行pre.textContent。必要local3494ms限定fa06，新target第二check容量不足未启动，待固定审/browser新grant。
+
+2026-10-07T23:22:31.454351+00:00：本次 c1db browser 实际FAILED1/4、0PNG，layout-navigation已通过，six-flight与材料/主题验收未完成。确认测试observer未锚/api误计四个Vite模块GET；仅记录，产品/test未改，新源修与browser须经理后继段。原件见[本次入口](../../docs/evidence/wpf-workspace-arc/body-flight-actual-20261007/failure-review-input.json)。
