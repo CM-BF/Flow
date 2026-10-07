@@ -41,11 +41,11 @@ def child(scratch):
     allowed = scratch / 'calculator.mjs'; denied = scratch / 'baseline.txt'; inherited = scratch / 'inherited.txt'
     for p in [allowed, denied, inherited]: p.write_text('0')
     listener = socket.socket(socket.AF_UNIX); listener.bind(str(scratch / 'delegate.sock')); listener.listen(3); listener.settimeout(.2)
-    def invoke(label, mode, sandboxed, inherited_fd=None):
-        command = [str(binary), str(scratch), mode, str(inherited_fd or -1)]
+    def invoke(label, mode, sandboxed, inherited_fd=None, close_extra=False):
+        command = [str(binary), str(scratch), mode, str(inherited_fd if inherited_fd is not None else -1)]
         if sandboxed: command = ['/usr/bin/sandbox-exec', '-f', str(policy), *command]
         result = subprocess.run(command, env=env, stdin=subprocess.DEVNULL, capture_output=True, timeout=3,
-                                close_fds=True, pass_fds=() if inherited_fd is None else (inherited_fd,))
+                                close_fds=True, pass_fds=() if inherited_fd is None or close_extra else (inherited_fd,))
         value = {'stage': label, 'exit': result.returncode, 'stdout': result.stdout.decode(errors='replace'), 'stderr': result.stderr.decode(errors='replace')}
         print(json.dumps(value), flush=True)
         if len(result.stdout) + len(result.stderr) > 8192: raise RuntimeError('CANARY_OUTPUT_LIMIT')
@@ -63,7 +63,7 @@ def child(scratch):
         fd = os.open(inherited, os.O_WRONLY)
         try:
             invoke('inherited-fd', 'fd', True, fd)
-            invoke('closed-fd', 'fd', True)
+            invoke('closed-fd', 'fd', True, fd, close_extra=True)
         finally: os.close(fd)
         print(json.dumps({'stage':'inherited-host','content':inherited.read_text(),'binarySha256':hashlib.sha256(binary.read_bytes()).hexdigest(),'profile':policy.read_text()}), flush=True)
         return 0
