@@ -51,3 +51,5 @@ root于2026-10-06 07:59 UTC独审固定content target a5e500136438b197305339cbe0
 [插件20ac修复源审](../../docs/evidence/web-platform/recovery-two-center-actual-20261007/plugin-p2-fix-source-review.json)只接受PRM-R1源码修复；后到局部段首类型失败、修后strict0与direct JSON15/15、父FAIL/drop及晚清理按[段原始事实](../../docs/evidence/web-platform/recovery-two-center-actual-20261007/plugin-local-segment.json)分开，不改为整段PASS。
 
 [Recovery固定2f8组合功能审](../../docs/evidence/web-platform/recovery-two-center-actual-20261007/recovery-composed-feature-review.json)接受Web实现与原03/05证据矩阵，0源码blocking；06三中心合同来源及主线接收保留。这不是把各历史实际重标为一次全2f8运行。[插件原段最终账](../../docs/evidence/web-platform/recovery-two-center-actual-20261007/plugin-local-summary.json)明确30082/30000、父FAILED/child exit未捕获，strict0和原JSON15/15不得升级整段PASS。
+
+[Recovery中心来源对齐后的窄接收](../../docs/evidence/web-platform/x01-candidate-release-caller-20261007/recovery-center-alignment-root-review.json)接受2f8的16生产+3test，按base84005到target的delta集成；单origin和Connect策略来源闭合，lateLogout清新cookie的中心竞态保留。Original alignment为固定hash未提交输入，非main回执；本管理不替中心改实现或新增验证。

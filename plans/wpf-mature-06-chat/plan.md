@@ -179,3 +179,5 @@ READBOUND共享边界已[main81b/正式194登记](../../docs/evidence/web-platfo
 上述2f8双中心旅程已按独立新90秒段实际执行，cookieRead+secondCenterCycle两组通过、两库各自正常清理，并获[限定实际独审](../../docs/evidence/web-platform/recovery-two-center-actual-20261007/recovery-actual-root-review.json)。A保持原key/body与同turn/task，B不含A身份；晚GET实际abort未交付，不冒迟到已交付被拒。新段计13020毫秒，旧余额与失败不变，无自动追加运行；此不代完整feature/main接收。
 
 原RECOVERY01固定2f8已获[组合功能审查](../../docs/evidence/web-platform/recovery-two-center-actual-20261007/recovery-composed-feature-review.json)：03/05原工程矩阵完成，历史source/actual/controlled层级保留。原06仍由Original/中心owner对齐既有callerOrigin适用的single-origin/trusted-origin边界、迟到Clear-Cookie合同及重复Connect/32session容量策略来源，再合法main/intake；不以四次连接冒32slot实证，不把这些来源问题转成额外Web/provider运行或重测所有旧绿。
+
+[既有中心合同来源对齐与窄Web接收](../../docs/evidence/web-platform/x01-candidate-release-caller-20261007/recovery-center-alignment-root-review.json)现已独审：声明的single-origin/trusted-origin边界和明确Connect新random session/global32/8h/不驱逐/满409无自动重试已按原证据对齐；lateLogout稳定cookie的Max-Age=0可清后续新cookie，JS忽略旧continuation不解决，保留原中心响应顺序后继。Original可先合法接2f8精确19源及03/05，06继续实际main/必要集成与该中心边界，不新增测试或重复业务task。原alignment在审查时未提交，不冒已main。

@@ -521,3 +521,5 @@ GO实核DPERF完成时间展示缺口：作者别名字段未被现有精确三�
 原U20候选共享输入进展只关联[唯一host-candidates状态](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-host-candidates/plans/x01-host-candidates-client/status.md)：Mika经root报server7672090b/interface4c808b63、thinclient/CLI bc54d4f3/packetc5da46ee待独审且未main，手动分页需保空页cursor及revision409失效。当前模块不提前猜字段接线；config/grants写ACK另片已审待主线，不加入首七scope依赖或新增writer。
 
 本次自然收口沿原task：Recovery固定2f8/metadata15833的原03/05组合独审接受，06仍需中心既有callerOrigin/迟到Clear-Cookie/重复Connect32slot合同来源及合法main/intake；Release固定settings已供给且原owner状态纠正，下一仅自有caller完整准备。插件有限local父FAILED/超82ms完整保留，后继direct证据完善不由当前30s自动续跑。外部O16R3已实际归还但KEEP，X01唯一NEXT fresh见[单一资源来源](../../docs/evidence/web-platform/resource-window-current.json)，不新任务或重复业务status。
+
+[本次当前交接](../../docs/evidence/web-platform/x01-candidate-release-caller-20261007/current.json)收录X01真实归还后Original bootstrap唯一NEXT、ACCESS剩余三scope正式释放，以及原plugin caller最小修正设计。该设计已由root核10原输入，但未实施/未运行；W01须先完成Releasecaller安全STOP，再原7scope做direct-only后继，旧30082/30k失败不抹账。lateLogout原中心后继仅派≤6固定源/官方规范有界只读输入，不新增功能task或运行门槛。
