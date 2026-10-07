@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:50:39.071Z |
+| 最近更新时间 | 2026-10-07T11:52:25.563Z |
 | 所属大task | [WPF-MATURE-01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-01-visual/plan.md) |
 | co-lead | Web /root（执行管理 d01_owner） |
 | Plan | [plan.md](plan.md) |
@@ -20,7 +20,7 @@
 | 阶段 | M2 |
 | 优先级 | 1 |
 | 当前产出 | 最终后台与公开会话策略已核齐；首次启动失败已保留；沙箱host语法已窄修并通过独立局部检查，三App旅程尚未执行 |
-| 下一可用交付 | 集中复核调用器单点语法修正，再在合法窗口完成三份保留App与独立Cookie验证 |
+| 下一可用交付 | 完成已批准调用器的三份保留App与独立Cookie实际验证 |
 | 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Review | [review.md](review.md)，APPROVED（两harness源码及固定c2调用器准备范围）；c2两finding关闭、3局部checks独立接受，实际compat未验 |
@@ -35,7 +35,7 @@
 | RELEASE01-02 | completed | w01_owner | [历史两App真实兼容](../../docs/evidence/wpf-release01/README.md) |
 | RELEASE01-03 | completed | w01_owner | [历史7805主线接收](../../docs/evidence/wpf-release01/main-source-observation.json) |
 | RELEASE01-04 | completed | w01_owner | [固定origin设计及边界](../../docs/evidence/wpf-release01/fixed-origin/report.md)，[两harness固定实现](../../docs/evidence/wpf-release01/fixed-origin/source-manifest.json)，f3d源审及9658类型delta独立接受，strict复验PASS |
-| RELEASE01-05 | pending | w01_owner | [受控caller/完整输入准备](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)已固定，[c2修复与三场景actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md)已固定；native固定边界已独立接受；[c2首次actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2-first/README.md)启动前FAILED/410ms且资源归还，[c3单点修正及语法检查](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/README.md)47ms PASS，待集中delta/native核验；三App四项compat仍NOT_RUN，全部首红保留 |
+| RELEASE01-05 | pending | w01_owner | [受控caller/完整输入准备](../../docs/evidence/wpf-release01/fixed-origin/caller-preparation/README.md)已固定，[c2修复与三场景actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2/README.md)已固定；native固定边界已独立接受；[c2首次actual](../../docs/evidence/wpf-release01/fixed-origin/caller-c2-first/README.md)启动前FAILED/410ms且资源归还，[c3单点修正及语法检查](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/README.md)47ms PASS，集中delta/native已接受；三App四项compat仍NOT_RUN，全部首红保留 |
 | RELEASE01-06 | pending | w01_owner | 后继最终delta独审/主线接收；个人发布仍由原发布operator执行 |
 
 ## 等待记录
@@ -78,6 +78,10 @@ owned Chrome/HTTP proxy/backend生命周期caller与完整输入现已形成固�
 
 2026-10-07T11:45:48.838Z：[21原件](../../docs/evidence/wpf-release01/fixed-origin/caller-c2-first/index.json)固定输入1e5f/9658，唯一actual outer1/worker sandbox-exec65；本机错误明确remote ip中host只能为`*`或`localhost`，因此Node/fixture/Chrome/DB未进入。三App/Cookie原验收0，不归产品失败。原parent fixtureCleanup UNKNOWN不改；[外层与补充清理](../../docs/evidence/wpf-release01/fixed-origin/caller-c2-first/cleanup-accounting.json)确认双EOF/drop0、唯一terminal/三hash、31447/31807 PID+PGID全ESRCH、exact scratch/admin输入删除。新180s一次段410ms FAILED/CLOSED，179590ms未用不触发第二run；旧types/helper预算独立。c2源码/native审批及3helper通过仅保持原限定范围，不转actual PASS。后继规则修复仍待明确同边界处理；本批正常seal后原四scopeSTOP保claim，不切Plugin、不自启新检查。
 
-## 当前 c3 准备安全点
+## 历史 c3 准备安全点（集中审前）
 
 2026-10-07T11:50:39.071Z：仅TMP父将deny remote host改localhost:61228，其他规则/worker/产品/输入不动。[c3 index](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/index.json)固定真实生成profile和唯一sandbox-exec true实际；outer0/47ms/双EOF/drop0/childPID及PGID ESRCH，两exact测试目录删除。仅语法编译通过，不证明网络阻断或三App兼容。[c2首红独审](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/c2-first-root-review.json)接受失败及完整归还；旧410ms与179590未用原样，新10s语法段独立CLOSED。c3集中delta/native待审，无gate/运行预约。正常push/clean后原四scopeSTOP保38b9v1，不切Plugin。
+
+## 当前 c3 已审准备
+
+2026-10-07T11:52:25.563Z：[c3集中独审](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/c3-root-review.json)和[精确native接受](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/c3-native-boundary.json)已固定，parent2500/worker5800及其他规则无变化；只routine数据绑定。语法47ms通过不替代网络或compat。管理新独立一次180s含30s清理已授权NEXT，真实起跑仍由owner紧前核claim/pins/完整资源与唯一gate；本状态尚NOT_RUN，无占用声明。旧c2 FAILED410/179590未用及所有原件不改、不转credit。

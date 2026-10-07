@@ -1,0 +1,16 @@
+{
+  "at": "2026-10-07T11:51:21.204184+00:00",
+  "reviewer": "root / gpt-6-astra ultra",
+  "decision": "ACCEPTED",
+  "boundary": "native-chrome-sibling-fixed-http-proxy-without-custom-outer-write-or-egress-sandbox",
+  "runnerSha256": "2500ca2900b4b912fdaf1a0964d2728d3b677f1a16defc36bdf0e845332062f0",
+  "workerSha256": "5800155a7b5c680cbf580efa60fd311f1f8e13357301fc487d511773560b9751",
+  "review": {
+    "path": "/private/tmp/root-release-c3-delta-review-20261007.json",
+    "bytes": 4085,
+    "sha256": "1f43f94a20443ab2cc2008d781cdf559bc4adbb6301c5040a4ecb1a1426b74ea"
+  },
+  "scope": "Exact c3 one-rule correction, original9658 harness and fixed6c/three retained artifacts only.",
+  "limitations": "Syntax PASS is not runtime proxy/CDP/connectivity/DB/threeApp compatibility or comprehensive OS egress proof. Native Chrome retains normal internal sandbox but no custom outer write/egress sandbox.",
+  "runtimeAdmission": "NONE; separate d01 fresh single-use gate required."
+}

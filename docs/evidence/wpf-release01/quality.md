@@ -42,3 +42,6 @@ Reused local find-skills and clean-code (no install): keep public profile interf
 
 ## 2026-10-07T11:50:39.071Z c3 窄修与语法实际
 复用已读find-skills/clean-code。只纠正已证非法host字面，不扩大sandbox/个人网络权限、无新框架。用actual AST生成表达式而非另抄profile；唯一sandbox-exec true验证编译，47ms/exit0，网络效果未测。命名/职责/失败证据/未知语义复核：c2原错和410ms不覆写，新的语法证据不冒3App绿。独立10s已CLOSED，0PG/Chrome/Node；下一步集中delta审，不因余量自启重试。
+
+## 2026-10-07T11:52:25.563Z c3 reviewed binding
+本地find-skills/clean-code复用；仅核两审原件与当前/历史措辞，不重跑syntax/types或改程序。原生sandbox与customouter缺失边界原样；actual未运行。metadata/parser后统一TMP绑定最终HEAD，无循环审批。

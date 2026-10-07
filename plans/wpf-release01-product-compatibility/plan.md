@@ -34,3 +34,5 @@ c2集中审与native固定边界已接受（0blocking），原件见[c2记录](.
 首次c2实际已执行但sandbox启动前FAILED，未触三App/PG/Chrome。保410ms一次段、179590ms未用与完整清理，见[原件](../../docs/evidence/wpf-release01/fixed-origin/caller-c2-first/README.md)。RELEASE01-05仍开放，须先处理这个具体caller语法缺陷；不放宽个人61228网络边界或以未知清理算通过。
 
 c3仅修非法sandbox host，真实生成profile一次true语法检查通过/47ms/清理完整。见[c3记录](../../docs/evidence/wpf-release01/fixed-origin/caller-c3/README.md)；集中delta/native审与真实compat仍待，RELEASE01-05不勾选。
+
+c3准备source/native独审已接受，管理新独立一次180sNEXT，紧前fresh/gate后才实际；原三App TODO05仍开放，无旧信用转移。
