@@ -1,0 +1,85 @@
+{
+  "at": "2026-10-07T22:47:17.782Z",
+  "state": "PREPARED_CLOSED_METADATA_REVIEW_PENDING_WAIT_MAIN_INTAKE",
+  "target": "14dcc7bbe1f56f7e0ca539c3f091ba86c0eef4dc",
+  "support": "35a758f399d8daaa2c9918dd1ec047000c934ebc",
+  "productSource": "8ebedd04af6e0e6bee1aa3cccca74bb113a6c0bd",
+  "migrationSource": "ead8db7e6ac4a47e02790afb3b8551ebee9188ba",
+  "bindings": [
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/pg-v2-once.py",
+      "sourceCommit": "35a758f399d8daaa2c9918dd1ec047000c934ebc",
+      "bytes": 18440,
+      "sha256": "53e5f1b28351ad6c566a72f59d9e9cb27e85d1cac1cbf30e11c52c7d3cf9f2d5"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/pg-input-v2.json",
+      "sourceCommit": "35a758f399d8daaa2c9918dd1ec047000c934ebc",
+      "bytes": 2537,
+      "sha256": "a7612a2bdedcdbbb5e745ed16c6574941a4c5af26b665ff961c81f4dde4df825"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/claim-receipt-v2.json",
+      "sourceCommit": "35a758f399d8daaa2c9918dd1ec047000c934ebc",
+      "bytes": 1816,
+      "sha256": "6fbf86314145df0880d2f05178e861aef4a2486c7aacfd2dfed97627ef33eb05"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/v2/start.json",
+      "sourceCommit": "35a758f399d8daaa2c9918dd1ec047000c934ebc",
+      "bytes": 1153,
+      "sha256": "41e2541ff61f7f0cb557f27bfddb3a1c4eeaecf95028fea2b5abd9192c028640"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/apps/server/src/plugin-runtime/verification-routes.ts",
+      "sourceCommit": "35a758f399d8daaa2c9918dd1ec047000c934ebc",
+      "bytes": 3128,
+      "sha256": "32887cd3097ddeb6f1e010aa9a0799659d6fa63620fd49a03760698e26f823d8"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/inputs/packages/storage/migrations/036-plugin-verification-bindings.sql",
+      "sourceCommit": "35a758f399d8daaa2c9918dd1ec047000c934ebc",
+      "bytes": 5115,
+      "sha256": "6d47ba7ba8c8addde0ff07bc1f5fb6bf770836896d245c0fc93ee2b5074874be"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/manifest-v2.json",
+      "sourceCommit": "9c7245420cd08a72bada29b69ca74d6d14ec85a3",
+      "bytes": 175198,
+      "sha256": "f0c77f4d1335bb9acd459e827ddcddea1de8f42150ee3fa69e33b004b452a141"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/invocation-v2.json",
+      "sourceCommit": "9c7245420cd08a72bada29b69ca74d6d14ec85a3",
+      "bytes": 2254,
+      "sha256": "a4bb3f213809fcdc668507f3b03d25a74d278bc992fdc45f56a7586c4c28d730"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/v2/binding-delta.json",
+      "sourceCommit": "9c7245420cd08a72bada29b69ca74d6d14ec85a3",
+      "bytes": 3993,
+      "sha256": "f3cb7c7fbe856e42bffd148066b5e88a8494899c4babd77e993807385652d29a"
+    },
+    {
+      "path": "docs/evidence/x01-verifier-admission-result/transaction-pg/v2/candidate.json",
+      "sourceCommit": "14dcc7bbe1f56f7e0ca539c3f091ba86c0eef4dc",
+      "bytes": 5680,
+      "sha256": "7b9365b86a7dc2c2f7d89451778321d2fd26a5c888d7cc5142a93cf700b6ba97"
+    }
+  ],
+  "sumBytes": 219314,
+  "reviewScope": "Only five-row input delta, literal caller/argv linkage, claimv2/current candidate boundaries. Reuse prior reviews; no source re-review or engineering/PG.",
+  "delta": {
+    "changedRows": 5,
+    "unchangedRows": 290,
+    "external": 191,
+    "links": 16,
+    "preservedOldOriginals": true,
+    "oldRawUntouched": true,
+    "newEngineeringChildren": 0,
+    "newPG": 0
+  },
+  "namespace": "var-transaction-pg-v2-run-r1",
+  "namespaceAbsent": true,
+  "dependency": "AV R3 passed and independently approved; main intake receipt NOT_RECEIVED. Future unique manager grant and fresh admission still required."
+}
