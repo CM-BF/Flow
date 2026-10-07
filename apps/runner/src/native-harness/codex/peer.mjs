@@ -15,7 +15,21 @@ function turn(status = 'completed', items = [final]) {
   return { id: turnId, items, itemsView: 'full', status, error: status === 'failed' ? { message: 'Synthetic failure', codexErrorInfo: null, additionalDetails: null } : null,
     startedAt: 1, completedAt: status === 'inProgress' ? null : 2, durationMs: status === 'inProgress' ? null : 1000 };
 }
-function finish() {
+async function finish() {
+  if (mode.startsWith('stream:')) {
+    const count = Number(mode.slice(7)); final.text = '中文🙂'.repeat(512);
+    notification('thread/status/changed', { threadId, status: { type: 'active', activeFlags: [] } });
+    notification('item/reasoning/summaryTextDelta', { threadId, turnId, itemId: 'reasoning', summaryIndex: 0, delta: '公开摘要🙂' });
+    const characters = Array.from(final.text), width = characters.length / count;
+    for (let index = 0; index < count; index++) {
+      notification('item/agentMessage/delta', { threadId, turnId, itemId: final.id, delta: characters.slice(index * width, (index + 1) * width).join('') });
+      await new Promise(resolve => setTimeout(resolve, 1));
+    }
+  }
+  if (mode === 'stream-burst') {
+    const frames = Array.from({ length: 512 }, () => JSON.stringify({ method: 'item/agentMessage/delta', params: { threadId, turnId, itemId: final.id, delta: 'x' } }));
+    process.stdout.write(frames.join('\n') + '\n');
+  }
   if (mode === 'eof') { process.exit(0); return; }
   if (mode === 'hang' || mode === 'interrupt-ack-only') return;
   if (mode === 'failed' || mode === 'interrupted') { notification('turn/completed', { threadId, turn: turn(mode, []) }); return; }
@@ -48,6 +62,7 @@ for await (const line of createInterface({ input: process.stdin, crlfDelay: Infi
       assert.equal(initialized, false); initialized = true;
     } else if (message.method === 'thread/start') {
       assert.equal(initialized, true);
+      if (mode.startsWith('stream')) notification('remoteControl/status/changed', { status: 'disabled', serverName: 'private-server', installationId: 'private-install', environmentId: null });
       assert.equal(message.params.approvalPolicy, 'never');
       assert.equal(message.params.sandbox, 'read-only');
       requestedModel = message.params.model; requestedTier = message.params.serviceTier;
@@ -77,13 +92,13 @@ for await (const line of createInterface({ input: process.stdin, crlfDelay: Infi
       result(message.id, { turn: turn('inProgress', []) });
       if (mode.startsWith('deny:')) {
         send({ id: 'server-request', method: mode.slice(5), params: { threadId, turnId } });
-      } else finish();
+      } else await finish();
     } else if (message.id === 'server-request') {
       // Even a malicious peer that emits a final after denial must never cause Flow success.
       assert.ok(message.error || message.result?.decision === 'decline' || message.result?.decision === 'abort'
         || message.result?.success === false || message.result?.action === 'decline' || JSON.stringify(message.result?.permissions) === '{}');
       if (pendingTurnRequest !== undefined) result(pendingTurnRequest, { turn: turn('inProgress', []) });
-      finish();
+      await finish();
     } else if (message.method === 'turn/interrupt') {
       assert.equal(message.params.threadId, threadId); assert.equal(message.params.turnId, turnId);
       result(message.id, {});

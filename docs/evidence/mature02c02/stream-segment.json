@@ -1,0 +1,823 @@
+{
+  "startedAt": "2026-10-07T04:04:29.337802+00:00",
+  "scope": "Codex evidence lifecycle/strict native notifications/private observed stream seam; public source delivery remains C02-05",
+  "budget": {
+    "wallSeconds": 900,
+    "maxProcesses": 6,
+    "perProcessSeconds": 45,
+    "temporaryBytes": 16777216,
+    "rawBytes": 262144,
+    "sourceMetadataBytes": 1048576,
+    "combinedAdditionalBytes": 18087936
+  },
+  "runtimeStatus": "CLOSED",
+  "native": 0,
+  "PG": 0,
+  "provider": 0,
+  "install": 0,
+  "resourceCoordination": {
+    "source": "Mika explicit SVC06 failed/unknown-owned center retained; isolated local permitted; do not access SVC resources",
+    "combinedFloorBytes": 2702442496,
+    "receivedAt": "2026-10-07T04:10:12.553612+00:00"
+  },
+  "freshClaim": {
+    "id": "8ad6536b-1194-44a4-9078-a92215bec7a2",
+    "version": 5,
+    "state": "active",
+    "scopeCount": 30
+  },
+  "runs": [
+    {
+      "name": "behavior-first",
+      "startedAt": "2026-10-07T04:10:20.399195+00:00",
+      "freeBefore": 25809780736,
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-stream-oggdx0w9",
+        "dev": 16777234,
+        "ino": 123430535
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/mature02c02/stream-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-stream-oggdx0w9/vitest.json"
+      ],
+      "inputs": [
+        {
+          "path": "apps/runner/src/native-harness/codex/continuity.test.ts",
+          "bytes": 7508,
+          "sha256": "5de110f246274dce374252f198fd291cb85669afe05e0f990d36bad0be537a58"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/evidence.ts",
+          "bytes": 8361,
+          "sha256": "e51986edad382fdf42e5774da855d5fee9127e9715c540eba60600cb91a1cdf4"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+          "bytes": 10676,
+          "sha256": "b93d0d911fe731cec7563ee7d2d279e82e7a0fe85014d49e55c32f4fcddab50a"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.ts",
+          "bytes": 6077,
+          "sha256": "791db32294dd90783f55da3d9ac8d4a981c04dfea2c11db0d19957fe7a995075"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/wire.ts",
+          "bytes": 2382,
+          "sha256": "59cef88a019829b83d4e50b6abb817c36b1a50c75be8ce1b7608ae7ec1bf8363"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/session-storage.test.ts",
+          "bytes": 6207,
+          "sha256": "784b7d91db70083f1ccb4d69b27eb57b45aa3a46a0f1149c47eaf6a8ac5e68d7"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/policy.ts",
+          "bytes": 1696,
+          "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/exchange.ts",
+          "bytes": 5360,
+          "sha256": "64c94dcc6aad9901992fe57c7c4accd031ebde368de863156fc29f5617924662"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/evidence.test.ts",
+          "bytes": 5504,
+          "sha256": "94b1f7279d0ff638fea4a4cb683d9df0f4ff73a1502a52b37c43b3e67e58618f"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.ts",
+          "bytes": 2738,
+          "sha256": "95fb7cc5246bcb947311c64f1f1d7ecd331e08627dda985eedbcb7b1956113f1"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+          "bytes": 17344,
+          "sha256": "1a4a7da2d532311fc3cbadb3868b5663db65bd902e8a78a33f8e7fbe0f4a8a22"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/index.ts",
+          "bytes": 1109,
+          "sha256": "4c480609b0724a20459911f379dbfe63e2875c34b344ef1cc3e95a724aff18c6"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/exchange.test.ts",
+          "bytes": 7814,
+          "sha256": "b6f3ccdd7e7fe271ef6c7ccceff88a3f9d4b7c1a1265c6984bf05655b19ff365"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/session-storage.ts",
+          "bytes": 3899,
+          "sha256": "68d2d7a40980af68e2682dc9cfa759472014f171fd1ef4a63f9787229fdfb407"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/integration.test.ts",
+          "bytes": 11320,
+          "sha256": "68ac70664589b5ab31ccea56a2534a6eed6782b2f76356e08adf42ad1f0ca539"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/continuity-fixture.ts",
+          "bytes": 5456,
+          "sha256": "9fccf18054d57145492efd84750bc8a6fe4b9b253f4651190386f137e7ba1b34"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/turn.ts",
+          "bytes": 2958,
+          "sha256": "7b0d1b1e982d84306e0c76c4092ae90b22d0e804b101b9f74552160ebf8a3878"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/peer.mjs",
+          "bytes": 7885,
+          "sha256": "d34ed1fc25f55d23342549797507cd52cf421b5273e3af8672d82ef376aa6228"
+        },
+        {
+          "path": "docs/evidence/mature02c02/stream-vitest.config.mjs",
+          "bytes": 593,
+          "sha256": "b669c63ca59c5db223f63a38d6aa4202aa61bc7b4148255c3903ce1ea58bd190"
+        },
+        {
+          "path": "docs/evidence/mature02c02/stream-tsconfig.json",
+          "bytes": 492,
+          "sha256": "87d8f2bae91055a61a8c60c4eb7ba544b24298fc723b85d6b2ff9ecdac7eb8a8"
+        }
+      ],
+      "supervisorReturnedAt": "2026-10-07T04:10:26.391536+00:00",
+      "pid": 61690,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 1,
+      "elapsed_ms": 5992,
+      "observed_bytes": 109,
+      "retained_bytes": 109,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "docs/evidence/mature02c02/stream-behavior-first.stdout",
+          "bytes": 109,
+          "sha256": "9813508a38ad4da8d7ab8037b5a2d52c308adf2ab5c8b0f525c8f17f856e7e41"
+        },
+        {
+          "path": "docs/evidence/mature02c02/stream-behavior-first.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/stream-behavior-first.vitest.json",
+          "bytes": 31464,
+          "sha256": "b495c381db86e68d74cdbf86b84a0ff0fdfe18bb431ccb8640a35a8f28928348"
+        }
+      ],
+      "selection": {
+        "numTotalTests": 104,
+        "numPassedTests": 103,
+        "numFailedTests": 1,
+        "numPendingTests": 0,
+        "success": false
+      },
+      "resourceComplete": true,
+      "tmpRemoved": true,
+      "tmpSample": {
+        "entries": 7,
+        "logicalBytes": 32513,
+        "activePeak": "UNKNOWN"
+      }
+    },
+    {
+      "name": "types-first",
+      "startedAt": "2026-10-07T04:10:31.290757+00:00",
+      "freeBefore": 25808441344,
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-stream-yt6ksplt",
+        "dev": 16777234,
+        "ino": 123430823
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/node_modules/typescript/bin/tsc",
+        "--project",
+        "docs/evidence/mature02c02/stream-tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "inputs": [
+        {
+          "path": "apps/runner/src/native-harness/codex/continuity.test.ts",
+          "bytes": 7508,
+          "sha256": "5de110f246274dce374252f198fd291cb85669afe05e0f990d36bad0be537a58"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/evidence.ts",
+          "bytes": 8361,
+          "sha256": "e51986edad382fdf42e5774da855d5fee9127e9715c540eba60600cb91a1cdf4"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+          "bytes": 10676,
+          "sha256": "b93d0d911fe731cec7563ee7d2d279e82e7a0fe85014d49e55c32f4fcddab50a"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.ts",
+          "bytes": 6077,
+          "sha256": "791db32294dd90783f55da3d9ac8d4a981c04dfea2c11db0d19957fe7a995075"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/wire.ts",
+          "bytes": 2382,
+          "sha256": "59cef88a019829b83d4e50b6abb817c36b1a50c75be8ce1b7608ae7ec1bf8363"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/session-storage.test.ts",
+          "bytes": 6207,
+          "sha256": "784b7d91db70083f1ccb4d69b27eb57b45aa3a46a0f1149c47eaf6a8ac5e68d7"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/policy.ts",
+          "bytes": 1696,
+          "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/exchange.ts",
+          "bytes": 5360,
+          "sha256": "64c94dcc6aad9901992fe57c7c4accd031ebde368de863156fc29f5617924662"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/evidence.test.ts",
+          "bytes": 5504,
+          "sha256": "94b1f7279d0ff638fea4a4cb683d9df0f4ff73a1502a52b37c43b3e67e58618f"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.ts",
+          "bytes": 2738,
+          "sha256": "95fb7cc5246bcb947311c64f1f1d7ecd331e08627dda985eedbcb7b1956113f1"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+          "bytes": 17344,
+          "sha256": "1a4a7da2d532311fc3cbadb3868b5663db65bd902e8a78a33f8e7fbe0f4a8a22"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/index.ts",
+          "bytes": 1109,
+          "sha256": "4c480609b0724a20459911f379dbfe63e2875c34b344ef1cc3e95a724aff18c6"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/exchange.test.ts",
+          "bytes": 7814,
+          "sha256": "b6f3ccdd7e7fe271ef6c7ccceff88a3f9d4b7c1a1265c6984bf05655b19ff365"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/session-storage.ts",
+          "bytes": 3899,
+          "sha256": "68d2d7a40980af68e2682dc9cfa759472014f171fd1ef4a63f9787229fdfb407"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/integration.test.ts",
+          "bytes": 11320,
+          "sha256": "68ac70664589b5ab31ccea56a2534a6eed6782b2f76356e08adf42ad1f0ca539"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/continuity-fixture.ts",
+          "bytes": 5456,
+          "sha256": "9fccf18054d57145492efd84750bc8a6fe4b9b253f4651190386f137e7ba1b34"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/turn.ts",
+          "bytes": 2958,
+          "sha256": "7b0d1b1e982d84306e0c76c4092ae90b22d0e804b101b9f74552160ebf8a3878"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/peer.mjs",
+          "bytes": 7885,
+          "sha256": "d34ed1fc25f55d23342549797507cd52cf421b5273e3af8672d82ef376aa6228"
+        },
+        {
+          "path": "docs/evidence/mature02c02/stream-vitest.config.mjs",
+          "bytes": 593,
+          "sha256": "b669c63ca59c5db223f63a38d6aa4202aa61bc7b4148255c3903ce1ea58bd190"
+        },
+        {
+          "path": "docs/evidence/mature02c02/stream-tsconfig.json",
+          "bytes": 492,
+          "sha256": "87d8f2bae91055a61a8c60c4eb7ba544b24298fc723b85d6b2ff9ecdac7eb8a8"
+        }
+      ],
+      "supervisorReturnedAt": "2026-10-07T04:10:32.582319+00:00",
+      "pid": 70445,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 2,
+      "elapsed_ms": 1291,
+      "observed_bytes": 1032,
+      "retained_bytes": 1032,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": {
+        "phase": "work",
+        "code": "CHILD_EXIT_NONZERO",
+        "type": "SupervisionFailure",
+        "errno": null,
+        "message": "child exit nonzero"
+      },
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "docs/evidence/mature02c02/stream-types-first.stdout",
+          "bytes": 1032,
+          "sha256": "68acb67f992fb9b2a5060992e87b82e33ad41380ae477e84b5cb2cae7fb1d597"
+        },
+        {
+          "path": "docs/evidence/mature02c02/stream-types-first.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "resourceComplete": true,
+      "tmpRemoved": true,
+      "tmpSample": {
+        "entries": 3,
+        "logicalBytes": 256,
+        "activePeak": "UNKNOWN"
+      }
+    },
+    {
+      "name": "hot-delta",
+      "startedAt": "2026-10-07T04:10:55.072763+00:00",
+      "freeBefore": 25808306176,
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-stream-0crj0xj5",
+        "dev": 16777234,
+        "ino": 123430923
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow/node_modules/vitest/vitest.mjs",
+        "run",
+        "--config",
+        "docs/evidence/mature02c02/stream-vitest.config.mjs",
+        "--configLoader",
+        "native",
+        "-t",
+        "yields a hot",
+        "--reporter=json",
+        "--outputFile=/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-stream-0crj0xj5/vitest.json"
+      ],
+      "inputs": [
+        {
+          "path": "apps/runner/src/native-harness/codex/continuity.test.ts",
+          "bytes": 7508,
+          "sha256": "5de110f246274dce374252f198fd291cb85669afe05e0f990d36bad0be537a58"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/evidence.ts",
+          "bytes": 8361,
+          "sha256": "e51986edad382fdf42e5774da855d5fee9127e9715c540eba60600cb91a1cdf4"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+          "bytes": 10676,
+          "sha256": "b93d0d911fe731cec7563ee7d2d279e82e7a0fe85014d49e55c32f4fcddab50a"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.ts",
+          "bytes": 6077,
+          "sha256": "791db32294dd90783f55da3d9ac8d4a981c04dfea2c11db0d19957fe7a995075"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/wire.ts",
+          "bytes": 2382,
+          "sha256": "59cef88a019829b83d4e50b6abb817c36b1a50c75be8ce1b7608ae7ec1bf8363"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/session-storage.test.ts",
+          "bytes": 6207,
+          "sha256": "784b7d91db70083f1ccb4d69b27eb57b45aa3a46a0f1149c47eaf6a8ac5e68d7"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/policy.ts",
+          "bytes": 1696,
+          "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/exchange.ts",
+          "bytes": 5360,
+          "sha256": "64c94dcc6aad9901992fe57c7c4accd031ebde368de863156fc29f5617924662"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/evidence.test.ts",
+          "bytes": 5504,
+          "sha256": "94b1f7279d0ff638fea4a4cb683d9df0f4ff73a1502a52b37c43b3e67e58618f"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.ts",
+          "bytes": 2738,
+          "sha256": "95fb7cc5246bcb947311c64f1f1d7ecd331e08627dda985eedbcb7b1956113f1"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+          "bytes": 17344,
+          "sha256": "1a4a7da2d532311fc3cbadb3868b5663db65bd902e8a78a33f8e7fbe0f4a8a22"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/index.ts",
+          "bytes": 1109,
+          "sha256": "4c480609b0724a20459911f379dbfe63e2875c34b344ef1cc3e95a724aff18c6"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/exchange.test.ts",
+          "bytes": 7889,
+          "sha256": "f20ce784c9ffaa5b382bf437e61fd395f813398b0fe3153d6653c5e2357e7cc4"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/session-storage.ts",
+          "bytes": 3899,
+          "sha256": "68d2d7a40980af68e2682dc9cfa759472014f171fd1ef4a63f9787229fdfb407"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/integration.test.ts",
+          "bytes": 11320,
+          "sha256": "68ac70664589b5ab31ccea56a2534a6eed6782b2f76356e08adf42ad1f0ca539"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/continuity-fixture.ts",
+          "bytes": 5456,
+          "sha256": "9fccf18054d57145492efd84750bc8a6fe4b9b253f4651190386f137e7ba1b34"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/turn.ts",
+          "bytes": 2958,
+          "sha256": "7b0d1b1e982d84306e0c76c4092ae90b22d0e804b101b9f74552160ebf8a3878"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/peer.mjs",
+          "bytes": 7885,
+          "sha256": "d34ed1fc25f55d23342549797507cd52cf421b5273e3af8672d82ef376aa6228"
+        },
+        {
+          "path": "docs/evidence/mature02c02/stream-vitest.config.mjs",
+          "bytes": 593,
+          "sha256": "b669c63ca59c5db223f63a38d6aa4202aa61bc7b4148255c3903ce1ea58bd190"
+        },
+        {
+          "path": "docs/evidence/mature02c02/stream-tsconfig.json",
+          "bytes": 492,
+          "sha256": "87d8f2bae91055a61a8c60c4eb7ba544b24298fc723b85d6b2ff9ecdac7eb8a8"
+        }
+      ],
+      "supervisorReturnedAt": "2026-10-07T04:10:56.110588+00:00",
+      "pid": 85020,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1038,
+      "observed_bytes": 109,
+      "retained_bytes": 109,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "docs/evidence/mature02c02/stream-hot-delta.stdout",
+          "bytes": 109,
+          "sha256": "fb3e2fcd46038347d9d3af29a5e2066fc6c7fd2185fa05392a6cf31b75a21063"
+        },
+        {
+          "path": "docs/evidence/mature02c02/stream-hot-delta.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/stream-hot-delta.vitest.json",
+          "bytes": 28178,
+          "sha256": "bc3b6331b566ed68a8eb96ad1dd10e6783d9d2a6e6d7db1c6eb68a0a584a3878"
+        }
+      ],
+      "selection": {
+        "numTotalTests": 104,
+        "numPassedTests": 1,
+        "numFailedTests": 0,
+        "numPendingTests": 103,
+        "success": true
+      },
+      "resourceComplete": true,
+      "tmpRemoved": true,
+      "tmpSample": {
+        "entries": 7,
+        "logicalBytes": 29174,
+        "activePeak": "UNKNOWN"
+      }
+    },
+    {
+      "name": "types-final",
+      "startedAt": "2026-10-07T04:11:00.400487+00:00",
+      "freeBefore": 25808265216,
+      "tmp": {
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-c02-stream-hig6ctdj",
+        "dev": 16777234,
+        "ino": 123430998
+      },
+      "argv": [
+        "/opt/homebrew/opt/node@24/bin/node",
+        "/Users/citrine/Projects/AgentHarness/Flow-worktrees/codex-conversation-continuity/node_modules/typescript/bin/tsc",
+        "--project",
+        "docs/evidence/mature02c02/stream-tsconfig.json",
+        "--noEmit",
+        "--incremental",
+        "false"
+      ],
+      "inputs": [
+        {
+          "path": "apps/runner/src/native-harness/codex/continuity.test.ts",
+          "bytes": 7508,
+          "sha256": "5de110f246274dce374252f198fd291cb85669afe05e0f990d36bad0be537a58"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/evidence.ts",
+          "bytes": 8361,
+          "sha256": "e51986edad382fdf42e5774da855d5fee9127e9715c540eba60600cb91a1cdf4"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.test.ts",
+          "bytes": 10676,
+          "sha256": "b93d0d911fe731cec7563ee7d2d279e82e7a0fe85014d49e55c32f4fcddab50a"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.ts",
+          "bytes": 6077,
+          "sha256": "791db32294dd90783f55da3d9ac8d4a981c04dfea2c11db0d19957fe7a995075"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/wire.ts",
+          "bytes": 2382,
+          "sha256": "59cef88a019829b83d4e50b6abb817c36b1a50c75be8ce1b7608ae7ec1bf8363"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/session-storage.test.ts",
+          "bytes": 6207,
+          "sha256": "784b7d91db70083f1ccb4d69b27eb57b45aa3a46a0f1149c47eaf6a8ac5e68d7"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/policy.ts",
+          "bytes": 1696,
+          "sha256": "40e810cf0a826067c9e04631c2effcddfc5d23d7cc32aa2cb7aa256a9d320b2c"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/exchange.ts",
+          "bytes": 5360,
+          "sha256": "64c94dcc6aad9901992fe57c7c4accd031ebde368de863156fc29f5617924662"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/evidence.test.ts",
+          "bytes": 5504,
+          "sha256": "94b1f7279d0ff638fea4a4cb683d9df0f4ff73a1502a52b37c43b3e67e58618f"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/adapter.ts",
+          "bytes": 2738,
+          "sha256": "95fb7cc5246bcb947311c64f1f1d7ecd331e08627dda985eedbcb7b1956113f1"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/launch.test.ts",
+          "bytes": 17344,
+          "sha256": "1a4a7da2d532311fc3cbadb3868b5663db65bd902e8a78a33f8e7fbe0f4a8a22"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/index.ts",
+          "bytes": 1109,
+          "sha256": "4c480609b0724a20459911f379dbfe63e2875c34b344ef1cc3e95a724aff18c6"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/exchange.test.ts",
+          "bytes": 7889,
+          "sha256": "f20ce784c9ffaa5b382bf437e61fd395f813398b0fe3153d6653c5e2357e7cc4"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/session-storage.ts",
+          "bytes": 3899,
+          "sha256": "68d2d7a40980af68e2682dc9cfa759472014f171fd1ef4a63f9787229fdfb407"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/integration.test.ts",
+          "bytes": 11320,
+          "sha256": "68ac70664589b5ab31ccea56a2534a6eed6782b2f76356e08adf42ad1f0ca539"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/continuity-fixture.ts",
+          "bytes": 5456,
+          "sha256": "9fccf18054d57145492efd84750bc8a6fe4b9b253f4651190386f137e7ba1b34"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/turn.ts",
+          "bytes": 2958,
+          "sha256": "7b0d1b1e982d84306e0c76c4092ae90b22d0e804b101b9f74552160ebf8a3878"
+        },
+        {
+          "path": "apps/runner/src/native-harness/codex/peer.mjs",
+          "bytes": 7885,
+          "sha256": "d34ed1fc25f55d23342549797507cd52cf421b5273e3af8672d82ef376aa6228"
+        },
+        {
+          "path": "docs/evidence/mature02c02/stream-vitest.config.mjs",
+          "bytes": 593,
+          "sha256": "b669c63ca59c5db223f63a38d6aa4202aa61bc7b4148255c3903ce1ea58bd190"
+        },
+        {
+          "path": "docs/evidence/mature02c02/stream-tsconfig.json",
+          "bytes": 492,
+          "sha256": "87d8f2bae91055a61a8c60c4eb7ba544b24298fc723b85d6b2ff9ecdac7eb8a8"
+        }
+      ],
+      "supervisorReturnedAt": "2026-10-07T04:11:01.553951+00:00",
+      "pid": 85036,
+      "ownership": "newChildSession",
+      "capture": "separate",
+      "exit_code": 0,
+      "elapsed_ms": 1153,
+      "observed_bytes": 0,
+      "retained_bytes": 0,
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "first_failure": null,
+      "secondary_failures": [],
+      "signals": [],
+      "owned_state": "absent",
+      "observations": [
+        {
+          "state": "unknown",
+          "errno": 1
+        },
+        {
+          "state": "absent",
+          "errno": null
+        },
+        {
+          "state": "absent",
+          "errno": null
+        }
+      ],
+      "artifacts": [
+        {
+          "path": "docs/evidence/mature02c02/stream-types-final.stdout",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        {
+          "path": "docs/evidence/mature02c02/stream-types-final.stderr",
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        }
+      ],
+      "resourceComplete": true,
+      "tmpRemoved": true,
+      "tmpSample": {
+        "entries": 3,
+        "logicalBytes": 256,
+        "activePeak": "UNKNOWN"
+      }
+    }
+  ],
+  "rawArtifactBytes": 60892,
+  "updatedAt": "2026-10-07T04:11:01.554809+00:00",
+  "elapsedBeforePersistence": 392.21701,
+  "localReturnedAt": "2026-10-07T04:11:49.742540+00:00",
+  "pendingLaunches": false,
+  "distinctBehaviorTests": 104,
+  "result": "103 passed + 1 failed in first104; fixture complete turn receipt corrected, targeted1 passed/103 unselected; types first2 then0",
+  "toolObservations": [
+    {
+      "chunk": "5f7e85",
+      "exit": 0,
+      "waitSeconds": 2.940131625
+    },
+    {
+      "chunk": "9e8e87",
+      "exit": 0,
+      "waitSeconds": 5.209e-06
+    },
+    {
+      "chunk": "33f463",
+      "exit": 0,
+      "waitSeconds": 1.3125e-05
+    },
+    {
+      "chunk": "ee1950",
+      "exit": 0,
+      "waitSeconds": 7.166e-06
+    }
+  ],
+  "toolWholeWallSeconds": null,
+  "clockNote": "Per-run caller monotonic covers startup/supervision/copy/cleanup before record persistence; tool wait is not whole external wall. Segment elapsed includes resource waiting/source and four runs.",
+  "limitations": [
+    "Real Node synthetic JSONL peers, never native Codex/provider.",
+    "Public adapter/center/UI stream still pending; normalized private seam only.",
+    "Active TMP/wire/CPU peaks not measured; end sample and actual received fragment counts only.",
+    "First behavior/type failures preserved; no old PG/loader/main reruns or old KEEP access."
+  ],
+  "finalInputs": [
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.ts",
+      "bytes": 8361,
+      "sha256": "e51986edad382fdf42e5774da855d5fee9127e9715c540eba60600cb91a1cdf4"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/evidence.test.ts",
+      "bytes": 5504,
+      "sha256": "94b1f7279d0ff638fea4a4cb683d9df0f4ff73a1502a52b37c43b3e67e58618f"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.ts",
+      "bytes": 5360,
+      "sha256": "64c94dcc6aad9901992fe57c7c4accd031ebde368de863156fc29f5617924662"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/exchange.test.ts",
+      "bytes": 7889,
+      "sha256": "f20ce784c9ffaa5b382bf437e61fd395f813398b0fe3153d6653c5e2357e7cc4"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/peer.mjs",
+      "bytes": 7885,
+      "sha256": "d34ed1fc25f55d23342549797507cd52cf421b5273e3af8672d82ef376aa6228"
+    },
+    {
+      "path": "apps/runner/src/native-harness/codex/turn.ts",
+      "bytes": 2958,
+      "sha256": "7b0d1b1e982d84306e0c76c4092ae90b22d0e804b101b9f74552160ebf8a3878"
+    }
+  ],
+  "elapsedAtCloseout": 440.406481
+}

@@ -1,0 +1,7 @@
+apps/runner/src/native-harness/codex/exchange.test.ts(73,11): error TS2322: Type '(method: string) => Promise<{ threadId: string; turn?: undefined; } | { turn: { id: string; items: never[]; }; threadId?: undefined; }>' is not assignable to type '(method: string, params: Json, options?: { signal?: AbortSignal | undefined; timeoutMs?: number | undefined; } | undefined) => Promise<Json>'.
+  Type 'Promise<{ threadId: string; turn?: undefined; } | { turn: { id: string; items: never[]; }; threadId?: undefined; }>' is not assignable to type 'Promise<Json>'.
+    Type '{ threadId: string; turn?: undefined; } | { turn: { id: string; items: never[]; }; threadId?: undefined; }' is not assignable to type 'Json'.
+      Type '{ threadId: string; turn?: undefined; }' is not assignable to type 'Json'.
+        Type '{ threadId: string; turn?: undefined; }' is not assignable to type '{ [key: string]: Json; }'.
+          Property 'turn' is incompatible with index signature.
+            Type 'undefined' is not assignable to type 'Json'.

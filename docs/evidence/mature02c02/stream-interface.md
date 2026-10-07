@@ -1,0 +1,11 @@
+# C02-04 bounded native stream kernel
+
+An established turn is bounded by 4MiB cumulative decoded JSON bytes, R06 instantaneous frame/queue byte limits, evidence pre-bind64/2MiB and output queue64/2MiB, completed item projection bounds and existing wall/abort/close rules. It no longer treats a lifetime count of256 delivered fragments as a content limit. Every32 consumed messages yields to I/O so immediate ready frames cannot starve timers/cancellation.
+
+Only fixed0.154 shapes are added: remoteControl/status/changed (global/private identities validated and discarded), thread/status/changed (bound thread, systemError fails), thread/tokenUsage/updated (bound thread+turn). They are not terminal proof. Known methods with invalid payload remain rejected, unknown methods/server tools remain fail-closed. No opt-out disables content.
+
+Validated text/summary/text-reasoning delta is normalized to one private CodexStreamDelta seam, bounded queue drained by the single exchange consumer and serially awaited downstream. These are explicitly published wire deltas, not inferred/private thinking. Final selection remains solely existing completed-item+turn projection; a delta is never success evidence. Current ordinary adapter remains final-only until public schema/consumer delivery is wired: this kernel is not the user-visible stream goal. Codex must not be mislabeled with existing Claude-only assistant-stream/native-activity source literals.
+
+Verification: same final Unicode body through real Node JSONL/R06 with32 vs512 paced fragments, published summary and one receive/sink; an8-frame R06 bound rejects a512 burst. Direct evidence tests preserve4MiB,64/unbound and64/stream queue, wrong identities, unknown/invalid status, tool and post-terminal behavior. Engineering uses the same evidence policy but owns its permitted file items; its direct policy and native-writer injected tests remain required. No real native/provider/PG.
+
+Next C02-05: exact public Codex source codec and server persistence/read +UI consumers, retaining legacy Claude source semantics; registration/ownership is separate before any write. C02-04 still needs true controlled native two-turn acceptance. No root scan or oldR1 cleanup.
