@@ -1,0 +1,123 @@
+{
+  "createdAt": "2026-10-07T14:39:36.614Z",
+  "main": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+  "msgComparison": "e96325a7f5b4ecd00be827b2e76e13c1fbc95ed5",
+  "design": {
+    "path": "/private/tmp/root-flow-shared-overlay-design-20261007/report.md",
+    "sha256": "55230a04b712471882241fcf5a2c60b38404d9f2ef4448249b7850266f4b974b"
+  },
+  "sourceContentInputs": 15,
+  "inputs": [
+    {
+      "commit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "path": "apps/web/src/components/ui/dialog.tsx",
+      "bytes": 3853,
+      "sha256": "5858040deb7446700c0f4d791fa80507fd7c543c3a91f8634410815726634ec0",
+      "gitBlob": "a5c812d7f7e5fdae9a5bcb7166544f8956d94664"
+    },
+    {
+      "commit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "path": "apps/web/src/App.tsx",
+      "bytes": 71948,
+      "sha256": "a6843bf0b2831d9a666fb9a030b0d26c6e588709b89c6501a379e914124d6b62",
+      "gitBlob": "2e3a37130a64af0c5f2080eb64f93a7201041c30"
+    },
+    {
+      "commit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "path": "apps/web/src/components/assistant-ui/elements/attachment.aui.tsx",
+      "bytes": 9213,
+      "sha256": "e647bf0e550ee8217cd3058bab2336a2b480b48328050bdc97572a8adcdb88de",
+      "gitBlob": "4e357311054bbcccc76f711d7e1c83f9607b983c"
+    },
+    {
+      "commit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 25804,
+      "sha256": "00934707ff0f75a8824479f65ce6836461d7aea9b5e7171674ae3162801369bb",
+      "gitBlob": "1a5d857a0ef3d462f82f44afd04b2cb6f949806b"
+    },
+    {
+      "commit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "path": "apps/web/src/plugin-integration/knowledge.tsx",
+      "bytes": 14114,
+      "sha256": "98e0e4a09095d09c04cbef35ec0bbe5bd2b7d5114e84b18eb5eba08bd8612a55",
+      "gitBlob": "64e2c0c5f9b8fb90190b77f379715da071097e0e"
+    },
+    {
+      "commit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "path": "apps/web/src/plugin-integration/react.tsx",
+      "bytes": 23725,
+      "sha256": "b5e787139198cfd31ac3436856f9a8acea7f8b57ee73eda92edac80e8ff4dc95",
+      "gitBlob": "f94b75d126125885bda0fc62f405c9dc59d0f293"
+    },
+    {
+      "commit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "path": "apps/web/src/recovery/binding.tsx",
+      "bytes": 33220,
+      "sha256": "a89d647a8342b236cdd912bd23df5a062b0c475966a85cf8960ad36b7f83d915",
+      "gitBlob": "9dfe68df4fd31017a133448fc60e891cba3b76bd"
+    },
+    {
+      "commit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "path": "apps/web/src/assistant-ui.css",
+      "bytes": 6661,
+      "sha256": "4389cebf521751ec89f7da7f8df183800c0e3e87cdc1af443efba4f213f43dab",
+      "gitBlob": "1554f08332bd3897a085a0672a7d2255117a53b9"
+    },
+    {
+      "commit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "bytes": 2885,
+      "sha256": "a15a66f47806fcc529687c72b0517b335aa3527bb327872f7e4e95549d664934",
+      "gitBlob": "b48661a9ece128de829e8110d70dfb88b7661e77"
+    },
+    {
+      "commit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "path": "apps/web/test/message-settings.browser.ts",
+      "bytes": 40905,
+      "sha256": "04ed2a506d6d43dec7729a6b44b4d7308e6be38883b06e48ac9f1b957cb30ffb",
+      "gitBlob": "d6a6d9a0ba94f12ba99bf01c9325d4bdbdf5cac5"
+    },
+    {
+      "commit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 116556,
+      "sha256": "584f5168574c183f284061f078b91f47259eb4e7764df5aab8dbec17f11060a8",
+      "gitBlob": "57833f580b6e0bdb22448704676778f2e810e81f"
+    },
+    {
+      "commit": "6fd214eb62f269167f6af4a8390850561dc0d01c",
+      "path": "apps/web/test/plugin-integration.browser.ts",
+      "bytes": 18110,
+      "sha256": "66fbea8c1665a34abe203d872d1ed42e957e09a1b4e94d9af532fb9029efa7d9",
+      "gitBlob": "e0364f351cd1e12d19809f9244ab4def22eb8148"
+    },
+    {
+      "commit": "e96325a7f5b4ecd00be827b2e76e13c1fbc95ed5",
+      "path": "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+      "bytes": 27546,
+      "sha256": "4b18dd562496fa4de82e99afe7659e8262969dbae9db6200a643f5c8e1389d1b",
+      "gitBlob": "cac888ff5efd7da63749ee8358cbf8aba88fab37"
+    },
+    {
+      "commit": "e96325a7f5b4ecd00be827b2e76e13c1fbc95ed5",
+      "path": "apps/web/src/execution-profiles/execution-profiles.css",
+      "bytes": 3942,
+      "sha256": "a7abe82bf1eb53f9ddb286435dc6b2ba1660cfc3af4232fea1e4a5dbcbc11d54",
+      "gitBlob": "341d8b9a28dff1b6d02714920fed372879495b58"
+    },
+    {
+      "commit": "e96325a7f5b4ecd00be827b2e76e13c1fbc95ed5",
+      "path": "apps/web/test/conversation-recovery.browser.ts",
+      "bytes": 139496,
+      "sha256": "0ffac211bd3d3bd62ea04d17acd307decc5414b9e469e79436093b63d922669b",
+      "gitBlob": "08aa0e50cdc67d851ff3b4e3f30b5612c8c78753"
+    }
+  ],
+  "report": {
+    "bytes": 9033,
+    "sha256": "d220c7a1e0fe6bd77b93eb0d10b4771d138da9ca0942841b940e27b5eaccb4de"
+  },
+  "claims": "NOT_QUERIED / NOT_TAKEN",
+  "runtime": "NOT_RUN"
+}

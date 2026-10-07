@@ -1,0 +1,33 @@
+{
+  "taskId": "WPF-VISUAL01",
+  "parent": "WPF-MATURE-01",
+  "owner": "w01_owner",
+  "model": "gpt-6-astra ultra",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-shared-overlays",
+  "branch": "codex/web-shared-overlays",
+  "base": "3c9345df4aec85a37e8a2a155e079db260d515b1",
+  "planDir": "plans/wpf-visual01-shell",
+  "evidenceDir": "docs/evidence/wpf-visual01",
+  "claimId": "acce2727-f3c0-433d-9b06-b802eefb32cb",
+  "version": 1,
+  "segmentStartedAt": "2026-10-07T15:55:42.539Z",
+  "oldSource": {
+    "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-visual-shell",
+    "head": "558895d7a64e1502ac4b397e24daf7946296e0ca",
+    "claim": "35e5e5b9-2227-4cfb-bb7a-51249678c9ad",
+    "version": 3,
+    "state": "released"
+  },
+  "history": "Original shell a8b2b22 accepted main4391; retained as history, not reused validation for this slice.",
+  "scope": [
+    "apps/web/src/assistant-ui.css",
+    "apps/web/src/components/ui/dialog.tsx",
+    "apps/web/src/execution-profiles/ExecutionProfilePicker.tsx",
+    "apps/web/src/execution-profiles/execution-profiles.css",
+    "apps/web/test/conversation-recovery.browser.ts",
+    "apps/web/test/message-settings.browser.ts",
+    "docs/evidence/wpf-visual01",
+    "plans/wpf-visual01-shell"
+  ],
+  "runtime": "NOT_RUN"
+}
