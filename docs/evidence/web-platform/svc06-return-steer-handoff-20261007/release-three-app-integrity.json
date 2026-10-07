@@ -1,0 +1,345 @@
+{
+  "reviewer": "root / gpt-6-astra / ultra / read-only",
+  "reviewedAt": "2026-10-07T09:45:57.441338+00:00",
+  "state": "VERIFIED_THREE_RETAINED_APP_ASSET_SETS_NOT_BACKEND_COMPATIBILITY",
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/svc05-retained-web-compatibility/inputs/retained-af51-artifact-inputs-root.json",
+      "sha256": "cbebb23fd4dad766d94905715265e5075b43ac21277616f84b2182b45972f792",
+      "matchesFixedInput": true
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow/docs/evidence/svc06/artifact-host-smoke/inputs.json",
+      "sha256": "51b7567ca0d8232de56f2b0f498945fd4729d707939cece0f967f8c1ccd1bfa4",
+      "matchesFixedInput": true
+    }
+  ],
+  "artifacts": [
+    {
+      "artifactId": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "sourceHead": "b1c2e39837c2208e6fc2c59a80e16797f26448b5",
+      "format": 1,
+      "releaseId": null,
+      "artifactRoot": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-0/web-artifacts/461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "rootIdentity": {
+        "dev": 16777234,
+        "ino": 122289273
+      },
+      "distIdentity": {
+        "dev": 16777234,
+        "ino": 122289274
+      },
+      "manifestSha256": "461a97321e8c752352f45012373d1dac1d3e2bfc81d3799d1d156d301b3b6c90",
+      "manifestBytes": 1604,
+      "files": [
+        {
+          "path": "assets/PluginManagement-CD55oqRe.js",
+          "bytes": 9854,
+          "sha256": "3c62514146458f0d2f64beadec5f837a3f87b70ce0309a9f9f6363372b1bc447",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/PluginManagement-Dok11XwQ.css",
+          "bytes": 2843,
+          "sha256": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/assistant-ui-BW1JBgq4.js",
+          "bytes": 658870,
+          "sha256": "0eaf6899d1d7b4ce9d365aa9481e52a30550c758c4a7129f783907606e8bdc39",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/assistant-ui-CcdakA0V.css",
+          "bytes": 966,
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/index-5W26Yecv.css",
+          "bytes": 102548,
+          "sha256": "208237f94c4f3a0d1479a527a9e81c2cb457806bf7879baa845a90d1c7f7ec71",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/index-DuzR10it.js",
+          "bytes": 663320,
+          "sha256": "0dc1014006fd9a79601e7d75590c239f63533ef6e4c34f5dc141657f2c313555",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/rolldown-runtime-qXqUbbKo.js",
+          "bytes": 773,
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/theme-BPrUys_Y.js",
+          "bytes": 806,
+          "sha256": "d6e70e89790687f7a6f8d916e734d17ae4dda95e549b5ede1061da1c27fac3d5",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/workspace-J4kYnKpb.js",
+          "bytes": 1906,
+          "sha256": "712d138a75e5cf0132837e304c75bd767aa5276230a1af2b5ddcc28f0f01827a",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "index.html",
+          "bytes": 705,
+          "sha256": "712427f3cb1e1c06cbb7c666da07065d931f36e1bca4896f243df7563dd79943",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        }
+      ],
+      "totalBytes": 1442591,
+      "exactManifestFileSet": true
+    },
+    {
+      "artifactId": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "sourceHead": "8d8ab520a9d43c7b9dafb22911416ee799ebf665",
+      "format": 2,
+      "releaseId": "8d8ab520a9d43c7b9dafb22911416ee7",
+      "artifactRoot": "/private/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc05-0FB4IE/retained-1/web-artifacts/caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "rootIdentity": {
+        "dev": 16777234,
+        "ino": 122289289
+      },
+      "distIdentity": {
+        "dev": 16777234,
+        "ino": 122289290
+      },
+      "manifestSha256": "caa1e938c90ff34ca377dca458f5b0cfa3d38b059972944b4e9f904ae9a4b9fe",
+      "manifestBytes": 1651,
+      "files": [
+        {
+          "path": "assets/PluginManagement-BD6v6BfC.js",
+          "bytes": 9854,
+          "sha256": "3c8931413324efc58684a6c7b595add63b604cbb22d9705210b8be80795b7cee",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/PluginManagement-Dok11XwQ.css",
+          "bytes": 2843,
+          "sha256": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/assistant-ui-BpywiqNX.js",
+          "bytes": 659481,
+          "sha256": "389e15a7e05d082f140ff6fd88f91991231944655ff9fc46bb36c90604f9a365",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/assistant-ui-CcdakA0V.css",
+          "bytes": 966,
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/index-4FtYFUKm.css",
+          "bytes": 109664,
+          "sha256": "5e4136e5e05dea9dafdb1f7eb20aad3241e3242d6d52db40e73383fdf28c761f",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/index-C4nOJxn3.js",
+          "bytes": 720515,
+          "sha256": "6134c1c4171f07fe0749d50a7095e70ef51c47b75c8e56b3bc1d94fd73e2d495",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/rolldown-runtime-qXqUbbKo.js",
+          "bytes": 773,
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/theme-B8jpdv70.js",
+          "bytes": 806,
+          "sha256": "55b244704cb6099ef5a3cc281178b4ffcc3bd58645b0e33bee47497551768263",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/workspace-CftlvkTQ.js",
+          "bytes": 1906,
+          "sha256": "aed68bf4b3e8a9bb0d3dafcddeb5730f065c35f2d1b3a2a7875e4d4b57cc9374",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "index.html",
+          "bytes": 950,
+          "sha256": "cde7d9fd4622e6d4bb83b71004709e7fcbf4831f1b1146ce8690b763c3715fe0",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        }
+      ],
+      "totalBytes": 1507758,
+      "exactManifestFileSet": true
+    },
+    {
+      "artifactId": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "sourceHead": "5069586a9f17332de526e101eca3a4250cbc8d91",
+      "format": 2,
+      "releaseId": "388371a4972c469b8ace623454594132",
+      "artifactRoot": "/private/tmp/flow-release03-prepare-5069586-u1zh3mln/artifacts/web-artifacts/d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "rootIdentity": {
+        "dev": 16777234,
+        "ino": 123030663
+      },
+      "distIdentity": {
+        "dev": 16777234,
+        "ino": 123030667
+      },
+      "manifestSha256": "d629631d21eedd2afa308c562b31e57fc8597703a57a4c989c5a4af4fefd5e88",
+      "manifestBytes": 1651,
+      "files": [
+        {
+          "path": "assets/PluginManagement-A83k3W8t.js",
+          "bytes": 9854,
+          "sha256": "f6a718118ea8959a74b65825ff773fceb0c98e07a927fc9cb30c31ecfb771ad1",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/PluginManagement-Dok11XwQ.css",
+          "bytes": 2843,
+          "sha256": "1544bab67f584d675d710aab57cf983e6b4dc7112a6eaf13f99f58853272b3d9",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/assistant-ui-C7NurJFc.js",
+          "bytes": 667364,
+          "sha256": "5b15ea345d8912295e322561bc2baa2af88610b7f56a7c2907bdd2215a17687e",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/assistant-ui-CcdakA0V.css",
+          "bytes": 966,
+          "sha256": "b0c192220e6adb7734f45d48e272bea678b61a6848b4490986617f891529abe5",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/index-CZaGITme.js",
+          "bytes": 790684,
+          "sha256": "a7178926f022221df9cba8b816145c2bafed25ba8239ab8e0ae617d17a8b843e",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/index-DzESKX8S.css",
+          "bytes": 112165,
+          "sha256": "f7e34bb0b280ed753b5b2b40f509d90a9f36704c3f658136bacbe83d1e1ce036",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/rolldown-runtime-qXqUbbKo.js",
+          "bytes": 773,
+          "sha256": "c3c7bb289a8868119b16b8239f24a2a8e00e0b7424a4b42a20ff03416b1cec51",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/theme-eZTSIgw9.js",
+          "bytes": 806,
+          "sha256": "926448efd702b51400e86ec9d45316a15f97ebe66832c40241a13832c56c2a45",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "assets/workspace-OoYt4DTj.js",
+          "bytes": 1906,
+          "sha256": "83c03eceb9611c1beebeb62ef81d667f1baf114fc06f39a442d36bb8581e1aba",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        },
+        {
+          "path": "index.html",
+          "bytes": 950,
+          "sha256": "542c52c4c40abc54a9f6cf30a9f271b93c0ae7e092ef22864f017ce273d91fc3",
+          "matchesManifest": true,
+          "identityStable": true,
+          "regularNoSymlink": true
+        }
+      ],
+      "totalBytes": 1588311,
+      "exactManifestFileSet": true
+    }
+  ],
+  "fileCount": 30,
+  "totalAssetBytes": 4538660,
+  "elapsedMs": 13.88629199936986,
+  "resourceUse": {
+    "PG": 0,
+    "Chrome": 0,
+    "HTTP": 0,
+    "provider": 0,
+    "projectWrites": 0,
+    "serviceOrPersonalWrites": 0
+  },
+  "findings": [
+    "All three actual manifests hash to the recorded artifact IDs and match expected format/source; all30 actual regular asset files match manifest SHA256/bytes, with exact file sets and stable per-read identities.",
+    "Retained461a is manifest format1 with no releaseId; do not require or invent a format2 releaseId for that historical input.",
+    "Current b2b/c2c backend tuple remains fixed historical build evidence; Original Lead has pending runner-start diagnostics that may produce a new host tuple. Do not execute real three-App compatibility against stale tuple."
+  ],
+  "limitations": [
+    "Static asset integrity only; no browser/public read-send-recover-negotiation compatibility executed.",
+    "Public context61228/fixed-origin proxy design remains candidate, no personal endpoint contact.",
+    "Fresh actual run must re-check identities/pins after final reviewed host tuple and manager resource allocation.",
+    "No full directory ancestry security audit; only exact recorded artifact roots, dist and descendants were checked."
+  ],
+  "errors": []
+}

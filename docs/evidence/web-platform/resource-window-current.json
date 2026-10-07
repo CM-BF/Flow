@@ -1,6 +1,6 @@
 {
-  "recordedAt": "2026-10-07T09:43:09.438611+00:00",
-  "state": "SVC06_READY_FOR_ORIGINAL_FRESH_NOT_ACTUAL_RUN",
+  "recordedAt": "2026-10-07T09:48:54.583073+00:00",
+  "state": "RECOVERY_STEER_FAILED_CLEANED_RETURNED",
   "groupWindowOwnership": "X01 actual CLOSED09:27:37/independentreview09:32:01; Web DPERFreturned,0PGChrome/local/nextlaunch. Sharedwindow offered to Original SVC06fresh180work30cleanup, actualstartnotreported. No Web RecoveryPGreservation.",
   "release03": {
     "state": "APPROVED_MAIN_DELIVERED_RELEASED",
@@ -407,11 +407,11 @@
     "No automatic retry, rebuild, provider or personal service operation; old failure/raw histories remain."
   ],
   "latestCoordination": {
-    "at": "2026-10-07T09:43:09.438611+00:00",
-    "kind": "SVC06_READY_FOR_ORIGINAL_FRESH_NOT_ACTUAL_RUN",
-    "source": "svc06-window-quick-closeout-20261007/current.json",
+    "at": "2026-10-07T09:48:54.583073+00:00",
+    "kind": "RECOVERY_STEER_FAILED_CLEANED_RETURNED",
+    "source": "svc06-return-steer-handoff-20261007/current.json",
     "singleWebCoordinator": "d01_owner",
-    "summary": "SVC06 specific offer awaits actual receipt; DPERF final bc612 approved/9f54 stopped and main handoff sent via Mika; Quick metadata closeout in progress; Steer noEmit returned, no PG/browser admission."
+    "summary": "Steeractualexit1/IDBdraftpollfailure, DBgroupsEOFscratchenvallcleaned, immediatelyreturnedMika; nofurtherreservation. Rootreviewpending."
   },
   "profileReadonly": {
     "task": "WPF-PROFILEC02",
@@ -551,7 +551,7 @@
     "evidence": "retained-af51-main-intake.json",
     "personal": "No new personal publication; still362/v15+8d8/v2 perLead"
   },
-  "currentWindowReturn": "svc06-window-quick-closeout-20261007/current.json",
+  "currentWindowReturn": "svc06-return-steer-handoff-20261007/current.json",
   "coordinationHistory": [
     {
       "recordedAt": "2026-10-06T19:12:36.267670+00:00",
@@ -1273,12 +1273,12 @@
       }
     },
     "quick": {
-      "ownerHead": "7e9f0582a88e2ede7e10576a420a47970575d2cf",
+      "ownerHead": "b90f2de9420058d013ee7d37e7329531fc033a6a",
       "source": "fe6ece131c489c79cf531a184e4cf51209f9c4a0",
       "packet": "/private/tmp/msgquick-typeahead2",
       "bindingSha256": "c3356bde4ddf9903d2afafcc535d3d2746faf26d2ff5909fb93f18600530354f",
       "manifestSha256": "e2a4e2b1f9119033043831521f24687420b08dfae86bd7a3784315226bffb534",
-      "state": "COMPONENT_MAIN_ACCEPTED_ORIGINAL_OWNER_METADATA_CLOSEOUT_IN_PROGRESS",
+      "state": "COMPONENT_MAIN_CLOSEOUT_CLAIM_RELEASED",
       "admission": null,
       "browserSpentMs": 30625,
       "totalMs": 60000,
@@ -1288,7 +1288,7 @@
       "remainingMs": 29375,
       "failure": null,
       "review": "queue-full6-closeout-20261007/quick-full-six-actual-review.json",
-      "next": "Original W01 dispatched metadata-only main637 closeout/release in original Quick tree after DPERF final. Fresh839v1 exact6/clean verified by owner. No product rerun. Release receipt not yet received.",
+      "next": "RealApp/CAS/SendQueue/compacthost originalTODO11 successor requiresnewscope; no old839ewriteauthority. Originalw01 currently readonlyReleasepreparation.",
       "preparationReview": "quick-native2-return-native3-20261007/manager-native3-routine-binding-review.json",
       "admissionPreparation": "recovery-quick-paired-admission-20261007/quick-handoff.json",
       "newSegment": {
@@ -1323,7 +1323,7 @@
       "waitingTable": "Originalowner structuredwaitingfacts sealed; UNKNOWN historicalstart retained",
       "typeaheadReview": "quick-typeahead-admission-20261007/quick-source-boundary-review.json",
       "actualReview": "queue-full6-closeout-20261007/quick-full-six-actual-review.json",
-      "ownerHeadState": "Latest received pre-closeout7e9; original owner currently editing metadata under fresh839v1. No release receipt yet.",
+      "ownerHeadState": "Actualownerfinalreceiptlocalremoteequalclean; sixSTOP;releasev2committed",
       "runtime": "6/6 plus2PNG actualPASS; productionApp/Send/Queue unbound.",
       "currentFunctionalChecks": {
         "selected": 6,
@@ -1333,14 +1333,21 @@
       },
       "mainIntake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/docs/evidence/wpf-message-settings-quick-controls/main-intake.json",
       "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-message-settings-quick-controls/plans/wpf-message-settings-quick-controls/status.md",
-      "currentIntake": "svc06-window-quick-closeout-20261007/current.json",
+      "currentIntake": "svc06-return-steer-handoff-20261007/current.json",
       "currentReadingRule": "Coordination pointers only. Detailed older packet/budget/run fields below retain historical observations; no runtime permission or current functional status may be derived from them. Read sole owner status and currentIntake.",
-      "main": "63768046daa048e955670e74c0ce2491f8ba9873"
+      "main": "63768046daa048e955670e74c0ce2491f8ba9873",
+      "claimRelease": {
+        "id": "839e466f-1a3f-4e92-94e1-ece390c32fbf",
+        "version": 2,
+        "state": "RELEASED",
+        "at": "2026-10-07T09:45:37.210Z",
+        "receipt": "svc06-return-steer-handoff-20261007/quick-release-receipt.json"
+      }
     },
     "recovery": {
       "ownerHead": "f82ef780fafbce0d7c9309373f9ef7486a8f341d",
       "source": "54952b1011f03f8823db3744c4d1ac27e0407bc7",
-      "state": "STEER_SOURCE_ACCEPTED_LOCAL_PASS_BROWSER_NOT_RUN",
+      "state": "STEER_FAILED_CLEANED_RETURNED_SOURCE_DIAGNOSIS",
       "budget": {
         "priorLateMs": 54883.199542,
         "thisLateMs": 9250.887208,
@@ -1365,7 +1372,7 @@
         "state": "HISTORICAL_90K_ENVELOPE_CLOSED_IMMUTABLE_NO_NEW_CREDIT"
       },
       "runtime": "ThirdcompleteDraftended/cleanedreturned; no nextgate/PGChrome.",
-      "next": "Steer source/local READY, browser0. No new gate/env/reservation; SVC current shared offer first.",
+      "next": "SteerfirstdraftIDBpollfailurestaticdiagnosis, rootactualreviewpending; noautomaticPG/Chrome retry orreservation.",
       "review": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/review.md",
       "actualReceipt": "consumers-resource-checkpoint-20261007/current.json",
       "sourceReview": "consumers-resource-checkpoint-20261007/recovery-complete-second-actual-review.json",
@@ -1510,7 +1517,7 @@
         "envResponsibility": "Originalownercreatesandexactdeletes0600fixedtestsourceenvwithoutprintingvalue"
       },
       "canonicalStatus": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-conversation-recovery/plans/wpf-conversation-recovery/status.md",
-      "currentIntake": "svc06-window-quick-closeout-20261007/current.json",
+      "currentIntake": "svc06-return-steer-handoff-20261007/current.json",
       "currentReadingRule": "Coordination pointers only. Detailed older packet/budget/run fields below retain historical observations; no runtime permission or current functional status may be derived from them. Read sole owner status and currentIntake."
     }
   },
@@ -1981,17 +1988,10 @@
     "mainIntake": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/reentry-20261007/main-intake-readiness.json"
   },
   "externalCurrentAdmission": {
-    "state": "SVC06_READY_FOR_ORIGINAL_FRESH_NOT_ACTUAL_RUN",
-    "source": "svc06-window-quick-closeout-20261007/current.json",
-    "operator": "Original SVC06",
-    "workMs": 180000,
-    "cleanupMs": 30000,
-    "plannedBytes": 708837376,
-    "reportedFreshFloorBytes": 2684354560,
-    "Chrome": 0,
-    "actualStartedAt": null,
-    "originalDeliveryConfirmed": false,
-    "coordination": "Sent to Mika successfully; Original direct unsupported, canonical is available for its read/fresh admission."
+    "state": "SVC06_FAILED_CLEANED_RETURNED_NO_RESERVATION",
+    "source": "svc06-return-steer-handoff-20261007/current.json",
+    "actualEndedAt": "2026-10-07T09:38:00.412Z",
+    "nextReservation": false
   },
   "historicalSourceOnlyProgress024613": {
     "recordedAt": "2026-10-07T02:46:13.457995+00:00",
@@ -2001,11 +2001,12 @@
     "newRuntimeGrant": false
   },
   "nextExternalQueue": [
-    "SVC06 original unique operator has next explicit shared offer; fresh180work+30cleanup/676MiB/2.5GiBfloor/0Chrome. Actual start not reported.",
-    "Web no PG/Chrome/local holder; Steer focused source and affected noEmit accepted, browserNOT_RUN/no reservation. If SVC accepts first, wait its actual return before Steer.",
-    "DPERF fixedbc612/final9f54 READY_FOR_LEAD_MAIN_INTAKE; original W01 Quick metadata closeout/release in progress, then original Release readonly preparation; exact functional progress remains in each canonical owner status."
+    "SVC06host-r1 actual09:38:00.412returned; old180+30 offerretired, noexternalPG reservation reported.",
+    "WebSteer actualFAILED_CLEANED_RETURNED09:47:01.712298, nosecondrun/gate/reservation; owneronlystaticdiagnosisandarchive. Nextsharedqueuebyactualready, notwaitingmetadata.",
+    "DPERF fixedbc612/final9f54 readyOriginalmain intake; Quick b90f metadatafinal/839ev2RELEASED; originalReleasew01 read-onlypreparation, heavycompat waits reviewedfinalbackendtuple.",
+    "MATURE06-READBOUND01 originalMika/db_transaction_owner canonicalsource request sentregistryowner; noWebwriter/newtask."
   ],
-  "currentIntake": "svc06-window-quick-closeout-20261007/current.json",
+  "currentIntake": "svc06-return-steer-handoff-20261007/current.json",
   "recordReadingRule": "Current coordination: recordedAt/state/webActualHolder/webGate/webReservation/externalCurrentAdmission/latestCoordination/nextWebReady/currentIntake. Named admission/result and historical* fields preserve their own past observation; do not read them as current grants.",
   "readyValidationRule": {
     "source": "Lead/root concrete GO authorization, fixed current-main receipt bb99223a",

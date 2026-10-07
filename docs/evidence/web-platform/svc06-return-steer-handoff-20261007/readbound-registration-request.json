@@ -1,0 +1,38 @@
+{
+  "at": "2026-10-07T09:45:52.557902+00:00",
+  "state": "REQUESTED_REGISTRY_NOT_CONFIRMED",
+  "taskId": "MATURE06-READBOUND01",
+  "owner": "db_transaction_owner",
+  "model": "gpt-6-astra",
+  "coLead": "Mika",
+  "worktree": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds",
+  "branch": "codex/client-read-bounds",
+  "planDir": "plans/mature06-client-read-bounds",
+  "status": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds/plans/mature06-client-read-bounds/status.md",
+  "parent": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/web-platform-management/plans/wpf-mature-06-chat/plan.md",
+  "base": "d022c8003fc4bd8ba560f1a039411ed098186659",
+  "claim": {
+    "id": "44849884-baa7-4f09-a44b-085eb65b1220",
+    "version": 2,
+    "state": "ACTIVE",
+    "scopeCount": 7,
+    "basis": "Mika direct report via root + unique owner current status; not fresh manager ledger read"
+  },
+  "readOnlyObservation": {
+    "at": "2026-10-07T09:45:52.557902+00:00",
+    "sourceStatusUpdatedAt": "2026-10-07T09:44:00Z",
+    "branchConfirmed": true,
+    "headIsBase": true,
+    "dirty": true,
+    "review": "NOT_STARTED",
+    "main": "NOT_INTEGRATED",
+    "checks": "Owner reports scoped local results, no manager independent validation"
+  },
+  "registrationOwner": "Original Execution Lead global registry writer",
+  "rule": "No Web registry write/no new writer/no copied TODO or execution progress; canonical task status remains sole authority. Registration and actual dashboard load need receipts.",
+  "route": {
+    "mikaToolSend": "success",
+    "originalRegistryWriterReceipt": "pending",
+    "actualLoaded": "unknown"
+  }
+}

@@ -1,14 +1,14 @@
 # Web 当前交接与唯一来源
 
-更新：2026-10-07T09:43:09.438611+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
+更新：2026-10-07T09:45:52.557902+00:00。本页仅协调与证据索引；功能进度以各owner唯一status为准，领取以D04账本为准。
 
 ## 当前窗口与用户交付
 
-原X01共享窗口已明确归还；[下一SVC06具体交接](svc06-window-quick-closeout-20261007/current.json)供原Lead直接读取并fresh准入，0Chrome，尚无actual开始回执。本组无运行/预约，Recovery Steer源码边界已获审、相关类型检查已完成归还，浏览器尚未运行；已向Mika成功发送，受限Original直发未重试，不冒已投递或已RUN。
+SVC06 host-r1已于09:38:00.412Z实际失败并清理归还，见[唯一新交接](svc06-return-steer-handoff-20261007/current.json)；旧180+30 offer不再构成hold。Steer源码边界与相关类型检查获审，原panels09:46:44.379716–09:47:01.712298Z实际Steer段失败，首草稿IDB前提超时；自有DB/进程/流/scratch/env全部清理，已即时归还Mika，后续无预约。仅cookieRead通过，失败不冒feature通过，root结果审待完成。Quick原owner已完成组件主线metadata收口及精确释放，现转Release只读准备。
 
 当前排程和占用只看[唯一资源记录](resource-window-current.json)；功能检查、review、main与部署分别由各[唯一owner状态](#唯一-owner-与领取)维护，claim仍以D04账本为准。本页不复制一份测试进度或TODO。最新领取版本和精确范围入口见下表，写入或运行前仍须fresh核验。
 
-快速消息设置组件已由原Lead受控接收主线，见[固定接收原件](main-intake-handoff-checkpoint-20261007/quick-lead-main-intake.json)与[只读核对/原owner收口队列](main-intake-handoff-checkpoint-20261007/quick-main-closeout-plan.json)。原W01已在DPERF最终停写后切回Quick原六scope处理metadata与释放，实际释放回执尚待其完成；真实App/CAS仍是既有TODO11后继，main接收不授另一writer写权。
+快速消息设置组件已由原Lead受控接收主线，见[固定接收原件](main-intake-handoff-checkpoint-20261007/quick-lead-main-intake.json)与[只读核对/原owner收口队列](main-intake-handoff-checkpoint-20261007/quick-main-closeout-plan.json)。原W01已b90f封存并在09:45:37.210Z完成[839e v2精确释放](svc06-return-steer-handoff-20261007/quick-release-receipt.json)，六scope停写；通用proof七个既存wrapper UNKNOWN保持，四源main接收为独立事实；真实App/CAS仍是既有TODO11后继，main接收不授另一writer写权。
 
 DPERF固定bc612组合已[独审接受](svc06-window-quick-closeout-20261007/dperf-final-composite-review.json)，metadata9f54已封存并全十一scope停写；[唯一主线接收入口](/Users/citrine/Projects/AgentHarness/Flow-worktrees/dashboard-summary-detail/docs/evidence/wpf-dperf04/reentry-20261007/main-intake-readiness.json)已送Mika转原Lead，尚不冒Original最终收件或main已接。DPERF本次有限段已实际全部清理归还，结果范围见唯一status；固定权限、资源和清理边界见[集中源码审查](main-intake-handoff-checkpoint-20261007/dperf-followup-source-review.json)，不会把准备或图片数量自动升级为视觉通过。Recovery原owner仅Steer source准备，第二中心未选，不预占PG；其已接受的selected结果不等整体feature完成或原claim释放。
 
@@ -188,3 +188,7 @@ D06的5/5仅几何/键盘/来源下钻；[390默认阅读后继](d06-second-actu
 [日用会话导航U17/原MATURE05-06](../../../plans/wpf-mature-05-workspace/plan.md#日用会话导航后继)新增近期语义、全授权标题搜索与有界分页验收；[11源研究](quick-b3-return-navigation-20261007/navigation-root-research.json)及[共享接口候选](quick-b3-return-navigation-20261007/navigation-scope-candidates.json)仅准备，未take，恢复/快速设置优先。
 
 本批只读消费补充：[C02 reasoning默认折叠接口](quick-native2-return-native3-20261007/root-c02-reasoning-disclosure-research.json)归原MATURE06/REQ43。固定main3ee3的官方Thread ReasoningRoot streaming会自动open，简单映射v2 reasoning不保证默认折叠；后继应复用当前GroupedParts/ReasoningGroup受控展开接口，保人工折叠和指示，不改vendor默认或重做Thread。仅计划输入，未take/未实施/未运行，不占Recovery现scope。
+
+## 本次Release后继限制
+
+原W01在Quick实际释放后，仅做三retained真实App的只读/TMP兼容准备；[三manifest与30资产完整性](svc06-return-steer-handoff-20261007/release-three-app-integrity.json)不等真实浏览器兼容。OriginalLead的SVC06 r1诊断可能生成新backend/sourceartifact tuple，旧b2b/c2c构建历史保留，三App实际重段必须等已审最终tuple，不重build、不将动态origin手填61228、不接个人服务。当前不复用旧Release领取或新建writer。

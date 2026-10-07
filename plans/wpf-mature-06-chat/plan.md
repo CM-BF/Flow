@@ -165,3 +165,5 @@ CHAT05后继[九固定源研究](../../docs/evidence/web-platform/composed-consu
 原completeDraft第二次[实际与身份修正独审](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/recovery-complete-second-actual-review.json)确认1个202TURN与材料/知识/profile匹配只是部分实证；测试误拿record.id比turnKey，后继2e7203e改精确frozen.turnKey唯一匹配，保accepted/request/ACK身份完整要求，未复验。原150s已用114654/余35346，不能从旧90k取额度或自动排PG。共享LAZY e2b的3/3+strict与SVC b2b artifact成功仍分别是接口/产物输入，不是当前Recovery App已升级或个人兼容通过；真实caller须固定b2b descriptor/publiccontext后再执行。
 
 共享selected协议与部署再次分离：LAZY e2b公共client/core已main，但本次实际SVC b2b artifact不含selected能力；Web后继必须按真实backendtuple能力启用并实际验收，legacy兼容保持，不能以静默codec降级假装验收通过。此不改变当前Recovery输入/原35346ms余额，也不阻b2b既定兼容交付。
+
+原REQ43共享读取界限后继只关联[MATURE06-READBOUND01唯一status](/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds/plans/mature06-client-read-bounds/status.md)，co-lead Mika/owner db_transaction_owner，独立client-read-bounds树与codex分支。公共reader签名保持；当前实现、局部检查、独审与main以其唯一status为准，不复制TODO或替其判通过。[正式登记请求](../../docs/evidence/web-platform/svc06-return-steer-handoff-20261007/readbound-registration-request.json)交原globalregistry owner，实际登记/加载待receipt；本父scope不授Web写client/registry或另取相同工作。

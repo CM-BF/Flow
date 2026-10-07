@@ -76,3 +76,5 @@ F01 clientd6d与production9406独审已闭合，domain582f及13源正式main8400
 历史09:01接收的[第二次实际失败独审](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/recovery-complete-second-actual-review.json)确认测试将不同的command id与turnKey混用；新2e7203e按精确frozen.turnKey唯一匹配，保accepted及完整request/ACK检查，当时未运行复验。Owner7fb3947d为该时点clean、原21scope保留，150s累计114654/余35346。LAZY公共模块已main e2b，当前Recovery/App未消费；b2b产物构建归还不等个人安装或兼容通过。
 
 随后原同源第三次[实际选定2/2通过](../../docs/evidence/web-platform/consumers-resource-checkpoint-20261007/current.json)，outer09:10:12.377068结束、09:10:28.080735全部owned清理/env精确删除后已归还Mika；charge11793后150s累计126447/余23553。独立实际审已接受、完整大task不通过，原两FAIL和部分证据不改，owner已27f2515正常push/remote同clean；后续仅只读Steer/第二中心依赖比较，不自动用余量运行。
+
+共享读取上界片仅关联[MATURE06-READBOUND01 canonical](/Users/citrine/Projects/AgentHarness/Flow-worktrees/client-read-bounds/plans/mature06-client-read-bounds/status.md)，Mika/db_transaction_owner原独立树；[唯一登记请求](../../docs/evidence/web-platform/svc06-return-steer-handoff-20261007/readbound-registration-request.json)待原registry writer接收，不复制实现/TODO/运行进度，不冒MATURE06整体完成。
