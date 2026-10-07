@@ -1,0 +1,66 @@
+{
+  "at": "2026-10-07T22:45:57.059015+00:00",
+  "source": "a93ac5338da5c52303cf4f83d0735d0a61713ee3",
+  "runtimeDelta": "run.py exact inherited-compatible window and exclusive r2 argv/private/outer/input; policy only exact r2 directory. No shared executor/artifact changes.",
+  "selected": 7,
+  "passed": 7,
+  "pythonDifferent": 6,
+  "nodeDifferent": 1,
+  "elapsedMs": 374,
+  "rawBytes": 985,
+  "start": "2026-10-07T22:44:42.553937+00:00",
+  "return": "2026-10-07T22:44:42.934370+00:00",
+  "rounds": [
+    {
+      "index": 1,
+      "elapsedMs": 232,
+      "exit": 0,
+      "firstFailure": null,
+      "owned": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "cleanup": {
+        "at": "2026-10-07T22:44:42.789793+00:00",
+        "sameIdentity": true,
+        "empty": true,
+        "removed": true,
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09-window-local-mxigjvlg"
+      }
+    },
+    {
+      "index": 2,
+      "elapsedMs": 142,
+      "exit": 0,
+      "firstFailure": null,
+      "owned": "absent",
+      "eof": {
+        "stdout": true,
+        "stderr": true
+      },
+      "cleanup": {
+        "at": "2026-10-07T22:44:42.934208+00:00",
+        "sameIdentity": true,
+        "empty": true,
+        "removed": true,
+        "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09-window-local-xk1au0e1"
+      }
+    }
+  ],
+  "realConsumer": "run.main -> fixed maintenance-continuation.execute -> actual filesystem mkdir/save/fsync/hash/deadline/live/raw/first invocation -> real OPS14 pure _validate; only final phase supervise blocks with explicit test sentinel.",
+  "testInjections": [
+    "Ready/resource fields in memory only; pending remains false",
+    "Exact private namespace redirected to owned scratch; no private directory access",
+    "Space observation injected for positive and negative capacities",
+    "Real phase supervisor replaced after pure _validate; no personal phase children"
+  ],
+  "provenance": "Source210188 test pre-read corrected fixed public NODE allowlist in385b, then a93 retains actual pure _validate; all edits before first check. No failed engineering run this segment.",
+  "inheritedTests": "Old canonical/local01/02 remain historical fixed inputs; no rerun or upgraded claim.",
+  "failedActual": {
+    "commit": "99ad558bd",
+    "manifest": "docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-actual-result-manifest.json",
+    "disposition": "51ms FAIL/0phase/namespace absent; not changed"
+  },
+  "effect": "Preparation only; no personal/PG/service/provider/build or import."
+}

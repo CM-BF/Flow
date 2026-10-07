@@ -6,31 +6,31 @@
 | 所属大task | [FLOW-001](../../../plan-status-review/plans/flow-001-architecture/plan.md) |
 | co-lead | Execution Lead |
 | Owner / model | native_center_owner / gpt-6-astra |
-| 更新时间 | 2026-10-07T22:41:33.513892+00:00 |
+| 更新时间 | 2026-10-07T22:45:57.059015+00:00 |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 任务时间来源 | 最初只读准备未保留精确 UTC；原子 take 后实施于14:08:33.408Z已发生，不能冒充首次开工。源码固定提交与局部结束分别见技术证据；完整任务含后继实际激活未完成。 |
 | 阶段 | M2 |
 | 优先级 | 1 |
-| 本片段交付阶段 | implementation |
-| 当前产出 | 恢复续接在进入阶段前失败，运行资源已归还，个人服务仍停止。 |
-| 下一可用交付 | 修正执行器窗口名称合同，并验证真实首阶段前装配。 |
-| 当前阻塞 | ACTIVE: 续接入口装配不兼容；源码修复与直接检查后需新受审窗口。 |
+| 本片段交付阶段 | review |
+| 当前产出 | 续接入口的窗口合同已修复，真实执行器首阶段前检查通过；服务仍停止。 |
+| 下一可用交付 | 独立审查新一次续接输入，随后按新窗口恢复现有服务。 |
+| 当前阻塞 | ACTIVE: 新续接准备待独立审查及独占窗口；本次未启动个人阶段。 |
 | 需用户决定 | NONE |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings |
 | Branch | codex/personal-message-settings |
 | Base | 0da0dfcc68da42cc38d7c8e982f6b16321118391 |
-| Head | e871d17e018461dd1288dba404930a50897b2c24（公共canonical/六阶段） |
-| 实现目标 | e871d17e018461dd1288dba404930a50897b2c24 |
-| 工作分支状态 | implementation（保留实际失败，修复窗口合同） |
-| 工作树dirty状态 | 仅own结果与状态；实际执行源尚未改 |
+| Head | a93ac5338da5c52303cf4f83d0735d0a61713ee3（window合同修复） |
+| 实现目标 | a93ac5338da5c52303cf4f83d0735d0a61713ee3 |
+| 工作分支状态 | review（7个直接检查通过，准备停写交审） |
+| 工作树dirty状态 | 执行源停止；本次局部记录与R2输入待固定 |
 | 实现范围 | docs/evidence/svc09/message-settings-activation；plans/svc09-message-settings-activation |
 | Claim | 8f4071a0-afd5-47bf-b9d0-ba611d87a7b0 v12；21:00:39.748Z原子归还4产品，仅own范围继续 |
-| Review | APPROVED_LIMITED_CANONICAL_UNCONSUMED_CONTINUATION_PREPARATION，assignment独立核0b599/e871，0P1/P2；27bindings148073B/135effective824217B。 |
-| 检查状态 | 6不同/6选择通过，299ms/733B，3组absent双EOF、2exact空scratchremoved；0PG/服务/个人/provider。 |
-| 验证限制 | 本次0phase/0服务动作；原已迁入产物/报告保留。预检pool.end不冒远端连接零。 |
+| Review | 原canonical准备已审/main ae328cf28；原51ms失败和本次window修复分别待限定审查。 |
+| 检查状态 | 7不同通过，374ms/985B；2组absent双EOF/2exact空scratchremoved，0PG/个人/phasechild。 |
+| 验证限制 | 真实execute到首phase启动边界由测试明确停止；不是个人恢复或新现场ready。 |
 | 已集成main状态 | 原canonical续接准备已main ae328cf28；本次实际失败待独审。 |
-| 运行窗口 | 22:37:56.465903Z START；22:37:56.647208Z terminal；22:40:21.259355Z RETURN。新private namespace未创建、无pending。 |
+| 运行窗口 | 原22:37:56 START/51ms FAIL，22:40:21精确RETURN；局部22:44:42.934503Z RETURN。新R2没有actual grant。 |
 | 架构影响 | 仅实验策略与薄调用复用现有迁入、维护、历史和OPS14接口；无新产品权限、调度器或监督器。固定旧backend与实际state.source分离，未知结果停步。 |
 | 看板 | 唯一own status如实记录部分迁入与恢复失败；完整双槽/个人settings激活仍开放。 |
 
@@ -60,7 +60,7 @@
 | SVC09A-W13 | 2026-10-07T21:37:48.007Z | 2026-10-07T21:39:50.246Z | 审查 | 恢复调用源码/局部证据已获限定独审；后续cold/四报告/dispatch仍须齐备，不预占actual窗口 | personal-recovery/result.json；source42a2；Lead新source880060消息 |
 
 | SVC09A-W14 | 2026-10-07T22:34:17Z | 2026-10-07T22:37:56.465903Z | 资源 | 新唯一窗口及fresh通过后实际START | continuation actual start.json |
-| SVC09A-W15 | 2026-10-07T22:37:56.647208Z | OPEN | 验证失败 | 执行器窗口名称合同不匹配；修复真实装配，原FAIL保留 | continuation-actual-result.json |
+| SVC09A-W15 | 2026-10-07T22:37:56.647208Z | 2026-10-07T22:44:42.934503Z | 验证失败 | 执行器窗口名称合同不匹配；修复真实装配，原FAIL保留 | continuation-actual-result.json |
 
 原首次只读子agent被cap拒绝，未重试；本owner继续实施。首轮 reporter 为spec，result计数null，原raw保留20/19/1；派生记录明确纠正口径，不回写旧原件。后续各轮只选新边界/受影响例。临时峰值未采样。完整真实资格、模型与个人部署仍开放。
 
@@ -197,3 +197,5 @@ Lead已提供唯一source-only组合098b0d51512dfaa04c30ca7cbe103684720fe29f（t
 2026-10-07T22:34:17Z：assignment已正式限定批准0b599/e871，0P1/P2。135pins与执行源停止写入；Lead同刻请求新唯一恢复窗口，实际等待从本事件开始，尚未SELECT。旧grant不复用、不进入任何import/bootstrap/hold/retirement。仅后续准入资源字段可按新grant绑定，完整任务仍开放。
 
 2026-10-07T22:41:33.513892+00:00：续接实际首错为outer CHILD_EXIT_NONZERO、inner AssertionError；原51ms/0phase不回填具体runtime断言行。固定源码证明WINDOW不符继承execute前缀规则，且新namespace未创建。四PID及预检组absent/EOF完整，窗口已RETURN；原服务无本次动作。新工作段开始修复真实装配，不重复个人运行。见[唯一结果](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-actual-result.json)。
+
+2026-10-07T22:45:57.059015+00:00：本次window合同已由真实run.main→真实共享execute直接验证，7不同/374ms/985B，详见[唯一局部结果](../../docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/window-contract-result.json)。原完整canonical/冷启动/四App均不重跑。新R2只有精确argv/namespace和必要输入，pending.ready=false，无新grant；已消费两个旧outer与原raw不变。clean-code复核单一executor规则/窄caller责任/受限错误与清理，不新建监督器。

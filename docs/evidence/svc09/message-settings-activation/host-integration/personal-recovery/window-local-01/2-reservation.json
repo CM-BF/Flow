@@ -1,0 +1,68 @@
+{
+  "at": "2026-10-07T22:44:42.790348+00:00",
+  "argv": [
+    "/opt/homebrew/Cellar/node@24/24.20.0/bin/node",
+    "--import",
+    "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/node_modules/tsx/dist/loader.mjs",
+    "--input-type=module",
+    "-e",
+    "import {readFileSync} from 'node:fs';import assert from 'node:assert/strict';import {validatePlan} from './policy.mjs';const p=JSON.parse(readFileSync('continuation-r2-input.pending.json','utf8'));assert.throws(()=>validatePlan(p));p.ready=true;p.migration.budget.freshBytes=17452105728;validatePlan(p);for(const s of ['/private/tmp/flow-svc06-held-recovery-e15-20261007-once','/private/tmp/flow-svc06-held-recovery-e15-continuation-20261007-once']){assert.throws(()=>validatePlan({...p,runDirectory:s}));}console.log(JSON.stringify({selected:1,passed:1,actualPending:true,personalIO:0,PG:0,phaseChildren:0}));"
+  ],
+  "inputs": [
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/run.py",
+      "bytes": 5833,
+      "sha256": "4898a0d1d05a6693da3b7a7af8630cbe079626ac6061fbd250a0c7de2c27a46a"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/policy.mjs",
+      "bytes": 9909,
+      "sha256": "ec1c825c52e64a409c33f4a80f536bd14e96f4c0103ce1a25681611a5cf787d7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-prephase.test.py",
+      "bytes": 7671,
+      "sha256": "21e9877d50c2cae1e8ff59593b5533589d72410ef085fe07321cae1ba1aec8c7"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-r2-dispatch.json",
+      "bytes": 33166,
+      "sha256": "fc65ed2f188becf944a97f6482df8cf4ef8a63adf6a8b9efb6144b60c6e8be5e"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/personal-message-settings/docs/evidence/svc09/message-settings-activation/host-integration/personal-recovery/continuation-r2-input.pending.json",
+      "bytes": 13514,
+      "sha256": "6ec0658351a2363817cfd3bb9a49753def0b2ba3e7bedf7afe1fa2a7b69a917f"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-continuation.py",
+      "bytes": 7380,
+      "sha256": "f862c5964077b46431d8d446c31978469aecda40994a4340ef7b3b152f30f8ff"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release/docs/evidence/svc06/update-diagnostics-candidate/maintenance-supervise.py",
+      "bytes": 2684,
+      "sha256": "72b6a9257b8b9de51ff21c65b9f61c4d347aa8979c838040f3aff891ea003659"
+    },
+    {
+      "path": "/Users/citrine/Projects/AgentHarness/Flow-worktrees/m2-integration/tools/owned-process-supervision/supervise.py",
+      "bytes": 12543,
+      "sha256": "725bad9048e22d5f4c65f493918ab7afb57bb0a56e7594d31538ba028156092d"
+    }
+  ],
+  "floor": 17764712448,
+  "free": 18019061760,
+  "queueAt": "2026-10-07T22:43:38.826Z",
+  "scratch": {
+    "path": "/var/folders/f1/2xjyyqkn5plc19fx4nt4tpt00000gn/T/flow-svc09-window-local-xk1au0e1",
+    "dev": 16777234,
+    "ino": 124623173
+  },
+  "limits": {
+    "childTotalMs": 30000,
+    "scratchBytes": 8388608,
+    "rawBytes": 131072
+  },
+  "personalIO": 0,
+  "PG": 0
+}
