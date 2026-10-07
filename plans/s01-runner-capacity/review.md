@@ -1,8 +1,12 @@
 # S01 独立审查
 
-## 当前：唯一replay实际结果待独审
+## 当前：buffered packing 窄修准备
 
-PENDING。执行32796520b07d4eed9f34c7c1db757740b7e20452/source d28166e81bcdbb9fb537b40144f7be07a2539130，报告delivery-replay-report.md、单记录delivery-replay-actual.json。两策略计量完整性PASS仅支持这2048记录的策略成本观测；JSON更少而完整wall更长，无原pool/128容量因果结论。请一次核新五原件、语义计数、时钟与资源事实，不重跑/访问旧KEEP。固定result target由本结果提交提供。
+PENDING，现源码准备/0工程检查；仅减增长prefix的重复编码，最终send完整JSON门禁保留，不是实际性能结论。
+
+## 已交付：唯一replay实际结果独审
+
+**RESULT_FIDELITY_REVIEW_APPROVED / 0 P1/P2**，db_transaction_owner / gpt-6-astra，2026-10-07T15:23:32Z，fixed `32cb3f56d9eb2fccd352e64e800b1b797bbc4f6a`。[正式回执](../../docs/evidence/s01/mixed-ab-preparation/delivery-replay-result-review.json)。9bindings67095B、五原件11950B和raw2655B全符，完整语义仅nonSQL字段/ordinal与SQL聚合；计量及资源闭合成立。JSON657405→129388B而fork→close153.705→201.099ms、CPU24098→72800μs，不支持提速/原pool归因/128容量。固定顺序、个人背景UNKNOWN、早期EPERM、时钟口径保留。旧60s窗口已消费，0新运行授权。
 
 ## 历史：观察交付策略诊断源码与局部结果
 

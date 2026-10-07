@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T15:20:55.102Z |
+| 最近更新 | 2026-10-07T15:31:30.933Z |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
 | 主线集成时间 | UNKNOWN（当前私有模块）；历史A/B/idle为2026-10-07T11:08:24.990292+00:00，见原接收记录。 |
@@ -15,22 +15,22 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/runner-capacity-probe |
 | Branch | codex/runner-capacity-probe |
 | 工作基线 / HEAD | 新方法设计 f0f56e80bc4450b4b12f2a1218fefff4ef6e1208；生产候选固定main4fdd856293a502209d7509ea37da901bbfd89f72；当前metadata HEAD由Git读取，历史A/B结果另列。 |
-| 工作树dirty状态 | actual执行32796520b07d4eed9f34c7c1db757740b7e20452后只新增本轮原件及结果metadata；源码/既有input/compiled/旧raw未改，封存后核clean。 |
+| 工作树dirty状态 | 本段仅私有delivery packing、直接反例及own metadata；旧actual/source/compiled/raw不改。 |
 | 工作分支状态 | in-progress |
-| 检查状态 | PASSED 32796520b07d4eed9f34c7c1db757740b7e20452：一次两策略replay计量完整性通过/资源闭合；不是性能优化或原128容量通过。 |
+| 检查状态 | NOT_RUN 当前packing窄修；历史32796520b07d4eed9f34c7c1db757740b7e20452 actual结果已独审，不继承为本优化收益。 |
 | 已集成main状态 / HEAD | NOT_INTEGRATED：当前接线b846778835f3cb6dbb60fa4e8b04f87c504f0813与原私有delivery模块尚未main；历史A/B及idle固定成果已INTEGRATED f2ccb6738e37da87ae0f642652f8cf9bb596f4c2。 |
 | 实现目标 | d28166e81bcdbb9fb537b40144f7be07a2539130 |
 | 实现范围 | experiments/runner-capacity/mixed/delivery-replay-main.ts, docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.py, docs/evidence/s01/mixed-ab-preparation/delivery-replay-operator.test.py, docs/evidence/s01/mixed-ab-preparation/delivery-replay-emit-tsconfig.json |
 | 阶段 | M2 |
-| 本片段交付阶段 | review |
+| 本片段交付阶段 | implementation |
 | 优先级 | 4 |
-| 当前产出 | 已完成同轨迹两种交付策略诊断：聚合减少编码量，但这次完整耗时更长；所有自有资源已归还。 |
-| 下一可用交付 | 独立审查本次原始记录、比较口径及资源收尾，再决定是否需要下一项原因诊断。 |
-| 当前阻塞 | ACTIVE：本次结果待独立忠实性审；原容量与真实用户完整验收仍开放，当前无新运行授权。 |
+| 当前产出 | 已确认聚合发送过程中会反复编码增长中的内容，正在减少这部分额外工作；此前诊断结果已独立审查。 |
+| 下一可用交付 | 保持数据、字节边界和未知处理不变的局部优化，以及直接行为验证。 |
+| 当前阻塞 | ACTIVE：共享构建排程已要求暂停新检查；当前0检查进程，仅继续源码，未授新性能运行。 |
 | 需用户决定 | NONE |
-| Review | PENDING 本次actual结果；db14:59:26对d281/source+dbada局部结果APPROVED仍仅其范围。 |
-| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T15:18:28Z fresh完整身份匹配，继续保留review期占用。 |
-| 架构影响 | 已实际以固定六JS+ESM执行两交付策略，原delivery/channel/OPS14复用、无loader；原生产pool/SQL/服务未改，当前私有诊断未main。 |
+| Review | 历史replay 32cb3f56d9eb2fccd352e64e800b1b797bbc4f6a 于15:23:32 RESULT_FIDELITY_REVIEW_APPROVED/0P1P2；新packing源码与检查待审。 |
+| 当前claim | 508f9c85-a27c-4382-bfe9-caca43be4b0e v3 ACTIVE /6scope；2026-10-07T15:25:09Z fresh完整身份匹配，继续持有。 |
+| 架构影响 | 仅现私有pg-delivery Module内部chunk构造；Interface/record/SQL聚合/消费者/最终完整envelope校验不变。旧生成JS属于历史actual，不以新TS替换。 |
 
 | TODO ID | 状态 | Owner | 证据 |
 | --- | --- | --- | --- |
@@ -270,3 +270,9 @@ db14:59:26固定dbada结果APPROVED/0P1P2，正式结论归本任务review首节
 ### 唯一replay实际完成（原窗口已消费）
 
 15:18:36.341Z实际checkpoint PID16786，serial workers16847/16948；工具exit0、time0.91s。两策略完整性known/PASS、0dropped，完整JSON编码657405→129388B，parent fork→close153.705→201.099ms：不支持提速或原pool原因。15:18:44.466Z三Node资源closed/组absent/全部EOF、精确ownTMP删除absence，已RETURN。实际floor14338424832B/free20381409280B；个人自然负载UNKNOWN未探。source/input/compiled/旧原件未改，0PG/HTTP/provider；原O1失败与KEEP保持。唯一[本次报告](../../docs/evidence/s01/mixed-ab-preparation/delivery-replay-report.md)、单记录delivery-replay-actual.json；本actual待独审，无新运行权限。
+
+## 2026-10-07T15:31:30.933Z buffered packing 有界优化段
+
+实际开工15:25:09Z、截止15:45:09Z；开段32cb3f56 clean=origin，claim508fv3/exact6保持。归档db15:23:32对32cb的[正式结果独审](../../docs/evidence/s01/mixed-ab-preparation/delivery-replay-result-review.json)，0P1/P2。原2048trace实际减少JSON编码字节但耗时更长，不能据此推生产瓶颈或提速。
+
+本段复用本地find-skills、codebase-design及固定clean-code：保持同一Module和状态所有者，每条目实编码计长一次、逗号/header精确计入，最终send仍完整编码核上限；不新增通用packer。定向反例检查编码工作量、exact边界/ordinal位数、SQL语义、oversize/unknown与finish-once。原普通上限5child/各30s/累计90s、new16MiB/raw256KiB/source-meta2MiB；15:30后共享构建drain，尚0工程child，暂停新launch不重置原截止。下一freshfloor至少14,414,970,880B或更高；actual replay/PG始终NOT_OPEN。

@@ -1,0 +1,15 @@
+{
+  "reviewedAt": "2026-10-07T15:23:32Z",
+  "reviewer": "db_transaction_owner / gpt-6-astra",
+  "verdict": "RESULT_FIDELITY_REVIEW_APPROVED",
+  "p1": 0,
+  "p2": 0,
+  "result": "32cb3f56d9eb2fccd352e64e800b1b797bbc4f6a",
+  "manifestSha256": "2c373aacf0c38354c5a5f41fab8590455497b5cf4f6c5dc6daf60f5aad71fe81",
+  "bindings": 9,
+  "bindingBytes": 67095,
+  "actualOriginals": 5,
+  "actualOriginalBytes": 11950,
+  "scope": "Fixed actual observations, semantic counts, resource closure and honest clocks only. JSON bytes are not OS wire bytes. Fixed order, one trace and background UNKNOWN; buffered SQL aggregation is not identical information. No speedup, original pool cause or 128-capacity conclusion. Original O1 FAIL/O2 NOT_RUN and all KEEP unchanged. No new execution authorized.",
+  "resource": "Two workers close0/EOF/no fault/drop, coordinator same PID checkpoint, OPS14 finalabsent/MERGED EOF/full capture; initial EPERM retained; owner same-identity TMP cleanup facts supported. Reviewer did not access TMP/KEEP or execute engineering tools."
+}

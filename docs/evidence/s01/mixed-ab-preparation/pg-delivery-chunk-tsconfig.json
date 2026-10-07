@@ -1,0 +1,11 @@
+{
+  "extends": "../../../../tsconfig.json",
+  "compilerOptions": { "noEmit": true, "incremental": false },
+  "files": [
+    "../../../../experiments/runner-capacity/mixed/pg-delivery.ts",
+    "../../../../experiments/runner-capacity/mixed/pg-delivery-chunks.test.ts",
+    "../../../../experiments/runner-capacity/mixed/pg-delivery.test.ts",
+    "../../../../experiments/runner-capacity/mixed/delivery-replay.test.ts"
+  ],
+  "include": []
+}
