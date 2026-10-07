@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新时间 | 2026-10-07T11:33:37.223Z |
+| 最近更新时间 | 2026-10-07T11:35:41.009Z |
 | 所属大task | [X01](/Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-enable-binding/plans/x01-plugin-management/plan.md) |
 | co-lead | Mika |
 | 单一status owner / model | db_transaction_owner / gpt-6-astra |
@@ -13,19 +13,19 @@
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/plugin-version-lifecycle |
 | Branch | codex/plugin-version-lifecycle |
 | 工作基线 / 实现HEAD | cca4ab7c968598844ca5680140ee7c06ec1dd2f4 / 201674f49b538917f6f46cbdb02da4ed65191d02 |
-| 工作树dirty状态 | source/support冻结；本次独审metadata提交后clean |
+| 工作树dirty状态 | 实际原件已封存；本次结果提交后clean |
 | 工作分支状态 | ready |
-| 本片段交付阶段 | implementation |
-| 检查状态 | NOT_RUN PG；final focused types exit0，collect1（非pass），原首types2保留 |
-| Review | [review.md](review.md)，APPROVED 2026-10-07T11:26:41Z；仅准备 |
+| 本片段交付阶段 | review |
+| 检查状态 | PASSED 201674f49b538917f6f46cbdb02da4ed65191d02：本次真实PG单例1/1，100中心HTTP；旧types/list独立保留 |
+| Review | [review.md](review.md)，准备APPROVED；实际结果待固定独审 |
 | 已集成main状态 / HEAD | 本片未集成；固定基线cca4ab7c968598844ca5680140ee7c06ec1dd2f4 |
 | 实现目标 | 201674f49b538917f6f46cbdb02da4ed65191d02 |
 | 实现范围 | apps/server/src/plugin-runtime/version-rollback-pg.test.ts,docs/evidence/x01-version-lifecycle/execute-pg-once.py,docs/evidence/x01-version-lifecycle/run-local.py,docs/evidence/x01-version-lifecycle/tsconfig.json,docs/evidence/x01-version-lifecycle/vitest.config.mjs |
 | 阶段 | M2 |
 | 优先级 | 5 |
-| 当前产出 | 升级回滚专用案例已独审通过，保留旧任务冻结材料与当前授权边界 |
-| 下一可用交付 | 安排一次隔离专库旅程，取得真实升级回滚与清理结果 |
-| 当前阻塞 | ACTIVE: 等新专用PG窗口；准备与本地资源已闭合 |
+| 当前产出 | 版本切换与回滚真实旅程通过，旧任务冻结材料和当前权限断言成立 |
+| 下一可用交付 | 结果独审与主线接收，保留工具实际执行中升级的未验边界 |
+| 当前阻塞 | NONE |
 | 需用户决定 | NONE |
 | Claim | 5a53d10b-7ce6-4737-8e0c-2c265f4ca542 v1 ACTIVE，3literal |
 | 架构影响 | 仅验收fixture；复用现有资源/授权/runner模块，产品架构无改动 |
@@ -36,8 +36,8 @@
 | --- | --- | --- | --- |
 | X01LIFE-01 | completed | db_transaction_owner | README.md/pg-window.md |
 | X01LIFE-02 | completed | db_transaction_owner | 准备独审11:26:41Z通过；actual未跑 |
-| X01LIFE-03 | pending | db_transaction_owner | PG NOT_OPEN |
-| X01LIFE-04 | pending | db_transaction_owner | 未交付 |
+| X01LIFE-03 | completed | db_transaction_owner | 本次1/1，全部自有资源闭合 |
+| X01LIFE-04 | in-progress | db_transaction_owner | 结果独审/主线接收待完成 |
 
 注册：task-intake由OriginalLead按canonical登记，当前待登记。原X01大目标未完成。
 
@@ -57,3 +57,5 @@
 | 完整完成 | NOT_COMPLETED，实际PG/结果独审/main仍待完成 |
 
 2026-10-07T11:33:37.223Z 仅窗口metadata校正：2串行tar、2 loopback动态listener、单in-process public runRunner/capacity2/local concurrency2；工具链Git组/Vitest单fork与按需esbuild子进程明示。新最低5,479,333,888B通过未来admission实际pairedBytes推导落实（最低4,236,771,328B，fresh组合更高则上调），保KEEP来源/allocatedUNKNOWN。源码/manifest/原件无改；0新check/PG/NEXT/OPEN。见pg-window.md。
+
+2026-10-07T11:35:41.009Z 实际本次已OPEN后唯一执行并RETURN；历史“未OPEN”是当时状态。pg-output-manifest.json原件12项/24608B；实际1/1，resource无KEEP，旧allocatedUNKNOWN/KEEP不改。0待launch；只metadata占用claim，不占窗口。
