@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 | 2026-10-07T08:53:16.479374+00:00 |
+| 最近更新 | 2026-10-07T08:56:17.004523+00:00 |
 | 任务开工时间 | 2026-10-07T07:19:18Z |
 | 分支交付时间 | 2026-10-07T07:35:58.005114+00:00 |
 | 独立审查时间 | 2026-10-07T08:42:02Z（client）；PG08:13:23Z/core07:47:03Z |
@@ -19,13 +19,13 @@
 | Branch | codex/lazy-reasoning-reads |
 | Base | 9816e87a7690d7d36ac25cb8537bc9c8f41364c8 |
 | HEAD | 2949569bcac7d3b0257a0026f488f42eb6276222 client source；当前metadata HEAD由Git读取 |
-| 工作分支状态 | ready-for-review |
+| 工作分支状态 | in-progress |
 | 阶段 | M2 |
 | 优先级 | 3 |
-| 本片段交付阶段 | review |
-| 当前产出 | 新增真实公开客户端选择性读取验收已准备，类型通过且精确选中一例，正在独审。 |
-| 下一可用交付 | 独审后在单独授权的专库窗口运行这一条公开客户端验收。 |
-| 当前阻塞 | 等待本次准备独审与后续PG窗口；核心/客户端主线接收回执待核。 |
+| 本片段交付阶段 | implementation |
+| 当前产出 | 新增真实公开客户端验收准备已独审通过，类型通过且精确选中一例；待实际运行。 |
+| 下一可用交付 | 在明确授权的专库窗口运行这一条公开客户端验收并封存真实结果。 |
+| 当前阻塞 | 等待新的专库实际运行窗口；核心/客户端主线接收回执待核。 |
 | 需用户决定 | NONE |
 | Review | client2949569b/55dc7de8于08:42:02独审APPROVED/0P1P2；旧core/PG各自批准保留 |
 | 检查 | client 7 distinct分轮：首3pass4fail→受影响5pass/2未选；strict0。旧core14/fix4/PG2各自固定且未重跑 |
@@ -70,3 +70,5 @@ client/index handback COMMITTED 2026-10-07T08:43:46.904Z，v8→v9/13，仅移�
 2026-10-07T08:51:00Z 单条public-client HTTP准备段从08:44:00Z累计15min：claimv9/13保持，client/index已正式交X01。C02 fixture bfbcdd22一行类型接缝独审通过后，通过integration claim6f4bf925v1受控精确intake33616115，08:49:56v2正式release；未手改fixture/私有token。当前只改own selection-pg.test及既有运行器有限选择/新输入，原R1/旧types/list/raw冻结。最多2必要local children，actual PG NOT_OPEN/无预约；当前0本段child，等待X01归还local。main未见intake收据，等待聚合器登记展示。
 
 2026-10-07T08:53:16.479374+00:00 新client journey准备已完成：types0/2251ms与exactlist1/1706ms，两个child末态absent/mergedEOF、两TMP同identity清理absent，raw130B；0hooks/HTTP/PG。本段08:44:00起点不重置，actual local08:52:23已归还X01。仅新增一个case，旧两case正文逐字保留未选择。新pg-client-input249绑定/31SQL/19external，原claimv9/13、原90s/资源门禁和10新输出保持；actual NOT_OPEN/无预约。准备入口client-pg-review-ready.md，旧core/client canonical仍各自有效且主线回执尚未观察。
+
+2026-10-07T08:56:17.004523+00:00 准备独审通过：chatui08:55:14对75070719/fcf4f1ae判APPROVED/0P1P2，回执client-pg-review-receipt.json。当前claimv9/13 fresh active，原PG输入/raw不变；新inputSHA c9cd5f…0c42保持，10新outputs检查只属准备事实。唯一可执行候选仍MATURE06-LAZY01-CLIENT-PG-20261007-R1，actual NOT_OPEN/NOT_RUN，等待fresh holder/预算与明确OPEN。无本段新增工程运行，main事实仍待真实回执；Dashboard等待聚合器登记展示。

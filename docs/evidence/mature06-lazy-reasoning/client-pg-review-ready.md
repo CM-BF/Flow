@@ -1,4 +1,4 @@
-# Public client real HTTP preparation — REVIEW_READY / NOT_OPEN
+# Public client real HTTP preparation — PREPARATION_APPROVED / NOT_OPEN
 
 Source `750707193b58dadc423bc1806a714cdec7c6a935`; manifest `client-pg-review-manifest.json` SHA `9bb1e0af402483ee53464ebbdff93f6dd1763e19144ddb643abfcafe565d6d90` (16 bindings/131711B). Input `pg-client-input.json` SHA `c9cd5fcbfe75e0268a880e3bc546882938d044171d6569fbcdcc1bd55fa80c42`:249 fixed sources/config/support1184419B,31SQL,19 external entries. No moving main replacement; tested client2949569b/core60db and seven2a7e support bytes remain fixed.
 
@@ -9,3 +9,5 @@ Actual preparation: focused types exit0 and exact list1 exit0; list does not run
 Controlled integration claim6f4bf925v1 accepted fixedbfbc blob then releasev2; writerclaim8436ad9ev9/13 still owns only owntest/metadata/core/clienttest. client/index has been formally handed toX01 and not modified by this preparation. Old R1 inputs/raw remain fixed historical bytes.
 
 Executable candidate and original90s resource/confirmation/KEEP gates: client-pg-preparation.md. Only later explicit sharedPG OPEN can run window MATURE06-LAZY01-CLIENT-PG-20261007-R1. Ten outputs currently absent. No reservation is implied by readiness. Main receipts and Web consumption remain pending.
+
+Independent preparation approval08:55:14UTC: client-pg-review-receipt.json, chatui01_owner,0P1/P2. Source/input/oldraw remain unchanged. Actual run still requires fresh explicit OPEN; no PG admission occurred.
