@@ -2,7 +2,7 @@
 
 | 字段 | 记录 |
 | --- | --- |
-| 最近更新 / 最近main同步核验 | 2026-10-07 09:55:39 UTC；r1失败/独立cleanup已审接main，当前启动诊断实施 |
+| 最近更新 / 最近main同步核验 | 2026-10-07 09:59:03 UTC；r1限定失败证据已main，诊断19distinct局部完成待独审 |
 | Plan | [plan.md](plan.md) |
 | 任务开工时间 | UNKNOWN |
 | 任务完成时间 | NOT_COMPLETED |
@@ -13,21 +13,21 @@
 | 单一status owner / model | assignment_review / gpt-6-astra |
 | Worktree | /Users/citrine/Projects/AgentHarness/Flow-worktrees/backend-release |
 | Branch | codex/backend-release |
-| 工作基线 / HEAD | 诊断精确前像 b2b5612b2a63106ad0e674ddf12b2e8f96cf3388；9ac6c3c708092d505b6476afb2cb6da6c05a9cd1固定供给，后继源码实施中 |
-| 工作树dirty状态 | 仅已领启动诊断产品与own records；原r1/c2c不改 |
+| 工作基线 / HEAD | 诊断前像b2b；固定实现 3cb0be8f57467a0ed4703119e68a96cd8f8e560e；后续仅封证据，旧artifact c2c/r1保持 |
+| 工作树dirty状态 | 产品全停写；仅封最终manifest/原始结果与own metadata |
 | 工作分支状态 | in-progress |
-| 本片段交付阶段 | implementation |
-| 实现目标 | 9ac6c3c708092d505b6476afb2cb6da6c05a9cd1 |
+| 本片段交付阶段 | review |
+| 实现目标 | 3cb0be8f57467a0ed4703119e68a96cd8f8e560e |
 | 实现范围 | tools/personal-preview/preview.mjs, tools/personal-preview/preview.test.mjs, tools/personal-preview/startup-diagnostics.mjs, tools/personal-preview/startup-diagnostics.test.mjs |
-| 检查状态 | 新诊断直接检查NOT_RUN；原r1 FAIL与独立cleanup确认保持 |
+| 检查状态 | PASS 3cb0be8f57467a0ed4703119e68a96cd8f8e560e；19 distinct分轮（14+4+3选择含2重叠），preview syntax0/status parser0；2777ms，4252B raw，5组absent/双EOF/tmp removed；原host FAIL保持 |
 | 已集成main状态 / HEAD | main/origin 8c2ae379 已接r1失败/cleanup47 own文件及I02复核（Lead回执）；旧c2c build/import批准保持，新诊断尚未集成 |
 | 阶段 | M2 |
 | 优先级 | 2 |
-| 当前产出 | 已审查并保留真实启动失败与清理证据；正在让启动失败留下可定位阶段和有界私有错误输出。 |
-| 下一可用交付 | 完成启动诊断及直接检查，独审后再准备新的真实宿主验证。 |
-| 当前阻塞 | ACTIVE: 新宿主内部首因尚未被旧工具保存，当前诊断修复中；真实宿主验收未完成。 |
+| 当前产出 | 启动失败现在保留具体阶段与有界私有错误输出，直接检查通过；旧宿主失败和清理证据保持。 |
+| 下一可用交付 | 完成本诊断小片独审，再用新固定产物继续真实宿主验证。 |
+| 当前阻塞 | ACTIVE: 诊断小片待独审，真实宿主验收尚未重新执行。 |
 | 需用户决定 | NONE |
-| Review | r1已APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE；新诊断尚待检查与独审 |
+| Review | 新诊断PENDING_READONLY_REVIEW，由Execution Lead唯一审；r1限定失败证据已APPROVED并main8c2ae379 |
 | Claim | 3346a60d-0b50-4c73-bf22-9b258f8b1381 v8，原own两scope加6个启动诊断精确产品literal；[全部稳定产品正式交回](../../docs/evidence/svc06/product-scope-return-receipt.json) |
 | 架构影响 | 新增小型私有启动诊断Module；生命周期与TERM仍归原process，公开只受控摘要；实际宿主与后台产物不在本局部检查范围。 |
 
@@ -237,3 +237,9 @@ Lead授权在原v5范围补固定Vite。静态host工具来源表仅根tsx与app
 ## 启动诊断窄修开工（2026-10-07T09:45:30.035Z）
 
 r1结果已native限定APPROVED_RESULT_FIDELITY_WITH_PRESERVED_HOST_FAILURE，原件[归档](../../docs/evidence/svc06/b2b-host-policy/result-independent-review.json)。按Lead派工fresh无冲突后amend v8，当前仅启动诊断[Interface](../../docs/evidence/svc06/startup-diagnostics/Interface.md)；b2b产品前像供给，原产物/r1不动，0PG/个人。实际首次任务start仍UNKNOWN；此为本小片领取/实施起点。
+
+## 2026-10-07 09:59:03 UTC — 启动诊断局部交付待独审
+
+source `3cb0be8f57467a0ed4703119e68a96cd8f8e560e`，claim v8在先fresh原子领取，b2b四产品前像受控供给。[Interface](../../docs/evidence/svc06/startup-diagnostics/Interface.md) / [完整范围](../../docs/evidence/svc06/startup-diagnostics/README.md) / [唯一运行记录](../../docs/evidence/svc06/startup-diagnostics/local-runs.json)。实际09:55:54.220Z至09:56:06.154Z首段和09:57:58.943Z定向结束，均为原件时间；累计2777ms/4252B，19distinct、21选择分轮，5组absent/EOF、5exact scratch空后removed。补充spawn系统code是收口修复，只跑1新+2直接受影响，旧18未重跑。原未知开工时间不改；无PG/host/build/provider/个人读取。
+
+产品四源全停写，独审待Execution Lead；原r1失败与数值runner退出未观测仍在main8c2ae379，不因局部检查而转绿。03/04/05继续open。
